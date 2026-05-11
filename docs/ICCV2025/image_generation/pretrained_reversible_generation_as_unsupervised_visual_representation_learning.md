@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Pretrained Reversible Generation as Unsupervised Visual Representation Learning
 description: >-
-  [ICCV 2025][Image Generation][Reversible generation] PRG extracts unsupervised visual representations by **inverting the generation process of pretrained continuous generative models** (diffusion/flow models), enabling model-agnostic adaptation to discriminative tasks. It achieves 78% top-1 accuracy on ImageNet 64×64, establishing state of the art among generative model-based methods.
+  [ICCV 2025][Image Generation][Reversible generation] PRG extracts unsupervised visual representations by **inverting the generation process of pretrained continuous generative models** (diffusion/flow models)…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Reversible generation
-  - flow matching
-  - unsupervised representation learning
-  - pretrain-finetune
-  - mutual information
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Reversible generation"
+  - "flow matching"
+  - "unsupervised representation learning"
+  - "pretrain-finetune"
+  - "mutual information"
 date: 2026-05-08
 content_hash: 4bf88d2d07e649fc
 ---

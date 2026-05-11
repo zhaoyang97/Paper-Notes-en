@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FreeScale: Unleashing the Resolution of Diffusion Models via Tuning-Free Scale Fusion
 description: >-
-  [ICCV 2025][Image Generation][High-resolution generation] This paper proposes FreeScale, a tuning-free inference paradigm that extracts and fuses information from different receptive field scales via a Scale Fusion mechanism (global high-frequency + local low-frequency), combined with tailored self-cascade upscaling and restrained dilated convolution, achieving for the first time text-to-image generation at 8K resolution on a single A800 GPU, while also supporting high-resolution video generation.
+  [ICCV 2025][Image Generation][High-resolution generation] This paper proposes FreeScale, a tuning-free inference paradigm that extracts and fuses information from different receptive field scales via a Scale Fusion mecha…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - High-resolution generation
-  - diffusion models
-  - training-free
-  - scale fusion
-  - frequency decomposition
+  - "ICCV 2025"
+  - "Image Generation"
+  - "High-resolution generation"
+  - "diffusion models"
+  - "training-free"
+  - "scale fusion"
+  - "frequency decomposition"
 date: 2026-05-08
 content_hash: 1fdd7988de2353fa
 ---

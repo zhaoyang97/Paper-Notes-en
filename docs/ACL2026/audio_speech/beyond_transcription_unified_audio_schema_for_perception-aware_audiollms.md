@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond Transcription: Unified Audio Schema for Perception-Aware AudioLLMs
 description: >-
-  [ACL 2026][Audio & Speech][Audio Large Language Models] This paper identifies that the perceptual weakness of current AudioLLMs stems from an ASR-centric training paradigm that systematically suppresses paralinguistic and non-linguistic information. It proposes the Unified Audio Schema (UAS), which structures audio information into a three-dimensional JSON format covering transcription, paralinguistics, and non-linguistic events. The approach achieves a 10.9% improvement in perceptual accuracy on the MMSU benchmark while preserving reasoning capabilities.
+  [ACL 2026][Audio & Speech][Audio Large Language Models] This paper identifies that the perceptual weakness of current AudioLLMs stems from an ASR-centric training paradigm that systematically suppresses paralinguistic an…
 tags:
-  - ACL 2026
+  - "ACL 2026"
   - "Audio & Speech"
-  - Audio Large Language Models
-  - Perception Enhancement
-  - Unified Audio Schema
-  - Paralinguistic Information
-  - ASR
+  - "Audio Large Language Models"
+  - "Perception Enhancement"
+  - "Unified Audio Schema"
+  - "Paralinguistic Information"
+  - "ASR"
 date: 2026-05-08
 content_hash: 26bc4ec0eb427836
 ---

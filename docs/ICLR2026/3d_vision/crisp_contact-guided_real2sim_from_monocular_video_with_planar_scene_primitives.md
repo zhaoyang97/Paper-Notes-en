@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CRISP: Contact-Guided Real2Sim from Monocular Video with Planar Scene Primitives
 description: >-
-  [ICLR 2026][3D Vision][Real2Sim] This paper proposes CRISP, a method for recovering simulatable human motion and scene geometry from monocular video. By fitting planar primitives to obtain clean, simulation-ready geometry and leveraging human-scene contact modeling to reconstruct occluded regions, CRISP reduces the motion tracking failure rate of a humanoid controller from 55.2% to 6.9%.
+  [ICLR 2026][3D Vision][Real2Sim] This paper proposes CRISP, a method for recovering simulatable human motion and scene geometry from monocular video. By fitting planar primitives to obtain clean…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Real2Sim
-  - monocular video
-  - planar scene primitives
-  - human-scene interaction
-  - RL humanoid control
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Real2Sim"
+  - "monocular video"
+  - "planar scene primitives"
+  - "human-scene interaction"
+  - "RL humanoid control"
 date: 2026-05-08
 content_hash: 8760de245ca6f93f
 ---

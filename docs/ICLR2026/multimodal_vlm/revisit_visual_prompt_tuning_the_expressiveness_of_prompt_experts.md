@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Revisit Visual Prompt Tuning: The Expressiveness of Prompt Experts
 description: >-
-  [ICLR 2026][Multimodal VLM][Visual Prompt Tuning] This paper reveals the limitations of VPT from a Mixture-of-Experts (MoE) perspective — prompt experts are input-agnostic constant functions with limited expressiveness — and proposes VAPT, which employs token-wise projectors and a shared feature projector to make prompt experts input-adaptive. VAPT achieves superior performance with fewer parameters and is supported by theoretical guarantees on optimal sample efficiency.
+  [ICLR 2026][Multimodal VLM][Visual Prompt Tuning] This paper reveals the limitations of VPT from a Mixture-of-Experts (MoE) perspective — prompt experts are input-agnostic constant functions with limited expressiveness —…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Visual Prompt Tuning
-  - Mixture of Experts
-  - Parameter-Efficient Fine-Tuning
-  - Vision Transformer
-  - Adaptive Prompts
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Visual Prompt Tuning"
+  - "Mixture of Experts"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Vision Transformer"
+  - "Adaptive Prompts"
 date: 2026-05-08
 content_hash: e8d6f012b99a6dea
 ---

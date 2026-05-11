@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CORE-3D: Context-aware Open-vocabulary Retrieval by Embeddings in 3D
 description: >-
-  [ICLR 2026][3D Vision][Open-vocabulary 3D semantic segmentation] This paper proposes CORE-3D, a training-free open-vocabulary 3D semantic segmentation and natural language object retrieval pipeline that achieves state-of-the-art performance on Replica and ScanNet through progressive multi-granularity mask generation, context-aware CLIP encoding, and multi-view 3D fusion.
+  [ICLR 2026][3D Vision][Open-vocabulary 3D semantic segmentation] This paper proposes CORE-3D, a training-free open-vocabulary 3D semantic segmentation and natural language object retrieval pipeline that achieves state-of…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Open-vocabulary 3D semantic segmentation
-  - scene graph
-  - CLIP embeddings
-  - language retrieval
-  - SemanticSAM
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Open-vocabulary 3D semantic segmentation"
+  - "scene graph"
+  - "CLIP embeddings"
+  - "language retrieval"
+  - "SemanticSAM"
 date: 2026-05-08
 content_hash: be7b167b0f19fb08
 ---

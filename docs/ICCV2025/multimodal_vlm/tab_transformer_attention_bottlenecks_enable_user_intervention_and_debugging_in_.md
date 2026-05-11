@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] TAB: Transformer Attention Bottlenecks enable User Intervention and Debugging in Vision-Language Models
 description: >-
-  [ICCV 2025][Multimodal VLM][attention bottleneck] This paper proposes TAB (Transformer Attention Bottleneck), a single-head co-attention bottleneck layer inserted after standard MHSA. By removing the skip connection and constraining attention values to $[0,1]$, TAB enables precise attention visualization, ground-truth-supervised training, and test-time user editing intervention in VLMs. On change captioning tasks, it establishes for the first time a causal relationship between attention values and VLM outputs.
+  [ICCV 2025][Multimodal VLM][attention bottleneck] This paper proposes TAB (Transformer Attention Bottleneck), a single-head co-attention bottleneck layer inserted after standard MHSA. By removing the skip connection and…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - attention bottleneck
-  - interpretability
-  - change captioning
-  - co-attention
-  - user intervention
-  - debugging
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "attention bottleneck"
+  - "interpretability"
+  - "change captioning"
+  - "co-attention"
+  - "user intervention"
+  - "debugging"
 date: 2026-05-08
 content_hash: 086717b4edf28c3a
 ---

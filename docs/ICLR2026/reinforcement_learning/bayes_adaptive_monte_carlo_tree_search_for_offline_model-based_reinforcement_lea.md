@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] BA-MCTS: Bayes Adaptive Monte Carlo Tree Search for Offline Model-based RL
 description: >-
-  [ICLR 2026][Reinforcement Learning][Offline RL] This work is the first to introduce Bayes Adaptive MDPs (BAMDPs) into offline model-based RL. It proposes Continuous BAMCP to handle Bayesian planning in continuous state/action spaces, combines pessimistic reward penalization with search-based policy iteration (an "RL + Search" paradigm), achieves significant improvements over 19 baselines on 12 D4RL tasks (Cohen's $d > 1.8$), and demonstrates successful application to tokamak fusion control.
+  [ICLR 2026][Reinforcement Learning][Offline RL] This work is the first to introduce Bayes Adaptive MDPs (BAMDPs) into offline model-based RL. It proposes Continuous BAMCP to handle Bayesian planning in continuous state/a…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Offline RL
-  - Model-based Reinforcement Learning
-  - Bayes Adaptive MDP
-  - MCTS
-  - Uncertainty Quantification
-  - Deep Ensemble
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Offline RL"
+  - "Model-based Reinforcement Learning"
+  - "Bayes Adaptive MDP"
+  - "MCTS"
+  - "Uncertainty Quantification"
+  - "Deep Ensemble"
 date: 2026-05-08
 content_hash: 4de2e3babc3bebe9
 ---

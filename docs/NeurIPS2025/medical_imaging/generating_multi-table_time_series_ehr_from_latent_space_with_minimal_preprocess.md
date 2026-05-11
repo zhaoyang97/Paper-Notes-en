@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Generating Multi-Table Time Series EHR from Latent Space with Minimal Preprocessing
 description: >-
-  [NeurIPS 2025][Medical Imaging][EHR synthesis] This paper proposes RawMed — the first framework to synthesize multi-table time series EHR data from raw records with minimal lossy preprocessing: events are textualized → compressed into a discrete latent space via Residual Quantization → temporal dynamics are modeled with an autoregressive Transformer. RawMed comprehensively outperforms existing baselines in fidelity, clinical utility, and privacy protection.
+  [NeurIPS 2025][Medical Imaging][EHR synthesis] This paper proposes RawMed — the first framework to synthesize multi-table time series EHR data from raw records with minimal lossy preprocessing: events are textualized → c…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - EHR synthesis
-  - time series generation
-  - Residual Quantization
-  - privacy preservation
-  - multi-table relational database
-  - autoregressive Transformer
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "EHR synthesis"
+  - "time series generation"
+  - "Residual Quantization"
+  - "privacy preservation"
+  - "multi-table relational database"
+  - "autoregressive Transformer"
 date: 2026-05-08
 content_hash: 4e971093ef0b15cb
 ---

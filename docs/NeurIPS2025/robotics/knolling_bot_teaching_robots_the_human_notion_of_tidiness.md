@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Knolling Bot: Teaching Robots the Human Notion of Tidiness
 description: >-
-  [NeurIPS 2025][Robotics][knolling] This work frames desktop object tidying (knolling) as an NLP-style sequence prediction task, employing a Transformer to autoregressively generate target poses for each object. A Gaussian Mixture Model (GMM) handles solution ambiguity, the model is trained on 2.4 million automatically generated demonstrations to learn a generalizable notion of tidiness, and user preferences are implicitly encoded via the input ordering of objects.
+  [NeurIPS 2025][Robotics][knolling] This work frames desktop object tidying (knolling) as an NLP-style sequence prediction task, employing a Transformer to autoregressively generate target poses for each object. A Gaussia…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - knolling
-  - object arrangement
-  - Transformer
-  - GMM
-  - self-supervised learning
-  - autoregressive generation
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "knolling"
+  - "object arrangement"
+  - "Transformer"
+  - "GMM"
+  - "self-supervised learning"
+  - "autoregressive generation"
 date: 2026-05-08
 content_hash: e23329daf0de8a27
 ---

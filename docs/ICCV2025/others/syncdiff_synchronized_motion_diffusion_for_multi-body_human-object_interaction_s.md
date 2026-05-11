@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] SyncDiff: Synchronized Motion Diffusion for Multi-Body Human-Object Interaction Synthesis
 description: >-
-  [ICCV 2025][Human-Object Interaction] This paper proposes SyncDiff, a unified multi-body human-object interaction (HOI) motion synthesis framework that achieves precise multi-body synchronization via alignment scores and an explicit synchronization strategy, while introducing frequency-domain decomposition to model high-frequency interaction semantics.
+  [ICCV 2025][Human-Object Interaction] This paper proposes SyncDiff, a unified multi-body human-object interaction (HOI) motion synthesis framework that achieves precise multi-body synchronization via alignment scores and…
 tags:
-  - ICCV 2025
-  - Human-Object Interaction
-  - Motion Synthesis
-  - Diffusion Models
-  - Multi-Body Synchronization
-  - Frequency Decomposition
+  - "ICCV 2025"
+  - "Human-Object Interaction"
+  - "Motion Synthesis"
+  - "Diffusion Models"
+  - "Multi-Body Synchronization"
+  - "Frequency Decomposition"
 date: 2026-05-08
 content_hash: 754b6f3a4001455b
 ---

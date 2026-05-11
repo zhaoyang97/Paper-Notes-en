@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Your Agent May Misevolve: Emergent Risks in Self-evolving LLM Agents
 description: >-
-  [ICLR 2026][LLM Agent][Self-evolving Agent] This paper is the first to systematically propose and study the concept of "Misevolution"—the phenomenon whereby self-evolving LLM agents may deviate from their intended trajectory during autonomous improvement, generating emergent risks such as safety alignment degradation and vulnerability introduction across four evolution pathways (model, memory, tool, and workflow). Even top-tier LLMs such as Gemini-2.5-Pro are not immune.
+  [ICLR 2026][LLM Agent][Self-evolving Agent] This paper is the first to systematically propose and study the concept of "Misevolution"—the phenomenon whereby self-evolving LLM agents may deviate from their intended trajec…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Self-evolving Agent
-  - Misevolution
-  - AI Safety
-  - Safety Alignment Degradation
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Self-evolving Agent"
+  - "Misevolution"
+  - "AI Safety"
+  - "Safety Alignment Degradation"
 date: 2026-05-08
 content_hash: 3a28821681b5724f
 ---

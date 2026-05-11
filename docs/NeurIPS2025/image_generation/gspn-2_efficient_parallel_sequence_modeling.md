@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] GSPN-2: Efficient Parallel Sequence Modeling
 description: >-
-  [NeurIPS 2025][Image Generation][efficient attention] GSPN-2 achieves up to 40× speedup over GSPN-1's 2D spatial propagation through algorithm-system co-design — specifically, single-kernel fusion, compact channel propagation, and shared memory optimization — while matching Transformer-level accuracy on ImageNet classification and text-to-image generation at significantly lower computational cost.
+  [NeurIPS 2025][Image Generation][efficient attention] GSPN-2 achieves up to 40× speedup over GSPN-1's 2D spatial propagation through algorithm-system co-design — specifically, single-kernel fusion…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - efficient attention
-  - spatial propagation
-  - CUDA optimization
-  - vision transformer
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "efficient attention"
+  - "spatial propagation"
+  - "CUDA optimization"
+  - "vision transformer"
 date: 2026-05-08
 content_hash: 0a6865c79640dce0
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Fixed-Point RNNs: Interpolating from Diagonal to Dense
 description: >-
-  [NeurIPS 2025][Video Understanding][Fixed-Point Iteration] This paper proposes the Fixed-Point RNN framework, which parameterizes dense linear RNNs as fixed points of diagonal linear RNNs. By varying the number of iterations, the model dynamically interpolates between diagonal (efficient) and dense (expressive) regimes, achieving state-of-the-art results simultaneously on state-tracking ($A_5$/$S_5$) and copying tasks for the first time.
+  [NeurIPS 2025][Video Understanding][Fixed-Point Iteration] This paper proposes the Fixed-Point RNN framework, which parameterizes dense linear RNNs as fixed points of diagonal linear RNNs. By varying the number of iterat…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
-  - Fixed-Point Iteration
-  - Dense Linear RNN
-  - State-Space Model
-  - Mamba
-  - State Tracking
+  - "NeurIPS 2025"
+  - "Video Understanding"
+  - "Fixed-Point Iteration"
+  - "Dense Linear RNN"
+  - "State-Space Model"
+  - "Mamba"
+  - "State Tracking"
 date: 2026-05-08
 content_hash: 31052b89f3fbc23e
 ---

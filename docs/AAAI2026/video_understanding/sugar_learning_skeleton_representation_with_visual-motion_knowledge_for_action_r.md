@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SUGAR: Learning Skeleton Representation with Visual-Motion Knowledge for Action Recognition
 description: >-
-  [AAAI 2026][Video Understanding][Skeleton-based action recognition] This paper proposes the SUGAR paradigm, which leverages GPT-generated **motion descriptions** and **visual descriptions** as prior knowledge to supervise skeleton encoders via contrastive learning, producing more discriminative representations. These representations are then fed into an LLM (LLaMA2-7B) with untouched pretrained weights as the classifier, complemented by a newly designed Temporal Query Projection (TQP) module for efficient skeleton-based action classification and zero-shot inference.
+  [AAAI 2026][Video Understanding][Skeleton-based action recognition] This paper proposes the SUGAR paradigm, which leverages GPT-generated **motion descriptions** and **visual descriptions** as prior knowledge to supervis…
 tags:
-  - AAAI 2026
-  - Video Understanding
-  - Skeleton-based action recognition
-  - large language models
-  - visual-motion knowledge
-  - contrastive learning
-  - zero-shot recognition
+  - "AAAI 2026"
+  - "Video Understanding"
+  - "Skeleton-based action recognition"
+  - "large language models"
+  - "visual-motion knowledge"
+  - "contrastive learning"
+  - "zero-shot recognition"
 date: 2026-05-08
 content_hash: f3130a252b6ec20c
 ---

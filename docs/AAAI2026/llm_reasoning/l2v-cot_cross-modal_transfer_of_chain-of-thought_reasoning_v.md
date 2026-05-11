@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] L2V-CoT: Cross-Modal Transfer of Chain-of-Thought Reasoning via Latent Intervention
 description: >-
-  [AAAI 2026][LLM Reasoning][CoT reasoning transfer] Through LAT analysis, this paper reveals that the low-frequency CoT directional representations of LLMs and VLMs share similar distributions. It proposes L2V-CoT: extract CoT directional representations from an LLM → apply low-pass filtering → frequency-domain resampling for dimension alignment → inject into VLM hidden layers. This training-free approach transfers LLM reasoning capabilities to VLMs, achieving an average improvement of 3.7% and a maximum gain of 8.6%.
+  [AAAI 2026][LLM Reasoning][CoT reasoning transfer] Through LAT analysis, this paper reveals that the low-frequency CoT directional representations of LLMs and VLMs share similar distributions. It proposes L2V-CoT: extrac…
 tags:
-  - AAAI 2026
-  - LLM Reasoning
-  - CoT reasoning transfer
-  - activation engineering
-  - frequency-domain analysis
-  - LLM to VLM
-  - training-free
+  - "AAAI 2026"
+  - "LLM Reasoning"
+  - "CoT reasoning transfer"
+  - "activation engineering"
+  - "frequency-domain analysis"
+  - "LLM to VLM"
+  - "training-free"
 date: 2026-05-08
 content_hash: 72424ed14c755ae4
 ---

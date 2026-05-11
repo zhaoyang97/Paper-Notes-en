@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] LeanRAG: Knowledge-Graph-Based Generation with Semantic Aggregation and Hierarchical Retrieval
 description: >-
-  [AAAI 2026][Retrieval-Augmented Generation] This paper proposes LeanRAG, a framework that employs a semantic aggregation algorithm to automatically construct explicit relations among summary nodes in a hierarchical knowledge graph, thereby breaking "semantic islands." Combined with a bottom-up retrieval strategy based on the Lowest Common Ancestor (LCA), LeanRAG efficiently navigates the hierarchical structure, achieving state-of-the-art performance on four QA benchmarks while reducing retrieval redundancy by 46%.
+  [AAAI 2026][Retrieval-Augmented Generation] This paper proposes LeanRAG, a framework that employs a semantic aggregation algorithm to automatically construct explicit relations among summary nodes in a hierarchical knowl…
 tags:
-  - AAAI 2026
-  - Retrieval-Augmented Generation
-  - Knowledge Graph
-  - Hierarchical Aggregation
-  - Lowest Common Ancestor
-  - Semantic Network
+  - "AAAI 2026"
+  - "Retrieval-Augmented Generation"
+  - "Knowledge Graph"
+  - "Hierarchical Aggregation"
+  - "Lowest Common Ancestor"
+  - "Semantic Network"
 date: 2026-05-08
 content_hash: ca9a9fc1d3430f89
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Robust 3D Object Detection using Probabilistic Point Clouds from Single-Photon LiDARs
 description: >-
-  [ICCV2025][Autonomous Driving][Probabilistic Point Cloud] This paper proposes the Probabilistic Point Cloud (PPC) representation, which attaches measurement confidence derived from raw single-photon LiDAR timing histograms as a probability attribute to each 3D point. Combined with a lightweight NPD filter and FPPS sampling strategy, PPC enables robust 3D object detection under low signal-to-background ratio (SBR) conditions, substantially outperforming point cloud denoising baselines on SUN RGB-D and KITTI with negligible computational overhead.
+  [ICCV2025][Autonomous Driving][Probabilistic Point Cloud] This paper proposes the Probabilistic Point Cloud (PPC) representation, which attaches measurement confidence derived from raw single-photon LiDAR timing histogra…
 tags:
-  - ICCV2025
-  - Autonomous Driving
-  - Probabilistic Point Cloud
-  - Single-Photon LiDAR
-  - 3D Object Detection
-  - SPAD
-  - Sensor Uncertainty Propagation
-  - Noise Robustness
+  - "ICCV2025"
+  - "Autonomous Driving"
+  - "Probabilistic Point Cloud"
+  - "Single-Photon LiDAR"
+  - "3D Object Detection"
+  - "SPAD"
+  - "Sensor Uncertainty Propagation"
+  - "Noise Robustness"
 date: 2026-05-08
 content_hash: 324746737abd6014
 ---

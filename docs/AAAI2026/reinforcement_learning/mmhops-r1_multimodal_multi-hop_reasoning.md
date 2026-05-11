@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] MMhops-R1: Multimodal Multi-hop Reasoning
 description: >-
-  [AAAI 2026][Reinforcement Learning][Multimodal multi-hop reasoning] This paper proposes the MMhops benchmark (31K samples, 3–4 reasoning hops) and the MMhops-R1 framework, which trains MLLMs via reinforcement learning to autonomously plan reasoning paths and dynamically invoke image/text retrievers for multimodal multi-hop reasoning. A 7B model surpasses 72B baselines and existing mRAG methods.
+  [AAAI 2026][Reinforcement Learning][Multimodal multi-hop reasoning] This paper proposes the MMhops benchmark (31K samples, 3–4 reasoning hops) and the MMhops-R1 framework…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - Multimodal multi-hop reasoning
-  - retrieval-augmented generation
-  - knowledge-based VQA
-  - dynamic planning
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "Multimodal multi-hop reasoning"
+  - "retrieval-augmented generation"
+  - "knowledge-based VQA"
+  - "dynamic planning"
 date: 2026-05-08
 content_hash: b6c9770c7aa6f1d6
 ---

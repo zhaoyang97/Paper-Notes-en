@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] D2E: Scaling Vision-Action Pretraining on Desktop Data for Transfer to Embodied AI
 description: >-
-  [ICLR 2026][Robotics][embodied AI] This work proposes the D2E framework, demonstrating that desktop gaming interaction data can serve as an effective pretraining substrate for embodied AI. Through the OWA toolkit, 335 hours of human demonstrations are collected; a Generalist-IDM pseudo-annotates 1,000+ hours of YouTube gameplay videos; and VAPT transfer training yields a 1B-parameter model that achieves 96.6% on LIBERO manipulation and 83.3% on CANVAS navigation, matching or surpassing models 7× larger.
+  [ICLR 2026][Robotics][embodied AI] This work proposes the D2E framework, demonstrating that desktop gaming interaction data can serve as an effective pretraining substrate for embodied AI. Through the OWA toolkit…
 tags:
-  - ICLR 2026
-  - Robotics
-  - embodied AI
-  - desktop pretraining
-  - inverse dynamics model
-  - vision-action pretraining
-  - robotics transfer
+  - "ICLR 2026"
+  - "Robotics"
+  - "embodied AI"
+  - "desktop pretraining"
+  - "inverse dynamics model"
+  - "vision-action pretraining"
+  - "robotics transfer"
 date: 2026-05-08
 content_hash: a6e785253839bb6c
 ---

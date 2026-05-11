@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] FT-NCFM: An Influence-Aware Data Distillation Framework for Efficient VLA Models
 description: >-
-  [Multimodal VLM] This paper proposes FT-NCFM, a framework that evaluates sample utility via causal attribution (Fact-Tracing) and guides an adversarial NCFM process to synthesize high-information-density coresets. Using only 5% synthetic data, it achieves 85–90% of full-data training performance while reducing training time by over 80%.
+  [Multimodal VLM] This paper proposes FT-NCFM, a framework that evaluates sample utility via causal attribution (Fact-Tracing) and guides an adversarial NCFM process to synthesize high-information-density coresets. Using…
 tags:
-  - Multimodal VLM
+  - "Multimodal VLM"
 date: 2026-05-08
 content_hash: b16a9eb9cf16da82
 ---

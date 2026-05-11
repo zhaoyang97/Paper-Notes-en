@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LiveWeb-IE: A Benchmark For Online Web Information Extraction
 description: >-
-  [ICLR 2026][Multimodal VLM][Web information extraction] This paper introduces LiveWeb-IE, the first benchmark for online web information extraction (WIE), covering multi-type data extraction including text, images, and hyperlinks. It further proposes the Visual Grounding Scraper (VGS) framework, which simulates human cognitive processes—visual scanning to locate regions → precise element localization → XPath generation—to achieve robust information extraction on dynamic webpages.
+  [ICLR 2026][Multimodal VLM][Web information extraction] This paper introduces LiveWeb-IE, the first benchmark for online web information extraction (WIE), covering multi-type data extraction including text, images…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Web information extraction
-  - online evaluation
-  - visual grounding
-  - XPath generation
-  - multimodal agent
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Web information extraction"
+  - "online evaluation"
+  - "visual grounding"
+  - "XPath generation"
+  - "multimodal agent"
 date: 2026-05-08
 content_hash: 91836e626112bf0b
 ---

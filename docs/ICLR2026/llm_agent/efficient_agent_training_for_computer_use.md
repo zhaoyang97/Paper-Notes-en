@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Efficient Agent Training for Computer Use
 description: >-
-  [ICLR 2026][LLM Agent][computer use agent] PC Agent-E uses only 312 human-annotated Windows operation trajectories. Via the proposed Trajectory Boost method, Claude 3.7 Sonnet synthesizes diverse alternative action decisions at each timestep. The resulting fine-tuned Qwen2.5-VL-72B achieves a 141% relative improvement on WindowsAgentArena-V2, even surpassing the teacher model Claude 3.7 Sonnet by 10%.
+  [ICLR 2026][LLM Agent][computer use agent] PC Agent-E uses only 312 human-annotated Windows operation trajectories. Via the proposed Trajectory Boost method…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - computer use agent
-  - trajectory augmentation
-  - data efficiency
-  - GUI agent
-  - SFT
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "computer use agent"
+  - "trajectory augmentation"
+  - "data efficiency"
+  - "GUI agent"
+  - "SFT"
 date: 2026-05-08
 content_hash: 6dbe960f1f94afe9
 ---

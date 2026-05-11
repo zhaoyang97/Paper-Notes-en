@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Describe, Adapt and Combine: Empowering CLIP Encoders for Open-set 3D Object Retrieval
 description: >-
-  [ICCV 2025][3D Vision][Open-set 3D retrieval] This paper proposes the DAC framework, which employs a "Describe–Adapt–Combine" three-step strategy to synergize CLIP with a multimodal large language model (MLLM). Using only multi-view images, DAC substantially outperforms the previous SOTA method that relies on all modalities (point clouds + voxels + images) on open-set 3D object retrieval, achieving an average mAP improvement of over +10%.
+  [ICCV 2025][3D Vision][Open-set 3D retrieval] This paper proposes the DAC framework, which employs a "Describe–Adapt–Combine" three-step strategy to synergize CLIP with a multimodal large language model (MLLM). Using onl…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Open-set 3D retrieval
-  - CLIP
-  - MLLM
-  - LoRA
-  - multi-view
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Open-set 3D retrieval"
+  - "CLIP"
+  - "MLLM"
+  - "LoRA"
+  - "multi-view"
 date: 2026-05-08
 content_hash: b2d77fce8fcf88a9
 ---

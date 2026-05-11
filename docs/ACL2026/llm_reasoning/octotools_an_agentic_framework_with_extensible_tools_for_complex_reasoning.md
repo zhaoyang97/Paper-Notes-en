@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OctoTools: An Agentic Framework with Extensible Tools for Complex Reasoning
 description: >-
-  [ACL 2026][LLM Reasoning][Agentic framework] OctoTools is a training-free, user-friendly, and easily extensible multi-agent framework that encapsulates heterogeneous tools via standardized **tool cards**, adopts a **Planner-Executor** separation paradigm, and employs a **task-specific toolset optimization** algorithm. It achieves an average accuracy improvement of +9.3% over GPT-4o and up to +10.6% over frameworks such as AutoGen and LangChain across 16 diverse benchmarks.
+  [ACL 2026][LLM Reasoning][Agentic framework] OctoTools is a training-free, user-friendly, and easily extensible multi-agent framework that encapsulates heterogeneous tools via standardized **tool cards**…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - Agentic framework
-  - tool-augmented reasoning
-  - multi-step planning
-  - tool cards
-  - extensibility
+  - "ACL 2026"
+  - "LLM Reasoning"
+  - "Agentic framework"
+  - "tool-augmented reasoning"
+  - "multi-step planning"
+  - "tool cards"
+  - "extensibility"
 date: 2026-05-08
 content_hash: 17b48f5af817b386
 ---

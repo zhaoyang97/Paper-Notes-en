@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] From Movement to Cognitive Maps: RNNs Reveal How Locomotor Development Shapes Hippocampal Spatial Coding
 description: >-
-  [ICLR 2026 Oral][hippocampus] By combining cluster analysis of infant rodent locomotor development with a shallow RNN predictive learning model, this work provides the first computational demonstration that developmental changes in movement statistics (crawling → walking → running → adult) drive the sequential emergence of spatially tuned hippocampal neurons (place cells, head direction cells, and conjunctive coding cells). The model quantitatively reproduces the developmental timeline observed in rat hippocampal recordings and predicts a progressive increase in conjunctive place-HD coding cells during development — a prediction subsequently validated in experimental data.
+  [ICLR 2026 Oral][hippocampus] By combining cluster analysis of infant rodent locomotor development with a shallow RNN predictive learning model…
 tags:
-  - ICLR 2026 Oral
-  - hippocampus
-  - spatial coding
-  - locomotor development
-  - RNN
-  - place cells
-  - head direction cells
-  - cognitive maps
+  - "ICLR 2026 Oral"
+  - "hippocampus"
+  - "spatial coding"
+  - "locomotor development"
+  - "RNN"
+  - "place cells"
+  - "head direction cells"
+  - "cognitive maps"
 date: 2026-05-08
 content_hash: b1defcc1392b0a9c
 ---

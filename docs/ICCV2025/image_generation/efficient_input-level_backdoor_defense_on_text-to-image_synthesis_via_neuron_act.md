@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Efficient Input-Level Backdoor Defense on Text-to-Image Synthesis via Neuron Activation Variation
 description: >-
-  [ICCV 2025][Image Generation][backdoor defense] NaviT2I identifies an "Early-step Activation Variation" phenomenon induced by backdoor triggers in text-to-image diffusion models, and proposes an efficient input-level backdoor defense framework that requires only the first diffusion iteration for analysis. The method achieves an average AUROC of 96.3% across 8 mainstream attacks while incurring only 3.8%–16.7% of the computational cost of existing methods.
+  [ICCV 2025][Image Generation][backdoor defense] NaviT2I identifies an "Early-step Activation Variation" phenomenon induced by backdoor triggers in text-to-image diffusion models…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - backdoor defense
-  - text-to-image models
-  - neuron activation variation
-  - input-level detection
-  - Stable Diffusion
+  - "ICCV 2025"
+  - "Image Generation"
+  - "backdoor defense"
+  - "text-to-image models"
+  - "neuron activation variation"
+  - "input-level detection"
+  - "Stable Diffusion"
 date: 2026-05-08
 content_hash: 5bc83282e9a001b4
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] K-Sort Eval: Efficient Preference Evaluation for Visual Generation via Corrected VLM-as-a-Judge
 description: >-
-  [ICLR 2026][Multimodal VLM][VLM-as-a-Judge] This paper proposes the K-Sort Eval framework, which leverages posterior correction and dynamic matching strategies to enable VLMs to reliably and efficiently replace human annotators in preference evaluation of visual generation models, typically converging to results consistent with human Arena rankings in fewer than 90 model runs.
+  [ICLR 2026][Multimodal VLM][VLM-as-a-Judge] This paper proposes the K-Sort Eval framework, which leverages posterior correction and dynamic matching strategies to enable VLMs to reliably and efficiently replace human ann…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - VLM-as-a-Judge
-  - preference evaluation
-  - posterior correction
-  - dynamic matching
-  - visual generation
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "VLM-as-a-Judge"
+  - "preference evaluation"
+  - "posterior correction"
+  - "dynamic matching"
+  - "visual generation"
 date: 2026-05-08
 content_hash: ca14dbe407d448e3
 ---

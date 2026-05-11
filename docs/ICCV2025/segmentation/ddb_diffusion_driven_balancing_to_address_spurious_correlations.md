@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DDB: Diffusion Driven Balancing to Address Spurious Correlations
 description: >-
-  [ICCV 2025][Segmentation][Spurious Correlations] This paper proposes Diffusion Driven Balancing (DDB), which leverages the textual inversion and inpainting capabilities of Stable Diffusion to automatically generate minority-group samples for balancing spurious correlations in datasets. Combined with a bicephalous pruning strategy based on ERM model prediction probabilities and integrated gradients, DDB achieves state-of-the-art worst-group accuracy on Waterbirds and MetaShift.
+  [ICCV 2025][Segmentation][Spurious Correlations] This paper proposes Diffusion Driven Balancing (DDB), which leverages the textual inversion and inpainting capabilities of Stable Diffusion to automatically generate minor…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - Spurious Correlations
-  - Diffusion Model Data Augmentation
-  - Group Robustness
-  - Textual Inversion
-  - Image Inpainting
+  - "ICCV 2025"
+  - "Segmentation"
+  - "Spurious Correlations"
+  - "Diffusion Model Data Augmentation"
+  - "Group Robustness"
+  - "Textual Inversion"
+  - "Image Inpainting"
 date: 2026-05-08
 content_hash: 756cfbae4e7d3602
 ---

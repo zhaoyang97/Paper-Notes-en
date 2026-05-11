@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Can Editing LLMs Inject Harm?
 description: >-
-  [AAAI2026][LLM Safety][knowledge editing] This paper reframes knowledge editing as a novel LLM security threat termed *Editing Attack*, systematically investigating the feasibility of injecting misinformation and bias into LLMs via three editing methods—ROME, FT, and ICE—and demonstrating that such attacks are both highly effective and remarkably stealthy.
+  [AAAI2026][LLM Safety][knowledge editing] This paper reframes knowledge editing as a novel LLM security threat termed *Editing Attack*…
 tags:
-  - AAAI2026
-  - LLM Safety
-  - knowledge editing
-  - Editing Attack
-  - Misinformation Injection
-  - Bias Injection
+  - "AAAI2026"
+  - "LLM Safety"
+  - "knowledge editing"
+  - "Editing Attack"
+  - "Misinformation Injection"
+  - "Bias Injection"
 date: 2026-05-08
 content_hash: 1c54e43b52dcf813
 ---

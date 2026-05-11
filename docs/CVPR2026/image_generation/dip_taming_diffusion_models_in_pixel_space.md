@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DiP: Taming Diffusion Models in Pixel Space
 description: >-
-  [CVPR 2026][Image Generation][Pixel-space Diffusion] The paper proposes DiP, an efficient pixel-space diffusion framework. By utilizing a DiT backbone to model global structures on large patches combined with a lightweight Patch Detailer Head to recover local details, it achieves computational efficiency comparable to LDMs without requiring a VAE, reaching a 1.79 FID on ImageNet 256×256.
+  [CVPR 2026][Image Generation][Pixel-space Diffusion] The paper proposes DiP, an efficient pixel-space diffusion framework. By utilizing a DiT backbone to model global structures on large patches combined with a lightweig…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Pixel-space Diffusion
-  - Patch Detailer Head
-  - Global-Local Decoupling
-  - End-to-End Generation
-  - Efficient Inference
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Pixel-space Diffusion"
+  - "Patch Detailer Head"
+  - "Global-Local Decoupling"
+  - "End-to-End Generation"
+  - "Efficient Inference"
 date: 2026-05-08
 content_hash: fdab0fecfcb41e1f
 ---

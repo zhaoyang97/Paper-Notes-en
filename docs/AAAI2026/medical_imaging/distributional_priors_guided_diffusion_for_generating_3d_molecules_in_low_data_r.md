@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Distributional Priors Guided Diffusion for Generating 3D Molecules in Low Data Regimes
 description: >-
-  [AAAI 2026][Medical Imaging][3D molecule generation] This paper proposes GODD (Geometric OOD Diffusion Model), which captures distributional structural priors via an equivariant asymmetric autoencoder to guide the generation process of a diffusion model, enabling models trained on data-rich molecular distributions to generalize to data-scarce distributions, achieving a 12.6% improvement in success rate on OOD structural shift benchmarks.
+  [AAAI 2026][Medical Imaging][3D molecule generation] This paper proposes GODD (Geometric OOD Diffusion Model), which captures distributional structural priors via an equivariant asymmetric autoencoder to guide the genera…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - 3D molecule generation
-  - diffusion models
-  - out-of-distribution generalization
-  - structural priors
-  - drug design
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "3D molecule generation"
+  - "diffusion models"
+  - "out-of-distribution generalization"
+  - "structural priors"
+  - "drug design"
 date: 2026-05-08
 content_hash: 75ebdd20139847d9
 ---

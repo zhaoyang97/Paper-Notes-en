@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EvolvingGrasp: Evolutionary Grasp Generation via Efficient Preference Alignment
 description: >-
-  [ICCV 2025][Robotics][Dexterous Grasping] This paper proposes EvolvingGrasp, which achieves efficient evolutionary generation and human preference alignment for dexterous grasp pose synthesis via Handpose-wise Preference Optimization (HPO) and a Physics-Aware Consistency Model (PCM), attaining state-of-the-art performance on four benchmark datasets with a 30× inference speedup.
+  [ICCV 2025][Robotics][Dexterous Grasping] This paper proposes EvolvingGrasp, which achieves efficient evolutionary generation and human preference alignment for dexterous grasp pose synthesis via Handpose-wise Preference…
 tags:
-  - ICCV 2025
-  - Robotics
-  - Dexterous Grasping
-  - Preference Alignment
-  - Consistency Models
-  - Diffusion Models
-  - Physical Constraints
+  - "ICCV 2025"
+  - "Robotics"
+  - "Dexterous Grasping"
+  - "Preference Alignment"
+  - "Consistency Models"
+  - "Diffusion Models"
+  - "Physical Constraints"
 date: 2026-05-08
 content_hash: c98f944df723274b
 ---

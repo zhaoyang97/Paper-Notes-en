@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Bipartite Mode Matching for Vision Training Set Search from a Hierarchical Data Server
 description: >-
-  [AAAI 2026][training set search] This paper proposes a hierarchical data server combined with a Bipartite Mode Matching (BMM) framework. It organizes large-scale source data via multi-granularity hierarchical clustering and employs the Hungarian algorithm to perform one-to-one matching between semantic modes of the source and target domains, thereby retrieving a training set that minimizes the distributional gap to the target domain. The approach significantly outperforms existing training set search methods on person re-identification and object detection tasks.
+  [AAAI 2026][training set search] This paper proposes a hierarchical data server combined with a Bipartite Mode Matching (BMM) framework. It organizes large-scale source data via multi-granularity hierarchical clustering…
 tags:
-  - AAAI 2026
-  - training set search
-  - domain adaptation
-  - bipartite matching
-  - hierarchical clustering
-  - data-centric approach
+  - "AAAI 2026"
+  - "training set search"
+  - "domain adaptation"
+  - "bipartite matching"
+  - "hierarchical clustering"
+  - "data-centric approach"
 date: 2026-05-08
 content_hash: 196a05068e2898f5
 ---

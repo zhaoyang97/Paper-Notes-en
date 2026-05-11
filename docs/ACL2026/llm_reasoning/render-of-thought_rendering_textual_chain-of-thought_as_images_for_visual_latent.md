@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Render-of-Thought: Rendering Textual Chain-of-Thought as Images for Visual Latent Reasoning
 description: >-
-  [ACL 2026][LLM Reasoning][chain-of-thought compression] This paper proposes Render-of-Thought (RoT), the first approach to render textual CoT reasoning steps as images. It leverages a pretrained visual encoder as a semantic anchor to align LLM hidden states to the visual embedding space, achieving 3–4× token compression and significant inference acceleration while preserving the interpretability of the reasoning chain.
+  [ACL 2026][LLM Reasoning][chain-of-thought compression] This paper proposes Render-of-Thought (RoT), the first approach to render textual CoT reasoning steps as images. It leverages a pretrained visual encoder as a seman…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - chain-of-thought compression
-  - visual latent space reasoning
-  - text-to-image rendering
-  - CoT token compression
-  - self-distillation
+  - "ACL 2026"
+  - "LLM Reasoning"
+  - "chain-of-thought compression"
+  - "visual latent space reasoning"
+  - "text-to-image rendering"
+  - "CoT token compression"
+  - "self-distillation"
 date: 2026-05-08
 content_hash: 3e01baa86a642434
 ---

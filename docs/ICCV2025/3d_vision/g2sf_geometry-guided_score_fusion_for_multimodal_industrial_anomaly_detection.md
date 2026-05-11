@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] G2SF: Geometry-Guided Score Fusion for Multimodal Industrial Anomaly Detection
 description: >-
-  [ICCV 2025][3D Vision][multimodal anomaly detection] G2SF reinterprets memory-bank-based anomaly scores as isotropic Euclidean distances in a local feature space, and progressively evolves them into an anisotropic unified fusion metric by learning direction-aware scaling factors via a Local Scale Prediction Network (LSPN), achieving state-of-the-art performance on multimodal industrial anomaly detection.
+  [ICCV 2025][3D Vision][multimodal anomaly detection] G2SF reinterprets memory-bank-based anomaly scores as isotropic Euclidean distances in a local feature space…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - multimodal anomaly detection
-  - metric learning
-  - anisotropic distance
-  - industrial inspection
-  - point cloud–RGB fusion
+  - "ICCV 2025"
+  - "3D Vision"
+  - "multimodal anomaly detection"
+  - "metric learning"
+  - "anisotropic distance"
+  - "industrial inspection"
+  - "point cloud–RGB fusion"
 date: 2026-05-08
 content_hash: 67d5545ce5ecc4c9
 ---

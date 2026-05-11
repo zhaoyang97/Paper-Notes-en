@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] PHASE-Net: Physics-Grounded Harmonic Attention System for Efficient Remote Photoplethysmography Measurement
 description: >-
-  [CVPR 2026][Human Understanding][rPPG] Starting from the Navier-Stokes equations, this work derives through rigorous mathematical analysis that rPPG pulse signals obey a second-order damped harmonic oscillator model whose discrete solution is equivalent to a causal convolution operator, thereby providing a first-principles justification for the TCN architecture. The resulting PHASE-Net, with only 0.29M parameters, achieves state-of-the-art performance across multiple datasets.
+  [CVPR 2026][Human Understanding][rPPG] Starting from the Navier-Stokes equations, this work derives through rigorous mathematical analysis that rPPG pulse signals obey a second-order damped harmonic oscillator model whos…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - rPPG
-  - physics-informed network
-  - temporal convolutional network
-  - hemodynamics
-  - Navier-Stokes
-  - lightweight model
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "rPPG"
+  - "physics-informed network"
+  - "temporal convolutional network"
+  - "hemodynamics"
+  - "Navier-Stokes"
+  - "lightweight model"
 date: 2026-05-08
 content_hash: 761f5dab7d437755
 ---

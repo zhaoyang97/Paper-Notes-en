@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Show-o2: Improved Native Unified Multimodal Models
 description: >-
-  [NeurIPS 2025][Image Generation][Unified multimodal models] This paper presents Show-o2, a natively unified multimodal model built upon autoregressive modeling and Flow Matching. By constructing unified visual representations in a 3D causal VAE space via dual-path spatial(-temporal) fusion, Show-o2 supports multimodal understanding and generation across text, images, and video, with a two-stage training strategy that effectively preserves language knowledge.
+  [NeurIPS 2025][Image Generation][Unified multimodal models] This paper presents Show-o2, a natively unified multimodal model built upon autoregressive modeling and Flow Matching. By constructing unified visual representa…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Unified multimodal models
-  - autoregressive modeling
-  - Flow Matching
-  - 3D causal VAE
-  - visual understanding and generation
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Unified multimodal models"
+  - "autoregressive modeling"
+  - "Flow Matching"
+  - "3D causal VAE"
+  - "visual understanding and generation"
 date: 2026-05-08
 content_hash: 77eb2f5d1e6e94d2
 ---

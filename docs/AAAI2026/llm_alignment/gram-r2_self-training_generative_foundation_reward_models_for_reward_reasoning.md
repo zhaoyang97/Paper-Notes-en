@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GRAM-R²: Self-Training Generative Foundation Reward Models for Reward Reasoning
 description: >-
-  [AAAI 2026][LLM Alignment][Reward modeling] This paper proposes GRAM-R², a generative foundation reward model that elicits reward reasoning capabilities on unlabeled data via self-training. The model simultaneously produces preference labels and reasoning rationales, consistently outperforming both discriminative and generative baselines across multiple downstream tasks including response ranking, task adaptation, and RLHF.
+  [AAAI 2026][LLM Alignment][Reward modeling] This paper proposes GRAM-R², a generative foundation reward model that elicits reward reasoning capabilities on unlabeled data via self-training. The model simultaneously produ…
 tags:
-  - AAAI 2026
-  - LLM Alignment
-  - Reward modeling
-  - self-training
-  - generative reward
-  - preference reasoning
-  - RLHF
+  - "AAAI 2026"
+  - "LLM Alignment"
+  - "Reward modeling"
+  - "self-training"
+  - "generative reward"
+  - "preference reasoning"
+  - "RLHF"
 date: 2026-05-08
 content_hash: a08f030bd96d6fd3
 ---

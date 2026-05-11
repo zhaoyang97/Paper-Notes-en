@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DiffEye: Diffusion-Based Continuous Eye-Tracking Data Generation Conditioned on Natural Images
 description: >-
-  [NeurIPS 2025][Image Generation][Diffusion models] This paper proposes DiffEye, the first diffusion-based framework that directly utilizes raw eye-tracking data to generate continuous and diverse eye movement trajectories conditioned on natural images, while introducing Corresponding Position Embedding (CPE) to align the gaze space with the image semantic space.
+  [NeurIPS 2025][Image Generation][Diffusion models] This paper proposes DiffEye, the first diffusion-based framework that directly utilizes raw eye-tracking data to generate continuous and diverse eye movement trajectorie…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Diffusion models
-  - eye movement trajectory generation
-  - scanpath prediction
-  - visual attention modeling
-  - corresponding position embedding
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Diffusion models"
+  - "eye movement trajectory generation"
+  - "scanpath prediction"
+  - "visual attention modeling"
+  - "corresponding position embedding"
 date: 2026-05-08
 content_hash: 5f837d155592d3f4
 ---

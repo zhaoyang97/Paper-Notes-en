@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GoalLadder: Incremental Goal Discovery with Vision-Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Vision-Language Models] This paper proposes GoalLadder, a framework that leverages VLMs to incrementally discover and rank candidate goal states, employs an ELO rating system to handle noisy feedback, and defines distance-based rewards in a learned embedding space. Using only a single language instruction, the method trains RL agents to achieve approximately 95% success rate.
+  [NeurIPS 2025][Multimodal VLM][Vision-Language Models] This paper proposes GoalLadder, a framework that leverages VLMs to incrementally discover and rank candidate goal states…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Vision-Language Models
-  - Reinforcement Learning
-  - Goal Discovery
-  - ELO Rating
-  - Reward Function
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Vision-Language Models"
+  - "Reinforcement Learning"
+  - "Goal Discovery"
+  - "ELO Rating"
+  - "Reward Function"
 date: 2026-05-08
 content_hash: 7fb990a5ee0f8266
 ---

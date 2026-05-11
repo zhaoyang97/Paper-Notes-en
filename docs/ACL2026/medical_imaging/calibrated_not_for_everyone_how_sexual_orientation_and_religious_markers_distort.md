@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Calibrated? Not for Everyone: How Sexual Orientation and Religious Markers Distort LLM Accuracy and Confidence in Medical QA
 description: >-
-  [ACL 2026][Medical Imaging][Calibration Bias] This paper investigates how social identity markers (sexual orientation and religious affiliation) distort LLM accuracy and confidence calibration in medical question answering. It finds that the "homosexual" marker consistently degrades performance and induces calibration crises across 9 LLMs, and that intersectional identities produce non-additive, identity-specific harms.
+  [ACL 2026][Medical Imaging][Calibration Bias] This paper investigates how social identity markers (sexual orientation and religious affiliation) distort LLM accuracy and confidence calibration in medical question answeri…
 tags:
-  - ACL 2026
-  - Medical Imaging
-  - Calibration Bias
-  - Social Identity Markers
-  - Medical QA
-  - Uncertainty Estimation
-  - Intersectional Identity
+  - "ACL 2026"
+  - "Medical Imaging"
+  - "Calibration Bias"
+  - "Social Identity Markers"
+  - "Medical QA"
+  - "Uncertainty Estimation"
+  - "Intersectional Identity"
 date: 2026-05-08
 content_hash: 9392d665b35158b7
 ---

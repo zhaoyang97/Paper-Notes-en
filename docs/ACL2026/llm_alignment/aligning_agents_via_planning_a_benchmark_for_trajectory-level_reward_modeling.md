@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Aligning Agents via Planning: A Benchmark for Trajectory-Level Reward Modeling
 description: >-
-  [ACL 2026][LLM Alignment][Reward modeling] This paper proposes Plan-RewardBench, a trajectory-level preference benchmark targeting complex tool-augmented scenarios, designed to evaluate the ability of reward models to distinguish superior from inferior agent trajectories across multi-step planning, tool usage, and error recovery settings.
+  [ACL 2026][LLM Alignment][Reward modeling] This paper proposes Plan-RewardBench, a trajectory-level preference benchmark targeting complex tool-augmented scenarios…
 tags:
-  - ACL 2026
-  - LLM Alignment
-  - Reward modeling
-  - agent evaluation
-  - trajectory-level preference
-  - tool calling
-  - planning benchmark
+  - "ACL 2026"
+  - "LLM Alignment"
+  - "Reward modeling"
+  - "agent evaluation"
+  - "trajectory-level preference"
+  - "tool calling"
+  - "planning benchmark"
 date: 2026-05-08
 content_hash: ff4a8e3fa15e0b80
 ---

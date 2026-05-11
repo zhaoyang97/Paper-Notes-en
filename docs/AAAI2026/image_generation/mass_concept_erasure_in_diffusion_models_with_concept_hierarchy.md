@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mass Concept Erasure in Diffusion Models with Concept Hierarchy
 description: >-
-  [AAAI2026][Image Generation][Concept Erasure] This paper proposes a grouped erasure strategy based on supertype-subtype concept hierarchy and Supertype-Preserving LoRA (SuPLoRA). By freezing the down-projection matrix (orthogonal to the supertype subspace) and training only the up-projection matrix, the method achieves an optimal balance between erasure effectiveness and generation quality in large-scale, multi-domain concept erasure.
+  [AAAI2026][Image Generation][Concept Erasure] This paper proposes a grouped erasure strategy based on supertype-subtype concept hierarchy and Supertype-Preserving LoRA (SuPLoRA). By freezing the down-projection matrix (o…
 tags:
-  - AAAI2026
-  - Image Generation
-  - Concept Erasure
-  - Diffusion Models
-  - LoRA
-  - Concept Hierarchy
-  - Safe Generation
+  - "AAAI2026"
+  - "Image Generation"
+  - "Concept Erasure"
+  - "Diffusion Models"
+  - "LoRA"
+  - "Concept Hierarchy"
+  - "Safe Generation"
 date: 2026-05-08
 content_hash: dac323c0aa941093
 ---

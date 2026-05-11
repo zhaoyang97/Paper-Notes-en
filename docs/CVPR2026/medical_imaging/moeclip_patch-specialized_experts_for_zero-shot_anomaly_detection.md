@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MoECLIP: Patch-Specialized Experts for Zero-shot Anomaly Detection
 description: >-
-  [CVPR 2026][Medical Imaging][Zero-shot anomaly detection] MoECLIP introduces Mixture-of-Experts into zero-shot anomaly detection (ZSAD), achieving patch-level dynamic expert routing and specialization via Frozen Orthogonal Feature Separation (FOFS) and an Equiangular Tight Frame (ETF) loss, attaining state-of-the-art performance across 14 industrial and medical benchmarks.
+  [CVPR 2026][Medical Imaging][Zero-shot anomaly detection] MoECLIP introduces Mixture-of-Experts into zero-shot anomaly detection (ZSAD), achieving patch-level dynamic expert routing and specialization via Frozen Orthogon…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Zero-shot anomaly detection
-  - mixture of experts
-  - CLIP
-  - LoRA
-  - expert specialization
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Zero-shot anomaly detection"
+  - "mixture of experts"
+  - "CLIP"
+  - "LoRA"
+  - "expert specialization"
 date: 2026-05-08
 content_hash: ef54f1960d186356
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EvoFlows: Evolutionary Edit-Based Flow-Matching for Protein Engineering
 description: >-
-  [ICLR 2026 (Workshop on Foundation Models for Science)][Medical Imaging][Protein Engineering] EvoFlows proposes an edit-based flow matching approach that learns mutational trajectories between evolutionarily related protein sequences, enabling controllable numbers of edits (insertions, deletions, substitutions) on a template sequence while jointly predicting *what* to mutate and *where* to mutate.
+  [ICLR 2026 (Workshop on Foundation Models for Science)][Medical Imaging][Protein Engineering] EvoFlows proposes an edit-based flow matching approach that learns mutational trajectories between evolutionarily related prot…
 tags:
-  - ICLR 2026 (Workshop on Foundation Models for Science)
-  - Medical Imaging
-  - Protein Engineering
-  - Flow Matching
-  - Edit Operations
-  - Sequence-to-Sequence
-  - Evolutionary Trajectories
+  - "ICLR 2026 (Workshop on Foundation Models for Science)"
+  - "Medical Imaging"
+  - "Protein Engineering"
+  - "Flow Matching"
+  - "Edit Operations"
+  - "Sequence-to-Sequence"
+  - "Evolutionary Trajectories"
 date: 2026-05-08
 content_hash: 21e2ac4d71e453dc
 ---

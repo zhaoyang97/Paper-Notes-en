@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Outlier-Aware Post-Training Quantization for Image Super-Resolution
 description: >-
-  [ICCV 2025][Image Restoration][Post-training quantization] This paper proposes an outlier-aware post-training quantization method for image super-resolution. It introduces a dual-region piecewise linear quantizer to balance outlier preservation with normal activation fidelity, and incorporates a sensitivity-aware finetuning strategy that directs attention to quantization-sensitive layers. Under the W4A4 setting, the method substantially outperforms existing PTQ approaches and approaches QAT-level performance.
+  [ICCV 2025][Image Restoration][Post-training quantization] This paper proposes an outlier-aware post-training quantization method for image super-resolution. It introduces a dual-region piecewise linear quantizer to bala…
 tags:
-  - ICCV 2025
-  - Image Restoration
-  - Post-training quantization
-  - image super-resolution
-  - activation outliers
-  - piecewise linear quantization
-  - sensitivity-aware
+  - "ICCV 2025"
+  - "Image Restoration"
+  - "Post-training quantization"
+  - "image super-resolution"
+  - "activation outliers"
+  - "piecewise linear quantization"
+  - "sensitivity-aware"
 date: 2026-05-08
 content_hash: b60e1297bcadf01b
 ---

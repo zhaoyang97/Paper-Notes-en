@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] How Bias Binds: Measuring Hidden Associations for Bias Control in Text-to-Image Compositions
 description: >-
-  [AAAI 2026][Image Generation][Text-to-image generation] This work is the first to investigate **compositional semantic binding bias** in text-to-image generation. It proposes the Bias Adherence Score (BA-Score) to quantify how object–attribute binding activates bias, and introduces a training-free Context-Bias Control (CBC) framework that achieves over 10% debiasing improvement in compositional generation via token embedding decoupling and residual injection.
+  [AAAI 2026][Image Generation][Text-to-image generation] This work is the first to investigate **compositional semantic binding bias** in text-to-image generation. It proposes the Bias Adherence Score (BA-Score) to quanti…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Text-to-image generation
-  - bias control
-  - semantic binding
-  - compositional generation
-  - fairness
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Text-to-image generation"
+  - "bias control"
+  - "semantic binding"
+  - "compositional generation"
+  - "fairness"
 date: 2026-05-08
 content_hash: c3bf187b8a579c32
 ---

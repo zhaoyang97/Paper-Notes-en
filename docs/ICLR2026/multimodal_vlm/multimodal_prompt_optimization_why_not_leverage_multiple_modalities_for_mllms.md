@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multimodal Prompt Optimization: Why Not Leverage Multiple Modalities for MLLMs
 description: >-
-  [ICLR 2026][Multimodal VLM][Multimodal prompts] This work is the first to extend automatic prompt optimization (APO) from the pure text space to the multimodal space, proposing the MPO framework. It achieves an average accuracy of 65.1% across 10 datasets spanning image, video, and molecular modalities—surpassing the strongest text-based APO baseline ProTeGi (60.0%)—via two key components: alignment-preserving joint exploration (unified semantic gradients synchronously drive text and non-text prompt updates, diversified by Generation/Edit/Mix operators) and prior-inherited Bayesian UCB candidate selection (warm-starting child prompt Beta priors from parent prompt performance).
+  [ICLR 2026][Multimodal VLM][Multimodal prompts] This work is the first to extend automatic prompt optimization (APO) from the pure text space to the multimodal space…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Multimodal prompts
-  - automatic prompt optimization
-  - Bayesian selection
-  - MLLM
-  - cross-modal alignment
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Multimodal prompts"
+  - "automatic prompt optimization"
+  - "Bayesian selection"
+  - "MLLM"
+  - "cross-modal alignment"
 date: 2026-05-08
 content_hash: e9be98fb003c8eeb
 ---

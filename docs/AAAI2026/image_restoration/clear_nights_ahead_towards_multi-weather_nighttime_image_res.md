@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Clear Nights Ahead: Towards Multi-Weather Nighttime Image Restoration
 description: >-
-  [AAAI 2026][Image Restoration][nighttime image restoration] This paper is the first to define and explore the multi-weather nighttime image restoration task. It constructs the AllWeatherNight dataset (8K training + 1K synthetic test + 1K real-world test) and proposes the ClearNight unified framework, which simultaneously removes compound degradations—haze, rain streaks, raindrops, snow, and flare—in a single stage via Retinex dual-prior guidance and weather-aware dynamic specificity–commonality collaboration. With only 2.84M parameters, ClearNight comprehensively surpasses state-of-the-art methods.
+  [AAAI 2026][Image Restoration][nighttime image restoration] This paper is the first to define and explore the multi-weather nighttime image restoration task. It constructs the AllWeatherNight dataset (8K training + 1K sy…
 tags:
-  - AAAI 2026
-  - Image Restoration
-  - nighttime image restoration
-  - multi-weather
-  - Retinex prior
-  - dynamic MoE
-  - AllWeatherNight dataset
+  - "AAAI 2026"
+  - "Image Restoration"
+  - "nighttime image restoration"
+  - "multi-weather"
+  - "Retinex prior"
+  - "dynamic MoE"
+  - "AllWeatherNight dataset"
 date: 2026-05-08
 content_hash: 3d699e166ca39613
 ---

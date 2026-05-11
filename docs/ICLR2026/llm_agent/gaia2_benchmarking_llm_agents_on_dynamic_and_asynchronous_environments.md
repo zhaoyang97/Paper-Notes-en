@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Gaia2: Benchmarking LLM Agents on Dynamic and Asynchronous Environments
 description: >-
-  [ICLR 2026 (Oral)][LLM Agent] This paper introduces the Gaia2 benchmark for evaluating LLM agents in dynamic and asynchronous environments. It incorporates realistic scenarios including time constraints, noisy events, ambiguity resolution, and multi-agent collaboration. A write-action verifier with verifiable rewards enables direct use for RLVR training. Evaluation results show that the strongest model, GPT-5 (high), achieves only 42% pass@1.
+  [ICLR 2026 (Oral)][LLM Agent][dynamic environments] This paper introduces the Gaia2 benchmark for evaluating LLM agents in dynamic and asynchronous environments. It incorporates realistic scenarios including time constra…
 tags:
-  - ICLR 2026 (Oral)
-  - LLM Agent
-  - dynamic environments
-  - asynchronous interaction
-  - benchmark
-  - reinforcement learning
+  - "ICLR 2026 (Oral)"
+  - "LLM Agent"
+  - "dynamic environments"
+  - "asynchronous interaction"
+  - "benchmark"
+  - "reinforcement learning"
 date: 2026-05-08
 content_hash: 0fe274aab0c88911
 ---

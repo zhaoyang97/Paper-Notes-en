@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Unifying View of Coverage in Linear Off-Policy Evaluation
 description: >-
-  [ICLR 2026][Reinforcement Learning][off-policy evaluation] This paper proposes a novel coverage parameter—**feature-dynamics coverage**—and conducts a new finite-sample analysis of the classical LSTDQ algorithm through an instrumental variable lens, unifying the various fragmented coverage definitions in linear off-policy evaluation.
+  [ICLR 2026][Reinforcement Learning][off-policy evaluation] This paper proposes a novel coverage parameter—**feature-dynamics coverage**—and conducts a new finite-sample analysis of the classical LSTDQ algorithm through a…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - off-policy evaluation
-  - coverage
-  - linear function approximation
-  - LSTDQ
-  - feature-dynamics coverage
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "off-policy evaluation"
+  - "coverage"
+  - "linear function approximation"
+  - "LSTDQ"
+  - "feature-dynamics coverage"
 date: 2026-05-08
 content_hash: 0bff4c5661bee11c
 ---

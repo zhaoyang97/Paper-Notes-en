@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Compensating Distribution Drifts in Class-incremental Learning of Pre-trained Vision Transformers
 description: >-
-  [AAAI2026][Model Compression][class-incremental learning] This paper proposes Sequential Learning with Drift Compensation (SLDC), which learns latent space transformation operators (linear / weakly nonlinear) to compensate for distribution drifts induced by sequential fine-tuning of pre-trained ViTs in class-incremental learning. Combined with knowledge distillation, the approach achieves performance close to the joint-training upper bound.
+  [AAAI2026][Model Compression][class-incremental learning] This paper proposes Sequential Learning with Drift Compensation (SLDC), which learns latent space transformation operators (linear / weakly nonlinear) to compensa…
 tags:
-  - AAAI2026
-  - Model Compression
-  - class-incremental learning
-  - distribution drift
-  - vision transformer
-  - knowledge distillation
-  - sequential fine-tuning
+  - "AAAI2026"
+  - "Model Compression"
+  - "class-incremental learning"
+  - "distribution drift"
+  - "vision transformer"
+  - "knowledge distillation"
+  - "sequential fine-tuning"
 date: 2026-05-08
 content_hash: 099bf7afca6aa341
 ---

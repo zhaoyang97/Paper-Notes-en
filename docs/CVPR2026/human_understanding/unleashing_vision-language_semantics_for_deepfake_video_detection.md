@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unleashing Vision-Language Semantics for Deepfake Video Detection
 description: >-
-  [CVPR 2026][Human Understanding][Deepfake Detection] This paper proposes VLAForge, which employs a ForgePerceiver to independently learn diverse forgery cues and forgery localization maps, and integrates an identity-aware Vision-Language Alignment (VLA) scoring mechanism to unleash the cross-modal semantic potential of VLMs for enhanced deepfake video detection, achieving comprehensive state-of-the-art performance across 9 datasets.
+  [CVPR 2026][Human Understanding][Deepfake Detection] This paper proposes VLAForge, which employs a ForgePerceiver to independently learn diverse forgery cues and forgery localization maps…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Deepfake Detection
-  - Vision-Language Alignment
-  - CLIP
-  - Attention Module
-  - Identity-Aware
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Deepfake Detection"
+  - "Vision-Language Alignment"
+  - "CLIP"
+  - "Attention Module"
+  - "Identity-Aware"
 date: 2026-05-08
 content_hash: 2affe3080a9b5426
 ---

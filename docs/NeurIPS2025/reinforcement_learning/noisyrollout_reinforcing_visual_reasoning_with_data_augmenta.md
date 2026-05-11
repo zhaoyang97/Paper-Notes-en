@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] NoisyRollout: Reinforcing Visual Reasoning with Data Augmentation
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Visual Reasoning] This paper proposes NoisyRollout, a data augmentation method with zero additional training cost. During GRPO-based VLM training, it mixes rollouts from clean and moderately perturbed images to enhance policy exploration diversity. Using only 2.1K samples, it achieves state-of-the-art performance among open-source RL fine-tuned models across five out-of-domain benchmarks.
+  [NeurIPS 2025][Reinforcement Learning][Visual Reasoning] This paper proposes NoisyRollout, a data augmentation method with zero additional training cost. During GRPO-based VLM training…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Visual Reasoning
-  - Policy Exploration
-  - Data Augmentation
-  - GRPO
-  - Noise Annealing
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Visual Reasoning"
+  - "Policy Exploration"
+  - "Data Augmentation"
+  - "GRPO"
+  - "Noise Annealing"
 date: 2026-05-08
 content_hash: 98fc89d31f9adb87
 ---

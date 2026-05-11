@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Urban Incident Prediction with Graph Neural Networks: Integrating Government Ratings and Crowdsourced Reports
 description: >-
-  [AAAI 2026][Time Series][Urban incident prediction] This paper proposes URBAN, a multi-view multi-output GNN model that jointly leverages sparse but unbiased government inspection rating data and dense but biased crowdsourced report data to predict the true latent state of urban incidents. Validated on 9.6M+ reports and 1M+ inspections in New York City, the model achieves a 5.3× higher prediction correlation than using report data alone.
+  [AAAI 2026][Time Series][Urban incident prediction] This paper proposes URBAN, a multi-view multi-output GNN model that jointly leverages sparse but unbiased government inspection rating data and dense but biased crowdso…
 tags:
-  - AAAI 2026
-  - Time Series
-  - Urban incident prediction
-  - GNN
-  - crowdsourced data bias
-  - multi-view learning
-  - latent state estimation
+  - "AAAI 2026"
+  - "Time Series"
+  - "Urban incident prediction"
+  - "GNN"
+  - "crowdsourced data bias"
+  - "multi-view learning"
+  - "latent state estimation"
 date: 2026-05-08
 content_hash: 99457cad8c3bb4a2
 ---

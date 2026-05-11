@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CTCal: Rethinking Text-to-Image Diffusion Models via Cross-Timestep Self-Calibration
 description: >-
-  [CVPR 2026][Image Generation][Text-to-Image Generation] This paper proposes CTCal (Cross-Timestep Self-Calibration), which leverages reliable text-image alignments (cross-attention maps) formed at small timesteps (low noise) to calibrate representation learning at large timesteps (high noise), providing explicit cross-timestep self-supervision for text-to-image generation. CTCal comprehensively outperforms existing methods on T2I-CompBench++ and GenEval.
+  [CVPR 2026][Image Generation][Text-to-Image Generation] This paper proposes CTCal (Cross-Timestep Self-Calibration), which leverages reliable text-image alignments (cross-attention maps) formed at small timesteps (low no…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Text-to-Image Generation
-  - Diffusion Models
-  - Cross-Attention Alignment
-  - Self-Calibration
-  - Compositional Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Text-to-Image Generation"
+  - "Diffusion Models"
+  - "Cross-Attention Alignment"
+  - "Self-Calibration"
+  - "Compositional Generation"
 date: 2026-05-08
 content_hash: 55edff0ffd1e6afb
 ---

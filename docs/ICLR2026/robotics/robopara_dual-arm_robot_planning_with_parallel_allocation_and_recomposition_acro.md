@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RoboPARA: Dual-Arm Robot Planning with Parallel Allocation and Recomposition Across Tasks
 description: >-
-  [ICLR 2026][Robotics][dual-arm robot] This paper proposes RoboPARA, a two-stage framework that optimizes task parallelism for dual-arm robots via dependency graph construction and graph re-traversal scheduling, achieving 30–50% reduction in execution time and a 34% improvement in success rate over existing methods across multi-scenario benchmarks.
+  [ICLR 2026][Robotics][dual-arm robot] This paper proposes RoboPARA, a two-stage framework that optimizes task parallelism for dual-arm robots via dependency graph construction and graph re-traversal scheduling…
 tags:
-  - ICLR 2026
-  - Robotics
-  - dual-arm robot
-  - parallel task planning
-  - DAG dependency graph
-  - LLM planning
-  - multi-task scheduling
+  - "ICLR 2026"
+  - "Robotics"
+  - "dual-arm robot"
+  - "parallel task planning"
+  - "DAG dependency graph"
+  - "LLM planning"
+  - "multi-task scheduling"
 date: 2026-05-08
 content_hash: 61589d97930e1191
 ---

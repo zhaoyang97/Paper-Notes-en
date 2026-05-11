@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] OpenAnimals: Revisiting Person Re-Identification for Animals Towards Better Generalization
 description: >-
-  [Human Understanding] > This paper develops the OpenAnimals open-source framework, systematically revisiting the transferability of person re-identification methods to animal re-identification. It proposes ARBase, an animal-oriented strong baseline that substantially outperforms existing person ReID methods across multiple benchmarks.
+  [Human Understanding] > This paper develops the OpenAnimals open-source framework, systematically revisiting the transferability of person re-identification methods to animal re-identification. It proposes ARBase…
 tags:
-  - Human Understanding
+  - "Human Understanding"
 date: 2026-05-08
 content_hash: b2ee774468a6a8bd
 ---

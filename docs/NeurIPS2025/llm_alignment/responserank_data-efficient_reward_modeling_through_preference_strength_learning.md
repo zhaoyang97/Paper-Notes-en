@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ResponseRank: Data-Efficient Reward Modeling through Preference Strength Learning
 description: >-
-  [NeurIPS 2025][LLM Alignment][reward model] This paper proposes ResponseRank, a method that robustly learns utility differences by exploiting local relative differences in proxy signals of preference strength (e.g., response time and annotator agreement), significantly improving the sample efficiency of reward models.
+  [NeurIPS 2025][LLM Alignment][reward model] This paper proposes ResponseRank, a method that robustly learns utility differences by exploiting local relative differences in proxy signals of preference strength (e.g.…
 tags:
-  - NeurIPS 2025
-  - LLM Alignment
-  - reward model
-  - preference strength
-  - response ranking
-  - RLHF
-  - sample efficiency
+  - "NeurIPS 2025"
+  - "LLM Alignment"
+  - "reward model"
+  - "preference strength"
+  - "response ranking"
+  - "RLHF"
+  - "sample efficiency"
 date: 2026-05-08
 content_hash: a29996e783a5179a
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multimodal Classification via Total Correlation Maximization
 description: >-
-  [ICLR 2026][Multimodal VLM][multimodal learning] This paper analyzes modality competition in multimodal classification from an information-theoretic perspective and proposes TCMax, a loss function that maximizes the Total Correlation (TC) between multimodal features and labels. TCMax simultaneously addresses joint learning, unimodal learning, and cross-modal alignment without additional hyperparameters, surpassing state-of-the-art methods on multiple audio-visual and image-text classification benchmarks.
+  [ICLR 2026][Multimodal VLM][multimodal learning] This paper analyzes modality competition in multimodal classification from an information-theoretic perspective and proposes TCMax…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - multimodal learning
-  - modality competition
-  - total correlation
-  - information theory
-  - loss function design
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "multimodal learning"
+  - "modality competition"
+  - "total correlation"
+  - "information theory"
+  - "loss function design"
 date: 2026-05-08
 content_hash: 20550135d6f4decd
 ---

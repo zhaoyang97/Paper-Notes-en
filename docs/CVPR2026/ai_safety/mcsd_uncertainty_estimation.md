@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Monte Carlo Stochastic Depth for Uncertainty Estimation in Deep Learning
 description: >-
-  [CVPR 2026][AI Safety][Uncertainty Quantification] This paper formally connects Stochastic Depth (SD) to the Bayesian variational inference framework, proposes Monte Carlo Stochastic Depth (MCSD) as an uncertainty estimation method, and conducts the first systematic benchmark on modern detectors including YOLO and RT-DETR, demonstrating competitive performance against MC Dropout in terms of calibration and uncertainty ranking.
+  [CVPR 2026][AI Safety][Uncertainty Quantification] This paper formally connects Stochastic Depth (SD) to the Bayesian variational inference framework…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Uncertainty Quantification
-  - Stochastic Depth
-  - Bayesian Inference
-  - Object Detection
-  - Monte Carlo
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Uncertainty Quantification"
+  - "Stochastic Depth"
+  - "Bayesian Inference"
+  - "Object Detection"
+  - "Monte Carlo"
 date: 2026-05-08
 content_hash: b35c1c81d3e83b0e
 ---

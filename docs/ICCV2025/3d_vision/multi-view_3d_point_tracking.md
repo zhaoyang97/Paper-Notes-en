@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multi-View 3D Point Tracking
 description: >-
-  [ICCV 2025][3D Vision][multi-view 3D point tracking] This paper presents MVTracker—the first data-driven multi-view 3D point tracker. By back-projecting multi-view depth maps into a unified 3D feature point cloud and leveraging kNN association with Transformer-based iterative refinement, MVTracker achieves robust long-range 3D point trajectory estimation under a practical 4-camera configuration, attaining median trajectory errors of 3.1 cm and 2.0 cm on Panoptic Studio and DexYCB, respectively.
+  [ICCV 2025][3D Vision][multi-view 3D point tracking] This paper presents MVTracker—the first data-driven multi-view 3D point tracker. By back-projecting multi-view depth maps into a unified 3D feature point cloud and lev…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - multi-view 3D point tracking
-  - point cloud feature fusion
-  - kNN association
-  - Transformer iterative refinement
-  - occlusion handling
+  - "ICCV 2025"
+  - "3D Vision"
+  - "multi-view 3D point tracking"
+  - "point cloud feature fusion"
+  - "kNN association"
+  - "Transformer iterative refinement"
+  - "occlusion handling"
 date: 2026-05-08
 content_hash: f314cf40466abcda
 ---

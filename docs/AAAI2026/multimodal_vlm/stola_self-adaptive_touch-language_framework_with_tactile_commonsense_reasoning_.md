@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SToLa: Self-Adaptive Touch-Language Framework with Tactile Commonsense Reasoning in Open-Ended Scenarios
 description: >-
-  [AAAI 2026][Multimodal VLM][Tactile perception] SToLa proposes the first Mixture-of-Experts (MoE)-based touch-language framework, which employs a dynamic routing mechanism to manage the modality gap between tactile and linguistic inputs. The work also introduces TactileBench, an open-ended tactile commonsense reasoning dataset covering 8 physical properties and 4 interaction characteristics. With only 7B parameters, SToLa achieves state-of-the-art performance on the PhysiCLeAR benchmark, surpassing the 13B Octopi model.
+  [AAAI 2026][Multimodal VLM][Tactile perception] SToLa proposes the first Mixture-of-Experts (MoE)-based touch-language framework, which employs a dynamic routing mechanism to manage the modality gap between tactile and l…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Tactile perception
-  - multimodal reasoning
-  - mixture of experts
-  - touch-language model
-  - commonsense reasoning
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Tactile perception"
+  - "multimodal reasoning"
+  - "mixture of experts"
+  - "touch-language model"
+  - "commonsense reasoning"
 date: 2026-05-08
 content_hash: cdb22f0509421551
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] SlideAgent: Hierarchical Agentic Framework for Multi-Page Visual Document Understanding
 description: >-
-  [ACL 2026][multi-page document understanding] This paper proposes SlideAgent, a hierarchical agentic framework that constructs structured knowledge representations via three dedicated agents operating at the global, page, and element levels, achieving significant improvements in fine-grained understanding of multi-page visual documents, particularly presentation slides.
+  [ACL 2026][Information Retrieval & RAG][multi-page document understanding] This paper proposes SlideAgent, a hierarchical agentic framework that constructs structured knowledge representations via three dedicated agents…
 tags:
-  - ACL 2026
-  - multi-page document understanding
-  - hierarchical agents
-  - visual document QA
-  - slide comprehension
-  - element-level reasoning
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "multi-page document understanding"
+  - "hierarchical agents"
+  - "visual document QA"
+  - "slide comprehension"
+  - "element-level reasoning"
 date: 2026-05-08
 content_hash: 3b83544b46cd2fc6
 ---

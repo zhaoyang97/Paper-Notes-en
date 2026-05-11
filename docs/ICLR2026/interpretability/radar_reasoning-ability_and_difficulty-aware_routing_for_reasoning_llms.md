@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] RADAR: Reasoning-Ability and Difficulty-Aware Routing for Reasoning LLMs
 description: >-
-  [ICLR 2026][Reasoning Language Models] This paper proposes RADAR, a framework that formulates adaptive inference for reasoning language models (RLMs) as a multi-objective optimization problem. It leverages Item Response Theory (IRT) to jointly estimate interpretable query difficulty and model configuration ability parameters, enabling lightweight and scalable query-level routing. RADAR outperforms state-of-the-art routing methods on 8 reasoning benchmarks while adding only approximately 7ms of latency.
+  [ICLR 2026][Interpretability][Reasoning Language Models] This paper proposes RADAR, a framework that formulates adaptive inference for reasoning language models (RLMs) as a multi-objective optimization problem. It levera…
 tags:
-  - ICLR 2026
-  - Reasoning Language Models
-  - Model Routing
-  - Item Response Theory
-  - Multi-Objective Optimization
-  - Adaptive Inference
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Reasoning Language Models"
+  - "Model Routing"
+  - "Item Response Theory"
+  - "Multi-Objective Optimization"
+  - "Adaptive Inference"
 date: 2026-05-08
 content_hash: 087e4f7f988bb35e
 ---

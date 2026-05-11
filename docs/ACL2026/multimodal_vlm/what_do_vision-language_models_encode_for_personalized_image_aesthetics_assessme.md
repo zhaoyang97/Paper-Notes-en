@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] What Do Vision-Language Models Encode for Personalized Image Aesthetics Assessment?
 description: >-
-  [ACL 2026][Multimodal VLM][Personalized Aesthetics Assessment] Through linear probing, this paper demonstrates that VLM hidden representations encode rich, multi-level aesthetic attribute information (illumination, color, composition, etc.) that propagates into language decoder layers. Building on this finding, the authors propose a simple linear regression approach for personalized image aesthetics assessment (PIAA) that requires no fine-tuning, significantly outperforming few-shot and LoRA fine-tuning baselines.
+  [ACL 2026][Multimodal VLM][Personalized Aesthetics Assessment] Through linear probing, this paper demonstrates that VLM hidden representations encode rich, multi-level aesthetic attribute information (illumination, color…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Personalized Aesthetics Assessment
-  - Vision-Language Models
-  - Linear Probing
-  - Hidden Representations
-  - Image Aesthetics
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Personalized Aesthetics Assessment"
+  - "Vision-Language Models"
+  - "Linear Probing"
+  - "Hidden Representations"
+  - "Image Aesthetics"
 date: 2026-05-08
 content_hash: c60de1539535ca88
 ---

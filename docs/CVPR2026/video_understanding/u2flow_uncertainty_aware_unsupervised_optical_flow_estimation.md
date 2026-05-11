@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] U2Flow: Uncertainty-Aware Unsupervised Optical Flow Estimation
 description: >-
-  [CVPR 2026][Video Understanding][Optical Flow Estimation] U2Flow is the first recurrent unsupervised framework that jointly estimates optical flow and per-pixel uncertainty. Through augmentation-consistency-based decoupled uncertainty learning and uncertainty-guided bidirectional flow fusion, it achieves unsupervised state-of-the-art performance on KITTI and Sintel.
+  [CVPR 2026][Video Understanding][Optical Flow Estimation] U2Flow is the first recurrent unsupervised framework that jointly estimates optical flow and per-pixel uncertainty. Through augmentation-consistency-based decoupl…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Optical Flow Estimation
-  - Uncertainty Estimation
-  - Unsupervised Learning
-  - Recurrent Networks
-  - Augmentation Consistency
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Optical Flow Estimation"
+  - "Uncertainty Estimation"
+  - "Unsupervised Learning"
+  - "Recurrent Networks"
+  - "Augmentation Consistency"
 date: 2026-05-08
 content_hash: 115e511d2898825a
 ---

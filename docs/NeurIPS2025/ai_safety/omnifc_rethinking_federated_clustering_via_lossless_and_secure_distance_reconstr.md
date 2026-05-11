@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OmniFC: Rethinking Federated Clustering via Lossless and Secure Distance Reconstruction
 description: >-
-  [NeurIPS 2025][AI Safety][Federated Clustering] OmniFC is proposed as a model-agnostic federated clustering framework that exactly reconstructs the global pairwise distance matrix over a finite field via Lagrange coded computing, enabling any centralized clustering method (K-Means / Spectral Clustering / DBSCAN / Hierarchical Clustering, etc.) to run directly on the reconstructed matrix. The framework requires only a single communication round, is inherently robust to Non-IID data, and comprehensively outperforms specialized methods such as k-FED, MUFC, and FedSC across 7 datasets.
+  [NeurIPS 2025][AI Safety][Federated Clustering] OmniFC is proposed as a model-agnostic federated clustering framework that exactly reconstructs the global pairwise distance matrix over a finite field via Lagrange coded c…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - Federated Clustering
-  - Lagrange Coded Computing
-  - Distance Matrix Reconstruction
-  - Lossless Aggregation
-  - Secure Computation
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "Federated Clustering"
+  - "Lagrange Coded Computing"
+  - "Distance Matrix Reconstruction"
+  - "Lossless Aggregation"
+  - "Secure Computation"
 date: 2026-05-08
 content_hash: c9ee33b536f63c14
 ---

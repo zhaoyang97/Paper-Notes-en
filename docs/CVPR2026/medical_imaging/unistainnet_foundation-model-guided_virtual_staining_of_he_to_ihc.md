@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UNIStainNet: Foundation-Model-Guided Virtual Staining of H&E to IHC
 description: >-
-  [CVPR 2026 &nbsp;][Medical Imaging][Virtual staining] UNIStainNet is proposed as the first method to inject dense spatial tokens from the frozen pathology foundation model UNI directly into a generator as SPADE modulation signals. Combined with misalignment-aware losses and learnable stain embeddings, a single unified model simultaneously generates four IHC stains (HER2/Ki67/ER/PR), achieving state-of-the-art distributional metrics on the MIST and BCI benchmarks.
+  [CVPR 2026 &nbsp;][Medical Imaging][Virtual staining] UNIStainNet is proposed as the first method to inject dense spatial tokens from the frozen pathology foundation model UNI directly into a generator as SPADE modulatio…
 tags:
   - "CVPR 2026 &nbsp;"
-  - Medical Imaging
-  - Virtual staining
+  - "Medical Imaging"
+  - "Virtual staining"
   - "H&E to IHC"
-  - SPADE-UNet
-  - pathology foundation model
-  - unified multi-stain model
+  - "SPADE-UNet"
+  - "pathology foundation model"
+  - "unified multi-stain model"
 date: 2026-05-08
 content_hash: 05840c252161040c
 ---

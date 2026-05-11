@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] I-CAM-UV: Integrating Causal Graphs over Non-Identical Variable Sets Using Causal Additive Models with Unobserved Variables
 description: >-
-  [AAAI 2026][Causal Inference][causal discovery] This paper proposes I-CAM-UV, a method that enumerates consistent DAGs satisfying structural constraints derived from multiple CAM-UV outputs over non-identical variable sets, recovering causal relations lost due to unobserved variables, and introduces an optimal-first search algorithm exploiting cost monotonicity for efficient combinatorial search.
+  [AAAI 2026][Causal Inference][causal discovery] This paper proposes I-CAM-UV, a method that enumerates consistent DAGs satisfying structural constraints derived from multiple CAM-UV outputs over non-identical variable se…
 tags:
-  - AAAI 2026
-  - Causal Inference
-  - causal discovery
-  - causal additive model
-  - unobserved variables
-  - non-identical variable sets
-  - graph integration
-  - combinatorial search
+  - "AAAI 2026"
+  - "Causal Inference"
+  - "causal discovery"
+  - "causal additive model"
+  - "unobserved variables"
+  - "non-identical variable sets"
+  - "graph integration"
+  - "combinatorial search"
 date: 2026-05-08
 content_hash: 8723b93859323027
 ---

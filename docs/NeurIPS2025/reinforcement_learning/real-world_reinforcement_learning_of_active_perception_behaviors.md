@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Real-World Reinforcement Learning of Active Perception Behaviors
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Active Perception] This paper proposes Asymmetric Advantage-Weighted Regression (AAWR), which leverages additional privileged sensors during training to estimate more accurate advantage functions, enabling efficient learning of active perception policies in the real world. AAWR outperforms all baselines across 8 manipulation tasks spanning varying degrees of partial observability.
+  [NeurIPS 2025][Reinforcement Learning][Active Perception] This paper proposes Asymmetric Advantage-Weighted Regression (AAWR), which leverages additional privileged sensors during training to estimate more accurate advan…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Active Perception
-  - Asymmetric Reinforcement Learning
-  - Privileged Information
-  - POMDP
-  - Real-Robot
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Active Perception"
+  - "Asymmetric Reinforcement Learning"
+  - "Privileged Information"
+  - "POMDP"
+  - "Real-Robot"
 date: 2026-05-08
 content_hash: 87cac570e8addb40
 ---

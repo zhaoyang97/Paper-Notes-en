@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] When Stability Fails: Hidden Failure Modes of LLMs in Data-Constrained Scientific Decision-Making
 description: >-
-  [ICLR 2026][LLM/NLP][LLM reliability] Through a controlled behavioral evaluation framework, this paper identifies four hidden failure modes of LLMs in data-constrained scientific decision-making tasks: high stability ≠ correctness, prompt-wording sensitivity, over-selection under relaxed thresholds, and hallucination of invalid identifiers.
+  [ICLR 2026][LLM/NLP][LLM reliability] Through a controlled behavioral evaluation framework, this paper identifies four hidden failure modes of LLMs in data-constrained scientific decision-making tasks: high stability ≠ c…
 tags:
-  - ICLR 2026
-  - LLM/NLP
-  - LLM reliability
-  - stability vs. correctness
-  - prompt sensitivity
-  - scientific decision-making
-  - gene prioritization
+  - "ICLR 2026"
+  - "LLM/NLP"
+  - "LLM reliability"
+  - "stability vs. correctness"
+  - "prompt sensitivity"
+  - "scientific decision-making"
+  - "gene prioritization"
 date: 2026-05-08
 content_hash: e9b152a7ceb939ca
 ---

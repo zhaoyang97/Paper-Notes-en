@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MesaTask: Towards Task-Driven Tabletop Scene Generation via 3D Spatial Reasoning
 description: >-
-  [NeurIPS 2025][Robotics][Tabletop scene generation] This paper proposes the MesaTask framework, which decomposes task descriptions into a Spatial Reasoning Chain — object reasoning → spatial relationship reasoning → scene graph construction → 3D layout — and combines a 10K+ manually annotated dataset with DPO optimization to generate physically plausible, task-aligned tabletop manipulation scenes.
+  [NeurIPS 2025][Robotics][Tabletop scene generation] This paper proposes the MesaTask framework, which decomposes task descriptions into a Spatial Reasoning Chain — object reasoning → spatial relationship reasoning → scen…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - Tabletop scene generation
-  - spatial reasoning chain
-  - LLM scene generation
-  - DPO
-  - robotic manipulation
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "Tabletop scene generation"
+  - "spatial reasoning chain"
+  - "LLM scene generation"
+  - "DPO"
+  - "robotic manipulation"
 date: 2026-05-08
 content_hash: c3695f4605ac1cfa
 ---

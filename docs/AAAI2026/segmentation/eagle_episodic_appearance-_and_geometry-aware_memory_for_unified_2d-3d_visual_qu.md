@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EAGLE: Episodic Appearance- and Geometry-Aware Memory for Unified 2D-3D Visual Query Localization
 description: >-
-  [AAAI 2026][Segmentation][Egocentric vision] This paper proposes the EAGLE framework, inspired by avian memory consolidation mechanisms. A segmentation branch guided by an Appearance-aware Meta-learning Memory (AMM) and a tracking branch driven by a Geometry-aware Localization Memory (GLM) operate collaboratively. Combined with VGGT, the framework achieves efficient unified 2D-3D visual query localization, attaining state-of-the-art performance on the Ego4D-VQ benchmark.
+  [AAAI 2026][Segmentation][Egocentric vision] This paper proposes the EAGLE framework, inspired by avian memory consolidation mechanisms. A segmentation branch guided by an Appearance-aware Meta-learning Memory (AMM) and…
 tags:
-  - AAAI 2026
-  - Segmentation
-  - Egocentric vision
-  - visual query localization
-  - episodic memory
-  - meta-learning segmentation
-  - unified 2D-3D
+  - "AAAI 2026"
+  - "Segmentation"
+  - "Egocentric vision"
+  - "visual query localization"
+  - "episodic memory"
+  - "meta-learning segmentation"
+  - "unified 2D-3D"
 date: 2026-05-08
 content_hash: dc1d90cff31ce629
 ---

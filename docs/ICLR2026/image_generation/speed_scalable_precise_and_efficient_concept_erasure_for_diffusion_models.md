@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SPEED: Scalable, Precise, and Efficient Concept Erasure for Diffusion Models
 description: >-
-  [ICLR 2026][Image Generation][Concept Erasure] SPEED proposes a closed-form model editing method based on null space constraints, refining the preservation set through three complementary techniques—Influence-based Prior Filtering (IPF), Directional Prior Augmentation (DPA), and Invariance Equality Constraint (IEC)—to achieve scalable (erasing 100 concepts within 5 seconds), precise (zero semantic loss on non-target concepts), and efficient concept erasure.
+  [ICLR 2026][Image Generation][Concept Erasure] SPEED proposes a closed-form model editing method based on null space constraints, refining the preservation set through three complementary techniques—Influence-based Prior…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Concept Erasure
-  - Null Space Constraint
-  - Model Editing
-  - Prior Preservation
-  - Multi-Concept Erasure
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Concept Erasure"
+  - "Null Space Constraint"
+  - "Model Editing"
+  - "Prior Preservation"
+  - "Multi-Concept Erasure"
 date: 2026-05-08
 content_hash: dd9c250903bad39f
 ---

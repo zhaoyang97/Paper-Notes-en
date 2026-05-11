@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UKBOB: One Billion MRI Labeled Masks for Generalizable 3D Medical Image Segmentation
 description: >-
-  [ICCV 2025][Medical Imaging][Medical image segmentation] This paper introduces UKBOB—the largest annotated medical image segmentation dataset to date (51,761 MRI 3D volumes, 72 organ classes, 1.37 billion 2D segmentation masks)—and proposes a Specialized Organ Label Filter (SOLF) for cleaning automated annotations and an Entropy Test-Time Adaptation (ETTA) method for handling domain shift under noisy labels. The resulting Swin-BOB foundation model achieves state-of-the-art performance on the BRATS and BTCV benchmarks.
+  [ICCV 2025][Medical Imaging][Medical image segmentation] This paper introduces UKBOB—the largest annotated medical image segmentation dataset to date (51,761 MRI 3D volumes, 72 organ classes…
 tags:
-  - ICCV 2025
-  - Medical Imaging
-  - Medical image segmentation
-  - UK Biobank
-  - large-scale dataset
-  - automated annotation quality control
-  - test-time adaptation
+  - "ICCV 2025"
+  - "Medical Imaging"
+  - "Medical image segmentation"
+  - "UK Biobank"
+  - "large-scale dataset"
+  - "automated annotation quality control"
+  - "test-time adaptation"
 date: 2026-05-08
 content_hash: 74d52aad105bb865
 ---

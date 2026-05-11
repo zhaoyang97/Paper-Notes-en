@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] scSplit: Bringing Severity Cognizance to Image Decomposition in Fluorescence Microscopy
 description: >-
-  [NEURIPS2025][Image Restoration][fluorescence microscopy] This paper proposes scSplit, which introduces a severity-cognizant input normalization module (SCIN) and a regression network (Reg) to endow an InDI-based iterative image decomposition framework with awareness of the mixing severity of two overlapping structures in fluorescence microscopy images. The method unifies image splitting and bleedthrough removal across five public datasets under a single framework.
+  [NEURIPS2025][Image Restoration][fluorescence microscopy] This paper proposes scSplit, which introduces a severity-cognizant input normalization module (SCIN) and a regression network (Reg) to endow an InDI-based iterati…
 tags:
-  - NEURIPS2025
-  - Image Restoration
-  - fluorescence microscopy
-  - image decomposition
-  - severity cognizance
-  - mixing ratio
-  - bleedthrough removal
+  - "NEURIPS2025"
+  - "Image Restoration"
+  - "fluorescence microscopy"
+  - "image decomposition"
+  - "severity cognizance"
+  - "mixing ratio"
+  - "bleedthrough removal"
 date: 2026-05-08
 content_hash: 751e7651762090a8
 ---

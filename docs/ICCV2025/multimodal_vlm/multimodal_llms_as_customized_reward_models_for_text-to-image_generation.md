@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multimodal LLMs as Customized Reward Models for Text-to-Image Generation
 description: >-
-  [ICCV2025][Multimodal VLM][reward model] This paper proposes LLaVA-Reward, which leverages the hidden states (rather than text generation outputs) of a pretrained MLLM to directly predict reward scores. A Skip-connection Cross Attention (SkipCA) module is introduced to enhance bidirectional visual-text interaction, and LoRA adapters are employed to handle different evaluation dimensions. The method achieves state-of-the-art performance on text-image alignment, fidelity, and safety evaluation, and can be applied to inference-time scaling for diffusion models.
+  [ICCV2025][Multimodal VLM][reward model] This paper proposes LLaVA-Reward, which leverages the hidden states (rather than text generation outputs) of a pretrained MLLM to directly predict reward scores. A Skip-connection…
 tags:
-  - ICCV2025
-  - Multimodal VLM
-  - reward model
-  - text-to-image generation
-  - multimodal evaluation
-  - preference learning
-  - inference-time scaling
+  - "ICCV2025"
+  - "Multimodal VLM"
+  - "reward model"
+  - "text-to-image generation"
+  - "multimodal evaluation"
+  - "preference learning"
+  - "inference-time scaling"
 date: 2026-05-08
 content_hash: 4b8cbd73aa6c3a43
 ---

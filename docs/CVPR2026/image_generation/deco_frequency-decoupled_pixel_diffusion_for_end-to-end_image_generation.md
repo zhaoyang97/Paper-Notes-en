@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DeCo: Frequency-Decoupled Pixel Diffusion for End-to-End Image Generation
 description: >-
-  [CVPR 2026][Image Generation][Pixel diffusion] DeCo proposes a frequency-decoupled pixel diffusion framework that delegates high-frequency detail synthesis to a lightweight pixel decoder while allowing the DiT to focus on low-frequency semantic modeling. Combined with a frequency-aware flow matching loss, it achieves FID 1.62 (256×256) and 2.22 (512×512) on ImageNet, substantially narrowing the gap between pixel diffusion and latent diffusion models.
+  [CVPR 2026][Image Generation][Pixel diffusion] DeCo proposes a frequency-decoupled pixel diffusion framework that delegates high-frequency detail synthesis to a lightweight pixel decoder while allowing the DiT to focus o…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Pixel diffusion
-  - frequency decoupling
-  - end-to-end generation
-  - Diffusion Transformer
-  - frequency-aware loss
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Pixel diffusion"
+  - "frequency decoupling"
+  - "end-to-end generation"
+  - "Diffusion Transformer"
+  - "frequency-aware loss"
 date: 2026-05-08
 content_hash: e03cf95daa6f1812
 ---

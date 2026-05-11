@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SplatSSC: Decoupled Depth-Guided Gaussian Splatting for Semantic Scene Completion
 description: >-
-  [AAAI 2026][3D Vision][Semantic Scene Completion] SplatSSC is proposed as a monocular 3D semantic scene completion framework based on depth-guided initialization and a Decoupled Gaussian Aggregator (DGA). Through compact Gaussian primitive initialization and robust geometry-semantics decoupled aggregation, it achieves state-of-the-art performance on Occ-ScanNet with significantly fewer primitives.
+  [AAAI 2026][3D Vision][Semantic Scene Completion] SplatSSC is proposed as a monocular 3D semantic scene completion framework based on depth-guided initialization and a Decoupled Gaussian Aggregator (DGA). Through compact…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - Semantic Scene Completion
-  - 3D Gaussian Splatting
-  - Depth Guidance
-  - Decoupled Aggregation
-  - Object-Centric Representation
+  - "AAAI 2026"
+  - "3D Vision"
+  - "Semantic Scene Completion"
+  - "3D Gaussian Splatting"
+  - "Depth Guidance"
+  - "Decoupled Aggregation"
+  - "Object-Centric Representation"
 date: 2026-05-08
 content_hash: db5e5c0a8951d62c
 ---

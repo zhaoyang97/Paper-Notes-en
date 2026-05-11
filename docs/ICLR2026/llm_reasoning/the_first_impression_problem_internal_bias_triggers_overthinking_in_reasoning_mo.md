@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The First Impression Problem: Internal Bias Triggers Overthinking in Reasoning Models
 description: >-
-  [ICLR 2026 (Poster)][LLM Reasoning][Overthinking] Reasoning models form a "first impression" (internal bias) about the answer the moment they receive a question. When this intuitive guess conflicts with the subsequent systematic reasoning process, the model repeatedly second-guesses itself and re-examines its work, causing reasoning length to inflate by 21%–43%. Critically, none of the existing mitigation methods can fundamentally eliminate this effect.
+  [ICLR 2026 (Poster)][LLM Reasoning][Overthinking] Reasoning models form a "first impression" (internal bias) about the answer the moment they receive a question. When this intuitive guess conflicts with the subsequent sy…
 tags:
-  - ICLR 2026 (Poster)
-  - LLM Reasoning
-  - Overthinking
-  - Internal Bias
-  - Reasoning Models
-  - Causal Intervention
-  - Attention Mechanism
+  - "ICLR 2026 (Poster)"
+  - "LLM Reasoning"
+  - "Overthinking"
+  - "Internal Bias"
+  - "Reasoning Models"
+  - "Causal Intervention"
+  - "Attention Mechanism"
 date: 2026-05-08
 content_hash: 75e017394b7b72d0
 ---

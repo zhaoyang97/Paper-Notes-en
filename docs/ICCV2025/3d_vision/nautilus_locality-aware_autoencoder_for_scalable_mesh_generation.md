@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Nautilus: Locality-aware Autoencoder for Scalable Mesh Generation
 description: >-
-  [ICCV2025][3D Vision][mesh generation] Nautilus proposes a locality-aware autoencoder for scalable artist-like mesh generation. By introducing a nautilus-shell-structured mesh tokenization algorithm that reduces sequence length to 1/4 of the naive baseline, and combining it with a dual-stream point cloud conditioner to improve local structural fidelity, Nautilus achieves for the first time direct high-quality mesh generation with up to 5,000 faces.
+  [ICCV2025][3D Vision][mesh generation] Nautilus proposes a locality-aware autoencoder for scalable artist-like mesh generation. By introducing a nautilus-shell-structured mesh tokenization algorithm that reduces sequence…
 tags:
-  - ICCV2025
-  - 3D Vision
-  - mesh generation
-  - autoregressive
-  - tokenization
-  - locality-aware
-  - point cloud conditioning
+  - "ICCV2025"
+  - "3D Vision"
+  - "mesh generation"
+  - "autoregressive"
+  - "tokenization"
+  - "locality-aware"
+  - "point cloud conditioning"
 date: 2026-05-08
 content_hash: 288b3f077e4d242d
 ---

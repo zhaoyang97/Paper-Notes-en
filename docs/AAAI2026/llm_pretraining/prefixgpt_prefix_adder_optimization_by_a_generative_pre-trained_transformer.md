@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PrefixGPT: Prefix Adder Optimization by a Generative Pre-trained Transformer
 description: >-
-  [AAAI 2026][LLM Pretraining][prefix adder optimization] PrefixGPT frames prefix adder optimization as a sequence generation problem. A customized GPT model is pretrained to learn design rules, then fine-tuned via RL to generate optimized designs, achieving state-of-the-art area-delay product (ADP) with robustness to initialization.
+  [AAAI 2026][LLM Pretraining][prefix adder optimization] PrefixGPT frames prefix adder optimization as a sequence generation problem. A customized GPT model is pretrained to learn design rules…
 tags:
-  - AAAI 2026
-  - LLM Pretraining
-  - prefix adder optimization
-  - GPT generative model
-  - hardware design automation
-  - reinforcement learning fine-tuning
-  - legality mask
+  - "AAAI 2026"
+  - "LLM Pretraining"
+  - "prefix adder optimization"
+  - "GPT generative model"
+  - "hardware design automation"
+  - "reinforcement learning fine-tuning"
+  - "legality mask"
 date: 2026-05-08
 content_hash: 69ee5a644a07fae6
 ---

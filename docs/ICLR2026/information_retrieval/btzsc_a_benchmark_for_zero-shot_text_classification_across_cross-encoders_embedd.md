@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] BTZSC: A Benchmark for Zero-Shot Text Classification Across Cross-Encoders, Embedding Models, Rerankers and LLMs
 description: >-
-  [ICLR2026][zero-shot classification] This paper proposes BTZSC, a benchmark comprising 22 datasets, which for the first time systematically compares four model families — NLI cross-encoders, embedding models, rerankers, and instruction-tuned LLMs (38 models in total) — under a unified zero-shot protocol. Qwen3-Reranker-8B achieves a new SOTA with macro F1 = 0.72, while embedding models demonstrate the best accuracy–latency trade-off.
+  [ICLR2026][Information Retrieval & RAG][zero-shot classification] This paper proposes BTZSC, a benchmark comprising 22 datasets, which for the first time systematically compares four model families — NLI cross-encoders…
 tags:
-  - ICLR2026
-  - zero-shot classification
-  - benchmark
-  - reranker
-  - embedding model
-  - NLI
+  - "ICLR2026"
+  - "Information Retrieval & RAG"
+  - "zero-shot classification"
+  - "benchmark"
+  - "reranker"
+  - "embedding model"
+  - "NLI"
 date: 2026-05-08
 content_hash: 6f142d10a53021f6
 ---

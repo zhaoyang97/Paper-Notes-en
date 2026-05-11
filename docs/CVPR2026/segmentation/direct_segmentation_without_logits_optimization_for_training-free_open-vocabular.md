@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Direct Segmentation without Logits Optimization for Training-Free Open-Vocabulary Semantic Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Open-vocabulary semantic segmentation] This paper proposes an open-vocabulary semantic segmentation method that bypasses the logits optimization process entirely. Based on the assumption that homogeneous regions exhibit consistent distributional discrepancies from their logits to a degenerate distribution, the method directly constructs segmentation maps via either the optimal transport path or the analytical solution of maximum transport velocity. The approach achieves state-of-the-art performance on 8 benchmarks without requiring training or model-specific modulation.
+  [CVPR 2026][Segmentation][Open-vocabulary semantic segmentation] This paper proposes an open-vocabulary semantic segmentation method that bypasses the logits optimization process entirely. Based on the assumption that ho…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Open-vocabulary semantic segmentation
-  - training-free
-  - distributional discrepancy
-  - optimal transport
-  - Markov process
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Open-vocabulary semantic segmentation"
+  - "training-free"
+  - "distributional discrepancy"
+  - "optimal transport"
+  - "Markov process"
 date: 2026-05-08
 content_hash: 484f1a9cf8335ab5
 ---

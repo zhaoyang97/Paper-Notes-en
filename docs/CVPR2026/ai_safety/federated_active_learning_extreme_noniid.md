@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Federated Active Learning Under Extreme Non-IID and Global Class Imbalance
 description: >-
-  [CVPR 2026][AI Safety][Federated Learning] This paper systematically analyzes the impact of global class imbalance and client heterogeneity on query model selection in federated active learning (FAL), derives three core Observations, and proposes FairFAL—a class-fair FAL framework featuring adaptive query model selection, prototype-guided pseudo-labeling, and two-stage uncertainty-diversity balanced sampling—consistently outperforming all baselines across five benchmark datasets.
+  [CVPR 2026][AI Safety][Federated Learning] This paper systematically analyzes the impact of global class imbalance and client heterogeneity on query model selection in federated active learning (FAL)…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Federated Learning
-  - Active Learning
-  - non-IID
-  - Class Imbalance
-  - Query Selection
-  - Class-Fair Sampling
-  - Prototype-Guided
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Federated Learning"
+  - "Active Learning"
+  - "non-IID"
+  - "Class Imbalance"
+  - "Query Selection"
+  - "Class-Fair Sampling"
+  - "Prototype-Guided"
 date: 2026-05-08
 content_hash: f70f321c0e1b7f53
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Gradient Variance Reveals Failure Modes in Flow-Based Generative Models
 description: >-
-  [NeurIPS 2025][Image Generation][Rectified Flow] By analyzing the gradient variance of the CFM loss, this paper demonstrates that Rectified Flow inevitably memorizes training pairs under deterministic interpolation rather than learning an optimal transport map, and proves that introducing stochasticity (stochastic interpolants) breaks this memorization channel and restores generalization.
+  [NeurIPS 2025][Image Generation][Rectified Flow] By analyzing the gradient variance of the CFM loss, this paper demonstrates that Rectified Flow inevitably memorizes training pairs under deterministic interpolation rathe…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Rectified Flow
-  - Gradient Variance
-  - Memorization
-  - Optimal Transport
-  - Stochastic Interpolant
-  - Conditional Flow Matching
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Rectified Flow"
+  - "Gradient Variance"
+  - "Memorization"
+  - "Optimal Transport"
+  - "Stochastic Interpolant"
+  - "Conditional Flow Matching"
 date: 2026-05-08
 content_hash: 70c96bcd416c620e
 ---

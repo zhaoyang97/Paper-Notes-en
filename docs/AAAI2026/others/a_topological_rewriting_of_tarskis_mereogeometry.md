@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Topological Rewriting of Tarski's Mereogeometry
 description: >-
-  [AAAI 2026][Tarski Geometry] This work extends the λ-MM library within the Coq theorem prover to recast Tarski's solid geometry—grounded in Leśniewski's mereology—into a fully formalized system with a complete topological structure. It proves that mereological classes correspond to regular open sets, satisfy Kuratowski's interior axioms, and exhibit the Hausdorff (T2) separation property, thereby providing a unified mereological–geometric–topological theoretical framework for qualitative spatial reasoning.
+  [AAAI 2026][Tarski Geometry] This work extends the λ-MM library within the Coq theorem prover to recast Tarski's solid geometry—grounded in Leśniewski's mereology—into a fully formalized system with a complete topologica…
 tags:
-  - AAAI 2026
-  - Tarski Geometry
-  - Mereology
-  - Topological Space
-  - Coq Theorem Proving
-  - Regular Open Sets
-  - Qualitative Spatial Reasoning
+  - "AAAI 2026"
+  - "Tarski Geometry"
+  - "Mereology"
+  - "Topological Space"
+  - "Coq Theorem Proving"
+  - "Regular Open Sets"
+  - "Qualitative Spatial Reasoning"
 date: 2026-05-08
 content_hash: f51a342613ca2249
 ---

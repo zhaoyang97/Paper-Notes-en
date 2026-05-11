@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SD-PSFNet: Sequential and Dynamic Point Spread Function Network for Image Deraining
 description: >-
-  [AAAI 2026][Image Restoration][image deraining] SD-PSFNet is a cascaded CNN-based deraining network driven by a dynamic PSF mechanism. It models the optical effects of raindrops via a multi-scale learnable PSF dictionary, combined with a sequential restoration architecture featuring adaptive gated fusion. The method achieves SOTA performance of 33.12 dB on Rain100H and 42.28 dB on RealRain-1k-L, yielding a cumulative gain of 5.04 dB (13.5%) over the baseline MPRNet.
+  [AAAI 2026][Image Restoration][image deraining] SD-PSFNet is a cascaded CNN-based deraining network driven by a dynamic PSF mechanism. It models the optical effects of raindrops via a multi-scale learnable PSF dictionary…
 tags:
-  - AAAI 2026
-  - Image Restoration
-  - image deraining
-  - point spread function
-  - physics-aware
-  - multi-stage restoration
-  - dynamic filtering
+  - "AAAI 2026"
+  - "Image Restoration"
+  - "image deraining"
+  - "point spread function"
+  - "physics-aware"
+  - "multi-stage restoration"
+  - "dynamic filtering"
 date: 2026-05-08
 content_hash: 187bc90fc2bf5911
 ---

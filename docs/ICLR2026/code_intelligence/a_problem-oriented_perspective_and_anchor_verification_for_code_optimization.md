@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] A Problem-Oriented Perspective and Anchor Verification for Code Optimization
 description: >-
-  [ICLR 2026][Code Optimization] This paper proposes a problem-oriented (rather than user-oriented) approach to constructing optimization pairs that integrates the strategic diversity of multiple programmers, and designs an anchor verification framework that leverages "slow but correct code" to generate test cases for mitigating the "optimization tax" (correctness loss), improving the optimization rate from 31.24% to 71.06% and the speedup ratio from 2.95x to 6.08x.
+  [ICLR 2026][Code Intelligence][Code Optimization] This paper proposes a problem-oriented (rather than user-oriented) approach to constructing optimization pairs that integrates the strategic diversity of multiple program…
 tags:
-  - ICLR 2026
-  - Code Optimization
-  - LLM
-  - Problem-Oriented
-  - Anchor Verification
-  - Program Performance
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "Code Optimization"
+  - "LLM"
+  - "Problem-Oriented"
+  - "Anchor Verification"
+  - "Program Performance"
 date: 2026-05-08
 content_hash: a2f8bc89bbcbecf1
 ---

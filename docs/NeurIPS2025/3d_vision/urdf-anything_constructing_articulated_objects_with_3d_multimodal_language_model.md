@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] URDF-Anything: Constructing Articulated Objects with 3D Multimodal Language Model
 description: >-
-  [NeurIPS 2025][3D Vision][Articulated Object Reconstruction] This paper proposes URDF-Anything, the first end-to-end articulated object reconstruction framework based on a 3D Multimodal Large Language Model (MLLM). By introducing a [SEG] token mechanism, the framework jointly predicts geometric segmentation and kinematic parameters, achieving state-of-the-art performance in segmentation accuracy (mIoU +17%), parameter error (−29%), and physical executability (surpassing baselines by 50%).
+  [NeurIPS 2025][3D Vision][Articulated Object Reconstruction] This paper proposes URDF-Anything, the first end-to-end articulated object reconstruction framework based on a 3D Multimodal Large Language Model (MLLM). By in…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Articulated Object Reconstruction
-  - URDF
-  - 3D Multimodal Large Language Model
-  - Digital Twin
-  - Robot Simulation
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Articulated Object Reconstruction"
+  - "URDF"
+  - "3D Multimodal Large Language Model"
+  - "Digital Twin"
+  - "Robot Simulation"
 date: 2026-05-08
 content_hash: 275fe9c5531376d4
 ---

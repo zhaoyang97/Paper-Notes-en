@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Ensemble++: Scalable Exploration via Ensemble
 description: >-
-  [NeurIPS 2025][Model Compression][Thompson Sampling] This paper proposes Ensemble++, which achieves regret bounds comparable to exact Thompson Sampling using only $\Theta(d\log T)$ ensemble size via an incremental update mechanism over shared factor matrices, with natural extension to nonlinear/neural network settings.
+  [NeurIPS 2025][Model Compression][Thompson Sampling] This paper proposes Ensemble++, which achieves regret bounds comparable to exact Thompson Sampling using only $\Theta(d\log T)$ ensemble size via an incremental update…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Thompson Sampling
-  - Ensemble Sampling
-  - Linear Bandit
-  - Exploration-Exploitation
-  - Approximate Posterior
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Thompson Sampling"
+  - "Ensemble Sampling"
+  - "Linear Bandit"
+  - "Exploration-Exploitation"
+  - "Approximate Posterior"
 date: 2026-05-08
 content_hash: 154c041bb88b306f
 ---

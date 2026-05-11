@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Gaussian Splatting with Discretized SDF for Relightable Assets
 description: >-
-  [ICCV 2025][3D Vision][Inverse Rendering] This paper proposes encoding a continuous SDF as an additional per-Gaussian attribute via an SDF-to-opacity transformation that unifies Gaussian splatting and SDF representations. Combined with a projection-based consistency loss and spherical initialization, the method achieves relighting quality surpassing existing Gaussian-based inverse rendering approaches using only 4 GB of GPU memory.
+  [ICCV 2025][3D Vision][Inverse Rendering] This paper proposes encoding a continuous SDF as an additional per-Gaussian attribute via an SDF-to-opacity transformation that unifies Gaussian splatting and SDF representations…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Inverse Rendering
-  - 3D Gaussian Splatting
-  - Discretized SDF
-  - Geometry Regularization
-  - Relighting
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Inverse Rendering"
+  - "3D Gaussian Splatting"
+  - "Discretized SDF"
+  - "Geometry Regularization"
+  - "Relighting"
 date: 2026-05-08
 content_hash: aa5cbf9b51a8bc2d
 ---

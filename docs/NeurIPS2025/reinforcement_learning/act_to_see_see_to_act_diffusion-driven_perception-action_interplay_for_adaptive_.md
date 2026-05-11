@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Act to See, See to Act: Diffusion-Driven Perception-Action Interplay for Adaptive Policies
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][diffusion policy] This paper proposes DP-AG (Action-Guided Diffusion Policy), which uses the Vector-Jacobian Product (VJP) of a diffusion policy's noise prediction as a structured stochastic force to drive dynamic evolution of latent observation features across diffusion steps, and closes the perception-action loop via a cycle-consistent contrastive loss. DP-AG achieves +6% on Push-T, +13% on Dynamic Push-T, and +23%+ success rate on a real UR5 robot.
+  [NeurIPS 2025][Reinforcement Learning][diffusion policy] This paper proposes DP-AG (Action-Guided Diffusion Policy), which uses the Vector-Jacobian Product (VJP) of a diffusion policy's noise prediction as a structured s…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - diffusion policy
-  - perception-action loop
-  - VJP
-  - variational inference
-  - imitation learning
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "diffusion policy"
+  - "perception-action loop"
+  - "VJP"
+  - "variational inference"
+  - "imitation learning"
 date: 2026-05-08
 content_hash: 9bbf6c8ab697a55a
 ---

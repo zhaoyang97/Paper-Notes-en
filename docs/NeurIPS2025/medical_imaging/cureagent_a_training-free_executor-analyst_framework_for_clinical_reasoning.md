@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CureAgent: A Training-Free Executor-Analyst Framework for Clinical Reasoning
 description: >-
-  [NeurIPS 2025][Medical Imaging][Clinical Reasoning] CureAgent proposes an Executor-Analyst collaborative framework that decouples precise tool invocation (TxAgent/Llama-8B as Executor) from high-level clinical reasoning (Gemini 2.5 as Analyst). Combined with a Stratified Ensemble Late Fusion topology that preserves evidence diversity, the system achieves 83.8% accuracy on CURE-Bench without end-to-end fine-tuning, and reveals two critical scaling findings: the context–performance paradox and the curse of dimensionality in action space.
+  [NeurIPS 2025][Medical Imaging][Clinical Reasoning] CureAgent proposes an Executor-Analyst collaborative framework that decouples precise tool invocation (TxAgent/Llama-8B as Executor) from high-level clinical reasoning…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Clinical Reasoning
-  - Multi-Agent
-  - Executor-Analyst
-  - Stratified Ensemble
-  - Training-Free Architecture Engineering
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Clinical Reasoning"
+  - "Multi-Agent"
+  - "Executor-Analyst"
+  - "Stratified Ensemble"
+  - "Training-Free Architecture Engineering"
 date: 2026-05-08
 content_hash: 4dad6f87ea5e2741
 ---

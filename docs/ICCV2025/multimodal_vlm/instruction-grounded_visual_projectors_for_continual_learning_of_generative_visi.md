@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Instruction-Grounded Visual Projectors for Continual Learning of Generative Vision-Language Models
 description: >-
-  [ICCV 2025][Multimodal VLM][Continual Learning] This paper proposes MVP (Mixture of Visual Projectors), a Mixture-of-Experts framework for visual projectors conditioned on instruction context. Through an expert recommendation strategy and an expert pruning mechanism, MVP enables generative VLMs to continually learn new vision-language tasks without catastrophic forgetting, while maintaining responsiveness to diverse instruction types. MVP consistently outperforms existing methods across classification, captioning, and question-answering tasks.
+  [ICCV 2025][Multimodal VLM][Continual Learning] This paper proposes MVP (Mixture of Visual Projectors), a Mixture-of-Experts framework for visual projectors conditioned on instruction context. Through an expert recommend…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Continual Learning
-  - Vision-Language Models
-  - Mixture-of-Experts
-  - Visual Projector
-  - Instruction-Awareness
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Continual Learning"
+  - "Vision-Language Models"
+  - "Mixture-of-Experts"
+  - "Visual Projector"
+  - "Instruction-Awareness"
 date: 2026-05-08
 content_hash: 954a8b20ca695736
 ---

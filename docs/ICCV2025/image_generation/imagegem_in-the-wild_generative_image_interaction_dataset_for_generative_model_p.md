@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] ImageGem: In-the-wild Generative Image Interaction Dataset for Generative Model Personalization
 description: >-
-  [ICCV 2025][Image Generation][Generative model personalization] This paper introduces **ImageGem**, the first large-scale in-the-wild generative interaction dataset (57K users × 242K customized LoRAs × 3M text prompts × 5M generated images), enabling three applications via individual user preference annotations: **aggregate preference alignment** surpassing Pick-a-Pic, **personalized retrieval and generative recommendation** (with significant VLM reranking gains), and the first proposed **generative model personalization**—learning preference editing directions in the LoRA latent weight space (W2W) to customize diffusion models.
+  [ICCV 2025][Image Generation][Generative model personalization] This paper introduces **ImageGem**, the first large-scale in-the-wild generative interaction dataset (57K users × 242K customized LoRAs × 3M text prompts ×…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Generative model personalization
-  - user preference alignment
-  - LoRA weight space
-  - DiffusionDPO
-  - recommender systems
-  - diffusion models
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Generative model personalization"
+  - "user preference alignment"
+  - "LoRA weight space"
+  - "DiffusionDPO"
+  - "recommender systems"
+  - "diffusion models"
 date: 2026-05-08
 content_hash: e74ba7b07a587772
 ---

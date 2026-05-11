@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ExpressEdit: Fast Editing of Stylized Facial Expressions with Diffusion Models in Photoshop
 description: >-
-  [CVPR 2026][Image Generation][Expression Editing] This paper presents ExpressEdit, a fully open-source Photoshop plugin that achieves noise-free editing of stylized facial expressions within 3 seconds on a single consumer-grade GPU, leveraging a SPICE-based diffusion model backend combined with a Danbooru expression tag database and a RAG system, significantly outperforming commercial models such as GPT, Grok, and Nano Banana 2.
+  [CVPR 2026][Image Generation][Expression Editing] This paper presents ExpressEdit, a fully open-source Photoshop plugin that achieves noise-free editing of stylized facial expressions within 3 seconds on a single consume…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Expression Editing
-  - Photoshop Plugin
-  - Diffusion Models
-  - Stylized Characters
-  - Retrieval-Augmented Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Expression Editing"
+  - "Photoshop Plugin"
+  - "Diffusion Models"
+  - "Stylized Characters"
+  - "Retrieval-Augmented Generation"
 date: 2026-05-08
 content_hash: 51ce8a2de86ccf23
 ---

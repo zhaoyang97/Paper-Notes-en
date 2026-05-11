@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Boosting Adversarial Transferability via Ensemble Non-Attention
 description: >-
-  [AAAI 2026][adversarial transferability] This paper proposes NAMEA (Non-Attention Meta Ensemble Attack), which for the first time exploits the non-attention areas of ensemble models to integrate transferable information from both CNNs and ViTs, and combines meta-learning gradient optimization to achieve an average improvement of 15.0% and 9.6% over the state-of-the-art methods AdaEA and SMER, respectively, on cross-architecture adversarial transferability.
+  [AAAI 2026][adversarial transferability] This paper proposes NAMEA (Non-Attention Meta Ensemble Attack), which for the first time exploits the non-attention areas of ensemble models to integrate transferable information…
 tags:
-  - AAAI 2026
-  - adversarial transferability
-  - ensemble attack
-  - non-attention areas
-  - meta-learning
-  - cross-architecture attack
+  - "AAAI 2026"
+  - "adversarial transferability"
+  - "ensemble attack"
+  - "non-attention areas"
+  - "meta-learning"
+  - "cross-architecture attack"
 date: 2026-05-08
 content_hash: 75176e82ad938095
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CARE-Edit: Condition-Aware Routing of Experts for Contextual Image Editing
 description: >-
-  [CVPR2026][Image Generation][Image Editing] Proposes CARE-Edit, a condition-aware expert routing framework that implements dynamic computation allocation on a DiT backbone via heterogeneous experts (Text/Mask/Reference/Base) coupled with a lightweight latent-attention router. This effectively addresses issues like color bleeding and identity drift caused by conflicting multi-conditional signals (text, mask, reference image) in unified image editors.
+  [CVPR2026][Image Generation][Image Editing] Proposes CARE-Edit, a condition-aware expert routing framework that implements dynamic computation allocation on a DiT backbone via heterogeneous experts (Text/Mask/Reference/B…
 tags:
-  - CVPR2026
-  - Image Generation
-  - Image Editing
-  - Mixture-of-Experts
-  - Condition-Aware Routing
-  - Diffusion Transformer
-  - Multimodal Fusion
+  - "CVPR2026"
+  - "Image Generation"
+  - "Image Editing"
+  - "Mixture-of-Experts"
+  - "Condition-Aware Routing"
+  - "Diffusion Transformer"
+  - "Multimodal Fusion"
 date: 2026-05-08
 content_hash: 6cfc044deb168fd7
 ---

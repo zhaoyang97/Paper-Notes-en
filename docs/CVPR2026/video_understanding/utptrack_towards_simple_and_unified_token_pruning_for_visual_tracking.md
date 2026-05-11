@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] UTPTrack: Towards Simple and Unified Token Pruning for Visual Tracking
 description: >-
-  [CVPR2026][Video Understanding][token pruning] This paper proposes UTPTrack, the first unified framework that **jointly prunes tokens from all three components — search region (SR), dynamic template (DT), and static template (ST)** — within one-stream Transformer trackers, achieving 65–67% visual token reduction across both RGB and multimodal/language-guided tracking tasks while maintaining 99.7%–100.5% of baseline performance.
+  [CVPR2026][Video Understanding][token pruning] This paper proposes UTPTrack, the first unified framework that **jointly prunes tokens from all three components — search region (SR), dynamic template (DT)…
 tags:
-  - CVPR2026
-  - Video Understanding
-  - token pruning
-  - visual object tracking
-  - one-stream transformer
-  - multimodal tracking
-  - unified tracking
-  - attention-guided pruning
+  - "CVPR2026"
+  - "Video Understanding"
+  - "token pruning"
+  - "visual object tracking"
+  - "one-stream transformer"
+  - "multimodal tracking"
+  - "unified tracking"
+  - "attention-guided pruning"
 date: 2026-05-08
 content_hash: 78d5d44c415a274d
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Tractable Multinomial Logit Contextual Bandits with Non-Linear Utilities
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][contextual bandits] This work presents ONL-MNL, the first **computationally tractable** and **statistically optimal** algorithm for the MNL contextual bandit problem under non-linear utility functions (including neural networks), achieving $\widetilde{\mathcal{O}}(\sqrt{T})$ regret without relying on NTK assumptions.
+  [NeurIPS 2025][Reinforcement Learning][contextual bandits] This work presents ONL-MNL, the first **computationally tractable** and **statistically optimal** algorithm for the MNL contextual bandit problem under non-linea…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - contextual bandits
-  - multinomial logit
-  - non-linear utility functions
-  - combinatorial assortment optimization
-  - UCB
-  - neural networks
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "contextual bandits"
+  - "multinomial logit"
+  - "non-linear utility functions"
+  - "combinatorial assortment optimization"
+  - "UCB"
+  - "neural networks"
 date: 2026-05-08
 content_hash: e9b645d2ccec762e
 ---

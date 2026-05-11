@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Sparsity Outperforms Low-Rank Projections in Few-Shot Adaptation
 description: >-
-  [ICCV 2025][Multimodal VLM][Sparse optimization] This paper proposes Sparse Optimization (SO), a framework that replaces low-rank adaptation methods (e.g., LoRA) via dynamic sparse gradient selection and importance-based momentum pruning. SO achieves state-of-the-art performance on few-shot VLM adaptation across 11 datasets while reducing memory overhead.
+  [ICCV 2025][Multimodal VLM][Sparse optimization] This paper proposes Sparse Optimization (SO), a framework that replaces low-rank adaptation methods (e.g.…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Sparse optimization
-  - few-shot adaptation
-  - CLIP
-  - low-rank decomposition
-  - parameter-efficient fine-tuning
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Sparse optimization"
+  - "few-shot adaptation"
+  - "CLIP"
+  - "low-rank decomposition"
+  - "parameter-efficient fine-tuning"
 date: 2026-05-08
 content_hash: ad61e5353e4ff45a
 ---

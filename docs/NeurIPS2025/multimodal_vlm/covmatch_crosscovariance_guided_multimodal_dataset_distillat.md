@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] CovMatch: Cross-Covariance Guided Multimodal Dataset Distillation with Trainable Text Encoder
 description: >-
-  [NeurIPS 2025][Multimodal VLM][dataset distillation] This paper proposes CovMatch, which reduces the bi-level optimization of multimodal contrastive learning to a closed-form cross-covariance matrix alignment problem, enabling for the first time joint optimization of both image and text encoders for multimodal dataset distillation. Using only 500 synthetic image-text pairs, CovMatch achieves a mean retrieval recall of 38.4 on Flickr30K (+6.8% over SOTA LoRS), substantially outperforming frozen-text-encoder approaches in extremely data-efficient settings.
+  [NeurIPS 2025][Multimodal VLM][dataset distillation] This paper proposes CovMatch, which reduces the bi-level optimization of multimodal contrastive learning to a closed-form cross-covariance matrix alignment problem…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - dataset distillation
-  - multimodal
-  - cross-covariance
-  - CLIP
-  - trainable text encoder
-  - data efficiency
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "dataset distillation"
+  - "multimodal"
+  - "cross-covariance"
+  - "CLIP"
+  - "trainable text encoder"
+  - "data efficiency"
 date: 2026-05-08
 content_hash: bf1f938d597dd158
 ---

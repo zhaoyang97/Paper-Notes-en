@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Physics-Guided Machine Learning for Uncertainty Quantification in Turbulence Models
 description: >-
-  [NEURIPS2025][Scientific Computing][turbulence modeling] This paper proposes a hybrid ML–EPM framework that employs a lightweight CNN to learn a correction mapping from RANS turbulent kinetic energy fields to DNS ground truth, using the learned corrections to modulate the perturbation magnitude of the Eigenspace Perturbation Method (EPM). The approach reduces uncertainty estimation errors by 1–2 orders of magnitude while preserving physical consistency.
+  [NEURIPS2025][Scientific Computing][turbulence modeling] This paper proposes a hybrid ML–EPM framework that employs a lightweight CNN to learn a correction mapping from RANS turbulent kinetic energy fields to DNS ground…
 tags:
-  - NEURIPS2025
-  - Scientific Computing
-  - turbulence modeling
-  - uncertainty quantification
-  - CNN
-  - eigenspace perturbation
-  - RANS
-  - physics-guided ML
+  - "NEURIPS2025"
+  - "Scientific Computing"
+  - "turbulence modeling"
+  - "uncertainty quantification"
+  - "CNN"
+  - "eigenspace perturbation"
+  - "RANS"
+  - "physics-guided ML"
 date: 2026-05-08
 content_hash: b276933a04be86e2
 ---

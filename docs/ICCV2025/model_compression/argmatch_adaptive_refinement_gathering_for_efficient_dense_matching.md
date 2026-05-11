@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ARGMatch: Adaptive Refinement Gathering for Efficient Dense Matching
 description: >-
-  [ICCV 2025][Model Compression][Dense matching] This paper proposes an Adaptive Refinement Gathering pipeline comprising three modules—a content-aware offset estimator, a local consistency matching corrector, and a local consistency upsampler—augmented with an adaptive gating mechanism. The approach substantially reduces reliance on heavyweight feature extractors and global matchers, achieving performance comparable to state-of-the-art methods with a lightweight model.
+  [ICCV 2025][Model Compression][Dense matching] This paper proposes an Adaptive Refinement Gathering pipeline comprising three modules—a content-aware offset estimator, a local consistency matching corrector…
 tags:
-  - ICCV 2025
-  - Model Compression
-  - Dense matching
-  - coarse-to-fine
-  - content-aware refinement
-  - local consistency
-  - efficient feature matching
+  - "ICCV 2025"
+  - "Model Compression"
+  - "Dense matching"
+  - "coarse-to-fine"
+  - "content-aware refinement"
+  - "local consistency"
+  - "efficient feature matching"
 date: 2026-05-08
 content_hash: 4fcec412fa736307
 ---

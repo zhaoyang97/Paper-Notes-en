@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] TIACam: Text-Anchored Invariant Feature Learning with Auto-Augmentation for Camera-Robust Zero-Watermarking
 description: >-
-  [CVPR2026][AI Safety][Zero-watermarking] This paper proposes TIACam, a framework that simulates camera distortions via a learnable auto-augmentor, learns invariant features through text-anchored cross-modal adversarial training, and binds binary messages to features via a zero-watermarking head—achieving camera-robust zero-watermarking without modifying any image pixels. TIACam attains state-of-the-art bit accuracy across three real-world scenarios: screen recapture, print-and-scan, and screenshot.
+  [CVPR2026][AI Safety][Zero-watermarking] This paper proposes TIACam, a framework that simulates camera distortions via a learnable auto-augmentor…
 tags:
-  - CVPR2026
-  - AI Safety
-  - Zero-watermarking
-  - cross-modal alignment
-  - learnable data augmentation
-  - camera robustness
-  - CLIP
-  - adversarial training
-  - invariant feature learning
+  - "CVPR2026"
+  - "AI Safety"
+  - "Zero-watermarking"
+  - "cross-modal alignment"
+  - "learnable data augmentation"
+  - "camera robustness"
+  - "CLIP"
+  - "adversarial training"
+  - "invariant feature learning"
 date: 2026-05-08
 content_hash: e375c640f2d72cad
 ---

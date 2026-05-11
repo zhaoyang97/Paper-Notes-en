@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] CAPT: Confusion-Aware Prompt Tuning for Reducing Vision-Language Misalignment
 description: >-
-  [CVPR2026][Multimodal VLM][prompt tuning] This paper proposes CAPT, a confusion-aware prompt tuning framework that explicitly models systematic misalignment patterns in VLMs via a Semantic Confusion Miner (SEM) and a Sample Confusion Miner (SAM). A Multi-Granularity Discrepancy Expert (MGDE) further integrates confusion information across different granularities. CAPT achieves a state-of-the-art HM of 83.90% across 11 benchmarks.
+  [CVPR2026][Multimodal VLM][prompt tuning] This paper proposes CAPT, a confusion-aware prompt tuning framework that explicitly models systematic misalignment patterns in VLMs via a Semantic Confusion Miner (SEM) and a Sam…
 tags:
-  - CVPR2026
-  - Multimodal VLM
-  - prompt tuning
-  - vision-language alignment
-  - confusion-awareness
-  - CLIP
-  - few-shot
-  - fine-grained classification
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "prompt tuning"
+  - "vision-language alignment"
+  - "confusion-awareness"
+  - "CLIP"
+  - "few-shot"
+  - "fine-grained classification"
 date: 2026-05-08
 content_hash: a0510a9aab369b26
 ---

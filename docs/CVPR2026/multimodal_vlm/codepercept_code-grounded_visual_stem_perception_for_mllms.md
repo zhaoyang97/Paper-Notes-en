@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] CodePercept: Code-Grounded Visual STEM Perception for MLLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][STEM visual perception] Through systematic scaling analysis, this work identifies perception—rather than reasoning—as the true bottleneck for MLLMs in STEM domains. It proposes the CodePercept paradigm, which uses executable Python code as an anchoring medium, constructs the million-scale ICC-1M dataset and the STEM2Code-Eval benchmark, and achieves significant improvements in STEM visual perception and downstream reasoning after two-stage SFT+RL training.
+  [CVPR 2026][Multimodal VLM][STEM visual perception] Through systematic scaling analysis, this work identifies perception—rather than reasoning—as the true bottleneck for MLLMs in STEM domains. It proposes the CodePercept…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - STEM visual perception
-  - executable code
-  - image reconstruction
-  - code-grounded captioning
-  - multimodal large language models
-  - perception enhancement
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "STEM visual perception"
+  - "executable code"
+  - "image reconstruction"
+  - "code-grounded captioning"
+  - "multimodal large language models"
+  - "perception enhancement"
 date: 2026-05-08
 content_hash: d11d28bb90a1b887
 ---

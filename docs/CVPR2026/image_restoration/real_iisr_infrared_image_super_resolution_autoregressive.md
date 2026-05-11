@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Toward Real-world Infrared Image Super-Resolution: A Unified Autoregressive Framework and Benchmark Dataset
 description: >-
-  [CVPR 2026][Image Restoration][Infrared image super-resolution] This paper proposes Real-IISR, a unified autoregressive framework that addresses the unique challenges of real-world infrared image super-resolution via a Thermal-Structure Guidance (TSG) module, a Conditional Adaptive Codebook (CAC), and a Thermal Order Consistency loss. It also introduces the FLIR-IISR dataset comprising 1,457 real LR-HR infrared image pairs.
+  [CVPR 2026][Image Restoration][Infrared image super-resolution] This paper proposes Real-IISR, a unified autoregressive framework that addresses the unique challenges of real-world infrared image super-resolution via a T…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Infrared image super-resolution
-  - visual autoregression
-  - thermal-structure guidance
-  - conditional adaptive codebook
-  - thermal order consistency
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Infrared image super-resolution"
+  - "visual autoregression"
+  - "thermal-structure guidance"
+  - "conditional adaptive codebook"
+  - "thermal order consistency"
 date: 2026-05-08
 content_hash: 6177be9da2908251
 ---

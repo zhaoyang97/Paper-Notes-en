@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Can SAEs Reveal and Mitigate Racial Biases of LLMs in Healthcare?
 description: >-
-  [ICLR 2026][Medical Imaging][Sparse Autoencoders] This paper investigates whether Sparse Autoencoders (SAEs) can reveal and mitigate racial biases in LLMs within clinical settings. SAEs successfully identify harmful race-associated features (e.g., co-activation of "Black" with violence-related terms), but their effectiveness at bias mitigation in complex clinical tasks is limited (FLDD < 3%), falling far short of simple prompting strategies (FLDD 8–15%).
+  [ICLR 2026][Medical Imaging][Sparse Autoencoders] This paper investigates whether Sparse Autoencoders (SAEs) can reveal and mitigate racial biases in LLMs within clinical settings. SAEs successfully identify harmful race…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - Sparse Autoencoders
-  - Racial Bias
-  - Medical AI
-  - Interpretability
-  - Causal Intervention
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Sparse Autoencoders"
+  - "Racial Bias"
+  - "Medical AI"
+  - "Interpretability"
+  - "Causal Intervention"
 date: 2026-05-08
 content_hash: 63c9bff412e3a514
 ---

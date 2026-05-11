@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PressTrack-HMR: Pressure-Based Top-Down Multi-Person Global Human Mesh Recovery
 description: >-
-  [AAAI 2026][Human Understanding][Human Mesh Recovery] This paper proposes PressTrack-HMR, the first top-down pipeline for multi-person global human mesh recovery using only pressure signals. It introduces a novel UoE similarity metric for pressure footprint tracking (93.6% MOTA) and presents MIP, the first multi-person interaction pressure dataset.
+  [AAAI 2026][Human Understanding][Human Mesh Recovery] This paper proposes PressTrack-HMR, the first top-down pipeline for multi-person global human mesh recovery using only pressure signals. It introduces a novel UoE sim…
 tags:
-  - AAAI 2026
-  - Human Understanding
-  - Human Mesh Recovery
-  - Pressure Sensing
-  - Multi-Person Tracking
-  - Privacy Preservation
-  - Tactile Interaction
+  - "AAAI 2026"
+  - "Human Understanding"
+  - "Human Mesh Recovery"
+  - "Pressure Sensing"
+  - "Multi-Person Tracking"
+  - "Privacy Preservation"
+  - "Tactile Interaction"
 date: 2026-05-08
 content_hash: 13ebe2d1955dbb10
 ---

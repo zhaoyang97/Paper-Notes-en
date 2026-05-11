@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Open-World Generation of Stereo Images and Unsupervised Matching
 description: >-
-  [ICCV 2025][Autonomous Driving][Stereo image generation] This paper proposes GenStereo, a diffusion-based stereo image generation framework that achieves both high visual quality and geometric accuracy through disparity-aware coordinate embedding, cross-view attention, and an adaptive fusion mechanism, while advancing unsupervised stereo matching to a new state of the art.
+  [ICCV 2025][Autonomous Driving][Stereo image generation] This paper proposes GenStereo, a diffusion-based stereo image generation framework that achieves both high visual quality and geometric accuracy through disparity-…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - Stereo image generation
-  - diffusion models
-  - unsupervised stereo matching
-  - disparity-aware
-  - adaptive fusion
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "Stereo image generation"
+  - "diffusion models"
+  - "unsupervised stereo matching"
+  - "disparity-aware"
+  - "adaptive fusion"
 date: 2026-05-08
 content_hash: 8ad5a220454b8d28
 ---

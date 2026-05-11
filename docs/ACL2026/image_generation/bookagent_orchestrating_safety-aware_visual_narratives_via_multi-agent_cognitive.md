@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BookAgent: Orchestrating Safety-Aware Visual Narratives via Multi-Agent Cognitive Calibration
 description: >-
-  [ACL 2026][Image Generation][Picture book generation] BookAgent is a safety-aware multi-agent framework that generates high-quality, character-consistent, and content-safe picture books end-to-end from user drafts through a three-stage closed-loop architecture: **Value-Aligned Storyboard (VAS) + Iterative Cross-Modal Refinement (ICR) + Temporal Cognitive Calibration (TCC)**.
+  [ACL 2026][Image Generation][Picture book generation] BookAgent is a safety-aware multi-agent framework that generates high-quality, character-consistent…
 tags:
-  - ACL 2026
-  - Image Generation
-  - Picture book generation
-  - multi-agent collaboration
-  - safety alignment
-  - cross-frame consistency
-  - visual narratives
+  - "ACL 2026"
+  - "Image Generation"
+  - "Picture book generation"
+  - "multi-agent collaboration"
+  - "safety alignment"
+  - "cross-frame consistency"
+  - "visual narratives"
 date: 2026-05-08
 content_hash: 32aa36fda9d79647
 ---

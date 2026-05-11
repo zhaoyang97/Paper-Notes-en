@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Generative Distribution Embeddings: Lifting Autoencoders to the Space of Distributions for Multiscale Representation Learning
 description: >-
-  [NeurIPS 2025][Medical Imaging][distribution embeddings] This paper proposes Generative Distribution Embeddings (GDE), which lifts autoencoders to the space of distributions — the encoder operates on sets of samples while the decoder is replaced by a conditional generative model — thereby learning distribution-level representations. The framework is validated on 6 computational biology tasks.
+  [NeurIPS 2025][Medical Imaging][distribution embeddings] This paper proposes Generative Distribution Embeddings (GDE), which lifts autoencoders to the space of distributions — the encoder operates on sets of samples whil…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - distribution embeddings
-  - autoencoders
-  - Wasserstein space
-  - multiscale representation
-  - computational biology
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "distribution embeddings"
+  - "autoencoders"
+  - "Wasserstein space"
+  - "multiscale representation"
+  - "computational biology"
 date: 2026-05-08
 content_hash: d864879d061fec8a
 ---

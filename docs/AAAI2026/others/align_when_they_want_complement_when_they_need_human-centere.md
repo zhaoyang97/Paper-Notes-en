@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Align When They Want, Complement When They Need! Human-Centered Ensembles for Adaptive Human-AI Collaboration
 description: >-
-  [AAAI 2026][human-AI collaboration] This paper reveals a fundamental trade-off between *complementarity* and *alignment* in human-AI collaboration—no single model can simultaneously optimize both objectives. It proposes an adaptive AI ensemble framework that dynamically switches between an alignment model and a complementarity model via a Rational Routing Shortcut (RRS) mechanism, achieving up to 9% improvement in team accuracy over standard AI.
+  [AAAI 2026][human-AI collaboration] This paper reveals a fundamental trade-off between *complementarity* and *alignment* in human-AI collaboration—no single model can simultaneously optimize both objectives. It proposes…
 tags:
-  - AAAI 2026
-  - human-AI collaboration
-  - complementarity-alignment trade-off
-  - adaptive ensemble
-  - trust modeling
-  - behavior-aware AI
+  - "AAAI 2026"
+  - "human-AI collaboration"
+  - "complementarity-alignment trade-off"
+  - "adaptive ensemble"
+  - "trust modeling"
+  - "behavior-aware AI"
 date: 2026-05-08
 content_hash: f529e70e508043e8
 ---

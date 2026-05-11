@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Out of Control -- Why Alignment Needs Formal Control Theory (and an Alignment Control Stack)
 description: >-
-  [NeurIPS 2025][AI alignment] This position paper argues for formal optimal control theory as a foundational tool for AI alignment research, and proposes the Alignment Control Stack (ACS)—a ten-layer hierarchical framework spanning from the physical hardware layer to the social governance layer—for systematically organizing and analyzing measurement, control, and interoperability across different alignment methods.
+  [NeurIPS 2025][Interpretability][AI alignment] This position paper argues for formal optimal control theory as a foundational tool for AI alignment research…
 tags:
-  - NeurIPS 2025
-  - AI alignment
-  - control theory
-  - alignment control stack
-  - formal verification
-  - stochastic optimal control
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "AI alignment"
+  - "control theory"
+  - "alignment control stack"
+  - "formal verification"
+  - "stochastic optimal control"
 date: 2026-05-08
 content_hash: 6c16cc5c0c60f1c7
 ---

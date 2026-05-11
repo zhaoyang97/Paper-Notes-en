@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Is Sequence Information All You Need for Bayesian Optimization of Antibodies?
 description: >-
-  [NeurIPS 2025 (AI for Science Workshop)][Medical Imaging][Bayesian Optimization] This paper systematically compares the roles of sequence and structural information in antibody Bayesian optimization, finding that sequence-only methods augmented with protein language model (pLM) soft constraints can match the performance of structure-based methods, thereby questioning the necessity of structural information in antibody Bayesian optimization.
+  [NeurIPS 2025 (AI for Science Workshop)][Medical Imaging][Bayesian Optimization] This paper systematically compares the roles of sequence and structural information in antibody Bayesian optimization…
 tags:
-  - NeurIPS 2025 (AI for Science Workshop)
-  - Medical Imaging
-  - Bayesian Optimization
-  - Antibody Design
-  - Protein Language Models
-  - Structural Information
-  - Gaussian Processes
+  - "NeurIPS 2025 (AI for Science Workshop)"
+  - "Medical Imaging"
+  - "Bayesian Optimization"
+  - "Antibody Design"
+  - "Protein Language Models"
+  - "Structural Information"
+  - "Gaussian Processes"
 date: 2026-05-08
 content_hash: 970521e238546923
 ---

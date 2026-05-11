@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Can DPO Learn Diverse Human Values? A Theoretical Scaling Law
 description: >-
-  [NeurIPS 2025][LLM Alignment][DPO] This paper establishes a theoretical generalization framework for DPO under diverse human value settings. By analyzing the dynamic trajectory of reward margins after a finite number of gradient steps, it proves that the number of samples required per value must grow logarithmically with the number of value categories $K$ (i.e., $Q = \Theta(\log K)$) to maintain generalization performance, thereby revealing the statistical cost of aligning with diverse societal values.
+  [NeurIPS 2025][LLM Alignment][DPO] This paper establishes a theoretical generalization framework for DPO under diverse human value settings. By analyzing the dynamic trajectory of reward margins after a finite number of…
 tags:
-  - NeurIPS 2025
-  - LLM Alignment
-  - DPO
-  - value diversity
-  - scaling law
-  - generalization error
-  - reward margin
-  - preference learning theory
+  - "NeurIPS 2025"
+  - "LLM Alignment"
+  - "DPO"
+  - "value diversity"
+  - "scaling law"
+  - "generalization error"
+  - "reward margin"
+  - "preference learning theory"
 date: 2026-05-08
 content_hash: b98dd354fd40ed7a
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Investigating Counterfactual Unfairness in LLMs towards Identities through Humor
 description: >-
-  [ACL 2026][Image Generation][Counterfactual Fairness] This paper systematically investigates counterfactual unfairness in LLMs through humor scenarios—observing behavioral changes after swapping speaker/listener identities. Results reveal that jokes told by privileged-group speakers are refused at a rate as high as 67.5%, are judged as malicious with 64.7% higher probability, and receive social harm scores up to 1.5 points (on a 5-point scale), demonstrating that models have internalized fixed social privilege hierarchies rather than performing genuine social reasoning.
+  [ACL 2026][Image Generation][Counterfactual Fairness] This paper systematically investigates counterfactual unfairness in LLMs through humor scenarios—observing behavioral changes after swapping speaker/listener identiti…
 tags:
-  - ACL 2026
-  - Image Generation
-  - Counterfactual Fairness
-  - Humor Bias
-  - Identity Bias
-  - LLM Refusal Behavior
-  - Social Privilege Hierarchy
+  - "ACL 2026"
+  - "Image Generation"
+  - "Counterfactual Fairness"
+  - "Humor Bias"
+  - "Identity Bias"
+  - "LLM Refusal Behavior"
+  - "Social Privilege Hierarchy"
 date: 2026-05-08
 content_hash: bed4b504d06ac88b
 ---

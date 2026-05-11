@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Rethinking VLMs for Image Forgery Detection and Localization
 description: >-
-  [CVPR 2026][Multimodal VLM][Image forgery detection] This paper proposes IFDL-VLM, a framework that identifies an inherent *semantic plausibility bias* in VLMs — their tendency to favor semantic coherence over authenticity — which impedes forgery detection performance. The framework decouples detection/localization from language explanation into a two-stage optimization pipeline, and leverages localization masks as auxiliary inputs to VLMs to enhance interpretability, achieving comprehensive SOTA results across 9 benchmarks.
+  [CVPR 2026][Multimodal VLM][Image forgery detection] This paper proposes IFDL-VLM, a framework that identifies an inherent *semantic plausibility bias* in VLMs — their tendency to favor semantic coherence over authentici…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Image forgery detection
-  - vision-language models
-  - forgery localization
-  - interpretability
-  - AIGC security
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Image forgery detection"
+  - "vision-language models"
+  - "forgery localization"
+  - "interpretability"
+  - "AIGC security"
 date: 2026-05-08
 content_hash: df2b4acefa92be8e
 ---

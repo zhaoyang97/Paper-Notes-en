@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Semantic Parallelism: Redefining Efficient MoE Inference via Model-Data Co-Scheduling
 description: >-
-  [ICLR 2026][LLM Efficiency][Mixture-of-Experts] This paper proposes the Semantic Parallelism (SP) paradigm, which predicts token-expert routing paths and co-schedules model placement with data dispatch to substantially reduce all-to-all communication overhead in MoE inference under expert parallelism. It achieves up to 2.78× throughput improvement in Attention-DP settings and up to 24.9% latency reduction in Attention-TP settings.
+  [ICLR 2026][LLM Efficiency][Mixture-of-Experts] This paper proposes the Semantic Parallelism (SP) paradigm, which predicts token-expert routing paths and co-schedules model placement with data dispatch to substantially r…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Mixture-of-Experts
-  - Expert Parallelism
-  - all-to-all communication
-  - model-data co-scheduling
-  - token-expert affinity
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Mixture-of-Experts"
+  - "Expert Parallelism"
+  - "all-to-all communication"
+  - "model-data co-scheduling"
+  - "token-expert affinity"
 date: 2026-05-08
 content_hash: b6f4b5edb9c06236
 ---

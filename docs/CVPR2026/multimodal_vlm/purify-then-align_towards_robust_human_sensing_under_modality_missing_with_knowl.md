@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Purify-then-Align: Towards Robust Human Sensing under Modality Missing with Knowledge Distillation from Noisy Multimodal Teacher
 description: >-
-  [CVPR 2026][Multimodal VLM][modality missing] This paper proposes PTA (Purify-then-Align), a framework that first *purifies* a noisy multimodal teacher via a meta-learning-driven modality weighting mechanism, then *aligns* each unimodal student through diffusion-model-driven knowledge distillation, enabling unimodal encoders to maintain strong robustness under modality-missing scenarios. PTA achieves state-of-the-art performance on MM-Fi and XRF55.
+  [CVPR 2026][Multimodal VLM][modality missing] This paper proposes PTA (Purify-then-Align), a framework that first *purifies* a noisy multimodal teacher via a meta-learning-driven modality weighting mechanism…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - modality missing
-  - knowledge distillation
-  - meta-learning
-  - diffusion alignment
-  - multimodal fusion
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "modality missing"
+  - "knowledge distillation"
+  - "meta-learning"
+  - "diffusion alignment"
+  - "multimodal fusion"
 date: 2026-05-08
 content_hash: da894a0c367f23cc
 ---

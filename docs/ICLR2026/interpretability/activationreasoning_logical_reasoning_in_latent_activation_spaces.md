@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] ActivationReasoning: Logical Reasoning in Latent Activation Spaces
 description: >-
-  [ICLR 2026][Sparse Autoencoders] This paper proposes the ActivationReasoning (AR) framework, which embeds explicit logical reasoning into the latent activation space of LLMs (via SAE-extracted features) through a three-stage pipeline: discovering concept representations → detecting activated propositions → reasoning with logical rules. The framework supports multi-hop reasoning, concept composition, and safety control, achieving 95%+ accuracy on PrOntoQA with an 8B model, surpassing GPT-4o.
+  [ICLR 2026][Interpretability][Sparse Autoencoders] This paper proposes the ActivationReasoning (AR) framework, which embeds explicit logical reasoning into the latent activation space of LLMs (via SAE-extracted features)…
 tags:
-  - ICLR 2026
-  - Sparse Autoencoders
-  - Logical Reasoning
-  - Latent Space Intervention
-  - Concept Composition
-  - Model Steering
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Sparse Autoencoders"
+  - "Logical Reasoning"
+  - "Latent Space Intervention"
+  - "Concept Composition"
+  - "Model Steering"
 date: 2026-05-08
 content_hash: 215551029c84f595
 ---

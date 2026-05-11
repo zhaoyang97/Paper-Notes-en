@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Bounds on Agreement between Subjective and Objective Measurements
 description: >-
-  [CVPR 2026][quality assessment] Starting from the mathematical properties of MOS, this paper derives theoretical formulas for the upper bound on PCC and the lower bound on MSE between subjective test results and any objective estimator. It further proposes the BinoVotes/BinoMOS voting model and validates both the bounds and the model on 18 subjective test datasets.
+  [CVPR 2026][quality assessment] Starting from the mathematical properties of MOS, this paper derives theoretical formulas for the upper bound on PCC and the lower bound on MSE between subjective test results and any obje…
 tags:
-  - CVPR 2026
-  - quality assessment
-  - MOS
-  - subjective test
-  - PCC bound
-  - MSE bound
-  - BinoVotes
+  - "CVPR 2026"
+  - "quality assessment"
+  - "MOS"
+  - "subjective test"
+  - "PCC bound"
+  - "MSE bound"
+  - "BinoVotes"
 date: 2026-05-08
 content_hash: fe8098c8aeac0ab6
 ---

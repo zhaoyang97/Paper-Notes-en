@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] FICGen: Frequency-Inspired Contextual Disentanglement for Layout-driven Degraded Image Generation
 description: >-
-  [ICCV 2025][Image Generation][Layout-to-Image] FICGen is proposed as the first method to address the "contextual illusion dilemma" in Layout-to-Image (L2I) generation for degraded scenes (low-light, underwater, remote sensing, adverse weather, etc.). It extracts high- and low-frequency prototypes of degraded scenes via a learnable dual-query mechanism, injects them into the latent diffusion space through visual-frequency enhanced attention, and achieves foreground-background disentanglement using instance consistency maps and spatial-frequency adaptive aggregation. FICGen comprehensively outperforms existing L2I methods across five degraded-scene datasets.
+  [ICCV 2025][Image Generation][Layout-to-Image] FICGen is proposed as the first method to address the "contextual illusion dilemma" in Layout-to-Image (L2I) generation for degraded scenes (low-light, underwater…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Layout-to-Image
-  - Degraded Image Generation
-  - Frequency Disentanglement
-  - Low-light
-  - Remote Sensing
-  - Underwater
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Layout-to-Image"
+  - "Degraded Image Generation"
+  - "Frequency Disentanglement"
+  - "Low-light"
+  - "Remote Sensing"
+  - "Underwater"
 date: 2026-05-08
 content_hash: 4c8eca1cb5ab44d6
 ---

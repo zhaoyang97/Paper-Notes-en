@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Time Reversal Symmetry for Efficient Robotic Manipulations in Deep Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][time reversal symmetry] This paper proposes the TR-DRL framework, which exploits time reversal symmetry in robotic manipulation tasks—via trajectory reversal augmentation (for fully reversible transitions) and time-reversal-guided potential-based reward shaping (for partially reversible transitions)—to significantly improve sample efficiency and final performance of DRL on paired tasks (e.g., door opening/closing).
+  [NeurIPS 2025][Reinforcement Learning][time reversal symmetry] This paper proposes the TR-DRL framework, which exploits time reversal symmetry in robotic manipulation tasks—via trajectory reversal augmentation (for fully…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - time reversal symmetry
-  - data augmentation
-  - reward shaping
-  - robotic manipulation
-  - sample efficiency
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "time reversal symmetry"
+  - "data augmentation"
+  - "reward shaping"
+  - "robotic manipulation"
+  - "sample efficiency"
 date: 2026-05-08
 content_hash: 8c72148b4ade93a2
 ---

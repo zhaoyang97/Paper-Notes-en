@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PanFoMa: A Lightweight Foundation Model and Benchmark for Pan-Cancer Pathology Image Analysis
 description: >-
-  [AAAI 2026][Medical Imaging][Single-cell RNA-seq] This paper proposes PanFoMa, a lightweight hybrid neural network that integrates Transformer-based local modeling with Mamba-based global integration for pan-cancer single-cell transcriptomic representation learning. It also introduces PanFoMaBench, a large-scale benchmark dataset covering 33 cancer subtypes and over 3.5 million cells.
+  [AAAI 2026][Medical Imaging][Single-cell RNA-seq] This paper proposes PanFoMa, a lightweight hybrid neural network that integrates Transformer-based local modeling with Mamba-based global integration for pan-cancer singl…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Single-cell RNA-seq
-  - Pan-Cancer
-  - Transformer-Mamba Hybrid
-  - foundation model
-  - benchmark
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Single-cell RNA-seq"
+  - "Pan-Cancer"
+  - "Transformer-Mamba Hybrid"
+  - "foundation model"
+  - "benchmark"
 date: 2026-05-08
 content_hash: 5eab74e6a1afefd2
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unified Spherical Frontend: Learning Rotation-Equivariant Representations of Spherical Images from Any Camera
 description: >-
-  [CVPR 2026][Segmentation][Spherical convolution] USF proposes a modular, lens-agnostic spherical vision frontend that projects arbitrarily calibrated camera images onto the unit sphere and performs spatial-domain spherical resampling, convolution, and pooling operations. Using only distance-weighted kernels, the framework inherently guarantees rotation equivariance, and demonstrates zero-shot generalization robustness to random rotations and cross-lens transfer on classification, detection, and segmentation tasks.
+  [CVPR 2026][Segmentation][Spherical convolution] USF proposes a modular, lens-agnostic spherical vision frontend that projects arbitrarily calibrated camera images onto the unit sphere and performs spatial-domain spheric…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Spherical convolution
-  - rotation equivariance
-  - wide-angle camera
-  - panoramic image
-  - lens-agnostic
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Spherical convolution"
+  - "rotation equivariance"
+  - "wide-angle camera"
+  - "panoramic image"
+  - "lens-agnostic"
 date: 2026-05-08
 content_hash: f9ed1335e665496b
 ---

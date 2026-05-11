@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] 4D Gaussian Splatting SLAM
 description: >-
-  [ICCV 2025][3D Vision][4D Gaussian] This paper presents the first complete 4D Gaussian Splatting SLAM system capable of simultaneously performing camera pose tracking and 4D Gaussian radiance field reconstruction in dynamic scenes. Gaussian primitives are partitioned into static and dynamic sets; dynamic object motion is modeled via sparse control points and an MLP; and a novel 2D optical flow map rendering algorithm is introduced to supervise dynamic Gaussian motion learning.
+  [ICCV 2025][3D Vision][4D Gaussian] This paper presents the first complete 4D Gaussian Splatting SLAM system capable of simultaneously performing camera pose tracking and 4D Gaussian radiance field reconstruction in dyna…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 4D Gaussian
-  - Dynamic Scene SLAM
-  - Optical Flow Rendering
-  - Sparse Control Points
-  - RGB-D
+  - "ICCV 2025"
+  - "3D Vision"
+  - "4D Gaussian"
+  - "Dynamic Scene SLAM"
+  - "Optical Flow Rendering"
+  - "Sparse Control Points"
+  - "RGB-D"
 date: 2026-05-08
 content_hash: 0094e89ed30328a4
 ---

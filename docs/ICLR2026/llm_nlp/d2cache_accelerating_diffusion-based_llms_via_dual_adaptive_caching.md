@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] d²Cache: Accelerating Diffusion-Based LLMs via Dual Adaptive Caching
 description: >-
-  [ICLR 2026][LLM/NLP][Diffusion LLM] This paper proposes d²Cache, a training-free approximate KV cache framework for diffusion-based LLMs (dLLMs), achieving 4.1× inference speedup while simultaneously improving generation quality via a two-stage strategy: deterministic prior-guided masked token selection followed by attention-aware non-masked token selection.
+  [ICLR 2026][LLM/NLP][Diffusion LLM] This paper proposes d²Cache, a training-free approximate KV cache framework for diffusion-based LLMs (dLLMs)…
 tags:
-  - ICLR 2026
-  - LLM/NLP
-  - Diffusion LLM
-  - KV Cache
-  - Inference Acceleration
-  - dLLM
-  - Attention Pruning
+  - "ICLR 2026"
+  - "LLM/NLP"
+  - "Diffusion LLM"
+  - "KV Cache"
+  - "Inference Acceleration"
+  - "dLLM"
+  - "Attention Pruning"
 date: 2026-05-08
 content_hash: c594ebd71769e37e
 ---

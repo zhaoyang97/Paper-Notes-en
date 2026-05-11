@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MMLongBench: Benchmarking Long-Context Vision-Language Models Effectively and Thoroughly
 description: >-
-  [NeurIPS 2025][Multimodal VLM][long-context VLM] This paper introduces MMLongBench, the first comprehensive benchmark for evaluating long-context vision-language models (LCVLMs), comprising 13,331 samples spanning 5 downstream task categories, mixed image types, and 5 standardized input length levels (8K–128K tokens). Evaluation of 46 models reveals that single-task performance is a weak proxy for overall capability, and that stronger reasoning ability positively correlates with long-context performance.
+  [NeurIPS 2025][Multimodal VLM][long-context VLM] This paper introduces MMLongBench, the first comprehensive benchmark for evaluating long-context vision-language models (LCVLMs), comprising 13…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - long-context VLM
-  - benchmark
-  - multi-task evaluation
-  - cross-modal tokenization
-  - NIAH
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "long-context VLM"
+  - "benchmark"
+  - "multi-task evaluation"
+  - "cross-modal tokenization"
+  - "NIAH"
 date: 2026-05-08
 content_hash: 3cffad7ee42a0061
 ---

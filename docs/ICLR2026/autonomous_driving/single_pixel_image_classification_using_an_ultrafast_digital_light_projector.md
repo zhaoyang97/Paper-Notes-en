@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Single Pixel Image Classification using an Ultrafast Digital Light Projector
 description: >-
-  [ICLR 2026][Autonomous Driving][Single-pixel imaging] This paper presents an experimental single-pixel imaging (SPI) system based on a microLED-on-CMOS ultrafast digital light projector, combined with low-complexity machine learning models (ELM and DNN) to achieve sub-millisecond image encoding and kHz-rate image classification. The system attains >90% accuracy on the MNIST dataset and >99% AUC in binary classification scenarios.
+  [ICLR 2026][Autonomous Driving][Single-pixel imaging] This paper presents an experimental single-pixel imaging (SPI) system based on a microLED-on-CMOS ultrafast digital light projector…
 tags:
-  - ICLR 2026
-  - Autonomous Driving
-  - Single-pixel imaging
-  - image classification
-  - microLED
-  - Hadamard patterns
-  - extreme learning machine
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "Single-pixel imaging"
+  - "image classification"
+  - "microLED"
+  - "Hadamard patterns"
+  - "extreme learning machine"
 date: 2026-05-08
 content_hash: cadbc4ca7e523863
 ---

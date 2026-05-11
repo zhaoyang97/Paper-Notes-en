@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] EgoPoseFormer v2: Accurate Egocentric Human Motion Estimation for AR/VR
 description: >-
-  [CVPR 2026][Human Understanding][egocentric pose estimation] This paper proposes EgoPoseFormer v2 (EPFv2), which achieves state-of-the-art accuracy in egocentric 3D human motion estimation on the EgoBody3M benchmark (MPJPE 4.02 cm, 15–22% improvement over its predecessor) at 0.8 ms GPU latency. The system combines an end-to-end Transformer architecture (single global query token + causal temporal attention + conditioned multi-view cross-attention) with an uncertainty-distillation-based auto-labeling system.
+  [CVPR 2026][Human Understanding][egocentric pose estimation] This paper proposes EgoPoseFormer v2 (EPFv2), which achieves state-of-the-art accuracy in egocentric 3D human motion estimation on the EgoBody3M benchmark (MPJ…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - egocentric pose estimation
-  - Transformer
-  - semi-supervised learning
-  - auto-labeling
-  - AR/VR
-  - temporal modeling
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "egocentric pose estimation"
+  - "Transformer"
+  - "semi-supervised learning"
+  - "auto-labeling"
+  - "AR/VR"
+  - "temporal modeling"
 date: 2026-05-08
 content_hash: 026896b7151295e7
 ---

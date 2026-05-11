@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Training-Free Safe Text Embedding Guidance for Text-to-Image Diffusion Models
 description: >-
-  [NeurIPS 2025][Image Generation][Safe generation] This paper proposes Safe Text embedding Guidance (STG), a training-free approach for safe text-to-image generation that dynamically adjusts text embeddings during diffusion sampling based on a safety function evaluated on the expected denoised image. STG effectively removes unsafe content while maximally preserving the original semantic intent.
+  [NeurIPS 2025][Image Generation][Safe generation] This paper proposes Safe Text embedding Guidance (STG), a training-free approach for safe text-to-image generation that dynamically adjusts text embeddings during diffusi…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Safe generation
-  - text embedding guidance
-  - diffusion models
-  - training-free methods
-  - content safety
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Safe generation"
+  - "text embedding guidance"
+  - "diffusion models"
+  - "training-free methods"
+  - "content safety"
 date: 2026-05-08
 content_hash: 4df4536cd28d5302
 ---

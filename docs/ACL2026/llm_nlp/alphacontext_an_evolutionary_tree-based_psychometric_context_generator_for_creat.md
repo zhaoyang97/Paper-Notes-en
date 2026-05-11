@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AlphaContext: An Evolutionary Tree-based Psychometric Context Generator for Creativity Assessment
 description: >-
-  [ACL 2026][LLM/NLP][Creativity Assessment] This paper proposes AlphaContext, an evolutionary tree-based psychometric context generator comprising four modules—HyperTree outline planning, MCTS sentence-level generation, MAP-Elites diversity optimization, and assessment-guided iterative refinement—to automatically generate high-quality long-form contexts for creativity assessment, achieving an average improvement of 8% over competitive baselines across 7 evaluation dimensions.
+  [ACL 2026][LLM/NLP][Creativity Assessment] This paper proposes AlphaContext, an evolutionary tree-based psychometric context generator comprising four modules—HyperTree outline planning, MCTS sentence-level generation…
 tags:
-  - ACL 2026
-  - LLM/NLP
-  - Creativity Assessment
-  - Psychometrics
-  - Evolutionary Algorithm
-  - MCTS Text Generation
-  - MAP-Elites
+  - "ACL 2026"
+  - "LLM/NLP"
+  - "Creativity Assessment"
+  - "Psychometrics"
+  - "Evolutionary Algorithm"
+  - "MCTS Text Generation"
+  - "MAP-Elites"
 date: 2026-05-08
 content_hash: 6ab4b52f483f55b1
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Concept-TRAK: Understanding how diffusion models learn concepts through concept-level attribution
 description: >-
-  [ICLR2026][Image Generation][Diffusion Models] This paper proposes Concept-TRAK, which extends influence functions from image-level to concept-level attribution by designing concept-specific training losses (DPS reward) and utility losses (CFG guidance). The method substantially outperforms TRAK, D-TRAK, and DAS on synthetic, CelebA-HQ, and AbC benchmarks, with particularly significant advantages in OOD settings where novel concept combinations are evaluated.
+  [ICLR2026][Image Generation][Diffusion Models] This paper proposes Concept-TRAK, which extends influence functions from image-level to concept-level attribution by designing concept-specific training losses (DPS reward)…
 tags:
-  - ICLR2026
-  - Image Generation
-  - Diffusion Models
-  - Data Attribution
-  - Concept Attribution
-  - Influence Functions
-  - Copyright
+  - "ICLR2026"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "Data Attribution"
+  - "Concept Attribution"
+  - "Influence Functions"
+  - "Copyright"
 date: 2026-05-08
 content_hash: 7156977b70b068c9
 ---

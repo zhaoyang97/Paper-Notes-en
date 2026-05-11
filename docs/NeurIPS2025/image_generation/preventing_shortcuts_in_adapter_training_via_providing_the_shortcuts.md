@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Preventing Shortcuts in Adapter Training via Providing the Shortcuts
 description: >-
-  [NeurIPS 2025][Image Generation][Adapter Training] This paper proposes Shortcut-Rerouted Adapter Training, which actively provides dedicated pathways for confounding factors during adapter training (e.g., a LoRA absorbing distribution shifts, a ControlNet absorbing pose/expression), thereby constraining the adapter to learn only the target attribute (e.g., identity). The auxiliary modules are discarded at inference time, yielding a disentangled adapter.
+  [NeurIPS 2025][Image Generation][Adapter Training] This paper proposes Shortcut-Rerouted Adapter Training, which actively provides dedicated pathways for confounding factors during adapter training (e.g.…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Adapter Training
-  - Shortcut Learning
-  - Disentanglement
-  - Personalized Generation
-  - Identity Preservation
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Adapter Training"
+  - "Shortcut Learning"
+  - "Disentanglement"
+  - "Personalized Generation"
+  - "Identity Preservation"
 date: 2026-05-08
 content_hash: 75102ffd0af253f3
 ---

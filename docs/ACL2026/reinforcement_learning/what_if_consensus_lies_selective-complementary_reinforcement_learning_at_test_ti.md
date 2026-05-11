@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SCRL: What If Consensus Lies? Selective-Complementary Reinforcement Learning at Test Time
 description: >-
-  [ACL 2026][Reinforcement Learning][Test-time reinforcement learning] This paper proposes SCRL (Selective-Complementary Reinforcement Learning), a robust test-time reinforcement learning framework that mitigates label noise amplification through selective positive pseudo-labels (filtering unreliable majorities via strict consensus criteria) and entropy-gated negative pseudo-labels (introducing negative supervision signals into TTRL for the first time to prune erroneous trajectories), achieving up to 10.1 percentage points improvement over TTRL on AIME25.
+  [ACL 2026][Reinforcement Learning][Test-time reinforcement learning] This paper proposes SCRL (Selective-Complementary Reinforcement Learning), a robust test-time reinforcement learning framework that mitigates label noi…
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - Test-time reinforcement learning
-  - pseudo-label noise
-  - negative labels
-  - consensus reliability
-  - unsupervised reasoning
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "Test-time reinforcement learning"
+  - "pseudo-label noise"
+  - "negative labels"
+  - "consensus reliability"
+  - "unsupervised reasoning"
 date: 2026-05-08
 content_hash: d9a52b4af92e00cd
 ---

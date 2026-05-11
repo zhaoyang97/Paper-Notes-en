@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] IA-CLAHE: Image-Adaptive Clip Limit Estimation for CLAHE
 description: >-
-  [CVPR 2026][Image Restoration][CLAHE] IA-CLAHE demonstrates that the histogram redistribution process in CLAHE is differentiable almost everywhere, enabling the first end-to-end learning framework for tile-adaptive clip limit estimation. Without requiring pre-searched ground-truth clip limits, it achieves zero-shot improvements in recognition performance and visual quality under adverse weather conditions.
+  [CVPR 2026][Image Restoration][CLAHE] IA-CLAHE demonstrates that the histogram redistribution process in CLAHE is differentiable almost everywhere…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - CLAHE
-  - differentiable
-  - adaptive enhancement
-  - contrast limiting
-  - zero-shot generalization
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "CLAHE"
+  - "differentiable"
+  - "adaptive enhancement"
+  - "contrast limiting"
+  - "zero-shot generalization"
 date: 2026-05-08
 content_hash: 9f6de8a4c033bdf7
 ---

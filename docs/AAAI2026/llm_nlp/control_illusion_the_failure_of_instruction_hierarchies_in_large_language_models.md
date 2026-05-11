@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Control Illusion: The Failure of Instruction Hierarchies in Large Language Models
 description: >-
-  [AAAI 2026][LLM/NLP][Instruction hierarchy] This paper systematically demonstrates that the system/user prompt separation mechanism in current LLMs **fails to establish reliable instruction priority**, and finds that social hierarchy priors acquired during pretraining (authority, expertise, consensus) exert stronger control over model behavior than explicit system/user role markers.
+  [AAAI 2026][LLM/NLP][Instruction hierarchy] This paper systematically demonstrates that the system/user prompt separation mechanism in current LLMs **fails to establish reliable instruction priority**…
 tags:
-  - AAAI 2026
-  - LLM/NLP
-  - Instruction hierarchy
-  - system/user separation
-  - conflicting instructions
-  - constraint preference
-  - social hierarchy prior
+  - "AAAI 2026"
+  - "LLM/NLP"
+  - "Instruction hierarchy"
+  - "system/user separation"
+  - "conflicting instructions"
+  - "constraint preference"
+  - "social hierarchy prior"
 date: 2026-05-08
 content_hash: 7707cf86810ad516
 ---

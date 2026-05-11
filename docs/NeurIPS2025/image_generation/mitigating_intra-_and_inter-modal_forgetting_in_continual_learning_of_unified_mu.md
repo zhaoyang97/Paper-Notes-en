@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mitigating Intra- and Inter-modal Forgetting in Continual Learning of Unified Multimodal Models
 description: >-
-  [NeurIPS 2025][Image Generation][Unified Multimodal Generation Models] This paper proposes Modality-Decoupled Experts (MoDE), which decouples text and image adapters into independent T-MoE and V-Adapter subspaces, combined with knowledge distillation, to simultaneously mitigate intra-modal and inter-modal forgetting in continual instruction tuning of unified multimodal generation models.
+  [NeurIPS 2025][Image Generation][Unified Multimodal Generation Models] This paper proposes Modality-Decoupled Experts (MoDE), which decouples text and image adapters into independent T-MoE and V-Adapter subspaces…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Unified Multimodal Generation Models
-  - Inter-modal Forgetting
-  - Intra-modal Forgetting
-  - LoRA Mixture of Experts
-  - Knowledge Distillation
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Unified Multimodal Generation Models"
+  - "Inter-modal Forgetting"
+  - "Intra-modal Forgetting"
+  - "LoRA Mixture of Experts"
+  - "Knowledge Distillation"
 date: 2026-05-08
 content_hash: 2f59b8f3815afba4
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MedAgentBoard: Benchmarking Multi-Agent Collaboration with Conventional Methods for Diverse Medical Tasks
 description: >-
-  [NeurIPS 2025 (Datasets & Benchmarks Track)][Medical Imaging][multi-agent collaboration] This paper proposes MedAgentBoard, a comprehensive benchmark that systematically evaluates multi-agent collaboration, single-LLM, and conventional methods across diverse medical tasks, revealing that multi-agent collaboration does not consistently outperform strong single models or specialized conventional approaches.
+  [NeurIPS 2025 (Datasets & Benchmarks Track)][Medical Imaging][multi-agent collaboration] This paper proposes MedAgentBoard, a comprehensive benchmark that systematically evaluates multi-agent collaboration, single-LLM…
 tags:
   - "NeurIPS 2025 (Datasets & Benchmarks Track)"
-  - Medical Imaging
-  - multi-agent collaboration
-  - medical benchmarking
-  - LLM
-  - clinical workflow
-  - EHR prediction
+  - "Medical Imaging"
+  - "multi-agent collaboration"
+  - "medical benchmarking"
+  - "LLM"
+  - "clinical workflow"
+  - "EHR prediction"
 date: 2026-05-08
 content_hash: d0a1a043c93147ad
 ---

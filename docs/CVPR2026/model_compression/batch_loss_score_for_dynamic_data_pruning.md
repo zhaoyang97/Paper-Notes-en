@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Batch Loss Score for Dynamic Data Pruning
 description: >-
-  [CVPR 2026][Model Compression][dynamic data pruning] This paper proposes Batch Loss Score (BLS), a method that estimates sample importance using only the mean batch loss — which is universally available — rather than per-sample loss, which is difficult to obtain in practice. Grounded in a signal-processing perspective via EMA-based low-pass filtering, BLS offers theoretical guarantees and can be integrated into existing dynamic pruning frameworks with just 3 lines of code.
+  [CVPR 2026][Model Compression][dynamic data pruning] This paper proposes Batch Loss Score (BLS), a method that estimates sample importance using only the mean batch loss — which is universally available — rather than per…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - dynamic data pruning
-  - batch loss
-  - EMA
-  - training efficiency
-  - sample importance
+  - "CVPR 2026"
+  - "Model Compression"
+  - "dynamic data pruning"
+  - "batch loss"
+  - "EMA"
+  - "training efficiency"
+  - "sample importance"
 date: 2026-05-08
 content_hash: 38780b070d4cac49
 ---

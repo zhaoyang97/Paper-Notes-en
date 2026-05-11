@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Revisiting Logit Distributions for Reliable Out-of-Distribution Detection
 description: >-
-  [NeurIPS 2025][Multimodal VLM][OOD detection] This paper proposes LogitGap, a novel post-hoc OOD detection scoring function that explicitly exploits the "gap" between the maximum logit and the remaining logits to distinguish in-distribution (ID) from out-of-distribution (OOD) samples. A top-N selection strategy is introduced to filter noisy logits. Theoretical analysis and experiments demonstrate that LogitGap outperforms MCM and MaxLogit across multiple scenarios.
+  [NeurIPS 2025][Multimodal VLM][OOD detection] This paper proposes LogitGap, a novel post-hoc OOD detection scoring function that explicitly exploits the "gap" between the maximum logit and the remaining logits to disting…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - OOD detection
-  - logit distribution
-  - CLIP
-  - post-hoc method
-  - scoring function
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "OOD detection"
+  - "logit distribution"
+  - "CLIP"
+  - "post-hoc method"
+  - "scoring function"
 date: 2026-05-08
 content_hash: 61ab283b3333b698
 ---

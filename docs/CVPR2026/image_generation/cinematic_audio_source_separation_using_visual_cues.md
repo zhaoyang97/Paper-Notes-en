@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Cinematic Audio Source Separation Using Visual Cues
 description: >-
-  [CVPR 2026][Image Generation][Cinematic audio source separation] This paper proposes the first audio-visual cinematic audio source separation (AV-CASS) framework, which leverages visual cues from dual video streams (face and scene) to perform generative three-way audio separation (dialogue/effects/music) via conditional flow matching, training solely on synthetic data while generalizing to real films.
+  [CVPR 2026][Image Generation][Cinematic audio source separation] This paper proposes the first audio-visual cinematic audio source separation (AV-CASS) framework…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Cinematic audio source separation
-  - audio-visual learning
-  - conditional flow matching
-  - synthetic training data
-  - multi-source separation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Cinematic audio source separation"
+  - "audio-visual learning"
+  - "conditional flow matching"
+  - "synthetic training data"
+  - "multi-source separation"
 date: 2026-05-08
 content_hash: 8d75e3db254b2848
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GRAB: A Challenging GRaph Analysis Benchmark for Large Multimodal Models
 description: >-
-  [ICCV 2025][Multimodal VLM][graph analysis] GRAB is a graph analysis benchmark for large multimodal models (LMMs), comprising 3,284 synthetically generated questions spanning 5 tasks and 23 graph properties. The strongest model evaluated, Claude 3.5 Sonnet, achieves only 21.0% accuracy, revealing critical deficiencies in LMMs' capacity for visual analytical reasoning.
+  [ICCV 2025][Multimodal VLM][graph analysis] GRAB is a graph analysis benchmark for large multimodal models (LMMs), comprising 3,284 synthetically generated questions spanning 5 tasks and 23 graph properties. The stronges…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - graph analysis
-  - benchmark
-  - large multimodal models
-  - synthetic data
-  - visual reasoning
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "graph analysis"
+  - "benchmark"
+  - "large multimodal models"
+  - "synthetic data"
+  - "visual reasoning"
 date: 2026-05-08
 content_hash: af7d6d64895f282f
 ---

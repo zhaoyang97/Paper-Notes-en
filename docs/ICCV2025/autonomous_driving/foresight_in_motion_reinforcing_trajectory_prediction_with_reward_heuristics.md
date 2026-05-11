@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Foresight in Motion: Reinforcing Trajectory Prediction with Reward Heuristics
 description: >-
-  [ICCV 2025][Autonomous Driving][Trajectory Prediction] This paper proposes a "First Reasoning, Then Forecasting" strategy that infers reward distributions over driving intentions via Query-centric Inverse Reinforcement Learning (QIRL), and couples this with a Bi-Mamba-enhanced DETR-style trajectory decoder to significantly improve prediction confidence and accuracy.
+  [ICCV 2025][Autonomous Driving][Trajectory Prediction] This paper proposes a "First Reasoning, Then Forecasting" strategy that infers reward distributions over driving intentions via Query-centric Inverse Reinforcement L…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - Trajectory Prediction
-  - Inverse Reinforcement Learning
-  - Intent Reasoning
-  - Mamba
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "Trajectory Prediction"
+  - "Inverse Reinforcement Learning"
+  - "Intent Reasoning"
+  - "Mamba"
 date: 2026-05-08
 content_hash: 7d37c3f7f537c334
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LiNeXt: Revisiting LiDAR Completion with Efficient Non-Diffusion Architectures
 description: >-
-  [AAAI 2026][Autonomous Driving][LiDAR scene completion] This paper proposes LiNeXt, a lightweight non-diffusion network for LiDAR 3D scene completion. Through a **Distance-aware Selective Repetition (DSR) strategy**, a **Noise-to-Coarse (N2C) module**, and a **Refine module**, LiNeXt directly reconstructs complete point clouds. On SemanticKITTI, it achieves **199.8×** faster inference than LiDiff, reduces Chamfer Distance by **50.7%**, and uses only **6.1%** of LiDiff's parameters.
+  [AAAI 2026][Autonomous Driving][LiDAR scene completion] This paper proposes LiNeXt, a lightweight non-diffusion network for LiDAR 3D scene completion. Through a **Distance-aware Selective Repetition (DSR) strategy**…
 tags:
-  - AAAI 2026
-  - Autonomous Driving
-  - LiDAR scene completion
-  - point cloud completion
-  - non-diffusion model
-  - sparse convolution
-  - real-time inference
+  - "AAAI 2026"
+  - "Autonomous Driving"
+  - "LiDAR scene completion"
+  - "point cloud completion"
+  - "non-diffusion model"
+  - "sparse convolution"
+  - "real-time inference"
 date: 2026-05-08
 content_hash: 5dd9471a1011bfbb
 ---

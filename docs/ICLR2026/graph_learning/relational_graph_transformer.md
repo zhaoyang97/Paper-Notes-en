@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Relational Graph Transformer
 description: >-
-  [ICLR 2026][Graph Learning][Graph Transformer] This paper proposes RelGT, the first graph Transformer specifically designed for relational databases. Through multi-element tokenization (a 5-tuple of feature/type/hop distance/time/local structure encodings) and a local–global hybrid attention mechanism, RelGT consistently outperforms GNN baselines across all 21 tasks in the RelBench benchmark, with improvements of up to 18%.
+  [ICLR 2026][Graph Learning][Graph Transformer] This paper proposes RelGT, the first graph Transformer specifically designed for relational databases. Through multi-element tokenization (a 5-tuple of feature/type/hop dist…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - Graph Transformer
-  - Relational Deep Learning
-  - Multi-Element Tokenization
-  - Heterogeneous Temporal Graph
-  - Positional Encoding
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Graph Transformer"
+  - "Relational Deep Learning"
+  - "Multi-Element Tokenization"
+  - "Heterogeneous Temporal Graph"
+  - "Positional Encoding"
 date: 2026-05-08
 content_hash: 27257e9a3c04f0ee
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EventHub: Data Factory for Generalizable Event-Based Stereo Networks without Active Sensors
 description: >-
-  [CVPR 2026][3D Vision][Event cameras] This paper proposes EventHub, a training data factory for event-based stereo matching that requires no annotation from active sensors such as LiDAR. It generates proxy event-depth pairs via novel view synthesis and transfers knowledge from RGB stereo models through cross-modal distillation. The resulting event stereo models surpass LiDAR-supervised counterparts in cross-domain generalization, reducing error by up to 50% on M3ED and MVSEC.
+  [CVPR 2026][3D Vision][Event cameras] This paper proposes EventHub, a training data factory for event-based stereo matching that requires no annotation from active sensors such as LiDAR. It generates proxy event-depth pa…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Event cameras
-  - stereo matching
-  - data factory
-  - novel view synthesis
-  - cross-modal distillation
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Event cameras"
+  - "stereo matching"
+  - "data factory"
+  - "novel view synthesis"
+  - "cross-modal distillation"
 date: 2026-05-08
 content_hash: b7facf384f4f3947
 ---

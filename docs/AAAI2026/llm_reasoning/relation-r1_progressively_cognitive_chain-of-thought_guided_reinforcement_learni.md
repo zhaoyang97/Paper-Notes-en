@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Relation-R1: Progressively Cognitive Chain-of-Thought Guided Reinforcement Learning for Unified Relation Comprehension
 description: >-
-  [AAAI 2026][LLM Reasoning][Visual Relation Understanding] This paper proposes Relation-R1, the first unified framework for binary and N-ary relation comprehension, combining progressively cognitive CoT-guided SFT with GRPO multi-reward optimization. With only 3B parameters, it surpasses 13B models, achieving 21.20% Mean (+6.87%) on PSG and state-of-the-art performance across all metrics on SWiG (Grnd-all 30.18%, +14.48%).
+  [AAAI 2026][LLM Reasoning][Visual Relation Understanding] This paper proposes Relation-R1, the first unified framework for binary and N-ary relation comprehension…
 tags:
-  - AAAI 2026
-  - LLM Reasoning
-  - Visual Relation Understanding
-  - Cognitive Chain-of-Thought
-  - GRPO Reinforcement Learning
-  - Scene Graph Generation
-  - N-ary Relation Detection
-  - Multimodal Large Language Models
+  - "AAAI 2026"
+  - "LLM Reasoning"
+  - "Visual Relation Understanding"
+  - "Cognitive Chain-of-Thought"
+  - "GRPO Reinforcement Learning"
+  - "Scene Graph Generation"
+  - "N-ary Relation Detection"
+  - "Multimodal Large Language Models"
 date: 2026-05-08
 content_hash: 9b6ec098d443b000
 ---

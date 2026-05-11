@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SPARROW: Learning Spatial Precision and Temporal Referential Consistency in Pixel-Grounded Video MLLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][Video pixel-level grounding] This paper proposes the SPARROW framework, which injects temporal consistency supervision via **Target-Specific Features (TSF)**, stabilizes first-frame initialization through **dual-prompt ([BOX]+[SEG]) coarse-to-fine decoding**, and integrates into existing video MLLMs in a plug-and-play manner, achieving consistent improvements across 6 benchmarks on 3 tasks.
+  [CVPR 2026][Multimodal VLM][Video pixel-level grounding] This paper proposes the SPARROW framework, which injects temporal consistency supervision via **Target-Specific Features (TSF)**…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Video pixel-level grounding
-  - referring video object segmentation
-  - temporal consistency
-  - dual-prompt decoding
-  - multimodal large language models
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Video pixel-level grounding"
+  - "referring video object segmentation"
+  - "temporal consistency"
+  - "dual-prompt decoding"
+  - "multimodal large language models"
 date: 2026-05-08
 content_hash: b9219375d8aad398
 ---

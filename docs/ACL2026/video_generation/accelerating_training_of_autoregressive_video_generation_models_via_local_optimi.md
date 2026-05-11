@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Accelerating Training of Autoregressive Video Generation Models via Local Optimization with Representation Continuity
 description: >-
-  [ACL 2026][Video Generation][Autoregressive Video Generation] This paper proposes a Local Optimization + Representation Continuity (ReCo) training strategy that optimizes within local windows while constraining smooth transitions of hidden states, achieving 2× training speedup for autoregressive video generation models without sacrificing generation quality.
+  [ACL 2026][Video Generation][Autoregressive Video Generation] This paper proposes a Local Optimization + Representation Continuity (ReCo) training strategy that optimizes within local windows while constraining smooth tr…
 tags:
-  - ACL 2026
-  - Video Generation
-  - Autoregressive Video Generation
-  - Training Acceleration
-  - Local Optimization
-  - Representation Continuity
-  - Lipschitz Continuity
+  - "ACL 2026"
+  - "Video Generation"
+  - "Autoregressive Video Generation"
+  - "Training Acceleration"
+  - "Local Optimization"
+  - "Representation Continuity"
+  - "Lipschitz Continuity"
 date: 2025-04-17
 content_hash: b088897d33c681f7
 ---

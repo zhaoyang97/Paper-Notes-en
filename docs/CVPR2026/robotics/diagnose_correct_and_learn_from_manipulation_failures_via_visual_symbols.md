@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Diagnose, Correct, and Learn from Manipulation Failures via Visual Symbols
 description: >-
-  [CVPR 2026][Robotics][robotic manipulation failure] This paper proposes ViFailback, a framework that leverages visual symbols (arrows, crosshairs, labels, etc.) to efficiently annotate real-world robotic manipulation failures. The framework constructs a dataset of 58,128 VQA pairs and trains ViFailback-8B, a VLM capable of failure diagnosis and both visual and textual corrective guidance. When integrated with a VLA, it achieves a 22.2% improvement in task success rate.
+  [CVPR 2026][Robotics][robotic manipulation failure] This paper proposes ViFailback, a framework that leverages visual symbols (arrows, crosshairs, labels…
 tags:
-  - CVPR 2026
-  - Robotics
-  - robotic manipulation failure
-  - visual symbols
-  - VLM failure diagnosis
-  - VLA recovery
-  - real-world dataset
+  - "CVPR 2026"
+  - "Robotics"
+  - "robotic manipulation failure"
+  - "visual symbols"
+  - "VLM failure diagnosis"
+  - "VLA recovery"
+  - "real-world dataset"
 date: 2026-05-08
 content_hash: 22c2c39620f71459
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FluxMem: Adaptive Hierarchical Memory for Streaming Video Understanding
 description: >-
-  [CVPR 2026][Video Understanding][streaming video understanding] This paper proposes FluxMem, a training-free streaming video understanding framework that employs a three-tier hierarchical memory design (short-term / medium-term / long-term) and two adaptive token compression modules — TAS for temporal redundancy removal and SDC for spatial redundancy reduction. FluxMem achieves new state-of-the-art results on StreamingBench and OVO-Bench while discarding 60–70% of visual tokens.
+  [CVPR 2026][Video Understanding][streaming video understanding] This paper proposes FluxMem, a training-free streaming video understanding framework that employs a three-tier hierarchical memory design (short-term / medi…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - streaming video understanding
-  - hierarchical memory
-  - visual token compression
-  - adaptive thresholding
-  - training-free
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "streaming video understanding"
+  - "hierarchical memory"
+  - "visual token compression"
+  - "adaptive thresholding"
+  - "training-free"
 date: 2026-05-08
 content_hash: 0f184acaf6c54d4a
 ---

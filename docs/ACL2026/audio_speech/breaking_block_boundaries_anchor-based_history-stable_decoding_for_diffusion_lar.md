@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Breaking Block Boundaries: Anchor-based History-stable Decoding for Diffusion Large Language Models
 description: >-
-  [ACL 2026][Audio & Speech][diffusion language models] This paper proposes AHD (Anchor-based History-stable Decoding), a training-free plug-and-play dynamic decoding strategy that identifies cross-block stable tokens in diffusion LLMs by tracing historical trajectories via dynamic anchors, enabling early unlocking. On BBH, AHD reduces decoding steps by 80% while improving performance by 3.67%.
+  [ACL 2026][Audio & Speech][diffusion language models] This paper proposes AHD (Anchor-based History-stable Decoding), a training-free plug-and-play dynamic decoding strategy that identifies cross-block stable tokens in d…
 tags:
-  - ACL 2026
+  - "ACL 2026"
   - "Audio & Speech"
-  - diffusion language models
-  - semi-autoregressive decoding
-  - cross-block stable tokens
-  - dynamic anchor
-  - inference acceleration
+  - "diffusion language models"
+  - "semi-autoregressive decoding"
+  - "cross-block stable tokens"
+  - "dynamic anchor"
+  - "inference acceleration"
 date: 2026-05-08
 content_hash: 7f050e4b21d1f1d0
 ---

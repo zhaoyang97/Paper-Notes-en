@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SingRef6D: Monocular Novel Object Pose Estimation with a Single RGB Reference
 description: >-
-  [NeurIPS 2025][3D Vision][6D pose estimation] SingRef6D is a lightweight 6D pose estimation pipeline requiring only a single RGB reference image. It fine-tunes Depth-Anything v2 via a token-scaler mechanism for robust depth prediction and introduces depth-aware matching to enhance LoFTR's spatial reasoning, substantially outperforming existing methods on transparent and reflective objects.
+  [NeurIPS 2025][3D Vision][6D pose estimation] SingRef6D is a lightweight 6D pose estimation pipeline requiring only a single RGB reference image. It fine-tunes Depth-Anything v2 via a token-scaler mechanism for robust de…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - 6D pose estimation
-  - monocular depth estimation
-  - single reference image
-  - Depth-Anything
-  - depth-aware matching
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "6D pose estimation"
+  - "monocular depth estimation"
+  - "single reference image"
+  - "Depth-Anything"
+  - "depth-aware matching"
 date: 2026-05-08
 content_hash: c2ad15c634de0f2f
 ---

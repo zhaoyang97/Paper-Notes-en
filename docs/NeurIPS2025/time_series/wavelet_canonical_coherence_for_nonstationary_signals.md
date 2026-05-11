@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Wavelet Canonical Coherence for Nonstationary Signals
 description: >-
-  [NeurIPS 2025][Time Series][Wavelet Analysis] This paper proposes WaveCanCoh, a framework that extends classical canonical coherence analysis to the wavelet domain. Built upon the multivariate locally stationary wavelet (MvLSW) model, it enables estimation of time-varying, scale-specific canonical coherence between two groups of nonstationary multivariate time series.
+  [NeurIPS 2025][Time Series][Wavelet Analysis] This paper proposes WaveCanCoh, a framework that extends classical canonical coherence analysis to the wavelet domain. Built upon the multivariate locally stationary wavelet…
 tags:
-  - NeurIPS 2025
-  - Time Series
-  - Wavelet Analysis
-  - Canonical Coherence
-  - Nonstationary Signals
-  - Multivariate Time Series
-  - Neuroscience
+  - "NeurIPS 2025"
+  - "Time Series"
+  - "Wavelet Analysis"
+  - "Canonical Coherence"
+  - "Nonstationary Signals"
+  - "Multivariate Time Series"
+  - "Neuroscience"
 date: 2026-05-08
 content_hash: 8660b5baba6acffb
 ---

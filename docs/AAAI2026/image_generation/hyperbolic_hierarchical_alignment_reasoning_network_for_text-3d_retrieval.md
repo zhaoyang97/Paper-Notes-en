@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Hyperbolic Hierarchical Alignment Reasoning Network for Text-3D Retrieval
 description: >-
-  [AAAI 2026][Image Generation][Text-3D Retrieval] This paper proposes H2ARN, which embeds text and 3D point cloud data in the Lorentz hyperbolic space. It addresses hierarchical representation collapse via a hierarchical ordering loss (entailment cones), and mitigates redundancy-induced saliency dilution via contribution-aware hyperbolic aggregation. The method achieves state-of-the-art performance on Text-3D retrieval and introduces the T3DR-HIT v2 dataset, which is 2.6× larger than its predecessor.
+  [AAAI 2026][Image Generation][Text-3D Retrieval] This paper proposes H2ARN, which embeds text and 3D point cloud data in the Lorentz hyperbolic space. It addresses hierarchical representation collapse via a hierarchical…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Text-3D Retrieval
-  - Hyperbolic Space
-  - Hierarchical Alignment
-  - Entailment Cones
-  - Contribution-Aware Aggregation
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Text-3D Retrieval"
+  - "Hyperbolic Space"
+  - "Hierarchical Alignment"
+  - "Entailment Cones"
+  - "Contribution-Aware Aggregation"
 date: 2026-05-08
 content_hash: 3fbc803f834afca9
 ---

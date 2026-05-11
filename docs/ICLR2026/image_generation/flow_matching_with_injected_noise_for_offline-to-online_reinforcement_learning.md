@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Flow Matching with Injected Noise for Offline-to-Online Reinforcement Learning
 description: >-
-  [ICLR 2026][Image Generation][Flow Matching] By injecting controllable noise into flow matching training to broaden policy coverage, and combining an entropy-guided sampling mechanism to dynamically balance exploration and exploitation during online fine-tuning, FINO significantly improves sample efficiency in offline-to-online RL under limited interaction budgets.
+  [ICLR 2026][Image Generation][Flow Matching] By injecting controllable noise into flow matching training to broaden policy coverage, and combining an entropy-guided sampling mechanism to dynamically balance exploration a…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Flow Matching
-  - Offline-to-Online RL
-  - Noise Injection
-  - Exploration-Exploitation Balance
-  - Entropy-Guided Sampling
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Flow Matching"
+  - "Offline-to-Online RL"
+  - "Noise Injection"
+  - "Exploration-Exploitation Balance"
+  - "Entropy-Guided Sampling"
 date: 2026-05-08
 content_hash: aab945fec3eedc07
 ---

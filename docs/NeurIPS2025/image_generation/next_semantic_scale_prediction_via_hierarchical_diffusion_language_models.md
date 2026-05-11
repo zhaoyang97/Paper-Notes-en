@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Next Semantic Scale Prediction via Hierarchical Diffusion Language Models
 description: >-
-  [NeurIPS 2025][Image Generation][discrete diffusion model] This paper proposes HDLM (Hierarchical Diffusion Language Model), which introduces cluster tokens with coarse-grained semantics as an intermediate hierarchy between clean tokens and mask tokens, enabling "next semantic scale prediction" in discrete diffusion language modeling. The method derives a closed-form ELBO, achieves consistently lower perplexity than MDLM/GIDD on OpenWebText, and reduces generation perplexity by 62% after stochastic perturbation.
+  [NeurIPS 2025][Image Generation][discrete diffusion model] This paper proposes HDLM (Hierarchical Diffusion Language Model), which introduces cluster tokens with coarse-grained semantics as an intermediate hierarchy betw…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - discrete diffusion model
-  - hierarchical vocabulary
-  - semantic scale prediction
-  - language modeling
-  - CTMC
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "discrete diffusion model"
+  - "hierarchical vocabulary"
+  - "semantic scale prediction"
+  - "language modeling"
+  - "CTMC"
 date: 2026-05-08
 content_hash: fff3559160fa8d8e
 ---

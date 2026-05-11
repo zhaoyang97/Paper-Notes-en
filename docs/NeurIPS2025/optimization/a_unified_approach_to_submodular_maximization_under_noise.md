@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Unified Approach to Submodular Maximization Under Noise
 description: >-
-  [NeurIPS 2025][Optimization][submodular maximization] This paper proposes a unified meta-algorithm framework that takes any exact submodular maximization algorithm satisfying a "robustness" condition as a black box and automatically converts it into an algorithm that maintains its approximation ratio (losing only $o(1)$) under a persistent noisy value oracle. This achieves, for the first time, optimal approximation ratios for non-monotone submodular maximization under matroid constraints and in the unconstrained setting.
+  [NeurIPS 2025][Optimization][submodular maximization] This paper proposes a unified meta-algorithm framework that takes any exact submodular maximization algorithm satisfying a "robustness" condition as a black box and a…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - submodular maximization
-  - noisy value oracle
-  - meta-algorithm
-  - approximation algorithms
-  - matroid constraints
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "submodular maximization"
+  - "noisy value oracle"
+  - "meta-algorithm"
+  - "approximation algorithms"
+  - "matroid constraints"
 date: 2026-05-08
 content_hash: 0735ba0fe8a0ed62
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Resilient Safety-Driven Unlearning for Diffusion Models Against Downstream Fine-tuning
 description: >-
-  [NeurIPS 2025][Image Generation][Diffusion models] This paper proposes ResAlign, a framework that leverages Moreau envelope approximation and meta-learning to make safety-driven unlearning in diffusion models resilient against harmful capability recovery induced by downstream fine-tuning, even when fine-tuning is performed exclusively on benign data.
+  [NeurIPS 2025][Image Generation][Diffusion models] This paper proposes ResAlign, a framework that leverages Moreau envelope approximation and meta-learning to make safety-driven unlearning in diffusion models resilient a…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Diffusion models
-  - safety unlearning
-  - fine-tuning resilience
-  - meta-learning
-  - Moreau envelope
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Diffusion models"
+  - "safety unlearning"
+  - "fine-tuning resilience"
+  - "meta-learning"
+  - "Moreau envelope"
 date: 2026-05-08
 content_hash: e27207174ceb5e34
 ---

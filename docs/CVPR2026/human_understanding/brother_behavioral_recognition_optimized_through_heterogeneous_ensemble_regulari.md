@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BROTHER: Behavioral Recognition Optimized Through Heterogeneous Ensemble Regularization for Ambivalence and Hesitancy
 description: >-
-  [CVPR 2026][Human Understanding][Ambivalence & Hesitancy Recognition] This paper proposes a heavily regularized multimodal fusion pipeline that achieves robust video-level recognition of Ambivalence/Hesitancy (A/H) behaviors in naturalistic settings. The framework employs a heterogeneous classifier committee across four modalities — visual (SigLip2), audio (HuBERT), text (F2LLM), and statistical features — combined with PSO-based hard-voting ensemble regularized by a train-validation gap penalty, achieving Macro F1 = 0.7465 on the ABAW10 test set.
+  [CVPR 2026][Human Understanding][Ambivalence & Hesitancy Recognition] This paper proposes a heavily regularized multimodal fusion pipeline that achieves robust video-level recognition of Ambivalence/Hesitancy (A/H) behav…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
   - "Ambivalence & Hesitancy Recognition"
-  - Multimodal Fusion
-  - Ensemble Learning
-  - Particle Swarm Optimization
-  - Behavioral Analysis
+  - "Multimodal Fusion"
+  - "Ensemble Learning"
+  - "Particle Swarm Optimization"
+  - "Behavioral Analysis"
 date: 2026-05-08
 content_hash: 00e1dfebfffb70bd
 ---

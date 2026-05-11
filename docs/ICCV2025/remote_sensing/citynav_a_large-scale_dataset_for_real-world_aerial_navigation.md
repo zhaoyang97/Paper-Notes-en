@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CityNav: A Large-Scale Dataset for Real-World Aerial Navigation
 description: >-
-  [ICCV 2025][Remote Sensing][Vision-and-Language Navigation] This paper introduces CityNav, the first large-scale aerial vision-and-language navigation dataset for real-world urban environments, comprising 32,637 human demonstration trajectories covering 4.65 km². A Geo-Semantic Map (GSM) auxiliary representation is proposed and shown to significantly improve baseline navigation performance.
+  [ICCV 2025][Remote Sensing][Vision-and-Language Navigation] This paper introduces CityNav, the first large-scale aerial vision-and-language navigation dataset for real-world urban environments, comprising 32…
 tags:
-  - ICCV 2025
-  - Remote Sensing
-  - Vision-and-Language Navigation
-  - UAV
-  - Real World
-  - Geo-Semantic Map
-  - Large-Scale Dataset
+  - "ICCV 2025"
+  - "Remote Sensing"
+  - "Vision-and-Language Navigation"
+  - "UAV"
+  - "Real World"
+  - "Geo-Semantic Map"
+  - "Large-Scale Dataset"
 date: 2026-05-08
 content_hash: dfe962e05e3430b2
 ---

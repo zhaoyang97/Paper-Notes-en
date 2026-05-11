@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TabFlash: Efficient Table Understanding with Progressive Question Conditioning and Token Focusing
 description: >-
-  [AAAI 2026][Multimodal VLM][table understanding] TabFlash introduces two core techniques — Progressive Question Conditioning and Token Focusing — to inject question information into the ViT for generating question-aware visual features, prune background tokens via L2 norm, and concentrate critical information into retained tokens through contrastive training. On 7 table understanding benchmarks, TabFlash surpasses GPT-4o and Gemini 2.5 Pro while reducing FLOPs by 27% and GPU memory by 30%.
+  [AAAI 2026][Multimodal VLM][table understanding] TabFlash introduces two core techniques — Progressive Question Conditioning and Token Focusing — to inject question information into the ViT for generating question-aware…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - table understanding
-  - multimodal large language models
-  - visual token pruning
-  - question conditioning
-  - computational efficiency
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "table understanding"
+  - "multimodal large language models"
+  - "visual token pruning"
+  - "question conditioning"
+  - "computational efficiency"
 date: 2026-05-08
 content_hash: 1eb1135ea75b059c
 ---

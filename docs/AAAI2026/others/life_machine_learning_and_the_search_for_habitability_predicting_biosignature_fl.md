@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Life, Machine Learning, and the Search for Habitability: Predicting Biosignature Fluxes for the Habitable Worlds Observatory
 description: >-
-  [AAAI 2026 (IAAI Emerging Applications)][Exoplanets] To address the observation prioritization needs of NASA's Habitable Worlds Observatory (HWO), this paper proposes two architectures — a Bayesian Convolutional Neural Network (BCNN) and a novel Spectral Query-Adaptive Transformer (SQuAT) — for predicting biosignature species fluxes from planetary reflected spectra. Both achieve high predictive accuracy on an augmented dataset, with complementary strengths in uncertainty quantification and interpretability, respectively.
+  [AAAI 2026 (IAAI Emerging Applications)][Exoplanets] To address the observation prioritization needs of NASA's Habitable Worlds Observatory (HWO)…
 tags:
-  - AAAI 2026 (IAAI Emerging Applications)
-  - Exoplanets
-  - Biosignatures
-  - Spectral Analysis
-  - Bayesian CNN
-  - Attention Mechanism
+  - "AAAI 2026 (IAAI Emerging Applications)"
+  - "Exoplanets"
+  - "Biosignatures"
+  - "Spectral Analysis"
+  - "Bayesian CNN"
+  - "Attention Mechanism"
 date: 2026-05-08
 content_hash: 93bbd61ff9a1a5e9
 ---

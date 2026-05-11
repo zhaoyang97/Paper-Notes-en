@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ETA: Efficiency through Thinking Ahead, A Dual Approach to Self-Driving with Large Models
 description: >-
-  [ICCV 2025][Autonomous Driving][End-to-end autonomous driving] This paper proposes ETA, a dual-system framework that shifts large-model computation from the current frame to preceding time steps and applies batch inference, enabling large-model features to be available at every frame. ETA achieves a driving score of 69.53 on Bench2Drive with a 50 ms latency, improving the state of the art by 8%.
+  [ICCV 2025][Autonomous Driving][End-to-end autonomous driving] This paper proposes ETA, a dual-system framework that shifts large-model computation from the current frame to preceding time steps and applies batch inferen…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - End-to-end autonomous driving
-  - dual-system architecture
-  - asynchronous inference
-  - real-time large model deployment
-  - feature forecasting
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "End-to-end autonomous driving"
+  - "dual-system architecture"
+  - "asynchronous inference"
+  - "real-time large model deployment"
+  - "feature forecasting"
 date: 2026-05-08
 content_hash: 2b56e0d7f71d47d2
 ---

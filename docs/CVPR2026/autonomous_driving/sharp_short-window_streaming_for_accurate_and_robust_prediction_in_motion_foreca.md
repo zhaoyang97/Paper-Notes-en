@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SHARP: Short-Window Streaming for Accurate and Robust Prediction in Motion Forecasting
 description: >-
-  [CVPR 2026][Autonomous Driving][Streaming motion prediction] This paper proposes SHARP, a motion prediction framework based on short-window streaming inference. It explicitly maintains and updates agent latent representations across time steps via an instance-aware context streamer module, and employs a dual-objective training strategy to achieve state-of-the-art streaming performance on the Argoverse 2 multi-agent benchmark while maintaining minimal latency.
+  [CVPR 2026][Autonomous Driving][Streaming motion prediction] This paper proposes SHARP, a motion prediction framework based on short-window streaming inference. It explicitly maintains and updates agent latent representa…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Streaming motion prediction
-  - heterogeneous observation lengths
-  - instance-aware context streaming
-  - short-window inference
-  - multi-agent prediction
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Streaming motion prediction"
+  - "heterogeneous observation lengths"
+  - "instance-aware context streaming"
+  - "short-window inference"
+  - "multi-agent prediction"
 date: 2026-05-08
 content_hash: 262918ce95dfde64
 ---

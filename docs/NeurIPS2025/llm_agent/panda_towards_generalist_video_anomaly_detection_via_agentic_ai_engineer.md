@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PANDA: Towards Generalist Video Anomaly Detection via Agentic AI Engineer
 description: >-
-  [NEURIPS2025][LLM Agent][video anomaly detection] This paper proposes PANDA, an agentic AI engineer framework built upon MLLMs, which achieves training-free and human-intervention-free generalist video anomaly detection through four core capabilities: adaptive scene-aware strategy planning, goal-driven heuristic reasoning, tool-augmented self-reflection, and chain-of-memory.
+  [NEURIPS2025][LLM Agent][video anomaly detection] This paper proposes PANDA, an agentic AI engineer framework built upon MLLMs, which achieves training-free and human-intervention-free generalist video anomaly detection…
 tags:
-  - NEURIPS2025
-  - LLM Agent
-  - video anomaly detection
-  - agentic AI
-  - RAG
-  - self-reflection
-  - chain-of-memory
+  - "NEURIPS2025"
+  - "LLM Agent"
+  - "video anomaly detection"
+  - "agentic AI"
+  - "RAG"
+  - "self-reflection"
+  - "chain-of-memory"
 date: 2026-05-08
 content_hash: 086d976409e5156a
 ---

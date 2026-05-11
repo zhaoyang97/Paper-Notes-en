@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Uncertainty-Guided Model Selection for Tabular Foundation Models in Biomolecule Efficacy Prediction
 description: >-
-  [NeurIPS 2025 (Workshop: Multi-modal Foundation Models for Life Sciences)][Self-Supervised Learning][TabPFN] This paper proposes OligoICP, a method that leverages the interquartile range (IQR) of TabPFN's predicted distributions as an unlabeled model selection heuristic, achieving superior performance over both specialized SOTA models and naive ensembles on siRNA knockdown efficiency prediction.
+  [NeurIPS 2025 (Workshop: Multi-modal Foundation Models for Life Sciences)][Self-Supervised Learning][TabPFN] This paper proposes OligoICP, a method that leverages the interquartile range (IQR) of TabPFN's predicted distr…
 tags:
   - "NeurIPS 2025 (Workshop: Multi-modal Foundation Models for Life Sciences)"
-  - Self-Supervised Learning
-  - TabPFN
-  - siRNA efficacy prediction
-  - uncertainty-guided selection
-  - posterior ensemble
-  - model selection
+  - "Self-Supervised Learning"
+  - "TabPFN"
+  - "siRNA efficacy prediction"
+  - "uncertainty-guided selection"
+  - "posterior ensemble"
+  - "model selection"
 date: 2026-05-08
 content_hash: ae8e00983828e773
 ---

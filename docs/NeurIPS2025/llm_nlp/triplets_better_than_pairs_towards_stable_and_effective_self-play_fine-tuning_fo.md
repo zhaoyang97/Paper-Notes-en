@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Triplets Better Than Pairs: Towards Stable and Effective Self-Play Fine-Tuning for LLMs
 description: >-
-  [NeurIPS 2025][LLM/NLP][self-play fine-tuning] This paper proposes T-SPIN (Triplet Self-Play Fine-Tuning), which extends SPIN by introducing a "historical advantage" (proto-synthetic responses as anchor points) and an entropy constraint to enable reference-free policy training. T-SPIN addresses two core issues in SPIN: optimization instability and train-generation misalignment, achieving performance comparable to full-data SFT using only 25% of labeled data.
+  [NeurIPS 2025][LLM/NLP][self-play fine-tuning] This paper proposes T-SPIN (Triplet Self-Play Fine-Tuning), which extends SPIN by introducing a "historical advantage" (proto-synthetic responses as anchor points) and an en…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - self-play fine-tuning
-  - triplet learning
-  - LLM alignment
-  - reference-free training
-  - data scarcity
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "self-play fine-tuning"
+  - "triplet learning"
+  - "LLM alignment"
+  - "reference-free training"
+  - "data scarcity"
 date: 2026-05-08
 content_hash: 23fb825ccc295215
 ---

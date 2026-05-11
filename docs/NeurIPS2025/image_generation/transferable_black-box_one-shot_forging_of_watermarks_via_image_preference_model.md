@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Transferable Black-Box One-Shot Forging of Watermarks via Image Preference Models
 description: >-
-  [NeurIPS 2025][Image Generation][watermark forging] This paper proposes a black-box watermark forging method based on image preference models. Given only a single watermarked image, the method extracts the watermark via backpropagation and transfers it to arbitrary new images, effectively forging multiple post-hoc watermarking schemes without access to the underlying watermarking algorithm.
+  [NeurIPS 2025][Image Generation][watermark forging] This paper proposes a black-box watermark forging method based on image preference models. Given only a single watermarked image…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - watermark forging
-  - preference model
-  - one-shot attack
-  - black-box attack
-  - post-hoc watermarking
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "watermark forging"
+  - "preference model"
+  - "one-shot attack"
+  - "black-box attack"
+  - "post-hoc watermarking"
 date: 2026-05-08
 content_hash: 1006cf57781b40df
 ---

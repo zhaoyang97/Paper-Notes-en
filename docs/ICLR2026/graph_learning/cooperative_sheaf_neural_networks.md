@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Cooperative Sheaf Neural Networks
 description: >-
-  [ICLR 2026][Graph Learning][Sheaf Neural Networks] This paper proposes in/out-degree sheaf Laplacians defined on directed graphs for cellular sheaves, and constructs a Cooperative Sheaf Neural Network (CSNN) that enables nodes to independently select information propagation/reception strategies, thereby simultaneously mitigating oversquashing and handling heterophilic tasks.
+  [ICLR 2026][Graph Learning][Sheaf Neural Networks] This paper proposes in/out-degree sheaf Laplacians defined on directed graphs for cellular sheaves…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - Sheaf Neural Networks
-  - cooperative behavior
-  - directed graphs
-  - oversquashing
-  - heterophilic graphs
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Sheaf Neural Networks"
+  - "cooperative behavior"
+  - "directed graphs"
+  - "oversquashing"
+  - "heterophilic graphs"
 date: 2026-05-08
 content_hash: ea9867b0e62f4398
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Provably Minimum-Length Conformal Prediction Sets for Ordinal Classification
 description: >-
-  [AAAI 2026][Medical Imaging][Conformal Prediction] This paper proposes min-CPS and its regularized variant min-RCPS, a model-agnostic conformal prediction method for ordinal classification. By solving the minimum-length prediction interval for each sample via a linear-time sliding window algorithm, the method reduces average prediction set size by 15% while maintaining coverage guarantees, with theoretical optimality guarantees at the instance level.
+  [AAAI 2026][Medical Imaging][Conformal Prediction] This paper proposes min-CPS and its regularized variant min-RCPS, a model-agnostic conformal prediction method for ordinal classification. By solving the minimum-length…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Conformal Prediction
-  - Ordinal Classification
-  - Prediction Set Size
-  - Uncertainty Quantification
-  - Sliding Window Algorithm
-  - Model-Agnostic
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Conformal Prediction"
+  - "Ordinal Classification"
+  - "Prediction Set Size"
+  - "Uncertainty Quantification"
+  - "Sliding Window Algorithm"
+  - "Model-Agnostic"
 date: 2026-05-08
 content_hash: 47441aa050f1ce13
 ---

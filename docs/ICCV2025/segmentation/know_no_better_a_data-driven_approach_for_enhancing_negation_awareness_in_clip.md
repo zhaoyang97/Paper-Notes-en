@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Know "No" Better: A Data-Driven Approach for Enhancing Negation Awareness in CLIP
 description: >-
-  [ICCV 2025][Segmentation][CLIP] By analyzing the scarcity and misalignment of negation expressions in CLIP's pre-training data, this work designs two LLM/MLLM-based negation data generation pipelines to fine-tune the CLIP text encoder, producing NegationCLIP — a model that enhances negation understanding while preserving general performance. A new benchmark, NegRefCOCOg, is proposed for comprehensive negation evaluation.
+  [ICCV 2025][Segmentation][CLIP] By analyzing the scarcity and misalignment of negation expressions in CLIP's pre-training data…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - CLIP
-  - Negation Understanding
-  - Data Generation
-  - Vision-Language Models
-  - Referring Image Segmentation
+  - "ICCV 2025"
+  - "Segmentation"
+  - "CLIP"
+  - "Negation Understanding"
+  - "Data Generation"
+  - "Vision-Language Models"
+  - "Referring Image Segmentation"
 date: 2026-05-08
 content_hash: c4f8aef974c5b682
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] SAML: A Differentiable Semantic Meta-Learning Framework for Long-Tail Motion Prediction
 description: >-
-  [AAAI 2026][Autonomous Driving][Long-tail distribution] SAML is proposed as the first framework to provide a differentiable semantic definition of "long-tailedness" in motion prediction — quantifying rarity via five intrinsic/interactive attributes, fusing them into a continuous Tail Index through a Bayesian Tail Perceiver, and driving MAML-based meta-learning adaptation. On the nuScenes worst-case top 1% subset, SAML achieves a minADE 17.2% lower than the second-best method.
+  [AAAI 2026][Autonomous Driving][Long-tail distribution] SAML is proposed as the first framework to provide a differentiable semantic definition of "long-tailedness" in motion prediction — quantifying rarity via five intr…
 tags:
-  - AAAI 2026
-  - Autonomous Driving
-  - Long-tail distribution
-  - meta-learning
-  - motion prediction
-  - Bayesian inference
-  - MAML
-  - tail-awareness
+  - "AAAI 2026"
+  - "Autonomous Driving"
+  - "Long-tail distribution"
+  - "meta-learning"
+  - "motion prediction"
+  - "Bayesian inference"
+  - "MAML"
+  - "tail-awareness"
 date: 2026-05-08
 content_hash: 14894e06f4df83dd
 ---

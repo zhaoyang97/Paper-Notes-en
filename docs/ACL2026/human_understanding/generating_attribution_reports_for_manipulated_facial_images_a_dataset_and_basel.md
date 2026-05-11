@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ForgeryTalker: Generating Attribution Reports for Manipulated Facial Images
 description: >-
-  [ACL 2026][Human Understanding][Face Forgery Detection] The paper proposes the Forgery Attribution Report Generation task, constructs the MMTT dataset with 152,217 samples (the first large-scale facial forgery dataset providing both pixel-level masks and human-written text descriptions), and introduces the ForgeryTalker end-to-end baseline that jointly generates localization masks and attribution reports via a shared encoder and dual decoders (mask + language model), achieving 59.3 CIDEr and 73.67 IoU.
+  [ACL 2026][Human Understanding][Face Forgery Detection] The paper proposes the Forgery Attribution Report Generation task, constructs the MMTT dataset with 152…
 tags:
-  - ACL 2026
-  - Human Understanding
-  - Face Forgery Detection
-  - Attribution Report Generation
-  - Multimodal Forensics
-  - Image Tampering Localization
-  - Explainable AI
+  - "ACL 2026"
+  - "Human Understanding"
+  - "Face Forgery Detection"
+  - "Attribution Report Generation"
+  - "Multimodal Forensics"
+  - "Image Tampering Localization"
+  - "Explainable AI"
 date: 2025-05-08
 content_hash: e3bc6f684af5835d
 ---

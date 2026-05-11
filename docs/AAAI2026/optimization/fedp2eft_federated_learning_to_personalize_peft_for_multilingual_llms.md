@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FedP²EFT: Federated Learning to Personalize PEFT for Multilingual LLMs
 description: >-
-  [AAAI2026][Optimization][Federated Learning] This paper proposes FedP²EFT, which collaboratively trains a Personalization Strategy Generator (PSG) via federated learning to automatically generate personalized LoRA rank structures for each client, substantially outperforming manually designed PEFT configurations and existing FL personalization methods in multilingual LLM fine-tuning.
+  [AAAI2026][Optimization][Federated Learning] This paper proposes FedP²EFT, which collaboratively trains a Personalization Strategy Generator (PSG) via federated learning to automatically generate personalized LoRA rank s…
 tags:
-  - AAAI2026
-  - Optimization
-  - Federated Learning
-  - Personalized PEFT
-  - LoRA Rank Selection
-  - Multilingual LLM
-  - Bayesian Sparse Selection
+  - "AAAI2026"
+  - "Optimization"
+  - "Federated Learning"
+  - "Personalized PEFT"
+  - "LoRA Rank Selection"
+  - "Multilingual LLM"
+  - "Bayesian Sparse Selection"
 date: 2026-05-08
 content_hash: 377ec5fcbb65c76f
 ---

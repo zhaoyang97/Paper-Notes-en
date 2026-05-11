@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Grouped Lattice Vector Quantizers for Low-Bit LLM Compression
 description: >-
-  [NeurIPS 2025][Model Compression][lattice vector quantization] GLVQ learns a dedicated lattice codebook (defined by a learnable generator matrix) for each weight group of an LLM, combined with group-specific μ-law companding to handle heavy-tailed distributions. Under 2-bit quantization, it achieves a Wikitext-2 perplexity of 3.36 on Llama-2-70B, substantially outperforming QuIP# (3.91) and QTIP (3.78).
+  [NeurIPS 2025][Model Compression][lattice vector quantization] GLVQ learns a dedicated lattice codebook (defined by a learnable generator matrix) for each weight group of an LLM…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - lattice vector quantization
-  - low-bit compression
-  - post-training quantization
-  - learnable codebook
-  - companding transform
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "lattice vector quantization"
+  - "low-bit compression"
+  - "post-training quantization"
+  - "learnable codebook"
+  - "companding transform"
 date: 2026-05-08
 content_hash: 1424a120c7d24395
 ---

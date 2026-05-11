@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Answering the Unanswerable Is to Err Knowingly: Analyzing and Mitigating Abstention Failures in Large Reasoning Models
 description: >-
-  [AAAI 2026][LLM Reasoning][Large Reasoning Models] This paper systematically analyzes abstention failures in Large Reasoning Models (LRMs) when confronted with unanswerable math problems. It finds that LRMs possess sufficient internal cognitive capacity to recognize unsolvability (linear probe classification accuracy >80%), yet their external behavior remains biased toward forced answering. A two-stage approach combining cognitive monitoring and inference-time intervention is proposed, improving abstention rates from 16–54% to 60–92% without degrading reasoning performance on answerable questions.
+  [AAAI 2026][LLM Reasoning][Large Reasoning Models] This paper systematically analyzes abstention failures in Large Reasoning Models (LRMs) when confronted with unanswerable math problems. It finds that LRMs possess suffi…
 tags:
-  - AAAI 2026
-  - LLM Reasoning
-  - Large Reasoning Models
-  - Abstention Failure
-  - Unanswerable Questions
-  - Cognitive Monitoring
-  - Inference-Time Intervention
+  - "AAAI 2026"
+  - "LLM Reasoning"
+  - "Large Reasoning Models"
+  - "Abstention Failure"
+  - "Unanswerable Questions"
+  - "Cognitive Monitoring"
+  - "Inference-Time Intervention"
 date: 2026-05-08
 content_hash: be46a7a5858b9034
 ---

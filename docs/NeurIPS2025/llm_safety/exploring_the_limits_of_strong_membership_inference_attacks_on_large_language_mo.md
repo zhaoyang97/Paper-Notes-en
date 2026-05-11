@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Exploring the Limits of Strong Membership Inference Attacks on Large Language Models
 description: >-
-  [NeurIPS 2025][LLM Safety][Membership Inference Attack] This work presents the first extension of strong membership inference attacks (LiRA) to GPT-2-scale LLMs ranging from 10M to 1B parameters, training over 4,000 reference models. Four key findings are revealed: strong MIAs can succeed on LLMs but with limited effectiveness (AUC < 0.7), and a substantial fraction of per-sample decisions are **indistinguishable from random coin flips** under training randomness.
+  [NeurIPS 2025][LLM Safety][Membership Inference Attack] This work presents the first extension of strong membership inference attacks (LiRA) to GPT-2-scale LLMs ranging from 10M to 1B parameters, training over 4…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - Membership Inference Attack
-  - LLM Privacy
-  - LiRA
-  - Differential Privacy
-  - Pre-trained Language Models
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "Membership Inference Attack"
+  - "LLM Privacy"
+  - "LiRA"
+  - "Differential Privacy"
+  - "Pre-trained Language Models"
 date: 2026-05-08
 content_hash: e1fda81adcc0601c
 ---

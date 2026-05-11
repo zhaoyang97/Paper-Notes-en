@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Exploration of Incremental Synthetic Non-Morphed Images for Single Morphing Attack Detection
 description: >-
-  [NeurIPS 2025 (LXAI Workshop)][AI Safety][S-MAD] This paper systematically investigates the effect of incrementally introducing synthetic non-morphed face images into Single Morphing Attack Detection (S-MAD) training. Results show that a moderate proportion of synthetic data (~75% increment) can improve cross-dataset generalization (EER reduced from 6.17% to 6.10%), while excessive use or training exclusively on synthetic data leads to severe performance degradation (EER rising to ~38%).
+  [NeurIPS 2025 (LXAI Workshop)][AI Safety][S-MAD] This paper systematically investigates the effect of incrementally introducing synthetic non-morphed face images into Single Morphing Attack Detection (S-MAD) training. Re…
 tags:
-  - NeurIPS 2025 (LXAI Workshop)
-  - AI Safety
-  - S-MAD
-  - synthetic face data
-  - incremental training
-  - EfficientNet
-  - MobileNet
-  - cross-dataset generalization
+  - "NeurIPS 2025 (LXAI Workshop)"
+  - "AI Safety"
+  - "S-MAD"
+  - "synthetic face data"
+  - "incremental training"
+  - "EfficientNet"
+  - "MobileNet"
+  - "cross-dataset generalization"
 date: 2026-05-08
 content_hash: d0be312de86b51bb
 ---

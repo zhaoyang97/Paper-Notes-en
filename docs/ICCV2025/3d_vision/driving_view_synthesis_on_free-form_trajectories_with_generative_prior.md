@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] DriveX: Driving View Synthesis on Free-form Trajectories with Generative Prior
 description: >-
-  [ICCV 2025][3D Vision][Autonomous driving simulation] DriveX is a driving view synthesis framework that progressively distills generative priors from a video diffusion model into a 3DGS representation. It designs an inpainting-based video restoration task to generate pseudo-labels for novel trajectories and iteratively refines the 3D reconstruction, enabling high-quality real-time rendering on free-form trajectories.
+  [ICCV 2025][3D Vision][Autonomous driving simulation] DriveX is a driving view synthesis framework that progressively distills generative priors from a video diffusion model into a 3DGS representation. It designs an inpa…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Autonomous driving simulation
-  - free-trajectory view synthesis
-  - 3D Gaussian splatting
-  - video diffusion
-  - generative prior distillation
-  - inpainting restoration
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Autonomous driving simulation"
+  - "free-trajectory view synthesis"
+  - "3D Gaussian splatting"
+  - "video diffusion"
+  - "generative prior distillation"
+  - "inpainting restoration"
 date: 2026-05-08
 content_hash: 0949e81ab8994c30
 ---

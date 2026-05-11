@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AGFT: Alignment-Guided Fine-Tuning for Zero-Shot Adversarial Robustness of Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][adversarial robustness] AGFT proposes an alignment-guided fine-tuning framework that enhances zero-shot adversarial robustness of VLMs while preserving the pre-trained cross-modal semantic structure, through text-guided adversarial training and distribution consistency calibration. The method achieves an average robust accuracy of 46.57% across 15 zero-shot benchmarks, surpassing the previous state of the art by 3.1 percentage points.
+  [CVPR 2026][Multimodal VLM][adversarial robustness] AGFT proposes an alignment-guided fine-tuning framework that enhances zero-shot adversarial robustness of VLMs while preserving the pre-trained cross-modal semantic str…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - adversarial robustness
-  - vision-language models
-  - zero-shot generalization
-  - alignment guidance
-  - distribution consistency calibration
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "adversarial robustness"
+  - "vision-language models"
+  - "zero-shot generalization"
+  - "alignment guidance"
+  - "distribution consistency calibration"
 date: 2026-05-08
 content_hash: 23f31106b1abe21e
 ---

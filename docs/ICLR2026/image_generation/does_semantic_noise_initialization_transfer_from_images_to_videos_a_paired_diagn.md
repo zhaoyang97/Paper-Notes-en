@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Does Semantic Noise Initialization Transfer from Images to Videos? A Paired Diagnostic Study
 description: >-
-  [ICLR 2026][Image Generation][semantic noise initialization] Through rigorous prompt-level paired statistical testing, this work finds that transferring semantic noise initialization (golden noise) from the image domain to video diffusion models yields a marginally positive but statistically insignificant trend on temporal metrics (p≈0.17). Noise-space diagnostics reveal that insufficient directional stability and spatiotemporal frequency structure discrepancies are the root causes.
+  [ICLR 2026][Image Generation][semantic noise initialization] Through rigorous prompt-level paired statistical testing, this work finds that transferring semantic noise initialization (golden noise) from the image domain…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - semantic noise initialization
-  - text-to-video diffusion
-  - golden noise
-  - paired evaluation
-  - noise-space diagnostics
+  - "ICLR 2026"
+  - "Image Generation"
+  - "semantic noise initialization"
+  - "text-to-video diffusion"
+  - "golden noise"
+  - "paired evaluation"
+  - "noise-space diagnostics"
 date: 2026-05-08
 content_hash: 0bb33d861e9dcbf7
 ---

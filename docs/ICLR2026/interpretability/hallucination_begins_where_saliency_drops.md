@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Hallucination Begins Where Saliency Drops
 description: >-
-  [ICLR 2026][Hallucination Mitigation] This paper proposes LVLMs-Saliency, a gradient-aware diagnostic framework that quantifies the visual grounding strength of each output token. It identifies a key finding: hallucinations arise when the saliency of previously generated tokens toward the next token prediction drops. Building on this insight, the paper introduces a dual-mechanism inference-time framework combining SGRS (Saliency-Guided Rejection Sampling) and LocoRE (Local Coherence Reinforcement), achieving significant hallucination reduction across multiple LVLMs.
+  [ICLR 2026][Interpretability][Hallucination Mitigation] This paper proposes LVLMs-Saliency, a gradient-aware diagnostic framework that quantifies the visual grounding strength of each output token. It identifies a key fi…
 tags:
-  - ICLR 2026
-  - Hallucination Mitigation
-  - Large Vision-Language Models
-  - Saliency Analysis
-  - Attention Mechanism
-  - Inference-Time Intervention
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Hallucination Mitigation"
+  - "Large Vision-Language Models"
+  - "Saliency Analysis"
+  - "Attention Mechanism"
+  - "Inference-Time Intervention"
 date: 2026-05-08
 content_hash: af97058426f190d5
 ---

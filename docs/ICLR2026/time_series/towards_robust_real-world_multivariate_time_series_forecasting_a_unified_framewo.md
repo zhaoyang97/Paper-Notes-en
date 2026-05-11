@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Robust Real-World Multivariate Time Series Forecasting: A Unified Framework
 description: >-
-  [ICLR 2026][Time Series][multivariate time series] This paper proposes ChannelTokenFormer (CTF), a unified Transformer framework that simultaneously addresses three core challenges in real-world multivariate time series forecasting: (1) complex inter-channel dependencies — via channel token cross-channel attention; (2) asynchronous sampling across channels — via frequency-domain dynamic patching that preserves original resolution; (3) block-wise missingness at test time — via patch masking during training and direct removal of fully-missing patches at inference. CTF achieves comprehensive state-of-the-art results across six datasets including ETT, SolarWind, Weather, EPA, and CHS.
+  [ICLR 2026][Time Series][multivariate time series] This paper proposes ChannelTokenFormer (CTF), a unified Transformer framework that simultaneously addresses three core challenges in real-world multivariate time series…
 tags:
-  - ICLR 2026
-  - Time Series
-  - multivariate time series
-  - asynchronous sampling
-  - block-wise missingness
-  - channel dependency
-  - ChannelTokenFormer
+  - "ICLR 2026"
+  - "Time Series"
+  - "multivariate time series"
+  - "asynchronous sampling"
+  - "block-wise missingness"
+  - "channel dependency"
+  - "ChannelTokenFormer"
 date: 2026-05-08
 content_hash: f87faf8a7a93cea8
 ---

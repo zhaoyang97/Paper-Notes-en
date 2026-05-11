@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Interactive and Hybrid Imitation Learning: Provably Beating Behavior Cloning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][imitation learning] When annotation cost is measured per **state** rather than per trajectory, the interactive method Stagger is provably shown to surpass Behavior Cloning under the $\mu$-recoverability condition (suboptimality $O(\mu H \log B / N)$ vs. $O(RH \log B / CN)$, with significant advantage when $\mu \ll R$). The paper further proposes a hybrid IL algorithm, Warm-Stagger, which combines offline data with interactive annotation to achieve strictly complementary advantages from both data sources on specific MDPs.
+  [NeurIPS 2025][Reinforcement Learning][imitation learning] When annotation cost is measured per **state** rather than per trajectory, the interactive method Stagger is provably shown to surpass Behavior Cloning under the…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - imitation learning
-  - interactive learning
-  - behavior cloning
-  - DAgger
-  - hybrid IL
-  - sample complexity
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "imitation learning"
+  - "interactive learning"
+  - "behavior cloning"
+  - "DAgger"
+  - "hybrid IL"
+  - "sample complexity"
 date: 2026-05-08
 content_hash: 2675c727a60a94aa
 ---

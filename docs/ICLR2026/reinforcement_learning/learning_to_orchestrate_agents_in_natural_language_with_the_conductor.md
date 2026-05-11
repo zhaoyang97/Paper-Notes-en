@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning to Orchestrate Agents in Natural Language with the Conductor
 description: >-
-  [ICLR 2026][Reinforcement Learning][multi-agent coordination] A 7B Qwen2.5 model is trained via GRPO as a "Conductor" that outputs complete agent workflows in natural language—comprising subtask instructions, worker assignments, and communication topology access lists—to coordinate frontier models such as GPT-5, Claude Sonnet 4, and Gemini 2.5 Pro. Trained on only 960 questions × 200 iterations, the Conductor achieves an average accuracy of 77.27% across 7 reasoning benchmarks, surpassing all single-model baselines (GPT-5: 74.78%) and multi-agent baselines.
+  [ICLR 2026][Reinforcement Learning][multi-agent coordination] A 7B Qwen2.5 model is trained via GRPO as a "Conductor" that outputs complete agent workflows in natural language—comprising subtask instructions…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - multi-agent coordination
-  - reinforcement-learning
-  - workflow orchestration
-  - test-time scaling
-  - collective intelligence
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "multi-agent coordination"
+  - "reinforcement-learning"
+  - "workflow orchestration"
+  - "test-time scaling"
+  - "collective intelligence"
 date: 2026-05-08
 content_hash: 84c5f4469d4b67f3
 ---

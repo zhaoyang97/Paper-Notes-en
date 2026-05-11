@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Rethinking LLM Watermark Detection in Black-Box Settings: A Non-Intrusive Third-Party Framework
 description: >-
-  [ACL 2026][LLM Safety][LLM watermarking] This paper proposes TTP-Detect, the first black-box third-party watermark verification framework that decouples detection from injection. By leveraging a proxy model to amplify watermark signals and combining three complementary metrics — local consistency, global geometry, and adaptive rank tests — it achieves high-accuracy detection across diverse watermarking schemes without access to secret keys or internal model states.
+  [ACL 2026][LLM Safety][LLM watermarking] This paper proposes TTP-Detect, the first black-box third-party watermark verification framework that decouples detection from injection. By leveraging a proxy model to amplify wa…
 tags:
-  - ACL 2026
-  - LLM Safety
-  - LLM watermarking
-  - black-box detection
-  - third-party auditing
-  - hypothesis testing
-  - proxy model
+  - "ACL 2026"
+  - "LLM Safety"
+  - "LLM watermarking"
+  - "black-box detection"
+  - "third-party auditing"
+  - "hypothesis testing"
+  - "proxy model"
 date: 2026-05-08
 content_hash: 0165456f0247e5a0
 ---

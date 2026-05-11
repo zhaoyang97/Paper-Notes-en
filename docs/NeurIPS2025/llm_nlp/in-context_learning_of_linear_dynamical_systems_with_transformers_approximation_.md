@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] In-Context Learning of Linear Dynamical Systems with Transformers: Approximation Bounds and Depth-Separation
 description: >-
-  [NeurIPS 2025][LLM/NLP][in-context learning] This paper analyzes the ICL approximation capability of linear Transformers on noisy linear dynamical systems: $O(\log T)$ depth suffices to achieve $O(\log T / T)$ test error (approaching the least-squares estimator), while single-layer linear Transformers admit an irreducible lower bound — revealing a depth-separation phenomenon under non-IID data.
+  [NeurIPS 2025][LLM/NLP][in-context learning] This paper analyzes the ICL approximation capability of linear Transformers on noisy linear dynamical systems: $O(\log T)$ depth suffices to achieve $O(\log T / T)$ test error…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - in-context learning
-  - linear dynamical systems
-  - approximation theory
-  - depth separation
-  - transformer expressivity
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "in-context learning"
+  - "linear dynamical systems"
+  - "approximation theory"
+  - "depth separation"
+  - "transformer expressivity"
 date: 2026-05-08
 content_hash: a1bde3f3c2d1743a
 ---

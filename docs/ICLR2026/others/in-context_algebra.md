@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] In-Context Algebra
 description: >-
-  [ICLR2026][in-context learning] This paper introduces an **in-context algebra task**—where tokens serve as pure variables and each sequence randomly reassigns their meanings—and finds that Transformers in this setting no longer learn classical Fourier/geometric representations. Instead, three **symbolic reasoning mechanisms** emerge (commutative copying, identity element recognition, and closure-based cancellation), with these capabilities appearing sequentially as phase transitions during training.
+  [ICLR2026][in-context learning] This paper introduces an **in-context algebra task**—where tokens serve as pure variables and each sequence randomly reassigns their meanings—and finds that Transformers in this setting no…
 tags:
-  - ICLR2026
-  - in-context learning
-  - mechanistic interpretability
-  - symbolic reasoning
-  - finite groups
-  - transformer mechanisms
+  - "ICLR2026"
+  - "in-context learning"
+  - "mechanistic interpretability"
+  - "symbolic reasoning"
+  - "finite groups"
+  - "transformer mechanisms"
 date: 2026-05-08
 content_hash: 464ce6ef5af14674
 ---

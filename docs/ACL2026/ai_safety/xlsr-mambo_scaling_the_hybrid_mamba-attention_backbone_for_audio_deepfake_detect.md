@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] XLSR-MamBo: Scaling the Hybrid Mamba-Attention Backbone for Audio Deepfake Detection
 description: >-
-  [ACL 2026][AI Safety][Audio Deepfake Detection] This paper proposes the XLSR-MamBo framework, systematically exploring four topology designs and multiple SSM variants (Mamba2, Hydra, GDN) for Mamba-Attention hybrid architectures in audio deepfake detection, where MamBo-3-Hydra achieves competitive performance across multiple benchmarks through Hydra's native bidirectional modeling, and increasing backbone depth effectively mitigates shallow model instability.
+  [ACL 2026][AI Safety][Audio Deepfake Detection] This paper proposes the XLSR-MamBo framework, systematically exploring four topology designs and multiple SSM variants (Mamba2, Hydra…
 tags:
-  - ACL 2026
-  - AI Safety
-  - Audio Deepfake Detection
-  - Mamba
-  - Hybrid Architecture
-  - State Space Models
-  - XLSR
+  - "ACL 2026"
+  - "AI Safety"
+  - "Audio Deepfake Detection"
+  - "Mamba"
+  - "Hybrid Architecture"
+  - "State Space Models"
+  - "XLSR"
 date: 2025-05-08
 content_hash: f2267d71659a4ae3
 ---

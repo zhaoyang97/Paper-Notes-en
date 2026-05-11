@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TSRating: Rating Quality of Diverse Time Series Data by Meta-learning from LLM Judgment
 description: >-
-  [ICLR 2026][Time Series][time series quality assessment] TSRating leverages the prior knowledge of LLMs to conduct pairwise quality judgments of time series data chunks across four dimensions—trend, frequency, amplitude, and pattern—converts these comparisons into scalar scores via the Bradley-Terry model, and trains a cross-domain generalizable TSRater via meta-learning, enabling efficient and accurate time series data quality assessment.
+  [ICLR 2026][Time Series][time series quality assessment] TSRating leverages the prior knowledge of LLMs to conduct pairwise quality judgments of time series data chunks across four dimensions—trend, frequency, amplitude…
 tags:
-  - ICLR 2026
-  - Time Series
-  - time series quality assessment
-  - LLM judgment
-  - meta-learning
-  - data selection
-  - Bradley-Terry model
+  - "ICLR 2026"
+  - "Time Series"
+  - "time series quality assessment"
+  - "LLM judgment"
+  - "meta-learning"
+  - "data selection"
+  - "Bradley-Terry model"
 date: 2026-05-08
 content_hash: 38e3240f06ebbd64
 ---

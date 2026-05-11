@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FlashVGGT: Efficient and Scalable Visual Geometry Transformers with Compressed Descriptor Attention
 description: >-
-  [CVPR 2026][Model Compression][3D Reconstruction] By replacing the global self-attention in VGGT with descriptor-based cross-attention, FlashVGGT reduces inference time on 1000 images to 9.3% of VGGT while maintaining competitive reconstruction accuracy, and scales to sequences of 3000+ images.
+  [CVPR 2026][Model Compression][3D Reconstruction] By replacing the global self-attention in VGGT with descriptor-based cross-attention, FlashVGGT reduces inference time on 1000 images to 9.3% of VGGT while maintaining co…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - 3D Reconstruction
-  - Efficient Transformer
-  - Descriptor Attention
-  - Online Inference
-  - Multi-View Geometry
+  - "CVPR 2026"
+  - "Model Compression"
+  - "3D Reconstruction"
+  - "Efficient Transformer"
+  - "Descriptor Attention"
+  - "Online Inference"
+  - "Multi-View Geometry"
 date: 2026-05-08
 content_hash: 29220148e2e5c01c
 ---

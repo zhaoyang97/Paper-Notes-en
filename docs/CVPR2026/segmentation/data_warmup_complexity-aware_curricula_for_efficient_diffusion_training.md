@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Data Warmup: Complexity-Aware Curricula for Efficient Diffusion Training
 description: >-
-  [CVPR 2026][Segmentation][Curriculum Learning] This paper proposes Data Warmup, a curriculum learning strategy that requires no modifications to the model or loss function. It schedules training images from easy to hard using a semantics-aware image complexity metric (foreground dominance × foreground typicality). On ImageNet 256×256, it yields improvements of up to +6.11 IS and −3.41 FID for the SiT family. Notably, the reversed curriculum (hard-to-easy) performs worse than the uniform baseline, demonstrating that ordering itself is the key mechanism.
+  [CVPR 2026][Segmentation][Curriculum Learning] This paper proposes Data Warmup, a curriculum learning strategy that requires no modifications to the model or loss function. It schedules training images from easy to hard…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Curriculum Learning
-  - Diffusion Models
-  - Data Complexity
-  - Foreground Saliency
-  - Training Efficiency
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Curriculum Learning"
+  - "Diffusion Models"
+  - "Data Complexity"
+  - "Foreground Saliency"
+  - "Training Efficiency"
 date: 2026-05-08
 content_hash: 6ce033ac0849a4ff
 ---

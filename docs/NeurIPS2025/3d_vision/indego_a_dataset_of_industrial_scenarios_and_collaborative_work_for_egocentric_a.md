@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] IndEgo: A Dataset of Industrial Scenarios and Collaborative Work for Egocentric Assistants
 description: >-
-  [NeurIPS 2025][3D Vision][Egocentric Vision] This paper presents IndEgo — the first large-scale multimodal egocentric vision dataset targeting real industrial environments. It comprises 3,460 egocentric video clips (~197 hours) and 1,092 exocentric recordings (~97 hours), spanning five major task categories including assembly/disassembly, logistics, maintenance, woodworking, and miscellaneous tasks, as well as collaborative work scenarios. Three benchmarks are established: mistake detection, reasoning-based QA, and collaborative task understanding.
+  [NeurIPS 2025][3D Vision][Egocentric Vision] This paper presents IndEgo — the first large-scale multimodal egocentric vision dataset targeting real industrial environments. It comprises 3…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Egocentric Vision
-  - Industrial Scenarios
-  - Multimodal Dataset
-  - Collaborative Work
-  - Mistake Detection
-  - Video Question Answering
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Egocentric Vision"
+  - "Industrial Scenarios"
+  - "Multimodal Dataset"
+  - "Collaborative Work"
+  - "Mistake Detection"
+  - "Video Question Answering"
 date: 2026-05-08
 content_hash: 6053405c1db818eb
 ---

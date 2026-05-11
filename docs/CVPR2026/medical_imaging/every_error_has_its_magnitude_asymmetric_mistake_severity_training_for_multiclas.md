@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Every Error has Its Magnitude: Asymmetric Mistake Severity Training for Multiclass Multiple Instance Learning
 description: >-
-  [CVPR2026][Medical Imaging][Multiple Instance Learning] This paper proposes PAMS (Priority-Aware Mistake Severity), a framework that significantly reduces the risk of severe misdiagnosis in multiclass MIL-based WSI diagnosis through an asymmetric severity-aware cross-entropy loss (MSCE), semantic feature remix (SFR), and an asymmetric Mikel's Wheel evaluation metric.
+  [CVPR2026][Medical Imaging][Multiple Instance Learning] This paper proposes PAMS (Priority-Aware Mistake Severity), a framework that significantly reduces the risk of severe misdiagnosis in multiclass MIL-based WSI diagn…
 tags:
-  - CVPR2026
-  - Medical Imaging
-  - Multiple Instance Learning
-  - Mistake Severity
-  - Whole Slide Image
-  - Asymmetric Misclassification
-  - Hierarchical Classification
-  - Pathological Diagnosis
+  - "CVPR2026"
+  - "Medical Imaging"
+  - "Multiple Instance Learning"
+  - "Mistake Severity"
+  - "Whole Slide Image"
+  - "Asymmetric Misclassification"
+  - "Hierarchical Classification"
+  - "Pathological Diagnosis"
 date: 2026-05-08
 content_hash: 04d0b541c360c740
 ---

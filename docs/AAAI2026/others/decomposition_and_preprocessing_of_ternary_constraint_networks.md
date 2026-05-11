@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Decomposition and Preprocessing of Ternary Constraint Networks
 description: >-
-  [AAAI 2026][Constraint Programming] This paper proposes a complete theoretical framework for formally decomposing arbitrary discrete constraint networks into ternary constraint networks (TCNs), and reduces the variable/constraint blowup introduced by decomposition from a median of 8x/6x to 4.8x/4.3x via seven preprocessing techniques (propagation, algebraic simplification, common subexpression elimination, etc.), providing a regularized data layout for efficient constraint solving on GPU hardware.
+  [AAAI 2026][Constraint Programming] This paper proposes a complete theoretical framework for formally decomposing arbitrary discrete constraint networks into ternary constraint networks (TCNs)…
 tags:
-  - AAAI 2026
-  - Constraint Programming
-  - Ternary Constraint Networks
-  - GPU Solving
-  - Preprocessing
-  - MiniZinc
+  - "AAAI 2026"
+  - "Constraint Programming"
+  - "Ternary Constraint Networks"
+  - "GPU Solving"
+  - "Preprocessing"
+  - "MiniZinc"
 date: 2026-05-08
 content_hash: 38aeb2520aae93e4
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond the Golden Data: Resolving the Motion-Vision Quality Dilemma via Timestep Selective Training
 description: >-
-  [CVPR 2026][Image Generation][Video Diffusion Models] This paper identifies a "Motion-Vision Quality Dilemma" where motion quality (MQ) and visual quality (VQ) are negatively correlated in video data. Through gradient analysis, it reveals that imbalanced data can produce equivalent learning signals at appropriate timesteps. The proposed TQD framework enables training on imbalanced data to surpass training on "golden data."
+  [CVPR 2026][Image Generation][Video Diffusion Models] This paper identifies a "Motion-Vision Quality Dilemma" where motion quality (MQ) and visual quality (VQ) are negatively correlated in video data. Through gradient an…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Video Diffusion Models
-  - Data Quality Dilemma
-  - Timestep Selective Training
-  - Motion-Vision Quality Balance
-  - Flow Matching
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Video Diffusion Models"
+  - "Data Quality Dilemma"
+  - "Timestep Selective Training"
+  - "Motion-Vision Quality Balance"
+  - "Flow Matching"
 date: 2026-05-08
 content_hash: feada004f288b567
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Vision-Language Attribute Disentanglement and Reinforcement for Lifelong Person Re-Identification
 description: >-
-  [CVPR 2026][Human Understanding][Lifelong Person Re-Identification] VLADR leverages fine-grained attribute knowledge from vision-language models (VLMs) to enhance lifelong person re-identification. Through a two-stage training pipeline comprising Multi-grain Text Attribute Disentanglement (MTAD) and Inter-domain Cross-modal Attribute Reinforcement (ICAR), the framework explicitly models human body attributes shared across domains to enable effective knowledge transfer and forgetting mitigation, surpassing the state of the art by 1.9%–2.2% in anti-forgetting performance and 2.1%–2.5% in generalization.
+  [CVPR 2026][Human Understanding][Lifelong Person Re-Identification] VLADR leverages fine-grained attribute knowledge from vision-language models (VLMs) to enhance lifelong person re-identification. Through a two-stage tr…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Lifelong Person Re-Identification
-  - Vision-Language Model
-  - Attribute Disentanglement
-  - Cross-Modal Alignment
-  - Forgetting Mitigation
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Lifelong Person Re-Identification"
+  - "Vision-Language Model"
+  - "Attribute Disentanglement"
+  - "Cross-Modal Alignment"
+  - "Forgetting Mitigation"
 date: 2026-05-08
 content_hash: dbae7fa9fad7e371
 ---

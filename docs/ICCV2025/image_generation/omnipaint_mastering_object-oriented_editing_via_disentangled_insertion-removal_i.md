@@ -2,18 +2,18 @@
 title: >-
   [Paper Note] OmniPaint: Mastering Object-Oriented Editing via Disentangled Insertion-Removal Inpainting
 description: >-
-  [ICCV2025][Image Generation][object removal] This paper proposes OmniPaint, a unified framework that reformulates object removal and insertion as mutually inverse and complementary tasks. Built upon the FLUX diffusion prior, it introduces the CycleFlow unpaired training mechanism and the CFD reference-free evaluation metric. With only 3K real paired samples, OmniPaint achieves high-fidelity object editing, excelling particularly at complex physical effects such as shadows and reflections.
+  [ICCV2025][Image Generation][object removal] This paper proposes OmniPaint, a unified framework that reformulates object removal and insertion as mutually inverse and complementary tasks. Built upon the FLUX diffusion pr…
 tags:
-  - ICCV2025
-  - Image Generation
-  - object removal
-  - object insertion
-  - inpainting
-  - diffusion model
-  - CycleFlow
-  - FLUX
-  - flow matching
-  - CFD metric
+  - "ICCV2025"
+  - "Image Generation"
+  - "object removal"
+  - "object insertion"
+  - "inpainting"
+  - "diffusion model"
+  - "CycleFlow"
+  - "FLUX"
+  - "flow matching"
+  - "CFD metric"
 date: 2026-05-08
 content_hash: c4f8036e7bf1b864
 ---

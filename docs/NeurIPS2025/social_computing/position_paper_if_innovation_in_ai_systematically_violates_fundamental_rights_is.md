@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Position Paper: If Innovation in AI Systematically Violates Fundamental Rights, Is It Innovation at All?
 description: >-
-  [NeurIPS 2025][Social Computing][AI regulation] This paper challenges the prevailing belief that regulation and innovation are inherently at odds. Through historical analogies from pharmaceuticals, aviation, and welfare systems, combined with an analysis of the Collingridge dilemma, it argues that well-designed regulation serves as the foundation for sustainable innovation rather than an impediment to it. The regulatory sandbox, SME support mechanisms, and other provisions of the EU AI Act are presented as exemplars demonstrating how regulation can accelerate, rather than delay, responsible technological progress.
+  [NeurIPS 2025][Social Computing][AI regulation] This paper challenges the prevailing belief that regulation and innovation are inherently at odds. Through historical analogies from pharmaceuticals, aviation…
 tags:
-  - NeurIPS 2025
-  - Social Computing
-  - AI regulation
-  - fundamental rights
-  - EU AI Act
-  - responsible innovation
-  - Collingridge dilemma
+  - "NeurIPS 2025"
+  - "Social Computing"
+  - "AI regulation"
+  - "fundamental rights"
+  - "EU AI Act"
+  - "responsible innovation"
+  - "Collingridge dilemma"
 date: 2026-05-08
 content_hash: f5122d1cbb4bbc15
 ---

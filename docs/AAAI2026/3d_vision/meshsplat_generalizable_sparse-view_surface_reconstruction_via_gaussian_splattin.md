@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MeshSplat: Generalizable Sparse-View Surface Reconstruction via Gaussian Splatting
 description: >-
-  [AAAI 2026][3D Vision][sparse-view reconstruction] This paper proposes MeshSplat, the first generalizable sparse-view surface reconstruction framework based on 2DGS. It regularizes depth prediction via a Weighted Chamfer Distance loss and aligns 2DGS orientations through an uncertainty-guided normal prediction network, learning geometric priors in a self-supervised manner from novel view synthesis. MeshSplat achieves state-of-the-art performance on both sparse-view mesh reconstruction and cross-dataset generalization.
+  [AAAI 2026][3D Vision][sparse-view reconstruction] This paper proposes MeshSplat, the first generalizable sparse-view surface reconstruction framework based on 2DGS. It regularizes depth prediction via a Weighted Chamfer…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - sparse-view reconstruction
-  - surface reconstruction
-  - 2D Gaussian splatting
-  - feed-forward network
-  - cross-scene generalization
+  - "AAAI 2026"
+  - "3D Vision"
+  - "sparse-view reconstruction"
+  - "surface reconstruction"
+  - "2D Gaussian splatting"
+  - "feed-forward network"
+  - "cross-scene generalization"
 date: 2026-05-08
 content_hash: 0c420ef9db4dd577
 ---

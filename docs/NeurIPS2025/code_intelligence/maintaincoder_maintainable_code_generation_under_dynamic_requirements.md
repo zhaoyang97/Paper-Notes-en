@@ -2,15 +2,16 @@
 title: >-
   [Paper Note] MaintainCoder: Maintainable Code Generation Under Dynamic Requirements
 description: >-
-  [NeurIPS 2025][maintainable code] This work is the first to systematically define and address the **maintainability** problem in LLM-based code generation, contributing both a benchmark and a method. MaintainBench evaluates code maintainability under requirement evolution using 4 change patterns and dynamic metrics; MaintainCoder integrates the Waterfall model, design patterns, and 6 specialized agents, achieving 60%+ improvement on dynamic maintainability metrics while also improving initial code correctness.
+  [NeurIPS 2025][Code Intelligence][maintainable code] This work is the first to systematically define and address the **maintainability** problem in LLM-based code generation…
 tags:
-  - NeurIPS 2025
-  - maintainable code
-  - design patterns
-  - waterfall model
-  - multi-agent
-  - dynamic requirements
-  - MaintainBench
+  - "NeurIPS 2025"
+  - "Code Intelligence"
+  - "maintainable code"
+  - "design patterns"
+  - "waterfall model"
+  - "multi-agent"
+  - "dynamic requirements"
+  - "MaintainBench"
 date: 2026-05-08
 content_hash: e795f532d2a20b4f
 ---

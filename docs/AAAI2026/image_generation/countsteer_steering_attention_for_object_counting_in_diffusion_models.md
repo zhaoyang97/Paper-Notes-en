@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CountSteer: Steering Attention for Object Counting in Diffusion Models
 description: >-
-  [AAAI2026][Image Generation][diffusion models] This paper proposes CountSteer, a training-free inference-time method that injects adaptive steering vectors into the cross-attention hidden states of diffusion models, improving object counting accuracy by approximately 4% without degrading image quality.
+  [AAAI2026][Image Generation][diffusion models] This paper proposes CountSteer, a training-free inference-time method that injects adaptive steering vectors into the cross-attention hidden states of diffusion models…
 tags:
-  - AAAI2026
-  - Image Generation
-  - diffusion models
-  - object counting
-  - steering vector
-  - cross-attention
-  - training-free
+  - "AAAI2026"
+  - "Image Generation"
+  - "diffusion models"
+  - "object counting"
+  - "steering vector"
+  - "cross-attention"
+  - "training-free"
 date: 2026-05-08
 content_hash: 8784f437261e0480
 ---

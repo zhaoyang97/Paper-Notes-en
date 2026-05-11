@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HAM: A Training-Free Style Transfer Approach via Heterogeneous Attention Modulation for Diffusion Models
 description: >-
-  [CVPR 2026][Image Generation][Style Transfer] This paper proposes HAM, a training-free style transfer method that achieves high-quality stylization without sacrificing content identity. HAM applies heterogeneous modulation (GAR + LAT) to self-attention and cross-attention layers of diffusion models, complemented by style-injected noise initialization (SINI), attaining state-of-the-art performance across multiple metrics.
+  [CVPR 2026][Image Generation][Style Transfer] This paper proposes HAM, a training-free style transfer method that achieves high-quality stylization without sacrificing content identity. HAM applies heterogeneous modulati…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Style Transfer
-  - Attention Modulation
-  - Training-Free
-  - Diffusion Models
-  - Identity Preservation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Style Transfer"
+  - "Attention Modulation"
+  - "Training-Free"
+  - "Diffusion Models"
+  - "Identity Preservation"
 date: 2026-05-08
 content_hash: 1c7648c752ddabe0
 ---

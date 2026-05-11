@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Re-coding for Uncertainties: Edge-awareness Semantic Concordance for Resilient Event-RGB Segmentation
 description: >-
-  [NeurIPS 2025][Segmentation][Event-RGB Fusion] This paper proposes the Edge-awareness Semantic Concordance (ESC) framework, which leverages semantic edges as an intermediate bridge between heterogeneous Event and RGB modalities. Through discrete latent space modeling via an edge dictionary, ESC achieves cross-modal feature alignment and uncertainty optimization, surpassing the state of the art by 2.55% mIoU under extreme conditions.
+  [NeurIPS 2025][Segmentation][Event-RGB Fusion] This paper proposes the Edge-awareness Semantic Concordance (ESC) framework, which leverages semantic edges as an intermediate bridge between heterogeneous Event and RGB mod…
 tags:
-  - NeurIPS 2025
-  - Segmentation
-  - Event-RGB Fusion
-  - Semantic Edge
-  - Discrete Latent Space
-  - Uncertainty Optimization
-  - Extreme Conditions
+  - "NeurIPS 2025"
+  - "Segmentation"
+  - "Event-RGB Fusion"
+  - "Semantic Edge"
+  - "Discrete Latent Space"
+  - "Uncertainty Optimization"
+  - "Extreme Conditions"
 date: 2026-05-08
 content_hash: 45297b774b470a83
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From Observations to Events: Event-Aware World Model for Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][World Model] This paper proposes the Event-Aware World Model (EAWM), a general framework that automatically generates events from raw observations and learns event-aware representations without manual annotations, improving existing MBRL baselines by 10%–45% and achieving new state-of-the-art results on Atari 100K, Craftax 1M, DeepMind Control 500K, and DMC-GB2 500K.
+  [ICLR 2026][Reinforcement Learning][World Model] This paper proposes the Event-Aware World Model (EAWM), a general framework that automatically generates events from raw observations and learns event-aware representation…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - World Model
-  - Event-Aware
-  - Model-Based Reinforcement Learning
-  - Representation Learning
-  - Sample Efficiency
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "World Model"
+  - "Event-Aware"
+  - "Model-Based Reinforcement Learning"
+  - "Representation Learning"
+  - "Sample Efficiency"
 date: 2026-05-08
 content_hash: 9dbb576cdfda1426
 ---

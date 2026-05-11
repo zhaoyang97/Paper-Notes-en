@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] GeneMAN: Generalizable Single-Image 3D Human Reconstruction from Multi-Source Human Data
 description: >-
-  [NeurIPS 2025][Image Generation][Single-image 3D human reconstruction] GeneMAN proposes a generalizable single-image 3D human reconstruction framework that requires **no parametric body model (e.g., SMPL)**. By training human-specific 2D/3D diffusion prior models on large-scale multi-source human data, and combining a geometry initialization-sculpting pipeline with multi-space texture refinement, GeneMAN achieves high-fidelity 3D human reconstruction from in-the-wild images, handling diverse body proportions, complex poses, and personal belongings.
+  [NeurIPS 2025][Image Generation][Single-image 3D human reconstruction] GeneMAN proposes a generalizable single-image 3D human reconstruction framework that requires **no parametric body model (e.g.…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Single-image 3D human reconstruction
-  - diffusion model priors
-  - template-free reconstruction
-  - multi-source data
-  - Score Distillation Sampling
-  - texture refinement
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Single-image 3D human reconstruction"
+  - "diffusion model priors"
+  - "template-free reconstruction"
+  - "multi-source data"
+  - "Score Distillation Sampling"
+  - "texture refinement"
 date: 2026-05-08
 content_hash: d8ea142a51a1d762
 ---

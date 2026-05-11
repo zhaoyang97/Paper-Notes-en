@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Improving 2D Diffusion Models for 3D Medical Imaging with Inter-Slice Consistent Stochasticity
 description: >-
-  [ICLR 2026][Medical Imaging][3D medical reconstruction] This paper proposes Inter-Slice Consistent Stochasticity (ISCS), which generates inter-slice correlated noise via spherical linear interpolation (Slerp) during the re-noising step of diffusion sampling, eliminating inter-slice discontinuity artifacts in 3D medical reconstruction with 2D diffusion priors at their root cause — with zero additional computation, hyperparameters, or training overhead, and plug-and-play compatibility with any 2D diffusion inverse problem solver, yielding consistent improvements on sparse-view CT, limited-angle CT, and MRI super-resolution.
+  [ICLR 2026][Medical Imaging][3D medical reconstruction] This paper proposes Inter-Slice Consistent Stochasticity (ISCS), which generates inter-slice correlated noise via spherical linear interpolation (Slerp) during the…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - 3D medical reconstruction
-  - 2D diffusion models
-  - inter-slice consistency
-  - spherical linear interpolation
-  - plug-and-play
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "3D medical reconstruction"
+  - "2D diffusion models"
+  - "inter-slice consistency"
+  - "spherical linear interpolation"
+  - "plug-and-play"
 date: 2026-05-08
 content_hash: e75fb79cb6e8af03
 ---

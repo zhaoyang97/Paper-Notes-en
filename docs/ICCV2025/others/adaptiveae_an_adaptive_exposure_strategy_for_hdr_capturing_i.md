@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] AdaptiveAE: An Adaptive Exposure Strategy for HDR Capturing in Dynamic Scenes
 description: >-
-  [ICCV 2025][HDR imaging] This paper proposes AdaptiveAE, which formulates HDR bracketed exposure capture as a Markov Decision Process (MDP) using deep reinforcement learning, jointly optimizing ISO and shutter speed combinations to adaptively select optimal exposure parameters for dynamic scenes within a user-defined time budget. The method achieves PSNR 39.70 on the HDRV dataset, outperforming the previous best method Hasinoff et al. (37.59) by 2.1 dB.
+  [ICCV 2025][HDR imaging] This paper proposes AdaptiveAE, which formulates HDR bracketed exposure capture as a Markov Decision Process (MDP) using deep reinforcement learning…
 tags:
-  - ICCV 2025
-  - HDR imaging
-  - auto-exposure
-  - reinforcement learning
-  - motion blur
-  - exposure fusion
+  - "ICCV 2025"
+  - "HDR imaging"
+  - "auto-exposure"
+  - "reinforcement learning"
+  - "motion blur"
+  - "exposure fusion"
 date: 2026-05-08
 content_hash: 06f79a9a05c5392e
 ---

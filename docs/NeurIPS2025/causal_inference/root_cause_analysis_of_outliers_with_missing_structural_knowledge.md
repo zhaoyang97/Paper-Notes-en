@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Root Cause Analysis of Outliers with Missing Structural Knowledge
 description: >-
-  [NeurIPS 2025][Causal Inference][Root Cause Analysis] Two simple and efficient algorithms are proposed for root cause analysis using only **marginal anomaly scores**: SMOOTH TRAVERSAL (known causal graph — finds the node with the largest score jump along causal paths) and SCORE ORDERING (unknown causal graph — ranks nodes by score and returns the top-$k$). Both algorithms provide nonparametric probabilistic guarantees under polytree structure and operate on a single anomalous sample.
+  [NeurIPS 2025][Causal Inference][Root Cause Analysis] Two simple and efficient algorithms are proposed for root cause analysis using only **marginal anomaly scores**: SMOOTH TRAVERSAL (known causal graph — finds the node…
 tags:
-  - NeurIPS 2025
-  - Causal Inference
-  - Root Cause Analysis
-  - Anomaly Detection
-  - Information-Theoretic Anomaly Score
-  - Polytree
+  - "NeurIPS 2025"
+  - "Causal Inference"
+  - "Root Cause Analysis"
+  - "Anomaly Detection"
+  - "Information-Theoretic Anomaly Score"
+  - "Polytree"
 date: 2026-05-08
 content_hash: 871aabb144b021a5
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Multi-Agent Conversational Bandit Approach to Online Evaluation and Selection of User-Aligned LLM Responses
 description: >-
-  [AAAI 2026][Reinforcement Learning][multi-agent bandit] This paper proposes MACO, a multi-agent conversational bandit framework that achieves online evaluation and user preference alignment for LLM responses through a local-agent phase elimination mechanism and an adaptive preference query strategy on a cloud server, attaining a near-optimal regret bound of $\tilde{O}(\sqrt{dMT})$.
+  [AAAI 2026][Reinforcement Learning][multi-agent bandit] This paper proposes MACO, a multi-agent conversational bandit framework that achieves online evaluation and user preference alignment for LLM responses through a lo…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - multi-agent bandit
-  - conversational bandit
-  - LLM response selection
-  - user preference alignment
-  - regret bound
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "multi-agent bandit"
+  - "conversational bandit"
+  - "LLM response selection"
+  - "user preference alignment"
+  - "regret bound"
 date: 2026-05-08
 content_hash: 580eb907c02cc818
 ---

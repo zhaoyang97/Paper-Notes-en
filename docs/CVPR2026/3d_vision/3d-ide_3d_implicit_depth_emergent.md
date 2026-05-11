@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] 3D-IDE: 3D Implicit Depth Emergent
 description: >-
-  [CVPR 2026][3D Vision][3D scene understanding] This paper proposes the Implicit Geometry Emergence Principle (IGEP), which employs a lightweight geometric validator and a global 3D teacher for privileged supervision during training, enabling the visual encoder to acquire 3D perception from RGB video input alone. The approach incurs zero latency overhead at inference time and surpasses comparable methods on multiple 3D scene understanding benchmarks.
+  [CVPR 2026][3D Vision][3D scene understanding] This paper proposes the Implicit Geometry Emergence Principle (IGEP), which employs a lightweight geometric validator and a global 3D teacher for privileged supervision duri…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D scene understanding
-  - multimodal large language models
-  - implicit geometry emergence
-  - depth estimation
-  - zero inference overhead
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D scene understanding"
+  - "multimodal large language models"
+  - "implicit geometry emergence"
+  - "depth estimation"
+  - "zero inference overhead"
 date: 2026-05-08
 content_hash: 40ec83b346abe42c
 ---

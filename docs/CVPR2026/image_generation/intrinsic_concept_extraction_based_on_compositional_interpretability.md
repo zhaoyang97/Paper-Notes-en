@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Intrinsic Concept Extraction Based on Compositional Interpretability
 description: >-
-  [CVPR 2026][Image Generation][Concept Extraction] HyperExpress introduces a novel task termed Compositional Interpretability-based Intrinsic Concept Extraction (CI-ICE). By leveraging the hierarchical modeling capacity of hyperbolic space and a horospherical projection module, it extracts composable object-level and attribute-level concepts from a single image, enabling invertible decomposition of complex visual concepts.
+  [CVPR 2026][Image Generation][Concept Extraction] HyperExpress introduces a novel task termed Compositional Interpretability-based Intrinsic Concept Extraction (CI-ICE). By leveraging the hierarchical modeling capacity o…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Concept Extraction
-  - Hyperbolic Space
-  - Compositional Interpretability
-  - Diffusion Models
-  - Concept Disentanglement
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Concept Extraction"
+  - "Hyperbolic Space"
+  - "Compositional Interpretability"
+  - "Diffusion Models"
+  - "Concept Disentanglement"
 date: 2026-05-08
 content_hash: 3237562b3d49a87f
 ---

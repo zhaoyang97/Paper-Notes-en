@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] How Would It Sound? Material-Controlled Multimodal Acoustic Profile Generation for Objects
 description: >-
-  [ICCV 2025][Audio & Speech][Room Impulse Response] This paper proposes a material-controlled acoustic profile generation task (M-CAPA): given audio-visual observations of an indoor scene and a user-defined target material configuration, the model generates a target room impulse response (RIR) that reflects the material changes. A companion dataset, Acoustic Wonderland, is also introduced.
+  [ICCV 2025][Audio & Speech][Room Impulse Response] This paper proposes a material-controlled acoustic profile generation task (M-CAPA): given audio-visual observations of an indoor scene and a user-defined target materia…
 tags:
-  - ICCV 2025
+  - "ICCV 2025"
   - "Audio & Speech"
-  - Room Impulse Response
-  - Material Control
-  - Audio-Visual Learning
-  - RIR Generation
-  - Acoustic Simulation
+  - "Room Impulse Response"
+  - "Material Control"
+  - "Audio-Visual Learning"
+  - "RIR Generation"
+  - "Acoustic Simulation"
 date: 2026-05-08
 content_hash: b1075dc106637feb
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] PARROT: A Benchmark for Evaluating LLMs in Cross-System SQL Translation
 description: >-
-  [NeurIPS 2025][LLM Evaluation][SQL translation] This paper presents PARROT, a practical and realistic benchmark for cross-system SQL translation (SQL-to-SQL), comprising 598 core translation pairs (expanded to 28,003 pairs) sourced from 38 open-source benchmarks and real-world business scenarios, covering 22 production-grade database systems. The benchmark reveals that the strongest current LLMs achieve an average accuracy below 38.53%.
+  [NeurIPS 2025][LLM Evaluation][SQL translation] This paper presents PARROT, a practical and realistic benchmark for cross-system SQL translation (SQL-to-SQL), comprising 598 core translation pairs (expanded to 28…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - SQL translation
-  - cross-database systems
-  - SQL dialects
-  - benchmark
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "SQL translation"
+  - "cross-database systems"
+  - "SQL dialects"
+  - "benchmark"
 date: 2026-05-08
 content_hash: 2c8a7bcbffdaa7c7
 ---

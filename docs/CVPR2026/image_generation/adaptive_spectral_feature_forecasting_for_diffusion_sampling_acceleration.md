@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Adaptive Spectral Feature Forecasting for Diffusion Sampling Acceleration
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Sampling Acceleration] Ours proposes Spectrum, a global spectral domain feature forecasting method based on Chebyshev polynomials. By treating the intermediate features of the diffusion denoiser as functions of time and fitting coefficients via ridge regression, it achieves long-range feature forecasting where errors do not grow with step size. It reaches 4.79× acceleration on FLUX.1 and 4.67× on Wan2.1-14B with near-lossless quality.
+  [CVPR 2026][Image Generation][Diffusion Sampling Acceleration] Ours proposes Spectrum, a global spectral domain feature forecasting method based on Chebyshev polynomials. By treating the intermediate features of the diff…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Sampling Acceleration
-  - Feature Caching
-  - Chebyshev Polynomials
-  - Spectral Methods
-  - training-free
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Sampling Acceleration"
+  - "Feature Caching"
+  - "Chebyshev Polynomials"
+  - "Spectral Methods"
+  - "training-free"
 date: 2026-05-08
 content_hash: 8cd80581194d6b51
 ---

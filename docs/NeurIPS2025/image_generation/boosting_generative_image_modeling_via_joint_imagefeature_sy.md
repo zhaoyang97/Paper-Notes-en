@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Boosting Generative Image Modeling via Joint Image-Feature Synthesis
 description: >-
-  [NeurIPS 2025 **Spotlight**][Image Generation][Joint Image-Feature Generation] This paper proposes ReDi (Representation Diffusion), a framework that jointly models VAE image latents and DINOv2 semantic features within a diffusion model — both are simultaneously denoised from pure noise within a single diffusion process. With minimal modifications to the DiT architecture, ReDi achieves a 23× training convergence speedup and state-of-the-art FID, while unlocking a novel Representation Guidance inference strategy.
+  [NeurIPS 2025 **Spotlight**][Image Generation][Joint Image-Feature Generation] This paper proposes ReDi (Representation Diffusion), a framework that jointly models VAE image latents and DINOv2 semantic features within a…
 tags:
   - "NeurIPS 2025 **Spotlight**"
-  - Image Generation
-  - Joint Image-Feature Generation
-  - Diffusion Model
-  - DINOv2
-  - Representation Guidance
-  - DiT
+  - "Image Generation"
+  - "Joint Image-Feature Generation"
+  - "Diffusion Model"
+  - "DINOv2"
+  - "Representation Guidance"
+  - "DiT"
 date: 2026-05-08
 content_hash: fe32742a9d1be61b
 ---

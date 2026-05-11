@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] NoRD: A Data-Efficient Vision-Language-Action Model that Drives without Reasoning
 description: >-
-  [CVPR 2026][Autonomous Driving][VLA model] NoRD demonstrates that autonomous driving VLAs require neither large-scale reasoning annotations nor massive datasets. By identifying the root cause of GRPO failure on weak SFT policies as **difficulty bias** — wherein learning signals from high-variance rollout groups are suppressed — it replaces standard GRPO with Dr. GRPO for RL post-training. Using less than 60% of the data, no reasoning annotations, and 3× fewer tokens, NoRD achieves competitive performance against reasoning-based VLAs on NAVSIM (85.6 PDMS) and WaymoE2E (7.709 RFS).
+  [CVPR 2026][Autonomous Driving][VLA model] NoRD demonstrates that autonomous driving VLAs require neither large-scale reasoning annotations nor massive datasets. By identifying the root cause of GRPO failure on weak SFT…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - VLA model
-  - reasoning-free driving
-  - data efficiency
-  - Dr.GRPO
-  - reinforcement learning post-training
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "VLA model"
+  - "reasoning-free driving"
+  - "data efficiency"
+  - "Dr.GRPO"
+  - "reinforcement learning post-training"
 date: 2026-05-08
 content_hash: 507316a270781bb7
 ---

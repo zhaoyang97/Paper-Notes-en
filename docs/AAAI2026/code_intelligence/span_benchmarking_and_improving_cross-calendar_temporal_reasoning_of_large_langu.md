@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] SPAN: Benchmarking and Improving Cross-Calendar Temporal Reasoning of Large Language Models
 description: >-
-  [AAAI 2026][cross-calendar reasoning] This paper proposes SPAN, a cross-calendar temporal reasoning benchmark (6 calendars × 10 reasoning directions × 100-year range × 37,380 instances). Baseline LLMs achieve an average accuracy of only 34.5% (none exceeding 80%), revealing two systematic failure modes—Future-Date Degradation and Calendar Asymmetry Bias. A tool-augmented Time Agent achieves 95.31%, demonstrating that cross-calendar reasoning requires external tools rather than parametric knowledge.
+  [AAAI 2026][Code Intelligence][cross-calendar reasoning] This paper proposes SPAN, a cross-calendar temporal reasoning benchmark (6 calendars × 10 reasoning directions × 100-year range × 37…
 tags:
-  - AAAI 2026
-  - cross-calendar reasoning
-  - temporal reasoning
-  - six calendar systems
-  - tool-augmented agent
-  - evaluation benchmark
+  - "AAAI 2026"
+  - "Code Intelligence"
+  - "cross-calendar reasoning"
+  - "temporal reasoning"
+  - "six calendar systems"
+  - "tool-augmented agent"
+  - "evaluation benchmark"
 date: 2026-05-08
 content_hash: bc9fc8216ff68501
 ---

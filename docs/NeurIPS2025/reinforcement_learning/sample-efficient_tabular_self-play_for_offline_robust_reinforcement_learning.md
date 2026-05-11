@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Sample-Efficient Tabular Self-Play for Offline Robust Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][offline RL] This paper proposes the RTZ-VI-LCB algorithm for offline robust two-player zero-sum Markov games (RTZM G). By combining pessimistic robust value iteration with Bernstein-style penalties, it achieves a near-optimal sample complexity of $O(C_r^* \cdot H^4 \cdot S \cdot (A+B) / \varepsilon^2)$, significantly improving upon the prior best result of $O(H^5 \cdot S^2 \cdot AB / \varepsilon^2)$ in terms of dependence on both the state space and the action space.
+  [NeurIPS 2025][Reinforcement Learning][offline RL] This paper proposes the RTZ-VI-LCB algorithm for offline robust two-player zero-sum Markov games (RTZM G). By combining pessimistic robust value iteration with Bernstein…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - offline RL
-  - robust MDP
-  - zero-sum Markov game
-  - sample complexity
-  - pessimism
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "offline RL"
+  - "robust MDP"
+  - "zero-sum Markov game"
+  - "sample complexity"
+  - "pessimism"
 date: 2026-05-08
 content_hash: 05a03963f2fc6108
 ---

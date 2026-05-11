@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SceneDecorator: Towards Scene-Oriented Story Generation with Scene Planning and Scene Consistency
 description: >-
-  [NeurIPS 2025][Image Generation][scene consistency] SceneDecorator presents a training-free framework that, for the first time, systematically addresses scene planning and scene consistency in story generation via VLM-guided global-to-local scene planning and a long-term scene-sharing attention mechanism, achieving significant improvements over existing methods on scene alignment and consistency metrics.
+  [NeurIPS 2025][Image Generation][scene consistency] SceneDecorator presents a training-free framework that, for the first time, systematically addresses scene planning and scene consistency in story generation via VLM-gu…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - scene consistency
-  - story generation
-  - scene planning
-  - training-free
-  - attention mechanism
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "scene consistency"
+  - "story generation"
+  - "scene planning"
+  - "training-free"
+  - "attention mechanism"
 date: 2026-05-08
 content_hash: dce886ecdcbbc202
 ---

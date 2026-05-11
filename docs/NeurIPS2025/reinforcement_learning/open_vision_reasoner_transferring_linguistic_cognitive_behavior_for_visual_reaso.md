@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Open Vision Reasoner: Transferring Linguistic Cognitive Behavior for Visual Reasoning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Multimodal reasoning] Open Vision Reasoner (OVR) employs a two-stage training paradigm—linguistic cold start followed by large-scale multimodal RL—to effectively transfer cognitive behaviors (e.g., backtracking, verification) from language models to visual reasoning. Built on Qwen2.5-VL-7B, OVR achieves 51.8% on MathVision, the first model at this scale to surpass 50%, establishing a new state of the art among same-scale models.
+  [NeurIPS 2025][Reinforcement Learning][Multimodal reasoning] Open Vision Reasoner (OVR) employs a two-stage training paradigm—linguistic cold start followed by large-scale multimodal RL—to effectively transfer cognitive…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Multimodal reasoning
-  - cognitive behavior transfer
-  - visual reasoning
-  - cold-start fine-tuning
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Multimodal reasoning"
+  - "cognitive behavior transfer"
+  - "visual reasoning"
+  - "cold-start fine-tuning"
 date: 2026-05-08
 content_hash: c5fdccb9ccd36381
 ---

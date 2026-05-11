@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Pairwise Optimal Transports for Training All-to-All Flow-Based Condition Transfer Model
 description: >-
-  [NeurIPS 2025][Image Generation][Optimal Transport] This paper proposes A2A-FM, a method that simultaneously learns optimal transport mappings across all pairs of conditional distributions within the Flow Matching framework via a novel cost function. It is theoretically shown to converge to pairwise optimal transport in the infinite-sample limit, and is particularly suited for non-grouped data with continuous conditional variables.
+  [NeurIPS 2025][Image Generation][Optimal Transport] This paper proposes A2A-FM, a method that simultaneously learns optimal transport mappings across all pairs of conditional distributions within the Flow Matching framew…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Optimal Transport
-  - Flow Matching
-  - Condition Transfer
-  - Pairwise Optimal Transport
-  - Molecular Optimization
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Optimal Transport"
+  - "Flow Matching"
+  - "Condition Transfer"
+  - "Pairwise Optimal Transport"
+  - "Molecular Optimization"
 date: 2026-05-08
 content_hash: 3050d100c4cb3f74
 ---

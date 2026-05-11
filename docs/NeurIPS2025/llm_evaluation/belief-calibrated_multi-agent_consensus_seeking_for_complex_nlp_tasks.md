@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Belief-Calibrated Multi-Agent Consensus Seeking for Complex NLP Tasks
 description: >-
-  [NeurIPS 2025][LLM Evaluation][Multi-agent systems] This paper proposes the Belief-Calibrated Consensus Seeking (BCCS) framework, which incorporates three modules—belief-calibrated consensus judgment, conflict-aware collaborator assignment, and leader selection—to enable multi-agent systems to reach more stable consensus on complex NLP tasks, yielding improvements of 2.23% and 3.95% on difficult subsets of MATH and MMLU, respectively.
+  [NeurIPS 2025][LLM Evaluation][Multi-agent systems] This paper proposes the Belief-Calibrated Consensus Seeking (BCCS) framework, which incorporates three modules—belief-calibrated consensus judgment…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - Multi-agent systems
-  - consensus mechanism
-  - belief calibration
-  - collaborative reasoning
-  - LLM collaboration
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "Multi-agent systems"
+  - "consensus mechanism"
+  - "belief calibration"
+  - "collaborative reasoning"
+  - "LLM collaboration"
 date: 2026-05-08
 content_hash: 42ae34a8654181d7
 ---

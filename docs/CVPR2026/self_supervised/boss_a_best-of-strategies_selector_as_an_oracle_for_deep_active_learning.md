@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BoSS: A Best-of-Strategies Selector as an Oracle for Deep Active Learning
 description: >-
-  [CVPR 2026][Self-Supervised Learning][active learning] This paper proposes BoSS, a scalable oracle strategy selection framework. In each active learning round, multiple query strategies are run in parallel on random sub-pools to generate candidate batches; each candidate batch is evaluated rapidly by freezing the backbone and retraining only the final linear head; the batch yielding the greatest performance gain is selected. This framework enables quantification of the gap between existing AL strategies and the theoretical optimum.
+  [CVPR 2026][Self-Supervised Learning][active learning] This paper proposes BoSS, a scalable oracle strategy selection framework. In each active learning round…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - active learning
-  - Oracle Strategy
-  - Strategy Selection
-  - Deep Learning
-  - benchmark
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "active learning"
+  - "Oracle Strategy"
+  - "Strategy Selection"
+  - "Deep Learning"
+  - "benchmark"
 date: 2026-05-08
 content_hash: e47519f000bcac2f
 ---

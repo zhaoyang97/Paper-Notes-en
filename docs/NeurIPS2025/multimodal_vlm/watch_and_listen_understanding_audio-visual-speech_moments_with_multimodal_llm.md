@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Watch and Listen: Understanding Audio-Visual-Speech Moments with Multimodal LLM
 description: >-
-  [NeurIPS 2025][Multimodal VLM][audio-visual understanding] This paper proposes TriSense — a tri-modal (visual + audio + speech) large language model that adaptively modulates per-modality weights via a Query-Based Connector for robust video temporal understanding, supported by the TriSense-2M dataset containing 2 million annotated samples.
+  [NeurIPS 2025][Multimodal VLM][audio-visual understanding] This paper proposes TriSense — a tri-modal (visual + audio + speech) large language model that adaptively modulates per-modality weights via a Query-Based Connec…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - audio-visual understanding
-  - multimodal fusion
-  - temporal understanding
-  - modality adaptation
-  - video moment retrieval
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "audio-visual understanding"
+  - "multimodal fusion"
+  - "temporal understanding"
+  - "modality adaptation"
+  - "video moment retrieval"
 date: 2026-05-08
 content_hash: 9fdbd2a61d6b671b
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] DQA: Diagnostic Question Answering for IT Support
 description: >-
-  [ACL 2026][Diagnostic Question Answering] This paper proposes the DQA framework, which achieves systematic fault diagnosis in enterprise IT support by maintaining persistent diagnostic states and aggregating retrieved evidence at the root-cause level rather than processing documents individually. The success rate improves from a baseline of 41.3% to 78.7%, while the average number of turns decreases from 8.4 to 3.9.
+  [ACL 2026][Information Retrieval & RAG][Diagnostic Question Answering] This paper proposes the DQA framework, which achieves systematic fault diagnosis in enterprise IT support by maintaining persistent diagnostic states…
 tags:
-  - ACL 2026
-  - Diagnostic Question Answering
-  - IT Support
-  - RAG
-  - Root Cause Analysis
-  - Diagnostic State Tracking
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Diagnostic Question Answering"
+  - "IT Support"
+  - "RAG"
+  - "Root Cause Analysis"
+  - "Diagnostic State Tracking"
 date: 2026-05-08
 content_hash: 41e9c95e3623d03d
 ---

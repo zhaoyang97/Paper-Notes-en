@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LASeR: Learning to Adaptively Select Reward Models with Multi-Armed Bandits
 description: >-
-  [NeurIPS 2025][LLM Alignment][reward model selection] This work frames the selection of multiple reward models (RMs) as a contextual multi-armed bandit (LinUCB) problem, adaptively choosing the most suitable RM for each training batch during iterative LLM training. LASeR comprehensively outperforms RM ensemble and single-RM baselines on reasoning, instruction-following, and long-context tasks, while achieving a 2–3× efficiency advantage.
+  [NeurIPS 2025][LLM Alignment][reward model selection] This work frames the selection of multiple reward models (RMs) as a contextual multi-armed bandit (LinUCB) problem…
 tags:
-  - NeurIPS 2025
-  - LLM Alignment
-  - reward model selection
-  - multi-armed bandits
-  - iterative training
-  - DPO
-  - multi-RM alignment
+  - "NeurIPS 2025"
+  - "LLM Alignment"
+  - "reward model selection"
+  - "multi-armed bandits"
+  - "iterative training"
+  - "DPO"
+  - "multi-RM alignment"
 date: 2026-05-08
 content_hash: 15d62d9ada7968d0
 ---

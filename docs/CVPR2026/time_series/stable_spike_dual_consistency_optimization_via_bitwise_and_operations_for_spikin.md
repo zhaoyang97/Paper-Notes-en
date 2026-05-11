@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Stable Spike: Dual Consistency Optimization via Bitwise AND Operations for Spiking Neural Networks
 description: >-
-  [CVPR 2026][Time Series][spiking neural networks] This paper proposes Stable Spike, a dual consistency optimization framework that employs the hardware-friendly bitwise AND operation to decouple a stable spike skeleton $\tilde{S}$ from multi-timestep spike maps, and injects amplitude-aware spike noise to enhance generalization. The method achieves up to 8.33% accuracy improvement on neuromorphic object recognition tasks under ultra-low latency ($T=2$).
+  [CVPR 2026][Time Series][spiking neural networks] This paper proposes Stable Spike, a dual consistency optimization framework that employs the hardware-friendly bitwise AND operation to decouple a stable spike skeleton $…
 tags:
-  - CVPR 2026
-  - Time Series
-  - spiking neural networks
-  - temporal step consistency
-  - bitwise AND
-  - stable spike skeleton
-  - amplitude-aware noise
-  - neuromorphic recognition
-  - low-latency inference
+  - "CVPR 2026"
+  - "Time Series"
+  - "spiking neural networks"
+  - "temporal step consistency"
+  - "bitwise AND"
+  - "stable spike skeleton"
+  - "amplitude-aware noise"
+  - "neuromorphic recognition"
+  - "low-latency inference"
 date: 2026-05-08
 content_hash: c276d4c2e39251ca
 ---

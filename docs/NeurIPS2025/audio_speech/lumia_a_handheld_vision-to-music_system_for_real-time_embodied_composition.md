@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LUMIA: A Handheld Vision-to-Music System for Real-Time, Embodied Composition
 description: >-
-  [NeurIPS 2025][Audio & Speech][vision-to-music] This paper presents Lumia — a handheld camera-shaped device that analyzes captured frames via GPT-4 Vision to generate structured prompts, which are then fed to Stable Audio to synthesize loopable music segments, enabling a real-time, embodied improvisation workflow from visual input to music.
+  [NeurIPS 2025][Audio & Speech][vision-to-music] This paper presents Lumia — a handheld camera-shaped device that analyzes captured frames via GPT-4 Vision to generate structured prompts…
 tags:
-  - NeurIPS 2025
+  - "NeurIPS 2025"
   - "Audio & Speech"
-  - vision-to-music
-  - real-time composition
-  - human-AI co-creation
-  - embodied interaction
-  - multimodal generation
+  - "vision-to-music"
+  - "real-time composition"
+  - "human-AI co-creation"
+  - "embodied interaction"
+  - "multimodal generation"
 date: 2026-05-08
 content_hash: 5df5cc71a54042b3
 ---

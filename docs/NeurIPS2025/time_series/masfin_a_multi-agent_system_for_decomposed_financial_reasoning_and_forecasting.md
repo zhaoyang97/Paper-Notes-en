@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MASFIN: A Multi-Agent System for Decomposed Financial Reasoning and Forecasting
 description: >-
-  [NeurIPS 2025][Time Series][multi-agent system] This paper proposes MASFIN, a multi-agent system that decomposes financial forecasting into multiple sub-tasks (macroeconomic analysis, industry analysis, technical analysis, sentiment analysis, etc.), with specialized LLM agents collaborating to produce more accurate and interpretable financial predictions than single-model approaches.
+  [NeurIPS 2025][Time Series][multi-agent system] This paper proposes MASFIN, a multi-agent system that decomposes financial forecasting into multiple sub-tasks (macroeconomic analysis, industry analysis…
 tags:
-  - NeurIPS 2025
-  - Time Series
-  - multi-agent system
-  - financial reasoning
-  - decomposed forecasting
-  - LLM agent
-  - time-series analysis
+  - "NeurIPS 2025"
+  - "Time Series"
+  - "multi-agent system"
+  - "financial reasoning"
+  - "decomposed forecasting"
+  - "LLM agent"
+  - "time-series analysis"
 date: 2026-05-08
 content_hash: 05e982ddf1ae7ce0
 ---

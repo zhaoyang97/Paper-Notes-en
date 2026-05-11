@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Non-Collaborative User Simulators for Tool Agents
 description: >-
-  [ICLR 2026][Dialogue Systems][Non-collaborative user simulation] Drawing on four categories of non-collaborative user behavior from marketing research (unavailable service requests, tangential chit-chat, impatience, and incomplete utterances), this work constructs a goal-aligned simulation framework and systematically exposes the behavior-specific failure mechanisms of state-of-the-art tool agents on MultiWOZ and τ-bench. Tangential chit-chat causes an average success rate (SR) drop of 29.1%, and distinct model families exhibit qualitatively different failure modes—GPT-series models fall into repetitive helper API calls, while Qwen-series models tend to hallucinate API results.
+  [ICLR 2026][Dialogue Systems][Non-collaborative user simulation] Drawing on four categories of non-collaborative user behavior from marketing research (unavailable service requests, tangential chit-chat, impatience…
 tags:
-  - ICLR 2026
-  - Dialogue Systems
-  - Non-collaborative user simulation
-  - tool agent robustness
-  - dialogue stress testing
-  - user behavior modeling
-  - multi-turn dialogue evaluation
+  - "ICLR 2026"
+  - "Dialogue Systems"
+  - "Non-collaborative user simulation"
+  - "tool agent robustness"
+  - "dialogue stress testing"
+  - "user behavior modeling"
+  - "multi-turn dialogue evaluation"
 date: 2026-05-08
 content_hash: a71a4de9295d1216
 ---

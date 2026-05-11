@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Closed-Form Solution for Debiasing Vision-Language Models with Utility Guarantees Across Modalities and Tasks
 description: >-
-  [CVPR 2026][Multimodal VLM][VLM debiasing] This paper proposes a closed-form debiasing method for VLMs that performs orthogonal decomposition of attribute subspaces in the cross-modal embedding space and solves via Chebyshev scalarization, achieving Pareto-optimal fairness with bounded utility loss. The approach is training-free and annotation-free, and uniformly covers three downstream tasks: zero-shot classification, text-image retrieval, and text-image generation.
+  [CVPR 2026][Multimodal VLM][VLM debiasing] This paper proposes a closed-form debiasing method for VLMs that performs orthogonal decomposition of attribute subspaces in the cross-modal embedding space and solves via Cheby…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - VLM debiasing
-  - closed-form solution
-  - Pareto-optimal fairness
-  - training-free annotation-free
-  - cross-modal embedding space
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "VLM debiasing"
+  - "closed-form solution"
+  - "Pareto-optimal fairness"
+  - "training-free annotation-free"
+  - "cross-modal embedding space"
 date: 2026-05-08
 content_hash: 8bf69daa8f6bf4c6
 ---

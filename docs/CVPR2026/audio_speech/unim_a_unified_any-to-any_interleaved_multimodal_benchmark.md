@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UniM: A Unified Any-to-Any Interleaved Multimodal Benchmark
 description: >-
-  [CVPR 2026][Audio & Speech][multimodal benchmark] This paper proposes UniM, the first unified any-to-any interleaved multimodal benchmark (31K samples, 7 modalities, 30 domains), accompanied by a three-dimensional evaluation suite and an agentic baseline UniMA based on traceable evidence reasoning, revealing critical deficiencies of existing MLLMs under the interleaved multimodal paradigm.
+  [CVPR 2026][Audio & Speech][multimodal benchmark] This paper proposes UniM, the first unified any-to-any interleaved multimodal benchmark (31K samples, 7 modalities, 30 domains)…
 tags:
-  - CVPR 2026
+  - "CVPR 2026"
   - "Audio & Speech"
-  - multimodal benchmark
-  - any-to-any
-  - interleaved multimodal
-  - evaluation suite
-  - agentic model
+  - "multimodal benchmark"
+  - "any-to-any"
+  - "interleaved multimodal"
+  - "evaluation suite"
+  - "agentic model"
 date: 2026-05-08
 content_hash: 040181549655782b
 ---

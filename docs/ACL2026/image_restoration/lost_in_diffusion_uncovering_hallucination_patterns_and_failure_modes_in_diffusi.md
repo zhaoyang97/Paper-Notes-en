@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Lost in Diffusion: Uncovering Hallucination Patterns and Failure Modes in Diffusion Large Language Models
 description: >-
-  [ACL 2026][Image Restoration][Diffusion Language Model] This work presents the first systematic comparison of hallucination patterns between diffusion LLMs (dLLMs) and their autoregressive (AR) counterparts, revealing that current dLLMs exhibit higher hallucination tendency and identifying three diffusion-specific failure modes: premature termination, incomplete denoising, and context intrusion.
+  [ACL 2026][Image Restoration][Diffusion Language Model] This work presents the first systematic comparison of hallucination patterns between diffusion LLMs (dLLMs) and their autoregressive (AR) counterparts…
 tags:
-  - ACL 2026
-  - Image Restoration
-  - Diffusion Language Model
-  - Hallucination
-  - Non-Autoregressive Generation
-  - Failure Modes
-  - Test-Time Compute
+  - "ACL 2026"
+  - "Image Restoration"
+  - "Diffusion Language Model"
+  - "Hallucination"
+  - "Non-Autoregressive Generation"
+  - "Failure Modes"
+  - "Test-Time Compute"
 content_hash: 1f12ec24a474522b
 ---
 

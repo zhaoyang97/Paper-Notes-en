@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] HyTIP: Hybrid Temporal Information Propagation for Masked Conditional Residual Video Coding
 description: >-
-  [ICCV 2025][Video Compression] This paper proposes HyTIP, a framework that unifies output-recurrence (explicit buffering of decoded frames) and hidden-to-hidden propagation (implicit buffering of latent features) within a single learned video coding framework, achieving comparable coding performance to state-of-the-art methods using only 14% of their buffer size.
+  [ICCV 2025][Video Compression] This paper proposes HyTIP, a framework that unifies output-recurrence (explicit buffering of decoded frames) and hidden-to-hidden propagation (implicit buffering of latent features) within…
 tags:
-  - ICCV 2025
-  - Video Compression
-  - Temporal Information Propagation
-  - Hybrid Buffer Strategy
-  - RNN
-  - Conditional Residual Coding
+  - "ICCV 2025"
+  - "Video Compression"
+  - "Temporal Information Propagation"
+  - "Hybrid Buffer Strategy"
+  - "RNN"
+  - "Conditional Residual Coding"
 date: 2026-05-08
 content_hash: 56315ae7af34c7b8
 ---

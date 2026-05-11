@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RoiRL: Efficient, Self-Supervised Reasoning with Offline Iterative Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Offline reinforcement learning] This paper proposes RoiRL, a lightweight self-supervised reasoning framework based on offline iterative reinforcement learning. By replacing online RL (e.g., TTRL) with a weighted log-likelihood objective, RoiRL enables self-improvement of LLM reasoning capabilities without requiring a reference model or ground-truth labels, achieving 2.5× faster training with superior performance.
+  [NeurIPS 2025][Reinforcement Learning][Offline reinforcement learning] This paper proposes RoiRL, a lightweight self-supervised reasoning framework based on offline iterative reinforcement learning. By replacing online R…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Offline reinforcement learning
-  - LLM reasoning
-  - self-supervised learning
-  - majority voting
-  - weighted likelihood
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Offline reinforcement learning"
+  - "LLM reasoning"
+  - "self-supervised learning"
+  - "majority voting"
+  - "weighted likelihood"
 date: 2026-05-08
 content_hash: 5b76fb1ca4ace8d4
 ---

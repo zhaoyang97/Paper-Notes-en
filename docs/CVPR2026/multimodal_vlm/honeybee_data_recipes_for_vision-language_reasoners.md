@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HoneyBee: Data Recipes for Vision-Language Reasoners
 description: >-
-  [CVPR 2026][Multimodal VLM][VLM reasoning] This work systematically investigates the principles underlying the construction of vision-language reasoning datasets—covering context source strategies, data interventions (image caption auxiliary signals and text-only reasoning), and multi-dimensional data scaling—and uses these insights to build HoneyBee, a 2.5M-sample CoT reasoning dataset. A 3B VLM trained on HoneyBee surpasses the prior SOTA by 7.8% on MathVerse, while a proposed test-time scaling strategy reduces decoding cost by 73%.
+  [CVPR 2026][Multimodal VLM][VLM reasoning] This work systematically investigates the principles underlying the construction of vision-language reasoning datasets—covering context source strategies…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - VLM reasoning
-  - data curation
-  - chain-of-thought
-  - test-time scaling
-  - data recipes
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "VLM reasoning"
+  - "data curation"
+  - "chain-of-thought"
+  - "test-time scaling"
+  - "data recipes"
 date: 2026-05-08
 content_hash: 623fbde619369fc9
 ---

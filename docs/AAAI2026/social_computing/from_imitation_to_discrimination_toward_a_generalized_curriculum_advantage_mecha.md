@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From Imitation to Discrimination: Toward A Generalized Curriculum Advantage Mechanism Enhancing Cross-Domain Reasoning Tasks
 description: >-
-  [AAAI 2026][Social Computing][Reinforcement Learning] This paper proposes CAPO (Curriculum Advantage Policy Optimization), an adaptive curriculum mechanism based on advantage signals. Through a two-phase strategy — first imitation (using only positive-advantage samples) then discrimination (introducing negative signals) — CAPO stably and significantly improves LLM performance on mathematical reasoning and multimodal GUI reasoning tasks.
+  [AAAI 2026][Social Computing][Reinforcement Learning] This paper proposes CAPO (Curriculum Advantage Policy Optimization), an adaptive curriculum mechanism based on advantage signals. Through a two-phase strategy — first…
 tags:
-  - AAAI 2026
-  - Social Computing
-  - Reinforcement Learning
-  - Curriculum Learning
-  - Advantage Function
-  - LLM Reasoning
-  - Multimodal Reasoning
+  - "AAAI 2026"
+  - "Social Computing"
+  - "Reinforcement Learning"
+  - "Curriculum Learning"
+  - "Advantage Function"
+  - "LLM Reasoning"
+  - "Multimodal Reasoning"
 date: 2026-05-08
 content_hash: aa3b5d947b5fafe2
 ---

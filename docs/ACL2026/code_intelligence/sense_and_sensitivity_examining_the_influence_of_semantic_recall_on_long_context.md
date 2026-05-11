@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Sense and Sensitivity: Examining the Influence of Semantic Recall on Long Context Code Understanding
 description: >-
-  [ACL 2026][Semantic Recall] This paper distinguishes between lexical recall (verbatim code retrieval) and semantic recall (understanding runtime code semantics), demonstrating that frontier LLMs achieve near-perfect lexical recall yet exhibit severe semantic recall degradation in long contexts. The paper introduces the SemTrace benchmark, revealing that existing evaluations substantially underestimate the extent of semantic understanding failures.
+  [ACL 2026][Code Intelligence][Semantic Recall] This paper distinguishes between lexical recall (verbatim code retrieval) and semantic recall (understanding runtime code semantics)…
 tags:
-  - ACL 2026
-  - Semantic Recall
-  - Lexical Recall
-  - Long Context
-  - Code Understanding
-  - Lost-in-the-Middle
+  - "ACL 2026"
+  - "Code Intelligence"
+  - "Semantic Recall"
+  - "Lexical Recall"
+  - "Long Context"
+  - "Code Understanding"
+  - "Lost-in-the-Middle"
 date: 2026-05-08
 content_hash: ec10385910288a05
 ---

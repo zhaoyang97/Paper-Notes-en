@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UrbanNav: Learning Language-Guided Urban Navigation from Web-Scale Human Trajectories
 description: >-
-  [AAAI 2026][Robotics][Urban Navigation] This paper proposes UrbanNav, which leverages web-scale urban walking videos (1,500+ hours from YouTube, yielding 3 million instruction–trajectory–landmark triplets) to train a language-guided urban navigation policy via an automated annotation pipeline and robust filtering mechanism, achieving an 83.3% navigation success rate in real-world deployment.
+  [AAAI 2026][Robotics][Urban Navigation] This paper proposes UrbanNav, which leverages web-scale urban walking videos (1,500+ hours from YouTube…
 tags:
-  - AAAI 2026
-  - Robotics
-  - Urban Navigation
-  - Language Guidance
-  - Large-Scale Web Video
-  - Imitation Learning
-  - Landmark Detection
+  - "AAAI 2026"
+  - "Robotics"
+  - "Urban Navigation"
+  - "Language Guidance"
+  - "Large-Scale Web Video"
+  - "Imitation Learning"
+  - "Landmark Detection"
 date: 2026-05-08
 content_hash: 3f028740de107b68
 ---

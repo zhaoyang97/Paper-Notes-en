@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MOBO-OSD: Batch Multi-Objective Bayesian Optimization via Orthogonal Search Directions
 description: >-
-  [NeurIPS 2025][Optimization][Multi-objective Bayesian optimization] This paper proposes MOBO-OSD, an algorithm that generates diverse Pareto-optimal solutions by defining orthogonal search directions on an approximated convex hull of individual minima (CHIM), combined with Pareto front estimation and a batch selection strategy, consistently outperforming state-of-the-art multi-objective Bayesian optimization methods on both synthetic and real-world benchmarks.
+  [NeurIPS 2025][Optimization][Multi-objective Bayesian optimization] This paper proposes MOBO-OSD, an algorithm that generates diverse Pareto-optimal solutions by defining orthogonal search directions on an approximated c…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Multi-objective Bayesian optimization
-  - Pareto front
-  - orthogonal search directions
-  - hypervolume improvement
-  - batch optimization
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Multi-objective Bayesian optimization"
+  - "Pareto front"
+  - "orthogonal search directions"
+  - "hypervolume improvement"
+  - "batch optimization"
 date: 2026-05-08
 content_hash: 529cb38c05ea14c7
 ---

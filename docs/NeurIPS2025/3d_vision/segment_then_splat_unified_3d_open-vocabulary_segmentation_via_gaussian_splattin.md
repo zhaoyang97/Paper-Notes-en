@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Segment then Splat: Unified 3D Open-Vocabulary Segmentation via Gaussian Splatting
 description: >-
-  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] This paper proposes a novel "Segment-then-Splat" paradigm that assigns Gaussians to distinct object sets prior to 3D reconstruction, thereby eliminating geometric and semantic ambiguity and enabling unified 3D open-vocabulary segmentation for both static and dynamic scenes.
+  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] This paper proposes a novel "Segment-then-Splat" paradigm that assigns Gaussians to distinct object sets prior to 3D reconstruction…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - Open-Vocabulary Segmentation
-  - Dynamic Scenes
-  - CLIP Embeddings
-  - Object Tracking
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Open-Vocabulary Segmentation"
+  - "Dynamic Scenes"
+  - "CLIP Embeddings"
+  - "Object Tracking"
 date: 2026-05-08
 content_hash: 0d2b75eecd0b259c
 ---

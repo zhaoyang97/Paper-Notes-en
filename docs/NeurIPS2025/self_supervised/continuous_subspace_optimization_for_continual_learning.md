@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Continuous Subspace Optimization for Continual Learning (CoSO)
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][continual learning] This paper proposes CoSO, a framework that dynamically derives continuous subspaces from per-step gradient SVD (rather than LoRA's fixed subspace), combined with orthogonal projection onto historical task subspaces to prevent interference and Frequent Directions for efficient gradient information aggregation. CoSO achieves 78.19% final accuracy on ImageNet-R with 20 tasks, surpassing the best baseline by 2.77 percentage points.
+  [NeurIPS 2025][Self-Supervised Learning][continual learning] This paper proposes CoSO, a framework that dynamically derives continuous subspaces from per-step gradient SVD (rather than LoRA's fixed subspace)…
 tags:
-  - NeurIPS 2025
-  - Self-Supervised Learning
-  - continual learning
-  - catastrophic forgetting
-  - Dynamic Subspace
-  - Orthogonal Projection
-  - Frequent Directions
-  - LoRA
-  - GaLore
+  - "NeurIPS 2025"
+  - "Self-Supervised Learning"
+  - "continual learning"
+  - "catastrophic forgetting"
+  - "Dynamic Subspace"
+  - "Orthogonal Projection"
+  - "Frequent Directions"
+  - "LoRA"
+  - "GaLore"
 date: 2026-05-08
 content_hash: a52f6c778aee945e
 ---

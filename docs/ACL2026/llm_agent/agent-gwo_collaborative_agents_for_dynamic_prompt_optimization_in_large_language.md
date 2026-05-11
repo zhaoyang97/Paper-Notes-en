@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Agent-GWO: Collaborative Agents for Dynamic Prompt Optimization in Large Language Models
 description: >-
-  [ACL 2026][LLM Agent][Prompt optimization] This paper proposes Agent-GWO, which integrates the leader-follower hierarchy of the Grey Wolf Optimizer (GWO) into a multi-agent framework to jointly optimize prompt templates and decoding hyperparameters (temperature, top-p, etc.), consistently outperforming existing prompt optimization methods across 11 mathematical and mixed reasoning benchmarks.
+  [ACL 2026][LLM Agent][Prompt optimization] This paper proposes Agent-GWO, which integrates the leader-follower hierarchy of the Grey Wolf Optimizer (GWO) into a multi-agent framework to jointly optimize prompt templates…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - Prompt optimization
-  - Grey Wolf Optimizer
-  - multi-agent
-  - reasoning enhancement
-  - decoding hyperparameters
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Prompt optimization"
+  - "Grey Wolf Optimizer"
+  - "multi-agent"
+  - "reasoning enhancement"
+  - "decoding hyperparameters"
 date: 2026-05-08
 content_hash: a4795e842869b899
 ---

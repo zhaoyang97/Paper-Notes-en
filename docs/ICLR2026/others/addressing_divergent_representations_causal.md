@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Addressing Divergent Representations from Causal Interventions on Neural Networks
 description: >-
-  [ICLR 2026 Oral][causal intervention] This paper systematically demonstrates that causal interventions (activation patching, DAS, SAEs, etc.) push model internal representations off their natural distribution. It theoretically distinguishes "benign shifts" from "harmful shifts," proposes the Counterfactual Latent (CL) loss to constrain intervened representations to remain near the natural manifold, and validates on a 7B LLM that this approach reduces divergence while preserving intervention accuracy.
+  [ICLR 2026 Oral][causal intervention] This paper systematically demonstrates that causal interventions (activation patching, DAS, SAEs…
 tags:
-  - ICLR 2026 Oral
-  - causal intervention
-  - mechanistic interpretability
-  - representational divergence
-  - Counterfactual Latent loss
-  - DAS
+  - "ICLR 2026 Oral"
+  - "causal intervention"
+  - "mechanistic interpretability"
+  - "representational divergence"
+  - "Counterfactual Latent loss"
+  - "DAS"
 date: 2026-05-08
 content_hash: a33d8fb4d6e21f07
 ---

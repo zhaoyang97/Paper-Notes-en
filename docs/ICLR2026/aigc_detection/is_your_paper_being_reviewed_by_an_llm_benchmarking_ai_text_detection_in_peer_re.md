@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Is Your Paper Being Reviewed by an LLM? Benchmarking AI Text Detection in Peer Review
 description: >-
-  [ICLR 2026][AIGC Detection][AI text detection] This paper constructs the largest AI-generated peer review dataset to date (788,984 reviews), systematically evaluates 18 AI text detection methods in the peer review setting, and proposes the Anchor detection method that leverages the source paper as contextual grounding, substantially outperforming all baselines at low false positive rates.
+  [ICLR 2026][AIGC Detection][AI text detection] This paper constructs the largest AI-generated peer review dataset to date (788,984 reviews)…
 tags:
-  - ICLR 2026
-  - AIGC Detection
-  - AI text detection
-  - peer review
-  - LLM-generated text
-  - benchmark
-  - scientific integrity
+  - "ICLR 2026"
+  - "AIGC Detection"
+  - "AI text detection"
+  - "peer review"
+  - "LLM-generated text"
+  - "benchmark"
+  - "scientific integrity"
 date: 2026-05-08
 content_hash: 3fba19a0a8cb1524
 ---

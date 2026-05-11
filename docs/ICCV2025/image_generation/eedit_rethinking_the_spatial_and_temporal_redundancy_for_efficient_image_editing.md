@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] EEdit: Rethinking the Spatial and Temporal Redundancy for Efficient Image Editing
 description: >-
-  [Image Generation] This paper proposes EEdit, an efficient image editing framework that achieves an average 2.46× speedup without quality degradation across diverse editing tasks—including prompt-guided, drag-based, and image composition editing—via three components: Spatial Locality Caching (SLoC) to skip computation in unedited regions, Token Index Preprocessing (TIP) for lossless acceleration of caching operations, and Inversion Step Skipping (ISS) to reduce inversion redundancy.
+  [Image Generation] This paper proposes EEdit, an efficient image editing framework that achieves an average 2.46× speedup without quality degradation across diverse editing tasks—including prompt-guided, drag-based…
 tags:
-  - Image Generation
+  - "Image Generation"
 date: 2026-05-08
 content_hash: 17e7584577ed051d
 ---

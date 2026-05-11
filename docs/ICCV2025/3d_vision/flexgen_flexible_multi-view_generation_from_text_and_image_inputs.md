@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FlexGen: Flexible Multi-View Generation from Text and Image Inputs
 description: >-
-  [ICCV 2025][3D Vision][multi-view generation] This paper proposes FlexGen, a flexible multi-view image generation framework that leverages GPT-4V to produce 3D-aware text annotations from tiled orthographic views and introduces an adaptive dual-control module to support single-image, text-only, or joint image-text conditioning for generating consistent multi-view images, enabling capabilities such as unseen-region completion, material editing, and texture control.
+  [ICCV 2025][3D Vision][multi-view generation] This paper proposes FlexGen, a flexible multi-view image generation framework that leverages GPT-4V to produce 3D-aware text annotations from tiled orthographic views and int…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - multi-view generation
-  - 3D-aware text annotation
-  - controllable generation
-  - diffusion models
-  - material editing
+  - "ICCV 2025"
+  - "3D Vision"
+  - "multi-view generation"
+  - "3D-aware text annotation"
+  - "controllable generation"
+  - "diffusion models"
+  - "material editing"
 date: 2026-05-08
 content_hash: e1940cc9fb24c4ca
 ---

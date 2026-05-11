@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LPO: Towards Accurate GUI Agent Interaction via Location Preference Optimization
 description: >-
-  [ACL 2026][LLM Agent][GUI Interaction] This paper proposes Location Preference Optimization (LPO), which combines entropy-based window rewards and distance-based dynamic location rewards within the GRPO framework to improve the spatial grounding accuracy of GUI agents, achieving state-of-the-art performance on both offline and online benchmarks.
+  [ACL 2026][LLM Agent][GUI Interaction] This paper proposes Location Preference Optimization (LPO), which combines entropy-based window rewards and distance-based dynamic location rewards within the GRPO framework to impr…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - GUI Interaction
-  - Location Preference Optimization
-  - Reinforcement Learning
-  - Information Entropy
-  - GRPO
+  - "ACL 2026"
+  - "LLM Agent"
+  - "GUI Interaction"
+  - "Location Preference Optimization"
+  - "Reinforcement Learning"
+  - "Information Entropy"
+  - "GRPO"
 date: 2026-05-08
 content_hash: 91add2dfee78bb3b
 ---

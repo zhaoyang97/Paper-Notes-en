@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Bayesian Influence Functions for Hessian-Free Data Attribution
 description: >-
-  [ICLR 2026][influence functions] This paper proposes the Local Bayesian Influence Function (BIF), which replaces the intractable Hessian inversion in classical influence functions with a covariance estimate obtained via SGLD sampling, enabling architecture-agnostic data attribution for models with billions of parameters and achieving state-of-the-art performance on retraining experiments.
+  [ICLR 2026][influence functions] This paper proposes the Local Bayesian Influence Function (BIF), which replaces the intractable Hessian inversion in classical influence functions with a covariance estimate obtained via…
 tags:
-  - ICLR 2026
-  - influence functions
-  - training data attribution
-  - Bayesian inference
-  - SGMCMC
-  - Hessian-free
-  - data valuation
+  - "ICLR 2026"
+  - "influence functions"
+  - "training data attribution"
+  - "Bayesian inference"
+  - "SGMCMC"
+  - "Hessian-free"
+  - "data valuation"
 date: 2026-05-08
 content_hash: 7cf65e3081d7986c
 ---

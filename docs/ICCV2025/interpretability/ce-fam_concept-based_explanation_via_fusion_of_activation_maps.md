@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] CE-FAM: Concept-Based Explanation via Fusion of Activation Maps
 description: >-
-  [ICCV 2025][Concept explanation] CE-FAM is a concept explanation method that trains a branch network sharing activation maps with an image classifier to simulate VLM embeddings, establishing a one-to-one correspondence among concept prediction → concept region (weighted sum of activation maps) → concept contribution (effect on classification score). The paper also introduces a novel NRA evaluation metric and surpasses existing methods on zero-shot concept reasoning.
+  [ICCV 2025][Interpretability][Concept explanation] CE-FAM is a concept explanation method that trains a branch network sharing activation maps with an image classifier to simulate VLM embeddings…
 tags:
-  - ICCV 2025
-  - Concept explanation
-  - activation map fusion
-  - Grad-CAM
-  - VLM knowledge transfer
-  - interpretability
+  - "ICCV 2025"
+  - "Interpretability"
+  - "Concept explanation"
+  - "activation map fusion"
+  - "Grad-CAM"
+  - "VLM knowledge transfer"
 date: 2026-05-08
 content_hash: 38d85b91fc0b5063
 ---

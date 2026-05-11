@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] High-order Equivariant Flow Matching for Density Functional Theory Hamiltonian Prediction
 description: >-
-  [NeurIPS 2025][Image Generation][flow matching] This paper proposes QHFlow, the first method to apply conditional flow matching to density functional theory (DFT) Hamiltonian matrix prediction. By designing high-order SE(3)-equivariant vector fields and symmetry-aware prior distributions, QHFlow reduces Hamiltonian prediction error by 73% on MD17 and accelerates DFT computation by 54% when used as an SCF initializer.
+  [NeurIPS 2025][Image Generation][flow matching] This paper proposes QHFlow, the first method to apply conditional flow matching to density functional theory (DFT) Hamiltonian matrix prediction. By designing high-order SE…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - flow matching
-  - DFT
-  - Hamiltonian prediction
-  - SE(3)-equivariance
-  - quantum chemistry
-  - SCF acceleration
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "flow matching"
+  - "DFT"
+  - "Hamiltonian prediction"
+  - "SE(3)-equivariance"
+  - "quantum chemistry"
+  - "SCF acceleration"
 date: 2026-05-08
 content_hash: f125a4d3fa2a9ca0
 ---

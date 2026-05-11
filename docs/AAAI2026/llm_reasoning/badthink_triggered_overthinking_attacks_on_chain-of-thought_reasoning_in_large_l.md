@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BadThink: Triggered Overthinking Attacks on Chain-of-Thought Reasoning in Large Language Models
 description: >-
-  [AAAI 2026][LLM Reasoning][backdoor attack] This paper proposes BadThink — the first training-time backdoor attack targeting CoT reasoning efficiency. By iteratively optimizing verbose reasoning templates via an LLM, it constructs poisoned data that causes the victim model, upon trigger activation, to generate reasoning chains inflated by over 17× (on MATH-500), while preserving final answer correctness and maintaining strong stealthiness.
+  [AAAI 2026][LLM Reasoning][backdoor attack] This paper proposes BadThink — the first training-time backdoor attack targeting CoT reasoning efficiency. By iteratively optimizing verbose reasoning templates via an LLM…
 tags:
-  - AAAI 2026
-  - LLM Reasoning
-  - backdoor attack
-  - chain-of-thought
-  - overthinking
-  - data poisoning
-  - reasoning efficiency
+  - "AAAI 2026"
+  - "LLM Reasoning"
+  - "backdoor attack"
+  - "chain-of-thought"
+  - "overthinking"
+  - "data poisoning"
+  - "reasoning efficiency"
 date: 2026-05-08
 content_hash: 3996760bb4def705
 ---

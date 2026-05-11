@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] SHREC: A Spectral Embedding-Based Approach for Ab-Initio Reconstruction of Helical Molecules
 description: >-
-  [CVPR 2026][cryo-EM] This paper proposes SHREC, an algorithm that recovers projection angles of helical molecule segments directly from cryo-EM 2D projection images via spectral embedding, without requiring prior knowledge of helical symmetry parameters (rise/twist), enabling truly ab-initio helical reconstruction.
+  [CVPR 2026][cryo-EM] This paper proposes SHREC, an algorithm that recovers projection angles of helical molecule segments directly from cryo-EM 2D projection images via spectral embedding…
 tags:
-  - CVPR 2026
-  - cryo-EM
-  - helical reconstruction
-  - spectral embedding
-  - graph Laplacian
-  - manifold learning
+  - "CVPR 2026"
+  - "cryo-EM"
+  - "helical reconstruction"
+  - "spectral embedding"
+  - "graph Laplacian"
+  - "manifold learning"
 date: 2026-05-08
 content_hash: e1c97df221002740
 ---

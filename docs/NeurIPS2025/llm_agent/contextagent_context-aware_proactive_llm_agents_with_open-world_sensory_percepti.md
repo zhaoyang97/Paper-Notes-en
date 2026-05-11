@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ContextAgent: Context-Aware Proactive LLM Agents with Open-World Sensory Perceptions
 description: >-
-  [NeurIPS 2025][LLM Agent][Proactive Agent] This paper proposes ContextAgent, the first LLM agent framework that leverages multimodal sensory perception from wearable devices (video + audio + notifications) to understand user intent and proactively deliver tool-augmented services. It also introduces ContextAgentBench, a benchmark of 1,000 samples, achieving improvements of 8.5% in proactive prediction accuracy and 6.0% in tool invocation accuracy.
+  [NeurIPS 2025][LLM Agent][Proactive Agent] This paper proposes ContextAgent, the first LLM agent framework that leverages multimodal sensory perception from wearable devices (video + audio + notifications) to understand…
 tags:
-  - NeurIPS 2025
-  - LLM Agent
-  - Proactive Agent
-  - context awareness
-  - wearable sensors
-  - tool invocation
-  - benchmark
+  - "NeurIPS 2025"
+  - "LLM Agent"
+  - "Proactive Agent"
+  - "context awareness"
+  - "wearable sensors"
+  - "tool invocation"
+  - "benchmark"
 date: 2026-05-08
 content_hash: 5e651d80db38b063
 ---

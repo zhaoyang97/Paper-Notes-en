@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] To Trust or Not to Trust: Attention-Based Trust Management for LLM Multi-Agent Systems
 description: >-
-  [ACL 2026][LLM multi-agent trust management] This paper proposes the first comprehensive definition of "trustworthiness" for LLM multi-agent systems (LLM-MAS), grounded in six orthogonal dimensions derived from Grice's Cooperative Principle. It demonstrates that LLM attention patterns can distinguish different types of trustworthiness violations, and on this basis introduces A-Trust, a lightweight attention-based evaluation method, and an end-to-end Trust Management System (TMS) that achieves malicious message detection rates of 77–90% across diverse attack scenarios.
+  [ACL 2026][Interpretability][LLM multi-agent trust management] This paper proposes the first comprehensive definition of "trustworthiness" for LLM multi-agent systems (LLM-MAS)…
 tags:
-  - ACL 2026
-  - LLM multi-agent trust management
-  - attention pattern analysis
-  - trustworthiness evaluation
-  - malicious message detection
-  - trusted communication
+  - "ACL 2026"
+  - "Interpretability"
+  - "LLM multi-agent trust management"
+  - "attention pattern analysis"
+  - "trustworthiness evaluation"
+  - "malicious message detection"
+  - "trusted communication"
 date: 2026-05-08
 content_hash: d0a97915c0735932
 ---

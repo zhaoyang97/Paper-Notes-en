@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] O3SLM: Open Weight, Open Data, and Open Vocabulary Sketch-Language Model
 description: >-
-  [AAAI 2026][Multimodal VLM][Sketch understanding] This paper constructs a large-scale sketch-image-instruction triplet dataset, SketchVCL (600K pretraining + 215K fine-tuning samples), and trains O3SLM — the first open-source large vision-language model capable of fluently understanding hand-drawn sketches across four tasks: detection, counting, retrieval, and VQA — substantially outperforming existing LVLMs on all tasks.
+  [AAAI 2026][Multimodal VLM][Sketch understanding] This paper constructs a large-scale sketch-image-instruction triplet dataset, SketchVCL (600K pretraining + 215K fine-tuning samples)…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Sketch understanding
-  - large vision-language model
-  - sketch-image-text alignment
-  - open vocabulary
-  - instruction tuning
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Sketch understanding"
+  - "large vision-language model"
+  - "sketch-image-text alignment"
+  - "open vocabulary"
+  - "instruction tuning"
 date: 2026-05-08
 content_hash: bd346843db5b06b4
 ---

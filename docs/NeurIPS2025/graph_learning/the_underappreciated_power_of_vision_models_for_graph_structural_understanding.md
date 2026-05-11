@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The Underappreciated Power of Vision Models for Graph Structural Understanding
 description: >-
-  [NeurIPS 2025][Graph Learning][vision models] This paper reveals the severely underappreciated capability of vision models (ResNet/ViT/Swin, etc.) for graph structural understanding. By rendering graphs as images and processing them with visual encoders, these models significantly outperform GNNs in global topology perception and cross-scale generalization. The paper also introduces the GraphAbstract benchmark to systematically evaluate this finding.
+  [NeurIPS 2025][Graph Learning][vision models] This paper reveals the severely underappreciated capability of vision models (ResNet/ViT/Swin…
 tags:
-  - NeurIPS 2025
-  - Graph Learning
-  - vision models
-  - graph neural networks
-  - graph structural understanding
-  - benchmark
-  - scale invariance
+  - "NeurIPS 2025"
+  - "Graph Learning"
+  - "vision models"
+  - "graph neural networks"
+  - "graph structural understanding"
+  - "benchmark"
+  - "scale invariance"
 date: 2026-05-08
 content_hash: d044a5418cf375e0
 ---

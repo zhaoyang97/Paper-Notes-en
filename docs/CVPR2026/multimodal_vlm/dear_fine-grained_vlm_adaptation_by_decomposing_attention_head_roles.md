@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DeAR: Fine-Grained VLM Adaptation by Decomposing Attention Head Roles
 description: >-
-  [CVPR 2026][Multimodal VLM][Prompt Learning] This paper proposes DeAR, which uses a Concept Entropy metric to decompose the deep-layer attention heads of ViT into three functional roles—attribute heads, generalization heads, and mixed heads—and designs a role-based attention masking mechanism to precisely control information flow, achieving the best balance between task adaptation and zero-shot generalization across 15 datasets.
+  [CVPR 2026][Multimodal VLM][Prompt Learning] This paper proposes DeAR, which uses a Concept Entropy metric to decompose the deep-layer attention heads of ViT into three functional roles—attribute heads…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Prompt Learning
-  - VLM Adaptation
-  - Attention Head Role Decomposition
-  - CLIP
-  - Zero-shot Generalization
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Prompt Learning"
+  - "VLM Adaptation"
+  - "Attention Head Role Decomposition"
+  - "CLIP"
+  - "Zero-shot Generalization"
 date: 2026-05-08
 content_hash: 31303db4b6c6548a
 ---

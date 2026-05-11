@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SWE-SQL: Illuminating LLM Pathways to Solve User SQL Issues in Real-World Applications
 description: >-
-  [NeurIPS 2025][LLM Safety][SQL debugging] This paper proposes BIRD-CRITIC (the first SQL debugging benchmark) and the Six-Gym training environment, and develops the Bird-Fixer agent. Through the f-Plan Boosting strategy, it elevates the SQL debugging capability of a 14B open-source model to surpass Claude-3.7-Sonnet and GPT-4.1, achieving efficient SQL issue resolution while preserving data privacy.
+  [NeurIPS 2025][LLM Safety][SQL debugging] This paper proposes BIRD-CRITIC (the first SQL debugging benchmark) and the Six-Gym training environment, and develops the Bird-Fixer agent. Through the f-Plan Boosting strategy…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - SQL debugging
-  - LLM Agent
-  - database security
-  - code repair
-  - open-source models
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "SQL debugging"
+  - "LLM Agent"
+  - "database security"
+  - "code repair"
+  - "open-source models"
 date: 2026-05-08
 content_hash: 2ace9b9a321cc67d
 ---

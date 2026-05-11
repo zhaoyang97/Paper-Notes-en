@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Fine-tuning with RAG for Improving LLM Learning of New Skills
 description: >-
-  [ICLR 2026][RAG distillation] This paper proposes transforming RAG from a permanent inference-time dependency into a training-time teacher signal. Hints are extracted from agent failures, used to augment a teacher model that generates higher-quality trajectories, and then removed during distillation into a student model. The student thereby internalizes the retrieval-augmented behavior without requiring runtime RAG, achieving a 91% success rate on ALFWorld (baseline: 79%) and a score of 72 on WebShop (baseline: 61).
+  [ICLR 2026][Information Retrieval & RAG][RAG distillation] This paper proposes transforming RAG from a permanent inference-time dependency into a training-time teacher signal. Hints are extracted from agent failures…
 tags:
-  - ICLR 2026
-  - RAG distillation
-  - LLM agent
-  - hint extraction
-  - ALFWorld
-  - WebShop
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "RAG distillation"
+  - "LLM agent"
+  - "hint extraction"
+  - "ALFWorld"
+  - "WebShop"
 date: 2026-05-08
 content_hash: ae6a5e618d27c960
 ---

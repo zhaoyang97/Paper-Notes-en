@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OpenMarcie: Dataset for Multimodal Action Recognition in Industrial Environments
 description: >-
-  [CVPR 2026][Video Understanding][Multimodal dataset] This paper presents OpenMarcie, the largest-scale multimodal action recognition dataset for industrial environments, integrating 8 sensing modalities, 200+ channels, and 37+ hours of recordings from wearable sensors and visual data. Three benchmarks—HAR classification, open-vocabulary description, and cross-modal alignment—demonstrate the superiority of inertial+vision fusion.
+  [CVPR 2026][Video Understanding][Multimodal dataset] This paper presents OpenMarcie, the largest-scale multimodal action recognition dataset for industrial environments, integrating 8 sensing modalities, 200+ channels…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Multimodal dataset
-  - human action recognition
-  - industrial manufacturing
-  - wearable sensors
-  - cross-modal alignment
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Multimodal dataset"
+  - "human action recognition"
+  - "industrial manufacturing"
+  - "wearable sensors"
+  - "cross-modal alignment"
 date: 2026-05-08
 content_hash: 0e16236d79be40b1
 ---

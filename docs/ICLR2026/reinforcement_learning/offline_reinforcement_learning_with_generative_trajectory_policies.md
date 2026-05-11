@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Offline Reinforcement Learning with Generative Trajectory Policies
 description: >-
-  [ICLR 2026][Reinforcement Learning][Generative Trajectory Policy] This paper proposes the Generative Trajectory Policy (GTP), which unifies diffusion models, flow matching, and consistency models by learning the complete solution mapping of an ODE. Combined with two key adaptation techniques—score approximation and value-guided weighting—GTP achieves state-of-the-art performance on D4RL.
+  [ICLR 2026][Reinforcement Learning][Generative Trajectory Policy] This paper proposes the Generative Trajectory Policy (GTP), which unifies diffusion models, flow matching…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Generative Trajectory Policy
-  - ODE Solution Mapping
-  - Consistency Models
-  - Flow Matching
-  - D4RL
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Generative Trajectory Policy"
+  - "ODE Solution Mapping"
+  - "Consistency Models"
+  - "Flow Matching"
+  - "D4RL"
 date: 2026-05-08
 content_hash: 22bbe69e72c983d1
 ---

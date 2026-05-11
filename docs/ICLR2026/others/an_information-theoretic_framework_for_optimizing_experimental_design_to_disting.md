@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] An Information-Theoretic Framework For Optimizing Experimental Design To Distinguish Probabilistic Neural Codes
 description: >-
-  [ICLR 2026][Information Gap] This paper proposes the **information gap**, an information-theoretic measure that quantifies the ability of a given experimental design to distinguish between likelihood coding and posterior coding hypotheses. By deriving closed-form expressions for the cross-entropy performance difference between decoders under each hypothesis—shown to be the KL divergence between the true posterior and a task-marginalized surrogate posterior—the framework enables theory-driven optimal experimental design by maximizing this measure over the stimulus prior distribution.
+  [ICLR 2026][Information Gap] This paper proposes the **information gap**, an information-theoretic measure that quantifies the ability of a given experimental design to distinguish between likelihood coding and posterior…
 tags:
-  - ICLR 2026
-  - Information Gap
-  - Probabilistic Coding Hypothesis
-  - Likelihood Coding
-  - Posterior Coding
-  - Optimal Experimental Design
+  - "ICLR 2026"
+  - "Information Gap"
+  - "Probabilistic Coding Hypothesis"
+  - "Likelihood Coding"
+  - "Posterior Coding"
+  - "Optimal Experimental Design"
 date: 2026-05-08
 content_hash: 485c8a7297c9b415
 ---

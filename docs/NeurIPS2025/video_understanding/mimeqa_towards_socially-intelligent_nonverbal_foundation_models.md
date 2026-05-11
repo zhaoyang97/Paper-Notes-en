@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MimeQA: Towards Socially-Intelligent Nonverbal Foundation Models
 description: >-
-  [NeurIPS 2025][Video Understanding][nonverbal social intelligence] This work introduces MimeQA, the first nonverbal social reasoning benchmark built on mime performance videos. It comprises 101 videos and 806 QA pairs organized across three hierarchical question levels (grounding the imagined → scene-level understanding → global reasoning), and reveals a severe gap between current VideoLLMs and humans on nonverbal social understanding (20–30% vs. 86%).
+  [NeurIPS 2025][Video Understanding][nonverbal social intelligence] This work introduces MimeQA, the first nonverbal social reasoning benchmark built on mime performance videos. It comprises 101 videos and 806 QA pairs or…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
-  - nonverbal social intelligence
-  - mime understanding
-  - video question answering
-  - multimodal foundation models
-  - social cognition
+  - "NeurIPS 2025"
+  - "Video Understanding"
+  - "nonverbal social intelligence"
+  - "mime understanding"
+  - "video question answering"
+  - "multimodal foundation models"
+  - "social cognition"
 date: 2026-05-08
 content_hash: d9f11e14aa449b92
 ---

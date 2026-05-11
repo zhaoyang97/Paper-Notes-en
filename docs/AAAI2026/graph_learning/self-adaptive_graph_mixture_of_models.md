@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Self-Adaptive Graph Mixture of Models
 description: >-
-  [AAAI 2026][Graph Learning][Graph Neural Networks] This paper proposes SAGMM (Self-Adaptive Graph Mixture of Models), a graph MoE framework that leverages architectural diversity by employing a Topology-Aware Attention Gating (TAAG) mechanism to adaptively select and combine heterogeneous GNN experts, coupled with an adaptive pruning mechanism. SAGMM consistently outperforms individual GNNs and existing MoE methods across 16 benchmarks spanning node classification, graph classification, regression, and link prediction.
+  [AAAI 2026][Graph Learning][Graph Neural Networks] This paper proposes SAGMM (Self-Adaptive Graph Mixture of Models), a graph MoE framework that leverages architectural diversity by employing a Topology-Aware Attention G…
 tags:
-  - AAAI 2026
-  - Graph Learning
-  - Graph Neural Networks
-  - Mixture of Experts
-  - Adaptive Gating
-  - Expert Pruning
-  - Topology-Aware Attention
+  - "AAAI 2026"
+  - "Graph Learning"
+  - "Graph Neural Networks"
+  - "Mixture of Experts"
+  - "Adaptive Gating"
+  - "Expert Pruning"
+  - "Topology-Aware Attention"
 date: 2026-05-08
 content_hash: 6d251d2594460e67
 ---

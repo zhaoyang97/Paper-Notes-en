@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VerseCrafter: Dynamic Realistic Video World Model with 4D Geometric Control
 description: >-
-  [CVPR 2026][3D Vision][Video World Model] This paper presents VerseCrafter, a video world model based on a unified 4D geometric control representation (static background point cloud + per-object 3D Gaussian trajectories). A lightweight GeoAdapter injects 4D control signals into a frozen Wan2.1-14B video diffusion model, enabling precise and disentangled control over camera and multi-object motion. The authors also construct VerseControl4D, a real-world dataset containing 35K training samples.
+  [CVPR 2026][3D Vision][Video World Model] This paper presents VerseCrafter, a video world model based on a unified 4D geometric control representation (static background point cloud + per-object 3D Gaussian trajectories)…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Video World Model
-  - 4D Geometric Control
-  - 3D Gaussian Trajectory
-  - Camera and Object Motion
-  - Video Diffusion Model
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Video World Model"
+  - "4D Geometric Control"
+  - "3D Gaussian Trajectory"
+  - "Camera and Object Motion"
+  - "Video Diffusion Model"
 date: 2026-05-08
 content_hash: f6c527265fe5caef
 ---

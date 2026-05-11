@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Paradigm Shift: Fully End-to-End Training for Temporal Sentence Grounding in Videos
 description: >-
-  [CVPR 2026][Model Compression][Temporal sentence grounding] This paper proposes the first fully end-to-end framework for Temporal Sentence Grounding in Videos (TSGV). A Sentence-Conditioned Adapter (SCADA) is introduced to inject sentence embeddings into intermediate layers of the video backbone, dynamically modulating visual features. Combined with a video-centric learning strategy to accelerate training, the method surpasses state-of-the-art performance on Charades-STA and ActivityNet.
+  [CVPR 2026][Model Compression][Temporal sentence grounding] This paper proposes the first fully end-to-end framework for Temporal Sentence Grounding in Videos (TSGV). A Sentence-Conditioned Adapter (SCADA) is introduced…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - Temporal sentence grounding
-  - end-to-end training
-  - sentence-conditioned adapter
-  - vision-language alignment
-  - TSGV
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Temporal sentence grounding"
+  - "end-to-end training"
+  - "sentence-conditioned adapter"
+  - "vision-language alignment"
+  - "TSGV"
 date: 2026-05-08
 content_hash: bfba2e20fef445ee
 ---

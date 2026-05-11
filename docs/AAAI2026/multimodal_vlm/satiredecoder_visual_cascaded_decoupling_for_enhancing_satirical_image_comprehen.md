@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SatireDecoder: Visual Cascaded Decoupling for Enhancing Satirical Image Comprehension
 description: >-
-  [AAAI 2026][Multimodal VLM][Satire understanding] This paper proposes SatireDecoder, a training-free framework that enhances deep semantic understanding of satirical images in MLLMs via multi-agent visual cascaded decoupling and uncertainty-guided CoT reasoning. On the YesBut dataset, it achieves improvements of 10%–40% across correctness, completeness, and faithfulness.
+  [AAAI 2026][Multimodal VLM][Satire understanding] This paper proposes SatireDecoder, a training-free framework that enhances deep semantic understanding of satirical images in MLLMs via multi-agent visual cascaded decoup…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Satire understanding
-  - multi-agent system
-  - chain-of-thought reasoning
-  - uncertainty analysis
-  - hallucination mitigation
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Satire understanding"
+  - "multi-agent system"
+  - "chain-of-thought reasoning"
+  - "uncertainty analysis"
+  - "hallucination mitigation"
 date: 2026-05-08
 content_hash: c1c1440b6eab538a
 ---

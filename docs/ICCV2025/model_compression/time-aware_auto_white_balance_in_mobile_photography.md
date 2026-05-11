@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Time-Aware Auto White Balance in Mobile Photography
 description: >-
-  [ICCV 2025][Model Compression][Auto White Balance] This paper proposes a lightweight illumination estimation method (~5K parameters) that leverages contextual metadata from mobile devices (timestamps and geolocation) alongside image color information. The method achieves performance on par with or superior to much larger models on a newly collected dataset of 3,224 smartphone images, and runs in under 0.25ms on a flagship mobile DSP.
+  [ICCV 2025][Model Compression][Auto White Balance] This paper proposes a lightweight illumination estimation method (~5K parameters) that leverages contextual metadata from mobile devices (timestamps and geolocation) alo…
 tags:
-  - ICCV 2025
-  - Model Compression
-  - Auto White Balance
-  - Illumination Estimation
-  - Lightweight Model
-  - Mobile Photography
-  - Contextual Metadata
+  - "ICCV 2025"
+  - "Model Compression"
+  - "Auto White Balance"
+  - "Illumination Estimation"
+  - "Lightweight Model"
+  - "Mobile Photography"
+  - "Contextual Metadata"
 date: 2026-05-08
 content_hash: c9c67563e65a59f3
 ---

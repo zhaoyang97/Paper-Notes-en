@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Coordinate-based Speed of Sound Recovery for Aberration-Corrected Photoacoustic Computed Tomography
 description: >-
-  [ICCV 2025][Medical Imaging][Photoacoustic Computed Tomography] This paper proposes an efficient self-supervised joint reconstruction method that parameterizes the speed of sound (SOS) as either a pixel grid or a neural field, recovering SOS and high-quality photoacoustic images by backpropagating gradients through a differentiable imaging forward model. The method surpasses the current state of the art in accuracy while achieving a 35× speedup (40 seconds vs. 23 minutes).
+  [ICCV 2025][Medical Imaging][Photoacoustic Computed Tomography] This paper proposes an efficient self-supervised joint reconstruction method that parameterizes the speed of sound (SOS) as either a pixel grid or a neural…
 tags:
-  - ICCV 2025
-  - Medical Imaging
-  - Photoacoustic Computed Tomography
-  - Speed of Sound Recovery
-  - Neural Fields
-  - Self-supervised Learning
-  - Wavefront Aberration Correction
+  - "ICCV 2025"
+  - "Medical Imaging"
+  - "Photoacoustic Computed Tomography"
+  - "Speed of Sound Recovery"
+  - "Neural Fields"
+  - "Self-supervised Learning"
+  - "Wavefront Aberration Correction"
 date: 2026-05-08
 content_hash: b636d46c44d6d9b9
 ---

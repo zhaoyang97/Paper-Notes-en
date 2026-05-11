@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] An Analysis of Causal Effect Estimation Using Outcome Invariant Data Augmentation
 description: >-
-  [NeurIPS 2025][Causal Inference][causal effect estimation] This paper presents the first systematic analysis of outcome invariant data augmentation (DA) for causal effect estimation. It proves that when DA operations preserve the outcome variable, they are equivalent to soft interventions on the treatment variable, thereby reducing confounding bias. The paper further proposes an IV-like (IVL) regression framework that treats DA parameters as "instrument-like" variables, and reduces bias further through adversarial DA composition.
+  [NeurIPS 2025][Causal Inference][causal effect estimation] This paper presents the first systematic analysis of outcome invariant data augmentation (DA) for causal effect estimation. It proves that when DA operations pre…
 tags:
-  - NeurIPS 2025
-  - Causal Inference
-  - causal effect estimation
-  - data augmentation
-  - outcome invariance
-  - IV-like regression
-  - confounding bias
+  - "NeurIPS 2025"
+  - "Causal Inference"
+  - "causal effect estimation"
+  - "data augmentation"
+  - "outcome invariance"
+  - "IV-like regression"
+  - "confounding bias"
 date: 2026-05-08
 content_hash: 7816674c1b19c48f
 ---

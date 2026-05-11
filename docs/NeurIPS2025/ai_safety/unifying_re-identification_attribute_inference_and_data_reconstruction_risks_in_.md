@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unifying Re-Identification, Attribute Inference, and Data Reconstruction Risks in Differential Privacy
 description: >-
-  [NeurIPS 2025][AI Safety][Differential Privacy] Under the f-DP framework grounded in hypothesis testing, this paper provides a unified characterization of three classes of privacy risks in differential privacy — re-identification, attribute inference, and data reconstruction — yielding tighter and consistent risk upper bounds that enable a 20% reduction in noise without compromising security guarantees.
+  [NeurIPS 2025][AI Safety][Differential Privacy] Under the f-DP framework grounded in hypothesis testing, this paper provides a unified characterization of three classes of privacy risks in differential privacy — re-ident…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - Differential Privacy
-  - Re-identification
-  - Attribute Inference
-  - Data Reconstruction
-  - f-DP
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "Differential Privacy"
+  - "Re-identification"
+  - "Attribute Inference"
+  - "Data Reconstruction"
+  - "f-DP"
 date: 2026-05-08
 content_hash: 77407ae622b5f4e6
 ---

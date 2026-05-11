@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Learning non-equilibrium diffusions with Schrödinger bridges: from exactly solvable to simulation-free
 description: >-
-  [NeurIPS 2025][Schrödinger bridge] This paper generalizes the Schrödinger bridge problem (SBP) from Brownian motion reference processes to multivariate Ornstein-Uhlenbeck (mvOU) reference processes, derives exact solutions for the Gaussian case, and proposes the simulation-free mvOU-OTFM algorithm for general distributions.
+  [NeurIPS 2025][Schrödinger bridge] This paper generalizes the Schrödinger bridge problem (SBP) from Brownian motion reference processes to multivariate Ornstein-Uhlenbeck (mvOU) reference processes…
 tags:
-  - NeurIPS 2025
-  - Schrödinger bridge
-  - non-equilibrium diffusion
-  - Ornstein-Uhlenbeck process
-  - Flow Matching
-  - optimal transport
+  - "NeurIPS 2025"
+  - "Schrödinger bridge"
+  - "non-equilibrium diffusion"
+  - "Ornstein-Uhlenbeck process"
+  - "Flow Matching"
+  - "optimal transport"
 date: 2026-05-08
 content_hash: cacf3dc32473dd2c
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Image-Guided Shape-from-Template Using Mesh Inextensibility Constraints
 description: >-
-  [ICCV 2025][3D Vision][Shape-from-Template] This paper proposes a purely image-guided unsupervised Shape-from-Template (SfT) method that reconstructs the 3D shape of deforming objects using only visual cues—color, gradients, and silhouettes—combined with mesh inextensibility constraints. The method is approximately 400× faster than the best-performing unsupervised baseline while achieving substantially higher accuracy.
+  [ICCV 2025][3D Vision][Shape-from-Template] This paper proposes a purely image-guided unsupervised Shape-from-Template (SfT) method that reconstructs the 3D shape of deforming objects using only visual cues—color…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Shape-from-Template
-  - 3D Reconstruction
-  - Differentiable Rendering
-  - Mesh Inextensibility
-  - Unsupervised
-  - Deformation Modeling
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Shape-from-Template"
+  - "3D Reconstruction"
+  - "Differentiable Rendering"
+  - "Mesh Inextensibility"
+  - "Unsupervised"
+  - "Deformation Modeling"
 date: 2026-05-08
 content_hash: e92b836df9cda875
 ---

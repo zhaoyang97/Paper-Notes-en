@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Sparsity Forcing: Reinforcing Token Sparsity of MLLMs
 description: >-
-  [ICLR 2026][Multimodal VLM][token sparsity] This paper proposes Sparsity Forcing — a GRPO-based RL post-training framework that treats a sparse-attention MLLM as the policy model and the original MLLM as the reference model. Through multi-budget rollouts exploring different token retention thresholds $p$, and using a joint reward combining efficiency (token reduction rate) and performance (answer correctness) for within-group contrastive optimization, the method improves the token reduction rate of Qwen2/2.5-VL from 20% to 75% with minimal accuracy loss, achieving 3× memory reduction and 3.3× decoding speedup.
+  [ICLR 2026][Multimodal VLM][token sparsity] This paper proposes Sparsity Forcing — a GRPO-based RL post-training framework that treats a sparse-attention MLLM as the policy model and the original MLLM as the reference mo…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - token sparsity
-  - RL post-training
-  - GRPO
-  - joint efficiency-performance reward
-  - multi-budget exploration
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "token sparsity"
+  - "RL post-training"
+  - "GRPO"
+  - "joint efficiency-performance reward"
+  - "multi-budget exploration"
 date: 2026-05-08
 content_hash: cca3d26a8f5ba914
 ---

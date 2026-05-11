@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multi-Paradigm Collaborative Adversarial Attack Against Multi-Modal Large Language Models
 description: >-
-  [CVPR 2026][LLM Safety][adversarial attack] MPCAttack is proposed as a framework that jointly leverages feature representations from three learning paradigms—cross-modal alignment, multimodal understanding, and visual self-supervision—and generates highly transferable adversarial examples via a multi-paradigm collaborative optimization strategy, achieving state-of-the-art attack performance on both open-source and closed-source MLLMs.
+  [CVPR 2026][LLM Safety][adversarial attack] MPCAttack is proposed as a framework that jointly leverages feature representations from three learning paradigms—cross-modal alignment, multimodal understanding…
 tags:
-  - CVPR 2026
-  - LLM Safety
-  - adversarial attack
-  - MLLM
-  - Transferability
-  - Multi-Paradigm
-  - Collaborative Optimization
+  - "CVPR 2026"
+  - "LLM Safety"
+  - "adversarial attack"
+  - "MLLM"
+  - "Transferability"
+  - "Multi-Paradigm"
+  - "Collaborative Optimization"
 date: 2026-05-08
 content_hash: 4de6bcf77896db8d
 ---

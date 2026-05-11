@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LC-Opt: Benchmarking Reinforcement Learning and Agentic AI for End-to-End Liquid Cooling Optimization in Data Centers
 description: >-
-  [NeurIPS 2025][LLM Agent][Liquid cooling optimization] This paper presents LC-Opt, a liquid cooling benchmark environment built upon a high-fidelity digital twin of the cooling system of the ORNL Frontier supercomputer. It supports end-to-end liquid cooling optimization via RL control policies, encompassing centralized/decentralized multi-agent RL, policy distillation into interpretable decision trees, and an LLM-driven agentic mesh architecture.
+  [NeurIPS 2025][LLM Agent][Liquid cooling optimization] This paper presents LC-Opt, a liquid cooling benchmark environment built upon a high-fidelity digital twin of the cooling system of the ORNL Frontier supercomputer.…
 tags:
-  - NeurIPS 2025
-  - LLM Agent
-  - Liquid cooling optimization
-  - reinforcement learning
-  - digital twin
-  - multi-agent RL
-  - sustainable data centers
+  - "NeurIPS 2025"
+  - "LLM Agent"
+  - "Liquid cooling optimization"
+  - "reinforcement learning"
+  - "digital twin"
+  - "multi-agent RL"
+  - "sustainable data centers"
 date: 2026-05-08
 content_hash: 117e4f5744c997d9
 ---

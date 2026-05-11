@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Routing Matters in MoE: Scaling Diffusion Transformers with Explicit Routing Guidance
 description: >-
-  [ICLR 2026][Image Generation][Mixture-of-Experts] This paper proposes ProMoE, an MoE framework for Diffusion Transformers that introduces a two-stage router (conditional routing + prototype routing) and a routing contrastive loss to provide explicit semantic guidance, promoting expert specialization and significantly outperforming existing MoE and dense models on ImageNet.
+  [ICLR 2026][Image Generation][Mixture-of-Experts] This paper proposes ProMoE, an MoE framework for Diffusion Transformers that introduces a two-stage router (conditional routing + prototype routing) and a routing contras…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Mixture-of-Experts
-  - DiT
-  - Explicit Routing Guidance
-  - Prototype Routing
-  - Routing Contrastive Loss
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Mixture-of-Experts"
+  - "DiT"
+  - "Explicit Routing Guidance"
+  - "Prototype Routing"
+  - "Routing Contrastive Loss"
 date: 2026-05-08
 content_hash: 5617eb04f4236c61
 ---

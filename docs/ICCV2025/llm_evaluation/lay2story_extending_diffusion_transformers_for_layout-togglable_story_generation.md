@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Lay2Story: Extending Diffusion Transformers for Layout-Togglable Story Generation
 description: >-
-  [ICCV 2025][LLM Evaluation][story generation] Lay2Story introduces the task of layout-togglable story generation, constructs the Lay2Story-1M dataset of over 1 million high-resolution images, and proposes a global–subject dual-branch framework built on the DiT architecture, achieving comprehensive improvements over existing methods in consistency, semantic relevance, and aesthetic quality.
+  [ICCV 2025][LLM Evaluation][story generation] Lay2Story introduces the task of layout-togglable story generation, constructs the Lay2Story-1M dataset of over 1 million high-resolution images…
 tags:
-  - ICCV 2025
-  - LLM Evaluation
-  - story generation
-  - layout control
-  - diffusion Transformer
-  - subject consistency
-  - large-scale dataset
+  - "ICCV 2025"
+  - "LLM Evaluation"
+  - "story generation"
+  - "layout control"
+  - "diffusion Transformer"
+  - "subject consistency"
+  - "large-scale dataset"
 date: 2026-05-08
 content_hash: 8e8937a2f0f1a3de
 ---

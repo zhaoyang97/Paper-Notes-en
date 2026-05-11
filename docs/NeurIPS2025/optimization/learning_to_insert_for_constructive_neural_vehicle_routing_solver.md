@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning to Insert for Constructive Neural Vehicle Routing Solver
 description: >-
-  [NeurIPS 2025][Optimization][Vehicle Routing Problem] This paper proposes L2C-Insert, the first learning-based insertion construction paradigm for neural combinatorial optimization. By allowing nodes to be inserted at any feasible position within a partial solution—rather than appended only to its end—the method significantly improves construction quality and flexibility for TSP/CVRP.
+  [NeurIPS 2025][Optimization][Vehicle Routing Problem] This paper proposes L2C-Insert, the first learning-based insertion construction paradigm for neural combinatorial optimization. By allowing nodes to be inserted at an…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Vehicle Routing Problem
-  - Neural Combinatorial Optimization
-  - Insertion-based Construction
-  - TSP
-  - CVRP
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Vehicle Routing Problem"
+  - "Neural Combinatorial Optimization"
+  - "Insertion-based Construction"
+  - "TSP"
+  - "CVRP"
 date: 2026-05-08
 content_hash: ddf04247b29420e0
 ---

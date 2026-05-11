@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ONLY: One-Layer Intervention Sufficiently Mitigates Hallucinations in Large Vision-Language Models
 description: >-
-  [ICCV 2025][Multimodal VLM][hallucination mitigation] This paper proposes ONLY, a training-free single-layer intervention decoding method. It selects text-biased attention heads via the Text-to-Visual Entropy Ratio (TVER) to generate textually-enhanced logits, which are then used in adaptive contrastive or collaborative decoding against the original logits. With only 1.07× inference overhead, ONLY outperforms VCD/M3ID by 3.14% on POPE and reduces CHAIR_S by 6.2 points on CHAIR.
+  [ICCV 2025][Multimodal VLM][hallucination mitigation] This paper proposes ONLY, a training-free single-layer intervention decoding method. It selects text-biased attention heads via the Text-to-Visual Entropy Ratio (TVER…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - hallucination mitigation
-  - contrastive decoding
-  - text-to-visual entropy ratio
-  - training-free
-  - single-layer intervention
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "hallucination mitigation"
+  - "contrastive decoding"
+  - "text-to-visual entropy ratio"
+  - "training-free"
+  - "single-layer intervention"
 date: 2026-05-08
 content_hash: deb44216380f8ef1
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MindForge: Empowering Embodied Agents with Theory of Mind for Lifelong Cultural Learning
 description: >-
-  [NeurIPS 2025][Robotics][Theory of Mind] MindForge introduces explicit Theory of Mind (ToM) representations, natural language communication, and a multi-component memory system into LLM-driven embodied agents, enabling open-source LLM agents to substantially improve task completion rates through collaborative dialogue with expert agents (without gradient updates), achieving 3× more tech-tree milestones and 2.3× more unique items than Voyager in Minecraft.
+  [NeurIPS 2025][Robotics][Theory of Mind] MindForge introduces explicit Theory of Mind (ToM) representations, natural language communication, and a multi-component memory system into LLM-driven embodied agents…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - Theory of Mind
-  - Cultural Learning
-  - Multi-Agent Collaboration
-  - Minecraft
-  - Knowledge Distillation
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "Theory of Mind"
+  - "Cultural Learning"
+  - "Multi-Agent Collaboration"
+  - "Minecraft"
+  - "Knowledge Distillation"
 date: 2026-05-08
 content_hash: 753599ed3c616ab3
 ---

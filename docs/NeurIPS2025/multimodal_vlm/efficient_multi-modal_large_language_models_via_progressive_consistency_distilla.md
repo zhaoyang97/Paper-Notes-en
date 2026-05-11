@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Efficient Multi-modal Large Language Models via Progressive Consistency Distillation
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Multimodal LLM] This paper proposes EPIC, a framework that addresses the optimization difficulty caused by feature space perturbation during visual token compression training via progressive consistency distillation along two dimensions (Token and Layer), achieving efficient multimodal LLMs without modifying model architecture.
+  [NeurIPS 2025][Multimodal VLM][Multimodal LLM] This paper proposes EPIC, a framework that addresses the optimization difficulty caused by feature space perturbation during visual token compression training via progressiv…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Multimodal LLM
-  - visual token compression
-  - progressive distillation
-  - consistency distillation
-  - inference efficiency
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Multimodal LLM"
+  - "visual token compression"
+  - "progressive distillation"
+  - "consistency distillation"
+  - "inference efficiency"
 date: 2026-05-08
 content_hash: 0da72548ff5de566
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Minor First, Major Last: A Depth-Induced Implicit Bias of Sharpness-Aware Minimization
 description: >-
-  [ICLR 2026][Optimization][Sharpness-Aware Minimization] This paper provides a rigorous theoretical analysis of the implicit bias of SAM when training linear diagonal networks, revealing a qualitative phase transition induced by increasing depth from $L=1$ to $L=2$: the limiting direction of $\ell_\infty$-SAM is highly sensitive to initialization, while $\ell_2$-SAM exhibits a **sequential feature amplification** phenomenon — "minor first, major last" — demonstrating that analyses focused solely on the $t\to\infty$ limit are insufficient to characterize the full dynamics of SAM.
+  [ICLR 2026][Optimization][Sharpness-Aware Minimization] This paper provides a rigorous theoretical analysis of the implicit bias of SAM when training linear diagonal networks…
 tags:
-  - ICLR 2026
-  - Optimization
-  - Sharpness-Aware Minimization
-  - implicit bias
-  - linear diagonal networks
-  - feature amplification
-  - depth-induced
+  - "ICLR 2026"
+  - "Optimization"
+  - "Sharpness-Aware Minimization"
+  - "implicit bias"
+  - "linear diagonal networks"
+  - "feature amplification"
+  - "depth-induced"
 date: 2026-05-08
 content_hash: f08bf293bcb1ed4e
 ---

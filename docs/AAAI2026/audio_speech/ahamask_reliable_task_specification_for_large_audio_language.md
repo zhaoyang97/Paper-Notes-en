@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AHAMask: Reliable Task Specification for Large Audio Language Models without Instructions
 description: >-
-  [AAAI 2026][Audio & Speech][Large Audio Language Models] By applying binary masks (AHAMask) over attention heads in the Transformer backbone of Large Audio Language Models (LALMs), specific acoustic task functionalities can be reliably triggered without any textual instructions, while revealing the existence of "acoustic functional pathways" within LALMs.
+  [AAAI 2026][Audio & Speech][Large Audio Language Models] By applying binary masks (AHAMask) over attention heads in the Transformer backbone of Large Audio Language Models (LALMs)…
 tags:
-  - AAAI 2026
+  - "AAAI 2026"
   - "Audio & Speech"
-  - Large Audio Language Models
-  - Attention Head Masking
-  - Prompt Sensitivity
-  - Task Specification
-  - Functional Pathways
+  - "Large Audio Language Models"
+  - "Attention Head Masking"
+  - "Prompt Sensitivity"
+  - "Task Specification"
+  - "Functional Pathways"
 date: 2026-05-08
 content_hash: ee1c56c4a257c73d
 ---

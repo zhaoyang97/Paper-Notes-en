@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Achieving More with Less: Additive Prompt Tuning for Rehearsal-Free Class-Incremental Learning
 description: >-
-  [ICCV 2025][Model Compression][Class-Incremental Learning] This paper proposes APT (Additive Prompt Tuning), which replaces the conventional prompt concatenation paradigm with an additive operation. By introducing only two learnable vectors added to the key/value projections of the CLS token, APT achieves state-of-the-art class-incremental learning performance while substantially reducing computational overhead (41.5% reduction in GFLOPs) and trainable parameters (78.2% reduction).
+  [ICCV 2025][Model Compression][Class-Incremental Learning] This paper proposes APT (Additive Prompt Tuning), which replaces the conventional prompt concatenation paradigm with an additive operation. By introducing only t…
 tags:
-  - ICCV 2025
-  - Model Compression
-  - Class-Incremental Learning
-  - Prompt Learning
-  - Parameter-Efficient Fine-Tuning
-  - Catastrophic Forgetting
-  - Vision Transformer
+  - "ICCV 2025"
+  - "Model Compression"
+  - "Class-Incremental Learning"
+  - "Prompt Learning"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Catastrophic Forgetting"
+  - "Vision Transformer"
 date: 2026-05-08
 content_hash: b0522e06cfb60238
 ---

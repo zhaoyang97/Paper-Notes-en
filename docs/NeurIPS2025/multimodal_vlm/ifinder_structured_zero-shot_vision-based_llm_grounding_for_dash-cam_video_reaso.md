@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] iFinder: Structured Zero-Shot VLM Grounding for Dash-Cam Video Reasoning
 description: >-
-  [NeurIPS 2025][Multimodal VLM][dash-cam video analysis] This paper proposes iFinder, a modular training-free framework that decouples dash-cam video understanding into perception (structured scene representation) and reasoning (LLM). Through a hierarchical data structure and a three-block prompting strategy, iFinder endows LLMs with interpretable spatiotemporal reasoning capabilities, achieving zero-shot superiority over end-to-end V-VLMs across four driving video benchmarks, with accident reasoning accuracy gains of up to 39%.
+  [NeurIPS 2025][Multimodal VLM][dash-cam video analysis] This paper proposes iFinder, a modular training-free framework that decouples dash-cam video understanding into perception (structured scene representation) and rea…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - dash-cam video analysis
-  - LLM grounding
-  - structured reasoning
-  - zero-shot
-  - vision-language models
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "dash-cam video analysis"
+  - "LLM grounding"
+  - "structured reasoning"
+  - "zero-shot"
+  - "vision-language models"
 date: 2026-05-08
 content_hash: 085d62826e3e6d5f
 ---

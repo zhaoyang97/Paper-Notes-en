@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SwiReasoning: Switch-Thinking in Latent and Explicit for Pareto-Superior Reasoning
 description: >-
-  [ICLR 2026][Model Compression][Latent reasoning] This paper proposes SwiReasoning, a training-free LLM reasoning framework that dynamically switches between explicit (chain-of-thought) and implicit (latent space) reasoning modes via entropy-trend-based block-level confidence estimation, achieving Pareto-superior improvements in both accuracy (+1.8%–3.1%) and token efficiency (+57%–79%).
+  [ICLR 2026][Model Compression][Latent reasoning] This paper proposes SwiReasoning, a training-free LLM reasoning framework that dynamically switches between explicit (chain-of-thought) and implicit (latent space) reasoni…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Latent reasoning
-  - explicit reasoning
-  - mode switching
-  - token efficiency
-  - training-free framework
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Latent reasoning"
+  - "explicit reasoning"
+  - "mode switching"
+  - "token efficiency"
+  - "training-free framework"
 date: 2026-05-08
 content_hash: d8d602bdf97766f3
 ---

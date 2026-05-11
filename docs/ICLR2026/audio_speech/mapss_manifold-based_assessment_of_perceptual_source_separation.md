@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MAPSS: Manifold-Based Assessment of Perceptual Source Separation
 description: >-
-  [ICLR 2026][Audio & Speech][source separation evaluation] This paper proposes two complementary metrics—Perceptual Separation (PS) and Perceptual Match (PM)—that embed self-supervised encoded representations onto a low-dimensional manifold via diffusion maps, achieving for the first time a functional decoupling of leakage and self-distortion in source separation evaluation. Compared against 18 mainstream metrics, the proposed measures rank first or second in correlation with subjective listening scores in nearly all experimental conditions.
+  [ICLR 2026][Audio & Speech][source separation evaluation] This paper proposes two complementary metrics—Perceptual Separation (PS) and Perceptual Match (PM)—that embed self-supervised encoded representations onto a low-d…
 tags:
-  - ICLR 2026
+  - "ICLR 2026"
   - "Audio & Speech"
-  - source separation evaluation
-  - perceptual metrics
-  - diffusion maps
-  - manifold learning
-  - self-supervised representations
+  - "source separation evaluation"
+  - "perceptual metrics"
+  - "diffusion maps"
+  - "manifold learning"
+  - "self-supervised representations"
 date: 2026-05-08
 content_hash: a26cadafd1eea115
 ---

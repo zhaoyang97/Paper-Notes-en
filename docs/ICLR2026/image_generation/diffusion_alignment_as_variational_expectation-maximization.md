@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Diffusion Alignment as Variational Expectation-Maximization
 description: >-
-  [ICLR 2026][Image Generation][diffusion alignment] This paper formalizes diffusion model alignment as a variational EM algorithm: the E-step employs test-time search (soft-Q-guided sampling with importance sampling) to explore multimodal, high-reward trajectories, while the M-step distills the search results into model parameters via forward-KL minimization. The approach simultaneously achieves high reward and high diversity on both image generation and DNA sequence design tasks.
+  [ICLR 2026][Image Generation][diffusion alignment] This paper formalizes diffusion model alignment as a variational EM algorithm: the E-step employs test-time search (soft-Q-guided sampling with importance sampling) to e…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - diffusion alignment
-  - expectation-maximization
-  - test-time search
-  - reward optimization
-  - mode collapse prevention
+  - "ICLR 2026"
+  - "Image Generation"
+  - "diffusion alignment"
+  - "expectation-maximization"
+  - "test-time search"
+  - "reward optimization"
+  - "mode collapse prevention"
 date: 2026-05-08
 content_hash: 2fe0f584fad22623
 ---

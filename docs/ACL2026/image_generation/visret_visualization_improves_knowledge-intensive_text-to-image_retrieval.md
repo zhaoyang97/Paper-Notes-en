@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VisRet: Visualization Improves Knowledge-Intensive Text-to-Image Retrieval
 description: >-
-  [ACL 2026][Image Generation][Text-to-image retrieval] This paper proposes Visualize-then-Retrieve (VisRet), a novel retrieval paradigm that first visualizes a text query into images via a T2I generative model and then performs retrieval within the image modality. VisRet achieves an average nDCG@30 improvement of 0.125 (CLIP) and 0.121 (E5-V) across four benchmarks, and improves downstream VQA accuracy by 15.7% on Visual-RAG-ME.
+  [ACL 2026][Image Generation][Text-to-image retrieval] This paper proposes Visualize-then-Retrieve (VisRet), a novel retrieval paradigm that first visualizes a text query into images via a T2I generative model and then pe…
 tags:
-  - ACL 2026
-  - Image Generation
-  - Text-to-image retrieval
-  - query visualization
-  - cross-modal alignment
-  - retrieval-augmented generation
-  - modality projection
+  - "ACL 2026"
+  - "Image Generation"
+  - "Text-to-image retrieval"
+  - "query visualization"
+  - "cross-modal alignment"
+  - "retrieval-augmented generation"
+  - "modality projection"
 date: 2026-05-08
 content_hash: 365d36b9e80eef9d
 ---

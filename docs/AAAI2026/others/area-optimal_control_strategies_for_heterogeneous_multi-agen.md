@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Area-Optimal Control Strategies for Heterogeneous Multi-Agent Pursuit
 description: >-
-  [AAAI 2026][pursuit-evasion game] This paper studies pursuit-evasion games with heterogeneous speeds involving multiple pursuers and a single evader. The evader's safe reachable set is defined as the intersection of Apollonius circles for all pursuer–evader pairs. The capture strategy is modeled as a zero-sum game in which pursuers minimize and the evader maximizes the area of this intersection. Closed-form instantaneous optimal heading control laws are derived, and simulations verify that pursuers can systematically shrink the safe region to guarantee capture.
+  [AAAI 2026][pursuit-evasion game] This paper studies pursuit-evasion games with heterogeneous speeds involving multiple pursuers and a single evader. The evader's safe reachable set is defined as the intersection of Apol…
 tags:
-  - AAAI 2026
-  - pursuit-evasion game
-  - heterogeneous multi-agent
-  - Apollonius circle
-  - area-optimal
-  - closed-form control law
-  - safe reachable set
-  - zero-sum game
+  - "AAAI 2026"
+  - "pursuit-evasion game"
+  - "heterogeneous multi-agent"
+  - "Apollonius circle"
+  - "area-optimal"
+  - "closed-form control law"
+  - "safe reachable set"
+  - "zero-sum game"
 date: 2026-05-08
 content_hash: c3391ddc31380ba3
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Enforcing Governing Equation Constraints in Neural PDE Solvers via Training-free Projections
 description: >-
-  [NeurIPS 2025][Scientific Computing][Neural PDE Solver] Two training-free post-processing projection methods are proposed—nonlinear LBFGS optimization and local linearization projection—to project the outputs of neural PDE solvers onto the feasible manifold satisfying governing equation constraints. Evaluated on Lorenz/KS/Navier-Stokes, both methods substantially reduce constraint violations and improve accuracy, markedly outperforming physics-informed training.
+  [NeurIPS 2025][Scientific Computing][Neural PDE Solver] Two training-free post-processing projection methods are proposed—nonlinear LBFGS optimization and local linearization projection—to project the outputs of neural P…
 tags:
-  - NeurIPS 2025
-  - Scientific Computing
-  - Neural PDE Solver
-  - Constraint Projection
-  - LBFGS
-  - Physical Consistency
-  - Post-processing
+  - "NeurIPS 2025"
+  - "Scientific Computing"
+  - "Neural PDE Solver"
+  - "Constraint Projection"
+  - "LBFGS"
+  - "Physical Consistency"
+  - "Post-processing"
 date: 2026-05-08
 content_hash: c02e44ba2d315526
 ---

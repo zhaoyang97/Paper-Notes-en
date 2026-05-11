@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] StructKV: Preserving the Structural Skeleton for Scalable Long-Context Inference
 description: >-
-  [ACL 2026][KV Cache compression] This paper proposes StructKV, a structure-aware KV Cache compression framework that identifies globally important tokens via Global In-Degree Centrality accumulated across layers, adaptively locates the optimal compression layer via Dynamic Pivot Detection, and decouples computation and storage budgets via Structural Propagation & Decoupling. At 60% prefill + 10% KV retention, StructKV achieves near-full-context performance on LongBench and RULER.
+  [ACL 2026][Interpretability][KV Cache compression] This paper proposes StructKV, a structure-aware KV Cache compression framework that identifies globally important tokens via Global In-Degree Centrality accumulated acro…
 tags:
-  - ACL 2026
-  - KV Cache compression
-  - long-context inference
-  - global in-degree centrality
-  - dynamic pivot detection
-  - structural propagation
+  - "ACL 2026"
+  - "Interpretability"
+  - "KV Cache compression"
+  - "long-context inference"
+  - "global in-degree centrality"
+  - "dynamic pivot detection"
+  - "structural propagation"
 date: 2026-05-08
 content_hash: c177889a05e97e50
 ---

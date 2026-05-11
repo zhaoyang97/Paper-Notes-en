@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] When Misinformation Speaks and Converses: Rethinking Fact-Checking in Audio Platforms
 description: >-
-  [ACL 2026][Audio & Speech][Audio misinformation] This position paper argues that misinformation on audio platforms is fundamentally distinct from textual misinformation in two dimensions: it is simultaneously *spoken* (conveying persuasion through prosody, pacing, and emotion) and *conversational* (unfolding across multiple turns, speakers, and episodes). Existing text-centric fact-checking pipelines cannot adequately handle these properties, and verification frameworks must be redesigned around the intrinsic characteristics of audio.
+  [ACL 2026][Audio & Speech][Audio misinformation] This position paper argues that misinformation on audio platforms is fundamentally distinct from textual misinformation in two dimensions: it is simultaneously *spoken* (c…
 tags:
-  - ACL 2026
+  - "ACL 2026"
   - "Audio & Speech"
-  - Audio misinformation
-  - fact-checking
-  - podcasts
-  - spoken properties
-  - conversational properties
+  - "Audio misinformation"
+  - "fact-checking"
+  - "podcasts"
+  - "spoken properties"
+  - "conversational properties"
 date: 2026-05-08
 content_hash: ec3c5e1ce7a4946a
 ---

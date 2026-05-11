@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Disentangled World Models: Learning to Transfer Semantic Knowledge from Distracting Videos for Reinforcement Learning
 description: >-
-  [ICCV 2025][Video Generation][Visual Reinforcement Learning] This paper proposes DisWM, a framework that pre-trains disentangled representations from "distracting videos" offline, then transfers semantic knowledge to downstream world models via offline-to-online latent space distillation, improving sample efficiency and robustness of visual reinforcement learning under environmental variations.
+  [ICCV 2025][Video Generation][Visual Reinforcement Learning] This paper proposes DisWM, a framework that pre-trains disentangled representations from "distracting videos" offline…
 tags:
-  - ICCV 2025
-  - Video Generation
-  - Visual Reinforcement Learning
-  - World Models
-  - Disentangled Representation
-  - Knowledge Transfer
-  - Latent Space Distillation
+  - "ICCV 2025"
+  - "Video Generation"
+  - "Visual Reinforcement Learning"
+  - "World Models"
+  - "Disentangled Representation"
+  - "Knowledge Transfer"
+  - "Latent Space Distillation"
 date: 2026-05-08
 content_hash: 5969c8342089649e
 ---

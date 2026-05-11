@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Glance and Focus Reinforcement for Pan-cancer Screening
 description: >-
-  [ICLR 2026][Medical Imaging][Pan-cancer screening] This paper proposes GF-Screen, a two-stage framework in which a lightweight Glance model employs reinforcement learning to rapidly localize CT sub-volumes containing lesions, while a Focus model performs fine-grained segmentation exclusively on the selected regions. By transferring GRPO's group-relative comparison paradigm from NLP to visual sub-volume groups, the method achieves RL optimization without a value network for the first time in a purely visual task. On the FLARE25 pan-cancer challenge, GF-Screen outperforms the champion solution by +25.6% DSC while achieving 5.7× faster inference.
+  [ICLR 2026][Medical Imaging][Pan-cancer screening] This paper proposes GF-Screen, a two-stage framework in which a lightweight Glance model employs reinforcement learning to rapidly localize CT sub-volumes containing les…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - Pan-cancer screening
-  - reinforcement learning
-  - GRPO
-  - CT segmentation
-  - foreground-background imbalance
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Pan-cancer screening"
+  - "reinforcement learning"
+  - "GRPO"
+  - "CT segmentation"
+  - "foreground-background imbalance"
 date: 2026-05-08
 content_hash: bb3d126ff1077957
 ---

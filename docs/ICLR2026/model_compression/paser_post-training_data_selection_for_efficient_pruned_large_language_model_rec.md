@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PASER: Post-Training Data Selection for Efficient Pruned Large Language Model Recovery
 description: >-
-  [ICLR 2026][Model Compression][LLM pruning] This paper proposes PASER, a post-training data selection method for recovering pruned LLMs. It identifies capability-relevant instruction subsets via manifold learning and spectral clustering, and adaptively allocates data budgets according to the degree of capability degradation. Using only 4%–20% of the original data, PASER significantly outperforms full-data recovery.
+  [ICLR 2026][Model Compression][LLM pruning] This paper proposes PASER, a post-training data selection method for recovering pruned LLMs. It identifies capability-relevant instruction subsets via manifold learning and spe…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - LLM pruning
-  - data selection
-  - post-training recovery
-  - manifold learning
-  - capability degradation awareness
+  - "ICLR 2026"
+  - "Model Compression"
+  - "LLM pruning"
+  - "data selection"
+  - "post-training recovery"
+  - "manifold learning"
+  - "capability degradation awareness"
 date: 2026-05-08
 content_hash: b42e80fc1c123c1c
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Model-Agnostic Meta Learning for Class Imbalance Adaptation
 description: >-
-  [ACL 2026][Medical Imaging][class imbalance] This paper proposes HAMR (Hardness-Aware Meta-Resample), a unified meta-learning framework that dynamically estimates instance-level importance weights via bi-level optimization to prioritize genuinely difficult samples, coupled with a neighborhood-aware resampling mechanism that shifts training focus toward hard samples and their semantic neighbors. HAMR consistently outperforms strong baselines across 6 imbalanced NLP datasets.
+  [ACL 2026][Medical Imaging][class imbalance] This paper proposes HAMR (Hardness-Aware Meta-Resample), a unified meta-learning framework that dynamically estimates instance-level importance weights via bi-level optimizati…
 tags:
-  - ACL 2026
-  - Medical Imaging
-  - class imbalance
-  - meta-learning
-  - adaptive weighting
-  - hardness-aware resampling
-  - bi-level optimization
+  - "ACL 2026"
+  - "Medical Imaging"
+  - "class imbalance"
+  - "meta-learning"
+  - "adaptive weighting"
+  - "hardness-aware resampling"
+  - "bi-level optimization"
 date: 2026-05-08
 content_hash: 9db329cb992a1abf
 ---

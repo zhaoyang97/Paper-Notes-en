@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Bi-Level Optimization for Self-Supervised AI-Generated Face Detection
 description: >-
-  [ICCV 2025][Human Understanding][AI-generated face detection] This paper proposes BLADES, a method that employs bi-level optimization to explicitly align self-supervised pretraining with the AI-generated face detection objective. The inner loop optimizes a visual encoder on pretext tasks including EXIF classification/ranking and face manipulation detection, while the outer loop optimizes task weights to improve performance on a proxy detection task, enabling cross-generator generalization without relying on any synthetic face data.
+  [ICCV 2025][Human Understanding][AI-generated face detection] This paper proposes BLADES, a method that employs bi-level optimization to explicitly align self-supervised pretraining with the AI-generated face detection o…
 tags:
-  - ICCV 2025
-  - Human Understanding
-  - AI-generated face detection
-  - bi-level optimization
-  - self-supervised learning
-  - EXIF metadata
-  - anomaly detection
+  - "ICCV 2025"
+  - "Human Understanding"
+  - "AI-generated face detection"
+  - "bi-level optimization"
+  - "self-supervised learning"
+  - "EXIF metadata"
+  - "anomaly detection"
 date: 2026-05-08
 content_hash: 9ba8efc36f276d23
 ---

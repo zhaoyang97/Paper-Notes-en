@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Continuous Thought Machines
 description: >-
-  [NeurIPS 2025][Neural dynamics] This paper proposes the Continuous Thought Machine (CTM), which generates neuron-level temporal dynamics via privately parameterized Neuron-Level Models (NLMs) and employs a neural synchrony matrix as the core latent representation. The model demonstrates complex reasoning, adaptive computation, and interpretable attention behavior on tasks including maze solving, ImageNet classification, and parity checking.
+  [NeurIPS 2025][Neural dynamics] This paper proposes the Continuous Thought Machine (CTM), which generates neuron-level temporal dynamics via privately parameterized Neuron-Level Models (NLMs) and employs a neural synchro…
 tags:
-  - NeurIPS 2025
-  - Neural dynamics
-  - neural synchrony
-  - adaptive computation
-  - recurrent architectures
-  - biologically inspired
+  - "NeurIPS 2025"
+  - "Neural dynamics"
+  - "neural synchrony"
+  - "adaptive computation"
+  - "recurrent architectures"
+  - "biologically inspired"
 date: 2026-05-08
 content_hash: 963251a3e6bbdbca
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Debiased Dual-Invariant Defense for Adversarially Robust Person Re-Identification
 description: >-
-  [AAAI 2026][Autonomous Driving][Adversarial Defense] This work systematically identifies two unique challenges in adversarial defense for person ReID — model bias and composite generalization requirements — and proposes a Debiased Dual-Invariant Defense framework. The data balancing stage employs a diffusion model for resampling to mitigate bias, while the dual adversarial self-meta defense stage achieves dual generalization to unseen IDs and unseen attacks via Farthest Negative Example Softening (FNES)-based metric adversarial training and adversarially-enhanced self-meta learning.
+  [AAAI 2026][Autonomous Driving][Adversarial Defense] This work systematically identifies two unique challenges in adversarial defense for person ReID — model bias and composite generalization requirements — and proposes…
 tags:
-  - AAAI 2026
-  - Autonomous Driving
-  - Adversarial Defense
-  - Person Re-Identification
-  - Meta-Learning
-  - Data Balancing
-  - Metric Learning
+  - "AAAI 2026"
+  - "Autonomous Driving"
+  - "Adversarial Defense"
+  - "Person Re-Identification"
+  - "Meta-Learning"
+  - "Data Balancing"
+  - "Metric Learning"
 date: 2026-05-08
 content_hash: 2fc8ff7e1c83f539
 ---

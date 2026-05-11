@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VSI: Visual-Subtitle Integration for Keyframe Selection to Enhance Long Video Understanding
 description: >-
-  [CVPR 2026][Video Understanding][Long video understanding] VSI proposes a dual-branch collaborative retrieval framework (Video Search + Subtitle Match) that fuses visual and textual information for precise keyframe localization. On text-dominant subtasks, it improves search accuracy from 29.48 to 45.00, representing the first cross-modal keyframe retrieval method.
+  [CVPR 2026][Video Understanding][Long video understanding] VSI proposes a dual-branch collaborative retrieval framework (Video Search + Subtitle Match) that fuses visual and textual information for precise keyframe local…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Long video understanding
-  - keyframe retrieval
-  - multimodal fusion
-  - video question answering
-  - subtitle matching
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Long video understanding"
+  - "keyframe retrieval"
+  - "multimodal fusion"
+  - "video question answering"
+  - "subtitle matching"
 date: 2026-05-08
 content_hash: 7abe477d99a42490
 ---

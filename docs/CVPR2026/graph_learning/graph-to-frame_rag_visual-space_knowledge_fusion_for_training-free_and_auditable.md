@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Graph-to-Frame RAG: Visual-Space Knowledge Fusion for Training-Free and Auditable Video Reasoning
 description: >-
-  [CVPR 2026][Graph Learning][Video retrieval-augmented generation] This paper proposes the G2F-RAG paradigm, which renders retrieved structured knowledge into a single "reasoning frame" appended to the end of the video, enabling large models to reason uniformly within the visual space. This approach avoids the attention dilution and cognitive overload caused by text appending, achieving consistent training-free improvements across 8 video benchmarks.
+  [CVPR 2026][Graph Learning][Video retrieval-augmented generation] This paper proposes the G2F-RAG paradigm, which renders retrieved structured knowledge into a single "reasoning frame" appended to the end of the video…
 tags:
-  - CVPR 2026
-  - Graph Learning
-  - Video retrieval-augmented generation
-  - knowledge graph
-  - visual-space fusion
-  - multi-agent framework
-  - training-free video reasoning
+  - "CVPR 2026"
+  - "Graph Learning"
+  - "Video retrieval-augmented generation"
+  - "knowledge graph"
+  - "visual-space fusion"
+  - "multi-agent framework"
+  - "training-free video reasoning"
 date: 2026-05-08
 content_hash: 4c880bc0f4e060eb
 ---

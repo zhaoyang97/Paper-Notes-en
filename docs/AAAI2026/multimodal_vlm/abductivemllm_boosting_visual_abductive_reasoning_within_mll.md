@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AbductiveMLLM: Boosting Visual Abductive Reasoning Within MLLMs
 description: >-
-  [AAAI 2026][Multimodal VLM][visual abductive reasoning] Inspired by the dual-mode human cognitive process of verbal abduction and pictorial imagination, this paper proposes AbductiveMLLM, which enhances visual abductive reasoning in MLLMs via two collaborative components — a Reasoner (causal contrastive learning for hypothesis selection) and an Imaginer (diffusion-model-based pictorial reasoning) — achieving state-of-the-art performance on the VAR and YouCookII benchmarks.
+  [AAAI 2026][Multimodal VLM][visual abductive reasoning] Inspired by the dual-mode human cognitive process of verbal abduction and pictorial imagination, this paper proposes AbductiveMLLM…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - visual abductive reasoning
-  - MLLM
-  - diffusion model
-  - contrastive learning
-  - pictorial thinking
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "visual abductive reasoning"
+  - "MLLM"
+  - "diffusion model"
+  - "contrastive learning"
+  - "pictorial thinking"
 date: 2026-05-08
 content_hash: 7dd3d1d39539d51d
 ---

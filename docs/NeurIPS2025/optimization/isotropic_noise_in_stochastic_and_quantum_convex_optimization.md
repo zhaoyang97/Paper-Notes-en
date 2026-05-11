@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Isotropic Noise in Stochastic and Quantum Convex Optimization
 description: >-
-  [NeurIPS 2025][Optimization][stochastic convex optimization] This paper introduces the concept of an Isotropic Stochastic Gradient Oracle (ISGO)—where noise is bounded in every direction with high probability—and designs a stochastic cutting-plane algorithm achieving a query complexity of $\tilde{O}(R^2\sigma_I^2/\epsilon^2 + d)$, improving over SGD by a factor of $d$ in certain parameter regimes. As corollaries, the paper establishes new state-of-the-art complexities under sub-exponential noise and improves the dimension dependence of quantum stochastic convex optimization via a quantum isotropization subroutine.
+  [NeurIPS 2025][Optimization][stochastic convex optimization] This paper introduces the concept of an Isotropic Stochastic Gradient Oracle (ISGO)—where noise is bounded in every direction with high probability—and designs…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - stochastic convex optimization
-  - isotropic noise
-  - cutting plane
-  - sub-exponential distribution
-  - quantum optimization
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "stochastic convex optimization"
+  - "isotropic noise"
+  - "cutting plane"
+  - "sub-exponential distribution"
+  - "quantum optimization"
 date: 2026-05-08
 content_hash: 2fc71486cff977be
 ---

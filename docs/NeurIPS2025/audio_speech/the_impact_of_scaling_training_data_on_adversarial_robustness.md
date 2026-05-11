@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The Impact of Scaling Training Data on Adversarial Robustness
 description: >-
-  [NeurIPS 2025][Audio & Speech][Adversarial Robustness] A systematic evaluation of 36 state-of-the-art vision models under 6 categories of black-box attacks reveals that attack success rate (ASR) decreases logarithmically with training data volume and model scale; however, **data quality and model scale are more critical than data volume alone**.
+  [NeurIPS 2025][Audio & Speech][Adversarial Robustness] A systematic evaluation of 36 state-of-the-art vision models under 6 categories of black-box attacks reveals that attack success rate (ASR) decreases logarithmically…
 tags:
-  - NeurIPS 2025
+  - "NeurIPS 2025"
   - "Audio & Speech"
-  - Adversarial Robustness
-  - Scaling Laws
-  - Black-box Attacks
-  - Data Quality
-  - Vision Models
+  - "Adversarial Robustness"
+  - "Scaling Laws"
+  - "Black-box Attacks"
+  - "Data Quality"
+  - "Vision Models"
 date: 2026-05-08
 content_hash: 8282124c5b57af13
 ---

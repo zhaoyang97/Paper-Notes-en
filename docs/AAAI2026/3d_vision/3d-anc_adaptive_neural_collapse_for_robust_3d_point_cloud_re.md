@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] 3D-ANC: Adaptive Neural Collapse for Robust 3D Point Cloud Recognition
 description: >-
-  [AAAI 2026][3D Vision][Point Cloud Recognition] This paper introduces the Neural Collapse (NC) mechanism into adversarial robustness for 3D point cloud recognition. By replacing the classifier head with a fixed ETF structure and adopting an adaptive training framework (RBL + FDL) to construct a disentangled feature space, 3D-ANC improves the adversarial accuracy of DGCNN on ModelNet40 from 27.2% to 80.9%, surpassing the best baseline by 34 percentage points.
+  [AAAI 2026][3D Vision][Point Cloud Recognition] This paper introduces the Neural Collapse (NC) mechanism into adversarial robustness for 3D point cloud recognition. By replacing the classifier head with a fixed ETF struc…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - Point Cloud Recognition
-  - Adversarial Robustness
-  - Neural Collapse
-  - ETF Classifier
-  - Feature Disentanglement
+  - "AAAI 2026"
+  - "3D Vision"
+  - "Point Cloud Recognition"
+  - "Adversarial Robustness"
+  - "Neural Collapse"
+  - "ETF Classifier"
+  - "Feature Disentanglement"
 date: 2026-05-08
 content_hash: 11440df2b7d7eb18
 ---

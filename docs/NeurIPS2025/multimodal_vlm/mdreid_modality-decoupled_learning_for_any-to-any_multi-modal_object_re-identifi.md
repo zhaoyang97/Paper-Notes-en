@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MDReID: Modality-Decoupled Learning for Any-to-Any Multi-Modal Object Re-Identification
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Multi-modal ReID] This paper proposes MDReID, a framework that decouples modality features into modality-shared and modality-specific components, enabling object re-identification under arbitrary modality combinations (any-to-any ReID) and substantially outperforming existing methods in both modality-matched and modality-mismatched scenarios.
+  [NeurIPS 2025][Multimodal VLM][Multi-modal ReID] This paper proposes MDReID, a framework that decouples modality features into modality-shared and modality-specific components…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Multi-modal ReID
-  - modality decoupling
-  - cross-modal retrieval
-  - any-to-any matching
-  - metric learning
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Multi-modal ReID"
+  - "modality decoupling"
+  - "cross-modal retrieval"
+  - "any-to-any matching"
+  - "metric learning"
 date: 2026-05-08
 content_hash: 6236c8afe6a98f7a
 ---

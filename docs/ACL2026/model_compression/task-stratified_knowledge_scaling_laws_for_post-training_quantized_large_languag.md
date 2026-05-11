@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Task-Stratified Knowledge Scaling Laws for Post-Training Quantized LLMs
 description: >-
-  [ACL 2026][Model Compression][Post-training quantization] This paper establishes the first task-stratified knowledge scaling laws for post-training quantization (PTQ), decomposing LLM capabilities into three levels—memorization, application, and reasoning—and jointly modeling four factors: model size, bit-width, group size, and calibration set size. The laws are validated across 293 PTQ configurations, revealing differentiated patterns: reasoning is sensitive to precision, application improves with scale, and memorization is sensitive to calibration data.
+  [ACL 2026][Model Compression][Post-training quantization] This paper establishes the first task-stratified knowledge scaling laws for post-training quantization (PTQ)…
 tags:
-  - ACL 2026
-  - Model Compression
-  - Post-training quantization
-  - scaling laws
-  - knowledge stratification
-  - memorization-application-reasoning
-  - fine-grained quantization factors
+  - "ACL 2026"
+  - "Model Compression"
+  - "Post-training quantization"
+  - "scaling laws"
+  - "knowledge stratification"
+  - "memorization-application-reasoning"
+  - "fine-grained quantization factors"
 date: 2026-05-08
 content_hash: 7bf549d7bc2dea26
 ---

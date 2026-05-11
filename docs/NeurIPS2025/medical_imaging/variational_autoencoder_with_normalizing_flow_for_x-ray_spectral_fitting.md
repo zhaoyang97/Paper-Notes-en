@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Variational Autoencoder with Normalizing Flow for X-ray Spectral Fitting
 description: >-
-  [NeurIPS 2025][Medical Imaging][Variational Autoencoder] This work embeds a Normalizing Flow (NF) into an autoencoder architecture to enable fast physical parameter inference and full posterior distribution estimation for NICER spectral data of black hole X-ray binaries, achieving approximately 2000× speedup over traditional MCMC methods while maintaining comparable accuracy.
+  [NeurIPS 2025][Medical Imaging][Variational Autoencoder] This work embeds a Normalizing Flow (NF) into an autoencoder architecture to enable fast physical parameter inference and full posterior distribution estimation fo…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Variational Autoencoder
-  - Normalizing Flow
-  - X-ray Spectra
-  - Black Hole X-ray Binaries
-  - Posterior Distribution
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Variational Autoencoder"
+  - "Normalizing Flow"
+  - "X-ray Spectra"
+  - "Black Hole X-ray Binaries"
+  - "Posterior Distribution"
 date: 2026-05-08
 content_hash: c41a55221ae9c0c9
 ---

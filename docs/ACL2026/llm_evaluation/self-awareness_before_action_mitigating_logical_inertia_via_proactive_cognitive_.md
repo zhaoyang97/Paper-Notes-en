@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Self-Awareness before Action: Mitigating Logical Inertia via Proactive Cognitive Awareness
 description: >-
-  [ACL 2026][LLM Evaluation][self-aware reasoning] This paper proposes SABA, a reasoning framework that adopts a "perceive before act" paradigm, explicitly constructing and auditing knowledge states prior to any final decision. It employs Information Fusion (IF) to consolidate narratives into a verifiable baseline state, and Query-driven Structured Reasoning (QSR) to recursively identify and resolve missing premises, achieving state-of-the-art performance on both detective reasoning and general reasoning benchmarks.
+  [ACL 2026][LLM Evaluation][self-aware reasoning] This paper proposes SABA, a reasoning framework that adopts a "perceive before act" paradigm…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - self-aware reasoning
-  - non-interactive narrative reasoning
-  - structured state management
-  - information fusion
-  - logical inertia
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "self-aware reasoning"
+  - "non-interactive narrative reasoning"
+  - "structured state management"
+  - "information fusion"
+  - "logical inertia"
 date: 2026-05-08
 content_hash: 1e4a11fb47fb6f51
 ---

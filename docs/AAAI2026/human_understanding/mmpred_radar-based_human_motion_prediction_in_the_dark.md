@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] mmPred: Radar-based Human Motion Prediction in the Dark
 description: >-
-  [AAAI2026][Human Understanding][millimeter-wave radar] This work is the first to introduce millimeter-wave radar into human motion prediction (HMP), proposing mmPred — a diffusion-based framework that employs dual-domain historical motion representations (time-domain pose refinement TPR + frequency-domain dominant motion FDM) and a Global Skeleton Transformer (GST) to effectively suppress radar-specific noise and temporal inconsistency, surpassing SOTA methods by 8.6% and 22% on the mmBody and mm-Fi datasets, respectively.
+  [AAAI2026][Human Understanding][millimeter-wave radar] This work is the first to introduce millimeter-wave radar into human motion prediction (HMP)…
 tags:
-  - AAAI2026
-  - Human Understanding
-  - millimeter-wave radar
-  - human motion prediction
-  - diffusion model
-  - frequency-domain representation
-  - dual-domain fusion
+  - "AAAI2026"
+  - "Human Understanding"
+  - "millimeter-wave radar"
+  - "human motion prediction"
+  - "diffusion model"
+  - "frequency-domain representation"
+  - "dual-domain fusion"
 date: 2026-05-08
 content_hash: 046d7e2eae21230b
 ---

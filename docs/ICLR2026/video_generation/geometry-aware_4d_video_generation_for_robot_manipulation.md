@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Geometry-aware 4D Video Generation for Robot Manipulation
 description: >-
-  [ICLR 2026][Video Generation][4D video generation] This paper proposes a geometry-aware 4D video generation framework that trains a video diffusion model via cross-view pointmap alignment supervision, jointly predicting RGB and pointmap sequences to achieve spatiotemporally consistent multi-view RGB-D videos. Without requiring camera pose inputs at inference, the framework generates consistent videos from novel viewpoints and recovers robot end-effector trajectories using an off-the-shelf 6DoF pose tracker.
+  [ICLR 2026][Video Generation][4D video generation] This paper proposes a geometry-aware 4D video generation framework that trains a video diffusion model via cross-view pointmap alignment supervision…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - 4D video generation
-  - robot manipulation
-  - cross-view consistency
-  - pointmap alignment
-  - pose estimation
+  - "ICLR 2026"
+  - "Video Generation"
+  - "4D video generation"
+  - "robot manipulation"
+  - "cross-view consistency"
+  - "pointmap alignment"
+  - "pose estimation"
 date: 2026-05-08
 content_hash: a3f85a9a1b34a1c3
 ---

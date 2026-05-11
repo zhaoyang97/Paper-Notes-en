@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FGM-HD: Boosting Generation Diversity of Fractal Generative Models through Hausdorff Dimension Induction
 description: >-
-  [AAAI 2026][Image Generation][Fractal Generative Model] This paper is the first to introduce Hausdorff Dimension (HD) into Fractal Generative Models (FGM), proposing a learnable HD estimation module, a Monotonic Momentum-Driven Scheduling strategy (MMDS), and HD-guided rejection sampling. The method achieves a 39% improvement in generation diversity (Recall) on ImageNet while maintaining image quality.
+  [AAAI 2026][Image Generation][Fractal Generative Model] This paper is the first to introduce Hausdorff Dimension (HD) into Fractal Generative Models (FGM), proposing a learnable HD estimation module…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Fractal Generative Model
-  - Hausdorff Dimension
-  - Generation Diversity
-  - Momentum-driven Scheduling Strategy
-  - Rejection Sampling
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Fractal Generative Model"
+  - "Hausdorff Dimension"
+  - "Generation Diversity"
+  - "Momentum-driven Scheduling Strategy"
+  - "Rejection Sampling"
 date: 2026-05-08
 content_hash: 70f419437664fcfd
 ---

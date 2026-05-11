@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LaScA: Language-Conditioned Scalable Modelling of Affective Dynamics
 description: >-
-  [CVPR 2026][Human Understanding][affective modeling] This paper proposes the LaScA framework, which leverages large language models to generate a deterministic semantic lexicon as affective priors for handcrafted facial and acoustic features. A frozen sentence encoder produces semantic embeddings that are fused with the raw features. LaScA consistently outperforms feature-only baselines in affective dynamics prediction on the Aff-Wild2 and SEWA datasets, and matches or surpasses end-to-end deep models in terms of consistency, efficiency, and interpretability.
+  [CVPR 2026][Human Understanding][affective modeling] This paper proposes the LaScA framework, which leverages large language models to generate a deterministic semantic lexicon as affective priors for handcrafted facial…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - affective modeling
-  - language models
-  - semantic priors
-  - Valence-Arousal
-  - preference learning
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "affective modeling"
+  - "language models"
+  - "semantic priors"
+  - "Valence-Arousal"
+  - "preference learning"
 date: 2026-05-08
 content_hash: 44fbc92689b5462c
 ---

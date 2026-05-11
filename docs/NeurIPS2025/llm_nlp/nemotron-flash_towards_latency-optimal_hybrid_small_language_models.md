@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Nemotron-Flash: Towards Latency-Optimal Hybrid Small Language Models
 description: >-
-  [NeurIPS 2025][LLM/NLP][Hybrid Operators] Nemotron-Flash constructs a latency-optimal family of small language models through systematic optimization of depth-width ratios, evolutionary search over hybrid operator combinations (DeltaNet + Mamba2 + Attention), and weight-normalization-based training. Compared to Qwen3-1.7B/0.6B, it achieves 1.3×/1.9× latency reduction alongside a +5.5% average accuracy improvement.
+  [NeurIPS 2025][LLM/NLP][Hybrid Operators] Nemotron-Flash constructs a latency-optimal family of small language models through systematic optimization of depth-width ratios…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - Hybrid Operators
-  - Depth-Width Ratio
-  - Weight Normalization
-  - Evolutionary Search
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "Hybrid Operators"
+  - "Depth-Width Ratio"
+  - "Weight Normalization"
+  - "Evolutionary Search"
 date: 2026-05-08
 content_hash: 71284b6cfd467c4a
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Parallel Test-Time Scaling for Latent Reasoning Models
 description: >-
-  [ACL 2026 Main Conference][LLM Reasoning][test-time scaling] This paper is the first to introduce parallel test-time scaling (parallel TTS) into latent reasoning models. It proposes two uncertainty-theoretic stochastic sampling strategies (MC-Dropout and additive Gaussian noise) along with a step-level contrastively trained latent reward model (LatentRM), enabling models that reason in continuous vector spaces to achieve consistent performance gains through parallel sampling and aggregation.
+  [ACL 2026 Main Conference][LLM Reasoning][test-time scaling] This paper is the first to introduce parallel test-time scaling (parallel TTS) into latent reasoning models. It proposes two uncertainty-theoretic stochastic s…
 tags:
-  - ACL 2026 Main Conference
-  - LLM Reasoning
-  - test-time scaling
-  - latent reasoning
-  - stochastic sampling
-  - reward model
-  - parallel inference
+  - "ACL 2026 Main Conference"
+  - "LLM Reasoning"
+  - "test-time scaling"
+  - "latent reasoning"
+  - "stochastic sampling"
+  - "reward model"
+  - "parallel inference"
 date: 2026-05-08
 content_hash: a9d66a770c360b09
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Efficient Estimation of Kernel Surrogate Models for Task Attribution
 description: >-
-  [ICLR 2026][Reinforcement Learning][task attribution] This paper proposes a kernel surrogate model (KernelSM) for task attribution. By employing RBF kernel ridge regression to capture nonlinear interaction effects among tasks, combined with a gradient-projection-based efficient estimation algorithm that eliminates repeated retraining, KernelSM achieves a 25% improvement in correlation over linear surrogate and influence function baselines across mathematical reasoning, in-context learning, and multi-objective RL settings.
+  [ICLR 2026][Reinforcement Learning][task attribution] This paper proposes a kernel surrogate model (KernelSM) for task attribution. By employing RBF kernel ridge regression to capture nonlinear interaction effects among…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - task attribution
-  - kernel surrogate model
-  - influence function
-  - data attribution
-  - kernel ridge regression
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "task attribution"
+  - "kernel surrogate model"
+  - "influence function"
+  - "data attribution"
+  - "kernel ridge regression"
 date: 2026-05-08
 content_hash: d70d99161ca2b732
 ---

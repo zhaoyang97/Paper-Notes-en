@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] MDNS: Masked Diffusion Neural Sampler via Stochastic Optimal Control
 description: >-
-  [NeurIPS 2025][Optimization][Discrete diffusion models] This paper proposes the Masked Diffusion Neural Sampler (MDNS), a framework grounded in stochastic optimal control theory for continuous-time Markov chains (CTMCs). By aligning path measures, MDNS trains a discrete neural sampler capable of accurately sampling from Ising/Potts models with state spaces as large as $10^{122}$, substantially outperforming existing learning-based baselines.
+  [NeurIPS 2025][Optimization][Discrete diffusion models] This paper proposes the Masked Diffusion Neural Sampler (MDNS), a framework grounded in stochastic optimal control theory for continuous-time Markov chains (CTMCs).…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Discrete diffusion models
-  - neural sampler
-  - stochastic optimal control
-  - continuous-time Markov chain
-  - Ising model
-  - Potts model
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Discrete diffusion models"
+  - "neural sampler"
+  - "stochastic optimal control"
+  - "continuous-time Markov chain"
+  - "Ising model"
+  - "Potts model"
 date: 2026-05-08
 content_hash: 91057d2c95fbff9d
 ---

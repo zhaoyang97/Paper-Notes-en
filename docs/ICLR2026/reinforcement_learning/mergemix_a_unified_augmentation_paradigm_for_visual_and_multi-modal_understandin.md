@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MergeMix: A Unified Augmentation Paradigm for Visual and Multi-Modal Understanding
 description: >-
-  [ICLR 2026][Reinforcement Learning][Mixup] MergeMix proposes a token merging–based mixup data augmentation method that generates mixed images in attention space via bipartite soft matching, uses the mixing ratio as a soft margin in preference optimization, and unifies SFT and RL training paradigms across image classification and multimodal large language model settings.
+  [ICLR 2026][Reinforcement Learning][Mixup] MergeMix proposes a token merging–based mixup data augmentation method that generates mixed images in attention space via bipartite soft matching…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Mixup
-  - Token Merging
-  - Preference Alignment
-  - MLLM
-  - Data Augmentation
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Mixup"
+  - "Token Merging"
+  - "Preference Alignment"
+  - "MLLM"
+  - "Data Augmentation"
 date: 2026-05-08
 content_hash: cce0143d903eeb2b
 ---

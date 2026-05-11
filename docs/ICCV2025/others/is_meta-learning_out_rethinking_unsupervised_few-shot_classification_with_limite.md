@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Is Meta-Learning Out? Rethinking Unsupervised Few-Shot Classification with Limited Entropy
 description: >-
-  [ICCV 2025][meta-learning] This paper introduces an *entropy-constrained supervision setting* to establish a fair comparison framework between meta-learning and Whole-Class Training (WCT). It theoretically demonstrates that meta-learning yields tighter generalization bounds, and reveals its advantages in label noise robustness and suitability for heterogeneous tasks. Building on these insights, the proposed MINO framework achieves state-of-the-art performance on unsupervised few-shot and zero-shot tasks.
+  [ICCV 2025][meta-learning] This paper introduces an *entropy-constrained supervision setting* to establish a fair comparison framework between meta-learning and Whole-Class Training (WCT). It theoretically demonstrates t…
 tags:
-  - ICCV 2025
-  - meta-learning
-  - few-shot classification
-  - unsupervised learning
-  - generalization bound
-  - label noise robustness
+  - "ICCV 2025"
+  - "meta-learning"
+  - "few-shot classification"
+  - "unsupervised learning"
+  - "generalization bound"
+  - "label noise robustness"
 date: 2026-05-08
 content_hash: 7e331adadc80fae5
 ---

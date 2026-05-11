@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Heuristic-Induced Multimodal Risk Distribution Jailbreak Attack for Multimodal Large Language Models
 description: >-
-  [ICCV 2025][LLM Alignment][jailbreak attack] This paper proposes HIMRD, a black-box multimodal jailbreak attack method that bypasses unimodal safety mechanisms by distributing malicious semantics across multiple modalities. A heuristic search strategy is employed to identify optimal understanding-enhancing prompts and inducing prompts, achieving average attack success rates of approximately 90% and 68% on open-source and closed-source multimodal large language models, respectively.
+  [ICCV 2025][LLM Alignment][jailbreak attack] This paper proposes HIMRD, a black-box multimodal jailbreak attack method that bypasses unimodal safety mechanisms by distributing malicious semantics across multiple modaliti…
 tags:
-  - ICCV 2025
-  - LLM Alignment
-  - jailbreak attack
-  - multimodal large language models
-  - risk distribution
-  - heuristic search
-  - black-box attack
+  - "ICCV 2025"
+  - "LLM Alignment"
+  - "jailbreak attack"
+  - "multimodal large language models"
+  - "risk distribution"
+  - "heuristic search"
+  - "black-box attack"
 date: 2026-05-08
 content_hash: 927359c426f03cdc
 ---

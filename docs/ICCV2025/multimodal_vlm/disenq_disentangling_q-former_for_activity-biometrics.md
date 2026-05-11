@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DisenQ: Disentangling Q-Former for Activity-Biometrics
 description: >-
-  [ICCV 2025][Multimodal VLM][Activity-biometrics recognition] This paper proposes DisenQ (Disentangling Q-Former), which leverages structured language guidance to disentangle video features into three independent spaces—biometric, motion, and non-biometric—achieving state-of-the-art activity-aware person recognition without requiring additional visual modalities.
+  [ICCV 2025][Multimodal VLM][Activity-biometrics recognition] This paper proposes DisenQ (Disentangling Q-Former), which leverages structured language guidance to disentangle video features into three independent spaces—b…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Activity-biometrics recognition
-  - Q-Former
-  - feature disentanglement
-  - multimodal learning
-  - video person re-identification
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Activity-biometrics recognition"
+  - "Q-Former"
+  - "feature disentanglement"
+  - "multimodal learning"
+  - "video person re-identification"
 date: 2026-05-08
 content_hash: a13717f8d6fd1502
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Human-Like RL Agents through Trajectory Optimization with Action Quantization
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Human-like RL] This paper proposes MAQ (Motion-Action Quantization), a method that discretizes human actions into a finite set of motion primitives via VQ-VAE, then performs trajectory optimization within the quantized action space to train RL agents whose behavioral patterns more closely resemble those of humans.
+  [NeurIPS 2025][Reinforcement Learning][Human-like RL] This paper proposes MAQ (Motion-Action Quantization), a method that discretizes human actions into a finite set of motion primitives via VQ-VAE…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Human-like RL
-  - action quantization
-  - trajectory optimization
-  - VQ-VAE
-  - behavior modeling
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Human-like RL"
+  - "action quantization"
+  - "trajectory optimization"
+  - "VQ-VAE"
+  - "behavior modeling"
 date: 2026-05-08
 content_hash: e557c51c96d0436e
 ---

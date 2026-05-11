@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RPM-MCTS: Knowledge-Retrieval as Process Reward Model with Monte Carlo Tree Search for Code Generation
 description: >-
-  [AAAI 2026][LLM Reasoning][Process Reward Model] This paper proposes RPM-MCTS, which replaces a trained Process Reward Model (PRM) with knowledge base retrieval to guide MCTS search for code generation. Exploiting the homogeneity of correct implementations within the same algorithm family, the method retrieves reference algorithm steps from a knowledge base as evaluation signals, applies similarity-based filtering to prune redundant expansion nodes, and uses sandbox execution to localize errors—achieving approximately 15% token reduction while surpassing prior state-of-the-art.
+  [AAAI 2026][LLM Reasoning][Process Reward Model] This paper proposes RPM-MCTS, which replaces a trained Process Reward Model (PRM) with knowledge base retrieval to guide MCTS search for code generation. Exploiting the ho…
 tags:
-  - AAAI 2026
-  - LLM Reasoning
-  - Process Reward Model
-  - MCTS
-  - Knowledge Base Retrieval
-  - Code Generation
-  - Algorithm Step Evaluation
+  - "AAAI 2026"
+  - "LLM Reasoning"
+  - "Process Reward Model"
+  - "MCTS"
+  - "Knowledge Base Retrieval"
+  - "Code Generation"
+  - "Algorithm Step Evaluation"
 date: 2026-05-08
 content_hash: f5c5d2c013dab636
 ---

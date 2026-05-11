@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MAESTRO: Task-Relevant Optimization via Adaptive Feature Enhancement and Suppression for Multi-task 3D Perception
 description: >-
-  [ICCV 2025][Autonomous Driving][Multi-task Learning] This paper proposes the MAESTRO framework, which generates task-specific features and suppresses inter-task interference in multi-task 3D perception through three modules: Class-wise Prototype Generator (CPG), Task-Specific Feature Generator (TSFG), and Scene Prototype Aggregator (SPA). MAESTRO simultaneously surpasses single-task models on 3D object detection, BEV map segmentation, and 3D occupancy prediction.
+  [ICCV 2025][Autonomous Driving][Multi-task Learning] This paper proposes the MAESTRO framework, which generates task-specific features and suppresses inter-task interference in multi-task 3D perception through three modu…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - Multi-task Learning
-  - 3D Perception
-  - BEV Segmentation
-  - 3D Object Detection
-  - Occupancy Prediction
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "Multi-task Learning"
+  - "3D Perception"
+  - "BEV Segmentation"
+  - "3D Object Detection"
+  - "Occupancy Prediction"
 date: 2026-05-08
 content_hash: 65a9712cac5a32b3
 ---

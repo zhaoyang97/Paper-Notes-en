@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CORE: Full-Path Evaluation of LLM Agents Beyond Final State
 description: >-
-  [NeurIPS 2025][LLM Agent][Agent Evaluation] This paper proposes CORE, a framework that encodes legitimate tool-calling paths for agent tasks using deterministic finite automata (DFA) and introduces five complementary metrics (path correctness, order correctness, prefix criticality, harm rate, and efficiency) to evaluate agent behavior along the full execution path rather than the final state alone, revealing safety and efficiency differences invisible to conventional final-state evaluation.
+  [NeurIPS 2025][LLM Agent][Agent Evaluation] This paper proposes CORE, a framework that encodes legitimate tool-calling paths for agent tasks using deterministic finite automata (DFA) and introduces five complementary met…
 tags:
-  - NeurIPS 2025
-  - LLM Agent
-  - Agent Evaluation
-  - Full-Path Evaluation
-  - Deterministic Finite Automaton
-  - Safety
-  - Tool Calling
+  - "NeurIPS 2025"
+  - "LLM Agent"
+  - "Agent Evaluation"
+  - "Full-Path Evaluation"
+  - "Deterministic Finite Automaton"
+  - "Safety"
+  - "Tool Calling"
 date: 2026-05-08
 content_hash: 58017974e5e414ad
 ---

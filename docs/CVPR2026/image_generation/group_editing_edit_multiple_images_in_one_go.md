@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Group Editing: Edit Multiple Images in One Go
 description: >-
-  [CVPR 2026][Image Generation][consistent multi-image editing] This paper proposes GroupEditing, which reconstructs a group of related images as pseudo-video frames and combines explicit geometric correspondences from VGGT with the implicit temporal prior of a video diffusion model. Two specially designed positional encodings—Ge-RoPE and Identity-RoPE—are introduced to inject correspondence information, enabling cross-view consistent group image editing that significantly outperforms existing methods in visual quality, editing consistency, and semantic alignment.
+  [CVPR 2026][Image Generation][consistent multi-image editing] This paper proposes GroupEditing, which reconstructs a group of related images as pseudo-video frames and combines explicit geometric correspondences from VGG…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - consistent multi-image editing
-  - video diffusion prior
-  - geometric correspondence
-  - RoPE positional encoding
-  - pseudo-video
+  - "CVPR 2026"
+  - "Image Generation"
+  - "consistent multi-image editing"
+  - "video diffusion prior"
+  - "geometric correspondence"
+  - "RoPE positional encoding"
+  - "pseudo-video"
 date: 2026-05-08
 content_hash: 437929ccb93d521d
 ---

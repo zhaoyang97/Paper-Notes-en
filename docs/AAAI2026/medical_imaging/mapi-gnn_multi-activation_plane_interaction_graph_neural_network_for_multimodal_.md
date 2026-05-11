@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MAPI-GNN: Multi-Activation Plane Interaction Graph Neural Network for Multimodal Medical Diagnosis
 description: >-
-  [AAAI 2026][Medical Imaging][Graph Neural Networks] This paper proposes MAPI-GNN, which dynamically constructs multiple activation planes in semantic subspaces via a multi-dimensional feature discriminator, then aggregates intra- and inter-sample relationships through a hierarchical fusion network. The method achieves significant improvements over existing SOTA on two multimodal diagnostic tasks—prostate cancer and coronary heart disease (ACC 0.9432, AUC 0.9838 on PI-CAI).
+  [AAAI 2026][Medical Imaging][Graph Neural Networks] This paper proposes MAPI-GNN, which dynamically constructs multiple activation planes in semantic subspaces via a multi-dimensional feature discriminator…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Graph Neural Networks
-  - Multimodal Medical Diagnosis
-  - Dynamic Graph Construction
-  - Feature Discriminator
-  - Hierarchical Fusion
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Graph Neural Networks"
+  - "Multimodal Medical Diagnosis"
+  - "Dynamic Graph Construction"
+  - "Feature Discriminator"
+  - "Hierarchical Fusion"
 date: 2026-05-08
 content_hash: e5828ba308ec6f6d
 ---

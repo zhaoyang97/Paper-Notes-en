@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Knowledge Distillation Detection for Open-weights Models
 description: >-
-  [NeurIPS 2025][Image Generation][knowledge distillation detection] This paper introduces the task of knowledge distillation detection, proposing a data-free input synthesis and statistical scoring framework to determine whether an open-weights student model has been distilled from a specific teacher model.
+  [NeurIPS 2025][Image Generation][knowledge distillation detection] This paper introduces the task of knowledge distillation detection, proposing a data-free input synthesis and statistical scoring framework to determine…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - knowledge distillation detection
-  - model provenance
-  - data-free synthesis
-  - statistical detection
-  - text-to-image generation
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "knowledge distillation detection"
+  - "model provenance"
+  - "data-free synthesis"
+  - "statistical detection"
+  - "text-to-image generation"
 date: 2026-05-08
 content_hash: 789f2abe5d859bbf
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Retrosynthesis Planning via Worst-path Policy Optimisation in Tree-structured MDPs
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][retrosynthesis planning] This work reformulates retrosynthesis planning as a worst-path optimisation problem in tree-structured MDPs — the value of a synthesis tree is determined by its weakest path, since any dead-end path renders the entire tree invalid. The proposed method, InterRetro, optimises this worst-path objective via weighted self-imitation learning, achieving 100% success rate on Retro*-190, reducing path length by 4.9%, and attaining 92% of full performance with only 10% of training data.
+  [NeurIPS 2025][Reinforcement Learning][retrosynthesis planning] This work reformulates retrosynthesis planning as a worst-path optimisation problem in tree-structured MDPs — the value of a synthesis tree is determined by…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - retrosynthesis planning
-  - tree-structured MDP
-  - worst-path optimisation
-  - self-imitation learning
-  - search-free inference
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "retrosynthesis planning"
+  - "tree-structured MDP"
+  - "worst-path optimisation"
+  - "self-imitation learning"
+  - "search-free inference"
 date: 2026-05-08
 content_hash: 5563972fd6dce65b
 ---

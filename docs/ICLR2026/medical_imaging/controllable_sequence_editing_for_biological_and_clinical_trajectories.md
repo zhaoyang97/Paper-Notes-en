@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Controllable Sequence Editing for Biological and Clinical Trajectories
 description: >-
-  [ICLR 2026][Medical Imaging][Counterfactual generation] This paper proposes Clef, a controllable sequence editing model based on *temporal concepts* that performs immediate and delayed editing of biological/clinical multivariate trajectories under given conditions (e.g., drugs, surgery). On cell reprogramming and patient laboratory test data, Clef achieves 16.28% MAE improvement for immediate editing, 26.73% for delayed editing, and up to 62.84% improvement for zero-shot counterfactual generation.
+  [ICLR 2026][Medical Imaging][Counterfactual generation] This paper proposes Clef, a controllable sequence editing model based on *temporal concepts* that performs immediate and delayed editing of biological/clinical mult…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - Counterfactual generation
-  - sequence editing
-  - temporal concepts
-  - patient trajectories
-  - cell reprogramming
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Counterfactual generation"
+  - "sequence editing"
+  - "temporal concepts"
+  - "patient trajectories"
+  - "cell reprogramming"
 date: 2026-05-08
 content_hash: 66e8ccfff72fa203
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] REAP: Enhancing RAG with Recursive Evaluation and Adaptive Planning for Multi-Hop Question Answering
 description: >-
-  [AAAI 2026][Multi-hop question answering] This paper proposes REAP, a dual-module iterative framework that addresses multi-hop question answering through recursive collaboration between a Sub-task Planner (SP), which maintains a global perspective to dynamically guide reasoning trajectories, and a Fact Extractor (FE), which extracts structured facts and latent clues from retrieved content. Using Llama-3.1-8B, REAP substantially outperforms all baselines on 4 benchmarks (HotpotQA F1 68.0 vs. runner-up 63.4).
+  [AAAI 2026][Information Retrieval & RAG][Multi-hop question answering] This paper proposes REAP, a dual-module iterative framework that addresses multi-hop question answering through recursive collaboration between a Sub…
 tags:
-  - AAAI 2026
-  - Multi-hop question answering
-  - retrieval-augmented generation
-  - adaptive planning
-  - fact extraction
-  - multi-task fine-tuning
+  - "AAAI 2026"
+  - "Information Retrieval & RAG"
+  - "Multi-hop question answering"
+  - "retrieval-augmented generation"
+  - "adaptive planning"
+  - "fact extraction"
+  - "multi-task fine-tuning"
 date: 2026-05-08
 content_hash: 6a2cd9ca70114ea2
 ---

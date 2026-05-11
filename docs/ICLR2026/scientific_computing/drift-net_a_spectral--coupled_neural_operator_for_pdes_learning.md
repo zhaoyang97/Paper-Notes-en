@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DRIFT-Net: A Spectral--Coupled Neural Operator for PDEs Learning
 description: >-
-  [ICLR2026][Scientific Computing][neural operator] DRIFT-Net is a dual-branch neural operator that addresses autoregressive drift caused by insufficient global spectral coupling in window attention, via controlled low-frequency mixing (spectral branch), local detail fidelity (image branch), and bandwidth fusion through radial gating. It reduces error by 7%–54% on Navier-Stokes benchmarks.
+  [ICLR2026][Scientific Computing][neural operator] DRIFT-Net is a dual-branch neural operator that addresses autoregressive drift caused by insufficient global spectral coupling in window attention…
 tags:
-  - ICLR2026
-  - Scientific Computing
-  - neural operator
-  - PDE
-  - spectral coupling
-  - dual-branch
-  - Navier-Stokes
+  - "ICLR2026"
+  - "Scientific Computing"
+  - "neural operator"
+  - "PDE"
+  - "spectral coupling"
+  - "dual-branch"
+  - "Navier-Stokes"
 date: 2026-05-08
 content_hash: 8916edf5c6546767
 ---

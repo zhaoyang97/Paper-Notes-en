@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] FEAT: Free Energy Estimators with Adaptive Transport
 description: >-
-  [NeurIPS 2025][Free energy estimation] This paper proposes the FEAT framework, which employs stochastic interpolants to learn transport maps between two thermodynamic systems. Building on the escorted Jarzynski equality and the controlled Crooks theorem, FEAT provides consistent, minimum-variance free energy difference estimators along with variational upper and lower bounds, thereby unifying equilibrium and non-equilibrium approaches.
+  [NeurIPS 2025][Physics][Free energy estimation] This paper proposes the FEAT framework, which employs stochastic interpolants to learn transport maps between two thermodynamic systems. Building on the escorted Jarzynski…
 tags:
-  - NeurIPS 2025
-  - Free energy estimation
-  - stochastic interpolants
-  - Jarzynski equality
-  - Crooks theorem
-  - variational bounds
+  - "NeurIPS 2025"
+  - "Physics"
+  - "Free energy estimation"
+  - "stochastic interpolants"
+  - "Jarzynski equality"
+  - "Crooks theorem"
+  - "variational bounds"
 date: 2026-05-08
 content_hash: c45f82408bcb7d1d
 ---

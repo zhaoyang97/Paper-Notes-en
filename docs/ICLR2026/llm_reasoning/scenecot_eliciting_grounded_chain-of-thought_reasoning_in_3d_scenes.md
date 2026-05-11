@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SceneCOT: Eliciting Grounded Chain-of-Thought Reasoning in 3D Scenes
 description: >-
-  [ICLR 2026][LLM Reasoning][3D reasoning] This paper proposes SceneCOT, the first framework to introduce Chain-of-Thought reasoning into 3D scene understanding. Through a four-stage reasoning pipeline (task recognition → region localization → entity grounding → grounded reasoning), intermediate reasoning steps are explicitly linked to visual grounding. SceneCOT achieves 34.7% Good Coherence on Beacon3D, surpassing the strongest baseline (20.4%) by over 70%.
+  [ICLR 2026][LLM Reasoning][3D reasoning] This paper proposes SceneCOT, the first framework to introduce Chain-of-Thought reasoning into 3D scene understanding. Through a four-stage reasoning pipeline (task recognition →…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - 3D reasoning
-  - chain-of-thought
-  - grounded QA
-  - 3D-LLM
-  - scene understanding
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "3D reasoning"
+  - "chain-of-thought"
+  - "grounded QA"
+  - "3D-LLM"
+  - "scene understanding"
 date: 2026-05-08
 content_hash: 5573c8b694b25a02
 ---

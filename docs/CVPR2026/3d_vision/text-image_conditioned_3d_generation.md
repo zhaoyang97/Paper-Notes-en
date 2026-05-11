@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Text–Image Conditioned 3D Generation
 description: >-
-  [CVPR 2026][3D Vision][text-image joint conditioning] This paper identifies that image and text conditions provide complementary information for 3D generation—images supply precise appearance but are limited by viewpoint, while text provides global semantics but lacks visual detail—and proposes TIGON, a minimalist dual-branch DiT baseline that achieves native text-image jointly conditioned 3D generation via zero-initialized cross-modal bridges (early fusion) and step-wise prediction averaging (late fusion).
+  [CVPR 2026][3D Vision][text-image joint conditioning] This paper identifies that image and text conditions provide complementary information for 3D generation—images supply precise appearance but are limited by viewpoint…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - text-image joint conditioning
-  - 3D generation
-  - dual-branch DiT
-  - cross-modal fusion
-  - rectified flow
+  - "CVPR 2026"
+  - "3D Vision"
+  - "text-image joint conditioning"
+  - "3D generation"
+  - "dual-branch DiT"
+  - "cross-modal fusion"
+  - "rectified flow"
 date: 2026-05-08
 content_hash: d2a94f6fb64f36c4
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SafeR-CLIP: Mitigating NSFW Content in Vision-Language Models While Preserving Pre-Trained Knowledge
 description: >-
-  [AAAI 2026][Multimodal VLM][CLIP safety fine-tuning] This paper proposes SafeR-CLIP, a framework that improves upon Safe-CLIP by introducing proximity-based alignment (redirecting unsafe embeddings to their semantically nearest safe targets rather than fixed pairs) and a relative cross-modal redirection loss (using only unsafe representations as negatives rather than random in-batch negatives), recovering zero-shot classification accuracy by 8.0% over Safe-CLIP while maintaining stronger safety guarantees.
+  [AAAI 2026][Multimodal VLM][CLIP safety fine-tuning] This paper proposes SafeR-CLIP, a framework that improves upon Safe-CLIP by introducing proximity-based alignment (redirecting unsafe embeddings to their semantically…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - CLIP safety fine-tuning
-  - NSFW content filtering
-  - nearest-neighbor alignment
-  - representation space preservation
-  - progressive training
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "CLIP safety fine-tuning"
+  - "NSFW content filtering"
+  - "nearest-neighbor alignment"
+  - "representation space preservation"
+  - "progressive training"
 date: 2026-05-08
 content_hash: c8fd7f6fd9ab2e87
 ---

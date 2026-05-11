@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Blended Point Cloud Diffusion for Localized Text-guided Shape Editing
 description: >-
-  [ICCV 2025 (Highlight)][3D Vision][Point cloud editing] This paper proposes BlendedPC, which reformulates localized text-guided 3D shape editing as a semantic inpainting problem. By fine-tuning an Inpaint-E model on top of Point·E and introducing an inversion-free coordinate blending mechanism at inference time, BlendedPC achieves precise local editing while preserving the identity of the original shape, outperforming existing methods comprehensively on the ShapeTalk dataset.
+  [ICCV 2025 (Highlight)][3D Vision][Point cloud editing] This paper proposes BlendedPC, which reformulates localized text-guided 3D shape editing as a semantic inpainting problem. By fine-tuning an Inpaint-E model on top…
 tags:
-  - ICCV 2025 (Highlight)
-  - 3D Vision
-  - Point cloud editing
-  - text-guided 3D editing
-  - diffusion model inpainting
-  - coordinate blending
-  - localized shape editing
+  - "ICCV 2025 (Highlight)"
+  - "3D Vision"
+  - "Point cloud editing"
+  - "text-guided 3D editing"
+  - "diffusion model inpainting"
+  - "coordinate blending"
+  - "localized shape editing"
 date: 2026-05-08
 content_hash: d7b21c0e702fcb7f
 ---

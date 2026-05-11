@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VideoARM: Agentic Reasoning over Hierarchical Memory for Long-Form Video Understanding
 description: >-
-  [CVPR 2026][Video Understanding][Long-form video understanding] VideoARM proposes an agentic reasoning paradigm built upon a Hierarchical Multimodal Memory (HM3) structure. Through an adaptive observe–think–act–memorize loop and a coarse-to-fine tool-calling strategy, it surpasses state-of-the-art methods on long-form video understanding benchmarks while reducing token consumption to 1/34 of DVD.
+  [CVPR 2026][Video Understanding][Long-form video understanding] VideoARM proposes an agentic reasoning paradigm built upon a Hierarchical Multimodal Memory (HM3) structure. Through an adaptive observe–think–act–memorize…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Long-form video understanding
-  - agentic reasoning
-  - hierarchical memory
-  - coarse-to-fine reasoning
-  - token efficiency
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Long-form video understanding"
+  - "agentic reasoning"
+  - "hierarchical memory"
+  - "coarse-to-fine reasoning"
+  - "token efficiency"
 date: 2026-05-08
 content_hash: 716bea15557b3b86
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Bayesian Active Learning with Gaussian Processes Guided by LLM Relevance Scoring
 description: >-
-  [ACL 2026][Passage Retrieval] This paper proposes BAGEL, a Bayesian active learning framework based on Gaussian Processes (GP) that propagates sparse LLM relevance signals across the embedding space via an exploration–exploitation strategy under a limited LLM budget, enabling global passage retrieval that substantially outperforms conventional LLM re-ranking methods.
+  [ACL 2026][Information Retrieval & RAG][Passage Retrieval] This paper proposes BAGEL, a Bayesian active learning framework based on Gaussian Processes (GP) that propagates sparse LLM relevance signals across the embeddin…
 tags:
-  - ACL 2026
-  - Passage Retrieval
-  - Gaussian Processes
-  - Active Learning
-  - LLM Re-ranking
-  - Bayesian Optimization
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Passage Retrieval"
+  - "Gaussian Processes"
+  - "Active Learning"
+  - "LLM Re-ranking"
+  - "Bayesian Optimization"
 date: 2026-05-08
 content_hash: 3ff2a39d189b3779
 ---

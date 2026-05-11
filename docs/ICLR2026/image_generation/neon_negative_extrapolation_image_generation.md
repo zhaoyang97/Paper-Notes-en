@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Neon: Negative Extrapolation From Self-Training Improves Image Generation
 description: >-
-  [ICLR 2026 Oral][Image Generation][self-training] Neon is proposed as a post-processing method requiring <1% additional training compute: the model is first fine-tuned on its own synthetic data (causing degradation), then negatively extrapolated away from the degraded weights. The paper proves that mode-seeking samplers cause anti-alignment between synthetic and real data gradients, so negative extrapolation is equivalent to optimizing toward the real data distribution. On ImageNet 256×256, xAR-L achieves SOTA FID of 1.02.
+  [ICLR 2026 Oral][Image Generation][self-training] Neon is proposed as a post-processing method requiring &lt;1% additional training compute: the model is first fine-tuned on its own synthetic data (causing degradation)…
 tags:
-  - ICLR 2026 Oral
-  - Image Generation
-  - self-training
-  - model collapse
-  - weight merging
-  - negative extrapolation
-  - FID
+  - "ICLR 2026 Oral"
+  - "Image Generation"
+  - "self-training"
+  - "model collapse"
+  - "weight merging"
+  - "negative extrapolation"
+  - "FID"
 date: 2026-05-08
 content_hash: 5599fefa7a8b147f
 ---

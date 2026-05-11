@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] How Hard Is It to Rig a Tournament When Few Players Can Beat or Be Beaten by the Favorite?
 description: >-
-  [AAAI 2026][tournament fixing] This paper introduces two novel structural parameters — the in-degree $k$ and out-degree $\ell$ of the favorite player in the tournament digraph — for analyzing the Tournament Fixing Problem (TFP). It proves that TFP is FPT under both parameterizations, where the in-degree algorithm involves sophisticated structural analysis and the color coding technique.
+  [AAAI 2026][tournament fixing] This paper introduces two novel structural parameters — the in-degree $k$ and out-degree $\ell$ of the favorite player in the tournament digraph — for analyzing the Tournament Fixing Proble…
 tags:
-  - AAAI 2026
-  - tournament fixing
-  - knockout tournament
-  - parameterized complexity
-  - FPT
-  - color coding
+  - "AAAI 2026"
+  - "tournament fixing"
+  - "knockout tournament"
+  - "parameterized complexity"
+  - "FPT"
+  - "color coding"
 date: 2026-05-08
 content_hash: 5dbde3c86a1f1207
 ---

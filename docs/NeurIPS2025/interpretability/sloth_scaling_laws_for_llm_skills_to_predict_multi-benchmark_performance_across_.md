@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Sloth: Scaling Laws for LLM Skills to Predict Multi-Benchmark Performance Across Families
 description: >-
-  [NeurIPS 2025][scaling laws] This paper proposes Skills Scaling Laws (Sloth), which assumes that LLM performance is driven by low-dimensional latent skills (e.g., reasoning, instruction following). By exploiting inter-benchmark correlations, Sloth constructs scaling laws that generalize across model families, enabling prediction of large-model performance on multiple benchmarks using only a small amount of family-specific data.
+  [NeurIPS 2025][Interpretability][scaling laws] This paper proposes Skills Scaling Laws (Sloth), which assumes that LLM performance is driven by low-dimensional latent skills (e.g., reasoning…
 tags:
-  - NeurIPS 2025
-  - scaling laws
-  - LLM benchmarks
-  - latent skills
-  - factor analysis
-  - performance prediction
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "scaling laws"
+  - "LLM benchmarks"
+  - "latent skills"
+  - "factor analysis"
+  - "performance prediction"
 date: 2026-05-08
 content_hash: 9c9a2998845c10d9
 ---

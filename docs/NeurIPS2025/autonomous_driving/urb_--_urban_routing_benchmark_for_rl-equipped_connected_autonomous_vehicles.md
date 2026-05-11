@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] URB -- Urban Routing Benchmark for RL-Equipped Connected Autonomous Vehicles
 description: >-
-  [NeurIPS 2025][Autonomous Driving][Urban routing benchmark] This paper presents URB — the first large-scale MARL benchmark environment for urban mixed-traffic (human + CAV) routing, integrating 29 real-world traffic networks, the microscopic traffic simulator SUMO, and empirical travel demand patterns. Experiments reveal that current state-of-the-art MARL algorithms rarely outperform human drivers, highlighting the urgent need for algorithmic advances in this domain.
+  [NeurIPS 2025][Autonomous Driving][Urban routing benchmark] This paper presents URB — the first large-scale MARL benchmark environment for urban mixed-traffic (human + CAV) routing…
 tags:
-  - NeurIPS 2025
-  - Autonomous Driving
-  - Urban routing benchmark
-  - multi-agent reinforcement learning
-  - traffic simulation
-  - game theory
+  - "NeurIPS 2025"
+  - "Autonomous Driving"
+  - "Urban routing benchmark"
+  - "multi-agent reinforcement learning"
+  - "traffic simulation"
+  - "game theory"
 date: 2026-05-08
 content_hash: 1724ba5a804036f1
 ---

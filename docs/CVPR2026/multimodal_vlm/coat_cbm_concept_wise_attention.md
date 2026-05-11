@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Concept-wise Attention for Fine-grained Concept Bottleneck Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Concept Bottleneck Models] CoAt-CBM achieves adaptive fine-grained image–concept alignment via learnable concept-wise visual queries and Concept Contrastive Optimization (CCO), surpassing both existing concept bottleneck models and black-box models while maintaining high interpretability.
+  [CVPR 2026][Multimodal VLM][Concept Bottleneck Models] CoAt-CBM achieves adaptive fine-grained image–concept alignment via learnable concept-wise visual queries and Concept Contrastive Optimization (CCO)…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Concept Bottleneck Models
-  - Interpretability
-  - CLIP
-  - Contrastive Learning
-  - Fine-grained Alignment
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Concept Bottleneck Models"
+  - "Interpretability"
+  - "CLIP"
+  - "Contrastive Learning"
+  - "Fine-grained Alignment"
 date: 2026-05-08
 content_hash: ceeee7243432bb76
 ---

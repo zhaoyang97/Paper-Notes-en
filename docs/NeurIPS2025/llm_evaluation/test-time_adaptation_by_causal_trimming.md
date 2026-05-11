@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Test-Time Adaptation by Causal Trimming
 description: >-
-  [NeurIPS 2025][LLM Evaluation][test-time adaptation] This paper proposes TACT, a method that identifies non-causal directions in the representation space via data augmentation and PCA, then removes the projections of both test representations and class prototypes along these directions at test time. This reduces model reliance on non-causal features and significantly improves prediction performance under distribution shift.
+  [NeurIPS 2025][LLM Evaluation][test-time adaptation] This paper proposes TACT, a method that identifies non-causal directions in the representation space via data augmentation and PCA…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - test-time adaptation
-  - causal features
-  - PCA
-  - non-causal feature trimming
-  - distribution shift
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "test-time adaptation"
+  - "causal features"
+  - "PCA"
+  - "non-causal feature trimming"
+  - "distribution shift"
 date: 2026-05-08
 content_hash: 9a9c264d58efb919
 ---

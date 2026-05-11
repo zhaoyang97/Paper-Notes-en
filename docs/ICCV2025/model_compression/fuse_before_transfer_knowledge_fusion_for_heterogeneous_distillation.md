@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Fuse Before Transfer: Knowledge Fusion for Heterogeneous Distillation
 description: >-
-  [ICCV 2025][Model Compression][Cross-architecture knowledge distillation] This paper proposes FBT (Fuse Before Transfer), which mitigates the feature gap in cross-architecture knowledge distillation (CAKD) by first fusing modules (CNN/MSA/MLP) from heterogeneous teachers and students to construct an adaptive intermediate fusion model before knowledge transfer, and replaces the conventional MSE loss with a spatial-agnostic InfoNCE loss. FBT achieves an average improvement of 8.38% on CIFAR-100 and 2.31% on ImageNet-1K.
+  [ICCV 2025][Model Compression][Cross-architecture knowledge distillation] This paper proposes FBT (Fuse Before Transfer), which mitigates the feature gap in cross-architecture knowledge distillation (CAKD) by first fusin…
 tags:
-  - ICCV 2025
-  - Model Compression
-  - Cross-architecture knowledge distillation
-  - heterogeneous model fusion
-  - CNN-ViT-MLP
-  - InfoNCE loss
-  - feature alignment
+  - "ICCV 2025"
+  - "Model Compression"
+  - "Cross-architecture knowledge distillation"
+  - "heterogeneous model fusion"
+  - "CNN-ViT-MLP"
+  - "InfoNCE loss"
+  - "feature alignment"
 date: 2026-05-08
 content_hash: 28246cca53c9a74b
 ---

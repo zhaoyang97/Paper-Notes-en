@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UniRain: Unified Image Deraining with RAG-based Dataset Distillation and Multi-objective Reweighted Optimization
 description: >-
-  [CVPR 2026][Image Restoration][Unified Deraining] This paper proposes UniRain, a unified image deraining framework that employs RAG-driven dataset distillation to select high-quality samples from million-scale public datasets, combined with an asymmetric MoE architecture and a multi-objective reweighted optimization strategy, achieving consistently superior performance across four degradation types: rain streaks and raindrops under both daytime and nighttime conditions.
+  [CVPR 2026][Image Restoration][Unified Deraining] This paper proposes UniRain, a unified image deraining framework that employs RAG-driven dataset distillation to select high-quality samples from million-scale public dat…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Unified Deraining
-  - RAG Dataset Distillation
-  - Multi-objective Optimization
-  - Mixture of Experts
-  - Day/Night
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Unified Deraining"
+  - "RAG Dataset Distillation"
+  - "Multi-objective Optimization"
+  - "Mixture of Experts"
+  - "Day/Night"
 date: 2026-05-08
 content_hash: 58156c589ed8c1a3
 ---

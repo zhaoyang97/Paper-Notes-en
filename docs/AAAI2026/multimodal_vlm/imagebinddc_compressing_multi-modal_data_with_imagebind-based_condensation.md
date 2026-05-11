@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ImageBindDC: Compressing Multi-modal Data with ImageBind-based Condensation
 description: >-
-  [AAAI 2026][Multimodal VLM][Dataset distillation] This paper proposes ImageBindDC, the first framework for multimodal data compression in the unified feature space of ImageBind. It replaces the conventional MMD with Characteristic Function Distance (CFD) and introduces a three-level distribution alignment loss covering uni-modal, cross-modal, and joint-modal objectives. On NYU-v2, the method achieves performance comparable to full-data training (97.30%) using only 5 synthetic samples per class, surpassing the previous SOTA by an absolute margin of 8.2% while reducing compression time by 4.6×.
+  [AAAI 2026][Multimodal VLM][Dataset distillation] This paper proposes ImageBindDC, the first framework for multimodal data compression in the unified feature space of ImageBind. It replaces the conventional MMD with Char…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Dataset distillation
-  - multimodal compression
-  - ImageBind
-  - characteristic function distance
-  - distribution matching
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Dataset distillation"
+  - "multimodal compression"
+  - "ImageBind"
+  - "characteristic function distance"
+  - "distribution matching"
 date: 2026-05-08
 content_hash: 590f3747d8ddd856
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Twilight: Adaptive Attention Sparsity with Hierarchical Top-p Pruning
 description: >-
-  [NeurIPS 2025][Model Compression][Attention Sparsity] This paper proposes Twilight, which replaces fixed-budget top-k attention sparsity with a top-p (nucleus sampling) inspired approach — dynamically selecting the minimum set of tokens whose cumulative attention weights reach p%, adapting to the distribution characteristics of different attention heads. Twilight achieves up to 1.4× additional speedup over state-of-the-art sparse attention methods while maintaining accuracy.
+  [NeurIPS 2025][Model Compression][Attention Sparsity] This paper proposes Twilight, which replaces fixed-budget top-k attention sparsity with a top-p (nucleus sampling) inspired approach — dynamically selecting the minim…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Attention Sparsity
-  - Adaptive Budget
-  - Top-p Sampling
-  - Long-Context Acceleration
-  - KV Cache Compression
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Attention Sparsity"
+  - "Adaptive Budget"
+  - "Top-p Sampling"
+  - "Long-Context Acceleration"
+  - "KV Cache Compression"
 date: 2026-05-08
 content_hash: 0b3f2cbfdf4ea6de
 ---

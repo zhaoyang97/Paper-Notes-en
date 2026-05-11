@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SAGE: Spuriousness-Aware Guided Prompt Exploration for Mitigating Multimodal Bias
 description: >-
-  [AAAI 2026][Multimodal VLM][Spurious correlations] This paper proposes SAGE, a training-free prompt selection method that requires no fine-tuning or external annotations. By computing inter-class separation scores for prompt templates, SAGE mitigates multimodal spurious bias in CLIP models, consistently improving Worst Group Accuracy (WGA) and Harmonic Mean (HM) across four benchmarks and five backbone models.
+  [AAAI 2026][Multimodal VLM][Spurious correlations] This paper proposes SAGE, a training-free prompt selection method that requires no fine-tuning or external annotations. By computing inter-class separation scores for pr…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Spurious correlations
-  - CLIP
-  - zero-shot classification
-  - prompt selection
-  - robustness
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Spurious correlations"
+  - "CLIP"
+  - "zero-shot classification"
+  - "prompt selection"
+  - "robustness"
 date: 2026-05-08
 content_hash: fbd860bdfdaf0ad5
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Simultaneous Swap Regret Minimization via KL-Calibration
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Swap Regret] This paper introduces KL-Calibration as a stronger calibration measure, establishes its equivalence to the swap regret of log loss, and achieves a simultaneous swap regret bound of $\tilde{\mathcal{O}}(T^{1/3})$ via non-uniform discretization and a novel randomized rounding scheme, covering a broader class of proper losses than prior work.
+  [NeurIPS 2025][Reinforcement Learning][Swap Regret] This paper introduces KL-Calibration as a stronger calibration measure, establishes its equivalence to the swap regret of log loss…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Swap Regret
-  - KL-Calibration
-  - Proper Loss
-  - Online Forecasting
-  - Blum-Mansour Reduction
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Swap Regret"
+  - "KL-Calibration"
+  - "Proper Loss"
+  - "Online Forecasting"
+  - "Blum-Mansour Reduction"
 date: 2026-05-08
 content_hash: 6d8e3d4ded867ac8
 ---

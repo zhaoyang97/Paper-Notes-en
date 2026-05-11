@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Post-training Large Language Models for Diverse High-Quality Responses
 description: >-
-  [ICLR 2026][Reinforcement Learning][diversity] This paper proposes DQO (Diversity Quality Optimization), which defines a diversity metric in semantic embedding space via determinantal point processes (DPP), and jointly optimizes it with reward signals to simultaneously improve semantic diversity and response quality during LLM post-training. DQO can be stacked on top of GRPO/PPO.
+  [ICLR 2026][Reinforcement Learning][diversity] This paper proposes DQO (Diversity Quality Optimization), which defines a diversity metric in semantic embedding space via determinantal point processes (DPP)…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - diversity
-  - determinantal point process
-  - GRPO
-  - post-training
-  - quality-diversity trade-off
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "diversity"
+  - "determinantal point process"
+  - "GRPO"
+  - "post-training"
+  - "quality-diversity trade-off"
 date: 2026-05-08
 content_hash: 9921539252ce6660
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] When Large Multimodal Models Confront Evolving Knowledge: Challenges and Explorations
 description: >-
-  [ICLR 2026][Knowledge Editing][Large Multimodal Models] This paper proposes the EVOKE benchmark to systematically evaluate the ability of Large Multimodal Models (LMMs) to incorporate evolving knowledge, identifies two core challenges (poor performance of existing methods and catastrophic forgetting induced by fine-tuning), and explores two mitigation strategies: knowledge augmentation and continual learning.
+  [ICLR 2026][Knowledge Editing][Large Multimodal Models] This paper proposes the EVOKE benchmark to systematically evaluate the ability of Large Multimodal Models (LMMs) to incorporate evolving knowledge…
 tags:
-  - ICLR 2026
-  - Knowledge Editing
-  - Large Multimodal Models
-  - Knowledge Injection
-  - Evolving Knowledge
-  - Catastrophic Forgetting
-  - Continual Learning
+  - "ICLR 2026"
+  - "Knowledge Editing"
+  - "Large Multimodal Models"
+  - "Knowledge Injection"
+  - "Evolving Knowledge"
+  - "Catastrophic Forgetting"
+  - "Continual Learning"
 date: 2026-05-08
 content_hash: 1539126a80e0aae9
 ---

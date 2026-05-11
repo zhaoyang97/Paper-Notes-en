@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Neural Bandit Based Optimal LLM Selection for a Pipeline of Tasks
 description: >-
-  [AAAI 2026][Medical Imaging][LLM selection] This paper proposes Sequential Bandits, an online learning method based on neural contextual multi-armed bandits, for selecting the optimal LLM for each subtask in a task pipeline (e.g., "summarization → diagnosis"). The method jointly optimizes accuracy and cost, and outperforms existing bandit baselines on two pipeline task benchmarks: medical diagnosis prediction and telecommunications QA.
+  [AAAI 2026][Medical Imaging][LLM selection] This paper proposes Sequential Bandits, an online learning method based on neural contextual multi-armed bandits…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - LLM selection
-  - multi-armed bandit
-  - neural contextual bandit
-  - pipeline tasks
-  - medical diagnosis prediction
-  - cost-awareness
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "LLM selection"
+  - "multi-armed bandit"
+  - "neural contextual bandit"
+  - "pipeline tasks"
+  - "medical diagnosis prediction"
+  - "cost-awareness"
 date: 2026-05-08
 content_hash: 222ed1d6a1517102
 ---

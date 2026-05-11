@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MSQ: Memory-Efficient Bit Sparsification Quantization
 description: >-
-  [ICCV 2025][Model Compression][mixed-precision quantization] MSQ is proposed to achieve mixed-precision quantization discovery by computing the least significant bit (LSB) directly from weights via a RoundClamp quantizer and imposing L1 regularization to induce sparsity, without explicitly creating bit-level trainable parameters. This reduces trainable parameters by 8× and training time by 86% while maintaining competitive accuracy–compression trade-offs.
+  [ICCV 2025][Model Compression][mixed-precision quantization] MSQ is proposed to achieve mixed-precision quantization discovery by computing the least significant bit (LSB) directly from weights via a RoundClamp quantizer…
 tags:
-  - ICCV 2025
-  - Model Compression
-  - mixed-precision quantization
-  - bit-level sparsity
-  - quantization-aware training
-  - memory-efficient
-  - Hessian
+  - "ICCV 2025"
+  - "Model Compression"
+  - "mixed-precision quantization"
+  - "bit-level sparsity"
+  - "quantization-aware training"
+  - "memory-efficient"
+  - "Hessian"
 date: 2026-05-08
 content_hash: 2c1eaccafd9d727b
 ---

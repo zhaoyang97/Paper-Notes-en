@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Fourier Angle Alignment for Oriented Object Detection in Remote Sensing
 description: >-
-  [CVPR 2026][Object Detection][Oriented object detection] By exploiting Fourier rotational equivariance to estimate the principal orientation of objects in the frequency domain and align features accordingly, this paper proposes two plug-and-play modules—FAAFusion and FAA Head—to address cross-scale directional incoherence in FPN and the classification–regression task conflict in detection heads, respectively, achieving new state-of-the-art results on DOTA-v1.0/v1.5 and HRSC2016.
+  [CVPR 2026][Object Detection][Oriented object detection] By exploiting Fourier rotational equivariance to estimate the principal orientation of objects in the frequency domain and align features accordingly…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - Oriented object detection
-  - Fourier rotational equivariance
-  - frequency-domain orientation estimation
-  - feature fusion
-  - remote sensing
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Oriented object detection"
+  - "Fourier rotational equivariance"
+  - "frequency-domain orientation estimation"
+  - "feature fusion"
+  - "remote sensing"
 date: 2026-05-08
 content_hash: 9890bac22ab0ad18
 ---

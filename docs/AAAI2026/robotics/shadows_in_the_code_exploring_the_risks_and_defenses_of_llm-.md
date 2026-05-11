@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Shadows in the Code: Exploring the Risks and Defenses of LLM-based Multi-Agent Software Development Systems
 description: >-
-  [AAAI 2026][Robotics][Multi-Agent Security] The first systematic security analysis of LLM-based multi-agent software development systems (ChatDev/MetaGPT/AgentVerse): proposes the IMBIA attack framework covering two threat scenarios (malicious user + benign agents / benign user + malicious agent) and 12 malicious behaviors across 5 malware families, achieving an attack success rate (ASR) of up to 93% on ChatDev, with the Adv-IMBIA adversarial defense reducing ASR by 40–73%.
+  [AAAI 2026][Robotics][Multi-Agent Security] The first systematic security analysis of LLM-based multi-agent software development systems (ChatDev/MetaGPT/AgentVerse): proposes the IMBIA attack framework covering two thre…
 tags:
-  - AAAI 2026
-  - Robotics
-  - Multi-Agent Security
-  - Malicious Code Injection
-  - Software Development Agents
-  - Adversarial Defense
-  - Malware Families
+  - "AAAI 2026"
+  - "Robotics"
+  - "Multi-Agent Security"
+  - "Malicious Code Injection"
+  - "Software Development Agents"
+  - "Adversarial Defense"
+  - "Malware Families"
 date: 2026-05-08
 content_hash: 2b3bc7e667d5cfd3
 ---

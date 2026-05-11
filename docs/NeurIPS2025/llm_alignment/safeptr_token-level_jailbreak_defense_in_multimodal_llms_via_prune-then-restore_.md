@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SafePTR: Token-Level Jailbreak Defense in Multimodal LLMs via Prune-then-Restore Mechanism
 description: >-
-  [NeurIPS 2025][LLM Alignment][multimodal safety] By analyzing the propagation mechanism of harmful tokens in multimodal LLMs, this work finds that fewer than 1% of tokens trigger jailbreak behavior in early-to-middle layers. Based on this finding, the training-free SafePTR framework is proposed, which prunes harmful tokens at vulnerable layers and restores benign features in subsequent layers, significantly improving safety without sacrificing task performance.
+  [NeurIPS 2025][LLM Alignment][multimodal safety] By analyzing the propagation mechanism of harmful tokens in multimodal LLMs, this work finds that fewer than 1% of tokens trigger jailbreak behavior in early-to-middle lay…
 tags:
-  - NeurIPS 2025
-  - LLM Alignment
-  - multimodal safety
-  - jailbreak defense
-  - token pruning
-  - MLLM
-  - training-free defense
+  - "NeurIPS 2025"
+  - "LLM Alignment"
+  - "multimodal safety"
+  - "jailbreak defense"
+  - "token pruning"
+  - "MLLM"
+  - "training-free defense"
 date: 2026-05-08
 content_hash: 5a15072a7e3b3bf4
 ---

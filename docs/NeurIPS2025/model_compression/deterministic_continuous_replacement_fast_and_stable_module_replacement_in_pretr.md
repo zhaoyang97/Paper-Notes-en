@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Deterministic Continuous Replacement: Fast and Stable Module Replacement in Pretrained Transformers
 description: >-
-  [NeurIPS 2025 (ScaleOPT Workshop)][Model Compression][Module replacement] DCR mixes teacher and student module outputs via a deterministic annealing weight $\alpha(t)$, eliminating the gradient variance introduced by stochastic gating (e.g., BERT-of-Theseus), and achieves faster convergence and stronger feature alignment in cold-start module replacement scenarios.
+  [NeurIPS 2025 (ScaleOPT Workshop)][Model Compression][Module replacement] DCR mixes teacher and student module outputs via a deterministic annealing weight $\alpha(t)$…
 tags:
-  - NeurIPS 2025 (ScaleOPT Workshop)
-  - Model Compression
-  - Module replacement
-  - deterministic mixing
-  - gradient variance
-  - knowledge distillation
-  - Vision Transformer
+  - "NeurIPS 2025 (ScaleOPT Workshop)"
+  - "Model Compression"
+  - "Module replacement"
+  - "deterministic mixing"
+  - "gradient variance"
+  - "knowledge distillation"
+  - "Vision Transformer"
 date: 2026-05-08
 content_hash: 731d8c38f762586c
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DeltaPhi: Physical States Residual Learning for Neural Operators in Data-Limited PDE Solving
 description: >-
-  [NeurIPS 2025][Scientific Computing][neural operators] This paper proposes DeltaPhi, a framework that forgoes direct learning of the input-to-output mapping for PDEs and instead learns **residuals between similar physical states**. By exploiting the stability of physical systems as implicit data augmentation, DeltaPhi significantly improves the performance of diverse neural operators under data-scarce regimes.
+  [NeurIPS 2025][Scientific Computing][neural operators] This paper proposes DeltaPhi, a framework that forgoes direct learning of the input-to-output mapping for PDEs and instead learns **residuals between similar physica…
 tags:
-  - NeurIPS 2025
-  - Scientific Computing
-  - neural operators
-  - residual learning
-  - data efficiency
-  - PDE solving
-  - implicit data augmentation
+  - "NeurIPS 2025"
+  - "Scientific Computing"
+  - "neural operators"
+  - "residual learning"
+  - "data efficiency"
+  - "PDE solving"
+  - "implicit data augmentation"
 date: 2026-05-08
 content_hash: 578d992fb5979ae2
 ---

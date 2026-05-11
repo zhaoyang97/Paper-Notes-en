@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] WonderTurbo: Generating Interactive 3D World in 0.72 Seconds
 description: >-
-  [ICCV 2025][3D Vision][Real-time 3D scene generation] WonderTurbo proposes the first real-time interactive 3D scene generation framework. Through the coordinated acceleration of three modules — StepSplat (feed-forward 3DGS), QuickDepth (lightweight depth completion), and FastPaint (2-step diffusion inpainting) — it compresses single-step scene extension time from 10+ seconds to 0.72 seconds, achieving a 15× speedup while maintaining generation quality comparable to WonderWorld.
+  [ICCV 2025][3D Vision][Real-time 3D scene generation] WonderTurbo proposes the first real-time interactive 3D scene generation framework. Through the coordinated acceleration of three modules — StepSplat (feed-forward 3D…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Real-time 3D scene generation
-  - Gaussian splatting
-  - depth completion
-  - diffusion distillation
-  - interactive generation
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Real-time 3D scene generation"
+  - "Gaussian splatting"
+  - "depth completion"
+  - "diffusion distillation"
+  - "interactive generation"
 date: 2026-05-08
 content_hash: 6c96c4376e462942
 ---

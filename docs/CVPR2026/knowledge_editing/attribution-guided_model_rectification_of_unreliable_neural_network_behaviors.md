@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Attribution-Guided Model Rectification of Unreliable Neural Network Behaviors
 description: >-
-  [CVPR 2026][Knowledge Editing][rank-one model editing] This paper proposes an attribution-guided dynamic model rectification framework that repurposes rank-one model editing from domain adaptation to behavior rectification. By quantifying per-layer editability via Integrated Gradients, the framework automatically localizes suspect layers and repairs three categories of unreliable behaviors—backdoor attacks, spurious correlations, and feature leakage—using as few as a single clean sample.
+  [CVPR 2026][Knowledge Editing][rank-one model editing] This paper proposes an attribution-guided dynamic model rectification framework that repurposes rank-one model editing from domain adaptation to behavior rectificati…
 tags:
-  - CVPR 2026
-  - Knowledge Editing
-  - rank-one model editing
-  - attribution analysis
-  - backdoor defense
-  - spurious correlations
-  - model rectification
+  - "CVPR 2026"
+  - "Knowledge Editing"
+  - "rank-one model editing"
+  - "attribution analysis"
+  - "backdoor defense"
+  - "spurious correlations"
+  - "model rectification"
 date: 2026-05-08
 content_hash: 5a8f75a16132e3b4
 ---

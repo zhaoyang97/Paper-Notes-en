@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mixture of States (MoS): Routing Token-Level Dynamics for Multimodal Generation
 description: >-
-  [CVPR 2026][Multimodal VLM][multimodal fusion] This paper proposes Mixture of States (MoS), a novel fusion paradigm for multimodal diffusion models. A lightweight, learnable token-level router dynamically routes hidden states from arbitrary layers of an understanding tower (frozen LLM/VLM) to arbitrary layers of a generation tower (DiT). With only 3–5B parameters, MoS matches or surpasses the 20B Qwen-Image on both image generation and editing benchmarks.
+  [CVPR 2026][Multimodal VLM][multimodal fusion] This paper proposes Mixture of States (MoS), a novel fusion paradigm for multimodal diffusion models. A lightweight…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - multimodal fusion
-  - state routing
-  - T2I/image editing
-  - asymmetric Transformer
-  - token-level dynamics
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "multimodal fusion"
+  - "state routing"
+  - "T2I/image editing"
+  - "asymmetric Transformer"
+  - "token-level dynamics"
 date: 2026-05-08
 content_hash: 166115612a99c04a
 ---

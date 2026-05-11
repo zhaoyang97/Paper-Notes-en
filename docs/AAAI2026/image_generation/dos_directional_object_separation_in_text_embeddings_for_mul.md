@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DOS: Directional Object Separation in Text Embeddings for Multi-Object Image Generation
 description: >-
-  [AAAI 2026][Image Generation][multi-object image generation] This paper identifies four failure scenarios in multi-object generation (similar shapes/textures, dissimilar background biases, many objects), constructs directional separation vectors to modify three types of CLIP text embeddings (semantic token / EOT / pooled), achieves a 16–25% improvement in success rate and a 3–12% reduction in mixing rate on SDXL, with inference speed close to baseline (~4× faster than Attend-and-Excite).
+  [AAAI 2026][Image Generation][multi-object image generation] This paper identifies four failure scenarios in multi-object generation (similar shapes/textures, dissimilar background biases, many objects)…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - multi-object image generation
-  - text embedding separation
-  - object mixing
-  - CLIP embeddings
-  - directional separation
+  - "AAAI 2026"
+  - "Image Generation"
+  - "multi-object image generation"
+  - "text embedding separation"
+  - "object mixing"
+  - "CLIP embeddings"
+  - "directional separation"
 date: 2026-05-08
 content_hash: a32a293af78cd03e
 ---

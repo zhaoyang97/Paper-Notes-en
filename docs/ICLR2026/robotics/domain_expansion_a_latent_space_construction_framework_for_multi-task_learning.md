@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Domain Expansion: A Latent Space Construction Framework for Multi-Task Learning
 description: >-
-  [ICLR 2026][Robotics][multi-task learning] This paper proposes the Domain Expansion framework, which restructures the latent space into mutually orthogonal subspaces via Orthogonal Pooling, structurally preventing gradient conflicts and representation collapse in multi-objective training, and enabling interpretable, composable concept algebra.
+  [ICLR 2026][Robotics][multi-task learning] This paper proposes the Domain Expansion framework, which restructures the latent space into mutually orthogonal subspaces via Orthogonal Pooling…
 tags:
-  - ICLR 2026
-  - Robotics
-  - multi-task learning
-  - orthogonal pooling
-  - latent space construction
-  - representation collapse
-  - composable representations
+  - "ICLR 2026"
+  - "Robotics"
+  - "multi-task learning"
+  - "orthogonal pooling"
+  - "latent space construction"
+  - "representation collapse"
+  - "composable representations"
 date: 2026-05-08
 content_hash: e5f91b50da78bdae
 ---

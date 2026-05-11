@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VASA-3D: Lifelike Audio-Driven Gaussian Head Avatars from a Single Image
 description: >-
-  [NeurIPS 2025][Human Understanding][3D head avatars] This paper presents VASA-3D, which adapts VASA-1's 2D motion latent space to a 3D Gaussian splatting representation and leverages VASA-1-synthesized training data for single-image customization, enabling real-time generation (512×512, 75 fps) of lifelike audio-driven 3D head avatars from a single portrait image.
+  [NeurIPS 2025][Human Understanding][3D head avatars] This paper presents VASA-3D, which adapts VASA-1's 2D motion latent space to a 3D Gaussian splatting representation and leverages VASA-1-synthesized training data for…
 tags:
-  - NeurIPS 2025
-  - Human Understanding
-  - 3D head avatars
-  - audio-driven
-  - Gaussian splatting
-  - VASA motion latent space
-  - single-image reconstruction
+  - "NeurIPS 2025"
+  - "Human Understanding"
+  - "3D head avatars"
+  - "audio-driven"
+  - "Gaussian splatting"
+  - "VASA motion latent space"
+  - "single-image reconstruction"
 date: 2026-05-08
 content_hash: c30677749e8836f9
 ---

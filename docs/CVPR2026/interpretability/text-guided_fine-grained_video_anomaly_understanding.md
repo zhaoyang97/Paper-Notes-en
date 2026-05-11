@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Text-guided Fine-Grained Video Anomaly Understanding
 description: >-
-  [CVPR2026][Video Anomaly Detection] This paper proposes the T-VAU framework, which achieves pixel-level spatiotemporal anomaly localization via an Anomaly Heatmap Decoder (AHD), and introduces a Region-Aware Anomaly Encoder (RAE) that injects heatmap evidence into an LVLM for unified reasoning over anomaly detection, localization, and semantic explanation.
+  [CVPR2026][Interpretability][Video Anomaly Detection] This paper proposes the T-VAU framework, which achieves pixel-level spatiotemporal anomaly localization via an Anomaly Heatmap Decoder (AHD)…
 tags:
-  - CVPR2026
-  - Video Anomaly Detection
-  - Anomaly Heatmap
-  - Region-Aware Encoder
-  - Large Vision-Language Model
-  - Multi-turn Dialogue
+  - "CVPR2026"
+  - "Interpretability"
+  - "Video Anomaly Detection"
+  - "Anomaly Heatmap"
+  - "Region-Aware Encoder"
+  - "Large Vision-Language Model"
+  - "Multi-turn Dialogue"
 date: 2026-05-08
 content_hash: 31ee3cc6e0fab0ef
 ---

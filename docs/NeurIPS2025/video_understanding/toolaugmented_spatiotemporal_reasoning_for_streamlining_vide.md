@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Tool-Augmented Spatiotemporal Reasoning for Streamlining Video Question Answering Task
 description: >-
-  [NeurIPS2025][Video Understanding][VideoQA] This paper proposes a video toolkit comprising 22 tools and the STAR (Spatiotemporal Reasoning) framework, which progressively localizes a 3D Region of Interest (RoI) via an alternating temporal–spatial tool scheduling strategy. The approach improves GPT-4o by 8.2% on VideoMME while substantially reducing the number of processed frames and computational overhead.
+  [NeurIPS2025][Video Understanding][VideoQA] This paper proposes a video toolkit comprising 22 tools and the STAR (Spatiotemporal Reasoning) framework…
 tags:
-  - NeurIPS2025
-  - Video Understanding
-  - VideoQA
-  - tool-augmented LLM
-  - spatiotemporal reasoning
-  - agentic framework
-  - video toolkit
+  - "NeurIPS2025"
+  - "Video Understanding"
+  - "VideoQA"
+  - "tool-augmented LLM"
+  - "spatiotemporal reasoning"
+  - "agentic framework"
+  - "video toolkit"
 date: 2026-05-08
 content_hash: 3aa0f0f383c996c4
 ---

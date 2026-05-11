@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] STCast: Adaptive Boundary Alignment for Global and Regional Weather Forecasting
 description: >-
-  [CVPR 2026][Time Series][weather forecasting] This paper proposes STCast, a framework that replaces static boundary cropping with learnable global-regional distributions via Spatial-Aligned Attention (SAA) to adaptively integrate global atmospheric information into regional forecasting, and employs Temporal Mixture-of-Experts (TMoE) with month-conditioned dynamic routing to enhance temporal modeling. STCast achieves state-of-the-art performance across four tasks: global forecasting, high-resolution regional forecasting, typhoon track prediction, and ensemble forecasting.
+  [CVPR 2026][Time Series][weather forecasting] This paper proposes STCast, a framework that replaces static boundary cropping with learnable global-regional distributions via Spatial-Aligned Attention (SAA) to adaptively…
 tags:
-  - CVPR 2026
-  - Time Series
-  - weather forecasting
-  - spatial-aligned attention
-  - temporal MoE
-  - global-regional coupling
-  - adaptive boundary
+  - "CVPR 2026"
+  - "Time Series"
+  - "weather forecasting"
+  - "spatial-aligned attention"
+  - "temporal MoE"
+  - "global-regional coupling"
+  - "adaptive boundary"
 date: 2026-05-08
 content_hash: 2ca65219bb3e1b58
 ---

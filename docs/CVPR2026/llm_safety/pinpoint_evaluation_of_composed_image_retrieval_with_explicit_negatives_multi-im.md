@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PinPoint: Evaluation of Composed Image Retrieval with Explicit Negatives, Multi-Image Queries, and Paraphrase Testing
 description: >-
-  [CVPR 2026][LLM Safety][Composed Image Retrieval] This paper proposes the PinPoint benchmark, comprising 7,635 queries and 329K human-verified relevance judgments. Through four dimensions—explicit negatives, multi-image queries, paraphrase variants, and demographic metadata—it exposes severe deficiencies in existing CIR methods regarding false positive suppression, linguistic robustness, and multi-image reasoning. A training-free MLLM-based reranking method is also proposed as an improved baseline.
+  [CVPR 2026][LLM Safety][Composed Image Retrieval] This paper proposes the PinPoint benchmark, comprising 7,635 queries and 329K human-verified relevance judgments. Through four dimensions—explicit negatives…
 tags:
-  - CVPR 2026
-  - LLM Safety
-  - Composed Image Retrieval
-  - evaluation benchmark
-  - explicit negatives
-  - multi-image queries
-  - linguistic robustness
+  - "CVPR 2026"
+  - "LLM Safety"
+  - "Composed Image Retrieval"
+  - "evaluation benchmark"
+  - "explicit negatives"
+  - "multi-image queries"
+  - "linguistic robustness"
 date: 2026-05-08
 content_hash: a48ec27e580e1381
 ---

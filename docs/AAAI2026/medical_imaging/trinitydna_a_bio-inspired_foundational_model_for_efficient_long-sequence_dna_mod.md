@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] TrinityDNA: A Bio-Inspired Foundational Model for Efficient Long-Sequence DNA Modeling
 description: >-
-  [AAAI 2026][Medical Imaging][DNA foundation model] TrinityDNA is a bio-inspired DNA foundation model integrating three innovations: a Groove Fusion module for capturing major/minor groove structural features, a Gated Reverse Complement mechanism for handling double-strand complementary symmetry, and Sliding Multi-Window Attention for multi-scale long-range dependency modeling. Combined with an Evolutionary Training Strategy (ETS) progressing from prokaryotes to eukaryotes, TrinityDNA achieves an average MCC of 0.708 across 15 GUE benchmark tasks (surpassing NT with 2.5B parameters), leads on both prokaryotic and eukaryotic zero-shot tasks across 19 benchmarks, and introduces a new CDS annotation benchmark for long-sequence inference evaluation.
+  [AAAI 2026][Medical Imaging][DNA foundation model] TrinityDNA is a bio-inspired DNA foundation model integrating three innovations: a Groove Fusion module for capturing major/minor groove structural features…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - DNA foundation model
-  - long-sequence modeling
-  - reverse complement
-  - groove fusion
-  - multi-window attention
-  - evolutionary training strategy
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "DNA foundation model"
+  - "long-sequence modeling"
+  - "reverse complement"
+  - "groove fusion"
+  - "multi-window attention"
+  - "evolutionary training strategy"
 date: 2026-05-08
 content_hash: fce35b6511d94b2e
 ---

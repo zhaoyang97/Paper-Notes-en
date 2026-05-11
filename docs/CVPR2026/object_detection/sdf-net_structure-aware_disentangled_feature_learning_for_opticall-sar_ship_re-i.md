@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SDF-Net: Structure-Aware Disentangled Feature Learning for Optical–SAR Ship Re-Identification
 description: >-
-  [CVPR2026][Object Detection][Optical-SAR Cross-Modal Matching] SDF-Net is proposed to exploit the rigid-body geometric structure of ships as a cross-modal invariant anchor. It enforces structural consistency via gradient energy extracted from intermediate layers, and disentangles modality-shared/specific features at the terminal layer with additive residual fusion, achieving SOTA on HOSS-ReID (All mAP 60.9%, surpassing TransOSS by 3.5%).
+  [CVPR2026][Object Detection][Optical-SAR Cross-Modal Matching] SDF-Net is proposed to exploit the rigid-body geometric structure of ships as a cross-modal invariant anchor. It enforces structural consistency via gradient…
 tags:
-  - CVPR2026
-  - Object Detection
-  - Optical-SAR Cross-Modal Matching
-  - Ship Re-Identification
-  - Feature Disentanglement
-  - Structural Consistency
-  - Vision Transformer
+  - "CVPR2026"
+  - "Object Detection"
+  - "Optical-SAR Cross-Modal Matching"
+  - "Ship Re-Identification"
+  - "Feature Disentanglement"
+  - "Structural Consistency"
+  - "Vision Transformer"
 date: 2026-05-08
 content_hash: 8a122baccb676cfa
 ---

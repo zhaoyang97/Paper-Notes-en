@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] Overcoming Sparsity Artifacts in Crosscoders to Interpret Chat-Tuning
 description: >-
-  [NeurIPS 2025][Recommender Systems] This work identifies two categories of sparsity artifacts introduced by L1 loss in Crosscoders—Complete Shrinkage (which erroneously zeros out weakly shared concepts) and Latent Decoupling (which splits shared concepts into spurious model-specific latents)—and proposes Latent Scaling as a diagnostic tool and BatchTopK Crosscoder as an alternative training scheme, substantially improving the reliability of chat-tuning concept discovery.
+  [NeurIPS 2025][Recommender Systems] This work identifies two categories of sparsity artifacts introduced by L1 loss in Crosscoders—Complete Shrinkage (which erroneously zeros out weakly shared concepts) and Latent Decoup…
 tags:
-  - NeurIPS 2025
-  - Recommender Systems
+  - "NeurIPS 2025"
+  - "Recommender Systems"
 date: 2026-05-08
 content_hash: 6edbfd9009b41336
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Connecting the Dots: Training-Free Visual Grounding via Agentic Reasoning
 description: >-
-  [AAAI 2026][Object Detection][Visual Grounding] This paper proposes GroundingAgent, a visual grounding framework that requires no task-specific fine-tuning. By composing pretrained open-vocabulary detectors (YOLO World), an MLLM (Llama-3.2-11B-Vision), and an LLM (DeepSeek-V3) into a structured iterative reasoning pipeline, the method achieves a zero-shot average accuracy of 65.1% on RefCOCO/+/g, substantially outperforming prior zero-shot approaches.
+  [AAAI 2026][Object Detection][Visual Grounding] This paper proposes GroundingAgent, a visual grounding framework that requires no task-specific fine-tuning. By composing pretrained open-vocabulary detectors (YOLO World)…
 tags:
-  - AAAI 2026
-  - Object Detection
-  - Visual Grounding
-  - training-free
-  - Agentic Reasoning
-  - Chain-of-Thought
-  - Open-Vocabulary Detection
+  - "AAAI 2026"
+  - "Object Detection"
+  - "Visual Grounding"
+  - "training-free"
+  - "Agentic Reasoning"
+  - "Chain-of-Thought"
+  - "Open-Vocabulary Detection"
 date: 2026-05-08
 content_hash: 2bc17bc5275f5460
 ---

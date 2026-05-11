@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] CHLU: The Causal Hamiltonian Learning Unit as a Symplectic Primitive for Deep Learning
 description: >-
-  [ICLR 2026][Hamiltonian Neural Networks] CHLU is a computational learning primitive grounded in relativistic Hamiltonian mechanics and symplectic integration. By enforcing phase-space volume conservation and introducing a causal velocity upper bound, it addresses gradient explosion/vanishing in LSTMs and information dissipation in Neural ODEs, achieving infinite-horizon stability and thermodynamic generative capability.
+  [ICLR 2026][Hamiltonian Neural Networks] CHLU is a computational learning primitive grounded in relativistic Hamiltonian mechanics and symplectic integration. By enforcing phase-space volume conservation and introducing…
 tags:
-  - ICLR 2026
-  - Hamiltonian Neural Networks
-  - Symplectic Integration
-  - Relativistic Kinetic Energy
-  - Energy Conservation
-  - Long-Term Stability
+  - "ICLR 2026"
+  - "Hamiltonian Neural Networks"
+  - "Symplectic Integration"
+  - "Relativistic Kinetic Energy"
+  - "Energy Conservation"
+  - "Long-Term Stability"
 date: 2026-05-08
 content_hash: 5ac10bd1ff14d9f1
 ---

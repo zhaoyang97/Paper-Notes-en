@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] What's in a Latent? Leveraging Diffusion Latent Space for Domain Generalization
 description: >-
-  [ICCV 2025][Image Generation][Domain Generalization] This paper systematically analyzes the domain separation capacity of latent spaces from six pretrained models (CLIP, DiT, SD, MAE, DINOv2, ResNet) and demonstrates that diffusion model features are most effective at separating domain information in an unsupervised setting. Building on this insight, the authors propose GUIDE — a framework that leverages diffusion features to discover pseudo-domain representations and augment classifier features — achieving 66.3% average accuracy across five DomainBed datasets without domain labels (surpassing the ERM baseline by +2.6% and +4.3% on TerraIncognita), while outperforming most methods that require domain labels.
+  [ICCV 2025][Image Generation][Domain Generalization] This paper systematically analyzes the domain separation capacity of latent spaces from six pretrained models (CLIP, DiT, SD, MAE, DINOv2…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Domain Generalization
-  - Diffusion Features
-  - Pseudo-Domain Discovery
-  - Latent Space Analysis
-  - Label-Free Domain
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Domain Generalization"
+  - "Diffusion Features"
+  - "Pseudo-Domain Discovery"
+  - "Latent Space Analysis"
+  - "Label-Free Domain"
 date: 2026-05-08
 content_hash: f6e1c3d5fd22c290
 ---

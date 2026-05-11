@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Faithful-First Reasoning, Planning, and Acting for Multimodal LLMs
 description: >-
-  [ACL 2026][Multimodal VLM][Perceptual faithfulness] This paper proposes the Faithful-First RPA framework, which employs the FaithEvi pipeline to evaluate perceptual faithfulness at each reasoning step (i.e., whether claimed objects genuinely exist in the image), and the FaithAct mechanism to enforce evidence-grounded planning and acting during reasoning generation. The framework improves perceptual faithfulness by up to 24% without degrading task accuracy.
+  [ACL 2026][Multimodal VLM][Perceptual faithfulness] This paper proposes the Faithful-First RPA framework, which employs the FaithEvi pipeline to evaluate perceptual faithfulness at each reasoning step (i.e.…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Perceptual faithfulness
-  - reasoning planning and acting
-  - multimodal hallucination
-  - visual evidence verification
-  - step-by-step reasoning
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Perceptual faithfulness"
+  - "reasoning planning and acting"
+  - "multimodal hallucination"
+  - "visual evidence verification"
+  - "step-by-step reasoning"
 date: 2026-05-08
 content_hash: b41410b95bf21005
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TRACE: Unleashing Spatial Reasoning in Multimodal Large Language Models via Textual Representation Guided Reasoning
 description: >-
-  [ACL 2026][Multimodal VLM][spatial reasoning] This paper proposes TRACE (Textual Representation of Allocentric Context from Egocentric Video), a prompting method that guides multimodal large language models to generate structured textual allocentric 3D environment representations from egocentric video—comprising meta context, camera trajectory, and an entity registry—as intermediate reasoning steps to enhance spatial question answering. TRACE consistently outperforms existing prompting strategies on both VSI-Bench and OST-Bench.
+  [ACL 2026][Multimodal VLM][spatial reasoning] This paper proposes TRACE (Textual Representation of Allocentric Context from Egocentric Video)…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - spatial reasoning
-  - multimodal large language models
-  - textual representation
-  - egocentric video
-  - prompt engineering
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "spatial reasoning"
+  - "multimodal large language models"
+  - "textual representation"
+  - "egocentric video"
+  - "prompt engineering"
 date: 2026-05-08
 content_hash: 959b7aaeb1e8d792
 ---

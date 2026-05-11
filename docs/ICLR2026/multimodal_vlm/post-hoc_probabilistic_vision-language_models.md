@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Post-hoc Probabilistic Vision-Language Models
 description: >-
-  [ICLR 2026][Multimodal VLM][vision-language models] A training-free post-hoc uncertainty estimation method is proposed that applies Laplace approximation to the last few layers of VLMs such as CLIP and SigLIP, and analytically derives uncertainty over cosine similarity. The method achieves substantial improvements over baselines in both uncertainty quantification and active learning.
+  [ICLR 2026][Multimodal VLM][vision-language models] A training-free post-hoc uncertainty estimation method is proposed that applies Laplace approximation to the last few layers of VLMs such as CLIP and SigLIP…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - vision-language models
-  - uncertainty quantification
-  - Bayesian inference
-  - Laplace approximation
-  - active learning
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "vision-language models"
+  - "uncertainty quantification"
+  - "Bayesian inference"
+  - "Laplace approximation"
+  - "active learning"
 date: 2026-05-08
 content_hash: 89b05f953fbeb6db
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Prime Once, then Reprogram Locally: An Efficient Alternative to Black-Box Service Model Adaptation
 description: >-
-  [CVPR 2026][Multimodal VLM][Model-as-a-Service] This paper proposes AReS, which replaces the continuous API calls of conventional zeroth-order optimization (ZOO) with a single-round API query to prime a local encoder. AReS achieves a +27.8% improvement on GPT-4o (where ZOO methods are nearly ineffective), while reducing API calls by over 99.99% and enabling zero-cost inference.
+  [CVPR 2026][Multimodal VLM][Model-as-a-Service] This paper proposes AReS, which replaces the continuous API calls of conventional zeroth-order optimization (ZOO) with a single-round API query to prime a local encoder. AR…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Model-as-a-Service
-  - black-box adaptation
-  - visual reprogramming
-  - zeroth-order optimization
-  - API-efficient utilization
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Model-as-a-Service"
+  - "black-box adaptation"
+  - "visual reprogramming"
+  - "zeroth-order optimization"
+  - "API-efficient utilization"
 date: 2026-05-08
 content_hash: bc9cab5a2c68e0fa
 ---

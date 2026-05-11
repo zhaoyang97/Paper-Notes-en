@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Training-Free Constrained Generation with Stable Diffusion Models
 description: >-
-  [NeurIPS 2025][Image Generation][Constrained Generation] This paper proposes a training-free constrained generation method that embeds Proximal Langevin Dynamics into the reverse denoising process of Stable Diffusion. Image-space constraints are backpropagated to the latent space via the decoder, enabling strict constraint satisfaction on generated outputs without retraining.
+  [NeurIPS 2025][Image Generation][Constrained Generation] This paper proposes a training-free constrained generation method that embeds Proximal Langevin Dynamics into the reverse denoising process of Stable Diffusion. Im…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Constrained Generation
-  - Stable Diffusion
-  - Proximal Mapping
-  - Latent Space Correction
-  - Training-Free
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Constrained Generation"
+  - "Stable Diffusion"
+  - "Proximal Mapping"
+  - "Latent Space Correction"
+  - "Training-Free"
 date: 2026-05-08
 content_hash: 055c19aaca373d8a
 ---

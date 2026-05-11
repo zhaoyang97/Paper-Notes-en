@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Learnable Fractional Reaction-Diffusion Dynamics for Under-Display ToF Imaging and Beyond
 description: >-
-  [ICCV 2025][Under-display ToF imaging] LFRD² proposes a hybrid framework that combines learnable time-fractional reaction-diffusion equations with neural networks for under-display ToF (UD-ToF) depth map restoration. The approach captures long-range memory dependencies across iterations via fractional calculus and introduces an efficient continuous convolution operator to replace discrete convolution, achieving state-of-the-art performance on UD-ToF depth restoration, ToF denoising, and depth super-resolution tasks.
+  [ICCV 2025][Interpretability][Under-display ToF imaging] LFRD² proposes a hybrid framework that combines learnable time-fractional reaction-diffusion equations with neural networks for under-display ToF (UD-ToF) depth ma…
 tags:
-  - ICCV 2025
-  - Under-display ToF imaging
-  - fractional reaction-diffusion
-  - continuous convolution
-  - depth restoration
-  - physics-driven
+  - "ICCV 2025"
+  - "Interpretability"
+  - "Under-display ToF imaging"
+  - "fractional reaction-diffusion"
+  - "continuous convolution"
+  - "depth restoration"
+  - "physics-driven"
 date: 2026-05-08
 content_hash: 408a2669f09cb3cc
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Accelerating Diffusion Model Training under Minimal Budgets: A Condensation-Based Perspective
 description: >-
-  [CVPR 2026][Image Generation][Dataset Condensation] This paper proposes D2C (Diffusion Dataset Condensation)—the first dataset condensation framework for diffusion models—which achieves 100–233× training speedup while maintaining high-quality image generation by using only 0.8–8% of ImageNet data through a two-stage "Select + Attach" pipeline.
+  [CVPR 2026][Image Generation][Dataset Condensation] This paper proposes D2C (Diffusion Dataset Condensation)—the first dataset condensation framework for diffusion models—which achieves 100–233× training speedup while ma…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Dataset Condensation
-  - Diffusion Model
-  - Training Acceleration
-  - Data-Centric
-  - Efficient Training
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Dataset Condensation"
+  - "Diffusion Model"
+  - "Training Acceleration"
+  - "Data-Centric"
+  - "Efficient Training"
 date: 2025-07-08
 content_hash: 137f2b6dc3a944cd
 ---

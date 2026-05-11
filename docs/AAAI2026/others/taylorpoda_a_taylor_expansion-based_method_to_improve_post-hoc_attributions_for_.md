@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] TaylorPODA: A Taylor Expansion-Based Method to Improve Post-Hoc Attributions for Opaque Models
 description: >-
-  [AAAI 2026][local attribution] Under the Taylor expansion framework, three postulates—precision, federation, and zero-discrepancy—are proposed to regulate feature attribution. An adaptation property is further introduced to optimize the allocation weights of interaction effects via an AUP objective, making TaylorPODA the only post-hoc, model-agnostic attribution method that simultaneously satisfies all postulates and properties.
+  [AAAI 2026][local attribution] Under the Taylor expansion framework, three postulates—precision, federation, and zero-discrepancy—are proposed to regulate feature attribution. An adaptation property is further introduced…
 tags:
-  - AAAI 2026
-  - local attribution
-  - Taylor expansion
-  - post-hoc explainability
-  - feature interaction
-  - AUP optimization
+  - "AAAI 2026"
+  - "local attribution"
+  - "Taylor expansion"
+  - "post-hoc explainability"
+  - "feature interaction"
+  - "AUP optimization"
 date: 2026-05-08
 content_hash: 75d69e51fc426a80
 ---

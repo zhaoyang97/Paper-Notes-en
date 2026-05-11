@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] AIM: Amending Inherent Interpretability via Self-Supervised Masking
 description: >-
-  [ICCV 2025][self-supervised masking] This paper proposes AIM, a top-down learnable binary masking mechanism for self-supervised spatial feature selection, built upon a feature pyramid architecture. Without requiring additional annotations, AIM guides CNNs to focus on genuinely discriminative features and suppress spurious correlations, simultaneously achieving inherent interpretability and improved OOD generalization.
+  [ICCV 2025][Interpretability][self-supervised masking] This paper proposes AIM, a top-down learnable binary masking mechanism for self-supervised spatial feature selection…
 tags:
-  - ICCV 2025
-  - self-supervised masking
-  - inherent interpretability
-  - spurious features
-  - feature pyramid
-  - Energy Pointing Game
+  - "ICCV 2025"
+  - "Interpretability"
+  - "self-supervised masking"
+  - "inherent interpretability"
+  - "spurious features"
+  - "feature pyramid"
+  - "Energy Pointing Game"
 date: 2026-05-08
 content_hash: 92ec1b0ae71a1ea9
 ---

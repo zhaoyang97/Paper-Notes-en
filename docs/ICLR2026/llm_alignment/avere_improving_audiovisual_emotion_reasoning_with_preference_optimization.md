@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AVERE: Improving Audiovisual Emotion Reasoning with Preference Optimization
 description: >-
-  [ICLR 2026][LLM Alignment][Multimodal Emotion Understanding] To address spurious associations and hallucinations in multimodal large language models (MLLMs) for emotion reasoning, this work proposes the EmoReAlM evaluation benchmark and the AVEm-DPO preference optimization method. By constructing targeted preference pairs and incorporating text-prior regularization, the approach achieves 6–19% relative zero-shot performance gains on DFEW, RAVDESS, and EMER.
+  [ICLR 2026][LLM Alignment][Multimodal Emotion Understanding] To address spurious associations and hallucinations in multimodal large language models (MLLMs) for emotion reasoning…
 tags:
-  - ICLR 2026
-  - LLM Alignment
-  - Multimodal Emotion Understanding
-  - Preference Optimization
-  - DPO
-  - Hallucination Mitigation
-  - Audiovisual Reasoning
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Multimodal Emotion Understanding"
+  - "Preference Optimization"
+  - "DPO"
+  - "Hallucination Mitigation"
+  - "Audiovisual Reasoning"
 date: 2026-05-08
 content_hash: 3c40c43ded489867
 ---

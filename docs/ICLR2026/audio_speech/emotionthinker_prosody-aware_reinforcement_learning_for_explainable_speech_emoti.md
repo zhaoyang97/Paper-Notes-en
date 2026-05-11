@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EmotionThinker: Prosody-Aware Reinforcement Learning for Explainable Speech Emotion Reasoning
 description: >-
-  [ICLR 2026][Audio & Speech][Speech Emotion Recognition] This work is the first to reformulate Speech Emotion Recognition (SER) as a deep reasoning problem, leveraging a prosody-enhanced backbone model combined with GRPO-PTR (Progressive Trustworthy Reasoning reward) reinforcement learning to generate explainable emotion reasoning grounded in acoustic evidence.
+  [ICLR 2026][Audio & Speech][Speech Emotion Recognition] This work is the first to reformulate Speech Emotion Recognition (SER) as a deep reasoning problem…
 tags:
-  - ICLR 2026
+  - "ICLR 2026"
   - "Audio & Speech"
-  - Speech Emotion Recognition
-  - Explainable Reasoning
-  - Reinforcement Learning
-  - Prosody-Aware
-  - Chain-of-Thought
+  - "Speech Emotion Recognition"
+  - "Explainable Reasoning"
+  - "Reinforcement Learning"
+  - "Prosody-Aware"
+  - "Chain-of-Thought"
 date: 2026-05-08
 content_hash: d231d82a43b63e7b
 ---

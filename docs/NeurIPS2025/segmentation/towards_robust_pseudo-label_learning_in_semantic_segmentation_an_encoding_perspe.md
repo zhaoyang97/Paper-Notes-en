@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Robust Pseudo-Label Learning in Semantic Segmentation: An Encoding Perspective
 description: >-
-  [NeurIPS 2025][Segmentation][Pseudo-label learning] This paper proposes ECOCSeg, which replaces one-hot encoding with Error-Correcting Output Codes (ECOC) to represent semantic categories. It decomposes an N-class classification problem into K binary sub-tasks, and couples bit-level pseudo-label denoising with customized optimization losses to substantially improve the robustness of pseudo-label learning in UDA and SSL semantic segmentation.
+  [NeurIPS 2025][Segmentation][Pseudo-label learning] This paper proposes ECOCSeg, which replaces one-hot encoding with Error-Correcting Output Codes (ECOC) to represent semantic categories. It decomposes an N-class classi…
 tags:
-  - NeurIPS 2025
-  - Segmentation
-  - Pseudo-label learning
-  - semantic segmentation
-  - error-correcting output codes
-  - unsupervised domain adaptation
-  - semi-supervised learning
+  - "NeurIPS 2025"
+  - "Segmentation"
+  - "Pseudo-label learning"
+  - "semantic segmentation"
+  - "error-correcting output codes"
+  - "unsupervised domain adaptation"
+  - "semi-supervised learning"
 date: 2026-05-08
 content_hash: 7f27f9c42075ee36
 ---

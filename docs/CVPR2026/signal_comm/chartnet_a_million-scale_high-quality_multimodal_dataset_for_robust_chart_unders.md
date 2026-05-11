@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ChartNet: A Million-Scale, High-Quality Multimodal Dataset for Robust Chart Understanding
 description: >-
-  [CVPR 2026][Signal & Communication][chart understanding] This paper presents ChartNet, a million-scale chart understanding dataset comprising 1.5 million high-quality multimodal aligned samples. Generated through a code-guided synthesis pipeline, the dataset covers 24 chart types and 6 plotting libraries, with each sample organized as a quintuple (code, image, data table, text description, QA with reasoning). A 2B model fine-tuned on ChartNet surpasses GPT-4o and 72B open-source models.
+  [CVPR 2026][Signal & Communication][chart understanding] This paper presents ChartNet, a million-scale chart understanding dataset comprising 1.5 million high-quality multimodal aligned samples. Generated through a code-…
 tags:
-  - CVPR 2026
+  - "CVPR 2026"
   - "Signal & Communication"
-  - chart understanding
-  - multimodal dataset
-  - code-guided synthesis
-  - vision-language models
-  - data visualization
+  - "chart understanding"
+  - "multimodal dataset"
+  - "code-guided synthesis"
+  - "vision-language models"
+  - "data visualization"
 date: 2026-05-08
 content_hash: 85d0f51d7f490662
 ---

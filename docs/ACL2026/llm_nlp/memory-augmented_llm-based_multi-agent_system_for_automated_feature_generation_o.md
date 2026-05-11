@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Memory-Augmented LLM-based Multi-Agent System for Automated Feature Generation on Tabular Data
 description: >-
-  [ACL 2026][LLM/NLP][Automated Feature Engineering] This paper proposes MALMAS, a memory-augmented LLM-based multi-agent system for automated feature generation on tabular data. It employs six specialized agents to explore different dimensions of the feature space in parallel, coordinated by a Router Agent, and leverages a three-tier memory mechanism (procedural/feedback/conceptual) for cross-iteration experience accumulation and strategy refinement. MALMAS outperforms existing baselines on 16 classification and 7 regression datasets.
+  [ACL 2026][LLM/NLP][Automated Feature Engineering] This paper proposes MALMAS, a memory-augmented LLM-based multi-agent system for automated feature generation on tabular data. It employs six specialized agents to explor…
 tags:
-  - ACL 2026
-  - LLM/NLP
-  - Automated Feature Engineering
-  - Multi-Agent System
-  - Memory Augmentation
-  - Tabular Data
-  - AutoML
+  - "ACL 2026"
+  - "LLM/NLP"
+  - "Automated Feature Engineering"
+  - "Multi-Agent System"
+  - "Memory Augmentation"
+  - "Tabular Data"
+  - "AutoML"
 date: 2026-05-08
 content_hash: 67864cb02774e3ed
 ---

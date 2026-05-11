@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LazyMAR: Accelerating Masked Autoregressive Models via Feature Caching
 description: >-
-  [ICCV 2025][Image Generation][MAR acceleration] LazyMAR addresses the inference efficiency bottleneck of Masked Autoregressive (MAR) models by exploiting two types of redundancy: token redundancy (most token features are highly similar across adjacent decoding steps) and condition redundancy (the residual between conditional and unconditional outputs in classifier-free guidance changes minimally between adjacent steps). Based on these observations, the paper proposes token cache and condition cache mechanisms, achieving a 2.83× speedup with negligible loss in generation quality.
+  [ICCV 2025][Image Generation][MAR acceleration] LazyMAR addresses the inference efficiency bottleneck of Masked Autoregressive (MAR) models by exploiting two types of redundancy: token redundancy (most token features are…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - MAR acceleration
-  - feature caching
-  - token redundancy
-  - condition redundancy
-  - plug-and-play
+  - "ICCV 2025"
+  - "Image Generation"
+  - "MAR acceleration"
+  - "feature caching"
+  - "token redundancy"
+  - "condition redundancy"
+  - "plug-and-play"
 date: 2026-05-08
 content_hash: d0ef989cc00ea0da
 ---

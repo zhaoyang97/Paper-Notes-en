@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Bridging Human and LLM Judgments: Understanding and Narrowing the Gap
 description: >-
-  [NEURIPS2025][Dialogue Systems][LLM-as-Judge] This paper proposes Bridge, a statistical framework that models the latent relationship between human and LLM judgments via ordinal logistic regression. With a small number of human labels, Bridge improves the calibration and alignment of LLM judgments while supporting formal statistical hypothesis testing for systematic biases.
+  [NEURIPS2025][Dialogue Systems][LLM-as-Judge] This paper proposes Bridge, a statistical framework that models the latent relationship between human and LLM judgments via ordinal logistic regression. With a small number o…
 tags:
-  - NEURIPS2025
-  - Dialogue Systems
-  - LLM-as-Judge
-  - Human-LLM Alignment
-  - Statistical Framework
-  - Calibration
-  - Bias Testing
+  - "NEURIPS2025"
+  - "Dialogue Systems"
+  - "LLM-as-Judge"
+  - "Human-LLM Alignment"
+  - "Statistical Framework"
+  - "Calibration"
+  - "Bias Testing"
 date: 2026-05-08
 content_hash: 51e167f8b2f24e27
 ---

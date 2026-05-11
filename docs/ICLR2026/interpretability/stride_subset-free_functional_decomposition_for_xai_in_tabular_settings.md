@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] STRIDE: Subset-Free Functional Decomposition for XAI in Tabular Settings
 description: >-
-  [ICLR 2026][Functional Decomposition] STRIDE reformulates model explanation as an orthogonal functional decomposition problem in RKHS. By recursively centering kernel functions, it analytically computes orthogonal functional components $f_S(x_S)$ without enumerating $2^d$ subsets. The method not only produces scalar importance scores but also reveals how features synergistically or redundantly influence predictions, achieving 3× speedup over TreeSHAP with $R^2 = 0.93$ on tabular data.
+  [ICLR 2026][Interpretability][Functional Decomposition] STRIDE reformulates model explanation as an orthogonal functional decomposition problem in RKHS. By recursively centering kernel functions…
 tags:
-  - ICLR 2026
-  - Functional Decomposition
-  - RKHS
-  - Centered Kernels
-  - Feature Interaction
-  - Component Surgery
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Functional Decomposition"
+  - "RKHS"
+  - "Centered Kernels"
+  - "Feature Interaction"
+  - "Component Surgery"
 date: 2026-05-08
 content_hash: 698cc6636dd5049b
 ---

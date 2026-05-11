@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DeepVideo-R1: Video Reinforcement Fine-Tuning via Difficulty-aware Regressive GRPO
 description: >-
-  [NeurIPS 2025][LLM Alignment][Video reasoning] This paper proposes DeepVideo-R1, which reformulates GRPO as Reg-GRPO that directly regresses advantage values (eliminating clipping/min safeguards), and mitigates the vanishing advantage problem via difficulty-aware data augmentation, achieving up to 10.1 percentage points improvement over standard GRPO on video reasoning tasks.
+  [NeurIPS 2025][LLM Alignment][Video reasoning] This paper proposes DeepVideo-R1, which reformulates GRPO as Reg-GRPO that directly regresses advantage values (eliminating clipping/min safeguards)…
 tags:
-  - NeurIPS 2025
-  - LLM Alignment
-  - Video reasoning
-  - reinforcement fine-tuning
-  - GRPO
-  - regression objective
-  - difficulty-aware augmentation
+  - "NeurIPS 2025"
+  - "LLM Alignment"
+  - "Video reasoning"
+  - "reinforcement fine-tuning"
+  - "GRPO"
+  - "regression objective"
+  - "difficulty-aware augmentation"
 date: 2026-05-08
 content_hash: fc1b3331c1213652
 ---

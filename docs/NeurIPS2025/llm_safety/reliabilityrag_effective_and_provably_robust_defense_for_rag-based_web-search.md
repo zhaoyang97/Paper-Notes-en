@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ReliabilityRAG: Effective and Provably Robust Defense for RAG-based Web-Search
 description: >-
-  [NeurIPS 2025][LLM Safety][RAG security] ReliabilityRAG proposes a RAG framework that leverages document reliability signals (e.g., search ranking) for adversarial defense. It identifies a consistent document subset by finding the Maximum Independent Set (MIS) on a contradiction graph while prioritizing high-reliability documents, providing provable robustness guarantees alongside high accuracy on benign scenarios and long-form generation tasks.
+  [NeurIPS 2025][LLM Safety][RAG security] ReliabilityRAG proposes a RAG framework that leverages document reliability signals (e.g.…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - RAG security
-  - adversarial robustness
-  - maximum independent set
-  - provable defense
-  - document reliability
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "RAG security"
+  - "adversarial robustness"
+  - "maximum independent set"
+  - "provable defense"
+  - "document reliability"
 date: 2026-05-08
 content_hash: 4280ed7add001792
 ---

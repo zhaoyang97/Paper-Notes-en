@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CstNet: Constraint-Aware Feature Learning for Parametric Point Cloud
 description: >-
-  [ICCV 2025][3D Vision][CAD point cloud] This paper proposes CstNet, the first constraint-aware feature learning method for parametric point clouds. CAD constraints are encoded as point-level MAD-Adj-PT triplet representations, and a two-stage network (constraint acquisition + constraint feature learning) achieves state-of-the-art results on the newly constructed Param20K dataset, with classification accuracy improved by +3.49% and rotation robustness improved by +26.17%.
+  [ICCV 2025][3D Vision][CAD point cloud] This paper proposes CstNet, the first constraint-aware feature learning method for parametric point clouds. CAD constraints are encoded as point-level MAD-Adj-PT triplet representa…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - CAD point cloud
-  - constraint representation
-  - parametric shape
-  - point cloud classification
-  - rotation robustness
+  - "ICCV 2025"
+  - "3D Vision"
+  - "CAD point cloud"
+  - "constraint representation"
+  - "parametric shape"
+  - "point cloud classification"
+  - "rotation robustness"
 date: 2026-05-08
 content_hash: c807b6a4394d07ba
 ---

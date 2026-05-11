@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Motion Prior Distillation in Time Reversal Sampling for Generative Inbetweening
 description: >-
-  [ICLR 2026][Image Generation][Generative Inbetweening] This paper proposes Motion Prior Distillation (MPD), an inference-time distillation method that distills motion residuals from the forward path into the backward path, fundamentally resolving the bidirectional motion prior conflict in time reversal sampling. MPD enables more coherent generative inbetweening without any additional training.
+  [ICLR 2026][Image Generation][Generative Inbetweening] This paper proposes Motion Prior Distillation (MPD), an inference-time distillation method that distills motion residuals from the forward path into the backward pat…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Generative Inbetweening
-  - Motion Prior
-  - Time Reversal Sampling
-  - Inference-Time Distillation
-  - SVD
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Generative Inbetweening"
+  - "Motion Prior"
+  - "Time Reversal Sampling"
+  - "Inference-Time Distillation"
+  - "SVD"
 date: 2026-05-08
 content_hash: e2ef102cd542f2cc
 ---

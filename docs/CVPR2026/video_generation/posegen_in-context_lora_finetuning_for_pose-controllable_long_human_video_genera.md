@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PoseGen: In-Context LoRA Finetuning for Pose-Controllable Long Human Video Generation
 description: >-
-  [CVPR 2026][Video Generation][Human video generation] PoseGen achieves dual condition injection (token-level appearance + channel-level pose) via in-context LoRA finetuning, and proposes a segmented interleaved generation strategy (KV sharing + pose-aware frame interpolation) to generate high-fidelity long human videos using only 33 hours of training data.
+  [CVPR 2026][Video Generation][Human video generation] PoseGen achieves dual condition injection (token-level appearance + channel-level pose) via in-context LoRA finetuning…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Human video generation
-  - pose control
-  - LoRA finetuning
-  - long video generation
-  - diffusion models
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Human video generation"
+  - "pose control"
+  - "LoRA finetuning"
+  - "long video generation"
+  - "diffusion models"
 date: 2026-05-08
 content_hash: 8d228be58c3b8e9e
 ---

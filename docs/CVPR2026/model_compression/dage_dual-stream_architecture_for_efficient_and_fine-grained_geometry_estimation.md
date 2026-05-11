@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DAGE: Dual-Stream Architecture for Efficient and Fine-Grained Geometry Estimation
 description: >-
-  [CVPR 2026][Model Compression][Multi-view geometry estimation] This paper proposes DAGE, a dual-stream Transformer architecture that decouples global consistency modeling (low-resolution stream) from fine-grained detail preservation (high-resolution stream), fusing them via a lightweight Cross-Attention Adapter. DAGE achieves high-quality depth/point map estimation and camera pose prediction at 2K resolution and over 1000-frame sequences, running 2–28× faster than Pi3 and establishing a new state of the art on video geometry estimation.
+  [CVPR 2026][Model Compression][Multi-view geometry estimation] This paper proposes DAGE, a dual-stream Transformer architecture that decouples global consistency modeling (low-resolution stream) from fine-grained detail…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - Multi-view geometry estimation
-  - dual-stream Transformer
-  - depth estimation
-  - knowledge distillation
-  - high-resolution inference
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Multi-view geometry estimation"
+  - "dual-stream Transformer"
+  - "depth estimation"
+  - "knowledge distillation"
+  - "high-resolution inference"
 date: 2026-05-08
 content_hash: f42f453354441e07
 ---

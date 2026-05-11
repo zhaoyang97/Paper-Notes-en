@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Exploring Landscapes for Better Minima along Valleys
 description: >-
-  [NeurIPS 2025][Optimization][Loss landscape exploration] This paper proposes an optimizer adapter "E" that incorporates an exponential moving average of gradient differences $\mathbf{a}_k = \text{EMA}(\mathbf{g}_k - \mathbf{g}_{k-1})$ into the gradient update, enabling optimizers to continue exploring "valleys" in the loss landscape for lower and flatter minima after reaching a local minimum. The resulting ALTO optimizer achieves an average improvement of 2.5% in test accuracy under large-batch training.
+  [NeurIPS 2025][Optimization][Loss landscape exploration] This paper proposes an optimizer adapter "E" that incorporates an exponential moving average of gradient differences $\mathbf{a}_k = \text{EMA}(\mathbf{g}_k - \mat…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Loss landscape exploration
-  - valley tracking
-  - large-batch training
-  - ALTO optimizer
-  - gradient difference
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Loss landscape exploration"
+  - "valley tracking"
+  - "large-batch training"
+  - "ALTO optimizer"
+  - "gradient difference"
 date: 2026-05-08
 content_hash: fa7ed389ce94b025
 ---

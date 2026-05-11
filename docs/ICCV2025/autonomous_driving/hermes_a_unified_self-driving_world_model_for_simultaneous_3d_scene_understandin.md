@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Hermes: A Unified Self-Driving World Model for Simultaneous 3D Scene Understanding and Generation
 description: >-
-  [ICCV 2025][Autonomous Driving][Driving world model] This paper proposes Hermes, the first unified driving world model that simultaneously performs 3D scene understanding (VQA/captioning) and future scene generation (point cloud prediction). By leveraging BEV representations and world queries to inject LLM world knowledge into future scene generation, Hermes reduces 3s point cloud generation error by 32.4% and improves scene understanding CIDEr by 8.0%.
+  [ICCV 2025][Autonomous Driving][Driving world model] This paper proposes Hermes, the first unified driving world model that simultaneously performs 3D scene understanding (VQA/captioning) and future scene generation (poi…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - Driving world model
-  - 3D scene understanding
-  - point cloud generation
-  - BEV
-  - large language model
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "Driving world model"
+  - "3D scene understanding"
+  - "point cloud generation"
+  - "BEV"
+  - "large language model"
 date: 2026-05-08
 content_hash: e7d41742a639a394
 ---

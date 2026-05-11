@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Is the Reversal Curse a Binding Problem? Uncovering Limitations of Transformers from a Basic Generalization Failure
 description: >-
-  [ICLR 2026][LLM/NLP][Reversal Curse] This paper proposes that the Reversal Curse is a manifestation of the cognitive science "binding problem" in Transformers—stemming from inconsistent and entangled concept representations—and for the first time designs an architecture based on JEPA and memory layers that genuinely overcomes (rather than circumvents) the Reversal Curse.
+  [ICLR 2026][LLM/NLP][Reversal Curse] This paper proposes that the Reversal Curse is a manifestation of the cognitive science "binding problem" in Transformers—stemming from inconsistent and entangled concept representati…
 tags:
-  - ICLR 2026
-  - LLM/NLP
-  - Reversal Curse
-  - Binding Problem
-  - JEPA
-  - Concept Representation
-  - Transformer Limitations
+  - "ICLR 2026"
+  - "LLM/NLP"
+  - "Reversal Curse"
+  - "Binding Problem"
+  - "JEPA"
+  - "Concept Representation"
+  - "Transformer Limitations"
 date: 2026-05-08
 content_hash: 668bc78f033bdc37
 ---

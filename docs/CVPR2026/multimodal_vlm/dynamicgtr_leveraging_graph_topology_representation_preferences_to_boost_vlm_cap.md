@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DynamicGTR: Leveraging Graph Topology Representation Preferences to Boost VLM Capabilities on Graph QAs
 description: >-
-  [CVPR 2026][Multimodal VLM][Graph QA] This paper proposes DynamicGTR, a framework that dynamically routes each query at inference time to the optimal graph topology representation (GTR, 8 variants spanning visual and textual modalities), substantially improving VLM performance on zero-shot graph algorithm QA, with transferability to real-world tasks such as link prediction and node classification.
+  [CVPR 2026][Multimodal VLM][Graph QA] This paper proposes DynamicGTR, a framework that dynamically routes each query at inference time to the optimal graph topology representation (GTR…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Graph QA
-  - graph topology representation
-  - VLM zero-shot reasoning
-  - dynamic routing
-  - accuracy-conciseness trade-off
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Graph QA"
+  - "graph topology representation"
+  - "VLM zero-shot reasoning"
+  - "dynamic routing"
+  - "accuracy-conciseness trade-off"
 date: 2026-05-08
 content_hash: 728e840987700ccb
 ---

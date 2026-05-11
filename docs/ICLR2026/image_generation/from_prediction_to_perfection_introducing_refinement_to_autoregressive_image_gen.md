@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From Prediction to Perfection: Introducing Refinement to Autoregressive Image Generation
 description: >-
-  [ICLR 2026][Image Generation][autoregressive image generation] This paper proposes TensorAR, which upgrades standard AR image generation from next-token prediction to next-tensor prediction: each step predicts an overlapping tensor (a group of consecutive tokens), and subsequent tensors overlap with preceding ones to enable iterative refinement. A discrete diffusion noise mechanism is introduced to address training information leakage. TensorAR serves as a plug-and-play module compatible with AR models such as LlamaGen, Open-MAGVIT2, and Janus-Pro, consistently improving generation quality on both class-to-image and text-to-image tasks.
+  [ICLR 2026][Image Generation][autoregressive image generation] This paper proposes TensorAR, which upgrades standard AR image generation from next-token prediction to next-tensor prediction: each step predicts an overlap…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - autoregressive image generation
-  - next-tensor prediction
-  - discrete diffusion noise
-  - iterative refinement
-  - plug-and-play
+  - "ICLR 2026"
+  - "Image Generation"
+  - "autoregressive image generation"
+  - "next-tensor prediction"
+  - "discrete diffusion noise"
+  - "iterative refinement"
+  - "plug-and-play"
 date: 2026-05-08
 content_hash: 092492259160538d
 ---

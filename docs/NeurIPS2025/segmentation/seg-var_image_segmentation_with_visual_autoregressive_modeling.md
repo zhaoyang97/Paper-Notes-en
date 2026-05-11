@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Seg-VAR: Image Segmentation with Visual Autoregressive Modeling
 description: >-
-  [NeurIPS 2025][Segmentation][Visual Autoregressive Modeling] Seg-VAR reformulates image segmentation as a conditional autoregressive mask generation problem. By introducing *seglat* (a latent representation of segmentation masks) and spatial-aware color mapping, it encodes segmentation masks into discrete tokens processable by a VAR model. Seg-VAR comprehensively outperforms discriminative methods such as Mask2Former and generative methods such as GSS across semantic, instance, and panoptic segmentation tasks on COCO, Cityscapes, and ADE20K.
+  [NeurIPS 2025][Segmentation][Visual Autoregressive Modeling] Seg-VAR reformulates image segmentation as a conditional autoregressive mask generation problem. By introducing *seglat* (a latent representation of segmentati…
 tags:
-  - NeurIPS 2025
-  - Segmentation
-  - Visual Autoregressive Modeling
-  - Universal Image Segmentation
-  - Seglat
-  - Spatial-Aware Color Mapping
-  - Generative Segmentation
+  - "NeurIPS 2025"
+  - "Segmentation"
+  - "Visual Autoregressive Modeling"
+  - "Universal Image Segmentation"
+  - "Seglat"
+  - "Spatial-Aware Color Mapping"
+  - "Generative Segmentation"
 date: 2026-05-08
 content_hash: e3df80d4e026528e
 ---

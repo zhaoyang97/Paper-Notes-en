@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond Isolated Words: Diffusion Brush for Handwritten Text-Line Generation
 description: >-
-  [ICCV 2025][LLM/NLP][Handwritten text generation] This paper proposes DiffBrush, the first diffusion-based method for handwritten text-line generation. Through content-decoupled style learning (column/row masking) and a multi-scale content discriminator (line/word level), DiffBrush substantially outperforms existing methods in both style imitation and content accuracy.
+  [ICCV 2025][LLM/NLP][Handwritten text generation] This paper proposes DiffBrush, the first diffusion-based method for handwritten text-line generation. Through content-decoupled style learning (column/row masking) and a…
 tags:
-  - ICCV 2025
-  - LLM/NLP
-  - Handwritten text generation
-  - diffusion model
-  - text-line generation
-  - style imitation
-  - content accuracy
+  - "ICCV 2025"
+  - "LLM/NLP"
+  - "Handwritten text generation"
+  - "diffusion model"
+  - "text-line generation"
+  - "style imitation"
+  - "content accuracy"
 date: 2026-05-08
 content_hash: f012d65b5e3be722
 ---

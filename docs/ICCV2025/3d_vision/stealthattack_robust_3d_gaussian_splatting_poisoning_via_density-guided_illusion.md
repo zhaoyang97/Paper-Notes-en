@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] StealthAttack: Robust 3D Gaussian Splatting Poisoning via Density-Guided Illusions
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] This work presents the first density-guided poisoning attack against 3D Gaussian Splatting (3DGS). By injecting illusion Gaussians into low-density regions and introducing adaptive noise to disrupt multi-view consistency, the method achieves attacks that are clearly visible from target viewpoints while remaining imperceptible from all others.
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] This work presents the first density-guided poisoning attack against 3D Gaussian Splatting (3DGS). By injecting illusion Gaussians into low-density regions and introducing ad…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - data poisoning attack
-  - adversarial security
-  - kernel density estimation
-  - multi-view consistency
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "data poisoning attack"
+  - "adversarial security"
+  - "kernel density estimation"
+  - "multi-view consistency"
 date: 2026-05-08
 content_hash: 02e52ce6339fc9c1
 ---

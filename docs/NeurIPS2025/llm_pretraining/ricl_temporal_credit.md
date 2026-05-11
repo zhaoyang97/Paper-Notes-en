@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Retrospective In-Context Learning for Temporal Credit Assignment with Large Language Models
 description: >-
-  [NeurIPS 2025][LLM Pretraining][temporal credit assignment] This paper proposes RICL (Retrospective In-Context Learning), which estimates the advantage function by comparing the log-probability difference of an LLM policy before and after an in-context update. This approach converts sparse environment feedback into dense training signals, enabling efficient temporal credit assignment, and achieves comparable convergence performance to traditional RL methods on BabyAI tasks with substantially higher sample efficiency.
+  [NeurIPS 2025][LLM Pretraining][temporal credit assignment] This paper proposes RICL (Retrospective In-Context Learning), which estimates the advantage function by comparing the log-probability difference of an LLM polic…
 tags:
-  - NeurIPS 2025
-  - LLM Pretraining
-  - temporal credit assignment
-  - in-context learning
-  - advantage function estimation
-  - sparse rewards
-  - online learning
+  - "NeurIPS 2025"
+  - "LLM Pretraining"
+  - "temporal credit assignment"
+  - "in-context learning"
+  - "advantage function estimation"
+  - "sparse rewards"
+  - "online learning"
 date: 2026-05-08
 content_hash: e7d35fc96e6467b9
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TOFA: Training-Free One-Shot Federated Adaptation for Vision-Language Models
 description: >-
-  [AAAI 2026][Multimodal VLM][Federated Learning] TOFA is a federated learning framework that adapts CLIP via hierarchical Bayesian inference of personalized visual prototype distributions, globally aligned LLM-based text augmentation, and adaptive modality fusion — achieving training-free, single-round communication adaptation that outperforms one-shot baselines and even some multi-round training methods across 9 datasets.
+  [AAAI 2026][Multimodal VLM][Federated Learning] TOFA is a federated learning framework that adapts CLIP via hierarchical Bayesian inference of personalized visual prototype distributions…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Federated Learning
-  - CLIP Adaptation
-  - One-Shot FL
-  - Hierarchical Bayes
-  - Training-Free
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Federated Learning"
+  - "CLIP Adaptation"
+  - "One-Shot FL"
+  - "Hierarchical Bayes"
+  - "Training-Free"
 date: 2026-05-08
 content_hash: 505ecdfedb421c86
 ---

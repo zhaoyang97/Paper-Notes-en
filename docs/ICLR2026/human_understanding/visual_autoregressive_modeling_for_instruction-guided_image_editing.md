@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Visual Autoregressive Modeling for Instruction-Guided Image Editing
 description: >-
-  [ICLR 2026][Human Understanding][Visual Autoregressive] VAREdit reformulates instruction-guided image editing as a next-scale prediction problem. It proposes the Scale-Aligned Reference (SAR) module to resolve the scale mismatch between finest-scale conditioning and coarse target features. On EMU-Edit and PIE-Bench, the GPT-Balance score surpasses the strongest diffusion baseline by 64.9% and 45.3%, respectively, with 512×512 editing completed in only 1.2 seconds.
+  [ICLR 2026][Human Understanding][Visual Autoregressive] VAREdit reformulates instruction-guided image editing as a next-scale prediction problem. It proposes the Scale-Aligned Reference (SAR) module to resolve the scale…
 tags:
-  - ICLR 2026
-  - Human Understanding
-  - Visual Autoregressive
-  - Image Editing
-  - Multi-Scale Prediction
-  - Scale-Aligned Reference
-  - Instruction-Guided
+  - "ICLR 2026"
+  - "Human Understanding"
+  - "Visual Autoregressive"
+  - "Image Editing"
+  - "Multi-Scale Prediction"
+  - "Scale-Aligned Reference"
+  - "Instruction-Guided"
 date: 2026-05-08
 content_hash: 8dd9b335834caf76
 ---

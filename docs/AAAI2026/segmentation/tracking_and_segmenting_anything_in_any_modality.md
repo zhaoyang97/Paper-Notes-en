@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Tracking and Segmenting Anything in Any Modality
 description: >-
-  [AAAI 2026][Segmentation][Unified tracking and segmentation] SATA proposes a unified tracking and segmentation framework that models cross-modal shared and modality-specific knowledge via a Decoupled Mixture-of-Experts (DeMoE) mechanism, and introduces a Task-aware Multi-Object Tracking (TaMOT) pipeline to unify the output format across all tasks, demonstrating superior performance across 18 tracking and segmentation benchmarks.
+  [AAAI 2026][Segmentation][Unified tracking and segmentation] SATA proposes a unified tracking and segmentation framework that models cross-modal shared and modality-specific knowledge via a Decoupled Mixture-of-Experts (…
 tags:
-  - AAAI 2026
-  - Segmentation
-  - Unified tracking and segmentation
-  - any modality
-  - mixture of experts
-  - multi-task learning
-  - generalist model
+  - "AAAI 2026"
+  - "Segmentation"
+  - "Unified tracking and segmentation"
+  - "any modality"
+  - "mixture of experts"
+  - "multi-task learning"
+  - "generalist model"
 date: 2026-05-08
 content_hash: c6182d99a1db172e
 ---

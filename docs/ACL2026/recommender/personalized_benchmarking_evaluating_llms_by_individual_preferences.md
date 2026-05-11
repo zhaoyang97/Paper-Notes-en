@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Personalized Benchmarking: Evaluating LLMs by Individual Preferences
 description: >-
-  [ACL 2026][Recommender Systems][Personalized benchmarking] This paper analyzes personalized rankings for 115 active Chatbot Arena users and finds that the average Spearman correlation between Bradley-Terry personalized rankings and the global ranking is only $\rho=0.04$ (with 57% of users exhibiting near-zero or negative correlation), demonstrating that aggregated benchmarks fail to reflect individual user preferences. Topic and style features are shown to successfully predict user-specific model rankings.
+  [ACL 2026][Recommender Systems][Personalized benchmarking] This paper analyzes personalized rankings for 115 active Chatbot Arena users and finds that the average Spearman correlation between Bradley-Terry personalized r…
 tags:
-  - ACL 2026
-  - Recommender Systems
-  - Personalized benchmarking
-  - LLM ranking
-  - user preference heterogeneity
-  - Bradley-Terry model
-  - topic and style analysis
+  - "ACL 2026"
+  - "Recommender Systems"
+  - "Personalized benchmarking"
+  - "LLM ranking"
+  - "user preference heterogeneity"
+  - "Bradley-Terry model"
+  - "topic and style analysis"
 date: 2026-05-08
 content_hash: d35e66f4d41094b4
 ---

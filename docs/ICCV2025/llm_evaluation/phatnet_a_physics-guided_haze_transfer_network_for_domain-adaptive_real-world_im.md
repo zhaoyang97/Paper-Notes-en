@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PHATNet: A Physics-guided Haze Transfer Network for Domain-adaptive Real-world Image Dehazing
 description: >-
-  [ICCV 2025][LLM Evaluation][image dehazing] This paper proposes PHATNet, a physics-guided haze transfer network that extends the Atmospheric Scattering Model (ASM) to latent space to disentangle and transfer haze patterns, generating domain-adaptive fine-tuning datasets that enable dehazing models to effectively adapt to unseen real-world haze scenes at test time.
+  [ICCV 2025][LLM Evaluation][image dehazing] This paper proposes PHATNet, a physics-guided haze transfer network that extends the Atmospheric Scattering Model (ASM) to latent space to disentangle and transfer haze pattern…
 tags:
-  - ICCV 2025
-  - LLM Evaluation
-  - image dehazing
-  - domain adaptation
-  - haze transfer
-  - atmospheric scattering model
-  - disentangled learning
+  - "ICCV 2025"
+  - "LLM Evaluation"
+  - "image dehazing"
+  - "domain adaptation"
+  - "haze transfer"
+  - "atmospheric scattering model"
+  - "disentangled learning"
 date: 2026-05-08
 content_hash: c40d79adfdf008f7
 ---

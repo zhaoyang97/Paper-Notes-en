@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AutoPP: Towards Automated Product Poster Generation and Optimization
 description: >-
-  [AAAI2026][Recommender Systems][product poster generation] This paper proposes AutoPP, the first pipeline to unify automated product poster generation with CTR-feedback-driven optimization in a single framework. It employs a unified design module to jointly design background, text, and layout; an element rendering module for efficient and controllable poster generation; and Isolated DPO (IDPO) to achieve element-level click-through rate optimization.
+  [AAAI2026][Recommender Systems][product poster generation] This paper proposes AutoPP, the first pipeline to unify automated product poster generation with CTR-feedback-driven optimization in a single framework. It emplo…
 tags:
-  - AAAI2026
-  - Recommender Systems
-  - product poster generation
-  - CTR optimization
-  - diffusion model
-  - DPO
-  - multimodal generation
+  - "AAAI2026"
+  - "Recommender Systems"
+  - "product poster generation"
+  - "CTR optimization"
+  - "diffusion model"
+  - "DPO"
+  - "multimodal generation"
 date: 2026-05-08
 content_hash: 86a9007ae24b2c1c
 ---

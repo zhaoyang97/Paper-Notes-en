@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DPoser-X: Diffusion Model as Robust 3D Whole-Body Human Pose Prior
 description: >-
-  [ICCV 2025][Image Generation][Diffusion Model] This paper proposes DPoser-X, a 3D whole-body human pose prior based on an unconditional diffusion model. It unifies various pose-related tasks as inverse problems and performs test-time optimization via a truncated timestep schedule for variational diffusion sampling. A hybrid training strategy is introduced to effectively combine whole-body and part-specific datasets. DPoser-X achieves up to 61% improvement across 8 benchmarks covering body, hand, face, and whole-body modeling.
+  [ICCV 2025][Image Generation][Diffusion Model] This paper proposes DPoser-X, a 3D whole-body human pose prior based on an unconditional diffusion model. It unifies various pose-related tasks as inverse problems and perfo…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Diffusion Model
-  - Human Pose Prior
-  - Whole-Body Modeling
-  - Inverse Problems
-  - Variational Diffusion Sampling
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Diffusion Model"
+  - "Human Pose Prior"
+  - "Whole-Body Modeling"
+  - "Inverse Problems"
+  - "Variational Diffusion Sampling"
 date: 2026-05-08
 content_hash: 2d85ba8befe7367f
 ---

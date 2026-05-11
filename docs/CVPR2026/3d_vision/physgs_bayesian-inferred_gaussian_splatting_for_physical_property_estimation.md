@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PhysGS: Bayesian-Inferred Gaussian Splatting for Physical Property Estimation
 description: >-
-  [CVPR 2026][3D Vision][Physical Property Estimation] This paper proposes PhysGS, which integrates Bayesian inference into a 3D Gaussian Splatting pipeline. By leveraging vision-language model priors and multi-view confidence-weighted updates, PhysGS enables per-point probabilistic estimation and uncertainty quantification of physical properties (friction, hardness, density, stiffness), achieving a 22.8% improvement over NeRF2Physics in APE for mass estimation and a 61.2% reduction in Shore hardness error.
+  [CVPR 2026][3D Vision][Physical Property Estimation] This paper proposes PhysGS, which integrates Bayesian inference into a 3D Gaussian Splatting pipeline. By leveraging vision-language model priors and multi-view confid…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Physical Property Estimation
-  - Bayesian Inference
-  - 3D Gaussian Splatting
-  - Uncertainty Quantification
-  - Vision-Language Models
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Physical Property Estimation"
+  - "Bayesian Inference"
+  - "3D Gaussian Splatting"
+  - "Uncertainty Quantification"
+  - "Vision-Language Models"
 date: 2026-05-08
 content_hash: 421165c32b9f6fd9
 ---

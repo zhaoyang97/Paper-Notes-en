@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Generating Directed Graphs with Dual Attention and Asymmetric Encoding
 description: >-
-  [ICLR 2026][Image Generation][directed graph generation] This paper proposes Directo, the first directed graph generation model based on Discrete Flow Matching (DFM), which captures directional dependencies of directed edges via a direction-aware dual attention mechanism and asymmetric positional encoding, while establishing a standardized evaluation benchmark for directed graph generation.
+  [ICLR 2026][Image Generation][directed graph generation] This paper proposes Directo, the first directed graph generation model based on Discrete Flow Matching (DFM)…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - directed graph generation
-  - discrete flow matching
-  - dual attention mechanism
-  - asymmetric positional encoding
-  - graph generation benchmark
+  - "ICLR 2026"
+  - "Image Generation"
+  - "directed graph generation"
+  - "discrete flow matching"
+  - "dual attention mechanism"
+  - "asymmetric positional encoding"
+  - "graph generation benchmark"
 date: 2026-05-08
 content_hash: b149b16c5d764add
 ---

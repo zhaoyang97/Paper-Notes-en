@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FlowHijack: A Dynamics-Aware Backdoor Attack on Flow-Matching VLA Models
 description: >-
-  [CVPR 2026][Multimodal VLM][backdoor attack] FlowHijack is the first systematic backdoor attack framework targeting the vector field dynamics of flow-matching VLA models. It achieves high attack success rates and behavioral stealthiness via a τ-conditional injection strategy and a dynamic imitation regularizer.
+  [CVPR 2026][Multimodal VLM][backdoor attack] FlowHijack is the first systematic backdoor attack framework targeting the vector field dynamics of flow-matching VLA models. It achieves high attack success rates and behavio…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - backdoor attack
-  - VLA model
-  - flow matching
-  - robot safety
-  - vector field hijacking
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "backdoor attack"
+  - "VLA model"
+  - "flow matching"
+  - "robot safety"
+  - "vector field hijacking"
 date: 2026-05-08
 content_hash: 8fd272d3a9140e0a
 ---

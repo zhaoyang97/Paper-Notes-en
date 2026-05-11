@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Still Between Us? Evaluating and Improving Voice Assistant Robustness to Third-Party Interruptions
 description: >-
-  [ACL 2026][Audio & Speech][voice assistant] To address the inability of voice assistants to distinguish third-party interruptions (TPI) from primary-user speech, this work proposes TPI-Train, a dataset of 88K training instances, along with the TPI-Bench evaluation framework. A speaker-aware hard negative mining strategy is introduced to eliminate semantic shortcut learning, enabling models to rely genuinely on acoustic cues for interruption detection.
+  [ACL 2026][Audio & Speech][voice assistant] To address the inability of voice assistants to distinguish third-party interruptions (TPI) from primary-user speech, this work proposes TPI-Train…
 tags:
-  - ACL 2026
+  - "ACL 2026"
   - "Audio & Speech"
-  - voice assistant
-  - third-party interruption
-  - speaker awareness
-  - hard negative mining
-  - semantic shortcut learning
+  - "voice assistant"
+  - "third-party interruption"
+  - "speaker awareness"
+  - "hard negative mining"
+  - "semantic shortcut learning"
 date: 2026-05-08
 content_hash: 11e78acde5582198
 ---

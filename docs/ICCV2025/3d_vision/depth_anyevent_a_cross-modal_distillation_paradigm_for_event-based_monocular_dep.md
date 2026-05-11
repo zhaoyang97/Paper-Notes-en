@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Depth AnyEvent: A Cross-Modal Distillation Paradigm for Event-Based Monocular Depth Estimation
 description: >-
-  [3D Vision] This paper proposes a cross-modal distillation paradigm that leverages a vision foundation model (VFM) from the image domain (Depth Anything v2) to generate pseudo-labels for training event-based depth estimation networks. It further introduces a VFM-based recurrent architecture, DepthAnyEvent-R, achieving state-of-the-art performance in event-based monocular depth estimation without requiring costly depth annotations.
+  [3D Vision] This paper proposes a cross-modal distillation paradigm that leverages a vision foundation model (VFM) from the image domain (Depth Anything v2) to generate pseudo-labels for training event-based depth estima…
 tags:
-  - 3D Vision
+  - "3D Vision"
 date: 2026-05-08
 content_hash: 23ce695089900ad4
 ---

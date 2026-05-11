@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ConInstruct: Evaluating Large Language Models on Conflict Detection and Resolution in Instructions
 description: >-
-  [AAAI 2026][LLM Evaluation][instruction conflict detection] This paper proposes ConInstruct, a benchmark for evaluating LLMs' ability to detect and resolve conflicting constraints in instructions. Results show that most proprietary models can detect conflicts reasonably well but rarely notify users explicitly, with DeepSeek-R1 and Claude-4.5-Sonnet achieving the best conflict detection performance (F1 of 91.5% and 87.3%, respectively).
+  [AAAI 2026][LLM Evaluation][instruction conflict detection] This paper proposes ConInstruct, a benchmark for evaluating LLMs' ability to detect and resolve conflicting constraints in instructions. Results show that most…
 tags:
-  - AAAI 2026
-  - LLM Evaluation
-  - instruction conflict detection
-  - conflict resolution
-  - constraint satisfaction
-  - instruction following
-  - evaluation benchmark
+  - "AAAI 2026"
+  - "LLM Evaluation"
+  - "instruction conflict detection"
+  - "conflict resolution"
+  - "constraint satisfaction"
+  - "instruction following"
+  - "evaluation benchmark"
 date: 2026-05-08
 content_hash: 7ba39057228ee48b
 ---

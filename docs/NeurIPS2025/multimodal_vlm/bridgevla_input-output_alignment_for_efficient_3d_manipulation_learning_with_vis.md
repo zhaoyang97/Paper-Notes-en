@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BridgeVLA: Input-Output Alignment for Efficient 3D Manipulation Learning with Vision-Language Models
 description: >-
-  [NEURIPS2025][Multimodal VLM][Vision-Language-Action] This paper proposes BridgeVLA, which projects 3D point clouds into multi-view 2D images and uses 2D heatmaps as an intermediate representation to align the input and output spaces, enabling efficient and effective 3D robot manipulation learning.
+  [NEURIPS2025][Multimodal VLM][Vision-Language-Action] This paper proposes BridgeVLA, which projects 3D point clouds into multi-view 2D images and uses 2D heatmaps as an intermediate representation to align the input and…
 tags:
-  - NEURIPS2025
-  - Multimodal VLM
-  - Vision-Language-Action
-  - 3D Manipulation
-  - Heatmap Prediction
-  - Robot Learning
-  - sample efficiency
+  - "NEURIPS2025"
+  - "Multimodal VLM"
+  - "Vision-Language-Action"
+  - "3D Manipulation"
+  - "Heatmap Prediction"
+  - "Robot Learning"
+  - "sample efficiency"
 date: 2026-05-08
 content_hash: 967ebf1106178641
 ---

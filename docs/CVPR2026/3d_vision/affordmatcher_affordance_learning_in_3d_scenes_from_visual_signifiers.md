@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AffordMatcher: Affordance Learning in 3D Scenes from Visual Signifiers
 description: >-
-  [CVPR 2026][3D Vision][affordance learning] AffordMatcher proposes a method for localizing affordance regions in 3D scenes from visual signifiers (RGB images depicting human interactions). Through the large-scale AffordBridge dataset and a Match-to-Match attention mechanism based on dissimilarity matrices, it achieves 53.4 mAP on zero-shot affordance segmentation, surpassing the second-best method by 7.8 points.
+  [CVPR 2026][3D Vision][affordance learning] AffordMatcher proposes a method for localizing affordance regions in 3D scenes from visual signifiers (RGB images depicting human interactions). Through the large-scale AffordB…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - affordance learning
-  - 3D scene understanding
-  - visual signifiers
-  - cross-modal alignment
-  - zero-shot segmentation
+  - "CVPR 2026"
+  - "3D Vision"
+  - "affordance learning"
+  - "3D scene understanding"
+  - "visual signifiers"
+  - "cross-modal alignment"
+  - "zero-shot segmentation"
 date: 2026-05-08
 content_hash: 02369d5ad25e76fe
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Score2Instruct: Scaling Up Video Quality-Centric Instructions via Automated Dimension Scoring
 description: >-
-  [CVPR 2026][Image Generation][Video Quality Assessment] Score2Instruct proposes SIG, a fully automated video quality instruction generation pipeline that requires neither human annotation nor closed-source APIs. By automatically evaluating 14 quality dimensions and aggregating them into comprehensive quality reasoning texts via hierarchical CoT, SIG constructs the S2I dataset (320K+ instruction samples). Combined with a two-stage progressive fine-tuning strategy, multiple video LMMs simultaneously acquire quality scoring and quality reasoning capabilities, achieving an average SRCC improvement of 26–31% across 5 VQA benchmarks.
+  [CVPR 2026][Image Generation][Video Quality Assessment] Score2Instruct proposes SIG, a fully automated video quality instruction generation pipeline that requires neither human annotation nor closed-source APIs. By autom…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Video Quality Assessment
-  - Instruction Tuning
-  - Automated Scoring
-  - Quality Reasoning
-  - Large Multimodal Models
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Video Quality Assessment"
+  - "Instruction Tuning"
+  - "Automated Scoring"
+  - "Quality Reasoning"
+  - "Large Multimodal Models"
 date: 2026-05-08
 content_hash: 38f46e56aa0aba86
 ---

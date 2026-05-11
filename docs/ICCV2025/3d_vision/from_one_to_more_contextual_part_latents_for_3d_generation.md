@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From One to More: Contextual Part Latents for 3D Generation
 description: >-
-  [ICCV 2025][3D Vision][Part-level 3D generation] This paper proposes CoPart, a framework that represents 3D objects via contextual part latents and fine-tunes pretrained diffusion models with a mutual guidance strategy, enabling high-quality part-level 3D generation along with support for part editing, articulated object generation, and small-scale scene generation.
+  [ICCV 2025][3D Vision][Part-level 3D generation] This paper proposes CoPart, a framework that represents 3D objects via contextual part latents and fine-tunes pretrained diffusion models with a mutual guidance strategy…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Part-level 3D generation
-  - diffusion models
-  - mutual guidance
-  - 3D VAE
-  - part editing
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Part-level 3D generation"
+  - "diffusion models"
+  - "mutual guidance"
+  - "3D VAE"
+  - "part editing"
 date: 2026-05-08
 content_hash: 4e900e8db6031e3f
 ---

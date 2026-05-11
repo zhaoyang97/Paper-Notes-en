@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EchoTrail-GUI: Building Actionable Memory for GUI Agents via Critic-Guided Self-Exploration
 description: >-
-  [CVPR 2026][LLM Agent][GUI Agent] EchoTrail-GUI proposes a three-stage closed-loop framework: an exploration agent autonomously interacts with GUI environments to generate trajectories → a critic reward model filters and retains only high-quality trajectories to construct a memory store (EchoTrail-4K) → upon receiving a new task, the most relevant memories are injected via hybrid dense-sparse retrieval to guide inference. This transforms a stateless GUI agent into a memory-augmented system, achieving 51.7% SR (+17.2pp) with GPT-4o on AndroidWorld, and improving Qwen2.5-VL-72B SR from 23.9% to 37.5% on AndroidLab.
+  [CVPR 2026][LLM Agent][GUI Agent] EchoTrail-GUI proposes a three-stage closed-loop framework: an exploration agent autonomously interacts with GUI environments to generate trajectories → a critic reward model filters and…
 tags:
-  - CVPR 2026
-  - LLM Agent
-  - GUI Agent
-  - Actionable Memory
-  - Self-Exploration
-  - Critic-Guided
-  - RAG Inference
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "GUI Agent"
+  - "Actionable Memory"
+  - "Self-Exploration"
+  - "Critic-Guided"
+  - "RAG Inference"
 date: 2026-05-08
 content_hash: 0f5ecb247fb16aac
 ---

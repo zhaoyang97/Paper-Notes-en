@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Open-World 3D Scene Graph Generation for Retrieval-Augmented Reasoning
 description: >-
-  [AAAI 2026][3D Vision][3D scene graph] This paper proposes OSU-3DSG, a unified framework that integrates vision-language models for open-world 3D scene graph generation and supports four scene interaction tasks — scene question answering, visual grounding, instance retrieval, and task planning — via retrieval-augmented reasoning, achieving performance comparable to supervised methods under a zero-shot setting.
+  [AAAI 2026][3D Vision][3D scene graph] This paper proposes OSU-3DSG, a unified framework that integrates vision-language models for open-world 3D scene graph generation and supports four scene interaction tasks — scene q…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - 3D scene graph
-  - open-world
-  - retrieval-augmented reasoning
-  - vision-language model
-  - embodied interaction
+  - "AAAI 2026"
+  - "3D Vision"
+  - "3D scene graph"
+  - "open-world"
+  - "retrieval-augmented reasoning"
+  - "vision-language model"
+  - "embodied interaction"
 date: 2026-05-08
 content_hash: ed892faab3d2fe20
 ---

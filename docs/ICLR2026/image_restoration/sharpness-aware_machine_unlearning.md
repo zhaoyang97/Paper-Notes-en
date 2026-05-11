@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Sharpness-Aware Machine Unlearning
 description: >-
-  [ICLR 2026][Image Restoration][machine unlearning] This paper systematically analyzes the theoretical properties of SAM in the machine unlearning setting through a signal-noise decomposition framework. It finds that SAM abandons its denoising capability on the forget set while retaining it on the retain set. Motivated by this finding, the paper proposes the Sharp MinMax algorithm, which partitions the model into two components subject to sharpness minimization (retain) and sharpness maximization (forget) respectively, achieving state-of-the-art unlearning performance.
+  [ICLR 2026][Image Restoration][machine unlearning] This paper systematically analyzes the theoretical properties of SAM in the machine unlearning setting through a signal-noise decomposition framework. It finds that SAM…
 tags:
-  - ICLR 2026
-  - Image Restoration
-  - machine unlearning
-  - Sharpness-Aware Minimization
-  - SAM
-  - Signal-Noise Decomposition
-  - Sharp MinMax
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "machine unlearning"
+  - "Sharpness-Aware Minimization"
+  - "SAM"
+  - "Signal-Noise Decomposition"
+  - "Sharp MinMax"
 date: 2026-05-08
 content_hash: b6eb881b71afd419
 ---

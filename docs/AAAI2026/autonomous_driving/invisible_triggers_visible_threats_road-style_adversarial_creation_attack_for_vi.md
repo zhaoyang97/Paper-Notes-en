@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Invisible Triggers, Visible Threats! Road-Style Adversarial Creation Attack for Visual 3D Detection in Autonomous Driving
 description: >-
-  [AAAI 2026][Autonomous Driving][adversarial attack] This paper proposes AdvRoad, a two-stage framework (Road-Style Adversary Generation + Scenario-Associated Adaptation) that generates diverse adversarial posters with road-surface texture styles. These posters induce "ghost objects" (false positives) in visual 3D detectors for autonomous driving while remaining inconspicuous to human drivers due to their natural appearance, significantly improving the stealthiness and defensive resistance of FP attacks.
+  [AAAI 2026][Autonomous Driving][adversarial attack] This paper proposes AdvRoad, a two-stage framework (Road-Style Adversary Generation + Scenario-Associated Adaptation) that generates diverse adversarial posters with ro…
 tags:
-  - AAAI 2026
-  - Autonomous Driving
-  - adversarial attack
-  - 3D object detection
-  - false positive attack
-  - naturalistic adversarial examples
-  - autonomous driving security
+  - "AAAI 2026"
+  - "Autonomous Driving"
+  - "adversarial attack"
+  - "3D object detection"
+  - "false positive attack"
+  - "naturalistic adversarial examples"
+  - "autonomous driving security"
 date: 2026-05-08
 content_hash: 50d69ad57e8ac29e
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Benchmarking Egocentric Visual-Inertial SLAM at City Scale
 description: >-
-  [ICCV 2025][3D Vision][Visual-Inertial SLAM] This paper introduces LaMAria — the first city-scale egocentric multi-sensor VIO/SLAM benchmark dataset — providing centimeter-accurate ground truth via surveying-grade control points. It systematically evaluates mainstream academic SLAM methods on real egocentric data, revealing a substantial performance gap between academic systems and commercial solutions.
+  [ICCV 2025][3D Vision][Visual-Inertial SLAM] This paper introduces LaMAria — the first city-scale egocentric multi-sensor VIO/SLAM benchmark dataset — providing centimeter-accurate ground truth via surveying-grade contro…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Visual-Inertial SLAM
-  - egocentric vision
-  - benchmark
-  - city-scale localization
-  - wearable devices
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Visual-Inertial SLAM"
+  - "egocentric vision"
+  - "benchmark"
+  - "city-scale localization"
+  - "wearable devices"
 date: 2026-05-08
 content_hash: ffcc576ed79e351f
 ---

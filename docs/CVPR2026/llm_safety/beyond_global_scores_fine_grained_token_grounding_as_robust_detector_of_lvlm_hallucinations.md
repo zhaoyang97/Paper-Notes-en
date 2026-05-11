@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond the Global Scores: Fine-Grained Token Grounding as a Robust Detector of LVLM Hallucinations
 description: >-
-  [CVPR 2026][LLM Safety][hallucination detection] A patch-level LVLM hallucination detection framework is proposed. Hallucinated tokens are found to exhibit two characteristic signatures—dispersed attention patterns and low semantic alignment—based on which two lightweight metrics are designed: Attention Dispersion Score (ADS) and Cross-modal Grounding Consistency (CGC), achieving 90% detection accuracy.
+  [CVPR 2026][LLM Safety][hallucination detection] A patch-level LVLM hallucination detection framework is proposed. Hallucinated tokens are found to exhibit two characteristic signatures—dispersed attention patterns and l…
 tags:
-  - CVPR 2026
-  - LLM Safety
-  - hallucination detection
-  - LVLM
-  - attention dispersion
-  - patch-level grounding
-  - token-level
+  - "CVPR 2026"
+  - "LLM Safety"
+  - "hallucination detection"
+  - "LVLM"
+  - "attention dispersion"
+  - "patch-level grounding"
+  - "token-level"
 date: 2026-05-08
 content_hash: d4998961598bfb96
 ---

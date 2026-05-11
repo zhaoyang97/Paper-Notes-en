@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Intrinsic Lorentz Neural Network
 description: >-
-  [ICLR 2026][Medical Imaging][hyperbolic neural network] This paper proposes ILNN, a fully intrinsic hyperbolic neural network in which all operations are performed entirely within the Lorentz model, eliminating the geometric inconsistencies introduced by Euclidean operations in existing methods. ILNN achieves state-of-the-art performance on image classification, genomics, and graph classification tasks.
+  [ICLR 2026][Medical Imaging][hyperbolic neural network] This paper proposes ILNN, a fully intrinsic hyperbolic neural network in which all operations are performed entirely within the Lorentz model…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - hyperbolic neural network
-  - Lorentz model
-  - intrinsic operations
-  - batch normalization
-  - geometric deep learning
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "hyperbolic neural network"
+  - "Lorentz model"
+  - "intrinsic operations"
+  - "batch normalization"
+  - "geometric deep learning"
 date: 2026-05-08
 content_hash: ca00e658847476bf
 ---

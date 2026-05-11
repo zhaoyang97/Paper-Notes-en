@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] StreamForest: Efficient Online Video Understanding with Persistent Event Memory
 description: >-
-  [NeurIPS 2025][Autonomous Driving][streaming video understanding] This paper proposes StreamForest, an architecture that adaptively organizes streaming video frames into multiple event-level tree structures via a "Persistent Event Memory Forest," combined with a "Fine-grained Spatiotemporal Window" to capture short-term visual cues. The method achieves 77.3% accuracy on StreamingBench and retains 96.8% of performance under extreme compression (only 1024 visual tokens).
+  [NeurIPS 2025][Autonomous Driving][streaming video understanding] This paper proposes StreamForest, an architecture that adaptively organizes streaming video frames into multiple event-level tree structures via a "Persis…
 tags:
-  - NeurIPS 2025
-  - Autonomous Driving
-  - streaming video understanding
-  - persistent event memory
-  - memory tree structure
-  - visual token compression
-  - multimodal large language models
+  - "NeurIPS 2025"
+  - "Autonomous Driving"
+  - "streaming video understanding"
+  - "persistent event memory"
+  - "memory tree structure"
+  - "visual token compression"
+  - "multimodal large language models"
 date: 2026-05-08
 content_hash: ab8987003305b778
 ---

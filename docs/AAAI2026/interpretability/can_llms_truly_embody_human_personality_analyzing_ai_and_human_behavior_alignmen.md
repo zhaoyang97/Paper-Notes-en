@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Can LLMs Truly Embody Human Personality? Analyzing AI and Human Behavior Alignment in Dispute Resolution
 description: >-
-  [AAAI 2026][LLM personality simulation] This paper proposes the first systematic comparative framework that directly contrasts strategic behavioral differences between humans and personality-prompted LLMs in paired dispute mediation scenarios, finding significant divergence in personality-behavior mapping and challenging the assumption that personality prompting can serve as a proxy for human behavior.
+  [AAAI 2026][Interpretability][LLM personality simulation] This paper proposes the first systematic comparative framework that directly contrasts strategic behavioral differences between humans and personality-prompted LL…
 tags:
-  - AAAI 2026
-  - LLM personality simulation
-  - dispute resolution
-  - Big Five personality
-  - behavioral alignment
-  - social simulation
+  - "AAAI 2026"
+  - "Interpretability"
+  - "LLM personality simulation"
+  - "dispute resolution"
+  - "Big Five personality"
+  - "behavioral alignment"
+  - "social simulation"
 date: 2026-05-08
 content_hash: 958450ba3cd727fb
 ---

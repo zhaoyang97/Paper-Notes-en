@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Uncertainty-guided Compositional Alignment with Part-to-Whole Semantic Representativeness in Hyperbolic Vision-Language Models
 description: >-
-  [CVPR2026][Multimodal VLM][Hyperbolic VLM] This paper proposes UNCHA, a framework that models the semantic representativeness of image parts with respect to the whole scene via hyperbolic uncertainty in hyperbolic VLMs. By incorporating uncertainty-guided contrastive loss and entailment loss, UNCHA enhances compositional scene understanding and outperforms existing hyperbolic VLMs across multiple downstream tasks.
+  [CVPR2026][Multimodal VLM][Hyperbolic VLM] This paper proposes UNCHA, a framework that models the semantic representativeness of image parts with respect to the whole scene via hyperbolic uncertainty in hyperbolic VLMs.…
 tags:
-  - CVPR2026
-  - Multimodal VLM
-  - Hyperbolic VLM
-  - Uncertainty Modeling
-  - Part-to-Whole Alignment
-  - Compositional Understanding
-  - Entailment Loss
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "Hyperbolic VLM"
+  - "Uncertainty Modeling"
+  - "Part-to-Whole Alignment"
+  - "Compositional Understanding"
+  - "Entailment Loss"
 date: 2026-05-08
 content_hash: 531cbb0e86f255da
 ---

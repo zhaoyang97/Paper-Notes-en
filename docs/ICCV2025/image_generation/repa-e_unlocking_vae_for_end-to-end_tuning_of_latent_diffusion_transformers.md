@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] REPA-E: Unlocking VAE for End-to-End Tuning with Latent Diffusion Transformers
 description: >-
-  [ICCV 2025][Image Generation][End-to-end training] This paper proposes REPA-E, which enables joint end-to-end training of VAE and latent diffusion Transformers via representation alignment (REPA) loss, achieving 17× and 45× training speedups over REPA and vanilla training respectively, and setting a new state of the art of FID 1.12 on ImageNet 256×256.
+  [ICCV 2025][Image Generation][End-to-end training] This paper proposes REPA-E, which enables joint end-to-end training of VAE and latent diffusion Transformers via representation alignment (REPA) loss…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - End-to-end training
-  - VAE
-  - latent diffusion models
-  - representation alignment
-  - training acceleration
+  - "ICCV 2025"
+  - "Image Generation"
+  - "End-to-end training"
+  - "VAE"
+  - "latent diffusion models"
+  - "representation alignment"
+  - "training acceleration"
 date: 2026-05-08
 content_hash: a91d50be0c87dd72
 ---

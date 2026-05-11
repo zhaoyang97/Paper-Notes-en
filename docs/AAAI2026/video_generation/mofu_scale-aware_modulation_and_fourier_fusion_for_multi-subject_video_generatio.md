@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MoFu: Scale-Aware Modulation and Fourier Fusion for Multi-Subject Video Generation
 description: >-
-  [AAAI 2026][Video Generation][Multi-subject video generation] This paper proposes MoFu, which addresses two fundamental challenges in multi-subject video generation—**scale inconsistency** and **permutation sensitivity**—through two core modules: Scale-Aware Modulation (SMO, an LLM-guided scale-aware modulation mechanism) and Fourier Fusion (an FFT-based permutation-invariant feature fusion strategy). The work additionally introduces the MoFu-1M training dataset and the MoFu-Bench evaluation benchmark.
+  [AAAI 2026][Video Generation][Multi-subject video generation] This paper proposes MoFu, which addresses two fundamental challenges in multi-subject video generation—**scale inconsistency** and **permutation sensitivity**…
 tags:
-  - AAAI 2026
-  - Video Generation
-  - Multi-subject video generation
-  - scale consistency
-  - permutation invariance
-  - Fourier fusion
-  - DiT
+  - "AAAI 2026"
+  - "Video Generation"
+  - "Multi-subject video generation"
+  - "scale consistency"
+  - "permutation invariance"
+  - "Fourier fusion"
+  - "DiT"
 date: 2026-05-08
 content_hash: 10b030e272a5aa92
 ---

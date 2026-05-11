@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Phantom Menace: Exploring and Enhancing the Robustness of VLA Models Against Physical Sensor Attacks
 description: >-
-  [AAAI 2026][Multimodal VLM][VLA model security] This paper presents the first systematic study of the security of Vision-Language-Action (VLA) models under physical sensor attacks. It proposes a "Real-Sim-Real" framework to evaluate six camera attacks and two microphone attacks against four VLA models, reveals critical vulnerabilities across all evaluated models, and introduces an adversarial training defense that improves performance under moderate-strength attacks by up to 60%.
+  [AAAI 2026][Multimodal VLM][VLA model security] This paper presents the first systematic study of the security of Vision-Language-Action (VLA) models under physical sensor attacks. It proposes a "Real-Sim-Real" framework…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - VLA model security
-  - physical sensor attacks
-  - robustness evaluation
-  - adversarial training
-  - robot safety
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "VLA model security"
+  - "physical sensor attacks"
+  - "robustness evaluation"
+  - "adversarial training"
+  - "robot safety"
 date: 2026-05-08
 content_hash: 6ff79fa63769c95f
 ---

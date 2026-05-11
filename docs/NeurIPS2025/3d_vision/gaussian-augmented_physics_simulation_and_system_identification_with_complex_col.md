@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Gaussian-Augmented Physics Simulation and System Identification with Complex Colliders
 description: >-
-  [NeurIPS 2025][3D Vision][Differentiable Physics Simulation] This paper proposes AS-DiffMPM, a differentiable Material Point Method (MPM) framework supporting arbitrary-shape rigid body colliders, combined with multiple novel-view synthesis methods to enable system identification of physical parameters from visual observations.
+  [NeurIPS 2025][3D Vision][Differentiable Physics Simulation] This paper proposes AS-DiffMPM, a differentiable Material Point Method (MPM) framework supporting arbitrary-shape rigid body colliders…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Differentiable Physics Simulation
-  - System Identification
-  - Material Point Method
-  - 3D Gaussian Splatting
-  - Collision Handling
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Differentiable Physics Simulation"
+  - "System Identification"
+  - "Material Point Method"
+  - "3D Gaussian Splatting"
+  - "Collision Handling"
 date: 2026-05-08
 content_hash: 4d8f0d5f26dc55eb
 ---

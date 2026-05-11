@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Incorporating Self-Rewriting into Large Language Model Reasoning Reinforcement
 description: >-
-  [AAAI 2026][LLM Reasoning][Reasoning quality improvement] This paper proposes a Self-Rewriting framework that enables large reasoning models (LRMs) to rewrite their own reasoning traces for "easy" samples (queries where all responses are correct) during RL training and learn from the rewritten versions. With only ~10% additional training overhead, the approach reduces reasoning length by 46% while maintaining accuracy, improves internal reasoning quality (LLM-as-Judge) by 7.2 points, and effectively mitigates issues such as over-thinking and redundant thinking.
+  [AAAI 2026][LLM Reasoning][Reasoning quality improvement] This paper proposes a Self-Rewriting framework that enables large reasoning models (LRMs) to rewrite their own reasoning traces for "easy" samples (queries where…
 tags:
-  - AAAI 2026
-  - LLM Reasoning
-  - Reasoning quality improvement
-  - self-rewriting
-  - GRPO
-  - reasoning length control
-  - over-thinking
+  - "AAAI 2026"
+  - "LLM Reasoning"
+  - "Reasoning quality improvement"
+  - "self-rewriting"
+  - "GRPO"
+  - "reasoning length control"
+  - "over-thinking"
 date: 2026-05-08
 content_hash: e5dde0b43cbec291
 ---

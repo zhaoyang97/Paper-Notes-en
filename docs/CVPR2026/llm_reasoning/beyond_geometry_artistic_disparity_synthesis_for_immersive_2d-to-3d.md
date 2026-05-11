@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond Geometry: Artistic Disparity Synthesis for Immersive 2D-to-3D
 description: >-
-  [CVPR 2026][LLM Reasoning][2D-to-3D conversion] A new paradigm called "Artistic Disparity Synthesis" (Art3D) is proposed, shifting the goal of 2D-to-3D conversion from geometric accuracy to artistic expression. A dual-path architecture decouples global depth style from local artistic effects, learning directorial intent from professional 3D film data.
+  [CVPR 2026][LLM Reasoning][2D-to-3D conversion] A new paradigm called "Artistic Disparity Synthesis" (Art3D) is proposed, shifting the goal of 2D-to-3D conversion from geometric accuracy to artistic expression. A dual-pa…
 tags:
-  - CVPR 2026
-  - LLM Reasoning
-  - 2D-to-3D conversion
-  - artistic disparity synthesis
-  - stereoscopic film
-  - dual-path architecture
-  - depth style
+  - "CVPR 2026"
+  - "LLM Reasoning"
+  - "2D-to-3D conversion"
+  - "artistic disparity synthesis"
+  - "stereoscopic film"
+  - "dual-path architecture"
+  - "depth style"
 date: 2026-05-08
 content_hash: 8dd92e70783c6289
 ---

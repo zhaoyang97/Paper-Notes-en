@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Optimal Online Change Detection via Random Fourier Features
 description: >-
-  [NeurIPS 2025][LLM Pretraining][online change detection] This paper proposes the Online RFF-MMD algorithm, which approximates the MMD statistic via random Fourier features and embeds it into a sequential testing framework over a binary grid. The method achieves online nonparametric change detection without requiring training data or window size parameters, with $\mathcal{O}(r \log n)$ time and space complexity, and establishes minimax optimality of the detection delay.
+  [NeurIPS 2025][LLM Pretraining][online change detection] This paper proposes the Online RFF-MMD algorithm, which approximates the MMD statistic via random Fourier features and embeds it into a sequential testing framewor…
 tags:
-  - NeurIPS 2025
-  - LLM Pretraining
-  - online change detection
-  - random Fourier features
-  - MMD
-  - minimax optimality
-  - nonparametric detection
+  - "NeurIPS 2025"
+  - "LLM Pretraining"
+  - "online change detection"
+  - "random Fourier features"
+  - "MMD"
+  - "minimax optimality"
+  - "nonparametric detection"
 date: 2026-05-08
 content_hash: 850ffc183369507c
 ---

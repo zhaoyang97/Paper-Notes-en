@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Content-Preserving Secure Linguistic Steganography
 description: >-
-  [AAAI 2026][LLM/NLP][linguistic steganography] This paper proposes CLstega, the first content-preserving linguistic steganography paradigm, which embeds secret information into an unmodified cover text by fine-tuning a masked language model (MLM) to controllably transform its prediction distribution. The approach achieves a 100% extraction success rate and near-perfect security, with steganalysis detection accuracy approaching the random-guess baseline of 0.5.
+  [AAAI 2026][LLM/NLP][linguistic steganography] This paper proposes CLstega, the first content-preserving linguistic steganography paradigm…
 tags:
-  - AAAI 2026
-  - LLM/NLP
-  - linguistic steganography
-  - content preservation
-  - masked language model
-  - distribution transformation
-  - secure communication
+  - "AAAI 2026"
+  - "LLM/NLP"
+  - "linguistic steganography"
+  - "content preservation"
+  - "masked language model"
+  - "distribution transformation"
+  - "secure communication"
 date: 2026-05-08
 content_hash: eda80847e64332ff
 ---

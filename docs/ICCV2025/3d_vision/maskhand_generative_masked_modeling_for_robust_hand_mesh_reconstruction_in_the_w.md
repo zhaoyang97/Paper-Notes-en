@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MaskHand: Generative Masked Modeling for Robust Hand Mesh Reconstruction in the Wild
 description: >-
-  [ICCV 2025][3D Vision][hand mesh reconstruction] This paper proposes MaskHand, the first method to introduce generative masked modeling into 3D hand mesh reconstruction. It discretizes continuous hand poses into tokens via VQ-MANO, then employs a context-guided masked Transformer to learn the probability distribution of 2D-to-3D mappings. During inference, confidence-guided iterative sampling is used to generate high-precision hand meshes, achieving a 19.5% reduction in PA-MPJPE on the HO3Dv3 zero-shot evaluation.
+  [ICCV 2025][3D Vision][hand mesh reconstruction] This paper proposes MaskHand, the first method to introduce generative masked modeling into 3D hand mesh reconstruction. It discretizes continuous hand poses into tokens v…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - hand mesh reconstruction
-  - generative masked modeling
-  - VQ-VAE
-  - confidence-guided sampling
-  - uncertainty quantification
+  - "ICCV 2025"
+  - "3D Vision"
+  - "hand mesh reconstruction"
+  - "generative masked modeling"
+  - "VQ-VAE"
+  - "confidence-guided sampling"
+  - "uncertainty quantification"
 date: 2026-05-08
 content_hash: 98fda7d9601bbea5
 ---

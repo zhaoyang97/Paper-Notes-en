@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Cell-Aware Hierarchical Multi-Modal Representations for Robust Molecular Modeling
 description: >-
-  [AAAI 2026][Medical Imaging][Molecular property prediction] This paper proposes the CHMR framework, which addresses missing biological modalities via structure-aware propagation, and introduces Tree-VQ to model hierarchical dependencies among molecules, cells, and genes. Evaluated on 728 tasks across 9 benchmarks, CHMR achieves a 3.6% improvement in classification and 17.2% in regression, enabling robust cell-aware molecular representation learning.
+  [AAAI 2026][Medical Imaging][Molecular property prediction] This paper proposes the CHMR framework, which addresses missing biological modalities via structure-aware propagation…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Molecular property prediction
-  - cell-aware representation
-  - hierarchical vector quantization
-  - missing modality
-  - multi-modal fusion
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Molecular property prediction"
+  - "cell-aware representation"
+  - "hierarchical vector quantization"
+  - "missing modality"
+  - "multi-modal fusion"
 date: 2026-05-08
 content_hash: 00e75ef5666eee4c
 ---

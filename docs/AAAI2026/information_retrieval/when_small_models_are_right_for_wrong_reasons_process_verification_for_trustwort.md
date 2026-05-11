@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] When Small Models Are Right for Wrong Reasons: Process Verification for Trustworthy Agents
 description: >-
-  [AAAI 2026][Small model reasoning] By analyzing 10,734 reasoning trajectories, this paper reveals a severe "Right for Wrong Reasons" (RWR) phenomenon in small language models (7–9B): 50–69% of correct answers contain fundamental reasoning flaws. The authors propose the Reasoning Integrity Score (RIS) as a process-level metric, find that RAG effectively improves reasoning quality while metacognitive interventions are harmful, and distill a fast classifier (0.86 F1, 100× speedup) for real-time deployment.
+  [AAAI 2026][Information Retrieval & RAG][Small model reasoning] By analyzing 10,734 reasoning trajectories, this paper reveals a severe "Right for Wrong Reasons" (RWR) phenomenon in small language models (7–9B): 50–69% o…
 tags:
-  - AAAI 2026
-  - Small model reasoning
-  - process verification
-  - reasoning integrity
-  - RAG
-  - metacognition
+  - "AAAI 2026"
+  - "Information Retrieval & RAG"
+  - "Small model reasoning"
+  - "process verification"
+  - "reasoning integrity"
+  - "RAG"
+  - "metacognition"
 date: 2026-05-08
 content_hash: a08e1956dfc7d744
 ---

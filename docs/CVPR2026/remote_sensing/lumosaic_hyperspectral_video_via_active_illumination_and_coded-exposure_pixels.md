@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Lumosaic: Hyperspectral Video via Active Illumination and Coded-Exposure Pixels
 description: >-
-  [CVPR 2026][Remote Sensing][hyperspectral video] This paper presents Lumosaic, an active hyperspectral video system that synchronizes an array of 12 narrowband LEDs with a coded-exposure pixel (CEP) camera at microsecond precision. Within 158 sub-frames per video frame, the system jointly encodes spatial, temporal, and spectral information, achieving motion-robust hyperspectral video reconstruction at 30 fps, VGA resolution, and 31 spectral channels (400–700 nm), with PSNR exceeding passive snapshot systems by more than 10 dB.
+  [CVPR 2026][Remote Sensing][hyperspectral video] This paper presents Lumosaic, an active hyperspectral video system that synchronizes an array of 12 narrowband LEDs with a coded-exposure pixel (CEP) camera at microsecond…
 tags:
-  - CVPR 2026
-  - Remote Sensing
-  - hyperspectral video
-  - coded-exposure pixel
-  - active illumination
-  - motion-robust
-  - spectral reconstruction
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "hyperspectral video"
+  - "coded-exposure pixel"
+  - "active illumination"
+  - "motion-robust"
+  - "spectral reconstruction"
 date: 2026-05-08
 content_hash: ad00bd6fdb3cbebb
 ---

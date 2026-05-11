@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AcTTA: Rethinking Test-Time Adaptation via Dynamic Activation
 description: >-
-  [CVPR 2026][Signal & Communication][Test-time adaptation] This paper proposes AcTTA, a test-time adaptation framework based on dynamic activation function modulation. By reparameterizing conventional fixed activation functions into a learnable form—incorporating an activation center shift and asymmetric gradient slopes—AcTTA adaptively adjusts activation behavior during inference to address distribution shift, consistently outperforming normalization-layer-based TTA methods on CIFAR10-C, CIFAR100-C, and ImageNet-C.
+  [CVPR 2026][Signal & Communication][Test-time adaptation] This paper proposes AcTTA, a test-time adaptation framework based on dynamic activation function modulation. By reparameterizing conventional fixed activation fun…
 tags:
-  - CVPR 2026
+  - "CVPR 2026"
   - "Signal & Communication"
-  - Test-time adaptation
-  - activation function
-  - distribution shift
-  - normalization layer
-  - dynamic activation
+  - "Test-time adaptation"
+  - "activation function"
+  - "distribution shift"
+  - "normalization layer"
+  - "dynamic activation"
 date: 2026-05-08
 content_hash: 706849a7b548233c
 ---

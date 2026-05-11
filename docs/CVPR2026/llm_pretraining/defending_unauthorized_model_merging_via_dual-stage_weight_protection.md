@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Defending Unauthorized Model Merging via Dual-Stage Weight Protection
 description: >-
-  [CVPR 2026][LLM Pretraining][Model Merging Defense] This paper proposes MergeGuard, a proactive dual-stage weight protection framework: Stage 1 disperses task-critical weights via L2 regularization, and Stage 2 injects structured perturbations to disrupt merging compatibility. The protected model retains <1.5% performance loss while causing merged model accuracy to drop by up to 90%.
+  [CVPR 2026][LLM Pretraining][Model Merging Defense] This paper proposes MergeGuard, a proactive dual-stage weight protection framework: Stage 1 disperses task-critical weights via L2 regularization…
 tags:
-  - CVPR 2026
-  - LLM Pretraining
-  - Model Merging Defense
-  - Intellectual Property Protection
-  - Weight Protection
-  - Adversarial Perturbation
-  - Model Security
+  - "CVPR 2026"
+  - "LLM Pretraining"
+  - "Model Merging Defense"
+  - "Intellectual Property Protection"
+  - "Weight Protection"
+  - "Adversarial Perturbation"
+  - "Model Security"
 date: 2026-05-08
 content_hash: 367b6d98729b856c
 ---

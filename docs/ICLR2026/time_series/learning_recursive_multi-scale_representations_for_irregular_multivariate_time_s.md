@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Recursive Multi-Scale Representations for Irregular Multivariate Time Series Forecasting
 description: >-
-  [ICLR 2026][Time Series][Irregular time series] This paper proposes ReIMTS, a plug-and-play framework that preserves the original sampling patterns of irregular multivariate time series (IMTS) via time-period-based recursive partitioning (rather than resampling), combined with an irregularity-aware representation fusion mechanism for multi-scale modeling. ReIMTS achieves an average improvement of 27.1% across six IMTS backbones.
+  [ICLR 2026][Time Series][Irregular time series] This paper proposes ReIMTS, a plug-and-play framework that preserves the original sampling patterns of irregular multivariate time series (IMTS) via time-period-based recur…
 tags:
-  - ICLR 2026
-  - Time Series
-  - Irregular time series
-  - multi-scale modeling
-  - recursive partitioning
-  - sampling pattern preservation
-  - forecasting
+  - "ICLR 2026"
+  - "Time Series"
+  - "Irregular time series"
+  - "multi-scale modeling"
+  - "recursive partitioning"
+  - "sampling pattern preservation"
+  - "forecasting"
 date: 2026-05-08
 content_hash: caa3856b70976f7f
 ---

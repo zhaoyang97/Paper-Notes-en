@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DevFD: Developmental Face Forgery Detection by Learning Shared and Orthogonal LoRA Subspaces
 description: >-
-  [NEURIPS2025][Human Understanding][face forgery detection] This paper proposes DevFD—a developmental MoE architecture that models the common characteristics of real faces via a shared Real-LoRA, incrementally captures new forgery types via a sequence of orthogonal Fake-LoRAs, and mitigates catastrophic forgetting by integrating orthogonal gradient constraints into an orthogonal loss. DevFD achieves state-of-the-art accuracy and the lowest forgetting rate in continual learning for face forgery detection.
+  [NEURIPS2025][Human Understanding][face forgery detection] This paper proposes DevFD—a developmental MoE architecture that models the common characteristics of real faces via a shared Real-LoRA…
 tags:
-  - NEURIPS2025
-  - Human Understanding
-  - face forgery detection
-  - continual learning
-  - mixture of experts
-  - LoRA
-  - orthogonal subspace
+  - "NEURIPS2025"
+  - "Human Understanding"
+  - "face forgery detection"
+  - "continual learning"
+  - "mixture of experts"
+  - "LoRA"
+  - "orthogonal subspace"
 date: 2026-05-08
 content_hash: 5a06d210fa9676c7
 ---

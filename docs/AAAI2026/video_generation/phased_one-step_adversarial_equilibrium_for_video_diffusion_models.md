@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Phased One-Step Adversarial Equilibrium for Video Diffusion Models
 description: >-
-  [AAAI 2026][Video Generation][Video diffusion distillation] This paper proposes V-PAE (Video Phased Adversarial Equilibrium), a two-phase distillation framework consisting of **stability priming followed by unified adversarial equilibrium**, which compresses large-scale video diffusion models (e.g., Wan2.1-I2V-14B) to single-step generation, achieving a 100× speedup and surpassing existing acceleration methods by 5.8% in average quality on VBench-I2V.
+  [AAAI 2026][Video Generation][Video diffusion distillation] This paper proposes V-PAE (Video Phased Adversarial Equilibrium), a two-phase distillation framework consisting of **stability priming followed by unified adver…
 tags:
-  - AAAI 2026
-  - Video Generation
-  - Video diffusion distillation
-  - one-step generation
-  - adversarial training
-  - image-to-video
-  - sampling acceleration
+  - "AAAI 2026"
+  - "Video Generation"
+  - "Video diffusion distillation"
+  - "one-step generation"
+  - "adversarial training"
+  - "image-to-video"
+  - "sampling acceleration"
 date: 2026-05-08
 content_hash: ff312fa7405490e1
 ---

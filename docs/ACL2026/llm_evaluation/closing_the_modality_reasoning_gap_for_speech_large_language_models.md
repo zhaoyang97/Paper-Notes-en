@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Closing the Modality Reasoning Gap for Speech Large Language Models
 description: >-
-  [ACL 2026][LLM Evaluation][Speech LLM] This paper proposes TARS (Trajectory Alignment for Reasoning in Speech), a reinforcement learning-based framework that aligns speech-conditioned reasoning trajectories with text-conditioned ones via two dense reward signals—representation alignment and behavior alignment. TARS achieves state-of-the-art performance at the 7B scale, with a Modality Recovery Rate (MRR) approaching or exceeding 100%.
+  [ACL 2026][LLM Evaluation][Speech LLM] This paper proposes TARS (Trajectory Alignment for Reasoning in Speech), a reinforcement learning-based framework that aligns speech-conditioned reasoning trajectories with text-con…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - Speech LLM
-  - Modality Reasoning Gap
-  - Reinforcement Learning
-  - Representation Alignment
-  - Trajectory Alignment
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "Speech LLM"
+  - "Modality Reasoning Gap"
+  - "Reinforcement Learning"
+  - "Representation Alignment"
+  - "Trajectory Alignment"
 date: 2026-05-08
 content_hash: 502fbe6283b4c846
 ---

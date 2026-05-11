@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Test-Time Adaptive Object Detection with Foundation Model
 description: >-
-  [NeurIPS 2025][Object Detection][test-time adaptation] This paper proposes TTAOD, a source-free open-vocabulary test-time adaptive object detection framework that combines multimodal Prompt Tuning, Mean-Teacher, an Instance Dynamic Memory (IDM) module, and memory augmentation/hallucination strategies. It achieves 56.2% AP50 on Pascal-C (+11.0 vs. SOTA) and demonstrates consistent gains across 13 cross-domain datasets.
+  [NeurIPS 2025][Object Detection][test-time adaptation] This paper proposes TTAOD, a source-free open-vocabulary test-time adaptive object detection framework that combines multimodal Prompt Tuning, Mean-Teacher…
 tags:
-  - NeurIPS 2025
-  - Object Detection
-  - test-time adaptation
-  - open-vocabulary detection
-  - Mean-Teacher
-  - prompt tuning
-  - dynamic memory
+  - "NeurIPS 2025"
+  - "Object Detection"
+  - "test-time adaptation"
+  - "open-vocabulary detection"
+  - "Mean-Teacher"
+  - "prompt tuning"
+  - "dynamic memory"
 date: 2026-05-08
 content_hash: ed351c49afb823c8
 ---

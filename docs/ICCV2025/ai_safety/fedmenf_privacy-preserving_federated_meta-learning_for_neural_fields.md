@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FedMeNF: Privacy-Preserving Federated Meta-Learning for Neural Fields
 description: >-
-  [ICCV 2025][AI Safety][Federated Learning] This paper is the first to study federated meta-learning for Neural Fields (NFs) under private data settings. It reveals the severe privacy leakage mechanisms of existing federated meta-learning methods on neural field tasks, and proposes FedMeNF, which regularizes private information in local meta-gradients via a privacy-preserving loss function, effectively protecting client data privacy while retaining fast adaptation capability.
+  [ICCV 2025][AI Safety][Federated Learning] This paper is the first to study federated meta-learning for Neural Fields (NFs) under private data settings. It reveals the severe privacy leakage mechanisms of existing federa…
 tags:
-  - ICCV 2025
-  - AI Safety
-  - Federated Learning
-  - Meta-Learning
-  - Neural Fields
-  - Privacy Preservation
-  - Implicit Neural Representations
+  - "ICCV 2025"
+  - "AI Safety"
+  - "Federated Learning"
+  - "Meta-Learning"
+  - "Neural Fields"
+  - "Privacy Preservation"
+  - "Implicit Neural Representations"
 date: 2026-05-08
 content_hash: 4defb57754474185
 ---

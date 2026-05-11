@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] EquaCode: A Multi-Strategy Jailbreak Approach for Large Language Models via Equation Solving and Code Completion
 description: >-
-  [AAAI 2026][Jailbreak Attack] This paper proposes EquaCode, a multi-strategy jailbreak method that decomposes malicious queries into a cross-domain combination of equation solving ($B+C+x=A$) and code completion (completing the `solve()` method of a `Solver` class), achieving an average attack success rate of 92.78% on the GPT series and approaching 100% on the latest models (Gemini/DeepSeek/Grok).
+  [AAAI 2026][Code Intelligence][Jailbreak Attack] This paper proposes EquaCode, a multi-strategy jailbreak method that decomposes malicious queries into a cross-domain combination of equation solving ($B+C+x=A$) and code…
 tags:
-  - AAAI 2026
-  - Jailbreak Attack
-  - LLM Safety
-  - Equation Solving
-  - Code Completion
-  - Cross-Domain Attack
+  - "AAAI 2026"
+  - "Code Intelligence"
+  - "Jailbreak Attack"
+  - "LLM Safety"
+  - "Equation Solving"
+  - "Code Completion"
+  - "Cross-Domain Attack"
 date: 2026-05-08
 content_hash: 101de63568f1a9b8
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Diffusion Curriculum: Synthetic-to-Real Data Curriculum via Image-Guided Diffusion
 description: >-
-  [ICCV 2025][Object Detection][Diffusion Models] This paper leverages the image guidance strength of diffusion models to generate a continuous synthetic-to-real spectrum of data, and proposes a Diffusion Curriculum Learning (DisCL) strategy that adaptively selects synthetic data at optimal guidance levels across different training stages, effectively addressing long-tail classification and low-quality data learning challenges.
+  [ICCV 2025][Object Detection][Diffusion Models] This paper leverages the image guidance strength of diffusion models to generate a continuous synthetic-to-real spectrum of data…
 tags:
-  - ICCV 2025
-  - Object Detection
-  - Diffusion Models
-  - Curriculum Learning
-  - Synthetic Data
-  - Long-Tail Classification
-  - Low-Quality Data
+  - "ICCV 2025"
+  - "Object Detection"
+  - "Diffusion Models"
+  - "Curriculum Learning"
+  - "Synthetic Data"
+  - "Long-Tail Classification"
+  - "Low-Quality Data"
 date: 2026-05-08
 content_hash: 61b0029141ba2c15
 ---

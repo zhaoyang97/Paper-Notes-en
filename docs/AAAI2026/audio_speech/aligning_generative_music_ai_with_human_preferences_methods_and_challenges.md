@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Aligning Generative Music AI with Human Preferences: Methods and Challenges
 description: >-
-  [AAAI 2026][Audio & Speech][Music Generation] This survey/position paper systematically reviews three technical approaches to preference alignment in music generation—MusicRL (large-scale RLHF with ~300K preference pairs), DiffRhythm+ (multi-preference DPO for diffusion models), and Text2midi-InferAlign (inference-time tree search achieving +29.4% CLAP)—while providing an in-depth analysis of alignment challenges unique to the music domain (multi-scale temporal coherence, harmonic consistency, cultural subjectivity, and the evaluation paradox), and proposing a future research roadmap.
+  [AAAI 2026][Audio & Speech][Music Generation] This survey/position paper systematically reviews three technical approaches to preference alignment in music generation—MusicRL (large-scale RLHF with ~300K preference pairs…
 tags:
-  - AAAI 2026
+  - "AAAI 2026"
   - "Audio & Speech"
-  - Music Generation
-  - Preference Alignment
-  - RLHF
-  - DPO
-  - Inference-Time Optimization
+  - "Music Generation"
+  - "Preference Alignment"
+  - "RLHF"
+  - "DPO"
+  - "Inference-Time Optimization"
 date: 2026-05-08
 content_hash: e6ff491e891dd058
 ---

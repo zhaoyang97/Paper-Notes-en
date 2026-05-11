@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multiplayer Federated Learning: Reaching Equilibrium with Less Communication
 description: >-
-  [NeurIPS 2025][Optimization][Federated Learning] This paper proposes the Multiplayer Federated Learning (MpFL) framework, which models FL clients as rational players in a game-theoretic setting, and introduces the PEARL-SGD algorithm that reduces communication overhead via local updates while converging to a Nash equilibrium.
+  [NeurIPS 2025][Optimization][Federated Learning] This paper proposes the Multiplayer Federated Learning (MpFL) framework, which models FL clients as rational players in a game-theoretic setting…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Federated Learning
-  - Game Theory
-  - Nash Equilibrium
-  - Local SGD
-  - Communication Efficiency
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Federated Learning"
+  - "Game Theory"
+  - "Nash Equilibrium"
+  - "Local SGD"
+  - "Communication Efficiency"
 date: 2026-05-08
 content_hash: 4a6da709d9069b0d
 ---

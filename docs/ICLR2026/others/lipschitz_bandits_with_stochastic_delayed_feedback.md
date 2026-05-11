@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Lipschitz Bandits with Stochastic Delayed Feedback
 description: >-
-  [ICLR 2026][Lipschitz bandit] This paper provides the first systematic study of Lipschitz bandits over continuous arm spaces under stochastic delayed feedback. For bounded delays, it proposes the Delayed Zooming algorithm, which employs a lazy update mechanism to maintain the suboptimality gap bound $\Delta(x) \leq 6r_t(x)$. For unbounded delays, it proposes DLPP, a phased pruning strategy whose regret is tied to the delay quantile $Q(p)$. Instance-dependent lower bounds are established to prove that DLPP is nearly optimal.
+  [ICLR 2026][Lipschitz bandit] This paper provides the first systematic study of Lipschitz bandits over continuous arm spaces under stochastic delayed feedback. For bounded delays…
 tags:
-  - ICLR 2026
-  - Lipschitz bandit
-  - delayed feedback
-  - zooming algorithm
-  - phased elimination
-  - regret lower bound
-  - quantile
+  - "ICLR 2026"
+  - "Lipschitz bandit"
+  - "delayed feedback"
+  - "zooming algorithm"
+  - "phased elimination"
+  - "regret lower bound"
+  - "quantile"
 date: 2026-05-08
 content_hash: 1d47a8f215cd6096
 ---

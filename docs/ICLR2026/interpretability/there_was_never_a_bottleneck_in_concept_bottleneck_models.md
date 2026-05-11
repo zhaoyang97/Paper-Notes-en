@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] There Was Never a Bottleneck in Concept Bottleneck Models
 description: >-
-  [ICLR 2026][Concept Bottleneck Models] This paper identifies that Concept Bottleneck Models (CBMs) do not enforce a true "bottleneck" — the fact that a representation variable $z_j$ can predict concept $c_j$ does not imply it encodes *only* the information of $c_j$. The paper proposes MCBM (Minimal Concept Bottleneck Model), which applies information bottleneck regularization to constrain each $z_j$ to retain only the information of its corresponding concept, thereby achieving genuinely disentangled representations and reliable concept interventions.
+  [ICLR 2026][Interpretability][Concept Bottleneck Models] This paper identifies that Concept Bottleneck Models (CBMs) do not enforce a true "bottleneck" — the fact that a representation variable $z_j$ can predict concept…
 tags:
-  - ICLR 2026
-  - Concept Bottleneck Models
-  - Information Bottleneck
-  - Information Leakage
-  - Interventionability
-  - Representation Learning
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Concept Bottleneck Models"
+  - "Information Bottleneck"
+  - "Information Leakage"
+  - "Interventionability"
+  - "Representation Learning"
 date: 2026-05-08
 content_hash: f7db0c79f2f56629
 ---

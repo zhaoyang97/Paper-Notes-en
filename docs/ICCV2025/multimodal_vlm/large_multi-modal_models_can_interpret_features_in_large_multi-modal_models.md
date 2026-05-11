@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Large Multi-modal Models Can Interpret Features in Large Multi-modal Models
 description: >-
-  [Multimodal VLM] This paper proposes the first automated feature interpretation framework for Large Multimodal Models (LMMs). It employs Sparse Autoencoders (SAEs) to decompose LMM internal representations into monosemantic features, leverages larger LMMs to automatically interpret these features, and demonstrates that feature steering can correct model hallucinations.
+  [Multimodal VLM] This paper proposes the first automated feature interpretation framework for Large Multimodal Models (LMMs). It employs Sparse Autoencoders (SAEs) to decompose LMM internal representations into monoseman…
 tags:
-  - Multimodal VLM
+  - "Multimodal VLM"
 date: 2026-05-08
 content_hash: 35a04151c143eef9
 ---

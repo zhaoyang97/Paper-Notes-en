@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Strategic Persuasion with Language Models
 description: >-
-  [ICLR 2026][Reinforcement Learning][Bayesian Persuasion] Grounded in the Bayesian Persuasion framework, this paper proposes a systematic methodology for evaluating and training the strategic persuasion capabilities of LLMs. It finds that frontier models already exhibit significant strategic persuasion ability, and that even small LLMs can substantially improve their persuasive performance through reinforcement learning.
+  [ICLR 2026][Reinforcement Learning][Bayesian Persuasion] Grounded in the Bayesian Persuasion framework, this paper proposes a systematic methodology for evaluating and training the strategic persuasion capabilities of LL…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Bayesian Persuasion
-  - Large Language Models
-  - Strategic Persuasion
-  - Information Design
-  - Reinforcement Learning Training
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Bayesian Persuasion"
+  - "Large Language Models"
+  - "Strategic Persuasion"
+  - "Information Design"
+  - "Reinforcement Learning Training"
 date: 2026-05-08
 content_hash: 714a4c84b01b3881
 ---

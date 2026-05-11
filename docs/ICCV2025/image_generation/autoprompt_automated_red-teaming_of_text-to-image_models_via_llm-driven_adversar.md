@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AutoPrompt: Automated Red-Teaming of Text-to-Image Models via LLM-Driven Adversarial Prompts
 description: >-
-  [ICCV 2025][Image Generation][Red-Teaming] This paper proposes APT (AutoPrompT), a black-box red-teaming framework driven by an LLM. Through an alternating optimize-finetune pipeline and a dual-evasion strategy, APT automatically generates human-readable adversarial suffixes that bypass content filters, effectively circumventing the safety mechanisms of T2I models while enabling zero-shot cross-prompt transferability.
+  [ICCV 2025][Image Generation][Red-Teaming] This paper proposes APT (AutoPrompT), a black-box red-teaming framework driven by an LLM. Through an alternating optimize-finetune pipeline and a dual-evasion strategy…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Red-Teaming
-  - text-to-image
-  - Adversarial Prompts
-  - LLM
-  - Safety Evaluation
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Red-Teaming"
+  - "text-to-image"
+  - "Adversarial Prompts"
+  - "LLM"
+  - "Safety Evaluation"
 date: 2026-05-08
 content_hash: 34459974c40a4df7
 ---

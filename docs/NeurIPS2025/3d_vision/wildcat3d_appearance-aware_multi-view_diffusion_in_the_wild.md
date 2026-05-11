@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] WildCAT3D: Appearance-Aware Multi-View Diffusion in the Wild
 description: >-
-  [NeurIPS 2025][3D Vision][Novel View Synthesis] This paper proposes WildCAT3D, which extends the multi-view diffusion model CAT3D to learn scene-level novel view synthesis from in-the-wild internet data (e.g., tourist photographs) by explicitly modeling global appearance conditions, while simultaneously supporting appearance-controlled generation.
+  [NeurIPS 2025][3D Vision][Novel View Synthesis] This paper proposes WildCAT3D, which extends the multi-view diffusion model CAT3D to learn scene-level novel view synthesis from in-the-wild internet data (e.g.…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Novel View Synthesis
-  - Multi-View Diffusion
-  - Appearance Modeling
-  - Scene-Level NVS
-  - In-the-Wild Data
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Novel View Synthesis"
+  - "Multi-View Diffusion"
+  - "Appearance Modeling"
+  - "Scene-Level NVS"
+  - "In-the-Wild Data"
 date: 2026-05-08
 content_hash: 4df92d9a6449b325
 ---

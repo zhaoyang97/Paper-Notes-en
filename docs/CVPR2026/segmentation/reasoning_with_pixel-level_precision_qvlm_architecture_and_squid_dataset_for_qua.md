@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Reasoning with Pixel-level Precision: QVLM Architecture and SQuID Dataset for Quantitative Geospatial Analytics
 description: >-
-  [CVPR 2026][Segmentation][VLM] This paper proposes the QVLM architecture and SQuID dataset, achieving pixel-level quantitative spatial reasoning on satellite imagery through a decoupled design of code generation and segmentation models. The approach overcomes the fundamental limitation of conventional VLMs, which lose spatial indexing due to patch embedding compression.
+  [CVPR 2026][Segmentation][VLM] This paper proposes the QVLM architecture and SQuID dataset, achieving pixel-level quantitative spatial reasoning on satellite imagery through a decoupled design of code generation and segm…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - VLM
-  - Quantitative Spatial Reasoning
-  - Code Generation
-  - Satellite Imagery
-  - Semantic Segmentation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "VLM"
+  - "Quantitative Spatial Reasoning"
+  - "Code Generation"
+  - "Satellite Imagery"
+  - "Semantic Segmentation"
 date: 2026-05-08
 content_hash: aaacba461b90e8c7
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] WildSeg3D: Segment Any 3D Objects in the Wild from 2D Images
 description: >-
-  [ICCV 2025][Segmentation][3D segmentation] This paper proposes WildSeg3D, the first feed-forward 3D segmentation model that requires no scene-specific training. It addresses multi-view pointmap alignment errors via Dynamic Global Alignment (DGA) and achieves real-time interactive 3D segmentation through Multi-view Group Mapping (MGM), outperforming the current state of the art in accuracy while being 40× faster.
+  [ICCV 2025][Segmentation][3D segmentation] This paper proposes WildSeg3D, the first feed-forward 3D segmentation model that requires no scene-specific training. It addresses multi-view pointmap alignment errors via Dynam…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - 3D segmentation
-  - feed-forward
-  - SAM2
-  - global alignment
-  - real-time interaction
+  - "ICCV 2025"
+  - "Segmentation"
+  - "3D segmentation"
+  - "feed-forward"
+  - "SAM2"
+  - "global alignment"
+  - "real-time interaction"
 date: 2026-05-08
 content_hash: 69e1fe541c7918e5
 ---

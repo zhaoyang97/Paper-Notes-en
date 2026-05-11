@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OmniSAM: Omnidirectional Segment Anything Model for UDA in Panoramic Semantic Segmentation
 description: >-
-  [ICCV 2025][Segmentation][panoramic segmentation] This paper proposes OmniSAM, the first framework to apply SAM2 to unsupervised domain adaptation (UDA) for panoramic semantic segmentation. It partitions panoramic images into patch sequences via a sliding window and leverages SAM2's memory mechanism to capture cross-patch correspondences. Combined with a FoV-based prototypical adaptation module and a dynamic pseudo-label update strategy, OmniSAM significantly surpasses the state of the art on both indoor and outdoor benchmarks (+10.22% / +6.58%).
+  [ICCV 2025][Segmentation][panoramic segmentation] This paper proposes OmniSAM, the first framework to apply SAM2 to unsupervised domain adaptation (UDA) for panoramic semantic segmentation. It partitions panoramic images…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - panoramic segmentation
-  - SAM2
-  - unsupervised domain adaptation
-  - prototypical adaptation
-  - pseudo label
+  - "ICCV 2025"
+  - "Segmentation"
+  - "panoramic segmentation"
+  - "SAM2"
+  - "unsupervised domain adaptation"
+  - "prototypical adaptation"
+  - "pseudo label"
 date: 2026-05-08
 content_hash: 6f178c2f1b20653e
 ---

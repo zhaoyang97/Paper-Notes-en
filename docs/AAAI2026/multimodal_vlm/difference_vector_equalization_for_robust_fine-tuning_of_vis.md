@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Difference Vector Equalization for Robust Fine-tuning of Vision-Language Models
 description: >-
-  [AAAI 2026][Multimodal VLM][CLIP fine-tuning] This paper proposes DiVE, a method that constrains the "difference vectors" between pre-trained and fine-tuned model embeddings to be equal across samples, thereby preserving the geometric structure of the embedding space during CLIP fine-tuning. DiVE achieves comprehensive improvements over existing methods across in-distribution (ID), out-of-distribution (OOD), and zero-shot metrics (averaging 8+ points gain on zero-shot tasks).
+  [AAAI 2026][Multimodal VLM][CLIP fine-tuning] This paper proposes DiVE, a method that constrains the "difference vectors" between pre-trained and fine-tuned model embeddings to be equal across samples…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - CLIP fine-tuning
-  - robust fine-tuning
-  - embedding geometry preservation
-  - out-of-distribution generalization
-  - zero-shot performance
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "CLIP fine-tuning"
+  - "robust fine-tuning"
+  - "embedding geometry preservation"
+  - "out-of-distribution generalization"
+  - "zero-shot performance"
 date: 2026-05-08
 content_hash: bc2f3cecf5b62cbb
 ---

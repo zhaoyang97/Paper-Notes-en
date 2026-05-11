@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Online Two-Stage Submodular Maximization
 description: >-
-  [NeurIPS 2025][Optimization][submodular maximization] This paper introduces the Online Two-Stage Submodular Maximization (O2SSM) problem for the first time, and proposes the RAOCO algorithm for Weighted Threshold Potential (WTP) functions. By combining fractional relaxation with randomized pipage rounding, RAOCO achieves sublinear $(1-1/e)^2$-regret in polynomial time, while also improving the approximation ratio for the offline problem.
+  [NeurIPS 2025][Optimization][submodular maximization] This paper introduces the Online Two-Stage Submodular Maximization (O2SSM) problem for the first time…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - submodular maximization
-  - online learning
-  - two-stage optimization
-  - regret minimization
-  - matroid constraints
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "submodular maximization"
+  - "online learning"
+  - "two-stage optimization"
+  - "regret minimization"
+  - "matroid constraints"
 date: 2026-05-08
 content_hash: 5f6c935e1df6dda8
 ---

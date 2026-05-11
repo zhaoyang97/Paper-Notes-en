@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VA-MoE: Variables-Adaptive Mixture of Experts for Incremental Weather Forecasting
 description: >-
-  [ICCV 2025][Time Series][Weather Forecasting] This paper proposes a novel incremental weather forecasting paradigm and the VA-MoE framework. Through a variables-adaptive MoE architecture and index embedding mechanism, VA-MoE achieves forecasting accuracy comparable to full training with only 25% trainable parameters and 50% of the initial training data.
+  [ICCV 2025][Time Series][Weather Forecasting] This paper proposes a novel incremental weather forecasting paradigm and the VA-MoE framework. Through a variables-adaptive MoE architecture and index embedding mechanism…
 tags:
-  - ICCV 2025
-  - Time Series
-  - Weather Forecasting
-  - Incremental Learning
-  - Mixture of Experts
-  - Variable-Adaptive
-  - Catastrophic Forgetting
+  - "ICCV 2025"
+  - "Time Series"
+  - "Weather Forecasting"
+  - "Incremental Learning"
+  - "Mixture of Experts"
+  - "Variable-Adaptive"
+  - "Catastrophic Forgetting"
 date: 2026-05-08
 content_hash: 3b1c76ba29d08949
 ---

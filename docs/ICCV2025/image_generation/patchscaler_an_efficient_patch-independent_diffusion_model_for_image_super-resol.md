@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PatchScaler: An Efficient Patch-Independent Diffusion Model for Image Super-Resolution
 description: >-
-  [ICCV 2025][Image Generation][Super-Resolution] This paper proposes PatchScaler, a patch-level independent diffusion super-resolution pipeline that employs a Global Restoration Module to generate confidence maps quantifying per-region reconstruction difficulty, partitions patches into easy/medium/hard groups with different sampling step budgets, and incorporates a texture prompt retrieval mechanism — achieving superior quality on RealSR at only 0.23× the inference time of ResShift.
+  [ICCV 2025][Image Generation][Super-Resolution] This paper proposes PatchScaler, a patch-level independent diffusion super-resolution pipeline that employs a Global Restoration Module to generate confidence maps quantify…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Super-Resolution
-  - Patch-Adaptive Sampling
-  - Diffusion Acceleration
-  - Texture Prompt
-  - DiT
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Super-Resolution"
+  - "Patch-Adaptive Sampling"
+  - "Diffusion Acceleration"
+  - "Texture Prompt"
+  - "DiT"
 date: 2026-05-08
 content_hash: acc63c593e9da5d6
 ---

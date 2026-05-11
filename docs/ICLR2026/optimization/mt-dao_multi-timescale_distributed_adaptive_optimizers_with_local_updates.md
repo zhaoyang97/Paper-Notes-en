@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MT-DAO: Multi-Timescale Distributed Adaptive Optimizers with Local Updates
 description: >-
-  [ICLR 2026][Optimization][Distributed Training] This paper proposes MT-DAO, a multi-timescale distributed adaptive optimizer that introduces a slow momentum (high $\beta$) to address the timescale mismatch caused by excessively rapid decay of standard momentum under infrequent communication. MT-DAO provides the first convergence guarantee in this setting, eliminates the performance gap with fully synchronized DDP in language model pre-training, and reduces end-to-end training time by 6–27%.
+  [ICLR 2026][Optimization][Distributed Training] This paper proposes MT-DAO, a multi-timescale distributed adaptive optimizer that introduces a slow momentum (high $\beta$) to address the timescale mismatch caused by exce…
 tags:
-  - ICLR 2026
-  - Optimization
-  - Distributed Training
-  - Adaptive Optimizer
-  - Multi-timescale Momentum
-  - Communication Efficiency
-  - Local SGD
+  - "ICLR 2026"
+  - "Optimization"
+  - "Distributed Training"
+  - "Adaptive Optimizer"
+  - "Multi-timescale Momentum"
+  - "Communication Efficiency"
+  - "Local SGD"
 date: 2026-05-08
 content_hash: f60407da8484db18
 ---

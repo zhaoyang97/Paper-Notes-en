@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] ExoPredicator: Learning Abstract Models of Dynamic Worlds for Robot Planning
 description: >-
-  [ICLR 2026][Robotics][Abstract world models] This paper proposes ExoPredicator, a framework that jointly learns symbolic state abstractions and causal processes (encompassing both endogenous actions and exogenous mechanisms). Via variational Bayesian inference combined with LLM-based proposals, ExoPredicator learns causal world models with stochastic delays from a small number of trajectories, achieving rapid generalization in planning across five tabletop robot environments.
+  [ICLR 2026][Robotics][Abstract world models] This paper proposes ExoPredicator, a framework that jointly learns symbolic state abstractions and causal processes (encompassing both endogenous actions and exogenous mechani…
 tags:
-  - ICLR 2026
-  - Robotics
-  - Abstract world models
-  - exogenous causal processes
-  - temporal planning
-  - predicate invention
-  - variational inference
-  - LLM guidance
+  - "ICLR 2026"
+  - "Robotics"
+  - "Abstract world models"
+  - "exogenous causal processes"
+  - "temporal planning"
+  - "predicate invention"
+  - "variational inference"
+  - "LLM guidance"
 date: 2026-05-08
 content_hash: 59df838c192fc51d
 ---

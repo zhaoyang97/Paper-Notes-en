@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Contrastive Consolidation of Top-Down Modulations Achieves Sparsely Supervised Continual Learning
 description: >-
-  [NeurIPS 2025][Signal & Communication][continual learning] This paper proposes Task-Modulated Contrastive Learning (TMCL), inspired by top-down modulations in the neocortex. TMCL integrates sparse label information (as few as 1% labels) via affine modulation during continual learning, then consolidates the modulation information into feedforward weights through contrastive learning, surpassing both unsupervised and supervised baselines on class-incremental and transfer learning benchmarks.
+  [NeurIPS 2025][Signal & Communication][continual learning] This paper proposes Task-Modulated Contrastive Learning (TMCL), inspired by top-down modulations in the neocortex. TMCL integrates sparse label information (as f…
 tags:
-  - NeurIPS 2025
+  - "NeurIPS 2025"
   - "Signal & Communication"
-  - continual learning
-  - contrastive learning
-  - top-down modulation
-  - catastrophic forgetting
-  - sparse supervision
-  - predictive coding
+  - "continual learning"
+  - "contrastive learning"
+  - "top-down modulation"
+  - "catastrophic forgetting"
+  - "sparse supervision"
+  - "predictive coding"
 date: 2026-05-08
 content_hash: 1f9f1947a4133f8b
 ---

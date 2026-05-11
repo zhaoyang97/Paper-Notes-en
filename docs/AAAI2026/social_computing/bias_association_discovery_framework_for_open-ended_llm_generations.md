@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Bias Association Discovery Framework for Open-Ended LLM Generations
 description: >-
-  [AAAI 2026][Social Computing][Social Bias] This paper proposes the Bias Association Discovery Framework (BADF), which systematically extracts both known and unknown bias associations between demographic identities and descriptive concepts from LLM open-ended story generation, overcoming the limitation of prior methods that rely on predefined bias concepts.
+  [AAAI 2026][Social Computing][Social Bias] This paper proposes the Bias Association Discovery Framework (BADF), which systematically extracts both known and unknown bias associations between demographic identities and de…
 tags:
-  - AAAI 2026
-  - Social Computing
-  - Social Bias
-  - LLM Generation
-  - Bias Association Discovery
-  - Open-Ended Generation
-  - Demographic Identity
+  - "AAAI 2026"
+  - "Social Computing"
+  - "Social Bias"
+  - "LLM Generation"
+  - "Bias Association Discovery"
+  - "Open-Ended Generation"
+  - "Demographic Identity"
 date: 2026-05-08
 content_hash: ff4c3afe24c3e669
 ---

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Heterogeneous Decentralized Diffusion Models
 description: >-
-  [CVPR2026][Image Generation][Decentralized diffusion models] This paper proposes a heterogeneous decentralized diffusion framework that allows different experts to train completely independently using distinct diffusion objectives (DDPM ε-prediction and Flow Matching velocity-prediction). At inference time, a deterministic schedule-aware conversion unifies all expert outputs into velocity space for fusion. Compared to homogeneous baselines, the framework simultaneously improves FID and generation diversity while reducing computation by 16×.
+  [CVPR2026][Image Generation][Decentralized diffusion models] This paper proposes a heterogeneous decentralized diffusion framework that allows different experts to train completely independently using distinct diffusion…
 tags:
-  - CVPR2026
-  - Image Generation
-  - Decentralized diffusion models
-  - heterogeneous training objectives
-  - DDPM
-  - Flow Matching
-  - mixture of experts
-  - DiT
-  - PixArt-α
+  - "CVPR2026"
+  - "Image Generation"
+  - "Decentralized diffusion models"
+  - "heterogeneous training objectives"
+  - "DDPM"
+  - "Flow Matching"
+  - "mixture of experts"
+  - "DiT"
+  - "PixArt-α"
 date: 2026-05-08
 content_hash: 2f098f0246adb4e3
 ---

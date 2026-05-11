@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BlurDM: A Blur Diffusion Model for Image Deblurring
 description: >-
-  [NeurIPS 2025][Image Generation][image deblurring] BlurDM integrates the physical formation process of motion blur (progressive blur accumulation due to continuous exposure) into a diffusion model via a dual forward process (simultaneous noise addition and blurring) and a dual denoising-deblurring reverse process. It serves as a latent-space prior generator that consistently enhances four deblurring methods across four datasets, achieving an average gain of +0.31 dB on GoPro and +0.78 dB on RealBlur-J, while adding only ~4 GFLOPs and ~9 ms.
+  [NeurIPS 2025][Image Generation][image deblurring] BlurDM integrates the physical formation process of motion blur (progressive blur accumulation due to continuous exposure) into a diffusion model via a dual forward proc…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - image deblurring
-  - blur diffusion
-  - dual diffusion
-  - motion blur
-  - prior generation
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "image deblurring"
+  - "blur diffusion"
+  - "dual diffusion"
+  - "motion blur"
+  - "prior generation"
 date: 2026-05-08
 content_hash: cf7ace420e8d93ce
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] When Shallow Wins: Silent Failures and the Depth-Accuracy Paradox in Latent Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][latent reasoning] This paper systematically analyzes the latent reasoning behavior of Qwen2.5-Math-7B on GSM8K, finding that 81.6% of correct predictions arise from computationally inconsistent paths, 8.8% constitute silent failures (high-confidence errors), and revealing a paradoxical relationship between reasoning depth and accuracy.
+  [ICLR 2026][LLM Reasoning][latent reasoning] This paper systematically analyzes the latent reasoning behavior of Qwen2.5-Math-7B on GSM8K…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - latent reasoning
-  - faithfulness metrics
-  - silent failures
-  - depth-accuracy paradox
-  - computational stability
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "latent reasoning"
+  - "faithfulness metrics"
+  - "silent failures"
+  - "depth-accuracy paradox"
+  - "computational stability"
 date: 2026-05-08
 content_hash: 7b7d6fc25219c99a
 ---

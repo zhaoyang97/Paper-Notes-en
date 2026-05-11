@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ALTER: Asymmetric LoRA for Token-Entropy-Guided Unlearning of LLMs
 description: >-
-  [AAAI 2026][Model Compression][Machine Unlearning] This paper proposes ALTER, a framework that combines an asymmetric LoRA architecture with token-level Tsallis entropy guidance to achieve precise unlearning of target knowledge in LLMs. A parameter isolation mechanism is employed to preserve the model's general capabilities, achieving state-of-the-art performance on three benchmarks: TOFU, WMDP, and MUSE.
+  [AAAI 2026][Model Compression][Machine Unlearning] This paper proposes ALTER, a framework that combines an asymmetric LoRA architecture with token-level Tsallis entropy guidance to achieve precise unlearning of target kn…
 tags:
-  - AAAI 2026
-  - Model Compression
-  - Machine Unlearning
-  - Asymmetric LoRA
-  - Token Entropy
-  - Parameter Isolation
-  - Knowledge Decoupling
+  - "AAAI 2026"
+  - "Model Compression"
+  - "Machine Unlearning"
+  - "Asymmetric LoRA"
+  - "Token Entropy"
+  - "Parameter Isolation"
+  - "Knowledge Decoupling"
 date: 2026-05-08
 content_hash: 540fd691d4380354
 ---

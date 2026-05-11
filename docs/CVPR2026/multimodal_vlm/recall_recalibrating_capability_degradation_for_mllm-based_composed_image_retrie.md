@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ReCALL: Recalibrating Capability Degradation for MLLM-based Composed Image Retrieval
 description: >-
-  [CVPR 2026][Multimodal VLM][Composed Image Retrieval] This paper reveals a **Capability Degradation** phenomenon that occurs when adapting generative MLLMs into discriminative retrievers, and proposes the ReCALL framework — a three-stage pipeline that diagnoses retriever blind spots, leverages the base MLLM's CoT reasoning to generate corrective triplets, and applies grouped contrastive refinement to recover degraded fine-grained compositional reasoning ability. ReCALL achieves R@1 of 55.52% on CIRR and R@10 of 57.04% on FashionIQ.
+  [CVPR 2026][Multimodal VLM][Composed Image Retrieval] This paper reveals a **Capability Degradation** phenomenon that occurs when adapting generative MLLMs into discriminative retrievers…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Composed Image Retrieval
-  - Capability Degradation
-  - MLLM Self-Improvement
-  - Contrastive Learning
-  - Diagnose-Generate-Refine
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Composed Image Retrieval"
+  - "Capability Degradation"
+  - "MLLM Self-Improvement"
+  - "Contrastive Learning"
+  - "Diagnose-Generate-Refine"
 date: 2026-05-08
 content_hash: e9d9a364afae903b
 ---

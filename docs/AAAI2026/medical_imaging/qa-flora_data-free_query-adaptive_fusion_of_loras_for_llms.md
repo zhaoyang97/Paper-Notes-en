@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] qa-FLoRA: Data-free Query-Adaptive Fusion of LoRAs for LLMs
 description: >-
-  [AAAI 2026][Medical Imaging][LoRA fusion] This paper proposes qa-FLoRA, a query-adaptive LoRA fusion method that requires neither training data nor a training process. It dynamically determines fusion weights by computing per-layer KL divergence between each adapter and the base model, achieving significant improvements over static fusion and training-free baselines across nine multilingual composite tasks.
+  [AAAI 2026][Medical Imaging][LoRA fusion] This paper proposes qa-FLoRA, a query-adaptive LoRA fusion method that requires neither training data nor a training process. It dynamically determines fusion weights by computin…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - LoRA fusion
-  - query-adaptive
-  - training-free
-  - KL divergence
-  - multi-domain adaptation
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "LoRA fusion"
+  - "query-adaptive"
+  - "training-free"
+  - "KL divergence"
+  - "multi-domain adaptation"
 date: 2026-05-08
 content_hash: 74eed64e12c7dce2
 ---

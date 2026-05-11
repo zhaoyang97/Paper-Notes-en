@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Enhancing Training Data Attribution with Representational Optimization
 description: >-
-  [NeurIPS 2025][LLM Pretraining][training data attribution] This paper proposes AirRep (Attentive Influence Ranking Representation), a representation learning-based training data attribution method that employs a trainable encoder and attention pooling mechanism. AirRep achieves attribution accuracy on par with or superior to state-of-the-art gradient-based methods while being approximately 80× faster at inference.
+  [NeurIPS 2025][LLM Pretraining][training data attribution] This paper proposes AirRep (Attentive Influence Ranking Representation), a representation learning-based training data attribution method that employs a trainabl…
 tags:
-  - NeurIPS 2025
-  - LLM Pretraining
-  - training data attribution
-  - representation learning
-  - influence functions
-  - attention pooling
-  - data selection
+  - "NeurIPS 2025"
+  - "LLM Pretraining"
+  - "training data attribution"
+  - "representation learning"
+  - "influence functions"
+  - "attention pooling"
+  - "data selection"
 date: 2026-05-08
 content_hash: 9ab8afe9c01f6a76
 ---

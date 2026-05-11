@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] On Large Multimodal Models as Open-World Image Classifiers
 description: >-
-  [ICCV 2025][Multimodal VLM][large multimodal models] This paper systematically evaluates 13 large multimodal models (LMMs) on open-world image classification, proposes an evaluation protocol comprising four complementary metrics, and reveals systematic error patterns in LMMs regarding granularity judgment and fine-grained discrimination.
+  [ICCV 2025][Multimodal VLM][large multimodal models] This paper systematically evaluates 13 large multimodal models (LMMs) on open-world image classification…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - large multimodal models
-  - open-world classification
-  - evaluation protocol
-  - LMM
-  - image classification
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "large multimodal models"
+  - "open-world classification"
+  - "evaluation protocol"
+  - "LMM"
+  - "image classification"
 date: 2026-05-08
 content_hash: e0e9219bf20f4f2d
 ---

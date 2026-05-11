@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SemiTooth: a Generalizable Semi-supervised Framework for Multi-Source Tooth Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Semi-supervised learning] This paper proposes SemiTooth, a framework that addresses distribution discrepancies across multi-source CBCT data in semi-supervised tooth segmentation via a multi-teacher–multi-student architecture and a Stricter Weighted Confidence (SWC) constraint, achieving state-of-the-art performance on the newly constructed MS3Toothset dataset.
+  [CVPR 2026][Segmentation][Semi-supervised learning] This paper proposes SemiTooth, a framework that addresses distribution discrepancies across multi-source CBCT data in semi-supervised tooth segmentation via a multi-tea…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Semi-supervised learning
-  - multi-source data
-  - tooth segmentation
-  - CBCT
-  - pseudo-labels
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Semi-supervised learning"
+  - "multi-source data"
+  - "tooth segmentation"
+  - "CBCT"
+  - "pseudo-labels"
 date: 2026-05-08
 content_hash: 55f9ee2211b63dd8
 ---

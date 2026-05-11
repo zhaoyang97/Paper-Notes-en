@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Few-Step Diffusion Models by Trajectory Distribution Matching
 description: >-
-  [ICCV 2025][Image Generation][Diffusion Distillation] This paper proposes Trajectory Distribution Matching (TDM), a novel paradigm that unifies trajectory distillation and distribution matching by aligning the marginal distributions of student and teacher ODE trajectories at the distributional level. TDM enables efficient few-step diffusion model distillation, requiring only 2 A800 GPU-hours to distill PixArt-α into a 4-step generator that surpasses the teacher model.
+  [ICCV 2025][Image Generation][Diffusion Distillation] This paper proposes Trajectory Distribution Matching (TDM), a novel paradigm that unifies trajectory distillation and distribution matching by aligning the marginal d…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Diffusion Distillation
-  - Few-Step Generation
-  - Trajectory Distribution Matching
-  - Score Distillation
-  - Text-to-Image Acceleration
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Diffusion Distillation"
+  - "Few-Step Generation"
+  - "Trajectory Distribution Matching"
+  - "Score Distillation"
+  - "Text-to-Image Acceleration"
 date: 2026-05-08
 content_hash: 5639579ddea6bb6d
 ---

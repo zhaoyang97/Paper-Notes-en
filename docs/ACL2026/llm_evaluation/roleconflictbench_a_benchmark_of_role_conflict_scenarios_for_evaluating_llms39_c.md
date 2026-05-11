@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RoleConflictBench: A Benchmark of Role Conflict Scenarios for Evaluating LLMs' Contextual Sensitivity
 description: >-
-  [ACL 2026][LLM Evaluation][role conflict] RoleConflictBench constructs 13,914 role conflict scenarios and leverages situational urgency as an objective constraint to evaluate LLMs' contextual sensitivity, revealing that model decisions are dominated by static role preferences rather than dynamic contextual cues.
+  [ACL 2026][LLM Evaluation][role conflict] RoleConflictBench constructs 13,914 role conflict scenarios and leverages situational urgency as an objective constraint to evaluate LLMs' contextual sensitivity…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - role conflict
-  - contextual sensitivity
-  - social bias
-  - situational urgency
-  - benchmark
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "role conflict"
+  - "contextual sensitivity"
+  - "social bias"
+  - "situational urgency"
+  - "benchmark"
 date: 2026-05-08
 content_hash: a567a64197ace769
 ---

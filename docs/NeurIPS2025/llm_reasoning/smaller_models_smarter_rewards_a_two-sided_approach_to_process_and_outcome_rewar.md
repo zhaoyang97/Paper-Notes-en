@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Smaller Models, Smarter Rewards: A Two-Sided Approach to Process and Outcome Rewards
 description: >-
-  [NeurIPS 2025 (Workshop: Foundations of Reasoning in Language Models)][LLM Reasoning][Reward Model] The final layer of Phi-4 family small models (3.8B/14B) is replaced with a regression head and fine-tuned, enabling them to serve simultaneously as ORM (outcome reward model) and PRM (process reward model). On code generation tasks, selecting the optimal rollout yields 20%+ improvements in pass@k.
+  [NeurIPS 2025 (Workshop: Foundations of Reasoning in Language Models)][LLM Reasoning][Reward Model] The final layer of Phi-4 family small models (3.8B/14B) is replaced with a regression head and fine-tuned…
 tags:
   - "NeurIPS 2025 (Workshop: Foundations of Reasoning in Language Models)"
-  - LLM Reasoning
-  - Reward Model
-  - Process Reward
-  - Outcome Reward
-  - Code Generation
-  - Small Models
+  - "LLM Reasoning"
+  - "Reward Model"
+  - "Process Reward"
+  - "Outcome Reward"
+  - "Code Generation"
+  - "Small Models"
 date: 2026-05-08
 content_hash: 3ab9a6b72a8f7484
 ---

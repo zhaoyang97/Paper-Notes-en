@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Task-Oriented Data Synthesis and Control-Rectify Sampling for Remote Sensing Semantic Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Remote sensing semantic segmentation] This paper proposes the TODSynth framework, which achieves joint text-image-mask controlled remote sensing image synthesis via unified tri-modal attention in MM-DiT, and introduces Control-Rectify Flow Matching (CRFM), a novel sampling-stage method that dynamically adjusts the generation trajectory using semantic loss from a downstream segmentation model. The synthesized data improves mIoU by 4.14% on FUSU-4k and 2.08% on LoveDA.
+  [CVPR 2026][Segmentation][Remote sensing semantic segmentation] This paper proposes the TODSynth framework, which achieves joint text-image-mask controlled remote sensing image synthesis via unified tri-modal attention i…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Remote sensing semantic segmentation
-  - data synthesis
-  - controllable generation
-  - diffusion models
-  - flow matching
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Remote sensing semantic segmentation"
+  - "data synthesis"
+  - "controllable generation"
+  - "diffusion models"
+  - "flow matching"
 date: 2026-05-08
 content_hash: 1be0ed387f672e10
 ---

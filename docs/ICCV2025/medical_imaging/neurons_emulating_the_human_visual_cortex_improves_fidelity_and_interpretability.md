@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] NEURONS: Emulating the Human Visual Cortex Improves Fidelity and Interpretability in fMRI-to-Video Reconstruction
 description: >-
-  [ICCV 2025][Medical Imaging][fMRI-to-Video] This paper proposes NEURONS, a framework inspired by the hierarchical structure of the human visual cortex that decouples fMRI-to-video reconstruction into four sub-tasks (key object segmentation, concept recognition, scene description, and blurry video reconstruction), emulating the functional specialization of cortical regions V1/V2/V4/ITC. NEURONS substantially outperforms state-of-the-art methods in video consistency (+26.6%) and semantic accuracy (+19.1%).
+  [ICCV 2025][Medical Imaging][fMRI-to-Video] This paper proposes NEURONS, a framework inspired by the hierarchical structure of the human visual cortex that decouples fMRI-to-video reconstruction into four sub-tasks (key…
 tags:
-  - ICCV 2025
-  - Medical Imaging
-  - fMRI-to-Video
-  - Brain Decoding
-  - Visual Cortex
-  - diffusion model
-  - Neuroscience
+  - "ICCV 2025"
+  - "Medical Imaging"
+  - "fMRI-to-Video"
+  - "Brain Decoding"
+  - "Visual Cortex"
+  - "diffusion model"
+  - "Neuroscience"
 date: 2026-05-08
 content_hash: cd196783ccd4527b
 ---

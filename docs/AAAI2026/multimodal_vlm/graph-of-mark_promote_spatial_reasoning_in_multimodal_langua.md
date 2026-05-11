@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Graph-of-Mark: Promote Spatial Reasoning in Multimodal Language Models with Graph-Based Visual Prompting
 description: >-
-  [AAAI 2026 (Main Track)][Multimodal VLM][Visual Prompting] This paper proposes Graph-of-Mark (GoM), a training-free pixel-level visual prompting method that explicitly encodes inter-object spatial relationships by overlaying a depth-aware scene graph (comprising nodes and directed edges) directly onto input images, achieving up to an 11 percentage point improvement in zero-shot spatial reasoning accuracy for multimodal language models on VQA and grounding tasks.
+  [AAAI 2026 (Main Track)][Multimodal VLM][Visual Prompting] This paper proposes Graph-of-Mark (GoM), a training-free pixel-level visual prompting method that explicitly encodes inter-object spatial relationships by overla…
 tags:
-  - AAAI 2026 (Main Track)
-  - Multimodal VLM
-  - Visual Prompting
-  - Spatial Reasoning
-  - Scene Graph
-  - Multimodal Language Models
-  - Zero-Shot Reasoning
+  - "AAAI 2026 (Main Track)"
+  - "Multimodal VLM"
+  - "Visual Prompting"
+  - "Spatial Reasoning"
+  - "Scene Graph"
+  - "Multimodal Language Models"
+  - "Zero-Shot Reasoning"
 date: 2026-05-08
 content_hash: 94d183ee30a11b00
 ---

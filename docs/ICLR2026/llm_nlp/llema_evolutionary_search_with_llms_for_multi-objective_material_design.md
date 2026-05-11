@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LLEMA: Evolutionary Search with LLMs for Multi-Objective Materials Discovery
 description: >-
-  [ICLR 2026][LLM/NLP][materials discovery] This paper proposes LLEMA, a framework that integrates LLM scientific knowledge with chemistry-rule-guided evolutionary search and memory-driven iterative optimization, achieving superior hit rates, stability, and Pareto front quality across 14 multi-objective materials discovery tasks.
+  [ICLR 2026][LLM/NLP][materials discovery] This paper proposes LLEMA, a framework that integrates LLM scientific knowledge with chemistry-rule-guided evolutionary search and memory-driven iterative optimization…
 tags:
-  - ICLR 2026
-  - LLM/NLP
-  - materials discovery
-  - LLM evolutionary search
-  - multi-objective optimization
-  - crystal structure generation
-  - surrogate models
+  - "ICLR 2026"
+  - "LLM/NLP"
+  - "materials discovery"
+  - "LLM evolutionary search"
+  - "multi-objective optimization"
+  - "crystal structure generation"
+  - "surrogate models"
 date: 2026-05-08
 content_hash: 20d4d8be2d5f19c5
 ---

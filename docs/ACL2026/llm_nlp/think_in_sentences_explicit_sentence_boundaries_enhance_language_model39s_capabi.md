@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Think in Sentences: Explicit Sentence Boundaries Enhance Language Model's Capabilities
 description: >-
-  [ACL 2026][LLM/NLP][sentence boundaries] This paper proposes inserting delimiter tokens at sentence boundaries in LLM inputs to implement a "think-in-sentences" reasoning paradigm via both ICL and SFT. The approach yields consistent improvements across models ranging from 7B to 600B parameters (GSM8k +7.7%, DROP +12.5%) with negligible additional computational overhead.
+  [ACL 2026][LLM/NLP][sentence boundaries] This paper proposes inserting delimiter tokens at sentence boundaries in LLM inputs to implement a "think-in-sentences" reasoning paradigm via both ICL and SFT. The approach yield…
 tags:
-  - ACL 2026
-  - LLM/NLP
-  - sentence boundaries
-  - delimiters
-  - in-context learning
-  - supervised fine-tuning
-  - free lunch
+  - "ACL 2026"
+  - "LLM/NLP"
+  - "sentence boundaries"
+  - "delimiters"
+  - "in-context learning"
+  - "supervised fine-tuning"
+  - "free lunch"
 date: 2026-05-08
 content_hash: 11f3ca62d819e1ec
 ---

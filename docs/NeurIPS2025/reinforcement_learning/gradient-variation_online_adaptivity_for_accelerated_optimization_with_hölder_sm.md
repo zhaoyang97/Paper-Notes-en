@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Gradient-Variation Online Adaptivity for Accelerated Optimization with Hölder Smoothness
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][online learning] This paper develops gradient-variation adaptive online learning algorithms for Hölder smooth function classes, achieving regret that smoothly interpolates between the smooth and non-smooth extremes. Via online-to-batch conversion, it provides the first universal method for strongly convex optimization that attains accelerated convergence in the smooth case and near-optimal convergence in the non-smooth case.
+  [NeurIPS 2025][Reinforcement Learning][online learning] This paper develops gradient-variation adaptive online learning algorithms for Hölder smooth function classes…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - online learning
-  - Hölder smoothness
-  - gradient variation
-  - acceleration
-  - universality
-  - online-to-batch conversion
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "online learning"
+  - "Hölder smoothness"
+  - "gradient variation"
+  - "acceleration"
+  - "universality"
+  - "online-to-batch conversion"
 date: 2026-05-08
 content_hash: f4d58eeda658c290
 ---

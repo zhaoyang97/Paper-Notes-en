@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Multi-turn Consistent Image Editing
 description: >-
-  [ICCV2025][Image Generation][multi-turn editing] This paper proposes a multi-turn image editing framework based on flow matching. By incorporating dual-objective LQR guidance and an adaptive attention mechanism, it effectively suppresses error accumulation across editing rounds, enabling flexible and controllable iterative editing while maintaining content consistency.
+  [ICCV2025][Image Generation][multi-turn editing] This paper proposes a multi-turn image editing framework based on flow matching. By incorporating dual-objective LQR guidance and an adaptive attention mechanism…
 tags:
-  - ICCV2025
-  - Image Generation
-  - multi-turn editing
-  - flow matching
-  - LQR control
-  - attention guidance
-  - FLUX
-  - image inversion
+  - "ICCV2025"
+  - "Image Generation"
+  - "multi-turn editing"
+  - "flow matching"
+  - "LQR control"
+  - "attention guidance"
+  - "FLUX"
+  - "image inversion"
 date: 2026-05-08
 content_hash: fc6307771e306254
 ---

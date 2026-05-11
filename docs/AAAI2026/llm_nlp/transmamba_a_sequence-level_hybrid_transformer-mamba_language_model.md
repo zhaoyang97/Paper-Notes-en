@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TransMamba: A Sequence-Level Hybrid Transformer-Mamba Language Model
 description: >-
-  [AAAI 2026][LLM/NLP][Transformer] This paper proposes TransMamba, a sequence-level Transformer-Mamba hybrid architecture that dynamically switches between Attention and SSM computation at different token positions via shared QKV/CBx parameters and a Memory Converter, achieving efficiency advantages for both short and long sequences.
+  [AAAI 2026][LLM/NLP][Transformer] This paper proposes TransMamba, a sequence-level Transformer-Mamba hybrid architecture that dynamically switches between Attention and SSM computation at different token positions via sh…
 tags:
-  - AAAI 2026
-  - LLM/NLP
-  - Transformer
-  - Mamba
-  - SSM
-  - Hybrid Architecture
-  - Sequence Modeling
+  - "AAAI 2026"
+  - "LLM/NLP"
+  - "Transformer"
+  - "Mamba"
+  - "SSM"
+  - "Hybrid Architecture"
+  - "Sequence Modeling"
 date: 2026-05-08
 content_hash: 311df0d7d4f64e0f
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Synergistic Bleeding Region and Point Detection in Laparoscopic Surgical Videos
 description: >-
-  [CVPR 2026][Medical Imaging][bleeding detection] This work introduces SurgBlood, the first laparoscopic surgical video dataset with annotations for both bleeding regions and bleeding points, and proposes BlooDet, a SAM2-based dual-branch bidirectional guidance online detector that achieves joint bleeding region segmentation and bleeding point localization through synergistic optimization of Mask and Point branches.
+  [CVPR 2026][Medical Imaging][bleeding detection] This work introduces SurgBlood, the first laparoscopic surgical video dataset with annotations for both bleeding regions and bleeding points, and proposes BlooDet…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - bleeding detection
-  - laparoscopic surgery
-  - SAM2
-  - dual-task synergy
-  - optical flow
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "bleeding detection"
+  - "laparoscopic surgery"
+  - "SAM2"
+  - "dual-task synergy"
+  - "optical flow"
 date: 2026-05-08
 content_hash: c6a90144d3bb59e5
 ---

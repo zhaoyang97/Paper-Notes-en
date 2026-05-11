@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LightsOut: Diffusion-based Outpainting for Enhanced Lens Flare Removal
 description: >-
-  [ICCV 2025][Autonomous Driving][Lens Flare Removal] This paper proposes LightsOut, a diffusion-based image outpainting framework that enhances existing single-image flare removal (SIFR) methods by predicting and reconstructing out-of-frame light sources. It serves as a plug-and-play preprocessing module that improves arbitrary SIFR models without requiring additional training.
+  [ICCV 2025][Autonomous Driving][Lens Flare Removal] This paper proposes LightsOut, a diffusion-based image outpainting framework that enhances existing single-image flare removal (SIFR) methods by predicting and reconstr…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - Lens Flare Removal
-  - Diffusion Model
-  - Image Outpainting
-  - LoRA Fine-tuning
-  - Plug-and-Play
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "Lens Flare Removal"
+  - "Diffusion Model"
+  - "Image Outpainting"
+  - "LoRA Fine-tuning"
+  - "Plug-and-Play"
 date: 2026-05-08
 content_hash: 51fe9f94fd4cfdb0
 ---

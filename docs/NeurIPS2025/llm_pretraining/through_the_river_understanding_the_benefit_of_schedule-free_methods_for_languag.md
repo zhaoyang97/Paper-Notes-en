@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Through the River: Understanding the Benefit of Schedule-Free Methods for Language Model Training
 description: >-
-  [NeurIPS 2025][LLM Pretraining][Schedule-Free optimizer] From the geometric perspective of the river-valley loss landscape, this paper analyzes why the Schedule-Free (SF) optimizer can continuously track the optimal solution during language model pre-training without requiring learning rate decay or weight averaging. It further reveals that SF implicitly performs weight averaging, and proposes an improved SF-AdamW that decouples the momentum and averaging window parameters.
+  [NeurIPS 2025][LLM Pretraining][Schedule-Free optimizer] From the geometric perspective of the river-valley loss landscape, this paper analyzes why the Schedule-Free (SF) optimizer can continuously track the optimal solu…
 tags:
-  - NeurIPS 2025
-  - LLM Pretraining
-  - Schedule-Free optimizer
-  - learning rate schedule
-  - river-valley loss landscape
-  - weight averaging
-  - large-scale pre-training
+  - "NeurIPS 2025"
+  - "LLM Pretraining"
+  - "Schedule-Free optimizer"
+  - "learning rate schedule"
+  - "river-valley loss landscape"
+  - "weight averaging"
+  - "large-scale pre-training"
 date: 2026-05-08
 content_hash: 879da4ae945e45b5
 ---

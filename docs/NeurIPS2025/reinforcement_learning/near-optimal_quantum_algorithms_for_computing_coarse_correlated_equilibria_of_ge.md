@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Near-Optimal Quantum Algorithms for Computing (Coarse) Correlated Equilibria of General-Sum Games
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][quantum algorithms] This work presents the first quantum algorithms for computing correlated equilibria (CE) and coarse correlated equilibria (CCE) in multi-player general-sum games. By quantizing the multi-scale MWU framework and introducing a unified QRAM scheme, the paper achieves a near-optimal query complexity of $\tilde{O}(m\sqrt{n})$ in both the number of players $m$ and actions $n$, along with matching quantum lower bounds.
+  [NeurIPS 2025][Reinforcement Learning][quantum algorithms] This work presents the first quantum algorithms for computing correlated equilibria (CE) and coarse correlated equilibria (CCE) in multi-player general-sum games…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - quantum algorithms
-  - game theory
-  - correlated equilibrium
-  - multiplicative weights update
-  - query complexity
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "quantum algorithms"
+  - "game theory"
+  - "correlated equilibrium"
+  - "multiplicative weights update"
+  - "query complexity"
 date: 2026-05-08
 content_hash: d067c9d71ce06284
 ---

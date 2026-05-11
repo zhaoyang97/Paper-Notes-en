@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Decoupling Stability and Plasticity for Multi-Modal Test-Time Adaptation
 description: >-
-  [CVPR 2026][Multimodal VLM][Multi-modal test-time adaptation] This paper proposes DASP, which diagnoses biased modalities via a redundancy score and applies an asymmetric adaptation strategy to decouple stability and plasticity, addressing negative transfer and catastrophic forgetting in multi-modal test-time adaptation.
+  [CVPR 2026][Multimodal VLM][Multi-modal test-time adaptation] This paper proposes DASP, which diagnoses biased modalities via a redundancy score and applies an asymmetric adaptation strategy to decouple stability and pla…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Multi-modal test-time adaptation
-  - stability-plasticity decoupling
-  - redundancy score
-  - asymmetric adaptation
-  - catastrophic forgetting
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Multi-modal test-time adaptation"
+  - "stability-plasticity decoupling"
+  - "redundancy score"
+  - "asymmetric adaptation"
+  - "catastrophic forgetting"
 date: 2026-05-08
 content_hash: 2b993f1b061b4c31
 ---

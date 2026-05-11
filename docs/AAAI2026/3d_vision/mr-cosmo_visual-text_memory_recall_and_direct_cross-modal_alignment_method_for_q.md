@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MR-CoSMo: Visual-Text Memory Recall and Direct Cross-Modal Alignment Method for Query-Driven 3D Segmentation
 description: >-
-  [AAAI 2026][3D Vision][3D segmentation] This paper proposes MR-CoSMo, a coarse-to-fine query-driven 3D segmentation model that establishes explicit alignment between 3D point clouds and text/2D images via a Direct Cross-Modal Alignment module (DCMA), and incorporates a Visual-Text Memory Module to store high-confidence feature pairs for enhanced cross-scene segmentation consistency. The method achieves state-of-the-art performance across three tasks: 3D instruction segmentation, referring segmentation, and semantic segmentation.
+  [AAAI 2026][3D Vision][3D segmentation] This paper proposes MR-CoSMo, a coarse-to-fine query-driven 3D segmentation model that establishes explicit alignment between 3D point clouds and text/2D images via a Direct Cross-…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - 3D segmentation
-  - cross-modal alignment
-  - visual-text memory
-  - point cloud segmentation
-  - query-driven segmentation
+  - "AAAI 2026"
+  - "3D Vision"
+  - "3D segmentation"
+  - "cross-modal alignment"
+  - "visual-text memory"
+  - "point cloud segmentation"
+  - "query-driven segmentation"
 date: 2026-05-08
 content_hash: 1110cfd9f87836d5
 ---

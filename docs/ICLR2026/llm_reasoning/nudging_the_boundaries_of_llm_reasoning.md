@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Nudging the Boundaries of LLM Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][Reinforcement Learning Reasoning] This paper identifies a fundamental limitation of GRPO: it cannot learn from problems that the model completely fails to solve (pass rate = 0%), producing zero gradients. The proposed method, NuRL, addresses this by injecting self-generated abstract hints (without revealing answers) into hard problems during training, converting them into learnable samples. NuRL consistently outperforms GRPO across 3 models and 6 benchmarks, and genuinely improves the pass@k capability upper bound.
+  [ICLR 2026][LLM Reasoning][Reinforcement Learning Reasoning] This paper identifies a fundamental limitation of GRPO: it cannot learn from problems that the model completely fails to solve (pass rate = 0%)…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Reinforcement Learning Reasoning
-  - GRPO Improvement
-  - Self-Generated Hints
-  - Capability Upper Bound
-  - Zone of Proximal Development
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "Reinforcement Learning Reasoning"
+  - "GRPO Improvement"
+  - "Self-Generated Hints"
+  - "Capability Upper Bound"
+  - "Zone of Proximal Development"
 date: 2026-05-08
 content_hash: cf64c1314251d600
 ---

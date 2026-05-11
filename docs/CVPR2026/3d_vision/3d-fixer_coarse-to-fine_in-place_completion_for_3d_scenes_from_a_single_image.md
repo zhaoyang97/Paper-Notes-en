@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] 3D-Fixer: Coarse-to-Fine In-place Completion for 3D Scenes from a Single Image
 description: >-
-  [CVPR 2026][3D Vision][Single-image 3D scene generation] This paper proposes a novel paradigm termed *in-place completion*, which extends pretrained object-level generative priors to the scene level, directly completing fragmented geometry at its original spatial location without explicit pose alignment. The authors also construct ARSG-110K, a 110K-scale scene-level dataset, and substantially outperform baselines such as MIDI and Gen3DSR.
+  [CVPR 2026][3D Vision][Single-image 3D scene generation] This paper proposes a novel paradigm termed *in-place completion*, which extends pretrained object-level generative priors to the scene level…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Single-image 3D scene generation
-  - in-place completion
-  - coarse-to-fine completion
-  - occlusion robustness
-  - large-scale scene dataset
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Single-image 3D scene generation"
+  - "in-place completion"
+  - "coarse-to-fine completion"
+  - "occlusion robustness"
+  - "large-scale scene dataset"
 date: 2026-05-08
 content_hash: 2a6293c53d658ffb
 ---

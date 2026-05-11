@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Deconstructing Positional Information: From Attention Logits to Training Biases
 description: >-
-  [ICLR2026][LLM Pretraining][Positional Encoding] This paper proposes a unified analytical framework based on Toeplitz matrices, categorizing positional encodings into additive (Absolute/T5/ALiBi) and multiplicative (RoPE) types. Through synthetic tasks, it reveals that RoPE exhibits significant advantages on position-sensitive tasks but suffers from a "single-head deposit pattern" in shallow layers, where nearly all positional reasoning concentrates in a single attention head. The paper further provides a theoretical proof that this pattern is an intrinsic property of RoPE's multiplicative structure.
+  [ICLR2026][LLM Pretraining][Positional Encoding] This paper proposes a unified analytical framework based on Toeplitz matrices, categorizing positional encodings into additive (Absolute/T5/ALiBi) and multiplicative (RoPE…
 tags:
-  - ICLR2026
-  - LLM Pretraining
-  - Positional Encoding
-  - RoPE
-  - Toeplitz Matrix
-  - Attention Mechanism
-  - Single-Head Deposit Pattern
+  - "ICLR2026"
+  - "LLM Pretraining"
+  - "Positional Encoding"
+  - "RoPE"
+  - "Toeplitz Matrix"
+  - "Attention Mechanism"
+  - "Single-Head Deposit Pattern"
 date: 2026-05-08
 content_hash: 8ac74a8e191a730f
 ---

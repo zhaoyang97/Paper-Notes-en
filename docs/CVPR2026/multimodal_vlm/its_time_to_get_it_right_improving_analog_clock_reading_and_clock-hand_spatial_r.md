@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] It's Time to Get It Right: Improving Analog Clock Reading and Clock-Hand Spatial Reasoning in Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Analog clock reading] This paper reveals that state-of-the-art VLMs still fail to reliably read analog clocks in real-world scenes (zero-shot accuracy below 10%), and proposes TickTockVQA, a real-world dataset of 12K images, along with a Swap-DPO fine-tuning framework that improves Llama-3.2-11B's time-reading accuracy from 1.43% to 46.22%.
+  [CVPR 2026][Multimodal VLM][Analog clock reading] This paper reveals that state-of-the-art VLMs still fail to reliably read analog clocks in real-world scenes (zero-shot accuracy below 10%), and proposes TickTockVQA…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Analog clock reading
-  - spatial reasoning
-  - VLM
-  - DPO
-  - spatiotemporal understanding
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Analog clock reading"
+  - "spatial reasoning"
+  - "VLM"
+  - "DPO"
+  - "spatiotemporal understanding"
 date: 2026-05-08
 content_hash: 23c1d36d6c037bd0
 ---

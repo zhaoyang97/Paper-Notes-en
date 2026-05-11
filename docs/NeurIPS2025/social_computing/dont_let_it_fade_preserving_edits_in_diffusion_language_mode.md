@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Don't Let It Fade: Preserving Edits in Diffusion Language Models via Token Timestep Allocation
 description: >-
-  [Social Computing] This paper proposes Token Timestep Allocation (TTA-Diffusion), which assigns independent denoising timesteps to each token to address the *update-forgetting* problem caused by classifier guidance in diffusion language models, achieving substantial improvements in both stability and efficiency for controllable text generation.
+  [Social Computing] This paper proposes Token Timestep Allocation (TTA-Diffusion), which assigns independent denoising timesteps to each token to address the *update-forgetting* problem caused by classifier guidance in di…
 tags:
-  - Social Computing
+  - "Social Computing"
 date: 2026-05-08
 content_hash: d46099bc753f3c03
 ---

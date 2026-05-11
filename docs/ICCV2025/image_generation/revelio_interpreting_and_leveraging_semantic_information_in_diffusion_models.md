@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Revelio: Interpreting and Leveraging Semantic Information in Diffusion Models
 description: >-
-  [ICCV 2025][Image Generation][Diffusion model interpretability] Revelio employs k-sparse autoencoders (k-SAE) to uncover monosemantic, interpretable features encoded across different layers and timesteps of diffusion models, and validates the transfer learning utility of these features via a lightweight classifier, Diff-C, enabling a systematic interpretation of black-box diffusion models.
+  [ICCV 2025][Image Generation][Diffusion model interpretability] Revelio employs k-sparse autoencoders (k-SAE) to uncover monosemantic, interpretable features encoded across different layers and timesteps of diffusion mod…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Diffusion model interpretability
-  - k-sparse autoencoders
-  - representation learning
-  - transfer learning
-  - monosemantic features
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Diffusion model interpretability"
+  - "k-sparse autoencoders"
+  - "representation learning"
+  - "transfer learning"
+  - "monosemantic features"
 date: 2026-05-08
 content_hash: 82e6c07c1b26275e
 ---

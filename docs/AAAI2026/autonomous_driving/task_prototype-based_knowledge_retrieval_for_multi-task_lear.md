@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Task Prototype-Based Knowledge Retrieval for Multi-Task Learning from Partially Annotated Data
 description: >-
-  [AAAI 2026][Autonomous Driving][Multi-Task Learning] This paper proposes a task prototype-based knowledge retrieval framework that employs learnable Task Prototypes to encode task characteristics and quantify inter-task affinities, and a Knowledge Retrieval Transformer to adaptively refine feature representations based on task-affinity scores. The framework addresses multi-task learning from partially annotated data (MTPSL) without relying on predictions from unannotated tasks, achieving state-of-the-art performance on PASCAL-Context and NYUD-v2.
+  [AAAI 2026][Autonomous Driving][Multi-Task Learning] This paper proposes a task prototype-based knowledge retrieval framework that employs learnable Task Prototypes to encode task characteristics and quantify inter-task…
 tags:
-  - AAAI 2026
-  - Autonomous Driving
-  - Multi-Task Learning
-  - Task Prototype
-  - Partial Annotation
-  - Knowledge Retrieval Transformer
-  - Task Affinity
+  - "AAAI 2026"
+  - "Autonomous Driving"
+  - "Multi-Task Learning"
+  - "Task Prototype"
+  - "Partial Annotation"
+  - "Knowledge Retrieval Transformer"
+  - "Task Affinity"
 date: 2026-05-08
 content_hash: eebcbe6b3bf13949
 ---

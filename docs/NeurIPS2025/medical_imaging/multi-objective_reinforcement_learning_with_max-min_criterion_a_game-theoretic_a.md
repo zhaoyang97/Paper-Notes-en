@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multi-Objective Reinforcement Learning with Max-Min Criterion: A Game-Theoretic Approach
 description: >-
-  [NeurIPS 2025][Medical Imaging][Multi-Objective Reinforcement Learning] This paper reformulates max-min multi-objective reinforcement learning as a two-player zero-sum regularized continuous game, proposes the ERAM/ARAM algorithms, and leverages mirror descent to achieve a concise closed-form weight update. The approach guarantees global last-iterate convergence and significantly outperforms existing methods on tasks such as traffic signal control.
+  [NeurIPS 2025][Medical Imaging][Multi-Objective Reinforcement Learning] This paper reformulates max-min multi-objective reinforcement learning as a two-player zero-sum regularized continuous game…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Multi-Objective Reinforcement Learning
-  - Max-Min Fairness
-  - Zero-Sum Game
-  - Mirror Descent
-  - Last-Iterate Convergence
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Multi-Objective Reinforcement Learning"
+  - "Max-Min Fairness"
+  - "Zero-Sum Game"
+  - "Mirror Descent"
+  - "Last-Iterate Convergence"
 date: 2026-05-08
 content_hash: b98ca0377d2f9fda
 ---

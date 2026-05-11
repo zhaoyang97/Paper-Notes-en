@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FaithLens: Detecting and Explaining Faithfulness Hallucination
 description: >-
-  [ACL 2026][Reinforcement Learning][Faithfulness hallucination] This paper proposes FaithLens, an 8B-parameter faithfulness hallucination detection model trained via high-quality data synthesis with three-dimensional filtering (label correctness, explanation quality, and data diversity) for cold-start SFT, followed by rule-based reinforcement learning (prediction correctness reward + explanation quality reward) for further optimization. FaithLens surpasses GPT-5.2 and o3 across 12 tasks while providing high-quality explanatory outputs.
+  [ACL 2026][Reinforcement Learning][Faithfulness hallucination] This paper proposes FaithLens, an 8B-parameter faithfulness hallucination detection model trained via high-quality data synthesis with three-dimensional filt…
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - Faithfulness hallucination
-  - explainable detection
-  - rule-based reinforcement learning
-  - data filtering
-  - cross-task generalization
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "Faithfulness hallucination"
+  - "explainable detection"
+  - "rule-based reinforcement learning"
+  - "data filtering"
+  - "cross-task generalization"
 date: 2026-05-08
 content_hash: 4c2387c0fdb2f310
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Spatial Preference Rewarding for MLLMs Spatial Understanding
 description: >-
-  [ICCV 2025][Multimodal VLM][MLLM] This paper proposes SPR (Spatial Preference Rewarding), a framework that automatically constructs preference data pairs via semantic and localization scores, and trains MLLMs with DPO to distinguish high-precision grounding (chosen) from ambiguous or erroneous grounding (rejected), substantially improving fine-grained spatial understanding—particularly at high IoU thresholds.
+  [ICCV 2025][Multimodal VLM][MLLM] This paper proposes SPR (Spatial Preference Rewarding), a framework that automatically constructs preference data pairs via semantic and localization scores…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - MLLM
-  - spatial understanding
-  - preference optimization
-  - DPO
-  - object grounding
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "MLLM"
+  - "spatial understanding"
+  - "preference optimization"
+  - "DPO"
+  - "object grounding"
 date: 2026-05-08
 content_hash: 06589183f0f669b0
 ---

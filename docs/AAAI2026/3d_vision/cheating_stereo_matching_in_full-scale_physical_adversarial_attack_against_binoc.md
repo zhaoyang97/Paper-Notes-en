@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Cheating Stereo Matching in Full-Scale: Physical Adversarial Attack against Binocular Depth Estimation
 description: >-
-  [AAAI 2026][3D Vision][adversarial attack] This paper proposes the first full-surface 3D texture physical adversarial attack against stereo matching models. Through a stereo-aligned rendering module and a region-aware merging attack strategy, adversarial vehicles seamlessly blend into the background in the predicted depth map, causing severe failures in autonomous driving perception systems.
+  [AAAI 2026][3D Vision][adversarial attack] This paper proposes the first full-surface 3D texture physical adversarial attack against stereo matching models. Through a stereo-aligned rendering module and a region-aware me…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - adversarial attack
-  - stereo matching
-  - binocular depth estimation
-  - 3D texture camouflage
-  - physical adversarial examples
+  - "AAAI 2026"
+  - "3D Vision"
+  - "adversarial attack"
+  - "stereo matching"
+  - "binocular depth estimation"
+  - "3D texture camouflage"
+  - "physical adversarial examples"
 date: 2026-05-08
 content_hash: 998248761903d96a
 ---

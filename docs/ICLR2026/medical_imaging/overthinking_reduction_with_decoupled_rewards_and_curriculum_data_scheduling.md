@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Overthinking Reduction with Decoupled Rewards and Curriculum Data Scheduling
 description: >-
-  [ICLR 2026][Medical Imaging][overthinking] This paper theoretically identifies two fundamental flaws in existing length-penalty approaches—incorrectly penalizing high-entropy exploration tokens and erroneously rewarding redundant tokens—and proposes the DeCS framework. Through decoupled token-level rewards and curriculum batch scheduling, DeCS reduces reasoning tokens by over 50% across 7 benchmarks while maintaining or even improving model performance.
+  [ICLR 2026][Medical Imaging][overthinking] This paper theoretically identifies two fundamental flaws in existing length-penalty approaches—incorrectly penalizing high-entropy exploration tokens and erroneously rewarding…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - overthinking
-  - decoupled rewards
-  - curriculum learning
-  - RLVR
-  - NRP
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "overthinking"
+  - "decoupled rewards"
+  - "curriculum learning"
+  - "RLVR"
+  - "NRP"
 date: 2026-05-08
 content_hash: 898a600fc4fcaa63
 ---

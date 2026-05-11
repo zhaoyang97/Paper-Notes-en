@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CogVLA: Cognition-Aligned Vision-Language-Action Model via Instruction-Driven Routing & Sparsification
 description: >-
-  [NeurIPS 2025][Robotics][VLA] CogVLA proposes a three-stage VLA architecture inspired by human multimodal cognition—comprising EFA-Routing for visual aggregation and compression to 25%, LFP-Routing for instruction-aware pruning of 50% of tokens within the LLM, and V-L-A coupled attention—achieving a 97.4% success rate on LIBERO with 2.5× training and 2.8× inference speedups over SOTA methods such as OpenVLA-OFT, and a 70.0% success rate on real-robot tasks.
+  [NeurIPS 2025][Robotics][VLA] CogVLA proposes a three-stage VLA architecture inspired by human multimodal cognition—comprising EFA-Routing for visual aggregation and compression to 25%…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - VLA
-  - token routing
-  - sparsification
-  - instruction-driven
-  - robotic manipulation
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "VLA"
+  - "token routing"
+  - "sparsification"
+  - "instruction-driven"
+  - "robotic manipulation"
 date: 2026-05-08
 content_hash: f8f5e681f45bff4a
 ---

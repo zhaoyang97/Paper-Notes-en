@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Tree-based Dialogue Reinforced Policy Optimization for Red-Teaming Attacks (DialTree)
 description: >-
-  [ICLR 2026][LLM Safety][Multi-turn jailbreak] This paper proposes DialTree, which frames multi-turn red-teaming as a goal-oriented dialogue policy optimization problem. By employing tree-structured rollouts with quality-based pruning to explore the attack trajectory space, combined with an adaptive mask to prevent format forgetting, DialTree achieves an average ASR of 81.5% across 12 target models—44.2% higher than the previous SOTA—and attains 71% ASR even on Claude-4-Sonnet.
+  [ICLR 2026][LLM Safety][Multi-turn jailbreak] This paper proposes DialTree, which frames multi-turn red-teaming as a goal-oriented dialogue policy optimization problem. By employing tree-structured rollouts with quality-…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Multi-turn jailbreak
-  - red-teaming
-  - reinforcement learning
-  - tree search
-  - dialogue policy optimization
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Multi-turn jailbreak"
+  - "red-teaming"
+  - "reinforcement learning"
+  - "tree search"
+  - "dialogue policy optimization"
 date: 2026-05-08
 content_hash: d9c7752ed6ed6b4c
 ---

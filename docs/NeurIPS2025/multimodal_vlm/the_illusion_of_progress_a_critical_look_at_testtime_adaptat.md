@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The Illusion of Progress? A Critical Look at Test-Time Adaptation for Vision-Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Test-time adaptation] This paper introduces TTA-VLM, a unified benchmark evaluating 8 episodic and 7 online test-time adaptation (TTA) methods across 15 datasets under controlled experimental conditions. Three surprising findings emerge: (1) existing TTA methods offer only marginal improvements over the early TPT baseline; (2) TTA methods collaborate poorly with training-time fine-tuning approaches; (3) accuracy gains come at the cost of calibration, OOD detection, and robustness.
+  [NeurIPS 2025][Multimodal VLM][Test-time adaptation] This paper introduces TTA-VLM, a unified benchmark evaluating 8 episodic and 7 online test-time adaptation (TTA) methods across 15 datasets under controlled experiment…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Test-time adaptation
-  - CLIP
-  - SigLIP
-  - trustworthiness
-  - calibration
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Test-time adaptation"
+  - "CLIP"
+  - "SigLIP"
+  - "trustworthiness"
+  - "calibration"
 date: 2026-05-08
 content_hash: 03a3e85b47d38dd9
 ---

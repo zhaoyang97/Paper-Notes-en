@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Understanding Safety Alignment: A Mechanistic Perspective from Safety Neurons
 description: >-
-  [NeurIPS 2025][LLM Alignment][safety alignment] Through a mechanistic interpretability lens, this work identifies a sparse set of "safety neurons" comprising approximately 5% of all neurons in LLMs. Patching only these neurons' activations recovers over 90% of safety performance, and the neuron-overlap perspective offers a mechanistic explanation for the alignment tax phenomenon.
+  [NeurIPS 2025][LLM Alignment][safety alignment] Through a mechanistic interpretability lens, this work identifies a sparse set of "safety neurons" comprising approximately 5% of all neurons in LLMs. Patching only these n…
 tags:
-  - NeurIPS 2025
-  - LLM Alignment
-  - safety alignment
-  - mechanistic interpretability
-  - safety neurons
-  - activation patching
-  - alignment tax
+  - "NeurIPS 2025"
+  - "LLM Alignment"
+  - "safety alignment"
+  - "mechanistic interpretability"
+  - "safety neurons"
+  - "activation patching"
+  - "alignment tax"
 date: 2026-05-08
 content_hash: 9486ac8964f2230e
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] RealVLG-R1: A Large-Scale Real-World Visual-Language Grounding Benchmark for Robotic Perception and Manipulation
 description: >-
-  [CVPR2026][Segmentation][visual-language grounding] This paper proposes the RealVLG framework, comprising the RealVLG-11B large-scale real-world multi-granularity annotated dataset and the RealVLG-R1 unified model fine-tuned via reinforcement learning. It is the first work to unify visual-language grounding (VLG) and robotic grasping under a single paradigm, enabling end-to-end prediction of bounding boxes, segmentation masks, grasp poses, and contact points from natural language instructions, while demonstrating zero-shot generalization capability.
+  [CVPR2026][Segmentation][visual-language grounding] This paper proposes the RealVLG framework, comprising the RealVLG-11B large-scale real-world multi-granularity annotated dataset and the RealVLG-R1 unified model fine-t…
 tags:
-  - CVPR2026
-  - Segmentation
-  - visual-language grounding
-  - robotic grasping
-  - reinforcement learning fine-tuning
-  - multi-granularity annotation
-  - zero-shot generalization
-  - large-scale vision-language models
+  - "CVPR2026"
+  - "Segmentation"
+  - "visual-language grounding"
+  - "robotic grasping"
+  - "reinforcement learning fine-tuning"
+  - "multi-granularity annotation"
+  - "zero-shot generalization"
+  - "large-scale vision-language models"
 date: 2026-05-08
 content_hash: 9a3ae935c96e6736
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DuoLoRA: Cycle-Consistent and Rank-Disentangled Content-Style Personalization
 description: >-
-  [ICCV 2025][Model Compression][LoRA merging] DuoLoRA introduces rank-dimension mask learning (ZipRank) for LoRA merging, combined with SDXL layer priors and a cycle-consistent merging loss (Constyle loss), enabling efficient content-style LoRA composition that surpasses ZipLoRA and other state-of-the-art methods across multiple benchmarks while reducing trainable parameters by 19×.
+  [ICCV 2025][Model Compression][LoRA merging] DuoLoRA introduces rank-dimension mask learning (ZipRank) for LoRA merging, combined with SDXL layer priors and a cycle-consistent merging loss (Constyle loss)…
 tags:
-  - ICCV 2025
-  - Model Compression
-  - LoRA merging
-  - content-style personalization
-  - cycle consistency
-  - rank disentanglement
-  - diffusion models
+  - "ICCV 2025"
+  - "Model Compression"
+  - "LoRA merging"
+  - "content-style personalization"
+  - "cycle consistency"
+  - "rank disentanglement"
+  - "diffusion models"
 date: 2026-05-08
 content_hash: 286495f921b268b6
 ---

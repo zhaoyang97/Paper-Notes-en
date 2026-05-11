@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] VLM-SubtleBench: How Far Are VLMs from Human-Level Subtle Comparative Reasoning?
 description: >-
-  [Multimodal VLM] This paper introduces VLM-SubtleBench, a benchmark for evaluating vision-language models on subtle difference comparative reasoning, covering 10 difference types and 6 image domains (natural, gaming, industrial, aerial, medical, and synthetic). It reveals a performance gap of over 30% between VLMs and humans on spatial, temporal, and viewpoint reasoning tasks.
+  [Multimodal VLM] This paper introduces VLM-SubtleBench, a benchmark for evaluating vision-language models on subtle difference comparative reasoning, covering 10 difference types and 6 image domains (natural, gaming…
 tags:
-  - Multimodal VLM
+  - "Multimodal VLM"
 date: 2026-05-08
 content_hash: 2ec7b00f637330cb
 ---

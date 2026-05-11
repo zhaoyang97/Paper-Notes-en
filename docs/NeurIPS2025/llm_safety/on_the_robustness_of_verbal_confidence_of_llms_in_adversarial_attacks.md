@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] On the Robustness of Verbal Confidence of LLMs in Adversarial Attacks
 description: >-
-  [NeurIPS 2025][LLM Safety][verbal confidence] This paper presents the first systematic study on the robustness of LLM verbal confidence under adversarial attacks. It proposes a Verbal Confidence Attack (VCA) framework comprising perturbation-based and jailbreak-based attacks, demonstrating that such attacks can reduce confidence scores by up to 30%, cause answer-flip rates of up to 100%, and that existing defense strategies are largely ineffective.
+  [NeurIPS 2025][LLM Safety][verbal confidence] This paper presents the first systematic study on the robustness of LLM verbal confidence under adversarial attacks. It proposes a Verbal Confidence Attack (VCA) framework co…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - verbal confidence
-  - adversarial attacks
-  - LLM robustness
-  - confidence calibration
-  - jailbreak attacks
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "verbal confidence"
+  - "adversarial attacks"
+  - "LLM robustness"
+  - "confidence calibration"
+  - "jailbreak attacks"
 date: 2026-05-08
 content_hash: c3c787adededf41e
 ---

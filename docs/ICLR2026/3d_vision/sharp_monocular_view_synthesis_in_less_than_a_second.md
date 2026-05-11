@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Sharp Monocular View Synthesis in Less Than a Second
 description: >-
-  [ICLR 2026][3D Vision][view synthesis] SHARP generates approximately 1.2 million 3D Gaussians from a single image via a single feedforward pass, completing inference in under one second on an A100 GPU with rendering speeds exceeding 100 FPS. It achieves state-of-the-art zero-shot generalization across 6 datasets, reducing LPIPS by 25–34% and synthesis time by three orders of magnitude compared to the strongest prior method.
+  [ICLR 2026][3D Vision][view synthesis] SHARP generates approximately 1.2 million 3D Gaussians from a single image via a single feedforward pass…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - view synthesis
-  - 3D Gaussian splatting
-  - monocular depth
-  - real-time rendering
-  - feedforward
+  - "ICLR 2026"
+  - "3D Vision"
+  - "view synthesis"
+  - "3D Gaussian splatting"
+  - "monocular depth"
+  - "real-time rendering"
+  - "feedforward"
 date: 2026-05-08
 content_hash: 3044c8987737131c
 ---

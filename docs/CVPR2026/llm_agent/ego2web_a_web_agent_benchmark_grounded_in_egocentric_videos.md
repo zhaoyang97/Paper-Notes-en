@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Ego2Web: A Web Agent Benchmark Grounded in Egocentric Videos
 description: >-
-  [CVPR 2026][LLM Agent][Web Agent] This paper proposes Ego2Web, the first benchmark that bridges egocentric video perception with web agent execution, accompanied by a semi-automatic data construction pipeline and the Ego2WebJudge automatic evaluation framework. Experiments reveal that current state-of-the-art agents still exhibit a substantial gap in cross-modal transfer from real-world visual perception to online action, with the best model achieving only 48.2% success rate.
+  [CVPR 2026][LLM Agent][Web Agent] This paper proposes Ego2Web, the first benchmark that bridges egocentric video perception with web agent execution…
 tags:
-  - CVPR 2026
-  - LLM Agent
-  - Web Agent
-  - Egocentric Video
-  - Multimodal Benchmark
-  - Cross-Modal Transfer
-  - Automatic Evaluation
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "Web Agent"
+  - "Egocentric Video"
+  - "Multimodal Benchmark"
+  - "Cross-Modal Transfer"
+  - "Automatic Evaluation"
 date: 2026-05-08
 content_hash: 96671c84e02eff4f
 ---

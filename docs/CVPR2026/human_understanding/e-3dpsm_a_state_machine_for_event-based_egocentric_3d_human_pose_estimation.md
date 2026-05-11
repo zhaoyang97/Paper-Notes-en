@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] E-3DPSM: A State Machine for Event-Based Egocentric 3D Human Pose Estimation
 description: >-
-  [CVPR 2026][Human Understanding][event camera] This paper proposes E-3DPSM, an event-camera-based egocentric 3D human pose state machine that formulates pose estimation as a continuous-time state evolution process. It integrates bidirectional SSM temporal modeling with a learnable Kalman-style fusion module to combine direct and incremental pose predictions, achieving real-time inference at 80Hz with a 19% reduction in MPJPE and a 2.7× improvement in temporal stability.
+  [CVPR 2026][Human Understanding][event camera] This paper proposes E-3DPSM, an event-camera-based egocentric 3D human pose state machine that formulates pose estimation as a continuous-time state evolution process. It in…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - event camera
-  - egocentric pose estimation
-  - state space model
-  - 3D human pose
-  - temporal consistency
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "event camera"
+  - "egocentric pose estimation"
+  - "state space model"
+  - "3D human pose"
+  - "temporal consistency"
 date: 2026-05-08
 content_hash: 20394dcc23bbc87f
 ---

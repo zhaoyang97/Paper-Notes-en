@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GC4NC: A Benchmark Framework for Graph Condensation on Node Classification with New Insights
 description: >-
-  [NeurIPS 2025][Image Restoration][Graph Condensation] This paper proposes GC4NC—the first systematic benchmark framework for graph condensation (GC)—which evaluates multiple GC methods across 8 dimensions (performance / efficiency / privacy protection / denoising / NAS effectiveness / transferability, etc.), finding that trajectory matching methods achieve the best performance, structure-free methods are most efficient, and graph condensation significantly outperforms image condensation under 1000× compression.
+  [NeurIPS 2025][Image Restoration][Graph Condensation] This paper proposes GC4NC—the first systematic benchmark framework for graph condensation (GC)—which evaluates multiple GC methods across 8 dimensions (performance /…
 tags:
-  - NeurIPS 2025
-  - Image Restoration
-  - Graph Condensation
-  - Dataset Distillation
-  - Node Classification
-  - Benchmark Evaluation
-  - Privacy Protection
+  - "NeurIPS 2025"
+  - "Image Restoration"
+  - "Graph Condensation"
+  - "Dataset Distillation"
+  - "Node Classification"
+  - "Benchmark Evaluation"
+  - "Privacy Protection"
 date: 2026-05-08
 content_hash: a3e11eb62c053955
 ---

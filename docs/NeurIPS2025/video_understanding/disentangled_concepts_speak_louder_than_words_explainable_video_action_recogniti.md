@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Disentangled Concepts Speak Louder Than Words: Explainable Video Action Recognition
 description: >-
-  [NeurIPS 2025 (Spotlight)][Video Understanding][Explainable video action recognition] This paper proposes DANCE, a framework that achieves structured and motion-aware explainable video action recognition by disentangling action explanations into three concept types: motion dynamics, objects, and scenes.
+  [NeurIPS 2025 (Spotlight)][Video Understanding][Explainable video action recognition] This paper proposes DANCE, a framework that achieves structured and motion-aware explainable video action recognition by disentangling…
 tags:
-  - NeurIPS 2025 (Spotlight)
-  - Video Understanding
-  - Explainable video action recognition
-  - concept bottleneck model
-  - motion disentanglement
-  - pose sequences
-  - concept discovery
+  - "NeurIPS 2025 (Spotlight)"
+  - "Video Understanding"
+  - "Explainable video action recognition"
+  - "concept bottleneck model"
+  - "motion disentanglement"
+  - "pose sequences"
+  - "concept discovery"
 date: 2026-05-08
 content_hash: 0879e2f710ad7c59
 ---

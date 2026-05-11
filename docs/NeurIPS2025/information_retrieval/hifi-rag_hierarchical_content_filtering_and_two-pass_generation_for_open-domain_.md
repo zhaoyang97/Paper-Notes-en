@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] HiFi-RAG: Hierarchical Content Filtering and Two-Pass Generation for Open-Domain RAG
 description: >-
-  [NeurIPS 2025][Retrieval-Augmented Generation] By decoupling the filtering capability of a lightweight Flash model from the reasoning capability of a Pro model, the paper constructs a multi-stage pipeline (query optimization → hierarchical filtering → two-pass generation → citation verification) that achieves SOTA performance in the MMU-RAGent competition.
+  [NeurIPS 2025][Information Retrieval & RAG][Retrieval-Augmented Generation] By decoupling the filtering capability of a lightweight Flash model from the reasoning capability of a Pro model…
 tags:
-  - NeurIPS 2025
-  - Retrieval-Augmented Generation
-  - hierarchical filtering
-  - two-pass generation
-  - multi-LLM strategy
-  - Flash-Pro cascade
+  - "NeurIPS 2025"
+  - "Information Retrieval & RAG"
+  - "Retrieval-Augmented Generation"
+  - "hierarchical filtering"
+  - "two-pass generation"
+  - "multi-LLM strategy"
+  - "Flash-Pro cascade"
 date: 2026-05-08
 content_hash: d7d6ab1a8bee26e3
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Graph Diffusion that can Insert and Delete
 description: >-
-  [NeurIPS 2025][Image Generation][graph diffusion] This paper proposes GrIDDD, the first model to extend discrete denoising diffusion probabilistic models (DDPM) to support **dynamic insertion and deletion of graph nodes** during generation, allowing molecular graph size to adapt throughout the diffusion process. GrIDDD matches or surpasses existing methods on property targeting and molecular optimization tasks.
+  [NeurIPS 2025][Image Generation][graph diffusion] This paper proposes GrIDDD, the first model to extend discrete denoising diffusion probabilistic models (DDPM) to support **dynamic insertion and deletion of graph nodes*…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - graph diffusion
-  - node insertion and deletion
-  - molecular generation
-  - property targeting
-  - molecular optimization
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "graph diffusion"
+  - "node insertion and deletion"
+  - "molecular generation"
+  - "property targeting"
+  - "molecular optimization"
 date: 2026-05-08
 content_hash: db5e52095f7e3c61
 ---

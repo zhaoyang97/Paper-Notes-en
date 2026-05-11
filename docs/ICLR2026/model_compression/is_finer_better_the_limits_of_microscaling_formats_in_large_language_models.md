@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Is Finer Better? The Limits of Microscaling Formats in Large Language Models
 description: >-
-  [ICLR 2026][Model Compression][microscaling quantization] This paper identifies and explains a counterintuitive anomaly in microscaling quantization — namely that reducing block size below a certain threshold *increases* quantization error for narrow-distribution tensors due to the limited dynamic range of the FP8 UE4M3 scale format — and proposes FP8 UE5M3 as a hardware-friendly solution.
+  [ICLR 2026][Model Compression][microscaling quantization] This paper identifies and explains a counterintuitive anomaly in microscaling quantization — namely that reducing block size below a certain threshold *increases*…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - microscaling quantization
-  - FP4
-  - quantization anomaly
-  - dynamic range
-  - LLM quantization
+  - "ICLR 2026"
+  - "Model Compression"
+  - "microscaling quantization"
+  - "FP4"
+  - "quantization anomaly"
+  - "dynamic range"
+  - "LLM quantization"
 date: 2026-05-08
 content_hash: c5cedf8f192eb967
 ---

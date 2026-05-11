@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Easy to Learn, Yet Hard to Forget: Towards Robust Unlearning Under Bias
 description: >-
-  [AAAI2026][AI Safety][machine unlearning] This paper proposes the CUPID framework, which partitions the forget set into causal and bias subsets via loss landscape sharpness analysis, identifies and disentangles causal and bias pathways within the model, and achieves precise class-level unlearning on biased models — effectively addressing the shortcut unlearning problem.
+  [AAAI2026][AI Safety][machine unlearning] This paper proposes the CUPID framework, which partitions the forget set into causal and bias subsets via loss landscape sharpness analysis…
 tags:
-  - AAAI2026
-  - AI Safety
-  - machine unlearning
-  - shortcut learning
-  - data bias
-  - loss landscape
-  - causal pathway
+  - "AAAI2026"
+  - "AI Safety"
+  - "machine unlearning"
+  - "shortcut learning"
+  - "data bias"
+  - "loss landscape"
+  - "causal pathway"
 date: 2026-05-08
 content_hash: e9f345fd49137096
 ---

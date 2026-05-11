@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] What Layers When: Learning to Skip Compute in LLMs with Residual Gates
 description: >-
-  [ICLR 2026][Model Compression][residual gating] This paper proposes GateSkip—a method that inserts a sigmoid-linear gate at the output of each Attention/MLP branch in a decoder-only Transformer, jointly optimizes gate sparsity and language modeling objectives during fine-tuning, and at inference time deterministically skips low-importance tokens layer-by-layer using a quantile threshold over gate values, thereby achieving token-level adaptive depth. On Llama 8B, GateSkip saves 15% compute while retaining >90% accuracy; on instruction-tuned models, the full-compute variant actually improves accuracy over the baseline, and ~50% savings still matches the baseline. The method is orthogonal and composable with INT4 quantization, structured pruning, and self-speculative decoding.
+  [ICLR 2026][Model Compression][residual gating] This paper proposes GateSkip—a method that inserts a sigmoid-linear gate at the output of each Attention/MLP branch in a decoder-only Transformer…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - residual gating
-  - token-level layer skipping
-  - adaptive depth
-  - GateSkip
-  - inference acceleration
+  - "ICLR 2026"
+  - "Model Compression"
+  - "residual gating"
+  - "token-level layer skipping"
+  - "adaptive depth"
+  - "GateSkip"
+  - "inference acceleration"
 date: 2026-05-08
 content_hash: 2ce54c71e3e80bc3
 ---

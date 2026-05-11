@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MambaMia: State-Space Hierarchical Compression for Hour-Long Video Understanding in Large Multimodal Models
 description: >-
-  [AAAI 2026][Video Understanding][Long video compression] MambaMia proposes a two-stage hierarchical video token compression framework based on bidirectional Mamba: Gated Patch Aggregation (GPA) for spatial-temporal local compression, and a Temporal Axis Aggregator (TAA) that leverages Mamba's adaptive step size $\Delta_t$ for data-driven keyframe sampling. The method compresses hour-long videos to only 4.7K tokens, achieving 44.6 on LVBench and surpassing Qwen2-VL and mPLUG-Owl3.
+  [AAAI 2026][Video Understanding][Long video compression] MambaMia proposes a two-stage hierarchical video token compression framework based on bidirectional Mamba: Gated Patch Aggregation (GPA) for spatial-temporal local…
 tags:
-  - AAAI 2026
-  - Video Understanding
-  - Long video compression
-  - state space models
-  - Mamba
-  - gated patch aggregation
-  - adaptive frame sampling
+  - "AAAI 2026"
+  - "Video Understanding"
+  - "Long video compression"
+  - "state space models"
+  - "Mamba"
+  - "gated patch aggregation"
+  - "adaptive frame sampling"
 date: 2026-05-08
 content_hash: bfdaaad5ca8c3737
 ---

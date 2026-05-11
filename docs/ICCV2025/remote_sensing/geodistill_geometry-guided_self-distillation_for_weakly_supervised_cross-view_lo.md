@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GeoDistill: Geometry-Guided Self-Distillation for Weakly Supervised Cross-View Localization
 description: >-
-  [ICCV 2025][Remote Sensing][cross-view localization] This paper proposes GeoDistill, a framework that enhances locally discriminative feature learning via a Field-of-View (FoV) occlusion-based teacher-student self-distillation paradigm. Under weakly supervised conditions (requiring only coarse GPS annotations), it achieves robust cross-view localization with performance improvements exceeding 10%, and can be applied as a plug-and-play component to different localization frameworks.
+  [ICCV 2025][Remote Sensing][cross-view localization] This paper proposes GeoDistill, a framework that enhances locally discriminative feature learning via a Field-of-View (FoV) occlusion-based teacher-student self-distil…
 tags:
-  - ICCV 2025
-  - Remote Sensing
-  - cross-view localization
-  - weakly supervised learning
-  - self-distillation
-  - FoV occlusion
-  - orientation estimation
+  - "ICCV 2025"
+  - "Remote Sensing"
+  - "cross-view localization"
+  - "weakly supervised learning"
+  - "self-distillation"
+  - "FoV occlusion"
+  - "orientation estimation"
 date: 2026-05-08
 content_hash: 2c4bf9f20c771488
 ---

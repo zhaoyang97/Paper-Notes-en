@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Robust Ego-Exo Correspondence with Long-Term Memory
 description: >-
-  [NeurIPS 2025][Segmentation][ego-exo correspondence] This paper proposes LM-EEC, a SAM 2-based cross-view video object segmentation framework for ego-exo correspondence. It introduces a Memory-View MoE (MV-MoE) module to adaptively fuse memory features with cross-view features, coupled with a dual memory bank compression strategy for retaining long-term information. LM-EEC substantially outperforms existing methods on the EgoExo4D benchmark (Ego2Exo IoU: 54.98 vs. 38.26).
+  [NeurIPS 2025][Segmentation][ego-exo correspondence] This paper proposes LM-EEC, a SAM 2-based cross-view video object segmentation framework for ego-exo correspondence. It introduces a Memory-View MoE (MV-MoE) module to…
 tags:
-  - NeurIPS 2025
-  - Segmentation
-  - ego-exo correspondence
-  - SAM2
-  - MoE
-  - video object segmentation
-  - long-term memory
+  - "NeurIPS 2025"
+  - "Segmentation"
+  - "ego-exo correspondence"
+  - "SAM2"
+  - "MoE"
+  - "video object segmentation"
+  - "long-term memory"
 date: 2026-05-08
 content_hash: 97407353261775d6
 ---

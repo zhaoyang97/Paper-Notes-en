@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Lost in Time? A Meta-Learning Framework for Time-Shift-Tolerant Physiological Signal Transformation
 description: >-
-  [AAAI 2026][Meta-Learning] This paper proposes ShiftSyncNet, a bi-level meta-learning optimization framework that trains a SyncNet to learn temporal offsets between training signal pairs and leverages the Fourier shift theorem to automatically correct label alignment, achieving waveform transformation accuracy improvements of 9.4%, 6.0%, and 12.8% across three datasets respectively.
+  [AAAI 2026][Meta-Learning] This paper proposes ShiftSyncNet, a bi-level meta-learning optimization framework that trains a SyncNet to learn temporal offsets between training signal pairs and leverages the Fourier shift t…
 tags:
-  - AAAI 2026
-  - Meta-Learning
-  - Time-Shift Correction
-  - Fourier Phase Shift
-  - Noisy Label Learning
-  - Physiological Signal Waveform Transformation
+  - "AAAI 2026"
+  - "Meta-Learning"
+  - "Time-Shift Correction"
+  - "Fourier Phase Shift"
+  - "Noisy Label Learning"
+  - "Physiological Signal Waveform Transformation"
 date: 2026-05-08
 content_hash: 660d9fc7d2299a65
 ---

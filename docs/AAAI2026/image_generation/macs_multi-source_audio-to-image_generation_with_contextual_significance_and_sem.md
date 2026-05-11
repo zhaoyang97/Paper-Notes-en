@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MACS: Multi-source Audio-to-Image Generation with Contextual Significance and Semantic Alignment
 description: >-
-  [AAAI 2026][Image Generation][Audio-to-image generation] This paper proposes MACS, the first two-stage framework that explicitly separates multi-source audio prior to image generation. The framework combines weakly supervised sound source separation, CLAP-space semantic alignment (via ranking loss and contrastive loss), and decoupled cross-attention diffusion generation, achieving comprehensive state-of-the-art performance on multi-source, mixed-source, and single-source audio-to-image generation tasks.
+  [AAAI 2026][Image Generation][Audio-to-image generation] This paper proposes MACS, the first two-stage framework that explicitly separates multi-source audio prior to image generation. The framework combines weakly super…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Audio-to-image generation
-  - multi-source audio
-  - sound source separation
-  - cross-modal alignment
-  - diffusion models
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Audio-to-image generation"
+  - "multi-source audio"
+  - "sound source separation"
+  - "cross-modal alignment"
+  - "diffusion models"
 date: 2026-05-08
 content_hash: 9893b5d82958a1d8
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Extreme Value Monte Carlo Tree Search for Classical Planning
 description: >-
-  [AAAI 2026][MCTS] This paper applies Peaks-Over-Threshold Extreme Value Theory (POT EVT) to provide a statistical foundation for Full Bellman Backup in MCTS for classical planning. It proposes the UCB1-Uniform bandit algorithm, which uses MLE under a uniform distribution (a special case of the Generalized Pareto distribution) to guide action selection, outperforming GBFS by 67.8 instances and Softmin-Type(h) by 33.2 instances under a $10^4$ node budget on Pyperplan.
+  [AAAI 2026][MCTS] This paper applies Peaks-Over-Threshold Extreme Value Theory (POT EVT) to provide a statistical foundation for Full Bellman Backup in MCTS for classical planning. It proposes the UCB1-Uniform bandit alg…
 tags:
-  - AAAI 2026
-  - MCTS
-  - Extreme Value Theory
-  - UCB1-Uniform
-  - Generalized Pareto
-  - Classical Planning
-  - Heuristic Search
-  - Full Bellman Backup
+  - "AAAI 2026"
+  - "MCTS"
+  - "Extreme Value Theory"
+  - "UCB1-Uniform"
+  - "Generalized Pareto"
+  - "Classical Planning"
+  - "Heuristic Search"
+  - "Full Bellman Backup"
 date: 2026-05-08
 content_hash: f38b00d8dd7da129
 ---

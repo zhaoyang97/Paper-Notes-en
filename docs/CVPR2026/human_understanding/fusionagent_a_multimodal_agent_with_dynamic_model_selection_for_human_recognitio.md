@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FusionAgent: A Multimodal Agent with Dynamic Model Selection for Human Recognition
 description: >-
-  [CVPR 2026][Human Understanding][model fusion] This paper proposes FusionAgent, an intelligent agent framework based on a multimodal large language model (MLLM) for dynamic sample-level model selection in whole-body biometric recognition. Each expert model (face recognition / gait recognition / person re-identification) is encapsulated as a callable tool. Through reinforcement fine-tuning (RFT), the agent learns to adaptively select the optimal model combination for each test sample based on its characteristics. Combined with the newly proposed ACT score fusion strategy, FusionAgent significantly outperforms existing state-of-the-art fusion methods.
+  [CVPR 2026][Human Understanding][model fusion] This paper proposes FusionAgent, an intelligent agent framework based on a multimodal large language model (MLLM) for dynamic sample-level model selection in whole-body biom…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - model fusion
-  - multimodal large language model
-  - dynamic model selection
-  - biometric recognition
-  - reinforcement fine-tuning
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "model fusion"
+  - "multimodal large language model"
+  - "dynamic model selection"
+  - "biometric recognition"
+  - "reinforcement fine-tuning"
 date: 2026-05-08
 content_hash: 1a77e3d6d4ec6904
 ---

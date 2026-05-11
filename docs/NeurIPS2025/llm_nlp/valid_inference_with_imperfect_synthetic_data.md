@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Valid Inference with Imperfect Synthetic Data
 description: >-
-  [NeurIPS 2025][LLM/NLP][synthetic data] A hyperparameter-free framework based on Generalized Method of Moments (GMM) is proposed to integrate imperfect LLM-generated synthetic data with real data for statistically valid inference. When the residuals of synthetic data are correlated with those of real data, the framework can substantially reduce estimation variance, while guaranteeing no harm to estimation quality in the worst case (i.e., when synthetic data is entirely uninformative).
+  [NeurIPS 2025][LLM/NLP][synthetic data] A hyperparameter-free framework based on Generalized Method of Moments (GMM) is proposed to integrate imperfect LLM-generated synthetic data with real data for statistically valid…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - synthetic data
-  - statistical inference
-  - GMM
-  - prediction-powered inference
-  - computational social science
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "synthetic data"
+  - "statistical inference"
+  - "GMM"
+  - "prediction-powered inference"
+  - "computational social science"
 date: 2026-05-08
 content_hash: 8b1cb1c084bf6167
 ---

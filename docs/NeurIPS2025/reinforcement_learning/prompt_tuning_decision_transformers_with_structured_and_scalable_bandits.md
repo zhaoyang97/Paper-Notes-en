@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Prompt Tuning Decision Transformers with Structured and Scalable Bandits
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Decision Transformer] This paper proposes a structured prompt tuning method based on multi-armed bandits. By decomposing prompts into independent segments and leveraging a pretrained PDT as a feature extractor, the method reduces prompt search complexity from combinatorial explosion to linear scale, significantly improving inference performance of a frozen PDT backbone in multi-task offline RL.
+  [NeurIPS 2025][Reinforcement Learning][Decision Transformer] This paper proposes a structured prompt tuning method based on multi-armed bandits. By decomposing prompts into independent segments and leveraging a pretraine…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Decision Transformer
-  - prompt tuning
-  - Multi-Armed Bandit
-  - offline multi-task RL
-  - few-shot generalization
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Decision Transformer"
+  - "prompt tuning"
+  - "Multi-Armed Bandit"
+  - "offline multi-task RL"
+  - "few-shot generalization"
 date: 2026-05-08
 content_hash: 2dac067d418ca06e
 ---

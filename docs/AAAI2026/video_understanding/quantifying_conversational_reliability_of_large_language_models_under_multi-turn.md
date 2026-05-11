@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Quantifying Conversational Reliability of Large Language Models under Multi-Turn Interaction
 description: >-
-  [AAAI 2026][Video Understanding][LLM Evaluation] This paper systematically quantifies the reliability degradation of LLMs in multi-turn conversations through three deterministically evaluable representative tasks—instruction following, tool selection, and entity extraction—revealing failure modes such as instruction drift, intent confusion, and context overwriting in extended dialogues.
+  [AAAI 2026][Video Understanding][LLM Evaluation] This paper systematically quantifies the reliability degradation of LLMs in multi-turn conversations through three deterministically evaluable representative tasks—instruc…
 tags:
-  - AAAI 2026
-  - Video Understanding
-  - LLM Evaluation
-  - Multi-Turn Dialogue
-  - Reliability
-  - Instruction Following
-  - Tool Selection
+  - "AAAI 2026"
+  - "Video Understanding"
+  - "LLM Evaluation"
+  - "Multi-Turn Dialogue"
+  - "Reliability"
+  - "Instruction Following"
+  - "Tool Selection"
 date: 2026-05-08
 content_hash: f3fad6652dad7ddb
 ---

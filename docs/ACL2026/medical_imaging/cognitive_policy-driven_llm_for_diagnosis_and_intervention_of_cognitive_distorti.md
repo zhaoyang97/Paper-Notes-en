@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Cognitive Policy-Driven LLM for Diagnosis and Intervention of Cognitive Distortions in Emotional Support Conversation
 description: >-
-  [ACL 2026][Medical Imaging][Emotional Support Conversation] This paper proposes CoPoLLM, a framework that constructs CogBiasESC — the first emotional support conversation dataset annotated with cognitive distortions — and integrates a Cognitive Policy Reinforcement Learning (CPRL) engine with Dual-Stream Conditional Optimization (DSCO) to enable LLMs to diagnose eight types of cognitive distortions and generate strategy-aware intervention responses, achieving state-of-the-art performance over 15 baselines.
+  [ACL 2026][Medical Imaging][Emotional Support Conversation] This paper proposes CoPoLLM, a framework that constructs CogBiasESC — the first emotional support conversation dataset annotated with cognitive distortions — an…
 tags:
-  - ACL 2026
-  - Medical Imaging
-  - Emotional Support Conversation
-  - Cognitive Distortion
-  - Cognitive Behavioral Therapy
-  - Reinforcement Learning Policy
-  - Safe Intervention
+  - "ACL 2026"
+  - "Medical Imaging"
+  - "Emotional Support Conversation"
+  - "Cognitive Distortion"
+  - "Cognitive Behavioral Therapy"
+  - "Reinforcement Learning Policy"
+  - "Safe Intervention"
 date: 2026-05-08
 content_hash: b6ec90c14b7a1632
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TM-BSN: Triangular-Masked Blind-Spot Network for Real-World Self-Supervised Image Denoising
 description: >-
-  [CVPR 2026][Image Restoration][blind-spot network] This paper proposes TM-BSN, a triangular-masked blind-spot network that designs the blind-spot region to precisely align with the diamond-shaped spatial correlation pattern of real-world sRGB noise, enabling self-supervised image denoising at full resolution without downsampling. Combined with knowledge distillation, TM-BSN achieves state-of-the-art self-supervised denoising performance on the SIDD and DND benchmarks.
+  [CVPR 2026][Image Restoration][blind-spot network] This paper proposes TM-BSN, a triangular-masked blind-spot network that designs the blind-spot region to precisely align with the diamond-shaped spatial correlation patt…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - blind-spot network
-  - self-supervised denoising
-  - triangular-masked convolution
-  - spatially correlated noise
-  - knowledge distillation
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "blind-spot network"
+  - "self-supervised denoising"
+  - "triangular-masked convolution"
+  - "spatially correlated noise"
+  - "knowledge distillation"
 date: 2026-05-08
 content_hash: 2b10ef65b630f637
 ---

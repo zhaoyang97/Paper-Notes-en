@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Learning Geometric and Photometric Features from Panoramic LiDAR Scans for Outdoor Place Categorization
 description: >-
-  [CVPR 2026][Autonomous Driving][Outdoor scene categorization] This paper uses panoramic depth and reflectance images derived from 3D LiDAR point clouds as CNN inputs, constructs a large-scale outdoor scene categorization dataset (MPO), and proposes two architectural improvements—Horizontal Circular Convolution (HCC) and Row-Wise Max Pooling (RWMP)—to achieve high-accuracy classification (up to 97.87%) across six outdoor scene categories, substantially outperforming traditional handcrafted feature methods.
+  [CVPR 2026][Autonomous Driving][Outdoor scene categorization] This paper uses panoramic depth and reflectance images derived from 3D LiDAR point clouds as CNN inputs…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Outdoor scene categorization
-  - LiDAR panoramic image
-  - multimodal fusion
-  - CNN
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Outdoor scene categorization"
+  - "LiDAR panoramic image"
+  - "multimodal fusion"
+  - "CNN"
   - "depth & reflectance"
 date: 2026-05-08
 content_hash: 555e4a2a81709402

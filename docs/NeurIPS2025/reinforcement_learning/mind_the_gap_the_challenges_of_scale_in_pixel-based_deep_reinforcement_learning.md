@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mind the GAP! The Challenges of Scale in Pixel-based Deep Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Deep Reinforcement Learning] This paper identifies the "bottleneck connection" between the encoder (convolutional layers $\phi$) and the fully connected layers ($\psi$) as the fundamental obstacle to scaling pixel-based deep RL networks, and proposes Global Average Pooling (GAP) — a minimal architectural change — to directly resolve this bottleneck. GAP achieves performance on par with or superior to complex methods (SoftMoE, sparse training) at substantially lower computational cost.
+  [NeurIPS 2025][Reinforcement Learning][Deep Reinforcement Learning] This paper identifies the "bottleneck connection" between the encoder (convolutional layers $\phi$) and the fully connected layers ($\psi$) as the funda…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Deep Reinforcement Learning
-  - Network Scaling
-  - Global Average Pooling
-  - Bottleneck Layer
-  - Atari
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Deep Reinforcement Learning"
+  - "Network Scaling"
+  - "Global Average Pooling"
+  - "Bottleneck Layer"
+  - "Atari"
 date: 2026-05-08
 content_hash: 794491274c87d07c
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Randomized Autoregressive Visual Generation
 description: >-
-  [ICCV2025][Image Generation][Autoregressive image generation] This paper proposes Randomized AutoRegressive modeling (RAR): during standard autoregressive training, the input sequence is randomly permuted and gradually annealed back to raster-scan order, enabling the model to learn bidirectional context. RAR achieves a state-of-the-art FID of 1.48 on ImageNet-256 for autoregressive image generation while remaining fully compatible with the language model framework.
+  [ICCV2025][Image Generation][Autoregressive image generation] This paper proposes Randomized AutoRegressive modeling (RAR): during standard autoregressive training…
 tags:
-  - ICCV2025
-  - Image Generation
-  - Autoregressive image generation
-  - random permutation
-  - bidirectional context
-  - annealing strategy
-  - ImageNet
+  - "ICCV2025"
+  - "Image Generation"
+  - "Autoregressive image generation"
+  - "random permutation"
+  - "bidirectional context"
+  - "annealing strategy"
+  - "ImageNet"
 date: 2026-05-08
 content_hash: b9506f1606dcb16e
 ---

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Faster Algorithms for Structured John Ellipsoid Computation
 description: >-
-  [NeurIPS 2025][Optimization][John ellipsoid] For computing the John ellipsoid of a symmetric convex polytope $P = \{x \in \mathbb{R}^d : -\mathbf{1}_n \leq Ax \leq \mathbf{1}_n\}$, this paper proposes two fast algorithms: a near-input-sparsity algorithm based on sketching with per-iteration cost $\widetilde{O}(\text{nnz}(A) + d^\omega)$, and a treewidth-based algorithm with per-iteration cost $O(n\tau^2)$, both significantly improving upon the prior state-of-the-art cost of $O(nd^2)$.
+  [NeurIPS 2025][Optimization][John ellipsoid] For computing the John ellipsoid of a symmetric convex polytope $P = \{x \in \mathbb{R}^d : -\mathbf{1}_n \leq Ax \leq \mathbf{1}_n\}$…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - John ellipsoid
-  - convex optimization
-  - input sparsity
-  - treewidth
-  - non-negative matrix factorization
-  - Lewis weights
-  - leverage scores
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "John ellipsoid"
+  - "convex optimization"
+  - "input sparsity"
+  - "treewidth"
+  - "non-negative matrix factorization"
+  - "Lewis weights"
+  - "leverage scores"
 date: 2026-05-08
 content_hash: c8e0f8b53b919250
 ---

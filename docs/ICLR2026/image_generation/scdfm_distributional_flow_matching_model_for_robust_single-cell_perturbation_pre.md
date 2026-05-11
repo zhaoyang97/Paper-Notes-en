@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] scDFM: Distributional Flow Matching for Robust Single-Cell Perturbation Prediction
 description: >-
-  [ICLR 2026][Image Generation][single-cell perturbation prediction] This paper proposes scDFM, a generative framework based on conditional flow matching (CFM) that enforces distribution-level fidelity via MMD regularization and introduces the PAD-Transformer backbone to handle noisy and sparse single-cell data. On combinatorial perturbation prediction, scDFM reduces MSE by 19.6% over the strongest baseline CellFlow.
+  [ICLR 2026][Image Generation][single-cell perturbation prediction] This paper proposes scDFM, a generative framework based on conditional flow matching (CFM) that enforces distribution-level fidelity via MMD regularizati…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - single-cell perturbation prediction
-  - conditional flow matching
-  - MMD regularization
-  - differential attention
-  - gene co-expression graph
+  - "ICLR 2026"
+  - "Image Generation"
+  - "single-cell perturbation prediction"
+  - "conditional flow matching"
+  - "MMD regularization"
+  - "differential attention"
+  - "gene co-expression graph"
 date: 2026-05-08
 content_hash: f7799de4f35c6c05
 ---

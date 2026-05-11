@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Distributional Equivalence in Linear Non-Gaussian Latent-Variable Cyclic Causal Models
 description: >-
-  [ICLR 2026 (Oral)][Causal Inference][causal discovery] This work provides, for the first time in the linear non-Gaussian setting and without any structural assumptions, a complete graphical criterion for distributional equivalence among causal graphs with latent variables and cycles. The central technical tool is the newly proposed **edge rank constraints**, upon which algorithms for enumerating equivalence classes and recovering causal models from data are developed — representing the first equivalence characterization and discovery method in parametric causal models that requires no structural assumptions.
+  [ICLR 2026 (Oral)][Causal Inference][causal discovery] This work provides, for the first time in the linear non-Gaussian setting and without any structural assumptions…
 tags:
-  - ICLR 2026 (Oral)
-  - Causal Inference
-  - causal discovery
-  - latent variables
-  - cyclic causal models
-  - distributional equivalence
-  - edge rank constraints
-  - non-Gaussian models
+  - "ICLR 2026 (Oral)"
+  - "Causal Inference"
+  - "causal discovery"
+  - "latent variables"
+  - "cyclic causal models"
+  - "distributional equivalence"
+  - "edge rank constraints"
+  - "non-Gaussian models"
 date: 2026-05-08
 content_hash: 8ad2061376031316
 ---

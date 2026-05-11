@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Optimal Transport-Induced Samples against Out-of-Distribution Overconfidence
 description: >-
-  [ICLR 2026][LLM Evaluation][optimal transport] This paper leverages the geometric singularity boundaries of semi-discrete optimal transport (OT) to locate semantically ambiguous regions in latent space, generates proxy OOD samples (OTIS) near these boundaries, and applies a confidence suppression loss during training to enforce uniform predictions in structurally uncertain regions, thereby systematically mitigating OOD overconfidence in DNNs.
+  [ICLR 2026][LLM Evaluation][optimal transport] This paper leverages the geometric singularity boundaries of semi-discrete optimal transport (OT) to locate semantically ambiguous regions in latent space…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - optimal transport
-  - OOD overconfidence
-  - singularity boundaries
-  - confidence calibration
-  - OTIS
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "optimal transport"
+  - "OOD overconfidence"
+  - "singularity boundaries"
+  - "confidence calibration"
+  - "OTIS"
 date: 2026-05-08
 content_hash: 2745657bfeca2ba6
 ---

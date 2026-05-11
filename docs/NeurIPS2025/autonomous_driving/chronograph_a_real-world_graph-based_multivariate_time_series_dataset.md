@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ChronoGraph: A Real-World Graph-Based Multivariate Time Series Dataset
 description: >-
-  [NEURIPS2025][Autonomous Driving][microservice telemetry] This paper presents ChronoGraph — the first real-world microservice dataset that simultaneously provides multivariate time series, explicit service dependency graphs, and event-level anomaly labels (6 months / ~700 services / 5-dimensional metrics / 8005 timesteps). Benchmark results reveal substantial room for improvement in long-horizon forecasting and topology-aware modeling among existing methods.
+  [NEURIPS2025][Autonomous Driving][microservice telemetry] This paper presents ChronoGraph — the first real-world microservice dataset that simultaneously provides multivariate time series…
 tags:
-  - NEURIPS2025
-  - Autonomous Driving
-  - microservice telemetry
-  - graph time series
-  - anomaly detection
-  - real-world dataset
-  - service dependency graph
+  - "NEURIPS2025"
+  - "Autonomous Driving"
+  - "microservice telemetry"
+  - "graph time series"
+  - "anomaly detection"
+  - "real-world dataset"
+  - "service dependency graph"
 date: 2026-05-08
 content_hash: aeeabe363ab128a2
 ---

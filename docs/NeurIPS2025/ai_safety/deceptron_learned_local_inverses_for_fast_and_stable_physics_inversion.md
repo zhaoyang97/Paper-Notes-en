@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Deceptron: Learned Local Inverses for Fast and Stable Physics Inversion
 description: >-
-  [NEURIPS2025][AI Safety][inverse problems] This paper proposes the Deceptron bidirectional module, which learns a local inverse of a differentiable forward surrogate and introduces a Jacobian Composition Penalty (JCP). By mapping output-space residuals back to the input space, the method achieves Gauss-Newton-like preconditioned gradient updates for physics inversion, dramatically reducing iteration counts (approximately 20× speedup on Heat-1D).
+  [NEURIPS2025][AI Safety][inverse problems] This paper proposes the Deceptron bidirectional module, which learns a local inverse of a differentiable forward surrogate and introduces a Jacobian Composition Penalty (JCP). B…
 tags:
-  - NEURIPS2025
-  - AI Safety
-  - inverse problems
-  - physics inversion
-  - learned preconditioning
-  - Jacobian composition
-  - Gauss-Newton
+  - "NEURIPS2025"
+  - "AI Safety"
+  - "inverse problems"
+  - "physics inversion"
+  - "learned preconditioning"
+  - "Jacobian composition"
+  - "Gauss-Newton"
 date: 2026-05-08
 content_hash: 3cc54ac6046cefe4
 ---

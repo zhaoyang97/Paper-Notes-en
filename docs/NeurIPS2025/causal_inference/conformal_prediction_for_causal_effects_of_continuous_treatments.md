@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Conformal Prediction for Causal Effects of Continuous Treatments
 description: >-
-  [NeurIPS 2025][Causal Inference][conformal prediction] This work is the first to construct conformal prediction intervals for causal effects of continuous treatments (e.g., drug dosage) by parameterizing intervention-induced propensity shifts via a tilting function family and employing quantile regression, providing finite-sample $1-\alpha$ coverage guarantees under both known and unknown propensity score settings.
+  [NeurIPS 2025][Causal Inference][conformal prediction] This work is the first to construct conformal prediction intervals for causal effects of continuous treatments (e.g.…
 tags:
-  - NeurIPS 2025
-  - Causal Inference
-  - conformal prediction
-  - Continuous Treatment
-  - Propensity Score
-  - Uncertainty Quantification
-  - Potential Outcomes
+  - "NeurIPS 2025"
+  - "Causal Inference"
+  - "conformal prediction"
+  - "Continuous Treatment"
+  - "Propensity Score"
+  - "Uncertainty Quantification"
+  - "Potential Outcomes"
 date: 2026-05-08
 content_hash: 90d558307a832cbe
 ---

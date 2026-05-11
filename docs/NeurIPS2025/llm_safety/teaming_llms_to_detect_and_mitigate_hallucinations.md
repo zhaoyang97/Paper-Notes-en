@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Teaming LLMs to Detect and Mitigate Hallucinations
 description: >-
-  [NeurIPS 2025][LLM Safety][Hallucination detection] This paper generalizes single-model consistency methods (Self-Consistency + Semantic Entropy) to a multi-model "consortium" setting comprising heterogeneous LLMs. By aggregating responses from models with diverse training backgrounds, the approach breaks the consistent hallucinations that arise within a single model. Evaluating a large number of consortium combinations over a pool of 15 LLMs, the paper finds that well-matched strong-model consortia outperform the strongest single-model baseline in 92% of cases while incurring lower inference cost.
+  [NeurIPS 2025][LLM Safety][Hallucination detection] This paper generalizes single-model consistency methods (Self-Consistency + Semantic Entropy) to a multi-model "consortium" setting comprising heterogeneous LLMs. By ag…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - Hallucination detection
-  - multi-model consistency
-  - semantic entropy
-  - ensemble voting
-  - inference cost
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "Hallucination detection"
+  - "multi-model consistency"
+  - "semantic entropy"
+  - "ensemble voting"
+  - "inference cost"
 date: 2026-05-08
 content_hash: 9197ed99b3c71226
 ---

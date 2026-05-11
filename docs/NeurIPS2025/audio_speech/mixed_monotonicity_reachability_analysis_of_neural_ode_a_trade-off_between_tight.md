@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mixed Monotonicity Reachability Analysis of Neural ODE: A Trade-Off Between Tightness and Efficiency
 description: >-
-  [NeurIPS 2025 (NeurReps 2025 Workshop, co-located with NeurIPS 2025)][Audio & Speech][Neural ODE] This paper applies continuous-time mixed monotonicity techniques to the reachability analysis of Neural ODEs. By embedding Neural ODE dynamics into a mixed monotone system, it exploits the geometric simplicity of interval boxes to achieve efficient over-approximation, providing a controllable trade-off between tightness and computational efficiency.
+  [NeurIPS 2025 (NeurReps 2025 Workshop, co-located with NeurIPS 2025)][Audio & Speech][Neural ODE] This paper applies continuous-time mixed monotonicity techniques to the reachability analysis of Neural ODEs. By embedding…
 tags:
-  - NeurIPS 2025 (NeurReps 2025 Workshop, co-located with NeurIPS 2025)
+  - "NeurIPS 2025 (NeurReps 2025 Workshop, co-located with NeurIPS 2025)"
   - "Audio & Speech"
-  - Neural ODE
-  - Reachability Analysis
-  - Mixed Monotonicity
-  - Interval Propagation
-  - Formal Verification
+  - "Neural ODE"
+  - "Reachability Analysis"
+  - "Mixed Monotonicity"
+  - "Interval Propagation"
+  - "Formal Verification"
 date: 2026-05-08
 content_hash: 725053ba3366e946
 ---

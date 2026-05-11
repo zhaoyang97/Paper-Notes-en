@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Spectral Conditioning of Attention Improves Transformer Performance
 description: >-
-  [NeurIPS 2025][LLM/NLP][Transformer] This paper theoretically establishes that the condition number of the attention layer Jacobian in Transformers is governed by the condition numbers of the Query/Key/Value matrices, and proposes Spectral Conditioned Attention — a plug-and-play module that reduces the condition number by adding fixed correction terms to the Q/K/V matrices, consistently improving performance across image classification, object detection, and NLP tasks.
+  [NeurIPS 2025][LLM/NLP][Transformer] This paper theoretically establishes that the condition number of the attention layer Jacobian in Transformers is governed by the condition numbers of the Query/Key/Value matrices…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - Transformer
-  - attention mechanism
-  - condition number
-  - spectral conditioning
-  - Jacobian
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "Transformer"
+  - "attention mechanism"
+  - "condition number"
+  - "spectral conditioning"
+  - "Jacobian"
 date: 2026-05-08
 content_hash: e8db126773842a2e
 ---

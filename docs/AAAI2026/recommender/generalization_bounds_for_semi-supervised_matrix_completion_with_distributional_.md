@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Generalization Bounds for Semi-supervised Matrix Completion with Distributional Side Information
 description: >-
-  [AAAI 2026][Recommender Systems][Semi-supervised matrix completion] This paper proposes the first semi-supervised matrix completion learning paradigm: assuming that the sampling distribution $P$ and the ground-truth matrix $G$ share a low-rank subspace, and given a large amount of unlabeled data $M$ and a small amount of labeled data $N$, it proves that the generalization error can be decomposed into two independent terms $\tilde{O}(\sqrt{nd/M}) + \tilde{O}(\sqrt{dr/N})$, achieving significant improvements over explicit-feedback-only baselines on the Douban and MovieLens datasets.
+  [AAAI 2026][Recommender Systems][Semi-supervised matrix completion] This paper proposes the first semi-supervised matrix completion learning paradigm: assuming that the sampling distribution $P$ and the ground-truth matr…
 tags:
-  - AAAI 2026
-  - Recommender Systems
-  - Semi-supervised matrix completion
-  - generalization bounds
-  - low-rank subspace
-  - implicit feedback
-  - explicit feedback
-  - nuclear norm constraint
+  - "AAAI 2026"
+  - "Recommender Systems"
+  - "Semi-supervised matrix completion"
+  - "generalization bounds"
+  - "low-rank subspace"
+  - "implicit feedback"
+  - "explicit feedback"
+  - "nuclear norm constraint"
 date: 2026-05-08
 content_hash: e852f049e78c14e1
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LightMem: Lightweight and Efficient Memory-Augmented Generation
 description: >-
-  [ICLR 2026][Model Compression][LLM memory system] This paper proposes LightMem, a three-stage lightweight memory system inspired by the human Atkinson–Shiffrin memory model. Through three modules — cognitive sensory memory pre-compression, topic-aware short-term memory consolidation, and offline sleep-time updating — LightMem achieves up to 7.7% accuracy improvement on LongMemEval while reducing token consumption by up to 38×.
+  [ICLR 2026][Model Compression][LLM memory system] This paper proposes LightMem, a three-stage lightweight memory system inspired by the human Atkinson–Shiffrin memory model. Through three modules — cognitive sensory memo…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - LLM memory system
-  - sensory memory
-  - short-term memory
-  - long-term memory
-  - sleep-time updating
+  - "ICLR 2026"
+  - "Model Compression"
+  - "LLM memory system"
+  - "sensory memory"
+  - "short-term memory"
+  - "long-term memory"
+  - "sleep-time updating"
 date: 2026-05-08
 content_hash: c5d00edb1ff4dfdc
 ---

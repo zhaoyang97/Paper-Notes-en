@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Out of the Shadows: Exploring a Latent Space for Neural Network Verification
 description: >-
-  [ICLR 2026][neural network verification] By interpreting zonotopes as "shadows" (projections) of high-dimensional hypercubes, this paper identifies that the input set and output enclosure share a common latent space. Building on this insight, it proposes a specification-driven input refinement method that back-propagates unsafe output constraints into the input space to prune subproblems, reducing branch-and-bound subproblem counts by 60–65%. All operations are matrix-based, enabling efficient GPU acceleration. The method achieves competitive performance with top-tier tools such as α-β-CROWN across eight VNN-COMP'24 benchmarks.
+  [ICLR 2026][neural network verification] By interpreting zonotopes as "shadows" (projections) of high-dimensional hypercubes, this paper identifies that the input set and output enclosure share a common latent space. Bui…
 tags:
-  - ICLR 2026
-  - neural network verification
-  - latent space
-  - zonotope
-  - branch-and-bound
-  - reachability analysis
+  - "ICLR 2026"
+  - "neural network verification"
+  - "latent space"
+  - "zonotope"
+  - "branch-and-bound"
+  - "reachability analysis"
 date: 2026-05-08
 content_hash: 0966a530973d1769
 ---

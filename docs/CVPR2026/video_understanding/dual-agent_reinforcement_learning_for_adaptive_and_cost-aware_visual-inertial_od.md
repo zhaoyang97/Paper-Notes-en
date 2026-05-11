@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Dual-Agent Reinforcement Learning for Adaptive and Cost-Aware Visual-Inertial Odometry
 description: >-
-  [CVPR2026][Video Understanding][Visual-Inertial Odometry] This paper proposes a dual-agent reinforcement learning framework comprising a Select Agent (which decides whether to activate the visual front-end based on IMU signals) and a Fusion Agent (which adaptively fuses visual-inertial states). Without completely removing VIBA, the framework substantially reduces its invocation frequency and computational overhead, achieving a superior accuracy–efficiency–memory trade-off.
+  [CVPR2026][Video Understanding][Visual-Inertial Odometry] This paper proposes a dual-agent reinforcement learning framework comprising a Select Agent (which decides whether to activate the visual front-end based on IMU s…
 tags:
-  - CVPR2026
-  - Video Understanding
-  - Visual-Inertial Odometry
-  - Reinforcement Learning
-  - Adaptive Fusion
-  - Computation Scheduling
-  - IMU Bias Estimation
-  - PPO
+  - "CVPR2026"
+  - "Video Understanding"
+  - "Visual-Inertial Odometry"
+  - "Reinforcement Learning"
+  - "Adaptive Fusion"
+  - "Computation Scheduling"
+  - "IMU Bias Estimation"
+  - "PPO"
 date: 2026-05-08
 content_hash: d660c4704c63c99c
 ---

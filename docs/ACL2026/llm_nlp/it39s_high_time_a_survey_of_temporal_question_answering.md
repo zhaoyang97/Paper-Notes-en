@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] It's High Time: A Survey of Temporal Question Answering
 description: >-
-  [ACL 2026][LLM/NLP][Temporal Question Answering] This paper presents a comprehensive survey of Temporal Question Answering (TQA), proposing a unified analytical framework along three dimensions—corpus temporality, question temporality, and model temporal capability—and systematically reviewing the evolution of TQA methods, benchmark datasets, and evaluation strategies from rule-based pipelines to the Transformer/LLM era, while identifying key challenges for future research.
+  [ACL 2026][LLM/NLP][Temporal Question Answering] This paper presents a comprehensive survey of Temporal Question Answering (TQA), proposing a unified analytical framework along three dimensions—corpus temporality…
 tags:
-  - ACL 2026
-  - LLM/NLP
-  - Temporal Question Answering
-  - Temporal Reasoning
-  - Retrieval-Augmented Generation
-  - Large Language Models
-  - Survey
+  - "ACL 2026"
+  - "LLM/NLP"
+  - "Temporal Question Answering"
+  - "Temporal Reasoning"
+  - "Retrieval-Augmented Generation"
+  - "Large Language Models"
+  - "Survey"
 date: 2026-05-08
 content_hash: ebe707398f25ea13
 ---

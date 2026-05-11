@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OIDA-QA: A Multimodal Benchmark for Analyzing the Opioid Industry Documents Archive
 description: >-
-  [AAAI 2026][Multimodal VLM][Document QA] This paper constructs OIDA-QA, a multimodal document question-answering benchmark based on the UCSF-JHU Opioid Industry Documents Archive (OIDA), comprising 400K training documents and 370K multi-hop QA pairs. A domain-specialized LLM system integrating content recitation and a page finder module is developed to effectively handle multi-turn QA and answer page localization over extremely long documents.
+  [AAAI 2026][Multimodal VLM][Document QA] This paper constructs OIDA-QA, a multimodal document question-answering benchmark based on the UCSF-JHU Opioid Industry Documents Archive (OIDA)…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Document QA
-  - Multimodal Benchmark
-  - Long Context
-  - Page Localization
-  - Opioid Crisis
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Document QA"
+  - "Multimodal Benchmark"
+  - "Long Context"
+  - "Page Localization"
+  - "Opioid Crisis"
 date: 2026-05-08
 content_hash: 63588140c7621e26
 ---

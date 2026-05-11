@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The Illusion of Diminishing Returns: Measuring Long Horizon Execution in LLMs
 description: >-
-  [ICLR 2026][LLM Reasoning][long-horizon execution] This paper reveals that short-task benchmarks create an illusion of diminishing returns — marginal gains in per-step accuracy are amplified exponentially in long-horizon tasks. It identifies a "self-conditioning effect" in LLMs (whereby prior errors increase the probability of subsequent errors), shows that thinking models mitigate this effect, and demonstrates that GPT-5 thinking can execute tasks exceeding 2,100 steps.
+  [ICLR 2026][LLM Reasoning][long-horizon execution] This paper reveals that short-task benchmarks create an illusion of diminishing returns — marginal gains in per-step accuracy are amplified exponentially in long-horizon…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - long-horizon execution
-  - self-conditioning
-  - chain-of-thought
-  - scaling
-  - diminishing returns
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "long-horizon execution"
+  - "self-conditioning"
+  - "chain-of-thought"
+  - "scaling"
+  - "diminishing returns"
 date: 2026-05-08
 content_hash: d6a903094fe757e8
 ---

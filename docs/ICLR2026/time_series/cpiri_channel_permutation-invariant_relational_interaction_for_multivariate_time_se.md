@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CPiRi: Channel Permutation-Invariant Relational Interaction for Multivariate Time Series Forecasting
 description: >-
-  [ICLR 2026][Time Series][Multivariate time series forecasting] This paper proposes the CPiRi framework, which achieves channel permutation invariance (CPI) without sacrificing cross-channel modeling capability by combining a frozen pretrained temporal encoder, a trainable permutation-equivariant spatial module, and a channel shuffling training strategy. CPiRi achieves state-of-the-art performance on multiple traffic benchmarks.
+  [ICLR 2026][Time Series][Multivariate time series forecasting] This paper proposes the CPiRi framework, which achieves channel permutation invariance (CPI) without sacrificing cross-channel modeling capability by combini…
 tags:
-  - ICLR 2026
-  - Time Series
-  - Multivariate time series forecasting
-  - channel permutation invariance
-  - spatiotemporal decoupling
-  - foundation models
-  - channel interaction
+  - "ICLR 2026"
+  - "Time Series"
+  - "Multivariate time series forecasting"
+  - "channel permutation invariance"
+  - "spatiotemporal decoupling"
+  - "foundation models"
+  - "channel interaction"
 date: 2026-05-08
 content_hash: 1bddc6df4319f5db
 ---

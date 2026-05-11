@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SERUM: Simple, Efficient, Robust, and Unifying Marking for Diffusion-based Image Generation
 description: >-
-  [ICLR 2026][Image Generation][Diffusion model watermarking] SERUM is a watermarking method that injects unique watermark noise into the initial noise of diffusion models and trains a lightweight detector to identify watermarks directly from generated images — without costly DDIM inversion — achieving state-of-the-art detection rates under diverse attacks with extremely fast injection and detection, while supporting multi-user scenarios.
+  [ICLR 2026][Image Generation][Diffusion model watermarking] SERUM is a watermarking method that injects unique watermark noise into the initial noise of diffusion models and trains a lightweight detector to identify wate…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion model watermarking
-  - lightweight detector
-  - noise injection
-  - robustness
-  - multi-user
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Diffusion model watermarking"
+  - "lightweight detector"
+  - "noise injection"
+  - "robustness"
+  - "multi-user"
 date: 2026-05-08
 content_hash: e1e17b4d49f3158e
 ---

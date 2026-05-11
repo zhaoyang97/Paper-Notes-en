@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] How Adversarial Environments Mislead Agentic AI
 description: >-
-  [ACL 2026][LLM Agent][Adversarial Environment Injection] This paper formalizes the Adversarial Environment Injection (AEI) threat model, decomposing it into breadth attacks (poisoning retrieval results to induce cognitive drift) and depth attacks (injecting phantom nodes to construct navigational traps causing policy collapse). Across 11,000+ experimental runs, the two attack dimensions are found to be completely independent in terms of robustness — a phenomenon termed "robustness splitting" — demonstrating that current single-point defense strategies are fundamentally insufficient.
+  [ACL 2026][LLM Agent][Adversarial Environment Injection] This paper formalizes the Adversarial Environment Injection (AEI) threat model, decomposing it into breadth attacks (poisoning retrieval results to induce cognitiv…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - Adversarial Environment Injection
-  - Tool Trust Gap
-  - Depth Attack
-  - Breadth Attack
-  - Robustness Splitting
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Adversarial Environment Injection"
+  - "Tool Trust Gap"
+  - "Depth Attack"
+  - "Breadth Attack"
+  - "Robustness Splitting"
 date: 2026-05-08
 content_hash: e129817d7f900604
 ---

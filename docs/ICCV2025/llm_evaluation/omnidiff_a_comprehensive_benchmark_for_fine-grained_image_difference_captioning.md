@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OmniDiff: A Comprehensive Benchmark for Fine-grained Image Difference Captioning
 description: >-
-  [ICCV 2025][LLM Evaluation][image difference captioning] This paper introduces OmniDiff, a fine-grained image difference captioning dataset comprising 324 diverse scenes (real-world and 3D synthetic), and proposes a plug-and-play Multi-scale Differential Perception (MDP) module integrated into an MLLM to build the M3Diff model, achieving state-of-the-art performance on OmniDiff and multiple public benchmarks.
+  [ICCV 2025][LLM Evaluation][image difference captioning] This paper introduces OmniDiff, a fine-grained image difference captioning dataset comprising 324 diverse scenes (real-world and 3D synthetic)…
 tags:
-  - ICCV 2025
-  - LLM Evaluation
-  - image difference captioning
-  - multimodal large language models
-  - multi-scale differential perception
-  - change detection
-  - benchmark
+  - "ICCV 2025"
+  - "LLM Evaluation"
+  - "image difference captioning"
+  - "multimodal large language models"
+  - "multi-scale differential perception"
+  - "change detection"
+  - "benchmark"
 date: 2026-05-08
 content_hash: ad44ce24174d22c0
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SegMASt3R: Geometry Grounded Segment Matching
 description: >-
-  [NeurIPS 2025][Robotics][Wide-baseline matching] SegMASt3R augments the pretrained MASt3R 3D foundation model with a lightweight segmentation feature head and a differentiable Sinkhorn matching layer. By leveraging 3D geometric priors, it achieves robust semantic segment matching under extreme viewpoint changes (up to 180°), attaining an AUPRC of 83.6% on the 135–180° baseline (vs. 17% for SAM2).
+  [NeurIPS 2025][Robotics][Wide-baseline matching] SegMASt3R augments the pretrained MASt3R 3D foundation model with a lightweight segmentation feature head and a differentiable Sinkhorn matching layer. By leveraging 3D ge…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - Wide-baseline matching
-  - MASt3R
-  - semantic segmentation
-  - Sinkhorn matching
-  - 3D instance mapping
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "Wide-baseline matching"
+  - "MASt3R"
+  - "semantic segmentation"
+  - "Sinkhorn matching"
+  - "3D instance mapping"
 date: 2026-05-08
 content_hash: aa83408e1e096c9f
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FastLightGen: Fast and Light Video Generation with Fewer Steps and Parameters
 description: >-
-  [CVPR 2026][Video Generation][Video generation acceleration] FastLightGen proposes a three-stage distillation algorithm that, for the first time, achieves joint distillation of sampling steps and model size. By identifying redundant layers, applying dynamic probabilistic pruning, and performing well-guided teacher guidance distribution matching, it compresses HunyuanVideo/WanX into a lightweight generator with 4 sampling steps and 30% parameter pruning, achieving approximately 35× speedup while surpassing the teacher model in performance.
+  [CVPR 2026][Video Generation][Video generation acceleration] FastLightGen proposes a three-stage distillation algorithm that, for the first time…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Video generation acceleration
-  - step distillation
-  - model pruning
-  - distribution matching
-  - DiT compression
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Video generation acceleration"
+  - "step distillation"
+  - "model pruning"
+  - "distribution matching"
+  - "DiT compression"
 date: 2026-05-08
 content_hash: 957ddc659b938408
 ---

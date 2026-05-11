@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UltraHR-100K: Enhancing UHR Image Synthesis with A Large-Scale High-Quality Dataset
 description: >-
-  [NeurIPS 2025][Image Generation][Ultra-High-Resolution] This work constructs UltraHR-100K, a large-scale dataset comprising 100K ultra-high-resolution images with rich annotations, and proposes a Frequency-Aware Post-Training (FAPT) method combining Detail-Oriented Timestep Sampling (DOTS) and Soft-Weighted Frequency Regularization (SWFR) based on DFT, enabling pretrained T2I models to generate fine-grained details at ultra-high resolutions.
+  [NeurIPS 2025][Image Generation][Ultra-High-Resolution] This work constructs UltraHR-100K, a large-scale dataset comprising 100K ultra-high-resolution images with rich annotations…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Ultra-High-Resolution
-  - Dataset
-  - Frequency-Aware
-  - Detail Generation
-  - Post-Training
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Ultra-High-Resolution"
+  - "Dataset"
+  - "Frequency-Aware"
+  - "Detail Generation"
+  - "Post-Training"
 date: 2026-05-08
 content_hash: e497081b18560654
 ---

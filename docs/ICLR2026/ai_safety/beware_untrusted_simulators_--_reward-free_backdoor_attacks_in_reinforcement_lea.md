@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beware Untrusted Simulators -- Reward-Free Backdoor Attacks in Reinforcement Learning
 description: >-
-  [ICLR 2026][AI Safety][backdoor attack] This paper proposes Daze, a backdoor attack in which a malicious simulator developer—without any access to or modification of the agent's reward function—plants a backdoor solely by manipulating state transitions: when the agent fails to execute the target action in a trigger state, it is forced to take random actions ("dazed"), thereby theoretically guaranteeing both attack success and stealthiness. The work also presents the first demonstration of an RL backdoor attack on real robot hardware.
+  [ICLR 2026][AI Safety][backdoor attack] This paper proposes Daze, a backdoor attack in which a malicious simulator developer—without any access to or modification of the agent's reward function—plants a backdoor solely b…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - backdoor attack
-  - reinforcement-learning
-  - simulator security
-  - reward-free
-  - supply chain attack
+  - "ICLR 2026"
+  - "AI Safety"
+  - "backdoor attack"
+  - "reinforcement-learning"
+  - "simulator security"
+  - "reward-free"
+  - "supply chain attack"
 date: 2026-05-08
 content_hash: 4d7de094adfd5d46
 ---

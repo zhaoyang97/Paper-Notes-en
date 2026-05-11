@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] SpecAttn: Speculating Sparse Attention
 description: >-
-  [NeurIPS 2025][Model Compression][Sparse Attention] SpecAttn proposes a training-free method that leverages attention weights already computed by the draft model in speculative decoding to predict important tokens for the verification model. Through KL divergence layer mapping, sorting-free top-p nucleus selection, and dynamic KV cache pruning, it achieves a 78.4% reduction in KV cache accesses with only a 15.29% increase in perplexity, significantly outperforming existing sparse attention methods.
+  [NeurIPS 2025][Model Compression][Sparse Attention] SpecAttn proposes a training-free method that leverages attention weights already computed by the draft model in speculative decoding to predict important tokens for th…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Sparse Attention
-  - Speculative Decoding
-  - KV Cache Pruning
-  - KL Divergence Layer Mapping
-  - Sorting-Free Top-p Selection
-  - Triton Kernel
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Sparse Attention"
+  - "Speculative Decoding"
+  - "KV Cache Pruning"
+  - "KL Divergence Layer Mapping"
+  - "Sorting-Free Top-p Selection"
+  - "Triton Kernel"
 date: 2026-05-08
 content_hash: ac3e36568d85b541
 ---

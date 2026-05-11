@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Neuro-Spectral Architectures for Causal Physics-Informed Networks
 description: >-
-  [NeurIPS 2025][Scientific Computing][PINN] NeuSA integrates classical spectral methods with Neural ODEs: the PDE is projected onto a spectral basis (Fourier) to obtain an ODE system, which is then solved by a NODE that learns the dynamical evolution. This architecture-level design eliminates the spectral bias and causality violations inherent in conventional PINNs, achieving errors 1–2 orders of magnitude lower than baselines on wave, Burgers, and sine-Gordon equations while training faster.
+  [NeurIPS 2025][Scientific Computing][PINN] NeuSA integrates classical spectral methods with Neural ODEs: the PDE is projected onto a spectral basis (Fourier) to obtain an ODE system…
 tags:
-  - NeurIPS 2025
-  - Scientific Computing
-  - PINN
-  - Spectral Methods
-  - Neural ODE
-  - Causality
-  - Wave Equation
+  - "NeurIPS 2025"
+  - "Scientific Computing"
+  - "PINN"
+  - "Spectral Methods"
+  - "Neural ODE"
+  - "Causality"
+  - "Wave Equation"
 date: 2026-05-08
 content_hash: 9ce327dcd4fb4b7f
 ---

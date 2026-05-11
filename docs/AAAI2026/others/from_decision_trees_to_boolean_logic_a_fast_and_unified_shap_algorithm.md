@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] From Decision Trees to Boolean Logic: A Fast and Unified SHAP Algorithm
 description: >-
-  [AAAI 2026][SHAP] This paper proposes Woodelf, an algorithm that converts decision tree ensemble models into pseudo-Boolean functions in Weighted Disjunctive Normal Form (WDNF), enabling linear-time computation of both Background SHAP and Path-Dependent SHAP within a unified framework, achieving 16–31× CPU speedup and 24–333× GPU speedup on large-scale datasets.
+  [AAAI 2026][SHAP] This paper proposes Woodelf, an algorithm that converts decision tree ensemble models into pseudo-Boolean functions in Weighted Disjunctive Normal Form (WDNF)…
 tags:
-  - AAAI 2026
-  - SHAP
-  - Shapley Values
-  - Decision Tree Ensembles
-  - Boolean Logic
-  - GPU Acceleration
+  - "AAAI 2026"
+  - "SHAP"
+  - "Shapley Values"
+  - "Decision Tree Ensembles"
+  - "Boolean Logic"
+  - "GPU Acceleration"
 date: 2026-05-08
 content_hash: 03802a2d9458b1b5
 ---

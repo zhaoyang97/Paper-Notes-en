@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EReCu: Pseudo-label Evolution Fusion and Refinement with Multi-Cue Learning for Unsupervised Camouflage Detection
 description: >-
-  [CVPR 2026][Segmentation][unsupervised camouflaged object detection] EReCu is a unified framework built upon a DINO teacher-student architecture that employs Multi-cue Native Perception (MNP) to extract texture and semantic priors from raw images, guiding Pseudo-label Evolution Fusion (PEF) for global pseudo-label evolution, and Local Pseudo-label Refinement (LPR) for boundary detail recovery. It is the first framework to unify the two dominant UCOD paradigms—pseudo-label guidance and feature learning—achieving state-of-the-art performance across four COD benchmarks.
+  [CVPR 2026][Segmentation][unsupervised camouflaged object detection] EReCu is a unified framework built upon a DINO teacher-student architecture that employs Multi-cue Native Perception (MNP) to extract texture and seman…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - unsupervised camouflaged object detection
-  - pseudo-label evolution
-  - multi-cue perception
-  - teacher-student
-  - spectral attention fusion
+  - "CVPR 2026"
+  - "Segmentation"
+  - "unsupervised camouflaged object detection"
+  - "pseudo-label evolution"
+  - "multi-cue perception"
+  - "teacher-student"
+  - "spectral attention fusion"
 date: 2026-05-08
 content_hash: 087453f5503e2126
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Manifolds and Modules: How Function Develops in a Neural Foundation Model
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][Neural Foundation Models] This work opens the "black box" of a state-of-the-art neural activity foundation model (FNN) from a computational neuroscience perspective. By constructing decoding and encoding manifolds, the study reveals that each processing module (encoder, recurrent, readout) exhibits qualitatively distinct representational structures, and identifies critical discrepancies between the model and the biological visual system.
+  [NeurIPS 2025][Self-Supervised Learning][Neural Foundation Models] This work opens the "black box" of a state-of-the-art neural activity foundation model (FNN) from a computational neuroscience perspective. By constructi…
 tags:
-  - NeurIPS 2025
-  - Self-Supervised Learning
-  - Neural Foundation Models
-  - Encoding Manifolds
-  - Decoding Manifolds
-  - Interpretability
-  - Mouse Visual System
+  - "NeurIPS 2025"
+  - "Self-Supervised Learning"
+  - "Neural Foundation Models"
+  - "Encoding Manifolds"
+  - "Decoding Manifolds"
+  - "Interpretability"
+  - "Mouse Visual System"
 date: 2026-05-08
 content_hash: 170a1a5b019cbac6
 ---

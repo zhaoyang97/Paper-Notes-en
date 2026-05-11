@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] PolarAnything: Diffusion-based Polarimetric Image Synthesis
 description: >-
-  [ICCV 2025][3D Vision][Polarimetric image synthesis] This paper proposes PolarAnything, the first diffusion-based framework for generating polarimetric images from a single RGB image. By performing denoising diffusion over encoded AoLP and DoLP representations, the method achieves physically accurate and photorealistic polarimetric attribute synthesis without requiring 3D assets or polarization cameras.
+  [ICCV 2025][3D Vision][Polarimetric image synthesis] This paper proposes PolarAnything, the first diffusion-based framework for generating polarimetric images from a single RGB image. By performing denoising diffusion ov…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Polarimetric image synthesis
-  - diffusion model
-  - AoLP
-  - DoLP
-  - Shape from Polarization
-  - Stable Diffusion
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Polarimetric image synthesis"
+  - "diffusion model"
+  - "AoLP"
+  - "DoLP"
+  - "Shape from Polarization"
+  - "Stable Diffusion"
 date: 2026-05-08
 content_hash: 21f3aeef20bfcac1
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BANet: Bilateral Aggregation Network for Mobile Stereo Matching
 description: >-
-  [ICCV 2025][3D Vision][stereo matching] This paper proposes BANet, a Bilateral Aggregation Network that decomposes the cost volume into a high-frequency detail volume and a low-frequency smooth volume via spatial attention and aggregates them separately. Using only 2D convolutions, BANet runs in real time on mobile devices while substantially outperforming MobileStereoNet-2D (35.3% accuracy improvement on KITTI 2015). Its 3D variant achieves the highest accuracy among real-time methods on GPU.
+  [ICCV 2025][3D Vision][stereo matching] This paper proposes BANet, a Bilateral Aggregation Network that decomposes the cost volume into a high-frequency detail volume and a low-frequency smooth volume via spatial attenti…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - stereo matching
-  - mobile deployment
-  - bilateral aggregation
-  - 2D convolution
-  - spatial attention
+  - "ICCV 2025"
+  - "3D Vision"
+  - "stereo matching"
+  - "mobile deployment"
+  - "bilateral aggregation"
+  - "2D convolution"
+  - "spatial attention"
 date: 2026-05-08
 content_hash: 762b848fcdb4459f
 ---

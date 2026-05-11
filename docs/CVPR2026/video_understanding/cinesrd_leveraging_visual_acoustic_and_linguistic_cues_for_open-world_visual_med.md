@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CineSRD: Leveraging Visual, Acoustic, and Linguistic Cues for Open-World Visual Media Speaker Diarization
 description: >-
-  [CVPR 2026][Video Understanding][Speaker Diarization] This paper presents CineSRD, a training-free multimodal speaker diarization framework that performs speaker registration via visual anchor clustering and detects speaker turns using an audio language model, addressing open-world challenges in visual media such as long videos, large cast sizes, and audio-visual asynchrony.
+  [CVPR 2026][Video Understanding][Speaker Diarization] This paper presents CineSRD, a training-free multimodal speaker diarization framework that performs speaker registration via visual anchor clustering and detects spea…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Speaker Diarization
-  - Multimodal Fusion
-  - Visual Anchor Clustering
-  - Audio Language Model
-  - Open World
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Speaker Diarization"
+  - "Multimodal Fusion"
+  - "Visual Anchor Clustering"
+  - "Audio Language Model"
+  - "Open World"
 date: 2026-05-08
 content_hash: 71c8f6ac6e45305b
 ---

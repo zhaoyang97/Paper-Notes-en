@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Client2Vec: Improving Federated Learning by Distribution Shifts Aware Client Indexing
 description: >-
-  [ICCV 2025][AI Safety][Federated Learning] This paper proposes the Client2Vec mechanism, which leverages a CLIP encoder and a Distribution Shifts Aware Index Generation Network (DSA-IGN) to generate, prior to federated training, an index vector for each client that encodes both label and feature distribution information. The resulting indices are then used to improve three key stages of FL: client sampling, model aggregation, and local training.
+  [ICCV 2025][AI Safety][Federated Learning] This paper proposes the Client2Vec mechanism, which leverages a CLIP encoder and a Distribution Shifts Aware Index Generation Network (DSA-IGN) to generate…
 tags:
-  - ICCV 2025
-  - AI Safety
-  - Federated Learning
-  - Distribution Shifts
-  - Client Indexing
-  - CLIP
-  - Non-IID Data
+  - "ICCV 2025"
+  - "AI Safety"
+  - "Federated Learning"
+  - "Distribution Shifts"
+  - "Client Indexing"
+  - "CLIP"
+  - "Non-IID Data"
 date: 2026-05-08
 content_hash: cfafd6622f0bdadf
 ---

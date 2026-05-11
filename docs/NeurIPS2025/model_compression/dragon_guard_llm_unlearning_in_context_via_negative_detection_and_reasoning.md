@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DRAGON: Guard LLM Unlearning in Context via Negative Detection and Reasoning
 description: >-
-  [NeurIPS 2025][Model Compression][LLM Unlearning] DRAGON proposes a systematic LLM unlearning framework that requires no fine-tuning of the base model. It employs a two-layer detection module to identify prompts subject to unlearning, then uses a specially fine-tuned guard model to generate CoT reasoning instructions for in-context intervention, effectively removing private or harmful knowledge while preserving the model's general capabilities.
+  [NeurIPS 2025][Model Compression][LLM Unlearning] DRAGON proposes a systematic LLM unlearning framework that requires no fine-tuning of the base model. It employs a two-layer detection module to identify prompts subject…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - LLM Unlearning
-  - In-Context Intervention
-  - Chain-of-Thought
-  - Black-Box Unlearning
-  - Continual Unlearning
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "LLM Unlearning"
+  - "In-Context Intervention"
+  - "Chain-of-Thought"
+  - "Black-Box Unlearning"
+  - "Continual Unlearning"
 date: 2026-05-08
 content_hash: a7ef84d1ec3afaea
 ---

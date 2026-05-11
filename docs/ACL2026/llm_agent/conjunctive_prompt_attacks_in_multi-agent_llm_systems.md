@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Conjunctive Prompt Attacks in Multi-Agent LLM Systems
 description: >-
-  [ACL 2026][LLM Agent][Prompt injection attacks] This paper investigates conjunctive prompt attacks in multi-agent LLM systems: a trigger key embedded in a user query and a hidden template injected into a compromised remote agent each appear benign in isolation, yet activate harmful behavior when routing brings them together at the same agent. Existing defenses (PromptGuard, Llama-Guard, etc.) fail to reliably prevent such attacks.
+  [ACL 2026][LLM Agent][Prompt injection attacks] This paper investigates conjunctive prompt attacks in multi-agent LLM systems: a trigger key embedded in a user query and a hidden template injected into a compromised remo…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - Prompt injection attacks
-  - multi-agent security
-  - conjunctive activation
-  - topology-aware optimization
-  - supply chain threats
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Prompt injection attacks"
+  - "multi-agent security"
+  - "conjunctive activation"
+  - "topology-aware optimization"
+  - "supply chain threats"
 date: 2026-05-08
 content_hash: 8394858a0af05e78
 ---

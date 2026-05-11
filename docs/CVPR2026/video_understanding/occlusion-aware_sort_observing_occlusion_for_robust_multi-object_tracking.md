@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Occlusion-Aware SORT: Observing Occlusion for Robust Multi-Object Tracking
 description: >-
-  [CVPR 2026][Video Understanding][Multi-Object Tracking] This paper proposes OA-SORT, an occlusion-aware tracking framework that explicitly models target occlusion states to mitigate positional cost ambiguity and Kalman Filter estimation instability. The method achieves state-of-the-art improvements on DanceTrack, SportsMOT, and MOT17, with all components being plug-and-play compatible with multiple tracker architectures.
+  [CVPR 2026][Video Understanding][Multi-Object Tracking] This paper proposes OA-SORT, an occlusion-aware tracking framework that explicitly models target occlusion states to mitigate positional cost ambiguity and Kalman F…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Multi-Object Tracking
-  - Occlusion Awareness
-  - Kalman Filter
-  - Data Association
-  - Plug-and-Play
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Multi-Object Tracking"
+  - "Occlusion Awareness"
+  - "Kalman Filter"
+  - "Data Association"
+  - "Plug-and-Play"
 date: 2026-05-08
 content_hash: 86a74d90c3381e32
 ---

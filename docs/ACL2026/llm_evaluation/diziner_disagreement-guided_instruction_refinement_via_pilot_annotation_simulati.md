@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DiZiNER: Disagreement-guided Instruction Refinement via Pilot Annotation Simulation for Zero-shot Named Entity Recognition
 description: >-
-  [ACL 2026][LLM Evaluation][Zero-shot NER] DiZiNER simulates the pilot annotation workflow in human labeling pipelines by employing multiple heterogeneous LLMs as annotators and a supervisor LLM to analyze inter-model disagreements and iteratively refine task instructions. The method achieves zero-shot state-of-the-art on 14 out of 18 NER benchmarks, with an average improvement of +8.0 F1, and surpasses its own supervisor model, GPT-4o mini, without any parameter updates.
+  [ACL 2026][LLM Evaluation][Zero-shot NER] DiZiNER simulates the pilot annotation workflow in human labeling pipelines by employing multiple heterogeneous LLMs as annotators and a supervisor LLM to analyze inter-model dis…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - Zero-shot NER
-  - Disagreement-guided
-  - Instruction Refinement
-  - Pilot Annotation Simulation
-  - Multi-model Ensemble
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "Zero-shot NER"
+  - "Disagreement-guided"
+  - "Instruction Refinement"
+  - "Pilot Annotation Simulation"
+  - "Multi-model Ensemble"
 date: 2026-05-08
 content_hash: b12b56bd60b0c728
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SparVAR: Exploring Sparsity in Visual Autoregressive Modeling for Training-Free Acceleration
 description: >-
-  [CVPR 2026][LLM Efficiency][Visual AutoRegressive] Systematically analyzes attention activation patterns in VAR models, revealing three sparsity properties (attention sinks, cross-scale similarity, spatial locality), and proposes SparVAR, a training-free acceleration framework with two plug-and-play modules—Cross-Scale Self-Similar Sparse Attention (CS⁴A) and Cross-Scale Local Sparse Attention (CSLA)—achieving sub-second generation for 8B models at 1024×1024 (1.57× speedup) with virtually no loss in high-frequency details.
+  [CVPR 2026][LLM Efficiency][Visual AutoRegressive] Systematically analyzes attention activation patterns in VAR models, revealing three sparsity properties (attention sinks, cross-scale similarity, spatial locality)…
 tags:
-  - CVPR 2026
-  - LLM Efficiency
-  - Visual AutoRegressive
-  - Sparse Attention
-  - Training-Free Acceleration
-  - Cross-Scale Sparsity
-  - KV Cache
+  - "CVPR 2026"
+  - "LLM Efficiency"
+  - "Visual AutoRegressive"
+  - "Sparse Attention"
+  - "Training-Free Acceleration"
+  - "Cross-Scale Sparsity"
+  - "KV Cache"
 date: 2026-05-08
 content_hash: ef5d502509051f1a
 ---

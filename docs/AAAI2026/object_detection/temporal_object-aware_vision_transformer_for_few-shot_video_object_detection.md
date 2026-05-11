@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Temporal Object-Aware Vision Transformer for Few-Shot Video Object Detection
 description: >-
-  [AAAI 2026][Object Detection][Few-Shot Detection] This paper proposes an object-aware temporal modeling framework that achieves cross-frame temporal consistency through selective propagation of high-confidence detection features. Combined with a pretrained vision-language encoder (OWL-ViT) and a few-shot detection head, the method achieves an average improvement of 3.7%–5.3% AP across four video few-shot detection benchmarks.
+  [AAAI 2026][Object Detection][Few-Shot Detection] This paper proposes an object-aware temporal modeling framework that achieves cross-frame temporal consistency through selective propagation of high-confidence detection…
 tags:
-  - AAAI 2026
-  - Object Detection
-  - Few-Shot Detection
-  - Video Object Detection
-  - Temporal Modeling
-  - OWL-ViT
-  - Object-Awareness
+  - "AAAI 2026"
+  - "Object Detection"
+  - "Few-Shot Detection"
+  - "Video Object Detection"
+  - "Temporal Modeling"
+  - "OWL-ViT"
+  - "Object-Awareness"
 date: 2026-05-08
 content_hash: 36ba08fffade3844
 ---

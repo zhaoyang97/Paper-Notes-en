@@ -2,18 +2,18 @@
 title: >-
   [Paper Note] DuET: Dual Incremental Object Detection via Exemplar-Free Task Arithmetic
 description: >-
-  [ICCV 2025][Autonomous Driving][Incremental Object Detection] This paper proposes DuET, a framework that, for the first time, addresses both class-incremental and domain-incremental object detection simultaneously (Dual Incremental Object Detection, DuIOD) via exemplar-free Task Arithmetic model merging. It introduces a Directional Consistency Loss to mitigate sign conflicts, achieving substantial improvements over existing methods on the Pascal Series and Diverse Weather Series benchmarks.
+  [ICCV 2025][Autonomous Driving][Incremental Object Detection] This paper proposes DuET, a framework that, for the first time, addresses both class-incremental and domain-incremental object detection simultaneously (Dual…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - Incremental Object Detection
-  - Class Incremental
-  - Domain Incremental
-  - Task Arithmetic
-  - Model Merging
-  - Catastrophic Forgetting
-  - YOLO11
-  - RT-DETR
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "Incremental Object Detection"
+  - "Class Incremental"
+  - "Domain Incremental"
+  - "Task Arithmetic"
+  - "Model Merging"
+  - "Catastrophic Forgetting"
+  - "YOLO11"
+  - "RT-DETR"
 date: 2026-05-08
 content_hash: 2d8bca9ce33d6b69
 ---

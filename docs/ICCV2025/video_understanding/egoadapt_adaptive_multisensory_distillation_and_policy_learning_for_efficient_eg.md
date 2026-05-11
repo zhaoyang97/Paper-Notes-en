@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EgoAdapt: Adaptive Multisensory Distillation and Policy Learning for Efficient Egocentric Perception
 description: >-
-  [ICCV 2025][Video Understanding][egocentric perception] EgoAdapt is a framework that jointly trains cross-modal distillation and policy learning to adaptively select the optimal modality combination, achieving up to 89% GMACs reduction while maintaining performance on par with or superior to SOTA on egocentric perception tasks.
+  [ICCV 2025][Video Understanding][egocentric perception] EgoAdapt is a framework that jointly trains cross-modal distillation and policy learning to adaptively select the optimal modality combination…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - egocentric perception
-  - multimodal distillation
-  - policy learning
-  - efficient inference
-  - multisensory fusion
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "egocentric perception"
+  - "multimodal distillation"
+  - "policy learning"
+  - "efficient inference"
+  - "multisensory fusion"
 date: 2026-05-08
 content_hash: 8f68dd340943694b
 ---

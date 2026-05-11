@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Re-Depth Anything: Test-Time Depth Refinement via Self-Supervised Re-lighting
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Monocular Depth Estimation] This paper proposes Re-Depth Anything, which refines depth predictions from Depth Anything V2/3 at inference time through self-supervised optimization: the predicted depth map is augmented via re-lighting, and a 2D diffusion model's SDS loss is used to guide the optimization without any labeled data.
+  [CVPR 2026][Self-Supervised Learning][Monocular Depth Estimation] This paper proposes Re-Depth Anything, which refines depth predictions from Depth Anything V2/3 at inference time through self-supervised optimization: th…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - Monocular Depth Estimation
-  - Test-Time Optimization
-  - Score Distillation Sampling
-  - Re-lighting
-  - Depth Anything
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Monocular Depth Estimation"
+  - "Test-Time Optimization"
+  - "Score Distillation Sampling"
+  - "Re-lighting"
+  - "Depth Anything"
 date: 2026-05-08
 content_hash: dcb87e5103267d1b
 ---

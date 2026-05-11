@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Controllable 3D Outdoor Scene Generation via Scene Graphs
 description: >-
-  [ICCV 2025][Autonomous Driving][3D scene generation] This work proposes the first method to use scene graphs as control signals for large-scale 3D outdoor scene generation. A GNN encodes sparse scene graphs into BEV embedding maps, which are then fed into a cascaded 2D→3D discrete diffusion model to generate semantic 3D scenes. An accompanying interactive system allows users to directly edit scene graphs to control the generation.
+  [ICCV 2025][Autonomous Driving][3D scene generation] This work proposes the first method to use scene graphs as control signals for large-scale 3D outdoor scene generation. A GNN encodes sparse scene graphs into BEV embe…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - 3D scene generation
-  - scene graph
-  - discrete diffusion model
-  - BEV embedding
-  - graph neural network
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "3D scene generation"
+  - "scene graph"
+  - "discrete diffusion model"
+  - "BEV embedding"
+  - "graph neural network"
 date: 2026-05-08
 content_hash: 9b75a674e4086b05
 ---

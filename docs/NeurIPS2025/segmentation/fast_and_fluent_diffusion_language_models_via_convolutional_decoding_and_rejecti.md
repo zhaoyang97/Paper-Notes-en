@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Fast and Fluent Diffusion Language Models via Convolutional Decoding and Rejective Fine-tuning
 description: >-
-  [NeurIPS 2025][Segmentation][diffusion language model] By introducing convolutional decoding normalization (replacing hard semi-autoregressive chunking) and rule-based rejective fine-tuning (R2FT), the proposed method achieves generation quality at 128 inference steps comparable to 512+ steps, reaching state-of-the-art performance among diffusion language models (DLMs).
+  [NeurIPS 2025][Segmentation][diffusion language model] By introducing convolutional decoding normalization (replacing hard semi-autoregressive chunking) and rule-based rejective fine-tuning (R2FT)…
 tags:
-  - NeurIPS 2025
-  - Segmentation
-  - diffusion language model
-  - convolutional decoding normalization
-  - rejective fine-tuning
-  - semi-autoregressive
-  - time-gap expansion
+  - "NeurIPS 2025"
+  - "Segmentation"
+  - "diffusion language model"
+  - "convolutional decoding normalization"
+  - "rejective fine-tuning"
+  - "semi-autoregressive"
+  - "time-gap expansion"
 date: 2026-05-08
 content_hash: 3135f9e15f67dd42
 ---

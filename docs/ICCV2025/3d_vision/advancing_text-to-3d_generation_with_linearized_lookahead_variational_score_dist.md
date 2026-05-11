@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Advancing Text-to-3D Generation with Linearized Lookahead Variational Score Distillation
 description: >-
-  [ICCV 2025][3D Vision][Score Distillation] By identifying the optimization order mismatch between the LoRA model and the 3D model in VSD, this paper proposes a linearized lookahead correction term, $L^2$-VSD, which significantly improves text-to-3D generation quality at the cost of only one additional forward pass.
+  [ICCV 2025][3D Vision][Score Distillation] By identifying the optimization order mismatch between the LoRA model and the 3D model in VSD, this paper proposes a linearized lookahead correction term, $L^2$-VSD…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Score Distillation
-  - VSD
-  - Text-to-3D
-  - LoRA
-  - Forward-mode Autodiff
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Score Distillation"
+  - "VSD"
+  - "Text-to-3D"
+  - "LoRA"
+  - "Forward-mode Autodiff"
 date: 2026-05-08
 content_hash: 6c74446326836f81
 ---

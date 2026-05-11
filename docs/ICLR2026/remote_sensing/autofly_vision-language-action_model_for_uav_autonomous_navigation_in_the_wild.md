@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AutoFly: Vision-Language-Action Model for UAV Autonomous Navigation in the Wild
 description: >-
-  [ICLR 2026][Remote Sensing][VLA] This paper proposes AutoFly, an end-to-end VLA model for UAV autonomous navigation in the wild. It infers spatial information from RGB inputs via a pseudo-depth encoder, and is trained on a newly constructed autonomous navigation dataset (13K+ trajectories including 1K real flights). AutoFly achieves 3.9% higher success rate and 2.6% lower collision rate than OpenVLA in both simulated and real environments.
+  [ICLR 2026][Remote Sensing][VLA] This paper proposes AutoFly, an end-to-end VLA model for UAV autonomous navigation in the wild. It infers spatial information from RGB inputs via a pseudo-depth encoder…
 tags:
-  - ICLR 2026
-  - Remote Sensing
-  - VLA
-  - UAV navigation
-  - pseudo-depth
-  - autonomous navigation
-  - sim-to-real
+  - "ICLR 2026"
+  - "Remote Sensing"
+  - "VLA"
+  - "UAV navigation"
+  - "pseudo-depth"
+  - "autonomous navigation"
+  - "sim-to-real"
 date: 2026-05-08
 content_hash: f34aaa93aa9a0ef1
 ---

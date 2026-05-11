@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ATLAS: Decoupling Skeletal and Shape Parameters for Expressive Parametric Human Modeling
 description: >-
-  [ICCV 2025][3D Vision][Parametric Body Model] This paper presents ATLAS, a parametric human body model that explicitly decouples external surface shape from internal skeletal parameters, incorporates sparse nonlinear pose correctives, and is trained on 600K high-resolution scans, achieving more accurate and controllable human body modeling than SMPL-X.
+  [ICCV 2025][3D Vision][Parametric Body Model] This paper presents ATLAS, a parametric human body model that explicitly decouples external surface shape from internal skeletal parameters…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Parametric Body Model
-  - Skeleton Decoupling
-  - Pose Correctives
-  - SMPL
-  - Human Mesh
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Parametric Body Model"
+  - "Skeleton Decoupling"
+  - "Pose Correctives"
+  - "SMPL"
+  - "Human Mesh"
 date: 2026-05-08
 content_hash: be4f77f41a0739b3
 ---

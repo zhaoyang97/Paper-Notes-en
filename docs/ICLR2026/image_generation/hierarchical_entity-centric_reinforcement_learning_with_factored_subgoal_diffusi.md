@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Hierarchical Entity-centric Reinforcement Learning with Factored Subgoal Diffusion
 description: >-
-  [ICLR 2026][Image Generation][Hierarchical Reinforcement Learning] This paper proposes HECRL, a hierarchical entity-centric offline goal-conditioned RL framework that combines a value-based GCRL agent with a factored subgoal diffusion model, achieving 150%+ success rate improvements on multi-entity long-horizon tasks.
+  [ICLR 2026][Image Generation][Hierarchical Reinforcement Learning] This paper proposes HECRL, a hierarchical entity-centric offline goal-conditioned RL framework that combines a value-based GCRL agent with a factored sub…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Hierarchical Reinforcement Learning
-  - Goal-Conditioned RL
-  - Diffusion Models
-  - Entity-Centric
-  - Subgoal Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Hierarchical Reinforcement Learning"
+  - "Goal-Conditioned RL"
+  - "Diffusion Models"
+  - "Entity-Centric"
+  - "Subgoal Generation"
 date: 2026-05-08
 content_hash: 47782615fb313989
 ---

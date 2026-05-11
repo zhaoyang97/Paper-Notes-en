@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Contextual and Seasonal LSTMs for Time Series Anomaly Detection
 description: >-
-  [ICLR 2026][Time Series][time series anomaly detection] To address "small-magnitude point anomalies" and "slowly rising anomalies" that existing methods struggle to detect in univariate time series, this paper proposes CS-LSTMs, a dual-branch architecture in which S-LSTM models periodic evolution in the frequency domain and C-LSTM captures local trends in the time domain. Combined with a wavelet-based noise decomposition strategy, the method comprehensively outperforms state-of-the-art approaches on four benchmarks while improving inference speed by 40%.
+  [ICLR 2026][Time Series][time series anomaly detection] To address "small-magnitude point anomalies" and "slowly rising anomalies" that existing methods struggle to detect in univariate time series…
 tags:
-  - ICLR 2026
-  - Time Series
-  - time series anomaly detection
-  - LSTM
-  - frequency domain
-  - noise decomposition
-  - univariate time series
+  - "ICLR 2026"
+  - "Time Series"
+  - "time series anomaly detection"
+  - "LSTM"
+  - "frequency domain"
+  - "noise decomposition"
+  - "univariate time series"
 date: 2026-05-08
 content_hash: e8d73e561e287d9f
 ---

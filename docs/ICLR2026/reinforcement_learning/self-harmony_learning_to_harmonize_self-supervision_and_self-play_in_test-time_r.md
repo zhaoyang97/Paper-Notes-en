@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Self-Harmony: Learning to Harmonize Self-Supervision and Self-Play in Test-Time Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Test-Time RL] This paper proposes the Self-Harmony framework, in which a single model plays two roles—a Solver that addresses the original problem and a Reframer that paraphrases it—and uses the harmonic mean of answer scores across both perspectives as a pseudo-label selection criterion, replacing conventional majority voting. The approach achieves state-of-the-art performance in 28 out of 30 experimental settings with zero training failures.
+  [ICLR 2026][Reinforcement Learning][Test-Time RL] This paper proposes the Self-Harmony framework, in which a single model plays two roles—a Solver that addresses the original problem and a Reframer that paraphrases it—an…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Test-Time RL
-  - Self-Play
-  - Pseudo-Label
-  - Harmonic Mean
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Test-Time RL"
+  - "Self-Play"
+  - "Pseudo-Label"
+  - "Harmonic Mean"
+  - "LLM Reasoning"
 date: 2026-05-08
 content_hash: 18f393a27aa5f73b
 ---

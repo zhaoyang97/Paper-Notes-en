@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MapGCLR: Geospatial Contrastive Learning of Representations for Online Vectorized HD Map Construction
 description: >-
-  [CVPR 2026][Autonomous Driving][Online HD map construction] MapGCLR proposes a semi-supervised training scheme based on geospatial contrastive learning: it exploits the geospatial overlap between BEV feature grids produced from multiple traversals of the same location, constructing an InfoNCE contrastive loss to enforce geographic consistency in the BEV feature space. On Argoverse 2, using only 5% labeled data, it achieves 18.9 mAP (vs. 13.3 for the fully supervised baseline), a relative improvement of 42%—roughly equivalent to doubling the amount of labeled data.
+  [CVPR 2026][Autonomous Driving][Online HD map construction] MapGCLR proposes a semi-supervised training scheme based on geospatial contrastive learning: it exploits the geospatial overlap between BEV feature grids produc…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Online HD map construction
-  - semi-supervised learning
-  - contrastive learning
-  - BEV features
-  - multi-traversal
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Online HD map construction"
+  - "semi-supervised learning"
+  - "contrastive learning"
+  - "BEV features"
+  - "multi-traversal"
 date: 2026-05-08
 content_hash: af031a53c3264231
 ---

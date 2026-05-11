@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CAMILA: Context-Aware Masking for Image Editing with Language Alignment
 description: >-
-  [NeurIPS 2025][Image Generation][context-aware editing] This paper proposes CAMILA, a context-aware image editing method that leverages a multimodal large language model (MLLM) to automatically determine whether a given instruction is executable on the input image. It introduces dedicated [MASK] and [NEG] tokens to distinguish editable regions from regions that should remain unchanged, enabling precise multi-instruction editing while effectively filtering out non-executable instructions.
+  [NeurIPS 2025][Image Generation][context-aware editing] This paper proposes CAMILA, a context-aware image editing method that leverages a multimodal large language model (MLLM) to automatically determine whether a given…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - context-aware editing
-  - multi-instruction image editing
-  - instruction executability assessment
-  - MLLM
-  - diffusion model editing
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "context-aware editing"
+  - "multi-instruction image editing"
+  - "instruction executability assessment"
+  - "MLLM"
+  - "diffusion model editing"
 date: 2026-05-08
 content_hash: d1a7a33565fb1cba
 ---

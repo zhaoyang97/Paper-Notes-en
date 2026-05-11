@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] In-Context Learning for Pure Exploration
 description: >-
-  [ICLR 2026][LLM Evaluation][In-Context Learning] This paper proposes ICPE (In-Context Pure Exploration), an in-context learning framework that combines supervised learning and reinforcement learning. Using a Transformer trained directly from experience, ICPE learns exploration policies for active sequential hypothesis testing and pure exploration problems, achieving near-optimal instance-adaptive algorithmic performance without explicit modeling of the information structure.
+  [ICLR 2026][LLM Evaluation][In-Context Learning] This paper proposes ICPE (In-Context Pure Exploration), an in-context learning framework that combines supervised learning and reinforcement learning. Using a Transformer…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - In-Context Learning
-  - Pure Exploration
-  - Hypothesis Testing
-  - Best Arm Identification
-  - Transformer
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "In-Context Learning"
+  - "Pure Exploration"
+  - "Hypothesis Testing"
+  - "Best Arm Identification"
+  - "Transformer"
 date: 2026-05-08
 content_hash: a17507e342cb2d50
 ---

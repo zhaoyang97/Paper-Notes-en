@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Progressor: A Perceptually Guided Reward Estimator with Self-Supervised Online Refinement
 description: >-
-  [ICCV 2025][Reinforcement Learning][Visual reward learning] This paper proposes Progressor, a framework that learns task-agnostic reward functions from unannotated videos via self-supervision. It provides dense reward signals by predicting task progress distributions and addresses distribution shift during online RL training through an adversarial push-back strategy.
+  [ICCV 2025][Reinforcement Learning][Visual reward learning] This paper proposes Progressor, a framework that learns task-agnostic reward functions from unannotated videos via self-supervision. It provides dense reward si…
 tags:
-  - ICCV 2025
-  - Reinforcement Learning
-  - Visual reward learning
-  - self-supervised
-  - goal-conditioned RL
-  - adversarial online refinement
-  - task progress estimation
+  - "ICCV 2025"
+  - "Reinforcement Learning"
+  - "Visual reward learning"
+  - "self-supervised"
+  - "goal-conditioned RL"
+  - "adversarial online refinement"
+  - "task progress estimation"
 date: 2026-05-08
 content_hash: 9451e607de041b76
 ---

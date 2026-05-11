@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Disentangling Hyperedges through the Lens of Category Theory
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][hypergraph] This work is the first to analyze hyperedge disentanglement through the lens of category theory. By deriving a naturality condition, it establishes a "factor representation consistency" criterion (aggregation-then-disentanglement vs. disentanglement-then-aggregation should yield consistent results), and proposes Natural-HNN, which comprehensively outperforms 14 baselines across 6 cancer subtype classification datasets (BRCA F1: 75.7% → 80.4%) while achieving 100% accuracy in capturing the functional context of genetic pathways.
+  [NeurIPS 2025][Self-Supervised Learning][hypergraph] This work is the first to analyze hyperedge disentanglement through the lens of category theory. By deriving a naturality condition…
 tags:
-  - NeurIPS 2025
-  - Self-Supervised Learning
-  - hypergraph
-  - disentangled representation
-  - category theory
-  - naturality condition
-  - genetic pathway
-  - cancer subtype classification
+  - "NeurIPS 2025"
+  - "Self-Supervised Learning"
+  - "hypergraph"
+  - "disentangled representation"
+  - "category theory"
+  - "naturality condition"
+  - "genetic pathway"
+  - "cancer subtype classification"
 date: 2026-05-08
 content_hash: 321385ea549d32a9
 ---

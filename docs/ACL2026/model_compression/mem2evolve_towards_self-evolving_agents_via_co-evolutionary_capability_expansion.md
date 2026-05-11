@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mem²Evolve: Towards Self-Evolving Agents via Co-Evolutionary Capability Expansion and Experience Distillation
 description: >-
-  [ACL 2026][Model Compression][Self-Evolving Agent] This paper proposes Mem²Evolve, a self-evolving agent framework that achieves co-evolutionary capability expansion and experience distillation via a dual-memory mechanism (Asset Memory + Experience Memory). The framework attains an average Pass@1 of 70.24% across 8 benchmarks spanning 6 task categories, outperforming the strongest experience-centric and capability-centric baselines by 11.80% and 6.46%, respectively.
+  [ACL 2026][Model Compression][Self-Evolving Agent] This paper proposes Mem²Evolve, a self-evolving agent framework that achieves co-evolutionary capability expansion and experience distillation via a dual-memory mechanis…
 tags:
-  - ACL 2026
-  - Model Compression
-  - Self-Evolving Agent
-  - Dual-Memory Mechanism
-  - Capability Expansion
-  - Experience Distillation
-  - Co-Evolution
+  - "ACL 2026"
+  - "Model Compression"
+  - "Self-Evolving Agent"
+  - "Dual-Memory Mechanism"
+  - "Capability Expansion"
+  - "Experience Distillation"
+  - "Co-Evolution"
 date: 2026-05-08
 content_hash: e1190f188982d1fb
 ---

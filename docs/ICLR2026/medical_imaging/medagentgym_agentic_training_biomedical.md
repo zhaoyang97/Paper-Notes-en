@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] MedAgentGym: A Scalable Agentic Training Environment for Code-Centric Reasoning in Biomedical Data Science
 description: >-
-  [ICLR 2026 Oral][Medical Imaging][biomedical data science] This work introduces MedAgentGym, the first unified agentic training environment for biomedical data science, comprising 72,413 task instances spanning 12 real-world scenarios and 129 categories, equipped with an executable sandbox and verifiable ground truth. A systematic benchmark evaluation of 29 LLMs reveals a substantial gap between commercial and open-source models. By combining efficient multi-threaded trajectory sampling with offline/online RL, the authors train Med-Copilot, achieving gains of +43.02%/+45.28% respectively and attaining performance competitive with GPT-4o.
+  [ICLR 2026 Oral][Medical Imaging][biomedical data science] This work introduces MedAgentGym, the first unified agentic training environment for biomedical data science, comprising 72…
 tags:
-  - ICLR 2026 Oral
-  - Medical Imaging
-  - biomedical data science
-  - agentic training
-  - code-centric reasoning
-  - reinforcement-learning
-  - Med-Copilot
-  - LLM agent
+  - "ICLR 2026 Oral"
+  - "Medical Imaging"
+  - "biomedical data science"
+  - "agentic training"
+  - "code-centric reasoning"
+  - "reinforcement-learning"
+  - "Med-Copilot"
+  - "LLM agent"
 date: 2026-05-08
 content_hash: 25c20c812e2a88a6
 ---

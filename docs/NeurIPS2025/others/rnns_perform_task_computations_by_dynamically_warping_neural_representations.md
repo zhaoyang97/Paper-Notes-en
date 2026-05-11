@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] RNNs Perform Task Computations by Dynamically Warping Neural Representations
 description: >-
-  [NeurIPS 2025][RNN] This paper proposes a Riemannian geometric framework that pulls back the metric from the RNN state space onto the input manifold, demonstrating that RNNs perform computation by dynamically warping their representations of task variables—compressing task-irrelevant inputs and stretching space near decision boundaries. Crucially, this warping is not a byproduct of computation but constitutes computation itself.
+  [NeurIPS 2025][RNN] This paper proposes a Riemannian geometric framework that pulls back the metric from the RNN state space onto the input manifold…
 tags:
-  - NeurIPS 2025
-  - RNN
-  - Riemannian geometry
-  - representational geometry
-  - dynamical systems
-  - manifold warping
+  - "NeurIPS 2025"
+  - "RNN"
+  - "Riemannian geometry"
+  - "representational geometry"
+  - "dynamical systems"
+  - "manifold warping"
 date: 2026-05-08
 content_hash: 734f3ffdbe9689c9
 ---

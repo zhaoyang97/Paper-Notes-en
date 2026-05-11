@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Thinking Like a Botanist: Challenging Multimodal Language Models with Intent-Driven Chain-of-Inquiry
 description: >-
-  [ACL 2026][Medical Imaging][Plant Pathology VQA] This paper proposes PlantInquiryVQA, a benchmark comprising 24,950 plant images and 138,068 question–answer pairs, along with a Chain-of-Inquiry (CoI) framework that simulates the adaptive diagnostic inquiry strategies of expert botanists. The benchmark is used to evaluate 18 MLLMs on multi-step visual reasoning for plant pathology diagnosis. Results show that structured inquiry significantly improves diagnostic accuracy and reduces hallucinations; nonetheless, even the strongest model achieves a clinical utility score of only 0.188.
+  [ACL 2026][Medical Imaging][Plant Pathology VQA] This paper proposes PlantInquiryVQA, a benchmark comprising 24,950 plant images and 138,068 question–answer pairs…
 tags:
-  - ACL 2026
-  - Medical Imaging
-  - Plant Pathology VQA
-  - Chain-of-Inquiry
-  - Multi-step Visual Reasoning
-  - Diagnostic Reasoning
-  - Multimodal Evaluation
+  - "ACL 2026"
+  - "Medical Imaging"
+  - "Plant Pathology VQA"
+  - "Chain-of-Inquiry"
+  - "Multi-step Visual Reasoning"
+  - "Diagnostic Reasoning"
+  - "Multimodal Evaluation"
 date: 2026-05-08
 content_hash: 552b7206238a9bda
 ---

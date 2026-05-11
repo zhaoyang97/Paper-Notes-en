@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Steering and Rectifying Latent Representation Manifolds in Frozen Multi-Modal LLMs for Video Anomaly Detection
 description: >-
-  [ICLR 2026][Multimodal VLM][video anomaly detection] This paper proposes SteerVAD, a framework that identifies "latent anomaly expert" (LAE) attention heads within a completely frozen multimodal large language model (MLLM) and dynamically steers their representation manifolds via a hierarchical meta-controller, achieving tuning-free video anomaly detection SOTA with only 1% of training data.
+  [ICLR 2026][Multimodal VLM][video anomaly detection] This paper proposes SteerVAD, a framework that identifies "latent anomaly expert" (LAE) attention heads within a completely frozen multimodal large language model (MLL…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - video anomaly detection
-  - multimodal large language models
-  - representation manifold manipulation
-  - tuning-free
-  - attention head analysis
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "video anomaly detection"
+  - "multimodal large language models"
+  - "representation manifold manipulation"
+  - "tuning-free"
+  - "attention head analysis"
 date: 2026-05-08
 content_hash: 9ac9be37de95887f
 ---

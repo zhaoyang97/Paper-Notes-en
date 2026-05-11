@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Completing Missing Annotation: Multi-Agent Debate for Accurate and Scalable Relevance Assessment
 description: >-
-  [ICLR 2026][IR evaluation] This paper proposes DREAM — a multi-agent, multi-round debate framework with opposing-stance initialization for IR relevance annotation: cases with consensus are automatically labeled, while disagreements are escalated to human annotators (aided by debate history). DREAM achieves 95.2% balanced accuracy with only 3.5% human escalation. Based on this framework, the BRIDGE benchmark is constructed, uncovering 29,824 missing relevant annotations absent from existing benchmarks (428% of the original annotations), and correcting ranking bias in retrieval systems as well as retrieval-generation performance misalignment in RAG evaluation.
+  [ICLR 2026][IR evaluation] This paper proposes DREAM — a multi-agent, multi-round debate framework with opposing-stance initialization for IR relevance annotation: cases with consensus are automatically labeled…
 tags:
-  - ICLR 2026
-  - IR evaluation
-  - multi-agent debate
-  - relevance annotation
-  - human-AI collaboration
-  - BRIDGE benchmark
+  - "ICLR 2026"
+  - "IR evaluation"
+  - "multi-agent debate"
+  - "relevance annotation"
+  - "human-AI collaboration"
+  - "BRIDGE benchmark"
 date: 2026-05-08
 content_hash: 17643d770ea3bd3f
 ---

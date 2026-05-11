@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Time-O1: Time-Series Forecasting Needs Transformed Label Alignment
 description: >-
-  [NeurIPS 2025][Time Series] This paper proposes Time-O1, which addresses the autocorrelation bias and task overload of the TMSE loss in time series forecasting by transforming label sequences into decorrelated, importance-ranked principal components. The method achieves state-of-the-art performance while remaining compatible with a wide range of forecasting models.
+  [NeurIPS 2025][Time Series][Learning Objective] This paper proposes Time-O1, which addresses the autocorrelation bias and task overload of the TMSE loss in time series forecasting by transforming label sequences into dec…
 tags:
-  - NeurIPS 2025
-  - Time Series
-  - Learning Objective
-  - Label Autocorrelation
-  - SVD Transform
-  - Decorrelation
+  - "NeurIPS 2025"
+  - "Time Series"
+  - "Learning Objective"
+  - "Label Autocorrelation"
+  - "SVD Transform"
+  - "Decorrelation"
 date: 2026-05-08
 content_hash: 73e07601b0be8030
 ---

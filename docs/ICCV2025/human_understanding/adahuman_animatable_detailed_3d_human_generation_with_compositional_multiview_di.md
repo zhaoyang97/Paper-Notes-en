@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AdaHuman: Animatable Detailed 3D Human Generation with Compositional Multiview Diffusion
 description: >-
-  [ICCV 2025][Human Understanding][3D human reconstruction] AdaHuman is proposed as a framework that generates high-fidelity, animatable 3D human avatars from a single image via a pose-conditioned 3D joint diffusion model and a compositional 3DGS refinement module.
+  [ICCV 2025][Human Understanding][3D human reconstruction] AdaHuman is proposed as a framework that generates high-fidelity, animatable 3D human avatars from a single image via a pose-conditioned 3D joint diffusion model…
 tags:
-  - ICCV 2025
-  - Human Understanding
-  - 3D human reconstruction
-  - 3D Gaussian splatting
-  - multiview diffusion model
-  - pose-conditioned generation
-  - animatable avatar
+  - "ICCV 2025"
+  - "Human Understanding"
+  - "3D human reconstruction"
+  - "3D Gaussian splatting"
+  - "multiview diffusion model"
+  - "pose-conditioned generation"
+  - "animatable avatar"
 date: 2026-05-08
 content_hash: b4f47d215c6d23b1
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FedGUI: Benchmarking Federated GUI Agents across Heterogeneous Platforms, Devices, and Operating Systems
 description: >-
-  [ACL 2026][LLM Agent][Federated Learning] FedGUI is the first comprehensive federated learning benchmark for cross-platform GUI agents, comprising six datasets covering mobile, web, and desktop environments. It systematically investigates the effects of four types of heterogeneity—cross-platform, cross-device, cross-OS, and cross-source—on federated GUI agent training.
+  [ACL 2026][LLM Agent][Federated Learning] FedGUI is the first comprehensive federated learning benchmark for cross-platform GUI agents, comprising six datasets covering mobile, web…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - Federated Learning
-  - GUI Agents
-  - Cross-Platform Heterogeneity
-  - Privacy Preservation
-  - Distributed Training
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Federated Learning"
+  - "GUI Agents"
+  - "Cross-Platform Heterogeneity"
+  - "Privacy Preservation"
+  - "Distributed Training"
 date: 2026-05-08
 content_hash: 5f40a087e1bfad34
 ---

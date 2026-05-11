@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Regret Lower Bounds for Decentralized Multi-Agent Stochastic Shortest Path Problems
 description: >-
-  [NeurIPS 2025][Autonomous Driving][Multi-Agent Reinforcement Learning] This paper establishes the first $\Omega(\sqrt{K})$ regret lower bound for the Decentralized Multi-Agent Stochastic Shortest Path (Dec-MASSP) problem under linear function approximation. By constructing a family of hard-to-learn instances and employing a symmetry argument to identify the structure of optimal policies, the paper demonstrates that this lower bound matches existing upper bounds in terms of the number of episodes $K$.
+  [NeurIPS 2025][Autonomous Driving][Multi-Agent Reinforcement Learning] This paper establishes the first $\Omega(\sqrt{K})$ regret lower bound for the Decentralized Multi-Agent Stochastic Shortest Path (Dec-MASSP) problem…
 tags:
-  - NeurIPS 2025
-  - Autonomous Driving
-  - Multi-Agent Reinforcement Learning
-  - Stochastic Shortest Path
-  - Regret Lower Bounds
-  - Decentralized Learning
-  - Linear Function Approximation
+  - "NeurIPS 2025"
+  - "Autonomous Driving"
+  - "Multi-Agent Reinforcement Learning"
+  - "Stochastic Shortest Path"
+  - "Regret Lower Bounds"
+  - "Decentralized Learning"
+  - "Linear Function Approximation"
 date: 2026-05-08
 content_hash: 756728e7c18a531a
 ---

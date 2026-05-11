@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Hardware-aligned Hierarchical Sparse Attention for Efficient Long-term Memory Access
 description: >-
-  [NEURIPS2025][LLM Efficiency][sparse attention] This paper proposes Hierarchical Sparse Attention (HSA) and the RAMba architecture, which enable Mamba to perform efficient long-range random access through a two-stage token-to-chunk relevance learning mechanism and hardware-aligned kernel design. Pretrained on only 4K context, RAMba achieves 100% accuracy on 64M passkey retrieval.
+  [NEURIPS2025][LLM Efficiency][sparse attention] This paper proposes Hierarchical Sparse Attention (HSA) and the RAMba architecture, which enable Mamba to perform efficient long-range random access through a two-stage tok…
 tags:
-  - NEURIPS2025
-  - LLM Efficiency
-  - sparse attention
-  - RNN
-  - Mamba
-  - long context
-  - length generalization
-  - chunk selection
-  - hardware-aligned kernel
+  - "NEURIPS2025"
+  - "LLM Efficiency"
+  - "sparse attention"
+  - "RNN"
+  - "Mamba"
+  - "long context"
+  - "length generalization"
+  - "chunk selection"
+  - "hardware-aligned kernel"
 date: 2026-05-08
 content_hash: 917719aff4a8fe04
 ---

@@ -2,16 +2,17 @@
 title: >-
   [Paper Note] Discovering Transformer Circuits via a Hybrid Attribution and Pruning Framework
 description: >-
-  [NeurIPS 2025][circuit discovery] This paper proposes HAP, a Hybrid Attribution and Pruning framework that first applies fast Edge Attribution Patching (EAP) to filter high-potential subgraphs, then runs precise Edge Pruning (EP) on the reduced search space. On the IOI task with GPT-2 Small, HAP achieves a 46% speedup over pure EP while maintaining comparable circuit faithfulness, and successfully recovers S-inhibition heads that EAP alone fails to identify.
+  [NeurIPS 2025][Interpretability][circuit discovery] This paper proposes HAP, a Hybrid Attribution and Pruning framework that first applies fast Edge Attribution Patching (EAP) to filter high-potential subgraphs…
 tags:
-  - NeurIPS 2025
-  - circuit discovery
-  - attribution patching
-  - edge pruning
-  - hybrid framework
-  - IOI
-  - GPT-2
-  - mechanistic interpretability
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "circuit discovery"
+  - "attribution patching"
+  - "edge pruning"
+  - "hybrid framework"
+  - "IOI"
+  - "GPT-2"
+  - "mechanistic interpretability"
 date: 2026-05-08
 content_hash: 5bf6deda843c3cb1
 ---

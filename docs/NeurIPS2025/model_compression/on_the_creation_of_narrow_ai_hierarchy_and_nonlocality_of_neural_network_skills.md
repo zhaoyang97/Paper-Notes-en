@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] On the Creation of Narrow AI: Hierarchy and Nonlocality of Neural Network Skills
 description: >-
-  [NeurIPS 2025][Model Compression][Narrow AI] This paper investigates two fundamental challenges in creating narrow AI systems: the hierarchical dependencies among tasks require that certain narrow skills can only be learned effectively when trained on broad distributions; and the nonlocality of skills makes it impossible to precisely separate desired from undesired capabilities via pruning—yet pruning followed by recovery fine-tuning still outperforms both distillation and training from scratch.
+  [NeurIPS 2025][Model Compression][Narrow AI] This paper investigates two fundamental challenges in creating narrow AI systems: the hierarchical dependencies among tasks require that certain narrow skills can only be lear…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Narrow AI
-  - Model Pruning
-  - Knowledge Distillation
-  - Curriculum Learning
-  - Skill Nonlocality
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Narrow AI"
+  - "Model Pruning"
+  - "Knowledge Distillation"
+  - "Curriculum Learning"
+  - "Skill Nonlocality"
 date: 2026-05-08
 content_hash: 99c62b1f4a100c70
 ---

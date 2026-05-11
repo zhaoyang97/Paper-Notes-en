@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Adaptive Prediction-Powered AutoEval with Reliability and Efficiency Guarantees
 description: >-
-  [NeurIPS 2025][Model Compression][LLM evaluation] This paper proposes the R-AutoEval+ framework, which introduces an adaptive weighting mechanism within the testing-by-betting framework to dynamically regulate reliance on LLM-judge-generated synthetic data. It is the first method to simultaneously guarantee evaluation reliability and sampling efficiency no worse than approaches using only real data under finite samples, validated across three scenarios: LLM quantization, prompt selection, and inference budget allocation.
+  [NeurIPS 2025][Model Compression][LLM evaluation] This paper proposes the R-AutoEval+ framework, which introduces an adaptive weighting mechanism within the testing-by-betting framework to dynamically regulate reliance o…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - LLM evaluation
-  - prediction-powered inference
-  - autoevaluator
-  - e-value
-  - testing-by-betting
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "LLM evaluation"
+  - "prediction-powered inference"
+  - "autoevaluator"
+  - "e-value"
+  - "testing-by-betting"
 date: 2026-05-08
 content_hash: b8af98ab592ee106
 ---

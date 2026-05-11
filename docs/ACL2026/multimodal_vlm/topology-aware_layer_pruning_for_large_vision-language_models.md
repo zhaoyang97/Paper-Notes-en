@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Topology-Aware Layer Pruning for Large Vision-Language Models
 description: >-
-  [ACL 2026][Multimodal VLM][Layer Pruning] This paper proposes TopoVLM, a topology-aware layer pruning framework that models hidden states at each layer as point clouds and quantifies inter-layer topological consistency via zigzag persistent homology. The method adaptively retains critical representation-transition layers while removing structurally redundant ones, achieving significant improvements over existing pruning methods at 50–60% sparsity.
+  [ACL 2026][Multimodal VLM][Layer Pruning] This paper proposes TopoVLM, a topology-aware layer pruning framework that models hidden states at each layer as point clouds and quantifies inter-layer topological consistency v…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Layer Pruning
-  - Topological Data Analysis
-  - Persistent Homology
-  - Vision-Language Models
-  - Model Compression
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Layer Pruning"
+  - "Topological Data Analysis"
+  - "Persistent Homology"
+  - "Vision-Language Models"
+  - "Model Compression"
 date: 2026-05-08
 content_hash: 28d6429d646af40d
 ---

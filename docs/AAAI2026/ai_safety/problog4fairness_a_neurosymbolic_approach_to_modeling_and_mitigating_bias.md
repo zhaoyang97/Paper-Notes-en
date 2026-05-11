@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] ProbLog4Fairness: A Neurosymbolic Approach to Modeling and Mitigating Bias
 description: >-
-  [AI Safety] This paper proposes the ProbLog4Fairness framework, which formalizes bias mechanisms in data as interpretable logic programs using the probabilistic logic programming language ProbLog, and integrates bias assumptions into neural network training via distant supervision in DeepProbLog, enabling flexible and principled bias mitigation.
+  [AI Safety] This paper proposes the ProbLog4Fairness framework, which formalizes bias mechanisms in data as interpretable logic programs using the probabilistic logic programming language ProbLog…
 tags:
-  - AI Safety
+  - "AI Safety"
 date: 2026-05-08
 content_hash: 243d89fc1c7c9cab
 ---

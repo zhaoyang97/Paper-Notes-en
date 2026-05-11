@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CGSA: Class-Guided Slot-Aware Adaptation for Source-Free Object Detection
 description: >-
-  [ICLR 2026][Object Detection][source-free domain adaptation] This paper is the first to introduce Object-Centric Learning (Slot Attention) into Source-Free Domain-Adaptive Object Detection (SF-DAOD). It extracts domain-invariant object-level structural priors via a hierarchical slot-aware module and drives domain-invariant representations through class-guided contrastive learning, achieving substantial improvements over existing methods across multiple cross-domain benchmarks.
+  [ICLR 2026][Object Detection][source-free domain adaptation] This paper is the first to introduce Object-Centric Learning (Slot Attention) into Source-Free Domain-Adaptive Object Detection (SF-DAOD). It extracts domain-i…
 tags:
-  - ICLR 2026
-  - Object Detection
-  - source-free domain adaptation
-  - object-centric learning
-  - slot attention
-  - DETR
-  - contrastive learning
+  - "ICLR 2026"
+  - "Object Detection"
+  - "source-free domain adaptation"
+  - "object-centric learning"
+  - "slot attention"
+  - "DETR"
+  - "contrastive learning"
 date: 2026-05-08
 content_hash: f074c05e9457801b
 ---

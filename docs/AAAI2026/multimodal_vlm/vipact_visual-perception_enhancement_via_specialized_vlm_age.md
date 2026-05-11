@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VipAct: Visual-Perception Enhancement via Specialized VLM Agent Collaboration and Tool-use
 description: >-
-  [AAAI 2026][Multimodal VLM][VLM Agent] VipAct proposes a multi-agent collaboration framework that significantly improves VLM performance on fine-grained visual perception tasks through three-tier collaboration: an Orchestrator Agent (task analysis, planning, and coordination), specialized agents (captioning, comparison, and visual prompt interpretation), and vision expert models (depth estimation, object detection, segmentation, etc.). The framework improves accuracy on Blink from 63.74% (zero-shot GPT-4o) to 73.79%.
+  [AAAI 2026][Multimodal VLM][VLM Agent] VipAct proposes a multi-agent collaboration framework that significantly improves VLM performance on fine-grained visual perception tasks through three-tier collaboration: an Orches…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - VLM Agent
-  - Multi-Agent Collaboration
-  - Tool Use
-  - Fine-Grained Visual Perception
-  - System-2 Reasoning
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "VLM Agent"
+  - "Multi-Agent Collaboration"
+  - "Tool Use"
+  - "Fine-Grained Visual Perception"
+  - "System-2 Reasoning"
 date: 2026-05-08
 content_hash: 4eb764e8ffd16317
 ---

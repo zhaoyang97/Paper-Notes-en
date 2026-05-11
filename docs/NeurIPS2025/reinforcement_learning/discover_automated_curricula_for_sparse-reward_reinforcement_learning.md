@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] DISCOVER: Automated Curricula for Sparse-Reward Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][sparse reward] This paper proposes DISCOVER, a goal selection strategy for sparse-reward long-horizon RL that simultaneously balances achievability, novelty, and relevance to construct curricula directed toward a target task. The authors theoretically prove that the number of steps to reach the goal scales linearly with goal distance rather than with the volume of the search space, and demonstrate significant improvements over prior state-of-the-art exploration strategies on high-dimensional navigation and manipulation tasks.
+  [NeurIPS 2025][Reinforcement Learning][sparse reward] This paper proposes DISCOVER, a goal selection strategy for sparse-reward long-horizon RL that simultaneously balances achievability, novelty…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - sparse reward
-  - goal selection
-  - exploration-exploitation
-  - UCB
-  - curriculum learning
-  - goal-conditioned RL
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "sparse reward"
+  - "goal selection"
+  - "exploration-exploitation"
+  - "UCB"
+  - "curriculum learning"
+  - "goal-conditioned RL"
 date: 2026-05-08
 content_hash: e9e15ab908554351
 ---

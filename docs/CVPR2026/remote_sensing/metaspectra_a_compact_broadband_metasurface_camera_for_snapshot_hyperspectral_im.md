@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MetaSpectra+: A Compact Broadband Metasurface Camera for Snapshot Hyperspectral+ Imaging
 description: >-
-  [CVPR 2026][Remote Sensing][Metasurface Imaging] MetaSpectra+ proposes a metasurface–refractive hybrid optical paradigm that employs a dual-layer metasurface to independently control the dispersion, exposure, and polarization of four channels, enabling snapshot hyperspectral+HDR/polarization multi-functional imaging over a 250 nm bandwidth with a minimum total track length (TTL) of 17 mm. On the KAUST benchmark, it achieves a PSNR of 33.31 dB, comprehensively surpassing existing snapshot hyperspectral systems.
+  [CVPR 2026][Remote Sensing][Metasurface Imaging] MetaSpectra+ proposes a metasurface–refractive hybrid optical paradigm that employs a dual-layer metasurface to independently control the dispersion, exposure…
 tags:
-  - CVPR 2026
-  - Remote Sensing
-  - Metasurface Imaging
-  - Hyperspectral Reconstruction
-  - Snapshot Imaging
-  - HDR
-  - Polarization Imaging
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Metasurface Imaging"
+  - "Hyperspectral Reconstruction"
+  - "Snapshot Imaging"
+  - "HDR"
+  - "Polarization Imaging"
 date: 2026-05-08
 content_hash: 4515b40fb12f223b
 ---

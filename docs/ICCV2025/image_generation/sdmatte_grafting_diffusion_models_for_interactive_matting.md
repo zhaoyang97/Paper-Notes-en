@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SDMatte: Grafting Diffusion Models for Interactive Matting
 description: >-
-  [ICCV 2025][Image Generation][Interactive Matting] This paper proposes SDMatte, a Stable Diffusion-based interactive matting model that converts the text interaction capability of diffusion models into visual prompt interaction capability via three key designs: visual prompt cross-attention, coordinate/opacity embeddings, and mask self-attention. SDMatte significantly outperforms SAM-based methods across multiple datasets.
+  [ICCV 2025][Image Generation][Interactive Matting] This paper proposes SDMatte, a Stable Diffusion-based interactive matting model that converts the text interaction capability of diffusion models into visual prompt inte…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Interactive Matting
-  - Diffusion Model Priors
-  - Visual Prompts
-  - Alpha Matte
-  - Attention Mechanism
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Interactive Matting"
+  - "Diffusion Model Priors"
+  - "Visual Prompts"
+  - "Alpha Matte"
+  - "Attention Mechanism"
 date: 2026-05-08
 content_hash: 1636fed3dbe50f1b
 ---

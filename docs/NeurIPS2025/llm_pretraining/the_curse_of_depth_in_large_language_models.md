@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The Curse of Depth in Large Language Models
 description: >-
-  [NeurIPS 2025][LLM Pretraining][Pre-Layer Normalization] This paper identifies the root cause of deep-layer degradation in Pre-LN Transformers—exponential growth of output variance causing deep layers to collapse into identity mappings—and proposes a parameter-free LayerNorm Scaling (LNS) strategy that multiplies the LayerNorm output by $1/\sqrt{\ell}$, compressing variance growth from exponential to polynomial. LNS consistently improves perplexity by 5–8% across scales from 130M to 7B parameters.
+  [NeurIPS 2025][LLM Pretraining][Pre-Layer Normalization] This paper identifies the root cause of deep-layer degradation in Pre-LN Transformers—exponential growth of output variance causing deep layers to collapse into id…
 tags:
-  - NeurIPS 2025
-  - LLM Pretraining
-  - Pre-Layer Normalization
-  - Curse of Depth
-  - Variance Control
-  - LayerNorm Scaling
-  - Transformer
+  - "NeurIPS 2025"
+  - "LLM Pretraining"
+  - "Pre-Layer Normalization"
+  - "Curse of Depth"
+  - "Variance Control"
+  - "LayerNorm Scaling"
+  - "Transformer"
 date: 2026-05-08
 content_hash: 6909a690b0c9a163
 ---

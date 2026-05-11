@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Knowledgeable Language Models as Black-Box Optimizers for Personalized Medicine
 description: >-
-  [ICLR 2026][Medical Imaging][LLM-based optimization] This paper proposes LEON (LLM-based Entropy-guided Optimization with kNowledgeable priors), a mathematically rigorous framework that models personalized treatment design as a constrained conditional black-box optimization problem. Through entropy constraints and an adversarial source critic, LEON guides an LLM to serve as a zero-shot optimizer that proposes personalized treatment plans without any fine-tuning.
+  [ICLR 2026][Medical Imaging][LLM-based optimization] This paper proposes LEON (LLM-based Entropy-guided Optimization with kNowledgeable priors)…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - LLM-based optimization
-  - personalized medicine
-  - black-box optimization
-  - distribution shift
-  - prior knowledge
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "LLM-based optimization"
+  - "personalized medicine"
+  - "black-box optimization"
+  - "distribution shift"
+  - "prior knowledge"
 date: 2026-05-08
 content_hash: 47360727d9fbdc0f
 ---

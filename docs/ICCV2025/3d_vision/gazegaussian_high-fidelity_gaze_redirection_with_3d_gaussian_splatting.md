@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GazeGaussian: High-Fidelity Gaze Redirection with 3D Gaussian Splatting
 description: >-
-  [ICCV 2025][3D Vision][Gaze Redirection] This paper proposes GazeGaussian, the first high-fidelity gaze redirection method based on 3D Gaussian Splatting (3DGS). By employing a dual-stream 3DGS model to separately represent the facial and eye regions, the method introduces an explicit Gaussian eyeball rotation representation and an expression-guided neural renderer (EGNR), achieving state-of-the-art performance in gaze accuracy, synthesis quality, and rendering speed.
+  [ICCV 2025][3D Vision][Gaze Redirection] This paper proposes GazeGaussian, the first high-fidelity gaze redirection method based on 3D Gaussian Splatting (3DGS). By employing a dual-stream 3DGS model to separately repres…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Gaze Redirection
-  - 3D Gaussian Splatting
-  - Head Avatar Synthesis
-  - Dual-Stream Model
-  - Eyeball Rotation Representation
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Gaze Redirection"
+  - "3D Gaussian Splatting"
+  - "Head Avatar Synthesis"
+  - "Dual-Stream Model"
+  - "Eyeball Rotation Representation"
 date: 2026-05-08
 content_hash: 14706a0c72b6747c
 ---

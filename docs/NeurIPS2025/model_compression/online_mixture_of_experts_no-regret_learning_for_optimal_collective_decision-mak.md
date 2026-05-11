@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Online Mixture of Experts: No-Regret Learning for Optimal Collective Decision-Making
 description: >-
-  [NeurIPS 2025][Model Compression][online learning] This paper proposes an Online Mixture of Experts (OMoE) framework comprising two algorithms — UCB-Successive Elimination and Online Weighted Majority Voting — with theoretical no-regret guarantees, and applies them to the online dynamic aggregation of LLM experts.
+  [NeurIPS 2025][Model Compression][online learning] This paper proposes an Online Mixture of Experts (OMoE) framework comprising two algorithms — UCB-Successive Elimination and Online Weighted Majority Voting — with theor…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - online learning
-  - mixture of experts
-  - bandit
-  - no-regret
-  - LLM ensemble
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "online learning"
+  - "mixture of experts"
+  - "bandit"
+  - "no-regret"
+  - "LLM ensemble"
 date: 2026-05-08
 content_hash: b13895f39b885c30
 ---

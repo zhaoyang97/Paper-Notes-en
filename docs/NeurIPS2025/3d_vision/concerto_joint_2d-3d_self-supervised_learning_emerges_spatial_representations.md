@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Concerto: Joint 2D-3D Self-Supervised Learning Emerges Spatial Representations
 description: >-
-  [NeurIPS 2025][3D Vision][Self-supervised learning] Concerto combines intra-modal 3D point cloud self-distillation with cross-modal 2D-3D joint embedding prediction. Through a minimalist design, a single point cloud encoder (PTv3) emerges spatial representations that surpass both 2D/3D unimodal methods and their naive concatenation, achieving state-of-the-art performance on multiple 3D scene understanding benchmarks (ScanNet semantic segmentation: 80.7% mIoU).
+  [NeurIPS 2025][3D Vision][Self-supervised learning] Concerto combines intra-modal 3D point cloud self-distillation with cross-modal 2D-3D joint embedding prediction. Through a minimalist design…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Self-supervised learning
-  - point cloud
-  - 2D-3D cross-modal
-  - joint embedding prediction
-  - scene understanding
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Self-supervised learning"
+  - "point cloud"
+  - "2D-3D cross-modal"
+  - "joint embedding prediction"
+  - "scene understanding"
 date: 2026-05-08
 content_hash: c3ca634dc27af266
 ---

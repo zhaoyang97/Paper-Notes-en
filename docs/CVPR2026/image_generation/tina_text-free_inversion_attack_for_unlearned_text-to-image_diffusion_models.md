@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TINA: Text-Free Inversion Attack for Unlearned Text-to-Image Diffusion Models
 description: >-
-  [CVPR 2026][Image Generation][Concept Erasure] This paper proposes TINA (Text-free INversion Attack), which bypasses all text-based concept erasure defenses by optimizing DDIM inversion under null-text conditioning to recover a precise initial noise vector. The work demonstrates that existing erasure methods merely sever the text-to-image mapping without truly deleting the visual knowledge encoded in model parameters.
+  [CVPR 2026][Image Generation][Concept Erasure] This paper proposes TINA (Text-free INversion Attack), which bypasses all text-based concept erasure defenses by optimizing DDIM inversion under null-text conditioning to re…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Concept Erasure
-  - Machine Unlearning
-  - DDIM Inversion
-  - Text-to-Image Diffusion
-  - Adversarial Attack
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Concept Erasure"
+  - "Machine Unlearning"
+  - "DDIM Inversion"
+  - "Text-to-Image Diffusion"
+  - "Adversarial Attack"
 date: 2026-05-08
 content_hash: c47630fa6843ce9d
 ---

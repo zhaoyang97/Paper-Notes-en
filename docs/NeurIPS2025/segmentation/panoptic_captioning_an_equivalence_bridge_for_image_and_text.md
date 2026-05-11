@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Panoptic Captioning: An Equivalence Bridge for Image and Text
 description: >-
-  [NeurIPS 2025][Segmentation][panoptic captioning] This paper proposes the novel task of Panoptic Captioning, which pursues a *minimum text equivalence* of images—defining a comprehensive structured description along five dimensions (entity semantic tags, locations via bounding boxes, attributes, relations, and global state)—and introduces the PancapEngine data engine and PancapChain decoupled multi-stage method. A 13B model trained under this framework surpasses InternVL-2.5-78B and GPT-4o.
+  [NeurIPS 2025][Segmentation][panoptic captioning] This paper proposes the novel task of Panoptic Captioning, which pursues a *minimum text equivalence* of images—defining a comprehensive structured description along five…
 tags:
-  - NeurIPS 2025
-  - Segmentation
-  - panoptic captioning
-  - minimum text equivalence
-  - PancapScore
-  - PancapChain
-  - grounding
+  - "NeurIPS 2025"
+  - "Segmentation"
+  - "panoptic captioning"
+  - "minimum text equivalence"
+  - "PancapScore"
+  - "PancapChain"
+  - "grounding"
 date: 2026-05-08
 content_hash: 6abeed277a537b71
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AVRobustBench: Benchmarking the Robustness of Audio-Visual Recognition Models at Test-Time
 description: >-
-  [NeurIPS 2025][Audio & Speech][audio-visual robustness] This paper proposes AVRobustBench, the first benchmark that systematically evaluates the test-time robustness of audio-visual models under **co-occurring correlated dual-modality corruptions**, comprising 4 datasets × 75 corruption types, and introduces AV2C, a TTA method based on low-entropy sample selection.
+  [NeurIPS 2025][Audio & Speech][audio-visual robustness] This paper proposes AVRobustBench, the first benchmark that systematically evaluates the test-time robustness of audio-visual models under **co-occurring correlated…
 tags:
-  - NeurIPS 2025
+  - "NeurIPS 2025"
   - "Audio & Speech"
-  - audio-visual robustness
-  - distribution shift
-  - test-time adaptation
-  - multimodal benchmark
-  - co-occurring corruptions
+  - "audio-visual robustness"
+  - "distribution shift"
+  - "test-time adaptation"
+  - "multimodal benchmark"
+  - "co-occurring corruptions"
 date: 2026-05-08
 content_hash: 23dfe037b76b49cb
 ---

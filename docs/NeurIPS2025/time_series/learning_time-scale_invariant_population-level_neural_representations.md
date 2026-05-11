@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Time-Scale Invariant Population-Level Neural Representations
 description: >-
-  [NeurIPS 2025][Time Series][neural time series] This paper proposes Time-Scale Augmented Pretraining (TSAP), a strategy that introduces data augmentation over multiple temporal window lengths during pretraining, enabling population-level neural signal foundation models to achieve invariance to input time scales and substantially improving decoding performance at both matched and unseen time scales.
+  [NeurIPS 2025][Time Series][neural time series] This paper proposes Time-Scale Augmented Pretraining (TSAP), a strategy that introduces data augmentation over multiple temporal window lengths during pretraining…
 tags:
-  - NeurIPS 2025
-  - Time Series
-  - neural time series
-  - foundation models
-  - time-scale invariance
-  - population-level representations
-  - brain-computer interface
+  - "NeurIPS 2025"
+  - "Time Series"
+  - "neural time series"
+  - "foundation models"
+  - "time-scale invariance"
+  - "population-level representations"
+  - "brain-computer interface"
 date: 2026-05-08
 content_hash: 6f56f743afd50dac
 ---

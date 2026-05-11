@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] STS-Mixer: Spatio-Temporal-Spectral Mixer for 4D Point Cloud Video Understanding
 description: >-
-  [CVPR 2026][3D Vision][4D point cloud video] STS-Mixer is the first to introduce the Graph Fourier Transform (GFT) into 4D point cloud video understanding. By decomposing point clouds in the frequency domain to capture geometric structures at different scales (low frequency = global shape, high frequency = local details) and mixing spectral features with spatio-temporal information, STS-Mixer achieves state-of-the-art performance on action recognition and semantic segmentation.
+  [CVPR 2026][3D Vision][4D point cloud video] STS-Mixer is the first to introduce the Graph Fourier Transform (GFT) into 4D point cloud video understanding. By decomposing point clouds in the frequency domain to capture g…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 4D point cloud video
-  - graph Fourier transform
-  - spectral representation
-  - action recognition
-  - semantic segmentation
+  - "CVPR 2026"
+  - "3D Vision"
+  - "4D point cloud video"
+  - "graph Fourier transform"
+  - "spectral representation"
+  - "action recognition"
+  - "semantic segmentation"
 date: 2026-05-08
 content_hash: 0b5f0d75b38ff356
 ---

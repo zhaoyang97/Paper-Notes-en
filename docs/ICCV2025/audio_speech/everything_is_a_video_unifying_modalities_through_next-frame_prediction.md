@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Everything is a Video: Unifying Modalities through Next-Frame Prediction
 description: >-
-  [ICCV 2025][Audio & Speech][multimodal unification] This paper reformulates multimodal learning tasks involving text, images, audio, and video as a unified next-frame prediction problem—rendering all inputs and outputs as sequences of 64×64 video frames—and demonstrates that a single Transformer model without any modality-specific encoders can handle cross-modal tasks, validating the radical yet feasible "everything is a video" unified representation paradigm.
+  [ICCV 2025][Audio & Speech][multimodal unification] This paper reformulates multimodal learning tasks involving text, images, audio, and video as a unified next-frame prediction problem—rendering all inputs and outputs a…
 tags:
-  - ICCV 2025
+  - "ICCV 2025"
   - "Audio & Speech"
-  - multimodal unification
-  - next-frame prediction
-  - task reformulation
-  - video generation
-  - unified modality representation
+  - "multimodal unification"
+  - "next-frame prediction"
+  - "task reformulation"
+  - "video generation"
+  - "unified modality representation"
 date: 2026-05-08
 content_hash: ac2742e616144d63
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unifying and Enhancing Graph Transformers via a Hierarchical Mask Framework
 description: >-
-  [NeurIPS 2025][Graph Learning][Graph Transformer] This paper proposes a unified hierarchical mask framework that reveals the equivalence between Graph Transformer architectures and attention masks, and introduces M3Dphormer, which achieves efficient adaptive modeling of local/cluster/global interactions via multi-level masks, bi-level expert routing, and a dual attention computation scheme, achieving state-of-the-art results on 9 benchmarks.
+  [NeurIPS 2025][Graph Learning][Graph Transformer] This paper proposes a unified hierarchical mask framework that reveals the equivalence between Graph Transformer architectures and attention masks…
 tags:
-  - NeurIPS 2025
-  - Graph Learning
-  - Graph Transformer
-  - Attention Mask
-  - Mixture of Experts
-  - Hierarchical Interaction
-  - Node Classification
+  - "NeurIPS 2025"
+  - "Graph Learning"
+  - "Graph Transformer"
+  - "Attention Mask"
+  - "Mixture of Experts"
+  - "Hierarchical Interaction"
+  - "Node Classification"
 date: 2026-05-08
 content_hash: ac15bb89c893f4e3
 ---

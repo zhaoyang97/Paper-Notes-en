@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FlowCast: Advancing Precipitation Nowcasting with Conditional Flow Matching
 description: >-
-  [ICLR 2026][Image Generation][Conditional Flow Matching] This work is the first to apply Conditional Flow Matching (CFM) as an end-to-end probabilistic generative model for precipitation nowcasting. By learning a direct noise-to-data mapping in a compressed latent space, the proposed method surpasses diffusion-based models in both predictive accuracy and probabilistic performance with significantly fewer sampling steps.
+  [ICLR 2026][Image Generation][Conditional Flow Matching] This work is the first to apply Conditional Flow Matching (CFM) as an end-to-end probabilistic generative model for precipitation nowcasting. By learning a direct…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Conditional Flow Matching
-  - precipitation nowcasting
-  - probabilistic forecasting
-  - latent-space generation
-  - spatiotemporal prediction
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Conditional Flow Matching"
+  - "precipitation nowcasting"
+  - "probabilistic forecasting"
+  - "latent-space generation"
+  - "spatiotemporal prediction"
 date: 2026-05-08
 content_hash: 733160e4b37a7a52
 ---

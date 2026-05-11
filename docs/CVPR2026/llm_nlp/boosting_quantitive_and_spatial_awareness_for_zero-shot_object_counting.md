@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Boosting Quantitive and Spatial Awareness for Zero-Shot Object Counting
 description: >-
-  [CVPR 2026][LLM/NLP][zero-shot counting] The QICA framework addresses the lack of quantity awareness and spatial insensitivity in zero-shot object counting by using a quantity-conditioned Synergistic Prompting Strategy (SPS) to jointly adapt vision-language encoders, combined with a Cost Aggregation Decoder (CAD) operating on similarity maps to preserve zero-shot transferability, achieving zero-shot SOTA on FSC-147 (MAE 12.41) with strong cross-domain generalization.
+  [CVPR 2026][LLM/NLP][zero-shot counting] The QICA framework addresses the lack of quantity awareness and spatial insensitivity in zero-shot object counting by using a quantity-conditioned Synergistic Prompting Strategy (…
 tags:
-  - CVPR 2026
-  - LLM/NLP
-  - zero-shot counting
-  - vision-language model
-  - prompt tuning
-  - cost aggregation
-  - quantity awareness
+  - "CVPR 2026"
+  - "LLM/NLP"
+  - "zero-shot counting"
+  - "vision-language model"
+  - "prompt tuning"
+  - "cost aggregation"
+  - "quantity awareness"
 date: 2026-05-08
 content_hash: 1cb3803896e3d173
 ---

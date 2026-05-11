@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Concept-RuleNet: Grounded Multi-Agent Neurosymbolic Reasoning in Vision Language Models
 description: >-
-  [AAAI 2026][Multimodal VLM][Neurosymbolic Reasoning] This paper proposes Concept-RuleNet, a three-agent collaborative neurosymbolic reasoning framework that conditions symbol generation and rule construction on visual concepts extracted from training images. It addresses the symbol hallucination and non-representativeness issues of existing methods (e.g., Symbol-LLM) that rely solely on class labels, achieving an average accuracy improvement of ~5% across 5 OOD benchmarks and reducing hallucinated symbols by up to 50%.
+  [AAAI 2026][Multimodal VLM][Neurosymbolic Reasoning] This paper proposes Concept-RuleNet, a three-agent collaborative neurosymbolic reasoning framework that conditions symbol generation and rule construction on visual co…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Neurosymbolic Reasoning
-  - Multi-Agent Systems
-  - Visual Concept Grounding
-  - Explainable AI
-  - Counterfactual Reasoning
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Neurosymbolic Reasoning"
+  - "Multi-Agent Systems"
+  - "Visual Concept Grounding"
+  - "Explainable AI"
+  - "Counterfactual Reasoning"
 date: 2026-05-08
 content_hash: a1aa03e9883d315c
 ---

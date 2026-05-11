@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LR-SGS: Robust LiDAR-Reflectance-Guided Salient Gaussian Splatting for Self-Driving Scene Reconstruction
 description: >-
-  [CVPR 2026][Autonomous Driving][3D Gaussian Splatting] LR-SGS proposes a structure-aware Salient Gaussian representation guided by LiDAR reflectance. By calibrating LiDAR intensity into an illumination-invariant reflectance channel appended to each Gaussian, initializing structured Salient Gaussians from geometric and reflectance feature points, and enforcing RGB–reflectance cross-modal gradient consistency, the method surpasses OmniRe by 1.18 dB PSNR on complex-lighting scenes of the Waymo dataset while using fewer Gaussians and shorter training time.
+  [CVPR 2026][Autonomous Driving][3D Gaussian Splatting] LR-SGS proposes a structure-aware Salient Gaussian representation guided by LiDAR reflectance. By calibrating LiDAR intensity into an illumination-invariant reflecta…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - 3D Gaussian Splatting
-  - LiDAR Reflectance
-  - Self-Driving Scene Reconstruction
-  - Novel View Synthesis
-  - Multimodal Fusion
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "3D Gaussian Splatting"
+  - "LiDAR Reflectance"
+  - "Self-Driving Scene Reconstruction"
+  - "Novel View Synthesis"
+  - "Multimodal Fusion"
 date: 2026-05-08
 content_hash: 4ba3bb266c79db6d
 ---

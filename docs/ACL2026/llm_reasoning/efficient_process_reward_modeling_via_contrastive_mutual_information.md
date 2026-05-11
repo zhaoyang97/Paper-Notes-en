@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Efficient Process Reward Modeling via Contrastive Mutual Information
 description: >-
-  [ACL 2026][LLM Reasoning][Process Reward Model] This paper proposes CPMI (Contrastive Pointwise Mutual Information), an efficient automatic step-level reward annotation method that estimates step-wise contributions by contrasting the conditional probability shifts a reasoning step induces on correct versus incorrect answers. Compared to Monte Carlo estimation, CPMI reduces construction time by 84% and token generation by 98%, while achieving higher accuracy on both process-level evaluation benchmarks and mathematical reasoning benchmarks.
+  [ACL 2026][LLM Reasoning][Process Reward Model] This paper proposes CPMI (Contrastive Pointwise Mutual Information), an efficient automatic step-level reward annotation method that estimates step-wise contributions by co…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - Process Reward Model
-  - Step-level Supervision
-  - Mutual Information
-  - Contrastive Learning
-  - Mathematical Reasoning
+  - "ACL 2026"
+  - "LLM Reasoning"
+  - "Process Reward Model"
+  - "Step-level Supervision"
+  - "Mutual Information"
+  - "Contrastive Learning"
+  - "Mathematical Reasoning"
 date: 2026-05-08
 content_hash: 619584b29141e152
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Diffusion Models Meet Contextual Bandits
 description: >-
-  [NeurIPS 2025][Image Generation][Diffusion Models] This paper proposes diffusion Thompson Sampling (dTS), which employs a pretrained diffusion model as an expressive prior over action parameters in contextual bandit problems. Through an efficient hierarchical posterior approximation, dTS enables fast updates and sampling, significantly outperforming conventional methods in large action spaces.
+  [NeurIPS 2025][Image Generation][Diffusion Models] This paper proposes diffusion Thompson Sampling (dTS), which employs a pretrained diffusion model as an expressive prior over action parameters in contextual bandit prob…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Diffusion Models
-  - Contextual Bandits
-  - Thompson Sampling
-  - Bayesian Prior
-  - Posterior Approximation
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "Contextual Bandits"
+  - "Thompson Sampling"
+  - "Bayesian Prior"
+  - "Posterior Approximation"
 date: 2026-05-08
 content_hash: af9f56e4b34e4897
 ---

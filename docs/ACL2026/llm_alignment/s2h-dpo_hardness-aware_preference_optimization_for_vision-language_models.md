@@ -4,9 +4,9 @@ title: >-
 description: >-
   [ACL 2026][LLM Alignment][To be supplemented] To be supplemented after a thorough reading of the paper.
 tags:
-  - ACL 2026
-  - LLM Alignment
-  - To be supplemented
+  - "ACL 2026"
+  - "LLM Alignment"
+  - "To be supplemented"
 date: 2026-05-08
 content_hash: dcd408cf9a166cfa
 ---

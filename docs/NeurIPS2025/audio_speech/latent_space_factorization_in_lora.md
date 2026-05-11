@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Latent Space Factorization in LoRA
 description: >-
-  [NeurIPS 2025][Audio & Speech][LoRA] This paper proposes FVAE-LoRA, which incorporates a VAE with dual latent spaces into the LoRA framework. Through a novel ELBO objective, it explicitly factorizes task-relevant features ($\mathbf{z}_1$) from residual information ($\mathbf{z}_2$), consistently outperforming standard LoRA across text, image, and audio tasks.
+  [NeurIPS 2025][Audio & Speech][LoRA] This paper proposes FVAE-LoRA, which incorporates a VAE with dual latent spaces into the LoRA framework. Through a novel ELBO objective…
 tags:
-  - NeurIPS 2025
+  - "NeurIPS 2025"
   - "Audio & Speech"
-  - LoRA
-  - VAE
-  - latent space factorization
-  - parameter-efficient fine-tuning
-  - spurious correlation robustness
+  - "LoRA"
+  - "VAE"
+  - "latent space factorization"
+  - "parameter-efficient fine-tuning"
+  - "spurious correlation robustness"
 date: 2026-05-08
 content_hash: e58aec3487bd0ab7
 ---

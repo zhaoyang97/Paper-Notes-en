@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Semi-supervised Deep Transfer for Regression without Domain Alignment
 description: >-
-  [ICCV 2025][Medical Imaging][Source-free domain adaptation] This paper proposes CRAFT (Contradistinguisher-based Regularization Approach for Flexible Training), a semi-supervised transfer learning framework that requires neither source data nor domain alignment, specifically designed for regression tasks. CRAFT jointly optimizes a supervised loss and an unsupervised Contradistinguisher-based regularization term to substantially improve prediction performance under label-scarce conditions.
+  [ICCV 2025][Medical Imaging][Source-free domain adaptation] This paper proposes CRAFT (Contradistinguisher-based Regularization Approach for Flexible Training)…
 tags:
-  - ICCV 2025
-  - Medical Imaging
-  - Source-free domain adaptation
-  - semi-supervised transfer learning
-  - regression
-  - EEG decoding
-  - brain age prediction
+  - "ICCV 2025"
+  - "Medical Imaging"
+  - "Source-free domain adaptation"
+  - "semi-supervised transfer learning"
+  - "regression"
+  - "EEG decoding"
+  - "brain age prediction"
 date: 2026-05-08
 content_hash: 3749bb45d8a3670c
 ---

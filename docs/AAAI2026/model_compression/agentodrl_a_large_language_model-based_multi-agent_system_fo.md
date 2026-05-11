@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AgentODRL: A Large Language Model-based Multi-agent System for ODRL Generation
 description: >-
-  [AAAI 2026][Model Compression][ODRL Generation] This paper proposes AgentODRL, an LLM-based multi-agent system built on an Orchestrator-Workers architecture that converts natural language data usage rules into high-quality ODRL policies through task decomposition, a syntax validation loop, and a LoRA-driven semantic reflection mechanism.
+  [AAAI 2026][Model Compression][ODRL Generation] This paper proposes AgentODRL, an LLM-based multi-agent system built on an Orchestrator-Workers architecture that converts natural language data usage rules into high-quali…
 tags:
-  - AAAI 2026
-  - Model Compression
-  - ODRL Generation
-  - Multi-agent System
-  - LLM
-  - Data Usage Policy
-  - Orchestrator-Workers
+  - "AAAI 2026"
+  - "Model Compression"
+  - "ODRL Generation"
+  - "Multi-agent System"
+  - "LLM"
+  - "Data Usage Policy"
+  - "Orchestrator-Workers"
 date: 2026-05-08
 content_hash: 2ae38303cec3c2ed
 ---

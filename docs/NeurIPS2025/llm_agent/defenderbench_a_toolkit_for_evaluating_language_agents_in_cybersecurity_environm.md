@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] DefenderBench: A Toolkit for Evaluating Language Agents in Cybersecurity Environments
 description: >-
-  [NeurIPS 2025][LLM Agent][Cybersecurity] This paper presents DefenderBench, an open-source modular toolkit for systematically evaluating LLM agents across three categories of cybersecurity tasks—offensive, defensive, and knowledge understanding—covering five scenarios: network intrusion simulation, malicious content detection, code vulnerability detection/repair, and CTI knowledge QA. Benchmark results show that Claude-3.7-sonnet achieves the best overall performance (81.65 points).
+  [NeurIPS 2025][LLM Agent][Cybersecurity] This paper presents DefenderBench, an open-source modular toolkit for systematically evaluating LLM agents across three categories of cybersecurity tasks—offensive, defensive…
 tags:
-  - NeurIPS 2025
-  - LLM Agent
-  - Cybersecurity
-  - Benchmark
-  - Vulnerability Detection
-  - Network Intrusion Simulation
+  - "NeurIPS 2025"
+  - "LLM Agent"
+  - "Cybersecurity"
+  - "Benchmark"
+  - "Vulnerability Detection"
+  - "Network Intrusion Simulation"
 date: 2026-05-08
 content_hash: de7badf1b25fbfa8
 ---

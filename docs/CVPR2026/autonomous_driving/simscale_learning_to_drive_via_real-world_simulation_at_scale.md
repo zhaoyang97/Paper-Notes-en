@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] SimScale: Learning to Drive via Real-World Simulation at Scale
 description: >-
-  [CVPR 2026 (Oral)][Autonomous Driving][simulation data] This paper proposes the SimScale framework, which generates large-scale, high-fidelity simulation data by applying trajectory perturbations to existing driving logs, simulating reactive environment responses, and synthesizing sensor observations via neural rendering. Combined with pseudo-expert trajectory supervision and a sim-real co-training strategy, SimScale achieves substantial gains on NAVSIM v2 (navhard +8.6 EPDMS), with performance scaling smoothly with the volume of simulation data.
+  [CVPR 2026 (Oral)][Autonomous Driving][simulation data] This paper proposes the SimScale framework, which generates large-scale, high-fidelity simulation data by applying trajectory perturbations to existing driving logs…
 tags:
-  - CVPR 2026 (Oral)
-  - Autonomous Driving
-  - simulation data
-  - end-to-end planning
-  - sim-to-real
-  - data scaling
-  - pseudo-expert trajectory
-  - neural rendering
-  - co-training
+  - "CVPR 2026 (Oral)"
+  - "Autonomous Driving"
+  - "simulation data"
+  - "end-to-end planning"
+  - "sim-to-real"
+  - "data scaling"
+  - "pseudo-expert trajectory"
+  - "neural rendering"
+  - "co-training"
 date: 2026-05-08
 content_hash: 263ad85f9d2f17da
 ---

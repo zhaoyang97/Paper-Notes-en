@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Out of Sight, Out of Mind? Evaluating State Evolution in Video World Models
 description: >-
-  [CVPR 2026][LLM Evaluation][video world models] This paper introduces StEvo-Bench, a benchmark comprising 225 tasks that evaluates whether video world models can correctly continue evolving scene states during unobserved intervals—induced by inserting occlusions or redirecting the camera during video generation. Experiments reveal that state-of-the-art models (including Veo 3 and Sora 2 Pro) achieve success rates below 10%, exposing a fundamental tendency of current video models to couple state evolution tightly with pixel-level observation.
+  [CVPR 2026][LLM Evaluation][video world models] This paper introduces StEvo-Bench, a benchmark comprising 225 tasks that evaluates whether video world models can correctly continue evolving scene states during unobserved…
 tags:
-  - CVPR 2026
-  - LLM Evaluation
-  - video world models
-  - state evolution
-  - occlusion testing
-  - benchmark
-  - physical consistency
+  - "CVPR 2026"
+  - "LLM Evaluation"
+  - "video world models"
+  - "state evolution"
+  - "occlusion testing"
+  - "benchmark"
+  - "physical consistency"
 date: 2026-05-08
 content_hash: 43dff4e4cbb3b4c8
 ---

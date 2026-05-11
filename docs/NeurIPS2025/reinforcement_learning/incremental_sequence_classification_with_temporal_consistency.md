@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Incremental Sequence Classification with Temporal Consistency
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][incremental classification] This paper imports the temporal-difference (TD) learning idea from reinforcement learning into sequence classification, proposing the TC-$\lambda$ loss function. By requiring the predictive distributions at adjacent time steps to satisfy a temporal consistency condition, it trains incremental sequence classifiers that outperform standard cross-entropy methods on both text classification and LLM verification tasks.
+  [NeurIPS 2025][Reinforcement Learning][incremental classification] This paper imports the temporal-difference (TD) learning idea from reinforcement learning into sequence classification…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - incremental classification
-  - temporal consistency
-  - temporal-difference learning
-  - LLM verification
-  - sequence classification
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "incremental classification"
+  - "temporal consistency"
+  - "temporal-difference learning"
+  - "LLM verification"
+  - "sequence classification"
 date: 2026-05-08
 content_hash: 496ac08fa93dffde
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EvoEngineer: Mastering Automated CUDA Kernel Code Evolution with Large Language Models
 description: >-
-  [ICLR 2026][LLM Efficiency][CUDA Kernel Optimization] This paper proposes EvoEngineer, the first systematic LLM-based code evolution framework that decomposes code evolution into two orthogonal components — traverse technique (with a two-layer design: solution guiding + prompt engineering) and population management. On 91 real-world CUDA kernels, EvoEngineer achieves a median speedup of up to 2.72× and a code validity rate of 69.8%, outperforming existing methods on both performance and correctness.
+  [ICLR 2026][LLM Efficiency][CUDA Kernel Optimization] This paper proposes EvoEngineer, the first systematic LLM-based code evolution framework that decomposes code evolution into two orthogonal components — traverse tech…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - CUDA Kernel Optimization
-  - LLM Code Evolution
-  - Evolutionary Search
-  - Code Generation
-  - Prompt Engineering
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "CUDA Kernel Optimization"
+  - "LLM Code Evolution"
+  - "Evolutionary Search"
+  - "Code Generation"
+  - "Prompt Engineering"
 date: 2026-05-08
 content_hash: d2848e21503509a6
 ---

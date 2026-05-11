@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From 2D Alignment to 3D Plausibility: Unifying Heterogeneous 2D Priors and Penetration-Free Diffusion for Occlusion-Robust Two-Hand Reconstruction
 description: >-
-  [CVPR 2026][Segmentation][two-hand reconstruction] This work decouples two-hand reconstruction into 2D structural alignment (fusing keypoint, segmentation, and depth priors) and 3D spatial interaction alignment (a penetration-free diffusion model), achieving an MPJPE of 5.36 mm on InterHand2.6M and substantially outperforming the state of the art.
+  [CVPR 2026][Segmentation][two-hand reconstruction] This work decouples two-hand reconstruction into 2D structural alignment (fusing keypoint, segmentation…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - two-hand reconstruction
-  - 2D prior fusion
-  - diffusion model
-  - penetration elimination
-  - occlusion robustness
+  - "CVPR 2026"
+  - "Segmentation"
+  - "two-hand reconstruction"
+  - "2D prior fusion"
+  - "diffusion model"
+  - "penetration elimination"
+  - "occlusion robustness"
 date: 2026-05-08
 content_hash: f0695933d7e16c3a
 ---

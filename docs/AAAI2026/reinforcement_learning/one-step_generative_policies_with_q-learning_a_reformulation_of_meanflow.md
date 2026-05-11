@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] One-Step Generative Policies with Q-Learning: A Reformulation of MeanFlow
 description: >-
-  [AAAI 2026][Reinforcement Learning][Offline reinforcement learning] This paper reformulates MeanFlow from visual generation into a generative policy for offline RL. It proposes a residual-form direct noise-to-action mapping that achieves expressive one-step sampling and enables stable joint optimization with a Q-function in a single training stage, achieving strong performance across 73 tasks on OGBench and D4RL.
+  [AAAI 2026][Reinforcement Learning][Offline reinforcement learning] This paper reformulates MeanFlow from visual generation into a generative policy for offline RL. It proposes a residual-form direct noise-to-action mapp…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - Offline reinforcement learning
-  - generative policy
-  - MeanFlow
-  - one-step sampling
-  - Q-learning
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "Offline reinforcement learning"
+  - "generative policy"
+  - "MeanFlow"
+  - "one-step sampling"
+  - "Q-learning"
 date: 2026-05-08
 content_hash: 4554eed98679a622
 ---

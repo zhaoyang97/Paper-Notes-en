@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LUCID: Learning-Enabled Uncertainty-Aware Certification of Stochastic Dynamical Systems
 description: >-
-  [AAAI 2026][Autonomous Driving][Safety Certification] This paper proposes LUCID, the first verification engine capable of providing quantified safety guarantees for black-box stochastic dynamical systems. By combining data-driven control barrier certificates, conditional mean embeddings, and finite Fourier kernel expansions, LUCID reformulates a semi-infinite non-convex optimization problem into a tractable linear program.
+  [AAAI 2026][Autonomous Driving][Safety Certification] This paper proposes LUCID, the first verification engine capable of providing quantified safety guarantees for black-box stochastic dynamical systems. By combining da…
 tags:
-  - AAAI 2026
-  - Autonomous Driving
-  - Safety Certification
-  - Stochastic Systems
-  - Control Barrier Certificates
-  - Kernel Methods
-  - Robust Verification
+  - "AAAI 2026"
+  - "Autonomous Driving"
+  - "Safety Certification"
+  - "Stochastic Systems"
+  - "Control Barrier Certificates"
+  - "Kernel Methods"
+  - "Robust Verification"
 date: 2026-05-08
 content_hash: bdfe9e0ba1675924
 ---

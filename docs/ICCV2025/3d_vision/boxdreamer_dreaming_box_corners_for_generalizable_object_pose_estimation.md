@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BoxDreamer: Dreaming Box Corners for Generalizable Object Pose Estimation
 description: >-
-  [ICCV 2025][3D Vision][Object Pose Estimation] This paper proposes BoxDreamer, which adopts 3D bounding box corners as an intermediate representation. A reference-view-based corner synthesizer predicts 2D corner projections in query images, and 6DoF poses are recovered via PnP using the resulting 2D–3D correspondences. The method significantly outperforms existing approaches under sparse-view and heavy-occlusion conditions.
+  [ICCV 2025][3D Vision][Object Pose Estimation] This paper proposes BoxDreamer, which adopts 3D bounding box corners as an intermediate representation. A reference-view-based corner synthesizer predicts 2D corner projecti…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Object Pose Estimation
-  - Sparse-View
-  - 3D Bounding Box
-  - Occlusion Handling
-  - Generalizable
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Object Pose Estimation"
+  - "Sparse-View"
+  - "3D Bounding Box"
+  - "Occlusion Handling"
+  - "Generalizable"
 date: 2026-05-08
 content_hash: 5d65d74d996ade02
 ---

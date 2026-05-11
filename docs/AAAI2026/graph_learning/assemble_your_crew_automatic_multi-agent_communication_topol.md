@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Assemble Your Crew: Automatic Multi-agent Communication Topology Design via Autoregressive Graph Generation
 description: >-
-  [AAAI 2026][Graph Learning][Multi-Agent Topology Design] This paper proposes ARG-Designer, which reformulates multi-agent system topology design as a conditional autoregressive graph generation task. Rather than pruning from template graphs, the model incrementally generates agent nodes and communication edges from scratch. ARG-Designer achieves state-of-the-art performance across 6 benchmarks (average 92.78%), reduces token consumption by approximately 50% compared to G-Designer, and supports role expansion without retraining.
+  [AAAI 2026][Graph Learning][Multi-Agent Topology Design] This paper proposes ARG-Designer, which reformulates multi-agent system topology design as a conditional autoregressive graph generation task. Rather than pruning…
 tags:
-  - AAAI 2026
-  - Graph Learning
-  - Multi-Agent Topology Design
-  - Autoregressive Graph Generation
-  - Collaboration Graph
-  - Curriculum Learning
-  - Scalable Agents
+  - "AAAI 2026"
+  - "Graph Learning"
+  - "Multi-Agent Topology Design"
+  - "Autoregressive Graph Generation"
+  - "Collaboration Graph"
+  - "Curriculum Learning"
+  - "Scalable Agents"
 date: 2026-05-08
 content_hash: a189082e252ac9b2
 ---

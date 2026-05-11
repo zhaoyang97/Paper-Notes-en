@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] I2E: Real-Time Image-to-Event Conversion for High-Performance Spiking Neural Networks
 description: >-
-  [AAAI 2026][Spiking Neural Networks] I2E proposes an ultra-efficient image-to-event stream conversion framework that simulates microsaccadic eye movements and implements the conversion via highly parallelized convolutions, achieving over 300× speedup compared to prior methods. It enables online data augmentation during SNN training for the first time, achieves a state-of-the-art 60.50% event-based classification accuracy on I2E-ImageNet, and sets a new record of 92.5% on CIFAR10-DVS through a sim-to-real paradigm of synthetic pretraining followed by real-data fine-tuning.
+  [AAAI 2026][Spiking Neural Networks] I2E proposes an ultra-efficient image-to-event stream conversion framework that simulates microsaccadic eye movements and implements the conversion via highly parallelized convolution…
 tags:
-  - AAAI 2026
-  - Spiking Neural Networks
-  - Event Stream Generation
-  - Image-to-Event Conversion
-  - Data Augmentation
-  - Sim-to-Real
+  - "AAAI 2026"
+  - "Spiking Neural Networks"
+  - "Event Stream Generation"
+  - "Image-to-Event Conversion"
+  - "Data Augmentation"
+  - "Sim-to-Real"
 date: 2026-05-08
 content_hash: 13eaee403367f1ff
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Expressive Temporal Specifications for Reward Monitoring
 description: >-
-  [AAAI 2026][Temporal Logic] This paper leverages quantitative linear temporal logic (LTLf[F]) to automatically synthesize **quantitative reward monitors (QRMs)** that generate dense, continuous-valued reward streams for reinforcement learning agents at runtime, fundamentally alleviating the sparse reward problem in long-horizon tasks under Boolean semantics.
+  [AAAI 2026][Temporal Logic] This paper leverages quantitative linear temporal logic (LTLf[F]) to automatically synthesize **quantitative reward monitors (QRMs)** that generate dense…
 tags:
-  - AAAI 2026
-  - Temporal Logic
-  - Reward Monitor
-  - Quantitative Semantics
-  - Sparse Reward
-  - Reinforcement Learning
+  - "AAAI 2026"
+  - "Temporal Logic"
+  - "Reward Monitor"
+  - "Quantitative Semantics"
+  - "Sparse Reward"
+  - "Reinforcement Learning"
 date: 2026-05-08
 content_hash: 5f0c268547541ad5
 ---

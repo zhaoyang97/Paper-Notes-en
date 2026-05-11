@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Factor Decorrelation Enhanced Data Removal from Deep Predictive Models
 description: >-
-  [NeurIPS 2025][AI Safety][machine unlearning] This paper proposes DecoRemoval, a framework that achieves data removal without full retraining via two modules: discriminability-preserving factor decorrelation (RFF-based spatial mapping with adaptive weighting) and smoothed loss perturbation. The method significantly outperforms existing approaches, particularly under out-of-distribution (OOD) settings.
+  [NeurIPS 2025][AI Safety][machine unlearning] This paper proposes DecoRemoval, a framework that achieves data removal without full retraining via two modules: discriminability-preserving factor decorrelation (RFF-based s…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - machine unlearning
-  - certified removal
-  - factor decorrelation
-  - OOD robustness
-  - random Fourier features
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "machine unlearning"
+  - "certified removal"
+  - "factor decorrelation"
+  - "OOD robustness"
+  - "random Fourier features"
 date: 2026-05-08
 content_hash: c8487ae19ee4eac2
 ---

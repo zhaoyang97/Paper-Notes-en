@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SceneForge: Enhancing 3D-text alignment with Structured Scene Compositions
 description: >-
-  [NeurIPS 2025][3D Vision][3D-text contrastive learning] This paper proposes SceneForge, a framework that composes individual 3D point cloud objects into multi-object scenes with explicit spatial relations, paired with LLM-refined compositional captions, to enhance data diversity and complexity for 3D-text contrastive learning, yielding consistent performance gains across multiple downstream tasks.
+  [NeurIPS 2025][3D Vision][3D-text contrastive learning] This paper proposes SceneForge, a framework that composes individual 3D point cloud objects into multi-object scenes with explicit spatial relations…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - 3D-text contrastive learning
-  - compositional augmentation
-  - point cloud scene composition
-  - spatial relations
-  - zero-shot classification
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "3D-text contrastive learning"
+  - "compositional augmentation"
+  - "point cloud scene composition"
+  - "spatial relations"
+  - "zero-shot classification"
 date: 2026-05-08
 content_hash: b37180bf35fa8389
 ---

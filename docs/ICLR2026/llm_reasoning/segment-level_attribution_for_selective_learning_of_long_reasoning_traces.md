@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Segment-Level Attribution for Selective Learning of Long Reasoning Traces
 description: >-
-  [ICLR2026][LLM Reasoning][reasoning trace] This paper applies Integrated Gradients to compute the attribution strength and direction consistency of each segment in long reasoning traces with respect to the final answer, identifies important segments for selective SFT, and achieves up to 4.7% accuracy improvement over full-CoT training while reducing output length by 18%.
+  [ICLR2026][LLM Reasoning][reasoning trace] This paper applies Integrated Gradients to compute the attribution strength and direction consistency of each segment in long reasoning traces with respect to the final answer…
 tags:
-  - ICLR2026
-  - LLM Reasoning
-  - reasoning trace
-  - integrated gradients
-  - selective SFT
-  - segment attribution
-  - CoT compression
+  - "ICLR2026"
+  - "LLM Reasoning"
+  - "reasoning trace"
+  - "integrated gradients"
+  - "selective SFT"
+  - "segment attribution"
+  - "CoT compression"
 date: 2026-05-08
 content_hash: a4fe8478dc8c23b9
 ---

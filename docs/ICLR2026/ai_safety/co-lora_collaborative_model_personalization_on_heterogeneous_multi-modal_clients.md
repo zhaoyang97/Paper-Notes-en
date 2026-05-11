@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Co-LoRA: Collaborative Model Personalization on Heterogeneous Multi-Modal Clients
 description: >-
-  [ICLR2026][AI Safety][personalized federated learning] This paper proposes FedMosaic, a framework addressing dual heterogeneity in personalized federated learning (PFL): RELA measures task relevance via gradient similarity to enable customized aggregation (addressing data heterogeneity), while Co-LoRA enables cross-architecture knowledge sharing (e.g., Llama vs. Qwen) through dimension-invariant modules $P \in \mathbb{R}^{r \times r}, Q \in \mathbb{R}^r$ (addressing model heterogeneity). The framework achieves substantial improvements over SOTA on DRAKE, a newly proposed 40-task multimodal PFL benchmark.
+  [ICLR2026][AI Safety][personalized federated learning] This paper proposes FedMosaic, a framework addressing dual heterogeneity in personalized federated learning (PFL): RELA measures task relevance via gradient similari…
 tags:
-  - ICLR2026
-  - AI Safety
-  - personalized federated learning
-  - LoRA
-  - model heterogeneity
-  - multimodal
-  - knowledge sharing
+  - "ICLR2026"
+  - "AI Safety"
+  - "personalized federated learning"
+  - "LoRA"
+  - "model heterogeneity"
+  - "multimodal"
+  - "knowledge sharing"
 date: 2026-05-08
 content_hash: 9a8e50d4d7f56978
 ---

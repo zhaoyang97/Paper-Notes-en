@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TEMA: Anchor the Image, Follow the Text for Multi-Modification Composed Image Retrieval
 description: >-
-  [ACL 2026][Multimodal VLM][Composed Image Retrieval] This paper proposes TEMA (Text-oriented Entity Mapping Architecture), the first CIR framework designed for multi-modification text (MMT). It enhances entity coverage via a Parsing Assistant (PA), resolves clause-entity misalignment via an Entity Mapping (EM) module, and introduces two multi-modification benchmarks—M-FashionIQ and M-CIRR—achieving state-of-the-art performance in both standard and multi-modification settings.
+  [ACL 2026][Multimodal VLM][Composed Image Retrieval] This paper proposes TEMA (Text-oriented Entity Mapping Architecture), the first CIR framework designed for multi-modification text (MMT). It enhances entity coverage v…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Composed Image Retrieval
-  - Multi-Modification Text
-  - Entity Mapping
-  - Fine-Grained Retrieval
-  - Vision-Language Pre-training
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Composed Image Retrieval"
+  - "Multi-Modification Text"
+  - "Entity Mapping"
+  - "Fine-Grained Retrieval"
+  - "Vision-Language Pre-training"
 date: 2026-05-08
 content_hash: 813c86e206371c42
 ---

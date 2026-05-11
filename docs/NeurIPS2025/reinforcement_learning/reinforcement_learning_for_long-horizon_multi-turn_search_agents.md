@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Reinforcement Learning for Long-Horizon Multi-Turn Search Agents
 description: >-
-  [NeurIPS 2025 Workshop][Reinforcement Learning][RL agent] This paper demonstrates that a 14B-parameter search agent trained with RL can surpass frontier models on legal document retrieval (85% vs. GPT o3's 81%) through multi-turn interaction, enabled by a carefully designed segmented reward structure and a sufficiently long interaction horizon.
+  [NeurIPS 2025 Workshop][Reinforcement Learning][RL agent] This paper demonstrates that a 14B-parameter search agent trained with RL can surpass frontier models on legal document retrieval (85% vs. GPT o3's 81%) through m…
 tags:
-  - NeurIPS 2025 Workshop
-  - Reinforcement Learning
-  - RL agent
-  - multi-turn search
-  - legal document retrieval
-  - GRPO
-  - tool use
+  - "NeurIPS 2025 Workshop"
+  - "Reinforcement Learning"
+  - "RL agent"
+  - "multi-turn search"
+  - "legal document retrieval"
+  - "GRPO"
+  - "tool use"
 date: 2026-05-08
 content_hash: 43f4ec95c8d72b26
 ---

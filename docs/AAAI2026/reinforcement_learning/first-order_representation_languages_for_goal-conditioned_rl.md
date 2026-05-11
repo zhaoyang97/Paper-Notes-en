@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] First-Order Representation Languages for Goal-Conditioned RL
 description: >-
-  [AAAI 2026][Reinforcement Learning][Goal-conditioned reinforcement learning] This paper investigates the application of first-order relational languages to goal-conditioned RL and generalized planning. It proposes representing goals as subsets or lifted versions of sets of atoms, and combines this with HER to automatically construct easy-to-hard goal curricula, enabling the learning of generalizable policies on large-scale sparse-reward planning problems.
+  [AAAI 2026][Reinforcement Learning][Goal-conditioned reinforcement learning] This paper investigates the application of first-order relational languages to goal-conditioned RL and generalized planning. It proposes repres…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - Goal-conditioned reinforcement learning
-  - first-order representation languages
-  - Hindsight Experience Replay
-  - generalized planning
-  - curriculum learning
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "Goal-conditioned reinforcement learning"
+  - "first-order representation languages"
+  - "Hindsight Experience Replay"
+  - "generalized planning"
+  - "curriculum learning"
 date: 2026-05-08
 content_hash: 8f58b645b63b8a14
 ---

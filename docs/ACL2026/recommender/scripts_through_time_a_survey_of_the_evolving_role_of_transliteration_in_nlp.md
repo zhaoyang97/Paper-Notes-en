@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Scripts Through Time: A Survey of the Evolving Role of Transliteration in NLP
 description: >-
-  [ACL 2026][Recommender Systems][transliteration] This paper presents a systematic survey of the evolving role of transliteration in cross-lingual NLP. It proposes a five-category motivation taxonomy (named entity/OOV handling, code-mixing, cross-script similarity exploitation, English-centric transfer, and unified preprocessing), compares six integration strategies, and discusses whether transliteration remains necessary in the era of modern LLMs.
+  [ACL 2026][Recommender Systems][transliteration] This paper presents a systematic survey of the evolving role of transliteration in cross-lingual NLP. It proposes a five-category motivation taxonomy (named entity/OOV han…
 tags:
-  - ACL 2026
-  - Recommender Systems
-  - transliteration
-  - cross-script transfer
-  - romanization
-  - script barrier
-  - multilingual language models
+  - "ACL 2026"
+  - "Recommender Systems"
+  - "transliteration"
+  - "cross-script transfer"
+  - "romanization"
+  - "script barrier"
+  - "multilingual language models"
 date: 2026-05-08
 content_hash: dd3a85cd8e0c3121
 ---

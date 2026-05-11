@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Index-Preserving Lightweight Token Pruning for Efficient Document Understanding
 description: >-
-  [ICLR 2026 (Workshop on MM Intelligence)][Multimodal VLM][token pruning] A binary patch classifier with only 203K parameters is inserted before the VLM visual encoder to remove background tokens from document images. A $3 \times 3$ max-pooling operation is then applied to recover fragmented text regions while preserving original spatial indices, achieving 40–60% FLOPs reduction on Qwen2.5-VL with accuracy degradation of no more than ~5 percentage points.
+  [ICLR 2026 (Workshop on MM Intelligence)][Multimodal VLM][token pruning] A binary patch classifier with only 203K parameters is inserted before the VLM visual encoder to remove background tokens from document images. A $…
 tags:
-  - ICLR 2026 (Workshop on MM Intelligence)
-  - Multimodal VLM
-  - token pruning
-  - document understanding
-  - VLM efficiency
-  - patch classifier
-  - index preservation
+  - "ICLR 2026 (Workshop on MM Intelligence)"
+  - "Multimodal VLM"
+  - "token pruning"
+  - "document understanding"
+  - "VLM efficiency"
+  - "patch classifier"
+  - "index preservation"
 date: 2026-05-08
 content_hash: 05b9357e15fd4518
 ---

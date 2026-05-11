@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Difficulty-Aware Label-Guided Denoising for Monocular 3D Object Detection
 description: >-
-  [AAAI2026][Autonomous Driving][monocular 3D object detection] This paper proposes MonoDLGD, which provides explicit geometric supervision for monocular 3D detection by adaptively perturbing and reconstructing ground-truth labels according to instance-level detection difficulty, achieving state-of-the-art performance on KITTI.
+  [AAAI2026][Autonomous Driving][monocular 3D object detection] This paper proposes MonoDLGD, which provides explicit geometric supervision for monocular 3D detection by adaptively perturbing and reconstructing ground-trut…
 tags:
-  - AAAI2026
-  - Autonomous Driving
-  - monocular 3D object detection
-  - denoising
-  - uncertainty estimation
-  - DETR
+  - "AAAI2026"
+  - "Autonomous Driving"
+  - "monocular 3D object detection"
+  - "denoising"
+  - "uncertainty estimation"
+  - "DETR"
 date: 2026-05-08
 content_hash: 6df7e74422692f14
 ---

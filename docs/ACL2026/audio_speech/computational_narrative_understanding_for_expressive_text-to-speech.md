@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Computational Narrative Understanding for Expressive Text-to-Speech
 description: >-
-  [ACL 2026][Audio & Speech][Audiobooks] This paper extracts character direct speech from fiction audiobooks to construct a large-scale expressive speech dataset, LibriQuote (5.3K hours of quotations + 12.7K hours of narration), annotating speaking style with speech verb and adverb pseudo-labels derived from narrative context. Experiments demonstrate that fine-tuning a flow-matching model simultaneously improves expressiveness and intelligibility, and that LibriQuote-test constitutes a challenging benchmark for expressive TTS.
+  [ACL 2026][Audio & Speech][Audiobooks] This paper extracts character direct speech from fiction audiobooks to construct a large-scale expressive speech dataset…
 tags:
-  - ACL 2026
+  - "ACL 2026"
   - "Audio & Speech"
-  - Audiobooks
-  - Expressive Speech
-  - Narrative Understanding
-  - Character Dialogue
-  - Dataset
+  - "Audiobooks"
+  - "Expressive Speech"
+  - "Narrative Understanding"
+  - "Character Dialogue"
+  - "Dataset"
 date: 2026-05-08
 content_hash: 8ed3c387ebe57103
 ---

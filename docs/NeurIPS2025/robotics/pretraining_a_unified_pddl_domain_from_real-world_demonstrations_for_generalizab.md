@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UniDomain: Pretraining a Unified PDDL Domain from Real-World Demonstrations for Generalizable Task Planning
 description: >-
-  [NeurIPS 2025][Robotics][PDDL] UniDomain pretrains a unified PDDL planning domain—comprising 3,137 operators and 2,875 predicates—from 12,393 real-world robotic manipulation videos. Through hierarchical fusion to construct a meta-domain, it achieves zero-shot cross-task symbolic planning, outperforming the strongest baseline by 58% in success rate and 160% in plan optimality.
+  [NeurIPS 2025][Robotics][PDDL] UniDomain pretrains a unified PDDL planning domain—comprising 3,137 operators and 2,875 predicates—from 12…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - PDDL
-  - task planning
-  - robotic manipulation
-  - knowledge distillation
-  - large-scale demonstration learning
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "PDDL"
+  - "task planning"
+  - "robotic manipulation"
+  - "knowledge distillation"
+  - "large-scale demonstration learning"
 date: 2026-05-08
 content_hash: c44fb0965e7a3c4a
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RS2-SAM2: Customized SAM2 for Referring Remote Sensing Image Segmentation
 description: >-
-  [AAAI 2026][Segmentation][SAM2] This paper proposes RS2-SAM2, a framework that injects textual information into the SAM2 image encoding process via a Bidirectional Hierarchical Fusion Module (BHFM) and designs a Mask Prompt Generator (MPG) to supply SAM2 with dense prompts, achieving state-of-the-art performance on referring remote sensing image segmentation.
+  [AAAI 2026][Segmentation][SAM2] This paper proposes RS2-SAM2, a framework that injects textual information into the SAM2 image encoding process via a Bidirectional Hierarchical Fusion Module (BHFM) and designs a Mask Pro…
 tags:
-  - AAAI 2026
-  - Segmentation
-  - SAM2
-  - remote sensing imagery
-  - referring segmentation
-  - multimodal fusion
-  - dense prompts
+  - "AAAI 2026"
+  - "Segmentation"
+  - "SAM2"
+  - "remote sensing imagery"
+  - "referring segmentation"
+  - "multimodal fusion"
+  - "dense prompts"
 date: 2026-05-08
 content_hash: 3a33460ff26def47
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Revisiting Image Fusion for Multi-Illuminant White-Balance Correction
 description: >-
-  [ICCV 2025][White Balance] This paper addresses white-balance (WB) correction under multi-illuminant scenes by proposing an efficient Transformer-based fusion model to replace conventional linear fusion, alongside a large-scale multi-illuminant WB dataset containing 16,000+ images. The proposed method achieves a 100% improvement in correction quality over existing methods on the new dataset.
+  [ICCV 2025][White Balance] This paper addresses white-balance (WB) correction under multi-illuminant scenes by proposing an efficient Transformer-based fusion model to replace conventional linear fusion…
 tags:
-  - ICCV 2025
-  - White Balance
-  - Multi-Illuminant
-  - Image Fusion
-  - Transformer
-  - Dataset
+  - "ICCV 2025"
+  - "White Balance"
+  - "Multi-Illuminant"
+  - "Image Fusion"
+  - "Transformer"
+  - "Dataset"
 date: 2026-05-08
 content_hash: dffd62e762c6bb7a
 ---

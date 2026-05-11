@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Enhancing Multimodal Misinformation Detection by Replaying the Whole Story from Image Modality Perspective
 description: >-
-  [AAAI 2026][Image Generation][Multimodal misinformation detection] This paper proposes RetSimd, which "replays the whole story" by segmenting text and generating a series of supplementary images via a text-to-image model, combined with a graph neural network to fuse multi-image relationships. The approach significantly enhances the contribution of the image modality to misinformation detection, consistently improving the performance of five SOTA methods across three benchmark datasets.
+  [AAAI 2026][Image Generation][Multimodal misinformation detection] This paper proposes RetSimd, which "replays the whole story" by segmenting text and generating a series of supplementary images via a text-to-image model…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Multimodal misinformation detection
-  - text-to-image generation
-  - graph neural network
-  - modality contribution
-  - information gain
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Multimodal misinformation detection"
+  - "text-to-image generation"
+  - "graph neural network"
+  - "modality contribution"
+  - "information gain"
 date: 2026-05-08
 content_hash: 5ccca7c9a3544245
 ---

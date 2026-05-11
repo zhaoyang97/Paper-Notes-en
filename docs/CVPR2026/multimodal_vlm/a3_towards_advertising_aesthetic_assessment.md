@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A3: Towards Advertising Aesthetic Assessment
 description: >-
-  [CVPR 2026][Multimodal VLM][Advertising Aesthetic Assessment] This paper proposes the A3 framework, comprising a theory-driven three-stage advertising aesthetic assessment paradigm A3-Law (Perceptual Attention → Formal Interest → Desire Impact), a 120K-annotation dataset A3-Dataset, an SFT+GRPO aligned model A3-Align, and the evaluation benchmark A3-Bench. A3-Align surpasses existing MLLMs on automated advertising aesthetic assessment.
+  [CVPR 2026][Multimodal VLM][Advertising Aesthetic Assessment] This paper proposes the A3 framework, comprising a theory-driven three-stage advertising aesthetic assessment paradigm A3-Law (Perceptual Attention → Formal I…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Advertising Aesthetic Assessment
-  - Multimodal Large Language Models
-  - AIDA Model
-  - Chain-of-Thought
-  - GRPO
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Advertising Aesthetic Assessment"
+  - "Multimodal Large Language Models"
+  - "AIDA Model"
+  - "Chain-of-Thought"
+  - "GRPO"
 date: 2026-05-08
 content_hash: ed32e61c4b1c0676
 ---

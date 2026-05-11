@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Optimized Algorithms for Text Clustering with LLM-Generated Constraints
 description: >-
-  [AAAI 2026][AIGC Detection][Text Clustering] This paper proposes the LSCK-HC framework, which leverages LLMs to generate set-form must-link/cannot-link constraints (as opposed to traditional pairwise constraints), coupled with a penalty-based local search clustering algorithm. The approach achieves clustering accuracy comparable to SOTA on five short-text datasets while reducing the number of LLM queries by more than 20×.
+  [AAAI 2026][AIGC Detection][Text Clustering] This paper proposes the LSCK-HC framework, which leverages LLMs to generate set-form must-link/cannot-link constraints (as opposed to traditional pairwise constraints)…
 tags:
-  - AAAI 2026
-  - AIGC Detection
-  - Text Clustering
-  - LLM Constraint Generation
-  - k-means
-  - Semi-supervised Clustering
-  - Local Search
+  - "AAAI 2026"
+  - "AIGC Detection"
+  - "Text Clustering"
+  - "LLM Constraint Generation"
+  - "k-means"
+  - "Semi-supervised Clustering"
+  - "Local Search"
 date: 2026-05-08
 content_hash: fa1aabd8929ac86d
 ---

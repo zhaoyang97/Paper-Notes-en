@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Scalable Inference of Functional Neural Connectivity at Submillisecond Timescales
 description: >-
-  [NeurIPS 2025][Functional connectivity] This paper generalizes the conventional discrete-time Poisson GLM to a continuous-time Poisson point process framework. Two approaches—Monte Carlo sampling and second-order polynomial approximation—are proposed to bypass the intractable integral in the likelihood. Combined with orthogonal generalized Laguerre basis functions, the method achieves minute-scale training on recordings spanning hundreds of neurons and thousands of seconds, enabling synaptic connectivity inference at submillisecond resolution.
+  [NeurIPS 2025][Functional connectivity] This paper generalizes the conventional discrete-time Poisson GLM to a continuous-time Poisson point process framework. Two approaches—Monte Carlo sampling and second-order polynom…
 tags:
-  - NeurIPS 2025
-  - Functional connectivity
-  - Poisson point process
-  - GLM
-  - Monte Carlo estimation
-  - synaptic coupling filters
+  - "NeurIPS 2025"
+  - "Functional connectivity"
+  - "Poisson point process"
+  - "GLM"
+  - "Monte Carlo estimation"
+  - "synaptic coupling filters"
 date: 2026-05-08
 content_hash: 4ad817bb5295e1be
 ---

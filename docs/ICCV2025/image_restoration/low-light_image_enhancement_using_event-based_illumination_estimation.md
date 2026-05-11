@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Low-Light Image Enhancement using Event-Based Illumination Estimation (RetinEV)
 description: >-
-  [ICCV 2025][Image Restoration][Low-light enhancement] RetinEV proposes exploiting *temporal-mapping events* (triggered by transmittance modulation) rather than conventional motion events for illumination estimation. Combined with Retinex theory, it decomposes low-light images into illumination and reflectance components, and employs an Illumination-guided Reflectance Enhancement (IRE) module to achieve high-quality low-light image enhancement, reaching real-time inference at 35.6 FPS on 640×480 images.
+  [ICCV 2025][Image Restoration][Low-light enhancement] RetinEV proposes exploiting *temporal-mapping events* (triggered by transmittance modulation) rather than conventional motion events for illumination estimation. Comb…
 tags:
-  - ICCV 2025
-  - Image Restoration
-  - Low-light enhancement
-  - event camera
-  - Retinex theory
-  - temporal-mapping events
-  - illumination estimation
-  - reflectance enhancement
+  - "ICCV 2025"
+  - "Image Restoration"
+  - "Low-light enhancement"
+  - "event camera"
+  - "Retinex theory"
+  - "temporal-mapping events"
+  - "illumination estimation"
+  - "reflectance enhancement"
 date: 2026-05-08
 content_hash: 6ca9c41ba81353a3
 ---

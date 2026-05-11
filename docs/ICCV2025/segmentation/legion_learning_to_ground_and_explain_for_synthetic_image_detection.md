@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LEGION: Learning to Ground and Explain for Synthetic Image Detection
 description: >-
-  [ICCV 2025][Segmentation][Synthetic Image Detection] This paper proposes the LEGION framework and the SynthScars dataset, leveraging a multimodal large language model (MLLM) to unify artifact detection, pixel-level segmentation, and textual explanation for synthetic image detection. It further innovatively extends the role of the detector from a "Defender" to a "Controller," guiding generative models to produce higher-quality images.
+  [ICCV 2025][Segmentation][Synthetic Image Detection] This paper proposes the LEGION framework and the SynthScars dataset, leveraging a multimodal large language model (MLLM) to unify artifact detection…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - Synthetic Image Detection
-  - Artifact Localization
-  - MLLM
-  - Explainability
-  - Image Refinement
+  - "ICCV 2025"
+  - "Segmentation"
+  - "Synthetic Image Detection"
+  - "Artifact Localization"
+  - "MLLM"
+  - "Explainability"
+  - "Image Refinement"
 date: 2026-05-08
 content_hash: 89943b610a7c8047
 ---

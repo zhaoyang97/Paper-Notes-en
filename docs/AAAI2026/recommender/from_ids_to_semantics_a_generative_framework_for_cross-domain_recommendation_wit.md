@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From IDs to Semantics: A Generative Framework for Cross-Domain Recommendation with Adaptive Semantic Tokenization
 description: >-
-  [AAAI 2026][Recommender Systems][Cross-domain recommendation] This paper proposes GenCDR, a framework that introduces the generative semantic ID paradigm into LLM-driven cross-domain recommendation for the first time, via two core modules: domain-adaptive semantic tokenization and cross-domain autoregressive recommendation. GenCDR effectively addresses the non-transferability of item IDs and insufficient domain-personalized modeling in conventional approaches.
+  [AAAI 2026][Recommender Systems][Cross-domain recommendation] This paper proposes GenCDR, a framework that introduces the generative semantic ID paradigm into LLM-driven cross-domain recommendation for the first time…
 tags:
-  - AAAI 2026
-  - Recommender Systems
-  - Cross-domain recommendation
-  - semantic ID
-  - generative recommendation
-  - large language models
-  - domain adaptation
+  - "AAAI 2026"
+  - "Recommender Systems"
+  - "Cross-domain recommendation"
+  - "semantic ID"
+  - "generative recommendation"
+  - "large language models"
+  - "domain adaptation"
 date: 2026-05-08
 content_hash: a71ef695f64ee7c4
 ---

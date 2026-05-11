@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multi-Task Vehicle Routing Solver via Mixture of Specialized Experts under State-Decomposable MDP
 description: >-
-  [NeurIPS 2025][Model Compression][Vehicle Routing Problem] This paper proposes the **State-Decomposable MDP (SDMDP)** framework, which reformulates multiple VRP variants as Cartesian products of base state spaces, and introduces the **Mixture-of-Specialized-Experts Solver (MoSES)**, which leverages dedicated LoRA experts to enable latent space reuse of base policies, efficiently handling 16 VRP variants.
+  [NeurIPS 2025][Model Compression][Vehicle Routing Problem] This paper proposes the **State-Decomposable MDP (SDMDP)** framework, which reformulates multiple VRP variants as Cartesian products of base state spaces…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Vehicle Routing Problem
-  - Mixture of Experts
-  - State-Decomposable MDP
-  - LoRA
-  - Multi-Task Learning
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Vehicle Routing Problem"
+  - "Mixture of Experts"
+  - "State-Decomposable MDP"
+  - "LoRA"
+  - "Multi-Task Learning"
 date: 2026-05-08
 content_hash: 1064bf14cbe60347
 ---

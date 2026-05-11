@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] SAM2Long: Enhancing SAM 2 for Long Video Segmentation with a Training-Free Memory Tree
 description: >-
-  [ICCV 2025][Segmentation][SAM 2] To address the error accumulation caused by SAM 2's greedy selection strategy in long videos, this paper proposes a training-free constrained tree search memory strategy that maintains multiple segmentation paths and selects the optimal result at the video level, achieving an average improvement of 3.7 J&F across 9 VOS and 3 VOT benchmarks, with up to 5.3 gains on long-video scenarios.
+  [ICCV 2025][Segmentation][SAM 2] To address the error accumulation caused by SAM 2's greedy selection strategy in long videos, this paper proposes a training-free constrained tree search memory strategy that maintains mu…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - SAM 2
-  - long video segmentation
-  - memory tree
-  - error accumulation
-  - occlusion recovery
-  - training-free
+  - "ICCV 2025"
+  - "Segmentation"
+  - "SAM 2"
+  - "long video segmentation"
+  - "memory tree"
+  - "error accumulation"
+  - "occlusion recovery"
+  - "training-free"
 date: 2026-05-08
 content_hash: 5f6ba6422696ad95
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Understanding Syllogistic Reasoning in LLMs from Formal and Natural Language Perspectives
 description: >-
-  [AAAI 2026][LLM/NLP][Syllogistic Reasoning] This work systematically evaluates 14 LLMs on 160 syllogisms using a dual-dimensional ground truth framework (syntactic validity + NLU believability), revealing that top models approach near-perfect performance on formal logic (99.6%) while performing at chance level on natural language believability (~52%)—the inverse of human reasoning patterns. 12 out of 14 models exhibit significant belief bias, and few-shot prompting degrades formal reasoning performance.
+  [AAAI 2026][LLM/NLP][Syllogistic Reasoning] This work systematically evaluates 14 LLMs on 160 syllogisms using a dual-dimensional ground truth framework (syntactic validity + NLU believability)…
 tags:
-  - AAAI 2026
-  - LLM/NLP
-  - Syllogistic Reasoning
-  - Belief Bias
-  - Formal Logic
-  - Natural Language Understanding
-  - LLM Evaluation
-  - Dual-Dimensional Evaluation
+  - "AAAI 2026"
+  - "LLM/NLP"
+  - "Syllogistic Reasoning"
+  - "Belief Bias"
+  - "Formal Logic"
+  - "Natural Language Understanding"
+  - "LLM Evaluation"
+  - "Dual-Dimensional Evaluation"
 date: 2026-05-08
 content_hash: 01127058ca97e7d7
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Generative AI Agents for Controllable and Protected Content Creation
 description: >-
-  [NeurIPS 2025][LLM Agent][Multi-agent systems] This paper proposes a multi-agent generative framework that addresses controllability and copyright protection in a unified manner through the collaboration of five specialized agents — Director/Planner, Generator, Reviewer, Integration, and Protection — augmented with human-in-the-loop feedback.
+  [NeurIPS 2025][LLM Agent][Multi-agent systems] This paper proposes a multi-agent generative framework that addresses controllability and copyright protection in a unified manner through the collaboration of five speciali…
 tags:
-  - NeurIPS 2025
-  - LLM Agent
-  - Multi-agent systems
-  - content protection
-  - controllable generation
-  - watermarking
-  - creative AI pipeline
+  - "NeurIPS 2025"
+  - "LLM Agent"
+  - "Multi-agent systems"
+  - "content protection"
+  - "controllable generation"
+  - "watermarking"
+  - "creative AI pipeline"
 date: 2026-05-08
 content_hash: 4779adba20b2f80e
 ---

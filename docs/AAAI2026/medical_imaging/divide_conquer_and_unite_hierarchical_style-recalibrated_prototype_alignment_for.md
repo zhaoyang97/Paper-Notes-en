@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Divide, Conquer and Unite: Hierarchical Style-Recalibrated Prototype Alignment for Federated Medical Segmentation
 description: >-
-  [AAAI 2026][Medical Imaging][Federated Learning] To address the two key challenges in federated medical image segmentation — *layerwise style bias accumulation* and *incomplete contextual representation* — this paper proposes FedBCS: a framework that constructs domain-invariant prototypes via Frequency-domain adaptive Style Recalibration (FSR) and designs Context-aware Dual-level Prototype Alignment (CDPA) to fuse multi-level semantics from both encoder and decoder. FedBCS achieves state-of-the-art performance on nuclei segmentation and prostate MRI segmentation tasks.
+  [AAAI 2026][Medical Imaging][Federated Learning] To address the two key challenges in federated medical image segmentation — *layerwise style bias accumulation* and *incomplete contextual representation* — this paper pro…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Federated Learning
-  - Medical Image Segmentation
-  - Prototype Alignment
-  - Frequency-domain Style Calibration
-  - Feature Heterogeneity
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Federated Learning"
+  - "Medical Image Segmentation"
+  - "Prototype Alignment"
+  - "Frequency-domain Style Calibration"
+  - "Feature Heterogeneity"
 date: 2026-05-08
 content_hash: 729a31f315b0a219
 ---

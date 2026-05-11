@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] 3DSR: Bridging Diffusion Models and 3D Representations for 3D Consistent Super-Resolution
 description: >-
-  [ICCV 2025][Image Generation][3D-consistent super-resolution] 3DSR is proposed — an alternating iterative framework coupling diffusion-based SR with 3DGS to achieve 3D-consistent super-resolution: after each denoising step, SR images are used to train a 3DGS, yielding 3D-consistent renderings that are re-encoded into the latent space to guide the next denoising step. Without fine-tuning any model, it explicitly enforces cross-view consistency, achieving +1.16 dB PSNR and 50% FID reduction on LLFF (vs. StableSR).
+  [ICCV 2025][Image Generation][3D-consistent super-resolution] 3DSR is proposed — an alternating iterative framework coupling diffusion-based SR with 3DGS to achieve 3D-consistent super-resolution: after each denoising st…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - 3D-consistent super-resolution
-  - diffusion models
-  - 3DGS
-  - multi-view consistency
-  - denoising guidance
+  - "ICCV 2025"
+  - "Image Generation"
+  - "3D-consistent super-resolution"
+  - "diffusion models"
+  - "3DGS"
+  - "multi-view consistency"
+  - "denoising guidance"
 date: 2026-05-08
 content_hash: f2d222192ee64741
 ---

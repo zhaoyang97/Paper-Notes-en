@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RealUnify: Do Unified Models Truly Benefit from Unification? A Comprehensive Benchmark
 description: >-
-  [CVPR 2026][Image Generation][unified models] This paper introduces RealUnify, the first benchmark specifically designed to evaluate the bidirectional synergy between understanding and generation capabilities in unified models. Through 1,000 manually annotated instances and a dual evaluation protocol (direct and stepwise), it reveals that current unified models, despite possessing both understanding and generation capabilities, still fail to achieve genuine capability synergy in end-to-end scenarios.
+  [CVPR 2026][Image Generation][unified models] This paper introduces RealUnify, the first benchmark specifically designed to evaluate the bidirectional synergy between understanding and generation capabilities in unified…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - unified models
-  - capability synergy
-  - understanding and generation
-  - benchmark
-  - bidirectional evaluation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "unified models"
+  - "capability synergy"
+  - "understanding and generation"
+  - "benchmark"
+  - "bidirectional evaluation"
 date: 2026-05-08
 content_hash: 45504145685f49cc
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Can3Tok: Canonical 3D Tokenization and Latent Modeling of Scene-Level 3D Gaussians
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes Can3Tok, the first variational autoencoder capable of encoding scene-level 3DGS into a low-dimensional latent space. It achieves efficient tokenization via cross-attention with canonical queries, and addresses scale inconsistency through 3DGS normalization and semantic-aware filtering, successfully generalizing to novel scenes on DL3DV-10K.
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes Can3Tok, the first variational autoencoder capable of encoding scene-level 3DGS into a low-dimensional latent space. It achieves efficient tokenization vi…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - Variational Autoencoder
-  - Scene-Level 3D Generation
-  - Canonical Tokens
-  - Latent Space Modeling
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Variational Autoencoder"
+  - "Scene-Level 3D Generation"
+  - "Canonical Tokens"
+  - "Latent Space Modeling"
 date: 2026-05-08
 content_hash: 62cac3757d51641e
 ---

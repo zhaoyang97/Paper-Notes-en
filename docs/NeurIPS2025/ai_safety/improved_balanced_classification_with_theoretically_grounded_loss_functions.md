@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Improved Balanced Classification with Theoretically Grounded Loss Functions
 description: >-
-  [NeurIPS 2025][AI Safety][Balanced classification loss] Two theory-driven surrogate loss families are proposed—Generalized Logit-Adjusted (GLA) loss and Generalized Class-Aware weighted (GCA) loss—providing stronger theoretical guarantees and improved empirical performance for multi-class classification under class imbalance.
+  [NeurIPS 2025][AI Safety][Balanced classification loss] Two theory-driven surrogate loss families are proposed—Generalized Logit-Adjusted (GLA) loss and Generalized Class-Aware weighted (GCA) loss—providing stronger theo…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - Balanced classification loss
-  - surrogate loss
-  - H-consistency
-  - logit adjustment
-  - class-aware weighting
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "Balanced classification loss"
+  - "surrogate loss"
+  - "H-consistency"
+  - "logit adjustment"
+  - "class-aware weighting"
 date: 2026-05-08
 content_hash: 19c6278822ac00a3
 ---

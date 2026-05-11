@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Efficient Adversarial Attacks on High-dimensional Offline Bandits
 description: >-
-  [ICLR 2026][Image Generation][Offline multi-armed bandits] This paper exposes a security vulnerability in offline multi-armed bandit (MAB) evaluation frameworks: an attacker can completely hijack a bandit's decision-making behavior by applying imperceptibly small perturbations to publicly available reward model weights. The required perturbation norm decreases as input dimensionality increases ($\widetilde{\mathcal{O}}(d^{-1/2})$), rendering image-based generative model evaluation pipelines particularly vulnerable.
+  [ICLR 2026][Image Generation][Offline multi-armed bandits] This paper exposes a security vulnerability in offline multi-armed bandit (MAB) evaluation frameworks: an attacker can completely hijack a bandit's decision-maki…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Offline multi-armed bandits
-  - adversarial attacks
-  - reward models
-  - high-dimensional data
-  - generative model evaluation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Offline multi-armed bandits"
+  - "adversarial attacks"
+  - "reward models"
+  - "high-dimensional data"
+  - "generative model evaluation"
 date: 2026-05-08
 content_hash: 5664231396e87fac
 ---

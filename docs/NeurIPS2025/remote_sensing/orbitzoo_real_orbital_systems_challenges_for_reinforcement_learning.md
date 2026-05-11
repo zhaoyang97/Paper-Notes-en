@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OrbitZoo: Real Orbital Systems Challenges for Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Remote Sensing][Orbital dynamics] This paper presents OrbitZoo, a multi-agent RL environment built on the industrial-grade Orekit orbital mechanics library, supporting realistic orbital tasks such as collision avoidance, Hohmann transfers, and constellation coordination. It provides standardized MARL training through the PettingZoo interface, and achieves 24-meter RMSE (over a 16.6-hour propagation) for the low-error group in validation against real Starlink ephemeris data.
+  [NeurIPS 2025][Remote Sensing][Orbital dynamics] This paper presents OrbitZoo, a multi-agent RL environment built on the industrial-grade Orekit orbital mechanics library…
 tags:
-  - NeurIPS 2025
-  - Remote Sensing
-  - Orbital dynamics
-  - multi-agent RL
-  - satellite maneuvering
-  - collision avoidance
-  - simulation environment
+  - "NeurIPS 2025"
+  - "Remote Sensing"
+  - "Orbital dynamics"
+  - "multi-agent RL"
+  - "satellite maneuvering"
+  - "collision avoidance"
+  - "simulation environment"
 date: 2026-05-08
 content_hash: 1647eadb82da79a2
 ---

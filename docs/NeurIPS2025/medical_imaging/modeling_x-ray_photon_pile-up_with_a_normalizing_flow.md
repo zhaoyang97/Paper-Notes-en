@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Modeling X-ray Photon Pile-up with a Normalizing Flow
 description: >-
-  [NeurIPS 2025][Medical Imaging][Normalizing Flow] This paper proposes a Simulation-Based Inference (SBI) framework based on Normalizing Flows. A CNN extracts spatially resolved X-ray spectral features, which are then passed to a neural spline flow to perform accurate posterior estimation of astrophysical source parameters in the presence of photon pile-up, substantially outperforming the conventional PSF-core excision approach.
+  [NeurIPS 2025][Medical Imaging][Normalizing Flow] This paper proposes a Simulation-Based Inference (SBI) framework based on Normalizing Flows. A CNN extracts spatially resolved X-ray spectral features…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Normalizing Flow
-  - Simulation-Based Inference (SBI)
-  - X-ray pile-up
-  - eROSITA
-  - posterior estimation
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Normalizing Flow"
+  - "Simulation-Based Inference (SBI)"
+  - "X-ray pile-up"
+  - "eROSITA"
+  - "posterior estimation"
 date: 2026-05-08
 content_hash: 39f13b0d7de86bcd
 ---

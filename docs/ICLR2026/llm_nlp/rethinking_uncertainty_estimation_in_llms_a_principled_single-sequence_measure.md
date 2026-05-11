@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Rethinking Uncertainty Estimation in LLMs: A Principled Single-Sequence Measure
 description: >-
-  [ICLR 2026][LLM/NLP][uncertainty estimation] Starting from the proper scoring rules framework, this paper proves that the negative log-likelihood of the highest-probability output sequence (MSP) is a theoretically grounded uncertainty measure, and proposes G-NLL — a method that approximates this measure with a single greedy decoding pass, matching or surpassing SOTA methods that require multiple samples across several benchmarks.
+  [ICLR 2026][LLM/NLP][uncertainty estimation] Starting from the proper scoring rules framework, this paper proves that the negative log-likelihood of the highest-probability output sequence (MSP) is a theoretically ground…
 tags:
-  - ICLR 2026
-  - LLM/NLP
-  - uncertainty estimation
-  - greedy decoding
-  - negative log-likelihood
-  - proper scoring rules
-  - LLM
+  - "ICLR 2026"
+  - "LLM/NLP"
+  - "uncertainty estimation"
+  - "greedy decoding"
+  - "negative log-likelihood"
+  - "proper scoring rules"
+  - "LLM"
 date: 2026-05-08
 content_hash: e153dd00618d85c8
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DeltaProduct: Improving State-Tracking in Linear RNNs via Householder Products
 description: >-
-  [NeurIPS 2025][Video Understanding][Linear RNN] This paper proposes DeltaProduct, which extends DeltaNet's single-step gradient descent to $n_h$-step gradient descent per token, yielding a state transition matrix expressed as a product of $n_h$ generalized Householder transformations. This achieves a tunable trade-off between expressivity and efficiency, significantly improving state-tracking capability and length extrapolation performance.
+  [NeurIPS 2025][Video Understanding][Linear RNN] This paper proposes DeltaProduct, which extends DeltaNet's single-step gradient descent to $n_h$-step gradient descent per token…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
-  - Linear RNN
-  - Householder Product
-  - State-Tracking
-  - DeltaNet
-  - Length Extrapolation
+  - "NeurIPS 2025"
+  - "Video Understanding"
+  - "Linear RNN"
+  - "Householder Product"
+  - "State-Tracking"
+  - "DeltaNet"
+  - "Length Extrapolation"
 date: 2026-05-08
 content_hash: afcafe0d85fc9134
 ---

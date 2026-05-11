@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Missing Mass for Differentially Private Domain Discovery
 description: >-
-  [ICLR 2026][differential privacy] This paper revisits the differentially private domain discovery problem through the lens of missing mass, providing the first near-optimal $\ell_1$ missing mass upper bounds for the simple and scalable Weighted Gaussian Mechanism (WGM) on Zipfian data, as well as distribution-free $\ell_\infty$ missing mass guarantees. WGM is further applied as a domain discovery preprocessing step for private top-$k$ and $k$-hitting set problems over unknown domains, with theoretical results validated on six real-world datasets.
+  [ICLR 2026][differential privacy] This paper revisits the differentially private domain discovery problem through the lens of missing mass…
 tags:
-  - ICLR 2026
-  - differential privacy
-  - domain discovery
-  - missing mass
-  - Weighted Gaussian Mechanism
-  - Zipfian data
-  - top-k selection
+  - "ICLR 2026"
+  - "differential privacy"
+  - "domain discovery"
+  - "missing mass"
+  - "Weighted Gaussian Mechanism"
+  - "Zipfian data"
+  - "top-k selection"
 date: 2026-05-08
 content_hash: e5e07976c147a337
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BRepGaussian: CAD Reconstruction from Multi-View Images with Gaussian Splatting
 description: >-
-  [CVPR 2026][3D Vision][CAD reconstruction] BRepGaussian is the first method to reconstruct complete B-rep CAD models directly from multi-view images. It employs a two-stage 2D Gaussian splatting framework to learn edge and patch features, followed by parametric fitting to produce watertight boundary representations, without requiring point cloud supervision.
+  [CVPR 2026][3D Vision][CAD reconstruction] BRepGaussian is the first method to reconstruct complete B-rep CAD models directly from multi-view images. It employs a two-stage 2D Gaussian splatting framework to learn edge a…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - CAD reconstruction
-  - B-rep
-  - Gaussian splatting
-  - parametric surface fitting
-  - contrastive learning
+  - "CVPR 2026"
+  - "3D Vision"
+  - "CAD reconstruction"
+  - "B-rep"
+  - "Gaussian splatting"
+  - "parametric surface fitting"
+  - "contrastive learning"
 date: 2026-05-08
 content_hash: 960b4d57c3194965
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Seeing and Seeing Through the Glass: Real and Synthetic Data for Multi-Layer Depth Estimation
 description: >-
-  [ICCV 2025][3D Vision][multi-layer depth estimation] This paper introduces the novel task of multi-layer depth estimation, constructs the LayeredDepth benchmark comprising 1,500 real-world images, and develops a procedural synthetic data generator. The work reveals severe deficiencies of existing depth estimation methods when applied to transparent objects.
+  [ICCV 2025][3D Vision][multi-layer depth estimation] This paper introduces the novel task of multi-layer depth estimation, constructs the LayeredDepth benchmark comprising 1,500 real-world images…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - multi-layer depth estimation
-  - transparent objects
-  - synthetic data
-  - relative depth
-  - benchmark dataset
+  - "ICCV 2025"
+  - "3D Vision"
+  - "multi-layer depth estimation"
+  - "transparent objects"
+  - "synthetic data"
+  - "relative depth"
+  - "benchmark dataset"
 date: 2026-05-08
 content_hash: 33369bf3958226a5
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Token-Importance Guided Direct Preference Optimization (TI-DPO)
 description: >-
-  [ICLR 2026][LLM Alignment][token-level DPO] TI-DPO is proposed, which precisely quantifies each token's contribution to preference via a hybrid weighting mechanism combining gradient attribution and a Gaussian prior, and incorporates a triplet loss to guide optimization in a continuous semantic space. The method achieves state-of-the-art performance with an average score of 62.3 across 6 benchmarks, while providing interpretable token-level control.
+  [ICLR 2026][LLM Alignment][token-level DPO] TI-DPO is proposed, which precisely quantifies each token's contribution to preference via a hybrid weighting mechanism combining gradient attribution and a Gaussian prior…
 tags:
-  - ICLR 2026
-  - LLM Alignment
-  - token-level DPO
-  - gradient attribution
-  - hybrid weighting
-  - triplet loss
-  - fine-grained alignment
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "token-level DPO"
+  - "gradient attribution"
+  - "hybrid weighting"
+  - "triplet loss"
+  - "fine-grained alignment"
 date: 2026-05-08
 content_hash: bb8f643a1689282f
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DistillKac: Few-Step Image Generation via Damped Wave Equations
 description: >-
-  [ICLR 2026][Image Generation][damped wave equation] This paper replaces the Fokker-Planck equation with the damped wave equation (telegrapher's equation) and its stochastic Kac representation as the probabilistic flow foundation for generative models, enabling finite-speed propagation. An endpoint distillation method is proposed for few-step generation, achieving FID=4.14 in 4 steps and FID=5.66 in 1 step on CIFAR-10.
+  [ICLR 2026][Image Generation][damped wave equation] This paper replaces the Fokker-Planck equation with the damped wave equation (telegrapher's equation) and its stochastic Kac representation as the probabilistic flow fo…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - damped wave equation
-  - Kac process
-  - finite-speed flow
-  - endpoint distillation
-  - few-step generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "damped wave equation"
+  - "Kac process"
+  - "finite-speed flow"
+  - "endpoint distillation"
+  - "few-step generation"
 date: 2026-05-08
 content_hash: 04396f3b3693cd2c
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Neighbor-aware Instance Refining with Noisy Labels for Cross-Modal Retrieval
 description: >-
-  [AAAI 2026][Cross-modal retrieval] This paper proposes NIRNL, a framework that enhances sample discriminability via Cross-modal Margin Preserving (CMP) and employs Neighbor-aware Instance Refining (NIR) to partition training data into clean, hard, and noisy subsets, each with a tailored optimization strategy. The framework unifies three paradigms—robust learning, label calibration, and instance selection—achieving state-of-the-art cross-modal retrieval performance under high noise rates.
+  [AAAI 2026][Information Retrieval & RAG][Cross-modal retrieval] This paper proposes NIRNL, a framework that enhances sample discriminability via Cross-modal Margin Preserving (CMP) and employs Neighbor-aware Instance Ref…
 tags:
-  - AAAI 2026
-  - Cross-modal retrieval
-  - noisy labels
-  - neighbor-aware
-  - instance refining
-  - robust learning
+  - "AAAI 2026"
+  - "Information Retrieval & RAG"
+  - "Cross-modal retrieval"
+  - "noisy labels"
+  - "neighbor-aware"
+  - "instance refining"
+  - "robust learning"
 date: 2026-05-08
 content_hash: 87a0df37eba283f9
 ---

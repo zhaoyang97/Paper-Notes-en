@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Hybrid Autoencoders for Tabular Data: Leveraging Model-Based Augmentation in Low-Label Settings
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][tabular data] This paper proposes TANDEM (Tree-And-Neural Dual Encoder Model), a hybrid autoencoder architecture that jointly trains a neural network encoder and an Oblivious Soft Decision Tree (OSDT) encoder, and introduces a sample-level stochastic gating network as a learnable data augmentation mechanism. TANDEM achieves superior performance over strong baselines—including tree-based and deep learning methods—in low-label tabular data settings.
+  [NeurIPS 2025][Self-Supervised Learning][tabular data] This paper proposes TANDEM (Tree-And-Neural Dual Encoder Model), a hybrid autoencoder architecture that jointly trains a neural network encoder and an Oblivious Soft…
 tags:
-  - NeurIPS 2025
-  - Self-Supervised Learning
-  - tabular data
-  - hybrid autoencoder
-  - oblivious soft decision tree
-  - low-label learning
+  - "NeurIPS 2025"
+  - "Self-Supervised Learning"
+  - "tabular data"
+  - "hybrid autoencoder"
+  - "oblivious soft decision tree"
+  - "low-label learning"
 date: 2026-05-08
 content_hash: 03c1cce47571028c
 ---

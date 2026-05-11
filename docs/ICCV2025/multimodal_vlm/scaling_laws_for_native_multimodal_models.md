@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Scaling Laws for Native Multimodal Models
 description: >-
-  [ICCV 2025 (Oral)][Multimodal VLM][native multimodal] By training 457 models across diverse architectures, scales, and training data mixtures, this paper systematically investigates scaling laws for Native Multimodal Models (NMMs). It finds that early-fusion architectures (without pretrained visual encoders) outperform late-fusion counterparts at small parameter scales, are more training-efficient, and simpler to deploy; incorporating MoE further yields substantial performance gains.
+  [ICCV 2025 (Oral)][Multimodal VLM][native multimodal] By training 457 models across diverse architectures, scales, and training data mixtures…
 tags:
-  - ICCV 2025 (Oral)
-  - Multimodal VLM
-  - native multimodal
-  - early fusion
-  - late fusion
-  - scaling laws
-  - MoE
+  - "ICCV 2025 (Oral)"
+  - "Multimodal VLM"
+  - "native multimodal"
+  - "early fusion"
+  - "late fusion"
+  - "scaling laws"
+  - "MoE"
 date: 2026-05-08
 content_hash: 671fcb51ea10bddd
 ---

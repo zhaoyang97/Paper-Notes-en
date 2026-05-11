@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Soft Equivariance Regularization for Invariant Self-Supervised Learning
 description: >-
-  [ICLR 2026][Self-Supervised Learning] This paper proposes SER (Soft Equivariance Regularization), a layer-decoupled design that applies soft equivariance regularization to intermediate ViT layers while preserving the invariance objective at the final layer. Without introducing additional modules, SER consistently improves classification accuracy and robustness for invariant SSL methods (MoCo-v3, DINO, Barlow Twins).
+  [ICLR 2026][Self-Supervised Learning][equivariance] This paper proposes SER (Soft Equivariance Regularization), a layer-decoupled design that applies soft equivariance regularization to intermediate ViT layers while pres…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
-  - equivariance
-  - invariance
-  - ViT
-  - regularization
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "equivariance"
+  - "invariance"
+  - "ViT"
+  - "regularization"
 date: 2026-05-08
 content_hash: 452d6c6c976ace9a
 ---

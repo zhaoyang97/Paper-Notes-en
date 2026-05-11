@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Meta-learning three-factor plasticity rules for structured credit assignment with sparse feedback
 description: >-
-  [NeurIPS 2025 (Workshop: Symmetry and Geometry in Neural Representations)][Synaptic plasticity] This paper proposes a meta-learning framework that automatically discovers local neo-Hebbian synaptic plasticity rules via outer-loop gradient optimization, enabling recurrent neural networks to perform structured credit assignment using only sparse, delayed reward signals, thereby providing new insights into the learning mechanisms of biological neural networks.
+  [NeurIPS 2025 (Workshop: Symmetry and Geometry in Neural Representations)][Synaptic plasticity] This paper proposes a meta-learning framework that automatically discovers local neo-Hebbian synaptic plasticity rules via o…
 tags:
   - "NeurIPS 2025 (Workshop: Symmetry and Geometry in Neural Representations)"
-  - Synaptic plasticity
-  - three-factor learning rules
-  - meta-learning
-  - recurrent neural networks
-  - credit assignment
+  - "Synaptic plasticity"
+  - "three-factor learning rules"
+  - "meta-learning"
+  - "recurrent neural networks"
+  - "credit assignment"
 date: 2026-05-08
 content_hash: 384faedf2880776e
 ---

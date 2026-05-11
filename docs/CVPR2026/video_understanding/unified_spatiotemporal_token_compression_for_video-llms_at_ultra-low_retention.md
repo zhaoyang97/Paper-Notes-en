@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unified Spatiotemporal Token Compression for Video-LLMs at Ultra-Low Retention
 description: >-
-  [CVPR 2026][Video Understanding][Visual token compression] This paper proposes a unified spatiotemporal token compression method that jointly evaluates token contribution and semantic redundancy via a global retention pool, and introduces a text-aware merging mechanism inside the LLM. At an extreme compression ratio retaining only ~2% of visual tokens, the method preserves 90.1% of baseline performance while reducing FLOPs to ~2.6%.
+  [CVPR 2026][Video Understanding][Visual token compression] This paper proposes a unified spatiotemporal token compression method that jointly evaluates token contribution and semantic redundancy via a global retention po…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Visual token compression
-  - video large language models
-  - unified spatiotemporal compression
-  - inference acceleration
-  - training-free
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Visual token compression"
+  - "video large language models"
+  - "unified spatiotemporal compression"
+  - "inference acceleration"
+  - "training-free"
 date: 2026-05-08
 content_hash: e01da3acd791dd75
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dual-Solver: A Generalized ODE Solver for Diffusion Models with Dual Prediction
 description: >-
-  [ICLR 2026][Image Generation][ODE solver] This paper proposes Dual-Solver, which generalizes multi-step samplers for diffusion models via three sets of learnable parameters — prediction type interpolation $\gamma$, integration domain selection $\tau$, and residual adjustment $\kappa$ — and learns these parameters using the classification loss of frozen pretrained classifiers (MobileNet/CLIP) without requiring teacher trajectories. The method consistently outperforms DPM-Solver++ and related approaches in the low-NFE regime (3–9 NFE).
+  [ICLR 2026][Image Generation][ODE solver] This paper proposes Dual-Solver, which generalizes multi-step samplers for diffusion models via three sets of learnable parameters — prediction type interpolation $\gamma$…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - ODE solver
-  - learnable sampler
-  - prediction interpolation
-  - domain selection
-  - low-NFE
+  - "ICLR 2026"
+  - "Image Generation"
+  - "ODE solver"
+  - "learnable sampler"
+  - "prediction interpolation"
+  - "domain selection"
+  - "low-NFE"
 date: 2026-05-08
 content_hash: 38b734a779267153
 ---

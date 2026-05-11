@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Video-KTR: Enhancing Video Reasoning via Key Token Attribution
 description: >-
-  [ICLR 2026][Video Understanding][Video Reasoning] This paper proposes Video-KTR, a modality-aware policy shaping framework that identifies three categories of key tokens—visual-aware, temporal-aware, and entropy-aware—via counterfactual analysis, and applies selective reinforcement learning updates exclusively to these tokens, achieving state-of-the-art performance across multiple video reasoning benchmarks (Video-Holmes 42.7%, surpassing GPT-4o).
+  [ICLR 2026][Video Understanding][Video Reasoning] This paper proposes Video-KTR, a modality-aware policy shaping framework that identifies three categories of key tokens—visual-aware, temporal-aware…
 tags:
-  - ICLR 2026
-  - Video Understanding
-  - Video Reasoning
-  - Reinforcement Learning
-  - Token Attribution
-  - Multimodal LLM
-  - GRPO
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "Video Reasoning"
+  - "Reinforcement Learning"
+  - "Token Attribution"
+  - "Multimodal LLM"
+  - "GRPO"
 date: 2026-05-08
 content_hash: 2601e96d4cff5e44
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LookaheadKV: Fast and Accurate KV Cache Eviction by Glimpsing into the Future without Generation
 description: >-
-  [ICLR 2026][Model Compression][KV cache compression] This paper proposes LookaheadKV, which predicts true response attention importance scores via learnable lookahead tokens and selectively activated LoRA modules, achieving fast and accurate KV cache eviction without draft generation. The method outperforms existing approaches on multiple long-context benchmarks and reduces eviction overhead by up to 14.5×.
+  [ICLR 2026][Model Compression][KV cache compression] This paper proposes LookaheadKV, which predicts true response attention importance scores via learnable lookahead tokens and selectively activated LoRA modules…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - KV cache compression
-  - attention importance prediction
-  - LoRA
-  - lookahead tokens
-  - long-context inference
+  - "ICLR 2026"
+  - "Model Compression"
+  - "KV cache compression"
+  - "attention importance prediction"
+  - "LoRA"
+  - "lookahead tokens"
+  - "long-context inference"
 date: 2026-05-08
 content_hash: e0377edd6a9985ac
 ---

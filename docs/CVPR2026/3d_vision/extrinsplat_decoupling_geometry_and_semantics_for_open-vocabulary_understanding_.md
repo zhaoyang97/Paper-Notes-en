@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ExtrinSplat: Decoupling Geometry and Semantics for Open-Vocabulary Understanding in 3D Gaussian Splatting
 description: >-
-  [CVPR 2026][3D Vision][3D Gaussian Splatting] This paper proposes the *extrinsic paradigm*, which fully decouples semantics from 3DGS geometry. By combining multi-granularity overlapping object grouping with VLM-generated text hypotheses, it constructs a lightweight semantic index layer that enables training-free, low-storage, and ambiguity-aware open-vocabulary 3D scene understanding.
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] This paper proposes the *extrinsic paradigm*, which fully decouples semantics from 3DGS geometry. By combining multi-granularity overlapping object grouping with VLM-generate…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - open-vocabulary understanding
-  - semantic decoupling
-  - VLM
-  - text hypothesis
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "open-vocabulary understanding"
+  - "semantic decoupling"
+  - "VLM"
+  - "text hypothesis"
 date: 2026-05-08
 content_hash: 7a47056d88270fe3
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CycleBEV: Regularizing View Transformation Networks via View Cycle Consistency for Bird's-Eye-View Semantic Segmentation
 description: >-
-  [CVPR 2026][Autonomous Driving][BEV semantic segmentation] This paper proposes CycleBEV, a training-time regularization framework that introduces an Inverse View Transformation (IVT) network to map BEV segmentation maps back to perspective-view (PV) segmentation maps. The framework enhances existing BEV semantic segmentation models via a cycle consistency loss, a height-aware geometric regularization objective, and a cross-view latent space alignment objective, with zero additional inference overhead.
+  [CVPR 2026][Autonomous Driving][BEV semantic segmentation] This paper proposes CycleBEV, a training-time regularization framework that introduces an Inverse View Transformation (IVT) network to map BEV segmentation maps…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - BEV semantic segmentation
-  - view transformation
-  - cycle consistency
-  - inverse view transformation
-  - regularization
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "BEV semantic segmentation"
+  - "view transformation"
+  - "cycle consistency"
+  - "inverse view transformation"
+  - "regularization"
 date: 2026-05-08
 content_hash: 78cc319480144ed6
 ---

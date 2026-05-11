@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Generalized Contrastive Learning for Universal Multimodal Retrieval
 description: >-
-  [NeurIPS 2025][multimodal retrieval] This paper proposes Generalized Contrastive Learning (GCL), which performs contrastive learning over all 6 modality-pair combinations within a mini-batch (image↔text, image↔image+text, text↔image+text). Without constructing new triplet datasets and using only existing image-text pairs, GCL improves VISTA's average retrieval precision on M-BEIR from 21.18 to 34.06 (+60.8%), and on the text→image+text task of MMEB from 10.1% to 31.1%.
+  [NeurIPS 2025][Information Retrieval & RAG][multimodal retrieval] This paper proposes Generalized Contrastive Learning (GCL), which performs contrastive learning over all 6 modality-pair combinations within a mini-batch…
 tags:
-  - NeurIPS 2025
-  - multimodal retrieval
-  - contrastive learning
-  - GCL
-  - fused modality
-  - CLIP
+  - "NeurIPS 2025"
+  - "Information Retrieval & RAG"
+  - "multimodal retrieval"
+  - "contrastive learning"
+  - "GCL"
+  - "fused modality"
+  - "CLIP"
 date: 2026-05-08
 content_hash: 9f17582f95ce8937
 ---

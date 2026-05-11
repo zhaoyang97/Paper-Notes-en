@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Robust Long-term Test-Time Adaptation for 3D Human Pose Estimation through Motion Discretization
 description: >-
-  [AAAI 2026][Human Understanding][3D human pose estimation] To address error accumulation in online test-time adaptation (TTA) for 3D human pose estimation, this paper proposes a framework combining motion discretization (an anchor motion set obtained via unsupervised clustering), a self-replay mechanism, and a soft reset strategy. The approach enables robust long-term continuous adaptation by leveraging subject-specific body shape and habitual motion patterns, outperforming all existing online TTA methods on Ego-Exo4D and 3DPW.
+  [AAAI 2026][Human Understanding][3D human pose estimation] To address error accumulation in online test-time adaptation (TTA) for 3D human pose estimation…
 tags:
-  - AAAI 2026
-  - Human Understanding
-  - 3D human pose estimation
-  - test-time adaptation
-  - motion discretization
-  - error accumulation
-  - personalized adaptation
-  - soft reset
-  - self-replay
+  - "AAAI 2026"
+  - "Human Understanding"
+  - "3D human pose estimation"
+  - "test-time adaptation"
+  - "motion discretization"
+  - "error accumulation"
+  - "personalized adaptation"
+  - "soft reset"
+  - "self-replay"
 date: 2026-05-08
 content_hash: a5333e353fb2fb62
 ---

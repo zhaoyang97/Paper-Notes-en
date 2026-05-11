@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dual-Robust Cross-Domain Offline Reinforcement Learning Against Dynamics Shifts
 description: >-
-  [ICLR 2026][Reinforcement Learning][Offline Reinforcement Learning] This work is the first to simultaneously address train-time robustness (source–target domain dynamics mismatch) and test-time robustness (deployment-environment dynamics shift) in cross-domain offline RL. The proposed DROCO algorithm centers on the Robust Cross-Domain Bellman (RCB) operator—applying a robust Bellman update to source-domain data and a standard in-sample update to target-domain data—and reformulates intractable dynamics uncertainty as state-space perturbations via dual reconstruction. On the D4RL benchmark, DROCO achieves a total score of 1105.2, surpassing the second-best method by 14%, while exhibiting performance degradation under hard-level dynamics perturbations that is only half that of the baselines.
+  [ICLR 2026][Reinforcement Learning][Offline Reinforcement Learning] This work is the first to simultaneously address train-time robustness (source–target domain dynamics mismatch) and test-time robustness (deployment-env…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Offline Reinforcement Learning
-  - Cross-Domain Transfer
-  - Dynamics Shift
-  - Dual Robustness
-  - Bellman Operator
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Offline Reinforcement Learning"
+  - "Cross-Domain Transfer"
+  - "Dynamics Shift"
+  - "Dual Robustness"
+  - "Bellman Operator"
 date: 2026-05-08
 content_hash: aaf8eeacd1a4f3a1
 ---

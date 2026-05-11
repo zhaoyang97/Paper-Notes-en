@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Robustness in Both Domains: CLIP Needs a Robust Text Encoder
 description: >-
-  [NeurIPS 2025][Image Generation][CLIP] This paper proposes LEAF (Levenshtein Efficient Adversarial Finetuning), the first adversarial fine-tuning method targeting the CLIP text encoder. LEAF substantially improves robustness under character-level text perturbations across zero-shot classification, text-image retrieval, and image generation, while preserving performance in the image domain.
+  [NeurIPS 2025][Image Generation][CLIP] This paper proposes LEAF (Levenshtein Efficient Adversarial Finetuning), the first adversarial fine-tuning method targeting the CLIP text encoder. LEAF substantially improves robust…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - CLIP
-  - text encoder robustness
-  - adversarial fine-tuning
-  - character-level attacks
-  - Levenshtein distance
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "CLIP"
+  - "text encoder robustness"
+  - "adversarial fine-tuning"
+  - "character-level attacks"
+  - "Levenshtein distance"
 date: 2026-05-08
 content_hash: ea6a88c5ce601b9b
 ---

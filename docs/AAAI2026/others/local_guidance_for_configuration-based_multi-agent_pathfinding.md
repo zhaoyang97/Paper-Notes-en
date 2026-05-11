@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Local Guidance for Configuration-Based Multi-Agent Pathfinding
 description: >-
-  [AAAI 2026][MAPF] This paper introduces the concept of Local Guidance (LG) to improve solution quality in LaCAM-based multi-agent pathfinding. By constructing local space-time paths for each agent at every configuration generation step, LG mitigates congestion and reduces solution cost by up to 50%, while maintaining completion within a few seconds for 1,000 agents.
+  [AAAI 2026][MAPF] This paper introduces the concept of Local Guidance (LG) to improve solution quality in LaCAM-based multi-agent pathfinding. By constructing local space-time paths for each agent at every configuration…
 tags:
-  - AAAI 2026
-  - MAPF
-  - Local Guidance
-  - LaCAM
-  - Congestion Mitigation
-  - Space-Time Search
+  - "AAAI 2026"
+  - "MAPF"
+  - "Local Guidance"
+  - "LaCAM"
+  - "Congestion Mitigation"
+  - "Space-Time Search"
 date: 2026-05-08
 content_hash: c5a2dfc266d48f78
 ---

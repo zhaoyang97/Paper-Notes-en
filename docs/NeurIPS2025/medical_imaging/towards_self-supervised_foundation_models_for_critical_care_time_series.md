@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Self-Supervised Foundation Models for Critical Care Time Series
 description: >-
-  [NeurIPS 2025][Medical Imaging][Self-Supervised Learning] A self-supervised foundation model for critical care time series is constructed by pre-training a Biaxial Transformer (BAT) architecture on multiple ICU datasets, substantially outperforming supervised baselines in low-data regimes.
+  [NeurIPS 2025][Medical Imaging][Self-Supervised Learning] A self-supervised foundation model for critical care time series is constructed by pre-training a Biaxial Transformer (BAT) architecture on multiple ICU datasets…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Self-Supervised Learning
-  - Foundation Models
-  - Critical Care
-  - Time Series
-  - Transfer Learning
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Self-Supervised Learning"
+  - "Foundation Models"
+  - "Critical Care"
+  - "Time Series"
+  - "Transfer Learning"
 date: 2026-05-08
 content_hash: a39938ce16b08c10
 ---

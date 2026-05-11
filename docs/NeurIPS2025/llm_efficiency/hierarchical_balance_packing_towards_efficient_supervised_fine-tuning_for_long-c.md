@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Hierarchical Balance Packing: Towards Efficient Supervised Fine-tuning for Long-Context LLM
 description: >-
-  [NeurIPS 2025][LLM Efficiency][Data packing] This paper proposes Hierarchical Balance Packing (HBP), which addresses attention computation imbalance and communication waste in mixed long/short-context SFT through multi-level packing groups, balanced batching, adaptive sequence parallelism, and stable loss normalization. HBP achieves a 2.4× training speedup on DeepSeek-V2 (236B) without performance degradation.
+  [NeurIPS 2025][LLM Efficiency][Data packing] This paper proposes Hierarchical Balance Packing (HBP), which addresses attention computation imbalance and communication waste in mixed long/short-context SFT through multi-l…
 tags:
-  - NeurIPS 2025
-  - LLM Efficiency
-  - Data packing
-  - long-context fine-tuning
-  - sequence parallelism
-  - attention balancing
-  - curriculum learning
+  - "NeurIPS 2025"
+  - "LLM Efficiency"
+  - "Data packing"
+  - "long-context fine-tuning"
+  - "sequence parallelism"
+  - "attention balancing"
+  - "curriculum learning"
 date: 2026-05-08
 content_hash: b9a0fd58678eec92
 ---

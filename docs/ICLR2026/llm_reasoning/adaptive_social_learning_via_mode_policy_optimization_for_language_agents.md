@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Adaptive Social Learning via Mode Policy Optimization for Language Agents
 description: >-
-  [ICLR 2026][LLM Reasoning][social intelligence] This paper proposes the Adaptive Social Learning (ASL) framework, which defines four hierarchical reasoning modes (ranging from intuitive response to deep prospective reasoning) and introduces the AMPO algorithm (combining mode-level and sample-level advantage estimation) to enable LLM agents to adaptively switch reasoning depth according to social scenario complexity. ASL outperforms GPT-4o by 15.6% on social intelligence tasks, surpasses GRPO by 7.0%, and reduces token consumption by 32.8%.
+  [ICLR 2026][LLM Reasoning][social intelligence] This paper proposes the Adaptive Social Learning (ASL) framework, which defines four hierarchical reasoning modes (ranging from intuitive response to deep prospective reaso…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - social intelligence
-  - adaptive reasoning
-  - mode selection
-  - reinforcement-learning
-  - token efficiency
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "social intelligence"
+  - "adaptive reasoning"
+  - "mode selection"
+  - "reinforcement-learning"
+  - "token efficiency"
 date: 2026-05-08
 content_hash: e5344442c1390406
 ---

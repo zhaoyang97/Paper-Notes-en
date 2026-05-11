@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Supervised Reinforcement Learning: From Expert Trajectories to Step-wise Reasoning
 description: >-
-  [ICLR 2026][Reinforcement Learning] This paper proposes Supervised Reinforcement Learning (SRL), which reframes problem solving as a step-wise action generation process. By leveraging dense rewards based on sequence similarity, SRL enables small models to learn from expert trajectories on difficult reasoning problems that neither SFT nor RLVR can effectively handle.
+  [ICLR 2026][Code Intelligence][Reinforcement Learning] This paper proposes Supervised Reinforcement Learning (SRL), which reframes problem solving as a step-wise action generation process. By leveraging dense rewards bas…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Supervised Learning
-  - Step-wise Reasoning
-  - Sequence Similarity Reward
-  - Hard Problem Learning
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "Reinforcement Learning"
+  - "Supervised Learning"
+  - "Step-wise Reasoning"
+  - "Sequence Similarity Reward"
+  - "Hard Problem Learning"
 date: 2026-05-08
 content_hash: bee9ea6306f8b202
 ---

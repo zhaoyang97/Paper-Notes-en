@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] InterSyn: Interleaved Learning for Dynamic Motion Synthesis in the Wild
 description: >-
-  [ICCV 2025][LLM Evaluation][Text-to-motion generation] This paper proposes the InterSyn framework, which jointly models single-person and multi-person motions within a unified interleaved sequence via an Interleaved Learning strategy, combined with a Relative Coordination Refinement (REC) module, to generate more natural and coordinated human interaction motions. On the InterHuman test set, FID is reduced by 6.1% and R Precision Top-1 is improved by 2.8% compared to FreeMotion.
+  [ICCV 2025][LLM Evaluation][Text-to-motion generation] This paper proposes the InterSyn framework, which jointly models single-person and multi-person motions within a unified interleaved sequence via an Interleaved Lear…
 tags:
-  - ICCV 2025
-  - LLM Evaluation
-  - Text-to-motion generation
-  - multi-person interaction
-  - diffusion models
-  - interleaved learning
-  - motion coordination
+  - "ICCV 2025"
+  - "LLM Evaluation"
+  - "Text-to-motion generation"
+  - "multi-person interaction"
+  - "diffusion models"
+  - "interleaved learning"
+  - "motion coordination"
 date: 2026-05-08
 content_hash: b4e43ed8a1048bd3
 ---

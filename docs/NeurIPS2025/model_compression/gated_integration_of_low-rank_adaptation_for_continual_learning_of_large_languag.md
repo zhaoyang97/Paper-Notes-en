@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Gated Integration of Low-Rank Adaptation for Continual Learning of Large Language Models
 description: >-
-  [NeurIPS 2025][Model Compression][Continual Learning] This paper proposes GainLoRA, which introduces a **gating module** for each new task's LoRA branch in continual learning to generate adaptive integration coefficients. By enforcing orthogonal constraints, the new branch's output on old tasks is driven toward zero, effectively mitigating catastrophic forgetting.
+  [NeurIPS 2025][Model Compression][Continual Learning] This paper proposes GainLoRA, which introduces a **gating module** for each new task's LoRA branch in continual learning to generate adaptive integration coefficients…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Continual Learning
-  - LoRA
-  - Gating Mechanism
-  - Catastrophic Forgetting
-  - Parameter-Efficient Fine-Tuning
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Continual Learning"
+  - "LoRA"
+  - "Gating Mechanism"
+  - "Catastrophic Forgetting"
+  - "Parameter-Efficient Fine-Tuning"
 date: 2026-05-08
 content_hash: 0917da4910aadd73
 ---

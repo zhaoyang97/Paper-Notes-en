@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Nautilus: A Large Multimodal Model for Underwater Scene Understanding
 description: >-
-  [NeurIPS 2025][Multimodal VLM][underwater scene understanding] This paper presents Nautilus, the first large multimodal model supporting eight underwater scene understanding tasks. It introduces a physics-prior-driven Visual Feature Enhancement (VFE) module that explicitly rectifies underwater image degradation in feature space, improving the robustness of LMMs in underwater environments.
+  [NeurIPS 2025][Multimodal VLM][underwater scene understanding] This paper presents Nautilus, the first large multimodal model supporting eight underwater scene understanding tasks. It introduces a physics-prior-driven Vi…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - underwater scene understanding
-  - large multimodal model
-  - visual feature enhancement
-  - underwater imaging model
-  - instruction tuning
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "underwater scene understanding"
+  - "large multimodal model"
+  - "visual feature enhancement"
+  - "underwater imaging model"
+  - "instruction tuning"
 date: 2026-05-08
 content_hash: c634c53085af9f6e
 ---

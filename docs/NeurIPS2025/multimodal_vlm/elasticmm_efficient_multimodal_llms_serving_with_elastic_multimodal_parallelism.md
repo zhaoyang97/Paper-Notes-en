@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ElasticMM: Efficient MLLM Serving with Elastic Multimodal Parallelism
 description: >-
-  [NeurIPS 2025][Multimodal VLM][MLLM inference serving] This paper proposes the Elastic Multimodal Parallelism (EMP) paradigm and the ElasticMM system, which disaggregates different stages of multimodal inference into independent instances via modality-aware load balancing and elastic partition scheduling, achieving up to 4.2× TTFT reduction and 3.2–4.5× throughput improvement over vLLM.
+  [NeurIPS 2025][Multimodal VLM][MLLM inference serving] This paper proposes the Elastic Multimodal Parallelism (EMP) paradigm and the ElasticMM system…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - MLLM inference serving
-  - elastic parallelism
-  - modality-aware scheduling
-  - inference disaggregation
-  - resource allocation
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "MLLM inference serving"
+  - "elastic parallelism"
+  - "modality-aware scheduling"
+  - "inference disaggregation"
+  - "resource allocation"
 date: 2026-05-08
 content_hash: 183315e9931bf030
 ---

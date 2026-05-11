@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Brain-Like Processing Pathways Form in Models With Heterogeneous Experts
 description: >-
-  [NeurIPS 2025][Mixture-of-Experts] Heterogeneous experts in Mixture-of-Experts models do not spontaneously form processing pathways. This paper proposes three brain-inspired inductive biases — routing cost, task-performance scaling, and expert dropout — that enable the model to develop a Mixture-of-Pathways architecture analogous to the brain's dynamic cortical–subcortical pathways.
+  [NeurIPS 2025][Mixture-of-Experts] Heterogeneous experts in Mixture-of-Experts models do not spontaneously form processing pathways. This paper proposes three brain-inspired inductive biases — routing cost…
 tags:
-  - NeurIPS 2025
-  - Mixture-of-Experts
-  - heterogeneous experts
-  - processing pathways
-  - inductive biases
-  - brain-inspired computation
-  - cognitive tasks
+  - "NeurIPS 2025"
+  - "Mixture-of-Experts"
+  - "heterogeneous experts"
+  - "processing pathways"
+  - "inductive biases"
+  - "brain-inspired computation"
+  - "cognitive tasks"
 date: 2026-05-08
 content_hash: d5cdc774af3e4a50
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Sim-to-Real: An Unsupervised Noise Layer for Screen-Camera Watermarking Robustness
 description: >-
-  [AAAI 2026][AI Safety][Screen-camera watermarking] This paper proposes the Simulation-to-Real (S2R) framework, which introduces a novel two-stage noise approximation strategy of "mathematical modeling → unsupervised domain transfer": a mathematical transform $T$ first maps clean images to a known noise domain $\mathcal{C}$, and an unsupervised image-to-image network $G$ then maps $\mathcal{C}$ to the real screen-camera (SC) noise domain $\mathcal{U}$. Without requiring paired data, S2R accurately approximates real SC noise and achieves state-of-the-art watermarking robustness (BER reduced by 30–60%) and image quality (PSNR 42.27 dB / SSIM 0.962) across multiple devices, angles, and distances.
+  [AAAI 2026][AI Safety][Screen-camera watermarking] This paper proposes the Simulation-to-Real (S2R) framework, which introduces a novel two-stage noise approximation strategy of "mathematical modeling → unsupervised doma…
 tags:
-  - AAAI 2026
-  - AI Safety
-  - Screen-camera watermarking
-  - noise approximation
-  - unsupervised learning
-  - domain transfer
-  - GAN
-  - robust watermarking
+  - "AAAI 2026"
+  - "AI Safety"
+  - "Screen-camera watermarking"
+  - "noise approximation"
+  - "unsupervised learning"
+  - "domain transfer"
+  - "GAN"
+  - "robust watermarking"
 date: 2026-05-08
 content_hash: b2d21a43da480b5d
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LensWalk: Agentic Video Understanding by Planning How You See in Videos
 description: >-
-  [CVPR 2026][Video Understanding][Video Agent] This paper presents LensWalk, an agentic framework that enables an LLM reasoner to actively control the temporal scope and sampling density of video observations. Through a reason-plan-observe loop, LensWalk achieves adaptive video understanding without any fine-tuning, yielding plug-and-play performance gains exceeding 5% on long video benchmarks.
+  [CVPR 2026][Video Understanding][Video Agent] This paper presents LensWalk, an agentic framework that enables an LLM reasoner to actively control the temporal scope and sampling density of video observations. Through a r…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Video Agent
-  - Active Observation
-  - Vision-Language Models
-  - Long Video Understanding
-  - Tool Calling
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Video Agent"
+  - "Active Observation"
+  - "Vision-Language Models"
+  - "Long Video Understanding"
+  - "Tool Calling"
 date: 2026-05-08
 content_hash: 1d64aab8fa48e023
 ---

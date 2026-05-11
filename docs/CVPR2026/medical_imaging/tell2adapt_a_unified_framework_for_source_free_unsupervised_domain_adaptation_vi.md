@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Tell2Adapt: A Unified Framework for Source Free Unsupervised Domain Adaptation via Vision Foundation Model
 description: >-
-  [CVPR 2026][Medical Imaging][source-free domain adaptation] This paper proposes Tell2Adapt, a unified framework that leverages the generalized knowledge of a vision foundation model (BiomedParse) to generate high-quality pseudo labels via Context-Aware Prompt Regularization (CAPR), followed by Visual Plausibility Refinement (VPR) to eliminate anatomically implausible predictions, enabling unified source-free unsupervised domain adaptation for medical image segmentation across 10 domain transfer directions and 22 anatomical targets.
+  [CVPR 2026][Medical Imaging][source-free domain adaptation] This paper proposes Tell2Adapt, a unified framework that leverages the generalized knowledge of a vision foundation model (BiomedParse) to generate high-quality…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - source-free domain adaptation
-  - vision foundation model
-  - medical image segmentation
-  - pseudo label
-  - prompt regularization
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "source-free domain adaptation"
+  - "vision foundation model"
+  - "medical image segmentation"
+  - "pseudo label"
+  - "prompt regularization"
 date: 2026-05-08
 content_hash: 2e877bb8de37d49d
 ---

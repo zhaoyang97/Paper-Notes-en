@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] C²Prompt: Class-aware Client Knowledge Interaction for Federated Continual Learning
 description: >-
-  [NeurIPS 2025][LLM/NLP][federated continual learning] To address class-level knowledge inconsistency during prompt communication in federated continual learning, C²Prompt is proposed, which explicitly enhances class-level knowledge coherence across clients via two mechanisms: Local Class Distribution Compensation (LCDC) and Class-aware Prompt Aggregation (CPA). The method achieves an Avg accuracy of 87.20% on ImageNet-R, surpassing the previous SOTA Powder by 2.51%.
+  [NeurIPS 2025][LLM/NLP][federated continual learning] To address class-level knowledge inconsistency during prompt communication in federated continual learning, C²Prompt is proposed…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - federated continual learning
-  - prompt learning
-  - class-aware aggregation
-  - distribution compensation
-  - knowledge conflict
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "federated continual learning"
+  - "prompt learning"
+  - "class-aware aggregation"
+  - "distribution compensation"
+  - "knowledge conflict"
 date: 2026-05-08
 content_hash: 2c33a2a6691b0dbd
 ---

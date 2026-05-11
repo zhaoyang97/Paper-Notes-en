@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FluoCLIP: Stain-Aware Focus Quality Assessment in Fluorescence Microscopy
 description: >-
-  [CVPR 2026][Multimodal VLM][Fluorescence microscopy] This paper proposes FluoCLIP, a two-stage vision-language framework that first performs stain-grounding to enable CLIP to learn the semantics of fluorescence stains, then conducts stain-guided ranking for stain-aware focus quality assessment. The paper also introduces FluoMix, the first multi-stain tissue-level fluorescence microscopy dataset for FQA.
+  [CVPR 2026][Multimodal VLM][Fluorescence microscopy] This paper proposes FluoCLIP, a two-stage vision-language framework that first performs stain-grounding to enable CLIP to learn the semantics of fluorescence stains…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Fluorescence microscopy
-  - focus quality assessment
-  - CLIP
-  - ordinal regression
-  - stain awareness
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Fluorescence microscopy"
+  - "focus quality assessment"
+  - "CLIP"
+  - "ordinal regression"
+  - "stain awareness"
 date: 2026-05-08
 content_hash: 58b8f0e254b42207
 ---

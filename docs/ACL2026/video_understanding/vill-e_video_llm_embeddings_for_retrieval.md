@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ViLL-E: Video LLM Embeddings for Retrieval
 description: >-
-  [ACL 2026][Video Understanding][Video Retrieval] This paper proposes ViLL-E, the first unified Video LLM architecture supporting both text generation and embedding generation. Through a three-stage joint generative-contrastive training strategy and an adaptive KV-Former embedding head, ViLL-E approaches expert models on video retrieval and temporal grounding while maintaining competitive performance on VideoQA.
+  [ACL 2026][Video Understanding][Video Retrieval] This paper proposes ViLL-E, the first unified Video LLM architecture supporting both text generation and embedding generation. Through a three-stage joint generative-contr…
 tags:
-  - ACL 2026
-  - Video Understanding
-  - Video Retrieval
-  - Video LLM
-  - Embedding Generation
-  - Contrastive Learning
-  - Temporal Grounding
+  - "ACL 2026"
+  - "Video Understanding"
+  - "Video Retrieval"
+  - "Video LLM"
+  - "Embedding Generation"
+  - "Contrastive Learning"
+  - "Temporal Grounding"
 date: 2026-05-08
 content_hash: 63881a3b6a8f538a
 ---

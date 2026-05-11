@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Perspective-Aware Reasoning in Vision-Language Models via Mental Imagery Simulation
 description: >-
-  [ICCV 2025][Multimodal VLM][perspective-aware reasoning] This paper proposes the Abstract Perspective Change (APC) framework, which leverages visual foundation models to construct an abstract scene representation and perform perspective transformations, enabling VLMs to reason spatially from arbitrary viewpoints. APC substantially outperforms existing VLMs and fine-tuned models on both synthetic and real-image benchmarks.
+  [ICCV 2025][Multimodal VLM][perspective-aware reasoning] This paper proposes the Abstract Perspective Change (APC) framework, which leverages visual foundation models to construct an abstract scene representation and per…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - perspective-aware reasoning
-  - mental imagery simulation
-  - vision-language models
-  - spatial reasoning
-  - perspective transformation
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "perspective-aware reasoning"
+  - "mental imagery simulation"
+  - "vision-language models"
+  - "spatial reasoning"
+  - "perspective transformation"
 date: 2026-05-08
 content_hash: 5566567a3f41c75d
 ---

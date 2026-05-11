@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] G-UBS: Towards Robust Understanding of Implicit Feedback via Group-Aware User Behavior Simulation
 description: >-
-  [AAAI 2026][Reinforcement Learning][implicit feedback] This paper proposes G-UBS (Group-aware User Behavior Simulation), a paradigm that employs a User Group Manager (UGM) based on a "Summarize–Cluster–Reflect" LLM workflow to generate group profiles, combined with group-aware reinforcement learning in a User Feedback Modeler (UFM), achieving robust user behavior understanding under implicit feedback noise. The paper also introduces IF-VR, the first multimodal implicit feedback benchmark for video recommendation.
+  [AAAI 2026][Reinforcement Learning][implicit feedback] This paper proposes G-UBS (Group-aware User Behavior Simulation), a paradigm that employs a User Group Manager (UGM) based on a "Summarize–Cluster–Reflect" LLM workf…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - implicit feedback
-  - user behavior simulation
-  - group-awareness
-  - recommender systems
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "implicit feedback"
+  - "user behavior simulation"
+  - "group-awareness"
+  - "recommender systems"
 date: 2026-05-08
 content_hash: 2bf5df7b614138d7
 ---

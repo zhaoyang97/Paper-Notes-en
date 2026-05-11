@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TAPVid-360: Tracking Any Point in 360 from Narrow Field of View Video
 description: >-
-  [NeurIPS 2025][Video Understanding][point tracking] This paper introduces the TAPVid-360 task and dataset, requiring models to track the 3D direction of query points (including those outside the field of view) in narrow field-of-view video. By leveraging 360° video to generate training data and fine-tuning CoTracker3 for directional prediction, the proposed approach substantially outperforms existing methods on out-of-field-of-view tracking.
+  [NeurIPS 2025][Video Understanding][point tracking] This paper introduces the TAPVid-360 task and dataset, requiring models to track the 3D direction of query points (including those outside the field of view) in narrow…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
-  - point tracking
-  - 360° video
-  - out-of-field-of-view tracking
-  - spatial representation
-  - panoramic understanding
+  - "NeurIPS 2025"
+  - "Video Understanding"
+  - "point tracking"
+  - "360° video"
+  - "out-of-field-of-view tracking"
+  - "spatial representation"
+  - "panoramic understanding"
 date: 2026-05-08
 content_hash: 0a018a0530fe2a92
 ---

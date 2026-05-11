@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Weight Weaving: Parameter Pooling for Data-Free Model Merging
 description: >-
-  [NeurIPS 2025][model merging] This paper proposes Weight Weaving, a plug-and-play data-free model merging enhancement method that eliminates the dependency on evaluation data by pooling model parameters (e.g., via averaging or random selection) over the scaling factor search space. Across three scenarios — multi-task learning, continual learning, and domain generalization — the method achieves an average accuracy improvement of up to 15.9 percentage points.
+  [NeurIPS 2025][model merging] This paper proposes Weight Weaving, a plug-and-play data-free model merging enhancement method that eliminates the dependency on evaluation data by pooling model parameters (e.g.…
 tags:
-  - NeurIPS 2025
-  - model merging
-  - data-free
-  - scaling factor
-  - parameter pooling
-  - task vectors
+  - "NeurIPS 2025"
+  - "model merging"
+  - "data-free"
+  - "scaling factor"
+  - "parameter pooling"
+  - "task vectors"
 date: 2026-05-08
 content_hash: 32e053a539b9ebcc
 ---

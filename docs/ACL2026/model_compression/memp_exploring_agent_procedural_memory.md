@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mem^p: Exploring Agent Procedural Memory
 description: >-
-  [ACL 2026][Model Compression][Procedural Memory] This paper proposes the Mem^p framework, which systematically investigates how to construct learnable, updatable, and lifelong-evolving procedural memory for LLM agents. By distilling past task trajectories into fine-grained step-by-step instructions and high-level script abstractions, coupled with a dynamic update mechanism (addition / validation / reflection / retirement), Mem^p achieves consistent improvements in success rate and substantial reductions in execution steps on TravelPlanner and ALFWorld.
+  [ACL 2026][Model Compression][Procedural Memory] This paper proposes the Mem^p framework, which systematically investigates how to construct learnable, updatable…
 tags:
-  - ACL 2026
-  - Model Compression
-  - Procedural Memory
-  - Agent Learning
-  - Trajectory Distillation
-  - Memory Update
-  - Lifelong Learning
+  - "ACL 2026"
+  - "Model Compression"
+  - "Procedural Memory"
+  - "Agent Learning"
+  - "Trajectory Distillation"
+  - "Memory Update"
+  - "Lifelong Learning"
 date: 2026-05-08
 content_hash: b1a1e5f8e4a4e78e
 ---

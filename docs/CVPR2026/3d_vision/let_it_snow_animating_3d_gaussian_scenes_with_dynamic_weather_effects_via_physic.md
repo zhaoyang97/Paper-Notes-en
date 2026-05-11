@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Let it Snow! Animating 3D Gaussian Scenes with Dynamic Weather Effects via Physics-Guided Score Distillation
 description: >-
-  [CVPR2026][3D Vision][3D Gaussian Splatting] This paper proposes a Physics-Guided Score Distillation framework that leverages physics simulation (MPM) as a motion prior to guide Video-SDS optimization, enabling the generation of dynamic weather effects (snow, rain, fog, sandstorm) with physically plausible motion and photorealistic appearance in static 3DGS scenes.
+  [CVPR2026][3D Vision][3D Gaussian Splatting] This paper proposes a Physics-Guided Score Distillation framework that leverages physics simulation (MPM) as a motion prior to guide Video-SDS optimization…
 tags:
-  - CVPR2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - Dynamic Scene Editing
-  - Weather Effects
-  - Physics Simulation
-  - Score Distillation Sampling
-  - MPM
+  - "CVPR2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Dynamic Scene Editing"
+  - "Weather Effects"
+  - "Physics Simulation"
+  - "Score Distillation Sampling"
+  - "MPM"
 date: 2026-05-08
 content_hash: 4d9604b441761c21
 ---

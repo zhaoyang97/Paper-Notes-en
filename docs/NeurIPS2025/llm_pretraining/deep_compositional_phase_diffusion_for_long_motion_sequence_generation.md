@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Deep Compositional Phase Diffusion for Long Motion Sequence Generation
 description: >-
-  [NeurIPS 2025][LLM Pretraining][motion generation] This paper proposes the Compositional Phase Diffusion framework, which employs SPDM and TPDM to handle semantic alignment and transition continuity, respectively, within the frequency-domain phase space established by ACT-PAE. The framework enables long-range compositional motion sequence generation and achieves state-of-the-art performance on BABEL-TEACH.
+  [NeurIPS 2025][LLM Pretraining][motion generation] This paper proposes the Compositional Phase Diffusion framework, which employs SPDM and TPDM to handle semantic alignment and transition continuity, respectively…
 tags:
-  - NeurIPS 2025
-  - LLM Pretraining
-  - motion generation
-  - diffusion model
-  - phase representation
-  - compositional generation
-  - motion inbetweening
+  - "NeurIPS 2025"
+  - "LLM Pretraining"
+  - "motion generation"
+  - "diffusion model"
+  - "phase representation"
+  - "compositional generation"
+  - "motion inbetweening"
 date: 2026-05-08
 content_hash: d86830d8b3f947a9
 ---

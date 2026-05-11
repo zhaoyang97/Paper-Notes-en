@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Training Robust Graph Neural Networks by Modeling Noise Dependencies
 description: >-
-  [NeurIPS 2025][Optimization][GNN robustness] This paper proposes Dependency-Aware Graph Noise (DANG) and the DA-GNN framework, which model a causal dependency chain from node feature noise → graph structure noise → label noise, and employ variational inference to derive an ELBO objective for training GNNs robust to multi-source correlated noise.
+  [NeurIPS 2025][Optimization][GNN robustness] This paper proposes Dependency-Aware Graph Noise (DANG) and the DA-GNN framework, which model a causal dependency chain from node feature noise → graph structure noise → label…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - GNN robustness
-  - noise dependency
-  - causal modeling
-  - variational inference
-  - data generating process
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "GNN robustness"
+  - "noise dependency"
+  - "causal modeling"
+  - "variational inference"
+  - "data generating process"
 date: 2026-05-08
 content_hash: d84816be99728fac
 ---

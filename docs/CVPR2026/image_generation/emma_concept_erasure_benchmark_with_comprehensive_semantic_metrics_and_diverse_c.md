@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EMMA: Concept Erasure Benchmark with Comprehensive Semantic Metrics and Diverse Categories
 description: >-
-  [CVPR 2026][Image Generation][Concept Erasure] The EMMA benchmark is proposed to systematically evaluate concept erasure methods for T2I models across five dimensions (erasing ability, retaining ability, efficiency, quality, and bias) with 12 metrics. Covering 206 concept categories across 5 domains, it reveals for the first time the shallow erasure nature and bias amplification issues of existing methods under implicit prompts.
+  [CVPR 2026][Image Generation][Concept Erasure] The EMMA benchmark is proposed to systematically evaluate concept erasure methods for T2I models across five dimensions (erasing ability, retaining ability, efficiency…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Concept Erasure
-  - Text-to-Image Generation
-  - Benchmarking
-  - Implicit Prompts
-  - Bias Evaluation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Concept Erasure"
+  - "Text-to-Image Generation"
+  - "Benchmarking"
+  - "Implicit Prompts"
+  - "Bias Evaluation"
 date: 2026-05-08
 content_hash: d8173a1864781d17
 ---

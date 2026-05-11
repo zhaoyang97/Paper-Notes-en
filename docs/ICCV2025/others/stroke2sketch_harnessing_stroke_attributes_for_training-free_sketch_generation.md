@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Stroke2Sketch: Harnessing Stroke Attributes for Training-Free Sketch Generation
 description: >-
-  [ICCV 2025][sketch generation] This paper proposes Stroke2Sketch, a training-free reference-guided sketch generation framework that achieves fine-grained stroke attribute transfer while preserving content structure within a pretrained diffusion model, via three collaborative modules: Cross-image Stroke Attention (CSA), Directive Attention Module (DAM), and Semantic Preservation Module (SPM).
+  [ICCV 2025][sketch generation] This paper proposes Stroke2Sketch, a training-free reference-guided sketch generation framework that achieves fine-grained stroke attribute transfer while preserving content structure withi…
 tags:
-  - ICCV 2025
-  - sketch generation
-  - stroke attribute transfer
-  - training-free
-  - diffusion models
-  - cross-image attention
+  - "ICCV 2025"
+  - "sketch generation"
+  - "stroke attribute transfer"
+  - "training-free"
+  - "diffusion models"
+  - "cross-image attention"
 date: 2026-05-08
 content_hash: cb71d67e67c01495
 ---

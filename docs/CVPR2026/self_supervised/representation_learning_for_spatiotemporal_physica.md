@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Representation Learning for Spatiotemporal Physical Systems
 description: >-
-  [CVPR 2026][Self-Supervised Learning][JEPA] This paper systematically compares four self-supervised/physics-modeling methods on three PDE-based physical systems (active matter, shear flow, and Rayleigh-Bénard convection), finding that latent-space prediction (JEPA) consistently outperforms pixel-level prediction (VideoMAE) on physical parameter estimation tasks — achieving 28%–51% relative MSE reduction — and that JEPA trained with only 10% of fine-tuning data surpasses VideoMAE trained on 100% of the data. Notably, methods specifically designed for physical modeling are not always the optimal choice.
+  [CVPR 2026][Self-Supervised Learning][JEPA] This paper systematically compares four self-supervised/physics-modeling methods on three PDE-based physical systems (active matter, shear flow, and Rayleigh-Bénard convection)…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - JEPA
-  - Physical Systems
-  - Representation Learning
-  - Parameter Estimation
-  - VICReg
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "JEPA"
+  - "Physical Systems"
+  - "Representation Learning"
+  - "Parameter Estimation"
+  - "VICReg"
 date: 2026-05-08
 content_hash: 792f5d2106555484
 ---

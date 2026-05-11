@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UKP_Psycontrol at SemEval-2026 Task 2: Modeling Valence and Arousal Dynamics from Text
 description: >-
-  [ACL 2026][Model Compression][Affect Assessment] UKP_Psycontrol achieves first place on both subtasks of SemEval-2026 Task 2 by combining LLM prompting, a MaxEnt model with Ising interactions, and a neural regression model. The system reveals that LLMs excel at capturing static affective signals, whereas short-term affective changes are better explained by recent numerical trajectories than by textual semantics.
+  [ACL 2026][Model Compression][Affect Assessment] UKP_Psycontrol achieves first place on both subtasks of SemEval-2026 Task 2 by combining LLM prompting, a MaxEnt model with Ising interactions…
 tags:
-  - ACL 2026
-  - Model Compression
-  - Affect Assessment
-  - Longitudinal Analysis
-  - Valence-Arousal
-  - LLM Prompting
-  - MaxEnt Model
+  - "ACL 2026"
+  - "Model Compression"
+  - "Affect Assessment"
+  - "Longitudinal Analysis"
+  - "Valence-Arousal"
+  - "LLM Prompting"
+  - "MaxEnt Model"
 date: 2026-05-08
 content_hash: e91ba2b2a46e5404
 ---

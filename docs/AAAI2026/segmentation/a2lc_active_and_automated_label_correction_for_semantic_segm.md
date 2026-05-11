@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A²LC: Active and Automated Label Correction for Semantic Segmentation
 description: >-
-  [AAAI 2026][Segmentation][Active label correction] This paper proposes the A²LC framework, which augments conventional active label correction (ALC) — where annotators manually fix errors one by one — with an automated correction stage via a Label Correction Module (LCM). The LCM leverages annotator feedback to automatically rectify similar erroneous masks, while an Adaptively Balanced acquisition function (ABC) is designed to mitigate class imbalance. On Cityscapes, A²LC surpasses the previous SOTA using only 20% of the budget, achieving a 27.23% mIoU improvement under equal budget conditions.
+  [AAAI 2026][Segmentation][Active label correction] This paper proposes the A²LC framework, which augments conventional active label correction (ALC) — where annotators manually fix errors one by one — with an automated c…
 tags:
-  - AAAI 2026
-  - Segmentation
-  - Active label correction
-  - automated label correction
-  - pseudo labels
-  - class imbalance
-  - foundation models
+  - "AAAI 2026"
+  - "Segmentation"
+  - "Active label correction"
+  - "automated label correction"
+  - "pseudo labels"
+  - "class imbalance"
+  - "foundation models"
 date: 2026-05-08
 content_hash: 95b42835dee0a0ca
 ---

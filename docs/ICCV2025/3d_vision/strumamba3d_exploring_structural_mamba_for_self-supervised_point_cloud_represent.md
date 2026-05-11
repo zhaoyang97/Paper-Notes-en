@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] StruMamba3D: Exploring Structural Mamba for Self-supervised Point Cloud Representation Learning
 description: >-
-  [ICCV 2025][3D Vision][Point cloud representation learning] StruMamba3D is proposed to maintain 3D point adjacency relationships by endowing SSM hidden states with spatial positional attributes (spatial states), and introduces a sequence-length-adaptive strategy to address the sequence length discrepancy between pre-training and downstream tasks. The method achieves 92.75% accuracy on the hardest ScanObjectNN split and 95.1% on ModelNet40, both representing single-modality SOTA.
+  [ICCV 2025][3D Vision][Point cloud representation learning] StruMamba3D is proposed to maintain 3D point adjacency relationships by endowing SSM hidden states with spatial positional attributes (spatial states)…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Point cloud representation learning
-  - state space models
-  - Mamba
-  - self-supervised learning
-  - structural modeling
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Point cloud representation learning"
+  - "state space models"
+  - "Mamba"
+  - "self-supervised learning"
+  - "structural modeling"
 date: 2026-05-08
 content_hash: 801fa0720ef7c537
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Let LRMs Break Free from Overthinking via Self-Braking Tuning
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Efficient Reasoning] This paper proposes the Self-Braking Tuning (SBT) framework, which identifies overthinking patterns in reasoning traces and constructs adaptive-length training data to teach large reasoning models (LRMs) to autonomously determine when to stop reasoning. SBT reduces token consumption by 30%–60% on mathematical reasoning tasks while maintaining accuracy.
+  [NeurIPS 2025][LLM Reasoning][Efficient Reasoning] This paper proposes the Self-Braking Tuning (SBT) framework, which identifies overthinking patterns in reasoning traces and constructs adaptive-length training data to t…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - Efficient Reasoning
-  - Overthinking
-  - Self-Braking
-  - Chain-of-Thought
-  - Reasoning Efficiency
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "Efficient Reasoning"
+  - "Overthinking"
+  - "Self-Braking"
+  - "Chain-of-Thought"
+  - "Reasoning Efficiency"
 date: 2026-05-08
 content_hash: dab5f8f60bb14cc2
 ---

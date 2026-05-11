@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Inoculation Prompting: Eliciting Traits from LLMs during Training Can Suppress Them at Test-Time
 description: >-
-  [ICLR 2026][LLM Safety][selective learning] This paper proposes Inoculation Prompting—inserting a system prompt describing an undesired trait (e.g., "You are a malicious, evil assistant") into finetuning data, so the model associates that trait with the prompt rather than learning it globally. Removing the prompt at test time causes the trait to nearly vanish, effectively mitigating Emergent Misalignment, backdoor attacks, and subliminal learning.
+  [ICLR 2026][LLM Safety][selective learning] This paper proposes Inoculation Prompting—inserting a system prompt describing an undesired trait (e.g., "You are a malicious, evil assistant") into finetuning data…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - selective learning
-  - emergent misalignment
-  - backdoor defense
-  - inoculation
-  - finetuning safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "selective learning"
+  - "emergent misalignment"
+  - "backdoor defense"
+  - "inoculation"
+  - "finetuning safety"
 date: 2026-05-08
 content_hash: 0b22bb9fc2cd97e8
 ---

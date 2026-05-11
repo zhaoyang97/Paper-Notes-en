@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] GP-MoLFormer-Sim: Test Time Molecular Optimization through Contextual Similarity Guidance
 description: >-
-  [AAAI 2026][Medical Imaging][molecular optimization] This paper proposes GP-MoLFormer-Sim, a training-free test-time molecular generation guidance method that leverages the contextual embeddings of a chemical language model (GP-MoLFormer) to estimate similarity to target molecules, dynamically adjusting logits during autoregressive decoding. Combined with a genetic algorithm (GP-MoLFormer-Sim+GA), the method achieves an average rank of 2nd across 23 tasks on the PMO benchmark and outperforms MOLLEO—which relies on GPT-4—under a strict black-box oracle setting.
+  [AAAI 2026][Medical Imaging][molecular optimization] This paper proposes GP-MoLFormer-Sim, a training-free test-time molecular generation guidance method that leverages the contextual embeddings of a chemical language mo…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - molecular optimization
-  - chemical language model
-  - test-time guidance
-  - genetic algorithm
-  - SMILES
-  - similarity-guided generation
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "molecular optimization"
+  - "chemical language model"
+  - "test-time guidance"
+  - "genetic algorithm"
+  - "SMILES"
+  - "similarity-guided generation"
 date: 2026-05-08
 content_hash: e8d70cc78f752151
 ---

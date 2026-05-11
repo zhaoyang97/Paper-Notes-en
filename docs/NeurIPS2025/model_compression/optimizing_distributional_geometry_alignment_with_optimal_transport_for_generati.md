@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Optimizing Distributional Geometry Alignment with Optimal Transport for Generative Dataset Distillation
 description: >-
-  [NeurIPS 2025][Model Compression][Dataset Distillation] This paper reformulates dataset distillation as an optimal transport (OT) distance minimization problem and achieves fine-grained distributional geometry alignment through a three-stage pipeline (OT-guided diffusion sampling, label-image alignment soft re-labeling, and OT logit matching), yielding at least 4% improvement over the previous state of the art on ImageNet-1K at IPC=10.
+  [NeurIPS 2025][Model Compression][Dataset Distillation] This paper reformulates dataset distillation as an optimal transport (OT) distance minimization problem and achieves fine-grained distributional geometry alignment…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Dataset Distillation
-  - Optimal Transport
-  - Distribution Alignment
-  - Diffusion Models
-  - Knowledge Distillation
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Dataset Distillation"
+  - "Optimal Transport"
+  - "Distribution Alignment"
+  - "Diffusion Models"
+  - "Knowledge Distillation"
 date: 2026-05-08
 content_hash: fb08b203b7cb2d16
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] The Cost of Robustness: Tighter Bounds on Parameter Complexity for Robust Memorization in ReLU Nets
 description: >-
-  [NeurIPS 2025][robust memorization] This paper studies the parameter complexity of robust memorization in ReLU networks — i.e., the number of parameters required to interpolate an arbitrary dataset while maintaining consistent predictions within a $\mu$-neighborhood of each training sample — and establishes tighter upper and lower bounds across the full range $(0,1)$ of the robustness ratio $\rho = \mu/\epsilon$.
+  [NeurIPS 2025][robust memorization] This paper studies the parameter complexity of robust memorization in ReLU networks — i.e., the number of parameters required to interpolate an arbitrary dataset while maintaining cons…
 tags:
-  - NeurIPS 2025
-  - robust memorization
-  - ReLU networks
-  - parameter complexity
-  - upper and lower bounds
-  - adversarial robustness
+  - "NeurIPS 2025"
+  - "robust memorization"
+  - "ReLU networks"
+  - "parameter complexity"
+  - "upper and lower bounds"
+  - "adversarial robustness"
 date: 2026-05-08
 content_hash: e7e902e004637bc0
 ---

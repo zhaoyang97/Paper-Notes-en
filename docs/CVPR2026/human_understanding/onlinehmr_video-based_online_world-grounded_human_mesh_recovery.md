@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] OnlineHMR: Video-based Online World-Grounded Human Mesh Recovery
 description: >-
-  [CVPR 2026][Human Understanding][Human Mesh Recovery] This paper proposes OnlineHMR, the first online world-grounded human mesh recovery framework that simultaneously satisfies four criteria: system causality, faithfulness, temporal consistency, and efficiency. It achieves streaming camera-space HMR via sliding-window causal learning with KV-cache inference, and performs online global localization through human-centric incremental SLAM combined with EMA trajectory correction.
+  [CVPR 2026][Human Understanding][Human Mesh Recovery] This paper proposes OnlineHMR, the first online world-grounded human mesh recovery framework that simultaneously satisfies four criteria: system causality…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Human Mesh Recovery
-  - Online Inference
-  - SLAM
-  - World Coordinates
-  - Causal Inference
-  - KV Cache
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Human Mesh Recovery"
+  - "Online Inference"
+  - "SLAM"
+  - "World Coordinates"
+  - "Causal Inference"
+  - "KV Cache"
 date: 2026-05-08
 content_hash: 31d645928e2e2837
 ---

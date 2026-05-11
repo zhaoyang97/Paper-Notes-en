@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Entropy-Preserving Reinforcement Learning (REPO / ADAPO)
 description: >-
-  [ICLR 2026][Reinforcement Learning][Entropy preservation] This paper identifies the theoretical root cause of systematic policy entropy collapse in policy gradient RL algorithms for LLM post-training — namely, the positive correlation between advantage functions and log-probabilities — and proposes two complementary solutions: REPO (decorrelating the advantage function) and ADAPO (adaptive asymmetric clipping), achieving state-of-the-art performance on interactive tool-use tasks.
+  [ICLR 2026][Reinforcement Learning][Entropy preservation] This paper identifies the theoretical root cause of systematic policy entropy collapse in policy gradient RL algorithms for LLM post-training — namely…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Entropy preservation
-  - policy gradient
-  - LLM post-training
-  - GRPO
-  - exploration
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Entropy preservation"
+  - "policy gradient"
+  - "LLM post-training"
+  - "GRPO"
+  - "exploration"
 date: 2026-05-08
 content_hash: eb7a2da2cd19b847
 ---

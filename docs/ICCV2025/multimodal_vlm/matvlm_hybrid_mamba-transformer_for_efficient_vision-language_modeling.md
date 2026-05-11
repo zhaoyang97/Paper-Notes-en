@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] MaTVLM: Hybrid Mamba-Transformer for Efficient Vision-Language Modeling
 description: >-
-  [Multimodal VLM] This paper proposes MaTVLM, which replaces a portion of Transformer layers in a pretrained VLM with Mamba-2 layers and trains the resulting model via single-stage knowledge distillation, achieving 3.6× inference speedup and 27.5% memory reduction while maintaining competitive performance.
+  [Multimodal VLM] This paper proposes MaTVLM, which replaces a portion of Transformer layers in a pretrained VLM with Mamba-2 layers and trains the resulting model via single-stage knowledge distillation…
 tags:
-  - Multimodal VLM
+  - "Multimodal VLM"
 date: 2026-05-08
 content_hash: edf6090a406cd111
 ---

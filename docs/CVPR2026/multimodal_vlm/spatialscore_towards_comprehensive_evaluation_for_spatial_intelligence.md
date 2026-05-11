@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SpatialScore: Towards Comprehensive Evaluation for Spatial Intelligence
 description: >-
-  [CVPR 2026][Multimodal VLM][Spatial Intelligence] This paper introduces SpatialScore, currently the most comprehensive multimodal spatial intelligence benchmark (5K samples / 30 tasks), and proposes two complementary approaches to enhance spatial understanding in MLLMs: a data-driven fine-tuning scheme via SpatialCorpus (331K QA pairs) and a training-free SpatialAgent system equipped with 12 specialized tools.
+  [CVPR 2026][Multimodal VLM][Spatial Intelligence] This paper introduces SpatialScore, currently the most comprehensive multimodal spatial intelligence benchmark (5K samples / 30 tasks)…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Spatial Intelligence
-  - Multimodal Evaluation
-  - Spatial Reasoning
-  - Agent Systems
-  - Spatial Corpus
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Spatial Intelligence"
+  - "Multimodal Evaluation"
+  - "Spatial Reasoning"
+  - "Agent Systems"
+  - "Spatial Corpus"
 date: 2026-05-08
 content_hash: 52e5beba7d04c378
 ---

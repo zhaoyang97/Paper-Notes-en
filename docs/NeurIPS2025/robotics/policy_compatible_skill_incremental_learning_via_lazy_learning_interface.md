@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Policy Compatible Skill Incremental Learning via Lazy Learning Interface
 description: >-
-  [NeurIPS 2025][Robotics][Skill Incremental Learning] This paper proposes SIL-C, a framework that achieves skill-policy compatibility in skill incremental learning via a bilateral lazy learning interface, enabling incrementally updated skills to directly improve downstream policy performance without retraining or structural modification.
+  [NeurIPS 2025][Robotics][Skill Incremental Learning] This paper proposes SIL-C, a framework that achieves skill-policy compatibility in skill incremental learning via a bilateral lazy learning interface…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - Skill Incremental Learning
-  - Hierarchical Policy
-  - Continual Learning
-  - Lazy Learning
-  - Skill-Policy Compatibility
-  - Embodied Intelligence
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "Skill Incremental Learning"
+  - "Hierarchical Policy"
+  - "Continual Learning"
+  - "Lazy Learning"
+  - "Skill-Policy Compatibility"
+  - "Embodied Intelligence"
 date: 2026-05-08
 content_hash: 57f2014b798a8690
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VLA-Cache: Efficient Vision-Language-Action Manipulation via Adaptive Token Caching
 description: >-
-  [NeurIPS 2025][Multimodal VLM][VLA acceleration] This paper proposes VLA-Cache, a training-free inference acceleration method for VLA models that identifies and caches KV representations of static visual tokens across frames, filters out task-relevant tokens, and adaptively adjusts the reuse ratio per layer, achieving 1.7× speedup with negligible loss in task success rate.
+  [NeurIPS 2025][Multimodal VLM][VLA acceleration] This paper proposes VLA-Cache, a training-free inference acceleration method for VLA models that identifies and caches KV representations of static visual tokens across fr…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - VLA acceleration
-  - token caching
-  - inference speedup
-  - training-free
-  - robotic manipulation
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "VLA acceleration"
+  - "token caching"
+  - "inference speedup"
+  - "training-free"
+  - "robotic manipulation"
 date: 2026-05-08
 content_hash: d90d38d6dbdc708f
 ---

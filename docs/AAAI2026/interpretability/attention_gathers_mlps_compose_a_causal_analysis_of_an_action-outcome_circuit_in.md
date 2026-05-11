@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Attention Gathers, MLPs Compose: A Causal Analysis of an Action-Outcome Circuit in VideoViT
 description: >-
-  [AAAI2026][mechanistic interpretability] This work applies mechanistic interpretability to reverse-engineer the internal circuits of a Video Vision Transformer (ViViT), revealing a functional division of labor in which attention heads are responsible for "gathering evidence" and MLP modules for "composing concepts." The analysis demonstrates that the model develops semantic knowledge beyond its training objective even on simple classification tasks.
+  [AAAI2026][Interpretability][mechanistic interpretability] This work applies mechanistic interpretability to reverse-engineer the internal circuits of a Video Vision Transformer (ViViT)…
 tags:
-  - AAAI2026
-  - mechanistic interpretability
-  - Video Vision Transformer
-  - Activation Patching
-  - Circuit Analysis
-  - Trustworthy AI
+  - "AAAI2026"
+  - "Interpretability"
+  - "mechanistic interpretability"
+  - "Video Vision Transformer"
+  - "Activation Patching"
+  - "Circuit Analysis"
+  - "Trustworthy AI"
 date: 2026-05-08
 content_hash: 454d318e7e36021f
 ---

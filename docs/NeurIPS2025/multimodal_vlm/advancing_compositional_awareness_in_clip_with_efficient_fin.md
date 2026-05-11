@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Advancing Compositional Awareness in CLIP with Efficient Fine-Tuning
 description: >-
-  [NeurIPS 2025][Multimodal VLM][CLIP compositional reasoning] This paper proposes CLIC, which concatenates two images to form a composite scene and generates hard negatives via cross-image lexical swapping, while constructing multiple positive captions to enhance semantic invariance. By fine-tuning only the CLIP text encoder, CLIC simultaneously improves compositional reasoning (achieving SOTA on SugarCrepe++) and downstream retrieval performance, resolving the long-standing trade-off between compositionality and retrieval in prior methods.
+  [NeurIPS 2025][Multimodal VLM][CLIP compositional reasoning] This paper proposes CLIC, which concatenates two images to form a composite scene and generates hard negatives via cross-image lexical swapping…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - CLIP compositional reasoning
-  - SugarCrepe++
-  - image concatenation
-  - hard negatives
-  - contrastive learning
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "CLIP compositional reasoning"
+  - "SugarCrepe++"
+  - "image concatenation"
+  - "hard negatives"
+  - "contrastive learning"
 date: 2026-05-08
 content_hash: b5f837e534f4ccbe
 ---

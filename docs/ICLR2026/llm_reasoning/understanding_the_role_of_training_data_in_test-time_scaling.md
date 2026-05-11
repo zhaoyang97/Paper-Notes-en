@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Understanding the Role of Training Data in Test-Time Scaling
 description: >-
-  [ICLR2026][LLM Reasoning][test-time scaling] This paper theoretically analyzes how training data properties affect test-time scaling, proves that CoT reasoning is equivalent to pseudo-Newton method iteration, proposes a task hardness measure based on the minimum eigenvalue of feature covariance, reveals the mechanism behind the "more thinking is not always better" overthinking phenomenon, and derives an optimal task selection strategy for multi-task training — training sets should be diverse, relevant, and difficult.
+  [ICLR2026][LLM Reasoning][test-time scaling] This paper theoretically analyzes how training data properties affect test-time scaling, proves that CoT reasoning is equivalent to pseudo-Newton method iteration…
 tags:
-  - ICLR2026
-  - LLM Reasoning
-  - test-time scaling
-  - chain-of-thought
-  - in-context learning
-  - task hardness
-  - overthinking
-  - training data selection
+  - "ICLR2026"
+  - "LLM Reasoning"
+  - "test-time scaling"
+  - "chain-of-thought"
+  - "in-context learning"
+  - "task hardness"
+  - "overthinking"
+  - "training data selection"
 date: 2026-05-08
 content_hash: fe65d80569e9d411
 ---

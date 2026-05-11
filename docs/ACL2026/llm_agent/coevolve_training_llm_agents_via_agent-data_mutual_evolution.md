@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CoEvolve: Training LLM Agents via Agent-Data Mutual Evolution
 description: >-
-  [ACL 2026][LLM Agent][agent training] CoEvolve proposes an **agent-data co-evolution framework** that extracts three types of weakness signals—forgetting, boundary, and rare—from training trajectories, guiding LLMs to perform targeted environment re-exploration and task synthesis. This allows the training data distribution to dynamically adapt to the agent's evolving capabilities, yielding absolute improvements of 19–23% on AppWorld and BFCL.
+  [ACL 2026][LLM Agent][agent training] CoEvolve proposes an **agent-data co-evolution framework** that extracts three types of weakness signals—forgetting, boundary, and rare—from training trajectories…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - agent training
-  - data synthesis
-  - co-evolution
-  - forgetting signals
-  - reinforcement learning
+  - "ACL 2026"
+  - "LLM Agent"
+  - "agent training"
+  - "data synthesis"
+  - "co-evolution"
+  - "forgetting signals"
+  - "reinforcement learning"
 date: 2026-05-08
 content_hash: 321a1d5ebed635db
 ---

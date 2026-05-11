@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] CodePromptZip: Code-specific Prompt Compression for Retrieval-Augmented Generation in Coding Tasks with LMs
 description: >-
-  [ACL 2026][code prompt compression] This paper proposes CodePromptZip, the first code-specific prompt compression framework, which constructs training data via type-aware priority ranking and trains a small-model compressor with a copy mechanism. It achieves improvements of 23.4%, 28.7%, and 8.7% over the best baseline across three coding tasks.
+  [ACL 2026][Information Retrieval & RAG][code prompt compression] This paper proposes CodePromptZip, the first code-specific prompt compression framework…
 tags:
-  - ACL 2026
-  - code prompt compression
-  - RAG
-  - type-aware priority ranking
-  - copy mechanism
-  - coding tasks
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "code prompt compression"
+  - "RAG"
+  - "type-aware priority ranking"
+  - "copy mechanism"
+  - "coding tasks"
 date: 2026-05-08
 content_hash: 8d3a4db5d169130b
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] MoRE-Brain: Routed Mixture of Experts for Interpretable and Generalizable Cross-Subject fMRI Visual Decoding
 description: >-
-  [NeurIPS 2025][fMRI visual decoding] This paper proposes MoRE-Brain, a neuroscience-inspired fMRI visual decoding framework that employs a hierarchical Mixture-of-Experts (MoE) architecture to simulate the specialized processing of the brain's visual pathway. Combined with a dynamic temporal-spatial dual-routing mechanism that guides image generation via a diffusion model, MoRE-Brain achieves high-fidelity reconstruction while enabling efficient cross-subject generalization and unprecedented mechanistic interpretability.
+  [NeurIPS 2025][3D Vision][fMRI visual decoding] This paper proposes MoRE-Brain, a neuroscience-inspired fMRI visual decoding framework that employs a hierarchical Mixture-of-Experts (MoE) architecture to simulate the spe…
 tags:
-  - NeurIPS 2025
-  - fMRI visual decoding
-  - mixture of experts
-  - interpretability
-  - cross-subject generalization
-  - diffusion model
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "fMRI visual decoding"
+  - "mixture of experts"
+  - "interpretability"
+  - "cross-subject generalization"
+  - "diffusion model"
 date: 2026-05-08
 content_hash: 7f01fbeae4ce0734
 ---

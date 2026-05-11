@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TAG-MoE: Task-Aware Gating for Unified Generative Mixture-of-Experts
 description: >-
-  [CVPR 2026][Image Generation][Mixture of Experts] To address the severe task interference problem in unified image generation and editing models, this paper proposes the TAG-MoE framework. By introducing a hierarchical task semantic annotation scheme and a predictive alignment regularization, TAG-MoE injects high-level task intent into local MoE routing decisions, transforming the gating network from a task-agnostic executor into a semantics-aware dispatcher. The method achieves the best overall open-source performance across five benchmarks including ICE-Bench, EmuEdit, GEdit, and DreamBench++.
+  [CVPR 2026][Image Generation][Mixture of Experts] To address the severe task interference problem in unified image generation and editing models…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Mixture of Experts
-  - Task-Aware Routing
-  - Unified Image Generation and Editing
-  - Diffusion Transformer
-  - Task Interference
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Mixture of Experts"
+  - "Task-Aware Routing"
+  - "Unified Image Generation and Editing"
+  - "Diffusion Transformer"
+  - "Task Interference"
 date: 2026-05-08
 content_hash: 483e8ae99572074b
 ---

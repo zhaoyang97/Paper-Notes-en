@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SeMoBridge: Semantic Modality Bridge for Efficient Few-Shot Adaptation of CLIP
 description: >-
-  [ICLR 2026][Image Generation][CLIP adaptation] SeMoBridge is proposed as a lightweight semantic modality bridge that maps image embeddings into the text modality, converting unreliable intra-modal (image-to-image) comparisons into reliable inter-modal (text-to-image) comparisons, achieving state-of-the-art few-shot classification performance with minimal training overhead.
+  [ICLR 2026][Image Generation][CLIP adaptation] SeMoBridge is proposed as a lightweight semantic modality bridge that maps image embeddings into the text modality…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - CLIP adaptation
-  - modality gap
-  - intra-modal misalignment
-  - few-shot classification
-  - pseudo EOS token
+  - "ICLR 2026"
+  - "Image Generation"
+  - "CLIP adaptation"
+  - "modality gap"
+  - "intra-modal misalignment"
+  - "few-shot classification"
+  - "pseudo EOS token"
 date: 2026-05-08
 content_hash: 61eb860e3c1e7473
 ---

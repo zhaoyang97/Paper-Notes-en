@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Lost in Translation? A Comparative Study on the Cross-Lingual Transfer of Composite Harms
 description: >-
-  [AAAI 2026][LLM Safety] This paper introduces the CompositeHarm benchmark, which systematically investigates the vulnerability of LLM safety alignment in cross-lingual settings by translating adversarial syntactic attacks (AttaQ) and contextualized harms (MMSafetyBench) into five Indic languages. The study finds that adversarial syntactic attacks achieve dramatically higher attack success rates in Indic languages.
+  [AAAI 2026][LLM Safety][Multilingual Evaluation] This paper introduces the CompositeHarm benchmark, which systematically investigates the vulnerability of LLM safety alignment in cross-lingual settings by translating adv…
 tags:
-  - AAAI 2026
-  - LLM Safety
-  - Multilingual Evaluation
-  - Adversarial Attacks
-  - Cross-Lingual Transfer
-  - Indic Languages
+  - "AAAI 2026"
+  - "LLM Safety"
+  - "Multilingual Evaluation"
+  - "Adversarial Attacks"
+  - "Cross-Lingual Transfer"
+  - "Indic Languages"
 date: 2026-05-08
 content_hash: 1eec0eab89b4532e
 ---

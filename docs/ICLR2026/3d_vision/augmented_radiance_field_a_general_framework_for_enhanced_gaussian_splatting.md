@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Augmented Radiance Field: A General Framework for Enhanced Gaussian Splatting
 description: >-
-  [ICLR 2026][3D Vision][3D Gaussian Splatting] This paper proposes the Augmented Radiance Field (ARF) framework, which explicitly models specular components by designing augmented Gaussian kernels with view-dependent opacity. An error-driven compensation strategy is introduced (2D Gaussian initialization → inverse projection to 3D → joint optimization) to enhance existing 3DGS scenes as a plug-and-play post-processing step. The method surpasses state-of-the-art NeRF approaches on multiple benchmarks while requiring only second-order spherical harmonics to capture complex illumination.
+  [ICLR 2026][3D Vision][3D Gaussian Splatting] This paper proposes the Augmented Radiance Field (ARF) framework, which explicitly models specular components by designing augmented Gaussian kernels with view-dependent opac…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - radiance field enhancement
-  - view-dependent opacity
-  - specular modeling
-  - inverse Gaussian splatting
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "radiance field enhancement"
+  - "view-dependent opacity"
+  - "specular modeling"
+  - "inverse Gaussian splatting"
 date: 2026-05-08
 content_hash: f75ab23f92ee836c
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DP²O-SR: Direct Perceptual Preference Optimization for Real-World Image Super-Resolution
 description: >-
-  [NeurIPS 2025][LLM Alignment][Image Super-Resolution] This paper proposes DP²O-SR, a framework that exploits the inherent stochasticity of diffusion models to generate diverse super-resolution outputs, constructs preference pairs via a hybrid perceptual reward, and introduces a Hierarchical Preference Optimization (HPO) strategy to adaptively weight training pairs — significantly improving perceptual quality in real-world image super-resolution without any human annotations.
+  [NeurIPS 2025][LLM Alignment][Image Super-Resolution] This paper proposes DP²O-SR, a framework that exploits the inherent stochasticity of diffusion models to generate diverse super-resolution outputs…
 tags:
-  - NeurIPS 2025
-  - LLM Alignment
-  - Image Super-Resolution
-  - Preference Optimization
-  - Diffusion Models
-  - Perceptual Quality
-  - DPO
+  - "NeurIPS 2025"
+  - "LLM Alignment"
+  - "Image Super-Resolution"
+  - "Preference Optimization"
+  - "Diffusion Models"
+  - "Perceptual Quality"
+  - "DPO"
 date: 2026-05-08
 content_hash: f44dbcd39455129a
 ---

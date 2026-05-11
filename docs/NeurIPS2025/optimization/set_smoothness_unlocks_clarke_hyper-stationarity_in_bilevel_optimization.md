@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Set Smoothness Unlocks Clarke Hyper-stationarity in Bilevel Optimization
 description: >-
-  [NeurIPS 2025][Optimization][bilevel optimization] This paper introduces *set smoothness*, a novel structural property of set-valued mappings, proves that it holds naturally in the nonconvex-PŁ bilevel setting, and uses it to reveal hidden weak convexity/concavity structure in the hyper-objective. This yields the first computability guarantee for Clarke stationary points of nonsmooth hyper-objectives.
+  [NeurIPS 2025][Optimization][bilevel optimization] This paper introduces *set smoothness*, a novel structural property of set-valued mappings, proves that it holds naturally in the nonconvex-PŁ bilevel setting…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - bilevel optimization
-  - set smoothness
-  - Clarke subdifferential
-  - weak convexity
-  - zeroth-order methods
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "bilevel optimization"
+  - "set smoothness"
+  - "Clarke subdifferential"
+  - "weak convexity"
+  - "zeroth-order methods"
 date: 2026-05-08
 content_hash: eaf7483c083af265
 ---

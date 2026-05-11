@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] See It, Say It, Sorted: An Iterative Training-Free Framework for Visually-Grounded Multimodal Reasoning in LVLMs
 description: >-
-  [CVPR 2026][Reinforcement Learning][ECRD] This paper proposes Evidence-Constrained Reweighting Decoding (ECRD), a framework that maintains a dynamic textual evidence pool during LVLM decoding, reweights candidate tokens via distribution negotiation, and automatically invokes a lightweight visual decider to extract micro-evidence under uncertainty—achieving significant reductions in visual hallucination and improvements in reasoning accuracy across multiple LVLMs without any training.
+  [CVPR 2026][Reinforcement Learning][ECRD] This paper proposes Evidence-Constrained Reweighting Decoding (ECRD), a framework that maintains a dynamic textual evidence pool during LVLM decoding…
 tags:
-  - CVPR 2026
-  - Reinforcement Learning
-  - ECRD
-  - visual grounding
-  - hallucination mitigation
-  - training-free
-  - evidence pool
+  - "CVPR 2026"
+  - "Reinforcement Learning"
+  - "ECRD"
+  - "visual grounding"
+  - "hallucination mitigation"
+  - "training-free"
+  - "evidence pool"
 date: 2026-05-08
 content_hash: 52095e54507f9c98
 ---

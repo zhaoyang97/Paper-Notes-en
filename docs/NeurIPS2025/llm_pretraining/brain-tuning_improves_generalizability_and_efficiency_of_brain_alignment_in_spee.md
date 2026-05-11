@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Brain-tuning Improves Generalizability and Efficiency of Brain Alignment in Speech Models
 description: >-
-  [NEURIPS2025][LLM Pretraining][brain-tuning] This paper proposes Multi-brain-tuning, a method that jointly fine-tunes pretrained speech models on fMRI data from multiple participants, reducing the data required for brain alignment by 5×, improving alignment by up to 50%, and generalizing to unseen participants and datasets.
+  [NEURIPS2025][LLM Pretraining][brain-tuning] This paper proposes Multi-brain-tuning, a method that jointly fine-tunes pretrained speech models on fMRI data from multiple participants…
 tags:
-  - NEURIPS2025
-  - LLM Pretraining
-  - brain-tuning
-  - fMRI
-  - speech model
-  - brain alignment
-  - multi-participant
-  - LoRA
+  - "NEURIPS2025"
+  - "LLM Pretraining"
+  - "brain-tuning"
+  - "fMRI"
+  - "speech model"
+  - "brain alignment"
+  - "multi-participant"
+  - "LoRA"
 date: 2026-05-08
 content_hash: b875c3a5608454de
 ---

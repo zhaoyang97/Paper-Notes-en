@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dynamic Bundling with Large Language Models for Zero-Shot Inference on Text-Attributed Graphs
 description: >-
-  [NeurIPS 2025][Graph Learning][Text-Attributed Graphs] DENSE proposes a "text bundling" strategy that packages textually and topologically/semantically similar nodes into bundles, queries LLMs for bundle-level labels, supervises GNN training via entropy-based and ranking-based losses, and dynamically refines bundles to exclude noisy nodes. It achieves comprehensive zero-shot inference improvements over GPT-4o and graph foundation models across 10 TAG datasets.
+  [NeurIPS 2025][Graph Learning][Text-Attributed Graphs] DENSE proposes a "text bundling" strategy that packages textually and topologically/semantically similar nodes into bundles, queries LLMs for bundle-level labels…
 tags:
-  - NeurIPS 2025
-  - Graph Learning
-  - Text-Attributed Graphs
-  - Zero-Shot Inference
-  - LLM
-  - Graph Neural Networks
-  - Bundle Supervision
+  - "NeurIPS 2025"
+  - "Graph Learning"
+  - "Text-Attributed Graphs"
+  - "Zero-Shot Inference"
+  - "LLM"
+  - "Graph Neural Networks"
+  - "Bundle Supervision"
 date: 2026-05-08
 content_hash: 678a05157a40058b
 ---

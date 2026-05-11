@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DiffDoctor: Diagnosing Image Diffusion Models Before Treating
 description: >-
-  [ICCV 2025][Image Generation][Diffusion Models] This paper proposes DiffDoctor, the first method to fine-tune diffusion models using pixel-level feedback. It first trains a robust artifact detector (1M+ samples with a category-balancing strategy), then backpropagates gradients through the detector to the diffusion model by minimizing the artifact confidence of each pixel in synthesized images, achieving significant artifact reduction on unseen prompts.
+  [ICCV 2025][Image Generation][Diffusion Models] This paper proposes DiffDoctor, the first method to fine-tune diffusion models using pixel-level feedback. It first trains a robust artifact detector (1M+ samples with a ca…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Diffusion Models
-  - Artifact Detection
-  - Pixel-level Feedback
-  - Image Quality
-  - Model Fine-tuning
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "Artifact Detection"
+  - "Pixel-level Feedback"
+  - "Image Quality"
+  - "Model Fine-tuning"
 date: 2026-05-08
 content_hash: a6763fb73adf701e
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Zero-Shot Context Generalization in Reinforcement Learning from Few Training Contexts
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][context generalization] This paper proposes the Context-Enhanced Bellman Equation (CEBE) and Context Sample Enhancement (CSE), which leverage first-order derivative information of environment dynamics and reward functions with respect to context parameters to achieve zero-shot generalization to unseen contexts when training is restricted to a single context.
+  [NeurIPS 2025][Reinforcement Learning][context generalization] This paper proposes the Context-Enhanced Bellman Equation (CEBE) and Context Sample Enhancement (CSE)…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - context generalization
-  - contextual MDP
-  - data augmentation
-  - Bellman equation
-  - zero-shot transfer
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "context generalization"
+  - "contextual MDP"
+  - "data augmentation"
+  - "Bellman equation"
+  - "zero-shot transfer"
 date: 2026-05-08
 content_hash: 0c5ac912105c8ee3
 ---

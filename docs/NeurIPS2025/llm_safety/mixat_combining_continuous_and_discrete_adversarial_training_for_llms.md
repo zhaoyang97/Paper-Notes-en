@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] MixAT: Combining Continuous and Discrete Adversarial Training for LLMs
 description: >-
-  [NeurIPS 2025][LLM Safety][Adversarial Training] This paper proposes MixAT, a method that combines discrete adversarial attacks (PAP-based rewriting) with continuous embedding-space perturbations for LLM adversarial training. MixAT achieves robustness against diverse attacks (reducing ALO-ASR from 50%+ to below 20%) while preserving utility, at a training cost comparable to purely continuous methods.
+  [NeurIPS 2025][LLM Safety][Adversarial Training] This paper proposes MixAT, a method that combines discrete adversarial attacks (PAP-based rewriting) with continuous embedding-space perturbations for LLM adversarial trai…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - Adversarial Training
-  - Robustness
-  - Jailbreak Attacks
-  - Continuous Perturbation
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "Adversarial Training"
+  - "Robustness"
+  - "Jailbreak Attacks"
+  - "Continuous Perturbation"
 date: 2026-05-08
 content_hash: ee697207ce0c1427
 ---

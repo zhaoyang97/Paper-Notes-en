@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] QuantSparse: Comprehensively Compressing Video Diffusion Transformer with Model Quantization and Attention Sparsification
 description: >-
-  [ICLR 2026][Video Generation][video-generation] This paper proposes QuantSparse, the first framework to jointly integrate model quantization and attention sparsification for video diffusion Transformer compression. By introducing Multi-Scale Salient Attention Distillation (MSAD) and Second-Order Sparse Attention Reparameterization (SSAR), QuantSparse addresses the "amplified attention shift" problem caused by naive combination of the two techniques. On HunyuanVideo-13B with W4A8 and 15% attention density, it achieves 3.68× storage compression and 1.88× inference speedup with nearly lossless generation quality.
+  [ICLR 2026][Video Generation][video-generation] This paper proposes QuantSparse, the first framework to jointly integrate model quantization and attention sparsification for video diffusion Transformer compression. By in…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - video-generation
-  - model-compression
-  - quantization
-  - sparse-attention
-  - diffusion-transformer
+  - "ICLR 2026"
+  - "Video Generation"
+  - "video-generation"
+  - "model-compression"
+  - "quantization"
+  - "sparse-attention"
+  - "diffusion-transformer"
 date: 2026-05-08
 content_hash: 272777af0f2c4b46
 ---

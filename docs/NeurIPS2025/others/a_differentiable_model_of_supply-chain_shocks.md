@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Differentiable Model of Supply-Chain Shocks
 description: >-
-  [NeurIPS 2025 (Workshop: Differentiable Systems and Scientific ML)][supply chain] A JAX-based differentiable Agent-Based Model (ABM) of supply chains (~1,000 firms) that combines GPU parallelization and automatic differentiation to achieve Bayesian parameter calibration three orders of magnitude faster than conventional ABC, paving the way for shock-propagation modeling in global supply-chain networks.
+  [NeurIPS 2025 (Workshop: Differentiable Systems and Scientific ML)][supply chain] A JAX-based differentiable Agent-Based Model (ABM) of supply chains (~1…
 tags:
   - "NeurIPS 2025 (Workshop: Differentiable Systems and Scientific ML)"
-  - supply chain
-  - differentiable simulation
-  - agent-based model
-  - JAX
-  - GPU acceleration
-  - variational inference
+  - "supply chain"
+  - "differentiable simulation"
+  - "agent-based model"
+  - "JAX"
+  - "GPU acceleration"
+  - "variational inference"
 date: 2026-05-08
 content_hash: cd5fd2d51544fec3
 ---

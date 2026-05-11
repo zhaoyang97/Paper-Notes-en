@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Learning Dense Hand Contact Estimation from Imbalanced Data
 description: >-
-  [NeurIPS 2025][hand contact estimation] This paper proposes the HACO framework, which addresses class imbalance via Balanced Contact Sampling (BCS) and spatial imbalance via a Vertex-level Class-Balanced Loss (VCB Loss). HACO is the first dense hand contact estimation model trained across 14 datasets (655K images) and achieves state-of-the-art performance across diverse interaction scenarios.
+  [NeurIPS 2025][hand contact estimation] This paper proposes the HACO framework, which addresses class imbalance via Balanced Contact Sampling (BCS) and spatial imbalance via a Vertex-level Class-Balanced Loss (VCB Loss).…
 tags:
-  - NeurIPS 2025
-  - hand contact estimation
-  - data imbalance
-  - class-balanced loss
-  - large-scale training
-  - ViT
+  - "NeurIPS 2025"
+  - "hand contact estimation"
+  - "data imbalance"
+  - "class-balanced loss"
+  - "large-scale training"
+  - "ViT"
 date: 2026-05-08
 content_hash: aa3f548a6396952b
 ---

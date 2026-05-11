@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From Sequence to Structure: Uncovering Substructure Reasoning in Transformers
 description: >-
-  [NeurIPS 2025][Graph Learning][Transformer interpretability] This paper presents empirical and theoretical analyses revealing how decoder-only Transformers understand graph structure from text sequences. It proposes "Induced Substructure Filtration" (ISF) to explain the layer-wise substructure identification mechanism, and extends this framework to validate consistency in LLMs, support compositional graph reasoning (Thinking-in-Substructures), and enable substructure extraction in attributed graphs (molecular graphs).
+  [NeurIPS 2025][Graph Learning][Transformer interpretability] This paper presents empirical and theoretical analyses revealing how decoder-only Transformers understand graph structure from text sequences. It proposes "Ind…
 tags:
-  - NeurIPS 2025
-  - Graph Learning
-  - Transformer interpretability
-  - substructure extraction
-  - graph reasoning
-  - induced subgraph filtration
-  - LLM graph understanding
+  - "NeurIPS 2025"
+  - "Graph Learning"
+  - "Transformer interpretability"
+  - "substructure extraction"
+  - "graph reasoning"
+  - "induced subgraph filtration"
+  - "LLM graph understanding"
 date: 2026-05-08
 content_hash: 52a208ebeeebe247
 ---

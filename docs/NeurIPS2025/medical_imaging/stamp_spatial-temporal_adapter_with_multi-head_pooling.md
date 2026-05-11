@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] STAMP: Spatial-Temporal Adapter with Multi-Head Pooling
 description: >-
-  [NeurIPS 2025][Medical Imaging][EEG Classification] STAMP introduces a lightweight spatial-temporal adapter with only 750K parameters for Time Series Foundation Models (TSFMs). Through three sets of positional encodings (token/spatial/temporal), cross-gated MLP mixing, and multi-head attention pooling, it enables a frozen TSFM (e.g., MOMENT 385M) to compete with or surpass EEG-specific models with 29M parameters (CBraMod) across 8 EEG datasets, achieving 193% higher Kappa than CBraMod on BCIC-IV-2a.
+  [NeurIPS 2025][Medical Imaging][EEG Classification] STAMP introduces a lightweight spatial-temporal adapter with only 750K parameters for Time Series Foundation Models (TSFMs). Through three sets of positional encodings…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - EEG Classification
-  - TSFM Adapter
-  - Spatial-Temporal Encoding
-  - Multi-Head Pooling
-  - Parameter Efficiency
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "EEG Classification"
+  - "TSFM Adapter"
+  - "Spatial-Temporal Encoding"
+  - "Multi-Head Pooling"
+  - "Parameter Efficiency"
 date: 2026-05-08
 content_hash: 84312c5cd5c62eeb
 ---

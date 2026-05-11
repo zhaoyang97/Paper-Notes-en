@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Empowering Decision Trees via Shape Function Branching
 description: >-
-  [NeurIPS 2025][Decision Trees] This paper proposes the Shape Generalized Tree (SGT), which replaces the conventional linear threshold split at each internal node of a decision tree with a learnable axis-aligned shape function, enabling the capture of nonlinear feature effects within more compact tree structures while preserving interpretability.
+  [NeurIPS 2025][Interpretability][Decision Trees] This paper proposes the Shape Generalized Tree (SGT), which replaces the conventional linear threshold split at each internal node of a decision tree with a learnable axis…
 tags:
-  - NeurIPS 2025
-  - Decision Trees
-  - Shape Functions
-  - Interpretability
-  - Tabular Data
-  - Nonlinear Splitting
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "Decision Trees"
+  - "Shape Functions"
+  - "Tabular Data"
+  - "Nonlinear Splitting"
 date: 2026-05-08
 content_hash: 20bcf5009655694c
 ---

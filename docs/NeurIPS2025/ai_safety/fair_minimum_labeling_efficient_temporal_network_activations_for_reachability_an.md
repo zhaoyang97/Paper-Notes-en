@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Fair Minimum Labeling: Efficient Temporal Network Activations for Reachability and Equity
 description: >-
-  [NeurIPS 2025][AI Safety][Fairness] This paper introduces the Fair Minimum Labeling (FML) problem, which aims to design minimum-cost temporal edge activation schemes ensuring sufficient temporal-path reachability for each node group in a network to satisfy fair coverage requirements. The paper proves FML is NP-hard and inapproximable beyond a certain factor, and provides an approximation algorithm based on probabilistic tree embeddings that matches the hardness lower bound.
+  [NeurIPS 2025][AI Safety][Fairness] This paper introduces the Fair Minimum Labeling (FML) problem, which aims to design minimum-cost temporal edge activation schemes ensuring sufficient temporal-path reachability for eac…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - Fairness
-  - Temporal Graphs
-  - Minimum Labeling
-  - Reachability
-  - Approximation Algorithms
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "Fairness"
+  - "Temporal Graphs"
+  - "Minimum Labeling"
+  - "Reachability"
+  - "Approximation Algorithms"
 date: 2026-05-08
 content_hash: b61747f698ad5404
 ---

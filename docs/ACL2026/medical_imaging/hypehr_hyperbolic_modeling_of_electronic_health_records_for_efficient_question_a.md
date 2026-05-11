@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HypEHR: Hyperbolic Modeling of Electronic Health Records for Efficient Question Answering
 description: >-
-  [ACL 2026 (Findings)][Medical Imaging][EHR question answering] This paper proposes HypEHR, a 22M-parameter Lorentz hyperbolic model that embeds medical codes, patient visits, and questions into hyperbolic space. Through hierarchy-aware regularization aligned with the ICD ontology structure, HypEHR achieves performance comparable to LLM-based approaches on the MIMIC-IV EHR question answering task.
+  [ACL 2026 (Findings)][Medical Imaging][EHR question answering] This paper proposes HypEHR, a 22M-parameter Lorentz hyperbolic model that embeds medical codes, patient visits…
 tags:
-  - ACL 2026 (Findings)
-  - Medical Imaging
-  - EHR question answering
-  - hyperbolic space
-  - Lorentz model
-  - ICD hierarchy modeling
-  - lightweight clinical model
+  - "ACL 2026 (Findings)"
+  - "Medical Imaging"
+  - "EHR question answering"
+  - "hyperbolic space"
+  - "Lorentz model"
+  - "ICD hierarchy modeling"
+  - "lightweight clinical model"
 date: 2026-05-08
 content_hash: d772d88f3aab387c
 ---

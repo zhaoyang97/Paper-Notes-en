@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SIGN: Schema-Induced Games for Naming
 description: >-
-  [AAAI 2026][Model Compression][Naming Game] SIGN introduces lightweight message Schemas (e.g., `@say {name: Ck}`) into LLM multi-agent naming games, demonstrating that structured priors can improve group convention agreement by up to 5.8×, reduce convergence token cost by an order of magnitude, and provide a simple, controllable "tuning knob" for efficient multi-agent coordination.
+  [AAAI 2026][Model Compression][Naming Game] SIGN introduces lightweight message Schemas (e.g., `@say {name: Ck}`) into LLM multi-agent naming games…
 tags:
-  - AAAI 2026
-  - Model Compression
-  - Naming Game
-  - LLM Multi-Agent
-  - Convention Formation
-  - Schema Guidance
-  - Multi-Agent Coordination
+  - "AAAI 2026"
+  - "Model Compression"
+  - "Naming Game"
+  - "LLM Multi-Agent"
+  - "Convention Formation"
+  - "Schema Guidance"
+  - "Multi-Agent Coordination"
 date: 2026-05-08
 content_hash: b766dfae9c1afba3
 ---

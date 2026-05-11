@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Rethinking Bias in Generative Data Augmentation for Medical AI: a Frequency Recalibration Approach
 description: >-
-  [AAAI 2026][Medical Imaging][Generative data augmentation] This paper identifies high-frequency distribution discrepancies between AI-generated and real medical images as the root cause of unreliable generative data augmentation (GDA), and proposes FreRec (Frequency Recalibration), a coarse-to-fine post-processing module comprising Statistical High-frequency Replacement (SHR) and Reconstructive High-frequency Mapping (RHM) to align frequency distributions, consistently improving downstream medical image classification performance as a plug-and-play component.
+  [AAAI 2026][Medical Imaging][Generative data augmentation] This paper identifies high-frequency distribution discrepancies between AI-generated and real medical images as the root cause of unreliable generative data augm…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Generative data augmentation
-  - frequency bias
-  - medical image classification
-  - denoising autoencoder
-  - frequency recalibration
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Generative data augmentation"
+  - "frequency bias"
+  - "medical image classification"
+  - "denoising autoencoder"
+  - "frequency recalibration"
 date: 2026-05-08
 content_hash: 1a58087081b1c071
 ---

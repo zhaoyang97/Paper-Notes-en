@@ -2,15 +2,16 @@
 title: >-
   [Paper Note] CC-VQA: Conflict- and Correlation-Aware Method for Mitigating Knowledge Conflict in Knowledge-Based Visual Question Answering
 description: >-
-  [CVPR 2026][Knowledge Conflict] CC-VQA is proposed as a training-free method for mitigating knowledge conflicts in KB-VQA. Through a two-stage strategy combining visual-centric contextual conflict reasoning and correlation-guided encoding/decoding, it achieves absolute accuracy improvements of 3.3%–6.4% on three benchmarks: E-VQA, InfoSeek, and OK-VQA.
+  [CVPR 2026][Information Retrieval & RAG][Knowledge Conflict] CC-VQA is proposed as a training-free method for mitigating knowledge conflicts in KB-VQA. Through a two-stage strategy combining visual-centric contextual con…
 tags:
-  - CVPR 2026
-  - Knowledge Conflict
-  - Retrieval-Augmented Generation
-  - KB-VQA
-  - Visual Reasoning
-  - Contrastive Decoding
-  - Positional Encoding Compression
+  - "CVPR 2026"
+  - "Information Retrieval & RAG"
+  - "Knowledge Conflict"
+  - "Retrieval-Augmented Generation"
+  - "KB-VQA"
+  - "Visual Reasoning"
+  - "Contrastive Decoding"
+  - "Positional Encoding Compression"
 date: 2026-05-08
 content_hash: 866d81b093a1eb1c
 ---

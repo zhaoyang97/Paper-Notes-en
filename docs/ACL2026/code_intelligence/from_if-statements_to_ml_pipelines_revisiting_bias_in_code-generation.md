@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] From If-Statements to ML Pipelines: Revisiting Bias in Code-Generation
 description: >-
-  [ACL 2026][code generation bias] This work demonstrates that existing bias evaluations of LLM code generation severely underestimate real-world risk: in ML pipeline generation, sensitive attributes appear in 87.7% of feature selection decisions (vs. 59.2% in conditional statements), and models correctly exclude irrelevant features yet consistently retain sensitive attributes such as race and gender, revealing systematic implicit discrimination.
+  [ACL 2026][Code Intelligence][code generation bias] This work demonstrates that existing bias evaluations of LLM code generation severely underestimate real-world risk: in ML pipeline generation…
 tags:
-  - ACL 2026
-  - code generation bias
-  - ML pipelines
-  - feature selection
-  - implicit discrimination
-  - fairness evaluation
+  - "ACL 2026"
+  - "Code Intelligence"
+  - "code generation bias"
+  - "ML pipelines"
+  - "feature selection"
+  - "implicit discrimination"
+  - "fairness evaluation"
 date: 2026-05-08
 content_hash: 922b10caffe5c1c9
 ---

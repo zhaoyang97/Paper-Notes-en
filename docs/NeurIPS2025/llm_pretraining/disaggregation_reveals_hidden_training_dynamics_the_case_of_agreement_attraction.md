@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Disaggregation Reveals Hidden Training Dynamics: The Case of Agreement Attraction
 description: >-
-  [NeurIPS 2025][LLM Pretraining][Training Dynamics] This paper disaggregates language model performance on subject-verb agreement tasks by experimental condition, revealing multi-phase training dynamics obscured by aggregate metrics: models first learn frequency biases, then local context sensitivity, and finally develop general grammatical rules — a process involving multiple "hidden breakthroughs" rather than simple monotonic improvement.
+  [NeurIPS 2025][LLM Pretraining][Training Dynamics] This paper disaggregates language model performance on subject-verb agreement tasks by experimental condition…
 tags:
-  - NeurIPS 2025
-  - LLM Pretraining
-  - Training Dynamics
-  - Subject-Verb Agreement
-  - Grammar Learning
-  - Fine-Grained Analysis
-  - Psycholinguistics
+  - "NeurIPS 2025"
+  - "LLM Pretraining"
+  - "Training Dynamics"
+  - "Subject-Verb Agreement"
+  - "Grammar Learning"
+  - "Fine-Grained Analysis"
+  - "Psycholinguistics"
 date: 2026-05-08
 content_hash: 3cd55d93f85aaf81
 ---

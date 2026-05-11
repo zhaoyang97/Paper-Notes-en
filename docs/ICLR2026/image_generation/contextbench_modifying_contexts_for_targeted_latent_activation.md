@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ContextBench: Modifying Contexts for Targeted Latent Activation
 description: >-
-  [ICLR 2026][Image Generation][Context modification] This paper introduces ContextBench, a benchmark comprising 715 tasks for evaluating methods that automatically generate fluent inputs capable of activating specific latent features, and proposes two EPO-enhanced variants—LLM-assisted and diffusion-model inpainting—that Pareto-dominate standard EPO in the trade-off between activation strength and linguistic fluency.
+  [ICLR 2026][Image Generation][Context modification] This paper introduces ContextBench, a benchmark comprising 715 tasks for evaluating methods that automatically generate fluent inputs capable of activating specific lat…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Context modification
-  - latent feature activation
-  - AI safety
-  - sparse autoencoders
-  - backdoor detection
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Context modification"
+  - "latent feature activation"
+  - "AI safety"
+  - "sparse autoencoders"
+  - "backdoor detection"
 date: 2026-05-08
 content_hash: 56e8319ba36c2722
 ---

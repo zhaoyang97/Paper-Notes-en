@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Embedding Alignment in Code Generation for Audio
 description: >-
-  [NeurIPS 2025][code generation] A dual-MLP + InfoNCE contrastive learning framework is proposed to align code embeddings (distilroberta-base) and audio embeddings (wav2vec2) into a shared space, enabling LLM-based code generation pipelines to infer musical similarity directly from code without compilation or execution. CKA improves from 0.090 to 0.590.
+  [NeurIPS 2025][Code Intelligence][code generation] A dual-MLP + InfoNCE contrastive learning framework is proposed to align code embeddings (distilroberta-base) and audio embeddings (wav2vec2) into a shared space…
 tags:
-  - NeurIPS 2025
-  - code generation
-  - audio embedding
-  - contrastive learning
-  - cross-modal alignment
-  - live-coding
+  - "NeurIPS 2025"
+  - "Code Intelligence"
+  - "code generation"
+  - "audio embedding"
+  - "contrastive learning"
+  - "cross-modal alignment"
+  - "live-coding"
 date: 2026-05-08
 content_hash: 2ac13abfbad20fbe
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Bézier Splatting for Fast and Differentiable Vector Graphics Rendering
 description: >-
-  [NeurIPS 2025][Model Compression][Differentiable Rendering] Bézier Splatting integrates the Gaussian Splatting framework with Bézier curves by uniformly sampling 2D Gaussian points along each curve and rendering via α-blending to achieve differentiable vector graphics. The method achieves 30× forward and 150× backward speedups over DiffVG while maintaining or surpassing the image quality of methods such as LIVE.
+  [NeurIPS 2025][Model Compression][Differentiable Rendering] Bézier Splatting integrates the Gaussian Splatting framework with Bézier curves by uniformly sampling 2D Gaussian points along each curve and rendering via α-bl…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Differentiable Rendering
-  - Bézier Curves
-  - Gaussian Splatting
-  - Vectorization
-  - Image Optimization
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Differentiable Rendering"
+  - "Bézier Curves"
+  - "Gaussian Splatting"
+  - "Vectorization"
+  - "Image Optimization"
 date: 2026-05-08
 content_hash: 3fa22ac5b04e54c3
 ---

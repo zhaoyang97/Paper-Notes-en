@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Style Amnesia: Investigating Speaking Style Degradation and Mitigation in Multi-Turn Spoken Language Models
 description: >-
-  [ACL 2026][LLM/NLP][spoken language models] This paper identifies a phenomenon termed "style amnesia," in which spoken language models (SLMs) fail to maintain initially specified speaking styles (emotion, accent, volume, speech rate) across multi-turn conversations. Attention analysis reveals the underlying cause as attention dilution, and an explicit recall process is proposed as a mitigation strategy.
+  [ACL 2026][LLM/NLP][spoken language models] This paper identifies a phenomenon termed "style amnesia," in which spoken language models (SLMs) fail to maintain initially specified speaking styles (emotion, accent, volume…
 tags:
-  - ACL 2026
-  - LLM/NLP
-  - spoken language models
-  - style amnesia
-  - multi-turn dialogue
-  - speaking style
-  - instruction following
+  - "ACL 2026"
+  - "LLM/NLP"
+  - "spoken language models"
+  - "style amnesia"
+  - "multi-turn dialogue"
+  - "speaking style"
+  - "instruction following"
 date: 2026-05-08
 content_hash: 64c07c28e48fbe28
 ---

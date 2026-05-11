@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Stop Tracking Me! Proactive Defense Against Attribute Inference Attack in LLMs
 description: >-
-  [ICLR 2026][Video Understanding][Attribute Inference Attack] TRACE-RPS proposes a unified defense framework against attribute inference attacks in LLMs: TRACE leverages attention mechanisms and reasoning chains to precisely locate privacy-leaking text elements for fine-grained anonymization, while RPS employs lightweight suffix optimization to induce model refusal of inference, reducing attribute inference accuracy from ~50% to below 5%.
+  [ICLR 2026][Video Understanding][Attribute Inference Attack] TRACE-RPS proposes a unified defense framework against attribute inference attacks in LLMs: TRACE leverages attention mechanisms and reasoning chains to precis…
 tags:
-  - ICLR 2026
-  - Video Understanding
-  - Attribute Inference Attack
-  - Privacy Protection
-  - LLM Safety
-  - Attention-based Anonymization
-  - Optimization-based Defense
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "Attribute Inference Attack"
+  - "Privacy Protection"
+  - "LLM Safety"
+  - "Attention-based Anonymization"
+  - "Optimization-based Defense"
 date: 2026-05-08
 content_hash: aab55f81d3c1b3dd
 ---

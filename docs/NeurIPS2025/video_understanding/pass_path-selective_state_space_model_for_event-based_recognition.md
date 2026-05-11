@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PASS: Path-Selective State Space Model for Event-Based Recognition
 description: >-
-  [NeurIPS 2025][Video Understanding][Event Camera] PASS proposes the Path-selective Event Aggregation and Scan (PEAS) module and the Multi-faceted Selection Guiding (MSG) loss, leveraging the linear complexity and frequency generalization capability of SSMs to perform event-based recognition across a broad distribution of event lengths from $10^6$ to $10^9$, while limiting performance degradation to only 8.62% under varying inference frequencies (compared to 20.69% for the baseline).
+  [NeurIPS 2025][Video Understanding][Event Camera] PASS proposes the Path-selective Event Aggregation and Scan (PEAS) module and the Multi-faceted Selection Guiding (MSG) loss…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
-  - Event Camera
-  - State Space Model
-  - Frequency Generalization
-  - Long-Sequence Modeling
-  - Mamba
+  - "NeurIPS 2025"
+  - "Video Understanding"
+  - "Event Camera"
+  - "State Space Model"
+  - "Frequency Generalization"
+  - "Long-Sequence Modeling"
+  - "Mamba"
 date: 2026-05-08
 content_hash: f8a002efabf30f45
 ---

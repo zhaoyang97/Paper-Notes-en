@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Modulation of Temporal Decision-Making in a Deep Reinforcement Learning Agent under the Dual-Task Paradigm
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Temporal perception] DRL agents trained in a simplified Overcooked environment to perform either a single task (temporal production) or a dual task (temporal production + numerical comparison) exhibit significantly greater temporal overproduction across all four target durations in the dual-task condition—an emergent behavior that closely parallels the time overestimation phenomenon observed in human temporal perception research under dual-task paradigms.
+  [NeurIPS 2025][Reinforcement Learning][Temporal perception] DRL agents trained in a simplified Overcooked environment to perform either a single task (temporal production) or a dual task (temporal production + numerical…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Temporal perception
-  - dual-task paradigm
-  - DRL agent
-  - cognitive science
-  - LSTM neural dynamics
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Temporal perception"
+  - "dual-task paradigm"
+  - "DRL agent"
+  - "cognitive science"
+  - "LSTM neural dynamics"
 date: 2026-05-08
 content_hash: 436f6aff706c2cc4
 ---

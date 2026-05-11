@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] REL-SF4PASS: Panoramic Semantic Segmentation with REL Depth Representation and Spherical Fusion
 description: >-
-  [CVPR 2026][Segmentation][Panoramic semantic segmentation] This paper proposes REL, a three-channel depth representation based on cylindrical coordinates (Rectified Depth + EGVIA + LOA), and a Spherical Multi-Modal Fusion module (SMMF) for panoramic semantic segmentation. The approach achieves 63.06% average mIoU on Stanford2D3D (a 2.35% gain over the HHA baseline) and reduces performance variance under 3D perturbations by approximately 70%.
+  [CVPR 2026][Segmentation][Panoramic semantic segmentation] This paper proposes REL, a three-channel depth representation based on cylindrical coordinates (Rectified Depth + EGVIA + LOA)…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Panoramic semantic segmentation
-  - depth representation
-  - multimodal fusion
-  - cylindrical coordinates
-  - RGB-D
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Panoramic semantic segmentation"
+  - "depth representation"
+  - "multimodal fusion"
+  - "cylindrical coordinates"
+  - "RGB-D"
 date: 2026-05-08
 content_hash: 34e6d466de504ba9
 ---

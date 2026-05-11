@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Measuring Model Performance in the Presence of an Intervention
 description: >-
-  [AAAI 2026][model evaluation] To address the bias in AI model evaluation under interventions, this paper proposes Nuisance Parameter Weighting (NPW), which applies causal reweighting to the treatment arm of RCT data to achieve unbiased AUROC estimation. The method achieves a 5× improvement in sample efficiency and substantially improves statistical power for model selection and hypothesis testing.
+  [AAAI 2026][model evaluation] To address the bias in AI model evaluation under interventions, this paper proposes Nuisance Parameter Weighting (NPW)…
 tags:
-  - AAAI 2026
-  - model evaluation
-  - randomized controlled trials
-  - AUROC
-  - intervention effect
-  - causal inference
+  - "AAAI 2026"
+  - "model evaluation"
+  - "randomized controlled trials"
+  - "AUROC"
+  - "intervention effect"
+  - "causal inference"
 date: 2026-05-08
 content_hash: ff681f6f3891e450
 ---

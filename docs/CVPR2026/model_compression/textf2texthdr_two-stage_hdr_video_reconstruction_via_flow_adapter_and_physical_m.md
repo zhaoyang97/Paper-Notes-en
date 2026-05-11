@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] F²HDR: Two-Stage HDR Video Reconstruction via Flow Adapter and Physical Motion Modeling
 description: >-
-  [CVPR 2026][Model Compression][HDR video reconstruction] This paper proposes F²HDR, a two-stage HDR video reconstruction framework that adapts general-purpose pre-trained optical flow to alternating-exposure scenes via a Flow Adapter for robust alignment, and employs physical motion modeling to extract continuous motion masks from optical flow to guide artifact removal in the second stage, achieving state-of-the-art performance on real-world HDR video benchmarks.
+  [CVPR 2026][Model Compression][HDR video reconstruction] This paper proposes F²HDR, a two-stage HDR video reconstruction framework that adapts general-purpose pre-trained optical flow to alternating-exposure scenes via a…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - HDR video reconstruction
-  - flow adapter
-  - physical motion modeling
-  - alternating exposure
-  - two-stage reconstruction
+  - "CVPR 2026"
+  - "Model Compression"
+  - "HDR video reconstruction"
+  - "flow adapter"
+  - "physical motion modeling"
+  - "alternating exposure"
+  - "two-stage reconstruction"
 date: 2026-05-08
 content_hash: 97cb76925394c740
 ---

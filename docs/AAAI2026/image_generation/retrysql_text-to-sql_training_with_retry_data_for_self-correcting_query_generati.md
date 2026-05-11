@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RetrySQL: Text-to-SQL Training with Retry Data for Self-Correcting Query Generation
 description: >-
-  [AAAI 2026][Image Generation][Text-to-SQL] This paper proposes the RetrySQL training paradigm, which injects retry data (erroneous steps + [BACK] token + correct steps) into reasoning chains during continual pre-training of small encoder models. This approach enables a 1.5B open-source model to acquire self-correction capabilities, achieving improvements of up to 4 and 3.93 percentage points in overall execution accuracy on the BIRD and SPIDER benchmarks, respectively, with gains of up to 9 percentage points on challenging samples.
+  [AAAI 2026][Image Generation][Text-to-SQL] This paper proposes the RetrySQL training paradigm, which injects retry data (erroneous steps + [BACK] token + correct steps) into reasoning chains during continual pre-training…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Text-to-SQL
-  - self-correction
-  - retry data
-  - chain of reasoning
-  - small language models
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Text-to-SQL"
+  - "self-correction"
+  - "retry data"
+  - "chain of reasoning"
+  - "small language models"
 date: 2026-05-08
 content_hash: 6dce33751f6ccb37
 ---

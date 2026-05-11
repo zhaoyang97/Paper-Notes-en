@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RDD: Retrieval-Based Demonstration Decomposer for Planner Alignment in Long-Horizon Tasks
 description: >-
-  [NeurIPS 2025][Robotics][Hierarchical VLA] This paper proposes RDD (Retrieval-Based Demonstration Decomposer), which models demonstration decomposition as an optimal partition problem and automatically segments long-horizon task demonstrations into subtasks aligned with the training data of low-level visuomotor policies. This approach bridges the gap between high-level planners and low-level policies in hierarchical VLA frameworks, achieving near-expert-decomposer performance on RLBench.
+  [NeurIPS 2025][Robotics][Hierarchical VLA] This paper proposes RDD (Retrieval-Based Demonstration Decomposer), which models demonstration decomposition as an optimal partition problem and automatically segments long-hori…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - Hierarchical VLA
-  - Task Decomposition
-  - Retrieval-Based Alignment
-  - Dynamic Programming
-  - Long-Horizon Manipulation
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "Hierarchical VLA"
+  - "Task Decomposition"
+  - "Retrieval-Based Alignment"
+  - "Dynamic Programming"
+  - "Long-Horizon Manipulation"
 date: 2026-05-08
 content_hash: 133f22411387568a
 ---

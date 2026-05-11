@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Rethinking Surgical Smoke: A Smoke-Type-Aware Laparoscopic Video Desmoking Method and Dataset
 description: >-
-  [AAAI 2026][Medical Imaging][Laparoscopic video desmoking] This paper is the first to categorize surgical smoke into two distinct types — Diffusion Smoke and Ambient Smoke — and proposes STANet, the first smoke-type-aware laparoscopic video desmoking network comprising three sub-networks: semantic soft segmentation, coarse-to-fine disentanglement, and dual-branch reconstruction. It also introduces STSVD, the first large-scale synthetic video desmoking dataset with smoke-type annotations.
+  [AAAI 2026][Medical Imaging][Laparoscopic video desmoking] This paper is the first to categorize surgical smoke into two distinct types — Diffusion Smoke and Ambient Smoke — and proposes STANet…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Laparoscopic video desmoking
-  - smoke-type awareness
-  - smoke mask segmentation
-  - smoke disentanglement
-  - surgical video
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Laparoscopic video desmoking"
+  - "smoke-type awareness"
+  - "smoke mask segmentation"
+  - "smoke disentanglement"
+  - "surgical video"
 date: 2026-05-08
 content_hash: bcde0a5787d1bb2a
 ---

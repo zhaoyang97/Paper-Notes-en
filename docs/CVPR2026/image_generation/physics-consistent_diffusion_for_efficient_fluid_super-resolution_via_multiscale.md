@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Physics-Consistent Diffusion for Efficient Fluid Super-Resolution via Multiscale Residual Correction
 description: >-
-  [CVPR2026][Image Generation][Fluid Super-Resolution] This paper proposes ReMD (Residual-Multigrid Diffusion), which embeds multigrid residual correction into each reverse sampling step of a diffusion model. By leveraging a multi-wavelet basis to construct a cross-scale hierarchy, ReMD achieves physics-consistent and efficient fluid super-resolution without requiring explicit PDEs.
+  [CVPR2026][Image Generation][Fluid Super-Resolution] This paper proposes ReMD (Residual-Multigrid Diffusion), which embeds multigrid residual correction into each reverse sampling step of a diffusion model. By leveraging…
 tags:
-  - CVPR2026
-  - Image Generation
-  - Fluid Super-Resolution
-  - Diffusion Models
-  - Multigrid Residual Correction
-  - Multi-Wavelet Basis
-  - Physics Consistency
-  - Equation-Free
+  - "CVPR2026"
+  - "Image Generation"
+  - "Fluid Super-Resolution"
+  - "Diffusion Models"
+  - "Multigrid Residual Correction"
+  - "Multi-Wavelet Basis"
+  - "Physics Consistency"
+  - "Equation-Free"
 date: 2026-05-08
 content_hash: 23dfa051f1986974
 ---

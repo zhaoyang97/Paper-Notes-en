@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TimeSliver: Symbolic-Linear Decomposition for Explainable Time Series Classification
 description: >-
-  [ICLR 2026][Time Series][Temporal Attribution] TimeSliver is an explainability-driven deep learning framework that jointly leverages raw time series data and symbolic abstractions (binning) to construct representations that preserve the original temporal structure. Each element linearly encodes the contribution of its corresponding temporal segment to the final prediction, yielding per-timestep positive/negative attribution scores. TimeSliver surpasses competing methods by 11% in temporal attribution accuracy across 7 datasets while achieving performance on par with SOTA on 26 UEA benchmarks.
+  [ICLR 2026][Time Series][Temporal Attribution] TimeSliver is an explainability-driven deep learning framework that jointly leverages raw time series data and symbolic abstractions (binning) to construct representations t…
 tags:
-  - ICLR 2026
-  - Time Series
-  - Temporal Attribution
-  - Symbolic Abstraction
-  - Linear Combination
-  - Explainable Classification
-  - Positive/Negative Attribution
+  - "ICLR 2026"
+  - "Time Series"
+  - "Temporal Attribution"
+  - "Symbolic Abstraction"
+  - "Linear Combination"
+  - "Explainable Classification"
+  - "Positive/Negative Attribution"
 date: 2026-05-08
 content_hash: 88bdb473bfb2ebd6
 ---

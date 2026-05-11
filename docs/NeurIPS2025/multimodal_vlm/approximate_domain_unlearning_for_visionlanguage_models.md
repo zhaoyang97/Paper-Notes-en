@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Approximate Domain Unlearning for Vision-Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][approximate unlearning] This paper introduces Approximate Domain Unlearning (ADU), a novel task that enables pretrained VLMs to selectively forget recognition capabilities for specified domains (e.g., illustrations, sketches) while preserving classification accuracy on other domains (e.g., real photographs). Two modules are proposed — Domain Disentangling Loss (DDL) and Instance-wise Prompt Generator (InstaPG) — achieving substantial improvements over all baselines across four multi-domain datasets.
+  [NeurIPS 2025][Multimodal VLM][approximate unlearning] This paper introduces Approximate Domain Unlearning (ADU), a novel task that enables pretrained VLMs to selectively forget recognition capabilities for specified dom…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - approximate unlearning
-  - domain unlearning
-  - vision-language model
-  - CLIP
-  - prompt tuning
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "approximate unlearning"
+  - "domain unlearning"
+  - "vision-language model"
+  - "CLIP"
+  - "prompt tuning"
 date: 2026-05-08
 content_hash: 7770e6bccb8387ae
 ---

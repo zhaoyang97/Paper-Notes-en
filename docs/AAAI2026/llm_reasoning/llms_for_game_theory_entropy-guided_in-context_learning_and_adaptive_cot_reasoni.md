@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LLMs for Game Theory: Entropy-Guided In-Context Learning and Adaptive CoT Reasoning
 description: >-
-  [AAAI 2026][LLM Reasoning][Large Language Models] This paper proposes an entropy-guided adaptive LLM reasoning framework that combines dynamic in-context retrieval with adaptive chain-of-thought (CoT) reasoning. On the Tic-Tac-Toe benchmark, the framework improves the average game outcome of LLMs from $-11.6\%$ to $+9.5\%$ while maintaining a low number of LLM queries.
+  [AAAI 2026][LLM Reasoning][Large Language Models] This paper proposes an entropy-guided adaptive LLM reasoning framework that combines dynamic in-context retrieval with adaptive chain-of-thought (CoT) reasoning. On the T…
 tags:
-  - AAAI 2026
-  - LLM Reasoning
-  - Large Language Models
-  - Game Theory
-  - Entropy-Guided Reasoning
-  - Chain-of-Thought
-  - Retrieval-Augmented Generation
+  - "AAAI 2026"
+  - "LLM Reasoning"
+  - "Large Language Models"
+  - "Game Theory"
+  - "Entropy-Guided Reasoning"
+  - "Chain-of-Thought"
+  - "Retrieval-Augmented Generation"
 date: 2026-05-08
 content_hash: 37a11c7b7d24ab5d
 ---

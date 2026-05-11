@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Eliciting Medical Reasoning with Knowledge-enhanced Data Synthesis: A Semi-Supervised Reinforcement Learning Approach
 description: >-
-  [ACL 2026][Medical Imaging][Medical Reasoning] This paper proposes MedSSR, a framework that enhances LLM medical reasoning through controllable data synthesis with rare disease knowledge injection and a semi-supervised training paradigm of "self-supervised RL → supervised RL." MedSSR achieves up to +5.93% improvement on rare disease tasks, surpassing the +3% ceiling observed in all prior methods.
+  [ACL 2026][Medical Imaging][Medical Reasoning] This paper proposes MedSSR, a framework that enhances LLM medical reasoning through controllable data synthesis with rare disease knowledge injection and a semi-supervised t…
 tags:
-  - ACL 2026
-  - Medical Imaging
-  - Medical Reasoning
-  - Rare Disease
-  - Data Synthesis
-  - Semi-Supervised Reinforcement Learning
-  - GRPO
+  - "ACL 2026"
+  - "Medical Imaging"
+  - "Medical Reasoning"
+  - "Rare Disease"
+  - "Data Synthesis"
+  - "Semi-Supervised Reinforcement Learning"
+  - "GRPO"
 date: 2026-05-08
 content_hash: c50f09689f9280eb
 ---

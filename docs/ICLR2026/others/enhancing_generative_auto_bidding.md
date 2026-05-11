@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Enhancing Generative Auto-bidding with Offline Reward Evaluation and Policy Search
 description: >-
-  [ICLR 2026 Oral][auto-bidding] This paper proposes AIGB-Pearl, which introduces an offline trajectory evaluator and a KL-Lipschitz constrained score maximization scheme for generative auto-bidding. The framework enables generative models to safely surpass the performance ceiling imposed by static offline data under theoretical guarantees, achieving a significant GMV improvement of +3% on Taobao's real-world advertising system.
+  [ICLR 2026 Oral][auto-bidding] This paper proposes AIGB-Pearl, which introduces an offline trajectory evaluator and a KL-Lipschitz constrained score maximization scheme for generative auto-bidding. The framework enables…
 tags:
-  - ICLR 2026 Oral
-  - auto-bidding
-  - generative planning
-  - offline RL
-  - trajectory evaluator
-  - KL-Lipschitz constraint
+  - "ICLR 2026 Oral"
+  - "auto-bidding"
+  - "generative planning"
+  - "offline RL"
+  - "trajectory evaluator"
+  - "KL-Lipschitz constraint"
 date: 2026-05-08
 content_hash: 3d353ae48768deda
 ---

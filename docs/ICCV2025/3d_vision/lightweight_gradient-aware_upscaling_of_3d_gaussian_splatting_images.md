@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Lightweight Gradient-Aware Upscaling of 3D Gaussian Splatting Images
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] A lightweight image upscaling technique tailored for 3DGS is proposed, leveraging analytic image gradients from Gaussian primitives for gradient-aware bicubic spline interpolation. Without any deep learning inference, the method achieves 3–4× rendering acceleration while surpassing standard bicubic interpolation and DL-based upscaling in reconstruction quality.
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] A lightweight image upscaling technique tailored for 3DGS is proposed, leveraging analytic image gradients from Gaussian primitives for gradient-aware bicubic spline interpol…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - image upscaling
-  - analytic gradients
-  - spline interpolation
-  - lightweight rendering
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "image upscaling"
+  - "analytic gradients"
+  - "spline interpolation"
+  - "lightweight rendering"
 date: 2026-05-08
 content_hash: d3e31d55c3286733
 ---

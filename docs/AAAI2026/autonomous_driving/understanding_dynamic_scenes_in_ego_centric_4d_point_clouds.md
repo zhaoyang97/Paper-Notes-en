@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Understanding Dynamic Scenes in Egocentric 4D Point Clouds
 description: >-
-  [AAAI 2026][Autonomous Driving][Egocentric View] This work introduces EgoDynamic4D — the first egocentric QA benchmark targeting highly dynamic 4D scenes (927K QA pairs, 12 task types) — and proposes an end-to-end spatiotemporal reasoning framework that compresses large-scale 4D scenes into LLM-processable token sequences via instance-aware feature encoding, temporal encoding, camera encoding, and adaptive downsampling.
+  [AAAI 2026][Autonomous Driving][Egocentric View] This work introduces EgoDynamic4D — the first egocentric QA benchmark targeting highly dynamic 4D scenes (927K QA pairs…
 tags:
-  - AAAI 2026
-  - Autonomous Driving
-  - Egocentric View
-  - 4D Point Clouds
-  - Spatiotemporal Reasoning
-  - Dynamic Scene QA
-  - Chain-of-Thought
+  - "AAAI 2026"
+  - "Autonomous Driving"
+  - "Egocentric View"
+  - "4D Point Clouds"
+  - "Spatiotemporal Reasoning"
+  - "Dynamic Scene QA"
+  - "Chain-of-Thought"
 date: 2026-05-08
 content_hash: 143e271a75417e84
 ---

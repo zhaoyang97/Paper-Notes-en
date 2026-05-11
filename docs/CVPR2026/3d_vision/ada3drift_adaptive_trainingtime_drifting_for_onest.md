@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Ada3Drift: Adaptive Training-Time Drifting for One-Step 3D Visuomotor Robotic Manipulation
 description: >-
-  [CVPR 2026][3D Vision][One-step action generation] Ada3Drift proposes shifting the iterative refinement of diffusion policies from inference time to training time. By introducing a training-time drifting field—attracting predicted actions toward expert modes while repelling other generated samples—it achieves high-fidelity one-step (1 NFE) 3D visuomotor policies, reaching state-of-the-art performance on Adroit, Meta-World, RoboTwin, and real-robot tasks, with a 10× speedup at inference.
+  [CVPR 2026][3D Vision][One-step action generation] Ada3Drift proposes shifting the iterative refinement of diffusion policies from inference time to training time. By introducing a training-time drifting field—attracting…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - One-step action generation
-  - diffusion policy
-  - 3D point cloud
-  - multimodal action distribution
-  - training-time drifting
+  - "CVPR 2026"
+  - "3D Vision"
+  - "One-step action generation"
+  - "diffusion policy"
+  - "3D point cloud"
+  - "multimodal action distribution"
+  - "training-time drifting"
 date: 2026-05-08
 content_hash: d651ac93273c1b8a
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The Emergence of Sparse Attention: Impact of Data Distribution and Benefits of Repetition
 description: >-
-  [NeurIPS 2025][LLM Efficiency][sparse attention] This paper investigates the emergence mechanism of sparse attention through theoretical analysis and controlled experiments, revealing that the emergence time follows a power-law relationship with respect to sequence length and dimensionality, $T_\epsilon \propto \sqrt{d} \cdot T$. It further demonstrates that both in-context and cross-sample data repetition strategies accelerate emergence, offering a unified sparse attention perspective for understanding capability emergence in LLMs.
+  [NeurIPS 2025][LLM Efficiency][sparse attention] This paper investigates the emergence mechanism of sparse attention through theoretical analysis and controlled experiments…
 tags:
-  - NeurIPS 2025
-  - LLM Efficiency
-  - sparse attention
-  - emergence
-  - power law
-  - repetition
-  - learning dynamics
+  - "NeurIPS 2025"
+  - "LLM Efficiency"
+  - "sparse attention"
+  - "emergence"
+  - "power law"
+  - "repetition"
+  - "learning dynamics"
 date: 2026-05-08
 content_hash: 0cce600b07bf3312
 ---

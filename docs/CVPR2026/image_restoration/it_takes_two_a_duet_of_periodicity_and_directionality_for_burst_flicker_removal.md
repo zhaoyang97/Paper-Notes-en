@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Flickerformer: A Duet of Periodicity and Directionality for Burst Flicker Removal
 description: >-
-  [CVPR 2026][Image Restoration][Burst Flicker Removal] This paper identifies two intrinsic physical properties of flicker artifacts—periodicity and directionality—and proposes Flickerformer, comprising three dedicated modules (PFM/AFFN/WDAM) for inter-frame/intra-frame periodicity and directionality modeling respectively. With only 3.92M parameters, the method achieves 31.226 dB PSNR on the BurstDeflicker benchmark, surpassing the second-best method AST by +0.580 dB while using only 19.70% of its parameters.
+  [CVPR 2026][Image Restoration][Burst Flicker Removal] This paper identifies two intrinsic physical properties of flicker artifacts—periodicity and directionality—and proposes Flickerformer…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Burst Flicker Removal
-  - Phase Correlation
-  - Autocorrelation
-  - Wavelet Attention
-  - Transformer
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Burst Flicker Removal"
+  - "Phase Correlation"
+  - "Autocorrelation"
+  - "Wavelet Attention"
+  - "Transformer"
 date: 2026-05-08
 content_hash: 80046ac1b3e2fe2a
 ---

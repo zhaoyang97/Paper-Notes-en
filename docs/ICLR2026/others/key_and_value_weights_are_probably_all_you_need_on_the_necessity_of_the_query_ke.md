@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Key and Value Weights Are Probably All You Need: On the Necessity of the Query, Key, and Value Weight Triplet in Self-Attention
 description: >-
-  [ICLR 2026][Self-Attention] This paper theoretically demonstrates that the Query/Key/Value weight triplet in Transformer self-attention is redundant — the Query weight matrix can be replaced by an identity matrix (reducing attention parameters by 25%). GPT-style models trained from scratch confirm that performance is preserved under appropriate hyperparameter adjustment, and training remains stable at 3× lower weight decay, suggesting implicit regularization.
+  [ICLR 2026][Self-Attention] This paper theoretically demonstrates that the Query/Key/Value weight triplet in Transformer self-attention is redundant — the Query weight matrix can be replaced by an identity matrix (reduci…
 tags:
-  - ICLR 2026
-  - Self-Attention
-  - Query Weights
-  - Parameter Redundancy
-  - Implicit Regularization
-  - Architecture Simplification
+  - "ICLR 2026"
+  - "Self-Attention"
+  - "Query Weights"
+  - "Parameter Redundancy"
+  - "Implicit Regularization"
+  - "Architecture Simplification"
 date: 2026-05-08
 content_hash: 0dd9fefe8f5e1762
 ---

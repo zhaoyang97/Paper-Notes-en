@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Uni-MuMER: Unified Multi-Task Fine-Tuning of Vision-Language Model for Handwritten Mathematical Expression Recognition
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Handwritten Mathematical Expression Recognition] This paper proposes Uni-MuMER, which performs unified multi-task fine-tuning of an open-source VLM via three data-driven tasks (Tree-CoT, Error-Driven Learning, and Symbol Counting), achieving substantial improvements over both specialized lightweight models and zero-shot commercial VLMs on the CROHME and HME100K benchmarks.
+  [NeurIPS 2025][Multimodal VLM][Handwritten Mathematical Expression Recognition] This paper proposes Uni-MuMER, which performs unified multi-task fine-tuning of an open-source VLM via three data-driven tasks (Tree-CoT…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Handwritten Mathematical Expression Recognition
-  - Vision-Language Model
-  - Multi-Task Fine-Tuning
-  - Chain-of-Thought
-  - Error-Driven Learning
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Handwritten Mathematical Expression Recognition"
+  - "Vision-Language Model"
+  - "Multi-Task Fine-Tuning"
+  - "Chain-of-Thought"
+  - "Error-Driven Learning"
 date: 2026-05-08
 content_hash: 25abbe7b32ed57a0
 ---

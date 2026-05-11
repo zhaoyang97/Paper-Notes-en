@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CAMU: Context Augmentation for Meme Understanding
 description: >-
-  [AAAI 2026][Multimodal VLM][Hateful meme detection] This paper proposes the CAMU framework, which achieves 0.807 accuracy and 0.806 F1 on the Hateful Memes dataset through visually grounded context caption generation, a novel caption scoring network, and parameter-efficient n-layer fine-tuning of the CLIP text encoder—matching the 55B-parameter SOTA while being substantially more efficient.
+  [AAAI 2026][Multimodal VLM][Hateful meme detection] This paper proposes the CAMU framework, which achieves 0.807 accuracy and 0.806 F1 on the Hateful Memes dataset through visually grounded context caption generation…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Hateful meme detection
-  - multimodal fusion
-  - CLIP fine-tuning
-  - visual grounding
-  - caption generation
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Hateful meme detection"
+  - "multimodal fusion"
+  - "CLIP fine-tuning"
+  - "visual grounding"
+  - "caption generation"
 date: 2026-05-08
 content_hash: 943f04b5c119ae65
 ---

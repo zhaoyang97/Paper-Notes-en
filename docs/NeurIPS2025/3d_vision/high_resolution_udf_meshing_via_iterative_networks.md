@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] High Resolution UDF Meshing via Iterative Networks
 description: >-
-  [NeurIPS 2025][3D Vision][Unsigned Distance Field] This paper proposes the first iterative meshing method for Unsigned Distance Fields (UDFs), which progressively propagates neighborhood information into local voxel pseudo-sign predictions through multiple forward passes. The approach effectively resolves surface holes and discontinuities caused by noisy neural UDFs at high resolutions, significantly outperforming existing single-pass methods across multiple datasets.
+  [NeurIPS 2025][3D Vision][Unsigned Distance Field] This paper proposes the first iterative meshing method for Unsigned Distance Fields (UDFs)…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Unsigned Distance Field
-  - Meshing
-  - Iterative Network
-  - Pseudo-sign Prediction
-  - High-Resolution Surface Reconstruction
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Unsigned Distance Field"
+  - "Meshing"
+  - "Iterative Network"
+  - "Pseudo-sign Prediction"
+  - "High-Resolution Surface Reconstruction"
 date: 2026-05-08
 content_hash: f67c915235e405e9
 ---

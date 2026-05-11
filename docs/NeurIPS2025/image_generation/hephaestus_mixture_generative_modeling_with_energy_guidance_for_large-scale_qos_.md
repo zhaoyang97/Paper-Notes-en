@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Hephaestus: Mixture Generative Modeling with Energy Guidance for Large-scale QoS Degradation
 description: >-
-  [NeurIPS 2025][Image Generation][QoS Degradation] This paper proposes Hephaestus, a three-stage generative framework (Forge-Morph-Refine) that combines a Predicted Path Pressurization (PPS) algorithm, an energy-guided mixture CVAE, and latent-space reinforcement learning optimization to address large-scale network QoS degradation problems.
+  [NeurIPS 2025][Image Generation][QoS Degradation] This paper proposes Hephaestus, a three-stage generative framework (Forge-Morph-Refine) that combines a Predicted Path Pressurization (PPS) algorithm…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - QoS Degradation
-  - Mixture CVAE
-  - Energy-Based Model
-  - Reinforcement Learning
-  - Network Optimization
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "QoS Degradation"
+  - "Mixture CVAE"
+  - "Energy-Based Model"
+  - "Reinforcement Learning"
+  - "Network Optimization"
 date: 2026-05-08
 content_hash: 078f0e2a210f24d0
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] X-Scene: Large-Scale Driving Scene Generation with High Fidelity and Flexible Controllability
 description: >-
-  [NeurIPS 2025][Autonomous Driving][large-scale scene generation] This paper presents X-Scene, a unified large-scale driving scene generation framework that supports multi-granularity control ranging from high-level text prompts to low-level BEV layouts. By jointly generating 3D semantic occupancy, multi-view images, and videos, and leveraging consistency-aware extrapolation for large-scale scene expansion, X-Scene comprehensively outperforms existing methods in generation quality (FID 11.29) and downstream tasks.
+  [NeurIPS 2025][Autonomous Driving][large-scale scene generation] This paper presents X-Scene, a unified large-scale driving scene generation framework that supports multi-granularity control ranging from high-level text…
 tags:
-  - NeurIPS 2025
-  - Autonomous Driving
-  - large-scale scene generation
-  - multi-granularity control
-  - occupancy generation
-  - 3DGS reconstruction
-  - autonomous driving simulation
+  - "NeurIPS 2025"
+  - "Autonomous Driving"
+  - "large-scale scene generation"
+  - "multi-granularity control"
+  - "occupancy generation"
+  - "3DGS reconstruction"
+  - "autonomous driving simulation"
 date: 2026-05-08
 content_hash: f8823c3356e41816
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Large Scale Diffusion Distillation via Score-Regularized Continuous-Time Consistency
 description: >-
-  [ICLR 2026][Image Generation][Continuous-time consistency models] This paper proposes rCM (score-regularized continuous-time consistency model), which for the first time scales continuous-time consistency distillation to 14B-parameter text-to-image/video models. By combining forward KL divergence (consistency) with reverse KL divergence (score distillation), rCM matches DMD2 in quality while preserving diversity, achieving 15–50× inference speedup.
+  [ICLR 2026][Image Generation][Continuous-time consistency models] This paper proposes rCM (score-regularized continuous-time consistency model)…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Continuous-time consistency models
-  - score distillation
-  - large-scale distillation
-  - JVP
-  - few-step generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Continuous-time consistency models"
+  - "score distillation"
+  - "large-scale distillation"
+  - "JVP"
+  - "few-step generation"
 date: 2026-05-08
 content_hash: 8ef3e70d71dfad61
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CA-LoRA: Concept-Aware LoRA for Domain-Aligned Segmentation Dataset Generation
 description: >-
-  [CVPR 2026][Segmentation][LoRA fine-tuning] This paper proposes Concept-Aware LoRA (CA-LoRA), which automatically identifies weight layers in a T2I model that are sensitive to specific concepts (e.g., viewpoint, style) and applies LoRA fine-tuning exclusively to those layers. This selective adaptation achieves domain alignment while preserving the diverse generation capability of the pretrained model, enabling the synthesis of high-quality urban-scene segmentation datasets.
+  [CVPR 2026][Segmentation][LoRA fine-tuning] This paper proposes Concept-Aware LoRA (CA-LoRA), which automatically identifies weight layers in a T2I model that are sensitive to specific concepts (e.g., viewpoint…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - LoRA fine-tuning
-  - T2I generative models
-  - semantic segmentation
-  - concept disentanglement
-  - domain generalization
+  - "CVPR 2026"
+  - "Segmentation"
+  - "LoRA fine-tuning"
+  - "T2I generative models"
+  - "semantic segmentation"
+  - "concept disentanglement"
+  - "domain generalization"
 date: 2026-05-08
 content_hash: 9cd2fc39863f9e92
 ---

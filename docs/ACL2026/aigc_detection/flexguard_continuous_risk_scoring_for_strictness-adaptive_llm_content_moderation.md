@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FlexGuard: Continuous Risk Scoring for Strictness-Adaptive LLM Content Moderation
 description: >-
-  [ACL 2026][AIGC Detection][content moderation] FlexGuard proposes an LLM moderation model that outputs continuous risk scores (0-100) instead of binary safe/unsafe judgments, achieving SOTA robustness and accuracy across varying enforcement strictness levels via rubric-guided distillation and GRPO risk alignment training.
+  [ACL 2026][AIGC Detection][content moderation] FlexGuard proposes an LLM moderation model that outputs continuous risk scores (0-100) instead of binary safe/unsafe judgments…
 tags:
-  - ACL 2026
-  - AIGC Detection
-  - content moderation
-  - continuous risk scoring
-  - strictness adaptation
-  - LLM safety
-  - reinforcement learning
+  - "ACL 2026"
+  - "AIGC Detection"
+  - "content moderation"
+  - "continuous risk scoring"
+  - "strictness adaptation"
+  - "LLM safety"
+  - "reinforcement learning"
 date: 2025-05-08
 content_hash: db4e97105a50509b
 ---

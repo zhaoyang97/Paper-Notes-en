@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Distilling Deep Reinforcement Learning into Interpretable Fuzzy Rules: An Explainable AI Framework
 description: >-
-  [AAAI 2026][Reinforcement Learning][Fuzzy Logic] This paper proposes a hierarchical Takagi-Sugeno-Kang (TSK) fuzzy classifier system that distills deep RL neural network policies into human-readable IF-THEN fuzzy rules. Three quantitative interpretability metrics are introduced (FRAD, FSC, ASG). On the Lunar Lander continuous control task, the proposed system achieves 81.48% fidelity, surpassing decision trees by 21 percentage points.
+  [AAAI 2026][Reinforcement Learning][Fuzzy Logic] This paper proposes a hierarchical Takagi-Sugeno-Kang (TSK) fuzzy classifier system that distills deep RL neural network policies into human-readable IF-THEN fuzzy rules.…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - Fuzzy Logic
-  - TSK System
-  - Policy Distillation
-  - Explainable AI
-  - Continuous Control
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "Fuzzy Logic"
+  - "TSK System"
+  - "Policy Distillation"
+  - "Explainable AI"
+  - "Continuous Control"
 date: 2026-05-08
 content_hash: f6bdd0e22ed9aa6c
 ---

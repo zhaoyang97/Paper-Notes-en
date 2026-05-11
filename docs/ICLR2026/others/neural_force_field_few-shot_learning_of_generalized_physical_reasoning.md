@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Neural Force Field: Few-shot Learning of Generalized Physical Reasoning
 description: >-
-  [ICLR 2026][neural force field] This paper proposes Neural Force Field (NFF), which models object interactions as continuous force fields. A neural operator learns the force field function, and an ODE integrator decodes trajectories from it. NFF achieves few-shot state-of-the-art on three benchmarks—I-PHYRE (100 trajectories), N-body (200 trajectories), and PHYRE (0.012M samples, 267× fewer than prior SOTA)—reducing cross-scenario RMSE by 32–64% and achieving near-human performance on planning tasks.
+  [ICLR 2026][neural force field] This paper proposes Neural Force Field (NFF), which models object interactions as continuous force fields. A neural operator learns the force field function…
 tags:
-  - ICLR 2026
-  - neural force field
-  - Neural ODE
-  - few-shot physical reasoning
-  - ODE solver
-  - interactive planning
+  - "ICLR 2026"
+  - "neural force field"
+  - "Neural ODE"
+  - "few-shot physical reasoning"
+  - "ODE solver"
+  - "interactive planning"
 date: 2026-05-08
 content_hash: 4514fd932e370047
 ---

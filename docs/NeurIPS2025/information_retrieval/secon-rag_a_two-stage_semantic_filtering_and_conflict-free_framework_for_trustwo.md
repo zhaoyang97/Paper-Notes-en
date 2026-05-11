@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] SeCon-RAG: A Two-Stage Semantic Filtering and Conflict-Free Framework for Trustworthy RAG
 description: >-
-  [NeurIPS 2025][RAG] This paper proposes SeCon-RAG, a two-stage defense framework. The first stage employs clustering combined with semantic graph filtering to remove poisoned documents, while the second stage performs conflict-aware filtering at inference time. SeCon-RAG comprehensively outperforms existing RAG defense methods across 5 LLMs and 3 QA datasets, maintaining high accuracy and near-zero attack success rates even under 100% poisoning rates.
+  [NeurIPS 2025][Information Retrieval & RAG][RAG] This paper proposes SeCon-RAG, a two-stage defense framework. The first stage employs clustering combined with semantic graph filtering to remove poisoned documents…
 tags:
-  - NeurIPS 2025
-  - RAG
-  - corpus poisoning defense
-  - semantic filtering
-  - conflict-aware reasoning
-  - entity-intent-relation
+  - "NeurIPS 2025"
+  - "Information Retrieval & RAG"
+  - "RAG"
+  - "corpus poisoning defense"
+  - "semantic filtering"
+  - "conflict-aware reasoning"
+  - "entity-intent-relation"
 date: 2026-05-08
 content_hash: ea7028db2d2a7dc2
 ---

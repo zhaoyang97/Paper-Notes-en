@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Language Driven Occupancy Prediction (LOcc)
 description: >-
-  [ICCV 2025][Autonomous Driving][open-vocabulary occupancy] This paper proposes LOcc, an effective and generalizable open-vocabulary occupancy (OVO) prediction framework. Its core contribution is a semantic transitive labeling pipeline (LVLM + OV-Seg → LiDAR → voxel) that generates dense, fine-grained 3D language occupancy pseudo-GT, replacing the noisy and sparse intermediate feature distillation used in prior work. LOcc comprehensively surpasses state-of-the-art methods on Occ3D-nuScenes.
+  [ICCV 2025][Autonomous Driving][open-vocabulary occupancy] This paper proposes LOcc, an effective and generalizable open-vocabulary occupancy (OVO) prediction framework. Its core contribution is a semantic transitive lab…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - open-vocabulary occupancy
-  - language-driven
-  - semantic transitive labeling
-  - 3D perception
-  - occupancy prediction
-  - CLIP
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "open-vocabulary occupancy"
+  - "language-driven"
+  - "semantic transitive labeling"
+  - "3D perception"
+  - "occupancy prediction"
+  - "CLIP"
 date: 2026-05-08
 content_hash: 609c8985a9aa09a1
 ---

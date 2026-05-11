@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Know Thy Enemy: Securing LLMs Against Prompt Injection via Diverse Data Synthesis and Instruction-Level Chain-of-Thought Learning
 description: >-
-  [ACL 2026][LLM Reasoning][Prompt Injection Attack] This paper proposes InstruCoT, which synthesizes diverse training data covering multiple injection vectors and threat scenarios, and introduces a three-stage instruction-level chain-of-thought fine-tuning framework based on a situation-aware model. This enables LLMs to effectively identify and reject malicious instructions under various prompt injection attacks, substantially outperforming existing defenses across three evaluation dimensions: behavioral deviation, privacy leakage, and harmful output.
+  [ACL 2026][LLM Reasoning][Prompt Injection Attack] This paper proposes InstruCoT, which synthesizes diverse training data covering multiple injection vectors and threat scenarios…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - Prompt Injection Attack
-  - Instruction-Level Alignment
-  - Chain-of-Thought Reasoning
-  - Data Synthesis
-  - Safety Fine-Tuning
+  - "ACL 2026"
+  - "LLM Reasoning"
+  - "Prompt Injection Attack"
+  - "Instruction-Level Alignment"
+  - "Chain-of-Thought Reasoning"
+  - "Data Synthesis"
+  - "Safety Fine-Tuning"
 date: 2026-05-08
 content_hash: e2392d8d8778b8df
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Technical Debt in In-Context Learning: Diminishing Efficiency in Long Context
 description: >-
-  [NeurIPS 2025][LLM Efficiency][In-context learning] Drawing on the methodology of optimization software benchmarking, this work precisely quantifies the sample efficiency of ICL relative to the Bayes-optimal estimator via performance ratios. A clear dichotomy is identified: in the few-shot regime (≤15 demonstrations), efficiency is near-optimal (only ~10% overhead), whereas in the many-shot regime (>40 demonstrations) it degrades sharply (>45% overhead). Information-theoretic analysis establishes that this phenomenon stems from a non-decreasing excess risk that is irreducible—an intrinsic limitation of the ICL mechanism.
+  [NeurIPS 2025][LLM Efficiency][In-context learning] Drawing on the methodology of optimization software benchmarking, this work precisely quantifies the sample efficiency of ICL relative to the Bayes-optimal estimator vi…
 tags:
-  - NeurIPS 2025
-  - LLM Efficiency
-  - In-context learning
-  - sample complexity
-  - Bayes-optimal
-  - technical debt
-  - long-context efficiency
+  - "NeurIPS 2025"
+  - "LLM Efficiency"
+  - "In-context learning"
+  - "sample complexity"
+  - "Bayes-optimal"
+  - "technical debt"
+  - "long-context efficiency"
 date: 2026-05-08
 content_hash: 02003c4e2fa4c39a
 ---

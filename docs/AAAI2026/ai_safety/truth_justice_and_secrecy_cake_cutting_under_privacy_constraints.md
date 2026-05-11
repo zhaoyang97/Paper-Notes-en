@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Truth, Justice, and Secrecy: Cake Cutting Under Privacy Constraints
 description: >-
-  [AAAI 2026][AI Safety][cake cutting] This paper proposes PP_CC_puv, the first privacy-preserving cake cutting protocol, which transforms Chen et al.'s strategyproof algorithm using secret sharing and secure multi-party computation (MPC). The protocol maintains envy-freeness, Pareto optimality, and strategyproofness while preventing any participant from learning others' preference information.
+  [AAAI 2026][AI Safety][cake cutting] This paper proposes PP_CC_puv, the first privacy-preserving cake cutting protocol, which transforms Chen et al.'s strategyproof algorithm using secret sharing and secure multi-party c…
 tags:
-  - AAAI 2026
-  - AI Safety
-  - cake cutting
-  - privacy preservation
-  - secure multi-party computation
-  - envy-free allocation
-  - strategyproofness
+  - "AAAI 2026"
+  - "AI Safety"
+  - "cake cutting"
+  - "privacy preservation"
+  - "secure multi-party computation"
+  - "envy-free allocation"
+  - "strategyproofness"
 date: 2026-05-08
 content_hash: d157a981d6d7caeb
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Scaling LLM Speculative Decoding: Non-Autoregressive Forecasting in Large-Batch Scenarios
 description: >-
-  [AAAI 2026][Time Series][Speculative Decoding] This paper proposes SpecFormer, a non-autoregressive draft model architecture that integrates unidirectional and bidirectional attention. By reducing reliance on large prefix trees and minimizing position-dependent parameters, SpecFormer achieves consistent LLM inference acceleration in large-batch scenarios.
+  [AAAI 2026][Time Series][Speculative Decoding] This paper proposes SpecFormer, a non-autoregressive draft model architecture that integrates unidirectional and bidirectional attention. By reducing reliance on large prefi…
 tags:
-  - AAAI 2026
-  - Time Series
-  - Speculative Decoding
-  - Non-Autoregressive Generation
-  - Large-Batch Inference
-  - LLM Acceleration
-  - SpecFormer
+  - "AAAI 2026"
+  - "Time Series"
+  - "Speculative Decoding"
+  - "Non-Autoregressive Generation"
+  - "Large-Batch Inference"
+  - "LLM Acceleration"
+  - "SpecFormer"
 date: 2026-05-08
 content_hash: 9856b9e4778593ce
 ---

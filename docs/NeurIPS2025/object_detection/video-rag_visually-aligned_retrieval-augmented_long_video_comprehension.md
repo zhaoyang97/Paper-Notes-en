@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Video-RAG: Visually-aligned Retrieval-Augmented Long Video Comprehension
 description: >-
-  [NeurIPS 2025][Object Detection][Retrieval-Augmented Generation] This paper proposes Video-RAG, a training-free, plug-and-play RAG pipeline that extracts visually-aligned auxiliary texts (OCR, ASR, object detection) from video, retrieves relevant content, and feeds it into LVLMs. With an overhead of only ~2K tokens, it improves average Video-MME performance by 2.8% across seven open-source LVLMs, and the 72B model surpasses GPT-4o.
+  [NeurIPS 2025][Object Detection][Retrieval-Augmented Generation] This paper proposes Video-RAG, a training-free, plug-and-play RAG pipeline that extracts visually-aligned auxiliary texts (OCR, ASR…
 tags:
-  - NeurIPS 2025
-  - Object Detection
-  - Retrieval-Augmented Generation
-  - Long Video Understanding
-  - Auxiliary Text
-  - Plug-and-Play
-  - Multimodal Alignment
+  - "NeurIPS 2025"
+  - "Object Detection"
+  - "Retrieval-Augmented Generation"
+  - "Long Video Understanding"
+  - "Auxiliary Text"
+  - "Plug-and-Play"
+  - "Multimodal Alignment"
 date: 2026-05-08
 content_hash: 36f4c953565d83be
 ---

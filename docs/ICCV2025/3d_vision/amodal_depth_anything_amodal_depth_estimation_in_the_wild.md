@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Amodal Depth Anything: Amodal Depth Estimation in the Wild
 description: >-
-  [ICCV 2025][3D Vision][amodal depth estimation] This paper proposes a new paradigm for amodal relative depth estimation, constructs a large-scale real-world dataset ADIW (564K samples), and designs two complementary frameworks (Amodal-DAV2 and Amodal-DepthFM) built upon Depth Anything V2 and DepthFM. By minimally modifying pretrained models, the method achieves depth prediction in occluded regions, improving RMSE by 27.4% over the previous SOTA on ADIW.
+  [ICCV 2025][3D Vision][amodal depth estimation] This paper proposes a new paradigm for amodal relative depth estimation, constructs a large-scale real-world dataset ADIW (564K samples)…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - amodal depth estimation
-  - relative depth
-  - occlusion-aware perception
-  - Depth Anything V2
-  - conditional flow matching
+  - "ICCV 2025"
+  - "3D Vision"
+  - "amodal depth estimation"
+  - "relative depth"
+  - "occlusion-aware perception"
+  - "Depth Anything V2"
+  - "conditional flow matching"
 date: 2026-05-08
 content_hash: 917554f58998d1a3
 ---

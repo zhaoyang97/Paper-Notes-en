@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] SODA: Sensitivity-Oriented Dynamic Acceleration for Diffusion Transformer
 description: >-
-  [CVPR2026][Model Compression][Diffusion Transformer] SODA is proposed to achieve controllable-speedup high-fidelity generation for Diffusion Transformers without training, via offline fine-grained sensitivity modeling, dynamic-programming-based cache schedule optimization, and a unified adaptive pruning strategy.
+  [CVPR2026][Model Compression][Diffusion Transformer] SODA is proposed to achieve controllable-speedup high-fidelity generation for Diffusion Transformers without training, via offline fine-grained sensitivity modeling…
 tags:
-  - CVPR2026
-  - Model Compression
-  - Diffusion Transformer
-  - training-free acceleration
-  - caching
-  - pruning
-  - sensitivity modeling
-  - dynamic programming
+  - "CVPR2026"
+  - "Model Compression"
+  - "Diffusion Transformer"
+  - "training-free acceleration"
+  - "caching"
+  - "pruning"
+  - "sensitivity modeling"
+  - "dynamic programming"
 date: 2026-05-08
 content_hash: 660ab3cd21b1097c
 ---

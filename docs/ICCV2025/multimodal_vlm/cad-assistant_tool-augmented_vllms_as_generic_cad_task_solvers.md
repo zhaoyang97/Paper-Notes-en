@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CAD-Assistant: Tool-Augmented VLLMs as Generic CAD Task Solvers
 description: >-
-  [ICCV 2025][Multimodal VLM][CAD Agent] This paper proposes CAD-Assistant, the first tool-augmented vision-language model framework for generic CAD tasks. By integrating a CAD-specific toolset (sketch parameterizer, rendering module, constraint checker, etc.) and the FreeCAD Python API, it surpasses supervised task-specific methods in a zero-shot setting.
+  [ICCV 2025][Multimodal VLM][CAD Agent] This paper proposes CAD-Assistant, the first tool-augmented vision-language model framework for generic CAD tasks. By integrating a CAD-specific toolset (sketch parameterizer…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - CAD Agent
-  - Tool-Augmentation
-  - VLLM
-  - Geometric Reasoning
-  - FreeCAD
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "CAD Agent"
+  - "Tool-Augmentation"
+  - "VLLM"
+  - "Geometric Reasoning"
+  - "FreeCAD"
 date: 2026-05-08
 content_hash: ce7332c9f99ab8fc
 ---

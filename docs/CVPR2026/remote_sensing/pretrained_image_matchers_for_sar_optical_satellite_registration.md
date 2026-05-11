@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Are Pretrained Image Matchers Good Enough for SAR-Optical Satellite Registration?
 description: >-
-  [CVPR 2026][Remote Sensing][SAR-optical registration] This paper evaluates 24 families of pretrained image matchers on SAR-optical satellite registration under a zero-shot setting, finding that deployment protocol choices (geometric model, tile size, etc.) can affect accuracy by up to 33×, sometimes surpassing the effect of switching the matcher itself.
+  [CVPR 2026][Remote Sensing][SAR-optical registration] This paper evaluates 24 families of pretrained image matchers on SAR-optical satellite registration under a zero-shot setting…
 tags:
-  - CVPR 2026
-  - Remote Sensing
-  - SAR-optical registration
-  - image matching
-  - cross-modal
-  - zero-shot transfer
-  - satellite imagery
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "SAR-optical registration"
+  - "image matching"
+  - "cross-modal"
+  - "zero-shot transfer"
+  - "satellite imagery"
 date: 2026-05-08
 content_hash: c834374275cc568b
 ---

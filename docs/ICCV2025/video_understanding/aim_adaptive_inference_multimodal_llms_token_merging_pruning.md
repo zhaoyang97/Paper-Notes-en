@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AIM: Adaptive Inference of Multi-Modal LLMs via Token Merging and Pruning
 description: >-
-  [ICCV 2025][Video Understanding][Multimodal LLM] This paper proposes AIM, a training-free adaptive inference method for multimodal LLMs that achieves a 6.8× FLOPs reduction while maintaining performance, through similarity-based iterative visual token merging before the LLM and progressive PageRank-based token pruning within LLM layers. Under equal compute budgets, AIM even surpasses SOTA on long video understanding (+4.6 MLVU).
+  [ICCV 2025][Video Understanding][Multimodal LLM] This paper proposes AIM, a training-free adaptive inference method for multimodal LLMs that achieves a 6.8× FLOPs reduction while maintaining performance…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - Multimodal LLM
-  - adaptive inference
-  - token merging
-  - token pruning
-  - video understanding efficiency
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "Multimodal LLM"
+  - "adaptive inference"
+  - "token merging"
+  - "token pruning"
+  - "video understanding efficiency"
 date: 2026-05-08
 content_hash: 5817caaca057e3c7
 ---

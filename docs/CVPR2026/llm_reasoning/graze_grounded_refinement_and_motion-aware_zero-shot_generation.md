@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GRAZE: Grounded Refinement and Motion-Aware Zero-Shot Event Localization
 description: >-
-  [CVPR 2026][LLM Reasoning][Zero-shot temporal localization] GRAZE is proposed as a training-free pipeline that leverages Grounding DINO to discover candidate interactions and employs SAM2 mask overlap as a pixel-level contact verifier, achieving 97.4% coverage and 77.5% contact onset frame localization accuracy within ±10 frames on 738 American football training videos.
+  [CVPR 2026][LLM Reasoning][Zero-shot temporal localization] GRAZE is proposed as a training-free pipeline that leverages Grounding DINO to discover candidate interactions and employs SAM2 mask overlap as a pixel-level co…
 tags:
-  - CVPR 2026
-  - LLM Reasoning
-  - Zero-shot temporal localization
-  - contact detection
-  - SAM2
-  - Grounding DINO
-  - motion-aware
+  - "CVPR 2026"
+  - "LLM Reasoning"
+  - "Zero-shot temporal localization"
+  - "contact detection"
+  - "SAM2"
+  - "Grounding DINO"
+  - "motion-aware"
 date: 2026-05-08
 content_hash: eef20ead4675d66e
 ---

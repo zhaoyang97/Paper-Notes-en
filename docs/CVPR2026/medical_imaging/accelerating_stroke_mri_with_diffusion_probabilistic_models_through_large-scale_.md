@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Accelerating Stroke MRI with Diffusion Probabilistic Models through Large-Scale Pre-training and Target-Specific Fine-Tuning
 description: >-
-  [CVPR 2026][Medical Imaging][Accelerated MRI reconstruction] Drawing inspiration from the "pre-train then fine-tune" paradigm of foundation models, this work pre-trains a diffusion probabilistic model (DPM) at scale on ~4,000 fastMRI subjects spanning multiple contrasts, then fine-tunes on as few as 20 target-domain subjects using a low learning rate. The resulting model generalizes across contrasts and acquisition protocols for accelerated MRI reconstruction. In a clinical stroke validation, 2× accelerated images are rated non-inferior to fully-sampled images by blinded neuroradiologists.
+  [CVPR 2026][Medical Imaging][Accelerated MRI reconstruction] Drawing inspiration from the "pre-train then fine-tune" paradigm of foundation models…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Accelerated MRI reconstruction
-  - diffusion probabilistic models
-  - large-scale pre-training
-  - fine-tuning transfer
-  - stroke imaging
-  - Diffusion Posterior Sampling
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Accelerated MRI reconstruction"
+  - "diffusion probabilistic models"
+  - "large-scale pre-training"
+  - "fine-tuning transfer"
+  - "stroke imaging"
+  - "Diffusion Posterior Sampling"
 date: 2026-05-08
 content_hash: 7a62d0b28c45b604
 ---

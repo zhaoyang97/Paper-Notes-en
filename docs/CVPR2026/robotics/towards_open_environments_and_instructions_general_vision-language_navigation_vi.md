@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Open Environments and Instructions: General Vision-Language Navigation via Fast-Slow Interactive Reasoning
 description: >-
-  [CVPR 2026][Robotics][Vision-Language Navigation] For the task of general scene-adaptive vision-language navigation (GSA-VLN) in open environments, inspired by Kahneman's dual-process cognitive theory, this paper proposes the slow4fast-VLN framework. A fast reasoning module performs real-time navigation via an end-to-end policy network while accumulating historical memory; a slow reasoning module leverages LLM-based reflection to generate structured, generalizable experience entries. These experiences are fed back into the fast reasoning network via attention-based fusion, enabling continuous adaptation to unseen environments and diverse instruction styles. The proposed framework achieves comprehensive improvements over the previous SOTA (GR-DUET) on the GSA-R2R dataset.
+  [CVPR 2026][Robotics][Vision-Language Navigation] For the task of general scene-adaptive vision-language navigation (GSA-VLN) in open environments, inspired by Kahneman's dual-process cognitive theory…
 tags:
-  - CVPR 2026
-  - Robotics
-  - Vision-Language Navigation
-  - fast-slow reasoning
-  - experience repository
-  - scene generalization
-  - instruction style conversion
+  - "CVPR 2026"
+  - "Robotics"
+  - "Vision-Language Navigation"
+  - "fast-slow reasoning"
+  - "experience repository"
+  - "scene generalization"
+  - "instruction style conversion"
 date: 2026-05-08
 content_hash: 2d47b29f3aa8a701
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unsupervised Domain Adaptation with Target-Only Margin Disparity Discrepancy
 description: >-
-  [CVPR 2026][Medical Imaging][Unsupervised Domain Adaptation] This paper addresses unsupervised domain adaptation (UDA) for CT→CBCT liver segmentation. It identifies a contradictory term in the classical MDD objective—where the feature extractor is optimized to *maximize* the discrepancy between $f$ and $f'$ on the source domain—and proposes Target-Only MDD, which removes this contradiction and minimizes prediction discrepancy on both domains. The method achieves state-of-the-art UDA performance in both 2D and 3D experiments.
+  [CVPR 2026][Medical Imaging][Unsupervised Domain Adaptation] This paper addresses unsupervised domain adaptation (UDA) for CT→CBCT liver segmentation. It identifies a contradictory term in the classical MDD objective—whe…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Unsupervised Domain Adaptation
-  - Margin Disparity Discrepancy
-  - CBCT
-  - Liver Segmentation
-  - Interventional Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Unsupervised Domain Adaptation"
+  - "Margin Disparity Discrepancy"
+  - "CBCT"
+  - "Liver Segmentation"
+  - "Interventional Imaging"
 date: 2026-05-08
 content_hash: 471f4e41b9e342da
 ---

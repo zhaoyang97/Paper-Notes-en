@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning to Flow from Generative Pretext Tasks for Neural Architecture Encoding
 description: >-
-  [NeurIPS 2025][LLM Pretraining][Neural architecture encoding] This paper proposes FGP (Flow-based Generative Pre-training), which trains an encoder to reconstruct a *flow surrogate* — a lightweight representation of architectural information flow — enabling encoders of arbitrary structure to capture information flow without specialized asynchronous message-passing designs. FGP achieves up to **106%** improvement in Precision@1% on performance prediction.
+  [NeurIPS 2025][LLM Pretraining][Neural architecture encoding] This paper proposes FGP (Flow-based Generative Pre-training), which trains an encoder to reconstruct a *flow surrogate* — a lightweight representation of arch…
 tags:
-  - NeurIPS 2025
-  - LLM Pretraining
-  - Neural architecture encoding
-  - information flow
-  - generative pre-training
-  - NAS
-  - graph neural networks
+  - "NeurIPS 2025"
+  - "LLM Pretraining"
+  - "Neural architecture encoding"
+  - "information flow"
+  - "generative pre-training"
+  - "NAS"
+  - "graph neural networks"
 date: 2026-05-08
 content_hash: c67eb8354a48ef90
 ---

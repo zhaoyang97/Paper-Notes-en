@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Scientific Knowledge-Guided Machine Learning for Vessel Power Prediction: A Comparative Study
 description: >-
-  [AAAI 2026][Scientific Computing][vessel power prediction] A hybrid modeling framework combining a physics baseline with a data-driven residual is proposed. The sea trial power curve (propeller law $P=cV^n$) serves as the baseline, and XGBoost/NN/PINN models learn the residual correction, significantly improving extrapolation stability and physical consistency in sparse data regions.
+  [AAAI 2026][Scientific Computing][vessel power prediction] A hybrid modeling framework combining a physics baseline with a data-driven residual is proposed. The sea trial power curve (propeller law $P=cV^n$) serves as th…
 tags:
-  - AAAI 2026
-  - Scientific Computing
-  - vessel power prediction
-  - hybrid modeling
-  - physical residual learning
-  - PINN
-  - XGBoost
-  - extrapolation generalization
+  - "AAAI 2026"
+  - "Scientific Computing"
+  - "vessel power prediction"
+  - "hybrid modeling"
+  - "physical residual learning"
+  - "PINN"
+  - "XGBoost"
+  - "extrapolation generalization"
 date: 2026-05-08
 content_hash: 10429ed06498c35f
 ---

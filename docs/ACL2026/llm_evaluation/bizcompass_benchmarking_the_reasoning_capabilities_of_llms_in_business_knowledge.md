@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BizCompass: Benchmarking the Reasoning Capabilities of LLMs in Business Knowledge and Applications
 description: >-
-  [ACL 2026 Findings][LLM Evaluation][Business reasoning benchmark] This paper introduces BizCompass, a business reasoning benchmark bridging theoretical foundations and practical applications. It covers four knowledge domains (finance, economics, statistics, and operations management) and three application roles (analyst, trader, and consultant), systematically evaluating the business reasoning capabilities of both open-source and closed-source LLMs, and revealing how theoretical knowledge transfers to real-world performance.
+  [ACL 2026 Findings][LLM Evaluation][Business reasoning benchmark] This paper introduces BizCompass, a business reasoning benchmark bridging theoretical foundations and practical applications. It covers four knowledge dom…
 tags:
-  - ACL 2026 Findings
-  - LLM Evaluation
-  - Business reasoning benchmark
-  - knowledge and application evaluation
-  - LLM capability diagnosis
-  - finance and economics
-  - dual-axis design
+  - "ACL 2026 Findings"
+  - "LLM Evaluation"
+  - "Business reasoning benchmark"
+  - "knowledge and application evaluation"
+  - "LLM capability diagnosis"
+  - "finance and economics"
+  - "dual-axis design"
 date: 2026-05-08
 content_hash: fa055d80c6a159b2
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DiFlowDubber: Discrete Flow Matching for Automated Video Dubbing via Cross-Modal Alignment and Synchronization
 description: >-
-  [CVPR 2026][Image Generation][Video Dubbing] Ours proposes DiFlowDubber, an automated video dubbing framework based on **Discrete Flow Matching (DFM)**. Through a two-stage training pipeline (Zero-shot TTS pre-training → Video dubbing adaptation), large-scale TTS knowledge is transferred to video-driven dubbing. The framework features a FaPro module to capture facial expression-prosody mapping and a Synchronizer module for precise lip-sync.
+  [CVPR 2026][Image Generation][Video Dubbing] Ours proposes DiFlowDubber, an automated video dubbing framework based on **Discrete Flow Matching (DFM)**. Through a two-stage training pipeline (Zero-shot TTS pre-training →…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Video Dubbing
-  - Discrete Flow Matching
-  - Cross-Modal Alignment
-  - Speech Synthesis
-  - Lip-Sync
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Video Dubbing"
+  - "Discrete Flow Matching"
+  - "Cross-Modal Alignment"
+  - "Speech Synthesis"
+  - "Lip-Sync"
 date: 2026-05-08
 content_hash: 53c859ff39a3bc75
 ---

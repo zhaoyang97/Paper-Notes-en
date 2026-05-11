@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Coherent Multi-Agent Trajectory Forecasting in Team Sports with CausalTraj
 description: >-
-  [AAAI 2026][Time Series][multi-agent trajectory forecasting] This paper proposes CausalTraj — a temporally causal, likelihood-based multi-agent trajectory forecasting model that autoregressively models spatio-temporal interactions among agents step by step. CausalTraj achieves state-of-the-art results on joint metrics (minJADE/minJFDE) across NBA, basketball, and football datasets while maintaining competitive per-agent accuracy.
+  [AAAI 2026][Time Series][multi-agent trajectory forecasting] This paper proposes CausalTraj — a temporally causal, likelihood-based multi-agent trajectory forecasting model that autoregressively models spatio-temporal in…
 tags:
-  - AAAI 2026
-  - Time Series
-  - multi-agent trajectory forecasting
-  - causal autoregressive model
-  - team sports analytics
-  - joint metrics
-  - Gaussian mixture model
+  - "AAAI 2026"
+  - "Time Series"
+  - "multi-agent trajectory forecasting"
+  - "causal autoregressive model"
+  - "team sports analytics"
+  - "joint metrics"
+  - "Gaussian mixture model"
 date: 2026-05-08
 content_hash: 652f722adbb0472a
 ---

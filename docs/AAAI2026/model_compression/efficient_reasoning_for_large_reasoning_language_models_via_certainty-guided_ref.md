@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Efficient Reasoning for Large Reasoning Language Models via Certainty-Guided Reflection Suppression
 description: >-
-  [AAAI 2026][Model Compression][reasoning efficiency] This paper proposes CGRS (Certainty-Guided Reflection Suppression), a training-free efficient reasoning method that dynamically suppresses reflection trigger tokens (e.g., "Wait", "But") when the model exhibits high confidence, reducing token consumption of large reasoning language models by 18.5%–41.9% while maintaining reasoning accuracy.
+  [AAAI 2026][Model Compression][reasoning efficiency] This paper proposes CGRS (Certainty-Guided Reflection Suppression), a training-free efficient reasoning method that dynamically suppresses reflection trigger tokens (e…
 tags:
-  - AAAI 2026
-  - Model Compression
-  - reasoning efficiency
-  - overthinking
-  - reflection suppression
-  - certainty estimation
-  - large reasoning models
+  - "AAAI 2026"
+  - "Model Compression"
+  - "reasoning efficiency"
+  - "overthinking"
+  - "reflection suppression"
+  - "certainty estimation"
+  - "large reasoning models"
 date: 2026-05-08
 content_hash: 0cb071278c4adc59
 ---

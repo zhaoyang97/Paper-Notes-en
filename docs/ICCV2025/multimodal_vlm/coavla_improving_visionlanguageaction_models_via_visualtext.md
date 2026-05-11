@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CoA-VLA: Improving Vision-Language-Action Models via Visual-Textual Chain-of-Affordance
 description: >-
-  [ICCV 2025][Multimodal VLM][VLA] This paper proposes the Chain-of-Affordance (CoA-VLA) framework, which injects four categories of robot affordances (object, grasp, spatial, and movement) into the policy network of a VLA model in both textual and visual modalities. The approach achieves an 85.54% success rate on a real-robot multi-task benchmark spanning 7 tasks, outperforming OpenVLA by 30.65%, and demonstrates generalization to unseen object poses and obstacles.
+  [ICCV 2025][Multimodal VLM][VLA] This paper proposes the Chain-of-Affordance (CoA-VLA) framework, which injects four categories of robot affordances (object, grasp, spatial…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - VLA
-  - chain-of-affordance
-  - robotic manipulation
-  - visual prompting
-  - affordance reasoning
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "VLA"
+  - "chain-of-affordance"
+  - "robotic manipulation"
+  - "visual prompting"
+  - "affordance reasoning"
 date: 2026-05-08
 content_hash: eda858958fb74461
 ---

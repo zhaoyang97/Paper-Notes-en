@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From Fewer Samples to Fewer Bits: Reframing Dataset Distillation as Joint Optimization of Precision and Compactness
 description: >-
-  [CVPR2026][Model Compression][Dataset distillation] This paper proposes QuADD, a framework that embeds a differentiable quantization module into the dataset distillation loop to jointly optimize synthetic data and quantization parameters, achieving Pareto-optimal compression of "fewer samples + lower precision" under a fixed bit budget.
+  [CVPR2026][Model Compression][Dataset distillation] This paper proposes QuADD, a framework that embeds a differentiable quantization module into the dataset distillation loop to jointly optimize synthetic data and quanti…
 tags:
-  - CVPR2026
-  - Model Compression
-  - Dataset distillation
-  - quantization-aware training
-  - rate-distortion optimization
-  - low-bit data compression
-  - non-uniform quantization
+  - "CVPR2026"
+  - "Model Compression"
+  - "Dataset distillation"
+  - "quantization-aware training"
+  - "rate-distortion optimization"
+  - "low-bit data compression"
+  - "non-uniform quantization"
 date: 2026-05-08
 content_hash: 0310432d489ef697
 ---

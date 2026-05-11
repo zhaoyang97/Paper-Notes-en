@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Zero-Ablation Overstates Register Content Dependence in DINO Vision Transformers
 description: >-
-  [CVPR 2026 (HOW Workshop)][Self-Supervised Learning][register tokens] Three substitution control experiments (mean substitution, noise substitution, and cross-image shuffling) demonstrate that zero-ablation overstates the dependence on the precise content of register tokens in DINO-series ViTs — the model requires only "reasonable register-like activations" rather than image-specific values.
+  [CVPR 2026 (HOW Workshop)][Self-Supervised Learning][register tokens] Three substitution control experiments (mean substitution, noise substitution…
 tags:
-  - CVPR 2026 (HOW Workshop)
-  - Self-Supervised Learning
-  - register tokens
-  - vision transformers
-  - zero-ablation
-  - DINO
-  - interpretability
+  - "CVPR 2026 (HOW Workshop)"
+  - "Self-Supervised Learning"
+  - "register tokens"
+  - "vision transformers"
+  - "zero-ablation"
+  - "DINO"
+  - "interpretability"
 date: 2026-05-08
 content_hash: f0c6f4cb81dd4663
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Efficient Chromosome Parallelization for Precision Medicine Genomic Workflows
 description: >-
-  [AAAI 2026][Medical Imaging][Genomic workflows] Three complementary chromosome-level genomic parallelization scheduling schemes are proposed — static scheduling (optimizing processing order), dynamic scheduling (knapsack-based batching with online RAM prediction), and a symbolic regression RAM predictor — achieving significant reductions in out-of-memory errors and execution time in both simulated and real precision medicine pipelines.
+  [AAAI 2026][Medical Imaging][Genomic workflows] Three complementary chromosome-level genomic parallelization scheduling schemes are proposed — static scheduling (optimizing processing order)…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Genomic workflows
-  - chromosome parallelization
-  - RAM prediction
-  - scheduling optimization
-  - symbolic regression
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Genomic workflows"
+  - "chromosome parallelization"
+  - "RAM prediction"
+  - "scheduling optimization"
+  - "symbolic regression"
 date: 2026-05-08
 content_hash: 53ba7c860b9778ac
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Efficient Concertormer for Image Deblurring and Beyond
 description: >-
-  [ICCV 2025][Image Restoration][Image deblurring] This paper proposes Concertormer, which decomposes self-attention into a global Concertino component and a local Ripieno component, and further introduces a Cross-Dimensional Communication module and a Gated Depthwise Convolution MLP. The method achieves global-local feature modeling at linear complexity, attaining state-of-the-art performance on image deblurring and other restoration tasks.
+  [ICCV 2025][Image Restoration][Image deblurring] This paper proposes Concertormer, which decomposes self-attention into a global Concertino component and a local Ripieno component…
 tags:
-  - ICCV 2025
-  - Image Restoration
-  - Image deblurring
-  - self-attention
-  - linear complexity
-  - Transformer
-  - feed-forward network
+  - "ICCV 2025"
+  - "Image Restoration"
+  - "Image deblurring"
+  - "self-attention"
+  - "linear complexity"
+  - "Transformer"
+  - "feed-forward network"
 date: 2026-05-08
 content_hash: 913b60b8a4964f61
 ---

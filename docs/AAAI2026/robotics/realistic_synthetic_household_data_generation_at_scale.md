@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Realistic Synthetic Household Data Generation at Scale
 description: >-
-  [AAAI 2026][Robotics][synthetic data generation] This paper proposes an LLM-driven bidirectional coupling generation framework that iteratively generates large-scale synthetic datasets — encompassing household environment configurations, human activities, and human-robot interactions (HRI) — through a cycle in which persona profiles drive environment generation and environment semantics in turn guide activity generation, targeting the training of home robots.
+  [AAAI 2026][Robotics][synthetic data generation] This paper proposes an LLM-driven bidirectional coupling generation framework that iteratively generates large-scale synthetic datasets — encompassing household environmen…
 tags:
-  - AAAI 2026
-  - Robotics
-  - synthetic data generation
-  - household environment modeling
-  - bidirectional coupling
-  - LLM-driven
-  - embodied AI
+  - "AAAI 2026"
+  - "Robotics"
+  - "synthetic data generation"
+  - "household environment modeling"
+  - "bidirectional coupling"
+  - "LLM-driven"
+  - "embodied AI"
 date: 2026-05-08
 content_hash: e4b84d604767a953
 ---

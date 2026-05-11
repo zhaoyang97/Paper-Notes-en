@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GUI-CEval: A Hierarchical and Comprehensive Chinese Benchmark for Mobile GUI Agents
 description: >-
-  [CVPR 2026][LLM Agent][GUI Agent] This paper proposes GUI-CEval, the first comprehensive benchmark for Chinese mobile GUI agents, covering 201 mainstream Chinese apps and 4 device types. It adopts a two-tier structure (foundation + application) to perform fine-grained diagnosis across five dimensions—perception, planning, reflection, execution, and evaluation. Experiments on 20 representative models reveal that current models exhibit significant deficiencies in reflection and self-evaluation.
+  [CVPR 2026][LLM Agent][GUI Agent] This paper proposes GUI-CEval, the first comprehensive benchmark for Chinese mobile GUI agents…
 tags:
-  - CVPR 2026
-  - LLM Agent
-  - GUI Agent
-  - Chinese Mobile Benchmark
-  - Multimodal Evaluation
-  - Hierarchical Diagnosis
-  - Mobile Interaction
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "GUI Agent"
+  - "Chinese Mobile Benchmark"
+  - "Multimodal Evaluation"
+  - "Hierarchical Diagnosis"
+  - "Mobile Interaction"
 date: 2026-05-08
 content_hash: 148e7708a1c802ac
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LawDIS: Language-Window-based Controllable Dichotomous Image Segmentation
 description: >-
-  [ICCV 2025][Segmentation][Dichotomous image segmentation] This paper proposes LawDIS, a controllable dichotomous image segmentation framework built upon a latent diffusion model. It achieves high-quality foreground mask generation through the synergy of macro-level language control (LS) and micro-level window refinement (WR), comprehensively outperforming 11 state-of-the-art methods on the DIS5K benchmark.
+  [ICCV 2025][Segmentation][Dichotomous image segmentation] This paper proposes LawDIS, a controllable dichotomous image segmentation framework built upon a latent diffusion model. It achieves high-quality foreground mask…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - Dichotomous image segmentation
-  - latent diffusion model
-  - language control
-  - window refinement
-  - high-precision segmentation
+  - "ICCV 2025"
+  - "Segmentation"
+  - "Dichotomous image segmentation"
+  - "latent diffusion model"
+  - "language control"
+  - "window refinement"
+  - "high-precision segmentation"
 date: 2026-05-08
 content_hash: f28799fe155eb8e9
 ---

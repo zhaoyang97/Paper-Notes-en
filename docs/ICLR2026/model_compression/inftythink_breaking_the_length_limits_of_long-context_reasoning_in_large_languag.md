@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] InftyThink: Breaking the Length Limits of Long-Context Reasoning in Large Language Models
 description: >-
-  [ICLR 2026][Model Compression][long-context reasoning] InftyThink is proposed as a new paradigm that transforms monolithic long-form reasoning into iterative short-form reasoning with intermediate summarization. Without modifying model architecture, it achieves theoretically unbounded reasoning depth and significantly reduced computational cost, yielding an 11% improvement for Qwen2.5-Math-7B on AIME24.
+  [ICLR 2026][Model Compression][long-context reasoning] InftyThink is proposed as a new paradigm that transforms monolithic long-form reasoning into iterative short-form reasoning with intermediate summarization. Without…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - long-context reasoning
-  - iterative reasoning
-  - summarization compression
-  - computational efficiency
-  - reasoning paradigm
+  - "ICLR 2026"
+  - "Model Compression"
+  - "long-context reasoning"
+  - "iterative reasoning"
+  - "summarization compression"
+  - "computational efficiency"
+  - "reasoning paradigm"
 date: 2026-05-08
 content_hash: d0e6ece4349678a4
 ---

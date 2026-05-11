@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unified Multi-Modal Interactive & Reactive 3D Motion Generation via Rectified Flow
 description: >-
-  [ICLR 2026][Image Generation][Dyadic motion generation] DualFlow proposes the first unified framework for dyadic interactive/reactive 3D motion generation under text+music multi-modal conditions via Rectified Flow and Retrieval-Augmented Generation (RAG). It introduces contrastive flow matching and synchronization loss, achieving 2.5% FID improvement and 76% R-precision improvement on the MDD dataset, with 2.5× faster inference.
+  [ICLR 2026][Image Generation][Dyadic motion generation] DualFlow proposes the first unified framework for dyadic interactive/reactive 3D motion generation under text+music multi-modal conditions via Rectified Flow and Re…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Dyadic motion generation
-  - Rectified Flow
-  - Retrieval-Augmented Generation
-  - Contrastive learning
-  - Multi-modal conditioning
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Dyadic motion generation"
+  - "Rectified Flow"
+  - "Retrieval-Augmented Generation"
+  - "Contrastive learning"
+  - "Multi-modal conditioning"
 date: 2026-05-08
 content_hash: e3ded0ccbfe4520a
 ---

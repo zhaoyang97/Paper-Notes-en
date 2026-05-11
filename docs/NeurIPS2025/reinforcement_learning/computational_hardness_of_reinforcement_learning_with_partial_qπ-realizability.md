@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Computational Hardness of Reinforcement Learning with Partial $q^\pi$-Realizability
 description: >-
-  [NeurIPS 2025][Reinforcement Learning] This paper introduces the notion of "partial $q^\pi$-realizability" and proves that learning a near-optimal policy under this setting is NP-hard when using a greedy policy class, and requires exponential time under the rETH assumption when using a softmax policy class. These results bridge the theoretical gap between $q^*$-realizability and $q^\pi$-realizability.
+  [NeurIPS 2025][Reinforcement Learning][computational complexity] This paper introduces the notion of "partial $q^\pi$-realizability" and proves that learning a near-optimal policy under this setting is NP-hard when using…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - computational complexity
-  - linear function approximation
-  - realizability
-  - NP-hard
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "computational complexity"
+  - "linear function approximation"
+  - "realizability"
+  - "NP-hard"
 date: 2026-05-08
 content_hash: eb374d2429ff8e14
 ---

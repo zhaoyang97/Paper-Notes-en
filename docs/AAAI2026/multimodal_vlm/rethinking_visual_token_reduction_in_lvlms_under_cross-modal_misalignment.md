@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Rethinking Visual Token Reduction in LVLMs under Cross-Modal Misalignment
 description: >-
-  [Multimodal VLM] This paper identifies three forms of cross-modal misalignment (causal, semantic, and spatial) in text-guided visual token importance estimation within LVLMs, and proposes VisionDrop—a training-free progressive token pruning framework that relies exclusively on visual self-attention. The framework performs multi-stage compression across both the visual encoder and LLM decoder, retaining over 91% of original performance while keeping only 5.6% of tokens.
+  [Multimodal VLM] This paper identifies three forms of cross-modal misalignment (causal, semantic, and spatial) in text-guided visual token importance estimation within LVLMs…
 tags:
-  - Multimodal VLM
+  - "Multimodal VLM"
 date: 2026-05-08
 content_hash: 1bc4855b73f87907
 ---

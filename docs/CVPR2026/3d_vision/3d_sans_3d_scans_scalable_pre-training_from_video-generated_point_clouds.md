@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] 3D sans 3D Scans: Scalable Pre-training from Video-Generated Point Clouds
 description: >-
-  [CVPR 2026][3D Vision][3D self-supervised learning] This paper proposes LAM3C, a framework that, for the first time, demonstrates that video-generated point clouds (VGPCs) reconstructed from unlabeled online videos (e.g., property walkthroughs) can replace real 3D scans for 3D self-supervised pre-training. By introducing a Laplacian smoothing loss and a noise consistency loss to stabilize representation learning on noisy point clouds, and paired with the authors' RoomTours dataset (49K scenes), LAM3C matches or surpasses methods that rely on real 3D scans on indoor semantic and instance segmentation benchmarks.
+  [CVPR 2026][3D Vision][3D self-supervised learning] This paper proposes LAM3C, a framework that, for the first time, demonstrates that video-generated point clouds (VGPCs) reconstructed from unlabeled online videos (e.g.…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D self-supervised learning
-  - video-generated point clouds
-  - Sinkhorn-Knopp clustering
-  - noise regularization
-  - indoor scene understanding
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D self-supervised learning"
+  - "video-generated point clouds"
+  - "Sinkhorn-Knopp clustering"
+  - "noise regularization"
+  - "indoor scene understanding"
 date: 2026-05-08
 content_hash: cbb8b7e1cdb50273
 ---

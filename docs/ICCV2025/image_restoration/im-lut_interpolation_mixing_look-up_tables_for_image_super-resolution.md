@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] IM-LUT: Interpolation Mixing Look-Up Tables for Image Super-Resolution
 description: >-
-  [ICCV 2025][Image Restoration][Arbitrary-scale super-resolution] This paper proposes IM-LUT, which achieves arbitrary-scale image super-resolution by learning to mix multiple interpolation functions, and converts the prediction network into a look-up table form to enable lightweight, fast CPU inference while maintaining reconstruction quality.
+  [ICCV 2025][Image Restoration][Arbitrary-scale super-resolution] This paper proposes IM-LUT, which achieves arbitrary-scale image super-resolution by learning to mix multiple interpolation functions…
 tags:
-  - ICCV 2025
-  - Image Restoration
-  - Arbitrary-scale super-resolution
-  - look-up table
-  - interpolation function mixing
-  - lightweight inference
-  - CPU-friendly
+  - "ICCV 2025"
+  - "Image Restoration"
+  - "Arbitrary-scale super-resolution"
+  - "look-up table"
+  - "interpolation function mixing"
+  - "lightweight inference"
+  - "CPU-friendly"
 date: 2026-05-08
 content_hash: d1a648289a24fd49
 ---

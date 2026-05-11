@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond the Ground Truth: Enhanced Supervision for Image Restoration
 description: >-
-  [CVPR 2026][Image Restoration][Supervision Enhancement] This paper proposes to enhance the perceptual quality of suboptimal ground-truth images in existing datasets via super-resolution combined with frequency-domain adaptive mixing, and trains a lightweight Output Refinement Network (ORNet) that improves the perceptual quality of restoration outputs without modifying any pretrained restoration model.
+  [CVPR 2026][Image Restoration][Supervision Enhancement] This paper proposes to enhance the perceptual quality of suboptimal ground-truth images in existing datasets via super-resolution combined with frequency-domain ada…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Supervision Enhancement
-  - Frequency-Domain Mixup
-  - Super-Resolution
-  - Output Refinement Network
-  - Perceptual Quality
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Supervision Enhancement"
+  - "Frequency-Domain Mixup"
+  - "Super-Resolution"
+  - "Output Refinement Network"
+  - "Perceptual Quality"
 date: 2026-05-08
 content_hash: ae346eb081f819d7
 ---

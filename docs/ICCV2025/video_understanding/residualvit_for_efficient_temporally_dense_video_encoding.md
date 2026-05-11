@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ResidualViT for Efficient Temporally Dense Video Encoding
 description: >-
-  [ICCV 2025][Video Understanding][Video encoding efficiency] This paper proposes ResidualViT, which draws an analogy to I-frame/P-frame strategies in video compression by alternating between a full ViT and a lightweight residual ViT for encoding video frames. The approach achieves up to 60% reduction in computational cost and 2.5× inference speedup while maintaining accuracy close to the original CLIP.
+  [ICCV 2025][Video Understanding][Video encoding efficiency] This paper proposes ResidualViT, which draws an analogy to I-frame/P-frame strategies in video compression by alternating between a full ViT and a lightweight r…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - Video encoding efficiency
-  - ViT
-  - temporal redundancy
-  - knowledge distillation
-  - temporally dense features
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "Video encoding efficiency"
+  - "ViT"
+  - "temporal redundancy"
+  - "knowledge distillation"
+  - "temporally dense features"
 date: 2026-05-08
 content_hash: 0fba9c32cc68b735
 ---

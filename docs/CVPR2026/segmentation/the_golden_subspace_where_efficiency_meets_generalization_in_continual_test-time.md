@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The Golden Subspace: Where Efficiency Meets Generalization in Continual Test-Time Adaptation
 description: >-
-  [CVPR 2026][Segmentation][Continual Test-Time Adaptation] This paper proposes GOLD, a framework for Continual Test-Time Adaptation (CTTA). The central finding is that the minimal feature update subspace—termed the "golden subspace"—coincides with the row space of the classifier weight matrix and is inherently low-rank. GOLD estimates this subspace online via the Average Gradient Outer Product (AGOP) and performs feature adaptation using a lightweight scaling vector, achieving state-of-the-art performance on classification and segmentation benchmarks with minimal computational overhead.
+  [CVPR 2026][Segmentation][Continual Test-Time Adaptation] This paper proposes GOLD, a framework for Continual Test-Time Adaptation (CTTA). The central finding is that the minimal feature update subspace—termed the "golde…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Continual Test-Time Adaptation
-  - Golden Subspace
-  - AGOP
-  - Low-Rank Adaptation
-  - Classifier Row Space
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Continual Test-Time Adaptation"
+  - "Golden Subspace"
+  - "AGOP"
+  - "Low-Rank Adaptation"
+  - "Classifier Row Space"
 date: 2026-05-08
 content_hash: aa5852bfe53c69bb
 ---

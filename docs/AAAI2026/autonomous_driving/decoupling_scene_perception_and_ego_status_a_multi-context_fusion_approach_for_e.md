@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AdaptiveAD: Decoupling Scene Perception and Ego Status for End-to-End Autonomous Driving
 description: >-
-  [AAAI 2026][Autonomous Driving][end-to-end autonomous driving] This paper identifies the architectural root cause of ego-status over-reliance in end-to-end autonomous driving—namely, the premature fusion of ego status within the BEV encoder—and proposes AdaptiveAD, a dual-branch architecture consisting of a scene-driven branch (with ego status removed) and a self-driven branch that independently generate planning decisions. A scene-aware fusion module then adaptively integrates the two branches. Complemented by path attention, BEV unidirectional distillation, and an autoregressive online mapping auxiliary task, AdaptiveAD achieves state-of-the-art planning performance on nuScenes.
+  [AAAI 2026][Autonomous Driving][end-to-end autonomous driving] This paper identifies the architectural root cause of ego-status over-reliance in end-to-end autonomous driving—namely…
 tags:
-  - AAAI 2026
-  - Autonomous Driving
-  - end-to-end autonomous driving
-  - causal confusion
-  - ego-status over-reliance
-  - dual-branch architecture
-  - multi-context fusion
+  - "AAAI 2026"
+  - "Autonomous Driving"
+  - "end-to-end autonomous driving"
+  - "causal confusion"
+  - "ego-status over-reliance"
+  - "dual-branch architecture"
+  - "multi-context fusion"
 date: 2026-05-08
 content_hash: 2f97ec58f1ddacbc
 ---

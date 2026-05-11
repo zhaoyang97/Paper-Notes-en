@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Residual SODAP: Residual Self-Organizing Domain-Adaptive Prompting with Structural Knowledge Preservation for Continual Learning
 description: >-
-  [CVPR 2026][Medical Imaging][Continual Learning] This paper proposes the Residual SODAP framework, which jointly addresses prompt-side representation adaptation and classifier-side knowledge preservation through: α-entmax sparse prompt selection with residual aggregation, data-free statistical distillation with pseudo-feature replay, prompt usage pattern drift detection (PUDD), and uncertainty-weighted multi-loss balancing. The framework achieves state-of-the-art performance on medical domain-incremental learning benchmarks.
+  [CVPR 2026][Medical Imaging][Continual Learning] This paper proposes the Residual SODAP framework, which jointly addresses prompt-side representation adaptation and classifier-side knowledge preservation through: α-entma…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Continual Learning
-  - Domain-Incremental Learning
-  - Prompt Learning
-  - Catastrophic Forgetting
-  - Knowledge Distillation
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Continual Learning"
+  - "Domain-Incremental Learning"
+  - "Prompt Learning"
+  - "Catastrophic Forgetting"
+  - "Knowledge Distillation"
 date: 2026-05-08
 content_hash: 255f217c58e52ede
 ---

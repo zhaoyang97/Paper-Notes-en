@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DP-LLM: Runtime Model Adaptation with Dynamic Layer-wise Precision Assignment
 description: >-
-  [NeurIPS 2025][Model Compression][Dynamic mixed precision] DP-LLM identifies that per-layer quantization sensitivity varies dynamically across decoding steps, and proposes a dynamic layer-wise precision selection mechanism based on relative error. At runtime, each layer is assigned a precision (h-bit or l-bit) conditioned on the current input, achieving a better performance–latency trade-off than static mixed-precision methods.
+  [NeurIPS 2025][Model Compression][Dynamic mixed precision] DP-LLM identifies that per-layer quantization sensitivity varies dynamically across decoding steps…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Dynamic mixed precision
-  - runtime adaptation
-  - layer-wise quantization sensitivity
-  - on-device LLM inference
-  - relative error
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Dynamic mixed precision"
+  - "runtime adaptation"
+  - "layer-wise quantization sensitivity"
+  - "on-device LLM inference"
+  - "relative error"
 date: 2026-05-08
 content_hash: 325978072bac2d41
 ---

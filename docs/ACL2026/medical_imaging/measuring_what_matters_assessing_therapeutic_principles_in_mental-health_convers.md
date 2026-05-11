@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Measuring What Matters!! Assessing Therapeutic Principles in Mental-Health Conversation
 description: >-
-  [ACL 2026][Medical Imaging][mental health conversation evaluation] This paper proposes the CARE framework and the FAITH-M benchmark dataset. By integrating conversational context encoding, contrastive exemplar retrieval, and knowledge distillation chain-of-thought reasoning (KD-CoT), CARE performs fine-grained ordinal evaluation of AI-generated psychotherapeutic responses across six therapeutic principle dimensions, achieving a weighted F1 of 63.34—a 64.26% improvement over the strongest baseline, Qwen3.
+  [ACL 2026][Medical Imaging][mental health conversation evaluation] This paper proposes the CARE framework and the FAITH-M benchmark dataset. By integrating conversational context encoding, contrastive exemplar retrieval…
 tags:
-  - ACL 2026
-  - Medical Imaging
-  - mental health conversation evaluation
-  - therapeutic principle alignment
-  - ordinal classification
-  - knowledge distillation
-  - chain-of-thought reasoning
+  - "ACL 2026"
+  - "Medical Imaging"
+  - "mental health conversation evaluation"
+  - "therapeutic principle alignment"
+  - "ordinal classification"
+  - "knowledge distillation"
+  - "chain-of-thought reasoning"
 date: 2026-05-08
 content_hash: 42c09fecac19b75f
 ---

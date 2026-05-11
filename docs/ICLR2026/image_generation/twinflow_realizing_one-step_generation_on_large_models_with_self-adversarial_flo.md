@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TwinFlow: Realizing One-step Generation on Large Models with Self-adversarial Flows
 description: >-
-  [ICLR 2026][Image Generation][one-step generation] TwinFlow is proposed: by extending the flow matching time interval from $[0,1]$ to $[-1,1]$, twin trajectories are constructed to form self-adversarial signals, enabling one-step generation without any discriminator or frozen teacher. This is the first work to scale 1-NFE generation to a 20B-parameter model (Qwen-Image), achieving 1-NFE GenEval of 0.86 — approaching the original 100-NFE score of 0.87 — while reducing inference cost by 100×.
+  [ICLR 2026][Image Generation][one-step generation] TwinFlow is proposed: by extending the flow matching time interval from $[0,1]$ to $[-1,1]$, twin trajectories are constructed to form self-adversarial signals…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - one-step generation
-  - self-adversarial
-  - flow matching
-  - 20B scaling
-  - no auxiliary models
+  - "ICLR 2026"
+  - "Image Generation"
+  - "one-step generation"
+  - "self-adversarial"
+  - "flow matching"
+  - "20B scaling"
+  - "no auxiliary models"
 date: 2026-05-08
 content_hash: 2596346b0423f6e3
 ---

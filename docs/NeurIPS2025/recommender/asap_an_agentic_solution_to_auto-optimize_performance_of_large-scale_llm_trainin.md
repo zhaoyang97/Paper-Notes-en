@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ASAP: An Agentic Solution to Auto-Optimize Performance of Large-Scale LLM Training
 description: >-
-  [NeurIPS 2025][Recommender Systems][Multi-agent systems] ASAP is a multi-agent system (Coordinator + Analyzer + Proposal) that automatically diagnoses bottleneck types (compute/memory/communication) in large-scale LLM distributed training and proposes sharding configurations. Across 3 experimental scenarios, it matches human expert solutions and achieves up to 2.58× throughput improvement.
+  [NeurIPS 2025][Recommender Systems][Multi-agent systems] ASAP is a multi-agent system (Coordinator + Analyzer + Proposal) that automatically diagnoses bottleneck types (compute/memory/communication) in large-scale LLM di…
 tags:
-  - NeurIPS 2025
-  - Recommender Systems
-  - Multi-agent systems
-  - distributed training optimization
-  - sharding configuration
-  - bottleneck analysis
-  - Roofline model
+  - "NeurIPS 2025"
+  - "Recommender Systems"
+  - "Multi-agent systems"
+  - "distributed training optimization"
+  - "sharding configuration"
+  - "bottleneck analysis"
+  - "Roofline model"
 date: 2026-05-08
 content_hash: 3ab31d439c33e59a
 ---

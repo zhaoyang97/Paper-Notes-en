@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Consensus-Aligned Neuron Efficient Fine-Tuning Large Language Models for Multi-Domain Machine Translation
 description: >-
-  [AAAI 2026][Multi-domain machine translation] This paper proposes CANEFT, which uses mutual information (MI) to identify consensus-aligned neurons in LLMs that are consistently important across domains, and fine-tunes only these neurons to achieve efficient adaptation for multi-domain machine translation (MDMT). CANEFT outperforms PEFT baselines such as LoRA across 3 LLMs and 10 translation domains without introducing any additional parameters.
+  [AAAI 2026][Multilingual & Machine Translation][Multi-domain machine translation] This paper proposes CANEFT, which uses mutual information (MI) to identify consensus-aligned neurons in LLMs that are consistently importa…
 tags:
-  - AAAI 2026
-  - Multi-domain machine translation
-  - neuron selection
-  - mutual information
-  - parameter-efficient fine-tuning
-  - LLM
+  - "AAAI 2026"
+  - "Multilingual & Machine Translation"
+  - "Multi-domain machine translation"
+  - "neuron selection"
+  - "mutual information"
+  - "parameter-efficient fine-tuning"
+  - "LLM"
 date: 2026-05-08
 content_hash: 30d1a7d47119bd11
 ---

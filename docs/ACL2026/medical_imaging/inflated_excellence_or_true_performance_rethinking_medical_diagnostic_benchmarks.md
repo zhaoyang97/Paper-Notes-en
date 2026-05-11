@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Inflated Excellence or True Performance? Rethinking Medical Diagnostic Benchmarks with Dynamic Evaluation
 description: >-
-  [ACL 2026][Medical Imaging][Medical Diagnostic Benchmarks] This paper proposes DyReMe, a dynamic medical diagnostic evaluation framework. Its DyGen module generates novel diagnostic cases containing clinically grounded distractors—including differential diagnoses and misdiagnosis factors—while the EvalMed module assesses LLMs across four dimensions: accuracy, veracity, helpfulness, and consistency. The results reveal that existing static benchmarks systematically overestimate LLM diagnostic capability; GPT-5 suffers an 8.25% accuracy drop on DyReMe, and all 12 evaluated LLMs exhibit significant trustworthiness deficiencies.
+  [ACL 2026][Medical Imaging][Medical Diagnostic Benchmarks] This paper proposes DyReMe, a dynamic medical diagnostic evaluation framework. Its DyGen module generates novel diagnostic cases containing clinically grounded d…
 tags:
-  - ACL 2026
-  - Medical Imaging
-  - Medical Diagnostic Benchmarks
-  - Dynamic Evaluation
-  - Data Contamination
-  - Diagnostic Distractors
-  - LLM Trustworthiness
+  - "ACL 2026"
+  - "Medical Imaging"
+  - "Medical Diagnostic Benchmarks"
+  - "Dynamic Evaluation"
+  - "Data Contamination"
+  - "Diagnostic Distractors"
+  - "LLM Trustworthiness"
 date: 2026-05-08
 content_hash: c8c83e82fa54436c
 ---

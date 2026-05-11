@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] RENEW: Risk- and Energy-Aware Navigation in Dynamic Waterways
 description: >-
-  [AAAI 2026 (Oral)][Robotics][ASV] This paper proposes RENEW, a global path planner for autonomous surface vessels (ASVs) operating in dynamic water current (ocean current) environments. It introduces a unified risk- and energy-aware strategy via adaptive no-go zone identification, best-effort contingency planning, and a hierarchical architecture based on Constrained Delaunay Triangulation (CDT), achieving zero collisions in emergency maneuver tests.
+  [AAAI 2026 (Oral)][Robotics][ASV] This paper proposes RENEW, a global path planner for autonomous surface vessels (ASVs) operating in dynamic water current (ocean current) environments. It introduces a unified risk- and…
 tags:
-  - AAAI 2026 (Oral)
-  - Robotics
-  - ASV
-  - path planning
-  - adaptive safety constraints
-  - homotopy classes
-  - energy-awareness
-  - No Go Zone
+  - "AAAI 2026 (Oral)"
+  - "Robotics"
+  - "ASV"
+  - "path planning"
+  - "adaptive safety constraints"
+  - "homotopy classes"
+  - "energy-awareness"
+  - "No Go Zone"
 date: 2026-05-08
 content_hash: 318633099c1fa633
 ---

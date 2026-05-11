@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unleashing Hour-Scale Video Training for Long Video-Language Understanding
 description: >-
-  [NeurIPS 2025][Video Understanding][Long Video Understanding] This work constructs VideoMarathon, the first large-scale hour-level video instruction-following dataset (9,700 hours, 3.3M QA pairs, 22 task types), and proposes Hour-LLaVA, a model that leverages a memory repository, forgetting mechanism, and MemAug module to enable efficient training and inference on hour-scale videos at 1 FPS, achieving state-of-the-art results among open-source models of comparable scale across four long video benchmarks.
+  [NeurIPS 2025][Video Understanding][Long Video Understanding] This work constructs VideoMarathon, the first large-scale hour-level video instruction-following dataset (9,700 hours, 3.3M QA pairs, 22 task types)…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
-  - Long Video Understanding
-  - Video-LMM
-  - Memory Augmentation
-  - Instruction-Following Dataset
-  - Hour-Scale Video
+  - "NeurIPS 2025"
+  - "Video Understanding"
+  - "Long Video Understanding"
+  - "Video-LMM"
+  - "Memory Augmentation"
+  - "Instruction-Following Dataset"
+  - "Hour-Scale Video"
 date: 2026-05-08
 content_hash: 56599d5299034b6c
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TEMPLE: Incentivizing Temporal Understanding of Video LLMs via Progressive Pre-SFT Alignment
 description: >-
-  [AAAI 2026][LLM/NLP][Video LLM] This paper proposes TEMPLE, which significantly enhances the temporal reasoning capabilities of Video LLMs through an automated video temporal preference data generation pipeline (video filtering → temporal perturbation → contrastive response generation) and a novel Progressive Pre-SFT Alignment strategy (curriculum learning + DPO prior to SFT), using a small amount of self-generated DPO data. Consistent improvements are achieved across multiple benchmarks including VideoMME, MLVU, and Vinoground.
+  [AAAI 2026][LLM/NLP][Video LLM] This paper proposes TEMPLE, which significantly enhances the temporal reasoning capabilities of Video LLMs through an automated video temporal preference data generation pipeline (video fi…
 tags:
-  - AAAI 2026
-  - LLM/NLP
-  - Video LLM
-  - temporal understanding
-  - DPO
-  - preference learning
-  - curriculum learning
+  - "AAAI 2026"
+  - "LLM/NLP"
+  - "Video LLM"
+  - "temporal understanding"
+  - "DPO"
+  - "preference learning"
+  - "curriculum learning"
 date: 2026-05-08
 content_hash: fa38b9146dab654a
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HAWAII: Hierarchical Visual Knowledge Transfer for Efficient VLM
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Knowledge Distillation] This paper proposes the Hawaii framework, which distills knowledge from multiple visual experts into a single visual encoder via Mixture of LoRA Adapters (MoLA) and Hierarchical Knowledge Distillation (HKD), significantly improving the visual understanding capability of VLMs without incurring any additional inference cost.
+  [NeurIPS 2025][Multimodal VLM][Knowledge Distillation] This paper proposes the Hawaii framework, which distills knowledge from multiple visual experts into a single visual encoder via Mixture of LoRA Adapters (MoLA) and…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Knowledge Distillation
-  - Visual Encoder
-  - LoRA
-  - MoE
-  - Multi-Teacher Distillation
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Knowledge Distillation"
+  - "Visual Encoder"
+  - "LoRA"
+  - "MoE"
+  - "Multi-Teacher Distillation"
 date: 2026-05-08
 content_hash: 84e34ad5bc7520a3
 ---

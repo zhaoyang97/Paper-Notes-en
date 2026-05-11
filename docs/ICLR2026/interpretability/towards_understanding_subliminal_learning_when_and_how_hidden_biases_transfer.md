@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Towards Understanding Subliminal Learning: When and How Hidden Biases Transfer
 description: >-
-  [ICLR 2026][subliminal learning] Through controlled experiments and mechanistic analysis, this paper reveals the nature of subliminal learning: hidden preferences of teacher models are transferred to student models via a small number of "divergence tokens," with early layers playing a critical role. The phenomenon is also shown to be fragile and can be suppressed by simple paraphrasing.
+  [ICLR 2026][Interpretability][subliminal learning] Through controlled experiments and mechanistic analysis, this paper reveals the nature of subliminal learning: hidden preferences of teacher models are transferred to st…
 tags:
-  - ICLR 2026
-  - subliminal learning
-  - knowledge distillation
-  - divergence tokens
-  - hidden bias transfer
-  - AI safety
+  - "ICLR 2026"
+  - "Interpretability"
+  - "subliminal learning"
+  - "knowledge distillation"
+  - "divergence tokens"
+  - "hidden bias transfer"
+  - "AI safety"
 date: 2026-05-08
 content_hash: 2d3a8b6f5c1b0d8e
 ---

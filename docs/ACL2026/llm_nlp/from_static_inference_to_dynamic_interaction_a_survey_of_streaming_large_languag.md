@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From Static Inference to Dynamic Interaction: A Survey of Streaming Large Language Models
 description: >-
-  [ACL 2026][LLM/NLP][Streaming LLM] This paper presents the first systematic survey of Streaming Large Language Models (Streaming LLMs), proposing a unified definition grounded in data flow and interaction concurrency. It organizes existing approaches into a three-level progressive taxonomy — Output-streaming, Sequential-streaming, and Concurrent-streaming — and covers methodologies and applications across text, speech, and video streaming scenarios.
+  [ACL 2026][LLM/NLP][Streaming LLM] This paper presents the first systematic survey of Streaming Large Language Models (Streaming LLMs)…
 tags:
-  - ACL 2026
-  - LLM/NLP
-  - Streaming LLM
-  - real-time interaction
-  - incremental encoding
-  - full-duplex
-  - speculative decoding
+  - "ACL 2026"
+  - "LLM/NLP"
+  - "Streaming LLM"
+  - "real-time interaction"
+  - "incremental encoding"
+  - "full-duplex"
+  - "speculative decoding"
 date: 2026-05-08
 content_hash: 5157e1c4614c155f
 ---

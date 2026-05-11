@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Information Shapes Koopman Representation
 description: >-
-  [ICLR 2026][koopman operator] This paper revisits the problem of finite-dimensional Koopman operator representation learning from the perspective of the Information Bottleneck (IB) framework. The Koopman operator lifts nonlinear dynamical systems into infinite-dimensional linear evolution, yet practical applications require approximation within finite-dimensional subspaces, giving rise to a fundamental tension between compactness and expressiveness. The authors prove that (1) latent mutual information controls an upper bound on prediction error, but excessive maximization leads to mode collapse; and (2) von Neumann entropy prevents collapse and preserves effective dimensionality. Building on these results, an information-theoretic Lagrangian formulation is proposed that jointly balances three objectives—temporal coherence, predictive sufficiency, and structural consistency—and yields a tractable loss function. The method outperforms existing Koopman approaches on three categories of tasks: physics simulation, visual control, and graph-structured dynamics.
+  [ICLR 2026][Interpretability][koopman operator] This paper revisits the problem of finite-dimensional Koopman operator representation learning from the perspective of the Information Bottleneck (IB) framework. The Koopma…
 tags:
-  - ICLR 2026
-  - koopman operator
-  - information bottleneck
-  - dynamical systems
-  - representation learning
-  - von neumann entropy
+  - "ICLR 2026"
+  - "Interpretability"
+  - "koopman operator"
+  - "information bottleneck"
+  - "dynamical systems"
+  - "representation learning"
+  - "von neumann entropy"
 date: 2026-05-08
 content_hash: 9aa2790657be6892
 ---

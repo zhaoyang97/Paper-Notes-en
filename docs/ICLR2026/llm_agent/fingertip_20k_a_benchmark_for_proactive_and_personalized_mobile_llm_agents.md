@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FingerTip 20K: A Benchmark for Proactive and Personalized Mobile LLM Agents
 description: >-
-  [ICLR 2026][LLM Agent][mobile agent] FingerTip 20K collects 21,437 interaction records from 95 users during real-world daily smartphone usage—including user profiles, timestamps, locations, and historical intents—and introduces two new evaluation tracks: proactive task suggestion (predicting user intent) and personalized task execution (adapting to action preferences). The strongest model, Qwen-QVQ-Max, achieves only 12.8% success on proactive suggestion (vs. 30.3% for humans), while UI-TARS reaches only 38.5% on execution.
+  [ICLR 2026][LLM Agent][mobile agent] FingerTip 20K collects 21,437 interaction records from 95 users during real-world daily smartphone usage—including user profiles, timestamps, locations…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - mobile agent
-  - proactive suggestion
-  - personalized execution
-  - GUI agent
-  - benchmark
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "mobile agent"
+  - "proactive suggestion"
+  - "personalized execution"
+  - "GUI agent"
+  - "benchmark"
 date: 2026-05-08
 content_hash: 22eae3b98f59d148
 ---

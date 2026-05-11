@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] 4DSTR: Advancing Generative 4D Gaussians with Spatial-Temporal Rectification for High-Quality and Consistent 4D Generation
 description: >-
-  [AAAI 2026][3D Vision][4D Gaussian Splatting] This paper proposes the 4DSTR framework, which significantly improves the spatial-temporal consistency of 4D Gaussian generation and its adaptability to rapid temporal changes through a Mamba-based temporal correlation rectification module (correcting Gaussian scale and rotation residuals) and a per-frame adaptive densification and pruning strategy.
+  [AAAI 2026][3D Vision][4D Gaussian Splatting] This paper proposes the 4DSTR framework, which significantly improves the spatial-temporal consistency of 4D Gaussian generation and its adaptability to rapid temporal change…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - 4D Gaussian Splatting
-  - Spatial-Temporal Consistency
-  - Video-to-4D
-  - Mamba
-  - Adaptive Densification
+  - "AAAI 2026"
+  - "3D Vision"
+  - "4D Gaussian Splatting"
+  - "Spatial-Temporal Consistency"
+  - "Video-to-4D"
+  - "Mamba"
+  - "Adaptive Densification"
 date: 2026-05-08
 content_hash: 46457b6eedf34cb3
 ---

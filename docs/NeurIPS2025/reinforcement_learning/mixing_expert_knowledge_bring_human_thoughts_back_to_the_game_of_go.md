@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Mixing Expert Knowledge: Bring Human Thoughts Back to the Game of Go
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][LLM] This paper proposes LoGos, which applies mixed-domain expert data (Go) and general long chain-of-thought (CoT) reasoning data for cold-start fine-tuning followed by GRPO reinforcement learning, enabling a general-purpose LLM to reach professional-level Go performance while preserving strong general reasoning capabilities.
+  [NeurIPS 2025][Reinforcement Learning][LLM] This paper proposes LoGos, which applies mixed-domain expert data (Go) and general long chain-of-thought (CoT) reasoning data for cold-start fine-tuning followed by GRPO reinfo…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - LLM
-  - Go
-  - Domain Expert Knowledge
-  - GRPO
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "LLM"
+  - "Go"
+  - "Domain Expert Knowledge"
+  - "GRPO"
 date: 2026-05-08
 content_hash: 0dd99a6f6a420f0a
 ---

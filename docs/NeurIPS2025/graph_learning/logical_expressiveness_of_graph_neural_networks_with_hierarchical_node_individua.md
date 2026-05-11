@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Logical Expressiveness of Graph Neural Networks with Hierarchical Node Individualization
 description: >-
-  [NeurIPS 2025][Graph Learning][Graph Neural Networks] This paper proposes Hierarchical Ego GNNs (HEGNNs), which generalize subgraph GNNs through a hierarchical node individualization mechanism, forming a hierarchy of models with strictly increasing expressive power. On bounded-degree graphs, the paper proves that the distinguishing power of HEGNN node classifiers is equivalent to graded hybrid logic ($\mathcal{HL}_k$), thereby unifying the expressiveness analysis of various GNN variants.
+  [NeurIPS 2025][Graph Learning][Graph Neural Networks] This paper proposes Hierarchical Ego GNNs (HEGNNs), which generalize subgraph GNNs through a hierarchical node individualization mechanism…
 tags:
-  - NeurIPS 2025
-  - Graph Learning
-  - Graph Neural Networks
-  - Expressiveness
-  - Hierarchical Node Individualization
-  - Isomorphism Testing
-  - Hybrid Logic
+  - "NeurIPS 2025"
+  - "Graph Learning"
+  - "Graph Neural Networks"
+  - "Expressiveness"
+  - "Hierarchical Node Individualization"
+  - "Isomorphism Testing"
+  - "Hybrid Logic"
 date: 2026-05-08
 content_hash: 220e6bea52dc87c3
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Lightweight and Fast Real-time Image Enhancement via Decomposition of the Spatial-aware Lookup Tables
 description: >-
-  [ICCV 2025][Image Restoration][3D LUT] By decomposing 3D LUTs into linear combinations of 2D LUTs followed by SVD, and adopting a cache-efficient spatial feature fusion structure, the proposed method achieves spatially-aware image enhancement while reducing model parameters by 84% and accelerating 4K inference by 2.8×.
+  [ICCV 2025][Image Restoration][3D LUT] By decomposing 3D LUTs into linear combinations of 2D LUTs followed by SVD, and adopting a cache-efficient spatial feature fusion structure…
 tags:
-  - ICCV 2025
-  - Image Restoration
-  - 3D LUT
-  - Singular Value Decomposition
-  - Spatial Awareness
-  - Cache Efficiency
-  - Image Enhancement
+  - "ICCV 2025"
+  - "Image Restoration"
+  - "3D LUT"
+  - "Singular Value Decomposition"
+  - "Spatial Awareness"
+  - "Cache Efficiency"
+  - "Image Enhancement"
 date: 2026-05-08
 content_hash: b8491ad9bb2ca1e9
 ---

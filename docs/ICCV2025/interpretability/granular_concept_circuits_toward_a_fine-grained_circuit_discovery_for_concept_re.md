@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Granular Concept Circuits: Toward a Fine-Grained Circuit Discovery for Concept Representations
 description: >-
-  [ICCV 2025][Interpretability] This paper proposes Granular Concept Circuit (GCC), a method that automatically discovers fine-grained visual circuits encoding specific concepts in deep visual models by iteratively evaluating inter-neuron functional dependency (Neuron Sensitivity Score) and semantic consistency (Semantic Flow Score). GCC is the first method capable of discovering multiple concept-level circuits within a single query.
+  [ICCV 2025][Interpretability][Visual Circuit Discovery] This paper proposes Granular Concept Circuit (GCC), a method that automatically discovers fine-grained visual circuits encoding specific concepts in deep visual mod…
 tags:
-  - ICCV 2025
-  - Interpretability
-  - Visual Circuit Discovery
-  - Concept Representations
-  - Neuron Connectivity
-  - Mechanistic Interpretability
+  - "ICCV 2025"
+  - "Interpretability"
+  - "Visual Circuit Discovery"
+  - "Concept Representations"
+  - "Neuron Connectivity"
+  - "Mechanistic Interpretability"
 date: 2026-05-08
 content_hash: 2e42911c7618135a
 ---

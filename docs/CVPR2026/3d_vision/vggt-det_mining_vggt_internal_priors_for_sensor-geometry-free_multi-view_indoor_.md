@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VGGT-Det: Mining VGGT Internal Priors for Sensor-Geometry-Free Multi-View Indoor 3D Object Detection
 description: >-
-  [CVPR 2026][3D Vision][Multi-view 3D object detection] This paper proposes VGGT-Det, the first multi-view indoor 3D object detection framework under a sensor-geometry-free (SG-Free) setting. By mining semantic priors (via attention-guided query generation, AG) and geometric priors (via query-driven feature aggregation, QD) from the internal representations of the VGGT encoder, VGGT-Det surpasses prior state-of-the-art methods by 4.4 and 8.6 mAP@0.25 on ScanNet and ARKitScenes, respectively.
+  [CVPR 2026][3D Vision][Multi-view 3D object detection] This paper proposes VGGT-Det, the first multi-view indoor 3D object detection framework under a sensor-geometry-free (SG-Free) setting. By mining semantic priors (vi…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Multi-view 3D object detection
-  - indoor scene understanding
-  - sensor-geometry-free
-  - VGGT
-  - Transformer
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Multi-view 3D object detection"
+  - "indoor scene understanding"
+  - "sensor-geometry-free"
+  - "VGGT"
+  - "Transformer"
 date: 2026-05-08
 content_hash: e26c6d5bceb45291
 ---

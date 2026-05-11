@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Fairness-Regularized Online Optimization with Switching Costs
 description: >-
-  [NeurIPS 2025][AI Safety][Long-term fairness regularization] This paper is the first to rigorously integrate long-term fairness and action smoothness into a unified online optimization framework. It first establishes that the original problem is fundamentally intractable under standard dynamic benchmarks, then proposes FairOBD, which online-izes the fairness cost via auxiliary variables and dual mirror descent, achieving an asymptotically optimal competitive ratio under the more principled $(R, \delta)$-constrained benchmark.
+  [NeurIPS 2025][AI Safety][Long-term fairness regularization] This paper is the first to rigorously integrate long-term fairness and action smoothness into a unified online optimization framework. It first establishes tha…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - Long-term fairness regularization
-  - switching costs
-  - smoothed online optimization
-  - competitive ratio
-  - Mirror Descent
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "Long-term fairness regularization"
+  - "switching costs"
+  - "smoothed online optimization"
+  - "competitive ratio"
+  - "Mirror Descent"
 date: 2026-05-08
 content_hash: 5565e4469b321839
 ---

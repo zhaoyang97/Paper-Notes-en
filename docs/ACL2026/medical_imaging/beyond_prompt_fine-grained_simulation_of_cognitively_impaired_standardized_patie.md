@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond Prompt: Fine-grained Simulation of Cognitively Impaired Standardized Patients via Stochastic Steering
 description: >-
-  [ACL 2026][Medical Imaging][standardized patient simulation] This paper proposes StsPatient, which extracts domain-specific steering vectors from contrastive instruction/response pairs and applies a Stochastic Token Modulation (STM) mechanism to control injection probability, enabling simulation of standardized patients across different cognitive impairment domains and severity levels. Compared to prompt engineering methods, StsPatient achieves an average improvement of 11.23% in clinical authenticity and surpasses the best baseline by 18.54% in severity controllability.
+  [ACL 2026][Medical Imaging][standardized patient simulation] This paper proposes StsPatient, which extracts domain-specific steering vectors from contrastive instruction/response pairs and applies a Stochastic Token Modu…
 tags:
-  - ACL 2026
-  - Medical Imaging
-  - standardized patient simulation
-  - cognitive impairment
-  - steering vector
-  - stochastic modulation
-  - clinical training
+  - "ACL 2026"
+  - "Medical Imaging"
+  - "standardized patient simulation"
+  - "cognitive impairment"
+  - "steering vector"
+  - "stochastic modulation"
+  - "clinical training"
 date: 2026-05-08
 content_hash: b6e21a346c4a829a
 ---

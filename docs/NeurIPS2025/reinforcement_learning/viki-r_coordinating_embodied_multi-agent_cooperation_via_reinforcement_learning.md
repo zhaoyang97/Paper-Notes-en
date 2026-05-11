@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] VIKI-R: Coordinating Embodied Multi-Agent Cooperation via Reinforcement Learning
 description: >-
-  [NeurIPS 2025 (Datasets and Benchmarks Track)][Reinforcement Learning][Multi-agent cooperation] This paper introduces VIKI-Bench, the first hierarchical benchmark for embodied multi-agent cooperation, comprising three evaluation levels—agent activation, task planning, and trajectory perception—and proposes VIKI-R, a two-stage training framework combining CoT-supervised fine-tuning with multi-level reward reinforcement learning. The framework achieves significant improvements over baselines across diverse robot morphologies and multi-view visual observations, with combinatorial coordination patterns emerging during the RL stage.
+  [NeurIPS 2025 (Datasets and Benchmarks Track)][Reinforcement Learning][Multi-agent cooperation] This paper introduces VIKI-Bench, the first hierarchical benchmark for embodied multi-agent cooperation…
 tags:
-  - NeurIPS 2025 (Datasets and Benchmarks Track)
-  - Reinforcement Learning
-  - Multi-agent cooperation
-  - VIKI-Bench
-  - VLM fine-tuning
-  - Chain-of-Thought
-  - multi-level rewards
-  - heterogeneous robots
+  - "NeurIPS 2025 (Datasets and Benchmarks Track)"
+  - "Reinforcement Learning"
+  - "Multi-agent cooperation"
+  - "VIKI-Bench"
+  - "VLM fine-tuning"
+  - "Chain-of-Thought"
+  - "multi-level rewards"
+  - "heterogeneous robots"
 date: 2026-05-08
 content_hash: 618be097e57747f8
 ---

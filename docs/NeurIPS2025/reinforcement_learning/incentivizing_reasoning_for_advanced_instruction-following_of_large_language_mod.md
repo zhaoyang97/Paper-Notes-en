@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Incentivizing Reasoning for Advanced Instruction-Following of Large Language Models
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Instruction Following] This paper proposes RAIF, which employs RL with rule-centric rewards to cultivate deep reasoning capabilities in LLMs for complex instructions containing And/Chain/Selection/Nested compositional constraints. A key finding is that vanilla CoT is detrimental to instruction following, as LLMs tend to shallowly paraphrase instructions rather than analyze constraint structures. RAIF addresses this through superior CoT enforcement (sample-level contrastive filtering of ineffective reasoning) and behavior cloning to control distribution shift. A 1.5B model trained with RAIF matches 8B-level performance, achieving an average improvement of 11.74% across 7 benchmarks.
+  [NeurIPS 2025][Reinforcement Learning][Instruction Following] This paper proposes RAIF, which employs RL with rule-centric rewards to cultivate deep reasoning capabilities in LLMs for complex instructions containing And/…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Instruction Following
-  - Reasoning Incentivization
-  - Rule-Centric Reward
-  - CoT
-  - GRPO
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Instruction Following"
+  - "Reasoning Incentivization"
+  - "Rule-Centric Reward"
+  - "CoT"
+  - "GRPO"
 date: 2026-05-08
 content_hash: b88919c10d1f37c2
 ---

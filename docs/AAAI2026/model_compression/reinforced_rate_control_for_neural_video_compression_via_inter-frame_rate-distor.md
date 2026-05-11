@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Reinforced Rate Control for Neural Video Compression via Inter-Frame Rate-Distortion Awareness
 description: >-
-  [AAAI 2026][Model Compression][Neural video compression] This paper proposes the first reinforcement learning rate control framework based on Constrained Markov Decision Processes (CMDP), which jointly captures intra-frame content features and inter-frame rate-distortion coupling dependencies via spatiotemporal state modeling, and directly maps these to per-frame coding parameters. The approach reduces the average bitrate error to 1.20% and achieves BD-Rate savings of up to 13.98% across multiple neural video codecs.
+  [AAAI 2026][Model Compression][Neural video compression] This paper proposes the first reinforcement learning rate control framework based on Constrained Markov Decision Processes (CMDP)…
 tags:
-  - AAAI 2026
-  - Model Compression
-  - Neural video compression
-  - rate control
-  - reinforcement learning
-  - inter-frame dependency
-  - Actor-Critic
-  - rate-distortion optimization
+  - "AAAI 2026"
+  - "Model Compression"
+  - "Neural video compression"
+  - "rate control"
+  - "reinforcement learning"
+  - "inter-frame dependency"
+  - "Actor-Critic"
+  - "rate-distortion optimization"
 date: 2026-05-08
 content_hash: 886ebd51f014103b
 ---

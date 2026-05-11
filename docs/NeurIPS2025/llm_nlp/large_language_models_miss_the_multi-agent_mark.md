@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Large Language Models Miss the Multi-Agent Mark
 description: >-
-  [NeurIPS 2025][LLM/NLP][Multi-agent systems] This position paper systematically surveys 1,400+ papers to argue that current LLM-based multi-agent systems (MAS LLMs) deviate from foundational MAS theory along four dimensions: LLMs lack native social behavior, environment design is LLM-centric, asynchronous coordination and standard communication protocols are absent, and emergent behaviors lack quantification. The paper warns that the field risks reinventing the wheel while ignoring 40 years of MAS research.
+  [NeurIPS 2025][LLM/NLP][Multi-agent systems] This position paper systematically surveys 1,400+ papers to argue that current LLM-based multi-agent systems (MAS LLMs) deviate from foundational MAS theory along four dimensi…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - Multi-agent systems
-  - Position paper
-  - Social intelligence
-  - Asynchronous communication
-  - Emergent behavior
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "Multi-agent systems"
+  - "Position paper"
+  - "Social intelligence"
+  - "Asynchronous communication"
+  - "Emergent behavior"
 date: 2026-05-08
 content_hash: af3b8cbde3d47805
 ---

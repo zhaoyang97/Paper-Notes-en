@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Cross-modal Proxy Evolving for OOD Detection with Vision-Language Models
 description: >-
-  [AAAI 2026][Multimodal VLM][OOD Detection] This paper proposes CoEvo, a training-free and annotation-free test-time framework that dynamically updates positive and negative proxy caches through a bidirectional sample-conditioned text/visual proxy co-evolution mechanism. On ImageNet-1K, CoEvo improves AUROC by 1.33% and reduces FPR95 by 45.98% (from 18.92% to 10.22%) over the strongest negative-label baseline, achieving state-of-the-art zero-shot OOD detection.
+  [AAAI 2026][Multimodal VLM][OOD Detection] This paper proposes CoEvo, a training-free and annotation-free test-time framework that dynamically updates positive and negative proxy caches through a bidirectional sample-con…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - OOD Detection
-  - VLM
-  - Cross-modal Proxy Co-evolution
-  - Zero-shot
-  - Test-time Adaptation
-  - CLIP
-  - Negative Labels
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "OOD Detection"
+  - "VLM"
+  - "Cross-modal Proxy Co-evolution"
+  - "Zero-shot"
+  - "Test-time Adaptation"
+  - "CLIP"
+  - "Negative Labels"
 date: 2026-05-08
 content_hash: 27ccde48e7d931ea
 ---

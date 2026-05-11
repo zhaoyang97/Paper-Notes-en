@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Beyond Token Probes: Hallucination Detection via Activation Tensors with ACT-ViT
 description: >-
-  [NeurIPS 2025][Hallucination Detection] This paper organizes all hidden-layer activations of an LLM into an "activation tensor" (layers × tokens × hidden dimension), treats it analogously to an image, and processes it with a ViT-based architecture (ACT-ViT) that supports joint training across multiple LLMs. The method consistently outperforms conventional probing approaches across 15 LLM–dataset combinations and demonstrates strong zero-shot/few-shot transfer to unseen datasets and unseen LLMs.
+  [NeurIPS 2025][Interpretability][Hallucination Detection] This paper organizes all hidden-layer activations of an LLM into an "activation tensor" (layers × tokens × hidden dimension), treats it analogously to an image…
 tags:
-  - NeurIPS 2025
-  - Hallucination Detection
-  - Activation Tensors
-  - Vision Transformer
-  - Cross-Model Generalization
-  - Probing
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "Hallucination Detection"
+  - "Activation Tensors"
+  - "Vision Transformer"
+  - "Cross-Model Generalization"
+  - "Probing"
 date: 2026-05-08
 content_hash: 1d805e99a76a2e2a
 ---

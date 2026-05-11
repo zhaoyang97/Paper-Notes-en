@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DeepGB-TB: A Risk-Balanced Cross-Attention Gradient-Boosted Convolutional Network for Rapid, Interpretable Tuberculosis Screening
 description: >-
-  [AAAI 2026][Medical Imaging][tuberculosis screening] This paper proposes DeepGB-TB, a multimodal TB screening system combining a lightweight 1D-CNN (for cough audio) and gradient-boosted decision trees (for demographic features). A bidirectional cross-attention module (CM-BCA) fuses heterogeneous data by mimicking clinical reasoning, while a tuberculosis risk-balanced loss (TRBL) minimizes missed diagnoses. The system achieves AUROC 0.903 on a 7-country dataset and supports offline real-time inference on mobile devices.
+  [AAAI 2026][Medical Imaging][tuberculosis screening] This paper proposes DeepGB-TB, a multimodal TB screening system combining a lightweight 1D-CNN (for cough audio) and gradient-boosted decision trees (for demographic f…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - tuberculosis screening
-  - cough audio
-  - multimodal fusion
-  - cross-attention
-  - imbalanced loss
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "tuberculosis screening"
+  - "cough audio"
+  - "multimodal fusion"
+  - "cross-attention"
+  - "imbalanced loss"
 date: 2026-05-08
 content_hash: 6cf5770a88638f70
 ---

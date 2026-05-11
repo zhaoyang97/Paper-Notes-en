@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Context Attribution with Multi-Armed Bandit Optimization
 description: >-
-  [ACL 2026 (Findings)][Context Attribution] This paper proposes CAMAB, which frames context attribution in RAG — identifying which context segments contribute to the generated answer — as a Combinatorial Multi-Armed Bandit (CMAB) problem. Using Linear Thompson Sampling to adaptively explore the space of context subsets, CAMAB reduces model queries by up to 30% compared to SHAP and ContextCite while matching or surpassing attribution quality on HotpotQA, CNN/DM, and TyDi QA.
+  [ACL 2026 (Findings)][Information Retrieval & RAG][Context Attribution] This paper proposes CAMAB, which frames context attribution in RAG — identifying which context segments contribute to the generated answer — as a Co…
 tags:
-  - ACL 2026 (Findings)
-  - Context Attribution
-  - Multi-Armed Bandit
-  - Thompson Sampling
-  - Retrieval-Augmented Generation
-  - Query Efficiency
+  - "ACL 2026 (Findings)"
+  - "Information Retrieval & RAG"
+  - "Context Attribution"
+  - "Multi-Armed Bandit"
+  - "Thompson Sampling"
+  - "Retrieval-Augmented Generation"
+  - "Query Efficiency"
 date: 2026-05-08
 content_hash: b2ba827f5e7d4c53
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] PseudoMapTrainer: Learning Online Mapping without HD Maps
 description: >-
-  [ICCV2025][3D Vision][Online Mapping] This paper proposes PseudoMapTrainer, the first framework to train online mapping models **entirely without GT HD Maps**: it reconstructs road surfaces from multi-camera images via 2D Gaussian Splatting (RoGS) and combines a pretrained semantic segmentation model (Mask2Former) to generate vectorized pseudo labels. A mask-aware matching algorithm and loss function are further designed to handle partially occluded pseudo labels, supporting both single-trip and multi-trip (crowdsourced) modes.
+  [ICCV2025][3D Vision][Online Mapping] This paper proposes PseudoMapTrainer, the first framework to train online mapping models **entirely without GT HD Maps**: it reconstructs road surfaces from multi-camera images via 2…
 tags:
-  - ICCV2025
-  - 3D Vision
-  - Online Mapping
-  - Pseudo Labels
-  - Gaussian Splatting
-  - HD Map
-  - Semi-Supervised Learning
-  - Vectorized Map
+  - "ICCV2025"
+  - "3D Vision"
+  - "Online Mapping"
+  - "Pseudo Labels"
+  - "Gaussian Splatting"
+  - "HD Map"
+  - "Semi-Supervised Learning"
+  - "Vectorized Map"
 date: 2026-05-08
 content_hash: bd7290719184f04d
 ---

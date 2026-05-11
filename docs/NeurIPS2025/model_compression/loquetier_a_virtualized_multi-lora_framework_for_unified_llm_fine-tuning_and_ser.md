@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Loquetier: A Virtualized Multi-LoRA Framework for Unified LLM Fine-tuning and Serving
 description: >-
-  [NeurIPS 2025][Model Compression][LoRA] Loquetier is a framework that unifies the fine-tuning and inference of multiple LoRA adapters within a single runtime via a Virtualized Module and a Segmented Multi-LoRA Multiplication (SMLM) kernel, achieving a 3.0× throughput improvement for inference-only tasks and a 46.4× higher SLO attainment rate for unified tasks.
+  [NeurIPS 2025][Model Compression][LoRA] Loquetier is a framework that unifies the fine-tuning and inference of multiple LoRA adapters within a single runtime via a Virtualized Module and a Segmented Multi-LoRA Multiplica…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - LoRA
-  - multi-adapter serving
-  - unified fine-tuning and inference
-  - virtualized module
-  - kernel optimization
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "LoRA"
+  - "multi-adapter serving"
+  - "unified fine-tuning and inference"
+  - "virtualized module"
+  - "kernel optimization"
 date: 2026-05-08
 content_hash: 330231bd7737faf3
 ---

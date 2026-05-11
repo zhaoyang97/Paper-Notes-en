@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Textured 3D Regenerative Morphing with 3D Diffusion Prior
 description: >-
-  [ICCV 2025][3D Vision][3D Morphing] This paper proposes a regenerative 3D morphing method based on a 3D diffusion prior. By performing interpolation at three levels — initial noise, model parameters, and conditioning features — and combining three strategies (Attention Fusion, Token Reordering, and Low-Frequency Enhancement), it is the first to achieve smooth and semantically plausible morphing sequences for textured 3D objects across categories.
+  [ICCV 2025][3D Vision][3D Morphing] This paper proposes a regenerative 3D morphing method based on a 3D diffusion prior. By performing interpolation at three levels — initial noise, model parameters…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D Morphing
-  - Diffusion Models
-  - Textured 3D Representation
-  - Attention Fusion
-  - Frequency-Domain Enhancement
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D Morphing"
+  - "Diffusion Models"
+  - "Textured 3D Representation"
+  - "Attention Fusion"
+  - "Frequency-Domain Enhancement"
 date: 2026-05-08
 content_hash: 6b83b5b73a859d4c
 ---

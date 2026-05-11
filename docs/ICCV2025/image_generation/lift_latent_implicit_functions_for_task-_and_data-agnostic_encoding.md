@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LIFT: Latent Implicit Functions for Task- and Data-Agnostic Encoding
 description: >-
-  [ICCV 2025][Image Generation][implicit neural representations] LIFT proposes a meta-learning-based multi-scale implicit neural representation framework that achieves unified encoding across tasks (generation, classification) and data modalities (2D images, 3D voxels) via parallel local implicit functions and a hierarchical latent generator, attaining state-of-the-art performance on both reconstruction and generation tasks while substantially reducing computational cost.
+  [ICCV 2025][Image Generation][implicit neural representations] LIFT proposes a meta-learning-based multi-scale implicit neural representation framework that achieves unified encoding across tasks (generation…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - implicit neural representations
-  - meta-learning
-  - multi-scale latent variables
-  - classification
-  - generative modeling
+  - "ICCV 2025"
+  - "Image Generation"
+  - "implicit neural representations"
+  - "meta-learning"
+  - "multi-scale latent variables"
+  - "classification"
+  - "generative modeling"
 date: 2026-05-08
 content_hash: d5f81d14a6da20d2
 ---

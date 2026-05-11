@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Difficulty Controlled Diffusion Model for Synthesizing Effective Training Data
 description: >-
-  [AAAI 2026][Image Generation][Diffusion Models] A difficulty encoder (MLP taking class label and difficulty score as input) is incorporated into Stable Diffusion, with LoRA fine-tuning used to decouple the objectives of "domain alignment" and "difficulty control," enabling controllable learning difficulty in synthesized data. Using only 10% additional synthetic data, the proposed method surpasses the best results of Real-Fake while saving 63.4 GPU hours.
+  [AAAI 2026][Image Generation][Diffusion Models] A difficulty encoder (MLP taking class label and difficulty score as input) is incorporated into Stable Diffusion…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Diffusion Models
-  - Difficulty-Controllable Generation
-  - Training Data Synthesis
-  - Curriculum Learning
-  - Difficulty Encoder
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "Difficulty-Controllable Generation"
+  - "Training Data Synthesis"
+  - "Curriculum Learning"
+  - "Difficulty Encoder"
 date: 2026-05-08
 content_hash: a26a0df2015247b5
 ---

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] SCFlow: Implicitly Learning Style and Content Disentanglement with Flow Models
 description: >-
-  [Image Generation] SCFlow is proposed to learn an invertible merging mapping between style and content via Flow Matching, leveraging the invertibility of the mapping to allow disentanglement to emerge naturally as an implicit property of the merging process, without requiring explicit disentanglement supervision.
+  [Image Generation] SCFlow is proposed to learn an invertible merging mapping between style and content via Flow Matching…
 tags:
-  - Image Generation
+  - "Image Generation"
 date: 2026-05-08
 content_hash: fa058fd95a5aac76
 ---

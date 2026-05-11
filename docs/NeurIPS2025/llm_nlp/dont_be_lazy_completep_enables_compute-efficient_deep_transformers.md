@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Don't Be Lazy: CompleteP Enables Compute-Efficient Deep Transformers
 description: >-
-  [NeurIPS 2025][LLM/NLP][Parameterization] CompleteP parameterization (α=1) is the only scheme that simultaneously achieves hyperparameter transfer along the depth dimension and complete feature learning, saving 12–34% FLOPs over μP on deep models.
+  [NeurIPS 2025][LLM/NLP][Parameterization] CompleteP parameterization (α=1) is the only scheme that simultaneously achieves hyperparameter transfer along the depth dimension and complete feature learning…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - Parameterization
-  - Depth Scaling
-  - Hyperparameter Transfer
-  - Compute Efficiency
-  - CompleteP
-  - μP
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "Parameterization"
+  - "Depth Scaling"
+  - "Hyperparameter Transfer"
+  - "Compute Efficiency"
+  - "CompleteP"
+  - "μP"
 date: 2026-05-08
 content_hash: 711ed59937ce1408
 ---

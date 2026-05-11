@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ReScene4D: Temporally Consistent Semantic Instance Segmentation of Evolving Indoor 3D Scenes
 description: >-
-  [CVPR 2026][Autonomous Driving][4D Semantic Instance Segmentation] This paper formally defines the temporally sparse 4D indoor semantic instance segmentation (4DSIS) task and proposes ReScene4D, which extends a 3D instance segmentation architecture to the 4D domain via three temporal information sharing strategies—spatio-temporal contrastive loss, spatio-temporal mask pooling, and spatio-temporal decoder serialization. The method achieves state-of-the-art performance on the 3RScan dataset and introduces a new t-mAP metric that jointly evaluates segmentation quality and temporal identity consistency.
+  [CVPR 2026][Autonomous Driving][4D Semantic Instance Segmentation] This paper formally defines the temporally sparse 4D indoor semantic instance segmentation (4DSIS) task and proposes ReScene4D…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - 4D Semantic Instance Segmentation
-  - Temporal Consistency
-  - Indoor Scene Change
-  - Contrastive Learning
-  - Spatio-Temporal Queries
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "4D Semantic Instance Segmentation"
+  - "Temporal Consistency"
+  - "Indoor Scene Change"
+  - "Contrastive Learning"
+  - "Spatio-Temporal Queries"
 date: 2026-05-08
 content_hash: ca514c9a72b12167
 ---

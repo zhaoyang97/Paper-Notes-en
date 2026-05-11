@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UniGeoCLIP: Unified Geospatial Contrastive Learning
 description: >-
-  [CVPR 2026][Self-Supervised Learning][geospatial representation learning] UniGeoCLIP is the first to align five complementary geospatial modalities (aerial imagery, street-view imagery, digital surface models, text, and GPS coordinates) into a unified embedding space via pure contrastive learning, and proposes a multi-scale coordinate encoder to enhance spatial representation capacity.
+  [CVPR 2026][Self-Supervised Learning][geospatial representation learning] UniGeoCLIP is the first to align five complementary geospatial modalities (aerial imagery, street-view imagery, digital surface models, text…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - geospatial representation learning
-  - contrastive learning
-  - multimodal
-  - coordinate encoding
-  - unified embedding space
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "geospatial representation learning"
+  - "contrastive learning"
+  - "multimodal"
+  - "coordinate encoding"
+  - "unified embedding space"
 date: 2026-05-08
 content_hash: a9f5fe93831e22a9
 ---

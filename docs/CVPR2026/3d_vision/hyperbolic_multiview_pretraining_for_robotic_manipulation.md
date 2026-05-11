@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HyperMVP: Hyperbolic Multiview Pretraining for Robotic Manipulation
 description: >-
-  [CVPR 2026][3D Vision][Hyperbolic space] This paper proposes HyperMVP, the first framework for 3D multiview self-supervised pretraining in hyperbolic space. It learns hyperbolic multiview representations via a GeoLink encoder and transfers them to robotic manipulation tasks, achieving a 2.1× performance improvement on the most challenging All Perturbations setting of COLOSSEUM.
+  [CVPR 2026][3D Vision][Hyperbolic space] This paper proposes HyperMVP, the first framework for 3D multiview self-supervised pretraining in hyperbolic space. It learns hyperbolic multiview representations via a GeoLink en…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Hyperbolic space
-  - multiview pretraining
-  - robotic manipulation
-  - self-supervised learning
-  - 3D representation
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Hyperbolic space"
+  - "multiview pretraining"
+  - "robotic manipulation"
+  - "self-supervised learning"
+  - "3D representation"
 date: 2026-05-08
 content_hash: 1df62fd3fe80ab4e
 ---

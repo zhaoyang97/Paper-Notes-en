@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Enhancing Persona Following at Decoding Time via Dynamic Importance-Guided Token Estimation for Role-Playing Agents
 description: >-
-  [ICLR 2026][LLM/NLP][Role-playing agents] This paper proposes Persona Dynamic Decoding (PDD), a framework that dynamically estimates the context-dependent importance of persona attributes via conditional mutual information and integrates importance scores into multi-objective reward-guided decoding, achieving training-free inference-time persona following.
+  [ICLR 2026][LLM/NLP][Role-playing agents] This paper proposes Persona Dynamic Decoding (PDD), a framework that dynamically estimates the context-dependent importance of persona attributes via conditional mutual informati…
 tags:
-  - ICLR 2026
-  - LLM/NLP
-  - Role-playing agents
-  - persona following
-  - inference-time alignment
-  - conditional mutual information
-  - multi-objective reward decoding
+  - "ICLR 2026"
+  - "LLM/NLP"
+  - "Role-playing agents"
+  - "persona following"
+  - "inference-time alignment"
+  - "conditional mutual information"
+  - "multi-objective reward decoding"
 date: 2026-05-08
 content_hash: 250decb3608d7e21
 ---

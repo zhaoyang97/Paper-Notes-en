@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Federated Prompt-Tuning with Heterogeneous and Incomplete Multimodal Client Data
 description: >-
-  [ICCV 2025][Optimization][Federated Learning] This paper proposes FED-PRIME, a federated prompt-tuning framework for multimodal settings with missing modalities. It maintains two sets of learnable prompts — inter-client and intra-client — to capture cross-client alignable missing patterns and client-specific missing patterns, respectively, and employs a clustering-alignment mechanism for server-side aggregation. FED-PRIME substantially outperforms existing baselines across diverse missing-data configurations.
+  [ICCV 2025][Optimization][Federated Learning] This paper proposes FED-PRIME, a federated prompt-tuning framework for multimodal settings with missing modalities. It maintains two sets of learnable prompts — inter-client…
 tags:
-  - ICCV 2025
-  - Optimization
-  - Federated Learning
-  - Prompt-Tuning
-  - Multimodal
-  - Missing Modality
-  - Heterogeneous Data
+  - "ICCV 2025"
+  - "Optimization"
+  - "Federated Learning"
+  - "Prompt-Tuning"
+  - "Multimodal"
+  - "Missing Modality"
+  - "Heterogeneous Data"
 date: 2026-05-08
 content_hash: b6f9ddc3bdfd13d8
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning to Assist: Physics-Grounded Human-Human Control via Multi-Agent Reinforcement Learning
 description: >-
-  [CVPR 2026][Video Understanding][multi-agent reinforcement learning] This paper proposes AssistMimic, which formulates physics-based imitation of human-human assistive interactions as a multi-agent reinforcement learning (MARL) problem. Through motion prior initialization, dynamic reference retargeting, and contact-promoting rewards, it achieves, for the first time, physics-simulation tracking of force-exchanging assistive motions.
+  [CVPR 2026][Video Understanding][multi-agent reinforcement learning] This paper proposes AssistMimic, which formulates physics-based imitation of human-human assistive interactions as a multi-agent reinforcement learning…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - multi-agent reinforcement learning
-  - physics-based character control
-  - human-human interaction
-  - assistive motion imitation
-  - motion tracking
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "multi-agent reinforcement learning"
+  - "physics-based character control"
+  - "human-human interaction"
+  - "assistive motion imitation"
+  - "motion tracking"
 date: 2026-05-08
 content_hash: a5a999e694132004
 ---

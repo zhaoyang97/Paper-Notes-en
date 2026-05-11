@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MultiTab: A Scalable Foundation for Multitask Learning on Tabular Data
 description: >-
-  [AAAI 2026][Recommender Systems][Multitask Learning] This paper proposes MultiTab-Net — the first multitask Transformer architecture for tabular data — which alleviates task competition via a multitask masked attention mechanism, and substantially outperforms existing MLP-based multitask models and single-task Transformer models across datasets from recommendation, census, and physics domains.
+  [AAAI 2026][Recommender Systems][Multitask Learning] This paper proposes MultiTab-Net — the first multitask Transformer architecture for tabular data — which alleviates task competition via a multitask masked attention m…
 tags:
-  - AAAI 2026
-  - Recommender Systems
-  - Multitask Learning
-  - Transformer
-  - Tabular Data
-  - Masked Attention
-  - Synthetic Data Benchmark
+  - "AAAI 2026"
+  - "Recommender Systems"
+  - "Multitask Learning"
+  - "Transformer"
+  - "Tabular Data"
+  - "Masked Attention"
+  - "Synthetic Data Benchmark"
 date: 2026-05-08
 content_hash: d8d4bad60c794b4b
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Yo'City: Personalized and Boundless 3D Realistic City Scene Generation via Self-Critic Expansion
 description: >-
-  [CVPR 2026][3D Vision][3D city generation] This paper proposes Yo'City, a multi-agent framework that achieves user-personalized, text-driven unbounded 3D city generation through a "City–District–Grid" hierarchical planning strategy, a produce–refine–evaluate isometric image synthesis loop, and a scene graph-guided expansion mechanism. The approach comprehensively outperforms existing methods such as SynCity in semantic consistency and visual quality.
+  [CVPR 2026][3D Vision][3D city generation] This paper proposes Yo'City, a multi-agent framework that achieves user-personalized, text-driven unbounded 3D city generation through a "City–District–Grid" hierarchical planni…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D city generation
-  - multi-agent framework
-  - hierarchical planning
-  - isometric image synthesis
-  - scene graph expansion
-  - LLM-driven
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D city generation"
+  - "multi-agent framework"
+  - "hierarchical planning"
+  - "isometric image synthesis"
+  - "scene graph expansion"
+  - "LLM-driven"
 date: 2026-05-08
 content_hash: 47a12686e878b460
 ---

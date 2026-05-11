@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] STAC: Plug-and-Play Spatio-Temporal Aware Cache Compression for Streaming 3D Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][Streaming 3D Reconstruction] This paper proposes STAC, a framework that exploits spatio-temporal sparsity in the KV cache of causal Transformers. Through three modules—working temporal token caching, long-term spatial token caching, and chunk-based multi-frame optimization—STAC reduces memory consumption by approximately 10× and improves inference speed by 4× for streaming 3D reconstruction, without any additional training and with negligible degradation in reconstruction quality.
+  [CVPR 2026][3D Vision][Streaming 3D Reconstruction] This paper proposes STAC, a framework that exploits spatio-temporal sparsity in the KV cache of causal Transformers. Through three modules—working temporal token cachin…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Streaming 3D Reconstruction
-  - KV Cache Compression
-  - Spatio-Temporal Sparsity
-  - Causal Transformer
-  - Voxelized Storage
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Streaming 3D Reconstruction"
+  - "KV Cache Compression"
+  - "Spatio-Temporal Sparsity"
+  - "Causal Transformer"
+  - "Voxelized Storage"
 date: 2026-05-08
 content_hash: 12159542b8732ce2
 ---

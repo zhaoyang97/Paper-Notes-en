@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AgentDAM: Privacy Leakage Evaluation for Autonomous Web Agents
 description: >-
-  [NeurIPS 2025][LLM Agent][AI agent privacy] This paper proposes AgentDAM, the first benchmark for end-to-end evaluation of data minimization compliance by AI agents in real web environments. It comprises 246 tasks spanning Reddit, GitLab, and Shopping platforms, and finds that leading models such as GPT-4o exhibit privacy leakage rates of 36–46% without mitigation, while a CoT-based privacy prompt reduces leakage rates to 6–8%.
+  [NeurIPS 2025][LLM Agent][AI agent privacy] This paper proposes AgentDAM, the first benchmark for end-to-end evaluation of data minimization compliance by AI agents in real web environments. It comprises 246 tasks spanni…
 tags:
-  - NeurIPS 2025
-  - LLM Agent
-  - AI agent privacy
-  - data minimization
-  - web navigation
-  - privacy benchmark
-  - inference-time leakage
+  - "NeurIPS 2025"
+  - "LLM Agent"
+  - "AI agent privacy"
+  - "data minimization"
+  - "web navigation"
+  - "privacy benchmark"
+  - "inference-time leakage"
 date: 2026-05-08
 content_hash: c608f8a1885425f9
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BiPreManip: Learning Affordance-Based Bimanual Preparatory Manipulation through Anticipatory Collaboration
 description: >-
-  [CVPR 2026][Robotics][Bimanual collaborative manipulation] This paper proposes BiPreManip, a framework for bimanual preparatory manipulation based on visual affordance representations. The system first anticipates the primary hand's target interaction region, then guides the assistive hand to perform preparatory actions (e.g., flipping a bottle so its cap faces the primary hand), achieving substantial improvements over baselines in both simulated and real-world environments.
+  [CVPR 2026][Robotics][Bimanual collaborative manipulation] This paper proposes BiPreManip, a framework for bimanual preparatory manipulation based on visual affordance representations. The system first anticipates the pr…
 tags:
-  - CVPR 2026
-  - Robotics
-  - Bimanual collaborative manipulation
-  - visual affordance
-  - preparatory manipulation
-  - anticipatory reasoning
-  - point cloud
+  - "CVPR 2026"
+  - "Robotics"
+  - "Bimanual collaborative manipulation"
+  - "visual affordance"
+  - "preparatory manipulation"
+  - "anticipatory reasoning"
+  - "point cloud"
 date: 2026-05-08
 content_hash: 6b0ab7e9c5207802
 ---

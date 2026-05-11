@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Exo2Ego: Exocentric Knowledge Guided MLLM for Egocentric Video Understanding
 description: >-
-  [AAAI 2026][Multimodal VLM][Egocentric video understanding] This paper proposes Exo2Ego, a framework that learns a mapping between the exocentric (third-person) and egocentric (first-person) domains to transfer rich exocentric knowledge encoded in MLLMs to egocentric video understanding. Combined with a newly constructed dataset of 1.1M synchronized ego-exo clip-text pairs (Ego-ExoClip) and 600K instruction-tuning samples (EgoIT), Exo2Ego achieves state-of-the-art open-source performance across 8 egocentric video benchmarks.
+  [AAAI 2026][Multimodal VLM][Egocentric video understanding] This paper proposes Exo2Ego, a framework that learns a mapping between the exocentric (third-person) and egocentric (first-person) domains to transfer rich exoc…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Egocentric video understanding
-  - exocentric-to-egocentric knowledge transfer
-  - multimodal large language model
-  - cross-view mapping learning
-  - ego-exo alignment
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Egocentric video understanding"
+  - "exocentric-to-egocentric knowledge transfer"
+  - "multimodal large language model"
+  - "cross-view mapping learning"
+  - "ego-exo alignment"
 date: 2026-05-08
 content_hash: 8cb9da7f2539ad42
 ---

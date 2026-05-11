@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Radiant Foam: Real-Time Differentiable Ray Tracing
 description: >-
-  [ICCV 2025][3D Vision][Differentiable Rendering] This paper proposes Radiant Foam, a novel differentiable scene representation based on volumetric tetrahedral mesh ray tracing. Without relying on rasterization, it achieves rendering speed and quality comparable to Gaussian Splatting while natively supporting light transport phenomena such as reflection and refraction.
+  [ICCV 2025][3D Vision][Differentiable Rendering] This paper proposes Radiant Foam, a novel differentiable scene representation based on volumetric tetrahedral mesh ray tracing. Without relying on rasterization…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Differentiable Rendering
-  - Ray Tracing
-  - Voxel Grid
-  - Scene Representation
-  - Real-Time Rendering
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Differentiable Rendering"
+  - "Ray Tracing"
+  - "Voxel Grid"
+  - "Scene Representation"
+  - "Real-Time Rendering"
 date: 2026-05-08
 content_hash: 515ccf84a29695b1
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Oracle-Efficient Combinatorial Semi-Bandits
 description: >-
-  [NeurIPS 2025][Optimization][combinatorial semi-bandits] Two oracle-efficient frameworks (adaptive and scheduled) are proposed for combinatorial semi-bandits, reducing oracle calls from $\Theta(T)$ to $O(\log\log T)$ while maintaining near-optimal regret bounds.
+  [NeurIPS 2025][Optimization][combinatorial semi-bandits] Two oracle-efficient frameworks (adaptive and scheduled) are proposed for combinatorial semi-bandits…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - combinatorial semi-bandits
-  - oracle efficiency
-  - regret bounds
-  - online learning
-  - covariance-adaptive
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "combinatorial semi-bandits"
+  - "oracle efficiency"
+  - "regret bounds"
+  - "online learning"
+  - "covariance-adaptive"
 date: 2026-05-08
 content_hash: cb06d2885c07ac7b
 ---

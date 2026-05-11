@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CometNet: Contextual Motif-guided Long-term Time Series Forecasting
 description: >-
-  [AAAI 2026][Time Series][Long-term time series forecasting] This paper proposes CometNet, which extracts recurrently occurring "contextual motifs" from the full historical sequence to construct a motif library, and employs a motif-guided MoE architecture to dynamically associate the current window with relevant motifs for prediction. This approach breaks the receptive field bottleneck imposed by limited look-back windows and achieves significant improvements over state-of-the-art methods such as TimeMixer++ and iTransformer on 8 datasets.
+  [AAAI 2026][Time Series][Long-term time series forecasting] This paper proposes CometNet, which extracts recurrently occurring "contextual motifs" from the full historical sequence to construct a motif library…
 tags:
-  - AAAI 2026
-  - Time Series
-  - Long-term time series forecasting
-  - contextual motif
-  - mixture of experts
-  - receptive field bottleneck
-  - frequency-domain analysis
+  - "AAAI 2026"
+  - "Time Series"
+  - "Long-term time series forecasting"
+  - "contextual motif"
+  - "mixture of experts"
+  - "receptive field bottleneck"
+  - "frequency-domain analysis"
 date: 2026-05-08
 content_hash: 2cb8ccca40883734
 ---

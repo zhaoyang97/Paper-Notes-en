@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Customized Visual Storytelling with Unified Multimodal LLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][Visual story generation] This paper proposes the VstoryGen framework and its core component CustFilmer, which leverages a unified multimodal large language model (UMLLM) to enable customized multimodal story generation with joint conditioning on text descriptions, character/scene reference images, and shot types. Two new benchmarks, MSB and M2SB, are also introduced.
+  [CVPR 2026][Multimodal VLM][Visual story generation] This paper proposes the VstoryGen framework and its core component CustFilmer, which leverages a unified multimodal large language model (UMLLM) to enable customized m…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Visual story generation
-  - multimodal customization
-  - unified multimodal LLM
-  - shot type control
-  - keyframe generation
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Visual story generation"
+  - "multimodal customization"
+  - "unified multimodal LLM"
+  - "shot type control"
+  - "keyframe generation"
 date: 2026-05-08
 content_hash: a7456a443baea87d
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Plant Taxonomy Meets Plant Counting: A Fine-Grained, Taxonomic Dataset for Counting Hundreds of Plant Species
 description: >-
-  [CVPR 2026][Autonomous Driving][plant counting] This paper introduces TPC-268, the first large-scale plant counting dataset integrating plant taxonomy, comprising 10,000 images, 678,050 point annotations, and 268 countable categories (covering 242 species), with complete Linnaean taxonomic hierarchy annotations, and provides comprehensive benchmarking under the class-agnostic counting (CAC) paradigm.
+  [CVPR 2026][Autonomous Driving][plant counting] This paper introduces TPC-268, the first large-scale plant counting dataset integrating plant taxonomy, comprising 10,000 images, 678,050 point annotations…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - plant counting
-  - class-agnostic counting
-  - taxonomic hierarchy
-  - fine-grained dataset
-  - density estimation
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "plant counting"
+  - "class-agnostic counting"
+  - "taxonomic hierarchy"
+  - "fine-grained dataset"
+  - "density estimation"
 date: 2026-05-08
 content_hash: ec20947011013b98
 ---

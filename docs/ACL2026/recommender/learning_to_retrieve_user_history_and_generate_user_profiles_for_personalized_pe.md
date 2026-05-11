@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning to Retrieve User History and Generate User Profiles for Personalized Persuasiveness Prediction
 description: >-
-  [ACL 2026][Recommender Systems][persuasiveness prediction] This paper proposes ReCAP, a framework featuring a trainable query generator and a user profile generator that retrieves persuasion-relevant information from user history and constructs context-aware user profiles, significantly improving personalized persuasiveness prediction.
+  [ACL 2026][Recommender Systems][persuasiveness prediction] This paper proposes ReCAP, a framework featuring a trainable query generator and a user profile generator that retrieves persuasion-relevant information from use…
 tags:
-  - ACL 2026
-  - Recommender Systems
-  - persuasiveness prediction
-  - user profiling
-  - retrieval augmentation
-  - DPO training
-  - personalization
+  - "ACL 2026"
+  - "Recommender Systems"
+  - "persuasiveness prediction"
+  - "user profiling"
+  - "retrieval augmentation"
+  - "DPO training"
+  - "personalization"
 date: 2026-05-08
 content_hash: 8ef5a3658feb2808
 ---

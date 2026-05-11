@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SONIC: Spectral Oriented Neural Invariant Convolutions
 description: >-
-  [ICLR 2026][Medical Imaging][Spectral convolution] SONIC transfers the core idea of state space models to the multi-dimensional frequency domain, defining a set of orientation-selective spectral transfer functions using 6 continuous parameters (amplitude, orientation, damping, oscillation, etc.), and mixing across channels via low-rank matrices $B$ and $C$. This yields a drop-in convolutional replacement operator that inherently possesses a global receptive field and resolution invariance. On 3D medical segmentation, it matches nnU-Net with nearly two orders of magnitude fewer parameters, and is also competitive on ImageNet.
+  [ICLR 2026][Medical Imaging][Spectral convolution] SONIC transfers the core idea of state space models to the multi-dimensional frequency domain…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - Spectral convolution
-  - orientation invariance
-  - continuous parameterization
-  - global receptive field
-  - resolution adaptability
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Spectral convolution"
+  - "orientation invariance"
+  - "continuous parameterization"
+  - "global receptive field"
+  - "resolution adaptability"
 date: 2026-05-08
 content_hash: 12778bb828df2ade
 ---

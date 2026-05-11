@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Diffusion-CAM: Faithful Visual Explanations for dMLLMs
 description: >-
-  [ACL 2026][Image Restoration][Diffusion Multimodal Model] Diffusion-CAM is the first interpretability method for diffusion-based multimodal LLMs (dMLLMs), extracting structurally valid intermediate representations from denoising trajectories with four post-processing modules (adaptive kernel denoising, distribution-aware confidence gating, contextual background decay, single-instance causal debiasing), significantly outperforming autoregressive CAM baselines on COCO Caption and GranDf.
+  [ACL 2026][Image Restoration][Diffusion Multimodal Model] Diffusion-CAM is the first interpretability method for diffusion-based multimodal LLMs (dMLLMs)…
 tags:
-  - ACL 2026
-  - Image Restoration
-  - Diffusion Multimodal Model
-  - Class Activation Mapping
-  - Visual Explanation
-  - Explainable AI
-  - Parallel Generation
+  - "ACL 2026"
+  - "Image Restoration"
+  - "Diffusion Multimodal Model"
+  - "Class Activation Mapping"
+  - "Visual Explanation"
+  - "Explainable AI"
+  - "Parallel Generation"
 content_hash: a3200e0dbefb57fa
 ---
 

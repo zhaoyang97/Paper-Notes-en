@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Conflict-Aware Fusion: Resolving Logic Inertia in Large Language Models via Structured Cognitive Priors
 description: >-
-  [ICLR 2026][LLM Reasoning][logic inertia] This paper identifies the phenomenon of "logic inertia" in LLMs—whereby models continue along learned reasoning trajectories even when presented with contradictory premises, reducing accuracy to 0.0—and proposes the Conflict-Aware Fusion dual-process architecture, which enforces premise verification prior to reasoning execution, achieving 100% accuracy on contradiction detection.
+  [ICLR 2026][LLM Reasoning][logic inertia] This paper identifies the phenomenon of "logic inertia" in LLMs—whereby models continue along learned reasoning trajectories even when presented with contradictory premises…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - logic inertia
-  - contradiction detection
-  - dual-process reasoning
-  - structural robustness
-  - rule-based reasoning
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "logic inertia"
+  - "contradiction detection"
+  - "dual-process reasoning"
+  - "structural robustness"
+  - "rule-based reasoning"
 date: 2026-05-08
 content_hash: f80b3531b1fc3480
 ---

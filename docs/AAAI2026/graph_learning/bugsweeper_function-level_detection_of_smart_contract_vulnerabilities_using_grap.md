@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BugSweeper: Function-Level Detection of Smart Contract Vulnerabilities Using Graph Neural Networks
 description: >-
-  [AAAI2026][Graph Learning][Smart Contract] This paper proposes BugSweeper, which constructs function-level abstract syntax graphs (FLAG) and designs a two-stage GNN architecture to enable end-to-end smart contract vulnerability detection without expert-defined rules, achieving an F1 of 98.57% on reentrancy attack detection.
+  [AAAI2026][Graph Learning][Smart Contract] This paper proposes BugSweeper, which constructs function-level abstract syntax graphs (FLAG) and designs a two-stage GNN architecture to enable end-to-end smart contract vulner…
 tags:
-  - AAAI2026
-  - Graph Learning
-  - Smart Contract
-  - Vulnerability Detection
-  - graph neural network
-  - Abstract Syntax Tree
-  - Pooling
+  - "AAAI2026"
+  - "Graph Learning"
+  - "Smart Contract"
+  - "Vulnerability Detection"
+  - "graph neural network"
+  - "Abstract Syntax Tree"
+  - "Pooling"
 date: 2026-05-08
 content_hash: 244f801b3702a523
 ---

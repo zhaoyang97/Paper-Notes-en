@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Words That Unite The World: A Unified Framework for Deciphering Central Bank Communications Globally
 description: >-
-  [NeurIPS 2025 (Main Conference)][LLM Evaluation][central bank communication] This paper constructs WCB, the most comprehensive central bank monetary policy corpus to date (380,000+ sentences, 25 central banks, spanning 28 years), defines three NLP tasks (stance detection, temporal classification, uncertainty estimation), and through 15,075 benchmark experiments demonstrates that models trained on aggregated multi-bank data significantly outperform single-bank training, confirming the principle that "the whole is greater than the sum of its parts."
+  [NeurIPS 2025 (Main Conference)][LLM Evaluation][central bank communication] This paper constructs WCB, the most comprehensive central bank monetary policy corpus to date (380,000+ sentences, 25 central banks…
 tags:
-  - NeurIPS 2025 (Main Conference)
-  - LLM Evaluation
-  - central bank communication
-  - monetary policy
-  - stance detection
-  - large language models
-  - dataset benchmark
+  - "NeurIPS 2025 (Main Conference)"
+  - "LLM Evaluation"
+  - "central bank communication"
+  - "monetary policy"
+  - "stance detection"
+  - "large language models"
+  - "dataset benchmark"
 date: 2026-05-08
 content_hash: 344a8cd201883e5a
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Fairness under Competition
 description: >-
-  [NeurIPS 2025][AI Safety][Algorithmic Fairness] This paper is the first to study the joint fairness of multiple fair classifiers operating in a competitive environment. It theoretically demonstrates that even when each individual classifier satisfies Equal Opportunity (EO), the ecosystem as a whole may remain unfair, and that applying fairness adjustments to a biased classifier can paradoxically reduce ecosystem-level fairness.
+  [NeurIPS 2025][AI Safety][Algorithmic Fairness] This paper is the first to study the joint fairness of multiple fair classifiers operating in a competitive environment. It theoretically demonstrates that even when each i…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - Algorithmic Fairness
-  - Competitive Ecosystems
-  - Equal Opportunity
-  - Multi-Classifier Fairness
-  - Ecosystem Fairness
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "Algorithmic Fairness"
+  - "Competitive Ecosystems"
+  - "Equal Opportunity"
+  - "Multi-Classifier Fairness"
+  - "Ecosystem Fairness"
 date: 2026-05-08
 content_hash: d2d1887c7f0eab8b
 ---

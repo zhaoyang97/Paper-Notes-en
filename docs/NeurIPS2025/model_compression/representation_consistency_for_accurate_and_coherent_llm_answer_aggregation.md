@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Representation Consistency for Accurate and Coherent LLM Answer Aggregation
 description: >-
-  [NeurIPS 2025][Model Compression][Test-time scaling] This paper proposes Representation Consistency (RC), which improves answer aggregation by analyzing the consistency of internal activations when an LLM generates multiple candidate answers. Reasoning paths that yield the same answer with highly consistent internal representations are more likely to be correct. A sparse variant, RC-S, leveraging sparse autoencoders achieves the best performance, consistently outperforming Self-Consistency across 4 LLMs and 4 reasoning datasets.
+  [NeurIPS 2025][Model Compression][Test-time scaling] This paper proposes Representation Consistency (RC), which improves answer aggregation by analyzing the consistency of internal activations when an LLM generates multi…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Test-time scaling
-  - answer aggregation
-  - internal representation consistency
-  - sparse autoencoders
-  - LLM reasoning
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Test-time scaling"
+  - "answer aggregation"
+  - "internal representation consistency"
+  - "sparse autoencoders"
+  - "LLM reasoning"
 date: 2026-05-08
 content_hash: 88cea78f716969dc
 ---

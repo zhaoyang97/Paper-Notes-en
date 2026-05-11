@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Validating LLM-as-a-Judge Systems under Rating Indeterminacy
 description: >-
-  [NeurIPS 2025][Recommender Systems][LLM-as-a-Judge] This paper proposes a framework for validating LLM-as-a-Judge systems under rating indeterminacy, replacing forced-choice rating with a "response set" multi-label rating scheme, achieving up to 31% performance improvement in the selected judge system.
+  [NeurIPS 2025][Recommender Systems][LLM-as-a-Judge] This paper proposes a framework for validating LLM-as-a-Judge systems under rating indeterminacy…
 tags:
-  - NeurIPS 2025
-  - Recommender Systems
-  - LLM-as-a-Judge
-  - rating indeterminacy
-  - validation framework
-  - multi-label evaluation
-  - forced-choice bias
+  - "NeurIPS 2025"
+  - "Recommender Systems"
+  - "LLM-as-a-Judge"
+  - "rating indeterminacy"
+  - "validation framework"
+  - "multi-label evaluation"
+  - "forced-choice bias"
 date: 2026-05-08
 content_hash: 1287177c8ea2d2b4
 ---

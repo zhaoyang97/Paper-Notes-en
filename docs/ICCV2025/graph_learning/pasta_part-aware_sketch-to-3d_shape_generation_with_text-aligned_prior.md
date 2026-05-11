@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PASTA: Part-Aware Sketch-to-3D Shape Generation with Text-Aligned Prior
 description: >-
-  [ICCV 2025][Graph Learning][Sketch-to-3D Generation] This paper proposes the PASTA framework, which integrates VLM-derived text priors to compensate for semantic deficiencies in sketches, and introduces ISG-Net (a dual graph convolutional network comprising IndivGCN and PartGCN) to model inter-part structural relationships, achieving state-of-the-art sketch-to-3D shape generation and part-level editing.
+  [ICCV 2025][Graph Learning][Sketch-to-3D Generation] This paper proposes the PASTA framework, which integrates VLM-derived text priors to compensate for semantic deficiencies in sketches…
 tags:
-  - ICCV 2025
-  - Graph Learning
-  - Sketch-to-3D Generation
-  - Part-Level Editing
-  - Vision-Language Model
-  - Graph Convolutional Network
-  - Gaussian Mixture Model
+  - "ICCV 2025"
+  - "Graph Learning"
+  - "Sketch-to-3D Generation"
+  - "Part-Level Editing"
+  - "Vision-Language Model"
+  - "Graph Convolutional Network"
+  - "Gaussian Mixture Model"
 date: 2026-05-08
 content_hash: c6dbcead6672a94f
 ---

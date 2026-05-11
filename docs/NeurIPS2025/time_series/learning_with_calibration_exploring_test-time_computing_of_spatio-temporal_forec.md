@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning with Calibration: Exploring Test-Time Computing of Spatio-Temporal Forecasting
 description: >-
-  [NeurIPS 2025 (Spotlight)][Time Series][Spatio-temporal forecasting] This paper proposes ST-TTC, a lightweight test-time computing paradigm that corrects periodic biases in spatio-temporal forecasting during inference via a frequency-domain phase-amplitude calibrator and a flash gradient update mechanism, consistently improving the performance of diverse backbone models without modifying their architectures.
+  [NeurIPS 2025 (Spotlight)][Time Series][Spatio-temporal forecasting] This paper proposes ST-TTC, a lightweight test-time computing paradigm that corrects periodic biases in spatio-temporal forecasting during inference vi…
 tags:
-  - NeurIPS 2025 (Spotlight)
-  - Time Series
-  - Spatio-temporal forecasting
-  - test-time computing
-  - frequency-domain calibration
-  - non-stationarity
-  - online adaptation
+  - "NeurIPS 2025 (Spotlight)"
+  - "Time Series"
+  - "Spatio-temporal forecasting"
+  - "test-time computing"
+  - "frequency-domain calibration"
+  - "non-stationarity"
+  - "online adaptation"
 date: 2026-05-08
 content_hash: ba032644dce40b81
 ---

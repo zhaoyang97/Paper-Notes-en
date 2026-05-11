@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Distributionally Robust Classification for Multi-Source Unsupervised Domain Adaptation
 description: >-
-  [ICLR 2026][Distributionally robust optimization] This paper proposes a distributionally robust learning framework that jointly models uncertainty over both the target-domain covariate distribution and the conditional label distribution, achieving significant generalization improvements in UDA settings where target data is extremely scarce or spurious correlations exist in the source domain.
+  [ICLR 2026][Distributionally robust optimization] This paper proposes a distributionally robust learning framework that jointly models uncertainty over both the target-domain covariate distribution and the conditional la…
 tags:
-  - ICLR 2026
-  - Distributionally robust optimization
-  - unsupervised domain adaptation
-  - multi-source domain adaptation
-  - Wasserstein distance
-  - pseudo-labels
+  - "ICLR 2026"
+  - "Distributionally robust optimization"
+  - "unsupervised domain adaptation"
+  - "multi-source domain adaptation"
+  - "Wasserstein distance"
+  - "pseudo-labels"
 date: 2026-05-08
 content_hash: c9e3e475de4b56fa
 ---

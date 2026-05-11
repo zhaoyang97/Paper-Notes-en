@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Horizon Imagination: Efficient On-Policy Rollout in Diffusion World Models
 description: >-
-  [ICLR 2026][Image Restoration][diffusion world models] This paper proposes Horizon Imagination (HI), which samples actions at an intermediate denoising step and processes multiple future frames in parallel, reducing the per-frame computation of on-policy imagination in diffusion world models to less than one full denoising pass while maintaining control performance.
+  [ICLR 2026][Image Restoration][diffusion world models] This paper proposes Horizon Imagination (HI), which samples actions at an intermediate denoising step and processes multiple future frames in parallel…
 tags:
-  - ICLR 2026
-  - Image Restoration
-  - diffusion world models
-  - on-policy rollout
-  - reinforcement learning
-  - sample efficiency
-  - Atari
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "diffusion world models"
+  - "on-policy rollout"
+  - "reinforcement learning"
+  - "sample efficiency"
+  - "Atari"
 date: 2026-05-08
 content_hash: 54662edd0180645b
 ---

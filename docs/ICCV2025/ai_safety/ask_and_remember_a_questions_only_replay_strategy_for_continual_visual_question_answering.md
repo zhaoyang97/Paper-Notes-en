@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Ask and Remember: A Questions-Only Replay Strategy for Continual Visual Question Answering
 description: >-
-  [ICCV 2025][AI Safety][continual learning] This paper proposes QUAD, which replays only questions from previous tasks (without storing images), combined with attention consistency distillation to preserve intra- and inter-modal attention patterns across tasks, achieving state-of-the-art performance in continual VQA under a privacy-preserving setting.
+  [ICCV 2025][AI Safety][continual learning] This paper proposes QUAD, which replays only questions from previous tasks (without storing images)…
 tags:
-  - ICCV 2025
-  - AI Safety
-  - continual learning
-  - VQA
-  - question-only replay
-  - attention distillation
-  - privacy-preserving
+  - "ICCV 2025"
+  - "AI Safety"
+  - "continual learning"
+  - "VQA"
+  - "question-only replay"
+  - "attention distillation"
+  - "privacy-preserving"
 date: 2026-05-08
 content_hash: 5bdf3c6df69b3a92
 ---

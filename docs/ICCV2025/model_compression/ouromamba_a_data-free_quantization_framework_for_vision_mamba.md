@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OuroMamba: A Data-Free Quantization Framework for Vision Mamba
 description: >-
-  [ICCV 2025][Model Compression][Data-Free Quantization] The first data-free post-training quantization (PTQ) framework for Vision Mamba Models (VMMs), which generates high-quality synthetic data via enhanced implicit attention and employs a mixed-precision quantization scheme with dynamic outlier detection. Under W4A4 settings, it significantly outperforms existing data-driven PTQ methods.
+  [ICCV 2025][Model Compression][Data-Free Quantization] The first data-free post-training quantization (PTQ) framework for Vision Mamba Models (VMMs)…
 tags:
-  - ICCV 2025
-  - Model Compression
-  - Data-Free Quantization
-  - Vision Mamba
-  - SSM
-  - Mixed-Precision
-  - Post-Training Quantization
+  - "ICCV 2025"
+  - "Model Compression"
+  - "Data-Free Quantization"
+  - "Vision Mamba"
+  - "SSM"
+  - "Mixed-Precision"
+  - "Post-Training Quantization"
 date: 2026-05-08
 content_hash: 7c669534eaefc284
 ---

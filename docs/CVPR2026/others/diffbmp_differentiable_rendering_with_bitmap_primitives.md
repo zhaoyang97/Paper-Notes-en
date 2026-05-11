@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DiffBMP: Differentiable Rendering with Bitmap Primitives
 description: >-
-  [CVPR2026][differentiable rendering] This paper proposes DiffBMP — the first general-purpose differentiable rendering engine for **bitmap primitives** — which enables efficient gradient-based optimization of position, rotation, scale, color, and opacity across thousands of bitmap primitives via a custom CUDA parallel pipeline, filling the gap left by 2D differentiable rendering methods that are restricted to vector graphics.
+  [CVPR2026][differentiable rendering] This paper proposes DiffBMP — the first general-purpose differentiable rendering engine for **bitmap primitives** — which enables efficient gradient-based optimization of position…
 tags:
-  - CVPR2026
-  - differentiable rendering
-  - bitmap primitives
-  - CUDA kernel
-  - soft rasterization
-  - alpha compositing
-  - creative workflow
+  - "CVPR2026"
+  - "differentiable rendering"
+  - "bitmap primitives"
+  - "CUDA kernel"
+  - "soft rasterization"
+  - "alpha compositing"
+  - "creative workflow"
 date: 2026-05-08
 content_hash: e659c3d09c651c6a
 ---

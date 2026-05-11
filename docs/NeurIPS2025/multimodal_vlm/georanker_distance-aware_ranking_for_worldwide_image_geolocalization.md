@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GeoRanker: Distance-Aware Ranking for Worldwide Image Geolocalization
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Image geolocalization] This paper proposes GeoRanker, a distance-aware ranking framework that leverages large vision-language models (LVLMs) to model spatial relationships between queries and candidates, achieving state-of-the-art worldwide image geolocalization via a multi-order distance loss.
+  [NeurIPS 2025][Multimodal VLM][Image geolocalization] This paper proposes GeoRanker, a distance-aware ranking framework that leverages large vision-language models (LVLMs) to model spatial relationships between queries a…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Image geolocalization
-  - distance-aware ranking
-  - large vision-language models
-  - learning-to-rank
-  - spatial reasoning
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Image geolocalization"
+  - "distance-aware ranking"
+  - "large vision-language models"
+  - "learning-to-rank"
+  - "spatial reasoning"
 date: 2026-05-08
 content_hash: b3e712a8f0df5e04
 ---

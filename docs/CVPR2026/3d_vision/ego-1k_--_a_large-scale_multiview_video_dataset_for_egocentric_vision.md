@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Ego-1K: A Large-Scale Multiview Video Dataset for Egocentric Vision
 description: >-
-  [CVPR 2026][3D Vision][Egocentric Vision] This paper presents Ego-1K, a large-scale temporally synchronized egocentric multiview video dataset comprising 956 short clips (12+4 cameras, 60Hz), addressing the data gap in egocentric dynamic 3D reconstruction, and demonstrates that stereo depth guidance can substantially improve 4D novel view synthesis quality.
+  [CVPR 2026][3D Vision][Egocentric Vision] This paper presents Ego-1K, a large-scale temporally synchronized egocentric multiview video dataset comprising 956 short clips (12+4 cameras, 60Hz)…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Egocentric Vision
-  - Multiview Dataset
-  - Dynamic Scene Reconstruction
-  - Novel View Synthesis
-  - Hand-Object Interaction
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Egocentric Vision"
+  - "Multiview Dataset"
+  - "Dynamic Scene Reconstruction"
+  - "Novel View Synthesis"
+  - "Hand-Object Interaction"
 date: 2026-05-08
 content_hash: f0979773b182d9e1
 ---

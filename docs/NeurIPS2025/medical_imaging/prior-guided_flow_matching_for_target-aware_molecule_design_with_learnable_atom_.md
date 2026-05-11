@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Prior-Guided Flow Matching for Target-Aware Molecule Design with Learnable Atom Number
 description: >-
-  [NeurIPS 2025][Medical Imaging][Structure-based drug design] This paper proposes PAFlow, a 3D molecule generation model built on the flow matching framework, which guides the vector field via a protein–ligand interaction predictor and determines atom counts through a learnable atom number predictor. PAFlow achieves a new state-of-the-art Avg. Vina Score of −8.31 on CrossDocked2020, substantially outperforming existing methods.
+  [NeurIPS 2025][Medical Imaging][Structure-based drug design] This paper proposes PAFlow, a 3D molecule generation model built on the flow matching framework…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Structure-based drug design
-  - flow matching
-  - protein–ligand interaction guidance
-  - atom number prediction
-  - 3D molecule generation
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Structure-based drug design"
+  - "flow matching"
+  - "protein–ligand interaction guidance"
+  - "atom number prediction"
+  - "3D molecule generation"
 date: 2026-05-08
 content_hash: 5fd69b32a88f2d5a
 ---

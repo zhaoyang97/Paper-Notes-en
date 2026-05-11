@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DiffuMatch: Category-Agnostic Spectral Diffusion Priors for Robust Non-rigid Shape Matching
 description: >-
-  [ICCV 2025][Image Generation][Functional Maps] This paper proposes training an unconditional diffusion model in the spectral domain of Functional Maps, and replacing hand-crafted axiomatic regularizers (e.g., Laplacian commutativity, orthogonality) with distilled structural priors, enabling zero-shot non-rigid shape matching across categories.
+  [ICCV 2025][Image Generation][Functional Maps] This paper proposes training an unconditional diffusion model in the spectral domain of Functional Maps, and replacing hand-crafted axiomatic regularizers (e.g.…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Functional Maps
-  - Spectral Diffusion Priors
-  - Non-rigid Shape Matching
-  - Score Distillation
-  - Zero-shot Generalization
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Functional Maps"
+  - "Spectral Diffusion Priors"
+  - "Non-rigid Shape Matching"
+  - "Score Distillation"
+  - "Zero-shot Generalization"
 date: 2026-05-08
 content_hash: 9c1299fbe4ad17fe
 ---

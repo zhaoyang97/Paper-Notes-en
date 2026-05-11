@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Zero-Shot Embedding Drift Detection: A Lightweight Defense Against Prompt Injections in LLMs
 description: >-
-  [NeurIPS 2025][Robotics][Prompt injection detection] This paper proposes ZEDD (Zero-shot Embedding Drift Detection), which detects prompt injection attacks by measuring semantic drift between benign and suspicious inputs in the embedding space. It leverages GMM/KDE to automatically determine detection thresholds, achieving >93% detection accuracy with <3% false positive rate across multiple LLM architectures.
+  [NeurIPS 2025][Robotics][Prompt injection detection] This paper proposes ZEDD (Zero-shot Embedding Drift Detection), which detects prompt injection attacks by measuring semantic drift between benign and suspicious inputs…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - Prompt injection detection
-  - embedding drift
-  - zero-shot detection
-  - LLM security
-  - lightweight defense
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "Prompt injection detection"
+  - "embedding drift"
+  - "zero-shot detection"
+  - "LLM security"
+  - "lightweight defense"
 date: 2026-05-08
 content_hash: 4ad7bd2db356eb80
 ---

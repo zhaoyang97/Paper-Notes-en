@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Generalized Linear Mode Connectivity for Transformers
 description: >-
-  [NeurIPS 2025][linear mode connectivity] This paper proposes a unified symmetry framework (a four-level hierarchy of permutation, semi-permutation, orthogonal, and invertible transformations) to achieve zero or near-zero barrier linear mode connectivity (LMC) on Vision Transformers and GPT-2 for the first time, and further extends the framework to multi-model merging and heterogeneous-width alignment.
+  [NeurIPS 2025][linear mode connectivity] This paper proposes a unified symmetry framework (a four-level hierarchy of permutation, semi-permutation, orthogonal…
 tags:
-  - NeurIPS 2025
-  - linear mode connectivity
-  - model merging
-  - permutation symmetry
-  - orthogonal symmetry
-  - ViT
-  - GPT-2
+  - "NeurIPS 2025"
+  - "linear mode connectivity"
+  - "model merging"
+  - "permutation symmetry"
+  - "orthogonal symmetry"
+  - "ViT"
+  - "GPT-2"
 date: 2026-05-08
 content_hash: 8f4328b5c1d6ee13
 ---

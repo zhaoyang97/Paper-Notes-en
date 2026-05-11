@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Domain-Skewed Federated Learning with Feature Decoupling and Calibration
 description: >-
-  [CVPR 2026][AI Safety][Federated Learning] This paper proposes F²DC, a framework that employs a Domain Feature Decoupler (DFD) and a Domain Feature Corrector (DFC) to decompose local client features in federated learning into domain-robust features and domain-related features. Rather than discarding the latter, F²DC calibrates them to recover entangled class-discriminative information, and combines this with a domain-aware aggregation strategy. The method consistently outperforms state-of-the-art approaches across three multi-domain datasets.
+  [CVPR 2026][AI Safety][Federated Learning] This paper proposes F²DC, a framework that employs a Domain Feature Decoupler (DFD) and a Domain Feature Corrector (DFC) to decompose local client features in federated learning…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Federated Learning
-  - Domain Skew
-  - Feature Decoupling
-  - Domain-Aware Aggregation
-  - Representation Calibration
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Federated Learning"
+  - "Domain Skew"
+  - "Feature Decoupling"
+  - "Domain-Aware Aggregation"
+  - "Representation Calibration"
 date: 2026-05-08
 content_hash: 6a2be872b7ef40c2
 ---

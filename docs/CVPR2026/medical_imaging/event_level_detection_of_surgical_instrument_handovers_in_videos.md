@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Event-Level Detection of Surgical Instrument Handovers in Videos
 description: >-
-  [CVPR 2026][Medical Imaging][surgical video] This paper proposes a spatiotemporal visual framework for detecting instrument handovers in real surgical videos. It combines ViT-based spatial feature extraction with unidirectional LSTM temporal modeling, and employs multi-task learning to jointly predict handover events and their directions, achieving an event-level detection F1 of 0.84 on kidney transplant surgical videos.
+  [CVPR 2026][Medical Imaging][surgical video] This paper proposes a spatiotemporal visual framework for detecting instrument handovers in real surgical videos. It combines ViT-based spatial feature extraction with unidire…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - surgical video
-  - instrument handover
-  - ViT-LSTM
-  - multi-task
-  - event detection
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "surgical video"
+  - "instrument handover"
+  - "ViT-LSTM"
+  - "multi-task"
+  - "event detection"
 date: 2026-05-08
 content_hash: 32e557f39baf6e62
 ---

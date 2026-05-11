@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] DiST-4D: Disentangled Spatiotemporal Diffusion with Metric Depth for 4D Driving Scene Generation
 description: >-
-  [ICCV 2025][Autonomous Driving][4D scene generation] This paper proposes DiST-4D, the first feed-forward 4D driving scene generation framework. By disentangling temporal prediction (DiST-T) and spatial novel view synthesis (DiST-S) into two separate diffusion processes, with metric depth serving as a geometric bridge, the method achieves state-of-the-art temporal video generation (FVD 22.67) and spatial NVS (FID 10.12) on nuScenes simultaneously, without any per-scene optimization.
+  [ICCV 2025][Autonomous Driving][4D scene generation] This paper proposes DiST-4D, the first feed-forward 4D driving scene generation framework. By disentangling temporal prediction (DiST-T) and spatial novel view synthes…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - 4D scene generation
-  - spatiotemporal disentangled diffusion
-  - metric depth
-  - novel view synthesis
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "4D scene generation"
+  - "spatiotemporal disentangled diffusion"
+  - "metric depth"
+  - "novel view synthesis"
 date: 2026-05-08
 content_hash: 07498eb8698a3e70
 ---

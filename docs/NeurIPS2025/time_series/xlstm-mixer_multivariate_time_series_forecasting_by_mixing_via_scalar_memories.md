@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] xLSTM-Mixer: Multivariate Time Series Forecasting by Mixing via Scalar Memories
 description: >-
-  [NeurIPS2025][Time Series][Time series forecasting] This paper proposes xLSTM-Mixer, the first architecture to combine the Extended Long Short-Term Memory network (sLSTM) with a Mixer framework. Through a three-stage design comprising temporal mixing, joint temporal-variate mixing, and multi-view mixing, the model achieves state-of-the-art performance on multivariate long-term time series forecasting while maintaining an extremely low memory footprint.
+  [NeurIPS2025][Time Series][Time series forecasting] This paper proposes xLSTM-Mixer, the first architecture to combine the Extended Long Short-Term Memory network (sLSTM) with a Mixer framework. Through a three-stage des…
 tags:
-  - NeurIPS2025
-  - Time Series
-  - Time series forecasting
-  - xLSTM
-  - mixer architecture
-  - recurrent neural networks
-  - multivariate forecasting
+  - "NeurIPS2025"
+  - "Time Series"
+  - "Time series forecasting"
+  - "xLSTM"
+  - "mixer architecture"
+  - "recurrent neural networks"
+  - "multivariate forecasting"
 date: 2026-05-08
 content_hash: fb5ad4fc7a54c9f6
 ---

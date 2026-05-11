@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MEIcoder: Decoding Visual Stimuli from Neural Activity by Leveraging Most Exciting Inputs
 description: >-
-  [NeurIPS 2025][LLM Evaluation][Visual decoding] MEIcoder is proposed to leverage neuron-specific Most Exciting Inputs (MEIs) as biological priors, combined with SSIM loss and adversarial training, to achieve state-of-the-art visual stimulus reconstruction from neural population activity in the primary visual cortex (V1), with particular strengths in small-dataset and low-neuron-count regimes.
+  [NeurIPS 2025][LLM Evaluation][Visual decoding] MEIcoder is proposed to leverage neuron-specific Most Exciting Inputs (MEIs) as biological priors, combined with SSIM loss and adversarial training…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - Visual decoding
-  - Most Exciting Input (MEI)
-  - primary visual cortex
-  - neural population activity
-  - adversarial training
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "Visual decoding"
+  - "Most Exciting Input (MEI)"
+  - "primary visual cortex"
+  - "neural population activity"
+  - "adversarial training"
 date: 2026-05-08
 content_hash: 45a2fb7160ebc150
 ---

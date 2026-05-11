@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Autoregressive Adversarial Post-Training for Real-Time Interactive Video Generation
 description: >-
-  [NeurIPS 2025][Video Generation][adversarial training] This paper proposes AAPT (Autoregressive Adversarial Post-Training), which converts a pretrained video diffusion model into an autoregressive real-time video generator via adversarial training. The model requires only one forward pass per frame (1NFE), employs student-forcing training to reduce error accumulation, and achieves real-time streaming generation at 736×416 resolution and 24fps on a single H100 GPU, supporting videos up to one minute in length (1440 frames).
+  [NeurIPS 2025][Video Generation][adversarial training] This paper proposes AAPT (Autoregressive Adversarial Post-Training), which converts a pretrained video diffusion model into an autoregressive real-time video generat…
 tags:
-  - NeurIPS 2025
-  - Video Generation
-  - adversarial training
-  - autoregressive video generation
-  - real-time interaction
-  - one-step generation
-  - KV cache
+  - "NeurIPS 2025"
+  - "Video Generation"
+  - "adversarial training"
+  - "autoregressive video generation"
+  - "real-time interaction"
+  - "one-step generation"
+  - "KV cache"
 date: 2026-05-08
 content_hash: 3cce3fee8553232f
 ---

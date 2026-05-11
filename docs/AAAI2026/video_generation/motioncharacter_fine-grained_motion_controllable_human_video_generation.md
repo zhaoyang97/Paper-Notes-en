@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MotionCharacter: Fine-Grained Motion Controllable Human Video Generation
 description: >-
-  [AAAI 2026][Video Generation][human video generation] This paper proposes the MotionCharacter framework, which decouples motion into two independently controllable dimensions—action type and motion intensity—to achieve fine-grained motion control and identity consistency in high-fidelity human video generation.
+  [AAAI 2026][Video Generation][human video generation] This paper proposes the MotionCharacter framework, which decouples motion into two independently controllable dimensions—action type and motion intensity—to achieve f…
 tags:
-  - AAAI 2026
-  - Video Generation
-  - human video generation
-  - motion control
-  - identity preservation
-  - optical flow
-  - diffusion models
+  - "AAAI 2026"
+  - "Video Generation"
+  - "human video generation"
+  - "motion control"
+  - "identity preservation"
+  - "optical flow"
+  - "diffusion models"
 date: 2026-05-08
 content_hash: b7b935c27e9b05d9
 ---

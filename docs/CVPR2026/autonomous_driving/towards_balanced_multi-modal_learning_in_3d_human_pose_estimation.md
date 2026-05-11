@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Balanced Multi-Modal Learning in 3D Human Pose Estimation
 description: >-
-  [CVPR2026][Autonomous Driving][3D human pose estimation] This paper proposes Adaptive Weight Constraint (AWC) regularization, combining Shapley-value-based modality contribution assessment and Fisher Information Matrix (FIM) weighted parameter penalties, to address modality imbalance in multi-modal (RGB/LiDAR/mmWave/WiFi) 3D human pose estimation. Balanced optimization is achieved without introducing any additional learnable parameters.
+  [CVPR2026][Autonomous Driving][3D human pose estimation] This paper proposes Adaptive Weight Constraint (AWC) regularization, combining Shapley-value-based modality contribution assessment and Fisher Information Matrix (…
 tags:
-  - CVPR2026
-  - Autonomous Driving
-  - 3D human pose estimation
-  - multi-modal learning
-  - modality imbalance
-  - Shapley value
-  - Fisher Information Matrix
+  - "CVPR2026"
+  - "Autonomous Driving"
+  - "3D human pose estimation"
+  - "multi-modal learning"
+  - "modality imbalance"
+  - "Shapley value"
+  - "Fisher Information Matrix"
 date: 2026-05-08
 content_hash: 3f52050c0b0f5ffa
 ---

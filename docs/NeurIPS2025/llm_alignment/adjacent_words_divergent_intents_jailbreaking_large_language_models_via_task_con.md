@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Adjacent Words, Divergent Intents: Jailbreaking Large Language Models via Task Concurrency
 description: >-
-  [NeurIPS 2025][LLM Alignment][Jailbreak Attack] This paper proposes JAIL-CON, a jailbreak attack framework based on task concurrency. By interleaving harmful and benign tasks at the word level, it exploits LLMs' ability to handle concurrent tasks to bypass safety mechanisms, while the resulting concurrent outputs exhibit stronger evasiveness against guardrails.
+  [NeurIPS 2025][LLM Alignment][Jailbreak Attack] This paper proposes JAIL-CON, a jailbreak attack framework based on task concurrency. By interleaving harmful and benign tasks at the word level…
 tags:
-  - NeurIPS 2025
-  - LLM Alignment
-  - Jailbreak Attack
-  - Task Concurrency
-  - LLM Safety
-  - Guardrail Bypass
-  - Adversarial Robustness
+  - "NeurIPS 2025"
+  - "LLM Alignment"
+  - "Jailbreak Attack"
+  - "Task Concurrency"
+  - "LLM Safety"
+  - "Guardrail Bypass"
+  - "Adversarial Robustness"
 date: 2026-05-08
 content_hash: 1d701475653ab7e6
 ---

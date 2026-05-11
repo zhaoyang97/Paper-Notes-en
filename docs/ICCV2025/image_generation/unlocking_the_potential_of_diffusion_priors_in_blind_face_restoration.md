@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unlocking the Potential of Diffusion Priors in Blind Face Restoration
 description: >-
-  [ICCV 2025][Image Generation][Blind face restoration] This paper proposes FLIPNET, a unified framework built upon a T2I diffusion model that switches between a restoration mode (BoostHub selectively fuses LQ features + BFR-oriented facial embeddings) and a degradation mode (learns from real degradation datasets and synthesizes degraded images) by simply flipping the inputs, simultaneously addressing two key challenges: the HQ/LQ distribution gap and the synthetic/real degradation gap.
+  [ICCV 2025][Image Generation][Blind face restoration] This paper proposes FLIPNET, a unified framework built upon a T2I diffusion model that switches between a restoration mode (BoostHub selectively fuses LQ features + B…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Blind face restoration
-  - diffusion priors
-  - dual-mode network
-  - degradation modeling
-  - LoRA
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Blind face restoration"
+  - "diffusion priors"
+  - "dual-mode network"
+  - "degradation modeling"
+  - "LoRA"
 date: 2026-05-08
 content_hash: d0a4809a59d1743d
 ---

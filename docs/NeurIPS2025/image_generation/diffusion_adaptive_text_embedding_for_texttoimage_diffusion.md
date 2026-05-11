@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Diffusion Adaptive Text Embedding for Text-to-Image Diffusion Models
 description: >-
-  [NeurIPS 2025][Image Generation][Text embedding optimization] This paper proposes DATE (Diffusion Adaptive Text Embedding), which dynamically updates text embeddings during diffusion model sampling based on the current denoising intermediate results, improving text-image semantic alignment without any additional training.
+  [NeurIPS 2025][Image Generation][Text embedding optimization] This paper proposes DATE (Diffusion Adaptive Text Embedding), which dynamically updates text embeddings during diffusion model sampling based on the current d…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Text embedding optimization
-  - diffusion model sampling
-  - text-image alignment
-  - test-time optimization
-  - adaptive conditioning
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Text embedding optimization"
+  - "diffusion model sampling"
+  - "text-image alignment"
+  - "test-time optimization"
+  - "adaptive conditioning"
 date: 2026-05-08
 content_hash: 2463155b4f7de2b7
 ---

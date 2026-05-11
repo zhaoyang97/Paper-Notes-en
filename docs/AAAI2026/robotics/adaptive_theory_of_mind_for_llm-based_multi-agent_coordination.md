@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Adaptive Theory of Mind for LLM-based Multi-Agent Coordination
 description: >-
-  [AAAI 2026][Robotics][Theory of Mind] This paper proposes the Adaptive Theory of Mind agent (A-ToM), which formulates ToM order alignment as an online expert advice problem. By employing Follow-the-Leader (FTL) or Hedge algorithms to estimate a partner's ToM order in real time and dynamically adjust its own reasoning depth, A-ToM achieves robust zero-shot multi-agent coordination across four task categories, including repeated matrix games, grid navigation, and Overcooked.
+  [AAAI 2026][Robotics][Theory of Mind] This paper proposes the Adaptive Theory of Mind agent (A-ToM), which formulates ToM order alignment as an online expert advice problem. By employing Follow-the-Leader (FTL) or Hedge…
 tags:
-  - AAAI 2026
-  - Robotics
-  - Theory of Mind
-  - LLM Multi-Agent
-  - Zero-Shot Coordination
-  - Online Learning
-  - Expert Advice
+  - "AAAI 2026"
+  - "Robotics"
+  - "Theory of Mind"
+  - "LLM Multi-Agent"
+  - "Zero-Shot Coordination"
+  - "Online Learning"
+  - "Expert Advice"
 date: 2026-05-08
 content_hash: 2f0c8f3815cc5227
 ---

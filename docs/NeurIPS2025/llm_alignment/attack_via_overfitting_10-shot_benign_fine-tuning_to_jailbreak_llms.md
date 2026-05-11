@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Attack via Overfitting: 10-shot Benign Fine-tuning to Jailbreak LLMs
 description: >-
-  [NeurIPS 2025][LLM Alignment][jailbreak attack] This paper proposes a two-stage fine-tuning attack: Stage 1 fine-tunes an LLM on 10 benign questions paired with identical refusal answers, driving the model to overfit into a sharp loss landscape; Stage 2 fine-tunes the same 10 questions with normal answers, triggering catastrophic forgetting of safety alignment. Using entirely benign data, the method achieves a 94.84% attack success rate (ASR), comparable to malicious fine-tuning (97.25%), while completely evading content moderation.
+  [NeurIPS 2025][LLM Alignment][jailbreak attack] This paper proposes a two-stage fine-tuning attack: Stage 1 fine-tunes an LLM on 10 benign questions paired with identical refusal answers…
 tags:
-  - NeurIPS 2025
-  - LLM Alignment
-  - jailbreak attack
-  - fine-tuning safety
-  - overfitting
-  - alignment fragility
-  - FaaS security
-  - catastrophic forgetting
+  - "NeurIPS 2025"
+  - "LLM Alignment"
+  - "jailbreak attack"
+  - "fine-tuning safety"
+  - "overfitting"
+  - "alignment fragility"
+  - "FaaS security"
+  - "catastrophic forgetting"
 date: 2026-05-08
 content_hash: f2a50e4160f7d050
 ---

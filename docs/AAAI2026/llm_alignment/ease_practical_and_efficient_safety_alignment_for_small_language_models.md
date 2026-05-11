@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EASE: Practical and Efficient Safety Alignment for Small Language Models
 description: >-
-  [AAAI 2026][LLM Alignment][small language models] This paper proposes EASE, a safety alignment framework for edge-deployed small language models (SLMs), which addresses the tension between "shallow refusal being insufficiently robust" and "deep reasoning being prohibitively expensive" via a two-stage design. Stage one distills safety reasoning capabilities from a large reasoning model into the SLM; stage two applies selective reasoning activation, enabling reasoning only for adversarial queries in vulnerable semantic regions while responding directly to benign queries. EASE reduces jailbreak attack success rate by 17% compared to shallow alignment, while cutting reasoning overhead by 90% compared to full-reasoning alignment.
+  [AAAI 2026][LLM Alignment][small language models] This paper proposes EASE, a safety alignment framework for edge-deployed small language models (SLMs)…
 tags:
-  - AAAI 2026
-  - LLM Alignment
-  - small language models
-  - safety alignment
-  - selective reasoning
-  - knowledge distillation
-  - jailbreak defense
+  - "AAAI 2026"
+  - "LLM Alignment"
+  - "small language models"
+  - "safety alignment"
+  - "selective reasoning"
+  - "knowledge distillation"
+  - "jailbreak defense"
 date: 2026-05-08
 content_hash: 9256c232a70598ef
 ---

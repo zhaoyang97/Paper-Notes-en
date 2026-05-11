@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] TDATR: Improving End-to-End Table Recognition via Table Detail-Aware Learning and Cell-Level Visual Alignment
 description: >-
-  [CVPR2026][Table Recognition] This paper proposes the TDATR framework, which achieves end-to-end table recognition under limited annotation data through a "perceive-then-fuse" strategy and a structure-guided cell localization module, attaining state-of-the-art performance across 7 benchmarks without dataset-specific fine-tuning.
+  [CVPR2026][Interpretability][Table Recognition] This paper proposes the TDATR framework, which achieves end-to-end table recognition under limited annotation data through a "perceive-then-fuse" strategy and a structure-g…
 tags:
-  - CVPR2026
-  - Table Recognition
-  - End-to-End
-  - Detail-Aware Learning
-  - Cell Localization
-  - Visual-Language Alignment
+  - "CVPR2026"
+  - "Interpretability"
+  - "Table Recognition"
+  - "End-to-End"
+  - "Detail-Aware Learning"
+  - "Cell Localization"
+  - "Visual-Language Alignment"
 date: 2026-05-08
 content_hash: 9ace63e9db3f8b2a
 ---

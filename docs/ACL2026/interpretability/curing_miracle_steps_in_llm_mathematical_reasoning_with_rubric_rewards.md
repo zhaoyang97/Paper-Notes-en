@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Curing "Miracle Steps" in LLM Mathematical Reasoning with Rubric Rewards
 description: >-
-  [ACL 2026][Mathematical Reasoning] This paper identifies a pervasive phenomenon in LLM mathematical reasoning termed "Miracle Steps"—instances where a reasoning chain leaps to the correct answer without valid derivation—and proposes the Rubric Reward Model (RRM), a problem-specific process reward function that reduces Miracle Steps by 71% during RL training and improves Verified Pass@1024 on AIME2024 from 26.7% to 62.6%.
+  [ACL 2026][Interpretability][Mathematical Reasoning] This paper identifies a pervasive phenomenon in LLM mathematical reasoning termed "Miracle Steps"—instances where a reasoning chain leaps to the correct answer without…
 tags:
-  - ACL 2026
-  - Mathematical Reasoning
-  - Miracle Steps
-  - Reward Hacking
-  - Process Reward
-  - Rubric Reward
+  - "ACL 2026"
+  - "Interpretability"
+  - "Mathematical Reasoning"
+  - "Miracle Steps"
+  - "Reward Hacking"
+  - "Process Reward"
+  - "Rubric Reward"
 date: 2026-05-08
 content_hash: 9ca5b7bb5425be19
 ---

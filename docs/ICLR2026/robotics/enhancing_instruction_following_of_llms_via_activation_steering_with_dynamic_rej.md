@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Enhancing Instruction Following of LLMs via Activation Steering with Dynamic Rejection
 description: >-
-  [ICLR 2026][Robotics][Activation Steering] This paper proposes Directer (Dynamic Rejection Steering), which dynamically adjusts KV cache steering intensity at each decoding step and incorporates a plausibility constraint, substantially improving LLM instruction following while preventing text quality degradation caused by oversteering.
+  [ICLR 2026][Robotics][Activation Steering] This paper proposes Directer (Dynamic Rejection Steering), which dynamically adjusts KV cache steering intensity at each decoding step and incorporates a plausibility constraint…
 tags:
-  - ICLR 2026
-  - Robotics
-  - Activation Steering
-  - Instruction Following
-  - KV Cache Scaling
-  - Dynamic Rejection
-  - Oversteering Mitigation
+  - "ICLR 2026"
+  - "Robotics"
+  - "Activation Steering"
+  - "Instruction Following"
+  - "KV Cache Scaling"
+  - "Dynamic Rejection"
+  - "Oversteering Mitigation"
 date: 2026-05-08
 content_hash: 7b6629294f6bfd85
 ---

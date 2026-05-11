@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UniOcc: A Unified Benchmark for Occupancy Forecasting and Prediction in Autonomous Driving
 description: >-
-  [ICCV 2025][Autonomous Driving][Occupancy Grid Prediction] This paper proposes UniOcc, the first unified benchmark for 2D/3D occupancy prediction and forecasting, integrating four data sources — nuScenes, Waymo, CARLA, and OpenCOOD — while introducing per-voxel flow annotations and ground-truth-free evaluation metrics. Large-scale experiments reveal the significant value of voxel-level flow information and cross-domain training for occupancy tasks.
+  [ICCV 2025][Autonomous Driving][Occupancy Grid Prediction] This paper proposes UniOcc, the first unified benchmark for 2D/3D occupancy prediction and forecasting, integrating four data sources — nuScenes, Waymo, CARLA…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - Occupancy Grid Prediction
-  - Occupancy Prediction Benchmark
-  - Voxel Flow
-  - Cross-Dataset Training
-  - Cooperative Driving
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "Occupancy Grid Prediction"
+  - "Occupancy Prediction Benchmark"
+  - "Voxel Flow"
+  - "Cross-Dataset Training"
+  - "Cooperative Driving"
 date: 2026-05-08
 content_hash: 5d08ca376575a498
 ---

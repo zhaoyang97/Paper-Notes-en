@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Evaluating LLMs in Open-Source Games
 description: >-
-  [NeurIPS 2025][Game Theory] This work introduces a novel paradigm of open-source games—where agents submit programs rather than raw actions—to systematically evaluate LLMs on strategic reasoning, mutual learning, and cooperative gameplay, finding that LLMs can automatically discover approximate program equilibria.
+  [NeurIPS 2025][Interpretability][Game Theory] This work introduces a novel paradigm of open-source games—where agents submit programs rather than raw actions—to systematically evaluate LLMs on strategic reasoning…
 tags:
-  - NeurIPS 2025
-  - Game Theory
-  - Program Equilibrium
-  - Open-Source Games
-  - Multi-Agent Cooperation
-  - Code Transparency
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "Game Theory"
+  - "Program Equilibrium"
+  - "Open-Source Games"
+  - "Multi-Agent Cooperation"
+  - "Code Transparency"
 date: 2026-05-08
 content_hash: 37a8f4d4948462cc
 ---

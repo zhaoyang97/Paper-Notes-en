@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Reimagining Anomalies: What if Anomalies Were Normal?
 description: >-
-  [AAAI2026][anomaly detection] This paper proposes the first counterfactual explanation framework for unsupervised image anomaly detection. By training a generator to modify anomalous samples into multiple disentangled counterfactuals perceived as normal by the detector, the framework answers at the semantic level: "What would an anomaly look like if it were normal?" This provides a depth of interpretability far exceeding traditional heatmap-based approaches.
+  [AAAI2026][anomaly detection] This paper proposes the first counterfactual explanation framework for unsupervised image anomaly detection. By training a generator to modify anomalous samples into multiple disentangled co…
 tags:
-  - AAAI2026
-  - anomaly detection
-  - counterfactual explanation
-  - explainable AI
-  - GAN
-  - diffusion model
+  - "AAAI2026"
+  - "anomaly detection"
+  - "counterfactual explanation"
+  - "explainable AI"
+  - "GAN"
+  - "diffusion model"
 date: 2026-05-08
 content_hash: 0b96e7ac8fdb5029
 ---

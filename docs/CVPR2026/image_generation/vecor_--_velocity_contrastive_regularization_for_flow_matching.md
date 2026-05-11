@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] VeCoR — Velocity Contrastive Regularization for Flow Matching
 description: >-
-  [CVPR 2026][Image Generation][Flow Matching] This paper proposes VeCoR (Velocity Contrastive Regularization), which introduces a "negative velocity" contrastive signal into standard Flow Matching training. By simultaneously guiding the model on "where to go" and "where not to go," VeCoR achieves more stable trajectory evolution and higher perceptual fidelity—yielding relative FID reductions of 22% and 35% for SiT-XL/2 and REPA-SiT-XL/2, respectively, on ImageNet-1K.
+  [CVPR 2026][Image Generation][Flow Matching] This paper proposes VeCoR (Velocity Contrastive Regularization), which introduces a "negative velocity" contrastive signal into standard Flow Matching training. By simultaneou…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Flow Matching
-  - Contrastive Learning
-  - Velocity Field Regularization
-  - Negative Sample Guidance
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Flow Matching"
+  - "Contrastive Learning"
+  - "Velocity Field Regularization"
+  - "Negative Sample Guidance"
 date: 2026-05-08
 content_hash: ea05b1737c72b5e4
 ---

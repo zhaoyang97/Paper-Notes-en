@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Tensor Product Attention Is All You Need
 description: >-
-  [NeurIPS 2025][LLM Efficiency][tensor decomposition] By decomposing Q/K/V into weighted sums of low-rank factors via contextual tensor products, TPA compresses the KV cache by 10–16×, while surpassing standard MHA/MQA/GQA/MLA on both validation loss and downstream task accuracy.
+  [NeurIPS 2025][LLM Efficiency][tensor decomposition] By decomposing Q/K/V into weighted sums of low-rank factors via contextual tensor products, TPA compresses the KV cache by 10–16×…
 tags:
-  - NeurIPS 2025
-  - LLM Efficiency
-  - tensor decomposition
-  - KV cache
-  - attention mechanism
-  - low-rank
-  - RoPE compatibility
+  - "NeurIPS 2025"
+  - "LLM Efficiency"
+  - "tensor decomposition"
+  - "KV cache"
+  - "attention mechanism"
+  - "low-rank"
+  - "RoPE compatibility"
 date: 2026-05-08
 content_hash: 42e01bc4c6f87c53
 ---

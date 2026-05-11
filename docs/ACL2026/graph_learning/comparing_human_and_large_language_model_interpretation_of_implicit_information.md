@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Comparing Human and Large Language Model Interpretation of Implicit Information
 description: >-
-  [ACL 2026][Graph Learning][Implicit Information Extraction] This paper proposes the Implicit Information Extraction (IIE) task and a three-stage LLM pipeline (information extraction → reasoning verification → temporal analysis), building structured knowledge graphs to represent implicit textual meaning. Crowdsourced human comparisons reveal LLMs are more conservative in socially-rich contexts but humans are more conservative in short factual contexts.
+  [ACL 2026][Graph Learning][Implicit Information Extraction] This paper proposes the Implicit Information Extraction (IIE) task and a three-stage LLM pipeline (information extraction → reasoning verification → temporal an…
 tags:
-  - ACL 2026
-  - Graph Learning
-  - Implicit Information Extraction
-  - Knowledge Graph
-  - Human-AI Comparison
-  - Reasoning Verification
-  - Temporal Analysis
+  - "ACL 2026"
+  - "Graph Learning"
+  - "Implicit Information Extraction"
+  - "Knowledge Graph"
+  - "Human-AI Comparison"
+  - "Reasoning Verification"
+  - "Temporal Analysis"
 content_hash: b75b7c4dd9414ab7
 ---
 

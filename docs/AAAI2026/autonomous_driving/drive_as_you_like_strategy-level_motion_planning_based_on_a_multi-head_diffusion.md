@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Drive As You Like: Strategy-Level Motion Planning Based on A Multi-Head Diffusion Model
 description: >-
-  [AAAI2026][Autonomous Driving] This paper proposes M-Diffusion Planner, a strategy-level motion planning framework built upon a multi-head diffusion model and GRPO post-training, enabling users to switch among driving styles such as aggressive, conservative, and comfortable via natural language, while maintaining state-of-the-art planning performance.
+  [AAAI2026][Autonomous Driving][diffusion model] This paper proposes M-Diffusion Planner, a strategy-level motion planning framework built upon a multi-head diffusion model and GRPO post-training…
 tags:
-  - AAAI2026
-  - Autonomous Driving
-  - diffusion model
-  - GRPO
-  - Motion Planning
-  - Driving Preferences
+  - "AAAI2026"
+  - "Autonomous Driving"
+  - "diffusion model"
+  - "GRPO"
+  - "Motion Planning"
+  - "Driving Preferences"
 date: 2026-05-08
 content_hash: c8e00849c4c9cc58
 ---

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Continual Learning with Vision-Language Models via Semantic-Geometry Preservation
 description: >-
-  [CVPR2026][Multimodal VLM][Continual Learning] This paper proposes SeGP-CL, which constructs adversarial anchors via dual-objective projected gradient descent to probe fragile regions at old–new semantic boundaries. Combined with Anchor-guided Cross-modal Geometry Distillation (ACGD) and Text Semantic Geometry Regularization (TSGR), SeGP-CL effectively preserves the cross-modal semantic-geometric structure of VLMs under exemplar-free conditions, substantially alleviating catastrophic forgetting.
+  [CVPR2026][Multimodal VLM][Continual Learning] This paper proposes SeGP-CL, which constructs adversarial anchors via dual-objective projected gradient descent to probe fragile regions at old–new semantic boundaries. Comb…
 tags:
-  - CVPR2026
-  - Multimodal VLM
-  - Continual Learning
-  - Vision-Language Models
-  - Semantic-Geometry Preservation
-  - Adversarial Anchors
-  - Cross-Modal Distillation
-  - CLIP
-  - Exemplar-Free Replay
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "Continual Learning"
+  - "Vision-Language Models"
+  - "Semantic-Geometry Preservation"
+  - "Adversarial Anchors"
+  - "Cross-Modal Distillation"
+  - "CLIP"
+  - "Exemplar-Free Replay"
 date: 2026-05-08
 content_hash: 6078e416bf7f6e03
 ---

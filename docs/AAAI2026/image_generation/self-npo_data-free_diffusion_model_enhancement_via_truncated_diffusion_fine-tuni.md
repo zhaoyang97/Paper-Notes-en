@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Self-NPO: Data-Free Diffusion Model Enhancement via Truncated Diffusion Fine-Tuning
 description: >-
-  [AAAI 2026][Image Generation][Diffusion Models] This paper proposes Self-NPO, a negative preference optimization method that requires neither external data annotation nor reward models. By leveraging Truncated Diffusion Fine-Tuning (TDFT), the model learns "what is bad" from its own low-quality generated data, and uses CFG to steer generation away from undesirable outputs. Self-NPO achieves comparable performance to Diffusion-NPO at less than 1% of the training cost.
+  [AAAI 2026][Image Generation][Diffusion Models] This paper proposes Self-NPO, a negative preference optimization method that requires neither external data annotation nor reward models. By leveraging Truncated Diffusion…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Diffusion Models
-  - Preference Optimization
-  - Negative Preference Optimization
-  - Self-Learning
-  - Training Efficiency
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "Preference Optimization"
+  - "Negative Preference Optimization"
+  - "Self-Learning"
+  - "Training Efficiency"
 date: 2026-05-08
 content_hash: cf55dbed4341376c
 ---

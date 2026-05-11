@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Vinedresser3D: Agentic Text-guided 3D Editing
 description: >-
-  [CVPR 2026][Image Generation][3D editing] This paper presents Vinedresser3D, a 3D editing agent centered on a multimodal large language model (MLLM) that requires no user-provided 3D masks. The system automatically interprets editing intent, localizes editing regions, generates multimodal guidance, and performs inversion-based inpainting in the latent space of a native 3D generative model (Trellis), enabling high-quality text-guided 3D asset editing.
+  [CVPR 2026][Image Generation][3D editing] This paper presents Vinedresser3D, a 3D editing agent centered on a multimodal large language model (MLLM) that requires no user-provided 3D masks. The system automatically inter…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - 3D editing
-  - text-guided
-  - agent
-  - Trellis
-  - flow model inversion
+  - "CVPR 2026"
+  - "Image Generation"
+  - "3D editing"
+  - "text-guided"
+  - "agent"
+  - "Trellis"
+  - "flow model inversion"
 date: 2026-05-08
 content_hash: 05fc707d570fa139
 ---

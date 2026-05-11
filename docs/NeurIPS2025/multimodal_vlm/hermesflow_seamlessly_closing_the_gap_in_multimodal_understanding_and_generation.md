@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HermesFlow: Seamlessly Closing the Gap in Multimodal Understanding and Generation
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Pair-DPO] This work is the first to identify the systematic phenomenon that understanding capability consistently surpasses generation capability in unified multimodal large language models. It proposes the HermesFlow framework, which constructs paired understanding-generation preference data from homologous inputs, and employs Pair-DPO with iterative self-play optimization to simultaneously improve both capabilities and narrow the gap between them—without relying on any external high-quality data.
+  [NeurIPS 2025][Multimodal VLM][Pair-DPO] This work is the first to identify the systematic phenomenon that understanding capability consistently surpasses generation capability in unified multimodal large language models…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Pair-DPO
-  - multimodal alignment
-  - understanding-generation gap
-  - self-play optimization
-  - homologous preference data
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Pair-DPO"
+  - "multimodal alignment"
+  - "understanding-generation gap"
+  - "self-play optimization"
+  - "homologous preference data"
 date: 2026-05-08
 content_hash: 0af63aa0157b42a9
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EPO: Diverse and Realistic Protein Ensemble Generation via Energy Preference Optimization
 description: >-
-  [AAAI 2026][LLM Alignment][Protein conformational ensemble] This paper proposes EPO (Energy Preference Optimization), which combines reverse SDE sampling with listwise energy-ranked preference optimization to align a pretrained protein generator with the target Boltzmann distribution using only energy signals. EPO achieves state-of-the-art performance across 9 metrics on three benchmarks (Tetrapeptides, ATLAS, and Fast-Folding), entirely eliminating the need for expensive molecular dynamics (MD) simulations.
+  [AAAI 2026][LLM Alignment][Protein conformational ensemble] This paper proposes EPO (Energy Preference Optimization), which combines reverse SDE sampling with listwise energy-ranked preference optimization to align a pre…
 tags:
-  - AAAI 2026
-  - LLM Alignment
-  - Protein conformational ensemble
-  - energy preference optimization
-  - SDE sampling
-  - Boltzmann distribution
-  - MD-free generation
+  - "AAAI 2026"
+  - "LLM Alignment"
+  - "Protein conformational ensemble"
+  - "energy preference optimization"
+  - "SDE sampling"
+  - "Boltzmann distribution"
+  - "MD-free generation"
 date: 2026-05-08
 content_hash: f526b4269ed3ab27
 ---

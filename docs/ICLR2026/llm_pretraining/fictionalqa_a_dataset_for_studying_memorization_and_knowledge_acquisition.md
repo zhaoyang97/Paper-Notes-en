@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FictionalQA: A Dataset for Studying Memorization and Knowledge Acquisition
 description: >-
-  [ICLR 2026][LLM Pretraining][Memorization] This work introduces the FictionalQA dataset and generation pipeline, which synthesizes webtext-style documents and QA pairs about fictional events to study both factual memorization and verbatim memorization in LLM training under controlled conditions. Key findings show that greater surface-form diversity facilitates knowledge acquisition, while concise structured lists are least conducive to generalization.
+  [ICLR 2026][LLM Pretraining][Memorization] This work introduces the FictionalQA dataset and generation pipeline, which synthesizes webtext-style documents and QA pairs about fictional events to study both factual memoriz…
 tags:
-  - ICLR 2026
-  - LLM Pretraining
-  - Memorization
-  - Knowledge Acquisition
-  - synthetic data
-  - LLM Training Dynamics
-  - Factual Memorization
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Memorization"
+  - "Knowledge Acquisition"
+  - "synthetic data"
+  - "LLM Training Dynamics"
+  - "Factual Memorization"
 date: 2026-05-08
 content_hash: d32f609acc53efdc
 ---

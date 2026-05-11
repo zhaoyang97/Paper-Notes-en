@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Tokenization Allows Multimodal Large Language Models to Understand, Generate and Edit Architectural Floor Plans (HouseMind)
 description: >-
-  [CVPR 2026][Multimodal VLM][Multimodal large language models] This paper presents HouseMind, which discretizes architectural floor plans into room-level spatial tokens via a hierarchical VQ-VAE, enabling floor plan understanding, generation, and editing within a unified MLLM framework. The approach comprehensively outperforms diffusion model and general-purpose VLM baselines in geometric validity and controllability.
+  [CVPR 2026][Multimodal VLM][Multimodal large language models] This paper presents HouseMind, which discretizes architectural floor plans into room-level spatial tokens via a hierarchical VQ-VAE…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Multimodal large language models
-  - VQ-VAE
-  - spatial tokenization
-  - floor plan generation
-  - floor plan editing
-  - instruction tuning
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Multimodal large language models"
+  - "VQ-VAE"
+  - "spatial tokenization"
+  - "floor plan generation"
+  - "floor plan editing"
+  - "instruction tuning"
 date: 2026-05-08
 content_hash: 01fa30a58f8124c2
 ---

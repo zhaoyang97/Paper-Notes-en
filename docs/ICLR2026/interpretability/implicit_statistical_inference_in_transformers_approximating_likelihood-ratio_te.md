@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Implicit Statistical Inference in Transformers: Approximating Likelihood-Ratio Tests In-Context
 description: >-
-  [ICLR 2026][in-context learning] From a statistical decision theory perspective, this paper proves that Transformers can approximate the sufficient statistic of the Bayes-optimal **likelihood-ratio test** during in-context learning, and through mechanistic analysis reveals that models employ adaptive circuits of different depths for linear versus nonlinear tasks.
+  [ICLR 2026][Interpretability][in-context learning] From a statistical decision theory perspective, this paper proves that Transformers can approximate the sufficient statistic of the Bayes-optimal **likelihood-ratio test…
 tags:
-  - ICLR 2026
-  - in-context learning
-  - likelihood-ratio test
-  - mechanistic interpretability
-  - sufficient statistic
-  - Neyman-Pearson
+  - "ICLR 2026"
+  - "Interpretability"
+  - "in-context learning"
+  - "likelihood-ratio test"
+  - "mechanistic interpretability"
+  - "sufficient statistic"
+  - "Neyman-Pearson"
 date: 2026-05-08
 content_hash: b782eca29a67155c
 ---

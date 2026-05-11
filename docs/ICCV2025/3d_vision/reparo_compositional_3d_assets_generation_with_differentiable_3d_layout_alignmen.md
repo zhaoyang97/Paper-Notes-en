@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] REPARO: Compositional 3D Assets Generation with Differentiable 3D Layout Alignment
 description: >-
-  [ICCV 2025][3D Vision][Compositional 3D Generation] This paper proposes REPARO, which generates compositional 3D assets from a single image by first reconstructing individual object meshes separately and then performing layout alignment via optimal transport-based differentiable rendering.
+  [ICCV 2025][3D Vision][Compositional 3D Generation] This paper proposes REPARO, which generates compositional 3D assets from a single image by first reconstructing individual object meshes separately and then performing…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Compositional 3D Generation
-  - Differentiable Rendering
-  - Optimal Transport
-  - Layout Alignment
-  - Multi-Object Scene
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Compositional 3D Generation"
+  - "Differentiable Rendering"
+  - "Optimal Transport"
+  - "Layout Alignment"
+  - "Multi-Object Scene"
 date: 2026-05-08
 content_hash: 3780d14f4cb71ecc
 ---

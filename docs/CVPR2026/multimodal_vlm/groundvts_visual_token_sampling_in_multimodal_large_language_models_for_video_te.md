@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GroundVTS: Visual Token Sampling in Multimodal Large Language Models for Video Temporal Grounding
 description: >-
-  [CVPR 2026][Multimodal VLM][Video Temporal Grounding] This paper proposes GroundVTS, a query-guided fine-grained visual token sampling architecture for video large language models, which adaptively preserves spatiotemporally relevant information at the token level. It achieves an 18.4-point mIoU improvement on Charades-STA and a 20.6-point mAP improvement on QVHighlights.
+  [CVPR 2026][Multimodal VLM][Video Temporal Grounding] This paper proposes GroundVTS, a query-guided fine-grained visual token sampling architecture for video large language models…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Video Temporal Grounding
-  - Visual Token Sampling
-  - Query-Guided
-  - Video Large Language Models
-  - Temporal Reasoning
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Video Temporal Grounding"
+  - "Visual Token Sampling"
+  - "Query-Guided"
+  - "Video Large Language Models"
+  - "Temporal Reasoning"
 date: 2026-05-08
 content_hash: 1b063c429b03fcc2
 ---

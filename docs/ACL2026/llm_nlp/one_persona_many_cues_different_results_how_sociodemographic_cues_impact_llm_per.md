@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] One Persona, Many Cues, Different Results: How Sociodemographic Cues Impact LLM Personalization
 description: >-
-  [ACL 2026][LLM/NLP][persona prompting] This paper systematically compares 6 commonly used persona prompting strategies (two variants each of name-based, explicit-mention, and conversation-history cues) across 7 LLMs and 4 tasks. While average responses are highly correlated across prompting strategies, the magnitude of inter-persona differences varies substantially depending on the strategy used. Overly explicit prompts induce stronger personalization bias, cautioning against drawing bias conclusions from any single prompting approach.
+  [ACL 2026][LLM/NLP][persona prompting] This paper systematically compares 6 commonly used persona prompting strategies (two variants each of name-based, explicit-mention…
 tags:
-  - ACL 2026
-  - LLM/NLP
-  - persona prompting
-  - sociodemographic cues
-  - LLM personalization bias
-  - external validity
-  - prompt robustness
+  - "ACL 2026"
+  - "LLM/NLP"
+  - "persona prompting"
+  - "sociodemographic cues"
+  - "LLM personalization bias"
+  - "external validity"
+  - "prompt robustness"
 date: 2026-05-08
 content_hash: 24d4f1d6874843e9
 ---

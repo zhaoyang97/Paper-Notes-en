@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] ToC: Tree-of-Claims Search with Multi-Agent Language Models
 description: >-
-  [AAAI 2026][Patent claim optimization] This paper proposes the Tree-of-Claims (ToC) framework, which models patent claim editing as a structured search problem. Through MCTS combined with EditorAgent/ExaminerAgent multi-agent collaboration, ToC jointly optimizes novelty, scope preservation, and semantic consistency, achieving an average improvement of approximately 8% in overall score over zero/few-shot LLM baselines.
+  [AAAI 2026][Interpretability][Patent claim optimization] This paper proposes the Tree-of-Claims (ToC) framework, which models patent claim editing as a structured search problem. Through MCTS combined with EditorAgent/Ex…
 tags:
-  - AAAI 2026
-  - Patent claim optimization
-  - Monte Carlo Tree Search
-  - multi-agent collaboration
-  - uncertainty-awareness
-  - structured editing
+  - "AAAI 2026"
+  - "Interpretability"
+  - "Patent claim optimization"
+  - "Monte Carlo Tree Search"
+  - "multi-agent collaboration"
+  - "uncertainty-awareness"
+  - "structured editing"
 date: 2026-05-08
 content_hash: 89c1845bfd72f52a
 ---

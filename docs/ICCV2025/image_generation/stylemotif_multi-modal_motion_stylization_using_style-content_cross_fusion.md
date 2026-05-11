@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] StyleMotif: Multi-Modal Motion Stylization using Style-Content Cross Fusion
 description: >-
-  [ICCV 2025][Image Generation][motion stylization] This paper proposes StyleMotif, a single-branch motion latent diffusion framework that unifies content generation and multi-modal style injection (text/image/video/audio/motion) via a style-content cross normalization mechanism. Compared to SMooDi's dual-branch design, StyleMotif reduces trainable parameters by 43.9% and improves inference speed by 22.5%, while achieving a 5.23% gain in Style Recognition Accuracy (SRA).
+  [ICCV 2025][Image Generation][motion stylization] This paper proposes StyleMotif, a single-branch motion latent diffusion framework that unifies content generation and multi-modal style injection (text/image/video/audio/…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - motion stylization
-  - multi-modal
-  - diffusion model
-  - style-content fusion
-  - motion generation
+  - "ICCV 2025"
+  - "Image Generation"
+  - "motion stylization"
+  - "multi-modal"
+  - "diffusion model"
+  - "style-content fusion"
+  - "motion generation"
 date: 2026-05-08
 content_hash: 691a881493a0d7fe
 ---

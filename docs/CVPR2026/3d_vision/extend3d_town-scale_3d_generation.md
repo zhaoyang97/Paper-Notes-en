@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Extend3D: Town-Scale 3D Generation
 description: >-
-  [CVPR 2026][3D Vision][3D scene generation] This paper proposes Extend3D, a training-free 3D scene generation pipeline that extends the voxel latent space of a pretrained object-level 3D generative model (Trellis) and introduces overlapping patch joint denoising, under-noising SDEdit initialization, and 3D-aware optimization to generate town-scale large-scale 3D scenes from a single image, surpassing existing methods in both human preference evaluations and quantitative metrics.
+  [CVPR 2026][3D Vision][3D scene generation] This paper proposes Extend3D, a training-free 3D scene generation pipeline that extends the voxel latent space of a pretrained object-level 3D generative model (Trellis) and in…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D scene generation
-  - large-scale scenes
-  - training-free
-  - extended latent space
-  - voxel generation
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D scene generation"
+  - "large-scale scenes"
+  - "training-free"
+  - "extended latent space"
+  - "voxel generation"
 date: 2026-05-08
 content_hash: f49960d9e1c26d57
 ---

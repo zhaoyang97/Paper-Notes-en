@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Concepts' Information Bottleneck Models
 description: >-
-  [ICLR 2026][Concept Bottleneck Models] This paper introduces Information Bottleneck (IB) regularization into the concept layer of Concept Bottleneck Models (CBMs), learning minimal sufficient concept representations by penalizing $I(X;C)$ while preserving $I(C;Y)$. The approach consistently improves both predictive performance and concept intervention reliability across six CBM variants and three benchmarks.
+  [ICLR 2026][Interpretability][Concept Bottleneck Models] This paper introduces Information Bottleneck (IB) regularization into the concept layer of Concept Bottleneck Models (CBMs)…
 tags:
-  - ICLR 2026
-  - Concept Bottleneck Models
-  - Information Bottleneck
-  - Interpretability
-  - Regularization
-  - Concept Leakage
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Concept Bottleneck Models"
+  - "Information Bottleneck"
+  - "Regularization"
+  - "Concept Leakage"
 date: 2026-05-08
 content_hash: 28cea4c942ce1701
 ---

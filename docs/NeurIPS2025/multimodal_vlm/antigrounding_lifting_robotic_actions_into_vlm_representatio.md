@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] AntiGrounding: Lifting Robotic Actions into VLM Representation Space for Decision Making
 description: >-
-  [NeurIPS 2025][Multimodal VLM][VLM] This paper inverts the conventional instruction grounding paradigm — rather than compressing VLM knowledge into intermediate representations (symbolic skills or constraints), it renders candidate robot trajectories into multi-view scene images and evaluates action proposals directly within the VLM's native high-dimensional representation space, enabling zero-shot closed-loop robotic manipulation control.
+  [NeurIPS 2025][Multimodal VLM][VLM] This paper inverts the conventional instruction grounding paradigm — rather than compressing VLM knowledge into intermediate representations (symbolic skills or constraints)…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - VLM
-  - Anti-Grounding
-  - Robotic Manipulation
-  - MPC
-  - Structured VQA
-  - Real2Sim2Real
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "VLM"
+  - "Anti-Grounding"
+  - "Robotic Manipulation"
+  - "MPC"
+  - "Structured VQA"
+  - "Real2Sim2Real"
 date: 2026-05-08
 content_hash: f7e2cb44b8a58fc1
 ---

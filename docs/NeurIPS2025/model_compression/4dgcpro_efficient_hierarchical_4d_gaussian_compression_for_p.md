@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] 4DGCPro: Efficient Hierarchical 4D Gaussian Compression for Progressive Volumetric Video Streaming
 description: >-
-  [NeurIPS 2025][Model Compression][4D Gaussian Splatting] This paper proposes 4DGCPro, a hierarchical 4D Gaussian compression framework that achieves multi-bitrate progressive volumetric video streaming within a single model, via perception-weighted hierarchical Gaussian representation, motion-aware adaptive grouping, and end-to-end entropy-optimized training. The framework supports real-time decoding and rendering on mobile devices and surpasses existing SOTA in rate-distortion performance.
+  [NeurIPS 2025][Model Compression][4D Gaussian Splatting] This paper proposes 4DGCPro, a hierarchical 4D Gaussian compression framework that achieves multi-bitrate progressive volumetric video streaming within a single mo…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - 4D Gaussian Splatting
-  - Progressive Streaming
-  - Volumetric Video Compression
-  - Hierarchical Representation
-  - Entropy Coding
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "4D Gaussian Splatting"
+  - "Progressive Streaming"
+  - "Volumetric Video Compression"
+  - "Hierarchical Representation"
+  - "Entropy Coding"
 date: 2026-05-08
 content_hash: ca4177caedbe7f4f
 ---

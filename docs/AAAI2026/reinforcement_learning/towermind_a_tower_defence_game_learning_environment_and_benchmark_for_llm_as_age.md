@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TowerMind: A Tower Defence Game Learning Environment and Benchmark for LLM as Agents
 description: >-
-  [AAAI 2026][Reinforcement Learning][LLM agents] This paper introduces TowerMind, a lightweight multimodal environment based on tower defense games for evaluating LLMs' long-term planning and decision-making capabilities. It reveals a significant performance gap between current LLMs and human experts (the best model achieves only 42% of human expert scores) and identifies behavioral deficiencies including insufficient plan verification, lack of multi-goal thinking, and underutilization of the action space.
+  [AAAI 2026][Reinforcement Learning][LLM agents] This paper introduces TowerMind, a lightweight multimodal environment based on tower defense games for evaluating LLMs' long-term planning and decision-making capabilities.…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - LLM agents
-  - tower defense game
-  - real-time strategy game
-  - benchmark
-  - multimodal evaluation
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "LLM agents"
+  - "tower defense game"
+  - "real-time strategy game"
+  - "benchmark"
+  - "multimodal evaluation"
 date: 2026-05-08
 content_hash: 08e8737fdc0e38a0
 ---

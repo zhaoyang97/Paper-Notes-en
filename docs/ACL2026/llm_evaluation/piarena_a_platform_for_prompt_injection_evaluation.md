@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PIArena: A Platform for Prompt Injection Evaluation
 description: >-
-  [ACL 2026][LLM Evaluation][Prompt Injection Attack] This paper presents PIArena, a unified and extensible evaluation platform for prompt injection (PI), integrating multiple state-of-the-art attack and defense methods with plug-and-play evaluation support. It introduces a strategy-based adaptive attack method and systematically exposes critical limitations of existing defenses in terms of generalization, resilience to adaptive attacks, and task-aligned injection scenarios.
+  [ACL 2026][LLM Evaluation][Prompt Injection Attack] This paper presents PIArena, a unified and extensible evaluation platform for prompt injection (PI)…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - Prompt Injection Attack
-  - Defense Evaluation Platform
-  - Adaptive Attack
-  - LLM Security
-  - Benchmark Unification
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "Prompt Injection Attack"
+  - "Defense Evaluation Platform"
+  - "Adaptive Attack"
+  - "LLM Security"
+  - "Benchmark Unification"
 date: 2026-05-08
 content_hash: fdc4b3f6db0feb21
 ---

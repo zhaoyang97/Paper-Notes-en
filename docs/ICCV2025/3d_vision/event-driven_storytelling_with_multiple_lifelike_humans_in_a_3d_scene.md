@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Event-Driven Storytelling with Multiple Lifelike Humans in a 3D Scene
 description: >-
-  [ICCV 2025][3D Vision][Multi-Human Motion] This paper proposes an event-driven LLM framework that decomposes multi-character behavior planning in 3D scenes into two modules — a Narrator for event-by-event generation and an Event Parser for fine-grained spatial reasoning — achieving, for the first time, long-horizon natural interaction motion generation for 4–5+ characters in large-scale multi-room 3D scenes.
+  [ICCV 2025][3D Vision][Multi-Human Motion] This paper proposes an event-driven LLM framework that decomposes multi-character behavior planning in 3D scenes into two modules — a Narrator for event-by-event generation and…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Multi-Human Motion
-  - LLM Planning
-  - Event-Based
-  - Scene-Aware
-  - 3D Scene Graph
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Multi-Human Motion"
+  - "LLM Planning"
+  - "Event-Based"
+  - "Scene-Aware"
+  - "3D Scene Graph"
 date: 2026-05-08
 content_hash: fad8e73ec2483bfd
 ---

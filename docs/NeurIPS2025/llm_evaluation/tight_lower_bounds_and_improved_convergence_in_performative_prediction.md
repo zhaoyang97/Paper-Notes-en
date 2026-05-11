@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Tight Lower Bounds and Improved Convergence in Performative Prediction
 description: >-
-  [NeurIPS 2025][LLM Evaluation][Performative Prediction] Under the performative prediction framework, this paper provides the first tight convergence rate analysis for Repeated Risk Minimization (RRM) and proposes the Affine Risk Minimizers (ARM) algorithm class, which achieves convergence over a broader problem class by leveraging data from historical training snapshots.
+  [NeurIPS 2025][LLM Evaluation][Performative Prediction] Under the performative prediction framework, this paper provides the first tight convergence rate analysis for Repeated Risk Minimization (RRM) and proposes the Aff…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - Performative Prediction
-  - Convergence Rate
-  - Lower Bounds
-  - Repeated Risk Minimization
-  - Decision-Dependent Distribution
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "Performative Prediction"
+  - "Convergence Rate"
+  - "Lower Bounds"
+  - "Repeated Risk Minimization"
+  - "Decision-Dependent Distribution"
 date: 2026-05-08
 content_hash: 6926bc37cdb3f73c
 ---

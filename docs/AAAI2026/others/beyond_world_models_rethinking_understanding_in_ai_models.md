@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Beyond World Models: Rethinking Understanding in AI Models
 description: >-
-  [AAAI 2026][World Models] Through three case studies drawn from the philosophy of science — a domino computer, a mathematical proof, and Bohr's atomic theory — this paper argues that the world model framework is insufficient to characterize human-level "understanding," demonstrating that tracking states and state transitions alone cannot capture the abstract reasoning, motivational insight, and problem-context awareness that understanding requires.
+  [AAAI 2026][World Models] Through three case studies drawn from the philosophy of science — a domino computer, a mathematical proof…
 tags:
-  - AAAI 2026
-  - World Models
-  - AI Understanding
-  - Philosophy of Science
-  - Cognitive Science
-  - Representation Learning
+  - "AAAI 2026"
+  - "World Models"
+  - "AI Understanding"
+  - "Philosophy of Science"
+  - "Cognitive Science"
+  - "Representation Learning"
 date: 2026-05-08
 content_hash: 222f8ef4fc854f3b
 ---

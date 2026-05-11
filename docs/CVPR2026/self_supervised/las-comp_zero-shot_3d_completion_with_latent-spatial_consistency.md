@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LaS-Comp: Zero-shot 3D Completion with Latent-Spatial Consistency
 description: >-
-  [CVPR 2026][Self-Supervised Learning][3D shape completion] This paper proposes LaS-Comp, a zero-shot, category-agnostic 3D shape completion framework. It injects known geometry in the spatial domain via an Explicit Replacement Stage (ERS) and optimizes boundary consistency in the latent space via gradient-based updates in an Implicit Alignment Stage (IAS). The framework bridges the gap between the latent space and spatial domain of pretrained 3D foundation models, achieving state-of-the-art performance across diverse partial observation patterns.
+  [CVPR 2026][Self-Supervised Learning][3D shape completion] This paper proposes LaS-Comp, a zero-shot, category-agnostic 3D shape completion framework. It injects known geometry in the spatial domain via an Explicit Repla…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - 3D shape completion
-  - zero-shot
-  - 3D foundation models
-  - latent-spatial consistency
-  - point cloud completion
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "3D shape completion"
+  - "zero-shot"
+  - "3D foundation models"
+  - "latent-spatial consistency"
+  - "point cloud completion"
 date: 2026-05-08
 content_hash: 861dfb755d90bfe7
 ---

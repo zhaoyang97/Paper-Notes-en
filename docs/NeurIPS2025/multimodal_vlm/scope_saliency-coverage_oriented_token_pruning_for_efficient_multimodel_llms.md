@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SCOPE: Saliency-Coverage Oriented Token Pruning for Efficient Multimodal LLMs
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Visual Token Pruning] This paper proposes SCOPE, a visual token pruning strategy that jointly models saliency and coverage. By iteratively selecting tokens with the highest SCOPE scores, it preserves semantic completeness and retains 96% of LLaVA-1.5's performance under a 9× token reduction.
+  [NeurIPS 2025][Multimodal VLM][Visual Token Pruning] This paper proposes SCOPE, a visual token pruning strategy that jointly models saliency and coverage. By iteratively selecting tokens with the highest SCOPE scores…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Visual Token Pruning
-  - Multimodal LLM Inference Acceleration
-  - Semantic Coverage
-  - Submodular Functions
-  - Training-Free
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Visual Token Pruning"
+  - "Multimodal LLM Inference Acceleration"
+  - "Semantic Coverage"
+  - "Submodular Functions"
+  - "Training-Free"
 date: 2026-05-08
 content_hash: c1e405d7ec465d00
 ---

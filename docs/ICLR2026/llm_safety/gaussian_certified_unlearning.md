@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Gaussian Certified Unlearning in High Dimensions: A Hypothesis Testing Approach
 description: >-
-  [ICLR 2026 Oral][LLM Safety][machine unlearning] This paper proposes $(\phi,\varepsilon)$-Gaussian certifiability — a high-dimensional machine unlearning privacy framework grounded in hypothesis testing trade-off functions. It rigorously proves that, in the high-dimensional proportional regime ($p \sim n$), a single Newton step combined with calibrated Gaussian noise simultaneously satisfies privacy (GPAR) and accuracy (GED→0) requirements. The work refutes the conclusion of Zou et al. (2025) that "at least two Newton steps are necessary," and theoretically identifies the fundamental incompatibility between the classical $\varepsilon$-certifiability and noise-addition mechanisms.
+  [ICLR 2026 Oral][LLM Safety][machine unlearning] This paper proposes $(\phi,\varepsilon)$-Gaussian certifiability — a high-dimensional machine unlearning privacy framework grounded in hypothesis testing trade-off functio…
 tags:
-  - ICLR 2026 Oral
-  - LLM Safety
-  - machine unlearning
-  - Gaussian certifiability
-  - hypothesis testing
-  - high-dimensional statistics
-  - Newton method
-  - privacy
+  - "ICLR 2026 Oral"
+  - "LLM Safety"
+  - "machine unlearning"
+  - "Gaussian certifiability"
+  - "hypothesis testing"
+  - "high-dimensional statistics"
+  - "Newton method"
+  - "privacy"
 date: 2026-05-08
 content_hash: 15c6acd75931bf07
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Polar Sparsity: High Throughput Batched LLM Inferencing with Scalable Contextual Sparsity
 description: >-
-  [NeurIPS 2025][LLM/NLP][LLM inference] This paper reveals a "polarity shift" phenomenon in LLM inference sparsity — MLP layer sparsity vanishes as batch size increases, while attention head sparsity remains stable and batch-invariant. Based on this insight, the authors design Selective Head Attention and corresponding GPU kernels, achieving up to 2.2× end-to-end speedup in large-batch inference.
+  [NeurIPS 2025][LLM/NLP][LLM inference] This paper reveals a "polarity shift" phenomenon in LLM inference sparsity — MLP layer sparsity vanishes as batch size increases…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - LLM inference
-  - contextual sparsity
-  - attention head sparsity
-  - batched inference
-  - GPU kernel
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "LLM inference"
+  - "contextual sparsity"
+  - "attention head sparsity"
+  - "batched inference"
+  - "GPU kernel"
 date: 2026-05-08
 content_hash: 08de4ea6fa92e2da
 ---

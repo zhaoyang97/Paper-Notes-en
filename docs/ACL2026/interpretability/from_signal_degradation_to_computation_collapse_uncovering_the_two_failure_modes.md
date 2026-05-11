@@ -2,16 +2,17 @@
 title: >-
   [Paper Note] From Signal Degradation to Computation Collapse: Uncovering the Two Failure Modes of LLM Quantization
 description: >-
-  [ACL 2026][Post-training quantization] Through systematic mechanistic interpretability analysis, this paper reveals that LLM quantization exhibits two qualitatively distinct failure modes: 4-bit *Signal Degradation* (computational patterns remain intact but precision is impaired, amenable to local repair) and 2-bit *Computation Collapse* (functional destruction of critical components, requiring structural reconstruction).
+  [ACL 2026][Interpretability][Post-training quantization] Through systematic mechanistic interpretability analysis, this paper reveals that LLM quantization exhibits two qualitatively distinct failure modes: 4-bit *Signal…
 tags:
-  - ACL 2026
-  - Post-training quantization
-  - signal degradation
-  - computation collapse
-  - mechanistic interpretability
-  - causal tracing
-  - knowledge recall
-  - PTQ
+  - "ACL 2026"
+  - "Interpretability"
+  - "Post-training quantization"
+  - "signal degradation"
+  - "computation collapse"
+  - "mechanistic interpretability"
+  - "causal tracing"
+  - "knowledge recall"
+  - "PTQ"
 date: 2026-05-08
 content_hash: 0d47d8d598f9b8e9
 ---

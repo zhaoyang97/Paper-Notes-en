@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multimodal Protein Language Models for Enzyme Kinetic Parameters: From Substrate Recognition to Conformational Adaptation
 description: >-
-  [CVPR 2026][Medical Imaging][enzyme kinetics prediction] This paper proposes **ERBA (Enzyme-Reaction Bridging Adapter)**, which reformulates enzyme kinetic parameter prediction as a **staged multimodal conditional generation problem** — first injecting substrate information via MRCA to capture substrate recognition specificity, then integrating active-site 3D geometry via G-MoE to capture conformational adaptation, with ESDA distribution alignment to preserve PLM semantic priors.
+  [CVPR 2026][Medical Imaging][enzyme kinetics prediction] This paper proposes **ERBA (Enzyme-Reaction Bridging Adapter)**, which reformulates enzyme kinetic parameter prediction as a **staged multimodal conditional genera…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - enzyme kinetics prediction
-  - protein language model
-  - multimodal fusion
-  - mixture of experts
-  - cross-modal adapter
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "enzyme kinetics prediction"
+  - "protein language model"
+  - "multimodal fusion"
+  - "mixture of experts"
+  - "cross-modal adapter"
 date: 2026-05-08
 content_hash: cc9b007b1a7558be
 ---

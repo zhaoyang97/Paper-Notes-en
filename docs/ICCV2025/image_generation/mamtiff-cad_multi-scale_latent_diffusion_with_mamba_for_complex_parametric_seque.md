@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] MamTiff-CAD: Multi-Scale Latent Diffusion with Mamba+ for Complex Parametric Sequence
 description: >-
-  [Image Generation] This paper proposes MamTiff-CAD, a framework that combines a Mamba+-based encoder with a Transformer decoder in an autoencoder to learn latent representations of CAD command sequences, followed by a multi-scale Transformer diffusion model for generation. It is the first method to generate complex CAD models with sequence lengths of 60–256 commands.
+  [Image Generation] This paper proposes MamTiff-CAD, a framework that combines a Mamba+-based encoder with a Transformer decoder in an autoencoder to learn latent representations of CAD command sequences…
 tags:
-  - Image Generation
+  - "Image Generation"
 date: 2026-05-08
 content_hash: d427521e369eaabe
 ---

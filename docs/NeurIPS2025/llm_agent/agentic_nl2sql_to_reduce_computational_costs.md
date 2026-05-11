@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Agentic NL2SQL to Reduce Computational Costs
 description: >-
-  [NeurIPS 2025][LLM Agent][NL2SQL] This paper proposes Datalake Agent, an agentic NL2SQL system built on an interactive reasoning loop. Through a hierarchical information retrieval strategy (GetDBDescription → GetTables → GetColumns → DBQueryFinalSQL), the system enables LLMs to request database schema information on demand rather than receiving it all at once. In a setting with 319 tables, the approach reduces token usage by 87% and cost by 8×, while maintaining superior performance on complex queries.
+  [NeurIPS 2025][LLM Agent][NL2SQL] This paper proposes Datalake Agent, an agentic NL2SQL system built on an interactive reasoning loop. Through a hierarchical information retrieval strategy (GetDBDescription → GetTables →…
 tags:
-  - NeurIPS 2025
-  - LLM Agent
-  - NL2SQL
-  - text-to-SQL
-  - agentic reasoning
-  - token reduction
-  - datalake
+  - "NeurIPS 2025"
+  - "LLM Agent"
+  - "NL2SQL"
+  - "text-to-SQL"
+  - "agentic reasoning"
+  - "token reduction"
+  - "datalake"
 date: 2026-05-08
 content_hash: dbe1870191abe9a2
 ---

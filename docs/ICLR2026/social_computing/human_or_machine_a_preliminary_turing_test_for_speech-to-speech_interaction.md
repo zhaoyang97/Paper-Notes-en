@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Human or Machine? A Preliminary Turing Test for Speech-to-Speech Interaction
 description: >-
-  [ICLR 2026][Social Computing][Turing Test] This work conducts the first speech-based Turing test on 9 state-of-the-art speech-to-speech (S2S) dialogue systems, collecting 2,968 human judgments. Results show that all systems fail the test (pass rates of 7%–31%). The primary bottlenecks lie not in semantic understanding but in paralinguistic features, emotional expression, and conversational persona. The study also introduces an 18-dimensional fine-grained evaluation framework and an interpretable AI judge model.
+  [ICLR 2026][Social Computing][Turing Test] This work conducts the first speech-based Turing test on 9 state-of-the-art speech-to-speech (S2S) dialogue systems, collecting 2…
 tags:
-  - ICLR 2026
-  - Social Computing
-  - Turing Test
-  - spoken dialogue
-  - human-likeness
-  - S2S systems
-  - fine-grained evaluation
+  - "ICLR 2026"
+  - "Social Computing"
+  - "Turing Test"
+  - "spoken dialogue"
+  - "human-likeness"
+  - "S2S systems"
+  - "fine-grained evaluation"
 date: 2026-05-08
 content_hash: 7dbfa1770a9de5c9
 ---

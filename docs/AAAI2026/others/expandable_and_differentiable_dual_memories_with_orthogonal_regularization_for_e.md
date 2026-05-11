@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Expandable and Differentiable Dual Memories with Orthogonal Regularization for Exemplar-free Continual Learning
 description: >-
-  [AAAI 2026][Continual Learning] This paper proposes **EDD (Expandable and Differentiable Dual Memory)**, an exemplar-free continual learning method that decomposes data into reusable sub-features via **differentiable shared and task-specific memories**, combined with **memory expansion-pruning** and **orthogonal regularization** mechanisms. EDD surpasses 14 state-of-the-art methods on CIFAR-10/100 and Tiny-ImageNet, achieving final accuracies of 55.13%, 37.24%, and 30.11%, respectively.
+  [AAAI 2026][Continual Learning] This paper proposes **EDD (Expandable and Differentiable Dual Memory)**, an exemplar-free continual learning method that decomposes data into reusable sub-features via **differentiable sha…
 tags:
-  - AAAI 2026
-  - Continual Learning
-  - Catastrophic Forgetting
-  - Dual Memory System
-  - Orthogonal Regularization
-  - Exemplar-free Replay
+  - "AAAI 2026"
+  - "Continual Learning"
+  - "Catastrophic Forgetting"
+  - "Dual Memory System"
+  - "Orthogonal Regularization"
+  - "Exemplar-free Replay"
 date: 2026-05-08
 content_hash: b4bf59268a782237
 ---

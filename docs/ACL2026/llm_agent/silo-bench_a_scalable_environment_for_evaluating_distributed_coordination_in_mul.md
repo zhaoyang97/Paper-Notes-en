@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SILO-BENCH: A Scalable Environment for Evaluating Distributed Coordination in Multi-Agent LLM Systems
 description: >-
-  [ACL 2026][LLM Agent][multi-agent collaboration] This paper introduces SILO-BENCH, a role-agnostic benchmark for evaluating distributed coordination in multi-agent LLM systems. It comprises 30 algorithmic tasks across three communication complexity levels, with 54 configurations yielding 1,620 experiments. The benchmark reveals a critical **communication-reasoning gap**: agents spontaneously form reasonable communication topologies and actively exchange information, yet systematically fail to integrate distributed state into correct answers.
+  [ACL 2026][LLM Agent][multi-agent collaboration] This paper introduces SILO-BENCH, a role-agnostic benchmark for evaluating distributed coordination in multi-agent LLM systems. It comprises 30 algorithmic tasks across th…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - multi-agent collaboration
-  - information silos
-  - distributed coordination
-  - communication-reasoning gap
-  - scalable evaluation
+  - "ACL 2026"
+  - "LLM Agent"
+  - "multi-agent collaboration"
+  - "information silos"
+  - "distributed coordination"
+  - "communication-reasoning gap"
+  - "scalable evaluation"
 date: 2026-05-08
 content_hash: e866d95e144bba84
 ---

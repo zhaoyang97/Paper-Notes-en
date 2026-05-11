@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Reasoning Paradigm for Named Entity Recognition
 description: >-
-  [AAAI 2026][LLM Reasoning][NER] This paper proposes ReasoningNER, which reframes named entity recognition from "implicit pattern matching" to an "explicit reasoning" paradigm. Through a three-stage pipeline (CoT data construction → CoT fine-tuning → GRPO reinforcement enhancement), the model first reasons and then extracts entities. Under zero-shot settings, ReasoningNER surpasses GPT-4 by 12.3 F1 points, and the 8B model achieves an average F1 of 72.4 on CrossNER.
+  [AAAI 2026][LLM Reasoning][NER] This paper proposes ReasoningNER, which reframes named entity recognition from "implicit pattern matching" to an "explicit reasoning" paradigm. Through a three-stage pipeline (CoT data con…
 tags:
-  - AAAI 2026
-  - LLM Reasoning
-  - NER
-  - Chain-of-Thought
-  - Reasoning Paradigm
-  - GRPO Reinforcement Learning
-  - Zero-Shot Generalization
+  - "AAAI 2026"
+  - "LLM Reasoning"
+  - "NER"
+  - "Chain-of-Thought"
+  - "Reasoning Paradigm"
+  - "GRPO Reinforcement Learning"
+  - "Zero-Shot Generalization"
 date: 2026-05-08
 content_hash: 7dca5c8652812bcf
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] The Non-Linear Representation Dilemma: Is Causal Abstraction Enough for Mechanistic Interpretability?
 description: >-
-  [NeurIPS 2025 (Spotlight)][Causal Abstraction] This paper proves that when alignment maps in causal abstraction are unconstrained by linearity, any neural network can be mapped to any algorithm, rendering causal abstraction trivial and uninformative. This gives rise to the "non-linear representation dilemma"—the absence of a principled trade-off between the complexity and the fidelity of alignment maps.
+  [NeurIPS 2025 (Spotlight)][Interpretability][Causal Abstraction] This paper proves that when alignment maps in causal abstraction are unconstrained by linearity, any neural network can be mapped to any algorithm…
 tags:
-  - NeurIPS 2025 (Spotlight)
-  - Causal Abstraction
-  - mechanistic interpretability
-  - Linear Representation Hypothesis
-  - Alignment Map
-  - Interchange Intervention
+  - "NeurIPS 2025 (Spotlight)"
+  - "Interpretability"
+  - "Causal Abstraction"
+  - "mechanistic interpretability"
+  - "Linear Representation Hypothesis"
+  - "Alignment Map"
+  - "Interchange Intervention"
 date: 2026-05-08
 content_hash: 7da0af2cdd441af2
 ---

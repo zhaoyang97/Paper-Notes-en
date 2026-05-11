@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ParaS2S: Benchmarking and Aligning Spoken Language Models for Paralinguistic-Aware Speech-to-Speech Interaction
 description: >-
-  [ICLR 2026][Reinforcement Learning][speech-to-speech] This paper proposes the ParaS2S framework, which comprises ParaS2SBench — a benchmark for evaluating paralinguistic-aware (emotion/sarcasm/age/gender) speech-to-speech interaction — and ParaS2SAlign, a GRPO-based RL alignment framework that enables S2S models to learn style-adaptive response generation with minimal labeled data.
+  [ICLR 2026][Reinforcement Learning][speech-to-speech] This paper proposes the ParaS2S framework, which comprises ParaS2SBench — a benchmark for evaluating paralinguistic-aware (emotion/sarcasm/age/gender) speech-to-speec…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - speech-to-speech
-  - paralinguistic awareness
-  - benchmark
-  - GRPO
-  - reward model
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "speech-to-speech"
+  - "paralinguistic awareness"
+  - "benchmark"
+  - "GRPO"
+  - "reward model"
 date: 2026-05-08
 content_hash: 1b665520f7bfe437
 ---

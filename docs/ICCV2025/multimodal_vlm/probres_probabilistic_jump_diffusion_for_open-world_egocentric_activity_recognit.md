@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ProbRes: Probabilistic Jump Diffusion for Open-World Egocentric Activity Recognition
 description: >-
-  [ICCV 2025][Multimodal VLM][Open-world activity recognition] This paper proposes ProbRes, a framework that leverages a probabilistic residual search strategy based on jump diffusion, combined with ConceptNet commonsense priors and VLM likelihood estimation, to efficiently navigate large-scale search spaces in open-world egocentric activity recognition. ProbRes substantially reduces the number of VLM queries while improving recognition accuracy.
+  [ICCV 2025][Multimodal VLM][Open-world activity recognition] This paper proposes ProbRes, a framework that leverages a probabilistic residual search strategy based on jump diffusion…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Open-world activity recognition
-  - egocentric vision
-  - jump diffusion
-  - structured search
-  - VLM
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Open-world activity recognition"
+  - "egocentric vision"
+  - "jump diffusion"
+  - "structured search"
+  - "VLM"
 date: 2026-05-08
 content_hash: a0cefc58f63ea25f
 ---

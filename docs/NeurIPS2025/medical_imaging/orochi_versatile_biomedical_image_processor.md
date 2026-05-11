@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Orochi: Versatile Biomedical Image Processor
 description: >-
-  [NeurIPS 2025][Medical Imaging][Biomedical image processing] This paper proposes Orochi—the first general-purpose foundation model for low-level biomedical image processing. Through Task-related Joint-embedding Pre-training (TJP) and a Multi-head Hierarchy Mamba architecture, Orochi matches or surpasses task-specific state-of-the-art models across four tasks—registration, fusion, restoration, and super-resolution—with lightweight fine-tuning of fewer than 5% of parameters.
+  [NeurIPS 2025][Medical Imaging][Biomedical image processing] This paper proposes Orochi—the first general-purpose foundation model for low-level biomedical image processing. Through Task-related Joint-embedding Pre-train…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Biomedical image processing
-  - general-purpose foundation model
-  - self-supervised pre-training
-  - Mamba
-  - image registration/fusion/restoration/super-resolution
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Biomedical image processing"
+  - "general-purpose foundation model"
+  - "self-supervised pre-training"
+  - "Mamba"
+  - "image registration/fusion/restoration/super-resolution"
 date: 2026-05-08
 content_hash: 0e58d597c637bd05
 ---

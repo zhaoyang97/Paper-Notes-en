@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Optimal Look-back Horizon for Time Series Forecasting in Federated Learning
 description: >-
-  [AAAI 2026][Time Series][time series forecasting] This paper proposes a theoretical framework for selecting the optimal look-back horizon in federated time series forecasting. By introducing a Synthetic Data Generator (SDG) and an intrinsic space representation, the forecasting loss is decomposed into an irreducible Bayesian error and an approximation error. The paper proves that the total loss is unimodal with respect to the horizon length, and establishes that the minimum sufficient window is the optimal solution.
+  [AAAI 2026][Time Series][time series forecasting] This paper proposes a theoretical framework for selecting the optimal look-back horizon in federated time series forecasting. By introducing a Synthetic Data Generator (S…
 tags:
-  - AAAI 2026
-  - Time Series
-  - time series forecasting
-  - federated learning
-  - look-back horizon
-  - intrinsic space
-  - Bayesian loss decomposition
+  - "AAAI 2026"
+  - "Time Series"
+  - "time series forecasting"
+  - "federated learning"
+  - "look-back horizon"
+  - "intrinsic space"
+  - "Bayesian loss decomposition"
 date: 2026-05-08
 content_hash: cecceebb6ec3afdf
 ---

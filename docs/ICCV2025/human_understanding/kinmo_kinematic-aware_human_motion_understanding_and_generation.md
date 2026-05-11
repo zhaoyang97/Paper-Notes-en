@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] KinMo: Kinematic-Aware Human Motion Understanding and Generation
 description: >-
-  [ICCV 2025][Human Understanding][Human motion generation] This paper proposes the KinMo framework, which decomposes human motion into six kinematic groups and their interactions as a hierarchically describable representation. An automatic annotation pipeline generates fine-grained textual descriptions at multiple granularities. Combined with hierarchical text-motion alignment (HTMA) and a coarse-to-fine motion generation strategy, KinMo significantly improves motion understanding and fine-grained motion generation.
+  [ICCV 2025][Human Understanding][Human motion generation] This paper proposes the KinMo framework, which decomposes human motion into six kinematic groups and their interactions as a hierarchically describable representa…
 tags:
-  - ICCV 2025
-  - Human Understanding
-  - Human motion generation
-  - text-motion alignment
-  - kinematic grouping
-  - hierarchical representation
-  - fine-grained control
+  - "ICCV 2025"
+  - "Human Understanding"
+  - "Human motion generation"
+  - "text-motion alignment"
+  - "kinematic grouping"
+  - "hierarchical representation"
+  - "fine-grained control"
 date: 2026-05-08
 content_hash: 7ddf23e6fee7e544
 ---

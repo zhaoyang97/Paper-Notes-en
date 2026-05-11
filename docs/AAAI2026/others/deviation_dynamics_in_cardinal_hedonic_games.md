@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Deviation Dynamics in Cardinal Hedonic Games
 description: >-
-  [AAAI 2026][Hedonic games] This paper establishes meta-theorems for deviation dynamics in cardinal hedonic games, showing that the computational complexity of determining whether deviation dynamics may or must converge can be derived directly from instances in which no stable outcome exists. The paper further proposes methods for finding individually rational and contractually individually stable partitions via deviation dynamics in additively separable hedonic games.
+  [AAAI 2026][Hedonic games] This paper establishes meta-theorems for deviation dynamics in cardinal hedonic games, showing that the computational complexity of determining whether deviation dynamics may or must converge c…
 tags:
-  - AAAI 2026
-  - Hedonic games
-  - deviation dynamics
-  - stable partitions
-  - computational complexity
-  - individual rationality
+  - "AAAI 2026"
+  - "Hedonic games"
+  - "deviation dynamics"
+  - "stable partitions"
+  - "computational complexity"
+  - "individual rationality"
 date: 2026-05-08
 content_hash: 1871d33237f21e48
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ResCP: Reservoir Conformal Prediction for Time Series Forecasting
 description: >-
-  [ICLR 2026][Time Series][conformal prediction] This work is the first to integrate Reservoir Computing (Echo State Network) into conformal prediction. By using randomly initialized ESNs to encode the temporal dynamics of residual sequences, the method leverages state similarity to adaptively reweight historical residuals for constructing local prediction intervals—requiring no training—and achieves state-of-the-art Winkler scores on 4 real-world datasets while running 20–80× faster than HopCPT.
+  [ICLR 2026][Time Series][conformal prediction] This work is the first to integrate Reservoir Computing (Echo State Network) into conformal prediction. By using randomly initialized ESNs to encode the temporal dynamics of…
 tags:
-  - ICLR 2026
-  - Time Series
-  - conformal prediction
-  - reservoir computing
-  - echo state network
-  - prediction interval
-  - training-free
+  - "ICLR 2026"
+  - "Time Series"
+  - "conformal prediction"
+  - "reservoir computing"
+  - "echo state network"
+  - "prediction interval"
+  - "training-free"
 date: 2026-05-08
 content_hash: b64985ca31572ac6
 ---

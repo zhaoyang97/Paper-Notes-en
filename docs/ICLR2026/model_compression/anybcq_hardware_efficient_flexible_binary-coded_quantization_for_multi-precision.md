@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AnyBCQ: Hardware Efficient Flexible Binary-Coded Quantization for Multi-Precision LLMs
 description: >-
-  [ICLR 2026][Model Compression][binary-coded quantization] This paper proposes AnyBCQ, a multi-precision LLM quantization framework based on Binary-Coded Quantization (BCQ). By progressively expanding precision (freezing existing bit-planes and appending residual bit-planes), a single model supports dynamic switching between 2-bit and 4-bit precision. Dedicated CUDA kernels perform computation directly at the bit-plane level, eliminating lookup-table and transpose overhead. At 2-bit, AnyBCQ substantially outperforms Any-Precision LLM in accuracy (MMLU 35.3% vs. 24.7%) and achieves up to 3.0× throughput over FP16.
+  [ICLR 2026][Model Compression][binary-coded quantization] This paper proposes AnyBCQ, a multi-precision LLM quantization framework based on Binary-Coded Quantization (BCQ). By progressively expanding precision (freezing…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - binary-coded quantization
-  - multi-precision inference
-  - bit-plane operations
-  - LLM deployment
-  - CUDA kernels
+  - "ICLR 2026"
+  - "Model Compression"
+  - "binary-coded quantization"
+  - "multi-precision inference"
+  - "bit-plane operations"
+  - "LLM deployment"
+  - "CUDA kernels"
 date: 2026-05-08
 content_hash: 9a8e583249784fad
 ---

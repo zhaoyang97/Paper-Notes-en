@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Disentangle-then-Align: Non-Iterative Hybrid Multimodal Image Registration via Cross-Scale Feature Disentanglement
 description: >-
-  [CVPR 2026][Multimodal VLM][multimodal registration] This paper proposes HRNet, which learns clean shared representations via cross-scale disentanglement and adaptive projection (CDAP), and jointly predicts rigid and non-rigid transformations in a unified coarse-to-fine pipeline without iteration, achieving state-of-the-art performance on four multimodal datasets.
+  [CVPR 2026][Multimodal VLM][multimodal registration] This paper proposes HRNet, which learns clean shared representations via cross-scale disentanglement and adaptive projection (CDAP)…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - multimodal registration
-  - hybrid transformation
-  - feature disentanglement
-  - cross-scale consistency
-  - Mamba
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "multimodal registration"
+  - "hybrid transformation"
+  - "feature disentanglement"
+  - "cross-scale consistency"
+  - "Mamba"
 date: 2026-05-08
 content_hash: 4aef0928433013fe
 ---

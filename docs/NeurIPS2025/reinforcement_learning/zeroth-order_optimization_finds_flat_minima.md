@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Zeroth-Order Optimization Finds Flat Minima
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Zeroth-order optimization] This paper provides the first theoretical proof that standard zeroth-order optimization (two-point gradient estimation) exhibits an implicit regularization effect—converging to flat minima that minimize the Hessian trace—with a convergence complexity of $T = \mathcal{O}(d^4/\epsilon^2)$ established under convexity and sufficient smoothness conditions.
+  [NeurIPS 2025][Reinforcement Learning][Zeroth-order optimization] This paper provides the first theoretical proof that standard zeroth-order optimization (two-point gradient estimation) exhibits an implicit regularizatio…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Zeroth-order optimization
-  - implicit regularization
-  - Hessian trace
-  - flat minima
-  - language model fine-tuning
-  - sharpness-aware minimization
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Zeroth-order optimization"
+  - "implicit regularization"
+  - "Hessian trace"
+  - "flat minima"
+  - "language model fine-tuning"
+  - "sharpness-aware minimization"
 date: 2026-05-08
 content_hash: 6d9ca4546998871e
 ---

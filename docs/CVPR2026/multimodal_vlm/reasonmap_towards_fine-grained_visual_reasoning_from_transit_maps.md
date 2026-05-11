@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] ReasonMap: Towards Fine-Grained Visual Reasoning from Transit Maps
 description: >-
-  [CVPR2026][Multimodal VLM][Multimodal reasoning] This paper introduces the ReasonMap benchmark, which constructs 1,008 QA pairs from high-resolution transit maps of 30 cities and proposes a two-level evaluation framework (correctness + quality) to systematically assess fine-grained visual reasoning capabilities of 16 MLLMs. A key finding is that among open-source models, base models outperform reasoning models, while the opposite holds for closed-source models.
+  [CVPR2026][Multimodal VLM][Multimodal reasoning] This paper introduces the ReasonMap benchmark, which constructs 1,008 QA pairs from high-resolution transit maps of 30 cities and proposes a two-level evaluation framework…
 tags:
-  - CVPR2026
-  - Multimodal VLM
-  - Multimodal reasoning
-  - visual reasoning
-  - spatial reasoning
-  - metro maps
-  - benchmark
-  - reinforcement fine-tuning
-  - GRPO
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "Multimodal reasoning"
+  - "visual reasoning"
+  - "spatial reasoning"
+  - "metro maps"
+  - "benchmark"
+  - "reinforcement fine-tuning"
+  - "GRPO"
 date: 2026-05-08
 content_hash: 99ec5ccfbaf93de1
 ---

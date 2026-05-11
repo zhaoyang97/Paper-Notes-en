@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CubeComposer: Spatio-Temporal Autoregressive 4K 360° Video Generation from Perspective Video
 description: >-
-  [CVPR 2026][Video Generation][360° video generation] CubeComposer decomposes 360° video into a cubemap six-face representation and generates each face autoregressively in a spatio-temporal order, achieving for the first time native 4K (3840×1920) 360° panoramic video generation from perspective video without post-hoc super-resolution.
+  [CVPR 2026][Video Generation][360° video generation] CubeComposer decomposes 360° video into a cubemap six-face representation and generates each face autoregressively in a spatio-temporal order…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - 360° video generation
-  - cubemap projection
-  - spatio-temporal autoregression
-  - diffusion models
-  - native 4K generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "360° video generation"
+  - "cubemap projection"
+  - "spatio-temporal autoregression"
+  - "diffusion models"
+  - "native 4K generation"
 date: 2026-05-08
 content_hash: 66a914408ba9e95a
 ---

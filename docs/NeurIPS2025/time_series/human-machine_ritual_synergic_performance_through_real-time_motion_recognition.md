@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Human-Machine Ritual: Synergic Performance through Real-Time Motion Recognition
 description: >-
-  [NeurIPS 2025][Time Series][IMU sensors] This paper proposes a lightweight real-time motion recognition system that leverages wearable IMU sensors combined with the MiniRocket time-series classifier to achieve dancer-specific motion recognition with <50ms latency and 96.05% accuracy. Through "embodied memory mapping," the system encodes each dancer's personal movement-sound associations, establishing a human-machine collaborative performance paradigm that respects the expressive depth of the human body.
+  [NeurIPS 2025][Time Series][IMU sensors] This paper proposes a lightweight real-time motion recognition system that leverages wearable IMU sensors combined with the MiniRocket time-series classifier to achieve dancer-spe…
 tags:
-  - NeurIPS 2025
-  - Time Series
-  - IMU sensors
-  - motion recognition
-  - MiniRocket
-  - real-time interaction
-  - dance-music synergy
+  - "NeurIPS 2025"
+  - "Time Series"
+  - "IMU sensors"
+  - "motion recognition"
+  - "MiniRocket"
+  - "real-time interaction"
+  - "dance-music synergy"
 date: 2026-05-08
 content_hash: 57143152d71b5236
 ---

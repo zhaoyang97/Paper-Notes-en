@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SaFiRe: Saccade-Fixation Reiteration with Mamba for Referring Image Segmentation
 description: >-
-  [NeurIPS 2025][Segmentation][Referring image segmentation] SaFiRe is a framework that simulates the human two-stage "saccade-fixation" cognitive process, leveraging Mamba's scan-then-update mechanism to achieve linear-complexity multi-round refinement for referring image segmentation under ambiguous expressions.
+  [NeurIPS 2025][Segmentation][Referring image segmentation] SaFiRe is a framework that simulates the human two-stage "saccade-fixation" cognitive process…
 tags:
-  - NeurIPS 2025
-  - Segmentation
-  - Referring image segmentation
-  - Mamba
-  - dual-stage cognition
-  - ambiguous expressions
-  - linear complexity
+  - "NeurIPS 2025"
+  - "Segmentation"
+  - "Referring image segmentation"
+  - "Mamba"
+  - "dual-stage cognition"
+  - "ambiguous expressions"
+  - "linear complexity"
 date: 2026-05-08
 content_hash: 9cbde6313937d6d3
 ---

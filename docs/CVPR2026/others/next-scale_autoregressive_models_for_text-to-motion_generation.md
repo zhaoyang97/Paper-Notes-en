@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Next-Scale Autoregressive Models for Text-to-Motion Generation
 description: >-
-  [CVPR 2026][text-to-motion generation] MoScale proposes a next-scale autoregressive motion generation framework that replaces conventional next-token prediction. By performing hierarchical causal generation from coarse to fine, the model captures global semantic structure and introduces cross-scale hierarchical refinement and in-scale temporal refinement, achieving state-of-the-art performance on HumanML3D and KIT-ML (Top-1 0.540, FID 0.046).
+  [CVPR 2026][text-to-motion generation] MoScale proposes a next-scale autoregressive motion generation framework that replaces conventional next-token prediction. By performing hierarchical causal generation from coarse t…
 tags:
-  - CVPR 2026
-  - text-to-motion generation
-  - autoregressive models
-  - multi-scale prediction
-  - hierarchical generation
-  - motion synthesis
+  - "CVPR 2026"
+  - "text-to-motion generation"
+  - "autoregressive models"
+  - "multi-scale prediction"
+  - "hierarchical generation"
+  - "motion synthesis"
 date: 2026-05-08
 content_hash: b5973b899aab0190
 ---

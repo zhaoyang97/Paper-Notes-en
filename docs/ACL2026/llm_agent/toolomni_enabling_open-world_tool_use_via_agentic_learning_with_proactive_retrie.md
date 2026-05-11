@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ToolOmni: Enabling Open-World Tool Use via Agentic Learning with Proactive Retrieval and Grounded Execution
 description: >-
-  [ACL 2026][LLM Agent][Tool Learning] This paper proposes ToolOmni, a unified agentic framework that integrates proactive tool retrieval and retrieval-grounded tool execution within a single reasoning loop. Through cold-start SFT followed by decoupled multi-objective GRPO, the framework jointly optimizes retrieval and execution capabilities, achieving an end-to-end execution success rate that surpasses strong baselines by +10.8% on ToolBench.
+  [ACL 2026][LLM Agent][Tool Learning] This paper proposes ToolOmni, a unified agentic framework that integrates proactive tool retrieval and retrieval-grounded tool execution within a single reasoning loop. Through cold-s…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - Tool Learning
-  - Proactive Retrieval
-  - Open-World
-  - GRPO
-  - End-to-End
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Tool Learning"
+  - "Proactive Retrieval"
+  - "Open-World"
+  - "GRPO"
+  - "End-to-End"
 date: 2026-05-08
 content_hash: 6b2352840d9e929b
 ---

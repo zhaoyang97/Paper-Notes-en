@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Order Matters: 3D Shape Generation from Sequential VR Sketches
 description: >-
-  [CVPR 2026][VR sketching] This paper proposes VRSketch2Shape, a framework that, for the first time, models the temporal stroke order of VR sketches. Through a sequence-aware BERT encoder combined with a diffusion-based 3D generator (SDFusion), the framework generates high-fidelity 3D shapes from ordered VR sketches. The work also contributes a multi-category dataset comprising 20k synthetic and 900 real sketches.
+  [CVPR 2026][VR sketching] This paper proposes VRSketch2Shape, a framework that, for the first time, models the temporal stroke order of VR sketches. Through a sequence-aware BERT encoder combined with a diffusion-based 3…
 tags:
-  - CVPR 2026
-  - VR sketching
-  - 3D shape generation
-  - stroke order
-  - diffusion model
-  - sketch-to-shape
+  - "CVPR 2026"
+  - "VR sketching"
+  - "3D shape generation"
+  - "stroke order"
+  - "diffusion model"
+  - "sketch-to-shape"
 date: 2026-05-08
 content_hash: a54827bf348b4b51
 ---

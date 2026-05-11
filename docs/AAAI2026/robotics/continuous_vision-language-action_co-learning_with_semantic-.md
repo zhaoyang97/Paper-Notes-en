@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Continuous Vision-Language-Action Co-Learning with Semantic-Physical Alignment for Behavioral Cloning
 description: >-
-  [AAAI 2026][Robotics][Behavioral Cloning] This paper proposes the CCoL framework, which addresses both physical discontinuity in action sequences and semantic-physical misalignment in Behavioral Cloning through NeuralODE-driven Multimodal Continuous Co-learning (MCC) and bidirectional cross-attention-based Cross-modal Semantic-Physical Alignment (CSA). CCoL achieves an average relative improvement of 8.0% across three simulation platforms, with up to 19.2% on the bimanual insertion task.
+  [AAAI 2026][Robotics][Behavioral Cloning] This paper proposes the CCoL framework, which addresses both physical discontinuity in action sequences and semantic-physical misalignment in Behavioral Cloning through NeuralODE…
 tags:
-  - AAAI 2026
-  - Robotics
-  - Behavioral Cloning
-  - Semantic-Physical Alignment
-  - NeuralODE
-  - Multimodal Continuous Co-Learning
-  - Language-Conditioned Manipulation
+  - "AAAI 2026"
+  - "Robotics"
+  - "Behavioral Cloning"
+  - "Semantic-Physical Alignment"
+  - "NeuralODE"
+  - "Multimodal Continuous Co-Learning"
+  - "Language-Conditioned Manipulation"
 date: 2026-05-08
 content_hash: 6e41ea90336cd108
 ---

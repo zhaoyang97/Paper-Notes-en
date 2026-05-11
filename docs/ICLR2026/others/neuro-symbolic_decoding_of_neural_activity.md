@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Neuro-Symbolic Decoding of Neural Activity
 description: >-
-  [ICLR 2026][fMRI decoding] This paper proposes NEURONA, a neuro-symbolic framework for fMRI decoding and concept grounding. By decomposing visual scenes into symbolic programs (logical combinations of concepts), NEURONA substantially outperforms both end-to-end neural decoders and linear models on fMRI question-answering tasks.
+  [ICLR 2026][fMRI decoding] This paper proposes NEURONA, a neuro-symbolic framework for fMRI decoding and concept grounding. By decomposing visual scenes into symbolic programs (logical combinations of concepts)…
 tags:
-  - ICLR 2026
-  - fMRI decoding
-  - neuro-symbolic
-  - concept grounding
-  - language of thought hypothesis
-  - visual question answering
+  - "ICLR 2026"
+  - "fMRI decoding"
+  - "neuro-symbolic"
+  - "concept grounding"
+  - "language of thought hypothesis"
+  - "visual question answering"
 date: 2026-05-08
 content_hash: 662eb6b8a0be2e52
 ---

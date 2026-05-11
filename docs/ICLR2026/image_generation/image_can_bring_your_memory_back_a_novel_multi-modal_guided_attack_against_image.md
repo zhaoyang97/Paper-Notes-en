@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Image Can Bring Your Memory Back: A Novel Multi-Modal Guided Attack against Image Generation Model Unlearning
 description: >-
-  [ICLR 2026][Image Generation][machine unlearning attack] Recall proposes the first multi-modal guided attack framework that optimizes adversarial image prompts in the latent space using a single reference image. Combined with the original text prompt, it exploits the image-conditioning channel of diffusion models and achieves an average ASR of 65%–97% across 10 SOTA unlearning methods, substantially outperforming text-only attack methods and exposing the vulnerability of current unlearning mechanisms to image-modality attacks.
+  [ICLR 2026][Image Generation][machine unlearning attack] Recall proposes the first multi-modal guided attack framework that optimizes adversarial image prompts in the latent space using a single reference image. Combined…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - machine unlearning attack
-  - multi-modal adversarial
-  - image prompt
-  - diffusion model security
-  - robustness auditing
+  - "ICLR 2026"
+  - "Image Generation"
+  - "machine unlearning attack"
+  - "multi-modal adversarial"
+  - "image prompt"
+  - "diffusion model security"
+  - "robustness auditing"
 date: 2026-05-08
 content_hash: 288cd491bc034e08
 ---

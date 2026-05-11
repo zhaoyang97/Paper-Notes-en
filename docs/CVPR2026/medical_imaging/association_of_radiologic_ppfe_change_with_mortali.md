@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Association of Radiologic PPFE Change with Mortality in Lung Cancer Screening Cohorts
 description: >-
-  [CVPR 2026][Medical Imaging][PPFE] Across the NLST (n=7,980) and SUMMIT (n=8,561) large-scale lung cancer screening cohorts, deep learning-based automatic segmentation is used to quantify longitudinal PPFE changes (dPPFE) on low-dose CT, validating their independent association with all-cause mortality (HR=1.25/3.14) and respiratory morbidity.
+  [CVPR 2026][Medical Imaging][PPFE] Across the NLST (n=7,980) and SUMMIT (n=8,561) large-scale lung cancer screening cohorts, deep learning-based automatic segmentation is used to quantify longitudinal PPFE changes (dPPFE…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - PPFE
-  - lung cancer screening
-  - low-dose CT
-  - longitudinal quantitative analysis
-  - imaging biomarker
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "PPFE"
+  - "lung cancer screening"
+  - "low-dose CT"
+  - "longitudinal quantitative analysis"
+  - "imaging biomarker"
 date: 2026-05-08
 content_hash: 4ffe55635ffbfd8a
 ---

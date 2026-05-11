@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Model Merging in the Essential Subspace
 description: >-
-  [CVPR 2026][LLM Pretraining][Model Merging] ESM constructs an "essential subspace" via PCA on activation shifts induced by parameter updates (rather than SVD on parameter matrices), and applies three-level polarized scaling to amplify critical parameters while suppressing noise. On 20-task ViT-B/32 merging, it improves over Iso-CTS by 3.2% absolute accuracy.
+  [CVPR 2026][LLM Pretraining][Model Merging] ESM constructs an "essential subspace" via PCA on activation shifts induced by parameter updates (rather than SVD on parameter matrices)…
 tags:
-  - CVPR 2026
-  - LLM Pretraining
-  - Model Merging
-  - PCA
-  - Essential Subspace
-  - Polarized Scaling
-  - Low-Rank Decomposition
+  - "CVPR 2026"
+  - "LLM Pretraining"
+  - "Model Merging"
+  - "PCA"
+  - "Essential Subspace"
+  - "Polarized Scaling"
+  - "Low-Rank Decomposition"
 date: 2026-05-08
 content_hash: e48f91151b150c41
 ---

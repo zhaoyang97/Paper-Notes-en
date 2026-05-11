@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] RSCC: A Large-Scale Remote Sensing Change Caption Dataset for Disaster Events
 description: >-
-  [NeurIPS 2025][Remote Sensing] This work introduces RSCC — the first large-scale disaster-aware remote sensing change captioning dataset comprising 62,351 pre/post-disaster image pairs with detailed change descriptions, covering 31 global disaster events including earthquakes, floods, and wildfires. High-quality annotations are generated using the QvQ-Max visual reasoning model, and a comprehensive benchmark evaluation framework is established.
+  [NeurIPS 2025][Remote Sensing][change captioning] This work introduces RSCC — the first large-scale disaster-aware remote sensing change captioning dataset comprising 62…
 tags:
-  - NeurIPS 2025
-  - Remote Sensing
-  - change captioning
-  - disaster monitoring
-  - bi-temporal
-  - vision-language model
+  - "NeurIPS 2025"
+  - "Remote Sensing"
+  - "change captioning"
+  - "disaster monitoring"
+  - "bi-temporal"
+  - "vision-language model"
 date: 2026-05-08
 content_hash: 773c3d3180a4ab9a
 ---

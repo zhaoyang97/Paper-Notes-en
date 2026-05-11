@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TawPipe: Topology-Aware Weight Pipeline Parallelism for Accelerating Long-Context Large Models Training
 description: >-
-  [AAAI 2026][Autonomous Driving][Pipeline Parallelism] This paper proposes TawPipe—a topology-aware weight pipeline parallelism framework comprising three components: group-based weight scheduling, device-bound storage, and communication-computation overlap. By exploiting the hierarchical bandwidth characteristics of distributed clusters, TawPipe achieves throughput improvements of 11.8%/23.6%/44.1% over WeiPipe/1F1B/FSDP respectively when training LLaMA models on 24 GPUs, while reducing communication time by 82.1%.
+  [AAAI 2026][Autonomous Driving][Pipeline Parallelism] This paper proposes TawPipe—a topology-aware weight pipeline parallelism framework comprising three components: group-based weight scheduling, device-bound storage…
 tags:
-  - AAAI 2026
-  - Autonomous Driving
-  - Pipeline Parallelism
-  - Weight Passing
-  - Topology-Aware
-  - Long-Context Training
-  - LLM Training Acceleration
+  - "AAAI 2026"
+  - "Autonomous Driving"
+  - "Pipeline Parallelism"
+  - "Weight Passing"
+  - "Topology-Aware"
+  - "Long-Context Training"
+  - "LLM Training Acceleration"
 date: 2026-05-08
 content_hash: 0afaf454a5891bed
 ---

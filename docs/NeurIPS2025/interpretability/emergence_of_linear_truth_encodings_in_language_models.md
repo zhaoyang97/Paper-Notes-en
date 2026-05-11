@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Emergence of Linear Truth Encodings in Language Models
 description: >-
-  [NeurIPS 2025][truth encoding] This paper proposes the **Truth Co-occurrence Hypothesis (TCH)**—that true statements tend to co-occur with other true statements—and uses a minimal single-layer Transformer toy model to provide an end-to-end demonstration of how linear truth subspaces emerge naturally through a two-phase training dynamic (memorization first → truth encoding later). This constitutes the first mechanistic explanation for the widely reported linear truth representations in LLMs.
+  [NeurIPS 2025][Interpretability][truth encoding] This paper proposes the **Truth Co-occurrence Hypothesis (TCH)**—that true statements tend to co-occur with other true statements—and uses a minimal single-layer Transform…
 tags:
-  - NeurIPS 2025
-  - truth encoding
-  - linear representation
-  - associative memory
-  - training dynamics
-  - LayerNorm
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "truth encoding"
+  - "linear representation"
+  - "associative memory"
+  - "training dynamics"
+  - "LayerNorm"
 date: 2026-05-08
 content_hash: 67027bd33e29b6b0
 ---

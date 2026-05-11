@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Failure Prediction at Runtime for Generative Robot Policies
 description: >-
-  [NeurIPS 2025][Image Generation][Failure Prediction] This paper proposes FIPER, which combines observation-space OOD detection (RND) and action-space uncertainty quantification (ACE) to achieve early failure prediction for generative robot policies at runtime without requiring any failure data.
+  [NeurIPS 2025][Image Generation][Failure Prediction] This paper proposes FIPER, which combines observation-space OOD detection (RND) and action-space uncertainty quantification (ACE) to achieve early failure prediction f…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Failure Prediction
-  - Imitation Learning
-  - Diffusion Models
-  - Out-of-Distribution Detection
-  - Conformal Prediction
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Failure Prediction"
+  - "Imitation Learning"
+  - "Diffusion Models"
+  - "Out-of-Distribution Detection"
+  - "Conformal Prediction"
 date: 2026-05-08
 content_hash: 5cb97c69a5123d2a
 ---

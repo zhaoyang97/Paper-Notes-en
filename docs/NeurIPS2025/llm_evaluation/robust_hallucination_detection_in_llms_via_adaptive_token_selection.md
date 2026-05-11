@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Robust Hallucination Detection in LLMs via Adaptive Token Selection
 description: >-
-  [NeurIPS 2025][LLM Evaluation][hallucination detection] HaMI frames hallucination detection as a Multiple Instance Learning (MIL) problem, treating each generated sequence as a bag of token instances. By jointly optimizing token selection and hallucination detection, it adaptively identifies the most informative tokens, achieving substantial AUROC improvements over all existing methods across four QA benchmarks (up to 11.9%).
+  [NeurIPS 2025][LLM Evaluation][hallucination detection] HaMI frames hallucination detection as a Multiple Instance Learning (MIL) problem, treating each generated sequence as a bag of token instances. By jointly optimizi…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - hallucination detection
-  - multiple instance learning
-  - adaptive token selection
-  - internal representation
-  - predictive uncertainty
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "hallucination detection"
+  - "multiple instance learning"
+  - "adaptive token selection"
+  - "internal representation"
+  - "predictive uncertainty"
 date: 2026-05-08
 content_hash: b0878107c49168ef
 ---

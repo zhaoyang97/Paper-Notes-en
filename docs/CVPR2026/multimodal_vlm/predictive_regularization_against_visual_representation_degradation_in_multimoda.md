@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Predictive Regularization Against Visual Representation Degradation in Multimodal Large Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][visual representation degradation] This paper systematically diagnoses visual representation degradation in MLLMs across two levels—global functionality and patch-level semantic structure—revealing that such degradation is an intrinsic "visual sacrifice" induced by the pure text-generation objective. It proposes Predictive Regularization (PRe), which mitigates degradation by training intermediate-layer features to predict the initial visual features, achieving consistent improvements across multiple vision-language benchmarks.
+  [CVPR 2026][Multimodal VLM][visual representation degradation] This paper systematically diagnoses visual representation degradation in MLLMs across two levels—global functionality and patch-level semantic structure—reve…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - visual representation degradation
-  - multimodal large language models
-  - predictive regularization
-  - self-supervised learning
-  - visual fidelity
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "visual representation degradation"
+  - "multimodal large language models"
+  - "predictive regularization"
+  - "self-supervised learning"
+  - "visual fidelity"
 date: 2026-05-08
 content_hash: 977b60e5efce07f1
 ---

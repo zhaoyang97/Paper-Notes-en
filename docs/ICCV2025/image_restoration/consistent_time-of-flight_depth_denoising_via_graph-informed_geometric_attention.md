@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Consistent Time-of-Flight Depth Denoising via Graph-Informed Geometric Attention
 description: >-
-  [ICCV 2025][Image Restoration][ToF depth denoising] GIGA-ToF proposes a ToF depth denoising network that fuses motion-invariant graph structures across frames. Through cross-frame graph attention and algorithm unrolling of a MAP problem, the method simultaneously improves temporal stability and spatial sharpness, demonstrating strong generalization on both synthetic and real data.
+  [ICCV 2025][Image Restoration][ToF depth denoising] GIGA-ToF proposes a ToF depth denoising network that fuses motion-invariant graph structures across frames. Through cross-frame graph attention and algorithm unrolling…
 tags:
-  - ICCV 2025
-  - Image Restoration
-  - ToF depth denoising
-  - graph signal processing
-  - geometric attention
-  - algorithm unrolling
-  - temporal consistency
+  - "ICCV 2025"
+  - "Image Restoration"
+  - "ToF depth denoising"
+  - "graph signal processing"
+  - "geometric attention"
+  - "algorithm unrolling"
+  - "temporal consistency"
 date: 2026-05-08
 content_hash: 6e0f1908f4ab8658
 ---

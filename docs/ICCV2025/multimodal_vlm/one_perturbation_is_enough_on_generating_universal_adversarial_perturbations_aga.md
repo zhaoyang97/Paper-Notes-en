@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] One Perturbation is Enough: On Generating Universal Adversarial Perturbations against Vision-Language Pre-training Models
 description: >-
-  [ICCV 2025][Multimodal VLM][Universal Adversarial Perturbation] This paper proposes C-PGC, a framework that trains a conditional perturbation generator via malicious contrastive learning to produce a pair of universal image-text adversarial perturbations (UAPs), fundamentally disrupting the multimodal alignment of VLP models and achieving strong attack performance across multiple VLP models and downstream tasks in both white-box and black-box settings.
+  [ICCV 2025][Multimodal VLM][Universal Adversarial Perturbation] This paper proposes C-PGC, a framework that trains a conditional perturbation generator via malicious contrastive learning to produce a pair of universal im…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Universal Adversarial Perturbation
-  - VLP Models
-  - Contrastive Learning
-  - Cross-modal Attack
-  - Adversarial Transferability
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Universal Adversarial Perturbation"
+  - "VLP Models"
+  - "Contrastive Learning"
+  - "Cross-modal Attack"
+  - "Adversarial Transferability"
 date: 2026-05-08
 content_hash: bab72e4de71f5608
 ---

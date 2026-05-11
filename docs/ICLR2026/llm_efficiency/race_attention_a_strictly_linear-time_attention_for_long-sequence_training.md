@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RACE Attention: A Strictly Linear-Time Attention for Long-Sequence Training
 description: >-
-  [ICLR 2026][LLM Efficiency][Linear Attention] This paper proposes RACE Attention — replacing softmax with a power angular kernel and approximating attention outputs via differentiable LSH sketches — achieving strictly linear time complexity, supporting up to 12M tokens on a single GPU and 75M tokens on a single CPU, while matching or surpassing softmax accuracy across diverse tasks.
+  [ICLR 2026][LLM Efficiency][Linear Attention] This paper proposes RACE Attention — replacing softmax with a power angular kernel and approximating attention outputs via differentiable LSH sketches — achieving strictly li…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Linear Attention
-  - LSH
-  - Angular Kernel
-  - Long-Sequence Training
-  - Attention Approximation
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Linear Attention"
+  - "LSH"
+  - "Angular Kernel"
+  - "Long-Sequence Training"
+  - "Attention Approximation"
 date: 2026-05-08
 content_hash: 31fc9d534fae7f27
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ExCap3D: Expressive 3D Scene Understanding via Object Captioning with Varying Detail
 description: >-
-  [ICCV 2025][3D Vision][3D scene understanding] This paper proposes ExCap3D, a method for generating multi-granularity captions for objects in 3D indoor scenes at both object-level and part-level description layers. Through part-to-object information sharing and semantic/textual consistency losses, the approach ensures caption accuracy and coherence. On a newly constructed dataset of 190K captions, CIDEr scores improve by 17% and 124% over the prior SOTA at the object and part levels, respectively.
+  [ICCV 2025][3D Vision][3D scene understanding] This paper proposes ExCap3D, a method for generating multi-granularity captions for objects in 3D indoor scenes at both object-level and part-level description layers. Throu…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D scene understanding
-  - dense annotation
-  - multi-granularity captioning
-  - joint object-part generation
-  - 3D Gaussian
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D scene understanding"
+  - "dense annotation"
+  - "multi-granularity captioning"
+  - "joint object-part generation"
+  - "3D Gaussian"
 date: 2026-05-08
 content_hash: 7528483a411cfbd8
 ---

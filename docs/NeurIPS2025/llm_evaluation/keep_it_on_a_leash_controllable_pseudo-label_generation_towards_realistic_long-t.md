@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Keep It on a Leash: Controllable Pseudo-label Generation Towards Realistic Long-Tailed Semi-Supervised Learning
 description: >-
-  [NeurIPS 2025][LLM Evaluation][Long-tailed distribution] This paper proposes Controllable Pseudo-label Generation (CPG), a framework that progressively incorporates reliable pseudo-labels into the labeled set via a controllable self-reinforcing optimization cycle. By training a Bayes-optimal classifier on a distribution of known composition, CPG achieves accuracy gains of up to 15.97% in the Realistic LTSSL setting where the unlabeled data distribution is entirely unknown.
+  [NeurIPS 2025][LLM Evaluation][Long-tailed distribution] This paper proposes Controllable Pseudo-label Generation (CPG), a framework that progressively incorporates reliable pseudo-labels into the labeled set via a contr…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - Long-tailed distribution
-  - semi-supervised learning
-  - pseudo-labels
-  - distribution mismatch
-  - Logit Adjustment
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "Long-tailed distribution"
+  - "semi-supervised learning"
+  - "pseudo-labels"
+  - "distribution mismatch"
+  - "Logit Adjustment"
 date: 2026-05-08
 content_hash: 9970d4178a182f38
 ---

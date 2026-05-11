@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Information Density Principle for MLLM Benchmarks
 description: >-
-  [ICCV 2025][Multimodal VLM][Benchmark evaluation] This paper proposes an "information density" principle to evaluate MLLM benchmark quality along four dimensions — Fallacy, Difficulty, Redundancy, and Diversity — and constructs a three-tier automated evaluation pipeline (Human–Model–Data) to conduct a systematic "benchmark for benchmark" analysis of 19 mainstream benchmarks.
+  [ICCV 2025][Multimodal VLM][Benchmark evaluation] This paper proposes an "information density" principle to evaluate MLLM benchmark quality along four dimensions — Fallacy, Difficulty, Redundancy…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Benchmark evaluation
-  - information density
-  - MLLM assessment
-  - benchmark quality
-  - meta-evaluation
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Benchmark evaluation"
+  - "information density"
+  - "MLLM assessment"
+  - "benchmark quality"
+  - "meta-evaluation"
 date: 2026-05-08
 content_hash: 84689a93b465ee18
 ---

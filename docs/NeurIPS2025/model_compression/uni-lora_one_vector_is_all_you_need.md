@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Uni-LoRA: One Vector is All You Need
 description: >-
-  [NeurIPS 2025][Model Compression][Parameter-Efficient Fine-Tuning] This paper proposes Uni-LoRA, a unified framework demonstrating that the parameter reduction strategies of various LoRA variants (Tied-LoRA, VeRA, VB-LoRA, etc.) are fundamentally distinguished by the choice of projection matrix mapping the full parameter space $\mathbb{R}^D$ to a low-dimensional subspace $\mathbb{R}^d$. An isometric random grouping projection matrix is designed such that training a single vector suffices to reconstruct all LoRA parameters of an LLM, achieving extreme parameter efficiency.
+  [NeurIPS 2025][Model Compression][Parameter-Efficient Fine-Tuning] This paper proposes Uni-LoRA, a unified framework demonstrating that the parameter reduction strategies of various LoRA variants (Tied-LoRA, VeRA…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Parameter-Efficient Fine-Tuning
-  - LoRA
-  - Projection Matrix
-  - Isometry
-  - Parameter Sharing
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Parameter-Efficient Fine-Tuning"
+  - "LoRA"
+  - "Projection Matrix"
+  - "Isometry"
+  - "Parameter Sharing"
 date: 2026-05-08
 content_hash: b1243c551d6b6fa1
 ---

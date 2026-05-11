@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Flash-Unified: Training-Free and Task-Aware Acceleration for Native Unified Models
 description: >-
-  [CVPR 2026][Image Generation][unified multimodal model acceleration] FlashU conducts the first systematic redundancy analysis of native unified multimodal models, identifying parameter specialization and computational heterogeneity. Based on these findings, it proposes a training-free, task-aware acceleration framework that achieves 1.78×–2.01× speedup on Show-o2 while maintaining SOTA performance, through FFN pruning, dynamic layer skipping, adaptive guidance scaling, and diffusion head caching.
+  [CVPR 2026][Image Generation][unified multimodal model acceleration] FlashU conducts the first systematic redundancy analysis of native unified multimodal models…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - unified multimodal model acceleration
-  - training-free inference optimization
-  - task-aware pruning
-  - diffusion head caching
-  - dynamic layer skipping
+  - "CVPR 2026"
+  - "Image Generation"
+  - "unified multimodal model acceleration"
+  - "training-free inference optimization"
+  - "task-aware pruning"
+  - "diffusion head caching"
+  - "dynamic layer skipping"
 date: 2026-05-08
 content_hash: 18f34c385655e618
 ---

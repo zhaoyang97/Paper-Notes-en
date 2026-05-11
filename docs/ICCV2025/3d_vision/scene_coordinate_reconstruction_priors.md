@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Scene Coordinate Reconstruction Priors
 description: >-
-  [ICCV 2025][3D Vision][Scene Coordinate Regression] This paper proposes a probabilistic training framework for scene coordinate regression (SCR) that introduces hand-crafted depth distribution priors and a learned prior based on a 3D point cloud diffusion model, significantly improving scene reconstruction quality, camera pose estimation, and downstream task performance under insufficient multi-view constraints.
+  [ICCV 2025][3D Vision][Scene Coordinate Regression] This paper proposes a probabilistic training framework for scene coordinate regression (SCR) that introduces hand-crafted depth distribution priors and a learned prior…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Scene Coordinate Regression
-  - Reconstruction Priors
-  - 3D Diffusion Models
-  - Visual Relocalization
-  - Structure from Motion
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Scene Coordinate Regression"
+  - "Reconstruction Priors"
+  - "3D Diffusion Models"
+  - "Visual Relocalization"
+  - "Structure from Motion"
 date: 2026-05-08
 content_hash: 7618a28a69276520
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] ProFuser: Progressive Fusion of Large Language Models
 description: >-
-  [AAAI 2026][LLM/NLP][model fusion] ProFuser proposes a progressive model fusion strategy that gradually fuses the parameters and knowledge of multiple LLMs in multiple stages, producing a unified and powerful model while preserving the strengths of each source model.
+  [AAAI 2026][LLM/NLP][model fusion] ProFuser proposes a progressive model fusion strategy that gradually fuses the parameters and knowledge of multiple LLMs in multiple stages…
 tags:
-  - AAAI 2026
-  - LLM/NLP
-  - model fusion
-  - progressive fusion
-  - multi-model ensemble
-  - knowledge distillation
+  - "AAAI 2026"
+  - "LLM/NLP"
+  - "model fusion"
+  - "progressive fusion"
+  - "multi-model ensemble"
+  - "knowledge distillation"
 date: 2026-05-08
 content_hash: cefb061e90fbc656
 ---

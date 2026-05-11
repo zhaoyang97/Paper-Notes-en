@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The Path Not Taken: RLVR Provably Learns Off the Principals
 description: >-
-  [NeurIPS 2025 Workshop on Efficient Reasoning (Spotlight)][Reinforcement Learning][RLVR] This paper proposes the Three-Gate Theory to explain the apparent sparsity of parameter updates in RLVR, demonstrating that RLVR learns along off-principal directions in weight space — a fundamentally different optimization mechanism from SFT — and that directly transplanting SFT-era PEFT methods to RLVR is therefore flawed.
+  [NeurIPS 2025 Workshop on Efficient Reasoning (Spotlight)][Reinforcement Learning][RLVR] This paper proposes the Three-Gate Theory to explain the apparent sparsity of parameter updates in RLVR…
 tags:
-  - NeurIPS 2025 Workshop on Efficient Reasoning (Spotlight)
-  - Reinforcement Learning
-  - RLVR
-  - training dynamics
-  - Three-Gate Theory
-  - parameter-efficient fine-tuning
-  - SFT comparison
+  - "NeurIPS 2025 Workshop on Efficient Reasoning (Spotlight)"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "training dynamics"
+  - "Three-Gate Theory"
+  - "parameter-efficient fine-tuning"
+  - "SFT comparison"
 date: 2026-05-08
 content_hash: 001bf8260f8a32b4
 ---

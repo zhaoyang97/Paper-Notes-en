@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] KTCF: Actionable Recourse in Knowledge Tracing via Counterfactual Explanations for Education
 description: >-
-  [AAAI2026][Causal Inference][Knowledge Tracing] This paper proposes KTCF, a counterfactual explanation generation method for Knowledge Tracing (KT) that leverages inter-concept relationships to produce sparse and actionable counterfactuals, subsequently post-processed into sequentially ordered instructional recommendations. KTCF comprehensively outperforms baseline methods across validity, sparsity, and actionability metrics.
+  [AAAI2026][Causal Inference][Knowledge Tracing] This paper proposes KTCF, a counterfactual explanation generation method for Knowledge Tracing (KT) that leverages inter-concept relationships to produce sparse and actiona…
 tags:
-  - AAAI2026
-  - Causal Inference
-  - Knowledge Tracing
-  - Counterfactual Explanation
-  - XAI
-  - Actionable Recourse
-  - Education
+  - "AAAI2026"
+  - "Causal Inference"
+  - "Knowledge Tracing"
+  - "Counterfactual Explanation"
+  - "XAI"
+  - "Actionable Recourse"
+  - "Education"
 date: 2026-05-08
 content_hash: 8ecd352ff2a5e93b
 ---

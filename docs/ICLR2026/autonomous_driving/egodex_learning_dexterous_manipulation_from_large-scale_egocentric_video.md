@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EgoDex: Learning Dexterous Manipulation from Large-Scale Egocentric Video
 description: >-
-  [ICLR 2026][Autonomous Driving][egocentric video] Apple collected 829 hours of egocentric video paired with 3D hand joint tracking data (EgoDex) using Vision Pro, covering 194 tabletop manipulation tasks and 338K trajectories. The dataset is used to systematically benchmark imitation learning policies (BC/DDPM/FM + Transformer), providing the largest-scale data foundation to date for scaling dexterous manipulation training.
+  [ICLR 2026][Autonomous Driving][egocentric video] Apple collected 829 hours of egocentric video paired with 3D hand joint tracking data (EgoDex) using Vision Pro…
 tags:
-  - ICLR 2026
-  - Autonomous Driving
-  - egocentric video
-  - dexterous manipulation
-  - imitation learning
-  - hand pose
-  - dataset
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "egocentric video"
+  - "dexterous manipulation"
+  - "imitation learning"
+  - "hand pose"
+  - "dataset"
 date: 2026-05-08
 content_hash: 170a29d2562348af
 ---

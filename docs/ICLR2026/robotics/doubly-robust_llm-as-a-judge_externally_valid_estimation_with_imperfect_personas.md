@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Doubly-Robust LLM-as-a-Judge: Externally Valid Estimation with Imperfect Personas
 description: >-
-  [ICLR2026][Robotics][LLM-as-a-Judge] This paper proposes a doubly-robust estimation framework that combines imperfect LLM persona ratings with human annotations subject to sampling bias, yielding statistically valid estimates of GenAI system quality in the simultaneous presence of covariate shift and selection bias.
+  [ICLR2026][Robotics][LLM-as-a-Judge] This paper proposes a doubly-robust estimation framework that combines imperfect LLM persona ratings with human annotations subject to sampling bias…
 tags:
-  - ICLR2026
-  - Robotics
-  - LLM-as-a-Judge
-  - Doubly-Robust Estimation
-  - External Validity
-  - Persona Prompting
-  - Evaluation Sampling Bias
+  - "ICLR2026"
+  - "Robotics"
+  - "LLM-as-a-Judge"
+  - "Doubly-Robust Estimation"
+  - "External Validity"
+  - "Persona Prompting"
+  - "Evaluation Sampling Bias"
 date: 2026-05-08
 content_hash: 6489f48034d855f9
 ---

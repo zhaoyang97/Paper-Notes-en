@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Few-shot Acoustic Synthesis with Multimodal Flow Matching
 description: >-
-  [CVPR2026][Image Generation][flow matching] This paper proposes FLAC, the first flow matching-based few-shot room impulse response (RIR) generation framework, capable of synthesizing spatially consistent acoustic responses in unseen scenes from a single recording. It further introduces AGREE, a joint embedding for geometry–acoustic consistency evaluation.
+  [CVPR2026][Image Generation][flow matching] This paper proposes FLAC, the first flow matching-based few-shot room impulse response (RIR) generation framework…
 tags:
-  - CVPR2026
-  - Image Generation
-  - flow matching
-  - room impulse response
-  - few-shot acoustic synthesis
-  - diffusion transformer
-  - multimodal conditioning
-  - joint embedding
+  - "CVPR2026"
+  - "Image Generation"
+  - "flow matching"
+  - "room impulse response"
+  - "few-shot acoustic synthesis"
+  - "diffusion transformer"
+  - "multimodal conditioning"
+  - "joint embedding"
 date: 2026-05-08
 content_hash: 76e9d9fe42cc2d35
 ---

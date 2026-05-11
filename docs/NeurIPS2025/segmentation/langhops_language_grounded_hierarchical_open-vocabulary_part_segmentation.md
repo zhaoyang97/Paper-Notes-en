@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LangHOPS: Language Grounded Hierarchical Open-Vocabulary Part Segmentation
 description: >-
-  [NeurIPS 2025][Segmentation][Open-vocabulary part segmentation] LangHOPS is the first open-vocabulary object-part instance segmentation framework based on a multimodal large language model (MLLM). It establishes object-part hierarchical relationships in language space and leverages the knowledge and reasoning capabilities of MLLMs to bridge multi-granularity concepts. It achieves 56.9% AP on PartImageNet, surpassing the previous SOTA by 5.5%, and outperforms by 4.8% in cross-dataset settings.
+  [NeurIPS 2025][Segmentation][Open-vocabulary part segmentation] LangHOPS is the first open-vocabulary object-part instance segmentation framework based on a multimodal large language model (MLLM). It establishes object-p…
 tags:
-  - NeurIPS 2025
-  - Segmentation
-  - Open-vocabulary part segmentation
-  - object-part hierarchy
-  - MLLM
-  - language-space hierarchical modeling
-  - instance segmentation
+  - "NeurIPS 2025"
+  - "Segmentation"
+  - "Open-vocabulary part segmentation"
+  - "object-part hierarchy"
+  - "MLLM"
+  - "language-space hierarchical modeling"
+  - "instance segmentation"
 date: 2026-05-08
 content_hash: 7dd5a36e0582e6cb
 ---

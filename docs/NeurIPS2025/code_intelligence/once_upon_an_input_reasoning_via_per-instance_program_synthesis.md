@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Once Upon an Input: Reasoning via Per-Instance Program Synthesis
 description: >-
-  [NeurIPS 2025][Program Synthesis] This paper proposes PIPS (Per-Instance Program Synthesis), which iteratively refines programs through instance-level program synthesis and structured feedback, while dynamically selecting between direct reasoning and program synthesis via a confidence measure. PIPS achieves an 8.6% improvement in harmonic mean accuracy across 30 benchmarks.
+  [NeurIPS 2025][Code Intelligence][Program Synthesis] This paper proposes PIPS (Per-Instance Program Synthesis), which iteratively refines programs through instance-level program synthesis and structured feedback…
 tags:
-  - NeurIPS 2025
-  - Program Synthesis
-  - LLM Reasoning
-  - Code Generation
-  - Neuro-Symbolic
-  - Multi-Step Reasoning
+  - "NeurIPS 2025"
+  - "Code Intelligence"
+  - "Program Synthesis"
+  - "LLM Reasoning"
+  - "Code Generation"
+  - "Neuro-Symbolic"
+  - "Multi-Step Reasoning"
 date: 2026-05-08
 content_hash: e3330fd034857db5
 ---

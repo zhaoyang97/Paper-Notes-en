@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] NPN: Non-Linear Projections of the Null-Space for Imaging Inverse Problems
 description: >-
-  [NeurIPS 2025][Image Generation][Null-space projection] This paper proposes Non-linear Projections of the Null-space (NPN)—a novel regularization strategy that trains a neural network to predict, directly from measurements, the projection coefficients of the ground-truth signal onto a low-dimensional subspace of the sensing matrix's null space. These coefficients serve as prior constraints on "invisible features" and can be flexibly integrated into diverse reconstruction frameworks including PnP, unrolled networks, DIP, and diffusion models. Convergence acceleration within the PnP framework is established theoretically.
+  [NeurIPS 2025][Image Generation][Null-space projection] This paper proposes Non-linear Projections of the Null-space (NPN)—a novel regularization strategy that trains a neural network to predict…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Null-space projection
-  - imaging inverse problems
-  - regularization
-  - plug-and-play methods
-  - compressed sensing
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Null-space projection"
+  - "imaging inverse problems"
+  - "regularization"
+  - "plug-and-play methods"
+  - "compressed sensing"
 date: 2026-05-08
 content_hash: cfa2deb18aafd345
 ---

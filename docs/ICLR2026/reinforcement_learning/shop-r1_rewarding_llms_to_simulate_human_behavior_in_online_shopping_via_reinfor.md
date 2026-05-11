@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Shop-R1: Rewarding LLMs to Simulate Human Behavior in Online Shopping via Reinforcement Learning
 description: >-
-  [Reinforcement Learning] This paper proposes Shop-R1, a framework that leverages hierarchical reward design and difficulty-aware reward scaling within a reinforcement learning paradigm to substantially improve LLMs' ability to simulate realistic human online shopping behavior, achieving over 65% improvement in exact action match compared to SFT baselines.
+  [Reinforcement Learning] This paper proposes Shop-R1, a framework that leverages hierarchical reward design and difficulty-aware reward scaling within a reinforcement learning paradigm to substantially improve LLMs' abil…
 tags:
-  - Reinforcement Learning
+  - "Reinforcement Learning"
 date: 2026-05-08
 content_hash: ce758e0f76a57bcd
 ---

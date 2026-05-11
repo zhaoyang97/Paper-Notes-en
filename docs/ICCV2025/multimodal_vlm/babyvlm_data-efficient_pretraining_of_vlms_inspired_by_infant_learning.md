@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BabyVLM: Data-Efficient Pretraining of VLMs Inspired by Infant Learning
 description: >-
-  [ICCV 2025][Multimodal VLM][data-efficient pretraining] Inspired by the efficient learning capabilities of human infants, this paper proposes the BabyVLM framework, which includes a synthetic training dataset (converting general-purpose data into child-directed formats) and multiple developmentally aligned evaluation benchmarks. The framework enables data-efficient pretraining of compact VLMs, achieving performance that surpasses models trained solely on SAYCam or generic data.
+  [ICCV 2025][Multimodal VLM][data-efficient pretraining] Inspired by the efficient learning capabilities of human infants, this paper proposes the BabyVLM framework…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - data-efficient pretraining
-  - infant learning inspiration
-  - vision-language models
-  - developmental psychology
-  - synthetic data
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "data-efficient pretraining"
+  - "infant learning inspiration"
+  - "vision-language models"
+  - "developmental psychology"
+  - "synthetic data"
 date: 2026-05-08
 content_hash: 3b67f857d7329518
 ---

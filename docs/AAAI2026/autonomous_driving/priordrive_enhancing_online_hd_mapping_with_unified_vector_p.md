@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PriorDrive: Enhancing Online HD Map Construction with Unified Vector Priors
 description: >-
-  [AAAI 2026][Autonomous Driving][HD Map] This paper proposes PriorDrive, a framework that encodes multiple types of vectorized prior maps (SD maps, outdated HD maps, historical prediction maps) into a unified representation via a Unified Vector Encoder (UVE) and Hybrid Prior Representation (HPQuery), and integrates them into various online mapping models. It achieves a +14.3 mAP improvement on nuScenes and is compatible with both query-based and non-query-based mapping architectures.
+  [AAAI 2026][Autonomous Driving][HD Map] This paper proposes PriorDrive, a framework that encodes multiple types of vectorized prior maps (SD maps, outdated HD maps…
 tags:
-  - AAAI 2026
-  - Autonomous Driving
-  - HD Map
-  - Prior Map
-  - Unified Vector Encoding
-  - Plug-and-Play
-  - Online Mapping
+  - "AAAI 2026"
+  - "Autonomous Driving"
+  - "HD Map"
+  - "Prior Map"
+  - "Unified Vector Encoding"
+  - "Plug-and-Play"
+  - "Online Mapping"
 date: 2026-05-08
 content_hash: 4581fd49e2146f11
 ---

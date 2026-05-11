@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Remasking Discrete Diffusion Models with Inference-Time Scaling
 description: >-
-  [NeurIPS 2025][Image Generation][discrete diffusion models] This paper proposes the ReMDM sampler, which enables iterative error correction in discrete mask diffusion models by allowing already-decoded tokens to be remasked during generation. This mechanism supports inference-time compute scaling and yields substantial quality improvements on text, image, and molecular design tasks.
+  [NeurIPS 2025][Image Generation][discrete diffusion models] This paper proposes the ReMDM sampler, which enables iterative error correction in discrete mask diffusion models by allowing already-decoded tokens to be remas…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - discrete diffusion models
-  - remasking sampling
-  - inference-time compute scaling
-  - iterative refinement
-  - controllable generation
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "discrete diffusion models"
+  - "remasking sampling"
+  - "inference-time compute scaling"
+  - "iterative refinement"
+  - "controllable generation"
 date: 2026-05-08
 content_hash: 3579b310f3ccdc80
 ---

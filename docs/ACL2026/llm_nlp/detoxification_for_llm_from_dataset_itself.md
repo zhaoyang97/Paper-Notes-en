@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Detoxification for LLM from Dataset Itself
 description: >-
-  [ACL 2026][LLM/NLP][data-level detoxification] This paper proposes HSPD (Hierarchical Semantic-Preserving Detoxification), a pipeline that leverages SoCD (Soft Contrastive Decoding) to guide an LLM in identifying and rewriting toxic segments in raw corpora while preserving semantics, producing detoxified text that can directly replace original training data for fine-tuning. The approach reduces toxicity probability from 0.42 to 0.18 on GPT2-XL and achieves state-of-the-art detoxification on LLaMA2-7B, OPT-6.7B, and Falcon-7B.
+  [ACL 2026][LLM/NLP][data-level detoxification] This paper proposes HSPD (Hierarchical Semantic-Preserving Detoxification), a pipeline that leverages SoCD (Soft Contrastive Decoding) to guide an LLM in identifying and rew…
 tags:
-  - ACL 2026
-  - LLM/NLP
-  - data-level detoxification
-  - contrastive decoding
-  - semantic preservation
-  - pretraining corpus cleaning
-  - toxicity mitigation
+  - "ACL 2026"
+  - "LLM/NLP"
+  - "data-level detoxification"
+  - "contrastive decoding"
+  - "semantic preservation"
+  - "pretraining corpus cleaning"
+  - "toxicity mitigation"
 date: 2026-05-08
 content_hash: 38d7e29d27e92004
 ---

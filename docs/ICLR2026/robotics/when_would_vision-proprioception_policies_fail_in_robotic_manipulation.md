@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] When would Vision-Proprioception Policies Fail in Robotic Manipulation?
 description: >-
-  [ICLR 2026][Robotics][vision-proprioception policy] This paper identifies why vision-proprioception manipulation policies fail during motion-transition phases—proprioceptive signals dominate optimization and suppress visual learning—and proposes the Gradient Adjustment with Phase-guidance (GAP) algorithm, which adaptively attenuates proprioceptive gradients to restore visual modality learning, achieving significant generalization improvements in both simulated and real-world environments.
+  [ICLR 2026][Robotics][vision-proprioception policy] This paper identifies why vision-proprioception manipulation policies fail during motion-transition phases—proprioceptive signals dominate optimization and suppress vis…
 tags:
-  - ICLR 2026
-  - Robotics
-  - vision-proprioception policy
-  - modality temporality
-  - gradient adjustment
-  - motion-transition phase
-  - robotic manipulation
+  - "ICLR 2026"
+  - "Robotics"
+  - "vision-proprioception policy"
+  - "modality temporality"
+  - "gradient adjustment"
+  - "motion-transition phase"
+  - "robotic manipulation"
 date: 2026-05-08
 content_hash: fb2ef5c1665003d0
 ---

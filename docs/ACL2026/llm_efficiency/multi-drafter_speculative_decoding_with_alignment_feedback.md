@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multi-Drafter Speculative Decoding with Alignment Feedback
 description: >-
-  [ACL 2026][LLM Efficiency][Speculative Decoding] MetaSD is a unified framework integrating multiple heterogeneous drafters into speculative decoding, modeling drafter selection as a multi-armed bandit problem with Block Divergence (BD) reward signals to dynamically select the most aligned drafter, consistently outperforming single-drafter methods in both black-box and white-box configurations.
+  [ACL 2026][LLM Efficiency][Speculative Decoding] MetaSD is a unified framework integrating multiple heterogeneous drafters into speculative decoding…
 tags:
-  - ACL 2026
-  - LLM Efficiency
-  - Speculative Decoding
-  - Multi-Armed Bandit
-  - Multi-Drafter
-  - Alignment Feedback
-  - Inference Acceleration
+  - "ACL 2026"
+  - "LLM Efficiency"
+  - "Speculative Decoding"
+  - "Multi-Armed Bandit"
+  - "Multi-Drafter"
+  - "Alignment Feedback"
+  - "Inference Acceleration"
 content_hash: 5ac96b5ea4720e71
 ---
 

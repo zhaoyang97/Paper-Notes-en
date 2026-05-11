@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Enhancing Noise Resilience in Face Clustering via Sparse Differential Transformer
 description: >-
-  [AAAI 2026][Face Clustering] This paper proposes a prediction-driven Top-K Jaccard similarity coefficient to improve neighbor purity, combined with a Sparse Differential Transformer (SDT) to eliminate noisy attention, achieving state-of-the-art performance on large-scale face clustering datasets such as MS-Celeb-1M.
+  [AAAI 2026][Face Clustering] This paper proposes a prediction-driven Top-K Jaccard similarity coefficient to improve neighbor purity, combined with a Sparse Differential Transformer (SDT) to eliminate noisy attention…
 tags:
-  - AAAI 2026
-  - Face Clustering
-  - Jaccard Similarity
-  - Sparse Differential Transformer
-  - Noise Edges
-  - Adaptive Neighbor Discovery
+  - "AAAI 2026"
+  - "Face Clustering"
+  - "Jaccard Similarity"
+  - "Sparse Differential Transformer"
+  - "Noise Edges"
+  - "Adaptive Neighbor Discovery"
 date: 2026-05-08
 content_hash: 6ce7121e2c226c9c
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LT-Soups: Bridging Head and Tail Classes via Subsampled Model Soups
 description: >-
-  [NeurIPS 2025][Model Compression][Long-tail distribution] This paper proposes LT-Soups, a two-stage model merging framework that trains multiple models on subsampled datasets with progressively varying imbalance ratios and aggregates them via weight averaging, achieving balanced performance across head and tail classes over the full long-tail spectrum.
+  [NeurIPS 2025][Model Compression][Long-tail distribution] This paper proposes LT-Soups, a two-stage model merging framework that trains multiple models on subsampled datasets with progressively varying imbalance ratios a…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Long-tail distribution
-  - model merging
-  - CLIP fine-tuning
-  - class imbalance
-  - parameter-efficient fine-tuning
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Long-tail distribution"
+  - "model merging"
+  - "CLIP fine-tuning"
+  - "class imbalance"
+  - "parameter-efficient fine-tuning"
 date: 2026-05-08
 content_hash: 5761645a06aec098
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] ParaMETA: Towards Learning Disentangled Paralinguistic Speaking Styles Representations
 description: >-
-  [AAAI 2026][Speaking Style Representation] This paper proposes ParaMETA, a unified paralinguistic speaking style representation learning framework that achieves disentangled representations of speaking styles—including emotion, age, gender, and language—through META space regularization and task-specific subspace projection, while simultaneously supporting downstream multi-task classification and style-controllable speech synthesis.
+  [AAAI 2026][Speaking Style Representation] This paper proposes ParaMETA, a unified paralinguistic speaking style representation learning framework that achieves disentangled representations of speaking styles—including e…
 tags:
-  - AAAI 2026
-  - Speaking Style Representation
-  - Disentangled Embedding
-  - Contrastive Learning
-  - Prototype Learning
-  - text-to-speech
+  - "AAAI 2026"
+  - "Speaking Style Representation"
+  - "Disentangled Embedding"
+  - "Contrastive Learning"
+  - "Prototype Learning"
+  - "text-to-speech"
 date: 2026-05-08
 content_hash: f6a1adf0949779ea
 ---

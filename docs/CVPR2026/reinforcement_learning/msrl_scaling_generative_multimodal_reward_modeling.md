@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] MSRL: Scaling Generative Multimodal Reward Modeling via Multi-Stage Reinforcement Learning
 description: >-
-  [CVPR 2026][Reinforcement Learning][multimodal reward model] This paper proposes Multi-Stage Reinforcement Learning (MSRL), which first learns reward reasoning capabilities on large-scale text preference data and then progressively transfers them to multimodal tasks, addressing the bottleneck of scarce annotated data in multimodal reward model training. MSRL improves accuracy on VL-RewardBench from 66.6% to 75.9%.
+  [CVPR 2026][Reinforcement Learning][multimodal reward model] This paper proposes Multi-Stage Reinforcement Learning (MSRL), which first learns reward reasoning capabilities on large-scale text preference data and then pr…
 tags:
-  - CVPR 2026
-  - Reinforcement Learning
-  - multimodal reward model
-  - cross-modal transfer
-  - knowledge distillation
-  - preference alignment
+  - "CVPR 2026"
+  - "Reinforcement Learning"
+  - "multimodal reward model"
+  - "cross-modal transfer"
+  - "knowledge distillation"
+  - "preference alignment"
 date: 2026-05-08
 content_hash: 6689958b422cd852
 ---

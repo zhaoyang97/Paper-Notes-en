@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TRACE: Structure-Aware Character Encoding for Robust and Generalizable Document Watermarking
 description: >-
-  [CVPR 2026][Image Generation][document watermarking] This paper proposes TRACE, a document watermarking framework based on character structure encoding. It leverages a diffusion model (DragDiffusion) to precisely displace skeleton keypoints of characters for information embedding. Through three core components—Adaptive Diffusion Initialization (ADI), Guided Diffusion Encoding (GDE), and Masked Region Replacement (MRR)—TRACE simultaneously achieves cross-media robustness, multi-language/multi-font generalizability, and high visual imperceptibility.
+  [CVPR 2026][Image Generation][document watermarking] This paper proposes TRACE, a document watermarking framework based on character structure encoding. It leverages a diffusion model (DragDiffusion) to precisely displac…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - document watermarking
-  - data hiding
-  - diffusion model
-  - character structure
-  - cross-media robustness
+  - "CVPR 2026"
+  - "Image Generation"
+  - "document watermarking"
+  - "data hiding"
+  - "diffusion model"
+  - "character structure"
+  - "cross-media robustness"
 date: 2026-05-08
 content_hash: af5c8bc9ae19650d
 ---

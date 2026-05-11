@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Acknowledging Focus Ambiguity in Visual Questions
 description: >-
-  [ICCV 2025][Multimodal VLM][Visual Question Answering] This work is the first to formally define and systematically investigate **focus ambiguity** in visual question answering — the phenomenon arising when a linguistic expression in a question may plausibly refer to multiple regions in an image, a type of ambiguity entirely overlooked by existing VQA systems. The authors construct the VQ-FocusAmbiguity dataset (5,500 samples with 12,880 instance segmentation annotations) and demonstrate that modern models perform poorly at both recognizing and localizing focus ambiguity.
+  [ICCV 2025][Multimodal VLM][Visual Question Answering] This work is the first to formally define and systematically investigate **focus ambiguity** in visual question answering — the phenomenon arising when a linguistic…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Visual Question Answering
-  - Focus Ambiguity
-  - Dataset
-  - Visual Grounding
-  - Multimodal Benchmark
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Visual Question Answering"
+  - "Focus Ambiguity"
+  - "Dataset"
+  - "Visual Grounding"
+  - "Multimodal Benchmark"
 date: 2026-05-08
 content_hash: ea42210c475b3082
 ---

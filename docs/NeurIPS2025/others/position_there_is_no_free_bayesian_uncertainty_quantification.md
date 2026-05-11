@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Position: There Is No Free Bayesian Uncertainty Quantification
 description: >-
-  [NeurIPS 2025][Bayesian Inference] This paper challenges the validity of Bayesian uncertainty quantification (UQ) from a frequentist perspective, reinterprets Bayesian updating as an optimization problem over model ensembles, and proposes a PAC-framework-based calibration algorithm for constructing prediction intervals with frequentist guarantees.
+  [NeurIPS 2025][Bayesian Inference] This paper challenges the validity of Bayesian uncertainty quantification (UQ) from a frequentist perspective…
 tags:
-  - NeurIPS 2025
-  - Bayesian Inference
-  - Uncertainty Quantification
-  - Frequentist
-  - PAC-Bayes
-  - Prediction Intervals
+  - "NeurIPS 2025"
+  - "Bayesian Inference"
+  - "Uncertainty Quantification"
+  - "Frequentist"
+  - "PAC-Bayes"
+  - "Prediction Intervals"
 date: 2026-05-08
 content_hash: 4e1760d12e8addb2
 ---

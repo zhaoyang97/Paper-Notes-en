@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] See, Hear, and Understand: Benchmarking Audiovisual Human Speech Understanding in Multimodal Large Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][multimodal benchmark] This paper introduces AV-SpeakerBench, a benchmark comprising 3,212 speaker-centric audiovisual reasoning multiple-choice questions, which systematically evaluates multimodal large language models on fine-grained audiovisual fusion capabilities—specifically, *who is speaking, what was said, and when*—revealing a gap of over 20% between the strongest current models and human performance.
+  [CVPR 2026][Multimodal VLM][multimodal benchmark] This paper introduces AV-SpeakerBench, a benchmark comprising 3,212 speaker-centric audiovisual reasoning multiple-choice questions…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - multimodal benchmark
-  - speaker-centric reasoning
-  - audiovisual fusion
-  - large language model evaluation
-  - audiovisual understanding
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "multimodal benchmark"
+  - "speaker-centric reasoning"
+  - "audiovisual fusion"
+  - "large language model evaluation"
+  - "audiovisual understanding"
 date: 2026-05-08
 content_hash: b4e0726e88e66726
 ---

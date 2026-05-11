@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MindPower: Enabling Theory-of-Mind Reasoning in VLM-based Embodied Agents
 description: >-
-  [CVPR 2026][Multimodal VLM][Theory of Mind] MindPower proposes a robot-centric Theory-of-Mind (ToM) reasoning framework that organizes perception → belief → desire → intention → decision → action into a six-layer reasoning hierarchy, and optimizes reasoning consistency via Mind-Reward (based on GRPO), surpassing GPT-4o by 12.77% on decision-making and 12.49% on action generation.
+  [CVPR 2026][Multimodal VLM][Theory of Mind] MindPower proposes a robot-centric Theory-of-Mind (ToM) reasoning framework that organizes perception → belief → desire → intention → decision → action into a six-layer reasoni…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Theory of Mind
-  - BDI Reasoning
-  - Embodied Agent
-  - Mind-Reward
-  - GRPO
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Theory of Mind"
+  - "BDI Reasoning"
+  - "Embodied Agent"
+  - "Mind-Reward"
+  - "GRPO"
 date: 2026-05-08
 content_hash: 7f08e52f6c599c05
 ---

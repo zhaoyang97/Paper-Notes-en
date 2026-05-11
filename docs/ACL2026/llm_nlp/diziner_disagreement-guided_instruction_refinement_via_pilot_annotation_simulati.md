@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DiZiNER: Disagreement-guided Instruction Refinement via Pilot Annotation Simulation for Zero-shot NER
 description: >-
-  [ACL 2026][LLM/NLP][Zero-shot NER] DiZiNER simulates the human pilot annotation workflow: multiple heterogeneous LLMs independently annotate the same text, and inter-model disagreements are analyzed to iteratively refine task instructions. The method achieves zero-shot SOTA on 14 out of 18 NER benchmarks, with an average F1 gain of +8.0, surpassing its supervisor model GPT-5 mini.
+  [ACL 2026][LLM/NLP][Zero-shot NER] DiZiNER simulates the human pilot annotation workflow: multiple heterogeneous LLMs independently annotate the same text…
 tags:
-  - ACL 2026
-  - LLM/NLP
-  - Zero-shot NER
-  - Annotation Simulation
-  - Inter-model Disagreement
-  - Instruction Refinement
-  - Pilot Annotation
+  - "ACL 2026"
+  - "LLM/NLP"
+  - "Zero-shot NER"
+  - "Annotation Simulation"
+  - "Inter-model Disagreement"
+  - "Instruction Refinement"
+  - "Pilot Annotation"
 date: 2026-05-08
 content_hash: 286935202baaa4c7
 ---

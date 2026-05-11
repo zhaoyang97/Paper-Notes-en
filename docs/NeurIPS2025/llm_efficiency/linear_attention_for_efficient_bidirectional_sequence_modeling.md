@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Linear Attention for Efficient Bidirectional Sequence Modeling
 description: >-
-  [NeurIPS 2025][LLM Efficiency][linear attention] This paper proposes Lion, a framework that, for the first time, systematically extends linear Transformers to bidirectional sequence modeling. It unifies three equivalent representations—full linear attention, bidirectional RNN, and chunkwise parallel—and achieves training speeds up to 10× faster than SSM-based approaches while delivering performance comparable to softmax Transformers on image classification and MLM tasks.
+  [NeurIPS 2025][LLM Efficiency][linear attention] This paper proposes Lion, a framework that, for the first time, systematically extends linear Transformers to bidirectional sequence modeling. It unifies three equivalent…
 tags:
-  - NeurIPS 2025
-  - LLM Efficiency
-  - linear attention
-  - bidirectional modeling
-  - state space model
-  - efficient transformer
-  - RNN
+  - "NeurIPS 2025"
+  - "LLM Efficiency"
+  - "linear attention"
+  - "bidirectional modeling"
+  - "state space model"
+  - "efficient transformer"
+  - "RNN"
 date: 2026-05-08
 content_hash: b790510fcda77843
 ---

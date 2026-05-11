@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From Past To Path: Masked History Learning for Next-Item Prediction in Generative Recommendation
 description: >-
-  [ACL 2026][Image Generation][Generative Recommendation] This paper proposes Masked History Learning (MHL), a training framework that introduces masked history reconstruction as an auxiliary task alongside autoregressive training in generative recommendation. By combining entropy-guided adaptive masking strategies and curriculum learning schedulers, the model shifts from merely predicting "what's next" to understanding "why this path formed," significantly outperforming SOTA on three datasets.
+  [ACL 2026][Image Generation][Generative Recommendation] This paper proposes Masked History Learning (MHL), a training framework that introduces masked history reconstruction as an auxiliary task alongside autoregressive…
 tags:
-  - ACL 2026
-  - Image Generation
-  - Generative Recommendation
-  - Masked History Learning
-  - Entropy-Guided
-  - Curriculum Learning
-  - Sequential Recommendation
+  - "ACL 2026"
+  - "Image Generation"
+  - "Generative Recommendation"
+  - "Masked History Learning"
+  - "Entropy-Guided"
+  - "Curriculum Learning"
+  - "Sequential Recommendation"
 date: 2026-05-08
 content_hash: 6b988ec935f36afd
 ---

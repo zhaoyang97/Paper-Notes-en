@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mind-the-Glitch: Visual Correspondence for Detecting Inconsistencies in Subject-Driven Generation
 description: >-
-  [NeurIPS 2025][Image Generation][subject-driven generation] This paper proposes a framework for decoupling semantic and visual features from a pretrained diffusion model backbone to enable visual correspondence matching. Building on this, it introduces the Visual Semantic Matching (VSM) metric, which for the first time simultaneously supports **quantification and spatial localization** of visual inconsistencies in subject-driven image generation.
+  [NeurIPS 2025][Image Generation][subject-driven generation] This paper proposes a framework for decoupling semantic and visual features from a pretrained diffusion model backbone to enable visual correspondence matching.…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - subject-driven generation
-  - visual correspondence
-  - diffusion features
-  - metric
-  - inconsistency detection
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "subject-driven generation"
+  - "visual correspondence"
+  - "diffusion features"
+  - "metric"
+  - "inconsistency detection"
 date: 2026-05-08
 content_hash: 98e696929d740e0b
 ---

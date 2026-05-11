@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Wanderland: Geometrically Grounded Simulation for Open-World Embodied AI
 description: >-
-  [CVPR 2026][3D Vision][real-to-sim] This paper proposes Wanderland, a real-to-sim framework that uses a handheld multi-sensor scanner (LiDAR+IMU+RGB) to capture open-world indoor and outdoor scenes. It employs LIV-SLAM to obtain metric-accurate geometry and camera poses, combines 3DGS for photorealistic rendering with geometrically grounded collision simulation, and constructs a large-scale dataset of 530 scenes / 420K frames / 3.8M m². The work systematically demonstrates that purely vision-based reconstruction falls significantly short of LiDAR-enhanced approaches in metric accuracy, mesh quality, and reliability for navigation policy training and evaluation.
+  [CVPR 2026][3D Vision][real-to-sim] This paper proposes Wanderland, a real-to-sim framework that uses a handheld multi-sensor scanner (LiDAR+IMU+RGB) to capture open-world indoor and outdoor scenes. It employs LIV-SLAM t…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - real-to-sim
-  - 3D Gaussian Splatting
-  - LiDAR-Inertial-Visual SLAM
-  - navigation simulation
-  - geometric grounding
-  - novel view synthesis
+  - "CVPR 2026"
+  - "3D Vision"
+  - "real-to-sim"
+  - "3D Gaussian Splatting"
+  - "LiDAR-Inertial-Visual SLAM"
+  - "navigation simulation"
+  - "geometric grounding"
+  - "novel view synthesis"
 date: 2026-05-08
 content_hash: 42f66cb1c0b3ff2b
 ---

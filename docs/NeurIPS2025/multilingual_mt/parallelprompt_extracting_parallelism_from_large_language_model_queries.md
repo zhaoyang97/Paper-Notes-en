@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] ParallelPrompt: Extracting Parallelism from Large Language Model Queries
 description: >-
-  [NeurIPS 2025][Intra-query parallelism] This work presents ParallelPrompt, the first benchmark for intra-query parallelism, comprising structured decomposition annotations for 37,000+ real user prompts. It demonstrates that approximately 10% of user queries contain exploitable parallel structure, and that parallel execution can achieve up to 5.7× latency speedup with limited quality degradation.
+  [NeurIPS 2025][Multilingual & Machine Translation][Intra-query parallelism] This work presents ParallelPrompt, the first benchmark for intra-query parallelism, comprising structured decomposition annotations for 37…
 tags:
-  - NeurIPS 2025
-  - Intra-query parallelism
-  - prompt decomposition
-  - LLM inference acceleration
-  - benchmark
-  - semantic fidelity
+  - "NeurIPS 2025"
+  - "Multilingual & Machine Translation"
+  - "Intra-query parallelism"
+  - "prompt decomposition"
+  - "LLM inference acceleration"
+  - "benchmark"
+  - "semantic fidelity"
 date: 2026-05-08
 content_hash: 9edeead904d71ac7
 ---

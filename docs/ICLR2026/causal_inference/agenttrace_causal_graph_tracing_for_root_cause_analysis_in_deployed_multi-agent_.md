@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AgentTrace: Causal Graph Tracing for Root Cause Analysis in Deployed Multi-Agent Systems
 description: >-
-  [ICLR 2026][Causal Inference][multi-agent debugging] This paper proposes AgentTrace, a framework that constructs causal graphs from execution logs of multi-agent systems and localizes root cause nodes via backward tracing combined with lightweight feature-based ranking (a weighted linear combination of five feature groups). On 550 synthetic fault scenarios, AgentTrace achieves Hit@1 of 94.9% with a latency of 0.12 seconds—69× faster than LLM-based analysis.
+  [ICLR 2026][Causal Inference][multi-agent debugging] This paper proposes AgentTrace, a framework that constructs causal graphs from execution logs of multi-agent systems and localizes root cause nodes via backward tracin…
 tags:
-  - ICLR 2026
-  - Causal Inference
-  - multi-agent debugging
-  - causal graph tracing
-  - root cause analysis
-  - execution log analysis
-  - positional features
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "multi-agent debugging"
+  - "causal graph tracing"
+  - "root cause analysis"
+  - "execution log analysis"
+  - "positional features"
 date: 2026-05-08
 content_hash: 50e36562ee2d25fa
 ---

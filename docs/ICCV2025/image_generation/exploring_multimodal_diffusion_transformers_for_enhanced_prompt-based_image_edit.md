@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Exploring Multimodal Diffusion Transformers for Enhanced Prompt-based Image Editing
 description: >-
-  [ICCV 2025][Image Generation][MM-DiT] This paper systematically analyzes the attention mechanism of Multimodal Diffusion Transformers (MM-DiT), decomposing the attention matrix into four functional sub-blocks (I2I/T2I/I2T/T2T). Based on this analysis, it proposes an efficient prompt-based image editing method that operates by replacing image input projections ($\mathbf{q}_i, \mathbf{k}_i$), and is applicable to multiple MM-DiT variants including the SD3 series and Flux.1.
+  [ICCV 2025][Image Generation][MM-DiT] This paper systematically analyzes the attention mechanism of Multimodal Diffusion Transformers (MM-DiT)…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - MM-DiT
-  - Attention Mechanism Analysis
-  - Prompt-based Editing
-  - Stable Diffusion 3
-  - Flux.1
+  - "ICCV 2025"
+  - "Image Generation"
+  - "MM-DiT"
+  - "Attention Mechanism Analysis"
+  - "Prompt-based Editing"
+  - "Stable Diffusion 3"
+  - "Flux.1"
 date: 2026-05-08
 content_hash: d6b4a864944f24b8
 ---

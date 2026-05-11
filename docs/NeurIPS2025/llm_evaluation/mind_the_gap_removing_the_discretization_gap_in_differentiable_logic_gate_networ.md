@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mind the Gap: Removing the Discretization Gap in Differentiable Logic Gate Networks
 description: >-
-  [NeurIPS 2025][LLM Evaluation][Logic Gate Networks] This paper proposes Gumbel Logic Gate Networks (Gumbel LGNs), which inject Gumbel noise into logic gate selection and employ a straight-through (ST) estimator to reduce the discretization gap of differentiable logic gate networks by 98%, achieve a 4.5× speedup in training, and reduce the proportion of unused neurons to 0%.
+  [NeurIPS 2025][LLM Evaluation][Logic Gate Networks] This paper proposes Gumbel Logic Gate Networks (Gumbel LGNs), which inject Gumbel noise into logic gate selection and employ a straight-through (ST) estimator to reduce…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - Logic Gate Networks
-  - Gumbel-Softmax
-  - Discretization Gap
-  - Efficient Inference
-  - Loss Landscape Smoothing
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "Logic Gate Networks"
+  - "Gumbel-Softmax"
+  - "Discretization Gap"
+  - "Efficient Inference"
+  - "Loss Landscape Smoothing"
 date: 2026-05-08
 content_hash: a66775d1fa45937a
 ---

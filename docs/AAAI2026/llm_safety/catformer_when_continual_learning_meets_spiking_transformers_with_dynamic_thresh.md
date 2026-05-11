@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CATFormer: When Continual Learning Meets Spiking Transformers With Dynamic Thresholds
 description: >-
-  [AAAI 2026 (Neuro for AI & AI for Neuro Workshop, PMLR)][LLM Safety][Spiking Neural Networks] This paper proposes CATFormer, a data-replay-free continual learning framework built upon a spiking Vision Transformer, which achieves task-specific neuronal excitability modulation via context-adaptive dynamic firing thresholds. Over sequences of up to 100 tasks, the model not only avoids forgetting but actually improves in accuracy — a phenomenon the authors term "reverse forgetting."
+  [AAAI 2026 (Neuro for AI & AI for Neuro Workshop, PMLR)][LLM Safety][Spiking Neural Networks] This paper proposes CATFormer, a data-replay-free continual learning framework built upon a spiking Vision Transformer…
 tags:
   - "AAAI 2026 (Neuro for AI & AI for Neuro Workshop, PMLR)"
-  - LLM Safety
-  - Spiking Neural Networks
-  - Continual Learning
-  - Dynamic Thresholds
-  - Class-Incremental Learning
-  - Vision Transformer
+  - "LLM Safety"
+  - "Spiking Neural Networks"
+  - "Continual Learning"
+  - "Dynamic Thresholds"
+  - "Class-Incremental Learning"
+  - "Vision Transformer"
 date: 2026-05-08
 content_hash: 19d11d34d0cdbf04
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From Generation to Attribution: Music AI Agent Architectures for the Post-Streaming Era
 description: >-
-  [NeurIPS 2025 (AI4Music Workshop)][Audio & Speech][Music AI agent] This paper proposes a content-based Music AI Agent architecture that embeds copyright attribution directly into the music creation workflow through Block-level retrieval and agentic orchestration, constructing a fair AI media platform for the post-streaming era.
+  [NeurIPS 2025 (AI4Music Workshop)][Audio & Speech][Music AI agent] This paper proposes a content-based Music AI Agent architecture that embeds copyright attribution directly into the music creation workflow through Block…
 tags:
-  - NeurIPS 2025 (AI4Music Workshop)
+  - "NeurIPS 2025 (AI4Music Workshop)"
   - "Audio & Speech"
-  - Music AI agent
-  - copyright attribution
-  - streaming platforms
-  - fair compensation
-  - agent architecture
+  - "Music AI agent"
+  - "copyright attribution"
+  - "streaming platforms"
+  - "fair compensation"
+  - "agent architecture"
 date: 2026-05-08
 content_hash: e72dbe904015e7f1
 ---

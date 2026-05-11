@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Benchmarking Egocentric Multimodal Goal Inference for Assistive Wearable Agents
 description: >-
-  [NeurIPS 2025 (Spotlight)][Audio & Speech][goal inference] Meta proposes WAGIBench, a multimodal goal inference benchmark for assistive wearable agents, comprising 3,477 egocentric recordings (29 hours) from 348 participants across four modalities — visual, audio, digital, and longitudinal. Human accuracy reaches 93% versus the best VLM at 84% (MCQ); under generative evaluation, models produce relevant goals only 55% of the time, exposing a substantial gap between current VLMs and real-world wearable deployment.
+  [NeurIPS 2025 (Spotlight)][Audio & Speech][goal inference] Meta proposes WAGIBench, a multimodal goal inference benchmark for assistive wearable agents, comprising 3…
 tags:
-  - NeurIPS 2025 (Spotlight)
+  - "NeurIPS 2025 (Spotlight)"
   - "Audio & Speech"
-  - goal inference
-  - wearable agents
-  - multimodal benchmark
-  - egocentric video
-  - VLM evaluation
+  - "goal inference"
+  - "wearable agents"
+  - "multimodal benchmark"
+  - "egocentric video"
+  - "VLM evaluation"
 date: 2026-05-08
 content_hash: 848fe7147af9be1a
 ---

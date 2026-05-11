@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TOSC: Task-Oriented Shape Completion for Open-World Dexterous Grasp Generation from Partial Point Clouds
 description: >-
-  [AAAI 2026][3D Vision][Task-oriented shape completion] This paper introduces Task-Oriented Shape Completion (TOSC), a novel task that completes only the contact regions relevant to a manipulation task—rather than the entire object—by leveraging pretrained foundation models to generate candidate shapes, a 3D Discriminative Autoencoder (DAE) to select the optimal shape, and a FlowGrasp flow-matching model to synthesize dexterous grasps. The approach achieves improvements of 16.17% in grasp displacement and 55.26% in Chamfer Distance over prior methods.
+  [AAAI 2026][3D Vision][Task-oriented shape completion] This paper introduces Task-Oriented Shape Completion (TOSC), a novel task that completes only the contact regions relevant to a manipulation task—rather than the ent…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - Task-oriented shape completion
-  - dexterous grasping
-  - point cloud completion
-  - flow matching
-  - foundation models
+  - "AAAI 2026"
+  - "3D Vision"
+  - "Task-oriented shape completion"
+  - "dexterous grasping"
+  - "point cloud completion"
+  - "flow matching"
+  - "foundation models"
 date: 2026-05-08
 content_hash: b6d4da7c8fce0177
 ---

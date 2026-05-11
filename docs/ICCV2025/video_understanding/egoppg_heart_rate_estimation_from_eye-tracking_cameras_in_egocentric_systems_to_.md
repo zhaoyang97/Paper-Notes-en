@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] egoPPG: Heart Rate Estimation from Eye-Tracking Cameras in Egocentric Systems to Benefit Downstream Vision Tasks
 description: >-
-  [ICCV 2025][Video Understanding][egocentric vision] This paper introduces egoPPG as a new egocentric vision task, proposes PulseFormer to estimate heart rate (MAE=7.67 bpm) from the eye-tracking cameras of unmodified egocentric head-mounted devices, and demonstrates that heart rate estimation improves skill assessment accuracy on EgoExo4D by 14.1%.
+  [ICCV 2025][Video Understanding][egocentric vision] This paper introduces egoPPG as a new egocentric vision task, proposes PulseFormer to estimate heart rate (MAE=7.67 bpm) from the eye-tracking cameras of unmodified ego…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - egocentric vision
-  - heart rate estimation
-  - rPPG
-  - eye tracking
-  - physiological sensing
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "egocentric vision"
+  - "heart rate estimation"
+  - "rPPG"
+  - "eye tracking"
+  - "physiological sensing"
 date: 2026-05-08
 content_hash: d7559f84f2fc34b1
 ---

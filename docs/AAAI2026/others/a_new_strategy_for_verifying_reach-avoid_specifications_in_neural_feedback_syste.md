@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] A New Strategy for Verifying Reach-Avoid Specifications in Neural Feedback Systems
 description: >-
-  [AAAI 2026][neural feedback systems] This paper proposes FaBRe (Forward and Backward Reachability), a unified framework that, for the first time, develops both over- and under-approximation algorithms for backward reachable sets of ReLU neural network controllers (GSS/ICH/LEB), and integrates them with forward reachability analysis to construct a unified reach-avoid verification framework, aiming to overcome the scalability bottleneck of purely forward analysis.
+  [AAAI 2026][neural feedback systems] This paper proposes FaBRe (Forward and Backward Reachability), a unified framework that, for the first time…
 tags:
-  - AAAI 2026
-  - neural feedback systems
-  - reach-avoid verification
-  - backward reachability
-  - forward reachability
-  - safety verification
+  - "AAAI 2026"
+  - "neural feedback systems"
+  - "reach-avoid verification"
+  - "backward reachability"
+  - "forward reachability"
+  - "safety verification"
 date: 2026-05-08
 content_hash: 852bb633e9638b43
 ---

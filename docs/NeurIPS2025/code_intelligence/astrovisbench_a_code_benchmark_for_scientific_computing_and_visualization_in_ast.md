@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] AstroVisBench: A Code Benchmark for Scientific Computing and Visualization in Astronomy
 description: >-
-  [NeurIPS 2025][Scientific Visualization] AstroVisBench introduces the first code benchmark for evaluating LLMs on astronomical scientific computing and visualization. It extracts 864 tasks (processing + visualization) from 110 Jupyter Notebooks, and designs a dual evaluation pipeline (execution-based variable inspection + VLM-as-Judge visualization scoring, achieving Spearman ρ=0.822 with expert ratings). Evaluation of 8 state-of-the-art models reveals that Gemini 2.5 Pro performs best, yet attains only a 15.7% error-free rate, with FileNotFoundError accounting for 43% of all errors.
+  [NeurIPS 2025][Code Intelligence][Scientific Visualization] AstroVisBench introduces the first code benchmark for evaluating LLMs on astronomical scientific computing and visualization. It extracts 864 tasks (processing…
 tags:
-  - NeurIPS 2025
-  - Scientific Visualization
-  - Astronomical Code Generation
-  - Domain-Specific Benchmark
-  - VLM Evaluation
-  - Jupyter Notebook
+  - "NeurIPS 2025"
+  - "Code Intelligence"
+  - "Scientific Visualization"
+  - "Astronomical Code Generation"
+  - "Domain-Specific Benchmark"
+  - "VLM Evaluation"
+  - "Jupyter Notebook"
 date: 2026-05-08
 content_hash: ec345a33d151a893
 ---

@@ -2,18 +2,18 @@
 title: >-
   [Paper Note] Riemannian Flow Matching for Brain Connectivity Matrices via Pullback Geometry
 description: >-
-  [NeurIPS 2025][Image Generation][brain connectivity matrices] This paper proposes DiffeoCFM, which leverages pullback metrics induced by global diffeomorphisms to equivalently reformulate conditional flow matching on Riemannian manifolds as standard CFM in Euclidean space. The method enables efficient generation of brain connectivity matrices (SPD/correlation) while strictly preserving manifold constraints, achieving state-of-the-art performance on 3 fMRI and 2 EEG datasets.
+  [NeurIPS 2025][Image Generation][brain connectivity matrices] This paper proposes DiffeoCFM, which leverages pullback metrics induced by global diffeomorphisms to equivalently reformulate conditional flow matching on Rie…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - brain connectivity matrices
-  - Riemannian flow matching
-  - pullback geometry
-  - conditional flow matching
-  - symmetric positive definite matrices
-  - correlation matrices
-  - fMRI
-  - EEG
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "brain connectivity matrices"
+  - "Riemannian flow matching"
+  - "pullback geometry"
+  - "conditional flow matching"
+  - "symmetric positive definite matrices"
+  - "correlation matrices"
+  - "fMRI"
+  - "EEG"
 date: 2026-05-08
 content_hash: 4ec4202e229ecc4c
 ---

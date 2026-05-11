@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PixDLM: A Dual-Path Multimodal Language Model for UAV Reasoning Segmentation
 description: >-
-  [CVPR 2026][Segmentation][UAV reasoning segmentation] This paper formally defines the UAV Reasoning Segmentation task, constructs the DRSeg benchmark comprising 10K high-resolution UAV images with chain-of-thought reasoning annotations, and proposes the dual-path pixel-level multimodal large language model PixDLM as a strong baseline.
+  [CVPR 2026][Segmentation][UAV reasoning segmentation] This paper formally defines the UAV Reasoning Segmentation task, constructs the DRSeg benchmark comprising 10K high-resolution UAV images with chain-of-thought reason…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - UAV reasoning segmentation
-  - multimodal large language model
-  - dual-path visual encoder
-  - chain-of-thought reasoning
-  - pixel-level prediction
+  - "CVPR 2026"
+  - "Segmentation"
+  - "UAV reasoning segmentation"
+  - "multimodal large language model"
+  - "dual-path visual encoder"
+  - "chain-of-thought reasoning"
+  - "pixel-level prediction"
 date: 2026-05-08
 content_hash: 6d2326a3291794d6
 ---

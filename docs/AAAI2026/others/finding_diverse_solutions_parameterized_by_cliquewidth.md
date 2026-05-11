@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Finding Diverse Solutions Parameterized by Cliquewidth
 description: >-
-  [AAAI 2026][Parameterized complexity] This paper extends the parameterized framework for finding diverse solutions from treewidth to the strictly more powerful graph parameter cliquewidth, proving that any monotone dynamic programming algorithm parameterized by a cliquewidth decomposition can be converted into an algorithm for the diverse version with minimal overhead. A new family of Venn diversity measures is also proposed.
+  [AAAI 2026][Parameterized complexity] This paper extends the parameterized framework for finding diverse solutions from treewidth to the strictly more powerful graph parameter cliquewidth…
 tags:
-  - AAAI 2026
-  - Parameterized complexity
-  - diverse solutions
-  - cliquewidth
-  - dynamic programming
-  - MSO1 logic
-  - Venn diversity measure
+  - "AAAI 2026"
+  - "Parameterized complexity"
+  - "diverse solutions"
+  - "cliquewidth"
+  - "dynamic programming"
+  - "MSO1 logic"
+  - "Venn diversity measure"
 date: 2026-05-08
 content_hash: f35d055d7db37e03
 ---

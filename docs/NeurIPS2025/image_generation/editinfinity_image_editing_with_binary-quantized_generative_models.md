@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EditInfinity: Image Editing with Binary-Quantized Generative Models
 description: >-
-  [NeurIPS 2025][Image Generation][Binary-quantized generative models] This paper proposes EditInfinity, the first work to apply the classical "image inversion–image editing" paradigm to binary-quantized autoregressive generative models (Infinity). By leveraging the inherent property of quantized representations that enables exact intermediate supervision, EditInfinity achieves high-fidelity image inversion. Combined with a piecewise linear smoothing kernel for seamless editing, it comprehensively surpasses diffusion model baselines on PIE-Bench.
+  [NeurIPS 2025][Image Generation][Binary-quantized generative models] This paper proposes EditInfinity, the first work to apply the classical "image inversion–image editing" paradigm to binary-quantized autoregressive gen…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Binary-quantized generative models
-  - Infinity
-  - image inversion
-  - piecewise linear smoothing
-  - multi-scale autoregressive editing
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Binary-quantized generative models"
+  - "Infinity"
+  - "image inversion"
+  - "piecewise linear smoothing"
+  - "multi-scale autoregressive editing"
 date: 2026-05-08
 content_hash: 9d72a6fb2f407b26
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GEM-TFL: Bridging Weak and Full Supervision for Forgery Localization
 description: >-
-  [CVPR 2026][Audio & Speech][temporal forgery localization] GEM-TFL is proposed to bridge the gap between weak and full supervision for temporal forgery localization via a two-stage classification-regression framework. Three core modules are introduced: EM-based decomposition of binary labels into multi-dimensional latent attributes, training-free temporal consistency refinement (TCR), and graph diffusion proposal refinement (GPR). The method achieves an average mAP improvement of 4–8% on weakly supervised temporal forgery localization benchmarks.
+  [CVPR 2026][Audio & Speech][temporal forgery localization] GEM-TFL is proposed to bridge the gap between weak and full supervision for temporal forgery localization via a two-stage classification-regression framework. Th…
 tags:
-  - CVPR 2026
+  - "CVPR 2026"
   - "Audio & Speech"
-  - temporal forgery localization
-  - weak supervision
-  - EM algorithm
-  - graph diffusion
-  - temporal consistency
+  - "temporal forgery localization"
+  - "weak supervision"
+  - "EM algorithm"
+  - "graph diffusion"
+  - "temporal consistency"
 date: 2026-05-08
 content_hash: 8fc36b35154c3bd7
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Revisiting (Un)Fairness in Recourse by Minimizing Worst-Case Social Burden
 description: >-
-  [AAAI 2026][AI Safety][algorithmic recourse] This paper systematically analyzes three fundamental limitations of existing fairness metrics in algorithmic recourse—neglecting classifier decision behavior, ignoring ground-truth labels, and the tendency of gap-based metrics to obscure unfairness—and proposes MISOB, a fairness framework grounded in social burden. Through a minimax-weighted training strategy, MISOB reduces social burden across all demographic groups without requiring access to sensitive attributes, simultaneously improving fairness at both the prediction and recourse stages.
+  [AAAI 2026][AI Safety][algorithmic recourse] This paper systematically analyzes three fundamental limitations of existing fairness metrics in algorithmic recourse—neglecting classifier decision behavior…
 tags:
-  - AAAI 2026
-  - AI Safety
-  - algorithmic recourse
-  - social burden
-  - fairness
-  - minimax optimization
-  - counterfactual explanation
+  - "AAAI 2026"
+  - "AI Safety"
+  - "algorithmic recourse"
+  - "social burden"
+  - "fairness"
+  - "minimax optimization"
+  - "counterfactual explanation"
 date: 2026-05-08
 content_hash: b5d3236b60736c85
 ---

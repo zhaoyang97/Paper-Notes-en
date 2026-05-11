@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Generative Active Learning for Long-tail Trajectory Prediction via Controllable Diffusion Model
 description: >-
-  [ICCV 2025][Autonomous Driving][long-tail trajectory prediction] This paper proposes GALTraj, the first method to apply generative active learning to trajectory prediction. During training, it dynamically identifies tail samples on which the model fails, and employs a controllable diffusion model to synthesize new samples that preserve tail-behavior characteristics while complying with traffic rules. This effectively alleviates long-tail data imbalance, improving both tail-case performance and overall prediction accuracy.
+  [ICCV 2025][Autonomous Driving][long-tail trajectory prediction] This paper proposes GALTraj, the first method to apply generative active learning to trajectory prediction. During training…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - long-tail trajectory prediction
-  - generative active learning
-  - controllable diffusion model
-  - traffic simulator
-  - data augmentation
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "long-tail trajectory prediction"
+  - "generative active learning"
+  - "controllable diffusion model"
+  - "traffic simulator"
+  - "data augmentation"
 date: 2026-05-08
 content_hash: 9870537d64b7de91
 ---

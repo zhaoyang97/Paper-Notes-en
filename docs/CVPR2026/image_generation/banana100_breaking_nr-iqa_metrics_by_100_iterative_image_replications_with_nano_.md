@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Banana100: Breaking NR-IQA Metrics by 100 Iterative Image Replications with Nano Banana Pro
 description: >-
-  [CVPR 2026][Image Generation][Image Quality Assessment] Banana100 systematically investigates quality degradation in multi-turn editing by having Nano Banana Pro iteratively replicate images 100 times, constructing a dataset of 28,000 degraded images. The study reveals a startling finding: 21 mainstream No-Reference Image Quality Assessment (NR-IQA) metrics fail to reliably detect iterative degradation—most metrics even assign higher scores to noisy images than to clean ones.
+  [CVPR 2026][Image Generation][Image Quality Assessment] Banana100 systematically investigates quality degradation in multi-turn editing by having Nano Banana Pro iteratively replicate images 100 times…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Image Quality Assessment
-  - NR-IQA
-  - Iterative Degradation
-  - image editing
-  - Multi-turn
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Image Quality Assessment"
+  - "NR-IQA"
+  - "Iterative Degradation"
+  - "image editing"
+  - "Multi-turn"
 date: 2026-05-08
 content_hash: a976ef2ebc1910d8
 ---

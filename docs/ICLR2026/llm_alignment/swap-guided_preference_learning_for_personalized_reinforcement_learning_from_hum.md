@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Swap-guided Preference Learning for Personalized RLHF (SPL)
 description: >-
-  [ICLR 2026][LLM Alignment][personalized reward model] This paper addresses posterior collapse in Variational Preference Learning (VPL) by proposing SPL, which introduces swap-guided base regularization (forcing latent variables to encode user preferences rather than being ignored), a Preferential-IAF decomposition of swap-reversible and swap-invariant signals, and adaptive latent variable modulation. On Llama-3.1-8B, SPL achieves 63.71% accuracy and 97.10% active units, whereas VPL collapses to 57.14% accuracy and 0% active units.
+  [ICLR 2026][LLM Alignment][personalized reward model] This paper addresses posterior collapse in Variational Preference Learning (VPL) by proposing SPL…
 tags:
-  - ICLR 2026
-  - LLM Alignment
-  - personalized reward model
-  - posterior collapse
-  - latent variable preference learning
-  - swap-guided regularization
-  - preference diversity
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "personalized reward model"
+  - "posterior collapse"
+  - "latent variable preference learning"
+  - "swap-guided regularization"
+  - "preference diversity"
 date: 2026-05-08
 content_hash: def1df506b818ef2
 ---

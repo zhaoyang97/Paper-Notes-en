@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TRACE: A Generalizable Drift Detector for Streaming Data-Driven Optimization
 description: >-
-  [AAAI 2026][LLM Evaluation][Concept Drift Detection] This paper proposes TRACE, a transferable concept drift detector based on attention-based sequence learning. By tokenizing statistical features and employing a dual-attention encoder, TRACE learns drift patterns that generalize across tasks, enabling deployment on unseen datasets and integration as a plug-and-play module into streaming data-driven optimization algorithms.
+  [AAAI 2026][LLM Evaluation][Concept Drift Detection] This paper proposes TRACE, a transferable concept drift detector based on attention-based sequence learning. By tokenizing statistical features and employing a dual-at…
 tags:
-  - AAAI 2026
-  - LLM Evaluation
-  - Concept Drift Detection
-  - Streaming Data Optimization
-  - Attention Mechanism
-  - Transfer Learning
-  - Plug-and-Play
+  - "AAAI 2026"
+  - "LLM Evaluation"
+  - "Concept Drift Detection"
+  - "Streaming Data Optimization"
+  - "Attention Mechanism"
+  - "Transfer Learning"
+  - "Plug-and-Play"
 date: 2026-05-08
 content_hash: c8a9bfad4a95cae9
 ---

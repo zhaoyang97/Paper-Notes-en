@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Personalized Subgraph Federated Learning with Differentiable Auxiliary Projections
 description: >-
-  [NeurIPS 2025][Optimization][Federated Learning] This paper proposes FedAux, a framework that introduces differentiable Auxiliary Projection Vectors (APVs) to map node embeddings into a one-dimensional space and perform soft-ranking aggregation via Gaussian kernels. The APV simultaneously serves as a compact, privacy-preserving summary of the local subgraph for server-side similarity computation and participates in joint client-side optimization, enabling personalized subgraph federated learning.
+  [NeurIPS 2025][Optimization][Federated Learning] This paper proposes FedAux, a framework that introduces differentiable Auxiliary Projection Vectors (APVs) to map node embeddings into a one-dimensional space and perform…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Federated Learning
-  - Graph Neural Networks
-  - Personalized Aggregation
-  - Subgraph Heterogeneity
-  - Auxiliary Projection Vector
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Federated Learning"
+  - "Graph Neural Networks"
+  - "Personalized Aggregation"
+  - "Subgraph Heterogeneity"
+  - "Auxiliary Projection Vector"
 date: 2026-05-08
 content_hash: 55bc133ed6ce1639
 ---

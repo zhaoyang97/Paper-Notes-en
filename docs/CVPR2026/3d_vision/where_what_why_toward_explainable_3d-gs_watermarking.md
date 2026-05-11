@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Where, What, Why: Toward Explainable 3D-GS Watermarking
 description: >-
-  [CVPR2026][3D Vision][3D Gaussian Splatting] A representation-native 3D-GS watermarking framework that answers three key questions: Trio-Experts for carrier selection (where), Channel-wise Group Mask for gradient control (what), and decoupled fine-tuning for auditable attribution (why). Surpasses SOTA on both rendering quality (PSNR +0.83 dB) and bit accuracy (+1.24%).
+  [CVPR2026][3D Vision][3D Gaussian Splatting] A representation-native 3D-GS watermarking framework that answers three key questions: Trio-Experts for carrier selection (where)…
 tags:
-  - CVPR2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - Digital Watermarking
-  - Copyright Protection
-  - Explainability
-  - Robust Embedding
+  - "CVPR2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Digital Watermarking"
+  - "Copyright Protection"
+  - "Explainability"
+  - "Robust Embedding"
 date: 2026-05-08
 content_hash: 1bc309cf9964afd7
 ---

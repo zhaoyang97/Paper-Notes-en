@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] NanoSD: Edge Efficient Foundation Model for Real Time Image Restoration
 description: >-
-  [CVPR 2026][3D Vision][Diffusion model distillation] This paper proposes NanoSD, a family of Pareto-optimal lightweight diffusion foundation models (130M–315M parameters, as fast as 12 ms inference) built upon SD 1.5 through hardware-aware U-Net decomposition, block-wise feature distillation, and multi-objective Bayesian optimization. NanoSD serves as a drop-in backbone that achieves state-of-the-art performance across multiple tasks including super-resolution, face restoration, deblurring, and monocular depth estimation.
+  [CVPR 2026][3D Vision][Diffusion model distillation] This paper proposes NanoSD, a family of Pareto-optimal lightweight diffusion foundation models (130M–315M parameters…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Diffusion model distillation
-  - edge deployment
-  - image restoration
-  - super-resolution
-  - model compression
-  - multi-objective optimization
-  - Stable Diffusion
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Diffusion model distillation"
+  - "edge deployment"
+  - "image restoration"
+  - "super-resolution"
+  - "model compression"
+  - "multi-objective optimization"
+  - "Stable Diffusion"
 date: 2026-05-08
 content_hash: 1b0b65ed20ab3efd
 ---

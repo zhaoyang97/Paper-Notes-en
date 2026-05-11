@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Parallelism Meets Adaptiveness: Scalable Documents Understanding in Multi-Agent LLM Systems
 description: >-
-  [AAAI 2026][LLM Agent][Multi-Agent Systems] This paper proposes an adaptively coordinated multi-agent LLM framework that achieves a 27% improvement in compliance accuracy and a 74% reduction in revision rate on high-complexity financial document analysis tasks, through parallel competitive evaluation, dynamic task routing, and bidirectional feedback mechanisms.
+  [AAAI 2026][LLM Agent][Multi-Agent Systems] This paper proposes an adaptively coordinated multi-agent LLM framework that achieves a 27% improvement in compliance accuracy and a 74% reduction in revision rate on high-comp…
 tags:
-  - AAAI 2026
-  - LLM Agent
-  - Multi-Agent Systems
-  - Parallel Processing
-  - Document Understanding
-  - Adaptive Scheduling
-  - Financial Analysis
-  - Competitive Evaluation
+  - "AAAI 2026"
+  - "LLM Agent"
+  - "Multi-Agent Systems"
+  - "Parallel Processing"
+  - "Document Understanding"
+  - "Adaptive Scheduling"
+  - "Financial Analysis"
+  - "Competitive Evaluation"
 date: 2026-05-08
 content_hash: dc06503929af532b
 ---

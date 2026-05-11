@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] CompTrack: Information Bottleneck-Guided Low-Rank Dynamic Token Compression for Point Cloud Tracking
 description: >-
-  [AAAI 2026 (Oral)][3D single object tracking] This paper proposes CompTrack—the first 3D single object tracking framework that simultaneously addresses both spatial redundancy and information redundancy in LiDAR point clouds. A Spatial Foreground Predictor (SFP) filters background noise via information entropy, while an Information Bottleneck-guided Dynamic Token Compression (IB-DTC) module estimates effective rank via online SVD and compresses foreground tokens into compact proxy tokens. CompTrack achieves state-of-the-art performance on nuScenes and Waymo while running in real time at 90 FPS.
+  [AAAI 2026 (Oral)][3D single object tracking] This paper proposes CompTrack—the first 3D single object tracking framework that simultaneously addresses both spatial redundancy and information redundancy in LiDAR point cl…
 tags:
-  - AAAI 2026 (Oral)
-  - 3D single object tracking
-  - point cloud
-  - token compression
-  - information bottleneck
-  - low-rank approximation
+  - "AAAI 2026 (Oral)"
+  - "3D single object tracking"
+  - "point cloud"
+  - "token compression"
+  - "information bottleneck"
+  - "low-rank approximation"
 date: 2026-05-08
 content_hash: a555b1ba9f014469
 ---

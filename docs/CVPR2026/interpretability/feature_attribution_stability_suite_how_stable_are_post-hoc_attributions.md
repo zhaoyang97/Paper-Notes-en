@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Feature Attribution Stability Suite: How Stable Are Post-Hoc Attributions?
 description: >-
-  [CVPR 2026][feature attribution stability] This paper proposes the FASS benchmark, which systematically evaluates the stability of post-hoc feature attribution methods through prediction-invariant filtering, a three-axis stability decomposition (spatial / ranking / salient region), and multiple perturbation types (geometric / photometric / compression), exposing fundamental flaws in existing evaluation frameworks.
+  [CVPR 2026][Interpretability][feature attribution stability] This paper proposes the FASS benchmark, which systematically evaluates the stability of post-hoc feature attribution methods through prediction-invariant filte…
 tags:
-  - CVPR 2026
-  - feature attribution stability
-  - post-hoc explanation methods
-  - prediction invariance
-  - perturbation robustness
-  - XAI benchmark
+  - "CVPR 2026"
+  - "Interpretability"
+  - "feature attribution stability"
+  - "post-hoc explanation methods"
+  - "prediction invariance"
+  - "perturbation robustness"
+  - "XAI benchmark"
 date: 2026-05-08
 content_hash: af36713d9b73bc4d
 ---

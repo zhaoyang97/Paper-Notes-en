@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Diagnosing and Addressing Pitfalls in KG-RAG Datasets: Toward More Reliable Benchmarking
 description: >-
-  [NeurIPS 2025][Graph Learning][KG-RAG] A systematic audit of 16 KGQA datasets reveals an average factual correctness of only 57% (WebQSP: 52%, MetaQA: 20%). The paper proposes KGQAGen, a framework that constructs high-quality multi-hop QA datasets via LLM-guided subgraph expansion and automatic SPARQL validation, yielding KGQAGen-10k with 96.3% accuracy. The study further demonstrates that the primary bottleneck in KG-RAG lies in retrieval rather than reasoning.
+  [NeurIPS 2025][Graph Learning][KG-RAG] A systematic audit of 16 KGQA datasets reveals an average factual correctness of only 57% (WebQSP: 52%, MetaQA: 20%). The paper proposes KGQAGen…
 tags:
-  - NeurIPS 2025
-  - Graph Learning
-  - KG-RAG
-  - KGQA Benchmarking
-  - Dataset Quality Auditing
-  - SPARQL Validation
-  - Multi-hop Reasoning
+  - "NeurIPS 2025"
+  - "Graph Learning"
+  - "KG-RAG"
+  - "KGQA Benchmarking"
+  - "Dataset Quality Auditing"
+  - "SPARQL Validation"
+  - "Multi-hop Reasoning"
 date: 2026-05-08
 content_hash: daaf427ae85a189e
 ---

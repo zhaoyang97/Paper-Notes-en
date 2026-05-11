@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Boosting Multimodal Learning via Disentangled Gradient Learning
 description: >-
-  [ICCV 2025][Signal & Communication][Multimodal Learning] This paper reveals an optimization conflict between modality encoders and fusion modules in multimodal learning — the fusion module suppresses gradients propagated back to individual modality encoders, causing even the dominant modality to underperform its unimodal counterpart. The paper proposes the Disentangled Gradient Learning (DGL) framework, which addresses this issue by cutting the gradient path from the fusion module to the encoders and replacing it with independent unimodal losses.
+  [ICCV 2025][Signal & Communication][Multimodal Learning] This paper reveals an optimization conflict between modality encoders and fusion modules in multimodal learning — the fusion module suppresses gradients propagated…
 tags:
-  - ICCV 2025
+  - "ICCV 2025"
   - "Signal & Communication"
-  - Multimodal Learning
-  - Gradient Disentanglement
-  - Modality Under-optimization
-  - Gradient Modulation
-  - Fusion Module Optimization
+  - "Multimodal Learning"
+  - "Gradient Disentanglement"
+  - "Modality Under-optimization"
+  - "Gradient Modulation"
+  - "Fusion Module Optimization"
 date: 2026-05-08
 content_hash: a9487b9388869373
 ---

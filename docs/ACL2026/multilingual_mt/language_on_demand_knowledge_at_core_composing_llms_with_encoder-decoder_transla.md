@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Language on Demand, Knowledge at Core: Composing LLMs with Encoder-Decoder Translation Models for Extensible Multilinguality
 description: >-
-  [ACL 2026][Multilingual LLM] This paper proposes XBridge, an architecture that composes pretrained multilingual encoder-decoder translation models (e.g., NLLB) with English-centric LLMs — the encoder handles multilingual understanding, the LLM handles knowledge reasoning, and the decoder handles multilingual generation. Lightweight mapping layers and optimal transport alignment are employed to bridge cross-model semantic gaps, yielding significant improvements over baselines on low-resource and unseen languages.
+  [ACL 2026][Multilingual & Machine Translation][Multilingual LLM] This paper proposes XBridge, an architecture that composes pretrained multilingual encoder-decoder translation models (e.g.…
 tags:
-  - ACL 2026
-  - Multilingual LLM
-  - Model Composition
-  - Encoder-Decoder Translation Model
-  - Optimal Transport Alignment
-  - Low-Resource Languages
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "Multilingual LLM"
+  - "Model Composition"
+  - "Encoder-Decoder Translation Model"
+  - "Optimal Transport Alignment"
+  - "Low-Resource Languages"
 date: 2026-05-08
 content_hash: 67571b3ee73a9aa6
 ---

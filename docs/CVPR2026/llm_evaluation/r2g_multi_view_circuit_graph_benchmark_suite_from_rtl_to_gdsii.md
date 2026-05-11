@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] R2G: A Multi-View Circuit Graph Benchmark Suite from RTL to GDSII
 description: >-
-  [CVPR 2026][LLM Evaluation][circuit graph] This paper introduces R2G, the first standardized multi-view circuit graph benchmark suite, providing five stage-aware graph representations with information equivalence across 30 IP cores. A systematic study reveals that graph representation choice has a greater impact on performance than GNN model choice.
+  [CVPR 2026][LLM Evaluation][circuit graph] This paper introduces R2G, the first standardized multi-view circuit graph benchmark suite…
 tags:
-  - CVPR 2026
-  - LLM Evaluation
-  - circuit graph
-  - GNN benchmark
-  - multi-view
-  - physical design
-  - EDA
+  - "CVPR 2026"
+  - "LLM Evaluation"
+  - "circuit graph"
+  - "GNN benchmark"
+  - "multi-view"
+  - "physical design"
+  - "EDA"
 date: 2026-05-08
 content_hash: d352ce3f222fd464
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dita: Scaling Diffusion Transformer for Generalist Vision-Language-Action Policy
 description: >-
-  [ICCV 2025][Multimodal VLM][VLA] This paper proposes Dita (Diffusion Transformer Policy), which, unlike prior methods that denoise on compressed embeddings using shallow networks, adopts in-context conditioning to directly condition denoising on raw visual tokens. A causal Transformer processes the full token sequence of language, images, timesteps, and noisy actions. With 334M parameters, Dita achieves state-of-the-art or competitive performance on SimplerEnv zero-shot, LIBERO, CALVIN, and other benchmarks.
+  [ICCV 2025][Multimodal VLM][VLA] This paper proposes Dita (Diffusion Transformer Policy), which, unlike prior methods that denoise on compressed embeddings using shallow networks…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - VLA
-  - diffusion policy
-  - DiT
-  - in-context conditioning
-  - cross-embodiment
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "VLA"
+  - "diffusion policy"
+  - "DiT"
+  - "in-context conditioning"
+  - "cross-embodiment"
 date: 2026-05-08
 content_hash: ae48ec0ddfed1d42
 ---

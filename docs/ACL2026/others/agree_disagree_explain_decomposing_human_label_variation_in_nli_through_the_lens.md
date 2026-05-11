@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Agree, Disagree, Explain: Decomposing Human Label Variation in NLI through the Lens of Explanations
 description: >-
-  [ACL 2026][annotation disagreement] This paper extends the LiTEx reasoning taxonomy from "label-consistent, explanation-variant" settings to label-disagreement scenarios, finding that annotators may share similar reasoning strategies despite assigning different labels, and that reasoning category agreement better reflects the semantic similarity of explanations than label agreement alone.
+  [ACL 2026][annotation disagreement] This paper extends the LiTEx reasoning taxonomy from "label-consistent, explanation-variant" settings to label-disagreement scenarios…
 tags:
-  - ACL 2026
-  - annotation disagreement
-  - natural language inference
-  - LiTEx taxonomy
-  - reasoning strategies
-  - human label variation
+  - "ACL 2026"
+  - "annotation disagreement"
+  - "natural language inference"
+  - "LiTEx taxonomy"
+  - "reasoning strategies"
+  - "human label variation"
 date: 2026-05-08
 content_hash: 274509ce6c278bae
 ---

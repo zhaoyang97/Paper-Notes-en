@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Moment Quantization for Video Temporal Grounding
 description: >-
-  [ICCV 2025][Video Understanding][Video temporal grounding] This paper proposes MQVTG, which for the first time introduces vector quantization into video temporal grounding (VTG) by mapping video clips to discrete vectors via a moment codebook and soft quantization, thereby enhancing foreground/background discriminability and achieving state-of-the-art performance on 6 benchmarks.
+  [ICCV 2025][Video Understanding][Video temporal grounding] This paper proposes MQVTG, which for the first time introduces vector quantization into video temporal grounding (VTG) by mapping video clips to discrete vectors…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - Video temporal grounding
-  - vector quantization
-  - moment codebook
-  - highlight detection
-  - discrete representation learning
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "Video temporal grounding"
+  - "vector quantization"
+  - "moment codebook"
+  - "highlight detection"
+  - "discrete representation learning"
 date: 2026-05-08
 content_hash: 44a2c1a837c5846f
 ---

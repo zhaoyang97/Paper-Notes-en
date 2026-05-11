@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Is On-Policy Data always the Best Choice for Direct Preference Optimization-based LM Alignment?
 description: >-
-  [ICLR 2026][LLM Alignment][on-policy vs off-policy] This paper challenges the prevailing assumption that on-policy data is always superior, revealing that LLM alignment comprises two distinct stages — preference injection (requiring high-diversity off-policy data) and preference fine-tuning (requiring high-quality on-policy data) — with the optimal data type varying across models and stages. A boundary detection algorithm incurring only 3.2% additional computational overhead is proposed and validated across 5 models × 55 configurations.
+  [ICLR 2026][LLM Alignment][on-policy vs off-policy] This paper challenges the prevailing assumption that on-policy data is always superior…
 tags:
-  - ICLR 2026
-  - LLM Alignment
-  - on-policy vs off-policy
-  - alignment stage
-  - preference injection
-  - preference fine-tuning
-  - data selection
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "on-policy vs off-policy"
+  - "alignment stage"
+  - "preference injection"
+  - "preference fine-tuning"
+  - "data selection"
 date: 2026-05-08
 content_hash: 847b856cc10259b5
 ---

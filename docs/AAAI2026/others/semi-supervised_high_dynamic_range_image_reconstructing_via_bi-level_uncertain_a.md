@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Semi-Supervised High Dynamic Range Image Reconstructing via Bi-Level Uncertain Area Masking
 description: >-
-  [AAAI 2026][HDR reconstruction] This paper proposes a semi-supervised HDR reconstruction framework that evaluates pseudo HDR label quality via an **uncertainty estimation branch**, masking unreliable regions at both the patch and pixel levels. Using only 6.7% of HDR ground-truth annotations, the method achieves performance comparable to fully supervised state-of-the-art.
+  [AAAI 2026][HDR reconstruction] This paper proposes a semi-supervised HDR reconstruction framework that evaluates pseudo HDR label quality via an **uncertainty estimation branch**…
 tags:
-  - AAAI 2026
-  - HDR reconstruction
-  - semi-supervised learning
-  - uncertainty estimation
-  - pseudo labels
-  - bi-level masking
+  - "AAAI 2026"
+  - "HDR reconstruction"
+  - "semi-supervised learning"
+  - "uncertainty estimation"
+  - "pseudo labels"
+  - "bi-level masking"
 date: 2026-05-08
 content_hash: 1272cd381d5792ec
 ---

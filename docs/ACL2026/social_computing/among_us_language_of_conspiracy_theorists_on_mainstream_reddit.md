@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Among Us: Language of Conspiracy Theorists on Mainstream Reddit
 description: >-
-  [ACL 2026][Social Computing][conspiracy theories] Analyzing 500 million Reddit comments over 10 years of longitudinal data, this study finds that users active in conspiracy communities exhibit detectable unique linguistic patterns in mainstream communities (average 87% classification accuracy), but these patterns are highly context-dependent—community-specific models outperform global models by up to 17 percentage points.
+  [ACL 2026][Social Computing][conspiracy theories] Analyzing 500 million Reddit comments over 10 years of longitudinal data, this study finds that users active in conspiracy communities exhibit detectable unique linguisti…
 tags:
-  - ACL 2026
-  - Social Computing
-  - conspiracy theories
-  - linguistic features
-  - Reddit analysis
-  - psycholinguistics
-  - community adaptability
+  - "ACL 2026"
+  - "Social Computing"
+  - "conspiracy theories"
+  - "linguistic features"
+  - "Reddit analysis"
+  - "psycholinguistics"
+  - "community adaptability"
 date: 2026-05-08
 content_hash: d1e601467bf457c4
 ---

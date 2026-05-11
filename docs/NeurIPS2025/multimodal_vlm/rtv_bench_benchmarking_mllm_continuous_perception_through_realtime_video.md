@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RTV-Bench: Benchmarking MLLM Continuous Perception, Understanding and Reasoning through Real-Time Video
 description: >-
-  [NeurIPS 2025][Multimodal VLM][real-time video understanding] This paper proposes RTV-Bench, a fine-grained evaluation benchmark for assessing the continuous real-time video analysis capabilities of MLLMs. Comprising 552 videos and 4,608 QA pairs, it comprehensively evaluates model perception, understanding, and reasoning in dynamic video streams through a multi-timestamp QA mechanism, hierarchical question structure, and multi-dimensional assessment.
+  [NeurIPS 2025][Multimodal VLM][real-time video understanding] This paper proposes RTV-Bench, a fine-grained evaluation benchmark for assessing the continuous real-time video analysis capabilities of MLLMs. Comprising 552…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - real-time video understanding
-  - multimodal large model evaluation
-  - continuous analysis
-  - multi-timestamp QA
-  - video benchmark
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "real-time video understanding"
+  - "multimodal large model evaluation"
+  - "continuous analysis"
+  - "multi-timestamp QA"
+  - "video benchmark"
 date: 2026-05-08
 content_hash: 4db29fdfa73fd00c
 ---

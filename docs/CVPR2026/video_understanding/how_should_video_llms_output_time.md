@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] How Should Video LLMs Output Time? An Analysis of Efficient Temporal Grounding Paradigms
 description: >-
-  [CVPR 2026][Video Understanding][Video Temporal Grounding] This paper compares three mainstream temporal output paradigms for video temporal grounding (VTG) — text-number generation, temporal token generation, and continuous time decoding — within a unified framework, finding that the continuous distribution paradigm consistently achieves the best efficiency–accuracy Pareto frontier.
+  [CVPR 2026][Video Understanding][Video Temporal Grounding] This paper compares three mainstream temporal output paradigms for video temporal grounding (VTG) — text-number generation, temporal token generation…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Video Temporal Grounding
-  - Multimodal Large Language Models
-  - Temporal Output Paradigm
-  - Efficiency Analysis
-  - Compact Models
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Video Temporal Grounding"
+  - "Multimodal Large Language Models"
+  - "Temporal Output Paradigm"
+  - "Efficiency Analysis"
+  - "Compact Models"
 date: 2026-05-08
 content_hash: 2d8832543013cc95
 ---

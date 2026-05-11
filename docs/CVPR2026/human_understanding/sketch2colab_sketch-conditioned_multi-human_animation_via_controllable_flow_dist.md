@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Sketch2Colab: Sketch-Conditioned Multi-Human Animation via Controllable Flow Distillation
 description: >-
-  [CVPR 2026][Human Understanding][Multi-human motion generation] This paper proposes Sketch2Colab, which distills a sketch-driven diffusion prior into a rectified flow student network, and combines energy guidance with continuous-time Markov chain (CTMC) discrete event planning to generate coordinated multi-human–object interaction 3D motions from storyboard sketches, achieving state-of-the-art constraint compliance and perceptual quality on CORE4D and InterHuman.
+  [CVPR 2026][Human Understanding][Multi-human motion generation] This paper proposes Sketch2Colab, which distills a sketch-driven diffusion prior into a rectified flow student network…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Multi-human motion generation
-  - sketch guidance
-  - rectified flow distillation
-  - human-object-human collaboration
-  - CTMC discrete events
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Multi-human motion generation"
+  - "sketch guidance"
+  - "rectified flow distillation"
+  - "human-object-human collaboration"
+  - "CTMC discrete events"
 date: 2026-05-08
 content_hash: c5d155c4b3fe0c3c
 ---

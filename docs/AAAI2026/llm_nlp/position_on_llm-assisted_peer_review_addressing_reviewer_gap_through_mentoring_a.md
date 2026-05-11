@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Position on LLM-Assisted Peer Review: Addressing Reviewer Gap through Mentoring and Feedback
 description: >-
-  [AAAI 2026][LLM/NLP][LLM-assisted peer review] This position paper proposes shifting the role of LLMs in peer review from "automatically generating reviews" to "augmenting human reviewer capabilities" — via an LLM-driven mentoring system (three-phase training + certification) and a feedback system (violation detection + evidence-based feedback + reliability testing) to close the reviewer quality gap.
+  [AAAI 2026][LLM/NLP][LLM-assisted peer review] This position paper proposes shifting the role of LLMs in peer review from "automatically generating reviews" to "augmenting human reviewer capabilities" — via an LLM-driven…
 tags:
-  - AAAI 2026
-  - LLM/NLP
-  - LLM-assisted peer review
-  - peer review
-  - mentoring
-  - review quality
-  - position paper
+  - "AAAI 2026"
+  - "LLM/NLP"
+  - "LLM-assisted peer review"
+  - "peer review"
+  - "mentoring"
+  - "review quality"
+  - "position paper"
 date: 2026-05-08
 content_hash: 501058759c683715
 ---

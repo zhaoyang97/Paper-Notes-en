@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PoliCon: Evaluating LLMs on Achieving Diverse Political Consensus Objectives
 description: >-
-  [ICLR 2026][AIGC Detection][Political Consensus] The PoliCon benchmark is constructed from 2,225 high-quality deliberation records from the European Parliament (2009–2022) to evaluate LLMs' ability to draft consensus resolutions under diverse voting mechanisms, power structures, and political objectives. Results show that frontier models perform reasonably well on simple majority tasks but fall significantly short on two-thirds majority tasks and security-related topics.
+  [ICLR 2026][AIGC Detection][Political Consensus] The PoliCon benchmark is constructed from 2,225 high-quality deliberation records from the European Parliament (2009–2022) to evaluate LLMs' ability to draft consensus res…
 tags:
-  - ICLR 2026
-  - AIGC Detection
-  - Political Consensus
-  - LLM Evaluation
-  - European Parliament
-  - Social Choice Theory
-  - Vote Simulation
+  - "ICLR 2026"
+  - "AIGC Detection"
+  - "Political Consensus"
+  - "LLM Evaluation"
+  - "European Parliament"
+  - "Social Choice Theory"
+  - "Vote Simulation"
 date: 2026-05-08
 content_hash: 3fa13b79d7ce3f16
 ---

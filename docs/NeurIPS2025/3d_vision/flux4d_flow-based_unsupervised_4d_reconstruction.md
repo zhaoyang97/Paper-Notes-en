@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Flux4D: Flow-based Unsupervised 4D Reconstruction
 description: >-
-  [NeurIPS 2025][3D Vision][4D reconstruction] Flux4D is proposed as an unsupervised and generalizable 4D dynamic driving scene reconstruction framework. It employs a feed-forward network to directly predict 3D Gaussians and their motion velocities, achieving large-scale scene reconstruction using only photometric loss and a static-preference regularization. The method surpasses all unsupervised approaches on PandaSet and Waymo while approaching the performance of supervised methods.
+  [NeurIPS 2025][3D Vision][4D reconstruction] Flux4D is proposed as an unsupervised and generalizable 4D dynamic driving scene reconstruction framework. It employs a feed-forward network to directly predict 3D Gaussians a…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - 4D reconstruction
-  - unsupervised
-  - 3D Gaussian
-  - scene flow
-  - autonomous driving
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "4D reconstruction"
+  - "unsupervised"
+  - "3D Gaussian"
+  - "scene flow"
+  - "autonomous driving"
 date: 2026-05-08
 content_hash: d1f74e86b3da3d36
 ---

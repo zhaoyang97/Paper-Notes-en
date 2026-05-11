@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FedSVD: Adaptive Orthogonalization for Private Federated Learning with LoRA
 description: >-
-  [NeurIPS 2025][LLM Safety][Federated Learning] FedSVD proposes globally reparameterizing LoRA matrices via SVD, updating the $A$ matrix each communication round using the right singular vectors of the aggregated $BA$ product. This approach avoids the quadratic noise amplification under DP-SGD while preserving the adaptive capacity of $A$, consistently outperforming fixed-$A$ baselines across multiple NLU benchmarks.
+  [NeurIPS 2025][LLM Safety][Federated Learning] FedSVD proposes globally reparameterizing LoRA matrices via SVD, updating the $A$ matrix each communication round using the right singular vectors of the aggregated $BA$ pro…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - Federated Learning
-  - Differential Privacy
-  - LoRA
-  - SVD
-  - Noise Amplification
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "Federated Learning"
+  - "Differential Privacy"
+  - "LoRA"
+  - "SVD"
+  - "Noise Amplification"
 date: 2026-05-08
 content_hash: f758a479faa5f8ca
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SPIRAL: Semantic-Aware Progressive LiDAR Scene Generation and Understanding
 description: >-
-  [NeurIPS 2025][Autonomous Driving][LiDAR Generation] SPIRAL proposes a semantic-aware range-view LiDAR diffusion model that jointly generates depth maps, reflectance images, and semantic segmentation maps. By introducing progressive semantic prediction and a closed-loop inference mechanism to enhance cross-modal consistency, the model achieves state-of-the-art performance with a minimal parameter count of 61M.
+  [NeurIPS 2025][Autonomous Driving][LiDAR Generation] SPIRAL proposes a semantic-aware range-view LiDAR diffusion model that jointly generates depth maps, reflectance images…
 tags:
-  - NeurIPS 2025
-  - Autonomous Driving
-  - LiDAR Generation
-  - Diffusion Models
-  - Semantic Segmentation
-  - Range-View
-  - Closed-Loop Inference
+  - "NeurIPS 2025"
+  - "Autonomous Driving"
+  - "LiDAR Generation"
+  - "Diffusion Models"
+  - "Semantic Segmentation"
+  - "Range-View"
+  - "Closed-Loop Inference"
 date: 2026-05-08
 content_hash: fb8534225e4d1ecb
 ---

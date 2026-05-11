@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Sparse4DGS: 4D Gaussian Splatting for Sparse-Frame Dynamic Scene Reconstruction
 description: >-
-  [AAAI 2026][3D Vision][dynamic scene reconstruction] Sparse4DGS is proposed as the first method for sparse-frame dynamic scene reconstruction, achieving high-fidelity 4D scene reconstruction from sparse video frames via two core modules: Texture-Aware Deformation Regularization (TADR) and Texture-Aware Canonical Optimization (TACO).
+  [AAAI 2026][3D Vision][dynamic scene reconstruction] Sparse4DGS is proposed as the first method for sparse-frame dynamic scene reconstruction…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - dynamic scene reconstruction
-  - 4D Gaussian splatting
-  - sparse frames
-  - texture-awareness
-  - stochastic gradient Langevin dynamics
+  - "AAAI 2026"
+  - "3D Vision"
+  - "dynamic scene reconstruction"
+  - "4D Gaussian splatting"
+  - "sparse frames"
+  - "texture-awareness"
+  - "stochastic gradient Langevin dynamics"
 date: 2026-05-08
 content_hash: 612add3f6060e8f4
 ---

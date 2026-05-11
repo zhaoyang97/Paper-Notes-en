@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Random Wins All: Rethinking Grouping Strategies for Vision Tokens
 description: >-
-  [CVPR 2026][3D Vision][Vision Transformer] This paper proposes a minimalist random grouping strategy to replace various elaborately designed token grouping methods in Vision Transformers. The approach achieves near-universal improvements over all baselines across image classification, object detection, semantic segmentation, point cloud segmentation, and VLMs, and provides a four-dimensional explanation for its success: positional information, per-head feature diversity, global receptive field, and fixed grouping patterns.
+  [CVPR 2026][3D Vision][Vision Transformer] This paper proposes a minimalist random grouping strategy to replace various elaborately designed token grouping methods in Vision Transformers. The approach achieves near-unive…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Vision Transformer
-  - Token Grouping
-  - Random Grouping
-  - Attention Mechanism
-  - Efficiency Optimization
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Vision Transformer"
+  - "Token Grouping"
+  - "Random Grouping"
+  - "Attention Mechanism"
+  - "Efficiency Optimization"
 date: 2026-05-08
 content_hash: a1d7899437009752
 ---

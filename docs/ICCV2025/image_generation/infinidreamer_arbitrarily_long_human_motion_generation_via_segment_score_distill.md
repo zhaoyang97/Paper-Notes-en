@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] InfiniDreamer: Arbitrarily Long Human Motion Generation via Segment Score Distillation
 description: >-
-  [ICCV 2025][Image Generation][Long-sequence motion generation] InfiniDreamer leverages a pretrained short-sequence motion diffusion model as a prior and proposes Segment Score Distillation (SSD), an optimization method that iteratively refines overlapping short segments within a coarsely initialized long motion sequence, enabling arbitrarily long human motion generation without requiring additional long-sequence training data.
+  [ICCV 2025][Image Generation][Long-sequence motion generation] InfiniDreamer leverages a pretrained short-sequence motion diffusion model as a prior and proposes Segment Score Distillation (SSD)…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Long-sequence motion generation
-  - Score Distillation
-  - sliding window
-  - training-free
-  - motion diffusion model
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Long-sequence motion generation"
+  - "Score Distillation"
+  - "sliding window"
+  - "training-free"
+  - "motion diffusion model"
 date: 2026-05-08
 content_hash: f3fe79d3dd3ba7a2
 ---

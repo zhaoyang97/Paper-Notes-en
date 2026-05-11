@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Just-in-Time: Training-Free Spatial Acceleration for Diffusion Transformers
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Transformer] This paper proposes the Just-in-Time (JiT) framework, which dynamically selects sparse anchor tokens in the spatial domain to drive generative ODE evolution, and introduces a deterministic micro-flow (DMF) mechanism to ensure seamless activation of newly included tokens. JiT achieves up to 7× acceleration on FLUX.1-dev with negligible quality degradation.
+  [CVPR 2026][Image Generation][Diffusion Transformer] This paper proposes the Just-in-Time (JiT) framework, which dynamically selects sparse anchor tokens in the spatial domain to drive generative ODE evolution…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Transformer
-  - spatial acceleration
-  - training-free
-  - Flow Matching
-  - token sparsification
-  - ODE solving
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Transformer"
+  - "spatial acceleration"
+  - "training-free"
+  - "Flow Matching"
+  - "token sparsification"
+  - "ODE solving"
 date: 2026-05-08
 content_hash: a53a183a419c00b5
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Harnessing Uncertainty: Entropy-Modulated Policy Gradients for Long-Horizon LLM Agents
 description: >-
-  [ICLR 2026][LLM Agent][policy gradients] This paper proposes EMPG, a framework that dynamically modulates policy gradient magnitudes using step-level entropy (uncertainty) to address the credit assignment problem under sparse rewards in long-horizon LLM agent tasks. EMPG achieves significant improvements over GRPO and DAPO on three benchmarks: WebShop, ALFWorld, and Deep Search.
+  [ICLR 2026][LLM Agent][policy gradients] This paper proposes EMPG, a framework that dynamically modulates policy gradient magnitudes using step-level entropy (uncertainty) to address the credit assignment problem under s…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - policy gradients
-  - entropy modulation
-  - long-horizon agents
-  - credit assignment
-  - reinforcement learning
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "policy gradients"
+  - "entropy modulation"
+  - "long-horizon agents"
+  - "credit assignment"
+  - "reinforcement learning"
 date: 2026-05-08
 content_hash: 65fc7a1a8519f8aa
 ---

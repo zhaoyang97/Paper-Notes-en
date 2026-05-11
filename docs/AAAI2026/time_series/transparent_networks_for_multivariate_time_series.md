@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Transparent Networks for Multivariate Time Series
 description: >-
-  [AAAI 2026][Time Series][Interpretable Models] This paper proposes GATSM (Generalized Additive Time Series Model), a transparent neural network for time series that employs weight-sharing feature networks to learn feature representations and masked multi-head attention to capture temporal patterns. GATSM achieves performance comparable to black-box models such as Transformers while maintaining full interpretability.
+  [AAAI 2026][Time Series][Interpretable Models] This paper proposes GATSM (Generalized Additive Time Series Model), a transparent neural network for time series that employs weight-sharing feature networks to learn featur…
 tags:
-  - AAAI 2026
-  - Time Series
-  - Interpretable Models
-  - Generalized Additive Models
-  - Transparent Networks
-  - Attention Mechanism
+  - "AAAI 2026"
+  - "Time Series"
+  - "Interpretable Models"
+  - "Generalized Additive Models"
+  - "Transparent Networks"
+  - "Attention Mechanism"
 date: 2026-05-08
 content_hash: a8c7f8d40d55e59c
 ---

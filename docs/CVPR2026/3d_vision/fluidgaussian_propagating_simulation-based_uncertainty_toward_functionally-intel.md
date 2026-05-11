@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FluidGaussian: Propagating Simulation-Based Uncertainty Toward Functionally-Intelligent 3D Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][3D Gaussian Splatting] This paper proposes FluidGaussian, which guides active view selection in 3D reconstruction using uncertainty metrics propagated through fluid simulation, yielding reconstructions that are not only visually faithful but also physically plausible under interactive simulation.
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] This paper proposes FluidGaussian, which guides active view selection in 3D reconstruction using uncertainty metrics propagated through fluid simulation…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - physics-aware reconstruction
-  - fluid simulation
-  - active view selection
-  - uncertainty quantification
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "physics-aware reconstruction"
+  - "fluid simulation"
+  - "active view selection"
+  - "uncertainty quantification"
 date: 2026-05-08
 content_hash: d897df8bd077556e
 ---

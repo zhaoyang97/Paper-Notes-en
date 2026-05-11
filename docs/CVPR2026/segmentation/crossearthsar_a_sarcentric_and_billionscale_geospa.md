@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CrossEarth-SAR: A SAR-Centric and Billion-Scale Geospatial Foundation Model for Domain Generalizable Semantic Segmentation
 description: >-
-  [CVPR 2026][Segmentation][SAR] This paper introduces CrossEarth-SAR, the first billion-scale SAR visual foundation model, which replaces the FFN in each Transformer block of a DINOv2 ViT backbone with a physics-guided sparse Mixture-of-Experts (MoE) layer. Routing is conditioned on three SAR physical descriptors—directional entropy, equivalent number of looks, and local roughness. The work also contributes a 200K-scale cross-domain pretraining dataset and a benchmark of 22 evaluation settings covering 8 types of domain shift. CrossEarth-SAR achieves state-of-the-art performance on 20 out of 22 cross-domain semantic segmentation benchmarks.
+  [CVPR 2026][Segmentation][SAR] This paper introduces CrossEarth-SAR, the first billion-scale SAR visual foundation model, which replaces the FFN in each Transformer block of a DINOv2 ViT backbone with a physics-guided sp…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - SAR
-  - Foundation Model
-  - Physics-Guided MoE
-  - Domain Generalization
-  - Semantic Segmentation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "SAR"
+  - "Foundation Model"
+  - "Physics-Guided MoE"
+  - "Domain Generalization"
+  - "Semantic Segmentation"
 date: 2026-05-08
 content_hash: 517a6dff9e39c736
 ---

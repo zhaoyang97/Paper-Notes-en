@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AVA-Bench: Atomic Visual Ability Benchmark for Vision Foundation Models
 description: >-
-  [CVPR 2026][3D Vision][vision foundation model evaluation] This paper proposes AVA-Bench, the first systematic evaluation benchmark that decouples the capabilities of vision foundation models (VFMs) into 14 atomic visual abilities (AVAs). By aligning training-test distributions and isolating individual abilities during evaluation, AVA-Bench precisely identifies the strengths and weaknesses of VFMs, and reveals that a 0.5B small model can maintain VFM ranking consistency comparable to a 7B model.
+  [CVPR 2026][3D Vision][vision foundation model evaluation] This paper proposes AVA-Bench, the first systematic evaluation benchmark that decouples the capabilities of vision foundation models (VFMs) into 14 atomic visual…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - vision foundation model evaluation
-  - atomic visual ability
-  - benchmark
-  - VFM
-  - multimodal assessment
+  - "CVPR 2026"
+  - "3D Vision"
+  - "vision foundation model evaluation"
+  - "atomic visual ability"
+  - "benchmark"
+  - "VFM"
+  - "multimodal assessment"
 date: 2026-05-08
 content_hash: 444349214442b1c6
 ---

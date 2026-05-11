@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Structure-based RNA Design by Step-wise Optimization of Latent Diffusion Model
 description: >-
-  [AAAI 2026][Image Generation][Latent Diffusion Model] This paper proposes SOLD, a framework that integrates a latent diffusion model (LDM) with reinforcement learning (RL) via a step-wise single-step sampling optimization strategy to directly optimize non-differentiable structural metrics in RNA inverse folding — including secondary structure similarity (SS), minimum free energy (MFE), and LDDT — achieving comprehensive improvements over existing methods across multiple metrics.
+  [AAAI 2026][Image Generation][Latent Diffusion Model] This paper proposes SOLD, a framework that integrates a latent diffusion model (LDM) with reinforcement learning (RL) via a step-wise single-step sampling optimizatio…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Latent Diffusion Model
-  - RNA Inverse Folding
-  - Reinforcement Learning
-  - PPO
-  - Step-wise Optimization
-  - RNA-FM
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Latent Diffusion Model"
+  - "RNA Inverse Folding"
+  - "Reinforcement Learning"
+  - "PPO"
+  - "Step-wise Optimization"
+  - "RNA-FM"
 date: 2026-05-08
 content_hash: 630974c313730861
 ---

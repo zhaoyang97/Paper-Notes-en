@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Detect All-Type Deepfake Audio: Wavelet Prompt Tuning for Enhanced Auditory Perception
 description: >-
-  [AAAI 2026][AI Safety][deepfake audio detection] This paper establishes the first all-type (speech/sound/singing/music) audio deepfake detection benchmark and proposes Wavelet Prompt Tuning (WPT), which enhances full-band frequency perception of SSL features via discrete wavelet transform. Without increasing trainable parameters, WPT surpasses full fine-tuning and achieves an average EER of only 3.58% under co-training.
+  [AAAI 2026][AI Safety][deepfake audio detection] This paper establishes the first all-type (speech/sound/singing/music) audio deepfake detection benchmark and proposes Wavelet Prompt Tuning (WPT)…
 tags:
-  - AAAI 2026
-  - AI Safety
-  - deepfake audio detection
-  - wavelet prompt tuning
-  - self-supervised learning
-  - cross-type detection
-  - frequency domain analysis
+  - "AAAI 2026"
+  - "AI Safety"
+  - "deepfake audio detection"
+  - "wavelet prompt tuning"
+  - "self-supervised learning"
+  - "cross-type detection"
+  - "frequency domain analysis"
 date: 2026-05-08
 content_hash: 12136cfbb362872b
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] SynWeather: Weather Observation Data Synthesis across Multiple Regions and Variables via a General Diffusion Transformer
 description: >-
-  [AAAI 2026][weather data synthesis] This work introduces SynWeather, the first unified multi-region multi-variable weather observation synthesis dataset (covering 4 regions × 4 variables × 6 satellites), and proposes SynWeatherDiff, a general probabilistic generative model based on a Diffusion Transformer. By leveraging text prompts to distinguish region–variable task combinations, SynWeatherDiff outperforms both task-specific models and existing general-purpose models across multiple synthesis tasks.
+  [AAAI 2026][weather data synthesis] This work introduces SynWeather, the first unified multi-region multi-variable weather observation synthesis dataset (covering 4 regions × 4 variables × 6 satellites)…
 tags:
-  - AAAI 2026
-  - weather data synthesis
-  - diffusion Transformer
-  - multi-region multi-variable
-  - radar reflectivity
-  - precipitation estimation
+  - "AAAI 2026"
+  - "weather data synthesis"
+  - "diffusion Transformer"
+  - "multi-region multi-variable"
+  - "radar reflectivity"
+  - "precipitation estimation"
 date: 2026-05-08
 content_hash: 1af2fc927a6eefcd
 ---

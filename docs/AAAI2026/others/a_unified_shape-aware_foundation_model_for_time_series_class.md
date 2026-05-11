@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] UniShape: A Unified Shape-Aware Foundation Model for Time Series Classification
 description: >-
-  [AAAI 2026][Time Series Classification] This paper proposes UniShape — the first shape-aware foundation model for time series classification (TSC). It captures class-discriminative temporal patterns via a shape-aware adapter that adaptively aggregates multi-scale subsequences (shapes), and jointly learns transferable shapelet representations at both instance and shape levels through a prototype-based pretraining module. Pretrained on 1.89M samples, UniShape achieves an average accuracy of 0.8708 across 128 UCR datasets, surpassing all baselines.
+  [AAAI 2026][Time Series Classification] This paper proposes UniShape — the first shape-aware foundation model for time series classification (TSC). It captures class-discriminative temporal patterns via a shape-aware ada…
 tags:
-  - AAAI 2026
-  - Time Series Classification
-  - Foundation Model
-  - Shapelet
-  - Multi-scale
-  - Prototype Learning
+  - "AAAI 2026"
+  - "Time Series Classification"
+  - "Foundation Model"
+  - "Shapelet"
+  - "Multi-scale"
+  - "Prototype Learning"
 date: 2026-05-08
 content_hash: d8380e09dfe4b051
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TokenUnify: Scaling Up Autoregressive Pretraining for Neuron Segmentation
 description: >-
-  [ICCV 2025][3D Vision][Autoregressive pretraining] TokenUnify is proposed to unify three complementary learning objectives—random token prediction, next-token prediction, and next-all-token prediction—enabling hierarchical predictive coding on large-scale electron microscopy data. The method reduces autoregressive error accumulation from $O(K)$ to $O(\sqrt{K})$, achieving a 44% improvement on downstream neuron segmentation.
+  [ICCV 2025][3D Vision][Autoregressive pretraining] TokenUnify is proposed to unify three complementary learning objectives—random token prediction, next-token prediction…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Autoregressive pretraining
-  - neuron segmentation
-  - electron microscopy
-  - Mamba architecture
-  - hierarchical predictive coding
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Autoregressive pretraining"
+  - "neuron segmentation"
+  - "electron microscopy"
+  - "Mamba architecture"
+  - "hierarchical predictive coding"
 date: 2026-05-08
 content_hash: b4d6783f099e28ae
 ---

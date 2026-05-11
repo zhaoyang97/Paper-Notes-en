@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Elucidated Rolling Diffusion Models for Probabilistic Forecasting of Complex Dynamics
 description: >-
-  [NeurIPS 2025][Image Generation][rolling diffusion] This paper proposes ERDM, the first framework to successfully unify the Rolling Diffusion paradigm with the principled design choices of EDM (noise schedule, preconditioning, Heun sampler). By employing a progressive noise schedule that explicitly models growing uncertainty, ERDM significantly outperforms autoregressive EDM baselines on Navier-Stokes and ERA5 weather forecasting benchmarks.
+  [NeurIPS 2025][Image Generation][rolling diffusion] This paper proposes ERDM, the first framework to successfully unify the Rolling Diffusion paradigm with the principled design choices of EDM (noise schedule…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - rolling diffusion
-  - EDM
-  - probabilistic forecasting
-  - weather prediction
-  - Navier-Stokes
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "rolling diffusion"
+  - "EDM"
+  - "probabilistic forecasting"
+  - "weather prediction"
+  - "Navier-Stokes"
 date: 2026-05-08
 content_hash: abf3c60cf0cdcde4
 ---

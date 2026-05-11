@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FSOD-VFM: Few-Shot Object Detection with Vision Foundation Models and Graph Diffusion
 description: >-
-  [ICLR 2026][Object Detection][Few-shot object detection] This paper proposes a training-free few-shot object detection framework that combines three foundation models—UPN, SAM2, and DINOv2—for proposal generation and feature matching, and employs a graph diffusion algorithm to refine confidence scores and suppress fragmented proposals. The method achieves substantial improvements over prior state-of-the-art on Pascal-5i and COCO-20i.
+  [ICLR 2026][Object Detection][Few-shot object detection] This paper proposes a training-free few-shot object detection framework that combines three foundation models—UPN, SAM2…
 tags:
-  - ICLR 2026
-  - Object Detection
-  - Few-shot object detection
-  - vision foundation models
-  - graph diffusion
-  - training-free
-  - SAM2
+  - "ICLR 2026"
+  - "Object Detection"
+  - "Few-shot object detection"
+  - "vision foundation models"
+  - "graph diffusion"
+  - "training-free"
+  - "SAM2"
 date: 2026-05-08
 content_hash: 3174a2e4ca9b6c68
 ---

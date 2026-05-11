@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] FIPER: Factorized Features for Robust Image Super-Resolution and Compression
 description: >-
-  [NeurIPS 2025][Image Restoration][super-resolution] This paper proposes a Factorized Features representation that decomposes images into learnable non-uniform bases and spatially variant coefficients, augmented with sawtooth coordinate transformation and multi-frequency modulation. The approach achieves a 204.4% relative PSNR gain at 4× super-resolution (HAT-L-F vs. SwinIR) and a 21.09% BD-rate reduction over VTM in image compression.
+  [NeurIPS 2025][Image Restoration][super-resolution] This paper proposes a Factorized Features representation that decomposes images into learnable non-uniform bases and spatially variant coefficients…
 tags:
-  - NeurIPS 2025
-  - Image Restoration
-  - super-resolution
-  - image compression
-  - factorized features
-  - basis-coefficient decomposition
-  - coordinate transformation
-  - multi-frequency modulation
-  - multi-frame compression
+  - "NeurIPS 2025"
+  - "Image Restoration"
+  - "super-resolution"
+  - "image compression"
+  - "factorized features"
+  - "basis-coefficient decomposition"
+  - "coordinate transformation"
+  - "multi-frequency modulation"
+  - "multi-frame compression"
 date: 2026-05-08
 content_hash: a707b32ed028a593
 ---

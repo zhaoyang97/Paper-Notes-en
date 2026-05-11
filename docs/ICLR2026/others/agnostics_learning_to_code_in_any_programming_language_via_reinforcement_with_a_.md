@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Agnostics: Learning to Synthesize Code in Any Programming Language with a Universal RL Environment
 description: >-
-  [ICLR 2026][low-resource programming languages] This paper proposes Agnostics, a language-agnostic post-training pipeline that reformulates programming tasks as I/O behavioral specifications and trains LLMs with a universal verifier and GRPO-based reinforcement learning to generate code in any programming language. The approach enables a Qwen 4B model to match the performance of 16B–70B models on five low-resource languages: Lua, Julia, R, OCaml, and Fortran.
+  [ICLR 2026][low-resource programming languages] This paper proposes Agnostics, a language-agnostic post-training pipeline that reformulates programming tasks as I/O behavioral specifications and trains LLMs with a univer…
 tags:
-  - ICLR 2026
-  - low-resource programming languages
-  - RLVR
-  - language-agnostic verifier
-  - GRPO
-  - code execution sandbox
+  - "ICLR 2026"
+  - "low-resource programming languages"
+  - "RLVR"
+  - "language-agnostic verifier"
+  - "GRPO"
+  - "code execution sandbox"
 date: 2026-05-08
 content_hash: 0e8c10c8f383834e
 ---

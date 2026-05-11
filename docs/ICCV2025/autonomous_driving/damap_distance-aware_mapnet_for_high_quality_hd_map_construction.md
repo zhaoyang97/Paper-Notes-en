@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DAMap: Distance-aware MapNet for High Quality HD Map Construction
 description: >-
-  [ICCV 2025][Autonomous Driving][HD Map] This paper identifies two inherent deficiencies in current HD map construction methods regarding high-quality prediction — inappropriate classification labels and suboptimal task-specific features — and proposes DAMap (comprising three components: DAFL, HLS, and TMDA) to systematically address task misalignment, achieving consistent gains of 2–3 mAP across multiple baselines on NuScenes and Argoverse2.
+  [ICCV 2025][Autonomous Driving][HD Map] This paper identifies two inherent deficiencies in current HD map construction methods regarding high-quality prediction — inappropriate classification labels and suboptimal task-s…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - HD Map
-  - High-Quality Prediction
-  - Task Alignment
-  - Deformable Attention
-  - Focal Loss
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "HD Map"
+  - "High-Quality Prediction"
+  - "Task Alignment"
+  - "Deformable Attention"
+  - "Focal Loss"
 date: 2026-05-08
 content_hash: 85b16e9d7d22b861
 ---

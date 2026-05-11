@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Scaling Laws and Pathologies of Single-Layer PINNs: Network Width and PDE Nonlinearity
 description: >-
-  [Medical Imaging] This work establishes empirical scaling laws for single-layer PINNs on representative nonlinear PDEs, identifying a dual optimization failure: a width-scaling pathology (error does not decrease with width) and a compound pathology (nonlinearity exacerbates this failure), demonstrating that optimization rather than approximation capacity is the primary bottleneck.
+  [Medical Imaging] This work establishes empirical scaling laws for single-layer PINNs on representative nonlinear PDEs, identifying a dual optimization failure: a width-scaling pathology (error does not decrease with wid…
 tags:
-  - Medical Imaging
+  - "Medical Imaging"
 date: 2026-05-08
 content_hash: 7e43197bf1c9f351
 ---

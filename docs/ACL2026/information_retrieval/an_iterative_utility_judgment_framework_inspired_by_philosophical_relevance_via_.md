@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] An Iterative Utility Judgment Framework Inspired by Philosophical Relevance via LLMs
 description: >-
-  [ACL 2026][utility judgment] Inspired by Schutz's philosophical theory of relevance, this paper proposes ITEM, an iterative utility judgment framework that enables the three core RAG components—relevance ranking, utility judgment, and answer generation—to mutually and dynamically enhance one another, yielding improvements over baselines across retrieval, utility judgment, and QA tasks.
+  [ACL 2026][Information Retrieval & RAG][utility judgment] Inspired by Schutz's philosophical theory of relevance, this paper proposes ITEM, an iterative utility judgment framework that enables the three core RAG componen…
 tags:
-  - ACL 2026
-  - utility judgment
-  - philosophical relevance theory
-  - iterative framework
-  - RAG optimization
-  - LLM reasoning
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "utility judgment"
+  - "philosophical relevance theory"
+  - "iterative framework"
+  - "RAG optimization"
+  - "LLM reasoning"
 date: 2026-05-08
 content_hash: ca5bab06d42aa114
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Directional Convergence, Benign Overfitting of Gradient Descent in leaky ReLU two-layer Neural Networks
 description: >-
-  [ICLR2026][Optimization][benign overfitting] This paper provides the first proof of directional convergence of gradient descent in leaky ReLU two-layer neural networks, and on this basis establishes sufficient conditions for benign overfitting under a significantly broader mixed-data setting that goes well beyond nearly orthogonal data, while uncovering a novel phase transition phenomenon.
+  [ICLR2026][Optimization][benign overfitting] This paper provides the first proof of directional convergence of gradient descent in leaky ReLU two-layer neural networks…
 tags:
-  - ICLR2026
-  - Optimization
-  - benign overfitting
-  - directional convergence
-  - leaky ReLU
-  - implicit bias
-  - gradient descent
-  - neural networks
+  - "ICLR2026"
+  - "Optimization"
+  - "benign overfitting"
+  - "directional convergence"
+  - "leaky ReLU"
+  - "implicit bias"
+  - "gradient descent"
+  - "neural networks"
 date: 2026-05-08
 content_hash: 559546c238f44ec4
 ---

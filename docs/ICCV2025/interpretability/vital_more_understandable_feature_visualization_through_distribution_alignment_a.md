@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] VITAL: More Understandable Feature Visualization through Distribution Alignment and Relevant Information Flow
 description: >-
-  [ICCV 2025][Feature Visualization] This paper proposes VITAL, a feature visualization method that reframes the problem as aligning intermediate feature distributions with those of real images (rather than conventional activation maximization), and incorporates relevance scores to filter irrelevant features, producing neuron visualizations that are more interpretable to humans.
+  [ICCV 2025][Interpretability][Feature Visualization] This paper proposes VITAL, a feature visualization method that reframes the problem as aligning intermediate feature distributions with those of real images (rather th…
 tags:
-  - ICCV 2025
-  - Feature Visualization
-  - Explainable AI
-  - Distribution Matching
-  - Layer-wise Relevance Propagation
-  - Mechanistic Interpretability
+  - "ICCV 2025"
+  - "Interpretability"
+  - "Feature Visualization"
+  - "Explainable AI"
+  - "Distribution Matching"
+  - "Layer-wise Relevance Propagation"
+  - "Mechanistic Interpretability"
 date: 2026-05-08
 content_hash: fe83cada4379154d
 ---

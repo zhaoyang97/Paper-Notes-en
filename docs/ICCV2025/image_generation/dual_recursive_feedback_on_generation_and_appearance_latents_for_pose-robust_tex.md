@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Dual Recursive Feedback on Generation and Appearance Latents for Pose-Robust Text-to-Image Diffusion
 description: >-
-  [ICCV 2025][Image Generation][T2I diffusion model] This paper proposes **Dual Recursive Feedback (DRF)**, a training-free dual recursive feedback system that recursively refines intermediate latents via **appearance feedback** and **generation feedback**, addressing the insufficient structure/appearance disentanglement of controllable T2I diffusion models in class-invariant scenarios, thereby achieving fine-grained pose transfer and appearance fusion.
+  [ICCV 2025][Image Generation][T2I diffusion model] This paper proposes **Dual Recursive Feedback (DRF)**, a training-free dual recursive feedback system that recursively refines intermediate latents via **appearance feed…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - T2I diffusion model
-  - controllable generation
-  - pose transfer
-  - appearance fidelity
-  - Score Distillation
-  - training-free
+  - "ICCV 2025"
+  - "Image Generation"
+  - "T2I diffusion model"
+  - "controllable generation"
+  - "pose transfer"
+  - "appearance fidelity"
+  - "Score Distillation"
+  - "training-free"
 date: 2026-05-08
 content_hash: 7ada6e1e32d1c2e1
 ---

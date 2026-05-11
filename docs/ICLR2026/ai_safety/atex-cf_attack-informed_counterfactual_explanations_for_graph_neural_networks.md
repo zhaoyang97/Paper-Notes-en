@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ATEX-CF: Attack-Informed Counterfactual Explanations for Graph Neural Networks
 description: >-
-  [ICLR 2026][AI Safety][Graph Neural Networks] This paper proposes ATEX-CF, a framework that, for the first time, unifies the edge-addition strategy from adversarial attacks with the edge-deletion strategy from counterfactual explanations. Through joint optimization of prediction flipping, sparsity, and plausibility, ATEX-CF generates more faithful, concise, and plausible instance-level counterfactual explanations for GNNs.
+  [ICLR 2026][AI Safety][Graph Neural Networks] This paper proposes ATEX-CF, a framework that, for the first time, unifies the edge-addition strategy from adversarial attacks with the edge-deletion strategy from counterfac…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - Graph Neural Networks
-  - Counterfactual Explanations
-  - Adversarial Attacks
-  - Explainability
-  - Graph Structure Perturbation
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Graph Neural Networks"
+  - "Counterfactual Explanations"
+  - "Adversarial Attacks"
+  - "Explainability"
+  - "Graph Structure Perturbation"
 date: 2026-05-08
 content_hash: c1aa08db8e86a9d4
 ---

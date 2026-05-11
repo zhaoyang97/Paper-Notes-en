@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mozart: Modularized and Efficient MoE Training on 3.5D Wafer-Scale Chiplet Architectures
 description: >-
-  [NeurIPS 2025][LLM Efficiency][MoE] Mozart is an algorithm-hardware co-design framework that achieves over 1.9× training speedup on three MoE-LLMs via expert clustering and allocation, fine-grained streaming scheduling, and a 3.5D chiplet architecture (NoP-Tree + hierarchical memory).
+  [NeurIPS 2025][LLM Efficiency][MoE] Mozart is an algorithm-hardware co-design framework that achieves over 1.9× training speedup on three MoE-LLMs via expert clustering and allocation, fine-grained streaming scheduling…
 tags:
-  - NeurIPS 2025
-  - LLM Efficiency
-  - MoE
-  - chiplet architecture
-  - expert parallelism
-  - wafer-scale
-  - algorithm-hardware co-design
+  - "NeurIPS 2025"
+  - "LLM Efficiency"
+  - "MoE"
+  - "chiplet architecture"
+  - "expert parallelism"
+  - "wafer-scale"
+  - "algorithm-hardware co-design"
 date: 2026-05-08
 content_hash: 499694b29315e687
 ---

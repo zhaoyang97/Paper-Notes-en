@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] CARE: A Molecular-Guided Foundation Model with Adaptive Region Modeling for Whole Slide Image Analysis
 description: >-
-  [CVPR2026][Medical Imaging][Computational Pathology] This paper proposes CARE, a slide-level pathology foundation model that employs an Adaptive Region Generator (ARG) to partition WSIs into morphologically coherent irregular regions (analogous to word-level tokens in NLP), combined with two-stage pretraining via cross-modal alignment with RNA/protein expression profiles. Using approximately 1/10 the data of mainstream models, CARE achieves state-of-the-art average performance across 33 downstream tasks.
+  [CVPR2026][Medical Imaging][Computational Pathology] This paper proposes CARE, a slide-level pathology foundation model that employs an Adaptive Region Generator (ARG) to partition WSIs into morphologically coherent irre…
 tags:
-  - CVPR2026
-  - Medical Imaging
-  - Computational Pathology
-  - Whole Slide Image Analysis
-  - Foundation Model
-  - Adaptive Region Modeling
-  - Cross-modal Alignment
-  - RNA/Protein Guidance
+  - "CVPR2026"
+  - "Medical Imaging"
+  - "Computational Pathology"
+  - "Whole Slide Image Analysis"
+  - "Foundation Model"
+  - "Adaptive Region Modeling"
+  - "Cross-modal Alignment"
+  - "RNA/Protein Guidance"
 date: 2026-05-08
 content_hash: db49d9541920c7e0
 ---

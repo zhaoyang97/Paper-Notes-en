@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dual-IPO: Dual-Iterative Preference Optimization for Text-to-Video Generation
 description: >-
-  [ICLR 2026][LLM Alignment][Preference Optimization] This paper proposes the Dual-IPO framework, which performs multi-round bidirectional iterative optimization between a reward model and a video generation model. Without large-scale human annotation, the approach continuously improves text-to-video generation quality and human preference alignment, enabling a 2B model to surpass a 5B model.
+  [ICLR 2026][LLM Alignment][Preference Optimization] This paper proposes the Dual-IPO framework, which performs multi-round bidirectional iterative optimization between a reward model and a video generation model. Without…
 tags:
-  - ICLR 2026
-  - LLM Alignment
-  - Preference Optimization
-  - Video Generation
-  - Reward Model
-  - DPO
-  - Iterative Training
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Preference Optimization"
+  - "Video Generation"
+  - "Reward Model"
+  - "DPO"
+  - "Iterative Training"
 date: 2026-05-08
 content_hash: c012f1fb5c8b9c49
 ---

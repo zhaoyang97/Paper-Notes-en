@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Time Travel is Cheating: Going Live with DeepFund for Real-Time Fund Investment Benchmarking
 description: >-
-  [NeurIPS 2025][LLM Evaluation][LLM trading] This paper introduces DeepFund — the first live fund investment benchmark for LLMs — which employs a multi-agent architecture (Financial Planner + Analyst Team + Portfolio Manager) connected to real-time market data, eliminating the information leakage caused by LLM "time travel" in traditional backtesting. Over 24 trading days of live testing across 9 flagship LLMs, only Grok 3 achieves positive returns, revealing fundamental limitations of current LLMs in active fund management.
+  [NeurIPS 2025][LLM Evaluation][LLM trading] This paper introduces DeepFund — the first live fund investment benchmark for LLMs — which employs a multi-agent architecture (Financial Planner + Analyst Team + Portfolio Mana…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - LLM trading
-  - live benchmarking
-  - multi-agent
-  - fund investment
-  - information leakage
-  - financial evaluation
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "LLM trading"
+  - "live benchmarking"
+  - "multi-agent"
+  - "fund investment"
+  - "information leakage"
+  - "financial evaluation"
 date: 2026-05-08
 content_hash: 61157255abfa4b32
 ---

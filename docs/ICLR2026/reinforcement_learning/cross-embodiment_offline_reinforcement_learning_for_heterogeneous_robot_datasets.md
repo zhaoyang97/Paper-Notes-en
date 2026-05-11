@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Cross-Embodiment Offline Reinforcement Learning for Heterogeneous Robot Datasets
 description: >-
-  [ICLR 2026][Reinforcement Learning][cross-embodiment learning] This paper systematically investigates cross-embodiment offline RL pretraining, identifies gradient conflicts leading to negative transfer under increasing suboptimal data ratios and robot diversity, and proposes Embodiment Grouping (EG)—a strategy that clusters robots by morphological graph distance and updates the actor group-wise. On a locomotion benchmark spanning 16 robot platforms, EG substantially mitigates negative transfer (IQL+EG improves over IQL by 34% on the 70% suboptimal dataset).
+  [ICLR 2026][Reinforcement Learning][cross-embodiment learning] This paper systematically investigates cross-embodiment offline RL pretraining…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - cross-embodiment learning
-  - offline RL
-  - gradient conflict
-  - robot foundation model
-  - morphology grouping
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "cross-embodiment learning"
+  - "offline RL"
+  - "gradient conflict"
+  - "robot foundation model"
+  - "morphology grouping"
 date: 2026-05-08
 content_hash: e5be14d95b45ca49
 ---

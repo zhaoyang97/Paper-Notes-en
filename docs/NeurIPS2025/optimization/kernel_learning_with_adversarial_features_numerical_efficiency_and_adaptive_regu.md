@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Kernel Learning with Adversarial Features: Numerical Efficiency and Adaptive Regularization
 description: >-
-  [NeurIPS 2025][Optimization][adversarial training] This paper proposes a new paradigm that relocates adversarial perturbations from the input space to the feature space within reproducing kernel Hilbert spaces (RKHS), enabling exact closed-form solutions to the inner maximization problem. The outer minimization is solved efficiently via iterative reweighted kernel ridge regression, and the resulting adaptive regularization matches cross-validation performance without any hyperparameter tuning.
+  [NeurIPS 2025][Optimization][adversarial training] This paper proposes a new paradigm that relocates adversarial perturbations from the input space to the feature space within reproducing kernel Hilbert spaces (RKHS)…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - adversarial training
-  - kernel methods
-  - RKHS
-  - adaptive regularization
-  - multiple kernel learning
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "adversarial training"
+  - "kernel methods"
+  - "RKHS"
+  - "adaptive regularization"
+  - "multiple kernel learning"
 date: 2026-05-08
 content_hash: a7ed645d271cd727
 ---

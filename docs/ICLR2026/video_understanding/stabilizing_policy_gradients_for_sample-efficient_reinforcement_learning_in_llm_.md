@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Stabilizing Policy Gradients for Sample-Efficient Reinforcement Learning in LLM Reasoning
 description: >-
-  [ICLR 2026][Video Understanding][Policy Gradient] This paper proposes CAPO (Curvature-Aware Policy Optimization), which models second-order optimization geometry at the LM head's final layer to predict and filter token updates that would cause policy collapse. Under aggressive hyperparameters (5× learning rate, 1/12 batch size), CAPO maintains training stability and achieves a 30× sample efficiency improvement over standard GRPO on MATH.
+  [ICLR 2026][Video Understanding][Policy Gradient] This paper proposes CAPO (Curvature-Aware Policy Optimization), which models second-order optimization geometry at the LM head's final layer to predict and filter token u…
 tags:
-  - ICLR 2026
-  - Video Understanding
-  - Policy Gradient
-  - Curvature-Aware
-  - Sample Efficiency
-  - GRPO
-  - Second-Order Optimization
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "Policy Gradient"
+  - "Curvature-Aware"
+  - "Sample Efficiency"
+  - "GRPO"
+  - "Second-Order Optimization"
 date: 2026-05-08
 content_hash: 5bdb61839afab66c
 ---

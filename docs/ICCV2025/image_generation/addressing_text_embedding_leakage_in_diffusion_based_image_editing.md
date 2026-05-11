@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Addressing Text Embedding Leakage in Diffusion-based Image Editing
 description: >-
-  [ICCV 2025][Image Generation][attribute leakage] This paper proposes the ALE framework, which systematically addresses attribute leakage in diffusion-based text-guided image editing through three components: Object-Restricted Embedding (ORE) to decouple semantic entanglement in EOS tokens, Region-Guided Blended Cross-Attention Masking (RGB-CAM) to constrain spatial attention, and Background Blending (BB) to preserve unedited regions. A new evaluation benchmark, ALE-Bench, is also introduced.
+  [ICCV 2025][Image Generation][attribute leakage] This paper proposes the ALE framework, which systematically addresses attribute leakage in diffusion-based text-guided image editing through three components: Object-Restr…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - attribute leakage
-  - diffusion image editing
-  - EOS embedding
-  - cross-attention masking
-  - multi-object editing
+  - "ICCV 2025"
+  - "Image Generation"
+  - "attribute leakage"
+  - "diffusion image editing"
+  - "EOS embedding"
+  - "cross-attention masking"
+  - "multi-object editing"
 date: 2026-05-08
 content_hash: 3e6e13a1aee2c978
 ---

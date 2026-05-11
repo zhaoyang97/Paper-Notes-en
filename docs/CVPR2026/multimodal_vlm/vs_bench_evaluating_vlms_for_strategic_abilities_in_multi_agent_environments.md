@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VS-Bench: Evaluating VLMs for Strategic Abilities in Multi-Agent Environments
 description: >-
-  [CVPR 2026 (Oral)][Multimodal VLM][Vision-Language Models] This paper introduces VS-Bench, a multimodal benchmark comprising ten visual game environments, which systematically evaluates VLMs' strategic abilities in multi-agent settings across three dimensions—perception, strategic reasoning, and decision-making. Results reveal that even the strongest current models exhibit significant gaps from optimal performance in reasoning and decision-making.
+  [CVPR 2026 (Oral)][Multimodal VLM][Vision-Language Models] This paper introduces VS-Bench, a multimodal benchmark comprising ten visual game environments…
 tags:
-  - CVPR 2026 (Oral)
-  - Multimodal VLM
-  - Vision-Language Models
-  - Multi-Agent Evaluation
-  - Game Theory
-  - Strategic Reasoning
-  - Benchmark
+  - "CVPR 2026 (Oral)"
+  - "Multimodal VLM"
+  - "Vision-Language Models"
+  - "Multi-Agent Evaluation"
+  - "Game Theory"
+  - "Strategic Reasoning"
+  - "Benchmark"
 date: 2026-05-08
 content_hash: 9d283b23009bcb5b
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Global Convergence for Average Reward Constrained MDPs with Primal-Dual Actor-Critic
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Constrained MDP] This paper proposes the Primal-Dual Natural Actor-Critic (PDNAC) algorithm, which achieves, for the first time, a global convergence rate of $\tilde{\mathcal{O}}(1/\sqrt{T})$ and a constraint violation rate of $\tilde{\mathcal{O}}(1/\sqrt{T})$ for average reward constrained MDPs under general parameterized policies, matching the theoretical lower bound.
+  [NeurIPS 2025][Reinforcement Learning][Constrained MDP] This paper proposes the Primal-Dual Natural Actor-Critic (PDNAC) algorithm, which achieves, for the first time…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Constrained MDP
-  - Average Reward
-  - Primal-Dual
-  - Natural Policy Gradient
-  - Global Convergence
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Constrained MDP"
+  - "Average Reward"
+  - "Primal-Dual"
+  - "Natural Policy Gradient"
+  - "Global Convergence"
 date: 2026-05-08
 content_hash: 90c8a9662c8ef127
 ---

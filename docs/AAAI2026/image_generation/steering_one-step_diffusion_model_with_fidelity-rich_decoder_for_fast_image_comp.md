@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Steering One-Step Diffusion Model with Fidelity-Rich Decoder for Fast Image Compression
 description: >-
-  [AAAI 2026][Image Generation][Image Compression] This paper proposes SODEC, a one-step diffusion-based image compression model that injects the prior of a high-fidelity VAE decoder into the diffusion generation process via a Fidelity Guidance Module (FGM). Combined with a rate annealing training strategy, SODEC achieves high-quality compression at extremely low bitrates, with decoding speed more than 20× faster than multi-step diffusion methods, while reaching state-of-the-art rate-distortion-perception trade-offs.
+  [AAAI 2026][Image Generation][Image Compression] This paper proposes SODEC, a one-step diffusion-based image compression model that injects the prior of a high-fidelity VAE decoder into the diffusion generation process v…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Image Compression
-  - Diffusion Model
-  - One-Step Decoding
-  - Fidelity Guidance
-  - Rate Annealing
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Image Compression"
+  - "Diffusion Model"
+  - "One-Step Decoding"
+  - "Fidelity Guidance"
+  - "Rate Annealing"
 date: 2026-05-08
 content_hash: 6c821bc59eeca94c
 ---

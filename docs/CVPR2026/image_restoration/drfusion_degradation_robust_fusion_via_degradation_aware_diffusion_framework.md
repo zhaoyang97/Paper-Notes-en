@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] DRFusion: Degradation-Robust Fusion via Degradation-Aware Diffusion Framework
 description: >-
-  [CVPR 2026][Image Restoration][multimodal image fusion] This paper proposes DRFusion, a degradation-aware diffusion framework that achieves multimodal image fusion under arbitrary degradation scenarios within a small number of diffusion steps, via direct regression of the fused image (rather than explicit noise prediction) and a joint observation model correction mechanism.
+  [CVPR 2026][Image Restoration][multimodal image fusion] This paper proposes DRFusion, a degradation-aware diffusion framework that achieves multimodal image fusion under arbitrary degradation scenarios within a small num…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - multimodal image fusion
-  - diffusion model
-  - degradation-aware
-  - joint observation model
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "multimodal image fusion"
+  - "diffusion model"
+  - "degradation-aware"
+  - "joint observation model"
 date: 2026-05-08
 content_hash: c872f79483ec6ce5
 ---

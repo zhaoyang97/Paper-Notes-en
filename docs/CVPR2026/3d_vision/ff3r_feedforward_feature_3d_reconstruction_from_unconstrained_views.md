@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FF3R: Feedforward Feature 3D Reconstruction from Unconstrained Views
 description: >-
-  [CVPR 2026][3D Vision][3D Reconstruction] FF3R is the first fully annotation-free feedforward framework capable of jointly performing geometric reconstruction and open-vocabulary semantic understanding from unconstrained multi-view image sequences, achieving 180× speedup over optimization-based methods when processing 64+ images.
+  [CVPR 2026][3D Vision][3D Reconstruction] FF3R is the first fully annotation-free feedforward framework capable of jointly performing geometric reconstruction and open-vocabulary semantic understanding from unconstrained…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Reconstruction
-  - Semantic Understanding
-  - Feedforward Architecture
-  - 3D Gaussians
-  - Annotation-Free Training
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Reconstruction"
+  - "Semantic Understanding"
+  - "Feedforward Architecture"
+  - "3D Gaussians"
+  - "Annotation-Free Training"
 date: 2026-05-08
 content_hash: 67fa1f60e8077674
 ---

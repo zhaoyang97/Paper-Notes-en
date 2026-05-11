@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Regularizing INR with Diffusion Prior for Self-Supervised 3D Reconstruction of Neutron Computed Tomography Data
 description: >-
-  [CVPR 2026][3D Vision][Neutron CT] This paper proposes Diffusive INR (DINR), a framework that replaces the conventional DIS in the DD3IP diffusion reconstruction pipeline with an INR, and injects the diffusion model's denoising estimate as a regularization prior into the INR optimization via a proximal loss function. Under extremely sparse neutron CT conditions with only 4–5 views, DINR surpasses MBIR (qGGMRF), DD3IP, and vanilla INR in reconstruction quality.
+  [CVPR 2026][3D Vision][Neutron CT] This paper proposes Diffusive INR (DINR), a framework that replaces the conventional DIS in the DD3IP diffusion reconstruction pipeline with an INR…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Neutron CT
-  - Implicit Neural Representation
-  - Diffusion Prior
-  - Sparse-view Reconstruction
-  - Inverse Problem
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Neutron CT"
+  - "Implicit Neural Representation"
+  - "Diffusion Prior"
+  - "Sparse-view Reconstruction"
+  - "Inverse Problem"
 date: 2026-05-08
 content_hash: 9bca2c2ce07b1e21
 ---

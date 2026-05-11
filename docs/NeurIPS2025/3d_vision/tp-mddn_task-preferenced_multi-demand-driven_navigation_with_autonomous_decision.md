@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TP-MDDN: Task-Preferenced Multi-Demand-Driven Navigation with Autonomous Decision-Making
 description: >-
-  [NeurIPS 2025][3D Vision][Embodied Navigation] This paper proposes the Task-Preferenced Multi-Demand-Driven Navigation (TP-MDDN) benchmark and the AWMSystem autonomous decision-making framework, which achieves long-horizon multi-subtask navigation through three LLM modules—instruction decomposition, dynamic goal selection, and task status monitoring—coupled with a multi-dimensional cumulative semantic map.
+  [NeurIPS 2025][3D Vision][Embodied Navigation] This paper proposes the Task-Preferenced Multi-Demand-Driven Navigation (TP-MDDN) benchmark and the AWMSystem autonomous decision-making framework…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Embodied Navigation
-  - Long-Horizon Task Planning
-  - Multi-Demand-Driven
-  - Semantic Map
-  - Large Language Models
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Embodied Navigation"
+  - "Long-Horizon Task Planning"
+  - "Multi-Demand-Driven"
+  - "Semantic Map"
+  - "Large Language Models"
 date: 2026-05-08
 content_hash: f906511a669b936e
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Diffusion-Classifier Synergy: Reward-Aligned Learning via Mutual Boosting Loop for FSCIL
 description: >-
-  [NEURIPS2025][Image Generation][Few-Shot Class-Incremental Learning] This paper proposes the Diffusion-Classifier Synergy (DCS) framework, which establishes a closed-loop mutual boosting cycle between a diffusion model and a classifier. A multi-level reward function (feature-level + logits-level) guides the diffusion model to generate images most beneficial to the classifier, achieving state-of-the-art performance on FSCIL benchmarks.
+  [NEURIPS2025][Image Generation][Few-Shot Class-Incremental Learning] This paper proposes the Diffusion-Classifier Synergy (DCS) framework, which establishes a closed-loop mutual boosting cycle between a diffusion model a…
 tags:
-  - NEURIPS2025
-  - Image Generation
-  - Few-Shot Class-Incremental Learning
-  - diffusion model
-  - Reward-Aligned Generation
-  - Mutual Boosting Loop
-  - data augmentation
+  - "NEURIPS2025"
+  - "Image Generation"
+  - "Few-Shot Class-Incremental Learning"
+  - "diffusion model"
+  - "Reward-Aligned Generation"
+  - "Mutual Boosting Loop"
+  - "data augmentation"
 date: 2026-05-08
 content_hash: 75a086c2bec9afb9
 ---

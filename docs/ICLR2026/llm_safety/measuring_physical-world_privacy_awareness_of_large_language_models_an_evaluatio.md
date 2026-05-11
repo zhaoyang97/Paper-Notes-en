@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Measuring Physical-World Privacy Awareness of Large Language Models: An Evaluation Benchmark
 description: >-
-  [ICLR 2026][LLM Safety][privacy awareness] This paper proposes EAPrivacy — the first 4-tier benchmark for evaluating LLM physical-world privacy awareness (400+ procedurally generated scenarios, 60+ physical scenes). It finds that all frontier models exhibit "asymmetric conservatism" (over-cautious on task execution yet insufficient on privacy protection), that enabling reasoning/thinking mode actually degrades privacy performance, and that the best model (Gemini 2.5 Pro) achieves only 59% accuracy in dynamic environments.
+  [ICLR 2026][LLM Safety][privacy awareness] This paper proposes EAPrivacy — the first 4-tier benchmark for evaluating LLM physical-world privacy awareness (400+ procedurally generated scenarios…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - privacy awareness
-  - embodied agent
-  - physical privacy
-  - contextual integrity
-  - benchmark
-  - PDDL
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "privacy awareness"
+  - "embodied agent"
+  - "physical privacy"
+  - "contextual integrity"
+  - "benchmark"
+  - "PDDL"
 date: 2026-05-08
 content_hash: 4c21e7cb30c30be8
 ---

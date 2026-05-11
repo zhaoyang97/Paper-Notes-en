@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Demo: Guide-RAG: Evidence-Driven Corpus Curation for Retrieval-Augmented Generation in Long COVID
 description: >-
-  [NeurIPS 2025 (GenAI for Health Workshop)][Medical Imaging][RAG] This paper systematically evaluates six RAG corpus configurations for Long COVID clinical QA. The GS-4 configuration—combining clinical guidelines with high-quality systematic reviews—consistently outperforms both single-guideline and large-scale literature retrieval baselines across faithfulness, relevance, and comprehensiveness. The authors further introduce the Guide-RAG framework and the LongCOVID-CQ evaluation dataset.
+  [NeurIPS 2025 (GenAI for Health Workshop)][Medical Imaging][RAG] This paper systematically evaluates six RAG corpus configurations for Long COVID clinical QA. The GS-4 configuration—combining clinical guidelines with hig…
 tags:
-  - NeurIPS 2025 (GenAI for Health Workshop)
-  - Medical Imaging
-  - RAG
-  - Long COVID
-  - corpus curation
-  - LLM-as-a-judge
-  - clinical QA
+  - "NeurIPS 2025 (GenAI for Health Workshop)"
+  - "Medical Imaging"
+  - "RAG"
+  - "Long COVID"
+  - "corpus curation"
+  - "LLM-as-a-judge"
+  - "clinical QA"
 date: 2026-05-08
 content_hash: 417912b43370f456
 ---

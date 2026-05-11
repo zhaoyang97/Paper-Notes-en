@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multi-modal Data Spectrum: Multi-modal Datasets are Multi-dimensional
 description: >-
-  [ICLR 2026][Signal & Communication][multimodal learning] Through a large-scale empirical study, intra-modal and inter-modal dependencies are quantified across 23 VQA benchmarks, revealing that many benchmarks designed to eliminate text bias inadvertently introduce image bias. A multi-dimensional characterization framework for multimodal datasets is proposed.
+  [ICLR 2026][Signal & Communication][multimodal learning] Through a large-scale empirical study, intra-modal and inter-modal dependencies are quantified across 23 VQA benchmarks…
 tags:
-  - ICLR 2026
+  - "ICLR 2026"
   - "Signal & Communication"
-  - multimodal learning
-  - benchmark evaluation
-  - modality dependency
-  - VQA
-  - MLLM
+  - "multimodal learning"
+  - "benchmark evaluation"
+  - "modality dependency"
+  - "VQA"
+  - "MLLM"
 date: 2026-05-08
 content_hash: 42cff9ffedabde2a
 ---

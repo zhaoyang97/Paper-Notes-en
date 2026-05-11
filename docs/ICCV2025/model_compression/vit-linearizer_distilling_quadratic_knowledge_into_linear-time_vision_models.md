@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] ViT-Linearizer: Distilling Quadratic Knowledge into Linear-Time Vision Models
 description: >-
-  [ICCV 2025][Model Compression][Cross-architecture distillation] This paper proposes ViT-Linearizer, a cross-architecture distillation framework that transfers the "quadratic knowledge" learned by ViT self-attention into linear-complexity recurrent models (Mamba-based Adventurer) via two core mechanisms: **activation matching** and **masked prediction**. The approach achieves 84.3% accuracy on ImageNet while delivering up to 4.2× inference speedup on high-resolution tasks.
+  [ICCV 2025][Model Compression][Cross-architecture distillation] This paper proposes ViT-Linearizer, a cross-architecture distillation framework that transfers the "quadratic knowledge" learned by ViT self-attention into…
 tags:
-  - ICCV 2025
-  - Model Compression
-  - Cross-architecture distillation
-  - ViT
-  - Mamba
-  - linear complexity
-  - activation matching
-  - masked prediction
+  - "ICCV 2025"
+  - "Model Compression"
+  - "Cross-architecture distillation"
+  - "ViT"
+  - "Mamba"
+  - "linear complexity"
+  - "activation matching"
+  - "masked prediction"
 date: 2026-05-08
 content_hash: 20fc0509a840ac18
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Stay in your Lane: Role Specific Queries with Overlap Suppression Loss for Dense Video Captioning
 description: >-
-  [CVPR 2026][Video Understanding][Dense Video Captioning] This paper proposes ROS-DVC, which decouples the shared queries in DETR-based DVC frameworks into independent localization queries and caption queries, introduces an Overlap Suppression Loss to penalize temporal overlap between queries, and employs Cross-Task Contrastive Alignment to maintain cross-task semantic consistency. The approach achieves state-of-the-art captioning and localization performance on YouCook2 and ActivityNet Captions.
+  [CVPR 2026][Video Understanding][Dense Video Captioning] This paper proposes ROS-DVC, which decouples the shared queries in DETR-based DVC frameworks into independent localization queries and caption queries…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Dense Video Captioning
-  - Role-Specific Queries
-  - Overlap Suppression Loss
-  - Contrastive Alignment
-  - Concept Guidance
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Dense Video Captioning"
+  - "Role-Specific Queries"
+  - "Overlap Suppression Loss"
+  - "Contrastive Alignment"
+  - "Concept Guidance"
 date: 2026-05-08
 content_hash: 23c9e0019d3acd8e
 ---

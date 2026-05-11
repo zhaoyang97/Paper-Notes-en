@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Digging Deeper: Learning Multi-Level Concept Hierarchies
 description: >-
-  [ICLR 2026 Workshop on Principled Design for Trustworthy AI][multi-level concept hierarchy] This paper proposes Multi-Level Concept Splitting (MLCS), which extends concept splitting from a single layer to a recursive multi-level process. Using only top-level concept annotations, MLCS automatically discovers concept hierarchy trees of arbitrary depth. The authors further introduce the Deep-HiCEMs architecture to represent and leverage these deep hierarchies, enabling test-time concept interventions at multiple levels of granularity.
+  [ICLR 2026 Workshop on Principled Design for Trustworthy AI][Information Retrieval & RAG][multi-level concept hierarchy] This paper proposes Multi-Level Concept Splitting (MLCS)…
 tags:
-  - ICLR 2026 Workshop on Principled Design for Trustworthy AI
-  - multi-level concept hierarchy
-  - concept embedding models
-  - concept splitting
-  - sub-concept discovery
-  - test-time intervention
+  - "ICLR 2026 Workshop on Principled Design for Trustworthy AI"
+  - "Information Retrieval & RAG"
+  - "multi-level concept hierarchy"
+  - "concept embedding models"
+  - "concept splitting"
+  - "sub-concept discovery"
+  - "test-time intervention"
 date: 2026-05-08
 content_hash: db1d04518d5c6b28
 ---

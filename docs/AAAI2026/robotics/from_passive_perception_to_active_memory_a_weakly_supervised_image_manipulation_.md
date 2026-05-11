@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From Passive Perception to Active Memory: A Weakly Supervised Image Manipulation Localization Framework Driven by Coarse-Grained Annotations
 description: >-
-  [AAAI 2026][Robotics][Image Manipulation Localization] This paper proposes BoxPromptIML, a weakly supervised image manipulation localization (IML) framework based on coarse-grained bounding box annotations. It leverages a frozen SAM teacher model to convert rough bounding boxes into high-quality pseudo-masks, and trains a lightweight student model via a memory-guided gated fusion module (MGFM), achieving performance comparable to or surpassing fully supervised methods with an annotation cost of only 7 seconds per image.
+  [AAAI 2026][Robotics][Image Manipulation Localization] This paper proposes BoxPromptIML, a weakly supervised image manipulation localization (IML) framework based on coarse-grained bounding box annotations. It leverages…
 tags:
-  - AAAI 2026
-  - Robotics
-  - Image Manipulation Localization
-  - Weak Supervision
-  - Knowledge Distillation
-  - Memory Guidance
-  - SAM
+  - "AAAI 2026"
+  - "Robotics"
+  - "Image Manipulation Localization"
+  - "Weak Supervision"
+  - "Knowledge Distillation"
+  - "Memory Guidance"
+  - "SAM"
 date: 2026-05-08
 content_hash: 3d219aade2a9f16a
 ---

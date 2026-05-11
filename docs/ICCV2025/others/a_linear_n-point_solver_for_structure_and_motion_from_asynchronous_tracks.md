@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] A Linear N-Point Solver for Structure and Motion from Asynchronous Tracks
 description: >-
-  [ICCV 2025][Motion Estimation] This paper proposes a unified linear N-point solver that recovers camera linear velocity and 3D point structure from 2D point correspondences with arbitrary timestamps, supporting global shutter, rolling shutter, and event camera sensor modalities.
+  [ICCV 2025][Motion Estimation] This paper proposes a unified linear N-point solver that recovers camera linear velocity and 3D point structure from 2D point correspondences with arbitrary timestamps…
 tags:
-  - ICCV 2025
-  - Motion Estimation
-  - Asynchronous Feature Tracks
-  - Linear Solver
-  - Event Camera
-  - Rolling Shutter
+  - "ICCV 2025"
+  - "Motion Estimation"
+  - "Asynchronous Feature Tracks"
+  - "Linear Solver"
+  - "Event Camera"
+  - "Rolling Shutter"
 date: 2026-05-08
 content_hash: 075b04c3e11c9ae7
 ---

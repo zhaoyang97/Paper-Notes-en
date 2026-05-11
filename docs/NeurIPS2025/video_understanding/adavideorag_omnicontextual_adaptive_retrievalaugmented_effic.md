@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AdaVideoRAG: Omni-Contextual Adaptive Retrieval-Augmented Efficient Long Video Understanding
 description: >-
-  [NeurIPS 2025][Video Understanding][long video understanding] AdaVideoRAG is proposed to route queries to one of three retrieval pathways (no retrieval / naive retrieval / graph retrieval) via a lightweight intent classifier, combined with an omni-knowledge indexing module (caption + ASR + OCR + visual + knowledge graph) to achieve an optimal efficiency–accuracy trade-off in long video understanding, yielding a 39.8% improvement for Qwen2.5-VL-7B on MLVU.
+  [NeurIPS 2025][Video Understanding][long video understanding] AdaVideoRAG is proposed to route queries to one of three retrieval pathways (no retrieval / naive retrieval / graph retrieval) via a lightweight intent classi…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
-  - long video understanding
-  - retrieval-augmented generation
-  - adaptive retrieval
-  - knowledge graph
-  - intent classification
+  - "NeurIPS 2025"
+  - "Video Understanding"
+  - "long video understanding"
+  - "retrieval-augmented generation"
+  - "adaptive retrieval"
+  - "knowledge graph"
+  - "intent classification"
 date: 2026-05-08
 content_hash: 29a3edb07448577a
 ---

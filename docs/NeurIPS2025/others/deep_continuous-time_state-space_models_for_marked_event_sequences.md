@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Deep Continuous-Time State-Space Models for Marked Event Sequences
 description: >-
-  [NeurIPS 2025][Marked Temporal Point Processes] S2P2 unifies linear Hawkes processes with deep state space models by stacking multiple implicit Linear Hawkes (LLH) layers with nonlinear activations, yielding a highly expressive continuous-time MTPP model. It leverages parallel scanning to achieve linear complexity and sub-linear runtime, improving predictive likelihood by an average of 33% across 8 real-world datasets.
+  [NeurIPS 2025][Marked Temporal Point Processes] S2P2 unifies linear Hawkes processes with deep state space models by stacking multiple implicit Linear Hawkes (LLH) layers with nonlinear activations…
 tags:
-  - NeurIPS 2025
-  - Marked Temporal Point Processes
-  - State Space Models
-  - Hawkes Process
-  - Parallel Scan
-  - Continuous-Time Modeling
+  - "NeurIPS 2025"
+  - "Marked Temporal Point Processes"
+  - "State Space Models"
+  - "Hawkes Process"
+  - "Parallel Scan"
+  - "Continuous-Time Modeling"
 date: 2026-05-08
 content_hash: 84e6fcb8d0fe4d75
 ---

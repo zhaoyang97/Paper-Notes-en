@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] STiV: Scalable Text and Image Conditioned Video Generation
 description: >-
-  [ICCV 2025][Video Generation] This paper proposes STIV, a unified text-image conditioned video generation framework based on Diffusion Transformer. It integrates image conditioning via a frame replacement strategy and introduces joint image-text classifier-free guidance, enabling both T2V and TI2V generation within a single model. The 8.7B-parameter model achieves state-of-the-art scores of 83.1 and 90.1 on VBench T2V and I2V, respectively.
+  [ICCV 2025][Video Generation][Diffusion Transformer] This paper proposes STIV, a unified text-image conditioned video generation framework based on Diffusion Transformer. It integrates image conditioning via a frame repl…
 tags:
-  - ICCV 2025
-  - Video Generation
-  - Diffusion Transformer
-  - image conditioning
-  - text-to-video
-  - scalable training
+  - "ICCV 2025"
+  - "Video Generation"
+  - "Diffusion Transformer"
+  - "image conditioning"
+  - "text-to-video"
+  - "scalable training"
 date: 2026-05-08
 content_hash: 54697b4ae890c0d4
 ---

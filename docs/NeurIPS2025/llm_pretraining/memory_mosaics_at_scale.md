@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Memory Mosaics at Scale
 description: >-
-  [NeurIPS 2025][LLM Pretraining][Memory Mosaics] Memory Mosaics v2 scales associative memory networks to 10B parameters trained on 1T tokens, substantially outperforming same-scale—and even 8T-token-trained—Transformers on new-task learning and in-context learning.
+  [NeurIPS 2025][LLM Pretraining][Memory Mosaics] Memory Mosaics v2 scales associative memory networks to 10B parameters trained on 1T tokens…
 tags:
-  - NeurIPS 2025
-  - LLM Pretraining
-  - Memory Mosaics
-  - Gaussian kernel regression
-  - in-context learning
-  - compositionality
-  - large-scale scaling
+  - "NeurIPS 2025"
+  - "LLM Pretraining"
+  - "Memory Mosaics"
+  - "Gaussian kernel regression"
+  - "in-context learning"
+  - "compositionality"
+  - "large-scale scaling"
 date: 2026-05-08
 content_hash: 6149f3be2c0c7570
 ---

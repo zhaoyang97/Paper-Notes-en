@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Enhancing Molecular Property Predictions by Learning from Bond Modelling and Interactions
 description: >-
-  [ICLR 2026][Self-Supervised Learning][molecular representation] DeMol is a dual-graph enhanced multi-scale interaction framework that introduces parallel atom-centric and bond-centric channels along with Double-Helix Blocks to explicitly model atom–atom, atom–bond, and bond–bond interactions, achieving state-of-the-art performance on PCQM4Mv2, OC20, QM9, and related benchmarks.
+  [ICLR 2026][Self-Supervised Learning][molecular representation] DeMol is a dual-graph enhanced multi-scale interaction framework that introduces parallel atom-centric and bond-centric channels along with Double-Helix Blo…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
-  - molecular representation
-  - dual-graph
-  - bond modeling
-  - GNN
-  - property prediction
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "molecular representation"
+  - "dual-graph"
+  - "bond modeling"
+  - "GNN"
+  - "property prediction"
 date: 2026-05-08
 content_hash: 19243b4495a9e022
 ---

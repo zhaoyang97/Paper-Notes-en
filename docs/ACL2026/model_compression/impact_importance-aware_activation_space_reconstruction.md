@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] IMPACT: Importance-Aware Activation Space Reconstruction
 description: >-
-  [ACL 2026][Model Compression][Low-rank compression] This paper proposes IMPACT, a framework that shifts LLM low-rank compression from minimizing weight reconstruction error to minimizing importance-weighted activation reconstruction error. By incorporating gradient information into the activation covariance matrix, IMPACT derives a closed-form optimal solution, achieving up to 55.4% model size reduction while preserving accuracy.
+  [ACL 2026][Model Compression][Low-rank compression] This paper proposes IMPACT, a framework that shifts LLM low-rank compression from minimizing weight reconstruction error to minimizing importance-weighted activation re…
 tags:
-  - ACL 2026
-  - Model Compression
-  - Low-rank compression
-  - activation space reconstruction
-  - importance-aware
-  - gradient weighting
-  - large language models
+  - "ACL 2026"
+  - "Model Compression"
+  - "Low-rank compression"
+  - "activation space reconstruction"
+  - "importance-aware"
+  - "gradient weighting"
+  - "large language models"
 date: 2026-05-08
 content_hash: 83cc54ce66f91297
 ---

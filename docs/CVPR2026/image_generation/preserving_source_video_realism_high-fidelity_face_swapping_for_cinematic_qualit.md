@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Preserving Source Video Realism: High-Fidelity Face Swapping for Cinematic Quality
 description: >-
-  [CVPR 2026][Image Generation][Face swapping] This paper proposes LivingSwap, the first video reference-guided face swapping model. Through a controllable pipeline of keyframe identity injection, source video reference completion, and temporal stitching, it achieves high-fidelity face swapping in long videos. The method stably injects the target identity while preserving expression, lighting, and motion details from the source video, reducing manual editing effort by 40×.
+  [CVPR 2026][Image Generation][Face swapping] This paper proposes LivingSwap, the first video reference-guided face swapping model. Through a controllable pipeline of keyframe identity injection…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Face swapping
-  - video reference guidance
-  - keyframe injection
-  - temporal stitching
-  - cinematic quality
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Face swapping"
+  - "video reference guidance"
+  - "keyframe injection"
+  - "temporal stitching"
+  - "cinematic quality"
 date: 2026-05-08
 content_hash: c66e5bc04ddc1b09
 ---

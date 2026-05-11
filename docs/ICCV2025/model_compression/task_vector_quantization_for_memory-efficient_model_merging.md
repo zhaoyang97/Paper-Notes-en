@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Task Vector Quantization for Memory-Efficient Model Merging
 description: >-
-  [ICCV 2025][Model Compression][Model Merging] This paper proposes quantizing task vectors (the difference between fine-tuned and pre-trained weights) rather than the fine-tuned weights themselves. By exploiting the narrower numerical range of task vectors, the method achieves quantization down to 3-bit without accuracy loss. The paper further proposes Residual Task Vector Quantization (RTVQ), which decomposes task vectors into a shared high-precision base vector and low-precision per-task offsets, maintaining or even improving model merging performance while using only 8% of the original storage.
+  [ICCV 2025][Model Compression][Model Merging] This paper proposes quantizing task vectors (the difference between fine-tuned and pre-trained weights) rather than the fine-tuned weights themselves. By exploiting the narro…
 tags:
-  - ICCV 2025
-  - Model Compression
-  - Model Merging
-  - Task Vector Quantization
-  - Low-Bit Storage
-  - Residual Quantization
-  - Multi-Task Learning
+  - "ICCV 2025"
+  - "Model Compression"
+  - "Model Merging"
+  - "Task Vector Quantization"
+  - "Low-Bit Storage"
+  - "Residual Quantization"
+  - "Multi-Task Learning"
 date: 2026-05-08
 content_hash: 678b00baed8c6e18
 ---

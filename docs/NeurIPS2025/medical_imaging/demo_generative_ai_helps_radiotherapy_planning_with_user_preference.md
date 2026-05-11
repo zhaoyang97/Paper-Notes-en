@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Demo: Generative AI helps Radiotherapy Planning with User Preference
 description: >-
-  [NeurIPS 2025 (GenAI for Health Workshop)][Medical Imaging][radiotherapy planning] This paper proposes the Flexible Dose Proposer (FDP), a two-stage training framework (VQ-VAE pretraining + multi-condition encoding) that enables slider-based interactive 3D dose distribution prediction incorporating user preferences. The system is integrated into the Eclipse clinical treatment planning system and outperforms Varian RapidPlan in head-and-neck cancer radiotherapy scenarios.
+  [NeurIPS 2025 (GenAI for Health Workshop)][Medical Imaging][radiotherapy planning] This paper proposes the Flexible Dose Proposer (FDP), a two-stage training framework (VQ-VAE pretraining + multi-condition encoding) that…
 tags:
-  - NeurIPS 2025 (GenAI for Health Workshop)
-  - Medical Imaging
-  - radiotherapy planning
-  - dose prediction
-  - user preference interaction
-  - VQ-VAE
-  - generative AI
+  - "NeurIPS 2025 (GenAI for Health Workshop)"
+  - "Medical Imaging"
+  - "radiotherapy planning"
+  - "dose prediction"
+  - "user preference interaction"
+  - "VQ-VAE"
+  - "generative AI"
 date: 2026-05-08
 content_hash: 6ae967bd2792d759
 ---

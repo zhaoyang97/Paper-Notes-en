@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Experience-based Knowledge Correction for Robust Planning in Minecraft
 description: >-
-  [ICLR 2026][Robotics][LLM planning] This paper demonstrates that LLMs cannot self-correct erroneous planning priors (item dependency relations) through prompting alone, and proposes XENON — an algorithmic knowledge management framework consisting of an Adaptive Dependency Graph (ADG) and Failure-Aware Action Memory (FAM) that learns from binary feedback. XENON enables a 7B LLM to surpass the SOTA that uses GPT-4V with oracle knowledge on long-horizon planning tasks in Minecraft.
+  [ICLR 2026][Robotics][LLM planning] This paper demonstrates that LLMs cannot self-correct erroneous planning priors (item dependency relations) through prompting alone…
 tags:
-  - ICLR 2026
-  - Robotics
-  - LLM planning
-  - knowledge correction
-  - Minecraft
-  - embodied agent
-  - self-correction failure
+  - "ICLR 2026"
+  - "Robotics"
+  - "LLM planning"
+  - "knowledge correction"
+  - "Minecraft"
+  - "embodied agent"
+  - "self-correction failure"
 date: 2026-05-08
 content_hash: 74474935c82910d5
 ---

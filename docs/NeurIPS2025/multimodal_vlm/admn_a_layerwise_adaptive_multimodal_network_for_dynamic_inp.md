@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] ADMN: A Layer-Wise Adaptive Multimodal Network for Dynamic Input Noise and Compute Resources
 description: >-
-  [NeurIPS 2025][Multimodal VLM][multimodal] This paper proposes ADMN (Adaptive Depth Multimodal Network), a two-stage training framework: (1) Multimodal LayerDrop fine-tuning to make the backbone robust to arbitrary layer configurations, and (2) a QoI-aware controller that dynamically allocates layer budgets across modalities. ADMN adaptively assigns layers based on per-modality quality-of-information (QoI) under strict compute constraints, matching full-model accuracy while reducing FLOPs by 75% and latency by 60%.
+  [NeurIPS 2025][Multimodal VLM][multimodal] This paper proposes ADMN (Adaptive Depth Multimodal Network), a two-stage training framework: (1) Multimodal LayerDrop fine-tuning to make the backbone robust to arbitrary layer…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - multimodal
-  - adaptive depth
-  - LayerDrop
-  - quality-of-information
-  - dynamic compute budget
-  - layer allocation
-  - sensor corruption
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "multimodal"
+  - "adaptive depth"
+  - "LayerDrop"
+  - "quality-of-information"
+  - "dynamic compute budget"
+  - "layer allocation"
+  - "sensor corruption"
 date: 2026-05-08
 content_hash: 6215f0e9a5d48ffd
 ---

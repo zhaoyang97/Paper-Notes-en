@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] DICE: Discrete Interpretable Comparative Evaluation with Probabilistic Scoring for RAG
 description: >-
-  [NeurIPS 2025 (ResponsibleFM Workshop)][RAG evaluation] This paper proposes the DICE framework, which achieves interpretable, robust, and efficient evaluation of RAG systems through a two-stage assessment pipeline (evidence-coupled deep analysis + probabilistic {A, B, Tie} scoring) combined with a Swiss-system tournament. On a Chinese financial QA dataset, DICE attains 85.7% agreement with human experts, substantially outperforming RAGAS (45.7%).
+  [NeurIPS 2025 (ResponsibleFM Workshop)][Information Retrieval & RAG][RAG evaluation] This paper proposes the DICE framework, which achieves interpretable, robust…
 tags:
-  - NeurIPS 2025 (ResponsibleFM Workshop)
-  - RAG evaluation
-  - LLM-as-judge
-  - pairwise comparison
-  - Swiss tournament
-  - probabilistic scoring
+  - "NeurIPS 2025 (ResponsibleFM Workshop)"
+  - "Information Retrieval & RAG"
+  - "RAG evaluation"
+  - "LLM-as-judge"
+  - "pairwise comparison"
+  - "Swiss tournament"
+  - "probabilistic scoring"
 date: 2026-05-08
 content_hash: c537654ad75d4fba
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Time-RA: Towards Time Series Reasoning for Anomaly Diagnosis with LLM Feedback
 description: >-
-  [ACL 2026][Time Series][Time series anomaly detection] This paper introduces Time-RA, a new task that upgrades time series anomaly detection from binary classification to generative reasoning diagnosis (detection + classification + causal explanation). It constructs RATs40K, the first multimodal benchmark comprising ~40K samples across 10 domains and 20 anomaly types, and validates the feasibility of this paradigm through an AI feedback annotation pipeline and LLM fine-tuning.
+  [ACL 2026][Time Series][Time series anomaly detection] This paper introduces Time-RA, a new task that upgrades time series anomaly detection from binary classification to generative reasoning diagnosis (detection + class…
 tags:
-  - ACL 2026
-  - Time Series
-  - Time series anomaly detection
-  - anomaly reasoning diagnosis
-  - multimodal benchmark
-  - LLM fine-tuning
-  - AI feedback annotation
+  - "ACL 2026"
+  - "Time Series"
+  - "Time series anomaly detection"
+  - "anomaly reasoning diagnosis"
+  - "multimodal benchmark"
+  - "LLM fine-tuning"
+  - "AI feedback annotation"
 date: 2026-05-08
 content_hash: b2ae6b9d58095553
 ---

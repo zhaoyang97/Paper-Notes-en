@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Satisficing and Optimal Generalised Planning via Goal Regression (Extended Version)
 description: >-
-  [AAAI 2026][Model Compression][generalised planning] This paper presents the Moose planner, which synthesises generalised planning programs from training problems via goal regression. It decomposes multi-goal problems into single-goal subproblems, solves each optimally, and applies regression followed by lifting to produce a set of first-order condition-action rules. These rules support either satisficing planning (direct rule execution) or optimal planning (encoded as axioms to prune the search space).
+  [AAAI 2026][Model Compression][generalised planning] This paper presents the Moose planner, which synthesises generalised planning programs from training problems via goal regression. It decomposes multi-goal problems in…
 tags:
-  - AAAI 2026
-  - Model Compression
-  - generalised planning
-  - goal regression
-  - policy synthesis
-  - search pruning
-  - planning domains
+  - "AAAI 2026"
+  - "Model Compression"
+  - "generalised planning"
+  - "goal regression"
+  - "policy synthesis"
+  - "search pruning"
+  - "planning domains"
 date: 2026-05-08
 content_hash: 88d8f7c512ef0823
 ---

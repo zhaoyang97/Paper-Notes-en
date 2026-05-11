@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PersPose: 3D Human Pose Estimation with Perspective Encoding and Perspective Rotation
 description: >-
-  [ICCV 2025][Human Understanding][3D human pose estimation] This paper proposes the PersPose framework, which addresses the inaccurate depth estimation caused by existing methods neglecting field-of-view (FOV) information. It encodes cropped camera intrinsics as a 2D map via Perspective Encoding (PE) and centers the subject through Perspective Rotation (PR) to eliminate perspective distortion.
+  [ICCV 2025][Human Understanding][3D human pose estimation] This paper proposes the PersPose framework, which addresses the inaccurate depth estimation caused by existing methods neglecting field-of-view (FOV) information…
 tags:
-  - ICCV 2025
-  - Human Understanding
-  - 3D human pose estimation
-  - perspective encoding
-  - perspective rotation
-  - camera intrinsics
-  - monocular
+  - "ICCV 2025"
+  - "Human Understanding"
+  - "3D human pose estimation"
+  - "perspective encoding"
+  - "perspective rotation"
+  - "camera intrinsics"
+  - "monocular"
 date: 2026-05-08
 content_hash: 36d0e93657078e7d
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Implicit Modeling for Transferability Estimation of Vision Foundation Models
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][Transferability Estimation] This paper proposes Implicit Transferability Modeling (ITM), a framework that encodes the transferability of model–task pairs via a latent variable $z$, and employs Divide-and-conquer Variational Approximation (DVA) to efficiently simulate embedding space evolution. On 10 downstream tasks with 10 diverse pre-trained models, the weighted Kendall $\tau_w$ improves from the previous state-of-the-art of 0.45 to 0.61.
+  [NeurIPS 2025][Self-Supervised Learning][Transferability Estimation] This paper proposes Implicit Transferability Modeling (ITM), a framework that encodes the transferability of model–task pairs via a latent variable $z$…
 tags:
-  - NeurIPS 2025
-  - Self-Supervised Learning
-  - Transferability Estimation
-  - Pre-trained Model Selection
-  - Embedding Space Evolution
-  - Variational Approximation
-  - Vision Foundation Models
+  - "NeurIPS 2025"
+  - "Self-Supervised Learning"
+  - "Transferability Estimation"
+  - "Pre-trained Model Selection"
+  - "Embedding Space Evolution"
+  - "Variational Approximation"
+  - "Vision Foundation Models"
 date: 2026-05-08
 content_hash: 3d131390e2107367
 ---

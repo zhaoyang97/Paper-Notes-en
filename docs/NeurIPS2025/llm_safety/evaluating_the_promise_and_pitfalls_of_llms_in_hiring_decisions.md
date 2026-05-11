@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Evaluating the Promise and Pitfalls of LLMs in Hiring Decisions
 description: >-
-  [NeurIPS 2025][LLM Safety][LLM bias] This paper systematically evaluates the hiring-match performance of mainstream LLMs—including GPT-4o/4.1, Claude 3.5, Gemini 2.5, Llama 3.1/4, and DeepSeek R1—on approximately 10,000 real-world candidate–job pairs. Results show that a domain-specialized model (Match Score) comprehensively outperforms general-purpose LLMs in both accuracy (AUC 0.85 vs. 0.77) and fairness (Race IR 0.957 vs. ≤0.809).
+  [NeurIPS 2025][LLM Safety][LLM bias] This paper systematically evaluates the hiring-match performance of mainstream LLMs—including GPT-4o/4.1, Claude 3.5, Gemini 2.5, Llama 3.1/4, and DeepSeek R1—on approximately 10…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - LLM bias
-  - hiring fairness
-  - algorithmic auditing
-  - disparate impact
-  - EEOC four-fifths rule
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "LLM bias"
+  - "hiring fairness"
+  - "algorithmic auditing"
+  - "disparate impact"
+  - "EEOC four-fifths rule"
 date: 2026-05-08
 content_hash: 7d4e963ac2e9bbf8
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Fusing Pixels and Genes: Spatially-Aware Learning in Computational Pathology
 description: >-
-  [ICLR 2026][Medical Imaging][Spatial Transcriptomics] This paper proposes the Stamp framework, which leverages spatial transcriptomics gene expression data as a supervisory signal. Through spatially-aware gene encoder pretraining and hierarchical multi-scale contrastive alignment, it enables joint representation learning of pathology images and spatial transcriptomics data, achieving state-of-the-art performance across 4 downstream tasks on 6 datasets.
+  [ICLR 2026][Medical Imaging][Spatial Transcriptomics] This paper proposes the Stamp framework, which leverages spatial transcriptomics gene expression data as a supervisory signal. Through spatially-aware gene encoder pr…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - Spatial Transcriptomics
-  - Computational Pathology
-  - Multimodal Pretraining
-  - Gene Expression
-  - Contrastive Learning
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Spatial Transcriptomics"
+  - "Computational Pathology"
+  - "Multimodal Pretraining"
+  - "Gene Expression"
+  - "Contrastive Learning"
 date: 2026-05-08
 content_hash: 09f26bcac80bf287
 ---

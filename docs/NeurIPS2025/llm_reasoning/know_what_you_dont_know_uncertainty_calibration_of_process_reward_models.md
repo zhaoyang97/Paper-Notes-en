@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Know What You Don't Know: Uncertainty Calibration of Process Reward Models
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Process Reward Model] This paper proposes a quantile regression-based calibration method for PRMs, enabling their output scores to more accurately reflect the actual success probability of LLM reasoning. Building on the calibrated PRM, the paper further introduces an Instance-Adaptive Scaling (IAS) strategy for inference-time computation, achieving significant cost reduction while maintaining accuracy.
+  [NeurIPS 2025][LLM Reasoning][Process Reward Model] This paper proposes a quantile regression-based calibration method for PRMs, enabling their output scores to more accurately reflect the actual success probability of L…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - Process Reward Model
-  - Calibration
-  - Quantile Regression
-  - Inference-Time Scaling
-  - Adaptive Sampling
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "Process Reward Model"
+  - "Calibration"
+  - "Quantile Regression"
+  - "Inference-Time Scaling"
+  - "Adaptive Sampling"
 date: 2026-05-08
 content_hash: 14b001d61112c080
 ---

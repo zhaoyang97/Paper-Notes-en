@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FedMVP: Federated Multimodal Visual Prompt Tuning for Vision-Language Models
 description: >-
-  [ICCV 2025][Multimodal VLM][Federated Learning] This paper proposes FedMVP, which, under a federated learning setting, employs a PromptFormer network to fuse image visual features with LLM-generated category attribute text features, generating dynamic multimodal visual prompts injected into CLIP's visual encoder. FedMVP achieves substantial improvements of 1.57%–2.26% over existing federated prompt learning methods across 20 datasets and three generalization settings.
+  [ICCV 2025][Multimodal VLM][Federated Learning] This paper proposes FedMVP, which, under a federated learning setting, employs a PromptFormer network to fuse image visual features with LLM-generated category attribute te…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Federated Learning
-  - CLIP Prompt Learning
-  - Multimodal Prompting
-  - Visual Prompt Tuning
-  - Cross-Domain Generalization
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Federated Learning"
+  - "CLIP Prompt Learning"
+  - "Multimodal Prompting"
+  - "Visual Prompt Tuning"
+  - "Cross-Domain Generalization"
 date: 2026-05-08
 content_hash: 51df0b14f18ea205
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EfficientNav: Towards On-Device Object-Goal Navigation with Navigation Map Caching and Retrieval
 description: >-
-  [NeurIPS 2025][Robotics][object-goal navigation] Through discrete memory caching (group-independent KV cache computation with selective loading), attention-driven clustering (LLM shallow-layer attention guiding grouping), and semantics-aware retrieval (CLIP + knapsack problem adapted to varying memory budgets), EfficientNav is the first system to achieve zero-shot ObjNav on Jetson Orin using LLaMA-3.2-11b, surpassing the GPT-4 baseline by 11.1% SR while reducing real-time latency by 6.7×.
+  [NeurIPS 2025][Robotics][object-goal navigation] Through discrete memory caching (group-independent KV cache computation with selective loading), attention-driven clustering (LLM shallow-layer attention guiding grouping)…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - object-goal navigation
-  - on-device LLM
-  - KV cache optimization
-  - zero-shot navigation
-  - edge deployment
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "object-goal navigation"
+  - "on-device LLM"
+  - "KV cache optimization"
+  - "zero-shot navigation"
+  - "edge deployment"
 date: 2026-05-08
 content_hash: fc9b9050f568d7aa
 ---

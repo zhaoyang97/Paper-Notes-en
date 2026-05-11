@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Correlation Dimension of Auto-Regressive Large Language Models
 description: >-
-  [NeurIPS 2025][Model Compression][Correlation Dimension] This paper introduces the correlation dimension from fractal geometry into LLM analysis. By measuring the recursive structure among next-token log-probability vectors, it quantifies the hierarchical complexity of text, revealing a three-stage evolution of LLM pretraining, an indicator of hallucination tendency, and a unified detection capability for multiple text degeneration patterns — none of which can be captured by perplexity.
+  [NeurIPS 2025][Model Compression][Correlation Dimension] This paper introduces the correlation dimension from fractal geometry into LLM analysis. By measuring the recursive structure among next-token log-probability vect…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Correlation Dimension
-  - Fractal Geometry
-  - Text Degeneration Detection
-  - LLM Pretraining Dynamics
-  - Hallucination Indicator
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Correlation Dimension"
+  - "Fractal Geometry"
+  - "Text Degeneration Detection"
+  - "LLM Pretraining Dynamics"
+  - "Hallucination Indicator"
 date: 2026-05-08
 content_hash: 20afd3db67be1620
 ---

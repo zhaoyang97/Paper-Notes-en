@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LLM World Models Are Mental: Output Layer Evidence of Brittle World Model Use in LLM Mechanical Reasoning
 description: >-
-  [NeurIPS 2025][Robotics][LLM world models] Drawing on cognitive science methodology for studying mental models, this work evaluates LLM mechanical reasoning ability using TikZ code representations of pulley systems. LLMs can approximately estimate mechanical advantage and distinguish functional from non-functional systems (Studies 1 & 2), but completely fail at fine-grained structural connectivity reasoning (Study 3), indicating that LLM "world models" exist but are brittle.
+  [NeurIPS 2025][Robotics][LLM world models] Drawing on cognitive science methodology for studying mental models, this work evaluates LLM mechanical reasoning ability using TikZ code representations of pulley systems. LLMs…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - LLM world models
-  - mechanical reasoning
-  - pulley systems
-  - mental models
-  - brittleness
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "LLM world models"
+  - "mechanical reasoning"
+  - "pulley systems"
+  - "mental models"
+  - "brittleness"
 date: 2026-05-08
 content_hash: 1545228c3d724233
 ---

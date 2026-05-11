@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Segment Policy Optimization: Effective Segment-Level Credit Assignment in RL for Large Language Models
 description: >-
-  [NeurIPS 2025][LLM Reasoning][credit assignment] This paper proposes the SPO framework, which adopts segment-level (rather than token-level or trajectory-level) advantage estimation. Through a novel Monte Carlo method and tree-based sampling, SPO outperforms PPO and GRPO by 6–12 and 7–11 percentage points in short-CoT and long-CoT settings, respectively.
+  [NeurIPS 2025][LLM Reasoning][credit assignment] This paper proposes the SPO framework, which adopts segment-level (rather than token-level or trajectory-level) advantage estimation. Through a novel Monte Carlo method an…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - credit assignment
-  - segment-level advantages
-  - Monte Carlo estimation
-  - tree-based sampling
-  - PPO improvement
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "credit assignment"
+  - "segment-level advantages"
+  - "Monte Carlo estimation"
+  - "tree-based sampling"
+  - "PPO improvement"
 date: 2026-05-08
 content_hash: 48c082e47f9bf778
 ---

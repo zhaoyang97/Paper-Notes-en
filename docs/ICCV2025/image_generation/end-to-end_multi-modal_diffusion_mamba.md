@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] End-to-End Multi-Modal Diffusion Mamba
 description: >-
-  [ICCV 2025][Image Generation][Multimodal Models] This paper proposes Multi-Modal Diffusion Mamba (MDM), an end-to-end multimodal model based on the Mamba architecture. By employing a unified VAE encoder-decoder and a multi-step selective diffusion model, MDM enables simultaneous generation of images and text with computational complexity $\mathcal{O}(MLN^2)$, surpassing existing end-to-end models on tasks including image generation, image captioning, and VQA.
+  [ICCV 2025][Image Generation][Multimodal Models] This paper proposes Multi-Modal Diffusion Mamba (MDM), an end-to-end multimodal model based on the Mamba architecture. By employing a unified VAE encoder-decoder and a mul…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Multimodal Models
-  - Mamba
-  - Diffusion Models
-  - End-to-End Generation
-  - State Space Models
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Multimodal Models"
+  - "Mamba"
+  - "Diffusion Models"
+  - "End-to-End Generation"
+  - "State Space Models"
 date: 2026-05-08
 content_hash: c16a191133148493
 ---

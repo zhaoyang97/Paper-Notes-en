@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] When Identities Collapse: A Stress-Test Benchmark for Multi-Subject Personalization
 description: >-
-  [CVPR 2026][Image Generation][multi-subject personalization] This paper exposes the "identity collapse" bottleneck in multi-subject personalization: three SOTA models (MOSAIC, XVerse, PSR) already reach ~50% SCR at 2 subjects, surging to ~97% at 10 subjects. The paper proposes the DINOv2-based Subject Collapse Rate (SCR) metric to replace the inadequate CLIP-I, and constructs a systematic benchmark covering 2–10 subjects × 3 scene types.
+  [CVPR 2026][Image Generation][multi-subject personalization] This paper exposes the "identity collapse" bottleneck in multi-subject personalization: three SOTA models (MOSAIC, XVerse…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - multi-subject personalization
-  - identity collapse
-  - Subject Collapse Rate
-  - DINOv2
-  - stress test
+  - "CVPR 2026"
+  - "Image Generation"
+  - "multi-subject personalization"
+  - "identity collapse"
+  - "Subject Collapse Rate"
+  - "DINOv2"
+  - "stress test"
 date: 2026-05-08
 content_hash: 58e5c39a47592f03
 ---

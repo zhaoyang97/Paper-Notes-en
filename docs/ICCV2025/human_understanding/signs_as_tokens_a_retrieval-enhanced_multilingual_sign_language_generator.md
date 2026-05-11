@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Signs as Tokens: A Retrieval-Enhanced Multilingual Sign Language Generator
 description: >-
-  [ICCV 2025][Human Understanding][Sign language generation] This paper proposes SOKE, a multilingual sign language generation framework built upon pretrained language models. It discretizes continuous sign language motion into token sequences via a decoupled tokenizer, and achieves high-quality text-to-3D-avatar sign language generation across multiple languages through multi-head decoding and retrieval-augmented strategies.
+  [ICCV 2025][Human Understanding][Sign language generation] This paper proposes SOKE, a multilingual sign language generation framework built upon pretrained language models. It discretizes continuous sign language motion…
 tags:
-  - ICCV 2025
-  - Human Understanding
-  - Sign language generation
-  - multilingual sign language
-  - autoregressive language model
-  - retrieval-augmented generation
-  - motion discretization
+  - "ICCV 2025"
+  - "Human Understanding"
+  - "Sign language generation"
+  - "multilingual sign language"
+  - "autoregressive language model"
+  - "retrieval-augmented generation"
+  - "motion discretization"
 date: 2026-05-08
 content_hash: 114128c29283cecc
 ---

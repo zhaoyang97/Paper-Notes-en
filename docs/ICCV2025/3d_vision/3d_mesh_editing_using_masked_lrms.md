@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] 3D Mesh Editing using Masked LRMs
 description: >-
-  [ICCV 2025][3D Vision][LRM] This paper proposes MaskedLRM, which reformulates 3D shape editing as a conditional reconstruction problem. During training, randomly generated 3D occluders mask multi-view inputs, and a single clean conditioning view guides completion of the occluded regions. At inference, the user defines an edit region and provides a single edited image; the model produces an edited 3D mesh in a **single forward pass in under 3 seconds** — 2–10× faster than optimization-based methods — while supporting topological changes (e.g., adding holes or handles) and achieving reconstruction quality on par with state-of-the-art methods.
+  [ICCV 2025][3D Vision][LRM] This paper proposes MaskedLRM, which reformulates 3D shape editing as a conditional reconstruction problem. During training, randomly generated 3D occluders mask multi-view inputs…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - LRM
-  - Masked Reconstruction
-  - 3D Editing
-  - Conditional Inpainting
-  - Multi-view Consistency
+  - "ICCV 2025"
+  - "3D Vision"
+  - "LRM"
+  - "Masked Reconstruction"
+  - "3D Editing"
+  - "Conditional Inpainting"
+  - "Multi-view Consistency"
 date: 2026-05-08
 content_hash: b5a46f0bf8dd1795
 ---

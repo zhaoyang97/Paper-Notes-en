@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Understanding Co-speech Gestures in-the-wild
 description: >-
-  [ICCV 2025][Audio & Speech][Co-speech gestures] This paper proposes JEGAL — a joint gesture-audio-language tri-modal embedding space that learns co-speech gesture representations under weak supervision via a global phrase-level contrastive loss and a local gesture-word coupling loss. Three new gesture understanding tasks and benchmarks are introduced, and the method outperforms a range of baselines including large vision-language models.
+  [ICCV 2025][Audio & Speech][Co-speech gestures] This paper proposes JEGAL — a joint gesture-audio-language tri-modal embedding space that learns co-speech gesture representations under weak supervision via a global phras…
 tags:
-  - ICCV 2025
+  - "ICCV 2025"
   - "Audio & Speech"
-  - Co-speech gestures
-  - tri-modal representation learning
-  - gesture retrieval
-  - gesture word spotting
-  - active speaker detection
+  - "Co-speech gestures"
+  - "tri-modal representation learning"
+  - "gesture retrieval"
+  - "gesture word spotting"
+  - "active speaker detection"
 date: 2026-05-08
 content_hash: 4720a85b977bbed3
 ---

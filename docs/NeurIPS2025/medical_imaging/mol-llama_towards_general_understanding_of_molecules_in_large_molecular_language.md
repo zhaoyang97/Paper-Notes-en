@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mol-LLaMA: Towards General Understanding of Molecules in Large Molecular Language Models
 description: >-
-  [NeurIPS 2025][Medical Imaging][molecular language model] This paper proposes Mol-LLaMA, a large molecular language model for general molecular understanding. By designing three types of instruction data and a 2D-3D molecular representation fusion module, Mol-LLaMA surpasses GPT-4o in molecular feature understanding while exhibiting interpretability and reasoning capabilities.
+  [NeurIPS 2025][Medical Imaging][molecular language model] This paper proposes Mol-LLaMA, a large molecular language model for general molecular understanding. By designing three types of instruction data and a 2D-3D mole…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - molecular language model
-  - multimodal instruction tuning
-  - 2D-3D molecular representation fusion
-  - drug discovery
-  - molecular reasoning
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "molecular language model"
+  - "multimodal instruction tuning"
+  - "2D-3D molecular representation fusion"
+  - "drug discovery"
+  - "molecular reasoning"
 date: 2026-05-08
 content_hash: 7546e639666d270c
 ---

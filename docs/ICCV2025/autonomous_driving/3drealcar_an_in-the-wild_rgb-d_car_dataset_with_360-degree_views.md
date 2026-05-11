@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] 3DRealCar: An In-the-wild RGB-D Car Dataset with 360-degree Views
 description: >-
-  [ICCV 2025][Autonomous Driving][3D vehicle dataset] This paper presents 3DRealCar, the first large-scale real-world 3D vehicle dataset comprising 2,500 vehicles from 100+ brands, each with approximately 200 high-resolution 360-degree RGB-D views captured under three lighting conditions (standard, reflective, and low-light), along with 13-category vehicle parsing annotations, supporting tasks including 3D reconstruction, detection, and generation.
+  [ICCV 2025][Autonomous Driving][3D vehicle dataset] This paper presents 3DRealCar, the first large-scale real-world 3D vehicle dataset comprising 2,500 vehicles from 100+ brands…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - 3D vehicle dataset
-  - RGB-D
-  - 360-degree views
-  - 3D reconstruction
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "3D vehicle dataset"
+  - "RGB-D"
+  - "360-degree views"
+  - "3D reconstruction"
 date: 2026-05-08
 content_hash: a1730ccd9b77a7b9
 ---

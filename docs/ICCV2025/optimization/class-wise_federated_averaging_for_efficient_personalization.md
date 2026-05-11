@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Class-Wise Federated Averaging for Efficient Personalization
 description: >-
-  [ICCV 2025][Optimization][Personalized Federated Learning] cwFedAvg extends FedAvg from client-level aggregation to class-level aggregation, constructing a dedicated global model per class and combining them into a personalized local model weighted by each client's class distribution. Coupled with Weight Distribution Regularization (WDR) to strengthen the alignment between class distribution and weight norms, the method achieves substantial personalization gains under non-IID settings while maintaining the same communication overhead as FedAvg.
+  [ICCV 2025][Optimization][Personalized Federated Learning] cwFedAvg extends FedAvg from client-level aggregation to class-level aggregation…
 tags:
-  - ICCV 2025
-  - Optimization
-  - Personalized Federated Learning
-  - Class-Wise Aggregation
-  - Weight Distribution Regularization
-  - Data Heterogeneity
-  - Privacy Preservation
+  - "ICCV 2025"
+  - "Optimization"
+  - "Personalized Federated Learning"
+  - "Class-Wise Aggregation"
+  - "Weight Distribution Regularization"
+  - "Data Heterogeneity"
+  - "Privacy Preservation"
 date: 2026-05-08
 content_hash: 62fe67dfec4ef494
 ---

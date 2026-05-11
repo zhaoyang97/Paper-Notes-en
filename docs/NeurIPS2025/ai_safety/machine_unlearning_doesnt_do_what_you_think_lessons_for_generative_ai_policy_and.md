@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Machine Unlearning Doesn't Do What You Think: Lessons for Generative AI Policy and Research
 description: >-
-  [NeurIPS 2025][AI Safety][Machine Unlearning] This paper systematically identifies five fundamental mismatches between machine unlearning techniques and policy objectives in the context of generative AI, arguing that machine unlearning cannot serve as a universal solution for privacy, copyright, or safety concerns, and provides a practical conceptual framework for both ML researchers and policymakers.
+  [NeurIPS 2025][AI Safety][Machine Unlearning] This paper systematically identifies five fundamental mismatches between machine unlearning techniques and policy objectives in the context of generative AI…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - Machine Unlearning
-  - Generative AI Policy
-  - Privacy Compliance
-  - Copyright Protection
-  - Safety Governance
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "Machine Unlearning"
+  - "Generative AI Policy"
+  - "Privacy Compliance"
+  - "Copyright Protection"
+  - "Safety Governance"
 date: 2026-05-08
 content_hash: 134a2ac27254b4d3
 ---

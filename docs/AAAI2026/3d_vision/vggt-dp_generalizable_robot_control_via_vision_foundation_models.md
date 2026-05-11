@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VGGT-DP: Generalizable Robot Control via Vision Foundation Models
 description: >-
-  [AAAI 2026][3D Vision][visuomotor policy] This paper proposes VGGT-DP, a biologically inspired visuomotor policy framework that integrates the pretrained 3D-aware foundation model VGGT as a visual encoder with Diffusion Policy. Through three key designs — frame-wise token reuse (FTR), random token pruning, and proprioception-guided visual learning — VGGT-DP substantially outperforms DP and DP3 baselines on high-precision manipulation tasks in MetaWorld.
+  [AAAI 2026][3D Vision][visuomotor policy] This paper proposes VGGT-DP, a biologically inspired visuomotor policy framework that integrates the pretrained 3D-aware foundation model VGGT as a visual encoder with Diffusion…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - visuomotor policy
-  - diffusion policy
-  - VGGT
-  - proprioception guidance
-  - robot manipulation
+  - "AAAI 2026"
+  - "3D Vision"
+  - "visuomotor policy"
+  - "diffusion policy"
+  - "VGGT"
+  - "proprioception guidance"
+  - "robot manipulation"
 date: 2026-05-08
 content_hash: 5deff3b123ee299a
 ---

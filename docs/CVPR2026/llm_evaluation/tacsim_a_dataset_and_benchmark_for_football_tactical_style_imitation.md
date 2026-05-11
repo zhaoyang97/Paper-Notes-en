@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TacSIm: A Dataset and Benchmark for Football Tactical Style Imitation
 description: >-
-  [CVPR 2026][LLM Evaluation][Football tactical imitation] This paper presents TacSIm, the first large-scale dataset and benchmark that reconstructs full-team trajectories from real Premier League broadcast footage and performs tactical style imitation in a virtual football environment, quantifying imitation fidelity via two metrics: spatial occupancy similarity and motion vector similarity.
+  [CVPR 2026][LLM Evaluation][Football tactical imitation] This paper presents TacSIm, the first large-scale dataset and benchmark that reconstructs full-team trajectories from real Premier League broadcast footage and per…
 tags:
-  - CVPR 2026
-  - LLM Evaluation
-  - Football tactical imitation
-  - multi-agent learning
-  - trajectory reconstruction
-  - tactical evaluation
-  - virtual simulation
+  - "CVPR 2026"
+  - "LLM Evaluation"
+  - "Football tactical imitation"
+  - "multi-agent learning"
+  - "trajectory reconstruction"
+  - "tactical evaluation"
+  - "virtual simulation"
 date: 2026-05-08
 content_hash: 8c4434d803192491
 ---

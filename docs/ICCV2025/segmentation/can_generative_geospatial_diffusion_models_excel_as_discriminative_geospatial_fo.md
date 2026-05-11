@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Can Generative Geospatial Diffusion Models Excel as Discriminative Geospatial Foundation Models?
 description: >-
-  [ICCV 2025][Segmentation][Remote Sensing Foundation Models] This paper proposes SatDiFuser, a framework that repurposes a generative geospatial diffusion model (DiffusionSat) as a discriminative remote sensing foundation model. Through systematic analysis of multi-stage, multi-timestep diffusion features and three designed fusion strategies (Global Weighted, Localized Weighted, and MoE Joint Fusion), SatDiFuser outperforms existing state-of-the-art geospatial foundation models (GFMs) on semantic segmentation and classification tasks, achieving gains of up to +5.7% mIoU and +7.9% F1.
+  [ICCV 2025][Segmentation][Remote Sensing Foundation Models] This paper proposes SatDiFuser, a framework that repurposes a generative geospatial diffusion model (DiffusionSat) as a discriminative remote sensing foundation…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - Remote Sensing Foundation Models
-  - Diffusion Models
-  - Feature Fusion
-  - Self-Supervised Learning
-  - Satellite Imagery
+  - "ICCV 2025"
+  - "Segmentation"
+  - "Remote Sensing Foundation Models"
+  - "Diffusion Models"
+  - "Feature Fusion"
+  - "Self-Supervised Learning"
+  - "Satellite Imagery"
 date: 2026-05-08
 content_hash: 34e1fca86dd83fa2
 ---

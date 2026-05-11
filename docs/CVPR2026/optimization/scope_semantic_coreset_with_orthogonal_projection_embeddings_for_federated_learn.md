@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SCOPE: Semantic Coreset with Orthogonal Projection Embeddings for Federated learning
 description: >-
-  [CVPR2026][Optimization][Federated Learning] SCOPE employs a training-free vision-language geometric scorer to compress each sample into three scalars—representativeness, diversity, and negative-class boundary proximity—and has the server aggregate only these lightweight statistics to form a global consensus. This consensus guides each client to first remove semantically anomalous samples and then eliminate majority-class redundancies, thereby achieving a favorable balance among accuracy, robustness, and minimal communication overhead under strongly non-IID and long-tail federated scenarios.
+  [CVPR2026][Optimization][Federated Learning] SCOPE employs a training-free vision-language geometric scorer to compress each sample into three scalars—representativeness, diversity…
 tags:
-  - CVPR2026
-  - Optimization
-  - Federated Learning
-  - coreset selection
-  - long-tail distribution
-  - Vision-Language Model
-  - data pruning
+  - "CVPR2026"
+  - "Optimization"
+  - "Federated Learning"
+  - "coreset selection"
+  - "long-tail distribution"
+  - "Vision-Language Model"
+  - "data pruning"
 date: 2026-05-08
 content_hash: 4bd5eb1d70d6a0a0
 ---

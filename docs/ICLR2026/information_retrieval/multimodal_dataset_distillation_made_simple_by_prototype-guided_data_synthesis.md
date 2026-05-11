@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Multimodal Dataset Distillation Made Simple by Prototype-Guided Data Synthesis
 description: >-
-  [ICLR 2026][multimodal distillation] This paper proposes PDS (Prototype-Guided Data Synthesis), the first training-free multimodal dataset distillation framework. It leverages CLIP's aligned embedding space to perform modality-specific clustering, applies the Hungarian algorithm for cross-modal prototype matching, and employs an unCLIP decoder to synthesize distilled images from image prototypes. On a distillation set of as few as 100 pairs, PDS surpasses all optimization-based methods at zero training cost while achieving state-of-the-art cross-architecture generalization.
+  [ICLR 2026][Information Retrieval & RAG][multimodal distillation] This paper proposes PDS (Prototype-Guided Data Synthesis), the first training-free multimodal dataset distillation framework. It leverages CLIP's aligned…
 tags:
-  - ICLR 2026
-  - multimodal distillation
-  - CLIP
-  - unCLIP
-  - prototype learning
-  - training-free distillation
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "multimodal distillation"
+  - "CLIP"
+  - "unCLIP"
+  - "prototype learning"
+  - "training-free distillation"
 date: 2026-05-08
 content_hash: 09bb5f4c06222817
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Pi-GPS: Enhancing Geometry Problem Solving by Unleashing the Power of Diagrammatic Information
 description: >-
-  [ICCV 2025][Multimodal VLM][geometry problem solving] Pi-GPS leverages diagrammatic information to resolve ambiguities in textual descriptions. By introducing a lightweight Rectifier–Verifier module, it addresses a previously overlooked problem of textual ambiguity, achieving nearly 10% improvement over prior state-of-the-art neuro-symbolic methods on Geometry3K.
+  [ICCV 2025][Multimodal VLM][geometry problem solving] Pi-GPS leverages diagrammatic information to resolve ambiguities in textual descriptions. By introducing a lightweight Rectifier–Verifier module…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - geometry problem solving
-  - textual ambiguity resolution
-  - multimodal reasoning
-  - neuro-symbolic methods
-  - MLLM
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "geometry problem solving"
+  - "textual ambiguity resolution"
+  - "multimodal reasoning"
+  - "neuro-symbolic methods"
+  - "MLLM"
 date: 2026-05-08
 content_hash: 266d8b4177ab942c
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Scalable Neural Incentive Design with Parameterized Mean-Field Approximation
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][incentive design] This paper proposes the AMID algorithm, which formalizes the multi-agent incentive design (ID) problem as a parameterized mean-field game (PMFG), proves that the finite-$N$-agent objective approximates the infinite-population limit at a rate of $\mathscr{O}(1/\sqrt{N})$, and achieves substantial revenue improvements across multiple auction settings.
+  [NeurIPS 2025][Reinforcement Learning][incentive design] This paper proposes the AMID algorithm, which formalizes the multi-agent incentive design (ID) problem as a parameterized mean-field game (PMFG)…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - incentive design
-  - mean-field game
-  - Nash equilibrium
-  - auction
-  - multi-agent
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "incentive design"
+  - "mean-field game"
+  - "Nash equilibrium"
+  - "auction"
+  - "multi-agent"
 date: 2026-05-08
 content_hash: 6c8e17bbfb589617
 ---

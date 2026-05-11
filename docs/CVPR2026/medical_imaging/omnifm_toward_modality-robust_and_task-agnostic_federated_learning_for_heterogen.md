@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] OmniFM: Toward Modality-Robust and Task-Agnostic Federated Learning for Heterogeneous Medical Imaging
 description: >-
-  [CVPR 2026][Medical Imaging][Federated Learning] This paper proposes OmniFM, a modality-robust and task-agnostic federated learning framework that integrates three complementary components—Global Spectral Knowledge Retrieval, Embedding-wise Cross-Attention Fusion, and Prefix–Suffix Spectral Prompting—to support five medical imaging tasks (classification, segmentation, super-resolution, VQA, and multimodal fusion) within a unified FL pipeline, achieving substantial improvements over existing baselines under cross-modal heterogeneous settings.
+  [CVPR 2026][Medical Imaging][Federated Learning] This paper proposes OmniFM, a modality-robust and task-agnostic federated learning framework that integrates three complementary components—Global Spectral Knowledge Retri…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Federated Learning
-  - Modality Heterogeneity
-  - Frequency Domain Analysis
-  - Task-Agnostic
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Federated Learning"
+  - "Modality Heterogeneity"
+  - "Frequency Domain Analysis"
+  - "Task-Agnostic"
 date: 2026-05-08
 content_hash: f837218d30570b00
 ---

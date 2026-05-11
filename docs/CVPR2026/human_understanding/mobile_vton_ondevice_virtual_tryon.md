@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mobile-VTON: High-Fidelity On-Device Virtual Try-On
 description: >-
-  [CVPR 2026][Human Understanding][Virtual Try-On] The first fully offline, on-device diffusion-based virtual try-on framework. Built upon a TeacherNet-GarmentNet-TryonNet (TGT) architecture, it transfers the capabilities of SD3.5 Large to a 415M-parameter lightweight student network via Feature-Guided Adversarial (FGA) distillation. The method matches or surpasses server-side baselines at 1024×768 resolution on VITON-HD and DressCode, with an end-to-end inference time of approximately 80 seconds on a Xiaomi 17 Pro Max.
+  [CVPR 2026][Human Understanding][Virtual Try-On] The first fully offline, on-device diffusion-based virtual try-on framework. Built upon a TeacherNet-GarmentNet-TryonNet (TGT) architecture…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Virtual Try-On
-  - Mobile Deployment
-  - Knowledge Distillation
-  - Diffusion Models
-  - Privacy Preservation
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Virtual Try-On"
+  - "Mobile Deployment"
+  - "Knowledge Distillation"
+  - "Diffusion Models"
+  - "Privacy Preservation"
 date: 2026-05-08
 content_hash: 65fe52499a51afa0
 ---

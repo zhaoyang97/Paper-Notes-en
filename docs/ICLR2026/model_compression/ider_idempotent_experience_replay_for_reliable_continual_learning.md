@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] IDER: IDempotent Experience Replay for Reliable Continual Learning
 description: >-
-  [ICLR 2026][Model Compression][Continual Learning] This paper introduces idempotence into continual learning, enforcing output self-consistency during new task acquisition via two components—a Standard Idempotent Module and an Idempotent Distillation Module—simultaneously improving prediction reliability (reduced calibration error) and significantly mitigating catastrophic forgetting.
+  [ICLR 2026][Model Compression][Continual Learning] This paper introduces idempotence into continual learning, enforcing output self-consistency during new task acquisition via two components—a Standard Idempotent Module…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Continual Learning
-  - Idempotency
-  - Experience Replay
-  - Calibration Error
-  - Catastrophic Forgetting
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Continual Learning"
+  - "Idempotency"
+  - "Experience Replay"
+  - "Calibration Error"
+  - "Catastrophic Forgetting"
 date: 2026-05-08
 content_hash: 964833709987968a
 ---

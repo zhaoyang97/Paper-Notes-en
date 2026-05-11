@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FLoC: Facility Location-Based Efficient Visual Token Compression for Long Video Understanding
 description: >-
-  [ICLR 2026][Video Understanding][Long video understanding] This paper proposes FLoC, a visual token compression framework based on the facility location function. Through submodular optimization, FLoC efficiently selects a token subset that is both representative and diverse under a given budget, enabling training-free, model-agnostic, and query-agnostic token compression for long video understanding.
+  [ICLR 2026][Video Understanding][Long video understanding] This paper proposes FLoC, a visual token compression framework based on the facility location function. Through submodular optimization…
 tags:
-  - ICLR 2026
-  - Video Understanding
-  - Long video understanding
-  - token compression
-  - facility location
-  - submodular function optimization
-  - training-free
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "Long video understanding"
+  - "token compression"
+  - "facility location"
+  - "submodular function optimization"
+  - "training-free"
 date: 2026-05-08
 content_hash: aac35dc69779aace
 ---

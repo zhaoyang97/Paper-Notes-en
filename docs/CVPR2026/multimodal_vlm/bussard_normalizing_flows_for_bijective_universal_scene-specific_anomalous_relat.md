@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BUSSARD: Normalizing Flows for Bijective Universal Scene-Specific Anomalous Relationship Detection
 description: >-
-  [CVPR2026][Multimodal VLM][Scene graph anomaly detection] This paper proposes BUSSARD, the first learning-based scene-specific anomalous relationship detection method. It encodes scene graph triplets via pretrained language model embeddings, applies an autoencoder for dimensionality reduction, and employs normalizing flows for likelihood estimation. BUSSARD achieves approximately 10% AUROC improvement on the SARD dataset and demonstrates robustness to synonym variation.
+  [CVPR2026][Multimodal VLM][Scene graph anomaly detection] This paper proposes BUSSARD, the first learning-based scene-specific anomalous relationship detection method. It encodes scene graph triplets via pretrained langu…
 tags:
-  - CVPR2026
-  - Multimodal VLM
-  - Scene graph anomaly detection
-  - normalizing flows
-  - semantic embeddings
-  - relationship anomaly
-  - multimodal
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "Scene graph anomaly detection"
+  - "normalizing flows"
+  - "semantic embeddings"
+  - "relationship anomaly"
+  - "multimodal"
 date: 2026-05-08
 content_hash: fde1e802f00ea203
 ---

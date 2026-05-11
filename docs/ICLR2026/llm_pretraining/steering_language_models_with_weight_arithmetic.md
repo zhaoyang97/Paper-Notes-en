@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Steering Language Models with Weight Arithmetic
 description: >-
-  [ICLR 2026][LLM Pretraining][weight steering] This paper proposes Contrastive Weight Steering, which extracts behavioral direction vectors from the weight difference between models fine-tuned on positive and negative behavioral data, and directly modifies model weights to control behavior. The method demonstrates superior generalization and consistency compared to Activation Steering across experiments on sycophancy, malicious behavior, and refusal.
+  [ICLR 2026][LLM Pretraining][weight steering] This paper proposes Contrastive Weight Steering, which extracts behavioral direction vectors from the weight difference between models fine-tuned on positive and negative beh…
 tags:
-  - ICLR 2026
-  - LLM Pretraining
-  - weight steering
-  - activation steering
-  - sycophancy
-  - alignment
-  - task vector
-  - model safety
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "weight steering"
+  - "activation steering"
+  - "sycophancy"
+  - "alignment"
+  - "task vector"
+  - "model safety"
 date: 2026-05-08
 content_hash: 901645aa969d10a5
 ---

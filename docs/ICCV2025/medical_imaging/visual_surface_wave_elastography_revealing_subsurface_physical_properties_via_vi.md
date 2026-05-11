@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Visual Surface Wave Elastography: Revealing Subsurface Physical Properties via Visible Surface Waves
 description: >-
-  [ICCV 2025][Medical Imaging][Elastography] This paper proposes VSWE (Visual Surface Wave Elastography), a method that extracts the dispersion relation from a video of surface wave propagation and combines it with physics-based finite element optimization to infer subsurface layer thickness and stiffness. High-accuracy parameter recovery is demonstrated in both simulated and real gelatin experiments, providing a proof-of-concept for at-home health monitoring.
+  [ICCV 2025][Medical Imaging][Elastography] This paper proposes VSWE (Visual Surface Wave Elastography), a method that extracts the dispersion relation from a video of surface wave propagation and combines it with physics…
 tags:
-  - ICCV 2025
-  - Medical Imaging
-  - Elastography
-  - surface waves
-  - dispersion relation
-  - finite element method
-  - video analysis
+  - "ICCV 2025"
+  - "Medical Imaging"
+  - "Elastography"
+  - "surface waves"
+  - "dispersion relation"
+  - "finite element method"
+  - "video analysis"
 date: 2026-05-08
 content_hash: 0bc0d1722ceef64d
 ---

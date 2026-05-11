@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SANSA: Unleashing the Hidden Semantics in SAM2 for Few-Shot Segmentation
 description: >-
-  [NeurIPS 2025][Segmentation][Few-Shot Segmentation] SANSA reveals that SAM2, despite being pre-trained in a class-agnostic manner, implicitly encodes rich semantic structure in its features. By inserting lightweight AdaptFormer adapters into the last two layers of a frozen SAM2 Image Encoder, the method redirects the Memory Attention mechanism from visual-similarity matching to semantic-similarity matching. This unified architecture achieves state-of-the-art performance on few-shot segmentation while being more than 3× faster and 4–5× smaller in parameter count than competing approaches.
+  [NeurIPS 2025][Segmentation][Few-Shot Segmentation] SANSA reveals that SAM2, despite being pre-trained in a class-agnostic manner, implicitly encodes rich semantic structure in its features. By inserting lightweight Adap…
 tags:
-  - NeurIPS 2025
-  - Segmentation
-  - Few-Shot Segmentation
-  - SAM2
-  - semantic alignment
-  - feature adaptation
-  - Memory Attention
+  - "NeurIPS 2025"
+  - "Segmentation"
+  - "Few-Shot Segmentation"
+  - "SAM2"
+  - "semantic alignment"
+  - "feature adaptation"
+  - "Memory Attention"
 date: 2026-05-08
 content_hash: 207300226deb7251
 ---

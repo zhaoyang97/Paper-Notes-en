@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Similarity-as-Evidence: Calibrating Overconfident VLMs for Interpretable and Label-Efficient Medical Active Learning
 description: >-
-  [CVPR2026][Multimodal VLM][Active Learning] This paper proposes the Similarity-as-Evidence (SaE) framework, which reinterprets VLM text-image similarities as Dirichlet evidence. A Similarity Evidence Head (SEH) is introduced to calibrate overconfident softmax outputs, and a dual-factor acquisition strategy based on vacuity and dissonance enables interpretable, label-efficient medical active learning, achieving a SOTA macro-average accuracy of 82.57% across 10 datasets under a 20% annotation budget.
+  [CVPR2026][Multimodal VLM][Active Learning] This paper proposes the Similarity-as-Evidence (SaE) framework, which reinterprets VLM text-image similarities as Dirichlet evidence. A Similarity Evidence Head (SEH) is introd…
 tags:
-  - CVPR2026
-  - Multimodal VLM
-  - Active Learning
-  - Vision-Language Models
-  - Uncertainty Quantification
-  - Dirichlet Distribution
-  - Evidential Deep Learning
-  - Medical Image Classification
-  - Calibration
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "Active Learning"
+  - "Vision-Language Models"
+  - "Uncertainty Quantification"
+  - "Dirichlet Distribution"
+  - "Evidential Deep Learning"
+  - "Medical Image Classification"
+  - "Calibration"
 date: 2026-05-08
 content_hash: b3aedfd817f45c41
 ---

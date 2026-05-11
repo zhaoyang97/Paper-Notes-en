@@ -4,9 +4,9 @@ title: >-
 description: >-
   [ACL 2026][Dialogue Systems][To be supplemented] To be supplemented after thorough reading.
 tags:
-  - ACL 2026
-  - Dialogue Systems
-  - To be supplemented
+  - "ACL 2026"
+  - "Dialogue Systems"
+  - "To be supplemented"
 date: 2026-05-08
 content_hash: 2a504f4e21c62b8d
 ---

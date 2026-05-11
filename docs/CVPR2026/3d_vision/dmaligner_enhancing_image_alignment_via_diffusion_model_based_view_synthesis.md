@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DMAligner: Enhancing Image Alignment via Diffusion Model Based View Synthesis
 description: >-
-  [CVPR2026][3D Vision][image alignment] This paper proposes DMAligner, which reformulates image alignment from the traditional optical flow warping paradigm into an "alignment-oriented view synthesis" task. By leveraging a conditional diffusion model to directly generate complete aligned images, and combining a purpose-built DSIA synthetic dataset with a Dynamics-aware Mask Producing (DMP) module, DMAligner effectively eliminates the ghosting and occlusion artifacts inherent to warp-based methods, achieving state-of-the-art performance across multiple benchmarks.
+  [CVPR2026][3D Vision][image alignment] This paper proposes DMAligner, which reformulates image alignment from the traditional optical flow warping paradigm into an "alignment-oriented view synthesis" task. By leveraging…
 tags:
-  - CVPR2026
-  - 3D Vision
-  - image alignment
-  - diffusion model
-  - view synthesis
-  - dynamic scenes
-  - occlusion handling
+  - "CVPR2026"
+  - "3D Vision"
+  - "image alignment"
+  - "diffusion model"
+  - "view synthesis"
+  - "dynamic scenes"
+  - "occlusion handling"
 date: 2026-05-08
 content_hash: 51da9c2c0ae0734c
 ---

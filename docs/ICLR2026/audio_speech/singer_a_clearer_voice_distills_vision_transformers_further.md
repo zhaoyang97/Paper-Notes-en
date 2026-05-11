@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SiNGER: A Clearer Voice Distills Vision Transformers Further
 description: >-
-  [ICLR 2026][Audio & Speech][Vision Transformer] This paper proposes SiNGER (Singular Nullspace-Guided Energy Reallocation), a framework that suppresses high-norm artifacts in ViT features by applying perturbations along the left-nullspace directions of teacher features, thereby preserving informative signals. Combined with lightweight LoRA adapters, SiNGER achieves state-of-the-art performance across multiple downstream tasks while producing cleaner and more interpretable representations.
+  [ICLR 2026][Audio & Speech][Vision Transformer] This paper proposes SiNGER (Singular Nullspace-Guided Energy Reallocation), a framework that suppresses high-norm artifacts in ViT features by applying perturbations along…
 tags:
-  - ICLR 2026
+  - "ICLR 2026"
   - "Audio & Speech"
-  - Vision Transformer
-  - Knowledge Distillation
-  - High-Norm Artifacts
-  - Nullspace Guidance
-  - LoRA Adapter
+  - "Vision Transformer"
+  - "Knowledge Distillation"
+  - "High-Norm Artifacts"
+  - "Nullspace Guidance"
+  - "LoRA Adapter"
 date: 2026-05-08
 content_hash: b2dee3602e3f9df3
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Conditional Diffusion Model for Multi-Agent Dynamic Task Decomposition
 description: >-
-  [AAAI 2026][Image Generation][Task Decomposition] This paper proposes CD3T, a two-level hierarchical MARL framework that employs a conditional diffusion model to learn action semantic representations $z_a^i$ (conditioned on observations and other agents' actions to predict next observations and rewards), obtains subtask partitions via k-means clustering, and uses a high-level subtask selector combined with a low-level policy operating over a restricted action space. CD3T significantly outperforms all baselines on Super Hard scenarios in SMAC.
+  [AAAI 2026][Image Generation][Task Decomposition] This paper proposes CD3T, a two-level hierarchical MARL framework that employs a conditional diffusion model to learn action semantic representations $z_a^i$ (conditioned…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Task Decomposition
-  - Conditional Diffusion Model
-  - Action Semantic Representation
-  - Value Decomposition
-  - CTDE
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Task Decomposition"
+  - "Conditional Diffusion Model"
+  - "Action Semantic Representation"
+  - "Value Decomposition"
+  - "CTDE"
 date: 2026-05-08
 content_hash: 83cf9c98a8d3dd15
 ---

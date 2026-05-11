@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Physics-informed Reduced Order Modeling of Time-dependent PDEs via Differentiable Solvers
 description: >-
-  [NeurIPS 2025][Time Series][Reduced Order Modeling] This paper proposes Φ-ROM, a framework that embeds differentiable PDE solvers into the training loop of nonlinear reduced order models. By leveraging solver feedback to directly constrain latent space dynamics, Φ-ROM significantly outperforms purely data-driven ROMs and other physics-informed methods in generalization to unseen parameters/initial conditions, long-horizon extrapolation, and solution recovery from sparse observations.
+  [NeurIPS 2025][Time Series][Reduced Order Modeling] This paper proposes Φ-ROM, a framework that embeds differentiable PDE solvers into the training loop of nonlinear reduced order models. By leveraging solver feedback to…
 tags:
-  - NeurIPS 2025
-  - Time Series
-  - Reduced Order Modeling
-  - Differentiable Solvers
-  - Physics-Informed Neural Networks
-  - Implicit Neural Representations
-  - Partial Differential Equations
+  - "NeurIPS 2025"
+  - "Time Series"
+  - "Reduced Order Modeling"
+  - "Differentiable Solvers"
+  - "Physics-Informed Neural Networks"
+  - "Implicit Neural Representations"
+  - "Partial Differential Equations"
 date: 2026-05-08
 content_hash: d2f2ed4c91d4bb95
 ---

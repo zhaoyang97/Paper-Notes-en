@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FALCON: An ML Framework for Fully Automated Layout-Constrained Analog Circuit Design
 description: >-
-  [NeurIPS 2025][Graph Learning][Analog Circuit Design] FALCON proposes an end-to-end framework for automated analog/RF circuit design via a three-stage pipeline: MLP-based topology selection, edge-centric GNN performance prediction, and differentiable layout-constrained gradient inference. Trained on a million-scale Cadence simulation dataset, the framework achieves >99% topology selection accuracy, <10% performance prediction error, and sub-second per-instance inference.
+  [NeurIPS 2025][Graph Learning][Analog Circuit Design] FALCON proposes an end-to-end framework for automated analog/RF circuit design via a three-stage pipeline: MLP-based topology selection…
 tags:
-  - NeurIPS 2025
-  - Graph Learning
-  - Analog Circuit Design
-  - Graph Neural Networks
-  - Inverse Design
-  - Layout-Aware Optimization
-  - Millimeter-Wave Circuits
+  - "NeurIPS 2025"
+  - "Graph Learning"
+  - "Analog Circuit Design"
+  - "Graph Neural Networks"
+  - "Inverse Design"
+  - "Layout-Aware Optimization"
+  - "Millimeter-Wave Circuits"
 date: 2026-05-08
 content_hash: b8368a0312ca51ff
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Missing No More: Dictionary-Guided Cross-Modal Image Fusion under Missing Infrared
 description: >-
-  [CVPR 2026][Infrared-visible fusion] This paper proposes the first framework that performs cross-modal fusion under missing infrared conditions in the coefficient domain rather than the pixel domain. By learning a shared convolutional dictionary that establishes a unified IR-VIS atomic space, the method performs VIS→IR inference and adaptive fusion entirely in the coefficient domain. A frozen LLM provides weak semantic priors for thermal information completion. The approach achieves performance comparable to dual-modality fusion methods using only visible light images as input.
+  [CVPR 2026][Interpretability][Infrared-visible fusion] This paper proposes the first framework that performs cross-modal fusion under missing infrared conditions in the coefficient domain rather than the pixel domain. By…
 tags:
-  - CVPR 2026
-  - Infrared-visible fusion
-  - missing modality
-  - convolutional dictionary learning
-  - coefficient-domain inference
-  - large language model prior
+  - "CVPR 2026"
+  - "Interpretability"
+  - "Infrared-visible fusion"
+  - "missing modality"
+  - "convolutional dictionary learning"
+  - "coefficient-domain inference"
+  - "large language model prior"
 date: 2026-05-08
 content_hash: 7921dbc5ad665f54
 ---

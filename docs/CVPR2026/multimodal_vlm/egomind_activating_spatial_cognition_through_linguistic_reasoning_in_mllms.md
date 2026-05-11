@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EgoMind: Activating Spatial Cognition through Linguistic Reasoning in MLLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][Spatial Reasoning] This paper proposes EgoMind, a CoT framework that requires no geometric priors. Through two core components—Role-Play Caption (RPC) and Progressive Spatial Analysis (PSA)—it achieves competitive multi-frame spatial reasoning using only 5K SFT and 20K RL samples.
+  [CVPR 2026][Multimodal VLM][Spatial Reasoning] This paper proposes EgoMind, a CoT framework that requires no geometric priors. Through two core components—Role-Play Caption (RPC) and Progressive Spatial Analysis (PSA)—it…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Spatial Reasoning
-  - Chain-of-Thought
-  - Multi-Frame Understanding
-  - MLLM
-  - Linguistic Reasoning
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Spatial Reasoning"
+  - "Chain-of-Thought"
+  - "Multi-Frame Understanding"
+  - "MLLM"
+  - "Linguistic Reasoning"
 date: 2026-05-08
 content_hash: 754b3030b91e8136
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Yggdrasil: Bridging Dynamic Speculation and Static Runtime for Latency-Optimal Tree-Based LLM Decoding
 description: >-
-  [NeurIPS 2025][LLM Efficiency][speculative decoding] This paper proposes Yggdrasil, a latency-optimal speculative decoding system that achieves compiler-friendly dynamic drafting via the Equal-Growth Tree (EGT) structure, replaces the conventional AAL metric with a latency-aware optimization objective, and reduces CPU-GPU coordination overhead through a stage-based scheduling runtime, achieving up to 3.98× end-to-end speedup on A100/A40 GPUs.
+  [NeurIPS 2025][LLM Efficiency][speculative decoding] This paper proposes Yggdrasil, a latency-optimal speculative decoding system that achieves compiler-friendly dynamic drafting via the Equal-Growth Tree (EGT) structure…
 tags:
-  - NeurIPS 2025
-  - LLM Efficiency
-  - speculative decoding
-  - tree-structured draft
-  - compiler optimization
-  - latency optimization
-  - LLM inference acceleration
+  - "NeurIPS 2025"
+  - "LLM Efficiency"
+  - "speculative decoding"
+  - "tree-structured draft"
+  - "compiler optimization"
+  - "latency optimization"
+  - "LLM inference acceleration"
 date: 2026-05-08
 content_hash: bdffc089f2b90eac
 ---

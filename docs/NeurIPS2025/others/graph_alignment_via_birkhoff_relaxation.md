@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Graph Alignment via Birkhoff Relaxation
 description: >-
-  [NeurIPS 2025][graph alignment] This paper provides the first theoretical guarantees for the Birkhoff relaxation (the tightest convex relaxation of QAP) under the Gaussian Wigner model: when $\sigma = o(n^{-1})$, the relaxed solution approximates the true permutation; when $\sigma = \Omega(n^{-0.5})$, the relaxed solution is far from the true permutation, revealing a phase transition phenomenon.
+  [NeurIPS 2025][graph alignment] This paper provides the first theoretical guarantees for the Birkhoff relaxation (the tightest convex relaxation of QAP) under the Gaussian Wigner model: when $\sigma = o(n^{-1})$…
 tags:
-  - NeurIPS 2025
-  - graph alignment
-  - quadratic assignment
-  - Birkhoff polytope
-  - convex relaxation
-  - phase transition
-  - Gaussian Wigner Model
+  - "NeurIPS 2025"
+  - "graph alignment"
+  - "quadratic assignment"
+  - "Birkhoff polytope"
+  - "convex relaxation"
+  - "phase transition"
+  - "Gaussian Wigner Model"
 date: 2026-05-08
 content_hash: ab83ff018fdb4b55
 ---

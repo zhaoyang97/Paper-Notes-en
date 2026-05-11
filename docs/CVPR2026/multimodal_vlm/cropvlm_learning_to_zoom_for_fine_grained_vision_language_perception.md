@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CropVLM: Learning to Zoom for Fine-Grained Vision-Language Perception
 description: >-
-  [CVPR 2026][Multimodal VLM][Visual cropping] This paper proposes CropVLM — a lightweight 256M-parameter cropping network trained via GRPO reinforcement learning (without manual bounding box annotations) that dynamically selects the most informative image regions for VLMs to focus on, enabling plug-and-play integration with both open-source and commercial VLMs to improve fine-grained visual understanding.
+  [CVPR 2026][Multimodal VLM][Visual cropping] This paper proposes CropVLM — a lightweight 256M-parameter cropping network trained via GRPO reinforcement learning (without manual bounding box annotations) that dynamically…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Visual cropping
-  - reinforcement learning
-  - GRPO
-  - fine-grained perception
-  - plug-and-play
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Visual cropping"
+  - "reinforcement learning"
+  - "GRPO"
+  - "fine-grained perception"
+  - "plug-and-play"
 date: 2026-05-08
 content_hash: 704b9546586bed35
 ---

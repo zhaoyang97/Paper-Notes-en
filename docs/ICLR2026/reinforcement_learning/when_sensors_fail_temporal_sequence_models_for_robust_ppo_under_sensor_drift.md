@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] When Sensors Fail: Temporal Sequence Models for Robust PPO under Sensor Drift
 description: >-
-  [ICLR 2026][Reinforcement Learning][sensor failure] This paper investigates the robustness of PPO under temporally persistent sensor failures, proposes integrating sequence models (Transformer and SSMs) into PPO, derives high-probability upper bounds on infinite-horizon reward degradation under stochastic sensor failures, and demonstrates through MuJoCo experiments that Transformer-PPO significantly outperforms MLP, RNN, and SSM baselines under severe sensor dropout.
+  [ICLR 2026][Reinforcement Learning][sensor failure] This paper investigates the robustness of PPO under temporally persistent sensor failures, proposes integrating sequence models (Transformer and SSMs) into PPO…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - sensor failure
-  - partial observability
-  - robustness
-  - Transformer
-  - state space models
-  - PPO
-  - sequence modeling
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "sensor failure"
+  - "partial observability"
+  - "robustness"
+  - "Transformer"
+  - "state space models"
+  - "PPO"
+  - "sequence modeling"
 date: 2026-05-08
 content_hash: 8003b02a76bd407a
 ---

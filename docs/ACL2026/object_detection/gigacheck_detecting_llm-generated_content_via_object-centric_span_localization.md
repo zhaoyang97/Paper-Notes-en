@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GigaCheck: Detecting LLM-generated Content via Object-Centric Span Localization
 description: >-
-  [ACL 2026][Object Detection][LLM-generated text detection] GigaCheck is proposed as a dual-strategy framework: document-level classification via fine-tuned LLM, and span-level detection that innovatively treats AI-generated text spans as "objects," employing a DETR-like architecture for end-to-end character-level localization.
+  [ACL 2026][Object Detection][LLM-generated text detection] GigaCheck is proposed as a dual-strategy framework: document-level classification via fine-tuned LLM…
 tags:
-  - ACL 2026
-  - Object Detection
-  - LLM-generated text detection
-  - object detection paradigm
-  - DETR
-  - text span localization
-  - human-machine collaborative text
+  - "ACL 2026"
+  - "Object Detection"
+  - "LLM-generated text detection"
+  - "object detection paradigm"
+  - "DETR"
+  - "text span localization"
+  - "human-machine collaborative text"
 date: 2026-05-08
 content_hash: 83ff1a4f6d71201f
 ---

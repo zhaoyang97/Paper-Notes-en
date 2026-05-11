@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DetectiumFire: A Comprehensive Multi-modal Dataset Bridging Vision and Language for Fire Understanding
 description: >-
-  [NeurIPS 2025][Object Detection][Fire Detection] DetectiumFire constructs the largest multi-modal fire understanding dataset — 14.5K real images + 2.5K videos + 8K synthetic images + 12K RLHF preference pairs — with a low duplication rate (0.03 PHash vs. D-Fire 0.15), a 4-level severity classification scheme, and detailed scene descriptions. Fine-tuning YOLOv11m achieves mAP 43.74, and fine-tuning LLaMA-3.2-11B yields 83.84% accuracy on fire severity classification.
+  [NeurIPS 2025][Object Detection][Fire Detection] DetectiumFire constructs the largest multi-modal fire understanding dataset — 14.5K real images + 2.5K videos + 8K synthetic images + 12K RLHF preference pairs — with a lo…
 tags:
-  - NeurIPS 2025
-  - Object Detection
-  - Fire Detection
-  - Multi-modal Dataset
-  - Synthetic Data
-  - RLHF
-  - Vision-Language Model
+  - "NeurIPS 2025"
+  - "Object Detection"
+  - "Fire Detection"
+  - "Multi-modal Dataset"
+  - "Synthetic Data"
+  - "RLHF"
+  - "Vision-Language Model"
 date: 2026-05-08
 content_hash: 608ff3b5754e2231
 ---

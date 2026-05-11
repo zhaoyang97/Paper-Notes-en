@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PAANO: Patch-Based Representation Learning for Time-Series Anomaly Detection
 description: >-
-  [ICLR 2026][Time Series][Time series anomaly detection] This paper proposes PaAno, a lightweight patch-level representation learning method for time-series anomaly detection. It employs a 1D-CNN encoder trained with triplet loss and pretext loss to learn a patch embedding space, and computes anomaly scores by measuring the distance between query patches and normal patches stored in a memory bank. PaAno achieves comprehensive state-of-the-art performance on the TSB-AD benchmark while requiring only 0.3M parameters and seconds of inference time.
+  [ICLR 2026][Time Series][Time series anomaly detection] This paper proposes PaAno, a lightweight patch-level representation learning method for time-series anomaly detection. It employs a 1D-CNN encoder trained with trip…
 tags:
-  - ICLR 2026
-  - Time Series
-  - Time series anomaly detection
-  - patch representation learning
-  - lightweight CNN
-  - memory bank
-  - metric learning
+  - "ICLR 2026"
+  - "Time Series"
+  - "Time series anomaly detection"
+  - "patch representation learning"
+  - "lightweight CNN"
+  - "memory bank"
+  - "metric learning"
 date: 2026-05-08
 content_hash: 89998455ce131f0c
 ---

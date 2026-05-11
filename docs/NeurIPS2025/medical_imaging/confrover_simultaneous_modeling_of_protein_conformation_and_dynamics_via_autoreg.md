@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ConfRover: Simultaneous Modeling of Protein Conformation and Dynamics via Autoregression
 description: >-
-  [NeurIPS 2025][Medical Imaging][protein dynamics] ConfRover proposes an autoregressive framework that factorizes protein MD trajectories into frame-wise conditional generation $p(\mathbf{x}^{1:L}) = \prod_l p(\mathbf{x}^l | \mathbf{x}^{<l})$, and through a modular architecture consisting of an encoder, a causal Transformer, and an SE(3) diffusion decoder, unifies three tasks—trajectory simulation, time-independent conformational sampling, and conformational interpolation—within a single model for the first time, achieving comprehensive improvements over MDGen on the ATLAS benchmark.
+  [NeurIPS 2025][Medical Imaging][protein dynamics] ConfRover proposes an autoregressive framework that factorizes protein MD trajectories into frame-wise conditional generation $p(\mathbf{x}^{1:L}) = \prod_l p(\mathbf{x}^…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - protein dynamics
-  - autoregressive generation
-  - SE(3) diffusion
-  - conformational sampling
-  - molecular dynamics
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "protein dynamics"
+  - "autoregressive generation"
+  - "SE(3) diffusion"
+  - "conformational sampling"
+  - "molecular dynamics"
 date: 2026-05-08
 content_hash: 147c776d46df346b
 ---

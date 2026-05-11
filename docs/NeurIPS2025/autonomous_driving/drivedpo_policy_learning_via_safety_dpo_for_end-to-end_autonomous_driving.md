@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DriveDPO: Policy Learning via Safety DPO For End-to-End Autonomous Driving
 description: >-
-  [NeurIPS 2025][Autonomous Driving][End-to-end autonomous driving] DriveDPO is a two-stage framework that first fuses human-imitation similarity and rule-based safety scores into a single supervised distribution via unified policy distillation, then applies Safety DPO to construct trajectory preference pairs of the form "human-like but unsafe vs. human-like and safe" for policy fine-tuning — achieving a new state-of-the-art PDMS of 90.0 on NAVSIM.
+  [NeurIPS 2025][Autonomous Driving][End-to-end autonomous driving] DriveDPO is a two-stage framework that first fuses human-imitation similarity and rule-based safety scores into a single supervised distribution via unifi…
 tags:
-  - NeurIPS 2025
-  - Autonomous Driving
-  - End-to-end autonomous driving
-  - Safety DPO
-  - preference optimization
-  - trajectory planning
-  - NAVSIM
+  - "NeurIPS 2025"
+  - "Autonomous Driving"
+  - "End-to-end autonomous driving"
+  - "Safety DPO"
+  - "preference optimization"
+  - "trajectory planning"
+  - "NAVSIM"
 date: 2026-05-08
 content_hash: 1efc99caa43ef52a
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AGSC: Adaptive Granularity and Semantic Clustering for Uncertainty Quantification in Long-text Generation
 description: >-
-  [ACL 2026][LLM Safety][Uncertainty Quantification] AGSC proposes an uncertainty quantification framework for long-text generation that uses NLI neutral probability to trigger adaptive granularity decomposition (reducing inference time by 60%) and employs GMM soft clustering to capture latent semantic topics for topic-aware weighted aggregation, achieving state-of-the-art factuality correlation on the BIO and LongFact benchmarks.
+  [ACL 2026][LLM Safety][Uncertainty Quantification] AGSC proposes an uncertainty quantification framework for long-text generation that uses NLI neutral probability to trigger adaptive granularity decomposition (reducing…
 tags:
-  - ACL 2026
-  - LLM Safety
-  - Uncertainty Quantification
-  - Long-text Generation
-  - Adaptive Granularity
-  - Semantic Clustering
-  - GMM
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Uncertainty Quantification"
+  - "Long-text Generation"
+  - "Adaptive Granularity"
+  - "Semantic Clustering"
+  - "GMM"
 date: 2026-05-08
 content_hash: a6f3a38e6ec7352a
 ---

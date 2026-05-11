@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Feature-Centric Unsupervised Node Representation Learning Without Homophily Assumption
 description: >-
-  [AAAI 2026][Graph Learning][unsupervised node representation learning] This paper proposes FUEL, a method that adaptively learns the degree of graph convolution usage through a node-feature-centric clustering scheme, achieving high-quality unsupervised node representations on both homophilic and non-homophilic graphs without any homophily assumption.
+  [AAAI 2026][Graph Learning][unsupervised node representation learning] This paper proposes FUEL, a method that adaptively learns the degree of graph convolution usage through a node-feature-centric clustering scheme…
 tags:
-  - AAAI 2026
-  - Graph Learning
-  - unsupervised node representation learning
-  - graph convolution
-  - non-homophilic graphs
-  - clustering
-  - feature-centric
+  - "AAAI 2026"
+  - "Graph Learning"
+  - "unsupervised node representation learning"
+  - "graph convolution"
+  - "non-homophilic graphs"
+  - "clustering"
+  - "feature-centric"
 date: 2026-05-08
 content_hash: 72db66f858b51876
 ---

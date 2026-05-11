@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ThinkSound: Chain-of-Thought Reasoning in Multimodal Large Language Models for Audio Generation and Editing
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Video-to-Audio] ThinkSound is a three-stage interactive video-to-audio framework that leverages an MLLM to generate structured CoT reasoning as guidance for a unified audio foundation model. It achieves state-of-the-art performance on VGGSound and MovieGen Audio benchmarks while supporting object-level refinement and natural language instruction-based editing.
+  [NeurIPS 2025][LLM Reasoning][Video-to-Audio] ThinkSound is a three-stage interactive video-to-audio framework that leverages an MLLM to generate structured CoT reasoning as guidance for a unified audio foundation model.…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - Video-to-Audio
-  - Chain-of-Thought
-  - Audio Generation
-  - Multimodal Reasoning
-  - Flow Matching
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "Video-to-Audio"
+  - "Chain-of-Thought"
+  - "Audio Generation"
+  - "Multimodal Reasoning"
+  - "Flow Matching"
 date: 2026-05-08
 content_hash: cf68dbdfe07d565c
 ---

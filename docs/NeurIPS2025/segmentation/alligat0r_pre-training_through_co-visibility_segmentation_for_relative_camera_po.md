@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Alligat0R: Pre-Training through Covisibility Segmentation for Relative Camera Pose Regression
 description: >-
-  [NeurIPS 2025][Segmentation][Covisibility Segmentation] This paper replaces CroCo's cross-view completion with covisibility segmentation as a stereo vision pre-training task, predicting per-pixel labels of "co-visible / occluded / out-of-view" for each pixel. The approach significantly outperforms CroCo in low-overlap scenarios and achieves a first-place overall success rate of 60.3% on the RUBIK benchmark.
+  [NeurIPS 2025][Segmentation][Covisibility Segmentation] This paper replaces CroCo's cross-view completion with covisibility segmentation as a stereo vision pre-training task…
 tags:
-  - NeurIPS 2025
-  - Segmentation
-  - Covisibility Segmentation
-  - Pre-Training
-  - Relative Pose Regression
-  - CroCo
-  - ViT
+  - "NeurIPS 2025"
+  - "Segmentation"
+  - "Covisibility Segmentation"
+  - "Pre-Training"
+  - "Relative Pose Regression"
+  - "CroCo"
+  - "ViT"
 date: 2026-05-08
 content_hash: 132783bbc1a198f7
 ---

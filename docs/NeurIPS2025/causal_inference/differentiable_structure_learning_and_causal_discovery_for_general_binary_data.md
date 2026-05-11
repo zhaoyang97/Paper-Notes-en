@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Differentiable Structure Learning and Causal Discovery for General Binary Data
 description: >-
-  [NEURIPS2025][Causal Inference][Causal discovery] This paper proposes a general differentiable structure learning framework based on the Multivariate Bernoulli Distribution (MVB) that makes no assumptions about the specific data-generating process, captures arbitrary higher-order dependencies among binary discrete variables, and proves that while DAGs are not identifiable in the general setting, the minimal equivalence class (Markov equivalence class) is recoverable.
+  [NEURIPS2025][Causal Inference][Causal discovery] This paper proposes a general differentiable structure learning framework based on the Multivariate Bernoulli Distribution (MVB) that makes no assumptions about the speci…
 tags:
-  - NEURIPS2025
-  - Causal Inference
-  - Causal discovery
-  - structure learning
-  - discrete data
-  - DAG learning
-  - multivariate Bernoulli distribution
+  - "NEURIPS2025"
+  - "Causal Inference"
+  - "Causal discovery"
+  - "structure learning"
+  - "discrete data"
+  - "DAG learning"
+  - "multivariate Bernoulli distribution"
 date: 2026-05-08
 content_hash: 959bddb84a102386
 ---

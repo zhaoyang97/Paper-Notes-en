@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VideoSeek: Long-Horizon Video Agent with Tool-Guided Seeking
 description: >-
-  [CVPR 2026][Video Understanding][Video Agent] VideoSeek proposes a long-horizon video agent that actively *seeks* critical evidence via video logical flow rather than exhaustively parsing all frames. Through a think-act-observe loop and a multi-granularity toolkit (overview/skim/focus), it achieves a 10.2-point improvement over the base model GPT-5 on LVBench while reducing frame usage by 93%.
+  [CVPR 2026][Video Understanding][Video Agent] VideoSeek proposes a long-horizon video agent that actively *seeks* critical evidence via video logical flow rather than exhaustively parsing all frames. Through a think-act-…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Video Agent
-  - Long Video Understanding
-  - Tool Invocation
-  - Logical Flow
-  - Think-Act-Observe
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Video Agent"
+  - "Long Video Understanding"
+  - "Tool Invocation"
+  - "Logical Flow"
+  - "Think-Act-Observe"
 date: 2026-05-08
 content_hash: 8098a1b355152e32
 ---

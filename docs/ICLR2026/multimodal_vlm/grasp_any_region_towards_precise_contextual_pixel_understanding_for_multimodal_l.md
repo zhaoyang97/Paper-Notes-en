@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Grasp Any Region: Towards Precise, Contextual Pixel Understanding for Multimodal LLMs
 description: >-
-  [ICLR2026][Multimodal VLM][Region-Level MLLM] This paper proposes GAR (Grasp Any Region), which employs RoI-aligned feature replay to extract high-fidelity local features while preserving global context, enabling precise single-region captioning, multi-region interaction modeling, and compositional reasoning. The 1B model surpasses InternVL3-78B.
+  [ICLR2026][Multimodal VLM][Region-Level MLLM] This paper proposes GAR (Grasp Any Region), which employs RoI-aligned feature replay to extract high-fidelity local features while preserving global context…
 tags:
-  - ICLR2026
-  - Multimodal VLM
-  - Region-Level MLLM
-  - RoI-Aligned Feature Replay
-  - Multi-Prompt Reasoning
-  - Visual Grounding
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "Region-Level MLLM"
+  - "RoI-Aligned Feature Replay"
+  - "Multi-Prompt Reasoning"
+  - "Visual Grounding"
 date: 2026-05-08
 content_hash: 9aa734900eee0bf8
 ---

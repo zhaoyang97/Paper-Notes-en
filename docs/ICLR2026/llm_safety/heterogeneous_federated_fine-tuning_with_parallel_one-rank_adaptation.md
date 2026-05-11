@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Heterogeneous Federated Fine-Tuning with Parallel One-Rank Adaptation
 description: >-
-  [ICLR 2026][LLM Safety][Federated Fine-Tuning] This paper proposes Fed-PLoRA, a framework that replaces multi-rank LoRA with multiple parallel one-rank modules (PLoRA). Via a Select-N-Fold strategy—selecting $N$ modules for training and folding the remainder into frozen weights—it achieves zero initialization noise and minimal aggregation noise for heterogeneous federated fine-tuning, outperforming existing methods across 6 LLMs and multiple tasks.
+  [ICLR 2026][LLM Safety][Federated Fine-Tuning] This paper proposes Fed-PLoRA, a framework that replaces multi-rank LoRA with multiple parallel one-rank modules (PLoRA). Via a Select-N-Fold strategy—selecting $N$ modules…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Federated Fine-Tuning
-  - LoRA
-  - Heterogeneous Rank
-  - Initialization Noise
-  - Aggregation Noise
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Federated Fine-Tuning"
+  - "LoRA"
+  - "Heterogeneous Rank"
+  - "Initialization Noise"
+  - "Aggregation Noise"
 date: 2026-05-08
 content_hash: 575d560621e51a5d
 ---

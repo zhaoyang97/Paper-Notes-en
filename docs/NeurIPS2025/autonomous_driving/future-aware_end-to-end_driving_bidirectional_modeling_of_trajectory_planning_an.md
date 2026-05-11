@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Future-Aware End-to-End Driving: Bidirectional Modeling of Trajectory Planning and Scene Evolution
 description: >-
-  [NEURIPS2025][Autonomous Driving][end-to-end driving] Proposes SeerDrive, which achieves SOTA on NAVSIM and nuScenes through bidirectional modeling of scene evolution and trajectory planning (future-aware planning + iterative interaction).
+  [NEURIPS2025][Autonomous Driving][end-to-end driving] Proposes SeerDrive, which achieves SOTA on NAVSIM and nuScenes through bidirectional modeling of scene evolution and trajectory planning (future-aware planning + iter…
 tags:
-  - NEURIPS2025
-  - Autonomous Driving
-  - end-to-end driving
-  - world model
-  - BEV
-  - trajectory planning
-  - iterative refinement
+  - "NEURIPS2025"
+  - "Autonomous Driving"
+  - "end-to-end driving"
+  - "world model"
+  - "BEV"
+  - "trajectory planning"
+  - "iterative refinement"
 date: 2026-05-08
 content_hash: be65058794f8fc20
 ---

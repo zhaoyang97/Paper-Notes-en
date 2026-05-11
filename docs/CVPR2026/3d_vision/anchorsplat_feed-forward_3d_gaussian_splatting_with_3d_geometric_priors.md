@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AnchorSplat: Feed-Forward 3D Gaussian Splatting with 3D Geometric Priors
 description: >-
-  [CVPR 2026][3D Vision][3D Gaussian Splatting] AnchorSplat proposes an anchor-aligned feed-forward 3DGS framework that leverages 3D geometric priors (sparse point clouds) as anchors to predict Gaussians directly in 3D space. Using approximately 20× fewer Gaussians and half the reconstruction time, it achieves state-of-the-art performance on ScanNet++ v2 (PSNR 21.48) with superior depth estimation accuracy.
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] AnchorSplat proposes an anchor-aligned feed-forward 3DGS framework that leverages 3D geometric priors (sparse point clouds) as anchors to predict Gaussians directly in 3D spa…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - feed-forward reconstruction
-  - anchor alignment
-  - geometric priors
-  - novel view synthesis
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "feed-forward reconstruction"
+  - "anchor alignment"
+  - "geometric priors"
+  - "novel view synthesis"
 date: 2026-05-08
 content_hash: 3c3cf6f671c92fb8
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Why Do Multilingual Reasoning Gaps Emerge in Reasoning Language Models?
 description: >-
-  [ACL 2026][multilingual reasoning gap] This paper presents the first systematic investigation into the sources of multilingual reasoning gaps in reasoning language models (RLMs), identifying **language understanding failure** as the primary cause, and proposes Selective Translation—applied only upon detected understanding failure—as an efficient mitigation strategy.
+  [ACL 2026][Multilingual & Machine Translation][multilingual reasoning gap] This paper presents the first systematic investigation into the sources of multilingual reasoning gaps in reasoning language models (RLMs)…
 tags:
-  - ACL 2026
-  - multilingual reasoning gap
-  - understanding failure detection
-  - selective translation
-  - reasoning language models
-  - stage-wise attribution analysis
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "multilingual reasoning gap"
+  - "understanding failure detection"
+  - "selective translation"
+  - "reasoning language models"
+  - "stage-wise attribution analysis"
 date: 2026-05-08
 content_hash: 3c0c2a3c4594966e
 ---

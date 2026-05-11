@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] EuroSpeech: A Multilingual Speech Corpus
 description: >-
-  [NeurIPS2025][Audio & Speech][multilingual speech] This paper presents a scalable, open-source pipeline for automatically constructing the EuroSpeech dataset from recordings of 22 European parliaments — yielding 61K hours of high-quality speech-text aligned data across 22 languages, with 19 languages exceeding 1K hours. Fine-tuning Whisper on this data reduces average WER by 41.8%.
+  [NeurIPS2025][Audio & Speech][multilingual speech] This paper presents a scalable, open-source pipeline for automatically constructing the EuroSpeech dataset from recordings of 22 European parliaments — yielding 61K hour…
 tags:
-  - NeurIPS2025
+  - "NeurIPS2025"
   - "Audio & Speech"
-  - multilingual speech
-  - parliamentary recordings
-  - ASR
-  - speech-text alignment
-  - dataset construction
-  - low-resource languages
+  - "multilingual speech"
+  - "parliamentary recordings"
+  - "ASR"
+  - "speech-text alignment"
+  - "dataset construction"
+  - "low-resource languages"
 date: 2026-05-08
 content_hash: e6f6a6ecd1780e34
 ---

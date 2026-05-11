@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ByteFlow: Language Modeling through Adaptive Byte Compression without a Tokenizer
 description: >-
-  [ICLR 2026][Segmentation][byte-level LM] This paper proposes ByteFlow Net, a tokenizer-free hierarchical byte-level language model that leverages information-theoretic coding rate to adaptively compress raw byte streams into semantic units, outperforming BPE baselines and existing byte-level architectures on both pretraining loss and downstream tasks.
+  [ICLR 2026][Segmentation][byte-level LM] This paper proposes ByteFlow Net, a tokenizer-free hierarchical byte-level language model that leverages information-theoretic coding rate to adaptively compress raw byte streams…
 tags:
-  - ICLR 2026
-  - Segmentation
-  - byte-level LM
-  - tokenizer-free
-  - coding rate
-  - hierarchical architecture
-  - self-tokenization
+  - "ICLR 2026"
+  - "Segmentation"
+  - "byte-level LM"
+  - "tokenizer-free"
+  - "coding rate"
+  - "hierarchical architecture"
+  - "self-tokenization"
 date: 2026-05-08
 content_hash: a566622a0911066d
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Scaling and Transferability of Annealing Strategies in Large Language Model Training
 description: >-
-  [AAAI 2026][LLM Efficiency][Learning Rate Annealing] This paper proposes a model-agnostic predictive framework that decomposes training loss into a forward-effect term (learning rate integral $S$), an annealing momentum term (Adam-style momentum integral $M$), and a model-size term $N$. It demonstrates that annealing strategies can be transferred from small models/small batches to large models/large batches, achieving a prediction MAPE below 2%.
+  [AAAI 2026][LLM Efficiency][Learning Rate Annealing] This paper proposes a model-agnostic predictive framework that decomposes training loss into a forward-effect term (learning rate integral $S$)…
 tags:
-  - AAAI 2026
-  - LLM Efficiency
-  - Learning Rate Annealing
-  - Scaling Law
-  - Training Strategy
-  - Transferability
-  - MoE
+  - "AAAI 2026"
+  - "LLM Efficiency"
+  - "Learning Rate Annealing"
+  - "Scaling Law"
+  - "Training Strategy"
+  - "Transferability"
+  - "MoE"
 date: 2026-05-08
 content_hash: 6423ef1781a5d656
 ---

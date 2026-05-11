@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] SoPE: Spherical Coordinate-Based Positional Embedding for Enhancing Spatial Perception of 3D LVLMs
 description: >-
-  [CVPR2026][3D Vision][positional embedding] This paper proposes SoPE, a spherical coordinate-based positional embedding that remaps point cloud tokens from one-dimensional sequence indices to a spherical coordinate space $(t,r,\theta,\phi)$, combined with multi-dimensional frequency allocation and multi-scale frequency mixing strategies, significantly enhancing the spatial perception capabilities of 3D large vision-language models.
+  [CVPR2026][3D Vision][positional embedding] This paper proposes SoPE, a spherical coordinate-based positional embedding that remaps point cloud tokens from one-dimensional sequence indices to a spherical coordinate space…
 tags:
-  - CVPR2026
-  - 3D Vision
-  - positional embedding
-  - 3D LVLM
-  - spherical coordinates
-  - RoPE
-  - point cloud
-  - spatial perception
+  - "CVPR2026"
+  - "3D Vision"
+  - "positional embedding"
+  - "3D LVLM"
+  - "spherical coordinates"
+  - "RoPE"
+  - "point cloud"
+  - "spatial perception"
 date: 2026-05-08
 content_hash: 9be46b362aafc8c7
 ---

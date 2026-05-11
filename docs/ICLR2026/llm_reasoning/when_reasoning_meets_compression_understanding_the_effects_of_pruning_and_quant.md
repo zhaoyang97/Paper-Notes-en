@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] When Reasoning Meets Compression: Understanding the Effects of LLMs Compression on Large Reasoning Models
 description: >-
-  [ICLR2026][LLM Reasoning][Model Compression] This paper systematically studies the effects of three compression methods—quantization, distillation, and pruning—on Large Reasoning Models (LRMs) through performance benchmarking and mechanistic interpretability analysis. Key findings include: parameter count affects knowledge memorization more than reasoning ability; the last-layer MLP `up_proj` is the most critical component; and current quantization methods over-compress the final layers.
+  [ICLR2026][LLM Reasoning][Model Compression] This paper systematically studies the effects of three compression methods—quantization, distillation…
 tags:
-  - ICLR2026
-  - LLM Reasoning
-  - Model Compression
-  - Reasoning Models
-  - Quantization
-  - Distillation
-  - Pruning
-  - Interpretability
-  - DeepSeek-R1
+  - "ICLR2026"
+  - "LLM Reasoning"
+  - "Model Compression"
+  - "Reasoning Models"
+  - "Quantization"
+  - "Distillation"
+  - "Pruning"
+  - "Interpretability"
+  - "DeepSeek-R1"
 date: 2026-05-08
 content_hash: f3c216a48565a0b1
 ---

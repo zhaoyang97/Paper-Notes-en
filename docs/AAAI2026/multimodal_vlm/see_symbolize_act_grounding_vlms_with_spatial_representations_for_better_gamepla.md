@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] See, Symbolize, Act: Grounding VLMs with Spatial Representations for Better Gameplay
 description: >-
-  [AAAI 2026][Multimodal VLM][Symbolic grounding] This paper systematically evaluates the effect of symbolic spatial representations (object coordinates) on VLM gameplay, finding that symbolic information is beneficial only when detection is accurate; when VLMs self-extract symbols, effectiveness depends on model capability and scene complexity, while visual frames remain indispensable throughout.
+  [AAAI 2026][Multimodal VLM][Symbolic grounding] This paper systematically evaluates the effect of symbolic spatial representations (object coordinates) on VLM gameplay…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Symbolic grounding
-  - VLM game agents
-  - spatial reasoning
-  - object detection
-  - Atari
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Symbolic grounding"
+  - "VLM game agents"
+  - "spatial reasoning"
+  - "object detection"
+  - "Atari"
 date: 2026-05-08
 content_hash: 243eb9ee91aef528
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PureCC: Pure Learning for Text-to-Image Concept Customization
 description: >-
-  [CVPR 2026][Image Generation][Concept Customization] PureCC introduces a decoupled learning objective that separates "target concept implicit guidance" from "original condition prediction," coupled with a dual-branch training pipeline comprising a frozen representation extractor and a trainable flow model, along with adaptive guidance scaling $\lambda^{\star}$ derived from projection error. This enables high-fidelity concept customization while minimizing disruption to the original model's behavior and capabilities.
+  [CVPR 2026][Image Generation][Concept Customization] PureCC introduces a decoupled learning objective that separates "target concept implicit guidance" from "original condition prediction…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Concept Customization
-  - Diffusion Model Fine-tuning
-  - Implicit Guidance
-  - Model Preservation
-  - Adaptive Scaling
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Concept Customization"
+  - "Diffusion Model Fine-tuning"
+  - "Implicit Guidance"
+  - "Model Preservation"
+  - "Adaptive Scaling"
 date: 2026-05-08
 content_hash: 4e030b7e3116d2b7
 ---

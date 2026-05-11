@@ -2,16 +2,17 @@
 title: >-
   [Paper Note] SR-KI: Scalable and Real-Time Knowledge Integration into LLMs via Supervised Attention
 description: >-
-  [AAAI 2026][Knowledge injection] This paper proposes SR-KI, a framework that injects structured knowledge bases into LLM KV caches via a two-stage training procedure (retrieval layer localization + attention supervision loss). On a single A100 40GB GPU, SR-KI supports injection of up to 40K knowledge base entries, achieves a compression ratio of up to 99.75% via top-100 selection, and maintains an average Recall@10 above 88%.
+  [AAAI 2026][Information Retrieval & RAG][Knowledge injection] This paper proposes SR-KI, a framework that injects structured knowledge bases into LLM KV caches via a two-stage training procedure (retrieval layer localiza…
 tags:
-  - AAAI 2026
-  - Knowledge injection
-  - large language models
-  - supervised attention
-  - KV cache
-  - retrieval layer
-  - knowledge base compression
-  - RAG alternative
+  - "AAAI 2026"
+  - "Information Retrieval & RAG"
+  - "Knowledge injection"
+  - "large language models"
+  - "supervised attention"
+  - "KV cache"
+  - "retrieval layer"
+  - "knowledge base compression"
+  - "RAG alternative"
 date: 2026-05-08
 content_hash: 34d47faafdcc956a
 ---

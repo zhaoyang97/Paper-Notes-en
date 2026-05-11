@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Practical Bayes-Optimal Membership Inference Attacks
 description: >-
-  [NeurIPS 2025][Graph Learning][Membership Inference Attack] This paper proposes BASE and G-BASE, two practical Bayes-optimal membership inference attack methods targeting i.i.d. data and graph-structured data, respectively, achieving theoretical optimality while substantially reducing computational cost.
+  [NeurIPS 2025][Graph Learning][Membership Inference Attack] This paper proposes BASE and G-BASE, two practical Bayes-optimal membership inference attack methods targeting i.i.d. data and graph-structured data…
 tags:
-  - NeurIPS 2025
-  - Graph Learning
-  - Membership Inference Attack
-  - Bayes-Optimal
-  - Graph Neural Networks
-  - Privacy
-  - MIA
+  - "NeurIPS 2025"
+  - "Graph Learning"
+  - "Membership Inference Attack"
+  - "Bayes-Optimal"
+  - "Graph Neural Networks"
+  - "Privacy"
+  - "MIA"
 date: 2026-05-08
 content_hash: 3a83ff2bd12d6d55
 ---

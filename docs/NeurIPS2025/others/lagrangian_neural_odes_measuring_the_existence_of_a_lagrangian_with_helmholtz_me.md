@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Lagrangian neural ODEs: Measuring the existence of a Lagrangian with Helmholtz metrics
 description: >-
-  [NeurIPS 2025][Neural ODE] This paper proposes Helmholtz metrics — differentiable metrics derived from the Helmholtz conditions — to quantify how closely a given ODE approximates the Euler-Lagrange equations. These metrics are incorporated as regularization terms into second-order Neural ODE training, forming Lagrangian Neural ODEs that guide the model toward true physical laws with zero additional inference overhead.
+  [NeurIPS 2025][Neural ODE] This paper proposes Helmholtz metrics — differentiable metrics derived from the Helmholtz conditions — to quantify how closely a given ODE approximates the Euler-Lagrange equations. These metri…
 tags:
-  - NeurIPS 2025
-  - Neural ODE
-  - Lagrangian mechanics
-  - Helmholtz conditions
-  - physics regularization
-  - Euler-Lagrange equations
+  - "NeurIPS 2025"
+  - "Neural ODE"
+  - "Lagrangian mechanics"
+  - "Helmholtz conditions"
+  - "physics regularization"
+  - "Euler-Lagrange equations"
 date: 2026-05-08
 content_hash: d89f4b38bc22a8ac
 ---

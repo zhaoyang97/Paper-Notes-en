@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MMErroR: A Benchmark for Erroneous Reasoning in Vision-Language Models
 description: >-
-  [ACL 2026][Multimodal VLM][erroneous reasoning diagnosis] This paper presents MMErroR, a multimodal erroneous reasoning benchmark comprising 1,997 samples, each containing exactly one deliberately injected reasoning error, spanning 6 domains and 4 error types. The benchmark requires VLMs to not only detect the presence of errors in reasoning chains but also classify the error type (Visual Perception Error / Knowledge Deficiency Error / Question Comprehension Error / Reasoning Error). Evaluation of 12 representative VLMs reveals that even the strongest model, Gemini-3-Pro-Preview, achieves only 66.65% accuracy.
+  [ACL 2026][Multimodal VLM][erroneous reasoning diagnosis] This paper presents MMErroR, a multimodal erroneous reasoning benchmark comprising 1,997 samples…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - erroneous reasoning diagnosis
-  - vision-language model evaluation
-  - process-level assessment
-  - error taxonomy
-  - multimodal reasoning
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "erroneous reasoning diagnosis"
+  - "vision-language model evaluation"
+  - "process-level assessment"
+  - "error taxonomy"
+  - "multimodal reasoning"
 date: 2026-05-08
 content_hash: 8ab457930f4d941b
 ---

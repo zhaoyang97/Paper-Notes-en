@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] METEOR: Multi-Encoder Collaborative Token Pruning for Efficient Vision Language Models
 description: >-
-  [ICCV 2025][Multimodal VLM][Multi-encoder VLM] METEOR proposes the first three-stage progressive token pruning framework for multi-encoder MLLMs: at the encoding stage, feature rank is used to allocate sparsity ratios across encoders; at the fusion stage, collaborative pruning eliminates cross-encoder redundancy; at the decoding stage, pruning ratios are adaptively adjusted based on text prompts. The framework reduces visual tokens by 76% with only a 0.3% performance drop.
+  [ICCV 2025][Multimodal VLM][Multi-encoder VLM] METEOR proposes the first three-stage progressive token pruning framework for multi-encoder MLLMs: at the encoding stage…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Multi-encoder VLM
-  - visual token pruning
-  - collaborative compression
-  - adaptive pruning
-  - feature rank allocation
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Multi-encoder VLM"
+  - "visual token pruning"
+  - "collaborative compression"
+  - "adaptive pruning"
+  - "feature rank allocation"
 date: 2026-05-08
 content_hash: 73d52db284cfdea0
 ---

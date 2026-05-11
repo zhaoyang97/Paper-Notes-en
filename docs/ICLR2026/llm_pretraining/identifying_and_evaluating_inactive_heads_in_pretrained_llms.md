@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Identifying and Evaluating Inactive Heads in Pretrained LLMs
 description: >-
-  [ICLR 2026][LLM Pretraining][Inactive Attention Head] This paper systematically evaluates 12 scoring functions for identifying inactive attention heads in LLMs, finding that the attention head output norm-based scoring function (AHON LN) more consistently identifies inactive heads across model families than traditional attention weight metrics. On average across 14 models, over 12% of heads can be zeroed out while maintaining MMLU accuracy within 1%.
+  [ICLR 2026][LLM Pretraining][Inactive Attention Head] This paper systematically evaluates 12 scoring functions for identifying inactive attention heads in LLMs…
 tags:
-  - ICLR 2026
-  - LLM Pretraining
-  - Inactive Attention Head
-  - Score Function
-  - Attention Sink
-  - Model Intervention
-  - Head Output Norm
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Inactive Attention Head"
+  - "Score Function"
+  - "Attention Sink"
+  - "Model Intervention"
+  - "Head Output Norm"
 date: 2026-05-08
 content_hash: 2ab1494c9e4b93c0
 ---

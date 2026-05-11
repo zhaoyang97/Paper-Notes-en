@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Table as a Modality for Large Language Models
 description: >-
-  [NeurIPS 2025][Table Reasoning] This paper proposes TaMo, a framework that treats tables as an independent modality, encoding their structural information via a hypergraph neural network and fusing the resulting structural embeddings with the text modality of an LLM. TaMo achieves an average improvement of 42.65% over pure-text methods across multiple table reasoning benchmarks, and approaches GPT-4 in terms of structural robustness.
+  [NeurIPS 2025][Interpretability][Table Reasoning] This paper proposes TaMo, a framework that treats tables as an independent modality, encoding their structural information via a hypergraph neural network and fusing the…
 tags:
-  - NeurIPS 2025
-  - Table Reasoning
-  - Multimodal LLM
-  - Hypergraph
-  - Permutation Invariance
-  - Table QA
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "Table Reasoning"
+  - "Multimodal LLM"
+  - "Hypergraph"
+  - "Permutation Invariance"
+  - "Table QA"
 date: 2026-05-08
 content_hash: 663e8b797486e597
 ---

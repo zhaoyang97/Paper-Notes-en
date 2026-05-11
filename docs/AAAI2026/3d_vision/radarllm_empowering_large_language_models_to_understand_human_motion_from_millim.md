@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RadarLLM: Empowering Large Language Models to Understand Human Motion from Millimeter-Wave Point Cloud Sequence
 description: >-
-  [AAAI 2026][3D Vision][millimeter-wave radar] This paper proposes RadarLLM, the first end-to-end framework leveraging large language models for semantic-level human motion understanding from millimeter-wave radar point cloud sequences. The framework comprises a motion-guided radar tokenizer based on Aggregate VQ-VAE and a radar-aware language model, along with a physics-aware simulation pipeline for generating large-scale paired radar-text data.
+  [AAAI 2026][3D Vision][millimeter-wave radar] This paper proposes RadarLLM, the first end-to-end framework leveraging large language models for semantic-level human motion understanding from millimeter-wave radar point c…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - millimeter-wave radar
-  - large language models
-  - human motion understanding
-  - vector quantization
-  - privacy preservation
+  - "AAAI 2026"
+  - "3D Vision"
+  - "millimeter-wave radar"
+  - "large language models"
+  - "human motion understanding"
+  - "vector quantization"
+  - "privacy preservation"
 date: 2026-05-08
 content_hash: d6edb09e64b6843b
 ---

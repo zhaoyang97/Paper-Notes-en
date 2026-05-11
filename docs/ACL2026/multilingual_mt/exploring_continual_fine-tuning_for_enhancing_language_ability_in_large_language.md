@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Exploring Two-Phase Continual Instruction Fine-tuning for Multilingual Adaptation in Large Language Models
 description: >-
-  [ACL 2026][Continual Fine-tuning] This paper proposes a two-phase continual fine-tuning (CFT) framework—first fine-tuning on English instruction data, then on multilingual data—and finds that instruction similarity between the two phases is the key factor determining whether English capability degrades. Generative replay and heuristic layer freezing are shown to effectively mitigate representation drift and English forgetting caused by dissimilar datasets.
+  [ACL 2026][Multilingual & Machine Translation][Continual Fine-tuning] This paper proposes a two-phase continual fine-tuning (CFT) framework—first fine-tuning on English instruction data…
 tags:
-  - ACL 2026
-  - Continual Fine-tuning
-  - Multilingual Adaptation
-  - Catastrophic Forgetting
-  - Dataset Similarity
-  - Representation Drift
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "Continual Fine-tuning"
+  - "Multilingual Adaptation"
+  - "Catastrophic Forgetting"
+  - "Dataset Similarity"
+  - "Representation Drift"
 date: 2026-05-08
 content_hash: 08f6cf2e3361b335
 ---

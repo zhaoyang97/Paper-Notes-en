@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Embedding-Based Context-Aware Reranker
 description: >-
-  [ICLR 2026][Reranking] This paper proposes EBCAR, a lightweight embedding-space reranking framework that injects structural information via document ID embeddings and passage positional encodings. It employs a hybrid mechanism combining shared full attention and dedicated masked attention to enable cross-passage reasoning. EBCAR achieves state-of-the-art average nDCG@10 on the ConTEB benchmark with only 126M parameters, while delivering inference throughput more than 150× faster than LLM-based rerankers.
+  [ICLR 2026][Information Retrieval & RAG][Reranking] This paper proposes EBCAR, a lightweight embedding-space reranking framework that injects structural information via document ID embeddings and passage positional encod…
 tags:
-  - ICLR 2026
-  - Reranking
-  - RAG
-  - Embedding Retrieval
-  - Cross-Passage Reasoning
-  - Hybrid Attention
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Reranking"
+  - "RAG"
+  - "Embedding Retrieval"
+  - "Cross-Passage Reasoning"
+  - "Hybrid Attention"
 date: 2026-05-08
 content_hash: 7ba9b732510159dc
 ---

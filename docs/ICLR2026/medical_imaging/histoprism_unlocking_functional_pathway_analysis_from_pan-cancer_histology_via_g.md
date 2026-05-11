@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HistoPrism: Unlocking Functional Pathway Analysis from Pan-Cancer Histology via Gene Expression Prediction
 description: >-
-  [ICLR 2026][Medical Imaging][Spatial Transcriptomics] This paper proposes HistoPrism, an efficient Transformer architecture that injects cancer-type conditioning via cross-attention to predict pan-cancer gene expression from H&E histology images. It further introduces the Gene Pathway Coherence (GPC) evaluation framework based on Hallmark/GO pathways, achieving substantial improvements over STPath at the pathway level—particularly on low-variance, biologically fundamental pathways.
+  [ICLR 2026][Medical Imaging][Spatial Transcriptomics] This paper proposes HistoPrism, an efficient Transformer architecture that injects cancer-type conditioning via cross-attention to predict pan-cancer gene expression…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - Spatial Transcriptomics
-  - Gene Expression Prediction
-  - Pan-Cancer
-  - Pathway Analysis
-  - Transformer
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Spatial Transcriptomics"
+  - "Gene Expression Prediction"
+  - "Pan-Cancer"
+  - "Pathway Analysis"
+  - "Transformer"
 date: 2026-05-08
 content_hash: 25574ab1498e34e7
 ---

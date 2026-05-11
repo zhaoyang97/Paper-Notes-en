@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GenCast: Generalizing Traffic Forecasting to Regions without Observations
 description: >-
-  [AAAI 2026][Autonomous Driving][traffic forecasting] This paper proposes GenCast, which achieves generalization of traffic forecasting from sensor-covered regions to unobserved continuous regions via three key innovations: a physics-informed neural network (incorporating the LWR traffic equation as a soft constraint), dynamic external weather signal fusion, and a spatial grouping module. GenCast consistently outperforms existing state-of-the-art methods across five real-world datasets.
+  [AAAI 2026][Autonomous Driving][traffic forecasting] This paper proposes GenCast, which achieves generalization of traffic forecasting from sensor-covered regions to unobserved continuous regions via three key innovation…
 tags:
-  - AAAI 2026
-  - Autonomous Driving
-  - traffic forecasting
-  - spatial-temporal
-  - physics-informed
-  - graph neural networks
-  - generalization
+  - "AAAI 2026"
+  - "Autonomous Driving"
+  - "traffic forecasting"
+  - "spatial-temporal"
+  - "physics-informed"
+  - "graph neural networks"
+  - "generalization"
 date: 2026-05-08
 content_hash: c197ba4db5080772
 ---

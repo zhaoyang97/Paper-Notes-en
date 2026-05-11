@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Retrieval is Not Enough: Enhancing RAG Reasoning through Test-Time Critique and Optimization
 description: >-
-  [NeurIPS 2025][RAG] This paper proposes AlignRAG, a framework that reframes RAG as "retrieval-augmented reasoning" and trains a dedicated Critic Language Model (CLM) to iteratively critique and refine the reasoning process at test time, addressing the misalignment between reasoning chains and retrieved evidence. An 8B CLM surpasses a 72B standard CLM on out-of-distribution tasks.
+  [NeurIPS 2025][Information Retrieval & RAG][RAG] This paper proposes AlignRAG, a framework that reframes RAG as "retrieval-augmented reasoning" and trains a dedicated Critic Language Model (CLM) to iteratively critique a…
 tags:
-  - NeurIPS 2025
-  - RAG
-  - reasoning misalignment
-  - critique-driven alignment
-  - test-time refinement
-  - retrieval-augmented reasoning
+  - "NeurIPS 2025"
+  - "Information Retrieval & RAG"
+  - "RAG"
+  - "reasoning misalignment"
+  - "critique-driven alignment"
+  - "test-time refinement"
+  - "retrieval-augmented reasoning"
 date: 2026-05-08
 content_hash: ef576a1ae003d5d1
 ---

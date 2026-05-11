@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PAM: A Pose-Appearance-Motion Engine for Sim-to-Real HOI Video Generation
 description: >-
-  [CVPR 2026][Video Generation][hand-object interaction] This paper proposes PAM — the first engine capable of generating realistic hand-object interaction (HOI) videos given only initial/target hand poses and object geometry. Through a three-stage decoupled architecture of pose generation, appearance generation, and motion generation, PAM achieves FVD 29.13 (vs. InterDyn 38.83) and MPJPE 19.37 mm (vs. CosHand 30.05 mm) on DexYCB. The generated synthetic data also effectively augments downstream hand pose estimation tasks.
+  [CVPR 2026][Video Generation][hand-object interaction] This paper proposes PAM — the first engine capable of generating realistic hand-object interaction (HOI) videos given only initial/target hand poses and object geome…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - hand-object interaction
-  - sim-to-real
-  - controllable video generation
-  - diffusion models
-  - data augmentation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "hand-object interaction"
+  - "sim-to-real"
+  - "controllable video generation"
+  - "diffusion models"
+  - "data augmentation"
 date: 2026-05-08
 content_hash: 75fae327c9f754a6
 ---

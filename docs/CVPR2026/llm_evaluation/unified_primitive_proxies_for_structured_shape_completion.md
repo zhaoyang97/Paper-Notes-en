@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unified Primitive Proxies for Structured Shape Completion
 description: >-
-  [CVPR 2026][LLM Evaluation][shape completion] This paper proposes UniCo, which learns unified primitive representations over shared shape features via primitive proxies, jointly predicting complete point clouds and assembly-ready quadric primitives (with geometry, semantics, and membership) in a single forward pass. UniCo reduces Chamfer distance by up to 50% and improves normal consistency by up to 7% on synthetic and real-world point cloud benchmarks.
+  [CVPR 2026][LLM Evaluation][shape completion] This paper proposes UniCo, which learns unified primitive representations over shared shape features via primitive proxies…
 tags:
-  - CVPR 2026
-  - LLM Evaluation
-  - shape completion
-  - primitive assembly
-  - 3D reconstruction
-  - Transformer
-  - structured understanding
+  - "CVPR 2026"
+  - "LLM Evaluation"
+  - "shape completion"
+  - "primitive assembly"
+  - "3D reconstruction"
+  - "Transformer"
+  - "structured understanding"
 date: 2026-05-08
 content_hash: e8200cd67a574345
 ---

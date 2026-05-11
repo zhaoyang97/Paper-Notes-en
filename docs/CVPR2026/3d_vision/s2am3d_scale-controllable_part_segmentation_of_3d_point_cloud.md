@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] S2AM3D: Scale-controllable Part Segmentation of 3D Point Clouds
 description: >-
-  [CVPR2026][3D Vision][Point cloud part segmentation] This paper presents S2AM3D, a point cloud part segmentation framework that integrates 2D pretrained priors with 3D contrastive supervision. A point-consistent encoder produces globally coherent per-point features, while a scale-aware prompt decoder enables continuously controllable segmentation granularity. The method substantially outperforms existing approaches across multiple benchmarks.
+  [CVPR2026][3D Vision][Point cloud part segmentation] This paper presents S2AM3D, a point cloud part segmentation framework that integrates 2D pretrained priors with 3D contrastive supervision. A point-consistent encoder…
 tags:
-  - CVPR2026
-  - 3D Vision
-  - Point cloud part segmentation
-  - multi-granularity control
-  - contrastive learning
-  - 2D-3D joint supervision
-  - SAM
+  - "CVPR2026"
+  - "3D Vision"
+  - "Point cloud part segmentation"
+  - "multi-granularity control"
+  - "contrastive learning"
+  - "2D-3D joint supervision"
+  - "SAM"
 date: 2026-05-08
 content_hash: bc1ad6f1f77e1e2b
 ---

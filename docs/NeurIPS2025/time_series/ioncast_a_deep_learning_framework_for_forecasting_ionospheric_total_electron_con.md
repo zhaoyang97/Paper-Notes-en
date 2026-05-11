@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] IonCast: A Deep Learning Framework for Forecasting Ionospheric Dynamics
 description: >-
-  [NeurIPS 2025][Time Series][Ionospheric forecasting] This paper proposes IonCast, a framework comprising a GraphCast-based GNN model and a ConvLSTM baseline that integrates multi-source heterogeneous space weather data (TEC maps, solar wind, geomagnetic indices, orbital mechanics, etc.) for global spatiotemporal forecasting of ionospheric total electron content (TEC). IonCast outperforms persistence baselines and the IRI empirical model under geomagnetic storm conditions.
+  [NeurIPS 2025][Time Series][Ionospheric forecasting] This paper proposes IonCast, a framework comprising a GraphCast-based GNN model and a ConvLSTM baseline that integrates multi-source heterogeneous space weather data (…
 tags:
-  - NeurIPS 2025
-  - Time Series
-  - Ionospheric forecasting
-  - TEC
-  - Graph Neural Network
-  - GraphCast
-  - Spatiotemporal prediction
-  - Space weather
+  - "NeurIPS 2025"
+  - "Time Series"
+  - "Ionospheric forecasting"
+  - "TEC"
+  - "Graph Neural Network"
+  - "GraphCast"
+  - "Spatiotemporal prediction"
+  - "Space weather"
 date: 2026-05-08
 content_hash: 6391b39e5e7a19f4
 ---

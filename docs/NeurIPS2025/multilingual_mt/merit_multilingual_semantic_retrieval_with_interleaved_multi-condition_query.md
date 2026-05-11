@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] MERIT: Multilingual Semantic Retrieval with Interleaved Multi-Condition Query
 description: >-
-  [NeurIPS 2025][interleaved retrieval] This paper introduces MERIT, the first multilingual interleaved multi-condition semantic retrieval dataset (320K queries, 135K products, 5 languages, 7 product categories), exposes the bottleneck of existing retrieval models that focus solely on global semantics while neglecting condition-level details, and proposes the Coral fine-tuning framework that combines embedding reconstruction with contrastive learning to achieve a 45.9% improvement in retrieval performance.
+  [NeurIPS 2025][Multilingual & Machine Translation][interleaved retrieval] This paper introduces MERIT, the first multilingual interleaved multi-condition semantic retrieval dataset (320K queries, 135K products…
 tags:
-  - NeurIPS 2025
-  - interleaved retrieval
-  - multilingual
-  - multi-condition query
-  - contrastive learning
-  - embedding reconstruction
+  - "NeurIPS 2025"
+  - "Multilingual & Machine Translation"
+  - "interleaved retrieval"
+  - "multilingual"
+  - "multi-condition query"
+  - "contrastive learning"
+  - "embedding reconstruction"
 date: 2026-05-08
 content_hash: 1bfae56c499d4230
 ---

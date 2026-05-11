@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LycheeDecode: Accelerating Long-Context LLM Inference via Hybrid-Head Sparse Decoding
 description: >-
-  [ICLR 2026][LLM Efficiency][Long-context inference] LycheeDecode is proposed to accelerate long-context LLM decoding by fine-grainedly partitioning attention heads into a small number of retrieval heads (performing full attention to select critical tokens) and a large number of sparse heads (reusing the selected tokens for sparse computation). Head roles are learned end-to-end via the Hard Kumaraswamy distribution, achieving 2.7× speedup at 128K context length with no performance degradation.
+  [ICLR 2026][LLM Efficiency][Long-context inference] LycheeDecode is proposed to accelerate long-context LLM decoding by fine-grainedly partitioning attention heads into a small number of retrieval heads (performing full…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Long-context inference
-  - sparse attention
-  - attention head specialization
-  - KV cache optimization
-  - HardKuma distribution
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Long-context inference"
+  - "sparse attention"
+  - "attention head specialization"
+  - "KV cache optimization"
+  - "HardKuma distribution"
 date: 2026-05-08
 content_hash: 19a5c9b8230e4540
 ---

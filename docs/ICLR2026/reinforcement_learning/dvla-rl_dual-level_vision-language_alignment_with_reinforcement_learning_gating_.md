@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DVLA-RL: Dual-Level Vision-Language Alignment with Reinforcement Learning Gating for Few-Shot Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Few-Shot Learning] This paper proposes DVLA-RL, a framework that employs Dual-level Semantic Construction (DSC) to generate complementary low-level attributes and high-level descriptions, and uses RL-gated Attention (RLA) to dynamically balance the contributions of self-attention and cross-attention across different network layers. This achieves hierarchical vision-language alignment from low to high levels, attaining state-of-the-art performance on 9 few-shot learning benchmarks.
+  [ICLR 2026][Reinforcement Learning][Few-Shot Learning] This paper proposes DVLA-RL, a framework that employs Dual-level Semantic Construction (DSC) to generate complementary low-level attributes and high-level descriptio…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Few-Shot Learning
-  - Vision-Language Alignment
-  - Reinforcement Learning Gating
-  - Dual-Level Semantics
-  - Cross-Modal Fusion
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Few-Shot Learning"
+  - "Vision-Language Alignment"
+  - "Reinforcement Learning Gating"
+  - "Dual-Level Semantics"
+  - "Cross-Modal Fusion"
 date: 2026-05-08
 content_hash: eaf6a69137733c89
 ---

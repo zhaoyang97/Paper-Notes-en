@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Attention to Trajectory: Trajectory-Aware Open-Vocabulary Tracking
 description: >-
-  [ICCV 2025][Video Understanding][Open-Vocabulary MOT] This paper proposes TRACT, a method that leverages trajectory-level information to enhance open-vocabulary multi-object tracking (OV-MOT). It improves association via Trajectory Consistency Reinforcement (TCR) and improves classification via Trajectory Feature Aggregation (TFA) and Trajectory Semantic Enrichment (TSE). TRACT achieves significant performance gains on the OV-TAO benchmark, particularly in classification accuracy.
+  [ICCV 2025][Video Understanding][Open-Vocabulary MOT] This paper proposes TRACT, a method that leverages trajectory-level information to enhance open-vocabulary multi-object tracking (OV-MOT). It improves association via…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - Open-Vocabulary MOT
-  - Trajectory Information
-  - CLIP
-  - Association
-  - Classification
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "Open-Vocabulary MOT"
+  - "Trajectory Information"
+  - "CLIP"
+  - "Association"
+  - "Classification"
 date: 2026-05-08
 content_hash: 3a47b5b08fd48dc7
 ---

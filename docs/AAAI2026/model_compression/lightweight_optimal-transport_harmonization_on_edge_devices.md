@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Lightweight Optimal-Transport Harmonization on Edge Devices
 description: >-
-  [AAAI 2026][Model Compression][Color Harmonization] This paper proposes MKL-Harmonizer, which leverages the Monge-Kantorovich Linear (MKL) mapping from classical optimal transport theory to train a compact encoder that predicts 12-dimensional color transformation parameters, enabling real-time image color harmonization on edge devices. The method achieves state-of-the-art performance on the combined perceptual quality–speed metric in AR scenarios.
+  [AAAI 2026][Model Compression][Color Harmonization] This paper proposes MKL-Harmonizer, which leverages the Monge-Kantorovich Linear (MKL) mapping from classical optimal transport theory to train a compact encoder that p…
 tags:
-  - AAAI 2026
-  - Model Compression
-  - Color Harmonization
-  - Optimal Transport
-  - Edge Devices
-  - Augmented Reality
-  - Lightweight Inference
+  - "AAAI 2026"
+  - "Model Compression"
+  - "Color Harmonization"
+  - "Optimal Transport"
+  - "Edge Devices"
+  - "Augmented Reality"
+  - "Lightweight Inference"
 date: 2026-05-08
 content_hash: daa1fb83c0a3277d
 ---

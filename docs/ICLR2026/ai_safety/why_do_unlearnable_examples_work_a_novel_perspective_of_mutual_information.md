@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Why Do Unlearnable Examples Work: A Novel Perspective of Mutual Information
 description: >-
-  [ICLR 2026][AI Safety][Unlearnable Examples] This paper provides a unified explanation for the effectiveness of all unlearnable example (UE) methods through the lens of mutual information (MI) reduction, and proves that minimizing the intra-class covariance of poisoned features reduces the MI upper bound. Based on this framework, MI-UE is proposed, which achieves covariance reduction via intra-class cosine similarity maximization, suppressing test accuracy to 9.95% on CIFAR-10 (near random-chance), while significantly outperforming existing methods under adversarial training defenses.
+  [ICLR 2026][AI Safety][Unlearnable Examples] This paper provides a unified explanation for the effectiveness of all unlearnable example (UE) methods through the lens of mutual information (MI) reduction…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - Unlearnable Examples
-  - Mutual Information
-  - Data Poisoning
-  - Covariance Reduction
-  - Privacy Protection
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Unlearnable Examples"
+  - "Mutual Information"
+  - "Data Poisoning"
+  - "Covariance Reduction"
+  - "Privacy Protection"
 date: 2026-05-08
 content_hash: ea61a828199f3bc7
 ---

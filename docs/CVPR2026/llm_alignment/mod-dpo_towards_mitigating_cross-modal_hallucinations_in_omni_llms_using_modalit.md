@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] MoD-DPO: Towards Mitigating Cross-modal Hallucinations in Omni LLMs using Modality Decoupled Preference Optimization
 description: >-
-  [CVPR2026][LLM Alignment][omni LLM] This paper proposes MoD-DPO (Modality-Decoupled DPO), which decouples the contribution of each modality in multimodal LLMs via three mechanisms—invariance regularization, sensitivity regularization, and language-prior debiasing—to effectively mitigate cross-modal hallucinations (e.g., answering visual questions using auditory information). A closed-form optimal policy is also derived.
+  [CVPR2026][LLM Alignment][omni LLM] This paper proposes MoD-DPO (Modality-Decoupled DPO), which decouples the contribution of each modality in multimodal LLMs via three mechanisms—invariance regularization…
 tags:
-  - CVPR2026
-  - LLM Alignment
-  - omni LLM
-  - cross-modal hallucination
-  - DPO
-  - modality decoupling
-  - audio-visual
-  - preference optimization
+  - "CVPR2026"
+  - "LLM Alignment"
+  - "omni LLM"
+  - "cross-modal hallucination"
+  - "DPO"
+  - "modality decoupling"
+  - "audio-visual"
+  - "preference optimization"
 date: 2026-05-08
 content_hash: c801da00b1e9990c
 ---

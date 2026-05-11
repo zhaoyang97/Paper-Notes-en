@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] On the Global Optimality of Policy Gradient Methods in General Utility Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][general utility reinforcement learning] This paper establishes global optimality guarantees for policy gradient methods in reinforcement learning with general utilities (RLGU): in the tabular setting, global convergence is proved via a novel gradient dominance inequality; in large-scale state-action spaces, an occupancy measure approximation algorithm PG-OMA based on maximum likelihood estimation (MLE) is proposed, whose sample complexity depends only on the dimension $m$ of the function approximation class rather than the size of the state-action space.
+  [NeurIPS 2025][Reinforcement Learning][general utility reinforcement learning] This paper establishes global optimality guarantees for policy gradient methods in reinforcement learning with general utilities (RLGU): in t…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - general utility reinforcement learning
-  - policy gradient
-  - gradient dominance inequality
-  - occupancy measure estimation
-  - maximum likelihood estimation
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "general utility reinforcement learning"
+  - "policy gradient"
+  - "gradient dominance inequality"
+  - "occupancy measure estimation"
+  - "maximum likelihood estimation"
 date: 2026-05-08
 content_hash: 48a6894a1f562158
 ---

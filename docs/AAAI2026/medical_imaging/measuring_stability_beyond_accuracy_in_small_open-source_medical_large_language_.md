@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Measuring Stability Beyond Accuracy in Small Open-Source Medical Large Language Models for Pediatric Endocrinology
 description: >-
-  [AAAI 2026][Medical Imaging][Medical LLM] This paper systematically evaluates six small open-source medical LLMs (<10B parameters) in pediatric endocrinology, demonstrating that accuracy alone is insufficient to characterize model reliability: semantically neutral prompt variations lead to significant output shifts (Stuart-Maxwell $p < 10^{-4}$), high consistency does not imply correctness, and even differences in CUDA versions can induce statistically significant output distribution changes.
+  [AAAI 2026][Medical Imaging][Medical LLM] This paper systematically evaluates six small open-source medical LLMs (&lt;10B parameters) in pediatric endocrinology…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Medical LLM
-  - Small Model Evaluation
-  - Stability
-  - Reproducibility
-  - Prompt Sensitivity
-  - Pediatric Endocrinology
-  - Self-Evaluation Bias
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Medical LLM"
+  - "Small Model Evaluation"
+  - "Stability"
+  - "Reproducibility"
+  - "Prompt Sensitivity"
+  - "Pediatric Endocrinology"
+  - "Self-Evaluation Bias"
 date: 2026-05-08
 content_hash: 54f64244f8847e60
 ---

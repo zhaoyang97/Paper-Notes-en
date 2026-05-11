@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AdaSpark: Adaptive Sparsity for Efficient Long-Video Understanding
 description: >-
-  [CVPR 2026][Video Understanding][long video] AdaSpark is proposed to reduce FLOPs for long-video processing by up to 57% while maintaining performance, via 3D spatiotemporal cube partitioning and two synergistic adaptive sparsity mechanisms: cube-level attention selection and token-level FFN selection.
+  [CVPR 2026][Video Understanding][long video] AdaSpark is proposed to reduce FLOPs for long-video processing by up to 57% while maintaining performance…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - long video
-  - adaptive sparsity
-  - Video-LLM
-  - efficient inference
-  - 3D cube
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "long video"
+  - "adaptive sparsity"
+  - "Video-LLM"
+  - "efficient inference"
+  - "3D cube"
 date: 2026-05-08
 content_hash: af440b18ae760904
 ---

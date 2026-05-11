@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PrefixKV: Adaptive Prefix KV Cache is What Vision Instruction-Following Models Need for Efficient Generation
 description: >-
-  [NeurIPS 2025][Multimodal VLM][KV cache compression] PrefixKV identifies that the importance distributions of KV caches vary substantially across layers, and formalizes the per-layer cache sizing problem as a global prefix configuration search. A binary search is employed to find the optimal cumulative priority threshold that maximizes contextual information retention in each layer. At a 20% retention ratio, PrefixKV incurs only a 0.49 PPL degradation while delivering a 1.8× inference speedup.
+  [NeurIPS 2025][Multimodal VLM][KV cache compression] PrefixKV identifies that the importance distributions of KV caches vary substantially across layers…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - KV cache compression
-  - adaptive layer-wise allocation
-  - prefix configuration
-  - binary search
-  - vision-language models
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "KV cache compression"
+  - "adaptive layer-wise allocation"
+  - "prefix configuration"
+  - "binary search"
+  - "vision-language models"
 date: 2026-05-08
 content_hash: 0e0e5e53f88ac50e
 ---

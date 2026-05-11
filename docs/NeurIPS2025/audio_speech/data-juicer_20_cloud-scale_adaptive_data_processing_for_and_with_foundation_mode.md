@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Data-Juicer 2.0: Cloud-Scale Adaptive Data Processing for and with Foundation Models
 description: >-
-  [NeurIPS 2025][Audio & Speech][Data processing systems] Data-Juicer 2.0 is a cloud-scale multimodal data processing system for foundation models, featuring 150+ operators spanning text, image, video, and audio. It supports adaptive distributed execution (Ray/MaxCompute), efficiently processes TB-scale data on 10,000+ CPU cores, and has been widely adopted in products such as Alibaba Cloud PAI.
+  [NeurIPS 2025][Audio & Speech][Data processing systems] Data-Juicer 2.0 is a cloud-scale multimodal data processing system for foundation models, featuring 150+ operators spanning text, image, video…
 tags:
-  - NeurIPS 2025
+  - "NeurIPS 2025"
   - "Audio & Speech"
-  - Data processing systems
-  - multimodal data
-  - distributed computing
-  - data quality
-  - foundation models
+  - "Data processing systems"
+  - "multimodal data"
+  - "distributed computing"
+  - "data quality"
+  - "foundation models"
 date: 2026-05-08
 content_hash: f03c82faa305d39f
 ---

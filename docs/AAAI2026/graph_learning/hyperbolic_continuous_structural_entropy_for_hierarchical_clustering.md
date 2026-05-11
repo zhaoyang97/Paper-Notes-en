@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Hyperbolic Continuous Structural Entropy for Hierarchical Clustering
 description: >-
-  [AAAI 2026][Graph Learning][Hierarchical Clustering] This paper proposes HypCSE, which relaxes discrete Structural Entropy (SE) into a Continuous Structural Entropy (CSE) defined in hyperbolic space. Combined with graph structure learning and contrastive learning, HypCSE enables end-to-end differentiable hierarchical clustering and consistently outperforms both discrete and continuous hierarchical clustering methods across 7 datasets.
+  [AAAI 2026][Graph Learning][Hierarchical Clustering] This paper proposes HypCSE, which relaxes discrete Structural Entropy (SE) into a Continuous Structural Entropy (CSE) defined in hyperbolic space. Combined with graph…
 tags:
-  - AAAI 2026
-  - Graph Learning
-  - Hierarchical Clustering
-  - Structural Entropy
-  - Hyperbolic Space
-  - Graph Structure Learning
-  - Contrastive Learning
+  - "AAAI 2026"
+  - "Graph Learning"
+  - "Hierarchical Clustering"
+  - "Structural Entropy"
+  - "Hyperbolic Space"
+  - "Graph Structure Learning"
+  - "Contrastive Learning"
 date: 2026-05-08
 content_hash: b1a1591dc87b79a0
 ---

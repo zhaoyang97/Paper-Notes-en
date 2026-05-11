@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The Sample Complexity of Online Reinforcement Learning: A Multi-Model Perspective
 description: >-
-  [ICLR 2026][Reinforcement Learning][Sample Complexity] This paper proposes an online reinforcement learning algorithm for nonlinear dynamical systems with continuous state-action spaces. By combining multi-model posterior sampling with certainty-equivalence control, the algorithm enables online learning of unknown systems and provides non-asymptotic policy regret guarantees that scale from finite model sets to parametric model families.
+  [ICLR 2026][Reinforcement Learning][Sample Complexity] This paper proposes an online reinforcement learning algorithm for nonlinear dynamical systems with continuous state-action spaces. By combining multi-model posterio…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Sample Complexity
-  - Online Reinforcement Learning
-  - Multi-Model Adaptive Control
-  - Policy Regret
-  - Nonlinear Dynamical Systems
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Sample Complexity"
+  - "Online Reinforcement Learning"
+  - "Multi-Model Adaptive Control"
+  - "Policy Regret"
+  - "Nonlinear Dynamical Systems"
 date: 2026-05-08
 content_hash: 1fc25f2221264ed7
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards a Unified Copernicus Foundation Model for Earth Vision
 description: >-
-  [ICCV 2025][Remote Sensing][Earth observation foundation model] This work presents a unified Earth observation foundation model system covering all major Copernicus Sentinel tasks, comprising the Copernicus-Pretrain dataset with 18.7 million aligned images, the Copernicus-FM model supporting arbitrary spectral and non-spectral sensors, and the Copernicus-Bench evaluation benchmark spanning 15 hierarchical downstream tasks.
+  [ICCV 2025][Remote Sensing][Earth observation foundation model] This work presents a unified Earth observation foundation model system covering all major Copernicus Sentinel tasks…
 tags:
-  - ICCV 2025
-  - Remote Sensing
-  - Earth observation foundation model
-  - multimodal pretraining
-  - Copernicus Sentinel
-  - dynamic hypernetwork
-  - atmospheric monitoring
+  - "ICCV 2025"
+  - "Remote Sensing"
+  - "Earth observation foundation model"
+  - "multimodal pretraining"
+  - "Copernicus Sentinel"
+  - "dynamic hypernetwork"
+  - "atmospheric monitoring"
 date: 2026-05-08
 content_hash: 675b473bc2340a80
 ---

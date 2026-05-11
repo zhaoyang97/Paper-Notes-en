@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Optimizing User Profiles via Contextual Bandits for Retrieval-Augmented LLM Personalization
 description: >-
-  [ACL 2026][Reinforcement Learning][user profile optimization] This paper proposes PURPLE, a framework that models user profile construction in retrieval-augmented LLM personalization as a contextual bandit problem. It employs the Plackett-Luce ranking model to capture inter-record dependencies, uses the LLM's log-likelihood over reference responses as a reward signal, and directly optimizes retrieval to align with generation quality.
+  [ACL 2026][Reinforcement Learning][user profile optimization] This paper proposes PURPLE, a framework that models user profile construction in retrieval-augmented LLM personalization as a contextual bandit problem. It em…
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - user profile optimization
-  - contextual bandits
-  - RAG personalization
-  - Plackett-Luce ranking
-  - policy gradient
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "user profile optimization"
+  - "contextual bandits"
+  - "RAG personalization"
+  - "Plackett-Luce ranking"
+  - "policy gradient"
 date: 2026-05-08
 content_hash: 0248857e917c20d2
 ---

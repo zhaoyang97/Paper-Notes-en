@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] DynamicID: Zero-Shot Multi-ID Image Personalization with Flexible Facial Editability
 description: >-
-  [Image Generation] DynamicID achieves zero-shot single/multi-identity personalized image generation through two core components — Semantic Activation Attention (SAA) and Identity-Motion Reconfigurer (IMR) — while maintaining high fidelity and flexible facial editability.
+  [Image Generation] DynamicID achieves zero-shot single/multi-identity personalized image generation through two core components — Semantic Activation Attention (SAA) and Identity-Motion Reconfigurer (IMR) — while maintai…
 tags:
-  - Image Generation
+  - "Image Generation"
 date: 2026-05-08
 content_hash: 68e6916d85de38eb
 ---

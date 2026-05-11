@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards GUI Agents: Vision-Language Diffusion Models for GUI Grounding
 description: >-
-  [CVPR 2026][LLM Agent][GUI Grounding] This work presents the first systematic study of discrete vision-language diffusion models (DVLMs) for GUI grounding, adapting LLaDA-V for single-step action prediction and proposing a hybrid masking schedule (linear + deterministic) to capture geometric hierarchical dependencies among bounding box coordinates. The approach demonstrates the feasibility of diffusion models as a foundation for GUI agents across Web, Desktop, and Mobile interfaces.
+  [CVPR 2026][LLM Agent][GUI Grounding] This work presents the first systematic study of discrete vision-language diffusion models (DVLMs) for GUI grounding…
 tags:
-  - CVPR 2026
-  - LLM Agent
-  - GUI Grounding
-  - Discrete Diffusion Models
-  - LLaDA-V
-  - Hybrid Masking
-  - Interface Understanding
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "GUI Grounding"
+  - "Discrete Diffusion Models"
+  - "LLaDA-V"
+  - "Hybrid Masking"
+  - "Interface Understanding"
 date: 2026-05-08
 content_hash: e0906251b7d7838c
 ---

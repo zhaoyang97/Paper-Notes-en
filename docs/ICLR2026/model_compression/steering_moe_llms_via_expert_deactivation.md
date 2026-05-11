@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Steering MoE LLMs via Expert (De)Activation
 description: >-
-  [ICLR 2026][Model Compression][MoE] This paper proposes SteerMoE, which detects behavior-correlated experts via contrastive paired inputs and steers MoE LLM behavior at inference time by activating or deactivating specific experts (safety +20%, faithfulness +27%), while also exposing the fragility of safety alignment in MoE models (safety collapse −100%).
+  [ICLR 2026][Model Compression][MoE] This paper proposes SteerMoE, which detects behavior-correlated experts via contrastive paired inputs and steers MoE LLM behavior at inference time by activating or deactivating specif…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - MoE
-  - expert routing
-  - behavior steering
-  - safety
-  - faithfulness
-  - inference-time control
+  - "ICLR 2026"
+  - "Model Compression"
+  - "MoE"
+  - "expert routing"
+  - "behavior steering"
+  - "safety"
+  - "faithfulness"
+  - "inference-time control"
 date: 2026-05-08
 content_hash: 767a1b703a39324a
 ---

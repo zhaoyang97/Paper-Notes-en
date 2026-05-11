@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] CLIPoint3D: Language-Grounded Few-Shot Unsupervised 3D Point Cloud Domain Adaptation
 description: >-
-  [CVPR2026][3D Vision][3D point cloud domain adaptation] The first CLIP-based few-shot unsupervised 3D point cloud domain adaptation framework. Through knowledge-driven prompt tuning, parameter-efficient fine-tuning, entropy-guided view selection, and uncertainty-aware alignment loss, it achieves consistent accuracy improvements of 3–16% on PointDA-10 and GraspNetPC-10 with only ~11M trainable parameters.
+  [CVPR2026][3D Vision][3D point cloud domain adaptation] The first CLIP-based few-shot unsupervised 3D point cloud domain adaptation framework. Through knowledge-driven prompt tuning, parameter-efficient fine-tuning…
 tags:
-  - CVPR2026
-  - 3D Vision
-  - 3D point cloud domain adaptation
-  - CLIP
-  - vision-language model
-  - few-shot learning
-  - unsupervised domain adaptation
-  - optimal transport
-  - parameter-efficient fine-tuning
+  - "CVPR2026"
+  - "3D Vision"
+  - "3D point cloud domain adaptation"
+  - "CLIP"
+  - "vision-language model"
+  - "few-shot learning"
+  - "unsupervised domain adaptation"
+  - "optimal transport"
+  - "parameter-efficient fine-tuning"
 date: 2026-05-08
 content_hash: 8e2a264d96181240
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ST4VLA: Spatially Guided Training for Vision-Language-Action Models
 description: >-
-  [ICLR 2026][Autonomous Driving][Vision-Language-Action] This paper proposes ST4VLA, a two-stage spatially guided training framework (spatial grounding pre-training + spatially guided action post-training) that explicitly injects VLM spatial priors into VLA policy learning. On SimplerEnv, it improves the Google Robot success rate from 66.1% to 84.6% and WidowX from 54.7% to 73.2%, achieving state-of-the-art performance.
+  [ICLR 2026][Autonomous Driving][Vision-Language-Action] This paper proposes ST4VLA, a two-stage spatially guided training framework (spatial grounding pre-training + spatially guided action post-training) that explicitly…
 tags:
-  - ICLR 2026
-  - Autonomous Driving
-  - Vision-Language-Action
-  - Spatially Guided Training
-  - Dual-System Architecture
-  - Diffusion Policy
-  - Robotic Manipulation
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "Vision-Language-Action"
+  - "Spatially Guided Training"
+  - "Dual-System Architecture"
+  - "Diffusion Policy"
+  - "Robotic Manipulation"
 date: 2026-05-08
 content_hash: b13a8169be94465c
 ---

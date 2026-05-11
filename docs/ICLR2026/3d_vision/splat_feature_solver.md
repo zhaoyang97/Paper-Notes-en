@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Splat Feature Solver
 description: >-
-  [ICLR 2026][3D Vision][Feature Lifting] This paper unifies the feature lifting problem for 3D splat representations as a sparse linear inverse problem $AX=B$, proposes a closed-form solver with a provable $(1+\beta)$-approximation error bound under convex loss, and introduces two regularization strategies—Tikhonov Guidance and Post-Lifting Aggregation—achieving state-of-the-art performance on open-vocabulary 3D segmentation.
+  [ICLR 2026][3D Vision][Feature Lifting] This paper unifies the feature lifting problem for 3D splat representations as a sparse linear inverse problem $AX=B$…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Feature Lifting
-  - 3D Gaussian Splatting
-  - Linear Inverse Problem
-  - Open-Vocabulary 3D Segmentation
-  - Tikhonov Regularization
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Feature Lifting"
+  - "3D Gaussian Splatting"
+  - "Linear Inverse Problem"
+  - "Open-Vocabulary 3D Segmentation"
+  - "Tikhonov Regularization"
 date: 2026-05-08
 content_hash: 3f79a26cb1238a12
 ---

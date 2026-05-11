@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TabSTAR: A Tabular Foundation Model for Tabular Data with Text Fields
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][tabular foundation model] TabSTAR is a foundation model designed specifically for tabular data with text fields. It achieves target-aware text representations through end-to-end optimization with an unfrozen text encoder (e5-small-v2), injects target semantics via target-aware tokens, and enables cross-dataset transfer learning through a dataset-parameter-free architecture. After pre-training on 350 datasets, TabSTAR surpasses CatBoost-Tuned (4h tuning) on 12 out of 14 classification datasets and outperforms TabPFN-v2 on 8 out of 11 datasets.
+  [NeurIPS 2025][Self-Supervised Learning][tabular foundation model] TabSTAR is a foundation model designed specifically for tabular data with text fields. It achieves target-aware text representations through end-to-end o…
 tags:
-  - NeurIPS 2025
-  - Self-Supervised Learning
-  - tabular foundation model
-  - text fields
-  - target-aware tokens
-  - cross-dataset learning
-  - transfer learning
+  - "NeurIPS 2025"
+  - "Self-Supervised Learning"
+  - "tabular foundation model"
+  - "text fields"
+  - "target-aware tokens"
+  - "cross-dataset learning"
+  - "transfer learning"
 date: 2026-05-08
 content_hash: c9528ccda6ca1db8
 ---

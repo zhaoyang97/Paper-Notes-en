@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MotionFollower: Editing Video Motion via Lightweight Score-Guided Diffusion
 description: >-
-  [ICCV2025][Model Compression][video motion editing] This paper proposes MotionFollower, which achieves video motion editing via two lightweight convolutional controllers (pose + appearance) and a consistency guidance mechanism based on score function regularization, surpassing strong baselines such as MotionEditor while reducing GPU memory consumption by approximately 80%.
+  [ICCV2025][Model Compression][video motion editing] This paper proposes MotionFollower, which achieves video motion editing via two lightweight convolutional controllers (pose + appearance) and a consistency guidance mec…
 tags:
-  - ICCV2025
-  - Model Compression
-  - video motion editing
-  - diffusion models
-  - score guidance
-  - lightweight controller
-  - pose transfer
+  - "ICCV2025"
+  - "Model Compression"
+  - "video motion editing"
+  - "diffusion models"
+  - "score guidance"
+  - "lightweight controller"
+  - "pose transfer"
 date: 2026-05-08
 content_hash: 4590a4dd000a81da
 ---

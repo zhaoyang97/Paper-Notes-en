@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Know your Trajectory -- Trustworthy Reinforcement Learning Deployment through Importance-Based Trajectory Analysis
 description: >-
-  [AAAI 2026][Reinforcement Learning][Explainable RL] This paper proposes a trajectory-level explanation framework based on state importance metrics. By combining Q-value differences with a goal-affinity measure (radical term), trajectories are ranked by importance. Counterfactual rollouts are then used to verify the robust superiority of the selected optimal trajectory, providing trustworthy explanations for RL policies in the form of "why this path rather than that one?"
+  [AAAI 2026][Reinforcement Learning][Explainable RL] This paper proposes a trajectory-level explanation framework based on state importance metrics. By combining Q-value differences with a goal-affinity measure (radical t…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - Explainable RL
-  - Trajectory Analysis
-  - State Importance
-  - Counterfactual Explanation
-  - Trustworthy AI
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "Explainable RL"
+  - "Trajectory Analysis"
+  - "State Importance"
+  - "Counterfactual Explanation"
+  - "Trustworthy AI"
 date: 2026-05-08
 content_hash: 8966d16ae8f0d844
 ---

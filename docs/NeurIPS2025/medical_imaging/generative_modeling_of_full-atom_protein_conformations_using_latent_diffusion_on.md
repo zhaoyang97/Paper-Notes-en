@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Generative Modeling of Full-Atom Protein Conformations using Latent Diffusion on Graph Embeddings
 description: >-
-  [NeurIPS 2025][Medical Imaging][protein conformation generation] This work proposes **LD-FPG**, a framework that encodes full-atom MD trajectories into a low-dimensional latent space via Chebyshev graph neural networks and applies DDPM in that space to generate novel conformational ensembles. To the authors' knowledge, this is the first approach to generate protein conformations that includes all heavy atoms of the side chains.
+  [NeurIPS 2025][Medical Imaging][protein conformation generation] This work proposes **LD-FPG**, a framework that encodes full-atom MD trajectories into a low-dimensional latent space via Chebyshev graph neural networks a…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - protein conformation generation
-  - latent diffusion
-  - graph neural networks
-  - full-atom modeling
-  - GPCR
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "protein conformation generation"
+  - "latent diffusion"
+  - "graph neural networks"
+  - "full-atom modeling"
+  - "GPCR"
 date: 2026-05-08
 content_hash: e26a9e392036b162
 ---

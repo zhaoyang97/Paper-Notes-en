@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Promoting Sustainable Web Agents: Benchmarking and Estimating Energy Consumption Through Empirical and Theoretical Analysis
 description: >-
-  [AAAI 2026][LLM Agent][Web Agent] This paper presents the first systematic quantification of energy consumption and carbon emissions of Web Agents from both empirical benchmarking and theoretical estimation perspectives, finding that higher energy consumption does not equate to better performance, and advocating for the inclusion of energy efficiency metrics in evaluation protocols.
+  [AAAI 2026][LLM Agent][Web Agent] This paper presents the first systematic quantification of energy consumption and carbon emissions of Web Agents from both empirical benchmarking and theoretical estimation perspectives…
 tags:
-  - AAAI 2026
-  - LLM Agent
-  - Web Agent
-  - Energy Consumption Benchmarking
-  - Carbon Emission Estimation
-  - Green AI
-  - Sustainable Deployment
+  - "AAAI 2026"
+  - "LLM Agent"
+  - "Web Agent"
+  - "Energy Consumption Benchmarking"
+  - "Carbon Emission Estimation"
+  - "Green AI"
+  - "Sustainable Deployment"
 date: 2026-05-08
 content_hash: 7703bf8057776b7b
 ---

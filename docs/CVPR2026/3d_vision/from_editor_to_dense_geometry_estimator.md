@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FE2E: From Editor to Dense Geometry Estimator
 description: >-
-  [CVPR 2026][3D Vision][Depth Estimation] This paper systematically analyzes the fine-tuning behavior of image editing models versus generative models for dense geometry estimation. It finds that editing models possess inherent structural prior advantages, and proposes the FE2E framework — the first to adapt a DiT-based image editing model as a joint depth and normal estimator — achieving substantial zero-shot improvements over existing SOTA (35% AbsRel reduction on ETH3D).
+  [CVPR 2026][3D Vision][Depth Estimation] This paper systematically analyzes the fine-tuning behavior of image editing models versus generative models for dense geometry estimation. It finds that editing models possess in…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Depth Estimation
-  - Normal Estimation
-  - Image Editing Models
-  - Diffusion Models
-  - DiT
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Depth Estimation"
+  - "Normal Estimation"
+  - "Image Editing Models"
+  - "Diffusion Models"
+  - "DiT"
 date: 2026-05-08
 content_hash: 135faf8c5c29aaae
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CoopTrack: Exploring End-to-End Learning for Efficient Cooperative Sequential Perception
 description: >-
-  [ICCV 2025][Autonomous Driving][Cooperative Perception] This paper proposes CoopTrack, the first fully instance-level end-to-end cooperative 3D multi-object tracking framework. It achieves cross-agent instance matching and fusion via a learnable graph attention association module and multi-dimensional feature extraction, reaching state-of-the-art performance on V2X-Seq.
+  [ICCV 2025][Autonomous Driving][Cooperative Perception] This paper proposes CoopTrack, the first fully instance-level end-to-end cooperative 3D multi-object tracking framework. It achieves cross-agent instance matching a…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - Cooperative Perception
-  - 3D Multi-Object Tracking
-  - End-to-End Learning
-  - V2X
-  - Instance-Level Fusion
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "Cooperative Perception"
+  - "3D Multi-Object Tracking"
+  - "End-to-End Learning"
+  - "V2X"
+  - "Instance-Level Fusion"
 date: 2026-05-08
 content_hash: 81e815feebda1f1e
 ---

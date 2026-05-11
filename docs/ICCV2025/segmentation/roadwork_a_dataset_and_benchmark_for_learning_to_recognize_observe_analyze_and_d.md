@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ROADWork: A Dataset and Benchmark for Learning to Recognize, Observe, Analyze and Drive Through Work Zones
 description: >-
-  [ICCV 2025][Segmentation][Work Zone Perception] This paper introduces ROADWork, the first large-scale work zone dataset comprising 4,375 video clips, 9,650 richly annotated images, and 129K images with drivable path annotations. It reveals that foundation models fail severely in work zone scenarios (AP of only 2.9–4.2), while fine-tuning yields substantial improvements (+32.2 AP), and proposes a four-level cognitive framework of Recognize, Observe, Analyze, and Drive.
+  [ICCV 2025][Segmentation][Work Zone Perception] This paper introduces ROADWork, the first large-scale work zone dataset comprising 4,375 video clips, 9,650 richly annotated images…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - Work Zone Perception
-  - Autonomous Driving Dataset
-  - Instance Segmentation
-  - Long-Tail Scenarios
-  - Foundation Models
+  - "ICCV 2025"
+  - "Segmentation"
+  - "Work Zone Perception"
+  - "Autonomous Driving Dataset"
+  - "Instance Segmentation"
+  - "Long-Tail Scenarios"
+  - "Foundation Models"
 date: 2026-05-08
 content_hash: eb5b4f71d4c62a3f
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Revisiting Adversarial Patch Defenses on Object Detectors: Unified Evaluation, Large-Scale Dataset, and New Insights
 description: >-
-  [ICCV 2025][Object Detection][Adversarial Patch Defense] This paper systematically revisits 11 adversarial patch defense methods, establishes the first patch defense benchmark covering 13 attacks, 11 detectors, and 4 metrics, constructs a large-scale APDE dataset of 94,000 images, and reveals three key insights: the difficulty of defending against natural adversarial patches stems from data distribution rather than high-frequency components; patch detection accuracy is inconsistent with defense performance; and adaptive attacks can circumvent most existing defenses.
+  [ICCV 2025][Object Detection][Adversarial Patch Defense] This paper systematically revisits 11 adversarial patch defense methods, establishes the first patch defense benchmark covering 13 attacks, 11 detectors…
 tags:
-  - ICCV 2025
-  - Object Detection
-  - Adversarial Patch Defense
-  - Benchmark Evaluation
-  - Large-Scale Dataset
-  - Adaptive Attack
+  - "ICCV 2025"
+  - "Object Detection"
+  - "Adversarial Patch Defense"
+  - "Benchmark Evaluation"
+  - "Large-Scale Dataset"
+  - "Adaptive Attack"
 date: 2026-05-08
 content_hash: b1c19ec2aabe08dd
 ---

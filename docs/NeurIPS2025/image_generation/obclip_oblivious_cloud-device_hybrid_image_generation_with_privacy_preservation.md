@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ObCLIP: Oblivious Cloud-Device Hybrid Image Generation with Privacy Preservation
 description: >-
-  [NeurIPS 2025][Image Generation][Privacy preservation] ObCLIP is proposed as an oblivious cloud-device hybrid image generation scheme. It expands a user prompt into a set of candidate prompts that differ only in sensitive attributes (e.g., gender, race), performs early denoising steps on all candidates in the cloud without revealing the true prompt, and allows the client to select the correct intermediate latent and complete the remaining denoising locally. Temporal and batch redundancy acceleration techniques reduce the additional overhead to below 4.4–7.6×.
+  [NeurIPS 2025][Image Generation][Privacy preservation] ObCLIP is proposed as an oblivious cloud-device hybrid image generation scheme. It expands a user prompt into a set of candidate prompts that differ only in sensitiv…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Privacy preservation
-  - hybrid inference
-  - oblivious generation
-  - attention caching
-  - diffusion models
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Privacy preservation"
+  - "hybrid inference"
+  - "oblivious generation"
+  - "attention caching"
+  - "diffusion models"
 date: 2026-05-08
 content_hash: 6a25d5cec625e8cc
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Multi-granularity Interactive Attention Framework for Residual Hierarchical Pronunciation Assessment
 description: >-
-  [AAAI2026][Audio & Speech][pronunciation assessment] This paper proposes the HIA framework, which employs an Interactive Attention Module to enable bidirectional information exchange across phoneme, word, and utterance granularities. Combined with a residual hierarchical structure to mitigate feature forgetting, HIA achieves state-of-the-art results on the speechocean762 dataset across all granularities and aspects.
+  [AAAI2026][Audio & Speech][pronunciation assessment] This paper proposes the HIA framework, which employs an Interactive Attention Module to enable bidirectional information exchange across phoneme, word…
 tags:
-  - AAAI2026
+  - "AAAI2026"
   - "Audio & Speech"
-  - pronunciation assessment
-  - multi-granularity interaction
-  - attention mechanism
-  - residual hierarchical structure
-  - CAPT
-  - speech scoring
+  - "pronunciation assessment"
+  - "multi-granularity interaction"
+  - "attention mechanism"
+  - "residual hierarchical structure"
+  - "CAPT"
+  - "speech scoring"
 date: 2026-05-08
 content_hash: 3127d78679966014
 ---

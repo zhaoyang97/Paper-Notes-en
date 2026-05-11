@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CLIPPan: Adapting CLIP as A Supervisor for Unsupervised Pansharpening
 description: >-
-  [AAAI 2026][Model Compression][Pansharpening] This paper proposes CLIPPan, which fine-tunes CLIP in a parameter-efficient manner to understand multispectral/panchromatic/high-resolution multispectral image types and the pansharpening process, then leverages text prompts encoding Wald's protocol as semantic supervision signals to enable full-resolution unsupervised pansharpening without ground truth. CLIPPan operates as a plug-and-play module compatible with arbitrary pansharpening backbone networks.
+  [AAAI 2026][Model Compression][Pansharpening] This paper proposes CLIPPan, which fine-tunes CLIP in a parameter-efficient manner to understand multispectral/panchromatic/high-resolution multispectral image types and the…
 tags:
-  - AAAI 2026
-  - Model Compression
-  - Pansharpening
-  - CLIP
-  - Unsupervised
-  - Vision-Language Model
-  - Remote Sensing
+  - "AAAI 2026"
+  - "Model Compression"
+  - "Pansharpening"
+  - "CLIP"
+  - "Unsupervised"
+  - "Vision-Language Model"
+  - "Remote Sensing"
 date: 2026-05-08
 content_hash: dd415c02a93c1a52
 ---

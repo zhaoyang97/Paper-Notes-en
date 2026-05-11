@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] DPAD: Discriminative Perception via Anchored Description for Reasoning Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Reasoning Segmentation] To address the limitation that geometric rewards in RL+GRPO training for reasoning segmentation (RS) cannot constrain whether the reasoning chain focuses on the target's unique attributes, this paper proposes DPAD: an MLLM generates a reasoning chain, geometric localization, and an anchored description; a CLIP-based Discriminative Perception Reward is introduced to compare the similarity between the description and the ROI/AOI, forcing the caption to be more discriminative and thereby indirectly constraining the reasoning chain to focus on the target. On ReasonSeg, cIoU improves by 3.09% while reasoning chain length decreases by 42%.
+  [CVPR 2026][Segmentation][Reasoning Segmentation] To address the limitation that geometric rewards in RL+GRPO training for reasoning segmentation (RS) cannot constrain whether the reasoning chain focuses on the target's…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Reasoning Segmentation
-  - Reinforcement Learning
-  - GRPO
-  - Discriminative Perception
-  - CLIP
-  - Anchored Description
-  - Reward Design
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Reasoning Segmentation"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "Discriminative Perception"
+  - "CLIP"
+  - "Anchored Description"
+  - "Reward Design"
 date: 2026-05-08
 content_hash: 337320daac05d485
 ---

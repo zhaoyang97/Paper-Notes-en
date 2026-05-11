@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] GateRA: Token-Aware Modulation for Parameter-Efficient Fine-Tuning
 description: >-
-  [AAAI 2026][Parameter-efficient fine-tuning] This paper proposes GateRA, which introduces a lightweight token-aware gating module into PEFT methods (LoRA/DoRA/HiRA). A sigmoid gate dynamically adjusts the adaptation intensity per token—suppressing updates for in-distribution or simple tokens to preserve pre-trained knowledge, while amplifying adaptation for challenging tokens. Combined with entropy regularization to encourage near-binary gating decisions, GateRA consistently outperforms HiRA on commonsense reasoning (+1.1%), dialogue, and mathematical reasoning.
+  [AAAI 2026][Interpretability][Parameter-efficient fine-tuning] This paper proposes GateRA, which introduces a lightweight token-aware gating module into PEFT methods (LoRA/DoRA/HiRA). A sigmoid gate dynamically adjusts t…
 tags:
-  - AAAI 2026
-  - Parameter-efficient fine-tuning
-  - token-aware gating
-  - LoRA
-  - entropy regularization
-  - gradient modulation
+  - "AAAI 2026"
+  - "Interpretability"
+  - "Parameter-efficient fine-tuning"
+  - "token-aware gating"
+  - "LoRA"
+  - "entropy regularization"
+  - "gradient modulation"
 date: 2026-05-08
 content_hash: 65ecce9526c113b8
 ---

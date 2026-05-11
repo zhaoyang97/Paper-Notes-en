@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GRADIEND: Feature Learning within Neural Networks Exemplified through Biases
 description: >-
-  [ICLR 2026][Social Computing][monosemantic feature learning] This paper proposes GRADIEND — a gradient-based encoder-decoder architecture that learns interpretable monosemantic features (exemplified by gender) from model gradients via a single bottleneck neuron. The framework not only identifies which weights encode a specific feature, but also directly modifies model weights through the decoder to mitigate bias. Combined with INLP, it achieves state-of-the-art debiasing results across all baseline models.
+  [ICLR 2026][Social Computing][monosemantic feature learning] This paper proposes GRADIEND — a gradient-based encoder-decoder architecture that learns interpretable monosemantic features (exemplified by gender) from model…
 tags:
-  - ICLR 2026
-  - Social Computing
-  - monosemantic feature learning
-  - gender debiasing
-  - gradient encoder-decoder
-  - Transformer debiasing
-  - interpretability
+  - "ICLR 2026"
+  - "Social Computing"
+  - "monosemantic feature learning"
+  - "gender debiasing"
+  - "gradient encoder-decoder"
+  - "Transformer debiasing"
+  - "interpretability"
 date: 2026-05-08
 content_hash: 89f937d93748b864
 ---

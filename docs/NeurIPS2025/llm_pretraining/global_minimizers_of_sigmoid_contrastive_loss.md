@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Global Minimizers of Sigmoid Contrastive Loss
 description: >-
-  [NeurIPS 2025][LLM Pretraining][Contrastive Learning] This work provides the first rigorous characterization of the global minimizer geometry of the Sigmoid contrastive loss (SigLIP) with trainable temperature and bias in the practically relevant regime $N \gg d$. It introduces a novel combinatorial object called the $(m, b_\text{rel})$-Constellation, and uses it to explain retrieval success, the modality gap phenomenon, and to propose an explicit relative bias parameterization that improves training dynamics.
+  [NeurIPS 2025][LLM Pretraining][Contrastive Learning] This work provides the first rigorous characterization of the global minimizer geometry of the Sigmoid contrastive loss (SigLIP) with trainable temperature and bias i…
 tags:
-  - NeurIPS 2025
-  - LLM Pretraining
-  - Contrastive Learning
-  - Sigmoid Loss
-  - SigLIP
-  - Representation Synchronization
-  - Modality Gap
+  - "NeurIPS 2025"
+  - "LLM Pretraining"
+  - "Contrastive Learning"
+  - "Sigmoid Loss"
+  - "SigLIP"
+  - "Representation Synchronization"
+  - "Modality Gap"
 date: 2026-05-08
 content_hash: 5b865cd792e52aa2
 ---

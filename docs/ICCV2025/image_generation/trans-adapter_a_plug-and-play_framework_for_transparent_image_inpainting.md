@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Trans-Adapter: A Plug-and-Play Framework for Transparent Image Inpainting
 description: >-
-  [Image Generation] This paper proposes Trans-Adapter, a plug-and-play adapter module that enables diffusion-based image inpainting models to directly process transparent (RGBA) images. It also introduces the LayerBench benchmark and the Alpha Edge Quality (AEQ) metric.
+  [Image Generation] This paper proposes Trans-Adapter, a plug-and-play adapter module that enables diffusion-based image inpainting models to directly process transparent (RGBA) images. It also introduces the LayerBench b…
 tags:
-  - Image Generation
+  - "Image Generation"
 date: 2026-05-08
 content_hash: fa65d068193cd6bb
 ---

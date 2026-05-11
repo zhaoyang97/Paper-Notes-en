@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VisioMath: Benchmarking Figure-based Mathematical Reasoning in LMMs
 description: >-
-  [ICLR 2026][Multimodal VLM][mathematical reasoning benchmark] This paper introduces VisioMath, a benchmark comprising 1,800 K-12 mathematics problems in which all answer choices consist of highly visually similar figures. It reveals a core weakness of LMMs in multi-image–text alignment, and explores three alignment strategies that achieve up to +12.6% accuracy improvement.
+  [ICLR 2026][Multimodal VLM][mathematical reasoning benchmark] This paper introduces VisioMath, a benchmark comprising 1,800 K-12 mathematics problems in which all answer choices consist of highly visually similar figures…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - mathematical reasoning benchmark
-  - multi-image reasoning
-  - visual similarity
-  - image-text alignment
-  - LMM evaluation
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "mathematical reasoning benchmark"
+  - "multi-image reasoning"
+  - "visual similarity"
+  - "image-text alignment"
+  - "LMM evaluation"
 date: 2026-05-08
 content_hash: 62c0594ad5bc387f
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RnG: A Unified Transformer for Complete 3D Modeling from Partial Observations
 description: >-
-  [CVPR 2026][3D Vision][3D reconstruction] RnG proposes Reconstruction-Guided Causal Attention, which reinterprets the Transformer's KV-Cache as an implicit 3D representation, enabling a single feed-forward Transformer to jointly perform reconstruction and generation—recovering complete 3D geometry and appearance from sparse, pose-free images—at over 100× the speed of diffusion-based methods.
+  [CVPR 2026][3D Vision][3D reconstruction] RnG proposes Reconstruction-Guided Causal Attention, which reinterprets the Transformer's KV-Cache as an implicit 3D representation…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D reconstruction
-  - novel view synthesis
-  - transformer
-  - KV-Cache
-  - feed-forward
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D reconstruction"
+  - "novel view synthesis"
+  - "transformer"
+  - "KV-Cache"
+  - "feed-forward"
 date: 2026-05-08
 content_hash: 4700be2820439c9b
 ---

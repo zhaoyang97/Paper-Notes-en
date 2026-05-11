@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Risk Management for Mitigating Benchmark Failure Modes: BenchRisk
 description: >-
-  [NeurIPS 2025][LLM Evaluation][LLM benchmarks] Grounded in the NIST Risk Management Framework, this paper systematically analyzes 26 mainstream LLM benchmarks, identifies 57 potential failure modes and 196 mitigation strategies, and proposes the BenchRisk meta-evaluation framework for quantifying the reliability risk of benchmarks.
+  [NeurIPS 2025][LLM Evaluation][LLM benchmarks] Grounded in the NIST Risk Management Framework, this paper systematically analyzes 26 mainstream LLM benchmarks…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - LLM benchmarks
-  - risk management
-  - meta-evaluation
-  - failure modes
-  - NIST
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "LLM benchmarks"
+  - "risk management"
+  - "meta-evaluation"
+  - "failure modes"
+  - "NIST"
 date: 2026-05-08
 content_hash: f9f652f42def6024
 ---

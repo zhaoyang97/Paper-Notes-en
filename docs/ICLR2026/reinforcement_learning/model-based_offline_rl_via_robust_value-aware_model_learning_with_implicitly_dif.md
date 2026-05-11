@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ROMI: Model-based Offline RL via Robust Value-Aware Model Learning with Implicitly Differentiable Adaptive Weighting
 description: >-
-  [ICLR 2026][Reinforcement Learning][Offline RL] ROMI achieves robust value-aware model learning by converting the dynamics uncertainty set into a state uncertainty set via Wasserstein duality, and employs an implicitly differentiable adaptive weighting mechanism to balance dynamics accuracy against value-awareness. This resolves the Q-value underestimation and gradient explosion issues in RAMBO, achieving state-of-the-art performance among model-based offline RL methods on D4RL and NeoRL.
+  [ICLR 2026][Reinforcement Learning][Offline RL] ROMI achieves robust value-aware model learning by converting the dynamics uncertainty set into a state uncertainty set via Wasserstein duality…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Offline RL
-  - model-based methods
-  - adversarial model learning
-  - Wasserstein duality
-  - bilevel optimization
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Offline RL"
+  - "model-based methods"
+  - "adversarial model learning"
+  - "Wasserstein duality"
+  - "bilevel optimization"
 date: 2026-05-08
 content_hash: d44d5bf362dd0976
 ---

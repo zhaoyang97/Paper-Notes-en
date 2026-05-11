@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Angular Constraint Embedding via SpherePair Loss for Constrained Clustering
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][Constrained clustering] This paper proposes the SpherePair loss function, which performs pairwise constraint embedding learning in angular space (rather than Euclidean space), enabling a deep constrained clustering method that requires neither anchors nor prior knowledge of the number of clusters, while providing rigorous theoretical guarantees for determining optimal hyperparameters.
+  [NeurIPS 2025][Self-Supervised Learning][Constrained clustering] This paper proposes the SpherePair loss function, which performs pairwise constraint embedding learning in angular space (rather than Euclidean space)…
 tags:
-  - NeurIPS 2025
-  - Self-Supervised Learning
-  - Constrained clustering
-  - angular embedding
-  - SpherePair loss
-  - deep constrained clustering
-  - spherical representation
+  - "NeurIPS 2025"
+  - "Self-Supervised Learning"
+  - "Constrained clustering"
+  - "angular embedding"
+  - "SpherePair loss"
+  - "deep constrained clustering"
+  - "spherical representation"
 date: 2026-05-08
 content_hash: 76d2bbd372403d51
 ---

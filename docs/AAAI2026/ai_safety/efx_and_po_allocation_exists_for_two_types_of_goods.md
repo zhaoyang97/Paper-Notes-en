@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EFX and PO Allocation Exists for Two Types of Goods
 description: >-
-  [AAAI2026][AI Safety][fair division] This paper proves that an allocation satisfying both EFX (envy-freeness up to any good) and Pareto optimality always exists when goods are of only two types and all valuations are positive, and provides a near-linear-time algorithm.
+  [AAAI2026][AI Safety][fair division] This paper proves that an allocation satisfying both EFX (envy-freeness up to any good) and Pareto optimality always exists when goods are of only two types and all valuations are pos…
 tags:
-  - AAAI2026
-  - AI Safety
-  - fair division
-  - EFX
-  - Pareto optimality
-  - indivisible goods
-  - additive valuations
+  - "AAAI2026"
+  - "AI Safety"
+  - "fair division"
+  - "EFX"
+  - "Pareto optimality"
+  - "indivisible goods"
+  - "additive valuations"
 date: 2026-05-08
 content_hash: 5dc32a3d88fb7188
 ---

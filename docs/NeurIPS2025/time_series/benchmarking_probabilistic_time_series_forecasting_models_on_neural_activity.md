@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Benchmarking Probabilistic Time Series Forecasting Models on Neural Activity
 description: >-
-  [NeurIPS 2025][Time Series][neural activity prediction] The first systematic evaluation of 12 probabilistic time series forecasting models on mouse cortical calcium imaging data. PatchTST consistently achieves top performance (informative prediction horizon up to 1.5 s), zero-shot foundation models (Chronos) fail entirely but become competitive after fine-tuning, and the intrinsic predictability ceiling of neural activity is found to be approximately 1.5 seconds.
+  [NeurIPS 2025][Time Series][neural activity prediction] The first systematic evaluation of 12 probabilistic time series forecasting models on mouse cortical calcium imaging data. PatchTST consistently achieves top perfor…
 tags:
-  - NeurIPS 2025
-  - Time Series
-  - neural activity prediction
-  - probabilistic forecasting
-  - calcium imaging
-  - benchmarking
-  - foundation models
+  - "NeurIPS 2025"
+  - "Time Series"
+  - "neural activity prediction"
+  - "probabilistic forecasting"
+  - "calcium imaging"
+  - "benchmarking"
+  - "foundation models"
 date: 2026-05-08
 content_hash: ce92c59f9ee61d38
 ---

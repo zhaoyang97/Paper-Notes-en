@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Self-Supervised Learning of Graph Representations for Network Intrusion Detection
 description: >-
-  [NeurIPS 2025][Autonomous Driving][network intrusion detection] This paper proposes GraphIDS, a self-supervised intrusion detection model that unifies graph representation learning and anomaly detection via a masked autoencoder, achieving a PR-AUC of 99.98% and macro F1 of 99.61% on multiple NetFlow benchmarks, surpassing baselines by 5–25 percentage points.
+  [NeurIPS 2025][Autonomous Driving][network intrusion detection] This paper proposes GraphIDS, a self-supervised intrusion detection model that unifies graph representation learning and anomaly detection via a masked auto…
 tags:
-  - NeurIPS 2025
-  - Autonomous Driving
-  - network intrusion detection
-  - graph neural networks
-  - self-supervised learning
-  - masked autoencoder
-  - anomaly detection
+  - "NeurIPS 2025"
+  - "Autonomous Driving"
+  - "network intrusion detection"
+  - "graph neural networks"
+  - "self-supervised learning"
+  - "masked autoencoder"
+  - "anomaly detection"
 date: 2026-05-08
 content_hash: b40e6efc689906d1
 ---

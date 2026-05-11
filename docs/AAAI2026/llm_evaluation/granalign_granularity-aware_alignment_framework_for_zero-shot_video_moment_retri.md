@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GranAlign: Granularity-Aware Alignment Framework for Zero-Shot Video Moment Retrieval
 description: >-
-  [AAAI 2026][LLM Evaluation][zero-shot video moment retrieval] This paper proposes GranAlign, a training-free granularity-aware alignment framework that addresses the core challenge of semantic granularity mismatch in zero-shot video moment retrieval (ZVMR). By rewriting queries into simplified and detailed variants and matching them against query-agnostic and query-aware video descriptions respectively, GranAlign achieves a 3.23% improvement in mAP@avg on QVHighlights.
+  [AAAI 2026][LLM Evaluation][zero-shot video moment retrieval] This paper proposes GranAlign, a training-free granularity-aware alignment framework that addresses the core challenge of semantic granularity mismatch in zer…
 tags:
-  - AAAI 2026
-  - LLM Evaluation
-  - zero-shot video moment retrieval
-  - semantic granularity alignment
-  - query rewriting
-  - LLM
-  - vision-language models
+  - "AAAI 2026"
+  - "LLM Evaluation"
+  - "zero-shot video moment retrieval"
+  - "semantic granularity alignment"
+  - "query rewriting"
+  - "LLM"
+  - "vision-language models"
 date: 2026-05-08
 content_hash: 448b84fe9a516fd4
 ---

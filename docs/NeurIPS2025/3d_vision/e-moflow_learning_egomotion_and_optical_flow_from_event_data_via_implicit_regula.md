@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] E-MoFlow: Learning Egomotion and Optical Flow from Event Data via Implicit Regularization
 description: >-
-  [NeurIPS 2025][3D Vision][Event Camera] This paper proposes E-MoFlow, which models optical flow as an implicit neural representation and egomotion as a continuous spline, jointly optimizing both via differential geometric constraints under an unsupervised paradigm to achieve 6-DoF egomotion and dense optical flow estimation from event data.
+  [NeurIPS 2025][3D Vision][Event Camera] This paper proposes E-MoFlow, which models optical flow as an implicit neural representation and egomotion as a continuous spline…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Event Camera
-  - Optical Flow Estimation
-  - Egomotion Estimation
-  - Implicit Regularization
-  - Unsupervised Learning
-  - Neural ODE
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Event Camera"
+  - "Optical Flow Estimation"
+  - "Egomotion Estimation"
+  - "Implicit Regularization"
+  - "Unsupervised Learning"
+  - "Neural ODE"
 date: 2026-05-08
 content_hash: b34769888d16f0b1
 ---

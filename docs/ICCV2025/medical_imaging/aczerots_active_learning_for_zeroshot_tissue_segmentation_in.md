@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AcZeroTS: Active Learning for Zero-shot Tissue Segmentation in Pathology Images
 description: >-
-  [ICCV 2025 (pp. 23508-23518)][Medical Imaging][Zero-shot segmentation] This work proposes AcZeroTS, a framework that integrates active learning with a VLM-based prototype-guided zero-shot segmentation model (ProZS). By simultaneously accounting for uncertainty, diversity, and the ability of selected samples to improve prototype coverage over unseen classes, the framework selects the most informative samples for annotation, achieving high-quality segmentation of both seen and unseen tissue types under minimal annotation budgets.
+  [ICCV 2025 (pp. 23508-23518)][Medical Imaging][Zero-shot segmentation] This work proposes AcZeroTS, a framework that integrates active learning with a VLM-based prototype-guided zero-shot segmentation model (ProZS). By s…
 tags:
-  - ICCV 2025 (pp. 23508-23518)
-  - Medical Imaging
-  - Zero-shot segmentation
-  - active learning
-  - pathology images
-  - vision-language models
-  - prototype-guided
+  - "ICCV 2025 (pp. 23508-23518)"
+  - "Medical Imaging"
+  - "Zero-shot segmentation"
+  - "active learning"
+  - "pathology images"
+  - "vision-language models"
+  - "prototype-guided"
 date: 2026-05-08
 content_hash: 91eefb23497c4ceb
 ---

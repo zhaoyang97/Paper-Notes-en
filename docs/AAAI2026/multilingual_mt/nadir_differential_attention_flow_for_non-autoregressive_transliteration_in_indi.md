@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] NADIR: Differential Attention Flow for Non-Autoregressive Transliteration in Indic Languages
 description: >-
-  [AAAI 2026][Non-autoregressive models] This paper proposes NADIR, a non-autoregressive (NAR) multilingual transliteration architecture combining a differential Transformer with a Mixture-of-Experts (MoE) module. NADIR achieves over 13× inference speedup on Indic language transliteration tasks while substantially reducing hallucination errors common in NAR models (repetition, substitution, omission, and insertion), narrowing the accuracy gap with autoregressive counterparts.
+  [AAAI 2026][Multilingual & Machine Translation][Non-autoregressive models] This paper proposes NADIR, a non-autoregressive (NAR) multilingual transliteration architecture combining a differential Transformer with a Mixtu…
 tags:
-  - AAAI 2026
-  - Non-autoregressive models
-  - differential attention mechanism
-  - mixture of experts
-  - transliteration
-  - Indic languages
+  - "AAAI 2026"
+  - "Multilingual & Machine Translation"
+  - "Non-autoregressive models"
+  - "differential attention mechanism"
+  - "mixture of experts"
+  - "transliteration"
+  - "Indic languages"
 date: 2026-05-08
 content_hash: d5934c488304acac
 ---

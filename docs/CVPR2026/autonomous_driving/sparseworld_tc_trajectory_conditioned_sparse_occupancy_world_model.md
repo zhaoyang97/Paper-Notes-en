@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SparseWorld-TC: Trajectory-Conditioned Sparse Occupancy World Model
 description: >-
-  [CVPR 2026][Autonomous Driving][4D occupancy prediction] This paper proposes SparseWorld-TC, a pure attention-based sparse occupancy world model that bypasses VAE discretization and BEV intermediate representations, directly predicting trajectory-conditioned multi-frame future occupancy end-to-end from raw image features, achieving substantial improvements over existing methods on nuScenes.
+  [CVPR 2026][Autonomous Driving][4D occupancy prediction] This paper proposes SparseWorld-TC, a pure attention-based sparse occupancy world model that bypasses VAE discretization and BEV intermediate representations…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - 4D occupancy prediction
-  - world model
-  - sparse representation
-  - trajectory conditioning
-  - pure attention architecture
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "4D occupancy prediction"
+  - "world model"
+  - "sparse representation"
+  - "trajectory conditioning"
+  - "pure attention architecture"
 date: 2026-05-08
 content_hash: 9e88554a3b8b6c08
 ---

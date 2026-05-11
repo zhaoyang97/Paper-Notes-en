@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Domain-Adapted Granger Causality for Real-Time Cross-Slice Attack Attribution in 6G Networks
 description: >-
-  [NEURIPS2025][Causal Inference][Granger causality] This paper proposes a domain-adapted Granger causality framework for 6G network slicing that integrates enhanced Granger causality testing with network resource contention modeling to enable real-time cross-slice attack attribution, achieving 89.2% accuracy and 87 ms response time across 1,100 attack scenarios, substantially outperforming existing statistical, deep learning, and causal discovery methods.
+  [NEURIPS2025][Causal Inference][Granger causality] This paper proposes a domain-adapted Granger causality framework for 6G network slicing that integrates enhanced Granger causality testing with network resource contenti…
 tags:
-  - NEURIPS2025
-  - Causal Inference
-  - Granger causality
-  - 6G network slicing
-  - cross-slice attack attribution
-  - resource contention
-  - real-time security
+  - "NEURIPS2025"
+  - "Causal Inference"
+  - "Granger causality"
+  - "6G network slicing"
+  - "cross-slice attack attribution"
+  - "resource contention"
+  - "real-time security"
 date: 2026-05-08
 content_hash: 2fd9113be0a60e47
 ---

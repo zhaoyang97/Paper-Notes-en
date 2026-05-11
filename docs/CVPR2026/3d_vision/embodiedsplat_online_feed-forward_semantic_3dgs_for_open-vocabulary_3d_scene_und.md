@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EmbodiedSplat: Online Feed-Forward Semantic 3DGS for Open-Vocabulary 3D Scene Understanding
 description: >-
-  [CVPR 2026][3D Vision][3D Gaussian Splatting] This paper proposes EmbodiedSplat, the first online feed-forward semantic 3DGS framework. It achieves memory-efficient per-Gaussian semantic representation via a sparse coefficient field and a CLIP global codebook, and integrates 3D geometry-aware features to enable full-scene open-vocabulary 3D understanding at 5–6 FPS over 300+ streaming frames.
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] This paper proposes EmbodiedSplat, the first online feed-forward semantic 3DGS framework. It achieves memory-efficient per-Gaussian semantic representation via a sparse coeff…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - open-vocabulary scene understanding
-  - online reconstruction
-  - feed-forward 3DGS
-  - semantic embedding
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "open-vocabulary scene understanding"
+  - "online reconstruction"
+  - "feed-forward 3DGS"
+  - "semantic embedding"
 date: 2026-05-08
 content_hash: 19df85714fcfd3d8
 ---

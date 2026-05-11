@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LeVo: High-Quality Song Generation with Multi-Preference Alignment
 description: >-
-  [NeurIPS 2025][Audio & Speech][song generation] This paper proposes LeVo, a song generation framework that employs a language model to jointly model mixed tokens and dual-track tokens, thereby reconciling vocal-accompaniment harmony with audio quality. It further introduces a DPO-based multi-preference alignment method to enhance musicality and instruction-following capability.
+  [NeurIPS 2025][Audio & Speech][song generation] This paper proposes LeVo, a song generation framework that employs a language model to jointly model mixed tokens and dual-track tokens…
 tags:
-  - NeurIPS 2025
+  - "NeurIPS 2025"
   - "Audio & Speech"
-  - song generation
-  - language model
-  - multi-preference alignment
-  - DPO
-  - music codec
+  - "song generation"
+  - "language model"
+  - "multi-preference alignment"
+  - "DPO"
+  - "music codec"
 date: 2026-05-08
 content_hash: 49dd22b5daa6b878
 ---

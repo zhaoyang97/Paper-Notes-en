@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RLZero: Direct Policy Inference from Language Without In-Domain Supervision
 description: >-
-  [NeurIPS 2025][Image Generation][Zero-shot policy inference] This paper proposes RLZero, a framework that converts natural language instructions into behavioral policies in target environments via an "Imagine → Project → Imitate" pipeline. A video generation model is used to "imagine" observation sequences from language; these are then projected into the target domain; finally, an unsupervised pretrained RL agent imitates the projected sequences via a closed-form solution — all without any in-domain supervision or annotated trajectories.
+  [NeurIPS 2025][Image Generation][Zero-shot policy inference] This paper proposes RLZero, a framework that converts natural language instructions into behavioral policies in target environments via an "Imagine → Project →…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Zero-shot policy inference
-  - language-conditioned RL
-  - video generation models
-  - unsupervised RL
-  - cross-embodiment transfer
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Zero-shot policy inference"
+  - "language-conditioned RL"
+  - "video generation models"
+  - "unsupervised RL"
+  - "cross-embodiment transfer"
 date: 2026-05-08
 content_hash: e04c8eea16a527fc
 ---

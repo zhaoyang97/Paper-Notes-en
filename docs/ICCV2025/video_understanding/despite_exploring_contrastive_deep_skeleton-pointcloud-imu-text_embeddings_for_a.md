@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DeSPITE: Exploring Contrastive Deep Skeleton-PointCloud-IMU-Text Embeddings for Action Recognition
 description: >-
-  [ICCV 2025][Video Understanding][Multimodal contrastive learning] DeSPITE proposes a privacy-preserving multimodal contrastive pre-training framework that aligns four modalities — LiDAR point clouds, skeleton poses, IMU signals, and text — into a unified embedding space, enabling cross-modal matching, retrieval, and a pre-training paradigm for human activity recognition.
+  [ICCV 2025][Video Understanding][Multimodal contrastive learning] DeSPITE proposes a privacy-preserving multimodal contrastive pre-training framework that aligns four modalities — LiDAR point clouds, skeleton poses…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - Multimodal contrastive learning
-  - LiDAR point cloud
-  - IMU
-  - skeleton pose
-  - joint embedding space
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "Multimodal contrastive learning"
+  - "LiDAR point cloud"
+  - "IMU"
+  - "skeleton pose"
+  - "joint embedding space"
 date: 2026-05-08
 content_hash: 97a0e9282f53347d
 ---

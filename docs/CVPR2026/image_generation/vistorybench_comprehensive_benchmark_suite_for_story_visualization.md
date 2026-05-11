@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ViStoryBench: Comprehensive Benchmark Suite for Story Visualization
 description: >-
-  [CVPR 2026][Image Generation][Story Visualization] ViStoryBench constructs a comprehensive benchmark comprising 80 multi-style stories, 344 characters, and 1,317 shots, and proposes 12 automated evaluation metrics covering character consistency, style similarity, prompt alignment, and copy-paste detection. The benchmark systematically evaluates over 25 open-source and commercial story visualization methods, addressing the lack of unified evaluation standards in this field.
+  [CVPR 2026][Image Generation][Story Visualization] ViStoryBench constructs a comprehensive benchmark comprising 80 multi-style stories, 344 characters, and 1,317 shots…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Story Visualization
-  - Benchmark
-  - Character Consistency
-  - Multi-dimensional Evaluation
-  - Narrative Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Story Visualization"
+  - "Benchmark"
+  - "Character Consistency"
+  - "Multi-dimensional Evaluation"
+  - "Narrative Generation"
 date: 2026-05-08
 content_hash: 4cc290ce9eac39d4
 ---

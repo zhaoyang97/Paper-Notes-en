@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RigAnyFace: Scaling Neural Facial Mesh Auto-Rigging with Unlabeled Data
 description: >-
-  [NeurIPS 2025][3D Vision][Facial Rigging] This paper proposes RigAnyFace (RAF), a scalable facial mesh auto-rigging framework that leverages a 2D supervision strategy to exploit unlabeled neutral meshes for training scale expansion, enabling high-quality FACS blendshape rigging across diverse topologies and disconnected components (e.g., eyeballs).
+  [NeurIPS 2025][3D Vision][Facial Rigging] This paper proposes RigAnyFace (RAF), a scalable facial mesh auto-rigging framework that leverages a 2D supervision strategy to exploit unlabeled neutral meshes for training scal…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Facial Rigging
-  - Auto-Rigging
-  - FACS
-  - Blendshapes
-  - 2D Supervision
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Facial Rigging"
+  - "Auto-Rigging"
+  - "FACS"
+  - "Blendshapes"
+  - "2D Supervision"
 date: 2026-05-08
 content_hash: 701403ad1b6abc7f
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Resource Efficient Sleep Staging via Multi-Level Masking and Prompt Learning
 description: >-
-  [AAAI2026][LLM Efficiency][sleep staging] This paper proposes MASS (Mask-Aware Sleep Staging), a framework that achieves reliable sleep staging using only **10% of the original EEG signal** through a multi-level masking strategy and hierarchical prompt learning mechanism, providing a practical solution for resource-constrained wearable sleep monitoring systems.
+  [AAAI2026][LLM Efficiency][sleep staging] This paper proposes MASS (Mask-Aware Sleep Staging), a framework that achieves reliable sleep staging using only **10% of the original EEG signal** through a multi-level masking…
 tags:
-  - AAAI2026
-  - LLM Efficiency
-  - sleep staging
-  - EEG
-  - masking
-  - prompt learning
-  - wearable monitoring
-  - resource efficiency
+  - "AAAI2026"
+  - "LLM Efficiency"
+  - "sleep staging"
+  - "EEG"
+  - "masking"
+  - "prompt learning"
+  - "wearable monitoring"
+  - "resource efficiency"
 date: 2026-05-08
 content_hash: a68b2bcf0a3f0423
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] InnoGym: Benchmarking the Innovation Potential of AI Agents
 description: >-
-  [ICLR 2026][AI agent benchmark] This paper proposes InnoGym, the first benchmark and framework for systematically evaluating the innovation potential of AI agents. It introduces two complementary metrics—Performance Gain and Novelty—and, through 18 improvable tasks, finds that current agents exhibit a degree of innovativeness but lack the robustness to reliably translate novel ideas into performance improvements.
+  [ICLR 2026][Code Intelligence][AI agent benchmark] This paper proposes InnoGym, the first benchmark and framework for systematically evaluating the innovation potential of AI agents. It introduces two complementary metri…
 tags:
-  - ICLR 2026
-  - AI agent benchmark
-  - innovation evaluation
-  - performance gain
-  - novelty
-  - improvable tasks
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "AI agent benchmark"
+  - "innovation evaluation"
+  - "performance gain"
+  - "novelty"
+  - "improvable tasks"
 date: 2026-05-08
 content_hash: 29cc54ffe13e637c
 ---

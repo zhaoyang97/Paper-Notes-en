@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Implicit Bias of Spectral Descent and Muon on Multiclass Separable Data
 description: >-
-  [NeurIPS 2025][Optimization][implicit bias] This paper provides the first complete characterization of the implicit bias of Normalized Steepest Descent (NSD) and Normalized Momentum Descent (NMD) on multiclass linearly separable data: these algorithms converge to the maximum-margin solution under the corresponding $p$-norm at a rate of $\mathcal{O}(1/\sqrt{t})$, with Spectral Descent (spectral norm) and Muon as special cases, and further extended to Adam (max-norm margin).
+  [NeurIPS 2025][Optimization][implicit bias] This paper provides the first complete characterization of the implicit bias of Normalized Steepest Descent (NSD) and Normalized Momentum Descent (NMD) on multiclass linearly s…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - implicit bias
-  - spectral descent
-  - Muon
-  - margin maximization
-  - multiclass classification
-  - Schatten norm
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "implicit bias"
+  - "spectral descent"
+  - "Muon"
+  - "margin maximization"
+  - "multiclass classification"
+  - "Schatten norm"
 date: 2026-05-08
 content_hash: 7067bcd709da8902
 ---

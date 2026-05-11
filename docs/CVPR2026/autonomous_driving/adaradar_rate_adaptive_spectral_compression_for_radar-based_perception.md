@@ -2,19 +2,19 @@
 title: >-
   [Paper Note] AdaRadar: Rate Adaptive Spectral Compression for Radar-based Perception
 description: >-
-  [CVPR2026][Autonomous Driving][radar perception] AdaRadar is proposed — an online adaptive radar data compression framework based on DCT spectral pruning and zeroth-order surrogate gradients — achieving over 100× compression with only ~1 percentage point degradation in detection/segmentation performance, effectively alleviating the bandwidth bottleneck between radar sensors and computing units.
+  [CVPR2026][Autonomous Driving][radar perception] AdaRadar is proposed — an online adaptive radar data compression framework based on DCT spectral pruning and zeroth-order surrogate gradients — achieving over 100× compres…
 tags:
-  - CVPR2026
-  - Autonomous Driving
-  - radar perception
-  - adaptive compression
-  - spectral pruning
-  - zeroth-order gradient
-  - rate control
-  - quantization
-  - DCT
-  - object detection
-  - semantic segmentation
+  - "CVPR2026"
+  - "Autonomous Driving"
+  - "radar perception"
+  - "adaptive compression"
+  - "spectral pruning"
+  - "zeroth-order gradient"
+  - "rate control"
+  - "quantization"
+  - "DCT"
+  - "object detection"
+  - "semantic segmentation"
 date: 2026-05-08
 content_hash: c574a7ecc0473561
 ---

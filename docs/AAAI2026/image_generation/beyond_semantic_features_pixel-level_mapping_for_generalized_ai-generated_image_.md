@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond Semantic Features: Pixel-Level Mapping for Generalized AI-Generated Image Detection
 description: >-
-  [AAAI 2026][Image Generation][AI-generated image detection] This paper proposes a pixel-level mapping preprocessing method that suppresses low-frequency semantic bias and enhances high-frequency generation artifacts by breaking the monotonic ordering of pixel values, achieving a cross-model generalization accuracy of 98.4% in AI-generated image detection.
+  [AAAI 2026][Image Generation][AI-generated image detection] This paper proposes a pixel-level mapping preprocessing method that suppresses low-frequency semantic bias and enhances high-frequency generation artifacts by b…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - AI-generated image detection
-  - pixel-level mapping
-  - semantic bias
-  - high-frequency artifacts
-  - cross-model generalization
+  - "AAAI 2026"
+  - "Image Generation"
+  - "AI-generated image detection"
+  - "pixel-level mapping"
+  - "semantic bias"
+  - "high-frequency artifacts"
+  - "cross-model generalization"
 date: 2026-05-08
 content_hash: 955d3a3b026a8f3a
 ---

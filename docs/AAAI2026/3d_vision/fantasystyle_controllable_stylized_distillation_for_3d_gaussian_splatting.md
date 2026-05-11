@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FantasyStyle: Controllable Stylized Distillation for 3D Gaussian Splatting
 description: >-
-  [AAAI 2026][3D Vision][3DGS style transfer] This paper presents FantasyStyle, the first 3DGS style transfer framework built entirely on diffusion model distillation. It introduces a Multi-View Frequency Consistency (MVFC) mechanism that suppresses low-frequency components to reduce cross-view conflicts, and designs Controllable Stylized Distillation (CSD) with negative guidance to eliminate content leakage from style images. The method surpasses existing VGG-based and diffusion-based approaches in both stylization quality and content preservation.
+  [AAAI 2026][3D Vision][3DGS style transfer] This paper presents FantasyStyle, the first 3DGS style transfer framework built entirely on diffusion model distillation. It introduces a Multi-View Frequency Consistency (MVFC…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - 3DGS style transfer
-  - diffusion model distillation
-  - multi-view consistency
-  - frequency analysis
-  - negative guidance
+  - "AAAI 2026"
+  - "3D Vision"
+  - "3DGS style transfer"
+  - "diffusion model distillation"
+  - "multi-view consistency"
+  - "frequency analysis"
+  - "negative guidance"
 date: 2026-05-08
 content_hash: 3db9da865ddd9c18
 ---

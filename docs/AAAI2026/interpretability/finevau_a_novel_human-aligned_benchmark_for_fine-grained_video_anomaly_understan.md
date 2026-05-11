@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] FineVAU: A Novel Human-Aligned Benchmark for Fine-Grained Video Anomaly Understanding
 description: >-
-  [AAAI 2026][Video Anomaly Understanding] This paper proposes the FineVAU benchmark, which decomposes Video Anomaly Understanding (VAU) into three dimensions — Event (What), Entity (Who), and Location (Where) — introduces the FV-Score metric with high alignment to human perception, and constructs the FineW³ dataset via a fully automated LVLM-assisted pipeline. Experiments reveal critical shortcomings of current LVLMs in fine-grained anomalous event perception.
+  [AAAI 2026][Interpretability][Video Anomaly Understanding] This paper proposes the FineVAU benchmark, which decomposes Video Anomaly Understanding (VAU) into three dimensions — Event (What), Entity (Who)…
 tags:
-  - AAAI 2026
-  - Video Anomaly Understanding
-  - Benchmark
-  - LLM-as-Judge
-  - Fine-Grained Evaluation
-  - Human Alignment
+  - "AAAI 2026"
+  - "Interpretability"
+  - "Video Anomaly Understanding"
+  - "Benchmark"
+  - "LLM-as-Judge"
+  - "Fine-Grained Evaluation"
+  - "Human Alignment"
 date: 2026-05-08
 content_hash: 5d29809e7e4acf4e
 ---

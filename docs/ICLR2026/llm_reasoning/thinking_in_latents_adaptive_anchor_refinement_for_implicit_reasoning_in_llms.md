@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Thinking in Latents: Adaptive Anchor Refinement for Implicit Reasoning in LLMs
 description: >-
-  [ICLR 2026][LLM Reasoning][latent-space reasoning] This paper proposes AdaAnchor, a latent-space reasoning framework that appends learnable anchor vectors to input embeddings and refines their states through iterative forward passes to achieve "silent thinking." An adaptive stopping mechanism based on anchor stability dynamically allocates computation according to instance difficulty. On mathematical reasoning benchmarks, AdaAnchor achieves up to 5% higher accuracy and 48–60% fewer average steps compared to fixed-step latent reasoning, while reducing output tokens by 92–93% relative to CoT.
+  [ICLR 2026][LLM Reasoning][latent-space reasoning] This paper proposes AdaAnchor, a latent-space reasoning framework that appends learnable anchor vectors to input embeddings and refines their states through iterative fo…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - latent-space reasoning
-  - adaptive stopping
-  - anchor vectors
-  - CoT compression
-  - implicit computation
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "latent-space reasoning"
+  - "adaptive stopping"
+  - "anchor vectors"
+  - "CoT compression"
+  - "implicit computation"
 date: 2026-05-08
 content_hash: 7953455c92088609
 ---

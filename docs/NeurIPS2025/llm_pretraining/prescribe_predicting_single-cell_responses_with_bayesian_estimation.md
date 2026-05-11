@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PRESCRIBE: Predicting Single-Cell Responses with Bayesian Estimation
 description: >-
-  [NeurIPS 2025][LLM Pretraining][single-cell perturbation prediction] PRESCRIBE is a framework that jointly models epistemic uncertainty (model unfamiliarity with inputs) and aleatoric uncertainty (inherent randomness of biological systems) in single-cell perturbation prediction via multivariate deep evidential regression. It generates a pseudo E-distance as a unified uncertainty proxy; filtering unreliable predictions based on this metric yields accuracy improvements exceeding 3%.
+  [NeurIPS 2025][LLM Pretraining][single-cell perturbation prediction] PRESCRIBE is a framework that jointly models epistemic uncertainty (model unfamiliarity with inputs) and aleatoric uncertainty (inherent randomness of…
 tags:
-  - NeurIPS 2025
-  - LLM Pretraining
-  - single-cell perturbation prediction
-  - uncertainty quantification
-  - Bayesian estimation
-  - deep evidential regression
-  - pseudo E-distance
+  - "NeurIPS 2025"
+  - "LLM Pretraining"
+  - "single-cell perturbation prediction"
+  - "uncertainty quantification"
+  - "Bayesian estimation"
+  - "deep evidential regression"
+  - "pseudo E-distance"
 date: 2026-05-08
 content_hash: e7e9cd44d7063122
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Robustifying Learning-Augmented Caching Efficiently without Compromising 1-Consistency
 description: >-
-  [NeurIPS 2025][Model Compression][Online caching] This paper proposes Guard, a lightweight robustification framework that improves the robustness of a broad class of learning-augmented caching algorithms to $2H_{k-1}+2$ while preserving 1-consistency and incurring only O(1) additional overhead per request.
+  [NeurIPS 2025][Model Compression][Online caching] This paper proposes Guard, a lightweight robustification framework that improves the robustness of a broad class of learning-augmented caching algorithms to $2H_{k-1}+2$…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Online caching
-  - learning-augmented algorithms
-  - robustification
-  - 1-consistency
-  - competitive ratio
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Online caching"
+  - "learning-augmented algorithms"
+  - "robustification"
+  - "1-consistency"
+  - "competitive ratio"
 date: 2026-05-08
 content_hash: bb2249001bf6ef7b
 ---

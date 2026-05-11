@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Node-RF: Learning Generalized Continuous Space-Time Scene Dynamics with Neural ODE-based NeRFs
 description: >-
-  [CVPR 2026][3D Vision][Neural ODE] Node-RF tightly couples Neural ODE with NeRF, driving the temporal evolution of implicit scene representations via continuous-time differential equations. This enables long-range extrapolation far beyond the training time horizon and cross-trajectory generalization, achieving significant improvements over baselines such as D-NeRF and 4D-GS on datasets including Bouncing Balls, Pendulum, and Oscillating Ball.
+  [CVPR 2026][3D Vision][Neural ODE] Node-RF tightly couples Neural ODE with NeRF, driving the temporal evolution of implicit scene representations via continuous-time differential equations. This enables long-range extrap…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Neural ODE
-  - NeRF
-  - dynamic scenes
-  - spatiotemporal extrapolation
-  - trajectory generalization
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Neural ODE"
+  - "NeRF"
+  - "dynamic scenes"
+  - "spatiotemporal extrapolation"
+  - "trajectory generalization"
 date: 2026-05-08
 content_hash: 56de5791c89658fc
 ---

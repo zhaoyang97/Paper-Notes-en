@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Toward Enhancing Representation Learning in Federated Multi-Task Settings
 description: >-
-  [ICLR 2026][AI Safety][Federated multi-task learning] This paper proposes the Muscle loss — an N-tuple-level multi-model contrastive learning objective whose minimization is equivalent to maximizing a lower bound on the mutual information among all model representations. Building on this, the FedMuscle algorithm aligns the representation spaces of heterogeneous models via a public dataset, naturally handling both model and task heterogeneity. FedMuscle consistently outperforms state-of-the-art baselines across CV/NLP multi-task settings, with gains of up to +28.65%.
+  [ICLR 2026][AI Safety][Federated multi-task learning] This paper proposes the Muscle loss — an N-tuple-level multi-model contrastive learning objective whose minimization is equivalent to maximizing a lower bound on the…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - Federated multi-task learning
-  - contrastive learning
-  - Muscle loss
-  - model heterogeneity
-  - mutual information maximization
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Federated multi-task learning"
+  - "contrastive learning"
+  - "Muscle loss"
+  - "model heterogeneity"
+  - "mutual information maximization"
 date: 2026-05-08
 content_hash: 63172456ed37c8f6
 ---

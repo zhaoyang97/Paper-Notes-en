@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Risk-Averse Total-Reward Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Risk-averse RL] This paper proposes risk-averse Q-learning algorithms (ERM-TRC and EVaR-TRC) for the undiscounted total-reward criterion (TRC). By exploiting the elicitability of ERM, the Bellman operator is reformulated as a stochastic gradient descent objective, and convergence guarantees are established.
+  [NeurIPS 2025][Reinforcement Learning][Risk-averse RL] This paper proposes risk-averse Q-learning algorithms (ERM-TRC and EVaR-TRC) for the undiscounted total-reward criterion (TRC). By exploiting the elicitability of ER…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Risk-averse RL
-  - total-reward criterion
-  - Q-learning
-  - entropic risk measure (ERM)
-  - entropic value-at-risk (EVaR)
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Risk-averse RL"
+  - "total-reward criterion"
+  - "Q-learning"
+  - "entropic risk measure (ERM)"
+  - "entropic value-at-risk (EVaR)"
 date: 2026-05-08
 content_hash: 8e25c613862038a7
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BAID: A Benchmark for Bias Assessment of AI Detectors
 description: >-
-  [AAAI 2026][AIGC Detection][AI text detection] This paper introduces the BAID benchmark (208K sample pairs covering 7 bias dimensions and 41 subgroups) to systematically evaluate the fairness of 4 open-source AI text detectors across demographic and linguistic subgroups, revealing significant recall disparities for dialect, informal English, and minority group texts.
+  [AAAI 2026][AIGC Detection][AI text detection] This paper introduces the BAID benchmark (208K sample pairs covering 7 bias dimensions and 41 subgroups) to systematically evaluate the fairness of 4 open-source AI text det…
 tags:
-  - AAAI 2026
-  - AIGC Detection
-  - AI text detection
-  - bias assessment
-  - fairness benchmark
-  - sociolinguistics
-  - detector auditing
+  - "AAAI 2026"
+  - "AIGC Detection"
+  - "AI text detection"
+  - "bias assessment"
+  - "fairness benchmark"
+  - "sociolinguistics"
+  - "detector auditing"
 date: 2026-05-08
 content_hash: 6b53f0467f75ef35
 ---

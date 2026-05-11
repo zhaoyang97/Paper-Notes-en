@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Robust Multi-Source Covid-19 Detection in CT Images
 description: >-
-  [CVPR 2026][Medical Imaging][COVID-19 detection] This paper proposes a multi-task learning framework that jointly trains a COVID-19 diagnosis head and a source hospital identification head (supervised by a logit-adjusted loss) on a shared EfficientNet-B7 backbone, encouraging the feature extractor to learn institution-invariant representations. The method achieves an F1 of 0.9098 on a multi-source CT dataset.
+  [CVPR 2026][Medical Imaging][COVID-19 detection] This paper proposes a multi-task learning framework that jointly trains a COVID-19 diagnosis head and a source hospital identification head (supervised by a logit-adjusted…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - COVID-19 detection
-  - multi-source domain
-  - multi-task learning
-  - logit-adjusted loss
-  - CT images
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "COVID-19 detection"
+  - "multi-source domain"
+  - "multi-task learning"
+  - "logit-adjusted loss"
+  - "CT images"
 date: 2026-05-08
 content_hash: 314cd610a2c09962
 ---

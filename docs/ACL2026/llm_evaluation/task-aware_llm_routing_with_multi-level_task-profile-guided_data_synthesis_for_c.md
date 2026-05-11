@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Task-Aware LLM Routing with Multi-Level Task-Profile-Guided Data Synthesis for Cold-Start Scenarios
 description: >-
-  [ACL 2026][LLM Evaluation][LLM routing] This paper proposes a multi-level task-profile-guided data synthesis framework to address the cold-start problem in LLM routing, and introduces TRouter—a routing method that treats task type as a latent variable—which models the query-cost-performance relationship via variational inference, achieving effective routing in both cold-start and in-domain settings.
+  [ACL 2026][LLM Evaluation][LLM routing] This paper proposes a multi-level task-profile-guided data synthesis framework to address the cold-start problem in LLM routing…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - LLM routing
-  - cold-start
-  - data synthesis
-  - task-awareness
-  - cost-performance trade-off
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "LLM routing"
+  - "cold-start"
+  - "data synthesis"
+  - "task-awareness"
+  - "cost-performance trade-off"
 date: 2026-05-08
 content_hash: 4c33429048ba9ab9
 ---

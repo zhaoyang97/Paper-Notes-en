@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Graph Persistence goes Spectral
 description: >-
-  [NeurIPS 2025][Graph Learning][Persistent Homology] This paper proposes SpectRe — a novel topological descriptor that incorporates graph Laplacian spectral information into persistent homology (PH) graphs. It proves that SpectRe is strictly more expressive than either PH or spectral methods alone, establishes a local stability theory, and demonstrates improved GNN graph classification performance on both synthetic and real-world datasets.
+  [NeurIPS 2025][Graph Learning][Persistent Homology] This paper proposes SpectRe — a novel topological descriptor that incorporates graph Laplacian spectral information into persistent homology (PH) graphs. It proves that…
 tags:
-  - NeurIPS 2025
-  - Graph Learning
-  - Persistent Homology
-  - Graph Laplacian Spectrum
-  - GNN Expressivity
-  - SpectRe
-  - Weisfeiler-Leman
+  - "NeurIPS 2025"
+  - "Graph Learning"
+  - "Persistent Homology"
+  - "Graph Laplacian Spectrum"
+  - "GNN Expressivity"
+  - "SpectRe"
+  - "Weisfeiler-Leman"
 date: 2026-05-08
 content_hash: 1d333072d3291dba
 ---

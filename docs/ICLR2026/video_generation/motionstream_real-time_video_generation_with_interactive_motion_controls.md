@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] MotionStream: Real-Time Video Generation with Interactive Motion Controls
 description: >-
-  [ICLR 2026][Video Generation][streaming video generation] MotionStream is proposed as the first real-time streaming video generation system with motion control. It first trains a bidirectional motion-control teacher with a lightweight track head on Wan DiT, then distills it into a causal student via Self Forcing + DMD. Attention sink and rolling KV cache are introduced to achieve full train-inference distribution matching, enabling infinite-length generation at constant speed — reaching 17 FPS / 29 FPS (+ Tiny VAE) at 480P on a single H100 GPU.
+  [ICLR 2026][Video Generation][streaming video generation] MotionStream is proposed as the first real-time streaming video generation system with motion control. It first trains a bidirectional motion-control teacher with…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - streaming video generation
-  - motion control
-  - causal distillation
-  - attention sink
-  - distribution matching distillation
-  - real-time interaction
+  - "ICLR 2026"
+  - "Video Generation"
+  - "streaming video generation"
+  - "motion control"
+  - "causal distillation"
+  - "attention sink"
+  - "distribution matching distillation"
+  - "real-time interaction"
 date: 2026-05-08
 content_hash: 87352ade420860c1
 ---

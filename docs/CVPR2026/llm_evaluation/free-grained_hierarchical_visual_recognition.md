@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Free-Grained Hierarchical Visual Recognition
 description: >-
-  [CVPR 2026][LLM Evaluation][Hierarchical Classification] This paper proposes *free-grained hierarchical recognition*, a setting in which training labels may appear at any level of a taxonomy. Two complementary methods are introduced to compensate for missing supervision — text-guided pseudo-attributes (Text-Attr) and taxonomy-guided semi-supervised learning (Taxon-SSL) — while at inference time the model adaptively selects its prediction depth.
+  [CVPR 2026][LLM Evaluation][Hierarchical Classification] This paper proposes *free-grained hierarchical recognition*, a setting in which training labels may appear at any level of a taxonomy. Two complementary methods ar…
 tags:
-  - CVPR 2026
-  - LLM Evaluation
-  - Hierarchical Classification
-  - Mixed-Granularity Annotation
-  - Semi-Supervised Learning
-  - Text Guidance
-  - Taxonomy
+  - "CVPR 2026"
+  - "LLM Evaluation"
+  - "Hierarchical Classification"
+  - "Mixed-Granularity Annotation"
+  - "Semi-Supervised Learning"
+  - "Text Guidance"
+  - "Taxonomy"
 date: 2026-05-08
 content_hash: a9c74cb2565f409f
 ---

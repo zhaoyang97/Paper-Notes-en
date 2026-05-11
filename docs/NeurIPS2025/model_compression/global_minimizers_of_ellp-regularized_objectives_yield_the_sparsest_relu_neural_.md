@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Global Minimizers of ℓp-Regularized Objectives Yield the Sparsest ReLU Neural Networks
 description: >-
-  [NeurIPS 2025][Model Compression][ℓp regularization] This paper proves that, for single-hidden-layer ReLU networks, global minimizers of the $\ell^p$ ($0 < p < 1$) path norm correspond exactly to the **sparsest** data-interpolating networks, thereby recasting the combinatorial sparse interpolation problem as a continuously differentiable optimization task.
+  [NeurIPS 2025][Model Compression][ℓp regularization] This paper proves that, for single-hidden-layer ReLU networks, global minimizers of the $\ell^p$ ($0 < p < 1$) path norm correspond exactly to the **sparsest** data-in…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - ℓp regularization
-  - ReLU networks
-  - sparsity
-  - global minimizers
-  - network pruning
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "ℓp regularization"
+  - "ReLU networks"
+  - "sparsity"
+  - "global minimizers"
+  - "network pruning"
 date: 2026-05-08
 content_hash: 25cfbc7d3265d766
 ---

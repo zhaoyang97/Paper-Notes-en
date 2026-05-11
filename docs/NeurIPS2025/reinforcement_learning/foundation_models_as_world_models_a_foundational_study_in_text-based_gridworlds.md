@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Foundation Models as World Models: A Foundational Study in Text-Based GridWorlds
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Foundation Models] This paper systematically evaluates foundation models (LLMs) as zero-shot world models (FWM) and direct decision-making agents (FA) in text-based gridworlds, revealing complementary advantages of the two strategies in deterministic and stochastic environments.
+  [NeurIPS 2025][Reinforcement Learning][Foundation Models] This paper systematically evaluates foundation models (LLMs) as zero-shot world models (FWM) and direct decision-making agents (FA) in text-based gridworlds…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Foundation Models
-  - World Models
-  - GridWorld
-  - Large Language Models
-  - Sample Efficiency
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Foundation Models"
+  - "World Models"
+  - "GridWorld"
+  - "Large Language Models"
+  - "Sample Efficiency"
 date: 2026-05-08
 content_hash: d80d4f170962f7de
 ---

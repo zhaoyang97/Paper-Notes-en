@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PermLLM: Learnable Channel Permutation for N:M Sparse Large Language Models
 description: >-
-  [NeurIPS 2025][Model Compression][N:M sparsity] This paper proposes PermLLM, the first learnable channel permutation (LCP) framework for N:M sparse LLMs. By relaxing discrete permutation matrices into differentiable soft permutation matrices via Sinkhorn normalization, PermLLM enables end-to-end optimization. Combined with a block-level permutation strategy that substantially reduces computational overhead, the framework effectively improves the performance of N:M sparse LLMs.
+  [NeurIPS 2025][Model Compression][N:M sparsity] This paper proposes PermLLM, the first learnable channel permutation (LCP) framework for N:M sparse LLMs. By relaxing discrete permutation matrices into differentiable soft…
 tags:
-  - NeurIPS 2025
-  - Model Compression
+  - "NeurIPS 2025"
+  - "Model Compression"
   - "N:M sparsity"
-  - channel permutation
-  - model pruning
-  - LLM compression
-  - Sinkhorn normalization
+  - "channel permutation"
+  - "model pruning"
+  - "LLM compression"
+  - "Sinkhorn normalization"
 date: 2026-05-08
 content_hash: b944f05b200302ef
 ---

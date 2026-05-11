@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ViterbiPlanNet: Injecting Procedural Knowledge via Differentiable Viterbi for Planning
 description: >-
-  [CVPR 2026][Graph Learning][Procedural Planning] This work embeds a Procedural Knowledge Graph (PKG) into a planning model end-to-end via a differentiable Viterbi layer, enabling the neural network to learn only emission probabilities rather than memorizing complete procedural structures. With only 5–7M parameters—one to three orders of magnitude fewer than diffusion- or LLM-based methods—the approach achieves state-of-the-art success rates on CrossTask/COIN/NIV and establishes a unified evaluation benchmark.
+  [CVPR 2026][Graph Learning][Procedural Planning] This work embeds a Procedural Knowledge Graph (PKG) into a planning model end-to-end via a differentiable Viterbi layer…
 tags:
-  - CVPR 2026
-  - Graph Learning
-  - Procedural Planning
-  - Differentiable Viterbi
-  - Procedural Knowledge Graph
-  - Instructional Videos
-  - Structure-Aware Training
+  - "CVPR 2026"
+  - "Graph Learning"
+  - "Procedural Planning"
+  - "Differentiable Viterbi"
+  - "Procedural Knowledge Graph"
+  - "Instructional Videos"
+  - "Structure-Aware Training"
 date: 2026-05-08
 content_hash: 8243dc400f6e261b
 ---

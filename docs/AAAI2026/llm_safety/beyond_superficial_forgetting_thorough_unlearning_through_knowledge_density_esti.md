@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Beyond Superficial Forgetting: Thorough Unlearning through Knowledge Density Estimation and Block Re-insertion
 description: >-
-  [AAAI 2026][LLM Safety][machine unlearning] This paper proposes the KUnBR framework, which employs gradient-guided knowledge density estimation to localize layers enriched with harmful knowledge, and adopts a block re-insertion strategy to bypass the gradient-masking effect of cover layers, achieving deep unlearning of harmful knowledge in LLMs rather than mere surface-level suppression.
+  [AAAI 2026][LLM Safety][machine unlearning] This paper proposes the KUnBR framework, which employs gradient-guided knowledge density estimation to localize layers enriched with harmful knowledge…
 tags:
-  - AAAI 2026
-  - LLM Safety
-  - machine unlearning
-  - Knowledge Density
-  - Block Re-insertion
-  - RTT Attack
+  - "AAAI 2026"
+  - "LLM Safety"
+  - "machine unlearning"
+  - "Knowledge Density"
+  - "Block Re-insertion"
+  - "RTT Attack"
 date: 2026-05-08
 content_hash: a4340c341d603d57
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EMGauss: Continuous Slice-to-3D Reconstruction via Dynamic Gaussian Modeling in Volume Electron Microscopy
 description: >-
-  [CVPR 2026][3D Vision][3D Gaussian Splatting] This paper reformulates the anisotropic slice reconstruction problem in volume electron microscopy (vEM) as a dynamic 3D scene rendering task based on deformable 2D Gaussian splatting, achieving high-fidelity continuous slice synthesis under sparse data conditions via a Teacher-Student pseudo-label mechanism.
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] This paper reformulates the anisotropic slice reconstruction problem in volume electron microscopy (vEM) as a dynamic 3D scene rendering task based on deformable 2D Gaussian…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - volume electron microscopy
-  - anisotropic reconstruction
-  - dynamic scene modeling
-  - self-supervised learning
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "volume electron microscopy"
+  - "anisotropic reconstruction"
+  - "dynamic scene modeling"
+  - "self-supervised learning"
 date: 2026-05-08
 content_hash: de4b7ff0f362345c
 ---

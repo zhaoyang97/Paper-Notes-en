@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Skirting Additive Error Barriers for Private Turnstile Streams
 description: >-
-  [ICLR 2026][AI Safety][differential privacy] This paper proves that the polynomial pure additive error lower bounds in differentially private turnstile streams—$\Omega(T^{1/4})$ for distinct elements counting and $\Omega(T)$ for $F_2$ moment estimation—can be circumvented by introducing multiplicative error. The paper achieves $(\text{polylog}(T), \text{polylog}(T))$ mixed error for distinct elements and $(1+\eta, \text{polylog}(T))$ mixed error for $F_2$ moments, both requiring only polylogarithmic space.
+  [ICLR 2026][AI Safety][differential privacy] This paper proves that the polynomial pure additive error lower bounds in differentially private turnstile streams—$\Omega(T^{1/4})$ for distinct elements counting and $\Omega…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - differential privacy
-  - continual release
-  - turnstile stream
-  - distinct elements
-  - F2 moment
+  - "ICLR 2026"
+  - "AI Safety"
+  - "differential privacy"
+  - "continual release"
+  - "turnstile stream"
+  - "distinct elements"
+  - "F2 moment"
 date: 2026-05-08
 content_hash: 9d696f9fa1ee86d7
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Bridging Fairness and Explainability: Can Input-Based Explanations Promote Fairness in Hate Speech Detection?
 description: >-
-  [ICLR 2026][AI Safety][fairness] The first systematic large-scale quantitative study on the relationship between input-based explanations and fairness: explanations can effectively detect biased predictions and serve as training regularizers to reduce bias, but cannot be reliably used for automatic fair model selection.
+  [ICLR 2026][AI Safety][fairness] The first systematic large-scale quantitative study on the relationship between input-based explanations and fairness: explanations can effectively detect biased predictions and serve as…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - fairness
-  - explainability
-  - hate speech detection
-  - input attribution
-  - bias mitigation
+  - "ICLR 2026"
+  - "AI Safety"
+  - "fairness"
+  - "explainability"
+  - "hate speech detection"
+  - "input attribution"
+  - "bias mitigation"
 date: 2026-05-08
 content_hash: c7c099839c7cec52
 ---

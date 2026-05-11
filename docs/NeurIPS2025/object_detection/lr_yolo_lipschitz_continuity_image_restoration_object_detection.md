@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Delving into Cascaded Instability: A Lipschitz Continuity View on Image Restoration and Object Detection Synergy
 description: >-
-  [NeurIPS 2025][Object Detection][Adverse Condition Detection] This paper analyzes the root cause of instability in cascaded image restoration and object detection frameworks from a Lipschitz continuity perspective. It identifies an order-of-magnitude smoothness gap between the two networks and proposes LR-YOLO, which integrates the restoration task into the detection backbone's feature learning to regularize the detector's Lipschitz constant, consistently improving detection stability on dehazing and low-light enhancement benchmarks.
+  [NeurIPS 2025][Object Detection][Adverse Condition Detection] This paper analyzes the root cause of instability in cascaded image restoration and object detection frameworks from a Lipschitz continuity perspective. It id…
 tags:
-  - NeurIPS 2025
-  - Object Detection
-  - Adverse Condition Detection
-  - Lipschitz Continuity
-  - Image Restoration–Detection Cascade
-  - YOLO
-  - Regularization
+  - "NeurIPS 2025"
+  - "Object Detection"
+  - "Adverse Condition Detection"
+  - "Lipschitz Continuity"
+  - "Image Restoration–Detection Cascade"
+  - "YOLO"
+  - "Regularization"
 date: 2026-05-08
 content_hash: 636d81350fdddf90
 ---

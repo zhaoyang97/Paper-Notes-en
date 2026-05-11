@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning to Focus: Prioritizing Informative Histories with Structured Attention Mechanisms in Partially Observable Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Partially Observable RL] Two structured temporal priors—Memory-Length Prior and Gaussian Distributional Prior—are embedded into the self-attention mechanism of a Transformer world model. Under partially observable RL settings, Gaussian Attention achieves a 77% relative improvement in human-normalized score over UniZero on the Atari 100k benchmark with negligible computational overhead.
+  [NeurIPS 2025][Reinforcement Learning][Partially Observable RL] Two structured temporal priors—Memory-Length Prior and Gaussian Distributional Prior—are embedded into the self-attention mechanism of a Transformer world m…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Partially Observable RL
-  - Transformer World Models
-  - Attention Prior
-  - Gaussian Attention
-  - Sample Efficiency
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Partially Observable RL"
+  - "Transformer World Models"
+  - "Attention Prior"
+  - "Gaussian Attention"
+  - "Sample Efficiency"
 date: 2026-05-08
 content_hash: 460dc34232da7e9f
 ---

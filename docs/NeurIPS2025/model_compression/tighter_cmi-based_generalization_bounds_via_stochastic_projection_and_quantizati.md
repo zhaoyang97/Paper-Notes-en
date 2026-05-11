@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Tighter CMI-Based Generalization Bounds via Stochastic Projection and Quantization
 description: >-
-  [NeurIPS 2025][Model Compression][generalization bounds] By incorporating **stochastic projection** and **lossy compression** into the CMI (conditional mutual information) framework, this paper derives tighter generalization bounds, resolves the failure of classical CMI bounds on SCO counterexamples, and proves that memorization is not necessary for good generalization.
+  [NeurIPS 2025][Model Compression][generalization bounds] By incorporating **stochastic projection** and **lossy compression** into the CMI (conditional mutual information) framework…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - generalization bounds
-  - conditional mutual information
-  - stochastic projection
-  - lossy compression
-  - memorization
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "generalization bounds"
+  - "conditional mutual information"
+  - "stochastic projection"
+  - "lossy compression"
+  - "memorization"
 date: 2026-05-08
 content_hash: 49b084862dd091be
 ---

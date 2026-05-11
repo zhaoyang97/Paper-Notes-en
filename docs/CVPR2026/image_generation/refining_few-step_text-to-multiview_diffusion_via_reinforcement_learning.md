@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Refining Few-Step Text-to-Multiview Diffusion via Reinforcement Learning
 description: >-
-  [CVPR2026][Image Generation][Multi-view generation] This paper proposes MVC-ZigAL, a framework that improves single-view fidelity and cross-view consistency in few-step text-to-multiview diffusion models through multiview-aware MDP formulation, zigzag self-refining advantage learning, and Lagrangian dual constrained optimization.
+  [CVPR2026][Image Generation][Multi-view generation] This paper proposes MVC-ZigAL, a framework that improves single-view fidelity and cross-view consistency in few-step text-to-multiview diffusion models through multivie…
 tags:
-  - CVPR2026
-  - Image Generation
-  - Multi-view generation
-  - diffusion models
-  - reinforcement learning fine-tuning
-  - few-step inference
-  - cross-view consistency
+  - "CVPR2026"
+  - "Image Generation"
+  - "Multi-view generation"
+  - "diffusion models"
+  - "reinforcement learning fine-tuning"
+  - "few-step inference"
+  - "cross-view consistency"
 date: 2026-05-08
 content_hash: cf3c6fa0d9f7ba8b
 ---

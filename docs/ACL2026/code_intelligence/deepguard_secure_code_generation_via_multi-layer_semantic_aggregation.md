@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] DeepGuard: Secure Code Generation via Multi-Layer Semantic Aggregation
 description: >-
-  [ACL 2026][Secure code generation] DeepGuard is proposed to overcome the "final-layer bottleneck" by aggregating representations from multiple upper Transformer layers via an attention mechanism. Combined with multi-objective training and a lightweight inference-time safety guidance strategy, it achieves an average improvement of 11.9% in secure-and-correct generation rate across 5 code LLMs.
+  [ACL 2026][Code Intelligence][Secure code generation] DeepGuard is proposed to overcome the "final-layer bottleneck" by aggregating representations from multiple upper Transformer layers via an attention mechanism. Combi…
 tags:
-  - ACL 2026
-  - Secure code generation
-  - multi-layer aggregation
-  - vulnerability detection
-  - contrastive learning
-  - inference-time guidance
+  - "ACL 2026"
+  - "Code Intelligence"
+  - "Secure code generation"
+  - "multi-layer aggregation"
+  - "vulnerability detection"
+  - "contrastive learning"
+  - "inference-time guidance"
 date: 2026-05-08
 content_hash: 8754cbbed67f59c2
 ---

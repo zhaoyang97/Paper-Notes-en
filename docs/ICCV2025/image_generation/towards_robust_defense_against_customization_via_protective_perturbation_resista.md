@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Robust Defense against Customization via Protective Perturbation Resistant to Diffusion-based Purification
 description: >-
-  [ICCV 2025][Image Generation][Protective Perturbation] This paper proposes AntiPure, an adversarial perturbation method that directly attacks the diffusion-based purification process through two guidance mechanisms—Patch-wise Frequency Guidance (PFG) and Erroneous Timestep Guidance (ETG)—to generate protective perturbations that continue to disrupt customization fine-tuning even after purification, outperforming all existing protection methods under the purification-customization (P-C) workflow.
+  [ICCV 2025][Image Generation][Protective Perturbation] This paper proposes AntiPure, an adversarial perturbation method that directly attacks the diffusion-based purification process through two guidance mechanisms—Patch…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Protective Perturbation
-  - Anti-Purification
-  - DreamBooth
-  - Diffusion Purification
-  - adversarial attack
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Protective Perturbation"
+  - "Anti-Purification"
+  - "DreamBooth"
+  - "Diffusion Purification"
+  - "adversarial attack"
 date: 2026-05-08
 content_hash: 299d91037beab330
 ---

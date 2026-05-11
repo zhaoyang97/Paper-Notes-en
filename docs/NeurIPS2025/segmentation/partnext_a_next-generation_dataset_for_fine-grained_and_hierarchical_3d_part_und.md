@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PartNeXt: A Next-Generation Dataset for Fine-Grained and Hierarchical 3D Part Understanding
 description: >-
-  [NeurIPS 2025][Segmentation][3D part segmentation] This paper presents PartNeXt, a fine-grained hierarchical part annotation dataset comprising 23,519 high-quality textured 3D models across 50 categories. Two benchmarks are established—category-agnostic part segmentation and 3D part question answering—revealing significant deficiencies of current methods in fine-grained part understanding.
+  [NeurIPS 2025][Segmentation][3D part segmentation] This paper presents PartNeXt, a fine-grained hierarchical part annotation dataset comprising 23…
 tags:
-  - NeurIPS 2025
-  - Segmentation
-  - 3D part segmentation
-  - dataset
-  - hierarchical annotation
-  - crowdsourced annotation
-  - 3D vision-language models
+  - "NeurIPS 2025"
+  - "Segmentation"
+  - "3D part segmentation"
+  - "dataset"
+  - "hierarchical annotation"
+  - "crowdsourced annotation"
+  - "3D vision-language models"
 date: 2026-05-08
 content_hash: 1df14771298cc658
 ---

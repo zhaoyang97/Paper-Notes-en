@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SAVA-X: Ego-to-Exo Imitation Error Detection via Scene-Adaptive View Alignment and Bidirectional Cross View Fusion
 description: >-
-  [CVPR 2026][Video Understanding][Cross-view] This paper formalizes the Ego→Exo imitation error detection task and proposes the SAVA-X (Align–Fuse–Detect) framework, which jointly addresses three core challenges—temporal misalignment, video redundancy, and cross-view domain gap—through three modules: adaptive sampling, scene-adaptive view embeddings, and bidirectional cross-attention fusion.
+  [CVPR 2026][Video Understanding][Cross-view] This paper formalizes the Ego→Exo imitation error detection task and proposes the SAVA-X (Align–Fuse–Detect) framework…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Cross-view
-  - Imitation error detection
-  - Adaptive sampling
-  - View embedding
-  - Bidirectional cross-attention
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Cross-view"
+  - "Imitation error detection"
+  - "Adaptive sampling"
+  - "View embedding"
+  - "Bidirectional cross-attention"
 date: 2026-05-08
 content_hash: 0cb8785a24fc3a8b
 ---

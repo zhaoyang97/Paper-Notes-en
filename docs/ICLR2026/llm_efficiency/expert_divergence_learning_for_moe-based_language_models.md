@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Expert Divergence Learning for MoE-based Language Models
 description: >-
-  [ICLR 2026][LLM Efficiency][Mixture of Experts] This paper addresses the expert homogenization problem in MoE training by maximizing the Jensen-Shannon divergence of routing distributions across different data domains, encouraging distinct expert subsets to be activated for different domains. The approach improves expert specialization and language modeling performance on a 15B-A1.5B model.
+  [ICLR 2026][LLM Efficiency][Mixture of Experts] This paper addresses the expert homogenization problem in MoE training by maximizing the Jensen-Shannon divergence of routing distributions across different data domains…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Mixture of Experts
-  - expert homogenization
-  - routing diversity
-  - Jensen-Shannon divergence
-  - domain specialization
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Mixture of Experts"
+  - "expert homogenization"
+  - "routing diversity"
+  - "Jensen-Shannon divergence"
+  - "domain specialization"
 date: 2026-05-08
 content_hash: acc681a0183864b3
 ---

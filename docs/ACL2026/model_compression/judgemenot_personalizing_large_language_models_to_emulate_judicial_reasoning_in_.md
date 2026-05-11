@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] JudgeMeNot: Personalizing Large Language Models to Emulate Judicial Reasoning in Hebrew
 description: >-
-  [ACL 2026][Model Compression][LLM Personalization] This paper proposes a synthetic-organic supervision pipeline that transforms raw judicial opinions into reasoning instruction-tuning data. Through a Chain-of-LoRA strategy (CLM → instruction tuning), the framework achieves high-fidelity emulation of individual judges' reasoning styles, producing outputs indistinguishable from authentic judicial writing in the low-resource Hebrew setting.
+  [ACL 2026][Model Compression][LLM Personalization] This paper proposes a synthetic-organic supervision pipeline that transforms raw judicial opinions into reasoning instruction-tuning data. Through a Chain-of-LoRA strate…
 tags:
-  - ACL 2026
-  - Model Compression
-  - LLM Personalization
-  - Judicial Reasoning
-  - Low-Resource Languages
-  - Parameter-Efficient Fine-Tuning
-  - Synthetic Instruction Data
+  - "ACL 2026"
+  - "Model Compression"
+  - "LLM Personalization"
+  - "Judicial Reasoning"
+  - "Low-Resource Languages"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Synthetic Instruction Data"
 date: 2026-05-08
 content_hash: bd7d780d1e343fb0
 ---

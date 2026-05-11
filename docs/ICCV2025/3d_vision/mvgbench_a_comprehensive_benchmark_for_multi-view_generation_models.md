@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MVGBench: a Comprehensive Benchmark for Multi-view Generation Models
 description: >-
-  [ICCV 2025][3D Vision][multi-view generation] This paper presents MVGBench, a comprehensive evaluation framework for multi-view generation (MVG) models. It introduces a novel 3D consistency metric based on 3DGS self-consistency (requiring no 3D ground truth), systematically evaluates 12 state-of-the-art methods across three dimensions—peak performance, generalization, and robustness—and derives a new method, ViFiGen, from the identified best practices.
+  [ICCV 2025][3D Vision][multi-view generation] This paper presents MVGBench, a comprehensive evaluation framework for multi-view generation (MVG) models. It introduces a novel 3D consistency metric based on 3DGS self-cons…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - multi-view generation
-  - 3D consistency
-  - benchmark
-  - 3DGS
-  - vision-language model evaluation
+  - "ICCV 2025"
+  - "3D Vision"
+  - "multi-view generation"
+  - "3D consistency"
+  - "benchmark"
+  - "3DGS"
+  - "vision-language model evaluation"
 date: 2026-05-08
 content_hash: b9847d3a7debaa50
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Multi-Agent Collaboration via Evolving Orchestration
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Multi-Agent Collaboration] This paper proposes a "Puppeteer" multi-agent collaboration paradigm in which a centralized orchestrator learns via RL to dynamically select which agent to activate at each reasoning step. The approach simultaneously improves performance and efficiency on both closed-domain and open-domain tasks, and reveals that evolved topologies tend toward more compact cyclic structures.
+  [NeurIPS 2025][Reinforcement Learning][Multi-Agent Collaboration] This paper proposes a "Puppeteer" multi-agent collaboration paradigm in which a centralized orchestrator learns via RL to dynamically select which agent t…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Multi-Agent Collaboration
-  - Dynamic Orchestration
-  - Topology Evolution
-  - Collective Reasoning
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Multi-Agent Collaboration"
+  - "Dynamic Orchestration"
+  - "Topology Evolution"
+  - "Collective Reasoning"
 date: 2026-05-08
 content_hash: d6ee76c67a4468b9
 ---

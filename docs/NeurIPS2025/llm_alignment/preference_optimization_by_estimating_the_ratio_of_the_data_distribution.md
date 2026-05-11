@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Preference Optimization by Estimating the Ratio of the Data Distribution
 description: >-
-  [NeurIPS 2025][LLM Alignment][DPO] This paper reinterprets DPO as a likelihood ratio (ratio matching) estimation problem and proposes BPO (Bregman Preference Optimization) under a Bregman divergence framework. BPO defines a generalized family of loss functions that subsumes DPO as a special case, and introduces the SBA (Scaled Basu's Power Divergence) instantiation, achieving a state-of-the-art 55.9% AlpacaEval2 length-controlled win rate on Llama-3-8B.
+  [NeurIPS 2025][LLM Alignment][DPO] This paper reinterprets DPO as a likelihood ratio (ratio matching) estimation problem and proposes BPO (Bregman Preference Optimization) under a Bregman divergence framework. BPO define…
 tags:
-  - NeurIPS 2025
-  - LLM Alignment
-  - DPO
-  - Bregman divergence
-  - likelihood ratio estimation
-  - preference optimization
-  - alignment
+  - "NeurIPS 2025"
+  - "LLM Alignment"
+  - "DPO"
+  - "Bregman divergence"
+  - "likelihood ratio estimation"
+  - "preference optimization"
+  - "alignment"
 date: 2026-05-08
 content_hash: 9572cd9de5d99304
 ---

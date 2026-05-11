@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Debating the Unspoken: Role-Anchored Multi-Agent Reasoning for Half-Truth Detection
 description: >-
-  [ACL 2026][Robotics][Half-Truth Detection] RADAR uses role-anchored (politician vs scientist) multi-agent debate to detect half-truths — statements that are factually correct but misleading due to omitted context — with dual-threshold adaptive early stopping, consistently outperforming single-agent and traditional multi-agent baselines under noisy retrieval conditions.
+  [ACL 2026][Robotics][Half-Truth Detection] RADAR uses role-anchored (politician vs scientist) multi-agent debate to detect half-truths — statements that are factually correct but misleading due to omitted context — with…
 tags:
-  - ACL 2026
-  - Robotics
-  - Half-Truth Detection
-  - Multi-Agent Debate
-  - Omission Reasoning
-  - Role Anchoring
-  - Adaptive Termination
+  - "ACL 2026"
+  - "Robotics"
+  - "Half-Truth Detection"
+  - "Multi-Agent Debate"
+  - "Omission Reasoning"
+  - "Role Anchoring"
+  - "Adaptive Termination"
 content_hash: f91cbebebef5caff
 ---
 

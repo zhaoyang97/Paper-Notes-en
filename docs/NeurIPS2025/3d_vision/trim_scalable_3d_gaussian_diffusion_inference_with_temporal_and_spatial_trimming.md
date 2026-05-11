@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TRIM: Scalable 3D Gaussian Diffusion Inference with Temporal and Spatial Trimming
 description: >-
-  [NeurIPS 2025][3D Vision][3D generation] This paper proposes TRIM (Trajectory Reduction and Instance Mask denoising), a post-training framework that accelerates 3D Gaussian diffusion model inference while improving generation quality through temporal trajectory pre-selection and spatial background token pruning. TRIM outperforms baselines such as DiffSplat on both T3Bench text-to-3D and GSO image-to-3D benchmarks.
+  [NeurIPS 2025][3D Vision][3D generation] This paper proposes TRIM (Trajectory Reduction and Instance Mask denoising), a post-training framework that accelerates 3D Gaussian diffusion model inference while improving gener…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - 3D generation
-  - Gaussian diffusion
-  - inference acceleration
-  - inference-time scaling
-  - post-training optimization
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "3D generation"
+  - "Gaussian diffusion"
+  - "inference acceleration"
+  - "inference-time scaling"
+  - "post-training optimization"
 date: 2026-05-08
 content_hash: 424ce364192b003f
 ---

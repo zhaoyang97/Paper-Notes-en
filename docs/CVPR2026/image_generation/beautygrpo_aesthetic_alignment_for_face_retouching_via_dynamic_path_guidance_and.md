@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] BeautyGRPO: Aesthetic Alignment for Face Retouching via Dynamic Path Guidance and Fine-Grained Preference Modeling
 description: >-
-  [CVPR2026][Image Generation][face retouching] This paper proposes BeautyGRPO, a reinforcement learning-based face retouching framework that constructs a fine-grained preference dataset FRPref-10K to train a dedicated reward model, and introduces a Dynamic Path Guidance (DPG) mechanism to balance stochastic exploration and high fidelity, achieving natural retouching results aligned with human aesthetic preferences.
+  [CVPR2026][Image Generation][face retouching] This paper proposes BeautyGRPO, a reinforcement learning-based face retouching framework that constructs a fine-grained preference dataset FRPref-10K to train a dedicated rew…
 tags:
-  - CVPR2026
-  - Image Generation
-  - face retouching
-  - reinforcement learning
-  - aesthetic alignment
-  - flow matching
-  - preference modeling
-  - GRPO
-  - dynamic path guidance
+  - "CVPR2026"
+  - "Image Generation"
+  - "face retouching"
+  - "reinforcement learning"
+  - "aesthetic alignment"
+  - "flow matching"
+  - "preference modeling"
+  - "GRPO"
+  - "dynamic path guidance"
 date: 2026-05-08
 content_hash: 731fcef2f878b9ec
 ---

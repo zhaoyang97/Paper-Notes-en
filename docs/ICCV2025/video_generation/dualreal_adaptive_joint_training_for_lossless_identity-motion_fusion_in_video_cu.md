@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DualReal: Adaptive Joint Training for Lossless Identity-Motion Fusion in Video Customization
 description: >-
-  [ICCV 2025][Video Generation][Video Customized Generation] DualReal is the first framework to propose adaptive joint training for identity and motion, achieving lossless fusion along both dimensions via Dual-aware Adaptation and a StageBlender Controller, with average gains of 21.7% and 31.8% on CLIP-I and DINO-I metrics.
+  [ICCV 2025][Video Generation][Video Customized Generation] DualReal is the first framework to propose adaptive joint training for identity and motion…
 tags:
-  - ICCV 2025
-  - Video Generation
-  - Video Customized Generation
-  - Identity-Motion Fusion
-  - Joint Training
-  - Diffusion Transformer
-  - Adaptive Control
+  - "ICCV 2025"
+  - "Video Generation"
+  - "Video Customized Generation"
+  - "Identity-Motion Fusion"
+  - "Joint Training"
+  - "Diffusion Transformer"
+  - "Adaptive Control"
 date: 2026-05-08
 content_hash: 52aa5468726ed52a
 ---

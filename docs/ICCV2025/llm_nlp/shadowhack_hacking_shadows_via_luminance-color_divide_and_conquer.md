@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ShadowHack: Hacking Shadows via Luminance-Color Divide and Conquer
 description: >-
-  [ICCV 2025][LLM/NLP][shadow removal] This paper proposes the ShadowHack framework, which decomposes shadow removal into two subtasks—luminance restoration and color reconstruction. LRNet with Rectified Outreach Attention (ROA) recovers luminance and texture, followed by CRNet with cross-attention to reconstruct accurate color. The method achieves state-of-the-art performance on the ISTD+ and SRD datasets.
+  [ICCV 2025][LLM/NLP][shadow removal] This paper proposes the ShadowHack framework, which decomposes shadow removal into two subtasks—luminance restoration and color reconstruction. LRNet with Rectified Outreach Attention…
 tags:
-  - ICCV 2025
-  - LLM/NLP
-  - shadow removal
-  - luminance-color decomposition
-  - Transformer
-  - attention mechanism
-  - divide-and-conquer strategy
+  - "ICCV 2025"
+  - "LLM/NLP"
+  - "shadow removal"
+  - "luminance-color decomposition"
+  - "Transformer"
+  - "attention mechanism"
+  - "divide-and-conquer strategy"
 date: 2026-05-08
 content_hash: eeab4e9ffed2738b
 ---

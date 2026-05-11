@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Augmenting Representations with Scientific Papers
 description: >-
-  [ICLR 2026][Medical Imaging][contrastive learning] This paper proposes the first multimodal foundation model framework that aligns X-ray spectra with scientific literature via contrastive learning, achieving 20% Recall@1% cross-modal retrieval in a shared latent space, improving physical parameter estimation by 16–18%, and discovering rare astrophysical objects including candidate pulsating ultraluminous X-ray sources.
+  [ICLR 2026][Medical Imaging][contrastive learning] This paper proposes the first multimodal foundation model framework that aligns X-ray spectra with scientific literature via contrastive learning…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - contrastive learning
-  - multimodal representations
-  - X-ray spectroscopy
-  - scientific literature
-  - foundation models
-  - anomaly detection
-  - astronomy
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "contrastive learning"
+  - "multimodal representations"
+  - "X-ray spectroscopy"
+  - "scientific literature"
+  - "foundation models"
+  - "anomaly detection"
+  - "astronomy"
 date: 2026-05-08
 content_hash: fe1be2a181fa2294
 ---

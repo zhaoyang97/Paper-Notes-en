@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Multimodal Benchmark for Framing of Oil & Gas Advertising and Potential Greenwashing Detection
 description: >-
-  [NeurIPS 2025 (Datasets and Benchmarks Track)][Multimodal VLM][greenwashing detection] This work introduces the first multimodal framing analysis benchmark for oil and gas (O&G) industry video advertisements, comprising 706 videos, 13 framing categories, 50+ entities, and 20 countries. It systematically evaluates six VLMs on greenwashing-related framing detection, finding that GPT-4.1 achieves 79% F1 zero-shot on environmental labels but only 46% on green innovation, thereby exposing implicit framing analysis and cultural context understanding as core challenges for current VLMs.
+  [NeurIPS 2025 (Datasets and Benchmarks Track)][Multimodal VLM][greenwashing detection] This work introduces the first multimodal framing analysis benchmark for oil and gas (O&G) industry video advertisements…
 tags:
-  - NeurIPS 2025 (Datasets and Benchmarks Track)
-  - Multimodal VLM
-  - greenwashing detection
-  - framing analysis
-  - video advertising
-  - vision-language models
-  - oil and gas industry
+  - "NeurIPS 2025 (Datasets and Benchmarks Track)"
+  - "Multimodal VLM"
+  - "greenwashing detection"
+  - "framing analysis"
+  - "video advertising"
+  - "vision-language models"
+  - "oil and gas industry"
 date: 2026-05-08
 content_hash: 28650e81df6ac234
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] JavisDiT: Joint Audio-Video Diffusion Transformer with Hierarchical Spatio-Temporal Prior Synchronization
 description: >-
-  [ICLR 2026][Video Generation][Joint Audio-Video Generation] This paper proposes JavisDiT, a joint audio-video generation model built on the DiT architecture. It achieves fine-grained spatio-temporal audio-video alignment via a Hierarchical Spatio-Temporal Synchronization Prior Estimator (HiST-Sypo). The work also introduces a new benchmark, JavisBench (10K complex-scene samples), and a new evaluation metric, JavisScore.
+  [ICLR 2026][Video Generation][Joint Audio-Video Generation] This paper proposes JavisDiT, a joint audio-video generation model built on the DiT architecture. It achieves fine-grained spatio-temporal audio-video alignment…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - Joint Audio-Video Generation
-  - DiT
-  - Spatio-Temporal Synchronization
-  - Contrastive Learning
-  - Benchmark Dataset
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Joint Audio-Video Generation"
+  - "DiT"
+  - "Spatio-Temporal Synchronization"
+  - "Contrastive Learning"
+  - "Benchmark Dataset"
 date: 2026-05-08
 content_hash: 3f04eba6300ecc2f
 ---

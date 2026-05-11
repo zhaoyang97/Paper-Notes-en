@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PreFM: Online Audio-Visual Event Parsing via Predictive Future Modeling
 description: >-
-  [NeurIPS 2025][Video Understanding][Online audio-visual event parsing] This paper introduces the Online Audio-Visual Event Parsing (On-AVEP) paradigm for the first time, along with the PreFM framework, which leverages pseudo-future sequences to enhance current contextual understanding. Combined with modality-agnostic knowledge distillation and focal temporal prioritization, PreFM surpasses offline SOTA methods by +9.3 event-level average F1 score using only 2.7% of their parameter count.
+  [NeurIPS 2025][Video Understanding][Online audio-visual event parsing] This paper introduces the Online Audio-Visual Event Parsing (On-AVEP) paradigm for the first time, along with the PreFM framework…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
-  - Online audio-visual event parsing
-  - predictive future modeling
-  - multimodal fusion
-  - real-time video understanding
-  - knowledge distillation
+  - "NeurIPS 2025"
+  - "Video Understanding"
+  - "Online audio-visual event parsing"
+  - "predictive future modeling"
+  - "multimodal fusion"
+  - "real-time video understanding"
+  - "knowledge distillation"
 date: 2026-05-08
 content_hash: e11c0449ebdd4739
 ---

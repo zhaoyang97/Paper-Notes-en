@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DriveX: Omni Scene Modeling for Learning Generalizable World Knowledge in Autonomous Driving
 description: >-
-  [ICCV 2025][Autonomous Driving][World Model] This paper proposes DriveX, a self-supervised world model framework that learns transferable general scene representations in a BEV latent space via Omni Scene Modeling (OSM)—jointly supervising 3D point cloud prediction, 2D semantic representation, and image generation. A Future Spatial Attention (FSA) paradigm is designed to seamlessly integrate predicted future states into downstream tasks such as occupancy prediction, flow estimation, and end-to-end driving, achieving state-of-the-art performance across multiple tasks.
+  [ICCV 2025][Autonomous Driving][World Model] This paper proposes DriveX, a self-supervised world model framework that learns transferable general scene representations in a BEV latent space via Omni Scene Modeling (OSM)—…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - World Model
-  - Self-supervised Learning
-  - BEV Representation
-  - Point Cloud Prediction
-  - End-to-End Driving
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "World Model"
+  - "Self-supervised Learning"
+  - "BEV Representation"
+  - "Point Cloud Prediction"
+  - "End-to-End Driving"
 date: 2026-05-08
 content_hash: 5c4030c5a7e1a159
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Compositional-ARC: Assessing Systematic Generalization in Abstract Spatial Reasoning
 description: >-
-  [ICLR 2026][LLM/NLP][systematic generalization] This paper introduces the Compositional-ARC dataset to evaluate systematic generalization in abstract spatial reasoning—specifically, whether models can generalize from known primitive geometric transformations (e.g., translation, rotation) to unseen combinations thereof. A 5.7M-parameter encoder-decoder model trained with MLC achieves 78.26% exact match on the systematicity task, matching the ARC Prize 2024 champion (8B model + TTT) while vastly outperforming GPT-4o, o3-mini, and similar models (<3%).
+  [ICLR 2026][LLM/NLP][systematic generalization] This paper introduces the Compositional-ARC dataset to evaluate systematic generalization in abstract spatial reasoning—specifically…
 tags:
-  - ICLR 2026
-  - LLM/NLP
-  - systematic generalization
-  - meta-learning for compositionality
-  - ARC
-  - abstract reasoning
-  - few-shot learning
+  - "ICLR 2026"
+  - "LLM/NLP"
+  - "systematic generalization"
+  - "meta-learning for compositionality"
+  - "ARC"
+  - "abstract reasoning"
+  - "few-shot learning"
 date: 2026-05-08
 content_hash: e9bdba42ff54322b
 ---

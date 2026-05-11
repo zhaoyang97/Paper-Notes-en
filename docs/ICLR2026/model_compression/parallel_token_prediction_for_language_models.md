@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Parallel Token Prediction for Language Models
 description: >-
-  [ICLR 2026][Model Compression][parallel decoding] This paper proposes Parallel Token Prediction (PTP), which relocates sampling randomness from post-processing to model inputs via auxiliary variables, rendering future tokens deterministic functions of those variables and enabling joint prediction of multiple tokens in a single forward pass.
+  [ICLR 2026][Model Compression][parallel decoding] This paper proposes Parallel Token Prediction (PTP), which relocates sampling randomness from post-processing to model inputs via auxiliary variables…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - parallel decoding
-  - speculative decoding
-  - auxiliary variables
-  - autoregressive models
-  - inference acceleration
+  - "ICLR 2026"
+  - "Model Compression"
+  - "parallel decoding"
+  - "speculative decoding"
+  - "auxiliary variables"
+  - "autoregressive models"
+  - "inference acceleration"
 date: 2026-05-08
 content_hash: fcf41a57f45744c1
 ---

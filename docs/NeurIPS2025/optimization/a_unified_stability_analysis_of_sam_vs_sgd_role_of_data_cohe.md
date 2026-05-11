@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Unified Stability Analysis of SAM vs SGD: Role of Data Coherence and Emergence of Simplicity Bias
 description: >-
-  [NeurIPS 2025][Optimization][SAM] Through a linear stability analysis framework, this paper demonstrates that "flat minima ⇒ better generalization" and "SGD prefers simple functions" are two sides of the same coin — data coherence simultaneously governs both phenomena, and SAM amplifies the simplicity bias further by imposing stricter stability conditions.
+  [NeurIPS 2025][Optimization][SAM] Through a linear stability analysis framework, this paper demonstrates that "flat minima ⇒ better generalization" and "SGD prefers simple functions" are two sides of the same coin — data…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - SAM
-  - SGD
-  - linear stability
-  - data coherence
-  - simplicity bias
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "SAM"
+  - "SGD"
+  - "linear stability"
+  - "data coherence"
+  - "simplicity bias"
 date: 2026-05-08
 content_hash: 9ca343ffee2ccff0
 ---

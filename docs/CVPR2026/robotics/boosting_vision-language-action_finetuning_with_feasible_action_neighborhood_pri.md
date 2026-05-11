@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Boosting Vision-Language-Action Finetuning with Feasible Action Neighborhood Prior
 description: >-
-  [CVPR 2026][Robotics][VLA finetuning] This paper proposes a Feasible Action Neighborhood (FAN) regularizer that shapes the output distribution of VLA models into a Gaussian form matching physical action tolerances. The approach consistently improves success rate, generalization, and sample efficiency under both SFT and RFT finetuning paradigms (RFT requires only 1/3 of training steps to reach 90% success rate).
+  [CVPR 2026][Robotics][VLA finetuning] This paper proposes a Feasible Action Neighborhood (FAN) regularizer that shapes the output distribution of VLA models into a Gaussian form matching physical action tolerances. The a…
 tags:
-  - CVPR 2026
-  - Robotics
-  - VLA finetuning
-  - feasible action neighborhood
-  - Gaussian regularization
-  - reinforcement finetuning
-  - sample efficiency
+  - "CVPR 2026"
+  - "Robotics"
+  - "VLA finetuning"
+  - "feasible action neighborhood"
+  - "Gaussian regularization"
+  - "reinforcement finetuning"
+  - "sample efficiency"
 date: 2026-05-08
 content_hash: 2c5db1e7d278287a
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GOAL: Geometrically Optimal Alignment for Continual Generalized Category Discovery
 description: >-
-  [AAAI 2026][LLM Evaluation][continual generalized category discovery] Grounded in Neural Collapse theory, this paper replaces dynamic classifiers with a fixed Equiangular Tight Frame (ETF) classifier and achieves continual generalized category discovery via supervised alignment and confidence-guided unsupervised alignment, reducing forgetting by 16.1% and improving novel category discovery by 3.2% across four benchmarks.
+  [AAAI 2026][LLM Evaluation][continual generalized category discovery] Grounded in Neural Collapse theory, this paper replaces dynamic classifiers with a fixed Equiangular Tight Frame (ETF) classifier and achieves continu…
 tags:
-  - AAAI 2026
-  - LLM Evaluation
-  - continual generalized category discovery
-  - Neural Collapse
-  - ETF classifier
-  - forgetting mitigation
-  - confidence-guided alignment
+  - "AAAI 2026"
+  - "LLM Evaluation"
+  - "continual generalized category discovery"
+  - "Neural Collapse"
+  - "ETF classifier"
+  - "forgetting mitigation"
+  - "confidence-guided alignment"
 date: 2026-05-08
 content_hash: a2a402a1bccc59ab
 ---

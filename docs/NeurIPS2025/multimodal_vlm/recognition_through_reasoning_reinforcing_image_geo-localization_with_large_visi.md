@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Recognition through Reasoning: Reinforcing Image Geo-localization with Large Vision-Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Image geo-localization] This paper proposes GLOBE — an LVLM-based image geo-localization system trained via GRPO reinforcement learning. By constructing MP16-Reason, a reasoning-oriented dataset with localizability assessment, visual-clue reasoning chains, and geographic accuracy annotations, GLOBE surpasses SOTA methods trained on millions of samples as well as large-scale open-source VLMs using only 33K training examples across multiple benchmarks.
+  [NeurIPS 2025][Multimodal VLM][Image geo-localization] This paper proposes GLOBE — an LVLM-based image geo-localization system trained via GRPO reinforcement learning. By constructing MP16-Reason…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Image geo-localization
-  - visual reasoning
-  - GRPO reinforcement learning
-  - data distillation
-  - interpretable reasoning
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Image geo-localization"
+  - "visual reasoning"
+  - "GRPO reinforcement learning"
+  - "data distillation"
+  - "interpretable reasoning"
 date: 2026-05-08
 content_hash: 6bcfcbe3f5bb7684
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Spatial-SSRL: Enhancing Spatial Understanding via Self-Supervised Reinforcement Learning
 description: >-
-  [CVPR 2026][Image Generation][Spatial Understanding] This paper proposes Spatial-SSRL, a self-supervised reinforcement learning paradigm that automatically constructs five pretext tasks (patch reordering, flip recognition, cropped patch inpainting, depth ordering, and relative 3D position prediction) from standard RGB/RGB-D images. By optimizing LVLMs with GRPO, the method achieves average improvements of 3.89%–4.63% across seven spatial benchmarks without any human annotation or external tools.
+  [CVPR 2026][Image Generation][Spatial Understanding] This paper proposes Spatial-SSRL, a self-supervised reinforcement learning paradigm that automatically constructs five pretext tasks (patch reordering…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Spatial Understanding
-  - Self-Supervised Learning
-  - Reinforcement Learning (RLVR)
-  - Large Vision-Language Models
-  - Depth Perception
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Spatial Understanding"
+  - "Self-Supervised Learning"
+  - "Reinforcement Learning (RLVR)"
+  - "Large Vision-Language Models"
+  - "Depth Perception"
 date: 2026-05-08
 content_hash: 7da4f02504f33d99
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Decoder-Hybrid-Decoder Architecture for Efficient Reasoning with Long Generation
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Hybrid Architecture] SambaY proposes the Gated Memory Unit (GMU) for sharing SSM token-mixing representations across layers, replacing half of the cross-attention layers in YOCO's cross-decoder with lightweight GMUs. This maintains linear prefill complexity and long-context retrieval capability while substantially improving decoding efficiency. The resulting product, Phi4-mini-Flash-Reasoning (3.8B), outperforms Phi4-mini-Reasoning on reasoning benchmarks and achieves up to 10× decoding throughput improvement in the 2K prompt + 32K generation setting.
+  [NeurIPS 2025][Reinforcement Learning][Hybrid Architecture] SambaY proposes the Gated Memory Unit (GMU) for sharing SSM token-mixing representations across layers…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Hybrid Architecture
-  - SSM
-  - Decoding Efficiency
-  - Long Sequence Generation
-  - KV Cache
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Hybrid Architecture"
+  - "SSM"
+  - "Decoding Efficiency"
+  - "Long Sequence Generation"
+  - "KV Cache"
 date: 2026-05-08
 content_hash: 2609485741cff204
 ---

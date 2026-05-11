@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] The Transparent Earth: A Multimodal Foundation Model for the Earth's Subsurface
 description: >-
-  [NeurIPS 2025][Earth science foundation model] This paper proposes Transparent Earth, a Transformer-based multimodal foundation model that fuses 8 heterogeneous geophysical observation modalities via positional encoding and text-derived modality embeddings, enabling zero-shot inference and in-context learning for Earth subsurface property prediction.
+  [NeurIPS 2025][Information Retrieval & RAG][Earth science foundation model] This paper proposes Transparent Earth, a Transformer-based multimodal foundation model that fuses 8 heterogeneous geophysical observation modali…
 tags:
-  - NeurIPS 2025
-  - Earth science foundation model
-  - multimodal fusion
-  - Transformer
-  - subsurface property reconstruction
-  - in-context learning
+  - "NeurIPS 2025"
+  - "Information Retrieval & RAG"
+  - "Earth science foundation model"
+  - "multimodal fusion"
+  - "Transformer"
+  - "subsurface property reconstruction"
+  - "in-context learning"
 date: 2026-05-08
 content_hash: 0e39bae03c5a4bb8
 ---

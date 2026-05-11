@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SQL-of-Thought: Multi-agentic Text-to-SQL with Guided Error Correction
 description: >-
-  [NeurIPS 2025][LLM Reasoning][text-to-SQL] This paper proposes SQL-of-Thought, a multi-agent Text-to-SQL framework that decomposes the task into schema linking → subproblem identification → CoT query plan generation → SQL generation → guided correction loop based on a 31-category error taxonomy. Using Claude 3 Opus on the Spider benchmark, it achieves 91.59% execution accuracy, outperforming the previous best Chase SQL (87.6%) by nearly 4 percentage points.
+  [NeurIPS 2025][LLM Reasoning][text-to-SQL] This paper proposes SQL-of-Thought, a multi-agent Text-to-SQL framework that decomposes the task into schema linking → subproblem identification → CoT query plan generation → SQ…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - text-to-SQL
-  - multi-agent
-  - error taxonomy
-  - chain-of-thought
-  - Spider benchmark
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "text-to-SQL"
+  - "multi-agent"
+  - "error taxonomy"
+  - "chain-of-thought"
+  - "Spider benchmark"
 date: 2026-05-08
 content_hash: e18136110611b40f
 ---

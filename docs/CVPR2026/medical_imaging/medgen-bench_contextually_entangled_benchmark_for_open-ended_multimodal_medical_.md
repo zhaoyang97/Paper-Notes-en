@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MedGEN-Bench: Contextually Entangled Benchmark for Open-Ended Multimodal Medical Generation
 description: >-
-  [CVPR 2026][Medical Imaging][Multimodal medical generation] This paper introduces MedGEN-Bench, the first comprehensive benchmark for open-ended multimodal medical generation, comprising 6,422 expert-verified image-text pairs spanning 6 imaging modalities and 16 clinical tasks, accompanied by a three-tier evaluation framework. The benchmark reveals that compositional pipelines outperform unified models in cross-modal consistency.
+  [CVPR 2026][Medical Imaging][Multimodal medical generation] This paper introduces MedGEN-Bench, the first comprehensive benchmark for open-ended multimodal medical generation, comprising 6…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Multimodal medical generation
-  - benchmark
-  - VLM evaluation
-  - image-text entanglement
-  - open-ended generation
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Multimodal medical generation"
+  - "benchmark"
+  - "VLM evaluation"
+  - "image-text entanglement"
+  - "open-ended generation"
 date: 2026-05-08
 content_hash: 96321d1323618d7a
 ---

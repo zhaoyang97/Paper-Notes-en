@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Convergence of Muon with Newton-Schulz
 description: >-
-  [ICLR 2026][Optimization][Muon optimizer] This work provides the first convergence guarantees for the Muon optimizer as it is actually used in practice—with Newton-Schulz (NS) approximation rather than exact SVD-based polar decomposition. It proves that the convergence rate matches the idealized SVD variant up to a constant factor $C_q$ that decays doubly exponentially in the number of NS iterations $q$, and that Muon enjoys a $\sqrt{r}$ advantage over its vector-space counterpart SGD-M due to reduced rank loss.
+  [ICLR 2026][Optimization][Muon optimizer] This work provides the first convergence guarantees for the Muon optimizer as it is actually used in practice—with Newton-Schulz (NS) approximation rather than exact SVD-based po…
 tags:
-  - ICLR 2026
-  - Optimization
-  - Muon optimizer
-  - Newton-Schulz
-  - polar decomposition
-  - matrix optimization
-  - convergence analysis
+  - "ICLR 2026"
+  - "Optimization"
+  - "Muon optimizer"
+  - "Newton-Schulz"
+  - "polar decomposition"
+  - "matrix optimization"
+  - "convergence analysis"
 date: 2026-05-08
 content_hash: dc56b6998365d590
 ---

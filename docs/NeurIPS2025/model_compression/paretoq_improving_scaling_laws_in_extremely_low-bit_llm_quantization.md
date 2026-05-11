@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ParetoQ: Improving Scaling Laws in Extremely Low-bit LLM Quantization
 description: >-
-  [NeurIPS 2025][Model Compression][Extremely low-bit quantization] This paper proposes ParetoQ — the first unified framework supporting 1/1.58/2/3/4-bit quantization — which systematically studies training strategies (full-precision pretraining vs. QAT budget allocation) and quantization function design (introducing the SEQ quantizer). The work demonstrates that 2-bit and 1.58-bit quantization outperform conventional 4-bit in the accuracy–model-size trade-off, and achieves state-of-the-art results across all bit-widths.
+  [NeurIPS 2025][Model Compression][Extremely low-bit quantization] This paper proposes ParetoQ — the first unified framework supporting 1/1.58/2/3/4-bit quantization — which systematically studies training strategies (ful…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Extremely low-bit quantization
-  - scaling laws
-  - quantization-aware training
-  - 2-bit quantization
-  - Pareto optimality
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Extremely low-bit quantization"
+  - "scaling laws"
+  - "quantization-aware training"
+  - "2-bit quantization"
+  - "Pareto optimality"
 date: 2026-05-08
 content_hash: e042d4d6dc4487fd
 ---

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] LeanVAE: An Ultra-Efficient Reconstruction VAE for Video Diffusion Models
 description: >-
-  [Video Generation] > LeanVAE is proposed as an ultra-efficient video VAE built upon non-overlapping patch operations, a Neighborhood-Aware Feedforward (NAF) module, wavelet transforms, and compressed sensing. With only 40M parameters, it achieves a 50× reduction in FLOPs and a 44× speedup in inference while maintaining competitive reconstruction quality.
+  [Video Generation] > LeanVAE is proposed as an ultra-efficient video VAE built upon non-overlapping patch operations, a Neighborhood-Aware Feedforward (NAF) module, wavelet transforms…
 tags:
-  - Video Generation
+  - "Video Generation"
 date: 2026-05-08
 content_hash: b6be02ea776d13cc
 ---

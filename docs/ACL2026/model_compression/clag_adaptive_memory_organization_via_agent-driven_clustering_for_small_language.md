@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CLAG: Adaptive Memory Organization via Agent-Driven Clustering for Small Language Model Agents
 description: >-
-  [ACL 2026][Model Compression][Small Language Models] This paper proposes CLAG, a clustering-based agent memory framework that organizes memories into semantically coherent clusters via SLM-driven routing, performs local evolution updates within clusters, and filters noise through two-stage retrieval, achieving significant improvements over global memory pool baselines across multiple QA datasets.
+  [ACL 2026][Model Compression][Small Language Models] This paper proposes CLAG, a clustering-based agent memory framework that organizes memories into semantically coherent clusters via SLM-driven routing…
 tags:
-  - ACL 2026
-  - Model Compression
-  - Small Language Models
-  - Clustering Memory
-  - Agent Memory Management
-  - Local Evolution
-  - Two-Stage Retrieval
+  - "ACL 2026"
+  - "Model Compression"
+  - "Small Language Models"
+  - "Clustering Memory"
+  - "Agent Memory Management"
+  - "Local Evolution"
+  - "Two-Stage Retrieval"
 date: 2026-05-08
 content_hash: cfebda6203e7e959
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Stake the Points: Structure-Faithful Instance Unlearning
 description: >-
-  [CVPR 2026][Human Understanding][machine unlearning] This paper proposes Structguard, which leverages semantic anchors to preserve the semantic relational structure among retained instances during the forgetting process, thereby preventing structural collapse. The method achieves average improvements of 32.9% / 19.3% / 22.5% across image classification, face recognition, and retrieval tasks.
+  [CVPR 2026][Human Understanding][machine unlearning] This paper proposes Structguard, which leverages semantic anchors to preserve the semantic relational structure among retained instances during the forgetting process…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - machine unlearning
-  - instance-level unlearning
-  - structural preservation
-  - semantic anchors
-  - CLIP
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "machine unlearning"
+  - "instance-level unlearning"
+  - "structural preservation"
+  - "semantic anchors"
+  - "CLIP"
 date: 2026-05-08
 content_hash: b197a5d46f6e0b01
 ---

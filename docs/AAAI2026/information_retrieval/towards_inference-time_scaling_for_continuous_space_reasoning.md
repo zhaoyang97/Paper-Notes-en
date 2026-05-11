@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Towards Inference-Time Scaling for Continuous Space Reasoning
 description: >-
-  [AAAI 2026][inference-time scaling] This work presents the first systematic investigation of whether inference-time scaling techniques from discrete text reasoning can transfer to continuous latent-space reasoning models (COCONUT). It finds that dropout sampling can generate diverse reasoning paths (Pass@32 reaching 44.43%), but PRM/ORM yields less than 2.3% improvement, with the root cause being that continuous thought representations lack the geometric inductive bias needed to distinguish correct from incorrect reasoning.
+  [AAAI 2026][Information Retrieval & RAG][inference-time scaling] This work presents the first systematic investigation of whether inference-time scaling techniques from discrete text reasoning can transfer to continuous…
 tags:
-  - AAAI 2026
-  - inference-time scaling
-  - continuous reasoning
-  - COCONUT
-  - geometric homogeneity
-  - process reward model
+  - "AAAI 2026"
+  - "Information Retrieval & RAG"
+  - "inference-time scaling"
+  - "continuous reasoning"
+  - "COCONUT"
+  - "geometric homogeneity"
+  - "process reward model"
 date: 2026-05-08
 content_hash: 72a687c625c31ab1
 ---

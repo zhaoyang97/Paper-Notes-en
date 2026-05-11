@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] C2T: LLM-Aligned Common-Sense Reward Learning for Traffic-Vehicle Coordination
 description: >-
-  [CVPR 2026][Autonomous Driving][Traffic Signal Control] This paper proposes the C2T framework, which converts traffic states into structured captions, leverages LLMs for offline preference judgments, and distills these judgments into an intrinsic reward function. This approach replaces hand-crafted rewards for traffic signal control (TSC) and achieves improvements in efficiency, safety, and energy consumption across multiple real-world urban networks on the CityFlow benchmark.
+  [CVPR 2026][Autonomous Driving][Traffic Signal Control] This paper proposes the C2T framework, which converts traffic states into structured captions, leverages LLMs for offline preference judgments…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Traffic Signal Control
-  - Multi-Agent Reinforcement Learning
-  - LLM Preference Learning
-  - Intrinsic Reward
-  - Commonsense Reasoning
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Traffic Signal Control"
+  - "Multi-Agent Reinforcement Learning"
+  - "LLM Preference Learning"
+  - "Intrinsic Reward"
+  - "Commonsense Reasoning"
 date: 2026-05-08
 content_hash: 557b8466f4b33834
 ---

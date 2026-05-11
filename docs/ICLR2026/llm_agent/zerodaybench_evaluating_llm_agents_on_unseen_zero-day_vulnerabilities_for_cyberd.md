@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ZeroDayBench: Evaluating LLM Agents on Unseen Zero-Day Vulnerabilities for Cyberdefense
 description: >-
-  [ICLR 2026][LLM Agent][zero-day vulnerability] This paper introduces the first benchmark for evaluating LLM agents on discovering and patching novel zero-day vulnerabilities. By transplanting real CVEs into different codebases, the authors construct 22 novel high-severity vulnerability tasks and evaluate agent capability across 5 information-visibility levels. The strongest model achieves only a 14.4% pass rate at the zero-day level, indicating that autonomous vulnerability discovery remains a significant challenge.
+  [ICLR 2026][LLM Agent][zero-day vulnerability] This paper introduces the first benchmark for evaluating LLM agents on discovering and patching novel zero-day vulnerabilities. By transplanting real CVEs into different cod…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - zero-day vulnerability
-  - LLM agent evaluation
-  - CVE transplant
-  - cyberdefense
-  - pentest
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "zero-day vulnerability"
+  - "LLM agent evaluation"
+  - "CVE transplant"
+  - "cyberdefense"
+  - "pentest"
 date: 2026-05-08
 content_hash: e64597a4d3798c08
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mostly Text, Smart Visuals: Asymmetric Text-Visual Pruning for Large Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Weight Pruning] MoT probe experiments reveal asymmetric pruning sensitivity between the text and visual pathways in LVLMs — the text pathway is highly sensitive and must be calibrated with text tokens, while the visual pathway is highly redundant and can tolerate 60% sparsity. Based on these findings, ATV-Pruning constructs a calibration pool using all text tokens plus a small, layer-adaptively selected subset of visual tokens.
+  [CVPR 2026][Multimodal VLM][Weight Pruning] MoT probe experiments reveal asymmetric pruning sensitivity between the text and visual pathways in LVLMs — the text pathway is highly sensitive and must be calibrated with tex…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Weight Pruning
-  - LVLM
-  - Modality Asymmetry
-  - Calibration Strategy
-  - Sparsification
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Weight Pruning"
+  - "LVLM"
+  - "Modality Asymmetry"
+  - "Calibration Strategy"
+  - "Sparsification"
 date: 2026-05-08
 content_hash: 144e494f539b48ec
 ---

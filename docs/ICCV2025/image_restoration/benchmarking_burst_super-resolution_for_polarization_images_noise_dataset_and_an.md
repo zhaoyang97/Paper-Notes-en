@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Benchmarking Burst Super-Resolution for Polarization Images: Noise Dataset and Analysis
 description: >-
-  [ICCV 2025][Image Restoration][polarization image super-resolution] This paper addresses the lack of datasets and noise models for polarization image burst super-resolution (SR) by constructing two dedicated datasets—PolarNS (noise statistics) and PolarBurstSR (SR benchmark)—proposing a polarization noise propagation analysis model, and systematically benchmarking existing burst SR methods on polarization scenes, thereby establishing a standardized evaluation framework for polarization image reconstruction.
+  [ICCV 2025][Image Restoration][polarization image super-resolution] This paper addresses the lack of datasets and noise models for polarization image burst super-resolution (SR) by constructing two dedicated datasets—Pol…
 tags:
-  - ICCV 2025
-  - Image Restoration
-  - polarization image super-resolution
-  - burst super-resolution
-  - noise modeling
-  - polarization dataset
-  - noise propagation analysis
+  - "ICCV 2025"
+  - "Image Restoration"
+  - "polarization image super-resolution"
+  - "burst super-resolution"
+  - "noise modeling"
+  - "polarization dataset"
+  - "noise propagation analysis"
 date: 2026-05-08
 content_hash: eaf1a2cbd619063b
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Obscure but Effective: Classical Chinese Jailbreak Prompt Optimization via Bio-Inspired Search
 description: >-
-  [ICLR 2026][LLM Alignment][LLM Safety] This paper proposes CC-BOS, a framework that exploits the semantic compression and inherent ambiguity of Classical Chinese, combined with a Fruit Fly Optimization Algorithm to search an eight-dimensional strategy space for optimal jailbreak prompts, achieving nearly 100% attack success rate across six mainstream LLMs.
+  [ICLR 2026][LLM Alignment][LLM Safety] This paper proposes CC-BOS, a framework that exploits the semantic compression and inherent ambiguity of Classical Chinese…
 tags:
-  - ICLR 2026
-  - LLM Alignment
-  - LLM Safety
-  - Jailbreak Attack
-  - Classical Chinese
-  - Bio-Inspired Optimization
-  - Black-Box Attack
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "LLM Safety"
+  - "Jailbreak Attack"
+  - "Classical Chinese"
+  - "Bio-Inspired Optimization"
+  - "Black-Box Attack"
 date: 2026-05-08
 content_hash: 979c88d34883efb0
 ---

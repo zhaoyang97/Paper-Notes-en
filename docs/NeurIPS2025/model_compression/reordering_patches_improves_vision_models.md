@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] REOrdering Patches Improves Vision Models
 description: >-
-  [NeurIPS 2025][Model Compression][patch ordering] This paper reveals that patch ordering significantly affects the performance of long-sequence vision models, and proposes the REOrder framework, which leverages information-theoretic priors and reinforcement learning to automatically discover optimal patch permutations, achieving up to 3.01% improvement on ImageNet-1K and 13.35% on FMoW.
+  [NeurIPS 2025][Model Compression][patch ordering] This paper reveals that patch ordering significantly affects the performance of long-sequence vision models, and proposes the REOrder framework…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - patch ordering
-  - long-sequence models
-  - Mamba
-  - reinforcement learning
-  - Plackett-Luce
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "patch ordering"
+  - "long-sequence models"
+  - "Mamba"
+  - "reinforcement learning"
+  - "Plackett-Luce"
 date: 2026-05-08
 content_hash: 982407f85ce7cf9e
 ---

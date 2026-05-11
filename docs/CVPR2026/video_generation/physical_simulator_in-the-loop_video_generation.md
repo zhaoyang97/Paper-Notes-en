@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Physical Simulator In-the-Loop Video Generation
 description: >-
-  [CVPR 2026][Video Generation][physical simulator in-the-loop] This paper proposes PSIVG — the first training-free inference-time framework that embeds a physical simulator into the video diffusion generation loop. It reconstructs a 4D scene and object meshes from a template video, generates physically consistent trajectories via an MPM simulator, guides video generation using optical flow, and enforces texture consistency of moving objects through Test-Time Consistency Optimization (TTCO), achieving a user preference rate of 82.3%.
+  [CVPR 2026][Video Generation][physical simulator in-the-loop] This paper proposes PSIVG — the first training-free inference-time framework that embeds a physical simulator into the video diffusion generation loop. It rec…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - physical simulator in-the-loop
-  - video diffusion model
-  - MPM simulation
-  - test-time optimization
-  - physically consistent generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "physical simulator in-the-loop"
+  - "video diffusion model"
+  - "MPM simulation"
+  - "test-time optimization"
+  - "physically consistent generation"
 date: 2026-05-08
 content_hash: a726a98c0373f0f1
 ---

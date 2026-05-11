@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Rectified-CFG++ for Flow Based Models
 description: >-
-  [NeurIPS 2025][Image Generation][Classifier-Free Guidance] To address the off-manifold drift caused by standard CFG in Rectified Flow models, this paper proposes Rectified-CFG++—an adaptive predictor-corrector guidance strategy that replaces extrapolative guidance with conditional flow prediction combined with time-scheduled interpolative correction. The method comprehensively outperforms standard CFG on large-scale models including Flux, SD3, SD3.5, and Lumina.
+  [NeurIPS 2025][Image Generation][Classifier-Free Guidance] To address the off-manifold drift caused by standard CFG in Rectified Flow models…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Classifier-Free Guidance
-  - Rectified Flow
-  - Text-to-Image Generation
-  - Predictor-Corrector Sampling
-  - Flow Models
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Classifier-Free Guidance"
+  - "Rectified Flow"
+  - "Text-to-Image Generation"
+  - "Predictor-Corrector Sampling"
+  - "Flow Models"
 date: 2026-05-08
 content_hash: 0ab9facc51ca273a
 ---

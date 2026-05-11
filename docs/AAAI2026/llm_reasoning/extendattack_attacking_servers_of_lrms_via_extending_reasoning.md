@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ExtendAttack: Attacking Servers of LRMs via Extending Reasoning
 description: >-
-  [AAAI 2026][LLM Reasoning][LRM Security] This paper proposes ExtendAttack, a resource exhaustion attack targeting Large Reasoning Models (LRMs): by randomly converting characters in the prompt into multi-base ASCII encodings, the attack forces models to perform extensive character-by-character decoding before answering, increasing o3's response length by more than 2.7× and doubling latency, while keeping answer accuracy largely intact.
+  [AAAI 2026][LLM Reasoning][LRM Security] This paper proposes ExtendAttack, a resource exhaustion attack targeting Large Reasoning Models (LRMs): by randomly converting characters in the prompt into multi-base ASCII encod…
 tags:
-  - AAAI 2026
-  - LLM Reasoning
-  - LRM Security
-  - Resource Exhaustion Attack
-  - Reasoning Extension
-  - Adversarial Attack
-  - DDoS
+  - "AAAI 2026"
+  - "LLM Reasoning"
+  - "LRM Security"
+  - "Resource Exhaustion Attack"
+  - "Reasoning Extension"
+  - "Adversarial Attack"
+  - "DDoS"
 date: 2026-05-08
 content_hash: 22a5dd498799cb62
 ---

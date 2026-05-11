@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Music Arena: Live Evaluation for Text-to-Music
 description: >-
-  [NeurIPS 2025][LLM Safety][text-to-music] Music Arena is the first online live evaluation platform for text-to-music (TTM) generation. It addresses the heterogeneous signature problem of TTM systems via an LLM-driven moderation and routing system, collects multi-level preference data including fine-grained listening behavior and natural language feedback, and provides the community with a sustainable open preference data source through monthly rolling data releases.
+  [NeurIPS 2025][LLM Safety][text-to-music] Music Arena is the first online live evaluation platform for text-to-music (TTM) generation. It addresses the heterogeneous signature problem of TTM systems via an LLM-driven mod…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - text-to-music
-  - human preference evaluation
-  - live evaluation
-  - leaderboard
-  - preference data
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "text-to-music"
+  - "human preference evaluation"
+  - "live evaluation"
+  - "leaderboard"
+  - "preference data"
 date: 2026-05-08
 content_hash: 67ad7bf843dca0e6
 ---

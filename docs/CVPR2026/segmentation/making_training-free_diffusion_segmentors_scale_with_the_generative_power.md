@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Making Training-Free Diffusion Segmentors Scale with the Generative Power
 description: >-
-  [CVPR 2026][Segmentation][Diffusion Models] This paper identifies the fundamental reasons why existing training-free diffusion segmentation methods fail to scale with the generative power of stronger models — namely, two gaps between cross-attention maps and semantic relevance (an aggregation gap and a score imbalance gap). It proposes two techniques, auto aggregation and per-pixel rescaling, forming the GoCA framework, which for the first time enables stronger diffusion models (SDXL, PixArt-Sigma, Flux) to significantly outperform weaker ones in training-free semantic segmentation.
+  [CVPR 2026][Segmentation][Diffusion Models] This paper identifies the fundamental reasons why existing training-free diffusion segmentation methods fail to scale with the generative power of stronger models — namely…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Diffusion Models
-  - Training-Free Segmentation
-  - Cross-Attention
-  - Auto Aggregation
-  - Per-Pixel Rescaling
-  - Generative Scaling
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Diffusion Models"
+  - "Training-Free Segmentation"
+  - "Cross-Attention"
+  - "Auto Aggregation"
+  - "Per-Pixel Rescaling"
+  - "Generative Scaling"
 date: 2026-05-08
 content_hash: 7920c8a654e9bcff
 ---

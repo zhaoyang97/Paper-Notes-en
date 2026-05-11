@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond Brain Decoding: Visual-Semantic Reconstructions to Mental Creation Extension Based on fMRI
 description: >-
-  [ICCV 2025][Medical Imaging][fMRI brain decoding] This paper proposes NeuroCreat — a multimodal brain architecture that integrates the visual and textual capabilities of LLMs — extending fMRI decoding from single-task visual stimulus reconstruction to three levels: **image reconstruction + text captioning + mental creation**. A Prompt Variant Alignment (PVA) module is introduced to effectively bridge the gap between low-resolution fMRI signals and high-level semantic representations.
+  [ICCV 2025][Medical Imaging][fMRI brain decoding] This paper proposes NeuroCreat — a multimodal brain architecture that integrates the visual and textual capabilities of LLMs — extending fMRI decoding from single-task vi…
 tags:
-  - ICCV 2025
-  - Medical Imaging
-  - fMRI brain decoding
-  - visual-semantic reconstruction
-  - mental creation
-  - large language models
-  - multimodal brain architecture
+  - "ICCV 2025"
+  - "Medical Imaging"
+  - "fMRI brain decoding"
+  - "visual-semantic reconstruction"
+  - "mental creation"
+  - "large language models"
+  - "multimodal brain architecture"
 date: 2026-05-08
 content_hash: 3edb1b2390344523
 ---

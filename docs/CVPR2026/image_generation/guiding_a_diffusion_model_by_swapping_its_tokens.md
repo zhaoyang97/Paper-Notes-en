@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Guiding a Diffusion Model by Swapping Its Tokens
 description: >-
-  [CVPR 2026][Image Generation][Sampling Guidance] This paper proposes Self-Swap Guidance (SSG), a training-free sampling guidance method for diffusion models that constructs perturbations by selectively swapping the most semantically dissimilar token pairs in the intermediate representation space. Compared to SAG/PAG/SEG, SSG stably generates high-fidelity images over a wider range of guidance scales, achieving state-of-the-art FID on both conditional and unconditional generation.
+  [CVPR 2026][Image Generation][Sampling Guidance] This paper proposes Self-Swap Guidance (SSG), a training-free sampling guidance method for diffusion models that constructs perturbations by selectively swapping the most…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Sampling Guidance
-  - Training-Free Guidance
-  - Token Swapping
-  - Self-Perturbation
-  - Image Fidelity
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Sampling Guidance"
+  - "Training-Free Guidance"
+  - "Token Swapping"
+  - "Self-Perturbation"
+  - "Image Fidelity"
 date: 2026-05-08
 content_hash: 39dbe5c451c869ed
 ---

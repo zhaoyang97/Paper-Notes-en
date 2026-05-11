@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The Surprising Effectiveness of Negative Reinforcement in LLM Reasoning
 description: >-
-  [NeurIPS 2025][Signal & Communication][RLVR decomposition] This paper decomposes reinforcement learning with verifiable rewards (RLVR) into positive sample reinforcement (PSR, which increases the probability of correct responses) and negative sample reinforcement (NSR, which penalizes incorrect responses). It finds that NSR alone consistently improves reasoning performance across the full Pass@k spectrum and typically matches or surpasses PPO/GRPO. Based on this finding, the paper proposes Weighted-REINFORCE (reducing the PSR weight to 0.1), achieving state-of-the-art results across MATH, AIME 2025, and AMC23.
+  [NeurIPS 2025][Signal & Communication][RLVR decomposition] This paper decomposes reinforcement learning with verifiable rewards (RLVR) into positive sample reinforcement (PSR…
 tags:
-  - NeurIPS 2025
+  - "NeurIPS 2025"
   - "Signal & Communication"
-  - RLVR decomposition
-  - negative sample reinforcement
-  - positive sample reinforcement
-  - Pass@k
-  - Weighted-REINFORCE
+  - "RLVR decomposition"
+  - "negative sample reinforcement"
+  - "positive sample reinforcement"
+  - "Pass@k"
+  - "Weighted-REINFORCE"
 date: 2026-05-08
 content_hash: 2670a3193af6e035
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] REALM: An MLLM-Agent Framework for Open World 3D Reasoning Segmentation and Editing on Gaussian Splatting
 description: >-
-  [CVPR 2026][LLM Agent][3D Reasoning Segmentation] REALM is proposed as a framework that leverages MLLM reasoning capabilities to perform open-world 3D reasoning segmentation on 3DGS via a global-to-local spatial grounding strategy, handling implicit instructions without 3D post-training. It achieves 92.88% mIoU on LERF, surpassing baseline methods by 40+ percentage points, and supports editing tasks including object removal, replacement, and style transfer.
+  [CVPR 2026][LLM Agent][3D Reasoning Segmentation] REALM is proposed as a framework that leverages MLLM reasoning capabilities to perform open-world 3D reasoning segmentation on 3DGS via a global-to-local spatial groundin…
 tags:
-  - CVPR 2026
-  - LLM Agent
-  - 3D Reasoning Segmentation
-  - MLLM-Agent
-  - 3D Gaussian Splatting
-  - Global-to-Local Spatial Grounding
-  - 3D Scene Editing
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "3D Reasoning Segmentation"
+  - "MLLM-Agent"
+  - "3D Gaussian Splatting"
+  - "Global-to-Local Spatial Grounding"
+  - "3D Scene Editing"
 date: 2026-05-08
 content_hash: ecd75a8d41f4d379
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SVAgent: Storyline-Guided Long Video Understanding via Cross-Modal Multi-Agent Collaboration
 description: >-
-  [CVPR 2026][Video Understanding][long video QA] This paper proposes SVAgent, a storyline-guided cross-modal multi-agent framework for long video question answering. By progressively constructing narrative representations, employing DPP-based evidence selection, cross-modal consistency verification, and iterative refinement, SVAgent achieves performance gains of 5.5%–11.5% over baselines.
+  [CVPR 2026][Video Understanding][long video QA] This paper proposes SVAgent, a storyline-guided cross-modal multi-agent framework for long video question answering. By progressively constructing narrative representations…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - long video QA
-  - multi-agent
-  - storyline
-  - cross-modal reasoning
-  - DPP
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "long video QA"
+  - "multi-agent"
+  - "storyline"
+  - "cross-modal reasoning"
+  - "DPP"
 date: 2026-05-08
 content_hash: 7f9bff50ee4613e8
 ---

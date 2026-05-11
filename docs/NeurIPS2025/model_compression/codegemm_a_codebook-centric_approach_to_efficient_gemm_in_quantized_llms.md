@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] CodeGEMM: A Codebook-Centric Approach to Efficient GEMM in Quantized LLMs
 description: >-
-  [NeurIPS 2025][Model Compression][model quantization] This paper proposes CodeGEMM, a codebook-centric GEMM kernel that precomputes inner products between centroids and activations and caches them as a Psumbook, replacing the conventional dequantization pipeline to achieve end-to-end speedups of 1.83× (8B) to 8.93× (70B) on 2-bit quantized LLMs.
+  [NeurIPS 2025][Model Compression][model quantization] This paper proposes CodeGEMM, a codebook-centric GEMM kernel that precomputes inner products between centroids and activations and caches them as a Psumbook…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - model quantization
-  - codebook quantization
-  - GEMM acceleration
-  - LLM inference
-  - low-bit quantization
-  - CUDA kernel
-  - lookup table
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "model quantization"
+  - "codebook quantization"
+  - "GEMM acceleration"
+  - "LLM inference"
+  - "low-bit quantization"
+  - "CUDA kernel"
+  - "lookup table"
 date: 2026-05-08
 content_hash: 6030ad8b99d2ca82
 ---

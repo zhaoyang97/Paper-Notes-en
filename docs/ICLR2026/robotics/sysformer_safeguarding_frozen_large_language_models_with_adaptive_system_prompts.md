@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Sysformer: Safeguarding Frozen Large Language Models with Adaptive System Prompts
 description: >-
-  [ICLR 2026][Robotics][system prompt] This paper proposes Sysformer, a lightweight Transformer module that can be plugged in front of any frozen LLM to adaptively transform system prompts in embedding space conditioned on user input, enabling the model to refuse harmful requests while complying with benign ones—without modifying LLM parameters or filtering user inputs.
+  [ICLR 2026][Robotics][system prompt] This paper proposes Sysformer, a lightweight Transformer module that can be plugged in front of any frozen LLM to adaptively transform system prompts in embedding space conditioned on…
 tags:
-  - ICLR 2026
-  - Robotics
-  - system prompt
-  - LLM safety
-  - jailbreak defense
-  - frozen model
-  - adaptive prompting
+  - "ICLR 2026"
+  - "Robotics"
+  - "system prompt"
+  - "LLM safety"
+  - "jailbreak defense"
+  - "frozen model"
+  - "adaptive prompting"
 date: 2026-05-08
 content_hash: 067ac07f7204acea
 ---

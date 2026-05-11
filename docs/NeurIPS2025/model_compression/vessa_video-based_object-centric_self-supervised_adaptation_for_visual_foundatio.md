@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VESSA: Video-based objEct-centric Self-Supervised Adaptation for Visual Foundation Models
 description: >-
-  [NeurIPS 2025][Model Compression][Visual Foundation Models] VESSA proposes an unsupervised adaptation method for visual foundation models using short object-centric videos. Through a self-distillation framework combined with LoRA parameter-efficient fine-tuning and an uncertainty-weighted loss, it significantly improves downstream classification performance in target domains without requiring any labeled data.
+  [NeurIPS 2025][Model Compression][Visual Foundation Models] VESSA proposes an unsupervised adaptation method for visual foundation models using short object-centric videos. Through a self-distillation framework combined…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Visual Foundation Models
-  - Self-Supervised Fine-Tuning
-  - Video Adaptation
-  - Self-Distillation
-  - LoRA
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Visual Foundation Models"
+  - "Self-Supervised Fine-Tuning"
+  - "Video Adaptation"
+  - "Self-Distillation"
+  - "LoRA"
 date: 2026-05-08
 content_hash: ec8f5e0bc1ae3d6c
 ---

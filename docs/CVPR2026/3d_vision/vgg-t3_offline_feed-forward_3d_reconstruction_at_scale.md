@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VGG-T3: Offline Feed-Forward 3D Reconstruction at Scale
 description: >-
-  [CVPR 2026][3D Vision][3D Reconstruction] This paper proposes VGG-T3, which compresses the variable-length KV representations in VGGT's global attention layers into fixed-size MLP weights via **test-time training (TTT)**, reducing the computational complexity of offline feed-forward 3D reconstruction from $O(n^2)$ to $O(n)$, enabling large-scale scene reconstruction at the thousand-image level (1k images in only 58 seconds).
+  [CVPR 2026][3D Vision][3D Reconstruction] This paper proposes VGG-T3, which compresses the variable-length KV representations in VGGT's global attention layers into fixed-size MLP weights via **test-time training (TTT)**…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Reconstruction
-  - Test-Time Training
-  - Linear Complexity
-  - KV Compression
-  - Visual Localization
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Reconstruction"
+  - "Test-Time Training"
+  - "Linear Complexity"
+  - "KV Compression"
+  - "Visual Localization"
 date: 2026-05-08
 content_hash: bf37ef806ebae6e1
 ---

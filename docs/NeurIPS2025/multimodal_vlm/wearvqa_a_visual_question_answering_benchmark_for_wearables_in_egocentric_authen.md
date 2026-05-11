@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] WearVQA: A Visual Question Answering Benchmark for Wearables in Egocentric Authentic Real-world scenarios
 description: >-
-  [NeurIPS 2025][Multimodal VLM][VQA] This paper introduces WearVQA, the first VQA benchmark specifically designed for wearable device (smart glasses) scenarios. It comprises 2,520 egocentric image–question–answer triplets, systematically covering 7 visual domains, 10 cognitive task types, and 6 categories of wearable-specific image quality degradation. An accompanying LLM-as-a-judge evaluation framework achieves 96% accuracy, and the benchmark reveals that current SOTA multimodal models attain only 24–52% accuracy in this setting.
+  [NeurIPS 2025][Multimodal VLM][VQA] This paper introduces WearVQA, the first VQA benchmark specifically designed for wearable device (smart glasses) scenarios. It comprises 2,520 egocentric image–question–answer triplets…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - VQA
-  - wearable devices
-  - egocentric view
-  - image quality degradation
-  - smart glasses
-  - benchmark
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "VQA"
+  - "wearable devices"
+  - "egocentric view"
+  - "image quality degradation"
+  - "smart glasses"
+  - "benchmark"
 date: 2026-05-08
 content_hash: 4ecd5a8c40f1f2bc
 ---

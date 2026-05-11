@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Logical Phase Transitions: Understanding Collapse in LLM Logical Reasoning
 description: >-
-  [ACL 2026][LLM Reasoning][logical reasoning] This paper identifies a "logical phase transition" phenomenon in LLM logical reasoning—performance collapses abruptly at specific complexity thresholds rather than degrading smoothly. The authors propose a Logical Complexity Metric (LoCM) to quantify this phenomenon, and design a Neuro-Symbolic Curriculum Tuning (NSCT) framework that achieves average accuracy gains of +1.26 over naive prompting and +3.95 over CoT across five benchmarks via adaptive neuro-symbolic alignment and complexity-aware curriculum optimization.
+  [ACL 2026][LLM Reasoning][logical reasoning] This paper identifies a "logical phase transition" phenomenon in LLM logical reasoning—performance collapses abruptly at specific complexity thresholds rather than degrading s…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - logical reasoning
-  - phase transition
-  - curriculum learning
-  - neuro-symbolic alignment
-  - reasoning collapse
+  - "ACL 2026"
+  - "LLM Reasoning"
+  - "logical reasoning"
+  - "phase transition"
+  - "curriculum learning"
+  - "neuro-symbolic alignment"
+  - "reasoning collapse"
 date: 2026-05-08
 content_hash: 028ef5085cc68721
 ---

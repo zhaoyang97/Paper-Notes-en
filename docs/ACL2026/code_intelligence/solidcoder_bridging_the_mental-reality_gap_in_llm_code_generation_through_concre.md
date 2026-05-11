@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] SolidCoder: Bridging the Mental-Reality Gap in LLM Code Generation through Concrete Execution
 description: >-
-  [ACL 2026][code generation] SolidCoder transforms code verification from LLM "imagined execution" to "real execution" via the S.O.L.I.D. architecture (Shift-left Planning, Oracle-based Assertions, Live Execution, Intermediate Simulation, Defensive Accumulation), achieving pass@1 scores of 95.7% on HumanEval, 77.0% on CodeContests, and 26.7% on APPS with GPT-4o.
+  [ACL 2026][Code Intelligence][code generation] SolidCoder transforms code verification from LLM "imagined execution" to "real execution" via the S.O.L.I.D. architecture (Shift-left Planning, Oracle-based Assertions…
 tags:
-  - ACL 2026
-  - code generation
-  - mental simulation
-  - execution verification
-  - multi-agent
-  - property-based testing
+  - "ACL 2026"
+  - "Code Intelligence"
+  - "code generation"
+  - "mental simulation"
+  - "execution verification"
+  - "multi-agent"
+  - "property-based testing"
 date: 2026-05-08
 content_hash: e60b0f96b94db6b7
 ---

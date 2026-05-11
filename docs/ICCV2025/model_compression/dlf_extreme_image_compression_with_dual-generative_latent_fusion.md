@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DLF: Extreme Image Compression with Dual-generative Latent Fusion
 description: >-
-  [ICCV 2025][Model Compression][extreme low-bitrate image compression] This paper proposes the Dual-generative Latent Fusion (DLF) framework, which decomposes the image latent space into semantic and detail branches for separate compression, and eliminates inter-branch redundancy via a cross-branch interactive design. At extreme low bitrates (<0.01 bpp), DLF achieves state-of-the-art reconstruction quality with BD-Rate savings of up to 67.82% over MS-ILLM, while decoding significantly faster than diffusion-based approaches.
+  [ICCV 2025][Model Compression][extreme low-bitrate image compression] This paper proposes the Dual-generative Latent Fusion (DLF) framework, which decomposes the image latent space into semantic and detail branches for s…
 tags:
-  - ICCV 2025
-  - Model Compression
-  - extreme low-bitrate image compression
-  - generative codec
-  - dual-branch encoding
-  - vector quantization
-  - semantic-detail decomposition
+  - "ICCV 2025"
+  - "Model Compression"
+  - "extreme low-bitrate image compression"
+  - "generative codec"
+  - "dual-branch encoding"
+  - "vector quantization"
+  - "semantic-detail decomposition"
 date: 2026-05-08
 content_hash: 96755b1ede567d37
 ---

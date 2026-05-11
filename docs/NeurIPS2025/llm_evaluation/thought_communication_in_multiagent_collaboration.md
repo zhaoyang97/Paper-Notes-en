@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Thought Communication in Multiagent Collaboration
 description: >-
-  [NeurIPS 2025][LLM Evaluation][multiagent collaboration] This paper proposes ThoughtComm, a framework that formalizes multiagent communication as a latent variable generative model. It proves that both shared and private thoughts are identifiable under nonparametric conditions, extracts latent thoughts via a sparsity-regularized autoencoder, and feeds them back to each agent through prefix injection. ThoughtComm achieves an average improvement of 19.06% over the current SOTA Multiagent Finetuning on mathematical reasoning benchmarks.
+  [NeurIPS 2025][LLM Evaluation][multiagent collaboration] This paper proposes ThoughtComm, a framework that formalizes multiagent communication as a latent variable generative model. It proves that both shared and private…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - multiagent collaboration
-  - thought communication
-  - latent variable model
-  - identifiability theory
-  - prefix injection
-  - sparse autoencoder
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "multiagent collaboration"
+  - "thought communication"
+  - "latent variable model"
+  - "identifiability theory"
+  - "prefix injection"
+  - "sparse autoencoder"
 date: 2026-05-08
 content_hash: 42d585eb8d86ce1e
 ---

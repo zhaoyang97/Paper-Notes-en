@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Hybrid-Vector Retrieval for Visually Rich Documents: Combining Single-Vector Efficiency and Multi-Vector Accuracy
 description: >-
-  [ACL 2026][Visual document retrieval] HEAVEN proposes a plug-and-play two-stage hybrid-vector framework that accelerates coarse retrieval via Visual Summary Pages (VS-Pages) with a single-vector model and reduces multi-vector reranking computation via POS-based query token filtering. Across four benchmarks, the framework retains 99.87% of the multi-vector Recall@1 while reducing per-query FLOPs by 99.82%.
+  [ACL 2026][Information Retrieval & RAG][Visual document retrieval] HEAVEN proposes a plug-and-play two-stage hybrid-vector framework that accelerates coarse retrieval via Visual Summary Pages (VS-Pages) with a single-vec…
 tags:
-  - ACL 2026
-  - Visual document retrieval
-  - hybrid-vector retrieval
-  - efficiency-accuracy trade-off
-  - visual summary pages
-  - query token filtering
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Visual document retrieval"
+  - "hybrid-vector retrieval"
+  - "efficiency-accuracy trade-off"
+  - "visual summary pages"
+  - "query token filtering"
 date: 2026-05-08
 content_hash: 2200d1f6b3808a0b
 ---

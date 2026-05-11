@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multi-Cache Enhanced Prototype Learning for Test-Time Generalization of Vision-Language Models
 description: >-
-  [ICCV 2025][Multimodal VLM][Test-time adaptation] This paper proposes MCP/MCP++, a multi-cache enhanced prototype learning framework that constructs compact intra-class distributions via three complementary cache modules—entropy cache, align cache, and negative cache—and further introduces cross-modal residual learning to refine the alignment between visual and textual prototypes, achieving state-of-the-art zero-shot generalization across 15 downstream tasks.
+  [ICCV 2025][Multimodal VLM][Test-time adaptation] This paper proposes MCP/MCP++, a multi-cache enhanced prototype learning framework that constructs compact intra-class distributions via three complementary cache modules…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Test-time adaptation
-  - vision-language models
-  - CLIP
-  - cache mechanism
-  - prototype learning
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Test-time adaptation"
+  - "vision-language models"
+  - "CLIP"
+  - "cache mechanism"
+  - "prototype learning"
 date: 2026-05-08
 content_hash: 65cbc277c83932cf
 ---

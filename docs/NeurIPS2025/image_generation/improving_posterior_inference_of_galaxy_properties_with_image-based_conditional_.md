@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Improving Posterior Inference of Galaxy Properties with Image-Based Conditional Flow Matching
 description: >-
-  [NeurIPS 2025][Image Generation][conditional flow matching] This paper proposes a Conditional Flow Matching (CFM) framework that jointly models morphological information from galaxy images alongside photometric data, substantially improving posterior inference of physical galaxy properties including stellar mass, star formation rate, metallicity, and dust extinction.
+  [NeurIPS 2025][Image Generation][conditional flow matching] This paper proposes a Conditional Flow Matching (CFM) framework that jointly models morphological information from galaxy images alongside photometric data…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - conditional flow matching
-  - galaxy property estimation
-  - simulation-based inference
-  - morphology
-  - posterior inference
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "conditional flow matching"
+  - "galaxy property estimation"
+  - "simulation-based inference"
+  - "morphology"
+  - "posterior inference"
 date: 2026-05-08
 content_hash: 04b9e8a36beb02fc
 ---

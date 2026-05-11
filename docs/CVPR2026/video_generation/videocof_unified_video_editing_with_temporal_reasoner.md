@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VideoCoF: Unified Video Editing with Temporal Reasoner
 description: >-
-  [CVPR 2026][Video Generation][Video Editing] This paper proposes VideoCoF, a Chain-of-Thought-inspired "observe→reason→edit" video editing framework. By prompting a video diffusion model to first predict reasoning tokens (grayscale-highlighted region latents) before generating the target video tokens, VideoCoF achieves precise instruction-region alignment without requiring user-provided masks. Trained on only 50K video pairs, it achieves state-of-the-art performance and supports video extrapolation up to 16× the training length.
+  [CVPR 2026][Video Generation][Video Editing] This paper proposes VideoCoF, a Chain-of-Thought-inspired "observe→reason→edit" video editing framework. By prompting a video diffusion model to first predict reasoning tokens…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Video Editing
-  - Chain-of-Frames
-  - Video Diffusion Model
-  - Reasoning Frames
-  - Length Extrapolation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Video Editing"
+  - "Chain-of-Frames"
+  - "Video Diffusion Model"
+  - "Reasoning Frames"
+  - "Length Extrapolation"
 date: 2026-05-08
 content_hash: 9b0b459b67e9db89
 ---

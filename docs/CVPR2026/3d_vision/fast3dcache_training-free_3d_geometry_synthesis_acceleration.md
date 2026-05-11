@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Fast3Dcache: Training-free 3D Geometry Synthesis Acceleration
 description: >-
-  [CVPR 2026][3D Vision][3D geometry generation acceleration] This paper proposes Fast3Dcache, a training-free geometry-aware caching framework for 3D diffusion models. It dynamically allocates cache budgets via Predictive Cache Scheduling Constraint (PCSC) based on voxel stabilization patterns, and selects stable tokens for reuse via Spatiotemporal Stability Criterion (SSC) using velocity and acceleration signals. The method achieves up to 27.12% throughput improvement and 54.83% FLOPs reduction with only ~2% degradation in geometric quality.
+  [CVPR 2026][3D Vision][3D geometry generation acceleration] This paper proposes Fast3Dcache, a training-free geometry-aware caching framework for 3D diffusion models. It dynamically allocates cache budgets via Predictive…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D geometry generation acceleration
-  - caching mechanism
-  - voxel stabilization
-  - training-free
-  - diffusion models
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D geometry generation acceleration"
+  - "caching mechanism"
+  - "voxel stabilization"
+  - "training-free"
+  - "diffusion models"
 date: 2026-05-08
 content_hash: 0e1fb12b0b3333c6
 ---

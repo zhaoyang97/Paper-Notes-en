@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] SWE-RL: Advancing LLM Reasoning via Reinforcement Learning on Open Software Evolution
 description: >-
-  [NeurIPS 2025][Reinforcement Learning] This work is the first to apply reinforcement learning (RL) to real-world software engineering tasks (GitHub PR/Issue resolution), training Llama-3.3-70B exclusively with a rule-based sequence-similarity reward. It achieves a 41.0% resolve rate on SWE-bench Verified (SOTA among medium-scale models). Notably, although RL training is conducted solely on issue-solving data, it elicits emergent generalization in out-of-domain tasks including code reasoning, mathematics, and general language understanding.
+  [NeurIPS 2025][Reinforcement Learning][Software Evolution Data] This work is the first to apply reinforcement learning (RL) to real-world software engineering tasks (GitHub PR/Issue resolution)…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Software Evolution Data
-  - GRPO
-  - SWE-bench
-  - Reasoning Generalization
-  - Code Editing
-  - Pull Request
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Software Evolution Data"
+  - "GRPO"
+  - "SWE-bench"
+  - "Reasoning Generalization"
+  - "Code Editing"
+  - "Pull Request"
 date: 2026-05-08
 content_hash: 8799b01836f36e08
 ---

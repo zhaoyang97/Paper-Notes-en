@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VertexRegen: Mesh Generation with Continuous Level of Detail
 description: >-
-  [ICCV 2025][3D Vision][Mesh Generation] VertexRegen is proposed to reframe mesh generation—inspired by progressive meshes—as learning the inverse of edge collapse, i.e., vertex split, enabling "anytime" mesh generation with continuous level of detail.
+  [ICCV 2025][3D Vision][Mesh Generation] VertexRegen is proposed to reframe mesh generation—inspired by progressive meshes—as learning the inverse of edge collapse, i.e., vertex split…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Mesh Generation
-  - Progressive Meshes
-  - Continuous Level of Detail
-  - Autoregressive
-  - Vertex Split
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Mesh Generation"
+  - "Progressive Meshes"
+  - "Continuous Level of Detail"
+  - "Autoregressive"
+  - "Vertex Split"
 date: 2026-05-08
 content_hash: 94d0b2788b69e6b3
 ---

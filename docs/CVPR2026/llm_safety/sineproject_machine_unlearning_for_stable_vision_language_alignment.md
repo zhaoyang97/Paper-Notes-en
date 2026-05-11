@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SineProject: Machine Unlearning for Stable Vision–Language Alignment
 description: >-
-  [CVPR 2026][LLM Safety][Machine Unlearning] To address the severe ill-conditioning of the projector Jacobian during machine unlearning in MLLMs—which causes systematic vision–language alignment drift—this paper proposes SineProject, which applies sinusoidal modulation ($\sin(\Delta W)$) to projector weights to constrain parameter magnitudes to $[-1, 1]$. This reduces the Jacobian condition number by 3–4 orders of magnitude, achieving complete forgetting of target knowledge while reducing the safe answer rejection rate (SARR) on benign queries by 15%.
+  [CVPR 2026][LLM Safety][Machine Unlearning] To address the severe ill-conditioning of the projector Jacobian during machine unlearning in MLLMs—which causes systematic vision–language alignment drift—this paper proposes…
 tags:
-  - CVPR 2026
-  - LLM Safety
-  - Machine Unlearning
-  - Multimodal Large Language Models
-  - Vision–Language Alignment
-  - Projector Stability
-  - Jacobian Condition Number
+  - "CVPR 2026"
+  - "LLM Safety"
+  - "Machine Unlearning"
+  - "Multimodal Large Language Models"
+  - "Vision–Language Alignment"
+  - "Projector Stability"
+  - "Jacobian Condition Number"
 date: 2026-05-08
 content_hash: 5f68c363f8ca3bad
 ---

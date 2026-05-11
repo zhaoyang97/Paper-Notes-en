@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Evolutionary Prediction Games
 description: >-
-  [NEURIPS2025][evolutionary game theory] This paper proposes the "Evolutionary Prediction Games" framework, applying evolutionary game theory to analyze feedback loops between prediction algorithms and user populations. It shows that ideal learners lead to competitive exclusion (survival of the fittest), whereas practical learners (with finite data, surrogate losses, or overparameterization) can instead foster stable coexistence and mutualism among groups.
+  [NEURIPS2025][evolutionary game theory] This paper proposes the "Evolutionary Prediction Games" framework, applying evolutionary game theory to analyze feedback loops between prediction algorithms and user populations. I…
 tags:
-  - NEURIPS2025
-  - evolutionary game theory
-  - prediction algorithms
-  - user feedback loops
-  - competitive exclusion
-  - coexistence mechanisms
-  - fairness
+  - "NEURIPS2025"
+  - "evolutionary game theory"
+  - "prediction algorithms"
+  - "user feedback loops"
+  - "competitive exclusion"
+  - "coexistence mechanisms"
+  - "fairness"
 date: 2026-05-08
 content_hash: 9fabed3cdc2a1af8
 ---

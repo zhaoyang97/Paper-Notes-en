@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HalluAudio: A Comprehensive Benchmark for Hallucination Detection in Large Audio-Language Models
 description: >-
-  [ACL 2026][Audio & Speech][audio hallucination] This paper presents HalluAudio, the first large-scale cross-domain (speech/environmental sound/music) benchmark for hallucination detection in large audio-language models (LALMs), comprising 5,000+ human-verified QA pairs and a systematic adversarial prompt design. It evaluates mainstream LALMs across multiple dimensions (accuracy, hallucination rate, Yes-No bias, rejection rate, and error type), revealing significant deficiencies in acoustic grounding, temporal reasoning, and music attribute understanding.
+  [ACL 2026][Audio & Speech][audio hallucination] This paper presents HalluAudio, the first large-scale cross-domain (speech/environmental sound/music) benchmark for hallucination detection in large audio-language models (…
 tags:
-  - ACL 2026
+  - "ACL 2026"
   - "Audio & Speech"
-  - audio hallucination
-  - large audio-language models
-  - benchmark
-  - adversarial prompting
-  - multi-dimensional analysis
+  - "audio hallucination"
+  - "large audio-language models"
+  - "benchmark"
+  - "adversarial prompting"
+  - "multi-dimensional analysis"
 date: 2026-05-08
 content_hash: 9473e269d2561150
 ---

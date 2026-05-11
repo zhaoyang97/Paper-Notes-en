@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Rethinking the Spatio-Temporal Alignment of End-to-End 3D Perception
 description: >-
-  [AAAI2026][Autonomous Driving][Spatio-temporal alignment] This paper proposes HAT (multiple Hypotheses spAtio-Temporal alignment), a plug-and-play spatio-temporal alignment module that generates alignment hypotheses via multiple explicit motion models and adaptively decodes the optimal alignment using motion cues latent in queries. HAT consistently improves multiple 3D temporal detectors and trackers on nuScenes, and reduces collision rates by 32–48% in end-to-end autonomous driving.
+  [AAAI2026][Autonomous Driving][Spatio-temporal alignment] This paper proposes HAT (multiple Hypotheses spAtio-Temporal alignment), a plug-and-play spatio-temporal alignment module that generates alignment hypotheses via…
 tags:
-  - AAAI2026
-  - Autonomous Driving
-  - Spatio-temporal alignment
-  - end-to-end 3D perception
-  - multiple hypothesis motion models
-  - multi-object tracking
+  - "AAAI2026"
+  - "Autonomous Driving"
+  - "Spatio-temporal alignment"
+  - "end-to-end 3D perception"
+  - "multiple hypothesis motion models"
+  - "multi-object tracking"
 date: 2026-05-08
 content_hash: 907a0ce383a219fe
 ---

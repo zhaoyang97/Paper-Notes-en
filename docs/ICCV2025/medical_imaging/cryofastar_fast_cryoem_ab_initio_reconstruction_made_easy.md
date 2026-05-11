@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CryoFastAR: Fast Cryo-EM Ab initio Reconstruction Made Easy
 description: >-
-  [ICCV 2025][Medical Imaging][cryo-EM] The first work to introduce the DUSt3R-style geometric foundation model paradigm into cryo-EM, achieving feedforward pose prediction from large sets of noisy particle images via a ViT encoder with cross-view attention decoder—without iterative optimization—enabling ab initio protein 3D reconstruction 10–33× faster than traditional methods.
+  [ICCV 2025][Medical Imaging][cryo-EM] The first work to introduce the DUSt3R-style geometric foundation model paradigm into cryo-EM…
 tags:
-  - ICCV 2025
-  - Medical Imaging
-  - cryo-EM
-  - ab initio reconstruction
-  - geometric foundation model
-  - pose estimation
-  - Fourier planar map
+  - "ICCV 2025"
+  - "Medical Imaging"
+  - "cryo-EM"
+  - "ab initio reconstruction"
+  - "geometric foundation model"
+  - "pose estimation"
+  - "Fourier planar map"
 date: 2026-05-08
 content_hash: 44b35034ac6556f7
 ---

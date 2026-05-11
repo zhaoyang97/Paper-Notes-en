@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] U-CAN: Unsupervised Point Cloud Denoising with Consistency-Aware Noise2Noise Matching
 description: >-
-  [NeurIPS 2025][3D Vision][Point cloud denoising] This paper proposes U-CAN, an unsupervised point cloud denoising framework that infers multi-step denoising paths via a Noise2Noise matching scheme and geometric consistency constraints. The method approaches supervised performance and demonstrates that the consistency constraint generalizes to 2D image denoising.
+  [NeurIPS 2025][3D Vision][Point cloud denoising] This paper proposes U-CAN, an unsupervised point cloud denoising framework that infers multi-step denoising paths via a Noise2Noise matching scheme and geometric consisten…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Point cloud denoising
-  - unsupervised learning
-  - Noise2Noise
-  - consistency constraint
-  - geometry reconstruction
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Point cloud denoising"
+  - "unsupervised learning"
+  - "Noise2Noise"
+  - "consistency constraint"
+  - "geometry reconstruction"
 date: 2026-05-08
 content_hash: 9f8d913e3704b840
 ---

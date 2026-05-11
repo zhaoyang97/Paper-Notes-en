@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unified Category-Level Object Detection and Pose Estimation from RGB Images using 3D Prototypes
 description: >-
-  [ICCV 2025][3D Vision][Category-level pose estimation] This work presents the first RGB-only, single-model framework that unifies object detection and category-level pose estimation. By leveraging Neural Mesh Models as 3D prototypes, the method performs feature matching and multi-model RANSAC PnP to simultaneously detect objects and estimate their 9D poses. It surpasses the state of the art on all scale-agnostic metrics on REAL275.
+  [ICCV 2025][3D Vision][Category-level pose estimation] This work presents the first RGB-only, single-model framework that unifies object detection and category-level pose estimation. By leveraging Neural Mesh Models as 3…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Category-level pose estimation
-  - object detection
-  - Neural Mesh Models
-  - single-stage method
-  - RGB-only
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Category-level pose estimation"
+  - "object detection"
+  - "Neural Mesh Models"
+  - "single-stage method"
+  - "RGB-only"
 date: 2026-05-08
 content_hash: bdcbe11117531283
 ---

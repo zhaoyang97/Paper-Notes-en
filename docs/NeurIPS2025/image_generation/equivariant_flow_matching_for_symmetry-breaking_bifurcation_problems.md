@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Equivariant Flow Matching for Symmetry-Breaking Bifurcation Problems
 description: >-
-  [NeurIPS 2025][Image Generation][flow matching] This paper proposes an equivariant flow matching framework combined with a symmetric coupling strategy to model multimodal probability distributions arising in symmetry-breaking bifurcation problems via generative AI, significantly outperforming deterministic models and VAEs on physical systems (buckling beam, Allen-Cahn equation).
+  [NeurIPS 2025][Image Generation][flow matching] This paper proposes an equivariant flow matching framework combined with a symmetric coupling strategy to model multimodal probability distributions arising in symmetry-bre…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - flow matching
-  - equivariance
-  - symmetry breaking
-  - bifurcation
-  - generative modeling
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "flow matching"
+  - "equivariance"
+  - "symmetry breaking"
+  - "bifurcation"
+  - "generative modeling"
 date: 2026-05-08
 content_hash: 3e1eeed484f1babe
 ---

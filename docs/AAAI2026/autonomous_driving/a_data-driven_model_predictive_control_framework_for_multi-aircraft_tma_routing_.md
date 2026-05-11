@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Data-Driven Model Predictive Control Framework for Multi-Aircraft TMA Routing Under Travel Time Uncertainty
 description: >-
-  [AAAI 2026][Autonomous Driving][TMA operations] A closed-loop MPC framework is proposed for conflict-free multi-aircraft routing and scheduling within the 50 NM Terminal Maneuvering Area (TMA) of Changi Airport. The framework integrates XGBoost-based TMA boundary arrival time prediction, MILP optimization (incorporating route selection, speed adjustment, holding control, and separation constraints), and a receding-horizon simulator. Under peak congestion scenarios of 36 aircraft/hour, it achieves a 7× computational speedup while significantly outperforming the Dijkstra baseline in feasibility under Monte Carlo robustness validation.
+  [AAAI 2026][Autonomous Driving][TMA operations] A closed-loop MPC framework is proposed for conflict-free multi-aircraft routing and scheduling within the 50 NM Terminal Maneuvering Area (TMA) of Changi Airport. The fram…
 tags:
-  - AAAI 2026
-  - Autonomous Driving
-  - TMA operations
-  - STAR route planning
-  - travel time uncertainty
-  - model predictive control
-  - MILP
+  - "AAAI 2026"
+  - "Autonomous Driving"
+  - "TMA operations"
+  - "STAR route planning"
+  - "travel time uncertainty"
+  - "model predictive control"
+  - "MILP"
 date: 2026-05-08
 content_hash: a0833d86639eda4d
 ---

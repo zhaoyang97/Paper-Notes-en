@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DiffWind: Physics-Informed Differentiable Modeling of Wind-Driven Object Dynamics
 description: >-
-  [ICLR 2026][3D Vision][physics-informed] This paper proposes DiffWind, a physics-constrained differentiable framework that models wind as a grid-based physical field, represents objects as a 3D Gaussian Splatting particle system, simulates wind–object interaction via the Material Point Method (MPM), and incorporates the Lattice Boltzmann Method (LBM) as a physical constraint. The framework jointly reconstructs wind force fields and object motion from video, supports forward simulation under novel wind conditions and wind retargeting, and significantly outperforms existing dynamic scene modeling methods on the newly introduced WD-Objects dataset.
+  [ICLR 2026][3D Vision][physics-informed] This paper proposes DiffWind, a physics-constrained differentiable framework that models wind as a grid-based physical field…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - physics-informed
-  - differentiable simulation
-  - wind modeling
-  - 3D Gaussian Splatting
-  - Material Point Method
+  - "ICLR 2026"
+  - "3D Vision"
+  - "physics-informed"
+  - "differentiable simulation"
+  - "wind modeling"
+  - "3D Gaussian Splatting"
+  - "Material Point Method"
 date: 2026-05-08
 content_hash: faae699c61a91c68
 ---

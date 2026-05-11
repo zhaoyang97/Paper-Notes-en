@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Arbitrary-Scale 3D Gaussian Super-Resolution
 description: >-
-  [AAAI 2026][3D Vision][3DGS] This paper proposes Arbi-3DGSR, an integrated framework that, for the first time, enables a single 3DGS model to support arbitrary-scale (including non-integer) high-resolution rendering through three core components: scale-aware rendering, generative prior-guided optimization, and progressive super-resolving. At ×5.7 scale, PSNR improves by 6.59 dB over vanilla 3DGS while maintaining real-time rendering at 85 FPS.
+  [AAAI 2026][3D Vision][3DGS] This paper proposes Arbi-3DGSR, an integrated framework that, for the first time, enables a single 3DGS model to support arbitrary-scale (including non-integer) high-resolution rendering thro…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - 3DGS
-  - arbitrary-scale super-resolution
-  - scale-aware rendering
-  - generative prior
-  - progressive training
+  - "AAAI 2026"
+  - "3D Vision"
+  - "3DGS"
+  - "arbitrary-scale super-resolution"
+  - "scale-aware rendering"
+  - "generative prior"
+  - "progressive training"
 date: 2026-05-08
 content_hash: e54ffb20b1383c6b
 ---

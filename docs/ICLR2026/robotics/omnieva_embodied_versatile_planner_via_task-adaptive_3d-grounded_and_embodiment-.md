@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OmniEVA: Embodied Versatile Planner via Task-Adaptive 3D-Grounded and Embodiment-aware Reasoning
 description: >-
-  [ICLR 2026][Robotics][MLLM] This paper proposes OmniEVA, which addresses two critical gaps in spatial MLLMs — poor geometric adaptability (2D-only or hard-coded 3D injection) and the absence of embodiment constraints (plans that are theoretically feasible but physically unexecutable) — via a task-adaptive gated router that dynamically injects 3D positional encodings only when geometric reasoning is required, and an embodiment-aware reasoning framework that integrates physical constraints into the planning loop. OmniEVA achieves state-of-the-art performance on 7 out of 8 benchmarks.
+  [ICLR 2026][Robotics][MLLM] This paper proposes OmniEVA, which addresses two critical gaps in spatial MLLMs — poor geometric adaptability (2D-only or hard-coded 3D injection) and the absence of embodiment constraints (pl…
 tags:
-  - ICLR 2026
-  - Robotics
-  - MLLM
-  - Task-Adaptive 3D Grounding
-  - Gated Routing
-  - Embodiment-aware Reasoning
-  - GRPO
+  - "ICLR 2026"
+  - "Robotics"
+  - "MLLM"
+  - "Task-Adaptive 3D Grounding"
+  - "Gated Routing"
+  - "Embodiment-aware Reasoning"
+  - "GRPO"
 date: 2026-05-08
 content_hash: ec2002b7c3ce5670
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Risk-Sensitive Agent Compositions
 description: >-
-  [ICLR 2026][AI Safety][Risk-Sensitive] This paper formalizes agent workflows as directed acyclic graphs (Agent Graphs), models safety/fairness/privacy requirements via a max loss function, and proposes the BucketedVaR algorithm, which combines union bounds with dynamic programming to find the optimal agent composition minimizing VaR/CVaR in polynomial time. The approach is proven to be asymptotically near-optimal under an independence assumption on agent losses.
+  [ICLR 2026][AI Safety][Risk-Sensitive] This paper formalizes agent workflows as directed acyclic graphs (Agent Graphs), models safety/fairness/privacy requirements via a max loss function…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - Risk-Sensitive
-  - Agent Composition
-  - VaR
-  - CVaR
-  - Dynamic Programming
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Risk-Sensitive"
+  - "Agent Composition"
+  - "VaR"
+  - "CVaR"
+  - "Dynamic Programming"
 date: 2026-05-08
 content_hash: ab5fb83612afb3c8
 ---

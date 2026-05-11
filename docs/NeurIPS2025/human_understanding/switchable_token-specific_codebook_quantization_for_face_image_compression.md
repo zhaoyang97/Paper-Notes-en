@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Switchable Token-Specific Codebook Quantization for Face Image Compression
 description: >-
-  [NeurIPS 2025][Human Understanding][face image compression] This paper proposes a Switchable Token-Specific Codebook Quantization (STSCQ) mechanism that employs a hierarchical dynamic structure combining image-level codebook routing and token-level codebook partitioning, achieving significant improvements in reconstruction quality and recognition accuracy for face image compression at ultra-low bitrates.
+  [NeurIPS 2025][Human Understanding][face image compression] This paper proposes a Switchable Token-Specific Codebook Quantization (STSCQ) mechanism that employs a hierarchical dynamic structure combining image-level code…
 tags:
-  - NeurIPS 2025
-  - Human Understanding
-  - face image compression
-  - vector quantization
-  - codebook learning
-  - low bitrate
-  - face recognition
+  - "NeurIPS 2025"
+  - "Human Understanding"
+  - "face image compression"
+  - "vector quantization"
+  - "codebook learning"
+  - "low bitrate"
+  - "face recognition"
 date: 2026-05-08
 content_hash: 62b988a96ee49cf9
 ---

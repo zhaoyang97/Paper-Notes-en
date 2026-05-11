@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] ACPV-Net: All-Class Polygonal Vectorization for Seamless Vector Map Generation from Aerial Imagery
 description: >-
-  [CVPR 2026][Remote Sensing][Polygonal Vectorization] ACPV-Net is the first framework that generates topologically consistent all-class polygonal vector maps from aerial imagery in a single pass, employing a semantically supervised conditional diffusion model for vertex heatmap generation and proposition-driven PSLG reconstruction to ensure zero gaps and zero overlaps.
+  [CVPR 2026][Remote Sensing][Polygonal Vectorization] ACPV-Net is the first framework that generates topologically consistent all-class polygonal vector maps from aerial imagery in a single pass…
 tags:
-  - CVPR 2026
-  - Remote Sensing
-  - Polygonal Vectorization
-  - Vector Map Generation
-  - Planar Partition
-  - Conditional Diffusion
-  - Topological Consistency
-  - Aerial Imagery
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Polygonal Vectorization"
+  - "Vector Map Generation"
+  - "Planar Partition"
+  - "Conditional Diffusion"
+  - "Topological Consistency"
+  - "Aerial Imagery"
 date: 2026-05-08
 content_hash: 1a2c98645c7eb158
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] OrdShap: Feature Position Importance for Sequential Black-Box Models
 description: >-
-  [NeurIPS 2025][Shapley Value] This paper proposes OrdShap, a feature attribution method for sequential models that, for the first time, decouples **Value Importance (VI)** from **Position Importance (PI)** for each feature, providing theoretical guarantees grounded in the Sanchez-Bergantiños game-theoretic value.
+  [NeurIPS 2025][Interpretability][Shapley Value] This paper proposes OrdShap, a feature attribution method for sequential models that, for the first time…
 tags:
-  - NeurIPS 2025
-  - Shapley Value
-  - Feature Position Importance
-  - Sequential Models
-  - Interpretability
-  - Sanchez-Bergantiños Value
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "Shapley Value"
+  - "Feature Position Importance"
+  - "Sequential Models"
+  - "Sanchez-Bergantiños Value"
 date: 2026-05-08
 content_hash: df69a5f8023cbbca
 ---

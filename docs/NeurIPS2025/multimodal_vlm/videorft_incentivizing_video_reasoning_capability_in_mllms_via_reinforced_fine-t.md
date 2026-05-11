@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VideoRFT: Incentivizing Video Reasoning Capability in MLLMs via Reinforced Fine-Tuning
 description: >-
-  [NeurIPS 2025][Multimodal VLM][video reasoning] This paper proposes VideoRFT, which extends the reinforced fine-tuning (RFT) paradigm to video reasoning via a cognition-inspired multi-expert CoT data construction pipeline and a novel semantic consistency reward. Two datasets are constructed: VideoRFT-CoT-102K (for SFT) and VideoRFT-RL-310K (for RL), achieving state-of-the-art performance on 6 video reasoning benchmarks.
+  [NeurIPS 2025][Multimodal VLM][video reasoning] This paper proposes VideoRFT, which extends the reinforced fine-tuning (RFT) paradigm to video reasoning via a cognition-inspired multi-expert CoT data construction pipelin…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - video reasoning
-  - reinforced fine-tuning
-  - chain-of-thought
-  - multimodal large language models
-  - semantic consistency reward
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "video reasoning"
+  - "reinforced fine-tuning"
+  - "chain-of-thought"
+  - "multimodal large language models"
+  - "semantic consistency reward"
 date: 2026-05-08
 content_hash: 805aa9db777ddd8e
 ---

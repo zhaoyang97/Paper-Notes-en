@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LASER: Layer-wise Scale Alignment for Training-Free Streaming 4D Reconstruction
 description: >-
-  [CVPR2026][Human Understanding][Streaming 4D Reconstruction] This paper proposes LASER, a training-free framework that converts offline feed-forward reconstruction models (e.g., VGGT, π³) into streaming systems via Layer-wise Scale Alignment (LSA), achieving real-time streaming 4D reconstruction of kilometer-scale videos at 14 FPS with 6 GB peak memory on an RTX A6000.
+  [CVPR2026][Human Understanding][Streaming 4D Reconstruction] This paper proposes LASER, a training-free framework that converts offline feed-forward reconstruction models (e.g., VGGT…
 tags:
-  - CVPR2026
-  - Human Understanding
-  - Streaming 4D Reconstruction
-  - Training-Free Framework
-  - Layer-wise Scale Alignment
-  - Sliding Window
-  - Sim(3) Registration
+  - "CVPR2026"
+  - "Human Understanding"
+  - "Streaming 4D Reconstruction"
+  - "Training-Free Framework"
+  - "Layer-wise Scale Alignment"
+  - "Sliding Window"
+  - "Sim(3) Registration"
 date: 2026-05-08
 content_hash: 18fa7c5c613e18f7
 ---

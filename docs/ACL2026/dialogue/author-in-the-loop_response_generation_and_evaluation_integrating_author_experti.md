@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Author-in-the-Loop Response Generation and Evaluation: Integrating Author Expertise and Intent in Responses to Peer Review
 description: >-
-  [ACL 2026][Dialogue Systems][author rebuttal generation] This paper reframes academic rebuttal generation as an "author-in-the-loop" task, contributing the Re3Align dataset (3.4K papers, 440K sentence-level edit annotations, 15K review–rebuttal–revision triples), the REspGen controllable generation framework, and the REspEval evaluation suite comprising 20+ metrics. The framework is systematically validated across 5 state-of-the-art LLMs, demonstrating the effectiveness of author input, controllability, and evaluation-guided refinement.
+  [ACL 2026][Dialogue Systems][author rebuttal generation] This paper reframes academic rebuttal generation as an "author-in-the-loop" task, contributing the Re3Align dataset (3.4K papers…
 tags:
-  - ACL 2026
-  - Dialogue Systems
-  - author rebuttal generation
-  - peer review
-  - human-in-the-loop
-  - controllable text generation
-  - evaluation framework
+  - "ACL 2026"
+  - "Dialogue Systems"
+  - "author rebuttal generation"
+  - "peer review"
+  - "human-in-the-loop"
+  - "controllable text generation"
+  - "evaluation framework"
 date: 2026-05-08
 content_hash: 900d71c1d1932609
 ---

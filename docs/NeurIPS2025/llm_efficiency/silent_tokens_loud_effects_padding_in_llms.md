@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Silent Tokens, Loud Effects: Padding in LLMs
 description: >-
-  [NeurIPS 2025][LLM Efficiency][Padding Token] This paper systematically investigates the effects of padding tokens on LLMs when they are not properly masked. The study finds that even a small number of padding tokens can drift hidden-layer representations, degrade generation quality, and unpredictably shift social biases. Critically, 128 padding tokens raise the harmful prompt attack success rate of Llama-3.1-8B from 8% to 77.5%, effectively constituting a jailbreak.
+  [NeurIPS 2025][LLM Efficiency][Padding Token] This paper systematically investigates the effects of padding tokens on LLMs when they are not properly masked. The study finds that even a small number of padding tokens can…
 tags:
-  - NeurIPS 2025
-  - LLM Efficiency
-  - Padding Token
-  - Robustness
-  - Safety Alignment
-  - Social Bias
-  - Inference Deployment
+  - "NeurIPS 2025"
+  - "LLM Efficiency"
+  - "Padding Token"
+  - "Robustness"
+  - "Safety Alignment"
+  - "Social Bias"
+  - "Inference Deployment"
 date: 2026-05-08
 content_hash: d6963b18b551c594
 ---

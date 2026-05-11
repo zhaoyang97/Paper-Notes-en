@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] E-BATS: Efficient Backpropagation-Free Test-Time Adaptation for Speech Foundation Models
 description: >-
-  [NeurIPS 2025][Audio & Speech][test-time adaptation] This paper proposes E-BATS, the first backpropagation-free test-time adaptation framework for speech foundation models. Through lightweight prompt adaptation, multi-scale loss functions, and a test-time EMA mechanism, E-BATS achieves 2.0×–6.4× GPU memory savings while maintaining competitive accuracy.
+  [NeurIPS 2025][Audio & Speech][test-time adaptation] This paper proposes E-BATS, the first backpropagation-free test-time adaptation framework for speech foundation models. Through lightweight prompt adaptation…
 tags:
-  - NeurIPS 2025
+  - "NeurIPS 2025"
   - "Audio & Speech"
-  - test-time adaptation
-  - speech foundation model
-  - backpropagation-free
-  - prompt tuning
-  - CMA-ES
+  - "test-time adaptation"
+  - "speech foundation model"
+  - "backpropagation-free"
+  - "prompt tuning"
+  - "CMA-ES"
 date: 2026-05-08
 content_hash: e3ce91eedcfa69d4
 ---

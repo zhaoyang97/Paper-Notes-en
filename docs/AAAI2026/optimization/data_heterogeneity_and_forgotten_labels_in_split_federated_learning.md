@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Data Heterogeneity and Forgotten Labels in Split Federated Learning
 description: >-
-  [AAAI 2026][Optimization][Split Federated Learning] This paper systematically investigates catastrophic forgetting (CF) caused by data heterogeneity in Split Federated Learning — with particular focus on intra-round forgetting induced by the server-side processing order — and proposes Hydra, a multi-head method that partitions and trains the final layers of part-2 in groups before aggregation, significantly reducing the performance gap (PG) across labels by up to 75.4%.
+  [AAAI 2026][Optimization][Split Federated Learning] This paper systematically investigates catastrophic forgetting (CF) caused by data heterogeneity in Split Federated Learning — with particular focus on intra-round forg…
 tags:
-  - AAAI 2026
-  - Optimization
-  - Split Federated Learning
-  - Catastrophic Forgetting
-  - Data Heterogeneity
-  - Multi-head
-  - Processing Order
+  - "AAAI 2026"
+  - "Optimization"
+  - "Split Federated Learning"
+  - "Catastrophic Forgetting"
+  - "Data Heterogeneity"
+  - "Multi-head"
+  - "Processing Order"
 date: 2026-05-08
 content_hash: 948d2bd5c7ca3a05
 ---

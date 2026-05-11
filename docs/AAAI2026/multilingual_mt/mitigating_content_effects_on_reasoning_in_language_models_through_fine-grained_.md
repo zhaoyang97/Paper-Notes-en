@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Mitigating Content Effects on Reasoning in Language Models through Fine-Grained Activation Steering
 description: >-
-  [AAAI 2026][content effects] This paper applies activation steering to mitigate content effects in LLMs — the tendency to conflate content believability with formal logical validity. The proposed K-CAST (kNN-based Conditional Activation Steering) method achieves up to 15% improvement in formal reasoning accuracy on models unresponsive to standard static steering.
+  [AAAI 2026][Multilingual & Machine Translation][content effects] This paper applies activation steering to mitigate content effects in LLMs — the tendency to conflate content believability with formal logical validity. T…
 tags:
-  - AAAI 2026
-  - content effects
-  - activation steering
-  - syllogistic reasoning
-  - formal logic
-  - reasoning bias
+  - "AAAI 2026"
+  - "Multilingual & Machine Translation"
+  - "content effects"
+  - "activation steering"
+  - "syllogistic reasoning"
+  - "formal logic"
+  - "reasoning bias"
 date: 2026-05-08
 content_hash: 07671e54f411e4d1
 ---

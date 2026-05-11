@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Addressing Mark Imbalance in Integration-free Neural Marked Temporal Point Processes
 description: >-
-  [NeurIPS 2025][marked temporal point processes] This paper is the first to systematically reveal the severe impact of mark distribution imbalance on prediction performance in marked temporal point processes (MTPP). It proposes a mark-first-then-time prediction strategy, designs a thresholding method to calibrate the predicted probabilities of rare marks, and develops the integration-free IFNMTPP model to efficiently support mark probability estimation and time sampling.
+  [NeurIPS 2025][marked temporal point processes] This paper is the first to systematically reveal the severe impact of mark distribution imbalance on prediction performance in marked temporal point processes (MTPP). It pr…
 tags:
-  - NeurIPS 2025
-  - marked temporal point processes
-  - mark imbalance
-  - thresholding method
-  - integration-free approximation
-  - event prediction
+  - "NeurIPS 2025"
+  - "marked temporal point processes"
+  - "mark imbalance"
+  - "thresholding method"
+  - "integration-free approximation"
+  - "event prediction"
 date: 2026-05-08
 content_hash: 7c4d5bd306730e51
 ---

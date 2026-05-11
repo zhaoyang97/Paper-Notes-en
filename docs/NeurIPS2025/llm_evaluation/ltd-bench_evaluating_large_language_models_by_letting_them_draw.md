@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] LTD-Bench: Evaluating Large Language Models by Letting Them Draw
 description: >-
-  [NeurIPS 2025][LLM Evaluation] LTD-Bench evaluates the spatial reasoning capabilities of LLMs by having them draw (via dot-matrix output or code-based rendering), transforming abstract evaluation metrics into intuitive visual outputs. The benchmark reveals critical deficiencies in current state-of-the-art LLMs regarding bidirectional mapping between linguistic and spatial concepts.
+  [NeurIPS 2025][LLM Evaluation][spatial reasoning] LTD-Bench evaluates the spatial reasoning capabilities of LLMs by having them draw (via dot-matrix output or code-based rendering)…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - spatial reasoning
-  - visual generation
-  - benchmark
-  - drawing ability
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "spatial reasoning"
+  - "visual generation"
+  - "benchmark"
+  - "drawing ability"
 date: 2026-05-08
 content_hash: b8c806a9d0636b07
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DAMP: Class Unlearning via Depth-Aware Removal of Forget-Specific Directions
 description: >-
-  [CVPR 2026][LLM Safety][machine unlearning] Proposes DAMP (Depth-Aware Modulation via Projection), a one-shot closed-form weight surgery method for class unlearning that achieves selective forgetting by removing forget-class-specific directions in the editing space of each network stage, with a depth-aware scaling rule enforcing conservative edits in shallow layers and aggressive edits in deep layers.
+  [CVPR 2026][LLM Safety][machine unlearning] Proposes DAMP (Depth-Aware Modulation via Projection), a one-shot closed-form weight surgery method for class unlearning that achieves selective forgetting by removing forget-c…
 tags:
-  - CVPR 2026
-  - LLM Safety
-  - machine unlearning
-  - class forgetting
-  - weight surgery
-  - projection
-  - depth-aware
+  - "CVPR 2026"
+  - "LLM Safety"
+  - "machine unlearning"
+  - "class forgetting"
+  - "weight surgery"
+  - "projection"
+  - "depth-aware"
 date: 2026-05-08
 content_hash: ab930b6b7280f773
 ---

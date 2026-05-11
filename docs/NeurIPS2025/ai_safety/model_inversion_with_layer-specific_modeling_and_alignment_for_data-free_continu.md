@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Model Inversion with Layer-Specific Modeling and Alignment for Data-Free Continual Learning
 description: >-
-  [NeurIPS 2025][AI Safety][Model inversion] This paper proposes Per-layer Model Inversion (PMI) for data-free continual learning to accelerate synthetic image generation, and mitigates the feature drift between synthetic and real data via class-level Gaussian feature modeling and contrastive learning, achieving efficient and high-quality data-free knowledge replay.
+  [NeurIPS 2025][AI Safety][Model inversion] This paper proposes Per-layer Model Inversion (PMI) for data-free continual learning to accelerate synthetic image generation…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - Model inversion
-  - data-free continual learning
-  - per-layer optimization
-  - feature alignment
-  - privacy preservation
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "Model inversion"
+  - "data-free continual learning"
+  - "per-layer optimization"
+  - "feature alignment"
+  - "privacy preservation"
 date: 2026-05-08
 content_hash: b24bbfe76624e27e
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Collaborative LLM Numerical Reasoning with Local Data Protection
 description: >-
-  [AAAI 2026][LLM/NLP][privacy-preserving reasoning] This paper proposes a large-small model collaboration framework that protects sensitive local data through a two-stage anonymization pipeline — topic shifting followed by numerical substitution — applied to local queries. The remote GPT-4 returns reasoning solutions as executable Python code (plug-and-play tools), and the local model only needs to perform numerical back-substitution to obtain the final answer. The framework achieves 16–44% accuracy improvements on FinQA and MultiHiertt while reducing data leakage by 2–45%.
+  [AAAI 2026][LLM/NLP][privacy-preserving reasoning] This paper proposes a large-small model collaboration framework that protects sensitive local data through a two-stage anonymization pipeline — topic shifting followed b…
 tags:
-  - AAAI 2026
-  - LLM/NLP
-  - privacy-preserving reasoning
-  - numerical reasoning
-  - model collaboration
-  - topic shifting
-  - code-as-tool
+  - "AAAI 2026"
+  - "LLM/NLP"
+  - "privacy-preserving reasoning"
+  - "numerical reasoning"
+  - "model collaboration"
+  - "topic shifting"
+  - "code-as-tool"
 date: 2026-05-08
 content_hash: 2659d97a8c2fbf85
 ---

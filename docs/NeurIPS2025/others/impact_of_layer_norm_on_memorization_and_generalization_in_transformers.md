@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Impact of Layer Norm on Memorization and Generalization in Transformers
 description: >-
-  [NeurIPS 2025][Layer Normalization] This work systematically reveals the **fundamentally distinct** roles of LayerNorm in Pre-LN and Post-LN Transformers: in Pre-LN, LN is essential for learning and its removal disrupts generalization; in Post-LN, LN drives memorization and its removal suppresses memorization while recovering true labels.
+  [NeurIPS 2025][Layer Normalization] This work systematically reveals the **fundamentally distinct** roles of LayerNorm in Pre-LN and Post-LN Transformers: in Pre-LN…
 tags:
-  - NeurIPS 2025
-  - Layer Normalization
-  - memorization
-  - generalization
-  - Pre-LN
-  - Post-LN
+  - "NeurIPS 2025"
+  - "Layer Normalization"
+  - "memorization"
+  - "generalization"
+  - "Pre-LN"
+  - "Post-LN"
 date: 2026-05-08
 content_hash: e523455fb9da3d40
 ---

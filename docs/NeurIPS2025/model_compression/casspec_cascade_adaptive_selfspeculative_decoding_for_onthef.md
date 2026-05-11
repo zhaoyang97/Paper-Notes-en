@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] CAS-Spec: Cascade Adaptive Self-Speculative Decoding for On-the-Fly Lossless Inference Acceleration of LLMs
 description: >-
-  [NeurIPS 2025][Model Compression][speculative decoding] CAS-Spec constructs a multi-level draft model hierarchy from the target model itself via Dynamically Switchable Inference Acceleration (DSIA) strategies (e.g., layer sparsity at varying degrees), and employs the Dynamic Tree Cascade (DyTC) algorithm to adaptively route among draft models and allocate draft lengths based on online acceptance rates and latency predictions. The approach achieves lossless inference acceleration of 1.1×–2.3× in a fully training-free manner, with DyTC yielding gains of 47% and 48% over cascade and tree baselines, respectively.
+  [NeurIPS 2025][Model Compression][speculative decoding] CAS-Spec constructs a multi-level draft model hierarchy from the target model itself via Dynamically Switchable Inference Acceleration (DSIA) strategies (e.g.…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - speculative decoding
-  - self-speculative
-  - cascade
-  - layer sparsity
-  - training-free
-  - DyTC
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "speculative decoding"
+  - "self-speculative"
+  - "cascade"
+  - "layer sparsity"
+  - "training-free"
+  - "DyTC"
 date: 2026-05-08
 content_hash: e456f2d62852e8d1
 ---

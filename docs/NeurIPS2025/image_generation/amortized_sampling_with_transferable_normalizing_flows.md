@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Amortized Sampling with Transferable Normalizing Flows
 description: >-
-  [NeurIPS 2025][Image Generation][normalizing flow] This work proposes Prose — a 285M-parameter all-atom transferable normalizing flow based on the TarFlow architecture, trained on 21,700 short-peptide MD trajectories (totaling 4.3 ms of simulation time). Prose enables zero-shot uncorrelated proposal sampling for arbitrary short-peptide systems, outperforms MD baselines under equal energy evaluation budgets, and generates samples 4,000× faster than the prior transferable Boltzmann generator (TBG).
+  [NeurIPS 2025][Image Generation][normalizing flow] This work proposes Prose — a 285M-parameter all-atom transferable normalizing flow based on the TarFlow architecture, trained on 21…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - normalizing flow
-  - Boltzmann generator
-  - transferable sampler
-  - peptide
-  - importance sampling
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "normalizing flow"
+  - "Boltzmann generator"
+  - "transferable sampler"
+  - "peptide"
+  - "importance sampling"
 date: 2026-05-08
 content_hash: e483e31ff70d38eb
 ---

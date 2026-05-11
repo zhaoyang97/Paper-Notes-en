@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Quantifying Generalisation in Imitation Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][imitation learning] This paper proposes the Labyrinth benchmark environment, which achieves strict separation between training and evaluation data through controllable maze structure variations. It reveals severe deficiencies in the structural generalisation of current imitation learning methods (best method achieves only 5% success rate on the test set) and provides a systematic tool for evaluating generalisation in imitation learning.
+  [NeurIPS 2025][Reinforcement Learning][imitation learning] This paper proposes the Labyrinth benchmark environment, which achieves strict separation between training and evaluation data through controllable maze structur…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - imitation learning
-  - generalisation evaluation
-  - benchmark environment
-  - maze navigation
-  - benchmark
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "imitation learning"
+  - "generalisation evaluation"
+  - "benchmark environment"
+  - "maze navigation"
+  - "benchmark"
 date: 2026-05-08
 content_hash: 4af6652cf7514742
 ---

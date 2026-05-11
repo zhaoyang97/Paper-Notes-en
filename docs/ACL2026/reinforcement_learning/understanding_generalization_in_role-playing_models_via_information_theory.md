@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Understanding Generalization in Role-Playing Models via Information Theory
 description: >-
-  [ACL 2026][Reinforcement Learning][Role-Playing Models] This paper proposes R-EMID, the first information-theoretic framework for quantifying performance degradation in role-playing models (RPMs) under user, character, and dialogue distribution shifts. By incorporating reasoning processes and Co-evolutionary Reinforcement Learning (CoRL), the framework enables accurate estimation of this metric. Key findings reveal that user shift poses the greatest generalization risk, and reinforcement learning is the only consistently effective training strategy.
+  [ACL 2026][Reinforcement Learning][Role-Playing Models] This paper proposes R-EMID, the first information-theoretic framework for quantifying performance degradation in role-playing models (RPMs) under user, character…
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - Role-Playing Models
-  - Generalization
-  - Information Theory
-  - Distribution Shift
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "Role-Playing Models"
+  - "Generalization"
+  - "Information Theory"
+  - "Distribution Shift"
 date: 2026-05-08
 content_hash: 9026b09fd3d040b3
 ---

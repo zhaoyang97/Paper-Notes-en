@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Synchronization of Multiple Videos
 description: >-
-  [ICCV 2025][LLM Pretraining][Video Synchronization] This paper proposes Temporal Prototype Learning (TPL), a prototype-based video synchronization framework that constructs shared compact 1D representations from high-dimensional embeddings extracted by pretrained models. By learning a unified prototype sequence to anchor key action phases, TPL aligns multiple videos jointly and, for the first time, addresses the synchronization of generative AI videos.
+  [ICCV 2025][LLM Pretraining][Video Synchronization] This paper proposes Temporal Prototype Learning (TPL), a prototype-based video synchronization framework that constructs shared compact 1D representations from high-dim…
 tags:
-  - ICCV 2025
-  - LLM Pretraining
-  - Video Synchronization
-  - Temporal Prototype Learning
-  - Temporal Alignment
-  - Dynamic Time Warping
-  - Generative AI Video
+  - "ICCV 2025"
+  - "LLM Pretraining"
+  - "Video Synchronization"
+  - "Temporal Prototype Learning"
+  - "Temporal Alignment"
+  - "Dynamic Time Warping"
+  - "Generative AI Video"
 date: 2026-05-08
 content_hash: 12007de1daf134a1
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CoD: A Diffusion Foundation Model for Image Compression
 description: >-
-  [CVPR 2026][Image Generation][Compression-oriented diffusion] This paper proposes CoD, the first diffusion foundation model designed for image compression. Trained from scratch for joint compression-generation optimization, CoD replaces Stable Diffusion in downstream diffusion codecs and achieves state-of-the-art performance at ultra-low bitrates (0.0039 bpp), with a training cost of only 0.3% of that required by SD.
+  [CVPR 2026][Image Generation][Compression-oriented diffusion] This paper proposes CoD, the first diffusion foundation model designed for image compression. Trained from scratch for joint compression-generation optimizati…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Compression-oriented diffusion
-  - foundation model
-  - rectified flow
-  - pixel-space diffusion
-  - rate-distortion-perception
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Compression-oriented diffusion"
+  - "foundation model"
+  - "rectified flow"
+  - "pixel-space diffusion"
+  - "rate-distortion-perception"
 date: 2026-05-08
 content_hash: 51db66487eb5fc1a
 ---

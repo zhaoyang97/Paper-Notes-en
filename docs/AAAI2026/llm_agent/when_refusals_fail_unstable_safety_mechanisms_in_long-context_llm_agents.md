@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] When Refusals Fail: Unstable Safety Mechanisms in Long-Context LLM Agents
 description: >-
-  [AAAI 2026][LLM Agent][LLM Safety] This paper systematically investigates how long-context padding affects the safety behavior of LLM agents. Models claiming support for 1M–2M token windows exhibit performance collapse exceeding 50% at 100K tokens. Refusal rates fluctuate in unpredictable directions (GPT-4.1-nano rises from 5% to 40%; Grok 4 Fast drops from 80% to 10%), revealing critical safety vulnerabilities in long-context agent systems.
+  [AAAI 2026][LLM Agent][LLM Safety] This paper systematically investigates how long-context padding affects the safety behavior of LLM agents. Models claiming support for 1M–2M token windows exhibit performance collapse e…
 tags:
-  - AAAI 2026
-  - LLM Agent
-  - LLM Safety
-  - Long Context
-  - Agent Safety
-  - Refusal Mechanism
-  - AgentHarm
+  - "AAAI 2026"
+  - "LLM Agent"
+  - "LLM Safety"
+  - "Long Context"
+  - "Agent Safety"
+  - "Refusal Mechanism"
+  - "AgentHarm"
 date: 2026-05-08
 content_hash: 01367c45215ec803
 ---

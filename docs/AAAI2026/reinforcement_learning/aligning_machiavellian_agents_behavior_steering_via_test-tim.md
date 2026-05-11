@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Aligning Machiavellian Agents: Behavior Steering via Test-Time Policy Shaping
 description: >-
-  [AAAI 2026][Reinforcement Learning][Test-time alignment] This paper proposes a test-time policy shaping method that interpolates and modifies the action probability distribution of pretrained RL agents at inference time using lightweight ethical attribute classifiers, enabling fine-grained behavioral steering across multiple ethical attributes without retraining.
+  [AAAI 2026][Reinforcement Learning][Test-time alignment] This paper proposes a test-time policy shaping method that interpolates and modifies the action probability distribution of pretrained RL agents at inference time…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - Test-time alignment
-  - policy shaping
-  - ethical behavior steering
-  - Machiavellian agents
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "Test-time alignment"
+  - "policy shaping"
+  - "ethical behavior steering"
+  - "Machiavellian agents"
 date: 2026-05-08
 content_hash: 612b511de06083ae
 ---

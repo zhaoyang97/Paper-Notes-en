@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Martingale Score: An Unsupervised Metric for Bayesian Rationality in LLM Reasoning
 description: >-
-  [NeurIPS 2025][Time Series][Martingale Score] This paper proposes the Martingale Score as an unsupervised metric that quantifies belief entrenchment in LLM reasoning processes based on the martingale property from Bayesian statistics. The study finds that belief entrenchment is pervasive across models and domains, and is significantly correlated with degraded accuracy.
+  [NeurIPS 2025][Time Series][Martingale Score] This paper proposes the Martingale Score as an unsupervised metric that quantifies belief entrenchment in LLM reasoning processes based on the martingale property from Bayesi…
 tags:
-  - NeurIPS 2025
-  - Time Series
-  - Martingale Score
-  - belief entrenchment
-  - Bayesian rationality
-  - LLM reasoning
-  - unsupervised evaluation
+  - "NeurIPS 2025"
+  - "Time Series"
+  - "Martingale Score"
+  - "belief entrenchment"
+  - "Bayesian rationality"
+  - "LLM reasoning"
+  - "unsupervised evaluation"
 date: 2026-05-08
 content_hash: a62dd158b33ac371
 ---

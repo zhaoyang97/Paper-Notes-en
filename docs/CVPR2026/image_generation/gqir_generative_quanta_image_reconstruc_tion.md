@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] gQIR: Generative Quanta Image Reconstruction
 description: >-
-  [CVPR 2026][Image Generation][Single-photon sensor] This work adapts a large-scale text-to-image latent diffusion model to the extreme photon-limited imaging regime of single-photon avalanche diodes (SPADs) via a three-stage framework—Quanta-aligned VAE → adversarially fine-tuned LoRA U-Net → FusionViT spatiotemporal fusion—enabling high-quality RGB image reconstruction from sparse binary photon detections and significantly outperforming all existing methods under extreme conditions of 10K–100K fps.
+  [CVPR 2026][Image Generation][Single-photon sensor] This work adapts a large-scale text-to-image latent diffusion model to the extreme photon-limited imaging regime of single-photon avalanche diodes (SPADs) via a three-s…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Single-photon sensor
-  - diffusion model
-  - image reconstruction
-  - burst imaging
-  - VAE alignment
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Single-photon sensor"
+  - "diffusion model"
+  - "image reconstruction"
+  - "burst imaging"
+  - "VAE alignment"
 date: 2026-05-08
 content_hash: 3218b238d94933e7
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dependency Parsing is More Parameter-Efficient with Normalization
 description: >-
-  [NeurIPS 2025][Model Compression][dependency parsing] This paper identifies that the lack of normalization in biaffine scoring for dependency and semantic parsing leads to systematic overparameterization, and demonstrates that a simple $1/\sqrt{d}$ scaling can reduce BiLSTM parameters by up to 85% while matching or surpassing original performance.
+  [NeurIPS 2025][Model Compression][dependency parsing] This paper identifies that the lack of normalization in biaffine scoring for dependency and semantic parsing leads to systematic overparameterization…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - dependency parsing
-  - biaffine scoring
-  - normalization
-  - parameter efficiency
-  - overparameterization
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "dependency parsing"
+  - "biaffine scoring"
+  - "normalization"
+  - "parameter efficiency"
+  - "overparameterization"
 date: 2026-05-08
 content_hash: 0996b5bd23522db4
 ---

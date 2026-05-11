@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dynamic Emotion and Personality Profiling for Multimodal Deception Detection
 description: >-
-  [ACL 2026][Multimodal VLM][Deception Detection] This paper identifies that existing deception detection datasets provide only participant-level emotion/personality labels (all samples from the same subject share identical labels), and proposes a sample-level dynamic annotation scheme along with a reliability-weighted multimodal fusion framework, Rel-DDEP, achieving improvements of 2.53% in deception detection F1, 2.66% in emotion detection F1, and 9.30% in personality detection F1.
+  [ACL 2026][Multimodal VLM][Deception Detection] This paper identifies that existing deception detection datasets provide only participant-level emotion/personality labels (all samples from the same subject share identica…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Deception Detection
-  - Dynamic Emotion Annotation
-  - Personality Profiling
-  - Reliability-Weighted Fusion
-  - Multimodal
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Deception Detection"
+  - "Dynamic Emotion Annotation"
+  - "Personality Profiling"
+  - "Reliability-Weighted Fusion"
+  - "Multimodal"
 date: 2026-05-08
 content_hash: c9ce068dc5cecabf
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Topo-R1: Detecting Topological Anomalies via Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Topological anomaly detection] Topo-R1 is proposed as the first framework to equip VLMs with topology-aware perception. Through an automated data construction pipeline combined with SFT and GRPO reinforcement learning (incorporating a topology-aware composite reward), it enables annotation-free topological anomaly detection and classification in tubular structures.
+  [CVPR 2026][Multimodal VLM][Topological anomaly detection] Topo-R1 is proposed as the first framework to equip VLMs with topology-aware perception. Through an automated data construction pipeline combined with SFT and GR…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Topological anomaly detection
-  - tubular structure segmentation
-  - GRPO reinforcement learning
-  - clDice
-  - VLM fine-grained perception
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Topological anomaly detection"
+  - "tubular structure segmentation"
+  - "GRPO reinforcement learning"
+  - "clDice"
+  - "VLM fine-grained perception"
 date: 2026-05-08
 content_hash: 5464318730266d26
 ---

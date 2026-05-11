@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MAR-FL: A Communication Efficient Peer-to-Peer Federated Learning System
 description: >-
-  [NeurIPS 2025][Optimization][Federated Learning] This paper proposes MAR-FL, a system that reduces the communication complexity of P2P federated learning from $O(N^2)$ to $O(N \log N)$ via a Moshpit All-Reduce mechanism and dynamic group aggregation, while maintaining robustness against network jitter.
+  [NeurIPS 2025][Optimization][Federated Learning] This paper proposes MAR-FL, a system that reduces the communication complexity of P2P federated learning from $O(N^2)$ to $O(N \log N)$ via a Moshpit All-Reduce mechanism…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Federated Learning
-  - P2P Communication
-  - Moshpit All-Reduce
-  - Differential Privacy
-  - Knowledge Distillation
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Federated Learning"
+  - "P2P Communication"
+  - "Moshpit All-Reduce"
+  - "Differential Privacy"
+  - "Knowledge Distillation"
 date: 2026-05-08
 content_hash: 75445b06d144543d
 ---

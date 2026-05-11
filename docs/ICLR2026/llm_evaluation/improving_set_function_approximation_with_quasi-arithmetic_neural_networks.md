@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Improving Set Function Approximation with Quasi-Arithmetic Neural Networks
 description: >-
-  [ICLR 2026][LLM Evaluation][set functions] This paper proposes QUANN (Quasi-Arithmetic Neural Networks), which employs invertible neural networks to implement a learnable Kolmogorov mean as the pooling operation. It is the first to realize a machine-learning instantiation of generalized measures of central tendency. QUANN serves as a universal approximator for mean-decomposable set functions, and the learned embeddings exhibit stronger cross-task transferability.
+  [ICLR 2026][LLM Evaluation][set functions] This paper proposes QUANN (Quasi-Arithmetic Neural Networks), which employs invertible neural networks to implement a learnable Kolmogorov mean as the pooling operation. It is t…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - set functions
-  - Kolmogorov mean
-  - invertible networks
-  - learnable pooling
-  - permutation invariance
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "set functions"
+  - "Kolmogorov mean"
+  - "invertible networks"
+  - "learnable pooling"
+  - "permutation invariance"
 date: 2026-05-08
 content_hash: ffe10174e647c230
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] HorizonForge: Driving Scene Editing with Any Trajectories and Any Vehicles
 description: >-
-  [CVPR2026][Autonomous Driving][Driving Scene Editing] HorizonForge proposes a unified framework that reconstructs driving scenes as editable Gaussian Splats combined with Mesh representations, enabling fine-grained 3D manipulation via trajectory control and language-driven vehicle insertion. A video diffusion model then renders spatiotemporally consistent, high-quality driving videos. The method achieves a user preference rate of 91.02%, decisively outperforming all baselines.
+  [CVPR2026][Autonomous Driving][Driving Scene Editing] HorizonForge proposes a unified framework that reconstructs driving scenes as editable Gaussian Splats combined with Mesh representations…
 tags:
-  - CVPR2026
-  - Autonomous Driving
-  - Driving Scene Editing
-  - 3D Gaussian Splatting
-  - Video Diffusion Models
-  - Trajectory Control
-  - Mesh Insertion
-  - Multi-Agent Simulation
+  - "CVPR2026"
+  - "Autonomous Driving"
+  - "Driving Scene Editing"
+  - "3D Gaussian Splatting"
+  - "Video Diffusion Models"
+  - "Trajectory Control"
+  - "Mesh Insertion"
+  - "Multi-Agent Simulation"
 date: 2026-05-08
 content_hash: c65cf7dbcfbcdc09
 ---

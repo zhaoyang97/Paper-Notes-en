@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Stable Score Distillation
 description: >-
-  [ICCV 2025][3D Vision][Score Distillation] This paper proposes Stable Score Distillation (SSD), which achieves more stable and precise text-guided 2D/3D editing through single-classifier cross-prompt guidance and cross-trajectory regularization via a null-text branch, improving editing alignment while preserving the structural content of the source.
+  [ICCV 2025][3D Vision][Score Distillation] This paper proposes Stable Score Distillation (SSD), which achieves more stable and precise text-guided 2D/3D editing through single-classifier cross-prompt guidance and cross-t…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Score Distillation
-  - 3D Scene Editing
-  - 2D Image Editing
-  - Diffusion Models
-  - Classifier-Free Guidance
-  - NeRF
-  - 3DGS
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Score Distillation"
+  - "3D Scene Editing"
+  - "2D Image Editing"
+  - "Diffusion Models"
+  - "Classifier-Free Guidance"
+  - "NeRF"
+  - "3DGS"
 date: 2026-05-08
 content_hash: 5f83d5701c5ccf29
 ---

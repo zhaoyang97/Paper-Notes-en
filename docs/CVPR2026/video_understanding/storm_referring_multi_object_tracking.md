@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] STORM: End-to-End Referring Multi-Object Tracking in Videos
 description: >-
-  [CVPR 2026][Video Understanding][Referring Multi-Object Tracking] STORM is the first end-to-end multimodal large language model framework for Referring Multi-Object Tracking (RMOT). It substantially reduces reliance on RMOT-annotated data through a task composition learning strategy and introduces the high-quality STORM-Bench dataset.
+  [CVPR 2026][Video Understanding][Referring Multi-Object Tracking] STORM is the first end-to-end multimodal large language model framework for Referring Multi-Object Tracking (RMOT). It substantially reduces reliance on R…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Referring Multi-Object Tracking
-  - Multimodal Large Language Models
-  - Task Composition Learning
-  - Dataset
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Referring Multi-Object Tracking"
+  - "Multimodal Large Language Models"
+  - "Task Composition Learning"
+  - "Dataset"
 date: 2026-05-08
 content_hash: 590345234442351c
 ---

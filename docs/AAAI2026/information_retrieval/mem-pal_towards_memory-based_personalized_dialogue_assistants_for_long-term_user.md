@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Mem-PAL: Towards Memory-based Personalized Dialogue Assistants for Long-term User-Agent Interaction
 description: >-
-  [AAAI 2026][Personalized Dialogue] This paper proposes H2Memory, a four-layer hierarchical heterogeneous memory structure (Log Graphs / Background Memory / Topic Outlines / Principles), validated on the PAL-Set dataset (100 users × 8.4 months of interaction), improving BLEU-1 on demand paraphrasing and solution recommendation tasks from 13.59 to 26.67.
+  [AAAI 2026][Information Retrieval & RAG][Personalized Dialogue] This paper proposes H2Memory, a four-layer hierarchical heterogeneous memory structure (Log Graphs / Background Memory / Topic Outlines / Principles)…
 tags:
-  - AAAI 2026
-  - Personalized Dialogue
-  - Long-term Memory
-  - Hierarchical Memory
-  - User Modeling
-  - Dialogue Assistant
+  - "AAAI 2026"
+  - "Information Retrieval & RAG"
+  - "Personalized Dialogue"
+  - "Long-term Memory"
+  - "Hierarchical Memory"
+  - "User Modeling"
+  - "Dialogue Assistant"
 date: 2026-05-08
 content_hash: ae76ed5e6d16a7c4
 ---

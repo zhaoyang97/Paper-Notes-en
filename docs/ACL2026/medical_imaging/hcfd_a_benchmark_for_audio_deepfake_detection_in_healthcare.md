@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HCFD: A Benchmark for Audio Deepfake Detection in Healthcare
 description: >-
-  [ACL 2026][Medical Imaging][Audio deepfake detection] This paper introduces HCFD, a codec-based audio deepfake detection task for healthcare settings. It constructs HCFK, the first codec-forged speech dataset covering multiple clinical pathological conditions (depression, Alzheimer's disease, dysarthria), and proposes the PHOENIX-Mamba framework, which models heterogeneous forgery evidence prototypes in hyperbolic space, achieving 97.04% accuracy on English depression detection.
+  [ACL 2026][Medical Imaging][Audio deepfake detection] This paper introduces HCFD, a codec-based audio deepfake detection task for healthcare settings. It constructs HCFK…
 tags:
-  - ACL 2026
-  - Medical Imaging
-  - Audio deepfake detection
-  - pathological speech
-  - neural audio codec
-  - hyperbolic space prototypes
-  - healthcare security
+  - "ACL 2026"
+  - "Medical Imaging"
+  - "Audio deepfake detection"
+  - "pathological speech"
+  - "neural audio codec"
+  - "hyperbolic space prototypes"
+  - "healthcare security"
 date: 2026-05-08
 content_hash: 5ca57bfd0c443e47
 ---

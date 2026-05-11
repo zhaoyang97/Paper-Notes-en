@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LUSD: Localized Update Score Distillation for Text-Guided Image Editing
 description: >-
-  [ICCV 2025][Image Generation][Score Distillation] LUSD addresses the failure modes of existing score distillation methods in image editing (particularly object insertion) through two simple modifications—attention-based spatial regularization and gradient filtering-normalization—which resolve instabilities caused by large disparities in gradient magnitude and spatial distribution, achieving a better balance between prompt fidelity and background preservation.
+  [ICCV 2025][Image Generation][Score Distillation] LUSD addresses the failure modes of existing score distillation methods in image editing (particularly object insertion) through two simple modifications—attention-based…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Score Distillation
-  - Text-Guided Image Editing
-  - Attention Regularization
-  - Gradient Normalization
-  - Diffusion Prior
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Score Distillation"
+  - "Text-Guided Image Editing"
+  - "Attention Regularization"
+  - "Gradient Normalization"
+  - "Diffusion Prior"
 date: 2026-05-08
 content_hash: 253b5479ae2224c5
 ---

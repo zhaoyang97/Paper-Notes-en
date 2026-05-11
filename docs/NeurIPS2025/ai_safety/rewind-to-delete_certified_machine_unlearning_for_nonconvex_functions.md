@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Rewind-to-Delete: Certified Machine Unlearning for Nonconvex Functions
 description: >-
-  [NeurIPS 2025][AI Safety][machine unlearning] This paper proposes R2D (Rewind-to-Delete), the first first-order, black-box certified machine unlearning algorithm for general nonconvex loss functions. It achieves data deletion by rewinding to an earlier checkpoint in the training trajectory and then performing gradient descent on the retained data, while providing $(ε, δ)$-certified unlearning guarantees and theoretical trade-offs among privacy, utility, and efficiency.
+  [NeurIPS 2025][AI Safety][machine unlearning] This paper proposes R2D (Rewind-to-Delete), the first first-order, black-box certified machine unlearning algorithm for general nonconvex loss functions. It achieves data del…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - machine unlearning
-  - differential privacy
-  - nonconvex optimization
-  - certified unlearning
-  - privacy protection
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "machine unlearning"
+  - "differential privacy"
+  - "nonconvex optimization"
+  - "certified unlearning"
+  - "privacy protection"
 date: 2026-05-08
 content_hash: 611a055b63cdb815
 ---

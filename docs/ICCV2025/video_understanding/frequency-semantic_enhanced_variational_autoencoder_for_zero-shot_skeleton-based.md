@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Frequency-Semantic Enhanced Variational Autoencoder for Zero-Shot Skeleton-based Action Recognition
 description: >-
-  [ICCV 2025][Video Understanding][Zero-shot action recognition] This paper proposes FS-VAE (Frequency-Semantic Enhanced Variational Autoencoder), which achieves significant performance gains in zero-shot skeleton-based action recognition through three key contributions: frequency decomposition for enhanced skeleton semantic learning, multilevel semantic alignment to bridge the visual-text modality gap, and a calibrated cross-alignment loss to mitigate alignment ambiguity.
+  [ICCV 2025][Video Understanding][Zero-shot action recognition] This paper proposes FS-VAE (Frequency-Semantic Enhanced Variational Autoencoder)…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - Zero-shot action recognition
-  - skeleton sequences
-  - frequency decomposition
-  - semantic alignment
-  - variational autoencoder
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "Zero-shot action recognition"
+  - "skeleton sequences"
+  - "frequency decomposition"
+  - "semantic alignment"
+  - "variational autoencoder"
 date: 2026-05-08
 content_hash: 27f0fda802e2d001
 ---

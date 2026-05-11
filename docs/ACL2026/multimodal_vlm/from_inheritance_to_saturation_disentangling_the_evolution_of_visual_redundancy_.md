@@ -4,9 +4,9 @@ title: >-
 description: >-
   [ACL 2026][Multimodal VLM][To be supplemented] To be supplemented after thorough reading.
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - To be supplemented
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "To be supplemented"
 date: 2026-05-08
 content_hash: f67321fe496322a8
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Interpretable Debiasing of Vision-Language Models for Social Fairness
 description: >-
-  [CVPR 2026][Multimodal VLM][VLM debiasing] This paper proposes DeBiasLens, which trains a Sparse Autoencoder (SAE) on VLM encoders to localize "social neurons" encoding social attributes, then selectively deactivates these neurons at inference time to mitigate bias. The method reduces Max Skew by 9–16% on CLIP and reduces gender bias rates by 40–50% on InternVL2, while preserving general performance.
+  [CVPR 2026][Multimodal VLM][VLM debiasing] This paper proposes DeBiasLens, which trains a Sparse Autoencoder (SAE) on VLM encoders to localize "social neurons" encoding social attributes…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - VLM debiasing
-  - social fairness
-  - sparse autoencoder
-  - interpretability
-  - neuron manipulation
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "VLM debiasing"
+  - "social fairness"
+  - "sparse autoencoder"
+  - "interpretability"
+  - "neuron manipulation"
 date: 2026-05-08
 content_hash: f535fa8bdf2979d3
 ---

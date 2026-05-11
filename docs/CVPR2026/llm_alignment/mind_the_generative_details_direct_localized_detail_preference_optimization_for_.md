@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LocalDPO: Direct Localized Detail Preference Optimization for Video Diffusion Models
 description: >-
-  [CVPR 2026][LLM Alignment][Video Diffusion Models] LocalDPO is proposed to perform localized preference alignment at the detail level by applying random spatiotemporal Bézier-masked local corruption to real high-quality videos to construct negative samples (single inference pass, no external ranking), paired with a region-aware DPO loss. The method consistently outperforms vanilla DPO and SFT on Wan2.1 and CogVideoX in terms of video quality.
+  [CVPR 2026][LLM Alignment][Video Diffusion Models] LocalDPO is proposed to perform localized preference alignment at the detail level by applying random spatiotemporal Bézier-masked local corruption to real high-quality…
 tags:
-  - CVPR 2026
-  - LLM Alignment
-  - Video Diffusion Models
-  - DPO Preference Optimization
-  - Local Corruption
-  - Region-Aware Loss
-  - Spatiotemporal Mask
+  - "CVPR 2026"
+  - "LLM Alignment"
+  - "Video Diffusion Models"
+  - "DPO Preference Optimization"
+  - "Local Corruption"
+  - "Region-Aware Loss"
+  - "Spatiotemporal Mask"
 date: 2026-05-08
 content_hash: c98c8ed3d8e605e7
 ---

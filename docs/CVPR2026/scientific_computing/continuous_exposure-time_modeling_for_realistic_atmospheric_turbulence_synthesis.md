@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Continuous Exposure-Time Modeling for Realistic Atmospheric Turbulence Synthesis
 description: >-
-  [CVPR 2026][Scientific Computing][Atmospheric turbulence synthesis] This paper proposes an exposure-time-dependent modulation transfer function (ET-MTF) that treats exposure time as a continuous variable, and constructs a large-scale synthetic turbulence dataset ET-Turb (5,083 videos, 2 million frames), significantly improving the generalization of turbulence restoration models on real-world data.
+  [CVPR 2026][Scientific Computing][Atmospheric turbulence synthesis] This paper proposes an exposure-time-dependent modulation transfer function (ET-MTF) that treats exposure time as a continuous variable…
 tags:
-  - CVPR 2026
-  - Scientific Computing
-  - Atmospheric turbulence synthesis
-  - exposure-time modeling
-  - modulation transfer function (MTF)
-  - point spread function (PSF)
-  - turbulence image restoration
+  - "CVPR 2026"
+  - "Scientific Computing"
+  - "Atmospheric turbulence synthesis"
+  - "exposure-time modeling"
+  - "modulation transfer function (MTF)"
+  - "point spread function (PSF)"
+  - "turbulence image restoration"
 date: 2026-05-08
 content_hash: 7af29c8f5eb004dd
 ---

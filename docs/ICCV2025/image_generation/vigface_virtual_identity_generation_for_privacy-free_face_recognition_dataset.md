@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VIGFace: Virtual Identity Generation for Privacy-Free Face Recognition Dataset
 description: >-
-  [ICCV 2025][Image Generation][Virtual Identity Generation] This paper proposes VIGFace, a framework that pre-allocates virtual prototypes orthogonal to real identities in the feature space of a face recognition (FR) model, and trains a diffusion model to generate face images conditioned on these prototypes—producing identities that do not exist in the real world, thereby enabling privacy-free face recognition dataset construction and data augmentation.
+  [ICCV 2025][Image Generation][Virtual Identity Generation] This paper proposes VIGFace, a framework that pre-allocates virtual prototypes orthogonal to real identities in the feature space of a face recognition (FR) mode…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Virtual Identity Generation
-  - Privacy Safety
-  - Synthetic Face Dataset
-  - Diffusion Model
-  - Face Recognition
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Virtual Identity Generation"
+  - "Privacy Safety"
+  - "Synthetic Face Dataset"
+  - "Diffusion Model"
+  - "Face Recognition"
 date: 2026-05-08
 content_hash: 9917ca3228c40a4b
 ---

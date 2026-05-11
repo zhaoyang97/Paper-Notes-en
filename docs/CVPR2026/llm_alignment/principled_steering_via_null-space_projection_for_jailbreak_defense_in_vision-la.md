@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Principled Steering via Null-space Projection for Jailbreak Defense in Vision-Language Models
 description: >-
-  [CVPR 2026][LLM Alignment][jailbreak defense] This paper proposes NullSteer, an activation steering defense framework based on null-space projection, which effectively resists visual jailbreak attacks without degrading general model capability by constraining steering operations to the null space of benign activations.
+  [CVPR 2026][LLM Alignment][jailbreak defense] This paper proposes NullSteer, an activation steering defense framework based on null-space projection…
 tags:
-  - CVPR 2026
-  - LLM Alignment
-  - jailbreak defense
-  - activation steering
-  - null-space projection
-  - VLM safety
-  - inference-time defense
+  - "CVPR 2026"
+  - "LLM Alignment"
+  - "jailbreak defense"
+  - "activation steering"
+  - "null-space projection"
+  - "VLM safety"
+  - "inference-time defense"
 date: 2026-05-08
 content_hash: 7d0c897a4593e2d3
 ---

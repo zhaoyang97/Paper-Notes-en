@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Do Large Language Models Think Like the Brain? Sentence-Level Evidences from Layer-Wise Embeddings and fMRI
 description: >-
-  [AAAI 2026][LLM/NLP][LLM-brain alignment] This paper systematically investigates sentence-level alignment between 14 open-source LLMs and human brain language processing by comparing layer-wise LLM representations with fMRI data recorded while participants listened to a natural narrative. Key findings include: middle layers yield the highest brain alignment, instruction tuning substantially enhances alignment, and hemispheric lateralization patterns consistent with classical neurolinguistic theories are observed.
+  [AAAI 2026][LLM/NLP][LLM-brain alignment] This paper systematically investigates sentence-level alignment between 14 open-source LLMs and human brain language processing by comparing layer-wise LLM representations with f…
 tags:
-  - AAAI 2026
-  - LLM/NLP
-  - LLM-brain alignment
-  - fMRI
-  - sentence-level semantic understanding
-  - layer-wise representations
-  - hemispheric lateralization
+  - "AAAI 2026"
+  - "LLM/NLP"
+  - "LLM-brain alignment"
+  - "fMRI"
+  - "sentence-level semantic understanding"
+  - "layer-wise representations"
+  - "hemispheric lateralization"
 date: 2026-05-08
 content_hash: a0c10175816360de
 ---

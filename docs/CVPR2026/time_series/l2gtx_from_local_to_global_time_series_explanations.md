@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] L2GTX: From Local to Global Time Series Explanations
 description: >-
-  [CVPR 2026][Time Series][Time series explainability] L2GTX proposes a fully model-agnostic local-to-global explanation framework for time series classification. It extracts parameterized temporal event primitives (PEPs)—trends and extrema—from LOMATCE local explanations, merges redundant clusters across instances via hierarchical clustering, selects representative instances through submodular optimization, and aggregates these into concise class-level global explanations. The method maintains stable global faithfulness across six time series classification datasets.
+  [CVPR 2026][Time Series][Time series explainability] L2GTX proposes a fully model-agnostic local-to-global explanation framework for time series classification. It extracts parameterized temporal event primitives (PEPs)—…
 tags:
-  - CVPR 2026
-  - Time Series
-  - Time series explainability
-  - global explanation
-  - parameterized event primitives
-  - model-agnostic
-  - local-to-global aggregation
+  - "CVPR 2026"
+  - "Time Series"
+  - "Time series explainability"
+  - "global explanation"
+  - "parameterized event primitives"
+  - "model-agnostic"
+  - "local-to-global aggregation"
 date: 2026-05-08
 content_hash: 9fbd706a2f1032e0
 ---

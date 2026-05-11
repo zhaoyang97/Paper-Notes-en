@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DAP-MAE: Domain-Adaptive Point Cloud Masked Autoencoder for Effective Cross-Domain Learning
 description: >-
-  [ICCV 2025][3D Vision][masked autoencoder] DAP-MAE is proposed to jointly learn multi-domain point cloud data via a Heterogeneous Domain Adapter (HDA) and a Domain Feature Generator (DFG), enabling a single pretraining run to adapt to diverse downstream tasks including object classification, expression recognition, part segmentation, and 3D detection.
+  [ICCV 2025][3D Vision][masked autoencoder] DAP-MAE is proposed to jointly learn multi-domain point cloud data via a Heterogeneous Domain Adapter (HDA) and a Domain Feature Generator (DFG)…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - masked autoencoder
-  - cross-domain learning
-  - point cloud
-  - domain adaptation
-  - self-supervised learning
+  - "ICCV 2025"
+  - "3D Vision"
+  - "masked autoencoder"
+  - "cross-domain learning"
+  - "point cloud"
+  - "domain adaptation"
+  - "self-supervised learning"
 date: 2026-05-08
 content_hash: d711e8197f026e37
 ---

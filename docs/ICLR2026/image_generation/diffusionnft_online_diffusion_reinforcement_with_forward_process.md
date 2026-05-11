@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DiffusionNFT: Online Diffusion Reinforcement with Forward Process
 description: >-
-  [ICLR 2026][Image Generation][online RL] DiffusionNFT proposes a fundamentally new online RL paradigm for diffusion models: rather than performing policy optimization over the reverse sampling process (as in GRPO), it performs contrastive training on positive and negative samples via a flow matching objective over the *forward* process, defining an implicit policy improvement direction. The method is 3–25× faster than FlowGRPO and requires no CFG.
+  [ICLR 2026][Image Generation][online RL] DiffusionNFT proposes a fundamentally new online RL paradigm for diffusion models: rather than performing policy optimization over the reverse sampling process (as in GRPO)…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - online RL
-  - forward process
-  - negative-aware finetuning
-  - flow matching
-  - CFG-free
+  - "ICLR 2026"
+  - "Image Generation"
+  - "online RL"
+  - "forward process"
+  - "negative-aware finetuning"
+  - "flow matching"
+  - "CFG-free"
 date: 2026-05-08
 content_hash: c9b8b9d402687d9e
 ---

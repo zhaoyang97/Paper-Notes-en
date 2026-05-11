@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Which Reasoning Trajectories Teach Students to Reason Better? A Simple Metric of Informative Alignment
 description: >-
-  [ACL 2026][Model Compression][Knowledge Distillation] This paper proposes the Rank-Surprisal Ratio (RSR), a metric that jointly measures the informativeness and alignment of reasoning trajectories with respect to a student model, achieving an average Spearman correlation of 0.86 with post-training performance across 5 student models and 11 teacher models, and demonstrating utility in both trajectory selection and teacher selection.
+  [ACL 2026][Model Compression][Knowledge Distillation] This paper proposes the Rank-Surprisal Ratio (RSR), a metric that jointly measures the informativeness and alignment of reasoning trajectories with respect to a stude…
 tags:
-  - ACL 2026
-  - Model Compression
-  - Knowledge Distillation
-  - Reasoning Trajectories
-  - Data Selection
-  - Chain-of-Thought
-  - Large Language Models
+  - "ACL 2026"
+  - "Model Compression"
+  - "Knowledge Distillation"
+  - "Reasoning Trajectories"
+  - "Data Selection"
+  - "Chain-of-Thought"
+  - "Large Language Models"
 date: 2026-05-08
 content_hash: de842db87e9526c8
 ---

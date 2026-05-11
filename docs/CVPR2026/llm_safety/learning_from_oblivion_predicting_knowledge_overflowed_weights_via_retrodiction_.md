@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Learning from Oblivion: Predicting Knowledge-Overflowed Weights via Retrodiction of Forgetting
 description: >-
-  [CVPR 2026][LLM Safety][weight prediction] This paper proposes KNOW prediction: a framework that induces a structured forgetting process via sequential fine-tuning on progressively shrinking data subsets, collects the resulting weight transition trajectories, and then employs a meta-learned hyper-model (KNOWN) to reverse the forgetting direction, predicting virtually knowledge-enriched weights as if the model had been trained on a larger dataset. The approach consistently outperforms naive fine-tuning and multiple weight prediction baselines across diverse datasets (CIFAR/ImageNet/PACS, etc.) and architectures (ResNet/PVTv2/DeepLabV3+), yielding significant improvements on downstream tasks including image classification, semantic segmentation, image captioning, and domain generalization.
+  [CVPR 2026][LLM Safety][weight prediction] This paper proposes KNOW prediction: a framework that induces a structured forgetting process via sequential fine-tuning on progressively shrinking data subsets…
 tags:
-  - CVPR 2026
-  - LLM Safety
-  - weight prediction
-  - structured forgetting
-  - meta-learning
-  - hyper-model
-  - knowledge transfer
-  - scaling law
-  - pre-trained weights
+  - "CVPR 2026"
+  - "LLM Safety"
+  - "weight prediction"
+  - "structured forgetting"
+  - "meta-learning"
+  - "hyper-model"
+  - "knowledge transfer"
+  - "scaling law"
+  - "pre-trained weights"
 date: 2026-05-08
 content_hash: 3b123de4f6273a89
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OceanSplat: Object-aware Gaussian Splatting with Trinocular View Consistency for Underwater Scene Reconstruction
 description: >-
-  [AAAI 2026][3D Vision][3D Gaussian Splatting] This paper proposes OceanSplat, which achieves high-fidelity underwater 3D Gaussian Splatting scene reconstruction under scattering media through trinocular view consistency constraints, synthetic epipolar depth priors, and depth-aware alpha adjustment, significantly reducing floating artifacts and surpassing existing methods.
+  [AAAI 2026][3D Vision][3D Gaussian Splatting] This paper proposes OceanSplat, which achieves high-fidelity underwater 3D Gaussian Splatting scene reconstruction under scattering media through trinocular view consistency…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - underwater scene reconstruction
-  - trinocular view consistency
-  - depth regularization
-  - scattering medium
+  - "AAAI 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "underwater scene reconstruction"
+  - "trinocular view consistency"
+  - "depth regularization"
+  - "scattering medium"
 date: 2026-05-08
 content_hash: 8e8d4bfa9456c899
 ---

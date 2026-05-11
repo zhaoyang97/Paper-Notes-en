@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multimodal Negative Learning
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Multimodal Fusion] This paper proposes the Multimodal Negative Learning (MNL) paradigm, in which dominant modalities guide weaker modalities to suppress non-target classes—rather than enforcing alignment on target classes—thereby stabilizing the decision space, preserving modality-specific information, and theoretically tightening the robustness lower bound of multimodal fusion.
+  [NeurIPS 2025][Multimodal VLM][Multimodal Fusion] This paper proposes the Multimodal Negative Learning (MNL) paradigm, in which dominant modalities guide weaker modalities to suppress non-target classes—rather than enfor…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Multimodal Fusion
-  - Modality Imbalance
-  - Negative Learning
-  - Robustness
-  - Decision Fusion
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Multimodal Fusion"
+  - "Modality Imbalance"
+  - "Negative Learning"
+  - "Robustness"
+  - "Decision Fusion"
 date: 2026-05-08
 content_hash: 2cbc805ef3ee1fb1
 ---

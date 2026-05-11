@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Resource-Adaptive Federated Text Generation with Differential Privacy
 description: >-
-  [ICLR2026][LLM Safety][federated learning] This paper proposes a resource-adaptive federated text generation framework that employs a two-stage design — DP fine-tuning on strong clients and DP voting on weak clients — to generate high-quality synthetic text data under computational heterogeneity and differential privacy constraints.
+  [ICLR2026][LLM Safety][federated learning] This paper proposes a resource-adaptive federated text generation framework that employs a two-stage design — DP fine-tuning on strong clients and DP voting on weak clients — to…
 tags:
-  - ICLR2026
-  - LLM Safety
-  - federated learning
-  - differential privacy
-  - Synthetic Text Generation
-  - Computational Heterogeneity
-  - Control Code
+  - "ICLR2026"
+  - "LLM Safety"
+  - "federated learning"
+  - "differential privacy"
+  - "Synthetic Text Generation"
+  - "Computational Heterogeneity"
+  - "Control Code"
 date: 2026-05-08
 content_hash: 0057bdc833021940
 ---

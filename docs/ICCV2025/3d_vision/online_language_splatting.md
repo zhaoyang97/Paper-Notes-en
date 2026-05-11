@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Online Language Splatting
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] The first framework to achieve **online, near-real-time, open-vocabulary** language mapping within a 3DGS-SLAM system. Through three innovations—high-resolution CLIP embedding, two-stage online autoencoder compression, and decoupled color-language optimization—the method surpasses offline state-of-the-art in accuracy while achieving 40×–200× efficiency gains.
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] The first framework to achieve **online, near-real-time, open-vocabulary** language mapping within a 3DGS-SLAM system. Through three innovations—high-resolution CLIP embeddin…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - SLAM
-  - Open-Vocabulary
-  - Language Feature Embedding
-  - CLIP
-  - Real-Time Semantic Mapping
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "SLAM"
+  - "Open-Vocabulary"
+  - "Language Feature Embedding"
+  - "CLIP"
+  - "Real-Time Semantic Mapping"
 date: 2026-05-08
 content_hash: c6572d1bff407134
 ---

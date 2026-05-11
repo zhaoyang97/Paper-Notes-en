@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PerfGuard: A Performance-Aware Agent for Visual Content Generation
 description: >-
-  [ICLR 2026][LLM Agent] This paper proposes PerfGuard, a performance-aware agent framework for visual content generation. It replaces textual descriptions with a multi-dimensional scoring matrix to model tool performance boundaries (PASM), employs Adaptive Preference Updating (APU) to dynamically calibrate deviations between theoretical rankings and actual execution outcomes, and introduces Capability-Aligned Planning Optimization (CAPO) to guide the Planner in generating subtasks aligned with tool capabilities. PerfGuard comprehensively outperforms SOTA methods such as GenArtist and T2I-Copilot on image generation and editing tasks.
+  [ICLR 2026][LLM Agent][Tool Selection] This paper proposes PerfGuard, a performance-aware agent framework for visual content generation. It replaces textual descriptions with a multi-dimensional scoring matrix to model t…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Tool Selection
-  - Performance Boundary Modeling
-  - Visual Generation
-  - AIGC
-  - Preference Optimization
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Tool Selection"
+  - "Performance Boundary Modeling"
+  - "Visual Generation"
+  - "AIGC"
+  - "Preference Optimization"
 date: 2026-05-08
 content_hash: f6ba9836568c29a1
 ---

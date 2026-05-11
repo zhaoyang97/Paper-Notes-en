@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] GeoRemover: Removing Objects and Their Causal Visual Artifacts
 description: >-
-  [NeurIPS2025][Image Generation][Object Removal] GeoRemover is a geometry-aware two-stage framework that decouples object removal into geometric removal (depth domain) and appearance rendering (RGB domain). By modifying the scene's geometric representation, it implicitly eliminates causal visual artifacts—such as shadows and reflections—left by the removed object.
+  [NeurIPS2025][Image Generation][Object Removal] GeoRemover is a geometry-aware two-stage framework that decouples object removal into geometric removal (depth domain) and appearance rendering (RGB domain). By modifying t…
 tags:
-  - NeurIPS2025
-  - Image Generation
-  - Object Removal
-  - Causal Visual Artifacts
-  - Geometry-Awareness
-  - Depth Maps
-  - Diffusion Models
-  - DPO
+  - "NeurIPS2025"
+  - "Image Generation"
+  - "Object Removal"
+  - "Causal Visual Artifacts"
+  - "Geometry-Awareness"
+  - "Depth Maps"
+  - "Diffusion Models"
+  - "DPO"
 date: 2026-05-08
 content_hash: 581b090ffea52a32
 ---

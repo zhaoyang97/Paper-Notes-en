@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Revisiting Bi-Linear State Transitions in Recurrent Neural Networks
 description: >-
-  [NeurIPS 2025][Video Understanding][Bilinear RNN] This paper systematically revisits bilinear state transitions in RNNs—i.e., multiplicative interactions between the hidden state and the input—and theoretically proves that bilinear RNNs can simulate arbitrary finite-state machines. By removing additive terms, these models form a natural expressivity hierarchy ranging from diagonal to full-rank structures, revealing that popular linear RNNs such as Mamba occupy the lowest tier of this hierarchy.
+  [NeurIPS 2025][Video Understanding][Bilinear RNN] This paper systematically revisits bilinear state transitions in RNNs—i.e., multiplicative interactions between the hidden state and the input—and theoretically proves th…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
-  - Bilinear RNN
-  - State Tracking
-  - Finite Automata
-  - Multiplicative Interaction
-  - Parity
+  - "NeurIPS 2025"
+  - "Video Understanding"
+  - "Bilinear RNN"
+  - "State Tracking"
+  - "Finite Automata"
+  - "Multiplicative Interaction"
+  - "Parity"
 date: 2026-05-08
 content_hash: 01a5a92bbab51105
 ---

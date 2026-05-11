@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Small Language Models for Efficient Agentic Tool Calling: Outperforming Large Models with Targeted Fine-tuning
 description: >-
-  [AAAI 2026][LLM Reasoning][Small Language Models] By applying a single-epoch supervised fine-tuning (SFT) on OPT-350M, this work achieves a 77.55% pass rate on ToolBench, substantially outperforming large-model baselines such as ChatGPT-CoT (26%) and ToolLLaMA-DFS (30.18%), demonstrating that small models with targeted fine-tuning can significantly surpass general-purpose large models on specific tasks.
+  [AAAI 2026][LLM Reasoning][Small Language Models] By applying a single-epoch supervised fine-tuning (SFT) on OPT-350M, this work achieves a 77.55% pass rate on ToolBench…
 tags:
-  - AAAI 2026
-  - LLM Reasoning
-  - Small Language Models
-  - Tool Calling
-  - SFT Fine-tuning
-  - OPT-350M
-  - ToolBench
+  - "AAAI 2026"
+  - "LLM Reasoning"
+  - "Small Language Models"
+  - "Tool Calling"
+  - "SFT Fine-tuning"
+  - "OPT-350M"
+  - "ToolBench"
 date: 2026-05-08
 content_hash: ab1355806058aaac
 ---

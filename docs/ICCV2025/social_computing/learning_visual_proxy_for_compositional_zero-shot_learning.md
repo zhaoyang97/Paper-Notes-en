@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Visual Proxy for Compositional Zero-Shot Learning
 description: >-
-  [ICCV 2025][Social Computing][Compositional Zero-Shot Learning] This paper proposes the concept of Visual Proxy — text-guided visual class centers introduced into CZSL for the first time — and jointly optimizes textual prototypes and visual proxies via Cross-Modal Joint Learning (CMJL), achieving closed-world SOTA on four CZSL benchmarks.
+  [ICCV 2025][Social Computing][Compositional Zero-Shot Learning] This paper proposes the concept of Visual Proxy — text-guided visual class centers introduced into CZSL for the first time — and jointly optimizes textual p…
 tags:
-  - ICCV 2025
-  - Social Computing
-  - Compositional Zero-Shot Learning
-  - Visual Proxy
-  - Cross-Modal Learning
-  - CLIP
-  - VLM
+  - "ICCV 2025"
+  - "Social Computing"
+  - "Compositional Zero-Shot Learning"
+  - "Visual Proxy"
+  - "Cross-Modal Learning"
+  - "CLIP"
+  - "VLM"
 date: 2026-05-08
 content_hash: a693bf53bf79d652
 ---

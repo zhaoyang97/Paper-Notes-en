@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Detecting the Future: All-at-Once Event Sequence Forecasting with Horizon Matching
 description: >-
-  [AAAI 2026][Time Series][Event sequence forecasting] This paper proposes DEF (Detection-based Event Forecasting), which draws on the set-matching idea from DETR in object detection and employs the Hungarian algorithm to align predicted and ground-truth event sequences, achieving high-accuracy and high-diversity long-horizon event forecasting with state-of-the-art results on five datasets.
+  [AAAI 2026][Time Series][Event sequence forecasting] This paper proposes DEF (Detection-based Event Forecasting), which draws on the set-matching idea from DETR in object detection and employs the Hungarian algorithm to…
 tags:
-  - AAAI 2026
-  - Time Series
-  - Event sequence forecasting
-  - temporal point processes
-  - matching loss
-  - long-horizon forecasting
-  - Hungarian algorithm
+  - "AAAI 2026"
+  - "Time Series"
+  - "Event sequence forecasting"
+  - "temporal point processes"
+  - "matching loss"
+  - "long-horizon forecasting"
+  - "Hungarian algorithm"
 date: 2026-05-08
 content_hash: 090213b995514a73
 ---

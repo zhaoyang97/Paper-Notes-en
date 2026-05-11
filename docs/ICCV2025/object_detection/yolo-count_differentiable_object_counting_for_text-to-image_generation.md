@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] YOLO-Count: Differentiable Object Counting for Text-to-Image Generation
 description: >-
-  [ICCV 2025][Object Detection][Object Counting] This paper proposes YOLO-Count, a fully differentiable open-vocabulary object counting model built upon the YOLO architecture. Through an innovative cardinality map regression target and a hybrid strong-weak supervised training strategy, YOLO-Count achieves state-of-the-art performance on both general object counting and quantity-controlled text-to-image generation.
+  [ICCV 2025][Object Detection][Object Counting] This paper proposes YOLO-Count, a fully differentiable open-vocabulary object counting model built upon the YOLO architecture. Through an innovative cardinality map regressi…
 tags:
-  - ICCV 2025
-  - Object Detection
-  - Object Counting
-  - Differentiable
-  - Text-to-Image Generation
-  - Cardinality Map
-  - Open Vocabulary
+  - "ICCV 2025"
+  - "Object Detection"
+  - "Object Counting"
+  - "Differentiable"
+  - "Text-to-Image Generation"
+  - "Cardinality Map"
+  - "Open Vocabulary"
 date: 2026-05-08
 content_hash: 516765b70cbf479e
 ---

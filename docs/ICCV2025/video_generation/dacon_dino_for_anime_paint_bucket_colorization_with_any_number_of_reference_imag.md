@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DACoN: DINO for Anime Paint Bucket Colorization with Any Number of Reference Images
 description: >-
-  [ICCV 2025][Video Generation][Anime colorization] This paper proposes DACoN, which fuses semantic features from the DINOv2 foundation model with high-resolution spatial features from a U-Net to enable automatic anime line art colorization with an arbitrary number of reference images, surpassing existing methods on both key-frame and sequential-frame colorization tasks.
+  [ICCV 2025][Video Generation][Anime colorization] This paper proposes DACoN, which fuses semantic features from the DINOv2 foundation model with high-resolution spatial features from a U-Net to enable automatic anime lin…
 tags:
-  - ICCV 2025
-  - Video Generation
-  - Anime colorization
-  - DINOv2
-  - line art coloring
-  - multi-reference images
-  - semantic correspondence
+  - "ICCV 2025"
+  - "Video Generation"
+  - "Anime colorization"
+  - "DINOv2"
+  - "line art coloring"
+  - "multi-reference images"
+  - "semantic correspondence"
 date: 2026-05-08
 content_hash: 852cbd30951e427c
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Aligning What LLMs Do and Say: Towards Self-Consistent Explanations
 description: >-
-  [ACL 2026][Self-consistency] This paper constructs a large-scale Post-hoc Self-Consistency Bank (PSCB, 85K decisions × 428K explanations), quantifies the feature attribution gap between LLM answers and their explanations, and improves attribution consistency of explanations via DPO optimization without sacrificing accuracy.
+  [ACL 2026][Interpretability][Self-consistency] This paper constructs a large-scale Post-hoc Self-Consistency Bank (PSCB, 85K decisions × 428K explanations)…
 tags:
-  - ACL 2026
-  - Self-consistency
-  - Feature Attribution
-  - Explanation Faithfulness
-  - DPO Optimization
-  - Attribution Alignment
+  - "ACL 2026"
+  - "Interpretability"
+  - "Self-consistency"
+  - "Feature Attribution"
+  - "Explanation Faithfulness"
+  - "DPO Optimization"
+  - "Attribution Alignment"
 date: 2026-05-08
 content_hash: 8170e6438e0e2995
 ---

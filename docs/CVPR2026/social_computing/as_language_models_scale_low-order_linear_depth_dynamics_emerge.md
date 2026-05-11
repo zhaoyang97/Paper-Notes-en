@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] As Language Models Scale, Low-order Linear Depth Dynamics Emerge
 description: >-
-  [CVPR 2026][Social Computing][activation intervention] This paper treats the layer depth of a Transformer as a discrete-time system, demonstrating that the inter-layer propagation and intervention response of GPT-2 can be approximated near a given context by a 32-dimensional low-order linear state-space surrogate. Notably, as model scale increases, this surrogate becomes more accurate. The framework further enables the derivation of energy-efficient multi-layer intervention strategies that outperform heuristic injection baselines.
+  [CVPR 2026][Social Computing][activation intervention] This paper treats the layer depth of a Transformer as a discrete-time system, demonstrating that the inter-layer propagation and intervention response of GPT-2 can b…
 tags:
-  - CVPR 2026
-  - Social Computing
-  - activation intervention
-  - local linearization
-  - depth dynamics
-  - system identification
-  - model scaling
+  - "CVPR 2026"
+  - "Social Computing"
+  - "activation intervention"
+  - "local linearization"
+  - "depth dynamics"
+  - "system identification"
+  - "model scaling"
 date: 2026-05-08
 content_hash: 03433e6b4be69a64
 ---

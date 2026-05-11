@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] GeoWorld: Geometric World Models
 description: >-
-  [CVPR 2026][Reinforcement Learning][Geometric World Models] GeoWorld maps the latent representations of predictive world models from Euclidean space onto a hyperbolic manifold, preserving geometric structure and hierarchical relationships via Hyperbolic JEPA, and proposes Geometric Reinforcement Learning to optimize multi-step planning. The method achieves approximately 3% SR (T=3) and 2% SR (T=4) gains on CrossTask and COIN.
+  [CVPR 2026][Reinforcement Learning][Geometric World Models] GeoWorld maps the latent representations of predictive world models from Euclidean space onto a hyperbolic manifold…
 tags:
-  - CVPR 2026
-  - Reinforcement Learning
-  - Geometric World Models
-  - Hyperbolic Space
-  - JEPA
-  - Long-Horizon Planning
+  - "CVPR 2026"
+  - "Reinforcement Learning"
+  - "Geometric World Models"
+  - "Hyperbolic Space"
+  - "JEPA"
+  - "Long-Horizon Planning"
 date: 2026-05-08
 content_hash: a7531000be8edbf8
 ---

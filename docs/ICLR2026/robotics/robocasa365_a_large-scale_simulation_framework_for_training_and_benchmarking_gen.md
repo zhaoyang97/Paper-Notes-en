@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RoboCasa365: A Large-Scale Simulation Framework for Training and Benchmarking Generalist Robots
 description: >-
-  [ICLR 2026][Robotics][simulation platform] RoboCasa365 constructs a large-scale simulation benchmark comprising 365 everyday kitchen tasks, 2,500 diverse kitchen scenes, and over 2,000 hours of robot interaction data. It systematically evaluates generalist robot policies under three paradigms—multi-task learning, foundation model training, and lifelong learning—and finds that task diversity in pretraining data is the key factor for improving downstream generalization.
+  [ICLR 2026][Robotics][simulation platform] RoboCasa365 constructs a large-scale simulation benchmark comprising 365 everyday kitchen tasks, 2,500 diverse kitchen scenes, and over 2…
 tags:
-  - ICLR 2026
-  - Robotics
-  - simulation platform
-  - household mobile manipulation
-  - multi-task learning
-  - foundation model training
-  - lifelong learning
+  - "ICLR 2026"
+  - "Robotics"
+  - "simulation platform"
+  - "household mobile manipulation"
+  - "multi-task learning"
+  - "foundation model training"
+  - "lifelong learning"
 date: 2026-05-08
 content_hash: 12476475e583c8b7
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AMiD: Knowledge Distillation for LLMs with α-mixture Assistant Distribution
 description: >-
-  [ICLR 2026][Model Compression][Knowledge Distillation] This paper proposes the α-mixture assistant distribution and a unified distillation framework, AMiD. By introducing a new design variable α that controls the geometric shape of the interpolation path between teacher and student distributions, AMiD generalizes existing assistant distribution methods (m-mixture and e-mixture are special cases at α=±1), proves optimality guarantees under arbitrary divergences and α values, and achieves state-of-the-art performance on multiple LLM distillation benchmarks.
+  [ICLR 2026][Model Compression][Knowledge Distillation] This paper proposes the α-mixture assistant distribution and a unified distillation framework…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Knowledge Distillation
-  - Assistant Distribution
-  - α-mixture
-  - f-divergence
-  - LLM Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Knowledge Distillation"
+  - "Assistant Distribution"
+  - "α-mixture"
+  - "f-divergence"
+  - "LLM Compression"
 date: 2026-05-08
 content_hash: b745c16362b5c78e
 ---

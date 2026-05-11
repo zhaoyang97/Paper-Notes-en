@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] OracleFusion: Assisting the Decipherment of Oracle Bone Script with Structurally Constrained Semantic Typography
 description: >-
-  [ICCV 2025][Multimodal VLM][oracle bone script] This paper proposes OracleFusion, a two-stage semantic typography framework. Stage 1 employs MLLM-enhanced Spatial Awareness Reasoning (SAR) to analyze the glyph structure of oracle bone script (OBS) and localize key components. Stage 2 introduces Structural Oracle Vector Fusion (SOVF), which generates semantically enriched vector glyphs through glyph structure constraints and skeleton-preserving losses, conveying semantic meaning while preserving original glyph integrity to assist expert decipherment of undeciphered OBS characters.
+  [ICCV 2025][Multimodal VLM][oracle bone script] This paper proposes OracleFusion, a two-stage semantic typography framework. Stage 1 employs MLLM-enhanced Spatial Awareness Reasoning (SAR) to analyze the glyph structure…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - oracle bone script
-  - semantic typography
-  - MLLM
-  - vector graphics generation
-  - spatial awareness reasoning
-  - score distillation
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "oracle bone script"
+  - "semantic typography"
+  - "MLLM"
+  - "vector graphics generation"
+  - "spatial awareness reasoning"
+  - "score distillation"
 date: 2026-05-08
 content_hash: 4d5c72d8b2310ebd
 ---

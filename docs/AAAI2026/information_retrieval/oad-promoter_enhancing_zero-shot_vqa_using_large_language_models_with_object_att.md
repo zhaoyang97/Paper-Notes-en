@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] OAD-Promoter: Enhancing Zero-shot VQA using Large Language Models with Object Attribute Description
 description: >-
-  [AAAI 2026][Visual Question Answering] This paper proposes OAD-Promoter, a framework comprising three collaborative modules—Object-concentrated Example Generation (OEG), Memory Knowledge Assistance (MKA), and OAD Prompt—to mitigate language bias inherited by LLMs and improve domain transfer under zero-shot settings, achieving state-of-the-art performance on VQAv2 and multiple other benchmarks.
+  [AAAI 2026][Information Retrieval & RAG][Visual Question Answering] This paper proposes OAD-Promoter, a framework comprising three collaborative modules—Object-concentrated Example Generation (OEG)…
 tags:
-  - AAAI 2026
-  - Visual Question Answering
-  - Zero-shot VQA
-  - Language Bias
-  - Domain Transfer
-  - Object Attribute Description
+  - "AAAI 2026"
+  - "Information Retrieval & RAG"
+  - "Visual Question Answering"
+  - "Zero-shot VQA"
+  - "Language Bias"
+  - "Domain Transfer"
+  - "Object Attribute Description"
 date: 2026-05-08
 content_hash: e2f86866c420f267
 ---

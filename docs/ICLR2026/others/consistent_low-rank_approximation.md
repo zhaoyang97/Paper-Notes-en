@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Consistent Low-Rank Approximation
 description: >-
-  [ICLR 2026][low-rank approximation] This paper formalizes and systematically studies the *consistent low-rank approximation* problem—maintaining a near-optimal rank-$k$ approximation of a matrix whose rows arrive in a stream while minimizing the total variation (recourse) of the solution. It proves that $O(k/\varepsilon \cdot \log(nd))$ recourse is achievable under additive error, $k^{3/2}/\varepsilon^2 \cdot \text{polylog}$ recourse is achievable under multiplicative $(1+\varepsilon)$ error, and establishes a lower bound of $\Omega(k/\varepsilon \cdot \log(n/k))$.
+  [ICLR 2026][low-rank approximation] This paper formalizes and systematically studies the *consistent low-rank approximation* problem—maintaining a near-optimal rank-$k$ approximation of a matrix whose rows arrive in a st…
 tags:
-  - ICLR 2026
-  - low-rank approximation
-  - streaming algorithm
-  - consistency
-  - recourse
-  - online algorithm
+  - "ICLR 2026"
+  - "low-rank approximation"
+  - "streaming algorithm"
+  - "consistency"
+  - "recourse"
+  - "online algorithm"
 date: 2026-05-08
 content_hash: 78b7a60f73b4a840
 ---

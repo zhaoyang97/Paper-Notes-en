@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Computable Universal Online Learning
 description: >-
-  [NeurIPS 2025][universal online learning] This paper introduces computability constraints into the universal online learning framework, proving that "mathematically learnable" does not imply "learnable by a computer program," and provides precise characterizations of computable learning under both agnostic and proper variants.
+  [NeurIPS 2025][universal online learning] This paper introduces computability constraints into the universal online learning framework…
 tags:
-  - NeurIPS 2025
-  - universal online learning
-  - computability
-  - online binary classification
-  - Littlestone dimension
-  - agnostic learning
-  - proper learning
+  - "NeurIPS 2025"
+  - "universal online learning"
+  - "computability"
+  - "online binary classification"
+  - "Littlestone dimension"
+  - "agnostic learning"
+  - "proper learning"
 date: 2026-05-08
 content_hash: f96b004375b29bf5
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unifying Stable Optimization and Reference Regularization in RLHF (DAR)
 description: >-
-  [ICLR 2026][LLM Alignment][RLHF] This paper proposes DAR (Dual-regularized Advantage Regression), identifying that reference-model regularization (for preventing reward hacking) and policy stability constraints (for preventing collapse) in standard RLHF progressively conflict, excessively restricting the optimization space. DAR addresses this via a dual-KL objective that interpolates reference policies in log-space and applies a regression transformation to eliminate policy-ratio instability, achieving an average win rate of 92.42% in direct AI alignment and standard RLHF settings, surpassing GRPO by 7.27%.
+  [ICLR 2026][LLM Alignment][RLHF] This paper proposes DAR (Dual-regularized Advantage Regression), identifying that reference-model regularization (for preventing reward hacking) and policy stability constraints (for prev…
 tags:
-  - ICLR 2026
-  - LLM Alignment
-  - RLHF
-  - dual KL regularization
-  - advantage regression
-  - reference policy interpolation
-  - reward hacking
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "RLHF"
+  - "dual KL regularization"
+  - "advantage regression"
+  - "reference policy interpolation"
+  - "reward hacking"
 date: 2026-05-08
 content_hash: 0c715b5c3f7ae3ef
 ---

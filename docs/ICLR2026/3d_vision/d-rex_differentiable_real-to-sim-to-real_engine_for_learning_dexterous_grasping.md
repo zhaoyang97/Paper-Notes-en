@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] D-REX: Differentiable Real-to-Sim-to-Real Engine for Learning Dexterous Grasping
 description: >-
-  [ICLR 2026][3D Vision][real-to-sim-to-real] D-REX is proposed as a Gaussian-based differentiable real-to-sim-to-real engine that performs end-to-end object mass identification from visual observations and robot control signals, and leverages the identified mass for force-aware dexterous grasping policy learning, effectively bridging the sim-to-real gap.
+  [ICLR 2026][3D Vision][real-to-sim-to-real] D-REX is proposed as a Gaussian-based differentiable real-to-sim-to-real engine that performs end-to-end object mass identification from visual observations and robot control s…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - real-to-sim-to-real
-  - differentiable physics simulation
-  - mass identification
-  - dexterous grasping
-  - Gaussian representation
+  - "ICLR 2026"
+  - "3D Vision"
+  - "real-to-sim-to-real"
+  - "differentiable physics simulation"
+  - "mass identification"
+  - "dexterous grasping"
+  - "Gaussian representation"
 date: 2026-05-08
 content_hash: f6bc6a1c44b4b6db
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AgentMath: Empowering Mathematical Reasoning for Large Language Models via Tool-Augmented Agent
 description: >-
-  [ICLR 2026][LLM Reasoning][Mathematical Reasoning] AgentMath proposes a tool-augmented agent framework that seamlessly integrates LLM reasoning with the computational precision of a code interpreter through automated data synthesis, multi-turn interactive reinforcement learning, and an efficient asynchronous training system. At the 30B-A3B scale, it achieves state-of-the-art performance on AIME24/25 and HMMT25 (90.6%/86.4%/73.8%), surpassing o3-mini and Claude-Opus-4.0-Thinking.
+  [ICLR 2026][LLM Reasoning][Mathematical Reasoning] AgentMath proposes a tool-augmented agent framework that seamlessly integrates LLM reasoning with the computational precision of a code interpreter through automated dat…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Mathematical Reasoning
-  - Tool Augmentation
-  - Reinforcement Learning
-  - Code Interpreter
-  - Agent Framework
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "Mathematical Reasoning"
+  - "Tool Augmentation"
+  - "Reinforcement Learning"
+  - "Code Interpreter"
+  - "Agent Framework"
 date: 2026-05-08
 content_hash: d7d07c043fb7b01f
 ---

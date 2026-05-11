@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] EA3D: Online Open-World 3D Object Extraction from Streaming Videos
 description: >-
-  [NeurIPS 2025][3D Vision][Online 3D Reconstruction] This paper proposes EA3D (ExtractAnything3D), an online open-world 3D object extraction framework that performs simultaneous geometric reconstruction and comprehensive scene understanding from streaming videos via knowledge-integrated feature maps, online visual odometry, and recurrent joint optimization.
+  [NeurIPS 2025][3D Vision][Online 3D Reconstruction] This paper proposes EA3D (ExtractAnything3D), an online open-world 3D object extraction framework that performs simultaneous geometric reconstruction and comprehensive…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Online 3D Reconstruction
-  - Open-World Scene Understanding
-  - Gaussian Splatting
-  - VLM
-  - Feature Gaussians
-  - Semantic Segmentation
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Online 3D Reconstruction"
+  - "Open-World Scene Understanding"
+  - "Gaussian Splatting"
+  - "VLM"
+  - "Feature Gaussians"
+  - "Semantic Segmentation"
 date: 2026-05-08
 content_hash: fc5654c820df9163
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Few-Shot Learning from Gigapixel Images via Hierarchical Vision-Language Alignment and Modeling
 description: >-
-  [NeurIPS 2025][Medical Imaging][Multiple Instance Learning] This paper proposes HiVE-MIL, a hierarchical vision-language MIL framework that constructs a unified heterogeneous graph to model cross-scale hierarchical relationships (5× and 20×) and intra-scale multimodal alignment. Combined with a text-guided dynamic filtering mechanism and a hierarchical contrastive loss, HiVE-MIL consistently outperforms existing methods under the 16-shot setting on three TCGA datasets (lung, breast, and renal cancer), achieving up to 4.1% improvement in Macro F1.
+  [NeurIPS 2025][Medical Imaging][Multiple Instance Learning] This paper proposes HiVE-MIL, a hierarchical vision-language MIL framework that constructs a unified heterogeneous graph to model cross-scale hierarchical relat…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Multiple Instance Learning
-  - Vision-Language Models
-  - Hierarchical Graph
-  - Whole Slide Images
-  - Few-Shot Classification
-  - Pathology
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Multiple Instance Learning"
+  - "Vision-Language Models"
+  - "Hierarchical Graph"
+  - "Whole Slide Images"
+  - "Few-Shot Classification"
+  - "Pathology"
 date: 2026-05-08
 content_hash: 9240438f465fca80
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Why Keep Your Doubts to Yourself? Trading Visual Uncertainties in Multi-Agent Bandit Systems
 description: >-
-  [ICLR 2026][Multimodal VLM][Multi-agent systems] This paper proposes Agora, a framework that recasts multi-agent VLM coordination as a decentralized uncertainty trading market. Cognitive uncertainty is minted into quantifiable, three-dimensional tradable assets (perceptual / semantic / inferential), and efficient equilibrium allocation is achieved through a profit-driven trading protocol and a market-aware Thompson Sampling Broker. Agora consistently outperforms heuristic baselines across five multimodal benchmarks (e.g., +8.5% accuracy on MMMU with more than 3× cost reduction).
+  [ICLR 2026][Multimodal VLM][Multi-agent systems] This paper proposes Agora, a framework that recasts multi-agent VLM coordination as a decentralized uncertainty trading market. Cognitive uncertainty is minted into quanti…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Multi-agent systems
-  - VLM coordination
-  - uncertainty trading
-  - market mechanism
-  - Thompson Sampling
-  - cost optimization
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Multi-agent systems"
+  - "VLM coordination"
+  - "uncertainty trading"
+  - "market mechanism"
+  - "Thompson Sampling"
+  - "cost optimization"
 date: 2026-05-08
 content_hash: 641dae832dbdfe8d
 ---

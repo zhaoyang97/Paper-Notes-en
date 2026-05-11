@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SongEcho: Towards Cover Song Generation via Instance-Adaptive Element-wise Linear Modulation
 description: >-
-  [ICLR 2026][Image Generation][Cover song generation] This paper proposes the SongEcho framework, which achieves cover song generation via Instance-Adaptive Element-wise Linear Modulation (IA-EiLM), generating new vocals and accompaniment while preserving the melodic contour of the original song.
+  [ICLR 2026][Image Generation][Cover song generation] This paper proposes the SongEcho framework, which achieves cover song generation via Instance-Adaptive Element-wise Linear Modulation (IA-EiLM)…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Cover song generation
-  - FiLM
-  - element-wise linear modulation
-  - melody control
-  - parameter efficiency
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Cover song generation"
+  - "FiLM"
+  - "element-wise linear modulation"
+  - "melody control"
+  - "parameter efficiency"
 date: 2026-05-08
 content_hash: 28a4b4334ca346e9
 ---

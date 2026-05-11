@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TSPulse: Tiny Pre-Trained Models with Disentangled Representations for Rapid Time Series
 description: >-
-  [ICLR 2026][Time Series][Time Series Pre-trained Model] This paper proposes TSPulse, an ultra-lightweight time series pre-trained model with only 1M parameters, which surpasses models 10–100× larger on four tasks — classification (+5–16%), anomaly detection (+20%), imputation (+50%), and similarity retrieval (+25%) — through dual-space masked reconstruction and dual-embedding disentanglement.
+  [ICLR 2026][Time Series][Time Series Pre-trained Model] This paper proposes TSPulse, an ultra-lightweight time series pre-trained model with only 1M parameters…
 tags:
-  - ICLR 2026
-  - Time Series
-  - Time Series Pre-trained Model
-  - Disentangled Representations
-  - Dual-Space Reconstruction
-  - Anomaly Detection
-  - Tiny Model
+  - "ICLR 2026"
+  - "Time Series"
+  - "Time Series Pre-trained Model"
+  - "Disentangled Representations"
+  - "Dual-Space Reconstruction"
+  - "Anomaly Detection"
+  - "Tiny Model"
 date: 2026-05-08
 content_hash: a138663a64cceb0c
 ---

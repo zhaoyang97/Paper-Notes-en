@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning by Neighbor-Aware Semantics, Deciding by Open-form Flows: Towards Robust Zero-Shot Skeleton Action Recognition
 description: >-
-  [CVPR 2026][Image Generation][Zero-shot learning] Flora achieves robust skeleton–semantic cross-modal alignment via neighbor-aware semantic calibration, and constructs a distribution-aware open-form classifier using noise-free flow matching, attaining state-of-the-art performance on zero-shot skeleton action recognition—particularly under low-data training regimes.
+  [CVPR 2026][Image Generation][Zero-shot learning] Flora achieves robust skeleton–semantic cross-modal alignment via neighbor-aware semantic calibration…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Zero-shot learning
-  - skeleton action recognition
-  - flow matching
-  - cross-modal alignment
-  - semantic calibration
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Zero-shot learning"
+  - "skeleton action recognition"
+  - "flow matching"
+  - "cross-modal alignment"
+  - "semantic calibration"
 date: 2026-05-08
 content_hash: 2dd1eb4ee64b7252
 ---

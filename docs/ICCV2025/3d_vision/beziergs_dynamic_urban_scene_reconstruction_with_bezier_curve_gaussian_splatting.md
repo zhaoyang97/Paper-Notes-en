@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BezierGS: Dynamic Urban Scene Reconstruction with Bézier Curve Gaussian Splatting
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes BezierGS, a 3D Gaussian Splatting method that models dynamic object motion trajectories using learnable Bézier curves, eliminating reliance on precise bounding box annotations. The method achieves state-of-the-art performance on both dynamic and static scene reconstruction on the Waymo and nuPlan datasets.
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes BezierGS, a 3D Gaussian Splatting method that models dynamic object motion trajectories using learnable Bézier curves…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - dynamic scene reconstruction
-  - Bézier curve
-  - novel view synthesis
-  - autonomous driving
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "dynamic scene reconstruction"
+  - "Bézier curve"
+  - "novel view synthesis"
+  - "autonomous driving"
 date: 2026-05-08
 content_hash: 98b14a8b411669d7
 ---

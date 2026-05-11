@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Scalable Diffusion Transformer for Conditional 4D fMRI Synthesis
 description: >-
-  [3D Vision] This paper proposes the first diffusion Transformer for voxel-level whole-brain 4D fMRI conditional generation, combining 3D VQ-GAN latent space compression, a CNN-Transformer hybrid backbone, and strong conditioning via AdaLN-Zero and cross-attention. The model achieves a task activation map correlation of 0.83, RSA of 0.98, and perfect condition specificity across seven cognitive tasks from the HCP dataset.
+  [3D Vision] This paper proposes the first diffusion Transformer for voxel-level whole-brain 4D fMRI conditional generation, combining 3D VQ-GAN latent space compression, a CNN-Transformer hybrid backbone…
 tags:
-  - 3D Vision
+  - "3D Vision"
 date: 2026-05-08
 content_hash: 19f4bc9d41c96009
 ---

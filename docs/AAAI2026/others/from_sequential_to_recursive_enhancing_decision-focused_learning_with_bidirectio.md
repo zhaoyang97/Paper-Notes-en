@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] From Sequential to Recursive: Enhancing Decision-Focused Learning with Bidirectional Feedback
 description: >-
-  [AAAI 2026][Decision-Focused Learning] This paper proposes the first Recursive Decision-Focused Learning (R-DFL) framework, which introduces a bidirectional feedback loop between the prediction module and the optimization module, breaking the unidirectional information flow of conventional sequential DFL. Two gradient propagation methods—explicit unrolling and implicit differentiation—are designed, achieving significant improvements in final decision quality on the newsvendor problem and bipartite matching problem.
+  [AAAI 2026][Decision-Focused Learning] This paper proposes the first Recursive Decision-Focused Learning (R-DFL) framework, which introduces a bidirectional feedback loop between the prediction module and the optimizatio…
 tags:
-  - AAAI 2026
-  - Decision-Focused Learning
-  - Predict-then-Optimize
-  - Recursive Learning
-  - Implicit Differentiation
-  - Bidirectional Feedback
+  - "AAAI 2026"
+  - "Decision-Focused Learning"
+  - "Predict-then-Optimize"
+  - "Recursive Learning"
+  - "Implicit Differentiation"
+  - "Bidirectional Feedback"
 date: 2026-05-08
 content_hash: d2efa7d33fd2ad50
 ---

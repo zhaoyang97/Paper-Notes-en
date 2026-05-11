@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Mind Cannot Be Smeared Across Time
 description: >-
-  [AAAI 2026][Audio & Speech][Machine Consciousness] This paper formally proves that whether a machine possesses consciousness depends not only on *what* is computed, but also on *when* it is computed. Systems executing strictly sequentially fail to satisfy the temporal co-instantiation condition required for the unity of consciousness; consequently, pure software consciousness on strictly sequential hardware is impossible.
+  [AAAI 2026][Audio & Speech][Machine Consciousness] This paper formally proves that whether a machine possesses consciousness depends not only on *what* is computed…
 tags:
-  - AAAI 2026
+  - "AAAI 2026"
   - "Audio & Speech"
-  - Machine Consciousness
-  - Temporal Constraints
-  - Stack Theory
-  - Concurrency
-  - Unity of Consciousness
+  - "Machine Consciousness"
+  - "Temporal Constraints"
+  - "Stack Theory"
+  - "Concurrency"
+  - "Unity of Consciousness"
 date: 2026-05-08
 content_hash: 7a4dfe84629ed0d5
 ---

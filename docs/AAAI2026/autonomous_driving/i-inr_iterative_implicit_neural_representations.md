@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] I-INR: Iterative Implicit Neural Representations
 description: >-
-  [AAAI 2026][Autonomous Driving][Implicit Neural Representations] This paper proposes I-INR (Iterative Implicit Neural Representations), a plug-and-play iterative refinement framework that introduces lightweight FeedbackNet and FuseNet modules (adding only 0.5–2% parameters) to perform progressive multi-step signal reconstruction, effectively alleviating the spectral bias of INRs. I-INR consistently outperforms baselines across image fitting, super-resolution, denoising, and 3D occupancy prediction tasks.
+  [AAAI 2026][Autonomous Driving][Implicit Neural Representations] This paper proposes I-INR (Iterative Implicit Neural Representations), a plug-and-play iterative refinement framework that introduces lightweight FeedbackN…
 tags:
-  - AAAI 2026
-  - Autonomous Driving
-  - Implicit Neural Representations
-  - Iterative Refinement
-  - High-Frequency Reconstruction
-  - Denoising Robustness
-  - Plug-and-Play Framework
+  - "AAAI 2026"
+  - "Autonomous Driving"
+  - "Implicit Neural Representations"
+  - "Iterative Refinement"
+  - "High-Frequency Reconstruction"
+  - "Denoising Robustness"
+  - "Plug-and-Play Framework"
 date: 2026-05-08
 content_hash: 328f20684801ddf6
 ---

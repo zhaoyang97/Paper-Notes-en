@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DeepShapeMatchingKit: Accelerated Functional Map Solver and Shape Matching Pipelines Revisited
 description: >-
-  [CVPR 2026][3D Vision][Functional Maps] This paper proposes a vectorized reformulation of the functional map solver achieving a 33× speedup, identifies and documents two undocumented implementation variants of DiffusionNet, introduces balanced accuracy as a supplementary metric for partial matching evaluation, and releases a unified open-source codebase.
+  [CVPR 2026][3D Vision][Functional Maps] This paper proposes a vectorized reformulation of the functional map solver achieving a 33× speedup…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Functional Maps
-  - Shape Matching
-  - Accelerated Solver
-  - DiffusionNet
-  - Open-Source Toolkit
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Functional Maps"
+  - "Shape Matching"
+  - "Accelerated Solver"
+  - "DiffusionNet"
+  - "Open-Source Toolkit"
 date: 2026-05-08
 content_hash: 2362254a1b017d3e
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Visual Planning: Let's Think Only with Images
 description: >-
-  [ICLR 2026][Robotics][Visual Planning] This paper introduces Visual Planning — the first purely visual reasoning paradigm in which the entire planning process is expressed as a sequence of images without any textual intermediary. A Large Vision Model (LVM) autoregressively generates step-by-step state images. The authors further propose VPRL, a two-stage RL framework combining random-trajectory-initialized exploration with GRPO progress-reward optimization. On three navigation benchmarks (FrozenLake, Maze, MiniBehavior), VPRL achieves an average Exact Match (EM) surpassing text-based reasoning methods by 27%, demonstrating that image-based reasoning substantially outperforms text-based reasoning on vision-first tasks.
+  [ICLR 2026][Robotics][Visual Planning] This paper introduces Visual Planning — the first purely visual reasoning paradigm in which the entire planning process is expressed as a sequence of images without any textual inte…
 tags:
-  - ICLR 2026
-  - Robotics
-  - Visual Planning
-  - Pure Image Reasoning
-  - Large Vision Model
-  - GRPO
-  - Reinforcement Learning
-  - Navigation
+  - "ICLR 2026"
+  - "Robotics"
+  - "Visual Planning"
+  - "Pure Image Reasoning"
+  - "Large Vision Model"
+  - "GRPO"
+  - "Reinforcement Learning"
+  - "Navigation"
 date: 2026-05-08
 content_hash: 6938594ba3e352ba
 ---

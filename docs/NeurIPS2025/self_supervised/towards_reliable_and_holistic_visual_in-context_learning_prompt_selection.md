@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Reliable and Holistic Visual In-Context Learning Prompt Selection
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][visual in-context learning] This paper proposes RH-Partial2Global, which for the first time employs Spearman rank correlation tests to demonstrate that the "similarity-first hypothesis" in VICL is statistically significant yet exhibits extremely weak correlation strength ($\bar{\rho} \approx 0.03\text{-}0.05$). By constructing reliable candidate sets via Jackknife conformal prediction and achieving comprehensive uniform pairwise preference sampling through covering designs, the method consistently outperforms state-of-the-art approaches across three visual tasks: segmentation, detection, and colorization.
+  [NeurIPS 2025][Self-Supervised Learning][visual in-context learning] This paper proposes RH-Partial2Global, which for the first time employs Spearman rank correlation tests to demonstrate that the "similarity-first hypot…
 tags:
-  - NeurIPS 2025
-  - Self-Supervised Learning
-  - visual in-context learning
-  - conformal prediction
-  - covering design
-  - prompt selection
-  - global ranking
+  - "NeurIPS 2025"
+  - "Self-Supervised Learning"
+  - "visual in-context learning"
+  - "conformal prediction"
+  - "covering design"
+  - "prompt selection"
+  - "global ranking"
 date: 2026-05-08
 content_hash: 812ad73dd1202ac2
 ---

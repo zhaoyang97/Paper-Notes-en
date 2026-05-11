@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LogosKG: Hardware-Optimized Scalable and Interpretable Knowledge Graph Retrieval
 description: >-
-  [ACL 2026][Medical Imaging][Knowledge graph retrieval] This paper proposes LogosKG, a hardware-aligned knowledge graph retrieval framework that reformulates graph traversal as multiplications over three sparse associative matrices (SUB/OBJ/REL). Combined with degree-aware graph partitioning, cross-graph routing, and on-demand LRU caching, LogosKG enables scalable and interpretable high-hop retrieval over billion-edge KGs on a single device. Downstream KG-LLM interaction experiments further reveal the systematic influence of graph topology on LLM diagnostic reasoning.
+  [ACL 2026][Medical Imaging][Knowledge graph retrieval] This paper proposes LogosKG, a hardware-aligned knowledge graph retrieval framework that reformulates graph traversal as multiplications over three sparse associativ…
 tags:
-  - ACL 2026
-  - Medical Imaging
-  - Knowledge graph retrieval
-  - hardware-aligned optimization
-  - multi-hop traversal
-  - sparse matrix operations
-  - KG-LLM interaction
+  - "ACL 2026"
+  - "Medical Imaging"
+  - "Knowledge graph retrieval"
+  - "hardware-aligned optimization"
+  - "multi-hop traversal"
+  - "sparse matrix operations"
+  - "KG-LLM interaction"
 date: 2026-05-08
 content_hash: 810f603cb01f60c4
 ---

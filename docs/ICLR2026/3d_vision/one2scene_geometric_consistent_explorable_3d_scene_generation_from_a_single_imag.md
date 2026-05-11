@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] One2Scene: Geometric Consistent Explorable 3D Scene Generation from a Single Image
 description: >-
-  [ICLR 2026][3D Vision][single-image 3D scene generation] This paper proposes One2Scene, which decomposes the ill-posed problem of generating an explorable 3D scene from a single image into three sub-tasks: (1) panorama generation to expand visual coverage, (2) a feed-forward 3DGS network that constructs an explicit 3D geometric scaffold from sparse anchor views, and (3) scaffold-guided novel view synthesis via Dual-LoRA that fuses high-quality anchor views with geometric priors. The method achieves geometrically consistent and photorealistic scene generation under large viewpoint changes, significantly outperforming state-of-the-art methods.
+  [ICLR 2026][3D Vision][single-image 3D scene generation] This paper proposes One2Scene, which decomposes the ill-posed problem of generating an explorable 3D scene from a single image into three sub-tasks: (1) panorama g…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - single-image 3D scene generation
-  - panoramic depth estimation
-  - 3D Gaussian Splatting
-  - geometric scaffold
-  - novel view synthesis
+  - "ICLR 2026"
+  - "3D Vision"
+  - "single-image 3D scene generation"
+  - "panoramic depth estimation"
+  - "3D Gaussian Splatting"
+  - "geometric scaffold"
+  - "novel view synthesis"
 date: 2026-05-08
 content_hash: 311778a479dd3641
 ---

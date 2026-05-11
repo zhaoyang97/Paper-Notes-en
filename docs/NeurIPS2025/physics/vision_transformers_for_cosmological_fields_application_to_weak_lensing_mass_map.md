@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Vision Transformers for Cosmological Fields: Application to Weak Lensing Mass Maps
 description: >-
-  [NeurIPS 2025][Vision Transformer] This work presents the first systematic application of Vision Transformers (ViT and Swin Transformer) to constraining cosmological parameters ($\Omega_m$ and $S_8$) from weak lensing convergence maps, comparing attention-based architectures against CNNs within a simulation-based inference framework.
+  [NeurIPS 2025][Physics][Vision Transformer] This work presents the first systematic application of Vision Transformers (ViT and Swin Transformer) to constraining cosmological parameters ($\Omega_m$ and $S_8$) from weak l…
 tags:
-  - NeurIPS 2025
-  - Vision Transformer
-  - Weak Lensing
-  - Cosmological Parameters
-  - Swin Transformer
-  - Simulation-Based Inference
+  - "NeurIPS 2025"
+  - "Physics"
+  - "Vision Transformer"
+  - "Weak Lensing"
+  - "Cosmological Parameters"
+  - "Swin Transformer"
+  - "Simulation-Based Inference"
 date: 2026-05-08
 content_hash: 54bd74815537a1c0
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Neural Field-Based 3D Surface Reconstruction of Microstructures from Multi-Detector Signals in Scanning Electron Microscopy
 description: >-
-  [CVPR 2026][3D Vision][Scanning Electron Microscopy] This paper proposes NFH-SEM, a neural field-based hybrid framework that embeds the physical model of electron scattering in SEM into a neural field optimization pipeline, enabling high-fidelity 3D surface reconstruction of microstructures from multi-view, multi-detector SEM images. The framework achieves self-calibration and shadow-robust reconstruction at nanometer-scale accuracy (478 nm stacked features, 782 nm pollen textures, 1.559 μm fracture steps).
+  [CVPR 2026][3D Vision][Scanning Electron Microscopy] This paper proposes NFH-SEM, a neural field-based hybrid framework that embeds the physical model of electron scattering in SEM into a neural field optimization pipeli…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Scanning Electron Microscopy
-  - 3D Reconstruction
-  - Neural Fields
-  - Microstructures
-  - Photometric Stereo
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Scanning Electron Microscopy"
+  - "3D Reconstruction"
+  - "Neural Fields"
+  - "Microstructures"
+  - "Photometric Stereo"
 date: 2026-05-08
 content_hash: 27adfc99568832c6
 ---

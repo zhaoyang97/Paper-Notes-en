@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Obliviator Reveals the Cost of Nonlinear Guardedness in Concept Erasure
 description: >-
-  [NeurIPS 2025][concept erasure] This paper proposes Obliviator — a post-processing concept erasure method based on HSIC minimization in RKHS — that iteratively deforms the feature space through a two-step optimization procedure. It is the first method to achieve complete guardedness against nonlinear adversaries, while quantifying the utility-erasure trade-off of nonlinear guardedness. Obliviator substantially outperforms existing methods across multiple PLMs and datasets.
+  [NeurIPS 2025][concept erasure] This paper proposes Obliviator — a post-processing concept erasure method based on HSIC minimization in RKHS — that iteratively deforms the feature space through a two-step optimization pr…
 tags:
-  - NeurIPS 2025
-  - concept erasure
-  - HSIC
-  - RKHS
-  - fairness
-  - nonlinear guardedness
+  - "NeurIPS 2025"
+  - "concept erasure"
+  - "HSIC"
+  - "RKHS"
+  - "fairness"
+  - "nonlinear guardedness"
 date: 2026-05-08
 content_hash: a4eb39d5c39284e8
 ---

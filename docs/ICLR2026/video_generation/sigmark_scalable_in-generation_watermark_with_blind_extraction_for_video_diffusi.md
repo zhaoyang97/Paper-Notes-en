@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] SIGMark: Scalable In-Generation Watermark with Blind Extraction for Video Diffusion
 description: >-
-  [ICLR 2026][Video Generation][Video diffusion models] SIGMark proposes the first blind watermarking framework for modern video diffusion models, achieving scalable blind extraction with constant retrieval cost via Global Frame-level Pseudorandom Coding (GF-PRC), and addresses temporal perturbations under causal 3D VAE through a Segmented Group Ordering (SGO) module, attaining high bit accuracy and strong robustness on HunyuanVideo and Wan-2.2.
+  [ICLR 2026][Video Generation][Video diffusion models] SIGMark proposes the first blind watermarking framework for modern video diffusion models…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - Video diffusion models
-  - watermarking
-  - blind extraction
-  - pseudorandom coding
-  - causal 3D VAE
-  - temporal robustness
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Video diffusion models"
+  - "watermarking"
+  - "blind extraction"
+  - "pseudorandom coding"
+  - "causal 3D VAE"
+  - "temporal robustness"
 date: 2026-05-08
 content_hash: cfb97413ff50457e
 ---

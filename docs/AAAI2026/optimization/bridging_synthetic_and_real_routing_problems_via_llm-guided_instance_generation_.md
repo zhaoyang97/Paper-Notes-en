@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Bridging Synthetic and Real Routing Problems via LLM-Guided Instance Generation and Progressive Adaptation
 description: >-
-  [AAAI 2026][Optimization][Neural Combinatorial Optimization] This paper proposes EvoReal, a framework that employs LLM-driven evolutionary search to generate synthetic VRP instances structurally aligned with real-world distributions, and then adapts pretrained neural solvers to real benchmarks via a two-stage progressive fine-tuning strategy. EvoReal substantially outperforms existing neural solvers on TSPLib (1.05% gap) and CVRPLib (2.71% gap).
+  [AAAI 2026][Optimization][Neural Combinatorial Optimization] This paper proposes EvoReal, a framework that employs LLM-driven evolutionary search to generate synthetic VRP instances structurally aligned with real-world d…
 tags:
-  - AAAI 2026
-  - Optimization
-  - Neural Combinatorial Optimization
-  - Vehicle Routing Problem
-  - LLM-Guided Evolution
-  - Data Generator
-  - Progressive Fine-Tuning
-  - Generalization
+  - "AAAI 2026"
+  - "Optimization"
+  - "Neural Combinatorial Optimization"
+  - "Vehicle Routing Problem"
+  - "LLM-Guided Evolution"
+  - "Data Generator"
+  - "Progressive Fine-Tuning"
+  - "Generalization"
 date: 2026-05-08
 content_hash: d76ad8588b251b89
 ---

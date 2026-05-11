@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MatchED: Crisp Edge Detection Using End-to-End, Matching-based Supervision
 description: >-
-  [CVPR 2026][Human Understanding][edge detection] MatchED introduces a lightweight (~21K parameter) plug-and-play module that generates crisp (single-pixel-wide) edge maps by performing one-to-one bipartite matching between predicted and GT edge pixels during training, based on spatial distance and confidence. The module can be appended to any edge detector for end-to-end training, and for the first time matches or surpasses standard post-processing methods without relying on NMS and thinning.
+  [CVPR 2026][Human Understanding][edge detection] MatchED introduces a lightweight (~21K parameter) plug-and-play module that generates crisp (single-pixel-wide) edge maps by performing one-to-one bipartite matching betwe…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - edge detection
-  - crisp edges
-  - bipartite matching
-  - plug-and-play
-  - end-to-end training
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "edge detection"
+  - "crisp edges"
+  - "bipartite matching"
+  - "plug-and-play"
+  - "end-to-end training"
 date: 2026-05-08
 content_hash: 44ecba3d9b3e6d8b
 ---

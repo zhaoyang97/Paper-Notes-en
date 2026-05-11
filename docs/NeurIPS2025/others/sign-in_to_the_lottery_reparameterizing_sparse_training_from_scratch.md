@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Sign-In to the Lottery: Reparameterized Sparse Training from Scratch
 description: >-
-  [NeurIPS 2025][sparse training] This paper identifies the root cause of poor performance in pruning-at-initialization (PaI) sparse training as the inability to learn correct parameter signs as dense-to-sparse methods do. To address this, the authors propose Sign-In reparameterization ($\theta = m \odot w$), which introduces an internal degree of freedom to facilitate sign flipping. The approach is theoretically shown to resolve a class of sign-flipping scenarios complementary to those addressed by overparameterization, and empirically yields substantial improvements in sparse-from-scratch training.
+  [NeurIPS 2025][sparse training] This paper identifies the root cause of poor performance in pruning-at-initialization (PaI) sparse training as the inability to learn correct parameter signs as dense-to-sparse methods do.…
 tags:
-  - NeurIPS 2025
-  - sparse training
-  - lottery ticket hypothesis
-  - sign flipping
-  - reparameterization
-  - pruning at initialization
+  - "NeurIPS 2025"
+  - "sparse training"
+  - "lottery ticket hypothesis"
+  - "sign flipping"
+  - "reparameterization"
+  - "pruning at initialization"
 date: 2026-05-08
 content_hash: fdb1ac99f59a85e2
 ---

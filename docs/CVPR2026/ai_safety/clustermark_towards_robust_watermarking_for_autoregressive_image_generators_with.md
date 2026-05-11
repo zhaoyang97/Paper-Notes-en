@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ClusterMark: Towards Robust Watermarking for Autoregressive Image Generators with Visual Token Clustering
 description: >-
-  [CVPR 2026][AI Safety][Autoregressive image generation] This paper proposes ClusterMark, a watermarking scheme based on visual token clustering that adapts KGW-style LLM watermarking to autoregressive image generators. By assigning visually similar tokens to the same green/red partition, it significantly improves watermark robustness under image perturbations while preserving image quality.
+  [CVPR 2026][AI Safety][Autoregressive image generation] This paper proposes ClusterMark, a watermarking scheme based on visual token clustering that adapts KGW-style LLM watermarking to autoregressive image generators. B…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Autoregressive image generation
-  - watermark detection
-  - visual token clustering
-  - robust watermarking
-  - VQ-VAE
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Autoregressive image generation"
+  - "watermark detection"
+  - "visual token clustering"
+  - "robust watermarking"
+  - "VQ-VAE"
 date: 2026-05-08
 content_hash: 9b05c98c8cb0dd0f
 ---

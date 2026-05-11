@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AutoTool: Automatic Scaling of Tool-Use Capabilities in RL via Decoupled Entropy Constraints
 description: >-
-  [ICLR 2026][Reinforcement Learning][tool use] This paper proposes a reinforcement learning framework with Decoupled Adaptive Entropy Constraints, enabling LLMs to automatically switch between long and short reasoning modes based on problem difficulty in tool-calling tasks, achieving a 9.8% accuracy improvement while reducing inference token overhead by approximately 81%.
+  [ICLR 2026][Reinforcement Learning][tool use] This paper proposes a reinforcement learning framework with Decoupled Adaptive Entropy Constraints…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - tool use
-  - test-time scaling
-  - entropy constraint
-  - GRPO
-  - agentic LLM
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "tool use"
+  - "test-time scaling"
+  - "entropy constraint"
+  - "GRPO"
+  - "agentic LLM"
 date: 2026-05-08
 content_hash: 5fa4322063e88c4f
 ---

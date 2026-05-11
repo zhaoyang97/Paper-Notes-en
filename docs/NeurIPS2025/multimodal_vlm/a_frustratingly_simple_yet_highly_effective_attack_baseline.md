@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Frustratingly Simple Yet Highly Effective Attack Baseline: Over 90% Success Rate Against the Strong Black-box Models of GPT-4.5/4o/o1
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Black-box transfer attack] This paper proposes M-Attack, which performs random cropping on source images and aligns them with target images via local-global or local-local matching in the embedding space, combined with a multi-CLIP model ensemble. This causes adversarial perturbations to naturally concentrate on semantically critical regions, forming clear semantic details. M-Attack achieves >90% targeted attack success rate against commercial black-box LVLMs including GPT-4.5/4o/o1.
+  [NeurIPS 2025][Multimodal VLM][Black-box transfer attack] This paper proposes M-Attack, which performs random cropping on source images and aligns them with target images via local-global or local-local matching in the e…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Black-box transfer attack
-  - local semantic matching
-  - adversarial perturbation
-  - LVLM safety
-  - model ensemble
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Black-box transfer attack"
+  - "local semantic matching"
+  - "adversarial perturbation"
+  - "LVLM safety"
+  - "model ensemble"
 date: 2026-05-08
 content_hash: a3f992988203f6b3
 ---

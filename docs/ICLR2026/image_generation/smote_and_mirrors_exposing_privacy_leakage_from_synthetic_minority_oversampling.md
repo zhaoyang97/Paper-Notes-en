@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SMOTE and Mirrors: Exposing Privacy Leakage from Synthetic Minority Oversampling
 description: >-
-  [ICLR 2026][Image Generation][SMOTE] This paper presents the first systematic study of privacy leakage in SMOTE, proposing two attacks—DistinSMOTE and ReconSMOTE—that demonstrate SMOTE is fundamentally non-privacy-preserving and disproportionately exposes minority-class records.
+  [ICLR 2026][Image Generation][SMOTE] This paper presents the first systematic study of privacy leakage in SMOTE, proposing two attacks—DistinSMOTE and ReconSMOTE—that demonstrate SMOTE is fundamentally non-privacy-preser…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - SMOTE
-  - privacy leakage
-  - reconstruction attack
-  - distinction attack
-  - minority oversampling
+  - "ICLR 2026"
+  - "Image Generation"
+  - "SMOTE"
+  - "privacy leakage"
+  - "reconstruction attack"
+  - "distinction attack"
+  - "minority oversampling"
 date: 2026-05-08
 content_hash: dcc523f8c563ef29
 ---

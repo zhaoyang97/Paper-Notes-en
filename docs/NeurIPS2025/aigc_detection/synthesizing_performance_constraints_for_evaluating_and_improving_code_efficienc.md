@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Synthesizing Performance Constraints for Evaluating and Improving Code Efficiency
 description: >-
-  [NeurIPS 2025][AIGC Detection][Performance constraint synthesis] This paper proposes Wedge, a framework that uses LLMs to synthesize performance-characterizing constraints to guide constraint-aware fuzzing, generating stress-test inputs that expose code performance bottlenecks. It further constructs the PerfForge benchmark, enabling LLM-based code optimizers (e.g., Effi-Learner) to achieve up to 24% additional reduction in CPU instructions.
+  [NeurIPS 2025][AIGC Detection][Performance constraint synthesis] This paper proposes Wedge, a framework that uses LLMs to synthesize performance-characterizing constraints to guide constraint-aware fuzzing…
 tags:
-  - NeurIPS 2025
-  - AIGC Detection
-  - Performance constraint synthesis
-  - code efficiency evaluation
-  - fuzzing
-  - LLM code optimization
-  - PerfForge
+  - "NeurIPS 2025"
+  - "AIGC Detection"
+  - "Performance constraint synthesis"
+  - "code efficiency evaluation"
+  - "fuzzing"
+  - "LLM code optimization"
+  - "PerfForge"
 date: 2026-05-08
 content_hash: 7000fc3f67bdd52e
 ---

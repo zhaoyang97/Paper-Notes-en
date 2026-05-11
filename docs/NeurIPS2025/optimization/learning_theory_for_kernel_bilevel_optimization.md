@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Learning Theory for Kernel Bilevel Optimization
 description: >-
-  [NeurIPS 2025][Optimization][Bilevel Optimization] This work establishes the first finite-sample generalization bounds for kernel bilevel optimization (KBO), proving that plug-in estimation errors for both the objective value and its gradient converge uniformly at the parametric rate $\mathcal{O}(1/\sqrt{m}+1/\sqrt{n})$, and applies this theory to analyze the statistical accuracy of bilevel gradient descent.
+  [NeurIPS 2025][Optimization][Bilevel Optimization] This work establishes the first finite-sample generalization bounds for kernel bilevel optimization (KBO)…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Bilevel Optimization
-  - Kernel Methods
-  - Generalization Theory
-  - RKHS
-  - Empirical Processes
-  - U-processes
-  - Implicit Differentiation
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Bilevel Optimization"
+  - "Kernel Methods"
+  - "Generalization Theory"
+  - "RKHS"
+  - "Empirical Processes"
+  - "U-processes"
+  - "Implicit Differentiation"
 date: 2026-05-08
 content_hash: ab1a9e37f586520e
 ---

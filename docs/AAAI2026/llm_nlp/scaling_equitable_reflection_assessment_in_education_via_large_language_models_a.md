@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Scaling Equitable Reflection Assessment in Education via Large Language Models and Role-Based Feedback Agents
 description: >-
-  [AAAI 2026][LLM/NLP][Multi-Agent Systems] This paper proposes a zero-shot multi-agent pipeline comprising five role-based GPT-4o agents that assess learner reflection texts using a rubric-based scoring scheme and generate bias-aware conversational feedback. Evaluated on 336 reflections, the system achieves MAE=0.467, QWK=0.459 in scoring agreement, and a feedback quality score of Q(g)=3.967.
+  [AAAI 2026][LLM/NLP][Multi-Agent Systems] This paper proposes a zero-shot multi-agent pipeline comprising five role-based GPT-4o agents that assess learner reflection texts using a rubric-based scoring scheme and generat…
 tags:
-  - AAAI 2026
-  - LLM/NLP
-  - Multi-Agent Systems
-  - Formative Feedback
-  - Automated Scoring
-  - Fairness
-  - Metacognition
+  - "AAAI 2026"
+  - "LLM/NLP"
+  - "Multi-Agent Systems"
+  - "Formative Feedback"
+  - "Automated Scoring"
+  - "Fairness"
+  - "Metacognition"
 date: 2026-05-08
 content_hash: 58f9ba8b8fc66edc
 ---

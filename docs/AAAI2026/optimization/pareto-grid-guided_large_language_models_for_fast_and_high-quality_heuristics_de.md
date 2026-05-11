@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Pareto-Grid-Guided Large Language Models for Fast and High-Quality Heuristics Design in Multi-Objective Combinatorial Optimization
 description: >-
-  [AAAI 2026][Optimization][Multi-Objective Optimization] This paper proposes MPaGE, a framework that integrates LLMs with a Pareto Front Grid mechanism and semantic clustering to automatically generate heuristics for multi-objective combinatorial optimization problems (MOCOPs), jointly optimizing solution quality and runtime efficiency. MPaGE achieves significant improvements in HV and IGD over baselines such as EoH and MEoH on Bi-TSP, Tri-TSP, Bi-CVRP, and Bi-KP benchmarks.
+  [AAAI 2026][Optimization][Multi-Objective Optimization] This paper proposes MPaGE, a framework that integrates LLMs with a Pareto Front Grid mechanism and semantic clustering to automatically generate heuristics for mult…
 tags:
-  - AAAI 2026
-  - Optimization
-  - Multi-Objective Optimization
-  - LLM
-  - Pareto Front Grid
-  - SEMO
-  - Heuristic Generation
-  - Semantic Diversity
+  - "AAAI 2026"
+  - "Optimization"
+  - "Multi-Objective Optimization"
+  - "LLM"
+  - "Pareto Front Grid"
+  - "SEMO"
+  - "Heuristic Generation"
+  - "Semantic Diversity"
 date: 2026-05-08
 content_hash: 94ff10e06e3f9dad
 ---

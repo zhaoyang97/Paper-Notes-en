@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SimMLM: A Simple Framework for Multi-modal Learning with Missing Modality
 description: >-
-  [ICCV 2025][Medical Imaging][multi-modal learning] This paper proposes SimMLM, a simple yet effective framework for multi-modal learning under missing modality conditions. It consists of a Dynamic Mixture of Modality Experts (DMoME) architecture and a More vs. Fewer (MoFe) ranking loss. SimMLM comprehensively outperforms state-of-the-art methods on brain tumor segmentation and multi-modal classification tasks with fewer parameters and lower computational cost, while providing interpretable modality importance estimates.
+  [ICCV 2025][Medical Imaging][multi-modal learning] This paper proposes SimMLM, a simple yet effective framework for multi-modal learning under missing modality conditions. It consists of a Dynamic Mixture of Modality Exp…
 tags:
-  - ICCV 2025
-  - Medical Imaging
-  - multi-modal learning
-  - missing modality
-  - mixture of experts
-  - ranking loss
-  - brain tumor segmentation
+  - "ICCV 2025"
+  - "Medical Imaging"
+  - "multi-modal learning"
+  - "missing modality"
+  - "mixture of experts"
+  - "ranking loss"
+  - "brain tumor segmentation"
 date: 2026-05-08
 content_hash: 04bdd70ecea0db13
 ---

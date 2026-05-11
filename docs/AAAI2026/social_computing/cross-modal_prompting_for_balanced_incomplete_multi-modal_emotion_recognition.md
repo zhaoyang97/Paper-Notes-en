@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Cross-modal Prompting for Balanced Incomplete Multi-modal Emotion Recognition
 description: >-
-  [AAAI 2026][Social Computing][Incomplete multi-modal] This paper proposes Cross-modal Prompting (ComP), which addresses the modality imbalance problem in incomplete multi-modal emotion recognition (IMER) via progressive prompt generation, cross-modal knowledge propagation, and a dynamic scheduler, achieving state-of-the-art performance across 4 datasets and 7 missing rates.
+  [AAAI 2026][Social Computing][Incomplete multi-modal] This paper proposes Cross-modal Prompting (ComP), which addresses the modality imbalance problem in incomplete multi-modal emotion recognition (IMER) via progressive…
 tags:
-  - AAAI 2026
-  - Social Computing
-  - Incomplete multi-modal
-  - emotion recognition
-  - prompt learning
-  - modality balance
-  - knowledge propagation
+  - "AAAI 2026"
+  - "Social Computing"
+  - "Incomplete multi-modal"
+  - "emotion recognition"
+  - "prompt learning"
+  - "modality balance"
+  - "knowledge propagation"
 date: 2026-05-08
 content_hash: 98b77aa18fd25d3f
 ---

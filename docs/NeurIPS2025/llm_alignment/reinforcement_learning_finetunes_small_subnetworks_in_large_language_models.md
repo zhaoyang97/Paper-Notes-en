@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Reinforcement Learning Finetunes Small Subnetworks in Large Language Models
 description: >-
-  [NeurIPS 2025][LLM Alignment][reinforcement-learning] RL fine-tuning of LLMs updates only 5%–30% of parameters in practice (sparse subnetworks), and these subnetworks exhibit high consistency across different random seeds, datasets, and algorithms. Fine-tuning only the identified subnetwork can reproduce both the performance and the parameter values of full fine-tuning.
+  [NeurIPS 2025][LLM Alignment][reinforcement-learning] RL fine-tuning of LLMs updates only 5%–30% of parameters in practice (sparse subnetworks)…
 tags:
-  - NeurIPS 2025
-  - LLM Alignment
-  - reinforcement-learning
-  - sparse subnetwork
-  - parameter update sparsity
-  - LLM finetuning
-  - lottery ticket hypothesis
+  - "NeurIPS 2025"
+  - "LLM Alignment"
+  - "reinforcement-learning"
+  - "sparse subnetwork"
+  - "parameter update sparsity"
+  - "LLM finetuning"
+  - "lottery ticket hypothesis"
 date: 2026-05-08
 content_hash: 9caba12b9b56b4ce
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] When Bigger Isn't Better: A Comprehensive Fairness Evaluation of Political Bias in Multi-News Summarisation
 description: >-
-  [ACL 2026][AI Safety][Political Bias] This paper constructs FairNews, the first multi-document news summarization dataset with political leaning labels, and evaluates 13 LLMs through a five-dimensional fairness evaluation framework, finding that mid-sized models outperform larger ones in fairness and efficiency, and that entity sentiment similarity is the most resistant dimension to prompt-based debiasing.
+  [ACL 2026][AI Safety][Political Bias] This paper constructs FairNews, the first multi-document news summarization dataset with political leaning labels…
 tags:
-  - ACL 2026
-  - AI Safety
-  - Political Bias
-  - Multi-Document Summarization
-  - Fairness Evaluation
-  - Debiasing Methods
-  - Model Scale
+  - "ACL 2026"
+  - "AI Safety"
+  - "Political Bias"
+  - "Multi-Document Summarization"
+  - "Fairness Evaluation"
+  - "Debiasing Methods"
+  - "Model Scale"
 date: 2025-05-08
 content_hash: 11af355528d8a76f
 ---

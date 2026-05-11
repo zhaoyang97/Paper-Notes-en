@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] ThreadSumm: Summarization of Nested Discourse Threads Using Tree of Thoughts
 description: >-
-  [ACL 2026][nested discourse thread summarization] This paper proposes ThreadSumm, a multi-stage LLM pipeline framework that models nested discourse thread summarization as a hierarchical reasoning problem. It first extracts aspects and atomic content units (ACUs) for content planning, then constructs a thread-aware sequence via sentence ordering, and finally applies Tree of Thoughts search to generate and score multiple paragraph candidates. The approach outperforms baselines on Reddit and StackExchange datasets.
+  [ACL 2026][Interpretability][nested discourse thread summarization] This paper proposes ThreadSumm, a multi-stage LLM pipeline framework that models nested discourse thread summarization as a hierarchical reasoning probl…
 tags:
-  - ACL 2026
-  - nested discourse thread summarization
-  - Tree of Thoughts
-  - atomic content units
-  - multi-stage LLM pipeline
-  - coherence and coverage
+  - "ACL 2026"
+  - "Interpretability"
+  - "nested discourse thread summarization"
+  - "Tree of Thoughts"
+  - "atomic content units"
+  - "multi-stage LLM pipeline"
+  - "coherence and coverage"
 date: 2026-05-08
 content_hash: 82eaf06760b3ae14
 ---

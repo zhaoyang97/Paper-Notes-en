@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OCK: Unsupervised Dynamic Video Prediction with Object-Centric Kinematics
 description: >-
-  [ICCV 2025][Video Generation][Object-centric learning] This paper proposes OCK (Object-Centric Kinematics), which augments object-centric video prediction by introducing explicit kinematic attributes (position, velocity, acceleration) as complements to slot representations. Two Transformer variants — Joint-OCK and Cross-OCK — are designed to fuse appearance and motion information, achieving significant improvements in dynamic video prediction quality across complex synthetic and real-world scenarios.
+  [ICCV 2025][Video Generation][Object-centric learning] This paper proposes OCK (Object-Centric Kinematics), which augments object-centric video prediction by introducing explicit kinematic attributes (position, velocity…
 tags:
-  - ICCV 2025
-  - Video Generation
-  - Object-centric learning
-  - video prediction
-  - kinematic modeling
-  - Slot Attention
-  - autoregressive Transformer
+  - "ICCV 2025"
+  - "Video Generation"
+  - "Object-centric learning"
+  - "video prediction"
+  - "kinematic modeling"
+  - "Slot Attention"
+  - "autoregressive Transformer"
 date: 2026-05-08
 content_hash: d6ddc950f7a65882
 ---

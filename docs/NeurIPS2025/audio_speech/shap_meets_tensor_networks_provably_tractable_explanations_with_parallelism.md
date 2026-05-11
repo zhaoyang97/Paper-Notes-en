@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] SHAP Meets Tensor Networks: Provably Tractable Explanations with Parallelism
 description: >-
-  [NeurIPS 2025][Audio & Speech][SHAP] This paper presents the first provably exact SHAP computation framework for Tensor Networks (TNs), proves that SHAP under the Tensor Train (TT) structure is parallelizable in polylogarithmic time (NC² complexity), and reveals via reductions that **width rather than depth** is the fundamental bottleneck for SHAP computation in binarized neural networks.
+  [NeurIPS 2025][Audio & Speech][SHAP] This paper presents the first provably exact SHAP computation framework for Tensor Networks (TNs)…
 tags:
-  - NeurIPS 2025
+  - "NeurIPS 2025"
   - "Audio & Speech"
-  - SHAP
-  - Tensor Networks
-  - Tensor Train
-  - Explainability
-  - Parallel Computation
-  - Binarized Neural Networks
-  - Parameterized Complexity
+  - "SHAP"
+  - "Tensor Networks"
+  - "Tensor Train"
+  - "Explainability"
+  - "Parallel Computation"
+  - "Binarized Neural Networks"
+  - "Parameterized Complexity"
 date: 2026-05-08
 content_hash: 18232ff99930b34f
 ---

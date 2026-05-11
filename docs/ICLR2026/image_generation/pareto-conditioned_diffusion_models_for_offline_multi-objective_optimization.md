@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Pareto-Conditioned Diffusion Models for Offline Multi-Objective Optimization
 description: >-
-  [ICLR 2026][Image Generation][Offline multi-objective optimization] This paper proposes Pareto-Conditioned Diffusion (PCD), which reformulates offline multi-objective optimization as a conditional sampling problem. PCD directly generates high-quality solutions conditioned on objective trade-offs without requiring explicit surrogate models, achieving the best overall consistency across diverse benchmarks.
+  [ICLR 2026][Image Generation][Offline multi-objective optimization] This paper proposes Pareto-Conditioned Diffusion (PCD), which reformulates offline multi-objective optimization as a conditional sampling problem. PCD d…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Offline multi-objective optimization
-  - conditional diffusion models
-  - Pareto front
-  - surrogate-free
-  - reference directions
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Offline multi-objective optimization"
+  - "conditional diffusion models"
+  - "Pareto front"
+  - "surrogate-free"
+  - "reference directions"
 date: 2026-05-08
 content_hash: ed702bd87280cd35
 ---

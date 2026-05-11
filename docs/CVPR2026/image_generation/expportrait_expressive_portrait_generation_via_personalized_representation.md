@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ExpPortrait: Expressive Portrait Generation via Personalized Representation
 description: >-
-  [CVPR 2026][Image Generation][Portrait Animation] This paper proposes a high-fidelity personalized head representation (static identity offset + dynamic expression offset) to address the limited expressiveness of parametric models such as SMPL-X. Combined with an identity-adaptive expression transfer module and a DiT-based generator, the method achieves state-of-the-art performance on both self-driven portrait video animation and cross-identity reenactment tasks.
+  [CVPR 2026][Image Generation][Portrait Animation] This paper proposes a high-fidelity personalized head representation (static identity offset + dynamic expression offset) to address the limited expressiveness of paramet…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Portrait Animation
-  - Personalized Head Representation
-  - Expression Transfer
-  - Diffusion Transformer
-  - SMPL-X
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Portrait Animation"
+  - "Personalized Head Representation"
+  - "Expression Transfer"
+  - "Diffusion Transformer"
+  - "SMPL-X"
 date: 2026-05-08
 content_hash: a74101ff5012dc01
 ---

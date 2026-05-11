@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Demystifying Spectral Feature Learning for Instrumental Variable Regression
 description: >-
-  [NeurIPS 2025][Causal Inference][Instrumental Variables] This paper establishes rigorous generalization error bounds for spectral feature-based nonparametric instrumental variable (NPIV) regression, revealing that performance is jointly governed by two factors: **spectral alignment** between the structural function and the conditional expectation operator (approximation error) and the **rate of singular value decay** (estimation error). A Good-Bad-Ugly trichotomy is proposed along with data-driven diagnostic tools.
+  [NeurIPS 2025][Causal Inference][Instrumental Variables] This paper establishes rigorous generalization error bounds for spectral feature-based nonparametric instrumental variable (NPIV) regression…
 tags:
-  - NeurIPS 2025
-  - Causal Inference
-  - Instrumental Variables
-  - Spectral Features
-  - Two-Stage Least Squares
-  - Contrastive Learning
-  - Causal Effect Estimation
+  - "NeurIPS 2025"
+  - "Causal Inference"
+  - "Instrumental Variables"
+  - "Spectral Features"
+  - "Two-Stage Least Squares"
+  - "Contrastive Learning"
+  - "Causal Effect Estimation"
 date: 2026-05-08
 content_hash: 786ba94a8713bb9e
 ---

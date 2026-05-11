@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] TSBOW: Traffic Surveillance Benchmark for Occluded Vehicles Under Various Weather Conditions
 description: >-
-  [AAAI2026][Autonomous Driving][Object Detection] This paper presents TSBOW — a large-scale CCTV-based traffic surveillance dataset comprising 198 videos, over 32 hours of real-world traffic data, and 3.2 million frames, covering all four seasons (clear/haze/rain/snow including extreme disaster scenarios), spanning 8 categories of traffic participants, with a focus on addressing the challenge of occluded vehicle detection under adverse weather conditions.
+  [AAAI2026][Autonomous Driving][Object Detection] This paper presents TSBOW — a large-scale CCTV-based traffic surveillance dataset comprising 198 videos, over 32 hours of real-world traffic data, and 3.2 million frames…
 tags:
-  - AAAI2026
-  - Autonomous Driving
-  - Object Detection
-  - Traffic Surveillance
-  - Benchmark Dataset
-  - Occlusion Detection
-  - Adverse Weather
-  - CCTV
+  - "AAAI2026"
+  - "Autonomous Driving"
+  - "Object Detection"
+  - "Traffic Surveillance"
+  - "Benchmark Dataset"
+  - "Occlusion Detection"
+  - "Adverse Weather"
+  - "CCTV"
 date: 2026-05-08
 content_hash: 8d0379530749605b
 ---

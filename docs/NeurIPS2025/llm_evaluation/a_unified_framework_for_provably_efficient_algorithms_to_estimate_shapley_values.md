@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Unified Framework for Provably Efficient Algorithms to Estimate Shapley Values
 description: >-
-  [NEURIPS2025][LLM Evaluation][Shapley Values] This paper proposes a unified framework that subsumes KernelSHAP, LeverageSHAP, and related Shapley value estimators under a randomized sketching perspective, provides the first non-asymptotic theoretical guarantees for KernelSHAP, and extends these methods to high-dimensional datasets such as CIFAR-10 via algorithmic improvements including Poisson approximation.
+  [NEURIPS2025][LLM Evaluation][Shapley Values] This paper proposes a unified framework that subsumes KernelSHAP, LeverageSHAP, and related Shapley value estimators under a randomized sketching perspective…
 tags:
-  - NEURIPS2025
-  - LLM Evaluation
-  - Shapley Values
-  - KernelSHAP
-  - LeverageSHAP
-  - Explainable AI
-  - Randomized Numerical Linear Algebra
+  - "NEURIPS2025"
+  - "LLM Evaluation"
+  - "Shapley Values"
+  - "KernelSHAP"
+  - "LeverageSHAP"
+  - "Explainable AI"
+  - "Randomized Numerical Linear Algebra"
 date: 2026-05-08
 content_hash: 6bb03bc5d20cefd5
 ---

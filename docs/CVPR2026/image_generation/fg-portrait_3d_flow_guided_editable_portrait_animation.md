@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FG-Portrait: 3D Flow Guided Editable Portrait Animation
 description: >-
-  [CVPR 2026][Image Generation][Portrait Animation] FG-Portrait introduces "3D optical flow" — directly computed from the FLAME parametric 3D head model without any learning — as a geometry-driven motion correspondence signal. Combined with depth-guided sampling for 3D flow encoding as the motion condition for a diffusion model ControlNet, the method achieves substantially improved motion transfer accuracy (APD reduced by 22%+) and supports inference-time expression and head pose editing.
+  [CVPR 2026][Image Generation][Portrait Animation] FG-Portrait introduces "3D optical flow" — directly computed from the FLAME parametric 3D head model without any learning — as a geometry-driven motion correspondence sig…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Portrait Animation
-  - 3D Optical Flow
-  - Parametric Head Model
-  - Diffusion Model
-  - Expression Editing
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Portrait Animation"
+  - "3D Optical Flow"
+  - "Parametric Head Model"
+  - "Diffusion Model"
+  - "Expression Editing"
 date: 2026-05-08
 content_hash: bf4f80184809b2de
 ---

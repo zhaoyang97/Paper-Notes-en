@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SparseRM: A Lightweight Preference Modeling with Sparse Autoencoder
 description: >-
-  [AAAI 2026][Model Compression][Sparse Autoencoder] SparseRM leverages sparse autoencoders (SAE) to extract preference-relevant directions from LLM intermediate representations, constructing a lightweight reward model via projection vectors. With fewer than 1% trainable parameters, it surpasses most mainstream reward models and demonstrates stronger generalization in online iterative alignment frameworks.
+  [AAAI 2026][Model Compression][Sparse Autoencoder] SparseRM leverages sparse autoencoders (SAE) to extract preference-relevant directions from LLM intermediate representations…
 tags:
-  - AAAI 2026
-  - Model Compression
-  - Sparse Autoencoder
-  - Reward Model
-  - Preference Modeling
-  - LLM Alignment
-  - Interpretability
+  - "AAAI 2026"
+  - "Model Compression"
+  - "Sparse Autoencoder"
+  - "Reward Model"
+  - "Preference Modeling"
+  - "LLM Alignment"
+  - "Interpretability"
 date: 2026-05-08
 content_hash: dc18433789c93be9
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Stable Coresets via Posterior Sampling: Aligning Induced and Full Loss Landscapes
 description: >-
-  [NeurIPS 2025][Optimization][Coreset Selection] This paper proposes a coreset selection framework based on posterior sampling. By sampling weight perturbations on BatchNorm layers to smooth the loss landscape, it guarantees alignment between the coreset and full-dataset loss landscapes (including approximations of the Hessian and Newton step), significantly outperforming existing methods under high label noise.
+  [NeurIPS 2025][Optimization][Coreset Selection] This paper proposes a coreset selection framework based on posterior sampling. By sampling weight perturbations on BatchNorm layers to smooth the loss landscape…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Coreset Selection
-  - Posterior Sampling
-  - Loss Landscape Alignment
-  - Label Noise Robustness
-  - SGD Convergence
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Coreset Selection"
+  - "Posterior Sampling"
+  - "Loss Landscape Alignment"
+  - "Label Noise Robustness"
+  - "SGD Convergence"
 date: 2026-05-08
 content_hash: b43dbabe76f610a7
 ---

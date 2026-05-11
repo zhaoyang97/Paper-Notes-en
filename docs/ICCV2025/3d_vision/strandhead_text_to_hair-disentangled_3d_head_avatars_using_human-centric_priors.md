@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] StrandHead: Text to Hair-Disentangled 3D Head Avatars Using Human-Centric Priors
 description: >-
-  [3D Vision] This paper presents StrandHead, the first framework for generating strand-level 3D head avatars by distilling human-centric 2D diffusion priors. It introduces a differentiable prismatization algorithm to convert hair strands into watertight meshes with gradient backpropagation, and designs regularization losses based on statistical geometric priors of hair strands to ensure hairstyle realism.
+  [3D Vision] This paper presents StrandHead, the first framework for generating strand-level 3D head avatars by distilling human-centric 2D diffusion priors. It introduces a differentiable prismatization algorithm to conv…
 tags:
-  - 3D Vision
+  - "3D Vision"
 date: 2026-05-08
 content_hash: d9abeb0a56a359c2
 ---

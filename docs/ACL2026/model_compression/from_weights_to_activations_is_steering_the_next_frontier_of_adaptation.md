@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From Weights to Activations: Is Steering the Next Frontier of Adaptation?
 description: >-
-  [ACL 2026][Model Compression][activation-space intervention] This paper systematically argues that steering (inference-time activation-space intervention) should be recognized as an independent model adaptation paradigm. It proposes eight functional evaluation criteria to compare steering against fine-tuning, PEFT, and prompt engineering, positioning steering as a locally reversible, activation-space behavior modification approach with unique advantages in computational efficiency, data efficiency, and reversibility.
+  [ACL 2026][Model Compression][activation-space intervention] This paper systematically argues that steering (inference-time activation-space intervention) should be recognized as an independent model adaptation paradigm.…
 tags:
-  - ACL 2026
-  - Model Compression
-  - activation-space intervention
-  - model adaptation taxonomy
-  - steering
-  - parameter efficiency
-  - inference-time behavior modification
+  - "ACL 2026"
+  - "Model Compression"
+  - "activation-space intervention"
+  - "model adaptation taxonomy"
+  - "steering"
+  - "parameter efficiency"
+  - "inference-time behavior modification"
 date: 2026-05-08
 content_hash: 8d857f1c5ef67f91
 ---

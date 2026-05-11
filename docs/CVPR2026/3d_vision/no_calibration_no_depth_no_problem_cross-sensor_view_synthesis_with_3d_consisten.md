@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] No Calibration, No Depth, No Problem: Cross-Sensor View Synthesis with 3D Consistency
 description: >-
-  [3D Vision] This paper proposes the first cross-sensor view synthesis framework that requires neither calibration nor depth. Through a match-densify-consolidate pipeline, sparse cross-modal keypoints are expanded into dense X-modality images (thermal/NIR/SAR) aligned with the RGB viewpoint. Synthesis quality is further improved via confidence-aware densification fusion (CADF) and self-matching filtering.
+  [3D Vision] This paper proposes the first cross-sensor view synthesis framework that requires neither calibration nor depth. Through a match-densify-consolidate pipeline…
 tags:
-  - 3D Vision
+  - "3D Vision"
 date: 2026-05-08
 content_hash: ec5318c4f04e390c
 ---

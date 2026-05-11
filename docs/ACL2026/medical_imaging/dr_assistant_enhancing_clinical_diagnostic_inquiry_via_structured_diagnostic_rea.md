@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dr. Assistant: Enhancing Clinical Diagnostic Inquiry via Structured Diagnostic Reasoning Data and Reinforcement Learning
 description: >-
-  [ACL 2026][Medical Imaging][Clinical Diagnostic Reasoning] This paper proposes the Clinical Diagnostic Reasoning Data (CDRD) structure to capture abstract clinical reasoning logic from symptoms to differential diagnosis. Based on CDRD, a two-stage SFT+RL training pipeline is employed to build the Dr. Assistant model (14B), which surpasses HuatuoGPT-o1-72B by 13.59% in ICD-Recall on clinical inquiry benchmarks, reaching a level competitive with GPT-5.
+  [ACL 2026][Medical Imaging][Clinical Diagnostic Reasoning] This paper proposes the Clinical Diagnostic Reasoning Data (CDRD) structure to capture abstract clinical reasoning logic from symptoms to differential diagnosis.…
 tags:
-  - ACL 2026
-  - Medical Imaging
-  - Clinical Diagnostic Reasoning
-  - Reinforcement Learning
-  - Structured Data
-  - Inquiry Guidance
-  - CDSS
+  - "ACL 2026"
+  - "Medical Imaging"
+  - "Clinical Diagnostic Reasoning"
+  - "Reinforcement Learning"
+  - "Structured Data"
+  - "Inquiry Guidance"
+  - "CDSS"
 date: 2026-05-08
 content_hash: c0aec830033facb4
 ---

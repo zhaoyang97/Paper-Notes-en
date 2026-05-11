@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] FlyLoRA: Boosting Task Decoupling and Parameter Efficiency via Implicit Rank-Wise Mixture-of-Experts
 description: >-
-  [NeurIPS 2025][LoRA] Inspired by the fly olfactory circuit, FlyLoRA replaces the down-projection matrix $A$ in LoRA with a frozen sparse random projection and employs top-$k$ activation selection to realize implicit rank-wise MoE routing. This design eliminates routing parameters, reduces intra-task interference, and naturally supports multi-task model merging by exploiting the near-orthogonality of random projections.
+  [NeurIPS 2025][Code Intelligence][LoRA] Inspired by the fly olfactory circuit, FlyLoRA replaces the down-projection matrix $A$ in LoRA with a frozen sparse random projection and employs top-$k$ activation selection to re…
 tags:
-  - NeurIPS 2025
-  - LoRA
-  - MoE
-  - Parameter-Efficient Fine-Tuning
-  - Fly Olfactory Circuit
-  - Model Merging
+  - "NeurIPS 2025"
+  - "Code Intelligence"
+  - "LoRA"
+  - "MoE"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Fly Olfactory Circuit"
+  - "Model Merging"
 date: 2026-05-08
 content_hash: 0912bfa9e4425d3e
 ---

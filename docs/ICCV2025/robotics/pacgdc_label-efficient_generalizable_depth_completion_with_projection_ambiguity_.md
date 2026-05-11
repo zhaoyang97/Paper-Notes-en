@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PacGDC: Label-Efficient Generalizable Depth Completion with Projection Ambiguity and Consistency
 description: >-
-  [ICCV 2025][Robotics][Depth Completion] This paper proposes PacGDC, which exploits the inherent shape and position ambiguities in 2D-to-3D projection to synthesize large quantities of pseudo-geometric data—using multiple depth foundation models as scale manipulators—thereby achieving generalizable depth completion with minimal annotation cost, attaining state-of-the-art performance in both zero-shot and few-shot settings.
+  [ICCV 2025][Robotics][Depth Completion] This paper proposes PacGDC, which exploits the inherent shape and position ambiguities in 2D-to-3D projection to synthesize large quantities of pseudo-geometric data—using multiple…
 tags:
-  - ICCV 2025
-  - Robotics
-  - Depth Completion
-  - Label-Efficient
-  - Projection Ambiguity
-  - Data Synthesis
-  - Generalizability
+  - "ICCV 2025"
+  - "Robotics"
+  - "Depth Completion"
+  - "Label-Efficient"
+  - "Projection Ambiguity"
+  - "Data Synthesis"
+  - "Generalizability"
 date: 2026-05-08
 content_hash: bff0a1bfeb4f97e4
 ---

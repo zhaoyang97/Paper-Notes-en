@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MoE-Gyro: Self-Supervised Over-Range Reconstruction and Denoising for MEMS Gyroscopes
 description: >-
-  [NeurIPS 2025][Image Restoration][MEMS gyroscope] This paper proposes MoE-Gyro, a self-supervised Mixture-of-Experts framework that simultaneously addresses the fundamental range–noise trade-off in MEMS gyroscopes via an Over-Range Reconstruction Expert (ORE, incorporating Gaussian-Decay Attention and physics-informed constraints) and a Denoising Expert (DE, incorporating dual-branch complementary masking and FFT-guided augmentation). The measurable range is extended from ±450°/s to ±1500°/s, and bias instability is reduced by 98.4%.
+  [NeurIPS 2025][Image Restoration][MEMS gyroscope] This paper proposes MoE-Gyro, a self-supervised Mixture-of-Experts framework that simultaneously addresses the fundamental range–noise trade-off in MEMS gyroscopes via an…
 tags:
-  - NeurIPS 2025
-  - Image Restoration
-  - MEMS gyroscope
-  - self-supervised learning
-  - Mixture of Experts
-  - over-range reconstruction
-  - signal denoising
+  - "NeurIPS 2025"
+  - "Image Restoration"
+  - "MEMS gyroscope"
+  - "self-supervised learning"
+  - "Mixture of Experts"
+  - "over-range reconstruction"
+  - "signal denoising"
 date: 2026-05-08
 content_hash: 20151e9b1b6dc3f8
 ---

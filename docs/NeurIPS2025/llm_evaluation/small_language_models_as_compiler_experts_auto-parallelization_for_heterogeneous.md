@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Small Language Models as Compiler Experts: Auto-Parallelization for Heterogeneous Systems
 description: >-
-  [NeurIPS 2025 (ML for Systems Workshop)][LLM Evaluation][small language models] This work systematically evaluates three language models with fewer than 1.5B parameters (gemma3, llama3.2, qwen2.5) on compiler auto-parallelization tasks. Using six inference strategies across 11 real-world kernels, the approach achieves an average speedup of 6.81x and a peak speedup of 43.25x, demonstrating that small models can serve as powerful compiler optimization reasoning engines.
+  [NeurIPS 2025 (ML for Systems Workshop)][LLM Evaluation][small language models] This work systematically evaluates three language models with fewer than 1.5B parameters (gemma3, llama3.2…
 tags:
-  - NeurIPS 2025 (ML for Systems Workshop)
-  - LLM Evaluation
-  - small language models
-  - auto-parallelization
-  - compiler optimization
-  - heterogeneous systems
-  - inference strategies
+  - "NeurIPS 2025 (ML for Systems Workshop)"
+  - "LLM Evaluation"
+  - "small language models"
+  - "auto-parallelization"
+  - "compiler optimization"
+  - "heterogeneous systems"
+  - "inference strategies"
 date: 2026-05-08
 content_hash: d5324aee20ce1197
 ---

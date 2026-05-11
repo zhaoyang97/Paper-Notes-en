@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Splat-LOAM: Gaussian Splatting LiDAR Odometry and Mapping
 description: >-
-  [ICCV 2025][Autonomous Driving][Gaussian Splatting] The first LiDAR odometry and mapping pipeline built entirely on 2D Gaussian primitives, simultaneously achieving high-accuracy pose estimation and lightweight scene reconstruction via a spherical-projection-driven differentiable rasterizer.
+  [ICCV 2025][Autonomous Driving][Gaussian Splatting] The first LiDAR odometry and mapping pipeline built entirely on 2D Gaussian primitives…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - Gaussian Splatting
-  - LiDAR SLAM
-  - Odometry
-  - Mapping
-  - Spherical Projection
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "Gaussian Splatting"
+  - "LiDAR SLAM"
+  - "Odometry"
+  - "Mapping"
+  - "Spherical Projection"
 date: 2026-05-08
 content_hash: a3685610da989138
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CORE: Constraint-Aware One-Step Reinforcement Learning for Simulation-Guided Neural Network Accelerator Design
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][one-step RL] This paper proposes CORE (Constraint-aware One-step REinforcement learning), a critic-free single-step RL framework that efficiently explores the joint hardware–mapping design space of DNN accelerators via structured distribution sampling, a scaling-graph decoder, and constraint-aware reward shaping, achieving at least 15× latency improvement across 7 DNN models.
+  [NeurIPS 2025][Reinforcement Learning][one-step RL] This paper proposes CORE (Constraint-aware One-step REinforcement learning), a critic-free single-step RL framework that efficiently explores the joint hardware–mapping…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - one-step RL
-  - design space exploration
-  - DNN accelerator
-  - constraint-aware
-  - scaling graph
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "one-step RL"
+  - "design space exploration"
+  - "DNN accelerator"
+  - "constraint-aware"
+  - "scaling graph"
 date: 2026-05-08
 content_hash: c0aec535105a6389
 ---

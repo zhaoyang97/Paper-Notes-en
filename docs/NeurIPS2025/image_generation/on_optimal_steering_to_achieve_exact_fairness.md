@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] On Optimal Steering to Achieve Exact Fairness
 description: >-
-  [NeurIPS 2025][Image Generation][fairness] This paper defines the concept of an *ideal distribution*—a data distribution under which the Bayes-optimal classifier for any cost-sensitive risk satisfies exact fairness—and proposes an optimization framework that identifies the nearest ideal distribution via KL divergence minimization, providing provable fairness guarantees for both fair preprocessing and LLM representation steering.
+  [NeurIPS 2025][Image Generation][fairness] This paper defines the concept of an *ideal distribution*—a data distribution under which the Bayes-optimal classifier for any cost-sensitive risk satisfies exact fairness—and p…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - fairness
-  - optimal-transport
-  - distribution-steering
-  - LLM-representation
-  - Bayes-optimal
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "fairness"
+  - "optimal-transport"
+  - "distribution-steering"
+  - "LLM-representation"
+  - "Bayes-optimal"
 date: 2026-05-08
 content_hash: 34b55a6a7bc0aa93
 ---

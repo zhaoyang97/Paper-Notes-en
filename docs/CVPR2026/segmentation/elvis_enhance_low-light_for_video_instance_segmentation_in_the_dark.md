@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ELVIS: Enhance Low-Light for Video Instance Segmentation in the Dark
 description: >-
-  [CVPR 2026][Segmentation][Low-light video instance segmentation] ELVIS proposes the first low-light video instance segmentation (VIS) framework, comprising a physics-driven synthetic low-light video pipeline (with motion blur modeling), a calibration-free degradation parameter estimation network (VDP-Net), and an enhancement decoder integrated into the VIS architecture for degradation-content decoupling. It achieves gains of +3.7 AP and +2.8 AP on synthetic and real low-light videos, respectively.
+  [CVPR 2026][Segmentation][Low-light video instance segmentation] ELVIS proposes the first low-light video instance segmentation (VIS) framework…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Low-light video instance segmentation
-  - synthetic low-light pipeline
-  - degradation estimation
-  - domain adaptation
-  - enhancement decoder
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Low-light video instance segmentation"
+  - "synthetic low-light pipeline"
+  - "degradation estimation"
+  - "domain adaptation"
+  - "enhancement decoder"
 date: 2026-05-08
 content_hash: 647132a00d5b7442
 ---

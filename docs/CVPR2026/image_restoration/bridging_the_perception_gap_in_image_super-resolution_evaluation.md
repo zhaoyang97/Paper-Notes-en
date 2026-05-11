@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Bridging the Perception Gap in Image Super-Resolution Evaluation
 description: >-
-  [CVPR 2026][Image Restoration][Super-resolution evaluation] Through a large-scale user study, this paper reveals a severe misalignment between existing SR evaluation metrics (PSNR, SSIM, LPIPS, etc.) and human perception. After analyzing their inherent deficiencies, the paper proposes a minimalist yet effective Relative Quality Index (RQI) framework that learns relative quality differences between image pairs to enable more reliable SR evaluation, and can also serve as a loss function to guide SR model training.
+  [CVPR 2026][Image Restoration][Super-resolution evaluation] Through a large-scale user study, this paper reveals a severe misalignment between existing SR evaluation metrics (PSNR, SSIM, LPIPS…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Super-resolution evaluation
-  - image quality metrics
-  - perception gap
-  - relative quality index
-  - user study
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Super-resolution evaluation"
+  - "image quality metrics"
+  - "perception gap"
+  - "relative quality index"
+  - "user study"
 date: 2026-05-08
 content_hash: 7ee54b8e0c61cfdc
 ---

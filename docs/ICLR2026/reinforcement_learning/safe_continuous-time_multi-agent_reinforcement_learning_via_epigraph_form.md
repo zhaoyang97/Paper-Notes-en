@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Safe Continuous-time Multi-Agent Reinforcement Learning via Epigraph Form
 description: >-
-  [ICLR 2026][Reinforcement Learning][Continuous-time RL] This paper proposes the first continuous-time multi-agent RL framework that explicitly handles state constraints. By reformulating the discontinuous constrained value function into a continuous representation via the epigraph form, and combining an improved PINN-based actor-critic method, the framework achieves safe and stable continuous-time multi-agent control.
+  [ICLR 2026][Reinforcement Learning][Continuous-time RL] This paper proposes the first continuous-time multi-agent RL framework that explicitly handles state constraints. By reformulating the discontinuous constrained val…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Continuous-time RL
-  - Multi-agent
-  - Safety Constraints
-  - HJB Equation
-  - Epigraph Reformulation
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Continuous-time RL"
+  - "Multi-agent"
+  - "Safety Constraints"
+  - "HJB Equation"
+  - "Epigraph Reformulation"
 date: 2026-05-08
 content_hash: 3c3b195d854dcc2b
 ---

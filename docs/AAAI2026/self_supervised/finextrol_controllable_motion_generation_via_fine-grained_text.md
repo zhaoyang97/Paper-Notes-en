@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FineXtrol: Controllable Motion Generation via Fine-Grained Text
 description: >-
-  [AAAI 2026][Self-Supervised Learning][motion generation] This paper proposes FineXtrol, a framework that leverages temporally annotated, fine-grained body-part text descriptions as control signals. By combining a dual-branch ControlNet architecture with hierarchical contrastive learning to enhance the discriminability of the text encoder, FineXtrol achieves efficient, user-friendly, and precise controllable human motion generation, significantly outperforming existing methods on multi-body-part control benchmarks on HumanML3D.
+  [AAAI 2026][Self-Supervised Learning][motion generation] This paper proposes FineXtrol, a framework that leverages temporally annotated, fine-grained body-part text descriptions as control signals. By combining a dual-br…
 tags:
-  - AAAI 2026
-  - Self-Supervised Learning
-  - motion generation
-  - controllable generation
-  - fine-grained text
-  - contrastive learning
-  - diffusion model
+  - "AAAI 2026"
+  - "Self-Supervised Learning"
+  - "motion generation"
+  - "controllable generation"
+  - "fine-grained text"
+  - "contrastive learning"
+  - "diffusion model"
 date: 2026-05-08
 content_hash: a32881dae5c40876
 ---

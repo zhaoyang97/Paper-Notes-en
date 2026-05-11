@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PPCL: Pluggable Pruning with Contiguous Layer Distillation for Diffusion Transformers
 description: >-
-  [CVPR 2026][Model Compression][diffusion transformer] This paper proposes PPCL, a structured pruning framework tailored for large-scale Multi-Modal Diffusion Transformers (MMDiT, 8–20B parameters). It trains linear probes (Linear Probe) to assess the substitutability of each layer, automatically localizes contiguous redundant layer intervals via first-order differences of CKA, and applies non-sequential alternating distillation for dual-axis pruning along depth and width. On Qwen-Image 20B, PPCL achieves 50% parameter reduction and 1.8× inference speedup with an average performance drop of only 2.61%.
+  [CVPR 2026][Model Compression][diffusion transformer] This paper proposes PPCL, a structured pruning framework tailored for large-scale Multi-Modal Diffusion Transformers (MMDiT…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - diffusion transformer
-  - structured pruning
-  - contiguous layer redundancy
-  - knowledge distillation
-  - MMDiT
+  - "CVPR 2026"
+  - "Model Compression"
+  - "diffusion transformer"
+  - "structured pruning"
+  - "contiguous layer redundancy"
+  - "knowledge distillation"
+  - "MMDiT"
 date: 2026-05-08
 content_hash: c74be223a73ae217
 ---

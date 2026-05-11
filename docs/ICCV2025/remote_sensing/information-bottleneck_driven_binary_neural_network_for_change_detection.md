@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Information-Bottleneck Driven Binary Neural Network for Change Detection
 description: >-
-  [ICCV 2025][Remote Sensing][Binary Neural Network] This paper proposes BiCD, the first binary neural network specifically designed for change detection. By introducing an auxiliary objective module guided by the Information Bottleneck (IB) principle, BiCD enhances the feature representation capability and separability of BNNs, achieving state-of-the-art performance among BNN-based methods on both street-view and remote sensing change detection benchmarks, while achieving 30× memory compression and 2.5× inference acceleration.
+  [ICCV 2025][Remote Sensing][Binary Neural Network] This paper proposes BiCD, the first binary neural network specifically designed for change detection. By introducing an auxiliary objective module guided by the Informat…
 tags:
-  - ICCV 2025
-  - Remote Sensing
-  - Binary Neural Network
-  - Information Bottleneck
-  - Change Detection
-  - Model Compression
-  - Auxiliary Objective
+  - "ICCV 2025"
+  - "Remote Sensing"
+  - "Binary Neural Network"
+  - "Information Bottleneck"
+  - "Change Detection"
+  - "Model Compression"
+  - "Auxiliary Objective"
 date: 2026-05-08
 content_hash: 4fa0b8fdd82b5540
 ---

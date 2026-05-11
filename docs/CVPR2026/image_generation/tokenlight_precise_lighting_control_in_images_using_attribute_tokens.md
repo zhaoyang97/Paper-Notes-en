@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TokenLight: Precise Lighting Control in Images using Attribute Tokens
 description: >-
-  [CVPR 2026][Image Generation][relighting] TokenLight formulates image relighting as an end-to-end image generation task conditioned on attribute tokens (intensity, color, ambient light, diffuse level, and 3D light source position), enabling precise, continuous, and interpretable lighting control within a diffusion Transformer framework.
+  [CVPR 2026][Image Generation][relighting] TokenLight formulates image relighting as an end-to-end image generation task conditioned on attribute tokens (intensity, color, ambient light, diffuse level…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - relighting
-  - attribute tokens
-  - diffusion transformer
-  - lighting control
-  - synthetic data
+  - "CVPR 2026"
+  - "Image Generation"
+  - "relighting"
+  - "attribute tokens"
+  - "diffusion transformer"
+  - "lighting control"
+  - "synthetic data"
 date: 2026-05-08
 content_hash: a0d5274ba9fcd81c
 ---

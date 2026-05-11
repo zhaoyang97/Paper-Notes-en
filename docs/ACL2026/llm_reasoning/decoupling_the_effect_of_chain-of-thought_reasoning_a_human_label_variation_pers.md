@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Decoupling the Effect of Chain-of-Thought Reasoning: A Human Label Variation Perspective
 description: >-
-  [ACL 2026][LLM Reasoning][Chain-of-Thought] Through Cross-CoT experiments and step-wise analysis, this paper reveals a "decoupling mechanism" underlying CoT reasoning: final accuracy is determined by CoT content (~99% variance contribution), whereas distributional ranking is dominated by the model's intrinsic prior (>80%). This demonstrates that long CoT is a strong decision-maker but a weak distribution calibrator.
+  [ACL 2026][LLM Reasoning][Chain-of-Thought] Through Cross-CoT experiments and step-wise analysis, this paper reveals a "decoupling mechanism" underlying CoT reasoning: final accuracy is determined by CoT content (~99% va…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - Chain-of-Thought
-  - Human Label Variation
-  - Distribution Alignment
-  - Reasoning Decoupling
-  - Model Prior
+  - "ACL 2026"
+  - "LLM Reasoning"
+  - "Chain-of-Thought"
+  - "Human Label Variation"
+  - "Distribution Alignment"
+  - "Reasoning Decoupling"
+  - "Model Prior"
 date: 2026-05-08
 content_hash: 19af6da5cca2f351
 ---

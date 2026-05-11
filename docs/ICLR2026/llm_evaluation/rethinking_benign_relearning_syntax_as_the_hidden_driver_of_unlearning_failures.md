@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Rethinking Benign Relearning: Syntax as the Hidden Driver of Unlearning Failures
 description: >-
-  [ICLR 2026][LLM Evaluation][Machine Unlearning] This paper reveals that the true driver of "benign relearning" in LLM machine unlearning is syntactic similarity rather than topical relevance, and proposes a syntactic diversification strategy (paraphrasing the forget set) that effectively suppresses relearning, accelerates forgetting, and alleviates the trade-off between unlearning efficacy and model utility.
+  [ICLR 2026][LLM Evaluation][Machine Unlearning] This paper reveals that the true driver of "benign relearning" in LLM machine unlearning is syntactic similarity rather than topical relevance…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - Machine Unlearning
-  - Benign Relearning
-  - Syntactic Similarity
-  - Unlearning Robustness
-  - Syntactic Diversification
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Machine Unlearning"
+  - "Benign Relearning"
+  - "Syntactic Similarity"
+  - "Unlearning Robustness"
+  - "Syntactic Diversification"
 date: 2026-05-08
 content_hash: 889d0544ef41df89
 ---

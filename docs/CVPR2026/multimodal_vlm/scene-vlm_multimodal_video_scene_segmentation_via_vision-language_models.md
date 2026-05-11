@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Scene-VLM: Multimodal Video Scene Segmentation via Vision-Language Models
 description: >-
-  [CVPR2026][Multimodal VLM][video scene segmentation] This paper proposes Scene-VLM — the first VLM fine-tuning-based framework for video scene segmentation — which leverages structured multimodal shot representations (visual frames + dialogue + metadata), causal sequential prediction, a context-focus window mechanism, and token logits-based confidence extraction, achieving substantial gains of +6 AP and +13.7 F1 on MovieNet, while demonstrating natural language explanation capability.
+  [CVPR2026][Multimodal VLM][video scene segmentation] This paper proposes Scene-VLM — the first VLM fine-tuning-based framework for video scene segmentation — which leverages structured multimodal shot representations (vi…
 tags:
-  - CVPR2026
-  - Multimodal VLM
-  - video scene segmentation
-  - vision-language models
-  - multimodal reasoning
-  - sequential prediction
-  - confidence estimation
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "video scene segmentation"
+  - "vision-language models"
+  - "multimodal reasoning"
+  - "sequential prediction"
+  - "confidence estimation"
 date: 2026-05-08
 content_hash: 1764dc77fe2e95a6
 ---

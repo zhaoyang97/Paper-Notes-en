@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] How Does Alignment Enhance LLMs' Multilingual Capabilities? A Language Neurons Perspective
 description: >-
-  [AAAI 2026][multilingual LLM] This paper proposes a ternary neuron classification scheme (language-specific / language-related / universal) and decomposes multilingual LLM inference into a four-stage framework. It finds that multilingual alignment improves performance by increasing language-related neurons (while reducing language-specific ones), and further demonstrates a "spontaneous multilingual alignment" effect on untrained languages.
+  [AAAI 2026][Multilingual & Machine Translation][multilingual LLM] This paper proposes a ternary neuron classification scheme (language-specific / language-related / universal) and decomposes multilingual LLM inference in…
 tags:
-  - AAAI 2026
-  - multilingual LLM
-  - language neurons
-  - alignment mechanism
-  - ternary classification
-  - spontaneous alignment
+  - "AAAI 2026"
+  - "Multilingual & Machine Translation"
+  - "multilingual LLM"
+  - "language neurons"
+  - "alignment mechanism"
+  - "ternary classification"
+  - "spontaneous alignment"
 date: 2026-05-08
 content_hash: 492b9a7bce11a661
 ---

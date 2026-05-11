@@ -2,16 +2,17 @@
 title: >-
   [Paper Note] Monte Carlo Expected Threat (MOCET) Scoring
 description: >-
-  [NeurIPS 2025][AI safety] This paper proposes the MOCET (Monte Carlo Expected Threat) scoring framework, which decomposes LLM-generated bioweapon synthesis protocols into sequential Bernoulli trials, combines k-NN semantic embedding-based success probability estimation with Monte Carlo simulation, and produces interpretable, automatable threat quantification metrics for measuring the real-world risk of LLMs in the biosecurity domain.
+  [NeurIPS 2025][Interpretability][AI safety] This paper proposes the MOCET (Monte Carlo Expected Threat) scoring framework, which decomposes LLM-generated bioweapon synthesis protocols into sequential Bernoulli trials…
 tags:
-  - NeurIPS 2025
-  - AI safety
-  - biosecurity
-  - LLM risk assessment
-  - Monte Carlo simulation
-  - threat scoring
-  - k-NN
-  - ASL
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "AI safety"
+  - "biosecurity"
+  - "LLM risk assessment"
+  - "Monte Carlo simulation"
+  - "threat scoring"
+  - "k-NN"
+  - "ASL"
 date: 2026-05-08
 content_hash: 59d71116c9199355
 ---

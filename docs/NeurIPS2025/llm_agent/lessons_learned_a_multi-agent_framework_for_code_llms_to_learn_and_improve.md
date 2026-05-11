@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Lessons Learned: A Multi-Agent Framework for Code LLMs to Learn and Improve
 description: >-
-  [NeurIPS 2025][LLM Agent][multi-agent collaboration] This paper proposes the LessonL framework, enabling multiple small LLM agents to reflect on both successful and failed cases through mutually shared "lessons," collaboratively optimizing code performance. A combination of three 7B–14B models achieves code optimization results on par with GPT-4o and approaching o3.
+  [NeurIPS 2025][LLM Agent][multi-agent collaboration] This paper proposes the LessonL framework, enabling multiple small LLM agents to reflect on both successful and failed cases through mutually shared "lessons…
 tags:
-  - NeurIPS 2025
-  - LLM Agent
-  - multi-agent collaboration
-  - code optimization
-  - lesson mechanism
-  - mutual learning
-  - performance optimization
+  - "NeurIPS 2025"
+  - "LLM Agent"
+  - "multi-agent collaboration"
+  - "code optimization"
+  - "lesson mechanism"
+  - "mutual learning"
+  - "performance optimization"
 date: 2026-05-08
 content_hash: c44bbe549bc8d280
 ---

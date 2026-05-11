@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Q♯: Provably Optimal Distributional RL for LLM Post-Training
 description: >-
-  [NeurIPS 2025][LLM/NLP][LLM post-training] This paper proposes Q♯, a distributional RL-based value function method for KL-regularized LLM post-training. By learning the cumulative reward distribution under the reference policy to compute the optimal soft Q-function for guided generation, Q♯ achieves higher accuracy and lower KL divergence on mathematical reasoning tasks, and provides a variance-dependent PAC convergence bound.
+  [NeurIPS 2025][LLM/NLP][LLM post-training] This paper proposes Q♯, a distributional RL-based value function method for KL-regularized LLM post-training. By learning the cumulative reward distribution under the reference…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - LLM post-training
-  - distributional reinforcement learning
-  - KL regularization
-  - value function guidance
-  - mathematical reasoning
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "LLM post-training"
+  - "distributional reinforcement learning"
+  - "KL regularization"
+  - "value function guidance"
+  - "mathematical reasoning"
 date: 2026-05-08
 content_hash: e4d8b023d0e1750c
 ---

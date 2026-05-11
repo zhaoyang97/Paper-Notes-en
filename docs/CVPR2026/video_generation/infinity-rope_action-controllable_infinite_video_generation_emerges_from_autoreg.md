@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Infinity-RoPE: Action-Controllable Infinite Video Generation Emerges From Autoregressive Self-Rollout
 description: >-
-  [CVPR 2026][Video Generation][Autoregressive video generation] This paper proposes ∞-RoPE, a training-free inference-time framework comprising three components — Block-Relativistic RoPE, KV Flush, and RoPE Cut — that extends an autoregressive video diffusion model trained solely on 5-second clips to support infinite-length generation, fine-grained action control, and cinematic scene transitions.
+  [CVPR 2026][Video Generation][Autoregressive video generation] This paper proposes ∞-RoPE, a training-free inference-time framework comprising three components — Block-Relativistic RoPE, KV Flush…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Autoregressive video generation
-  - positional encoding
-  - infinite-length video
-  - action control
-  - inference-time method
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Autoregressive video generation"
+  - "positional encoding"
+  - "infinite-length video"
+  - "action control"
+  - "inference-time method"
 date: 2026-05-08
 content_hash: 5b863b11e6d9bc6e
 ---

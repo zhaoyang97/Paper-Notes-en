@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Training the Untrainable: Introducing Inductive Bias via Representational Alignment
 description: >-
-  [NeurIPS 2025][Inductive Bias] This paper proposes Guidance, a method that transfers the architectural inductive bias of one network (the guide) to another otherwise "untrainable" network (the target) via layer-wise representational alignment (CKA), enabling FCNs to perform image classification and RNNs to approach Transformer-level language modeling performance.
+  [NeurIPS 2025][Inductive Bias] This paper proposes Guidance, a method that transfers the architectural inductive bias of one network (the guide) to another otherwise "untrainable" network (the target) via layer-wise repr…
 tags:
-  - NeurIPS 2025
-  - Inductive Bias
-  - Representational Alignment
-  - CKA
-  - Architectural Prior
-  - Knowledge Distillation
+  - "NeurIPS 2025"
+  - "Inductive Bias"
+  - "Representational Alignment"
+  - "CKA"
+  - "Architectural Prior"
+  - "Knowledge Distillation"
 date: 2026-05-08
 content_hash: ea15fa3425dd63b7
 ---

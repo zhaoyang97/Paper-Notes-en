@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] NeAR: Coupled Neural Asset–Renderer Stack
 description: >-
-  [CVPR 2026][3D Vision][Neural rendering] NeAR proposes jointly designing neural asset creation and neural rendering as a coupled stack. By introducing illumination-homogenized structured 3D latents (LH-SLAT) to remove baked lighting from input images, and employing an illumination-aware neural decoder for real-time synthesis of relightable 3D Gaussian fields, NeAR surpasses existing methods across four tasks: forward rendering, reconstruction, relighting, and novel-view relighting.
+  [CVPR 2026][3D Vision][Neural rendering] NeAR proposes jointly designing neural asset creation and neural rendering as a coupled stack. By introducing illumination-homogenized structured 3D latents (LH-SLAT) to remove ba…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Neural rendering
-  - illumination homogenization
-  - 3D Gaussian splatting
-  - relighting
-  - coupled asset–renderer design
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Neural rendering"
+  - "illumination homogenization"
+  - "3D Gaussian splatting"
+  - "relighting"
+  - "coupled asset–renderer design"
 date: 2026-05-08
 content_hash: 728ebe18d37177f9
 ---

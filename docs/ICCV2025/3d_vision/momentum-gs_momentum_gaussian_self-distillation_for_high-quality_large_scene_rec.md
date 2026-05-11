@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Momentum-GS: Momentum Gaussian Self-Distillation for High-Quality Large Scene Reconstruction
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] Momentum-GS proposes a momentum-based self-distillation mechanism to address cross-block consistency issues in block-parallel training of large-scale 3D Gaussian Splatting. By introducing a momentum teacher Gaussian decoder for global guidance and decoupling the number of blocks from the number of GPUs, the method achieves state-of-the-art performance on multiple large-scale scene datasets, improving LPIPS by 18.7% over CityGaussian.
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] Momentum-GS proposes a momentum-based self-distillation mechanism to address cross-block consistency issues in block-parallel training of large-scale 3D Gaussian Splatting. B…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - Large-Scale Scene Reconstruction
-  - Momentum Self-Distillation
-  - Hybrid Representation
-  - Block-Parallel Training
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Large-Scale Scene Reconstruction"
+  - "Momentum Self-Distillation"
+  - "Hybrid Representation"
+  - "Block-Parallel Training"
 date: 2026-05-08
 content_hash: db4942f5d0e80000
 ---

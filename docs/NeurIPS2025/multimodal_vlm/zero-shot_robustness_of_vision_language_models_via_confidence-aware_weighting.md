@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Zero-Shot Robustness of Vision Language Models Via Confidence-Aware Weighting
 description: >-
-  [NeurIPS 2025][Multimodal VLM][CLIP] This paper proposes CAW (Confidence-Aware Weighting), an adversarial fine-tuning loss function for CLIP that focuses on hard adversarial examples via confidence-aware weighting, combined with feature alignment regularization to preserve pre-trained semantic knowledge. CAW achieves state-of-the-art zero-shot robustness under AutoAttack with lower memory overhead.
+  [NeurIPS 2025][Multimodal VLM][CLIP] This paper proposes CAW (Confidence-Aware Weighting), an adversarial fine-tuning loss function for CLIP that focuses on hard adversarial examples via confidence-aware weighting…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - CLIP
-  - adversarial robustness
-  - zero-shot
-  - adversarial fine-tuning
-  - confidence-aware weighting
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "CLIP"
+  - "adversarial robustness"
+  - "zero-shot"
+  - "adversarial fine-tuning"
+  - "confidence-aware weighting"
 date: 2026-05-08
 content_hash: c8250cd88c5cbb4c
 ---

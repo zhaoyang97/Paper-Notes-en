@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From Image to Video: An Empirical Study of Diffusion Representations
 description: >-
-  [ICCV 2025][3D Vision][Diffusion Models] This paper systematically compares diffusion models trained under image vs. video generation objectives using the same architecture (WALT) on a suite of downstream visual understanding tasks. Video diffusion models consistently outperform their image counterparts across all tasks, with particularly large gains on tasks requiring motion and 3D spatial understanding (point tracking +68%, camera pose +60%).
+  [ICCV 2025][3D Vision][Diffusion Models] This paper systematically compares diffusion models trained under image vs. video generation objectives using the same architecture (WALT) on a suite of downstream visual understa…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Diffusion Models
-  - Video Representation Learning
-  - Image vs. Video Diffusion
-  - Motion Understanding
-  - WALT
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Diffusion Models"
+  - "Video Representation Learning"
+  - "Image vs. Video Diffusion"
+  - "Motion Understanding"
+  - "WALT"
 date: 2026-05-08
 content_hash: c93d82f43f580239
 ---

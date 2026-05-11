@@ -2,15 +2,16 @@
 title: >-
   [Paper Note] Far from the Shallow: Brain-Predictive Reasoning Embedding through Residual Disentanglement
 description: >-
-  [NeurIPS 2025][Brain encoding] This paper proposes a residual disentanglement method that decomposes LLM hidden states into four approximately orthogonal embeddings—lexical, syntactic, semantic, and reasoning—for predicting intracranial ECoG brain signals. The study finds that reasoning signals exhibit independent neural signatures both temporally (~350–400 ms) and spatially (extending beyond classical language areas into visual cortex), revealing a computational alignment between LLM reasoning and human brain processing.
+  [NeurIPS 2025][Interpretability][Brain encoding] This paper proposes a residual disentanglement method that decomposes LLM hidden states into four approximately orthogonal embeddings—lexical, syntactic, semantic…
 tags:
-  - NeurIPS 2025
-  - Brain encoding
-  - LLM alignment
-  - residual disentanglement
-  - ECoG
-  - reasoning representations
-  - language hierarchy
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "Brain encoding"
+  - "LLM alignment"
+  - "residual disentanglement"
+  - "ECoG"
+  - "reasoning representations"
+  - "language hierarchy"
 date: 2026-05-08
 content_hash: 18f7c862600a37e1
 ---

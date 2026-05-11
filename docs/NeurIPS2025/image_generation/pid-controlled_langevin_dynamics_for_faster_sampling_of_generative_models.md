@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PID-controlled Langevin Dynamics for Faster Sampling of Generative Models
 description: >-
-  [NeurIPS 2025][Image Generation][Langevin Dynamics] This work introduces PID control theory into Langevin dynamics sampling, leveraging gradient history (integral term) to build momentum for traversing energy barriers and gradient trends (derivative term) to suppress oscillations, achieving fast and stable convergence. The approach requires no additional training and delivers over 10× sampling acceleration on both SGMs and EBMs.
+  [NeurIPS 2025][Image Generation][Langevin Dynamics] This work introduces PID control theory into Langevin dynamics sampling, leveraging gradient history (integral term) to build momentum for traversing energy barriers an…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Langevin Dynamics
-  - PID Control
-  - Sampling Acceleration
-  - Energy-Based Models
-  - Training-Free
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Langevin Dynamics"
+  - "PID Control"
+  - "Sampling Acceleration"
+  - "Energy-Based Models"
+  - "Training-Free"
 date: 2026-05-08
 content_hash: 4d76fff6419aeed3
 ---

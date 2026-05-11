@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Semantic Discrepancy-aware Detector for Image Forgery Identification
 description: >-
-  [ICCV 2025][Image Generation][Image forgery detection] This paper proposes the Semantic Discrepancy-aware Detector (SDD), which leverages three modules — Semantic Token Sampling (STS), Concept-level Forgery Discrepancy Learning (CFDL), and a Low-level Forgery Feature Enhancer — to align CLIP's visual semantic concept space with the forgery space via reconstruction learning. SDD achieves state-of-the-art performance on the UnivFD and SynRIS benchmarks ($ap_m$ 98.51%, AUROC 95.1%).
+  [ICCV 2025][Image Generation][Image forgery detection] This paper proposes the Semantic Discrepancy-aware Detector (SDD), which leverages three modules — Semantic Token Sampling (STS)…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Image forgery detection
-  - semantic concept space
-  - reconstruction learning
-  - CLIP
-  - vision-language models
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Image forgery detection"
+  - "semantic concept space"
+  - "reconstruction learning"
+  - "CLIP"
+  - "vision-language models"
 date: 2026-05-08
 content_hash: f411dd97d38f4190
 ---

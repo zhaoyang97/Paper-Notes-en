@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VoiceCloak: A Multi-Dimensional Defense Framework against Unauthorized Diffusion-based Voice Cloning
 description: >-
-  [AAAI2026][Image Generation][voice cloning defense] VoiceCloak is a proactive defense framework against diffusion-based voice cloning that simultaneously achieves speaker identity obfuscation and perceptual quality degradation via four-dimensional adversarial perturbations, attaining a DSR of 71.4% on LibriTTS and substantially outperforming all existing defense methods.
+  [AAAI2026][Image Generation][voice cloning defense] VoiceCloak is a proactive defense framework against diffusion-based voice cloning that simultaneously achieves speaker identity obfuscation and perceptual quality degra…
 tags:
-  - AAAI2026
-  - Image Generation
-  - voice cloning defense
-  - adversarial perturbation
-  - diffusion model
-  - speaker identity
-  - proactive defense
+  - "AAAI2026"
+  - "Image Generation"
+  - "voice cloning defense"
+  - "adversarial perturbation"
+  - "diffusion model"
+  - "speaker identity"
+  - "proactive defense"
 date: 2026-05-08
 content_hash: 96962ca9ddccdd5d
 ---

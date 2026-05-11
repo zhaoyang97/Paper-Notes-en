@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Gradient-Sign Masking for Task Vector Transport Across Pre-Trained Models
 description: >-
-  [ICLR 2026][Self-Supervised Learning][task vector] This paper proposes GradFix, a method that constructs a binary mask from gradient signs computed on a minimal number of samples from the target pre-trained model, and uses it to filter the source model's task vector coordinate-wise, retaining only components aligned with the descent direction of the target loss landscape. Without any fine-tuning, GradFix enables task knowledge transfer across pre-trained models, provides a rigorous first-order descent guarantee in theory, and substantially outperforms both naive transfer and few-shot fine-tuning on vision and language benchmarks.
+  [ICLR 2026][Self-Supervised Learning][task vector] This paper proposes GradFix, a method that constructs a binary mask from gradient signs computed on a minimal number of samples from the target pre-trained model…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
-  - task vector
-  - model merging
-  - gradient masking
-  - foundation models
-  - transfer learning
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "task vector"
+  - "model merging"
+  - "gradient masking"
+  - "foundation models"
+  - "transfer learning"
 date: 2026-05-08
 content_hash: a6e21ad324b22520
 ---

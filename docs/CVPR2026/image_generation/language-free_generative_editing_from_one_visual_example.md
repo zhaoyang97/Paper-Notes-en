@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Language-Free Generative Editing from One Visual Example
 description: >-
-  [CVPR 2026][Image Generation][Image Editing] This paper reveals a critical text-visual alignment failure in text-guided diffusion models on simple visual transformations such as rain, haze, and blur, and proposes the VDC framework — which learns a purely visual conditioning signal from a single visual example pair (before and after transformation) to guide diffusion-based editing, requiring neither text nor training. VDC surpasses text-based and fine-tuning-based methods on tasks including deraining, dehazing, and denoising.
+  [CVPR 2026][Image Generation][Image Editing] This paper reveals a critical text-visual alignment failure in text-guided diffusion models on simple visual transformations such as rain, haze, and blur…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Image Editing
-  - Diffusion Models
-  - Visual Conditioning
-  - Language-Free
-  - Training-Free
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Image Editing"
+  - "Diffusion Models"
+  - "Visual Conditioning"
+  - "Language-Free"
+  - "Training-Free"
 date: 2026-05-08
 content_hash: c39417071119f154
 ---

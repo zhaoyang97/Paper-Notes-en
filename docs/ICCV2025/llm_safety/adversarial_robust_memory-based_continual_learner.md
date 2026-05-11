@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Adversarial Robust Memory-Based Continual Learner
 description: >-
-  [ICCV 2025][LLM Safety][Continual Learning] This paper identifies two compounding challenges when combining continual learning with adversarial training—accelerated forgetting and gradient confusion—and proposes two plug-and-play modules, Anti-Forgettable Logit Calibration (AFLC) and Robustness-Aware Experience Replay (RAER), achieving up to 8.13% improvement in adversarial robustness on Split-CIFAR10/100 and Split-Tiny-ImageNet.
+  [ICCV 2025][LLM Safety][Continual Learning] This paper identifies two compounding challenges when combining continual learning with adversarial training—accelerated forgetting and gradient confusion—and proposes two plug…
 tags:
-  - ICCV 2025
-  - LLM Safety
-  - Continual Learning
-  - Adversarial Robustness
-  - Experience Replay
-  - Logit Calibration
-  - Gradient Confusion
+  - "ICCV 2025"
+  - "LLM Safety"
+  - "Continual Learning"
+  - "Adversarial Robustness"
+  - "Experience Replay"
+  - "Logit Calibration"
+  - "Gradient Confusion"
 date: 2026-05-08
 content_hash: d5427edf344cf78b
 ---

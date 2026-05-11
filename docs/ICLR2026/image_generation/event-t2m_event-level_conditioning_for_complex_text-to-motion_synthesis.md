@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Event-T2M: Event-level Conditioning for Complex Text-to-Motion Synthesis
 description: >-
-  [ICLR 2026][Image Generation][Text-to-Motion Generation] This paper proposes the Event-T2M framework, which decomposes text prompts into event-level atomic actions and injects them into a Conformer-based diffusion model via a TMR encoder and an Event-level Cross-Attention (ECA) module, significantly improving generation quality and semantic alignment for complex multi-event motion synthesis.
+  [ICLR 2026][Image Generation][Text-to-Motion Generation] This paper proposes the Event-T2M framework, which decomposes text prompts into event-level atomic actions and injects them into a Conformer-based diffusion model…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Text-to-Motion Generation
-  - Event-level Conditioning
-  - Diffusion Models
-  - Compositional Motion
-  - Conformer
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Text-to-Motion Generation"
+  - "Event-level Conditioning"
+  - "Diffusion Models"
+  - "Compositional Motion"
+  - "Conformer"
 date: 2026-05-08
 content_hash: fc3cbee7b9402648
 ---

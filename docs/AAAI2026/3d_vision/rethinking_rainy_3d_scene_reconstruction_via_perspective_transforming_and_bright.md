@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Rethinking Rainy 3D Scene Reconstruction via Perspective Transforming and Brightness Tuning
 description: >-
-  [AAAI 2026][3D Vision][Rainy 3D reconstruction] This paper proposes OmniRain3D, the first dataset that jointly models perspective heterogeneity and brightness dynamicity in rainy 3D scenes, along with REVR-GSNet, an end-to-end framework integrating recursive brightness enhancement, Gaussian primitive optimization, and GS-guided rain elimination to reconstruct high-fidelity clean 3D scenes from rain-degraded images.
+  [AAAI 2026][3D Vision][Rainy 3D reconstruction] This paper proposes OmniRain3D, the first dataset that jointly models perspective heterogeneity and brightness dynamicity in rainy 3D scenes, along with REVR-GSNet…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - Rainy 3D reconstruction
-  - 3D Gaussian splatting
-  - rain removal
-  - brightness enhancement
-  - end-to-end framework
+  - "AAAI 2026"
+  - "3D Vision"
+  - "Rainy 3D reconstruction"
+  - "3D Gaussian splatting"
+  - "rain removal"
+  - "brightness enhancement"
+  - "end-to-end framework"
 date: 2026-05-08
 content_hash: 0749f57348e799da
 ---

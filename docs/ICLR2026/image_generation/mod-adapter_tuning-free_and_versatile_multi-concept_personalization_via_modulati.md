@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mod-Adapter: Tuning-Free and Versatile Multi-concept Personalization via Modulation Adapter
 description: >-
-  [ICLR 2026][Image Generation][Multi-concept Personalization] This paper proposes Mod-Adapter, a tuning-free multi-concept personalization method that predicts concept-specific modulation directions in the modulation space of DiT, enabling decoupled customization of both object and abstract concepts (pose, lighting, material, etc.), substantially outperforming existing methods on multi-concept personalization benchmarks.
+  [ICLR 2026][Image Generation][Multi-concept Personalization] This paper proposes Mod-Adapter, a tuning-free multi-concept personalization method that predicts concept-specific modulation directions in the modulation spac…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Multi-concept Personalization
-  - Tuning-Free
-  - DiT Modulation Space
-  - Mixture-of-Experts
-  - VLM Pre-training
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Multi-concept Personalization"
+  - "Tuning-Free"
+  - "DiT Modulation Space"
+  - "Mixture-of-Experts"
+  - "VLM Pre-training"
 date: 2026-05-08
 content_hash: e79b40b5b01c9dfe
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LinPrim: Linear Primitives for Differentiable Volumetric Rendering
 description: >-
-  [NeurIPS 2025][3D Vision][Novel View Synthesis] This paper proposes LinPrim, which replaces 3D Gaussian kernels with linear primitives (octahedra and tetrahedra) as the scene representation for novel view synthesis. Through a differentiable rasterization pipeline, LinPrim enables end-to-end optimization and achieves reconstruction quality comparable to 3DGS on real-world datasets using fewer primitives, while maintaining real-time rendering capability.
+  [NeurIPS 2025][3D Vision][Novel View Synthesis] This paper proposes LinPrim, which replaces 3D Gaussian kernels with linear primitives (octahedra and tetrahedra) as the scene representation for novel view synthesis. Thro…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Novel View Synthesis
-  - Differentiable Rendering
-  - Volumetric Rendering
-  - Polyhedral Primitives
-  - 3D Gaussian Splatting
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Novel View Synthesis"
+  - "Differentiable Rendering"
+  - "Volumetric Rendering"
+  - "Polyhedral Primitives"
+  - "3D Gaussian Splatting"
 date: 2026-05-08
 content_hash: df0219c13729eceb
 ---

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Common Corpus: The Largest Collection of Ethical Data for LLM Pre-Training
 description: >-
-  [ICLR 2026 Oral][LLM Pretraining][pre-training data] This work constructs Common Corpus — the largest legally licensed LLM pre-training dataset at approximately 2 trillion tokens — spanning 6 major collections (government, culture, science, code, web, and semantic), covering multiple languages including low-resource ones. All data originates from copyright-free or permissively licensed sources, accompanied by complete data provenance and a multi-stage filtering pipeline. The dataset has been adopted by industry leaders including Anthropic.
+  [ICLR 2026 Oral][LLM Pretraining][pre-training data] This work constructs Common Corpus — the largest legally licensed LLM pre-training dataset at approximately 2 trillion tokens — spanning 6 major collections (governmen…
 tags:
-  - ICLR 2026 Oral
-  - LLM Pretraining
-  - pre-training data
-  - ethical data
-  - open data
-  - multilingual
-  - data curation
-  - copyright
-  - AI legislation
+  - "ICLR 2026 Oral"
+  - "LLM Pretraining"
+  - "pre-training data"
+  - "ethical data"
+  - "open data"
+  - "multilingual"
+  - "data curation"
+  - "copyright"
+  - "AI legislation"
 date: 2026-05-08
 content_hash: 30af317004b785fb
 ---

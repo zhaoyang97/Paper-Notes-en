@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Forgetting Through Transforming: Enabling Federated Unlearning via Class-Aware Representation Transformation
 description: >-
-  [ICCV2025][LLM Safety][federated unlearning] This paper proposes FUCRT, a federated unlearning method based on class-aware representation transformation. Rather than directly erasing the representations of forget classes, FUCRT transforms them toward the semantically nearest retain classes, and employs dual contrastive learning to align transformation consistency across clients. The method guarantees 100% unlearning on four datasets while maintaining or even improving performance on retain classes.
+  [ICCV2025][LLM Safety][federated unlearning] This paper proposes FUCRT, a federated unlearning method based on class-aware representation transformation. Rather than directly erasing the representations of forget classes…
 tags:
-  - ICCV2025
-  - LLM Safety
-  - federated unlearning
-  - class-aware representation
-  - contrastive learning
-  - transformation alignment
-  - Non-IID
+  - "ICCV2025"
+  - "LLM Safety"
+  - "federated unlearning"
+  - "class-aware representation"
+  - "contrastive learning"
+  - "transformation alignment"
+  - "Non-IID"
 date: 2026-05-08
 content_hash: a9241139fdff1e26
 ---

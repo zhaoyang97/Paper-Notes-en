@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Constraint Matters: Multi-Modal Representation for Reducing Mixed-Integer Linear Programming
 description: >-
-  [ICLR2026][Optimization][MILP] This paper proposes a constraint-reduction framework for simplifying MILP models. It defines a fixed-constraint strength $\rho$ and uses information gain $\Delta H = -\log\rho$ to identify critical tight constraints (CTCs). A multi-modal GNN combining an instance-level bipartite graph with an abstract-level type graph is designed to predict CTCs. On four large-scale benchmarks, the method achieves an average improvement of 51.06% in solution quality ($\text{gap}_\text{abs}$) and an average speedup of 17.47% in convergence (PDI).
+  [ICLR2026][Optimization][MILP] This paper proposes a constraint-reduction framework for simplifying MILP models. It defines a fixed-constraint strength $\rho$ and uses information gain $\Delta H = -\log\rho$ to identify…
 tags:
-  - ICLR2026
-  - Optimization
-  - MILP
-  - constraint reduction
-  - tight constraint
-  - multi-modal representation
-  - GNN
+  - "ICLR2026"
+  - "Optimization"
+  - "MILP"
+  - "constraint reduction"
+  - "tight constraint"
+  - "multi-modal representation"
+  - "GNN"
 date: 2026-05-08
 content_hash: 4458218ec5fc5fa3
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Retrieving Objects from 3D Scenes with Box-Guided Open-Vocabulary Instance Segmentation
 description: >-
-  [AAAI 2026][3D Vision][Open-vocabulary 3D instance segmentation] This paper proposes a box-guided approach that leverages 2D bounding boxes from the open-vocabulary detector YOLO-World to guide the assembly of 3D instance masks from superpoints, without relying on SAM or CLIP. The method achieves high efficiency (<1 min/scene) while substantially improving retrieval performance on rare-category objects.
+  [AAAI 2026][3D Vision][Open-vocabulary 3D instance segmentation] This paper proposes a box-guided approach that leverages 2D bounding boxes from the open-vocabulary detector YOLO-World to guide the assembly of 3D instanc…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - Open-vocabulary 3D instance segmentation
-  - 3D object retrieval
-  - superpoints
-  - YOLO-World
-  - 2D-to-3D lifting
+  - "AAAI 2026"
+  - "3D Vision"
+  - "Open-vocabulary 3D instance segmentation"
+  - "3D object retrieval"
+  - "superpoints"
+  - "YOLO-World"
+  - "2D-to-3D lifting"
 date: 2026-05-08
 content_hash: 85eede20057cb6ec
 ---

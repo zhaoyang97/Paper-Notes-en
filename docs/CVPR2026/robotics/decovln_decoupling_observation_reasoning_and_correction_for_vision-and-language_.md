@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DecoVLN: Decoupling Observation, Reasoning, and Correction for Vision-and-Language Navigation
 description: >-
-  [CVPR2026][Robotics][Vision-and-Language Navigation] This paper proposes DecoVLN, a framework that decouples observation, reasoning, and correction in VLN tasks. By introducing an adaptive memory refinement (AMR) mechanism and a state-action-pair-based correction fine-tuning strategy, DecoVLN achieves state-of-the-art performance on R2R-CE and RxR-CE using only egocentric RGB input.
+  [CVPR2026][Robotics][Vision-and-Language Navigation] This paper proposes DecoVLN, a framework that decouples observation, reasoning, and correction in VLN tasks. By introducing an adaptive memory refinement (AMR) mechani…
 tags:
-  - CVPR2026
-  - Robotics
-  - Vision-and-Language Navigation
-  - Adaptive Memory Refinement
-  - Correction Fine-tuning
-  - POMDP
-  - Long-horizon Navigation
+  - "CVPR2026"
+  - "Robotics"
+  - "Vision-and-Language Navigation"
+  - "Adaptive Memory Refinement"
+  - "Correction Fine-tuning"
+  - "POMDP"
+  - "Long-horizon Navigation"
 date: 2026-05-08
 content_hash: cc1b0d4a64cdbbec
 ---

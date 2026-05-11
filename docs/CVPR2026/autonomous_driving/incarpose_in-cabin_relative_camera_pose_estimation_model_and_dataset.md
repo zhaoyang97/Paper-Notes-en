@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] InCaRPose: In-Cabin Relative Camera Pose Estimation Model and Dataset
 description: >-
-  [CVPR 2026][Autonomous Driving][Camera Pose Estimation] This paper presents InCaRPose, an in-cabin relative camera pose estimation model built upon a frozen ViT backbone and a Transformer decoder. Trained exclusively on synthetic data, it generalizes to real in-cabin environments, achieving metric-scale translation prediction and real-time inference (>45 FPS). The authors also release an accompanying real-world, high-distortion in-cabin test dataset, In-Cabin-Pose.
+  [CVPR 2026][Autonomous Driving][Camera Pose Estimation] This paper presents InCaRPose, an in-cabin relative camera pose estimation model built upon a frozen ViT backbone and a Transformer decoder. Trained exclusively on…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Camera Pose Estimation
-  - In-Cabin Perception
-  - Fisheye Camera
-  - Sim-to-Real Transfer
-  - Transformer
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Camera Pose Estimation"
+  - "In-Cabin Perception"
+  - "Fisheye Camera"
+  - "Sim-to-Real Transfer"
+  - "Transformer"
 date: 2026-05-08
 content_hash: 7f9d8cb237ef6f5f
 ---

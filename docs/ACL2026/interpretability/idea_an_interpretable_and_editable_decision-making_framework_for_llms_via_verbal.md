@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] IDEA: An Interpretable and Editable Decision-Making Framework for LLMs via Verbal-to-Numeric Calibration
 description: >-
-  [ACL 2026][Interpretable Decision-Making] This paper proposes IDEA, a framework that extracts LLM decision knowledge into an interpretable parametric model over semantic factors. An EM algorithm jointly learns the mapping from verbal probability expressions to numeric values and the decision parameters, enabling calibrated, editable, and interpretable LLM decision-making. IDEA with Qwen-3-32B achieves 78.6% average F1 across five datasets, surpassing DeepSeek R1 (68.1%) and GPT-5.2 (77.9%).
+  [ACL 2026][Interpretability][Interpretable Decision-Making] This paper proposes IDEA, a framework that extracts LLM decision knowledge into an interpretable parametric model over semantic factors. An EM algorithm jointly…
 tags:
-  - ACL 2026
-  - Interpretable Decision-Making
-  - Verbal Probability Calibration
-  - EM Algorithm
-  - Parameter Editing
-  - Human-AI Collaboration
+  - "ACL 2026"
+  - "Interpretability"
+  - "Interpretable Decision-Making"
+  - "Verbal Probability Calibration"
+  - "EM Algorithm"
+  - "Parameter Editing"
+  - "Human-AI Collaboration"
 date: 2026-05-08
 content_hash: 80759fd07e220ef9
 ---

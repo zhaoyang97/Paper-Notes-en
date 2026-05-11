@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PROMO: Promptable Outfitting for Efficient High-Fidelity Virtual Try-On
 description: >-
-  [CVPR 2026][Image Generation][Virtual try-on] PROMO is built on a FLUX.1-dev Flow Matching DiT backbone and achieves high-fidelity, efficient multi-garment virtual try-on without a traditional reference network, by combining latent-space multimodal condition concatenation, temporal self-reference KV caching, 3D-RoPE grouped conditioning, and a fine-tuned VLM style-prompt system. Inference is 2.4× faster than the non-accelerated baseline, and the method surpasses existing VTON and general image-editing approaches on VITON-HD and DressCode.
+  [CVPR 2026][Image Generation][Virtual try-on] PROMO is built on a FLUX.1-dev Flow Matching DiT backbone and achieves high-fidelity, efficient multi-garment virtual try-on without a traditional reference network…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Virtual try-on
-  - Flow Matching DiT
-  - multi-condition generation
-  - temporal self-reference
-  - outfit style control
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Virtual try-on"
+  - "Flow Matching DiT"
+  - "multi-condition generation"
+  - "temporal self-reference"
+  - "outfit style control"
 date: 2026-05-08
 content_hash: 7c68d21f5990a4f5
 ---

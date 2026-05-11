@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Efficient Hybrid SE(3)-Equivariant Visuomotor Flow Policy via Spherical Harmonics
 description: >-
-  [CVPR 2026][3D Vision][SE(3) Equivariance] This paper proposes E3Flow, the first equivariant flow matching policy framework based on spherical harmonic representations. It introduces a Feature Enhancement Module (FEM) to dynamically fuse point cloud and image modalities, and combines rectified flow for efficient equivariant action generation. E3Flow achieves an average success rate 3.12% higher than the strongest baseline SDP across 8 MimicGen tasks while delivering a 7× speedup in inference.
+  [CVPR 2026][3D Vision][SE(3) Equivariance] This paper proposes E3Flow, the first equivariant flow matching policy framework based on spherical harmonic representations. It introduces a Feature Enhancement Module (FEM) to…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - SE(3) Equivariance
-  - Spherical Harmonics
-  - Rectified Flow
-  - Robot Policy Learning
-  - Multi-Modal Fusion
+  - "CVPR 2026"
+  - "3D Vision"
+  - "SE(3) Equivariance"
+  - "Spherical Harmonics"
+  - "Rectified Flow"
+  - "Robot Policy Learning"
+  - "Multi-Modal Fusion"
 date: 2026-05-08
 content_hash: 64acaca5baf6e407
 ---

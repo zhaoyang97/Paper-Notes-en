@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] The Narrow Gate: Localized Image-Text Communication in Native Multimodal Models
 description: >-
-  [NeurIPS 2025][native multimodal] Through systematic interpretability analysis, this work discovers that in native multimodal VLMs (Chameleon, Emu3), image-to-text cross-modal information transfer is concentrated at a single end-of-image [EOI] token—forming a "narrow gate" bottleneck. Ablating the [EOI] token's attention causes catastrophic performance collapse, whereas in non-native VLMs (LLaVA, etc.) the information transfer is distributed. This mechanistic difference can be exploited for semantic manipulation and robustness improvement.
+  [NeurIPS 2025][Information Retrieval & RAG][native multimodal] Through systematic interpretability analysis, this work discovers that in native multimodal VLMs (Chameleon, Emu3)…
 tags:
-  - NeurIPS 2025
-  - native multimodal
-  - EOI token
-  - narrow gate
-  - cross-modal information flow
-  - activation patching
+  - "NeurIPS 2025"
+  - "Information Retrieval & RAG"
+  - "native multimodal"
+  - "EOI token"
+  - "narrow gate"
+  - "cross-modal information flow"
+  - "activation patching"
 date: 2026-05-08
 content_hash: 889520a50e569541
 ---

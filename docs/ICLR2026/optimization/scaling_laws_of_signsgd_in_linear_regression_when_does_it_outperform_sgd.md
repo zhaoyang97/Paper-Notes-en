@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Scaling Laws of SignSGD in Linear Regression: When Does It Outperform SGD?
 description: >-
-  [ICLR 2026][Optimization][SignSGD] Under the Power-Law Random Features model, this paper systematically analyzes the scaling laws of SignSGD, reveals two distinctive effects of SignSGD relative to SGD—drift normalization and noise reshaping—and demonstrates that the compute-optimal scaling exponent of SignSGD can surpass that of SGD in noise-dominated regimes.
+  [ICLR 2026][Optimization][SignSGD] Under the Power-Law Random Features model, this paper systematically analyzes the scaling laws of SignSGD…
 tags:
-  - ICLR 2026
-  - Optimization
-  - SignSGD
-  - scaling laws
-  - linear regression
-  - random features
-  - learning rate schedule
+  - "ICLR 2026"
+  - "Optimization"
+  - "SignSGD"
+  - "scaling laws"
+  - "linear regression"
+  - "random features"
+  - "learning rate schedule"
 date: 2026-05-08
 content_hash: 0ba17b1b8a0e7c3f
 ---

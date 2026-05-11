@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] M3DLayout: A Multi-Source Dataset of 3D Indoor Layouts and Structured Descriptions for 3D Generation
 description: >-
-  [CVPR 2026][3D Vision][3D indoor layout] This paper constructs M3DLayout, a large-scale multi-source 3D indoor layout dataset comprising 21,367 layouts and over 433k object instances. It integrates three complementary sources—real-world scans, professionally designed scenes, and procedurally generated environments—paired with structured textual descriptions, providing a high-quality training foundation for text-driven 3D scene generation.
+  [CVPR 2026][3D Vision][3D indoor layout] This paper constructs M3DLayout, a large-scale multi-source 3D indoor layout dataset comprising 21…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D indoor layout
-  - dataset
-  - text-driven scene generation
-  - diffusion model
-  - autoregressive model
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D indoor layout"
+  - "dataset"
+  - "text-driven scene generation"
+  - "diffusion model"
+  - "autoregressive model"
 date: 2026-05-08
 content_hash: b51bb59c19595aa0
 ---

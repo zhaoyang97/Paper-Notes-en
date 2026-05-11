@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning to Factorize and Adapt: A Versatile Approach Toward Universal Spatio-Temporal Foundation Models
 description: >-
-  [NeurIPS 2025][Model Compression][spatio-temporal foundation models] This paper proposes FactoST-v2, a factorized spatio-temporal foundation model framework that decouples universal temporal pre-training from domain-specific spatial adaptation, achieving cross-domain zero-shot/few-shot/full-shot spatio-temporal forecasting with linear complexity.
+  [NeurIPS 2025][Model Compression][spatio-temporal foundation models] This paper proposes FactoST-v2, a factorized spatio-temporal foundation model framework that decouples universal temporal pre-training from domain-spec…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - spatio-temporal foundation models
-  - time series forecasting
-  - factorization paradigm
-  - spatio-temporal adaptation
-  - zero-shot generalization
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "spatio-temporal foundation models"
+  - "time series forecasting"
+  - "factorization paradigm"
+  - "spatio-temporal adaptation"
+  - "zero-shot generalization"
 date: 2026-05-08
 content_hash: fb7ba368ef87c9b5
 ---

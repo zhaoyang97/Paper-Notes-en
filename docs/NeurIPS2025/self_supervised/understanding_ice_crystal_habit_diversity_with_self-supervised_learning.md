@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Understanding Ice Crystal Habit Diversity with Self-Supervised Learning
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning] This paper presents the first application of self-supervised learning (SSL) to latent representation learning for ice crystal images. By pre-training a ViT on a large-scale cloud particle image dataset, the method learns continuous latent representations of ice crystal habits and quantifies habit diversity using the vMF concentration parameter, achieving a state-of-the-art classification accuracy of 84.39% with a 30× reduction in computational cost.
+  [NeurIPS 2025][Self-Supervised Learning][ice crystal habit] This paper presents the first application of self-supervised learning (SSL) to latent representation learning for ice crystal images. By pre-training a ViT on a…
 tags:
-  - NeurIPS 2025
-  - Self-Supervised Learning
-  - ice crystal habit
-  - climate science
-  - Vision Transformer
-  - data curation
+  - "NeurIPS 2025"
+  - "Self-Supervised Learning"
+  - "ice crystal habit"
+  - "climate science"
+  - "Vision Transformer"
+  - "data curation"
 date: 2026-05-08
 content_hash: ce900d50d0e67f93
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FSMC-Pose: Frequency and Spatial Fusion with Multiscale Self-calibration for Cattle Mounting Pose Estimation
 description: >-
-  [CVPR 2026][Human Understanding][cattle pose estimation] FSMC-Pose proposes a lightweight top-down framework for cattle mounting pose estimation, comprising the frequency-spatial fusion backbone CattleMountNet (which employs wavelet transform and Gaussian filtering in the SFEBlock for foreground-background separation, and multi-scale dilated convolutions in the RABlock for context aggregation) and the multiscale self-calibration head SC2Head (spatial-channel co-calibration with a self-calibration branch to correct structural displacement). The paper also introduces MOUNT-Cattle, the first dataset for cattle mounting behavior, achieving 89% AP in complex group-housing environments at extremely low computational cost (4.41 GFLOPs, 2.698M parameters).
+  [CVPR 2026][Human Understanding][cattle pose estimation] FSMC-Pose proposes a lightweight top-down framework for cattle mounting pose estimation…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - cattle pose estimation
-  - estrus detection
-  - frequency-spatial fusion
-  - multiscale self-calibration
-  - lightweight backbone
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "cattle pose estimation"
+  - "estrus detection"
+  - "frequency-spatial fusion"
+  - "multiscale self-calibration"
+  - "lightweight backbone"
 date: 2026-05-08
 content_hash: 6df8d5bbdc649a70
 ---

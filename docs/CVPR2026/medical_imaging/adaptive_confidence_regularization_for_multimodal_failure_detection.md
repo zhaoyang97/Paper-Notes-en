@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Adaptive Confidence Regularization for Multimodal Failure Detection
 description: >-
-  [CVPR 2026][Medical Imaging][multimodal failure detection] This paper proposes the ACR framework, which addresses multimodal misclassification detection for the first time in a systematic manner through two complementary modules: an Adaptive Confidence Loss (ACL) that penalizes "confidence degradation" where multimodal fusion confidence falls below that of individual unimodal branches, and Multimodal Feature Swapping (MFS) that synthesizes failure-aware outlier samples in the feature space. ACR consistently outperforms existing methods across four datasets.
+  [CVPR 2026][Medical Imaging][multimodal failure detection] This paper proposes the ACR framework, which addresses multimodal misclassification detection for the first time in a systematic manner through two complementary…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - multimodal failure detection
-  - confidence degradation
-  - adaptive confidence regularization
-  - feature swapping
-  - misclassification detection
-  - selective prediction
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "multimodal failure detection"
+  - "confidence degradation"
+  - "adaptive confidence regularization"
+  - "feature swapping"
+  - "misclassification detection"
+  - "selective prediction"
 date: 2026-05-08
 content_hash: 1401d02bc546a195
 ---

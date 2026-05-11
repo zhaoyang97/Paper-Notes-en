@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CryoHype: Reconstructing a Thousand Cryo-EM Structures with Transformer-Based Hypernetworks
 description: >-
-  [CVPR 2026][LLM Evaluation][Cryo-EM] This paper proposes CryoHype, a Transformer-based hypernetwork approach for cryo-EM reconstruction that dynamically modulates the weights of implicit neural representations (INRs) to reduce parameter sharing, achieving for the first time the simultaneous reconstruction of 1,000 distinct protein structures from unlabeled cryo-EM images.
+  [CVPR 2026][LLM Evaluation][Cryo-EM] This paper proposes CryoHype, a Transformer-based hypernetwork approach for cryo-EM reconstruction that dynamically modulates the weights of implicit neural representations (INRs) to…
 tags:
-  - CVPR 2026
-  - LLM Evaluation
-  - Cryo-EM
-  - Heterogeneous Reconstruction
-  - Hypernetwork
-  - Transformer
-  - Implicit Neural Representation
+  - "CVPR 2026"
+  - "LLM Evaluation"
+  - "Cryo-EM"
+  - "Heterogeneous Reconstruction"
+  - "Hypernetwork"
+  - "Transformer"
+  - "Implicit Neural Representation"
 date: 2026-05-08
 content_hash: f405a3a3b59e8005
 ---

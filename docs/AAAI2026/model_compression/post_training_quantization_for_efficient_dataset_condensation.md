@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Post Training Quantization for Efficient Dataset Condensation
 description: >-
-  [AAAI 2026][Model Compression][Dataset Distillation] This work is the first to apply post-training quantization (PTQ) to dataset distillation, proposing a patch-based quantization framework (PAQ + grouping + refinement) that nearly doubles test accuracy of distilled datasets at the extreme 2-bit regime (e.g., DM IPC=1 improves from 26.0% to 54.1%). The framework is plug-and-play and can be applied to various distillation methods.
+  [AAAI 2026][Model Compression][Dataset Distillation] This work is the first to apply post-training quantization (PTQ) to dataset distillation…
 tags:
-  - AAAI 2026
-  - Model Compression
-  - Dataset Distillation
-  - Post-Training Quantization
-  - Low-Bit Storage
-  - Image Compression
-  - Patch Quantization
+  - "AAAI 2026"
+  - "Model Compression"
+  - "Dataset Distillation"
+  - "Post-Training Quantization"
+  - "Low-Bit Storage"
+  - "Image Compression"
+  - "Patch Quantization"
 date: 2026-05-08
 content_hash: 993fd633443c404d
 ---

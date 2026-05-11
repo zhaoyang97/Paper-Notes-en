@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Are Graph Transformers Necessary? Efficient Long-Range Message Passing with Fractal Nodes in MPNNs
 description: >-
-  [AAAI 2026 (Oral)][Graph Learning][Fractal Nodes] This paper proposes Fractal Nodes (FN) to enhance long-range message passing in MPNNs. Subgraph-level aggregation nodes are generated via METIS graph partitioning, combined with low-pass and high-pass filters (LPF+HPF) and a learnable frequency parameter $\omega$. MLP-Mixer is adopted for cross-subgraph communication. The approach achieves $O(L(|V|+|E|))$ linear complexity while matching or surpassing Graph Transformer performance, earning an AAAI Oral.
+  [AAAI 2026 (Oral)][Graph Learning][Fractal Nodes] This paper proposes Fractal Nodes (FN) to enhance long-range message passing in MPNNs. Subgraph-level aggregation nodes are generated via METIS graph partitioning…
 tags:
-  - AAAI 2026 (Oral)
-  - Graph Learning
-  - Fractal Nodes
-  - MPNN
-  - Long-Range Dependencies
-  - Over-Squashing
-  - Graph Partitioning
-  - MLP-Mixer
-  - METIS
+  - "AAAI 2026 (Oral)"
+  - "Graph Learning"
+  - "Fractal Nodes"
+  - "MPNN"
+  - "Long-Range Dependencies"
+  - "Over-Squashing"
+  - "Graph Partitioning"
+  - "MLP-Mixer"
+  - "METIS"
 date: 2026-05-08
 content_hash: 2484dd4abbe87feb
 ---

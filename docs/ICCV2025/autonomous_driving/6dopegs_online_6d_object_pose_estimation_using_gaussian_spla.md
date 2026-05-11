@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] 6DOPE-GS: Online 6D Object Pose Estimation using Gaussian Splatting
 description: >-
-  [ICCV 2025][Autonomous Driving][6D Object Pose Estimation] Leveraging the efficient differentiable rendering capability of 2D Gaussian Splatting, this paper proposes a CAD-model-free online 6D object pose estimation and tracking method. By jointly optimizing a Gaussian object field and keyframe poses, it achieves approximately 5× speedup over BundleSDF while maintaining comparable accuracy.
+  [ICCV 2025][Autonomous Driving][6D Object Pose Estimation] Leveraging the efficient differentiable rendering capability of 2D Gaussian Splatting…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - 6D Object Pose Estimation
-  - Gaussian Splatting
-  - Online Tracking
-  - Model-Free
-  - RGB-D
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "6D Object Pose Estimation"
+  - "Gaussian Splatting"
+  - "Online Tracking"
+  - "Model-Free"
+  - "RGB-D"
 date: 2026-05-08
 content_hash: 645cba9ae9e55a1f
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] All You Need is One: Capsule Prompt Tuning with a Single Vector
 description: >-
-  [NeurIPS 2025][Model Compression][prompt tuning] This paper proposes Capsule Prompt-Tuning (CaPT), identifying that existing task-aware soft prompts exhibit minimal interaction with input tokens — an "attention island" phenomenon. Incorporating instance-aware information into a single capsule prompt enables it to serve as an "attention anchor" that activates attention toward critical structural information, achieving superior performance over multi-prompt methods with extremely few parameters (e.g., only 0.003% of parameters on Llama3.2-1B).
+  [NeurIPS 2025][Model Compression][prompt tuning] This paper proposes Capsule Prompt-Tuning (CaPT), identifying that existing task-aware soft prompts exhibit minimal interaction with input tokens — an "attention island" p…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - prompt tuning
-  - PEFT
-  - capsule prompt
-  - attention anchor
-  - parameter efficiency
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "prompt tuning"
+  - "PEFT"
+  - "capsule prompt"
+  - "attention anchor"
+  - "parameter efficiency"
 date: 2026-05-08
 content_hash: 76e443b06a59ec53
 ---

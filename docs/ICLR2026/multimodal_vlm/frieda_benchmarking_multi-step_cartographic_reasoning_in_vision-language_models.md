@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FRIEDA: Benchmarking Multi-Step Cartographic Reasoning in Vision-Language Models
 description: >-
-  [ICLR2026][Multimodal VLM][cartographic reasoning] This paper introduces FRIEDA, a benchmark that systematically evaluates large vision-language models (LVLMs) on multi-step, cross-map cartographic reasoning. The strongest model, Gemini-2.5-Pro, achieves only 38.20% accuracy, far below the human baseline of 84.87%.
+  [ICLR2026][Multimodal VLM][cartographic reasoning] This paper introduces FRIEDA, a benchmark that systematically evaluates large vision-language models (LVLMs) on multi-step…
 tags:
-  - ICLR2026
-  - Multimodal VLM
-  - cartographic reasoning
-  - map VQA
-  - spatial relations
-  - multi-image reasoning
-  - benchmark
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "cartographic reasoning"
+  - "map VQA"
+  - "spatial relations"
+  - "multi-image reasoning"
+  - "benchmark"
 date: 2026-05-08
 content_hash: bb772d96189588f4
 ---

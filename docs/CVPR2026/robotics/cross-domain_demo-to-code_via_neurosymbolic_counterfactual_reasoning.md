@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Cross-Domain Demo-to-Code via Neurosymbolic Counterfactual Reasoning
 description: >-
-  [CVPR2026][Robotics][video-instructed robotic programming] This paper proposes NeSyCR, a neurosymbolic counterfactual reasoning framework that abstracts video demonstrations into a symbolic world model, detects cross-domain incompatibilities via counterfactual state simulation, and automatically corrects program steps. NeSyCR achieves a 31.14% improvement in success rate over the strongest baseline, Statler, on cross-domain demo-to-code tasks.
+  [CVPR2026][Robotics][video-instructed robotic programming] This paper proposes NeSyCR, a neurosymbolic counterfactual reasoning framework that abstracts video demonstrations into a symbolic world model…
 tags:
-  - CVPR2026
-  - Robotics
-  - video-instructed robotic programming
-  - cross-domain adaptation
-  - neurosymbolic reasoning
-  - counterfactual reasoning
-  - code-as-policies
+  - "CVPR2026"
+  - "Robotics"
+  - "video-instructed robotic programming"
+  - "cross-domain adaptation"
+  - "neurosymbolic reasoning"
+  - "counterfactual reasoning"
+  - "code-as-policies"
 date: 2026-05-08
 content_hash: 9c71c9c0a5e59942
 ---

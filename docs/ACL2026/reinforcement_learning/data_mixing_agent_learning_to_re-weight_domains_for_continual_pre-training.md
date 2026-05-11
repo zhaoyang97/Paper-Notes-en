@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Data Mixing Agent: Learning to Re-weight Domains for Continual Pre-training
 description: >-
-  [ACL 2026][Reinforcement Learning][Data mixing] This paper proposes the Data Mixing Agent, the first model-based end-to-end domain re-weighting framework. By training a small agent on a large collection of data mixing trajectories via CQL-based reinforcement learning, the framework learns generalizable data mixing heuristics that balance source- and target-domain performance during continual pre-training for mathematical reasoning. The learned heuristics generalize to unseen source domains, target models, and domain spaces.
+  [ACL 2026][Reinforcement Learning][Data mixing] This paper proposes the Data Mixing Agent, the first model-based end-to-end domain re-weighting framework. By training a small agent on a large collection of data mixing tr…
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - Data mixing
-  - domain re-weighting
-  - continual pre-training
-  - catastrophic forgetting
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "Data mixing"
+  - "domain re-weighting"
+  - "continual pre-training"
+  - "catastrophic forgetting"
 date: 2026-05-08
 content_hash: bc3ae7e0060cce05
 ---

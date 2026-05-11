@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Beyond Heuristic Prompting: A Concept-Guided Bayesian Framework for Zero-Shot Image Recognition
 description: >-
-  [CVPR2026][Multimodal VLM][zero-shot classification] This paper reformulates VLM zero-shot image recognition as a Bayesian framework, constructs a concept proposal distribution via an LLM-driven multi-stage concept synthesis pipeline, and employs an adaptive soft-trim likelihood to suppress the influence of outlier concepts, achieving state-of-the-art performance across 11 classification benchmarks.
+  [CVPR2026][Multimodal VLM][zero-shot classification] This paper reformulates VLM zero-shot image recognition as a Bayesian framework, constructs a concept proposal distribution via an LLM-driven multi-stage concept synth…
 tags:
-  - CVPR2026
-  - Multimodal VLM
-  - zero-shot classification
-  - CLIP
-  - Bayesian inference
-  - concept guidance
-  - prompt engineering
-  - robust estimation
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "zero-shot classification"
+  - "CLIP"
+  - "Bayesian inference"
+  - "concept guidance"
+  - "prompt engineering"
+  - "robust estimation"
 date: 2026-05-08
 content_hash: 038213ed3f2d13a8
 ---

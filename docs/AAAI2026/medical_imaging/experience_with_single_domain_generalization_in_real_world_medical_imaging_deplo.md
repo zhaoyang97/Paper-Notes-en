@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Experience with Single Domain Generalization in Real World Medical Imaging Deployments
 description: >-
-  [AAAI2026][Medical Imaging][Single domain generalization] This paper proposes the DL+EKE framework, which integrates domain-invariant expert knowledge with deep learning to address rare class single domain generalization (SDG) in medical imaging. The approach significantly outperforms state-of-the-art SDG methods across three real-world deployment scenarios: diabetic retinopathy (DR) grading, resting-state fMRI seizure onset zone (SOZ) localization, and stress ECG-based coronary artery disease (CAD) detection.
+  [AAAI2026][Medical Imaging][Single domain generalization] This paper proposes the DL+EKE framework, which integrates domain-invariant expert knowledge with deep learning to address rare class single domain generalization…
 tags:
-  - AAAI2026
-  - Medical Imaging
-  - Single domain generalization
-  - rare class detection
-  - expert knowledge integration
-  - medical imaging deployment
-  - diabetic retinopathy
-  - epileptic focus localization
-  - coronary artery disease
+  - "AAAI2026"
+  - "Medical Imaging"
+  - "Single domain generalization"
+  - "rare class detection"
+  - "expert knowledge integration"
+  - "medical imaging deployment"
+  - "diabetic retinopathy"
+  - "epileptic focus localization"
+  - "coronary artery disease"
 date: 2026-05-08
 content_hash: 4fd6c940fb8cdb8a
 ---

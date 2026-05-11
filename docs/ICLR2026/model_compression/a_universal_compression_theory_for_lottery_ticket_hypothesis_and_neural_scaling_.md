@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A universal compression theory for lottery ticket hypothesis and neural scaling laws
 description: >-
-  [ICLR 2026][Model Compression][Lottery Ticket Hypothesis] This paper proves a Universal Compression Theorem: any permutation-invariant function over $d$ objects can be asymptotically compressed to polylog(d) objects with error approaching zero (which is the optimal compression rate). From this theorem, the authors directly derive: (1) a proof of the dynamic lottery ticket hypothesis — any network can be compressed to polylogarithmic width while preserving its learning dynamics; (2) a dataset compression result — any dataset can be compressed to polylogarithmic size while preserving the loss landscape; and (3) an acceleration of power-law scaling laws to arbitrarily fast decay rates.
+  [ICLR 2026][Model Compression][Lottery Ticket Hypothesis] This paper proves a Universal Compression Theorem: any permutation-invariant function over $d$ objects can be asymptotically compressed to polylog(d) objects with…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Lottery Ticket Hypothesis
-  - Neural Scaling Laws
-  - Data Compression
-  - Permutation-Invariant Functions
-  - Theoretical Proof
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Lottery Ticket Hypothesis"
+  - "Neural Scaling Laws"
+  - "Data Compression"
+  - "Permutation-Invariant Functions"
+  - "Theoretical Proof"
 date: 2026-05-08
 content_hash: 0b3dab3438143cf2
 ---

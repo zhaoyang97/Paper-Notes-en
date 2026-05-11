@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Common to Whom? Regional Cultural Commonsense and LLM Bias in India
 description: >-
-  [ACL 2026][LLM Evaluation][Cultural commonsense] This paper introduces Indica, the first benchmark for evaluating LLM performance on sub-national cultural commonsense, focusing on cultural differences across five regions of India in eight domains of everyday life. Only 39.4% of questions reach consensus across all five regions, and all evaluated LLMs exhibit geographic bias—systematically over-selecting Central and North India as the "default" cultural representative.
+  [ACL 2026][LLM Evaluation][Cultural commonsense] This paper introduces Indica, the first benchmark for evaluating LLM performance on sub-national cultural commonsense…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - Cultural commonsense
-  - regional bias
-  - Indian cultural diversity
-  - benchmark construction
-  - LLM bias
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "Cultural commonsense"
+  - "regional bias"
+  - "Indian cultural diversity"
+  - "benchmark construction"
+  - "LLM bias"
 date: 2026-05-08
 content_hash: 52022e004d6f3adf
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Better NTK Conditioning: A Free Lunch from ReLU Nonlinear Activation in Wide Neural Networks
 description: >-
-  [NeurIPS 2025][Optimization][NTK condition number] This paper establishes a previously unnoticed "free" benefit of ReLU activation in wide neural networks: (a) it induces better data separation in the model's gradient feature space (angles between similar inputs are amplified in gradient space), and (b) this strictly reduces the condition number of the NTK matrix compared to linear networks. Depth further amplifies this effect — in the infinite-width-then-infinite-depth limit, all data pairs achieve equal angular separation in gradient space (~75.5°), and the NTK condition number converges to a fixed value $(n+4)/3$ that depends only on the number of training samples $n$.
+  [NeurIPS 2025][Optimization][NTK condition number] This paper establishes a previously unnoticed "free" benefit of ReLU activation in wide neural networks: (a) it induces better data separation in the model's gradient fe…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - NTK condition number
-  - ReLU activation
-  - feature separation
-  - wide networks
-  - convergence acceleration
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "NTK condition number"
+  - "ReLU activation"
+  - "feature separation"
+  - "wide networks"
+  - "convergence acceleration"
 date: 2026-05-08
 content_hash: 30ee14f7c1813243
 ---

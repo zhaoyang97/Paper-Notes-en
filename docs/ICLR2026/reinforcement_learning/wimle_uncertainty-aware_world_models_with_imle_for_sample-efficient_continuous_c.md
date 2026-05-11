@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] WIMLE: Uncertainty-Aware World Models with IMLE for Sample-Efficient Continuous Control
 description: >-
-  [ICLR 2026][Reinforcement Learning][Model-Based Reinforcement Learning] WIMLE extends Implicit Maximum Likelihood Estimation (IMLE) to model-based RL, learning stochastic world models capable of capturing multimodal transition dynamics. Predictive uncertainty is estimated via ensemble and latent sampling, and is used to weight the RL objective on synthetic data. Across 40 continuous control tasks, WIMLE achieves superior sample efficiency and asymptotic performance compared to strong model-free and model-based baselines.
+  [ICLR 2026][Reinforcement Learning][Model-Based Reinforcement Learning] WIMLE extends Implicit Maximum Likelihood Estimation (IMLE) to model-based RL…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Model-Based Reinforcement Learning
-  - IMLE
-  - Uncertainty Estimation
-  - Multimodal World Models
-  - Sample Efficiency
-  - Continuous Control
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Model-Based Reinforcement Learning"
+  - "IMLE"
+  - "Uncertainty Estimation"
+  - "Multimodal World Models"
+  - "Sample Efficiency"
+  - "Continuous Control"
 date: 2026-05-08
 content_hash: e65da9e01103f982
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PRE-Mamba: A 4D State Space Model for Ultra-High-Frequent Event Camera Deraining
 description: >-
-  [ICCV 2025][Image Restoration][event camera deraining] The first point-based event camera deraining framework, leveraging 4D event cloud representation and a Multi-Scale State Space Model (MS3M) to achieve efficient deraining while preserving microsecond-level temporal precision, reaching state-of-the-art performance with only 0.26M parameters.
+  [ICCV 2025][Image Restoration][event camera deraining] The first point-based event camera deraining framework, leveraging 4D event cloud representation and a Multi-Scale State Space Model (MS3M) to achieve efficient dera…
 tags:
-  - ICCV 2025
-  - Image Restoration
-  - event camera deraining
-  - state space model
-  - Mamba
-  - point cloud processing
-  - spatiotemporal modeling
+  - "ICCV 2025"
+  - "Image Restoration"
+  - "event camera deraining"
+  - "state space model"
+  - "Mamba"
+  - "point cloud processing"
+  - "spatiotemporal modeling"
 date: 2026-05-08
 content_hash: 76c5100c27ecf375
 ---

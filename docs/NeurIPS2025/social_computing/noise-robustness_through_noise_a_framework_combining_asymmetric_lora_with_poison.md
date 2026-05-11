@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Noise-Robustness Through Noise: A Framework Combining Asymmetric LoRA with Poisoning MoE
 description: >-
-  [NeurIPS 2025][Social Computing][LoRA] This paper proposes LoPE, which designates a dedicated "poisoning expert" within an asymmetric LoRA architecture to absorb injected noise during training; at inference time, this expert is masked so that only the clean experts contribute to the output — achieving noise robustness through noise itself, entirely without data cleaning.
+  [NeurIPS 2025][Social Computing][LoRA] This paper proposes LoPE, which designates a dedicated "poisoning expert" within an asymmetric LoRA architecture to absorb injected noise during training; at inference time…
 tags:
-  - NeurIPS 2025
-  - Social Computing
-  - LoRA
-  - Noise Robustness
-  - Mixture-of-Experts
-  - Parameter-Efficient Fine-Tuning
-  - Data Denoising
+  - "NeurIPS 2025"
+  - "Social Computing"
+  - "LoRA"
+  - "Noise Robustness"
+  - "Mixture-of-Experts"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Data Denoising"
 date: 2026-05-08
 content_hash: a5663ba885ba4a8d
 ---

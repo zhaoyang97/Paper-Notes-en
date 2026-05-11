@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Self-Supervised Inductive Logic Programming
 description: >-
-  [AAAI 2026][Self-Supervised Learning][inductive logic programming] This paper proposes a new self-supervised inductive logic programming (SS-ILP) setting and the Poker system, which starts from a small number of positive labeled examples and unlabeled examples, automatically generates positive and negative examples, and employs a maximally general second-order normal form (SONF) background theory to learn logic programs with recursion and predicate invention in the absence of negative examples.
+  [AAAI 2026][Self-Supervised Learning][inductive logic programming] This paper proposes a new self-supervised inductive logic programming (SS-ILP) setting and the Poker system…
 tags:
-  - AAAI 2026
-  - Self-Supervised Learning
-  - inductive logic programming
-  - meta-interpretive learning
-  - grammar learning
-  - predicate invention
+  - "AAAI 2026"
+  - "Self-Supervised Learning"
+  - "inductive logic programming"
+  - "meta-interpretive learning"
+  - "grammar learning"
+  - "predicate invention"
 date: 2026-05-08
 content_hash: 1c969cd4572b339a
 ---

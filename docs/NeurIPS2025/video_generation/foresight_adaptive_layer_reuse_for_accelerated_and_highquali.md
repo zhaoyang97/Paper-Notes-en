@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Foresight: Adaptive Layer Reuse for Accelerated and High-Quality Text-to-Video Generation
 description: >-
-  [NeurIPS 2025][Video Generation][Adaptive Caching] This paper proposes Foresight, a training-free adaptive layer reuse framework that establishes per-layer MSE thresholds during a warmup phase and dynamically decides at inference time whether to reuse cached features or recompute each layer. Evaluated on 5 video generation models, Foresight achieves superior quality and speed trade-offs compared to static methods, with up to 2.23× acceleration.
+  [NeurIPS 2025][Video Generation][Adaptive Caching] This paper proposes Foresight, a training-free adaptive layer reuse framework that establishes per-layer MSE thresholds during a warmup phase and dynamically decides at…
 tags:
-  - NeurIPS 2025
-  - Video Generation
-  - Adaptive Caching
-  - DiT Acceleration
-  - Feature Reuse
-  - Text-to-Video Generation
-  - Training-Free
+  - "NeurIPS 2025"
+  - "Video Generation"
+  - "Adaptive Caching"
+  - "DiT Acceleration"
+  - "Feature Reuse"
+  - "Text-to-Video Generation"
+  - "Training-Free"
 date: 2026-05-08
 content_hash: 87d6ddf499fee694
 ---

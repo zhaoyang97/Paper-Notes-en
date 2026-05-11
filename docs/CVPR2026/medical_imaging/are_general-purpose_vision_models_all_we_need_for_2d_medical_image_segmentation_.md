@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Are General-Purpose Vision Models All We Need for 2D Medical Image Segmentation? A Cross-Dataset Empirical Study
 description: >-
-  [CVPR 2026][Medical Imaging][medical image segmentation] Through standardized comparative experiments on three heterogeneous medical datasets covering 11 architectures, this study demonstrates that general-purpose vision models (GP-VMs) can surpass most specialized medical segmentation architectures (SMAs) in 2D medical image segmentation, and XAI analysis shows that GP-VMs capture clinically relevant structures without domain-specific design.
+  [CVPR 2026][Medical Imaging][medical image segmentation] Through standardized comparative experiments on three heterogeneous medical datasets covering 11 architectures…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - medical image segmentation
-  - general-purpose vision models
-  - empirical study
-  - benchmarking
-  - Grad-CAM
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "medical image segmentation"
+  - "general-purpose vision models"
+  - "empirical study"
+  - "benchmarking"
+  - "Grad-CAM"
 date: 2026-05-08
 content_hash: d14c218dbd2dff5c
 ---

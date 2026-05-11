@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] QiMeng-NeuComBack: Self-Evolving Translation from IR to Assembly Code
 description: >-
-  [NeurIPS 2025][Video Understanding][Neural Compilation] This paper introduces the NeuComBack benchmark for evaluating neural compilation on IR-to-assembly translation tasks, and proposes a self-evolving prompt optimization method that iteratively improves compilation prompts by learning from LLM self-debugging trajectories. The approach raises correctness from 44% to 64%, with 87.5% of correctly generated programs outperforming clang-O3.
+  [NeurIPS 2025][Video Understanding][Neural Compilation] This paper introduces the NeuComBack benchmark for evaluating neural compilation on IR-to-assembly translation tasks…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
-  - Neural Compilation
-  - LLM
-  - IR-to-Assembly Translation
-  - Self-Evolving Prompt Optimization
-  - Compiler
+  - "NeurIPS 2025"
+  - "Video Understanding"
+  - "Neural Compilation"
+  - "LLM"
+  - "IR-to-Assembly Translation"
+  - "Self-Evolving Prompt Optimization"
+  - "Compiler"
 date: 2026-05-08
 content_hash: eecff76e21e2ef85
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ConSurv: Multimodal Continual Learning for Survival Analysis
 description: >-
-  [AAAI 2026][Medical Imaging][Continual Learning] This paper proposes ConSurv, the first multimodal continual learning framework for survival analysis. Through two core components — Multi-Stage Mixture-of-Experts (MS-MoE) and Feature-Constrained Replay (FCR) — ConSurv effectively mitigates catastrophic forgetting in settings that integrate whole slide pathology images and genomic data, comprehensively outperforming existing methods on the newly constructed MSAIL benchmark.
+  [AAAI 2026][Medical Imaging][Continual Learning] This paper proposes ConSurv, the first multimodal continual learning framework for survival analysis. Through two core components — Multi-Stage Mixture-of-Experts (MS-MoE)…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Continual Learning
-  - Multimodal Fusion
-  - Survival Analysis
-  - Whole Slide Images
-  - Catastrophic Forgetting
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Continual Learning"
+  - "Multimodal Fusion"
+  - "Survival Analysis"
+  - "Whole Slide Images"
+  - "Catastrophic Forgetting"
 date: 2026-05-08
 content_hash: b73fcb13dd4f3cd9
 ---

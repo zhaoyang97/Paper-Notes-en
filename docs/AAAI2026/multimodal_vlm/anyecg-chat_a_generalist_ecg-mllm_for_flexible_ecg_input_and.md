@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] anyECG-chat: A Generalist ECG-MLLM for Flexible ECG Input and Multi-Task Understanding
 description: >-
-  [AAAI 2026][Multimodal VLM][ECG-MLLM] This work constructs the anyECG dataset (covering three tasks: report generation, waveform localization, and multi-ECG comparison) and proposes the anyECG-chat model. Through a dynamic ECG input mechanism supporting variable-length, few-lead, and multi-ECG inputs, and a three-stage curriculum learning strategy, anyECG-chat comprehensively outperforms existing ECG-MLLMs in OOD generalization for report generation, second-level anomalous waveform localization, and multi-ECG comparative analysis.
+  [AAAI 2026][Multimodal VLM][ECG-MLLM] This work constructs the anyECG dataset (covering three tasks: report generation, waveform localization…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - ECG-MLLM
-  - electrocardiogram
-  - multi-task understanding
-  - dynamic input
-  - curriculum learning
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "ECG-MLLM"
+  - "electrocardiogram"
+  - "multi-task understanding"
+  - "dynamic input"
+  - "curriculum learning"
 date: 2026-05-08
 content_hash: 5881630d640b54e8
 ---

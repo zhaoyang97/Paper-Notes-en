@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Referring Layer Decomposition
 description: >-
-  [ICLR 2026][Image Generation][Layer Decomposition] This paper introduces the Referring Layer Decomposition (RLD) task, which predicts complete RGBA layers from a single RGB image given flexible user-provided prompts (spatial, textual, or hybrid). It also constructs the RefLade dataset comprising 1.1 million samples and proposes an automated evaluation protocol.
+  [ICLR 2026][Image Generation][Layer Decomposition] This paper introduces the Referring Layer Decomposition (RLD) task, which predicts complete RGBA layers from a single RGB image given flexible user-provided prompts (spa…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Layer Decomposition
-  - RGBA Layers
-  - Multimodal Referring Input
-  - Data Engine
-  - RefLayer
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Layer Decomposition"
+  - "RGBA Layers"
+  - "Multimodal Referring Input"
+  - "Data Engine"
+  - "RefLayer"
 date: 2026-05-08
 content_hash: 306715d18b8e6211
 ---

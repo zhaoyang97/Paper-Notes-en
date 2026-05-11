@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] AssetFormer: Modular 3D Assets Generation with Autoregressive Transformer
 description: >-
-  [ICLR 2026][LLM/NLP][3D generation] This paper proposes AssetFormer, an autoregressive Transformer based on the Llama architecture that models modular 3D assets (composed of primitive sequences) as discrete token sequences. Through DFS/BFS graph traversal reordering and joint vocabulary decoding, it enables the generation of modular 3D assets directly usable in game engines from text descriptions.
+  [ICLR 2026][LLM/NLP][3D generation] This paper proposes AssetFormer, an autoregressive Transformer based on the Llama architecture that models modular 3D assets (composed of primitive sequences) as discrete token sequenc…
 tags:
-  - ICLR 2026
-  - LLM/NLP
-  - 3D generation
-  - autoregressive transformer
-  - modular assets
-  - UGC
-  - Llama
-  - text-to-3D
+  - "ICLR 2026"
+  - "LLM/NLP"
+  - "3D generation"
+  - "autoregressive transformer"
+  - "modular assets"
+  - "UGC"
+  - "Llama"
+  - "text-to-3D"
 date: 2026-05-08
 content_hash: 6ea6531454600baa
 ---

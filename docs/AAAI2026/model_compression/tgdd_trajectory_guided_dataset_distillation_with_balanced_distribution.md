@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TGDD: Trajectory Guided Dataset Distillation with Balanced Distribution
 description: >-
-  [AAAI 2026][Model Compression][Dataset Distillation] This paper proposes TGDD, which reframes static distribution matching as a dynamic alignment process along training trajectories. It captures evolving semantics via Stage-wise Distribution Matching and reduces inter-class overlap via Stage-wise Distribution Constraint, achieving SOTA on 10 datasets with a 5.0% accuracy gain on high-resolution benchmarks.
+  [AAAI 2026][Model Compression][Dataset Distillation] This paper proposes TGDD, which reframes static distribution matching as a dynamic alignment process along training trajectories. It captures evolving semantics via St…
 tags:
-  - AAAI 2026
-  - Model Compression
-  - Dataset Distillation
-  - Distribution Matching
-  - Expert Trajectory
-  - Distribution Constraint
-  - Synthetic Data
+  - "AAAI 2026"
+  - "Model Compression"
+  - "Dataset Distillation"
+  - "Distribution Matching"
+  - "Expert Trajectory"
+  - "Distribution Constraint"
+  - "Synthetic Data"
 date: 2026-05-08
 content_hash: 2d07ef25e6f06a24
 ---

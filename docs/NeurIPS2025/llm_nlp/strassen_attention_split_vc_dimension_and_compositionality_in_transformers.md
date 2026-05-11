@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Strassen Attention, Split VC Dimension and Compositionality in Transformers
 description: >-
-  [NeurIPS 2025][LLM/NLP][Transformer theory] This paper introduces the Splitting VC dimension as a theoretical tool to prove fundamental limitations of single-layer softmax Transformers (even with infinite precision) on compositional reasoning tasks, and proposes the Strassen attention mechanism with sub-cubic time complexity to overcome these limitations.
+  [NeurIPS 2025][LLM/NLP][Transformer theory] This paper introduces the Splitting VC dimension as a theoretical tool to prove fundamental limitations of single-layer softmax Transformers (even with infinite precision) on c…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - Transformer theory
-  - attention mechanism
-  - compositional reasoning
-  - VC dimension
-  - complexity lower bounds
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "Transformer theory"
+  - "attention mechanism"
+  - "compositional reasoning"
+  - "VC dimension"
+  - "complexity lower bounds"
 date: 2026-05-08
 content_hash: 818999ac3a8a0b65
 ---

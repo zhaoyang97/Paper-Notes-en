@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Quantization Error Propagation: Revisiting Layer-Wise Post-Training Quantization
 description: >-
-  [NeurIPS 2025][Model Compression][post-training quantization] This paper identifies a critical bottleneck in existing layer-wise PTQ methods—namely, their neglect of cross-layer accumulation and growth of quantization errors—and proposes the QEP framework, which explicitly corrects accumulated errors via error propagation and compensation, achieving substantial performance gains under extremely low-bit settings (INT2/INT3).
+  [NeurIPS 2025][Model Compression][post-training quantization] This paper identifies a critical bottleneck in existing layer-wise PTQ methods—namely…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - post-training quantization
-  - LLM compression
-  - quantization error propagation
-  - layer-wise quantization
-  - low-bit
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "post-training quantization"
+  - "LLM compression"
+  - "quantization error propagation"
+  - "layer-wise quantization"
+  - "low-bit"
 date: 2026-05-08
 content_hash: b137364ee4071b3c
 ---

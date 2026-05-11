@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Spiking Meets Attention: Efficient Remote Sensing Image Super-Resolution with Attention Spiking Neural Networks
 description: >-
-  [NEURIPS2025][Image Restoration][Spiking Neural Networks] This paper proposes SpikeSR, the first attention-based spiking neural network (SNN) framework for remote sensing image super-resolution. By incorporating Spiking Attention Blocks (SAB) that combine Hybrid Dimensional Attention (HDA) and Deformable Similarity Attention (DSA), SpikeSR achieves state-of-the-art performance on AID/DOTA/DIOR while maintaining high computational efficiency.
+  [NEURIPS2025][Image Restoration][Spiking Neural Networks] This paper proposes SpikeSR, the first attention-based spiking neural network (SNN) framework for remote sensing image super-resolution. By incorporating Spiking…
 tags:
-  - NEURIPS2025
-  - Image Restoration
-  - Spiking Neural Networks
-  - Remote Sensing Super-Resolution
-  - Attention Mechanism
-  - Deformable Similarity Attention
-  - Energy-Efficient AI
+  - "NEURIPS2025"
+  - "Image Restoration"
+  - "Spiking Neural Networks"
+  - "Remote Sensing Super-Resolution"
+  - "Attention Mechanism"
+  - "Deformable Similarity Attention"
+  - "Energy-Efficient AI"
 date: 2026-05-08
 content_hash: ab567e804c33466f
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Jackpot: Optimal Budgeted Rejection Sampling for Extreme Actor-Policy Mismatch RL
 description: >-
-  [ICLR 2026][rejection sampling] This paper proposes the Jackpot framework, which applies Optimal Budget Rejection Sampling (OBRS) to accept or reject rollout tokens at the token level within a controllable acceptance budget, and reweights the remaining samples. The method is theoretically proven to strictly reduce the KL divergence between the actor and policy under any budget. Combined with joint training and distillation of the rollout model, Jackpot enables a small model (e.g., Qwen3-1.7B) to serve as the rollout model for training a large model (e.g., Qwen3-8B), achieving performance close to the on-policy baseline.
+  [ICLR 2026][rejection sampling] This paper proposes the Jackpot framework, which applies Optimal Budget Rejection Sampling (OBRS) to accept or reject rollout tokens at the token level within a controllable acceptance bud…
 tags:
-  - ICLR 2026
-  - rejection sampling
-  - actor-policy mismatch
-  - decoupled RL
-  - importance sampling
-  - OBRS
-  - off-policy RL
+  - "ICLR 2026"
+  - "rejection sampling"
+  - "actor-policy mismatch"
+  - "decoupled RL"
+  - "importance sampling"
+  - "OBRS"
+  - "off-policy RL"
 date: 2026-05-08
 content_hash: 4db98fae3a72da58
 ---

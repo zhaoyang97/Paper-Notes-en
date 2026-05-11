@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] System-Embedded Diffusion Bridge Models
 description: >-
-  [NeurIPS 2025][Image Generation][Diffusion bridge models] This paper proposes System-embedded Diffusion Bridge Models (SDB), which directly embed a known linear measurement system into the coefficients of a matrix-valued SDE, enabling decoupled control over denoising in the range space and information synthesis in the null space. SDB achieves consistent performance improvements across multiple inverse problems and demonstrates strong robustness to system mismatch.
+  [NeurIPS 2025][Image Generation][Diffusion bridge models] This paper proposes System-embedded Diffusion Bridge Models (SDB), which directly embed a known linear measurement system into the coefficients of a matrix-valued…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Diffusion bridge models
-  - inverse problems
-  - matrix-valued SDE
-  - measurement system embedding
-  - pseudoinverse reconstruction
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Diffusion bridge models"
+  - "inverse problems"
+  - "matrix-valued SDE"
+  - "measurement system embedding"
+  - "pseudoinverse reconstruction"
 date: 2026-05-08
 content_hash: f9f8c5578e2925e7
 ---

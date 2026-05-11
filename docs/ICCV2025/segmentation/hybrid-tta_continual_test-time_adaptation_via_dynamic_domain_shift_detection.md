@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Hybrid-TTA: Continual Test-time Adaptation via Dynamic Domain Shift Detection
 description: >-
-  [ICCV 2025][Segmentation][Test-time adaptation] Hybrid-TTA proposes a continual test-time adaptation (CTTA) framework that employs a Dynamic Domain Shift Detection (DDSD) module to determine whether the current input originates from a new domain, adaptively switching between Full Tuning (FT) and Adapter Tuning (AT). It additionally introduces Masked Image Modeling Adaptation (MIMA) as an auxiliary task to enhance model stability, achieving 62.2% mIoU on the Cityscapes-to-ACDC benchmark while running approximately **20× faster** than comparable methods.
+  [ICCV 2025][Segmentation][Test-time adaptation] Hybrid-TTA proposes a continual test-time adaptation (CTTA) framework that employs a Dynamic Domain Shift Detection (DDSD) module to determine whether the current input ori…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - Test-time adaptation
-  - domain shift detection
-  - full fine-tuning
-  - efficient fine-tuning
-  - masked image modeling
-  - semantic segmentation
-  - Teacher-Student
+  - "ICCV 2025"
+  - "Segmentation"
+  - "Test-time adaptation"
+  - "domain shift detection"
+  - "full fine-tuning"
+  - "efficient fine-tuning"
+  - "masked image modeling"
+  - "semantic segmentation"
+  - "Teacher-Student"
 date: 2026-05-08
 content_hash: c959bd530bd430ad
 ---

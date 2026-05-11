@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Provably Data-Driven Projection Method for Quadratic Programming
 description: >-
-  [AAAI 2026][quadratic programming] This work extends data-driven projection matrix learning from linear programming (LP) to convex quadratic programming (QP). By proposing an "unrolled active set method" to model the computation of QP optimal values within the Goldberg–Jerrum (GJ) framework, it establishes a pseudo-dimension upper bound and generalization guarantees for projection matrix learning.
+  [AAAI 2026][quadratic programming] This work extends data-driven projection matrix learning from linear programming (LP) to convex quadratic programming (QP). By proposing an "unrolled active set method" to model the com…
 tags:
-  - AAAI 2026
-  - quadratic programming
-  - projection method
-  - generalization guarantee
-  - pseudo-dimension
-  - data-driven optimization
+  - "AAAI 2026"
+  - "quadratic programming"
+  - "projection method"
+  - "generalization guarantee"
+  - "pseudo-dimension"
+  - "data-driven optimization"
 date: 2026-05-08
 content_hash: c8d0aea8e3f440b1
 ---

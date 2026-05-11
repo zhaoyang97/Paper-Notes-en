@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ConceptScope: Characterizing Dataset Bias via Disentangled Visual Concepts
 description: >-
-  [NeurIPS 2025][Human Understanding][Dataset Bias] This paper proposes ConceptScope, a framework that trains sparse autoencoders (SAE) on representations from visual foundation models to automatically discover and quantify visual concept biases in datasets, categorizing concepts into target / context / bias without any manual annotation.
+  [NeurIPS 2025][Human Understanding][Dataset Bias] This paper proposes ConceptScope, a framework that trains sparse autoencoders (SAE) on representations from visual foundation models to automatically discover and quantif…
 tags:
-  - NeurIPS 2025
-  - Human Understanding
-  - Dataset Bias
-  - Sparse Autoencoder
-  - Visual Concepts
-  - Bias Detection
-  - Interpretability
+  - "NeurIPS 2025"
+  - "Human Understanding"
+  - "Dataset Bias"
+  - "Sparse Autoencoder"
+  - "Visual Concepts"
+  - "Bias Detection"
+  - "Interpretability"
 date: 2026-05-08
 content_hash: 0d39dfbee3042bae
 ---

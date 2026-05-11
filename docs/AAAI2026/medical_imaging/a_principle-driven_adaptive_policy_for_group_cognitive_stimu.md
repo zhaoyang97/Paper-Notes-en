@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Principle-Driven Adaptive Policy for Group Cognitive Stimulation Dialogue for Elderly with Cognitive Impairment
 description: >-
-  [AAAI 2026][Medical Imaging][Cognitive Stimulation Therapy] This paper proposes the GCSD system for group Cognitive Stimulation Therapy (CST) targeting elderly individuals with cognitive impairment. The system integrates four modules — multi-speaker context control, dynamic participant state modeling (soft prompt), a cognitive stimulation attention loss, and a multi-dimensional reward policy optimization — built on a fine-tuned Qwen-2.5-3B backbone. Training is conducted on 500+ hours of real Cantonese CST dialogues and 10,000+ simulated conversations. The system achieves a BLEU-4 of 27.93, surpassing GPT-4o and other large models, with an A/B test win rate of 50% versus GPT-4o's 39%.
+  [AAAI 2026][Medical Imaging][Cognitive Stimulation Therapy] This paper proposes the GCSD system for group Cognitive Stimulation Therapy (CST) targeting elderly individuals with cognitive impairment. The system integrates…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Cognitive Stimulation Therapy
-  - Multi-party Dialogue
-  - Dynamic User Modeling
-  - Principle-Driven Policy
-  - Reinforcement Learning
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Cognitive Stimulation Therapy"
+  - "Multi-party Dialogue"
+  - "Dynamic User Modeling"
+  - "Principle-Driven Policy"
+  - "Reinforcement Learning"
 date: 2026-05-08
 content_hash: 44af582bf3acb977
 ---

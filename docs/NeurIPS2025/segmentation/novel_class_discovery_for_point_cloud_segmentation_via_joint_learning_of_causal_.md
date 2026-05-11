@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Novel Class Discovery for Point Cloud Segmentation via Joint Learning of Causal Representation and Reasoning
 description: >-
-  [NeurIPS 2025][Segmentation][Novel Class Discovery] This paper is the first to introduce causal learning into 3D point cloud novel class discovery (3D-NCD). By leveraging a Structural Causal Model (SCM) to analyze confounders in base classes and causal relationships between base and novel classes, it proposes Causal Representation Prototype learning (CRP, which eliminates confounders via an adversarial network) and graph-based causal reasoning (GCN-based pseudo-label generation), achieving state-of-the-art results on SemanticKITTI and SemanticPOSS.
+  [NeurIPS 2025][Segmentation][Novel Class Discovery] This paper is the first to introduce causal learning into 3D point cloud novel class discovery (3D-NCD). By leveraging a Structural Causal Model (SCM) to analyze confou…
 tags:
-  - NeurIPS 2025
-  - Segmentation
-  - Novel Class Discovery
-  - Point Cloud Semantic Segmentation
-  - Causal Learning
-  - Structural Causal Model
-  - Graph Convolutional Network
+  - "NeurIPS 2025"
+  - "Segmentation"
+  - "Novel Class Discovery"
+  - "Point Cloud Semantic Segmentation"
+  - "Causal Learning"
+  - "Structural Causal Model"
+  - "Graph Convolutional Network"
 date: 2026-05-08
 content_hash: e0db2f8498ea8cfe
 ---

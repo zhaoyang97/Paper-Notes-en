@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DAWN: Pixel Motion Diffusion is What We Need for Robot Control
 description: >-
-  [CVPR 2026][Robotics][Pixel motion diffusion] This paper proposes DAWN, a two-stage fully diffusion-based vision-language-action framework. A Motion Director (latent diffusion model) generates dense pixel motion fields as interpretable intermediate representations, while an Action Expert (diffusion Transformer policy) translates pixel motion into executable robot actions. DAWN achieves state-of-the-art performance on the CALVIN benchmark (average length 4.00) and demonstrates strong generalization on real-world single-arm and dual-arm manipulation tasks.
+  [CVPR 2026][Robotics][Pixel motion diffusion] This paper proposes DAWN, a two-stage fully diffusion-based vision-language-action framework. A Motion Director (latent diffusion model) generates dense pixel motion fields a…
 tags:
-  - CVPR 2026
-  - Robotics
-  - Pixel motion diffusion
-  - vision-language-action
-  - robot manipulation
-  - two-stage diffusion
-  - optical flow representation
+  - "CVPR 2026"
+  - "Robotics"
+  - "Pixel motion diffusion"
+  - "vision-language-action"
+  - "robot manipulation"
+  - "two-stage diffusion"
+  - "optical flow representation"
 date: 2026-05-08
 content_hash: ac86e6238c56de41
 ---

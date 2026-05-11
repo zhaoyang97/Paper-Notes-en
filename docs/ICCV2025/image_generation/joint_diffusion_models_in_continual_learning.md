@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Joint Diffusion Models in Continual Learning
 description: >-
-  [Image Generation] > This paper proposes JDCL, which unifies a classifier and a diffusion generative model into a single jointly parameterized network. Combined with knowledge distillation and a two-stage training strategy, JDCL substantially alleviates catastrophic forgetting in generative replay-based continual learning, surpassing existing generative replay methods.
+  [Image Generation] > This paper proposes JDCL, which unifies a classifier and a diffusion generative model into a single jointly parameterized network. Combined with knowledge distillation and a two-stage training strate…
 tags:
-  - Image Generation
+  - "Image Generation"
 date: 2026-05-08
 content_hash: ccf63cecb7a13d45
 ---

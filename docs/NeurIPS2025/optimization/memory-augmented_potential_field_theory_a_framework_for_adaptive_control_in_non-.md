@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Memory-Augmented Potential Field Theory: A Framework for Adaptive Control in Non-Convex Domains
 description: >-
-  [NeurIPS 2025][Optimization][potential field] This paper proposes Memory-Augmented Potential Field Theory (MAPFT), which maintains a dynamic memory module within stochastic optimal control to detect and encode topological features of the state space (local minima, low-gradient regions, etc.), and adaptively reshapes the value function landscape to enable control in non-convex environments. On tasks such as Humanoid-v4, the method achieves a 27% improvement in cumulative reward over the best RL baseline (SAC), and raises the local optima escape rate from ~30% to ~72%.
+  [NeurIPS 2025][Optimization][potential field] This paper proposes Memory-Augmented Potential Field Theory (MAPFT), which maintains a dynamic memory module within stochastic optimal control to detect and encode topologica…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - potential field
-  - memory augmentation
-  - MPPI
-  - non-convex optimization
-  - stochastic optimal control
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "potential field"
+  - "memory augmentation"
+  - "MPPI"
+  - "non-convex optimization"
+  - "stochastic optimal control"
 date: 2026-05-08
 content_hash: 69a595c93b5ea902
 ---

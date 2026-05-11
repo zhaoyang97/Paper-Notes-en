@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Beyond Semantics: Disentangling Information Scope in Sparse Autoencoders for CLIP
 description: >-
-  [CVPR 2026][Sparse Autoencoders] This paper proposes "information scope" as a novel dimension for SAE feature interpretability. By introducing the Contextual Dependency Score (CDS), it partitions CLIP's SAE features into local features (low CDS) and global features (high CDS), revealing their differentiated functional roles in classification, segmentation, and depth estimation.
+  [CVPR 2026][Interpretability][Sparse Autoencoders] This paper proposes "information scope" as a novel dimension for SAE feature interpretability. By introducing the Contextual Dependency Score (CDS)…
 tags:
-  - CVPR 2026
-  - Sparse Autoencoders
-  - CLIP
-  - Information Scope
-  - Contextual Dependency
-  - Outlier Token
+  - "CVPR 2026"
+  - "Interpretability"
+  - "Sparse Autoencoders"
+  - "CLIP"
+  - "Information Scope"
+  - "Contextual Dependency"
+  - "Outlier Token"
 date: 2026-05-08
 content_hash: 8aa8815e627c11a5
 ---

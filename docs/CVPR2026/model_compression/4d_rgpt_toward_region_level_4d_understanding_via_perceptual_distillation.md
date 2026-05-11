@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] 4D-RGPT: Toward Region-level 4D Understanding via Perceptual Distillation
 description: >-
-  [CVPR 2026][Model Compression][4D understanding] This paper proposes 4D-RGPT and the Perceptual 4D Distillation (P4D) framework, which enhances 4D perception in MLLMs by distilling knowledge of depth and optical flow from frozen 4D perceptual expert models. It also introduces R4D-Bench, the first region-level 4D video question-answering benchmark.
+  [CVPR 2026][Model Compression][4D understanding] This paper proposes 4D-RGPT and the Perceptual 4D Distillation (P4D) framework, which enhances 4D perception in MLLMs by distilling knowledge of depth and optical flow fro…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - 4D understanding
-  - region-level VQA
-  - perceptual distillation
-  - temporal position encoding
-  - depth perception
+  - "CVPR 2026"
+  - "Model Compression"
+  - "4D understanding"
+  - "region-level VQA"
+  - "perceptual distillation"
+  - "temporal position encoding"
+  - "depth perception"
 date: 2026-05-08
 content_hash: bad60862d00f6259
 ---

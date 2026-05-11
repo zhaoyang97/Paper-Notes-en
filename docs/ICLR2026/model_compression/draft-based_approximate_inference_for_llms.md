@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Draft-based Approximate Inference for LLMs
 description: >-
-  [ICLR 2026][Model Compression][approximate inference] This paper proposes the Draft-based Approximate Inference framework, which leverages lookahead predictions from a lightweight draft model to more accurately estimate token/KV pair importance. The framework comprises three methods — SpecKV (KV cache dropping), SpecPC (prompt compression), and SpecKV-PC (cascaded compression) — and consistently outperforms existing baselines on long-context benchmarks.
+  [ICLR 2026][Model Compression][approximate inference] This paper proposes the Draft-based Approximate Inference framework, which leverages lookahead predictions from a lightweight draft model to more accurately estimate…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - approximate inference
-  - KV cache compression
-  - prompt compression
-  - draft model
-  - sparse attention
+  - "ICLR 2026"
+  - "Model Compression"
+  - "approximate inference"
+  - "KV cache compression"
+  - "prompt compression"
+  - "draft model"
+  - "sparse attention"
 date: 2026-05-08
 content_hash: 05d051df9a8d3b27
 ---

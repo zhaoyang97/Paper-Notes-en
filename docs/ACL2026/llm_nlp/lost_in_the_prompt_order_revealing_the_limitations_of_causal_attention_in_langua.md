@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Lost in the Prompt Order: Revealing the Limitations of Causal Attention in Language Models
 description: >-
-  [ACL 2026][LLM/NLP][causal attention] This paper systematically investigates the sensitivity of large language models to the ordering of prompt components in multiple-choice question answering (MCQA). Through controlled experiments, the authors rule out training bias and memory decay hypotheses, identifying the causal attention mask as the fundamental mechanism responsible for the substantial performance degradation observed under the QOC (Question–Options–Context) ordering.
+  [ACL 2026][LLM/NLP][causal attention] This paper systematically investigates the sensitivity of large language models to the ordering of prompt components in multiple-choice question answering (MCQA). Through controlled…
 tags:
-  - ACL 2026
-  - LLM/NLP
-  - causal attention
-  - prompt order sensitivity
-  - multiple-choice QA
-  - information bottleneck
-  - mechanistic interpretability
+  - "ACL 2026"
+  - "LLM/NLP"
+  - "causal attention"
+  - "prompt order sensitivity"
+  - "multiple-choice QA"
+  - "information bottleneck"
+  - "mechanistic interpretability"
 date: 2026-05-08
 content_hash: f249f374b6c2234f
 ---

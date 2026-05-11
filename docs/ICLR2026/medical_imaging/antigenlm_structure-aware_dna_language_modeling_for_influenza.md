@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AntigenLM: Structure-Aware DNA Language Modeling for Influenza
 description: >-
-  [ICLR 2026][Medical Imaging][DNA language model] AntigenLM is a GPT-2-style DNA language model that preserves the integrity of genomic functional units. Pretrained on complete influenza virus whole genomes and subsequently fine-tuned, it autoregressively predicts antigenic sequences of future circulating strains, achieving significantly lower amino acid mismatch rates than the evolutionary model beth-1 and general-purpose genomic models.
+  [ICLR 2026][Medical Imaging][DNA language model] AntigenLM is a GPT-2-style DNA language model that preserves the integrity of genomic functional units. Pretrained on complete influenza virus whole genomes and subsequent…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - DNA language model
-  - influenza virus prediction
-  - functional unit encoding
-  - whole-genome modeling
-  - vaccine design
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "DNA language model"
+  - "influenza virus prediction"
+  - "functional unit encoding"
+  - "whole-genome modeling"
+  - "vaccine design"
 date: 2026-05-08
 content_hash: c56ea60a7f74e610
 ---

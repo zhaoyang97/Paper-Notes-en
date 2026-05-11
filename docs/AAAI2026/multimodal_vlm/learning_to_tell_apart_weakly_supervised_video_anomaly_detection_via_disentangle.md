@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning to Tell Apart: Weakly Supervised Video Anomaly Detection via Disentangled Semantic Alignment
 description: >-
-  [AAAI 2026][Multimodal VLM][Weakly supervised video anomaly detection] This paper proposes DSANet, which enhances the discriminability between normal and anomalous features in weakly supervised video anomaly detection (WS-VAD) at two levels: coarse-grained self-guided normal pattern modeling (SG-NM) and fine-grained disentangled contrastive semantic alignment (DCSA). DSANet achieves state-of-the-art performance with 86.95% AP (+1.14%) on XD-Violence and 13.01% fine-grained mAP (+3.39%) on UCF-Crime.
+  [AAAI 2026][Multimodal VLM][Weakly supervised video anomaly detection] This paper proposes DSANet, which enhances the discriminability between normal and anomalous features in weakly supervised video anomaly detection (W…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Weakly supervised video anomaly detection
-  - semantic disentanglement
-  - normal pattern modeling
-  - contrastive alignment
-  - CLIP
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Weakly supervised video anomaly detection"
+  - "semantic disentanglement"
+  - "normal pattern modeling"
+  - "contrastive alignment"
+  - "CLIP"
 date: 2026-05-08
 content_hash: 80785387fda97b7c
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mesh-RFT: Enhancing Mesh Generation via Fine-Grained Reinforcement Fine-Tuning
 description: >-
-  [NeurIPS 2025][3D Vision][mesh generation] This paper proposes Mesh-RFT, a framework that achieves face-level fine-grained mesh quality optimization through a topology-aware scoring system and Masked Direct Preference Optimization (M-DPO), significantly improving the geometric integrity and topological regularity of generated meshes.
+  [NeurIPS 2025][3D Vision][mesh generation] This paper proposes Mesh-RFT, a framework that achieves face-level fine-grained mesh quality optimization through a topology-aware scoring system and Masked Direct Preference Op…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - mesh generation
-  - reinforcement fine-tuning
-  - DPO
-  - topology-aware
-  - fine-grained optimization
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "mesh generation"
+  - "reinforcement fine-tuning"
+  - "DPO"
+  - "topology-aware"
+  - "fine-grained optimization"
 date: 2026-05-08
 content_hash: 2f43aca9e15423a9
 ---

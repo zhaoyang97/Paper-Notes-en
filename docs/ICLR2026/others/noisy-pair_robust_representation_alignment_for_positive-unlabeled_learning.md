@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Noisy-Pair Robust Representation Alignment for Positive-Unlabeled Learning
 description: >-
-  [ICLR 2026][PU Learning] This paper proposes NcPU, a non-contrastive PU learning framework that applies a sqrt transformation to the standard non-contrastive loss (NoiSNCL) so that clean-pair gradients dominate training, and introduces PhantomGate to provide conservative negative supervision with a regret rollback mechanism. Both modules iterate in a mutually beneficial manner under an EM framework. Without relying on auxiliary negative samples or pre-estimated class priors, NcPU narrows the gap with supervised learning from 14.26% to <1.4% on CIFAR-100, and achieves SOTA on xBD disaster damage assessment as well.
+  [ICLR 2026][PU Learning] This paper proposes NcPU, a non-contrastive PU learning framework that applies a sqrt transformation to the standard non-contrastive loss (NoiSNCL) so that clean-pair gradients dominate training…
 tags:
-  - ICLR 2026
-  - PU Learning
-  - Non-Contrastive Representation Learning
-  - Noisy-Pair Robustness
-  - Pseudo-Label Disambiguation
-  - EM Framework
+  - "ICLR 2026"
+  - "PU Learning"
+  - "Non-Contrastive Representation Learning"
+  - "Noisy-Pair Robustness"
+  - "Pseudo-Label Disambiguation"
+  - "EM Framework"
 date: 2026-05-08
 content_hash: 54b4333ce5f2a9ae
 ---

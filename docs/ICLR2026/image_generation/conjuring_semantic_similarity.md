@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Conjuring Semantic Similarity
 description: >-
-  [ICLR 2026][Image Generation][semantic similarity] This paper proposes a vision-imagination-based measure of textual semantic similarity by computing the Jeffreys divergence between the reverse SDEs induced by a text-conditioned diffusion model under two text prompts. The metric is directly computable via Monte-Carlo sampling and, for the first time, quantifies the alignment between the semantic space learned by diffusion models and human annotations.
+  [ICLR 2026][Image Generation][semantic similarity] This paper proposes a vision-imagination-based measure of textual semantic similarity by computing the Jeffreys divergence between the reverse SDEs induced by a text-con…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - semantic similarity
-  - diffusion model
-  - Jeffreys divergence
-  - SDE
-  - text-to-image
+  - "ICLR 2026"
+  - "Image Generation"
+  - "semantic similarity"
+  - "diffusion model"
+  - "Jeffreys divergence"
+  - "SDE"
+  - "text-to-image"
 date: 2026-05-08
 content_hash: 82dfa91f1929e791
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multimodal Bayesian Network for Robust Assessment of Casualties in Autonomous Triage
 description: >-
-  [NeurIPS 2025][Medical Imaging][Bayesian Network] This paper proposes an expert-knowledge-driven Bayesian network decision-support framework that fuses outputs from multiple computer vision models to assess casualty conditions. Requiring no training data and supporting inference under incomplete information, the framework improved triage accuracy from 14% to 53% and diagnostic coverage from 31% to 95% in the DARPA Triage Challenge.
+  [NeurIPS 2025][Medical Imaging][Bayesian Network] This paper proposes an expert-knowledge-driven Bayesian network decision-support framework that fuses outputs from multiple computer vision models to assess casualty cond…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Bayesian Network
-  - Mass Casualty Incidents
-  - Multimodal Fusion
-  - Autonomous Triage
-  - DARPA Triage Challenge
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Bayesian Network"
+  - "Mass Casualty Incidents"
+  - "Multimodal Fusion"
+  - "Autonomous Triage"
+  - "DARPA Triage Challenge"
 date: 2026-05-08
 content_hash: 11867e15480ebe63
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Fine-Grained and Multi-Granular Contrastive Language-Speech Pre-training
 description: >-
-  [ACL 2026][Audio & Speech][Speech Style Modeling] This paper proposes the FCaps large-scale dataset (47k hours of speech, 19M fine-grained annotations) and the CLSP contrastive learning model. Through an end-to-end annotation pipeline and fine-grained multi-granular contrastive supervision, it presents the first speech-text alignment model capable of uniformly representing both global and fine-grained speaking styles.
+  [ACL 2026][Audio & Speech][Speech Style Modeling] This paper proposes the FCaps large-scale dataset (47k hours of speech, 19M fine-grained annotations) and the CLSP contrastive learning model. Through an end-to-end annot…
 tags:
-  - ACL 2026
+  - "ACL 2026"
   - "Audio & Speech"
-  - Speech Style Modeling
-  - Contrastive Learning Pre-training
-  - Fine-Grained Annotation
-  - Speech-Text Alignment
-  - Paralinguistics
+  - "Speech Style Modeling"
+  - "Contrastive Learning Pre-training"
+  - "Fine-Grained Annotation"
+  - "Speech-Text Alignment"
+  - "Paralinguistics"
 date: 2026-05-08
 content_hash: 88309445a810b97d
 ---

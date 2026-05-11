@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EDBench: Large-Scale Electron Density Data for Molecular Modeling
 description: >-
-  [NeurIPS 2025][Medical Imaging][electron density] This work constructs EDBench, the largest electron density (ED) dataset to date (3.3 million molecules, computed via B3LYP/6-31G** DFT), and designs a three-category benchmark evaluation framework covering prediction, retrieval, and generation tasks. It provides the first systematic assessment of deep learning models' ability to understand and exploit electron density.
+  [NeurIPS 2025][Medical Imaging][electron density] This work constructs EDBench, the largest electron density (ED) dataset to date (3.3 million molecules, computed via B3LYP/6-31G** DFT)…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - electron density
-  - molecular force fields
-  - density functional theory
-  - benchmark dataset
-  - geometric deep learning
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "electron density"
+  - "molecular force fields"
+  - "density functional theory"
+  - "benchmark dataset"
+  - "geometric deep learning"
 date: 2026-05-08
 content_hash: 26f579d8dc7f6e42
 ---

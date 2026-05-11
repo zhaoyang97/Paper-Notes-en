@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Identifying and Analyzing Performance-Critical Tokens in Large Language Models
 description: >-
-  [AAAI 2026][LLM/NLP][In-context learning] Through representation-level and token-level ablation experiments, this paper identifies the "performance-critical tokens" that LLMs directly rely on during ICL as template and stopword tokens (e.g., "Answer:"), rather than the content tokens that humans would attend to (e.g., actual text). It further reveals that LLMs indirectly exploit content by aggregating content information into the representations of these critical tokens.
+  [AAAI 2026][LLM/NLP][In-context learning] Through representation-level and token-level ablation experiments, this paper identifies the "performance-critical tokens" that LLMs directly rely on during ICL as template and s…
 tags:
-  - AAAI 2026
-  - LLM/NLP
-  - In-context learning
-  - performance-critical tokens
-  - attention ablation
-  - template tokens
-  - information aggregation
+  - "AAAI 2026"
+  - "LLM/NLP"
+  - "In-context learning"
+  - "performance-critical tokens"
+  - "attention ablation"
+  - "template tokens"
+  - "information aggregation"
 date: 2026-05-08
 content_hash: a623910ce7d1eeeb
 ---

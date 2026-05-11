@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Reasoning or Retrieval? A Study of Answer Attribution on Large Reasoning Models
 description: >-
-  [ICLR 2026][LLM Reasoning][large reasoning models] This work presents the first systematic study of answer attribution in large reasoning models (LRMs), revealing that reasoning (CoT) and retrieval (memory) mechanisms compete simultaneously to influence final answers. The paper proposes Farl (Forgetting-Augmented Reinforcement Learning), which suppresses retrieval shortcuts to enhance genuine reasoning capability.
+  [ICLR 2026][LLM Reasoning][large reasoning models] This work presents the first systematic study of answer attribution in large reasoning models (LRMs)…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - large reasoning models
-  - CoT reasoning
-  - memory retrieval
-  - answer attribution
-  - reinforcement-learning
-  - unlearning
-  - GRPO
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "large reasoning models"
+  - "CoT reasoning"
+  - "memory retrieval"
+  - "answer attribution"
+  - "reinforcement-learning"
+  - "unlearning"
+  - "GRPO"
 date: 2026-05-08
 content_hash: dbe4959356610c6a
 ---

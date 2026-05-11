@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Gaming the Answer Matcher: Examining the Impact of Text Manipulation on Automated Judgment
 description: >-
-  [AAAI 2026][Robotics][Answer Matching] This paper systematically evaluates three text manipulation strategies—verbosity, strategic multi-answer embedding, and correct-answer-first with contradictory suffix—against LLM-based answer-matching judges. The results show that these manipulations **do not improve scores and often reduce them**. Binary scoring proves more robust than continuous scoring, demonstrating that answer matching is resistant to low-cost text manipulation as an evaluation method.
+  [AAAI 2026][Robotics][Answer Matching] This paper systematically evaluates three text manipulation strategies—verbosity, strategic multi-answer embedding…
 tags:
-  - AAAI 2026
-  - Robotics
-  - Answer Matching
-  - LLM Evaluation
-  - Adversarial Attack
-  - Robustness
-  - Automated Judgment
+  - "AAAI 2026"
+  - "Robotics"
+  - "Answer Matching"
+  - "LLM Evaluation"
+  - "Adversarial Attack"
+  - "Robustness"
+  - "Automated Judgment"
 date: 2026-05-08
 content_hash: a324013114248831
 ---

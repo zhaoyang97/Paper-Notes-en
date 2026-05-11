@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Indic-CodecFake meets SATYAM: Towards Detecting Neural Audio Codec Synthesized Speech Deepfakes in Indic Languages
 description: >-
-  [ACL 2026][LLM Safety][Speech Deepfake Detection] This paper introduces ICF, the first multi-Indic-language CodecFake detection benchmark, and proposes SATYAM—a hyperbolic audio large language model that aligns semantic and paralinguistic representations via Bhattacharyya distance in hyperbolic space before aligning with a conditioning prompt. With only 3.75M trainable parameters, SATYAM achieves 98.32% detection accuracy.
+  [ACL 2026][LLM Safety][Speech Deepfake Detection] This paper introduces ICF, the first multi-Indic-language CodecFake detection benchmark…
 tags:
-  - ACL 2026
-  - LLM Safety
-  - Speech Deepfake Detection
-  - Neural Audio Codec
-  - Indic Languages
-  - Hyperbolic ALM
-  - CodecFake
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Speech Deepfake Detection"
+  - "Neural Audio Codec"
+  - "Indic Languages"
+  - "Hyperbolic ALM"
+  - "CodecFake"
 date: 2026-05-08
 content_hash: 1a603301fa8e3286
 ---

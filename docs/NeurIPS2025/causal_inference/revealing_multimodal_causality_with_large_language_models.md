@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Revealing Multimodal Causality with Large Language Models
 description: >-
-  [NeurIPS 2025][Causal Inference][Multimodal causal discovery] This paper proposes MLLM-CD, the first framework for causal discovery from multimodal unstructured data (text + images). It identifies causal variables via contrastive factor discovery, infers causal structure through statistical methods, and resolves structural ambiguity via iterative multimodal counterfactual reasoning.
+  [NeurIPS 2025][Causal Inference][Multimodal causal discovery] This paper proposes MLLM-CD, the first framework for causal discovery from multimodal unstructured data (text + images). It identifies causal variables via co…
 tags:
-  - NeurIPS 2025
-  - Causal Inference
-  - Multimodal causal discovery
-  - large language models
-  - contrastive factor discovery
-  - counterfactual reasoning
-  - unstructured data
+  - "NeurIPS 2025"
+  - "Causal Inference"
+  - "Multimodal causal discovery"
+  - "large language models"
+  - "contrastive factor discovery"
+  - "counterfactual reasoning"
+  - "unstructured data"
 date: 2026-05-08
 content_hash: d58dc448219ce33e
 ---

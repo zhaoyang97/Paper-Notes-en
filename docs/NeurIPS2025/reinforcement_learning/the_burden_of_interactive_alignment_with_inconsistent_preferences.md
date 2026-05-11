@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The Burden of Interactive Alignment with Inconsistent Preferences
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][interactive alignment] This paper models user interactions with engagement-driven algorithms as a multi-leader single-follower Stackelberg game, establishing a critical planning-horizon threshold: users whose effective horizon exceeds this threshold can align the algorithm to their interests, while those below it are instead aligned to the algorithm's objectives. The paper further demonstrates that introducing low-cost signals (e.g., an extra click) can substantially reduce the burden of alignment.
+  [NeurIPS 2025][Reinforcement Learning][interactive alignment] This paper models user interactions with engagement-driven algorithms as a multi-leader single-follower Stackelberg game…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - interactive alignment
-  - inconsistent preferences
-  - Stackelberg game
-  - engagement optimization
-  - costly signaling
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "interactive alignment"
+  - "inconsistent preferences"
+  - "Stackelberg game"
+  - "engagement optimization"
+  - "costly signaling"
 date: 2026-05-08
 content_hash: 2a8f62bb325b027b
 ---

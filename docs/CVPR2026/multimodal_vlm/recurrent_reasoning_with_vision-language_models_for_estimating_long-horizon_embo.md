@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Recurrent Reasoning with Vision-Language Models for Estimating Long-Horizon Embodied Task Progress
 description: >-
-  [CVPR 2026][Multimodal VLM][task progress estimation] This paper proposes R²VLM, a recurrent reasoning framework that processes local video segments sequentially, maintains a dynamically updated CoT record tracking task decomposition and completion status, and leverages a multi-dimensional RL reward scheme to achieve state-of-the-art performance in long-horizon embodied task progress estimation. The framework additionally supports downstream applications including policy learning, reward modeling, and proactive assistance.
+  [CVPR 2026][Multimodal VLM][task progress estimation] This paper proposes R²VLM, a recurrent reasoning framework that processes local video segments sequentially…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - task progress estimation
-  - embodied intelligence
-  - recurrent reasoning
-  - Chain-of-Thought
-  - reinforcement learning
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "task progress estimation"
+  - "embodied intelligence"
+  - "recurrent reasoning"
+  - "Chain-of-Thought"
+  - "reinforcement learning"
 date: 2026-05-08
 content_hash: 7b25653e9863f7a0
 ---

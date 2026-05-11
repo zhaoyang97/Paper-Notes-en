@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unlocking ImageNet's Multi-Object Nature: Automated Large-Scale Multilabel Annotation
 description: >-
-  [CVPR 2026][Model Compression][multi-label annotation] A fully automated pipeline is proposed that leverages self-supervised ViT features for unsupervised object discovery, generating spatially grounded multi-label annotations for all 1.28 million ImageNet-1K training images without human annotation. Models trained with these labels achieve consistent gains on both in-domain and downstream multi-label tasks (ReaL +2.0 top-1, COCO +4.2 mAP).
+  [CVPR 2026][Model Compression][multi-label annotation] A fully automated pipeline is proposed that leverages self-supervised ViT features for unsupervised object discovery…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - multi-label annotation
-  - ImageNet re-labeling
-  - unsupervised object discovery
-  - self-supervised learning
-  - data quality
+  - "CVPR 2026"
+  - "Model Compression"
+  - "multi-label annotation"
+  - "ImageNet re-labeling"
+  - "unsupervised object discovery"
+  - "self-supervised learning"
+  - "data quality"
 date: 2026-05-08
 content_hash: cc17080029d2d932
 ---

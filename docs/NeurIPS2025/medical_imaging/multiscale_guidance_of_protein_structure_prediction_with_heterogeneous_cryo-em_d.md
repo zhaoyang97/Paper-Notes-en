@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multiscale Guidance of Protein Structure Prediction with Heterogeneous Cryo-EM Data
 description: >-
-  [NeurIPS 2025][Medical Imaging][protein structure prediction] CryoBoltz leverages cryo-EM density maps to guide the sampling trajectory of a pretrained diffusion-based structure prediction model (Boltz-1) via a multiscale guidance mechanism (global → local), generating multi-conformational atomic models consistent with experimental data without any retraining.
+  [NeurIPS 2025][Medical Imaging][protein structure prediction] CryoBoltz leverages cryo-EM density maps to guide the sampling trajectory of a pretrained diffusion-based structure prediction model (Boltz-1) via a multiscal…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - protein structure prediction
-  - cryo-EM
-  - diffusion model guidance
-  - conformational diversity
-  - Boltz-1
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "protein structure prediction"
+  - "cryo-EM"
+  - "diffusion model guidance"
+  - "conformational diversity"
+  - "Boltz-1"
 date: 2026-05-08
 content_hash: 763d47dde60dd727
 ---

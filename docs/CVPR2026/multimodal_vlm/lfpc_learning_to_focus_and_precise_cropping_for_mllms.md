@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LFPC: Learning to Focus and Precise Cropping for MLLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][Multimodal Large Language Models] LFPC proposes a two-stage pure reinforcement learning framework that addresses the spurious tool-calling behavior ("answer-before-crop") observed in existing agent-based MLLMs. It introduces an information gap mechanism — deliberately downsampling the global image to force the model to rely on high-resolution cropped regions — and a grounding loss to improve cropping precision, achieving state-of-the-art performance on high-resolution VQA benchmarks.
+  [CVPR 2026][Multimodal VLM][Multimodal Large Language Models] LFPC proposes a two-stage pure reinforcement learning framework that addresses the spurious tool-calling behavior ("answer-before-crop") observed in existing…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Multimodal Large Language Models
-  - Reinforcement Learning
-  - Cropping Tool
-  - Information Gap
-  - High-Resolution VQA
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Multimodal Large Language Models"
+  - "Reinforcement Learning"
+  - "Cropping Tool"
+  - "Information Gap"
+  - "High-Resolution VQA"
 date: 2026-05-08
 content_hash: f1bf36160b6dde82
 ---

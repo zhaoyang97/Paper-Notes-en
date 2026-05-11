@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] T-Rex-Omni: Integrating Negative Visual Prompt in Generic Object Detection
 description: >-
-  [AAAI 2026][Object Detection][Open-set detection] This paper proposes T-Rex-Omni, the first framework to systematically incorporate negative visual prompts into open-set object detection. Through a training-free NNC module and an NNH loss, it substantially narrows the performance gap between visual-prompt and text-prompt detection methods, with particularly strong results in long-tail scenarios (LVIS-minival APr of 51.2).
+  [AAAI 2026][Object Detection][Open-set detection] This paper proposes T-Rex-Omni, the first framework to systematically incorporate negative visual prompts into open-set object detection. Through a training-free NNC modu…
 tags:
-  - AAAI 2026
-  - Object Detection
-  - Open-set detection
-  - negative visual prompts
-  - long-tail recognition
-  - visual prompting
-  - zero-shot detection
+  - "AAAI 2026"
+  - "Object Detection"
+  - "Open-set detection"
+  - "negative visual prompts"
+  - "long-tail recognition"
+  - "visual prompting"
+  - "zero-shot detection"
 date: 2026-05-08
 content_hash: 59f2370d0e1a6191
 ---

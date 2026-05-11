@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Trokens: Semantic-Aware Relational Trajectory Tokens for Few-Shot Action Recognition
 description: >-
-  [ICCV 2025][Video Understanding][Few-Shot Action Recognition] This paper proposes the Trokens framework, which converts point trajectories into semantically-aware relational tokens via **semantic-aware trajectory point sampling** and **relational motion modeling** (comprising intra-trajectory HoD and inter-trajectory relative displacement descriptors). By fusing these tokens with appearance features, Trokens achieves state-of-the-art performance on six few-shot action recognition benchmarks.
+  [ICCV 2025][Video Understanding][Few-Shot Action Recognition] This paper proposes the Trokens framework, which converts point trajectories into semantically-aware relational tokens via **semantic-aware trajectory point s…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - Few-Shot Action Recognition
-  - Point Trajectory Tracking
-  - Semantic Sampling
-  - Motion Modeling
-  - HoD
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "Few-Shot Action Recognition"
+  - "Point Trajectory Tracking"
+  - "Semantic Sampling"
+  - "Motion Modeling"
+  - "HoD"
 date: 2026-05-08
 content_hash: 53bafadecaea03e0
 ---

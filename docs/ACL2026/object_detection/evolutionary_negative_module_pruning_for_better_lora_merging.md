@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Evolutionary Negative Module Pruning for Better LoRA Merging
 description: >-
-  [ACL 2026][Object Detection][LoRA merging] This paper proposes ENMP, a method that leverages evolutionary search to identify and prune "negative modules" that degrade performance during LoRA merging. Designed as a plug-and-play enhancement, ENMP consistently improves existing merging algorithms across both NLP and vision domains.
+  [ACL 2026][Object Detection][LoRA merging] This paper proposes ENMP, a method that leverages evolutionary search to identify and prune "negative modules" that degrade performance during LoRA merging. Designed as a plug-a…
 tags:
-  - ACL 2026
-  - Object Detection
-  - LoRA merging
-  - negative module pruning
-  - evolutionary search
-  - multi-task deployment
-  - CMA-ES
+  - "ACL 2026"
+  - "Object Detection"
+  - "LoRA merging"
+  - "negative module pruning"
+  - "evolutionary search"
+  - "multi-task deployment"
+  - "CMA-ES"
 date: 2026-05-08
 content_hash: 23bd3406323b6510
 ---

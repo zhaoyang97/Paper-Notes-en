@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LeGrad: An Explainability Method for Vision Transformers via Feature Formation Sensitivity
 description: >-
-  [ICCV 2025][Segmentation][Explainability] This paper proposes LeGrad, a layer-wise explainability method designed specifically for ViTs. It computes the gradient of the activation with respect to the attention map at each layer as the explanation signal, aggregates these signals across layers to produce high-quality spatial saliency maps, and demonstrates superior spatial fidelity in segmentation, perturbation, and open-vocabulary settings.
+  [ICCV 2025][Segmentation][Explainability] This paper proposes LeGrad, a layer-wise explainability method designed specifically for ViTs. It computes the gradient of the activation with respect to the attention map at eac…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - Explainability
-  - Vision Transformer
-  - Attention Gradient
-  - Open-Vocabulary Segmentation
-  - CLIP
+  - "ICCV 2025"
+  - "Segmentation"
+  - "Explainability"
+  - "Vision Transformer"
+  - "Attention Gradient"
+  - "Open-Vocabulary Segmentation"
+  - "CLIP"
 date: 2026-05-08
 content_hash: 79bd815531650552
 ---

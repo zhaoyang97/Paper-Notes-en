@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Verbalized Algorithms: Zero-shot Classical Algorithmic Reasoning for Correctness and Runtime Guarantees
 description: >-
-  [NeurIPS 2025][Optimization][Verbalized Algorithms] This paper proposes the Verbalized Algorithms (VAs) framework, which preserves the control flow of classical algorithms while replacing their atomic operations (e.g., binary comparisons) with LLM queries, thereby inheriting the correctness and complexity guarantees of classical algorithms for natural language reasoning tasks. The framework is validated across four case studies: sorting, maximum finding, clustering, and submodular maximization.
+  [NeurIPS 2025][Optimization][Verbalized Algorithms] This paper proposes the Verbalized Algorithms (VAs) framework, which preserves the control flow of classical algorithms while replacing their atomic operations (e.g.…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Verbalized Algorithms
-  - LLM Reasoning
-  - Classical Algorithms
-  - Sorting
-  - Submodular Maximization
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Verbalized Algorithms"
+  - "LLM Reasoning"
+  - "Classical Algorithms"
+  - "Sorting"
+  - "Submodular Maximization"
 date: 2026-05-08
 content_hash: 5058507bd0fb1d04
 ---

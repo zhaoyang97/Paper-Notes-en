@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Counteractive RL: Rethinking Core Principles for Efficient and Scalable Deep Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Counteractive TD] CoAct TD Learning challenges the random exploration paradigm of ε-greedy by selecting, with probability ε, the action that minimizes $Q(s,a)$ (rather than a random action) to obtain high temporal-difference signals. The paper theoretically proves that this produces larger TD errors, achieves a 248% performance improvement on Atari 100K, and requires only a 2-line code change with zero additional computation.
+  [NeurIPS 2025][Reinforcement Learning][Counteractive TD] CoAct TD Learning challenges the random exploration paradigm of ε-greedy by selecting, with probability ε, the action that minimizes $Q(s…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Counteractive TD
-  - Q-value minimization
-  - temporal difference
-  - Atari 100K
-  - zero overhead
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Counteractive TD"
+  - "Q-value minimization"
+  - "temporal difference"
+  - "Atari 100K"
+  - "zero overhead"
 date: 2026-05-08
 content_hash: 5b9e2edc1b585366
 ---

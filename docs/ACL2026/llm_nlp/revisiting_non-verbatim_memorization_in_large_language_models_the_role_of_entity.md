@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Revisiting Non-Verbatim Memorization in Large Language Models: The Role of Entity Surface Forms
 description: >-
-  [ACL 2026][LLM/NLP][non-verbatim memorization] This paper constructs the RedirectQA dataset—leveraging Wikipedia redirect information to associate the same entity with multiple surface forms—and systematically investigates how non-verbatim memorization in LLMs is affected by entity naming variants. The findings show that factual memorization is neither purely surface-form-specific nor entirely surface-form-agnostic, and that entity-level frequency makes an independent contribution beyond surface-level frequency.
+  [ACL 2026][LLM/NLP][non-verbatim memorization] This paper constructs the RedirectQA dataset—leveraging Wikipedia redirect information to associate the same entity with multiple surface forms—and systematically investigat…
 tags:
-  - ACL 2026
-  - LLM/NLP
-  - non-verbatim memorization
-  - entity surface forms
-  - factual QA
-  - frequency analysis
-  - RedirectQA
+  - "ACL 2026"
+  - "LLM/NLP"
+  - "non-verbatim memorization"
+  - "entity surface forms"
+  - "factual QA"
+  - "frequency analysis"
+  - "RedirectQA"
 date: 2026-05-08
 content_hash: 42d8214eeef45ae0
 ---

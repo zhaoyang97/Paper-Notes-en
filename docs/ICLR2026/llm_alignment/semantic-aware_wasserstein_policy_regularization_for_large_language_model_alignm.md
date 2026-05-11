@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Semantic-aware Wasserstein Policy Regularization for Large Language Model Alignment
 description: >-
-  [ICLR 2026][LLM Alignment][Wasserstein distance] This paper identifies a fundamental limitation of standard KL divergence regularization in RLHF: it compares token probabilities only at identical index positions, completely ignoring semantic similarity. The authors propose Wasserstein Policy Regularization (WPR), a semantic-aware policy regularization based on entropy-regularized Wasserstein distance. Through a dual formulation, WPR converts the regularization into token-level penalty terms compatible with standard RL algorithms such as PPO, and consistently outperforms KL divergence and various f-divergence baselines on dialogue generation and summarization tasks.
+  [ICLR 2026][LLM Alignment][Wasserstein distance] This paper identifies a fundamental limitation of standard KL divergence regularization in RLHF: it compares token probabilities only at identical index positions…
 tags:
-  - ICLR 2026
-  - LLM Alignment
-  - Wasserstein distance
-  - RLHF regularization
-  - semantic awareness
-  - optimal transport
-  - Sinkhorn algorithm
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Wasserstein distance"
+  - "RLHF regularization"
+  - "semantic awareness"
+  - "optimal transport"
+  - "Sinkhorn algorithm"
 date: 2026-05-08
 content_hash: 6ef62e5337e36a72
 ---

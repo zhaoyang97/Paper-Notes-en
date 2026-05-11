@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Backdoors in Conditional Diffusion: Threats to Responsible Synthetic Data Pipelines
 description: >-
-  [AAAI 2026][Image Generation][backdoor attack] This paper exposes a backdoor vulnerability in the ControlNet conditional branch: injecting as little as 1–5% poisoned data suffices to implant a backdoor without modifying the diffusion backbone. Upon trigger activation, the model ignores text prompts and generates attacker-specified content. Clean fine-tuning (CFT) is proposed as a practical defense.
+  [AAAI 2026][Image Generation][backdoor attack] This paper exposes a backdoor vulnerability in the ControlNet conditional branch: injecting as little as 1–5% poisoned data suffices to implant a backdoor without modifying…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - backdoor attack
-  - ControlNet
-  - diffusion model
-  - data poisoning
-  - supply-chain security
-  - clean fine-tuning
+  - "AAAI 2026"
+  - "Image Generation"
+  - "backdoor attack"
+  - "ControlNet"
+  - "diffusion model"
+  - "data poisoning"
+  - "supply-chain security"
+  - "clean fine-tuning"
 date: 2026-05-08
 content_hash: b8173ddd0d2c8ffd
 ---

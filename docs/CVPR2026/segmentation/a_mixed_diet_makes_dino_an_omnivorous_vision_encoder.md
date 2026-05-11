@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] A Mixed Diet Makes DINO An Omnivorous Vision Encoder
 description: >-
-  [CVPR2026][Segmentation][Cross-modal alignment] This paper proposes an Omnivorous Vision Encoder that performs cross-modal alignment distillation training (RGB/Depth/Segmentation) on top of a frozen DINOv2 via lightweight adapters, enabling a single encoder to produce consistent embeddings across different visual modalities while preserving the original discriminative semantics.
+  [CVPR2026][Segmentation][Cross-modal alignment] This paper proposes an Omnivorous Vision Encoder that performs cross-modal alignment distillation training (RGB/Depth/Segmentation) on top of a frozen DINOv2 via lightweigh…
 tags:
-  - CVPR2026
-  - Segmentation
-  - Cross-modal alignment
-  - DINOv2
-  - vision foundation model
-  - modality-agnostic encoder
-  - parameter-efficient fine-tuning
-  - contrastive learning
+  - "CVPR2026"
+  - "Segmentation"
+  - "Cross-modal alignment"
+  - "DINOv2"
+  - "vision foundation model"
+  - "modality-agnostic encoder"
+  - "parameter-efficient fine-tuning"
+  - "contrastive learning"
 date: 2026-05-08
 content_hash: f928dcfe8848c9d9
 ---

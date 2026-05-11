@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] MEGState: Phoneme Decoding from Magnetoencephalography Signals
 description: >-
-  [NeurIPS 2025][MEG] This paper proposes MEGState, an architecture combining multi-resolution convolution and sensor-wise state space models (SSMs) for decoding phonemes from magnetoencephalography (MEG) signals, achieving substantial improvements over baseline methods on the LibriBrain dataset.
+  [NeurIPS 2025][MEG] This paper proposes MEGState, an architecture combining multi-resolution convolution and sensor-wise state space models (SSMs) for decoding phonemes from magnetoencephalography (MEG) signals…
 tags:
-  - NeurIPS 2025
-  - MEG
-  - phoneme decoding
-  - state space model
-  - multi-resolution convolution
-  - brain-computer interface
+  - "NeurIPS 2025"
+  - "MEG"
+  - "phoneme decoding"
+  - "state space model"
+  - "multi-resolution convolution"
+  - "brain-computer interface"
 date: 2026-05-08
 content_hash: 765c302858dab998
 ---

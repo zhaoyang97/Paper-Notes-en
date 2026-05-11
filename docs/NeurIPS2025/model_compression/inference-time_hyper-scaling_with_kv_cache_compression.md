@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Inference-Time Hyper-Scaling with KV Cache Compression
 description: >-
-  [NeurIPS 2025][Model Compression][KV Cache Compression] This paper proposes the *Inference-Time Hyper-Scaling* paradigm: by efficiently compressing the KV cache, more or longer parallel reasoning sequences can be generated under the same compute/memory budget, substantially improving the accuracy of reasoning models on tasks such as mathematics, code, and scientific reasoning.
+  [NeurIPS 2025][Model Compression][KV Cache Compression] This paper proposes the *Inference-Time Hyper-Scaling* paradigm: by efficiently compressing the KV cache…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - KV Cache Compression
-  - Inference-Time Scaling
-  - Sparse Attention
-  - Dynamic Memory Sparsification
-  - Long-Sequence Reasoning
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "KV Cache Compression"
+  - "Inference-Time Scaling"
+  - "Sparse Attention"
+  - "Dynamic Memory Sparsification"
+  - "Long-Sequence Reasoning"
 date: 2026-05-08
 content_hash: be0baa7559ea8da0
 ---

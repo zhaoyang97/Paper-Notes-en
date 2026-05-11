@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Tree-of-Evidence: Efficient "System 2" Search for Faithful Multimodal Grounding
 description: >-
-  [ACL 2026][Multimodal VLM][Multimodal Interpretability] This paper proposes Tree-of-Evidence (ToE), an inference-time discrete beam search algorithm that formalizes multimodal model interpretability as a discrete optimization problem over coarse-grained evidence units (vital sign time windows, radiology report segments). With only 5 evidence units, ToE retains over 98% of the full-input model's AUROC while generating auditable evidence trace paths.
+  [ACL 2026][Multimodal VLM][Multimodal Interpretability] This paper proposes Tree-of-Evidence (ToE), an inference-time discrete beam search algorithm that formalizes multimodal model interpretability as a discrete optimiz…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Multimodal Interpretability
-  - Evidence Search
-  - Clinical Prediction
-  - Beam Search
-  - Concept Bottleneck
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Multimodal Interpretability"
+  - "Evidence Search"
+  - "Clinical Prediction"
+  - "Beam Search"
+  - "Concept Bottleneck"
 date: 2026-05-08
 content_hash: 1d617b25d9c1431f
 ---

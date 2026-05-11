@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ChartPoint: Guiding MLLMs with Grounding Reflection for Chart Reasoning
 description: >-
-  [ICCV 2025][Multimodal VLM][Chart Reasoning] This paper proposes PointCoT, which integrates reflective visual grounding (bounding boxes) into the chain-of-thought for chart reasoning, enabling MLLMs to interactively verify each reasoning step against the chart's visual content. It also constructs the ChartPoint-SFT-62k dataset containing 19.2K high-quality samples, achieving a +5.04% improvement on ChartBench.
+  [ICCV 2025][Multimodal VLM][Chart Reasoning] This paper proposes PointCoT, which integrates reflective visual grounding (bounding boxes) into the chain-of-thought for chart reasoning…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Chart Reasoning
-  - Multimodal Large Language Models
-  - Chain-of-Thought
-  - Visual Grounding
-  - Numerical Hallucination
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Chart Reasoning"
+  - "Multimodal Large Language Models"
+  - "Chain-of-Thought"
+  - "Visual Grounding"
+  - "Numerical Hallucination"
 date: 2026-05-08
 content_hash: d65558a667f9ed4b
 ---

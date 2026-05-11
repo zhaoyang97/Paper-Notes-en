@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SwiftTS: A Swift Selection Framework for Time Series Pre-trained Models via Multi-task Meta-Learning
 description: >-
-  [ICLR 2026][Time Series][Pre-trained model selection] SwiftTS is proposed as the first model selection framework for time series pre-trained models. It employs a dual-encoder architecture to independently embed patch-level temporal features of datasets and model meta-information (architecture / topology / function), computes compatibility scores via patch-level cross-attention, and incorporates horizon-adaptive mixture-of-experts together with cross-domain/cross-horizon meta-learning. On 14 datasets × 8 models, it achieves an average weighted Kendall $\tau_\omega = 0.442$, substantially outperforming all baselines.
+  [ICLR 2026][Time Series][Pre-trained model selection] SwiftTS is proposed as the first model selection framework for time series pre-trained models. It employs a dual-encoder architecture to independently embed patch-lev…
 tags:
-  - ICLR 2026
-  - Time Series
-  - Pre-trained model selection
-  - dual encoder
-  - meta-learning
-  - time series forecasting
-  - horizon adaptation
+  - "ICLR 2026"
+  - "Time Series"
+  - "Pre-trained model selection"
+  - "dual encoder"
+  - "meta-learning"
+  - "time series forecasting"
+  - "horizon adaptation"
 date: 2026-05-08
 content_hash: 3f6300f5b2630b20
 ---

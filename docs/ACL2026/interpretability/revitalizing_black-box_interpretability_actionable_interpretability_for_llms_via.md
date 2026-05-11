@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Revitalizing Black-Box Interpretability: Actionable Interpretability for LLMs via Proxy Models
 description: >-
-  [ACL 2026][Model-agnostic explanation] This paper proposes a proxy-model-based black-box interpretability framework that leverages cheap small models to approximate the local decision boundaries of expensive large models for generating LIME/SHAP explanations. A statistical screen-and-apply mechanism ensures reliability: proxy explanations maintain over 90% fidelity while reducing costs by 88.2%, and are successfully applied to downstream optimization tasks such as prompt compression and poisoned sample removal.
+  [ACL 2026][Interpretability][Model-agnostic explanation] This paper proposes a proxy-model-based black-box interpretability framework that leverages cheap small models to approximate the local decision boundaries of expe…
 tags:
-  - ACL 2026
-  - Model-agnostic explanation
-  - proxy models
-  - black-box interpretability
-  - prompt compression
-  - feature attribution
+  - "ACL 2026"
+  - "Interpretability"
+  - "Model-agnostic explanation"
+  - "proxy models"
+  - "black-box interpretability"
+  - "prompt compression"
+  - "feature attribution"
 date: 2026-05-08
 content_hash: c809fdf773bad16e
 ---

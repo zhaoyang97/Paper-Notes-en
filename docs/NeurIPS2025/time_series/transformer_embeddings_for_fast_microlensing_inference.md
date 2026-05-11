@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Transformer Embeddings for Fast Microlensing Inference
 description: >-
-  [NeurIPS 2025][Time Series][Microlensing] This paper combines a Transformer encoder with Neural Posterior Estimation (NPE) to perform fast, well-calibrated parameter inference directly from sparse, noisy, and irregularly sampled microlensing light curves, achieving speedups exceeding $10^4\times$ over traditional MCMC methods.
+  [NeurIPS 2025][Time Series][Microlensing] This paper combines a Transformer encoder with Neural Posterior Estimation (NPE) to perform fast, well-calibrated parameter inference directly from sparse, noisy…
 tags:
-  - NeurIPS 2025
-  - Time Series
-  - Microlensing
-  - Simulation-Based Inference
-  - Transformer
-  - Posterior Estimation
-  - Free-Floating Planets
+  - "NeurIPS 2025"
+  - "Time Series"
+  - "Microlensing"
+  - "Simulation-Based Inference"
+  - "Transformer"
+  - "Posterior Estimation"
+  - "Free-Floating Planets"
 date: 2026-05-08
 content_hash: afdaf4c1df0f0ceb
 ---

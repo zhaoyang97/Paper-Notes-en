@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Blind2Sound: Self-Supervised Image Denoising without Residual Noise
 description: >-
-  [ICCV2025][Image Restoration][Self-supervised denoising] This paper proposes the Blind2Sound framework, which perceives noise levels and achieves personalized denoising via an adaptive re-visible loss, complemented by a Cramer Gaussian loss that improves noise parameter estimation accuracy. The framework eliminates residual noise in self-supervised blind denoising and outperforms all contemporary self-supervised methods and even some supervised baselines.
+  [ICCV2025][Image Restoration][Self-supervised denoising] This paper proposes the Blind2Sound framework, which perceives noise levels and achieves personalized denoising via an adaptive re-visible loss…
 tags:
-  - ICCV2025
-  - Image Restoration
-  - Self-supervised denoising
-  - Poisson-Gaussian noise
-  - blind denoising
-  - residual noise elimination
-  - noise awareness
+  - "ICCV2025"
+  - "Image Restoration"
+  - "Self-supervised denoising"
+  - "Poisson-Gaussian noise"
+  - "blind denoising"
+  - "residual noise elimination"
+  - "noise awareness"
 date: 2026-05-08
 content_hash: 4b5ff770dbaffb4f
 ---

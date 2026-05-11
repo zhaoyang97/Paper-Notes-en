@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LVTINO: LAtent Video consisTency INverse sOlver for High Definition Video Restoration
 description: >-
-  [ICLR 2026][Image Generation][Video Restoration] This paper proposes LVTINO, the first zero-shot video inverse problem solver built upon a Video Consistency Model (VCM) prior. By injecting measurement consistency constraints—without requiring automatic differentiation—into the VCM sampling process, LVTINO achieves perceptual quality and temporal consistency surpassing frame-wise image methods across multiple video inverse problems (super-resolution, deblurring, inpainting) with a minimal number of neural function evaluations (NFEs).
+  [ICLR 2026][Image Generation][Video Restoration] This paper proposes LVTINO, the first zero-shot video inverse problem solver built upon a Video Consistency Model (VCM) prior. By injecting measurement consistency constra…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Video Restoration
-  - Consistency Models
-  - Inverse Problem Solving
-  - Zero-Shot
-  - Diffusion Models
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Video Restoration"
+  - "Consistency Models"
+  - "Inverse Problem Solving"
+  - "Zero-Shot"
+  - "Diffusion Models"
 date: 2026-05-08
 content_hash: 67767fb217a4c725
 ---

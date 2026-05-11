@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OccuFly: A 3D Vision Benchmark for Semantic Scene Completion from the Aerial Perspective
 description: >-
-  [CVPR 2026 (Oral)][Autonomous Driving][Semantic Scene Completion] OccuFly introduces the first real-world camera-based Semantic Scene Completion (SSC) benchmark from the aerial perspective, comprising 20,000+ samples across 21 semantic categories, spanning multi-season and multi-altitude urban, industrial, and rural scenes. It further reveals fundamental limitations of current visual foundation models in aerial settings.
+  [CVPR 2026 (Oral)][Autonomous Driving][Semantic Scene Completion] OccuFly introduces the first real-world camera-based Semantic Scene Completion (SSC) benchmark from the aerial perspective, comprising 20…
 tags:
-  - CVPR 2026 (Oral)
-  - Autonomous Driving
-  - Semantic Scene Completion
-  - Aerial Perspective
-  - UAV
-  - Benchmark Dataset
-  - Depth Estimation
+  - "CVPR 2026 (Oral)"
+  - "Autonomous Driving"
+  - "Semantic Scene Completion"
+  - "Aerial Perspective"
+  - "UAV"
+  - "Benchmark Dataset"
+  - "Depth Estimation"
 date: 2026-05-08
 content_hash: 89a88d80b65d78ab
 ---

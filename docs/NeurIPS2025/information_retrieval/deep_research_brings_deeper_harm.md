@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Deep Research Brings Deeper Harm
 description: >-
-  [NeurIPS 2025][deep research agent] This paper reveals critical safety vulnerabilities in Deep Research (DR) agents — even when the underlying LLM correctly refuses harmful queries, deploying it as a DR agent can still produce detailed, professional, and dangerous reports. Two targeted jailbreak methods, Plan Injection and Intent Hijack, are proposed alongside the DeepREJECT evaluation metric. Experiments on 6 LLMs demonstrate that DR agents systematically undermine alignment mechanisms.
+  [NeurIPS 2025][Information Retrieval & RAG][deep research agent] This paper reveals critical safety vulnerabilities in Deep Research (DR) agents — even when the underlying LLM correctly refuses harmful queries…
 tags:
-  - NeurIPS 2025
-  - deep research agent
-  - jailbreak
-  - safety alignment
-  - biosecurity
-  - plan injection
+  - "NeurIPS 2025"
+  - "Information Retrieval & RAG"
+  - "deep research agent"
+  - "jailbreak"
+  - "safety alignment"
+  - "biosecurity"
+  - "plan injection"
 date: 2026-05-08
 content_hash: 44a205e67db9d5c2
 ---

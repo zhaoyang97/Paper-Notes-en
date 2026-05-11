@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Tensor learning with orthogonal, Lorentz, and symplectic symmetries
 description: >-
-  [ICLR 2026][Time Series][Equivariant learning] This paper provides a complete parameterization of equivariant polynomial functions under the diagonal action of the orthogonal group $O(d)$, the indefinite orthogonal group (including the Lorentz group), and the symplectic group $Sp(d)$ on tensors. The framework is applied to design learnable sparse vector recovery algorithms that outperform existing sum-of-squares spectral methods across multiple data-generating assumptions.
+  [ICLR 2026][Time Series][Equivariant learning] This paper provides a complete parameterization of equivariant polynomial functions under the diagonal action of the orthogonal group $O(d)$…
 tags:
-  - ICLR 2026
-  - Time Series
-  - Equivariant learning
-  - tensor functions
-  - orthogonal group
-  - Lorentz group
-  - symplectic group
-  - sparse vector recovery
+  - "ICLR 2026"
+  - "Time Series"
+  - "Equivariant learning"
+  - "tensor functions"
+  - "orthogonal group"
+  - "Lorentz group"
+  - "symplectic group"
+  - "sparse vector recovery"
 date: 2026-05-08
 content_hash: 61f3f0954c569473
 ---

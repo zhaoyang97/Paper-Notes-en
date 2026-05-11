@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Active Learning for Decision Trees with Provable Guarantees
 description: >-
-  [ICLR 2026][Active Learning] This paper establishes the first theoretical guarantees for active learning with decision trees: (1) the first explicit analysis of the disagreement coefficient for decision trees, yielding an $O(\ln^{OPT}(n))$ upper bound; (2) the first active learning algorithm for binary classification achieving a multiplicative error guarantee of $(1+\epsilon)$. Combining these two results yields polylogarithmic label complexity in the dataset size.
+  [ICLR 2026][Active Learning] This paper establishes the first theoretical guarantees for active learning with decision trees: (1) the first explicit analysis of the disagreement coefficient for decision trees…
 tags:
-  - ICLR 2026
-  - Active Learning
-  - Decision Trees
-  - Label Complexity
-  - Disagreement Coefficient
-  - Multiplicative Error
+  - "ICLR 2026"
+  - "Active Learning"
+  - "Decision Trees"
+  - "Label Complexity"
+  - "Disagreement Coefficient"
+  - "Multiplicative Error"
 date: 2026-05-08
 content_hash: 82bc81c99fb55863
 ---

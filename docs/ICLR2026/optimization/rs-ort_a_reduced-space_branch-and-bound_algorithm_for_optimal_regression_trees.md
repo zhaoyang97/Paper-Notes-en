@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RS-ORT: A Reduced-Space Branch-and-Bound Algorithm for Optimal Regression Trees
 description: >-
-  [ICLR 2026][Optimization][optimal decision trees] This paper proposes RS-ORT, an algorithm that reformulates regression tree training as a two-stage optimization problem and applies branch-and-bound over a reduced space (branching only on tree structure variables). Combined with closed-form leaf predictions, threshold discretization, and exact last-layer subtree resolution, RS-ORT is the first exact method to achieve globally optimal regression tree learning on datasets with up to 2 million samples containing continuous features.
+  [ICLR 2026][Optimization][optimal decision trees] This paper proposes RS-ORT, an algorithm that reformulates regression tree training as a two-stage optimization problem and applies branch-and-bound over a reduced space…
 tags:
-  - ICLR 2026
-  - Optimization
-  - optimal decision trees
-  - regression trees
-  - branch-and-bound
-  - mixed-integer programming
-  - interpretable machine learning
+  - "ICLR 2026"
+  - "Optimization"
+  - "optimal decision trees"
+  - "regression trees"
+  - "branch-and-bound"
+  - "mixed-integer programming"
+  - "interpretable machine learning"
 date: 2026-05-08
 content_hash: 985edf8d1379bcc6
 ---

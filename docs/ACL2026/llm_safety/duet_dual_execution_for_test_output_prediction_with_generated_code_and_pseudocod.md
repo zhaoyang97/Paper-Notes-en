@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DUET: Dual Execution for Test Output Prediction with Generated Code and Pseudocode
 description: >-
-  [ACL 2026][LLM Safety][Test output prediction] This paper proposes DUET, a dual-path framework that combines direct code execution with LLM-based pseudocode execution. The two paths are complementary—the former is reliable when generated code is correct but vulnerable to implementation errors, while the latter bypasses implementation details at the cost of potential execution hallucinations. Predictions are merged via functional majority voting, achieving a 13.6 percentage-point improvement in Pass@1 on LiveCodeBench test output prediction.
+  [ACL 2026][LLM Safety][Test output prediction] This paper proposes DUET, a dual-path framework that combines direct code execution with LLM-based pseudocode execution. The two paths are complementary—the former is reliab…
 tags:
-  - ACL 2026
-  - LLM Safety
-  - Test output prediction
-  - pseudocode execution
-  - dual execution
-  - code generation
-  - functional majority voting
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Test output prediction"
+  - "pseudocode execution"
+  - "dual execution"
+  - "code generation"
+  - "functional majority voting"
 date: 2026-05-08
 content_hash: b7242cddde23f677
 ---

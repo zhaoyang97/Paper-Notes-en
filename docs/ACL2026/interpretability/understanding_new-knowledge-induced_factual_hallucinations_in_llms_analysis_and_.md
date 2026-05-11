@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Understanding New-Knowledge-Induced Factual Hallucinations in LLMs: Analysis and Interpretation
 description: >-
-  [ACL 2026][Factual Hallucination] This paper systematically analyzes factual hallucinations induced by new-knowledge learning during SFT using a controlled synthetic dataset, Biography-Reasoning. It identifies the root mechanism as the attenuation of attention to key entities, and proposes KnownPatch—injecting a small amount of known-knowledge samples at the end of training to restore attention patterns—effectively mitigating hallucinations.
+  [ACL 2026][Interpretability][Factual Hallucination] This paper systematically analyzes factual hallucinations induced by new-knowledge learning during SFT using a controlled synthetic dataset…
 tags:
-  - ACL 2026
-  - Factual Hallucination
-  - New Knowledge Learning
-  - Attention Mechanism
-  - SFT
-  - KnownPatch
+  - "ACL 2026"
+  - "Interpretability"
+  - "Factual Hallucination"
+  - "New Knowledge Learning"
+  - "Attention Mechanism"
+  - "SFT"
+  - "KnownPatch"
 date: 2026-05-08
 content_hash: 77147dacf688dcc0
 ---

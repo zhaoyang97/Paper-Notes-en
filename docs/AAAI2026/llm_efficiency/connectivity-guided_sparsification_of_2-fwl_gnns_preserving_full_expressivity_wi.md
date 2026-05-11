@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Connectivity-Guided Sparsification of 2-FWL GNNs Preserving Full Expressivity
 description: >-
-  [AAAI 2026][LLM Efficiency][Higher-order GNN] Co-Sparsify proposes a connectivity-aware sparsification framework that restricts 3-node interactions to biconnected components and 2-node interactions to connected components, eliminating provably redundant computation. It preserves full 2-FWL expressivity while substantially improving efficiency, achieving state-of-the-art results on synthetic substructure counting tasks and benchmarks including ZINC and QM9.
+  [AAAI 2026][LLM Efficiency][Higher-order GNN] Co-Sparsify proposes a connectivity-aware sparsification framework that restricts 3-node interactions to biconnected components and 2-node interactions to connected component…
 tags:
-  - AAAI 2026
-  - LLM Efficiency
-  - Higher-order GNN
-  - 2-FWL
-  - graph sparsification
-  - biconnected components
-  - expressivity preservation
+  - "AAAI 2026"
+  - "LLM Efficiency"
+  - "Higher-order GNN"
+  - "2-FWL"
+  - "graph sparsification"
+  - "biconnected components"
+  - "expressivity preservation"
 date: 2026-05-08
 content_hash: a58450dce3319417
 ---

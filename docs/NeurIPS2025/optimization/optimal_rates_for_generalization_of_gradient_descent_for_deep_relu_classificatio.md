@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Optimal Rates for Generalization of Gradient Descent for Deep ReLU Classification
 description: >-
-  [NeurIPS 2025][Optimization][Deep ReLU networks] This paper establishes a generalization rate of $\widetilde{O}(L^4(1+\gamma L^2)/(n\gamma^2))$ for gradient descent on deep ReLU networks, achieving for the first time simultaneously: (1) the optimal $1/n$ dependence on sample size $n$, and (2) only polynomial dependence on depth $L$.
+  [NeurIPS 2025][Optimization][Deep ReLU networks] This paper establishes a generalization rate of $\widetilde{O}(L^4(1+\gamma L^2)/(n\gamma^2))$ for gradient descent on deep ReLU networks…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Deep ReLU networks
-  - generalization bounds
-  - Rademacher complexity
-  - NTK separability
-  - gradient descent
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Deep ReLU networks"
+  - "generalization bounds"
+  - "Rademacher complexity"
+  - "NTK separability"
+  - "gradient descent"
 date: 2026-05-08
 content_hash: f2eca5183d717af4
 ---

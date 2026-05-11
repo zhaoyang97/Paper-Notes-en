@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Composing Driving Worlds through Disentangled Control for Adversarial Scenario Generation
 description: >-
-  [CVPR 2026][Autonomous Driving][Driving World Model] This paper proposes CompoSIA, a compositional driving video simulator that injects three control factors — scene structure, object identity, and ego-vehicle action — through independent pathways into a Flow Matching DiT. It supports both individual and compositional editing, enabling systematic adversarial scenario synthesis. CompoSIA achieves a 17% FVD improvement on identity editing, 30%/47% reduction in rotation/translation error for action control, and an average 173% increase in collision rate for downstream planners.
+  [CVPR 2026][Autonomous Driving][Driving World Model] This paper proposes CompoSIA, a compositional driving video simulator that injects three control factors — scene structure, object identity…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Driving World Model
-  - Disentangled Control
-  - Adversarial Scenario Generation
-  - Noise-Level Identity Injection
-  - Flow Matching
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Driving World Model"
+  - "Disentangled Control"
+  - "Adversarial Scenario Generation"
+  - "Noise-Level Identity Injection"
+  - "Flow Matching"
 date: 2026-05-08
 content_hash: b497427bb1fe94d6
 ---

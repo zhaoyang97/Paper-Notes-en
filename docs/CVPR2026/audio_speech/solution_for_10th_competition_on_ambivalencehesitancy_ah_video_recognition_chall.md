@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Solution for 10th Competition on Ambivalence/Hesitancy (AH) Video Recognition Challenge using Divergence-Based Multimodal Fusion
 description: >-
-  [CVPR2026][Audio & Speech][Multimodal Fusion] For the Ambivalence/Hesitancy (A/H) recognition task of the 10th ABAW competition, this paper proposes a divergence-based multimodal fusion strategy that explicitly models cross-modal conflict by computing pairwise absolute differences among embeddings from three modalities — visual (AU), audio (Wav2Vec 2.0), and text (BERT) — achieving a Macro F1 of 0.6808 on the BAH dataset, substantially surpassing the baseline of 0.2827.
+  [CVPR2026][Audio & Speech][Multimodal Fusion] For the Ambivalence/Hesitancy (A/H) recognition task of the 10th ABAW competition, this paper proposes a divergence-based multimodal fusion strategy that explicitly models cr…
 tags:
-  - CVPR2026
+  - "CVPR2026"
   - "Audio & Speech"
-  - Multimodal Fusion
-  - Ambivalence/Hesitancy Recognition
-  - Action Units
-  - Cross-Modal Conflict
-  - Affective Computing
+  - "Multimodal Fusion"
+  - "Ambivalence/Hesitancy Recognition"
+  - "Action Units"
+  - "Cross-Modal Conflict"
+  - "Affective Computing"
 date: 2026-05-08
 content_hash: 2e380e21d4e38227
 ---

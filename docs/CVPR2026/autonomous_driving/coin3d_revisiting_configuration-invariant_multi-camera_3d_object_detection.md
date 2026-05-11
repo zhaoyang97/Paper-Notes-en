@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CoIn3D: Revisiting Configuration-Invariant Multi-Camera 3D Object Detection
 description: >-
-  [CVPR2026][Autonomous Driving][multi-camera 3D object detection] CoIn3D is proposed as a framework that explicitly models spatial prior discrepancies arising from camera intrinsics, extrinsics, and array layouts via two modules — Spatial-aware Feature Modulation (SFM) and Camera-aware Data Augmentation (CDA) — enabling strong generalization transfer of multi-camera 3D detection models from source configurations to unseen target configurations. The framework is plug-and-play compatible with three mainstream paradigms: BEVDepth, BEVFormer, and PETR.
+  [CVPR2026][Autonomous Driving][multi-camera 3D object detection] CoIn3D is proposed as a framework that explicitly models spatial prior discrepancies arising from camera intrinsics, extrinsics…
 tags:
-  - CVPR2026
-  - Autonomous Driving
-  - multi-camera 3D object detection
-  - cross-configuration generalization
-  - spatial prior modulation
-  - 3D Gaussian data augmentation
-  - BEV perception
+  - "CVPR2026"
+  - "Autonomous Driving"
+  - "multi-camera 3D object detection"
+  - "cross-configuration generalization"
+  - "spatial prior modulation"
+  - "3D Gaussian data augmentation"
+  - "BEV perception"
 date: 2026-05-08
 content_hash: 099cf623da30f9e1
 ---

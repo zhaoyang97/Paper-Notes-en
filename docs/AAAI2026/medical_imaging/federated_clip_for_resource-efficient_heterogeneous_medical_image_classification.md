@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Federated CLIP for Resource-Efficient Heterogeneous Medical Image Classification
 description: >-
-  [AAAI 2026][Medical Imaging][Federated Learning] This paper proposes FedMedCLIP, a federated CLIP framework for medical image classification. By freezing the CLIP encoder and combining a masked Feature Adaptation Module (FAM), a local masked MLP, and class-level KL distillation regularization, the framework achieves robust classification under data heterogeneity with minimal communication and computational overhead (surpassing the second-best method by 8% on ISIC2019 and running 120× faster than FedAVG).
+  [AAAI 2026][Medical Imaging][Federated Learning] This paper proposes FedMedCLIP, a federated CLIP framework for medical image classification. By freezing the CLIP encoder and combining a masked Feature Adaptation Module…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Federated Learning
-  - CLIP
-  - Medical Image Classification
-  - Data Heterogeneity
-  - Parameter Efficiency
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Federated Learning"
+  - "CLIP"
+  - "Medical Image Classification"
+  - "Data Heterogeneity"
+  - "Parameter Efficiency"
 date: 2026-05-08
 content_hash: 3d4ba999d5a418a4
 ---

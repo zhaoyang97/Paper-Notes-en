@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RAIN-Merging: A Gradient-Free Method to Enhance Instruction Following Through Model Merging
 description: >-
-  [ICLR 2026][LLM Reasoning][Model Merging] This paper proposes RAIN-Merging, a gradient-free two-stage model merging method: it first applies null-space projection to preserve the thinking format of Large Reasoning Models (LRMs), then employs instruction-attention-guided merging coefficients to enhance instruction following, simultaneously improving instruction compliance and reasoning quality.
+  [ICLR 2026][LLM Reasoning][Model Merging] This paper proposes RAIN-Merging, a gradient-free two-stage model merging method: it first applies null-space projection to preserve the thinking format of Large Reasoning Models…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Model Merging
-  - Instruction Following
-  - Reasoning Models
-  - Null-Space Projection
-  - Gradient-Free Method
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "Model Merging"
+  - "Instruction Following"
+  - "Reasoning Models"
+  - "Null-Space Projection"
+  - "Gradient-Free Method"
 date: 2026-05-08
 content_hash: 27491d1dbd39d651
 ---

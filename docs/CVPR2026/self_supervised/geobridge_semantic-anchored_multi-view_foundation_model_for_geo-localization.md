@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GeoBridge: A Semantic-Anchored Multi-View Foundation Model for Geo-Localization
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Cross-view geo-localization] GeoBridge proposes a semantic-anchored multi-view foundation model for geo-localization that bridges UAV, street-view, and satellite imagery through textual descriptions as cross-modal semantic anchors, enabling bidirectional cross-view matching and language-to-image localization. The authors also introduce the GeoLoc dataset (50K+ location tuples across 36 countries).
+  [CVPR 2026][Self-Supervised Learning][Cross-view geo-localization] GeoBridge proposes a semantic-anchored multi-view foundation model for geo-localization that bridges UAV, street-view…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - Cross-view geo-localization
-  - multi-view matching
-  - semantic anchoring
-  - UAV navigation
-  - cross-modal retrieval
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Cross-view geo-localization"
+  - "multi-view matching"
+  - "semantic anchoring"
+  - "UAV navigation"
+  - "cross-modal retrieval"
 date: 2026-05-08
 content_hash: 054e5bfccd029afd
 ---

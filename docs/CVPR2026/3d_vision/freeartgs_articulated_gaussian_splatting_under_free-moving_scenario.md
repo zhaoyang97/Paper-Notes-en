@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FreeArtGS: Articulated Gaussian Splatting Under Free-Moving Scenario
 description: >-
-  [CVPR 2026][3D Vision][Articulated object reconstruction] FreeArtGS addresses articulated object reconstruction from monocular RGB-D video under a *free-moving scenario*, where both object pose and joint state change arbitrarily and simultaneously. The proposed three-stage pipeline — motion-driven part segmentation, robust joint estimation, and end-to-end 3DGS optimization — substantially outperforms all baselines on the newly introduced FreeArt-21 benchmark and existing datasets.
+  [CVPR 2026][3D Vision][Articulated object reconstruction] FreeArtGS addresses articulated object reconstruction from monocular RGB-D video under a *free-moving scenario*…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Articulated object reconstruction
-  - Gaussian splatting
-  - free-moving scenario
-  - joint estimation
-  - motion segmentation
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Articulated object reconstruction"
+  - "Gaussian splatting"
+  - "free-moving scenario"
+  - "joint estimation"
+  - "motion segmentation"
 date: 2026-05-08
 content_hash: 7a2abe539425da09
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TimeOmni-1: Incentivizing Complex Reasoning with Time Series in Large Language Models
 description: >-
-  [ICLR 2026][Time Series][Time Series Reasoning] TimeOmni-1 proposes the first unified time series reasoning model, leveraging TSR-Suite (the first reasoning-oriented time series dataset suite) and a two-stage training paradigm (SFT for injecting temporal priors + RL for refining reasoning), achieving significant improvements over GPT-4.1 across multiple time series reasoning tasks.
+  [ICLR 2026][Time Series][Time Series Reasoning] TimeOmni-1 proposes the first unified time series reasoning model, leveraging TSR-Suite (the first reasoning-oriented time series dataset suite) and a two-stage training pa…
 tags:
-  - ICLR 2026
-  - Time Series
-  - Time Series Reasoning
-  - LLM
-  - Reinforcement Learning
-  - Multi-task Joint Training
-  - Causal Discovery
+  - "ICLR 2026"
+  - "Time Series"
+  - "Time Series Reasoning"
+  - "LLM"
+  - "Reinforcement Learning"
+  - "Multi-task Joint Training"
+  - "Causal Discovery"
 date: 2026-05-08
 content_hash: 49c6ff40efb5fc63
 ---

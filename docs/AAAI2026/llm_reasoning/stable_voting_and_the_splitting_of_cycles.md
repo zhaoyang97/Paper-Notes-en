@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Stable Voting and the Splitting of Cycles
 description: >-
-  [AAAI 2026][LLM Reasoning][Voting Theory] This paper investigates the conjecture that Simple Stable Voting (SSV)—a recursive voting rule already used in hundreds of real-world elections—always refines Split Cycle (SC). Through mathematical proof (≤5 candidates) and SAT solving (6–7 candidates), the paper establishes that the conjecture holds for ≤6 candidates, is refuted for ≥7 candidates, and generalizes the counterexample to arbitrarily many candidates via a constructive proof.
+  [AAAI 2026][LLM Reasoning][Voting Theory] This paper investigates the conjecture that Simple Stable Voting (SSV)—a recursive voting rule already used in hundreds of real-world elections—always refines Split Cycle (SC). T…
 tags:
-  - AAAI 2026
-  - LLM Reasoning
-  - Voting Theory
-  - Condorcet Cycles
-  - Split Cycle
-  - SAT Solving
-  - Computational Social Choice
+  - "AAAI 2026"
+  - "LLM Reasoning"
+  - "Voting Theory"
+  - "Condorcet Cycles"
+  - "Split Cycle"
+  - "SAT Solving"
+  - "Computational Social Choice"
 date: 2026-05-08
 content_hash: fbfbb6bced132121
 ---

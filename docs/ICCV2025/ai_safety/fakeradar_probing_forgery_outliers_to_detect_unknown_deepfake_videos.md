@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FakeRadar: Probing Forgery Outliers to Detect Unknown Deepfake Videos
 description: >-
-  [ICCV 2025][AI Safety][Deepfake Detection] This paper proposes FakeRadar, a deepfake video detection framework that actively generates outlier samples simulating unknown forgeries in the feature space via Forgery Outlier Probing, and designs an Outlier-Guided Tri-Training strategy with three-class optimization (Real/Fake/Outlier). FakeRadar significantly outperforms existing methods on cross-dataset and cross-manipulation evaluations.
+  [ICCV 2025][AI Safety][Deepfake Detection] This paper proposes FakeRadar, a deepfake video detection framework that actively generates outlier samples simulating unknown forgeries in the feature space via Forgery Outlier…
 tags:
-  - ICCV 2025
-  - AI Safety
-  - Deepfake Detection
-  - Cross-Domain Generalization
-  - Outlier Probing
-  - Contrastive Learning
-  - CLIP
+  - "ICCV 2025"
+  - "AI Safety"
+  - "Deepfake Detection"
+  - "Cross-Domain Generalization"
+  - "Outlier Probing"
+  - "Contrastive Learning"
+  - "CLIP"
 date: 2026-05-08
 content_hash: 33643035c3ef9687
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Reinforcement Learning with Backtracking Feedback
 description: >-
-  [NeurIPS 2025][LLM Safety][RL] This paper proposes RLBF, a reinforcement learning framework with backtracking feedback that allows agents to return to previous states and re-explore when encountering dead ends. By leveraging backtracking signals to improve credit assignment, RLBF significantly enhances exploration efficiency in sparse-reward environments.
+  [NeurIPS 2025][LLM Safety][RL] This paper proposes RLBF, a reinforcement learning framework with backtracking feedback that allows agents to return to previous states and re-explore when encountering dead ends. By levera…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - RL
-  - backtracking feedback
-  - exploration strategy
-  - credit assignment
-  - trajectory optimization
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "RL"
+  - "backtracking feedback"
+  - "exploration strategy"
+  - "credit assignment"
+  - "trajectory optimization"
 date: 2026-05-08
 content_hash: 0cef5e4d89c14f09
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LLaVA-LE: Large Language-and-Vision Assistant for Lunar Exploration
 description: >-
-  [CVPR 2026][Model Compression][Lunar exploration] LLaVA-LE is the first vision-language model tailored for lunar exploration. By constructing LUCID, a large-scale real lunar image-text dataset (96K images + 81K QA pairs), and applying two-stage curriculum fine-tuning on LLaVA, the model achieves a 3.3× improvement over the baseline on lunar geological understanding and multimodal reasoning.
+  [CVPR 2026][Model Compression][Lunar exploration] LLaVA-LE is the first vision-language model tailored for lunar exploration. By constructing LUCID, a large-scale real lunar image-text dataset (96K images + 81K QA pairs)…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - Lunar exploration
-  - vision-language model
-  - geological understanding
-  - multimodal reasoning
-  - domain fine-tuning
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Lunar exploration"
+  - "vision-language model"
+  - "geological understanding"
+  - "multimodal reasoning"
+  - "domain fine-tuning"
 date: 2026-05-08
 content_hash: b07bf624e109e859
 ---

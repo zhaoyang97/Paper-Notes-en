@@ -2,15 +2,16 @@
 title: >-
   [Paper Note] Co-Evolving LLM Coder and Unit Tester via Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Co-evolution] This paper proposes CURE, a framework in which a single LLM simultaneously assumes the roles of code generator and unit test generator. Cross-execution between generated code and generated tests constructs a pairwise reward matrix; theoretically derived reward signals then drive reinforcement learning. Without any ground-truth code annotations, CURE achieves co-evolution of both code generation and unit test generation capabilities, substantially outperforming dedicated coder models of comparable scale across five programming benchmarks.
+  [NeurIPS 2025][Code Intelligence][Co-evolution] This paper proposes CURE, a framework in which a single LLM simultaneously assumes the roles of code generator and unit test generator. Cross-execution between generated co…
 tags:
-  - NeurIPS 2025
-  - Co-evolution
-  - Reinforcement Learning
-  - Unit Test Generation
-  - Code Generation
-  - Self-play
-  - Reward Precision
+  - "NeurIPS 2025"
+  - "Code Intelligence"
+  - "Co-evolution"
+  - "Reinforcement Learning"
+  - "Unit Test Generation"
+  - "Code Generation"
+  - "Self-play"
+  - "Reward Precision"
 date: 2026-05-08
 content_hash: f14e9723d90f4cdd
 ---

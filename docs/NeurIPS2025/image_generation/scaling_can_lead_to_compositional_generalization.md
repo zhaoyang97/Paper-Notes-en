@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Scaling Can Lead to Compositional Generalization
 description: >-
-  [NeurIPS 2025][Image Generation][compositional generalization] Through theoretical proofs and large-scale experiments, this paper demonstrates that standard MLPs can achieve compositional generalization solely by scaling data and model size, without explicit modular architectural design. Moreover, when compositional generalization succeeds, task components can be linearly decoded from hidden-layer activations — a metric that correlates positively with compositional success rates in diffusion-based image generation.
+  [NeurIPS 2025][Image Generation][compositional generalization] Through theoretical proofs and large-scale experiments, this paper demonstrates that standard MLPs can achieve compositional generalization solely by scaling…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - compositional generalization
-  - scaling
-  - linear decodability
-  - hyperteacher
-  - MLP
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "compositional generalization"
+  - "scaling"
+  - "linear decodability"
+  - "hyperteacher"
+  - "MLP"
 date: 2026-05-08
 content_hash: da7f3a48e6925c5a
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Reasoning Meets Representation: Envisioning Neuro-Symbolic Wireless Foundation Models
 description: >-
-  [NeurIPS 2025][Graph Learning][Neuro-Symbolic AI] This paper proposes a vision framework that integrates the neuro-symbolic (NeSy) paradigm with Wireless Physical-layer Foundation Models (WPFMs)—employing WPFMs as a neural perception engine to generate RF embedding vectors, and an ontology-driven knowledge graph together with a differentiable logic layer as the symbolic reasoning component. The resulting system achieves interpretable, generalizable, and compliance-verifiable wireless AI, providing a concrete technical pathway toward AI-native 6G networks.
+  [NeurIPS 2025][Graph Learning][Neuro-Symbolic AI] This paper proposes a vision framework that integrates the neuro-symbolic (NeSy) paradigm with Wireless Physical-layer Foundation Models (WPFMs)—employing WPFMs as a neur…
 tags:
-  - NeurIPS 2025
-  - Graph Learning
-  - Neuro-Symbolic AI
-  - Wireless Foundation Models
-  - Knowledge Graphs
-  - Differentiable Logic
-  - 6G
+  - "NeurIPS 2025"
+  - "Graph Learning"
+  - "Neuro-Symbolic AI"
+  - "Wireless Foundation Models"
+  - "Knowledge Graphs"
+  - "Differentiable Logic"
+  - "6G"
 date: 2026-05-08
 content_hash: 9d53c6876af3671f
 ---

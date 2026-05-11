@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SPOT-Trip: Dual-Preference Driven Out-of-Town Trip Recommendation
 description: >-
-  [NeurIPS 2025][Graph Learning][Trip recommendation] This paper proposes SPOT-Trip, the first framework to systematically address out-of-town trip recommendation. By integrating knowledge graph-enhanced static preference learning, neural ODE-driven dynamic preference learning, and a preference fusion module, the framework achieves up to 17.01% improvement over state-of-the-art baselines on two real-world datasets.
+  [NeurIPS 2025][Graph Learning][Trip recommendation] This paper proposes SPOT-Trip, the first framework to systematically address out-of-town trip recommendation. By integrating knowledge graph-enhanced static preference…
 tags:
-  - NeurIPS 2025
-  - Graph Learning
-  - Trip recommendation
-  - knowledge graph
-  - neural ODE
-  - temporal point process
-  - static-dynamic preference fusion
+  - "NeurIPS 2025"
+  - "Graph Learning"
+  - "Trip recommendation"
+  - "knowledge graph"
+  - "neural ODE"
+  - "temporal point process"
+  - "static-dynamic preference fusion"
 date: 2026-05-08
 content_hash: e4daa391f207a6a6
 ---

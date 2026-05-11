@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Parallelization of Non-linear State-Space Models: Scaling Up Liquid-Resistance Liquid-Capacitance Networks for Efficient Sequence Modeling
 description: >-
-  [NeurIPS 2025][Time Series][State Space Models] This paper proposes LrcSSM, which achieves exact and efficient parallelization of nonlinear RNNs by constraining the Jacobian matrix of Liquid-Resistance Liquid-Capacitance (LRC) networks to be diagonal, surpassing Transformer, LRU, S5, and Mamba on long-sequence classification benchmarks.
+  [NeurIPS 2025][Time Series][State Space Models] This paper proposes LrcSSM, which achieves exact and efficient parallelization of nonlinear RNNs by constraining the Jacobian matrix of Liquid-Resistance Liquid-Capacitance…
 tags:
-  - NeurIPS 2025
-  - Time Series
-  - State Space Models
-  - Nonlinear RNN
-  - Parallelization
-  - Biologically Inspired
-  - Diagonal Jacobian
+  - "NeurIPS 2025"
+  - "Time Series"
+  - "State Space Models"
+  - "Nonlinear RNN"
+  - "Parallelization"
+  - "Biologically Inspired"
+  - "Diagonal Jacobian"
 date: 2026-05-08
 content_hash: d4537635d8078c53
 ---

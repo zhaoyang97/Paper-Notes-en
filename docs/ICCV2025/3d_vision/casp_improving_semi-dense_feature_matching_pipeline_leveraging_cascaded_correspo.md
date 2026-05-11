@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CasP: Improving Semi-Dense Feature Matching Pipeline Leveraging Cascaded Correspondence Priors for Guidance
 description: >-
-  [ICCV 2025][3D Vision][Feature Matching] This paper proposes CasP, a cascaded matching pipeline that decomposes the matching stage into a one-to-many prior matching at 1/16 scale and a one-to-one fine matching at 1/8 scale, achieving up to 2.2× speedup while maintaining accuracy and significantly improving cross-domain generalization.
+  [ICCV 2025][3D Vision][Feature Matching] This paper proposes CasP, a cascaded matching pipeline that decomposes the matching stage into a one-to-many prior matching at 1/16 scale and a one-to-one fine matching at 1/8 sca…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Feature Matching
-  - Cascaded Matching
-  - Semi-Dense
-  - Efficiency
-  - Cross-Domain Generalization
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Feature Matching"
+  - "Cascaded Matching"
+  - "Semi-Dense"
+  - "Efficiency"
+  - "Cross-Domain Generalization"
 date: 2026-05-08
 content_hash: 349d483bae360bfd
 ---

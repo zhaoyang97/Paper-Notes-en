@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Energy-Regularized Sequential Model Editing on Hyperspheres
 description: >-
-  [ICLR 2026][Knowledge Editing][model editing] This paper interprets performance degradation in sequential model editing through the lens of hyperspherical uniformity (Hyperspherical Energy, HE), and proposes SPHERE: by projecting editing perturbations onto the orthogonal complement of the principal hyperspherical directions of pre-trained weights, SPHERE enables stable large-scale sequential editing, outperforming the strongest baseline by an average of 16.41% on LLaMA3-8B.
+  [ICLR 2026][Knowledge Editing][model editing] This paper interprets performance degradation in sequential model editing through the lens of hyperspherical uniformity (Hyperspherical Energy, HE)…
 tags:
-  - ICLR 2026
-  - Knowledge Editing
-  - model editing
-  - hyperspherical energy
-  - sequential editing
-  - catastrophic forgetting
-  - knowledge preservation
+  - "ICLR 2026"
+  - "Knowledge Editing"
+  - "model editing"
+  - "hyperspherical energy"
+  - "sequential editing"
+  - "catastrophic forgetting"
+  - "knowledge preservation"
 date: 2026-05-08
 content_hash: ee44ac1fb9006e4d
 ---

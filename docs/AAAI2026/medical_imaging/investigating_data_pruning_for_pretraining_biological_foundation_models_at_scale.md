@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Investigating Data Pruning for Pretraining Biological Foundation Models at Scale
 description: >-
-  [AAAI 2026][Medical Imaging][Data Pruning] This paper proposes a post-hoc data pruning framework based on influence functions, leveraging Subset-Based Self-Influence estimation and two selection strategies (Top-k Influence and Coverage-Centric Influence). Under an extreme pruning rate exceeding 99%, an RNA-FM pretrained on only 0.2M sequences matches or surpasses the full model trained on 23M sequences across multiple downstream tasks, revealing substantial redundancy in biological sequence datasets.
+  [AAAI 2026][Medical Imaging][Data Pruning] This paper proposes a post-hoc data pruning framework based on influence functions, leveraging Subset-Based Self-Influence estimation and two selection strategies (Top-k Influen…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Data Pruning
-  - Biological Foundation Models
-  - Influence Functions
-  - Coreset Selection
-  - RNA-FM
-  - ESM
-  - Protein Language Models
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Data Pruning"
+  - "Biological Foundation Models"
+  - "Influence Functions"
+  - "Coreset Selection"
+  - "RNA-FM"
+  - "ESM"
+  - "Protein Language Models"
 date: 2026-05-08
 content_hash: 9a5efaf09fed802c
 ---

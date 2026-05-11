@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VGGDrive: Empowering Vision-Language Models with Cross-View Geometric Grounding for Autonomous Driving
 description: >-
-  [CVPR 2026][Multimodal VLM][Autonomous Driving] This paper proposes VGGDrive, a framework that injects cross-view geometric perception into VLMs via a frozen 3D visual foundation model (VGGT). A plug-and-play CVGE module is designed to hierarchically and adaptively fuse 3D features into the 2D visual embeddings at each VLM layer, achieving significant performance gains across five autonomous driving benchmarks.
+  [CVPR 2026][Multimodal VLM][Autonomous Driving] This paper proposes VGGDrive, a framework that injects cross-view geometric perception into VLMs via a frozen 3D visual foundation model (VGGT). A plug-and-play CVGE module…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Autonomous Driving
-  - 3D Geometric Perception
-  - VLM
-  - VGGT
-  - Cross-View
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Autonomous Driving"
+  - "3D Geometric Perception"
+  - "VLM"
+  - "VGGT"
+  - "Cross-View"
 date: 2026-05-08
 content_hash: 7acc3e631e5d3d43
 ---

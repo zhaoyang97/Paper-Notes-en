@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Off The Grid: Detection of Primitives for Feed-Forward 3D Gaussian Splatting
 description: >-
-  [CVPR 2026][3D Vision][3D Gaussian Splatting] This paper proposes a feed-forward 3DGS decoder based on keypoint detection, liberating Gaussian primitives from the pixel grid by placing them adaptively at sub-pixel precision. Combined with an adaptive density mechanism and confidence-based pruning, the method surpasses state-of-the-art feed-forward approaches in novel view synthesis using only 1/7 of the primitives required by pixel-aligned methods.
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] This paper proposes a feed-forward 3DGS decoder based on keypoint detection, liberating Gaussian primitives from the pixel grid by placing them adaptively at sub-pixel precis…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - feed-forward reconstruction
-  - keypoint detection
-  - adaptive density
-  - pose-free reconstruction
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "feed-forward reconstruction"
+  - "keypoint detection"
+  - "adaptive density"
+  - "pose-free reconstruction"
 date: 2026-05-08
 content_hash: d8ee4a9a2065cf69
 ---

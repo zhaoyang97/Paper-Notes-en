@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Discovering a Shared Logical Subspace: Steering LLM Logical Reasoning via Alignment of Natural-Language and Symbolic Views
 description: >-
-  [ACL 2026][LLM Reasoning][logical reasoning] This work identifies a shared logical subspace within LLMs that simultaneously aligns natural-language and symbolic-logic reasoning representations. Steering activations along this subspace at inference time improves logical reasoning accuracy by up to 11 percentage points without any model training.
+  [ACL 2026][LLM Reasoning][logical reasoning] This work identifies a shared logical subspace within LLMs that simultaneously aligns natural-language and symbolic-logic reasoning representations. Steering activations along…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - logical reasoning
-  - multi-view subspace
-  - activation steering
-  - CCA alignment
-  - training-free inference
+  - "ACL 2026"
+  - "LLM Reasoning"
+  - "logical reasoning"
+  - "multi-view subspace"
+  - "activation steering"
+  - "CCA alignment"
+  - "training-free inference"
 date: 2026-05-08
 content_hash: 260f55ba6336eb89
 ---

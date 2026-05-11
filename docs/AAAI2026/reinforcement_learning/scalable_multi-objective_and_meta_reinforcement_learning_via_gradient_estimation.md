@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Scalable Multi-Objective and Meta Reinforcement Learning via Gradient Estimation
 description: >-
-  [AAAI 2026][Reinforcement Learning][Multi-Objective Reinforcement Learning] This paper proposes PolicyGradEx, which efficiently estimates policy adaptation performance on arbitrary task subsets via first-order gradient approximation and surrogate models, constructs a task affinity matrix, and performs task grouping through convex optimization. PolicyGradEx outperforms state-of-the-art baselines by an average of 16% on multi-objective RL and meta-RL benchmarks, with a speedup of up to 26×.
+  [AAAI 2026][Reinforcement Learning][Multi-Objective Reinforcement Learning] This paper proposes PolicyGradEx, which efficiently estimates policy adaptation performance on arbitrary task subsets via first-order gradient a…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - Multi-Objective Reinforcement Learning
-  - Meta Reinforcement Learning
-  - Gradient Estimation
-  - Task Affinity
-  - Task Grouping
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "Multi-Objective Reinforcement Learning"
+  - "Meta Reinforcement Learning"
+  - "Gradient Estimation"
+  - "Task Affinity"
+  - "Task Grouping"
 date: 2026-05-08
 content_hash: 99225e6c85d5f1d7
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unblur-SLAM: Dense Neural SLAM for Blurry Inputs
 description: >-
-  [CVPR 2026][3D Vision][blur-robust SLAM] Rather than naively inserting a deblurring network into the SLAM front-end, Unblur-SLAM is designed around a central decision: which blurry frames can be deblurred prior to tracking, and which must be modeled directly in 3D space. This insight drives a complete pipeline comprising blur detection, physically constrained deblurring, 3D Gaussian blur refinement, and a severe-blur fallback, enabling the system to handle both motion blur and defocus blur while substantially improving tracking and reconstruction quality.
+  [CVPR 2026][3D Vision][blur-robust SLAM] Rather than naively inserting a deblurring network into the SLAM front-end, Unblur-SLAM is designed around a central decision: which blurry frames can be deblurred prior to tracki…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - blur-robust SLAM
-  - 3DGS
-  - single-image deblurring
-  - sub-frame modeling
-  - hybrid bundle adjustment
+  - "CVPR 2026"
+  - "3D Vision"
+  - "blur-robust SLAM"
+  - "3DGS"
+  - "single-image deblurring"
+  - "sub-frame modeling"
+  - "hybrid bundle adjustment"
 date: 2026-05-08
 content_hash: 21ea01bc18b25e55
 ---

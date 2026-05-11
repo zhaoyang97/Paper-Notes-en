@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Physics-Informed Spatial Intelligence with Human Priors: An Autonomous Driving Perspective
 description: >-
-  [NeurIPS 2025][Autonomous Driving][Spatial Intelligence Grid] This paper proposes the Spatial Intelligence Grid (SIG)—a structured representation inspired by the perspective grids used by Renaissance painters—that explicitly encodes object layout, directional relationships, and distance relationships in driving scenes as a grid structure. The authors further construct the SIGBench benchmark, demonstrating that SIG enables more stable and comprehensive improvements in the spatial reasoning capabilities of MLLMs under few-shot in-context learning compared to conventional VQA-based approaches.
+  [NeurIPS 2025][Autonomous Driving][Spatial Intelligence Grid] This paper proposes the Spatial Intelligence Grid (SIG)—a structured representation inspired by the perspective grids used by Renaissance painters—that explic…
 tags:
-  - NeurIPS 2025
-  - Autonomous Driving
-  - Spatial Intelligence Grid
-  - Visual Spatial Reasoning
-  - Human Priors
-  - Multimodal Large Language Models
-  - Driving Scene Understanding
+  - "NeurIPS 2025"
+  - "Autonomous Driving"
+  - "Spatial Intelligence Grid"
+  - "Visual Spatial Reasoning"
+  - "Human Priors"
+  - "Multimodal Large Language Models"
+  - "Driving Scene Understanding"
 date: 2026-05-08
 content_hash: 4e26bff2cb65508d
 ---

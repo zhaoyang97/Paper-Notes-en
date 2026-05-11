@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] DA-Mamba: Learning Domain-Aware State Space Model for Global-Local Alignment in Domain Adaptive Object Detection
 description: >-
-  [CVPR2026][Object Detection][Domain adaptive object detection] This paper proposes DA-Mamba, a CNN-SSM hybrid architecture that achieves image-level and instance-level global-local domain-invariant feature alignment with linear complexity via two modules—Image-Aware SSM (IA-SSM) and Object-Aware SSM (OA-SSM)—attaining state-of-the-art performance on four domain adaptive detection benchmarks.
+  [CVPR2026][Object Detection][Domain adaptive object detection] This paper proposes DA-Mamba, a CNN-SSM hybrid architecture that achieves image-level and instance-level global-local domain-invariant feature alignment with…
 tags:
-  - CVPR2026
-  - Object Detection
-  - Domain adaptive object detection
-  - state space model
-  - Mamba
-  - global-local alignment
-  - feature alignment
-  - CNN-SSM hybrid architecture
+  - "CVPR2026"
+  - "Object Detection"
+  - "Domain adaptive object detection"
+  - "state space model"
+  - "Mamba"
+  - "global-local alignment"
+  - "feature alignment"
+  - "CNN-SSM hybrid architecture"
 date: 2026-05-08
 content_hash: 93fed8efa73cb972
 ---

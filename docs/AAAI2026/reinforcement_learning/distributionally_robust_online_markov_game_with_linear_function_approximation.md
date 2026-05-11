@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Distributionally Robust Online Markov Game with Linear Function Approximation
 description: >-
-  [AAAI 2026][Reinforcement Learning][Markov Game] This paper studies online distributionally robust Markov games with linear function approximation. It is the first to identify the hardness of learning in this setting, and proposes the DR-CCE-LSI algorithm, which achieves minimax-optimal sample complexity with respect to the feature dimension $d$ under a specific feature mapping condition.
+  [AAAI 2026][Reinforcement Learning][Markov Game] This paper studies online distributionally robust Markov games with linear function approximation. It is the first to identify the hardness of learning in this setting…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - Markov Game
-  - Distributional Robustness
-  - Linear Function Approximation
-  - Coarse Correlated Equilibrium
-  - Sample Complexity
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "Markov Game"
+  - "Distributional Robustness"
+  - "Linear Function Approximation"
+  - "Coarse Correlated Equilibrium"
+  - "Sample Complexity"
 date: 2026-05-08
 content_hash: 5418897578e2326e
 ---

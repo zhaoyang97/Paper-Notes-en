@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] EDFFDNet: Towards Accurate and Efficient Unsupervised Multi-Grid Image Registration
 description: >-
-  [ICCV 2025][image registration] This paper proposes EDFFDNet, which replaces conventional B-spline FFD and TPS with an Exponentially Decaying Free-Form Deformation (EDFFD) model for image registration. Combined with an Adaptive Sparse Motion Aggregator (ASMA) and a progressive correlation strategy, the method achieves a +0.5 dB PSNR improvement on the UDIS-D dataset while reducing parameter count by 70.5% and GPU memory usage by 32.6%.
+  [ICCV 2025][image registration] This paper proposes EDFFDNet, which replaces conventional B-spline FFD and TPS with an Exponentially Decaying Free-Form Deformation (EDFFD) model for image registration. Combined with an A…
 tags:
-  - ICCV 2025
-  - image registration
-  - free-form deformation
-  - exponentially decaying basis function
-  - sparse motion aggregation
-  - unsupervised learning
+  - "ICCV 2025"
+  - "image registration"
+  - "free-form deformation"
+  - "exponentially decaying basis function"
+  - "sparse motion aggregation"
+  - "unsupervised learning"
 date: 2026-05-08
 content_hash: c5d6ed8c69893513
 ---

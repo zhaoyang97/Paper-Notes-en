@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Enhancing Binary Encoded Crime Linkage Analysis Using Siamese Network
 description: >-
-  [AAAI 2026][Crime Linkage Analysis] This paper proposes a **Siamese Autoencoder**-based crime linkage analysis framework that integrates **geo-temporal features at the decoder stage** and employs a **domain expert-driven dimensionality reduction strategy**. Evaluated on the real-world ViCLAS database from the UK National Crime Agency (NCA), the method achieves up to 9% AUC improvement, providing an effective machine learning solution for high-dimensional sparse binary-encoded crime data.
+  [AAAI 2026][Interpretability][Crime Linkage Analysis] This paper proposes a **Siamese Autoencoder**-based crime linkage analysis framework that integrates **geo-temporal features at the decoder stage** and employs a **do…
 tags:
-  - AAAI 2026
-  - Crime Linkage Analysis
-  - Siamese Network
-  - Autoencoder
-  - Geo-temporal Feature Fusion
-  - ViCLAS Database
+  - "AAAI 2026"
+  - "Interpretability"
+  - "Crime Linkage Analysis"
+  - "Siamese Network"
+  - "Autoencoder"
+  - "Geo-temporal Feature Fusion"
+  - "ViCLAS Database"
 date: 2026-05-08
 content_hash: e9502cce46c0b002
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Chain-of-Context Learning: Dynamic Constraint Understanding for Multi-Task VRPs
 description: >-
-  [ICLR2026][Reinforcement Learning][vehicle routing problem] This paper proposes Chain-of-Context Learning (CCL), which achieves stepwise dynamic constraint-aware decoding via Relevance-Guided Context Reformulation (RGCR, adaptively aggregating constraint information to construct context) and Trajectory-Shared Node Re-embedding (TSNR, sharing node updates across trajectories to avoid redundant computation). CCL comprehensively outperforms existing methods across 48 VRP variants (16 in-distribution + 32 out-of-distribution).
+  [ICLR2026][Reinforcement Learning][vehicle routing problem] This paper proposes Chain-of-Context Learning (CCL), which achieves stepwise dynamic constraint-aware decoding via Relevance-Guided Context Reformulation (RGCR…
 tags:
-  - ICLR2026
-  - Reinforcement Learning
-  - vehicle routing problem
-  - multi-task learning
-  - reinforcement-learning
-  - constraint-aware decoding
-  - neural combinatorial optimization
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "vehicle routing problem"
+  - "multi-task learning"
+  - "reinforcement-learning"
+  - "constraint-aware decoding"
+  - "neural combinatorial optimization"
 date: 2026-05-08
 content_hash: 3fe703f7eb9d4015
 ---

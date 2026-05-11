@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Spectrum Tuning: Post-Training for Distributional Coverage and In-Context Steerability
 description: >-
-  [ICLR2026][Self-Supervised Learning][Post-training] This paper reveals that post-training methods such as RLHF and DPO systematically impair models' in-context steerability, output coverage, and distributional alignment. It proposes the Spectrum Suite evaluation framework and the Spectrum Tuning method, representing the first post-training approach that improves distributional alignment.
+  [ICLR2026][Self-Supervised Learning][Post-training] This paper reveals that post-training methods such as RLHF and DPO systematically impair models' in-context steerability, output coverage…
 tags:
-  - ICLR2026
-  - Self-Supervised Learning
-  - Post-training
-  - Distributional Coverage
-  - In-Context Steerability
-  - RLHF
-  - DPO
-  - Instruction Following
+  - "ICLR2026"
+  - "Self-Supervised Learning"
+  - "Post-training"
+  - "Distributional Coverage"
+  - "In-Context Steerability"
+  - "RLHF"
+  - "DPO"
+  - "Instruction Following"
 date: 2026-05-08
 content_hash: 58313a593678f9f4
 ---

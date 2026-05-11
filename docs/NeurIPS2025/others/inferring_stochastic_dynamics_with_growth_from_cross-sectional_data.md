@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Inferring Stochastic Dynamics with Growth from Cross-Sectional Data
 description: >-
-  [NeurIPS 2025][Probability flow inference] This paper proposes Unbalanced Probabilistic Flow Inference (UPFI), which jointly infers the drift, diffusion, and growth rate of stochastic dynamical systems from cross-sectional data via a Lagrangian formulation of the Fokker-Planck equation, constituting the first method to accurately handle scenarios involving cell proliferation and death.
+  [NeurIPS 2025][Probability flow inference] This paper proposes Unbalanced Probabilistic Flow Inference (UPFI), which jointly infers the drift, diffusion…
 tags:
-  - NeurIPS 2025
-  - Probability flow inference
-  - Fokker-Planck equation
-  - cell dynamics
-  - optimal transport
-  - branching diffusion process
+  - "NeurIPS 2025"
+  - "Probability flow inference"
+  - "Fokker-Planck equation"
+  - "cell dynamics"
+  - "optimal transport"
+  - "branching diffusion process"
 date: 2026-05-08
 content_hash: d2d1b1d7835e7566
 ---

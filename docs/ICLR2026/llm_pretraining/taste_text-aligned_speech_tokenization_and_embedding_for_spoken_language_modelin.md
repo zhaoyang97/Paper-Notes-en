@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TASTE: Text-Aligned Speech Tokenization and Embedding for Spoken Language Modeling
 description: >-
-  [ICLR 2026][LLM Pretraining][speech tokenization] This paper proposes TASTE (Text-Aligned Speech Tokenization and Embedding), which aligns speech tokens with text transcriptions via a cross-attention mechanism, enabling high-quality speech reconstruction at an extremely low bitrate (~150 bps). This design makes text-speech joint modeling straightforward and efficient; the resulting 1.3B-parameter TASLM outperforms 7B pretrained SLMs.
+  [ICLR 2026][LLM Pretraining][speech tokenization] This paper proposes TASTE (Text-Aligned Speech Tokenization and Embedding), which aligns speech tokens with text transcriptions via a cross-attention mechanism…
 tags:
-  - ICLR 2026
-  - LLM Pretraining
-  - speech tokenization
-  - spoken language model
-  - text-speech alignment
-  - joint modeling
-  - speech reconstruction
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "speech tokenization"
+  - "spoken language model"
+  - "text-speech alignment"
+  - "joint modeling"
+  - "speech reconstruction"
 date: 2026-05-08
 content_hash: 365634661ebfe672
 ---

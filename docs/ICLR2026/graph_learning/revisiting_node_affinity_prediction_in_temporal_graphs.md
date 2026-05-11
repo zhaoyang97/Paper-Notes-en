@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Revisiting Node Affinity Prediction in Temporal Graphs
 description: >-
-  [ICLR 2026][Graph Learning][Temporal Graph Neural Networks] This paper analyzes why simple heuristics (persistent forecasting, moving average) consistently outperform complex TGNNs on temporal graph node affinity prediction. It proves that these heuristics are special cases of linear SSMs and that standard RNNs/LSTMs/GRUs cannot express even the most basic persistent forecasting. Based on these findings, the paper proposes NAViS — a linear SSM architecture with a virtual global state and a ranking loss — which surpasses all baselines on TGB benchmarks.
+  [ICLR 2026][Graph Learning][Temporal Graph Neural Networks] This paper analyzes why simple heuristics (persistent forecasting, moving average) consistently outperform complex TGNNs on temporal graph node affinity predict…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - Temporal Graph Neural Networks
-  - Node Affinity Prediction
-  - State Space Models
-  - Ranking Loss
-  - Global State
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Temporal Graph Neural Networks"
+  - "Node Affinity Prediction"
+  - "State Space Models"
+  - "Ranking Loss"
+  - "Global State"
 date: 2026-05-08
 content_hash: 044eee7baef016c1
 ---

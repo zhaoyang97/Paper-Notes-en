@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] How Should We Evaluate Data Deletion in Graph-Based ANN Indexes?
 description: >-
-  [NeurIPS 2025 (Workshop on ML for Systems)][ANNS] To address the lack of a unified evaluation methodology for data deletion in graph-based ANN indexes, this paper formally defines three baseline approaches—lazy deletion, eager deletion, and reconstruction—proposes a deployment-oriented evaluation framework and metric suite, and introduces the Deletion Control algorithm, which dynamically switches deletion strategies under accuracy constraints based on empirical analysis.
+  [NeurIPS 2025 (Workshop on ML for Systems)][Information Retrieval & RAG][ANNS] To address the lack of a unified evaluation methodology for data deletion in graph-based ANN indexes…
 tags:
-  - NeurIPS 2025 (Workshop on ML for Systems)
-  - ANNS
-  - HNSW
-  - data deletion
-  - vector database
-  - evaluation framework
+  - "NeurIPS 2025 (Workshop on ML for Systems)"
+  - "Information Retrieval & RAG"
+  - "ANNS"
+  - "HNSW"
+  - "data deletion"
+  - "vector database"
+  - "evaluation framework"
 date: 2026-05-08
 content_hash: 119f68c56e971caa
 ---

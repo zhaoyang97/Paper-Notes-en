@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond Itinerary Planning: A Real-World Benchmark for Multi-Turn and Tool-Using Travel Tasks
 description: >-
-  [ACL 2026][Recommender Systems][travel planning benchmark] This paper proposes TravelBench, the first travel planning benchmark that integrates real user queries, implicit user preferences, multi-turn interaction, unsolvable task recognition, and 10 real-world tools. It enables reproducible evaluation through a sandbox environment and reveals that state-of-the-art models exhibit uneven performance across different capability dimensions.
+  [ACL 2026][Recommender Systems][travel planning benchmark] This paper proposes TravelBench, the first travel planning benchmark that integrates real user queries, implicit user preferences, multi-turn interaction…
 tags:
-  - ACL 2026
-  - Recommender Systems
-  - travel planning benchmark
-  - tool use
-  - multi-turn dialogue
-  - implicit preferences
-  - unsolvable tasks
+  - "ACL 2026"
+  - "Recommender Systems"
+  - "travel planning benchmark"
+  - "tool use"
+  - "multi-turn dialogue"
+  - "implicit preferences"
+  - "unsolvable tasks"
 date: 2026-05-08
 content_hash: 3a8a7f8b5d71c3d9
 ---

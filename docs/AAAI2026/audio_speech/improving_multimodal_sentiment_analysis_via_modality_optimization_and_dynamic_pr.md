@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Improving Multimodal Sentiment Analysis via Modality Optimization and Dynamic Primary Modality Selection
 description: >-
-  [AAAI 2026][Audio & Speech][multimodal sentiment analysis] This paper proposes the MODS framework, which eliminates redundancy in non-linguistic modalities via Graph-based Dynamic Compression (GDC), and introduces a sample-level Dynamic Primary Modality Selector (MSelector) together with Primary-modality-Centric Cross-Attention (PCCA) to enable adaptive dominant modality selection on a per-sample basis for multimodal sentiment analysis (MSA).
+  [AAAI 2026][Audio & Speech][multimodal sentiment analysis] This paper proposes the MODS framework, which eliminates redundancy in non-linguistic modalities via Graph-based Dynamic Compression (GDC)…
 tags:
-  - AAAI 2026
+  - "AAAI 2026"
   - "Audio & Speech"
-  - multimodal sentiment analysis
-  - dynamic modality selection
-  - graph convolutional network
-  - capsule network
-  - cross-modal attention
-  - sequence compression
+  - "multimodal sentiment analysis"
+  - "dynamic modality selection"
+  - "graph convolutional network"
+  - "capsule network"
+  - "cross-modal attention"
+  - "sequence compression"
 date: 2026-05-08
 content_hash: 2652f235d63a08bc
 ---

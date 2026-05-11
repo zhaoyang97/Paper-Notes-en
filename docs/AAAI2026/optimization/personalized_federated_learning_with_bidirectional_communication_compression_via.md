@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] pFed1BS: Personalized Federated Learning with Bidirectional Communication Compression via One-Bit Random Sketching
 description: >-
-  [AAAI 2026][Optimization][Federated Learning] This paper proposes pFed1BS, a framework that achieves extreme bidirectional communication compression (>99% reduction) in federated learning via one-bit random sketching, while introducing a sign-based regularizer for client model personalization. The framework simultaneously addresses communication bottlenecks and data heterogeneity in non-IID settings.
+  [AAAI 2026][Optimization][Federated Learning] This paper proposes pFed1BS, a framework that achieves extreme bidirectional communication compression (>99% reduction) in federated learning via one-bit random sketching…
 tags:
-  - AAAI 2026
-  - Optimization
-  - Federated Learning
-  - Communication Efficiency
-  - Personalization
-  - one-bit compression
-  - random sketching
+  - "AAAI 2026"
+  - "Optimization"
+  - "Federated Learning"
+  - "Communication Efficiency"
+  - "Personalization"
+  - "one-bit compression"
+  - "random sketching"
 date: 2026-05-08
 content_hash: 5ddb247c41bde799
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Splats in Splats: Robust and Effective 3D Steganography towards Gaussian Splatting
 description: >-
-  [AAAI 2026][3D Vision][3D steganography] This paper proposes Splats in Splats, the first steganography framework that embeds 3D content into 3DGS assets without modifying any vanilla 3DGS attributes. Through importance-graded spherical harmonic coefficient encryption and autoencoder-assisted opacity mapping, it achieves 5.31% higher scene fidelity and 3× faster rendering speed compared to prior methods.
+  [AAAI 2026][3D Vision][3D steganography] This paper proposes Splats in Splats, the first steganography framework that embeds 3D content into 3DGS assets without modifying any vanilla 3DGS attributes. Through importance-g…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - 3D steganography
-  - Gaussian Splatting
-  - spherical harmonics
-  - copyright protection
-  - information hiding
+  - "AAAI 2026"
+  - "3D Vision"
+  - "3D steganography"
+  - "Gaussian Splatting"
+  - "spherical harmonics"
+  - "copyright protection"
+  - "information hiding"
 date: 2026-05-08
 content_hash: 981b578eaf0e76dc
 ---

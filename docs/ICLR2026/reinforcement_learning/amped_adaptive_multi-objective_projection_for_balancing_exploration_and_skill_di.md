@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AMPED: Adaptive Multi-objective Projection for balancing Exploration and skill Diversification
 description: >-
-  [ICLR 2026][Reinforcement Learning][Unsupervised skill learning] This paper proposes AMPED, a framework that applies gradient surgery (PCGrad) during skill pretraining to balance gradient conflicts between exploration (entropy + RND) and skill diversity (AnInfoNCE), and employs a SAC-based skill selector during fine-tuning to adaptively choose the optimal skill. AMPED outperforms SBRL baselines including DIAYN, CeSD, and CIC on Maze and URLB benchmarks.
+  [ICLR 2026][Reinforcement Learning][Unsupervised skill learning] This paper proposes AMPED, a framework that applies gradient surgery (PCGrad) during skill pretraining to balance gradient conflicts between exploration (e…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Unsupervised skill learning
-  - gradient surgery
-  - exploration-diversity trade-off
-  - skill selector
-  - multi-objective RL
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Unsupervised skill learning"
+  - "gradient surgery"
+  - "exploration-diversity trade-off"
+  - "skill selector"
+  - "multi-objective RL"
 date: 2026-05-08
 content_hash: b149a650fbad3354
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Adaptive Kernel Design for Bayesian Optimization Is a Piece of CAKE with LLMs
 description: >-
-  [NeurIPS 2025][LLM/NLP][Bayesian Optimization] This paper proposes CAKE (Context-Aware Kernel Evolution), which leverages LLMs as crossover and mutation operators within a genetic algorithm framework to adaptively generate and evolve GP kernel expressions during Bayesian optimization. Combined with the BAKER ranking mechanism that balances model fit (BIC) and expected improvement (EI), CAKE consistently outperforms both fixed-kernel and adaptive-kernel baselines on tasks including hyperparameter optimization, controller tuning, and photonic chip design.
+  [NeurIPS 2025][LLM/NLP][Bayesian Optimization] This paper proposes CAKE (Context-Aware Kernel Evolution), which leverages LLMs as crossover and mutation operators within a genetic algorithm framework to adaptively genera…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - Bayesian Optimization
-  - Gaussian Process
-  - Kernel Design
-  - LLM
-  - Genetic Algorithm
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "Bayesian Optimization"
+  - "Gaussian Process"
+  - "Kernel Design"
+  - "LLM"
+  - "Genetic Algorithm"
 date: 2026-05-08
 content_hash: 6fbf66c7f80efc81
 ---

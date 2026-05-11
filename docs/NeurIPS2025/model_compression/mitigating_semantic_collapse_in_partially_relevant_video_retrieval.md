@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mitigating Semantic Collapse in Partially Relevant Video Retrieval
 description: >-
-  [NeurIPS 2025][Model Compression][partially relevant video retrieval] To address semantic collapse in Partially Relevant Video Retrieval (PRVR), this paper proposes Text Correlation Preservation Learning (TCPL) and Cross-Branch Video Alignment (CBVA), which mitigate collapse phenomena in the text and video embedding spaces respectively, achieving substantial improvements in retrieval accuracy.
+  [NeurIPS 2025][Model Compression][partially relevant video retrieval] To address semantic collapse in Partially Relevant Video Retrieval (PRVR), this paper proposes Text Correlation Preservation Learning (TCPL) and Cross…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - partially relevant video retrieval
-  - semantic collapse
-  - cross-modal alignment
-  - contrastive learning
-  - token merging
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "partially relevant video retrieval"
+  - "semantic collapse"
+  - "cross-modal alignment"
+  - "contrastive learning"
+  - "token merging"
 date: 2026-05-08
 content_hash: 9d41092b833e5101
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Test-time Efficient Visual Place Recognition via Asymmetric Query Processing
 description: >-
-  [AAAI 2026][Model Compression][Visual Place Recognition] This paper proposes AsymVPR, an efficient asymmetric framework for Visual Place Recognition (VPR), which replaces expensive k-NN precomputation with a **Geographical Memory Bank** and bridges the capacity gap between a lightweight query network and a high-capacity gallery network via **Implicit Embedding Augmentation**, achieving retrieval performance close to the full-size model using only ~8% of its FLOPs.
+  [AAAI 2026][Model Compression][Visual Place Recognition] This paper proposes AsymVPR, an efficient asymmetric framework for Visual Place Recognition (VPR)…
 tags:
-  - AAAI 2026
-  - Model Compression
-  - Visual Place Recognition
-  - Asymmetric Retrieval
-  - Geographical Memory Bank
-  - Implicit Embedding Augmentation
-  - Lightweight Deployment
+  - "AAAI 2026"
+  - "Model Compression"
+  - "Visual Place Recognition"
+  - "Asymmetric Retrieval"
+  - "Geographical Memory Bank"
+  - "Implicit Embedding Augmentation"
+  - "Lightweight Deployment"
 date: 2026-05-08
 content_hash: bb154d6f005ba0db
 ---

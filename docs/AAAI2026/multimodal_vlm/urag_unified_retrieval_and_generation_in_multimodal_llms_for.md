@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] URaG: Unified Retrieval and Generation in Multimodal LLMs for Efficient Long Document Understanding
 description: >-
-  [AAAI 2026][Multimodal VLM][Long document understanding] URaG identifies a human-like "coarse-to-fine" reasoning pattern in MLLMs processing long documents—shallow layers exhibit uniformly distributed attention while deep layers concentrate on evidence pages. Motivated by this insight, a lightweight cross-modal retrieval module is inserted at layer 6 (comprising only 0.05% of total parameters) to select the Top-5 relevant pages and discard the remainder, achieving SOTA performance while reducing computation by 44–56%.
+  [AAAI 2026][Multimodal VLM][Long document understanding] URaG identifies a human-like "coarse-to-fine" reasoning pattern in MLLMs processing long documents—shallow layers exhibit uniformly distributed attention while dee…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Long document understanding
-  - unified retrieval-generation
-  - cross-modal retrieval
-  - Transformer layer attention analysis
-  - token efficiency
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Long document understanding"
+  - "unified retrieval-generation"
+  - "cross-modal retrieval"
+  - "Transformer layer attention analysis"
+  - "token efficiency"
 date: 2026-05-08
 content_hash: 8d53217556ca2fbd
 ---

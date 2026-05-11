@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Recursive Visual Imagination and Adaptive Linguistic Grounding for Vision Language Navigation
 description: >-
-  [AAAI 2026][Robotics][VLN] This paper proposes a VLN policy based on Implicit Scene Representation (ISR), which compresses historical trajectories into a fixed-size compact neural grid via Recursive Visual Imagination (RVI) to learn high-level scene priors, and employs Adaptive Linguistic Grounding (ALG) to finely align different semantic components of navigation instructions with different grid cells. The approach achieves state-of-the-art performance on two continuous-environment navigation benchmarks: R2R-CE and ObjectNav.
+  [AAAI 2026][Robotics][VLN] This paper proposes a VLN policy based on Implicit Scene Representation (ISR), which compresses historical trajectories into a fixed-size compact neural grid via Recursive Visual Imagination (R…
 tags:
-  - AAAI 2026
-  - Robotics
-  - VLN
-  - scene representation
-  - language grounding
-  - visual imagination
-  - neural grid
-  - contrastive learning
+  - "AAAI 2026"
+  - "Robotics"
+  - "VLN"
+  - "scene representation"
+  - "language grounding"
+  - "visual imagination"
+  - "neural grid"
+  - "contrastive learning"
 date: 2026-05-08
 content_hash: e0c13e2efef8251e
 ---

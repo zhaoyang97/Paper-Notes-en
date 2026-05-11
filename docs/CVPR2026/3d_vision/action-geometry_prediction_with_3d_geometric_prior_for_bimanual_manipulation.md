@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GAP: Action-Geometry Prediction with 3D Geometric Prior for Bimanual Manipulation
 description: >-
-  [CVPR2026][3D Vision][Bimanual Manipulation] GAP leverages a pretrained 3D geometric foundation model (π³) to extract 3D features, fuses them with 2D semantic features and proprioception, and jointly predicts future action sequences and future 3D point maps via conditional diffusion, achieving state-of-the-art performance on RoboTwin 2.0 and real-world bimanual manipulation benchmarks.
+  [CVPR2026][3D Vision][Bimanual Manipulation] GAP leverages a pretrained 3D geometric foundation model (π³) to extract 3D features, fuses them with 2D semantic features and proprioception…
 tags:
-  - CVPR2026
-  - 3D Vision
-  - Bimanual Manipulation
-  - 3D Geometric Prior
-  - Diffusion Policy
-  - Point Map Prediction
-  - Imitation Learning
+  - "CVPR2026"
+  - "3D Vision"
+  - "Bimanual Manipulation"
+  - "3D Geometric Prior"
+  - "Diffusion Policy"
+  - "Point Map Prediction"
+  - "Imitation Learning"
 date: 2026-05-08
 content_hash: 06e59a70da0cf04b
 ---

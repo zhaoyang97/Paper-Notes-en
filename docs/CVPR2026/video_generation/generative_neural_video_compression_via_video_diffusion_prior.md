@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Generative Neural Video Compression via Video Diffusion Prior
 description: >-
-  [CVPR 2026][Video Generation][Video Compression] This paper proposes GNVC-VD, the first DiT-based generative neural video compression framework. By leveraging a video diffusion transformer as a video-native generative prior, GNVC-VD performs spatiotemporal latent compression and sequence-level generative refinement within a unified codec. At extremely low bitrates (<0.03 bpp), it substantially surpasses both traditional and learned codecs in perceptual quality while significantly reducing the flickering artifacts prevalent in prior generative approaches.
+  [CVPR 2026][Video Generation][Video Compression] This paper proposes GNVC-VD, the first DiT-based generative neural video compression framework. By leveraging a video diffusion transformer as a video-native generative pr…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Video Compression
-  - Video Diffusion Model
-  - Flow Matching
-  - Perceptual Quality
-  - Temporal Consistency
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Video Compression"
+  - "Video Diffusion Model"
+  - "Flow Matching"
+  - "Perceptual Quality"
+  - "Temporal Consistency"
 date: 2026-05-08
 content_hash: 08934f314d6f6268
 ---

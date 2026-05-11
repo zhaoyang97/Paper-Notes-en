@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Iterative Foundation Model Fine-Tuning on Multiple Rewards
 description: >-
-  [NeurIPS 2025][Medical Imaging][Multi-objective fine-tuning] This paper proposes IterativeRS (Iterative Rewarded Soups), which alternates between independent fine-tuning of per-objective expert policies and policy merging. The method unifies reward combination and expert merging approaches, outperforming MORLHF and Rewarded Soups on small molecule design, DNA sequence generation, and text summarization tasks.
+  [NeurIPS 2025][Medical Imaging][Multi-objective fine-tuning] This paper proposes IterativeRS (Iterative Rewarded Soups), which alternates between independent fine-tuning of per-objective expert policies and policy mergin…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Multi-objective fine-tuning
-  - reinforcement learning
-  - foundation models
-  - iterative merging
-  - Rewarded Soups
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Multi-objective fine-tuning"
+  - "reinforcement learning"
+  - "foundation models"
+  - "iterative merging"
+  - "Rewarded Soups"
 date: 2026-05-08
 content_hash: acbc590b88e0fb5b
 ---

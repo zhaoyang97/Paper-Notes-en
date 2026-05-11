@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Less is More: Empowering GUI Agent with Context-Aware Simplification
 description: >-
-  [ICCV 2025][LLM Agent][GUI Agent] This paper proposes SimpAgent — a context-aware simplification framework that achieves SOTA on multiple GUI navigation benchmarks while reducing FLOPs by 27%, via masking-based element pruning (randomly masking irrelevant element regions during training) and consistency-guided history compression (directly dropping historical visual tokens at intermediate LLM layers with a KL divergence consistency constraint).
+  [ICCV 2025][LLM Agent][GUI Agent] This paper proposes SimpAgent — a context-aware simplification framework that achieves SOTA on multiple GUI navigation benchmarks while reducing FLOPs by 27%…
 tags:
-  - ICCV 2025
-  - LLM Agent
-  - GUI Agent
-  - Context Simplification
-  - Element Pruning
-  - History Compression
-  - Computational Efficiency
+  - "ICCV 2025"
+  - "LLM Agent"
+  - "GUI Agent"
+  - "Context Simplification"
+  - "Element Pruning"
+  - "History Compression"
+  - "Computational Efficiency"
 date: 2026-05-08
 content_hash: 014cc7ce961305b8
 ---

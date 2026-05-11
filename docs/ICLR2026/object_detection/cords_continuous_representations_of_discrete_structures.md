@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CORDS: Continuous Representations of Discrete Structures
 description: >-
-  [ICLR 2026][Object Detection][Set prediction] CORDS is a framework that bijectively maps variable-size discrete sets (detection boxes, molecular atoms) to continuous density and feature fields, enabling models to learn in field space and decode back to discrete sets exactly — without the constraints of fixed slots or padding.
+  [ICLR 2026][Object Detection][Set prediction] CORDS is a framework that bijectively maps variable-size discrete sets (detection boxes, molecular atoms) to continuous density and feature fields…
 tags:
-  - ICLR 2026
-  - Object Detection
-  - Set prediction
-  - continuous field representation
-  - bijective mapping
-  - variable-cardinality inference
-  - density field
+  - "ICLR 2026"
+  - "Object Detection"
+  - "Set prediction"
+  - "continuous field representation"
+  - "bijective mapping"
+  - "variable-cardinality inference"
+  - "density field"
 date: 2026-05-08
 content_hash: 2f9aad4197c60c76
 ---

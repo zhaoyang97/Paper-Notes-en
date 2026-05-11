@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dual-Flow: Transferable Multi-Target, Instance-Agnostic Attacks via In-the-wild Cascading Flow Optimization
 description: >-
-  [NeurIPS 2025][AI Safety][adversarial attacks] This paper proposes the Dual-Flow framework, which leverages the forward ODE flow of a pretrained diffusion model and the reverse flow of a fine-tuned LoRA velocity function to perform multi-target, instance-agnostic adversarial attacks. Through a cascading distribution shift training strategy, the method significantly improves transfer attack success rates (e.g., +34.58% from Inc-v3 to Res-152) and demonstrates strong robustness against defended models.
+  [NeurIPS 2025][AI Safety][adversarial attacks] This paper proposes the Dual-Flow framework, which leverages the forward ODE flow of a pretrained diffusion model and the reverse flow of a fine-tuned LoRA velocity function…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - adversarial attacks
-  - black-box transfer attacks
-  - diffusion models
-  - flow matching
-  - multi-target attacks
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "adversarial attacks"
+  - "black-box transfer attacks"
+  - "diffusion models"
+  - "flow matching"
+  - "multi-target attacks"
 date: 2026-05-08
 content_hash: bf2e0b455cb9a542
 ---

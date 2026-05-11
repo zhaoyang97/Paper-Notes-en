@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond the Surface: Enhancing LLM-as-a-Judge Alignment with Human via Internal Representations
 description: >-
-  [NeurIPS 2025][LLM Evaluation][LLM-as-a-Judge] This paper proposes LAGER, a framework that aggregates score token logits from intermediate to final layers of an LLM and computes an expected score to derive the final judgment. Without any model fine-tuning, LAGER improves human alignment by up to 7.5% and matches or surpasses reasoning-based methods without requiring chain-of-thought inference.
+  [NeurIPS 2025][LLM Evaluation][LLM-as-a-Judge] This paper proposes LAGER, a framework that aggregates score token logits from intermediate to final layers of an LLM and computes an expected score to derive the final judg…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - LLM-as-a-Judge
-  - hidden representations
-  - cross-layer aggregation
-  - evaluation alignment
-  - plug-and-play
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "LLM-as-a-Judge"
+  - "hidden representations"
+  - "cross-layer aggregation"
+  - "evaluation alignment"
+  - "plug-and-play"
 date: 2026-05-08
 content_hash: 3952ecb8646af894
 ---

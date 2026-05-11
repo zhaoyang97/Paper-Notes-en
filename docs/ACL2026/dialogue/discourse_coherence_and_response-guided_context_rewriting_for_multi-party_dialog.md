@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Discourse Coherence and Response-Guided Context Rewriting for Multi-Party Dialogue Generation
 description: >-
-  [ACL 2026][Dialogue Systems][Multi-Party Dialogue] This paper proposes DRCR, the first framework to introduce context rewriting into multi-party dialogue generation, using dual feedback signals of discourse coherence and response quality to construct preference data, and enabling the rewriter and responder to mutually enhance each other through iterative training via dynamic self-evolution.
+  [ACL 2026][Dialogue Systems][Multi-Party Dialogue] This paper proposes DRCR, the first framework to introduce context rewriting into multi-party dialogue generation…
 tags:
-  - ACL 2026
-  - Dialogue Systems
-  - Multi-Party Dialogue
-  - Context Rewriting
-  - Discourse Coherence
-  - Preference Learning
-  - Dynamic Self-Evolution
+  - "ACL 2026"
+  - "Dialogue Systems"
+  - "Multi-Party Dialogue"
+  - "Context Rewriting"
+  - "Discourse Coherence"
+  - "Preference Learning"
+  - "Dynamic Self-Evolution"
 date: 2026-05-08
 content_hash: 8836fbd3226ca939
 ---

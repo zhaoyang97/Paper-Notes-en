@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Template-assisted Contrastive Learning of Task-oriented Dialogue Sentence Embeddings
 description: >-
-  [ACL 2026][Dialogue Systems][dialogue sentence embeddings] This paper proposes TaDSE, a framework that leverages existing template information in dialogues as auxiliary anchors. Through three stages—template-aware data augmentation, paired contrastive training, and semantic compression inference—TaDSE significantly improves sentence embedding quality for task-oriented dialogue in an unsupervised setting, surpassing previous SOTA and even outperforming supervised commercial embedding models on five benchmarks.
+  [ACL 2026][Dialogue Systems][dialogue sentence embeddings] This paper proposes TaDSE, a framework that leverages existing template information in dialogues as auxiliary anchors. Through three stages—template-aware data a…
 tags:
-  - ACL 2026
-  - Dialogue Systems
-  - dialogue sentence embeddings
-  - contrastive learning
-  - template augmentation
-  - intent classification
-  - unsupervised representation learning
+  - "ACL 2026"
+  - "Dialogue Systems"
+  - "dialogue sentence embeddings"
+  - "contrastive learning"
+  - "template augmentation"
+  - "intent classification"
+  - "unsupervised representation learning"
 date: 2026-05-08
 content_hash: 7043f189ac71a496
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Exposing Hidden Biases in Text-to-Image Models via Automated Prompt Search
 description: >-
-  [ICLR 2026][Image Generation][text-to-image bias] This paper proposes Bias-Guided Prompt Search (BGPS), which combines LLM decoding guidance with a diffusion model intermediate-layer attribute classifier to automatically discover interpretable text prompts that maximally expose hidden social biases in T2I models—revealing residual biases even in debiased models.
+  [ICLR 2026][Image Generation][text-to-image bias] This paper proposes Bias-Guided Prompt Search (BGPS), which combines LLM decoding guidance with a diffusion model intermediate-layer attribute classifier to automatically…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - text-to-image bias
-  - automated prompt search
-  - fairness
-  - bias auditing
-  - diffusion models
+  - "ICLR 2026"
+  - "Image Generation"
+  - "text-to-image bias"
+  - "automated prompt search"
+  - "fairness"
+  - "bias auditing"
+  - "diffusion models"
 date: 2026-05-08
 content_hash: ee64f2781b24e284
 ---

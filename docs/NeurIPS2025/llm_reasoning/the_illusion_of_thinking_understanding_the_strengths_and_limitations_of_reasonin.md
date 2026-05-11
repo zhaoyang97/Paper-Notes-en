@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The Illusion of Thinking: Understanding the Strengths and Limitations of Reasoning Models via the Lens of Problem Complexity
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Large Reasoning Models] Using controlled puzzle environments, this paper systematically reveals a three-regime behavioral pattern in Large Reasoning Models (LRMs): performance falls below standard LLMs at low complexity (overthinking), substantially surpasses them at moderate complexity, and collapses completely (0%) at high complexity. Counterintuitively, models reduce thinking token usage at the point of collapse, demonstrating that current LRMs have not developed genuinely generalizable reasoning capabilities.
+  [NeurIPS 2025][LLM Reasoning][Large Reasoning Models] Using controlled puzzle environments, this paper systematically reveals a three-regime behavioral pattern in Large Reasoning Models (LRMs): performance falls below st…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - Large Reasoning Models
-  - Problem Complexity
-  - Thinking Tokens
-  - Chain-of-Thought
-  - Reasoning Collapse
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "Large Reasoning Models"
+  - "Problem Complexity"
+  - "Thinking Tokens"
+  - "Chain-of-Thought"
+  - "Reasoning Collapse"
 date: 2026-05-08
 content_hash: 24d413b1a07a8ed9
 ---

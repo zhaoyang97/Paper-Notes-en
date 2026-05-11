@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Uncertainty Quantification for Reduced-Order Surrogate Models Applied to Cloud Microphysics
 description: >-
-  [NeurIPS 2025][reduced-order models] This paper proposes the first post-hoc, model-agnostic uncertainty quantification framework for latent-space reduced-order models. By applying conformal prediction to the reconstruction, latent dynamics, and end-to-end prediction components independently, it constructs distribution-free prediction intervals and reveals component-level uncertainty propagation in cloud microphysics ROMs — showing that structural errors in the autoencoder, rather than dynamics errors, dominate end-to-end prediction uncertainty.
+  [NeurIPS 2025][reduced-order models] This paper proposes the first post-hoc, model-agnostic uncertainty quantification framework for latent-space reduced-order models. By applying conformal prediction to the reconstructi…
 tags:
-  - NeurIPS 2025
-  - reduced-order models
-  - conformal prediction
-  - cloud microphysics
-  - autoencoder-SINDy
-  - surrogate models
-  - prediction intervals
+  - "NeurIPS 2025"
+  - "reduced-order models"
+  - "conformal prediction"
+  - "cloud microphysics"
+  - "autoencoder-SINDy"
+  - "surrogate models"
+  - "prediction intervals"
 date: 2026-05-08
 content_hash: 30d039d058965b09
 ---

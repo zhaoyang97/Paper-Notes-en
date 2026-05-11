@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] INSID3: Training-Free In-Context Segmentation with DINOv3
 description: >-
-  [CVPR 2026][Segmentation][In-context segmentation] INSID3 is a training-free in-context segmentation method that relies exclusively on frozen DINOv3 features. Through a three-stage pipeline consisting of positional debiasing, fine-grained clustering, and seed cluster aggregation, it surpasses methods that depend on SAM or fine-tuning across semantic, part-level, and personalized segmentation tasks using a single self-supervised backbone, achieving an average mIoU improvement of +7.5%.
+  [CVPR 2026][Segmentation][In-context segmentation] INSID3 is a training-free in-context segmentation method that relies exclusively on frozen DINOv3 features. Through a three-stage pipeline consisting of positional debia…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - In-context segmentation
-  - DINOv3
-  - training-free
-  - self-supervised
-  - positional bias correction
+  - "CVPR 2026"
+  - "Segmentation"
+  - "In-context segmentation"
+  - "DINOv3"
+  - "training-free"
+  - "self-supervised"
+  - "positional bias correction"
 date: 2026-05-08
 content_hash: 3d3535cbc74c4edf
 ---

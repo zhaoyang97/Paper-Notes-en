@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Motion-Aware Animatable Gaussian Avatars Deblurring
 description: >-
-  [CVPR 2026][3D Vision][3D human reconstruction] This paper proposes the first method for directly reconstructing sharp, animatable 3D Gaussian human avatars from blurry video, leveraging a 3D-aware physical blur formation model and an SMPL-based human motion model to jointly optimize the avatar representation and motion parameters.
+  [CVPR 2026][3D Vision][3D human reconstruction] This paper proposes the first method for directly reconstructing sharp, animatable 3D Gaussian human avatars from blurry video…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D human reconstruction
-  - motion blur
-  - 3D Gaussian splatting
-  - SMPL
-  - deblurring
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D human reconstruction"
+  - "motion blur"
+  - "3D Gaussian splatting"
+  - "SMPL"
+  - "deblurring"
 date: 2026-05-08
 content_hash: 2e647947301dfc19
 ---

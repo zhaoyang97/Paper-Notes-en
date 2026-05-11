@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] IDF: Iterative Dynamic Filtering Networks for Generalizable Image Denoising
 description: >-
-  [ICCV 2025][Medical Imaging][Image Denoising] This paper proposes Iterative Dynamic Filtering Networks (IDF), which achieves strong out-of-distribution (OOD) denoising performance using only ~0.04M parameters. By combining per-pixel dynamic kernel prediction with an adaptive iterative refinement strategy, IDF generalizes to diverse unseen noise types (Gaussian, Poisson, salt-and-pepper, Monte Carlo rendering, and real noise) while trained exclusively on single-level Gaussian noise.
+  [ICCV 2025][Medical Imaging][Image Denoising] This paper proposes Iterative Dynamic Filtering Networks (IDF), which achieves strong out-of-distribution (OOD) denoising performance using only ~0.04M parameters. By combini…
 tags:
-  - ICCV 2025
-  - Medical Imaging
-  - Image Denoising
-  - Dynamic Filtering
-  - Generalizability
-  - Iterative Refinement
-  - Lightweight Model
+  - "ICCV 2025"
+  - "Medical Imaging"
+  - "Image Denoising"
+  - "Dynamic Filtering"
+  - "Generalizability"
+  - "Iterative Refinement"
+  - "Lightweight Model"
 date: 2026-05-08
 content_hash: c7dc4ba4fdf81cbe
 ---

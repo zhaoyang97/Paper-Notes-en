@@ -2,18 +2,18 @@
 title: >-
   [Paper Note] Color Matching Using Hypernetwork-Based Kolmogorov-Arnold Networks (cmKAN)
 description: >-
-  [ICCV 2025][Model Compression][color matching] This paper proposes cmKAN, a hypernetwork-driven Kolmogorov-Arnold Network for color matching. A generator predicts spatially varying KAN spline parameters, supporting three scenarios (supervised / unsupervised / pairwise optimization) and three tasks (raw-to-raw / raw-to-sRGB / sRGB-to-sRGB). cmKAN outperforms existing methods by an average of 37.3% across all tasks while remaining extremely lightweight (76.4K parameters).
+  [ICCV 2025][Model Compression][color matching] This paper proposes cmKAN, a hypernetwork-driven Kolmogorov-Arnold Network for color matching. A generator predicts spatially varying KAN spline parameters…
 tags:
-  - ICCV 2025
-  - Model Compression
-  - color matching
-  - KAN
-  - Kolmogorov-Arnold Network
-  - hypernetwork
-  - camera ISP
-  - raw-to-sRGB
-  - color transfer
-  - lightweight
+  - "ICCV 2025"
+  - "Model Compression"
+  - "color matching"
+  - "KAN"
+  - "Kolmogorov-Arnold Network"
+  - "hypernetwork"
+  - "camera ISP"
+  - "raw-to-sRGB"
+  - "color transfer"
+  - "lightweight"
 date: 2026-05-08
 content_hash: 01c6818362c981c1
 ---

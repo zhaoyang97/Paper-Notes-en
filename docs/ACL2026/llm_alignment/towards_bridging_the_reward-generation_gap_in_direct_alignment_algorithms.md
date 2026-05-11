@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Bridging the Reward-Generation Gap in Direct Alignment Algorithms
 description: >-
-  [ACL 2026][LLM Alignment][Direct Alignment Algorithms] This paper identifies the "reward-generation gap" in Direct Alignment Algorithms (DAAs)—a mismatch between training objectives and autoregressive decoding dynamics—and proposes POET (Prefix-Oriented Equal-length Training), which truncates preference response pairs to the length of the shorter response to implicitly constrain token-level MDP convergence across all timesteps, achieving up to 11.8 percentage point improvement on AlpacaEval 2.
+  [ACL 2026][LLM Alignment][Direct Alignment Algorithms] This paper identifies the "reward-generation gap" in Direct Alignment Algorithms (DAAs)—a mismatch between training objectives and autoregressive decoding dynamics—a…
 tags:
-  - ACL 2026
-  - LLM Alignment
-  - Direct Alignment Algorithms
-  - Prefix Importance
-  - Equal-length Training
-  - Reward-Generation Gap
-  - DPO/SimPO
+  - "ACL 2026"
+  - "LLM Alignment"
+  - "Direct Alignment Algorithms"
+  - "Prefix Importance"
+  - "Equal-length Training"
+  - "Reward-Generation Gap"
+  - "DPO/SimPO"
 date: 2026-05-08
 content_hash: bcb4208a8ccb0785
 ---

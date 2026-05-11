@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Beyond RAG vs. Long-Context: Learning Distraction-Aware Retrieval for Efficient Knowledge Grounding
 description: >-
-  [ICLR 2026][RAG] This paper proposes LDAR (Learning Distraction-Aware Retrieval), a lightweight adaptive retriever that learns to select passages by sampling a continuous quantile band from the query-passage similarity distribution. LDAR surpasses long-context methods while using approximately half the token budget, balancing information coverage against the influence of distracting passages.
+  [ICLR 2026][Information Retrieval & RAG][RAG] This paper proposes LDAR (Learning Distraction-Aware Retrieval), a lightweight adaptive retriever that learns to select passages by sampling a continuous quantile band from t…
 tags:
-  - ICLR 2026
-  - RAG
-  - long-context
-  - distraction-aware retrieval
-  - adaptive passage selection
-  - knowledge-intensive QA
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "RAG"
+  - "long-context"
+  - "distraction-aware retrieval"
+  - "adaptive passage selection"
+  - "knowledge-intensive QA"
 date: 2026-05-08
 content_hash: 4dcd8aee28192521
 ---

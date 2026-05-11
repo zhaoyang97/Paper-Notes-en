@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Back to Point: Exploring Point-Language Models for Zero-Shot 3D Anomaly Detection
 description: >-
-  [CVPR 2026][3D Vision][Zero-Shot 3D Anomaly Detection] BTP is the first work to apply pretrained point-language models (PLMs, e.g., ULIP) to zero-shot 3D anomaly detection. It proposes a Multi-Granularity Feature Embedding Module (MGFEM) that fuses patch-level semantics, geometric descriptors, and global CLS tokens, coupled with a joint representation learning strategy. BTP achieves 84.5% point-level AUROC on Real3D-AD, substantially outperforming the VLM-rendering-based method PointAD (73.5%).
+  [CVPR 2026][3D Vision][Zero-Shot 3D Anomaly Detection] BTP is the first work to apply pretrained point-language models (PLMs, e.g., ULIP) to zero-shot 3D anomaly detection. It proposes a Multi-Granularity Feature Embeddi…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Zero-Shot 3D Anomaly Detection
-  - Point-Language Model
-  - ULIP
-  - Multi-Granularity
-  - Geometric Feature
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Zero-Shot 3D Anomaly Detection"
+  - "Point-Language Model"
+  - "ULIP"
+  - "Multi-Granularity"
+  - "Geometric Feature"
 date: 2026-05-08
 content_hash: 8e094d225c6326e1
 ---

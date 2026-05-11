@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] X-WIN: Building Chest Radiograph World Model via Predictive Sensing
 description: >-
-  [CVPR 2026][Medical Imaging][World model] X-WIN is a chest radiograph world model that, for the first time, incorporates 3D CT spatial knowledge into CXR representation learning. By learning to predict 2D projections of CT volumes at varying rotation angles, the model internalizes 3D anatomical structure. Combined with affinity-guided contrastive alignment and structure-preserving domain adaptation, X-WIN achieves state-of-the-art linear probing performance across 6 CXR benchmarks.
+  [CVPR 2026][Medical Imaging][World model] X-WIN is a chest radiograph world model that, for the first time, incorporates 3D CT spatial knowledge into CXR representation learning. By learning to predict 2D projections of…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - World model
-  - chest radiograph representation learning
-  - CT knowledge distillation
-  - contrastive learning
-  - domain adaptation
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "World model"
+  - "chest radiograph representation learning"
+  - "CT knowledge distillation"
+  - "contrastive learning"
+  - "domain adaptation"
 date: 2026-05-08
 content_hash: a1ed0d1cab0bcbc2
 ---

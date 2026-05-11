@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Self-supervised Learning of Echocardiographic Video Representations via Online Cluster Distillation
 description: >-
-  [NeurIPS 2025][Medical Imaging][Self-supervised learning] This paper proposes DISCOVR, a self-supervised dual-branch framework that transfers fine-grained spatial semantics from an image encoder to the temporal representations of a video encoder via online semantic cluster distillation, achieving state-of-the-art performance across six cross-population cardiac ultrasound datasets on anomaly detection, classification, and segmentation tasks.
+  [NeurIPS 2025][Medical Imaging][Self-supervised learning] This paper proposes DISCOVR, a self-supervised dual-branch framework that transfers fine-grained spatial semantics from an image encoder to the temporal represent…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Self-supervised learning
-  - echocardiography
-  - video representation learning
-  - cross-modal distillation
-  - semantic clustering
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Self-supervised learning"
+  - "echocardiography"
+  - "video representation learning"
+  - "cross-modal distillation"
+  - "semantic clustering"
 date: 2026-05-08
 content_hash: 8fb85b9f9360d2d7
 ---

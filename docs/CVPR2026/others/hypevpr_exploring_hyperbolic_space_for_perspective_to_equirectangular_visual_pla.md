@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] HypeVPR: Exploring Hyperbolic Space for Perspective to Equirectangular Visual Place Recognition
 description: >-
-  [CVPR 2026][Visual Place Recognition] This paper proposes HypeVPR, a visual place recognition framework based on hierarchical embedding in hyperbolic space, specifically designed to address cross-field-of-view matching between perspective (query) and equirectangular panoramic (database) images. By constructing multi-level descriptors from local to global within the Poincaré ball, HypeVPR achieves a flexible balance among accuracy, efficiency, and storage, achieving retrieval speeds several times faster than sliding-window baselines at comparable accuracy.
+  [CVPR 2026][Visual Place Recognition] This paper proposes HypeVPR, a visual place recognition framework based on hierarchical embedding in hyperbolic space…
 tags:
-  - CVPR 2026
-  - Visual Place Recognition
-  - Hyperbolic Space
-  - Panoramic Images
-  - Hierarchical Embedding
-  - Perspective-to-Equirectangular Matching
+  - "CVPR 2026"
+  - "Visual Place Recognition"
+  - "Hyperbolic Space"
+  - "Panoramic Images"
+  - "Hierarchical Embedding"
+  - "Perspective-to-Equirectangular Matching"
 date: 2026-05-08
 content_hash: 302de82b35a53203
 ---

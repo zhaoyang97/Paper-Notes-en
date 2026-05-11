@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Walking Further: Semantic-aware Multimodal Gait Recognition Under Long-Range Conditions
 description: >-
-  [AAAI 2026][Autonomous Driving][Multimodal Gait Recognition] This paper introduces LRGait — the first LiDAR-Camera multimodal gait dataset targeting long-range (10–50m) cross-distance scenarios — and proposes EMGaitNet, an end-to-end framework that achieves 2D-3D cross-modal feature fusion via Semantic Mining (SeMi), Semantic-Guided Alignment (SGA), and Symmetric Cross-Attention Fusion (SCAF) modules, reaching state-of-the-art performance on multiple benchmarks.
+  [AAAI 2026][Autonomous Driving][Multimodal Gait Recognition] This paper introduces LRGait — the first LiDAR-Camera multimodal gait dataset targeting long-range (10–50m) cross-distance scenarios — and proposes EMGaitNet…
 tags:
-  - AAAI 2026
-  - Autonomous Driving
-  - Multimodal Gait Recognition
-  - Long-Range Recognition
-  - LiDAR-Camera Fusion
-  - CLIP Semantic Guidance
-  - Cross-Distance Retrieval
+  - "AAAI 2026"
+  - "Autonomous Driving"
+  - "Multimodal Gait Recognition"
+  - "Long-Range Recognition"
+  - "LiDAR-Camera Fusion"
+  - "CLIP Semantic Guidance"
+  - "Cross-Distance Retrieval"
 date: 2026-05-08
 content_hash: 8b2eca9783cf1596
 ---

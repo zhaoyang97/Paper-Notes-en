@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] FlowMoE: A Scalable Pipeline Scheduling Framework for Distributed MoE Training
 description: >-
-  [NeurIPS 2025][Pipeline Scheduling] FlowMoE proposes a unified pipeline scheduling framework that integrates MHA computation, gating, expert computation, and A2A communication into a single pipeline. A priority-driven all-reduce tensor chunking mechanism maximizes communication–computation overlap, achieving 1.13×–1.82× speedup, 10–39% energy reduction, and 7–32% memory savings across multiple real-world MoE models.
+  [NeurIPS 2025][Pipeline Scheduling] FlowMoE proposes a unified pipeline scheduling framework that integrates MHA computation, gating, expert computation…
 tags:
-  - NeurIPS 2025
-  - Pipeline Scheduling
-  - MoE Training
-  - Communication-Computation Overlap
-  - Bayesian Optimization
-  - Expert Parallelism
+  - "NeurIPS 2025"
+  - "Pipeline Scheduling"
+  - "MoE Training"
+  - "Communication-Computation Overlap"
+  - "Bayesian Optimization"
+  - "Expert Parallelism"
 date: 2026-05-08
 content_hash: 2a06d25c174fbae0
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] InnoAds-Composer: Efficient Condition Composition for E-Commerce Poster Generation
 description: >-
-  [CVPR 2026][Image Generation][e-commerce poster generation] This paper proposes InnoAds-Composer, a single-stage e-commerce poster generation framework built on MM-DiT. It maps three types of conditions — product subject, glyph text, and background style — into a unified token space via unified tokenization, and combines a Text Feature Enhancement Module (TFEM) with an importance-aware condition injection strategy to maintain high-quality generation while significantly reducing inference cost.
+  [CVPR 2026][Image Generation][e-commerce poster generation] This paper proposes InnoAds-Composer, a single-stage e-commerce poster generation framework built on MM-DiT. It maps three types of conditions — product subject…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - e-commerce poster generation
-  - multi-condition composition
-  - MM-DiT
-  - text rendering
-  - condition importance analysis
+  - "CVPR 2026"
+  - "Image Generation"
+  - "e-commerce poster generation"
+  - "multi-condition composition"
+  - "MM-DiT"
+  - "text rendering"
+  - "condition importance analysis"
 date: 2026-05-08
 content_hash: aaf92a665bce2cb3
 ---

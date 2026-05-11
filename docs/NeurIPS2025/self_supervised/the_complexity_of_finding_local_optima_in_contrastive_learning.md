@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] The Complexity of Finding Local Optima in Contrastive Learning
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][contrastive learning] This paper proves that finding local optima in contrastive learning is computationally hard: the discrete triplet maximization problem is PLS-hard (even when $d=1$), and continuous triplet loss minimization is CLS-hard, implying that (under standard assumptions) no polynomial-time algorithm exists for finding local optima.
+  [NeurIPS 2025][Self-Supervised Learning][contrastive learning] This paper proves that finding local optima in contrastive learning is computationally hard: the discrete triplet maximization problem is PLS-hard (even when…
 tags:
-  - NeurIPS 2025
-  - Self-Supervised Learning
-  - contrastive learning
-  - local optima
-  - PLS-hard
-  - CLS-hard
-  - triplet loss
-  - computational complexity
+  - "NeurIPS 2025"
+  - "Self-Supervised Learning"
+  - "contrastive learning"
+  - "local optima"
+  - "PLS-hard"
+  - "CLS-hard"
+  - "triplet loss"
+  - "computational complexity"
 date: 2026-05-08
 content_hash: 16457dbc7e5e5e7b
 ---

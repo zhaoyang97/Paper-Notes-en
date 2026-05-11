@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Temporal Inconsistency Guidance for Super-resolution Video Quality Assessment
 description: >-
-  [AAAI 2026][Image Restoration][Video Quality Assessment] This paper proposes TIG-SVQA, a framework that, for the first time, incorporates temporal inconsistency as an explicit guidance signal for super-resolution video quality assessment. The framework introduces an Inconsistency-Highlighted Spatial Module (IHSM) and an Inconsistency-Guided Temporal Module (IGTM), achieving SRCC scores of 0.950, 0.942, and 0.939 on the SFD, MFD, and Combined-VSR datasets, respectively, surpassing all existing IQA/VQA methods.
+  [AAAI 2026][Image Restoration][Video Quality Assessment] This paper proposes TIG-SVQA, a framework that, for the first time, incorporates temporal inconsistency as an explicit guidance signal for super-resolution video q…
 tags:
-  - AAAI 2026
-  - Image Restoration
-  - Video Quality Assessment
-  - Super-Resolution
-  - Temporal Inconsistency
-  - Transformer
-  - Visual Working Memory
+  - "AAAI 2026"
+  - "Image Restoration"
+  - "Video Quality Assessment"
+  - "Super-Resolution"
+  - "Temporal Inconsistency"
+  - "Transformer"
+  - "Visual Working Memory"
 date: 2026-05-08
 content_hash: 12385ab107555c5f
 ---

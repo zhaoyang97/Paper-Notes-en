@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AbstRaL: Augmenting LLMs' Reasoning by Reinforcing Abstract Thinking
 description: >-
-  [ICLR 2026][Reinforcement Learning][abstract reasoning] This paper proposes AbstRaL, which uses reinforcement learning to teach LLMs to construct mathematical abstractions of reasoning problems (replacing concrete numbers/names with symbolic variables and extracting general formulas), then employs a symbolic solver to derive answers. AbstRaL nearly eliminates performance degradation caused by distribution shift on GSM perturbation benchmarks, and also yields implicit improvements on OOD mathematical and general reasoning tasks.
+  [ICLR 2026][Reinforcement Learning][abstract reasoning] This paper proposes AbstRaL, which uses reinforcement learning to teach LLMs to construct mathematical abstractions of reasoning problems (replacing concrete number…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - abstract reasoning
-  - reinforcement-learning
-  - GSM robustness
-  - symbolic reasoning
-  - distribution shift
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "abstract reasoning"
+  - "reinforcement-learning"
+  - "GSM robustness"
+  - "symbolic reasoning"
+  - "distribution shift"
 date: 2026-05-08
 content_hash: 7104003ef257f817
 ---

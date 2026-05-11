@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Time in Static Classifiers
 description: >-
-  [AAAI 2026][LLM Pretraining][temporal reasoning] This paper proposes the Support-Exemplar-Query (SEQ) learning framework, which injects temporal reasoning capabilities into standard feed-forward classifiers through loss function design rather than architectural modification. By aligning predicted sequences with class-level temporal prototypes via soft DTW, the method achieves consistent improvements on both fine-grained image classification and video anomaly detection.
+  [AAAI 2026][LLM Pretraining][temporal reasoning] This paper proposes the Support-Exemplar-Query (SEQ) learning framework, which injects temporal reasoning capabilities into standard feed-forward classifiers through loss…
 tags:
-  - AAAI 2026
-  - LLM Pretraining
-  - temporal reasoning
-  - fine-grained classification
-  - soft DTW
-  - temporal prototype alignment
-  - video anomaly detection
+  - "AAAI 2026"
+  - "LLM Pretraining"
+  - "temporal reasoning"
+  - "fine-grained classification"
+  - "soft DTW"
+  - "temporal prototype alignment"
+  - "video anomaly detection"
 date: 2026-05-08
 content_hash: 65f5a3de642ae8ee
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] KineST: A Kinematics-guided Spatiotemporal State Space Model for Human Motion Tracking from Sparse Signals
 description: >-
-  [AAAI 2026][Video Understanding][Whole-body motion tracking] This paper proposes KineST, a kinematics-guided state space model that reconstructs whole-body motion from sparse HMD signals via a kinematic tree bidirectional scanning strategy and hybrid spatiotemporal representation learning, surpassing state-of-the-art methods in both accuracy and temporal consistency.
+  [AAAI 2026][Video Understanding][Whole-body motion tracking] This paper proposes KineST, a kinematics-guided state space model that reconstructs whole-body motion from sparse HMD signals via a kinematic tree bidirectiona…
 tags:
-  - AAAI 2026
-  - Video Understanding
-  - Whole-body motion tracking
-  - state space model
-  - kinematics prior
-  - AR/VR
-  - sparse signals
+  - "AAAI 2026"
+  - "Video Understanding"
+  - "Whole-body motion tracking"
+  - "state space model"
+  - "kinematics prior"
+  - "AR/VR"
+  - "sparse signals"
 date: 2026-05-08
 content_hash: 7751e5341fe98998
 ---

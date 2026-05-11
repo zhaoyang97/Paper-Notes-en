@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] CAD-Recode: Reverse Engineering CAD Code from Point Clouds
 description: >-
-  [ICCV2025][CAD reverse engineering] This paper proposes CAD-Recode, which translates point clouds into executable Python CadQuery code to reconstruct CAD models. By leveraging a pretrained LLM (Qwen2-1.5B) as the decoder paired with a lightweight point cloud encoder, the method achieves more than 10× reduction in Chamfer Distance on three benchmarks: DeepCAD, Fusion360, and CC3D.
+  [ICCV2025][Interpretability][CAD reverse engineering] This paper proposes CAD-Recode, which translates point clouds into executable Python CadQuery code to reconstruct CAD models. By leveraging a pretrained LLM (Qwen2-1.…
 tags:
-  - ICCV2025
-  - CAD reverse engineering
-  - point cloud reconstruction
-  - large language models
-  - CadQuery
-  - Python code generation
+  - "ICCV2025"
+  - "Interpretability"
+  - "CAD reverse engineering"
+  - "point cloud reconstruction"
+  - "large language models"
+  - "CadQuery"
+  - "Python code generation"
 date: 2026-05-08
 content_hash: 17d11cd2dcb9cf6a
 ---

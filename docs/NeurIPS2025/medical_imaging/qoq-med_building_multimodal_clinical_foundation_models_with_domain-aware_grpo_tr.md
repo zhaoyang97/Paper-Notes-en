@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] QoQ-Med: Building Multimodal Clinical Foundation Models with Domain-Aware GRPO Training
 description: >-
-  [NeurIPS 2025][Medical Imaging][Multimodal clinical] QoQ-Med constructs a multimodal clinical foundation model spanning 9 clinical modalities (1D ECG + 6 types of 2D images + 2 types of 3D scans), and proposes Domain-aware Relative Policy Optimization (DRPO)—which employs hierarchical temperature scaling (inter-domain × intra-domain K-means clustering) to address modality/difficulty imbalance. Trained on 2.61 million instruction-tuning pairs, it achieves an average F1 of 0.295 (vs. GRPO 0.193, +52.8%), ranking best in 6 out of 8 modalities.
+  [NeurIPS 2025][Medical Imaging][Multimodal clinical] QoQ-Med constructs a multimodal clinical foundation model spanning 9 clinical modalities (1D ECG + 6 types of 2D images + 2 types of 3D scans)…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Multimodal clinical
-  - GRPO
-  - domain-aware reinforcement learning
-  - ECG + imaging + text
-  - interpretable reasoning
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Multimodal clinical"
+  - "GRPO"
+  - "domain-aware reinforcement learning"
+  - "ECG + imaging + text"
+  - "interpretable reasoning"
 date: 2026-05-08
 content_hash: 48245dea5f9b4830
 ---

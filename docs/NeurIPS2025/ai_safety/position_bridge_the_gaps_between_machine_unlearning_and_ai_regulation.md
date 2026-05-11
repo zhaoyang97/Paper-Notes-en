@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Position: Bridge the Gaps between Machine Unlearning and AI Regulation
 description: >-
-  [NeurIPS 2025][AI Safety][Machine Unlearning] This paper systematically analyzes six potential application scenarios of Machine Unlearning (MU) in compliance with the EU AI Act (AIA), identifies the technical gaps between the state of the art and actual regulatory requirements in each scenario, and calls on the research community to bridge these gaps in order to realize the potential of MU in AI governance.
+  [NeurIPS 2025][AI Safety][Machine Unlearning] This paper systematically analyzes six potential application scenarios of Machine Unlearning (MU) in compliance with the EU AI Act (AIA)…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - Machine Unlearning
-  - AI Regulation
-  - EU AI Act
-  - Data Privacy
-  - Compliance
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "Machine Unlearning"
+  - "AI Regulation"
+  - "EU AI Act"
+  - "Data Privacy"
+  - "Compliance"
 date: 2026-05-08
 content_hash: 65a64dc4752be33e
 ---

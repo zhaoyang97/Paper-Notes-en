@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] An FPGA Implementation of Displacement Vector Search for Intra Pattern Copy in JPEG XS
 description: >-
-  [CVPR 2026][Model Compression][FPGA] To address the computational bottleneck of Displacement Vector (DV) search in the Intra Pattern Copy (IPC) module for JPEG XS screen content coding, this paper proposes the first four-stage pipeline FPGA architecture and designs an IPC Group-aligned memory organization scheme. Implemented on a Xilinx Artix-7, the design achieves a throughput of 38.3 Mpixels/s at 277 mW power consumption, providing a viable solution for practical hardware deployment of IPC.
+  [CVPR 2026][Model Compression][FPGA] To address the computational bottleneck of Displacement Vector (DV) search in the Intra Pattern Copy (IPC) module for JPEG XS screen content coding…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - FPGA
-  - JPEG XS
-  - Intra Pattern Copy
-  - Displacement Vector Search
-  - Hardware Acceleration
+  - "CVPR 2026"
+  - "Model Compression"
+  - "FPGA"
+  - "JPEG XS"
+  - "Intra Pattern Copy"
+  - "Displacement Vector Search"
+  - "Hardware Acceleration"
 date: 2026-05-08
 content_hash: 1a1113fa0844e999
 ---

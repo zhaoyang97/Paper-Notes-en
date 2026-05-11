@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GraphUniverse: Synthetic Graph Generation for Evaluating Inductive Generalization
 description: >-
-  [ICLR2026][Graph Learning][synthetic graph generation] This paper proposes GraphUniverse, a framework that generates graph families with persistent semantic communities via a hierarchical architecture, enabling for the first time a systematic evaluation of inductive generalization in graph learning models. A key finding is that transductive performance cannot reliably predict inductive generalization ability.
+  [ICLR2026][Graph Learning][synthetic graph generation] This paper proposes GraphUniverse, a framework that generates graph families with persistent semantic communities via a hierarchical architecture…
 tags:
-  - ICLR2026
-  - Graph Learning
-  - synthetic graph generation
-  - inductive generalization
-  - graph benchmarking
-  - stochastic block model
-  - distribution shift
+  - "ICLR2026"
+  - "Graph Learning"
+  - "synthetic graph generation"
+  - "inductive generalization"
+  - "graph benchmarking"
+  - "stochastic block model"
+  - "distribution shift"
 date: 2026-05-08
 content_hash: 7c83d0f8f42bb490
 ---

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] HG-Lane: High-Fidelity Generation of Lane Scenes under Adverse Weather and Lighting Conditions without Re-annotation
 description: >-
-  [CVPR 2026][Autonomous Driving][lane detection] To address the severe scarcity of adverse-weather samples in lane detection datasets (CULane/TuSimple), this paper proposes HG-Lane — a two-stage diffusion-based generation framework requiring no re-annotation. Stage-I employs Control Information Fusion and Structure-aware Reverse Diffusion to preserve lane geometry, while Stage-II applies Appearance-aware Refinement to adjust illumination style. The framework generates 30K images across snow/rain/fog/night/dusk conditions. CLRNet achieves an overall mF1 improvement of +20.87%, with +38.8% in snow scenarios.
+  [CVPR 2026][Autonomous Driving][lane detection] To address the severe scarcity of adverse-weather samples in lane detection datasets (CULane/TuSimple)…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - lane detection
-  - adverse weather
-  - diffusion model
-  - ControlNet
-  - data augmentation
-  - CULane
-  - TuSimple
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "lane detection"
+  - "adverse weather"
+  - "diffusion model"
+  - "ControlNet"
+  - "data augmentation"
+  - "CULane"
+  - "TuSimple"
 date: 2026-05-08
 content_hash: 6d9cf876cbe3f9ff
 ---

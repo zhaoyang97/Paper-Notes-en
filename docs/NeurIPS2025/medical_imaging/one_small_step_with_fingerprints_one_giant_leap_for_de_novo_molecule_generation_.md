@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] One Small Step with Fingerprints, One Giant Leap for De Novo Molecule Generation from Mass Spectra
 description: >-
-  [NeurIPS 2025 (AI4Mat Workshop)][Medical Imaging][Mass Spectrometry] By employing MIST as a spectra-to-fingerprint encoder and MolForge as a fingerprint-to-structure decoder, combined with a prior-adjusted thresholding strategy, this work achieves a tenfold performance improvement on the MassSpecGym benchmark for de novo molecular structure generation from mass spectra (top-1 accuracy from 2.3% to 31%).
+  [NeurIPS 2025 (AI4Mat Workshop)][Medical Imaging][Mass Spectrometry] By employing MIST as a spectra-to-fingerprint encoder and MolForge as a fingerprint-to-structure decoder…
 tags:
-  - NeurIPS 2025 (AI4Mat Workshop)
-  - Medical Imaging
-  - Mass Spectrometry
-  - Molecular Fingerprints
-  - De Novo Molecule Generation
-  - MolForge
-  - MIST
+  - "NeurIPS 2025 (AI4Mat Workshop)"
+  - "Medical Imaging"
+  - "Mass Spectrometry"
+  - "Molecular Fingerprints"
+  - "De Novo Molecule Generation"
+  - "MolForge"
+  - "MIST"
 date: 2026-05-08
 content_hash: 43df39708d4980c5
 ---

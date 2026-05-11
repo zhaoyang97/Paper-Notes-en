@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SimWorld-Robotics: Synthesizing Photorealistic and Dynamic Urban Environments for Multimodal Robot Navigation and Collaboration
 description: >-
-  [NeurIPS 2025][Autonomous Driving][simulation] This paper presents SimWorld-Robotics (SWR), a large-scale urban simulation platform built on Unreal Engine 5 that supports procedural generation of unlimited photorealistic city environments. Built upon this platform, two new benchmarks are introduced — SimWorld-MMNav for multimodal navigation and SimWorld-MRS for multi-robot search — which collectively reveal critical capability gaps in current VLMs on outdoor urban tasks.
+  [NeurIPS 2025][Autonomous Driving][simulation] This paper presents SimWorld-Robotics (SWR), a large-scale urban simulation platform built on Unreal Engine 5 that supports procedural generation of unlimited photorealistic…
 tags:
-  - NeurIPS 2025
-  - Autonomous Driving
-  - simulation
-  - embodied-ai
-  - urban-navigation
-  - multi-robot
-  - benchmark
+  - "NeurIPS 2025"
+  - "Autonomous Driving"
+  - "simulation"
+  - "embodied-ai"
+  - "urban-navigation"
+  - "multi-robot"
+  - "benchmark"
 date: 2026-05-08
 content_hash: 3894534319f80305
 ---

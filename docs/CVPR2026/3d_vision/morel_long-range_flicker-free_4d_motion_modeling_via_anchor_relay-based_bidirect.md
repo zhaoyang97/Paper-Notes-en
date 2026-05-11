@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MoRel: Long-Range Flicker-Free 4D Motion Modeling via Anchor Relay-based Bidirectional Blending with Hierarchical Densification
 description: >-
-  [CVPR 2026][3D Vision][4D Gaussian Splatting] To address the challenges of memory explosion, temporal flickering, and occlusion handling in 4D Gaussian Splatting for long-video dynamic scene modeling, this paper proposes MoRel, a framework based on Anchor Relay-based Bidirectional Blending (ARBB). Through progressive construction of keyframe anchors and learnable temporal opacity control, MoRel achieves flicker-free, memory-bounded long-range 4D motion reconstruction.
+  [CVPR 2026][3D Vision][4D Gaussian Splatting] To address the challenges of memory explosion, temporal flickering, and occlusion handling in 4D Gaussian Splatting for long-video dynamic scene modeling…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 4D Gaussian Splatting
-  - dynamic scene reconstruction
-  - long video modeling
-  - temporal consistency
-  - memory efficiency
+  - "CVPR 2026"
+  - "3D Vision"
+  - "4D Gaussian Splatting"
+  - "dynamic scene reconstruction"
+  - "long video modeling"
+  - "temporal consistency"
+  - "memory efficiency"
 date: 2026-05-08
 content_hash: 62dd7048a0396cc8
 ---

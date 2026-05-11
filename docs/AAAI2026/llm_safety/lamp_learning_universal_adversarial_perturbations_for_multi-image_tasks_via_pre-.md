@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LAMP: Learning Universal Adversarial Perturbations for Multi-Image Tasks via Pre-trained Models
 description: >-
-  [AAAI2026][LLM Safety][Universal Adversarial Perturbation] This paper proposes LAMP, a black-box Universal Adversarial Perturbation (UAP) learning method targeting multi-image MLLMs. By incorporating attention constraints and a contagious loss, LAMP enables cross-model and cross-task transferable attacks by perturbing only a small subset of input images.
+  [AAAI2026][LLM Safety][Universal Adversarial Perturbation] This paper proposes LAMP, a black-box Universal Adversarial Perturbation (UAP) learning method targeting multi-image MLLMs. By incorporating attention constraint…
 tags:
-  - AAAI2026
-  - LLM Safety
-  - Universal Adversarial Perturbation
-  - Multi-Image MLLM
-  - Black-box Attack
-  - Attention Manipulation
-  - Transferable Attack
+  - "AAAI2026"
+  - "LLM Safety"
+  - "Universal Adversarial Perturbation"
+  - "Multi-Image MLLM"
+  - "Black-box Attack"
+  - "Attention Manipulation"
+  - "Transferable Attack"
 date: 2026-05-08
 content_hash: 15b06f577a9d60cf
 ---

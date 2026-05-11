@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Differentially Private Bilevel Optimization: Efficient Algorithms with Near-Optimal Rates
 description: >-
-  [NeurIPS 2025][AI Safety][Bilevel Optimization] This paper systematically studies bilevel optimization under differential privacy (DP). For the convex setting, it establishes near-tight upper and lower bounds via the exponential mechanism and regularized exponential mechanism, matching the optimal rate of single-level DP-ERM. For the non-convex setting, it proposes a second-order DP method achieving state-of-the-art convergence rates that are independent of the inner-level dimension.
+  [NeurIPS 2025][AI Safety][Bilevel Optimization] This paper systematically studies bilevel optimization under differential privacy (DP). For the convex setting…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - Bilevel Optimization
-  - Differential Privacy
-  - Exponential Mechanism
-  - Log-Concave Sampling
-  - Non-Convex Optimization
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "Bilevel Optimization"
+  - "Differential Privacy"
+  - "Exponential Mechanism"
+  - "Log-Concave Sampling"
+  - "Non-Convex Optimization"
 date: 2026-05-08
 content_hash: 090a17d46b8a7d08
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Simba: Towards High-Fidelity and Geometrically-Consistent Point Cloud Completion via Transformation Diffusion
 description: >-
-  [AAAI 2026][3D Vision][Point Cloud Completion] This paper proposes Simba, a framework that, for the first time, reformulates point cloud completion as diffusion over a geometric transformation field rather than over point coordinates. A Sym-Diffuser learns the conditional distribution of per-point affine transformations to generate coarse completions, which are then progressively refined to high-fidelity outputs via a cascaded Mamba architecture (MBA-Refiner). Simba achieves state-of-the-art performance on PCN, ShapeNet, and KITTI benchmarks.
+  [AAAI 2026][3D Vision][Point Cloud Completion] This paper proposes Simba, a framework that, for the first time, reformulates point cloud completion as diffusion over a geometric transformation field rather than over poin…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - Point Cloud Completion
-  - Diffusion Models
-  - Symmetry Prior
-  - Mamba
-  - Affine Transformation
+  - "AAAI 2026"
+  - "3D Vision"
+  - "Point Cloud Completion"
+  - "Diffusion Models"
+  - "Symmetry Prior"
+  - "Mamba"
+  - "Affine Transformation"
 date: 2026-05-08
 content_hash: c1783fcc19f91e6e
 ---

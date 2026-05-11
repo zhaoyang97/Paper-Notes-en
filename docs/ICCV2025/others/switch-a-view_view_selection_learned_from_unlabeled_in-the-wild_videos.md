@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Switch-a-View: View Selection Learned from Unlabeled In-the-wild Videos
 description: >-
-  [ICCV 2025][View selection] This paper proposes Switch-a-view, a model that learns view-switching patterns (ego/exo) from large-scale unlabeled in-the-wild instructional videos to enable automatic view selection in multi-view instructional videos, without requiring explicit best-view annotations.
+  [ICCV 2025][View selection] This paper proposes Switch-a-view, a model that learns view-switching patterns (ego/exo) from large-scale unlabeled in-the-wild instructional videos to enable automatic view selection in multi…
 tags:
-  - ICCV 2025
-  - View selection
-  - instructional videos
-  - multi-view video
-  - weakly supervised learning
-  - automatic cinematography
+  - "ICCV 2025"
+  - "View selection"
+  - "instructional videos"
+  - "multi-view video"
+  - "weakly supervised learning"
+  - "automatic cinematography"
 date: 2026-05-08
 content_hash: 21096fb256e80cc1
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Efficient Adaptation of Pre-Trained Vision Transformer Underpinned by Approximation Theory
 description: >-
-  [ICCV 2025][Model Compression][parameter-efficient fine-tuning] This paper identifies that the row/column vectors of pre-trained ViT weight matrices exhibit approximate orthogonality, whereas the projection matrices learned by LoRA/Adapter do not. The authors propose AOFT, a strategy that generates approximately orthogonal down/up projection matrices from a single learnable vector, aligning the adaptation modules with the properties of the backbone network. This reduces the generalization error bound and achieves competitive performance on FGVC and VTAB-1k with fewer parameters.
+  [ICCV 2025][Model Compression][parameter-efficient fine-tuning] This paper identifies that the row/column vectors of pre-trained ViT weight matrices exhibit approximate orthogonality…
 tags:
-  - ICCV 2025
-  - Model Compression
-  - parameter-efficient fine-tuning
-  - approximate orthogonality
-  - LoRA
-  - Adapter
-  - Vision Transformer
+  - "ICCV 2025"
+  - "Model Compression"
+  - "parameter-efficient fine-tuning"
+  - "approximate orthogonality"
+  - "LoRA"
+  - "Adapter"
+  - "Vision Transformer"
 date: 2026-05-08
 content_hash: 29fce5f92240c275
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] PCR-GS: COLMAP-Free 3D Gaussian Splatting via Pose Co-Regularizations
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] PCR-GS is proposed to achieve high-quality 3D-GS reconstruction and pose estimation under complex camera trajectories without COLMAP priors, via co-regularizing camera poses through DINO feature reprojection regularization and wavelet-based frequency regularization.
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] PCR-GS is proposed to achieve high-quality 3D-GS reconstruction and pose estimation under complex camera trajectories without COLMAP priors…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - COLMAP-Free
-  - Camera Pose Estimation
-  - DINO Features
-  - Wavelet Transform
-  - Novel View Synthesis
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "COLMAP-Free"
+  - "Camera Pose Estimation"
+  - "DINO Features"
+  - "Wavelet Transform"
+  - "Novel View Synthesis"
 date: 2026-05-08
 content_hash: b13e3465d70aad1c
 ---

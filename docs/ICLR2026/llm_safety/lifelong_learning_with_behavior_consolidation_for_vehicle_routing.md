@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Lifelong Learning with Behavior Consolidation for Vehicle Routing
 description: >-
-  [ICLR 2026][LLM Safety][Lifelong Learning] This paper proposes LLR-BC, a framework for lifelong learning in neural VRP solvers. By combining decision-step-level experience buffers, Confidence-aware Experience Weighting (CaEW), and Decision-seeking Behavior Consolidation via reverse KL divergence (DsBC), LLR-BC reduces the Average Performance gap (AP) by an order of magnitude on task sequences with simultaneously shifting distributions and scales, while preserving plasticity for new tasks and improving zero-shot generalization.
+  [ICLR 2026][LLM Safety][Lifelong Learning] This paper proposes LLR-BC, a framework for lifelong learning in neural VRP solvers. By combining decision-step-level experience buffers…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Lifelong Learning
-  - Vehicle Routing Problem
-  - Catastrophic Forgetting
-  - Experience Replay
-  - Behavior Consolidation
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Lifelong Learning"
+  - "Vehicle Routing Problem"
+  - "Catastrophic Forgetting"
+  - "Experience Replay"
+  - "Behavior Consolidation"
 date: 2026-05-08
 content_hash: 4397eb04165895b0
 ---

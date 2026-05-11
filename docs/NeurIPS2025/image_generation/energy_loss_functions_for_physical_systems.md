@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Energy Loss Functions for Physical Systems
 description: >-
-  [NeurIPS 2025][Image Generation][Energy loss functions] This paper proposes a physics-based energy loss function framework. By deriving an energy-difference loss grounded in pairwise distances via reverse KL divergence and the Boltzmann distribution, the framework naturally satisfies SE(d) invariance and substantially outperforms MSE and cross-entropy losses on molecular generation and spin ground-state prediction tasks.
+  [NeurIPS 2025][Image Generation][Energy loss functions] This paper proposes a physics-based energy loss function framework. By deriving an energy-difference loss grounded in pairwise distances via reverse KL divergence a…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Energy loss functions
-  - physical priors
-  - diffusion models
-  - symmetry invariance
-  - molecular generation
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Energy loss functions"
+  - "physical priors"
+  - "diffusion models"
+  - "symmetry invariance"
+  - "molecular generation"
 date: 2026-05-08
 content_hash: 0d33d991f632efb1
 ---

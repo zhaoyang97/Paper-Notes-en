@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RA-RRG: Multimodal Retrieval-Augmented Radiology Report Generation with Key Phrase Extraction
 description: >-
-  [ACL 2026][Medical Imaging][radiology report generation] This paper proposes RA-RRG, a framework that leverages an LLM to extract clinically relevant key phrases from radiology reports and construct a retrieval database. Given a chest X-ray image, relevant phrases are retrieved and fed to an LLM for report generation—without any LLM fine-tuning—effectively suppressing hallucinations. The approach requires only 18 GPU hours of training and achieves state-of-the-art performance on CheXbert metrics.
+  [ACL 2026][Medical Imaging][radiology report generation] This paper proposes RA-RRG, a framework that leverages an LLM to extract clinically relevant key phrases from radiology reports and construct a retrieval database.…
 tags:
-  - ACL 2026
-  - Medical Imaging
-  - radiology report generation
-  - retrieval-augmented generation
-  - key phrase extraction
-  - hallucination suppression
-  - multi-view
+  - "ACL 2026"
+  - "Medical Imaging"
+  - "radiology report generation"
+  - "retrieval-augmented generation"
+  - "key phrase extraction"
+  - "hallucination suppression"
+  - "multi-view"
 date: 2026-05-08
 content_hash: 87a0b84741007cca
 ---

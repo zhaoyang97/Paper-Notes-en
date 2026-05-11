@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Polynomial, trigonometric, and tropical activations
 description: >-
-  [ICLR 2026][LLM Pretraining][Activation functions] This paper systematically explores learnable activation function families based on orthogonal bases (Hermite polynomials, Fourier trigonometric basis) and tropicalization, addressing the gradient explosion/vanishing problem of polynomial activations via variance-preserving initialization, and successfully replacing GELU in GPT-2 and ConvNeXt to enable stable training.
+  [ICLR 2026][LLM Pretraining][Activation functions] This paper systematically explores learnable activation function families based on orthogonal bases (Hermite polynomials…
 tags:
-  - ICLR 2026
-  - LLM Pretraining
-  - Activation functions
-  - Hermite polynomials
-  - Fourier trigonometric basis
-  - Tropical polynomials
-  - Variance-preserving initialization
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Activation functions"
+  - "Hermite polynomials"
+  - "Fourier trigonometric basis"
+  - "Tropical polynomials"
+  - "Variance-preserving initialization"
 date: 2026-05-08
 content_hash: 9f24df0eaaec1a53
 ---

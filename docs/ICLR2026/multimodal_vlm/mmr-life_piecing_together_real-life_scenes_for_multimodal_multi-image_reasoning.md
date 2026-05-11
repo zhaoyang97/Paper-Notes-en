@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MMR-Life: Piecing Together Real-life Scenes for Multimodal Multi-image Reasoning
 description: >-
-  [ICLR 2026][Multimodal VLM][Multimodal reasoning] This paper introduces MMR-Life, a benchmark comprising 2,646 five-choice multi-image questions based on 19,108 real-life images, covering 7 reasoning types and 21 tasks. It is the first systematic evaluation of MLLMs on multi-image reasoning in real-life scenarios. The strongest model, GPT-5, achieves only 58.69% accuracy—14 percentage points below human performance. Key findings include the failure of reasoning enhancement methods on large models and the weaker generalization of RL compared to BoN.
+  [ICLR 2026][Multimodal VLM][Multimodal reasoning] This paper introduces MMR-Life, a benchmark comprising 2,646 five-choice multi-image questions based on 19,108 real-life images…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Multimodal reasoning
-  - multi-image reasoning
-  - real-life scenes
-  - reasoning types
-  - benchmark evaluation
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Multimodal reasoning"
+  - "multi-image reasoning"
+  - "real-life scenes"
+  - "reasoning types"
+  - "benchmark evaluation"
 date: 2026-05-08
 content_hash: ae81ba7bf5714bea
 ---

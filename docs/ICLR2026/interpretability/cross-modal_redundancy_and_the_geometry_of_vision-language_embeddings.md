@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Cross-Modal Redundancy and the Geometry of Vision-Language Embeddings
 description: >-
-  [ICLR 2026][modality gap] This paper proposes the Iso-Energy hypothesis — that concepts genuinely shared across modalities should exhibit equal average activation energy in each modality — and introduces Aligned SAE as an analytical tool to reveal the geometric structure of VLM embedding spaces, where bimodal atoms carry cross-modal alignment signals and unimodal atoms fully account for the modality gap.
+  [ICLR 2026][Interpretability][modality gap] This paper proposes the Iso-Energy hypothesis — that concepts genuinely shared across modalities should exhibit equal average activation energy in each modality — and introduce…
 tags:
-  - ICLR 2026
-  - modality gap
-  - sparse autoencoders
-  - cross-modal redundancy
-  - iso-energy hypothesis
-  - VLM interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "modality gap"
+  - "sparse autoencoders"
+  - "cross-modal redundancy"
+  - "iso-energy hypothesis"
+  - "VLM interpretability"
 date: 2026-05-08
 content_hash: 50f48ace68a9fb4f
 ---

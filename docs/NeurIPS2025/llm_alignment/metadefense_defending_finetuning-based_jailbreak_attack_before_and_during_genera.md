@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MetaDefense: Defending Finetuning-based Jailbreak Attack Before and During Generation
 description: >-
-  [NeurIPS 2025][LLM Alignment][jailbreak defense] This paper proposes MetaDefense, a two-stage (pre-generation + mid-generation) defense framework that trains the LLM itself to predict the harmfulness of queries and partial responses, defending against finetuning-based jailbreak attacks without external classifiers, achieving 2× memory efficiency.
+  [NeurIPS 2025][LLM Alignment][jailbreak defense] This paper proposes MetaDefense, a two-stage (pre-generation + mid-generation) defense framework that trains the LLM itself to predict the harmfulness of queries and parti…
 tags:
-  - NeurIPS 2025
-  - LLM Alignment
-  - jailbreak defense
-  - finetuning safety
-  - mid-generation defense
-  - LLM safety alignment
-  - meta defense
+  - "NeurIPS 2025"
+  - "LLM Alignment"
+  - "jailbreak defense"
+  - "finetuning safety"
+  - "mid-generation defense"
+  - "LLM safety alignment"
+  - "meta defense"
 date: 2026-05-08
 content_hash: ca40f00e2342ea7b
 ---

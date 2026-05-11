@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Vision Transformers are Circulant Attention Learners
 description: >-
-  [AAAI 2026][LLM/NLP][Vision Transformer] This paper discovers that self-attention matrices in ViTs inherently learn Block Circulant with Circulant Blocks (BCCB) patterns, and proposes Circulant Attention, which achieves $O(N\log N)$ complexity via 2D FFT, yielding consistent improvements on ImageNet classification, COCO detection, and ADE20K segmentation.
+  [AAAI 2026][LLM/NLP][Vision Transformer] This paper discovers that self-attention matrices in ViTs inherently learn Block Circulant with Circulant Blocks (BCCB) patterns, and proposes Circulant Attention…
 tags:
-  - AAAI 2026
-  - LLM/NLP
-  - Vision Transformer
-  - Circulant Attention
-  - BCCB
-  - FFT
-  - Efficient Attention
+  - "AAAI 2026"
+  - "LLM/NLP"
+  - "Vision Transformer"
+  - "Circulant Attention"
+  - "BCCB"
+  - "FFT"
+  - "Efficient Attention"
 date: 2026-05-08
 content_hash: cfa07d82157e0163
 ---

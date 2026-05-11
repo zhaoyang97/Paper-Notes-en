@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Bootstrapping MLLM for Weakly-Supervised Class-Agnostic Object Counting (WS-COC)
 description: >-
-  [ICLR 2026][Multimodal VLM][object counting] This paper proposes WS-COC, the first MLLM-based weakly supervised class-agnostic object counting framework. Through three strategies — divide-and-discern dialogue tuning (progressively narrowing the counting range), comparative ranking optimization (learning relative counting relationships across images), and global-local counting enhancement — WS-COC achieves performance comparable to or surpassing fully supervised methods using only image-level count annotations.
+  [ICLR 2026][Multimodal VLM][object counting] This paper proposes WS-COC, the first MLLM-based weakly supervised class-agnostic object counting framework. Through three strategies — divide-and-discern dialogue tuning (pro…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - object counting
-  - weakly supervised
-  - MLLM
-  - class-agnostic
-  - dialogue tuning
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "object counting"
+  - "weakly supervised"
+  - "MLLM"
+  - "class-agnostic"
+  - "dialogue tuning"
 date: 2026-05-08
 content_hash: ae0c63e4c19c188e
 ---

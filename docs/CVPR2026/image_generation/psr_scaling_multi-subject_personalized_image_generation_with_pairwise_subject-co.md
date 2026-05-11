@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PSR: Scaling Multi-Subject Personalized Image Generation with Pairwise Subject-Consistency Rewards
 description: >-
-  [CVPR 2026][Image Generation][Multi-subject personalized generation] To address poor subject consistency and insufficient text adherence in multi-subject personalized image generation, this paper proposes a scalable multi-subject data construction pipeline and Pairwise Subject-Consistency Rewards (PSR). Through two-stage training (SFT + RL), the method comprehensively outperforms existing state-of-the-art methods on the self-constructed PSRBench.
+  [CVPR 2026][Image Generation][Multi-subject personalized generation] To address poor subject consistency and insufficient text adherence in multi-subject personalized image generation…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Multi-subject personalized generation
-  - subject consistency
-  - reinforcement learning
-  - pairwise reward
-  - positional encoding
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Multi-subject personalized generation"
+  - "subject consistency"
+  - "reinforcement learning"
+  - "pairwise reward"
+  - "positional encoding"
 date: 2026-05-08
 content_hash: 8cd8c2d48d91e0fb
 ---

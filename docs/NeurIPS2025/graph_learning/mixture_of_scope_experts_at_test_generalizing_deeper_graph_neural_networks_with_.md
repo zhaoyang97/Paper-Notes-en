@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Moscat: Mixture of Scope Experts at Test for Generalizing Deeper GNNs
 description: >-
-  [NeurIPS 2025][Graph Learning][GNN depth dilemma] Grounded in PAC-Bayes generalization theory, this paper proves that varying GNN depth induces generalization preference drift across node subgroups with different homophily levels. It proposes Moscat—a post-processing attention-gating model that adaptively fuses independently trained GNN experts of different depths at test time on a per-node basis—achieving significant improvements across diverse GNN architectures and datasets.
+  [NeurIPS 2025][Graph Learning][GNN depth dilemma] Grounded in PAC-Bayes generalization theory, this paper proves that varying GNN depth induces generalization preference drift across node subgroups with different homophi…
 tags:
-  - NeurIPS 2025
-  - Graph Learning
-  - GNN depth dilemma
-  - PAC-Bayes bound
-  - decoupled mixture of experts
-  - test-time gating
-  - homophily subgroups
+  - "NeurIPS 2025"
+  - "Graph Learning"
+  - "GNN depth dilemma"
+  - "PAC-Bayes bound"
+  - "decoupled mixture of experts"
+  - "test-time gating"
+  - "homophily subgroups"
 date: 2026-05-08
 content_hash: 652cc1ba2f9fecff
 ---

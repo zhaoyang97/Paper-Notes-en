@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The Implicit Bias of Structured State Space Models Can Be Poisoned With Clean Labels
 description: >-
-  [NeurIPS 2025][Optimization][Implicit Bias] This paper provides the first theoretical proof that the implicit bias of Structured State Space Models (SSMs) can be poisoned by clean-label training samples — specifically, there exist specially constructed training examples whose labels are correctly assigned by a teacher model, yet their inclusion fundamentally distorts the implicit bias of SSMs, causing complete generalization failure.
+  [NeurIPS 2025][Optimization][Implicit Bias] This paper provides the first theoretical proof that the implicit bias of Structured State Space Models (SSMs) can be poisoned by clean-label training samples — specifically…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Implicit Bias
-  - State Space Models
-  - Clean-Label Poisoning
-  - Generalization Theory
-  - SSM
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Implicit Bias"
+  - "State Space Models"
+  - "Clean-Label Poisoning"
+  - "Generalization Theory"
+  - "SSM"
 date: 2026-05-08
 content_hash: 5b2ac74573222ea0
 ---

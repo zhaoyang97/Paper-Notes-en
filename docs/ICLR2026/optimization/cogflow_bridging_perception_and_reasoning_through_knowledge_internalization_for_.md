@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CogFlow: Bridging Perception and Reasoning through Knowledge Internalization for Visual Mathematical Problem Solving
 description: >-
-  [ICLR 2026][Optimization][Visual mathematical reasoning] CogFlow proposes a cognition-inspired three-stage visual mathematical reasoning framework (Perception → Internalization → Reasoning), enhanced by Synergistic Visual Rewards for perception, a Knowledge Internalization Reward to bridge perception and reasoning, and Visual-Gated Policy Optimization to anchor visual reasoning, addressing the core problem of "correct perception but drifted reasoning" in existing methods.
+  [ICLR 2026][Optimization][Visual mathematical reasoning] CogFlow proposes a cognition-inspired three-stage visual mathematical reasoning framework (Perception → Internalization → Reasoning)…
 tags:
-  - ICLR 2026
-  - Optimization
-  - Visual mathematical reasoning
-  - knowledge internalization
-  - GRPO
-  - perception-reasoning alignment
-  - cognition-inspired
+  - "ICLR 2026"
+  - "Optimization"
+  - "Visual mathematical reasoning"
+  - "knowledge internalization"
+  - "GRPO"
+  - "perception-reasoning alignment"
+  - "cognition-inspired"
 date: 2026-05-08
 content_hash: 38065a09b891ed8d
 ---

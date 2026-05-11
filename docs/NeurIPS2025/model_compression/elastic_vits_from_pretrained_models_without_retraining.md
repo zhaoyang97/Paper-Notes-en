@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Elastic ViTs from Pretrained Models without Retraining
 description: >-
-  [NeurIPS 2025][Model Compression][Vision Transformer Pruning] SnapViT proposes a post-training structured pruning method that combines a local Hessian diagonal approximation derived from self-supervised gradients with global cross-module correlations estimated via evolutionary algorithms. Without any retraining or labels, it generates elastic ViT sub-networks spanning continuous sparsity levels in a single run, requiring less than 5 minutes on an A100 GPU.
+  [NeurIPS 2025][Model Compression][Vision Transformer Pruning] SnapViT proposes a post-training structured pruning method that combines a local Hessian diagonal approximation derived from self-supervised gradients with gl…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Vision Transformer Pruning
-  - Elastic Inference
-  - Hessian Approximation
-  - Evolutionary Algorithms
-  - Self-Supervised Importance Scoring
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Vision Transformer Pruning"
+  - "Elastic Inference"
+  - "Hessian Approximation"
+  - "Evolutionary Algorithms"
+  - "Self-Supervised Importance Scoring"
 date: 2026-05-08
 content_hash: e8d28fbbc80e3349
 ---

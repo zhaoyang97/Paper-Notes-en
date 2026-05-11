@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HoPE: Hybrid of Position Embedding for Long Context Vision-Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Rotary Position Embedding] This work presents the first theoretical analysis of frequency allocation strategies in multimodal RoPE for long-context VLMs. It proposes HoPE, which sets the lowest frequency to zero for temporal modeling to guarantee the semantic preference property, coupled with a dynamic temporal scaling mechanism, achieving gains of 8.35% on long video understanding and 22.23% on retrieval tasks.
+  [NeurIPS 2025][Multimodal VLM][Rotary Position Embedding] This work presents the first theoretical analysis of frequency allocation strategies in multimodal RoPE for long-context VLMs. It proposes HoPE…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Rotary Position Embedding
-  - Long Context
-  - Frequency Allocation
-  - Vision-Language Models
-  - Video Understanding
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Rotary Position Embedding"
+  - "Long Context"
+  - "Frequency Allocation"
+  - "Vision-Language Models"
+  - "Video Understanding"
 date: 2026-05-08
 content_hash: 5473f6693aeb7a24
 ---

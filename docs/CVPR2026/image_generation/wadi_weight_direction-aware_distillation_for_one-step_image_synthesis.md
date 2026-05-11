@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] WaDi: Weight Direction-aware Distillation for One-step Image Synthesis
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Distillation] By decomposing weight changes during distillation into norm and direction components, this work finds that directional change is the primary driver of distillation (with a magnitude 22× larger than norm change). It proposes LoRaD (Low-Rank Weight Direction Rotation) adapters, integrated into the VSD framework to form WaDi, achieving state-of-the-art one-step FID on COCO with only ~10% trainable parameters.
+  [CVPR 2026][Image Generation][Diffusion Distillation] By decomposing weight changes during distillation into norm and direction components…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Distillation
-  - Weight Direction
-  - Low-Rank Rotation
-  - One-Step Generation
-  - Parameter Efficiency
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Distillation"
+  - "Weight Direction"
+  - "Low-Rank Rotation"
+  - "One-Step Generation"
+  - "Parameter Efficiency"
 date: 2026-05-08
 content_hash: 52a856e18beec2fb
 ---

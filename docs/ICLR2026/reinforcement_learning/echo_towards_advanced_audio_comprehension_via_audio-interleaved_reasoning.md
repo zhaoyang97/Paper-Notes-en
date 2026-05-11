@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Echo: Towards Advanced Audio Comprehension via Audio-Interleaved Reasoning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Audio Understanding] This paper proposes a novel paradigm called audio-interleaved reasoning, which treats audio as an active component during inference rather than a static context, enabling LALMs to dynamically locate and re-listen to audio segments during the reasoning process. Through a two-stage SFT+RL training framework and a structured data generation pipeline, the authors build the Echo model, which surpasses GPT-4o and Gemini-2.0-Flash on both expert-level and general audio understanding benchmarks.
+  [ICLR 2026][Reinforcement Learning][Audio Understanding] This paper proposes a novel paradigm called audio-interleaved reasoning, which treats audio as an active component during inference rather than a static context…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Audio Understanding
-  - Large Audio-Language Models
-  - Audio-Interleaved Reasoning
-  - Chain-of-Thought
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Audio Understanding"
+  - "Large Audio-Language Models"
+  - "Audio-Interleaved Reasoning"
+  - "Chain-of-Thought"
 date: 2026-05-08
 content_hash: afa5ccab6fde1cf5
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MathFlow: Enhancing the Perceptual Flow of MLLMs for Visual Mathematical Problems
 description: >-
-  [ACL 2026][Multimodal VLM][Visual mathematical reasoning] This work proposes the FlowVerse benchmark—which decomposes mathematical problem information into four components (DI/EI/RP/OQ) and constructs six variant versions—and the MathFlow modular pipeline, which decouples perception and reasoning into independent stages. A dedicated perception model, MathFlow-P-7B, is trained to extract critical information from mathematical diagrams, substantially improving visual mathematical problem-solving performance across diverse reasoning models.
+  [ACL 2026][Multimodal VLM][Visual mathematical reasoning] This work proposes the FlowVerse benchmark—which decomposes mathematical problem information into four components (DI/EI/RP/OQ) and constructs six variant version…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Visual mathematical reasoning
-  - multimodal large language models
-  - perception-reasoning decoupling
-  - mathematical diagram understanding
-  - benchmarking
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Visual mathematical reasoning"
+  - "multimodal large language models"
+  - "perception-reasoning decoupling"
+  - "mathematical diagram understanding"
+  - "benchmarking"
 date: 2026-05-08
 content_hash: e59a6408f355ea0d
 ---

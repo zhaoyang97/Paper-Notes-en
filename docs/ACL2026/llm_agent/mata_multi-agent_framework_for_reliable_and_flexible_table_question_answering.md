@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MATA: Multi-Agent Framework for Reliable and Flexible Table Question Answering
 description: >-
-  [ACL 2026][LLM Agent][Table Question Answering] This paper proposes MATA, a multi-agent framework for table question answering that employs a scheduler to prioritize reasoning paths (CoT/PoT/text2SQL), a confidence checker to filter candidate answers, and a judge agent for arbitration. The framework achieves model-agnostic, efficient, and accurate TableQA, with an average EM improvement of 40.1% across 10 LLMs.
+  [ACL 2026][LLM Agent][Table Question Answering] This paper proposes MATA, a multi-agent framework for table question answering that employs a scheduler to prioritize reasoning paths (CoT/PoT/text2SQL)…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - Table Question Answering
-  - Multi-Agent Framework
-  - Multi-Reasoning Paths
-  - Model-Agnostic
-  - LLM Efficiency
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Table Question Answering"
+  - "Multi-Agent Framework"
+  - "Multi-Reasoning Paths"
+  - "Model-Agnostic"
+  - "LLM Efficiency"
 date: 2026-05-08
 content_hash: 48696bcb2c89201f
 ---

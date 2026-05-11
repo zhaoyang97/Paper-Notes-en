@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Human Knowledge Integrated Multi-modal Learning for Single Source Domain Generalization
 description: >-
-  [CVPR 2026][Medical Imaging][Single source domain generalization] This paper proposes GenEval, which quantifies causal coverage gaps via a Domain Conformal Bound (DCB), distills human expert knowledge, and integrates it with a medical VLM (MedGemma-4B) through LoRA fine-tuning for single source domain generalization (SDG), achieving substantial gains over baselines on DR grading and seizure onset zone (SOZ) detection.
+  [CVPR 2026][Medical Imaging][Single source domain generalization] This paper proposes GenEval, which quantifies causal coverage gaps via a Domain Conformal Bound (DCB), distills human expert knowledge…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Single source domain generalization
-  - vision-language model
-  - causal coverage
-  - conformal inference
-  - diabetic retinopathy
-  - LoRA fine-tuning
-  - MedGemma
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Single source domain generalization"
+  - "vision-language model"
+  - "causal coverage"
+  - "conformal inference"
+  - "diabetic retinopathy"
+  - "LoRA fine-tuning"
+  - "MedGemma"
 date: 2026-05-08
 content_hash: d5e545157d839e64
 ---

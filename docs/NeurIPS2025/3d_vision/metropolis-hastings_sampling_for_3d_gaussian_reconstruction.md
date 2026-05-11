@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Metropolis-Hastings Sampling for 3D Gaussian Reconstruction
 description: >-
-  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] This paper proposes an adaptive Metropolis-Hastings framework to replace the heuristic density control mechanism in 3DGS. Through probabilistic sampling driven by multi-view photometric error, it achieves more efficient inference of Gaussian distributions and converges faster than 3DGS-MCMC.
+  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] This paper proposes an adaptive Metropolis-Hastings framework to replace the heuristic density control mechanism in 3DGS. Through probabilistic sampling driven by multi-vi…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - Metropolis-Hastings
-  - Adaptive Density Control
-  - Novel View Synthesis
-  - MCMC
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Metropolis-Hastings"
+  - "Adaptive Density Control"
+  - "Novel View Synthesis"
+  - "MCMC"
 date: 2026-05-08
 content_hash: 53049a972dfffe32
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning from the Undesirable: Robust Adaptation of Language Models without Forgetting
 description: >-
-  [AAAI 2026][LLM Safety][Supervised Fine-Tuning] This paper proposes Learning-from-the-Undesirable (LfU), a regularization method for SFT that simulates "undesirable behavior" by applying gradient ascent to an auxiliary model, then enforces representation-level consistency between the original and auxiliary models via an MSE loss. This effectively mitigates overfitting, catastrophic forgetting, and adversarial fragility in limited-data fine-tuning.
+  [AAAI 2026][LLM Safety][Supervised Fine-Tuning] This paper proposes Learning-from-the-Undesirable (LfU), a regularization method for SFT that simulates "undesirable behavior" by applying gradient ascent to an auxiliary m…
 tags:
-  - AAAI 2026
-  - LLM Safety
-  - Supervised Fine-Tuning
-  - Overfitting Mitigation
-  - Consistency Regularization
-  - Knowledge Retention
-  - Adversarial Robustness
+  - "AAAI 2026"
+  - "LLM Safety"
+  - "Supervised Fine-Tuning"
+  - "Overfitting Mitigation"
+  - "Consistency Regularization"
+  - "Knowledge Retention"
+  - "Adversarial Robustness"
 date: 2026-05-08
 content_hash: 005f32191fa54053
 ---

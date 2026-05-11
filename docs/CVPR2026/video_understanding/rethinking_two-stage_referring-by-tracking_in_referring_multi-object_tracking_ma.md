@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FlexHook: Rethinking Two-Stage Referring-by-Tracking in RMOT
 description: >-
-  [CVPR 2026][Video Understanding][Referring Multi-Object Tracking] This paper proposes FlexHook, a novel two-stage Referring-by-Tracking framework that redefines feature construction via a sampling-based Conditioning Hook (C-Hook) and replaces CLIP cosine similarity matching with a Pairwise Correspondence Decoder (PCD), making a two-stage method comprehensively surpass current state-of-the-art one-stage methods for the first time.
+  [CVPR 2026][Video Understanding][Referring Multi-Object Tracking] This paper proposes FlexHook, a novel two-stage Referring-by-Tracking framework that redefines feature construction via a sampling-based Conditioning Hook…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Referring Multi-Object Tracking
-  - Two-Stage RBT
-  - Sampling-Based Feature Construction
-  - Pairwise Correspondence Decoding
-  - Language-Conditioned Enhancement
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Referring Multi-Object Tracking"
+  - "Two-Stage RBT"
+  - "Sampling-Based Feature Construction"
+  - "Pairwise Correspondence Decoding"
+  - "Language-Conditioned Enhancement"
 date: 2026-05-08
 content_hash: 7a7994c289e0eec1
 ---

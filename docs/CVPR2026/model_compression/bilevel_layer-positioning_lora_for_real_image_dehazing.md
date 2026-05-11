@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Bilevel Layer-Positioning LoRA for Real Image Dehazing
 description: >-
-  [CVPR2026][Model Compression][image dehazing] This paper proposes BiLaLoRA, which employs bilevel optimization to automatically identify the optimal network layers for LoRA insertion, coupled with H2C Loss — an unsupervised dehazing loss based on CLIP semantic directions — to efficiently adapt synthetic-data-pretrained dehazing models to real-world scenes. The approach reduces training time by 77.7% while matching full fine-tuning performance, and generalizes across models and domains.
+  [CVPR2026][Model Compression][image dehazing] This paper proposes BiLaLoRA, which employs bilevel optimization to automatically identify the optimal network layers for LoRA insertion…
 tags:
-  - CVPR2026
-  - Model Compression
-  - image dehazing
-  - LoRA
-  - bilevel optimization
-  - CLIP
-  - unsupervised adaptation
-  - parameter-efficient fine-tuning
+  - "CVPR2026"
+  - "Model Compression"
+  - "image dehazing"
+  - "LoRA"
+  - "bilevel optimization"
+  - "CLIP"
+  - "unsupervised adaptation"
+  - "parameter-efficient fine-tuning"
 date: 2026-05-08
 content_hash: 8dd59c666e7ae26b
 ---

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Are We Measuring Oversmoothing in Graph Neural Networks Correctly?
 description: >-
-  [ICLR 2026][Graph Learning][oversmoothing] This paper identifies that the widely adopted Dirichlet energy metric fails to correctly capture oversmoothing in GNNs under practical settings. It proposes the numerical/effective rank (Erank) of the feature representation matrix as an alternative measure. Empirically, Erank achieves an average correlation of 0.91 with accuracy (vs. 0.72 for Dirichlet energy), while on OGB-Arxiv, Dirichlet energy even exhibits an incorrect correlation direction. The paper further provides theoretical proofs that the numerical rank converges to 1 (rank collapse) for a broad family of GNN architectures, and redefines oversmoothing as rank collapse rather than feature vector alignment.
+  [ICLR 2026][Graph Learning][oversmoothing] This paper identifies that the widely adopted Dirichlet energy metric fails to correctly capture oversmoothing in GNNs under practical settings. It proposes the numerical/effect…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - oversmoothing
-  - graph neural networks
-  - Dirichlet energy
-  - numerical rank
-  - effective rank
-  - rank collapse
-  - GNN depth
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "oversmoothing"
+  - "graph neural networks"
+  - "Dirichlet energy"
+  - "numerical rank"
+  - "effective rank"
+  - "rank collapse"
+  - "GNN depth"
 date: 2026-05-08
 content_hash: ee504d90a54ac08d
 ---

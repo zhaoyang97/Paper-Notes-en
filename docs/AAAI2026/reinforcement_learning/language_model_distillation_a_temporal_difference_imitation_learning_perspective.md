@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Language Model Distillation: A Temporal Difference Imitation Learning Perspective
 description: >-
-  [AAAI 2026][Reinforcement Learning][knowledge distillation] This paper revisits language model distillation from an imitation learning / inverse reinforcement learning perspective. It exploits the sparsity of teacher output distributions (top-p tokens concentrate over 96% of probability mass) to construct a top-p MDP for temporal difference (TD) learning, proves that the optimal policy in the reduced action space admits a bounded suboptimality guarantee, and demonstrates that the resulting Bellman Distill method — built on the IQL algorithm — outperforms existing distillation methods across multiple model families.
+  [AAAI 2026][Reinforcement Learning][knowledge distillation] This paper revisits language model distillation from an imitation learning / inverse reinforcement learning perspective. It exploits the sparsity of teacher out…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - knowledge distillation
-  - imitation learning
-  - temporal difference learning
-  - top-p action space
-  - inverse reinforcement learning
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "knowledge distillation"
+  - "imitation learning"
+  - "temporal difference learning"
+  - "top-p action space"
+  - "inverse reinforcement learning"
 date: 2026-05-08
 content_hash: 619ac080eb52359c
 ---

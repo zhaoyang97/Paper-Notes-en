@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] Generalization of Diffusion Models Arises with a Balanced Representation Space
 description: >-
-  [ICLR 2026][Image Generation] This paper represents a significant advance in the theory of diffusion model generalization. By analyzing the optimal solutions of two-layer nonlinear ReLU denoising autoencoders (DAEs), it provides a unified characterization of both memorization and generalization, and introduces a novel representation-centric perspective on generalization. The theoretical findings are consistently validated on EDM, DiT, and Stable Diffusion v1.4, and give rise to two practical applications: memorization detection and controllable editing. The work achieves both theoretical depth and practical utility.
+  [ICLR 2026][Image Generation] This paper represents a significant advance in the theory of diffusion model generalization. By analyzing the optimal solutions of two-layer nonlinear ReLU denoising autoencoders (DAEs)…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
 date: 2026-05-08
 content_hash: 5e5332ba3eb6a136
 ---

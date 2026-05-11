@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GEM: Empowering MLLM for Grounded ECG Understanding with Time Series and Images
 description: >-
-  [NeurIPS 2025][Multimodal VLM][ECG understanding] GEM is proposed as the first multimodal large language model that unifies ECG time series, 12-lead ECG images, and text. Through a dual-encoder framework, cross-modal alignment, and knowledge-guided instruction data generation, GEM achieves grounded ECG diagnosis based on quantifiable physiological features, improving diagnostic accuracy by 7.4%, interpretability by 22.7%, and grounding capability by 25.3%.
+  [NeurIPS 2025][Multimodal VLM][ECG understanding] GEM is proposed as the first multimodal large language model that unifies ECG time series, 12-lead ECG images, and text. Through a dual-encoder framework…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - ECG understanding
-  - multimodal large language model
-  - time series signal
-  - grounded diagnosis
-  - electrocardiogram
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "ECG understanding"
+  - "multimodal large language model"
+  - "time series signal"
+  - "grounded diagnosis"
+  - "electrocardiogram"
 date: 2026-05-08
 content_hash: 98f888c91fc3ca57
 ---

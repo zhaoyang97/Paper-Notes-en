@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Encoder-Decoder Diffusion Language Models for Efficient Training and Inference
 description: >-
-  [NeurIPS 2025][Image Generation][discrete diffusion] This paper proposes E2D2, an encoder-decoder architecture for discrete diffusion language models that performs iterative denoising via a lightweight decoder while periodically updating representations through a large encoder, achieving faster inference (~3× vs. MDLM) and more efficient block diffusion training (halving FLOPs).
+  [NeurIPS 2025][Image Generation][discrete diffusion] This paper proposes E2D2, an encoder-decoder architecture for discrete diffusion language models that performs iterative denoising via a lightweight decoder while peri…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - discrete diffusion
-  - encoder-decoder
-  - block diffusion
-  - language model
-  - KV caching
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "discrete diffusion"
+  - "encoder-decoder"
+  - "block diffusion"
+  - "language model"
+  - "KV caching"
 date: 2026-05-08
 content_hash: afa4fc4488c7a1b3
 ---

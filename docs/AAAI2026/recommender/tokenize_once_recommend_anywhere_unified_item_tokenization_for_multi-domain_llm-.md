@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] Tokenize Once, Recommend Anywhere: Unified Item Tokenization for Multi-domain LLM-based Recommendation
 description: >-
-  [AAAI 2026][Recommender Systems] This paper proposes UniTok, a unified item tokenization framework that employs a customized Mixture-of-Experts architecture (TokenMoE) combined with shared codebooks to achieve efficient discrete item representations across multiple domains, eliminating the need to train a separate tokenizer per domain, while maintaining cross-domain semantic balance through a mutual information calibration mechanism.
+  [AAAI 2026][Recommender Systems] This paper proposes UniTok, a unified item tokenization framework that employs a customized Mixture-of-Experts architecture (TokenMoE) combined with shared codebooks to achieve efficient…
 tags:
-  - AAAI 2026
-  - Recommender Systems
+  - "AAAI 2026"
+  - "Recommender Systems"
 date: 2026-05-08
 content_hash: e500045a8a315b9c
 ---

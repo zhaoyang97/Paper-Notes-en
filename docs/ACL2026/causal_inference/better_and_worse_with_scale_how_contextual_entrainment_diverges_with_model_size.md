@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Better and Worse with Scale: How Contextual Entrainment Diverges with Model Size
 description: >-
-  [ACL 2026][Causal Inference][Contextual Entrainment] This paper establishes the first scaling laws for "contextual entrainment," discovering that larger models better resist misinformation in semantic contexts (negative exponent) but more readily copy irrelevant tokens in non-semantic contexts (positive exponent), revealing opposing scaling behaviors of semantic filtering and mechanical copying functions.
+  [ACL 2026][Causal Inference][Contextual Entrainment] This paper establishes the first scaling laws for "contextual entrainment," discovering that larger models better resist misinformation in semantic contexts (negative…
 tags:
-  - ACL 2026
-  - Causal Inference
-  - Contextual Entrainment
-  - Scaling Laws
-  - Semantic Filtering
-  - Pattern Copying
-  - Robustness
+  - "ACL 2026"
+  - "Causal Inference"
+  - "Contextual Entrainment"
+  - "Scaling Laws"
+  - "Semantic Filtering"
+  - "Pattern Copying"
+  - "Robustness"
 content_hash: 741b724e343afba9
 ---
 

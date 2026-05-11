@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Guiding Cross-Modal Representations with MLLM Priors via Preference Alignment
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Cross-modal retrieval] This paper proposes MAPLE, a framework that leverages the inherent modality alignment capabilities of off-the-shelf MLLMs to automatically construct preference data, and introduces a Relative Preference Alignment (RPA) loss to guide cross-modal representation learning, achieving significant improvements on fine-grained retrieval tasks.
+  [NeurIPS 2025][Multimodal VLM][Cross-modal retrieval] This paper proposes MAPLE, a framework that leverages the inherent modality alignment capabilities of off-the-shelf MLLMs to automatically construct preference data…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Cross-modal retrieval
-  - preference alignment
-  - DPO
-  - modality gap
-  - MLLM
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Cross-modal retrieval"
+  - "preference alignment"
+  - "DPO"
+  - "modality gap"
+  - "MLLM"
 date: 2026-05-08
 content_hash: 2659df2ee09511a0
 ---

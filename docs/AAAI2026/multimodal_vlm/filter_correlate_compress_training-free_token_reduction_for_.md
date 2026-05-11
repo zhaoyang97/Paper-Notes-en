@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Filter, Correlate, Compress: Training-Free Token Reduction for MLLM Acceleration
 description: >-
-  [AAAI 2026][Multimodal VLM][Visual token compression] This paper proposes FiCoCo, a three-stage framework (Filter–Correlate–Compress) that identifies redundant tokens via integrated vision-aware and semantic-aware redundancy metrics, adaptively recycles information from discarded tokens via inter-token correlation, and achieves training-free MLLM acceleration. On LLaVA-NeXT, FiCoCo achieves a 14.7× FLOPs reduction while retaining 93.6% of performance, and consistently outperforms FastV, SparseVLM, and other state-of-the-art methods across five MLLM architectures.
+  [AAAI 2026][Multimodal VLM][Visual token compression] This paper proposes FiCoCo, a three-stage framework (Filter–Correlate–Compress) that identifies redundant tokens via integrated vision-aware and semantic-aware redund…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Visual token compression
-  - MLLM acceleration
-  - training-free
-  - information recycling
-  - redundancy metric
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Visual token compression"
+  - "MLLM acceleration"
+  - "training-free"
+  - "information recycling"
+  - "redundancy metric"
 date: 2026-05-08
 content_hash: e48dc223f08eb2ef
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BiCA: Effective Biomedical Dense Retrieval with Citation-Aware Hard Negatives
 description: >-
-  [AAAI 2026][Medical Imaging][dense retrieval] This paper proposes a hard negative mining method that constructs a multi-hop semantic graph from PubMed citation chains and performs random walks thereon. Using only 20k training samples and minimal fine-tuning steps, 33M/110M small models surpass retrieval baselines with billions of parameters on BEIR and LoTTE.
+  [AAAI 2026][Medical Imaging][dense retrieval] This paper proposes a hard negative mining method that constructs a multi-hop semantic graph from PubMed citation chains and performs random walks thereon. Using only 20k tra…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - dense retrieval
-  - hard negative mining
-  - citation graph
-  - biomedical IR
-  - PubMed
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "dense retrieval"
+  - "hard negative mining"
+  - "citation graph"
+  - "biomedical IR"
+  - "PubMed"
 date: 2026-05-08
 content_hash: ad5f1124b9ff9ccb
 ---

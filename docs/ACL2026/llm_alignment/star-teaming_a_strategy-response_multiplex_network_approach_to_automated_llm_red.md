@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] STAR-Teaming: A Strategy-Response Multiplex Network Approach to Automated LLM Red Teaming
 description: >-
-  [ACL 2026][LLM Alignment][Red Teaming] This paper proposes STAR-Teaming, an automated red teaming framework based on a Strategy-Response Multiplex Network, which models attack strategy selection as a probabilistic optimization of the inverse Ising problem. The framework achieves an average attack success rate (ASR) of 74.5% on HarmBench, outperforming the strongest baseline by 13.5%, while significantly reducing computational overhead.
+  [ACL 2026][LLM Alignment][Red Teaming] This paper proposes STAR-Teaming, an automated red teaming framework based on a Strategy-Response Multiplex Network…
 tags:
-  - ACL 2026
-  - LLM Alignment
-  - Red Teaming
-  - LLM Safety
-  - Multiplex Network
-  - Strategy Sampling
-  - Jailbreak Attack
+  - "ACL 2026"
+  - "LLM Alignment"
+  - "Red Teaming"
+  - "LLM Safety"
+  - "Multiplex Network"
+  - "Strategy Sampling"
+  - "Jailbreak Attack"
 date: 2026-05-08
 content_hash: 541a1540ce48ec47
 ---

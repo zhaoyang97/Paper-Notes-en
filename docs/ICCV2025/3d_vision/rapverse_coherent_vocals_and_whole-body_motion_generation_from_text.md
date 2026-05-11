@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] RapVerse: Coherent Vocals and Whole-Body Motion Generation from Text
 description: >-
-  [3D Vision] This work constructs the large-scale rap dataset RapVerse and proposes a unified autoregressive transformer framework that, for the first time, simultaneously generates coherent singing vocals and whole-body 3D motion from lyric text.
+  [3D Vision] This work constructs the large-scale rap dataset RapVerse and proposes a unified autoregressive transformer framework that, for the first time…
 tags:
-  - 3D Vision
+  - "3D Vision"
 date: 2026-05-08
 content_hash: 4dd1e2a1b2e8ff0b
 ---

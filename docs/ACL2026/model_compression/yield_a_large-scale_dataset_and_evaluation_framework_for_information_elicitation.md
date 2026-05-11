@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] YIELD: A Large-Scale Dataset and Evaluation Framework for Information Elicitation Agents
 description: >-
-  [ACL 2026][Model Compression][Information Elicitation] This paper introduces the Information Elicitation Agent (IEA) as a novel conversational paradigm, releases YIELD — the first large-scale human-human information elicitation dialogue dataset (2,281 conversations, 26M tokens) — formalizes the elicitation process as a finite-horizon POMDP, and proposes dedicated evaluation metrics (Conformity, Progression, TLR). Experiments demonstrate that fine-tuning on YIELD significantly improves LLM alignment with authentic elicitation behavior.
+  [ACL 2026][Model Compression][Information Elicitation] This paper introduces the Information Elicitation Agent (IEA) as a novel conversational paradigm…
 tags:
-  - ACL 2026
-  - Model Compression
-  - Information Elicitation
-  - Dialogue Dataset
-  - Reinforcement Learning
-  - Conversational Agents
-  - POMDP
+  - "ACL 2026"
+  - "Model Compression"
+  - "Information Elicitation"
+  - "Dialogue Dataset"
+  - "Reinforcement Learning"
+  - "Conversational Agents"
+  - "POMDP"
 date: 2026-05-08
 content_hash: 2ae2edb2a7c8ea97
 ---

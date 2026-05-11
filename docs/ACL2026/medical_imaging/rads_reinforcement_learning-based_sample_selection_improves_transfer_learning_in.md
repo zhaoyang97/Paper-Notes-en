@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RADS: Reinforcement Learning-Based Sample Selection Improves Transfer Learning in Low-resource and Imbalanced Clinical Settings
 description: >-
-  [ACL 2026][Medical Imaging][Reinforcement Learning] This paper proposes RADS (Reinforcement Adaptive Domain Sampling), a reinforcement learning-based sample selection strategy that significantly improves cross-domain disease detection under extreme low-resource and class-imbalanced clinical settings by intelligently selecting a small number of target-domain samples for annotation and joint fine-tuning.
+  [ACL 2026][Medical Imaging][Reinforcement Learning] This paper proposes RADS (Reinforcement Adaptive Domain Sampling), a reinforcement learning-based sample selection strategy that significantly improves cross-domain dis…
 tags:
-  - ACL 2026
-  - Medical Imaging
-  - Reinforcement Learning
-  - Sample Selection
-  - Transfer Learning
-  - Class Imbalance
-  - Clinical NLP
+  - "ACL 2026"
+  - "Medical Imaging"
+  - "Reinforcement Learning"
+  - "Sample Selection"
+  - "Transfer Learning"
+  - "Class Imbalance"
+  - "Clinical NLP"
 date: 2026-05-08
 content_hash: 5ea63119d8c99a13
 ---

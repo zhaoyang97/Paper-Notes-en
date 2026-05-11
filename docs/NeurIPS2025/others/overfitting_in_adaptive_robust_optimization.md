@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Overfitting in Adaptive Robust Optimization
 description: >-
-  [NeurIPS 2025 (Workshop: MLxOR)][Adaptive Robust Optimization] This paper establishes an analogy between policy fragility in Adaptive Robust Optimization (ARO) and overfitting in machine learning: adaptive policies perform well within the uncertainty set but may fail outside it. The paper proposes constraint-specific uncertainty set sizing as a "regularization" mechanism to balance robustness and adaptability.
+  [NeurIPS 2025 (Workshop: MLxOR)][Adaptive Robust Optimization] This paper establishes an analogy between policy fragility in Adaptive Robust Optimization (ARO) and overfitting in machine learning: adaptive policies perfo…
 tags:
   - "NeurIPS 2025 (Workshop: MLxOR)"
-  - Adaptive Robust Optimization
-  - Overfitting
-  - Regularization
-  - Uncertainty Set
-  - Affine Decision Rules
+  - "Adaptive Robust Optimization"
+  - "Overfitting"
+  - "Regularization"
+  - "Uncertainty Set"
+  - "Affine Decision Rules"
 date: 2026-05-08
 content_hash: fe158df255023ca8
 ---

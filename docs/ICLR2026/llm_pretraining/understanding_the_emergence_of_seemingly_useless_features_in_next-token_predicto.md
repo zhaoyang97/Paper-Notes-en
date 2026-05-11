@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Understanding the Emergence of Seemingly Useless Features in Next-Token Predictors
 description: >-
-  [ICLR 2026][LLM Pretraining][next-token prediction] By decomposing training gradient signals into three components — direct, pre-cached, and circuit sharing — this paper explains why Transformers trained with NTP learn features that appear "useless" for predicting the current next token. The framework is validated on OthelloGPT, small language models, and a pre-trained LLM (Gemma 2).
+  [ICLR 2026][LLM Pretraining][next-token prediction] By decomposing training gradient signals into three components — direct, pre-cached, and circuit sharing — this paper explains why Transformers trained with NTP learn f…
 tags:
-  - ICLR 2026
-  - LLM Pretraining
-  - next-token prediction
-  - feature emergence
-  - pre-caching
-  - circuit sharing
-  - mechanistic interpretability
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "next-token prediction"
+  - "feature emergence"
+  - "pre-caching"
+  - "circuit sharing"
+  - "mechanistic interpretability"
 date: 2026-05-08
 content_hash: d04ea2c4cf1446b0
 ---

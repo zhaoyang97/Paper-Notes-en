@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Modality-Aware Bias Mitigation and Invariance Learning for Unsupervised Visible-Infrared Person Re-Identification
 description: >-
-  [AAAI 2026][Human Understanding][Cross-Modality Person Re-Identification] To address the core problem of unreliable cross-modality associations in unsupervised visible-infrared person re-identification (USVI-ReID), this paper proposes modality-aware Jaccard distance correction and a "split-and-contrast" invariance learning strategy. By eliminating modality bias, the method enables reliable global cross-modality clustering and feature alignment, achieving state-of-the-art performance on SYSU-MM01 and RegDB.
+  [AAAI 2026][Human Understanding][Cross-Modality Person Re-Identification] To address the core problem of unreliable cross-modality associations in unsupervised visible-infrared person re-identification (USVI-ReID)…
 tags:
-  - AAAI 2026
-  - Human Understanding
-  - Cross-Modality Person Re-Identification
-  - Unsupervised Learning
-  - Modality Bias Mitigation
-  - Jaccard Distance Correction
-  - Global Clustering
+  - "AAAI 2026"
+  - "Human Understanding"
+  - "Cross-Modality Person Re-Identification"
+  - "Unsupervised Learning"
+  - "Modality Bias Mitigation"
+  - "Jaccard Distance Correction"
+  - "Global Clustering"
 date: 2026-05-08
 content_hash: deed593ca24b1bb7
 ---

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] ResGS: Residual Densification of 3D Gaussian for Efficient Detail Recovery
 description: >-
-  [3D Vision] This paper proposes a residual split operation to replace the binary split/clone mechanism in 3D-GS, combined with image pyramid progressive supervision and a variable gradient threshold selection strategy, to adaptively address both over-reconstruction and under-reconstruction simultaneously, achieving state-of-the-art rendering quality while reducing the number of Gaussians.
+  [3D Vision] This paper proposes a residual split operation to replace the binary split/clone mechanism in 3D-GS, combined with image pyramid progressive supervision and a variable gradient threshold selection strategy…
 tags:
-  - 3D Vision
+  - "3D Vision"
 date: 2026-05-08
 content_hash: c054409f50a19789
 ---

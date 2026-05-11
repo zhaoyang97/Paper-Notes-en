@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Efficient Resource-Constrained Training of Transformers via Subspace Optimization
 description: >-
-  [ICLR 2026][AI Safety][subspace optimization] This paper proposes WASI (Weight-Activation Subspace Iteration), which leverages the observation that parameter subspaces remain stable during fine-tuning to simultaneously compress both the weights (via SVD + Gram-Schmidt subspace iteration) and activations (via Tucker decomposition) of Transformers. Both training and inference are performed entirely within low-rank representations, achieving 62× training memory compression and 1.4× speedup on Raspberry Pi 5 with negligible accuracy loss.
+  [ICLR 2026][AI Safety][subspace optimization] This paper proposes WASI (Weight-Activation Subspace Iteration), which leverages the observation that parameter subspaces remain stable during fine-tuning to simultaneously c…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - subspace optimization
-  - transformer compression
-  - SVD
-  - activation compression
-  - edge deployment
+  - "ICLR 2026"
+  - "AI Safety"
+  - "subspace optimization"
+  - "transformer compression"
+  - "SVD"
+  - "activation compression"
+  - "edge deployment"
 date: 2026-05-08
 content_hash: f3b35636c0acb6ff
 ---

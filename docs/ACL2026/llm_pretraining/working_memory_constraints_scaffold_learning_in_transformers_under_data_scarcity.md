@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Working Memory Constraints Scaffold Learning in Transformers under Data Scarcity
 description: >-
-  [ACL 2026][LLM Pretraining][Working Memory] This paper integrates human working memory constraints (fixed window, exponential decay, logistic decay, and primacy-recency effects) into the GPT-2 attention mechanism, training from scratch on developmentally plausible small-scale corpora (10M/100M words). The results demonstrate that these constraints significantly improve grammatical accuracy and human reading time predictability under data scarcity, while also promoting functional specialization of attention heads.
+  [ACL 2026][LLM Pretraining][Working Memory] This paper integrates human working memory constraints (fixed window, exponential decay, logistic decay, and primacy-recency effects) into the GPT-2 attention mechanism…
 tags:
-  - ACL 2026
-  - LLM Pretraining
-  - Working Memory
-  - Attention Constraints
-  - Inductive Bias
-  - Data Scarcity
-  - Cognitive Alignment
+  - "ACL 2026"
+  - "LLM Pretraining"
+  - "Working Memory"
+  - "Attention Constraints"
+  - "Inductive Bias"
+  - "Data Scarcity"
+  - "Cognitive Alignment"
 date: 2026-05-08
 content_hash: ab0e110d654a40d1
 ---

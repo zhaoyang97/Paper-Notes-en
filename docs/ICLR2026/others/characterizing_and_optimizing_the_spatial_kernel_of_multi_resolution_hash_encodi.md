@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Characterizing and Optimizing the Spatial Kernel of Multi Resolution Hash Encodings
 description: >-
-  [ICLR2026][multi-resolution hash encoding] This paper analyzes Instant-NGP's multi-resolution hash encoding (MHE) through the lens of physical systems, deriving a closed-form approximation of its point spread function (PSF). The analysis reveals that the effective resolution is governed by the geometric mean resolution $N_{\text{avg}}$ rather than the finest resolution $N_{\max}$, and that axis-aligned grids introduce spatial anisotropy. The paper further proposes Rotated MHE (R-MHE), a zero-overhead method that eliminates anisotropy by applying a distinct rotation to the input coordinates at each hash level.
+  [ICLR2026][multi-resolution hash encoding] This paper analyzes Instant-NGP's multi-resolution hash encoding (MHE) through the lens of physical systems…
 tags:
-  - ICLR2026
-  - multi-resolution hash encoding
-  - neural radiance field
-  - point spread function
-  - spatial anisotropy
-  - Instant-NGP
+  - "ICLR2026"
+  - "multi-resolution hash encoding"
+  - "neural radiance field"
+  - "point spread function"
+  - "spatial anisotropy"
+  - "Instant-NGP"
 date: 2026-05-08
 content_hash: 01fda654c871d050
 ---

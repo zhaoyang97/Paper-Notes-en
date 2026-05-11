@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GeoRC: A Benchmark for Geolocation Reasoning Chains
 description: >-
-  [ACL 2026][Multimodal VLM][Geolocation] This paper introduces GeoRC, the first geolocation reasoning chain benchmark authored by GeoGuessr champion-level experts (800 reasoning chains, 500 scenes), designed to evaluate VLMs' ability to generate auditable reasoning chains. Findings reveal that while closed-source VLMs can match human-level localization accuracy, their reasoning chain quality remains substantially inferior, and open-source VLMs perform nearly on par with a pure hallucination baseline.
+  [ACL 2026][Multimodal VLM][Geolocation] This paper introduces GeoRC, the first geolocation reasoning chain benchmark authored by GeoGuessr champion-level experts (800 reasoning chains, 500 scenes)…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Geolocation
-  - Reasoning Chains
-  - VLM Evaluation
-  - GeoGuessr
-  - Interpretability
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Geolocation"
+  - "Reasoning Chains"
+  - "VLM Evaluation"
+  - "GeoGuessr"
+  - "Interpretability"
 date: 2026-05-08
 content_hash: 3c5defe51c8eb0bb
 ---

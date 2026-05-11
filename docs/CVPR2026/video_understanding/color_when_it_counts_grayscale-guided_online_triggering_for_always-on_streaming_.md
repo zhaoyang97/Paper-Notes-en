@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Color When It Counts: Grayscale-Guided Online Triggering for Always-On Streaming Video Sensing
 description: >-
-  [CVPR 2026][Video Understanding][Streaming Video Understanding] This paper proposes a novel "grayscale always-on, color on demand" paradigm. ColorTrigger detects color redundancy online via lightweight quadratic programming on the grayscale stream, achieving 91.6% of the full-color baseline performance using only 8.1% RGB frames, enabling always-on video sensing on resource-constrained devices.
+  [CVPR 2026][Video Understanding][Streaming Video Understanding] This paper proposes a novel "grayscale always-on, color on demand" paradigm. ColorTrigger detects color redundancy online via lightweight quadratic programm…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Streaming Video Understanding
-  - Edge Devices
-  - Grayscale-Guided Triggering
-  - Energy-Efficient Sensing
-  - Dynamic Token Routing
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Streaming Video Understanding"
+  - "Edge Devices"
+  - "Grayscale-Guided Triggering"
+  - "Energy-Efficient Sensing"
+  - "Dynamic Token Routing"
 date: 2026-05-08
 content_hash: bb17cfa0b23dcb8e
 ---

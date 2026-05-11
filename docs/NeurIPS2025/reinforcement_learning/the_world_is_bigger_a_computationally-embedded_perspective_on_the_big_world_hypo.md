@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The World Is Bigger! A Computationally-Embedded Perspective on the Big World Hypothesis
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Continual Learning] This paper formalizes the Big World Hypothesis from a computationally-embedded perspective, proves that agents embedded in universal-local environments are inherently capacity-constrained, proposes *interactivity* as a computational measure of continual adaptability, and empirically demonstrates that deep nonlinear networks fail to maintain interactivity while deep linear networks improve interactivity as capacity increases.
+  [NeurIPS 2025][Reinforcement Learning][Continual Learning] This paper formalizes the Big World Hypothesis from a computationally-embedded perspective…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Continual Learning
-  - Big World Hypothesis
-  - Embedded Agents
-  - Algorithmic Information Theory
-  - Interactivity
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Continual Learning"
+  - "Big World Hypothesis"
+  - "Embedded Agents"
+  - "Algorithmic Information Theory"
+  - "Interactivity"
 date: 2026-05-08
 content_hash: b0bdf8e6de1f5a57
 ---

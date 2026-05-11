@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] $\varphi$-DPO: Fairness Direct Preference Optimization Approach to Continual Learning in Large Multimodal Models
 description: >-
-  [CVPR2026][LLM Alignment][Continual Learning] This paper proposes $\varphi$-DPO, which adopts DPO as a continual learning paradigm (using the previous-step model as the reference policy) and introduces a fairness modulation factor $(1-p)^\gamma$ inspired by focal loss to balance gradient contributions across data groups. The authors theoretically prove that the gradient bias approaches zero as $\gamma \to \infty$, and achieve state-of-the-art performance on the CoIN and MLLM-CL benchmarks.
+  [CVPR2026][LLM Alignment][Continual Learning] This paper proposes $\varphi$-DPO, which adopts DPO as a continual learning paradigm (using the previous-step model as the reference policy) and introduces a fairness modulat…
 tags:
-  - CVPR2026
-  - LLM Alignment
-  - Continual Learning
-  - DPO
-  - Fairness
-  - Catastrophic Forgetting
-  - Large Multimodal Model
-  - Focal Loss
+  - "CVPR2026"
+  - "LLM Alignment"
+  - "Continual Learning"
+  - "DPO"
+  - "Fairness"
+  - "Catastrophic Forgetting"
+  - "Large Multimodal Model"
+  - "Focal Loss"
 date: 2026-05-08
 content_hash: 7e44e99dcb319f11
 ---

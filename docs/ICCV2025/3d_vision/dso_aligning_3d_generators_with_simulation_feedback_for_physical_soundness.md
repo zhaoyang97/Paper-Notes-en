@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] DSO: Aligning 3D Generators with Simulation Feedback for Physical Soundness
 description: >-
-  [3D Vision] This paper proposes the Direct Simulation Optimization (DSO) framework, which uses stability feedback from a (non-differentiable) physics simulator as a reward signal to fine-tune 3D generators via DPO or the newly proposed DRO objective, enabling feed-forward generation of physically self-supporting 3D objects without test-time optimization.
+  [3D Vision] This paper proposes the Direct Simulation Optimization (DSO) framework, which uses stability feedback from a (non-differentiable) physics simulator as a reward signal to fine-tune 3D generators via DPO or the…
 tags:
-  - 3D Vision
+  - "3D Vision"
 date: 2026-05-08
 content_hash: 3c9b6ac3271db839
 ---

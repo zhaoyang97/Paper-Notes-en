@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] CLIP Is Shortsighted: Paying Attention Beyond the First Sentence
 description: >-
-  [CVPR2026][Segmentation][CLIP] This paper reveals a systematic bias in CLIP-family models toward the summary sentence and early tokens in long-form text, and proposes DeBias-CLIP, which eliminates this bias via three text augmentation strategies — summary removal, sentence sub-sampling, and token padding — achieving state-of-the-art performance on both long- and short-text retrieval benchmarks without introducing any additional parameters.
+  [CVPR2026][Segmentation][CLIP] This paper reveals a systematic bias in CLIP-family models toward the summary sentence and early tokens in long-form text, and proposes DeBias-CLIP…
 tags:
-  - CVPR2026
-  - Segmentation
-  - CLIP
-  - long-text retrieval
-  - text-image alignment
-  - contrastive learning
-  - positional bias
-  - data augmentation
+  - "CVPR2026"
+  - "Segmentation"
+  - "CLIP"
+  - "long-text retrieval"
+  - "text-image alignment"
+  - "contrastive learning"
+  - "positional bias"
+  - "data augmentation"
 date: 2026-05-08
 content_hash: e81b696dd173b4f2
 ---

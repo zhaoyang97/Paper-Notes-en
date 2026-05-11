@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UniBlendNet: Unified Global, Multi-Scale, and Region-Adaptive Modeling for Ambient Lighting Normalization
 description: >-
-  [CVPR 2026][Image Restoration][ambient lighting normalization] This paper proposes UniBlendNet, which builds upon IFBlend to unify three complementary modules—global context modeling, multi-scale feature aggregation, and region-adaptive residual refinement—for ambient lighting normalization under complex spatially varying illumination conditions.
+  [CVPR 2026][Image Restoration][ambient lighting normalization] This paper proposes UniBlendNet, which builds upon IFBlend to unify three complementary modules—global context modeling, multi-scale feature aggregation…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - ambient lighting normalization
-  - shadow removal
-  - multi-scale aggregation
-  - mask-guided refinement
-  - frequency-spatial restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "ambient lighting normalization"
+  - "shadow removal"
+  - "multi-scale aggregation"
+  - "mask-guided refinement"
+  - "frequency-spatial restoration"
 date: 2026-05-08
 content_hash: 57f6e0363573f411
 ---

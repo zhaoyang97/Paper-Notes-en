@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] NanoVDR: Distilling a 2B Vision-Language Retriever into a 70M Text-Only Encoder for Visual Document Retrieval
 description: >-
-  [CVPR 2026][Visual Document Retrieval] NanoVDR exploits the modality asymmetry between queries and documents, distilling the query encoding capability of a 2B VLM teacher into a 69M text-only encoder via pointwise cosine alignment. On the ViDoRe benchmark, the student retains 95.1% of teacher performance while reducing query latency by 50× with a total training cost of only 13 GPU hours.
+  [CVPR 2026][Information Retrieval & RAG][Visual Document Retrieval] NanoVDR exploits the modality asymmetry between queries and documents, distilling the query encoding capability of a 2B VLM teacher into a 69M text-only…
 tags:
-  - CVPR 2026
-  - Visual Document Retrieval
-  - Asymmetric Distillation
-  - VLM Compression
-  - Text-Only Query Encoding
-  - Cross-Modal Transfer
+  - "CVPR 2026"
+  - "Information Retrieval & RAG"
+  - "Visual Document Retrieval"
+  - "Asymmetric Distillation"
+  - "VLM Compression"
+  - "Text-Only Query Encoding"
+  - "Cross-Modal Transfer"
 date: 2026-05-08
 content_hash: 0f551faf34acfd3b
 ---

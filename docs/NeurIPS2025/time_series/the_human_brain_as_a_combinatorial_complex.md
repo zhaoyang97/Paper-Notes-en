@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] The Human Brain as a Combinatorial Complex
 description: >-
-  [NeurIPS 2025 (Workshop: NeurReps)][Time Series][Combinatorial Complexes] This paper proposes a data-driven framework that constructs Combinatorial Complexes (CCs) directly from fMRI time series using information-theoretic measures—namely S-information and O-information—encoding higher-order synergistic interactions among brain regions into topological structures, thereby laying the groundwork for applying topological deep learning to brain network analysis.
+  [NeurIPS 2025 (Workshop: NeurReps)][Time Series][Combinatorial Complexes] This paper proposes a data-driven framework that constructs Combinatorial Complexes (CCs) directly from fMRI time series using information-theoret…
 tags:
   - "NeurIPS 2025 (Workshop: NeurReps)"
-  - Time Series
-  - Combinatorial Complexes
-  - Higher-Order Networks
-  - Information Theory
-  - S-Information
-  - O-Information
-  - fMRI
+  - "Time Series"
+  - "Combinatorial Complexes"
+  - "Higher-Order Networks"
+  - "Information Theory"
+  - "S-Information"
+  - "O-Information"
+  - "fMRI"
 date: 2026-05-08
 content_hash: 24b030abb9980c35
 ---

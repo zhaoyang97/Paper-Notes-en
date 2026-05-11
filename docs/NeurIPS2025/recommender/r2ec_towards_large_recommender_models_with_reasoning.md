@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] R²ec: Towards Large Recommender Models with Reasoning
 description: >-
-  [NeurIPS 2025][Recommender Systems] This paper proposes R²ec, the first unified large recommender model that endogenously integrates reasoning capabilities, achieving joint reasoning chain generation and efficient item prediction via a dual-head architecture, and introduces the RecPO reinforcement learning framework to jointly optimize reasoning and recommendation objectives without any annotated reasoning data.
+  [NeurIPS 2025][Recommender Systems][LLM Reasoning] This paper proposes R²ec, the first unified large recommender model that endogenously integrates reasoning capabilities…
 tags:
-  - NeurIPS 2025
-  - Recommender Systems
-  - LLM Reasoning
-  - Reinforcement Learning
-  - Dual-Head Architecture
-  - Test-Time Scaling
+  - "NeurIPS 2025"
+  - "Recommender Systems"
+  - "LLM Reasoning"
+  - "Reinforcement Learning"
+  - "Dual-Head Architecture"
+  - "Test-Time Scaling"
 date: 2026-05-08
 content_hash: 14fa4c951e03964d
 ---

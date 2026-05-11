@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] RRRA: Resampling and Reranking through a Retriever Adapter
 description: >-
-  [AAAI 2026][Dense Retrieval] This paper proposes the RRRA framework, which attaches a lightweight learnable adapter to a Bi-Encoder to model the false-negative probability of each candidate document. The adapter is used simultaneously for negative resampling during training and reranking during inference, consistently outperforming strong baselines such as SimANS and TriSampler on NQ, TQ, and MS MARCO.
+  [AAAI 2026][Information Retrieval & RAG][Dense Retrieval] This paper proposes the RRRA framework, which attaches a lightweight learnable adapter to a Bi-Encoder to model the false-negative probability of each candidate d…
 tags:
-  - AAAI 2026
-  - Dense Retrieval
-  - Negative Sampling
-  - False Negative Detection
-  - Lightweight Adapter
-  - Reranking
+  - "AAAI 2026"
+  - "Information Retrieval & RAG"
+  - "Dense Retrieval"
+  - "Negative Sampling"
+  - "False Negative Detection"
+  - "Lightweight Adapter"
+  - "Reranking"
 date: 2026-05-08
 content_hash: ebdc8606da7e5651
 ---

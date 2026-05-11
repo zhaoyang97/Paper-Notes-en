@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Federated Continual Instruction Tuning
 description: >-
-  [Optimization] This paper introduces the first Federated Continual Instruction Tuning (FCIT) benchmark, covering 2 scenarios, 4 settings, and 12 datasets, and proposes the DISCO framework, which addresses data heterogeneity and catastrophic forgetting via Dynamic Knowledge Organization (DKO) and Subspace Selective Activation (SSA).
+  [Optimization] This paper introduces the first Federated Continual Instruction Tuning (FCIT) benchmark, covering 2 scenarios, 4 settings, and 12 datasets, and proposes the DISCO framework…
 tags:
-  - Optimization
+  - "Optimization"
 date: 2026-05-08
 content_hash: 8d2a576ad6bcf0ec
 ---

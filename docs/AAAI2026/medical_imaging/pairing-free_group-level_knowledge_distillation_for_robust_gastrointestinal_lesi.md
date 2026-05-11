@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Pairing-free Group-level Knowledge Distillation for Robust Gastrointestinal Lesion Classification in White-Light Endoscopy
 description: >-
-  [AAAI 2026][Medical Imaging][Knowledge Distillation] This paper proposes PaGKD, a pairing-free group-level knowledge distillation framework that eliminates the dependency on paired data in conventional NBI→WLI cross-modal distillation. It introduces group-level prototype distillation (GKD-Pro, which extracts modality-invariant semantic prototypes via a shared lesion query Transformer) and group-level dense distillation (GKD-Den, which achieves dense spatial alignment through activation map-guided semantic relation cross-attention). PaGKD improves AUC by 3.3%/1.1%/2.8%/3.2% across four clinical datasets.
+  [AAAI 2026][Medical Imaging][Knowledge Distillation] This paper proposes PaGKD, a pairing-free group-level knowledge distillation framework that eliminates the dependency on paired data in conventional NBI→WLI cross-moda…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Knowledge Distillation
-  - Cross-modal Learning
-  - White-Light Endoscopy
-  - Narrow-Band Imaging
-  - Pairing-free
-  - Group-level Distillation
-  - Gastrointestinal Lesion Classification
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Knowledge Distillation"
+  - "Cross-modal Learning"
+  - "White-Light Endoscopy"
+  - "Narrow-Band Imaging"
+  - "Pairing-free"
+  - "Group-level Distillation"
+  - "Gastrointestinal Lesion Classification"
 date: 2026-05-08
 content_hash: 810ee0f6212928c1
 ---

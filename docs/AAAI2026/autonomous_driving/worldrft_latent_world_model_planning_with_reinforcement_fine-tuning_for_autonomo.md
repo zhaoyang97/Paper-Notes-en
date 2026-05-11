@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] WorldRFT: Latent World Model Planning with Reinforcement Fine-Tuning for Autonomous Driving
 description: >-
-  [AAAI 2026][Autonomous Driving][Latent World Model] WorldRFT is a planning-oriented latent world model framework that integrates VGGT-based spatial encoding, hierarchical planning decomposition with local-aware iterative refinement, and GRPO-based collision-aware reinforcement fine-tuning. It reduces collision rate by 83% on nuScenes (0.30% → 0.05%) and achieves near-LiDAR SOTA performance using camera only on NavSim (87.8 vs. 88.1 PDMS).
+  [AAAI 2026][Autonomous Driving][Latent World Model] WorldRFT is a planning-oriented latent world model framework that integrates VGGT-based spatial encoding…
 tags:
-  - AAAI 2026
-  - Autonomous Driving
-  - Latent World Model
-  - Reinforcement Fine-Tuning
-  - GRPO
-  - Hierarchical Planning
-  - VGGT
-  - Collision Awareness
+  - "AAAI 2026"
+  - "Autonomous Driving"
+  - "Latent World Model"
+  - "Reinforcement Fine-Tuning"
+  - "GRPO"
+  - "Hierarchical Planning"
+  - "VGGT"
+  - "Collision Awareness"
 date: 2026-05-08
 content_hash: 79ee16799a529701
 ---

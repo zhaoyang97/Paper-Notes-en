@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Breaking the Compression Ceiling: Data-Free Pipeline for Ultra-Efficient Delta Compression
 description: >-
-  [NeurIPS 2025][Multimodal VLM][delta compression] This paper proposes UltraDelta — the first data-free delta weight compression pipeline — which achieves compression ratios up to 224× across LLM/NLP/vision/multimodal models without performance degradation and even surpasses fine-tuned models, via three components: variance-guided mixed sparsity allocation, distribution-aware compression, and trace-norm-guided rescaling.
+  [NeurIPS 2025][Multimodal VLM][delta compression] This paper proposes UltraDelta — the first data-free delta weight compression pipeline — which achieves compression ratios up to 224× across LLM/NLP/vision/multimodal mod…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - delta compression
-  - model pruning
-  - quantization
-  - data-free compression
-  - multi-task deployment
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "delta compression"
+  - "model pruning"
+  - "quantization"
+  - "data-free compression"
+  - "multi-task deployment"
 date: 2026-05-08
 content_hash: a19444eac2ea4ae6
 ---

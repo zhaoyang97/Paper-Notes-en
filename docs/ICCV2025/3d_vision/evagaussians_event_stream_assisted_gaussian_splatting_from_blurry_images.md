@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EvaGaussians: Event Stream Assisted Gaussian Splatting from Blurry Images
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes EvaGaussians, a framework that leverages the high temporal resolution event streams from event cameras to assist 3D Gaussian Splatting in learning from motion-blurred images. Through event-assisted initialization, joint blur/event reconstruction losses, and event-assisted geometric regularization, the method achieves high-fidelity novel view synthesis while maintaining real-time rendering efficiency.
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes EvaGaussians, a framework that leverages the high temporal resolution event streams from event cameras to assist 3D Gaussian Splatting in learning from mo…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - Event Camera
-  - Motion Deblurring
-  - Novel View Synthesis
-  - Bundle Adjustment
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Event Camera"
+  - "Motion Deblurring"
+  - "Novel View Synthesis"
+  - "Bundle Adjustment"
 date: 2026-05-08
 content_hash: 7bbf8690f427d8d6
 ---

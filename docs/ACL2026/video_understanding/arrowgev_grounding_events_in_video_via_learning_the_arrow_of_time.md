@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ArrowGEV: Grounding Events in Video via Learning the Arrow of Time
 description: >-
-  [ACL 2026][Video Understanding][Video event grounding] This paper proposes ArrowGEV, a reinforcement learning framework inspired by the physics concept of "arrow of time," which models temporal directionality in videos by distinguishing between temporally sensitive and insensitive events, improving VLM event localization accuracy and temporal understanding capabilities.
+  [ACL 2026][Video Understanding][Video event grounding] This paper proposes ArrowGEV, a reinforcement learning framework inspired by the physics concept of "arrow of time…
 tags:
-  - ACL 2026
-  - Video Understanding
-  - Video event grounding
-  - temporal directionality
-  - reinforcement learning
-  - vision-language models
-  - temporal understanding
+  - "ACL 2026"
+  - "Video Understanding"
+  - "Video event grounding"
+  - "temporal directionality"
+  - "reinforcement learning"
+  - "vision-language models"
+  - "temporal understanding"
 date: 2026-05-08
 content_hash: fce11dfb4392778c
 ---

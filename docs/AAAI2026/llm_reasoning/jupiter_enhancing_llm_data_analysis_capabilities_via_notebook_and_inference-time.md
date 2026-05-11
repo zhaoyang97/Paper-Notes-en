@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Jupiter: Enhancing LLM Data Analysis Capabilities via Notebook and Inference-Time Value-Guided Search
 description: >-
-  [AAAI 2026][LLM Reasoning][Data Analysis] This work constructs the NbQA dataset (38K task-solution pairs extracted from real Jupyter Notebooks) and proposes the Jupiter framework (modeling data analysis as a state-level search problem with PUCT search guided by a value model), enabling Qwen2.5-14B to achieve 86.38% on InfiAgent-DABench, surpassing GPT-4o (85.99%), and improving Qwen2.5-7B on DSBench from 63.51% to 89.19%.
+  [AAAI 2026][LLM Reasoning][Data Analysis] This work constructs the NbQA dataset (38K task-solution pairs extracted from real Jupyter Notebooks) and proposes the Jupiter framework (modeling data analysis as a state-level…
 tags:
-  - AAAI 2026
-  - LLM Reasoning
-  - Data Analysis
-  - Jupyter Notebook
-  - Value-Guided Search
-  - MCTS
-  - Test-Time Compute
+  - "AAAI 2026"
+  - "LLM Reasoning"
+  - "Data Analysis"
+  - "Jupyter Notebook"
+  - "Value-Guided Search"
+  - "MCTS"
+  - "Test-Time Compute"
 date: 2026-05-08
 content_hash: 9cf97680be5c9db8
 ---

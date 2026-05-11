@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MimiCAT: Mimic with Correspondence-Aware Cascade-Transformer for Category-Free 3D Pose Transfer
 description: >-
-  [CVPR 2026][3D Vision][3D pose transfer] This paper proposes MimiCAT, a cascade Transformer framework that learns flexible many-to-many soft correspondences via semantic keypoint labels. Combined with the million-scale multi-category motion dataset PokeAnimDB, it achieves, for the first time, high-quality cross-category 3D pose transfer (e.g., humanoid to quadruped/bird).
+  [CVPR 2026][3D Vision][3D pose transfer] This paper proposes MimiCAT, a cascade Transformer framework that learns flexible many-to-many soft correspondences via semantic keypoint labels. Combined with the million-scale m…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D pose transfer
-  - cross-category transfer
-  - soft correspondence
-  - cascade Transformer
-  - large-scale motion dataset
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D pose transfer"
+  - "cross-category transfer"
+  - "soft correspondence"
+  - "cascade Transformer"
+  - "large-scale motion dataset"
 date: 2026-05-08
 content_hash: 60e03778b7ba01e0
 ---

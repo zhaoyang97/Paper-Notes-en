@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Training-free Motion Factorization for Compositional Video Generation
 description: >-
-  [CVPR 2026][Video Generation][Compositional video generation] This paper proposes a motion factorization framework that decomposes multi-instance scene motion into three categories — stationary, rigid-body, and non-rigid motion — and addresses prompt semantic ambiguity via Structured Motion Reasoning (SMR) while steering the generation of each motion category during diffusion through Decoupled Motion Guidance (DMG). The framework requires no additional training and achieves substantial improvements in motion diversity and fidelity on VideoCrafter-v2.0 and CogVideoX-2B.
+  [CVPR 2026][Video Generation][Compositional video generation] This paper proposes a motion factorization framework that decomposes multi-instance scene motion into three categories — stationary, rigid-body…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Compositional video generation
-  - motion factorization
-  - structured reasoning
-  - decoupled guidance
-  - training-free
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Compositional video generation"
+  - "motion factorization"
+  - "structured reasoning"
+  - "decoupled guidance"
+  - "training-free"
 date: 2026-05-08
 content_hash: de5ebd5c4bfc7a25
 ---

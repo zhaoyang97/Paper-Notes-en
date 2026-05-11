@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Sim-DETR: Unlock DETR for Temporal Sentence Grounding
 description: >-
-  [ICCV 2025][Object Detection][Temporal sentence grounding] This paper systematically analyzes the root causes of anomalous behavior in DETR-based temporal sentence grounding (TSG) — inter-query conflict and intra-query global-local contradiction — and proposes two simple decoder modifications (Query Grouping & Ranking + Global-Local Bridging) to form Sim-DETR, unlocking the full potential of DETR for TSG.
+  [ICCV 2025][Object Detection][Temporal sentence grounding] This paper systematically analyzes the root causes of anomalous behavior in DETR-based temporal sentence grounding (TSG) — inter-query conflict and intra-query g…
 tags:
-  - ICCV 2025
-  - Object Detection
-  - Temporal sentence grounding
-  - DETR
-  - query conflict
-  - self-attention adjustment
-  - global-local bridging
+  - "ICCV 2025"
+  - "Object Detection"
+  - "Temporal sentence grounding"
+  - "DETR"
+  - "query conflict"
+  - "self-attention adjustment"
+  - "global-local bridging"
 date: 2026-05-08
 content_hash: cc1b7e1db3d45d64
 ---

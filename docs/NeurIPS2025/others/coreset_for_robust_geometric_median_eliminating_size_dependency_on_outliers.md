@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Coreset for Robust Geometric Median: Eliminating Size Dependency on Outliers
 description: >-
-  [NeurIPS 2025][Coreset] This paper is the first to eliminate the dependency of the robust geometric median coreset size on the number of outliers $m$: under the condition $n \geq 4m$, it achieves an optimal coreset size of $\tilde{\Theta}(\varepsilon^{-1/2} + \frac{m}{n}\varepsilon^{-1})$ for $d=1$, and $\tilde{O}(\varepsilon^{-2}\min\{\varepsilon^{-2}, d\})$ in high dimensions. The core technical contribution is a novel **non-componentwise error analysis**.
+  [NeurIPS 2025][Coreset] This paper is the first to eliminate the dependency of the robust geometric median coreset size on the number of outliers $m$: under the condition $n \geq 4m$…
 tags:
-  - NeurIPS 2025
-  - Coreset
-  - Robust Geometric Median
-  - Outliers
-  - Clustering
-  - Non-Componentwise Error Analysis
+  - "NeurIPS 2025"
+  - "Coreset"
+  - "Robust Geometric Median"
+  - "Outliers"
+  - "Clustering"
+  - "Non-Componentwise Error Analysis"
 date: 2026-05-08
 content_hash: bdef4ed94f1cb2da
 ---

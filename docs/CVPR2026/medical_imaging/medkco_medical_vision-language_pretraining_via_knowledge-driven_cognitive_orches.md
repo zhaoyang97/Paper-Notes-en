@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] MedKCO: Medical Vision-Language Pretraining via Knowledge-Driven Cognitive Orchestration
 description: >-
-  [CVPR 2026][Medical Imaging][Vision-language pretraining] This paper proposes MedKCO, a knowledge-driven cognitive orchestration strategy for medical vision-language pretraining. It introduces a hierarchical curriculum (label-level ordering by diagnostic sensitivity + description-level ordering by sample representativeness) and a self-paced asymmetric contrastive loss, enabling the model to progressively learn from simple to complex concepts. MedKCO substantially outperforms baselines on zero-shot and downstream tasks across three medical imaging modalities.
+  [CVPR 2026][Medical Imaging][Vision-language pretraining] This paper proposes MedKCO, a knowledge-driven cognitive orchestration strategy for medical vision-language pretraining. It introduces a hierarchical curriculum (…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Vision-language pretraining
-  - curriculum learning
-  - contrastive learning
-  - cognitive orchestration
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Vision-language pretraining"
+  - "curriculum learning"
+  - "contrastive learning"
+  - "cognitive orchestration"
 date: 2026-05-08
 content_hash: d967fc99c5bc68e5
 ---

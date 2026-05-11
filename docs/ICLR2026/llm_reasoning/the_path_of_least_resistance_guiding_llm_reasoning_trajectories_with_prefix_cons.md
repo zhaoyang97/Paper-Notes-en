@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The Path of Least Resistance: Guiding LLM Reasoning Trajectories with Prefix Consensus
 description: >-
-  [ICLR 2026][LLM Reasoning][Self-consistency decoding] This paper proposes PoLR (Path of Least Resistance), the first inference-time method that exploits prefix consensus in reasoning chains. By clustering short prefixes and expanding only the dominant cluster, PoLR replaces standard Self-Consistency while maintaining or improving accuracy on GSM8K, Math500, AIME, and GPQA, with 40%–60% reduction in token usage and up to 50% lower latency.
+  [ICLR 2026][LLM Reasoning][Self-consistency decoding] This paper proposes PoLR (Path of Least Resistance), the first inference-time method that exploits prefix consensus in reasoning chains. By clustering short prefixes…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Self-consistency decoding
-  - prefix consensus
-  - reasoning efficiency
-  - cluster pruning
-  - inference-time computation
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "Self-consistency decoding"
+  - "prefix consensus"
+  - "reasoning efficiency"
+  - "cluster pruning"
+  - "inference-time computation"
 date: 2026-05-08
 content_hash: 6fe1929cc2ca12b7
 ---

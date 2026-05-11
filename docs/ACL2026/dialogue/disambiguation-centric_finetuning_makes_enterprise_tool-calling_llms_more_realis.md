@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Disambiguation-Centric Finetuning Makes Enterprise Tool-Calling LLMs More Realistic and Less Risky
 description: >-
-  [ACL 2026][Dialogue Systems][tool calling] This paper proposes DiaFORGE, a disambiguation-centric synthetic data generation pipeline combined with chain-of-thought fine-tuning and a dynamic evaluation framework, enabling open-source LLMs to achieve tool-calling success rates 27 percentage points higher than GPT-4o and 49 percentage points higher than Claude-3.5-Sonnet when facing near-duplicate enterprise APIs.
+  [ACL 2026][Dialogue Systems][tool calling] This paper proposes DiaFORGE, a disambiguation-centric synthetic data generation pipeline combined with chain-of-thought fine-tuning and a dynamic evaluation framework…
 tags:
-  - ACL 2026
-  - Dialogue Systems
-  - tool calling
-  - disambiguation
-  - multi-turn dialogue
-  - enterprise API
-  - fine-tuning
+  - "ACL 2026"
+  - "Dialogue Systems"
+  - "tool calling"
+  - "disambiguation"
+  - "multi-turn dialogue"
+  - "enterprise API"
+  - "fine-tuning"
 date: 2026-05-08
 content_hash: ba04565a840dc889
 ---

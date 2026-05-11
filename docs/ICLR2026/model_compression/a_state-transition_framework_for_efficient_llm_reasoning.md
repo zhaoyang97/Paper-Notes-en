@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A State-Transition Framework for Efficient LLM Reasoning
 description: >-
-  [ICLR 2026][Model Compression][efficient reasoning] This paper proposes an efficient reasoning framework that models the LLM reasoning process as a state-transition process. It uses Linear Attention to compress information from historical reasoning steps into a state matrix, reducing attention complexity from $O(C^2)$ to $O(C)$ and KV cache from $O(C)$ to $O(1)$, while preserving the full CoT sequence and maintaining reasoning capability. An additional momentum strategy mitigates the overthinking problem caused by noisy reasoning steps.
+  [ICLR 2026][Model Compression][efficient reasoning] This paper proposes an efficient reasoning framework that models the LLM reasoning process as a state-transition process. It uses Linear Attention to compress informati…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - efficient reasoning
-  - linear attention
-  - state transition
-  - KV cache
-  - long CoT
+  - "ICLR 2026"
+  - "Model Compression"
+  - "efficient reasoning"
+  - "linear attention"
+  - "state transition"
+  - "KV cache"
+  - "long CoT"
 date: 2026-05-08
 content_hash: a8e25008bbdea1b0
 ---

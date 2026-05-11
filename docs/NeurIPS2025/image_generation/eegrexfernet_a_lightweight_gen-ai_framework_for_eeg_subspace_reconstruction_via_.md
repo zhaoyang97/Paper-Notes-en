@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EEGReXferNet: A Lightweight Gen-AI Framework for EEG Subspace Reconstruction via Cross-Subject Transfer Learning and Channel-Aware Embedding
 description: >-
-  [NeurIPS 2025][Image Generation][EEG reconstruction] This paper proposes EEGReXferNet, a lightweight generative AI framework that achieves EEG subspace reconstruction under a cross-subject transfer learning setting via neighborhood channel-aware input selection, band-specific sub-window convolutional encoding/decoding, a dynamic sliding-window latent space, and reference statistics scaling. The framework reduces parameter count by approximately 45% and achieves inference latency <1ms, while maintaining PSD correlation $\geq 0.95$ and spectrogram RV coefficient $\geq 0.85$.
+  [NeurIPS 2025][Image Generation][EEG reconstruction] This paper proposes EEGReXferNet, a lightweight generative AI framework that achieves EEG subspace reconstruction under a cross-subject transfer learning setting via n…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - EEG reconstruction
-  - lightweight generative model
-  - cross-subject transfer learning
-  - channel-aware embedding
-  - brain-computer interface
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "EEG reconstruction"
+  - "lightweight generative model"
+  - "cross-subject transfer learning"
+  - "channel-aware embedding"
+  - "brain-computer interface"
 date: 2026-05-08
 content_hash: babdbae4949bdd0b
 ---

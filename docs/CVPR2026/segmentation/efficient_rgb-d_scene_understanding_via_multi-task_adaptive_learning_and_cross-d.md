@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Efficient RGB-D Scene Understanding via Multi-task Adaptive Learning and Cross-dimensional Feature Guidance
 description: >-
-  [CVPR2026][Segmentation][RGB-D Scene Understanding] This paper proposes an efficient RGB-D multi-task scene understanding network. An improved fusion encoder exploits channel redundancy to accelerate feature extraction. A Normalization-Focused Channel Layer (NFCL) and a Context Feature Interaction Layer (CFIL) provide cross-dimensional feature guidance. A batch-level multi-task adaptive loss function dynamically adjusts per-task learning weights. The unified framework simultaneously handles five tasks—semantic segmentation, instance segmentation, orientation estimation, panoptic segmentation, and scene classification—on NYUv2, SUN RGB-D, and Cityscapes, achieving advantages in both accuracy and speed.
+  [CVPR2026][Segmentation][RGB-D Scene Understanding] This paper proposes an efficient RGB-D multi-task scene understanding network. An improved fusion encoder exploits channel redundancy to accelerate feature extraction.…
 tags:
-  - CVPR2026
-  - Segmentation
-  - RGB-D Scene Understanding
-  - Multi-task Adaptive Learning
-  - Cross-dimensional Feature Guidance
-  - Panoptic Segmentation
-  - Fusion Encoder
+  - "CVPR2026"
+  - "Segmentation"
+  - "RGB-D Scene Understanding"
+  - "Multi-task Adaptive Learning"
+  - "Cross-dimensional Feature Guidance"
+  - "Panoptic Segmentation"
+  - "Fusion Encoder"
 date: 2026-05-08
 content_hash: d3ac23ada7e9219a
 ---

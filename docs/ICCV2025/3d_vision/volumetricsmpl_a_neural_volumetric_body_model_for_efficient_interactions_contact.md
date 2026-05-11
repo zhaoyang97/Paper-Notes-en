@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VolumetricSMPL: A Neural Volumetric Body Model for Efficient Interactions, Contacts, and Collisions
 description: >-
-  [ICCV 2025][3D Vision][Human Body Model] This paper proposes VolumetricSMPL, an efficient neural volumetric body model based on Neural Blend Weights (NBW), achieving 10× inference speedup and 6× memory reduction over its predecessor COAP, while providing more accurate differentiable collision modeling through SDF (rather than occupancy function) representation.
+  [ICCV 2025][3D Vision][Human Body Model] This paper proposes VolumetricSMPL, an efficient neural volumetric body model based on Neural Blend Weights (NBW)…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Human Body Model
-  - Signed Distance Field
-  - Neural Weight Generation
-  - Collision Detection
-  - Human Interaction
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Human Body Model"
+  - "Signed Distance Field"
+  - "Neural Weight Generation"
+  - "Collision Detection"
+  - "Human Interaction"
 date: 2026-05-08
 content_hash: f9d0fd37c2a41aa1
 ---

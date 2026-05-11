@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PolyPose: Deformable 2D/3D Registration via Polyrigid Transformations
 description: >-
-  [NeurIPS 2025][Medical Imaging][2D/3D registration] This paper presents PolyPose, a deformable 2D/3D registration method based on polyrigid transformations. Leveraging the anatomical prior that bones are rigid bodies, PolyPose parameterizes complex 3D deformation fields as weighted combinations of multiple rigid transformations in the Lie algebra $\mathfrak{se}(3)$, enabling accurate 3D volumetric registration from as few as two X-ray images without any regularization or hyperparameter tuning.
+  [NeurIPS 2025][Medical Imaging][2D/3D registration] This paper presents PolyPose, a deformable 2D/3D registration method based on polyrigid transformations. Leveraging the anatomical prior that bones are rigid bodies…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - 2D/3D registration
-  - polyrigid transformation
-  - differentiable X-ray rendering
-  - intraoperative navigation
-  - sparse-view
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "2D/3D registration"
+  - "polyrigid transformation"
+  - "differentiable X-ray rendering"
+  - "intraoperative navigation"
+  - "sparse-view"
 date: 2026-05-08
 content_hash: d2218f9d54a940bd
 ---

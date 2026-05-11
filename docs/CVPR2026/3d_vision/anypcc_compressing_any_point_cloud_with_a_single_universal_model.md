@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AnyPcc: Compressing Any Point Cloud with a Single Universal Model
 description: >-
-  [CVPR 2026][3D Vision][point cloud compression] AnyPcc proposes a Universal Context Model (UCM) that integrates dual-granularity spatial and channel priors, combined with an Instance-Adaptive Fine-Tuning (IAFT) strategy, to achieve state-of-the-art point cloud geometry compression across 15 diverse datasets using a single model, yielding approximately 12% bitrate reduction over G-PCC v23.
+  [CVPR 2026][3D Vision][point cloud compression] AnyPcc proposes a Universal Context Model (UCM) that integrates dual-granularity spatial and channel priors, combined with an Instance-Adaptive Fine-Tuning (IAFT) strategy…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - point cloud compression
-  - universal context model
-  - instance-adaptive fine-tuning
-  - occupancy code
-  - lossless/lossy compression
+  - "CVPR 2026"
+  - "3D Vision"
+  - "point cloud compression"
+  - "universal context model"
+  - "instance-adaptive fine-tuning"
+  - "occupancy code"
+  - "lossless/lossy compression"
 date: 2026-05-08
 content_hash: 127ce85398d88e7e
 ---

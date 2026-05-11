@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] O-MaMa: Learning Object Mask Matching between Egocentric and Exocentric Views
 description: >-
-  [ICCV 2025][Segmentation][Cross-View Segmentation] This work reframes cross-view (ego-exo) object segmentation as a mask matching problem. It leverages FastSAM to generate candidate masks, DINOv2 to extract semantic features, and contrastive learning to match objects across views, achieving state-of-the-art performance on the Ego-Exo4D benchmark with only 1% of the trainable parameters used by prior methods.
+  [ICCV 2025][Segmentation][Cross-View Segmentation] This work reframes cross-view (ego-exo) object segmentation as a mask matching problem. It leverages FastSAM to generate candidate masks…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - Cross-View Segmentation
-  - Mask Matching
-  - Ego-Exo Correspondences
-  - Contrastive Learning
-  - DINOv2
+  - "ICCV 2025"
+  - "Segmentation"
+  - "Cross-View Segmentation"
+  - "Mask Matching"
+  - "Ego-Exo Correspondences"
+  - "Contrastive Learning"
+  - "DINOv2"
 date: 2026-05-08
 content_hash: eed04e13745c628b
 ---

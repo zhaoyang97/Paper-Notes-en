@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Long-window Anchoring in Vision-Language Model Distillation
 description: >-
-  [AAAI 2026][Multimodal VLM][Knowledge Distillation] LAid (Long-window Anchoring distillation) proposes a position-aware knowledge distillation framework that extends the effective context window of small VLMs (3B/7B) to 3.2× their original size—approaching the level of a large teacher model (32B)—through head-level Fourier-enhanced positional knowledge transfer, while preserving performance on standard VL benchmarks.
+  [AAAI 2026][Multimodal VLM][Knowledge Distillation] LAid (Long-window Anchoring distillation) proposes a position-aware knowledge distillation framework that extends the effective context window of small VLMs (3B/7B) to…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Knowledge Distillation
-  - Long-context VLM
-  - RoPE Positional Encoding
-  - Fourier Analysis
-  - Context Window Extension
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Knowledge Distillation"
+  - "Long-context VLM"
+  - "RoPE Positional Encoding"
+  - "Fourier Analysis"
+  - "Context Window Extension"
 date: 2026-05-08
 content_hash: 1316785ef6d58425
 ---

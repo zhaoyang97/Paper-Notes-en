@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] MARS-Sep: Multimodal-Aligned Reinforced Sound Separation
 description: >-
-  [ICLR 2026][Reinforcement Learning][Sound Separation] MARS-Sep reformulates query-conditioned sound separation as a reinforcement learning problem, performing stochastic decisions over time-frequency bins via a factorized Beta mask policy, and leverages a progressively aligned multimodal encoder to provide semantic reward signals, achieving simultaneous improvements in signal fidelity and semantic consistency.
+  [ICLR 2026][Reinforcement Learning][Sound Separation] MARS-Sep reformulates query-conditioned sound separation as a reinforcement learning problem…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Sound Separation
-  - Multimodal Alignment
-  - Beta Policy
-  - Preference Reward
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Sound Separation"
+  - "Multimodal Alignment"
+  - "Beta Policy"
+  - "Preference Reward"
 date: 2026-05-08
 content_hash: b0c5830b8e215f70
 ---

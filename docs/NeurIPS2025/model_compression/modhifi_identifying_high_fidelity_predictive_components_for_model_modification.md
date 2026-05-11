@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] ModHiFi: Identifying High Fidelity Predictive Components for Model Modification
 description: >-
-  [NeurIPS 2025][Model Compression][model modification] This paper proposes the Subset Fidelity metric and the ModHiFi framework. Through theoretical analysis, it proves that local reconstruction error linearly upper-bounds global prediction error for Lipschitz continuous networks. Without requiring training data, loss functions, or gradients—using only synthetic data—the framework identifies high-fidelity (HiFi) components within a model, and unifies the tasks of structured pruning and class unlearning under a single formulation.
+  [NeurIPS 2025][Model Compression][model modification] This paper proposes the Subset Fidelity metric and the ModHiFi framework. Through theoretical analysis…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - model modification
-  - structured pruning
-  - machine unlearning
-  - subset fidelity
-  - Lipschitz continuity
-  - synthetic data
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "model modification"
+  - "structured pruning"
+  - "machine unlearning"
+  - "subset fidelity"
+  - "Lipschitz continuity"
+  - "synthetic data"
 date: 2026-05-08
 content_hash: e00b2ea930f6e2c7
 ---

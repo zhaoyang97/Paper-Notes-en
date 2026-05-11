@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Cost-Sensitive Freeze-thaw Bayesian Optimization for Efficient Hyperparameter Tuning
 description: >-
-  [NeurIPS 2025][LLM Evaluation][Hyperparameter Optimization] CFBO incorporates user-defined utility functions (cost–performance trade-offs) into the freeze-thaw Bayesian optimization framework, and combines an adaptive stopping criterion with LC mixup-based transfer learning to achieve optimal cost–performance trade-offs on multi-fidelity HPO benchmarks.
+  [NeurIPS 2025][LLM Evaluation][Hyperparameter Optimization] CFBO incorporates user-defined utility functions (cost–performance trade-offs) into the freeze-thaw Bayesian optimization framework…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - Hyperparameter Optimization
-  - Bayesian Optimization
-  - Freeze-thaw
-  - Cost-Sensitive
-  - Learning Curve Extrapolation
-  - Transfer Learning
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "Hyperparameter Optimization"
+  - "Bayesian Optimization"
+  - "Freeze-thaw"
+  - "Cost-Sensitive"
+  - "Learning Curve Extrapolation"
+  - "Transfer Learning"
 date: 2026-05-08
 content_hash: f52cb70effc51c8a
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PatientSim: A Persona-Driven Simulator for Realistic Doctor-Patient Interactions
 description: >-
-  [NeurIPS 2025][Medical Imaging][patient simulator] This paper introduces PatientSim — an LLM-based patient simulator grounded in real MIMIC clinical data and a four-dimensional persona framework (personality, language proficiency, medical history recall, and cognitive confusion), generating 37 unique persona combinations. The system is evaluated across 8 LLMs for factual accuracy and persona fidelity, and validated by 4 clinical experts with a mean quality score of 3.89/4.
+  [NeurIPS 2025][Medical Imaging][patient simulator] This paper introduces PatientSim — an LLM-based patient simulator grounded in real MIMIC clinical data and a four-dimensional persona framework (personality…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - patient simulator
-  - LLM role-playing
-  - doctor-patient dialogue
-  - persona modeling
-  - clinical education
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "patient simulator"
+  - "LLM role-playing"
+  - "doctor-patient dialogue"
+  - "persona modeling"
+  - "clinical education"
 date: 2026-05-08
 content_hash: 58ed0081bef68f00
 ---

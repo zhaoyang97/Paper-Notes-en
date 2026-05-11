@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] On the Expressive Power of GNNs for Boolean Satisfiability
 description: >-
-  [ICLR 2026][Graph Learning][GNN expressiveness] This paper rigorously proves, from the perspective of the Weisfeiler-Leman (WL) test, that the complete WL hierarchy cannot distinguish satisfiable from unsatisfiable 3-SAT instances, revealing the theoretical expressiveness limits of GNNs for SAT solving. It also identifies positive instance families—such as planar SAT and random SAT—where GNNs can successfully distinguish satisfiability.
+  [ICLR 2026][Graph Learning][GNN expressiveness] This paper rigorously proves, from the perspective of the Weisfeiler-Leman (WL) test, that the complete WL hierarchy cannot distinguish satisfiable from unsatisfiable 3-SAT…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - GNN expressiveness
-  - Boolean satisfiability
-  - Weisfeiler-Leman test
-  - SAT solving
-  - theoretical analysis
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "GNN expressiveness"
+  - "Boolean satisfiability"
+  - "Weisfeiler-Leman test"
+  - "SAT solving"
+  - "theoretical analysis"
 date: 2026-05-08
 content_hash: e2df6e6281597651
 ---

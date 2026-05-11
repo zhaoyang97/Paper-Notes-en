@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MIL-PF: Multiple Instance Learning on Precomputed Features for Mammography Classification
 description: >-
-  [CVPR 2026][Medical Imaging][multiple instance learning] Combining frozen general-purpose foundation encoders (DINOv2 ViT-Giant / MedSigLIP) with a lightweight MIL aggregation head of only ~40k parameters, MIL-PF achieves state-of-the-art performance on large-scale mammography classification benchmarks such as EMBED (AUC 0.916, Spec@Sens=0.9 of 0.762) via a dual-stream aggregation strategy (global mean pooling + local Perceiver cross-attention), training in 5–7 minutes with 35–458× fewer trainable parameters than baselines.
+  [CVPR 2026][Medical Imaging][multiple instance learning] Combining frozen general-purpose foundation encoders (DINOv2 ViT-Giant / MedSigLIP) with a lightweight MIL aggregation head of only ~40k parameters…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - multiple instance learning
-  - mammography
-  - precomputed features
-  - frozen foundation models
-  - weakly supervised classification
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "multiple instance learning"
+  - "mammography"
+  - "precomputed features"
+  - "frozen foundation models"
+  - "weakly supervised classification"
 date: 2026-05-08
 content_hash: 35a725bdbc9af0ed
 ---

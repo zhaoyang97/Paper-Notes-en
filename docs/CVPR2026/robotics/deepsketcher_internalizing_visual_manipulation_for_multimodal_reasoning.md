@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DeepSketcher: Internalizing Visual Manipulation for Multimodal Reasoning
 description: >-
-  [CVPR 2026][Robotics][Visual Reasoning] This paper proposes the DeepSketcher suite — comprising a 31k high-quality interleaved image-text CoT dataset built via code rendering and a self-contained Embedding Editor model — enabling VLMs to generate "visual thoughts" directly in the visual embedding space for multimodal reasoning without relying on any external tools.
+  [CVPR 2026][Robotics][Visual Reasoning] This paper proposes the DeepSketcher suite — comprising a 31k high-quality interleaved image-text CoT dataset built via code rendering and a self-contained Embedding Editor model —…
 tags:
-  - CVPR 2026
-  - Robotics
-  - Visual Reasoning
-  - Interleaved Image-Text Reasoning
-  - Visual Thinking
-  - Embedding Editor
-  - Code Rendering
+  - "CVPR 2026"
+  - "Robotics"
+  - "Visual Reasoning"
+  - "Interleaved Image-Text Reasoning"
+  - "Visual Thinking"
+  - "Embedding Editor"
+  - "Code Rendering"
 date: 2026-05-08
 content_hash: 9afc09730875f8db
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Adaptive Rollout Allocation for Online RL with Verifiable Rewards (VIP)
 description: >-
-  [ICLR 2026][Optimization][GRPO] This paper proposes VIP (Variance-Informed Predictive allocation), which uses a Gaussian process to predict the success probability of each prompt and then solves a convex optimization problem to allocate rollout counts under a compute budget constraint, minimizing gradient variance. VIP consistently improves the sampling efficiency of GRPO/RLOO on mathematical reasoning tasks, achieving up to 12.3-point gains in Pass@32 on AIME24/25.
+  [ICLR 2026][Optimization][GRPO] This paper proposes VIP (Variance-Informed Predictive allocation), which uses a Gaussian process to predict the success probability of each prompt and then solves a convex optimization pro…
 tags:
-  - ICLR 2026
-  - Optimization
-  - GRPO
-  - rollout allocation
-  - gradient variance
-  - Gaussian process
-  - sampling efficiency
+  - "ICLR 2026"
+  - "Optimization"
+  - "GRPO"
+  - "rollout allocation"
+  - "gradient variance"
+  - "Gaussian process"
+  - "sampling efficiency"
 date: 2026-05-08
 content_hash: 0c5a15cacb300197
 ---

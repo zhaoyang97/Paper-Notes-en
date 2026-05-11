@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multi-Modal Image Fusion via Intervention-Stable Feature Learning
 description: >-
-  [CVPR 2026][Multimodal VLM][Multi-modal image fusion] This paper proposes a causal inference-inspired multi-modal image fusion framework that employs three structured intervention strategies (complementary masking, random masking, and modality dropout) to probe genuine inter-modal dependencies, and designs a Causal Feature Integrator (CFI) to learn intervention-stable features. The method achieves PSNR of 66.02 and AG of 4.129 on MSRS, and mAP of 0.821 on object detection.
+  [CVPR 2026][Multimodal VLM][Multi-modal image fusion] This paper proposes a causal inference-inspired multi-modal image fusion framework that employs three structured intervention strategies (complementary masking…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Multi-modal image fusion
-  - causal inference
-  - intervention learning
-  - infrared-visible fusion
-  - feature stability
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Multi-modal image fusion"
+  - "causal inference"
+  - "intervention learning"
+  - "infrared-visible fusion"
+  - "feature stability"
 date: 2026-05-08
 content_hash: 0648445f0670533d
 ---

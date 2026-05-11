@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Enhancing Rotation-Invariant 3D Learning with Global Pose Awareness and Attention Mechanisms
 description: >-
-  [AAAI 2026][3D Vision][Rotation invariance] This paper proposes the Shadow-informed Pose Feature (SiPF) and the RIAttnConv operator. By introducing a global "shadow" reference point generated via Bingham distribution learning, the method enhances the global pose awareness of local rotation-invariant features, resolving the "Wing-tip Feature Collapse" problem where symmetric structures (e.g., left and right wings of an airplane) cannot be distinguished. The approach achieves state-of-the-art performance on ModelNet40 classification and ShapeNetPart segmentation.
+  [AAAI 2026][3D Vision][Rotation invariance] This paper proposes the Shadow-informed Pose Feature (SiPF) and the RIAttnConv operator. By introducing a global "shadow" reference point generated via Bingham distribution lea…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - Rotation invariance
-  - point cloud classification
-  - part segmentation
-  - attention mechanism
-  - global pose awareness
+  - "AAAI 2026"
+  - "3D Vision"
+  - "Rotation invariance"
+  - "point cloud classification"
+  - "part segmentation"
+  - "attention mechanism"
+  - "global pose awareness"
 date: 2026-05-08
 content_hash: 837423178cfa6b3d
 ---

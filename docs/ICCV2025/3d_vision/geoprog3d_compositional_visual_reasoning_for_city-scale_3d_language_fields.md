@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GeoProg3D: Compositional Visual Reasoning for City-Scale 3D Language Fields
 description: >-
-  [ICCV 2025][3D Vision][3D language fields] This paper proposes GeoProg3D, the first visual programming framework supporting natural language interaction with city-scale high-fidelity 3D scenes. By combining a Geo-aware City-scale 3D Language Field (GCLF) with Geo-Visual APIs (GV-APIs) and an LLM reasoning engine, the framework enables compositional geospatial reasoning. GeoProg3D comprehensively outperforms existing 3D language field and VLM methods on the newly introduced GeoEval3D benchmark, which contains 952 annotated queries.
+  [ICCV 2025][3D Vision][3D language fields] This paper proposes GeoProg3D, the first visual programming framework supporting natural language interaction with city-scale high-fidelity 3D scenes. By combining a Geo-aware C…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D language fields
-  - city-scale scenes
-  - visual programming
-  - compositional reasoning
-  - geographic information
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D language fields"
+  - "city-scale scenes"
+  - "visual programming"
+  - "compositional reasoning"
+  - "geographic information"
 date: 2026-05-08
 content_hash: f2fddcb6141d1a45
 ---

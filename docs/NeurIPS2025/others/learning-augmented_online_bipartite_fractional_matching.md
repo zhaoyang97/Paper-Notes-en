@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Learning-Augmented Online Bipartite Fractional Matching
 description: >-
-  [NeurIPS 2025][online bipartite matching] This paper proposes two learning-augmented algorithms (LAB and PAW) for online bipartite fractional matching. Given a potentially inaccurate advice matching, both algorithms Pareto-dominate the naïve CoinFlip strategy across the entire robustness spectrum for the first time.
+  [NeurIPS 2025][online bipartite matching] This paper proposes two learning-augmented algorithms (LAB and PAW) for online bipartite fractional matching. Given a potentially inaccurate advice matching…
 tags:
-  - NeurIPS 2025
-  - online bipartite matching
-  - learning-augmented algorithms
-  - competitive ratio
-  - robustness-consistency trade-off
-  - fractional matching
+  - "NeurIPS 2025"
+  - "online bipartite matching"
+  - "learning-augmented algorithms"
+  - "competitive ratio"
+  - "robustness-consistency trade-off"
+  - "fractional matching"
 date: 2026-05-08
 content_hash: 03f60a5acc7e477a
 ---

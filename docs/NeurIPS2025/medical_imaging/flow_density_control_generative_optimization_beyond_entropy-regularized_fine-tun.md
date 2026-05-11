@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Flow Density Control: Generative Optimization Beyond Entropy-Regularized Fine-Tuning
 description: >-
-  [NeurIPS 2025][Medical Imaging][flow model fine-tuning] This paper proposes Flow Density Control (FDC), which generalizes the fine-tuning of pretrained flow/diffusion models from KL-regularized expected reward maximization to a unified framework supporting **arbitrary distributional utility functions with arbitrary divergence regularization**. The approach decomposes nonlinear objectives into a sequence of linear fine-tuning subproblems and provides convergence guarantees.
+  [NeurIPS 2025][Medical Imaging][flow model fine-tuning] This paper proposes Flow Density Control (FDC), which generalizes the fine-tuning of pretrained flow/diffusion models from KL-regularized expected reward maximizati…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - flow model fine-tuning
-  - generative optimization
-  - mirror descent
-  - density control
-  - nonlinear utility functions
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "flow model fine-tuning"
+  - "generative optimization"
+  - "mirror descent"
+  - "density control"
+  - "nonlinear utility functions"
 date: 2026-05-08
 content_hash: 42d153369019218a
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OmniVDiff: Omni Controllable Video Diffusion for Generation and Understanding
 description: >-
-  [AAAI 2026][Video Generation][Video diffusion models] This paper proposes OmniVDiff, a unified controllable video diffusion framework that jointly models multiple visual modalities (RGB, depth, segmentation, Canny) in color space and introduces an Adaptive Modality Control Strategy (AMCS). Within a single diffusion model, OmniVDiff simultaneously supports three task types—text-conditioned generation, X-conditioned generation, and video understanding—achieving state-of-the-art performance on VBench.
+  [AAAI 2026][Video Generation][Video diffusion models] This paper proposes OmniVDiff, a unified controllable video diffusion framework that jointly models multiple visual modalities (RGB, depth, segmentation…
 tags:
-  - AAAI 2026
-  - Video Generation
-  - Video diffusion models
-  - multimodal generation
-  - controllable video generation
-  - video understanding
-  - unified framework
+  - "AAAI 2026"
+  - "Video Generation"
+  - "Video diffusion models"
+  - "multimodal generation"
+  - "controllable video generation"
+  - "video understanding"
+  - "unified framework"
 date: 2026-05-08
 content_hash: 1a87da7a27218406
 ---

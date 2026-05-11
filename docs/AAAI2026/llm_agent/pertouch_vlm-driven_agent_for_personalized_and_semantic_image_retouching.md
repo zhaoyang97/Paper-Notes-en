@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] PerTouch: VLM-Driven Agent for Personalized and Semantic Image Retouching
 description: >-
-  [AAAI 2026][LLM Agent][VLM Agent] This paper proposes PerTouch, a framework that integrates a semantic region-level retouching model based on Stable Diffusion + ControlNet with a VLM-driven Agent (incorporating feedback-driven rethinking and scene-aware memory) to achieve fine-grained, personalized image retouching.
+  [AAAI 2026][LLM Agent][VLM Agent] This paper proposes PerTouch, a framework that integrates a semantic region-level retouching model based on Stable Diffusion + ControlNet with a VLM-driven Agent (incorporating feedback-…
 tags:
-  - AAAI 2026
-  - LLM Agent
-  - VLM Agent
-  - Image Retouching
-  - Personalized Editing
-  - Semantic Awareness
-  - Diffusion Model
-  - Scene Memory
+  - "AAAI 2026"
+  - "LLM Agent"
+  - "VLM Agent"
+  - "Image Retouching"
+  - "Personalized Editing"
+  - "Semantic Awareness"
+  - "Diffusion Model"
+  - "Scene Memory"
 date: 2026-05-08
 content_hash: 5fb6e4ed971407fb
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HOI-Dyn: Learning Interaction Dynamics for Human-Object Motion Diffusion
 description: >-
-  [NeurIPS 2025][Human Understanding][Human-Object Interaction] This paper models human-object interaction (HOI) generation as a Driver-Responder system, employing a lightweight Transformer-based interaction dynamics model to explicitly predict how objects respond to human actions. A residual dynamics loss is introduced during training to enforce causal consistency, while inference efficiency is preserved.
+  [NeurIPS 2025][Human Understanding][Human-Object Interaction] This paper models human-object interaction (HOI) generation as a Driver-Responder system…
 tags:
-  - NeurIPS 2025
-  - Human Understanding
-  - Human-Object Interaction
-  - Motion Diffusion
-  - Interaction Dynamics
-  - Driver-Responder
-  - Transformer
+  - "NeurIPS 2025"
+  - "Human Understanding"
+  - "Human-Object Interaction"
+  - "Motion Diffusion"
+  - "Interaction Dynamics"
+  - "Driver-Responder"
+  - "Transformer"
 date: 2026-05-08
 content_hash: 730cc0244574177b
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] ReCamMaster: Camera-Controlled Generative Rendering from A Single Video
 description: >-
-  [ICCV 2025][Video Generation][Camera Control] This paper proposes ReCamMaster, which achieves camera-trajectory-controlled video re-generation from a single input video via a frame-dimension conditioning mechanism and a multi-camera synchronized dataset synthesized in UE5, significantly outperforming existing methods.
+  [ICCV 2025][Video Generation][Camera Control] This paper proposes ReCamMaster, which achieves camera-trajectory-controlled video re-generation from a single input video via a frame-dimension conditioning mechanism and a…
 tags:
-  - ICCV 2025
-  - Video Generation
-  - Camera Control
-  - Video Re-rendering
-  - Diffusion Models
-  - Multi-Camera Dataset
+  - "ICCV 2025"
+  - "Video Generation"
+  - "Camera Control"
+  - "Video Re-rendering"
+  - "Diffusion Models"
+  - "Multi-Camera Dataset"
 date: 2026-05-08
 content_hash: bb51b3e839734cbc
 ---

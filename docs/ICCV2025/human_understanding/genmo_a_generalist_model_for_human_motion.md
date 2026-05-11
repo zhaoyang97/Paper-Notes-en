@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GENMO: A GENeralist Model for Human MOtion
 description: >-
-  [ICCV 2025][Human Understanding][Human motion modeling] This paper proposes GENMO, the first generalist model that unifies human motion estimation (recovering motion from video/2D keypoints) and motion generation (synthesizing motion from text/music/keyframes) within a single framework. Through a dual-mode training paradigm (regression + diffusion), GENMO achieves both precise estimation and diverse generation in a single model.
+  [ICCV 2025][Human Understanding][Human motion modeling] This paper proposes GENMO, the first generalist model that unifies human motion estimation (recovering motion from video/2D keypoints) and motion generation (synthe…
 tags:
-  - ICCV 2025
-  - Human Understanding
-  - Human motion modeling
-  - motion estimation
-  - motion generation
-  - diffusion models
-  - multimodal conditioning
+  - "ICCV 2025"
+  - "Human Understanding"
+  - "Human motion modeling"
+  - "motion estimation"
+  - "motion generation"
+  - "diffusion models"
+  - "multimodal conditioning"
 date: 2026-05-08
 content_hash: 39eb07f741265eba
 ---

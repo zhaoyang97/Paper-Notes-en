@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AnimateAnyMesh: A Feed-Forward 4D Foundation Model for Text-Driven Universal Mesh Animation
 description: >-
-  [ICCV 2025][3D Vision][4D Generation] This paper proposes AnimateAnyMesh, the first feed-forward text-driven universal mesh animation framework. It introduces DyMeshVAE to decompose dynamic meshes into initial positions and relative trajectories, compressing them into a latent space. A Rectified Flow-based MMDiT model then learns the trajectory distribution conditioned on text. Trained on the 4M+ DyMesh dataset, the framework generates high-quality animations for meshes of arbitrary topology within 6 seconds, comprehensively outperforming DG4D, L4GM, and Animate3D.
+  [ICCV 2025][3D Vision][4D Generation] This paper proposes AnimateAnyMesh, the first feed-forward text-driven universal mesh animation framework. It introduces DyMeshVAE to decompose dynamic meshes into initial positions…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 4D Generation
-  - Text-Driven Animation
-  - Dynamic Mesh
-  - VAE
-  - Rectified Flow
+  - "ICCV 2025"
+  - "3D Vision"
+  - "4D Generation"
+  - "Text-Driven Animation"
+  - "Dynamic Mesh"
+  - "VAE"
+  - "Rectified Flow"
 date: 2026-05-08
 content_hash: 4ca6eaaa8cabad1a
 ---

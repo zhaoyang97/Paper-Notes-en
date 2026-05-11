@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CAM: A Constructivist View of Agentic Memory for LLM-Based Reading Comprehension
 description: >-
-  [NeurIPS 2025][LLM Agent][Agentic memory] Inspired by Piaget's constructivist theory, this paper proposes CAM — an agentic memory system characterized by three properties: structuredness (hierarchical schema), flexibility (assimilation via overlapping clustering), and dynamism (incremental adaptation). CAM comprehensively outperforms baselines such as RAPTOR and GraphRAG across six long-document reading comprehension benchmarks.
+  [NeurIPS 2025][LLM Agent][Agentic memory] Inspired by Piaget's constructivist theory, this paper proposes CAM — an agentic memory system characterized by three properties: structuredness (hierarchical schema)…
 tags:
-  - NeurIPS 2025
-  - LLM Agent
-  - Agentic memory
-  - long-document understanding
-  - hierarchical memory
-  - incremental clustering
-  - constructivism
+  - "NeurIPS 2025"
+  - "LLM Agent"
+  - "Agentic memory"
+  - "long-document understanding"
+  - "hierarchical memory"
+  - "incremental clustering"
+  - "constructivism"
 date: 2026-05-08
 content_hash: c4ff4c4149be37eb
 ---

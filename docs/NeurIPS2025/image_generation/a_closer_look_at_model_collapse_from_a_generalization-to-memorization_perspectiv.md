@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] A Closer Look at Model Collapse: From a Generalization-to-Memorization Perspective
 description: >-
-  [NeurIPS 2025][Image Generation][model collapse] This paper identifies a generalization-to-memorization transition in diffusion models under self-consuming loops (where each generation of models is trained on synthetic data from the previous one), reveals a strong linear correlation between training set entropy and model generalization (Pearson $r=0.91$), and proposes entropy-based data selection strategies (Greedy Selection / Threshold Decay Filter) that effectively slow this transition—reducing FID from 75.7 to 44.7 at iteration 8 under the CIFAR-10 accumulate paradigm.
+  [NeurIPS 2025][Image Generation][model collapse] This paper identifies a generalization-to-memorization transition in diffusion models under self-consuming loops (where each generation of models is trained on synthetic d…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - model collapse
-  - self-consuming loop
-  - generalization
-  - memorization
-  - entropy
-  - data selection
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "model collapse"
+  - "self-consuming loop"
+  - "generalization"
+  - "memorization"
+  - "entropy"
+  - "data selection"
 date: 2026-05-08
 content_hash: 44c7b8b009360e8d
 ---

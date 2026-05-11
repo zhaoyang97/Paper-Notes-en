@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] QuadGPT: Native Quadrilateral Mesh Generation with Autoregressive Models
 description: >-
-  [ICLR 2026][3D Vision][quad mesh generation] This paper presents QuadGPT—the first end-to-end autoregressive framework for native quadrilateral mesh generation. It achieves comprehensive superiority over existing triangle-to-quad conversion pipelines and cross-field-guided methods in Chamfer Distance, Hausdorff Distance, quad ratio, and user preference, via unified mixed-topology tokenization (padding triangular faces into 4-vertex blocks), a Hourglass Transformer architecture, and topology-reward-based truncated DPO (tDPO) fine-tuning.
+  [ICLR 2026][3D Vision][quad mesh generation] This paper presents QuadGPT—the first end-to-end autoregressive framework for native quadrilateral mesh generation. It achieves comprehensive superiority over existing triangl…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - quad mesh generation
-  - autoregressive model
-  - mixed topology
-  - tDPO
-  - Hourglass Transformer
+  - "ICLR 2026"
+  - "3D Vision"
+  - "quad mesh generation"
+  - "autoregressive model"
+  - "mixed topology"
+  - "tDPO"
+  - "Hourglass Transformer"
 date: 2026-05-08
 content_hash: 6408da82f76ed40b
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BadVideo: Stealthy Backdoor Attack against Text-to-Video Generation
 description: >-
-  [ICCV 2025][Video Generation][text-to-video generation] BadVideo is the first backdoor attack framework targeting text-to-video (T2V) generation models. It exploits inherent static and dynamic redundancy in video (e.g., unspecified background elements, motion trajectories) through two strategies—spatio-temporal composition and dynamic element transition—to covertly embed malicious content. The framework achieves up to 93.5% human-evaluated attack success rate on LaVie and Open-Sora while effectively evading existing content moderation systems.
+  [ICCV 2025][Video Generation][text-to-video generation] BadVideo is the first backdoor attack framework targeting text-to-video (T2V) generation models. It exploits inherent static and dynamic redundancy in video (e.g.…
 tags:
-  - ICCV 2025
-  - Video Generation
-  - text-to-video generation
-  - backdoor attack
-  - redundancy exploitation
-  - spatio-temporal composition
-  - content safety
+  - "ICCV 2025"
+  - "Video Generation"
+  - "text-to-video generation"
+  - "backdoor attack"
+  - "redundancy exploitation"
+  - "spatio-temporal composition"
+  - "content safety"
 date: 2026-05-08
 content_hash: f7416bad38755814
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Efficient PRM Training Data Synthesis via Formal Verification
 description: >-
-  [ACL 2026][LLM Reasoning][PRM] This paper proposes FoVer, a framework that leverages formal verification tools (Z3 and Isabelle) to automatically annotate step-level correctness labels for reasoning chains in formal reasoning tasks. It constructs the FoVer-40K training set and fine-tunes a PRM, demonstrating formal-to-informal transfer capability and cross-task generalization across 12 reasoning benchmarks.
+  [ACL 2026][LLM Reasoning][PRM] This paper proposes FoVer, a framework that leverages formal verification tools (Z3 and Isabelle) to automatically annotate step-level correctness labels for reasoning chains in formal reas…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - PRM
-  - formal verification
-  - step-level labels
-  - Z3
-  - Isabelle
+  - "ACL 2026"
+  - "LLM Reasoning"
+  - "PRM"
+  - "formal verification"
+  - "step-level labels"
+  - "Z3"
+  - "Isabelle"
 date: 2026-05-08
 content_hash: da98512eb40b3aaf
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HN-MVTS: HyperNetwork-based Multivariate Time Series Forecasting
 description: >-
-  [AAAI 2026][Time Series][Multivariate time series forecasting] This paper proposes HN-MVTS, which employs a HyperNetwork to generate channel-specific weights for the final prediction layer, striking a balance between channel-independent (CI) and channel-dependent (CD) modeling. As a plug-and-play module, it improves forecasting accuracy of various backbone models including DLinear, PatchTST, and TSMixer without incurring additional inference overhead.
+  [AAAI 2026][Time Series][Multivariate time series forecasting] This paper proposes HN-MVTS, which employs a HyperNetwork to generate channel-specific weights for the final prediction layer…
 tags:
-  - AAAI 2026
-  - Time Series
-  - Multivariate time series forecasting
-  - HyperNetwork
-  - channel dependence
-  - channel independence
-  - plug-and-play
+  - "AAAI 2026"
+  - "Time Series"
+  - "Multivariate time series forecasting"
+  - "HyperNetwork"
+  - "channel dependence"
+  - "channel independence"
+  - "plug-and-play"
 date: 2026-05-08
 content_hash: 1eda41a3c5432837
 ---

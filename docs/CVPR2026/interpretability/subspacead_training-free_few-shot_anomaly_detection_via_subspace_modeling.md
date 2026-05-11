@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] SubspaceAD: Training-Free Few-Shot Anomaly Detection via Subspace Modeling
 description: >-
-  [CVPR 2026][Few-shot anomaly detection] SubspaceAD demonstrates that fitting a single PCA model on features from a strong visual foundation model (DINOv2-G) is sufficient to outperform all few-shot anomaly detection methods requiring training, memory banks, or prompt tuning, achieving 98.0% image-level AUROC and 97.6% pixel-level AUROC on MVTec-AD under the 1-shot setting.
+  [CVPR 2026][Interpretability][Few-shot anomaly detection] SubspaceAD demonstrates that fitting a single PCA model on features from a strong visual foundation model (DINOv2-G) is sufficient to outperform all few-shot anom…
 tags:
-  - CVPR 2026
-  - Few-shot anomaly detection
-  - PCA
-  - DINOv2
-  - training-free
-  - subspace modeling
+  - "CVPR 2026"
+  - "Interpretability"
+  - "Few-shot anomaly detection"
+  - "PCA"
+  - "DINOv2"
+  - "training-free"
+  - "subspace modeling"
 date: 2026-05-08
 content_hash: e1c1d1dd6ca2b044
 ---

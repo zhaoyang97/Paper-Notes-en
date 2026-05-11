@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PhysVLM-AVR: Active Visual Reasoning for Multimodal Large Language Models in Physical Environments
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Active visual reasoning] This paper proposes the Active Visual Reasoning (AVR) task paradigm, constructs the CLEVR-AVR simulation benchmark and the AVR-152k dataset (with rich CoT annotations), and trains the PhysVLM-AVR model to iteratively acquire information through a perception–reasoning–action closed loop in partially observable interactive environments, significantly outperforming existing MLLMs.
+  [NeurIPS 2025][Multimodal VLM][Active visual reasoning] This paper proposes the Active Visual Reasoning (AVR) task paradigm, constructs the CLEVR-AVR simulation benchmark and the AVR-152k dataset (with rich CoT annotatio…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Active visual reasoning
-  - partially observable environments
-  - multi-step interaction
-  - Chain-of-Thought
-  - embodied intelligence
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Active visual reasoning"
+  - "partially observable environments"
+  - "multi-step interaction"
+  - "Chain-of-Thought"
+  - "embodied intelligence"
 date: 2026-05-08
 content_hash: beba30dec95991df
 ---

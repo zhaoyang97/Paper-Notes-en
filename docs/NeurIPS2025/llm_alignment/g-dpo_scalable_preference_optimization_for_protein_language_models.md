@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] g-DPO: Scalable Preference Optimization for Protein Language Models
 description: >-
-  [NeurIPS 2025][LLM Alignment][DPO] To address the quadratic growth of preference pairs with respect to sample size when applying DPO to protein language models (PLMs)—which renders training intractable—this paper proposes g-DPO: (1) redundant preference pairs are pruned via union-mask-based clustering in sequence space, retaining more informative comparisons within local neighborhoods; (2) grouped likelihood amortization via shared union masks enables computation of log-likelihoods for all sequences within a group in a single forward pass. Across three protein engineering tasks, g-DPO achieves statistically indistinguishable in silico and in vitro performance compared to standard DPO, while delivering 1.7–5.4× training speedups.
+  [NeurIPS 2025][LLM Alignment][DPO] To address the quadratic growth of preference pairs with respect to sample size when applying DPO to protein language models (PLMs)—which renders training intractable—this paper propose…
 tags:
-  - NeurIPS 2025
-  - LLM Alignment
-  - DPO
-  - Protein Language Models
-  - Preference Optimization
-  - Scalability
-  - Mutational Landscape
+  - "NeurIPS 2025"
+  - "LLM Alignment"
+  - "DPO"
+  - "Protein Language Models"
+  - "Preference Optimization"
+  - "Scalability"
+  - "Mutational Landscape"
 date: 2026-05-08
 content_hash: bf310ded7c224f25
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FACE: A General Framework for Mapping Collaborative Filtering Embeddings into LLM Tokens
 description: >-
-  [NeurIPS 2025][Recommender Systems][Collaborative Filtering] FACE proposes mapping collaborative filtering (CF) embeddings into LLM pre-trained tokens (descriptors) via disentangled projection and residual quantization, followed by contrastive learning for semantic alignment — enabling semantic interpretation and recommendation enhancement of CF embeddings without fine-tuning the LLM.
+  [NeurIPS 2025][Recommender Systems][Collaborative Filtering] FACE proposes mapping collaborative filtering (CF) embeddings into LLM pre-trained tokens (descriptors) via disentangled projection and residual quantization…
 tags:
-  - NeurIPS 2025
-  - Recommender Systems
-  - Collaborative Filtering
-  - LLM Token Mapping
-  - Vector Quantization
-  - Contrastive Learning
-  - Explainable Recommendation
+  - "NeurIPS 2025"
+  - "Recommender Systems"
+  - "Collaborative Filtering"
+  - "LLM Token Mapping"
+  - "Vector Quantization"
+  - "Contrastive Learning"
+  - "Explainable Recommendation"
 date: 2026-05-08
 content_hash: 39098d270020f11a
 ---

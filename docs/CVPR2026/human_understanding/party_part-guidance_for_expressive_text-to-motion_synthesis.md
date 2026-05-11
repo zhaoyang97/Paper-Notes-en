@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ParTY: Part-Guidance for Expressive Text-to-Motion Synthesis
 description: >-
-  [CVPR 2026][Human Understanding][text-to-motion] This paper proposes ParTY, a framework that employs a Part-Guided Network and Part-aware Text Grounding to significantly improve text–motion semantic alignment at the body-part level while preserving whole-body motion coherence, thereby resolving the fundamental trade-off between part expressiveness and global coherence that exists between holistic and part-decomposition methods.
+  [CVPR 2026][Human Understanding][text-to-motion] This paper proposes ParTY, a framework that employs a Part-Guided Network and Part-aware Text Grounding to significantly improve text–motion semantic alignment at the body…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - text-to-motion
-  - body part guidance
-  - VQ-VAE
-  - part-aware text alignment
-  - motion coherence
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "text-to-motion"
+  - "body part guidance"
+  - "VQ-VAE"
+  - "part-aware text alignment"
+  - "motion coherence"
 date: 2026-05-08
 content_hash: 67a4c6d9979eb8c1
 ---

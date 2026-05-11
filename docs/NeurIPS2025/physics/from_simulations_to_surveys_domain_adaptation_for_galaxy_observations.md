@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] From Simulations to Surveys: Domain Adaptation for Galaxy Observations
 description: >-
-  [NeurIPS 2025][domain adaptation] This work constructs a domain adaptation pipeline from simulated galaxies (TNG50) to real survey observations (SDSS) via feature-level alignment using Euclidean distance, optimal transport, and a top-$k$ soft-matching loss with trainable weight scheduling, improving target-domain morphology classification accuracy from 46.8% (no adaptation) to 87.3%, and Macro F1 from 0.298 to 0.626.
+  [NeurIPS 2025][Physics][domain adaptation] This work constructs a domain adaptation pipeline from simulated galaxies (TNG50) to real survey observations (SDSS) via feature-level alignment using Euclidean distance…
 tags:
-  - NeurIPS 2025
-  - domain adaptation
-  - galaxy morphology
-  - optimal transport
-  - simulation-to-survey
-  - GeomLoss
+  - "NeurIPS 2025"
+  - "Physics"
+  - "domain adaptation"
+  - "galaxy morphology"
+  - "optimal transport"
+  - "simulation-to-survey"
+  - "GeomLoss"
 date: 2026-05-08
 content_hash: 216dd2abc7681080
 ---

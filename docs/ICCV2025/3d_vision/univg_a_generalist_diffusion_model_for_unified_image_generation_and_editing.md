@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UniVG: A Generalist Diffusion Model for Unified Image Generation and Editing
 description: >-
-  [ICCV 2025][3D Vision][Unified generative model] This paper proposes UniVG, a unified image generation model built on MM-DiT that supports T2I generation, editing, identity-preserving generation, layout-guided synthesis, depth estimation, and more within a single set of weights, achieved via channel-wise input concatenation, progressive multi-task training, and external condition injection.
+  [ICCV 2025][3D Vision][Unified generative model] This paper proposes UniVG, a unified image generation model built on MM-DiT that supports T2I generation, editing, identity-preserving generation, layout-guided synthesis…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Unified generative model
-  - MM-DiT
-  - multi-task training
-  - instruction-based editing
-  - Flow Matching
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Unified generative model"
+  - "MM-DiT"
+  - "multi-task training"
+  - "instruction-based editing"
+  - "Flow Matching"
 date: 2026-05-08
 content_hash: 123dea3dba4ccc29
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Object-WIPER: Training-Free Object and Associated Effect Removal in Videos
 description: >-
-  [CVPR 2026][Image Generation][Video object removal] This paper presents Object-WIPER, the first training-free framework for removing objects and their associated visual effects (shadows, reflections, mirror images, etc.) in videos. It leverages text-visual cross-attention and visual self-attention within DiT to localize associated effect regions, achieves clean removal via foreground re-initialization and attention scaling, and introduces the TokSim metric along with WIPER-Bench, a real-world benchmark.
+  [CVPR 2026][Image Generation][Video object removal] This paper presents Object-WIPER, the first training-free framework for removing objects and their associated visual effects (shadows, reflections, mirror images…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Video object removal
-  - associated effects
-  - training-free
-  - attention mechanism
-  - diffusion models
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Video object removal"
+  - "associated effects"
+  - "training-free"
+  - "attention mechanism"
+  - "diffusion models"
 date: 2026-05-08
 content_hash: 2327c5ab5513b125
 ---

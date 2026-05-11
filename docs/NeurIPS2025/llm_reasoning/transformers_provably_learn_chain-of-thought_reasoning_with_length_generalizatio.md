@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Transformers Provably Learn Chain-of-Thought Reasoning with Length Generalization
 description: >-
-  [NeurIPS 2025][LLM Reasoning][CoT Theory] This paper provides the first optimization-theoretic proof that a one-layer Transformer trained via gradient descent can learn CoT reasoning on a synthetic state-tracking task and achieve length generalization. It is the first work to establish convergence guarantees for constant-depth Transformers learning $\mathsf{NC}^1$-complete problems, going beyond prior theory that was limited to $\mathsf{TC}^0$.
+  [NeurIPS 2025][LLM Reasoning][CoT Theory] This paper provides the first optimization-theoretic proof that a one-layer Transformer trained via gradient descent can learn CoT reasoning on a synthetic state-tracking task an…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - CoT Theory
-  - Length Generalization
-  - Attention Concentration
-  - State Tracking
-  - Complexity Classes
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "CoT Theory"
+  - "Length Generalization"
+  - "Attention Concentration"
+  - "State Tracking"
+  - "Complexity Classes"
 date: 2026-05-08
 content_hash: b970fecf6eea7166
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] What Do Visual Tokens Really Encode? Uncovering Sparsity and Redundancy in Multimodal Large Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][visual token analysis] This paper proposes EmbedLens, a probing tool for systematically analyzing the internal structure of visual tokens in MLLMs. It reveals that visual tokens fall into three categories—sink, dead, and alive (approximately 40% are uninformative)—that alive tokens already encode rich semantics before entering the LLM (a "pre-linguistic" property), and that intra-LLM visual computation is redundant for most tasks, such that direct mid-layer injection suffices.
+  [CVPR 2026][Multimodal VLM][visual token analysis] This paper proposes EmbedLens, a probing tool for systematically analyzing the internal structure of visual tokens in MLLMs. It reveals that visual tokens fall into thre…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - visual token analysis
-  - semantic sparsity
-  - MLLM interpretability
-  - attention sink
-  - token redundancy
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "visual token analysis"
+  - "semantic sparsity"
+  - "MLLM interpretability"
+  - "attention sink"
+  - "token redundancy"
 date: 2026-05-08
 content_hash: b523de97ee1751d1
 ---

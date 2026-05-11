@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MorphAny3D: Unleashing the Power of Structured Latent in 3D Morphing
 description: >-
-  [CVPR 2026][Image Generation][3D Morphing] MorphAny3D is proposed as the first training-free 3D morphing framework based on Structured Latent (SLAT) representations. It achieves state-of-the-art quality in cross-category 3D morphing through Morphing Cross-Attention (MCA) for structurally coherent source/target fusion, Temporal-Fused Self-Attention (TFSA) for temporal consistency, and a direction correction strategy to eliminate abrupt orientation jumps.
+  [CVPR 2026][Image Generation][3D Morphing] MorphAny3D is proposed as the first training-free 3D morphing framework based on Structured Latent (SLAT) representations. It achieves state-of-the-art quality in cross-category…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - 3D Morphing
-  - SLAT
-  - Attention Mechanism
-  - Training-Free
-  - Trellis
+  - "CVPR 2026"
+  - "Image Generation"
+  - "3D Morphing"
+  - "SLAT"
+  - "Attention Mechanism"
+  - "Training-Free"
+  - "Trellis"
 date: 2026-05-08
 content_hash: 114a629cdf08c8ca
 ---

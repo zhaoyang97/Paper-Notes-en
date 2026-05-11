@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Maximizing Incremental Information Entropy for Contrastive Learning
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Contrastive Learning] This paper proposes IE-CL (Incremental-Entropy Contrastive Learning), a framework that explicitly maximizes entropy gain between augmented views—rather than merely maximizing mutual information—by treating the encoder as an information bottleneck and jointly optimizing a learnable transformation module (for entropy generation) and an encoder regularizer (for entropy preservation). IE-CL consistently improves contrastive learning performance on CIFAR-10/100, STL-10, and ImageNet under small-batch settings, with its core modules serving as plug-and-play components compatible with existing frameworks.
+  [ICLR 2026][Self-Supervised Learning][Contrastive Learning] This paper proposes IE-CL (Incremental-Entropy Contrastive Learning), a framework that explicitly maximizes entropy gain between augmented views—rather than mer…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
-  - Contrastive Learning
-  - Information Entropy
-  - Incremental Entropy
-  - Information Bottleneck
-  - Learnable Augmentation
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Contrastive Learning"
+  - "Information Entropy"
+  - "Incremental Entropy"
+  - "Information Bottleneck"
+  - "Learnable Augmentation"
 date: 2026-05-08
 content_hash: 1a9e84908de7e463
 ---

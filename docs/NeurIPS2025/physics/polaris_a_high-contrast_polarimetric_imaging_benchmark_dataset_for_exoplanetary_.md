@@ -2,15 +2,16 @@
 title: >-
   [Paper Note] POLARIS: A High-contrast Polarimetric Imaging Benchmark Dataset for Exoplanetary Disk Representation Learning
 description: >-
-  [NeurIPS 2025][high-contrast imaging] This work introduces POLARIS, the first ML benchmark dataset for exoplanetary polarimetric imaging (921 VLT/SPHERE/IRDIS polarimetric images + 75,910 preprocessed exposures), and proposes the Diff-SimCLR framework (diffusion-augmented contrastive learning), achieving 93% accuracy on the reference-star vs. target-star classification task with fewer than 10% manual annotations.
+  [NeurIPS 2025][Physics][high-contrast imaging] This work introduces POLARIS, the first ML benchmark dataset for exoplanetary polarimetric imaging (921 VLT/SPHERE/IRDIS polarimetric images + 75,910 preprocessed exposures)…
 tags:
-  - NeurIPS 2025
-  - high-contrast imaging
-  - exoplanets
-  - polarimetric imaging
-  - self-supervised learning
-  - diffusion models
-  - contrastive learning
+  - "NeurIPS 2025"
+  - "Physics"
+  - "high-contrast imaging"
+  - "exoplanets"
+  - "polarimetric imaging"
+  - "self-supervised learning"
+  - "diffusion models"
+  - "contrastive learning"
 date: 2026-05-08
 content_hash: c48c37de3d26ce13
 ---

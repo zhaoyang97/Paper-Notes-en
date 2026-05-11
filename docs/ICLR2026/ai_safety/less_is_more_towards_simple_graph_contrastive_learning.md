@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Less is More: Towards Simple Graph Contrastive Learning
 description: >-
-  [ICLR 2026][AI Safety][graph contrastive learning] This paper revisits the foundational principles of graph contrastive learning (GCL) and identifies that node feature noise can be mitigated through structural feature aggregation derived from graph topology. Based on this insight, the authors propose a minimalist GCL model that contrasts a GCN encoder (capturing structural features) against an MLP encoder (isolating node feature noise), requiring neither data augmentation nor negative sampling. The method achieves state-of-the-art performance on heterophilic graph benchmarks while offering advantages in complexity, scalability, and robustness on homophilic graphs.
+  [ICLR 2026][AI Safety][graph contrastive learning] This paper revisits the foundational principles of graph contrastive learning (GCL) and identifies that node feature noise can be mitigated through structural feature ag…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - graph contrastive learning
-  - heterophilic graphs
-  - GCN
-  - MLP
-  - unsupervised graph representation learning
+  - "ICLR 2026"
+  - "AI Safety"
+  - "graph contrastive learning"
+  - "heterophilic graphs"
+  - "GCN"
+  - "MLP"
+  - "unsupervised graph representation learning"
 date: 2026-05-08
 content_hash: 0162956dd8784b95
 ---

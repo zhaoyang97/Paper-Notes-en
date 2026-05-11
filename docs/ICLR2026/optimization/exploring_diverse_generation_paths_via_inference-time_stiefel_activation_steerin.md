@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Exploring Diverse Generation Paths via Inference-time Stiefel Activation Steering
 description: >-
-  [ICLR 2026][Optimization][activation steering] This paper proposes STARS (Stiefel-based Activation Steering for Diverse ReaSoning), a training-free inference-time activation steering method that jointly optimizes $N$ orthogonal steering directions on the Stiefel manifold at each token decoding step, maximizing the geometric volume of hidden states to promote divergent activation trajectories. STARS consistently outperforms temperature sampling in diversity on test case generation (TestEval) and scientific discovery (LiveIdeaBench) with negligible latency overhead and without sacrificing output quality.
+  [ICLR 2026][Optimization][activation steering] This paper proposes STARS (Stiefel-based Activation Steering for Diverse ReaSoning), a training-free inference-time activation steering method that jointly optimizes $N$ ort…
 tags:
-  - ICLR 2026
-  - Optimization
-  - activation steering
-  - Stiefel manifold
-  - Riemannian optimization
-  - diverse generation
-  - inference-time intervention
+  - "ICLR 2026"
+  - "Optimization"
+  - "activation steering"
+  - "Stiefel manifold"
+  - "Riemannian optimization"
+  - "diverse generation"
+  - "inference-time intervention"
 date: 2026-05-08
 content_hash: 5ee4e61ad0a3e2a6
 ---

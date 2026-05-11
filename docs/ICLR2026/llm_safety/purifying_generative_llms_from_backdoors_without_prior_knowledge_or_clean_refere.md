@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Purifying Generative LLMs from Backdoors without Prior Knowledge or Clean Reference
 description: >-
-  [ICLR 2026][LLM Safety][LLM backdoor] A backdoor purification method for LLMs that requires neither prior knowledge nor a clean reference model. Mechanistic analysis reveals that backdoor associations are redundantly distributed across MLP layers. Inspired by immunology, the method extracts a "signature" from multiple backdoor variants, localizes and suppresses suspicious neurons, and applies lightweight fine-tuning for recovery. Across 5 attacks × 3 tasks, ASR is reduced by 80%+ while utility is preserved.
+  [ICLR 2026][LLM Safety][LLM backdoor] A backdoor purification method for LLMs that requires neither prior knowledge nor a clean reference model. Mechanistic analysis reveals that backdoor associations are redundantly dis…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - LLM backdoor
-  - backdoor purification
-  - mechanistic analysis
-  - MLP encoding
-  - immunity analogy
-  - signature extraction
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "LLM backdoor"
+  - "backdoor purification"
+  - "mechanistic analysis"
+  - "MLP encoding"
+  - "immunity analogy"
+  - "signature extraction"
 date: 2026-05-08
 content_hash: b7d042c1c6521c1f
 ---

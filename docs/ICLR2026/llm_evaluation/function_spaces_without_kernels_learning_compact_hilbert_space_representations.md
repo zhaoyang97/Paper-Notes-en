@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Function Spaces Without Kernels: Learning Compact Hilbert Space Representations
 description: >-
-  [ICLR 2026][LLM Evaluation][function encoders] This paper proves that Function Encoders, which learn neural network basis functions, implicitly define a valid kernel, thereby bridging neural feature learning and RKHS theory. It further proposes PCA-guided compact basis selection algorithms and establishes finite-sample generalization bounds.
+  [ICLR 2026][LLM Evaluation][function encoders] This paper proves that Function Encoders, which learn neural network basis functions, implicitly define a valid kernel…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - function encoders
-  - kernel methods
-  - Hilbert space
-  - generalization bounds
-  - PCA-guided basis selection
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "function encoders"
+  - "kernel methods"
+  - "Hilbert space"
+  - "generalization bounds"
+  - "PCA-guided basis selection"
 date: 2026-05-08
 content_hash: 07dfba9132b28a42
 ---

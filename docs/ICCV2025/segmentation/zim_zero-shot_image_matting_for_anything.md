@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ZIM: Zero-Shot Image Matting for Anything
 description: >-
-  [ICCV 2025][Segmentation][Image Matting] This paper proposes ZIM, a zero-shot image matting model that constructs the SA1B-Matte dataset by converting SA1B segmentation labels into fine-grained matting labels via a label converter. A hierarchical pixel decoder and a prompt-aware masked attention mechanism are further introduced to achieve micro-level fine-grained matting while preserving zero-shot generalization capability.
+  [ICCV 2025][Segmentation][Image Matting] This paper proposes ZIM, a zero-shot image matting model that constructs the SA1B-Matte dataset by converting SA1B segmentation labels into fine-grained matting labels via a label…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - Image Matting
-  - Zero-Shot
-  - SAM
-  - Label Conversion
-  - Hierarchical Decoder
+  - "ICCV 2025"
+  - "Segmentation"
+  - "Image Matting"
+  - "Zero-Shot"
+  - "SAM"
+  - "Label Conversion"
+  - "Hierarchical Decoder"
 date: 2026-05-08
 content_hash: d38c858eeb7358ae
 ---

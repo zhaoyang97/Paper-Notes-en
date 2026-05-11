@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Are Vision Language Models Ready for Clinical Diagnosis? A 3D Medical Benchmark for Tumor-centric Visual Question Answering
 description: >-
-  [NeurIPS 2025 (Datasets & Benchmarks Track)][Multimodal VLM][VQA] This paper presents DeepTumorVQA, a 3D diagnostic-grade visual question answering benchmark for abdominal CT tumors, comprising 9,262 CT volumes (3.7 million slices) and 395K expert-level questions. It systematically evaluates the clinical diagnostic capability of four state-of-the-art VLMs, finding that current models perform acceptably on measurement tasks but fall far short of clinical requirements in lesion recognition and reasoning.
+  [NeurIPS 2025 (Datasets & Benchmarks Track)][Multimodal VLM][VQA] This paper presents DeepTumorVQA, a 3D diagnostic-grade visual question answering benchmark for abdominal CT tumors, comprising 9…
 tags:
   - "NeurIPS 2025 (Datasets & Benchmarks Track)"
-  - Multimodal VLM
-  - VQA
-  - 3D medical imaging
-  - CT tumor
-  - vision-language models
-  - benchmark
+  - "Multimodal VLM"
+  - "VQA"
+  - "3D medical imaging"
+  - "CT tumor"
+  - "vision-language models"
+  - "benchmark"
 date: 2026-05-08
 content_hash: 56f1ae1aa9118dbb
 ---

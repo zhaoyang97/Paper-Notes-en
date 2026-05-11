@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Factorized Learning for Temporally Grounded Video-Language Models
 description: >-
-  [ICCV 2025][Video Understanding][video-language model] This paper proposes D2VLM, a framework that decomposes video understanding into a "first localize evidence, then generate answers based on evidence" paradigm. It introduces evidence tokens to capture event-level visual semantics and designs Factorized Preference Optimization (FPO) to simultaneously improve temporal grounding and text response quality.
+  [ICCV 2025][Video Understanding][video-language model] This paper proposes D2VLM, a framework that decomposes video understanding into a "first localize evidence…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - video-language model
-  - temporal grounding
-  - preference optimization
-  - evidence token
-  - factorized learning
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "video-language model"
+  - "temporal grounding"
+  - "preference optimization"
+  - "evidence token"
+  - "factorized learning"
 date: 2026-05-08
 content_hash: fc078e6a4f5b557c
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Death of the Novel(ty): Beyond n-Gram Novelty as a Metric for Textual Creativity
 description: >-
-  [ICLR 2026][AIGC Detection][textual creativity] Through close reading annotations of 8,618 expressions by 26 professional writers, this paper demonstrates that n-gram novelty is insufficient for measuring textual creativity — approximately 91% of expressions with high n-gram novelty are not perceived as creative, and in open-source LLMs, high n-gram novelty negatively correlates with pragmaticality.
+  [ICLR 2026][AIGC Detection][textual creativity] Through close reading annotations of 8,618 expressions by 26 professional writers, this paper demonstrates that n-gram novelty is insufficient for measuring textual creativ…
 tags:
-  - ICLR 2026
-  - AIGC Detection
-  - textual creativity
-  - n-gram novelty
-  - LLM evaluation
-  - close reading
-  - pragmaticality
+  - "ICLR 2026"
+  - "AIGC Detection"
+  - "textual creativity"
+  - "n-gram novelty"
+  - "LLM evaluation"
+  - "close reading"
+  - "pragmaticality"
 date: 2026-05-08
 content_hash: 6ad0a74cc07dc4ed
 ---

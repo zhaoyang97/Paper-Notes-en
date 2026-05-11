@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Self-Aug: Query and Entropy Adaptive Decoding for Large Vision-Language Models
 description: >-
-  [ICLR 2026][Multimodal VLM][visual contrastive decoding] This paper proposes Self-Aug, a training-free decoding strategy that employs Self-Augmentation Selection (SAS) Prompting to enable LVLMs to leverage their own parametric knowledge for dynamically selecting query-semantically-aligned visual augmentations. It further introduces the Sparsity Adaptive Truncation (SAT) algorithm, which exploits the full entropy of the output distribution to dynamically regulate candidate token set size. Self-Aug consistently outperforms existing contrastive decoding methods across 5 LVLMs and 7 benchmarks.
+  [ICLR 2026][Multimodal VLM][visual contrastive decoding] This paper proposes Self-Aug, a training-free decoding strategy that employs Self-Augmentation Selection (SAS) Prompting to enable LVLMs to leverage their own para…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - visual contrastive decoding
-  - hallucination mitigation
-  - self-augmentation
-  - entropy-aware thresholding
-  - training-free
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "visual contrastive decoding"
+  - "hallucination mitigation"
+  - "self-augmentation"
+  - "entropy-aware thresholding"
+  - "training-free"
 date: 2026-05-08
 content_hash: 76a63e14e173a685
 ---

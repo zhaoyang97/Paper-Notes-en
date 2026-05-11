@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Multigranular Evaluation for Brain Visual Decoding
 description: >-
-  [AAAI 2026][Segmentation][brain decoding] This paper proposes BASIC, a multigranular evaluation framework that unifies the assessment of brain visual decoding quality along two axes — structural (multi-level segmentation mask matching across four granularities) and semantic (precision/recall/F1 over object/attribute/relation graphs extracted by MLLMs) — covering six modality combinations of fMRI/EEG × Image/Video/3D, thereby addressing the limitations of metric saturation, lack of neuroscientific grounding, and insufficient fine-grained diagnostic capacity in existing evaluation protocols.
+  [AAAI 2026][Segmentation][brain decoding] This paper proposes BASIC, a multigranular evaluation framework that unifies the assessment of brain visual decoding quality along two axes — structural (multi-level segmentation…
 tags:
-  - AAAI 2026
-  - Segmentation
-  - brain decoding
-  - evaluation metric
-  - semantic matching
-  - MLLM
+  - "AAAI 2026"
+  - "Segmentation"
+  - "brain decoding"
+  - "evaluation metric"
+  - "semantic matching"
+  - "MLLM"
 date: 2026-05-08
 content_hash: f1d304d4bd2c0aea
 ---

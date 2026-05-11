@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MetaMorph: Multimodal Understanding and Generation via Instruction Tuning
 description: >-
-  [ICCV 2025][Multimodal VLM][VPiT] This paper proposes Visual-Predictive Instruction Tuning (VPiT), which extends a pretrained LLM into a unified model—MetaMorph—capable of both visual understanding and generation via lightweight instruction tuning alone. A key finding is that visual generation ability emerges as a natural byproduct of visual understanding, and the two capabilities mutually benefit each other in an asymmetric manner.
+  [ICCV 2025][Multimodal VLM][VPiT] This paper proposes Visual-Predictive Instruction Tuning (VPiT), which extends a pretrained LLM into a unified model—MetaMorph—capable of both visual understanding and generation via lig…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - VPiT
-  - Unified Multimodal Model
-  - Visual Generation
-  - Instruction Tuning
-  - Continuous Visual Tokens
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "VPiT"
+  - "Unified Multimodal Model"
+  - "Visual Generation"
+  - "Instruction Tuning"
+  - "Continuous Visual Tokens"
 date: 2026-05-08
 content_hash: 2c731505a19ca436
 ---

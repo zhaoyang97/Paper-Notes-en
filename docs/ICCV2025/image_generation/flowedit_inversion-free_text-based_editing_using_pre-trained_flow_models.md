@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FlowEdit: Inversion-Free Text-Based Editing Using Pre-Trained Flow Models
 description: >-
-  [ICCV 2025][Image Generation][Image Editing] FlowEdit proposes an inversion-free, optimization-free, model-agnostic text-based image editing method that constructs an ODE path directly between the source and target distributions of a pre-trained flow model, achieving structure-preserving editing with lower transport cost than inversion-based approaches.
+  [ICCV 2025][Image Generation][Image Editing] FlowEdit proposes an inversion-free, optimization-free, model-agnostic text-based image editing method that constructs an ODE path directly between the source and target distr…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Image Editing
-  - Flow Models
-  - Rectified Flow
-  - Inversion-Free Editing
-  - FLUX
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Image Editing"
+  - "Flow Models"
+  - "Rectified Flow"
+  - "Inversion-Free Editing"
+  - "FLUX"
 date: 2026-05-08
 content_hash: dd3462116b63fefe
 ---

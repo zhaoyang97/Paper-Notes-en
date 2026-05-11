@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] WISCA: A Lightweight Model Transition Method to Improve LLM Training via Weight Scaling
 description: >-
-  [ACL 2026][Model Compression][Weight Scaling] This paper proposes an Equivalent Model Theory and the WISCA weight scaling strategy, which dynamically balances the L1 norms of $W_q/W_k$ and $W_v/W_o$ in Transformer attention layers during training—without altering model outputs—to steer optimization toward flatter loss minima. On GQA architectures, WISCA achieves an average 5.6% improvement on zero-shot evaluation and a 2.12% reduction in training perplexity.
+  [ACL 2026][Model Compression][Weight Scaling] This paper proposes an Equivalent Model Theory and the WISCA weight scaling strategy, which dynamically balances the L1 norms of $W_q/W_k$ and $W_v/W_o$ in Transformer attent…
 tags:
-  - ACL 2026
-  - Model Compression
-  - Weight Scaling
-  - Equivalent Model
-  - Loss Landscape
-  - GQA Optimization
-  - LoRA
+  - "ACL 2026"
+  - "Model Compression"
+  - "Weight Scaling"
+  - "Equivalent Model"
+  - "Loss Landscape"
+  - "GQA Optimization"
+  - "LoRA"
 date: 2026-05-08
 content_hash: 230a843bc8945b8c
 ---

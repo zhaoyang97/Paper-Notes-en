@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CycleManip: Enabling Cyclic Task Manipulation via Effective Historical Perception and Understanding
 description: >-
-  [CVPR 2026][Robotics][cyclic manipulation] CycleManip is the first work to systematically address cyclic robotic manipulation tasks (e.g., shaking a bottle N times). It enhances historical perception via a cost-aware history sampling strategy and improves historical understanding through multi-task learning auxiliary objectives, enabling controllable cycle-count manipulation in an end-to-end imitation learning framework.
+  [CVPR 2026][Robotics][cyclic manipulation] CycleManip is the first work to systematically address cyclic robotic manipulation tasks (e.g.…
 tags:
-  - CVPR 2026
-  - Robotics
-  - cyclic manipulation
-  - robot manipulation
-  - imitation learning
-  - historical perception
-  - multi-task learning
+  - "CVPR 2026"
+  - "Robotics"
+  - "cyclic manipulation"
+  - "robot manipulation"
+  - "imitation learning"
+  - "historical perception"
+  - "multi-task learning"
 date: 2026-05-08
 content_hash: d80aa0da5a06228b
 ---

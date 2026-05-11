@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MUG: Multi-agent Undercover Gaming — Hallucination Removal via Counterfactual Test for Multimodal Reasoning
 description: >-
-  [AAAI 2026][Causal Inference][Multi-Agent Gaming] MUG reframes Multi-Agent Debate (MAD) as a "Who's Undercover" social reasoning game — by introducing information asymmetry through counterfactual image editing (modifying the reference image), one agent is assigned the edited image $I^-$ as the "undercover," while other agents hold the original image $I^+$ and identify the undercover (i.e., the hallucination source) via reasoning and voting. On HallusionBench, Qwen2.5VL-7B improves from 46.4% to 53.8%.
+  [AAAI 2026][Causal Inference][Multi-Agent Gaming] MUG reframes Multi-Agent Debate (MAD) as a "Who's Undercover" social reasoning game — by introducing information asymmetry through counterfactual image editing (modifying…
 tags:
-  - AAAI 2026
-  - Causal Inference
-  - Multi-Agent Gaming
-  - Counterfactual Testing
-  - Hallucination Detection
-  - Undercover Game
-  - Active Reasoning
+  - "AAAI 2026"
+  - "Causal Inference"
+  - "Multi-Agent Gaming"
+  - "Counterfactual Testing"
+  - "Hallucination Detection"
+  - "Undercover Game"
+  - "Active Reasoning"
 date: 2026-05-08
 content_hash: caf57ec59b41331d
 ---

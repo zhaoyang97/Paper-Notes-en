@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Statistical Guarantees for Offline Domain Randomization
 description: >-
-  [ICLR 2026][Audio & Speech][domain randomization] This paper formalizes offline domain randomization (ODR) as a maximum likelihood estimation problem over a parameterized family of simulators. Under mild regularity and identifiability assumptions, it establishes weak consistency (convergence in probability); with an additional uniform Lipschitz continuity assumption, strong consistency (almost sure convergence) is further proved. These results provide the first theoretical foundation for the empirical success of ODR in sim-to-real transfer.
+  [ICLR 2026][Audio & Speech][domain randomization] This paper formalizes offline domain randomization (ODR) as a maximum likelihood estimation problem over a parameterized family of simulators. Under mild regularity and i…
 tags:
-  - ICLR 2026
+  - "ICLR 2026"
   - "Audio & Speech"
-  - domain randomization
-  - sim-to-real transfer
-  - maximum likelihood estimation
-  - consistency
-  - offline RL
+  - "domain randomization"
+  - "sim-to-real transfer"
+  - "maximum likelihood estimation"
+  - "consistency"
+  - "offline RL"
 date: 2026-05-08
 content_hash: 74f53854581635f6
 ---

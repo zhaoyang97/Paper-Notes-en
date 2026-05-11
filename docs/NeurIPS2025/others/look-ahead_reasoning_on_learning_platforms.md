@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Look-Ahead Reasoning on Learning Platforms
 description: >-
-  [NeurIPS 2025][level-k thinking] This paper formalizes level-$k$ look-ahead reasoning in user–algorithm interactions on learning platforms. It proves that individually selfish higher-order reasoning only accelerates convergence without altering the equilibrium (i.e., no long-term gain), while the benefit of collective coordination is determined by the alignment between the learner's and users' utility functions. A theoretical framework is provided to characterize upper bounds on coordination gains.
+  [NeurIPS 2025][level-k thinking] This paper formalizes level-$k$ look-ahead reasoning in user–algorithm interactions on learning platforms. It proves that individually selfish higher-order reasoning only accelerates conv…
 tags:
-  - NeurIPS 2025
-  - level-k thinking
-  - Stackelberg games
-  - performative prediction
-  - algorithmic collective action
-  - strategic classification
+  - "NeurIPS 2025"
+  - "level-k thinking"
+  - "Stackelberg games"
+  - "performative prediction"
+  - "algorithmic collective action"
+  - "strategic classification"
 date: 2026-05-08
 content_hash: a547fe73653cb1d9
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] PHD: Personalized 3D Human Body Fitting with Point Diffusion
 description: >-
-  [ICCV 2025][Human Understanding][Human pose estimation] This paper proposes PHD, a personalized 3D human pose estimation paradigm that first calibrates user-specific body shape via SHAPify, then employs a shape-conditioned point diffusion model (PointDiT) as a 3D prior, and iteratively optimizes pose parameters through Point Distillation Sampling combined with 2D keypoint constraints, achieving state-of-the-art absolute pose accuracy on the EMDB dataset.
+  [ICCV 2025][Human Understanding][Human pose estimation] This paper proposes PHD, a personalized 3D human pose estimation paradigm that first calibrates user-specific body shape via SHAPify…
 tags:
-  - ICCV 2025
-  - Human Understanding
-  - Human pose estimation
-  - personalized body shape
-  - point diffusion model
-  - shape prior
-  - SMPL fitting
-  - plug-and-play
+  - "ICCV 2025"
+  - "Human Understanding"
+  - "Human pose estimation"
+  - "personalized body shape"
+  - "point diffusion model"
+  - "shape prior"
+  - "SMPL fitting"
+  - "plug-and-play"
 date: 2026-05-08
 content_hash: 4d92083cb6aad5a4
 ---

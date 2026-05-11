@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Physics-Constrained Flow Matching: Sampling Generative Models with Hard Constraints
 description: >-
-  [NeurIPS 2025][Image Generation][Flow Matching] This paper proposes Physics-Constrained Flow Matching (PCFM), a zero-shot inference framework that enforces arbitrary nonlinear equality constraints to machine precision during sampling from pretrained flow matching models. The framework alternates among forward shooting with projection, OT-interpolation backward updates, and relaxed penalty correction at each sub-step, achieving up to 99.5% improvement over baselines on PDE problems involving shocks and discontinuities.
+  [NeurIPS 2025][Image Generation][Flow Matching] This paper proposes Physics-Constrained Flow Matching (PCFM), a zero-shot inference framework that enforces arbitrary nonlinear equality constraints to machine precision du…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Flow Matching
-  - Physical Constraints
-  - Hard Constraint Satisfaction
-  - PDE Solving
-  - Zero-Shot Inference
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Flow Matching"
+  - "Physical Constraints"
+  - "Hard Constraint Satisfaction"
+  - "PDE Solving"
+  - "Zero-Shot Inference"
 date: 2026-05-08
 content_hash: 40d7f5d04660d9b3
 ---

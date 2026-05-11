@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ETA: Energy-based Test-time Adaptation for Depth Completion
 description: >-
-  [ICCV 2025][LLM Pretraining][test-time adaptation] This paper proposes ETA, a method that employs an energy-based model to quantify the likelihood of depth predictions belonging to the source domain distribution, and guides a pre-trained depth completion model to adapt to new environments at test time by minimizing the energy of target-domain predictions. ETA achieves average improvements of 6.94% and 10.23% over the previous state of the art on outdoor and indoor scenes, respectively.
+  [ICCV 2025][LLM Pretraining][test-time adaptation] This paper proposes ETA, a method that employs an energy-based model to quantify the likelihood of depth predictions belonging to the source domain distribution…
 tags:
-  - ICCV 2025
-  - LLM Pretraining
-  - test-time adaptation
-  - energy-based model
-  - depth completion
-  - domain adaptation
-  - adversarial perturbation
+  - "ICCV 2025"
+  - "LLM Pretraining"
+  - "test-time adaptation"
+  - "energy-based model"
+  - "depth completion"
+  - "domain adaptation"
+  - "adversarial perturbation"
 date: 2026-05-08
 content_hash: 0a86fce1e6d829a4
 ---

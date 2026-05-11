@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MozzaVID: Mozzarella Volumetric Image Dataset
 description: >-
-  [CVPR 2026][Medical Imaging][volumetric image dataset] This paper introduces MozzaVID — a mozzarella cheese microstructure volumetric image classification dataset based on synchrotron X-ray CT — comprising 591–37,824 samples of size $192^3$, with classification targets spanning 25 cheese types and 149 individual cheese specimens. The dataset bridges the large gap in scale and task design between 3D volumetric and 2D datasets, and experiments demonstrate that 3D models significantly outperform their 2D counterparts.
+  [CVPR 2026][Medical Imaging][volumetric image dataset] This paper introduces MozzaVID — a mozzarella cheese microstructure volumetric image classification dataset based on synchrotron X-ray CT — comprising 591–37…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - volumetric image dataset
-  - 3D classification
-  - X-ray CT
-  - food microstructure
-  - deep learning benchmark
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "volumetric image dataset"
+  - "3D classification"
+  - "X-ray CT"
+  - "food microstructure"
+  - "deep learning benchmark"
 date: 2026-05-08
 content_hash: 44f4f8cc50b36797
 ---

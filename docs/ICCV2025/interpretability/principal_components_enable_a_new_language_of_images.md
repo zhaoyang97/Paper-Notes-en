@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] "Principal Components" Enable A New Language of Images
 description: >-
-  [ICCV 2025][visual tokenizer] This paper proposes Semanticist, a visual tokenization framework that embeds a provable PCA structure into the latent token space—where each subsequent token contributes decreasing, non-overlapping information—and employs a diffusion decoder to decouple the semantic-spectral entanglement effect, achieving state-of-the-art performance on both image reconstruction and autoregressive generation.
+  [ICCV 2025][Interpretability][visual tokenizer] This paper proposes Semanticist, a visual tokenization framework that embeds a provable PCA structure into the latent token space—where each subsequent token contributes de…
 tags:
-  - ICCV 2025
-  - visual tokenizer
-  - principal component analysis
-  - causal token sequence
-  - diffusion decoder
-  - autoregressive generation
+  - "ICCV 2025"
+  - "Interpretability"
+  - "visual tokenizer"
+  - "principal component analysis"
+  - "causal token sequence"
+  - "diffusion decoder"
+  - "autoregressive generation"
 date: 2026-05-08
 content_hash: 0e527cc1ce176ecf
 ---

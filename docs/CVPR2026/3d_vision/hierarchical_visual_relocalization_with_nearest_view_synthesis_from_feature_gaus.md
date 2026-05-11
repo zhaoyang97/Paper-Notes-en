@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Hierarchical Visual Relocalization with Nearest View Synthesis from Feature Gaussian Splatting
 description: >-
-  [CVPR 2026][3D Vision][visual relocalization] SplatHLoc proposes a hierarchical visual relocalization framework based on Feature Gaussian Splatting (FGS). By combining adaptive viewpoint retrieval that synthesizes virtual views closer to the query perspective with a hybrid feature matching strategy (rendered features for coarse matching + semi-dense matcher for fine matching), the method achieves new state-of-the-art accuracy on both indoor and outdoor benchmarks.
+  [CVPR 2026][3D Vision][visual relocalization] SplatHLoc proposes a hierarchical visual relocalization framework based on Feature Gaussian Splatting (FGS). By combining adaptive viewpoint retrieval that synthesizes virtua…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - visual relocalization
-  - Gaussian splatting
-  - feature matching
-  - novel view synthesis
-  - hierarchical localization
+  - "CVPR 2026"
+  - "3D Vision"
+  - "visual relocalization"
+  - "Gaussian splatting"
+  - "feature matching"
+  - "novel view synthesis"
+  - "hierarchical localization"
 date: 2026-05-08
 content_hash: f604ad2c5bcce6d4
 ---

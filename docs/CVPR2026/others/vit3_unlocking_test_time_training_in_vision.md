@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] ViT3: Unlocking Test-Time Training in Vision
 description: >-
-  [CVPR 2026][Test-Time Training] This paper systematically explores the design space of Test-Time Training (TTT) for vision tasks, distills six practical design insights, and proposes ViT3—a purely TTT-based vision architecture with linear complexity—that matches or surpasses Mamba and linear attention methods on classification, generation, detection, and segmentation tasks.
+  [CVPR 2026][Test-Time Training] This paper systematically explores the design space of Test-Time Training (TTT) for vision tasks, distills six practical design insights…
 tags:
-  - CVPR 2026
-  - Test-Time Training
-  - Linear Complexity
-  - Inner Model
-  - Vision Transformer
-  - Convolution
+  - "CVPR 2026"
+  - "Test-Time Training"
+  - "Linear Complexity"
+  - "Inner Model"
+  - "Vision Transformer"
+  - "Convolution"
 date: 2026-05-08
 content_hash: 8637377a71ac6348
 ---

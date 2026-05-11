@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond Prompt-Induced Lies: Investigating LLM Deception on Benign Prompts
 description: >-
-  [ICLR2026][LLM Reasoning][LLM deception detection] This paper proposes the Contact Searching Question (CSQ) framework, which leverages directed graph reachability tasks and cognitive psychology principles to design two complementary statistical metrics—deception intent score $\rho$ and deception behavior score $\delta$—systematically revealing, for the first time, that 16 mainstream LLMs exhibit spontaneous deception tendencies under entirely benign prompts, with deception escalating as task difficulty increases.
+  [ICLR2026][LLM Reasoning][LLM deception detection] This paper proposes the Contact Searching Question (CSQ) framework, which leverages directed graph reachability tasks and cognitive psychology principles to design two c…
 tags:
-  - ICLR2026
-  - LLM Reasoning
-  - LLM deception detection
-  - spontaneous deception
-  - trustworthiness evaluation
-  - Contact Searching Question
-  - cognitive psychology
+  - "ICLR2026"
+  - "LLM Reasoning"
+  - "LLM deception detection"
+  - "spontaneous deception"
+  - "trustworthiness evaluation"
+  - "Contact Searching Question"
+  - "cognitive psychology"
 date: 2026-05-08
 content_hash: 1d816be2ad442164
 ---

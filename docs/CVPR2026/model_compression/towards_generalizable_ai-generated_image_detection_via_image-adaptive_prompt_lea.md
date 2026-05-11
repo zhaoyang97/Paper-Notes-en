@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Generalizable AI-Generated Image Detection via Image-Adaptive Prompt Learning
 description: >-
-  [CVPR 2026][Model Compression][AI-generated image detection] This paper proposes Image-Adaptive Prompt Learning (IAPL), which dynamically adjusts the prompts of the CLIP encoder for each test image at inference time. Through test-time token tuning and a conditional information learner, IAPL achieves strong generalization to unseen generators, attaining state-of-the-art average accuracies of 95.61% and 96.7% on UniversalFakeDetect and GenImage, respectively.
+  [CVPR 2026][Model Compression][AI-generated image detection] This paper proposes Image-Adaptive Prompt Learning (IAPL), which dynamically adjusts the prompts of the CLIP encoder for each test image at inference time. Thr…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - AI-generated image detection
-  - prompt learning
-  - test-time adaptation
-  - CLIP
-  - forgery detection
+  - "CVPR 2026"
+  - "Model Compression"
+  - "AI-generated image detection"
+  - "prompt learning"
+  - "test-time adaptation"
+  - "CLIP"
+  - "forgery detection"
 date: 2026-05-08
 content_hash: 392eb59ea7bbc85d
 ---

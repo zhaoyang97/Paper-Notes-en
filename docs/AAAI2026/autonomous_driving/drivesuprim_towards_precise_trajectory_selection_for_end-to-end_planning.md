@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DriveSuprim: Towards Precise Trajectory Selection for End-to-End Planning
 description: >-
-  [AAAI 2026][Autonomous Driving][End-to-End Planning] This paper proposes DriveSuprim, which addresses three key bottlenecks in selection-based end-to-end planning — difficulty distinguishing similar trajectories, directional bias, and hard-label instability — through a coarse-to-fine trajectory selection paradigm, rotation-based data augmentation, and a self-distillation soft-label framework, achieving state-of-the-art performance on NAVSIM v1/v2 and Bench2Drive.
+  [AAAI 2026][Autonomous Driving][End-to-End Planning] This paper proposes DriveSuprim, which addresses three key bottlenecks in selection-based end-to-end planning — difficulty distinguishing similar trajectories…
 tags:
-  - AAAI 2026
-  - Autonomous Driving
-  - End-to-End Planning
-  - Trajectory Selection
-  - Coarse-to-Fine
-  - Data Augmentation
-  - Self-Distillation
+  - "AAAI 2026"
+  - "Autonomous Driving"
+  - "End-to-End Planning"
+  - "Trajectory Selection"
+  - "Coarse-to-Fine"
+  - "Data Augmentation"
+  - "Self-Distillation"
 date: 2026-05-08
 content_hash: f611ac5767416847
 ---

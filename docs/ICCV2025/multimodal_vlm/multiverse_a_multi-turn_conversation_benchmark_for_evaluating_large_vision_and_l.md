@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MultiVerse: A Multi-Turn Conversation Benchmark for Evaluating Large Vision and Language Models
 description: >-
-  [ICCV 2025][Multimodal VLM][multi-turn dialogue] This paper proposes MultiVerse, a multi-turn conversation evaluation benchmark comprising 647 dialogues collected from 12 VLM evaluation datasets, spanning 484 task types and 484 interaction goals. Using a checklist-based evaluation approach, the benchmark reveals that even the strongest model, GPT-4o, achieves only ~50% success rate on complex multi-turn conversations.
+  [ICCV 2025][Multimodal VLM][multi-turn dialogue] This paper proposes MultiVerse, a multi-turn conversation evaluation benchmark comprising 647 dialogues collected from 12 VLM evaluation datasets…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - multi-turn dialogue
-  - VLM evaluation
-  - benchmark dataset
-  - checklist evaluation
-  - in-context learning
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "multi-turn dialogue"
+  - "VLM evaluation"
+  - "benchmark dataset"
+  - "checklist evaluation"
+  - "in-context learning"
 date: 2026-05-08
 content_hash: 0554cdff6f1f1006
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Continual Multimodal Contrastive Learning
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Continual Learning] This paper is the first to formally define the Continual Multimodal Contrastive Learning (CMCL) problem and proposes Dual-side Null-space gradient projection (DNS), which projects gradients from new data into subspaces that do not interfere with previously acquired knowledge. DNS achieves the best stability–plasticity trade-off across 7 datasets.
+  [NeurIPS 2025][Multimodal VLM][Continual Learning] This paper is the first to formally define the Continual Multimodal Contrastive Learning (CMCL) problem and proposes Dual-side Null-space gradient projection (DNS)…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Continual Learning
-  - Multimodal Contrastive Learning
-  - Gradient Projection
-  - Catastrophic Forgetting
-  - Modality Binding
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Continual Learning"
+  - "Multimodal Contrastive Learning"
+  - "Gradient Projection"
+  - "Catastrophic Forgetting"
+  - "Modality Binding"
 date: 2026-05-08
 content_hash: 76d18f33eb11619a
 ---

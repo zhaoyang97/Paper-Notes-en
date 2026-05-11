@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Generalizing Fair Clustering to Multiple Groups: Algorithms and Applications
 description: >-
-  [AAAI 2026][AI Safety][Fair clustering] This paper generalizes the Closest Fair Clustering problem from two groups to arbitrarily many groups, proves NP-hardness for the equal-proportion case with three or more groups, proposes near-linear-time approximation algorithms (equal-proportion $O(|\chi|^{1.6}\log^{2.81}|\chi|)$, arbitrary-proportion $O(|\chi|^{3.81})$), and extends the results to fair correlation clustering and fair consensus clustering.
+  [AAAI 2026][AI Safety][Fair clustering] This paper generalizes the Closest Fair Clustering problem from two groups to arbitrarily many groups, proves NP-hardness for the equal-proportion case with three or more groups…
 tags:
-  - AAAI 2026
-  - AI Safety
-  - Fair clustering
-  - multi-group fairness
-  - approximation algorithms
-  - correlation clustering
-  - consensus clustering
-  - NP-hard
+  - "AAAI 2026"
+  - "AI Safety"
+  - "Fair clustering"
+  - "multi-group fairness"
+  - "approximation algorithms"
+  - "correlation clustering"
+  - "consensus clustering"
+  - "NP-hard"
 date: 2026-05-08
 content_hash: fe411b84068f9660
 ---

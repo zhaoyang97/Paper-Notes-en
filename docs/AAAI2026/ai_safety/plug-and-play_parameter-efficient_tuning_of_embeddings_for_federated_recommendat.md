@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Plug-and-Play Parameter-Efficient Tuning of Embeddings for Federated Recommendation
 description: >-
-  [AAAI 2026][AI Safety][Federated Recommendation] This paper proposes a plug-and-play federated recommendation framework that introduces PEFT (Parameter-Efficient Fine-Tuning) concepts into item embeddings. By freezing pre-trained full embeddings and transmitting only lightweight compressed embeddings (LoRA / Hash / RQ-VAE), the framework significantly reduces communication overhead while improving recommendation accuracy.
+  [AAAI 2026][AI Safety][Federated Recommendation] This paper proposes a plug-and-play federated recommendation framework that introduces PEFT (Parameter-Efficient Fine-Tuning) concepts into item embeddings. By freezing pr…
 tags:
-  - AAAI 2026
-  - AI Safety
-  - Federated Recommendation
-  - Parameter-Efficient Fine-Tuning
-  - Embedding Compression
-  - Communication Efficiency
-  - Privacy Protection
+  - "AAAI 2026"
+  - "AI Safety"
+  - "Federated Recommendation"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Embedding Compression"
+  - "Communication Efficiency"
+  - "Privacy Protection"
 date: 2026-05-08
 content_hash: 8249d0e08d1255f6
 ---

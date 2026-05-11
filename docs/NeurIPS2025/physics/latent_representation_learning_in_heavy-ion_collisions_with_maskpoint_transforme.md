@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Latent Representation Learning in Heavy-Ion Collisions with MaskPoint Transformer
 description: >-
-  [NEURIPS2025 (Workshop: ML and Physical Sciences)][heavy-ion collisions] This work introduces a masked point cloud Transformer autoencoder to heavy-ion collision analysis. Through a two-stage paradigm of self-supervised pre-training followed by supervised fine-tuning, the model learns nonlinear latent representations substantially stronger than those of PointNet—reducing PC1 distribution overlap from 2.42% to 0.27%—providing a general feature learning framework for studying QGP properties.
+  [NEURIPS2025 (Workshop: ML and Physical Sciences)][Physics][heavy-ion collisions] This work introduces a masked point cloud Transformer autoencoder to heavy-ion collision analysis. Through a two-stage paradigm of self-su…
 tags:
   - "NEURIPS2025 (Workshop: ML and Physical Sciences)"
-  - heavy-ion collisions
-  - masked autoencoder
-  - Transformer
-  - self-supervised pre-training
-  - quark-gluon plasma
+  - "Physics"
+  - "heavy-ion collisions"
+  - "masked autoencoder"
+  - "Transformer"
+  - "self-supervised pre-training"
+  - "quark-gluon plasma"
 date: 2026-05-08
 content_hash: 7844e02d0cf4326c
 ---

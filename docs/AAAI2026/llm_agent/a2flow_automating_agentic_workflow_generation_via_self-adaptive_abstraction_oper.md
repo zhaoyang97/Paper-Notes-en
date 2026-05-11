@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A2Flow: Automating Agentic Workflow Generation via Self-Adaptive Abstraction Operators
 description: >-
-  [AAAI 2026][LLM Agent][Workflow Automation] This paper proposes A2Flow, a framework that automatically extracts reusable abstract execution operators from expert data via a three-stage pipeline (case generation → functional clustering → deep extraction), replacing manually predefined operators. Combined with an operator memory mechanism that accumulates intermediate outputs to assist node decision-making, A2Flow outperforms AFLOW and other state-of-the-art methods across 8 benchmarks while reducing resource consumption by 37%.
+  [AAAI 2026][LLM Agent][Workflow Automation] This paper proposes A2Flow, a framework that automatically extracts reusable abstract execution operators from expert data via a three-stage pipeline (case generation → functio…
 tags:
-  - AAAI 2026
-  - LLM Agent
-  - Workflow Automation
-  - Abstraction Operators
-  - MCTS
-  - Operator Memory Mechanism
-  - Embodied Task Generalization
+  - "AAAI 2026"
+  - "LLM Agent"
+  - "Workflow Automation"
+  - "Abstraction Operators"
+  - "MCTS"
+  - "Operator Memory Mechanism"
+  - "Embodied Task Generalization"
 date: 2026-05-08
 content_hash: 87c12df6a8a80b4f
 ---

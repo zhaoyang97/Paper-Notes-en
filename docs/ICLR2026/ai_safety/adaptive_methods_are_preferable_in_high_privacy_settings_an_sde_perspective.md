@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Adaptive Methods Are Preferable in High Privacy Settings: An SDE Perspective
 description: >-
-  [ICLR 2026][AI Safety][Differential Privacy] This work is the first to analyze differentially private optimizers through a stochastic differential equation (SDE) framework, revealing fundamental behavioral differences between DP-SGD and DP-SignSGD under privacy noise: adaptive methods achieve a superior privacy-utility tradeoff of $\mathcal{O}(1/\varepsilon)$ vs. $\mathcal{O}(1/\varepsilon^2)$ in high-privacy regimes, and their hyperparameters transfer across privacy budgets.
+  [ICLR 2026][AI Safety][Differential Privacy] This work is the first to analyze differentially private optimizers through a stochastic differential equation (SDE) framework…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - Differential Privacy
-  - SDE Analysis
-  - DP-SGD
-  - DP-SignSGD
-  - Privacy-Utility Tradeoff
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Differential Privacy"
+  - "SDE Analysis"
+  - "DP-SGD"
+  - "DP-SignSGD"
+  - "Privacy-Utility Tradeoff"
 date: 2026-05-08
 content_hash: 5c1852bbadb7a3f7
 ---

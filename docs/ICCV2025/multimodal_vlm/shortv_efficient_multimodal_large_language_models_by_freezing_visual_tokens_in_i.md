@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] ShortV: Efficient Multimodal Large Language Models by Freezing Visual Tokens in Ineffective Layers
 description: >-
-  [ICCV 2025][Multimodal VLM][multimodal large language models] This work identifies significant **layer-level redundancy** in MLLMs—most layers contribute minimally to the transformation of visual tokens—and proposes ShortV: freezing visual tokens (skipping their attention and FFN computations) in approximately 60% of layers. On LLaVA-NeXT-13B, this achieves a 50% reduction in FLOPs with negligible performance degradation. The method is training-free and orthogonal to token pruning approaches, allowing them to be combined.
+  [ICCV 2025][Multimodal VLM][multimodal large language models] This work identifies significant **layer-level redundancy** in MLLMs—most layers contribute minimally to the transformation of visual tokens—and proposes Shor…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - multimodal large language models
-  - inference efficiency
-  - layer redundancy
-  - visual token freezing
-  - training-free
-  - MLLM acceleration
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "multimodal large language models"
+  - "inference efficiency"
+  - "layer redundancy"
+  - "visual token freezing"
+  - "training-free"
+  - "MLLM acceleration"
 date: 2026-05-08
 content_hash: a8147dead295d6db
 ---

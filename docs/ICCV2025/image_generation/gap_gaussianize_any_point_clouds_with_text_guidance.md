@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GAP: Gaussianize Any Point Clouds with Text Guidance
 description: >-
-  [ICCV 2025][Image Generation][Point Cloud to Gaussian] This paper proposes GAP, a framework that leverages depth-aware image diffusion models to convert colorless point clouds into high-fidelity 3D Gaussian representations. A surface anchoring mechanism ensures geometric fidelity, and a diffusion-based inpainting strategy completes hard-to-observe regions.
+  [ICCV 2025][Image Generation][Point Cloud to Gaussian] This paper proposes GAP, a framework that leverages depth-aware image diffusion models to convert colorless point clouds into high-fidelity 3D Gaussian representatio…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Point Cloud to Gaussian
-  - Text Guidance
-  - Diffusion Model
-  - Surface Anchoring
-  - Appearance Generation
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Point Cloud to Gaussian"
+  - "Text Guidance"
+  - "Diffusion Model"
+  - "Surface Anchoring"
+  - "Appearance Generation"
 date: 2026-05-08
 content_hash: 01d94fe2df96275a
 ---

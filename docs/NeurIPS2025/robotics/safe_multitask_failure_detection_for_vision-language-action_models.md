@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SAFE: Multitask Failure Detection for Vision-Language-Action Models
 description: >-
-  [NeurIPS 2025][Robotics][Failure Detection] SAFE identifies consistent "failure regions" in the internal feature space of VLA models that generalize across tasks. Leveraging this observation, it trains lightweight MLP/LSTM failure detectors and applies Functional Conformal Prediction (FCP) for threshold calibration. The approach achieves 78% ROC-AUC on unseen tasks with less than 1% computational overhead, substantially outperforming token-uncertainty and action-consistency baselines.
+  [NeurIPS 2025][Robotics][Failure Detection] SAFE identifies consistent "failure regions" in the internal feature space of VLA models that generalize across tasks. Leveraging this observation…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - Failure Detection
-  - VLA Models
-  - Multitask Generalization
-  - Functional Conformal Prediction
-  - MLP/LSTM Detector
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "Failure Detection"
+  - "VLA Models"
+  - "Multitask Generalization"
+  - "Functional Conformal Prediction"
+  - "MLP/LSTM Detector"
 date: 2026-05-08
 content_hash: c21f2b83358440cc
 ---

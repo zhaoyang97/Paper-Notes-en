@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Thucy: An LLM-based Multi-Agent System for Claim Verification across Relational Databases
 description: >-
-  [AAAI 2026][Audio & Speech][Multi-Agent System] This paper presents Thucy, the first multi-agent claim verification system supporting cross-database and cross-table reasoning. Led by a Verifier agent, it coordinates three specialized agents (Data/Schema/SQL Expert) with zero prior knowledge of the data sources, enabling autonomous discovery, reasoning, and SQL evidence generation. Thucy surpasses the previous SOTA by 5.6 percentage points on TabFact (94.3%).
+  [AAAI 2026][Audio & Speech][Multi-Agent System] This paper presents Thucy, the first multi-agent claim verification system supporting cross-database and cross-table reasoning. Led by a Verifier agent…
 tags:
-  - AAAI 2026
+  - "AAAI 2026"
   - "Audio & Speech"
-  - Multi-Agent System
-  - Claim Verification
-  - Relational Databases
-  - SQL Evidence Generation
-  - Cross-Database Reasoning
+  - "Multi-Agent System"
+  - "Claim Verification"
+  - "Relational Databases"
+  - "SQL Evidence Generation"
+  - "Cross-Database Reasoning"
 date: 2026-05-08
 content_hash: 673d967c83a7646d
 ---

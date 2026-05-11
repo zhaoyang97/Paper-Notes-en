@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SYMPHONY: Synergistic Multi-agent Planning with Heterogeneous Language Model Assemblies
 description: >-
-  [NeurIPS 2025][LLM/NLP][multi-agent planning] This paper proposes SYMPHONY, an MCTS-based multi-agent planning framework that leverages diversity-driven search over a heterogeneous LLM pool, UCB-based adaptive scheduling, entropy-modulated confidence scoring, and pool-level memory sharing to substantially improve planning diversity and efficiency.
+  [NeurIPS 2025][LLM/NLP][multi-agent planning] This paper proposes SYMPHONY, an MCTS-based multi-agent planning framework that leverages diversity-driven search over a heterogeneous LLM pool, UCB-based adaptive scheduling…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - multi-agent planning
-  - MCTS
-  - heterogeneous models
-  - LLM collaboration
-  - tree search
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "multi-agent planning"
+  - "MCTS"
+  - "heterogeneous models"
+  - "LLM collaboration"
+  - "tree search"
 date: 2026-05-08
 content_hash: f52cac99a6c3e72b
 ---

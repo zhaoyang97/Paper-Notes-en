@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TAI3: Testing Agent Integrity in Interpreting User Intent
 description: >-
-  [NeurIPS 2025][LLM Agent][Agent Testing] This paper proposes TAI3, an API-centric stress-testing framework for LLM agent intent integrity. It organizes the natural language input space into a structured test grid via Semantic Partitioning, and leverages Intent-Preserving Mutation and Strategy Memory to efficiently expose intent misinterpretation errors when agents execute user tasks.
+  [NeurIPS 2025][LLM Agent][Agent Testing] This paper proposes TAI3, an API-centric stress-testing framework for LLM agent intent integrity. It organizes the natural language input space into a structured test grid via Sem…
 tags:
-  - NeurIPS 2025
-  - LLM Agent
-  - Agent Testing
-  - Intent Integrity
-  - Equivalence Class Partitioning
-  - Stress Testing
-  - API Calls
+  - "NeurIPS 2025"
+  - "LLM Agent"
+  - "Agent Testing"
+  - "Intent Integrity"
+  - "Equivalence Class Partitioning"
+  - "Stress Testing"
+  - "API Calls"
 date: 2026-05-08
 content_hash: 5274bb8ca2f1c88d
 ---

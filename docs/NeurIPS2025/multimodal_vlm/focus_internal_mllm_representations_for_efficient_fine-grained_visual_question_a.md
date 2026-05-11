@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FOCUS: Internal MLLM Representations for Efficient Fine-Grained Visual Question Answering
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Fine-grained VQA] This paper proposes FOCUS, a training-free visual cropping method that constructs object relevance maps via cosine similarity of value features in the MLLM's internal KV-cache, enabling efficient localization of question-relevant image regions. FOCUS achieves accuracy comparable to state-of-the-art methods on fine-grained VQA benchmarks while improving computational efficiency by 3–6.5×.
+  [NeurIPS 2025][Multimodal VLM][Fine-grained VQA] This paper proposes FOCUS, a training-free visual cropping method that constructs object relevance maps via cosine similarity of value features in the MLLM's internal KV-c…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Fine-grained VQA
-  - Visual Cropping
-  - KV-Cache
-  - Object Localization
-  - MLLM
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Fine-grained VQA"
+  - "Visual Cropping"
+  - "KV-Cache"
+  - "Object Localization"
+  - "MLLM"
 date: 2026-05-08
 content_hash: 7dd844e3ea6dc43f
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] A Survey of Reinforcement Learning for Large Language Models under Data Scarcity: Challenges and Solutions
 description: >-
-  [ACL 2026][Reinforcement Learning] The first systematic survey of reinforcement learning for LLMs under data scarcity, proposing a three-level taxonomy organized around data-centric, training-centric, and framework-centric perspectives, covering data pruning/synthesis/compression, trajectory generation/reward engineering/policy optimization, and self-evolution/co-evolution/multi-agent evolution paradigms.
+  [ACL 2026][Reinforcement Learning][data scarcity] The first systematic survey of reinforcement learning for LLMs under data scarcity, proposing a three-level taxonomy organized around data-centric, training-centric…
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - data scarcity
-  - LLM post-training
-  - data efficiency
-  - survey
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "data scarcity"
+  - "LLM post-training"
+  - "data efficiency"
+  - "survey"
 date: 2026-05-08
 content_hash: 99e8a32706f8aeea
 ---

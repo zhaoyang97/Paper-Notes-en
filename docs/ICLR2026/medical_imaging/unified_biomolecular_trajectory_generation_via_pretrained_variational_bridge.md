@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unified Biomolecular Trajectory Generation via Pretrained Variational Bridge
 description: >-
-  [ICLR 2026][Medical Imaging][molecular dynamics] PVB (Pretrained Variational Bridge) unifies the training objectives of single-structure pretraining and paired-trajectory fine-tuning via an encoder-decoder architecture combined with augmented bridge matching, enabling cross-domain biomolecular trajectory generation. It further accelerates protein–ligand holo-state exploration through RL fine-tuning based on adjoint matching.
+  [ICLR 2026][Medical Imaging][molecular dynamics] PVB (Pretrained Variational Bridge) unifies the training objectives of single-structure pretraining and paired-trajectory fine-tuning via an encoder-decoder architecture c…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - molecular dynamics
-  - trajectory generation
-  - variational bridge matching
-  - pretraining
-  - reinforcement learning fine-tuning
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "molecular dynamics"
+  - "trajectory generation"
+  - "variational bridge matching"
+  - "pretraining"
+  - "reinforcement learning fine-tuning"
 date: 2026-05-08
 content_hash: a8041aa8c9f9e7f8
 ---

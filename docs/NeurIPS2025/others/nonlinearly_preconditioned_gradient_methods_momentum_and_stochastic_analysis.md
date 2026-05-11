@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Nonlinearly Preconditioned Gradient Methods: Momentum and Stochastic Analysis
 description: >-
-  [NeurIPS 2025][nonlinear preconditioning] Under the anisotropic descent inequality framework, this paper introduces heavy ball momentum into nonlinearly preconditioned gradient methods and analyzes the convergence properties of their stochastic variants under multiple noise assumptions, thereby unifying the theoretical analysis of gradient clipping and normalized gradient methods.
+  [NeurIPS 2025][nonlinear preconditioning] Under the anisotropic descent inequality framework, this paper introduces heavy ball momentum into nonlinearly preconditioned gradient methods and analyzes the convergence proper…
 tags:
-  - NeurIPS 2025
-  - nonlinear preconditioning
-  - gradient clipping
-  - anisotropic smoothness
-  - heavy ball momentum
-  - stochastic optimization
+  - "NeurIPS 2025"
+  - "nonlinear preconditioning"
+  - "gradient clipping"
+  - "anisotropic smoothness"
+  - "heavy ball momentum"
+  - "stochastic optimization"
 date: 2026-05-08
 content_hash: 5be73fbdd050af8a
 ---

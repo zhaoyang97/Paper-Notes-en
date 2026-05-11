@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CAD-VAE: Leveraging Correlation-Aware Latents for Comprehensive Fair Disentanglement
 description: >-
-  [AAAI 2026][Image Generation][fair disentanglement] CAD-VAE introduces a correlation-aware latent code to capture shared information between target and sensitive attributes, achieves disentanglement by directly minimizing conditional mutual information, and employs a relevance-driven optimization strategy to precisely regulate the shared code, attaining state-of-the-art performance on fair representation learning, counterfactual generation, and fair image editing.
+  [AAAI 2026][Image Generation][fair disentanglement] CAD-VAE introduces a correlation-aware latent code to capture shared information between target and sensitive attributes…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - fair disentanglement
-  - VAE
-  - conditional mutual information
-  - correlation-aware
-  - counterfactual fairness
+  - "AAAI 2026"
+  - "Image Generation"
+  - "fair disentanglement"
+  - "VAE"
+  - "conditional mutual information"
+  - "correlation-aware"
+  - "counterfactual fairness"
 date: 2026-05-08
 content_hash: 53be015e6e24850d
 ---

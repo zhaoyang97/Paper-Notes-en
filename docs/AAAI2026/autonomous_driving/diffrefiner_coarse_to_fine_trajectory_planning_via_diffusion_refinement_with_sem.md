@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DiffRefiner: Coarse to Fine Trajectory Planning via Diffusion Refinement with Semantic Interaction for End to End Autonomous Driving
 description: >-
-  [AAAI2026][Autonomous Driving][end-to-end autonomous driving] This paper proposes DiffRefiner, a coarse-to-fine two-stage framework that first employs a discriminative Proposal Decoder to generate coarse trajectory proposals, then iteratively refines them via a diffusion model, combined with a fine-grained semantic interaction module. The method achieves state-of-the-art performance on both NAVSIM v2 and Bench2Drive benchmarks.
+  [AAAI2026][Autonomous Driving][end-to-end autonomous driving] This paper proposes DiffRefiner, a coarse-to-fine two-stage framework that first employs a discriminative Proposal Decoder to generate coarse trajectory propo…
 tags:
-  - AAAI2026
-  - Autonomous Driving
-  - end-to-end autonomous driving
-  - diffusion model
-  - trajectory planning
-  - coarse-to-fine
-  - semantic interaction
+  - "AAAI2026"
+  - "Autonomous Driving"
+  - "end-to-end autonomous driving"
+  - "diffusion model"
+  - "trajectory planning"
+  - "coarse-to-fine"
+  - "semantic interaction"
 date: 2026-05-08
 content_hash: ff4d904b58872765
 ---

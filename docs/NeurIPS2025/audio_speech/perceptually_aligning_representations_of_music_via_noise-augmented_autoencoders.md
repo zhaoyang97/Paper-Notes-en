@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Perceptually Aligning Representations of Music via Noise-Augmented Autoencoders
 description: >-
-  [NeurIPS 2025 (AI for Music Workshop)][Audio & Speech][Perceptual Alignment] This paper demonstrates that applying noise augmentation to latent variables during autoencoder training, combined with a perceptual loss, induces a "perceptual hierarchy" in the encoding space — the most perceptually salient musical features (e.g., pitch) are encoded in the coarsest latent structures, while secondary features (e.g., timbral details) are encoded in finer structures. This alignment improves music surprisal estimation under latent diffusion decoding and enhances EEG brain response prediction.
+  [NeurIPS 2025 (AI for Music Workshop)][Audio & Speech][Perceptual Alignment] This paper demonstrates that applying noise augmentation to latent variables during autoencoder training, combined with a perceptual loss…
 tags:
-  - NeurIPS 2025 (AI for Music Workshop)
+  - "NeurIPS 2025 (AI for Music Workshop)"
   - "Audio & Speech"
-  - Perceptual Alignment
-  - Noise-Augmented Autoencoder
-  - Latent Diffusion
-  - Music Surprisal
-  - EEG Prediction
+  - "Perceptual Alignment"
+  - "Noise-Augmented Autoencoder"
+  - "Latent Diffusion"
+  - "Music Surprisal"
+  - "EEG Prediction"
 date: 2026-05-08
 content_hash: 35476edba62a56cf
 ---

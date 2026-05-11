@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Blameless Users in a Clean Room: Defining Copyright Protection for Generative Models
 description: >-
-  [NeurIPS 2025][Image Generation][Copyright Protection] This paper reconstructs the theoretical foundations of provable copyright protection for generative models. It demonstrates that the existing Near Access-Freeness (NAF) definition fails to prevent verbatim reproduction ("tainted" models), proposes a "blameless user" framework and a clean-room copyright protection definition ($(\kappa,\beta)$-clean), under which users who would not reproduce content in a counterfactual "clean-room setting" are also unlikely to reproduce it in the real world. The paper further proves that differentially private training implies clean-room copyright protection under a "golden dataset" assumption.
+  [NeurIPS 2025][Image Generation][Copyright Protection] This paper reconstructs the theoretical foundations of provable copyright protection for generative models. It demonstrates that the existing Near Access-Freeness (N…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Copyright Protection
-  - Clean-Room Principle
-  - Generative Models
-  - Differential Privacy
-  - NAF
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Copyright Protection"
+  - "Clean-Room Principle"
+  - "Generative Models"
+  - "Differential Privacy"
+  - "NAF"
 date: 2026-05-08
 content_hash: c5aefcd9cb281a6d
 ---

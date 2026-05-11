@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ZeroS: Zero-Sum Linear Attention for Efficient Transformers
 description: >-
-  [NeurIPS 2025][LLM Efficiency][zero-sum attention] By removing the zeroth-order uniform term $1/t$ from softmax, ZeroS constructs a linear attention mechanism with zero-sum weights, breaking the limitation of convex combinations to purely additive mixing. This enables differential/contrastive operations within a single layer while maintaining $O(Nd^2)$ linear complexity, matching or surpassing standard softmax attention across multiple sequence modeling benchmarks.
+  [NeurIPS 2025][LLM Efficiency][zero-sum attention] By removing the zeroth-order uniform term $1/t$ from softmax, ZeroS constructs a linear attention mechanism with zero-sum weights…
 tags:
-  - NeurIPS 2025
-  - LLM Efficiency
-  - zero-sum attention
-  - linear attention
-  - softmax decomposition
-  - radial-angular decoupling
-  - O(N) complexity
+  - "NeurIPS 2025"
+  - "LLM Efficiency"
+  - "zero-sum attention"
+  - "linear attention"
+  - "softmax decomposition"
+  - "radial-angular decoupling"
+  - "O(N) complexity"
 date: 2026-05-08
 content_hash: 8dac4527f7442a59
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] An Instance-Centric Panoptic Occupancy Prediction Benchmark for Autonomous Driving
 description: >-
-  [CVPR 2026][Autonomous Driving][Panoptic Occupancy Prediction] This paper proposes ADMesh (a library of 15K+ high-quality 3D models) and CarlaOcc (a panoptic occupancy dataset with 100K frames at 0.05m resolution), providing for the first time instance-level annotations and physically consistent ground truth for 3D panoptic occupancy prediction in autonomous driving, along with occupancy quality evaluation metrics and a systematic benchmark.
+  [CVPR 2026][Autonomous Driving][Panoptic Occupancy Prediction] This paper proposes ADMesh (a library of 15K+ high-quality 3D models) and CarlaOcc (a panoptic occupancy dataset with 100K frames at 0.05m resolution)…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Panoptic Occupancy Prediction
-  - 3D Mesh Library
-  - CARLA Simulation
-  - Instance-Level Annotation
-  - Occupancy Dataset Quality
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Panoptic Occupancy Prediction"
+  - "3D Mesh Library"
+  - "CARLA Simulation"
+  - "Instance-Level Annotation"
+  - "Occupancy Dataset Quality"
 date: 2026-05-08
 content_hash: 9e192239e9377a7b
 ---

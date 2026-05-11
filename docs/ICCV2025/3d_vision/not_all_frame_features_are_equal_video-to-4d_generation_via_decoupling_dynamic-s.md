@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Not All Frame Features Are Equal: Video-to-4D Generation via Decoupling Dynamic-Static Features
 description: >-
-  [ICCV 2025][3D Vision][4D generation] DS4D is the first method to decouple dynamic and static features along both the temporal and spatial axes in video-to-4D generation. It introduces a Dynamic-Static Feature Decoupling module (DSFD) to extract dynamic representations, and a Spatiotemporal Similarity Fusion module (TSSF) to adaptively aggregate dynamic information across viewpoints, achieving state-of-the-art performance on the Consistent4D and Objaverse datasets.
+  [ICCV 2025][3D Vision][4D generation] DS4D is the first method to decouple dynamic and static features along both the temporal and spatial axes in video-to-4D generation. It introduces a Dynamic-Static Feature Decoupling…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 4D generation
-  - dynamic 3D Gaussians
-  - dynamic-static feature decoupling
-  - video-to-4D
-  - spatiotemporal similarity fusion
+  - "ICCV 2025"
+  - "3D Vision"
+  - "4D generation"
+  - "dynamic 3D Gaussians"
+  - "dynamic-static feature decoupling"
+  - "video-to-4D"
+  - "spatiotemporal similarity fusion"
 date: 2026-05-08
 content_hash: 877fbb237622def7
 ---

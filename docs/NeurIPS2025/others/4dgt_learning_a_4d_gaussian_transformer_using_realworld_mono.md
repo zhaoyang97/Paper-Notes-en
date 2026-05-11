@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] 4DGT: Learning a 4D Gaussian Transformer Using Real-World Monocular Videos
 description: >-
-  [NeurIPS 2025 (Spotlight)][4D Gaussian Splatting] This paper proposes 4DGT — a 4D Gaussian-based Transformer model trained entirely on real-world monocular posed videos that reconstructs dynamic scenes in seconds via feed-forward inference, significantly outperforming comparable feed-forward networks while achieving accuracy on par with optimization-based methods.
+  [NeurIPS 2025 (Spotlight)][4D Gaussian Splatting] This paper proposes 4DGT — a 4D Gaussian-based Transformer model trained entirely on real-world monocular posed videos that reconstructs dynamic scenes in seconds via fee…
 tags:
-  - NeurIPS 2025 (Spotlight)
-  - 4D Gaussian Splatting
-  - Transformer
-  - Dynamic Scene Reconstruction
-  - Feed-Forward Inference
-  - Monocular Video
+  - "NeurIPS 2025 (Spotlight)"
+  - "4D Gaussian Splatting"
+  - "Transformer"
+  - "Dynamic Scene Reconstruction"
+  - "Feed-Forward Inference"
+  - "Monocular Video"
 date: 2026-05-08
 content_hash: 6b4ed0206d0858c6
 ---

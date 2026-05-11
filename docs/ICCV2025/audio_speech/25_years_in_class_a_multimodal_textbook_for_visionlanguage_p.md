@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] 2.5 Years in Class: A Multimodal Textbook for Vision-Language Pretraining
 description: >-
-  [ICCV 2025][Audio & Speech][multimodal textbook] This work collects 2.5 years (22,000 hours) of instructional videos from YouTube and constructs a high-quality interleaved image-text "multimodal textbook" corpus (6.5M keyframes + 0.75B text tokens) via an LLM-driven multi-level extraction and filtering pipeline. The resulting dataset significantly improves VLM pretraining on knowledge-intensive and reasoning tasks, yielding substantial gains on ScienceQA and MathVista in particular.
+  [ICCV 2025][Audio & Speech][multimodal textbook] This work collects 2.5 years (22,000 hours) of instructional videos from YouTube and constructs a high-quality interleaved image-text "multimodal textbook" corpus (6.5M ke…
 tags:
-  - ICCV 2025
+  - "ICCV 2025"
   - "Audio & Speech"
-  - multimodal textbook
-  - interleaved image-text corpus
-  - instructional videos
-  - VLM pretraining
-  - in-context learning
+  - "multimodal textbook"
+  - "interleaved image-text corpus"
+  - "instructional videos"
+  - "VLM pretraining"
+  - "in-context learning"
 date: 2026-05-08
 content_hash: 008f0ce09cacc1b8
 ---

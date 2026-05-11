@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MESS+: Dynamically Learned Inference-Time LLM Routing in Model Zoos with Service Level Guarantees
 description: >-
-  [NeurIPS 2025][Optimization][Cost Optimization] MESS+ is the first framework to formalize LLM request routing as a constrained stochastic optimization problem with SLA guarantees. By combining an online-learned request satisfaction predictor with a virtual queue mechanism, it dynamically selects models per request. Across 3 reasoning and 5 question-answering benchmarks, MESS+ achieves an average 2× cost reduction while satisfying SLA constraints, with theoretical guarantees on both cost optimality and constraint satisfaction.
+  [NeurIPS 2025][Optimization][Cost Optimization] MESS+ is the first framework to formalize LLM request routing as a constrained stochastic optimization problem with SLA guarantees. By combining an online-learned request s…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Cost Optimization
-  - LLM Routing
-  - Virtual Queue
-  - SLA Guarantee
-  - Online Learning
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Cost Optimization"
+  - "LLM Routing"
+  - "Virtual Queue"
+  - "SLA Guarantee"
+  - "Online Learning"
 date: 2026-05-08
 content_hash: 4a10733a50b7bd1c
 ---

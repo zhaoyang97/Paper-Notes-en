@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Minimal Semantic Sufficiency Meets Unsupervised Domain Generalization
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][Unsupervised Domain Generalization] MS-UDG operates without class or domain labels, decomposing representations into semantic and variation components via an Information Disentanglement Module (IDM). Coupled with a Semantic Representation Optimization Module (SROM) that simultaneously maximizes semantic information and minimizes variation interference, the method achieves 72.89% accuracy on PACS (+1.5% vs. CycleMAE). Theoretical analysis proves that minimally sufficient semantic representations minimize the downstream Bayes error rate.
+  [NeurIPS 2025][Self-Supervised Learning][Unsupervised Domain Generalization] MS-UDG operates without class or domain labels, decomposing representations into semantic and variation components via an Information Disentang…
 tags:
-  - NeurIPS 2025
-  - Self-Supervised Learning
-  - Unsupervised Domain Generalization
-  - Information Disentanglement
-  - Semantic Sufficiency
-  - Minimality
-  - Fourier Augmentation
+  - "NeurIPS 2025"
+  - "Self-Supervised Learning"
+  - "Unsupervised Domain Generalization"
+  - "Information Disentanglement"
+  - "Semantic Sufficiency"
+  - "Minimality"
+  - "Fourier Augmentation"
 date: 2026-05-08
 content_hash: 850e1fcc4999ec62
 ---

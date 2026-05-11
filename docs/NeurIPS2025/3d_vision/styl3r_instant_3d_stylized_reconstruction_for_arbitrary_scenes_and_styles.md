@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Styl3R: Instant 3D Stylized Reconstruction for Arbitrary Scenes and Styles
 description: >-
-  [NeurIPS 2025][3D Vision][3D stylization] This paper proposes Styl3R, a feed-forward network that decouples 3D reconstruction from stylization via a structure–appearance dual-branch architecture, enabling stylized 3D reconstruction from uncalibrated sparse-view images and arbitrary style images in 0.15 seconds.
+  [NeurIPS 2025][3D Vision][3D stylization] This paper proposes Styl3R, a feed-forward network that decouples 3D reconstruction from stylization via a structure–appearance dual-branch architecture…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - 3D stylization
-  - Gaussian splatting
-  - feed-forward reconstruction
-  - multi-view consistency
-  - dual-branch architecture
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "3D stylization"
+  - "Gaussian splatting"
+  - "feed-forward reconstruction"
+  - "multi-view consistency"
+  - "dual-branch architecture"
 date: 2026-05-08
 content_hash: 6549d0c1096e5b24
 ---

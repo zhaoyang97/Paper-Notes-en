@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FairLLaVA: Fairness-Aware Parameter-Efficient Fine-Tuning for Large Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Fairness] This paper proposes FairLLaVA, a parameter-efficient fairness-aware fine-tuning method that eliminates demographic shortcuts in multimodal large language models by minimizing the mutual information between hidden states and demographic attributes, significantly narrowing inter-group performance gaps in chest X-ray report generation and skin lesion question answering.
+  [CVPR 2026][Multimodal VLM][Fairness] This paper proposes FairLLaVA, a parameter-efficient fairness-aware fine-tuning method that eliminates demographic shortcuts in multimodal large language models by minimizing the mut…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Fairness
-  - MLLM
-  - Mutual Information
-  - LoRA
-  - Medical Image Analysis
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Fairness"
+  - "MLLM"
+  - "Mutual Information"
+  - "LoRA"
+  - "Medical Image Analysis"
 date: 2026-05-08
 content_hash: 3b80bbdaae518480
 ---

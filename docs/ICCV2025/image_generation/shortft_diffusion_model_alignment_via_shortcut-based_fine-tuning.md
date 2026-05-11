@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] ShortFT: Diffusion Model Alignment via Shortcut-based Fine-Tuning
 description: >-
-  [ICCV 2025][Image Generation][Diffusion model alignment] ShortFT is proposed to construct denoising shortcuts using trajectory-preserving few-step diffusion models, substantially compressing the original lengthy denoising chain to enable complete end-to-end reward gradient backpropagation, achieving efficient and effective alignment of diffusion models with reward functions.
+  [ICCV 2025][Image Generation][Diffusion model alignment] ShortFT is proposed to construct denoising shortcuts using trajectory-preserving few-step diffusion models…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Diffusion model alignment
-  - reward fine-tuning
-  - denoising shortcut
-  - trajectory-preserving distillation
-  - timestep-aware LoRA
-  - backpropagation
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Diffusion model alignment"
+  - "reward fine-tuning"
+  - "denoising shortcut"
+  - "trajectory-preserving distillation"
+  - "timestep-aware LoRA"
+  - "backpropagation"
 date: 2026-05-08
 content_hash: 62fb31f72d23d749
 ---

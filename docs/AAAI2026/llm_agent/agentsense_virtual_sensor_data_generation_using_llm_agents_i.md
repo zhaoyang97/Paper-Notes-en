@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] AgentSense: Virtual Sensor Data Generation Using LLM Agents in Simulated Home Environments
 description: >-
-  [AAAI 2026][LLM Agent] LLM-driven embodied agents are instantiated to "live" in simulated smart home environments, generating virtual ambient sensor data for pre-training HAR models, which yields significant gains in activity recognition under low-resource settings.
+  [AAAI 2026][LLM Agent][Virtual Sensor Data] LLM-driven embodied agents are instantiated to "live" in simulated smart home environments, generating virtual ambient sensor data for pre-training HAR models…
 tags:
-  - AAAI 2026
-  - LLM Agent
-  - Virtual Sensor Data
-  - Smart Home
-  - Human Activity Recognition
-  - Simulated Environment
+  - "AAAI 2026"
+  - "LLM Agent"
+  - "Virtual Sensor Data"
+  - "Smart Home"
+  - "Human Activity Recognition"
+  - "Simulated Environment"
 date: 2026-05-08
 content_hash: 7aa6eab0361d23ca
 ---

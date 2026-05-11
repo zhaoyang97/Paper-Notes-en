@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Novel Architecture of RPA In Oral Cancer Lesion Detection
 description: >-
-  [CVPR 2026][Medical Imaging][Oral cancer detection] This work integrates software design patterns (Singleton + Batch Processing) into an EfficientNetV2B1-based oral cancer lesion detection Python pipeline, achieving a 60–100× inference speedup over conventional RPA platforms (UiPath/Automation Anywhere) — 0.06 s per image vs. 2.58 s — while maintaining diagnostic accuracy.
+  [CVPR 2026][Medical Imaging][Oral cancer detection] This work integrates software design patterns (Singleton + Batch Processing) into an EfficientNetV2B1-based oral cancer lesion detection Python pipeline…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Oral cancer detection
-  - RPA automation
-  - EfficientNetV2
-  - design patterns
-  - CNN classification
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Oral cancer detection"
+  - "RPA automation"
+  - "EfficientNetV2"
+  - "design patterns"
+  - "CNN classification"
 date: 2026-05-08
 content_hash: 0648eb69c3f3c8ad
 ---

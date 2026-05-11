@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HAG: Hierarchical Demographic Tree-based Agent Generation for Topic-Adaptive Simulation
 description: >-
-  [ACL 2026][LLM Agent][Agent Generation] This paper proposes HAG, a framework that formalizes population-level agent generation as a two-stage hierarchical decision process — first constructing a topic-adaptive demographic distribution tree via a world knowledge model to achieve macro-level distributional alignment, then combining real-data retrieval with LLM-based agent augmentation to ensure micro-level individual consistency. HAG reduces population alignment error by an average of 37.7% and improves sociological consistency by 18.8% across multi-domain benchmarks.
+  [ACL 2026][LLM Agent][Agent Generation] This paper proposes HAG, a framework that formalizes population-level agent generation as a two-stage hierarchical decision process — first constructing a topic-adaptive demographi…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - Agent Generation
-  - Population Simulation
-  - Hierarchical Decision-Making
-  - Topic Adaptation
-  - Agent-Based Modeling
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Agent Generation"
+  - "Population Simulation"
+  - "Hierarchical Decision-Making"
+  - "Topic Adaptation"
+  - "Agent-Based Modeling"
 date: 2026-05-08
 content_hash: 4c49228daa7c9796
 ---

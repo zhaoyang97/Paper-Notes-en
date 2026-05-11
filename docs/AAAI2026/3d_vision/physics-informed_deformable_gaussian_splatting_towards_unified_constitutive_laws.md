@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Physics-Informed Deformable Gaussian Splatting: Towards Unified Constitutive Laws for Time-Evolving Material Field
 description: >-
-  [AAAI 2026][3D Vision][3D Gaussian Splatting] Each 3D Gaussian is treated as a Lagrangian material point. A time-evolving material field predicts per-particle velocities and constitutive stress tensors; the Cauchy momentum residual serves as a physics constraint while Lagrangian particle flow matching provides a data-fitting term. The approach achieves physical consistency and cross-scene generalization in monocular dynamic view synthesis, reaching state-of-the-art performance on both a self-constructed physics-driven dataset and the HyperNeRF real-world benchmark.
+  [AAAI 2026][3D Vision][3D Gaussian Splatting] Each 3D Gaussian is treated as a Lagrangian material point. A time-evolving material field predicts per-particle velocities and constitutive stress tensors…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - Dynamic Scene Reconstruction
-  - Physics-Informed Neural Networks
-  - Continuum Mechanics
-  - Optical Flow Supervision
+  - "AAAI 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Dynamic Scene Reconstruction"
+  - "Physics-Informed Neural Networks"
+  - "Continuum Mechanics"
+  - "Optical Flow Supervision"
 date: 2026-05-08
 content_hash: 2928af2a89906655
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Writing in Symbiosis: Mapping Human Creative Agency in the AI Era
 description: >-
-  [NeurIPS 2025][LLM/NLP][human-AI coevolution] Through longitudinal corpus analysis of 50,000+ documents, this paper proposes the "Dual-Track Evolution" hypothesis — that in the LLM era, human writing exhibits thematic convergence alongside structural stylistic differentiation — and identifies three authorial adaptation archetypes: Adopters, Resistors, and Pragmatists.
+  [NeurIPS 2025][LLM/NLP][human-AI coevolution] Through longitudinal corpus analysis of 50,000+ documents, this paper proposes the "Dual-Track Evolution" hypothesis — that in the LLM era…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - human-AI coevolution
-  - creative writing
-  - stylometric analysis
-  - authorial archetypes
-  - LLM influence detection
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "human-AI coevolution"
+  - "creative writing"
+  - "stylometric analysis"
+  - "authorial archetypes"
+  - "LLM influence detection"
 date: 2026-05-08
 content_hash: ccf38708f7e8537c
 ---

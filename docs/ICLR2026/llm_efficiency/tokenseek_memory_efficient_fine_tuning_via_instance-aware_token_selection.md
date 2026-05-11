@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TokenSeek: Memory Efficient Fine Tuning via Instance-Aware Token Selection
 description: >-
-  [ICLR 2026][LLM Efficiency][memory efficient fine-tuning] This paper proposes TokenSeek, a general instance-aware token seeking and discarding method that evaluates token importance by combining contextual (attention) and gradient information, updates parameters only on selected tokens, and achieves up to 65.7% reduction in activation memory while maintaining or surpassing full-token fine-tuning performance.
+  [ICLR 2026][LLM Efficiency][memory efficient fine-tuning] This paper proposes TokenSeek, a general instance-aware token seeking and discarding method that evaluates token importance by combining contextual (attention) an…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - memory efficient fine-tuning
-  - token selection
-  - activation optimization
-  - instance-aware
-  - gradient sparsification
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "memory efficient fine-tuning"
+  - "token selection"
+  - "activation optimization"
+  - "instance-aware"
+  - "gradient sparsification"
 date: 2026-05-08
 content_hash: 302968a8a2851829
 ---

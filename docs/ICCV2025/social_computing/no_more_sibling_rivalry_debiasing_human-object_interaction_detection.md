@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] No More Sibling Rivalry: Debiasing Human-Object Interaction Detection
 description: >-
-  [ICCV 2025][Social Computing][Human-Object Interaction Detection] This paper identifies and systematically analyzes the "Toxic Siblings Bias" in HOI detection—highly similar HOI triplets that mutually interfere and compete at both the input and output levels. Two debiasing learning objectives are proposed: Contrastive-then-Calibration (C2C) and Merge-then-Split (M2S), achieving +9.18% mAP over the baseline and +3.59% over the previous state-of-the-art on HICO-DET.
+  [ICCV 2025][Social Computing][Human-Object Interaction Detection] This paper identifies and systematically analyzes the "Toxic Siblings Bias" in HOI detection—highly similar HOI triplets that mutually interfere and compe…
 tags:
-  - ICCV 2025
-  - Social Computing
-  - Human-Object Interaction Detection
-  - Toxic Siblings Bias
-  - Contrastive-Calibration Learning
-  - Merge-then-Split Strategy
-  - Debiasing
+  - "ICCV 2025"
+  - "Social Computing"
+  - "Human-Object Interaction Detection"
+  - "Toxic Siblings Bias"
+  - "Contrastive-Calibration Learning"
+  - "Merge-then-Split Strategy"
+  - "Debiasing"
 date: 2026-05-08
 content_hash: 2b1b0ee32ba48bc7
 ---

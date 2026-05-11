@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Time-IMM: A Dataset and Benchmark for Irregular Multimodal Multivariate Time Series
 description: >-
-  [NeurIPS 2025][Time Series][irregular time series] This work constructs Time-IMM — the first multimodal multivariate time series benchmark that categorizes irregularity according to causal mechanisms (9 irregularity types organized into three classes: Trigger, Constraint, and Artifact, spanning 9 datasets). An accompanying forecasting library, IMM-TSF, supports asynchronous multimodal fusion. Experiments demonstrate that explicitly modeling multimodal information reduces MSE by 6.71% on average across irregular time series settings, with a maximum improvement of 38.38%.
+  [NeurIPS 2025][Time Series][irregular time series] This work constructs Time-IMM — the first multimodal multivariate time series benchmark that categorizes irregularity according to causal mechanisms (9 irregularity type…
 tags:
-  - NeurIPS 2025
-  - Time Series
-  - irregular time series
-  - multimodal fusion
-  - causally-driven irregularity
-  - time series forecasting
-  - benchmark
+  - "NeurIPS 2025"
+  - "Time Series"
+  - "irregular time series"
+  - "multimodal fusion"
+  - "causally-driven irregularity"
+  - "time series forecasting"
+  - "benchmark"
 date: 2026-05-08
 content_hash: dcaa22eb6e8f281e
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] KEC: Hierarchical Textual Knowledge for Enhanced Image Clustering
 description: >-
-  [CVPR 2026][Multimodal VLM][Image Clustering] KEC leverages LLMs to construct hierarchical concept-attribute structured textual knowledge to guide image clustering, outperforming zero-shot CLIP on 14 out of 20 datasets without any training, demonstrating that discriminative attributes are more effective than simple class names.
+  [CVPR 2026][Multimodal VLM][Image Clustering] KEC leverages LLMs to construct hierarchical concept-attribute structured textual knowledge to guide image clustering…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Image Clustering
-  - Textual Knowledge
-  - Large Language Models
-  - CLIP
-  - Discriminative Attributes
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Image Clustering"
+  - "Textual Knowledge"
+  - "Large Language Models"
+  - "CLIP"
+  - "Discriminative Attributes"
 date: 2026-05-08
 content_hash: d79602a312c40f37
 ---

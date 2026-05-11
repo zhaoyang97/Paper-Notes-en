@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Affectron: Emotional Speech Synthesis with Affective and Contextually Aligned Nonverbal Vocalizations
 description: >-
-  [ACL 2026][Audio & Speech][Nonverbal Vocalizations] This paper proposes Affectron, a framework that achieves diverse and emotionally aligned nonverbal vocalization (NV) synthesis—such as laughter and sighs—on small-scale open-source disentangled corpora, via two training-time augmentation strategies: emotion-driven Top-K NV matching and emotion-aware Top-K routing. The proposed method substantially outperforms the purely language-pretrained VoiceCraft baseline.
+  [ACL 2026][Audio & Speech][Nonverbal Vocalizations] This paper proposes Affectron, a framework that achieves diverse and emotionally aligned nonverbal vocalization (NV) synthesis—such as laughter and sighs—on small-scale…
 tags:
-  - ACL 2026
+  - "ACL 2026"
   - "Audio & Speech"
-  - Nonverbal Vocalizations
-  - Emotional Speech Synthesis
-  - NV-Augmented Training
-  - Affective Routing
-  - Neural Codec Language Model
+  - "Nonverbal Vocalizations"
+  - "Emotional Speech Synthesis"
+  - "NV-Augmented Training"
+  - "Affective Routing"
+  - "Neural Codec Language Model"
 date: 2026-05-08
 content_hash: d096a561a684f645
 ---

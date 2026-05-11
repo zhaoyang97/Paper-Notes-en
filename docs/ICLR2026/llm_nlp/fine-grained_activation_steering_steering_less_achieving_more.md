@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Fine-Grained Activation Steering: Steering Less, Achieving More
 description: >-
-  [ICLR 2026][LLM/NLP][activation steering] AUSteer reveals that block-level activation steering is inherently heterogeneous—different dimensions govern different token distributions, and steering the entire block simultaneously amplifies both beneficial and harmful signals. The paper proposes fine-grained steering at the Atomic Unit (AU) level: discriminative dimensions are identified via activation momentum, steering strength is adaptively allocated, and intervening on only ≤100 dimensions substantially outperforms state-of-the-art methods that steer thousands of dimensions.
+  [ICLR 2026][LLM/NLP][activation steering] AUSteer reveals that block-level activation steering is inherently heterogeneous—different dimensions govern different token distributions…
 tags:
-  - ICLR 2026
-  - LLM/NLP
-  - activation steering
-  - atomic units
-  - fine-grained intervention
-  - interpretability
-  - inference-time alignment
+  - "ICLR 2026"
+  - "LLM/NLP"
+  - "activation steering"
+  - "atomic units"
+  - "fine-grained intervention"
+  - "interpretability"
+  - "inference-time alignment"
 date: 2026-05-08
 content_hash: 99d0f68927a51e3a
 ---

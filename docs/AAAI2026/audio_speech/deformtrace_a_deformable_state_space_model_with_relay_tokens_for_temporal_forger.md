@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DeformTrace: A Deformable State Space Model with Relay Tokens for Temporal Forgery Localization
 description: >-
-  [AAAI2026][Audio & Speech][Temporal Forgery Localization] This paper proposes DeformTrace, which introduces a deformable dynamic receptive field mechanism and relay token scheme into state space models, combining Transformer-level global modeling with SSM-level efficient inference to achieve state-of-the-art accuracy and substantial efficiency gains in temporal forgery localization.
+  [AAAI2026][Audio & Speech][Temporal Forgery Localization] This paper proposes DeformTrace, which introduces a deformable dynamic receptive field mechanism and relay token scheme into state space models…
 tags:
-  - AAAI2026
+  - "AAAI2026"
   - "Audio & Speech"
-  - Temporal Forgery Localization
-  - State Space Model
-  - Deformable Mechanism
-  - Relay Token
-  - Deepfake Detection
+  - "Temporal Forgery Localization"
+  - "State Space Model"
+  - "Deformable Mechanism"
+  - "Relay Token"
+  - "Deepfake Detection"
 date: 2026-05-08
 content_hash: 0fd69d2f2d406875
 ---

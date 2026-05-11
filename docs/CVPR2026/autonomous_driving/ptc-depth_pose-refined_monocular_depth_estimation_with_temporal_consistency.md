@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PTC-Depth: Pose-Refined Monocular Depth Estimation with Temporal Consistency
 description: >-
-  [CVPR 2026][Autonomous Driving][Monocular depth estimation] This paper proposes PTC-Depth, a monocular depth estimation framework that combines optical flow triangulation with wheel odometry. It tracks the metric scale of a depth foundation model via recursive Bayesian updates, achieving temporally consistent metric depth prediction with strong generalization across KITTI, TartanAir, and thermal infrared datasets.
+  [CVPR 2026][Autonomous Driving][Monocular depth estimation] This paper proposes PTC-Depth, a monocular depth estimation framework that combines optical flow triangulation with wheel odometry. It tracks the metric scale o…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Monocular depth estimation
-  - temporal consistency
-  - Bayesian scale fusion
-  - optical flow triangulation
-  - wheel odometry
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Monocular depth estimation"
+  - "temporal consistency"
+  - "Bayesian scale fusion"
+  - "optical flow triangulation"
+  - "wheel odometry"
 date: 2026-05-08
 content_hash: 391d466c4e2babe4
 ---

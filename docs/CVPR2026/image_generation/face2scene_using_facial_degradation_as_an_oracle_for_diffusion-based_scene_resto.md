@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Face2Scene: Using Facial Degradation as an Oracle for Diffusion-Based Scene Restoration
 description: >-
-  [CVPR2026][Image Generation][Image Restoration] Face2Scene proposes a two-stage framework: a reference-based face restoration model (Ref-FR) first produces HQ-LQ face pairs from which degradation codes are extracted as an "oracle"; these codes then condition a single-step diffusion model to restore the full scene, including body and background.
+  [CVPR2026][Image Generation][Image Restoration] Face2Scene proposes a two-stage framework: a reference-based face restoration model (Ref-FR) first produces HQ-LQ face pairs from which degradation codes are extracted as a…
 tags:
-  - CVPR2026
-  - Image Generation
-  - Image Restoration
-  - Diffusion Models
-  - Face Reference
-  - Degradation Estimation
-  - Full-Scene Restoration
-  - Single-Step Inference
+  - "CVPR2026"
+  - "Image Generation"
+  - "Image Restoration"
+  - "Diffusion Models"
+  - "Face Reference"
+  - "Degradation Estimation"
+  - "Full-Scene Restoration"
+  - "Single-Step Inference"
 date: 2026-05-08
 content_hash: fba14e8944be7ece
 ---

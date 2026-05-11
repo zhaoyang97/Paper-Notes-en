@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BaRISTA: Brain-Scale Informed Spatiotemporal Representation of Human Intracranial EEG
 description: >-
-  [NeurIPS 2025][Model Compression][Intracranial EEG] BaRISTA systematically investigates spatial encoding scales (electrode/parcel/lobe) for iEEG Transformers, finding that atlas parcel-level encoding combined with spatial masked reconstruction achieves 86.2% AUC on language task decoding (vs. PopT 79.5%). The choice of encoding scale has greater impact than masking strategy, and the model generalizes well across subjects.
+  [NeurIPS 2025][Model Compression][Intracranial EEG] BaRISTA systematically investigates spatial encoding scales (electrode/parcel/lobe) for iEEG Transformers…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Intracranial EEG
-  - Spatiotemporal Transformer
-  - Spatial Encoding Scale
-  - Masked Reconstruction
-  - Pretraining
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Intracranial EEG"
+  - "Spatiotemporal Transformer"
+  - "Spatial Encoding Scale"
+  - "Masked Reconstruction"
+  - "Pretraining"
 date: 2026-05-08
 content_hash: 08ef5159ec89ca57
 ---

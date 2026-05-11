@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Poly-Guard: Massive Multi-Domain Safety Policy-Grounded Guardrail Dataset
 description: >-
-  [NeurIPS 2025 (Dataset & Benchmark)][LLM Safety][guardrail benchmark] This paper introduces Poly-Guard, the first **large-scale, multi-domain, policy-grounded** safety guardrail benchmark. It extracts 400+ risk categories and 1,000+ safety rules from 150+ real-world industry safety policies, generates 100K+ instances spanning 8 safety-critical domains, and systematically evaluates 19 guardrail models, revealing 8 key findings including domain specialization, evolutionary forgetting, scaling stagnation, and adversarial vulnerability.
+  [NeurIPS 2025 (Dataset & Benchmark)][LLM Safety][guardrail benchmark] This paper introduces Poly-Guard, the first **large-scale, multi-domain, policy-grounded** safety guardrail benchmark. It extracts 400+ risk categorie…
 tags:
   - "NeurIPS 2025 (Dataset & Benchmark)"
-  - LLM Safety
-  - guardrail benchmark
-  - policy-grounded
-  - multi-domain safety
-  - adversarial attack
-  - over-refusal
+  - "LLM Safety"
+  - "guardrail benchmark"
+  - "policy-grounded"
+  - "multi-domain safety"
+  - "adversarial attack"
+  - "over-refusal"
 date: 2026-05-08
 content_hash: 63a83bc77d197854
 ---

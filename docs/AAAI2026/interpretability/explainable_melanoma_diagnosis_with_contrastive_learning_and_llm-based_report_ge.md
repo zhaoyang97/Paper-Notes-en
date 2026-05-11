@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Explainable Melanoma Diagnosis with Contrastive Learning and LLM-based Report Generation
 description: >-
-  [AAAI 2026][Melanoma Diagnosis] This paper proposes the CEFM framework, which aligns ViT visual features with ABCD-rule-based clinical features (asymmetry, border, color) via cross-modal contrastive learning, and subsequently employs CLIP and DeepSeek to generate structured diagnostic reports. On the ISIC dataset, the framework achieves 92.79% accuracy and 0.961 AUC, with an expert-rated interpretability score of 4.6/5.
+  [AAAI 2026][Interpretability][Melanoma Diagnosis] This paper proposes the CEFM framework, which aligns ViT visual features with ABCD-rule-based clinical features (asymmetry, border…
 tags:
-  - AAAI 2026
-  - Melanoma Diagnosis
-  - Contrastive Learning
-  - Explainable AI
-  - ABCD Rule
-  - Report Generation
+  - "AAAI 2026"
+  - "Interpretability"
+  - "Melanoma Diagnosis"
+  - "Contrastive Learning"
+  - "Explainable AI"
+  - "ABCD Rule"
+  - "Report Generation"
 date: 2026-05-08
 content_hash: e3e5bb65f6bba34f
 ---

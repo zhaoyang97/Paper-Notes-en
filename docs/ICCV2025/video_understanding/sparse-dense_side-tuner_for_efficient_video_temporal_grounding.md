@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Sparse-Dense Side-Tuner for Efficient Video Temporal Grounding
 description: >-
-  [ICCV 2025][Video Understanding][Video Temporal Grounding] This paper proposes SDST (Sparse-Dense Side-Tuner), the first anchor-free side-tuning architecture for video temporal grounding (VTG). Through a sparse-dense dual-stream design, SDST jointly addresses moment retrieval (MR) and highlight detection (HD). A novel Reference-based Deformable Self-Attention (RDSA) module is introduced to resolve the context deficiency in standard deformable cross-attention. SDST achieves state-of-the-art or highly competitive results on QVHighlights, TACoS, and Charades-STA while reducing trainable parameters to 27% of the current SOTA.
+  [ICCV 2025][Video Understanding][Video Temporal Grounding] This paper proposes SDST (Sparse-Dense Side-Tuner), the first anchor-free side-tuning architecture for video temporal grounding (VTG). Through a sparse-dense dua…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - Video Temporal Grounding
-  - Side-Tuning
-  - Parameter-Efficient Fine-Tuning
-  - Deformable Attention
-  - InternVideo2
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "Video Temporal Grounding"
+  - "Side-Tuning"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Deformable Attention"
+  - "InternVideo2"
 date: 2026-05-08
 content_hash: 8b6d005ba8707056
 ---

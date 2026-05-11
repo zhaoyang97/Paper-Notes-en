@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SITE: towards Spatial Intelligence Thorough Evaluation
 description: >-
-  [ICCV2025][Robotics][Spatial Intelligence] This paper presents SITE, a comprehensive spatial intelligence benchmark grounded in a tripartite cognitive-science taxonomy. It comprises 8,068 multiple-choice VQA tasks spanning 31 datasets (images and videos). Evaluation results show that the strongest VLM (GPT-4o) still lags human experts by approximately 32% on overall spatial reasoning, and VLM spatial intelligence scores are highly correlated with robotic manipulation success rates (Pearson $r=0.902$).
+  [ICCV2025][Robotics][Spatial Intelligence] This paper presents SITE, a comprehensive spatial intelligence benchmark grounded in a tripartite cognitive-science taxonomy. It comprises 8…
 tags:
-  - ICCV2025
-  - Robotics
-  - Spatial Intelligence
-  - VLM Benchmark
-  - Multi-View Reasoning
-  - Cognitive Science
-  - Embodied AI
+  - "ICCV2025"
+  - "Robotics"
+  - "Spatial Intelligence"
+  - "VLM Benchmark"
+  - "Multi-View Reasoning"
+  - "Cognitive Science"
+  - "Embodied AI"
 date: 2026-05-08
 content_hash: 42407cbf273c147d
 ---

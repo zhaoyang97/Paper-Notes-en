@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Robust Neural Rendering in the Wild with Asymmetric Dual 3D Gaussian Splatting
 description: >-
-  [NeurIPS 2025][3D Vision][3DGS] AsymGS leverages a key observation—that reconstruction artifacts caused by in-the-wild training data are stochastic in nature—and proposes an asymmetric dual 3DGS framework that suppresses artifacts via complementary masking strategies and consistency constraints. A Dynamic EMA Proxy is introduced for efficient training, achieving significant improvements over existing methods on multiple in-the-wild benchmarks.
+  [NeurIPS 2025][3D Vision][3DGS] AsymGS leverages a key observation—that reconstruction artifacts caused by in-the-wild training data are stochastic in nature—and proposes an asymmetric dual 3DGS framework that suppresses…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - 3DGS
-  - in-the-wild scene reconstruction
-  - dual-model consistency
-  - transient distractors
-  - EMA proxy
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "3DGS"
+  - "in-the-wild scene reconstruction"
+  - "dual-model consistency"
+  - "transient distractors"
+  - "EMA proxy"
 date: 2026-05-08
 content_hash: f8173920cc08f4c5
 ---

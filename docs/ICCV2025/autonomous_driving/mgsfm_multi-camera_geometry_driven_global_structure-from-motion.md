@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] MGSfM: Multi-Camera Geometry Driven Global Structure-from-Motion
 description: >-
-  [ICCV 2025][Autonomous Driving][Structure-from-Motion] This paper proposes MGSfM, a global Structure-from-Motion (SfM) framework for multi-camera systems. By exploiting multi-camera rigid constraints through two core modules — **Decoupled Multi-camera Rotation Averaging (DMRA)** and **Multi-camera Geometry driven Position estimation (MGP)** — MGSfM achieves accuracy comparable to or better than incremental SfM on large-scale scenes while being approximately 10× faster.
+  [ICCV 2025][Autonomous Driving][Structure-from-Motion] This paper proposes MGSfM, a global Structure-from-Motion (SfM) framework for multi-camera systems. By exploiting multi-camera rigid constraints through two core mod…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - Structure-from-Motion
-  - multi-camera systems
-  - global motion averaging
-  - rotation averaging
-  - translation averaging
-  - 3D reconstruction
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "Structure-from-Motion"
+  - "multi-camera systems"
+  - "global motion averaging"
+  - "rotation averaging"
+  - "translation averaging"
+  - "3D reconstruction"
 date: 2026-05-08
 content_hash: 1c67fafbe213db2c
 ---

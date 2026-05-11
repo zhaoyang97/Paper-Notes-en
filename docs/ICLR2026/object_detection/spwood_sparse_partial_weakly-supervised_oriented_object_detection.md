@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SPWOOD: Sparse Partial Weakly-Supervised Oriented Object Detection
 description: >-
-  [ICLR 2026][Object Detection][Oriented object detection] This paper proposes the SPWOOD framework to jointly address sparse and weak annotation (HBox/Point) in oriented object detection. Through a Self-Adaptive Oriented Detector (SAOD) and a spatial layout learning strategy, SPWOOD achieves near-fully-supervised performance on the DOTA benchmark under a mixed annotation setting (RBox:HBox:Point = 1:1:1).
+  [ICLR 2026][Object Detection][Oriented object detection] This paper proposes the SPWOOD framework to jointly address sparse and weak annotation (HBox/Point) in oriented object detection. Through a Self-Adaptive Oriented…
 tags:
-  - ICLR 2026
-  - Object Detection
-  - Oriented object detection
-  - weak supervision
-  - sparse annotation
-  - semi-supervised learning
-  - remote sensing
+  - "ICLR 2026"
+  - "Object Detection"
+  - "Oriented object detection"
+  - "weak supervision"
+  - "sparse annotation"
+  - "semi-supervised learning"
+  - "remote sensing"
 date: 2026-05-08
 content_hash: 0b2c5e801b9b159c
 ---

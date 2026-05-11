@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Meta Dynamic Graph for Traffic Flow Prediction
 description: >-
-  [AAAI 2026][Autonomous Driving][Traffic Flow Prediction] This paper proposes MetaDG, a framework that generates dynamic node representations at each time step and enhances them via spatio-temporal correlation, extending dynamism modeling beyond merely updating the adjacency matrix to simultaneously generating meta-parameters, adjacency matrices, and edge-weight adjustment matrices. This enables unified spatio-temporal heterogeneity modeling (ST-unification) and achieves state-of-the-art performance on four benchmark datasets: PEMS03/04/07/08.
+  [AAAI 2026][Autonomous Driving][Traffic Flow Prediction] This paper proposes MetaDG, a framework that generates dynamic node representations at each time step and enhances them via spatio-temporal correlation…
 tags:
-  - AAAI 2026
-  - Autonomous Driving
-  - Traffic Flow Prediction
-  - Spatio-Temporal Graph
-  - Dynamic Graph
-  - Meta-Learning
-  - GCN
-  - GRU
-  - Spatio-Temporal Heterogeneity
+  - "AAAI 2026"
+  - "Autonomous Driving"
+  - "Traffic Flow Prediction"
+  - "Spatio-Temporal Graph"
+  - "Dynamic Graph"
+  - "Meta-Learning"
+  - "GCN"
+  - "GRU"
+  - "Spatio-Temporal Heterogeneity"
 date: 2026-05-08
 content_hash: de0c20f5f3e4c83d
 ---

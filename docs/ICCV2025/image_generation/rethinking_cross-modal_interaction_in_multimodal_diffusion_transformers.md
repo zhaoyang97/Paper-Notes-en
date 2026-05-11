@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Rethinking Cross-Modal Interaction in Multimodal Diffusion Transformers
 description: >-
-  [ICCV 2025][Image Generation][MM-DiT] This paper identifies two structural issues in MM-DiT architectures (FLUX, SD3.5): the token count asymmetry between visual and text modalities suppresses cross-modal attention, and attention weights are insensitive to timestep. To address these, the authors propose TACA (Temperature-Adjusted Cross-modal Attention), which rebalances multimodal interaction via temperature scaling and timestep-adaptive adjustment. Combined with LoRA fine-tuning, TACA achieves significant improvements in text-image alignment on T2I-CompBench (spatial relations +16.4%, shape +5.9%) with negligible additional computational overhead.
+  [ICCV 2025][Image Generation][MM-DiT] This paper identifies two structural issues in MM-DiT architectures (FLUX, SD3.5): the token count asymmetry between visual and text modalities suppresses cross-modal attention…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - MM-DiT
-  - Cross-Attention Suppression
-  - Temperature Scaling
-  - FLUX
-  - SD3.5
-  - Text-Image Alignment
+  - "ICCV 2025"
+  - "Image Generation"
+  - "MM-DiT"
+  - "Cross-Attention Suppression"
+  - "Temperature Scaling"
+  - "FLUX"
+  - "SD3.5"
+  - "Text-Image Alignment"
 date: 2026-05-08
 content_hash: afcd9c51cd7267dc
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond the Fold: Quantifying Split-Level Noise and the Case for Leave-One-Dataset-Out AU Evaluation
 description: >-
-  [CVPR 2026][Human Understanding][Facial Action Unit Detection] This paper reveals that subject-independent cross-validation in facial AU detection introduces a random noise floor of ±0.065 F1 merely from varying subject-to-fold assignments, rendering many claimed SOTA improvements statistically indistinguishable. The authors propose the Leave-One-Dataset-Out (LODO) protocol as a more stable and reliable alternative evaluation scheme.
+  [CVPR 2026][Human Understanding][Facial Action Unit Detection] This paper reveals that subject-independent cross-validation in facial AU detection introduces a random noise floor of ±0.065 F1 merely from varying subject-…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Facial Action Unit Detection
-  - Cross-Validation Noise
-  - Evaluation Protocol
-  - Leave-One-Dataset-Out
-  - Statistical Reliability
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Facial Action Unit Detection"
+  - "Cross-Validation Noise"
+  - "Evaluation Protocol"
+  - "Leave-One-Dataset-Out"
+  - "Statistical Reliability"
 date: 2026-05-08
 content_hash: 865f1279d88ccdde
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] STI-Bench: Are MLLMs Ready for Precise Spatial-Temporal World Understanding?
 description: >-
-  [ICCV 2025][Multimodal VLM][MLLM benchmark] This paper proposes STI-Bench, a benchmark for evaluating the precise spatial-temporal understanding capabilities of multimodal large language models (MLLMs), covering three scene categories (desktop/indoor/outdoor), eight static and dynamic task types, and over 2,000 QA pairs. The benchmark reveals that the current state-of-the-art MLLM (Gemini-2.5-Pro) achieves an average accuracy of only 41.4%, exposing fundamental deficiencies in precise spatial quantification and temporal dynamic understanding.
+  [ICCV 2025][Multimodal VLM][MLLM benchmark] This paper proposes STI-Bench, a benchmark for evaluating the precise spatial-temporal understanding capabilities of multimodal large language models (MLLMs)…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - MLLM benchmark
-  - spatial-temporal understanding
-  - embodied AI
-  - video QA
-  - autonomous driving
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "MLLM benchmark"
+  - "spatial-temporal understanding"
+  - "embodied AI"
+  - "video QA"
+  - "autonomous driving"
 date: 2026-05-08
 content_hash: b47001871c8dbee4
 ---

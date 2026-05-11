@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SDEval: Safety Dynamic Evaluation for Multimodal Large Language Models
 description: >-
-  [AAAI 2026][Multimodal VLM][MLLM safety] This paper proposes SDEval, the first safety dynamic evaluation framework for MLLMs. By applying text dynamics (6 strategies), image dynamics (2 categories), and cross-modal dynamics (4 strategies), SDEval generates variant samples of controllable complexity from existing safety benchmarks. On MLLMGuard and VLSBench, it reduces the safety rate of InternVL-3-78B by nearly 10%, effectively mitigating data leakage and exposing model safety vulnerabilities.
+  [AAAI 2026][Multimodal VLM][MLLM safety] This paper proposes SDEval, the first safety dynamic evaluation framework for MLLMs. By applying text dynamics (6 strategies), image dynamics (2 categories)…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - MLLM safety
-  - dynamic evaluation
-  - data leakage
-  - jailbreak attacks
-  - safety benchmark
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "MLLM safety"
+  - "dynamic evaluation"
+  - "data leakage"
+  - "jailbreak attacks"
+  - "safety benchmark"
 date: 2026-05-08
 content_hash: 84fdc8592e3b8220
 ---

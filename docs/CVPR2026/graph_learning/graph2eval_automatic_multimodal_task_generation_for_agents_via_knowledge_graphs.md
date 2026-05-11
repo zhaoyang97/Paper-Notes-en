@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Graph2Eval: Automatic Multimodal Task Generation for Agents via Knowledge Graphs
 description: >-
-  [CVPR 2026][Graph Learning][knowledge graphs] This paper proposes Graph2Eval, a knowledge graph-driven framework for the automatic generation of agent evaluation tasks. By constructing structured knowledge graphs from documents and webpages, performing subgraph sampling, applying LLM-conditioned generation, and employing multi-stage filtering, the framework automatically produces multimodal agent tasks with improved semantic consistency (+20%) and solvability (+17%). The resulting benchmark, Graph2Eval-Bench, comprises 1,319 tasks.
+  [CVPR 2026][Graph Learning][knowledge graphs] This paper proposes Graph2Eval, a knowledge graph-driven framework for the automatic generation of agent evaluation tasks. By constructing structured knowledge graphs from do…
 tags:
-  - CVPR 2026
-  - Graph Learning
-  - knowledge graphs
-  - automatic task generation
-  - agent evaluation
-  - document understanding
-  - web understanding
-  - benchmark construction
+  - "CVPR 2026"
+  - "Graph Learning"
+  - "knowledge graphs"
+  - "automatic task generation"
+  - "agent evaluation"
+  - "document understanding"
+  - "web understanding"
+  - "benchmark construction"
 date: 2026-05-08
 content_hash: 23c5e29fa80add44
 ---

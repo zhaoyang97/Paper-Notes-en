@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SIC: Similarity-Based Interpretable Image Classification with Neural Networks
 description: >-
-  [ICCV 2025][Medical Imaging][Interpretability] This paper proposes SIC, an inherently interpretable neural network that simultaneously provides local, global, and faithful explanations. By extracting class-representative support vectors from training images and computing input-to-support-vector similarities via B-cos transformations for classification, SIC achieves accuracy comparable to black-box models while delivering pixel-level contribution maps and case-based global explanations. On the FunnyBirds benchmark, SIC outperforms ProtoPNet on 8 out of 9 interpretability metrics.
+  [ICCV 2025][Medical Imaging][Interpretability] This paper proposes SIC, an inherently interpretable neural network that simultaneously provides local, global…
 tags:
-  - ICCV 2025
-  - Medical Imaging
-  - Interpretability
-  - Similarity-Based Classification
-  - B-cos Networks
-  - Support Vectors
-  - Case-Based Reasoning
+  - "ICCV 2025"
+  - "Medical Imaging"
+  - "Interpretability"
+  - "Similarity-Based Classification"
+  - "B-cos Networks"
+  - "Support Vectors"
+  - "Case-Based Reasoning"
 date: 2026-05-08
 content_hash: e922853c46b4b610
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CaReFlow: Cyclic Adaptive Rectified Flow for Multimodal Fusion
 description: >-
-  [CVPR 2026][Image Generation][rectified flow] Proposes CaReFlow, the first work to utilize rectified flow for multimodal distribution mapping to bridge the modality gap: it enables source modality data points to observe the global distribution of the target modality through one-to-many mapping, applies different alignment intensities to modality pairs with varying correlation via adaptive relaxed alignment, and ensures no information loss after mapping through cyclic rectified flow. It achieves SOTA on multiple multimodal affective computing benchmarks even with simple concatenation fusion.
+  [CVPR 2026][Image Generation][rectified flow] Proposes CaReFlow, the first work to utilize rectified flow for multimodal distribution mapping to bridge the modality gap: it enables source modality data points to observe…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - rectified flow
-  - modality gap
-  - multimodal fusion
-  - affective computing
-  - distribution mapping
+  - "CVPR 2026"
+  - "Image Generation"
+  - "rectified flow"
+  - "modality gap"
+  - "multimodal fusion"
+  - "affective computing"
+  - "distribution mapping"
 date: 2026-05-08
 content_hash: b0437e76abc4317c
 ---

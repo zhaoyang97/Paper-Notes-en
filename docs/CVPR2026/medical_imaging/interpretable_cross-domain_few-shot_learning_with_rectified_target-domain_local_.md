@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Interpretable Cross-Domain Few-Shot Learning with Rectified Target-Domain Local Alignment
 description: >-
-  [CVPR 2026][Medical Imaging][Cross-Domain Few-Shot Learning] This paper identifies and addresses the degradation of local feature alignment in CLIP under cross-domain few-shot learning (CDFSL), and proposes CC-CDFSL, a cycle-consistency-based framework. Through bidirectional T-I-T and I-T-I cyclic paths and a semantic anchor mechanism, CC-CDFSL improves patch-level vision-language alignment while enhancing model interpretability.
+  [CVPR 2026][Medical Imaging][Cross-Domain Few-Shot Learning] This paper identifies and addresses the degradation of local feature alignment in CLIP under cross-domain few-shot learning (CDFSL), and proposes CC-CDFSL…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Cross-Domain Few-Shot Learning
-  - CLIP
-  - Local Feature Alignment
-  - Cycle Consistency
-  - Interpretability
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Cross-Domain Few-Shot Learning"
+  - "CLIP"
+  - "Local Feature Alignment"
+  - "Cycle Consistency"
+  - "Interpretability"
 date: 2026-05-08
 content_hash: 6d66c1db2c990b01
 ---

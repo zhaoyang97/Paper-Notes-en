@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Perturb Your Data: Paraphrase-Guided Training Data Watermarking
 description: >-
-  [AAAI2026][LLM Safety][Training data watermarking] This paper proposes SPECTRA — a paraphrase-sampling-based training data watermarking method. It generates paraphrases via an LLM and uses Min-K%++ scoring to select paraphrases with scores close to the original text as watermarks. Even when watermarked data constitutes as little as 0.001% of the training corpus, the p-value gap between members and non-members consistently exceeds 9 orders of magnitude.
+  [AAAI2026][LLM Safety][Training data watermarking] This paper proposes SPECTRA — a paraphrase-sampling-based training data watermarking method. It generates paraphrases via an LLM and uses Min-K%++ scoring to select para…
 tags:
-  - AAAI2026
-  - LLM Safety
-  - Training data watermarking
-  - membership inference attack
-  - data copyright protection
-  - LLM
-  - paraphrasing
-  - Min-K%++
+  - "AAAI2026"
+  - "LLM Safety"
+  - "Training data watermarking"
+  - "membership inference attack"
+  - "data copyright protection"
+  - "LLM"
+  - "paraphrasing"
+  - "Min-K%++"
 date: 2026-05-08
 content_hash: cc784b795504cf52
 ---

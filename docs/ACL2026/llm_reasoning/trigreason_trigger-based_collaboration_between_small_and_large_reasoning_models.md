@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TrigReason: Trigger-Based Collaboration between Small and Large Reasoning Models
 description: >-
-  [ACL 2026][LLM Reasoning][Reasoning Acceleration] TrigReason proposes an event-triggered collaboration framework between small and large reasoning models. By analyzing three systematic failure modes of small reasoning models (SRMs)—path deviation, cognitive overload, and recovery failure—the framework designs three corresponding triggers: strategic priming, cognitive offloading, and intervention request. These triggers replace step-wise polling verification, enabling 1.70–4.79× more reasoning steps to be offloaded to the SRM while maintaining LRM-level accuracy, reducing latency by 43.9% and API cost by 73.3%.
+  [ACL 2026][LLM Reasoning][Reasoning Acceleration] TrigReason proposes an event-triggered collaboration framework between small and large reasoning models. By analyzing three systematic failure modes of small reasoning mo…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - Reasoning Acceleration
-  - Small-Large Model Collaboration
-  - Speculative Reasoning
-  - Event Triggering
-  - Reasoning Models
+  - "ACL 2026"
+  - "LLM Reasoning"
+  - "Reasoning Acceleration"
+  - "Small-Large Model Collaboration"
+  - "Speculative Reasoning"
+  - "Event Triggering"
+  - "Reasoning Models"
 date: 2026-05-08
 content_hash: 97dc7307bd93ba19
 ---

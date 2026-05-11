@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Exploring Neural Granger Causality with xLSTMs: Unveiling Temporal Dependencies in Complex Data
 description: >-
-  [NEURIPS2025][Time Series][Granger Causality] This paper proposes GC-xLSTM, which leverages the xLSTM architecture combined with a novel dynamic sparsity optimization strategy to uncover Granger causal relationships in multivariate time series, achieving state-of-the-art performance on multiple datasets.
+  [NEURIPS2025][Time Series][Granger Causality] This paper proposes GC-xLSTM, which leverages the xLSTM architecture combined with a novel dynamic sparsity optimization strategy to uncover Granger causal relationships in m…
 tags:
-  - NEURIPS2025
-  - Time Series
-  - Granger Causality
-  - xLSTM
-  - Sparsity
-  - Causal Discovery
+  - "NEURIPS2025"
+  - "Time Series"
+  - "Granger Causality"
+  - "xLSTM"
+  - "Sparsity"
+  - "Causal Discovery"
 date: 2026-05-08
 content_hash: b711c8ecda87048a
 ---

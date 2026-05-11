@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] MonarchAttention: Zero-Shot Conversion to Fast, Hardware-Aware Structured Attention
 description: >-
-  [NeurIPS 2025][LLM/NLP][efficient attention] This paper proposes MonarchAttention, which leverages the structured properties of Monarch matrices and employs alternating optimization over a variational form of softmax to approximate attention at $\Theta(N\sqrt{N}d)$ complexity. The method enables zero-shot replacement of attention layers in pretrained Transformers without any additional training, while achieving 1.4×–8.2× speedups over FlashAttention-2 on GPU.
+  [NeurIPS 2025][LLM/NLP][efficient attention] This paper proposes MonarchAttention, which leverages the structured properties of Monarch matrices and employs alternating optimization over a variational form of softmax to…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - efficient attention
-  - Monarch matrices
-  - sub-quadratic attention
-  - structured matrices
-  - hardware-aware
-  - zero-shot conversion
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "efficient attention"
+  - "Monarch matrices"
+  - "sub-quadratic attention"
+  - "structured matrices"
+  - "hardware-aware"
+  - "zero-shot conversion"
 date: 2026-05-08
 content_hash: e6d5056d16bdadc4
 ---

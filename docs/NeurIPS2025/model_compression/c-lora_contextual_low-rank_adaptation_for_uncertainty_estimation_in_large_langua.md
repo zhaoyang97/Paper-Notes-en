@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] C-LoRA: Contextual Low-Rank Adaptation for Uncertainty Estimation in Large Language Models
 description: >-
-  [NeurIPS 2025][Model Compression][LoRA] This paper proposes C-LoRA, which introduces a lightweight contextual module to condition the distribution of LoRA low-rank matrices on the input data, enabling sample-level heteroscedastic uncertainty estimation and significantly improving calibration quality in few-shot fine-tuning scenarios.
+  [NeurIPS 2025][Model Compression][LoRA] This paper proposes C-LoRA, which introduces a lightweight contextual module to condition the distribution of LoRA low-rank matrices on the input data…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - LoRA
-  - uncertainty estimation
-  - Bayesian fine-tuning
-  - parameter-efficient fine-tuning
-  - LLM
-  - variational inference
-  - data-dependent
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "LoRA"
+  - "uncertainty estimation"
+  - "Bayesian fine-tuning"
+  - "parameter-efficient fine-tuning"
+  - "LLM"
+  - "variational inference"
+  - "data-dependent"
 date: 2026-05-08
 content_hash: d00a12e44bcc81d3
 ---

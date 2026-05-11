@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Edit-As-Act: Goal-Regressive Planning for Open-Vocabulary 3D Indoor Scene Editing
 description: >-
-  [CVPR 2026][3D scene editing] This paper reframes open-vocabulary 3D indoor scene editing as a goal-regressive planning problem. It introduces EditLang, a PDDL-style symbolic language, and employs an LLM-driven Planner-Validator loop to derive minimal edit sequences by reasoning backward from goal states. Evaluated on 63 editing tasks, the method achieves the best overall balance across instruction fidelity (69.1%), semantic consistency (86.6%), and physical plausibility (91.7%).
+  [CVPR 2026][Interpretability][3D scene editing] This paper reframes open-vocabulary 3D indoor scene editing as a goal-regressive planning problem. It introduces EditLang, a PDDL-style symbolic language…
 tags:
-  - CVPR 2026
-  - 3D scene editing
-  - goal regression
-  - PDDL
-  - LLM planning
-  - symbolic reasoning
+  - "CVPR 2026"
+  - "Interpretability"
+  - "3D scene editing"
+  - "goal regression"
+  - "PDDL"
+  - "LLM planning"
+  - "symbolic reasoning"
 date: 2026-05-08
 content_hash: 69e6c3ce18c334ee
 ---

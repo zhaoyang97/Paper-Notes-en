@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] When to Lock Attention: Training-Free KV Control in Video Diffusion
 description: >-
-  [Video Generation] This paper proposes KV-Lock, a training-free framework that dynamically schedules background KV cache fusion ratios and CFG guidance strength based on diffusion hallucination detection, simultaneously ensuring background consistency and foreground generation quality in video editing.
+  [Video Generation] This paper proposes KV-Lock, a training-free framework that dynamically schedules background KV cache fusion ratios and CFG guidance strength based on diffusion hallucination detection…
 tags:
-  - Video Generation
+  - "Video Generation"
 date: 2026-05-08
 content_hash: df986a5241c048fa
 ---

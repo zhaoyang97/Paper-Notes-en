@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Large Language Models Are Bad Dice Players: LLMs Struggle to Generate Random Numbers from Statistical Distributions
 description: >-
-  [ACL 2026][Image Generation][probabilistic sampling] This paper presents the first large-scale systematic audit of the native sampling capability of 11 frontier LLMs across 15 probability distributions, demonstrating that LLMs severely lack intrinsic probabilistic sampling mechanisms and that this deficiency propagates into downstream applications as systematic bias.
+  [ACL 2026][Image Generation][probabilistic sampling] This paper presents the first large-scale systematic audit of the native sampling capability of 11 frontier LLMs across 15 probability distributions…
 tags:
-  - ACL 2026
-  - Image Generation
-  - probabilistic sampling
-  - random number generation
-  - distributional fidelity
-  - intrinsic LLM capability
-  - downstream bias
+  - "ACL 2026"
+  - "Image Generation"
+  - "probabilistic sampling"
+  - "random number generation"
+  - "distributional fidelity"
+  - "intrinsic LLM capability"
+  - "downstream bias"
 date: 2026-05-08
 content_hash: 80afe3882047234e
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Surface-Based Visibility-Guided Uncertainty for Continuous Active 3D Neural Reconstruction
 description: >-
-  [AAAI 2026][3D Vision][Active 3D reconstruction] This paper proposes a Surface-Based Visibility field (SBV) that derives surface confidence from SDF sign changes and updates it via a voxel grid, enabling accurate visibility-aware uncertainty estimation during continuous active learning for Next-Best View selection. SBV achieves up to 11.6% improvement in image rendering quality across four benchmarks: DTU, Blender, TanksAndTemples, and BlendedMVS.
+  [AAAI 2026][3D Vision][Active 3D reconstruction] This paper proposes a Surface-Based Visibility field (SBV) that derives surface confidence from SDF sign changes and updates it via a voxel grid…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - Active 3D reconstruction
-  - neural implicit surface
-  - uncertainty estimation
-  - Next-Best View
-  - visibility reasoning
+  - "AAAI 2026"
+  - "3D Vision"
+  - "Active 3D reconstruction"
+  - "neural implicit surface"
+  - "uncertainty estimation"
+  - "Next-Best View"
+  - "visibility reasoning"
 date: 2026-05-08
 content_hash: e7f27747d0b0d56c
 ---

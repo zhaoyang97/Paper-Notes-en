@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Information Theoretic Optimal Surveillance for Epidemic Prevalence in Networks
 description: >-
-  [AAAI 2026][Multimodal VLM][epidemic surveillance] This paper introduces TestPrev, the first epidemic surveillance framework that employs mutual information as an optimization criterion. It selects an optimal subset of nodes in a network to maximize mutual information with the disease prevalence distribution, thereby providing distribution-level insights into outbreak size that traditional methods cannot offer. The paper proves the NP-hardness of this problem, designs a greedy algorithm GreedyMI, and demonstrates its superiority over baselines on both synthetic and real-world networks.
+  [AAAI 2026][Multimodal VLM][epidemic surveillance] This paper introduces TestPrev, the first epidemic surveillance framework that employs mutual information as an optimization criterion. It selects an optimal subset of n…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - epidemic surveillance
-  - information theory
-  - mutual information
-  - network spreading
-  - sensor selection
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "epidemic surveillance"
+  - "information theory"
+  - "mutual information"
+  - "network spreading"
+  - "sensor selection"
 date: 2026-05-08
 content_hash: d822c4dea280e257
 ---

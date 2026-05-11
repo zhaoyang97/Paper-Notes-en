@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PointMAC: Meta-Learned Adaptation for Robust Test-Time Point Cloud Completion
 description: >-
-  [NeurIPS 2025][3D Vision][Point cloud completion] PointMAC is the first framework to introduce meta-auxiliary learning and test-time adaptation (TTA) into point cloud completion. It leverages Bi-Aux Units (random masked reconstruction + denoising) as self-supervised signals, employs MAML to align auxiliary objectives with the primary task, and at inference updates only the shared encoder for sample-level refinement, achieving state-of-the-art performance on synthetic, simulated, and real-world data.
+  [NeurIPS 2025][3D Vision][Point cloud completion] PointMAC is the first framework to introduce meta-auxiliary learning and test-time adaptation (TTA) into point cloud completion. It leverages Bi-Aux Units (random masked…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Point cloud completion
-  - test-time adaptation
-  - meta-learning
-  - MAML
-  - self-supervised learning
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Point cloud completion"
+  - "test-time adaptation"
+  - "meta-learning"
+  - "MAML"
+  - "self-supervised learning"
 date: 2026-05-08
 content_hash: ec117a27368d0081
 ---

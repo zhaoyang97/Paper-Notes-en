@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Video Killed the Energy Budget: Characterizing the Latency and Power Regimes of Open Text-to-Video Models
 description: >-
-  [NeurIPS 2025][Video Generation][Text-to-video generation] This paper presents a systematic analysis of latency and energy consumption for open-source text-to-video (T2V) models. It establishes a FLOP-based analytical model to predict scaling laws for WAN2.1 — quadratic scaling along spatial/temporal dimensions and linear scaling with respect to denoising steps — and provides a cross-model energy benchmark across 7 T2V models.
+  [NeurIPS 2025][Video Generation][Text-to-video generation] This paper presents a systematic analysis of latency and energy consumption for open-source text-to-video (T2V) models. It establishes a FLOP-based analytical mo…
 tags:
-  - NeurIPS 2025
-  - Video Generation
-  - Text-to-video generation
-  - energy consumption analysis
-  - latency benchmarking
-  - diffusion models
-  - sustainable AI
+  - "NeurIPS 2025"
+  - "Video Generation"
+  - "Text-to-video generation"
+  - "energy consumption analysis"
+  - "latency benchmarking"
+  - "diffusion models"
+  - "sustainable AI"
 date: 2026-05-08
 content_hash: d8a594038105f08c
 ---

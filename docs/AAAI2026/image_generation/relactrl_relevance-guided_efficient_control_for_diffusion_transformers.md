@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RelaCtrl: Relevance-Guided Efficient Control for Diffusion Transformers
 description: >-
-  [AAAI 2026][Image Generation][Controllable Generation] This paper proposes the RelaCtrl framework, which quantifies the sensitivity of each DiT layer to control information via a ControlNet Relevance Score, and uses this analysis to guide the placement and modeling capacity of control blocks. A Two-Dimensional Shuffle Mixer (TDSM) is introduced to replace self-attention and FFN, achieving controllable generation quality superior to PixArt-δ with only 15% of its parameters and computational cost.
+  [AAAI 2026][Image Generation][Controllable Generation] This paper proposes the RelaCtrl framework, which quantifies the sensitivity of each DiT layer to control information via a ControlNet Relevance Score…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Controllable Generation
-  - Diffusion Transformer
-  - ControlNet
-  - Parameter Efficiency
-  - Channel-Token Shuffling
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Controllable Generation"
+  - "Diffusion Transformer"
+  - "ControlNet"
+  - "Parameter Efficiency"
+  - "Channel-Token Shuffling"
 date: 2026-05-08
 content_hash: 7ec85f95debab5d3
 ---

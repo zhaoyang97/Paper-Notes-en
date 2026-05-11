@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ToolWeaver: Weaving Collaborative Semantics for Scalable Tool Use in Large Language Models
 description: >-
-  [ICLR 2026][LLM Agent][Tool use] ToolWeaver is proposed to represent each tool as a hierarchical discrete code sequence (rather than a single token) via collaboration-aware vector quantization, achieving logarithmic vocabulary scaling (47,000+ tools requiring only ~512 new tokens). It comprehensively outperforms the ToolGen baseline on ToolBench while reducing language model perplexity degradation from 16.5× to 4×.
+  [ICLR 2026][LLM Agent][Tool use] ToolWeaver is proposed to represent each tool as a hierarchical discrete code sequence (rather than a single token) via collaboration-aware vector quantization…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Tool use
-  - vector quantization
-  - collaborative semantics
-  - vocabulary expansion
-  - generative tool retrieval
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Tool use"
+  - "vector quantization"
+  - "collaborative semantics"
+  - "vocabulary expansion"
+  - "generative tool retrieval"
 date: 2026-05-08
 content_hash: 9c976db802371046
 ---

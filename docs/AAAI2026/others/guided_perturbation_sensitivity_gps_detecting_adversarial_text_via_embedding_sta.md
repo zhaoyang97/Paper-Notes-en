@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Guided Perturbation Sensitivity (GPS): Detecting Adversarial Text via Embedding Stability and Word Importance
 description: >-
-  [AAAI 2026][adversarial text detection] This paper proposes the Guided Perturbation Sensitivity (GPS) framework, which detects adversarial text samples by masking important words and measuring changes in embedding stability. GPS achieves 85%+ detection accuracy across 3 datasets, 3 attack types, and 2 models, and generalizes across datasets, attacks, and models without retraining.
+  [AAAI 2026][adversarial text detection] This paper proposes the Guided Perturbation Sensitivity (GPS) framework, which detects adversarial text samples by masking important words and measuring changes in embedding stabil…
 tags:
-  - AAAI 2026
-  - adversarial text detection
-  - embedding stability
-  - word importance
-  - BiLSTM
-  - perturbation sensitivity
+  - "AAAI 2026"
+  - "adversarial text detection"
+  - "embedding stability"
+  - "word importance"
+  - "BiLSTM"
+  - "perturbation sensitivity"
 date: 2026-05-08
 content_hash: 3b84dba12f5d1542
 ---

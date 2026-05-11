@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] I Am Big, You Are Little; I Am Right, You Are Wrong
 description: >-
-  [ICCV 2025][Minimal Pixel Sets] This work employs the causal-reasoning XAI tool rex to extract Minimal Pixel Sets (MPS) from image classification models, systematically comparing the "attentional focus" of 15 models across 5 architectures. Large models (EVA/ConvNext) are found to make classification decisions using as little as 5% of image pixels, and statistically significant differences in MPS size and spatial location are observed across architectures.
+  [ICCV 2025][Minimal Pixel Sets] This work employs the causal-reasoning XAI tool rex to extract Minimal Pixel Sets (MPS) from image classification models…
 tags:
-  - ICCV 2025
-  - Minimal Pixel Sets
-  - Image Classification
-  - Model Comparison
-  - Explainable AI
-  - Causal Reasoning
+  - "ICCV 2025"
+  - "Minimal Pixel Sets"
+  - "Image Classification"
+  - "Model Comparison"
+  - "Explainable AI"
+  - "Causal Reasoning"
 date: 2026-05-08
 content_hash: 6d4e97e07628f4fb
 ---

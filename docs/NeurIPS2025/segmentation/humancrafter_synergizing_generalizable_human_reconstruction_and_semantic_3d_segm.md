@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] HumanCrafter: Synergizing Generalizable Human Reconstruction and Semantic 3D Segmentation
 description: >-
-  [NeurIPS 2025][Segmentation][3D Gaussian Splatting] HumanCrafter is proposed as the first feed-forward framework that unifies single-image 3D human reconstruction with body-part semantic segmentation. A human geometry prior-guided Transformer aggregates multi-view features, while DINOv2 self-supervised semantic priors construct a 3D feature field. The method simultaneously surpasses existing SOTA in both 3D reconstruction and segmentation on 2K2K and THuman2.1.
+  [NeurIPS 2025][Segmentation][3D Gaussian Splatting] HumanCrafter is proposed as the first feed-forward framework that unifies single-image 3D human reconstruction with body-part semantic segmentation. A human geometry pr…
 tags:
-  - NeurIPS 2025
-  - Segmentation
-  - 3D Gaussian Splatting
-  - Human Reconstruction
-  - 3D Semantic Segmentation
-  - Single-Image Reconstruction
-  - Multi-Task Learning
-  - DINOv2
+  - "NeurIPS 2025"
+  - "Segmentation"
+  - "3D Gaussian Splatting"
+  - "Human Reconstruction"
+  - "3D Semantic Segmentation"
+  - "Single-Image Reconstruction"
+  - "Multi-Task Learning"
+  - "DINOv2"
 date: 2026-05-08
 content_hash: d8399847beaa33e3
 ---

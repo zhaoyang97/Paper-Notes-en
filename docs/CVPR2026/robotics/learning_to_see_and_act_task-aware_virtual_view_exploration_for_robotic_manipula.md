@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning to See and Act: Task-Aware Virtual View Exploration for Robotic Manipulation
 description: >-
-  [CVPR 2026][Robotics][View exploration] This paper proposes the TVVE framework, which employs a reinforcement learning-driven Multi-View Exploration Policy (MVEP) to select optimal virtual camera viewpoints and re-render observations online. A task-aware MoE visual encoder (TaskMoE) is designed to mitigate cross-task feature interference. The framework achieves an average success rate of 86.6% across 18 tasks on RLBench.
+  [CVPR 2026][Robotics][View exploration] This paper proposes the TVVE framework, which employs a reinforcement learning-driven Multi-View Exploration Policy (MVEP) to select optimal virtual camera viewpoints and re-render…
 tags:
-  - CVPR 2026
-  - Robotics
-  - View exploration
-  - multi-task manipulation
-  - Mixture-of-Experts
-  - virtual view rendering
-  - reinforcement learning
+  - "CVPR 2026"
+  - "Robotics"
+  - "View exploration"
+  - "multi-task manipulation"
+  - "Mixture-of-Experts"
+  - "virtual view rendering"
+  - "reinforcement learning"
 date: 2026-05-08
 content_hash: 082b774c72fc058e
 ---

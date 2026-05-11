@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] EvRT-DETR: Latent Space Adaptation of Image Detectors for Event-based Vision
 description: >-
-  [ICCV 2025][Object Detection][event camera] This paper proposes I2EvDet, a framework that adapts mainstream image detectors to event-based video detection by inserting lightweight RNN temporal modules into the frozen latent space of RT-DETR, achieving state-of-the-art results of +2.3 and +1.4 mAP on the Gen1 and 1Mpx benchmarks, respectively, with minimal architectural modifications.
+  [ICCV 2025][Object Detection][event camera] This paper proposes I2EvDet, a framework that adapts mainstream image detectors to event-based video detection by inserting lightweight RNN temporal modules into the frozen lat…
 tags:
-  - ICCV 2025
-  - Object Detection
-  - event camera
-  - RT-DETR
-  - latent space adaptation
-  - temporal modeling
+  - "ICCV 2025"
+  - "Object Detection"
+  - "event camera"
+  - "RT-DETR"
+  - "latent space adaptation"
+  - "temporal modeling"
 date: 2026-05-08
 content_hash: 824020b29c3c1f0f
 ---

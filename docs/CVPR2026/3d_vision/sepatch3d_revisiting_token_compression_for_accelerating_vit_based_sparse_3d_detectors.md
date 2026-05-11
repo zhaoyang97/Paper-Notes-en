@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SEPatch3D: Revisiting Token Compression for Accelerating ViT-based Sparse Multi-View 3D Object Detectors
 description: >-
-  [CVPR 2026][3D Vision][3D object detection] This paper proposes SEPatch3D, which achieves 57% inference acceleration with comparable detection accuracy in ViT-based sparse multi-view 3D detection, via spatiotemporal-aware dynamic patch size selection and an entropy-based informative patch enhancement mechanism.
+  [CVPR 2026][3D Vision][3D object detection] This paper proposes SEPatch3D, which achieves 57% inference acceleration with comparable detection accuracy in ViT-based sparse multi-view 3D detection…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D object detection
-  - token compression
-  - patch size selection
-  - multi-view detection
-  - ViT acceleration
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D object detection"
+  - "token compression"
+  - "patch size selection"
+  - "multi-view detection"
+  - "ViT acceleration"
 date: 2026-05-08
 content_hash: 25f35f932956a7e8
 ---

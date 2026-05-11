@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] More Than Irrational: Modeling Belief-Biased Agents
 description: >-
-  [AAAI 2026][Robotics][Computational Rationality] This paper proposes a computational rationality (CR) user model framework that interprets seemingly "irrational" human behavior as optimal decision-making under limited memory (belief bias). A nested particle filter (NPF) is used to online-infer the user's latent memory bound parameter $\theta$ and biased belief state $\tilde{b}$. The posterior mean (PM) error is reduced by 90% within 45 steps, and adaptive AI assistant policies are demonstrated within an assistive POMDP.
+  [AAAI 2026][Robotics][Computational Rationality] This paper proposes a computational rationality (CR) user model framework that interprets seemingly "irrational" human behavior as optimal decision-making under limited me…
 tags:
-  - AAAI 2026
-  - Robotics
-  - Computational Rationality
-  - Memory Decay
-  - Nested Particle Filter
-  - Belief Bias
-  - Adaptive Assistance
+  - "AAAI 2026"
+  - "Robotics"
+  - "Computational Rationality"
+  - "Memory Decay"
+  - "Nested Particle Filter"
+  - "Belief Bias"
+  - "Adaptive Assistance"
 date: 2026-05-08
 content_hash: 45f701279a86b867
 ---

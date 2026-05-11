@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Interpretable Visual Decoding with Attention to Brain Representations
 description: >-
-  [ICLR 2026][Image Generation][fMRI visual decoding] This paper proposes NeuroAdapter, which segments fMRI signals into independent tokens by brain region and conditions Stable Diffusion directly via cross-attention, bypassing conventional CLIP/DINO intermediate embedding spaces. On NSD and other datasets, NeuroAdapter matches or surpasses existing methods on high-level semantic metrics. It further introduces the IBBI bidirectional interpretability framework, which for the first time dynamically reveals how different cortical regions drive image generation along the denoising trajectory.
+  [ICLR 2026][Image Generation][fMRI visual decoding] This paper proposes NeuroAdapter, which segments fMRI signals into independent tokens by brain region and conditions Stable Diffusion directly via cross-attention…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - fMRI visual decoding
-  - end-to-end brain-to-image reconstruction
-  - cross-attention conditioning
-  - bidirectional interpretability
-  - brain region tokens
+  - "ICLR 2026"
+  - "Image Generation"
+  - "fMRI visual decoding"
+  - "end-to-end brain-to-image reconstruction"
+  - "cross-attention conditioning"
+  - "bidirectional interpretability"
+  - "brain region tokens"
 date: 2026-05-08
 content_hash: b5a65078194d3eaa
 ---

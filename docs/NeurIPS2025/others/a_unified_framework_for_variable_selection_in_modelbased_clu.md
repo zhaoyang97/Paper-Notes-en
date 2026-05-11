@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Unified Framework for Variable Selection in Model-Based Clustering with Missing Not at Random
 description: >-
-  [NeurIPS 2025][Model-based clustering] Within a Gaussian mixture model clustering framework, this paper jointly addresses variable selection (distinguishing signal, redundant, and noise variables) and MNAR missing data modeling. A two-stage strategy—LASSO-penalized ranking followed by BIC-based role assignment—combined with spectral-distance adaptive penalty weights enables efficient inference in high-dimensional settings. Identifiability and asymptotic selection consistency are established theoretically.
+  [NeurIPS 2025][Model-based clustering] Within a Gaussian mixture model clustering framework, this paper jointly addresses variable selection (distinguishing signal, redundant…
 tags:
-  - NeurIPS 2025
-  - Model-based clustering
-  - variable selection
-  - MNAR
-  - Gaussian mixture model
-  - LASSO penalty
-  - BIC consistency
+  - "NeurIPS 2025"
+  - "Model-based clustering"
+  - "variable selection"
+  - "MNAR"
+  - "Gaussian mixture model"
+  - "LASSO penalty"
+  - "BIC consistency"
 date: 2026-05-08
 content_hash: 626df3a437e21727
 ---

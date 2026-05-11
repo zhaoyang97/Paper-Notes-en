@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Toward a Dynamic Stackelberg Game-Theoretic Framework for Agent-Based Conversational AI Defense Against LLM Jailbreaking
 description: >-
-  [ICLR 2026][Reinforcement Learning][game theory] This paper formalizes LLM jailbreaking attack-defense interactions as a dynamic Stackelberg extensive-form game, integrates Rapidly-exploring Random Tree (RRT) search over the prompt space, and proposes the Purple Agent defense architecture that achieves proactive defense through "red-team thinking, blue-team action."
+  [ICLR 2026][Reinforcement Learning][game theory] This paper formalizes LLM jailbreaking attack-defense interactions as a dynamic Stackelberg extensive-form game…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - game theory
-  - Stackelberg game
-  - jailbreaking defense
-  - Purple Agent
-  - RRT
-  - LLM safety
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "game theory"
+  - "Stackelberg game"
+  - "jailbreaking defense"
+  - "Purple Agent"
+  - "RRT"
+  - "LLM safety"
 date: 2026-05-08
 content_hash: a8c56e26984454c4
 ---

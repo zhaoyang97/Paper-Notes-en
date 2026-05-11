@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ReGal: A First Look at PPO-based Legal AI for Judgment Prediction and Summarization in India
 description: >-
-  [AAAI 2026][Reinforcement Learning][Legal AI] This paper presents the first application of PPO-based reinforcement learning (RLAIF) to Indian legal judgment prediction and summarization tasks. Although performance does not surpass SFT or commercial models, this position paper reveals fundamental challenges and future directions for RL in legal NLP.
+  [AAAI 2026][Reinforcement Learning][Legal AI] This paper presents the first application of PPO-based reinforcement learning (RLAIF) to Indian legal judgment prediction and summarization tasks. Although performance does n…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - Legal AI
-  - PPO
-  - RLAIF
-  - Judgment Prediction
-  - Legal Document Summarization
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "Legal AI"
+  - "PPO"
+  - "RLAIF"
+  - "Judgment Prediction"
+  - "Legal Document Summarization"
 date: 2026-05-08
 content_hash: e3c8ac36ac46db9e
 ---

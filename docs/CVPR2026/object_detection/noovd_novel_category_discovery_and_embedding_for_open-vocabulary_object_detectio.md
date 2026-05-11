@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] NoOVD: Novel Category Discovery and Embedding for Open-Vocabulary Object Detection
 description: >-
-  [CVPR 2026][Object Detection][Open-Vocabulary Object Detection] NoOVD proposes a framework that, during frozen-VLM-based OVD training, employs a parameter-free K-FPN to preserve CLIP knowledge for discovering potential novel-category objects, applies self-distillation to embed novel-category knowledge into the detector, and introduces R-RPN at inference to improve novel-category recall, achieving SOTA on OV-LVIS, OV-COCO, and Objects365.
+  [CVPR 2026][Object Detection][Open-Vocabulary Object Detection] NoOVD proposes a framework that, during frozen-VLM-based OVD training, employs a parameter-free K-FPN to preserve CLIP knowledge for discovering potential n…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - Open-Vocabulary Object Detection
-  - Novel Category Discovery
-  - Self-Distillation
-  - K-FPN
-  - Frozen VLM
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Open-Vocabulary Object Detection"
+  - "Novel Category Discovery"
+  - "Self-Distillation"
+  - "K-FPN"
+  - "Frozen VLM"
 date: 2026-05-08
 content_hash: fc2273a8b598bda5
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] V2XPnP: Vehicle-to-Everything Spatio-Temporal Fusion for Multi-Agent Perception and Prediction
 description: >-
-  [ICCV 2025][Time Series][Vehicle-to-Everything Collaboration] This paper proposes V2XPnP, a V2X spatio-temporal fusion framework built upon a unified Transformer architecture, which achieves multi-agent end-to-end perception and prediction under a one-step communication strategy. The work also introduces the first large-scale real-world sequential dataset supporting all V2X collaboration modes, achieving state-of-the-art performance on both perception and prediction tasks.
+  [ICCV 2025][Time Series][Vehicle-to-Everything Collaboration] This paper proposes V2XPnP, a V2X spatio-temporal fusion framework built upon a unified Transformer architecture…
 tags:
-  - ICCV 2025
-  - Time Series
-  - Vehicle-to-Everything Collaboration
-  - Spatio-Temporal Fusion
-  - End-to-End Perception and Prediction
-  - V2X Dataset
-  - Transformer
+  - "ICCV 2025"
+  - "Time Series"
+  - "Vehicle-to-Everything Collaboration"
+  - "Spatio-Temporal Fusion"
+  - "End-to-End Perception and Prediction"
+  - "V2X Dataset"
+  - "Transformer"
 date: 2026-05-08
 content_hash: d10d051a6ba138c3
 ---

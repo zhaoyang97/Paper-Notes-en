@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Improving Region Representation Learning from Urban Imagery with Noisy Long-Caption Supervision
 description: >-
-  [AAAI2026][Self-Supervised Learning][urban computing] This paper proposes UrbanLN, a framework that improves urban region representation learning from LLM-generated captions via a long-caption-aware positional encoding interpolation strategy and a dual-level (data and model) noise suppression mechanism.
+  [AAAI2026][Self-Supervised Learning][urban computing] This paper proposes UrbanLN, a framework that improves urban region representation learning from LLM-generated captions via a long-caption-aware positional encoding i…
 tags:
-  - AAAI2026
-  - Self-Supervised Learning
-  - urban computing
-  - region representation
-  - cross-modal pre-training
-  - CLIP
-  - noise suppression
-  - self-distillation
+  - "AAAI2026"
+  - "Self-Supervised Learning"
+  - "urban computing"
+  - "region representation"
+  - "cross-modal pre-training"
+  - "CLIP"
+  - "noise suppression"
+  - "self-distillation"
 date: 2026-05-08
 content_hash: db7ef4538580710c
 ---

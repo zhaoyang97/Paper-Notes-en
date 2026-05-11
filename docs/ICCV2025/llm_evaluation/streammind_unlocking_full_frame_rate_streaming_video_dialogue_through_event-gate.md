@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] StreamMind: Unlocking Full Frame Rate Streaming Video Dialogue through Event-Gated Cognition
 description: >-
-  [ICCV 2025][LLM Evaluation][streaming video dialogue] StreamMind proposes an "event-gated LLM invocation" paradigm to replace the existing "per-frame LLM invocation" approach. By inserting a Cognition Gate network between the video encoder and the LLM, the model invokes the LLM only when query-relevant events occur. Combined with an Event-Preserving Feature Extractor (EPFE) based on state space methods that ensures constant perception cost, the system achieves **100 fps** streaming video processing on a single A100 GPU.
+  [ICCV 2025][LLM Evaluation][streaming video dialogue] StreamMind proposes an "event-gated LLM invocation" paradigm to replace the existing "per-frame LLM invocation" approach. By inserting a Cognition Gate network betwee…
 tags:
-  - ICCV 2025
-  - LLM Evaluation
-  - streaming video dialogue
-  - event gating
-  - state space model
-  - perception-cognition decoupling
-  - LLM invocation
-  - real-time video understanding
+  - "ICCV 2025"
+  - "LLM Evaluation"
+  - "streaming video dialogue"
+  - "event gating"
+  - "state space model"
+  - "perception-cognition decoupling"
+  - "LLM invocation"
+  - "real-time video understanding"
 date: 2026-05-08
 content_hash: 203e9e228b731fd5
 ---

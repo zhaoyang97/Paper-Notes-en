@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Closed-Loop Transfer for Weakly-supervised Affordance Grounding
 description: >-
-  [ICCV 2025][Image Restoration][weakly-supervised affordance grounding] This paper proposes LoopTrans, a closed-loop knowledge transfer framework that unifies exocentric and egocentric image activation via a shared CAM module, refines coarse activations into precise localizations using pixel-level pseudo-masks, and feeds egocentric localization results back to enhance exocentric knowledge extraction through denoising distillation, achieving state-of-the-art performance across all metrics on AGD20K.
+  [ICCV 2025][Image Restoration][weakly-supervised affordance grounding] This paper proposes LoopTrans, a closed-loop knowledge transfer framework that unifies exocentric and egocentric image activation via a shared CAM mo…
 tags:
-  - ICCV 2025
-  - Image Restoration
-  - weakly-supervised affordance grounding
-  - closed-loop knowledge transfer
-  - shared CAM
-  - denoising distillation
-  - exocentric-egocentric transfer
+  - "ICCV 2025"
+  - "Image Restoration"
+  - "weakly-supervised affordance grounding"
+  - "closed-loop knowledge transfer"
+  - "shared CAM"
+  - "denoising distillation"
+  - "exocentric-egocentric transfer"
 date: 2026-05-08
 content_hash: 55bb794517c90a5c
 ---

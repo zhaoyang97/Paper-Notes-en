@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Make Your Training Flexible: Towards Deployment-Efficient Video Models
 description: >-
-  [ICCV 2025][LLM Pretraining][Flexible Training] This paper proposes Flux — a data augmentation tool that enables flexible video model training through flexible sampling grids and group-dynamic token selection, allowing a single model to operate efficiently across varying computational budgets. The paper further introduces a Token Optimization test-time paradigm that matches previous SOTA performance using only 1/4 of the tokens, saving approximately 90% of computation.
+  [ICCV 2025][LLM Pretraining][Flexible Training] This paper proposes Flux — a data augmentation tool that enables flexible video model training through flexible sampling grids and group-dynamic token selection…
 tags:
-  - ICCV 2025
-  - LLM Pretraining
-  - Flexible Training
-  - Token Optimization
-  - Video Pretraining
-  - Deployment Efficiency
-  - Data Augmentation
+  - "ICCV 2025"
+  - "LLM Pretraining"
+  - "Flexible Training"
+  - "Token Optimization"
+  - "Video Pretraining"
+  - "Deployment Efficiency"
+  - "Data Augmentation"
 date: 2026-05-08
 content_hash: bfa5f5f406e54ef5
 ---

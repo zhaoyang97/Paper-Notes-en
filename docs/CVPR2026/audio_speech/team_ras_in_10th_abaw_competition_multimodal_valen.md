@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Team RAS in 10th ABAW Competition: Multimodal Valence and Arousal Estimation Approach
 description: >-
-  [CVPR 2026 (ABAW Workshop)][Audio & Speech][Valence-Arousal Estimation] This work is the first to incorporate behavioral description embeddings extracted by a VLM (Qwen3-VL-4B-Instruct) as an independent third modality, combining them with GRADA facial encodings and WavLM audio features via two fusion strategies—DCMMOE and RAAV—achieving a continuous VA estimation CCC of 0.658 (dev) / 0.62 (test) on Aff-Wild2, demonstrating the value of VLM behavioral semantics for continuous emotion recognition.
+  [CVPR 2026 (ABAW Workshop)][Audio & Speech][Valence-Arousal Estimation] This work is the first to incorporate behavioral description embeddings extracted by a VLM (Qwen3-VL-4B-Instruct) as an independent third modality…
 tags:
-  - CVPR 2026 (ABAW Workshop)
+  - "CVPR 2026 (ABAW Workshop)"
   - "Audio & Speech"
-  - Valence-Arousal Estimation
-  - Multimodal Fusion
-  - VLM Behavioral Description
-  - Mamba
-  - ABAW Competition
+  - "Valence-Arousal Estimation"
+  - "Multimodal Fusion"
+  - "VLM Behavioral Description"
+  - "Mamba"
+  - "ABAW Competition"
 date: 2026-05-08
 content_hash: b6bd2e80d92e8bca
 ---

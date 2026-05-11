@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] AttnPO: Attention-Guided Process Supervision for Efficient Reasoning
 description: >-
-  [ACL 2026][Reinforcement Learning][overthinking] This paper proposes AttnPO, a low-overhead process supervision RL framework that leverages intrinsic attention signals for step-level credit assignment. By identifying Key-Focus Heads (KFH) to distinguish redundant from critical reasoning steps, AttnPO substantially reduces reasoning length while significantly improving accuracy.
+  [ACL 2026][Reinforcement Learning][overthinking] This paper proposes AttnPO, a low-overhead process supervision RL framework that leverages intrinsic attention signals for step-level credit assignment. By identifying Key…
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - overthinking
-  - process supervision
-  - attention mechanism
-  - reasoning efficiency
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "overthinking"
+  - "process supervision"
+  - "attention mechanism"
+  - "reasoning efficiency"
 date: 2026-05-08
 content_hash: bc14b613bb42f360
 ---

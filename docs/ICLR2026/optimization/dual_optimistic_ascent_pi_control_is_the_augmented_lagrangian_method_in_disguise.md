@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dual Optimistic Ascent (PI Control) is the Augmented Lagrangian Method in Disguise
 description: >-
-  [ICLR 2026][Optimization][Augmented Lagrangian] This paper proves that dual optimistic ascent (PI control), widely used in constrained deep learning, is mathematically equivalent to the classical Augmented Lagrangian Method (ALM) under the single-step first-order update regime. This equivalence transfers ALM's robust convergence guarantees (linear convergence to all strict local solutions) to PI control, and provides principled tuning guidance for the optimism coefficient $\omega$.
+  [ICLR 2026][Optimization][Augmented Lagrangian] This paper proves that dual optimistic ascent (PI control), widely used in constrained deep learning…
 tags:
-  - ICLR 2026
-  - Optimization
-  - Augmented Lagrangian
-  - Dual Optimistic Ascent
-  - PI Control
-  - Constrained Optimization
-  - Non-Convex Min-Max
+  - "ICLR 2026"
+  - "Optimization"
+  - "Augmented Lagrangian"
+  - "Dual Optimistic Ascent"
+  - "PI Control"
+  - "Constrained Optimization"
+  - "Non-Convex Min-Max"
 date: 2026-05-08
 content_hash: 2672c7633b298b12
 ---

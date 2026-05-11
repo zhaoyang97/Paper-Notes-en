@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FedRE: A Representation Entanglement Framework for Model-Heterogeneous Federated Learning
 description: >-
-  [CVPR 2026][AI Safety][Federated Learning] This paper proposes FedRE, a framework that achieves a three-way balance among performance, privacy protection, and communication overhead in model-heterogeneous federated learning via "entangled representations"—aggregating all local representations of each client into a single cross-class representation using normalized random weights.
+  [CVPR 2026][AI Safety][Federated Learning] This paper proposes FedRE, a framework that achieves a three-way balance among performance, privacy protection…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Federated Learning
-  - Model Heterogeneity
-  - Entangled Representation
-  - Privacy Preservation
-  - Communication Efficiency
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Federated Learning"
+  - "Model Heterogeneity"
+  - "Entangled Representation"
+  - "Privacy Preservation"
+  - "Communication Efficiency"
 date: 2026-05-08
 content_hash: 121c0f22e39688bd
 ---

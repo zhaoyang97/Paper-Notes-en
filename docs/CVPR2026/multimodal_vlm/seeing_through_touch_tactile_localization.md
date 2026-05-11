@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Seeing Through Touch: Tactile-Driven Visual Localization of Material Regions
 description: >-
-  [CVPR 2026][Multimodal VLM][tactile localization] This paper introduces the tactile localization task—identifying regions in an image that share the same material properties as a given tactile input—and addresses it via local visual-tactile alignment and a material-diversity pairing strategy for learning dense cross-modal features. Two new tactile-material segmentation datasets are also constructed.
+  [CVPR 2026][Multimodal VLM][tactile localization] This paper introduces the tactile localization task—identifying regions in an image that share the same material properties as a given tactile input—and addresses it via…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - tactile localization
-  - visual-tactile alignment
-  - material segmentation
-  - cross-modal learning
-  - dataset
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "tactile localization"
+  - "visual-tactile alignment"
+  - "material segmentation"
+  - "cross-modal learning"
+  - "dataset"
 date: 2026-05-08
 content_hash: 2dc9223a91e19578
 ---

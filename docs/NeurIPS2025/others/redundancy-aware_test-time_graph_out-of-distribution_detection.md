@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Redundancy-Aware Test-Time Graph Out-of-Distribution Detection
 description: >-
-  [NeurIPS 2025][Graph OOD Detection] This paper proposes RedOUT, a framework that constructs coding trees via structural entropy minimization to eliminate redundant information in graph structures. Combined with the Redundancy-aware Graph Information Bottleneck (ReGIB) principle, RedOUT effectively distinguishes in-distribution (ID) from out-of-distribution (OOD) graph samples at test time without modifying pretrained model parameters, achieving an average AUC of 87.46% across 10 dataset pairs.
+  [NeurIPS 2025][Graph OOD Detection] This paper proposes RedOUT, a framework that constructs coding trees via structural entropy minimization to eliminate redundant information in graph structures. Combined with the Redun…
 tags:
-  - NeurIPS 2025
-  - Graph OOD Detection
-  - Structural Entropy
-  - Information Bottleneck
-  - Test-Time Detection
-  - Coding Tree
+  - "NeurIPS 2025"
+  - "Graph OOD Detection"
+  - "Structural Entropy"
+  - "Information Bottleneck"
+  - "Test-Time Detection"
+  - "Coding Tree"
 date: 2026-05-08
 content_hash: 22fb395d5e9ce48e
 ---

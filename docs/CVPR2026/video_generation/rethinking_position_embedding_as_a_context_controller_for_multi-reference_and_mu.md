@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Rethinking Position Embedding as a Context Controller for Multi-Reference and Multi-Shot Video Generation
 description: >-
-  [CVPR 2026][Video Generation][Position Encoding] This paper proposes PoCo (Position Embedding as Context Controller), which introduces an additional SideInfo axis in RoPE to encode reference entity information, addressing the "reference confusion" problem in multi-reference multi-shot video generation—where the model fails to correctly associate shots with references when reference images are visually similar. PoCo achieves state-of-the-art cross-shot consistency on the VACE-Wan2.1-14B framework (CrossShot-FaceSim 89.35, CrossShot-DINO 92.66).
+  [CVPR 2026][Video Generation][Position Encoding] This paper proposes PoCo (Position Embedding as Context Controller), which introduces an additional SideInfo axis in RoPE to encode reference entity information…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Position Encoding
-  - Context Control
-  - Multi-Reference Video Generation
-  - RoPE
-  - Identity Confusion
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Position Encoding"
+  - "Context Control"
+  - "Multi-Reference Video Generation"
+  - "RoPE"
+  - "Identity Confusion"
 date: 2026-05-08
 content_hash: 9f12a00d97bc9734
 ---

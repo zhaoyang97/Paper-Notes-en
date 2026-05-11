@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] TAP: A Token-Adaptive Predictor Framework for Training-Free Diffusion Acceleration
 description: >-
-  [Image Generation] This paper proposes TAP, a framework that uses a first-layer probe to adaptively select the optimal predictor (from a Taylor expansion family) for each token at each step, enabling training-free diffusion model acceleration with a 6.24× speedup on FLUX.1-dev without perceptible quality degradation.
+  [Image Generation] This paper proposes TAP, a framework that uses a first-layer probe to adaptively select the optimal predictor (from a Taylor expansion family) for each token at each step…
 tags:
-  - Image Generation
+  - "Image Generation"
 date: 2026-05-08
 content_hash: e91bd6c3bcb1499b
 ---

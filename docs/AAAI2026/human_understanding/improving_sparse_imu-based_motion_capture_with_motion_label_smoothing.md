@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Improving Sparse IMU-based Motion Capture with Motion Label Smoothing
 description: >-
-  [AAAI 2026][Human Understanding][Sparse IMU] This paper proposes Motion Label Smoothing, adapting classical label smoothing from classification tasks to sparse IMU-based motion capture. By incorporating skeleton-structure-aware Perlin noise as smoothed labels, the method improves accuracy across three state-of-the-art methods on four datasets in a plug-and-play manner without modifying model architectures. GlobalPose achieves a 20.41% reduction in SIP error on TotalCapture.
+  [AAAI 2026][Human Understanding][Sparse IMU] This paper proposes Motion Label Smoothing, adapting classical label smoothing from classification tasks to sparse IMU-based motion capture. By incorporating skeleton-structur…
 tags:
-  - AAAI 2026
-  - Human Understanding
-  - Sparse IMU
-  - Human Motion Capture
-  - Label Smoothing
-  - Perlin Noise
-  - Regularization
+  - "AAAI 2026"
+  - "Human Understanding"
+  - "Sparse IMU"
+  - "Human Motion Capture"
+  - "Label Smoothing"
+  - "Perlin Noise"
+  - "Regularization"
 date: 2026-05-08
 content_hash: 4c485955def2df43
 ---

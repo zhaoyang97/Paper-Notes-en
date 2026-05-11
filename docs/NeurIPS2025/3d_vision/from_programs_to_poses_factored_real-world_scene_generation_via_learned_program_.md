@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] From Programs to Poses: Factored Real-World Scene Generation via Learned Program Libraries
 description: >-
-  [NeurIPS 2025][3D Vision][3D scene generation] This paper proposes FactoredScenes, which decomposes real-world 3D scene generation into a five-step factorization pipeline — learning a layout program library from synthetic data, generating scene programs via LLM, executing programs to obtain axis-aligned layouts, program-conditioned hierarchical pose prediction, and object retrieval and placement. The method achieves 38.3% FID improvement and 80.4% KID improvement on bedrooms, with human evaluators able to distinguish generated scenes from real ScanNet scenes only 67% of the time.
+  [NeurIPS 2025][3D Vision][3D scene generation] This paper proposes FactoredScenes, which decomposes real-world 3D scene generation into a five-step factorization pipeline — learning a layout program library from syntheti…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - 3D scene generation
-  - program synthesis
-  - LLM
-  - layout program library
-  - pose prediction
-  - ScanNet
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "3D scene generation"
+  - "program synthesis"
+  - "LLM"
+  - "layout program library"
+  - "pose prediction"
+  - "ScanNet"
 date: 2026-05-08
 content_hash: ba64df31ce83cf4f
 ---

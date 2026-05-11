@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Precise Object and Effect Removal with Adaptive Target-Aware Attention
 description: >-
-  [CVPR 2026][Image Generation][Object Removal] This paper proposes ObjectClear, a framework that decouples foreground removal from background reconstruction via Adaptive Target-Aware Attention (ATA), combined with Attention-Guided Fusion (AGF) and Spatially Varying Denoising Strength (SVDS) strategies, enabling precise removal of target objects along with their associated visual effects such as shadows and reflections. The work also introduces OBER, the first large-scale dataset for Object-Effect Removal.
+  [CVPR 2026][Image Generation][Object Removal] This paper proposes ObjectClear, a framework that decouples foreground removal from background reconstruction via Adaptive Target-Aware Attention (ATA)…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Object Removal
-  - Shadow/Reflection Elimination
-  - Diffusion Models
-  - Attention-Guided Fusion
-  - Dataset Construction
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Object Removal"
+  - "Shadow/Reflection Elimination"
+  - "Diffusion Models"
+  - "Attention-Guided Fusion"
+  - "Dataset Construction"
 date: 2026-05-08
 content_hash: afefa862cf2e9ebd
 ---

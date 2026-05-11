@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Center-Outward q-Dominance: A Sample-Computable Proxy for Strong Stochastic Dominance in Multi-Objective Optimisation
 description: >-
-  [AAAI 2026][Stochastic multi-objective optimisation] Building on the center-outward distribution function from optimal transport theory, this paper proposes the q-dominance relation as a computable approximation of strong first-order stochastic dominance (strong FSD). It proves that q-dominance over the full quantile range implies strong FSD, derives explicit sample-size thresholds for Type I error control, and validates practical utility in hyperparameter tuning ranking and noisy multi-objective optimisation.
+  [AAAI 2026][Stochastic multi-objective optimisation] Building on the center-outward distribution function from optimal transport theory, this paper proposes the q-dominance relation as a computable approximation of stron…
 tags:
-  - AAAI 2026
-  - Stochastic multi-objective optimisation
-  - stochastic dominance
-  - optimal transport
-  - hyperparameter tuning
-  - center-outward quantiles
+  - "AAAI 2026"
+  - "Stochastic multi-objective optimisation"
+  - "stochastic dominance"
+  - "optimal transport"
+  - "hyperparameter tuning"
+  - "center-outward quantiles"
 date: 2026-05-08
 content_hash: 3d13da56d91fe894
 ---

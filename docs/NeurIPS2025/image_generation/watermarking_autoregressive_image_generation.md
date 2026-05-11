@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Watermarking Autoregressive Image Generation
 description: >-
-  [NeurIPS 2025][Image Generation][Autoregressive image generation] This paper is the first to adapt LLM watermarking (KGW green/red scheme) to the token level of autoregressive image generation models. It identifies and addresses the key challenge of insufficient Reverse Cycle Consistency (RCC) through tokenizer–detokenizer fine-tuning and a watermark synchronization layer, achieving robust image watermark detection with theoretical guarantees.
+  [NeurIPS 2025][Image Generation][Autoregressive image generation] This paper is the first to adapt LLM watermarking (KGW green/red scheme) to the token level of autoregressive image generation models. It identifies and a…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Autoregressive image generation
-  - watermarking
-  - reverse cycle consistency
-  - token-level watermarking
-  - LLM watermark adaptation
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Autoregressive image generation"
+  - "watermarking"
+  - "reverse cycle consistency"
+  - "token-level watermarking"
+  - "LLM watermark adaptation"
 date: 2026-05-08
 content_hash: d781d35259212db7
 ---

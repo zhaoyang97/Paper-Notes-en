@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Paper Copilot: Tracking the Evolution of Peer Review in AI Conferences
 description: >-
-  [ICLR 2026][Video Understanding][peer review] Paper Copilot is constructed as a persistent digital archive and analysis platform for peer reviews spanning dozens of AI/ML venues. It adopts a tri-source hybrid data collection strategy—OpenReview API, web scraping, and community contributions—to archive real-time score snapshots capturing pre- and post-rebuttal dynamics. The platform reveals a structural anomaly in ICLR 2025: a counterintuitive decline in decision entropy, signaling a shift from probabilistic tiering to near-deterministic score-driven decision-making. LLM-driven author–affiliation metadata extraction further supports talent trajectory tracking.
+  [ICLR 2026][Video Understanding][peer review] Paper Copilot is constructed as a persistent digital archive and analysis platform for peer reviews spanning dozens of AI/ML venues. It adopts a tri-source hybrid data collec…
 tags:
-  - ICLR 2026
-  - Video Understanding
-  - peer review
-  - score dynamics
-  - decision entropy
-  - conference statistics
-  - dataset
-  - LLM metadata extraction
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "peer review"
+  - "score dynamics"
+  - "decision entropy"
+  - "conference statistics"
+  - "dataset"
+  - "LLM metadata extraction"
 date: 2026-05-08
 content_hash: bd2ce84d33cef910
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Efficient Verified Machine Unlearning for Distillation
 description: >-
-  [NeurIPS 2025][AI Safety][machine unlearning] This paper proposes PURGE, a framework that extends verified unlearning under SISA to the knowledge distillation (KD) setting via teacher–student constituent mapping and an incremental multi-teacher distillation strategy. When a teacher-side unlearning request is issued, only a subset of student constituents requires retraining, achieving at least $N\times$ speedup.
+  [NeurIPS 2025][AI Safety][machine unlearning] This paper proposes PURGE, a framework that extends verified unlearning under SISA to the knowledge distillation (KD) setting via teacher–student constituent mapping and an i…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - machine unlearning
-  - knowledge distillation
-  - SISA
-  - data privacy
-  - ensemble learning
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "machine unlearning"
+  - "knowledge distillation"
+  - "SISA"
+  - "data privacy"
+  - "ensemble learning"
 date: 2026-05-08
 content_hash: 2abaa4f23e9e5b66
 ---

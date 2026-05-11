@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Small Drafts, Big Verdict: Information-Intensive Visual Reasoning via Speculation
 description: >-
-  [ICLR 2026][Multimodal VLM][speculative decoding] Inspired by the draft-then-verify paradigm of Speculative Decoding, this paper proposes Speculative Verdict (SV), which employs multiple lightweight VLMs to generate diverse reasoning paths as drafts, while a large model serves as the verdict to synthesize, verify, and correct them. Without any training, SV surpasses GPT-4o by 11.9% on information-intensive VQA and recovers correct answers in 47–53% of minority-correct cases.
+  [ICLR 2026][Multimodal VLM][speculative decoding] Inspired by the draft-then-verify paradigm of Speculative Decoding, this paper proposes Speculative Verdict (SV)…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - speculative decoding
-  - visual reasoning
-  - information-intensive VQA
-  - draft-verdict framework
-  - consensus expert selection
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "speculative decoding"
+  - "visual reasoning"
+  - "information-intensive VQA"
+  - "draft-verdict framework"
+  - "consensus expert selection"
 date: 2026-05-08
 content_hash: 68164f4c019fbb29
 ---

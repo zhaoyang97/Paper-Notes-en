@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] GenePheno: Interpretable Gene Knockout-Induced Phenotype Abnormality Prediction Framework
 description: >-
-  [AAAI 2026][Gene sequence] This paper proposes GenePheno, the first interpretable multi-label prediction framework for end-to-end prediction of gene knockout-induced phenotype abnormalities directly from gene sequences. The framework captures inter-phenotype correlations via contrastive multi-label learning, enforces biological consistency through exclusivity regularization, and provides interpretability via a Gene Ontology (GO) bottleneck layer. GenePheno achieves state-of-the-art gene-centric $F_{\max}$ and phenotype-centric AUC across four datasets.
+  [AAAI 2026][Interpretability][Gene sequence] This paper proposes GenePheno, the first interpretable multi-label prediction framework for end-to-end prediction of gene knockout-induced phenotype abnormalities directly fro…
 tags:
-  - AAAI 2026
-  - Gene sequence
-  - phenotype abnormality prediction
-  - contrastive learning
-  - exclusivity regularization
-  - gene ontology bottleneck layer
+  - "AAAI 2026"
+  - "Interpretability"
+  - "Gene sequence"
+  - "phenotype abnormality prediction"
+  - "contrastive learning"
+  - "exclusivity regularization"
+  - "gene ontology bottleneck layer"
 date: 2026-05-08
 content_hash: 3720f014a8c89553
 ---

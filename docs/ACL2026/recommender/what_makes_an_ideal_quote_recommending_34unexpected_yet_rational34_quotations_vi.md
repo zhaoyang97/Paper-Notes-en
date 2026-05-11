@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] What Makes an Ideal Quote? Recommending "Unexpected yet Rational" Quotations via Novelty
 description: >-
-  [ACL 2026][Recommender Systems][Quote recommendation] NOVELQR proposes a novelty-driven quote recommendation framework that constructs a deep semantic knowledge base via a generative label agent to enable semantically rational retrieval, and employs a token-level novelty estimator to mitigate autoregressive continuation bias, achieving significant improvements on a bilingual benchmark.
+  [ACL 2026][Recommender Systems][Quote recommendation] NOVELQR proposes a novelty-driven quote recommendation framework that constructs a deep semantic knowledge base via a generative label agent to enable semantically ra…
 tags:
-  - ACL 2026
-  - Recommender Systems
-  - Quote recommendation
-  - novelty estimation
-  - defamiliarization theory
-  - deep semantic retrieval
-  - continuation bias
+  - "ACL 2026"
+  - "Recommender Systems"
+  - "Quote recommendation"
+  - "novelty estimation"
+  - "defamiliarization theory"
+  - "deep semantic retrieval"
+  - "continuation bias"
 date: 2026-05-08
 content_hash: 77b7b9595f95cde8
 ---

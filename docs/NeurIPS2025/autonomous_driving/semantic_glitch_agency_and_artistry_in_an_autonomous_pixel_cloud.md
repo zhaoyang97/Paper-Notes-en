@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Semantic Glitch: Agency and Artistry in an Autonomous Pixel Cloud
 description: >-
-  [NeurIPS 2025][Autonomous Driving][Weak robot] This paper presents "Pixel Cloud," a low-fidelity autonomous aerial robotic art installation that deliberately forgoes conventional LiDAR/SLAM sensors and relies solely on the semantic understanding of a multimodal large language model (MLLM) for navigation. Through natural language prompting, the robot is endowed with a biologically inspired narrative persona, yielding imprecise yet characterful emergent behaviors.
+  [NeurIPS 2025][Autonomous Driving][Weak robot] This paper presents "Pixel Cloud," a low-fidelity autonomous aerial robotic art installation that deliberately forgoes conventional LiDAR/SLAM sensors and relies solely on t…
 tags:
-  - NeurIPS 2025
-  - Autonomous Driving
-  - Weak robot
-  - MLLM navigation
-  - speculative design
-  - pixel cloud
-  - emergent behavior
+  - "NeurIPS 2025"
+  - "Autonomous Driving"
+  - "Weak robot"
+  - "MLLM navigation"
+  - "speculative design"
+  - "pixel cloud"
+  - "emergent behavior"
 date: 2026-05-08
 content_hash: 4531fed7b6cef996
 ---

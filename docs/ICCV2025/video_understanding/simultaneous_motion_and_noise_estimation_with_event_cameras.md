@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Simultaneous Motion And Noise Estimation with Event Cameras
 description: >-
-  [ICCV 2025][Video Understanding][Event cameras] This paper presents the first joint method for simultaneous motion estimation and noise estimation with event cameras. It scores each event using the local contrast in the motion-compensated image of warped events (IWE) within the Contrast Maximization (CMax) framework, and obtains motion parameters along with signal/noise classification through alternating optimization. The method achieves state-of-the-art performance on the E-MLB denoising benchmark.
+  [ICCV 2025][Video Understanding][Event cameras] This paper presents the first joint method for simultaneous motion estimation and noise estimation with event cameras. It scores each event using the local contrast in the…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - Event cameras
-  - denoising
-  - motion estimation
-  - contrast maximization
-  - joint estimation
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "Event cameras"
+  - "denoising"
+  - "motion estimation"
+  - "contrast maximization"
+  - "joint estimation"
 date: 2026-05-08
 content_hash: df182dcf216afd97
 ---

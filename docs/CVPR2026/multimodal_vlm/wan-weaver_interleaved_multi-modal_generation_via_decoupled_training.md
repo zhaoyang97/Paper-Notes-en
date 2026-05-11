@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Wan-Weaver: Interleaved Multi-modal Generation via Decoupled Training
 description: >-
-  [CVPR 2026][Multimodal VLM][Interleaved multi-modal generation] Wan-Weaver proposes a decoupled architecture consisting of a planner (VLM) and a visualizer (DiT). By training the planner on large-scale textual-proxy data instead of real interleaved data, it achieves an Overall score of 8.67 on OpenING—approaching Nano Banana's 8.85—while maintaining strong comprehension capability (MMMU 74.9) and state-of-the-art interleaved text-image generation.
+  [CVPR 2026][Multimodal VLM][Interleaved multi-modal generation] Wan-Weaver proposes a decoupled architecture consisting of a planner (VLM) and a visualizer (DiT). By training the planner on large-scale textual-proxy data…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Interleaved multi-modal generation
-  - decoupled training
-  - textual-proxy data
-  - visual consistency
-  - planning-visualization
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Interleaved multi-modal generation"
+  - "decoupled training"
+  - "textual-proxy data"
+  - "visual consistency"
+  - "planning-visualization"
 date: 2026-05-08
 content_hash: f714b9091e7bcfa5
 ---

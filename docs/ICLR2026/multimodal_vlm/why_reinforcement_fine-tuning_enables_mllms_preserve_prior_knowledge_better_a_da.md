@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Why Reinforcement Fine-Tuning Preserves Prior Knowledge Better: A Data Perspective
 description: >-
-  [Multimodal VLM] Through a systematic study of how SFT and RFT affect prior knowledge using a jigsaw puzzle task, this paper reveals that the key to RFT avoiding catastrophic forgetting lies in **data distribution** rather than algorithmic differences — data sampled by RFT naturally aligns with the base model's probability landscape, causing less interference.
+  [Multimodal VLM] Through a systematic study of how SFT and RFT affect prior knowledge using a jigsaw puzzle task, this paper reveals that the key to RFT avoiding catastrophic forgetting lies in **data distribution** rath…
 tags:
-  - Multimodal VLM
+  - "Multimodal VLM"
 date: 2026-05-08
 content_hash: f37d90c63497e367
 ---

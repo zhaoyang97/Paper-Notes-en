@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Fast SceneScript: Fast and Accurate Language-Based 3D Scene Understanding via Multi-Token Prediction
 description: >-
-  [CVPR 2026][3D Vision][3D scene understanding] This paper proposes Fast SceneScript, which introduces multi-token prediction (MTP) into structured language models for 3D scene understanding to accelerate inference. Combined with self-speculative decoding (SSD) and confidence-guided decoding (CGD) to filter unreliable tokens, as well as a parameter-efficient head-sharing mechanism, the method achieves 5.09× and 5.14× speedups on layout estimation and object detection respectively without accuracy loss.
+  [CVPR 2026][3D Vision][3D scene understanding] This paper proposes Fast SceneScript, which introduces multi-token prediction (MTP) into structured language models for 3D scene understanding to accelerate inference. Combi…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D scene understanding
-  - multi-token prediction
-  - structured language model
-  - inference acceleration
-  - self-speculative decoding
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D scene understanding"
+  - "multi-token prediction"
+  - "structured language model"
+  - "inference acceleration"
+  - "self-speculative decoding"
 date: 2026-05-08
 content_hash: 7e1974fa3044e200
 ---

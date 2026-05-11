@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MoMa: A Simple Modular Deep Learning Framework for Material Property Prediction
 description: >-
-  [ICLR 2026][LLM Pretraining][material property prediction] MoMa is a modular material property prediction framework that trains task-specific modules across multiple tasks and stores them centrally in a MoMa Hub, then applies a training-free Adaptive Module Composition (AMC) algorithm driven by representation similarity to assemble customized models for downstream tasks, achieving an average improvement of 14% over the strongest baseline across 17 datasets.
+  [ICLR 2026][LLM Pretraining][material property prediction] MoMa is a modular material property prediction framework that trains task-specific modules across multiple tasks and stores them centrally in a MoMa Hub…
 tags:
-  - ICLR 2026
-  - LLM Pretraining
-  - material property prediction
-  - modular learning
-  - adaptive combination
-  - transfer learning
-  - graph neural networks
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "material property prediction"
+  - "modular learning"
+  - "adaptive combination"
+  - "transfer learning"
+  - "graph neural networks"
 date: 2026-05-08
 content_hash: 73c370979d9c5ec4
 ---

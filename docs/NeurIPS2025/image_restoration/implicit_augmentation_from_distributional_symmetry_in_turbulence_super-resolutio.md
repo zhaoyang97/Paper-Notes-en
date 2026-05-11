@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Implicit Augmentation from Distributional Symmetry in Turbulence Super-Resolution
 description: >-
-  [Image Restoration] This paper demonstrates that the statistical isotropy of turbulence itself constitutes a form of implicit data augmentation, enabling standard CNNs to partially learn rotational equivariance in super-resolution tasks without explicit rotation augmentation or equivariant architectures. The authors further show that the scale dependence of equivariance error is consistent with Kolmogorov's local isotropy hypothesis.
+  [Image Restoration] This paper demonstrates that the statistical isotropy of turbulence itself constitutes a form of implicit data augmentation…
 tags:
-  - Image Restoration
+  - "Image Restoration"
 date: 2026-05-08
 content_hash: 8d89659079e3038a
 ---

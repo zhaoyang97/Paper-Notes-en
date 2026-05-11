@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Predicting Video Slot Attention Queries from Random Slot-Feature Pairs
 description: >-
-  [AAAI 2026][Video Understanding][Object-centric learning] This paper proposes RandSF.Q, which significantly improves query prediction quality in video object-centric learning (OCL) by leveraging next-frame features for informative query prediction and learning transition dynamics from randomly sampled slot-feature pairs. The method surpasses state-of-the-art approaches by up to 10 points on object discovery benchmarks.
+  [AAAI 2026][Video Understanding][Object-centric learning] This paper proposes RandSF.Q, which significantly improves query prediction quality in video object-centric learning (OCL) by leveraging next-frame features for i…
 tags:
-  - AAAI 2026
-  - Video Understanding
-  - Object-centric learning
-  - video object discovery
-  - Slot Attention
-  - temporal modeling
-  - self-supervised learning
+  - "AAAI 2026"
+  - "Video Understanding"
+  - "Object-centric learning"
+  - "video object discovery"
+  - "Slot Attention"
+  - "temporal modeling"
+  - "self-supervised learning"
 date: 2026-05-08
 content_hash: 7d482f51a3bcefd3
 ---

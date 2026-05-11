@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AANet: Virtual Screening under Structural Uncertainty via Alignment and Aggregation
 description: >-
-  [NeurIPS 2025][Medical Imaging][Virtual screening] To address the unavailability of holo protein structures in real-world drug discovery, this paper proposes AANet—a framework that aligns representations via tri-modal contrastive learning (ligand–holo pocket–detected cavity) and aggregates multiple candidate binding sites through cross-attention. AANet substantially outperforms SOTA methods in blind screening on apo/predicted protein structures (EF1% on DUD-E: 11.75 → 37.19).
+  [NeurIPS 2025][Medical Imaging][Virtual screening] To address the unavailability of holo protein structures in real-world drug discovery…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Virtual screening
-  - drug discovery
-  - structural uncertainty
-  - contrastive learning
-  - protein binding site
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Virtual screening"
+  - "drug discovery"
+  - "structural uncertainty"
+  - "contrastive learning"
+  - "protein binding site"
 date: 2026-05-08
 content_hash: 4a2afe511c289c54
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Time, Identity and Consciousness in Language Model Agents
 description: >-
-  [AAAI 2026 Spring Symposium][LLM Agent][Machine Consciousness] This paper applies the temporal gap concept from Stack Theory to LLM agent evaluation, proposing a conservative evaluation toolkit that distinguishes between "talking like a stable self" and "being organized like a stable self." It reveals identity trade-offs across different scaffold structures via persistence scores and an identity morphospace.
+  [AAAI 2026 Spring Symposium][LLM Agent][Machine Consciousness] This paper applies the temporal gap concept from Stack Theory to LLM agent evaluation…
 tags:
-  - AAAI 2026 Spring Symposium
-  - LLM Agent
-  - Machine Consciousness
-  - Identity Evaluation
-  - Language Model Agents
-  - Temporal Consistency
-  - Stack Theory
+  - "AAAI 2026 Spring Symposium"
+  - "LLM Agent"
+  - "Machine Consciousness"
+  - "Identity Evaluation"
+  - "Language Model Agents"
+  - "Temporal Consistency"
+  - "Stack Theory"
 date: 2026-05-08
 content_hash: 9c447af6c4510dea
 ---

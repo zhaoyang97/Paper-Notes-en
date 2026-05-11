@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] NeuraLeaf: Neural Parametric Leaf Models with Shape and Deformation Disentanglement
 description: >-
-  [3D Vision] NeuraLeaf disentangles the 3D geometry of leaves into two latent spaces — a 2D base shape space and a 3D deformation space — leveraging large-scale 2D leaf image datasets to learn the shape space, proposes a skeleton-free skinning model to handle highly flexible leaf deformations, and introduces DeformLeaf, the first 3D dataset dedicated to leaf deformation modeling.
+  [3D Vision] NeuraLeaf disentangles the 3D geometry of leaves into two latent spaces — a 2D base shape space and a 3D deformation space — leveraging large-scale 2D leaf image datasets to learn the shape space…
 tags:
-  - 3D Vision
+  - "3D Vision"
 date: 2026-05-08
 content_hash: c0347727621c95a8
 ---

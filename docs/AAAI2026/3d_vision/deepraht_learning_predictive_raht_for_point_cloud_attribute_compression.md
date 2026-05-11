@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DeepRAHT: Learning Predictive RAHT for Point Cloud Attribute Compression
 description: >-
-  [AAAI 2026][3D Vision][Point Cloud Compression] This paper proposes DeepRAHT, the first end-to-end differentiable Region Adaptive Hierarchical Transform (RAHT) framework for lossy point cloud attribute compression. By integrating learnable prediction models with a Laplace distribution-based rate proxy, DeepRAHT achieves compression performance surpassing both the G-PCC standard and existing deep learning methods.
+  [AAAI 2026][3D Vision][Point Cloud Compression] This paper proposes DeepRAHT, the first end-to-end differentiable Region Adaptive Hierarchical Transform (RAHT) framework for lossy point cloud attribute compression. By in…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - Point Cloud Compression
-  - Attribute Compression
-  - RAHT
-  - End-to-End Learning
-  - Variable Bitrate
+  - "AAAI 2026"
+  - "3D Vision"
+  - "Point Cloud Compression"
+  - "Attribute Compression"
+  - "RAHT"
+  - "End-to-End Learning"
+  - "Variable Bitrate"
 date: 2026-05-08
 content_hash: 53535f15ad4fc98e
 ---

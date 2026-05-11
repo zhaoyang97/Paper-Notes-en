@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Blue Teaming Function-Calling Agents
 description: >-
-  [AAAI 2026][LLM/NLP][function-calling] This paper systematically evaluates the robustness of four open-source function-calling LLMs against three attack types, and assesses the effectiveness of eight defense mechanisms, revealing that current models are insecure by default and that existing defenses remain difficult to deploy in practice.
+  [AAAI 2026][LLM/NLP][function-calling] This paper systematically evaluates the robustness of four open-source function-calling LLMs against three attack types, and assesses the effectiveness of eight defense mechanisms…
 tags:
-  - AAAI 2026
-  - LLM/NLP
-  - function-calling
-  - prompt injection attack
-  - tool poisoning
-  - blue teaming defense
-  - open-source LLM
+  - "AAAI 2026"
+  - "LLM/NLP"
+  - "function-calling"
+  - "prompt injection attack"
+  - "tool poisoning"
+  - "blue teaming defense"
+  - "open-source LLM"
 date: 2026-05-08
 content_hash: 07f59841d8b0bfd4
 ---

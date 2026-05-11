@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Theory of Space: Can Foundation Models Construct Spatial Beliefs through Active Exploration?
 description: >-
-  [ICLR 2026][Robotics][Theory of Space] This paper proposes the Theory of Space framework, which systematically evaluates the ability of foundation models to construct and revise spatial beliefs through active exploration, cognitive map probing, and a False Belief paradigm across both text-based and visual environments. The study reveals critical failure modes in current state-of-the-art models, including active-passive performance gaps, inefficient exploration strategies, and deficient belief revision.
+  [ICLR 2026][Robotics][Theory of Space] This paper proposes the Theory of Space framework, which systematically evaluates the ability of foundation models to construct and revise spatial beliefs through active exploration…
 tags:
-  - ICLR 2026
-  - Robotics
-  - Theory of Space
-  - active exploration
-  - spatial belief
-  - cognitive map
-  - partial observability
-  - belief inertia
+  - "ICLR 2026"
+  - "Robotics"
+  - "Theory of Space"
+  - "active exploration"
+  - "spatial belief"
+  - "cognitive map"
+  - "partial observability"
+  - "belief inertia"
 date: 2026-05-08
 content_hash: f7872eaec50f257e
 ---

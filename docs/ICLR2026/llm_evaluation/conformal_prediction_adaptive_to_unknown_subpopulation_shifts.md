@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Conformal Prediction Adaptive to Unknown Subpopulation Shifts
 description: >-
-  [ICLR 2026][LLM Evaluation][conformal prediction] To address the failure of standard conformal prediction under subpopulation shift, this paper proposes three adaptive algorithms: weighting calibration data via a learned domain classifier (Algorithms 1/2) or via embedding similarity (Algorithm 3). Coverage guarantees are maintained even with imperfect or absent domain labels, with applications to visual classification and LLM hallucination detection.
+  [ICLR 2026][LLM Evaluation][conformal prediction] To address the failure of standard conformal prediction under subpopulation shift, this paper proposes three adaptive algorithms: weighting calibration data via a learned…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - conformal prediction
-  - distribution shift
-  - subpopulation shift
-  - uncertainty quantification
-  - LLM hallucination
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "conformal prediction"
+  - "distribution shift"
+  - "subpopulation shift"
+  - "uncertainty quantification"
+  - "LLM hallucination"
 date: 2026-05-08
 content_hash: fd4449e166a9f16d
 ---

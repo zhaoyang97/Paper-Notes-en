@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Ethics Statements in AI Music Papers: The Effective and the Ineffective
 description: >-
-  [NeurIPS 2025 (AI for Music Workshop)][Audio & Speech][ethics statements] A systematic review of the current state of ethics statement usage in AI music research papers, finding that the vast majority of ethics statements are not effectively utilized, with actionable recommendations proposed for both conferences and researchers.
+  [NeurIPS 2025 (AI for Music Workshop)][Audio & Speech][ethics statements] A systematic review of the current state of ethics statement usage in AI music research papers…
 tags:
-  - NeurIPS 2025 (AI for Music Workshop)
+  - "NeurIPS 2025 (AI for Music Workshop)"
   - "Audio & Speech"
-  - ethics statements
-  - AI music
-  - broader impact
-  - responsible AI
-  - ISMIR
-  - NIME
-  - music generation
+  - "ethics statements"
+  - "AI music"
+  - "broader impact"
+  - "responsible AI"
+  - "ISMIR"
+  - "NIME"
+  - "music generation"
 date: 2026-05-08
 content_hash: 01b8e667a5e72d40
 ---

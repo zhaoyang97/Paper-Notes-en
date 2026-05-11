@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CognitionCapturerPro: Towards High-Fidelity Visual Decoding from EEG/MEG via Multi-modal Information and Asymmetric Alignment
 description: >-
-  [CVPR 2026][Image Generation][EEG Visual Decoding] CognitionCapturerPro addresses Fidelity Loss via uncertainty-weighted masking and resolves Representational Shift by integrating image, text, depth, and edge information through a multi-modal fusion encoder. Combined with a lightweight shared backbone alignment replacing diffusion priors, it improves Top-1/Top-5 retrieval accuracy on the THINGS-EEG dataset by 25.9% and 10.6%, respectively.
+  [CVPR 2026][Image Generation][EEG Visual Decoding] CognitionCapturerPro addresses Fidelity Loss via uncertainty-weighted masking and resolves Representational Shift by integrating image, text, depth…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - EEG Visual Decoding
-  - Multi-modal Fusion
-  - Uncertainty Modeling
-  - Brain-Computer Interface
-  - Diffusion Reconstruction
+  - "CVPR 2026"
+  - "Image Generation"
+  - "EEG Visual Decoding"
+  - "Multi-modal Fusion"
+  - "Uncertainty Modeling"
+  - "Brain-Computer Interface"
+  - "Diffusion Reconstruction"
 date: 2026-05-08
 content_hash: 4b454aa0996cab80
 ---

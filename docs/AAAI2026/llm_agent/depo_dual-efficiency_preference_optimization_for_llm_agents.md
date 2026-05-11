@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DEPO: Dual-Efficiency Preference Optimization for LLM Agents
 description: >-
-  [AAAI 2026][LLM Agent][LLM Agent efficiency optimization] This paper proposes the concept of *dual-efficiency*, decomposing LLM agent efficiency into step-level (reducing tokens per step) and trajectory-level (reducing total number of steps) dimensions. Building on KTO, the authors introduce DEPO, which jointly optimizes efficiency and task performance by incorporating an efficiency bonus into the reward for desirable samples.
+  [AAAI 2026][LLM Agent][LLM Agent efficiency optimization] This paper proposes the concept of *dual-efficiency*, decomposing LLM agent efficiency into step-level (reducing tokens per step) and trajectory-level (reducing t…
 tags:
-  - AAAI 2026
-  - LLM Agent
-  - LLM Agent efficiency optimization
-  - preference optimization
-  - KTO
-  - dual-efficiency
-  - reinforcement learning
+  - "AAAI 2026"
+  - "LLM Agent"
+  - "LLM Agent efficiency optimization"
+  - "preference optimization"
+  - "KTO"
+  - "dual-efficiency"
+  - "reinforcement learning"
 date: 2026-05-08
 content_hash: 3a423b842869adee
 ---

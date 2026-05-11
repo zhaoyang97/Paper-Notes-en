@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Quantifying Climate Policy Action and Its Links to Development Outcomes: A Cross-National Data-Driven Analysis
 description: >-
-  [NeurIPS 2025][climate policy] This paper constructs an integrated NLP–econometrics framework that first uses a fine-tuned multilingual DistilBERT to automatically classify global climate policy documents by topic (Mitigation / Adaptation / Disaster Risk Management / Loss & Damage) with F1 = 0.90, then conducts fixed-effects panel regression against World Bank development indicators, finding that mitigation policies are significantly positively associated with higher GDP/GNI, while Loss & Damage policies remain substantially unimplemented worldwide.
+  [NeurIPS 2025][Multilingual & Machine Translation][climate policy] This paper constructs an integrated NLP–econometrics framework that first uses a fine-tuned multilingual DistilBERT to automatically classify global clim…
 tags:
-  - NeurIPS 2025
-  - climate policy
-  - text classification
-  - DistilBERT
-  - panel regression
-  - cross-national analysis
+  - "NeurIPS 2025"
+  - "Multilingual & Machine Translation"
+  - "climate policy"
+  - "text classification"
+  - "DistilBERT"
+  - "panel regression"
+  - "cross-national analysis"
 date: 2026-05-08
 content_hash: 1a0f5f2be83722d1
 ---

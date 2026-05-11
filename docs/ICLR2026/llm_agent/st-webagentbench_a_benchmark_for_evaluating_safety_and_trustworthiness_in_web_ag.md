@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ST-WebAgentBench: A Benchmark for Evaluating Safety and Trustworthiness in Web Agents
 description: >-
-  [ICLR 2026][LLM Agent][Web Agent] This paper introduces ST-WebAgentBench, the first benchmark specifically designed to evaluate the safety and trustworthiness of web agents. Through a policy hierarchy framework and the Completion under Policy (CuP) metric, it reveals that current SOTA agents exhibit serious policy violations in enterprise settings.
+  [ICLR 2026][LLM Agent][Web Agent] This paper introduces ST-WebAgentBench, the first benchmark specifically designed to evaluate the safety and trustworthiness of web agents. Through a policy hierarchy framework and the C…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Web Agent
-  - Safety
-  - Trustworthiness
-  - benchmark
-  - Policy Compliance
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Web Agent"
+  - "Safety"
+  - "Trustworthiness"
+  - "benchmark"
+  - "Policy Compliance"
 date: 2026-05-08
 content_hash: 7afbe03a36297472
 ---

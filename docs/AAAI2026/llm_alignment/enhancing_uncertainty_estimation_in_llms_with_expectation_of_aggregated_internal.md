@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Enhancing Uncertainty Estimation in LLMs with Expectation of Aggregated Internal Belief
 description: >-
-  [AAAI 2026][LLM Alignment][uncertainty estimation] This paper proposes EAGLE, a method that estimates uncertainty by aggregating logits from multiple intermediate hidden layers of an LLM and computing the expectation of the resulting confidence distribution. EAGLE requires no additional trainable parameters and reduces ECE from 12.6% to 3.2% while improving AUROC from 59.0% to 61.6% across multiple datasets and models.
+  [AAAI 2026][LLM Alignment][uncertainty estimation] This paper proposes EAGLE, a method that estimates uncertainty by aggregating logits from multiple intermediate hidden layers of an LLM and computing the expectation of…
 tags:
-  - AAAI 2026
-  - LLM Alignment
-  - uncertainty estimation
-  - internal state aggregation
-  - confidence calibration
-  - EAGLE
-  - hidden layers
+  - "AAAI 2026"
+  - "LLM Alignment"
+  - "uncertainty estimation"
+  - "internal state aggregation"
+  - "confidence calibration"
+  - "EAGLE"
+  - "hidden layers"
 date: 2026-05-08
 content_hash: 1384b0078a8a0844
 ---

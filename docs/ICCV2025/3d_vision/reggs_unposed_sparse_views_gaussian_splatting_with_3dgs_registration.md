@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RegGS: Unposed Sparse Views Gaussian Splatting with 3DGS Registration
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] RegGS is proposed as a framework that incrementally aligns locally generated 3D Gaussians from a feed-forward network into a globally consistent 3D representation via a differentiable 3DGS registration module based on the optimal-transport MW2 distance, enabling high-quality 3D reconstruction from unposed sparse views.
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] RegGS is proposed as a framework that incrementally aligns locally generated 3D Gaussians from a feed-forward network into a globally consistent 3D representation via a diffe…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - pose-free reconstruction
-  - sparse views
-  - optimal transport
-  - Gaussian registration
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "pose-free reconstruction"
+  - "sparse views"
+  - "optimal transport"
+  - "Gaussian registration"
 date: 2026-05-08
 content_hash: c1bd842ec3b9b5ed
 ---

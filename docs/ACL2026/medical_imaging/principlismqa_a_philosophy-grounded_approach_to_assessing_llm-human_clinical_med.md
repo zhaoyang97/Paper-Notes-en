@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PrinciplismQA: A Philosophy-Grounded Approach to Assessing LLM-Human Clinical Medical Ethics Alignment
 description: >-
-  [ACL 2026][Medical Imaging][Medical Ethics] This paper constructs the PrinciplismQA benchmark (3,648 questions, including knowledge-based MCQA and open-ended clinical ethics dilemmas) grounded in the internationally recognized gold standard of medical ethics—Principlism (the four principles of Autonomy, Non-maleficence, Beneficence, and Justice)—and develops an expert-calibrated evaluation pipeline. The study finds that high accuracy on knowledge benchmarks does not imply clinical ethical reasoning capability: even the strongest model, o3, achieves only 77.5% overall.
+  [ACL 2026][Medical Imaging][Medical Ethics] This paper constructs the PrinciplismQA benchmark (3,648 questions, including knowledge-based MCQA and open-ended clinical ethics dilemmas) grounded in the internationally reco…
 tags:
-  - ACL 2026
-  - Medical Imaging
-  - Medical Ethics
-  - Principlism
-  - Clinical Decision Alignment
-  - LLM Ethical Reasoning
-  - Benchmark Evaluation
+  - "ACL 2026"
+  - "Medical Imaging"
+  - "Medical Ethics"
+  - "Principlism"
+  - "Clinical Decision Alignment"
+  - "LLM Ethical Reasoning"
+  - "Benchmark Evaluation"
 date: 2026-05-08
 content_hash: 0338048fc5bc4c13
 ---

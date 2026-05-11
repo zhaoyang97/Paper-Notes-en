@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Table Question Answering in the Era of Large Language Models: A Comprehensive Survey
 description: >-
-  [ACL 2026][Reinforcement Learning][Table Question Answering] This paper presents a comprehensive survey of Table Question Answering (TQA) research in the era of large language models. It systematically categorizes task settings along five dimensions (table format, question complexity, answer format, modality, and domain), organizes modeling approaches around five core challenges (table understanding, complex queries, large input handling, data heterogeneity, and knowledge integration), covers 277 papers, and provides forward-looking discussions on emerging directions such as reinforcement learning and interpretability.
+  [ACL 2026][Reinforcement Learning][Table Question Answering] This paper presents a comprehensive survey of Table Question Answering (TQA) research in the era of large language models. It systematically categorizes task s…
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - Table Question Answering
-  - LLM
-  - Survey
-  - Table Understanding
-  - Complex Reasoning
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "Table Question Answering"
+  - "LLM"
+  - "Survey"
+  - "Table Understanding"
+  - "Complex Reasoning"
 date: 2026-05-08
 content_hash: 3498b5534709f92b
 ---

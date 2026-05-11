@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Deep SPI: Safe Policy Improvement via World Models
 description: >-
-  [ICLR 2026][Reinforcement Learning][safe policy improvement] This paper establishes a theoretical framework for Safe Policy Improvement (SPI) that unifies world models and representation learning with policy update guarantees: an importance-ratio-based neighborhood operator constrains policy updates to ensure monotonic improvement and convergence; local transition/reward losses control world model quality and representation stability. The proposed DeepSPI algorithm matches or surpasses PPO and DeepMDP on the ALE-57 benchmark.
+  [ICLR 2026][Reinforcement Learning][safe policy improvement] This paper establishes a theoretical framework for Safe Policy Improvement (SPI) that unifies world models and representation learning with policy update guara…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - safe policy improvement
-  - world model
-  - representation learning
-  - PPO
-  - importance ratio
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "safe policy improvement"
+  - "world model"
+  - "representation learning"
+  - "PPO"
+  - "importance ratio"
 date: 2026-05-08
 content_hash: 9076b7813cf90e58
 ---

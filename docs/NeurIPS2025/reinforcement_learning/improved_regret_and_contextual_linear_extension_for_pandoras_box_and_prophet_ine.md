@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Improved Regret and Contextual Linear Extension for Pandora's Box and Prophet Inequality
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Pandora's Box] This paper proposes new algorithms for the online Pandora's Box problem, improving regret from $\widetilde{O}(n\sqrt{T})$ to $\widetilde{O}(\sqrt{nT})$ (matching the lower bound), and introduces the first contextual linear extension achieving $\widetilde{O}(nd\sqrt{T})$ regret.
+  [NeurIPS 2025][Reinforcement Learning][Pandora's Box] This paper proposes new algorithms for the online Pandora's Box problem, improving regret from $\widetilde{O}(n\sqrt{T})$ to $\widetilde{O}(\sqrt{nT})$ (matching the…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Pandora's Box
-  - prophet inequality
-  - online learning
-  - regret bound
-  - contextual linear bandits
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Pandora's Box"
+  - "prophet inequality"
+  - "online learning"
+  - "regret bound"
+  - "contextual linear bandits"
 date: 2026-05-08
 content_hash: e06702e7e846660d
 ---

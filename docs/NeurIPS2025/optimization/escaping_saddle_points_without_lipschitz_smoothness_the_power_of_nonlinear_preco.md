@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Escaping Saddle Points without Lipschitz Smoothness: The Power of Nonlinear Preconditioning
 description: >-
-  [NeurIPS 2025][Optimization][nonlinear preconditioning] This paper proposes a unified sufficient condition connecting the $(L_0,L_1)$-smoothness and anisotropic smoothness frameworks, proves that nonlinear preconditioned gradient methods (including gradient clipping variants) retain saddle-point avoidance under these relaxed conditions, and establishes that a perturbed variant achieves second-order stationary points with polylogarithmic dimension dependence.
+  [NeurIPS 2025][Optimization][nonlinear preconditioning] This paper proposes a unified sufficient condition connecting the $(L_0,L_1)$-smoothness and anisotropic smoothness frameworks…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - nonlinear preconditioning
-  - saddle point escaping
-  - anisotropic smoothness
-  - $(L_0
-  - L_1)$-smoothness
-  - gradient clipping
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "nonlinear preconditioning"
+  - "saddle point escaping"
+  - "anisotropic smoothness"
+  - "$(L_0"
+  - "L_1)$-smoothness"
+  - "gradient clipping"
 date: 2026-05-08
 content_hash: 9a81216b30639cd9
 ---

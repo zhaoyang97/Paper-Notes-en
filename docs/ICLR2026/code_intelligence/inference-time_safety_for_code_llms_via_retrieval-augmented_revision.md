@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Inference-Time Safety for Code LLMs via Retrieval-Augmented Revision
 description: >-
-  [ICLR 2026][code safety] This paper proposes SOSecure, a training-free inference-time safety mechanism that retrieves relevant community security warnings from a Stack Overflow knowledge base via BM25, guiding the model to autonomously revise unsafe code during inference. SOSecure achieves up to 96.7% vulnerability fix rate with zero new vulnerability introductions across three real-world datasets.
+  [ICLR 2026][Code Intelligence][code safety] This paper proposes SOSecure, a training-free inference-time safety mechanism that retrieves relevant community security warnings from a Stack Overflow knowledge base via BM25…
 tags:
-  - ICLR 2026
-  - code safety
-  - retrieval-augmented generation
-  - inference-time intervention
-  - vulnerability repair
-  - Stack Overflow
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "code safety"
+  - "retrieval-augmented generation"
+  - "inference-time intervention"
+  - "vulnerability repair"
+  - "Stack Overflow"
 date: 2026-05-08
 content_hash: 7587552cfd2185b4
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EPSegFZ: Efficient Point Cloud Semantic Segmentation for Few- and Zero-Shot Scenarios
 description: >-
-  [AAAI 2026][3D Vision][Point Cloud Semantic Segmentation] This paper proposes EPSegFZ, a pretraining-free framework for few- and zero-shot 3D point cloud semantic segmentation. It extracts high-frequency features via ProERA, updates prototypes with textual information via LGPE, and establishes accurate query-prototype correspondences via DRPE. EPSegFZ surpasses the state of the art by 5.68% on S3DIS and 3.82% on ScanNet.
+  [AAAI 2026][3D Vision][Point Cloud Semantic Segmentation] This paper proposes EPSegFZ, a pretraining-free framework for few- and zero-shot 3D point cloud semantic segmentation. It extracts high-frequency features via Pro…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - Point Cloud Semantic Segmentation
-  - Few-Shot Learning
-  - Zero-Shot Learning
-  - Language Guidance
-  - Attention Mechanism
+  - "AAAI 2026"
+  - "3D Vision"
+  - "Point Cloud Semantic Segmentation"
+  - "Few-Shot Learning"
+  - "Zero-Shot Learning"
+  - "Language Guidance"
+  - "Attention Mechanism"
 date: 2026-05-08
 content_hash: daabdef2dfa622f2
 ---

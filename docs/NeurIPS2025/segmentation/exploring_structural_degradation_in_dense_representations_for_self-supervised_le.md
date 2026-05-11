@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Exploring Structural Degradation in Dense Representations for Self-supervised Learning
 description: >-
-  [NeurIPS 2025][Segmentation][Self-supervised Learning] This paper identifies and systematically investigates the *Self-supervised Dense Degradation* (SDD) phenomenon — where longer training improves classification yet hurts dense task performance — and proposes the DSE metric along with DSE-guided model selection and regularization strategies, achieving an average mIoU improvement of 3.0%.
+  [NeurIPS 2025][Segmentation][Self-supervised Learning] This paper identifies and systematically investigates the *Self-supervised Dense Degradation* (SDD) phenomenon — where longer training improves classification yet hu…
 tags:
-  - NeurIPS 2025
-  - Segmentation
-  - Self-supervised Learning
-  - Dense Representations
-  - Performance Degradation
-  - Model Selection
-  - Regularization
+  - "NeurIPS 2025"
+  - "Segmentation"
+  - "Self-supervised Learning"
+  - "Dense Representations"
+  - "Performance Degradation"
+  - "Model Selection"
+  - "Regularization"
 date: 2026-05-08
 content_hash: d34bf5096e30d4a4
 ---

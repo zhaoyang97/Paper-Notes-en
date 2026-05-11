@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MeshAnything V2: Artist-Created Mesh Generation with Adjacent Mesh Tokenization
 description: >-
-  [ICCV 2025][3D Vision][Mesh Generation] MeshAnything V2 proposes Adjacent Mesh Tokenization (AMT), which represents adjacent faces using a single vertex rather than the conventional three, reducing the average token sequence length by approximately half. This allows the maximum number of generated faces to scale from 800 to 1600 without additional computational cost, significantly improving the efficiency and quality of autoregressive mesh generation.
+  [ICCV 2025][3D Vision][Mesh Generation] MeshAnything V2 proposes Adjacent Mesh Tokenization (AMT), which represents adjacent faces using a single vertex rather than the conventional three…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Mesh Generation
-  - Serialization
-  - Tokenization
-  - Autoregressive
-  - Artist-Created Mesh
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Mesh Generation"
+  - "Serialization"
+  - "Tokenization"
+  - "Autoregressive"
+  - "Artist-Created Mesh"
 date: 2026-05-08
 content_hash: 57a928c53a7a983e
 ---

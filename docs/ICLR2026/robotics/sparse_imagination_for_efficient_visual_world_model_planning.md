@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Sparse Imagination for Efficient Visual World Model Planning
 description: >-
-  [ICLR 2026][Robotics][world model] This paper proposes Sparse Imagination, which achieves substantial inference speedup in ViT patch token-based world model planning by randomly dropping tokens and training with randomly grouped attention (50% drop rate reduces planning time by ~50%), while maintaining or even surpassing full-token planning performance on certain tasks. A key finding is that simple random dropout outperforms sophisticated token selection methods, as static importance ranking suffers from a "blind spot problem" in dynamic planning scenarios.
+  [ICLR 2026][Robotics][world model] This paper proposes Sparse Imagination, which achieves substantial inference speedup in ViT patch token-based world model planning by randomly dropping tokens and training with randomly…
 tags:
-  - ICLR 2026
-  - Robotics
-  - world model
-  - sparse tokens
-  - MPC
-  - DINO
-  - VLA
-  - token dropout
-  - planning efficiency
+  - "ICLR 2026"
+  - "Robotics"
+  - "world model"
+  - "sparse tokens"
+  - "MPC"
+  - "DINO"
+  - "VLA"
+  - "token dropout"
+  - "planning efficiency"
 date: 2026-05-08
 content_hash: ce8f83bec9377aa2
 ---

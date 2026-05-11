@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] I Can't Believe It's Not Robust: Catastrophic Collapse of Safety Classifiers under Embedding Drift
 description: >-
-  [ICLR 2026][LLM Reasoning][embedding drift] This paper systematically investigates the fragility of frozen-embedding-based safety classifiers under embedding drift induced by model updates. It finds that a mere 2% perturbation in the embedding space is sufficient to degrade classifier performance from 85% ROC-AUC to near-random levels (50%), with 72% of misclassifications occurring at high confidence (silent failure). Counterintuitively, instruction-tuned models prove harder to classify than their base counterparts.
+  [ICLR 2026][LLM Reasoning][embedding drift] This paper systematically investigates the fragility of frozen-embedding-based safety classifiers under embedding drift induced by model updates. It finds that a mere 2% pertur…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - embedding drift
-  - safety classifier
-  - silent failure
-  - RLHF alignment
-  - toxicity detection
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "embedding drift"
+  - "safety classifier"
+  - "silent failure"
+  - "RLHF alignment"
+  - "toxicity detection"
 date: 2026-05-08
 content_hash: 68b7bb449a4eede2
 ---

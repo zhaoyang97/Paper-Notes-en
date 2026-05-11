@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Structured Reinforcement Learning for Combinatorial Decision-Making
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][combinatorial MDP] This paper proposes Structured Reinforcement Learning (SRL), which embeds a combinatorial optimization solver as a differentiable layer within the actor of an actor-critic framework. End-to-end gradient propagation is achieved via Fenchel-Young loss with Gaussian perturbations, enabling purely online learning without expert demonstrations. SRL matches imitation learning and outperforms unstructured RL by up to 92% across six industrial-scale combinatorial decision-making problems.
+  [NeurIPS 2025][Reinforcement Learning][combinatorial MDP] This paper proposes Structured Reinforcement Learning (SRL), which embeds a combinatorial optimization solver as a differentiable layer within the actor of an act…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - combinatorial MDP
-  - structured actor
-  - Fenchel-Young loss
-  - COAML pipeline
-  - primal-dual algorithm
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "combinatorial MDP"
+  - "structured actor"
+  - "Fenchel-Young loss"
+  - "COAML pipeline"
+  - "primal-dual algorithm"
 date: 2026-05-08
 content_hash: d0e107bc4ef947ce
 ---

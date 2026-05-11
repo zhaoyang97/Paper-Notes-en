@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] On the Exponential Convergence for Offline RLHF with Pairwise Comparisons
 description: >-
-  [AAAI 2026][LLM Alignment][Offline RLHF] Under the offline RLHF pairwise comparison setting, this paper proposes the RL-LOW algorithm achieving exponential convergence $\exp(-\Omega(n/H))$ for simple regret, and derives the first instance-dependent lower bound proving this rate is optimal in the exponential sense.
+  [AAAI 2026][LLM Alignment][Offline RLHF] Under the offline RLHF pairwise comparison setting, this paper proposes the RL-LOW algorithm achieving exponential convergence $\exp(-\Omega(n/H))$ for simple regret…
 tags:
-  - AAAI 2026
-  - LLM Alignment
-  - Offline RLHF
-  - Exponential Convergence
-  - Pairwise Comparisons
-  - Instance-Dependent Lower Bound
-  - Differential Privacy
+  - "AAAI 2026"
+  - "LLM Alignment"
+  - "Offline RLHF"
+  - "Exponential Convergence"
+  - "Pairwise Comparisons"
+  - "Instance-Dependent Lower Bound"
+  - "Differential Privacy"
 date: 2026-05-08
 content_hash: d1f487dd9319f88e
 ---

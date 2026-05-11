@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] FSNet: Feasibility-Seeking Neural Network for Constrained Optimization with Guarantees
 description: >-
-  [NeurIPS 2025][constrained optimization] This paper proposes FSNet, a framework that integrates **differentiable feasibility-seeking steps** into neural networks. By minimizing constraint violations via unconstrained optimization, FSNet guarantees constraint satisfaction while supporting end-to-end training. It significantly outperforms traditional solvers in speed across convex/non-convex and smooth/non-smooth problems while maintaining feasibility.
+  [NeurIPS 2025][constrained optimization] This paper proposes FSNet, a framework that integrates **differentiable feasibility-seeking steps** into neural networks. By minimizing constraint violations via unconstrained opt…
 tags:
-  - NeurIPS 2025
-  - constrained optimization
-  - feasibility seeking
-  - neural network surrogate
-  - end-to-end training
-  - convergence guarantees
+  - "NeurIPS 2025"
+  - "constrained optimization"
+  - "feasibility seeking"
+  - "neural network surrogate"
+  - "end-to-end training"
+  - "convergence guarantees"
 date: 2026-05-08
 content_hash: 77cfb12bd5644420
 ---

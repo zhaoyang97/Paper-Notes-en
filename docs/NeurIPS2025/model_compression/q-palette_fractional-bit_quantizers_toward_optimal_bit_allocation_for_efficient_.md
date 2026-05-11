@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Q-Palette: Fractional-Bit Quantizers Toward Optimal Bit Allocation for Efficient LLM Deployment
 description: >-
-  [NeurIPS 2025][Model Compression][Model Quantization] This paper derives optimal bit allocation for Gaussianized weights from an information-theoretic perspective, proposes the Q-Palette collection of fractional-bit quantizers and a mixed-scheme quantization framework, and achieves near-optimal quantization performance with inference acceleration in LLM deployment.
+  [NeurIPS 2025][Model Compression][Model Quantization] This paper derives optimal bit allocation for Gaussianized weights from an information-theoretic perspective…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Model Quantization
-  - LLM Inference
-  - Fractional-Bit Quantization
-  - Rate-Distortion
-  - CUDA Optimization
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Model Quantization"
+  - "LLM Inference"
+  - "Fractional-Bit Quantization"
+  - "Rate-Distortion"
+  - "CUDA Optimization"
 date: 2026-05-08
 content_hash: d526a19e6f6736c5
 ---

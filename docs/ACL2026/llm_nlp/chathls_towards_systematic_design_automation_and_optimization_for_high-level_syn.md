@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ChatHLS: Towards Systematic Design Automation and Optimization for High-Level Synthesis
 description: >-
-  [ACL 2026][LLM/NLP][High-Level Synthesis] ChatHLS proposes a multi-agent HLS design framework featuring two core components — HLSTuner (QoR-aware reasoning for pragma selection) and HLSFixer (a hierarchical feedback-enhanced debugging framework) — combined with a self-evolving error case augmentation mechanism (VODA), achieving significant improvements over baselines in HLS-C generation success rate and hardware performance optimization.
+  [ACL 2026][LLM/NLP][High-Level Synthesis] ChatHLS proposes a multi-agent HLS design framework featuring two core components — HLSTuner (QoR-aware reasoning for pragma selection) and HLSFixer (a hierarchical feedback-enha…
 tags:
-  - ACL 2026
-  - LLM/NLP
-  - High-Level Synthesis
-  - LLM-Assisted Design
-  - Multi-Agent
-  - Pragma Optimization
-  - Automated Debugging
+  - "ACL 2026"
+  - "LLM/NLP"
+  - "High-Level Synthesis"
+  - "LLM-Assisted Design"
+  - "Multi-Agent"
+  - "Pragma Optimization"
+  - "Automated Debugging"
 date: 2026-05-08
 content_hash: d69da681664e5d8f
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Generative Video Compression with One-Dimensional Latent Representation
 description: >-
-  [CVPR 2026][Model Compression][Video Compression] This paper proposes GVC1D, which for the first time replaces the 2D grid latent representation in video compression with a compact 1D token sequence. Combined with a 1D memory module for modeling long-term temporal context, GVC1D achieves over 60% bitrate savings on perceptual quality metrics.
+  [CVPR 2026][Model Compression][Video Compression] This paper proposes GVC1D, which for the first time replaces the 2D grid latent representation in video compression with a compact 1D token sequence. Combined with a 1D m…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - Video Compression
-  - 1D Latent Representation
-  - Generative Codec
-  - Long-term Memory
-  - Token Compression
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Video Compression"
+  - "1D Latent Representation"
+  - "Generative Codec"
+  - "Long-term Memory"
+  - "Token Compression"
 date: 2026-05-08
 content_hash: 60ebf2edf0a929c7
 ---

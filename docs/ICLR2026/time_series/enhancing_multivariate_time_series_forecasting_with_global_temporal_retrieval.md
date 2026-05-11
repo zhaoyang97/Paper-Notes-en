@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Enhancing Multivariate Time Series Forecasting with Global Temporal Retrieval
 description: >-
-  [ICLR 2026][Time Series][Time Series Forecasting] This paper proposes the Global Temporal Retriever (GTR), a lightweight plug-and-play module that maintains adaptive global period embeddings and leverages absolute time indices to retrieve temporally aligned global periodic information, enabling arbitrary forecasting models to transcend the look-back window constraint and effectively capture global periodic patterns far exceeding the input length.
+  [ICLR 2026][Time Series][Time Series Forecasting] This paper proposes the Global Temporal Retriever (GTR), a lightweight plug-and-play module that maintains adaptive global period embeddings and leverages absolute time i…
 tags:
-  - ICLR 2026
-  - Time Series
-  - Time Series Forecasting
-  - Global Periodicity
-  - Retrieval Augmentation
-  - Plug-and-Play Module
-  - 2D Convolution
+  - "ICLR 2026"
+  - "Time Series"
+  - "Time Series Forecasting"
+  - "Global Periodicity"
+  - "Retrieval Augmentation"
+  - "Plug-and-Play Module"
+  - "2D Convolution"
 date: 2026-05-08
 content_hash: b5fc7029e88f46ee
 ---

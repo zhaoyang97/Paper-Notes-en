@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Bayesian Evaluation of Large Language Model Behavior
 description: >-
-  [NeurIPS 2025][LLM Evaluation][Bayesian inference] This paper proposes a Beta-Binomial Bayesian framework for evaluating LLM behavior. By modeling the posterior distribution of $\theta_m$ over stochastic generations for each prompt, the framework quantifies statistical uncertainty in evaluation metrics and introduces sequential sampling strategies such as Thompson sampling to achieve narrower credible intervals with fewer API calls.
+  [NeurIPS 2025][LLM Evaluation][Bayesian inference] This paper proposes a Beta-Binomial Bayesian framework for evaluating LLM behavior. By modeling the posterior distribution of $\theta_m$ over stochastic generations for…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - Bayesian inference
-  - uncertainty quantification
-  - sequential sampling
-  - Thompson sampling
-  - binary metrics
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "Bayesian inference"
+  - "uncertainty quantification"
+  - "sequential sampling"
+  - "Thompson sampling"
+  - "binary metrics"
 date: 2026-05-08
 content_hash: 9f008378a24cffca
 ---

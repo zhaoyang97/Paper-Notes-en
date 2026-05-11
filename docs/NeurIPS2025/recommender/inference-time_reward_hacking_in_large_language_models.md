@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Inference-Time Reward Hacking in Large Language Models
 description: >-
-  [NeurIPS 2025][Recommender Systems][reward hacking] This paper mathematically proves that inference-time alignment methods (e.g., BoN) inevitably exhibit reward hacking (true reward first increases then decreases) when optimizing a proxy reward. It proposes Best-of-Poisson (BoP) sampling to approximate the optimal KL-reward trade-off distribution, and designs the HedgeTune algorithm to locate the optimal inference-time parameter via one-dimensional root-finding, effectively mitigating reward hacking in both mathematical reasoning and human preference settings.
+  [NeurIPS 2025][Recommender Systems][reward hacking] This paper mathematically proves that inference-time alignment methods (e.g., BoN) inevitably exhibit reward hacking (true reward first increases then decreases) when o…
 tags:
-  - NeurIPS 2025
-  - Recommender Systems
-  - reward hacking
-  - inference-time alignment
-  - Best-of-N
-  - winner's curse
-  - hedging
+  - "NeurIPS 2025"
+  - "Recommender Systems"
+  - "reward hacking"
+  - "inference-time alignment"
+  - "Best-of-N"
+  - "winner's curse"
+  - "hedging"
 date: 2026-05-08
 content_hash: 94bf686d4a12604c
 ---

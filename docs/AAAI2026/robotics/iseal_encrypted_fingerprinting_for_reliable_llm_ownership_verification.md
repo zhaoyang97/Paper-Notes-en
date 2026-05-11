@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] iSeal: Encrypted Fingerprinting for Reliable LLM Ownership Verification
 description: >-
-  [AAAI 2026][Robotics][LLM fingerprinting] This paper proposes iSeal — the first active fingerprinting method capable of reliably verifying LLM ownership in a black-box setting where the model thief has full control over the inference process. Through a triple mechanism of an external encrypted encoder, RSC error correction, and similarity-based matching, iSeal maintains a 100% Fingerprint Success Rate (FSR) across 12 LLMs and 10+ attack types, while existing methods drop to 0%.
+  [AAAI 2026][Robotics][LLM fingerprinting] This paper proposes iSeal — the first active fingerprinting method capable of reliably verifying LLM ownership in a black-box setting where the model thief has full control over…
 tags:
-  - AAAI 2026
-  - Robotics
-  - LLM fingerprinting
-  - ownership verification
-  - encrypted encoder
-  - Reed-Solomon error correction
-  - verification robustness
+  - "AAAI 2026"
+  - "Robotics"
+  - "LLM fingerprinting"
+  - "ownership verification"
+  - "encrypted encoder"
+  - "Reed-Solomon error correction"
+  - "verification robustness"
 date: 2026-05-08
 content_hash: 37d2d155bcef58cb
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] On the Generalization of Representation Uncertainty in Earth Observation
 description: >-
-  [ICCV 2025][Segmentation][Earth Observation] This paper systematically investigates the generalization of pretrained representation uncertainty in Earth Observation (EO), demonstrating that EO-pretrained uncertainty generalizes robustly across geographic locations, EO tasks, and target granularities, while remaining highly sensitive to ground sampling distance (GSD).
+  [ICCV 2025][Segmentation][Earth Observation] This paper systematically investigates the generalization of pretrained representation uncertainty in Earth Observation (EO)…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - Earth Observation
-  - Representation Uncertainty
-  - Zero-Shot Transfer
-  - Semantic Segmentation
-  - Uncertainty Generalization
+  - "ICCV 2025"
+  - "Segmentation"
+  - "Earth Observation"
+  - "Representation Uncertainty"
+  - "Zero-Shot Transfer"
+  - "Semantic Segmentation"
+  - "Uncertainty Generalization"
 date: 2026-05-08
 content_hash: 438026174ef16ac7
 ---

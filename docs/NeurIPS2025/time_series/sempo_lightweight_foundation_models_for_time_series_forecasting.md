@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SEMPO: Lightweight Foundation Models for Time Series Forecasting
 description: >-
-  [NeurIPS 2025][Time Series][Time series foundation models] This paper proposes SEMPO — a lightweight time series foundation model with only 6.5M parameters pretrained on 83M time points — that combines energy-aware spectral decomposition with a mixture-of-prompts Transformer to surpass large foundation models with over 100× more parameters in zero-shot and few-shot forecasting.
+  [NeurIPS 2025][Time Series][Time series foundation models] This paper proposes SEMPO — a lightweight time series foundation model with only 6.5M parameters pretrained on 83M time points — that combines energy-aware spect…
 tags:
-  - NeurIPS 2025
-  - Time Series
-  - Time series foundation models
-  - lightweight
-  - spectral decomposition
-  - mixture of prompts
-  - zero-shot/few-shot forecasting
+  - "NeurIPS 2025"
+  - "Time Series"
+  - "Time series foundation models"
+  - "lightweight"
+  - "spectral decomposition"
+  - "mixture of prompts"
+  - "zero-shot/few-shot forecasting"
 date: 2026-05-08
 content_hash: aac2fae2d3264a6c
 ---

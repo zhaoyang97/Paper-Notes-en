@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Nonlinear Laplacians: Tunable Principal Component Analysis under Directional Prior Information
 description: >-
-  [NeurIPS 2025][Graph Learning][Nonlinear Laplacian] This paper proposes a nonlinear Laplacian spectral algorithm that fuses spectral information with directional prior information by adding a diagonal matrix—obtained by applying a nonlinear function $\sigma$ to the degree vector of the observation matrix $\bm{Y}$—to $\hat{\bm{Y}}$. The approach significantly reduces the signal detection threshold in the biased sparse PCA problem (from $\beta^*=1$ to approximately $0.76$).
+  [NeurIPS 2025][Graph Learning][Nonlinear Laplacian] This paper proposes a nonlinear Laplacian spectral algorithm that fuses spectral information with directional prior information by adding a diagonal matrix—obtained by…
 tags:
-  - NeurIPS 2025
-  - Graph Learning
-  - Nonlinear Laplacian
-  - Principal Component Analysis
-  - Spectral Algorithm
-  - Random Matrix Theory
-  - Directional Prior
+  - "NeurIPS 2025"
+  - "Graph Learning"
+  - "Nonlinear Laplacian"
+  - "Principal Component Analysis"
+  - "Spectral Algorithm"
+  - "Random Matrix Theory"
+  - "Directional Prior"
 date: 2026-05-08
 content_hash: d201f526c7501493
 ---

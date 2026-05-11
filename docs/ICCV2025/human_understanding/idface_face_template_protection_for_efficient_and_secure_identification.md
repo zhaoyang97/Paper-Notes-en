@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] IDFace: Face Template Protection for Efficient and Secure Identification
 description: >-
-  [ICCV 2025][Human Understanding][face template protection] This paper proposes IDFace, a homomorphic encryption (HE)-based face template protection method that achieves retrieval over 1 million encrypted templates in only 126ms — incurring merely a 2× overhead compared to unprotected retrieval — through two key techniques: a near-isometric transformation (real-valued vector → ternary vector) and a space-efficient encoding scheme.
+  [ICCV 2025][Human Understanding][face template protection] This paper proposes IDFace, a homomorphic encryption (HE)-based face template protection method that achieves retrieval over 1 million encrypted templates in onl…
 tags:
-  - ICCV 2025
-  - Human Understanding
-  - face template protection
-  - homomorphic encryption
-  - biometric privacy
-  - large-scale identification
-  - ternary quantization
+  - "ICCV 2025"
+  - "Human Understanding"
+  - "face template protection"
+  - "homomorphic encryption"
+  - "biometric privacy"
+  - "large-scale identification"
+  - "ternary quantization"
 date: 2026-05-08
 content_hash: e06b68054842e5f7
 ---

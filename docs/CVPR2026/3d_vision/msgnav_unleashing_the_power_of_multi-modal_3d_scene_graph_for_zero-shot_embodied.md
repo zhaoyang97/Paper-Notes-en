@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] MSGNav: Unleashing the Power of Multi-modal 3D Scene Graph for Zero-Shot Embodied Navigation
 description: >-
-  [CVPR 2026][3D Vision][Embodied Navigation] This paper proposes a Multi-modal 3D Scene Graph (M3DSG) that replaces conventional text-based relation edges with dynamically assigned image edges to preserve visual information. Built upon M3DSG, the zero-shot navigation system MSGNav is constructed, and a Visibility-based Viewpoint Decision (VVD) module is introduced to address the "last-mile" navigation problem. The method achieves state-of-the-art performance on GOAT-Bench and HM3D-ObjNav.
+  [CVPR 2026][3D Vision][Embodied Navigation] This paper proposes a Multi-modal 3D Scene Graph (M3DSG) that replaces conventional text-based relation edges with dynamically assigned image edges to preserve visual informati…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Embodied Navigation
-  - 3D Scene Graph
-  - Zero-Shot Navigation
-  - Multi-modal Scene Graph
-  - Viewpoint Decision
-  - VLM
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Embodied Navigation"
+  - "3D Scene Graph"
+  - "Zero-Shot Navigation"
+  - "Multi-modal Scene Graph"
+  - "Viewpoint Decision"
+  - "VLM"
 date: 2026-05-08
 content_hash: 3683bef5cd1344b0
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] WalkGPT: Grounded Vision-Language Conversation with Depth-Aware Segmentation for Pedestrian Navigation
 description: >-
-  [CVPR2026][Autonomous Driving][Vision-Language Models] WalkGPT is proposed as the first pixel-grounded large vision-language model for pedestrian accessibility navigation, unifying conversational reasoning, segmentation masks, and depth estimation within a single architecture, accompanied by the 41k-scale PAVE dataset.
+  [CVPR2026][Autonomous Driving][Vision-Language Models] WalkGPT is proposed as the first pixel-grounded large vision-language model for pedestrian accessibility navigation, unifying conversational reasoning…
 tags:
-  - CVPR2026
-  - Autonomous Driving
-  - Vision-Language Models
-  - Pixel-Level Grounding
-  - Depth-Aware Segmentation
-  - Pedestrian Navigation
-  - Accessibility Reasoning
-  - VQA
+  - "CVPR2026"
+  - "Autonomous Driving"
+  - "Vision-Language Models"
+  - "Pixel-Level Grounding"
+  - "Depth-Aware Segmentation"
+  - "Pedestrian Navigation"
+  - "Accessibility Reasoning"
+  - "VQA"
 date: 2026-05-08
 content_hash: 686d27dd6699643f
 ---

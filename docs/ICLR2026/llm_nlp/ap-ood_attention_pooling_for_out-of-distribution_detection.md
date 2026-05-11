@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AP-OOD: Attention Pooling for Out-of-Distribution Detection
 description: >-
-  [ICLR 2026][LLM/NLP][out-of-distribution detection] This paper proposes AP-OOD, which replaces the mean pooling in Mahalanobis distance-based OOD detection with learnable attention pooling, addressing the information loss caused by mean aggregation of token-level anomaly signals. On text OOD detection, AP-OOD reduces FPR95 on XSUM summarization from 27.84% to 4.67%, while supporting a smooth transition from unsupervised to semi-supervised settings.
+  [ICLR 2026][LLM/NLP][out-of-distribution detection] This paper proposes AP-OOD, which replaces the mean pooling in Mahalanobis distance-based OOD detection with learnable attention pooling…
 tags:
-  - ICLR 2026
-  - LLM/NLP
-  - out-of-distribution detection
-  - attention pooling
-  - Mahalanobis distance
-  - token-level information
-  - language models
+  - "ICLR 2026"
+  - "LLM/NLP"
+  - "out-of-distribution detection"
+  - "attention pooling"
+  - "Mahalanobis distance"
+  - "token-level information"
+  - "language models"
 date: 2026-05-08
 content_hash: c230b6974c054b12
 ---

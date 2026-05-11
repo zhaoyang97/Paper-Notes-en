@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SafeVLA: Towards Safety Alignment of Vision-Language-Action Model via Constrained Learning
 description: >-
-  [NeurIPS 2025][LLM Alignment][VLA safety] This work is the first to systematically apply the Constrained Markov Decision Process (CMDP) framework from Safe Reinforcement Learning (SafeRL) to safety alignment of Vision-Language-Action (VLA) models. Through a four-stage Integrated Safety Approach (ISA)—Model, Elicit, Constrain, and Assure—the method achieves an 83.58% reduction in safety violation costs on mobile manipulation tasks while maintaining task performance (+3.85%).
+  [NeurIPS 2025][LLM Alignment][VLA safety] This work is the first to systematically apply the Constrained Markov Decision Process (CMDP) framework from Safe Reinforcement Learning (SafeRL) to safety alignment of Vision-La…
 tags:
-  - NeurIPS 2025
-  - LLM Alignment
-  - VLA safety
-  - constrained MDP
-  - safe reinforcement learning
-  - embodied AI
-  - robot safety
+  - "NeurIPS 2025"
+  - "LLM Alignment"
+  - "VLA safety"
+  - "constrained MDP"
+  - "safe reinforcement learning"
+  - "embodied AI"
+  - "robot safety"
 date: 2026-05-08
 content_hash: 5e9baa178bf7cd89
 ---

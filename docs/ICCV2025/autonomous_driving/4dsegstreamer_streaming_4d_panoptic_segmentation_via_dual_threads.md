@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] 4DSegStreamer: Streaming 4D Panoptic Segmentation via Dual Threads
 description: >-
-  [ICCV 2025][Autonomous Driving][4D panoptic segmentation] This paper proposes 4DSegStreamer, a streaming 4D panoptic segmentation framework built upon a dual-thread system (predictive thread + inference thread). It achieves real-time, high-quality 4D panoptic segmentation through geometric and motion memory maintenance, ego-pose prediction, and inverse forward flow iteration.
+  [ICCV 2025][Autonomous Driving][4D panoptic segmentation] This paper proposes 4DSegStreamer, a streaming 4D panoptic segmentation framework built upon a dual-thread system (predictive thread + inference thread). It achie…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - 4D panoptic segmentation
-  - streaming perception
-  - dual-thread system
-  - motion alignment
-  - point cloud sequences
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "4D panoptic segmentation"
+  - "streaming perception"
+  - "dual-thread system"
+  - "motion alignment"
+  - "point cloud sequences"
 date: 2026-05-08
 content_hash: b2d4ad023a23c56b
 ---

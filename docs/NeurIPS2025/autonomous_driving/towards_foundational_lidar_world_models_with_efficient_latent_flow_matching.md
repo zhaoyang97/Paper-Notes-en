@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Towards Foundational LiDAR World Models with Efficient Latent Flow Matching
 description: >-
-  [NeurIPS 2025][Autonomous Driving][LiDAR world model] This paper proposes the first **transferable LiDAR world model**, achieving a 192× compression ratio via a Swin Transformer VAE (state-of-the-art reconstruction accuracy), replacing diffusion models with Conditional Flow Matching (CFM) for state-of-the-art semantic occupancy prediction (using only 4.38% of prior work's FLOPs), and surpassing OccWorld trained on full annotations across three domain transfer tasks using only 5% labeled data.
+  [NeurIPS 2025][Autonomous Driving][LiDAR world model] This paper proposes the first **transferable LiDAR world model**, achieving a 192× compression ratio via a Swin Transformer VAE (state-of-the-art reconstruction accur…
 tags:
-  - NeurIPS 2025
-  - Autonomous Driving
-  - LiDAR world model
-  - flow matching
-  - 4D semantic occupancy prediction
-  - domain transfer
-  - VAE compression
-  - foundation model
+  - "NeurIPS 2025"
+  - "Autonomous Driving"
+  - "LiDAR world model"
+  - "flow matching"
+  - "4D semantic occupancy prediction"
+  - "domain transfer"
+  - "VAE compression"
+  - "foundation model"
 date: 2026-05-08
 content_hash: 47f944a090f5e049
 ---

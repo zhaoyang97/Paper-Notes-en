@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PhysX-3D: Physical-Grounded 3D Asset Generation
 description: >-
-  [NeurIPS 2025][3D Vision][Physical-property 3D generation] PhysX proposes the first end-to-end physical-property-driven 3D asset generation paradigm, comprising PhysXNet (the first 3D dataset with systematic annotations across five physical dimensions—absolute scale, material, functional affordance, kinematics, and functional description—covering 26K+ objects) and PhysXGen (a dual-branch feed-forward generation framework that injects physical knowledge into a pretrained 3D structural latent space).
+  [NeurIPS 2025][3D Vision][Physical-property 3D generation] PhysX proposes the first end-to-end physical-property-driven 3D asset generation paradigm…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Physical-property 3D generation
-  - 3D dataset
-  - physical annotation
-  - articulated object modeling
-  - embodied AI
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Physical-property 3D generation"
+  - "3D dataset"
+  - "physical annotation"
+  - "articulated object modeling"
+  - "embodied AI"
 date: 2026-05-08
 content_hash: a302c56389f22ef1
 ---

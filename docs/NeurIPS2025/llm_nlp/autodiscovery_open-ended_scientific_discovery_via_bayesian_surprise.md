@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AutoDiscovery: Open-ended Scientific Discovery via Bayesian Surprise
 description: >-
-  [NeurIPS 2025][LLM/NLP][Bayesian Surprise] AutoDiscovery proposes Bayesian Surprise as an objective reward signal for open-ended scientific discovery — estimating the KL divergence between prior and posterior belief distributions via LLM sampling, combined with MCTS and progressive widening to explore the hypothesis space. On 21 real-world datasets, the method produces 5–29% more surprising discoveries than greedy/beam search baselines. Human evaluation confirms that Bayesian Surprise aligns with expert "surprise" ratings (0.67), substantially outperforming LLM self-evaluated "novelty" and "usefulness."
+  [NeurIPS 2025][LLM/NLP][Bayesian Surprise] AutoDiscovery proposes Bayesian Surprise as an objective reward signal for open-ended scientific discovery — estimating the KL divergence between prior and posterior belief dist…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - Bayesian Surprise
-  - Open-ended Discovery
-  - MCTS
-  - Hypothesis Generation
-  - LLM Agent
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "Bayesian Surprise"
+  - "Open-ended Discovery"
+  - "MCTS"
+  - "Hypothesis Generation"
+  - "LLM Agent"
 date: 2026-05-08
 content_hash: fc1ce7c1fe924ffe
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FastLongSpeech: Enhancing Large Speech-Language Models for Efficient Long-Speech Processing
 description: >-
-  [NeurIPS 2025][Model Compression][speech compression] FastLongSpeech is proposed to compress redundant speech representations via an iterative fusion strategy and to transfer short-speech capabilities to long-speech scenarios through dynamic compression training, enabling large speech-language models (LSLMs) to efficiently process long speech without long-speech training data, achieving state-of-the-art performance on long-speech QA with a 70% improvement in inference efficiency.
+  [NeurIPS 2025][Model Compression][speech compression] FastLongSpeech is proposed to compress redundant speech representations via an iterative fusion strategy and to transfer short-speech capabilities to long-speech scen…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - speech compression
-  - long-speech processing
-  - iterative fusion
-  - CTC
-  - dynamic compression training
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "speech compression"
+  - "long-speech processing"
+  - "iterative fusion"
+  - "CTC"
+  - "dynamic compression training"
 date: 2026-05-08
 content_hash: 5d2955046e88335c
 ---

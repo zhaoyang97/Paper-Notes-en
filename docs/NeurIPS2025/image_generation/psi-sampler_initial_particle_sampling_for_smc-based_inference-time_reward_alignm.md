@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Ψ-Sampler: Initial Particle Sampling for SMC-Based Inference-Time Reward Alignment in Score Models
 description: >-
-  [NeurIPS 2025][Image Generation][Inference-time alignment] This paper proposes the Ψ-Sampler framework, which introduces initial particle sampling based on the preconditioned Crank-Nicolson Langevin (pCNL) algorithm into SMC-based inference-time reward alignment. By initializing particles from a reward-aware posterior distribution, the framework substantially improves alignment performance on layout-guided generation, quantity-aware generation, and aesthetic preference generation.
+  [NeurIPS 2025][Image Generation][Inference-time alignment] This paper proposes the Ψ-Sampler framework, which introduces initial particle sampling based on the preconditioned Crank-Nicolson Langevin (pCNL) algorithm into…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Inference-time alignment
-  - Sequential Monte Carlo
-  - Reward alignment
-  - MCMC
-  - Preconditioned Crank-Nicolson
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Inference-time alignment"
+  - "Sequential Monte Carlo"
+  - "Reward alignment"
+  - "MCMC"
+  - "Preconditioned Crank-Nicolson"
 date: 2026-05-08
 content_hash: 6e4b5a19294820ce
 ---

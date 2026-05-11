@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Sheaf Cohomology of Linear Predictive Coding Networks
 description: >-
-  [NeurIPS 2025 (Workshop: Symmetry and Geometry in Neural Representations)][Predictive Coding] This paper formalizes linear predictive coding (PC) networks as cellular sheaves, proves that PC inference is equivalent to diffusion under the sheaf Laplacian, and employs the Hodge decomposition to factorize supervisory signals into eliminable errors (removed via inference) and irreducible errors (characterized by the cohomology of cyclic topology). This framework precisely explains why certain cyclic weight initializations lead to learning stagnation.
+  [NeurIPS 2025 (Workshop: Symmetry and Geometry in Neural Representations)][Predictive Coding] This paper formalizes linear predictive coding (PC) networks as cellular sheaves…
 tags:
   - "NeurIPS 2025 (Workshop: Symmetry and Geometry in Neural Representations)"
-  - Predictive Coding
-  - Cellular Sheaf
-  - Cohomology
-  - Hodge Theory
-  - Sheaf Laplacian
+  - "Predictive Coding"
+  - "Cellular Sheaf"
+  - "Cohomology"
+  - "Hodge Theory"
+  - "Sheaf Laplacian"
 date: 2026-05-08
 content_hash: c0a5fe216d62adc5
 ---

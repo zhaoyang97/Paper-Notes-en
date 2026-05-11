@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PCoKG: Personality-aware Commonsense Reasoning with Debate
 description: >-
-  [AAAI 2026][Graph Learning][Commonsense knowledge graph] This work constructs PCoKG, the first large-scale personality-aware commonsense knowledge graph comprising 521,316 quadruples $(e, p, r, t)$ (event–personality–reasoning dimension–tail), generated via LLM role-playing combined with a multi-agent debate mechanism to produce high-quality personality-differentiated inferences. Experiments validate that MBTI personality information enhances commonsense reasoning and personalized dialogue generation.
+  [AAAI 2026][Graph Learning][Commonsense knowledge graph] This work constructs PCoKG, the first large-scale personality-aware commonsense knowledge graph comprising 521,316 quadruples $(e, p, r…
 tags:
-  - AAAI 2026
-  - Graph Learning
-  - Commonsense knowledge graph
-  - personality-aware reasoning
-  - MBTI
-  - LLM role-playing
-  - multi-agent debate
+  - "AAAI 2026"
+  - "Graph Learning"
+  - "Commonsense knowledge graph"
+  - "personality-aware reasoning"
+  - "MBTI"
+  - "LLM role-playing"
+  - "multi-agent debate"
 date: 2026-05-08
 content_hash: 96904f8bc4fff783
 ---

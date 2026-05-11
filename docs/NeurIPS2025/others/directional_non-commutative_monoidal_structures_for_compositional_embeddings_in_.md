@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Directional Non-Commutative Monoidal Structures for Compositional Embeddings in Machine Learning
 description: >-
-  [NeurIPS 2025][non-commutative algebra] This paper proposes an algebraic framework based on directional non-commutative monoid operators, providing a unified mathematical foundation for multi-dimensional compositional embeddings and unifying SSM recurrence, Transformer self-attention, and RoPE positional encoding as special cases.
+  [NeurIPS 2025][non-commutative algebra] This paper proposes an algebraic framework based on directional non-commutative monoid operators…
 tags:
-  - NeurIPS 2025
-  - non-commutative algebra
-  - compositional embeddings
-  - monoidal structure
-  - interchange law
-  - positional encoding
-  - SSM
-  - Transformer
+  - "NeurIPS 2025"
+  - "non-commutative algebra"
+  - "compositional embeddings"
+  - "monoidal structure"
+  - "interchange law"
+  - "positional encoding"
+  - "SSM"
+  - "Transformer"
 date: 2026-05-08
 content_hash: ad92a8bddedef7a1
 ---

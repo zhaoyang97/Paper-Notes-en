@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Token Reduction via Local and Global Contexts Optimization for Efficient Video Large Language Models
 description: >-
-  [CVPR2026][Video Understanding][Video LLM] This paper proposes the AOT framework, which establishes local-global token anchors and employs Optimal Transport (OT) to aggregate the semantic information of pruned/merged tokens at both intra-frame and inter-frame levels. The method achieves training-free video token compression, retaining 97.6% of original performance while discarding 90% of tokens.
+  [CVPR2026][Video Understanding][Video LLM] This paper proposes the AOT framework, which establishes local-global token anchors and employs Optimal Transport (OT) to aggregate the semantic information of pruned/merged tok…
 tags:
-  - CVPR2026
-  - Video Understanding
-  - Video LLM
-  - Token Reduction
-  - optimal transport
-  - training-free
-  - Spatiotemporal Compression
+  - "CVPR2026"
+  - "Video Understanding"
+  - "Video LLM"
+  - "Token Reduction"
+  - "optimal transport"
+  - "training-free"
+  - "Spatiotemporal Compression"
 date: 2026-05-08
 content_hash: f30b008457d5850d
 ---

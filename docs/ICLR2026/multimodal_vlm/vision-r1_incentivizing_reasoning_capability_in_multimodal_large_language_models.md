@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Vision-R1: Incentivizing Reasoning Capability in Multimodal Large Language Models
 description: >-
-  [ICLR 2026][Multimodal VLM][Multimodal Reasoning] This paper proposes Vision-R1, which constructs 200K high-quality multimodal CoT data via Modality Bridging for cold-start initialization, followed by Progressive Thinking Suppression Training (PTST) combined with GRPO reinforcement learning. At the 7B parameter scale, Vision-R1 achieves multimodal mathematical reasoning performance approaching OpenAI O1.
+  [ICLR 2026][Multimodal VLM][Multimodal Reasoning] This paper proposes Vision-R1, which constructs 200K high-quality multimodal CoT data via Modality Bridging for cold-start initialization…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Multimodal Reasoning
-  - Reinforcement Learning
-  - Chain-of-Thought
-  - GRPO
-  - Cold-Start Initialization
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Multimodal Reasoning"
+  - "Reinforcement Learning"
+  - "Chain-of-Thought"
+  - "GRPO"
+  - "Cold-Start Initialization"
 date: 2026-05-08
 content_hash: 88f8443df381248e
 ---

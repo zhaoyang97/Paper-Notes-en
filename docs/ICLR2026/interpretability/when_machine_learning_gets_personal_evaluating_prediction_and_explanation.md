@@ -2,16 +2,17 @@
 title: >-
   [Paper Note] When Machine Learning Gets Personal: Evaluating Prediction and Explanation
 description: >-
-  [ICLR 2026][Personalized Models] This paper proposes a unified framework to quantify the impact of model personalization on both prediction accuracy and explanation quality. It proves that these two dimensions can be decoupled (explanations may improve or degrade while predictions remain unchanged), derives finite-sample lower bounds on hypothesis testing error probabilities based on dataset statistics, and reveals that in many practical settings the benefit of personalization is statistically untestable in principle.
+  [ICLR 2026][Interpretability][Personalized Models] This paper proposes a unified framework to quantify the impact of model personalization on both prediction accuracy and explanation quality. It proves that these two dim…
 tags:
-  - ICLR 2026
-  - Personalized Models
-  - Explainability
-  - Benefit of Personalization
-  - Hypothesis Testing
-  - Finite-Sample Lower Bounds
-  - Sufficiency
-  - Incomprehensiveness
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Personalized Models"
+  - "Explainability"
+  - "Benefit of Personalization"
+  - "Hypothesis Testing"
+  - "Finite-Sample Lower Bounds"
+  - "Sufficiency"
+  - "Incomprehensiveness"
 date: 2026-05-08
 content_hash: 04fe5a544dcb3bac
 ---

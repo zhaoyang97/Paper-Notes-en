@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CAT: Circular-Convolutional Attention for Sub-Quadratic Transformers
 description: >-
-  [NeurIPS 2025][LLM/NLP][Circulant convolution] CAT replaces the $N \times N$ attention matrix in standard self-attention with a circulant matrix generated from an $N$-dimensional vector, leveraging FFT to achieve $O(N \log N)$ attention computation. While strictly preserving the softmax row-normalization structure, CAT matches or surpasses standard attention on ImageNet-1k (avg pool, CLIP-L accuracy 0.694 vs. 0.646) and WikiText-103 masked LM (PPL 8.32 vs. 9.82).
+  [NeurIPS 2025][LLM/NLP][Circulant convolution] CAT replaces the $N \times N$ attention matrix in standard self-attention with a circulant matrix generated from an $N$-dimensional vector…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - Circulant convolution
-  - FFT attention
-  - sub-quadratic complexity
-  - softmax preservation
-  - EIT framework
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "Circulant convolution"
+  - "FFT attention"
+  - "sub-quadratic complexity"
+  - "softmax preservation"
+  - "EIT framework"
 date: 2026-05-08
 content_hash: f82c1e8d1c524307
 ---

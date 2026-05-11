@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Effective In-context Cross-domain Knowledge Transfer via Domain-invariant-neurons-based Retrieval
 description: >-
-  [ACL 2026][LLM Reasoning][Cross-domain knowledge transfer] This paper proposes DIN-Retrieval, which identifies domain-invariant neurons (DINs) in LLMs exhibiting consistent activation polarity across domains, constructs a domain-robust representational subspace for retrieving structurally compatible cross-domain demonstrations, and provides the first systematic evidence that cross-domain ICL examples can improve LLM reasoning performance, achieving an average gain of 1.8% on math-to-logic reasoning transfer.
+  [ACL 2026][LLM Reasoning][Cross-domain knowledge transfer] This paper proposes DIN-Retrieval, which identifies domain-invariant neurons (DINs) in LLMs exhibiting consistent activation polarity across domains…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - Cross-domain knowledge transfer
-  - domain-invariant neurons
-  - in-context learning retrieval
-  - reasoning structure alignment
-  - mathematical-logical reasoning
+  - "ACL 2026"
+  - "LLM Reasoning"
+  - "Cross-domain knowledge transfer"
+  - "domain-invariant neurons"
+  - "in-context learning retrieval"
+  - "reasoning structure alignment"
+  - "mathematical-logical reasoning"
 date: 2026-05-08
 content_hash: ffb9062bf3bb8a6f
 ---

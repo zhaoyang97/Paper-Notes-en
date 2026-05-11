@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Align Once, Benefit Multilingually: Enforcing Multilingual Consistency for LLM Safety Alignment
 description: >-
-  [ICLR 2026][LLM Alignment][multilingual safety] This paper proposes Multi-Lingual Consistency (MLC), an auxiliary loss that manipulates the singular values of a multilingual representation matrix via SVD to drive it toward rank-1 (i.e., collinear multilingual representations). Using only multilingual prompt translations—without requiring target-language responses—MLC consistently transfers safety alignment from one language to all others.
+  [ICLR 2026][LLM Alignment][multilingual safety] This paper proposes Multi-Lingual Consistency (MLC), an auxiliary loss that manipulates the singular values of a multilingual representation matrix via SVD to drive it towa…
 tags:
-  - ICLR 2026
-  - LLM Alignment
-  - multilingual safety
-  - consistency alignment
-  - singular value decomposition
-  - cross-lingual transfer
-  - DPO
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "multilingual safety"
+  - "consistency alignment"
+  - "singular value decomposition"
+  - "cross-lingual transfer"
+  - "DPO"
 date: 2026-05-08
 content_hash: b0833ed5d47fb745
 ---

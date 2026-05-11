@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mixed Signals: A Diverse Point Cloud Dataset for Heterogeneous LiDAR V2X Collaboration
 description: >-
-  [ICCV 2025][Autonomous Driving][V2X Collaborative Perception] Mixed Signals is the first real-world V2X dataset featuring heterogeneous LiDAR configurations (varying mounting heights and tilt angles), collected by 3 autonomous vehicles and one roadside unit. It provides 45,100 point cloud frames and 240,600 annotated bounding boxes, and is also the first V2X dataset collected in a left-hand traffic country (Australia).
+  [ICCV 2025][Autonomous Driving][V2X Collaborative Perception] Mixed Signals is the first real-world V2X dataset featuring heterogeneous LiDAR configurations (varying mounting heights and tilt angles)…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - V2X Collaborative Perception
-  - Point Cloud Dataset
-  - Heterogeneous Sensors
-  - 3D Object Detection
-  - Vulnerable Road Users
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "V2X Collaborative Perception"
+  - "Point Cloud Dataset"
+  - "Heterogeneous Sensors"
+  - "3D Object Detection"
+  - "Vulnerable Road Users"
 date: 2026-05-08
 content_hash: 87c740b36e4e971b
 ---

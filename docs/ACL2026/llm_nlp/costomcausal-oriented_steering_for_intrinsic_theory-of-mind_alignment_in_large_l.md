@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CoSToM: Causal-oriented Steering for Intrinsic Theory-of-Mind Alignment in Large Language Models
 description: >-
-  [ACL 2026][LLM/NLP][Theory of Mind] This paper proposes CoSToM, a framework that first applies causal tracing to identify the critical layers encoding Theory-of-Mind (ToM) features within LLMs (finding they concentrate primarily in early layers), then performs lightweight alignment via activation steering at those layers—significantly improving social reasoning quality in negotiation and persuasion dialogues, bridging the gap between "knowing but not applying" and "knowing and applying."
+  [ACL 2026][LLM/NLP][Theory of Mind] This paper proposes CoSToM, a framework that first applies causal tracing to identify the critical layers encoding Theory-of-Mind (ToM) features within LLMs (finding they concentrate p…
 tags:
-  - ACL 2026
-  - LLM/NLP
-  - Theory of Mind
-  - causal tracing
-  - activation steering
-  - dialogue systems
-  - social reasoning
+  - "ACL 2026"
+  - "LLM/NLP"
+  - "Theory of Mind"
+  - "causal tracing"
+  - "activation steering"
+  - "dialogue systems"
+  - "social reasoning"
 date: 2026-05-08
 content_hash: c2d23b7609f08417
 ---

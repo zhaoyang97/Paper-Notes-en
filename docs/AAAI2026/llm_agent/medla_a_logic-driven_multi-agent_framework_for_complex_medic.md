@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MedLA: A Logic-Driven Multi-Agent Framework for Complex Medical Reasoning with Large Language Models
 description: >-
-  [AAAI 2026][LLM Agent][Syllogistic Reasoning] This paper proposes MedLA, the first multi-agent medical reasoning framework based on syllogistic logic trees. Each agent organizes its reasoning as an explicit logic tree composed of syllogistic nodes (major premise–minor premise–conclusion). Multiple agents align and revise their logic trees at the premise level through graph-guided multi-round discussions. MedLA outperforms all baselines by 7.4% on MedDDx (8B model) and achieves an average accuracy of 69.9% on medical QA benchmarks with an 8B model, surpassing 70B RAG-based models.
+  [AAAI 2026][LLM Agent][Syllogistic Reasoning] This paper proposes MedLA, the first multi-agent medical reasoning framework based on syllogistic logic trees. Each agent organizes its reasoning as an explicit logic tree co…
 tags:
-  - AAAI 2026
-  - LLM Agent
-  - Syllogistic Reasoning
-  - Logic Tree
-  - Multi-Agent Discussion
-  - Medical QA
-  - Premise-Level Alignment
+  - "AAAI 2026"
+  - "LLM Agent"
+  - "Syllogistic Reasoning"
+  - "Logic Tree"
+  - "Multi-Agent Discussion"
+  - "Medical QA"
+  - "Premise-Level Alignment"
 date: 2026-05-08
 content_hash: c777b812c4cf6df0
 ---

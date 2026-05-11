@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Rectified Decoupled Dataset Distillation: A Closer Look for Fair and Comprehensive Evaluation
 description: >-
-  [ICLR 2026][Model Compression][Dataset distillation] This paper proposes RD3 (Rectified Decoupled Dataset Distillation), systematically demonstrating that performance discrepancies among existing decoupled dataset distillation methods stem primarily from inconsistent post-evaluation settings rather than differences in distillation quality. By establishing a unified and fair evaluation framework, the reported 27.3% performance gap is corrected to 6.7%.
+  [ICLR 2026][Model Compression][Dataset distillation] This paper proposes RD3 (Rectified Decoupled Dataset Distillation), systematically demonstrating that performance discrepancies among existing decoupled dataset distil…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Dataset distillation
-  - decoupled distillation
-  - fair evaluation
-  - post-evaluation protocol
-  - synthetic data
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Dataset distillation"
+  - "decoupled distillation"
+  - "fair evaluation"
+  - "post-evaluation protocol"
+  - "synthetic data"
 date: 2026-05-08
 content_hash: 1af035e2fef4e1ea
 ---

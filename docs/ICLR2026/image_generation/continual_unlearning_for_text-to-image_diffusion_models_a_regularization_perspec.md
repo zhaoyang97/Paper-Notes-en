@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Continual Unlearning for Text-to-Image Diffusion Models: A Regularization Perspective
 description: >-
-  [ICLR 2026][Image Generation][continual unlearning] This paper presents the first systematic study of continual unlearning for text-to-image (T2I) diffusion models. It identifies that existing unlearning methods suffer from "utility collapse" under sequential unlearning requests due to cumulative parameter drift, and proposes a suite of plug-in regularization strategies (L1/L2 norm, selective fine-tuning, model merging) along with a semantics-aware gradient projection method to mitigate this issue.
+  [ICLR 2026][Image Generation][continual unlearning] This paper presents the first systematic study of continual unlearning for text-to-image (T2I) diffusion models. It identifies that existing unlearning methods suffer f…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - continual unlearning
-  - diffusion models
-  - regularization
-  - gradient projection
-  - concept erasure
+  - "ICLR 2026"
+  - "Image Generation"
+  - "continual unlearning"
+  - "diffusion models"
+  - "regularization"
+  - "gradient projection"
+  - "concept erasure"
 date: 2026-05-08
 content_hash: 5b9cc10a50b760bf
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Rectified Point Flow: Generic Point Cloud Pose Estimation
 description: >-
-  [NeurIPS 2025][3D Vision][point cloud pose estimation] This paper proposes Rectified Point Flow, a unified generative framework that reformulates pairwise point cloud registration and multi-part shape assembly as a conditional generation problem, estimating part poses by learning a continuous point-wise velocity field.
+  [NeurIPS 2025][3D Vision][point cloud pose estimation] This paper proposes Rectified Point Flow, a unified generative framework that reformulates pairwise point cloud registration and multi-part shape assembly as a condi…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - point cloud pose estimation
-  - rectified flow
-  - shape assembly
-  - registration
-  - symmetry handling
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "point cloud pose estimation"
+  - "rectified flow"
+  - "shape assembly"
+  - "registration"
+  - "symmetry handling"
 date: 2026-05-08
 content_hash: 03052f82ed5ec8ef
 ---

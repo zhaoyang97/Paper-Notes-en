@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TAMMs: Change Understanding and Forecasting in Satellite Image Time Series with Temporal-Aware Multimodal Models
 description: >-
-  [ICLR 2026][Remote Sensing][satellite image time series] TAMMs is proposed as the first unified framework that jointly performs Temporal Change Description (TCD) and Future Satellite Image Forecasting (FSIF) within a single MLLM-diffusion architecture. A Temporal Adaptation Module (TAM) awakens the temporal reasoning capability of a frozen MLLM, while a Semantic Fusion Control Injection (SFCI) mechanism converts change understanding into generative control signals.
+  [ICLR 2026][Remote Sensing][satellite image time series] TAMMs is proposed as the first unified framework that jointly performs Temporal Change Description (TCD) and Future Satellite Image Forecasting (FSIF) within a sin…
 tags:
-  - ICLR 2026
-  - Remote Sensing
-  - satellite image time series
-  - temporal change description
-  - future prediction
-  - multimodal large language model
-  - diffusion model
+  - "ICLR 2026"
+  - "Remote Sensing"
+  - "satellite image time series"
+  - "temporal change description"
+  - "future prediction"
+  - "multimodal large language model"
+  - "diffusion model"
 date: 2026-05-08
 content_hash: c11abd680b2ae952
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learn2Synth: Learning Optimal Data Synthesis Using Hypergradients for Brain Image Segmentation
 description: >-
-  [ICCV 2025][Segmentation][Domain Randomization] This paper proposes Learn2Synth, a training framework that leverages hypergradients to learn optimal synthetic data augmentation parameters, enabling segmentation networks trained exclusively on synthetic data to achieve peak performance on real data. The framework simultaneously attains high in-domain accuracy and strong out-of-domain generalization, outperforming both SynthSeg and supervised learning baselines on brain MRI segmentation tasks.
+  [ICCV 2025][Segmentation][Domain Randomization] This paper proposes Learn2Synth, a training framework that leverages hypergradients to learn optimal synthetic data augmentation parameters…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - Domain Randomization
-  - Hypergradients
-  - Synthetic Data Augmentation
-  - Brain Image Segmentation
-  - Domain Generalization
+  - "ICCV 2025"
+  - "Segmentation"
+  - "Domain Randomization"
+  - "Hypergradients"
+  - "Synthetic Data Augmentation"
+  - "Brain Image Segmentation"
+  - "Domain Generalization"
 date: 2026-05-08
 content_hash: 099249bbde611275
 ---

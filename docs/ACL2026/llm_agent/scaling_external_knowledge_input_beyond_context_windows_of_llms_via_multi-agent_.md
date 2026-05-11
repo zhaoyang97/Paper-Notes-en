@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Scaling External Knowledge Input Beyond Context Windows of LLMs via Multi-Agent Collaboration
 description: >-
-  [ACL 2026][LLM Agent][Context window extension] This paper proposes ExtAgents, a multi-agent framework that addresses the performance degradation observed in existing multi-agent methods when scaling external knowledge input beyond the context window. It introduces two mechanisms—global knowledge synchronization (information exchange across all Seeking Agents) and knowledge-accumulative reasoning (progressively injecting filtered knowledge into the Reasoning Agent)—achieving significant improvements on multi-hop QA and long survey generation tasks.
+  [ACL 2026][LLM Agent][Context window extension] This paper proposes ExtAgents, a multi-agent framework that addresses the performance degradation observed in existing multi-agent methods when scaling external knowledge i…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - Context window extension
-  - multi-agent collaboration
-  - external knowledge scaling
-  - multi-hop QA
-  - knowledge synchronization
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Context window extension"
+  - "multi-agent collaboration"
+  - "external knowledge scaling"
+  - "multi-hop QA"
+  - "knowledge synchronization"
 date: 2026-05-08
 content_hash: 6a1679fc655d7479
 ---

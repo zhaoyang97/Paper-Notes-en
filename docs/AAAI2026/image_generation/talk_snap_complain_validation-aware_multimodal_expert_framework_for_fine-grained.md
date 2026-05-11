@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Talk, Snap, Complain: Validation-Aware Multimodal Expert Framework for Fine-Grained Customer Grievances
 description: >-
-  [AAAI2026][Image Generation][Multimodal complaint analysis] This paper proposes VALOR, a validation-aware multimodal expert framework combining a multi-expert routing architecture with Chain-of-Thought reasoning and a semantic alignment validation mechanism, which achieves joint fine-grained classification of complaint Aspect and Severity in multi-turn multimodal customer service dialogues, yielding absolute improvements of 12.94%/6.51% over the strongest baseline Gemma-3.
+  [AAAI2026][Image Generation][Multimodal complaint analysis] This paper proposes VALOR, a validation-aware multimodal expert framework combining a multi-expert routing architecture with Chain-of-Thought reasoning and a se…
 tags:
-  - AAAI2026
-  - Image Generation
-  - Multimodal complaint analysis
-  - Mixture-of-Experts
-  - Chain-of-Thought
-  - semantic alignment
-  - fine-grained classification
+  - "AAAI2026"
+  - "Image Generation"
+  - "Multimodal complaint analysis"
+  - "Mixture-of-Experts"
+  - "Chain-of-Thought"
+  - "semantic alignment"
+  - "fine-grained classification"
 date: 2026-05-08
 content_hash: 7277becda64e1bea
 ---

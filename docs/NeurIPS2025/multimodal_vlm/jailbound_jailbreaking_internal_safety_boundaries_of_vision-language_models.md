@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] JailBound: Jailbreaking Internal Safety Boundaries of Vision-Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][jailbreak] Inspired by the Eliciting Latent Knowledge (ELK) framework, this paper is the first to reveal that VLMs possess approximable safety decision boundaries in the latent space of fusion layers. It proposes JailBound, a two-stage attack framework comprising Safety Boundary Probing and Safety Boundary Crossing, which jointly optimizes image and text adversarial perturbations to cross this boundary. JailBound achieves average attack success rates of 94.32% and 67.28% in white-box and black-box settings, respectively, significantly surpassing the state of the art.
+  [NeurIPS 2025][Multimodal VLM][jailbreak] Inspired by the Eliciting Latent Knowledge (ELK) framework, this paper is the first to reveal that VLMs possess approximable safety decision boundaries in the latent space of fus…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - jailbreak
-  - safety boundary
-  - latent space attack
-  - ELK
-  - cross-modal perturbation
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "jailbreak"
+  - "safety boundary"
+  - "latent space attack"
+  - "ELK"
+  - "cross-modal perturbation"
 date: 2026-05-08
 content_hash: 7b520003da0ed002
 ---

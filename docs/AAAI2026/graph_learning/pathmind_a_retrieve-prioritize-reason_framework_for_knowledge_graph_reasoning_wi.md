@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PathMind: A Retrieve-Prioritize-Reason Framework for Knowledge Graph Reasoning with Large Language Models
 description: >-
-  [AAAI 2026][Graph Learning][Knowledge Graph Reasoning] This paper proposes PathMind, a framework following the Retrieve-Prioritize-Reason paradigm. It identifies important reasoning paths via a semantics-aware path prioritization function that jointly considers cumulative cost and estimated future cost (inspired by A*), and then enhances faithful and interpretable LLM reasoning through a two-stage training strategy comprising task-specific instruction tuning and path-level preference alignment. PathMind achieves state-of-the-art performance on complex reasoning tasks while consuming significantly fewer tokens.
+  [AAAI 2026][Graph Learning][Knowledge Graph Reasoning] This paper proposes PathMind, a framework following the Retrieve-Prioritize-Reason paradigm. It identifies important reasoning paths via a semantics-aware path prior…
 tags:
-  - AAAI 2026
-  - Graph Learning
-  - Knowledge Graph Reasoning
-  - LLM
-  - Path Prioritization
-  - Retrieval Augmentation
-  - Preference Alignment
+  - "AAAI 2026"
+  - "Graph Learning"
+  - "Knowledge Graph Reasoning"
+  - "LLM"
+  - "Path Prioritization"
+  - "Retrieval Augmentation"
+  - "Preference Alignment"
 date: 2026-05-08
 content_hash: 0d2df3e7e14840d4
 ---

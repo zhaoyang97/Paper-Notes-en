@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] SERE: Similarity-based Expert Re-routing for Efficient Batch Decoding in MoE Models
 description: >-
-  [Model Compression] SERE is proposed to pre-compute an expert similarity matrix and dynamically re-route secondary experts to their most similar primary experts during batch decoding, achieving up to 2.0× speedup with negligible quality loss, accompanied by a plug-and-play vLLM CUDA kernel.
+  [Model Compression] SERE is proposed to pre-compute an expert similarity matrix and dynamically re-route secondary experts to their most similar primary experts during batch decoding…
 tags:
-  - Model Compression
+  - "Model Compression"
 date: 2026-05-08
 content_hash: 52119f37b812c2e8
 ---

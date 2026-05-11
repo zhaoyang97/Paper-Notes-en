@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] NimbusGS: Unified 3D Scene Reconstruction under Hybrid Weather
 description: >-
-  [CVPR 2026][3D Vision][3D Gaussian Splatting] NimbusGS proposes a unified 3D scene reconstruction framework that decomposes weather degradation into a continuous scattering field (fog/haze) and a per-view particulate residual layer (rain/snow), coupled with a geometry-guided gradient scaling mechanism, achieving state-of-the-art reconstruction under individual and hybrid weather conditions within a single framework.
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] NimbusGS proposes a unified 3D scene reconstruction framework that decomposes weather degradation into a continuous scattering field (fog/haze) and a per-view particulate res…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - adverse weather
-  - scene reconstruction
-  - physical modeling
-  - weather decomposition
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "adverse weather"
+  - "scene reconstruction"
+  - "physical modeling"
+  - "weather decomposition"
 date: 2026-05-08
 content_hash: 1b84201890fcd00a
 ---

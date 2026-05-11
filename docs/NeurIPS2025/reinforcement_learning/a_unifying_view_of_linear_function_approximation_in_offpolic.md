@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Unifying View of Linear Function Approximation in Off-Policy RL Through Matrix Splitting and Preconditioning
 description: >-
-  [NeurIPS 2025 (Spotlight, top 3%)][Reinforcement Learning][temporal difference learning] This work is the first to introduce matrix splitting theory, unifying TD, FQI, and PFQI under linear function approximation as iterative methods for solving the same target linear system $(\Sigma_{cov} - \gamma\Sigma_{cr})\theta = \theta_{\phi,r}$, differing only in their preconditioners. It establishes necessary and sufficient conditions for the convergence of each algorithm, introduces the novel concept of rank invariance, and reveals that target networks are fundamentally a continuous transformation of the preconditioner from a constant to a data-adaptive form.
+  [NeurIPS 2025 (Spotlight, top 3%)][Reinforcement Learning][temporal difference learning] This work is the first to introduce matrix splitting theory, unifying TD, FQI…
 tags:
-  - NeurIPS 2025 (Spotlight, top 3%)
-  - Reinforcement Learning
-  - temporal difference learning
-  - fitted Q-iteration
-  - matrix splitting
-  - preconditioning
-  - convergence analysis
+  - "NeurIPS 2025 (Spotlight, top 3%)"
+  - "Reinforcement Learning"
+  - "temporal difference learning"
+  - "fitted Q-iteration"
+  - "matrix splitting"
+  - "preconditioning"
+  - "convergence analysis"
 date: 2026-05-08
 content_hash: 53b4ef93379919f7
 ---

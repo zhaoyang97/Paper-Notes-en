@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LLM Strategic Reasoning: Agentic Study through Behavioral Game Theory
 description: >-
-  [NeurIPS 2025][LLM Safety][Strategic Reasoning] This paper proposes an LLM strategic reasoning evaluation framework grounded in behavioral game theory. It employs Truncated Quantal Response Equilibrium (TQRE) to quantify reasoning depth τ, evaluates 22 state-of-the-art models across 13 matrix games, and reveals differences in reasoning styles as well as biases induced by demographic personas.
+  [NeurIPS 2025][LLM Safety][Strategic Reasoning] This paper proposes an LLM strategic reasoning evaluation framework grounded in behavioral game theory. It employs Truncated Quantal Response Equilibrium (TQRE) to quantify…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - Strategic Reasoning
-  - Behavioral Game Theory
-  - TQRE
-  - Reasoning Depth
-  - Demographic Bias
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "Strategic Reasoning"
+  - "Behavioral Game Theory"
+  - "TQRE"
+  - "Reasoning Depth"
+  - "Demographic Bias"
 date: 2026-05-08
 content_hash: bcaa8542f137bcb5
 ---

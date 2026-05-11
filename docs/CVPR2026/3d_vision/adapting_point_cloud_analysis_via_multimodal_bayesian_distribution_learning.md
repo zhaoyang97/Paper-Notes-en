@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Adapting Point Cloud Analysis via Multimodal Bayesian Distribution Learning
 description: >-
-  [CVPR 2026][3D Vision][Test-time adaptation] BayesMM proposes a training-free dynamic Bayesian distribution learning framework that models textual and geometric modalities as Gaussian distributions and automatically balances modality weights via Bayesian model averaging, achieving robust test-time adaptation across multiple point cloud benchmarks with an average improvement exceeding 4%.
+  [CVPR 2026][3D Vision][Test-time adaptation] BayesMM proposes a training-free dynamic Bayesian distribution learning framework that models textual and geometric modalities as Gaussian distributions and automatically bala…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Test-time adaptation
-  - point cloud recognition
-  - Bayesian inference
-  - multimodal distribution learning
-  - zero-shot generalization
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Test-time adaptation"
+  - "point cloud recognition"
+  - "Bayesian inference"
+  - "multimodal distribution learning"
+  - "zero-shot generalization"
 date: 2026-05-08
 content_hash: 21f57b17a5b55ac1
 ---

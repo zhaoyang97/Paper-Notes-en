@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] DriveLaW: Unifying Planning and Video Generation in a Latent Driving World
 description: >-
-  [CVPR 2026][Video Generation][World Model] This paper proposes DriveLaW, a driving world model that unifies video generation and motion planning through a shared latent space. The intermediate latent features of the video generator are directly injected into a diffusion-based planner, achieving state-of-the-art performance simultaneously on the nuScenes video prediction benchmark and the NAVSIM planning benchmark.
+  [CVPR 2026][Video Generation][World Model] This paper proposes DriveLaW, a driving world model that unifies video generation and motion planning through a shared latent space. The intermediate latent features of the vide…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - World Model
-  - Autonomous Driving Planning
-  - Latent Space
-  - Diffusion Policy
+  - "CVPR 2026"
+  - "Video Generation"
+  - "World Model"
+  - "Autonomous Driving Planning"
+  - "Latent Space"
+  - "Diffusion Policy"
 date: 2026-05-08
 content_hash: e4ee00ed2cf07f94
 ---

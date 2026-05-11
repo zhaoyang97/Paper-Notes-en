@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] KTAE: A Model-Free Algorithm to Key-Tokens Advantage Estimation in Mathematical Reasoning
 description: >-
-  [NeurIPS 2025][Model Compression][token-level advantage estimation] KTAE proposes a model-free token-level advantage estimation algorithm that quantifies the statistical association between each token and correct reasoning outcomes via Fisher's exact test and information gain. The resulting fine-grained token importance is superimposed on the rollout-level advantage of GRPO/DAPO, achieving superior performance on five mathematical reasoning benchmarks while significantly reducing generation length.
+  [NeurIPS 2025][Model Compression][token-level advantage estimation] KTAE proposes a model-free token-level advantage estimation algorithm that quantifies the statistical association between each token and correct reasoni…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - token-level advantage estimation
-  - GRPO
-  - DAPO
-  - mathematical reasoning
-  - reinforcement learning
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "token-level advantage estimation"
+  - "GRPO"
+  - "DAPO"
+  - "mathematical reasoning"
+  - "reinforcement learning"
 date: 2026-05-08
 content_hash: b91f629d414ec851
 ---

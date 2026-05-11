@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] W2S-AlignTree: Weak-to-Strong Inference-Time Alignment for Large Language Models via Monte Carlo Tree Search
 description: >-
-  [AAAI 2026][LLM Alignment] This paper proposes W2S-AlignTree, the first inference-time alignment framework that integrates Monte Carlo Tree Search (MCTS) with the weak-to-strong generalization (W2SG) paradigm. It leverages step-level proxy value functions derived from a weak model to guide the generation of a strong model at inference time, achieving significant improvements over baselines across sentiment control, summarization, and instruction-following tasks — with a 15.9% gain on the Llama3-8B summarization task.
+  [AAAI 2026][LLM Alignment][inference-time alignment] This paper proposes W2S-AlignTree, the first inference-time alignment framework that integrates Monte Carlo Tree Search (MCTS) with the weak-to-strong generalization (…
 tags:
-  - AAAI 2026
-  - LLM Alignment
-  - inference-time alignment
-  - weak-to-strong generalization
-  - Monte Carlo tree search
-  - preference optimization
+  - "AAAI 2026"
+  - "LLM Alignment"
+  - "inference-time alignment"
+  - "weak-to-strong generalization"
+  - "Monte Carlo tree search"
+  - "preference optimization"
 date: 2026-05-08
 content_hash: 9a548e62da402b16
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] CURaTE: Continual Unlearning in Real Time with Ensured Preservation of LLM Knowledge
 description: >-
-  [ACL 2026][continual unlearning] CURaTE proposes a behavioral unlearning framework based on sentence embedding matching: a general-purpose unlearning embedder is trained prior to deployment (without any forget set); after deployment, embeddings of incoming unlearning requests are stored in a database; at inference time, cosine similarity determines whether to answer or refuse a query. LLM weights are never modified, yielding near-perfect knowledge preservation.
+  [ACL 2026][Information Retrieval & RAG][continual unlearning] CURaTE proposes a behavioral unlearning framework based on sentence embedding matching: a general-purpose unlearning embedder is trained prior to deployment (…
 tags:
-  - ACL 2026
-  - continual unlearning
-  - real-time unlearning
-  - behavioral unlearning
-  - sentence embeddings
-  - knowledge preservation
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "continual unlearning"
+  - "real-time unlearning"
+  - "behavioral unlearning"
+  - "sentence embeddings"
+  - "knowledge preservation"
 date: 2026-05-08
 content_hash: 5c26792c815c3653
 ---

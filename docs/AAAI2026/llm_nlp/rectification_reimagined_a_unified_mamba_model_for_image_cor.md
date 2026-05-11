@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Rectification Reimagined: A Unified Mamba Model for Image Correction and Rectangling with Prompts
 description: >-
-  [AAAI 2026][LLM/NLP][image correction] From a unified distortion rectification perspective, this paper proposes the UniRect framework, which employs Residual Progressive TPS for geometric deformation correction and Residual Mamba Blocks for degradation compensation. UniRect jointly handles four tasks—portrait correction, wide-angle rectangling, stitching rectangling, and rotation correction—via Sparse MoE for four-in-one multi-task learning. It achieves PSNR gains of 3.82 dB on stitching rectangling and 0.87 dB on rotation correction.
+  [AAAI 2026][LLM/NLP][image correction] From a unified distortion rectification perspective, this paper proposes the UniRect framework…
 tags:
-  - AAAI 2026
-  - LLM/NLP
-  - image correction
-  - image rectangling
-  - unified rectification
-  - Mamba
-  - thin-plate spline
-  - mixture-of-experts
+  - "AAAI 2026"
+  - "LLM/NLP"
+  - "image correction"
+  - "image rectangling"
+  - "unified rectification"
+  - "Mamba"
+  - "thin-plate spline"
+  - "mixture-of-experts"
 date: 2026-05-08
 content_hash: 32c3700325e21bf8
 ---

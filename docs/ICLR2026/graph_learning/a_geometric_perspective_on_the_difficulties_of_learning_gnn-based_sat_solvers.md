@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Geometric Perspective on the Difficulties of Learning GNN-based SAT Solvers
 description: >-
-  [ICLR 2026][Graph Learning][GNN] This paper proves, from the geometric perspective of graph Ricci curvature, that the bipartite graph representation of random k-SAT instances exhibits inherent negative curvature that decreases as problem difficulty increases. It establishes a theoretical connection between GNN oversquashing and SAT solving difficulty, and validates the theory through test-time graph rewiring.
+  [ICLR 2026][Graph Learning][GNN] This paper proves, from the geometric perspective of graph Ricci curvature, that the bipartite graph representation of random k-SAT instances exhibits inherent negative curvature that dec…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - GNN
-  - SAT solver
-  - Ricci curvature
-  - oversquashing
-  - graph geometry
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "GNN"
+  - "SAT solver"
+  - "Ricci curvature"
+  - "oversquashing"
+  - "graph geometry"
 date: 2026-05-08
 content_hash: 15c50b85b52030cb
 ---

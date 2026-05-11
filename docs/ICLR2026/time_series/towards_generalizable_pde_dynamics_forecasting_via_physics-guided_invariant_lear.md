@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Generalizable PDE Dynamics Forecasting via Physics-Guided Invariant Learning
 description: >-
-  [ICLR 2026][Time Series][PDE Invariant Learning] This paper proposes iMOOE, a framework that explicitly formalizes two-level physical invariance principles — operator invariance and compositional invariance — within PDE systems, and instantiates them via a mixture-of-operator-experts network and a frequency-enhanced risk equalization objective, achieving state-of-the-art zero-shot PDE dynamics forecasting across diverse OOD scenarios without any test-time adaptation.
+  [ICLR 2026][Time Series][PDE Invariant Learning] This paper proposes iMOOE, a framework that explicitly formalizes two-level physical invariance principles — operator invariance and compositional invariance — within PDE…
 tags:
-  - ICLR 2026
-  - Time Series
-  - PDE Invariant Learning
-  - Zero-shot OOD Generalization
-  - Mixture of Operator Experts
-  - Frequency Enhancement
-  - Neural Operators
+  - "ICLR 2026"
+  - "Time Series"
+  - "PDE Invariant Learning"
+  - "Zero-shot OOD Generalization"
+  - "Mixture of Operator Experts"
+  - "Frequency Enhancement"
+  - "Neural Operators"
 date: 2026-05-08
 content_hash: b78292aca15d38b6
 ---

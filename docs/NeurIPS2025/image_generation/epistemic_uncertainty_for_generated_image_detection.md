@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Epistemic Uncertainty for Generated Image Detection
 description: >-
-  [NeurIPS 2025][Image Generation][AI-generated image detection] This paper proposes WePe (Weight Perturbation), which estimates epistemic uncertainty by applying weight perturbations to a pretrained vision foundation model (DINOv2). The method exploits the divergence between natural and AI-generated images in uncertainty space for detection, requiring no training.
+  [NeurIPS 2025][Image Generation][AI-generated image detection] This paper proposes WePe (Weight Perturbation), which estimates epistemic uncertainty by applying weight perturbations to a pretrained vision foundation mode…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - AI-generated image detection
-  - epistemic uncertainty
-  - weight perturbation
-  - DINOv2
-  - out-of-distribution detection
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "AI-generated image detection"
+  - "epistemic uncertainty"
+  - "weight perturbation"
+  - "DINOv2"
+  - "out-of-distribution detection"
 date: 2026-05-08
 content_hash: f667cf7fffd62718
 ---

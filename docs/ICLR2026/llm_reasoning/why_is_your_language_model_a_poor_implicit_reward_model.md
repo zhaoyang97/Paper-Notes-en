@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Why is Your Language Model a Poor Implicit Reward Model?
 description: >-
-  [ICLR 2026][LLM Reasoning][Implicit reward model] This paper provides theoretical and empirical evidence that implicit reward models (IM-RM, e.g., DPO) generalize worse than explicit reward models (EX-RM) because IM-RM overfits to surface-level token cues rather than semantic representations, leading to substantial accuracy degradation under token distribution shift. The paper also refutes the "generation–verification gap" hypothesis.
+  [ICLR 2026][LLM Reasoning][Implicit reward model] This paper provides theoretical and empirical evidence that implicit reward models (IM-RM, e.g.…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Implicit reward model
-  - explicit reward model
-  - generalization gap
-  - token-level cues
-  - DPO vs RLHF
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "Implicit reward model"
+  - "explicit reward model"
+  - "generalization gap"
+  - "token-level cues"
+  - "DPO vs RLHF"
 date: 2026-05-08
 content_hash: af6b007118385cd2
 ---

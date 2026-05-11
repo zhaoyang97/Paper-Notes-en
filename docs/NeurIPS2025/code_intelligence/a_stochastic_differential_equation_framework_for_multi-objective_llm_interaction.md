@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] A Stochastic Differential Equation Framework for Multi-Objective LLM Interactions
 description: >-
-  [NeurIPS 2025][stochastic differential equation] This paper models multi-objective optimization in iterative LLM interactions as an SDE (drift-diffusion process), quantifies inter-objective coupling via an interference matrix, and analyzes strategy convergence behavior through eigenvalue spectral analysis. Validation on code generation (three objectives: security, efficiency, functionality) demonstrates convergence rates ranging from 0.33 to 1.29 and predictability up to $R^2 = 0.74$ across different strategies.
+  [NeurIPS 2025][Code Intelligence][stochastic differential equation] This paper models multi-objective optimization in iterative LLM interactions as an SDE (drift-diffusion process)…
 tags:
-  - NeurIPS 2025
-  - stochastic differential equation
-  - multi-objective optimization
-  - LLM interaction
-  - interference matrix
-  - code generation
+  - "NeurIPS 2025"
+  - "Code Intelligence"
+  - "stochastic differential equation"
+  - "multi-objective optimization"
+  - "LLM interaction"
+  - "interference matrix"
+  - "code generation"
 date: 2026-05-08
 content_hash: a5bc932892199302
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Statistical Guarantees for High-Dimensional Stochastic Gradient Descent
 description: >-
-  [NeurIPS 2025][Time Series][stochastic gradient descent] This work introduces coupling techniques from high-dimensional nonlinear time series into online learning, providing the first rigorous moment convergence bounds and high-probability concentration inequalities—under $\ell^s$ and $\ell^\infty$ norms—for constant learning rate SGD and its Ruppert–Polyak averaged variant (ASGD) in high dimensions.
+  [NeurIPS 2025][Time Series][stochastic gradient descent] This work introduces coupling techniques from high-dimensional nonlinear time series into online learning…
 tags:
-  - NeurIPS 2025
-  - Time Series
-  - stochastic gradient descent
-  - high-dimensional statistics
-  - constant learning rate
-  - geometric moment contraction
-  - concentration inequalities
+  - "NeurIPS 2025"
+  - "Time Series"
+  - "stochastic gradient descent"
+  - "high-dimensional statistics"
+  - "constant learning rate"
+  - "geometric moment contraction"
+  - "concentration inequalities"
 date: 2026-05-08
 content_hash: 45a5ae8b848faf12
 ---

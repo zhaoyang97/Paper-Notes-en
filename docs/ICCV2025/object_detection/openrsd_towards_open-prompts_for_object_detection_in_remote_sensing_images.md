@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OpenRSD: Towards Open-prompts for Object Detection in Remote Sensing Images
 description: >-
-  [ICCV 2025][Object Detection][Open-prompt detection] OpenRSD is a general-purpose open-prompt object detection framework for remote sensing that supports both text and image multimodal prompts. It integrates an alignment head and a fusion head to balance speed and accuracy, employs a three-stage training pipeline, and is trained on the ORSD+ dataset comprising 470K images. OpenRSD achieves state-of-the-art average performance across seven public benchmarks while maintaining real-time inference at 20.8 FPS.
+  [ICCV 2025][Object Detection][Open-prompt detection] OpenRSD is a general-purpose open-prompt object detection framework for remote sensing that supports both text and image multimodal prompts. It integrates an alignment…
 tags:
-  - ICCV 2025
-  - Object Detection
-  - Open-prompt detection
-  - remote sensing object detection
-  - oriented bounding box detection
-  - multimodal prompts
-  - self-training
+  - "ICCV 2025"
+  - "Object Detection"
+  - "Open-prompt detection"
+  - "remote sensing object detection"
+  - "oriented bounding box detection"
+  - "multimodal prompts"
+  - "self-training"
 date: 2026-05-08
 content_hash: b20b0e2e9496d1a5
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PixelDiT: Pixel Diffusion Transformers for Image Generation
 description: >-
-  [CVPR 2026][Image Generation][Pixel diffusion] PixelDiT proposes a fully Transformer-based dual-level pixel-space diffusion model: a patch-level DiT captures global semantics while a pixel-level DiT refines textural details, achieving an FID of 1.61 on ImageNet without any VAE, and enabling direct text-to-image training at 1024-resolution in pixel space.
+  [CVPR 2026][Image Generation][Pixel diffusion] PixelDiT proposes a fully Transformer-based dual-level pixel-space diffusion model: a patch-level DiT captures global semantics while a pixel-level DiT refines textural deta…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Pixel diffusion
-  - dual-level Transformer
-  - end-to-end generation
-  - pixel modeling
-  - text-to-image
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Pixel diffusion"
+  - "dual-level Transformer"
+  - "end-to-end generation"
+  - "pixel modeling"
+  - "text-to-image"
 date: 2026-05-08
 content_hash: b793ee0f16a6a6a9
 ---

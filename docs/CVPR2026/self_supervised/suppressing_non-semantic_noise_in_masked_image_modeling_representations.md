@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Suppressing Non-Semantic Noise in Masked Image Modeling Representations
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Masked Image Modeling] This paper identifies that representations learned by Masked Image Modeling (MIM) retain substantial non-semantic information (e.g., low-level features such as texture and color), and proposes a training-free post-hoc method, SOAP (Semantically Orthogonal Artifact Projection), which leverages PCA to identify and project out non-semantic components, consistently improving zero-shot performance across multiple MIM models.
+  [CVPR 2026][Self-Supervised Learning][Masked Image Modeling] This paper identifies that representations learned by Masked Image Modeling (MIM) retain substantial non-semantic information (e.g.…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - Masked Image Modeling
-  - Non-Semantic Noise
-  - Principal Component Analysis
-  - Representation Purification
-  - Zero-Shot Classification
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Masked Image Modeling"
+  - "Non-Semantic Noise"
+  - "Principal Component Analysis"
+  - "Representation Purification"
+  - "Zero-Shot Classification"
 date: 2026-05-08
 content_hash: e8d9ae06885839be
 ---

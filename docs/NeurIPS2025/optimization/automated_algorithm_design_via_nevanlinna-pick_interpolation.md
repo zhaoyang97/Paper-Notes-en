@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Automated Algorithm Design via Nevanlinna-Pick Interpolation
 description: >-
-  [NeurIPS 2025 (DynaFront Workshop)][Optimization][Automated algorithm design] This paper proposes an automated algorithm design framework based on Nevanlinna-Pick interpolation from frequency-domain robust control theory, targeting strongly convex optimization with equality constraints, and achieves an optimal trade-off between the number of matrix-vector multiplications and the convergence rate.
+  [NeurIPS 2025 (DynaFront Workshop)][Optimization][Automated algorithm design] This paper proposes an automated algorithm design framework based on Nevanlinna-Pick interpolation from frequency-domain robust control theory…
 tags:
-  - NeurIPS 2025 (DynaFront Workshop)
-  - Optimization
-  - Automated algorithm design
-  - Nevanlinna-Pick interpolation
-  - robust control
-  - equality-constrained optimization
-  - convergence rate
+  - "NeurIPS 2025 (DynaFront Workshop)"
+  - "Optimization"
+  - "Automated algorithm design"
+  - "Nevanlinna-Pick interpolation"
+  - "robust control"
+  - "equality-constrained optimization"
+  - "convergence rate"
 date: 2026-05-08
 content_hash: ee2e232998f693ea
 ---

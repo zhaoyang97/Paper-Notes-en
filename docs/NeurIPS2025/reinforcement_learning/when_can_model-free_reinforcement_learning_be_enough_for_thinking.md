@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] When Can Model-Free Reinforcement Learning be Enough for Thinking?
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Thought MDP] This paper proposes the Thought MDP formalism to characterize the conditions under which "thinking" behavior emerges under model-free RL: policy initialization is the decisive factor; thinking actions are equivalent to the agent performing one step of policy improvement before acting; and open-source LLMs satisfy the necessary conditions for thinking to emerge.
+  [NeurIPS 2025][Reinforcement Learning][Thought MDP] This paper proposes the Thought MDP formalism to characterize the conditions under which "thinking" behavior emerges under model-free RL: policy initialization is the d…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Thought MDP
-  - model-free RL
-  - emergence of thinking behavior
-  - policy initialization
-  - dual-process theory
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Thought MDP"
+  - "model-free RL"
+  - "emergence of thinking behavior"
+  - "policy initialization"
+  - "dual-process theory"
 date: 2026-05-08
 content_hash: bacae85eb597d59f
 ---

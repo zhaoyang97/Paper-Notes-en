@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ReRec: Reasoning-Augmented LLM-based Recommendation Assistant via Reinforcement Fine-tuning
 description: >-
-  [ACL 2026][Reinforcement Learning][Recommendation Assistant] This paper proposes ReRec, a reinforcement fine-tuning (RFT)-based recommendation assistant framework that addresses the limitations of coarse reward signals and unsupervised reasoning processes through three components: dual-graph enhanced reward shaping for fine-grained reward signals, reasoning-aware advantage estimation for step-level differentiated supervision, and an online curriculum scheduler for dynamic training difficulty adjustment. ReRec enables LLMs to handle complex multi-step reasoning recommendation queries and significantly outperforms existing methods on the RecBench+ benchmark.
+  [ACL 2026][Reinforcement Learning][Recommendation Assistant] This paper proposes ReRec, a reinforcement fine-tuning (RFT)-based recommendation assistant framework that addresses the limitations of coarse reward signals a…
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - Recommendation Assistant
-  - Reinforcement Fine-tuning
-  - Reasoning Augmentation
-  - Reward Shaping
-  - Curriculum Learning
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "Recommendation Assistant"
+  - "Reinforcement Fine-tuning"
+  - "Reasoning Augmentation"
+  - "Reward Shaping"
+  - "Curriculum Learning"
 date: 2026-05-08
 content_hash: 260bc55733c4dd7a
 ---

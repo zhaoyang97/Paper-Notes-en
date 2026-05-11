@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Verification-Guided Context Optimization for Tool Calling via Hierarchical LLMs-as-editors
 description: >-
-  [AAAI 2026][Tool Calling] This paper proposes the VGCO framework, which employs LLMs as hierarchical editors to iteratively optimize tool documentation and knowledge base context through verification-guided signals, achieving significant improvements in retrieval recall, tool selection, and parameter filling accuracy in large-scale tool calling scenarios.
+  [AAAI 2026][Tool Calling] This paper proposes the VGCO framework, which employs LLMs as hierarchical editors to iteratively optimize tool documentation and knowledge base context through verification-guided signals…
 tags:
-  - AAAI 2026
-  - Tool Calling
-  - Context Optimization
-  - LLM Editor
-  - Knowledge Base Retrieval
-  - Document Optimization
+  - "AAAI 2026"
+  - "Tool Calling"
+  - "Context Optimization"
+  - "LLM Editor"
+  - "Knowledge Base Retrieval"
+  - "Document Optimization"
 date: 2026-05-08
 content_hash: 450791fa7616791c
 ---

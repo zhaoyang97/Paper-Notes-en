@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CWNet: Causal Wavelet Network for Low-Light Image Enhancement
 description: >-
-  [ICCV 2025][Image Restoration][Low-light image enhancement] This paper proposes CWNet, a Causal Wavelet Network that models low-light image enhancement through a structural causal model (SCM), treating semantic information as causal factors and brightness/color degradation as non-causal factors, and employs a wavelet-based backbone for fine-grained frequency-domain feature restoration.
+  [ICCV 2025][Image Restoration][Low-light image enhancement] This paper proposes CWNet, a Causal Wavelet Network that models low-light image enhancement through a structural causal model (SCM)…
 tags:
-  - ICCV 2025
-  - Image Restoration
-  - Low-light image enhancement
-  - causal inference
-  - wavelet transform
-  - state space model
-  - CLIP semantic consistency
+  - "ICCV 2025"
+  - "Image Restoration"
+  - "Low-light image enhancement"
+  - "causal inference"
+  - "wavelet transform"
+  - "state space model"
+  - "CLIP semantic consistency"
 date: 2026-05-08
 content_hash: 956d17cc8d072dec
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Understanding and Enhancing Mask-Based Pretraining towards Universal Representations
 description: >-
-  [NEURIPS2025][LLM Pretraining][masked autoencoder] This paper employs high-dimensional linear regression theory to precisely characterize the effect of masking ratio on test risk in mask-based pretraining via a bias-variance decomposition, revealing that the optimal masking ratio depends on both the downstream task and model size. Building on this theory, the paper proposes R2MAE (Random Ratio MAE), which consistently outperforms fixed masking ratios across vision, language, DNA, and single-cell modeling benchmarks.
+  [NEURIPS2025][LLM Pretraining][masked autoencoder] This paper employs high-dimensional linear regression theory to precisely characterize the effect of masking ratio on test risk in mask-based pretraining via a bias-vari…
 tags:
-  - NEURIPS2025
-  - LLM Pretraining
-  - masked autoencoder
-  - pretraining theory
-  - random matrix theory
-  - bias-variance tradeoff
-  - R2MAE
+  - "NEURIPS2025"
+  - "LLM Pretraining"
+  - "masked autoencoder"
+  - "pretraining theory"
+  - "random matrix theory"
+  - "bias-variance tradeoff"
+  - "R2MAE"
 date: 2026-05-08
 content_hash: 66a88e6d64cd689a
 ---

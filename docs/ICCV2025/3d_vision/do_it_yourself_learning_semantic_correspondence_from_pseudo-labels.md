@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Do It Yourself: Learning Semantic Correspondence from Pseudo-Labels
 description: >-
-  [ICCV 2025][3D Vision][Semantic Correspondence] This paper proposes DIY-SC, a 3D-aware pseudo-label generation strategy (chained propagation + relaxed cycle consistency + spherical prototype filtering) to train a lightweight adapter that improves semantic correspondence using foundation model features, achieving a 4.5% gain over the previous SOTA on SPair-71k (PCK@0.1 per-keypoint) without any manual keypoint annotations.
+  [ICCV 2025][3D Vision][Semantic Correspondence] This paper proposes DIY-SC, a 3D-aware pseudo-label generation strategy (chained propagation + relaxed cycle consistency + spherical prototype filtering) to train a lightwe…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Semantic Correspondence
-  - Pseudo-Labels
-  - 3D Awareness
-  - Foundation Models
-  - Self-Training
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Semantic Correspondence"
+  - "Pseudo-Labels"
+  - "3D Awareness"
+  - "Foundation Models"
+  - "Self-Training"
 date: 2026-05-08
 content_hash: 8122e851c81a1c86
 ---

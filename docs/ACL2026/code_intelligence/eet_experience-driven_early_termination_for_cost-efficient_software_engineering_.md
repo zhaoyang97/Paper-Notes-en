@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] EET: Experience-Driven Early Termination for Cost-Efficient Software Engineering Agents
 description: >-
-  [ACL 2026][Software Engineering Agent] This paper proposes EET, an experience-driven early termination method that identifies unproductive iterations during patch generation and patch selection phases, reducing the total cost of SE agents by 19%–55% (32% on average) with negligible performance degradation (at most 0.2%).
+  [ACL 2026][Code Intelligence][Software Engineering Agent] This paper proposes EET, an experience-driven early termination method that identifies unproductive iterations during patch generation and patch selection phases…
 tags:
-  - ACL 2026
-  - Software Engineering Agent
-  - Cost Optimization
-  - Experience-Driven
-  - Early Termination
-  - SWE-bench
+  - "ACL 2026"
+  - "Code Intelligence"
+  - "Software Engineering Agent"
+  - "Cost Optimization"
+  - "Experience-Driven"
+  - "Early Termination"
+  - "SWE-bench"
 date: 2026-05-08
 content_hash: 4d4bb648bba8f0ce
 ---

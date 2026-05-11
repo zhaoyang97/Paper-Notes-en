@@ -2,15 +2,16 @@
 title: >-
   [Paper Note] Uni-NTFM: A Unified Foundation Model for EEG Signal Representation Learning
 description: >-
-  [ICLR 2026][EEG] Uni-NTFM is grounded in first-principles neuroscience. It introduces a Heterogeneous Feature Projection Module (HFPM) for decoupled time-frequency encoding, a hierarchical Topological Embedding (TE) for unifying heterogeneous electrode configurations, and an MoE Transformer for functional modularity and sparse coding. A 1.9B-parameter model is pretrained on approximately 28,000 hours of EEG data, achieving state-of-the-art performance on 9 downstream tasks under both linear probing and fine-tuning protocols.
+  [ICLR 2026][Interpretability][EEG] Uni-NTFM is grounded in first-principles neuroscience. It introduces a Heterogeneous Feature Projection Module (HFPM) for decoupled time-frequency encoding…
 tags:
-  - ICLR 2026
-  - EEG
-  - Foundation Model
-  - Neural Topology
-  - Mixture of Experts
-  - Self-Supervised Learning
-  - Brain-Computer Interface
+  - "ICLR 2026"
+  - "Interpretability"
+  - "EEG"
+  - "Foundation Model"
+  - "Neural Topology"
+  - "Mixture of Experts"
+  - "Self-Supervised Learning"
+  - "Brain-Computer Interface"
 date: 2026-05-08
 content_hash: 53e95e747d57ba53
 ---

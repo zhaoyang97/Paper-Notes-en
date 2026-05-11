@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Redirection for Erasing Memory (REM): Towards a Universal Unlearning Method for Corrupted Data
 description: >-
-  [ICLR 2026][LLM Safety][Machine Unlearning] This paper proposes a two-dimensional taxonomy for the corrupted data unlearning task (discovery rate × statistical regularity), reveals that existing unlearning methods are each effective only within specific regions of this space, and introduces REM (Redirection for Erasing Memory), which redirects corrupted data into newly added dedicated network capacity before discarding it—achieving strong and consistent unlearning performance across the entire two-dimensional task space for the first time.
+  [ICLR 2026][LLM Safety][Machine Unlearning] This paper proposes a two-dimensional taxonomy for the corrupted data unlearning task (discovery rate × statistical regularity)…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Machine Unlearning
-  - Data Repair
-  - Poisoning Defense
-  - Classifier Robustness
-  - Memorization
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Machine Unlearning"
+  - "Data Repair"
+  - "Poisoning Defense"
+  - "Classifier Robustness"
+  - "Memorization"
 date: 2026-05-08
 content_hash: 054da8080ed5f665
 ---

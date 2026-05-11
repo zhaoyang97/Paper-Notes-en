@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] What AI Speaks for Your Community: Polling AI Agents for Public Opinion on Data Center Projects
 description: >-
-  [NeurIPS 2025][LLM Agent][AI agent polling] This paper proposes an LLM-based AI agent polling framework that synthesizes demographically representative virtual resident agents to conduct large-scale, low-cost public opinion surveys on data center projects. Cross-model and cross-region experiments demonstrate high thematic alignment between agent opinions and real-world polls.
+  [NeurIPS 2025][LLM Agent][AI agent polling] This paper proposes an LLM-based AI agent polling framework that synthesizes demographically representative virtual resident agents to conduct large-scale…
 tags:
-  - NeurIPS 2025
-  - LLM Agent
-  - AI agent polling
-  - public opinion
-  - data center
-  - LLM simulation
-  - community engagement
+  - "NeurIPS 2025"
+  - "LLM Agent"
+  - "AI agent polling"
+  - "public opinion"
+  - "data center"
+  - "LLM simulation"
+  - "community engagement"
 date: 2026-05-08
 content_hash: cabc6501f434c682
 ---

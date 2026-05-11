@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Guess or Recall? Training CNNs to Classify and Localize Memorization in LLMs
 description: >-
-  [AAAI 2026][LLM/NLP][memorization taxonomy] CNNs trained on LLM attention weights are used to evaluate the alignment between memorization taxonomies and actual attention mechanisms. A new three-class taxonomy (Guess/Recall/Non-Memorized) is proposed, improving the minimum F1 from 64.7% to 89.0%, while localizing that different memorization types rely on low-layer (Guess) and high-layer (Recall) attention, respectively.
+  [AAAI 2026][LLM/NLP][memorization taxonomy] CNNs trained on LLM attention weights are used to evaluate the alignment between memorization taxonomies and actual attention mechanisms. A new three-class taxonomy (Guess/Reca…
 tags:
-  - AAAI 2026
-  - LLM/NLP
-  - memorization taxonomy
-  - attention analysis
-  - CNN classifier
-  - LLM privacy
-  - verbatim memorization
+  - "AAAI 2026"
+  - "LLM/NLP"
+  - "memorization taxonomy"
+  - "attention analysis"
+  - "CNN classifier"
+  - "LLM privacy"
+  - "verbatim memorization"
 date: 2026-05-08
 content_hash: 309b164c3bd406df
 ---

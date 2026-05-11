@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Self Forcing: Bridging the Train-Test Gap in Autoregressive Video Diffusion
 description: >-
-  [NeurIPS 2025][Video Generation][Autoregressive video generation] This paper proposes the Self Forcing training paradigm, which eliminates the exposure bias caused by train-inference distribution mismatch in Teacher Forcing and Diffusion Forcing by performing autoregressive self-rollout during training and applying a holistic video-level distribution matching loss (DMD/SiD/GAN). Built on Wan2.1-1.3B, it achieves real-time streaming video generation at 17 FPS on a single GPU while matching or surpassing the quality of bidirectional diffusion models that are orders of magnitude slower.
+  [NeurIPS 2025][Video Generation][Autoregressive video generation] This paper proposes the Self Forcing training paradigm, which eliminates the exposure bias caused by train-inference distribution mismatch in Teacher Forc…
 tags:
-  - NeurIPS 2025
-  - Video Generation
-  - Autoregressive video generation
-  - exposure bias
-  - distribution matching
-  - real-time video generation
-  - KV cache
+  - "NeurIPS 2025"
+  - "Video Generation"
+  - "Autoregressive video generation"
+  - "exposure bias"
+  - "distribution matching"
+  - "real-time video generation"
+  - "KV cache"
 date: 2026-05-08
 content_hash: 44da4649d2d60b86
 ---

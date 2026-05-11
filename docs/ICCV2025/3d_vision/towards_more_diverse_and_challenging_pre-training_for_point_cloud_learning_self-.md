@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards More Diverse and Challenging Pre-training for Point Cloud Learning: Self-Supervised Cross Reconstruction with Decoupled Views
 description: >-
-  [ICCV 2025][3D Vision][Point cloud self-supervised learning] This paper proposes Point-PQAE, the first framework to introduce cross-view reconstruction into 3D generative self-supervised learning. By designing a point cloud cropping mechanism to generate decoupled views, a View-Relative Positional Embedding (VRPE), and a Positional Query module, the pre-training task becomes more challenging and informative. Point-PQAE surpasses Point-MAE by an average of 6.7% on ScanObjectNN under the Mlp-Linear protocol.
+  [ICCV 2025][3D Vision][Point cloud self-supervised learning] This paper proposes Point-PQAE, the first framework to introduce cross-view reconstruction into 3D generative self-supervised learning. By designing a point cl…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Point cloud self-supervised learning
-  - cross-view reconstruction
-  - decoupled views
-  - positional query
-  - pre-training
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Point cloud self-supervised learning"
+  - "cross-view reconstruction"
+  - "decoupled views"
+  - "positional query"
+  - "pre-training"
 date: 2026-05-08
 content_hash: 5c8fb9d73ace32cc
 ---

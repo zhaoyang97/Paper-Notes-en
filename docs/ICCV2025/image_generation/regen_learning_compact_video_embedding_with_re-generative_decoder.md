@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] REGEN: Learning Compact Video Embedding with (Re-)Generative Decoder
 description: >-
-  [Image Generation] REGEN replaces the conventional VAE decoder with a Diffusion Transformer (DiT) as a re-generative decoder for video, breaking the temporal compression bottleneck through a "generation rather than exact reconstruction" learning paradigm and achieving up to 32× temporal compression.
+  [Image Generation] REGEN replaces the conventional VAE decoder with a Diffusion Transformer (DiT) as a re-generative decoder for video…
 tags:
-  - Image Generation
+  - "Image Generation"
 date: 2026-05-08
 content_hash: 7f73c4be396b973f
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Action-Free Offline-to-Online RL via Discretised State Policies
 description: >-
-  [ICLR 2026][AI Safety][Action-free offline RL] This paper formalises the "action-free offline-to-online RL" setting for the first time and proposes the OSO-DecQN algorithm. By discretising continuous state differences into ternary tokens $\{-1, 0, 1\}$, a state policy $Q(s, \Delta s)$ is pretrained on action-free $(s, r, s')$ tuples to predict the expected direction of next-state change rather than actions. A policy-switching mechanism combined with an online-trained inverse dynamics model (IDM) then translates the state policy into executable actions, guiding online agents to accelerate learning. The approach consistently improves both convergence speed and asymptotic performance on D4RL and DeepMind Control Suite (including 78-dimensional state spaces).
+  [ICLR 2026][AI Safety][Action-free offline RL] This paper formalises the "action-free offline-to-online RL" setting for the first time and proposes the OSO-DecQN algorithm. By discretising continuous state differences in…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - Action-free offline RL
-  - state policy
-  - state discretisation
-  - DecQN
-  - guided online learning
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Action-free offline RL"
+  - "state policy"
+  - "state discretisation"
+  - "DecQN"
+  - "guided online learning"
 date: 2026-05-08
 content_hash: f34f7e554094d564
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MaNGO: Adaptable Graph Network Simulators via Meta-Learning
 description: >-
-  [NeurIPS 2025][3D Vision][Graph network simulators] This paper proposes MaNGO (Meta Neural Graph Operator), which leverages meta-learning and conditional neural processes (CNP) to learn shared latent structure across simulation tasks under varying physical parameters, enabling rapid adaptation to new physical parameters without retraining.
+  [NeurIPS 2025][3D Vision][Graph network simulators] This paper proposes MaNGO (Meta Neural Graph Operator), which leverages meta-learning and conditional neural processes (CNP) to learn shared latent structure across sim…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Graph network simulators
-  - meta-learning
-  - conditional neural processes
-  - neural operators
-  - physics simulation
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Graph network simulators"
+  - "meta-learning"
+  - "conditional neural processes"
+  - "neural operators"
+  - "physics simulation"
 date: 2026-05-08
 content_hash: ee034c022e34a1b6
 ---

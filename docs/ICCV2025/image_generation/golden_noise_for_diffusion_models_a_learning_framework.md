@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Golden Noise for Diffusion Models: A Learning Framework
 description: >-
-  [ICCV 2025][Image Generation][Noise Prompt] This paper introduces the concept of "Noise Prompt" and proposes a lightweight Noise Prompt Network (NPNet). By collecting 100K noise pairs via Re-denoise Sampling, NPNet is trained to transform random Gaussian noise into semantically informed "golden noise," serving as a plug-and-play module to improve the generation quality of SDXL and other diffusion models with only a 3% increase in inference time.
+  [ICCV 2025][Image Generation][Noise Prompt] This paper introduces the concept of "Noise Prompt" and proposes a lightweight Noise Prompt Network (NPNet). By collecting 100K noise pairs via Re-denoise Sampling…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Noise Prompt
-  - Golden Noise
-  - Diffusion Models
-  - Image Quality Enhancement
-  - Plug-and-Play
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Noise Prompt"
+  - "Golden Noise"
+  - "Diffusion Models"
+  - "Image Quality Enhancement"
+  - "Plug-and-Play"
 date: 2026-05-08
 content_hash: 04542311e12e602c
 ---

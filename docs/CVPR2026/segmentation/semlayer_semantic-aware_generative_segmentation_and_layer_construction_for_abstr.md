@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SemLayer: Semantic-aware Generative Segmentation and Layer Construction for Abstract Icons
 description: >-
-  [CVPR 2026][Segmentation][Vector layer construction] This paper proposes SemLayer, a generative-model-based pipeline that recovers semantically structured, layered representations from flattened vector icons. The approach reframes segmentation as a colorization task via a diffusion model, follows with semantic amodal completion of occluded regions, and applies integer linear programming (ILP) to determine layer ordering, achieving segmentation gains of +5.0 mIoU and +16.7 PQ.
+  [CVPR 2026][Segmentation][Vector layer construction] This paper proposes SemLayer, a generative-model-based pipeline that recovers semantically structured…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Vector layer construction
-  - semantic segmentation colorization
-  - amodal completion
-  - icon editing
-  - diffusion models
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Vector layer construction"
+  - "semantic segmentation colorization"
+  - "amodal completion"
+  - "icon editing"
+  - "diffusion models"
 date: 2026-05-08
 content_hash: b6cc2da9d45b2031
 ---

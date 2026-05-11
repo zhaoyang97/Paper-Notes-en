@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Incremental Maintenance of DatalogMTL Materialisations
 description: >-
-  [AAAI 2026][Audio & Speech][DatalogMTL] This paper proposes the DRed$_{\text{MTL}}$ algorithm, extending the classical Delete/Rederive incremental maintenance technique to DatalogMTL (Datalog with Metric Temporal Logic). By designing novel seminaïve evaluation operators and a periodicity detection algorithm over periodic materialisation representations, the approach enables efficient incremental updates, achieving order-of-magnitude speedups over full rematerialisation.
+  [AAAI 2026][Audio & Speech][DatalogMTL] This paper proposes the DRed$_{\text{MTL}}$ algorithm, extending the classical Delete/Rederive incremental maintenance technique to DatalogMTL (Datalog with Metric Temporal Logic).…
 tags:
-  - AAAI 2026
+  - "AAAI 2026"
   - "Audio & Speech"
-  - DatalogMTL
-  - incremental reasoning
-  - materialisation
-  - Delete/Rederive
-  - temporal logic
+  - "DatalogMTL"
+  - "incremental reasoning"
+  - "materialisation"
+  - "Delete/Rederive"
+  - "temporal logic"
 date: 2026-05-08
 content_hash: 2377fbe87298e63e
 ---

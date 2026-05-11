@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RewardMap: Tackling Sparse Rewards in Fine-grained Visual Reasoning via Multi-Stage Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Multimodal Large Language Models] This paper proposes the RewardMap framework, which addresses the sparse reward problem in fine-grained visual reasoning through difficulty-aware detail reward design and a multi-stage RL curriculum that progresses from simple perception to complex reasoning.
+  [ICLR 2026][Reinforcement Learning][Multimodal Large Language Models] This paper proposes the RewardMap framework, which addresses the sparse reward problem in fine-grained visual reasoning through difficulty-aware detai…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Multimodal Large Language Models
-  - Visual Reasoning
-  - Sparse Rewards
-  - Multi-Stage RL
-  - Metro Route Planning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Multimodal Large Language Models"
+  - "Visual Reasoning"
+  - "Sparse Rewards"
+  - "Multi-Stage RL"
+  - "Metro Route Planning"
 date: 2026-05-08
 content_hash: aada1be69448ae97
 ---

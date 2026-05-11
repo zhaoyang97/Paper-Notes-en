@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Pointer-CAD: Unifying B-Rep and Command Sequences via Pointer-based Edges & Faces Selection
 description: >-
-  [CVPR2026][Segmentation][CAD Generation] This paper proposes a pointer-based command sequence representation that explicitly incorporates B-Rep geometric entities (edges/faces) into autoregressive CAD generation, enabling chamfer/fillet operations in command sequence methods for the first time while substantially reducing topology errors caused by quantization errors.
+  [CVPR2026][Segmentation][CAD Generation] This paper proposes a pointer-based command sequence representation that explicitly incorporates B-Rep geometric entities (edges/faces) into autoregressive CAD generation…
 tags:
-  - CVPR2026
-  - Segmentation
-  - CAD Generation
-  - B-Rep
-  - Pointer Network
-  - Command Sequence
-  - LLM
-  - Graph Neural Network
-  - Chamfer/Fillet
+  - "CVPR2026"
+  - "Segmentation"
+  - "CAD Generation"
+  - "B-Rep"
+  - "Pointer Network"
+  - "Command Sequence"
+  - "LLM"
+  - "Graph Neural Network"
+  - "Chamfer/Fillet"
 date: 2026-05-08
 content_hash: f8f0c857492c69d5
 ---

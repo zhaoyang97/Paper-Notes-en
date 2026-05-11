@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] V.I.P.: Iterative Online Preference Distillation for Efficient Video Diffusion Models
 description: >-
-  [Video Generation] > This paper proposes the ReDPO loss function and the V.I.P. iterative online preference distillation framework, which combines preference learning (DPO) with SFT regularization for distilling pruned video diffusion models. The approach matches or surpasses the performance of the full model while reducing parameters by 36.2%–67.5%.
+  [Video Generation] > This paper proposes the ReDPO loss function and the V.I.P. iterative online preference distillation framework…
 tags:
-  - Video Generation
+  - "Video Generation"
 date: 2026-05-08
 content_hash: 00ae696feb13fdb4
 ---

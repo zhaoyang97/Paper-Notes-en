@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ROGR: Relightable 3D Objects using Generative Relighting
 description: >-
-  [NeurIPS 2025][3D Vision][Relighting] This paper proposes ROGR, which leverages a multi-view diffusion relighting model to generate consistent images under multiple lighting conditions, trains a lighting-conditioned NeRF on the resulting dataset, and achieves feed-forward 3D object relighting under arbitrary environment lighting. ROGR attains state-of-the-art performance on the TensoIR and Stanford-ORB benchmarks while supporting interactive rendering.
+  [NeurIPS 2025][3D Vision][Relighting] This paper proposes ROGR, which leverages a multi-view diffusion relighting model to generate consistent images under multiple lighting conditions…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Relighting
-  - Neural Radiance Field
-  - Generative Relighting
-  - Diffusion Model
-  - Environment Lighting
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Relighting"
+  - "Neural Radiance Field"
+  - "Generative Relighting"
+  - "Diffusion Model"
+  - "Environment Lighting"
 date: 2026-05-08
 content_hash: b2f93f92acf21f9a
 ---

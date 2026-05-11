@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] mDP3: A Training-free Approach for List-wise Frame Selection in Video-LLMs
 description: >-
-  [ICCV 2025][Reinforcement Learning][Frame Selection] This paper proposes mDP3, a training-free and model-agnostic video frame selection method that estimates frame similarity in RKHS via a conditional Gaussian kernel, leverages Determinantal Point Processes (DPP) to capture query relevance and list-wise diversity, and models temporal structure via a Markov Decision Process (MDP). Using only 8 input frames, mDP3 significantly outperforms uniform sampling and existing frame selection methods on multiple long-video benchmarks.
+  [ICCV 2025][Reinforcement Learning][Frame Selection] This paper proposes mDP3, a training-free and model-agnostic video frame selection method that estimates frame similarity in RKHS via a conditional Gaussian kernel…
 tags:
-  - ICCV 2025
-  - Reinforcement Learning
-  - Frame Selection
-  - Determinantal Point Process
-  - Markov Decision Process
-  - Video Question Answering
-  - Training-free
+  - "ICCV 2025"
+  - "Reinforcement Learning"
+  - "Frame Selection"
+  - "Determinantal Point Process"
+  - "Markov Decision Process"
+  - "Video Question Answering"
+  - "Training-free"
 date: 2026-05-08
 content_hash: a2a10bcb2c878321
 ---

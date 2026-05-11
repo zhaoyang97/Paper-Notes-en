@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Robust Content Watermarking Against Removal and Forgery Attacks
 description: >-
-  [CVPR 2026][Image Generation][Content watermarking] This paper proposes ISTS, an instance-specific two-sided detection watermarking method that dynamically selects watermark injection timestep and location based on image semantics to resist both removal and forgery attacks. A two-sided detection mechanism is further designed to counter reverse latent representation attacks. ISTS achieves state-of-the-art robustness under both average and worst-case scenarios across three removal attacks and three forgery attacks.
+  [CVPR 2026][Image Generation][Content watermarking] This paper proposes ISTS, an instance-specific two-sided detection watermarking method that dynamically selects watermark injection timestep and location based on image…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Content watermarking
-  - diffusion models
-  - removal attacks
-  - forgery attacks
-  - instance-specific watermarking
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Content watermarking"
+  - "diffusion models"
+  - "removal attacks"
+  - "forgery attacks"
+  - "instance-specific watermarking"
 date: 2026-05-08
 content_hash: c12a2ca6e00db614
 ---

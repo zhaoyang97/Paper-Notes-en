@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] S3R-GS: Streamlining the Pipeline for Large-Scale Street Scene Reconstruction
 description: >-
-  [3D Vision] S3R-GS identifies three major computational redundancies in conventional street scene reconstruction pipelines—unnecessary local-to-global coordinate transformations, excessive 3D-to-2D projections, and inefficient rendering of distant content—and proposes instance-specific projection, temporal visibility filtering, and adaptive level-of-detail (LOD) strategies to reduce reconstruction time to 20%–50% of competing methods while maintaining state-of-the-art rendering quality.
+  [3D Vision] S3R-GS identifies three major computational redundancies in conventional street scene reconstruction pipelines—unnecessary local-to-global coordinate transformations, excessive 3D-to-2D projections…
 tags:
-  - 3D Vision
+  - "3D Vision"
 date: 2026-05-08
 content_hash: 468d6d6fdbd15f84
 ---

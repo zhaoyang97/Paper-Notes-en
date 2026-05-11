@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Robot-R1: Reinforcement Learning for Enhanced Embodied Reasoning in Robotics
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Embodied Reasoning] Robot-R1 proposes training large vision-language models (LVLMs) via reinforcement learning (GRPO) for embodied reasoning. By casting next keystate prediction as multiple-choice questions and optimizing reasoning paths with RL, a 7B-parameter model surpasses GPT-4o on low-level control reasoning tasks.
+  [NeurIPS 2025][Reinforcement Learning][Embodied Reasoning] Robot-R1 proposes training large vision-language models (LVLMs) via reinforcement learning (GRPO) for embodied reasoning. By casting next keystate prediction as…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Embodied Reasoning
-  - Robot Control
-  - GRPO
-  - Large Vision-Language Models
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Embodied Reasoning"
+  - "Robot Control"
+  - "GRPO"
+  - "Large Vision-Language Models"
 date: 2026-05-08
 content_hash: 960689c17ed43502
 ---

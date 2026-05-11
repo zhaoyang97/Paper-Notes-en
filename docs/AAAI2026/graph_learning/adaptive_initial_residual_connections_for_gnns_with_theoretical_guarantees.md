@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Adaptive Initial Residual Connections for GNNs with Theoretical Guarantees
 description: >-
-  [AAAI 2026][Graph Learning][Adaptive residual connections] This paper proposes Adaptive Initial Residual Connections (Adaptive IRC), which allows each node to have a personalized residual strength learned from its initial features. It provides the first theoretical proof of a positive lower bound on the Dirichlet energy of initial residual connections with activation functions (guaranteeing the absence of over-smoothing), and introduces a PageRank-based heuristic variant that achieves comparable or superior performance without learning additional parameters.
+  [AAAI 2026][Graph Learning][Adaptive residual connections] This paper proposes Adaptive Initial Residual Connections (Adaptive IRC), which allows each node to have a personalized residual strength learned from its initia…
 tags:
-  - AAAI 2026
-  - Graph Learning
-  - Adaptive residual connections
-  - over-smoothing
-  - Dirichlet energy
-  - PageRank
-  - heterophilic graphs
-  - GNN depth
+  - "AAAI 2026"
+  - "Graph Learning"
+  - "Adaptive residual connections"
+  - "over-smoothing"
+  - "Dirichlet energy"
+  - "PageRank"
+  - "heterophilic graphs"
+  - "GNN depth"
 date: 2026-05-08
 content_hash: 6b19c318fefed8d3
 ---

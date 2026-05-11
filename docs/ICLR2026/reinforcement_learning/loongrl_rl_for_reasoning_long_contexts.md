@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LoongRL: Reinforcement Learning for Advanced Reasoning over Long Contexts
 description: >-
-  [ICLR 2026 Oral][Reinforcement Learning][long-context reasoning] This paper proposes LoongRL, which constructs KeyChain synthetic data for reinforcement learning training to elicit a plan–retrieve–reason–recheck reasoning pattern in LLMs for long-context tasks. Training solely on 16K contexts generalizes to 128K; the 14B model achieves 74.2, approaching o3-mini (74.5) and DeepSeek-R1 (74.9).
+  [ICLR 2026 Oral][Reinforcement Learning][long-context reasoning] This paper proposes LoongRL, which constructs KeyChain synthetic data for reinforcement learning training to elicit a plan–retrieve–reason–recheck reasonin…
 tags:
-  - ICLR 2026 Oral
-  - Reinforcement Learning
-  - long-context reasoning
-  - reinforcement-learning
-  - GRPO
-  - multi-hop QA
-  - emergent reasoning patterns
+  - "ICLR 2026 Oral"
+  - "Reinforcement Learning"
+  - "long-context reasoning"
+  - "reinforcement-learning"
+  - "GRPO"
+  - "multi-hop QA"
+  - "emergent reasoning patterns"
 date: 2026-05-08
 content_hash: c2e40d5772b91370
 ---

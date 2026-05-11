@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Rethinking Nighttime Image Deraining via Learnable Color Space Transformation
 description: >-
-  [NeurIPS 2025][Image Restoration][nighttime image deraining] Motivated by the statistical finding that nighttime rain exhibits far greater contrast in the Y channel (luminance) of YCbCr than in RGB, this work proposes a learnable Color Space Converter (CSC) that performs deraining in the Y channel, an Implicit Illumination Guidance (IIG) module that encodes non-uniform nighttime illumination, and a photorealistic dataset HQ-NightRain constructed via illumination-aware synthesis. The three components jointly yield substantial improvements in nighttime deraining performance.
+  [NeurIPS 2025][Image Restoration][nighttime image deraining] Motivated by the statistical finding that nighttime rain exhibits far greater contrast in the Y channel (luminance) of YCbCr than in RGB…
 tags:
-  - NeurIPS 2025
-  - Image Restoration
-  - nighttime image deraining
-  - learnable color space transformation
-  - YCbCr
-  - implicit illumination guidance
-  - HQ-NightRain dataset
+  - "NeurIPS 2025"
+  - "Image Restoration"
+  - "nighttime image deraining"
+  - "learnable color space transformation"
+  - "YCbCr"
+  - "implicit illumination guidance"
+  - "HQ-NightRain dataset"
 date: 2026-05-08
 content_hash: 4809b124a9f29a9b
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Frequency-Aware Token Reduction for Efficient Vision Transformer
 description: >-
-  [NeurIPS 2025][token reduction] This paper proposes frequency-aware token reduction from a frequency-domain perspective, partitioning tokens into high-frequency (HF) and low-frequency (LF) groups. HF tokens are selectively retained while LF tokens are aggregated into DC tokens, simultaneously alleviating rank collapse and reducing computational cost in ViTs. The method outperforms existing SOTA across multiple models at a 30% token reduction ratio.
+  [NeurIPS 2025][token reduction] This paper proposes frequency-aware token reduction from a frequency-domain perspective, partitioning tokens into high-frequency (HF) and low-frequency (LF) groups. HF tokens are selective…
 tags:
-  - NeurIPS 2025
-  - token reduction
-  - rank collapse
-  - over-smoothing
-  - frequency analysis
-  - vision transformer
+  - "NeurIPS 2025"
+  - "token reduction"
+  - "rank collapse"
+  - "over-smoothing"
+  - "frequency analysis"
+  - "vision transformer"
 date: 2026-05-08
 content_hash: 061b6846354aba5f
 ---

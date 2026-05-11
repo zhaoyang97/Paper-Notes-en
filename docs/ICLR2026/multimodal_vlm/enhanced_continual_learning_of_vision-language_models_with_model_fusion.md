@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Enhanced Continual Learning of Vision-Language Models with Model Fusion
 description: >-
-  [ICLR 2026][Multimodal VLM][Continual Learning] This paper proposes the Continual Decoupling-Unifying (ConDU) framework, which is the first to introduce model fusion into VLM continual learning. By maintaining a unified model and performing iterative decoupling-unifying operations guided by task triggers, ConDU surpasses the state of the art by an average of 2% on the MTIL benchmark while simultaneously enhancing zero-shot capability.
+  [ICLR 2026][Multimodal VLM][Continual Learning] This paper proposes the Continual Decoupling-Unifying (ConDU) framework, which is the first to introduce model fusion into VLM continual learning. By maintaining a unified…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Continual Learning
-  - Model Fusion
-  - Catastrophic Forgetting
-  - CLIP
-  - Zero-Shot Capability Preservation
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Continual Learning"
+  - "Model Fusion"
+  - "Catastrophic Forgetting"
+  - "CLIP"
+  - "Zero-Shot Capability Preservation"
 date: 2026-05-08
 content_hash: 35bffa62da240d1e
 ---

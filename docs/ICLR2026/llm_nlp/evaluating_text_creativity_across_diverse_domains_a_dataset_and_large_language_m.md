@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Evaluating Text Creativity across Diverse Domains: A Dataset and Large Language Model Evaluator
 description: >-
-  [ICLR 2026][LLM/NLP][creativity evaluation] This paper proposes a context-aware pairwise comparison framework for evaluating text creativity, constructs the CreataSet dataset comprising 100K+ human-annotated and 1M+ synthetic samples, and trains the CrEval evaluator, which surpasses GPT-4o by 18.7% in alignment with human judgments.
+  [ICLR 2026][LLM/NLP][creativity evaluation] This paper proposes a context-aware pairwise comparison framework for evaluating text creativity…
 tags:
-  - ICLR 2026
-  - LLM/NLP
-  - creativity evaluation
-  - LLM-as-a-judge
-  - pairwise comparison
-  - text creativity
-  - dataset construction
-  - CrEval
-  - cross-domain evaluation
+  - "ICLR 2026"
+  - "LLM/NLP"
+  - "creativity evaluation"
+  - "LLM-as-a-judge"
+  - "pairwise comparison"
+  - "text creativity"
+  - "dataset construction"
+  - "CrEval"
+  - "cross-domain evaluation"
 date: 2026-05-08
 content_hash: 78687d3bb5e60dc2
 ---

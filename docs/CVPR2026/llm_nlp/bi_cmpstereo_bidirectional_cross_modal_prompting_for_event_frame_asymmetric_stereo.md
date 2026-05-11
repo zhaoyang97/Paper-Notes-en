@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Bi-CMPStereo: Bidirectional Cross-Modal Prompting for Event-Frame Asymmetric Stereo
 description: >-
-  [CVPR 2026][LLM/NLP][event camera] Bi-CMPStereo is a bidirectional cross-modal prompting framework that alternately designates event and frame as the target domain for stereo canonicalization and cross-domain embedding adaptation, while leveraging cost volumes from both directions to achieve robust event-frame asymmetric stereo matching.
+  [CVPR 2026][LLM/NLP][event camera] Bi-CMPStereo is a bidirectional cross-modal prompting framework that alternately designates event and frame as the target domain for stereo canonicalization and cross-domain embedding a…
 tags:
-  - CVPR 2026
-  - LLM/NLP
-  - event camera
-  - stereo matching
-  - cross-modal
-  - asymmetric stereo
-  - depth estimation
+  - "CVPR 2026"
+  - "LLM/NLP"
+  - "event camera"
+  - "stereo matching"
+  - "cross-modal"
+  - "asymmetric stereo"
+  - "depth estimation"
 date: 2026-05-08
 content_hash: ddccd50cd0f174be
 ---

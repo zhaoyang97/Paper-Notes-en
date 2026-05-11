@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] When Is Thinking Enough? Early Exit via Sufficiency Assessment for Efficient Reasoning
 description: >-
-  [ACL 2026][LLM Reasoning][Reasoning efficiency] This paper proposes the DTSR framework, which detects "reflection signals" (e.g., *Wait*, *Alternatively*) during the reasoning process and triggers a self-assessment of the current reasoning chain's "sufficiency" at those positions to determine whether to exit early. DTSR achieves 28.9%–34.9% reasoning length reduction on the Qwen3 model series with negligible accuracy loss.
+  [ACL 2026][LLM Reasoning][Reasoning efficiency] This paper proposes the DTSR framework, which detects "reflection signals" (e.g., *Wait*…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - Reasoning efficiency
-  - early exit
-  - overthinking
-  - metacognition
-  - chain-of-thought
+  - "ACL 2026"
+  - "LLM Reasoning"
+  - "Reasoning efficiency"
+  - "early exit"
+  - "overthinking"
+  - "metacognition"
+  - "chain-of-thought"
 date: 2026-05-08
 content_hash: 76dbb2017da820d1
 ---

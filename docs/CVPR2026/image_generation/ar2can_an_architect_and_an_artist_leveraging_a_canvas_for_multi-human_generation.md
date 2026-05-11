@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Ar2Can: An Architect and an Artist Leveraging a Canvas for Multi-Human Generation
 description: >-
-  [CVPR 2026][Image Generation][Multi-Human Generation] Ar2Can decomposes multi-human image generation into two stages — spatial planning (Architect) and identity-preserving rendering (Artist) — and trains the Artist model via GRPO reinforcement learning with a spatially-anchored face reward based on Hungarian matching. The method achieves an identity preservation score of 68.2 and a counting accuracy of 90.2 on MultiHuman-Testbench, substantially outperforming all baselines.
+  [CVPR 2026][Image Generation][Multi-Human Generation] Ar2Can decomposes multi-human image generation into two stages — spatial planning (Architect) and identity-preserving rendering (Artist) — and trains the Artist model…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Multi-Human Generation
-  - Identity Preservation
-  - Spatial Planning
-  - GRPO
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Multi-Human Generation"
+  - "Identity Preservation"
+  - "Spatial Planning"
+  - "GRPO"
+  - "Reinforcement Learning"
 date: 2026-05-08
 content_hash: 4094be36f267f3cd
 ---

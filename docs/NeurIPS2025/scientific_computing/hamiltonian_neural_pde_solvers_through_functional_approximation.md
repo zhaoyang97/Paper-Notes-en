@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Hamiltonian Neural PDE Solvers through Functional Approximation
 description: >-
-  [NeurIPS 2025][Scientific Computing][Hamiltonian mechanics] Grounded in the Riesz representation theorem, this work approximates infinite-dimensional Hamiltonian functionals via learnable integral kernel functionals (IKF). Functional derivatives are obtained through automatic differentiation, yielding an energy-conserving neural PDE solver (HNS) that demonstrates superior stability and generalization on 1D/2D PDEs.
+  [NeurIPS 2025][Scientific Computing][Hamiltonian mechanics] Grounded in the Riesz representation theorem, this work approximates infinite-dimensional Hamiltonian functionals via learnable integral kernel functionals (IKF…
 tags:
-  - NeurIPS 2025
-  - Scientific Computing
-  - Hamiltonian mechanics
-  - PDE solving
-  - functional approximation
-  - neural fields
-  - energy conservation
+  - "NeurIPS 2025"
+  - "Scientific Computing"
+  - "Hamiltonian mechanics"
+  - "PDE solving"
+  - "functional approximation"
+  - "neural fields"
+  - "energy conservation"
 date: 2026-05-08
 content_hash: 62e92d2e11146c98
 ---

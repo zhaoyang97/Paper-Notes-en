@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AStar: Boosting Multimodal Reasoning with Automated Structured Thinking
 description: >-
-  [AAAI 2026][Multimodal VLM][Multimodal reasoning] This paper proposes AStar, a training-free multimodal reasoning paradigm that constructs a library of high-level "thought card" reasoning templates from 500 seed samples. At inference time, the most suitable templates are adaptively retrieved to guide structured reasoning in MLLMs. A 7B model achieves 53.9% accuracy on MathVerse (surpassing GPT-4o's 50.2%), requiring only 50 minutes of preprocessing and no model training.
+  [AAAI 2026][Multimodal VLM][Multimodal reasoning] This paper proposes AStar, a training-free multimodal reasoning paradigm that constructs a library of high-level "thought card" reasoning templates from 500 seed samples.…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Multimodal reasoning
-  - thought cards
-  - MCTS
-  - training-free
-  - structured thinking
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Multimodal reasoning"
+  - "thought cards"
+  - "MCTS"
+  - "training-free"
+  - "structured thinking"
 date: 2026-05-08
 content_hash: 4532934816c6dab7
 ---

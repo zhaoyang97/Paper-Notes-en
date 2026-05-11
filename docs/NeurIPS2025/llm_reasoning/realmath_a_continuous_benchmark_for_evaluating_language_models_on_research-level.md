@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RealMath: A Continuous Benchmark for Evaluating Language Models on Research-Level Mathematics
 description: >-
-  [NeurIPS 2025][LLM Reasoning][mathematical reasoning] This paper introduces RealMath, a **continuously refreshable** benchmark that automatically extracts verifiable mathematics problems from arXiv papers and Math StackExchange, designed to evaluate LLMs on real-world research-level mathematical tasks.
+  [NeurIPS 2025][LLM Reasoning][mathematical reasoning] This paper introduces RealMath, a **continuously refreshable** benchmark that automatically extracts verifiable mathematics problems from arXiv papers and Math StackE…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - mathematical reasoning
-  - research-level mathematics
-  - benchmark
-  - data contamination
-  - automatic evaluation
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "mathematical reasoning"
+  - "research-level mathematics"
+  - "benchmark"
+  - "data contamination"
+  - "automatic evaluation"
 date: 2026-05-08
 content_hash: b28014ed11bacd57
 ---

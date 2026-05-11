@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CAVIS: Context-Aware Video Instance Segmentation
 description: >-
-  [ICCV 2025][Segmentation][Video Instance Segmentation] This paper proposes CAVIS, which introduces a Context-Aware Instance Tracker (CAIT) to incorporate contextual information around object boundaries for enhanced instance association, and designs a Prototypical Cross-frame Contrastive loss (PCC) to enforce cross-frame feature consistency, achieving state-of-the-art performance on both VIS and VPS benchmarks.
+  [ICCV 2025][Segmentation][Video Instance Segmentation] This paper proposes CAVIS, which introduces a Context-Aware Instance Tracker (CAIT) to incorporate contextual information around object boundaries for enhanced insta…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - Video Instance Segmentation
-  - Context-Aware
-  - Contrastive Learning
-  - Instance Tracking
-  - Mask2Former
+  - "ICCV 2025"
+  - "Segmentation"
+  - "Video Instance Segmentation"
+  - "Context-Aware"
+  - "Contrastive Learning"
+  - "Instance Tracking"
+  - "Mask2Former"
 date: 2026-05-08
 content_hash: 9a023939ce9c7d23
 ---

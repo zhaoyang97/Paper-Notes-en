@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AR-1-to-3: Single Image to Consistent 3D Object Generation via Next-View Prediction
 description: >-
-  [ICCV 2025][3D Vision][Single-image 3D generation] This paper proposes AR-1-to-3, an autoregressive next-view prediction framework built upon diffusion models. By adopting a progressive "near-to-far" generation strategy, combined with two conditioning mechanisms—Stacked-LE (Stacked Local-feature Encoding) and LSTM-GE (LSTM-based Global-feature Encoding)—the method significantly improves multi-view consistency in single-image-to-multi-view generation. On the GSO dataset, it achieves a PSNR of 13.18 (a 23.5% improvement over InstantMesh's 10.67) and reduces Chamfer Distance to 0.063 (compared to 0.117 for InstantMesh).
+  [ICCV 2025][3D Vision][Single-image 3D generation] This paper proposes AR-1-to-3, an autoregressive next-view prediction framework built upon diffusion models. By adopting a progressive "near-to-far" generation strategy…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Single-image 3D generation
-  - autoregressive multi-view synthesis
-  - diffusion models
-  - next-view prediction
-  - multi-view consistency
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Single-image 3D generation"
+  - "autoregressive multi-view synthesis"
+  - "diffusion models"
+  - "next-view prediction"
+  - "multi-view consistency"
 date: 2026-05-08
 content_hash: 909ba93e5980580d
 ---

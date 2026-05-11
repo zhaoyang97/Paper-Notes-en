@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Oasis: One Image is All You Need for Multimodal Instruction Data Synthesis
 description: >-
-  [ICCV 2025][LLM Safety][multimodal data synthesis] This paper proposes Oasis, a method that induces MLLMs to autoregressively generate high-quality multimodal instruction-following data using only an input image (without any text prompt). Combined with a fine-grained instruction quality control mechanism, synthesizing 500K samples yields an average 3.1% overall performance gain for LLaVA-NeXT, surpassing other data synthesis methods.
+  [ICCV 2025][LLM Safety][multimodal data synthesis] This paper proposes Oasis, a method that induces MLLMs to autoregressively generate high-quality multimodal instruction-following data using only an input image (without…
 tags:
-  - ICCV 2025
-  - LLM Safety
-  - multimodal data synthesis
-  - instruction-following data
-  - quality control
-  - LLaVA
-  - MLLM
+  - "ICCV 2025"
+  - "LLM Safety"
+  - "multimodal data synthesis"
+  - "instruction-following data"
+  - "quality control"
+  - "LLaVA"
+  - "MLLM"
 date: 2026-05-08
 content_hash: 02d9c58b3dfd43b1
 ---

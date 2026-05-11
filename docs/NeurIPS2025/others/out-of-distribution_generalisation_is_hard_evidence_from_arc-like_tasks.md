@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Out-of-distribution Generalisation is Hard: Evidence from ARC-like Tasks
 description: >-
-  [NeurIPS 2025][OOD generalisation] By constructing ARC-like tasks with well-defined OOD metrics, this paper demonstrates that standard neural networks (MLP/CNN/Transformer) fail to achieve compositional OOD generalisation. Moreover, even architectures designed with correct inductive biases that attain near-perfect OOD performance may still learn incorrect compositional features.
+  [NeurIPS 2025][OOD generalisation] By constructing ARC-like tasks with well-defined OOD metrics, this paper demonstrates that standard neural networks (MLP/CNN/Transformer) fail to achieve compositional OOD generalisatio…
 tags:
-  - NeurIPS 2025
-  - OOD generalisation
-  - compositional generalisation
-  - ARC tasks
-  - inductive bias
-  - feature learning
+  - "NeurIPS 2025"
+  - "OOD generalisation"
+  - "compositional generalisation"
+  - "ARC tasks"
+  - "inductive bias"
+  - "feature learning"
 date: 2026-05-08
 content_hash: 3d37b42b5a58f219
 ---

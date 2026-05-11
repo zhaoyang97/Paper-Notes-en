@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] State-Covering Trajectory Stitching for Diffusion Planners
 description: >-
-  [NeurIPS 2025][Image Generation][Diffusion planner] This paper proposes SCoTS (State-Covering Trajectory Stitching), a reward-free trajectory augmentation framework that iteratively stitches short trajectory segments in a temporal distance-preserving latent space to systematically expand state-space coverage, significantly improving the generalization of diffusion planners on long-horizon and out-of-distribution tasks.
+  [NeurIPS 2025][Image Generation][Diffusion planner] This paper proposes SCoTS (State-Covering Trajectory Stitching), a reward-free trajectory augmentation framework that iteratively stitches short trajectory segments in…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Diffusion planner
-  - trajectory stitching
-  - state coverage
-  - offline reinforcement learning
-  - data augmentation
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Diffusion planner"
+  - "trajectory stitching"
+  - "state coverage"
+  - "offline reinforcement learning"
+  - "data augmentation"
 date: 2026-05-08
 content_hash: 95855bcb5568d585
 ---

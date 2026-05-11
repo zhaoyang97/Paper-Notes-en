@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Free Lunch for Stabilizing Rectified Flow Inversion
 description: >-
-  [ICLR 2026][Image Generation][Rectified Flow] This paper proposes PMI (Proximal-Mean Inversion) and mimic-CFG, two training-free methods that stabilize Rectified Flow inversion by applying proximal gradient correction toward the historical mean of the velocity field. On PIE-Bench, both methods achieve state-of-the-art reconstruction and editing quality with fewer NFEs.
+  [ICLR 2026][Image Generation][Rectified Flow] This paper proposes PMI (Proximal-Mean Inversion) and mimic-CFG, two training-free methods that stabilize Rectified Flow inversion by applying proximal gradient correction to…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Rectified Flow
-  - Inversion Stability
-  - Proximal-Mean Inversion
-  - Image Editing
-  - Velocity Field Correction
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Rectified Flow"
+  - "Inversion Stability"
+  - "Proximal-Mean Inversion"
+  - "Image Editing"
+  - "Velocity Field Correction"
 date: 2026-05-08
 content_hash: 94c8bff1ab6afb29
 ---

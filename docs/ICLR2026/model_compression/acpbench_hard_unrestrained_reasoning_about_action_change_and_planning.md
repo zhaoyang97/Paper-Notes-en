@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ACPBench Hard: Unrestrained Reasoning about Action, Change, and Planning
 description: >-
-  [ICLR 2026][Model Compression][planning benchmark] This paper introduces ACPBench Hard — an open-ended generative planning reasoning benchmark comprising 8 task types grounded in PDDL formal systems (13 domains × 8 tasks = 1,040 questions), equipped with symbolic validators that provide rigorous correctness guarantees. A systematic evaluation of 15 LLMs reveals that even the strongest reasoning model, o1-preview, achieves accuracy ≤66% on half the tasks, and all models fail almost completely on the most fundamental task of enumerating applicable actions, exposing fundamental deficiencies in current LLMs' planning reasoning capabilities.
+  [ICLR 2026][Model Compression][planning benchmark] This paper introduces ACPBench Hard — an open-ended generative planning reasoning benchmark comprising 8 task types grounded in PDDL formal systems (13 domains × 8 tasks…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - planning benchmark
-  - PDDL
-  - generative evaluation
-  - symbolic validator
-  - action reasoning
+  - "ICLR 2026"
+  - "Model Compression"
+  - "planning benchmark"
+  - "PDDL"
+  - "generative evaluation"
+  - "symbolic validator"
+  - "action reasoning"
 date: 2026-05-08
 content_hash: 56144ece10099091
 ---

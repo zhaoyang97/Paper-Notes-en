@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Towards Faithful Multimodal Concept Bottleneck Models
 description: >-
-  [CVPR 2026][Concept Bottleneck Models] This paper proposes f-CBM — the first faithful multimodal Concept Bottleneck Model framework — which mitigates unintended information leakage in concept representations via a differentiable leakage loss, and improves concept detection accuracy using a Kolmogorov-Arnold Network (KAN) prediction head, achieving an optimal Pareto frontier across task accuracy, concept detection, and leakage reduction.
+  [CVPR 2026][Interpretability][Concept Bottleneck Models] This paper proposes f-CBM — the first faithful multimodal Concept Bottleneck Model framework — which mitigates unintended information leakage in concept representa…
 tags:
-  - CVPR 2026
-  - Concept Bottleneck Models
-  - Interpretability
-  - Leakage Mitigation
-  - KAN Network
-  - Multimodal Classification
+  - "CVPR 2026"
+  - "Interpretability"
+  - "Concept Bottleneck Models"
+  - "Leakage Mitigation"
+  - "KAN Network"
+  - "Multimodal Classification"
 date: 2026-05-08
 content_hash: b740c4d6b0f21005
 ---

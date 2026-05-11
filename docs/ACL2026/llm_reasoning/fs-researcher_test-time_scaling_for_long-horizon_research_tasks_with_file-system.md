@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FS-Researcher: Test-Time Scaling for Long-Horizon Research Tasks with File-System-Based Agents
 description: >-
-  [ACL 2026][LLM Reasoning][Deep Research] This paper proposes FS-Researcher, a file-system-based dual-agent framework for deep research. A Context Builder constructs a hierarchical knowledge base while a Report Writer composes reports section by section. By leveraging a persistent workspace to overcome context window limitations, the framework achieves 53.94 RACE (SOTA) on DeepResearch Bench and demonstrates a positive test-time scaling effect between context-building compute and report quality.
+  [ACL 2026][LLM Reasoning][Deep Research] This paper proposes FS-Researcher, a file-system-based dual-agent framework for deep research. A Context Builder constructs a hierarchical knowledge base while a Report Writer com…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - Deep Research
-  - File System
-  - Test-Time Scaling
-  - Knowledge Base Construction
-  - Dual-Agent Framework
+  - "ACL 2026"
+  - "LLM Reasoning"
+  - "Deep Research"
+  - "File System"
+  - "Test-Time Scaling"
+  - "Knowledge Base Construction"
+  - "Dual-Agent Framework"
 date: 2026-05-08
 content_hash: cb97585618bde299
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Gaussian Blending: Rethinking Alpha Blending in 3D Gaussian Splatting
 description: >-
-  [AAAI 2026][3D Vision][3D Gaussian Splatting] This paper revisits scalar alpha blending in 3DGS and identifies its neglect of intra-pixel spatial variation as the root cause of multi-scale rendering artifacts (enlargement erosion / downscaling dilation). The proposed Gaussian Blending models alpha and transmittance as spatial distributions within a pixel (2D uniform window), achieving real-time anti-aliasing without retraining. PSNR on multi-scale Blender improves from 31.59 to 35.80.
+  [AAAI 2026][3D Vision][3D Gaussian Splatting] This paper revisits scalar alpha blending in 3DGS and identifies its neglect of intra-pixel spatial variation as the root cause of multi-scale rendering artifacts (enlargemen…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - Alpha Blending
-  - Anti-aliasing
-  - Multi-scale Rendering
-  - Intra-pixel Spatial Distribution
+  - "AAAI 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Alpha Blending"
+  - "Anti-aliasing"
+  - "Multi-scale Rendering"
+  - "Intra-pixel Spatial Distribution"
 date: 2026-05-08
 content_hash: 4624bb2682c65a5b
 ---

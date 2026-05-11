@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] The Parameterized Complexity of Computing the VC-Dimension
 description: >-
-  [NeurIPS 2025][VC dimension] This paper systematically studies the parameterized complexity of computing the VC dimension, proving that the naive exhaustive algorithm is asymptotically optimal under ETH, proposing an FPT 1-additive approximation parameterized by maximum degree, and an exact $2^{O(\text{tw}\cdot\log \text{tw})}\cdot|V|$-time algorithm parameterized by treewidth.
+  [NeurIPS 2025][VC dimension] This paper systematically studies the parameterized complexity of computing the VC dimension, proving that the naive exhaustive algorithm is asymptotically optimal under ETH…
 tags:
-  - NeurIPS 2025
-  - VC dimension
-  - parameterized complexity
-  - treewidth
-  - fixed-parameter tractability
-  - ETH lower bounds
+  - "NeurIPS 2025"
+  - "VC dimension"
+  - "parameterized complexity"
+  - "treewidth"
+  - "fixed-parameter tractability"
+  - "ETH lower bounds"
 date: 2026-05-08
 content_hash: c9a801b07c2e67bf
 ---

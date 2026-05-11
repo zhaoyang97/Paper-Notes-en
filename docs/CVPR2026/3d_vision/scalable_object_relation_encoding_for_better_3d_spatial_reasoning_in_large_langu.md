@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Scalable Object Relation Encoding for Better 3D Spatial Reasoning in Large Language Models
 description: >-
-  [CVPR 2026][3D Vision][3D spatial reasoning] This paper proposes QuatRoPE, a quaternion rotation-based 3D positional encoding method that preserves all $O(n^2)$ pairwise spatial relations using only $O(n)$ input tokens. Combined with the IGRE mechanism to reduce interference with language RoPE, it achieves substantial improvements across multiple 3D vision-language benchmarks.
+  [CVPR 2026][3D Vision][3D spatial reasoning] This paper proposes QuatRoPE, a quaternion rotation-based 3D positional encoding method that preserves all $O(n^2)$ pairwise spatial relations using only $O(n)$ input tokens.…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D spatial reasoning
-  - positional encoding
-  - quaternion rotation
-  - large language models
-  - 3D vision-language
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D spatial reasoning"
+  - "positional encoding"
+  - "quaternion rotation"
+  - "large language models"
+  - "3D vision-language"
 date: 2026-05-08
 content_hash: 37a6d6553be9ee99
 ---

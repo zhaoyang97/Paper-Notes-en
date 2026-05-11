@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] ComoRAG: A Cognitive-Inspired Memory-Organized RAG for Stateful Long Narrative Reasoning
 description: >-
-  [AAAI2026][RAG] Inspired by the metacognitive regulation mechanism of the prefrontal cortex, this paper proposes the ComoRAG framework, which achieves stateful multi-step reasoning via a dynamic memory workspace and iterative probe queries, significantly outperforming existing RAG methods on long narrative understanding tasks (200K+ tokens).
+  [AAAI2026][Information Retrieval & RAG][RAG] Inspired by the metacognitive regulation mechanism of the prefrontal cortex, this paper proposes the ComoRAG framework…
 tags:
-  - AAAI2026
-  - RAG
-  - Long Narrative Reasoning
-  - Memory-Organized
-  - Metacognitive Regulation
-  - Stateful Reasoning
+  - "AAAI2026"
+  - "Information Retrieval & RAG"
+  - "RAG"
+  - "Long Narrative Reasoning"
+  - "Memory-Organized"
+  - "Metacognitive Regulation"
+  - "Stateful Reasoning"
 date: 2026-05-08
 content_hash: 459e15eba9dd40a9
 ---

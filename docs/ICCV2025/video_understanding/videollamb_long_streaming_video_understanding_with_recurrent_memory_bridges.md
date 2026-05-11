@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VideoLLaMB: Long Streaming Video Understanding with Recurrent Memory Bridges
 description: >-
-  [ICCV 2025][Video Understanding][Long video understanding] VideoLLaMB is proposed, achieving long streaming video understanding with linear GPU memory scaling via SceneTiling semantic segmentation, recurrent memory bridge layers, and a memory cache retrieval mechanism, yielding an average improvement of 4.2 points across 4 VideoQA benchmarks.
+  [ICCV 2025][Video Understanding][Long video understanding] VideoLLaMB is proposed, achieving long streaming video understanding with linear GPU memory scaling via SceneTiling semantic segmentation…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - Long video understanding
-  - recurrent memory
-  - streaming video
-  - video-language models
-  - frame retrieval
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "Long video understanding"
+  - "recurrent memory"
+  - "streaming video"
+  - "video-language models"
+  - "frame retrieval"
 date: 2026-05-08
 content_hash: 2a52f214aa749f76
 ---

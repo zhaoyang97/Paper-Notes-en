@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] REMem: Reasoning with Episodic Memory in Language Agents
 description: >-
-  [ICLR 2026][LLM Agent][episodic memory] This paper proposes REMem, an episodic memory framework for language agents that employs a hybrid memory graph (temporally-aware gist nodes combined with factual triple nodes) and tool-augmented agentic reasoning, achieving improvements of 3.4% and 13.4% over the state of the art on episodic recall and episodic reasoning tasks, respectively.
+  [ICLR 2026][LLM Agent][episodic memory] This paper proposes REMem, an episodic memory framework for language agents that employs a hybrid memory graph (temporally-aware gist nodes combined with factual triple nodes) and…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - episodic memory
-  - language agent
-  - hybrid memory graph
-  - temporal reasoning
-  - agentic retrieval
-  - gist extraction
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "episodic memory"
+  - "language agent"
+  - "hybrid memory graph"
+  - "temporal reasoning"
+  - "agentic retrieval"
+  - "gist extraction"
 date: 2026-05-08
 content_hash: 0c948a44bb9a6975
 ---

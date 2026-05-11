@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SPARTA Alignment: Collectively Aligning Multiple Language Models through Combat
 description: >-
-  [NeurIPS 2025][LLM Efficiency][Collective Alignment] Multiple LLMs form a "Spartan tribe" to engage in mutual competition and peer evaluation. Preference pairs are generated via reputation-weighted judgment aggregation, and all models are iteratively trained with DPO. The approach surpasses self-alignment baselines such as Self-Rewarding on 10 out of 12 tasks, with an average improvement of 7%.
+  [NeurIPS 2025][LLM Efficiency][Collective Alignment] Multiple LLMs form a "Spartan tribe" to engage in mutual competition and peer evaluation. Preference pairs are generated via reputation-weighted judgment aggregation…
 tags:
-  - NeurIPS 2025
-  - LLM Efficiency
-  - Collective Alignment
-  - Multi-Model Combat
-  - Reputation System
-  - DPO
-  - Self-Alignment
+  - "NeurIPS 2025"
+  - "LLM Efficiency"
+  - "Collective Alignment"
+  - "Multi-Model Combat"
+  - "Reputation System"
+  - "DPO"
+  - "Self-Alignment"
 date: 2026-05-08
 content_hash: 8eef255732268c31
 ---

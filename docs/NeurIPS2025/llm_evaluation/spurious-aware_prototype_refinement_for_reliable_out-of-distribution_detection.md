@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SPROD: Spurious-Aware Prototype Refinement for Reliable Out-of-Distribution Detection
 description: >-
-  [NeurIPS 2025][LLM Evaluation][Spurious correlations] SPROD is a post-hoc OOD detection method designed to handle spurious correlations in training data. It subdivides each class prototype into "correctly classified" and "misclassified" subgroups (the latter sharing spurious features), combined with K-means-style refinement and distance-based (generative) scoring. Across 5 spurious-correlation OOD benchmarks, it achieves an average AUROC of 85.1% (+4.8% vs. runner-up KNN) and FPR@95 of 49.0% (−9.3% vs. runner-up).
+  [NeurIPS 2025][LLM Evaluation][Spurious correlations] SPROD is a post-hoc OOD detection method designed to handle spurious correlations in training data. It subdivides each class prototype into "correctly classified" and…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - Spurious correlations
-  - prototype refinement
-  - generative scoring
-  - out-of-distribution detection
-  - K-means
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "Spurious correlations"
+  - "prototype refinement"
+  - "generative scoring"
+  - "out-of-distribution detection"
+  - "K-means"
 date: 2026-05-08
 content_hash: 20c1de6c72bbd814
 ---

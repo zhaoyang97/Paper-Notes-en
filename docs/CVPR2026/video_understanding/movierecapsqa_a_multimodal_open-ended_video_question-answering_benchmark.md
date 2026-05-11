@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MovieRecapsQA: A Multimodal Open-Ended Video Question-Answering Benchmark
 description: >-
-  [CVPR 2026][Video Understanding][Video Question Answering] This paper introduces MovieRecapsQA, a multimodal open-ended video QA benchmark constructed from movie recap videos, comprising approximately 8.2K questions across 60 movies. It proposes a reference-free evaluation metric based on atomic facts and reveals that the critical bottleneck of current MLLMs lies in visual perception rather than reasoning.
+  [CVPR 2026][Video Understanding][Video Question Answering] This paper introduces MovieRecapsQA, a multimodal open-ended video QA benchmark constructed from movie recap videos…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Video Question Answering
-  - Multimodal Understanding
-  - Open-Ended Evaluation
-  - Movie Understanding
-  - Reference-Free Evaluation
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Video Question Answering"
+  - "Multimodal Understanding"
+  - "Open-Ended Evaluation"
+  - "Movie Understanding"
+  - "Reference-Free Evaluation"
 date: 2026-05-08
 content_hash: b28d6b1f957afa3e
 ---

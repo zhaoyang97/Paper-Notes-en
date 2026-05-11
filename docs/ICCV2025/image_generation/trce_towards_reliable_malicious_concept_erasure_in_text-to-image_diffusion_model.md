@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] TRCE: Towards Reliable Malicious Concept Erasure in Text-to-Image Diffusion Models
 description: >-
-  [Image Generation] This paper proposes TRCE, a two-stage concept erasure strategy—textual semantic erasure followed by denoising trajectory steering—that reliably removes malicious concepts while minimizing degradation of the model's general generation capability.
+  [Image Generation] This paper proposes TRCE, a two-stage concept erasure strategy—textual semantic erasure followed by denoising trajectory steering—that reliably removes malicious concepts while minimizing degradation o…
 tags:
-  - Image Generation
+  - "Image Generation"
 date: 2026-05-08
 content_hash: 1c8e70ded503499e
 ---

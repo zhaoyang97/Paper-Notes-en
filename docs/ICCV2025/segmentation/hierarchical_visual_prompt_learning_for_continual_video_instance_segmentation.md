@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Hierarchical Visual Prompt Learning for Continual Video Instance Segmentation
 description: >-
-  [ICCV 2025][Segmentation][Continual Learning] This paper introduces Continual Video Instance Segmentation (CVIS) as a new problem formulation, and proposes the Hierarchical Visual Prompt Learning (HVPL) model, which mitigates catastrophic forgetting of old categories via forgetting compensation mechanisms at both frame-level and video-level.
+  [ICCV 2025][Segmentation][Continual Learning] This paper introduces Continual Video Instance Segmentation (CVIS) as a new problem formulation, and proposes the Hierarchical Visual Prompt Learning (HVPL) model…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - Continual Learning
-  - Video Instance Segmentation
-  - Visual Prompt Learning
-  - Catastrophic Forgetting
-  - Orthogonal Gradient Correction
+  - "ICCV 2025"
+  - "Segmentation"
+  - "Continual Learning"
+  - "Video Instance Segmentation"
+  - "Visual Prompt Learning"
+  - "Catastrophic Forgetting"
+  - "Orthogonal Gradient Correction"
 date: 2026-05-08
 content_hash: 7204ef023ead2fed
 ---

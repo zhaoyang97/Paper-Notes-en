@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Explaining CLIP Zero-shot Predictions Through Concepts
 description: >-
-  [CVPR 2026][CLIP] This paper proposes EZPC, which learns a linear projection matrix $A$ to jointly map CLIP image and text embeddings into an interpretable concept space. The method provides faithful, human-understandable explanations for CLIP predictions with negligible accuracy loss (H-mean gap of ~1% on CIFAR-100/CUB/ImageNet-100) and an inference overhead of only ~0.1ms.
+  [CVPR 2026][Information Retrieval & RAG][CLIP] This paper proposes EZPC, which learns a linear projection matrix $A$ to jointly map CLIP image and text embeddings into an interpretable concept space. The method provides…
 tags:
-  - CVPR 2026
-  - CLIP
-  - Zero-shot Classification
-  - Concept Bottleneck Model
-  - Interpretability
-  - Vision-Language Model
+  - "CVPR 2026"
+  - "Information Retrieval & RAG"
+  - "CLIP"
+  - "Zero-shot Classification"
+  - "Concept Bottleneck Model"
+  - "Interpretability"
+  - "Vision-Language Model"
 date: 2026-05-08
 content_hash: 6f1c4464472d5950
 ---

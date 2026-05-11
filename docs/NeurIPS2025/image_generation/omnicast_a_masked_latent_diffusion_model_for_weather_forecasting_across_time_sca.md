@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OmniCast: A Masked Latent Diffusion Model for Weather Forecasting Across Time Scales
 description: >-
-  [NeurIPS 2025][Image Generation][Weather Forecasting] OmniCast is proposed as a weather forecasting method that combines a masked generative framework with a latent diffusion model. By jointly generating future weather sequences rather than iterating autoregressively, it mitigates error accumulation, achieves state-of-the-art performance at the subseasonal-to-seasonal (S2S) scale, remains competitive for medium-range forecasting, and offers inference speeds 10–20× faster.
+  [NeurIPS 2025][Image Generation][Weather Forecasting] OmniCast is proposed as a weather forecasting method that combines a masked generative framework with a latent diffusion model. By jointly generating future weather s…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Weather Forecasting
-  - Latent Diffusion Model
-  - Masked Generative Modeling
-  - Subseasonal Forecasting
-  - VAE
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Weather Forecasting"
+  - "Latent Diffusion Model"
+  - "Masked Generative Modeling"
+  - "Subseasonal Forecasting"
+  - "VAE"
 date: 2026-05-08
 content_hash: 7de08abcff94baf6
 ---

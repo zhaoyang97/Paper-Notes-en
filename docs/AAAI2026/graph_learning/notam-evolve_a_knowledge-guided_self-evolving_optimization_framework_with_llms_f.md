@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] NOTAM-Evolve: A Knowledge-Guided Self-Evolving Optimization Framework with LLMs for NOTAM Interpretation
 description: >-
-  [AAAI 2026][Graph Learning][NOTAM Parsing] This paper proposes NOTAM-Evolve, a self-evolving framework that achieves dynamic knowledge grounding via knowledge graph-enhanced tabular retrieval (KG-TableRAG), combined with iterative SFT+DPO preference optimization and a multi-view voting inference mechanism. The framework enables a 7B-parameter LLM to autonomously master deep parsing of complex aviation NOTAMs, achieving a 30.4% accuracy improvement over the base LLM.
+  [AAAI 2026][Graph Learning][NOTAM Parsing] This paper proposes NOTAM-Evolve, a self-evolving framework that achieves dynamic knowledge grounding via knowledge graph-enhanced tabular retrieval (KG-TableRAG)…
 tags:
-  - AAAI 2026
-  - Graph Learning
-  - NOTAM Parsing
-  - Knowledge Graph-Enhanced Retrieval
-  - Large Language Models
-  - Self-Evolving Optimization
-  - Aviation Safety
+  - "AAAI 2026"
+  - "Graph Learning"
+  - "NOTAM Parsing"
+  - "Knowledge Graph-Enhanced Retrieval"
+  - "Large Language Models"
+  - "Self-Evolving Optimization"
+  - "Aviation Safety"
 date: 2026-05-08
 content_hash: 8867cb9cd1414d8e
 ---

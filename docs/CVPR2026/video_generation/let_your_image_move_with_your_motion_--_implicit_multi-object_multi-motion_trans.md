@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Let Your Image Move with Your Motion! – Implicit Multi-Object Multi-Motion Transfer
 description: >-
-  [CVPR 2026][Video Generation][Motion Transfer] This paper proposes FlexiMMT, the first I2V framework supporting implicit multi-object multi-motion transfer. It introduces a Motion Decoupling Mask Attention (MDMA) mechanism to constrain motion/text tokens to interact only with their corresponding object regions, and a Differential Mask Extraction Mechanism (DMEM) to derive object masks from diffusion attention maps with progressive propagation, enabling precise compositional multi-object motion transfer.
+  [CVPR 2026][Video Generation][Motion Transfer] This paper proposes FlexiMMT, the first I2V framework supporting implicit multi-object multi-motion transfer. It introduces a Motion Decoupling Mask Attention (MDMA) mechani…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Motion Transfer
-  - Multi-Object Multi-Motion
-  - Attention Mask
-  - Video Diffusion Model
-  - I2V Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Motion Transfer"
+  - "Multi-Object Multi-Motion"
+  - "Attention Mask"
+  - "Video Diffusion Model"
+  - "I2V Generation"
 date: 2026-05-08
 content_hash: fdd98919fcd1cfa5
 ---

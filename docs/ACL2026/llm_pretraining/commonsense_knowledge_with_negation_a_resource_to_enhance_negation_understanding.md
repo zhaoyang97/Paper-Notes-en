@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Commonsense Knowledge with Negation: A Resource to Enhance Negation Understanding
 description: >-
-  [ACL 2026][LLM Pretraining][Commonsense Knowledge] This paper proposes an automated method for augmenting existing commonsense knowledge bases with negation, constructing a large-scale negated commonsense corpus (¬Atomic and ¬Anion) containing over 2 million triples, and demonstrates that pretraining on this corpus improves LLMs' negation understanding capabilities.
+  [ACL 2026][LLM Pretraining][Commonsense Knowledge] This paper proposes an automated method for augmenting existing commonsense knowledge bases with negation…
 tags:
-  - ACL 2026
-  - LLM Pretraining
-  - Commonsense Knowledge
-  - Negation Understanding
-  - Knowledge Base Augmentation
-  - Negation Reasoning
-  - Pretraining
+  - "ACL 2026"
+  - "LLM Pretraining"
+  - "Commonsense Knowledge"
+  - "Negation Understanding"
+  - "Knowledge Base Augmentation"
+  - "Negation Reasoning"
+  - "Pretraining"
 date: 2026-05-08
 content_hash: 08dfc063fd9e7c0c
 ---

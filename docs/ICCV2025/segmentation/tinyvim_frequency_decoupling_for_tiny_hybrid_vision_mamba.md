@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TinyViM: Frequency Decoupling for Tiny Hybrid Vision Mamba
 description: >-
-  [ICCV 2025][Segmentation][Lightweight visual backbone] This paper proposes TinyViM, a lightweight convolution-Mamba hybrid visual backbone based on frequency decoupling. A Laplace Mixer routes low-frequency components to Mamba for global context modeling and enhances high-frequency components via depthwise convolution. A frequency ramp Inception structure progressively adjusts frequency allocation across stages. TinyViM achieves 2–3× higher throughput than existing Mamba models on classification, detection, and segmentation tasks.
+  [ICCV 2025][Segmentation][Lightweight visual backbone] This paper proposes TinyViM, a lightweight convolution-Mamba hybrid visual backbone based on frequency decoupling. A Laplace Mixer routes low-frequency components to…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - Lightweight visual backbone
-  - Mamba
-  - frequency decoupling
-  - Laplacian pyramid
-  - high-low frequency separation
+  - "ICCV 2025"
+  - "Segmentation"
+  - "Lightweight visual backbone"
+  - "Mamba"
+  - "frequency decoupling"
+  - "Laplacian pyramid"
+  - "high-low frequency separation"
 date: 2026-05-08
 content_hash: ceb9840896f92795
 ---

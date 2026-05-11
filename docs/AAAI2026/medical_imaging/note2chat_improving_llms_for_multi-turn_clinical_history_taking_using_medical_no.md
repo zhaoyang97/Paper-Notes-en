@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Note2Chat: Improving LLMs for Multi-Turn Clinical History Taking Using Medical Notes
 description: >-
-  [AAAI 2026][Medical Imaging][Clinical history taking] This paper proposes Note2Chat, a framework that trains LLMs for structured history taking and diagnosis using widely available medical notes rather than scarce dialogue data. Through note-driven dialogue generation, a three-stage fine-tuning strategy, and a single-turn reasoning paradigm, it substantially outperforms GPT-4o in information gathering (F1 +16.9) and diagnostic accuracy (Top-1 +21.0).
+  [AAAI 2026][Medical Imaging][Clinical history taking] This paper proposes Note2Chat, a framework that trains LLMs for structured history taking and diagnosis using widely available medical notes rather than scarce dialog…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Clinical history taking
-  - multi-turn dialogue
-  - large language models
-  - medical notes
-  - preference optimization
-  - differential diagnosis
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Clinical history taking"
+  - "multi-turn dialogue"
+  - "large language models"
+  - "medical notes"
+  - "preference optimization"
+  - "differential diagnosis"
 date: 2026-05-08
 content_hash: e09aa09d2b550b78
 ---

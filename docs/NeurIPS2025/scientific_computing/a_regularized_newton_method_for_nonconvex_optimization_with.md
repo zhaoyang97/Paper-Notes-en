@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Regularized Newton Method for Nonconvex Optimization with Global and Local Complexity Guarantees
 description: >-
-  [NeurIPS 2025][Scientific Computing][Regularized Newton method] This paper proposes a novel class of regularizers constructed from current and historical gradients, combined with a conjugate gradient method equipped with negative-curvature detection to solve the regularized Newton equation. Within an adaptive framework that requires no prior knowledge of the Hessian Lipschitz constant, the method simultaneously achieves, for the first time, the optimal global iteration complexity of $O(\epsilon^{-3/2})$ and a quadratic local convergence rate.
+  [NeurIPS 2025][Scientific Computing][Regularized Newton method] This paper proposes a novel class of regularizers constructed from current and historical gradients…
 tags:
-  - NeurIPS 2025
-  - Scientific Computing
-  - Regularized Newton method
-  - nonconvex optimization
-  - optimal global complexity
-  - quadratic local convergence
-  - adaptive algorithm
+  - "NeurIPS 2025"
+  - "Scientific Computing"
+  - "Regularized Newton method"
+  - "nonconvex optimization"
+  - "optimal global complexity"
+  - "quadratic local convergence"
+  - "adaptive algorithm"
 date: 2026-05-08
 content_hash: c206217cc7191801
 ---

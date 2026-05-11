@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SoFar: Language-Grounded Orientation Bridges Spatial Reasoning and Object Manipulation
 description: >-
-  [NeurIPS 2025][3D Vision][semantic orientation] This paper introduces the concept of **Semantic Orientation**, which describes object directions using natural language (e.g., the "insertion direction" of a USB plug or the "handle direction" of a cup). It constructs the large-scale OrienText300K dataset to train the PointSO model for zero-shot orientation prediction, and integrates these components into the SoFar system for 6-DoF scene understanding and robotic manipulation.
+  [NeurIPS 2025][3D Vision][semantic orientation] This paper introduces the concept of **Semantic Orientation**, which describes object directions using natural language (e.g.…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - semantic orientation
-  - 6-DoF manipulation
-  - spatial reasoning
-  - 3D scene graph
-  - point cloud
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "semantic orientation"
+  - "6-DoF manipulation"
+  - "spatial reasoning"
+  - "3D scene graph"
+  - "point cloud"
 date: 2026-05-08
 content_hash: 5d5a86870a6dee15
 ---

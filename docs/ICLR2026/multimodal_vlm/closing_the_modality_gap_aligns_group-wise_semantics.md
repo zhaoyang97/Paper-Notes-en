@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Closing the Modality Gap Aligns Group-Wise Semantics
 description: >-
-  [ICLR2026][Multimodal VLM][modality gap] This paper demonstrates that the modality gap in CLIP is inconsequential for instance-level tasks (retrieval) yet severely harms group-level tasks (clustering). It proposes a novel objective comprising an Align True Pairs loss and a Centroid Uniformity loss that reduces the gap to nearly zero in both bimodal and trimodal settings, substantially improving clustering V-Measure by +10–17 points while preserving retrieval performance.
+  [ICLR2026][Multimodal VLM][modality gap] This paper demonstrates that the modality gap in CLIP is inconsequential for instance-level tasks (retrieval) yet severely harms group-level tasks (clustering). It proposes a nove…
 tags:
-  - ICLR2026
-  - Multimodal VLM
-  - modality gap
-  - contrastive learning
-  - CLIP
-  - clustering
-  - multimodal alignment
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "modality gap"
+  - "contrastive learning"
+  - "CLIP"
+  - "clustering"
+  - "multimodal alignment"
 date: 2026-05-08
 content_hash: 71c98a3a77afbd97
 ---

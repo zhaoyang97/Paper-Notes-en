@@ -2,15 +2,16 @@
 title: >-
   [Paper Note] SignRep: Enhancing Self-Supervised Sign Representations
 description: >-
-  [ICCV 2025][sign language representation learning] This paper proposes SignRep, a scalable self-supervised sign language representation learning framework that incorporates sign-specific skeleton priors, feature regularization, and an adversarial style-invariant loss into Masked Autoencoder pretraining. Using only a single RGB modality, SignRep surpasses complex multi-modal and multi-branch methods, achieving state-of-the-art performance on three tasks: sign language recognition, dictionary retrieval, and sign language translation.
+  [ICCV 2025][Multilingual & Machine Translation][sign language representation learning] This paper proposes SignRep, a scalable self-supervised sign language representation learning framework that incorporates sign-specif…
 tags:
-  - ICCV 2025
-  - sign language representation learning
-  - self-supervised learning
-  - masked autoencoder
-  - skeleton priors
-  - adversarial style loss
-  - dictionary retrieval
+  - "ICCV 2025"
+  - "Multilingual & Machine Translation"
+  - "sign language representation learning"
+  - "self-supervised learning"
+  - "masked autoencoder"
+  - "skeleton priors"
+  - "adversarial style loss"
+  - "dictionary retrieval"
 date: 2026-05-08
 content_hash: be1ed68a647cdc20
 ---

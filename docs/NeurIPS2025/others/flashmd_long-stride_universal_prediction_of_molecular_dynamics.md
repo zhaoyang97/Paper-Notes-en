@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FlashMD: Long-Stride, Universal Prediction of Molecular Dynamics
 description: >-
-  [NeurIPS 2025][molecular dynamics] FlashMD is proposed as a GNN-based framework that directly predicts the positional and momentum evolution of molecular dynamics trajectories with long strides, achieving time steps 1–2 orders of magnitude larger than those of conventional MD integrators. The architecture incorporates Hamiltonian dynamics constraints and generalizes to arbitrary thermodynamic ensembles and universal chemical systems.
+  [NeurIPS 2025][molecular dynamics] FlashMD is proposed as a GNN-based framework that directly predicts the positional and momentum evolution of molecular dynamics trajectories with long strides…
 tags:
-  - NeurIPS 2025
-  - molecular dynamics
-  - graph neural network
-  - long-stride prediction
-  - universal model
-  - Hamiltonian dynamics
-  - energy conservation
+  - "NeurIPS 2025"
+  - "molecular dynamics"
+  - "graph neural network"
+  - "long-stride prediction"
+  - "universal model"
+  - "Hamiltonian dynamics"
+  - "energy conservation"
 date: 2026-05-08
 content_hash: b996e39000e92873
 ---

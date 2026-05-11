@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Reasoning Fails Where Step Flow Breaks
 description: >-
-  [ACL 2026][reasoning model interpretability] This paper proposes Step-Saliency, a diagnostic tool that identifies two depth-correlated information flow failure modes in large reasoning models (Shallow Lock-in and Deep Decay), and designs StepFlow, a test-time intervention that repairs information propagation and improves reasoning accuracy without retraining.
+  [ACL 2026][Interpretability][reasoning model interpretability] This paper proposes Step-Saliency, a diagnostic tool that identifies two depth-correlated information flow failure modes in large reasoning models (Shallow L…
 tags:
-  - ACL 2026
-  - reasoning model interpretability
-  - information flow analysis
-  - test-time intervention
-  - attention mechanism
-  - chain-of-thought
+  - "ACL 2026"
+  - "Interpretability"
+  - "reasoning model interpretability"
+  - "information flow analysis"
+  - "test-time intervention"
+  - "attention mechanism"
+  - "chain-of-thought"
 date: 2026-05-08
 content_hash: 73c9c4247eb5894e
 ---

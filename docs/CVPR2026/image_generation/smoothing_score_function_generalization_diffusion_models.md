@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Smoothing the Score Function for Generalization in Diffusion Models: An Optimization-based Explanation Framework
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Models] This paper theoretically demonstrates that memorization in diffusion models stems from the "sharpness" of empirical score function weights (concentration of softmax weights), and proposes two methods — noise unconditioning and temperature smoothing — that improve generalization and reduce memorization by smoothing score function weights while preserving generation quality.
+  [CVPR 2026][Image Generation][Diffusion Models] This paper theoretically demonstrates that memorization in diffusion models stems from the "sharpness" of empirical score function weights (concentration of softmax weights…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Models
-  - Memorization
-  - Generalization
-  - Score Function Smoothing
-  - Temperature Smoothing
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "Memorization"
+  - "Generalization"
+  - "Score Function Smoothing"
+  - "Temperature Smoothing"
 date: 2026-05-08
 content_hash: 0d031f2f64c2191d
 ---

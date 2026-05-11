@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MagCache: Fast Video Generation with Magnitude-Aware Cache
 description: >-
-  [NeurIPS 2025][Video Generation][Video diffusion model acceleration] This paper discovers that the magnitude ratio of residual outputs between adjacent timesteps in video diffusion models follows a universally monotonically decreasing pattern across models and prompts — termed the "Unified Magnitude Law" — and proposes MagCache: a method that accurately models skip-step error accumulation via magnitude ratios, adaptively skips redundant timesteps and reuses cached outputs with only a single calibration sample, achieving 2.10–2.68× speedup on Open-Sora, CogVideoX, Wan 2.1, and HunyuanVideo while outperforming TeaCache and other existing methods across all three metrics of LPIPS, SSIM, and PSNR.
+  [NeurIPS 2025][Video Generation][Video diffusion model acceleration] This paper discovers that the magnitude ratio of residual outputs between adjacent timesteps in video diffusion models follows a universally monotonica…
 tags:
-  - NeurIPS 2025
-  - Video Generation
-  - Video diffusion model acceleration
-  - cache reuse
-  - residual magnitude law
-  - timestep skipping
-  - inference acceleration
+  - "NeurIPS 2025"
+  - "Video Generation"
+  - "Video diffusion model acceleration"
+  - "cache reuse"
+  - "residual magnitude law"
+  - "timestep skipping"
+  - "inference acceleration"
 date: 2026-05-08
 content_hash: d48f7b2bb2dc1ae3
 ---

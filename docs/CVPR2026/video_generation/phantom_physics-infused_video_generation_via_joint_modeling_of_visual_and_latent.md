@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Phantom: Physics-Infused Video Generation via Joint Modeling of Visual and Latent Physical Dynamics
 description: >-
-  [CVPR 2026][Video Generation][Physically consistent video generation] This paper proposes Phantom, a framework that augments a pretrained video diffusion model (Wan2.2-TI2V) with a dedicated physical dynamics branch. Physics-aware embeddings extracted by V-JEPA2 serve as latent physical states, and bidirectional cross-attention is employed to jointly model visual content and physical dynamics evolution. Phantom achieves substantial improvements over baselines on physics consistency benchmarks (VideoPhy PC +50.4%) while preserving visual quality.
+  [CVPR 2026][Video Generation][Physically consistent video generation] This paper proposes Phantom, a framework that augments a pretrained video diffusion model (Wan2.2-TI2V) with a dedicated physical dynamics branch. Phy…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Physically consistent video generation
-  - flow matching
-  - dual-branch architecture
-  - V-JEPA2
-  - latent physical dynamics
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Physically consistent video generation"
+  - "flow matching"
+  - "dual-branch architecture"
+  - "V-JEPA2"
+  - "latent physical dynamics"
 date: 2026-05-08
 content_hash: 14c295dc602e0662
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Precise Debugging Benchmark: Is Your Model Debugging or Regenerating?
 description: >-
-  [ACL 2026][Code Debugging] This paper reveals the "regeneration" tendency of frontier LLMs on debugging tasks. By introducing the PDB framework along with edit-level precision and bug-level recall metrics, the authors find that models such as GPT-5.1-Codex pass over 76% of unit tests yet achieve edit precision below 45%, and that iterative and agent-based debugging strategies fail to substantially improve precision.
+  [ACL 2026][Code Intelligence][Code Debugging] This paper reveals the "regeneration" tendency of frontier LLMs on debugging tasks. By introducing the PDB framework along with edit-level precision and bug-level recall metr…
 tags:
-  - ACL 2026
-  - Code Debugging
-  - LLM Programming
-  - Precise Editing
-  - Benchmark
-  - Code Regeneration
+  - "ACL 2026"
+  - "Code Intelligence"
+  - "Code Debugging"
+  - "LLM Programming"
+  - "Precise Editing"
+  - "Benchmark"
+  - "Code Regeneration"
 date: 2026-05-08
 content_hash: b137a1293591351a
 ---

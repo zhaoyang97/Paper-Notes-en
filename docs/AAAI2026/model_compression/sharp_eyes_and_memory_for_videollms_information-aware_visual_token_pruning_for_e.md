@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Sharp Eyes and Memory for VideoLLMs: Information-Aware Visual Token Pruning for Efficient and Reliable VideoLLM Reasoning
 description: >-
-  [AAAI 2026][Model Compression][Visual Token Pruning] SharpV proposes a two-stage training-free visual token pruning framework. In the Pre-LLM stage, it adaptively adjusts the pruning ratio per frame based on spatiotemporal information; in the Intra-LLM stage, it prunes the KV Cache based on a visual information degradation hypothesis. SharpV is the first method to achieve full compatibility with Flash Attention, retaining approximately 12% of tokens while matching or surpassing dense model performance across multiple video understanding benchmarks.
+  [AAAI 2026][Model Compression][Visual Token Pruning] SharpV proposes a two-stage training-free visual token pruning framework. In the Pre-LLM stage…
 tags:
-  - AAAI 2026
-  - Model Compression
-  - Visual Token Pruning
-  - VideoLLM
-  - KV Cache
-  - Adaptive Pruning
-  - Flash Attention
+  - "AAAI 2026"
+  - "Model Compression"
+  - "Visual Token Pruning"
+  - "VideoLLM"
+  - "KV Cache"
+  - "Adaptive Pruning"
+  - "Flash Attention"
 date: 2026-05-08
 content_hash: 7c96a4b69fc43783
 ---

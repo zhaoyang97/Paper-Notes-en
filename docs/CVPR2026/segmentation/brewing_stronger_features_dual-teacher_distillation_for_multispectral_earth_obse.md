@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Brewing Stronger Features: Dual-Teacher Distillation for Multispectral Earth Observation
 description: >-
-  [CVPR 2026][Segmentation][Remote Sensing Foundation Model] This paper proposes **DEO (Distillation for Earth Observation)**, a dual-teacher contrastive distillation framework that employs a multispectral self-distillation teacher to learn spectral representations and a frozen optical VFM teacher (DINOv3) to inject high-level semantic priors. The resulting single student network excels at both optical and multispectral remote sensing tasks, achieving state-of-the-art performance across semantic segmentation, change detection, and classification.
+  [CVPR 2026][Segmentation][Remote Sensing Foundation Model] This paper proposes **DEO (Distillation for Earth Observation)**, a dual-teacher contrastive distillation framework that employs a multispectral self-distillatio…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Remote Sensing Foundation Model
-  - Multispectral
-  - Knowledge Distillation
-  - Contrastive Learning
-  - Dual-Teacher Training
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Remote Sensing Foundation Model"
+  - "Multispectral"
+  - "Knowledge Distillation"
+  - "Contrastive Learning"
+  - "Dual-Teacher Training"
 date: 2026-05-08
 content_hash: a0419f92bf8342ac
 ---

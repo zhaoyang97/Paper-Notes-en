@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Revisiting Weight Regularization for Low-Rank Continual Learning
 description: >-
-  [Model Compression] This paper reintroduces Elastic Weight Consolidation (EWC) into low-rank continual learning by estimating the Fisher Information Matrix in the full-dimensional space to regularize a shared LoRA module, achieving effective forgetting mitigation under constant memory overhead.
+  [Model Compression] This paper reintroduces Elastic Weight Consolidation (EWC) into low-rank continual learning by estimating the Fisher Information Matrix in the full-dimensional space to regularize a shared LoRA module…
 tags:
-  - Model Compression
+  - "Model Compression"
 date: 2026-05-08
 content_hash: 668f17ad6c099dea
 ---

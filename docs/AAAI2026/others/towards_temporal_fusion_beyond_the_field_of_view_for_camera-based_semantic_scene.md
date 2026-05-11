@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Towards Temporal Fusion Beyond the Field of View for Camera-based Semantic Scene Completion
 description: >-
-  [AAAI 2026][Semantic Scene Completion] This paper proposes C3DFusion, a module that explicitly aligns point features from historical and current frames in 3D space, and is the first to systematically address temporal completion of out-of-frame (out-of-view) regions in camera-based SSC. The method achieves state-of-the-art performance on SemanticKITTI and SSCBench-KITTI-360.
+  [AAAI 2026][Semantic Scene Completion] This paper proposes C3DFusion, a module that explicitly aligns point features from historical and current frames in 3D space…
 tags:
-  - AAAI 2026
-  - Semantic Scene Completion
-  - Temporal Fusion
-  - Out-of-View Completion
-  - 3D Perception
-  - Voxel Features
+  - "AAAI 2026"
+  - "Semantic Scene Completion"
+  - "Temporal Fusion"
+  - "Out-of-View Completion"
+  - "3D Perception"
+  - "Voxel Features"
 date: 2026-05-08
 content_hash: 5b40539846c953f0
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VPHO: Joint Visual-Physical Cue Learning and Aggregation for Hand-Object Pose Estimation
 description: >-
-  [AAAI 2026][Human Understanding][Hand-object pose estimation] This paper proposes VPHO, a framework for hand-object pose estimation that jointly leverages visual and physical cues. It introduces a force prediction module to learn 3D physical cues and designs a two-stage candidate pose aggregation strategy (visual-guided + physics-guided) to achieve physical plausibility while preserving visual consistency. VPHO attains state-of-the-art performance in both pose accuracy and physical plausibility on the DexYCB and HO3D benchmarks simultaneously.
+  [AAAI 2026][Human Understanding][Hand-object pose estimation] This paper proposes VPHO, a framework for hand-object pose estimation that jointly leverages visual and physical cues. It introduces a force prediction module…
 tags:
-  - AAAI 2026
-  - Human Understanding
-  - Hand-object pose estimation
-  - visual-physical cues
-  - diffusion model
-  - force prediction
-  - candidate pose aggregation
+  - "AAAI 2026"
+  - "Human Understanding"
+  - "Hand-object pose estimation"
+  - "visual-physical cues"
+  - "diffusion model"
+  - "force prediction"
+  - "candidate pose aggregation"
 date: 2026-05-08
 content_hash: 25c2665b4aba5c78
 ---

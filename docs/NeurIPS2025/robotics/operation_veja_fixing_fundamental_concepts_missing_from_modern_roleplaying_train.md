@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Operation Veja: Fixing Fundamental Concepts Missing from Modern Roleplaying Training Paradigms
 description: >-
-  [NeurIPS 2025][Robotics][Role-playing] This paper systematically critiques four dominant paradigms in role-playing (RP) model training—RAG, fact-value specification, literary data, and synthetic data—arguing that none can produce characters with genuine depth. It proposes the VEJA framework (Values–Experiences–Judgments–Abilities) as a structured basis for character definition and data curation. In an LLM-judged A/B test, VEJA-guided human-curated data significantly outperforms a Gemini Pro 2.5 synthetic baseline with a win/loss/tie ratio of 43:28:29.
+  [NeurIPS 2025][Robotics][Role-playing] This paper systematically critiques four dominant paradigms in role-playing (RP) model training—RAG, fact-value specification, literary data…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - Role-playing
-  - VEJA framework
-  - value-conflicted reasoning
-  - data curation
-  - character consistency
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "Role-playing"
+  - "VEJA framework"
+  - "value-conflicted reasoning"
+  - "data curation"
+  - "character consistency"
 date: 2026-05-08
 content_hash: f65fbbd954e830bc
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Two-Stage Learning of Stabilizing Neural Controllers via Zubov Sampling and Iterative Domain Expansion
 description: >-
-  [NeurIPS 2025][LLM Reasoning][neural controller] A two-stage training framework is proposed: the first stage estimates the region of attraction (ROA) via Zubov-guided sampling and dynamic domain expansion, while the second stage refines the result through CEGIS-based counterexample-driven training. The framework jointly learns a neural network controller and a Lyapunov function, achieving ROA volumes 5 to $1.5 \times 10^5$ times larger than baselines and verification speeds 40–10000× faster than dReal.
+  [NeurIPS 2025][LLM Reasoning][neural controller] A two-stage training framework is proposed: the first stage estimates the region of attraction (ROA) via Zubov-guided sampling and dynamic domain expansion…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - neural controller
-  - Lyapunov function
-  - region of attraction
-  - Zubov theorem
-  - neural network verification
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "neural controller"
+  - "Lyapunov function"
+  - "region of attraction"
+  - "Zubov theorem"
+  - "neural network verification"
 date: 2026-05-08
 content_hash: 56603a849c3b0cb2
 ---

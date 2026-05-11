@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PersonaVLM: Long-Term Personalized Multimodal LLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][Personalization] This paper proposes PersonaVLM, a multimodal agent framework for long-term personalization. Through proactive memory management (four-type memory database), multi-step reasoning-based retrieval, and a momentum-based personality evolution mechanism, it transforms a general-purpose MLLM into a personalized assistant capable of adapting to shifting user preferences, surpassing GPT-4o by 5.2% under a 128K context.
+  [CVPR 2026][Multimodal VLM][Personalization] This paper proposes PersonaVLM, a multimodal agent framework for long-term personalization. Through proactive memory management (four-type memory database)…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Personalization
-  - Long-term Memory
-  - Multimodal Assistant
-  - Big Five Personality
-  - Agent Framework
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Personalization"
+  - "Long-term Memory"
+  - "Multimodal Assistant"
+  - "Big Five Personality"
+  - "Agent Framework"
 date: 2026-05-08
 content_hash: df5b86d692c13725
 ---

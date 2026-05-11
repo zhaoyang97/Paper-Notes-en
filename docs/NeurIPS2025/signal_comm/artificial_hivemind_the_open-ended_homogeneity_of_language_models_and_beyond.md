@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Artificial Hivemind: The Open-Ended Homogeneity of Language Models (and Beyond)
 description: >-
-  [NeurIPS 2025 (D&B Oral)][Signal & Communication][mode collapse] This work introduces the Infinity-Chat dataset (26K open-ended real-world user queries with 31,250 human annotations) to expose the "Artificial Hivemind" phenomenon in language models — severe intra-model repetition and inter-model homogeneity in open-ended generation — and demonstrates that Reward Models and LM Judges fail to calibrate on samples with high inter-annotator preference divergence.
+  [NeurIPS 2025 (D&B Oral)][Signal & Communication][mode collapse] This work introduces the Infinity-Chat dataset (26K open-ended real-world user queries with 31…
 tags:
   - "NeurIPS 2025 (D&B Oral)"
   - "Signal & Communication"
-  - mode collapse
-  - LM diversity
-  - open-ended generation
-  - Infinity-Chat
-  - artificial hivemind
-  - human preferences
+  - "mode collapse"
+  - "LM diversity"
+  - "open-ended generation"
+  - "Infinity-Chat"
+  - "artificial hivemind"
+  - "human preferences"
 date: 2026-05-08
 content_hash: 31f7e46e8c5ae341
 ---

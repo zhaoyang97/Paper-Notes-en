@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] DynaRend: Learning 3D Dynamics via Masked Future Rendering for Robotic Manipulation
 description: >-
-  [NeurIPS 2025][3D Vision][Representation Learning] DynaRend is proposed to jointly learn 3D geometry, semantics, and dynamics on triplane representations via differentiable volumetric rendering, using two complementary objectives — masked reconstruction and future prediction — enabling efficient transfer to downstream robotic manipulation tasks after pre-training.
+  [NeurIPS 2025][3D Vision][Representation Learning] DynaRend is proposed to jointly learn 3D geometry, semantics, and dynamics on triplane representations via differentiable volumetric rendering…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Representation Learning
-  - Robotic Manipulation
-  - Differentiable Rendering
-  - Triplane
-  - Dynamics Prediction
-  - Pre-training
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Representation Learning"
+  - "Robotic Manipulation"
+  - "Differentiable Rendering"
+  - "Triplane"
+  - "Dynamics Prediction"
+  - "Pre-training"
 date: 2026-05-08
 content_hash: 215681ad08c561c0
 ---

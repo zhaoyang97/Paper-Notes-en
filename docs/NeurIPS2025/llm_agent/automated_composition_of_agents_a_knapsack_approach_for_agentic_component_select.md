@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Automated Composition of Agents: A Knapsack Approach for Agentic Component Selection
 description: >-
-  [NeurIPS 2025][LLM Agent][agent composition] This paper formalizes the agent component selection problem as an online knapsack problem and proposes the Composer Agent framework, which evaluates true component capabilities via sandbox testing (rather than static semantic retrieval) and dynamically selects optimal component combinations under budget constraints using the ZCL online algorithm. The approach achieves up to a 31.6% improvement in single-agent tool selection success rate, and boosts multi-agent sub-agent selection success rate from 37% to 87%.
+  [NeurIPS 2025][LLM Agent][agent composition] This paper formalizes the agent component selection problem as an online knapsack problem and proposes the Composer Agent framework…
 tags:
-  - NeurIPS 2025
-  - LLM Agent
-  - agent composition
-  - knapsack problem
-  - component selection
-  - online optimization
-  - sandbox testing
-  - multi-agent
+  - "NeurIPS 2025"
+  - "LLM Agent"
+  - "agent composition"
+  - "knapsack problem"
+  - "component selection"
+  - "online optimization"
+  - "sandbox testing"
+  - "multi-agent"
 date: 2026-05-08
 content_hash: 2e33cd4346375cb7
 ---

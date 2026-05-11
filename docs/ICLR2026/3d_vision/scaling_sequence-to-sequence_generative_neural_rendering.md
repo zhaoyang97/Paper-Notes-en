@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Scaling Sequence-to-Sequence Generative Neural Rendering
 description: >-
-  [ICLR 2026][3D Vision][Neural Rendering] This paper presents Kaleido, a family of decoder-only rectified flow transformers that treats 3D as a special subdomain of video. Through Unified Positional Encoding, a masked autoregressive framework, and a video pretraining strategy, Kaleido achieves "any-to-any" 6-DoF novel view synthesis without any explicit 3D representation. It **is the first generative method to match per-scene optimization (InstantNGP) in rendering quality under multi-view settings**, and scales resolution from 512/576px to 1024px.
+  [ICLR 2026][3D Vision][Neural Rendering] This paper presents Kaleido, a family of decoder-only rectified flow transformers that treats 3D as a special subdomain of video. Through Unified Positional Encoding…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Neural Rendering
-  - Novel View Synthesis
-  - Rectified Flow Transformer
-  - Masked Autoregression
-  - Unified Positional Encoding
-  - Video-3D Unification
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Neural Rendering"
+  - "Novel View Synthesis"
+  - "Rectified Flow Transformer"
+  - "Masked Autoregression"
+  - "Unified Positional Encoding"
+  - "Video-3D Unification"
 date: 2026-05-08
 content_hash: 3b2fbf23442b3601
 ---

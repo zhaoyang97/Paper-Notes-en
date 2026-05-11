@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BarcodeMamba+: Advancing State-Space Models for Fungal Biodiversity Research
 description: >-
-  [NeurIPS 2025][Medical Imaging][DNA barcoding] BarcodeMamba+ is a foundation model for fungal DNA barcode classification—built on a state-space model architecture, adopting a pretrain-then-finetune paradigm to leverage partially labeled data, and incorporating hierarchical label smoothing, weighted loss, and multi-head outputs to address fungal classification challenges (93% of specimens lack species-level labels). It surpasses existing methods across all taxonomic ranks.
+  [NeurIPS 2025][Medical Imaging][DNA barcoding] BarcodeMamba+ is a foundation model for fungal DNA barcode classification—built on a state-space model architecture…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - DNA barcoding
-  - fungal taxonomy
-  - state-space models
-  - foundation models
-  - hierarchical classification
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "DNA barcoding"
+  - "fungal taxonomy"
+  - "state-space models"
+  - "foundation models"
+  - "hierarchical classification"
 date: 2026-05-08
 content_hash: 4bb5ec0302111ed1
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] OpenAgentSafety: A Comprehensive Framework for Evaluating Real-World AI Agent Safety
 description: >-
-  [ICLR 2026][LLM Agent][AI agent safety] This paper proposes OpenAgentSafety, a comprehensive AI agent safety evaluation framework comprising 350+ executable tasks, a real-world toolset (browser, terminal, file system, and messaging platforms), and multi-turn multi-user interaction scenarios. The framework reveals that even state-of-the-art LLMs exhibit unsafe behaviors in 49%–73% of safety-sensitive tasks.
+  [ICLR 2026][LLM Agent][AI agent safety] This paper proposes OpenAgentSafety, a comprehensive AI agent safety evaluation framework comprising 350+ executable tasks, a real-world toolset (browser, terminal, file system…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - AI agent safety
-  - benchmark
-  - multi-turn evaluation
-  - tool-use safety
-  - red teaming
-  - rule-based evaluation
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "AI agent safety"
+  - "benchmark"
+  - "multi-turn evaluation"
+  - "tool-use safety"
+  - "red teaming"
+  - "rule-based evaluation"
 date: 2026-05-08
 content_hash: e3fd7f17078408c0
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MicroEvoEval: A Systematic Evaluation Framework for Image-Based Microstructure Evolution Prediction
 description: >-
-  [AAAI 2026][LLM Evaluation][Microstructure evolution] This paper introduces MicroEvoEval, the first standardized benchmark for image-level microstructure evolution prediction, encompassing 4 representative physical tasks (planar wave propagation, grain growth, spinodal decomposition, dendritic solidification), 14 models (5 domain-specific + 9 general spatiotemporal architectures), and a multi-dimensional evaluation framework (numerical accuracy + physical fidelity + computational efficiency). The study finds that modern general-purpose architectures (e.g., VMamba) outperform domain-specific models in long-term stability and physical fidelity while achieving an order-of-magnitude improvement in computational efficiency.
+  [AAAI 2026][LLM Evaluation][Microstructure evolution] This paper introduces MicroEvoEval, the first standardized benchmark for image-level microstructure evolution prediction…
 tags:
-  - AAAI 2026
-  - LLM Evaluation
-  - Microstructure evolution
-  - spatiotemporal prediction
-  - benchmark evaluation
-  - deep learning surrogate models
-  - materials science
+  - "AAAI 2026"
+  - "LLM Evaluation"
+  - "Microstructure evolution"
+  - "spatiotemporal prediction"
+  - "benchmark evaluation"
+  - "deep learning surrogate models"
+  - "materials science"
 date: 2026-05-08
 content_hash: 016ca2136c0cd92a
 ---

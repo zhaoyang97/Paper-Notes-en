@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Conflated Inverse Modeling for Urban Vegetation Patterns
 description: >-
-  [CVPR 2026][Remote Sensing][Inverse Modeling] A framework conflating a forward prediction model with a diffusion-based inverse generative model to produce diverse yet physically plausible urban vegetation spatial configurations (NDVI patterns) under specified temperature change targets, achieving 3.4× diversity improvement while reducing temperature control error by 37%.
+  [CVPR 2026][Remote Sensing][Inverse Modeling] A framework conflating a forward prediction model with a diffusion-based inverse generative model to produce diverse yet physically plausible urban vegetation spatial configu…
 tags:
-  - CVPR 2026
-  - Remote Sensing
-  - Inverse Modeling
-  - Diffusion Model
-  - Urban Vegetation
-  - Land Surface Temperature
-  - NDVI
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Inverse Modeling"
+  - "Diffusion Model"
+  - "Urban Vegetation"
+  - "Land Surface Temperature"
+  - "NDVI"
 date: 2026-05-08
 content_hash: bb73d5d34bf7fe51
 ---

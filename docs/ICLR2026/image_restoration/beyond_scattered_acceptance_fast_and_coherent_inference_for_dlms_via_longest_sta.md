@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond Scattered Acceptance: Fast and Coherent Inference for DLMs via Longest Stable Prefixes
 description: >-
-  [ICLR 2026][Image Restoration][diffusion language models] The LSP scheduler atomically commits the longest contiguous stable prefix at each denoising step—rather than accepting scattered discrete tokens—achieving up to 3.4× speedup in DLM inference while maintaining or slightly improving output quality.
+  [ICLR 2026][Image Restoration][diffusion language models] The LSP scheduler atomically commits the longest contiguous stable prefix at each denoising step—rather than accepting scattered discrete tokens—achieving up to 3…
 tags:
-  - ICLR 2026
-  - Image Restoration
-  - diffusion language models
-  - inference acceleration
-  - KV cache
-  - prefix commitment
-  - logit margin
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "diffusion language models"
+  - "inference acceleration"
+  - "KV cache"
+  - "prefix commitment"
+  - "logit margin"
 date: 2026-05-08
 content_hash: cbed54a82759b9d1
 ---

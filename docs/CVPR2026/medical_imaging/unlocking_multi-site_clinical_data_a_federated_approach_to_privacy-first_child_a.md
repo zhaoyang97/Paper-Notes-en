@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unlocking Multi-Site Clinical Data: A Federated Approach to Privacy-First Child Autism Behavior Analysis
 description: >-
-  [CVPR 2026][Medical Imaging][Federated Learning] This paper proposes the first federated learning framework for children's autism behavior recognition. Through a two-tier privacy strategy—3D skeleton abstraction (identity removal) combined with federated optimization (data never leaves the site)—the proposed approach achieves 87.80% accuracy on the MMASD dataset using the APFL personalized federated method, surpassing local training by 5.2% while satisfying HIPAA/GDPR compliance requirements.
+  [CVPR 2026][Medical Imaging][Federated Learning] This paper proposes the first federated learning framework for children's autism behavior recognition. Through a two-tier privacy strategy—3D skeleton abstraction (identit…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Federated Learning
-  - Autism Behavior Recognition
-  - Skeleton-based Action Recognition
-  - Privacy Preservation
-  - Personalized Federated Learning
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Federated Learning"
+  - "Autism Behavior Recognition"
+  - "Skeleton-based Action Recognition"
+  - "Privacy Preservation"
+  - "Personalized Federated Learning"
 date: 2026-05-08
 content_hash: 00ab9e251726a1d8
 ---

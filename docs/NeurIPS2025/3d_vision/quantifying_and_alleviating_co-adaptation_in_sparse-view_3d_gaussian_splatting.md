@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Quantifying and Alleviating Co-Adaptation in Sparse-View 3D Gaussian Splatting
 description: >-
-  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] This paper identifies co-adaptation among Gaussians as the root cause of appearance artifacts in sparse-view 3D Gaussian Splatting, proposes the Co-Adaptation Score (CA) metric to quantify this entanglement, and introduces two plug-and-play regularization strategies—Gaussian Dropout and multiplicative opacity noise injection—that consistently reduce co-adaptation and improve novel view rendering quality across five baseline methods and three datasets.
+  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] This paper identifies co-adaptation among Gaussians as the root cause of appearance artifacts in sparse-view 3D Gaussian Splatting…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - sparse-view
-  - co-adaptation
-  - Dropout
-  - novel view synthesis
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "sparse-view"
+  - "co-adaptation"
+  - "Dropout"
+  - "novel view synthesis"
 date: 2026-05-08
 content_hash: 87c702855baac991
 ---

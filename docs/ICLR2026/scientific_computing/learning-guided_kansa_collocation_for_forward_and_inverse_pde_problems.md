@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning-guided Kansa Collocation for Forward and Inverse PDE Problems
 description: >-
-  [ICLR 2026][Scientific Computing][Kansa method] This work extends the meshfree radial basis function (RBF)-based Kansa collocation method from single-variable linear PDEs to coupled multi-variable and nonlinear PDE settings. It incorporates automatic shape-parameter tuning and multiple time-stepping schemes, and provides a systematic comparison against neural PDE solvers such as PINNs and FNO on both forward and inverse problems.
+  [ICLR 2026][Scientific Computing][Kansa method] This work extends the meshfree radial basis function (RBF)-based Kansa collocation method from single-variable linear PDEs to coupled multi-variable and nonlinear PDE setti…
 tags:
-  - ICLR 2026
-  - Scientific Computing
-  - Kansa method
-  - radial basis functions
-  - nonlinear PDEs
-  - inverse problems
-  - neural PDE solvers
+  - "ICLR 2026"
+  - "Scientific Computing"
+  - "Kansa method"
+  - "radial basis functions"
+  - "nonlinear PDEs"
+  - "inverse problems"
+  - "neural PDE solvers"
 date: 2026-05-08
 content_hash: fdfb78d03a589b7b
 ---

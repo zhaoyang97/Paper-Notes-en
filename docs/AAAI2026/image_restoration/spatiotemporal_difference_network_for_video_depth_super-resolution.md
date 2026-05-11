@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SpatioTemporal Difference Network for Video Depth Super-Resolution
 description: >-
-  [AAAI 2026][Image Restoration][Video Depth Super-Resolution] Motivated by the statistical observation that spatially non-smooth regions and temporally varying regions in video depth super-resolution (VDSR) follow long-tail distributions, this paper proposes STDNet. The method incorporates a spatial difference branch (learning spatial difference representations for intra-frame RGB-D adaptive aggregation) and a temporal difference branch (exploiting temporal difference representations for motion compensation in changing regions). On the TarTanAir dataset at ×16 super-resolution, RMSE is reduced from 112.04 cm to 96.80 cm, outperforming state-of-the-art methods by an average of 27.6%–32.6%.
+  [AAAI 2026][Image Restoration][Video Depth Super-Resolution] Motivated by the statistical observation that spatially non-smooth regions and temporally varying regions in video depth super-resolution (VDSR) follow long-ta…
 tags:
-  - AAAI 2026
-  - Image Restoration
-  - Video Depth Super-Resolution
-  - Long-tail Distribution
-  - Spatial Difference
-  - Temporal Difference
-  - Deformable Convolution
+  - "AAAI 2026"
+  - "Image Restoration"
+  - "Video Depth Super-Resolution"
+  - "Long-tail Distribution"
+  - "Spatial Difference"
+  - "Temporal Difference"
+  - "Deformable Convolution"
 date: 2026-05-08
 content_hash: b013039b64f5ac14
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SparseCam4D: Spatio-Temporally Consistent 4D Reconstruction from Sparse Cameras
 description: >-
-  [CVPR 2026][LLM Evaluation][sparse-camera 4D reconstruction] This paper proposes SparseCam4D, the first method to achieve sparse-camera (2–3 views) 4D reconstruction on standard multi-camera dynamic scene benchmarks. The core innovation is the Spatio-Temporal Distortion Field (STDF), which explicitly models spatio-temporal inconsistencies in generative observations and decouples them from the underlying 4D Gaussian representation, enabling high-fidelity, spatio-temporally consistent rendering of dynamic scenes.
+  [CVPR 2026][LLM Evaluation][sparse-camera 4D reconstruction] This paper proposes SparseCam4D, the first method to achieve sparse-camera (2–3 views) 4D reconstruction on standard multi-camera dynamic scene benchmarks. The…
 tags:
-  - CVPR 2026
-  - LLM Evaluation
-  - sparse-camera 4D reconstruction
-  - spatio-temporal distortion field
-  - 4D Gaussian splatting
-  - video diffusion models
-  - dynamic scenes
+  - "CVPR 2026"
+  - "LLM Evaluation"
+  - "sparse-camera 4D reconstruction"
+  - "spatio-temporal distortion field"
+  - "4D Gaussian splatting"
+  - "video diffusion models"
+  - "dynamic scenes"
 date: 2026-05-08
 content_hash: 441f78d7d62e070d
 ---

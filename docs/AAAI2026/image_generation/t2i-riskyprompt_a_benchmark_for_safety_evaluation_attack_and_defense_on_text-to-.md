@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] T2I-RiskyPrompt: A Benchmark for Safety Evaluation, Attack, and Defense on Text-to-Image Model
 description: >-
-  [AAAI 2026][Image Generation][T2I Safety] This paper constructs T2I-RiskyPrompt — a comprehensive benchmark comprising 6,432 valid risky prompts spanning 6 major categories and 14 subcategories, each annotated with hierarchical labels and detailed risk rationales. A reason-driven MLLM-based risk detection method is proposed (achieving 91.8% accuracy with a 3B model), and a systematic evaluation is conducted across 8 T2I models, 9 defense methods, 5 safety filters, and 5 attack strategies.
+  [AAAI 2026][Image Generation][T2I Safety] This paper constructs T2I-RiskyPrompt — a comprehensive benchmark comprising 6,432 valid risky prompts spanning 6 major categories and 14 subcategories…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - T2I Safety
-  - Risk Evaluation
-  - Hierarchical Risk Taxonomy
-  - Jailbreak Attack
-  - Safety Filter
+  - "AAAI 2026"
+  - "Image Generation"
+  - "T2I Safety"
+  - "Risk Evaluation"
+  - "Hierarchical Risk Taxonomy"
+  - "Jailbreak Attack"
+  - "Safety Filter"
 date: 2026-05-08
 content_hash: b1a30221e593b2ae
 ---

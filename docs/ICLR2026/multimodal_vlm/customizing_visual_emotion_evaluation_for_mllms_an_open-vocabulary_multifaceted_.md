@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Customizing Visual Emotion Evaluation for MLLMs: An Open-vocabulary, Multifaceted, and Scalable Approach
 description: >-
-  [ICLR 2026][Multimodal VLM][Visual Emotion] This paper proposes the Emotion Statement Judgment (ESJ) task and the INSETS automatic annotation pipeline, reformulating visual emotion evaluation from "open-ended classification" to "statement veracity judgment." The authors construct the MVEI benchmark (3,086 samples, 424 emotion labels, four cognitive dimensions) and systematically evaluate 19 MLLMs, finding that even GPT-4o lags behind humans (91.6%) by 13.3% in accuracy.
+  [ICLR 2026][Multimodal VLM][Visual Emotion] This paper proposes the Emotion Statement Judgment (ESJ) task and the INSETS automatic annotation pipeline…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Visual Emotion
-  - MLLM Evaluation
-  - Open-vocabulary
-  - ESJ
-  - MVEI Benchmark
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Visual Emotion"
+  - "MLLM Evaluation"
+  - "Open-vocabulary"
+  - "ESJ"
+  - "MVEI Benchmark"
 date: 2026-05-08
 content_hash: 03f9d613b21ba9ae
 ---

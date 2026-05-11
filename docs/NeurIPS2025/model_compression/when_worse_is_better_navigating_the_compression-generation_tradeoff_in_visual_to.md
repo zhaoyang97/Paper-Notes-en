@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] When Worse is Better: Navigating the Compression-Generation Trade-off in Visual Tokenization
 description: >-
-  [NeurIPS 2025][Model Compression][Visual Tokenizer] This paper systematically investigates the trade-off between visual tokenizer compression rate and generation quality through scaling laws. It finds that more aggressive compression—despite yielding worse reconstruction—benefits generation for smaller models. The paper proposes Causally Regularized Tokenization (CRT), which embeds autoregressive inductive bias into Stage 1 training, achieving 2–3× computational efficiency gains. A 775M-parameter model with 256 tokens/image matches LlamaGen-3B's FID of 2.18.
+  [NeurIPS 2025][Model Compression][Visual Tokenizer] This paper systematically investigates the trade-off between visual tokenizer compression rate and generation quality through scaling laws. It finds that more aggressiv…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Visual Tokenizer
-  - Compression-Generation Trade-off
-  - Causal Regularization
-  - Scaling Law
-  - Autoregressive Generation
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Visual Tokenizer"
+  - "Compression-Generation Trade-off"
+  - "Causal Regularization"
+  - "Scaling Law"
+  - "Autoregressive Generation"
 date: 2026-05-08
 content_hash: 101e056e332bc56a
 ---

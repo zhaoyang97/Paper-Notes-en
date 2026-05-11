@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] All Vehicles Can Lie: Efficient Adversarial Defense in Fully Untrusted-Vehicle Collaborative Perception via Pseudo-Random Bayesian Inference
 description: >-
-  [CVPR 2026][AI Safety][collaborative perception] This paper proposes the Pseudo-Random Bayesian Inference (PRBI) framework for collaborative perception scenarios where **all vehicles are untrusted**. By leveraging inter-frame temporal consistency as a self-referential signal, PRBI employs pseudo-random grouping combined with Bayesian inference to efficiently identify and exclude malicious vehicles at an average cost of only 2.5 validations per frame, recovering detection accuracy to 79.4%–86.9% of the pre-attack baseline.
+  [CVPR 2026][AI Safety][collaborative perception] This paper proposes the Pseudo-Random Bayesian Inference (PRBI) framework for collaborative perception scenarios where **all vehicles are untrusted**. By leveraging inter-…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - collaborative perception
-  - adversarial defense
-  - Bayesian inference
-  - autonomous driving
-  - V2V communication
+  - "CVPR 2026"
+  - "AI Safety"
+  - "collaborative perception"
+  - "adversarial defense"
+  - "Bayesian inference"
+  - "autonomous driving"
+  - "V2V communication"
 date: 2026-05-08
 content_hash: 656279992791642a
 ---

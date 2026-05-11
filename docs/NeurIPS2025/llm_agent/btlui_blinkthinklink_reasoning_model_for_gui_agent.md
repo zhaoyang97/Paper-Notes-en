@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BTL-UI: Blink-Think-Link Reasoning Model for GUI Agent
 description: >-
-  [NeurIPS 2025][LLM Agent][GUI agent] This paper proposes the Blink-Think-Link (BTL) brain-inspired framework, which decomposes GUI interaction into three biologically plausible stages: Blink (rapid attentional localization), Think (cognitive reasoning and decision-making), and Link (executable command generation). Combined with an automated Blink data annotation pipeline and the first rule-based composite process-and-outcome reward mechanism, BTL Reward, the resulting BTL-UI model achieves competitive performance on both static GUI understanding and dynamic interaction benchmarks.
+  [NeurIPS 2025][LLM Agent][GUI agent] This paper proposes the Blink-Think-Link (BTL) brain-inspired framework, which decomposes GUI interaction into three biologically plausible stages: Blink (rapid attentional localizati…
 tags:
-  - NeurIPS 2025
-  - LLM Agent
-  - GUI agent
-  - Blink-Think-Link
-  - cognitive-inspired
-  - GRPO
-  - BTL Reward
+  - "NeurIPS 2025"
+  - "LLM Agent"
+  - "GUI agent"
+  - "Blink-Think-Link"
+  - "cognitive-inspired"
+  - "GRPO"
+  - "BTL Reward"
 date: 2026-05-08
 content_hash: 7b4383108e989fdf
 ---

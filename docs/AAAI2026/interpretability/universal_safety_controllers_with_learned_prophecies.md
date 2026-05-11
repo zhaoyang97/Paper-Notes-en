@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Universal Safety Controllers with Learned Prophecies
 description: >-
-  [AAAI 2026][Universal Safety Controllers] This paper proposes UCLearn, which learns CTL (Computation Tree Logic) formulas as approximate representations of prophecies from a small number of representative plant models, replacing exact but computationally expensive tree automata to achieve efficient, scalable, and interpretable universal safety controller synthesis.
+  [AAAI 2026][Interpretability][Universal Safety Controllers] This paper proposes UCLearn, which learns CTL (Computation Tree Logic) formulas as approximate representations of prophecies from a small number of representati…
 tags:
-  - AAAI 2026
-  - Universal Safety Controllers
-  - Temporal Logic
-  - CTL Learning
-  - Reactive Synthesis
-  - Prophecy Approximation
+  - "AAAI 2026"
+  - "Interpretability"
+  - "Universal Safety Controllers"
+  - "Temporal Logic"
+  - "CTL Learning"
+  - "Reactive Synthesis"
+  - "Prophecy Approximation"
 date: 2026-05-08
 content_hash: a955151300143d33
 ---

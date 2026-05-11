@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BiomedSQL: Text-to-SQL for Scientific Reasoning on Biomedical Knowledge Bases
 description: >-
-  [ICLR 2026 (Gen2 Workshop)][Medical Imaging][Text-to-SQL] This paper introduces BiomedSQL, the first benchmark specifically designed to evaluate the scientific reasoning capabilities of Text-to-SQL systems on biomedical knowledge bases. It comprises 68,000 question/SQL/answer triples and reveals a substantial gap between the best-performing model (GPT-o3-mini, 62.6%) and domain experts (90%).
+  [ICLR 2026 (Gen2 Workshop)][Medical Imaging][Text-to-SQL] This paper introduces BiomedSQL, the first benchmark specifically designed to evaluate the scientific reasoning capabilities of Text-to-SQL systems on biomedical…
 tags:
-  - ICLR 2026 (Gen2 Workshop)
-  - Medical Imaging
-  - Text-to-SQL
-  - Biomedical Knowledge Base
-  - Scientific Reasoning
-  - BigQuery
-  - LLM Evaluation
+  - "ICLR 2026 (Gen2 Workshop)"
+  - "Medical Imaging"
+  - "Text-to-SQL"
+  - "Biomedical Knowledge Base"
+  - "Scientific Reasoning"
+  - "BigQuery"
+  - "LLM Evaluation"
 date: 2026-05-08
 content_hash: 938082e76fc2f2df
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ODP-Bench: Benchmarking Out-of-Distribution Performance Prediction
 description: >-
-  [ICCV 2025][LLM Evaluation][OOD performance prediction] This paper presents ODP-Bench, the first comprehensive benchmark for OOD performance prediction, covering 29 OOD datasets, 10 prediction algorithms, and 1,444 pretrained models. It reveals a key finding that existing algorithms perform reasonably well on synthetic corruptions but consistently fail under natural distribution shifts.
+  [ICCV 2025][LLM Evaluation][OOD performance prediction] This paper presents ODP-Bench, the first comprehensive benchmark for OOD performance prediction, covering 29 OOD datasets, 10 prediction algorithms, and 1…
 tags:
-  - ICCV 2025
-  - LLM Evaluation
-  - OOD performance prediction
-  - distribution shift
-  - benchmark evaluation
-  - robustness assessment
-  - model selection
+  - "ICCV 2025"
+  - "LLM Evaluation"
+  - "OOD performance prediction"
+  - "distribution shift"
+  - "benchmark evaluation"
+  - "robustness assessment"
+  - "model selection"
 date: 2026-05-08
 content_hash: bd9e741547e72a52
 ---

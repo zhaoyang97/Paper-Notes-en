@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Semantic Causality-Aware Vision-Based 3D Occupancy Prediction
 description: >-
-  [ICCV 2025][Autonomous Driving][3D Occupancy Prediction] This paper analyzes semantic ambiguity in 2D-to-3D transformation for vision-based 3D occupancy prediction from a causal perspective, proposes a Causal Loss for end-to-end semantic consistency supervision, and designs the SCAT module (channel-grouped lifting, learnable camera offsets, normalized convolution) to significantly improve occupancy prediction accuracy and robustness to camera perturbations.
+  [ICCV 2025][Autonomous Driving][3D Occupancy Prediction] This paper analyzes semantic ambiguity in 2D-to-3D transformation for vision-based 3D occupancy prediction from a causal perspective…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - 3D Occupancy Prediction
-  - Causal Loss
-  - LSS
-  - 2D-to-3D Transformation
-  - Semantic Consistency
-  - Camera Robustness
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "3D Occupancy Prediction"
+  - "Causal Loss"
+  - "LSS"
+  - "2D-to-3D Transformation"
+  - "Semantic Consistency"
+  - "Camera Robustness"
 date: 2026-05-08
 content_hash: 503d41dfc1ecb202
 ---

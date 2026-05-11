@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TSGDiff: Rethinking Synthetic Time Series Generation from a Pure Graph Perspective
 description: >-
-  [AAAI 2026][Image Generation][time series generation] This paper proposes TSGDiff, the first framework to rethink time series generation from a purely graph-based perspective. Time series are represented as dynamic graphs constructed from Fourier spectral features, diffusion modeling is performed in the graph latent space, and a novel Topo-FID metric is introduced to evaluate the structural fidelity of generated time series.
+  [AAAI 2026][Image Generation][time series generation] This paper proposes TSGDiff, the first framework to rethink time series generation from a purely graph-based perspective. Time series are represented as dynamic graph…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - time series generation
-  - graph neural networks
-  - diffusion models
-  - Fourier transform
-  - topological fidelity
+  - "AAAI 2026"
+  - "Image Generation"
+  - "time series generation"
+  - "graph neural networks"
+  - "diffusion models"
+  - "Fourier transform"
+  - "topological fidelity"
 date: 2026-05-08
 content_hash: 13ef8c0bc80ccf5f
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] MPDiT: Multi-Patch Global-to-Local Transformer Architecture for Efficient Flow Matching
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Transformer] This paper proposes MPDiT, a multi-scale patch global-to-local diffusion Transformer architecture. Early layers process global context using large patches (4×4) with only 64 tokens, and later layers upsample to small patches (2×2) with 256 tokens for local detail refinement. This reduces GFLOPs by up to 50%, while the XL model achieves FID 2.05 (with CFG) at only 240 training epochs.
+  [CVPR 2026][Image Generation][Diffusion Transformer] This paper proposes MPDiT, a multi-scale patch global-to-local diffusion Transformer architecture. Early layers process global context using large patches (4×4) with o…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Transformer
-  - flow matching
-  - multi-scale patch
-  - efficient architecture
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Transformer"
+  - "flow matching"
+  - "multi-scale patch"
+  - "efficient architecture"
 date: 2026-05-08
 content_hash: 2b34b43d11f414c3
 ---

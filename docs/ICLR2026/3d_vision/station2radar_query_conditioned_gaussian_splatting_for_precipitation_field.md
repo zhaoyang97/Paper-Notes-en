@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Station2Radar: Query-Conditioned Gaussian Splatting for Precipitation Field
 description: >-
-  [ICLR 2026][3D Vision][Gaussian Splatting] This paper proposes Query-Conditioned Gaussian Splatting (QCGS), the first method to introduce 2D Gaussian Splatting into precipitation field generation. By fusing satellite imagery with sparse automatic weather station (AWS) observations, QCGS achieves flexible-resolution precipitation field reconstruction without radar input, reducing RMSE by over 50% compared to conventional gridded products.
+  [ICLR 2026][3D Vision][Gaussian Splatting] This paper proposes Query-Conditioned Gaussian Splatting (QCGS), the first method to introduce 2D Gaussian Splatting into precipitation field generation. By fusing satellite ima…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Gaussian Splatting
-  - Precipitation Field Reconstruction
-  - Implicit Neural Representation
-  - Satellite-Station Fusion
-  - Resolution-Agnostic Rendering
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Gaussian Splatting"
+  - "Precipitation Field Reconstruction"
+  - "Implicit Neural Representation"
+  - "Satellite-Station Fusion"
+  - "Resolution-Agnostic Rendering"
 date: 2026-05-08
 content_hash: 06116aa8a89f57de
 ---

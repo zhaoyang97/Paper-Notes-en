@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dropouts in Confidence: Moral Uncertainty in Human-LLM Alignment
 description: >-
-  [AAAI 2026][LLM Reasoning][Moral Reasoning] This paper systematically investigates decision-making uncertainty across 32 open-source LLMs in moral dilemma scenarios (trolley problem variants), finding that uncertainty is primarily driven by model architecture rather than moral dimension. Introducing attention dropout at inference time significantly increases mutual information and improves human-LLM moral alignment, suggesting that reducing overconfidence in moral scenarios can enhance consistency with human preferences.
+  [AAAI 2026][LLM Reasoning][Moral Reasoning] This paper systematically investigates decision-making uncertainty across 32 open-source LLMs in moral dilemma scenarios (trolley problem variants)…
 tags:
-  - AAAI 2026
-  - LLM Reasoning
-  - Moral Reasoning
-  - LLM Alignment
-  - Uncertainty
-  - Dropout
-  - Moral Machine
+  - "AAAI 2026"
+  - "LLM Reasoning"
+  - "Moral Reasoning"
+  - "LLM Alignment"
+  - "Uncertainty"
+  - "Dropout"
+  - "Moral Machine"
 date: 2026-05-08
 content_hash: a39ba4223902fd61
 ---

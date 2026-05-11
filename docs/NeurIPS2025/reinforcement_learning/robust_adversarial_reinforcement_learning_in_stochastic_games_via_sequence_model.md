@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Robust Adversarial Reinforcement Learning in Stochastic Games via Sequence Modeling
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Adversarial Robustness] This paper proposes CART (Conservative Adversarially Robust Decision Transformer), the first method to enhance the adversarial robustness of Decision Transformers in stochastic games. By modeling stage games and estimating NashQ values, CART addresses the over-optimism of ARDT under stochastic state transitions, achieving more accurate minimax value estimation and superior worst-case returns.
+  [NeurIPS 2025][Reinforcement Learning][Adversarial Robustness] This paper proposes CART (Conservative Adversarially Robust Decision Transformer)…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Adversarial Robustness
-  - Decision Transformer
-  - Stochastic Games
-  - NashQ
-  - Expectile Regression
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Adversarial Robustness"
+  - "Decision Transformer"
+  - "Stochastic Games"
+  - "NashQ"
+  - "Expectile Regression"
 date: 2026-05-08
 content_hash: f5824b945f29c51e
 ---

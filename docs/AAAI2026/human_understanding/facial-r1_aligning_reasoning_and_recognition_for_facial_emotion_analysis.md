@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Facial-R1: Aligning Reasoning and Recognition for Facial Emotion Analysis
 description: >-
-  [AAAI 2026][Human Understanding][Facial Emotion Analysis] This paper proposes Facial-R1, a three-stage alignment training framework (SFT → RL → Data Synthesis) that aligns the reasoning process of VLMs with emotion recognition outcomes by treating AU and emotion labels as verifiable reward signals. The framework achieves state-of-the-art performance on 8 benchmarks and introduces the FEA-20K dataset.
+  [AAAI 2026][Human Understanding][Facial Emotion Analysis] This paper proposes Facial-R1, a three-stage alignment training framework (SFT → RL → Data Synthesis) that aligns the reasoning process of VLMs with emotion recog…
 tags:
-  - AAAI 2026
-  - Human Understanding
-  - Facial Emotion Analysis
-  - Reinforcement Learning
-  - Action Unit
-  - Vision-Language Model
-  - GRPO
+  - "AAAI 2026"
+  - "Human Understanding"
+  - "Facial Emotion Analysis"
+  - "Reinforcement Learning"
+  - "Action Unit"
+  - "Vision-Language Model"
+  - "GRPO"
 date: 2026-05-08
 content_hash: a41eda0ae192b286
 ---

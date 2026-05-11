@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] IterResearch: Rethinking Long-Horizon Agents with Interaction Scaling
 description: >-
-  [ICLR 2026][LLM Efficiency][Deep Research Agent] IterResearch is proposed as an MDP-based iterative deep research paradigm that replaces mono-contextual linear accumulation with periodic workspace reconstruction, enabling agents to scale to 2048 interactions within a 40K context length (performance improves from 3.5% to 42.5%), surpassing open-source agents by an average of 14.5 percentage points across 6 benchmarks.
+  [ICLR 2026][LLM Efficiency][Deep Research Agent] IterResearch is proposed as an MDP-based iterative deep research paradigm that replaces mono-contextual linear accumulation with periodic workspace reconstruction…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Deep Research Agent
-  - Iterative Workspace
-  - MDP Framework
-  - Interaction Scaling
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Deep Research Agent"
+  - "Iterative Workspace"
+  - "MDP Framework"
+  - "Interaction Scaling"
+  - "Reinforcement Learning"
 date: 2026-05-08
 content_hash: ea15f3d149080b3c
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] StRap: Spatio-Temporal Pattern Retrieval for Out-of-Distribution Generalization
 description: >-
-  [NeurIPS 2025][Time Series][Spatio-Temporal Graph Neural Networks] This paper proposes StRap, a framework that constructs a multi-dimensional pattern memory bank comprising spatial, temporal, and spatio-temporal key-value pairs. At inference time, StRap retrieves historical patterns most similar to the current input and adaptively fuses them into the model representation, effectively addressing the Spatio-Temporal Out-Of-Distribution (STOOD) problem in streaming spatio-temporal data.
+  [NeurIPS 2025][Time Series][Spatio-Temporal Graph Neural Networks] This paper proposes StRap, a framework that constructs a multi-dimensional pattern memory bank comprising spatial, temporal…
 tags:
-  - NeurIPS 2025
-  - Time Series
-  - Spatio-Temporal Graph Neural Networks
-  - OOD Generalization
-  - Retrieval-Augmented Learning
-  - Continual Learning
-  - Pattern Memory Bank
+  - "NeurIPS 2025"
+  - "Time Series"
+  - "Spatio-Temporal Graph Neural Networks"
+  - "OOD Generalization"
+  - "Retrieval-Augmented Learning"
+  - "Continual Learning"
+  - "Pattern Memory Bank"
 date: 2026-05-08
 content_hash: 9069ef12cbc8d06a
 ---

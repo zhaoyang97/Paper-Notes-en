@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] MergeBench: A Benchmark for Merging Domain-Specialized LLMs
 description: >-
-  [NeurIPS 2025][model merging] MergeBench is the first comprehensive benchmark suite for evaluating large-scale domain-specialized LLM merging, covering Llama and Gemma families up to 9B parameters, five task domains, and eight merging methods, providing systematic evaluation and practical guidelines across three dimensions: multi-task performance, forgetting, and runtime efficiency.
+  [NeurIPS 2025][Multilingual & Machine Translation][model merging] MergeBench is the first comprehensive benchmark suite for evaluating large-scale domain-specialized LLM merging…
 tags:
-  - NeurIPS 2025
-  - model merging
-  - benchmark
-  - task vectors
-  - LLM
-  - multi-task learning
+  - "NeurIPS 2025"
+  - "Multilingual & Machine Translation"
+  - "model merging"
+  - "benchmark"
+  - "task vectors"
+  - "LLM"
+  - "multi-task learning"
 date: 2026-05-08
 content_hash: 192b789ca67e5267
 ---

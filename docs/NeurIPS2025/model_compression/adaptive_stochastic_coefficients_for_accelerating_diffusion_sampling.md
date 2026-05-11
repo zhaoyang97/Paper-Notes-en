@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Adaptive Stochastic Coefficients for Accelerating Diffusion Sampling
 description: >-
-  [NeurIPS 2025][Model Compression][diffusion sampling] By theoretically analyzing the complementary weaknesses of ODE and SDE solvers (ODE solvers accumulate irreducible gradient errors; SDE solvers amplify discretization errors at large step sizes), this paper proposes AdaSDE—a method that introduces a learnable stochastic coefficient $\gamma_i$ at each denoising step to control noise injection intensity. Optimized via lightweight distillation, AdaSDE achieves state-of-the-art FID of 4.18 on CIFAR-10 and 8.05 on FFHQ at 5 NFE.
+  [NeurIPS 2025][Model Compression][diffusion sampling] By theoretically analyzing the complementary weaknesses of ODE and SDE solvers (ODE solvers accumulate irreducible gradient errors…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - diffusion sampling
-  - SDE solver
-  - ODE solver
-  - adaptive noise injection
-  - few-step generation
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "diffusion sampling"
+  - "SDE solver"
+  - "ODE solver"
+  - "adaptive noise injection"
+  - "few-step generation"
 date: 2026-05-08
 content_hash: e2f99c8d5ba5eca7
 ---

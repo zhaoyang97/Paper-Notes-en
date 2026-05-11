@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Towards Comprehensive Scene Understanding: Integrating First and Third-Person Views for LVLMs
 description: >-
-  [NeurIPS 2025 (Spotlight)][Multimodal VLM][Multi-view understanding] This paper proposes E3VQA, the first multi-view VQA benchmark, and M3CoT, a prompting technique that fuses three complementary scene graphs, to enhance multi-view scene understanding in Large Vision-Language Models (LVLMs), achieving gains of 4.84% on GPT-4o and 5.94% on Gemini 2.0 Flash.
+  [NeurIPS 2025 (Spotlight)][Multimodal VLM][Multi-view understanding] This paper proposes E3VQA, the first multi-view VQA benchmark, and M3CoT, a prompting technique that fuses three complementary scene graphs…
 tags:
-  - NeurIPS 2025 (Spotlight)
-  - Multimodal VLM
-  - Multi-view understanding
-  - egocentric view
-  - exocentric view
-  - scene graph
-  - VQA
-  - CoT
+  - "NeurIPS 2025 (Spotlight)"
+  - "Multimodal VLM"
+  - "Multi-view understanding"
+  - "egocentric view"
+  - "exocentric view"
+  - "scene graph"
+  - "VQA"
+  - "CoT"
 date: 2026-05-08
 content_hash: 79e7e443061b1362
 ---

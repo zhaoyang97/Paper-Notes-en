@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Deformation-based In-Context Learning for Point Cloud Understanding
 description: >-
-  [CVPR 2026][3D Vision][point cloud in-context learning] This paper proposes DeformPIC, which reframes point cloud In-Context Learning from a "masked reconstruction" paradigm to a "deformation transfer" paradigm. A Deformation Extraction Network (DEN) extracts task-specific semantics, and a Deformation Transfer Network (DTN) applies the extracted deformation to the query point cloud, achieving CD reductions of 1.6/1.8/4.7 on reconstruction/denoising/registration respectively.
+  [CVPR 2026][3D Vision][point cloud in-context learning] This paper proposes DeformPIC, which reframes point cloud In-Context Learning from a "masked reconstruction" paradigm to a "deformation transfer" paradigm. A Deform…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - point cloud in-context learning
-  - deformation network
-  - geometric reasoning
-  - masked point modeling
-  - multi-task general model
+  - "CVPR 2026"
+  - "3D Vision"
+  - "point cloud in-context learning"
+  - "deformation network"
+  - "geometric reasoning"
+  - "masked point modeling"
+  - "multi-task general model"
 date: 2026-05-08
 content_hash: 9a70d839d7fe60be
 ---

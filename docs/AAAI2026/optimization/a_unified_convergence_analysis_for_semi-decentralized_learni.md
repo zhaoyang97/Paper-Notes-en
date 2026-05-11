@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Unified Convergence Analysis for Semi-Decentralized Learning: Sampled-to-Sampled vs. Sampled-to-All Communication
 description: >-
-  [AAAI 2026][Optimization][Semi-Decentralized Learning] This paper presents a unified convergence analysis framework to systematically compare, for the first time, two server-to-device communication primitives in semi-decentralized federated learning — S2S (returning the aggregated model only to sampled devices) and S2A (broadcasting to all devices). The analysis reveals distinct regimes in which S2S is superior under high inter-component heterogeneity and S2A is superior under low heterogeneity, and provides practical guidelines for system configuration.
+  [AAAI 2026][Optimization][Semi-Decentralized Learning] This paper presents a unified convergence analysis framework to systematically compare, for the first time…
 tags:
-  - AAAI 2026
-  - Optimization
-  - Semi-Decentralized Learning
-  - Sampled-to-Sampled
-  - Sampled-to-All
-  - Convergence Analysis
-  - Data Heterogeneity
+  - "AAAI 2026"
+  - "Optimization"
+  - "Semi-Decentralized Learning"
+  - "Sampled-to-Sampled"
+  - "Sampled-to-All"
+  - "Convergence Analysis"
+  - "Data Heterogeneity"
 date: 2026-05-08
 content_hash: e767af39c295b73a
 ---

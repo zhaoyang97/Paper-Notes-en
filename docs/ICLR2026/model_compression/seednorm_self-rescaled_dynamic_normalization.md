@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SeeDNorm: Self-Rescaled Dynamic Normalization
 description: >-
-  [ICLR 2026][Model Compression][Normalization layer] This paper proposes SeeDNorm, an adaptive dynamic normalization layer that conditions the scaling coefficients on the input itself, thereby preserving input norm information in the forward pass while retaining RMSNorm-like adaptive gradient adjustment in the backward pass. With negligible additional parameters, SeeDNorm consistently outperforms RMSNorm, LayerNorm, and DyT on both language modeling and vision tasks.
+  [ICLR 2026][Model Compression][Normalization layer] This paper proposes SeeDNorm, an adaptive dynamic normalization layer that conditions the scaling coefficients on the input itself…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Normalization layer
-  - dynamic scaling
-  - RMSNorm
-  - DyT
-  - large language models
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Normalization layer"
+  - "dynamic scaling"
+  - "RMSNorm"
+  - "DyT"
+  - "large language models"
 date: 2026-05-08
 content_hash: 534ded3ccf27b6a7
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Enhancing Visual Representation with Textual Semantics: Textual Semantics-Powered Prototypes for Heterogeneous Federated Learning
 description: >-
-  [CVPR 2026][Optimization][Federated Learning] To address the problem that existing federated prototype learning methods destroy inter-class semantic relations, this paper proposes FedTSP, which leverages pre-trained language models to construct textual prototypes that preserve semantic structure, achieving significant performance gains and faster convergence in heterogeneous federated learning.
+  [CVPR 2026][Optimization][Federated Learning] To address the problem that existing federated prototype learning methods destroy inter-class semantic relations, this paper proposes FedTSP…
 tags:
-  - CVPR 2026
-  - Optimization
-  - Federated Learning
-  - Prototype Learning
-  - Semantic Relations
-  - Pre-trained Language Models
-  - Data Heterogeneity
+  - "CVPR 2026"
+  - "Optimization"
+  - "Federated Learning"
+  - "Prototype Learning"
+  - "Semantic Relations"
+  - "Pre-trained Language Models"
+  - "Data Heterogeneity"
 date: 2026-05-08
 content_hash: 67b72c017067c210
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Process Reward Models Meet Planning: Generating Precise and Scalable Datasets for Step-Level Rewards
 description: >-
-  [ACL 2026][LLM Reasoning][Process Reward Models] This paper proposes leveraging the Planning Domain Definition Language (PDDL) to automatically generate large-scale, high-precision step-level reward datasets for training Process Reward Models (PRMs), achieving significant improvements on both mathematical and non-mathematical reasoning benchmarks.
+  [ACL 2026][LLM Reasoning][Process Reward Models] This paper proposes leveraging the Planning Domain Definition Language (PDDL) to automatically generate large-scale…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - Process Reward Models
-  - PDDL
-  - Planning Problems
-  - Step-Level Rewards
-  - Reasoning Evaluation
+  - "ACL 2026"
+  - "LLM Reasoning"
+  - "Process Reward Models"
+  - "PDDL"
+  - "Planning Problems"
+  - "Step-Level Rewards"
+  - "Reasoning Evaluation"
 date: 2026-05-08
 content_hash: 6dcc2b983535eda4
 ---

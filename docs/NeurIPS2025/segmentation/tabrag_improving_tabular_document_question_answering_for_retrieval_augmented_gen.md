@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TabRAG: Improving Tabular Document Question Answering for Retrieval Augmented Generation via Structured Representations
 description: >-
-  [NeurIPS 2025 (AI4Tab Workshop)][Segmentation][Table QA] This paper proposes TabRAG, a parsing-based RAG framework that decomposes documents into fine-grained components via layout segmentation, extracts tables into hierarchical structured representations using vision-language models, and integrates a self-generated in-context learning module to adapt to diverse table formats, achieving comprehensive improvements over existing parsing techniques on tabular document question answering.
+  [NeurIPS 2025 (AI4Tab Workshop)][Segmentation][Table QA] This paper proposes TabRAG, a parsing-based RAG framework that decomposes documents into fine-grained components via layout segmentation…
 tags:
-  - NeurIPS 2025 (AI4Tab Workshop)
-  - Segmentation
-  - Table QA
-  - RAG
-  - Structured Representation
-  - Vision-Language Models
-  - Document Parsing
+  - "NeurIPS 2025 (AI4Tab Workshop)"
+  - "Segmentation"
+  - "Table QA"
+  - "RAG"
+  - "Structured Representation"
+  - "Vision-Language Models"
+  - "Document Parsing"
 date: 2026-05-08
 content_hash: 2390764f162ce7ca
 ---

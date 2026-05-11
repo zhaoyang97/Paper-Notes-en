@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DIIP: Diffusion Image Prior
 description: >-
-  [ICCV 2025][Image Generation][diffusion model] This paper discovers that pretrained diffusion models exhibit an implicit bias analogous to Deep Image Prior (DIP) when reconstructing degraded images—the iterative optimization first produces a clean image before overfitting to the degraded input—and that this bias generalizes to a broader range of degradation types than DIP. Based on this finding, the authors propose DIIP, a fully blind (degradation-model-free) image restoration method.
+  [ICCV 2025][Image Generation][diffusion model] This paper discovers that pretrained diffusion models exhibit an implicit bias analogous to Deep Image Prior (DIP) when reconstructing degraded images—the iterative optimiza…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - diffusion model
-  - Blind Image Restoration
-  - Deep Image Prior
-  - Early Stopping
-  - Zero-shot
+  - "ICCV 2025"
+  - "Image Generation"
+  - "diffusion model"
+  - "Blind Image Restoration"
+  - "Deep Image Prior"
+  - "Early Stopping"
+  - "Zero-shot"
 date: 2026-05-08
 content_hash: fa9939c92f95f490
 ---

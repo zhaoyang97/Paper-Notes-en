@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TLB-VFI: Temporal-Aware Latent Brownian Bridge Diffusion for Video Frame Interpolation
 description: >-
-  [ICCV 2025][Image Generation][Video Frame Interpolation] This paper proposes TLB-VFI, an efficient video diffusion model for frame interpolation. It employs a temporal-aware autoencoder—comprising a latent-space temporal block and a pixel-space 3D wavelet gating mechanism—to extract rich temporal information, combined with a redesigned Brownian bridge diffusion process. With only 46.7M parameters (3× fewer than image diffusion methods and 20× fewer than video diffusion methods), TLB-VFI achieves approximately 20% FID improvement on SNU-FILM extreme and Xiph-4K benchmarks.
+  [ICCV 2025][Image Generation][Video Frame Interpolation] This paper proposes TLB-VFI, an efficient video diffusion model for frame interpolation. It employs a temporal-aware autoencoder—comprising a latent-space temporal…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Video Frame Interpolation
-  - Brownian Bridge Diffusion
-  - Temporal-Aware Autoencoder
-  - 3D Wavelet
-  - Optical Flow Guidance
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Video Frame Interpolation"
+  - "Brownian Bridge Diffusion"
+  - "Temporal-Aware Autoencoder"
+  - "3D Wavelet"
+  - "Optical Flow Guidance"
 date: 2026-05-08
 content_hash: a8adda6d41919c6f
 ---

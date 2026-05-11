@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BabyVLM-V2: Toward Developmentally Grounded Pretraining and Benchmarking of Vision Foundation Models
 description: >-
-  [CVPR 2026][Audio & Speech][Developmental Cognition] This paper proposes BabyVLM-V2, a framework that constructs three formats of pretraining data (768K image pairs + 181K video pairs + 63K interleaved sequences) from the SAYCam longitudinal egocentric corpus, designs the DevCV Toolbox (10 developmental cognitive tasks) grounded in the NIH Baby Toolbox®, and demonstrates that a compact model trained from scratch surpasses GPT-4o on selected mathematical tasks — representing the first systematic exploration of Artificial Developmental Intelligence (ADI).
+  [CVPR 2026][Audio & Speech][Developmental Cognition] This paper proposes BabyVLM-V2, a framework that constructs three formats of pretraining data (768K image pairs + 181K video pairs + 63K interleaved sequences) from th…
 tags:
-  - CVPR 2026
+  - "CVPR 2026"
   - "Audio & Speech"
-  - Developmental Cognition
-  - Infant Vision
-  - Sample-Efficient Pretraining
-  - NIH Baby Toolbox
-  - DevCV Toolbox
+  - "Developmental Cognition"
+  - "Infant Vision"
+  - "Sample-Efficient Pretraining"
+  - "NIH Baby Toolbox"
+  - "DevCV Toolbox"
 date: 2026-05-08
 content_hash: 3ba273b9298f8dfd
 ---

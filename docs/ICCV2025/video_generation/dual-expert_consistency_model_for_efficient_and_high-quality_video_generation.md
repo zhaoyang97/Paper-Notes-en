@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dual-Expert Consistency Model for Efficient and High-Quality Video Generation
 description: >-
-  [ICCV 2025][Video Generation][Consistency Distillation] This paper analyzes the optimization conflict between high- and low-noise levels in consistency model distillation, and proposes a parameter-efficient Dual-Expert Consistency Model (DCM). A semantic expert handles layout and motion while a detail expert handles fine-grained details, complemented by a temporal coherence loss and GAN with feature matching loss. On HunyuanVideo (13B), DCM achieves 4-step sampling quality approaching the 50-step baseline.
+  [ICCV 2025][Video Generation][Consistency Distillation] This paper analyzes the optimization conflict between high- and low-noise levels in consistency model distillation…
 tags:
-  - ICCV 2025
-  - Video Generation
-  - Consistency Distillation
-  - Video Generation Acceleration
-  - Dual-Expert Model
-  - Temporal Coherence Loss
-  - GAN Distillation
+  - "ICCV 2025"
+  - "Video Generation"
+  - "Consistency Distillation"
+  - "Video Generation Acceleration"
+  - "Dual-Expert Model"
+  - "Temporal Coherence Loss"
+  - "GAN Distillation"
 date: 2026-05-08
 content_hash: eb4bb75618cc72c6
 ---

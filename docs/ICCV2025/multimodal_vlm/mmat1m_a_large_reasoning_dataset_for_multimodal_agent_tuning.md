@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MMAT-1M: A Large Reasoning Dataset for Multimodal Agent Tuning
 description: >-
-  [ICCV 2025][Multimodal VLM][multimodal agent tuning] This paper introduces MMAT-1M, the first million-scale multimodal agent tuning dataset, constructed via a four-stage data engine (Foundation → Rationale → Reflection → Integration). It endows MLLMs with CoT reasoning, tool invocation, and self-reflection capabilities, achieving an average improvement of 2.7% on InternVL2.5-8B and 8.8% on RAG tasks.
+  [ICCV 2025][Multimodal VLM][multimodal agent tuning] This paper introduces MMAT-1M, the first million-scale multimodal agent tuning dataset…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - multimodal agent tuning
-  - chain-of-thought
-  - reflection
-  - tool usage
-  - reasoning dataset
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "multimodal agent tuning"
+  - "chain-of-thought"
+  - "reflection"
+  - "tool usage"
+  - "reasoning dataset"
 date: 2026-05-08
 content_hash: d35edf810cd5d3da
 ---

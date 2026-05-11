@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Drive My Way: Preference Alignment of Vision-Language-Action Model for Personalized Driving
 description: >-
-  [CVPR 2026][Autonomous Driving][personalized driving] This paper proposes DMW (Drive My Way), a personalized VLA driving framework that learns long-term driving habits via user embeddings and adapts to short-term preferences through natural language instructions. Personalized driving behavior is generated using GRPO-based reinforcement fine-tuning and style-aware rewards.
+  [CVPR 2026][Autonomous Driving][personalized driving] This paper proposes DMW (Drive My Way), a personalized VLA driving framework that learns long-term driving habits via user embeddings and adapts to short-term prefere…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - personalized driving
-  - VLA model
-  - preference alignment
-  - reinforcement fine-tuning
-  - user embedding
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "personalized driving"
+  - "VLA model"
+  - "preference alignment"
+  - "reinforcement fine-tuning"
+  - "user embedding"
 date: 2026-05-08
 content_hash: 1c0323a7ab97e4dc
 ---

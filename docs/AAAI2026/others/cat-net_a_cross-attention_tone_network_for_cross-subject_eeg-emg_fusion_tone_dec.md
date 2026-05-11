@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] CAT-Net: A Cross-Attention Tone Network for Cross-Subject EEG-EMG Fusion Tone Decoding
 description: >-
-  [AAAI 2026][Brain-Computer Interface] This paper proposes CAT-Net (Cross-Attention Tone Network), which achieves Mandarin four-tone classification using only 20 EEG channels and 5 EMG channels via spatial-temporal feature extraction branches, a cross-attention fusion mechanism, and domain adversarial training. The model achieves 87.83%/88.08% accuracy under voiced/silent speech conditions and 83.27%/85.10% under cross-subject evaluation, outperforming all 8 baseline methods.
+  [AAAI 2026][Brain-Computer Interface] This paper proposes CAT-Net (Cross-Attention Tone Network), which achieves Mandarin four-tone classification using only 20 EEG channels and 5 EMG channels via spatial-temporal featur…
 tags:
-  - AAAI 2026
-  - Brain-Computer Interface
-  - EEG-EMG Fusion
-  - Cross-Attention
-  - Mandarin Tone Classification
-  - Cross-Subject Generalization
+  - "AAAI 2026"
+  - "Brain-Computer Interface"
+  - "EEG-EMG Fusion"
+  - "Cross-Attention"
+  - "Mandarin Tone Classification"
+  - "Cross-Subject Generalization"
 date: 2026-05-08
 content_hash: ce10004acdf7724f
 ---

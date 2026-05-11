@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Draw-In-Mind: Rebalancing Designer-Painter Roles in Unified Multimodal Models Benefits Image Editing
 description: >-
-  [ICLR 2026][Image Generation][Unified Multimodal Model] This paper identifies a role imbalance in existing unified multimodal models, where the understanding module merely acts as a translator while the generation module is forced to simultaneously serve as both "designer" and "painter." By constructing the DIM dataset (14M long-context text-image pairs + 233K CoT editing blueprints), design responsibilities are transferred to the understanding module. The resulting 4.6B-parameter model surpasses models five times its size.
+  [ICLR 2026][Image Generation][Unified Multimodal Model] This paper identifies a role imbalance in existing unified multimodal models, where the understanding module merely acts as a translator while the generation module…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Unified Multimodal Model
-  - Chain-of-Thought
-  - image editing
-  - Designer-Painter
-  - Data-Centric
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Unified Multimodal Model"
+  - "Chain-of-Thought"
+  - "image editing"
+  - "Designer-Painter"
+  - "Data-Centric"
 date: 2026-05-08
 content_hash: 1007c7164d08dc74
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Meta-Unlearning on Diffusion Models: Preventing Relearning Unlearned Concepts
 description: >-
-  [ICCV 2025][Image Generation][Machine Unlearning] This paper proposes a Meta-Unlearning framework for diffusion models that augments standard unlearning objectives with a meta-objective, causing benign knowledge associated with unlearned concepts to self-destruct upon malicious fine-tuning, thereby preventing relearning of erased concepts. The framework is compatible with most existing unlearning methods and requires only the addition of a simple meta-objective.
+  [ICCV 2025][Image Generation][Machine Unlearning] This paper proposes a Meta-Unlearning framework for diffusion models that augments standard unlearning objectives with a meta-objective…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Machine Unlearning
-  - Diffusion Models
-  - Malicious Fine-tuning Defense
-  - Meta-Learning
-  - Concept Erasure
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Machine Unlearning"
+  - "Diffusion Models"
+  - "Malicious Fine-tuning Defense"
+  - "Meta-Learning"
+  - "Concept Erasure"
 date: 2026-05-08
 content_hash: c32970598c9fe92e
 ---

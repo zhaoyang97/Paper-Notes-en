@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Empirical Study on Robustness and Resilience in Cooperative Multi-Agent Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][multi-agent RL] Through 82,620 large-scale experiments, this work systematically investigates robustness and resilience in cooperative multi-agent RL, demonstrating that hyperparameter tuning matters more than algorithm selection, and revealing that commonly adopted practices such as parameter sharing, GAE, and PopArt are harmful under uncertainty. A set of practical hyperparameter recommendations is proposed.
+  [NeurIPS 2025][Reinforcement Learning][multi-agent RL] Through 82,620 large-scale experiments, this work systematically investigates robustness and resilience in cooperative multi-agent RL…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - multi-agent RL
-  - robustness
-  - resilience
-  - hyperparameter tuning
-  - cooperative MARL
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "multi-agent RL"
+  - "robustness"
+  - "resilience"
+  - "hyperparameter tuning"
+  - "cooperative MARL"
 date: 2026-05-08
 content_hash: cf6c31df24ae51d0
 ---

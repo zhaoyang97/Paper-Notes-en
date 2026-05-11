@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Adapt Data to Model: Adaptive Transformation Optimization for Domain-shared Time Series Foundation Models
 description: >-
-  [ICLR 2026][Time Series][Time series foundation models] This paper proposes TATO, a framework that automatically optimizes data preprocessing pipelines (including context trimming, scale normalization, and outlier correction) to adapt frozen large time-series models (LTMs) to diverse downstream domains without fine-tuning, achieving an average MSE reduction of 13.6% and up to 65.4%.
+  [ICLR 2026][Time Series][Time series foundation models] This paper proposes TATO, a framework that automatically optimizes data preprocessing pipelines (including context trimming, scale normalization…
 tags:
-  - ICLR 2026
-  - Time Series
-  - Time series foundation models
-  - data transformation optimization
-  - zero-shot forecasting
-  - frozen model inference
-  - Bayesian optimization
+  - "ICLR 2026"
+  - "Time Series"
+  - "Time series foundation models"
+  - "data transformation optimization"
+  - "zero-shot forecasting"
+  - "frozen model inference"
+  - "Bayesian optimization"
 date: 2026-05-08
 content_hash: ff3d74fb80039618
 ---

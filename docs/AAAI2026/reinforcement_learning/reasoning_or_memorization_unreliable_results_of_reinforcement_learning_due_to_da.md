@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Reasoning or Memorization? Unreliable Results of Reinforcement Learning Due to Data Contamination
 description: >-
-  [AAAI 2026][Reinforcement Learning][Data Contamination] This paper conducts a systematic data leakage audit revealing severe data contamination of the Qwen2.5 series on standard math benchmarks such as MATH-500. It demonstrates that recent findings claiming "spurious rewards can improve mathematical reasoning" are artifacts of contamination, and constructs a fully uncontaminated benchmark, RandomCalculation, to verify that only correct reward signals yield genuine reasoning improvements.
+  [AAAI 2026][Reinforcement Learning][Data Contamination] This paper conducts a systematic data leakage audit revealing severe data contamination of the Qwen2.5 series on standard math benchmarks such as MATH-500. It demon…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - Data Contamination
-  - LLM Reasoning
-  - Spurious Rewards
-  - RLVR
-  - Math Reasoning Evaluation
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "Data Contamination"
+  - "LLM Reasoning"
+  - "Spurious Rewards"
+  - "RLVR"
+  - "Math Reasoning Evaluation"
 date: 2026-05-08
 content_hash: 7e5b4e1256d6a4a0
 ---

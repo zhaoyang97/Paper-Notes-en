@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] C3TG: Conflict-aware, Composite, and Collaborative Controlled Text Generation
 description: >-
-  [AAAI 2026][LLM/NLP][controlled text generation] This paper proposes the C3TG framework, which achieves fine-grained multi-attribute controllable text generation through a two-stage approach: in the generation stage, weighted KL divergence is used to fuse attribute distributions and adjust token probabilities; in the optimization stage, an energy function (combining classifier scores and conflict penalty terms) drives iterative rewriting via a Feedback Agent. C3TG achieves 90.4% attribute accuracy across 17 attribute subcategories while substantially reducing toxicity.
+  [AAAI 2026][LLM/NLP][controlled text generation] This paper proposes the C3TG framework, which achieves fine-grained multi-attribute controllable text generation through a two-stage approach: in the generation stage…
 tags:
-  - AAAI 2026
-  - LLM/NLP
-  - controlled text generation
-  - multi-attribute control
-  - KL divergence
-  - energy function
-  - conflict resolution
+  - "AAAI 2026"
+  - "LLM/NLP"
+  - "controlled text generation"
+  - "multi-attribute control"
+  - "KL divergence"
+  - "energy function"
+  - "conflict resolution"
 date: 2026-05-08
 content_hash: 044e627f78f47ab3
 ---

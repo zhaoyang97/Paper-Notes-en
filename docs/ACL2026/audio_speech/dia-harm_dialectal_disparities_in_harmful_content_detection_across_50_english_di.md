@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DIA-HARM: Dialectal Disparities in Harmful Content Detection Across 50 English Dialects
 description: >-
-  [ACL 2026][Audio & Speech][dialectal bias] This paper introduces DIA-HARM, the first benchmark for evaluating the robustness of misinformation detectors across 50 English dialects. It reveals that human-authored dialectal content causes detection performance drops of 1.4–3.6% F1, that fine-tuned Transformers substantially outperform zero-shot LLMs (96.6% vs. 78.3%), and that some models suffer catastrophic degradation exceeding 33% on mixed-content inputs.
+  [ACL 2026][Audio & Speech][dialectal bias] This paper introduces DIA-HARM, the first benchmark for evaluating the robustness of misinformation detectors across 50 English dialects. It reveals that human-authored dialecta…
 tags:
-  - ACL 2026
+  - "ACL 2026"
   - "Audio & Speech"
-  - dialectal bias
-  - misinformation detection
-  - robustness evaluation
-  - English dialects
-  - detection fairness
+  - "dialectal bias"
+  - "misinformation detection"
+  - "robustness evaluation"
+  - "English dialects"
+  - "detection fairness"
 date: 2026-05-08
 content_hash: 8e7925e12e163793
 ---

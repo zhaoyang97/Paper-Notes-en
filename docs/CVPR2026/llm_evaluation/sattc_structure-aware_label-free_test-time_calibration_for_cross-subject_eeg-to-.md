@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SATTC: Structure-Aware Label-Free Test-Time Calibration for Cross-Subject EEG-to-Image Retrieval
 description: >-
-  [CVPR 2026][LLM Evaluation][EEG decoding] This paper proposes SATTC, a label-free test-time calibration head that operates directly on the similarity matrix over frozen EEG and image encoders. It combines a geometric expert (subject-adaptive whitening + adaptive CSLS) and a structural expert (mutual nearest neighbors + bidirectional top-k ranking + category popularity) via a product-of-experts fusion, significantly improving Top-1 accuracy and reducing the hubness effect in cross-subject EEG-to-image retrieval.
+  [CVPR 2026][LLM Evaluation][EEG decoding] This paper proposes SATTC, a label-free test-time calibration head that operates directly on the similarity matrix over frozen EEG and image encoders. It combines a geometric exp…
 tags:
-  - CVPR 2026
-  - LLM Evaluation
-  - EEG decoding
-  - cross-subject retrieval
-  - label-free calibration
-  - hubness mitigation
-  - similarity matrix
+  - "CVPR 2026"
+  - "LLM Evaluation"
+  - "EEG decoding"
+  - "cross-subject retrieval"
+  - "label-free calibration"
+  - "hubness mitigation"
+  - "similarity matrix"
 date: 2026-05-08
 content_hash: 0f3e6dd5cc978b30
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multi-modal Data Spectrum: Multi-modal Datasets are Multi-dimensional
 description: >-
-  [ICLR2026][Multimodal VLM][Multimodal benchmark evaluation] A large-scale empirical study reveals severe unimodal dependency issues across 23 VQA benchmarks — many benchmarks designed to eliminate text bias have instead introduced image bias, with models exploiting unimodal shortcuts rather than performing genuine cross-modal reasoning.
+  [ICLR2026][Multimodal VLM][Multimodal benchmark evaluation] A large-scale empirical study reveals severe unimodal dependency issues across 23 VQA benchmarks — many benchmarks designed to eliminate text bias have instead…
 tags:
-  - ICLR2026
-  - Multimodal VLM
-  - Multimodal benchmark evaluation
-  - VQA
-  - modality bias
-  - unimodal shortcuts
-  - MLLM
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "Multimodal benchmark evaluation"
+  - "VQA"
+  - "modality bias"
+  - "unimodal shortcuts"
+  - "MLLM"
 date: 2026-05-08
 content_hash: 996a76fe08b8e334
 ---

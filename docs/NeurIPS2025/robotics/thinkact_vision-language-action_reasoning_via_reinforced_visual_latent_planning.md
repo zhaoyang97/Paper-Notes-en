@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ThinkAct: Vision-Language-Action Reasoning via Reinforced Visual Latent Planning
 description: >-
-  [NeurIPS 2025][Robotics][VLA reasoning] ThinkAct proposes a dual-system framework that applies action-aligned visual rewards to fine-tune MLLMs via reinforcement learning, eliciting embodied reasoning capabilities and compressing reasoning plans into visual latent representations to guide a downstream action model—realizing a "think before act" VLA reasoning paradigm.
+  [NeurIPS 2025][Robotics][VLA reasoning] ThinkAct proposes a dual-system framework that applies action-aligned visual rewards to fine-tune MLLMs via reinforcement learning…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - VLA reasoning
-  - reinforcement learning
-  - visual latent planning
-  - embodied reasoning
-  - dual-system architecture
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "VLA reasoning"
+  - "reinforcement learning"
+  - "visual latent planning"
+  - "embodied reasoning"
+  - "dual-system architecture"
 date: 2026-05-08
 content_hash: 484920abfcb6fb98
 ---

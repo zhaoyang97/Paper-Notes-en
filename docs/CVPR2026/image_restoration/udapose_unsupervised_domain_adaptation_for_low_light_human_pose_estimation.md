@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UDAPose: Unsupervised Domain Adaptation for Low-Light Human Pose Estimation
 description: >-
-  [CVPR 2026][Image Restoration][Low-light pose estimation] UDAPose achieves a 56.4% AP improvement on the low-light hard set by combining stable diffusion-based low-light image synthesis (with preserved high-frequency low-light characteristics) and a dynamic attention control module (adaptively balancing visual cues and pose priors).
+  [CVPR 2026][Image Restoration][Low-light pose estimation] UDAPose achieves a 56.4% AP improvement on the low-light hard set by combining stable diffusion-based low-light image synthesis (with preserved high-frequency low…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Low-light pose estimation
-  - domain adaptation
-  - stable diffusion
-  - attention control
-  - high-frequency injection
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Low-light pose estimation"
+  - "domain adaptation"
+  - "stable diffusion"
+  - "attention control"
+  - "high-frequency injection"
 date: 2026-05-08
 content_hash: 712abb8a1113f792
 ---

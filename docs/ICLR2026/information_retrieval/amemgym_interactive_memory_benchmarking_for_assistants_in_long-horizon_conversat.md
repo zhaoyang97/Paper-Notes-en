@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] AMemGym: Interactive Memory Benchmarking for Assistants in Long-Horizon Conversations
 description: >-
-  [ICLR 2026][conversational memory evaluation] This paper proposes AMemGym — the first long-horizon conversational memory benchmark environment supporting on-policy interactive evaluation. It drives LLM-simulated users via structured data sampling (user profile → state evolution → personalized QA), reveals ranking biases inherent in off-policy evaluation, and systematically diagnoses write/read/utilization failure modes across RAG, long-context, and agent-based memory systems.
+  [ICLR 2026][Information Retrieval & RAG][conversational memory evaluation] This paper proposes AMemGym — the first long-horizon conversational memory benchmark environment supporting on-policy interactive evaluation. It…
 tags:
-  - ICLR 2026
-  - conversational memory evaluation
-  - on-policy evaluation
-  - user state tracking
-  - memory diagnostics
-  - simulated user
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "conversational memory evaluation"
+  - "on-policy evaluation"
+  - "user state tracking"
+  - "memory diagnostics"
+  - "simulated user"
 date: 2026-05-08
 content_hash: a013b1dfdc385443
 ---

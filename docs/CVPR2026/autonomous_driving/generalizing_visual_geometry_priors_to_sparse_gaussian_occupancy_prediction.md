@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Generalizing Visual Geometry Priors to Sparse Gaussian Occupancy Prediction
 description: >-
-  [CVPR 2026][Autonomous Driving][Occupancy Prediction] GPOcc proposes leveraging generalizable visual geometry priors (e.g., VGGT, DepthAnything) for monocular 3D occupancy prediction. Surface points predicted by these priors are extended inward along camera rays to generate volumetric samples, which serve as centers of sparse Gaussian primitives for probabilistic occupancy inference. A training-free incremental update strategy handles streaming input. On Occ-ScanNet, GPOcc surpasses the previous SOTA by +9.99 mIoU (monocular) and +11.79 mIoU (streaming), while running 2.65× faster under the same depth prior.
+  [CVPR 2026][Autonomous Driving][Occupancy Prediction] GPOcc proposes leveraging generalizable visual geometry priors (e.g., VGGT, DepthAnything) for monocular 3D occupancy prediction. Surface points predicted by these pr…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Occupancy Prediction
-  - Visual Geometry Prior
-  - Gaussian Representation
-  - Ray Sampling
-  - Streaming Update
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Occupancy Prediction"
+  - "Visual Geometry Prior"
+  - "Gaussian Representation"
+  - "Ray Sampling"
+  - "Streaming Update"
 date: 2026-05-08
 content_hash: a3dcd5fd016393a8
 ---

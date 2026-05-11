@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] CorrCLIP: Reconstructing Patch Correlations in CLIP for Open-Vocabulary Semantic Segmentation
 description: >-
-  [ICCV 2025 (Oral)][Segmentation][open-vocabulary segmentation] This paper identifies inter-class patch correlations in CLIP as the fundamental bottleneck for segmentation performance, and proposes CorrCLIP, which addresses this via SAM-constrained patch interaction scope (scope reconstruction), DINO-based similarity value reconstruction (value reconstruction), spatial/semantic feature refinement, and SAM mask post-processing. The method achieves an average mIoU improvement from 48.6% to 53.6% across 8 benchmarks under the training-free setting.
+  [ICCV 2025 (Oral)][Segmentation][open-vocabulary segmentation] This paper identifies inter-class patch correlations in CLIP as the fundamental bottleneck for segmentation performance, and proposes CorrCLIP…
 tags:
-  - ICCV 2025 (Oral)
-  - Segmentation
-  - open-vocabulary segmentation
-  - CLIP
-  - patch correlation
-  - SAM
-  - training-free
-  - inter-class correlation
+  - "ICCV 2025 (Oral)"
+  - "Segmentation"
+  - "open-vocabulary segmentation"
+  - "CLIP"
+  - "patch correlation"
+  - "SAM"
+  - "training-free"
+  - "inter-class correlation"
 date: 2026-05-08
 content_hash: 7f499784047469e7
 ---

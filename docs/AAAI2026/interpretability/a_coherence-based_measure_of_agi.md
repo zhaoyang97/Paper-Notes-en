@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] A Coherence-Based Measure of AGI
 description: >-
-  [AAAI 2026][AGI evaluation] This paper identifies that existing AGI scores rely on arithmetic averaging, which implicitly encodes a "compensatory" assumption (strengths offsetting weaknesses), and proposes $\text{AGI}_{\text{AUC}}$—a coherence measure based on the continuous spectrum of generalized means. By integrating over the compensability parameter $p \in [-1, 1]$, the metric penalizes uneven capability profiles and exposes bottlenecks concealed by arithmetic averaging.
+  [AAAI 2026][Interpretability][AGI evaluation] This paper identifies that existing AGI scores rely on arithmetic averaging, which implicitly encodes a "compensatory" assumption (strengths offsetting weaknesses)…
 tags:
-  - AAAI 2026
-  - AGI evaluation
-  - generalized mean
-  - coherence measure
-  - cognitive capability balance
-  - non-compensatory aggregation
+  - "AAAI 2026"
+  - "Interpretability"
+  - "AGI evaluation"
+  - "generalized mean"
+  - "coherence measure"
+  - "cognitive capability balance"
+  - "non-compensatory aggregation"
 date: 2026-05-08
 content_hash: efb8c016b1bf7ac9
 ---

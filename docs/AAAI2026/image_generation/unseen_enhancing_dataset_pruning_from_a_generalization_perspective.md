@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UNSEEN: Enhancing Dataset Pruning from a Generalization Perspective
 description: >-
-  [AAAI 2026][Image Generation][Dataset Pruning] This paper proposes UNSEEN, a dataset pruning method that improves coreset selection from a generalization perspective—considering not only how retained samples contribute to training loss, but also how they contribute to test-time generalization. UNSEEN selects coresets that better align the training distribution with unseen test distributions.
+  [AAAI 2026][Image Generation][Dataset Pruning] This paper proposes UNSEEN, a dataset pruning method that improves coreset selection from a generalization perspective—considering not only how retained samples contribute t…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Dataset Pruning
-  - Generalization
-  - Training Efficiency
-  - Sample Selection
-  - Coreset
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Dataset Pruning"
+  - "Generalization"
+  - "Training Efficiency"
+  - "Sample Selection"
+  - "Coreset"
 date: 2026-05-08
 content_hash: ac7664c35a51939e
 ---

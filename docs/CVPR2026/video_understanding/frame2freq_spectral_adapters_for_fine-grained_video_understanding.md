@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Frame2Freq: Spectral Adapters for Fine-Grained Video Understanding
 description: >-
-  [CVPR2026][Video Understanding][Frequency-Domain Adapters] This paper proposes Frame2Freq—the first family of PEFT adapters that performs temporal modeling in the frequency domain. By transforming frozen VFM frame embeddings into the spectral space via FFT and learning frequency band-level filtering, Frame2Freq surpasses fully fine-tuned models on five fine-grained action recognition benchmarks with fewer than 10% trainable parameters.
+  [CVPR2026][Video Understanding][Frequency-Domain Adapters] This paper proposes Frame2Freq—the first family of PEFT adapters that performs temporal modeling in the frequency domain. By transforming frozen VFM frame embedd…
 tags:
-  - CVPR2026
-  - Video Understanding
-  - Frequency-Domain Adapters
-  - Parameter-Efficient Fine-Tuning
-  - Image-to-Video Transfer
-  - Fine-Grained Action Recognition
-  - Fast Fourier Transform
-  - Vision Foundation Model
+  - "CVPR2026"
+  - "Video Understanding"
+  - "Frequency-Domain Adapters"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Image-to-Video Transfer"
+  - "Fine-Grained Action Recognition"
+  - "Fast Fourier Transform"
+  - "Vision Foundation Model"
 date: 2026-05-08
 content_hash: 3bce8c5d73194e66
 ---

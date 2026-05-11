@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] G-reasoner: Foundation Models for Unified Reasoning over Graph-structured Knowledge
 description: >-
-  [ICLR 2026][graph foundation model] This paper proposes G-reasoner, which standardizes heterogeneous knowledge sources via a four-layer unified graph interface called QuadGraph, trains a 34M-parameter GNN-based graph foundation model to jointly reason over graph topology and textual semantics, and achieves state-of-the-art performance over existing GraphRAG methods across 6 benchmarks in conjunction with an LLM.
+  [ICLR 2026][Information Retrieval & RAG][graph foundation model] This paper proposes G-reasoner, which standardizes heterogeneous knowledge sources via a four-layer unified graph interface called QuadGraph…
 tags:
-  - ICLR 2026
-  - graph foundation model
-  - RAG
-  - knowledge graph
-  - GNN
-  - LLM reasoning
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "graph foundation model"
+  - "RAG"
+  - "knowledge graph"
+  - "GNN"
+  - "LLM reasoning"
 date: 2026-05-08
 content_hash: bc44dcac26cccd3a
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] All in One: Unifying Deepfake Detection, Tampering Localization, and Source Tracing with a Robust Landmark-Identity Watermark
 description: >-
-  [CVPR2026][Human Understanding][deepfake detection] This paper proposes LIDMark, the first proactive forensics framework that unifies deepfake detection, tampering localization, and source tracing within a single watermarking scheme. By embedding a 152-dimensional Landmark-Identity watermark (136D facial landmarks + 16D source ID) and leveraging intrinsic/extrinsic consistency, LIDMark achieves three-in-one forensics while surpassing existing methods in both PSNR/SSIM and detection accuracy.
+  [CVPR2026][Human Understanding][deepfake detection] This paper proposes LIDMark, the first proactive forensics framework that unifies deepfake detection, tampering localization…
 tags:
-  - CVPR2026
-  - Human Understanding
-  - deepfake detection
-  - watermarking
-  - tampering localization
-  - source tracing
-  - proactive forensics
-  - facial landmark
+  - "CVPR2026"
+  - "Human Understanding"
+  - "deepfake detection"
+  - "watermarking"
+  - "tampering localization"
+  - "source tracing"
+  - "proactive forensics"
+  - "facial landmark"
 date: 2026-05-08
 content_hash: 8584c9c212f8b791
 ---

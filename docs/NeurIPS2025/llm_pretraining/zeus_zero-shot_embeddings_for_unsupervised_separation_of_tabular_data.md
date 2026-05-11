@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ZEUS: Zero-shot Embeddings for Unsupervised Separation of Tabular Data
 description: >-
-  [NeurIPS 2025][LLM Pretraining][Zero-shot Learning] ZEUS is the first zero-shot clustering method for tabular data. By pretraining a Transformer encoder on synthetic datasets, it learns generalizable representations that enable high-quality clustering of new datasets in a single forward pass, requiring no additional training or hyperparameter tuning.
+  [NeurIPS 2025][LLM Pretraining][Zero-shot Learning] ZEUS is the first zero-shot clustering method for tabular data. By pretraining a Transformer encoder on synthetic datasets…
 tags:
-  - NeurIPS 2025
-  - LLM Pretraining
-  - Zero-shot Learning
-  - Tabular Data
-  - Clustering
-  - Transformer
-  - Prior-data Fitted Networks
+  - "NeurIPS 2025"
+  - "LLM Pretraining"
+  - "Zero-shot Learning"
+  - "Tabular Data"
+  - "Clustering"
+  - "Transformer"
+  - "Prior-data Fitted Networks"
 date: 2026-05-08
 content_hash: 7fa6b2bf9fa63330
 ---

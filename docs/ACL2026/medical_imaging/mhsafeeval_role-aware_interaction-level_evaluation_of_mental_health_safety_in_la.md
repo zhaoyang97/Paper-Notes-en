@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MHSafeEval: Role-Aware Interaction-Level Evaluation of Mental Health Safety in Large Language Models
 description: >-
-  [ACL 2026][Medical Imaging][mental health safety] This paper proposes R-MHSafe, a role-aware mental health safety taxonomy, and MHSafeEval, a closed-loop agent evaluation framework. Through adversarial multi-turn counseling interactions, the framework systematically uncovers role-dependent cumulative safety failures of LLMs in mental health counseling scenarios, revealing interaction-level harms that existing static benchmarks fail to capture.
+  [ACL 2026][Medical Imaging][mental health safety] This paper proposes R-MHSafe, a role-aware mental health safety taxonomy, and MHSafeEval…
 tags:
-  - ACL 2026
-  - Medical Imaging
-  - mental health safety
-  - role-awareness
-  - multi-turn dialogue evaluation
-  - adversarial interaction
-  - LLM safety benchmark
+  - "ACL 2026"
+  - "Medical Imaging"
+  - "mental health safety"
+  - "role-awareness"
+  - "multi-turn dialogue evaluation"
+  - "adversarial interaction"
+  - "LLM safety benchmark"
 date: 2026-05-08
 content_hash: 0d51c7fd1d7be2df
 ---

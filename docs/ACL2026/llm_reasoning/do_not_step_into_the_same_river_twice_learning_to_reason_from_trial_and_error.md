@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Do Not Step Into the Same River Twice: Learning to Reason from Trial and Error
 description: >-
-  [ACL 2026][LLM Reasoning][exploration stagnation] This paper proposes LTE (Learning to reason from Trial and Error), which mitigates exploration stagnation in RLVR by using the model's own erroneous answers as hints to guide additional rollouts, without relying on any external expert supervision.
+  [ACL 2026][LLM Reasoning][exploration stagnation] This paper proposes LTE (Learning to reason from Trial and Error), which mitigates exploration stagnation in RLVR by using the model's own erroneous answers as hints to g…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - exploration stagnation
-  - trial-and-error learning
-  - reinforcement learning
-  - hint-guided exploration
-  - mathematical reasoning
+  - "ACL 2026"
+  - "LLM Reasoning"
+  - "exploration stagnation"
+  - "trial-and-error learning"
+  - "reinforcement learning"
+  - "hint-guided exploration"
+  - "mathematical reasoning"
 date: 2026-05-08
 content_hash: b32a67c27c46cb46
 ---

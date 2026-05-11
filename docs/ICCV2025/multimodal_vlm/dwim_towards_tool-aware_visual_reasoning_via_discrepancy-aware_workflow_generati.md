@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DWIM: Towards Tool-aware Visual Reasoning via Discrepancy-aware Workflow Generation & Instruct-Masking Tuning
 description: >-
-  [ICCV 2025][Multimodal VLM][Compositional Visual Reasoning] This paper proposes the DWIM framework, which employs a discrepancy-aware workflow generation strategy to curate high-quality training data and an instruct-masking fine-tuning strategy to clone only effective actions, endowing LLMs with tool-aware capability for compositional visual reasoning and achieving state-of-the-art results on multiple VR benchmarks.
+  [ICCV 2025][Multimodal VLM][Compositional Visual Reasoning] This paper proposes the DWIM framework, which employs a discrepancy-aware workflow generation strategy to curate high-quality training data and an instruct-mask…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Compositional Visual Reasoning
-  - Tool-awareness
-  - Workflow Generation
-  - Instruct-Masking Fine-tuning
-  - LLM
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Compositional Visual Reasoning"
+  - "Tool-awareness"
+  - "Workflow Generation"
+  - "Instruct-Masking Fine-tuning"
+  - "LLM"
 date: 2026-05-08
 content_hash: bc1a9cd02c6bf951
 ---

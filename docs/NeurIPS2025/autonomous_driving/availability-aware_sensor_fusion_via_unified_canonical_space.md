@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Availability-aware Sensor Fusion via Unified Canonical Space
 description: >-
-  [NeurIPS 2025][Autonomous Driving][Multi-sensor fusion] This paper proposes ASF (Availability-aware Sensor Fusion), which maps Camera/LiDAR/4D Radar features into a shared space via Unified Canonical Projection (UCP), applies cross-sensor along-patch cross-attention (CASAP, complexity $O(N_qN_s)$ vs. $O(N_qN_sN_p)$) to automatically adapt to available sensors, and employs a Sensor Combination Loss (SCL) covering all 7 sensor subsets. ASF achieves AP_3D of 73.6% on K-Radar (surpassing SOTA by 20.1%), with only a 1.7% performance drop under sensor failure.
+  [NeurIPS 2025][Autonomous Driving][Multi-sensor fusion] This paper proposes ASF (Availability-aware Sensor Fusion), which maps Camera/LiDAR/4D Radar features into a shared space via Unified Canonical Projection (UCP)…
 tags:
-  - NeurIPS 2025
-  - Autonomous Driving
-  - Multi-sensor fusion
-  - sensor degradation robustness
-  - unified canonical space
-  - 4D Radar
-  - CASAP
+  - "NeurIPS 2025"
+  - "Autonomous Driving"
+  - "Multi-sensor fusion"
+  - "sensor degradation robustness"
+  - "unified canonical space"
+  - "4D Radar"
+  - "CASAP"
 date: 2026-05-08
 content_hash: 58122b27b66310d7
 ---

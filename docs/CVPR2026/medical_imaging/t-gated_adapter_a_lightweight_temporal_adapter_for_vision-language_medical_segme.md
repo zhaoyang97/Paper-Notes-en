@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] T-Gated Adapter: A Lightweight Temporal Adapter for Vision-Language Medical Segmentation
 description: >-
-  [CVPR 2026][Medical Imaging][Medical Image Segmentation] This paper proposes a lightweight Temporal Gated Adapter (T-Gated Adapter) that injects adjacent-slice context into the 2D vision-language model CLIPSeg. Trained on only 30 annotated CT volumes, the method achieves an average Dice of 0.704 (+0.206), with consistent improvements on cross-domain zero-shot evaluation and CT-to-MRI cross-modal evaluation.
+  [CVPR 2026][Medical Imaging][Medical Image Segmentation] This paper proposes a lightweight Temporal Gated Adapter (T-Gated Adapter) that injects adjacent-slice context into the 2D vision-language model CLIPSeg. Trained o…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Medical Image Segmentation
-  - Vision-Language Models
-  - Temporal Adapter
-  - Cross-Modal Generalization
-  - 3D Volumetric Awareness
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Medical Image Segmentation"
+  - "Vision-Language Models"
+  - "Temporal Adapter"
+  - "Cross-Modal Generalization"
+  - "3D Volumetric Awareness"
 date: 2026-05-08
 content_hash: c3a6ae97f4a37091
 ---

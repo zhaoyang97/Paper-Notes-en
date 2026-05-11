@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Plasticity as the Mirror of Empowerment
 description: >-
-  [NeurIPS 2025][Plasticity] This paper proposes **Generalized Directed Information (GDI)** as an information-theoretic tool for measuring agent plasticity, revealing that plasticity is the "mirror" of empowerment — both use the same measure but in opposite directions — and proves a strict tension bound between the two.
+  [NeurIPS 2025][Plasticity] This paper proposes **Generalized Directed Information (GDI)** as an information-theoretic tool for measuring agent plasticity…
 tags:
-  - NeurIPS 2025
-  - Plasticity
-  - Empowerment
-  - Information Theory
-  - Generalized Directed Information
-  - Agent Design
+  - "NeurIPS 2025"
+  - "Plasticity"
+  - "Empowerment"
+  - "Information Theory"
+  - "Generalized Directed Information"
+  - "Agent Design"
 date: 2026-05-08
 content_hash: 040ceecc68143a39
 ---

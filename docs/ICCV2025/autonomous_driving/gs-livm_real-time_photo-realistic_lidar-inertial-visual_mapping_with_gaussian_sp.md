@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GS-LIVM: Real-Time Photo-Realistic LiDAR-Inertial-Visual Mapping with Gaussian Splatting
 description: >-
-  [ICCV 2025][Autonomous Driving][3D Gaussian Splatting] This paper proposes GS-LIVM, the first real-time photo-realistic LiDAR-inertial-visual mapping framework designed for large-scale unbounded outdoor scenes. It addresses the problem of sparse and non-uniform LiDAR point clouds via voxel-level Gaussian Process Regression (Voxel-GPR), and leverages a covariance-centric design to rapidly initialize 3D Gaussian parameters. The method achieves state-of-the-art mapping efficiency and rendering quality across multiple outdoor datasets.
+  [ICCV 2025][Autonomous Driving][3D Gaussian Splatting] This paper proposes GS-LIVM, the first real-time photo-realistic LiDAR-inertial-visual mapping framework designed for large-scale unbounded outdoor scenes. It addres…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - 3D Gaussian Splatting
-  - LiDAR-IMU-Visual Fusion
-  - Real-Time Mapping
-  - Gaussian Process Regression
-  - Novel View Synthesis
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "3D Gaussian Splatting"
+  - "LiDAR-IMU-Visual Fusion"
+  - "Real-Time Mapping"
+  - "Gaussian Process Regression"
+  - "Novel View Synthesis"
 date: 2026-05-08
 content_hash: b8e5ebbb5f9f1a93
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Agentified Assessment of Logical Reasoning Agents
 description: >-
-  [ICLR 2026][LLM Reasoning][Logical Reasoning Evaluation] This paper proposes an agent-based evaluation framework (AAA) that encapsulates assessment logic as an assessor agent and interacts with the agent under test via a standard A2A interface. On a FOLIO dataset systematically cleaned using the Vampire theorem prover, an auto-formalization agent (NL→Z3Py + SMT solving) achieves 86.70% accuracy, substantially outperforming the CoT baseline at 73.89%, with a particularly notable gain of 32.79 percentage points on contradiction detection (False class).
+  [ICLR 2026][LLM Reasoning][Logical Reasoning Evaluation] This paper proposes an agent-based evaluation framework (AAA) that encapsulates assessment logic as an assessor agent and interacts with the agent under test via a…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Logical Reasoning Evaluation
-  - Agent-to-Agent Assessment
-  - First-Order Logic
-  - Automatic Formalization
-  - SMT Solving
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "Logical Reasoning Evaluation"
+  - "Agent-to-Agent Assessment"
+  - "First-Order Logic"
+  - "Automatic Formalization"
+  - "SMT Solving"
 date: 2026-05-08
 content_hash: e3311351b0da939d
 ---

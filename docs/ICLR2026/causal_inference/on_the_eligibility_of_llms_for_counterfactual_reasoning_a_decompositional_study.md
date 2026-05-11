@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] On the Eligibility of LLMs for Counterfactual Reasoning: A Decompositional Study
 description: >-
-  [ICLR2026][Causal Inference][counterfactual reasoning] This paper proposes a decompositional evaluation framework grounded in Structural Causal Models (SCMs), decomposing LLM counterfactual reasoning into four stages (causal variable identification → causal graph construction → intervention identification → outcome reasoning). It systematically diagnoses capability bottlenecks at each stage across 11 multimodal datasets, and introduces tool-augmented and advanced elicitation strategies to improve performance.
+  [ICLR2026][Causal Inference][counterfactual reasoning] This paper proposes a decompositional evaluation framework grounded in Structural Causal Models (SCMs)…
 tags:
-  - ICLR2026
-  - Causal Inference
-  - counterfactual reasoning
-  - structural causal model
-  - LLM evaluation
-  - decompositional analysis
-  - tool-augmented learning
+  - "ICLR2026"
+  - "Causal Inference"
+  - "counterfactual reasoning"
+  - "structural causal model"
+  - "LLM evaluation"
+  - "decompositional analysis"
+  - "tool-augmented learning"
 date: 2026-05-08
 content_hash: e362c43d5730b0b5
 ---

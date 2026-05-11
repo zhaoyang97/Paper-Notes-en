@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Designing Incident Reporting Systems for Harms from General-Purpose AI
 description: >-
-  [AAAI 2026][AI Incident Reporting] Through a literature review and case studies of nine safety-critical industries (nuclear energy, aviation, healthcare, etc.), this paper proposes a seven-dimensional institutional design framework for AI incident reporting systems, providing systematic guidance for policy design of general-purpose AI incident reporting in the United States.
+  [AAAI 2026][AI Incident Reporting] Through a literature review and case studies of nine safety-critical industries (nuclear energy, aviation, healthcare, etc.)…
 tags:
-  - AAAI 2026
-  - AI Incident Reporting
-  - AI Governance
-  - Safety-Critical Systems
-  - Policy Design
-  - General-Purpose AI
+  - "AAAI 2026"
+  - "AI Incident Reporting"
+  - "AI Governance"
+  - "Safety-Critical Systems"
+  - "Policy Design"
+  - "General-Purpose AI"
 date: 2026-05-08
 content_hash: 923b836d5f96e2ce
 ---

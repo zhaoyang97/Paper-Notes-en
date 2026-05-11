@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DeepTracer: Tracing Stolen Model via Deep Coupled Watermarks
 description: >-
-  [AAAI 2026][AI Safety][Model watermarking] This paper proposes DeepTracer, a robust watermarking framework that achieves deep coupling between the watermark task and the main task through adaptive source-class selection (K-Means clustering for feature space coverage) + same-class coupling loss (aligning watermark samples with target-class samples in output space) + two-stage key sample filtering. Under 6 model stealing attacks (including hard-label and data-free settings), the watermark success rate averages 77–100%, substantially outperforming existing methods.
+  [AAAI 2026][AI Safety][Model watermarking] This paper proposes DeepTracer, a robust watermarking framework that achieves deep coupling between the watermark task and the main task through adaptive source-class selection…
 tags:
-  - AAAI 2026
-  - AI Safety
-  - Model watermarking
-  - model stealing
-  - deep coupled watermark
-  - black-box verification
-  - intellectual property protection
+  - "AAAI 2026"
+  - "AI Safety"
+  - "Model watermarking"
+  - "model stealing"
+  - "deep coupled watermark"
+  - "black-box verification"
+  - "intellectual property protection"
 date: 2026-05-08
 content_hash: 7875e544b98cf466
 ---

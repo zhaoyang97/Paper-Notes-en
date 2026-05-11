@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] SemGes: Semantics-aware Co-Speech Gesture Generation using Semantic Coherence and Relevance Learning
 description: >-
-  [Human Understanding] > SemGes proposes a two-stage framework that integrates semantic information at both global and fine-grained levels through semantic coherence and semantic relevance learning, generating co-speech gestures aligned with speech semantics. The method surpasses existing approaches on two benchmarks: BEAT and TED-Expressive.
+  [Human Understanding] > SemGes proposes a two-stage framework that integrates semantic information at both global and fine-grained levels through semantic coherence and semantic relevance learning…
 tags:
-  - Human Understanding
+  - "Human Understanding"
 date: 2026-05-08
 content_hash: d9fa4d993d3b336d
 ---

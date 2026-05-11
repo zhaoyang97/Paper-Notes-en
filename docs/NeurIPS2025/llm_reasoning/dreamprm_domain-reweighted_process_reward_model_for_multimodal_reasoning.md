@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DreamPRM: Domain-Reweighted Process Reward Model for Multimodal Reasoning
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Process Reward Model] DreamPRM is proposed to automatically learn domain weights for multimodal reasoning datasets via bi-level optimization, addressing the data quality imbalance in PRM training. It achieves 85.2% top-1 accuracy on the MathVista leaderboard using the o4-mini model.
+  [NeurIPS 2025][LLM Reasoning][Process Reward Model] DreamPRM is proposed to automatically learn domain weights for multimodal reasoning datasets via bi-level optimization…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - Process Reward Model
-  - multimodal reasoning
-  - domain reweighting
-  - bi-level optimization
-  - test-time scaling
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "Process Reward Model"
+  - "multimodal reasoning"
+  - "domain reweighting"
+  - "bi-level optimization"
+  - "test-time scaling"
 date: 2026-05-08
 content_hash: 93f29d82c6e61324
 ---

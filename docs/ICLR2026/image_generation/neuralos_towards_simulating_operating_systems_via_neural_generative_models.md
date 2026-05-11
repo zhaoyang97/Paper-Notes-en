@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] NeuralOS: Towards Simulating Operating Systems via Neural Generative Models
 description: >-
-  [ICLR 2026][Image Generation][operating system simulation] This paper proposes NeuralOS, a dual-component architecture combining an RNN-based state tracker and a diffusion renderer, which directly predicts graphical interface frame sequences from user input events (mouse movement/click/keyboard), achieving for the first time the simulation of an operating system via neural generative models.
+  [ICLR 2026][Image Generation][operating system simulation] This paper proposes NeuralOS, a dual-component architecture combining an RNN-based state tracker and a diffusion renderer…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - operating system simulation
-  - world model
-  - diffusion rendering
-  - GUI generation
-  - interactive systems
+  - "ICLR 2026"
+  - "Image Generation"
+  - "operating system simulation"
+  - "world model"
+  - "diffusion rendering"
+  - "GUI generation"
+  - "interactive systems"
 date: 2026-05-08
 content_hash: 6b6a7d709bbe304f
 ---

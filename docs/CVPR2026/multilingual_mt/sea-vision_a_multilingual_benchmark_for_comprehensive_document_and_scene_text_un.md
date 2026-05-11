@@ -2,15 +2,16 @@
 title: >-
   [Paper Note] SEA-Vision: A Multilingual Benchmark for Document and Scene Text Understanding in Southeast Asia
 description: >-
-  [CVPR 2026][Multilingual benchmark] This paper introduces SEA-Vision, a benchmark that unifies evaluation of document parsing (15,234 pages) and text-centric VQA (7,496 QA pairs) across 11 Southeast Asian languages. A re-rendering strategy eliminates visual–textual misalignment in multilingual VQA, revealing severe performance degradation of 3–7× for MLLMs on low-resource SEA languages.
+  [CVPR 2026][Multilingual & Machine Translation][Multilingual benchmark] This paper introduces SEA-Vision, a benchmark that unifies evaluation of document parsing (15,234 pages) and text-centric VQA (7…
 tags:
-  - CVPR 2026
-  - Multilingual benchmark
-  - Southeast Asia
-  - document parsing
-  - text VQA
-  - low-resource languages
-  - MLLM evaluation
+  - "CVPR 2026"
+  - "Multilingual & Machine Translation"
+  - "Multilingual benchmark"
+  - "Southeast Asia"
+  - "document parsing"
+  - "text VQA"
+  - "low-resource languages"
+  - "MLLM evaluation"
 date: 2026-05-08
 content_hash: f002f6c454f8a36f
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CraterBench-R: Instance-Level Crater Retrieval for Planetary Scale
 description: >-
-  [CVPR 2026][Self-Supervised Learning][crater retrieval] This work is the first to formalize crater analysis as an instance-level image retrieval problem. It introduces the CraterBench-R benchmark (~25K Mars crater IDs, 50K gallery, 5K queries), and through systematic diagnosis reveals that single-vector pooling imposes an accuracy ceiling while supervised metric learning consistently degrades performance. A training-free instance token aggregation method is proposed—selecting K seed tokens via top-K attention or FPS and performing cosine nearest-neighbor residual assignment—to compress 196 ViT patch tokens into K representative tokens for late interaction matching. At K=64, the method matches full-token accuracy with substantially reduced storage. A practical two-stage pipeline (single-vector coarse retrieval + instance token re-ranking) recovers 89–94% of full-pipeline accuracy.
+  [CVPR 2026][Self-Supervised Learning][crater retrieval] This work is the first to formalize crater analysis as an instance-level image retrieval problem. It introduces the CraterBench-R benchmark (~25K Mars crater IDs…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - crater retrieval
-  - instance-level retrieval
-  - ViT patch token
-  - training-free token aggregation
-  - two-stage retrieval
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "crater retrieval"
+  - "instance-level retrieval"
+  - "ViT patch token"
+  - "training-free token aggregation"
+  - "two-stage retrieval"
 date: 2026-05-08
 content_hash: b310e143340c8074
 ---

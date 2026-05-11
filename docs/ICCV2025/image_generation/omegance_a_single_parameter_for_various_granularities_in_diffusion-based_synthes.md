@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Omegance: A Single Parameter for Various Granularities in Diffusion-Based Synthesis
 description: >-
-  [ICCV 2025][Image Generation][diffusion models] Omegance proposes scaling the noise prediction in each denoising step of a diffusion model by a single parameter $\omega$, enabling training-free global, spatial, and temporal control over the detail granularity of generated images and videos. The method is architecture-agnostic and compatible with SDXL, SD3, FLUX, and other models.
+  [ICCV 2025][Image Generation][diffusion models] Omegance proposes scaling the noise prediction in each denoising step of a diffusion model by a single parameter $\omega$, enabling training-free global, spatial…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - diffusion models
-  - granularity control
-  - noise scaling
-  - training-free
-  - detail enhancement/suppression
+  - "ICCV 2025"
+  - "Image Generation"
+  - "diffusion models"
+  - "granularity control"
+  - "noise scaling"
+  - "training-free"
+  - "detail enhancement/suppression"
 date: 2026-05-08
 content_hash: 1f87e133478d6f07
 ---

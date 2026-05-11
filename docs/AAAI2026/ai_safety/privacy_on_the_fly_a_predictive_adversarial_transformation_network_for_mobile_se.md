@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Privacy on the Fly: A Predictive Adversarial Transformation Network for Mobile Sensor Data
 description: >-
-  [AAAI 2026][AI Safety][Sensor Privacy] This paper proposes PATN (Predictive Adversarial Transformation Network), the first framework to introduce adversarial perturbations into sensor data privacy protection. PATN leverages historical sensor data to generate forward-looking adversarial perturbations, achieving zero-latency real-time privacy protection while preserving the semantic fidelity of sensor data.
+  [AAAI 2026][AI Safety][Sensor Privacy] This paper proposes PATN (Predictive Adversarial Transformation Network), the first framework to introduce adversarial perturbations into sensor data privacy protection. PATN levera…
 tags:
-  - AAAI 2026
-  - AI Safety
-  - Sensor Privacy
-  - Adversarial Perturbation
-  - Real-Time Privacy Protection
-  - Mobile Security
-  - Time-Series Data
+  - "AAAI 2026"
+  - "AI Safety"
+  - "Sensor Privacy"
+  - "Adversarial Perturbation"
+  - "Real-Time Privacy Protection"
+  - "Mobile Security"
+  - "Time-Series Data"
 date: 2026-05-08
 content_hash: 8c478acea6119f82
 ---

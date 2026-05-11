@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Decoding Matters: Efficient Mamba-Based Decoder with Distribution-Aware Deep Supervision for Medical Image Segmentation
 description: >-
-  [CVPR 2026][Medical Imaging][Medical image segmentation] This paper proposes Deco-Mamba, a decoder-centric Transformer-CNN-Mamba hybrid architecture that enhances the decoding process via Co-Attention Gates, Vision State Space Modules (VSSMs), and deformable convolutions, while introducing a distribution-aware deep supervision strategy based on windowed KL divergence. The method achieves state-of-the-art performance across 7 medical image segmentation benchmarks.
+  [CVPR 2026][Medical Imaging][Medical image segmentation] This paper proposes Deco-Mamba, a decoder-centric Transformer-CNN-Mamba hybrid architecture that enhances the decoding process via Co-Attention Gates…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Medical image segmentation
-  - Mamba
-  - decoder design
-  - deep supervision
-  - KL divergence
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Medical image segmentation"
+  - "Mamba"
+  - "decoder design"
+  - "deep supervision"
+  - "KL divergence"
 date: 2026-05-08
 content_hash: 1195795f040b5922
 ---

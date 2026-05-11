@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Instance Generation for Meta-Black-Box Optimization through Latent Space Reverse Engineering
 description: >-
-  [AAAI 2026][Optimization][Meta-Black-Box Optimization] This paper proposes the LSRE framework, which constructs a two-dimensional latent instance space for BBO problems via an autoencoder, and employs enhanced genetic programming to reverse-engineer diverse synthetic optimization problem instances from this space, forming the Diverse-BBO benchmark that substantially improves the generalization performance of MetaBBO methods.
+  [AAAI 2026][Optimization][Meta-Black-Box Optimization] This paper proposes the LSRE framework, which constructs a two-dimensional latent instance space for BBO problems via an autoencoder…
 tags:
-  - AAAI 2026
-  - Optimization
-  - Meta-Black-Box Optimization
-  - Instance Generation
-  - Genetic Programming
-  - Latent Space
-  - Benchmark
+  - "AAAI 2026"
+  - "Optimization"
+  - "Meta-Black-Box Optimization"
+  - "Instance Generation"
+  - "Genetic Programming"
+  - "Latent Space"
+  - "Benchmark"
 date: 2026-05-08
 content_hash: 1452b4524d0bc781
 ---

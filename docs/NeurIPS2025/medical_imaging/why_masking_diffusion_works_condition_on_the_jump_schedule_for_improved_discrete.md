@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Why Masking Diffusion Works: Condition on the Jump Schedule for Improved Discrete Diffusion
 description: >-
-  [NeurIPS 2025][Medical Imaging][discrete diffusion models] This paper reveals the fundamental reason for the superiority of masking diffusion models — they implicitly condition on the known jump-time distribution — and proposes the Schedule-Conditioned Diffusion (SCUD) framework, which generalizes this advantage to arbitrary discrete diffusion models. Combined with structured forward processes, SCUD surpasses masking diffusion on both image and protein generation tasks.
+  [NeurIPS 2025][Medical Imaging][discrete diffusion models] This paper reveals the fundamental reason for the superiority of masking diffusion models — they implicitly condition on the known jump-time distribution — and p…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - discrete diffusion models
-  - masking diffusion
-  - jump schedule
-  - SCUD
-  - protein generation
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "discrete diffusion models"
+  - "masking diffusion"
+  - "jump schedule"
+  - "SCUD"
+  - "protein generation"
 date: 2026-05-08
 content_hash: 6b4e318151a91d43
 ---

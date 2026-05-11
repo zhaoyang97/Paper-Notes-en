@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VL-RouterBench: A Benchmark for Vision-Language Model Routing
 description: >-
-  [CVPR 2026][Multimodal VLM][model routing] This paper introduces VL-RouterBench, the first systematic routing benchmark for vision-language models, encompassing 14 datasets, 17 candidate models, and 519,180 sample-model pairs. It evaluates 10 routing methods and reveals a significant gap between the current best router and the ideal Oracle.
+  [CVPR 2026][Multimodal VLM][model routing] This paper introduces VL-RouterBench, the first systematic routing benchmark for vision-language models, encompassing 14 datasets, 17 candidate models, and 519…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - model routing
-  - VLM
-  - benchmark
-  - efficiency-quality tradeoff
-  - multi-model selection
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "model routing"
+  - "VLM"
+  - "benchmark"
+  - "efficiency-quality tradeoff"
+  - "multi-model selection"
 date: 2026-05-08
 content_hash: ae5fb5785b686d75
 ---

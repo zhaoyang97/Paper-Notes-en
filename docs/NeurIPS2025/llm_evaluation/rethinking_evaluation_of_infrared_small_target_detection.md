@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Rethinking Evaluation of Infrared Small Target Detection
 description: >-
-  [NeurIPS 2025][LLM Evaluation][Infrared small target detection] This paper systematically identifies three critical limitations in existing evaluation protocols for infrared small target detection (IRSTD), and proposes a hierarchical analysis framework comprising the hybrid-level metric hIoU, a systematic error analysis methodology, and a cross-dataset evaluation setting.
+  [NeurIPS 2025][LLM Evaluation][Infrared small target detection] This paper systematically identifies three critical limitations in existing evaluation protocols for infrared small target detection (IRSTD)…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - Infrared small target detection
-  - evaluation metrics
-  - cross-dataset evaluation
-  - hierarchical IoU
-  - error analysis
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "Infrared small target detection"
+  - "evaluation metrics"
+  - "cross-dataset evaluation"
+  - "hierarchical IoU"
+  - "error analysis"
 date: 2026-05-08
 content_hash: 13b629629abe6a4f
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] When Thinking Drifts: Evidential Grounding for Robust Video Reasoning
 description: >-
-  [NeurIPS 2025][Video Understanding][Video Reasoning] This paper systematically identifies the "visual thinking drift" phenomenon in which CoT reasoning frequently degrades performance in video understanding, and proposes the Visual Evidence Reward (VER) reinforcement learning framework that corrects this problem by explicitly rewarding reasoning chains grounded in visual evidence.
+  [NeurIPS 2025][Video Understanding][Video Reasoning] This paper systematically identifies the "visual thinking drift" phenomenon in which CoT reasoning frequently degrades performance in video understanding…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
-  - Video Reasoning
-  - Chain-of-Thought
-  - Visual Thinking Drift
-  - Reinforcement Learning
-  - Visual Evidence Reward
+  - "NeurIPS 2025"
+  - "Video Understanding"
+  - "Video Reasoning"
+  - "Chain-of-Thought"
+  - "Visual Thinking Drift"
+  - "Reinforcement Learning"
+  - "Visual Evidence Reward"
 date: 2026-05-08
 content_hash: b5ef29011df4a6a6
 ---

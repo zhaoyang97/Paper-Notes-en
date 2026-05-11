@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Free-running vs. Synchronous: Single-Photon Lidar for High-flux 3D Imaging
 description: >-
-  [ICCV 2025][Autonomous Driving][single-photon lidar] This paper systematically compares free-running and synchronous single-photon lidar (SPL) operating modes for depth imaging under high-flux conditions, proposes an efficient joint maximum likelihood estimator and a score-based depth regularization algorithm SSDR, and demonstrates that the free-running mode consistently outperforms the synchronous mode across diverse flux levels and signal-to-background ratios.
+  [ICCV 2025][Autonomous Driving][single-photon lidar] This paper systematically compares free-running and synchronous single-photon lidar (SPL) operating modes for depth imaging under high-flux conditions…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - single-photon lidar
-  - free-running mode
-  - maximum likelihood estimation
-  - depth regularization
-  - high-flux 3D imaging
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "single-photon lidar"
+  - "free-running mode"
+  - "maximum likelihood estimation"
+  - "depth regularization"
+  - "high-flux 3D imaging"
 date: 2026-05-08
 content_hash: affbc319160121e8
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] How Many Experts Are Enough? Towards Optimal Semantic Specialization for Mixture-of-Experts
 description: >-
-  [AAAI 2026][LLM Efficiency][Mixture-of-Experts] This paper proposes MASS, a framework that adaptively expands the MoE expert pool via gradient-based semantic drift detection, combined with a Top-p confidence routing strategy, to automatically discover the optimal number of experts without hyperparameter search while enhancing semantic differentiation across experts.
+  [AAAI 2026][LLM Efficiency][Mixture-of-Experts] This paper proposes MASS, a framework that adaptively expands the MoE expert pool via gradient-based semantic drift detection…
 tags:
-  - AAAI 2026
-  - LLM Efficiency
-  - Mixture-of-Experts
-  - expert scaling
-  - semantic specialization
-  - gradient drift detection
-  - dynamic routing
-  - Top-p routing
+  - "AAAI 2026"
+  - "LLM Efficiency"
+  - "Mixture-of-Experts"
+  - "expert scaling"
+  - "semantic specialization"
+  - "gradient drift detection"
+  - "dynamic routing"
+  - "Top-p routing"
 date: 2026-05-08
 content_hash: ae2e6ebdd7341792
 ---

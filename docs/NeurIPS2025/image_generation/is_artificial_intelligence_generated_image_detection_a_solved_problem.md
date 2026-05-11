@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Is Artificial Intelligence Generated Image Detection a Solved Problem?
 description: >-
-  [NeurIPS 2025][Image Generation][AI-generated image detection] This paper proposes AIGIBench, a comprehensive benchmark that systematically evaluates 11 state-of-the-art detectors across four tasks—multi-source generalization, multi-degradation robustness, data augmentation sensitivity, and test-time preprocessing impact—revealing that existing AIGI detection methods suffer severe performance degradation in real-world scenarios, demonstrating that the problem is far from solved.
+  [NeurIPS 2025][Image Generation][AI-generated image detection] This paper proposes AIGIBench, a comprehensive benchmark that systematically evaluates 11 state-of-the-art detectors across four tasks—multi-source generaliz…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - AI-generated image detection
-  - benchmark
-  - robustness evaluation
-  - data augmentation
-  - generalization
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "AI-generated image detection"
+  - "benchmark"
+  - "robustness evaluation"
+  - "data augmentation"
+  - "generalization"
 date: 2026-05-08
 content_hash: aba17d76e86ea171
 ---

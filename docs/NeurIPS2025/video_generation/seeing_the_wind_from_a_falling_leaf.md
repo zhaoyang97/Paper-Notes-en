@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Seeing the Wind from a Falling Leaf
 description: >-
-  [NeurIPS 2025][Video Generation][Invisible Force Field Recovery] An end-to-end differentiable inverse graphics framework is proposed that jointly models object geometry/physical properties, force field representations, and physical processes to recover invisible force fields (e.g., wind fields) from video via backpropagation, while supporting physics-based video generation and editing.
+  [NeurIPS 2025][Video Generation][Invisible Force Field Recovery] An end-to-end differentiable inverse graphics framework is proposed that jointly models object geometry/physical properties, force field representations…
 tags:
-  - NeurIPS 2025
-  - Video Generation
-  - Invisible Force Field Recovery
-  - Differentiable Physics Simulation
-  - Inverse Graphics
-  - 3D Gaussian
-  - Causal Triplane
+  - "NeurIPS 2025"
+  - "Video Generation"
+  - "Invisible Force Field Recovery"
+  - "Differentiable Physics Simulation"
+  - "Inverse Graphics"
+  - "3D Gaussian"
+  - "Causal Triplane"
 date: 2026-05-08
 content_hash: 01ad70864b062f35
 ---

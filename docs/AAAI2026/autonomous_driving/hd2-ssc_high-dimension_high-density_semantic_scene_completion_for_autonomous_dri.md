@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HD2-SSC: High-Dimension High-Density Semantic Scene Completion for Autonomous Driving
 description: >-
-  [AAAI 2026][Autonomous Driving][Semantic Scene Completion] This paper proposes the HD2-SSC framework, which addresses the 2D→3D input–output dimension gap via a High-dimensional Semantic Decoupling (HSD) module (expanding pixel features along a pseudo-dimension and orthogonally decoupling them), and addresses the annotation–reality density gap via a High-density Occupancy Refinement (HOR) module (a "detection–refinement" paradigm that aligns geometrically and semantically critical voxels). The method achieves state-of-the-art performance on SemanticKITTI and SSCBench-KITTI-360.
+  [AAAI 2026][Autonomous Driving][Semantic Scene Completion] This paper proposes the HD2-SSC framework, which addresses the 2D→3D input–output dimension gap via a High-dimensional Semantic Decoupling (HSD) module (expandin…
 tags:
-  - AAAI 2026
-  - Autonomous Driving
-  - Semantic Scene Completion
-  - Dimension Gap
-  - Density Gap
-  - Semantic Decoupling
-  - Voxel Alignment
+  - "AAAI 2026"
+  - "Autonomous Driving"
+  - "Semantic Scene Completion"
+  - "Dimension Gap"
+  - "Density Gap"
+  - "Semantic Decoupling"
+  - "Voxel Alignment"
 date: 2026-05-08
 content_hash: 500f57bce76cbf88
 ---

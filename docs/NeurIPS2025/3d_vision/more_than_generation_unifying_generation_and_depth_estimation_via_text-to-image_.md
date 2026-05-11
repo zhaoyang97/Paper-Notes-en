@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] More Than Generation: Unifying Generation and Depth Estimation via Text-to-Image Diffusion Models
 description: >-
-  [NeurIPS 2025][3D Vision][depth estimation] Merge proposes a plug-and-play framework that inserts lightweight learnable Converters before each frozen pretrained T2I diffusion block, enabling depth estimation with only ~12% additional parameters while perfectly preserving the original image generation capability. It achieves state-of-the-art performance among unified models on multiple zero-shot depth estimation benchmarks.
+  [NeurIPS 2025][3D Vision][depth estimation] Merge proposes a plug-and-play framework that inserts lightweight learnable Converters before each frozen pretrained T2I diffusion block…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - depth estimation
-  - text-to-image diffusion models
-  - parameter-efficient fine-tuning
-  - unified model
-  - generative depth estimation
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "depth estimation"
+  - "text-to-image diffusion models"
+  - "parameter-efficient fine-tuning"
+  - "unified model"
+  - "generative depth estimation"
 date: 2026-05-08
 content_hash: 4b5dbc2477fa1620
 ---

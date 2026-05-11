@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Wavelet Policy: Lifting Scheme for Policy Learning in Long-Horizon Tasks
 description: >-
-  [ICCV 2025][Autonomous Driving][Policy Learning] Wavelet Policy is the first work to introduce wavelet analysis into embodied intelligence policy learning. It proposes a multi-scale policy network based on a learnable lifting scheme, decomposing observation sequences into different frequency components and synthesizing action sequences layer by layer. The method achieves superior or comparable performance to baselines across five long-horizon tasks, including autonomous driving (CARLA), robotic manipulation, and multi-robot collaboration.
+  [ICCV 2025][Autonomous Driving][Policy Learning] Wavelet Policy is the first work to introduce wavelet analysis into embodied intelligence policy learning. It proposes a multi-scale policy network based on a learnable li…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - Policy Learning
-  - Wavelet Transform
-  - Lifting Scheme
-  - Long-Horizon Tasks
-  - Imitation Learning
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "Policy Learning"
+  - "Wavelet Transform"
+  - "Lifting Scheme"
+  - "Long-Horizon Tasks"
+  - "Imitation Learning"
 date: 2026-05-08
 content_hash: ae9adf78bdf4009f
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] SuperCLIP: CLIP with Simple Classification Supervision
 description: >-
-  [NeurIPS 2025][CLIP] SuperCLIP augments the CLIP contrastive learning framework with an extremely simple classification loss — requiring only a lightweight linear layer that increases total FLOPs by merely 0.077% — to recover fine-grained textual supervision that CLIP underutilizes, achieving consistent improvements on zero-shot classification, image-text retrieval, and vision-only tasks.
+  [NeurIPS 2025][Information Retrieval & RAG][CLIP] SuperCLIP augments the CLIP contrastive learning framework with an extremely simple classification loss — requiring only a lightweight linear layer that increases total F…
 tags:
-  - NeurIPS 2025
-  - CLIP
-  - vision-language pretraining
-  - classification supervision
-  - fine-grained alignment
-  - contrastive learning
+  - "NeurIPS 2025"
+  - "Information Retrieval & RAG"
+  - "CLIP"
+  - "vision-language pretraining"
+  - "classification supervision"
+  - "fine-grained alignment"
+  - "contrastive learning"
 date: 2026-05-08
 content_hash: 8b095e308fceaeca
 ---

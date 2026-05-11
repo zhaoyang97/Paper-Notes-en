@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DeltaFlow: An Efficient Multi-frame Scene Flow Estimation Method
 description: >-
-  [NeurIPS 2025][Model Compression][scene flow] This paper proposes DeltaFlow (ΔFlow), which extracts motion cues via inter-frame voxel differences (Δ scheme) to enable multi-frame scene flow estimation with feature sizes that remain constant regardless of the number of input frames. The method achieves state-of-the-art performance on Argoverse 2, Waymo, and nuScenes while running 2× faster than the second-best multi-frame approach.
+  [NeurIPS 2025][Model Compression][scene flow] This paper proposes DeltaFlow (ΔFlow), which extracts motion cues via inter-frame voxel differences (Δ scheme) to enable multi-frame scene flow estimation with feature sizes…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - scene flow
-  - multi-frame
-  - delta scheme
-  - autonomous driving
-  - computational efficiency
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "scene flow"
+  - "multi-frame"
+  - "delta scheme"
+  - "autonomous driving"
+  - "computational efficiency"
 date: 2026-05-08
 content_hash: f2e8dbf25aee8761
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Real-World Adverse Weather Image Restoration via Dual-Level Reinforcement Learning with High-Quality Cold Start
 description: >-
-  [NeurIPS 2025][Image Restoration][adverse weather image restoration] This paper proposes a Dual-level Reinforcement Learning (DRL) framework that combines a physics-driven million-scale synthetic weather dataset, HFLS-Weather, for high-quality cold-start training, and achieves adaptive real-world adverse weather image restoration through Perturbation-driven Image Quality Optimization (PIQO) at the local level and global meta-controller multi-agent collaboration.
+  [NeurIPS 2025][Image Restoration][adverse weather image restoration] This paper proposes a Dual-level Reinforcement Learning (DRL) framework that combines a physics-driven million-scale synthetic weather dataset…
 tags:
-  - NeurIPS 2025
-  - Image Restoration
-  - adverse weather image restoration
-  - reinforcement learning
-  - GRPO
-  - multi-agent system
-  - no-reference image quality assessment
+  - "NeurIPS 2025"
+  - "Image Restoration"
+  - "adverse weather image restoration"
+  - "reinforcement learning"
+  - "GRPO"
+  - "multi-agent system"
+  - "no-reference image quality assessment"
 date: 2026-05-08
 content_hash: 56760e06a3afc2ba
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OccluGaussian: Occlusion-Aware Gaussian Splatting for Large Scene Reconstruction and Rendering
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes an occlusion-aware scene partitioning strategy and region-based rendering technique. By clustering a camera co-visibility graph, it achieves partitions aligned with the scene layout, significantly improving reconstruction quality and rendering speed for large-scale 3DGS.
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes an occlusion-aware scene partitioning strategy and region-based rendering technique. By clustering a camera co-visibility graph…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - Large Scene Reconstruction
-  - Occlusion-Aware
-  - Scene Partitioning
-  - Rendering Acceleration
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Large Scene Reconstruction"
+  - "Occlusion-Aware"
+  - "Scene Partitioning"
+  - "Rendering Acceleration"
 date: 2026-05-08
 content_hash: 11ca1a38fe1eb578
 ---

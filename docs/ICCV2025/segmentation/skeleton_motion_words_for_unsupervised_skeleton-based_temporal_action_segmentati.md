@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Skeleton Motion Words for Unsupervised Skeleton-Based Temporal Action Segmentation
 description: >-
-  [ICCV 2025][Segmentation][Unsupervised temporal action segmentation] This paper proposes Skeleton Motion Quantization (SMQ), which achieves unsupervised temporal action segmentation on skeleton sequences via a joint-decoupled temporal autoencoder and a skeleton motion word quantization module, substantially outperforming existing unsupervised methods on HuGaDB, LARa, and BABEL.
+  [ICCV 2025][Segmentation][Unsupervised temporal action segmentation] This paper proposes Skeleton Motion Quantization (SMQ), which achieves unsupervised temporal action segmentation on skeleton sequences via a joint-deco…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - Unsupervised temporal action segmentation
-  - skeleton sequences
-  - motion quantization
-  - temporal autoencoder
-  - motion words
+  - "ICCV 2025"
+  - "Segmentation"
+  - "Unsupervised temporal action segmentation"
+  - "skeleton sequences"
+  - "motion quantization"
+  - "temporal autoencoder"
+  - "motion words"
 date: 2026-05-08
 content_hash: 47db1027a16e5b67
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Action–Geometry Prediction with 3D Geometric Prior for Bimanual Manipulation
 description: >-
-  [CVPR 2026][Robotics][bimanual manipulation] This work leverages the pretrained 3D geometric foundation model π3 as a perception backbone, fuses 3D geometric, 2D semantic, and proprioceptive features, and jointly predicts future action chunks and future 3D Pointmaps via a diffusion model. Using only RGB inputs, the proposed method comprehensively surpasses point-cloud-based approaches on the RoboTwin bimanual benchmark.
+  [CVPR 2026][Robotics][bimanual manipulation] This work leverages the pretrained 3D geometric foundation model π3 as a perception backbone, fuses 3D geometric, 2D semantic, and proprioceptive features…
 tags:
-  - CVPR 2026
-  - Robotics
-  - bimanual manipulation
-  - 3D geometric foundation model
-  - joint action–geometry prediction
-  - π3
-  - diffusion policy
+  - "CVPR 2026"
+  - "Robotics"
+  - "bimanual manipulation"
+  - "3D geometric foundation model"
+  - "joint action–geometry prediction"
+  - "π3"
+  - "diffusion policy"
 date: 2026-05-08
 content_hash: 0f30aa7d2d895eba
 ---

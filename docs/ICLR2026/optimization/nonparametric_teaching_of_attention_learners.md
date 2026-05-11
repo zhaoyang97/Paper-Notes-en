@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Nonparametric Teaching of Attention Learners
 description: >-
-  [ICLR 2026][Optimization][nonparametric teaching] This paper proposes AtteNT — a reinterpretation of attention learner (Transformer/ViT) training through the lens of nonparametric teaching theory: it analyzes the importance-adaptive role of attention in parametric gradients → proves that the dynamic ANTK converges to an importance-adaptive canonical kernel in functional gradient descent → bridges parameter space and function space → applies a greedy teaching algorithm that selects samples with the largest prediction deviation to accelerate training → achieving 13.01% time savings for LLM fine-tuning and 20.58% for ViT training from scratch, with no degradation in accuracy.
+  [ICLR 2026][Optimization][nonparametric teaching] This paper proposes AtteNT — a reinterpretation of attention learner (Transformer/ViT) training through the lens of nonparametric teaching theory: it analyzes the importa…
 tags:
-  - ICLR 2026
-  - Optimization
-  - nonparametric teaching
-  - attention mechanism
-  - functional gradient
-  - training acceleration
-  - kernel methods
+  - "ICLR 2026"
+  - "Optimization"
+  - "nonparametric teaching"
+  - "attention mechanism"
+  - "functional gradient"
+  - "training acceleration"
+  - "kernel methods"
 date: 2026-05-08
 content_hash: 70e7672da4bbf90d
 ---

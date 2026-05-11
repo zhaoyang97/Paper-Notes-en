@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MARC: Memory-Augmented RL Token Compression for Efficient Video Understanding
 description: >-
-  [ICLR 2026][Autonomous Driving][Video token compression] MARC is a framework that adopts a "retrieve-then-compress" strategy: a Visual Memory Retriever (VMR) selects the most query-relevant video segments, and Compression GRPO (C-GRPO) distills the reasoning capability of a 64-frame teacher model into a student model that operates on only 1-frame tokens. This achieves 95% visual token compression, 72% GPU memory reduction, 23.9% inference latency reduction, with virtually no performance loss (42.20 vs. 42.21).
+  [ICLR 2026][Autonomous Driving][Video token compression] MARC is a framework that adopts a "retrieve-then-compress" strategy: a Visual Memory Retriever (VMR) selects the most query-relevant video segments…
 tags:
-  - ICLR 2026
-  - Autonomous Driving
-  - Video token compression
-  - reinforcement learning distillation
-  - visual memory retrieval
-  - GRPO
-  - efficient inference
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "Video token compression"
+  - "reinforcement learning distillation"
+  - "visual memory retrieval"
+  - "GRPO"
+  - "efficient inference"
 date: 2026-05-08
 content_hash: 4a000da9ceec38a1
 ---

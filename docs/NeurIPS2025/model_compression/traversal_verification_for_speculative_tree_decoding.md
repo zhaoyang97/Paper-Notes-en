@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Traversal Verification for Speculative Tree Decoding
 description: >-
-  [NeurIPS 2025][Model Compression][Speculative Decoding] This paper proposes Traversal Verification, a bottom-up verification algorithm that traverses from leaf nodes to the root. Rather than making acceptance/rejection decisions based on per-token probabilities, it considers the sequence-level probability of entire paths, thereby maximizing candidate utilization. The method is theoretically proven to be lossless and optimal on single chains, and consistently improves acceptance length by 2.2%–5.7% across diverse tree structures and tasks.
+  [NeurIPS 2025][Model Compression][Speculative Decoding] This paper proposes Traversal Verification, a bottom-up verification algorithm that traverses from leaf nodes to the root. Rather than making acceptance/rejection d…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Speculative Decoding
-  - Tree Decoding
-  - Verification Algorithm
-  - Lossless Inference Acceleration
-  - Sequence-Level Acceptance
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Speculative Decoding"
+  - "Tree Decoding"
+  - "Verification Algorithm"
+  - "Lossless Inference Acceleration"
+  - "Sequence-Level Acceptance"
 date: 2026-05-08
 content_hash: 104b1bb2617d55ae
 ---

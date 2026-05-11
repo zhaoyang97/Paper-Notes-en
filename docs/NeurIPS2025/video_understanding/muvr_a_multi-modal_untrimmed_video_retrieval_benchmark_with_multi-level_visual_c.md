@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MUVR: A Multi-Modal Untrimmed Video Retrieval Benchmark with Multi-Level Visual Correspondence
 description: >-
-  [NeurIPS 2025][Video Understanding][Video Retrieval] This paper introduces MUVR, a benchmark for multi-modal untrimmed video retrieval targeting real-world long-video platforms. It proposes a video-centric multi-modal query format (video + text + tag + mask) and a six-level visual correspondence matching criterion, comprising 53K videos and 1,050 queries, and systematically evaluates the limitations of retrieval models and MLLMs.
+  [NeurIPS 2025][Video Understanding][Video Retrieval] This paper introduces MUVR, a benchmark for multi-modal untrimmed video retrieval targeting real-world long-video platforms. It proposes a video-centric multi-modal qu…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
-  - Video Retrieval
-  - Multi-Modal Query
-  - Untrimmed Video
-  - Multi-Level Visual Correspondence
-  - Benchmark Dataset
+  - "NeurIPS 2025"
+  - "Video Understanding"
+  - "Video Retrieval"
+  - "Multi-Modal Query"
+  - "Untrimmed Video"
+  - "Multi-Level Visual Correspondence"
+  - "Benchmark Dataset"
 date: 2026-05-08
 content_hash: 0ba1dd70b2ef019f
 ---

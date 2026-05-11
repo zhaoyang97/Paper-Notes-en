@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Exact Learning of Arithmetic with Differentiable Agents
 description: >-
-  [NeurIPS 2025 (MATH-AI Workshop)][differentiable FST] This paper proposes the Differentiable Finite-State Transducer (DFST), a Turing-complete and end-to-end differentiable model family that operates on a 2D symbol grid. Trained via Policy-Trajectory Observations (PTOs) derived from expert arithmetic computations, DFST achieves perfect generalization to 3,850-digit binary addition and 2,450-digit decimal addition using only 20 training samples of up to 3-digit addition, with zero observed errors.
+  [NeurIPS 2025 (MATH-AI Workshop)][differentiable FST] This paper proposes the Differentiable Finite-State Transducer (DFST), a Turing-complete and end-to-end differentiable model family that operates on a 2D symbol grid.…
 tags:
-  - NeurIPS 2025 (MATH-AI Workshop)
-  - differentiable FST
-  - exact learning
-  - arithmetic
-  - length generalization
-  - Turing-complete
+  - "NeurIPS 2025 (MATH-AI Workshop)"
+  - "differentiable FST"
+  - "exact learning"
+  - "arithmetic"
+  - "length generalization"
+  - "Turing-complete"
 date: 2026-05-08
 content_hash: 196c67394e59853e
 ---

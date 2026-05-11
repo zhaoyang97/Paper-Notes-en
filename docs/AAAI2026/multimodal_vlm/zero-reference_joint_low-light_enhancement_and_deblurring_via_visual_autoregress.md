@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Zero-Reference Joint Low-Light Enhancement and Deblurring via Visual Autoregressive Modeling with VLM-Derived Modulation
 description: >-
-  [AAAI 2026][Multimodal VLM][Low-light enhancement] This paper proposes VAR-LIDE, a fully unsupervised visual autoregressive framework that jointly addresses low-light enhancement and deblurring through three modules guided by VLM perceptual priors: adaptive illumination modulation, spatial-frequency RoPE, and recursive phase-domain modulation. Without paired training data, the method achieves perceptual quality comparable to or exceeding supervised approaches.
+  [AAAI 2026][Multimodal VLM][Low-light enhancement] This paper proposes VAR-LIDE, a fully unsupervised visual autoregressive framework that jointly addresses low-light enhancement and deblurring through three modules guid…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Low-light enhancement
-  - deblurring
-  - visual autoregressive model
-  - VLM perceptual prior
-  - unsupervised
-  - frequency-domain phase modulation
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Low-light enhancement"
+  - "deblurring"
+  - "visual autoregressive model"
+  - "VLM perceptual prior"
+  - "unsupervised"
+  - "frequency-domain phase modulation"
 date: 2026-05-08
 content_hash: 10c9e7b20daa0fe3
 ---

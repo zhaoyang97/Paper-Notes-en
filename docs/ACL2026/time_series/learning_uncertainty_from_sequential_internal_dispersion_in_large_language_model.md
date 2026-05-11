@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Uncertainty from Sequential Internal Dispersion in Large Language Models
 description: >-
-  [ACL 2026][Time Series][uncertainty estimation] This paper proposes the SIVR framework, which computes internal variance statistics (generalised variance, circular variance, and token entropy) across layers of LLM hidden states as token-level features, and aggregates full-sequence patterns via a lightweight Transformer encoder to estimate uncertainty and detect hallucinations, achieving significant improvements over baselines with stronger generalization.
+  [ACL 2026][Time Series][uncertainty estimation] This paper proposes the SIVR framework, which computes internal variance statistics (generalised variance, circular variance…
 tags:
-  - ACL 2026
-  - Time Series
-  - uncertainty estimation
-  - hallucination detection
-  - hidden state variance
-  - sequential aggregation
-  - internal representation dispersion
+  - "ACL 2026"
+  - "Time Series"
+  - "uncertainty estimation"
+  - "hallucination detection"
+  - "hidden state variance"
+  - "sequential aggregation"
+  - "internal representation dispersion"
 date: 2026-05-08
 content_hash: e2b4835852309ff0
 ---

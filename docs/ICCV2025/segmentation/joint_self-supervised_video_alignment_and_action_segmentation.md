@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Joint Self-Supervised Video Alignment and Action Segmentation
 description: >-
-  [ICCV 2025][Segmentation][Video Alignment] This paper proposes the VAOT/VASOT framework, which integrates Gromov-Wasserstein optimal transport with structural priors to unify self-supervised video alignment and action segmentation within a single model for the first time. The framework surpasses existing methods on video alignment and achieves state-of-the-art performance on action segmentation.
+  [ICCV 2025][Segmentation][Video Alignment] This paper proposes the VAOT/VASOT framework, which integrates Gromov-Wasserstein optimal transport with structural priors to unify self-supervised video alignment and action se…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - Video Alignment
-  - Action Segmentation
-  - Optimal Transport
-  - Self-Supervised Learning
-  - Gromov-Wasserstein
+  - "ICCV 2025"
+  - "Segmentation"
+  - "Video Alignment"
+  - "Action Segmentation"
+  - "Optimal Transport"
+  - "Self-Supervised Learning"
+  - "Gromov-Wasserstein"
 date: 2026-05-08
 content_hash: 223c95086c465609
 ---

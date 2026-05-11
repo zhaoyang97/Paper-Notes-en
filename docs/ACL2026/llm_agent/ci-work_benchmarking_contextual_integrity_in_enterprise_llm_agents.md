@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CI-Work: Benchmarking Contextual Integrity in Enterprise LLM Agents
 description: >-
-  [ACL 2026][LLM Agent][enterprise privacy] CI-Work is an enterprise-scenario benchmark grounded in Contextual Integrity (CI) theory. It reveals that state-of-the-art LLM agents systematically violate privacy norms in enterprise workflows, and that scaling model size exacerbates rather than mitigates leakage.
+  [ACL 2026][LLM Agent][enterprise privacy] CI-Work is an enterprise-scenario benchmark grounded in Contextual Integrity (CI) theory. It reveals that state-of-the-art LLM agents systematically violate privacy norms in ente…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - enterprise privacy
-  - contextual integrity
-  - LLM agents
-  - information leakage
-  - privacy-utility tradeoff
+  - "ACL 2026"
+  - "LLM Agent"
+  - "enterprise privacy"
+  - "contextual integrity"
+  - "LLM agents"
+  - "information leakage"
+  - "privacy-utility tradeoff"
 date: 2026-05-08
 content_hash: 60dc39e010b2408c
 ---

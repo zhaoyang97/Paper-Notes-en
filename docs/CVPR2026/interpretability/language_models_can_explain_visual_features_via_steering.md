@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Language Models Can Explain Visual Features via Steering
 description: >-
-  [CVPR 2026][Sparse Autoencoders] This paper proposes a method for scalable automatic explanation of visual features by causally intervening (steering) on SAE features in VLM visual encoders. By injecting feature vectors into a blank image's forward pass and prompting the language model to describe what it "sees," the approach eliminates the need for an evaluation image set. A hybrid method, Steering-informed Top-k, is further proposed and achieves state-of-the-art performance.
+  [CVPR 2026][Interpretability][Sparse Autoencoders] This paper proposes a method for scalable automatic explanation of visual features by causally intervening (steering) on SAE features in VLM visual encoders. By injectin…
 tags:
-  - CVPR 2026
-  - Sparse Autoencoders
-  - Visual Feature Explanation
-  - Causal Intervention
-  - VLM
-  - Automated Interpretability
+  - "CVPR 2026"
+  - "Interpretability"
+  - "Sparse Autoencoders"
+  - "Visual Feature Explanation"
+  - "Causal Intervention"
+  - "VLM"
+  - "Automated Interpretability"
 date: 2026-05-08
 content_hash: 5b564e4b0b5640ef
 ---

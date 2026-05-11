@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DisCa: Accelerating Video Diffusion Transformers with Distillation-Compatible Learnable Feature Caching
 description: >-
-  [CVPR 2026][Video Generation][Feature Caching] DisCa is the first framework to unify learnable feature caching with step distillation in a compatible manner, replacing hand-crafted caching strategies with a lightweight neural predictor (<4% of model parameters). Combined with Restricted MeanFlow for stable large-scale video DiT distillation, DisCa achieves an 11.8× near-lossless speedup on HunyuanVideo.
+  [CVPR 2026][Video Generation][Feature Caching] DisCa is the first framework to unify learnable feature caching with step distillation in a compatible manner…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Feature Caching
-  - Step Distillation
-  - MeanFlow
-  - Learnable Predictor
-  - HunyuanVideo
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Feature Caching"
+  - "Step Distillation"
+  - "MeanFlow"
+  - "Learnable Predictor"
+  - "HunyuanVideo"
 date: 2026-05-08
 content_hash: 92b193175ec1ad0a
 ---

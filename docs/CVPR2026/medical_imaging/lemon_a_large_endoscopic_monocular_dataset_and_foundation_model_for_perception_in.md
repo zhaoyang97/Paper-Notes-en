@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LEMON: A Large Endoscopic MONocular Dataset and Foundation Model for Perception in Surgical Settings
 description: >-
-  [CVPR 2026][Medical Imaging][Surgical Foundation Model] This paper presents LEMON, a large-scale endoscopic dataset comprising 4,194 surgical videos (938 hours), and proposes LemonFM, a self-supervised foundation model based on augmented knowledge distillation. LemonFM achieves state-of-the-art performance across four downstream surgical tasks: phase recognition, tool detection, action recognition, and semantic segmentation.
+  [CVPR 2026][Medical Imaging][Surgical Foundation Model] This paper presents LEMON, a large-scale endoscopic dataset comprising 4,194 surgical videos (938 hours), and proposes LemonFM…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Surgical Foundation Model
-  - Endoscopic Dataset
-  - Self-Supervised Learning
-  - Knowledge Distillation
-  - Surgical Scene Understanding
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Surgical Foundation Model"
+  - "Endoscopic Dataset"
+  - "Self-Supervised Learning"
+  - "Knowledge Distillation"
+  - "Surgical Scene Understanding"
 date: 2026-05-08
 content_hash: 6038e6f80df48474
 ---

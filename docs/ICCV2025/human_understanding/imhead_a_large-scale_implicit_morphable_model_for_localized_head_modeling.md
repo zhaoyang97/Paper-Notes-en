@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ImHead: A Large-scale Implicit Morphable Model for Localized Head Modeling
 description: >-
-  [ICCV 2025][Human Understanding][3D morphable model] imHead proposes the first large-scale implicit 3D head morphable model. Through a global-local decoupled architecture trained on a dataset of 4,000 identities, it achieves both a compact implicit representation and localized facial editing, surpassing existing methods in reconstruction accuracy and editing flexibility.
+  [ICCV 2025][Human Understanding][3D morphable model] imHead proposes the first large-scale implicit 3D head morphable model. Through a global-local decoupled architecture trained on a dataset of 4,000 identities…
 tags:
-  - ICCV 2025
-  - Human Understanding
-  - 3D morphable model
-  - implicit function
-  - head modeling
-  - local editing
-  - large-scale dataset
+  - "ICCV 2025"
+  - "Human Understanding"
+  - "3D morphable model"
+  - "implicit function"
+  - "head modeling"
+  - "local editing"
+  - "large-scale dataset"
 date: 2026-05-08
 content_hash: d516f5285220c193
 ---

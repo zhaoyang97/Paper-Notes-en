@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] IAG: Input-aware Backdoor Attack on VLM-based Visual Grounding
 description: >-
-  [CVPR 2026][Multimodal VLM][Backdoor attack] This paper proposes IAG, the first multi-target backdoor attack method against VLM-based visual grounding. By employing a text-conditioned U-Net to dynamically generate input-aware triggers, IAG embeds the semantic information of any attacker-specified target object into the visual input, achieving the highest attack success rate in 11 out of 12 evaluated settings.
+  [CVPR 2026][Multimodal VLM][Backdoor attack] This paper proposes IAG, the first multi-target backdoor attack method against VLM-based visual grounding. By employing a text-conditioned U-Net to dynamically generate input-…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Backdoor attack
-  - visual grounding
-  - multi-target attack
-  - input-aware trigger
-  - VLM security
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Backdoor attack"
+  - "visual grounding"
+  - "multi-target attack"
+  - "input-aware trigger"
+  - "VLM security"
 date: 2026-05-08
 content_hash: c0e2e396e2e2b097
 ---

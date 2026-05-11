@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DUET-VLM: Dual Stage Unified Efficient Token Reduction for VLM Training and Inference
 description: >-
-  [CVPR2026][Multimodal VLM][VLM token compression] This paper proposes DUET-VLM, a dual-stage visual token compression framework. Stage 1 operates within the visual encoder: dominant tokens are selected via V2V self-attention, and remaining tokens are merged into contextual tokens through attention-guided local cluster aggregation. Stage 2 operates within the LLM, progressively pruning visual tokens via T2V cross-attention across multiple layers. On LLaVA-1.5-7B, DUET-VLM achieves 67% token compression while retaining 99%+ accuracy, and 89% compression while retaining 97%+ accuracy, with a 31% reduction in training time.
+  [CVPR2026][Multimodal VLM][VLM token compression] This paper proposes DUET-VLM, a dual-stage visual token compression framework. Stage 1 operates within the visual encoder: dominant tokens are selected via V2V self-atten…
 tags:
-  - CVPR2026
-  - Multimodal VLM
-  - VLM token compression
-  - visual token redundancy
-  - dual-stage token pruning
-  - attention-guided aggregation
-  - hierarchical pruning
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "VLM token compression"
+  - "visual token redundancy"
+  - "dual-stage token pruning"
+  - "attention-guided aggregation"
+  - "hierarchical pruning"
 date: 2026-05-08
 content_hash: e3b3fdd697fba2e5
 ---

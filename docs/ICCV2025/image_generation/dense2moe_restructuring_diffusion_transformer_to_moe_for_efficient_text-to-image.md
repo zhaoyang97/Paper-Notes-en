@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dense2MoE: Restructuring Diffusion Transformer to MoE for Efficient Text-to-Image Generation
 description: >-
-  [ICCV 2025][Image Generation][Diffusion Models] Dense2MoE is the first paradigm for converting dense Diffusion Transformers (DiT) into sparse MoE structures. By replacing FFN layers with MoE layers and grouping Transformer blocks into Mixture of Blocks (MoB), combined with a multi-stage distillation pipeline, it compresses FLUX.1's 12B parameters to 5.2B activated parameters while preserving original performance, comprehensively outperforming pruning-based methods.
+  [ICCV 2025][Image Generation][Diffusion Models] Dense2MoE is the first paradigm for converting dense Diffusion Transformers (DiT) into sparse MoE structures. By replacing FFN layers with MoE layers and grouping Transform…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Diffusion Models
-  - Mixture of Experts
-  - Model Compression
-  - Knowledge Distillation
-  - FLUX
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "Mixture of Experts"
+  - "Model Compression"
+  - "Knowledge Distillation"
+  - "FLUX"
 date: 2026-05-08
 content_hash: 8569266c0aa34cb6
 ---

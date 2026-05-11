@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] LongWriter-Zero: Mastering Ultra-Long Text Generation via Reinforcement Learning
 description: >-
-  [ICLR 2026 (Oral)][Reinforcement Learning][Ultra-long text generation] This paper proposes LongWriter-Zero: starting from a base model, without relying on any annotated or synthetic data, the approach uses GRPO reinforcement learning combined with a three-dimensional composite reward model (length / quality / format) to elicit emergent ultra-long, high-quality text generation. With 32B parameters, the model surpasses 100B+ models such as DeepSeek-R1 and Qwen3-235B on WritingBench.
+  [ICLR 2026 (Oral)][Reinforcement Learning][Ultra-long text generation] This paper proposes LongWriter-Zero: starting from a base model, without relying on any annotated or synthetic data…
 tags:
-  - ICLR 2026 (Oral)
-  - Reinforcement Learning
-  - Ultra-long text generation
-  - GRPO
-  - Composite reward model
-  - Test-time reasoning
+  - "ICLR 2026 (Oral)"
+  - "Reinforcement Learning"
+  - "Ultra-long text generation"
+  - "GRPO"
+  - "Composite reward model"
+  - "Test-time reasoning"
 date: 2026-05-08
 content_hash: e632a09b4a7b5b53
 ---

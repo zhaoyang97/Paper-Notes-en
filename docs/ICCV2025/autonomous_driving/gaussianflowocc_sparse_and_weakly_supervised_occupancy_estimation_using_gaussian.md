@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GaussianFlowOcc: Sparse and Weakly Supervised Occupancy Estimation using Gaussian Splatting and Temporal Flow
 description: >-
-  [ICCV 2025][Autonomous Driving][Occupancy Grid Estimation] This paper proposes GaussianFlowOcc, which replaces dense voxel grids with sparse 3D Gaussian distributions for occupancy estimation. A Gaussian Transformer is introduced for efficient scene modeling, and a Temporal Module estimates per-Gaussian 3D temporal flow to handle dynamic objects. The method substantially outperforms existing approaches on nuScenes under weak supervision (51%+ mIoU improvement) while achieving 50× faster inference.
+  [ICCV 2025][Autonomous Driving][Occupancy Grid Estimation] This paper proposes GaussianFlowOcc, which replaces dense voxel grids with sparse 3D Gaussian distributions for occupancy estimation. A Gaussian Transformer is i…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - Occupancy Grid Estimation
-  - 3D Gaussian Splatting
-  - Weak Supervision
-  - Temporal Flow
-  - Sparse Representation
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "Occupancy Grid Estimation"
+  - "3D Gaussian Splatting"
+  - "Weak Supervision"
+  - "Temporal Flow"
+  - "Sparse Representation"
 date: 2026-05-08
 content_hash: a1715431061a771d
 ---

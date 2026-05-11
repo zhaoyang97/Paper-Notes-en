@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] E-SAM: Training-Free Segment Every Entity Model
 description: >-
-  [ICCV 2025][Segmentation][Entity Segmentation] E-SAM is a training-free framework that systematically addresses over-segmentation and under-segmentation in SAM's Automatic Mask Generation (AMG) via three cascaded modules—Multi-level Mask Generation (MMG), Entity-level Mask Refinement (EMR), and Under-Segmentation Refinement (USR)—surpassing existing entity segmentation methods by **+30.1 points** on benchmark metrics.
+  [ICCV 2025][Segmentation][Entity Segmentation] E-SAM is a training-free framework that systematically addresses over-segmentation and under-segmentation in SAM's Automatic Mask Generation (AMG) via three cascaded modules…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - Entity Segmentation
-  - SAM
-  - Training-Free
-  - Automatic Mask Generation
-  - Over-segmentation
-  - Under-segmentation
-  - NMS
+  - "ICCV 2025"
+  - "Segmentation"
+  - "Entity Segmentation"
+  - "SAM"
+  - "Training-Free"
+  - "Automatic Mask Generation"
+  - "Over-segmentation"
+  - "Under-segmentation"
+  - "NMS"
 date: 2026-05-08
 content_hash: c2b92219600a986c
 ---

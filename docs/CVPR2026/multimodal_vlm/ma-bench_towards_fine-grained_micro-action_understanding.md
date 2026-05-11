@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MA-Bench: Towards Fine-grained Micro-Action Understanding
 description: >-
-  [CVPR 2026][Multimodal VLM][micro-action understanding] This paper proposes MA-Bench, a micro-action understanding benchmark comprising 1,000 videos and 12,000 structured QA pairs. It introduces a three-tier "Perception–Comprehension–Reasoning" evaluation architecture to systematically assess fine-grained micro-action understanding across 23 MLLMs, and constructs a 20.5K training corpus, MA-Bench-Train, to support model fine-tuning and improvement.
+  [CVPR 2026][Multimodal VLM][micro-action understanding] This paper proposes MA-Bench, a micro-action understanding benchmark comprising 1,000 videos and 12…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - micro-action understanding
-  - fine-grained action recognition
-  - multimodal large model evaluation
-  - affective analysis
-  - video question answering
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "micro-action understanding"
+  - "fine-grained action recognition"
+  - "multimodal large model evaluation"
+  - "affective analysis"
+  - "video question answering"
 date: 2026-05-08
 content_hash: 626cdb8c411ad370
 ---

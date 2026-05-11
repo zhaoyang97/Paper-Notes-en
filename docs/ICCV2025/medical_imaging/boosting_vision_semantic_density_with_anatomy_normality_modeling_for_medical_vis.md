@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Boosting Vision Semantic Density with Anatomy Normality Modeling for Medical Vision-language Pre-training
 description: >-
-  [ICCV 2025][Medical Imaging][vision-language pre-training] This paper proposes ViSD-Boost, which addresses the alignment bias caused by low visual semantic density in medical vision-language pre-training (VLP). The method employs disease-level visual contrastive learning to enhance visual semantics and VQ-VAE-based anatomical normality modeling to amplify abnormality signals, achieving 84.9% AUC in zero-shot diagnosis across 54 diseases spanning 15 organs.
+  [ICCV 2025][Medical Imaging][vision-language pre-training] This paper proposes ViSD-Boost, which addresses the alignment bias caused by low visual semantic density in medical vision-language pre-training (VLP). The metho…
 tags:
-  - ICCV 2025
-  - Medical Imaging
-  - vision-language pre-training
-  - semantic density
-  - anatomy normality
-  - VQ-VAE
-  - zero-shot diagnosis
+  - "ICCV 2025"
+  - "Medical Imaging"
+  - "vision-language pre-training"
+  - "semantic density"
+  - "anatomy normality"
+  - "VQ-VAE"
+  - "zero-shot diagnosis"
 date: 2026-05-08
 content_hash: 10a5c8a91f687485
 ---

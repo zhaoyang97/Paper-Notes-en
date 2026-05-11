@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Laytrol: Preserving Pretrained Knowledge in Layout Control for Multimodal Diffusion Transformers
 description: >-
-  [AAAI 2026][Image Generation][Layout Control] Laytrol achieves high-quality layout-to-image generation on FLUX by initializing the layout control network via parameter copying from MM-DiT, adopting a dedicated initialization scheme (layout encoder initialized as a pure text encoder with zero-initialized outputs), and constructing the LaySyn dataset using FLUX-generated images to mitigate distribution shift.
+  [AAAI 2026][Image Generation][Layout Control] Laytrol achieves high-quality layout-to-image generation on FLUX by initializing the layout control network via parameter copying from MM-DiT…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Layout Control
-  - Multimodal Diffusion Transformer
-  - Parameter Copying
-  - ControlNet
-  - FLUX
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Layout Control"
+  - "Multimodal Diffusion Transformer"
+  - "Parameter Copying"
+  - "ControlNet"
+  - "FLUX"
 date: 2026-05-08
 content_hash: f3e2f67ddcdbb58b
 ---

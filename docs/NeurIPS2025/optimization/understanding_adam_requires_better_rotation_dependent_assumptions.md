@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Understanding Adam Requires Better Rotation Dependent Assumptions
 description: >-
-  [NeurIPS 2025][Optimization][Adam optimizer] Through systematic empirical investigation, this paper demonstrates that the Adam optimizer exhibits strong dependence on the choice of coordinate basis in parameter space, showing that existing rotation-invariant theoretical assumptions are insufficient to explain Adam's superiority. The orthogonality of per-layer updates is identified as a reliable indicator for predicting Adam's performance under different bases.
+  [NeurIPS 2025][Optimization][Adam optimizer] Through systematic empirical investigation, this paper demonstrates that the Adam optimizer exhibits strong dependence on the choice of coordinate basis in parameter space…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Adam optimizer
-  - rotation equivariance
-  - parameter space rotation
-  - orthogonality
-  - adaptive optimization
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Adam optimizer"
+  - "rotation equivariance"
+  - "parameter space rotation"
+  - "orthogonality"
+  - "adaptive optimization"
 date: 2026-05-08
 content_hash: 3daad626f5bc098e
 ---

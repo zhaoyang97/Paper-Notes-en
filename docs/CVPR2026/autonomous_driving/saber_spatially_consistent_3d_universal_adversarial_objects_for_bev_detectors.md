@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] SABER: Spatially Consistent 3D Universal Adversarial Objects for BEV Detectors
 description: >-
-  [CVPR2026][Autonomous Driving][Adversarial Attack] This paper proposes SABER, the first non-invasive, spatially consistent universal adversarial object generation framework targeting BEV 3D detectors. By placing optimized 3D meshes in the scene, SABER disrupts multi-view multi-frame detection and reveals BEV models' over-reliance on learned environmental context priors.
+  [CVPR2026][Autonomous Driving][Adversarial Attack] This paper proposes SABER, the first non-invasive, spatially consistent universal adversarial object generation framework targeting BEV 3D detectors. By placing optimize…
 tags:
-  - CVPR2026
-  - Autonomous Driving
-  - Adversarial Attack
-  - BEV 3D Detection
-  - Non-Invasive Attack
-  - Differentiable Rendering
-  - Universal Adversarial Object
-  - Multi-View Consistency
+  - "CVPR2026"
+  - "Autonomous Driving"
+  - "Adversarial Attack"
+  - "BEV 3D Detection"
+  - "Non-Invasive Attack"
+  - "Differentiable Rendering"
+  - "Universal Adversarial Object"
+  - "Multi-View Consistency"
 date: 2026-05-08
 content_hash: 0963ed27ae7030fa
 ---

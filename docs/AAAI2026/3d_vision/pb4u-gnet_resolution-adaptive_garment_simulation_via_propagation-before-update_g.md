@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Pb4U-GNet: Resolution-Adaptive Garment Simulation via Propagation-before-Update Graph Network
 description: >-
-  [AAAI 2026][3D Vision][Garment Simulation] This paper proposes Pb4U-GNet, which decouples message propagation from feature update (Propagation-before-Update) and incorporates resolution-aware propagation depth control and update scaling mechanisms, enabling garment simulation models trained solely on low-resolution meshes to generalize to high-resolution meshes.
+  [AAAI 2026][3D Vision][Garment Simulation] This paper proposes Pb4U-GNet, which decouples message propagation from feature update (Propagation-before-Update) and incorporates resolution-aware propagation depth control an…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - Garment Simulation
-  - Graph Neural Network
-  - Cross-Resolution Generalization
-  - Message Propagation
-  - Resolution Adaptation
+  - "AAAI 2026"
+  - "3D Vision"
+  - "Garment Simulation"
+  - "Graph Neural Network"
+  - "Cross-Resolution Generalization"
+  - "Message Propagation"
+  - "Resolution Adaptation"
 date: 2026-05-08
 content_hash: 9c988527d6a849eb
 ---

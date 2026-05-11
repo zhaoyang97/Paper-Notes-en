@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RadGPT: Constructing 3D Image-Text Tumor Datasets
 description: >-
-  [ICCV 2025][Medical Imaging][CT report generation] This paper proposes RadGPT — an anatomy-aware vision-language AI pipeline that converts radiologist-revised tumor segmentation masks into structured reports via deterministic algorithms, then adapts them into narrative-style reports using an LLM. This pipeline is used to construct AbdomenAtlas 3.0, the first large-scale public abdominal CT image-text tumor dataset (9,262 CT scans with per-voxel annotations and reports). The work demonstrates that segmentation assistance significantly improves tumor detection rates in AI-generated reports.
+  [ICCV 2025][Medical Imaging][CT report generation] This paper proposes RadGPT — an anatomy-aware vision-language AI pipeline that converts radiologist-revised tumor segmentation masks into structured reports via determin…
 tags:
-  - ICCV 2025
-  - Medical Imaging
-  - CT report generation
-  - tumor dataset
-  - segmentation-assisted reporting
-  - abdominal CT
-  - structured report
+  - "ICCV 2025"
+  - "Medical Imaging"
+  - "CT report generation"
+  - "tumor dataset"
+  - "segmentation-assisted reporting"
+  - "abdominal CT"
+  - "structured report"
 date: 2026-05-08
 content_hash: 63c7211edd5e59d7
 ---

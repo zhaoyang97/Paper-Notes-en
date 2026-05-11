@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning with Preserving for Continual Multitask Learning
 description: >-
-  [AAAI 2026][Medical Imaging][Continual Multitask Learning] This paper proposes the Learning with Preserving (LwP) framework, which maintains the geometric structure of the shared representation space via a Dynamically Weighted Distance Preserving (DWDP) loss. Without requiring a replay buffer, LwP addresses catastrophic forgetting in Continual Multitask Learning (CMTL) and significantly outperforms existing continual learning methods on benchmarks including BDD100k, CelebA, and PhysiQ. It is the only method to surpass the single-task learning baseline.
+  [AAAI 2026][Medical Imaging][Continual Multitask Learning] This paper proposes the Learning with Preserving (LwP) framework, which maintains the geometric structure of the shared representation space via a Dynamically We…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Continual Multitask Learning
-  - Representation Space Preservation
-  - Distance-Preserving Loss
-  - Catastrophic Forgetting
-  - Replay-Free
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Continual Multitask Learning"
+  - "Representation Space Preservation"
+  - "Distance-Preserving Loss"
+  - "Catastrophic Forgetting"
+  - "Replay-Free"
 date: 2026-05-08
 content_hash: 414e84d674bf7976
 ---

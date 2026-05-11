@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ReCoQA: A Benchmark for Tool-Augmented and Multi-Step Reasoning in Real Estate Question and Answering
 description: >-
-  [ACL 2026][LLM Reasoning][Tool-augmented reasoning] This paper introduces ReCoQA—a large-scale benchmark comprising 29,270 real estate question-answer pairs—that requires models to perform hybrid multi-source reasoning by integrating database queries and map API calls. The authors further propose HIRE-Agent, a hierarchical multi-agent framework serving as a strong baseline, and systematically identify the bottlenecks of existing LLMs in complex reasoning within vertical domains.
+  [ACL 2026][LLM Reasoning][Tool-augmented reasoning] This paper introduces ReCoQA—a large-scale benchmark comprising 29,270 real estate question-answer pairs—that requires models to perform hybrid multi-source reasoning b…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - Tool-augmented reasoning
-  - multi-step reasoning
-  - real estate QA
-  - multi-agent framework
-  - benchmark dataset
+  - "ACL 2026"
+  - "LLM Reasoning"
+  - "Tool-augmented reasoning"
+  - "multi-step reasoning"
+  - "real estate QA"
+  - "multi-agent framework"
+  - "benchmark dataset"
 date: 2026-05-08
 content_hash: 1594ae140bd338bf
 ---

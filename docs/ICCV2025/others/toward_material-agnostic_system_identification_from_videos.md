@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Toward Material-Agnostic System Identification from Videos
 description: >-
-  [ICCV2025][system identification] This paper proposes MASIV, the first visual system identification framework that requires no predefined material priors. It replaces hand-crafted elastic/plastic equations with a learnable neural constitutive model, reconstructs dense continuum particle trajectories to provide temporally rich geometric supervision, and infers the intrinsic dynamic properties of objects from multi-view videos.
+  [ICCV2025][system identification] This paper proposes MASIV, the first visual system identification framework that requires no predefined material priors. It replaces hand-crafted elastic/plastic equations with a learnab…
 tags:
-  - ICCV2025
-  - system identification
-  - neural constitutive model
-  - material point method
-  - 3D Gaussian splatting
-  - differentiable simulation
+  - "ICCV2025"
+  - "system identification"
+  - "neural constitutive model"
+  - "material point method"
+  - "3D Gaussian splatting"
+  - "differentiable simulation"
 date: 2026-05-08
 content_hash: 33384dc14011e9bd
 ---

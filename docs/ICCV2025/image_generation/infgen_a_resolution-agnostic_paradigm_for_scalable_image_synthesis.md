@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] InfGen: A Resolution-Agnostic Paradigm for Scalable Image Synthesis
 description: >-
-  [ICCV 2025][Image Generation][Arbitrary-resolution generation] This paper proposes InfGen, a "second-generation" paradigm that replaces the VAE decoder with a Transformer-based generator, decoding fixed-size latents into images at arbitrary resolution in a single forward pass—without modifying or retraining the diffusion model. It reduces 4K image generation to under 10 seconds, achieving over 10× speedup compared to the fastest existing method, UltraPixel.
+  [ICCV 2025][Image Generation][Arbitrary-resolution generation] This paper proposes InfGen, a "second-generation" paradigm that replaces the VAE decoder with a Transformer-based generator…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Arbitrary-resolution generation
-  - latent diffusion models
-  - VAE decoder replacement
-  - implicit neural positional encoding
-  - efficient 4K generation
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Arbitrary-resolution generation"
+  - "latent diffusion models"
+  - "VAE decoder replacement"
+  - "implicit neural positional encoding"
+  - "efficient 4K generation"
 date: 2026-05-08
 content_hash: 30ec11b221d38dc5
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] InterMoE: Individual-Specific 3D Human Interaction Generation via Dynamic Temporal-Selective MoE
 description: >-
-  [AAAI 2026][LLM Efficiency][human interaction generation] This paper proposes InterMoE, a Dynamic Temporal-Selective MoE architecture for text-driven two-person 3D interaction motion generation that addresses individual identity preservation and semantic fidelity. A Synergistic Router fuses semantic and kinematic features to guide routing, while Dynamic Temporal Selection enables each expert to adaptively select key temporal frames. The method achieves a 9% FID reduction on InterHuman and 22% on InterX.
+  [AAAI 2026][LLM Efficiency][human interaction generation] This paper proposes InterMoE, a Dynamic Temporal-Selective MoE architecture for text-driven two-person 3D interaction motion generation that addresses individual…
 tags:
-  - AAAI 2026
-  - LLM Efficiency
-  - human interaction generation
-  - MoE
-  - motion generation
-  - diffusion model
-  - 3D motion synthesis
+  - "AAAI 2026"
+  - "LLM Efficiency"
+  - "human interaction generation"
+  - "MoE"
+  - "motion generation"
+  - "diffusion model"
+  - "3D motion synthesis"
 date: 2026-05-08
 content_hash: b30242787fdb4eb9
 ---

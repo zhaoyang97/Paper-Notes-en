@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Bridging Graph and State-Space Modeling for Intensive Care Unit Length of Stay Prediction
 description: >-
-  [NeurIPS 2025 (GenAI for Health Workshop)][Medical Imaging][ICU length-of-stay prediction] This paper proposes S2G-Net, a dual-branch architecture that integrates Mamba state-space temporal encoding with a multi-view graph neural network (GraphGPS) for ICU length-of-stay (LOS) prediction, achieving comprehensive improvements over sequential, graph-based, and hybrid baselines on MIMIC-IV.
+  [NeurIPS 2025 (GenAI for Health Workshop)][Medical Imaging][ICU length-of-stay prediction] This paper proposes S2G-Net, a dual-branch architecture that integrates Mamba state-space temporal encoding with a multi-view gra…
 tags:
-  - NeurIPS 2025 (GenAI for Health Workshop)
-  - Medical Imaging
-  - ICU length-of-stay prediction
-  - graph neural networks
-  - state-space models
-  - Mamba
-  - multi-view graphs
+  - "NeurIPS 2025 (GenAI for Health Workshop)"
+  - "Medical Imaging"
+  - "ICU length-of-stay prediction"
+  - "graph neural networks"
+  - "state-space models"
+  - "Mamba"
+  - "multi-view graphs"
 date: 2026-05-08
 content_hash: d7791d9823a6758d
 ---

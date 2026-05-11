@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BiPrompt: Bilateral Prompt Optimization for Visual and Textual Debiasing in Vision-Language Models
 description: >-
-  [AAAI 2026][Multimodal VLM][Vision-language model debiasing] This paper proposes BiPrompt, a bilateral prompt optimization framework that simultaneously mitigates spurious biases on both the visual side (structured attention erasure) and the textual side (balanced prompt normalization) in VLMs such as CLIP at test time, improving OOD robustness without retraining.
+  [AAAI 2026][Multimodal VLM][Vision-language model debiasing] This paper proposes BiPrompt, a bilateral prompt optimization framework that simultaneously mitigates spurious biases on both the visual side (structured atten…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Vision-language model debiasing
-  - test-time adaptation
-  - causal inference
-  - prompt optimization
-  - spurious correlations
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Vision-language model debiasing"
+  - "test-time adaptation"
+  - "causal inference"
+  - "prompt optimization"
+  - "spurious correlations"
 date: 2026-05-08
 content_hash: 54b099c55acd23d5
 ---

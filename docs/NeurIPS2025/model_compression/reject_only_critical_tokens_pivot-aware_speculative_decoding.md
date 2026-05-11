@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Reject Only Critical Tokens: Pivot-Aware Speculative Decoding
 description: >-
-  [NeurIPS 2025][Model Compression][speculative decoding] PAD proposes a new speculative decoding paradigm based on utility matching rather than distribution matching. It trains a lightweight classifier to identify *pivot tokens* and rejects only those draft tokens that would degrade final output utility, achieving a 2.46× speedup on GSM8K with negligible accuracy loss.
+  [NeurIPS 2025][Model Compression][speculative decoding] PAD proposes a new speculative decoding paradigm based on utility matching rather than distribution matching. It trains a lightweight classifier to identify *pivot…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - speculative decoding
-  - pivot token
-  - utility preservation
-  - LLM inference
-  - acceptance rate
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "speculative decoding"
+  - "pivot token"
+  - "utility preservation"
+  - "LLM inference"
+  - "acceptance rate"
 date: 2026-05-08
 content_hash: cbe4d723d7032f85
 ---

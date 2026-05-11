@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OnlineSplatter: Pose-Free Online 3D Reconstruction for Free-Moving Objects
 description: >-
-  [NeurIPS 2025][3D Vision][Online 3D Reconstruction] This paper proposes OnlineSplatter, a feed-forward online 3D reconstruction framework that requires no camera poses, depth priors, or global optimization. It achieves constant-time incremental reconstruction of free-moving objects via a dual-key memory module combining appearance-geometry latent keys and orientation keys.
+  [NeurIPS 2025][3D Vision][Online 3D Reconstruction] This paper proposes OnlineSplatter, a feed-forward online 3D reconstruction framework that requires no camera poses, depth priors…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Online 3D Reconstruction
-  - 3D Gaussian Splatting
-  - Pose-Free Reconstruction
-  - Free-Moving Objects
-  - Memory Module
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Online 3D Reconstruction"
+  - "3D Gaussian Splatting"
+  - "Pose-Free Reconstruction"
+  - "Free-Moving Objects"
+  - "Memory Module"
 date: 2026-05-08
 content_hash: 373aa7b69d1e8560
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Video-SafetyBench: A Benchmark for Safety Evaluation of Video LVLMs
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Video Safety] This paper presents Video-SafetyBench, the first comprehensive benchmark for safety evaluation of video LVLMs. It comprises 2,264 video-text pairs spanning 48 fine-grained unsafe categories, constructed via a controllable video generation pipeline. A confidence-based evaluation metric, RJScore, is proposed to assess model outputs. Large-scale evaluation across 24 LVLMs reveals an average attack success rate of 67.2% under benign queries.
+  [NeurIPS 2025][Multimodal VLM][Video Safety] This paper presents Video-SafetyBench, the first comprehensive benchmark for safety evaluation of video LVLMs. It comprises 2…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Video Safety
-  - LVLM Evaluation
-  - Attack Success Rate
-  - Multimodal Safety Benchmark
-  - RJScore
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Video Safety"
+  - "LVLM Evaluation"
+  - "Attack Success Rate"
+  - "Multimodal Safety Benchmark"
+  - "RJScore"
 date: 2026-05-08
 content_hash: c6caf255fa4d3ba1
 ---

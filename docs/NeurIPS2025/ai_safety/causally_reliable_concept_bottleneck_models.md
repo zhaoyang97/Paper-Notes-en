@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Causally Reliable Concept Bottleneck Models
 description: >-
-  [NeurIPS 2025][AI Safety][concept bottleneck models] This paper proposes C2BM (Causally reliable Concept Bottleneck Models), which organizes the concept bottleneck as a causal graph structure. By combining observational data with background knowledge, C2BM automatically learns causal relationships, achieving significantly improved causal reliability, intervention responsiveness, and fairness while maintaining classification accuracy.
+  [NeurIPS 2025][AI Safety][concept bottleneck models] This paper proposes C2BM (Causally reliable Concept Bottleneck Models), which organizes the concept bottleneck as a causal graph structure. By combining observational…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - concept bottleneck models
-  - causal reasoning
-  - structural causal model
-  - interpretability
-  - fairness
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "concept bottleneck models"
+  - "causal reasoning"
+  - "structural causal model"
+  - "interpretability"
+  - "fairness"
 date: 2026-05-08
 content_hash: 3cf10cd4e9e79046
 ---

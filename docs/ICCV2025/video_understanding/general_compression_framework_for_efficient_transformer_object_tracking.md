@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] General Compression Framework for Efficient Transformer Object Tracking
 description: >-
-  [ICCV 2025][Video Understanding][Object Tracking] This paper proposes CompressTracker, a general Transformer tracker compression framework that achieves architecture-agnostic efficient compression through three progressive innovations—stage division, replacement training, and feature mimicking—delivering a 2.42× speedup while retaining approximately 99% of SUTrack's accuracy.
+  [ICCV 2025][Video Understanding][Object Tracking] This paper proposes CompressTracker, a general Transformer tracker compression framework that achieves architecture-agnostic efficient compression through three progressi…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - Object Tracking
-  - Model Compression
-  - Knowledge Distillation
-  - Transformer
-  - Efficient Inference
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "Object Tracking"
+  - "Model Compression"
+  - "Knowledge Distillation"
+  - "Transformer"
+  - "Efficient Inference"
 date: 2026-05-08
 content_hash: 42aee8a2d3733291
 ---

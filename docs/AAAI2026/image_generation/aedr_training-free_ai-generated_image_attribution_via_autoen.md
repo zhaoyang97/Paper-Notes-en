@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AEDR: Training-Free AI-Generated Image Attribution via Autoencoder Double-Reconstruction
 description: >-
-  [AAAI 2026][Image Generation][Image Attribution] This paper proposes a training-free image attribution method based on the ratio of autoencoder double-reconstruction losses. By incorporating image uniformity calibration to eliminate texture complexity bias, the method achieves an average accuracy of 95.1% across 8 mainstream diffusion models, surpassing the strongest baseline by 24.7%, while being approximately 100× faster.
+  [AAAI 2026][Image Generation][Image Attribution] This paper proposes a training-free image attribution method based on the ratio of autoencoder double-reconstruction losses. By incorporating image uniformity calibration…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Image Attribution
-  - Autoencoder Reconstruction
-  - Training-Free
-  - Latent Diffusion Models
-  - Kernel Density Estimation
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Image Attribution"
+  - "Autoencoder Reconstruction"
+  - "Training-Free"
+  - "Latent Diffusion Models"
+  - "Kernel Density Estimation"
 date: 2026-05-08
 content_hash: 196516b499689924
 ---

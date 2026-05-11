@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Spectral Perturbation Bounds for Low-Rank Approximation with Applications to Privacy
 description: >-
-  [NeurIPS 2025][AI Safety][low-rank approximation] This paper establishes novel high-probability perturbation bounds for low-rank approximation of symmetric matrices under the spectral norm, improving upon the classical Eckart–Young–Mirsky theorem, and resolves an open problem in differentially private PCA.
+  [NeurIPS 2025][AI Safety][low-rank approximation] This paper establishes novel high-probability perturbation bounds for low-rank approximation of symmetric matrices under the spectral norm…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - low-rank approximation
-  - spectral norm perturbation bounds
-  - differentially private PCA
-  - contour bootstrapping
-  - matrix perturbation theory
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "low-rank approximation"
+  - "spectral norm perturbation bounds"
+  - "differentially private PCA"
+  - "contour bootstrapping"
+  - "matrix perturbation theory"
 date: 2026-05-08
 content_hash: 29679a8951a29748
 ---

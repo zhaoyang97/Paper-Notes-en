@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Information-Computation Tradeoffs for Noiseless Linear Regression with Oblivious Contamination
 description: >-
-  [NeurIPS 2025][Information-computation tradeoff] For noiseless linear regression under the oblivious contamination model, this paper formally proves that any efficient Statistical Query algorithm requires VSTAT complexity at least $\tilde{\Omega}(d^{1/2}/\alpha^2)$, providing evidence that the quadratic dependence on $1/\alpha$ constitutes an essential computational lower bound for efficient algorithms.
+  [NeurIPS 2025][Information-computation tradeoff] For noiseless linear regression under the oblivious contamination model, this paper formally proves that any efficient Statistical Query algorithm requires VSTAT complexit…
 tags:
-  - NeurIPS 2025
-  - Information-computation tradeoff
-  - robust linear regression
-  - oblivious contamination
-  - statistical query
-  - computational lower bounds
+  - "NeurIPS 2025"
+  - "Information-computation tradeoff"
+  - "robust linear regression"
+  - "oblivious contamination"
+  - "statistical query"
+  - "computational lower bounds"
 date: 2026-05-08
 content_hash: 7a62149b9e3ee620
 ---

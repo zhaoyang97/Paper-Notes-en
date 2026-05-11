@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VSC: Visual Search Compositional Text-to-Image Diffusion Model
 description: >-
-  [ICCV 2025][Segmentation][Compositional text-to-image generation] This paper proposes VSC, a visual search-based compositional text-to-image diffusion generation method that significantly improves the accuracy and scalability of multi-attribute-object binding by generating reference images for each attribute-object pair independently, fusing visual prototype embeddings, and training with segmentation-guided cross-attention localization.
+  [ICCV 2025][Segmentation][Compositional text-to-image generation] This paper proposes VSC, a visual search-based compositional text-to-image diffusion generation method that significantly improves the accuracy and scalab…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - Compositional text-to-image generation
-  - attribute-object binding
-  - diffusion models
-  - visual embedding fusion
-  - cross-attention localization
+  - "ICCV 2025"
+  - "Segmentation"
+  - "Compositional text-to-image generation"
+  - "attribute-object binding"
+  - "diffusion models"
+  - "visual embedding fusion"
+  - "cross-attention localization"
 date: 2026-05-08
 content_hash: b10f4498d5f4f94f
 ---

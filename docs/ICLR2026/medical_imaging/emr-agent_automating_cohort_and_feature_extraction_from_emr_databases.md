@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EMR-AGENT: Automating Cohort and Feature Extraction from EMR Databases
 description: >-
-  [ICLR 2026][Medical Imaging][Electronic Medical Records] This paper proposes EMR-AGENT, the first LLM agent-based framework for automated EMR preprocessing. By replacing hand-crafted rules with dynamic SQL interaction, it achieves cross-database cohort selection, feature extraction, and code mapping, demonstrating strong performance and generalization on MIMIC-III, eICU, and SICdb.
+  [ICLR 2026][Medical Imaging][Electronic Medical Records] This paper proposes EMR-AGENT, the first LLM agent-based framework for automated EMR preprocessing. By replacing hand-crafted rules with dynamic SQL interaction…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - Electronic Medical Records
-  - LLM Agent
-  - Cohort Selection
-  - Feature Extraction
-  - Code Mapping
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Electronic Medical Records"
+  - "LLM Agent"
+  - "Cohort Selection"
+  - "Feature Extraction"
+  - "Code Mapping"
 date: 2026-05-08
 content_hash: acbda8f8ee4b4238
 ---

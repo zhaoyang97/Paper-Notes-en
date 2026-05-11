@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Automated Model Evaluation for Object Detection via Prediction Consistency and Reliability
 description: >-
-  [ICCV 2025][Object Detection][Automated Model Evaluation] This paper proposes PCR (Prediction Consistency and Reliability), an automated evaluation method that estimates object detection model performance without human annotations. PCR analyzes the spatial consistency and confidence reliability of bounding boxes before and after NMS to estimate mAP, and constructs a corruption-based meta-dataset for more realistic and scalable evaluation.
+  [ICCV 2025][Object Detection][Automated Model Evaluation] This paper proposes PCR (Prediction Consistency and Reliability), an automated evaluation method that estimates object detection model performance without human a…
 tags:
-  - ICCV 2025
-  - Object Detection
-  - Automated Model Evaluation
-  - NMS
-  - Prediction Consistency
-  - Reliability
+  - "ICCV 2025"
+  - "Object Detection"
+  - "Automated Model Evaluation"
+  - "NMS"
+  - "Prediction Consistency"
+  - "Reliability"
 date: 2026-05-08
 content_hash: 83c90e226b7b9692
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Pyramidal Patchification Flow for Visual Generation
 description: >-
-  [ICLR 2026][Image Generation][Pyramidal patchification] This paper proposes Pyramidal Patchification Flow (PPFlow), which employs larger patches at high-noise timesteps and smaller patches at low-noise timesteps, achieving 1.6–2.0× denoising speedup while preserving generation quality, without requiring any re-noising tricks.
+  [ICLR 2026][Image Generation][Pyramidal patchification] This paper proposes Pyramidal Patchification Flow (PPFlow), which employs larger patches at high-noise timesteps and smaller patches at low-noise timesteps…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Pyramidal patchification
-  - flow matching
-  - DiT
-  - inference acceleration
-  - variable token count
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Pyramidal patchification"
+  - "flow matching"
+  - "DiT"
+  - "inference acceleration"
+  - "variable token count"
 date: 2026-05-08
 content_hash: ea524f72eb091bbe
 ---

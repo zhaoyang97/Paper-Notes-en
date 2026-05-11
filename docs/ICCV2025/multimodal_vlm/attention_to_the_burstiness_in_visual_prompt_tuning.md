@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Attention to the Burstiness in Visual Prompt Tuning!
 description: >-
-  [ICCV 2025][Multimodal VLM][Visual Prompt Tuning] This paper reveals the "burstiness" and non-Gaussian distribution of self-attention module data in Visual Prompt Tuning, and proposes learning "bursty prompts" via data whitening and a bilinear model. The approach substantially outperforms VPT and its variants across multiple benchmarks, e.g., improving accuracy on CUB-200 from 42.15% to 77.86%.
+  [ICCV 2025][Multimodal VLM][Visual Prompt Tuning] This paper reveals the "burstiness" and non-Gaussian distribution of self-attention module data in Visual Prompt Tuning…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Visual Prompt Tuning
-  - Burstiness
-  - Data Whitening
-  - Bilinear Model
-  - parameter-efficient fine-tuning
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Visual Prompt Tuning"
+  - "Burstiness"
+  - "Data Whitening"
+  - "Bilinear Model"
+  - "parameter-efficient fine-tuning"
 date: 2026-05-08
 content_hash: b61d9387c0dea18d
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] N2N-GQA: Noise-to-Narrative for Graph-Based Table-Text Question Answering Using LLMs
 description: >-
-  [AAAI 2026][Multi-hop QA] N2N-GQA is proposed as the first zero-shot framework for open-domain hybrid table-text question answering. Its core mechanism transforms noisy retrieved documents into a dynamic evidence graph (documents as nodes, TF-IDF shared-term weights as edges), and employs graph centrality-based pruning to identify "bridging documents" that connect multi-hop reasoning chains. On OTT-QA, it achieves +39.6 EM over Vanilla RAG (8.0 → 48.8), approaching the fine-tuned system CORE (49.0 EM) in a zero-shot setting.
+  [AAAI 2026][Information Retrieval & RAG][Multi-hop QA] N2N-GQA is proposed as the first zero-shot framework for open-domain hybrid table-text question answering. Its core mechanism transforms noisy retrieved documents in…
 tags:
-  - AAAI 2026
-  - Multi-hop QA
-  - Graph-based Retrieval
-  - Table-Text Hybrid QA
-  - Zero-shot
-  - GraphRank
+  - "AAAI 2026"
+  - "Information Retrieval & RAG"
+  - "Multi-hop QA"
+  - "Graph-based Retrieval"
+  - "Table-Text Hybrid QA"
+  - "Zero-shot"
+  - "GraphRank"
 date: 2026-05-08
 content_hash: 335e9149b648d3a2
 ---

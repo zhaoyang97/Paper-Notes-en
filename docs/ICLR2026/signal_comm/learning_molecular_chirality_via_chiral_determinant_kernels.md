@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Molecular Chirality via Chiral Determinant Kernels
 description: >-
-  [ICLR2026][Signal & Communication][molecular chirality] This paper proposes Chiral Determinant Kernels (ChiDeK) to encode SE(3)-invariant chiral matrices, achieving for the first time a unified treatment of both central and axial chirality within a GNN framework. Combined with cross-attention for propagating stereochemical information, the method achieves >7% accuracy improvement on a newly constructed axial chirality benchmark.
+  [ICLR2026][Signal & Communication][molecular chirality] This paper proposes Chiral Determinant Kernels (ChiDeK) to encode SE(3)-invariant chiral matrices…
 tags:
-  - ICLR2026
+  - "ICLR2026"
   - "Signal & Communication"
-  - molecular chirality
-  - chiral determinant kernel
-  - equivariant graph neural network
-  - axial chirality
-  - SE(3) invariance
+  - "molecular chirality"
+  - "chiral determinant kernel"
+  - "equivariant graph neural network"
+  - "axial chirality"
+  - "SE(3) invariance"
 date: 2026-05-08
 content_hash: d82ede5db88f9356
 ---

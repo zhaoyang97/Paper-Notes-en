@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MoFRR: Mixture of Diffusion Models for Face Retouching Restoration
 description: >-
-  [ICCV 2025][Image Generation][Face retouching restoration] This paper introduces the Face Retouching Restoration (FRR) task for the first time and proposes the MoFRR framework—inspired by DeepSeek MoE—which activates retouching-type-specific experts (Wavelet DDIM) and a shared expert (general DDIM) via a router, achieving near-authentic restoration of retouched faces on the newly constructed million-scale RetouchingFFHQ++ dataset.
+  [ICCV 2025][Image Generation][Face retouching restoration] This paper introduces the Face Retouching Restoration (FRR) task for the first time and proposes the MoFRR framework—inspired by DeepSeek MoE—which activates ret…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Face retouching restoration
-  - mixture of experts
-  - wavelet transform
-  - diffusion models
-  - frequency-domain decomposition
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Face retouching restoration"
+  - "mixture of experts"
+  - "wavelet transform"
+  - "diffusion models"
+  - "frequency-domain decomposition"
 date: 2026-05-08
 content_hash: 57e6b5e2275c1aba
 ---

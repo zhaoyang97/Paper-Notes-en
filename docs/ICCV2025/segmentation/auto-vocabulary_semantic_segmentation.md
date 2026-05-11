@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Auto-Vocabulary Semantic Segmentation
 description: >-
-  [ICCV 2025][Segmentation][auto-vocabulary segmentation] This paper introduces Auto-Vocabulary Semantic Segmentation (AVS), a new task in which the AutoSeg framework autonomously discovers target categories from images and performs segmentation without any human-specified vocabulary. AutoSeg achieves 87.1 mIoU on PASCAL VOC, far surpassing the only comparable method ZeroSeg (20.1), and even outperforming several open-vocabulary methods that require explicit category specification.
+  [ICCV 2025][Segmentation][auto-vocabulary segmentation] This paper introduces Auto-Vocabulary Semantic Segmentation (AVS), a new task in which the AutoSeg framework autonomously discovers target categories from images an…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - auto-vocabulary segmentation
-  - open-vocabulary
-  - BLIP
-  - zero-shot
-  - LLM evaluator
+  - "ICCV 2025"
+  - "Segmentation"
+  - "auto-vocabulary segmentation"
+  - "open-vocabulary"
+  - "BLIP"
+  - "zero-shot"
+  - "LLM evaluator"
 date: 2026-05-08
 content_hash: 08841a9ab9920a36
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AgentSwift: Efficient LLM Agent Design via Value-guided Hierarchical Search
 description: >-
-  [AAAI 2026][LLM Agent][Automated Agent Design] This paper proposes AgentSwift, a framework that automatically discovers high-performance LLM agent designs through a hierarchical search space (jointly optimizing agentic workflows and functional components), a lightweight value model for predicting agent performance, and an uncertainty-guided MCTS search strategy, achieving an average improvement of 8.34% across 7 benchmarks.
+  [AAAI 2026][LLM Agent][Automated Agent Design] This paper proposes AgentSwift, a framework that automatically discovers high-performance LLM agent designs through a hierarchical search space (jointly optimizing agentic w…
 tags:
-  - AAAI 2026
-  - LLM Agent
-  - Automated Agent Design
-  - MCTS
-  - Value Model
-  - Hierarchical Search Space
-  - Functional Components
+  - "AAAI 2026"
+  - "LLM Agent"
+  - "Automated Agent Design"
+  - "MCTS"
+  - "Value Model"
+  - "Hierarchical Search Space"
+  - "Functional Components"
 date: 2026-05-08
 content_hash: c5d8dcd4515778a7
 ---

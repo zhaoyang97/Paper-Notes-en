@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Parallel Universes, Parallel Languages: A Comprehensive Study on LLM-based Multilingual Counterfactual Example Generation
 description: >-
-  [ACL 2026][Causal Inference][Multilingual Counterfactual Generation] This paper systematically studies LLM multilingual counterfactual generation across six languages (English, Arabic, German, Spanish, Hindi, Swahili), comparing direct generation and translation paths. Translation paths yield higher label flip rates but require more edits, four common error patterns are identified, and multilingual counterfactual data augmentation outperforms cross-lingual augmentation, especially for low-resource languages.
+  [ACL 2026][Causal Inference][Multilingual Counterfactual Generation] This paper systematically studies LLM multilingual counterfactual generation across six languages (English, Arabic, German, Spanish, Hindi, Swahili)…
 tags:
-  - ACL 2026
-  - Causal Inference
-  - Multilingual Counterfactual Generation
-  - Counterfactual Explanation
-  - Data Augmentation
-  - Cross-Lingual Consistency
-  - LLM Multilingual Ability
+  - "ACL 2026"
+  - "Causal Inference"
+  - "Multilingual Counterfactual Generation"
+  - "Counterfactual Explanation"
+  - "Data Augmentation"
+  - "Cross-Lingual Consistency"
+  - "LLM Multilingual Ability"
 content_hash: 2b55b500581a51bc
 ---
 

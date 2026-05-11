@@ -2,13 +2,13 @@
 title: >-
   [Paper Note] Are Pixel-Wise Metrics Reliable for Sparse-View Computed Tomography Reconstruction?
 description: >-
-  [NeurIPS 2025][sparse-view CT] This paper reveals that pixel-level metrics such as PSNR and SSIM fail to capture anatomical structural completeness in sparse-view CT reconstruction (correlation only 0.16–0.30), and proposes anatomy-aware metrics (NSD/clDice) based on automated segmentation alongside the CARE framework—which incorporates segmentation-guided loss into diffusion model training—achieving 32% improvement in structural completeness for large organs and 36% for vessels.
+  [NeurIPS 2025][sparse-view CT] This paper reveals that pixel-level metrics such as PSNR and SSIM fail to capture anatomical structural completeness in sparse-view CT reconstruction (correlation only 0.16–0.30)…
 tags:
-  - NeurIPS 2025
-  - sparse-view CT
-  - anatomy-aware metrics
-  - structural completeness
-  - diffusion model
+  - "NeurIPS 2025"
+  - "sparse-view CT"
+  - "anatomy-aware metrics"
+  - "structural completeness"
+  - "diffusion model"
 date: 2026-05-08
 content_hash: e0ef3a076dd3cdfe
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Growing a Twig to Accelerate Large Vision-Language Models
 description: >-
-  [ICCV 2025][Multimodal VLM][VLM acceleration] This paper proposes TwigVLM, which attaches a lightweight twig module to the early layers of a VLM to simultaneously enable twig-guided visual token pruning (TTP, for prefilling acceleration) and self-speculative decoding (SSD, for decoding acceleration). On LLaVA-1.5-7B, TwigVLM retains 96% accuracy after pruning 88.9% of visual tokens and achieves a 154% speedup in long-answer generation, substantially outperforming existing methods in both accuracy and speed.
+  [ICCV 2025][Multimodal VLM][VLM acceleration] This paper proposes TwigVLM, which attaches a lightweight twig module to the early layers of a VLM to simultaneously enable twig-guided visual token pruning (TTP…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - VLM acceleration
-  - visual token pruning
-  - self-speculative decoding
-  - lightweight module
-  - inference efficiency
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "VLM acceleration"
+  - "visual token pruning"
+  - "self-speculative decoding"
+  - "lightweight module"
+  - "inference efficiency"
 date: 2026-05-08
 content_hash: 52ccbc4efcb61c89
 ---

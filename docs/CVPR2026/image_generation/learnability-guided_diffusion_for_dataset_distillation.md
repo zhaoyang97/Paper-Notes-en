@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learnability-Guided Diffusion for Dataset Distillation
 description: >-
-  [CVPR 2026][Image Generation][Dataset Distillation] This paper proposes LGD, a learnability-driven incremental dataset distillation framework that constructs the distilled dataset in stages, conditioning each stage on the current model state to generate complementary rather than redundant training samples. By injecting learnability-score gradients into diffusion sampling, LGD reduces the 80–90% inter-sample information redundancy observed in existing methods by 39.1%, achieving 60.1% accuracy at 50 IPC on ImageNet-1K and 87.2% at 100 IPC on ImageNette.
+  [CVPR 2026][Image Generation][Dataset Distillation] This paper proposes LGD, a learnability-driven incremental dataset distillation framework that constructs the distilled dataset in stages…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Dataset Distillation
-  - Learnability Guidance
-  - Diffusion Models
-  - Incremental Synthesis
-  - Redundancy Analysis
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Dataset Distillation"
+  - "Learnability Guidance"
+  - "Diffusion Models"
+  - "Incremental Synthesis"
+  - "Redundancy Analysis"
 date: 2026-05-08
 content_hash: 5d8f64776d4c0587
 ---

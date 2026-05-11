@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Aligning Effective Tokens with Video Anomaly in Large Language Models
 description: >-
-  [ICCV 2025][Video Understanding][Video anomaly understanding] This paper proposes VA-GPT, which efficiently aligns anomaly-relevant tokens within MLLMs via two modules — Spatial Effective Token Selection (SETS) and Temporal Effective Token Generation (TETG) — enabling precise detection, description, and temporal localization of anomalous events.
+  [ICCV 2025][Video Understanding][Video anomaly understanding] This paper proposes VA-GPT, which efficiently aligns anomaly-relevant tokens within MLLMs via two modules — Spatial Effective Token Selection (SETS) and Tempo…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - Video anomaly understanding
-  - multimodal large language models
-  - effective token selection
-  - spatiotemporal alignment
-  - anomaly detection
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "Video anomaly understanding"
+  - "multimodal large language models"
+  - "effective token selection"
+  - "spatiotemporal alignment"
+  - "anomaly detection"
 date: 2026-05-08
 content_hash: 7d8d3061a19a3546
 ---

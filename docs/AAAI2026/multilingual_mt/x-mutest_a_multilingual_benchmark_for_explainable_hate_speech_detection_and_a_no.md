@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] X-MuTeST: A Multilingual Benchmark for Explainable Hate Speech Detection and A Novel LLM-consulted Explanation Framework
 description: >-
-  [AAAI 2026][Hate Speech Detection] This paper proposes the X-MuTeST framework, which combines LLM semantic reasoning with a two-stage training strategy enhanced by n-gram attention for explainable multilingual hate speech detection. It also introduces the first token-level human-annotated rationale benchmark datasets for Hindi and Telugu.
+  [AAAI 2026][Multilingual & Machine Translation][Hate Speech Detection] This paper proposes the X-MuTeST framework, which combines LLM semantic reasoning with a two-stage training strategy enhanced by n-gram attention for…
 tags:
-  - AAAI 2026
-  - Hate Speech Detection
-  - Explainability
-  - Multilingual
-  - LLM Explanation
-  - Human-Annotated Rationales
+  - "AAAI 2026"
+  - "Multilingual & Machine Translation"
+  - "Hate Speech Detection"
+  - "Explainability"
+  - "Multilingual"
+  - "LLM Explanation"
+  - "Human-Annotated Rationales"
 date: 2026-05-08
 content_hash: e32ca10c4e283ea0
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SceneDesigner: Controllable Multi-Object Image Generation with 9-DoF Pose Manipulation
 description: >-
-  [NeurIPS 2025][Image Generation][9DoF Pose Control] SceneDesigner introduces a CNOCS map representation combined with a two-stage reinforcement learning training strategy, achieving for the first time precise 9D pose control (position, size, and orientation) over multiple objects, significantly outperforming existing methods in both controllability and generation quality.
+  [NeurIPS 2025][Image Generation][9DoF Pose Control] SceneDesigner introduces a CNOCS map representation combined with a two-stage reinforcement learning training strategy…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - 9DoF Pose Control
-  - CNOCS Representation
-  - Multi-Object Generation
-  - Reinforcement Learning Fine-tuning
-  - ControlNet
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "9DoF Pose Control"
+  - "CNOCS Representation"
+  - "Multi-Object Generation"
+  - "Reinforcement Learning Fine-tuning"
+  - "ControlNet"
 date: 2026-05-08
 content_hash: 12a8eb4374e174d5
 ---

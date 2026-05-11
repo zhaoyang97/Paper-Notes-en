@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Semantic Retrieval Augmented Contrastive Learning for Sequential Recommendation
 description: >-
-  [NeurIPS 2025][Recommender Systems][Sequential Recommendation] This paper proposes SRA-CL, a framework that leverages the semantic understanding capabilities of LLMs to construct high-quality contrastive sample pairs. By combining semantic retrieval with a learnable sample synthesizer, SRA-CL enhances contrastive learning for sequential recommendation and achieves state-of-the-art performance across four datasets in a plug-and-play manner.
+  [NeurIPS 2025][Recommender Systems][Sequential Recommendation] This paper proposes SRA-CL, a framework that leverages the semantic understanding capabilities of LLMs to construct high-quality contrastive sample pairs. By…
 tags:
-  - NeurIPS 2025
-  - Recommender Systems
-  - Sequential Recommendation
-  - Contrastive Learning
-  - Large Language Models
-  - Semantic Retrieval
-  - Data Augmentation
+  - "NeurIPS 2025"
+  - "Recommender Systems"
+  - "Sequential Recommendation"
+  - "Contrastive Learning"
+  - "Large Language Models"
+  - "Semantic Retrieval"
+  - "Data Augmentation"
 date: 2026-05-08
 content_hash: b793652278f28894
 ---

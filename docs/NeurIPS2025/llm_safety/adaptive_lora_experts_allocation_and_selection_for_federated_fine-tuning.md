@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Adaptive LoRA Experts Allocation and Selection for Federated Fine-Tuning
 description: >-
-  [NeurIPS 2025][LLM Safety][Federated Learning] This paper proposes FedLEASE, which addresses two critical challenges in federated LoRA fine-tuning: (1) automatically determining the optimal number of experts and their assignment via LoRA B-matrix similarity clustering, and (2) enabling adaptive top-M expert selection through an expanded routing space of $2M-1$ dimensions, allowing each client to determine how many experts to use. FedLEASE achieves an average improvement of 5.53% over the strongest baseline on GLUE.
+  [NeurIPS 2025][LLM Safety][Federated Learning] This paper proposes FedLEASE, which addresses two critical challenges in federated LoRA fine-tuning: (1) automatically determining the optimal number of experts and their as…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - Federated Learning
-  - LoRA
-  - Mixture of Experts
-  - Adaptive Clustering
-  - Parameter-Efficient Fine-Tuning
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "Federated Learning"
+  - "LoRA"
+  - "Mixture of Experts"
+  - "Adaptive Clustering"
+  - "Parameter-Efficient Fine-Tuning"
 date: 2026-05-08
 content_hash: 0c6043926bd702ed
 ---

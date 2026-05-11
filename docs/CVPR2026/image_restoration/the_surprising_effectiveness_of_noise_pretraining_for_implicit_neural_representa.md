@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The Surprising Effectiveness of Noise Pretraining for Implicit Neural Representations
 description: >-
-  [CVPR 2026][Image Restoration][Implicit Neural Representations] Through systematic experimental analysis, this paper demonstrates that pretraining INRs on unstructured noise (uniform/Gaussian distributions) achieves a surprising ~80 dB PSNR in image fitting, far surpassing all data-driven initialization methods. Noise with the natural image $1/|f^\alpha|$ spectral structure achieves the best balance between signal fitting and denoising, matching state-of-the-art data-driven initialization performance without requiring any real data.
+  [CVPR 2026][Image Restoration][Implicit Neural Representations] Through systematic experimental analysis, this paper demonstrates that pretraining INRs on unstructured noise (uniform/Gaussian distributions) achieves a su…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Implicit Neural Representations
-  - Noise Pretraining
-  - Parameter Initialization
-  - Signal Fitting
-  - Denoising
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Implicit Neural Representations"
+  - "Noise Pretraining"
+  - "Parameter Initialization"
+  - "Signal Fitting"
+  - "Denoising"
 date: 2026-05-08
 content_hash: 79849c0cf19e3709
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UniLumos: Fast and Unified Image and Video Relighting with Physics-Plausible Feedback
 description: >-
-  [NeurIPS 2025][Image Generation][Relighting] This paper proposes UniLumos, a unified image and video relighting framework that enhances physical plausibility by incorporating RGB-space depth and normal geometry feedback into a flow matching backbone, while achieving 20× inference speedup through path consistency learning.
+  [NeurIPS 2025][Image Generation][Relighting] This paper proposes UniLumos, a unified image and video relighting framework that enhances physical plausibility by incorporating RGB-space depth and normal geometry feedback…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Relighting
-  - flow matching
-  - physics-plausible feedback
-  - video generation
-  - geometry supervision
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Relighting"
+  - "flow matching"
+  - "physics-plausible feedback"
+  - "video generation"
+  - "geometry supervision"
 date: 2026-05-08
 content_hash: bc12f2ca3e891505
 ---

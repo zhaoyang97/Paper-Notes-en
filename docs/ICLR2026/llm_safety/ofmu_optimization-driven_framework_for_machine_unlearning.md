@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OFMU: Optimization-Driven Framework for Machine Unlearning
 description: >-
-  [ICLR 2026][LLM Safety][Machine Unlearning] This work formulates machine unlearning as a bilevel optimization problem: the inner level maximizes the forgetting loss with gradient decorrelation to prevent damage to the retain set, while the outer level minimizes the retain loss with a penalty term enforcing stationary points of the inner objective. On the TOFU benchmark, OFMU simultaneously achieves high forgetting quality and high model utility, outperforming GA/GradDiff/NPO/RMU in terms of forget-retain balance.
+  [ICLR 2026][LLM Safety][Machine Unlearning] This work formulates machine unlearning as a bilevel optimization problem: the inner level maximizes the forgetting loss with gradient decorrelation to prevent damage to the re…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Machine Unlearning
-  - Bilevel Optimization
-  - Gradient Decorrelation
-  - Forget-Retain Trade-off
-  - LLM Privacy
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Machine Unlearning"
+  - "Bilevel Optimization"
+  - "Gradient Decorrelation"
+  - "Forget-Retain Trade-off"
+  - "LLM Privacy"
 date: 2026-05-08
 content_hash: fd4f3c17454444e3
 ---

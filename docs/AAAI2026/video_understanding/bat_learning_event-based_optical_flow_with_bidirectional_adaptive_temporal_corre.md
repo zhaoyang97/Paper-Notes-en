@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BAT: Learning Event-based Optical Flow with Bidirectional Adaptive Temporal Correlation
 description: >-
-  [AAAI2026][Video Understanding][event camera] This paper proposes the Bidirectional Adaptive Temporal Correlation (BAT) framework, which converts temporally dense motion cues from event cameras into spatially dense cues, achieving high-accuracy event-based optical flow estimation and ranking first on the DSEC-Flow benchmark.
+  [AAAI2026][Video Understanding][event camera] This paper proposes the Bidirectional Adaptive Temporal Correlation (BAT) framework, which converts temporally dense motion cues from event cameras into spatially dense cues…
 tags:
-  - AAAI2026
-  - Video Understanding
-  - event camera
-  - optical flow
-  - bidirectional temporal correlation
-  - deformable attention
-  - event-based vision
+  - "AAAI2026"
+  - "Video Understanding"
+  - "event camera"
+  - "optical flow"
+  - "bidirectional temporal correlation"
+  - "deformable attention"
+  - "event-based vision"
 date: 2026-05-08
 content_hash: 871920318ce6911e
 ---

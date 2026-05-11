@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Bootstrap3D: Improving Multi-view Diffusion Model with Synthetic Data
 description: >-
-  [ICCV 2025][3D Vision][multi-view diffusion model] This paper proposes Bootstrap3D, a framework that leverages video diffusion models to generate synthetic multi-view data, employs a fine-tuned MV-LLaVA for quality filtering and dense caption rewriting, and introduces a Training Timestep Reschedule (TTR) strategy for training multi-view diffusion models — substantially improving image quality and text alignment without sacrificing view consistency.
+  [ICCV 2025][3D Vision][multi-view diffusion model] This paper proposes Bootstrap3D, a framework that leverages video diffusion models to generate synthetic multi-view data…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - multi-view diffusion model
-  - synthetic data
-  - data augmentation
-  - 3D generation
-  - multimodal large language model
+  - "ICCV 2025"
+  - "3D Vision"
+  - "multi-view diffusion model"
+  - "synthetic data"
+  - "data augmentation"
+  - "3D generation"
+  - "multimodal large language model"
 date: 2026-05-08
 content_hash: d887efc97c4e1779
 ---

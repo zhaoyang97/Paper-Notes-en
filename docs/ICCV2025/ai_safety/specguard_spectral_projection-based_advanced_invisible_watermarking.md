@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SpecGuard: Spectral Projection-based Advanced Invisible Watermarking
 description: >-
-  [ICCV2025][AI Safety][Invisible Watermarking] SpecGuard embeds watermark information into the spectral domain of high-frequency subbands obtained via wavelet decomposition (approximated through FFT-based spectral projection). The encoder employs a strength factor to enhance robustness, while the decoder applies a learnable threshold derived from Parseval's theorem for bit recovery. The method achieves high image quality (PSNR > 42 dB) alongside comprehensive robustness against distortion, regeneration, and adversarial attacks, surpassing existing SOTA methods.
+  [ICCV2025][AI Safety][Invisible Watermarking] SpecGuard embeds watermark information into the spectral domain of high-frequency subbands obtained via wavelet decomposition (approximated through FFT-based spectral project…
 tags:
-  - ICCV2025
-  - AI Safety
-  - Invisible Watermarking
-  - Spectral Projection
-  - Wavelet Transform
-  - FFT
-  - Parseval's Theorem
+  - "ICCV2025"
+  - "AI Safety"
+  - "Invisible Watermarking"
+  - "Spectral Projection"
+  - "Wavelet Transform"
+  - "FFT"
+  - "Parseval's Theorem"
 date: 2026-05-08
 content_hash: 849a688252215c65
 ---

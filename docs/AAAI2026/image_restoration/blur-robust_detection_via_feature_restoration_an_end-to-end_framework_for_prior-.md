@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Blur-Robust Detection via Feature Restoration: An End-to-End Framework for Prior-Guided Infrared UAV Target Detection
 description: >-
-  [AAAI 2026][Image Restoration][Motion blur] This paper proposes JFD3, an end-to-end dual-branch framework that performs deblurring in the feature domain rather than the image domain, and leverages frequency structure priors to guide the detection network, achieving high-accuracy real-time infrared UAV target detection under motion blur conditions.
+  [AAAI 2026][Image Restoration][Motion blur] This paper proposes JFD3, an end-to-end dual-branch framework that performs deblurring in the feature domain rather than the image domain…
 tags:
-  - AAAI 2026
-  - Image Restoration
-  - Motion blur
-  - infrared UAV target detection
-  - feature-domain deblurring
-  - frequency structure guidance
-  - end-to-end joint framework
+  - "AAAI 2026"
+  - "Image Restoration"
+  - "Motion blur"
+  - "infrared UAV target detection"
+  - "feature-domain deblurring"
+  - "frequency structure guidance"
+  - "end-to-end joint framework"
 date: 2026-05-08
 content_hash: 322e936aaad9ac86
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Image Generation as a Visual Planner for Robotic Manipulation
 description: >-
-  [CVPR 2026][Image Generation][Visual Planning] This work adapts a pretrained image generation model (DiT) via LoRA fine-tuning into a visual planner for robotic manipulation, generating temporally coherent action sequences in the form of $3\times3$ grid images, supporting both text-conditioned and trajectory-conditioned control modes.
+  [CVPR 2026][Image Generation][Visual Planning] This work adapts a pretrained image generation model (DiT) via LoRA fine-tuning into a visual planner for robotic manipulation…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Visual Planning
-  - Robotic Manipulation
-  - Diffusion Models
-  - Grid Image Generation
-  - LoRA
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Visual Planning"
+  - "Robotic Manipulation"
+  - "Diffusion Models"
+  - "Grid Image Generation"
+  - "LoRA"
 date: 2026-05-08
 content_hash: f7af2860a3a634cf
 ---

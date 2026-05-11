@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] M3SR: Multi-Scale Multi-Perceptual Mamba for Efficient Spectral Reconstruction
 description: >-
-  [AAAI 2026][Remote Sensing][Spectral Reconstruction] This paper proposes M3SR, a Mamba-based multi-scale multi-perceptual architecture that integrates spatial, frequency, and spectral branches in parallel within a U-Net multi-scale structure. With only 2.17M parameters and 100.9G FLOPs, M3SR surpasses existing state-of-the-art methods on four spectral reconstruction benchmarks.
+  [AAAI 2026][Remote Sensing][Spectral Reconstruction] This paper proposes M3SR, a Mamba-based multi-scale multi-perceptual architecture that integrates spatial, frequency…
 tags:
-  - AAAI 2026
-  - Remote Sensing
-  - Spectral Reconstruction
-  - Mamba
-  - State Space Model
-  - Multi-Scale
-  - Hyperspectral Imaging
+  - "AAAI 2026"
+  - "Remote Sensing"
+  - "Spectral Reconstruction"
+  - "Mamba"
+  - "State Space Model"
+  - "Multi-Scale"
+  - "Hyperspectral Imaging"
 date: 2026-05-08
 content_hash: 3bab6b9af0d40e18
 ---

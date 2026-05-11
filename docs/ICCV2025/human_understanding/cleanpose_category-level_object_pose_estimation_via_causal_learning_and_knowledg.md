@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CleanPose: Category-Level Object Pose Estimation via Causal Learning and Knowledge Distillation
 description: >-
-  [ICCV 2025][Human Understanding][Category-level pose estimation] This work is the first to introduce causal reasoning into category-level object pose estimation (COPE). It eliminates spurious correlations induced by data bias via a front-door adjustment-based causal reasoning module, and provides unbiased categorical semantic supervision through residual knowledge distillation from the 3D foundation model ULIP-2. The method achieves 61.7% on the strict 5°2cm metric on REAL275, surpassing the state of the art by 4.7%.
+  [ICCV 2025][Human Understanding][Category-level pose estimation] This work is the first to introduce causal reasoning into category-level object pose estimation (COPE). It eliminates spurious correlations induced by data…
 tags:
-  - ICCV 2025
-  - Human Understanding
-  - Category-level pose estimation
-  - causal reasoning
-  - knowledge distillation
-  - front-door adjustment
-  - data bias
+  - "ICCV 2025"
+  - "Human Understanding"
+  - "Category-level pose estimation"
+  - "causal reasoning"
+  - "knowledge distillation"
+  - "front-door adjustment"
+  - "data bias"
 date: 2026-05-08
 content_hash: 623117983bbe6ae9
 ---

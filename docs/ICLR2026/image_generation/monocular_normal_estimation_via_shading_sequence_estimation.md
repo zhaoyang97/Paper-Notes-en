@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Monocular Normal Estimation via Shading Sequence Estimation
 description: >-
-  [ICLR 2026 (Oral)][Image Generation][Normal estimation] This paper proposes RoSE, which reformulates monocular normal estimation as a shading sequence estimation problem. An image-to-video (I2V) generative model is used to predict shading sequences under multiple illuminations, and a simple ordinary least squares solver then converts the shading sequence into a normal map. RoSE achieves state-of-the-art performance on real-world benchmark datasets.
+  [ICLR 2026 (Oral)][Image Generation][Normal estimation] This paper proposes RoSE, which reformulates monocular normal estimation as a shading sequence estimation problem. An image-to-video (I2V) generative model is used…
 tags:
-  - ICLR 2026 (Oral)
-  - Image Generation
-  - Normal estimation
-  - shading sequence
-  - video generation model
-  - least squares solver
-  - monocular 3D reconstruction
+  - "ICLR 2026 (Oral)"
+  - "Image Generation"
+  - "Normal estimation"
+  - "shading sequence"
+  - "video generation model"
+  - "least squares solver"
+  - "monocular 3D reconstruction"
 date: 2026-05-08
 content_hash: 753b828655ec3413
 ---

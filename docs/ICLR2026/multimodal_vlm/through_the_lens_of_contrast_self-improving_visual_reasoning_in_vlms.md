@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Through the Lens of Contrast: Self-Improving Visual Reasoning in VLMs
 description: >-
-  [ICLR 2026][Multimodal VLM][visual reasoning] This paper proposes VC-STaR (Visual Contrastive Self-Taught Reasoner), motivated by the observation that *VLMs perceive visual content more accurately when comparing two similar images*. A contrastive self-improvement framework is designed: contrastive VQA pairs are constructed to elicit more faithful visual analysis from the model, and an LLM integrates this contrastive analysis into reasoning chains, yielding the high-quality visual reasoning dataset VisCoR-55K. Fine-tuning on this dataset achieves +5.7% on MMVP and +3.2% on Hallusion.
+  [ICLR 2026][Multimodal VLM][visual reasoning] This paper proposes VC-STaR (Visual Contrastive Self-Taught Reasoner), motivated by the observation that *VLMs perceive visual content more accurately when comparing two simi…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - visual reasoning
-  - self-improving
-  - visual contrast
-  - hallucination mitigation
-  - contrastive VQA pairs
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "visual reasoning"
+  - "self-improving"
+  - "visual contrast"
+  - "hallucination mitigation"
+  - "contrastive VQA pairs"
 date: 2026-05-08
 content_hash: bace7d36452543d5
 ---

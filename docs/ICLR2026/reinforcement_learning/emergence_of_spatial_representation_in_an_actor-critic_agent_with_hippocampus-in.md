@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Emergence of Spatial Representation in an Actor-Critic Agent with Hippocampus-Inspired Sequence Generator
 description: >-
-  [ICLR 2026][Reinforcement Learning][Hippocampus sequence generator] Inspired by the intrinsic recurrent circuitry of hippocampal region CA3, this paper proposes a minimal sequence generator (shift register) integrated with an actor-critic framework to achieve maze navigation under sparse visual input, while giving rise to neurobiologically observed phenomena including place fields, DG orthogonalization, distance-dependent spatial kernels, and task-dependent remapping.
+  [ICLR 2026][Reinforcement Learning][Hippocampus sequence generator] Inspired by the intrinsic recurrent circuitry of hippocampal region CA3, this paper proposes a minimal sequence generator (shift register) integrated wi…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Hippocampus sequence generator
-  - spatial representation
-  - Actor-Critic
-  - sparse coding
-  - place cells
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Hippocampus sequence generator"
+  - "spatial representation"
+  - "Actor-Critic"
+  - "sparse coding"
+  - "place cells"
 date: 2026-05-08
 content_hash: 1ced1875af02c9cf
 ---

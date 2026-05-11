@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TRAP: Targeted Redirecting of Agentic Preferences
 description: >-
-  [NeurIPS 2025][LLM Safety][adversarial attack] TRAP introduces a diffusion-based semantic injection adversarial framework that optimizes image semantics in the CLIP embedding space. Under black-box conditions, it systematically misdirects the decision preferences of multiple mainstream VLM agents in a visually natural manner, achieving attack success rates of up to 100% across six models including LLaVA-34B and GPT-4o.
+  [NeurIPS 2025][LLM Safety][adversarial attack] TRAP introduces a diffusion-based semantic injection adversarial framework that optimizes image semantics in the CLIP embedding space. Under black-box conditions…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - adversarial attack
-  - vision-language models
-  - semantic injection
-  - agentic safety
-  - diffusion models
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "adversarial attack"
+  - "vision-language models"
+  - "semantic injection"
+  - "agentic safety"
+  - "diffusion models"
 date: 2026-05-08
 content_hash: 1ce586d41b6d4df8
 ---

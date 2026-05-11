@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MOVE: Motion-Guided Few-Shot Video Object Segmentation
 description: >-
-  [ICCV 2025][Segmentation][few-shot video segmentation] This paper introduces a novel task of motion-guided few-shot video object segmentation along with a large-scale dataset MOVE (224 motion categories, 4,300 videos, 314K masks), and proposes a Decoupled Motion-Appearance (DMA) network. Through a dual-branch architecture combining frame-differencing-based motion prototypes and appearance prototypes, the proposed method significantly outperforms existing FSVOS methods on the new benchmark.
+  [ICCV 2025][Segmentation][few-shot video segmentation] This paper introduces a novel task of motion-guided few-shot video object segmentation along with a large-scale dataset MOVE (224 motion categories, 4,300 videos…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - few-shot video segmentation
-  - motion understanding
-  - video object segmentation
-  - temporal modeling
-  - benchmark
+  - "ICCV 2025"
+  - "Segmentation"
+  - "few-shot video segmentation"
+  - "motion understanding"
+  - "video object segmentation"
+  - "temporal modeling"
+  - "benchmark"
 date: 2026-05-08
 content_hash: cad3353e9db4fac2
 ---

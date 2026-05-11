@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Train with Perturbation, Infer after Merging: A Two-Stage Framework for Continual Learning
 description: >-
-  [NeurIPS 2025][Model Compression][Continual Learning] This paper proposes the Perturb-and-Merge (P&M) framework, which introduces model merging mechanisms into the continual learning paradigm. During training, random perturbations are added along the task vector direction to smooth the loss landscape; during inference, a closed-form optimal coefficient is used to compute a convex combination of the historical model and the current task model. Combined with LoRA, the framework achieves memory-efficient state-of-the-art continual learning performance.
+  [NeurIPS 2025][Model Compression][Continual Learning] This paper proposes the Perturb-and-Merge (P&M) framework, which introduces model merging mechanisms into the continual learning paradigm. During training…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Continual Learning
-  - Model Merging
-  - Task Vector
-  - Parameter Perturbation
-  - LoRA
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Continual Learning"
+  - "Model Merging"
+  - "Task Vector"
+  - "Parameter Perturbation"
+  - "LoRA"
 date: 2026-05-08
 content_hash: b0593b2b5e6f43fb
 ---

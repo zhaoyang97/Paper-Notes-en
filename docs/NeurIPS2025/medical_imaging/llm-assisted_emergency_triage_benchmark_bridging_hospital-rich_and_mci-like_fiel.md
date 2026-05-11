@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] LLM-Assisted Emergency Triage Benchmark: Bridging Hospital-Rich and MCI-Like Field Simulation
 description: >-
-  [Medical Imaging] This work constructs an open, LLM-assisted emergency triage benchmark based on MIMIC-IV-ED, defining two evaluation scenarios—hospital-rich and mass casualty incident (MCI)-like field simulation—and providing baseline models along with SHAP-based interpretability analysis to promote reproducibility and accessibility in triage prediction research.
+  [Medical Imaging] This work constructs an open, LLM-assisted emergency triage benchmark based on MIMIC-IV-ED, defining two evaluation scenarios—hospital-rich and mass casualty incident (MCI)-like field simulation—and pro…
 tags:
-  - Medical Imaging
+  - "Medical Imaging"
 date: 2026-05-08
 content_hash: 652955fb49a3b6b0
 ---

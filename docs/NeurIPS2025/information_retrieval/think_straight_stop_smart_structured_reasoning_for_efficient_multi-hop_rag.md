@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Think Straight, Stop Smart: Structured Reasoning for Efficient Multi-Hop RAG
 description: >-
-  [NeurIPS 2025 Workshop][Multi-hop RAG] This paper proposes the TSSS (Think Straight, Stop Smart) framework, which achieves state-of-the-art accuracy and competitive efficiency on multi-hop RAG benchmarks through (i) template-based reasoning that caches repeated prefixes and anchors sub-queries to the main question, and (ii) a retriever-based deterministic terminator that halts reasoning upon sub-query repetition.
+  [NeurIPS 2025 Workshop][Information Retrieval & RAG][Multi-hop RAG] This paper proposes the TSSS (Think Straight, Stop Smart) framework, which achieves state-of-the-art accuracy and competitive efficiency on multi-hop RA…
 tags:
-  - NeurIPS 2025 Workshop
-  - Multi-hop RAG
-  - structured reasoning
-  - template caching
-  - termination control
-  - inference efficiency
+  - "NeurIPS 2025 Workshop"
+  - "Information Retrieval & RAG"
+  - "Multi-hop RAG"
+  - "structured reasoning"
+  - "template caching"
+  - "termination control"
+  - "inference efficiency"
 date: 2026-05-08
 content_hash: b263461530cab38c
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Reference-Guided Machine Unlearning
 description: >-
-  [ICLR 2026][Model Compression][Machine Unlearning] This paper proposes ReGUn (Reference-Guided Unlearning), which leverages an independent held-out dataset as a reference standard for "unseen behavior." Through class-conditional distillation, the model's behavior on forget data is aligned to that on truly unseen data, achieving a superior forgetting–utility trade-off.
+  [ICLR 2026][Model Compression][Machine Unlearning] This paper proposes ReGUn (Reference-Guided Unlearning), which leverages an independent held-out dataset as a reference standard for "unseen behavior." Through class-con…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Machine Unlearning
-  - Reference-Guided
-  - Knowledge Distillation
-  - Distributional Indistinguishability
-  - Privacy Protection
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Machine Unlearning"
+  - "Reference-Guided"
+  - "Knowledge Distillation"
+  - "Distributional Indistinguishability"
+  - "Privacy Protection"
 date: 2026-05-08
 content_hash: dafc38db92e73774
 ---

@@ -2,18 +2,18 @@
 title: >-
   [Paper Note] AI-based Traffic Modeling for Network Security and Privacy: Challenges Ahead
 description: >-
-  [AAAI 2026][Autonomous Driving][network traffic analysis] A survey and position paper on AI-based traffic modeling for Network Security & Privacy (NetS&P) tasks. It systematically reviews AI approaches for anomaly detection, attack classification, IoT device identification, and website fingerprinting attacks, and provides an in-depth discussion of four frontier challenges: data quality, practical deployment, explainability, and foundation models.
+  [AAAI 2026][Autonomous Driving][network traffic analysis] A survey and position paper on AI-based traffic modeling for Network Security & Privacy (NetS&P) tasks. It systematically reviews AI approaches for anomaly detect…
 tags:
-  - AAAI 2026
-  - Autonomous Driving
-  - network traffic analysis
-  - network security
-  - privacy
-  - deep learning
-  - foundation models
-  - explainability
-  - anomaly detection
-  - website fingerprinting
+  - "AAAI 2026"
+  - "Autonomous Driving"
+  - "network traffic analysis"
+  - "network security"
+  - "privacy"
+  - "deep learning"
+  - "foundation models"
+  - "explainability"
+  - "anomaly detection"
+  - "website fingerprinting"
 date: 2026-05-08
 content_hash: b1f5d98def00b9d6
 ---

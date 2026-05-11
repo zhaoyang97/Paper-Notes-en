@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] arXiv2Table: Toward Realistic Benchmarking and Evaluation for LLM-Based Literature-Review Table Generation
 description: >-
-  [ACL 2026][Model Compression][literature-review table generation] This paper proposes the arXiv2Table benchmark (1,957 tables, 7,158 papers) and introduces distractor papers, schema-agnostic user requests, and an annotation-free QA-based evaluation framework to enable more realistic assessment of LLM-based literature-review table generation, along with an iterative batch generation method.
+  [ACL 2026][Model Compression][literature-review table generation] This paper proposes the arXiv2Table benchmark (1,957 tables, 7,158 papers) and introduces distractor papers, schema-agnostic user requests…
 tags:
-  - ACL 2026
-  - Model Compression
-  - literature-review table generation
-  - benchmark evaluation
-  - LLM
-  - distractor papers
-  - QA-based evaluation
+  - "ACL 2026"
+  - "Model Compression"
+  - "literature-review table generation"
+  - "benchmark evaluation"
+  - "LLM"
+  - "distractor papers"
+  - "QA-based evaluation"
 date: 2026-05-08
 content_hash: fdf2be51cfc6ade9
 ---

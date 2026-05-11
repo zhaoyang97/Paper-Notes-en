@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Doodle Your Keypoints: Sketch-Based Few-Shot Keypoint Detection
 description: >-
-  [ICCV 2025][keypoint detection] This paper proposes the first sketch-based cross-modal few-shot keypoint detection framework. By leveraging a prototype network, grid-based locator, prototype domain adaptation, and a de-stylization network, the framework detects novel keypoints on unseen categories in real photographs using only a handful of annotated sketches.
+  [ICCV 2025][keypoint detection] This paper proposes the first sketch-based cross-modal few-shot keypoint detection framework. By leveraging a prototype network, grid-based locator, prototype domain adaptation…
 tags:
-  - ICCV 2025
-  - keypoint detection
-  - few-shot learning
-  - sketch
-  - cross-modal
-  - domain adaptation
+  - "ICCV 2025"
+  - "keypoint detection"
+  - "few-shot learning"
+  - "sketch"
+  - "cross-modal"
+  - "domain adaptation"
 date: 2026-05-08
 content_hash: dcb8e19bdcf389a1
 ---

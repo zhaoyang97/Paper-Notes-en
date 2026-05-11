@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Generalization Error Analysis for Selective State-Space Models Through the Lens of Attention
 description: >-
-  [NeurIPS 2025][LLM Evaluation][Mamba] This work unrolls selective SSMs (Mamba) into an attention-equivalent form and derives generalization bounds via covering number techniques, controlled by the spectral abscissa $s_{\mathbf{A}}$ of the continuous-time state matrix. When $s_{\mathbf{A}} < 0$, the bound is independent of sequence length; when $s_{\mathbf{A}} \geq 0$, it grows exponentially. The paper further proves this dependence is irreducible.
+  [NeurIPS 2025][LLM Evaluation][Mamba] This work unrolls selective SSMs (Mamba) into an attention-equivalent form and derives generalization bounds via covering number techniques…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - Mamba
-  - state space models
-  - generalization bounds
-  - covering numbers
-  - spectral abscissa
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "Mamba"
+  - "state space models"
+  - "generalization bounds"
+  - "covering numbers"
+  - "spectral abscissa"
 date: 2026-05-08
 content_hash: 15e211ec5b886aea
 ---

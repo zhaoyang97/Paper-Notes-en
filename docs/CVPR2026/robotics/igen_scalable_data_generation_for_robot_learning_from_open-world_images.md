@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] IGen: Scalable Data Generation for Robot Learning from Open-World Images
 description: >-
-  [CVPR 2026][Robotics][Robot learning] IGen starts from a single open-world image and automatically generates large-scale vision-action training data through a pipeline of 3D scene reconstruction → VLM task planning → SE(3) action generation → point cloud synthesis → frame rendering. Policies trained exclusively on the generated data can successfully perform real-world manipulation tasks.
+  [CVPR 2026][Robotics][Robot learning] IGen starts from a single open-world image and automatically generates large-scale vision-action training data through a pipeline of 3D scene reconstruction → VLM task planning → SE(…
 tags:
-  - CVPR 2026
-  - Robotics
-  - Robot learning
-  - data generation
-  - open-world images
-  - visuomotor policy
-  - 3D reconstruction
+  - "CVPR 2026"
+  - "Robotics"
+  - "Robot learning"
+  - "data generation"
+  - "open-world images"
+  - "visuomotor policy"
+  - "3D reconstruction"
 date: 2026-05-08
 content_hash: d21acb2b4859fd5a
 ---

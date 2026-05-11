@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Scalable Multilingual Multimodal Machine Translation with Speech-Text Fusion
 description: >-
-  [ICLR 2026][Audio & Speech][Speech-guided translation] This paper proposes a Speech-guided Machine Translation (SMT) framework that synthesizes source-language speech via TTS and jointly feeds it with text into an MLLM for translation. A self-evolution mechanism automatically selects beneficial synthetic speech samples for continual training. The approach achieves state-of-the-art performance on Multi30K, surpassing all MMT methods, and attains average SOTA across 108 translation directions on FLORES-200 with only 9B parameters.
+  [ICLR 2026][Audio & Speech][Speech-guided translation] This paper proposes a Speech-guided Machine Translation (SMT) framework that synthesizes source-language speech via TTS and jointly feeds it with text into an MLLM f…
 tags:
-  - ICLR 2026
+  - "ICLR 2026"
   - "Audio & Speech"
-  - Speech-guided translation
-  - Multimodal LLM
-  - Self-evolution
-  - TTS
-  - Multilingual translation
+  - "Speech-guided translation"
+  - "Multimodal LLM"
+  - "Self-evolution"
+  - "TTS"
+  - "Multilingual translation"
 date: 2026-05-08
 content_hash: 280163a3a8800855
 ---

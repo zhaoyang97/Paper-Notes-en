@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MaMe & MaRe: Matrix-Based Token Merging and Restoration for Efficient Visual Perception and Synthesis
 description: >-
-  [CVPR 2026 (Findings)][Model Compression][token merging] This paper proposes MaMe, a training-free and differentiable token merging method based on fully matrix-based operations, along with its inverse operation MaRe for token restoration, achieving efficient acceleration with minimal performance degradation across image classification, video recognition, and image generation tasks.
+  [CVPR 2026 (Findings)][Model Compression][token merging] This paper proposes MaMe, a training-free and differentiable token merging method based on fully matrix-based operations…
 tags:
-  - CVPR 2026 (Findings)
-  - Model Compression
-  - token merging
-  - token restoration
-  - efficient transformer
-  - matrix operation
-  - image generation
+  - "CVPR 2026 (Findings)"
+  - "Model Compression"
+  - "token merging"
+  - "token restoration"
+  - "efficient transformer"
+  - "matrix operation"
+  - "image generation"
 date: 2026-05-08
 content_hash: 3db3091d0e854e2d
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SafeNlidb: A Privacy-Preserving Safety Alignment Framework for LLM-based Natural Language Database Interfaces
 description: >-
-  [AAAI 2026][LLM Alignment][Database Security] This paper proposes SafeNlidb, a framework that jointly optimizes safety reasoning and SQL generation in LLM-driven Natural Language Interfaces to Databases (NLIDBs) through a safety-aware data synthesis pipeline and an alternating preference optimization strategy, effectively defending against privacy leakage under implicit inference attacks.
+  [AAAI 2026][LLM Alignment][Database Security] This paper proposes SafeNlidb, a framework that jointly optimizes safety reasoning and SQL generation in LLM-driven Natural Language Interfaces to Databases (NLIDBs) through…
 tags:
-  - AAAI 2026
-  - LLM Alignment
-  - Database Security
-  - Privacy Leakage
-  - Inference Attack
-  - Preference Optimization
-  - Safety Alignment
+  - "AAAI 2026"
+  - "LLM Alignment"
+  - "Database Security"
+  - "Privacy Leakage"
+  - "Inference Attack"
+  - "Preference Optimization"
+  - "Safety Alignment"
 date: 2026-05-08
 content_hash: d4a63b0a62a7414a
 ---

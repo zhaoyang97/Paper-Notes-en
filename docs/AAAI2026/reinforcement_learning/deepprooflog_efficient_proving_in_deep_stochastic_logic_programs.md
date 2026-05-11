@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DeepProofLog: Efficient Proving in Deep Stochastic Logic Programs
 description: >-
-  [AAAI 2026][Reinforcement Learning][Neurosymbolic AI] This paper proposes DeepProofLog (DPrL), a neurosymbolic system grounded in stochastic logic programs that introduces neural network parameterization at each proof step and establishes a formal mapping between SLD resolution and MDPs. This enables dynamic programming and reinforcement learning techniques to be applied for efficient inference and learning, substantially improving the scalability of neurosymbolic systems.
+  [AAAI 2026][Reinforcement Learning][Neurosymbolic AI] This paper proposes DeepProofLog (DPrL), a neurosymbolic system grounded in stochastic logic programs that introduces neural network parameterization at each proof st…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - Neurosymbolic AI
-  - Stochastic Logic Programs
-  - Markov Decision Processes
-  - Dynamic Programming
-  - Policy Gradient
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "Neurosymbolic AI"
+  - "Stochastic Logic Programs"
+  - "Markov Decision Processes"
+  - "Dynamic Programming"
+  - "Policy Gradient"
 date: 2026-05-08
 content_hash: 6deaec851b581ec8
 ---

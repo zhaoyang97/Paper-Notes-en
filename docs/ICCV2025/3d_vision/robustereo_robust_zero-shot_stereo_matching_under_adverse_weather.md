@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] RobuSTereo: Robust Zero-Shot Stereo Matching under Adverse Weather
 description: >-
-  [ICCV 2025][3D Vision][stereo matching] This paper proposes RobuSTereo, a framework that significantly improves the zero-shot generalization of stereo matching models under adverse weather conditions (rain, fog, snow) via a diffusion-based stereo data generation pipeline and a robust feature encoder combining a denoising Vision Transformer (DVT) with VGG19.
+  [ICCV 2025][3D Vision][stereo matching] This paper proposes RobuSTereo, a framework that significantly improves the zero-shot generalization of stereo matching models under adverse weather conditions (rain, fog…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - stereo matching
-  - adverse weather
-  - zero-shot generalization
-  - diffusion-based data generation
-  - robust feature encoder
-  - depth estimation
+  - "ICCV 2025"
+  - "3D Vision"
+  - "stereo matching"
+  - "adverse weather"
+  - "zero-shot generalization"
+  - "diffusion-based data generation"
+  - "robust feature encoder"
+  - "depth estimation"
 date: 2026-05-08
 content_hash: 1d8d7d1b1d08eb25
 ---

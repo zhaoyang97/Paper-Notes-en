@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Hi3DGen: High-fidelity 3D Geometry Generation from Images via Normal Bridging
 description: >-
-  [ICCV 2025][3D generation] This paper proposes Hi3DGen, a framework that uses normal maps as an intermediate representation to bridge 2D images and 3D geometry. Through two core components — a Noise-injected Regressive Normal Estimation (NiRNE) module and Normal-Regularized Latent Diffusion (NoRLD) — the framework significantly improves the geometric detail fidelity of generated 3D models.
+  [ICCV 2025][3D generation] This paper proposes Hi3DGen, a framework that uses normal maps as an intermediate representation to bridge 2D images and 3D geometry. Through two core components — a Noise-injected Regressive N…
 tags:
-  - ICCV 2025
-  - 3D generation
-  - normal map bridging
-  - noise-injected regression
-  - dual-stream architecture
-  - latent diffusion regularization
-  - high-fidelity geometry
+  - "ICCV 2025"
+  - "3D generation"
+  - "normal map bridging"
+  - "noise-injected regression"
+  - "dual-stream architecture"
+  - "latent diffusion regularization"
+  - "high-fidelity geometry"
 date: 2026-05-08
 content_hash: 345cbc47e8b1e189
 ---

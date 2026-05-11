@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RS-vHeat: Heat Conduction Guided Efficient Remote Sensing Foundation Model
 description: >-
-  [ICCV2025][Remote Sensing][Remote sensing foundation model] This work is the first to introduce the physical heat conduction process into a remote sensing foundation model. RS-vHeat replaces the attention mechanism with a Heat Conduction Operator (HCO) to model local region correlations in remote sensing images, achieving strong performance across 4 tasks and 10 datasets while reducing GPU memory by 84%, FLOPs by 24%, and improving throughput by 2.7× compared to the attention-based baseline.
+  [ICCV2025][Remote Sensing][Remote sensing foundation model] This work is the first to introduce the physical heat conduction process into a remote sensing foundation model. RS-vHeat replaces the attention mechanism with…
 tags:
-  - ICCV2025
-  - Remote Sensing
-  - Remote sensing foundation model
-  - heat conduction
-  - self-supervised learning
-  - frequency domain masking
-  - multimodal
+  - "ICCV2025"
+  - "Remote Sensing"
+  - "Remote sensing foundation model"
+  - "heat conduction"
+  - "self-supervised learning"
+  - "frequency domain masking"
+  - "multimodal"
 date: 2026-05-08
 content_hash: 9ad512aab88c2c3d
 ---

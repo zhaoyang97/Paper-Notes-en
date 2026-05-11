@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The Structure of Relation Decoding Linear Operators in Large Language Models
 description: >-
-  [NeurIPS 2025][Model Compression][Linear relation decoding] This paper reveals that linear relation embeddings (LREs) in Transformer language models do not encode fine-grained relations but instead extract shared coarse-grained semantic attributes (e.g., "country," "gender"). A rank-3 tensor network is employed to compress large collections of relation decoding matrices by several orders of magnitude.
+  [NeurIPS 2025][Model Compression][Linear relation decoding] This paper reveals that linear relation embeddings (LREs) in Transformer language models do not encode fine-grained relations but instead extract shared coarse-…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Linear relation decoding
-  - tensor networks
-  - knowledge compression
-  - interpretability
-  - semantic attributes
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Linear relation decoding"
+  - "tensor networks"
+  - "knowledge compression"
+  - "interpretability"
+  - "semantic attributes"
 date: 2026-05-08
 content_hash: 8b0ae16b27ed6a03
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] PSA-MF: Personality-Sentiment Aligned Multi-Level Fusion for Multimodal Sentiment Analysis
 description: >-
-  [AAAI2026][Audio & Speech][Multimodal Sentiment Analysis] This paper is the first to introduce a pre-trained personality model into Multimodal Sentiment Analysis (MSA) for extracting personalized sentiment features. Through personality-sentiment contrastive alignment and a progressive multi-level fusion architecture (pre-fusion → cross-modal interaction → enhanced fusion), the proposed PSA-MF achieves state-of-the-art performance on CMU-MOSI and CMU-MOSEI.
+  [AAAI2026][Audio & Speech][Multimodal Sentiment Analysis] This paper is the first to introduce a pre-trained personality model into Multimodal Sentiment Analysis (MSA) for extracting personalized sentiment features. Thro…
 tags:
-  - AAAI2026
+  - "AAAI2026"
   - "Audio & Speech"
-  - Multimodal Sentiment Analysis
-  - Personality-Sentiment Alignment
-  - Multi-Level Fusion
-  - Contrastive Learning
-  - BERT
-  - Personalized Sentiment
+  - "Multimodal Sentiment Analysis"
+  - "Personality-Sentiment Alignment"
+  - "Multi-Level Fusion"
+  - "Contrastive Learning"
+  - "BERT"
+  - "Personalized Sentiment"
 date: 2026-05-08
 content_hash: 5e50d811123ca393
 ---

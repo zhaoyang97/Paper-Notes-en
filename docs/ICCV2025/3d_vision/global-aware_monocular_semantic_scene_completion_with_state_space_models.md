@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Global-Aware Monocular Semantic Scene Completion with State Space Models
 description: >-
-  [ICCV 2025][3D Vision][Semantic Scene Completion] This paper proposes GA-MonoSSC, a hybrid architecture combining Transformer (2D global context) and Mamba (3D long-range dependencies) for indoor monocular semantic scene completion. A novel Frustum Mamba Layer is introduced to address feature discontinuities in voxel serialization, achieving state-of-the-art performance on Occ-ScanNet and NYUv2.
+  [ICCV 2025][3D Vision][Semantic Scene Completion] This paper proposes GA-MonoSSC, a hybrid architecture combining Transformer (2D global context) and Mamba (3D long-range dependencies) for indoor monocular semantic scene…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Semantic Scene Completion
-  - Indoor Scene
-  - State Space Models
-  - Mamba
-  - Monocular
-  - Transformer
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Semantic Scene Completion"
+  - "Indoor Scene"
+  - "State Space Models"
+  - "Mamba"
+  - "Monocular"
+  - "Transformer"
 date: 2026-05-08
 content_hash: 0dfbf4c1f0b4deea
 ---

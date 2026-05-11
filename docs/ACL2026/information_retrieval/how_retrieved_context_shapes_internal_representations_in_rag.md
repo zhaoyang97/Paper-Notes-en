@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] How Retrieved Context Shapes Internal Representations in RAG
 description: >-
-  [ACL 2026][Retrieval-Augmented Generation] This paper systematically analyzes how retrieved documents influence the internal states of LLMs in RAG from the perspective of hidden representations, identifying five key patterns: random documents induce large representation drift and trigger refusal behavior; relevant documents primarily confirm rather than alter parametric knowledge; a single relevant document can anchor representations in multi-document settings; later layers progressively emphasize parametric knowledge, thereby limiting the influence of retrieved evidence; and LLMs can distinguish random documents in early layers but fail to reliably separate distractor documents from relevant ones even at the final layer.
+  [ACL 2026][Information Retrieval & RAG][Retrieval-Augmented Generation] This paper systematically analyzes how retrieved documents influence the internal states of LLMs in RAG from the perspective of hidden representatio…
 tags:
-  - ACL 2026
-  - Retrieval-Augmented Generation
-  - hidden representations
-  - representation drift
-  - knowledge conflict
-  - interpretability
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Retrieval-Augmented Generation"
+  - "hidden representations"
+  - "representation drift"
+  - "knowledge conflict"
+  - "interpretability"
 date: 2026-05-08
 content_hash: 079b6c44b472be07
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Single-Loop First-Order Algorithm for Linearly Constrained Bilevel Optimization
 description: >-
-  [NeurIPS 2025][Optimization][bilevel optimization] For bilevel optimization problems with coupled linear constraints in the lower-level problem, this paper proposes SFLCB, a single-loop first-order algorithm that eliminates Hessian dependence via a penalty-based reformulation combined with augmented Lagrangian, improving the iteration complexity from $O(\epsilon^{-3}\log(\epsilon^{-1}))$ to $O(\epsilon^{-3})$.
+  [NeurIPS 2025][Optimization][bilevel optimization] For bilevel optimization problems with coupled linear constraints in the lower-level problem, this paper proposes SFLCB…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - bilevel optimization
-  - constrained optimization
-  - first-order methods
-  - augmented Lagrangian
-  - single-loop algorithm
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "bilevel optimization"
+  - "constrained optimization"
+  - "first-order methods"
+  - "augmented Lagrangian"
+  - "single-loop algorithm"
 date: 2026-05-08
 content_hash: 6c8bd7a4e962280f
 ---

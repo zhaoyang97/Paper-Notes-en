@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Credal Ensemble Distillation for Uncertainty Quantification
 description: >-
-  [AAAI 2026][Model Compression][Knowledge Distillation] This paper proposes the Credal Ensemble Distillation (CED) framework, which distills a deep ensemble (DE) teacher into a single-model student called CREDIT. Rather than predicting a single softmax distribution, CREDIT outputs class probability intervals that define a credal set, achieving superior or comparable uncertainty estimation on OOD detection tasks while substantially reducing inference overhead (from 5× to 1×).
+  [AAAI 2026][Model Compression][Knowledge Distillation] This paper proposes the Credal Ensemble Distillation (CED) framework, which distills a deep ensemble (DE) teacher into a single-model student called CREDIT. Rather t…
 tags:
-  - AAAI 2026
-  - Model Compression
-  - Knowledge Distillation
-  - Deep Ensembles
-  - Uncertainty Quantification
-  - Credal Sets
-  - OOD Detection
+  - "AAAI 2026"
+  - "Model Compression"
+  - "Knowledge Distillation"
+  - "Deep Ensembles"
+  - "Uncertainty Quantification"
+  - "Credal Sets"
+  - "OOD Detection"
 date: 2026-05-08
 content_hash: 74585913d24e35af
 ---

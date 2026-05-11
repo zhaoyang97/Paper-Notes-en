@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Language in the Flow of Time: Time-Series-Paired Texts Weaved into a Unified Temporal Narrative
 description: >-
-  [ICLR2026][Time Series][multimodal time series] This paper identifies that time-series-paired texts exhibit periodicity analogous to that of time series (Chronological Textual Resonance), and proposes the TaTS framework, which transforms text representations into auxiliary variables to enhance the forecasting and imputation performance of arbitrary existing time series models in a plug-and-play manner.
+  [ICLR2026][Time Series][multimodal time series] This paper identifies that time-series-paired texts exhibit periodicity analogous to that of time series (Chronological Textual Resonance), and proposes the TaTS framework…
 tags:
-  - ICLR2026
-  - Time Series
-  - multimodal time series
-  - text-augmented forecasting
-  - Chronological Textual Resonance
-  - plug-and-play framework
+  - "ICLR2026"
+  - "Time Series"
+  - "multimodal time series"
+  - "text-augmented forecasting"
+  - "Chronological Textual Resonance"
+  - "plug-and-play framework"
 date: 2026-05-08
 content_hash: ce4aed8d69c0504c
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Zina: Multimodal Fine-grained Hallucination Detection and Editing
 description: >-
-  [CVPR 2026][Multimodal VLM][Multimodal hallucination detection] Zina formalizes the task of multimodal fine-grained hallucination detection and editing, proposes a two-stage system (detector MLLM + reviewer MLLM) that delegates token copying to a deterministic function to reduce model burden, constructs the VisionHall dataset (6.9K human-annotated + 20K graph-based synthetic samples), and surpasses GPT-4o by 15.8 points in detection F1.
+  [CVPR 2026][Multimodal VLM][Multimodal hallucination detection] Zina formalizes the task of multimodal fine-grained hallucination detection and editing…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Multimodal hallucination detection
-  - fine-grained editing
-  - VLM evaluation
-  - synthetic data
-  - label taxonomy
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Multimodal hallucination detection"
+  - "fine-grained editing"
+  - "VLM evaluation"
+  - "synthetic data"
+  - "label taxonomy"
 date: 2026-05-08
 content_hash: 36aa8af8d18e8684
 ---

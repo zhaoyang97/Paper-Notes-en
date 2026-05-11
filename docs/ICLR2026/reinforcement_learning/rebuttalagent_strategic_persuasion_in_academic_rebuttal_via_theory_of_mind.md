@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] RebuttalAgent: Strategic Persuasion in Academic Rebuttal via Theory of Mind
 description: >-
-  [ICLR2026][Reinforcement Learning][academic rebuttal] This paper is the first to introduce Theory of Mind (ToM) into academic rebuttal, proposing a three-stage ToM-Strategy-Response (TSR) framework: first modeling the reviewer's mental state, then formulating a persuasion strategy, and finally generating evidence-grounded responses. Combined with self-reward RL training and a dedicated Rebuttal-RM evaluator, the approach achieves an average improvement of 18.3% over the base model.
+  [ICLR2026][Reinforcement Learning][academic rebuttal] This paper is the first to introduce Theory of Mind (ToM) into academic rebuttal, proposing a three-stage ToM-Strategy-Response (TSR) framework: first modeling the re…
 tags:
-  - ICLR2026
-  - Reinforcement Learning
-  - academic rebuttal
-  - Theory of Mind
-  - strategic persuasion
-  - GRPO
-  - self-reward
-  - reward model
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "academic rebuttal"
+  - "Theory of Mind"
+  - "strategic persuasion"
+  - "GRPO"
+  - "self-reward"
+  - "reward model"
 date: 2026-05-08
 content_hash: 0e1f0ca0d853f0cd
 ---

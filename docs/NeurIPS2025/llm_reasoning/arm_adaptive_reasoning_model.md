@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ARM: Adaptive Reasoning Model
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Adaptive Reasoning] ARM enables models to adaptively select among four reasoning formats (Direct Answer, Short CoT, Code, Long CoT) and introduces Ada-GRPO to address format collapse during training, achieving comparable accuracy to pure Long CoT models while reducing token usage by ~30% on average and up to ~70% on simple tasks.
+  [NeurIPS 2025][LLM Reasoning][Adaptive Reasoning] ARM enables models to adaptively select among four reasoning formats (Direct Answer, Short CoT, Code…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - Adaptive Reasoning
-  - Overthinking
-  - GRPO
-  - Reasoning Format Selection
-  - Test-Time Compute
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "Adaptive Reasoning"
+  - "Overthinking"
+  - "GRPO"
+  - "Reasoning Format Selection"
+  - "Test-Time Compute"
 date: 2026-05-08
 content_hash: dba16b862b3f9ad9
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multi-modal Dynamic Proxy Learning for Personalized Multiple Clustering
 description: >-
-  [AAAI 2026][Social Computing][Multiple Clustering] This paper proposes the Multi-DProxy framework, which leverages learnable textual proxies for personalized multiple clustering through three key innovations: gated cross-modal fusion, dual-constraint proxy optimization, and dynamic candidate management, achieving state-of-the-art performance on all public benchmarks.
+  [AAAI 2026][Social Computing][Multiple Clustering] This paper proposes the Multi-DProxy framework, which leverages learnable textual proxies for personalized multiple clustering through three key innovations: gated cross…
 tags:
-  - AAAI 2026
-  - Social Computing
-  - Multiple Clustering
-  - Cross-modal Fusion
-  - Proxy Learning
-  - Dynamic Candidate Management
-  - CLIP
+  - "AAAI 2026"
+  - "Social Computing"
+  - "Multiple Clustering"
+  - "Cross-modal Fusion"
+  - "Proxy Learning"
+  - "Dynamic Candidate Management"
+  - "CLIP"
 date: 2026-05-08
 content_hash: 37eabd546d51b709
 ---

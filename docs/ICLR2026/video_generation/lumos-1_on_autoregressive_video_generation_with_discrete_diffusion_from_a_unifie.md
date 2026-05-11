@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Lumos-1: On Autoregressive Video Generation with Discrete Diffusion from a Unified Model Perspective
 description: >-
-  [ICLR 2026][Video Generation][Autoregressive] This paper proposes Lumos-1, a unified video generation model built on a standard LLM architecture. It addresses visual spatiotemporal encoding via MM-RoPE (distributed multi-modal RoPE) and inter-frame loss imbalance via AR-DF (autoregressive discrete diffusion forcing). Trained with only 48 GPUs, Lumos-1 achieves competitive performance on GenEval, VBench-I2V, and VBench-T2V.
+  [ICLR 2026][Video Generation][Autoregressive] This paper proposes Lumos-1, a unified video generation model built on a standard LLM architecture. It addresses visual spatiotemporal encoding via MM-RoPE (distributed multi…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - Autoregressive
-  - Discrete Diffusion
-  - RoPE
-  - Unified Model
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Autoregressive"
+  - "Discrete Diffusion"
+  - "RoPE"
+  - "Unified Model"
 date: 2026-05-08
 content_hash: 59df2a2692ab107e
 ---

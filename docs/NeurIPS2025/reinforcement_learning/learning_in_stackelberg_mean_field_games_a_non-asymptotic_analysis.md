@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning in Stackelberg Mean Field Games: A Non-Asymptotic Analysis
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Stackelberg games] This paper proposes AC-SMFG, the first single-loop Actor-Critic algorithm with non-asymptotic convergence guarantees for solving Stackelberg Mean Field Games (SMFGs), achieving a convergence rate of $\widetilde{\mathcal{O}}(k^{-1/2})$.
+  [NeurIPS 2025][Reinforcement Learning][Stackelberg games] This paper proposes AC-SMFG, the first single-loop Actor-Critic algorithm with non-asymptotic convergence guarantees for solving Stackelberg Mean Field Games (SMF…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Stackelberg games
-  - mean field games
-  - Actor-Critic
-  - non-asymptotic convergence
-  - bilevel optimization
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Stackelberg games"
+  - "mean field games"
+  - "Actor-Critic"
+  - "non-asymptotic convergence"
+  - "bilevel optimization"
 date: 2026-05-08
 content_hash: 08a7d21cfabc1301
 ---

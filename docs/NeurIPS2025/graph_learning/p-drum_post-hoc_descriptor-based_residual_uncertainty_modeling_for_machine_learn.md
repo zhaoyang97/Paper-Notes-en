@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] P-DRUM: Post-hoc Descriptor-based Residual Uncertainty Modeling for Machine Learning Potentials
 description: >-
-  [NeurIPS 2025 (Workshop: ML4PS)][Graph Learning][Uncertainty Quantification] This paper proposes P-DRUM, a simple and efficient post-hoc uncertainty quantification framework that leverages descriptors from a trained graph neural network potential to estimate prediction residuals as uncertainty proxies, requiring no modification to the original model architecture or training pipeline.
+  [NeurIPS 2025 (Workshop: ML4PS)][Graph Learning][Uncertainty Quantification] This paper proposes P-DRUM, a simple and efficient post-hoc uncertainty quantification framework that leverages descriptors from a trained grap…
 tags:
   - "NeurIPS 2025 (Workshop: ML4PS)"
-  - Graph Learning
-  - Uncertainty Quantification
-  - Machine Learning Interatomic Potentials
-  - Residual Modeling
-  - MACE
-  - Out-of-Distribution Detection
+  - "Graph Learning"
+  - "Uncertainty Quantification"
+  - "Machine Learning Interatomic Potentials"
+  - "Residual Modeling"
+  - "MACE"
+  - "Out-of-Distribution Detection"
 date: 2026-05-08
 content_hash: 91231c55d0f3dab5
 ---

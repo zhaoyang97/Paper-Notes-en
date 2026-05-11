@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Kαlos finds Consensus: A Meta-Algorithm for Evaluating Inter-Annotator Agreement in Complex Vision Tasks
 description: >-
-  [CVPR 2026][Segmentation][inter-annotator agreement] This paper proposes the KαLOS meta-algorithm, which transforms the complex problem of spatial-categorical annotation agreement into a standard nominal reliability matrix via a "localize-then-classify" principle and data-driven parameter calibration, enabling unified evaluation of inter-annotator agreement (IAA) across diverse vision tasks including object detection, instance segmentation, and pose estimation.
+  [CVPR 2026][Segmentation][inter-annotator agreement] This paper proposes the KαLOS meta-algorithm, which transforms the complex problem of spatial-categorical annotation agreement into a standard nominal reliability matr…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - inter-annotator agreement
-  - data quality assessment
-  - Krippendorff's Alpha
-  - object detection
-  - benchmark evaluation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "inter-annotator agreement"
+  - "data quality assessment"
+  - "Krippendorff's Alpha"
+  - "object detection"
+  - "benchmark evaluation"
 date: 2026-05-08
 content_hash: 04470e43ce633fdf
 ---

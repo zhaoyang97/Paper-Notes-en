@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AnthroTAP: Learning Point Tracking with Real-World Motion
 description: >-
-  [CVPR 2026][3D Vision][point tracking] AnthroTAP proposes an automated pipeline that generates large-scale pseudo-labeled point tracking data from real-world human motion videos via SMPL fitting and optical flow filtering. Using only 1.4K videos and 4 GPUs for one day of training, it achieves state-of-the-art performance on the TAP-Vid benchmark, surpassing BootsTAPIR which uses 15M videos.
+  [CVPR 2026][3D Vision][point tracking] AnthroTAP proposes an automated pipeline that generates large-scale pseudo-labeled point tracking data from real-world human motion videos via SMPL fitting and optical flow filterin…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - point tracking
-  - human motion
-  - pseudo-labels
-  - SMPL
-  - optical flow consistency
+  - "CVPR 2026"
+  - "3D Vision"
+  - "point tracking"
+  - "human motion"
+  - "pseudo-labels"
+  - "SMPL"
+  - "optical flow consistency"
 date: 2026-05-08
 content_hash: 33bb2c3807d1ebe2
 ---

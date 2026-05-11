@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Aligning What Vision-Language Models See and Perceive with Adaptive Information Flow
 description: >-
-  [CVPR 2026][Multimodal VLM][Vision-language models] This paper identifies that excessive attention from text tokens to irrelevant visual tokens is the root cause of the "see but misperceive" phenomenon in VLMs. It proposes Adaptive Information Flow (AIF), a training-free method that modulates information flow at inference time by modifying the causal mask based on token dynamic entropy, blocking irrelevant visual-to-text connections and improving perceptual performance across multiple VLMs.
+  [CVPR 2026][Multimodal VLM][Vision-language models] This paper identifies that excessive attention from text tokens to irrelevant visual tokens is the root cause of the "see but misperceive" phenomenon in VLMs. It propos…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Vision-language models
-  - information flow modulation
-  - token dynamics
-  - causal mask
-  - training-free
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Vision-language models"
+  - "information flow modulation"
+  - "token dynamics"
+  - "causal mask"
+  - "training-free"
 date: 2026-05-08
 content_hash: a2f4d8873d299eb6
 ---

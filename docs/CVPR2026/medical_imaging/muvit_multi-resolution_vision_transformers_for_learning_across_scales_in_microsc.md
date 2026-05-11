@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MuViT: Multi-Resolution Vision Transformers for Learning Across Scales in Microscopy
 description: >-
-  [CVPR 2026][Medical Imaging][Multi-Resolution] This paper proposes MuViT, a multi-resolution Vision Transformer that employs world-coordinate RoPE positional encoding to jointly process crops of the same scene at different physical resolutions within a single encoder, achieving substantial improvements over single-resolution baselines on microscopy image segmentation tasks.
+  [CVPR 2026][Medical Imaging][Multi-Resolution] This paper proposes MuViT, a multi-resolution Vision Transformer that employs world-coordinate RoPE positional encoding to jointly process crops of the same scene at differe…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Multi-Resolution
-  - Vision Transformer
-  - RoPE
-  - Microscopy
-  - Semantic Segmentation
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Multi-Resolution"
+  - "Vision Transformer"
+  - "RoPE"
+  - "Microscopy"
+  - "Semantic Segmentation"
 date: 2026-05-08
 content_hash: 1e26a037c85774cb
 ---

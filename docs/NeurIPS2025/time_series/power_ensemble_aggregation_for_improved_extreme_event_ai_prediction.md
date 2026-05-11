@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Power Ensemble Aggregation for Improved Extreme Event AI Prediction
 description: >-
-  [NeurIPS 2025][Time Series][extreme event prediction] This paper proposes an adaptive ensemble aggregation method based on the power mean. By applying nonlinear aggregation (power exponent $p>1$) to the score of ensemble members from generative weather prediction models, the method significantly improves classification performance for extreme high-temperature events, with greater gains at higher quantile thresholds.
+  [NeurIPS 2025][Time Series][extreme event prediction] This paper proposes an adaptive ensemble aggregation method based on the power mean. By applying nonlinear aggregation (power exponent $p>1$) to the score of ensemble…
 tags:
-  - NeurIPS 2025
-  - Time Series
-  - extreme event prediction
-  - ensemble aggregation
-  - power mean
-  - heat wave classification
-  - climate prediction
+  - "NeurIPS 2025"
+  - "Time Series"
+  - "extreme event prediction"
+  - "ensemble aggregation"
+  - "power mean"
+  - "heat wave classification"
+  - "climate prediction"
 date: 2026-05-08
 content_hash: 8ef595897a647126
 ---

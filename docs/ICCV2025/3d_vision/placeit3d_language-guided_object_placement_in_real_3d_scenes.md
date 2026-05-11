@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] PlaceIt3D: Language-Guided Object Placement in Real 3D Scenes
 description: >-
-  [3D Vision] This paper introduces PlaceIt3D, a language-guided object placement task in real 3D scenes, comprising a benchmark, a large-scale dataset, and a 3D LLM-based baseline method called PlaceWizard that performs joint reasoning over scenes, objects, and natural language instructions.
+  [3D Vision] This paper introduces PlaceIt3D, a language-guided object placement task in real 3D scenes, comprising a benchmark, a large-scale dataset…
 tags:
-  - 3D Vision
+  - "3D Vision"
 date: 2026-05-08
 content_hash: ac70a68878e238ff
 ---

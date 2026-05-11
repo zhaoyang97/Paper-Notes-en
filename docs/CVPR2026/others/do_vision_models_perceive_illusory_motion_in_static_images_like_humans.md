@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Do Vision Models Perceive Illusory Motion in Static Images Like Humans?
 description: >-
-  [CVPR 2026][motion illusion] This paper systematically evaluates a range of optical flow models on static-image motion illusions such as the Rotating Snakes, finding that only the biologically-inspired Dual-Channel model reproduces the human-perceived rotational motion under simulated saccade conditions.
+  [CVPR 2026][motion illusion] This paper systematically evaluates a range of optical flow models on static-image motion illusions such as the Rotating Snakes…
 tags:
-  - CVPR 2026
-  - motion illusion
-  - optical flow models
-  - human vision
-  - rotating snakes illusion
-  - biologically-inspired models
+  - "CVPR 2026"
+  - "motion illusion"
+  - "optical flow models"
+  - "human vision"
+  - "rotating snakes illusion"
+  - "biologically-inspired models"
 date: 2026-05-08
 content_hash: 0d895bce5266e4d6
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Dual-Band Thermal Videography: Separating Time-Varying Reflection and Emission Near Ambient Conditions
 description: >-
-  [CVPR 2026][thermal imaging] This paper proposes a dual-band long-wave infrared (LWIR) video analysis framework that jointly leverages spectral cues (constant emissivity ratio across dual bands) and temporal cues (smooth object radiance variation vs. abrupt background radiance changes) to achieve, for the first time, pixel-wise separation of reflected and emitted components in dynamic scenes near ambient temperature, along with recovery of per-pixel emissivity and temperature fields.
+  [CVPR 2026][thermal imaging] This paper proposes a dual-band long-wave infrared (LWIR) video analysis framework that jointly leverages spectral cues (constant emissivity ratio across dual bands) and temporal cues (smooth…
 tags:
-  - CVPR 2026
-  - thermal imaging
-  - dual-band
-  - reflection-emission separation
-  - thermal radiation
-  - emissivity estimation
+  - "CVPR 2026"
+  - "thermal imaging"
+  - "dual-band"
+  - "reflection-emission separation"
+  - "thermal radiation"
+  - "emissivity estimation"
 date: 2026-05-08
 content_hash: a5f137ecbb80765e
 ---

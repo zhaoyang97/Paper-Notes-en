@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OpenHOI: Open-World Hand-Object Interaction Synthesis with Multimodal Large Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][hand-object interaction] This paper proposes OpenHOI, a framework that leverages the commonsense reasoning capabilities of multimodal large language models (MLLMs) to infer contact regions and grasp types for unseen objects, enabling open-world hand-object interaction synthesis without requiring per-object training data collection.
+  [NeurIPS 2025][Multimodal VLM][hand-object interaction] This paper proposes OpenHOI, a framework that leverages the commonsense reasoning capabilities of multimodal large language models (MLLMs) to infer contact regions…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - hand-object interaction
-  - open-world
-  - MLLM
-  - contact reasoning
-  - grasp synthesis
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "hand-object interaction"
+  - "open-world"
+  - "MLLM"
+  - "contact reasoning"
+  - "grasp synthesis"
 date: 2026-05-08
 content_hash: b0b8092f1f2483e0
 ---

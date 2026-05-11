@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Clip-and-Verify: Linear Constraint-Driven Domain Clipping for Accelerated Neural Network Verification
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Neural network verification] This paper proposes the Clip-and-Verify verification pipeline, which leverages linear constraints generated "for free" during linear bound propagation. Two GPU-efficient algorithms—complete clipping (coordinate ascent dual solving) and relaxed clipping (closed-form input domain shrinkage)—are used to tighten intermediate-layer bounds across the entire network. The approach reduces the number of BaB subproblems by up to 96% on multiple benchmarks, and serves as a core component of the VNN-COMP 2025 winning verifier.
+  [NeurIPS 2025][LLM Reasoning][Neural network verification] This paper proposes the Clip-and-Verify verification pipeline, which leverages linear constraints generated "for free" during linear bound propagation. Two GPU-e…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - Neural network verification
-  - branch-and-bound
-  - linear constraints
-  - domain clipping
-  - α
-  - β-CROWN
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "Neural network verification"
+  - "branch-and-bound"
+  - "linear constraints"
+  - "domain clipping"
+  - "α"
+  - "β-CROWN"
 date: 2026-05-08
 content_hash: 2871cb1e06c701e7
 ---

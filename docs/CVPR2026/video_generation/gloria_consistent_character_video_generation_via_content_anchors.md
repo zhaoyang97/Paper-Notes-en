@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Gloria: Consistent Character Video Generation via Content Anchors
 description: >-
-  [CVPR 2026][Video Generation][character video generation] Gloria introduces a compact set of "Content Anchors" to represent a character's multi-view appearance and expression identity. Through two key mechanisms—superset content anchoring (to prevent copy-paste artifacts) and RoPE weak conditioning (to distinguish multiple anchor frames)—the method enables consistent character video generation exceeding 10 minutes in duration.
+  [CVPR 2026][Video Generation][character video generation] Gloria introduces a compact set of "Content Anchors" to represent a character's multi-view appearance and expression identity. Through two key mechanisms—superset…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - character video generation
-  - consistency
-  - content anchor frames
-  - diffusion models
-  - long video
+  - "CVPR 2026"
+  - "Video Generation"
+  - "character video generation"
+  - "consistency"
+  - "content anchor frames"
+  - "diffusion models"
+  - "long video"
 date: 2026-05-08
 content_hash: 874efaed7da597d0
 ---

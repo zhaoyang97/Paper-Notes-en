@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Revealing POMDPs: Qualitative and Quantitative Analysis for Parity Objectives
 description: >-
-  [AAAI 2026][Reinforcement Learning][POMDP] This paper proves that limit-sure analysis for revealing POMDPs under parity objectives is equivalent to almost-sure analysis (EXPTIME-complete), and that quantitative analysis can also be completed within EXPTIME, thereby resolving two important open problems for this subclass.
+  [AAAI 2026][Reinforcement Learning][POMDP] This paper proves that limit-sure analysis for revealing POMDPs under parity objectives is equivalent to almost-sure analysis (EXPTIME-complete)…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - POMDP
-  - Revealing POMDP
-  - Parity Objectives
-  - Computational Complexity
-  - Quantitative Analysis
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "POMDP"
+  - "Revealing POMDP"
+  - "Parity Objectives"
+  - "Computational Complexity"
+  - "Quantitative Analysis"
 date: 2026-05-08
 content_hash: 77c816b53da5841b
 ---

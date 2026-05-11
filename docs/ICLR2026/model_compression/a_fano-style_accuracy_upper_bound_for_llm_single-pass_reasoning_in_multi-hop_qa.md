@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Fano-Style Accuracy Upper Bound for LLM Single-Pass Reasoning in Multi-Hop QA
 description: >-
-  [ICLR 2026][Model Compression][Multi-hop QA] This paper derives a Fano-style accuracy upper bound for LLM single-pass reasoning on multi-hop QA using information theory, revealing a "cliff-like" accuracy collapse when task information demand exceeds model output capacity. Based on this analysis, the authors design a multi-turn reasoning framework, InfoQA, which overcomes the single-pass bottleneck via capacity-aware decomposition, dependency-explicit workflows, and iterative query compression.
+  [ICLR 2026][Model Compression][Multi-hop QA] This paper derives a Fano-style accuracy upper bound for LLM single-pass reasoning on multi-hop QA using information theory…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Multi-hop QA
-  - Information Theory
-  - Fano's Inequality
-  - Accuracy Upper Bound
-  - Multi-turn Reasoning
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Multi-hop QA"
+  - "Information Theory"
+  - "Fano's Inequality"
+  - "Accuracy Upper Bound"
+  - "Multi-turn Reasoning"
 date: 2026-05-08
 content_hash: 6e075c0766a4c7d2
 ---

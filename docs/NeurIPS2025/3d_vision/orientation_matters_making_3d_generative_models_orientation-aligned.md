@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Orientation Matters: Making 3D Generative Models Orientation-Aligned
 description: >-
-  [NeurIPS 2025][3D Vision][3D generation] This paper introduces the task of orientation-aligned 3D object generation, constructs the Objaverse-OA dataset comprising 14,832 orientation-aligned 3D models across 1,008 categories, fine-tunes two mainstream 3D generation frameworks (Trellis and Wonder3D) to achieve orientation-aligned object generation, and demonstrates two downstream applications: zero-shot orientation estimation and arrow-guided rotation manipulation.
+  [NeurIPS 2025][3D Vision][3D generation] This paper introduces the task of orientation-aligned 3D object generation, constructs the Objaverse-OA dataset comprising 14,832 orientation-aligned 3D models across 1…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - 3D generation
-  - orientation alignment
-  - dataset construction
-  - Objaverse
-  - pose estimation
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "3D generation"
+  - "orientation alignment"
+  - "dataset construction"
+  - "Objaverse"
+  - "pose estimation"
 date: 2026-05-08
 content_hash: 3fa1d08f61a3739a
 ---

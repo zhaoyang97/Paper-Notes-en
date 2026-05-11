@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SpiralThinker: Latent Reasoning through an Iterative Process with Text-Latent Interleaving
 description: >-
-  [ACL 2026][Reinforcement Learning][Latent Reasoning] This paper proposes SpiralThinker, a framework for implicit reasoning that performs iterative updates in the latent representation space interleaved with explicit text reasoning steps. A progressive alignment objective is introduced to ensure latent representations remain consistent with explicit reasoning throughout the iterative process. SpiralThinker surpasses all latent reasoning baselines on mathematical, logical, and commonsense reasoning tasks.
+  [ACL 2026][Reinforcement Learning][Latent Reasoning] This paper proposes SpiralThinker, a framework for implicit reasoning that performs iterative updates in the latent representation space interleaved with explicit text…
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - Latent Reasoning
-  - Iterative Refinement
-  - Text-Latent Interleaving
-  - Progressive Alignment
-  - Implicit Chain-of-Thought
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "Latent Reasoning"
+  - "Iterative Refinement"
+  - "Text-Latent Interleaving"
+  - "Progressive Alignment"
+  - "Implicit Chain-of-Thought"
 date: 2026-05-08
 content_hash: 7317ce701456baf1
 ---

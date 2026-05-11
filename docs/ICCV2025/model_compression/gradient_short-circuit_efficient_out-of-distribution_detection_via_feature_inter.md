@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Gradient Short-Circuit: Efficient Out-of-Distribution Detection via Feature Intervention
 description: >-
-  [ICCV 2025][Model Compression][Out-of-distribution detection] This paper identifies that ID samples exhibit consistent local gradient directions while OOD samples display chaotic gradient directions, and proposes to "short-circuit" feature coordinates exploited by spurious gradients at inference time to suppress OOD confidence. A first-order Taylor approximation is employed to avoid a second forward pass, yielding a lightweight and efficient OOD detection method.
+  [ICCV 2025][Model Compression][Out-of-distribution detection] This paper identifies that ID samples exhibit consistent local gradient directions while OOD samples display chaotic gradient directions…
 tags:
-  - ICCV 2025
-  - Model Compression
-  - Out-of-distribution detection
-  - gradient analysis
-  - feature intervention
-  - inference stage
-  - first-order approximation
+  - "ICCV 2025"
+  - "Model Compression"
+  - "Out-of-distribution detection"
+  - "gradient analysis"
+  - "feature intervention"
+  - "inference stage"
+  - "first-order approximation"
 date: 2026-05-08
 content_hash: bda007fbc9878394
 ---

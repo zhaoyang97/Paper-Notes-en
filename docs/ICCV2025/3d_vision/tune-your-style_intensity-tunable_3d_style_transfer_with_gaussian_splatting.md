@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Tune-Your-Style: Intensity-Tunable 3D Style Transfer with Gaussian Splatting
 description: >-
-  [3D Vision] This paper proposes Tune-Your-Style, the first intensity-tunable 3D style transfer paradigm, which explicitly models style intensity via Gaussian neurons and parameterizes a learnable style tuner. Combined with a two-stage optimization strategy, the method enables users to freely adjust the degree of style injection without retraining.
+  [3D Vision] This paper proposes Tune-Your-Style, the first intensity-tunable 3D style transfer paradigm, which explicitly models style intensity via Gaussian neurons and parameterizes a learnable style tuner. Combined wi…
 tags:
-  - 3D Vision
+  - "3D Vision"
 date: 2026-05-08
 content_hash: c0883aec20de60c5
 ---

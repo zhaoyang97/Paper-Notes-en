@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos
 description: >-
-  [CVPR 2026][Human Understanding][Dexterous Manipulation] This paper presents UniDex, a robot foundation suite comprising a large-scale dataset spanning 8 dexterous hands (50K+ trajectories / 9M frames), a Functionally-Aligned Actuator Space (FAAS), and a 3D VLA policy (UniDex-VLA). UniDex-VLA achieves 81% average task progress on real-world tool-use tasks (vs. 38% for π₀) and demonstrates spatial, object-level, and zero-shot cross-hand generalization.
+  [CVPR 2026][Human Understanding][Dexterous Manipulation] This paper presents UniDex, a robot foundation suite comprising a large-scale dataset spanning 8 dexterous hands (50K+ trajectories / 9M frames)…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Dexterous Manipulation
-  - VLA Foundation Model
-  - Unified Action Space
-  - Learning from Human Videos
-  - Cross-Hand Transfer
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Dexterous Manipulation"
+  - "VLA Foundation Model"
+  - "Unified Action Space"
+  - "Learning from Human Videos"
+  - "Cross-Hand Transfer"
 date: 2026-05-08
 content_hash: a827024219c00d50
 ---

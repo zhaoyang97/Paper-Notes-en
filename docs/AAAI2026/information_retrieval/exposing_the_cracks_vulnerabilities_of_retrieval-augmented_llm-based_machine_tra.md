@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Exposing the Cracks: Vulnerabilities of Retrieval-Augmented LLM-Based Machine Translation
 description: >-
-  [AAAI 2026][Retrieval-Augmented Translation] This work develops a controlled noise injection framework to systematically evaluate retrieval-augmented machine translation (REAL-MT), introduces two new metrics—Fidelity and CAR—and reveals across 10 language pairs × 4 noise types that models blindly adopt retrieved context even when it is contradictory (CAR remains 65–78%). Large reasoning models (LRMs) are found to be even more vulnerable by "rationalizing" erroneous context, and a fundamental trade-off exists between noise robustness and clean-context utilization.
+  [AAAI 2026][Information Retrieval & RAG][Retrieval-Augmented Translation] This work develops a controlled noise injection framework to systematically evaluate retrieval-augmented machine translation (REAL-MT)…
 tags:
-  - AAAI 2026
-  - Retrieval-Augmented Translation
-  - Noise Robustness
-  - Context Over-Reliance
-  - Calibration
-  - Multilingual
+  - "AAAI 2026"
+  - "Information Retrieval & RAG"
+  - "Retrieval-Augmented Translation"
+  - "Noise Robustness"
+  - "Context Over-Reliance"
+  - "Calibration"
+  - "Multilingual"
 date: 2026-05-08
 content_hash: 52f48dd492733a20
 ---

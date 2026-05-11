@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DiffusionBlocks: Block-wise Neural Network Training via Diffusion Interpretation
 description: >-
-  [ICLR 2026][Image Restoration][block-wise training] This paper proposes DiffusionBlocks, which interprets the layer-wise updates of residual networks as discretization steps of a continuous-time diffusion process, enabling the network to be partitioned into fully independently trainable blocks. This approach achieves competitive performance with end-to-end training while reducing training memory by a factor of $B$ (the number of blocks).
+  [ICLR 2026][Image Restoration][block-wise training] This paper proposes DiffusionBlocks, which interprets the layer-wise updates of residual networks as discretization steps of a continuous-time diffusion process…
 tags:
-  - ICLR 2026
-  - Image Restoration
-  - block-wise training
-  - diffusion models
-  - score matching
-  - memory efficiency
-  - residual networks
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "block-wise training"
+  - "diffusion models"
+  - "score matching"
+  - "memory efficiency"
+  - "residual networks"
 date: 2026-05-08
 content_hash: 405d037c788da9c8
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Learning Dynamics of RNNs in Closed-Loop Environments
 description: >-
-  [NeurIPS 2025][RNN learning dynamics] This paper establishes a mathematical theory revealing that RNNs exhibit fundamentally different learning dynamics under closed-loop (agent–environment interaction) versus open-loop (supervised learning) training. Closed-loop learning follows a three-phase process driven by the competition between short-term policy improvement and long-term stability.
+  [NeurIPS 2025][RNN learning dynamics] This paper establishes a mathematical theory revealing that RNNs exhibit fundamentally different learning dynamics under closed-loop (agent–environment interaction) versus open-loop…
 tags:
-  - NeurIPS 2025
-  - RNN learning dynamics
-  - closed-loop learning
-  - open-loop vs. closed-loop
-  - control theory
-  - internal representations
+  - "NeurIPS 2025"
+  - "RNN learning dynamics"
+  - "closed-loop learning"
+  - "open-loop vs. closed-loop"
+  - "control theory"
+  - "internal representations"
 date: 2026-05-08
 content_hash: 5897ec5310d2b5a8
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SEMC: Structure-Enhanced Mixture-of-Experts Contrastive Learning for Ultrasound Standard Plane Recognition
 description: >-
-  [AAAI 2026][Medical Imaging][Ultrasound standard plane recognition] This paper proposes the SEMC framework, which aligns shallow structural cues with deep semantic representations via a **Semantic-Structure Fusion Module (SSFM)**, and performs hierarchical contrastive learning over multi-level features through a **Mixture-of-Experts Contrastive Recognition Module (MCRM)**, thereby enhancing fine-grained discriminability for ultrasound standard plane recognition. A new liver ultrasound dataset, LP2025, is also introduced.
+  [AAAI 2026][Medical Imaging][Ultrasound standard plane recognition] This paper proposes the SEMC framework, which aligns shallow structural cues with deep semantic representations via a **Semantic-Structure Fusion Module…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Ultrasound standard plane recognition
-  - mixture of experts
-  - contrastive learning
-  - semantic-structure fusion
-  - liver ultrasound
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Ultrasound standard plane recognition"
+  - "mixture of experts"
+  - "contrastive learning"
+  - "semantic-structure fusion"
+  - "liver ultrasound"
 date: 2026-05-08
 content_hash: 31e9323f23bf72ff
 ---

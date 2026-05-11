@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Revitalizing Canonical Pre-Alignment for Irregular Multivariate Time Series Forecasting
 description: >-
-  [AAAI 2026][Time Series][Irregular Multivariate Time Series] This paper is the first to argue that Canonical Pre-Alignment (CPA) should not be abandoned for Irregular Multivariate Time Series (IMTS) forecasting. It proposes KAFNet, which addresses the efficiency bottleneck of CPA via three modules—Pre-Convolution smoothing, Temporal Kernel Aggregation (TKA), and Frequency-domain Linear Attention (FLA)—achieving state-of-the-art accuracy on 4 IMTS benchmarks while reducing parameters by 7.2× and accelerating training/inference by 8.4×.
+  [AAAI 2026][Time Series][Irregular Multivariate Time Series] This paper is the first to argue that Canonical Pre-Alignment (CPA) should not be abandoned for Irregular Multivariate Time Series (IMTS) forecasting. It propo…
 tags:
-  - AAAI 2026
-  - Time Series
-  - Irregular Multivariate Time Series
-  - Canonical Pre-Alignment
-  - Temporal Kernel Aggregation
-  - Frequency-domain Linear Attention
-  - Efficient Forecasting
+  - "AAAI 2026"
+  - "Time Series"
+  - "Irregular Multivariate Time Series"
+  - "Canonical Pre-Alignment"
+  - "Temporal Kernel Aggregation"
+  - "Frequency-domain Linear Attention"
+  - "Efficient Forecasting"
 date: 2026-05-08
 content_hash: e2b397fb97fe838f
 ---

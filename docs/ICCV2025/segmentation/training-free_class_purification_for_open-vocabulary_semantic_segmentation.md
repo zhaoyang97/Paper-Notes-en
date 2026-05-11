@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Training-Free Class Purification for Open-Vocabulary Semantic Segmentation
 description: >-
-  [ICCV 2025][Segmentation][Open-vocabulary semantic segmentation] This paper proposes FreeCP, a training-free class purification framework that addresses class redundancy and visual-language ambiguity arising from over-complete vocabularies in open-vocabulary semantic segmentation (OVSS), via a two-stage strategy of redundancy purification and ambiguity purification. As a plug-and-play module, FreeCP consistently improves existing methods across eight benchmarks.
+  [ICCV 2025][Segmentation][Open-vocabulary semantic segmentation] This paper proposes FreeCP, a training-free class purification framework that addresses class redundancy and visual-language ambiguity arising from over-co…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - Open-vocabulary semantic segmentation
-  - training-free
-  - class purification
-  - CLIP
-  - class redundancy
-  - visual-language ambiguity
+  - "ICCV 2025"
+  - "Segmentation"
+  - "Open-vocabulary semantic segmentation"
+  - "training-free"
+  - "class purification"
+  - "CLIP"
+  - "class redundancy"
+  - "visual-language ambiguity"
 date: 2026-05-08
 content_hash: ddf2696506049d35
 ---

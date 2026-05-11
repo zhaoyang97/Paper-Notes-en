@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VideoLucy: Deep Memory Backtracking for Long Video Understanding
 description: >-
-  [NeurIPS 2025][Video Understanding][Long video understanding] This paper proposes VideoLucy, a framework that simulates the human coarse-to-fine recall process via a hierarchical memory structure and an agent-based iterative backtracking mechanism. VideoLucy substantially outperforms existing methods on multiple long video understanding benchmarks, surpassing even commercial models such as GPT-4o.
+  [NeurIPS 2025][Video Understanding][Long video understanding] This paper proposes VideoLucy, a framework that simulates the human coarse-to-fine recall process via a hierarchical memory structure and an agent-based itera…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
-  - Long video understanding
-  - hierarchical memory
-  - agent system
-  - memory backtracking
-  - video question answering
+  - "NeurIPS 2025"
+  - "Video Understanding"
+  - "Long video understanding"
+  - "hierarchical memory"
+  - "agent system"
+  - "memory backtracking"
+  - "video question answering"
 date: 2026-05-08
 content_hash: 49eae87b8b6f95fc
 ---

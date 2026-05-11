@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] How Do Optical Flow and Textual Prompts Collaborate to Assist in Audio-Visual Semantic Segmentation?
 description: >-
-  [ICCV 2025][Segmentation][Audio-Visual Semantic Segmentation] This paper proposes the SSP (Stepping Stone Plus) framework, which employs optical flow as auxiliary mask prompts in conjunction with two types of textual prompts and a Visual-Textual Alignment (VTA) module, achieving state-of-the-art performance on the audio-visual semantic segmentation task.
+  [ICCV 2025][Segmentation][Audio-Visual Semantic Segmentation] This paper proposes the SSP (Stepping Stone Plus) framework, which employs optical flow as auxiliary mask prompts in conjunction with two types of textual pro…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - Audio-Visual Semantic Segmentation
-  - Optical Flow
-  - Textual Prompts
-  - Cross-Modal Alignment
-  - AVSS
+  - "ICCV 2025"
+  - "Segmentation"
+  - "Audio-Visual Semantic Segmentation"
+  - "Optical Flow"
+  - "Textual Prompts"
+  - "Cross-Modal Alignment"
+  - "AVSS"
 date: 2026-05-08
 content_hash: f23f7adea12d9970
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BokehDiff: Neural Lens Blur with One-Step Diffusion
 description: >-
-  [ICCV 2025][3D Vision][Bokeh rendering] BokehDiff proposes a one-step inference bokeh rendering method built upon a pretrained diffusion model. It incorporates energy conservation, circle-of-confusion constraints, and self-occlusion effects via a Physics-Inspired Self-Attention (PISA) module, combined with synthetic foreground data for training, achieving significant improvements over conventional methods at depth-discontinuous regions.
+  [ICCV 2025][3D Vision][Bokeh rendering] BokehDiff proposes a one-step inference bokeh rendering method built upon a pretrained diffusion model. It incorporates energy conservation, circle-of-confusion constraints…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Bokeh rendering
-  - diffusion models
-  - one-step inference
-  - physics-inspired attention
-  - data synthesis
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Bokeh rendering"
+  - "diffusion models"
+  - "one-step inference"
+  - "physics-inspired attention"
+  - "data synthesis"
 date: 2026-05-08
 content_hash: 527f6ba0c9ddd83c
 ---

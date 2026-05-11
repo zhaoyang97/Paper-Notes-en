@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AnyTouch 2: General Optical Tactile Representation Learning For Dynamic Tactile Perception
 description: >-
-  [ICLR 2026][Robotics][Tactile representation learning] AnyTouch 2 proposes a Tactile Dynamic Pyramid framework, constructs the ToucHD hierarchical dataset comprising 2,426,174 contact samples (covering atomic actions, real-world manipulation, and tactile-force paired data), and designs a unified tactile representation learning framework that operates across three levels of dynamic perception—pixel-level, semantic-level, and physical-level. The approach comprehensively outperforms existing methods on four tasks: static attribute recognition, dynamic physical prediction, and real-world manipulation.
+  [ICLR 2026][Robotics][Tactile representation learning] AnyTouch 2 proposes a Tactile Dynamic Pyramid framework, constructs the ToucHD hierarchical dataset comprising 2,426,174 contact samples (covering atomic actions…
 tags:
-  - ICLR 2026
-  - Robotics
-  - Tactile representation learning
-  - dynamic perception
-  - optical tactile sensors
-  - force sensing
-  - tactile dataset
+  - "ICLR 2026"
+  - "Robotics"
+  - "Tactile representation learning"
+  - "dynamic perception"
+  - "optical tactile sensors"
+  - "force sensing"
+  - "tactile dataset"
 date: 2026-05-08
 content_hash: 08522f90889c2f75
 ---

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] FlowMo: Flow to the Mode — Mode-Seeking Diffusion Autoencoders for State-of-the-Art Image Tokenization
 description: >-
-  [LLM Pretraining] This paper proposes FlowMo, a Transformer-based diffusion autoencoder trained in two stages (mode-matching pretraining + mode-seeking post-training), achieving state-of-the-art performance on ImageNet-1K discrete image tokenization for the first time among diffusion autoencoders — without convolutions, adversarial losses, 2D spatially-aligned latents, or distillation from other tokenizers.
+  [LLM Pretraining] This paper proposes FlowMo, a Transformer-based diffusion autoencoder trained in two stages (mode-matching pretraining + mode-seeking post-training)…
 tags:
-  - LLM Pretraining
+  - "LLM Pretraining"
 date: 2026-05-08
 content_hash: 5cc90d9fd4a02302
 ---

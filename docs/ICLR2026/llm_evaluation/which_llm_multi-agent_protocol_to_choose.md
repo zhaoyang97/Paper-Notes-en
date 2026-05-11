@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Which LLM Multi-Agent Protocol to Choose?
 description: >-
-  [ICLR 2026][LLM Evaluation][Multi-Agent Protocol] This paper introduces ProtocolBench and ProtocolRouter, presenting the first systematic comparison of multi-agent communication protocols (A2A, ACP, ANP, Agora, etc.) across four dimensions—task success rate, latency, message overhead, and robustness—and proposes a learnable protocol router for scenario-adaptive protocol selection, reducing fault recovery time by up to 18.1%.
+  [ICLR 2026][LLM Evaluation][Multi-Agent Protocol] This paper introduces ProtocolBench and ProtocolRouter, presenting the first systematic comparison of multi-agent communication protocols (A2A, ACP, ANP, Agora…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - Multi-Agent Protocol
-  - ProtocolBench
-  - ProtocolRouter
-  - A2A
-  - Communication Protocol Evaluation
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Multi-Agent Protocol"
+  - "ProtocolBench"
+  - "ProtocolRouter"
+  - "A2A"
+  - "Communication Protocol Evaluation"
 date: 2026-05-08
 content_hash: cb5cd954dfa7bc57
 ---

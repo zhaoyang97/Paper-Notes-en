@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Retrieving Counterfactuals Improves Visual In-Context Learning
 description: >-
-  [CVPR 2026][Causal Inference][visual in-context learning] This paper proposes CIRCLES, a framework that retrieves counterfactual demonstrations via attribute-guided composed image retrieval, constructing dual-channel in-context demonstrations combining causality and correlation to substantially improve fine-grained visual reasoning in VLMs.
+  [CVPR 2026][Causal Inference][visual in-context learning] This paper proposes CIRCLES, a framework that retrieves counterfactual demonstrations via attribute-guided composed image retrieval…
 tags:
-  - CVPR 2026
-  - Causal Inference
-  - visual in-context learning
-  - counterfactual reasoning
-  - composed image retrieval
-  - vision-language models
-  - demonstration selection
+  - "CVPR 2026"
+  - "Causal Inference"
+  - "visual in-context learning"
+  - "counterfactual reasoning"
+  - "composed image retrieval"
+  - "vision-language models"
+  - "demonstration selection"
 date: 2026-05-08
 content_hash: 3cff3c09cbb2ed1b
 ---

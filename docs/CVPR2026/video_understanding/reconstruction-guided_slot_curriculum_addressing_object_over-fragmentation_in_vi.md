@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Reconstruction-Guided Slot Curriculum: Addressing Object Over-Fragmentation in Video Object-Centric Learning
 description: >-
-  [CVPR 2026][Video Understanding][Object-centric representation] This paper proposes SlotCurri, a reconstruction-guided slot-count curriculum learning strategy that begins training with very few slots and progressively expands slot capacity only in regions with high reconstruction error. Combined with structure-aware loss and cyclic inference, SlotCurri effectively addresses the over-fragmentation problem — where a single object is erroneously split across multiple slots — in video object-centric learning, achieving a +6.8 FG-ARI improvement on YouTube-VIS.
+  [CVPR 2026][Video Understanding][Object-centric representation] This paper proposes SlotCurri, a reconstruction-guided slot-count curriculum learning strategy that begins training with very few slots and progressively ex…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Object-centric representation
-  - over-fragmentation
-  - curriculum learning
-  - Slot Attention
-  - video segmentation
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Object-centric representation"
+  - "over-fragmentation"
+  - "curriculum learning"
+  - "Slot Attention"
+  - "video segmentation"
 date: 2026-05-08
 content_hash: 408e6ce6253bdd6f
 ---

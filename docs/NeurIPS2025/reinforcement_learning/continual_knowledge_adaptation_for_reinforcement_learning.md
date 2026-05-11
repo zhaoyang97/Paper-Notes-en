@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Continual Knowledge Adaptation for Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][continual RL] This paper proposes CKA-RL, which maintains a task-specific knowledge vector for each task and employs softmax-weighted dynamic knowledge adaptation along with an adaptive knowledge merging mechanism, achieving a 4.20% overall performance gain and 8.02% forward transfer improvement across three continual RL benchmarks.
+  [NeurIPS 2025][Reinforcement Learning][continual RL] This paper proposes CKA-RL, which maintains a task-specific knowledge vector for each task and employs softmax-weighted dynamic knowledge adaptation along with an adap…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - continual RL
-  - knowledge vector
-  - catastrophic forgetting
-  - forward transfer
-  - knowledge merging
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "continual RL"
+  - "knowledge vector"
+  - "catastrophic forgetting"
+  - "forward transfer"
+  - "knowledge merging"
 date: 2026-05-08
 content_hash: f297748cd758bf4e
 ---

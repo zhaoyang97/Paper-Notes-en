@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MAISI-v2: Accelerated 3D High-Resolution Medical Image Synthesis with Rectified Flow and Region-specific Contrastive Loss
 description: >-
-  [AAAI 2026][Medical Imaging][3D Medical Image Synthesis] This paper presents MAISI-v2, the first framework to introduce Rectified Flow into 3D medical image synthesis. By replacing DDPM with Rectified Flow, it achieves a 33× speedup, and a novel region-specific contrastive loss is designed to improve conditioning fidelity for small regions such as tumors. The utility of synthesized data is validated on downstream tumor segmentation tasks.
+  [AAAI 2026][Medical Imaging][3D Medical Image Synthesis] This paper presents MAISI-v2, the first framework to introduce Rectified Flow into 3D medical image synthesis. By replacing DDPM with Rectified Flow…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - 3D Medical Image Synthesis
-  - Rectified Flow
-  - Region-specific Contrastive Loss
-  - Latent Diffusion Model
-  - Data Augmentation
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "3D Medical Image Synthesis"
+  - "Rectified Flow"
+  - "Region-specific Contrastive Loss"
+  - "Latent Diffusion Model"
+  - "Data Augmentation"
 date: 2026-05-08
 content_hash: 648b1066831b61a8
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Controlling Multimodal Conversational Agents with Coverage-Enhanced Latent Actions
 description: >-
-  [ACL 2026][Reinforcement Learning][Latent Actions] This paper proposes constructing a compact latent action space for multimodal conversational agents (MCAs) to replace the prohibitively large token action space in RL fine-tuning. A cross-modal projector and a cycle-consistency loss are employed to jointly leverage paired image-text data and text-only data for codebook construction, compressing the action space from 152K (vocabulary size) to 128 (codebook size). The proposed method consistently outperforms token-level RL baselines on two dialogue tasks.
+  [ACL 2026][Reinforcement Learning][Latent Actions] This paper proposes constructing a compact latent action space for multimodal conversational agents (MCAs) to replace the prohibitively large token action space in RL fi…
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - Latent Actions
-  - Multimodal Dialogue
-  - Vision-Language Models
-  - Cross-Modal Projection
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "Latent Actions"
+  - "Multimodal Dialogue"
+  - "Vision-Language Models"
+  - "Cross-Modal Projection"
 date: 2026-05-08
 content_hash: b69c53e49ad6da33
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Efficient Constraint Handling in Neural Solvers for Routing Problems
 description: >-
-  [ICLR 2026][Model Compression][Neural Combinatorial Optimization] This paper proposes the Construct-and-Refine (CaR) framework, which achieves efficient feasibility repair through joint training of a construction module and a lightweight refinement module. CaR provides the first general and efficient neural constraint-handling solution for hard-constrained routing problems, substantially outperforming classical and neural SOTA solvers on TSPTW and CVRPBLTW.
+  [ICLR 2026][Model Compression][Neural Combinatorial Optimization] This paper proposes the Construct-and-Refine (CaR) framework, which achieves efficient feasibility repair through joint training of a construction module…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Neural Combinatorial Optimization
-  - Vehicle Routing Problem
-  - Constraint Handling
-  - Construct-and-Refine Hybrid
-  - Feasibility Repair
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Neural Combinatorial Optimization"
+  - "Vehicle Routing Problem"
+  - "Constraint Handling"
+  - "Construct-and-Refine Hybrid"
+  - "Feasibility Repair"
 date: 2026-05-08
 content_hash: 5db12a5ba6f3ce2f
 ---

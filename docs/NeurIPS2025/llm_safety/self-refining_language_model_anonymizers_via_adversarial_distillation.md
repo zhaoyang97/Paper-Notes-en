@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Self-Refining Language Model Anonymizers via Adversarial Distillation
 description: >-
-  [NeurIPS 2025][LLM Safety][Privacy Protection] This paper proposes SEAL, a framework that distills GPT-4-level text anonymization capabilities into an 8B model via adversarial distillation, combining SFT + DPO training with a self-refinement mechanism. The resulting small model achieves privacy–utility trade-offs on par with or superior to GPT-4-based anonymizers while enabling fully local deployment.
+  [NeurIPS 2025][LLM Safety][Privacy Protection] This paper proposes SEAL, a framework that distills GPT-4-level text anonymization capabilities into an 8B model via adversarial distillation…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - Privacy Protection
-  - Text Anonymization
-  - Knowledge Distillation
-  - Adversarial Learning
-  - Self-Refinement
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "Privacy Protection"
+  - "Text Anonymization"
+  - "Knowledge Distillation"
+  - "Adversarial Learning"
+  - "Self-Refinement"
 date: 2026-05-08
 content_hash: ed854974e214658b
 ---

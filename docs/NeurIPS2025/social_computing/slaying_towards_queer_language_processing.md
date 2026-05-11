@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SLAyiNG: Towards Queer Language Processing
 description: >-
-  [NeurIPS 2025 (Queer in AI Workshop)][Social Computing][queer slang] This work introduces SLAyiNG, the first explicitly annotated queer slang dataset, comprising 695 terms and nearly 200,000 usage instances. Inter-annotator agreement experiments (Krippendorff's $\alpha = 0.746$) demonstrate that reasoning models can serve as pre-screening tools but community-driven expert annotation remains indispensable.
+  [NeurIPS 2025 (Queer in AI Workshop)][Social Computing][queer slang] This work introduces SLAyiNG, the first explicitly annotated queer slang dataset, comprising 695 terms and nearly 200…
 tags:
-  - NeurIPS 2025 (Queer in AI Workshop)
-  - Social Computing
-  - queer slang
-  - dataset annotation
-  - sense disambiguation
-  - LLM evaluation
-  - sociolinguistics
+  - "NeurIPS 2025 (Queer in AI Workshop)"
+  - "Social Computing"
+  - "queer slang"
+  - "dataset annotation"
+  - "sense disambiguation"
+  - "LLM evaluation"
+  - "sociolinguistics"
 date: 2026-05-08
 content_hash: c4478ada88d5a1d1
 ---

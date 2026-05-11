@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GeoSURGE: Geo-localization using Semantic Fusion with Hierarchy of Geographic Embeddings
 description: >-
-  [CVPR 2026][Segmentation][Visual geo-localization] GeoSURGE introduces hierarchical geographic embeddings and a semantic fusion module, framing global image geo-localization as a matching problem between visual representations and learned geographic representations. The method achieves state-of-the-art performance on 22 out of 25 metrics across 5 benchmarks.
+  [CVPR 2026][Segmentation][Visual geo-localization] GeoSURGE introduces hierarchical geographic embeddings and a semantic fusion module, framing global image geo-localization as a matching problem between visual represent…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Visual geo-localization
-  - semantic fusion
-  - hierarchical geographic embeddings
-  - contrastive learning
-  - cross-attention
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Visual geo-localization"
+  - "semantic fusion"
+  - "hierarchical geographic embeddings"
+  - "contrastive learning"
+  - "cross-attention"
 date: 2026-05-08
 content_hash: c370371bcc60b93c
 ---

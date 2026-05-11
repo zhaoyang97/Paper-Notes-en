@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LeVo: High-Quality Song Generation with Multi-Preference Alignment
 description: >-
-  [Audio & Speech] LeVo proposes a language-model-based song generation framework that simultaneously optimizes vocal–accompaniment harmony and audio quality by predicting mixed tokens and dual-track tokens in parallel, and introduces a DPO-based multi-preference alignment method to enhance musicality and instruction-following ability. LeVo comprehensively outperforms all academic baselines and approaches the performance of industrial systems.
+  [Audio & Speech] LeVo proposes a language-model-based song generation framework that simultaneously optimizes vocal–accompaniment harmony and audio quality by predicting mixed tokens and dual-track tokens in parallel…
 tags:
   - "Audio & Speech"
 date: 2026-05-08

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PinPoint: Focus, Don't Prune — Identifying Instruction-Relevant Regions for Information-Rich Image Understanding
 description: >-
-  [CVPR 2026][Multimodal VLM][Large Vision-Language Models] This paper proposes PinPoint, a two-stage framework that first localizes instruction-relevant image regions via Instruction-Region Alignment, then re-encodes the selected regions at fine granularity, achieving higher VQA accuracy with fewer visual tokens.
+  [CVPR 2026][Multimodal VLM][Large Vision-Language Models] This paper proposes PinPoint, a two-stage framework that first localizes instruction-relevant image regions via Instruction-Region Alignment…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Large Vision-Language Models
-  - Token Efficiency
-  - Region Selection
-  - Contrastive Learning
-  - Document Understanding
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Large Vision-Language Models"
+  - "Token Efficiency"
+  - "Region Selection"
+  - "Contrastive Learning"
+  - "Document Understanding"
 date: 2026-05-08
 content_hash: ff43d87d61f59833
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Differential and Pointwise Control Approach to Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Differential RL] This paper reformulates the RL problem via the differential dual form of continuous-time control, embeds physical priors through Hamiltonian structure, and proposes the dfPO algorithm for pointwise policy optimization. On scientific computing tasks (surface modeling, grid-based control, molecular dynamics), dfPO surpasses 12 RL baselines with fewer samples.
+  [NeurIPS 2025][Reinforcement Learning][Differential RL] This paper reformulates the RL problem via the differential dual form of continuous-time control, embeds physical priors through Hamiltonian structure…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Differential RL
-  - Hamiltonian structure
-  - pointwise convergence
-  - scientific computing RL
-  - Pontryagin maximum principle
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Differential RL"
+  - "Hamiltonian structure"
+  - "pointwise convergence"
+  - "scientific computing RL"
+  - "Pontryagin maximum principle"
 date: 2026-05-08
 content_hash: 16763cb100b7f7f6
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GST-UNet: A Neural Framework for Spatiotemporal Causal Inference with Time-Varying Confounding
 description: >-
-  [NeurIPS 2025][Causal Inference][Spatiotemporal causal inference] This paper proposes GST-UNet, which integrates a U-Net spatiotemporal encoder with iterative G-computation to estimate location-specific conditional average potential outcomes (CAPOs) from a **single spatiotemporal observational trajectory**. The framework simultaneously handles interference, spatial confounding, temporal carry-over effects, and time-varying confounding, and is validated on a real-world causal analysis of wildfire smoke effects on respiratory hospitalization rates in California.
+  [NeurIPS 2025][Causal Inference][Spatiotemporal causal inference] This paper proposes GST-UNet, which integrates a U-Net spatiotemporal encoder with iterative G-computation to estimate location-specific conditional avera…
 tags:
-  - NeurIPS 2025
-  - Causal Inference
-  - Spatiotemporal causal inference
-  - G-computation
-  - UNet
-  - time-varying confounding
-  - potential outcomes
+  - "NeurIPS 2025"
+  - "Causal Inference"
+  - "Spatiotemporal causal inference"
+  - "G-computation"
+  - "UNet"
+  - "time-varying confounding"
+  - "potential outcomes"
 date: 2026-05-08
 content_hash: 49a341df3bbed16b
 ---

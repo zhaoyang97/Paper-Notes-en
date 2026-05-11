@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] SOSControl: Enhancing Human Motion Generation through Saliency-Aware Symbolic Orientation and Timing Control
 description: >-
-  [AAAI2026][Human Understanding][Human Motion Generation] This paper proposes the Salient Orientation Symbolic (SOS) script — a programmable symbolic motion representation framework inspired by Labanotation — that extracts keyframe saliency via temporally-constrained agglomerative clustering, and introduces an SMS data augmentation strategy along with a gradient-optimization-based SOSControl framework for precise control over body-part orientation and motion timing. On HumanML3D, the method achieves an SOS-Acc of 0.988 with an FID of only 3.892.
+  [AAAI2026][Human Understanding][Human Motion Generation] This paper proposes the Salient Orientation Symbolic (SOS) script — a programmable symbolic motion representation framework inspired by Labanotation — that extract…
 tags:
-  - AAAI2026
-  - Human Understanding
-  - Human Motion Generation
-  - Symbolic Control
-  - Labanotation
-  - Diffusion Models
-  - Saliency Detection
-  - ControlNet
+  - "AAAI2026"
+  - "Human Understanding"
+  - "Human Motion Generation"
+  - "Symbolic Control"
+  - "Labanotation"
+  - "Diffusion Models"
+  - "Saliency Detection"
+  - "ControlNet"
 date: 2026-05-08
 content_hash: fa880af6d4bf9a38
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Bidirectional Channel-selective Semantic Interaction for Semi-Supervised Medical Segmentation
 description: >-
-  [AAAI 2026][Medical Imaging][Semi-supervised learning] This paper proposes the BCSI framework, which employs a channel-selection router to dynamically identify critical feature channels and performs bidirectional channel-level interaction between labeled and unlabeled data streams. Combined with semantic-spatial perturbation-based weak-to-strong consistency learning, BCSI achieves substantial improvements in semi-supervised medical image segmentation.
+  [AAAI 2026][Medical Imaging][Semi-supervised learning] This paper proposes the BCSI framework, which employs a channel-selection router to dynamically identify critical feature channels and performs bidirectional channel…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Semi-supervised learning
-  - medical image segmentation
-  - channel selection
-  - bidirectional interaction
-  - weak-to-strong consistency
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Semi-supervised learning"
+  - "medical image segmentation"
+  - "channel selection"
+  - "bidirectional interaction"
+  - "weak-to-strong consistency"
 date: 2026-05-08
 content_hash: c2cf9ba3c16765f4
 ---

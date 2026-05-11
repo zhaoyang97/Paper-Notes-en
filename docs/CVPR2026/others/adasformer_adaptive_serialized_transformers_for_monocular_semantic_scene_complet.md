@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] AdaSFormer: Adaptive Serialized Transformers for Monocular Semantic Scene Completion from Indoor Environments
 description: >-
-  [CVPR 2026][Semantic Scene Completion] This paper proposes AdaSFormer, a serialized Transformer framework for indoor Monocular Semantic Scene Completion (MSSC), achieving state-of-the-art performance on NYUv2 and Occ-ScanNet through three core designs: Adaptive Serialization Attention (with learnable offsets), Center-Relative Position Encoding, and Convolutional Modulation Layer Normalization.
+  [CVPR 2026][Semantic Scene Completion] This paper proposes AdaSFormer, a serialized Transformer framework for indoor Monocular Semantic Scene Completion (MSSC)…
 tags:
-  - CVPR 2026
-  - Semantic Scene Completion
-  - Serialized Transformer
-  - Adaptive Attention
-  - Indoor Scene
-  - Monocular RGB
+  - "CVPR 2026"
+  - "Semantic Scene Completion"
+  - "Serialized Transformer"
+  - "Adaptive Attention"
+  - "Indoor Scene"
+  - "Monocular RGB"
 date: 2026-05-08
 content_hash: e0c451f97e4e8c0f
 ---

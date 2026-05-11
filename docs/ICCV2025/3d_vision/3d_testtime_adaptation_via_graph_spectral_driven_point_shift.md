@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] 3D Test-time Adaptation via Graph Spectral Driven Point Shift
 description: >-
-  [ICCV 2025][3D Vision][Test-time adaptation] This paper proposes GSDTTA, which is the first work to shift 3D point cloud test-time adaptation (TTA) from the spatial domain to the graph spectral domain. By optimizing only the lowest 10% frequency components (reducing parameters by ~90%), GSDTTA achieves global structural adjustment. Combined with a feature map guided self-training strategy for pseudo-label generation, it significantly outperforms existing 3D TTA methods on ModelNet40-C and ScanObjectNN-C.
+  [ICCV 2025][3D Vision][Test-time adaptation] This paper proposes GSDTTA, which is the first work to shift 3D point cloud test-time adaptation (TTA) from the spatial domain to the graph spectral domain. By optimizing only…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Test-time adaptation
-  - graph spectral analysis
-  - point cloud classification
-  - graph Fourier transform
-  - feature map guided self-training
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Test-time adaptation"
+  - "graph spectral analysis"
+  - "point cloud classification"
+  - "graph Fourier transform"
+  - "feature map guided self-training"
 date: 2026-05-08
 content_hash: 1fb5bafd0a7795fd
 ---

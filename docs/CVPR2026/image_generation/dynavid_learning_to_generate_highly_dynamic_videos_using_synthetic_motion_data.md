@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DynaVid: Learning to Generate Highly Dynamic Videos using Synthetic Motion Data
 description: >-
-  [CVPR 2026][Image Generation][Video Diffusion Models] DynaVid proposes utilizing synthetic optical flow rendered via computer graphics (rather than synthetic videos) to train video diffusion models. Through a two-stage framework consisting of a motion generator and a motion-guided video generator, it achieves realistic video synthesis of highly dynamic motions and fine-grained camera control.
+  [CVPR 2026][Image Generation][Video Diffusion Models] DynaVid proposes utilizing synthetic optical flow rendered via computer graphics (rather than synthetic videos) to train video diffusion models. Through a two-stage f…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Video Diffusion Models
-  - Synthetic Motion Data
-  - Optical Flow
-  - Dynamic Motion Generation
-  - Camera Control
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Video Diffusion Models"
+  - "Synthetic Motion Data"
+  - "Optical Flow"
+  - "Dynamic Motion Generation"
+  - "Camera Control"
 date: 2026-05-08
 content_hash: c4a8ebdfb696679b
 ---

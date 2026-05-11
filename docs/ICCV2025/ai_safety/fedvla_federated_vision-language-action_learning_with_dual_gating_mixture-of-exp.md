@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FedVLA: Federated Vision-Language-Action Learning with Dual Gating Mixture-of-Experts for Robotic Manipulation
 description: >-
-  [ICCV 2025][AI Safety][Federated Learning] This paper proposes FedVLA — the first federated learning framework for Vision-Language-Action (VLA) models — comprising three synergistic components: Instruction-Oriented Scene-Parsing (IOSP) for task-aware feature extraction, Dual Gating Mixture-of-Experts (DGMoE) for adaptive knowledge routing, and Expert-Driven Aggregation (EDA) for effective cross-client knowledge integration, achieving task success rates comparable to centralized training while preserving data privacy.
+  [ICCV 2025][AI Safety][Federated Learning] This paper proposes FedVLA — the first federated learning framework for Vision-Language-Action (VLA) models — comprising three synergistic components: Instruction-Oriented Scene…
 tags:
-  - ICCV 2025
-  - AI Safety
-  - Federated Learning
-  - Vision-Language-Action Model
-  - Mixture-of-Experts
-  - Robotic Manipulation
-  - Privacy Preservation
+  - "ICCV 2025"
+  - "AI Safety"
+  - "Federated Learning"
+  - "Vision-Language-Action Model"
+  - "Mixture-of-Experts"
+  - "Robotic Manipulation"
+  - "Privacy Preservation"
 date: 2026-05-08
 content_hash: 048ecc78337f2456
 ---

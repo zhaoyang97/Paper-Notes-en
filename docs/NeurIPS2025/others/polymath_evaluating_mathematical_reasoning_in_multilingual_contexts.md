@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Note 7: Value-Guided Search - Efficient Chain-of-Thought Reasoning
 description: >-
-  [NeurIPS 2025][Value model] This paper proposes Value-Guided Search (VGS), which employs a token-level value model to guide block-level beam search without requiring predefined "steps." VGS achieves a +14.5% relative accuracy improvement over majority voting on competition mathematics while reducing inference computation by 30%, outperforming existing PRM-based approaches.
+  [NeurIPS 2025][Value model] This paper proposes Value-Guided Search (VGS), which employs a token-level value model to guide block-level beam search without requiring predefined "steps." VGS achieves a +14.5% relative acc…
 tags:
-  - NeurIPS 2025
-  - Value model
-  - block-level search
-  - beam search
-  - VGS
-  - inference efficiency
+  - "NeurIPS 2025"
+  - "Value model"
+  - "block-level search"
+  - "beam search"
+  - "VGS"
+  - "inference efficiency"
 date: 2026-05-08
 content_hash: d46f109981d94c19
 ---

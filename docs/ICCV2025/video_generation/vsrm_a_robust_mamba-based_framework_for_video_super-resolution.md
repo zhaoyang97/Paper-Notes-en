@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VSRM: A Robust Mamba-Based Framework for Video Super-Resolution
 description: >-
-  [ICCV 2025][Video Generation][Video Super-Resolution] This work is the first to introduce Mamba into video super-resolution, proposing the Dual Aggregation Mamba Block (DAMB) for long-range spatiotemporal dependency modeling, the Deformable Cross-Mamba Alignment module (DCA) for more flexible inter-frame alignment, and the Frequency Charbonnier-like Loss (FCL) for improved high-frequency detail recovery, achieving state-of-the-art results on REDS4, Vid4, and Vimeo-90K.
+  [ICCV 2025][Video Generation][Video Super-Resolution] This work is the first to introduce Mamba into video super-resolution, proposing the Dual Aggregation Mamba Block (DAMB) for long-range spatiotemporal dependency mode…
 tags:
-  - ICCV 2025
-  - Video Generation
-  - Video Super-Resolution
-  - Mamba
-  - State Space Model
-  - Deformable Alignment
-  - Frequency Loss
+  - "ICCV 2025"
+  - "Video Generation"
+  - "Video Super-Resolution"
+  - "Mamba"
+  - "State Space Model"
+  - "Deformable Alignment"
+  - "Frequency Loss"
 date: 2026-05-08
 content_hash: 1e4fc3760f1d638b
 ---

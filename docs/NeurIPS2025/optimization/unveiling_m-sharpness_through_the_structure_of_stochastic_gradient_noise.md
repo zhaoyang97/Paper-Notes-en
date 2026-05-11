@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unveiling m-Sharpness Through the Structure of Stochastic Gradient Noise
 description: >-
-  [NeurIPS 2025][Optimization][SAM] This paper reveals the theoretical mechanism underlying m-sharpness in SAM through an extended stochastic differential equation (SDE) framework — smaller micro-batch size $m$ induces stronger implicit regularization via the covariance of stochastic gradient noise (SGN) — and proposes a parallelizable Reweighted SAM (RW-SAM) method based on this insight.
+  [NeurIPS 2025][Optimization][SAM] This paper reveals the theoretical mechanism underlying m-sharpness in SAM through an extended stochastic differential equation (SDE) framework — smaller micro-batch size $m$ induces str…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - SAM
-  - m-sharpness
-  - stochastic gradient noise
-  - SDE approximation
-  - generalization
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "SAM"
+  - "m-sharpness"
+  - "stochastic gradient noise"
+  - "SDE approximation"
+  - "generalization"
 date: 2026-05-08
 content_hash: 024eefd777cc1983
 ---

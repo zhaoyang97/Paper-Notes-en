@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Reasoning as Representation: Rethinking Visual Reinforcement Learning in Image Quality Assessment
 description: >-
-  [ICLR 2026 (Oral)][Reinforcement Learning][Image Quality Assessment] Through systematic experimentation, this paper reveals the fundamental mechanism underlying the generalization capability of RL-trained reasoning-based IQA models — the reasoning process essentially transforms redundant visual representations into compact, cross-domain aligned textual representations. Building on this insight, the paper proposes the RALI algorithm, which directly aligns image representations to these textual representations via contrastive learning, achieving comparable generalization performance with less than 5% of the parameters and inference time.
+  [ICLR 2026 (Oral)][Reinforcement Learning][Image Quality Assessment] Through systematic experimentation, this paper reveals the fundamental mechanism underlying the generalization capability of RL-trained reasoning-based…
 tags:
-  - ICLR 2026 (Oral)
-  - Reinforcement Learning
-  - Image Quality Assessment
-  - Reasoning as Representation
-  - Contrastive Learning
-  - Cross-Domain Generalization
+  - "ICLR 2026 (Oral)"
+  - "Reinforcement Learning"
+  - "Image Quality Assessment"
+  - "Reasoning as Representation"
+  - "Contrastive Learning"
+  - "Cross-Domain Generalization"
 date: 2026-05-08
 content_hash: ff92e0f5b5012a91
 ---

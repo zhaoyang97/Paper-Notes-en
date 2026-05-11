@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HiDrop: Hierarchical Vision Token Reduction in MLLMs via Late Injection, Concave Pyramid Pruning, and Early Exit
 description: >-
-  [ICLR 2026][Multimodal VLM][Visual token compression] This paper proposes the HiDrop framework, which conducts a systematic layer-wise behavioral analysis of MLLMs (shallow layers = propagators, middle layers = fusion hubs, deep layers = language reasoners) and designs a three-stage strategy: Late Injection (skipping shallow layers) + Concave Pyramid Pruning (aggressive pruning in middle layers) + Early Exit (discarding tokens in deep layers). The framework compresses approximately 90% of visual tokens with negligible performance degradation and achieves a 1.72× training speedup.
+  [ICLR 2026][Multimodal VLM][Visual token compression] This paper proposes the HiDrop framework, which conducts a systematic layer-wise behavioral analysis of MLLMs (shallow layers = propagators…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Visual token compression
-  - MLLM acceleration
-  - progressive pruning
-  - Late Injection
-  - diffused attention
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Visual token compression"
+  - "MLLM acceleration"
+  - "progressive pruning"
+  - "Late Injection"
+  - "diffused attention"
 date: 2026-05-08
 content_hash: 169190f6fd1cc6ef
 ---

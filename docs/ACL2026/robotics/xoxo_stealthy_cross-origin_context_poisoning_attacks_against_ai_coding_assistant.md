@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] XOXO: Stealthy Cross-Origin Context Poisoning Attacks against AI Coding Assistants
 description: >-
-  [ACL 2026][Robotics][Adversarial Attack] This paper reveals a design vulnerability in AI coding assistants' automatic context collection and proposes Cross-Origin Context Poisoning (XOXO) attacks: poisoning shared codebases via semantics-preserving code transformations (e.g., variable renaming) causes assistants like GitHub Copilot to unknowingly generate vulnerable code, achieving 73.20% average ASR across 8 SOTA models.
+  [ACL 2026][Robotics][Adversarial Attack] This paper reveals a design vulnerability in AI coding assistants' automatic context collection and proposes Cross-Origin Context Poisoning (XOXO) attacks: poisoning shared codeba…
 tags:
-  - ACL 2026
-  - Robotics
-  - Adversarial Attack
-  - AI Coding Assistant
-  - Context Poisoning
-  - Semantics-Preserving Transform
-  - Code Security
+  - "ACL 2026"
+  - "Robotics"
+  - "Adversarial Attack"
+  - "AI Coding Assistant"
+  - "Context Poisoning"
+  - "Semantics-Preserving Transform"
+  - "Code Security"
 content_hash: 8335cd78b16d88ad
 ---
 

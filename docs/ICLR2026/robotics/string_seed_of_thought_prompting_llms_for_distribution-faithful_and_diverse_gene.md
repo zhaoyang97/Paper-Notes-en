@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] String Seed of Thought: Prompting LLMs for Distribution-Faithful and Diverse Generation
 description: >-
-  [ICLR 2026][Robotics][prompting] This paper proposes String Seed of Thought (SSoT), a concise prompting method that instructs LLMs to first generate a random string and then extract randomness from it to select an answer. SSoT significantly improves distribution faithfulness in probabilistic instruction following (PIF) and response diversity in open-ended generation (DAG). The paper theoretically proves that TV distance decays exponentially with string length, and experiments show that reasoning-capable LLMs approach the performance of pseudo-random number generators.
+  [ICLR 2026][Robotics][prompting] This paper proposes String Seed of Thought (SSoT), a concise prompting method that instructs LLMs to first generate a random string and then extract randomness from it to select an answer…
 tags:
-  - ICLR 2026
-  - Robotics
-  - prompting
-  - probabilistic instruction following
-  - diversity
-  - LLM reasoning
-  - randomness
+  - "ICLR 2026"
+  - "Robotics"
+  - "prompting"
+  - "probabilistic instruction following"
+  - "diversity"
+  - "LLM reasoning"
+  - "randomness"
 date: 2026-05-08
 content_hash: 395183a5cc1d4da6
 ---

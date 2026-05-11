@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ChartMuseum: Testing Chart Visual Reasoning in Large Vision-Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Chart Understanding] This paper introduces ChartMuseum, a chart question-answering benchmark comprising 1,162 expert-annotated questions and real-world charts from 184 distinct sources. It is the first benchmark to systematically distinguish visual reasoning from textual reasoning, revealing that the current strongest model, Gemini-2.5-Pro, achieves only 63.0% accuracy compared to 93% for humans, with visual reasoning performance lagging behind textual reasoning by 35%–55%.
+  [NeurIPS 2025][Multimodal VLM][Chart Understanding] This paper introduces ChartMuseum, a chart question-answering benchmark comprising 1…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Chart Understanding
-  - Visual Reasoning
-  - Benchmark
-  - VLM Evaluation
-  - Chart QA
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Chart Understanding"
+  - "Visual Reasoning"
+  - "Benchmark"
+  - "VLM Evaluation"
+  - "Chart QA"
 date: 2026-05-08
 content_hash: e53bafc733d19592
 ---

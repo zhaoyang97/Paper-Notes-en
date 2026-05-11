@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CtrlFuse: Mask-Prompt Guided Controllable Infrared and Visible Image Fusion
 description: >-
-  [AAAI2026][Segmentation][infrared-visible image fusion] This paper proposes CtrlFuse, which achieves interactive controllable infrared-visible image fusion by fine-tuning SAM with mask prompt guidance, simultaneously improving fusion quality and downstream segmentation/detection performance.
+  [AAAI2026][Segmentation][infrared-visible image fusion] This paper proposes CtrlFuse, which achieves interactive controllable infrared-visible image fusion by fine-tuning SAM with mask prompt guidance…
 tags:
-  - AAAI2026
-  - Segmentation
-  - infrared-visible image fusion
-  - controllable fusion
-  - mask prompt
-  - SAM
-  - semantic segmentation
+  - "AAAI2026"
+  - "Segmentation"
+  - "infrared-visible image fusion"
+  - "controllable fusion"
+  - "mask prompt"
+  - "SAM"
+  - "semantic segmentation"
 date: 2026-05-08
 content_hash: db02d6577bd67775
 ---

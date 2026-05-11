@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MIRAGE: Scaling Test-Time Inference with Parallel Graph-Retrieval-Augmented Reasoning Chains
 description: >-
-  [AAAI 2026][Medical Imaging][Medical QA] This paper proposes MIRAGE, a framework that extends conventional linear reasoning chains into a parallel multi-chain reasoning paradigm. It combines adaptive retrieval from structured medical knowledge graphs (via neighborhood expansion and multi-hop traversal) with cross-chain verification to resolve contradictions, consistently outperforming GPT-4o, ToT, and Search-o1 on three medical QA benchmarks.
+  [AAAI 2026][Medical Imaging][Medical QA] This paper proposes MIRAGE, a framework that extends conventional linear reasoning chains into a parallel multi-chain reasoning paradigm. It combines adaptive retrieval from struc…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Medical QA
-  - Knowledge Graph
-  - Multi-Chain Reasoning
-  - Test-Time Inference Scaling
-  - Retrieval-Augmented Generation
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Medical QA"
+  - "Knowledge Graph"
+  - "Multi-Chain Reasoning"
+  - "Test-Time Inference Scaling"
+  - "Retrieval-Augmented Generation"
 date: 2026-05-08
 content_hash: 7a0586e106a77aae
 ---

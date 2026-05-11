@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] DONUT: A Decoder-Only Model for Trajectory Prediction
 description: >-
-  [ICCV 2025][Autonomous Driving][trajectory prediction] DONUT draws inspiration from the decoder-only architecture of LLMs and proposes a unified autoregressive model for processing both historical and future trajectories, coupled with an *overprediction* strategy to improve anticipation of the distant future. It achieves state-of-the-art performance on the Argoverse 2 benchmark.
+  [ICCV 2025][Autonomous Driving][trajectory prediction] DONUT draws inspiration from the decoder-only architecture of LLMs and proposes a unified autoregressive model for processing both historical and future trajectories…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - trajectory prediction
-  - decoder-only
-  - autoregressive model
-  - motion prediction
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "trajectory prediction"
+  - "decoder-only"
+  - "autoregressive model"
+  - "motion prediction"
 date: 2026-05-08
 content_hash: 9c85ae8be65789a1
 ---

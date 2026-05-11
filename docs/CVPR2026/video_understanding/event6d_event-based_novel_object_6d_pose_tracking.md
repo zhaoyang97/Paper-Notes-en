@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Event6D: Event-based Novel Object 6D Pose Tracking
 description: >-
-  [CVPR 2026][Video Understanding][Event Camera] EventTrack6D proposes an event-depth fusion framework for 6D pose tracking that bridges the temporal gap between event cameras and depth frame rates by reconstructing intensity and depth images at arbitrary timestamps, achieving robust tracking of unseen objects at 120+ FPS while trained exclusively on synthetic data.
+  [CVPR 2026][Video Understanding][Event Camera] EventTrack6D proposes an event-depth fusion framework for 6D pose tracking that bridges the temporal gap between event cameras and depth frame rates by reconstructing intens…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Event Camera
-  - 6D Pose Tracking
-  - Novel Object Generalization
-  - Bimodal Reconstruction
-  - Sim-to-Real Transfer
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Event Camera"
+  - "6D Pose Tracking"
+  - "Novel Object Generalization"
+  - "Bimodal Reconstruction"
+  - "Sim-to-Real Transfer"
 date: 2026-05-08
 content_hash: 48f754d066ee4b5a
 ---

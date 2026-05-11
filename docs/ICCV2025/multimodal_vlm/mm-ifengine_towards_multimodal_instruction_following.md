@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] MM-IFEngine: Towards Multimodal Instruction Following
 description: >-
-  [Multimodal VLM] This paper proposes the MM-IFEngine pipeline, which systematically generates high-quality image–instruction pair data (in both SFT and DPO variants) and constructs the MM-IFEval benchmark, achieving significant improvements in multimodal instruction following for MLLMs.
+  [Multimodal VLM] This paper proposes the MM-IFEngine pipeline, which systematically generates high-quality image–instruction pair data (in both SFT and DPO variants) and constructs the MM-IFEval benchmark…
 tags:
-  - Multimodal VLM
+  - "Multimodal VLM"
 date: 2026-05-08
 content_hash: 3ff4413b1b65a3b8
 ---

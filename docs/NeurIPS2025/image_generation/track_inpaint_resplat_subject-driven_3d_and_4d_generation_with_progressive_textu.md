@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Track, Inpaint, Resplat: Subject-driven 3D and 4D Generation with Progressive Texture Infilling
 description: >-
-  [NeurIPS 2025][Image Generation][Subject-driven generation] This paper proposes TIRE (Track, Inpaint, REsplat), a three-stage pipeline that locates unobserved regions via video tracking, progressively infills textures using a subject-driven inpainting model, and back-projects multi-view consistent results into 3D, enabling identity-preserving 3D/4D generation.
+  [NeurIPS 2025][Image Generation][Subject-driven generation] This paper proposes TIRE (Track, Inpaint, REsplat), a three-stage pipeline that locates unobserved regions via video tracking…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Subject-driven generation
-  - 3D/4D generation
-  - Identity preservation
-  - Texture infilling
-  - Video tracking
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Subject-driven generation"
+  - "3D/4D generation"
+  - "Identity preservation"
+  - "Texture infilling"
+  - "Video tracking"
 date: 2026-05-08
 content_hash: 8a3af282a4db64a0
 ---

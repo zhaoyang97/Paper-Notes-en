@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SecMoE: Communication-Efficient Secure MoE Inference via Select-Then-Compute
 description: >-
-  [AAAI 2026][AI Safety][MoE] This paper proposes the SecMoE framework, which efficiently enables sparse MoE inference under two-party secure computation via a Select-Then-Compute paradigm, eliminating redundant expert computation and achieving up to 29.8× communication reduction and up to 16.1× end-to-end speedup.
+  [AAAI 2026][AI Safety][MoE] This paper proposes the SecMoE framework, which efficiently enables sparse MoE inference under two-party secure computation via a Select-Then-Compute paradigm…
 tags:
-  - AAAI 2026
-  - AI Safety
-  - MoE
-  - privacy-preserving inference
-  - secure multi-party computation
-  - homomorphic encryption
-  - Select-Then-Compute
+  - "AAAI 2026"
+  - "AI Safety"
+  - "MoE"
+  - "privacy-preserving inference"
+  - "secure multi-party computation"
+  - "homomorphic encryption"
+  - "Select-Then-Compute"
 date: 2026-05-08
 content_hash: 2ab7cf541246d8dc
 ---

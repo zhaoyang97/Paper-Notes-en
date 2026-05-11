@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] NavQ: Learning a Q-Model for Foresighted Vision-and-Language Navigation
 description: >-
-  [ICCV 2025][Reinforcement Learning][Vision-and-Language Navigation] This paper proposes NavQ, a foresighted VLN agent that employs a Q-model to predict, in a single forward pass, long-horizon future semantic aggregation features (Q-features) for each candidate action. Combined with an A*-style search strategy, NavQ achieves significant improvements on object-goal navigation benchmarks.
+  [ICCV 2025][Reinforcement Learning][Vision-and-Language Navigation] This paper proposes NavQ, a foresighted VLN agent that employs a Q-model to predict, in a single forward pass…
 tags:
-  - ICCV 2025
-  - Reinforcement Learning
-  - Vision-and-Language Navigation
-  - Q-learning
-  - Foresighted Decision-Making
+  - "ICCV 2025"
+  - "Reinforcement Learning"
+  - "Vision-and-Language Navigation"
+  - "Q-learning"
+  - "Foresighted Decision-Making"
   - "A* Search"
-  - Self-Supervised Pretraining
+  - "Self-Supervised Pretraining"
 date: 2026-05-08
 content_hash: 7453fe88071c924f
 ---

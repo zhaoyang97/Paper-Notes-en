@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ShapeCraft: LLM Agents for Structured, Textured and Interactive 3D Modeling
 description: >-
-  [NEURIPS2025][LLM Agent][text-to-3D] This paper proposes ShapeCraft, a multi-agent framework built on a Graph-based Procedural Shape (GPS) representation. Three LLM agents — Parser, Coder, and Evaluator — collaborate to decompose natural language descriptions into structured sub-task graphs, iteratively generating editable and animatable textured 3D assets.
+  [NEURIPS2025][LLM Agent][text-to-3D] This paper proposes ShapeCraft, a multi-agent framework built on a Graph-based Procedural Shape (GPS) representation. Three LLM agents — Parser, Coder…
 tags:
-  - NEURIPS2025
-  - LLM Agent
-  - text-to-3D
-  - multi-agent
-  - procedural modeling
-  - shape program
-  - Blender
+  - "NEURIPS2025"
+  - "LLM Agent"
+  - "text-to-3D"
+  - "multi-agent"
+  - "procedural modeling"
+  - "shape program"
+  - "Blender"
 date: 2026-05-08
 content_hash: c9b2fea24565ced7
 ---

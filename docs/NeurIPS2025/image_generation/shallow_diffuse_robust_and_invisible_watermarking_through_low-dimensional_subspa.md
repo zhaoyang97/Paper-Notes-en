@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Shallow Diffuse: Robust and Invisible Watermarking through Low-Dimensional Subspaces in Diffusion Models
 description: >-
-  [NeurIPS 2025][Image Generation][Digital Watermarking] This paper proposes Shallow Diffuse, a method that exploits the local linearity and low-rank Jacobian of the posterior mean predictor (PMP) in diffusion models to embed watermarks at intermediate diffusion timesteps. This design decouples the watermark from the generation process, achieving, for the first time, both high fidelity and high robustness simultaneously under both server-side and user-side deployment scenarios.
+  [NeurIPS 2025][Image Generation][Digital Watermarking] This paper proposes Shallow Diffuse, a method that exploits the local linearity and low-rank Jacobian of the posterior mean predictor (PMP) in diffusion models to em…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Digital Watermarking
-  - Diffusion Models
-  - Low-Dimensional Subspaces
-  - DDIM
-  - Frequency-Domain Embedding
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Digital Watermarking"
+  - "Diffusion Models"
+  - "Low-Dimensional Subspaces"
+  - "DDIM"
+  - "Frequency-Domain Embedding"
 date: 2026-05-08
 content_hash: 1270a9f89284c7c7
 ---

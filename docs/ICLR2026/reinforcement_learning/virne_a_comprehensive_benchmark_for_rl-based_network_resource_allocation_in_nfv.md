@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Virne: A Comprehensive Benchmark for RL-based Network Resource Allocation in NFV
 description: >-
-  [Reinforcement Learning] This paper proposes Virne — a comprehensive benchmark framework for Network Function Virtualization Resource Allocation (NFV-RA) — integrating 30+ algorithms and a gym-style environment to support systematic evaluation across cloud, edge, 5G, and other scenarios.
+  [Reinforcement Learning] This paper proposes Virne — a comprehensive benchmark framework for Network Function Virtualization Resource Allocation (NFV-RA) — integrating 30+ algorithms and a gym-style environment to suppor…
 tags:
-  - Reinforcement Learning
+  - "Reinforcement Learning"
 date: 2026-05-08
 content_hash: 7255b24c7ab54a3d
 ---

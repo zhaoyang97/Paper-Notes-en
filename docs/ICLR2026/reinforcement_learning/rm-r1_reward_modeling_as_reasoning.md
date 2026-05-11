@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RM-R1: Reward Modeling as Reasoning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Reward Model] This paper reframes reward modeling as a reasoning task, introducing the RM-R1 family of Reasoning Reward Models (ReasRM). Through reasoning distillation combined with RL training and a Chain-of-Rubrics (CoR) mechanism, RM-R1 outperforms 70B and GPT-4o models by an average of 4.9% across three major reward model benchmarks.
+  [ICLR 2026][Reinforcement Learning][Reward Model] This paper reframes reward modeling as a reasoning task, introducing the RM-R1 family of Reasoning Reward Models (ReasRM). Through reasoning distillation combined with RL…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Reward Model
-  - Reasoning
-  - Chain-of-Rubrics
-  - Generative Reward Model
-  - RLVR
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Reward Model"
+  - "Reasoning"
+  - "Chain-of-Rubrics"
+  - "Generative Reward Model"
+  - "RLVR"
 date: 2026-05-08
 content_hash: fac9e27c6d28db4b
 ---

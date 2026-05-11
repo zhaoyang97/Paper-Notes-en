@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] On Geometry-Enhanced Parameter-Efficient Fine-Tuning for 3D Scene Segmentation
 description: >-
-  [NeurIPS 2025][3D Vision][Parameter-Efficient Fine-Tuning] This paper proposes the Geometry Encoding Mixer (GEM), a geometry-aware PEFT module designed for 3D point cloud Transformers. It captures fine-grained local geometric details via a Spatial Adapter and injects global scene context via a Context Adapter, achieving performance on par with or exceeding full fine-tuning while updating only 1.6% of parameters.
+  [NeurIPS 2025][3D Vision][Parameter-Efficient Fine-Tuning] This paper proposes the Geometry Encoding Mixer (GEM), a geometry-aware PEFT module designed for 3D point cloud Transformers. It captures fine-grained local geom…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Parameter-Efficient Fine-Tuning
-  - Point Cloud Segmentation
-  - Geometry Encoding
-  - 3D Scene Understanding
-  - Transformer
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Point Cloud Segmentation"
+  - "Geometry Encoding"
+  - "3D Scene Understanding"
+  - "Transformer"
 date: 2026-05-08
 content_hash: 39163f55e1c5efe2
 ---

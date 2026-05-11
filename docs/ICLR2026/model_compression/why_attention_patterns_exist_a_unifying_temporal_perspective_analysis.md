@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Why Attention Patterns Exist: A Unifying Temporal Perspective Analysis
 description: >-
-  [ICLR 2026][Model Compression][attention patterns] This paper proposes the TAPPA framework, which explains the formation mechanisms of various attention patterns in LLMs (attention sink, diagonal, periodic, etc.) from a temporal continuity perspective in a unified manner, and leverages query self-similarity (q-similarity) as a metric to guide KV cache compression and model pruning tasks.
+  [ICLR 2026][Model Compression][attention patterns] This paper proposes the TAPPA framework, which explains the formation mechanisms of various attention patterns in LLMs (attention sink, diagonal, periodic…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - attention patterns
-  - temporal analysis
-  - RoPE
-  - query self-similarity
-  - KV cache compression
-  - LLM pruning
+  - "ICLR 2026"
+  - "Model Compression"
+  - "attention patterns"
+  - "temporal analysis"
+  - "RoPE"
+  - "query self-similarity"
+  - "KV cache compression"
+  - "LLM pruning"
 date: 2026-05-08
 content_hash: 89e6ff4e6e0e51e2
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Do Vision-Language Models Leak What They Learn? Adaptive Token-Weighted Model Inversion Attacks
 description: >-
-  [CVPR 2026][Multimodal VLM][Model inversion attack] This paper presents the first systematic study of model inversion (MI) attacks against VLMs, proposing a suite of inversion strategies tailored to token generation (TMI/TMI-C/SMI) and an adaptive attention-weighted method SMI-AW that dynamically weights token gradient contributions based on visual attention intensity. Evaluated across 4 VLMs and 3 datasets, SMI-AW achieves up to 61.21% human-evaluated attack accuracy, revealing severe training data privacy leakage risks in VLMs.
+  [CVPR 2026][Multimodal VLM][Model inversion attack] This paper presents the first systematic study of model inversion (MI) attacks against VLMs…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Model inversion attack
-  - VLM privacy leakage
-  - adaptive token weighting
-  - visual attention guidance
-  - training data reconstruction
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Model inversion attack"
+  - "VLM privacy leakage"
+  - "adaptive token weighting"
+  - "visual attention guidance"
+  - "training data reconstruction"
 date: 2026-05-08
 content_hash: 00c8f345ece398ad
 ---

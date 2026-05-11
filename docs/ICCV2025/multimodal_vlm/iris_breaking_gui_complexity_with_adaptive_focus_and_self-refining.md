@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Iris: Breaking GUI Complexity with Adaptive Focus and Self-Refining
 description: >-
-  [ICCV 2025][Multimodal VLM][GUI understanding] Iris introduces two core innovations — Information-Sensitive Cropping (ISC) and Self-Refining Dual Learning (SRDL) — achieving SOTA on multiple GUI understanding benchmarks with only 850K annotated samples, matching methods that use over 10× more data, while reducing inference time from 3 seconds to 1 second.
+  [ICCV 2025][Multimodal VLM][GUI understanding] Iris introduces two core innovations — Information-Sensitive Cropping (ISC) and Self-Refining Dual Learning (SRDL) — achieving SOTA on multiple GUI understanding benchmarks…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - GUI understanding
-  - visual agent
-  - information-sensitive cropping
-  - self-refining dual learning
-  - element grounding
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "GUI understanding"
+  - "visual agent"
+  - "information-sensitive cropping"
+  - "self-refining dual learning"
+  - "element grounding"
 date: 2026-05-08
 content_hash: f3cb5b2f37323798
 ---

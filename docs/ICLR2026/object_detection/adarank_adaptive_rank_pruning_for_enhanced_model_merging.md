@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AdaRank: Adaptive Rank Pruning for Enhanced Model Merging
 description: >-
-  [ICLR 2026][Object Detection][Model Merging] AdaRank is proposed to adaptively select singular components of task vectors via learnable binary masks (replacing heuristic top-k selection), combined with test-time entropy minimization, substantially alleviating inter-task interference in multi-task model merging and achieving 89.4% accuracy on ViT-B/32.
+  [ICLR 2026][Object Detection][Model Merging] AdaRank is proposed to adaptively select singular components of task vectors via learnable binary masks (replacing heuristic top-k selection)…
 tags:
-  - ICLR 2026
-  - Object Detection
-  - Model Merging
-  - SVD
-  - Task Vector
-  - Test-Time Adaptation
-  - Multi-Task Learning
+  - "ICLR 2026"
+  - "Object Detection"
+  - "Model Merging"
+  - "SVD"
+  - "Task Vector"
+  - "Test-Time Adaptation"
+  - "Multi-Task Learning"
 date: 2026-05-08
 content_hash: f21ba4713c9d3905
 ---

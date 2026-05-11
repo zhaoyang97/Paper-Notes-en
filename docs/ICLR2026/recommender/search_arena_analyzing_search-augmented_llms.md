@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Search Arena: Analyzing Search-Augmented LLMs
 description: >-
-  [ICLR 2026][Recommender Systems][search-augmented LLM] This paper presents Search Arena — the first large-scale human preference dataset for search-augmented LLMs (24,069 conversations + 12,652 preference votes, 71 languages). Key findings include: user preference is positively influenced by citation quantity even when citations do not support the claims; community-driven platforms are preferred over Wikipedia; search augmentation does not degrade general chat performance, whereas general-purpose LLMs degrade significantly in search scenarios.
+  [ICLR 2026][Recommender Systems][search-augmented LLM] This paper presents Search Arena — the first large-scale human preference dataset for search-augmented LLMs (24,069 conversations + 12,652 preference votes…
 tags:
-  - ICLR 2026
-  - Recommender Systems
-  - search-augmented LLM
-  - benchmark
-  - human preference
-  - citation analysis
-  - Chatbot Arena
+  - "ICLR 2026"
+  - "Recommender Systems"
+  - "search-augmented LLM"
+  - "benchmark"
+  - "human preference"
+  - "citation analysis"
+  - "Chatbot Arena"
 date: 2026-05-08
 content_hash: c4a60b5b46a8828b
 ---

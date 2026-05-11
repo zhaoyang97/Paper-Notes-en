@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Text to Robotic Assembly of Multi Component Objects using 3D Generative AI and Vision Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][VLM reasoning] This paper proposes an end-to-end pipeline that converts natural language input into 3D mesh models via 3D generative AI, then leverages zero-shot multimodal reasoning of VLMs to automatically decompose the mesh into multi-component 3D models (structural components + panel components), which are subsequently assembled into physical objects by a robotic arm. The system also supports interactive user feedback through dialogue to adjust component assignments.
+  [NeurIPS 2025][Multimodal VLM][VLM reasoning] This paper proposes an end-to-end pipeline that converts natural language input into 3D mesh models via 3D generative AI…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - VLM reasoning
-  - robotic assembly
-  - 3D generative AI
-  - multi-component objects
-  - human-robot collaboration
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "VLM reasoning"
+  - "robotic assembly"
+  - "3D generative AI"
+  - "multi-component objects"
+  - "human-robot collaboration"
 date: 2026-05-08
 content_hash: cb46c5009fcdb1e7
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MARCO: Navigating the Unseen Space of Semantic Correspondence
 description: >-
-  [CVPR 2026][3D Vision][Semantic Correspondence] This paper proposes MARCO, a semantic correspondence model built on a single DINOv2 backbone. It progressively improves spatial precision via a coarse-to-fine Gaussian RBF loss, and expands sparse keypoint supervision into dense pseudo-correspondence labels through a self-distillation framework. MARCO achieves state-of-the-art performance on standard benchmarks as well as on unseen keypoints and categories, while being 3× smaller and 10× faster than dual-encoder approaches.
+  [CVPR 2026][3D Vision][Semantic Correspondence] This paper proposes MARCO, a semantic correspondence model built on a single DINOv2 backbone. It progressively improves spatial precision via a coarse-to-fine Gaussian RBF…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Semantic Correspondence
-  - DINOv2
-  - Self-Distillation
-  - Coarse-to-Fine
-  - Generalization
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Semantic Correspondence"
+  - "DINOv2"
+  - "Self-Distillation"
+  - "Coarse-to-Fine"
+  - "Generalization"
 date: 2026-05-08
 content_hash: b09be64aea9493e0
 ---

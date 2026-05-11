@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UDC-VIT: A Real-World Video Dataset for Under-Display Cameras
 description: >-
-  [ICCV 2025][Human Understanding][Under-display camera] This paper presents UDC-VIT, the first real-world video dataset for under-display cameras (UDC), comprising 647 video clips with 116,460 frames in total. A carefully designed dual-camera beam-splitter acquisition system achieves precise spatiotemporal alignment. With face recognition as the primary application scenario, the dataset reveals the inadequacy of synthetic datasets in simulating real-world UDC degradation.
+  [ICCV 2025][Human Understanding][Under-display camera] This paper presents UDC-VIT, the first real-world video dataset for under-display cameras (UDC), comprising 647 video clips with 116…
 tags:
-  - ICCV 2025
-  - Human Understanding
-  - Under-display camera
-  - video dataset
-  - image degradation
-  - face recognition
-  - video restoration
+  - "ICCV 2025"
+  - "Human Understanding"
+  - "Under-display camera"
+  - "video dataset"
+  - "image degradation"
+  - "face recognition"
+  - "video restoration"
 date: 2026-05-08
 content_hash: 8dcea759d349eee9
 ---

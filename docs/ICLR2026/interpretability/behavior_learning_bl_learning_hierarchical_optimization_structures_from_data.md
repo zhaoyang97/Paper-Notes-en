@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Behavior Learning (BL): Learning Hierarchical Optimization Structures from Data
 description: >-
-  [ICLR 2026][Interpretable ML] Inspired by the utility maximization paradigm in behavioral science, this paper proposes the Behavior Learning (BL) framework, which models data as a Gibbs distribution induced by a hierarchical composition of interpretable, modular utility maximization problems (UMPs), achieving a unified balance among predictive performance, intrinsic interpretability, and parameter identifiability.
+  [ICLR 2026][Interpretability][Interpretable ML] Inspired by the utility maximization paradigm in behavioral science, this paper proposes the Behavior Learning (BL) framework…
 tags:
-  - ICLR 2026
-  - Interpretable ML
-  - Utility Maximization
-  - Hierarchical Optimization Structure
-  - Identifiability
-  - Gibbs Distribution
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Interpretable ML"
+  - "Utility Maximization"
+  - "Hierarchical Optimization Structure"
+  - "Identifiability"
+  - "Gibbs Distribution"
 date: 2026-05-08
 content_hash: 9534f1a8244e242b
 ---

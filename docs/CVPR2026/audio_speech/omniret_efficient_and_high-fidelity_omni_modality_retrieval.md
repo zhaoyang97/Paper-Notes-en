@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OmniRet: Efficient and High-Fidelity Omni Modality Retrieval
 description: >-
-  [CVPR 2026][Audio & Speech][omni-modal retrieval] This paper proposes OmniRet, the first unified retrieval model supporting composed queries across text, vision, and audio modalities. It introduces a Shared Media Resampler to improve computational efficiency and Attention Sliced Wasserstein Pooling (ASWP) to preserve fine-grained information, achieving state-of-the-art performance on 12 out of 13 retrieval tasks.
+  [CVPR 2026][Audio & Speech][omni-modal retrieval] This paper proposes OmniRet, the first unified retrieval model supporting composed queries across text, vision…
 tags:
-  - CVPR 2026
+  - "CVPR 2026"
   - "Audio & Speech"
-  - omni-modal retrieval
-  - multimodal embedding
-  - Sliced Wasserstein
-  - composed query
-  - audio retrieval
+  - "omni-modal retrieval"
+  - "multimodal embedding"
+  - "Sliced Wasserstein"
+  - "composed query"
+  - "audio retrieval"
 date: 2026-05-08
 content_hash: f95cf8672ced8c09
 ---

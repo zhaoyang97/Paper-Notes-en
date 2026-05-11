@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Diffusion Blend: Inference-Time Multi-Preference Alignment for Diffusion Models
 description: >-
-  [ICLR 2026][Image Generation][multi-preference alignment] This paper proposes Diffusion Blend, which achieves multi-preference alignment at inference time by blending the backward diffusion processes of multiple reward-finetuned models. DB-MPA supports arbitrary linear combinations of rewards; DB-KLA enables dynamic KL regularization control; DB-MPA-LS eliminates inference overhead via stochastic LoRA sampling. The paper theoretically derives error bounds for the blending approximation and empirically approaches the MORL oracle upper bound.
+  [ICLR 2026][Image Generation][multi-preference alignment] This paper proposes Diffusion Blend, which achieves multi-preference alignment at inference time by blending the backward diffusion processes of multiple reward-f…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - multi-preference alignment
-  - inference-time
-  - backward SDE blending
-  - KL regularization control
-  - Pareto-optimal
+  - "ICLR 2026"
+  - "Image Generation"
+  - "multi-preference alignment"
+  - "inference-time"
+  - "backward SDE blending"
+  - "KL regularization control"
+  - "Pareto-optimal"
 date: 2026-05-08
 content_hash: e84af13955db82a1
 ---

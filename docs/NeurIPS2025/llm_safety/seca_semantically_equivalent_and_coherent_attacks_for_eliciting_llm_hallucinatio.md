@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SECA: Semantically Equivalent and Coherent Attacks for Eliciting LLM Hallucinations
 description: >-
-  [NeurIPS 2025][LLM Safety][LLM hallucination] This paper proposes SECA (Semantically Equivalent and Coherent Attacks), a realistic prompt perturbation framework that elicits LLM hallucinations while preserving semantic equivalence and coherence, achieving higher attack success rates on multiple-choice QA tasks with near-zero semantic errors.
+  [NeurIPS 2025][LLM Safety][LLM hallucination] This paper proposes SECA (Semantically Equivalent and Coherent Attacks), a realistic prompt perturbation framework that elicits LLM hallucinations while preserving semantic e…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - LLM hallucination
-  - adversarial attack
-  - semantic equivalence
-  - zeroth-order optimization
-  - prompt robustness
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "LLM hallucination"
+  - "adversarial attack"
+  - "semantic equivalence"
+  - "zeroth-order optimization"
+  - "prompt robustness"
 date: 2026-05-08
 content_hash: ab0eeea39e653992
 ---

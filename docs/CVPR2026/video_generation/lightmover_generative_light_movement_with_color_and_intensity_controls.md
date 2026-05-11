@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LightMover: Generative Light Movement with Color and Intensity Controls
 description: >-
-  [CVPR 2026][Video Generation][Light source manipulation] LightMover leverages video diffusion priors to model light source editing as a sequence-to-sequence prediction problem. Through a unified control token representation, it achieves precise manipulation of light source position, color, and intensity. An adaptive token pruning mechanism reduces control sequence length by 41%, and the method outperforms existing approaches on both light movement and object movement tasks.
+  [CVPR 2026][Video Generation][Light source manipulation] LightMover leverages video diffusion priors to model light source editing as a sequence-to-sequence prediction problem. Through a unified control token representat…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Light source manipulation
-  - video diffusion models
-  - illumination editing
-  - adaptive token pruning
-  - physically rendered data
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Light source manipulation"
+  - "video diffusion models"
+  - "illumination editing"
+  - "adaptive token pruning"
+  - "physically rendered data"
 date: 2026-05-08
 content_hash: 9204fdfe1e5fa0ab
 ---

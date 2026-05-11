@@ -2,15 +2,16 @@
 title: >-
   [Paper Note] Additive Models Explained: A Computational Complexity Approach
 description: >-
-  [NeurIPS 2025][GAM] This paper presents a systematic computational complexity analysis of multiple explanation types for Generalized Additive Models (GAMs), covering 54 combinations of "component model × input domain × explanation method." It reveals that the explanation complexity of GAMs is highly sensitive to the type of input domain — a phenomenon never observed in other ML models such as decision trees or neural networks — thereby challenging the intuitive assumption that "additive implies interpretable."
+  [NeurIPS 2025][Interpretability][GAM] This paper presents a systematic computational complexity analysis of multiple explanation types for Generalized Additive Models (GAMs)…
 tags:
-  - NeurIPS 2025
-  - GAM
-  - Explainability
-  - Computational Complexity
-  - Shapley Values
-  - Sufficient Reasons
-  - Contrastive Explanations
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "GAM"
+  - "Explainability"
+  - "Computational Complexity"
+  - "Shapley Values"
+  - "Sufficient Reasons"
+  - "Contrastive Explanations"
 date: 2026-05-08
 content_hash: 21b3548e3414673d
 ---

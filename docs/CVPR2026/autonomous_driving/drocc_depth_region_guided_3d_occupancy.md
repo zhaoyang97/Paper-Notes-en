@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Dr.Occ: Depth- and Region-Guided 3D Occupancy from Surround-View Cameras for Autonomous Driving
 description: >-
-  [CVPR 2026][Autonomous Driving][occupancy prediction] This paper proposes Dr.Occ, a unified camera-only 3D occupancy prediction framework. It introduces a Depth-guided Dual-projection View Former (D2-VFormer) that leverages high-quality depth priors from MoGe-2 for accurate geometric alignment, and a Region-guided Expert Transformer (R-EFormer / R2-EFormer) that adaptively assigns spatial region experts to address semantic imbalance. Dr.Occ improves the BEVDet4D baseline by 7.43% mIoU on Occ3D-nuScenes.
+  [CVPR 2026][Autonomous Driving][occupancy prediction] This paper proposes Dr.Occ, a unified camera-only 3D occupancy prediction framework. It introduces a Depth-guided Dual-projection View Former (D2-VFormer) that levera…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - occupancy prediction
-  - depth guidance
-  - MoGe-2
-  - Mixture-of-Experts
-  - region-guided
-  - view transformation
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "occupancy prediction"
+  - "depth guidance"
+  - "MoGe-2"
+  - "Mixture-of-Experts"
+  - "region-guided"
+  - "view transformation"
 date: 2026-05-08
 content_hash: 059d2887bea99f69
 ---

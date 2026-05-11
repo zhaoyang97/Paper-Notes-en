@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Enhancing Spatial Understanding in Image Generation via Reward Modeling
 description: >-
-  [CVPR 2026][Image Generation][Spatial Understanding] The authors construct the SpatialReward-Dataset, an 80K adversarial preference dataset, to train SpatialScore—a reward model specifically for evaluating spatial relationship accuracy (outperforming GPT-5). By integrating a top-k filtering strategy with GRPO online RL, they significantly enhance the spatial generation capabilities of FLUX.1-dev.
+  [CVPR 2026][Image Generation][Spatial Understanding] The authors construct the SpatialReward-Dataset, an 80K adversarial preference dataset…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Spatial Understanding
-  - Reward Model
-  - GRPO
-  - Diffusion Models
-  - FLUX
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Spatial Understanding"
+  - "Reward Model"
+  - "GRPO"
+  - "Diffusion Models"
+  - "FLUX"
 date: 2026-05-08
 content_hash: f6dd507e0bd2111f
 ---

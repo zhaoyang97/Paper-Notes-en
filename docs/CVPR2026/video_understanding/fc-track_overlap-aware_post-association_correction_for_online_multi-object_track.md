@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FC-Track: Overlap-Aware Post-Association Correction for Online Multi-Object Tracking
 description: >-
-  [CVPR 2026][Video Understanding][Multi-object tracking] FC-Track is a lightweight post-association correction framework that explicitly corrects identity switch errors caused by target overlap in online MOT. It employs IoA (Intersection over Area)-based overlap-aware appearance feature filtering and a local mismatch reassignment strategy, reducing the long-term identity switch ratio to 29.55%.
+  [CVPR 2026][Video Understanding][Multi-object tracking] FC-Track is a lightweight post-association correction framework that explicitly corrects identity switch errors caused by target overlap in online MOT. It employs I…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Multi-object tracking
-  - identity switch correction
-  - overlap-aware
-  - post-association correction
-  - online tracking
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Multi-object tracking"
+  - "identity switch correction"
+  - "overlap-aware"
+  - "post-association correction"
+  - "online tracking"
 date: 2026-05-08
 content_hash: 4e7825438b46ccc6
 ---

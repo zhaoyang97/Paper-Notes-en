@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] One Stone with Two Birds: A Null-Text-Null Frequency-Aware Diffusion Models for Text-Guided Image Inpainting
 description: >-
-  [NeurIPS 2025][Image Generation][Text-guided image inpainting] NTN-Diff is a frequency-aware diffusion model that decomposes the global semantic consistency problem into per-band consistency tasks over mid-frequency and low-frequency components. By adopting a "null-text–text–null-text" three-stage denoising strategy, the method simultaneously addresses two longstanding challenges in text-guided image inpainting: preserving unmasked regions and maintaining semantic consistency between masked and unmasked areas.
+  [NeurIPS 2025][Image Generation][Text-guided image inpainting] NTN-Diff is a frequency-aware diffusion model that decomposes the global semantic consistency problem into per-band consistency tasks over mid-frequency and…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Text-guided image inpainting
-  - frequency-aware
-  - null-text denoising
-  - diffusion models
-  - semantic consistency
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Text-guided image inpainting"
+  - "frequency-aware"
+  - "null-text denoising"
+  - "diffusion models"
+  - "semantic consistency"
 date: 2026-05-08
 content_hash: f572c84fb04b6245
 ---

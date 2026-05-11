@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The Invisibility Hypothesis: Promises of AGI and the Future of the Global South
 description: >-
-  [ICLR 2026][AGI] This paper introduces the **Invisibility Hypothesis**, arguing that as AI systems increasingly serve as the coordination layer for economic and political allocation, they will systematically favor "machine-readable" individuals. Informal workers in the Global South, lacking digital verifiability, face **managed exclusion**. The central risk shifts from job displacement to **relevance loss**, and this exclusion is self-reinforcing.
+  [ICLR 2026][AGI] This paper introduces the **Invisibility Hypothesis**, arguing that as AI systems increasingly serve as the coordination layer for economic and political allocation…
 tags:
-  - ICLR 2026
-  - AGI
-  - Global South
-  - Invisibility Hypothesis
-  - economic inequality
-  - informal economy
-  - AI governance
+  - "ICLR 2026"
+  - "AGI"
+  - "Global South"
+  - "Invisibility Hypothesis"
+  - "economic inequality"
+  - "informal economy"
+  - "AI governance"
 date: 2026-05-08
 content_hash: b37ea4bfa518100e
 ---

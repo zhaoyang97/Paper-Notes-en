@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] NerVE: Nonlinear Eigenspectrum Dynamics in LLM Feed-Forward Networks
 description: >-
-  [ICLR 2026][Video Understanding][FFN Analysis] This paper proposes NerVE, a lightweight eigenspectrum analysis framework that systematically reveals, via four complementary metrics (Spectral Entropy, Participation Ratio, Eigenvalue Early Enrichment, and JS Divergence), how FFN nonlinearities in LLMs re-inject variance, reshape the eigenspectrum, and how architectural and optimizer choices imprint distinct spectral signatures.
+  [ICLR 2026][Video Understanding][FFN Analysis] This paper proposes NerVE, a lightweight eigenspectrum analysis framework that systematically reveals, via four complementary metrics (Spectral Entropy, Participation Ratio…
 tags:
-  - ICLR 2026
-  - Video Understanding
-  - FFN Analysis
-  - Eigenspectrum Dynamics
-  - Variance Re-injection
-  - Optimizer Geometry
-  - Spectral Diagnostics
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "FFN Analysis"
+  - "Eigenspectrum Dynamics"
+  - "Variance Re-injection"
+  - "Optimizer Geometry"
+  - "Spectral Diagnostics"
 date: 2026-05-08
 content_hash: e303b1ed03432297
 ---

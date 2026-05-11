@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Router-R1: Teaching LLMs Multi-Round Routing and Aggregation via Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][LLM routing] Router-R1 frames multi-LLM routing and aggregation as a sequential decision-making process, employing an LLM itself as the router to interleave *think* and *route* actions. Trained via PPO with a triple reward covering format, correctness, and cost, Router-R1 outperforms all router baselines across 7 QA benchmarks and generalizes to previously unseen LLMs.
+  [NeurIPS 2025][Reinforcement Learning][LLM routing] Router-R1 frames multi-LLM routing and aggregation as a sequential decision-making process…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - LLM routing
-  - multi-round interaction
-  - model coordination
-  - cost optimization
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "LLM routing"
+  - "multi-round interaction"
+  - "model coordination"
+  - "cost optimization"
 date: 2026-05-08
 content_hash: fe931c61f4d11b3d
 ---

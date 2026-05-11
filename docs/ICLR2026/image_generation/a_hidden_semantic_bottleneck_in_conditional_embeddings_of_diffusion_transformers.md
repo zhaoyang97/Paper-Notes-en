@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Hidden Semantic Bottleneck in Conditional Embeddings of Diffusion Transformers
 description: >-
-  [ICLR 2026][Image Generation][diffusion transformer] This paper presents the first systematic analysis of conditional embeddings in diffusion Transformers, revealing extreme angular similarity (inter-class cosine similarity >99%) and dimensional sparsity (only 1–2% of dimensions carry semantic information). Pruning 2/3 of low-magnitude dimensions leaves generation quality virtually unchanged, exposing a hidden semantic bottleneck in conditional embeddings.
+  [ICLR 2026][Image Generation][diffusion transformer] This paper presents the first systematic analysis of conditional embeddings in diffusion Transformers…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - diffusion transformer
-  - conditioning
-  - embedding sparsity
-  - cosine similarity
-  - AdaLN
+  - "ICLR 2026"
+  - "Image Generation"
+  - "diffusion transformer"
+  - "conditioning"
+  - "embedding sparsity"
+  - "cosine similarity"
+  - "AdaLN"
 date: 2026-05-08
 content_hash: ae7cc73750518cb6
 ---

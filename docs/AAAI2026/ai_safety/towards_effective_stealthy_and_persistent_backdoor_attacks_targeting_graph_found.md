@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Effective, Stealthy, and Persistent Backdoor Attacks Targeting Graph Foundation Models
 description: >-
-  [AAAI2026][AI Safety][backdoor attack] This paper proposes GFM-BA, the first systematic backdoor attack method targeting the pre-training phase of Graph Foundation Models (GFMs). It addresses three core challenges — effectiveness, stealthiness, and persistence — through three modules: label-free trigger association, node-adaptive trigger generation, and persistent backdoor anchoring.
+  [AAAI2026][AI Safety][backdoor attack] This paper proposes GFM-BA, the first systematic backdoor attack method targeting the pre-training phase of Graph Foundation Models (GFMs). It addresses three core challenges — effe…
 tags:
-  - AAAI2026
-  - AI Safety
-  - backdoor attack
-  - graph foundation model
-  - GNN security
-  - trigger generation
-  - adversarial ML
+  - "AAAI2026"
+  - "AI Safety"
+  - "backdoor attack"
+  - "graph foundation model"
+  - "GNN security"
+  - "trigger generation"
+  - "adversarial ML"
 date: 2026-05-08
 content_hash: 00a2f1c86bfc52e4
 ---

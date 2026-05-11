@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Weak-to-Strong Generalization under Distribution Shifts
 description: >-
-  [NeurIPS 2025][LLM/NLP][Weak-to-strong generalization] This paper demonstrates that naive weak-to-strong generalization fails under distribution shifts—where the strong model performs even worse than the weak supervisor—and proposes RAVEN, a framework that dynamically learns optimal combination weights over multiple weak models to achieve robust weak-to-strong generalization, surpassing baselines by over 30% on OOD tasks.
+  [NeurIPS 2025][LLM/NLP][Weak-to-strong generalization] This paper demonstrates that naive weak-to-strong generalization fails under distribution shifts—where the strong model performs even worse than the weak supervisor—…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - Weak-to-strong generalization
-  - distribution shift
-  - superhuman model supervision
-  - dynamic weight combination
-  - AI alignment
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "Weak-to-strong generalization"
+  - "distribution shift"
+  - "superhuman model supervision"
+  - "dynamic weight combination"
+  - "AI alignment"
 date: 2026-05-08
 content_hash: f3d69dc4d47ea4af
 ---

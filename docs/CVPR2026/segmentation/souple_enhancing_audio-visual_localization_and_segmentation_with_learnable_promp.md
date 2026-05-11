@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SouPLe: Enhancing Audio-Visual Localization and Segmentation with Learnable Prompt Contexts
 description: >-
-  [CVPR 2026][Segmentation][audio-visual localization] This paper proposes SouPLe (Sound-aware Prompt Learning), which replaces fixed text prompts in CLIP with learnable context tokens generated conditioned on image features, enhancing semantic correspondence between audio embedding tokens and visual features. SouPLe achieves +3.75 cIoU on VGG-SS and +6.32 cIoU in the open-set setting, surpassing all prior methods.
+  [CVPR 2026][Segmentation][audio-visual localization] This paper proposes SouPLe (Sound-aware Prompt Learning), which replaces fixed text prompts in CLIP with learnable context tokens generated conditioned on image featur…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - audio-visual localization
-  - prompt learning
-  - CLIP adaptation
-  - sound source segmentation
-  - contrastive learning
+  - "CVPR 2026"
+  - "Segmentation"
+  - "audio-visual localization"
+  - "prompt learning"
+  - "CLIP adaptation"
+  - "sound source segmentation"
+  - "contrastive learning"
 date: 2026-05-08
 content_hash: ca4b06a1c01c0886
 ---

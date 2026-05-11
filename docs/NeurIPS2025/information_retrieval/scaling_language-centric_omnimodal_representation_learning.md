@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Scaling Language-Centric Omnimodal Representation Learning
 description: >-
-  [NeurIPS 2025][Multimodal Representation Learning] This paper proposes the LCO-Emb framework and demonstrates that Multimodal Large Language Models (MLLMs) implicitly establish cross-modal alignment during generative pretraining. Lightweight text-only contrastive fine-tuning suffices to activate full omnimodal representation capabilities. The work further identifies the Generation-Representation Scaling Law (GRSL), which establishes a positive correlation between generative capability and representation performance.
+  [NeurIPS 2025][Information Retrieval & RAG][Multimodal Representation Learning] This paper proposes the LCO-Emb framework and demonstrates that Multimodal Large Language Models (MLLMs) implicitly establish cross-modal al…
 tags:
-  - NeurIPS 2025
-  - Multimodal Representation Learning
-  - Contrastive Learning
-  - MLLM Embedding
-  - Cross-Modal Alignment
-  - Generation-Representation Scaling Law
+  - "NeurIPS 2025"
+  - "Information Retrieval & RAG"
+  - "Multimodal Representation Learning"
+  - "Contrastive Learning"
+  - "MLLM Embedding"
+  - "Cross-Modal Alignment"
+  - "Generation-Representation Scaling Law"
 date: 2026-05-08
 content_hash: 4009484c4ee24902
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Guiding Diffusion-Based Articulated Object Generation by Partial Point Cloud Alignment and Physical Plausibility Constraints
 description: >-
-  [ICCV 2025][3D Vision][Articulated object generation] This paper proposes PhysNAP, which guides the reverse diffusion process of the pretrained diffusion model NAP via point cloud alignment loss and SDF-based physical plausibility constraints (part penetration and joint mobility), enabling category-aware articulated object generation with significant improvements in alignment accuracy and physical plausibility over the unguided baseline.
+  [ICCV 2025][3D Vision][Articulated object generation] This paper proposes PhysNAP, which guides the reverse diffusion process of the pretrained diffusion model NAP via point cloud alignment loss and SDF-based physical pl…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Articulated object generation
-  - diffusion models
-  - point cloud alignment
-  - physical constraints
-  - SDF
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Articulated object generation"
+  - "diffusion models"
+  - "point cloud alignment"
+  - "physical constraints"
+  - "SDF"
 date: 2026-05-08
 content_hash: b1c96c4724122eef
 ---

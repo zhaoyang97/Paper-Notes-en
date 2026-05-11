@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Bridging Granularity Gaps: Hierarchical Semantic Learning for Cross-Domain Few-Shot Segmentation
 description: >-
-  [AAAI 2026][Segmentation][Cross-domain few-shot segmentation] This paper proposes the HSL framework, which addresses the **segmentation granularity gap** between source and target domains in cross-domain few-shot segmentation (CD-FSS) via three modules — Dual Style Randomization (DSR), Hierarchical Semantic Mining (HSM), and Prototype Confidence-modulated Thresholding (PCMT) — achieving state-of-the-art performance across four target-domain datasets.
+  [AAAI 2026][Segmentation][Cross-domain few-shot segmentation] This paper proposes the HSL framework, which addresses the **segmentation granularity gap** between source and target domains in cross-domain few-shot segment…
 tags:
-  - AAAI 2026
-  - Segmentation
-  - Cross-domain few-shot segmentation
-  - hierarchical semantic learning
-  - style randomization
-  - superpixel
-  - prototype confidence
+  - "AAAI 2026"
+  - "Segmentation"
+  - "Cross-domain few-shot segmentation"
+  - "hierarchical semantic learning"
+  - "style randomization"
+  - "superpixel"
+  - "prototype confidence"
 date: 2026-05-08
 content_hash: bffe429f7d69b43d
 ---

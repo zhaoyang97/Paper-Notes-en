@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Smooth Regularization for Efficient Video Recognition
 description: >-
-  [NeurIPS 2025][Model Compression][Video Recognition] This paper proposes a Gaussian Random Walk (GRW)-based smooth regularization technique that imposes temporal smoothness constraints (penalizing high-acceleration changes) on intermediate-layer embeddings of video recognition models, achieving 3.8%–6.4% accuracy improvements on lightweight models and establishing a new state of the art on Kinetics-600 under corresponding FLOP constraints.
+  [NeurIPS 2025][Model Compression][Video Recognition] This paper proposes a Gaussian Random Walk (GRW)-based smooth regularization technique that imposes temporal smoothness constraints (penalizing high-acceleration chang…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Video Recognition
-  - Smooth Regularization
-  - Gaussian Random Walk
-  - Lightweight Models
-  - Temporal Inductive Bias
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Video Recognition"
+  - "Smooth Regularization"
+  - "Gaussian Random Walk"
+  - "Lightweight Models"
+  - "Temporal Inductive Bias"
 date: 2026-05-08
 content_hash: f3e1451a89f3a05c
 ---

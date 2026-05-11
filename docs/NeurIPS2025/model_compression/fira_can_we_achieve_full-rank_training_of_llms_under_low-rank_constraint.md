@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FiRA: Can We Achieve Full-Rank Training of LLMs Under Low-Rank Constraint?
 description: >-
-  [NeurIPS 2025][Model Compression][low-rank training] This paper proposes Fira, the first LLM training framework that achieves full-rank training (full-rank gradients + full-rank weights) under low-rank constraints. By observing that the optimizer scaling factors in low-rank and full-rank training are highly similar, Fira approximates the correction of out-of-subspace gradients using low-rank scaling factors, and employs a norm-growth limiter to prevent loss spikes. Fira outperforms LoRA and GaLore in both pretraining and fine-tuning settings.
+  [NeurIPS 2025][Model Compression][low-rank training] This paper proposes Fira, the first LLM training framework that achieves full-rank training (full-rank gradients + full-rank weights) under low-rank constraints. By ob…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - low-rank training
-  - memory-efficient
-  - full-rank gradient
-  - Adam optimizer
-  - gradient projection
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "low-rank training"
+  - "memory-efficient"
+  - "full-rank gradient"
+  - "Adam optimizer"
+  - "gradient projection"
 date: 2026-05-08
 content_hash: 4a9026915543ff2a
 ---

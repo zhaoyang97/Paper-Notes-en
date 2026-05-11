@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] When Agents Persuade: Propaganda Generation and Mitigation in LLMs
 description: >-
-  [ICLR 2026][Robotics][propaganda generation] This paper systematically investigates propaganda generation behavior in LLMs, training dedicated detectors to quantify the use of six rhetorical techniques across three LLMs. Results show that all LLMs can generate propaganda and heavily rely on Loaded Language and Flag-Waving. Three fine-tuning approaches (SFT/DPO/ORPO) are employed for mitigation, with ORPO reducing the propaganda classification rate from 77% to 10% and decreasing rhetorical technique usage by 13.4×.
+  [ICLR 2026][Robotics][propaganda generation] This paper systematically investigates propaganda generation behavior in LLMs, training dedicated detectors to quantify the use of six rhetorical techniques across three LLMs.…
 tags:
-  - ICLR 2026
-  - Robotics
-  - propaganda generation
-  - rhetorical techniques
-  - ORPO
-  - LLM safety
-  - content moderation
+  - "ICLR 2026"
+  - "Robotics"
+  - "propaganda generation"
+  - "rhetorical techniques"
+  - "ORPO"
+  - "LLM safety"
+  - "content moderation"
 date: 2026-05-08
 content_hash: 747d220780f8e18d
 ---

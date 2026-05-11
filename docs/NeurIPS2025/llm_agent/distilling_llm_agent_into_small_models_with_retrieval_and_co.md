@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Distilling LLM Agent into Small Models with Retrieval and Code Tools
 description: >-
-  [NeurIPS 2025][LLM Agent][agent distillation] This paper proposes an Agent Distillation framework that distills the complete reason-act-observe interactive behaviors of LLM agents (rather than static CoT) into small models ranging from 0.5B to 7B parameters. Combined with a first-thought prefix to improve teacher trajectory quality and self-consistent action generation to enhance inference robustness, the framework enables small models to achieve performance comparable to CoT-distilled models 2–4× their size.
+  [NeurIPS 2025][LLM Agent][agent distillation] This paper proposes an Agent Distillation framework that distills the complete reason-act-observe interactive behaviors of LLM agents (rather than static CoT) into small mode…
 tags:
-  - NeurIPS 2025
-  - LLM Agent
-  - agent distillation
-  - first-thought prefix
-  - self-consistent action generation
-  - small language model
-  - CodeAct
+  - "NeurIPS 2025"
+  - "LLM Agent"
+  - "agent distillation"
+  - "first-thought prefix"
+  - "self-consistent action generation"
+  - "small language model"
+  - "CodeAct"
 date: 2026-05-08
 content_hash: e7808a519a89a0ee
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CodeCrash: Exposing LLM Fragility to Misleading Natural Language in Code Reasoning
 description: >-
-  [NeurIPS 2025][Medical Imaging][LLM robustness] This paper proposes CodeCrash, a stress-testing framework that systematically evaluates the code reasoning robustness of 17 LLMs through functionally equivalent structural perturbations and misleading natural language injections (comments, print statements, and hints). The framework reveals an average performance drop of 23.2% across models, with CoT recovering only to 13.8%, and is the first to identify the "Reasoning Collapse" phenomenon in large reasoning models (LRMs).
+  [NeurIPS 2025][Medical Imaging][LLM robustness] This paper proposes CodeCrash, a stress-testing framework that systematically evaluates the code reasoning robustness of 17 LLMs through functionally equivalent structural…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - LLM robustness
-  - code reasoning
-  - natural language perturbation
-  - reasoning collapse
-  - benchmark
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "LLM robustness"
+  - "code reasoning"
+  - "natural language perturbation"
+  - "reasoning collapse"
+  - "benchmark"
 date: 2026-05-08
 content_hash: 2d2b0cfe444b08d1
 ---

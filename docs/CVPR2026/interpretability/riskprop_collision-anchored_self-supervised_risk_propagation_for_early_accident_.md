@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] RiskProp: Collision-Anchored Self-Supervised Risk Propagation for Early Accident Anticipation
 description: >-
-  [CVPR 2026][Accident Anticipation] This paper proposes RiskProp, a collision-anchored self-supervised risk propagation paradigm that learns temporally coherent risk evolution curves using only collision-frame annotations, via a future-frame regularization loss and an adaptive monotonicity constraint loss, achieving state-of-the-art performance on the CAP and Nexar datasets.
+  [CVPR 2026][Interpretability][Accident Anticipation] This paper proposes RiskProp, a collision-anchored self-supervised risk propagation paradigm that learns temporally coherent risk evolution curves using only collision…
 tags:
-  - CVPR 2026
-  - Accident Anticipation
-  - Self-Supervised Risk Propagation
-  - Temporal Modeling
-  - Monotonicity Constraint
-  - Dashcam
+  - "CVPR 2026"
+  - "Interpretability"
+  - "Accident Anticipation"
+  - "Self-Supervised Risk Propagation"
+  - "Temporal Modeling"
+  - "Monotonicity Constraint"
+  - "Dashcam"
 date: 2026-05-08
 content_hash: 2834e4111234c0a4
 ---

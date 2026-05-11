@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Adaptive Auxiliary Prompt Blending for Target-Faithful Diffusion Generation
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Models] This paper proposes Adaptive Auxiliary Prompt Blending (AAPB), which derives a closed-form adaptive blending coefficient via the Tweedie formula to dynamically balance the contributions of an auxiliary anchor prompt and a target prompt at each denoising step. Without any training, AAPB significantly improves semantic accuracy and structural fidelity for both rare concept generation and zero-shot image editing.
+  [CVPR 2026][Image Generation][Diffusion Models] This paper proposes Adaptive Auxiliary Prompt Blending (AAPB), which derives a closed-form adaptive blending coefficient via the Tweedie formula to dynamically balance the…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Models
-  - Text-to-Image Generation
-  - Rare Concept Generation
-  - Image Editing
-  - Adaptive Prompt Blending
-  - Tweedie Formula
-  - Classifier-Free Guidance
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "Text-to-Image Generation"
+  - "Rare Concept Generation"
+  - "Image Editing"
+  - "Adaptive Prompt Blending"
+  - "Tweedie Formula"
+  - "Classifier-Free Guidance"
 date: 2026-05-08
 content_hash: d1266b4e2ba7f69c
 ---

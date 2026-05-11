@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multi-Task Reinforcement Learning for Enhanced Multimodal LLM-as-a-Judge
 description: >-
-  [ACL 2026][Multimodal VLM][MLLM-as-a-Judge] This paper proposes MT-RL-Judge, a multi-task reinforcement learning framework that jointly optimizes multiple evaluation tasks via GRPO to train a unified MLLM-as-a-Judge model. The framework consistently outperforms SFT baselines across six benchmarks covering text-image alignment, safety compliance, and visual quality assessment, and demonstrates strong out-of-distribution generalization on the unseen MJ-Bench pairwise comparison format (82.23% on Safety vs. 49.40% for SFT-Unified).
+  [ACL 2026][Multimodal VLM][MLLM-as-a-Judge] This paper proposes MT-RL-Judge, a multi-task reinforcement learning framework that jointly optimizes multiple evaluation tasks via GRPO to train a unified MLLM-as-a-Judge mode…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - MLLM-as-a-Judge
-  - multi-task reinforcement learning
-  - GRPO
-  - unified evaluation
-  - out-of-distribution generalization
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "MLLM-as-a-Judge"
+  - "multi-task reinforcement learning"
+  - "GRPO"
+  - "unified evaluation"
+  - "out-of-distribution generalization"
 date: 2026-05-08
 content_hash: 9462c8a8564a86f5
 ---

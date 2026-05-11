@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Aggregating Diverse Cue Experts for AI-Generated Image Detection
 description: >-
-  [AAAI 2026][Image Generation][AI-generated image detection] This paper proposes the Multi-Cue Aggregation Network (MCAN), which unifies three complementary cues — raw image, high-frequency representation, and a newly introduced Chromaticity Inconsistency (CI) — through a Mixture-of-Encoder Adapter (MoEA), enabling robust AI-generated image detection that generalizes across diverse generative models.
+  [AAAI 2026][Image Generation][AI-generated image detection] This paper proposes the Multi-Cue Aggregation Network (MCAN), which unifies three complementary cues — raw image, high-frequency representation…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - AI-generated image detection
-  - multi-cue fusion
-  - chromaticity inconsistency
-  - mixture of experts
-  - CLIP fine-tuning
+  - "AAAI 2026"
+  - "Image Generation"
+  - "AI-generated image detection"
+  - "multi-cue fusion"
+  - "chromaticity inconsistency"
+  - "mixture of experts"
+  - "CLIP fine-tuning"
 date: 2026-05-08
 content_hash: ff5474e8fba037ce
 ---

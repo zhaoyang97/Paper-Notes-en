@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Parameterized Approximation Algorithms for TSP on Non-Metric Graphs
 description: >-
-  [AAAI 2026][Travelling Salesman Problem] This paper proposes improved FPT approximation algorithms for the Travelling Salesman Problem (TSP) on non-metric graphs, parameterized by $p$ (the number of vertices involved in triangle inequality violations) and $q$ (the size of a minimum violation set), improving the approximation ratio under parameter $p$ from 2.5 to 1.5 and under parameter $q$ from 11 to 3.
+  [AAAI 2026][Travelling Salesman Problem] This paper proposes improved FPT approximation algorithms for the Travelling Salesman Problem (TSP) on non-metric graphs…
 tags:
-  - AAAI 2026
-  - Travelling Salesman Problem
-  - parameterized approximation algorithms
-  - non-metric graphs
-  - fixed-parameter tractability
-  - triangle inequality
+  - "AAAI 2026"
+  - "Travelling Salesman Problem"
+  - "parameterized approximation algorithms"
+  - "non-metric graphs"
+  - "fixed-parameter tractability"
+  - "triangle inequality"
 date: 2026-05-08
 content_hash: d66da98e7f061bc7
 ---

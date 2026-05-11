@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Online Prediction of Stochastic Sequences with High Probability Regret Bounds
 description: >-
-  [ICLR 2026][Reinforcement Learning][Online prediction] This paper revisits the classical problem of universal prediction of stochastic sequences over a finite horizon $T$, and establishes, for the first time, vanishing regret bounds that hold with high probability in the form $O(T^{-1/2}\delta^{-1/2})$. These bounds closely mirror the existing expected regret bound of $O(T^{-1/2})$, and the paper further proves that the exponent of $\delta$ cannot be improved without additional assumptions.
+  [ICLR 2026][Reinforcement Learning][Online prediction] This paper revisits the classical problem of universal prediction of stochastic sequences over a finite horizon $T$, and establishes, for the first time…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Online prediction
-  - stochastic sequences
-  - high-probability regret bounds
-  - universal prediction
-  - countable alphabet
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Online prediction"
+  - "stochastic sequences"
+  - "high-probability regret bounds"
+  - "universal prediction"
+  - "countable alphabet"
 date: 2026-05-08
 content_hash: b2633981e177e7d7
 ---

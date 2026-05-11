@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Why Does It Look There? Structured Explanations for Image Classification
 description: >-
-  [CVPR 2026][Structured Explanations] This paper proposes the I2X framework, which transforms unstructured explainability (saliency maps) into structured explanations by tracking the co-evolution of prototype intensity extracted via GradCAM and model confidence across training checkpoints. The framework reveals the reasoning structure underlying "why the model attends to a specific region" and leverages this understanding to guide fine-tuning for performance improvement.
+  [CVPR 2026][Interpretability][Structured Explanations] This paper proposes the I2X framework, which transforms unstructured explainability (saliency maps) into structured explanations by tracking the co-evolution of prot…
 tags:
-  - CVPR 2026
-  - Structured Explanations
-  - Prototypes
-  - GradCAM
-  - Model Training Dynamics
-  - XAI
+  - "CVPR 2026"
+  - "Interpretability"
+  - "Structured Explanations"
+  - "Prototypes"
+  - "GradCAM"
+  - "Model Training Dynamics"
+  - "XAI"
 date: 2026-05-08
 content_hash: 561a014237914675
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] End-to-End Optimization of LLM-Driven Multi-Agent Search Systems via Heterogeneous-Group-Based Reinforcement Learning
 description: >-
-  [ACL 2026][Multi-Agent Search] This paper proposes MHGPO (Multi-Agent Heterogeneous Group Policy Optimization), a critic-free multi-agent RL method that achieves end-to-end optimization in a three-agent search system (Rewriter→Reranker→Answerer) through heterogeneous-group relative advantage estimation and backward reward propagation. The method captures implicit cross-agent dependencies and cross-trajectory correlations, significantly outperforming MAPPO and GRPO baselines on multi-hop QA benchmarks such as HotpotQA.
+  [ACL 2026][Information Retrieval & RAG][Multi-Agent Search] This paper proposes MHGPO (Multi-Agent Heterogeneous Group Policy Optimization), a critic-free multi-agent RL method that achieves end-to-end optimization in a…
 tags:
-  - ACL 2026
-  - Multi-Agent Search
-  - MARL
-  - Group Optimization
-  - End-to-End Optimization
-  - RAG
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Multi-Agent Search"
+  - "MARL"
+  - "Group Optimization"
+  - "End-to-End Optimization"
+  - "RAG"
 date: 2026-05-08
 content_hash: 9af32f22231684f6
 ---

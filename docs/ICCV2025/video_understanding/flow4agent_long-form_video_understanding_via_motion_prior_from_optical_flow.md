@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Flow4Agent: Long-form Video Understanding via Motion Prior from Optical Flow
 description: >-
-  [ICCV 2025][Video Understanding][long-form video understanding] Flow4Agent is the first work to introduce optical flow motion priors into LLM-based video understanding. It employs Temporal Granularity Optimization (TGO) to cluster video events via coarse-grained optical flow and filter redundant scenes using semantic priors, and Motion Token Pruning (MTP) to remove intra-frame static redundant tokens via fine-grained optical flow. The method achieves state-of-the-art performance on long-video benchmarks including VideoMME, MLVU, and LongVideoBench.
+  [ICCV 2025][Video Understanding][long-form video understanding] Flow4Agent is the first work to introduce optical flow motion priors into LLM-based video understanding. It employs Temporal Granularity Optimization (TGO)…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - long-form video understanding
-  - optical flow
-  - motion prior
-  - token pruning
-  - MLLM
-  - temporal granularity
-  - key content extraction
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "long-form video understanding"
+  - "optical flow"
+  - "motion prior"
+  - "token pruning"
+  - "MLLM"
+  - "temporal granularity"
+  - "key content extraction"
 date: 2026-05-08
 content_hash: 82eba601adafb04d
 ---

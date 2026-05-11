@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HccePose(BF): Predicting Front & Back Surfaces to Construct Ultra-Dense 2D-3D Correspondences for Pose Estimation
 description: >-
-  [ICCV 2025][Human Understanding][pose estimation] This paper proposes simultaneously predicting the 3D coordinates of both the front and back surfaces of an object and densely sampling between the two surfaces to construct ultra-dense 2D-3D correspondences. Combined with a novel Hierarchical Continuous Coordinate Encoding (HCCE), the method surpasses existing state-of-the-art approaches on all seven core BOP benchmark datasets.
+  [ICCV 2025][Human Understanding][pose estimation] This paper proposes simultaneously predicting the 3D coordinates of both the front and back surfaces of an object and densely sampling between the two surfaces to constru…
 tags:
-  - ICCV 2025
-  - Human Understanding
-  - pose estimation
-  - 2D-3D correspondences
+  - "ICCV 2025"
+  - "Human Understanding"
+  - "pose estimation"
+  - "2D-3D correspondences"
   - "front & back surface prediction"
-  - hierarchical continuous encoding
-  - PnP
+  - "hierarchical continuous encoding"
+  - "PnP"
 date: 2026-05-08
 content_hash: 356c98f42f15144a
 ---

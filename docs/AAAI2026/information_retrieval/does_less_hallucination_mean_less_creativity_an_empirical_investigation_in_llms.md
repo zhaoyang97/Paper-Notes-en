@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Does Less Hallucination Mean Less Creativity? An Empirical Investigation in LLMs
 description: >-
-  [AAAI 2026][Hallucination Mitigation] This paper systematically investigates how three hallucination mitigation methods (CoVe, DoLa, RAG) affect LLM creativity, finding that they exert diametrically opposite effects on divergent creativity—CoVe enhances it, DoLa suppresses it, and RAG has no significant impact—while convergent creativity remains largely unaffected. These patterns hold consistently across model families and parameter scales.
+  [AAAI 2026][Information Retrieval & RAG][Hallucination Mitigation] This paper systematically investigates how three hallucination mitigation methods (CoVe, DoLa, RAG) affect LLM creativity…
 tags:
-  - AAAI 2026
-  - Hallucination Mitigation
-  - Creativity
-  - LLM
-  - Divergent Thinking
-  - Convergent Thinking
+  - "AAAI 2026"
+  - "Information Retrieval & RAG"
+  - "Hallucination Mitigation"
+  - "Creativity"
+  - "LLM"
+  - "Divergent Thinking"
+  - "Convergent Thinking"
 date: 2026-05-08
 content_hash: b74355fa47b354fc
 ---

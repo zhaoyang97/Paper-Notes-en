@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Co-Layout: LLM-driven Co-optimization for Interior Layout
 description: >-
-  [AAAI 2026][Optimization][Interior layout] This paper proposes Co-Layout, a framework that leverages LLMs to extract structured constraints from natural language descriptions, then jointly optimizes room layout and furniture placement via a grid-based integer programming (IP) formulation augmented with a coarse-to-fine solving strategy, substantially outperforming existing two-stage approaches.
+  [AAAI 2026][Optimization][Interior layout] This paper proposes Co-Layout, a framework that leverages LLMs to extract structured constraints from natural language descriptions…
 tags:
-  - AAAI 2026
-  - Optimization
-  - Interior layout
-  - integer programming
-  - large language models
-  - co-optimization
-  - coarse-to-fine strategy
+  - "AAAI 2026"
+  - "Optimization"
+  - "Interior layout"
+  - "integer programming"
+  - "large language models"
+  - "co-optimization"
+  - "coarse-to-fine strategy"
 date: 2026-05-08
 content_hash: 90482c16b793187f
 ---

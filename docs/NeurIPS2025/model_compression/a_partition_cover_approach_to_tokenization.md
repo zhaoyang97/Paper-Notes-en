@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Partition Cover Approach for Tokenization
 description: >-
-  [NeurIPS 2025][Model Compression][tokenization] This paper reformulates tokenization as a **partition cover** optimization problem, proves it NP-hard, and proposes a polynomial-time greedy algorithm GreedTok that outperforms BPE in both compression rate and downstream tasks when pretraining a 1B-parameter LLM.
+  [NeurIPS 2025][Model Compression][tokenization] This paper reformulates tokenization as a **partition cover** optimization problem, proves it NP-hard…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - tokenization
-  - BPE
-  - partition cover
-  - NP-hard
-  - greedy algorithm
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "tokenization"
+  - "BPE"
+  - "partition cover"
+  - "NP-hard"
+  - "greedy algorithm"
 date: 2026-05-08
 content_hash: 12353c306c3b6c03
 ---

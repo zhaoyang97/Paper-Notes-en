@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] On Minimax Estimation of Parameters in Softmax-Contaminated Mixture of Experts
 description: >-
-  [NeurIPS 2025][Optimization][Mixture of Experts] This paper presents the first systematic theoretical analysis of contaminated MoE models with softmax gating. It introduces the distinguishability condition, proving that MLE achieves the minimax-optimal parametric rate $\widetilde{\mathcal{O}}(n^{-1/2})$ when the condition holds, and revealing the fundamental mechanism behind significantly degraded estimation rates when the condition fails (i.e., when prompt and pretrained model knowledge overlap).
+  [NeurIPS 2025][Optimization][Mixture of Experts] This paper presents the first systematic theoretical analysis of contaminated MoE models with softmax gating. It introduces the distinguishability condition…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Mixture of Experts
-  - Parameter Estimation
-  - Minimax Optimality
-  - Distinguishability
-  - Fine-Tuning Theory
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Mixture of Experts"
+  - "Parameter Estimation"
+  - "Minimax Optimality"
+  - "Distinguishability"
+  - "Fine-Tuning Theory"
 date: 2026-05-08
 content_hash: f69ea5332e09976a
 ---

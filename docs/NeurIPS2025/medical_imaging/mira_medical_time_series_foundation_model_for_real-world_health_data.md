@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MIRA: Medical Time Series Foundation Model for Real-World Health Data
 description: >-
-  [NeurIPS 2025][Medical Imaging][Time series foundation model] This paper presents MIRA, a foundation model specifically designed for irregular medical time series. Through continuous-time rotary position encoding (CT-RoPE), frequency-specific Mixture-of-Experts (MoE), and a Neural ODE-based extrapolation module, MIRA is pretrained on 454 billion observation points and achieves zero-shot forecasting performance that reduces average error by 8% and 6% in OOD and in-distribution (ID) settings, respectively.
+  [NeurIPS 2025][Medical Imaging][Time series foundation model] This paper presents MIRA, a foundation model specifically designed for irregular medical time series. Through continuous-time rotary position encoding (CT-RoP…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Time series foundation model
-  - irregular sampling
-  - medical signals
-  - Neural ODE
-  - Mixture-of-Experts
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Time series foundation model"
+  - "irregular sampling"
+  - "medical signals"
+  - "Neural ODE"
+  - "Mixture-of-Experts"
 date: 2026-05-08
 content_hash: 23c3e7c4d708e176
 ---

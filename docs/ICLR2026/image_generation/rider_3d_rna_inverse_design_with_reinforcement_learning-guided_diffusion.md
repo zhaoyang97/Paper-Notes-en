@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RIDER: 3D RNA Inverse Design with Reinforcement Learning-Guided Diffusion
 description: >-
-  [ICLR 2026][Image Generation][RNA inverse design] This paper proposes RIDER, the first framework to incorporate reinforcement learning into 3D RNA inverse design. It first pretrains a conditional diffusion model (RIDE) to learn sequence–structure relationships, then applies RL fine-tuning to directly optimize 3D structural similarity rather than native sequence recovery rate, achieving over 100% improvement across all 3D self-consistency metrics.
+  [ICLR 2026][Image Generation][RNA inverse design] This paper proposes RIDER, the first framework to incorporate reinforcement learning into 3D RNA inverse design. It first pretrains a conditional diffusion model (RIDE) t…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - RNA inverse design
-  - 3D structural similarity
-  - diffusion model
-  - RL fine-tuning
-  - DDPO
+  - "ICLR 2026"
+  - "Image Generation"
+  - "RNA inverse design"
+  - "3D structural similarity"
+  - "diffusion model"
+  - "RL fine-tuning"
+  - "DDPO"
 date: 2026-05-08
 content_hash: d4d7f2dfbd221055
 ---

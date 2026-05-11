@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MIP against Agent: Malicious Image Patches Hijacking Multimodal OS Agents
 description: >-
-  [NeurIPS 2025][Robotics][adversarial attack] This paper reveals a novel adversarial attack against multimodal OS Agents, termed MIP (Malicious Image Patches): visually imperceptible adversarial perturbation patches (occupying approximately 1/7 of the screen area) are embedded in screenshots, causing the OS Agent to output a predefined sequence of malicious API calls upon capture. Joint optimization enables universal generalization across user instructions and screen layouts, achieving an attack success rate of up to 100%.
+  [NeurIPS 2025][Robotics][adversarial attack] This paper reveals a novel adversarial attack against multimodal OS Agents, termed MIP (Malicious Image Patches): visually imperceptible adversarial perturbation patches (occu…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - adversarial attack
-  - OS agent
-  - malicious image patch
-  - VLM security
-  - computer worm
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "adversarial attack"
+  - "OS agent"
+  - "malicious image patch"
+  - "VLM security"
+  - "computer worm"
 date: 2026-05-08
 content_hash: 641b55838de69ed3
 ---

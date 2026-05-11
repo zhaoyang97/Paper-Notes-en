@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Instruction-Oriented Preference Alignment for Enhancing Multi-Modal Comprehension Capability of MLLMs
 description: >-
-  [ICCV 2025][Multimodal VLM][Multimodal large language models] This paper proposes the **Instruction-oriented Preference Alignment (IPA)** framework, which anchors alignment signals to **instruction completion efficacy** rather than hallucination factors alone, via an automated preference construction mechanism and a progressive preference data collection pipeline. IPA achieves consistent improvements on Qwen2VL-7B across 9 benchmarks spanning hallucination evaluation, general VQA, and text comprehension.
+  [ICCV 2025][Multimodal VLM][Multimodal large language models] This paper proposes the **Instruction-oriented Preference Alignment (IPA)** framework…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Multimodal large language models
-  - preference alignment
-  - instruction following
-  - DPO
-  - hallucination mitigation
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Multimodal large language models"
+  - "preference alignment"
+  - "instruction following"
+  - "DPO"
+  - "hallucination mitigation"
 date: 2026-05-08
 content_hash: 953bd787eafa06c6
 ---

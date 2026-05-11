@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Strict Subgoal Execution: Reliable Long-Horizon Planning in Hierarchical Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Hierarchical RL] This paper proposes SSE (Strict Subgoal Execution), a framework that strictly distinguishes between successful and failed subgoal reaching via **Frontier Experience Replay (FER)**, combined with a decoupled exploration policy and failure-aware path optimization. By enforcing subgoal completion within each high-level step, SSE substantially reduces the number of high-level decisions and improves success rates on long-horizon tasks.
+  [ICLR 2026][Reinforcement Learning][Hierarchical RL] This paper proposes SSE (Strict Subgoal Execution), a framework that strictly distinguishes between successful and failed subgoal reaching via **Frontier Experience Re…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Hierarchical RL
-  - Subgoal Execution
-  - Graph Planning
-  - Frontier Experience Replay
-  - Long-Horizon Tasks
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Hierarchical RL"
+  - "Subgoal Execution"
+  - "Graph Planning"
+  - "Frontier Experience Replay"
+  - "Long-Horizon Tasks"
 date: 2026-05-08
 content_hash: 7c0f069e26f949b6
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OmniHuman-1: Rethinking the Scaling-Up of One-Stage Conditioned Human Animation Models
 description: >-
-  [ICCV 2025][Video Generation][human animation] This paper proposes OmniHuman, a multi-condition human animation generation framework based on Diffusion Transformer. Through an omni-conditions training strategy that mixes motion-related conditions including text, audio, and pose, the framework enables effective data scaling. It is the first single model to support audio-driven human video generation with arbitrary body proportions and aspect ratios, achieving state-of-the-art performance on both portrait and half-body animation tasks.
+  [ICCV 2025][Video Generation][human animation] This paper proposes OmniHuman, a multi-condition human animation generation framework based on Diffusion Transformer. Through an omni-conditions training strategy that mixes…
 tags:
-  - ICCV 2025
-  - Video Generation
-  - human animation
-  - diffusion transformer
-  - audio-driven
-  - omni-conditions training
-  - data scaling
+  - "ICCV 2025"
+  - "Video Generation"
+  - "human animation"
+  - "diffusion transformer"
+  - "audio-driven"
+  - "omni-conditions training"
+  - "data scaling"
 date: 2026-05-08
 content_hash: d06261000fa3875a
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Mitigating Extrinsic Gender Bias for Bangla Classification Tasks
 description: >-
-  [ACL 2026][gender bias mitigation] To address extrinsic gender bias in pretrained language models applied to Bangla downstream classification tasks, this paper proposes RandSymKL, a method that jointly optimizes randomized cross-entropy loss and symmetric KL divergence to effectively reduce gender prediction disparities while maintaining classification accuracy.
+  [ACL 2026][Multilingual & Machine Translation][gender bias mitigation] To address extrinsic gender bias in pretrained language models applied to Bangla downstream classification tasks, this paper proposes RandSymKL…
 tags:
-  - ACL 2026
-  - gender bias mitigation
-  - Bangla NLP
-  - KL divergence regularization
-  - counterfactual data augmentation
-  - classification fairness
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "gender bias mitigation"
+  - "Bangla NLP"
+  - "KL divergence regularization"
+  - "counterfactual data augmentation"
+  - "classification fairness"
 date: 2026-05-08
 content_hash: 1d80c77cef3dce1b
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] It's LIT! Reliability-Optimized LLMs with Inspectable Tools
 description: >-
-  [NeurIPS 2025 (Workshop on Multi-Turn Interactions in LLMs)][LLM Agent][tool reliability] By defining reliability/inspectability cost functions for each external tool, LIT guides LLMs to select the lowest-cost (most transparent and auditable) tool-calling path among multiple candidates, improving interpretability while maintaining or enhancing task accuracy in 61 out of 65 test scenarios.
+  [NeurIPS 2025 (Workshop on Multi-Turn Interactions in LLMs)][LLM Agent][tool reliability] By defining reliability/inspectability cost functions for each external tool…
 tags:
-  - NeurIPS 2025 (Workshop on Multi-Turn Interactions in LLMs)
-  - LLM Agent
-  - tool reliability
-  - inspectability
-  - cost function
-  - tool selection
-  - trustworthy AI
-  - multi-step tool calling
+  - "NeurIPS 2025 (Workshop on Multi-Turn Interactions in LLMs)"
+  - "LLM Agent"
+  - "tool reliability"
+  - "inspectability"
+  - "cost function"
+  - "tool selection"
+  - "trustworthy AI"
+  - "multi-step tool calling"
 date: 2026-05-08
 content_hash: fc29a7d411c4d308
 ---

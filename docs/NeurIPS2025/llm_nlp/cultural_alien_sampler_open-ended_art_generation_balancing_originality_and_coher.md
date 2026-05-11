@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Cultural Alien Sampler: Open-ended Art Generation Balancing Originality and Coherence
 description: >-
-  [NeurIPS 2025][LLM/NLP][Creative generation] This paper proposes the Cultural Alien Sampler (CAS), which employs two GPT-2 models to separately model "concept coherence" and "cultural typicality," selecting concept combinations with high coherence but low cultural typicality to generate original yet harmonious artistic ideas. In human evaluations, CAS approaches the level of art students and substantially outperforms GPT-4o.
+  [NeurIPS 2025][LLM/NLP][Creative generation] This paper proposes the Cultural Alien Sampler (CAS), which employs two GPT-2 models to separately model "concept coherence" and "cultural typicality…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - Creative generation
-  - concept composition
-  - cultural debiasing
-  - open-ended art
-  - GPT-2 fine-tuning
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "Creative generation"
+  - "concept composition"
+  - "cultural debiasing"
+  - "open-ended art"
+  - "GPT-2 fine-tuning"
 date: 2026-05-08
 content_hash: a5d9eb657ac8cf63
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DOTA: DistributiOnal Test-time Adaptation of Vision-Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Test-time adaptation] DOTA proposes shifting test-time adaptation from a "caching sample instances" paradigm to a "continuously estimating test data distributions" paradigm. By combining online Gaussian discriminant analysis with zero-shot prediction probabilities to estimate per-class distributions, DOTA achieves gradient-free, forgetting-resistant, and efficient test-time adaptation, surpassing all baselines in average accuracy across 10 cross-domain benchmarks.
+  [NeurIPS 2025][Multimodal VLM][Test-time adaptation] DOTA proposes shifting test-time adaptation from a "caching sample instances" paradigm to a "continuously estimating test data distributions" paradigm. By combining on…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Test-time adaptation
-  - CLIP
-  - distribution estimation
-  - Gaussian discriminant analysis
-  - zero-shot classification
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Test-time adaptation"
+  - "CLIP"
+  - "distribution estimation"
+  - "Gaussian discriminant analysis"
+  - "zero-shot classification"
 date: 2026-05-08
 content_hash: 8aa8244796df1cd2
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Building Spatial World Models from Sparse Transitional Episodic Memories
 description: >-
-  [ICLR2026][Robotics][world model] This paper proposes the Episodic Spatial World Model (ESWM), which constructs spatial world models from sparse, disconnected episodic memories (one-step transitions). The model's latent space spontaneously gives rise to cognitive maps aligned with environmental topology, supporting zero-shot exploration and navigation.
+  [ICLR2026][Robotics][world model] This paper proposes the Episodic Spatial World Model (ESWM), which constructs spatial world models from sparse…
 tags:
-  - ICLR2026
-  - Robotics
-  - world model
-  - episodic memory
-  - spatial reasoning
-  - cognitive map
-  - navigation
+  - "ICLR2026"
+  - "Robotics"
+  - "world model"
+  - "episodic memory"
+  - "spatial reasoning"
+  - "cognitive map"
+  - "navigation"
 date: 2026-05-08
 content_hash: 299dd3b9b9c91b74
 ---

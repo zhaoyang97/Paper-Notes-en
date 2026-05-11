@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning in Compact Spaces with Approximately Normalized Transformer
 description: >-
-  [NeurIPS 2025][LLM Pretraining][approximate normalization] This paper proposes anGPT (Approximately Normalized GPT), which exploits the concentration of vector norms in high-dimensional spaces to replace per-sample exact normalization with simple scalar multiplication. The method achieves 40% convergence speedup over GPT+ (with QK-norm) while eliminating weight decay and learning rate warmup, incurring only 3% runtime overhead.
+  [NeurIPS 2025][LLM Pretraining][approximate normalization] This paper proposes anGPT (Approximately Normalized GPT), which exploits the concentration of vector norms in high-dimensional spaces to replace per-sample exact…
 tags:
-  - NeurIPS 2025
-  - LLM Pretraining
-  - approximate normalization
-  - concentration of measure
-  - compact space
-  - weight-decay-free
-  - convergence acceleration
+  - "NeurIPS 2025"
+  - "LLM Pretraining"
+  - "approximate normalization"
+  - "concentration of measure"
+  - "compact space"
+  - "weight-decay-free"
+  - "convergence acceleration"
 date: 2026-05-08
 content_hash: 60def23f9c3c5a3a
 ---

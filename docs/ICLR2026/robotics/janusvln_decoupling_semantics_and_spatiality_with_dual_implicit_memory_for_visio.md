@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] JanusVLN: Decoupling Semantics and Spatiality with Dual Implicit Memory for Vision-Language Navigation
 description: >-
-  [ICLR2026][Robotics][Vision-Language Navigation] Inspired by the left-brain/right-brain division of semantic understanding and spatial cognition in humans, this paper proposes JanusVLN—the first dual implicit neural memory framework designed for VLN—which models spatial-geometric memory and visual-semantic memory respectively as fixed-size KV Caches, enabling efficient spatial reasoning from RGB video alone and achieving state-of-the-art performance on the VLN-CE benchmark.
+  [ICLR2026][Robotics][Vision-Language Navigation] Inspired by the left-brain/right-brain division of semantic understanding and spatial cognition in humans…
 tags:
-  - ICLR2026
-  - Robotics
-  - Vision-Language Navigation
-  - Dual Implicit Memory
-  - Spatial-Geometric Encoding
-  - KV Cache
-  - Embodied AI
+  - "ICLR2026"
+  - "Robotics"
+  - "Vision-Language Navigation"
+  - "Dual Implicit Memory"
+  - "Spatial-Geometric Encoding"
+  - "KV Cache"
+  - "Embodied AI"
 date: 2026-05-08
 content_hash: 3bf6aeed97f2f9aa
 ---

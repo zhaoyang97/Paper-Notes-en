@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Parameter-Efficient Semantic Augmentation for Enhancing Open-Vocabulary Object Detection
 description: >-
-  [CVPR 2026][Object Detection][open-vocabulary object detection] HSA-DINO proposes a multi-scale prompt bank that learns hierarchical semantic prompts from the image feature pyramid to enrich text representations, and employs a semantics-aware router to dynamically determine at inference time whether domain-specific augmentation should be applied. This design achieves a superior balance between domain adaptation and open-vocabulary generalization, attaining the best harmonic mean (H) scores across three vertical-domain datasets.
+  [CVPR 2026][Object Detection][open-vocabulary object detection] HSA-DINO proposes a multi-scale prompt bank that learns hierarchical semantic prompts from the image feature pyramid to enrich text representations…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - open-vocabulary object detection
-  - parameter-efficient fine-tuning
-  - semantic augmentation
-  - prompt bank
-  - domain adaptation
+  - "CVPR 2026"
+  - "Object Detection"
+  - "open-vocabulary object detection"
+  - "parameter-efficient fine-tuning"
+  - "semantic augmentation"
+  - "prompt bank"
+  - "domain adaptation"
 date: 2026-05-08
 content_hash: dbf9f1503856128b
 ---

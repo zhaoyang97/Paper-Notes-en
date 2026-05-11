@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HyCal: A Training-Free Prototype Calibration Method for Cross-Discipline Few-Shot Class-Incremental Learning
 description: >-
-  [CVPR 2026][LLM Evaluation][Continual Learning] This paper identifies a "Domain Gravity" bias in heterogeneous-domain continual learning—whereby data-rich or low-entropy domains exert disproportionate influence in a shared embedding space—and proposes HyCal, a training-free method that calibrates prototypes by fusing cosine similarity and Mahalanobis distance, achieving robust classification in cross-discipline imbalanced few-shot class-incremental learning.
+  [CVPR 2026][LLM Evaluation][Continual Learning] This paper identifies a "Domain Gravity" bias in heterogeneous-domain continual learning—whereby data-rich or low-entropy domains exert disproportionate influence in a shar…
 tags:
-  - CVPR 2026
-  - LLM Evaluation
-  - Continual Learning
-  - Few-Shot Class-Incremental Learning
-  - Cross-Domain Adaptation
-  - Prototype Calibration
-  - Domain Gravity
+  - "CVPR 2026"
+  - "LLM Evaluation"
+  - "Continual Learning"
+  - "Few-Shot Class-Incremental Learning"
+  - "Cross-Domain Adaptation"
+  - "Prototype Calibration"
+  - "Domain Gravity"
 date: 2026-05-08
 content_hash: 9938f66a1aa70250
 ---

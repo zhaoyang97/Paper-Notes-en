@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Heuristic Self-Paced Learning for Domain Adaptive Semantic Segmentation under Adverse Conditions
 description: >-
-  [CVPR 2026][Segmentation][Unsupervised Domain Adaptation] This paper reformulates class-level curriculum learning in unsupervised domain adaptation as a sequential decision-making problem under the reinforcement learning framework. The proposed HeuSCM framework achieves autonomous curriculum scheduling via high-dimensional semantic state perception and category-fair policy gradients, attaining state-of-the-art performance (72.9 mIoU) on ACDC, Dark Zurich, and Nighttime Driving.
+  [CVPR 2026][Segmentation][Unsupervised Domain Adaptation] This paper reformulates class-level curriculum learning in unsupervised domain adaptation as a sequential decision-making problem under the reinforcement learning…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Unsupervised Domain Adaptation
-  - Semantic Segmentation
-  - Curriculum Learning
-  - Reinforcement Learning
-  - Adverse Weather
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Unsupervised Domain Adaptation"
+  - "Semantic Segmentation"
+  - "Curriculum Learning"
+  - "Reinforcement Learning"
+  - "Adverse Weather"
 date: 2026-05-08
 content_hash: 2dc74f33eda58f22
 ---

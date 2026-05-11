@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] PRECISE: Reducing the Bias of LLM Evaluations Using Prediction-Powered Ranking Estimation
 description: >-
-  [AAAI 2026][LLM Evaluation] This paper extends the Prediction-Powered Inference (PPI) framework to sub-instance-level ranking metrics (e.g., Precision@K), achieving unbiased ranking metric estimation using only 30–100 human annotations combined with large-scale LLM judgments. The computational complexity is reduced from $O(2^{|C|})$ to $O(2^K)$, and the approach has been successfully deployed to guide an LLM-based query rewriting system in an Indian e-commerce search setting.
+  [AAAI 2026][Information Retrieval & RAG][LLM Evaluation] This paper extends the Prediction-Powered Inference (PPI) framework to sub-instance-level ranking metrics (e.g., Precision@K)…
 tags:
-  - AAAI 2026
-  - LLM Evaluation
-  - Prediction-Powered Inference
-  - Ranking Metrics
-  - Bias Correction
-  - Human Annotation
+  - "AAAI 2026"
+  - "Information Retrieval & RAG"
+  - "LLM Evaluation"
+  - "Prediction-Powered Inference"
+  - "Ranking Metrics"
+  - "Bias Correction"
+  - "Human Annotation"
 date: 2026-05-08
 content_hash: b75e84ff19b42314
 ---

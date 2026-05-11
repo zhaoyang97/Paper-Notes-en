@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Revisiting End-to-End Learning with Slide-level Supervision in Computational Pathology
 description: >-
-  [NeurIPS 2025][Medical Imaging][Computational Pathology] This paper revisits end-to-end (E2E) learning with slide-level supervision in computational pathology, and is the first to identify optimization difficulties induced by sparse-attention MIL under E2E training. It proposes ABMILX, which addresses this issue via multi-head attention and a global attention correction module, enabling E2E-trained ResNets to surpass state-of-the-art foundation models on multiple benchmarks.
+  [NeurIPS 2025][Medical Imaging][Computational Pathology] This paper revisits end-to-end (E2E) learning with slide-level supervision in computational pathology…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Computational Pathology
-  - End-to-End Learning
-  - Multiple Instance Learning
-  - Sparse Attention
-  - ABMILX
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Computational Pathology"
+  - "End-to-End Learning"
+  - "Multiple Instance Learning"
+  - "Sparse Attention"
+  - "ABMILX"
 date: 2026-05-08
 content_hash: 2d0a771dd780ad46
 ---

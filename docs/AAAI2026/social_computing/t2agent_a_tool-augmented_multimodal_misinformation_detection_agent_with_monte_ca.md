@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] T2Agent: A Tool-augmented Multimodal Misinformation Detection Agent with Monte Carlo Tree Search
 description: >-
-  [AAAI 2026][Social Computing][Multimodal Misinformation Detection] This paper proposes T2Agent, a misinformation detection agent integrating an extensible toolset with Monte Carlo Tree Search (MCTS). By decomposing detection into sub-tasks targeting distinct forgery sources via a multi-source verification mechanism, T2Agent achieves a new state of the art on MMfakebench, improving the accuracy of the baseline MMDAgent by 28.7% using GPT-4o as the backbone.
+  [AAAI 2026][Social Computing][Multimodal Misinformation Detection] This paper proposes T2Agent, a misinformation detection agent integrating an extensible toolset with Monte Carlo Tree Search (MCTS). By decomposing detec…
 tags:
-  - AAAI 2026
-  - Social Computing
-  - Multimodal Misinformation Detection
-  - Monte Carlo Tree Search
-  - Tool-augmented Agent
-  - Multi-source Verification
-  - Training-free Detection
+  - "AAAI 2026"
+  - "Social Computing"
+  - "Multimodal Misinformation Detection"
+  - "Monte Carlo Tree Search"
+  - "Tool-augmented Agent"
+  - "Multi-source Verification"
+  - "Training-free Detection"
 date: 2026-05-08
 content_hash: 979f5c6c3cc232af
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] AcuRank: Uncertainty-Aware Adaptive Computation for Reranking
 description: >-
-  [NeurIPS 2025][uncertainty estimation] AcuRank dynamically adjusts the reranking subset size and verification scope via TrueSkill-based uncertainty estimation, achieving a superior accuracy–efficiency trade-off while avoiding over-computation.
+  [NeurIPS 2025][uncertainty estimation] AcuRank dynamically adjusts the reranking subset size and verification scope via TrueSkill-based uncertainty estimation…
 tags:
-  - NeurIPS 2025
-  - uncertainty estimation
-  - adaptive computation
-  - Bayesian model
-  - reranking
-  - context length optimization
+  - "NeurIPS 2025"
+  - "uncertainty estimation"
+  - "adaptive computation"
+  - "Bayesian model"
+  - "reranking"
+  - "context length optimization"
 date: 2026-05-08
 content_hash: 27ea812a7d47705b
 ---

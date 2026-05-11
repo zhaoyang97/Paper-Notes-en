@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond the Lower Bound: Bridging Regret Minimization and Best Arm Identification in Lexicographic Bandits
 description: >-
-  [AAAI 2026][Reinforcement Learning][Multi-objective bandits] Two elimination-based algorithms, LexElim-Out and LexElim-In, are proposed to simultaneously address regret minimization (RM) and best arm identification (BAI) in lexicographic multi-objective bandits for the first time. LexElim-In breaks the known lower bound of single-objective problems through cross-objective information sharing.
+  [AAAI 2026][Reinforcement Learning][Multi-objective bandits] Two elimination-based algorithms, LexElim-Out and LexElim-In, are proposed to simultaneously address regret minimization (RM) and best arm identification (BAI)…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - Multi-objective bandits
-  - lexicographic preference
-  - regret minimization
-  - best arm identification
-  - elimination algorithm
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "Multi-objective bandits"
+  - "lexicographic preference"
+  - "regret minimization"
+  - "best arm identification"
+  - "elimination algorithm"
 date: 2026-05-08
 content_hash: 1126809ee9bb0bda
 ---

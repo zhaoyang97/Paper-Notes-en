@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UniCombine: Unified Multi-Conditional Combination with Diffusion Transformer
 description: >-
-  [ICCV 2025][Image Generation][Multi-condition generation] UniCombine proposes a DiT-based multi-condition controllable generation framework that achieves unified generation under arbitrary condition combinations (text + spatial map + subject image) via a Conditional MMDiT Attention mechanism and a LoRA Switching module. It supports both training-free and training-based modes, and introduces SubjectSpatial200K, the first dataset for multi-condition generation.
+  [ICCV 2025][Image Generation][Multi-condition generation] UniCombine proposes a DiT-based multi-condition controllable generation framework that achieves unified generation under arbitrary condition combinations (text +…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Multi-condition generation
-  - Diffusion Transformer
-  - LoRA
-  - Subject-driven generation
-  - Spatial control
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Multi-condition generation"
+  - "Diffusion Transformer"
+  - "LoRA"
+  - "Subject-driven generation"
+  - "Spatial control"
 date: 2026-05-08
 content_hash: f28071215e2ec77e
 ---

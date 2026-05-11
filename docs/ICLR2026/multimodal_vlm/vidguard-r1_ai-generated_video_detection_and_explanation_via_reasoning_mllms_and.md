@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VidGuard-R1: AI-Generated Video Detection and Explanation via Reasoning MLLMs and RL
 description: >-
-  [ICLR 2026][Multimodal VLM][AI-generated video detection] VidGuard-R1 is the first video authenticity detector that fine-tunes an MLLM with GRPO (Group Relative Policy Optimization). By constructing a 140K shortcut-free real/fake video dataset and designing two specialized reward mechanisms—temporal artifact reward and diffusion-step quality reward—it achieves 86.17% accuracy on its in-house dataset and 95%+ zero-shot SOTA performance on GenVidBench and GenVideo benchmarks, while generating interpretable chain-of-thought reasoning.
+  [ICLR 2026][Multimodal VLM][AI-generated video detection] VidGuard-R1 is the first video authenticity detector that fine-tunes an MLLM with GRPO (Group Relative Policy Optimization). By constructing a 140K shortcut-free…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - AI-generated video detection
-  - MLLM reasoning
-  - GRPO
-  - temporal artifacts
-  - explainable forensics
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "AI-generated video detection"
+  - "MLLM reasoning"
+  - "GRPO"
+  - "temporal artifacts"
+  - "explainable forensics"
 date: 2026-05-08
 content_hash: 45889b8cda61e122
 ---

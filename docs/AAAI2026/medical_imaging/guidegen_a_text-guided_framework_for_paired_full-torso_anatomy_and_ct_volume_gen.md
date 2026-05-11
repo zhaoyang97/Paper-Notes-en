@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] GuideGen: A Text-Guided Framework for Paired Full-Torso Anatomy and CT Volume Generation
 description: >-
-  [Medical Imaging] GuideGen proposes a controllable framework that requires only text input. It synthesizes full-torso anatomical masks via a categorical diffusion model, and combines an anatomy-aware high-dynamic-range autoencoder with a latent feature generator to produce paired full-torso CT volumes, providing high-quality synthetic training data for downstream segmentation tasks.
+  [Medical Imaging] GuideGen proposes a controllable framework that requires only text input. It synthesizes full-torso anatomical masks via a categorical diffusion model…
 tags:
-  - Medical Imaging
+  - "Medical Imaging"
 date: 2026-05-08
 content_hash: 6a5e48401ea44f39
 ---

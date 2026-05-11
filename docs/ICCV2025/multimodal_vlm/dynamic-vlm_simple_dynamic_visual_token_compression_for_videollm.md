@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dynamic-VLM: Simple Dynamic Visual Token Compression for VideoLLM
 description: >-
-  [ICCV 2025][Multimodal VLM][VideoLLM] This paper proposes Dynamic-VLM, which employs a dynamic visual token compressor to flexibly adjust the number of tokens per frame according to video length. Combined with a 2-million-scale high-quality synthetic video QA dataset, the method achieves a 2.7% improvement over LLaVA-OneVision on VideoMME and a 10.7% improvement on MuirBench.
+  [ICCV 2025][Multimodal VLM][VideoLLM] This paper proposes Dynamic-VLM, which employs a dynamic visual token compressor to flexibly adjust the number of tokens per frame according to video length. Combined with a 2-millio…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - VideoLLM
-  - Visual Token Compression
-  - Dynamic Compression
-  - Synthetic Data
-  - Multimodal
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "VideoLLM"
+  - "Visual Token Compression"
+  - "Dynamic Compression"
+  - "Synthetic Data"
+  - "Multimodal"
 date: 2026-05-08
 content_hash: 0a89453cd93ce0c4
 ---

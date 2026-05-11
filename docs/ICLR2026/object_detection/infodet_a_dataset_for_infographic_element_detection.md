@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] InfoDet: A Dataset for Infographic Element Detection
 description: >-
-  [ICLR 2026][Object Detection][Infographic Detection] This paper introduces a large-scale infographic element detection dataset (101,264 infographics, 14.2 million annotations) spanning two major categories—chart elements and human-recognizable objects (HROs)—and proposes a Grounded CoT method that leverages detection results to enhance VLM chart understanding.
+  [ICLR 2026][Object Detection][Infographic Detection] This paper introduces a large-scale infographic element detection dataset (101,264 infographics…
 tags:
-  - ICLR 2026
-  - Object Detection
-  - Infographic Detection
-  - Chart Understanding
-  - Dataset
-  - Grounded CoT
-  - VLM
+  - "ICLR 2026"
+  - "Object Detection"
+  - "Infographic Detection"
+  - "Chart Understanding"
+  - "Dataset"
+  - "Grounded CoT"
+  - "VLM"
 date: 2026-05-08
 content_hash: aa51a724f7a3ad01
 ---

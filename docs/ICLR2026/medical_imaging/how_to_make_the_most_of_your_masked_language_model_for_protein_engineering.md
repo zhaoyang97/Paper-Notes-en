@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] How to Make the Most of Your Masked Language Model for Protein Engineering
 description: >-
-  [ICLR 2026][Medical Imaging][Protein Language Model] This work proposes a temperature-annealed stochastic beam search (SBS) sampling method for masked language models (MLMs), leveraging a wild-type marginal approximation of pseudo-log-likelihood (PLL) for efficient full-sequence evaluation. In vitro experiments on real therapeutic antibody optimization demonstrate that the choice of sampling algorithm is at least as important as model selection; SBS with guidance achieves a 100% success rate.
+  [ICLR 2026][Medical Imaging][Protein Language Model] This work proposes a temperature-annealed stochastic beam search (SBS) sampling method for masked language models (MLMs)…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - Protein Language Model
-  - Masked Language Model
-  - Stochastic Beam Search
-  - Antibody Optimization
-  - Multi-Objective Optimization
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Protein Language Model"
+  - "Masked Language Model"
+  - "Stochastic Beam Search"
+  - "Antibody Optimization"
+  - "Multi-Objective Optimization"
 date: 2026-05-08
 content_hash: 486f9449a052610a
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Training-Free Test-Time Contrastive Learning for Large Language Models
 description: >-
-  [ACL 2026][Model Compression][Test-Time Adaptation] This paper proposes TF-TTCL, a gradient-free test-time contrastive learning framework that enables a frozen LLM to self-improve online through an Explore–Reflect–Guide cycle. It employs multi-agent role-playing to generate diverse reasoning trajectories, distills textual rules from positive–negative contrastive pairs into a memory bank, and retrieves relevant rules at inference time to guide generation.
+  [ACL 2026][Model Compression][Test-Time Adaptation] This paper proposes TF-TTCL, a gradient-free test-time contrastive learning framework that enables a frozen LLM to self-improve online through an Explore–Reflect–Guide…
 tags:
-  - ACL 2026
-  - Model Compression
-  - Test-Time Adaptation
-  - Contrastive Learning
-  - Training-Free Adaptation
-  - Empirical Rules
-  - Multi-Agent
+  - "ACL 2026"
+  - "Model Compression"
+  - "Test-Time Adaptation"
+  - "Contrastive Learning"
+  - "Training-Free Adaptation"
+  - "Empirical Rules"
+  - "Multi-Agent"
 date: 2026-05-08
 content_hash: 71e73a9c5b2360aa
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Enhancing Vision-Language Model Reliability with Uncertainty-Guided Dropout Decoding
 description: >-
-  [NeurIPS 2025][Multimodal VLM][VLM hallucination] This paper proposes Dropout Decoding — a training-free inference-time method that projects visual tokens into the text space to quantify their epistemic uncertainty, selectively masks high-uncertainty visual tokens, and aggregates multiple masked decoding results via majority voting to substantially reduce object hallucinations in LVLMs.
+  [NeurIPS 2025][Multimodal VLM][VLM hallucination] This paper proposes Dropout Decoding — a training-free inference-time method that projects visual tokens into the text space to quantify their epistemic uncertainty…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - VLM hallucination
-  - uncertainty quantification
-  - visual token dropout
-  - epistemic uncertainty
-  - ensemble decoding
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "VLM hallucination"
+  - "uncertainty quantification"
+  - "visual token dropout"
+  - "epistemic uncertainty"
+  - "ensemble decoding"
 date: 2026-05-08
 content_hash: c6e7f42f80215aff
 ---

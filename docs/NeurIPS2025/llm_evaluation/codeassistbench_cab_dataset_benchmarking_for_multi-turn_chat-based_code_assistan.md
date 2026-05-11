@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] CodeAssistBench (CAB): Dataset & Benchmarking for Multi-turn Chat-Based Code Assistance
 description: >-
-  [NeurIPS 2025][LLM Evaluation][code assistant] This paper proposes CodeAssistBench (CAB), the first fully automated benchmark for evaluating multi-turn, repository-level programming assistance. CAB automatically constructs 3,286 real-world programming help scenarios from GitHub Issues, spanning 7 languages and 214 repositories, and reveals a substantial performance gap: state-of-the-art models achieve 70–83% on StackOverflow-style questions but only 7–16% on post-cutoff repositories.
+  [NeurIPS 2025][LLM Evaluation][code assistant] This paper proposes CodeAssistBench (CAB), the first fully automated benchmark for evaluating multi-turn…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - code assistant
-  - multi-turn dialogue
-  - benchmark
-  - programming assistance
-  - GitHub Issues
-  - repository-level evaluation
-  - LLM Agent
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "code assistant"
+  - "multi-turn dialogue"
+  - "benchmark"
+  - "programming assistance"
+  - "GitHub Issues"
+  - "repository-level evaluation"
+  - "LLM Agent"
 date: 2026-05-08
 content_hash: 93fe9f6719fd74db
 ---

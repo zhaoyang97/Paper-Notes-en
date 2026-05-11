@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Panda: Test-Time Adaptation with Negative Data Augmentation
 description: >-
-  [AAAI2026][Multimodal VLM][test-time adaptation] This paper proposes Panda, which generates semantics-destroying but corruption-preserving images via patch shuffling as negative data augmentation (NDA), and uses their features to offset original embeddings to suppress corruption-induced prediction bias. Panda is plug-and-play with less than 10% computational overhead and consistently improves various TTA methods.
+  [AAAI2026][Multimodal VLM][test-time adaptation] This paper proposes Panda, which generates semantics-destroying but corruption-preserving images via patch shuffling as negative data augmentation (NDA)…
 tags:
-  - AAAI2026
-  - Multimodal VLM
-  - test-time adaptation
-  - negative data augmentation
-  - CLIP
-  - prediction bias
-  - corruption robustness
+  - "AAAI2026"
+  - "Multimodal VLM"
+  - "test-time adaptation"
+  - "negative data augmentation"
+  - "CLIP"
+  - "prediction bias"
+  - "corruption robustness"
 date: 2026-05-08
 content_hash: 38084c7730713091
 ---

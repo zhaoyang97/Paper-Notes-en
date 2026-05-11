@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LayerIF: Estimating Layer Quality for Large Language Models using Influence Functions
 description: >-
-  [NeurIPS 2025][Model Compression][Influence Functions] LayerIF proposes using influence functions (IFs) to quantify the training quality of each layer in LLMs. By aggregating positive influence scores per layer, it derives a data-driven layer importance estimate, which is subsequently applied to two downstream tasks: LoRA-MoE expert allocation and layer-wise sparse pruning. The method achieves accuracy gains of 1.61% and 0.90% on Mistral-7B and Gemma-7B, respectively.
+  [NeurIPS 2025][Model Compression][Influence Functions] LayerIF proposes using influence functions (IFs) to quantify the training quality of each layer in LLMs. By aggregating positive influence scores per layer…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Influence Functions
-  - Layer Quality Estimation
-  - LoRA-MoE
-  - Model Pruning
-  - Layer-wise Sparsity Allocation
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Influence Functions"
+  - "Layer Quality Estimation"
+  - "LoRA-MoE"
+  - "Model Pruning"
+  - "Layer-wise Sparsity Allocation"
 date: 2026-05-08
 content_hash: 9834d22cac95ed0b
 ---

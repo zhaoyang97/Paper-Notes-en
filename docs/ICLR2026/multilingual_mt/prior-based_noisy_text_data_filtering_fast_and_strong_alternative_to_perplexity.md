@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Prior-based Noisy Text Data Filtering: Fast and Strong Alternative for Perplexity
 description: >-
-  [ICLR 2026][Data Filtering] This paper proposes a text data filtering method based on token priors (token frequency statistics), using the mean and standard deviation of in-document token priors as a proxy for perplexity (PPL). The method achieves the highest average performance across 20 downstream benchmarks while being over 1000× faster than PPL-based filtering.
+  [ICLR 2026][Multilingual & Machine Translation][Data Filtering] This paper proposes a text data filtering method based on token priors (token frequency statistics)…
 tags:
-  - ICLR 2026
-  - Data Filtering
-  - Pretraining
-  - Perplexity
-  - Token Frequency Prior
-  - Data Quality
+  - "ICLR 2026"
+  - "Multilingual & Machine Translation"
+  - "Data Filtering"
+  - "Pretraining"
+  - "Perplexity"
+  - "Token Frequency Prior"
+  - "Data Quality"
 date: 2026-05-08
 content_hash: 4134062ce81754d4
 ---

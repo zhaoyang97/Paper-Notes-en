@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MMaDA: Multimodal Large Diffusion Language Models
 description: >-
-  [NeurIPS 2025][Image Generation][Diffusion language models] This paper presents MMaDA, the first multimodal foundation model that simultaneously achieves text reasoning, multimodal understanding, and text-to-image generation within a unified discrete diffusion architecture. MMaDA bridges the gap between diffusion model pre-training and post-training through mixed long chain-of-thought (CoT) fine-tuning and the UniGRPO reinforcement learning algorithm.
+  [NeurIPS 2025][Image Generation][Diffusion language models] This paper presents MMaDA, the first multimodal foundation model that simultaneously achieves text reasoning, multimodal understanding…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Diffusion language models
-  - unified multimodal architecture
-  - UniGRPO
-  - mixed long chain-of-thought
-  - discrete diffusion
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Diffusion language models"
+  - "unified multimodal architecture"
+  - "UniGRPO"
+  - "mixed long chain-of-thought"
+  - "discrete diffusion"
 date: 2026-05-08
 content_hash: ff0cbd069ce051a1
 ---

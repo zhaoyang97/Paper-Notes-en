@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Assessing LLMs for Serendipity Discovery in Knowledge Graphs: A Case for Drug Repurposing
 description: >-
-  [AAAI 2026][Graph Learning][Serendipity] This paper proposes SerenQA, the first framework to formally define the serendipity discovery task in knowledge graph question answering. It introduces an information-theoretic RNS metric, an expert-annotated drug repurposing benchmark dataset, and a three-stage LLM evaluation pipeline. The work reveals that current LLMs perform reasonably on retrieval tasks but have substantial room for improvement in serendipitous exploration.
+  [AAAI 2026][Graph Learning][Serendipity] This paper proposes SerenQA, the first framework to formally define the serendipity discovery task in knowledge graph question answering. It introduces an information-theoretic RN…
 tags:
-  - AAAI 2026
-  - Graph Learning
-  - Serendipity
-  - Knowledge Graph Question Answering
-  - LLM Evaluation
-  - Drug Repurposing
-  - information theory
+  - "AAAI 2026"
+  - "Graph Learning"
+  - "Serendipity"
+  - "Knowledge Graph Question Answering"
+  - "LLM Evaluation"
+  - "Drug Repurposing"
+  - "information theory"
 date: 2026-05-08
 content_hash: 8928b9ba5f83fb2a
 ---

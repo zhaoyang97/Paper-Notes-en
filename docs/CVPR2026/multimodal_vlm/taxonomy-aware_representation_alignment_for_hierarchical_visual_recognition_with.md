@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Taxonomy-Aware Representation Alignment for Hierarchical Visual Recognition with Large Multimodal Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Hierarchical Visual Recognition] This paper proposes TARA, a framework that injects taxonomic hierarchy knowledge into large multimodal models (LMMs) by aligning their intermediate representations with taxonomy-aware features from a biological foundation model (BFM), substantially improving hierarchical visual recognition performance on both known and novel categories.
+  [CVPR 2026][Multimodal VLM][Hierarchical Visual Recognition] This paper proposes TARA, a framework that injects taxonomic hierarchy knowledge into large multimodal models (LMMs) by aligning their intermediate representat…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Hierarchical Visual Recognition
-  - Biological Taxonomy
-  - Representation Alignment
-  - Biological Foundation Model
-  - Reinforcement Learning Fine-Tuning
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Hierarchical Visual Recognition"
+  - "Biological Taxonomy"
+  - "Representation Alignment"
+  - "Biological Foundation Model"
+  - "Reinforcement Learning Fine-Tuning"
 date: 2026-05-08
 content_hash: 51f50a01038dd0c4
 ---

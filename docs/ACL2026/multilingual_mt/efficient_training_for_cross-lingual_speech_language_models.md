@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Efficient Training for Cross-lingual Speech Language Models
 description: >-
-  [ACL 2026][cross-lingual speech LLM] This paper proposes CSLM, a data-efficient method for training cross-lingual speech LLMs. It introduces a novel alignment strategy to achieve cross-modal and cross-lingual alignment simultaneously, and presents a speech-text interleaved chain-of-modality generation paradigm to improve quality and reduce latency—without requiring large-scale speech data to extend to new languages.
+  [ACL 2026][Multilingual & Machine Translation][cross-lingual speech LLM] This paper proposes CSLM, a data-efficient method for training cross-lingual speech LLMs. It introduces a novel alignment strategy to achieve cross…
 tags:
-  - ACL 2026
-  - cross-lingual speech LLM
-  - discrete speech tokens
-  - modality alignment
-  - chain-of-modality generation
-  - data-efficient training
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "cross-lingual speech LLM"
+  - "discrete speech tokens"
+  - "modality alignment"
+  - "chain-of-modality generation"
+  - "data-efficient training"
 date: 2026-05-08
 content_hash: c3841653fa822dcc
 ---

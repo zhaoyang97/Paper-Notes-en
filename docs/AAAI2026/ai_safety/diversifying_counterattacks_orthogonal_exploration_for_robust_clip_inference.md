@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Diversifying Counterattacks: Orthogonal Exploration for Robust CLIP Inference
 description: >-
-  [AAAI 2026][AI Safety][Adversarial Robustness] This paper proposes Directional Orthogonal Counterattack (DOC), a method that expands the search space during counterattack optimization by introducing orthogonal gradient components and momentum updates, and adaptively modulates counterattack intensity via a cosine-similarity-based Directional Sensitivity Score (DSS). DOC significantly improves the test-time adversarial robustness of CLIP across 16 datasets.
+  [AAAI 2026][AI Safety][Adversarial Robustness] This paper proposes Directional Orthogonal Counterattack (DOC), a method that expands the search space during counterattack optimization by introducing orthogonal gradient c…
 tags:
-  - AAAI 2026
-  - AI Safety
-  - Adversarial Robustness
-  - CLIP Defense
-  - Test-Time Defense
-  - Orthogonal Counterattack
-  - Vision-Language Models
+  - "AAAI 2026"
+  - "AI Safety"
+  - "Adversarial Robustness"
+  - "CLIP Defense"
+  - "Test-Time Defense"
+  - "Orthogonal Counterattack"
+  - "Vision-Language Models"
 date: 2026-05-08
 content_hash: df3e87d75acfab7e
 ---

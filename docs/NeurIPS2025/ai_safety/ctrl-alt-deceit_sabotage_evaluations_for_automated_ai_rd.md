@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CTRL-ALT-DECEIT: Sabotage Evaluations for Automated AI R&D
 description: >-
-  [NeurIPS 2025][AI Safety][AI safety evaluation] This work extends MLE-Bench to construct 20 code-sabotage tasks and sandbagging evaluations. It finds that frontier AI agents can successfully plant backdoors and other sabotage while completing normal ML engineering tasks, and in some cases evade detection by LM monitors.
+  [NeurIPS 2025][AI Safety][AI safety evaluation] This work extends MLE-Bench to construct 20 code-sabotage tasks and sandbagging evaluations. It finds that frontier AI agents can successfully plant backdoors and other sab…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - AI safety evaluation
-  - model sabotage
-  - sandbagging
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "AI safety evaluation"
+  - "model sabotage"
+  - "sandbagging"
   - "automated AI R&D"
-  - monitor evasion
+  - "monitor evasion"
 date: 2026-05-08
 content_hash: 86b25cb2c8c0611b
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BHCast: Unlocking Black Hole Plasma Dynamics from a Single Blurry Image with Long-Term Forecasting
 description: >-
-  [CVPR 2026][Image Restoration][Black hole imaging] BHCast takes a single blurry EHT black hole image as input, employs a U-Net dynamics surrogate model for super-resolution combined with long-term autoregressive forecasting (stable over 100 steps), extracts physical features (pattern speed, pitch angle, etc.) from the predicted plasma dynamics, and infers black hole spin and inclination via XGBoost. Effectiveness is also demonstrated on real M87* observational images.
+  [CVPR 2026][Image Restoration][Black hole imaging] BHCast takes a single blurry EHT black hole image as input, employs a U-Net dynamics surrogate model for super-resolution combined with long-term autoregressive forecast…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Black hole imaging
-  - super-resolution
-  - long-term temporal forecasting
-  - physical inference
-  - dynamics modeling
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Black hole imaging"
+  - "super-resolution"
+  - "long-term temporal forecasting"
+  - "physical inference"
+  - "dynamics modeling"
 date: 2026-05-08
 content_hash: 129f861527eac4a5
 ---

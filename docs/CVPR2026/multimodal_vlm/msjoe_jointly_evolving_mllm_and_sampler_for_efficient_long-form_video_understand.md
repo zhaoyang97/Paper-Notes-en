@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MSJoE: Jointly Evolving MLLM and Sampler for Efficient Long-Form Video Understanding
 description: >-
-  [CVPR 2026][Multimodal VLM][Long video understanding] This paper proposes MSJoE, a framework that jointly evolves an MLLM and a lightweight keyframe sampler via reinforcement learning. The MLLM generates visual queries to guide frame retrieval, a 1D U-Net sampler learns selection weights from a CLIP similarity matrix, and both components are optimized end-to-end, achieving +8% accuracy improvement on long-form video QA.
+  [CVPR 2026][Multimodal VLM][Long video understanding] This paper proposes MSJoE, a framework that jointly evolves an MLLM and a lightweight keyframe sampler via reinforcement learning. The MLLM generates visual queries t…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Long video understanding
-  - keyframe sampling
-  - reinforcement learning
-  - GRPO
-  - joint optimization
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Long video understanding"
+  - "keyframe sampling"
+  - "reinforcement learning"
+  - "GRPO"
+  - "joint optimization"
 date: 2026-05-08
 content_hash: 5386340d4a783f63
 ---

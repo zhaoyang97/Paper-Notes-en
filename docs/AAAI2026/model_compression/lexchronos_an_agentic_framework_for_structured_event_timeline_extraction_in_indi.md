@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LexChronos: An Agentic Framework for Structured Event Timeline Extraction in Indian Jurisprudence
 description: >-
-  [AAAI 2026][Model Compression][Event Extraction] This paper proposes LexChronos, a dual-agent iterative framework for extracting structured event timelines from Indian Supreme Court judgments. A LoRA fine-tuned extraction agent identifies candidate events, while a pretrained feedback agent scores and refines them through a confidence-driven loop. The system achieves a BERT F1 of 0.8751 on a synthetic dataset, and the structured timelines are preferred by GPT-4 over unstructured baselines in 75% of downstream legal summarization cases.
+  [AAAI 2026][Model Compression][Event Extraction] This paper proposes LexChronos, a dual-agent iterative framework for extracting structured event timelines from Indian Supreme Court judgments. A LoRA fine-tuned extractio…
 tags:
-  - AAAI 2026
-  - Model Compression
-  - Event Extraction
-  - Legal Document Analysis
-  - Indian Jurisprudence
-  - Dual-Agent Framework
-  - Timeline Extraction
+  - "AAAI 2026"
+  - "Model Compression"
+  - "Event Extraction"
+  - "Legal Document Analysis"
+  - "Indian Jurisprudence"
+  - "Dual-Agent Framework"
+  - "Timeline Extraction"
 date: 2026-05-08
 content_hash: 240d2af7eccfa151
 ---

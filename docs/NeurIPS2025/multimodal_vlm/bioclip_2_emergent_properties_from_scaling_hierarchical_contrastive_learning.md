@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BioCLIP 2: Emergent Properties from Scaling Hierarchical Contrastive Learning
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Biological taxonomy] BioCLIP 2 trains a ViT-L on TreeOfLife-200M (214M images across 952K species) using hierarchical contrastive learning, achieving an 18% improvement over BioCLIP in zero-shot species recognition. The work further uncovers emergent properties arising from scale: embeddings automatically encode ecological relationships (e.g., Darwin's finches arranged by beak size), and intra-species variation is orthogonal to inter-species variation.
+  [NeurIPS 2025][Multimodal VLM][Biological taxonomy] BioCLIP 2 trains a ViT-L on TreeOfLife-200M (214M images across 952K species) using hierarchical contrastive learning…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Biological taxonomy
-  - hierarchical contrastive learning
-  - emergent properties
-  - species recognition
-  - TreeOfLife
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Biological taxonomy"
+  - "hierarchical contrastive learning"
+  - "emergent properties"
+  - "species recognition"
+  - "TreeOfLife"
 date: 2026-05-08
 content_hash: d6fb9cf6fc65662d
 ---

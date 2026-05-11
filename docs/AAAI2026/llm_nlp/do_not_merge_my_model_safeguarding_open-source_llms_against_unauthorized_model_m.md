@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Do Not Merge My Model! Safeguarding Open-Source LLMs Against Unauthorized Model Merging
 description: >-
-  [AAAI 2026][LLM/NLP][model merging theft] This paper proposes MergeBarrier, a plug-and-play defense method that disrupts linear mode connectivity (LMC) between a protected model and its homologous counterparts by applying orthogonal projection transformations to attention layers and activation-function-unfolding reparameterization to FFN layers, thereby actively preventing unauthorized model merging without degrading model performance.
+  [AAAI 2026][LLM/NLP][model merging theft] This paper proposes MergeBarrier, a plug-and-play defense method that disrupts linear mode connectivity (LMC) between a protected model and its homologous counterparts by applyin…
 tags:
-  - AAAI 2026
-  - LLM/NLP
-  - model merging theft
-  - MergeBarrier
-  - orthogonal projection
-  - weight reparameterization
-  - linear mode connectivity
+  - "AAAI 2026"
+  - "LLM/NLP"
+  - "model merging theft"
+  - "MergeBarrier"
+  - "orthogonal projection"
+  - "weight reparameterization"
+  - "linear mode connectivity"
 date: 2026-05-08
 content_hash: bad2d7364226ddee
 ---

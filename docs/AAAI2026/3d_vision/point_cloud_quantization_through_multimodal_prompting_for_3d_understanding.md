@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Point Cloud Quantization through Multimodal Prompting for 3D Understanding
 description: >-
-  [AAAI 2026][3D Vision][Point cloud quantization] This paper proposes PCQ (Point Cloud Quantization), which leverages text embeddings from pretrained vision-language models as semantic prototypes. Through Gumbel-Softmax differentiable quantization, continuous point cloud features are discretized into a text prototype space, and cross-modal feature fusion is applied to achieve significant improvements in 3D understanding.
+  [AAAI 2026][3D Vision][Point cloud quantization] This paper proposes PCQ (Point Cloud Quantization), which leverages text embeddings from pretrained vision-language models as semantic prototypes. Through Gumbel-Softmax d…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - Point cloud quantization
-  - vector quantization
-  - multimodal alignment
-  - prototype learning
-  - Gumbel-Softmax
+  - "AAAI 2026"
+  - "3D Vision"
+  - "Point cloud quantization"
+  - "vector quantization"
+  - "multimodal alignment"
+  - "prototype learning"
+  - "Gumbel-Softmax"
 date: 2026-05-08
 content_hash: c3ab47ab1c10d8b2
 ---

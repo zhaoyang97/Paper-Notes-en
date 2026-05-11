@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Generative Adversarial Perturbations with Cross-paradigm Transferability on Localized Crowd Counting
 description: >-
-  [CVPR 2026][AI Safety][adversarial attack] This paper proposes CrowdGen, the first cross-paradigm adversarial attack framework targeting both density-map and point-regression crowd counting models. A lightweight UNet generator combined with a multi-task loss (logit suppression, density suppression, GradCAM guidance, and frequency-domain constraint) achieves high transferability (TR up to 1.69) across seven SOTA crowd counting models while maintaining visual imperceptibility (~19 dB PSNR), increasing attack MAE by an average factor of 7×.
+  [CVPR 2026][AI Safety][adversarial attack] This paper proposes CrowdGen, the first cross-paradigm adversarial attack framework targeting both density-map and point-regression crowd counting models. A lightweight UNet gen…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - adversarial attack
-  - crowd counting
-  - cross-paradigm transferability
-  - generative adversarial perturbation
-  - black-box attack
+  - "CVPR 2026"
+  - "AI Safety"
+  - "adversarial attack"
+  - "crowd counting"
+  - "cross-paradigm transferability"
+  - "generative adversarial perturbation"
+  - "black-box attack"
 date: 2026-05-08
 content_hash: 573e115a2dc893e2
 ---

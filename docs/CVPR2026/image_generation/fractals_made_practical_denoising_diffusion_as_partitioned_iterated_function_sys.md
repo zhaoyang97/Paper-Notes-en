@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Fractals made Practical: Denoising Diffusion as Partitioned Iterated Function Systems
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Models] This paper proves that the DDIM deterministic reverse chain is essentially a Partitioned Iterated Function System (PIFS), and derives from this framework three computable geometric quantities requiring no model evaluation. It provides a unified, first-principles explanation for the two-phase denoising dynamics of diffusion models, the effectiveness of self-attention, and four empirical design choices (cosine schedule offset, resolution-dependent logSNR shift, Min-SNR loss weighting, and Align Your Steps sampling).
+  [CVPR 2026][Image Generation][Diffusion Models] This paper proves that the DDIM deterministic reverse chain is essentially a Partitioned Iterated Function System (PIFS)…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Models
-  - Partitioned Iterated Function Systems (PIFS)
-  - Fractal Geometry
-  - Jacobian Analysis
-  - Kaplan-Yorke Dimension
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "Partitioned Iterated Function Systems (PIFS)"
+  - "Fractal Geometry"
+  - "Jacobian Analysis"
+  - "Kaplan-Yorke Dimension"
 date: 2026-05-08
 content_hash: 5df71f19273506d7
 ---

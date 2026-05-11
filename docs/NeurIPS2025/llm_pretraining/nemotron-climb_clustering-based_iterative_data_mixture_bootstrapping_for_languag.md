@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Nemotron-CLIMB: CLustering-based Iterative Data Mixture Bootstrapping for Language Model Pre-training
 description: >-
-  [NeurIPS 2025][LLM Pretraining][data mixture] NVIDIA proposes the CLIMB framework, which automatically discovers optimal pre-training data mixture ratios through embedding-based clustering and iterative bootstrapped search. On a 1B-scale model, CLIMB outperforms Llama-3.2-1B by 2.0%, and releases the 1.2T-token ClimbLab corpus and the 400B-token ClimbMix high-quality dataset.
+  [NeurIPS 2025][LLM Pretraining][data mixture] NVIDIA proposes the CLIMB framework, which automatically discovers optimal pre-training data mixture ratios through embedding-based clustering and iterative bootstrapped sear…
 tags:
-  - NeurIPS 2025
-  - LLM Pretraining
-  - data mixture
-  - pre-training
-  - clustering
-  - iterative optimization
-  - LLM
+  - "NeurIPS 2025"
+  - "LLM Pretraining"
+  - "data mixture"
+  - "pre-training"
+  - "clustering"
+  - "iterative optimization"
+  - "LLM"
 date: 2026-05-08
 content_hash: 0ef07a1f2931f79f
 ---

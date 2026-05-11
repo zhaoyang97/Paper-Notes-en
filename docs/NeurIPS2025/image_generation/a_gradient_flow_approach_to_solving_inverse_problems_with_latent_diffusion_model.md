@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Gradient Flow Approach to Solving Inverse Problems with Latent Diffusion Models
 description: >-
-  [NeurIPS 2025][Image Generation][latent diffusion model] This paper proposes DWGF (Diffusion-regularized Wasserstein Gradient Flow), which rigorously formalizes posterior sampling with latent diffusion models as a regularized gradient flow of KL divergence in the Wasserstein-2 space. An ODE system in the latent space is derived to solve image inverse problems, achieving substantially higher PSNR than baselines on inpainting and super-resolution tasks on FFHQ-512.
+  [NeurIPS 2025][Image Generation][latent diffusion model] This paper proposes DWGF (Diffusion-regularized Wasserstein Gradient Flow), which rigorously formalizes posterior sampling with latent diffusion models as a regula…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - latent diffusion model
-  - Wasserstein gradient flow
-  - inverse problem
-  - posterior sampling
-  - KL divergence
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "latent diffusion model"
+  - "Wasserstein gradient flow"
+  - "inverse problem"
+  - "posterior sampling"
+  - "KL divergence"
 date: 2026-05-08
 content_hash: 5bb72e87a79a10e7
 ---

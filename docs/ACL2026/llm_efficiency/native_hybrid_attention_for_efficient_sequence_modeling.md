@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Native Hybrid Attention for Efficient Sequence Modeling
 description: >-
-  [ACL 2026][LLM Efficiency][Hybrid Attention] Native Hybrid Attention (NHA) concatenates linear RNN long-term memory slots with sliding window short-term precise tokens and processes them through a single softmax attention, achieving native intra-layer and inter-layer hybridization — dynamically allocating long-short attention weights without extra fusion parameters, outperforming Transformer and other hybrid baselines on recall-intensive and commonsense reasoning tasks.
+  [ACL 2026][LLM Efficiency][Hybrid Attention] Native Hybrid Attention (NHA) concatenates linear RNN long-term memory slots with sliding window short-term precise tokens and processes them through a single softmax attentio…
 tags:
-  - ACL 2026
-  - LLM Efficiency
-  - Hybrid Attention
-  - Linear Attention
-  - Sliding Window
-  - Long-Short Memory Fusion
-  - Efficient Sequence Modeling
+  - "ACL 2026"
+  - "LLM Efficiency"
+  - "Hybrid Attention"
+  - "Linear Attention"
+  - "Sliding Window"
+  - "Long-Short Memory Fusion"
+  - "Efficient Sequence Modeling"
 content_hash: 4c45e7d899071930
 ---
 

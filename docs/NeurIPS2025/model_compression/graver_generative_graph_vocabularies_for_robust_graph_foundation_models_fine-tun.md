@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Graver: Generative Graph Vocabularies for Robust Graph Foundation Models Fine-tuning
 description: >-
-  [NeurIPS 2025][Model Compression][graph foundation model] This paper proposes Graver, a framework that decouples ego-graphs to extract transferable subgraph vocabularies, models their distributions via graphon experts, and routes relevant vocabularies to augment support samples through MoE-CoE, addressing the instability caused by structural mismatch in few-shot fine-tuning of graph foundation models (GFMs).
+  [NeurIPS 2025][Model Compression][graph foundation model] This paper proposes Graver, a framework that decouples ego-graphs to extract transferable subgraph vocabularies, models their distributions via graphon experts…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - graph foundation model
-  - few-shot fine-tuning
-  - graphon
-  - vocabulary generation
-  - MoE
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "graph foundation model"
+  - "few-shot fine-tuning"
+  - "graphon"
+  - "vocabulary generation"
+  - "MoE"
 date: 2026-05-08
 content_hash: f33931c70b7bb0f3
 ---

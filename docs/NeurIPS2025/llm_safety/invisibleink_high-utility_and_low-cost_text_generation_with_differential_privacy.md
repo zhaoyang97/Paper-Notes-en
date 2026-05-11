@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] InvisibleInk: High-Utility and Low-Cost Text Generation with Differential Privacy
 description: >-
-  [NeurIPS 2025][LLM Safety][differential privacy] This paper proposes InvisibleInk, a framework that reduces the computational cost of differentially private long-text generation by more than 8× through two innovations—differential clipping (DClip) for isolating sensitive information and Top-$k^+$ truncated sampling—achieving, for the first time, high-quality private text generation with only 4–8× overhead over non-private generation.
+  [NeurIPS 2025][LLM Safety][differential privacy] This paper proposes InvisibleInk, a framework that reduces the computational cost of differentially private long-text generation by more than 8× through two innovations—di…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - differential privacy
-  - text generation
-  - exponential mechanism
-  - LLM decoding
-  - privacy-preserving inference
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "differential privacy"
+  - "text generation"
+  - "exponential mechanism"
+  - "LLM decoding"
+  - "privacy-preserving inference"
 date: 2026-05-08
 content_hash: c3aeddb730bd64ef
 ---

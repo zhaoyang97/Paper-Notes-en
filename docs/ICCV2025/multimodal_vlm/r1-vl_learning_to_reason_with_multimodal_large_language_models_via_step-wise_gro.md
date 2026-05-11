@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] R1-VL: Learning to Reason with Multimodal Large Language Models via Step-wise Group Relative Policy Optimization
 description: >-
-  [Multimodal VLM] This paper proposes StepGRPO, an online reinforcement learning framework that introduces two rule-based step-wise reasoning rewards — StepRAR (Step-wise Reasoning Accuracy Reward) and StepRVR (Step-wise Reasoning Validity Reward) — without requiring a process reward model. The framework addresses the sparse reward problem in RL-based MLLM training, enabling models to autonomously explore and improve their reasoning capabilities.
+  [Multimodal VLM] This paper proposes StepGRPO, an online reinforcement learning framework that introduces two rule-based step-wise reasoning rewards — StepRAR (Step-wise Reasoning Accuracy Reward) and StepRVR (Step-wise…
 tags:
-  - Multimodal VLM
+  - "Multimodal VLM"
 date: 2026-05-08
 content_hash: 7d1d8e45517379cd
 ---

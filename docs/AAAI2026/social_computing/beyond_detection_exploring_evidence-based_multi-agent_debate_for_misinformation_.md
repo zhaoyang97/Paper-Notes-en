@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond Detection: Exploring Evidence-based Multi-Agent Debate for Misinformation Intervention and Persuasion
 description: >-
-  [AAAI 2026][Social Computing][Multi-agent debate] This paper proposes ED2D, a framework that integrates an evidence retrieval module into a multi-agent debate (MAD) system to enhance misinformation detection accuracy. Through controlled human experiments, it provides the first comparative evaluation of AI-generated debate transcripts versus expert human fact-checks in terms of persuasiveness and belief correction, revealing a double-edged-sword effect: the AI debate system achieves expert-level persuasiveness when correct, but may amplify misinformation when wrong.
+  [AAAI 2026][Social Computing][Multi-agent debate] This paper proposes ED2D, a framework that integrates an evidence retrieval module into a multi-agent debate (MAD) system to enhance misinformation detection accuracy. Th…
 tags:
-  - AAAI 2026
-  - Social Computing
-  - Multi-agent debate
-  - misinformation detection
-  - evidence retrieval
-  - persuasion evaluation
-  - LLM
+  - "AAAI 2026"
+  - "Social Computing"
+  - "Multi-agent debate"
+  - "misinformation detection"
+  - "evidence retrieval"
+  - "persuasion evaluation"
+  - "LLM"
 date: 2026-05-08
 content_hash: 4bec7c93d8bf2583
 ---

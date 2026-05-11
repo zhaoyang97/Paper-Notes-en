@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A.I.R.: Adaptive, Iterative, and Reasoning-based Frame Selection For Video Question Answering
 description: >-
-  [ICLR 2026][Video Understanding][video QA] This paper proposes A.I.R., a training-free adaptive-iterative-reasoning-driven frame selection framework that addresses two fundamental challenges in VideoQA—inaccurate similarity estimation by lightweight models (CLIP) and the prohibitive computational cost of VLM-based analysis—via a two-stage strategy: GMM-based adaptive initial sampling followed by iterative VLM-guided refinement. In the worst case, A.I.R. analyzes only 72 frames (vs. 128 for baselines), while consistently improving performance across multiple long-video benchmarks.
+  [ICLR 2026][Video Understanding][video QA] This paper proposes A.I.R., a training-free adaptive-iterative-reasoning-driven frame selection framework that addresses two fundamental challenges in VideoQA—inaccurate similar…
 tags:
-  - ICLR 2026
-  - Video Understanding
-  - video QA
-  - frame selection
-  - VLM
-  - iterative search
-  - computational efficiency
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "video QA"
+  - "frame selection"
+  - "VLM"
+  - "iterative search"
+  - "computational efficiency"
 date: 2026-05-08
 content_hash: 9dcd9afe8d637e79
 ---

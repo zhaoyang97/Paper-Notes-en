@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Pluggable Pruning with Contiguous Layer Distillation for Diffusion Transformers
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Transformer Pruning] This paper proposes the PPCL framework, which employs linear probing and first-order CKA difference analysis to detect contiguous redundant layer intervals in MMDiT, combined with non-sequential distillation to enable depth pruning (plug-and-play) and width pruning (replacing text streams/FFNs with linear projections). The approach compresses Qwen-Image from 20B to 10B with only a 3.29% performance drop.
+  [CVPR 2026][Image Generation][Diffusion Transformer Pruning] This paper proposes the PPCL framework, which employs linear probing and first-order CKA difference analysis to detect contiguous redundant layer intervals in…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Transformer Pruning
-  - MMDiT Compression
-  - Contiguous Layer Distillation
-  - Plug-and-Play Inference
-  - Structured Pruning
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Transformer Pruning"
+  - "MMDiT Compression"
+  - "Contiguous Layer Distillation"
+  - "Plug-and-Play Inference"
+  - "Structured Pruning"
 date: 2026-05-08
 content_hash: 0bf858881d35c003
 ---

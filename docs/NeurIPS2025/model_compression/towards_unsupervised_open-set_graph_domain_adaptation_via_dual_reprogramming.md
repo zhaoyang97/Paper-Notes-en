@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Unsupervised Open-Set Graph Domain Adaptation via Dual Reprogramming
 description: >-
-  [NeurIPS 2025][Model Compression][Graph Domain Adaptation] This paper proposes GraphRTA, a framework that addresses the challenges of known-class classification and unknown-class detection in unsupervised open-set graph domain adaptation through two complementary mechanisms: model reprogramming (gradient-guided weight pruning) and graph reprogramming (target graph structure and feature optimization), without requiring manually specified thresholds.
+  [NeurIPS 2025][Model Compression][Graph Domain Adaptation] This paper proposes GraphRTA, a framework that addresses the challenges of known-class classification and unknown-class detection in unsupervised open-set graph…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Graph Domain Adaptation
-  - Open-Set Recognition
-  - Model Reprogramming
-  - Graph Reprogramming
-  - Adversarial Learning
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Graph Domain Adaptation"
+  - "Open-Set Recognition"
+  - "Model Reprogramming"
+  - "Graph Reprogramming"
+  - "Adversarial Learning"
 date: 2026-05-08
 content_hash: a61dce322d8efeb7
 ---

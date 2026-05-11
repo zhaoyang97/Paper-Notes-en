@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] FourierPET: Deep Fourier-based Unrolled Network for Low-count PET Reconstruction
 description: >-
-  [AAAI 2026][PET reconstruction] This work identifies three categories of degradation in low-count PET that are separable in the frequency domain — Poisson noise and photon deficiency induce high-frequency phase perturbations, while attenuation correction errors suppress low-frequency amplitude — and proposes FourierPET: an ADMM-unrolled, frequency-aware reconstruction framework that achieves comprehensive state-of-the-art performance across three datasets with only 0.44M parameters.
+  [AAAI 2026][Interpretability][PET reconstruction] This work identifies three categories of degradation in low-count PET that are separable in the frequency domain — Poisson noise and photon deficiency induce high-frequen…
 tags:
-  - AAAI 2026
-  - PET reconstruction
-  - frequency domain analysis
-  - ADMM unrolling
-  - amplitude-phase decoupling
-  - low-dose imaging
+  - "AAAI 2026"
+  - "Interpretability"
+  - "PET reconstruction"
+  - "frequency domain analysis"
+  - "ADMM unrolling"
+  - "amplitude-phase decoupling"
+  - "low-dose imaging"
 date: 2026-05-08
 content_hash: 1890fa6c55955c7e
 ---

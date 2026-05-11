@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Pay Attention to CTC: Fast and Robust Pseudo-Labelling for Unified Speech Recognition
 description: >-
-  [ICLR 2026][Audio & Speech][unified speech recognition] This paper proposes USR 2.0, which replaces autoregressive pseudo-label generation with CTC-driven teacher forcing, enabling attention pseudo-labels to be produced in a single forward pass. The approach achieves nearly 2× training speedup, enhances out-of-distribution robustness via joint CTC-attention prediction, and establishes state-of-the-art results on LRS3/LRS2/WildVSR across all three tasks (ASR/VSR/AVSR) within a single unified model.
+  [ICLR 2026][Audio & Speech][unified speech recognition] This paper proposes USR 2.0, which replaces autoregressive pseudo-label generation with CTC-driven teacher forcing…
 tags:
-  - ICLR 2026
+  - "ICLR 2026"
   - "Audio & Speech"
-  - unified speech recognition
-  - CTC
-  - pseudo-labelling
-  - audio-visual speech recognition
-  - out-of-distribution robustness
+  - "unified speech recognition"
+  - "CTC"
+  - "pseudo-labelling"
+  - "audio-visual speech recognition"
+  - "out-of-distribution robustness"
 date: 2026-05-08
 content_hash: fdd6512a4794e18b
 ---

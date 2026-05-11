@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Automatic Slide Updating with User-Defined Dynamic Templates and Natural Language Instructions
 description: >-
-  [ACL 2026][Multimodal VLM][automatic slide updating] This paper formalizes a novel task of dynamic slide updating on user-defined templates guided by natural language instructions, constructs the DynaSlide benchmark comprising 20,036 instruction-execution triplets, and proposes SlideAgent as a strong reference baseline.
+  [ACL 2026][Multimodal VLM][automatic slide updating] This paper formalizes a novel task of dynamic slide updating on user-defined templates guided by natural language instructions…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - automatic slide updating
-  - dynamic templates
-  - natural language instructions
-  - multimodal agent
-  - data-driven reporting
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "automatic slide updating"
+  - "dynamic templates"
+  - "natural language instructions"
+  - "multimodal agent"
+  - "data-driven reporting"
 date: 2026-05-08
 content_hash: 0ea1eedf2f8eccd5
 ---

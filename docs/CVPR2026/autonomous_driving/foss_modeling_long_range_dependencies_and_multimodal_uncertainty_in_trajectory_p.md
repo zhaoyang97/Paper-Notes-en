@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FoSS: Modeling Long-Range Dependencies and Multimodal Uncertainty in Trajectory Prediction via Fourier–State Space Integration
 description: >-
-  [CVPR 2026][Autonomous Driving][Trajectory Prediction] FoSS proposes a frequency-domain–time-domain dual-branch framework that organizes Fourier spectra via progressive spiral reordering (HelixSort) before feeding them into a selective state space model (SSM), and combines a temporal dynamic SSM with cross-attention fusion to achieve state-of-the-art trajectory prediction on Argoverse 1/2 while reducing parameter count by over 40% and inference latency by 22%.
+  [CVPR 2026][Autonomous Driving][Trajectory Prediction] FoSS proposes a frequency-domain–time-domain dual-branch framework that organizes Fourier spectra via progressive spiral reordering (HelixSort) before feeding them i…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Trajectory Prediction
-  - Fourier Transform
-  - State Space Model
-  - Dual-Branch Architecture
-  - Multimodal Prediction
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Trajectory Prediction"
+  - "Fourier Transform"
+  - "State Space Model"
+  - "Dual-Branch Architecture"
+  - "Multimodal Prediction"
 date: 2026-05-08
 content_hash: 54989ac7972dabb3
 ---

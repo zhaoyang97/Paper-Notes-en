@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Feature-aware Modulation for Learning from Temporal Tabular Data
 description: >-
-  [NeurIPS 2025][Time Series][Temporal distribution shift] This paper addresses distribution shift in temporal tabular data by proposing a feature-aware temporal modulation mechanism. Through learnable transformations conditioned on temporal context, it dynamically adjusts per-feature shift ($\beta$), scale ($\gamma$), and skewness ($\lambda$) to align feature semantics across time. On the TabReD benchmark, it is the first approach to enable deep learning methods to systematically outperform GBDT.
+  [NeurIPS 2025][Time Series][Temporal distribution shift] This paper addresses distribution shift in temporal tabular data by proposing a feature-aware temporal modulation mechanism. Through learnable transformations cond…
 tags:
-  - NeurIPS 2025
-  - Time Series
-  - Temporal distribution shift
-  - feature modulation
-  - Yeo-Johnson transform
-  - concept drift
-  - tabular data
+  - "NeurIPS 2025"
+  - "Time Series"
+  - "Temporal distribution shift"
+  - "feature modulation"
+  - "Yeo-Johnson transform"
+  - "concept drift"
+  - "tabular data"
 date: 2026-05-08
 content_hash: 3fb13a1d1a1e1b65
 ---

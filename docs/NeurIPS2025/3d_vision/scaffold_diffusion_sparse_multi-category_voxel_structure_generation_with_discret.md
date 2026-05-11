@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Scaffold Diffusion: Sparse Multi-Category Voxel Structure Generation with Discrete Diffusion
 description: >-
-  [NeurIPS 2025][3D Vision][Discrete diffusion models] This paper proposes Scaffold Diffusion, which treats sparse multi-category 3D voxels as token sequences and employs a Masked Diffusion Language Model (MDLM) with 3D sinusoidal positional encodings to generate spatially coherent multi-category voxel structures conditioned on occupancy maps. The method substantially outperforms autoregressive and conventional discrete diffusion baselines on an extremely sparse (>98% background) Minecraft house dataset.
+  [NeurIPS 2025][3D Vision][Discrete diffusion models] This paper proposes Scaffold Diffusion, which treats sparse multi-category 3D voxels as token sequences and employs a Masked Diffusion Language Model (MDLM) with 3D si…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Discrete diffusion models
-  - voxel generation
-  - sparse structures
-  - 3D generation
-  - Minecraft
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Discrete diffusion models"
+  - "voxel generation"
+  - "sparse structures"
+  - "3D generation"
+  - "Minecraft"
 date: 2026-05-08
 content_hash: dec4b334900d896a
 ---

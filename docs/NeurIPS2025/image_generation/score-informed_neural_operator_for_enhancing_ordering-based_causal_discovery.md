@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Score-informed Neural Operator for Enhancing Ordering-based Causal Discovery
 description: >-
-  [NeurIPS 2025][Image Generation][causal discovery] This paper proposes SciNO (Score-informed Neural Operator), a probabilistic generative model designed in a smooth function space that stably approximates the log-density Hessian diagonal to improve ordering-based causal discovery, achieving a 42.7% reduction in order divergence on synthetic graphs and 31.5% on real-world data.
+  [NeurIPS 2025][Image Generation][causal discovery] This paper proposes SciNO (Score-informed Neural Operator), a probabilistic generative model designed in a smooth function space that stably approximates the log-density…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - causal discovery
-  - neural operator
-  - score matching
-  - Hessian diagonal
-  - causal ordering
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "causal discovery"
+  - "neural operator"
+  - "score matching"
+  - "Hessian diagonal"
+  - "causal ordering"
 date: 2026-05-08
 content_hash: 5240b2c94c05f443
 ---

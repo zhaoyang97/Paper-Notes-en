@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Foundation Models for Scientific Discovery: From Paradigm Enhancement to Paradigm Transition
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][foundation models] This paper proposes a three-stage framework for FM-driven scientific discovery — meta-scientific integration, hybrid human-AI co-creation, and autonomous scientific discovery — and systematically surveys FM applications across the four classical paradigms (experimental, theoretical, computational, and data-driven), arguing that FMs are catalyzing a fifth scientific paradigm.
+  [NeurIPS 2025][Self-Supervised Learning][foundation models] This paper proposes a three-stage framework for FM-driven scientific discovery — meta-scientific integration, hybrid human-AI co-creation…
 tags:
-  - NeurIPS 2025
-  - Self-Supervised Learning
-  - foundation models
-  - scientific discovery
-  - paradigm shift
-  - autonomous discovery
-  - human-AI co-creation
+  - "NeurIPS 2025"
+  - "Self-Supervised Learning"
+  - "foundation models"
+  - "scientific discovery"
+  - "paradigm shift"
+  - "autonomous discovery"
+  - "human-AI co-creation"
 date: 2026-05-08
 content_hash: 632217b4b17277ef
 ---

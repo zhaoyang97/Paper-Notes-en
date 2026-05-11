@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Listening Between the Frames: Bridging Temporal Gaps in Large Audio-Language Models
 description: >-
-  [AAAI 2026][Video Understanding][Audio-Language Models] This paper proposes TimeAudio, which equips large audio-language models (LALMs) with precise temporal grounding and end-to-end long audio understanding capabilities through three key modules: Temporal Markers, Absolute Time-aware Encoding (ATE), and Segment-level Token Merging (SEM). The paper also introduces the FTAR dataset for instruction fine-tuning on fine-grained temporal reasoning.
+  [AAAI 2026][Video Understanding][Audio-Language Models] This paper proposes TimeAudio, which equips large audio-language models (LALMs) with precise temporal grounding and end-to-end long audio understanding capabilities…
 tags:
-  - AAAI 2026
-  - Video Understanding
-  - Audio-Language Models
-  - Temporal Grounding
-  - Fine-Grained Audio Understanding
-  - Long Audio
-  - Token Merging
+  - "AAAI 2026"
+  - "Video Understanding"
+  - "Audio-Language Models"
+  - "Temporal Grounding"
+  - "Fine-Grained Audio Understanding"
+  - "Long Audio"
+  - "Token Merging"
 date: 2026-05-08
 content_hash: 0b3e78a2d5e3c5bb
 ---

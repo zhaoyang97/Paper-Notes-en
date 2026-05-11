@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MAD-Avatar: Motion-Aware Animatable Gaussian Avatars Deblurring
 description: >-
-  [CVPR 2026][Image Restoration][3D human avatar] The first method to directly reconstruct sharp, drivable 3D Gaussian human avatars from blurry video: proposes a 3D-aware physical blur formation model (decomposing blur into sub-frame SMPL motion and canonical 3DGS), models sub-frame motion via B-spline interpolation and a pose deformation network, resolves motion direction ambiguity with inter-frame regularization, and substantially outperforms two-stage "2D deblurring + 3DGS" pipelines on both synthetic and real datasets (~2.5 dB PSNR gain).
+  [CVPR 2026][Image Restoration][3D human avatar] The first method to directly reconstruct sharp, drivable 3D Gaussian human avatars from blurry video: proposes a 3D-aware physical blur formation model (decomposing blur in…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - 3D human avatar
-  - Gaussian splatting
-  - motion blur
-  - SMPL
-  - deblurring
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "3D human avatar"
+  - "Gaussian splatting"
+  - "motion blur"
+  - "SMPL"
+  - "deblurring"
 date: 2026-05-08
 content_hash: 84394b0d2cd20241
 ---

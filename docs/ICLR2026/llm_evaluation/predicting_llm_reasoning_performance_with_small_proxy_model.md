@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Predicting LLM Reasoning Performance with Small Proxy Model
 description: >-
-  [ICLR 2026][LLM Evaluation][scaling law] This paper proposes rBridge, which uses reasoning traces from frontier models as gold labels and applies token-level task-aligned weighted NLL, enabling small models (≤1B) to effectively predict the reasoning performance of 13B–32B models, achieving over 100× computational savings on dataset ranking tasks.
+  [ICLR 2026][LLM Evaluation][scaling law] This paper proposes rBridge, which uses reasoning traces from frontier models as gold labels and applies token-level task-aligned weighted NLL…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - scaling law
-  - proxy model
-  - reasoning
-  - pre-training data selection
-  - negative log-likelihood
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "scaling law"
+  - "proxy model"
+  - "reasoning"
+  - "pre-training data selection"
+  - "negative log-likelihood"
 date: 2026-05-08
 content_hash: 030540fe70345350
 ---

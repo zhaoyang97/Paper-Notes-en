@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Sample-Efficient Distributionally Robust Multi-Agent Reinforcement Learning via Online Interaction
 description: >-
-  [ICLR 2026][AI Safety][Distributionally Robust] This paper presents the first study of online learning in Distributionally Robust Markov Games (DRMGs), proposing the MORNAVI algorithm. Without relying on a simulator or offline data, MORNAVI efficiently learns optimal robust policies through online interaction, and provides the first provable regret bounds under both TV-divergence and KL-divergence uncertainty sets.
+  [ICLR 2026][AI Safety][Distributionally Robust] This paper presents the first study of online learning in Distributionally Robust Markov Games (DRMGs)…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - Distributionally Robust
-  - Multi-Agent RL
-  - Markov Games
-  - online learning
-  - Regret Bounds
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Distributionally Robust"
+  - "Multi-Agent RL"
+  - "Markov Games"
+  - "online learning"
+  - "Regret Bounds"
 date: 2026-05-08
 content_hash: 5daf814cd5717219
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SCRIPT: A Subcharacter Compositional Representation Injection Module for Korean Pre-Trained Language Models
 description: >-
-  [ACL 2026][LLM Pretraining][Subcharacter compositional representation] This paper proposes SCRIPT, a model-agnostic plug-and-play module that injects subcharacter (Jamo) compositional knowledge from the Korean Hangul writing system into the embedding layer of existing subword-level PLMs via a dual-channel strategy. Without requiring re-pretraining, SCRIPT yields consistent improvements on Korean NLU/NLG tasks and enables the embedding space to better capture morphosyntactic regularities and semantic variations.
+  [ACL 2026][LLM Pretraining][Subcharacter compositional representation] This paper proposes SCRIPT, a model-agnostic plug-and-play module that injects subcharacter (Jamo) compositional knowledge from the Korean Hangul wri…
 tags:
-  - ACL 2026
-  - LLM Pretraining
-  - Subcharacter compositional representation
-  - Korean pre-trained language models
-  - Hangul structure modeling
-  - Morphophonological alternation
-  - Plug-and-play module
+  - "ACL 2026"
+  - "LLM Pretraining"
+  - "Subcharacter compositional representation"
+  - "Korean pre-trained language models"
+  - "Hangul structure modeling"
+  - "Morphophonological alternation"
+  - "Plug-and-play module"
 date: 2026-05-08
 content_hash: 7fb39bb5d61a476d
 ---

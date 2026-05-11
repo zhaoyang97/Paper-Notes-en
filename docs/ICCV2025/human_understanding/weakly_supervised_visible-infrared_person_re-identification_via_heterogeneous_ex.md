@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Weakly Supervised Visible-Infrared Person Re-Identification via Heterogeneous Expert Collaborative Consistency Learning
 description: >-
-  [ICCV 2025][Human Understanding][Visible-Infrared Person Re-Identification] This paper proposes the first weakly supervised paradigm for visible-infrared person re-identification (VIReID), which relies solely on intra-modality identity annotations (without cross-modal correspondence labels). A heterogeneous expert collaborative consistency learning framework is introduced to establish cross-modal identity correspondences, achieving performance close to fully supervised methods.
+  [ICCV 2025][Human Understanding][Visible-Infrared Person Re-Identification] This paper proposes the first weakly supervised paradigm for visible-infrared person re-identification (VIReID)…
 tags:
-  - ICCV 2025
-  - Human Understanding
-  - Visible-Infrared Person Re-Identification
-  - Weakly Supervised Learning
-  - Cross-Modal Matching
-  - Heterogeneous Experts
-  - Collaborative Consistency Learning
+  - "ICCV 2025"
+  - "Human Understanding"
+  - "Visible-Infrared Person Re-Identification"
+  - "Weakly Supervised Learning"
+  - "Cross-Modal Matching"
+  - "Heterogeneous Experts"
+  - "Collaborative Consistency Learning"
 date: 2026-05-08
 content_hash: 8be8b39e8ade12cd
 ---

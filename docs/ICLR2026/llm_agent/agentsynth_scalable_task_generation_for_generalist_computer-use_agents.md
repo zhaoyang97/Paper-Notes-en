@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AgentSynth: Scalable Task Generation for Generalist Computer-Use Agents
 description: >-
-  [ICLR 2026][LLM Agent][synthetic data generation] This paper proposes AgentSynth, a pipeline that leverages information asymmetry (forward stepwise generation is easy; backward holistic solving is hard) to chain simple subtasks into complex long-horizon computer-use tasks. It automatically generates 6,000+ diverse tasks and trajectories at \$0.60 per trajectory, with SOTA agents achieving only 4% success rate at the highest difficulty level.
+  [ICLR 2026][LLM Agent][synthetic data generation] This paper proposes AgentSynth, a pipeline that leverages information asymmetry (forward stepwise generation is easy…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - synthetic data generation
-  - computer-use agents
-  - information asymmetry
-  - task chaining
-  - long-horizon task benchmark
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "synthetic data generation"
+  - "computer-use agents"
+  - "information asymmetry"
+  - "task chaining"
+  - "long-horizon task benchmark"
 date: 2026-05-08
 content_hash: ccd19d360d2de997
 ---

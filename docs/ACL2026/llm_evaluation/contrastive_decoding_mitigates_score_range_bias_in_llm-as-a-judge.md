@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Contrastive Decoding Mitigates Score Range Bias in LLM-as-a-Judge
 description: >-
-  [ACL 2026][LLM Evaluation][LLM-as-a-Judge] This paper identifies **score range bias** in LLM judges under direct assessment settings — i.e., model outputs are highly sensitive to predefined score ranges — and proposes **contrastive decoding** as a mitigation strategy, leveraging the mutual cancellation of similar biases within the same model family, achieving an average relative improvement of up to 11.3% in Spearman correlation.
+  [ACL 2026][LLM Evaluation][LLM-as-a-Judge] This paper identifies **score range bias** in LLM judges under direct assessment settings — i.e.…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - LLM-as-a-Judge
-  - contrastive decoding
-  - score range bias
-  - direct assessment
-  - model family bias
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "LLM-as-a-Judge"
+  - "contrastive decoding"
+  - "score range bias"
+  - "direct assessment"
+  - "model family bias"
 date: 2026-05-08
 content_hash: e9a62c424a88e45f
 ---

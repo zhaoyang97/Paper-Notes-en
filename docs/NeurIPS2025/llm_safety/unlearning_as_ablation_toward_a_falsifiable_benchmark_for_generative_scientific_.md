@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unlearning as Ablation: Toward a Falsifiable Benchmark for Generative Scientific Discovery
 description: >-
-  [NeurIPS 2025 (AI4Science Workshop)][LLM Safety][unlearning as ablation] This paper proposes reframing machine unlearning as an epistemological probe ("unlearning as ablation"): by systematically removing a target piece of knowledge along with its unlearning closure, and then testing whether a model can re-derive it from axioms, the framework provides a falsifiable test to distinguish whether LLMs genuinely generate new knowledge or merely retrieve memorized fragments.
+  [NeurIPS 2025 (AI4Science Workshop)][LLM Safety][unlearning as ablation] This paper proposes reframing machine unlearning as an epistemological probe ("unlearning as ablation"): by systematically removing a target piece…
 tags:
-  - NeurIPS 2025 (AI4Science Workshop)
-  - LLM Safety
-  - unlearning as ablation
-  - scientific discovery
-  - falsifiable benchmark
-  - knowledge generation
-  - LLM evaluation
+  - "NeurIPS 2025 (AI4Science Workshop)"
+  - "LLM Safety"
+  - "unlearning as ablation"
+  - "scientific discovery"
+  - "falsifiable benchmark"
+  - "knowledge generation"
+  - "LLM evaluation"
 date: 2026-05-08
 content_hash: 02f01b69c1290978
 ---

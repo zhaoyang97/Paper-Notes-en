@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Capacity-Aware Inference: Mitigating the Straggler Effect in Mixture of Experts
 description: >-
-  [ICLR2026][Multimodal VLM][Mixture of Experts] To address the Straggler Effect in MoE inference—where the most heavily loaded expert determines overall latency due to uneven token distribution—this paper proposes Capacity-Aware Token Drop (discarding low-scoring tokens from overloaded experts) and Expanded Drop (re-routing overflow tokens to lightly loaded local experts). The approach achieves a 1.85× speedup on Mixtral-8×7B with a 0.2% performance improvement.
+  [ICLR2026][Multimodal VLM][Mixture of Experts] To address the Straggler Effect in MoE inference—where the most heavily loaded expert determines overall latency due to uneven token distribution—this paper proposes Capacit…
 tags:
-  - ICLR2026
-  - Multimodal VLM
-  - Mixture of Experts
-  - reasoning efficiency
-  - straggler effect
-  - token drop
-  - expert parallelism
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "Mixture of Experts"
+  - "reasoning efficiency"
+  - "straggler effect"
+  - "token drop"
+  - "expert parallelism"
 date: 2026-05-08
 content_hash: 1dd9a94f457d37e5
 ---

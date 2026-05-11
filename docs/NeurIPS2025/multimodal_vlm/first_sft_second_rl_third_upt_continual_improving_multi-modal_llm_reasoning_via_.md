@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] First SFT, Second RL, Third UPT: Continual Improving Multi-Modal LLM Reasoning via Unsupervised Post-Training
 description: >-
-  [NeurIPS 2025][Multimodal VLM][unsupervised post-training] This paper proposes MM-UPT, a framework that introduces a third-stage "unsupervised post-training" phase following SFT and RL. By combining majority voting as a pseudo-reward signal with GRPO, MM-UPT enables self-improvement of MLLMs, boosting Qwen2.5-VL-7B from 66.3% to 72.9% on MathVista.
+  [NeurIPS 2025][Multimodal VLM][unsupervised post-training] This paper proposes MM-UPT, a framework that introduces a third-stage "unsupervised post-training" phase following SFT and RL. By combining majority voting as a…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - unsupervised post-training
-  - multimodal reasoning
-  - GRPO
-  - majority voting
-  - self-improvement
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "unsupervised post-training"
+  - "multimodal reasoning"
+  - "GRPO"
+  - "majority voting"
+  - "self-improvement"
 date: 2026-05-08
 content_hash: 67652b0796285e67
 ---

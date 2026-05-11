@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] E2E-VGuard: Adversarial Prevention for Production LLM-based End-To-End Speech Synthesis
 description: >-
-  [NEURIPS2025][Audio & Speech][voice cloning defense] E2E-VGuard is a proactive defense framework against voice cloning threats in LLM-based end-to-end speech synthesis. It disrupts timbre via encoder ensemble perturbation, interferes with pronunciation recognition via adversarial attacks on ASR systems, and ensures imperceptibility through a psychoacoustic model. Effectiveness is validated across 19 TTS models and 7 ASR systems.
+  [NEURIPS2025][Audio & Speech][voice cloning defense] E2E-VGuard is a proactive defense framework against voice cloning threats in LLM-based end-to-end speech synthesis. It disrupts timbre via encoder ensemble perturbatio…
 tags:
-  - NEURIPS2025
+  - "NEURIPS2025"
   - "Audio & Speech"
-  - voice cloning defense
-  - adversarial examples
-  - speech synthesis
-  - psychoacoustic model
-  - LLM-based TTS
+  - "voice cloning defense"
+  - "adversarial examples"
+  - "speech synthesis"
+  - "psychoacoustic model"
+  - "LLM-based TTS"
 date: 2026-05-08
 content_hash: 3b375352ffed4a80
 ---

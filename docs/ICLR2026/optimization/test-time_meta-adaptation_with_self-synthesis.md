@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Test-Time Meta-Adaptation with Self-Synthesis
 description: >-
-  [ICLR 2026][Optimization][meta-learning] This paper proposes MASS (Meta-Adaptation with Self-Synthesis), a framework that employs bilevel optimization-based meta-learning to enable LLMs to generate task-specific synthetic training data at inference time via a Generator, filter samples through a Scorer, and perform weighted SFT self-update via LoRA. Meta-gradients are backpropagated through the inner update to optimize data quality, improving Llama-3.1-8B from 43.6% to 59.0% on MATH-500.
+  [ICLR 2026][Optimization][meta-learning] This paper proposes MASS (Meta-Adaptation with Self-Synthesis), a framework that employs bilevel optimization-based meta-learning to enable LLMs to generate task-specific syntheti…
 tags:
-  - ICLR 2026
-  - Optimization
-  - meta-learning
-  - test-time training
-  - bilevel optimization
-  - synthetic data
-  - self-adaptation
+  - "ICLR 2026"
+  - "Optimization"
+  - "meta-learning"
+  - "test-time training"
+  - "bilevel optimization"
+  - "synthetic data"
+  - "self-adaptation"
 date: 2026-05-08
 content_hash: 9b9eead055ffff51
 ---

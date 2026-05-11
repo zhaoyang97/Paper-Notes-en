@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Theoretical Framework for Grokking: Interpolation followed by Riemannian Norm Minimisation
 description: >-
-  [NEURIPS2025][grokking] This paper rigorously proves the mechanism behind grokking from a purely optimization-theoretic perspective. Gradient flow with small weight decay exhibits two-phase dynamics in the $\lambda\to 0$ limit: rapid convergence to the critical manifold $\mathcal{M}$ of the training loss, followed by a Riemannian gradient flow along the manifold minimizing the $\ell_2$ norm at timescale $t\approx 1/\lambda$, thereby inducing delayed generalization.
+  [NEURIPS2025][grokking] This paper rigorously proves the mechanism behind grokking from a purely optimization-theoretic perspective. Gradient flow with small weight decay exhibits two-phase dynamics in the $\lambda\to 0$…
 tags:
-  - NEURIPS2025
-  - grokking
-  - weight decay
-  - gradient flow
-  - Riemannian optimization
-  - implicit regularization
-  - two-timescale dynamics
+  - "NEURIPS2025"
+  - "grokking"
+  - "weight decay"
+  - "gradient flow"
+  - "Riemannian optimization"
+  - "implicit regularization"
+  - "two-timescale dynamics"
 date: 2026-05-08
 content_hash: 6f54292d12380036
 ---

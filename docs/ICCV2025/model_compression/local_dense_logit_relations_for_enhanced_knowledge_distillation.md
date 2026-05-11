@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Local Dense Logit Relations for Enhanced Knowledge Distillation
 description: >-
-  [ICCV 2025][Model Compression][Knowledge Distillation] This paper proposes Local Dense Relational Logit Distillation (LDRLD), which captures fine-grained inter-class relations by recursively decoupling and recombining logit knowledge, combined with an Adaptive Decay Weight (ADW) strategy that assigns higher weights to critical class pairs. LDRLD consistently outperforms existing logit distillation state-of-the-art methods on CIFAR-100, ImageNet-1K, and Tiny-ImageNet.
+  [ICCV 2025][Model Compression][Knowledge Distillation] This paper proposes Local Dense Relational Logit Distillation (LDRLD), which captures fine-grained inter-class relations by recursively decoupling and recombining lo…
 tags:
-  - ICCV 2025
-  - Model Compression
-  - Knowledge Distillation
-  - Logit Distillation
-  - Class-Pair Relations
-  - Adaptive Decay Weights
-  - Fine-Grained Knowledge Transfer
+  - "ICCV 2025"
+  - "Model Compression"
+  - "Knowledge Distillation"
+  - "Logit Distillation"
+  - "Class-Pair Relations"
+  - "Adaptive Decay Weights"
+  - "Fine-Grained Knowledge Transfer"
 date: 2026-05-08
 content_hash: bded630bd3386913
 ---

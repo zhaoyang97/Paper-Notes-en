@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EVT: Efficient View Transformation for Multi-Modal 3D Object Detection
 description: >-
-  [ICCV 2025][Autonomous Driving][BEV representation] This paper proposes EVT, a framework that achieves efficient LiDAR-guided view transformation via Adaptive Sampling and Adaptive Projection (ASAP), combined with group-wise mixed query selection and geometry-aware cross-attention, attaining state-of-the-art performance of 75.3% NDS on the nuScenes test set at real-time inference speed.
+  [ICCV 2025][Autonomous Driving][BEV representation] This paper proposes EVT, a framework that achieves efficient LiDAR-guided view transformation via Adaptive Sampling and Adaptive Projection (ASAP)…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - BEV representation
-  - LiDAR-Camera fusion
-  - view transformation
-  - multi-modal 3D detection
-  - real-time inference
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "BEV representation"
+  - "LiDAR-Camera fusion"
+  - "view transformation"
+  - "multi-modal 3D detection"
+  - "real-time inference"
 date: 2026-05-08
 content_hash: 52ad0836b4b99c04
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MultiMat: Multimodal Program Synthesis for Procedural Materials using Large Multimodal Models
 description: >-
-  [ICLR 2026][3D Vision][Procedural Materials] This paper presents MultiMat, the first framework to apply large multimodal models (LMMs) to procedural material node graph synthesis. By incorporating intermediate visual rendering feedback of partially generated nodes into the autoregressive generation process (via two conditioning modes: mixed and graph), and pairing this with an incremental constrained tree search for on-the-fly validation and backtracking, MultiMat is trained on 6,878 production-grade Substance Designer materials and substantially outperforms text-only baselines in both unconditional and conditional generation.
+  [ICLR 2026][3D Vision][Procedural Materials] This paper presents MultiMat, the first framework to apply large multimodal models (LMMs) to procedural material node graph synthesis. By incorporating intermediate visual ren…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Procedural Materials
-  - Node Graph
-  - Multimodal Generation
-  - Constrained Tree Search
-  - Substance Designer
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Procedural Materials"
+  - "Node Graph"
+  - "Multimodal Generation"
+  - "Constrained Tree Search"
+  - "Substance Designer"
 date: 2026-05-08
 content_hash: 476f72d10cdbbed3
 ---

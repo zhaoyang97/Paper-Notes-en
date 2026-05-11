@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Faster Certified Symmetry Breaking Using Orders With Auxiliary Variables
 description: >-
-  [AAAI 2026][symmetry breaking] By introducing auxiliary variables to encode lexicographic order in place of large-integer encodings, this work fundamentally redesigns the VeriPB proof system, achieving order-of-magnitude speedups in both proof generation and verification for certified SAT symmetry breaking, both theoretically and empirically.
+  [AAAI 2026][symmetry breaking] By introducing auxiliary variables to encode lexicographic order in place of large-integer encodings, this work fundamentally redesigns the VeriPB proof system…
 tags:
-  - AAAI 2026
-  - symmetry breaking
-  - proof logging
-  - SAT solving
-  - pseudo-Boolean
-  - VeriPB
-  - certified solving
+  - "AAAI 2026"
+  - "symmetry breaking"
+  - "proof logging"
+  - "SAT solving"
+  - "pseudo-Boolean"
+  - "VeriPB"
+  - "certified solving"
 date: 2026-05-08
 content_hash: 5678f81758369716
 ---

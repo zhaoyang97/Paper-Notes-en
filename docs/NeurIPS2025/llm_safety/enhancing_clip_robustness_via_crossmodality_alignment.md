@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Enhancing CLIP Robustness via Cross-Modality Alignment
 description: >-
-  [NeurIPS 2025 (Spotlight)][LLM Safety][CLIP] This paper proposes COLA, a training-free framework that eliminates non-semantic noise by projecting adversarially perturbed image features onto the subspace spanned by text features, and then employs optimal transport (OT) to perform fine-grained distribution-level image-text alignment. COLA achieves an average improvement of 6.7% in adversarial robust accuracy across 14 zero-shot classification benchmarks while preserving clean sample performance.
+  [NeurIPS 2025 (Spotlight)][LLM Safety][CLIP] This paper proposes COLA, a training-free framework that eliminates non-semantic noise by projecting adversarially perturbed image features onto the subspace spanned by text f…
 tags:
-  - NeurIPS 2025 (Spotlight)
-  - LLM Safety
-  - CLIP
-  - adversarial robustness
-  - optimal transport
-  - cross-modality alignment
-  - subspace projection
+  - "NeurIPS 2025 (Spotlight)"
+  - "LLM Safety"
+  - "CLIP"
+  - "adversarial robustness"
+  - "optimal transport"
+  - "cross-modality alignment"
+  - "subspace projection"
 date: 2026-05-08
 content_hash: 62becf33ecf40961
 ---

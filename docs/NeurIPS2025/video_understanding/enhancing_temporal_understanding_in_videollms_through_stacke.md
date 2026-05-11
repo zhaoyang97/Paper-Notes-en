@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Enhancing Temporal Understanding in Video-LLMs through Stacked Temporal Attention in Vision Encoders
 description: >-
-  [Video Understanding] This paper proposes STAVEQ2, which inserts parameter-efficient Stacked Temporal Attention (STA) modules into the Vision Encoder to address fundamental architectural deficiencies in existing Video-LLMs for fine-grained temporal understanding (e.g., distinguishing "pulling from left to right" vs. "pulling from right to left"), achieving up to 5.5% improvement on VITATECS/MVBench/Video-MME.
+  [Video Understanding] This paper proposes STAVEQ2, which inserts parameter-efficient Stacked Temporal Attention (STA) modules into the Vision Encoder to address fundamental architectural deficiencies in existing Video-LL…
 tags:
-  - Video Understanding
+  - "Video Understanding"
 date: 2026-05-08
 content_hash: 7a51d95ac32b0ea5
 ---

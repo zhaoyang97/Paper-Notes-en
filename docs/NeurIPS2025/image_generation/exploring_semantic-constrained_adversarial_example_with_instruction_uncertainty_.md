@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Exploring Semantic-constrained Adversarial Example with Instruction Uncertainty Reduction
 description: >-
-  [NeurIPS 2025][Image Generation][adversarial examples] This paper proposes InSUR, a multi-dimensional instruction uncertainty reduction framework that stabilizes adversarial optimization via a ResAdv-DDIM sampler, constrains attack scenarios through context-aware encoding, and evaluates semantic fidelity using WordNet-based semantic abstraction. InSUR is the first method to generate 2D/3D semantic-constrained adversarial examples (SemanticAE) from natural language instructions.
+  [NeurIPS 2025][Image Generation][adversarial examples] This paper proposes InSUR, a multi-dimensional instruction uncertainty reduction framework that stabilizes adversarial optimization via a ResAdv-DDIM sampler…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - adversarial examples
-  - semantic constraint
-  - diffusion models
-  - 3D adversarial
-  - transfer attack
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "adversarial examples"
+  - "semantic constraint"
+  - "diffusion models"
+  - "3D adversarial"
+  - "transfer attack"
 date: 2026-05-08
 content_hash: c95b4869af5d228b
 ---

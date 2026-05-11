@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MOS: Mitigating Optical-SAR Modality Gap for Cross-Modal Ship Re-Identification
 description: >-
-  [CVPR 2026][Image Generation][Cross-modal ReID] The paper proposes the MOS framework to address optical-SAR cross-modal ship re-identification. It comprises two core modules: (1) MCRL, which reduces the modality gap during training via SAR image denoising and a category-level modality alignment loss; and (2) CDGF, which generates pseudo-SAR samples from optical images using a Brownian bridge diffusion model at inference time and fuses the resulting features. On the HOSS ReID dataset, MOS achieves a +16.4% R1 improvement in the SAR→Optical direction.
+  [CVPR 2026][Image Generation][Cross-modal ReID] The paper proposes the MOS framework to address optical-SAR cross-modal ship re-identification. It comprises two core modules: (1) MCRL…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Cross-modal ReID
-  - Optical-SAR
-  - Ship recognition
-  - Diffusion bridge model
-  - Modality alignment
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Cross-modal ReID"
+  - "Optical-SAR"
+  - "Ship recognition"
+  - "Diffusion bridge model"
+  - "Modality alignment"
 date: 2026-05-08
 content_hash: 54ca012989ae67e9
 ---

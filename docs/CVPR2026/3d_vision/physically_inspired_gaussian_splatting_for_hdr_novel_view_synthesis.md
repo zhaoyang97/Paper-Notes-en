@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Physically Inspired Gaussian Splatting for HDR Novel View Synthesis
 description: >-
-  [CVPR 2026][3D Vision][HDR Novel View Synthesis] This paper proposes PhysHDR-GS, a physically inspired HDR novel view synthesis framework that decomposes Gaussian colors into intrinsic reflectance and adjustable ambient illumination. An Image-Exposure (IE) branch and a Gaussian-Illumination (GI) branch complementarily capture HDR details. A cross-branch HDR consistency loss provides explicit HDR supervision without ground-truth HDR data, and illumination-guided gradient scaling addresses gradient starvation caused by exposure bias. The method outperforms HDR-GS by 2.04 dB across multiple benchmarks while maintaining real-time rendering at 76 FPS.
+  [CVPR 2026][3D Vision][HDR Novel View Synthesis] This paper proposes PhysHDR-GS, a physically inspired HDR novel view synthesis framework that decomposes Gaussian colors into intrinsic reflectance and adjustable ambient…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - HDR Novel View Synthesis
-  - 3DGS
-  - Physically-Inspired Rendering
-  - Dual-Branch Architecture
-  - Illumination-Guided Gradient Scaling
+  - "CVPR 2026"
+  - "3D Vision"
+  - "HDR Novel View Synthesis"
+  - "3DGS"
+  - "Physically-Inspired Rendering"
+  - "Dual-Branch Architecture"
+  - "Illumination-Guided Gradient Scaling"
 date: 2026-05-08
 content_hash: 6e38bac6edbd3a36
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Adaptive Layer Selection for Layer-Wise Token Pruning in LLM Inference
 description: >-
-  [ACL 2026][Model Compression][KV cache compression] This paper proposes ASL (Adaptive Selection Layer), which monitors the variance of token attention score rankings to adaptively determine the layer at which KV cache pruning is performed. ASL significantly outperforms fixed-layer selection methods on difficult tasks while remaining training-free.
+  [ACL 2026][Model Compression][KV cache compression] This paper proposes ASL (Adaptive Selection Layer), which monitors the variance of token attention score rankings to adaptively determine the layer at which KV cache pr…
 tags:
-  - ACL 2026
-  - Model Compression
-  - KV cache compression
-  - adaptive layer selection
-  - attention pruning
-  - long-context inference
-  - training-free method
+  - "ACL 2026"
+  - "Model Compression"
+  - "KV cache compression"
+  - "adaptive layer selection"
+  - "attention pruning"
+  - "long-context inference"
+  - "training-free method"
 date: 2026-05-08
 content_hash: 7623dba9396b779d
 ---

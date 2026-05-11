@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Balancing Task-Invariant Interaction and Task-Specific Adaptation for Unified Image Fusion
 description: >-
-  [ICCV 2025][LLM/NLP][Unified Image Fusion] TITA proposes a unified image fusion framework that requires no task identifier at inference. It employs an Interaction-enhanced Pixel Attention (IPA) module to explore task-invariant complementary information extraction, an Operation-based Adaptive Fusion (OAF) module to dynamically adapt to task-specific requirements, and the FAMO strategy to mitigate multi-task gradient conflicts.
+  [ICCV 2025][LLM/NLP][Unified Image Fusion] TITA proposes a unified image fusion framework that requires no task identifier at inference. It employs an Interaction-enhanced Pixel Attention (IPA) module to explore task-inv…
 tags:
-  - ICCV 2025
-  - LLM/NLP
-  - Unified Image Fusion
-  - Multi-task Learning
-  - Pixel Attention
-  - Adaptive Fusion
-  - Gradient Conflict
+  - "ICCV 2025"
+  - "LLM/NLP"
+  - "Unified Image Fusion"
+  - "Multi-task Learning"
+  - "Pixel Attention"
+  - "Adaptive Fusion"
+  - "Gradient Conflict"
 date: 2026-05-08
 content_hash: 92f963dd83afb581
 ---

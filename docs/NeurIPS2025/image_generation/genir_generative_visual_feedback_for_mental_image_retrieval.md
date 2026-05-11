@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GenIR: Generative Visual Feedback for Mental Image Retrieval
 description: >-
-  [NeurIPS 2025][Image Generation][Interactive Retrieval] This paper proposes GenIR, a multi-round interactive image retrieval framework that leverages text-to-image diffusion models to generate "synthetic visual feedback," explicitly visualizing the system's interpretation of the user's query. This enables users to intuitively identify discrepancies and iteratively refine their queries, achieving substantial improvements over text-only feedback methods on the Mental Image Retrieval (MIR) task.
+  [NeurIPS 2025][Image Generation][Interactive Retrieval] This paper proposes GenIR, a multi-round interactive image retrieval framework that leverages text-to-image diffusion models to generate "synthetic visual feedback…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Interactive Retrieval
-  - Visual Feedback
-  - Diffusion Models
-  - Mental Image Retrieval
-  - Multi-round Query Refinement
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Interactive Retrieval"
+  - "Visual Feedback"
+  - "Diffusion Models"
+  - "Mental Image Retrieval"
+  - "Multi-round Query Refinement"
 date: 2026-05-08
 content_hash: 2549a433f969ccae
 ---

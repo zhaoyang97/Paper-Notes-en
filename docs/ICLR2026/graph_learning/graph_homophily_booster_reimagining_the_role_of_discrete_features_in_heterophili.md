@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GRAPHITE: Graph Homophily Booster — Reimagining the Role of Discrete Features in Heterophilic Graph Learning
 description: >-
-  [ICLR 2026][Graph Learning][heterophilic graph] This paper proposes GRAPHITE, a learning-free graph transformation method that **directly boosts graph homophily** by introducing "feature nodes" as hubs to indirectly connect nodes sharing common features. It is the first approach to address heterophilic graph learning by modifying graph structure rather than redesigning GNN architectures, achieving substantial improvements over 27 state-of-the-art methods on challenging benchmarks such as Actor.
+  [ICLR 2026][Graph Learning][heterophilic graph] This paper proposes GRAPHITE, a learning-free graph transformation method that **directly boosts graph homophily** by introducing "feature nodes" as hubs to indirectly conn…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - heterophilic graph
-  - homophily boosting
-  - graph transformation
-  - feature nodes
-  - GNN
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "heterophilic graph"
+  - "homophily boosting"
+  - "graph transformation"
+  - "feature nodes"
+  - "GNN"
 date: 2026-05-08
 content_hash: 407711f57e5ead7d
 ---

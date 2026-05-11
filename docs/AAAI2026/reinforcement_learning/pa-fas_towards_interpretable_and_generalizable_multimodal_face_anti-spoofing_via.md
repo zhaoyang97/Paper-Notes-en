@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] PA-FAS: Towards Interpretable and Generalizable Multimodal Face Anti-Spoofing via Path-Augmented Reinforcement Learning
 description: >-
-  [AAAI 2026][Reinforcement Learning][Face Anti-Spoofing] This paper proposes PA-FAS, a framework that addresses two critical bottlenecks of the SFT+RL paradigm in multimodal FAS — insufficient reasoning path diversity and reasoning shortcut — via a Reasoning Path Augmentation strategy and an answer shuffling mechanism, achieving the first unified solution for multimodal fusion, domain generalization, and interpretability simultaneously.
+  [AAAI 2026][Reinforcement Learning][Face Anti-Spoofing] This paper proposes PA-FAS, a framework that addresses two critical bottlenecks of the SFT+RL paradigm in multimodal FAS — insufficient reasoning path diversity and…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - Face Anti-Spoofing
-  - Multimodal Fusion
-  - Domain Generalization
-  - Interpretability
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "Face Anti-Spoofing"
+  - "Multimodal Fusion"
+  - "Domain Generalization"
+  - "Interpretability"
 date: 2026-05-08
 content_hash: 102c04fedf2ab1c3
 ---

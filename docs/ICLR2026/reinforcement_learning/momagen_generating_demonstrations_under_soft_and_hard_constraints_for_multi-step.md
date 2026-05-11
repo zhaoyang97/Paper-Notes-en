@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MoMaGen: Generating Demonstrations under Soft and Hard Constraints for Multi-Step Bimanual Mobile Manipulation
 description: >-
-  [ICLR 2026][Reinforcement Learning][mobile manipulation] MoMaGen formulates demonstration data generation for bimanual mobile manipulation as a constrained optimization problem. By combining hard constraints (reachability, collision-free motion, visibility) with soft constraints (object visibility during navigation, retraction to compact poses), the framework automatically generates large-scale, diverse datasets from a single human teleoperation demonstration. The resulting visuomotor policy can be deployed on a physical robot with only 40 real demonstrations for fine-tuning.
+  [ICLR 2026][Reinforcement Learning][mobile manipulation] MoMaGen formulates demonstration data generation for bimanual mobile manipulation as a constrained optimization problem. By combining hard constraints (reachabilit…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - mobile manipulation
-  - bimanual coordination
-  - constrained optimization
-  - automatic data generation
-  - imitation learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "mobile manipulation"
+  - "bimanual coordination"
+  - "constrained optimization"
+  - "automatic data generation"
+  - "imitation learning"
 date: 2026-05-08
 content_hash: e5f358f7aa5498e8
 ---

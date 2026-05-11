@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SeLaR: Selective Latent Reasoning in Large Language Models
 description: >-
-  [ACL 2026][Model Compression][Latent reasoning] This paper proposes SeLaR, a lightweight training-free framework that activates soft-embedding latent reasoning exclusively at high-entropy "exploration steps" via an entropy gating mechanism, while retaining discrete decoding at high-confidence "certainty steps." An entropy-aware contrastive regularization is introduced to prevent soft embeddings from collapsing toward the dominant token. SeLaR consistently outperforms standard CoT and state-of-the-art training-free methods across five reasoning benchmarks.
+  [ACL 2026][Model Compression][Latent reasoning] This paper proposes SeLaR, a lightweight training-free framework that activates soft-embedding latent reasoning exclusively at high-entropy "exploration steps" via an entro…
 tags:
-  - ACL 2026
-  - Model Compression
-  - Latent reasoning
-  - entropy gating
-  - soft embeddings
-  - contrastive regularization
-  - training-free reasoning enhancement
+  - "ACL 2026"
+  - "Model Compression"
+  - "Latent reasoning"
+  - "entropy gating"
+  - "soft embeddings"
+  - "contrastive regularization"
+  - "training-free reasoning enhancement"
 date: 2026-05-08
 content_hash: 625cd3c8aede3a3f
 ---

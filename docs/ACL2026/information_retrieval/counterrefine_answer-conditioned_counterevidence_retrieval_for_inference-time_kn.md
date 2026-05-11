@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] CounterRefine: Answer-Conditioned Counterevidence Retrieval for Inference-Time Knowledge Repair in Factual Question Answering
 description: >-
-  [ACL 2026][inference-time repair] This paper proposes CounterRefine, a lightweight inference-time repair layer: a standard RAG pipeline first generates a preliminary answer, which then conditions a counterevidence retrieval step to collect supporting and contradicting evidence; a constrained KEEP/REVISE decision gate combined with deterministic validation corrects erroneous answers, improving GPT-5's accuracy on SimpleQA from 67.3% to 73.1%.
+  [ACL 2026][Information Retrieval & RAG][inference-time repair] This paper proposes CounterRefine, a lightweight inference-time repair layer: a standard RAG pipeline first generates a preliminary answer…
 tags:
-  - ACL 2026
-  - inference-time repair
-  - counterevidence retrieval
-  - answer conditioning
-  - factual QA
-  - RAG augmentation
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "inference-time repair"
+  - "counterevidence retrieval"
+  - "answer conditioning"
+  - "factual QA"
+  - "RAG augmentation"
 date: 2026-05-08
 content_hash: b7be6c4b86461ba2
 ---

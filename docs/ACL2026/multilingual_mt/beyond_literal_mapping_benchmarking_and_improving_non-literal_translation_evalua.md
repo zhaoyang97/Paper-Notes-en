@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Beyond Literal Mapping: Benchmarking and Improving Non-Literal Translation Evaluation
 description: >-
-  [ACL 2026][machine translation evaluation] This paper constructs MENT, a non-literal translation meta-evaluation dataset comprising 7,530 human-annotated instances, reveals the unreliability of traditional metrics and LLM-as-Judge approaches on non-literal translation evaluation, and proposes RATE, an agentic evaluation framework in which a reflective Core Agent dynamically invokes sub-agents to improve correlation with human judgments by 3.2+ points.
+  [ACL 2026][Multilingual & Machine Translation][machine translation evaluation] This paper constructs MENT, a non-literal translation meta-evaluation dataset comprising 7,530 human-annotated instances…
 tags:
-  - ACL 2026
-  - machine translation evaluation
-  - non-literal translation
-  - meta-evaluation benchmark
-  - agentic evaluation framework
-  - LLM-as-Judge
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "machine translation evaluation"
+  - "non-literal translation"
+  - "meta-evaluation benchmark"
+  - "agentic evaluation framework"
+  - "LLM-as-Judge"
 date: 2026-05-08
 content_hash: 6331057c0c523241
 ---

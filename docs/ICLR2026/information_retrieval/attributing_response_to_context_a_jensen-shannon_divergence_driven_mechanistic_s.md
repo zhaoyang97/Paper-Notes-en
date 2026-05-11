@@ -2,16 +2,17 @@
 title: >-
   [Paper Note] Attributing Response to Context: A Jensen-Shannon Divergence Driven Mechanistic Study of Context Attribution in Retrieval-Augmented Generation
 description: >-
-  [ICLR 2026][Context Attribution] This paper proposes ARC-JSD, a method that computes the Jensen-Shannon Divergence (JSD) between response distributions under full context and sentence-ablated context, enabling efficient and accurate RAG context attribution without fine-tuning, gradient computation, or surrogate models. Combined with Logit Lens for mechanistic analysis, ARC-JSD identifies the attention heads and MLP layers responsible for context attribution, and reduces hallucination rates by approximately 39% via a gating mechanism.
+  [ICLR 2026][Information Retrieval & RAG][Context Attribution] This paper proposes ARC-JSD, a method that computes the Jensen-Shannon Divergence (JSD) between response distributions under full context and sentence-ablated…
 tags:
-  - ICLR 2026
-  - Context Attribution
-  - Jensen-Shannon Divergence
-  - RAG
-  - Mechanistic Interpretability
-  - Attention Heads
-  - MLP Layers
-  - Hallucination Mitigation
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Context Attribution"
+  - "Jensen-Shannon Divergence"
+  - "RAG"
+  - "Mechanistic Interpretability"
+  - "Attention Heads"
+  - "MLP Layers"
+  - "Hallucination Mitigation"
 date: 2026-05-08
 content_hash: c44dc0791972be82
 ---

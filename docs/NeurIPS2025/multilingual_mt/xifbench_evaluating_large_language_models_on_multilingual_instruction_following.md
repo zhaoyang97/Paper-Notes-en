@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] XIFBench: Evaluating Large Language Models on Multilingual Instruction Following
 description: >-
-  [NeurIPS 2025][multilingual instruction following] This paper proposes XIFBench — the first constraint-driven benchmark systematically evaluating LLMs' multilingual instruction-following capabilities. It comprises 558 instructions (0–5 constraints, 5 categories × 21 dimensions) across 6 languages (high/mid/low resource), and introduces an English-requirement anchoring evaluation protocol that achieves 94.7% cross-lingual evaluation consistency.
+  [NeurIPS 2025][Multilingual & Machine Translation][multilingual instruction following] This paper proposes XIFBench — the first constraint-driven benchmark systematically evaluating LLMs' multilingual instruction-followi…
 tags:
-  - NeurIPS 2025
-  - multilingual instruction following
-  - constraint-based evaluation
-  - LLM benchmarking
-  - cross-lingual consistency
-  - fine-grained evaluation
+  - "NeurIPS 2025"
+  - "Multilingual & Machine Translation"
+  - "multilingual instruction following"
+  - "constraint-based evaluation"
+  - "LLM benchmarking"
+  - "cross-lingual consistency"
+  - "fine-grained evaluation"
 date: 2026-05-08
 content_hash: 95dbd8ed775265cc
 ---

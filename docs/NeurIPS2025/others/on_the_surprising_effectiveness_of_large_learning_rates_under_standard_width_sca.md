@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] On the Surprising Effectiveness of Large Learning Rates under Standard Width Scaling
 description: >-
-  [NeurIPS 2025][infinite-width limit] This paper reveals that under standard parameterization (SP), the cross-entropy loss causes the previously monolithic "unstable" regime to split into two distinct sub-regimes: catastrophic instability and controlled divergence. In the controlled divergence regime ($\eta_n = \Theta(n^{-1/2})$), logits diverge while gradients and activations remain stable, thereby establishing the first practically useful infinite-width limit for SP that admits feature learning.
+  [NeurIPS 2025][infinite-width limit] This paper reveals that under standard parameterization (SP), the cross-entropy loss causes the previously monolithic "unstable" regime to split into two distinct sub-regimes: catastr…
 tags:
-  - NeurIPS 2025
-  - infinite-width limit
-  - standard parameterization
-  - learning rate scaling
-  - cross-entropy loss
-  - feature learning
-  - controlled divergence
+  - "NeurIPS 2025"
+  - "infinite-width limit"
+  - "standard parameterization"
+  - "learning rate scaling"
+  - "cross-entropy loss"
+  - "feature learning"
+  - "controlled divergence"
 date: 2026-05-08
 content_hash: 181d34562323e4ed
 ---

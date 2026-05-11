@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Entropic Confinement and Mode Connectivity in Overparameterized Neural Networks
 description: >-
-  [ICLR 2026][loss landscape] This paper reveals that systematic growth of curvature along low-loss paths generates entropic barriers, such that even when the energy path is flat, SGD noise confines optimization dynamics to flat regions near minima—resolving the paradox of "mode-connected but dynamically isolated" solutions.
+  [ICLR 2026][loss landscape] This paper reveals that systematic growth of curvature along low-loss paths generates entropic barriers, such that even when the energy path is flat…
 tags:
-  - ICLR 2026
-  - loss landscape
-  - mode connectivity
-  - entropic force
-  - SGD dynamics
-  - overparameterization
+  - "ICLR 2026"
+  - "loss landscape"
+  - "mode connectivity"
+  - "entropic force"
+  - "SGD dynamics"
+  - "overparameterization"
 date: 2026-05-08
 content_hash: 7e1920ccca725182
 ---

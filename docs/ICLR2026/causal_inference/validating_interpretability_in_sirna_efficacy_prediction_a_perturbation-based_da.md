@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Validating Interpretability in siRNA Efficacy Prediction: A Perturbation-Based, Dataset-Aware Protocol
 description: >-
-  [ICLR 2026][Causal Inference][siRNA] This paper proposes a standardized perturbation-based saliency faithfulness validation protocol for siRNA efficacy prediction, serving as a "pre-synthesis checkpoint" to assess the reliability of saliency maps. The authors further introduce BioPrior, a biologically informed regularization method to improve saliency faithfulness. Results show that 19/20 fold-dataset instances pass the validation, while cross-dataset transfer reveals two distinct failure modes.
+  [ICLR 2026][Causal Inference][siRNA] This paper proposes a standardized perturbation-based saliency faithfulness validation protocol for siRNA efficacy prediction…
 tags:
-  - ICLR 2026
-  - Causal Inference
-  - siRNA
-  - saliency maps
-  - faithfulness validation
-  - perturbation testing
-  - biological regularization
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "siRNA"
+  - "saliency maps"
+  - "faithfulness validation"
+  - "perturbation testing"
+  - "biological regularization"
 date: 2026-05-08
 content_hash: 16c25c941165b6c9
 ---

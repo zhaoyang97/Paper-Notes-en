@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Transformer-Based Multi-Region Segmentation and Radiomic Analysis of HR-pQCT Imaging for Osteoporosis Classification
 description: >-
-  [CVPR2026][Medical Imaging][HR-pQCT] This paper proposes a fully automatic multi-region HR-pQCT segmentation framework based on SegFormer, combined with radiomic features and machine learning for binary osteoporosis classification. The key finding is that soft tissue (tendon/fat) features demonstrate greater diagnostic value than traditional bone features.
+  [CVPR2026][Medical Imaging][HR-pQCT] This paper proposes a fully automatic multi-region HR-pQCT segmentation framework based on SegFormer…
 tags:
-  - CVPR2026
-  - Medical Imaging
-  - HR-pQCT
-  - osteoporosis classification
-  - SegFormer
-  - semantic segmentation
-  - radiomics
-  - machine learning
+  - "CVPR2026"
+  - "Medical Imaging"
+  - "HR-pQCT"
+  - "osteoporosis classification"
+  - "SegFormer"
+  - "semantic segmentation"
+  - "radiomics"
+  - "machine learning"
 date: 2026-05-08
 content_hash: 96df4c6c954fb212
 ---

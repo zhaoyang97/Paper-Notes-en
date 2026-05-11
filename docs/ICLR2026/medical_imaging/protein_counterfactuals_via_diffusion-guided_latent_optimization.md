@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Protein Counterfactuals via Diffusion-Guided Latent Optimization
 description: >-
-  [ICLR 2026][Medical Imaging][Counterfactual Explanation] This paper proposes MCCOP, a framework that performs gradient-guided counterfactual optimization in a continuous joint sequence–structure latent space, using a pretrained diffusion model as a manifold prior. With as few as 2–3 mutations, MCCOP generates biologically plausible protein variants that flip predictor outputs, simultaneously enabling model interpretation and protein design hypothesis generation.
+  [ICLR 2026][Medical Imaging][Counterfactual Explanation] This paper proposes MCCOP, a framework that performs gradient-guided counterfactual optimization in a continuous joint sequence–structure latent space…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - Counterfactual Explanation
-  - Protein Engineering
-  - Diffusion Models
-  - Manifold Constraints
-  - Sequence–Structure Embedding
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Counterfactual Explanation"
+  - "Protein Engineering"
+  - "Diffusion Models"
+  - "Manifold Constraints"
+  - "Sequence–Structure Embedding"
 date: 2026-05-08
 content_hash: f63346b2067eb47d
 ---

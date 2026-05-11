@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond Sharpness: A Flatness Decomposition Framework for Efficient Continual Learning
 description: >-
-  [AAAI 2026][Model Compression][continual learning] This paper proposes FLAD, a framework that decomposes the sharpness-aware perturbation direction into a gradient-aligned component and a stochastic-noise component, retaining only the noise component for regularization. By combining zeroth-order and first-order sharpness, FLAD improves generalization in continual learning with minimal additional computational overhead.
+  [AAAI 2026][Model Compression][continual learning] This paper proposes FLAD, a framework that decomposes the sharpness-aware perturbation direction into a gradient-aligned component and a stochastic-noise component…
 tags:
-  - AAAI 2026
-  - Model Compression
-  - continual learning
-  - Sharpness-Aware Minimization
-  - Flatness Decomposition
-  - catastrophic forgetting
-  - Loss Landscape
+  - "AAAI 2026"
+  - "Model Compression"
+  - "continual learning"
+  - "Sharpness-Aware Minimization"
+  - "Flatness Decomposition"
+  - "catastrophic forgetting"
+  - "Loss Landscape"
 date: 2026-05-08
 content_hash: cd61f279525e9ae5
 ---

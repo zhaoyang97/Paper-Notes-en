@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Devil is in Narrow Policy: Unleashing Exploration in Driving VLA Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Autonomous Driving VLA] This paper identifies an overlooked "Narrow Policy" bottleneck in driving VLA models—over-exploitation during the IL phase causes exploration collapse, which in turn constrains the RL phase. The proposed Curious-VLA framework achieves SOTA on Navsim (PDMS 90.3, Best-of-N 94.8) via feasible trajectory expansion and diversity-aware RL.
+  [CVPR 2026][Multimodal VLM][Autonomous Driving VLA] This paper identifies an overlooked "Narrow Policy" bottleneck in driving VLA models—over-exploitation during the IL phase causes exploration collapse…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Autonomous Driving VLA
-  - Narrow Policy
-  - Exploration-Exploitation Dilemma
-  - Reinforcement Learning
-  - Trajectory Diversity
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Autonomous Driving VLA"
+  - "Narrow Policy"
+  - "Exploration-Exploitation Dilemma"
+  - "Reinforcement Learning"
+  - "Trajectory Diversity"
 date: 2026-05-08
 content_hash: 27c2ce6524b8970f
 ---

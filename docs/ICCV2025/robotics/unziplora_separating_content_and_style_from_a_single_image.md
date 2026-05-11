@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UnZipLoRA: Separating Content and Style from a Single Image
 description: >-
-  [ICCV 2025][Robotics][LoRA] This paper proposes UnZipLoRA, a method that simultaneously trains two decoupled and compatible LoRAs (a content LoRA and a style LoRA) from a single image. Through three strategies—prompt separation, column separation, and block separation—the method achieves effective disentanglement of content and style, enabling independent manipulation and free recombination. UnZipLoRA surpasses DreamBooth-LoRA, Inspiration Tree, and B-LoRA across all user preference metrics.
+  [ICCV 2025][Robotics][LoRA] This paper proposes UnZipLoRA, a method that simultaneously trains two decoupled and compatible LoRAs (a content LoRA and a style LoRA) from a single image. Through three strategies—prompt sep…
 tags:
-  - ICCV 2025
-  - Robotics
-  - LoRA
-  - content-style disentanglement
-  - diffusion models
-  - image generation
-  - concept decoupling
+  - "ICCV 2025"
+  - "Robotics"
+  - "LoRA"
+  - "content-style disentanglement"
+  - "diffusion models"
+  - "image generation"
+  - "concept decoupling"
 date: 2026-05-08
 content_hash: 32895193db1c1629
 ---

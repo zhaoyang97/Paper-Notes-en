@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] ChunQiuTR: Time-Keyed Temporal Retrieval in Classical Chinese Annals
 description: >-
-  [ACL 2026][Temporal Retrieval] This paper proposes ChunQiuTR, the first temporal retrieval benchmark built upon a non-Gregorian calendar system, constructed from the *Spring and Autumn Annals* and its exegetical traditions. It further introduces CTD (Calendrical Temporal Dual-encoder), which achieves temporally-aware retrieval via Fourier-based absolute calendrical context and relative temporal offset biases, substantially outperforming pure semantic baselines.
+  [ACL 2026][Information Retrieval & RAG][Temporal Retrieval] This paper proposes ChunQiuTR, the first temporal retrieval benchmark built upon a non-Gregorian calendar system…
 tags:
-  - ACL 2026
-  - Temporal Retrieval
-  - Classical Chinese
-  - Calendar Encoding
-  - Bi-Encoder
-  - RAG
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Temporal Retrieval"
+  - "Classical Chinese"
+  - "Calendar Encoding"
+  - "Bi-Encoder"
+  - "RAG"
 date: 2026-05-08
 content_hash: b8a11a6afcf904a6
 ---

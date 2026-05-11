@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Efficient Reasoning with Balanced Thinking
 description: >-
-  [ICLR 2026][Model Compression][Large language model reasoning] This paper proposes ReBalance, a training-free framework that simultaneously mitigates overthinking and underthinking in large reasoning models (LRMs) via confidence-guided dynamic hidden-state steering vectors, achieving joint improvements in both reasoning efficiency and accuracy.
+  [ICLR 2026][Model Compression][Large language model reasoning] This paper proposes ReBalance, a training-free framework that simultaneously mitigates overthinking and underthinking in large reasoning models (LRMs) via co…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Large language model reasoning
-  - overthinking
-  - underthinking
-  - hidden-state steering
-  - training-free acceleration
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Large language model reasoning"
+  - "overthinking"
+  - "underthinking"
+  - "hidden-state steering"
+  - "training-free acceleration"
 date: 2026-05-08
 content_hash: 89404c885fa4df26
 ---

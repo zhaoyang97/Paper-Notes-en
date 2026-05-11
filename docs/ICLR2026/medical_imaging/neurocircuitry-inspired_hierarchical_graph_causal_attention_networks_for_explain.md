@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] NeuroCircuitry-Inspired Hierarchical Graph Causal Attention Networks for Explainable Depression Identification
 description: >-
-  [ICLR 2026][Medical Imaging][Brain network GNN] This paper proposes the NH-GCAT framework, which explicitly incorporates neuroscience priors on depression-related neural circuits into a GNN, modeling brain activity at three spatial scales—region, circuit, and network. The method achieves state-of-the-art classification on the REST-meta-MDD dataset (AUC 78.5%, ACC 73.8%) and provides interpretable analyses consistent with established neuroscientific findings.
+  [ICLR 2026][Medical Imaging][Brain network GNN] This paper proposes the NH-GCAT framework, which explicitly incorporates neuroscience priors on depression-related neural circuits into a GNN…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - Brain network GNN
-  - depression identification
-  - causal attention
-  - hierarchical circuit encoding
-  - explainable AI
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Brain network GNN"
+  - "depression identification"
+  - "causal attention"
+  - "hierarchical circuit encoding"
+  - "explainable AI"
 date: 2026-05-08
 content_hash: 69ea69507ec0b178
 ---

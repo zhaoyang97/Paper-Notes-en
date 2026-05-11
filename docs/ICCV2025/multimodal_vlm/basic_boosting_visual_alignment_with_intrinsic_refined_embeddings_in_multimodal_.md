@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BASIC: Boosting Visual Alignment with Intrinsic Refined Embeddings in Multimodal Large Language Models
 description: >-
-  [ICCV 2025][Multimodal VLM][MLLM] By analyzing the semantic refinement of visual embeddings in the shallow layers of LLMs, this paper proposes BASIC, a method that leverages intrinsically refined visual embeddings from within the LLM as supervision signals to directly guide the visual projector in generating better initial visual embeddings along two dimensions: directional alignment and semantic distribution.
+  [ICCV 2025][Multimodal VLM][MLLM] By analyzing the semantic refinement of visual embeddings in the shallow layers of LLMs, this paper proposes BASIC…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - MLLM
-  - Visual Embedding
-  - Self-Distillation
-  - Modality Alignment
-  - LLM Interpretability
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "MLLM"
+  - "Visual Embedding"
+  - "Self-Distillation"
+  - "Modality Alignment"
+  - "LLM Interpretability"
 date: 2026-05-08
 content_hash: 9d76c9b96bebf9dd
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Calibrating MLLM-as-a-Judge via Multimodal Bayesian Prompt Ensembles
 description: >-
-  [ICCV 2025][Multimodal VLM][MLLM-as-a-Judge] This paper proposes Multimodal Mixture-of-Bayesian Prompt Ensembles (MMB), which learns image-cluster-conditioned prompt weights to substantially improve calibration and judgment accuracy of MLLMs used as evaluators, addressing the failure of standard prompt ensemble methods in multimodal settings.
+  [ICCV 2025][Multimodal VLM][MLLM-as-a-Judge] This paper proposes Multimodal Mixture-of-Bayesian Prompt Ensembles (MMB), which learns image-cluster-conditioned prompt weights to substantially improve calibration and judgm…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - MLLM-as-a-Judge
-  - prompt ensembles
-  - Bayesian inference
-  - calibration
-  - text-to-image generation
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "MLLM-as-a-Judge"
+  - "prompt ensembles"
+  - "Bayesian inference"
+  - "calibration"
+  - "text-to-image generation"
 date: 2026-05-08
 content_hash: 0e1e809d61fb5418
 ---

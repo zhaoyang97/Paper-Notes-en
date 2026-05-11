@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GraphChain: Large Language Models for Large-scale Graph Analysis via Tool Chaining
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][large-scale graph analysis] This paper proposes GraphChain, a framework that enables LLMs to analyze large-scale graphs in a progressive, human-like exploratory manner through two key components: progressive graph distillation (RL-driven tool-chain sequence generation) and structure-aware test-time adaptation (lightweight adapters conditioned on graph topology fingerprints). GraphChain achieves an average accuracy of 84.7%, surpassing the best baseline by 20.7%, and scales to graphs with up to 200,000 nodes.
+  [NeurIPS 2025][Reinforcement Learning][large-scale graph analysis] This paper proposes GraphChain, a framework that enables LLMs to analyze large-scale graphs in a progressive…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - large-scale graph analysis
-  - tool chaining
-  - information bottleneck
-  - test-time adaptation
-  - graph analysis
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "large-scale graph analysis"
+  - "tool chaining"
+  - "information bottleneck"
+  - "test-time adaptation"
+  - "graph analysis"
 date: 2026-05-08
 content_hash: 766e4adfa5bd3264
 ---

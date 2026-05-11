@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DiTFastAttnV2: Head-wise Attention Compression for Multi-Modality Diffusion Transformers
 description: >-
-  [ICCV 2025][Image Generation][Diffusion Transformer] DiTFastAttnV2 is proposed for multi-modality diffusion Transformers (MMDiT), achieving fine-grained attention compression via Head-wise Arrow Attention and Head-wise Caching mechanisms. It reduces attention FLOPs by 68% and achieves 1.5× end-to-end speedup on 2K image generation without visual quality degradation.
+  [ICCV 2025][Image Generation][Diffusion Transformer] DiTFastAttnV2 is proposed for multi-modality diffusion Transformers (MMDiT), achieving fine-grained attention compression via Head-wise Arrow Attention and Head-wise C…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Diffusion Transformer
-  - Attention Compression
-  - MMDiT
-  - Sparse Attention
-  - Inference Acceleration
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Diffusion Transformer"
+  - "Attention Compression"
+  - "MMDiT"
+  - "Sparse Attention"
+  - "Inference Acceleration"
 date: 2026-05-08
 content_hash: e8d1966491ac194b
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Gene Incremental Learning for Single-Cell Transcriptomics
 description: >-
-  [AAAI 2026][Audio & Speech][gene incremental learning] This paper proposes a Gene Incremental Learning (GIL) framework that leverages the permutation-invariant nature of single-cell transcriptomics data to extend the class incremental learning (CIL) paradigm to the token (gene) dimension. Two baseline methods—gene replay and gene distillation—are designed, and a comprehensive benchmark is established with two evaluation protocols: gene-level regression and gene-level classification.
+  [AAAI 2026][Audio & Speech][gene incremental learning] This paper proposes a Gene Incremental Learning (GIL) framework that leverages the permutation-invariant nature of single-cell transcriptomics data to extend the cla…
 tags:
-  - AAAI 2026
+  - "AAAI 2026"
   - "Audio & Speech"
-  - gene incremental learning
-  - single-cell transcriptomics
-  - catastrophic forgetting
-  - token incremental learning
-  - benchmark
+  - "gene incremental learning"
+  - "single-cell transcriptomics"
+  - "catastrophic forgetting"
+  - "token incremental learning"
+  - "benchmark"
 date: 2026-05-08
 content_hash: 7cd996927bffb61b
 ---

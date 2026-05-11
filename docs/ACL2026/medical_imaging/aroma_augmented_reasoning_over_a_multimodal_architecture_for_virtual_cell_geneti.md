@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AROMA: Augmented Reasoning Over a Multimodal Architecture for Virtual Cell Genetic Perturbation Modeling
 description: >-
-  [ACL 2026][Medical Imaging][virtual cell modeling] This paper proposes the AROMA framework, which integrates textual evidence, knowledge graph topological information, and protein sequence features within a multimodal architecture, combined with a two-stage training strategy (SFT + GRPO), to achieve interpretable and accurate prediction of genetic perturbation effects.
+  [ACL 2026][Medical Imaging][virtual cell modeling] This paper proposes the AROMA framework, which integrates textual evidence, knowledge graph topological information…
 tags:
-  - ACL 2026
-  - Medical Imaging
-  - virtual cell modeling
-  - genetic perturbation prediction
-  - multimodal fusion
-  - knowledge graph
-  - reinforcement learning reasoning
+  - "ACL 2026"
+  - "Medical Imaging"
+  - "virtual cell modeling"
+  - "genetic perturbation prediction"
+  - "multimodal fusion"
+  - "knowledge graph"
+  - "reinforcement learning reasoning"
 date: 2026-05-08
 content_hash: ef9a0c3a32f2cddb
 ---

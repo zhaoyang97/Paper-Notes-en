@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Understanding and Improving Hyperbolic Deep Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][hyperbolic geometry] Through closed-form gradient analysis, this paper identifies the root causes of instability in hyperbolic deep RL—namely, conformal factor explosion in the Poincaré Ball and PPO trust-region breakdown induced by large-norm embeddings. It proposes Hyper++, a four-component solution comprising RMSNorm, learnable scaling, HL-Gauss categorical value loss, and the Hyperboloid model, achieving comprehensive improvements over prior baselines on ProcGen (16 environments) and Atari-5.
+  [ICLR 2026][Reinforcement Learning][hyperbolic geometry] Through closed-form gradient analysis, this paper identifies the root causes of instability in hyperbolic deep RL—namely…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - hyperbolic geometry
-  - PPO
-  - gradient analysis
-  - RMSNorm
-  - categorical value loss
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "hyperbolic geometry"
+  - "PPO"
+  - "gradient analysis"
+  - "RMSNorm"
+  - "categorical value loss"
 date: 2026-05-08
 content_hash: 17b68ad28ab69c56
 ---

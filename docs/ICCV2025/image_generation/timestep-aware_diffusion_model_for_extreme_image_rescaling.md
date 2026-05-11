@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Timestep-Aware Diffusion Model for Extreme Image Rescaling
 description: >-
-  [Image Generation] This paper proposes TADM, which performs extreme image rescaling (16×/32×) in the latent space of a pretrained Stable Diffusion model. By introducing a Decoupled Feature Rescaling Module (DFRM) and a timestep-aware alignment strategy, TADM dynamically allocates the generative capacity of the diffusion model to handle spatially non-uniform degradation.
+  [Image Generation] This paper proposes TADM, which performs extreme image rescaling (16×/32×) in the latent space of a pretrained Stable Diffusion model. By introducing a Decoupled Feature Rescaling Module (DFRM) and a t…
 tags:
-  - Image Generation
+  - "Image Generation"
 date: 2026-05-08
 content_hash: 29ac512ac10ced06
 ---

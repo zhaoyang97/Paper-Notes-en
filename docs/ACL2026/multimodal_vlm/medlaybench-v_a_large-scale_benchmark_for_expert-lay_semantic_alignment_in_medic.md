@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MedLayBench-V: A Large-Scale Benchmark for Expert-Lay Semantic Alignment in Medical Vision Language Models
 description: >-
-  [ACL 2026][Multimodal VLM][Medical vision-language models] This paper presents MedLayBench-V, the first large-scale multimodal medical expert-lay semantic alignment benchmark (79,793 image-text pairs). Through a Structured Concept-Grounded Refinement (SCGR) pipeline, professional radiology reports are transformed into lay descriptions, reducing reading difficulty from graduate level to high school level while preserving clinical semantic fidelity. Zero-shot retrieval experiments demonstrate that lay descriptions incur less than 1% performance degradation.
+  [ACL 2026][Multimodal VLM][Medical vision-language models] This paper presents MedLayBench-V, the first large-scale multimodal medical expert-lay semantic alignment benchmark (79…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Medical vision-language models
-  - expert-lay semantic alignment
-  - medical text simplification
-  - UMLS
-  - multimodal benchmark
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Medical vision-language models"
+  - "expert-lay semantic alignment"
+  - "medical text simplification"
+  - "UMLS"
+  - "multimodal benchmark"
 date: 2026-05-08
 content_hash: d6f03fffe320cf70
 ---

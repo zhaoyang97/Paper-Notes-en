@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning to See Inside Opaque Liquid Containers using Speckle Vibrometry
 description: >-
-  [ICCV 2025][Audio & Speech][Speckle vibrometry] This paper proposes a non-contact system based on laser speckle vibrometry that simultaneously senses micro-vibrations on the surfaces of multiple opaque containers via a 2D grid, then employs a Vibration Transformer to infer container type and hidden liquid fill level from vibration spectra — establishing "seeing inside opaque containers" as a novel computer vision task.
+  [ICCV 2025][Audio & Speech][Speckle vibrometry] This paper proposes a non-contact system based on laser speckle vibrometry that simultaneously senses micro-vibrations on the surfaces of multiple opaque containers via a 2…
 tags:
-  - ICCV 2025
+  - "ICCV 2025"
   - "Audio & Speech"
-  - Speckle vibrometry
-  - liquid level inference
-  - Transformer
-  - 2D grid sensing
-  - non-contact detection
+  - "Speckle vibrometry"
+  - "liquid level inference"
+  - "Transformer"
+  - "2D grid sensing"
+  - "non-contact detection"
 date: 2026-05-08
 content_hash: 06f4d366ce993776
 ---

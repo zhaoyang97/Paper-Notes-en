@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From Classification to Ranking: Enhancing LLM Reasoning for MBTI Personality Detection
 description: >-
-  [AAAI 2026][LLM/NLP][MBTI] This paper reformulates MBTI personality detection from four independent binary classifications into a listwise ranking task over all 16 personality types, training a 7B model via SFT cold-start followed by GRPO reinforcement learning with a dual reward (NDCG + dimension similarity), achieving state-of-the-art results on the Kaggle and PANDORA datasets.
+  [AAAI 2026][LLM/NLP][MBTI] This paper reformulates MBTI personality detection from four independent binary classifications into a listwise ranking task over all 16 personality types…
 tags:
-  - AAAI 2026
-  - LLM/NLP
-  - MBTI
-  - learning to rank
-  - GRPO
-  - NDCG
-  - personality detection
+  - "AAAI 2026"
+  - "LLM/NLP"
+  - "MBTI"
+  - "learning to rank"
+  - "GRPO"
+  - "NDCG"
+  - "personality detection"
 date: 2026-05-08
 content_hash: b73ca13d5d252e0f
 ---

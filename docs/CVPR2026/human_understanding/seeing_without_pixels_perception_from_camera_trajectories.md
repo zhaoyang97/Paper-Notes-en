@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Seeing without Pixels: Perception from Camera Trajectories
 description: >-
-  [CVPR 2026][Human Understanding][camera trajectory] This paper is the first to systematically elevate camera pose trajectories (6DoF pose sequences) to an independent modality for video perception. Through a contrastive learning framework, a lightweight Transformer encoder, CamFormer, is trained to map camera trajectories into a joint embedding space aligned with text. Across 10 downstream tasks on 5 datasets, the paper demonstrates that camera trajectories serve as a lightweight and robust signal for video content understanding—even surpassing video models requiring thousands of times more computation on physical activity tasks.
+  [CVPR 2026][Human Understanding][camera trajectory] This paper is the first to systematically elevate camera pose trajectories (6DoF pose sequences) to an independent modality for video perception. Through a contrastive…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - camera trajectory
-  - contrastive learning
-  - video perception
-  - modality fusion
-  - action understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "camera trajectory"
+  - "contrastive learning"
+  - "video perception"
+  - "modality fusion"
+  - "action understanding"
 date: 2026-05-08
 content_hash: d29c002351d6c36f
 ---

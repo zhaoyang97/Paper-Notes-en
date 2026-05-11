@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Imagine Before Concentration: Diffusion-Guided Registers Enhance Partially Relevant Video Retrieval
 description: >-
-  [CVPR 2026][Image Generation][Partially Relevant Video Retrieval] This paper proposes DreamPRVR, which adopts a coarse-to-fine "imagine before concentrate" strategy: a truncated diffusion model generates global semantic register tokens under text supervision, which are then fused into fine-grained video representations to suppress spurious local noise responses, achieving state-of-the-art performance on three PRVR benchmarks.
+  [CVPR 2026][Image Generation][Partially Relevant Video Retrieval] This paper proposes DreamPRVR, which adopts a coarse-to-fine "imagine before concentrate" strategy: a truncated diffusion model generates global semantic…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Partially Relevant Video Retrieval
-  - Diffusion Models
-  - Register Tokens
-  - Cross-Modal Alignment
-  - Global Context
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Partially Relevant Video Retrieval"
+  - "Diffusion Models"
+  - "Register Tokens"
+  - "Cross-Modal Alignment"
+  - "Global Context"
 date: 2026-05-08
 content_hash: b444f48ce809b2d9
 ---

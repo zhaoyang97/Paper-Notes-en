@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Toward Consistent World Models with Multi-Token Prediction and Latent Semantic Enhancement
 description: >-
-  [ACL 2026][LLM Safety][multi-token prediction] This paper provides a theoretical analysis of how Multi-Token Prediction (MTP) induces representational contractiveness through gradient coupling mechanisms to promote the emergence of belief states. It simultaneously reveals a "structural hallucination" problem in MTP—namely, illegal shortcuts in the latent space—and proposes the LSE-MTP framework, which anchors predictions to true latent state trajectories via latent consistency loss and semantic anchoring loss. The approach significantly improves path legality and robustness on synthetic graphs and real-world Manhattan taxi navigation tasks.
+  [ACL 2026][LLM Safety][multi-token prediction] This paper provides a theoretical analysis of how Multi-Token Prediction (MTP) induces representational contractiveness through gradient coupling mechanisms to promote the e…
 tags:
-  - ACL 2026
-  - LLM Safety
-  - multi-token prediction
-  - world models
-  - belief states
-  - structural hallucination
-  - latent semantic enhancement
+  - "ACL 2026"
+  - "LLM Safety"
+  - "multi-token prediction"
+  - "world models"
+  - "belief states"
+  - "structural hallucination"
+  - "latent semantic enhancement"
 date: 2026-05-08
 content_hash: 3862d3fe180b091b
 ---

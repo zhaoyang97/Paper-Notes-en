@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ReflexSplit: Single Image Reflection Separation via Layer Fusion-Separation
 description: >-
-  [CVPR 2026][LLM Evaluation][Single image reflection separation] ReflexSplit proposes an explicit layer fusion-separation framework that addresses the transmission-reflection confusion problem in single image reflection separation (SIRS). It employs Cross-scale Gated Fusion (CrGF) for adaptive multi-scale feature aggregation, a differential dual-dimensional attention mechanism $\mathbf{A}^t - \lambda_\ell \mathbf{A}^r$ within the Layer Fusion-Separation Block (LFSB) for cross-stream interference suppression, and a curriculum training strategy with depth-dependent initialization and epoch-wise warmup to progressively strengthen separation intensity, achieving state-of-the-art performance on both synthetic and real-world benchmarks.
+  [CVPR 2026][LLM Evaluation][Single image reflection separation] ReflexSplit proposes an explicit layer fusion-separation framework that addresses the transmission-reflection confusion problem in single image reflection s…
 tags:
-  - CVPR 2026
-  - LLM Evaluation
-  - Single image reflection separation
-  - differential attention
-  - cross-scale fusion
-  - curriculum learning
-  - dual-stream architecture
+  - "CVPR 2026"
+  - "LLM Evaluation"
+  - "Single image reflection separation"
+  - "differential attention"
+  - "cross-scale fusion"
+  - "curriculum learning"
+  - "dual-stream architecture"
 date: 2026-05-08
 content_hash: 8a5fd1686e682ab6
 ---

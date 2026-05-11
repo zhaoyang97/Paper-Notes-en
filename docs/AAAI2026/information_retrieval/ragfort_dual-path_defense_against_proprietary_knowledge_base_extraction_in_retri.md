@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] RAGFort: Dual-Path Defense Against Proprietary Knowledge Base Extraction in Retrieval-Augmented Generation
 description: >-
-  [AAAI 2026][RAG Security] This paper proposes RAGFort, the first systematic dual-path framework for defending against RAG knowledge base extraction attacks. It combines contrastive reindexing (inter-class) to isolate topic boundaries with constrained cascade generation (intra-class) to suppress sensitive content output. RAGFort reduces the knowledge recovery rate to 0.51× that of an unprotected system while preserving answer quality.
+  [AAAI 2026][Information Retrieval & RAG][RAG Security] This paper proposes RAGFort, the first systematic dual-path framework for defending against RAG knowledge base extraction attacks. It combines contrastive reindexing…
 tags:
-  - AAAI 2026
-  - RAG Security
-  - Knowledge Base Protection
-  - Contrastive Reindexing
-  - Cascade Generation
-  - Dual-Path Defense
+  - "AAAI 2026"
+  - "Information Retrieval & RAG"
+  - "RAG Security"
+  - "Knowledge Base Protection"
+  - "Contrastive Reindexing"
+  - "Cascade Generation"
+  - "Dual-Path Defense"
 date: 2026-05-08
 content_hash: 59e7ea9415a51ba4
 ---

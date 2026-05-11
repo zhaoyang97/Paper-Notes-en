@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Rep-MTL: Unleashing the Power of Representation-Level Task Saliency for Multi-Task Learning
 description: >-
-  [ICCV 2025][Robotics][Multi-task learning] This paper proposes Rep-MTL, a multi-task optimization method grounded in representation-level task saliency. It mitigates negative transfer and explicitly promotes cross-task complementarity via entropy-regularized task-specific saliency regulation (TSR) and sample-level cross-task saliency alignment (CSA), without modifying the optimizer or network architecture.
+  [ICCV 2025][Robotics][Multi-task learning] This paper proposes Rep-MTL, a multi-task optimization method grounded in representation-level task saliency. It mitigates negative transfer and explicitly promotes cross-task c…
 tags:
-  - ICCV 2025
-  - Robotics
-  - Multi-task learning
-  - task saliency
-  - representation space
-  - contrastive learning
-  - negative transfer mitigation
+  - "ICCV 2025"
+  - "Robotics"
+  - "Multi-task learning"
+  - "task saliency"
+  - "representation space"
+  - "contrastive learning"
+  - "negative transfer mitigation"
 date: 2026-05-08
 content_hash: f311d72bd41b6ae3
 ---

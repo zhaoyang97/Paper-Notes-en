@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SFUOD: Source-Free Unknown Object Detection
 description: >-
-  [ICCV 2025][Object Detection][Source-free domain adaptation] This paper introduces a novel Source-Free Unknown Object Detection (SFUOD) setting and proposes the CollaPAUL framework, which simultaneously detects known and unknown objects without access to source data by combining collaborative tuning to fuse source- and target-domain knowledge with a principal-axis-based pseudo-label assignment strategy for unknown objects.
+  [ICCV 2025][Object Detection][Source-free domain adaptation] This paper introduces a novel Source-Free Unknown Object Detection (SFUOD) setting and proposes the CollaPAUL framework…
 tags:
-  - ICCV 2025
-  - Object Detection
-  - Source-free domain adaptation
-  - unknown object detection
-  - mean teacher
-  - collaborative tuning
-  - principal axis pseudo-labels
+  - "ICCV 2025"
+  - "Object Detection"
+  - "Source-free domain adaptation"
+  - "unknown object detection"
+  - "mean teacher"
+  - "collaborative tuning"
+  - "principal axis pseudo-labels"
 date: 2026-05-08
 content_hash: 2ff3a644212c882b
 ---

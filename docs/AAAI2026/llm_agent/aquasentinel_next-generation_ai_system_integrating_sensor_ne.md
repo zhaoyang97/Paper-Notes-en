@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AquaSentinel: Next-Generation AI System Integrating Sensor Networks for Urban Underground Water Pipeline Anomaly Detection via Collaborative MoE-LLM Agent Architecture
 description: >-
-  [AAAI 2026][LLM Agent][Urban pipeline networks] This paper proposes AquaSentinel, a physics-informed AI system that achieves network-wide pipeline leak detection using only 20–30% node coverage through sparse sensor deployment, physics-augmented virtual sensors, a MoE spatiotemporal GNN ensemble, a dual-threshold RTCA detection algorithm, causal flow localization, and LLM-based report generation. The system achieves 100% detection rate across 110 leak scenarios.
+  [AAAI 2026][LLM Agent][Urban pipeline networks] This paper proposes AquaSentinel, a physics-informed AI system that achieves network-wide pipeline leak detection using only 20–30% node coverage through sparse sensor depl…
 tags:
-  - AAAI 2026
-  - LLM Agent
-  - Urban pipeline networks
-  - leak detection
-  - sparse sensing
-  - physics-informed AI
-  - MoE spatiotemporal forecasting
+  - "AAAI 2026"
+  - "LLM Agent"
+  - "Urban pipeline networks"
+  - "leak detection"
+  - "sparse sensing"
+  - "physics-informed AI"
+  - "MoE spatiotemporal forecasting"
 date: 2026-05-08
 content_hash: 91d2d73cad59d353
 ---

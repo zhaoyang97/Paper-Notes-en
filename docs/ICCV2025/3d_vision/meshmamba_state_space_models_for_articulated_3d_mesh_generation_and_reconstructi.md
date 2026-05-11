@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MeshMamba: State Space Models for Articulated 3D Mesh Generation and Reconstruction
 description: >-
-  [ICCV2025][3D Vision][Mamba] MeshMamba introduces a Mamba state space model-based approach for articulated 3D mesh generation and reconstruction. By designing vertex serialization strategies based on body-part UV maps and template mesh coordinates, the method achieves efficient generation and reconstruction of meshes with tens of thousands of vertices, running 6–9× faster than Transformer-based counterparts.
+  [ICCV2025][3D Vision][Mamba] MeshMamba introduces a Mamba state space model-based approach for articulated 3D mesh generation and reconstruction. By designing vertex serialization strategies based on body-part UV maps an…
 tags:
-  - ICCV2025
-  - 3D Vision
-  - Mamba
-  - state space model
-  - 3D mesh generation
-  - human mesh recovery
-  - vertex serialization
+  - "ICCV2025"
+  - "3D Vision"
+  - "Mamba"
+  - "state space model"
+  - "3D mesh generation"
+  - "human mesh recovery"
+  - "vertex serialization"
 date: 2026-05-08
 content_hash: e345d7b598a361da
 ---

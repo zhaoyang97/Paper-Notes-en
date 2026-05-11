@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LLMTM: Benchmarking and Optimizing LLMs for Temporal Motif Analysis in Dynamic Graphs
 description: >-
-  [AAAI 2026][LLM Agent][Temporal graphs] This paper proposes LLMTM — the first comprehensive benchmark for evaluating LLMs on temporal motif analysis in dynamic graphs. It covers 6 task categories across 9 temporal motif types and evaluates 9 models, finding that LLM performance on temporal motif recognition degrades rapidly with increasing motif complexity. A Structure-Aware Dispatcher is further proposed to intelligently route queries to either standard LLM prompting or tool-augmented agents based on graph structural properties and cognitive load, achieving near-peak accuracy while reducing computational cost.
+  [AAAI 2026][LLM Agent][Temporal graphs] This paper proposes LLMTM — the first comprehensive benchmark for evaluating LLMs on temporal motif analysis in dynamic graphs. It covers 6 task categories across 9 temporal motif…
 tags:
-  - AAAI 2026
-  - LLM Agent
-  - Temporal graphs
-  - temporal motifs
-  - dynamic graphs
-  - structure-aware routing
-  - LLM benchmark
+  - "AAAI 2026"
+  - "LLM Agent"
+  - "Temporal graphs"
+  - "temporal motifs"
+  - "dynamic graphs"
+  - "structure-aware routing"
+  - "LLM benchmark"
 date: 2026-05-08
 content_hash: 906eaeabd9a1faa8
 ---

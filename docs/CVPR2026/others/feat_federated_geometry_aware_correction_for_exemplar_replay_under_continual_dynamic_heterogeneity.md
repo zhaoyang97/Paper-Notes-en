@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] FEAT: Federated Geometry-Aware Correction for Exemplar Replay under Continual Dynamic Heterogeneity
 description: >-
-  [CVPR 2026][federated continual learning] FEAT is proposed to address the underutilization of replay exemplars in federated continual learning (FCL), mitigating cross-client heterogeneity and task-level data imbalance via geometric structure alignment (angular distillation based on ETF prototypes) and energy-based geometric correction (inference-time debiasing).
+  [CVPR 2026][federated continual learning] FEAT is proposed to address the underutilization of replay exemplars in federated continual learning (FCL)…
 tags:
-  - CVPR 2026
-  - federated continual learning
-  - exemplar replay
-  - equiangular tight frame
-  - geometric correction
-  - class imbalance
+  - "CVPR 2026"
+  - "federated continual learning"
+  - "exemplar replay"
+  - "equiangular tight frame"
+  - "geometric correction"
+  - "class imbalance"
 date: 2026-05-08
 content_hash: d67418cacfba7ef5
 ---

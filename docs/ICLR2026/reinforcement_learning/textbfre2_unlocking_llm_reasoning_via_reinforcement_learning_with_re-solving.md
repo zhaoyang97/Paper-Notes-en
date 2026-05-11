@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] $\textbf{Re}^{2}$: Unlocking LLM Reasoning via Reinforcement Learning with Re-solving
 description: >-
-  [ICLR 2026][Reinforcement Learning][RLVR] This paper proposes Re², a pure reinforcement learning method that trains LLMs to actively abandon unproductive reasoning chains and restart the solving process during inference. The approach amplifies the rare redo behavior from ~0.5% to over 30%, achieving significant improvements over standard RLVR methods under the same training compute budget.
+  [ICLR 2026][Reinforcement Learning][RLVR] This paper proposes Re², a pure reinforcement learning method that trains LLMs to actively abandon unproductive reasoning chains and restart the solving process during inference.…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RLVR
-  - LLM reasoning
-  - chain-of-thought optimization
-  - re-solving
-  - overthinking
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "LLM reasoning"
+  - "chain-of-thought optimization"
+  - "re-solving"
+  - "overthinking"
 date: 2026-05-08
 content_hash: dd2f0a5fa65dbab8
 ---

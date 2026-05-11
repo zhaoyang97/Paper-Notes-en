@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Into the Rabbit Hull: From Task-Relevant Concepts in DINO to Minkowski Geometry
 description: >-
-  [ICLR2026][3D Vision][DINOv2] By training a 32,000-unit Sparse Autoencoder dictionary on DINOv2, this work systematically analyzes how downstream tasks recruit distinct concepts, reveals that representational geometry deviates from the Linear Representation Hypothesis (LRH), and proposes the Minkowski Representation Hypothesis (MRH), which posits that token representations are Minkowski sums of multiple convex polytopes, with concepts defined by proximity to prototype points rather than linear directions.
+  [ICLR2026][3D Vision][DINOv2] By training a 32,000-unit Sparse Autoencoder dictionary on DINOv2, this work systematically analyzes how downstream tasks recruit distinct concepts…
 tags:
-  - ICLR2026
-  - 3D Vision
-  - DINOv2
-  - Sparse Autoencoder
-  - Linear Representation Hypothesis
-  - Minkowski Representation Hypothesis
-  - interpretability
-  - Vision Transformer
+  - "ICLR2026"
+  - "3D Vision"
+  - "DINOv2"
+  - "Sparse Autoencoder"
+  - "Linear Representation Hypothesis"
+  - "Minkowski Representation Hypothesis"
+  - "interpretability"
+  - "Vision Transformer"
 date: 2026-05-08
 content_hash: 6b9b43afdfe4b937
 ---

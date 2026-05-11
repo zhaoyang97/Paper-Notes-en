@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BEV-SLD: Self-Supervised Scene Landmark Detection for Global Localization with LiDAR Bird's-Eye View Images
 description: >-
-  [CVPR 2026][Autonomous Driving][LiDAR Localization] This paper proposes BEV-SLD, a self-supervised scene landmark detection (SLD)-based method for LiDAR global localization. By decoupling detection from correspondence prediction, the approach achieves high-accuracy $(x, y, \text{azimuth})$ pose estimation across diverse environments using only 20 MB of storage.
+  [CVPR 2026][Autonomous Driving][LiDAR Localization] This paper proposes BEV-SLD, a self-supervised scene landmark detection (SLD)-based method for LiDAR global localization. By decoupling detection from correspondence pr…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - LiDAR Localization
-  - BEV
-  - Scene Landmark Detection
-  - Self-Supervised Learning
-  - Global Localization
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "LiDAR Localization"
+  - "BEV"
+  - "Scene Landmark Detection"
+  - "Self-Supervised Learning"
+  - "Global Localization"
 date: 2026-05-08
 content_hash: d84bcc8800a2de1a
 ---

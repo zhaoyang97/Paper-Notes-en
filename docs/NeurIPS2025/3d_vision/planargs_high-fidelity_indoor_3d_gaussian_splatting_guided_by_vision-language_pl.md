@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PlanarGS: High-Fidelity Indoor 3D Gaussian Splatting Guided by Vision-Language Planar Priors
 description: >-
-  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] PlanarGS detects planar regions via a vision-language foundation model (GroundedSAM) with text prompts, combines multi-view depth priors from DUSt3R, and optimizes 3DGS through coplanarity constraints and geometric prior supervision to achieve high-fidelity surface reconstruction in indoor scenes.
+  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] PlanarGS detects planar regions via a vision-language foundation model (GroundedSAM) with text prompts, combines multi-view depth priors from DUSt3R…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - Indoor Reconstruction
-  - Planar Priors
-  - Vision-Language Models
-  - DUSt3R
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Indoor Reconstruction"
+  - "Planar Priors"
+  - "Vision-Language Models"
+  - "DUSt3R"
 date: 2026-05-08
 content_hash: bad283abe9b5cdea
 ---

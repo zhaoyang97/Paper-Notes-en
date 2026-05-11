@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Convergence Analysis of Adaptive Optimizers under Floating-Point Quantization
 description: >-
-  [ICLR 2026][Optimization][Low-precision training] This paper establishes the first theoretical framework for analyzing the convergence of adaptive optimizers under floating-point quantization. By imposing a relative error quantization model simultaneously on gradients, weights, and optimizer states (first and second moments), it proves that quantized Adam and Muon achieve the same $\tilde{O}(T^{-1/4})$ convergence rate as their full-precision counterparts when the mantissa length grows only logarithmically in the number of iterations. The analysis further reveals that Adam is highly sensitive to the quantization of weights and second moments, whereas Muon is theoretically more robust.
+  [ICLR 2026][Optimization][Low-precision training] This paper establishes the first theoretical framework for analyzing the convergence of adaptive optimizers under floating-point quantization. By imposing a relative erro…
 tags:
-  - ICLR 2026
-  - Optimization
-  - Low-precision training
-  - Adam
-  - Muon
-  - floating-point quantization
-  - convergence analysis
+  - "ICLR 2026"
+  - "Optimization"
+  - "Low-precision training"
+  - "Adam"
+  - "Muon"
+  - "floating-point quantization"
+  - "convergence analysis"
 date: 2026-05-08
 content_hash: 3c0bcc04fd4157b2
 ---

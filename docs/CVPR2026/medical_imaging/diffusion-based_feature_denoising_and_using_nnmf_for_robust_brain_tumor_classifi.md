@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Diffusion-Based Feature Denoising and Using NNMF for Robust Brain Tumor Classification
 description: >-
-  [CVPR 2026][Medical Imaging][Brain tumor classification] This paper proposes an NNMF+CNN+diffusion defense framework for brain tumor MRI classification. MRI images are first decomposed into compact, interpretable low-rank features via NNMF; the most discriminative components are selected using AUC, Cohen's d, and p-value statistical criteria; a lightweight CNN then performs classification. At inference time, a feature-space purification module combining forward diffusion noise injection and a learned denoiser is introduced. Under AutoAttack ($L_\infty$, $\epsilon=0.10$), robust accuracy improves from 0.47% to 59.53%.
+  [CVPR 2026][Medical Imaging][Brain tumor classification] This paper proposes an NNMF+CNN+diffusion defense framework for brain tumor MRI classification. MRI images are first decomposed into compact…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Brain tumor classification
-  - Non-negative Matrix Factorization (NNMF)
-  - Adversarial robustness
-  - Diffusion denoising defense
-  - AutoAttack
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Brain tumor classification"
+  - "Non-negative Matrix Factorization (NNMF)"
+  - "Adversarial robustness"
+  - "Diffusion denoising defense"
+  - "AutoAttack"
 date: 2026-05-08
 content_hash: a21060837aa0b759
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Rel-Zero: Harnessing Patch-Pair Invariance for Robust Zero-Watermarking Against AI Editing
 description: >-
-  [CVPR 2026][Image Generation][Zero-watermarking] This paper identifies that relational distances between image patch pairs remain invariant under AI editing, and exploits this invariance to build Rel-Zero, a zero-watermarking framework that achieves robust content authentication against diverse generative edits without modifying the original image.
+  [CVPR 2026][Image Generation][Zero-watermarking] This paper identifies that relational distances between image patch pairs remain invariant under AI editing, and exploits this invariance to build Rel-Zero…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Zero-watermarking
-  - image editing robustness
-  - patch-pair relational invariance
-  - content authentication
-  - diffusion models
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Zero-watermarking"
+  - "image editing robustness"
+  - "patch-pair relational invariance"
+  - "content authentication"
+  - "diffusion models"
 date: 2026-05-08
 content_hash: 5e950dfdef262335
 ---

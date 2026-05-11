@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] No Need For Real Anomaly: MLLM Empowered Zero-Shot Video Anomaly Detection
 description: >-
-  [CVPR 2026][Multimodal VLM][Video Anomaly Detection] This paper proposes LAVIDA, an end-to-end zero-shot video anomaly detection framework that transforms semantic segmentation datasets into pseudo-anomaly training data via an Anomaly Exposure Sampler. Combined with MLLM-based deep anomaly semantic feature extraction and reverse-attention token compression for spatiotemporal sparsity, LAVIDA achieves frame-level and pixel-level SOTA without any real VAD data.
+  [CVPR 2026][Multimodal VLM][Video Anomaly Detection] This paper proposes LAVIDA, an end-to-end zero-shot video anomaly detection framework that transforms semantic segmentation datasets into pseudo-anomaly training data…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Video Anomaly Detection
-  - Zero-Shot
-  - MLLM
-  - Pseudo Anomaly
-  - Token Compression
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Video Anomaly Detection"
+  - "Zero-Shot"
+  - "MLLM"
+  - "Pseudo Anomaly"
+  - "Token Compression"
 date: 2026-05-08
 content_hash: ba626da2a9eb27f1
 ---

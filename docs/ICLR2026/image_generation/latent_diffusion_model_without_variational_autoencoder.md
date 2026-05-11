@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Latent Diffusion Model without Variational Autoencoder
 description: >-
-  [ICLR 2026][Image Generation][Self-supervised representation] This paper proposes SVG, which replaces the VAE latent space with frozen DINOv3 self-supervised features for diffusion model training. A lightweight residual encoder supplements fine-grained details, enabling faster training, more efficient inference, and a unified visual representation applicable across tasks.
+  [ICLR 2026][Image Generation][Self-supervised representation] This paper proposes SVG, which replaces the VAE latent space with frozen DINOv3 self-supervised features for diffusion model training. A lightweight residual…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Self-supervised representation
-  - DINOv3
-  - VAE-free latent diffusion
-  - unified feature space
-  - few-step generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Self-supervised representation"
+  - "DINOv3"
+  - "VAE-free latent diffusion"
+  - "unified feature space"
+  - "few-step generation"
 date: 2026-05-08
 content_hash: ab395bb67b83bc5d
 ---

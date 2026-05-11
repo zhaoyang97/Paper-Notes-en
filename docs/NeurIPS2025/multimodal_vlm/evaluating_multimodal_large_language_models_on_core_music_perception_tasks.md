@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Evaluating Multimodal Large Language Models on Core Music Perception Tasks
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Multimodal LLM] This paper systematically evaluates multimodal LLMs on three core music perception tasks—syncopation scoring, transposition detection, and chord quality identification—under both audio and MIDI input modalities, revealing that models approach ceiling performance on symbolic reasoning while exhibiting significant deficits in audio perception.
+  [NeurIPS 2025][Multimodal VLM][Multimodal LLM] This paper systematically evaluates multimodal LLMs on three core music perception tasks—syncopation scoring, transposition detection…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Multimodal LLM
-  - Music Perception
-  - Audio Understanding
-  - Symbolic Reasoning
-  - LogicLM
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Multimodal LLM"
+  - "Music Perception"
+  - "Audio Understanding"
+  - "Symbolic Reasoning"
+  - "LogicLM"
 date: 2026-05-08
 content_hash: 9efa1b7ba5ed165e
 ---

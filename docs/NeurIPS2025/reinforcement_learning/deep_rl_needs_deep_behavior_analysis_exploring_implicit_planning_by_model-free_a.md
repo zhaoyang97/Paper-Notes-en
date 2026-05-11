@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Deep RL Needs Deep Behavior Analysis: Exploring Implicit Planning by Model-Free Agents
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][behavior analysis] This paper proposes ForageWorld, a naturalistic foraging environment, and a neuroscience-inspired joint behavior-neural analysis framework, revealing that model-free RNN-based DRL agents exhibit structured, planning-like behavior through emergent dynamics—without explicit memory modules or world models.
+  [NeurIPS 2025][Reinforcement Learning][behavior analysis] This paper proposes ForageWorld, a naturalistic foraging environment, and a neuroscience-inspired joint behavior-neural analysis framework…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - behavior analysis
-  - neural dynamics
-  - implicit planning
-  - foraging environment
-  - interpretability
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "behavior analysis"
+  - "neural dynamics"
+  - "implicit planning"
+  - "foraging environment"
+  - "interpretability"
 date: 2026-05-08
 content_hash: c93bd2e3d5682cfc
 ---

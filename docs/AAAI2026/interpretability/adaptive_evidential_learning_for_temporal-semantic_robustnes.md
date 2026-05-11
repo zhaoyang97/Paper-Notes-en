@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Adaptive Evidential Learning for Temporal-Semantic Robustness in Moment Retrieval
 description: >-
-  [AAAI 2026][Moment Retrieval] This paper proposes DEMR, a framework that introduces Deep Evidential Regression (DER) into video moment retrieval. It mitigates modal imbalance via a Reflective Flipped Fusion (RFF) module and corrects the counter-intuitive uncertainty estimation bias in vanilla DER via a Geom-regularizer, achieving significant improvements on both standard and debiased benchmarks.
+  [AAAI 2026][Interpretability][Moment Retrieval] This paper proposes DEMR, a framework that introduces Deep Evidential Regression (DER) into video moment retrieval. It mitigates modal imbalance via a Reflective Flipped Fu…
 tags:
-  - AAAI 2026
-  - Moment Retrieval
-  - Evidential Learning
-  - Uncertainty Estimation
-  - Cross-Modal Alignment
-  - Debiasing
+  - "AAAI 2026"
+  - "Interpretability"
+  - "Moment Retrieval"
+  - "Evidential Learning"
+  - "Uncertainty Estimation"
+  - "Cross-Modal Alignment"
+  - "Debiasing"
 date: 2026-05-08
 content_hash: a9a817253b8a0584
 ---

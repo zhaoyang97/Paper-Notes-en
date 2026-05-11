@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Copy-Paste to Mitigate Large Language Model Hallucinations
 description: >-
-  [ICLR 2026][Causal Inference][Hallucination Mitigation] This paper proposes a Copy-Paste generation paradigm that trains LLMs to preferentially copy spans directly from retrieved context rather than paraphrasing them freely. Combined with high-copy-preference DPO training, the approach improves faithfulness on counterfactual RAG benchmarks from 80.2% to 92.8%.
+  [ICLR 2026][Causal Inference][Hallucination Mitigation] This paper proposes a Copy-Paste generation paradigm that trains LLMs to preferentially copy spans directly from retrieved context rather than paraphrasing them fre…
 tags:
-  - ICLR 2026
-  - Causal Inference
-  - Hallucination Mitigation
-  - RAG
-  - Copy-Paste
-  - DPO
-  - Faithfulness
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "Hallucination Mitigation"
+  - "RAG"
+  - "Copy-Paste"
+  - "DPO"
+  - "Faithfulness"
 date: 2026-05-08
 content_hash: 858e00665a1d15f5
 ---

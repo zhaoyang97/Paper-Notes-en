@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] MOSIV: Multi-Object System Identification from Videos
 description: >-
-  [ICLR 2026][LLM Evaluation][multi-object physics] This paper proposes MOSIV—the first complete framework for multi-object system identification from multi-view videos—comprising three stages: (1) object-aware 4D dynamic Gaussian reconstruction of per-object geometry and motion; (2) Gaussian-to-continuum lifting to construct MPM simulation particles; and (3) differentiable MPM forward rollout with geometry-alignment objectives (3D Chamfer + 2D silhouette) to back-propagate and optimize per-object continuous material parameters ($E, \nu, \mu$). On a contact-rich synthetic benchmark spanning four material types (elastic, elastoplastic, fluid, and granular), MOSIV achieves PSNR 30.51 vs. OmniPhysGS 25.93 and reduces Chamfer distance by 9.4×, establishing a new baseline for multi-object long-horizon physical simulation.
+  [ICLR 2026][LLM Evaluation][multi-object physics] This paper proposes MOSIV—the first complete framework for multi-object system identification from multi-view videos—comprising three stages: (1) object-aware 4D dynamic…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - multi-object physics
-  - video system identification
-  - differentiable MPM
-  - 4D Gaussians
-  - continuous parameter optimization
-  - contact and friction modeling
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "multi-object physics"
+  - "video system identification"
+  - "differentiable MPM"
+  - "4D Gaussians"
+  - "continuous parameter optimization"
+  - "contact and friction modeling"
 date: 2026-05-08
 content_hash: 968eeed52c5f9d47
 ---

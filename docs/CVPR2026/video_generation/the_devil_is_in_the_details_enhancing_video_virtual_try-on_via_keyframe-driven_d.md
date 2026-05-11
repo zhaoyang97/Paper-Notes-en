@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The Devil is in the Details: Enhancing Video Virtual Try-On via Keyframe-Driven Details Injection
 description: >-
-  [CVPR2026][Video Generation][video virtual try-on] This paper proposes KeyTailor, a framework that employs a keyframe-driven details injection strategy—comprising garment dynamic enhancement and collaborative background optimization—to substantially improve garment fidelity and background consistency in video virtual try-on without modifying the DiT architecture. A 15K high-resolution dataset, ViT-HD, is also released.
+  [CVPR2026][Video Generation][video virtual try-on] This paper proposes KeyTailor, a framework that employs a keyframe-driven details injection strategy—comprising garment dynamic enhancement and collaborative background…
 tags:
-  - CVPR2026
-  - Video Generation
-  - video virtual try-on
-  - diffusion transformer
-  - keyframe injection
-  - garment fidelity
-  - background integrity
+  - "CVPR2026"
+  - "Video Generation"
+  - "video virtual try-on"
+  - "diffusion transformer"
+  - "keyframe injection"
+  - "garment fidelity"
+  - "background integrity"
 date: 2026-05-08
 content_hash: df196704888401e9
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] ASAG: Toward the Frontiers of Reliable Diffusion Sampling via Adversarial Sinkhorn Attention Guidance
 description: >-
-  [AAAI 2026][Attention Guidance] This paper proposes ASAG (Adversarial Sinkhorn Attention Guidance), which reinterprets self-attention scores in diffusion models from the perspective of optimal transport theory. By injecting adversarial transport costs into attention layers via the Sinkhorn algorithm to deliberately reduce query-key similarity, ASAG systematically disrupts misleading attention alignment and improves both conditional and unconditional sampling quality. The method is lightweight, plug-and-play, and requires no retraining.
+  [AAAI 2026][Attention Guidance] This paper proposes ASAG (Adversarial Sinkhorn Attention Guidance), which reinterprets self-attention scores in diffusion models from the perspective of optimal transport theory. By inject…
 tags:
-  - AAAI 2026
-  - Attention Guidance
-  - Optimal Transport
-  - Sinkhorn Algorithm
-  - Diffusion Sampling
-  - Plug-and-Play
+  - "AAAI 2026"
+  - "Attention Guidance"
+  - "Optimal Transport"
+  - "Sinkhorn Algorithm"
+  - "Diffusion Sampling"
+  - "Plug-and-Play"
 date: 2026-05-08
 content_hash: 1be9e45c722cd403
 ---

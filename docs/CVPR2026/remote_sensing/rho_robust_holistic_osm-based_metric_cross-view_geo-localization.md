@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RHO: Robust Holistic OSM-Based Metric Cross-View Geo-Localization
 description: >-
-  [CVPR 2026][Remote Sensing][Cross-View Geo-Localization] This paper introduces CV-RHO, the first OSM-based metric cross-view geo-localization benchmark targeting adverse weather and sensor noise (2.72M+ images), and proposes RHO, a dual-branch Pin-Pan architecture integrating panoramic undistortion (SUM) and position-orientation fusion (POF) mechanisms, achieving up to 20% localization improvement under diverse degradation conditions.
+  [CVPR 2026][Remote Sensing][Cross-View Geo-Localization] This paper introduces CV-RHO, the first OSM-based metric cross-view geo-localization benchmark targeting adverse weather and sensor noise (2.72M+ images)…
 tags:
-  - CVPR 2026
-  - Remote Sensing
-  - Cross-View Geo-Localization
-  - OpenStreetMap
-  - Panorama
-  - Robustness
-  - BEV
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Cross-View Geo-Localization"
+  - "OpenStreetMap"
+  - "Panorama"
+  - "Robustness"
+  - "BEV"
 date: 2026-05-08
 content_hash: 85d3c496f7226c29
 ---

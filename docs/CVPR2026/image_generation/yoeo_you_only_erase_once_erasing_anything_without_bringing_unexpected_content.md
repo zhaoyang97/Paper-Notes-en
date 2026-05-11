@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] YOEO: You Only Erase Once - Erasing Anything without Bringing Unexpected Content
 description: >-
-  [CVPR 2026][Image Generation][Object Erasure] YOEO proposes a single-pass erasure framework that distills a multi-step diffusion model into a few-step model for efficient inference. It introduces a Sundries Suppression Loss (which detects newly generated spurious objects via entity segmentation) and an Entity Feature Coherence Loss (which ensures semantic consistency between the erased region and its surroundings), addressing the hallucination problem of diffusion models in object erasure.
+  [CVPR 2026][Image Generation][Object Erasure] YOEO proposes a single-pass erasure framework that distills a multi-step diffusion model into a few-step model for efficient inference. It introduces a Sundries Suppression L…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Object Erasure
-  - Diffusion Distillation
-  - Hallucination Suppression
-  - Entity Consistency
-  - Unpaired Training
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Object Erasure"
+  - "Diffusion Distillation"
+  - "Hallucination Suppression"
+  - "Entity Consistency"
+  - "Unpaired Training"
 date: 2026-05-08
 content_hash: d173ccbbe03a2c89
 ---

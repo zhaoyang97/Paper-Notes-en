@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] MolParser: End-to-end Visual Recognition of Molecule Structures in the Wild
 description: >-
-  [Multimodal VLM] This paper proposes MolParser, an end-to-end Optical Chemical Structure Recognition (OCSR) method that handles Markush structures via an extended SMILES representation (E-SMILES), constructs a large-scale training set MolParser-7M with 7 million samples, and incorporates real-world literature data through active learning. MolParser achieves 76.9% accuracy on the WildMol benchmark, significantly outperforming existing methods.
+  [Multimodal VLM] This paper proposes MolParser, an end-to-end Optical Chemical Structure Recognition (OCSR) method that handles Markush structures via an extended SMILES representation (E-SMILES)…
 tags:
-  - Multimodal VLM
+  - "Multimodal VLM"
 date: 2026-05-08
 content_hash: 7ac9bd45c9e133f6
 ---

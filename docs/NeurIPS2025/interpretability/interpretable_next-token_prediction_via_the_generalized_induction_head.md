@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Interpretable Next-token Prediction via the Generalized Induction Head
 description: >-
-  [NeurIPS 2025][Interpretability] This paper proposes Induction-Gram (GIM), an interpretable language model that combines exact n-gram matching with fuzzy matching. By constructing a "generalized induction head" to retrieve similar sequences from the input context for next-token prediction, it achieves up to 25 percentage points improvement over interpretable baselines and a 20% improvement in fMRI brain response prediction.
+  [NeurIPS 2025][Interpretability][Next-token Prediction] This paper proposes Induction-Gram (GIM), an interpretable language model that combines exact n-gram matching with fuzzy matching. By constructing a "generalized in…
 tags:
-  - NeurIPS 2025
-  - Interpretability
-  - Next-token Prediction
-  - Induction Head
-  - n-gram Models
-  - fMRI
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "Next-token Prediction"
+  - "Induction Head"
+  - "n-gram Models"
+  - "fMRI"
 date: 2026-05-08
 content_hash: 05f6112024e96bb8
 ---

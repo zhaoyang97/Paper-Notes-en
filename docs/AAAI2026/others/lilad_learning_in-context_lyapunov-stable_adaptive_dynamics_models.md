@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] LILAD: Learning In-context Lyapunov-stable Adaptive Dynamics Models
 description: >-
-  [AAAI 2026][Lyapunov stability] This paper proposes LILAD, a framework that leverages the in-context learning (ICL) capability of GPT-2 to jointly learn a dynamics model and a Lyapunov function, achieving adaptive identification of non-stationary parametric dynamical systems while guaranteeing global exponential stability. LILAD outperforms baselines such as ICL and MAML on multiple benchmark systems.
+  [AAAI 2026][Lyapunov stability] This paper proposes LILAD, a framework that leverages the in-context learning (ICL) capability of GPT-2 to jointly learn a dynamics model and a Lyapunov function…
 tags:
-  - AAAI 2026
-  - Lyapunov stability
-  - in-context learning
-  - adaptive system identification
-  - non-stationary dynamics
-  - GPT-2
+  - "AAAI 2026"
+  - "Lyapunov stability"
+  - "in-context learning"
+  - "adaptive system identification"
+  - "non-stationary dynamics"
+  - "GPT-2"
 date: 2026-05-08
 content_hash: 69ac00b2afb3aa35
 ---

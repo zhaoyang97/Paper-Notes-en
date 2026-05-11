@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Revela: Dense Retriever Learning via Language Modeling
 description: >-
-  [ICLR2026][dense retrieval] This paper proposes Revela, which integrates retriever learning into language modeling via an in-batch attention mechanism. Next-token prediction (NTP) draws not only on within-sequence context but also on other sequences in the batch, weighted by retriever similarity scores, enabling training of a strong dense retriever without labeled query-document pairs.
+  [ICLR2026][Information Retrieval & RAG][dense retrieval] This paper proposes Revela, which integrates retriever learning into language modeling via an in-batch attention mechanism. Next-token prediction (NTP) draws not o…
 tags:
-  - ICLR2026
-  - dense retrieval
-  - self-supervised learning
-  - language modeling
-  - in-batch attention
-  - retriever
+  - "ICLR2026"
+  - "Information Retrieval & RAG"
+  - "dense retrieval"
+  - "self-supervised learning"
+  - "language modeling"
+  - "in-batch attention"
+  - "retriever"
 date: 2026-05-08
 content_hash: 4e296c74e11ee1d1
 ---

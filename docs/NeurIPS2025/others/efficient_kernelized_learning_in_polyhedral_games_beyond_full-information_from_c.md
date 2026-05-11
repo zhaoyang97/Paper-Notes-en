@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Efficient Kernelized Learning in Polyhedral Games Beyond Full-Information: From Colonel Blotto to Congestion Games
 description: >-
-  [NeurIPS 2025][polyhedral games] This paper proposes a kernelization-based framework for designing computationally efficient no-regret learning algorithms for polyhedral games (Colonel Blotto, graphic matroid congestion games, and network congestion games) under partial-information feedback, significantly improving the runtime complexity for learning coarse correlated equilibria (CCE).
+  [NeurIPS 2025][polyhedral games] This paper proposes a kernelization-based framework for designing computationally efficient no-regret learning algorithms for polyhedral games (Colonel Blotto…
 tags:
-  - NeurIPS 2025
-  - polyhedral games
-  - kernelization
-  - coarse correlated equilibrium
-  - Colonel Blotto
-  - congestion games
+  - "NeurIPS 2025"
+  - "polyhedral games"
+  - "kernelization"
+  - "coarse correlated equilibrium"
+  - "Colonel Blotto"
+  - "congestion games"
 date: 2026-05-08
 content_hash: 73123783df7b0dee
 ---

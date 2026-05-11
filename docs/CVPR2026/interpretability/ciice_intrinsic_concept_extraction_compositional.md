@@ -2,15 +2,16 @@
 title: >-
   [Paper Note] CI-ICE: Intrinsic Concept Extraction Based on Compositional Interpretability
 description: >-
-  [CVPR 2026][Concept Extraction] This paper introduces the CI-ICE task and the HyperExpress method, which leverages the hierarchical modeling capacity of hyperbolic space (Poincaré ball) to extract composable object-level and attribute-level intrinsic concepts. By applying Horosphere projection to enforce compositionality in the concept embedding space, HyperExpress achieves an ACC₁ of 0.504 on UCEBench, a 55% improvement over ICE (0.325).
+  [CVPR 2026][Interpretability][Concept Extraction] This paper introduces the CI-ICE task and the HyperExpress method, which leverages the hierarchical modeling capacity of hyperbolic space (Poincaré ball) to extract compo…
 tags:
-  - CVPR 2026
-  - Concept Extraction
-  - Compositionality
-  - Hyperbolic Space
-  - Poincaré Ball
-  - Horosphere Projection
-  - Diffusion Models
+  - "CVPR 2026"
+  - "Interpretability"
+  - "Concept Extraction"
+  - "Compositionality"
+  - "Hyperbolic Space"
+  - "Poincaré Ball"
+  - "Horosphere Projection"
+  - "Diffusion Models"
 date: 2026-05-08
 content_hash: ef98bbf6448fee3a
 ---

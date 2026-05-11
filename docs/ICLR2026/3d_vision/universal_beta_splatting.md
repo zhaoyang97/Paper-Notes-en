@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Universal Beta Splatting
 description: >-
-  [3D Vision] This paper proposes Universal Beta Splatting (UBS), which generalizes 3D Gaussian Splatting to an N-dimensional anisotropic Beta kernel. By enabling per-dimension shape control, UBS unifies spatial geometry, view-dependent appearance, and scene dynamics within a single representation, achieving interpretable scene decomposition and state-of-the-art rendering quality.
+  [3D Vision] This paper proposes Universal Beta Splatting (UBS), which generalizes 3D Gaussian Splatting to an N-dimensional anisotropic Beta kernel. By enabling per-dimension shape control, UBS unifies spatial geometry…
 tags:
-  - 3D Vision
+  - "3D Vision"
 date: 2026-05-08
 content_hash: 20a245382e46ee39
 ---

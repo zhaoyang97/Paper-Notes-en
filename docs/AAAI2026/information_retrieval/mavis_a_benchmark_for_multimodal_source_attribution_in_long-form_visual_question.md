@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] MAVIS: A Benchmark for Multimodal Source Attribution in Long-form Visual Question Answering
 description: >-
-  [AAAI 2026][source attribution] MAVIS is the first benchmark for evaluating multimodal source attribution systems, comprising 157K visual QA instances with fact-level citations to multimodal documents per answer, along with automatic evaluation metrics across three dimensions: informativeness, groundedness, and fluency.
+  [AAAI 2026][Information Retrieval & RAG][source attribution] MAVIS is the first benchmark for evaluating multimodal source attribution systems…
 tags:
-  - AAAI 2026
-  - source attribution
-  - multimodal RAG
-  - visual question answering
-  - citation generation
-  - reliability evaluation
+  - "AAAI 2026"
+  - "Information Retrieval & RAG"
+  - "source attribution"
+  - "multimodal RAG"
+  - "visual question answering"
+  - "citation generation"
+  - "reliability evaluation"
 date: 2026-05-08
 content_hash: ad397e2f429b3602
 ---

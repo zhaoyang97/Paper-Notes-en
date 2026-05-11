@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Balanced Image Stylization with Style Matching Score
 description: >-
-  [ICCV 2025][Image Generation][Style Transfer] This paper proposes Style Matching Score (SMS), which recasts image stylization as a style distribution matching problem. Through progressive spectrum regularization and semantic-aware gradient refinement, SMS achieves a superior balance between style alignment and content preservation, and can be distilled into a lightweight feed-forward network for one-step stylization.
+  [ICCV 2025][Image Generation][Style Transfer] This paper proposes Style Matching Score (SMS), which recasts image stylization as a style distribution matching problem. Through progressive spectrum regularization and sema…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Style Transfer
-  - Score Distillation
-  - diffusion model
-  - LoRA
-  - Frequency Domain Regularization
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Style Transfer"
+  - "Score Distillation"
+  - "diffusion model"
+  - "LoRA"
+  - "Frequency Domain Regularization"
 date: 2026-05-08
 content_hash: eb85ed1ed6f31b25
 ---

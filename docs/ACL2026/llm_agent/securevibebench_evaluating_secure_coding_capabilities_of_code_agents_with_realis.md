@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SecureVibeBench: Evaluating Secure Coding Capabilities of Code Agents with Realistic Vulnerability Scenarios
 description: >-
-  [ACL 2026][LLM Agent][Secure coding] This paper presents SecureVibeBench, the first repository-level, multi-file-editing secure coding benchmark. It constructs 105 C/C++ secure coding tasks from 41 OSS-Fuzz projects, precisely reconstructing the scenarios in which vulnerabilities were first introduced via cascaded static and dynamic analysis. Evaluation results reveal that the best-performing agent (SWE-agent + Claude Sonnet 4.5) produces code that is simultaneously functionally correct and secure in only 23.8% of cases.
+  [ACL 2026][LLM Agent][Secure coding] This paper presents SecureVibeBench, the first repository-level, multi-file-editing secure coding benchmark. It constructs 105 C/C++ secure coding tasks from 41 OSS-Fuzz projects…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - Secure coding
-  - code agents
-  - vulnerability introduction
-  - benchmark
-  - repository-level code generation
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Secure coding"
+  - "code agents"
+  - "vulnerability introduction"
+  - "benchmark"
+  - "repository-level code generation"
 date: 2026-05-08
 content_hash: ea8be9775489c7d0
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Relink: Constructing Query-Driven Evidence Graph On-the-Fly for GraphRAG
 description: >-
-  [AAAI 2026][Graph Learning][GraphRAG] This paper proposes a paradigm shift in GraphRAG from "build-then-reason" to "reason-and-construct," introducing the Relink framework that dynamically constructs query-specific evidence graphs—combining a high-precision KG backbone with a high-recall latent relation pool, unified via a query-driven ranker to assess relevance on demand, complete missing paths, and filter distractor facts—achieving average gains of 5.4% EM and 5.2% F1 across 5 multi-hop QA benchmarks.
+  [AAAI 2026][Graph Learning][GraphRAG] This paper proposes a paradigm shift in GraphRAG from "build-then-reason" to "reason-and-construct…
 tags:
-  - AAAI 2026
-  - Graph Learning
-  - GraphRAG
-  - Dynamic Knowledge Graph
-  - Multi-hop Reasoning
-  - Evidence Graph Construction
-  - Query-Driven Retrieval
+  - "AAAI 2026"
+  - "Graph Learning"
+  - "GraphRAG"
+  - "Dynamic Knowledge Graph"
+  - "Multi-hop Reasoning"
+  - "Evidence Graph Construction"
+  - "Query-Driven Retrieval"
 date: 2026-05-08
 content_hash: 7fba82100cdc97db
 ---

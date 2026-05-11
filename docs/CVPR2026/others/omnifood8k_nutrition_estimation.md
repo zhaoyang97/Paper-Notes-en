@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] OmniFood8K: Single-Image Nutrition Estimation via Hierarchical Frequency-Aligned Fusion
 description: >-
-  [CVPR 2026][Food Nutrition Estimation] This work introduces OmniFood8K, a multimodal Chinese food nutrition dataset comprising 8,036 samples, along with a synthetic dataset NutritionSynth-115K containing 115K samples. An end-to-end framework is proposed that predicts nutritional information from a single RGB image via a Scale-Shift depth adapter, frequency-aligned fusion, and a mask-based prediction head.
+  [CVPR 2026][Food Nutrition Estimation] This work introduces OmniFood8K, a multimodal Chinese food nutrition dataset comprising 8,036 samples…
 tags:
-  - CVPR 2026
-  - Food Nutrition Estimation
-  - Multimodal Dataset
-  - Depth Estimation
-  - Frequency-Domain Fusion
-  - Chinese Cuisine
+  - "CVPR 2026"
+  - "Food Nutrition Estimation"
+  - "Multimodal Dataset"
+  - "Depth Estimation"
+  - "Frequency-Domain Fusion"
+  - "Chinese Cuisine"
 date: 2026-05-08
 content_hash: b5e34e64f21f2169
 ---

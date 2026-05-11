@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SpHOR: A Representation Learning Perspective on Open-set Recognition for Identifying Unknown Classes in Deep Neural Networks
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Open-set Recognition] This paper proposes SpHOR, a two-stage decoupled training framework for open-set recognition (OSR) that explicitly shapes the feature space via spherical representation learning (vMF distributions), orthogonal label embeddings, and integrated Mixup/Label Smoothing, achieving up to 5.1% OSCR improvement on the Semantic Shift Benchmark.
+  [CVPR 2026][Self-Supervised Learning][Open-set Recognition] This paper proposes SpHOR, a two-stage decoupled training framework for open-set recognition (OSR) that explicitly shapes the feature space via spherical repres…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - Open-set Recognition
-  - Representation Learning
-  - Spherical Representation
-  - von Mises-Fisher Distribution
-  - Orthogonality Constraint
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Open-set Recognition"
+  - "Representation Learning"
+  - "Spherical Representation"
+  - "von Mises-Fisher Distribution"
+  - "Orthogonality Constraint"
 date: 2026-05-08
 content_hash: 1a4e90e8700a0070
 ---

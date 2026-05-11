@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RadarMP: Motion Perception for 4D mmWave Radar in Autonomous Driving
 description: >-
-  [AAAI 2026][Autonomous Driving][4D mmWave radar] This paper proposes RadarMP — the first unified architecture that jointly addresses mmWave radar object detection and scene flow estimation. It leverages energy flow consistency across adjacent-frame radar echo signals (tesseracts) for self-supervised training, achieving a detection probability of 69.5% (far exceeding the prior best of 44.1%) while enabling accurate 3D scene motion perception.
+  [AAAI 2026][Autonomous Driving][4D mmWave radar] This paper proposes RadarMP — the first unified architecture that jointly addresses mmWave radar object detection and scene flow estimation. It leverages energy flow consi…
 tags:
-  - AAAI 2026
-  - Autonomous Driving
-  - 4D mmWave radar
-  - scene flow estimation
-  - object detection
-  - self-supervised learning
-  - motion perception
+  - "AAAI 2026"
+  - "Autonomous Driving"
+  - "4D mmWave radar"
+  - "scene flow estimation"
+  - "object detection"
+  - "self-supervised learning"
+  - "motion perception"
 date: 2026-05-08
 content_hash: deebdf573fbd9e58
 ---

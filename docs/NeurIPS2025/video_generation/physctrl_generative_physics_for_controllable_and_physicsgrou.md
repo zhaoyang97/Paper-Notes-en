@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PhysCtrl: Generative Physics for Controllable and Physics-Grounded Video Generation
 description: >-
-  [NeurIPS 2025][Video Generation][Physics-driven video generation] PhysCtrl employs diffusion models to learn the physical dynamics distribution of four material types (elastic, sand, plasticine, and rigid bodies), representing dynamics as 3D point trajectories. A diffusion model incorporating spatiotemporal attention and physics constraints is trained on 550K synthetic animations; the generated trajectories drive a pretrained video model to achieve high-fidelity physics video generation controllable by force and material parameters.
+  [NeurIPS 2025][Video Generation][Physics-driven video generation] PhysCtrl employs diffusion models to learn the physical dynamics distribution of four material types (elastic, sand, plasticine, and rigid bodies)…
 tags:
-  - NeurIPS 2025
-  - Video Generation
-  - Physics-driven video generation
-  - diffusion models
-  - 3D point trajectories
-  - material simulation
-  - force control
+  - "NeurIPS 2025"
+  - "Video Generation"
+  - "Physics-driven video generation"
+  - "diffusion models"
+  - "3D point trajectories"
+  - "material simulation"
+  - "force control"
 date: 2026-05-08
 content_hash: a1e6bba6d1a76490
 ---

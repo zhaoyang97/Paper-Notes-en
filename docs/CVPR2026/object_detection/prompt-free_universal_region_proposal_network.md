@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Prompt-Free Universal Region Proposal Network
 description: >-
-  [CVPR 2026][Object Detection][Region Proposal] PF-RPN replaces text/image prompts with learnable visual embeddings and introduces three modules—Sparse Image-Aware Adapter (SIA), Cascaded Self-Prompting (CSP), and Centrality-Guided Query Selection (CG-QS)—to achieve state-of-the-art zero-shot region proposals across 19 cross-domain datasets using only 5% of COCO training data.
+  [CVPR 2026][Object Detection][Region Proposal] PF-RPN replaces text/image prompts with learnable visual embeddings and introduces three modules—Sparse Image-Aware Adapter (SIA), Cascaded Self-Prompting (CSP)…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - Region Proposal
-  - Prompt-Free Detection
-  - Zero-Shot Generalization
-  - Learnable Embedding
-  - Open World
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Region Proposal"
+  - "Prompt-Free Detection"
+  - "Zero-Shot Generalization"
+  - "Learnable Embedding"
+  - "Open World"
 date: 2026-05-08
 content_hash: 900075d9601d8cbe
 ---

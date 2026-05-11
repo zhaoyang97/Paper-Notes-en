@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DeepTraverse: A Depth-First Search Inspired Network for Algorithmic Visual Understanding
 description: >-
-  [NeurIPS 2025][Social Computing][vision backbone] Inspired by the depth-first search (DFS) algorithm, DeepTraverse is a visual backbone network that achieves highly competitive image classification performance with very few parameters, through a parameter-sharing recursive exploration module and an adaptive channel recalibration module.
+  [NeurIPS 2025][Social Computing][vision backbone] Inspired by the depth-first search (DFS) algorithm, DeepTraverse is a visual backbone network that achieves highly competitive image classification performance with very…
 tags:
-  - NeurIPS 2025
-  - Social Computing
-  - vision backbone
-  - DFS inspired
-  - recursive exploration
-  - channel recalibration
-  - parameter efficiency
+  - "NeurIPS 2025"
+  - "Social Computing"
+  - "vision backbone"
+  - "DFS inspired"
+  - "recursive exploration"
+  - "channel recalibration"
+  - "parameter efficiency"
 date: 2026-05-08
 content_hash: 69f5b88b63561f4a
 ---

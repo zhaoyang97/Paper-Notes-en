@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] You Share Beliefs, I Adapt: Progressive Heterogeneous Collaborative Perception
 description: >-
-  [ICCV2025][heterogeneous collaborative perception] This paper proposes PHCP, the first framework that addresses the domain gap in heterogeneous collaborative perception at inference time. By leveraging collaborating agents' pseudo labels for few-shot unsupervised domain adaptation, PHCP trains lightweight adapters via self-training to align feature spaces—requiring no joint training—and achieves near-SOTA (HEAL) performance on OPV2V with only a small number of unlabeled samples.
+  [ICCV2025][heterogeneous collaborative perception] This paper proposes PHCP, the first framework that addresses the domain gap in heterogeneous collaborative perception at inference time. By leveraging collaborating agen…
 tags:
-  - ICCV2025
-  - heterogeneous collaborative perception
-  - few-shot domain adaptation
-  - self-training
-  - pseudo labels
-  - inference-time adaptation
+  - "ICCV2025"
+  - "heterogeneous collaborative perception"
+  - "few-shot domain adaptation"
+  - "self-training"
+  - "pseudo labels"
+  - "inference-time adaptation"
 date: 2026-05-08
 content_hash: cbe1d8df82251fea
 ---

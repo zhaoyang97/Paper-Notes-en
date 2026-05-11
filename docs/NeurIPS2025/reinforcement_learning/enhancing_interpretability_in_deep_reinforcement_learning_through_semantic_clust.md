@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Enhancing Interpretability in Deep Reinforcement Learning through Semantic Clustering
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][interpretability] This paper proposes a Semantic Clustering Module (SCM) that combines a Feature Dimensionality Reduction (FDR) network with an adapted online VQ-VAE clustering mechanism, seamlessly integrated into the DRL training pipeline. The approach addresses the instability of t-SNE visualization and demonstrates that DRL inherently exhibits dynamic, semantics-based clustering behavior.
+  [NeurIPS 2025][Reinforcement Learning][interpretability] This paper proposes a Semantic Clustering Module (SCM) that combines a Feature Dimensionality Reduction (FDR) network with an adapted online VQ-VAE clustering mech…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - interpretability
-  - semantic clustering
-  - VQ-VAE
-  - dimensionality reduction
-  - Procgen
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "interpretability"
+  - "semantic clustering"
+  - "VQ-VAE"
+  - "dimensionality reduction"
+  - "Procgen"
 date: 2026-05-08
 content_hash: cc8dcf72b930a7d1
 ---

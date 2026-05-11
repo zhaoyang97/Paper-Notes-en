@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LAOF: Robust Latent Action Learning with Optical Flow Constraints
 description: >-
-  [CVPR 2026][Video Understanding][Latent action learning] This paper proposes the LAOF framework, which leverages agent optical flow as a pseudo-supervision signal to constrain latent action learning, yielding latent action representations that are more robust to distractors. LAOF substantially outperforms unsupervised baselines on LIBERO and PROCGEN, and matches or surpasses supervised methods that use 1% action labels, while requiring no labels at all.
+  [CVPR 2026][Video Understanding][Latent action learning] This paper proposes the LAOF framework, which leverages agent optical flow as a pseudo-supervision signal to constrain latent action learning…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Latent action learning
-  - optical flow constraints
-  - embodied intelligence
-  - imitation learning
-  - video pretraining
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Latent action learning"
+  - "optical flow constraints"
+  - "embodied intelligence"
+  - "imitation learning"
+  - "video pretraining"
 date: 2026-05-08
 content_hash: c3bf00e89753ca08
 ---

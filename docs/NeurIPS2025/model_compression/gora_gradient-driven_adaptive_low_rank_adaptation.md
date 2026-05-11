@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GoRA: Gradient-Driven Adaptive Low Rank Adaptation
 description: >-
-  [NeurIPS 2025][Model Compression][LoRA] GoRA is proposed to leverage **pre-computed gradient information** to simultaneously perform adaptive rank allocation and weight initialization prior to training — assigning per-layer ranks based on parameter sensitivity and initializing the $B$ matrix via the gradient pseudo-inverse so that the initial output approximates one step of gradient descent, thereby addressing both major bottlenecks of LoRA in a unified framework.
+  [NeurIPS 2025][Model Compression][LoRA] GoRA is proposed to leverage **pre-computed gradient information** to simultaneously perform adaptive rank allocation and weight initialization prior to training — assigning per-la…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - LoRA
-  - adaptive rank allocation
-  - gradient-driven initialization
-  - parameter-efficient fine-tuning
-  - LLM
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "LoRA"
+  - "adaptive rank allocation"
+  - "gradient-driven initialization"
+  - "parameter-efficient fine-tuning"
+  - "LLM"
 date: 2026-05-08
 content_hash: 45f887c39154b673
 ---

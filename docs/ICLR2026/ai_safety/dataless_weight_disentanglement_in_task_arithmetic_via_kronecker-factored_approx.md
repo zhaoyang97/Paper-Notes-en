@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] Dataless Weight Disentanglement in Task Arithmetic via Kronecker-Factored Approximate Curvature
 description: >-
-  [ICLR 2026][AI Safety] This work elegantly bridges classical curvature approximation theory (KFAC) with the practical demands of task arithmetic, proposing a data-free weight disentanglement regularization method. The theoretical derivation is clear, with a coherent logical chain from representation drift regularization → Jacobian Gramian → GGN → KFAC. Experiments span multiple model scales across both vision and language domains, and the robustness analysis with respect to the $\alpha$ hyperparameter is practically valuable. Limitations include the $O(d^2)$ storage overhead of KFAC for large models and a remaining gap relative to data-dependent methods in the text domain.
+  [ICLR 2026][AI Safety] This work elegantly bridges classical curvature approximation theory (KFAC) with the practical demands of task arithmetic…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
 date: 2026-05-08
 content_hash: 417049df088f5e68
 ---

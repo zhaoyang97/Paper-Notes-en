@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Action-guided Generation of 3D Functionality Segmentation Data
 description: >-
-  [CVPR 2026][3D Vision][3D functionality segmentation] This paper presents SynthFun3D, the first method for automatically generating 3D functionality segmentation training data from action descriptions. By leveraging metadata-driven 3D object retrieval and scene layout generation, it produces precise part-level interaction masks without manual annotation. Training on combined synthetic and real data yields +2.2 mAP / +6.3 mAR / +5.7 mIoU improvements on the SceneFun3D benchmark.
+  [CVPR 2026][3D Vision][3D functionality segmentation] This paper presents SynthFun3D, the first method for automatically generating 3D functionality segmentation training data from action descriptions. By leveraging meta…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D functionality segmentation
-  - synthetic data generation
-  - action descriptions
-  - LLM retrieval
-  - scene layout
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D functionality segmentation"
+  - "synthetic data generation"
+  - "action descriptions"
+  - "LLM retrieval"
+  - "scene layout"
 date: 2026-05-08
 content_hash: b02df121d305ac54
 ---

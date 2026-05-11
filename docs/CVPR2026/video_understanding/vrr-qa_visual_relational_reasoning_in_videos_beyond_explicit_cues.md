@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VRR-QA: Visual Relational Reasoning in Videos Beyond Explicit Cues
 description: >-
-  [CVPR 2026][Video Understanding][Video Question Answering] This paper proposes VRR-QA, a benchmark comprising 1K carefully annotated video QA pairs designed to evaluate models' ability to reason about implicit visual relationships in videos—such as off-screen events, cross-frame causality, and spatial relationship inference. The benchmark reveals significant deficiencies in implicit reasoning among current state-of-the-art VideoQA models, including GPT-O3: the best-performing model achieves only 64% accuracy, far below the human baseline of 83%.
+  [CVPR 2026][Video Understanding][Video Question Answering] This paper proposes VRR-QA, a benchmark comprising 1K carefully annotated video QA pairs designed to evaluate models' ability to reason about implicit visual rel…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Video Question Answering
-  - Implicit Reasoning
-  - Visual Relational Reasoning
-  - Benchmark
-  - Multimodal Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Video Question Answering"
+  - "Implicit Reasoning"
+  - "Visual Relational Reasoning"
+  - "Benchmark"
+  - "Multimodal Understanding"
 date: 2026-05-08
 content_hash: a850e03fda427e36
 ---

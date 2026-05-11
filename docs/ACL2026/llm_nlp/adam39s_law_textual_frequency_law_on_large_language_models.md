@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Adam's Law: Textual Frequency Law on Large Language Models
 description: >-
-  [ACL 2026][LLM/NLP][textual frequency] This paper proposes the Textual Frequency Law (TFL), which finds that when semantics are equivalent, prompting or fine-tuning LLMs with higher-frequency textual expressions yields better performance. The authors further introduce frequency distillation and curriculum training strategies to exploit this regularity.
+  [ACL 2026][LLM/NLP][textual frequency] This paper proposes the Textual Frequency Law (TFL), which finds that when semantics are equivalent…
 tags:
-  - ACL 2026
-  - LLM/NLP
-  - textual frequency
-  - paraphrase selection
-  - curriculum learning
-  - prompt optimization
-  - fine-tuning strategy
+  - "ACL 2026"
+  - "LLM/NLP"
+  - "textual frequency"
+  - "paraphrase selection"
+  - "curriculum learning"
+  - "prompt optimization"
+  - "fine-tuning strategy"
 date: 2026-05-08
 content_hash: 27d5fe1808ed00d1
 ---

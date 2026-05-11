@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Let the Void Be Void: Robust Open-Set Semi-Supervised Learning via Selective Non-Alignment
 description: >-
-  [AAAI 2026][Self-Supervised Learning][Open-set semi-supervised learning] This paper proposes SkipAlign, a framework that introduces a third "skip" operation alongside the conventional pull/push operations in contrastive learning. Low-confidence samples are selectively excluded from alignment and subjected only to mild repulsion, allowing in-distribution (ID) classes to form compact "galaxies" while OOD samples naturally disperse into the "interstellar void." The approach achieves an average AUC improvement of +3.1 on unseen OOD detection, with a maximum gain of +7.1.
+  [AAAI 2026][Self-Supervised Learning][Open-set semi-supervised learning] This paper proposes SkipAlign, a framework that introduces a third "skip" operation alongside the conventional pull/push operations in contrastive…
 tags:
-  - AAAI 2026
-  - Self-Supervised Learning
-  - Open-set semi-supervised learning
-  - contrastive learning
-  - OOD detection
-  - selective non-alignment
-  - prototype learning
+  - "AAAI 2026"
+  - "Self-Supervised Learning"
+  - "Open-set semi-supervised learning"
+  - "contrastive learning"
+  - "OOD detection"
+  - "selective non-alignment"
+  - "prototype learning"
 date: 2026-05-08
 content_hash: c39634c79e8f2eb1
 ---

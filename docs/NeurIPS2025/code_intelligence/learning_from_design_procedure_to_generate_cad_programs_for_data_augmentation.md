@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Learning From Design Procedure To Generate CAD Programs for Data Augmentation
 description: >-
-  [NeurIPS 2025 (Workshop: Deep Learning for Code in the Agentic Era)][CAD program generation] This paper proposes a CAD program data augmentation paradigm inspired by industrial design workflows. By providing reference surface programs and design procedure descriptions as LLM prompts, the method guides the generation of CAD programs containing B-Spline organic shapes, substantially narrowing the geometric complexity gap between public CAD datasets and industrial-grade designs.
+  [NeurIPS 2025 (Workshop: Deep Learning for Code in the Agentic Era)][Code Intelligence][CAD program generation] This paper proposes a CAD program data augmentation paradigm inspired by industrial design workflows. By pro…
 tags:
   - "NeurIPS 2025 (Workshop: Deep Learning for Code in the Agentic Era)"
-  - CAD program generation
-  - data augmentation
-  - LLM prompting strategy
-  - B-Spline geometry
-  - industrial design
+  - "Code Intelligence"
+  - "CAD program generation"
+  - "data augmentation"
+  - "LLM prompting strategy"
+  - "B-Spline geometry"
+  - "industrial design"
 date: 2026-05-08
 content_hash: e76775149adc629b
 ---

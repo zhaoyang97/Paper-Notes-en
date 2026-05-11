@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dual-branch Spatial-Temporal Self-supervised Representation for Enhanced Road Network Learning
 description: >-
-  [AAAI 2026][Autonomous Driving][Road network representation learning] This paper proposes DST (Dual-branch Spatial-Temporal), a road network representation learning framework that jointly models spatial heterogeneity and temporal dynamics via a spatial branch (mix-hop transition matrix + graph–hypergraph contrastive learning) and a temporal branch (Transformer encoder + next-token prediction + weekday/weekend classification). DST achieves state-of-the-art performance on three downstream tasks across three cities.
+  [AAAI 2026][Autonomous Driving][Road network representation learning] This paper proposes DST (Dual-branch Spatial-Temporal), a road network representation learning framework that jointly models spatial heterogeneity and…
 tags:
-  - AAAI 2026
-  - Autonomous Driving
-  - Road network representation learning
-  - self-supervised learning
-  - graph neural networks
-  - hypergraph
-  - spatial-temporal modeling
+  - "AAAI 2026"
+  - "Autonomous Driving"
+  - "Road network representation learning"
+  - "self-supervised learning"
+  - "graph neural networks"
+  - "hypergraph"
+  - "spatial-temporal modeling"
 date: 2026-05-08
 content_hash: 8db39539fb2c7806
 ---

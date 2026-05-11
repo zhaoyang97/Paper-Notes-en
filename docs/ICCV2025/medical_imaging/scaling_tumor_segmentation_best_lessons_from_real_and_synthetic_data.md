@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Scaling Tumor Segmentation: Best Lessons from Real and Synthetic Data
 description: >-
-  [ICCV 2025][Medical Imaging][Data scaling laws] Through a systematic study of data scaling laws on a large-scale private dataset, this work demonstrates that synthetic tumors can substantially reduce the need for real annotations (from 1,500 to 500 cases). Building on these findings, the authors construct AbdomenAtlas 2.0—the first large-scale manually annotated CT dataset with over 10,000 scans covering six organ tumor types—achieving significant improvements on both in-distribution and out-of-distribution benchmarks.
+  [ICCV 2025][Medical Imaging][Data scaling laws] Through a systematic study of data scaling laws on a large-scale private dataset, this work demonstrates that synthetic tumors can substantially reduce the need for real an…
 tags:
-  - ICCV 2025
-  - Medical Imaging
-  - Data scaling laws
-  - tumor segmentation
-  - synthetic data
-  - AbdomenAtlas
-  - CT segmentation
+  - "ICCV 2025"
+  - "Medical Imaging"
+  - "Data scaling laws"
+  - "tumor segmentation"
+  - "synthetic data"
+  - "AbdomenAtlas"
+  - "CT segmentation"
 date: 2026-05-08
 content_hash: bce159f358abe464
 ---

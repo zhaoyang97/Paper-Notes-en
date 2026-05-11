@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AID: Adapting Image2Video Diffusion Models for Instruction-guided Video Prediction
 description: >-
-  [ICCV 2025][Image Generation][Video Prediction] This paper proposes AID, a framework that transfers a pretrained Image2Video diffusion model (SVD) to text-guided video prediction (TVP) tasks. Through MLLM-assisted video state prediction, a Dual-Query Transformer for condition injection, and spatiotemporal adapters, AID surpasses the previous state-of-the-art FVD scores by over 50% across multiple datasets.
+  [ICCV 2025][Image Generation][Video Prediction] This paper proposes AID, a framework that transfers a pretrained Image2Video diffusion model (SVD) to text-guided video prediction (TVP) tasks. Through MLLM-assisted video…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Video Prediction
-  - Diffusion Models
-  - Text-Guided
-  - Stable Video Diffusion
-  - Adapter
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Video Prediction"
+  - "Diffusion Models"
+  - "Text-Guided"
+  - "Stable Video Diffusion"
+  - "Adapter"
 date: 2026-05-08
 content_hash: 6db571c368b19271
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Computational Method for Measuring "Open Codes" in Qualitative Analysis
 description: >-
-  [ACL 2026][Model Compression][Inductive coding] This paper proposes a theoretically grounded computational framework that employs an LLM-augmented code merging algorithm alongside four ground-truth-free metrics (Coverage, Overlap, Novelty, and Divergence) to systematically evaluate the performance of both human and AI coders in inductive qualitative coding.
+  [ACL 2026][Model Compression][Inductive coding] This paper proposes a theoretically grounded computational framework that employs an LLM-augmented code merging algorithm alongside four ground-truth-free metrics (Coverage…
 tags:
-  - ACL 2026
-  - Model Compression
-  - Inductive coding
-  - qualitative analysis
-  - LLM-assisted evaluation
-  - code space aggregation
-  - team-based coding evaluation
+  - "ACL 2026"
+  - "Model Compression"
+  - "Inductive coding"
+  - "qualitative analysis"
+  - "LLM-assisted evaluation"
+  - "code space aggregation"
+  - "team-based coding evaluation"
 date: 2026-05-08
 content_hash: d704a04a1e2dc8c3
 ---

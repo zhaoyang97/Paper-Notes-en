@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] 3DGraphLLM: Combining Semantic Graphs and Large Language Models for 3D Scene Understanding
 description: >-
-  [ICCV 2025][3D Vision][3D scene understanding] This paper proposes 3DGraphLLM, which encodes semantic inter-object relationships in 3D scenes as learnable graph representations and feeds them into an LLM. The method significantly outperforms baselines that ignore semantic relations across multiple 3D vision-language tasks — including object grounding, scene captioning, and visual question answering — while achieving 5× faster inference than LVLM-based approaches.
+  [ICCV 2025][3D Vision][3D scene understanding] This paper proposes 3DGraphLLM, which encodes semantic inter-object relationships in 3D scenes as learnable graph representations and feeds them into an LLM. The method sign…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D scene understanding
-  - scene graph
-  - large language models
-  - vision-language tasks
-  - semantic relations
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D scene understanding"
+  - "scene graph"
+  - "large language models"
+  - "vision-language tasks"
+  - "semantic relations"
 date: 2026-05-08
 content_hash: 7f88667a32ee6e35
 ---

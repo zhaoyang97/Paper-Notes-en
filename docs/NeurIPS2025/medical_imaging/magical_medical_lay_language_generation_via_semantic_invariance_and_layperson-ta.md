@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Magical: Medical Lay Language Generation via Semantic Invariance and Layperson-tailored Adaptation
 description: >-
-  [NeurIPS 2025][Medical Imaging][Medical lay language generation] This paper proposes Magical, an asymmetric LoRA architecture for medical lay language generation (MLLG) that enforces a semantic invariance constraint on the shared matrix $A$ while employing multiple independent matrices $B$ to enable semantically faithful and stylistically diverse lay language generation. Magical reduces trainable parameters by 31.66% while outperforming all LoRA variants.
+  [NeurIPS 2025][Medical Imaging][Medical lay language generation] This paper proposes Magical, an asymmetric LoRA architecture for medical lay language generation (MLLG) that enforces a semantic invariance constraint on t…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Medical lay language generation
-  - LoRA
-  - semantic invariance
-  - heterogeneous data
-  - parameter-efficient fine-tuning
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Medical lay language generation"
+  - "LoRA"
+  - "semantic invariance"
+  - "heterogeneous data"
+  - "parameter-efficient fine-tuning"
 date: 2026-05-08
 content_hash: 44db79e56ffe3fb1
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CogGen: A Cognitively Inspired Recursive Framework for Deep Research Report Generation
 description: >-
-  [ACL 2026][Multimodal VLM][Deep research report] CogGen proposes a multi-agent recursive framework that simulates the human cognitive writing process. It achieves global restructuring via a macro-cognitive loop, parallel section refinement via a micro-cognitive cycle, and semantic-level text–chart co-planning via Abstract Visual Representation (AVR). On the OWID benchmark, CogGen reaches human expert-level performance and surpasses Gemini Deep Research.
+  [ACL 2026][Multimodal VLM][Deep research report] CogGen proposes a multi-agent recursive framework that simulates the human cognitive writing process. It achieves global restructuring via a macro-cognitive loop…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Deep research report
-  - recursive writing framework
-  - multimodal fusion
-  - cognitive load assessment
-  - multi-agent
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Deep research report"
+  - "recursive writing framework"
+  - "multimodal fusion"
+  - "cognitive load assessment"
+  - "multi-agent"
 date: 2026-05-08
 content_hash: 5313d205119a6ac3
 ---

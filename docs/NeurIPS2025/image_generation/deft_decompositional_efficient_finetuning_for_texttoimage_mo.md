@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DEFT: Decompositional Efficient Fine-Tuning for Text-to-Image Models
 description: >-
-  [NeurIPS 2025][Image Generation][Efficient Fine-Tuning] This paper proposes DEFT (Decompositional Efficient Fine-Tuning), which efficiently fine-tunes T2I models by decomposing weight updates into two components — subspace projection and low-rank adjustment — outperforming LoRA and PaRa on both personalized and general image generation tasks.
+  [NeurIPS 2025][Image Generation][Efficient Fine-Tuning] This paper proposes DEFT (Decompositional Efficient Fine-Tuning), which efficiently fine-tunes T2I models by decomposing weight updates into two components — subspa…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Efficient Fine-Tuning
-  - Diffusion Models
-  - Low-Rank Decomposition
-  - Personalized Generation
-  - General Image Generation
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Efficient Fine-Tuning"
+  - "Diffusion Models"
+  - "Low-Rank Decomposition"
+  - "Personalized Generation"
+  - "General Image Generation"
 date: 2026-05-08
 content_hash: c423362c76ce4844
 ---

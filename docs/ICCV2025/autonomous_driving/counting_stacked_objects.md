@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Counting Stacked Objects
 description: >-
-  [ICCV 2025][Autonomous Driving][3D object counting] The paper decomposes the stacked object counting problem into two sub-problems — volume estimation and occupancy ratio estimation — solving the former via multi-view 3D reconstruction and the latter via a depth-map-driven neural network that infers interior occupancy from visible surfaces. This is the first method to accurately count largely invisible stacked objects, significantly outperforming humans.
+  [ICCV 2025][Autonomous Driving][3D object counting] The paper decomposes the stacked object counting problem into two sub-problems — volume estimation and occupancy ratio estimation — solving the former via multi-view 3D…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - 3D object counting
-  - occupancy estimation
-  - multi-view reconstruction
-  - 3D Gaussian Splatting
-  - depth estimation
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "3D object counting"
+  - "occupancy estimation"
+  - "multi-view reconstruction"
+  - "3D Gaussian Splatting"
+  - "depth estimation"
 date: 2026-05-08
 content_hash: 83d24f5fc2bc2017
 ---

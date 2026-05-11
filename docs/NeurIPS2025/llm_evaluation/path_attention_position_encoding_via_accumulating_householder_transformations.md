@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PaTH Attention: Position Encoding via Accumulating Householder Transformations
 description: >-
-  [NeurIPS 2025][LLM Evaluation][position encoding] This paper proposes PaTH (Position encoding via accumulating Householder Transformations), a data-dependent multiplicative position encoding scheme that replaces RoPE's static rotation matrices with accumulated Householder transformations, achieving superior theoretical expressiveness and empirical language modeling performance over RoPE.
+  [NeurIPS 2025][LLM Evaluation][position encoding] This paper proposes PaTH (Position encoding via accumulating Householder Transformations)…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - position encoding
-  - Householder transformation
-  - attention mechanism
-  - state tracking
-  - RoPE
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "position encoding"
+  - "Householder transformation"
+  - "attention mechanism"
+  - "state tracking"
+  - "RoPE"
 date: 2026-05-08
 content_hash: 80a759c0a7b50500
 ---

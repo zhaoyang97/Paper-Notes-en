@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Adaptive Instruction Composition for Automated LLM Red-Teaming
 description: >-
-  [ACL 2026][Reinforcement Learning][LLM red-teaming] This paper proposes the Adaptive Instruction Composition (AIC) framework, which employs Neural Thompson Sampling to adaptively select attack instructions from the combinatorial space of crowdsourced harmful queries and jailbreak strategies, jointly optimizing attack success rate (ASR) and diversity. AIC achieves substantial improvements over existing methods on HarmBench.
+  [ACL 2026][Reinforcement Learning][LLM red-teaming] This paper proposes the Adaptive Instruction Composition (AIC) framework, which employs Neural Thompson Sampling to adaptively select attack instructions from the combi…
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - LLM red-teaming
-  - adaptive instruction composition
-  - contextual bandit
-  - jailbreak attacks
-  - diversity-effectiveness tradeoff
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "LLM red-teaming"
+  - "adaptive instruction composition"
+  - "contextual bandit"
+  - "jailbreak attacks"
+  - "diversity-effectiveness tradeoff"
 date: 2026-05-08
 content_hash: 393ea54af596fb72
 ---

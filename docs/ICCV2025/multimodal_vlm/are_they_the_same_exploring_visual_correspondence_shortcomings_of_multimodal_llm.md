@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Are They the Same? Exploring Visual Correspondence Shortcomings of Multimodal LLMs
 description: >-
-  [ICCV 2025][Multimodal VLM][visual correspondence] This paper presents the first systematic study of visual correspondence matching deficiencies in multimodal large language models (MLLMs). The authors construct the MMVM benchmark (1,510 samples) and a 220K matching dataset, and propose CoLVA, which leverages object-level contrastive learning and a fine-grained visual expert to substantially improve cross-image instance matching in MLLMs.
+  [ICCV 2025][Multimodal VLM][visual correspondence] This paper presents the first systematic study of visual correspondence matching deficiencies in multimodal large language models (MLLMs). The authors construct the MMVM…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - visual correspondence
-  - multimodal large language models
-  - contrastive learning
-  - visual matching
-  - benchmark
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "visual correspondence"
+  - "multimodal large language models"
+  - "contrastive learning"
+  - "visual matching"
+  - "benchmark"
 date: 2026-05-08
 content_hash: cc9b166aee02d063
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Cross-Instance Gaussian Splatting Registration via Geometry-Aware Feature-Guided Alignment
 description: >-
-  [CVPR 2026][3D Vision][3D Gaussian Splatting] This paper proposes GSA (Gaussian Splatting Alignment), the first method for category-level cross-instance registration of 3DGS models. It combines geometry-aware feature-guided coarse alignment (extending ICP to solve similarity transformations) with multi-view feature consistency fine alignment, substantially outperforming existing methods in both same-instance and cross-instance scenarios.
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] This paper proposes GSA (Gaussian Splatting Alignment), the first method for category-level cross-instance registration of 3DGS models. It combines geometry-aware feature-gui…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - cross-instance registration
-  - similarity transformation
-  - geometry-aware features
-  - inverse radiance field
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "cross-instance registration"
+  - "similarity transformation"
+  - "geometry-aware features"
+  - "inverse radiance field"
 date: 2026-05-08
 content_hash: 4c01bc1291eded5f
 ---

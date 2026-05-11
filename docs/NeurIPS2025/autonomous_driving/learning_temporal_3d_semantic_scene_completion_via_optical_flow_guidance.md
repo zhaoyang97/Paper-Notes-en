@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FlowScene: Learning Temporal 3D Semantic Scene Completion via Optical Flow Guidance
 description: >-
-  [NeurIPS 2025][Autonomous Driving][3D Semantic Scene Completion] This paper proposes FlowScene, which leverages optical flow to guide temporal feature aggregation and employs occlusion masks for voxel refinement. Using only 2 historical frames as input, FlowScene achieves state-of-the-art performance on the SemanticKITTI and SSCBench-KITTI-360 benchmarks (mIoU 17.70 / 20.81).
+  [NeurIPS 2025][Autonomous Driving][3D Semantic Scene Completion] This paper proposes FlowScene, which leverages optical flow to guide temporal feature aggregation and employs occlusion masks for voxel refinement. Using o…
 tags:
-  - NeurIPS 2025
-  - Autonomous Driving
-  - 3D Semantic Scene Completion
-  - Optical Flow Guidance
-  - Temporal Modeling
-  - Occlusion Awareness
-  - Voxel Refinement
+  - "NeurIPS 2025"
+  - "Autonomous Driving"
+  - "3D Semantic Scene Completion"
+  - "Optical Flow Guidance"
+  - "Temporal Modeling"
+  - "Occlusion Awareness"
+  - "Voxel Refinement"
 date: 2026-05-08
 content_hash: 0b82a38c20a70553
 ---

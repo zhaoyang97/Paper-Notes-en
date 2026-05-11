@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Training-Free Policy Violation Detection via Activation-Space Whitening in LLMs
 description: >-
-  [AAAI 2026][Medical Imaging][Policy violation detection] This work reformulates LLM policy violation detection as an out-of-distribution (OOD) detection problem in activation space. A training-free whitening approach is proposed: a whitening transform is fitted on compliant activations, and the Euclidean norm serves as the compliance score. Deployment requires only policy text and a small number of examples. The method achieves 86.0% F1 on DynaBench, outperforming fine-tuned baselines by 9.1 points and LLM-as-Judge by 16 points.
+  [AAAI 2026][Medical Imaging][Policy violation detection] This work reformulates LLM policy violation detection as an out-of-distribution (OOD) detection problem in activation space. A training-free whitening approach is…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Policy violation detection
-  - activation-space whitening
-  - out-of-distribution detection
-  - LLM internal representations
-  - training-free
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Policy violation detection"
+  - "activation-space whitening"
+  - "out-of-distribution detection"
+  - "LLM internal representations"
+  - "training-free"
 date: 2026-05-08
 content_hash: 2563bcba0625bea2
 ---

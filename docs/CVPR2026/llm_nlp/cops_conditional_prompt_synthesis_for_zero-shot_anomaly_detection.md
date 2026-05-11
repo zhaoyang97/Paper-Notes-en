@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CoPS: Conditional Prompt Synthesis for Zero-Shot Anomaly Detection
 description: >-
-  [CVPR 2026][LLM/NLP][zero-shot anomaly detection] CoPS is a framework that dynamically generates prompts through two visual conditioning mechanisms — Explicit State Token Synthesis (ESTS) and Implicit Category Token Sampling (ICTS) — combined with Spatially-Aware Global-local Alignment (SAGA), achieving zero-shot anomaly detection SOTA across 13 industrial and medical datasets.
+  [CVPR 2026][LLM/NLP][zero-shot anomaly detection] CoPS is a framework that dynamically generates prompts through two visual conditioning mechanisms — Explicit State Token Synthesis (ESTS) and Implicit Category Token Samp…
 tags:
-  - CVPR 2026
-  - LLM/NLP
-  - zero-shot anomaly detection
-  - conditional prompt synthesis
-  - CLIP
-  - vision-language model
-  - industrial defect
+  - "CVPR 2026"
+  - "LLM/NLP"
+  - "zero-shot anomaly detection"
+  - "conditional prompt synthesis"
+  - "CLIP"
+  - "vision-language model"
+  - "industrial defect"
 date: 2026-05-08
 content_hash: 3a2c5165ad8ec4b3
 ---

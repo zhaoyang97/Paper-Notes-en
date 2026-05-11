@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PhysioWave: A Multi-Scale Wavelet-Transformer for Physiological Signal Representation
 description: >-
-  [NeurIPS 2025][Medical Imaging][Wavelet transform] This paper proposes PhysioWave, a multi-scale Transformer architecture based on learnable wavelet decomposition and frequency-guided masking. It establishes, for the first time, large-scale pretrained foundation models for EMG and ECG, and achieves state-of-the-art performance on both unimodal and multimodal physiological signal tasks through a multimodal fusion framework.
+  [NeurIPS 2025][Medical Imaging][Wavelet transform] This paper proposes PhysioWave, a multi-scale Transformer architecture based on learnable wavelet decomposition and frequency-guided masking. It establishes…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Wavelet transform
-  - physiological signals
-  - self-supervised learning
-  - multimodal fusion
-  - foundation model
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Wavelet transform"
+  - "physiological signals"
+  - "self-supervised learning"
+  - "multimodal fusion"
+  - "foundation model"
 date: 2026-05-08
 content_hash: e7ddf2e5524ad6df
 ---

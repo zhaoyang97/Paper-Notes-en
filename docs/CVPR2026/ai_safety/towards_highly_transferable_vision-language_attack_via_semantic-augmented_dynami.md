@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Highly Transferable Vision-Language Attack via Semantic-Augmented Dynamic Contrastive Interaction
 description: >-
-  [CVPR 2026][AI Safety][Adversarial Attack] This paper proposes SADCA (Semantic-Augmented Dynamic Contrastive Attack), which iteratively disrupts cross-modal semantic consistency between adversarial images and texts via a dynamic contrastive interaction mechanism and a semantic augmentation module. SADCA significantly improves adversarial transferability against vision-language pre-training (VLP) models, surpassing existing SOTA methods in both cross-model and cross-task attack settings.
+  [CVPR 2026][AI Safety][Adversarial Attack] This paper proposes SADCA (Semantic-Augmented Dynamic Contrastive Attack), which iteratively disrupts cross-modal semantic consistency between adversarial images and texts via a…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Adversarial Attack
-  - Vision-Language Models
-  - Adversarial Transferability
-  - Contrastive Learning
-  - Semantic Augmentation
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Adversarial Attack"
+  - "Vision-Language Models"
+  - "Adversarial Transferability"
+  - "Contrastive Learning"
+  - "Semantic Augmentation"
 date: 2026-05-08
 content_hash: 8df94e8265fc8091
 ---

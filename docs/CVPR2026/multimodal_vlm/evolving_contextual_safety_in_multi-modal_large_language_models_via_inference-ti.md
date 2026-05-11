@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Evolving Contextual Safety in Multi-Modal Large Language Models via Inference-Time Self-Reflective Memory
 description: >-
-  [CVPR 2026][Multimodal VLM][MLLM safety] This paper proposes MM-SafetyBench++ and the EchoSafe framework, which accumulates safety insights by maintaining a self-reflective memory bank at inference time, enabling MLLMs to distinguish visually similar scenarios with different safety intents based on context—improving contextual safety without any training.
+  [CVPR 2026][Multimodal VLM][MLLM safety] This paper proposes MM-SafetyBench++ and the EchoSafe framework, which accumulates safety insights by maintaining a self-reflective memory bank at inference time…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - MLLM safety
-  - contextual safety
-  - self-reflective memory
-  - inference-time defense
-  - safety benchmark
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "MLLM safety"
+  - "contextual safety"
+  - "self-reflective memory"
+  - "inference-time defense"
+  - "safety benchmark"
 date: 2026-05-08
 content_hash: 1ec80582f8c92cdd
 ---

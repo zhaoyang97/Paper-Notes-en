@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] How to Take a Memorable Picture? Empowering Users with Actionable Feedback
 description: >-
-  [CVPR 2026][Human Understanding][Image memorability] This paper defines a novel task of memorability feedback (MemFeed) and proposes MemCoach — a training-free, activation-steering approach for MLLMs. Via a teacher-student strategy, memorability-aware knowledge is injected into the model's activation space, enabling the MLLM to generate natural-language actionable suggestions that improve photo memorability.
+  [CVPR 2026][Human Understanding][Image memorability] This paper defines a novel task of memorability feedback (MemFeed) and proposes MemCoach — a training-free…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Image memorability
-  - actionable feedback
-  - activation steering
-  - MLLM
-  - photography assistance
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Image memorability"
+  - "actionable feedback"
+  - "activation steering"
+  - "MLLM"
+  - "photography assistance"
 date: 2026-05-08
 content_hash: 5195a8a3a765d145
 ---

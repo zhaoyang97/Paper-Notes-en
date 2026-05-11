@@ -2,15 +2,16 @@
 title: >-
   [Paper Note] Beyond Components: Singular Vector-Based Interpretability of Transformer Circuits
 description: >-
-  [NeurIPS 2025][SVD interpretability] This paper proposes a direction-level interpretability framework based on singular vectors. By applying SVD to augmented matrices of Transformer attention heads and MLPs, combined with learnable diagonal mask optimization (KL+L₁), it reveals orthogonal low-rank subfunctions within individual components. On the IOI task, retaining only ~9% of directions suffices to reproduce model behavior with KLD=0.21; moreover, different singular directions within Head 9.6 separately encode distinct computational primitives such as semantic entity separation, entity salience, and sequence initialization.
+  [NeurIPS 2025][Interpretability][SVD interpretability] This paper proposes a direction-level interpretability framework based on singular vectors. By applying SVD to augmented matrices of Transformer attention heads and…
 tags:
-  - NeurIPS 2025
-  - SVD interpretability
-  - transformer circuits
-  - singular vectors
-  - mechanistic interpretability
-  - directional masking
-  - low-rank subfunctions
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "SVD interpretability"
+  - "transformer circuits"
+  - "singular vectors"
+  - "mechanistic interpretability"
+  - "directional masking"
+  - "low-rank subfunctions"
 date: 2026-05-08
 content_hash: efd92117bb27567e
 ---

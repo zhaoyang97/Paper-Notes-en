@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Refine and Align: Confidence Calibration through Multi-Agent Interaction in VQA
 description: >-
-  [AAAI 2026][Medical Imaging][VQA] This paper proposes AlignVQA, a multi-agent debate framework for VQA confidence calibration: specialist agents generate candidate answers, followed by structured debate (supporting vs. opposing arguments) by generalist agents to refine confidence scores. A differentiable calibration-aware loss, AlignCal, is also introduced to minimize the upper bound of calibration error (UBCE) during training. The approach reduces ECE from 0.375 to 0.098 on VQARad and ScienceQA.
+  [AAAI 2026][Medical Imaging][VQA] This paper proposes AlignVQA, a multi-agent debate framework for VQA confidence calibration: specialist agents generate candidate answers…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - VQA
-  - confidence calibration
-  - multi-agent debate
-  - vision-language models
-  - AlignCal loss
-  - medical image question answering
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "VQA"
+  - "confidence calibration"
+  - "multi-agent debate"
+  - "vision-language models"
+  - "AlignCal loss"
+  - "medical image question answering"
 date: 2026-05-08
 content_hash: 7d58a0a3c9f6c89c
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Inference-Time Diffusion Model Distillation
 description: >-
-  [ICCV 2025][Image Generation][Diffusion Distillation] This paper proposes Distillation++, an inference-time diffusion distillation framework that leverages a pretrained teacher model during the student model's sampling process to correct its denoising trajectory, significantly narrowing the teacher–student performance gap without requiring additional training data or fine-tuning.
+  [ICCV 2025][Image Generation][Diffusion Distillation] This paper proposes Distillation++, an inference-time diffusion distillation framework that leverages a pretrained teacher model during the student model's sampling p…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Diffusion Distillation
-  - Inference-Time Distillation
-  - Score Distillation Sampling
-  - Teacher-Guided Sampling
-  - Few-Step Generation
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Diffusion Distillation"
+  - "Inference-Time Distillation"
+  - "Score Distillation Sampling"
+  - "Teacher-Guided Sampling"
+  - "Few-Step Generation"
 date: 2026-05-08
 content_hash: 0e3ef3c2c05f690c
 ---

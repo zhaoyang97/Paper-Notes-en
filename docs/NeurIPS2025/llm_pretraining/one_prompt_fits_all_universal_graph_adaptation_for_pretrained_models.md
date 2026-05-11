@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] One Prompt Fits All: Universal Graph Adaptation for Pretrained Models
 description: >-
-  [NeurIPS 2025][LLM Pretraining][graph prompt learning] This paper theoretically proves that representation-level graph prompts are essentially equivalent to linear probes, and on this basis proposes UniPrompt—an input-level method based on a learnable kNN topological prompt graph. By fusing the prompt graph with the original graph via a bootstrapping strategy, UniPrompt consistently outperforms existing graph prompt learning methods on both in-domain and cross-domain few-shot node classification.
+  [NeurIPS 2025][LLM Pretraining][graph prompt learning] This paper theoretically proves that representation-level graph prompts are essentially equivalent to linear probes…
 tags:
-  - NeurIPS 2025
-  - LLM Pretraining
-  - graph prompt learning
-  - pretrained GNN
-  - few-shot
-  - graph topology
-  - kNN graph
+  - "NeurIPS 2025"
+  - "LLM Pretraining"
+  - "graph prompt learning"
+  - "pretrained GNN"
+  - "few-shot"
+  - "graph topology"
+  - "kNN graph"
 date: 2026-05-08
 content_hash: 2d155a88e209d2db
 ---

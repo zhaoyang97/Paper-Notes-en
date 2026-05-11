@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] NeuroSeg Meets DINOv3: Transferring 2D Self-Supervised Visual Priors to 3D Neuron Segmentation via DINOv3 Initialization
 description: >-
-  [CVPR 2026][Medical Imaging][Neuron segmentation] NeurINO proposes to initialize a 3D neuron segmentation model by inflating DINOv3 pretrained 2D convolutional kernels into 3D operators, while introducing a Topology-Aware Skeleton Loss (TASL) to explicitly supervise skeleton-level structural fidelity. The method achieves average improvements of 2.9% in ESA, 2.8% in DSA, and 3.8% in PDS across four neuroimaging datasets.
+  [CVPR 2026][Medical Imaging][Neuron segmentation] NeurINO proposes to initialize a 3D neuron segmentation model by inflating DINOv3 pretrained 2D convolutional kernels into 3D operators…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Neuron segmentation
-  - DINOv3
-  - 2D-to-3D transfer
-  - topology-aware loss
-  - data-efficient learning
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Neuron segmentation"
+  - "DINOv3"
+  - "2D-to-3D transfer"
+  - "topology-aware loss"
+  - "data-efficient learning"
 date: 2026-05-08
 content_hash: ae9c0eb363e6f91d
 ---

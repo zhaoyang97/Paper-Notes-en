@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EHETM: High-Quality and Efficient Turbulence Mitigation with Events
 description: >-
-  [CVPR 2026][Scientific Computing][Atmospheric Turbulence Mitigation] This paper proposes EHETM, the first method to leverage the microsecond temporal resolution of event cameras to overcome the accuracy–efficiency bottleneck of conventional multi-frame turbulence mitigation (TM). Two key physical phenomena are identified—polarity alternation of turbulence-induced events correlated with image gradients, and spatiotemporally coherent "event tubes" formed by dynamic objects—motivating two complementary modules: a polarity-weighted gradient module and an event tube constraint module. EHETM reduces data overhead by 77.3% and system latency by 89.5%, with particularly substantial gains over the state of the art in dynamic-object scenes.
+  [CVPR 2026][Scientific Computing][Atmospheric Turbulence Mitigation] This paper proposes EHETM, the first method to leverage the microsecond temporal resolution of event cameras to overcome the accuracy–efficiency bottle…
 tags:
-  - CVPR 2026
-  - Scientific Computing
-  - Atmospheric Turbulence Mitigation
-  - Event Camera
-  - Polarity-Weighted Gradient
-  - Event Tube Constraint
-  - Motion Decoupling
+  - "CVPR 2026"
+  - "Scientific Computing"
+  - "Atmospheric Turbulence Mitigation"
+  - "Event Camera"
+  - "Polarity-Weighted Gradient"
+  - "Event Tube Constraint"
+  - "Motion Decoupling"
 date: 2026-05-08
 content_hash: d7c6118c79b7b6d2
 ---

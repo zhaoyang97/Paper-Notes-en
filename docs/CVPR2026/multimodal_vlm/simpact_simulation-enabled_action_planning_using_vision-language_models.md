@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SIMPACT: Simulation-Enabled Action Planning using Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Simulation-based reasoning] SIMPACT proposes a test-time simulation-augmented action planning framework that automatically constructs a physics simulation environment from a single RGB-D image, enabling VLMs to propose actions, observe simulation outcomes, and iteratively refine their reasoning—achieving SOTA performance on both rigid and deformable object manipulation tasks without any additional training.
+  [CVPR 2026][Multimodal VLM][Simulation-based reasoning] SIMPACT proposes a test-time simulation-augmented action planning framework that automatically constructs a physics simulation environment from a single RGB-D image…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Simulation-based reasoning
-  - vision-language models
-  - action planning
-  - physical reasoning
-  - robotic manipulation
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Simulation-based reasoning"
+  - "vision-language models"
+  - "action planning"
+  - "physical reasoning"
+  - "robotic manipulation"
 date: 2026-05-08
 content_hash: 695a2ceec6d18682
 ---

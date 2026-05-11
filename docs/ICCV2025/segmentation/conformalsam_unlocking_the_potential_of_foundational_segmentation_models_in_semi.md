@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ConformalSAM: Unlocking the Potential of Foundational Segmentation Models in Semi-Supervised Semantic Segmentation with Conformal Prediction
 description: >-
-  [ICCV 2025][Segmentation][Semi-supervised segmentation] This paper proposes ConformalSAM, a framework that leverages Conformal Prediction to calibrate the output uncertainty of the foundation segmentation model SEEM on target domains. Unreliable pixel labels are filtered out before serving as supervision signals for unlabeled data. Combined with a late-stage self-reliance training strategy, the framework achieves 81.21 mIoU on PASCAL VOC under the 1/16 labeled setting.
+  [ICCV 2025][Segmentation][Semi-supervised segmentation] This paper proposes ConformalSAM, a framework that leverages Conformal Prediction to calibrate the output uncertainty of the foundation segmentation model SEEM on t…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - Semi-supervised segmentation
-  - conformal prediction
-  - SAM/SEEM
-  - uncertainty calibration
-  - pseudo labels
+  - "ICCV 2025"
+  - "Segmentation"
+  - "Semi-supervised segmentation"
+  - "conformal prediction"
+  - "SAM/SEEM"
+  - "uncertainty calibration"
+  - "pseudo labels"
 date: 2026-05-08
 content_hash: 6090fc2774cfe5db
 ---

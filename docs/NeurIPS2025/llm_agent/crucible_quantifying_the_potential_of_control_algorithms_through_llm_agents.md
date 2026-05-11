@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Crucible: Quantifying the Potential of Control Algorithms through LLM Agents
 description: >-
-  [NeurIPS 2025][LLM Agent][tuning potential] This paper is the first to formalize the concept of **Tuning Potential**, using LLM agents to simulate multi-level developers performing dual-layer (parameter + logic) optimization of control algorithms. On CartPole, Bang-bang improves from 34→500, reaching DQN-level performance; on ABR tasks, Crucible achieves up to 44.1% improvement over Bayesian optimization.
+  [NeurIPS 2025][LLM Agent][tuning potential] This paper is the first to formalize the concept of **Tuning Potential**, using LLM agents to simulate multi-level developers performing dual-layer (parameter + logic) optimiza…
 tags:
-  - NeurIPS 2025
-  - LLM Agent
-  - tuning potential
-  - control algorithm
-  - parameter optimization
-  - Bayesian optimization
+  - "NeurIPS 2025"
+  - "LLM Agent"
+  - "tuning potential"
+  - "control algorithm"
+  - "parameter optimization"
+  - "Bayesian optimization"
 date: 2026-05-08
 content_hash: ffb5d02709452be3
 ---

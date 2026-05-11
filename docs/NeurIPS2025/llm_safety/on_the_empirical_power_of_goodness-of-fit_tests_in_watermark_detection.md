@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] On the Empirical Power of Goodness-of-Fit Tests in Watermark Detection
 description: >-
-  [NeurIPS 2025][LLM Safety][text watermark detection] This paper systematically evaluates eight classical goodness-of-fit (GoF) tests for LLM text watermark detection, demonstrating that GoF tests significantly outperform existing baseline methods in both detection power and robustness.
+  [NeurIPS 2025][LLM Safety][text watermark detection] This paper systematically evaluates eight classical goodness-of-fit (GoF) tests for LLM text watermark detection…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - text watermark detection
-  - goodness-of-fit tests
-  - LLM watermarking
-  - statistical hypothesis testing
-  - robustness
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "text watermark detection"
+  - "goodness-of-fit tests"
+  - "LLM watermarking"
+  - "statistical hypothesis testing"
+  - "robustness"
 date: 2026-05-08
 content_hash: a508deb5244eff91
 ---

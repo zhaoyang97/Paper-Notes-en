@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] SoPE: Spherical Coordinate-Based Positional Embedding for 3D LVLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][3D LVLM] This paper identifies spatial perception bias in RoPE when applied to 3D LVLMs (1D indexing disrupts 3D locality and ignores directionality), and proposes SoPE, a spherical coordinate-based positional embedding using a four-dimensional index $(t, r, \theta, \phi)$ with multi-dimensional frequency allocation and multi-scale mixing. SoPE achieves state-of-the-art performance on 3D layout estimation and object detection benchmarks built upon SpatialLM.
+  [CVPR 2026][Multimodal VLM][3D LVLM] This paper identifies spatial perception bias in RoPE when applied to 3D LVLMs (1D indexing disrupts 3D locality and ignores directionality), and proposes SoPE…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - 3D LVLM
-  - positional encoding
-  - spherical coordinates
-  - RoPE
-  - SpatialLM
-  - spatial reasoning
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "3D LVLM"
+  - "positional encoding"
+  - "spherical coordinates"
+  - "RoPE"
+  - "SpatialLM"
+  - "spatial reasoning"
 date: 2026-05-08
 content_hash: ed8dcdf5fa1586d2
 ---

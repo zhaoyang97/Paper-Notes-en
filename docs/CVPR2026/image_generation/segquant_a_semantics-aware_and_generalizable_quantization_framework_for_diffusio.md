@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SegQuant: A Semantics-Aware and Generalizable Quantization Framework for Diffusion Models
 description: >-
-  [CVPR2026][Image Generation][diffusion model quantization] This paper proposes SegQuant, a framework that achieves high-fidelity post-training quantization of diffusion models through two novel components: SegLinear, a semantics-aware segmented quantization scheme based on static computational graph analysis, and DualScale, a hardware-native dual-scale polarity-preserving quantization scheme. The approach is cross-architecture generalizable and compatible with deployment pipelines, requiring neither handcrafted rules nor runtime dynamic information.
+  [CVPR2026][Image Generation][diffusion model quantization] This paper proposes SegQuant, a framework that achieves high-fidelity post-training quantization of diffusion models through two novel components: SegLinear…
 tags:
-  - CVPR2026
-  - Image Generation
-  - diffusion model quantization
-  - post-training quantization
-  - semantics-aware segmentation
-  - polarity preservation
-  - deployment-friendly
+  - "CVPR2026"
+  - "Image Generation"
+  - "diffusion model quantization"
+  - "post-training quantization"
+  - "semantics-aware segmentation"
+  - "polarity preservation"
+  - "deployment-friendly"
 date: 2026-05-08
 content_hash: 513e3df9d0ad6fd1
 ---

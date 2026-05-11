@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Connecting Jensen-Shannon and Kullback-Leibler Divergences: A New Bound for Representation Learning
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][mutual information] This paper derives the optimal tight lower bound of KL divergence in terms of JS divergence, $\Xi(D_{\text{JS}}) \leq D_{\text{KL}}$, in the general case. It proves that training a discriminator by minimizing cross-entropy loss is equivalent to maximizing a guaranteed lower bound on mutual information, thereby providing the missing theoretical foundation for JSD-based discriminative representation learning methods. The tightness and practical utility of the bound are validated in MI estimation and the Information Bottleneck framework.
+  [NeurIPS 2025][Self-Supervised Learning][mutual information] This paper derives the optimal tight lower bound of KL divergence in terms of JS divergence, $\Xi(D_{\text{JS}}) \leq D_{\text{KL}}$…
 tags:
-  - NeurIPS 2025
-  - Self-Supervised Learning
-  - mutual information
-  - Jensen-Shannon divergence
-  - KL divergence
-  - variational bound
-  - representation learning
+  - "NeurIPS 2025"
+  - "Self-Supervised Learning"
+  - "mutual information"
+  - "Jensen-Shannon divergence"
+  - "KL divergence"
+  - "variational bound"
+  - "representation learning"
 date: 2026-05-08
 content_hash: c8e754e1ed6a6f85
 ---

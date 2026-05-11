@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MARS: A Meta-Adaptive Reinforcement Learning Framework for Risk-Aware Multi-Agent Portfolio Management
 description: >-
-  [AAAI 2026][Reinforcement Learning][Portfolio Management] This paper proposes the MARS framework, which achieves risk-aware portfolio management under dynamic market conditions through a two-level architecture comprising a Heterogeneous Agent Ensemble (HAE)—where each agent has a distinct risk preference and Safety-Critic—and a Meta-Adaptive Controller (MAC). The framework significantly reduces maximum drawdown and volatility.
+  [AAAI 2026][Reinforcement Learning][Portfolio Management] This paper proposes the MARS framework, which achieves risk-aware portfolio management under dynamic market conditions through a two-level architecture comprising…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - Portfolio Management
-  - Multi-Agent Reinforcement Learning
-  - Risk Management
-  - Meta-Learning
-  - Safety Critic
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "Portfolio Management"
+  - "Multi-Agent Reinforcement Learning"
+  - "Risk Management"
+  - "Meta-Learning"
+  - "Safety Critic"
 date: 2026-05-08
 content_hash: 4c307ca5661f2807
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Stable Cinemetrics: Structured Taxonomy and Evaluation for Professional Video Generation
 description: >-
-  [NeurIPS 2025][Video Generation][video generation evaluation] This paper proposes SCINE (Stable Cinemetrics), the first structured evaluation framework targeting professional video production. It defines a hierarchical taxonomy with 76 fine-grained cinematic control nodes, accompanied by large-scale professional annotation (80+ film practitioners, 20K+ videos, 248K annotations), revealing significant deficiencies of current state-of-the-art T2V models in professional cinematic control.
+  [NeurIPS 2025][Video Generation][video generation evaluation] This paper proposes SCINE (Stable Cinemetrics), the first structured evaluation framework targeting professional video production. It defines a hierarchical t…
 tags:
-  - NeurIPS 2025
-  - Video Generation
-  - video generation evaluation
-  - cinematic taxonomy
-  - professional video control
-  - human evaluation
-  - VLM evaluator
+  - "NeurIPS 2025"
+  - "Video Generation"
+  - "video generation evaluation"
+  - "cinematic taxonomy"
+  - "professional video control"
+  - "human evaluation"
+  - "VLM evaluator"
 date: 2026-05-08
 content_hash: 8eb77f1e383dcdcf
 ---

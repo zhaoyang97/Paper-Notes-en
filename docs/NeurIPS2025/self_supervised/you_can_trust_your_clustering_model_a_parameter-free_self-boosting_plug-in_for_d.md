@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] You Can Trust Your Clustering Model: A Parameter-free Self-Boosting Plug-in for Deep Clustering
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][Deep Clustering] This paper proposes DCBoost, a plug-and-play module requiring no additional hyperparameters, which selects high-confidence samples via adaptive k-NN and leverages reliable local structural information to guide global feature space optimization, substantially improving the performance of existing deep clustering models.
+  [NeurIPS 2025][Self-Supervised Learning][Deep Clustering] This paper proposes DCBoost, a plug-and-play module requiring no additional hyperparameters…
 tags:
-  - NeurIPS 2025
-  - Self-Supervised Learning
-  - Deep Clustering
-  - Self-Boosting Plug-in
-  - Local Structure
-  - Global Structure Optimization
-  - Parameter-free
+  - "NeurIPS 2025"
+  - "Self-Supervised Learning"
+  - "Deep Clustering"
+  - "Self-Boosting Plug-in"
+  - "Local Structure"
+  - "Global Structure Optimization"
+  - "Parameter-free"
 date: 2026-05-08
 content_hash: 3bd0b0f4e5c2e781
 ---

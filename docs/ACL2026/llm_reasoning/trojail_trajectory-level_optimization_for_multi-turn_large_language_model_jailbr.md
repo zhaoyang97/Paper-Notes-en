@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TROJail: Trajectory-Level Optimization for Multi-Turn Large Language Model Jailbreaks with Process Rewards
 description: >-
-  [ACL 2026][LLM Reasoning][Multi-turn jailbreak attacks] This paper frames automated multi-turn jailbreak attacks as a multi-turn reinforcement learning problem and proposes TROJail, which introduces two heuristic process rewards—over-harm penalization and semantic relevance progression—to alleviate the sparse supervision problem of outcome-only rewards, achieving substantial improvements in attack success rate across multiple models and benchmarks.
+  [ACL 2026][LLM Reasoning][Multi-turn jailbreak attacks] This paper frames automated multi-turn jailbreak attacks as a multi-turn reinforcement learning problem and proposes TROJail…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - Multi-turn jailbreak attacks
-  - trajectory-level optimization
-  - process rewards
-  - reinforcement learning
-  - red-teaming
+  - "ACL 2026"
+  - "LLM Reasoning"
+  - "Multi-turn jailbreak attacks"
+  - "trajectory-level optimization"
+  - "process rewards"
+  - "reinforcement learning"
+  - "red-teaming"
 date: 2026-05-08
 content_hash: 94a7c9b36686d045
 ---

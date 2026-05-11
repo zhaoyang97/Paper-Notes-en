@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GDBA Revisited: Unleashing the Power of Guided Local Search for Distributed Constraint Optimization
 description: >-
-  [AAAI 2026][LLM Evaluation][DCOP] To address the poor performance of GDBA on general-domain DCOPs, this paper systematically diagnoses three root causes—an overly aggressive violation condition, unbounded penalty accumulation, and uncoordinated penalty updates—and proposes the DGLS framework. Through an adaptive violation condition, an evaporation mechanism, and a synchronization scheme, DGLS fully unleashes the potential of guided local search, substantially outperforming state-of-the-art methods across multiple standard benchmarks.
+  [AAAI 2026][LLM Evaluation][DCOP] To address the poor performance of GDBA on general-domain DCOPs, this paper systematically diagnoses three root causes—an overly aggressive violation condition…
 tags:
-  - AAAI 2026
-  - LLM Evaluation
-  - DCOP
-  - Guided Local Search
-  - Penalty Evaporation
-  - Potential Game
-  - Local Optimum Escape
+  - "AAAI 2026"
+  - "LLM Evaluation"
+  - "DCOP"
+  - "Guided Local Search"
+  - "Penalty Evaporation"
+  - "Potential Game"
+  - "Local Optimum Escape"
 date: 2026-05-08
 content_hash: 940ac51834a8d17c
 ---

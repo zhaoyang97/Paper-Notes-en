@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MoDEM: A Morton-Order Degradation Estimation Mechanism for Adverse Weather Image Restoration
 description: >-
-  [NeurIPS 2025][Image Restoration][Adverse Weather Restoration] This paper proposes the MODEM framework, which combines Morton-encoded spatial scanning with selective state space models (SSMs) to capture spatially heterogeneous weather degradation patterns. Equipped with a dual degradation estimation module that provides both global and local priors, MODEM achieves state-of-the-art unified adaptive restoration across multiple adverse weather degradation types.
+  [NeurIPS 2025][Image Restoration][Adverse Weather Restoration] This paper proposes the MODEM framework, which combines Morton-encoded spatial scanning with selective state space models (SSMs) to capture spatially heterog…
 tags:
-  - NeurIPS 2025
-  - Image Restoration
-  - Adverse Weather Restoration
-  - State Space Model
-  - Morton Order
-  - Degradation Estimation
-  - Mamba
+  - "NeurIPS 2025"
+  - "Image Restoration"
+  - "Adverse Weather Restoration"
+  - "State Space Model"
+  - "Morton Order"
+  - "Degradation Estimation"
+  - "Mamba"
 date: 2026-05-08
 content_hash: ceaae38830129533
 ---

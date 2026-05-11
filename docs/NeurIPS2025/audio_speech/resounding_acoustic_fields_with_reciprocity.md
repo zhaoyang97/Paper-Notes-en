@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Resounding Acoustic Fields with Reciprocity
 description: >-
-  [NeurIPS 2025][Audio & Speech][acoustic field learning] Leveraging the reciprocity principle of acoustic wave propagation, this paper proposes Versa (ELE data augmentation + SSL self-supervised learning), which generates physically valid virtual training samples by swapping emitter and receiver roles, substantially improving acoustic field estimation performance under sparse emitter configurations.
+  [NeurIPS 2025][Audio & Speech][acoustic field learning] Leveraging the reciprocity principle of acoustic wave propagation, this paper proposes Versa (ELE data augmentation + SSL self-supervised learning)…
 tags:
-  - NeurIPS 2025
+  - "NeurIPS 2025"
   - "Audio & Speech"
-  - acoustic field learning
-  - reciprocity
-  - impulse response
-  - data augmentation
-  - self-supervised learning
+  - "acoustic field learning"
+  - "reciprocity"
+  - "impulse response"
+  - "data augmentation"
+  - "self-supervised learning"
 date: 2026-05-08
 content_hash: a7cab1684523f836
 ---

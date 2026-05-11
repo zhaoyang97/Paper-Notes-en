@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Scalable and Accurate Graph Reasoning with LLM-Based Multi-Agents
 description: >-
-  [AAAI 2026][LLM/NLP][Graph Reasoning] This paper proposes GraphAgent-Reasoner (GAR), inspired by distributed graph computation theory. It decomposes graph problems into node-centric subtasks assigned to multiple agents, which collaborate through neighbor message passing. GAR extends the graph scale tractable by LLMs from 100 nodes to 1,000 nodes, and significantly outperforms existing state-of-the-art methods on polynomial-time graph reasoning tasks.
+  [AAAI 2026][LLM/NLP][Graph Reasoning] This paper proposes GraphAgent-Reasoner (GAR), inspired by distributed graph computation theory. It decomposes graph problems into node-centric subtasks assigned to multiple agents…
 tags:
-  - AAAI 2026
-  - LLM/NLP
-  - Graph Reasoning
-  - Multi-Agent
-  - Distributed Computing
-  - LLM Reasoning
-  - Scalability
+  - "AAAI 2026"
+  - "LLM/NLP"
+  - "Graph Reasoning"
+  - "Multi-Agent"
+  - "Distributed Computing"
+  - "LLM Reasoning"
+  - "Scalability"
 date: 2026-05-08
 content_hash: 3a46f6296a0f06a5
 ---

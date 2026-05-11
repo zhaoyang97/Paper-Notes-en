@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] ArgoTweak: Towards Self-Updating HD Maps through Structured Priors
 description: >-
-  [ICCV 2025][HD Map] This paper proposes ArgoTweak, the first HD map dataset providing complete triplets of "prior map + current sensor data + up-to-date ground-truth map." It decomposes large-scale map modifications into element-level atomic changes via a bijective change mapping framework, and introduces interpretable evaluation metrics (mAPC/mACC). Models trained on ArgoTweak reduce the sim2real gap by more than 10× compared to synthetic-prior baselines.
+  [ICCV 2025][Interpretability][HD Map] This paper proposes ArgoTweak, the first HD map dataset providing complete triplets of "prior map + current sensor data + up-to-date ground-truth map." It decomposes large-scale map…
 tags:
-  - ICCV 2025
-  - HD Map
-  - Map Updating
-  - Change Detection
-  - Dataset
-  - Autonomous Driving
+  - "ICCV 2025"
+  - "Interpretability"
+  - "HD Map"
+  - "Map Updating"
+  - "Change Detection"
+  - "Dataset"
+  - "Autonomous Driving"
 date: 2026-05-08
 content_hash: 5cd9fa69aaad473c
 ---

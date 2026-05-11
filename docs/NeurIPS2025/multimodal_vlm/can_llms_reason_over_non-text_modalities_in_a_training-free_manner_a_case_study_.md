@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Can LLMs Reason Over Non-Text Modalities in a Training-Free Manner? A Case Study with In-Context Representation Learning
 description: >-
-  [NeurIPS 2025][Multimodal VLM][In-context representation learning] This paper proposes In-Context Representation Learning (ICRL), the first training-free framework that injects representations from non-text-modality foundation models (FMs) into a text-only LLM for few-shot reasoning. Two strategies are introduced: PCA-based text-level injection and optimal transport (OT)-based embedding alignment, enabling cross-modal knowledge utilization without any parameter updates.
+  [NeurIPS 2025][Multimodal VLM][In-context representation learning] This paper proposes In-Context Representation Learning (ICRL), the first training-free framework that injects representations from non-text-modality foun…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - In-context representation learning
-  - training-free multimodal reasoning
-  - optimal transport alignment
-  - foundation models
-  - few-shot learning
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "In-context representation learning"
+  - "training-free multimodal reasoning"
+  - "optimal transport alignment"
+  - "foundation models"
+  - "few-shot learning"
 date: 2026-05-08
 content_hash: 0906ad4672025f04
 ---

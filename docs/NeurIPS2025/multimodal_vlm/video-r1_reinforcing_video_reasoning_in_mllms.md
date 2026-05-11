@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Video-R1: Reinforcing Video Reasoning in MLLMs
 description: >-
-  [NeurIPS 2025][Multimodal VLM][video reasoning] Inspired by DeepSeek-R1, this paper presents the first systematic exploration of applying the R1 paradigm (rule-based RL) to video reasoning. It proposes the T-GRPO algorithm to explicitly encourage temporal reasoning, constructs a mixed image-video training dataset, and achieves 37.1% accuracy on VSI-Bench, surpassing GPT-4o.
+  [NeurIPS 2025][Multimodal VLM][video reasoning] Inspired by DeepSeek-R1, this paper presents the first systematic exploration of applying the R1 paradigm (rule-based RL) to video reasoning. It proposes the T-GRPO algorit…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - video reasoning
-  - reinforcement learning
-  - GRPO
-  - temporal modeling
-  - chain-of-thought
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "video reasoning"
+  - "reinforcement learning"
+  - "GRPO"
+  - "temporal modeling"
+  - "chain-of-thought"
 date: 2026-05-08
 content_hash: d531e4f39d8769ae
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Earth-Agent: Unlocking the Full Landscape of Earth Observation with Agents
 description: >-
-  [ICLR 2026][Remote Sensing][Earth Observation] Earth-Agent is the first Earth observation agent framework built upon an MCP-based tool ecosystem. It unifies RGB and spectral remote sensing data, dynamically invoking 104 expert tools to enable cross-modal, multi-step, and quantitative spatiotemporal reasoning. The accompanying Earth-Bench benchmark comprises 248 expert-curated tasks and 13,729 images. Experiments demonstrate that Earth-Agent substantially outperforms both general-purpose agents and remote sensing MLLMs.
+  [ICLR 2026][Remote Sensing][Earth Observation] Earth-Agent is the first Earth observation agent framework built upon an MCP-based tool ecosystem. It unifies RGB and spectral remote sensing data…
 tags:
-  - ICLR 2026
-  - Remote Sensing
-  - Earth Observation
-  - Agent Framework
-  - MCP Tool Ecosystem
-  - Multimodal Remote Sensing
-  - Benchmark
+  - "ICLR 2026"
+  - "Remote Sensing"
+  - "Earth Observation"
+  - "Agent Framework"
+  - "MCP Tool Ecosystem"
+  - "Multimodal Remote Sensing"
+  - "Benchmark"
 date: 2026-05-08
 content_hash: d7b661eb5649a8e2
 ---

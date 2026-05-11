@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EgoThinker: Unveiling Egocentric Reasoning with Spatio-Temporal CoT
 description: >-
-  [NeurIPS 2025][Robotics][Egocentric video] EgoThinker constructs EgoRe-5M, a 5-million-sample egocentric video QA dataset with causal CoT annotations and fine-grained hand-object localization data. Through a two-stage training paradigm—SFT for reasoning followed by GRPO for grounding—the approach enables a 7B MLLM to simultaneously perform egocentric causal reasoning and spatio-temporal fine-grained localization for the first time, achieving state-of-the-art results on 8+ benchmarks, with the 7B model surpassing 72B models on temporal grounding.
+  [NeurIPS 2025][Robotics][Egocentric video] EgoThinker constructs EgoRe-5M, a 5-million-sample egocentric video QA dataset with causal CoT annotations and fine-grained hand-object localization data. Through a two-stage tr…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - Egocentric video
-  - chain-of-thought reasoning
-  - hand-object grounding
-  - GRPO reinforcement fine-tuning
-  - large-scale dataset
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "Egocentric video"
+  - "chain-of-thought reasoning"
+  - "hand-object grounding"
+  - "GRPO reinforcement fine-tuning"
+  - "large-scale dataset"
 date: 2026-05-08
 content_hash: cbf77506389aa9bb
 ---

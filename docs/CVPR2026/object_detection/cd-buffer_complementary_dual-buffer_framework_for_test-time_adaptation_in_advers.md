@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] CD-Buffer: Complementary Dual-Buffer Framework for Test-Time Adaptation in Adverse Weather Object Detection
 description: >-
-  [CVPR 2026][Object Detection][Test-time adaptation] This paper proposes the CD-Buffer framework, which drives complementary collaboration between a subtractive buffer (channel suppression) and an additive buffer (lightweight adapter compensation) via a unified domain discrepancy measure, enabling robust test-time object detection adaptation across adverse weather conditions of varying severity.
+  [CVPR 2026][Object Detection][Test-time adaptation] This paper proposes the CD-Buffer framework, which drives complementary collaboration between a subtractive buffer (channel suppression) and an additive buffer (lightwe…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - Test-time adaptation
-  - adverse weather
-  - channel adaptation
-  - additive-subtractive complementarity
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Test-time adaptation"
+  - "adverse weather"
+  - "channel adaptation"
+  - "additive-subtractive complementarity"
 date: 2026-05-08
 content_hash: d0d295d670873126
 ---

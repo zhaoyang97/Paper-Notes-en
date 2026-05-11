@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ReMoRa: Multimodal Large Language Model based on Refined Motion Representation for Long-Video Understanding
 description: >-
-  [CVPR 2026][Multimodal VLM][Long-video understanding] This paper proposes ReMoRa, which operates directly on compressed video representations (I-frames + motion vectors). A Refined Motion Representation (RMR) module refines coarse block-level motion vectors into fine-grained motion representations approximating optical flow, while a Hierarchical Motion State Space (HMSS) module performs linear-time long-range temporal modeling. ReMoRa surpasses baselines on LongVideoBench, NExT-QA, MLVU, and other benchmarks.
+  [CVPR 2026][Multimodal VLM][Long-video understanding] This paper proposes ReMoRa, which operates directly on compressed video representations (I-frames + motion vectors). A Refined Motion Representation (RMR) module refi…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Long-video understanding
-  - compressed video representation
-  - motion vectors
-  - state space model
-  - optical flow refinement
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Long-video understanding"
+  - "compressed video representation"
+  - "motion vectors"
+  - "state space model"
+  - "optical flow refinement"
 date: 2026-05-08
 content_hash: c6dbb41a6860c2c4
 ---

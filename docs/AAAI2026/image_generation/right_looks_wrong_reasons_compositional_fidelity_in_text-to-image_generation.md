@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Right Looks, Wrong Reasons: Compositional Fidelity in Text-to-Image Generation
 description: >-
-  [AAAI 2026][Image Generation][Compositional generation] This paper systematically investigates fundamental deficiencies in compositional fidelity of text-to-image (T2I) models, focusing on three basic primitives—negation, counting, and spatial relations. It reveals a "submultiplicative" interference phenomenon in which models perform adequately on individual primitives but suffer dramatic performance degradation under joint composition, attributing this to training data scarcity, the unsuitability of continuous attention architectures for discrete logic, and evaluation metrics biased toward visual plausibility rather than constraint satisfaction.
+  [AAAI 2026][Image Generation][Compositional generation] This paper systematically investigates fundamental deficiencies in compositional fidelity of text-to-image (T2I) models, focusing on three basic primitives—negation…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Compositional generation
-  - text-to-image
-  - negation reasoning
-  - counting
-  - spatial relations
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Compositional generation"
+  - "text-to-image"
+  - "negation reasoning"
+  - "counting"
+  - "spatial relations"
 date: 2026-05-08
 content_hash: 7d34f00cf40ff9c6
 ---

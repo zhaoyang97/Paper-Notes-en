@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Gender Bias in Emotion Recognition by Large Language Models
 description: >-
-  [AAAI 2026][LLM Safety][gender bias] This paper systematically evaluates gender bias in emotion recognition across multiple LLMs (GPT-4/5, Mistral, LLaMA, etc.), finding that most models exhibit statistically significant gender bias on at least one emotion label. Experiments demonstrate that inference-time prompt strategies (prompt engineering, in-context learning, CoT) fail to effectively debias, whereas training-based fine-tuning can substantially mitigate the bias.
+  [AAAI 2026][LLM Safety][gender bias] This paper systematically evaluates gender bias in emotion recognition across multiple LLMs (GPT-4/5, Mistral, LLaMA, etc.)…
 tags:
-  - AAAI 2026
-  - LLM Safety
-  - gender bias
-  - emotion recognition
-  - large language models
-  - debiasing strategies
-  - fairness
+  - "AAAI 2026"
+  - "LLM Safety"
+  - "gender bias"
+  - "emotion recognition"
+  - "large language models"
+  - "debiasing strategies"
+  - "fairness"
 date: 2026-05-08
 content_hash: f0cd91a6096b7ef3
 ---

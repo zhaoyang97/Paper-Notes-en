@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Evaluating LLMs for Combinatorial Optimization: One-Phase and Two-Phase Heuristics for 2D Bin-Packing
 description: >-
-  [NeurIPS 2025][Optimization][LLM Evaluation] This paper proposes a systematic evaluation framework combining LLMs with evolutionary algorithms to assess the capability of LLMs in generating and optimizing heuristics for the 2D bin-packing problem. GPT-4o achieves optimal solutions within 2 iterations, reducing the average number of bins from 16 to 15 and improving space utilization from 0.76–0.78 to 0.83.
+  [NeurIPS 2025][Optimization][LLM Evaluation] This paper proposes a systematic evaluation framework combining LLMs with evolutionary algorithms to assess the capability of LLMs in generating and optimizing heuristics for…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - LLM Evaluation
-  - Combinatorial Optimization
-  - 2D Bin-Packing
-  - Evolutionary Algorithms
-  - Heuristic Generation
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "LLM Evaluation"
+  - "Combinatorial Optimization"
+  - "2D Bin-Packing"
+  - "Evolutionary Algorithms"
+  - "Heuristic Generation"
 date: 2026-05-08
 content_hash: 39ea30aa5acf0508
 ---

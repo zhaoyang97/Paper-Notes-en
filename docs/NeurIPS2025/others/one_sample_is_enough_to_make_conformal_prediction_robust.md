@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] One Sample is Enough to Make Conformal Prediction Robust
 description: >-
-  [NeurIPS 2025][conformal prediction] This paper proposes RCP1 (Robust Conformal Prediction with One sample), which certifies the conformal procedure itself rather than individual conformity scores. Requiring only a single randomly perturbed forward pass at inference, RCP1 yields smaller robust prediction sets than state-of-the-art methods that require 100 forward passes.
+  [NeurIPS 2025][conformal prediction] This paper proposes RCP1 (Robust Conformal Prediction with One sample), which certifies the conformal procedure itself rather than individual conformity scores. Requiring only a singl…
 tags:
-  - NeurIPS 2025
-  - conformal prediction
-  - robustness
-  - randomized smoothing
-  - prediction sets
-  - conformal risk control
+  - "NeurIPS 2025"
+  - "conformal prediction"
+  - "robustness"
+  - "randomized smoothing"
+  - "prediction sets"
+  - "conformal risk control"
 date: 2026-05-08
 content_hash: 1794a406d5e01e88
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] C3RL: Rethinking the Combination of Channel-independence and Channel-mixing from Representation Learning
 description: >-
-  [AAAI 2026][Time Series][Multivariate time series forecasting] This paper proposes C3RL, a SimSiam-based contrastive learning framework that treats channel-independence (CI) and channel-mixing (CM) strategies as two transposed views of the same data to construct positive pairs. By jointly optimizing representation learning and forecasting through a Siamese network, C3RL improves the best-performance rate of CI models from 43.6% to 81.4% and CM models from 23.8% to 76.3%.
+  [AAAI 2026][Time Series][Multivariate time series forecasting] This paper proposes C3RL, a SimSiam-based contrastive learning framework that treats channel-independence (CI) and channel-mixing (CM) strategies as two tran…
 tags:
-  - AAAI 2026
-  - Time Series
-  - Multivariate time series forecasting
-  - channel independence
-  - channel mixing
-  - contrastive learning
-  - SimSiam
+  - "AAAI 2026"
+  - "Time Series"
+  - "Multivariate time series forecasting"
+  - "channel independence"
+  - "channel mixing"
+  - "contrastive learning"
+  - "SimSiam"
 date: 2026-05-08
 content_hash: d53f7fdd3750f5ec
 ---

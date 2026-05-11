@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond the Mean: Fisher-Orthogonal Projection for Natural Gradient Descent in Large Batch Training
 description: >-
-  [AAAI2026][Optimization][Natural Gradient Descent] This paper proposes Fisher-Orthogonal Projection (FOP), which supplements variance information by orthogonally projecting sub-batch gradient differences under the Fisher metric, enabling the second-order optimizer KFAC to remain effective in ultra-large batch training and achieving up to ×7.5 speedup.
+  [AAAI2026][Optimization][Natural Gradient Descent] This paper proposes Fisher-Orthogonal Projection (FOP), which supplements variance information by orthogonally projecting sub-batch gradient differences under the Fisher…
 tags:
-  - AAAI2026
-  - Optimization
-  - Natural Gradient Descent
-  - Fisher Information Matrix
-  - KFAC
-  - Large Batch Training
-  - Second-Order Optimization
+  - "AAAI2026"
+  - "Optimization"
+  - "Natural Gradient Descent"
+  - "Fisher Information Matrix"
+  - "KFAC"
+  - "Large Batch Training"
+  - "Second-Order Optimization"
 date: 2026-05-08
 content_hash: 944a52eeb0fbbb0c
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VDRP: Visual Diversity and Region-aware Prompt Learning for Zero-shot HOI Detection
 description: >-
-  [NeurIPS 2025][Social Computing][HOI Detection] This paper proposes the VDRP framework, which addresses two core challenges in zero-shot HOI detection — intra-class visual diversity and inter-class visual entanglement — through visual diversity-aware prompt learning (via group-level variance injection and Gaussian perturbation) and region-aware prompt augmentation (via LLM-generated regional concept retrieval).
+  [NeurIPS 2025][Social Computing][HOI Detection] This paper proposes the VDRP framework, which addresses two core challenges in zero-shot HOI detection — intra-class visual diversity and inter-class visual entanglement —…
 tags:
-  - NeurIPS 2025
-  - Social Computing
-  - HOI Detection
-  - Zero-shot Learning
-  - Prompt Learning
-  - CLIP
-  - Visual Diversity
+  - "NeurIPS 2025"
+  - "Social Computing"
+  - "HOI Detection"
+  - "Zero-shot Learning"
+  - "Prompt Learning"
+  - "CLIP"
+  - "Visual Diversity"
 date: 2026-05-08
 content_hash: d76322f270f79346
 ---

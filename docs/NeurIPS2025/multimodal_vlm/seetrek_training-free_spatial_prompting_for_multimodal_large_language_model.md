@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] See&Trek: Training-Free Spatial Prompting for Multimodal Large Language Model
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Spatial Understanding] This paper proposes See&Trek, a training-free and GPU-free spatial prompting framework that enhances spatial understanding in MLLMs through maximum semantic richness sampling and motion reconstruction, achieving up to 3.5% improvement on VSI-Bench.
+  [NeurIPS 2025][Multimodal VLM][Spatial Understanding] This paper proposes See&Trek, a training-free and GPU-free spatial prompting framework that enhances spatial understanding in MLLMs through maximum semantic richness…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Spatial Understanding
-  - Multimodal Large Language Model
-  - Visual Prompting
-  - Visual Odometry
-  - Training-Free
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Spatial Understanding"
+  - "Multimodal Large Language Model"
+  - "Visual Prompting"
+  - "Visual Odometry"
+  - "Training-Free"
 date: 2026-05-08
 content_hash: c79b5147d1d7388e
 ---

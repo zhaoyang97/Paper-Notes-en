@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] SteelDefectX: A Coarse-to-Fine Vision-Language Dataset and Benchmark for Generalizable Steel Surface Defect Detection
 description: >-
-  [CVPR 2026][steel surface defect detection] This paper introduces SteelDefectX, the first vision-language dataset for steel surface defect detection (7,778 images, 25 defect categories), featuring coarse-to-fine textual annotations ranging from class-level to sample-level descriptions. A four-task benchmark is established covering pure-vision classification, vision-language classification, zero/few-shot recognition, and zero-shot transfer. Experiments demonstrate that high-quality textual annotations significantly improve model interpretability, generalization, and cross-domain transfer capability.
+  [CVPR 2026][Interpretability][steel surface defect detection] This paper introduces SteelDefectX, the first vision-language dataset for steel surface defect detection (7,778 images, 25 defect categories)…
 tags:
-  - CVPR 2026
-  - steel surface defect detection
-  - vision-language dataset
-  - coarse-to-fine annotation
-  - zero-shot transfer
-  - industrial quality inspection
+  - "CVPR 2026"
+  - "Interpretability"
+  - "steel surface defect detection"
+  - "vision-language dataset"
+  - "coarse-to-fine annotation"
+  - "zero-shot transfer"
+  - "industrial quality inspection"
 date: 2026-05-08
 content_hash: 206753f2090bc55c
 ---

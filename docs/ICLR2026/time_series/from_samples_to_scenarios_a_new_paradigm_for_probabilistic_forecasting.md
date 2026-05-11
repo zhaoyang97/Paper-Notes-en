@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] From Samples to Scenarios: A New Paradigm for Probabilistic Forecasting
 description: >-
-  [ICLR 2026][Time Series][probabilistic forecasting] This paper proposes the Probabilistic Scenarios paradigm, in which a model directly outputs a finite set of {scenario, probability} pairs in place of sampling, and introduces TimePrism — a model consisting of only three parallel linear layers — that achieves 9/10 SOTA results across 5 benchmark datasets.
+  [ICLR 2026][Time Series][probabilistic forecasting] This paper proposes the Probabilistic Scenarios paradigm, in which a model directly outputs a finite set of {scenario, probability} pairs in place of sampling…
 tags:
-  - ICLR 2026
-  - Time Series
-  - probabilistic forecasting
-  - scenario generation
-  - discrete probability
-  - linear model
+  - "ICLR 2026"
+  - "Time Series"
+  - "probabilistic forecasting"
+  - "scenario generation"
+  - "discrete probability"
+  - "linear model"
 date: 2026-05-08
 content_hash: 88a7f02a3929b141
 ---

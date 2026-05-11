@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Neural Collapse in Test-Time Adaptation
 description: >-
-  [CVPR 2026][Neural Collapse] This work extends Neural Collapse (NC) theory from the class level to the sample level, discovering the NC3+ phenomenon (sample feature embeddings align with their corresponding classifier weights). Building on this, it identifies feature-classifier misalignment at the sample level as the root cause of performance degradation under distribution shift, and proposes NCTTA, which employs a hybrid objective combining geometric proximity and prediction confidence to guide feature re-alignment, achieving a 14.52% improvement over Tent on ImageNet-C.
+  [CVPR 2026][Neural Collapse] This work extends Neural Collapse (NC) theory from the class level to the sample level, discovering the NC3+ phenomenon (sample feature embeddings align with their corresponding classifier we…
 tags:
-  - CVPR 2026
-  - Neural Collapse
-  - Test-Time Adaptation
-  - Out-of-Distribution Robustness
-  - Feature-Classifier Alignment
-  - Hybrid Objective
+  - "CVPR 2026"
+  - "Neural Collapse"
+  - "Test-Time Adaptation"
+  - "Out-of-Distribution Robustness"
+  - "Feature-Classifier Alignment"
+  - "Hybrid Objective"
 date: 2026-05-08
 content_hash: 27c41a09e4c4c8a7
 ---

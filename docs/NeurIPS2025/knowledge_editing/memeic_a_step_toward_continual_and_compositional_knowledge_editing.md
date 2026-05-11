@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MemEIC: A Step Toward Continual and Compositional Knowledge Editing
 description: >-
-  [NEURIPS2025][Knowledge Editing] This paper proposes MemEIC, a three-tier framework for continual and compositional knowledge editing in large vision-language models (LVLMs), combining an external dual-modal retrieval memory (Mem-E), an internal modality-decoupled LoRA adapter (Mem-I), and a brain-inspired Knowledge Connector. MemEIC substantially outperforms existing methods on the newly introduced CCKEB benchmark.
+  [NEURIPS2025][Knowledge Editing][LVLM] This paper proposes MemEIC, a three-tier framework for continual and compositional knowledge editing in large vision-language models (LVLMs)…
 tags:
-  - NEURIPS2025
-  - Knowledge Editing
-  - LVLM
-  - Continual Learning
-  - Compositional Reasoning
-  - LoRA
-  - External Memory
+  - "NEURIPS2025"
+  - "Knowledge Editing"
+  - "LVLM"
+  - "Continual Learning"
+  - "Compositional Reasoning"
+  - "LoRA"
+  - "External Memory"
 date: 2026-05-08
 content_hash: 3fdcafa2a764fd96
 ---

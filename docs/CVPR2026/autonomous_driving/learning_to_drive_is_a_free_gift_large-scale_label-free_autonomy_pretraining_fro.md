@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning to Drive is a Free Gift: Large-Scale Label-Free Autonomy Pretraining from Unposed In-The-Wild Videos
 description: >-
-  [CVPR 2026][Autonomous Driving][Autonomous driving pretraining] This paper proposes LFG (Learning to drive is a Free Gift), a fully label-free, teacher-guided pretraining framework for autonomous driving. LFG learns a unified pseudo-4D representation of geometry, semantics, and motion from large-scale unposed YouTube driving videos. On the NAVSIM benchmark, using only a monocular front-facing camera, LFG surpasses multi-camera + LiDAR BEV methods (PDMS 85.2), and demonstrates strong data efficiency (81.4 PDMS with only 10% labels).
+  [CVPR 2026][Autonomous Driving][Autonomous driving pretraining] This paper proposes LFG (Learning to drive is a Free Gift), a fully label-free…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Autonomous driving pretraining
-  - label-free learning
-  - video foundation model
-  - 4D scene understanding
-  - planning
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Autonomous driving pretraining"
+  - "label-free learning"
+  - "video foundation model"
+  - "4D scene understanding"
+  - "planning"
 date: 2026-05-08
 content_hash: 49b4de8b3d147082
 ---

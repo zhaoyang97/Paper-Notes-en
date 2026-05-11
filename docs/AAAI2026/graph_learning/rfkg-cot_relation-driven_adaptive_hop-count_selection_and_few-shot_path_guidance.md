@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RFKG-CoT: Relation-Driven Adaptive Hop-count Selection and Few-Shot Path Guidance for Knowledge-Aware QA
 description: >-
-  [AAAI 2026][Graph Learning][Knowledge Graph Question Answering] This paper proposes RFKG-CoT, which enhances LLM reasoning over knowledge graphs via two components: relation-driven adaptive hop-count selection (dynamically adjusting reasoning steps using KG relation activation masks) and few-shot path guidance (in-context examples in a Question-Paths-Answer format). Evaluated on 4 KGQA benchmarks, the method achieves significant improvements — GPT-4 reaches 91.5% (+6.6pp) on WebQSP, and Llama2-7B gains up to +14.7pp.
+  [AAAI 2026][Graph Learning][Knowledge Graph Question Answering] This paper proposes RFKG-CoT, which enhances LLM reasoning over knowledge graphs via two components: relation-driven adaptive hop-count selection (dynamical…
 tags:
-  - AAAI 2026
-  - Graph Learning
-  - Knowledge Graph Question Answering
-  - Chain-of-Thought
-  - Relation-Aware
-  - Adaptive Hop-count
-  - Few-Shot Guidance
+  - "AAAI 2026"
+  - "Graph Learning"
+  - "Knowledge Graph Question Answering"
+  - "Chain-of-Thought"
+  - "Relation-Aware"
+  - "Adaptive Hop-count"
+  - "Few-Shot Guidance"
 date: 2026-05-08
 content_hash: 014267add6bdc44d
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Fix-CLIP: Dual-Branch Hierarchical Contrastive Learning via Synthetic Captions for Better Understanding of Long Text
 description: >-
-  [ICCV 2025][Image Generation][CLIP] Fix-CLIP enhances CLIP's long-text understanding capability through three key innovations: (1) a dual-branch training pipeline that aligns short texts with masked images and long texts with original images; (2) learnable Regional Prompts with unidirectional attention masks for local visual feature extraction; and (3) a hierarchical feature alignment module that aligns multi-scale features across intermediate encoder layers. After incremental training on 30M synthetic long-text data, Fix-CLIP substantially outperforms state-of-the-art methods on both long- and short-text retrieval benchmarks. Its text encoder can be directly plugged into diffusion models to improve long-text generation quality.
+  [ICCV 2025][Image Generation][CLIP] Fix-CLIP enhances CLIP's long-text understanding capability through three key innovations: (1) a dual-branch training pipeline that aligns short texts with masked images and long texts…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - CLIP
-  - long-text understanding
-  - dual-branch training
-  - regional prompts
-  - hierarchical feature alignment
-  - synthetic data
+  - "ICCV 2025"
+  - "Image Generation"
+  - "CLIP"
+  - "long-text understanding"
+  - "dual-branch training"
+  - "regional prompts"
+  - "hierarchical feature alignment"
+  - "synthetic data"
 date: 2026-05-08
 content_hash: 88d26233ce44f585
 ---

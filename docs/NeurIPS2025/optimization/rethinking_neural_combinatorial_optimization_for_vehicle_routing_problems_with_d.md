@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Rethinking Neural Combinatorial Optimization for Vehicle Routing Problems with Different Constraint Tightness Degrees
 description: >-
-  [NeurIPS 2025][Optimization][Neural Combinatorial Optimization] This paper reveals that existing NCO methods severely overfit to fixed constraint tightness (e.g., fixed vehicle capacity $C=50$ in CVRP), and proposes a Variable Constraint Tightness (VCT) training scheme along with a Multiple Expert Module (MEM), enabling models to effectively handle the full spectrum of constraints from extremely tight to extremely loose.
+  [NeurIPS 2025][Optimization][Neural Combinatorial Optimization] This paper reveals that existing NCO methods severely overfit to fixed constraint tightness (e.g., fixed vehicle capacity $C=50$ in CVRP)…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Neural Combinatorial Optimization
-  - Vehicle Routing Problem
-  - Constraint Tightness
-  - Multiple Expert Module
-  - Generalization
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Neural Combinatorial Optimization"
+  - "Vehicle Routing Problem"
+  - "Constraint Tightness"
+  - "Multiple Expert Module"
+  - "Generalization"
 date: 2026-05-08
 content_hash: 07063d7742dbbcdd
 ---

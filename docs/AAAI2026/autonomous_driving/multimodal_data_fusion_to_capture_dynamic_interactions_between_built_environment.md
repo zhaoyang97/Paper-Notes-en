@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multimodal Data Fusion to Capture Dynamic Interactions between Built Environment and Vulnerable Older Adults
 description: >-
-  [AAAI 2026][Autonomous Driving][Multimodal Data Fusion] This paper proposes a **multimodal data fusion framework** that integrates eye-tracking, motion sensors (IMU), physiological monitoring (EDA/HRV), GPS, and video recording to dynamically characterize interactions between vulnerable older adults (with knee osteoarthritis or fall history) and the urban built environment. Through AI-driven data fusion, the framework identifies urban street segments that significantly influence walking behavior and perception at a microscopic scale, providing evidence-based support for **age-friendly urban planning**.
+  [AAAI 2026][Autonomous Driving][Multimodal Data Fusion] This paper proposes a **multimodal data fusion framework** that integrates eye-tracking, motion sensors (IMU), physiological monitoring (EDA/HRV), GPS…
 tags:
-  - AAAI 2026
-  - Autonomous Driving
-  - Multimodal Data Fusion
-  - Built Environment
-  - Older Adult Walking
-  - SLAM Trajectory Reconstruction
-  - Urban Planning
+  - "AAAI 2026"
+  - "Autonomous Driving"
+  - "Multimodal Data Fusion"
+  - "Built Environment"
+  - "Older Adult Walking"
+  - "SLAM Trajectory Reconstruction"
+  - "Urban Planning"
 date: 2026-05-08
 content_hash: d383a2a3952c5453
 ---

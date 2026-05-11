@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ColaVLA: Leveraging Cognitive Latent Reasoning for Hierarchical Parallel Trajectory Planning in Autonomous Driving
 description: >-
-  [CVPR 2026][Autonomous Driving][End-to-end autonomous driving] ColaVLA proposes a unified vision-language-action (VLA) framework that transfers VLM reasoning from textual chain-of-thought to latent space. Through a Cognitive Latent Reasoner and a Hierarchical Parallel Planner, the framework completes scene understanding and trajectory decoding with only two VLM forward passes, achieving state-of-the-art performance on both nuScenes open-loop and closed-loop benchmarks.
+  [CVPR 2026][Autonomous Driving][End-to-end autonomous driving] ColaVLA proposes a unified vision-language-action (VLA) framework that transfers VLM reasoning from textual chain-of-thought to latent space. Through a Cogni…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - End-to-end autonomous driving
-  - VLM reasoning
-  - latent space reasoning
-  - multi-scale trajectory planning
-  - vision-language-action
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "End-to-end autonomous driving"
+  - "VLM reasoning"
+  - "latent space reasoning"
+  - "multi-scale trajectory planning"
+  - "vision-language-action"
 date: 2026-05-08
 content_hash: 257f67716c8bfc0e
 ---

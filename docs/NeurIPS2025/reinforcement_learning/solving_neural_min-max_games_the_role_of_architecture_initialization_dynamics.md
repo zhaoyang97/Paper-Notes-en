@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Solving Neural Min-Max Games: The Role of Architecture, Initialization & Dynamics
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Neural network games] This paper provides the first convergence guarantees for zero-sum games parameterized by two-layer neural networks, proving that under sufficient overparameterization, random Gaussian initialization, and alternating gradient descent-ascent (AltGDA), the dynamics converge to an $\epsilon$-approximate Nash equilibrium with high probability.
+  [NeurIPS 2025][Reinforcement Learning][Neural network games] This paper provides the first convergence guarantees for zero-sum games parameterized by two-layer neural networks…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Neural network games
-  - min-max optimization
-  - overparameterization
-  - hidden convexity
-  - AltGDA
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Neural network games"
+  - "min-max optimization"
+  - "overparameterization"
+  - "hidden convexity"
+  - "AltGDA"
 date: 2026-05-08
 content_hash: 0b748f13632ffd16
 ---

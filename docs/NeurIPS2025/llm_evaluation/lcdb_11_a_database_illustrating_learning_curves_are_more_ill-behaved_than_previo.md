@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] LCDB 1.1: A Database Illustrating Learning Curves Are More Ill-Behaved Than Previously Thought
 description: >-
-  [NeurIPS 2025][LLM Evaluation][learning curves] This paper constructs LCDB 1.1, a large-scale high-resolution learning curve database, demonstrating that ill-behaved sample learning curves (non-monotonic, non-convex) are approximately twice as prevalent as previously believed, with roughly 15% of curves exhibiting significant ill-behavior that feature scaling largely fails to remedy.
+  [NeurIPS 2025][LLM Evaluation][learning curves] This paper constructs LCDB 1.1, a large-scale high-resolution learning curve database, demonstrating that ill-behaved sample learning curves (non-monotonic…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - learning curves
-  - scaling laws
-  - model selection
-  - ill-behavior
-  - tabular data
-  - benchmark
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "learning curves"
+  - "scaling laws"
+  - "model selection"
+  - "ill-behavior"
+  - "tabular data"
+  - "benchmark"
 date: 2026-05-08
 content_hash: d7414f76a11f758a
 ---

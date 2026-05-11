@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] ViCTr: Vital Consistency Transfer for Pathology Aware Image Synthesis
 description: >-
-  [Medical Imaging] > This paper proposes ViCTr, a two-stage framework that combines Rectified Flow with a Tweedie-corrected diffusion process to achieve high-fidelity pathology-aware medical image synthesis. The method reduces inference steps from 50 to 3–4 and, for the first time, enables graded-severity pathology synthesis for abdominal MRI.
+  [Medical Imaging] > This paper proposes ViCTr, a two-stage framework that combines Rectified Flow with a Tweedie-corrected diffusion process to achieve high-fidelity pathology-aware medical image synthesis. The method re…
 tags:
-  - Medical Imaging
+  - "Medical Imaging"
 date: 2026-05-08
 content_hash: b1454b25ecccbb19
 ---

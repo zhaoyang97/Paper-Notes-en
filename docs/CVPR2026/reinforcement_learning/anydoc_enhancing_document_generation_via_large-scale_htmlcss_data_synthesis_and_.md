@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] AnyDoc: Enhancing Document Generation via Large-Scale HTML/CSS Data Synthesis and Height-Aware Reinforcement Optimization
 description: >-
-  [CVPR 2026][Reinforcement Learning][Document Generation] AnyDoc proposes a general-purpose document generation framework based on a unified HTML/CSS representation. It constructs a 265K-document dataset, DocHTML, via an automated data synthesis pipeline, and fine-tunes a multimodal large language model through SFT and Height-Aware Reinforcement Learning (HARL). The framework surpasses baselines including GPT-4o on three tasks: intent-to-document, document de-rendering, and element-to-document generation.
+  [CVPR 2026][Reinforcement Learning][Document Generation] AnyDoc proposes a general-purpose document generation framework based on a unified HTML/CSS representation. It constructs a 265K-document dataset, DocHTML…
 tags:
-  - CVPR 2026
-  - Reinforcement Learning
-  - Document Generation
-  - HTML/CSS
-  - Data Synthesis
-  - Multimodal Large Language Models
+  - "CVPR 2026"
+  - "Reinforcement Learning"
+  - "Document Generation"
+  - "HTML/CSS"
+  - "Data Synthesis"
+  - "Multimodal Large Language Models"
 date: 2026-05-08
 content_hash: bb3d42fc4380ff2a
 ---

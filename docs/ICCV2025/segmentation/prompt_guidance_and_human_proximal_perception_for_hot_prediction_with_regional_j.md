@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Prompt Guidance and Human Proximal Perception for HOT Prediction with Regional Joint Loss
 description: >-
-  [ICCV 2025][Segmentation][Human-Object Contact Detection] This paper proposes P3HOT, a framework that achieves state-of-the-art performance on Human-Object Contact (HOT) detection by incorporating text prompt guidance to focus on human contact regions, a depth-aware module to filter irrelevant backgrounds, and a Regional Joint Loss to enforce intra-region category consistency.
+  [ICCV 2025][Segmentation][Human-Object Contact Detection] This paper proposes P3HOT, a framework that achieves state-of-the-art performance on Human-Object Contact (HOT) detection by incorporating text prompt guidance to…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - Human-Object Contact Detection
-  - Text Guidance
-  - Depth Perception
-  - Regional Joint Loss
-  - Semantic Segmentation
+  - "ICCV 2025"
+  - "Segmentation"
+  - "Human-Object Contact Detection"
+  - "Text Guidance"
+  - "Depth Perception"
+  - "Regional Joint Loss"
+  - "Semantic Segmentation"
 date: 2026-05-08
 content_hash: 201eeb18e13377dc
 ---

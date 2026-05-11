@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OrthoGrad Improves Neural Calibration
 description: >-
-  [NeurIPS 2025][Optimization][gradient orthogonalization] This paper presents the first systematic study of OrthoGrad (⊥Grad)—a geometrically constrained optimization method that projects gradients layer-wise onto directions orthogonal to the weights—for neural network calibration. Experiments on CIFAR-10 in low-data regimes demonstrate that OrthoGrad significantly improves calibration metrics (entropy, loss, confidence) without degrading accuracy, and the paper establishes convergence guarantees for a simplified variant under standard assumptions.
+  [NeurIPS 2025][Optimization][gradient orthogonalization] This paper presents the first systematic study of OrthoGrad (⊥Grad)—a geometrically constrained optimization method that projects gradients layer-wise onto directi…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - gradient orthogonalization
-  - calibration
-  - uncertainty estimation
-  - overconfidence
-  - geometric optimization
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "gradient orthogonalization"
+  - "calibration"
+  - "uncertainty estimation"
+  - "overconfidence"
+  - "geometric optimization"
 date: 2026-05-08
 content_hash: fa82bcb14eb4060d
 ---

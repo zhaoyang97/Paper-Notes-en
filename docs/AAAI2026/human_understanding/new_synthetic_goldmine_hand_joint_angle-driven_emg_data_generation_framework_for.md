@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] New Synthetic Goldmine: Hand Joint Angle-Driven EMG Data Generation Framework for Micro-Gesture Recognition
 description: >-
-  [AAAI 2026][Human Understanding][EMG signal generation] This paper proposes SeqEMG-GAN, a conditional adversarial generation framework driven by hand joint angle sequences. Through the joint design of an angle encoder, a two-level context encoder (featuring the novel Ang2Gist unit), a deep convolutional generator, and a multi-view discriminator, the framework synthesizes high-fidelity EMG signals from joint kinematic trajectories, enabling zero-shot generation for unseen gestures. Mixing synthetic and real data for training improves classification accuracy from 57.77% to 60.53%.
+  [AAAI 2026][Human Understanding][EMG signal generation] This paper proposes SeqEMG-GAN, a conditional adversarial generation framework driven by hand joint angle sequences. Through the joint design of an angle encoder…
 tags:
-  - AAAI 2026
-  - Human Understanding
-  - EMG signal generation
-  - gesture recognition
-  - conditional GAN
-  - joint angle-driven
-  - data augmentation
+  - "AAAI 2026"
+  - "Human Understanding"
+  - "EMG signal generation"
+  - "gesture recognition"
+  - "conditional GAN"
+  - "joint angle-driven"
+  - "data augmentation"
 date: 2026-05-08
 content_hash: 8803b4063dcaccf9
 ---

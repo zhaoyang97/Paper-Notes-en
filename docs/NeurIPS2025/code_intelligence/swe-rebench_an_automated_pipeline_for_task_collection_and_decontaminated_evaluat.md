@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] SWE-rebench: An Automated Pipeline for Task Collection and Decontaminated Evaluation of Software Engineering Agents
 description: >-
-  [NeurIPS 2025][SWE-bench] A fully automated pipeline is developed to continuously mine real-world software engineering interaction tasks from GitHub, producing the SWE-rebench dataset of 21,000+ executable Python tasks and a decontaminated benchmark. The work reveals that several models exhibit contamination-inflated performance on SWE-bench Verified (e.g., DeepSeek-V3: 39.7% on SWE-bench vs. 21.3% on SWE-rebench).
+  [NeurIPS 2025][Code Intelligence][SWE-bench] A fully automated pipeline is developed to continuously mine real-world software engineering interaction tasks from GitHub, producing the SWE-rebench dataset of 21…
 tags:
-  - NeurIPS 2025
-  - SWE-bench
-  - data contamination
-  - automated pipeline
-  - agent evaluation
-  - software engineering
+  - "NeurIPS 2025"
+  - "Code Intelligence"
+  - "SWE-bench"
+  - "data contamination"
+  - "automated pipeline"
+  - "agent evaluation"
+  - "software engineering"
 date: 2026-05-08
 content_hash: 36756c30b2167974
 ---

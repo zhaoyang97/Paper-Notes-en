@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AutoOpt: A Dataset and a Unified Framework for Automating Optimization Problem Solving
 description: >-
-  [NeurIPS 2025][Optimization][Image OCR] AutoOpt introduces the first end-to-end framework for converting optimization problem images to executable code — comprising the AutoOpt-11k dataset of 11,554 optimization formula images (handwritten + printed), an M1 hybrid encoder (ResNet+Swin→mBART) for image-to-LaTeX conversion (BLEU 96.70), an M2 DeepSeek-Coder module for LaTeX-to-PYOMO translation, and an M3 bilevel decomposition solver, achieving an overall pipeline success rate of 94.20%.
+  [NeurIPS 2025][Optimization][Image OCR] AutoOpt introduces the first end-to-end framework for converting optimization problem images to executable code — comprising the AutoOpt-11k dataset of 11…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Image OCR
-  - LaTeX-to-PYOMO
-  - Bilevel Optimization Solving
-  - Mathematical Programming
-  - Handwriting Recognition
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Image OCR"
+  - "LaTeX-to-PYOMO"
+  - "Bilevel Optimization Solving"
+  - "Mathematical Programming"
+  - "Handwriting Recognition"
 date: 2026-05-08
 content_hash: 856cfbc27b7f7148
 ---

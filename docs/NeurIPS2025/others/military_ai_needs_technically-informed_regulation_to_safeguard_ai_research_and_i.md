@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Military AI Needs Technically-Informed Regulation to Safeguard AI Research and its Applications
 description: >-
-  [NeurIPS 2025][Autonomous Weapons Systems] This paper proposes a behavior-oriented definition and regulatory framework for AI-powered Lethal Autonomous Weapons Systems (AI-LAWS). It identifies systems requiring enhanced regulation through two technical criteria, puts forward five concrete policy recommendations, and calls on AI researchers to participate actively throughout the full lifecycle of military AI governance.
+  [NeurIPS 2025][Autonomous Weapons Systems] This paper proposes a behavior-oriented definition and regulatory framework for AI-powered Lethal Autonomous Weapons Systems (AI-LAWS). It identifies systems requiring enhanced…
 tags:
-  - NeurIPS 2025
-  - Autonomous Weapons Systems
-  - AI-LAWS
-  - Military AI Regulation
-  - Behavior-Oriented Definition
-  - Technically-Informed Policy
-  - AI Research Freedom
+  - "NeurIPS 2025"
+  - "Autonomous Weapons Systems"
+  - "AI-LAWS"
+  - "Military AI Regulation"
+  - "Behavior-Oriented Definition"
+  - "Technically-Informed Policy"
+  - "AI Research Freedom"
 date: 2026-05-08
 content_hash: 726385339df14130
 ---

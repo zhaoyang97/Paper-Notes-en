@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] QVGen: Pushing the Limit of Quantized Video Generative Models
 description: >-
-  [ICLR 2026][Image Generation][Video Diffusion Models] This paper proposes QVGen, a quantization-aware training (QAT) framework for video diffusion models. It introduces auxiliary modules to reduce gradient norms and improve convergence, and designs a rank decay strategy to progressively eliminate the inference overhead of auxiliary modules during training. QVGen is the first method to achieve near full-precision video generation quality under 4-bit quantization.
+  [ICLR 2026][Image Generation][Video Diffusion Models] This paper proposes QVGen, a quantization-aware training (QAT) framework for video diffusion models. It introduces auxiliary modules to reduce gradient norms and impr…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Video Diffusion Models
-  - Quantization-Aware Training
-  - Low-Bit Quantization
-  - Rank Decay Strategy
-  - Auxiliary Modules
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Video Diffusion Models"
+  - "Quantization-Aware Training"
+  - "Low-Bit Quantization"
+  - "Rank Decay Strategy"
+  - "Auxiliary Modules"
 date: 2026-05-08
 content_hash: f14755a4de181634
 ---

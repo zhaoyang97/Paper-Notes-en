@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Self-Supervised Discovery of Neural Circuits in Spatially Patterned Neural Responses with Graph Neural Networks
 description: >-
-  [NeurIPS 2025][Graph Learning][Graph Neural Networks] A GNN-based self-supervised framework is proposed that infers latent synaptic connectivity via a structure learning module while simultaneously predicting future spiking activity via a spike prediction module. The approach substantially outperforms statistical inference baselines on both simulated ring attractor network data and real mouse head-direction cell recordings.
+  [NeurIPS 2025][Graph Learning][Graph Neural Networks] A GNN-based self-supervised framework is proposed that infers latent synaptic connectivity via a structure learning module while simultaneously predicting future spik…
 tags:
-  - NeurIPS 2025
-  - Graph Learning
-  - Graph Neural Networks
-  - Neural Circuit Inference
-  - Self-Supervised Learning
-  - Continuous Attractor Networks
-  - Synaptic Connectivity Inference
+  - "NeurIPS 2025"
+  - "Graph Learning"
+  - "Graph Neural Networks"
+  - "Neural Circuit Inference"
+  - "Self-Supervised Learning"
+  - "Continuous Attractor Networks"
+  - "Synaptic Connectivity Inference"
 date: 2026-05-08
 content_hash: a8fdd9d12bf6eff2
 ---

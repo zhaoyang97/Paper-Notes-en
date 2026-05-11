@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MAGEO: From Experience to Skill — Multi-Agent Generative Engine Optimization via Reusable Strategy Learning
 description: >-
-  [ACL 2026][Model Compression][Generative Engine Optimization] This paper reframes Generative Engine Optimization (GEO) from per-instance heuristic optimization to a strategy learning problem, proposing the MAGEO multi-agent framework. The execution layer consists of four collaborating agents — preference, planning, editing, and evaluation — operating in an iterative Generate-Evaluate-Select loop, while the learning layer distills validated edit patterns into reusable engine-specific strategy skills. A Twin Branch causal evaluation protocol and the DSV-CF dual-axis metric are introduced, achieving substantial improvements over heuristic baselines across three mainstream generative engines.
+  [ACL 2026][Model Compression][Generative Engine Optimization] This paper reframes Generative Engine Optimization (GEO) from per-instance heuristic optimization to a strategy learning problem…
 tags:
-  - ACL 2026
-  - Model Compression
-  - Generative Engine Optimization
-  - Multi-Agent Framework
-  - Strategy Reuse
-  - Citation Faithfulness
-  - Visibility Optimization
+  - "ACL 2026"
+  - "Model Compression"
+  - "Generative Engine Optimization"
+  - "Multi-Agent Framework"
+  - "Strategy Reuse"
+  - "Citation Faithfulness"
+  - "Visibility Optimization"
 date: 2026-05-08
 content_hash: 2cda52cabbda4d45
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] On the Feasibility and Opportunity of Autoregressive 3D Object Detection
 description: >-
-  [CVPR 2026][Autonomous Driving][Autoregressive detection] This paper proposes AutoReg3D, the first framework that formulates LiDAR 3D object detection as autoregressive sequence generation. By adopting a near-to-far ordering and parameter-specific vocabularies to discretize bounding boxes into token sequences, AutoReg3D achieves competitive performance against mainstream methods without anchors or NMS, while unlocking new capabilities such as RL fine-tuning and cascading refinement.
+  [CVPR 2026][Autonomous Driving][Autoregressive detection] This paper proposes AutoReg3D, the first framework that formulates LiDAR 3D object detection as autoregressive sequence generation. By adopting a near-to-far orde…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Autoregressive detection
-  - LiDAR 3D detection
-  - sequence generation
-  - tokenization
-  - GRPO reinforcement learning
-  - NMS-free
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Autoregressive detection"
+  - "LiDAR 3D detection"
+  - "sequence generation"
+  - "tokenization"
+  - "GRPO reinforcement learning"
+  - "NMS-free"
 date: 2026-05-08
 content_hash: e471960adaa50bf5
 ---

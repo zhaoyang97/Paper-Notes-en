@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond Õ(√T) Constraint Violation for Online Convex Optimization with Adversarial Constraints
 description: >-
-  [NeurIPS 2025][Optimization][Online convex optimization] This paper studies Constrained Online Convex Optimization (COCO) with adversarial constraints and introduces a tunable parameter $\beta$ to achieve a precise tradeoff between $\tilde{O}(T^\beta)$ regret and $\tilde{O}(T^{1-\beta})$ cumulative constraint violation (CCV), surpassing the previously known optimal bound of $\tilde{O}(\sqrt{T})$ constraint violation.
+  [NeurIPS 2025][Optimization][Online convex optimization] This paper studies Constrained Online Convex Optimization (COCO) with adversarial constraints and introduces a tunable parameter $\beta$ to achieve a precise trade…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Online convex optimization
-  - adversarial constraints
-  - constraint violation
-  - regret-violation tradeoff
-  - safety constraints
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Online convex optimization"
+  - "adversarial constraints"
+  - "constraint violation"
+  - "regret-violation tradeoff"
+  - "safety constraints"
 date: 2026-05-08
 content_hash: bc728fcf4df67c8c
 ---

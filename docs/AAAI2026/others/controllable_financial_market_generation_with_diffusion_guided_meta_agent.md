@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Controllable Financial Market Generation with Diffusion Guided Meta Agent
 description: >-
-  [AAAI 2026][financial market generation] This paper proposes the Diffusion Guided Meta Agent (DigMA), which formalizes controllable financial market generation as a conditional generation task. A conditional diffusion model captures the dynamics of market states (time-varying distribution parameters of mid-price returns and order arrival rates), while a Meta Agent with financial economics priors generates order flow under the guidance of the controller. DigMA outperforms existing methods in both controllability and generation fidelity.
+  [AAAI 2026][financial market generation] This paper proposes the Diffusion Guided Meta Agent (DigMA), which formalizes controllable financial market generation as a conditional generation task. A conditional diffusion mo…
 tags:
-  - AAAI 2026
-  - financial market generation
-  - diffusion model
-  - limit order book
-  - controllable generation
-  - multi-agent simulation
+  - "AAAI 2026"
+  - "financial market generation"
+  - "diffusion model"
+  - "limit order book"
+  - "controllable generation"
+  - "multi-agent simulation"
 date: 2026-05-08
 content_hash: 61bc7c7c528ac4cd
 ---

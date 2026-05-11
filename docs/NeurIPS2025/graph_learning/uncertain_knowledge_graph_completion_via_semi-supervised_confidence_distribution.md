@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Uncertain Knowledge Graph Completion via Semi-Supervised Confidence Distribution Learning
 description: >-
-  [NeurIPS 2025][Graph Learning][Uncertain Knowledge Graph] ssCDL converts triple confidence scores from scalars into Gaussian confidence distributions to capture supervisory signals from neighboring confidence values, and employs meta self-training to generate high-quality pseudo confidence labels for negatively sampled triples, thereby rebalancing the training data. The method significantly outperforms all baselines on both confidence prediction and link prediction for uncertain knowledge graph completion.
+  [NeurIPS 2025][Graph Learning][Uncertain Knowledge Graph] ssCDL converts triple confidence scores from scalars into Gaussian confidence distributions to capture supervisory signals from neighboring confidence values…
 tags:
-  - NeurIPS 2025
-  - Graph Learning
-  - Uncertain Knowledge Graph
-  - Confidence Distribution Learning
-  - Semi-Supervised Learning
-  - Meta Self-Training
-  - Knowledge Graph Completion
+  - "NeurIPS 2025"
+  - "Graph Learning"
+  - "Uncertain Knowledge Graph"
+  - "Confidence Distribution Learning"
+  - "Semi-Supervised Learning"
+  - "Meta Self-Training"
+  - "Knowledge Graph Completion"
 date: 2026-05-08
 content_hash: 6f7c527da5a0c333
 ---

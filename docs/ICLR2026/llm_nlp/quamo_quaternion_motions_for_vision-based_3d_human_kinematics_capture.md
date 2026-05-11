@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ConflictScope: Generative Value Conflicts Reveal LLM Priorities
 description: >-
-  [ICLR 2026][LLM/NLP][value conflicts] This paper proposes ConflictScope — an automated pipeline for generating and evaluating value conflict scenarios: given an arbitrary set of values, it automatically generates conflict scenarios for each value pair and evaluates LLM value priority rankings through open-ended simulated user interactions (rather than multiple-choice questions). The study finds that models shift significantly from "protective values" (e.g., harmlessness) toward "personal values" (e.g., user autonomy) under open-ended evaluation, and that system prompts can improve alignment target rankings by 14%.
+  [ICLR 2026][LLM/NLP][value conflicts] This paper proposes ConflictScope — an automated pipeline for generating and evaluating value conflict scenarios: given an arbitrary set of values…
 tags:
-  - ICLR 2026
-  - LLM/NLP
-  - value conflicts
-  - value prioritization
-  - open-ended evaluation
-  - Bradley-Terry model
-  - system prompt steering
+  - "ICLR 2026"
+  - "LLM/NLP"
+  - "value conflicts"
+  - "value prioritization"
+  - "open-ended evaluation"
+  - "Bradley-Terry model"
+  - "system prompt steering"
 date: 2026-05-08
 content_hash: 638b37af51f40299
 ---

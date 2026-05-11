@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Interaction-Merged Motion Planning: Effectively Leveraging Diverse Motion Datasets for Robust Planning
 description: >-
-  [ICCV 2025][Robotics][Motion Planning] This paper proposes IMMP (Interaction-Merged Motion Planning), a two-stage strategy — Interaction-Conserving Pre-Merging (constructing a multi-metric checkpoint pool) and Interaction Transfer with Merging (task-vector-based weighted merging grouped by interaction modules) — to transfer agent behavior and interaction knowledge from diverse trajectory datasets to a target domain, effectively improving cross-domain adaptability of motion planning.
+  [ICCV 2025][Robotics][Motion Planning] This paper proposes IMMP (Interaction-Merged Motion Planning), a two-stage strategy — Interaction-Conserving Pre-Merging (constructing a multi-metric checkpoint pool) and Interactio…
 tags:
-  - ICCV 2025
-  - Robotics
-  - Motion Planning
-  - Model Merging
-  - Domain Adaptation
-  - Autonomous Driving
-  - Task Vectors
+  - "ICCV 2025"
+  - "Robotics"
+  - "Motion Planning"
+  - "Model Merging"
+  - "Domain Adaptation"
+  - "Autonomous Driving"
+  - "Task Vectors"
 date: 2026-05-08
 content_hash: e5c82f303805f2d1
 ---

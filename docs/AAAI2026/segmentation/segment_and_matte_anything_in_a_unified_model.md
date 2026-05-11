@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Segment and Matte Anything in a Unified Model (SAMA)
 description: >-
-  [AAAI 2026][Segmentation][SAM Extension] This paper proposes SAMA — a lightweight extension of SAM that introduces a Multi-View Local Encoder (MVLE) to capture fine-grained local features, a Local-Adapter to inject local details into the decoding process, and dual task-specific prediction heads. With only a 1.8% parameter increase, SAMA achieves high-quality interactive segmentation and alpha matting simultaneously within a unified model, reaching state-of-the-art performance on DIS-5K and multiple matting benchmarks.
+  [AAAI 2026][Segmentation][SAM Extension] This paper proposes SAMA — a lightweight extension of SAM that introduces a Multi-View Local Encoder (MVLE) to capture fine-grained local features…
 tags:
-  - AAAI 2026
-  - Segmentation
-  - SAM Extension
-  - Unified Segmentation and Matting
-  - Multi-View Local Encoder
-  - Local-Adapter
-  - Interactive Segmentation
-  - Alpha Matting
+  - "AAAI 2026"
+  - "Segmentation"
+  - "SAM Extension"
+  - "Unified Segmentation and Matting"
+  - "Multi-View Local Encoder"
+  - "Local-Adapter"
+  - "Interactive Segmentation"
+  - "Alpha Matting"
 date: 2026-05-08
 content_hash: 7d8e981bebd62695
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Latent Expression Generation for Referring Image Segmentation and Grounding
 description: >-
-  [ICCV 2025][Segmentation][Referring image segmentation] This paper proposes the Latent-VG framework, which generates multiple latent expressions from a single textual description — each sharing the same subject but highlighting distinct visual attributes — to bridge the semantic gap between sparse text and rich visual information via complementary visual details. The method achieves state-of-the-art performance on both referring image segmentation and referring expression comprehension tasks.
+  [ICCV 2025][Segmentation][Referring image segmentation] This paper proposes the Latent-VG framework, which generates multiple latent expressions from a single textual description — each sharing the same subject but highl…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - Referring image segmentation
-  - visual grounding
-  - latent expression generation
-  - contrastive learning
-  - multimodal fusion
+  - "ICCV 2025"
+  - "Segmentation"
+  - "Referring image segmentation"
+  - "visual grounding"
+  - "latent expression generation"
+  - "contrastive learning"
+  - "multimodal fusion"
 date: 2026-05-08
 content_hash: 5f190247a99a03bb
 ---

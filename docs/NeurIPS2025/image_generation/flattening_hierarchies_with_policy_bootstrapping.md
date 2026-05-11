@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Flattening Hierarchies with Policy Bootstrapping
 description: >-
-  [NeurIPS 2025][Image Generation][Offline goal-conditioned reinforcement learning] This paper proposes SAW (Subgoal Advantage-Weighted Policy Bootstrapping), which distills the long-horizon reasoning advantages of hierarchical RL into a single flat policy by sampling subgoals from in-dataset trajectories and performing policy bootstrapping via advantage-weighted importance sampling. The approach requires no learned subgoal generative model, and matches or surpasses state-of-the-art performance across 20 offline GCRL datasets.
+  [NeurIPS 2025][Image Generation][Offline goal-conditioned reinforcement learning] This paper proposes SAW (Subgoal Advantage-Weighted Policy Bootstrapping)…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Offline goal-conditioned reinforcement learning
-  - hierarchical reinforcement learning
-  - policy bootstrapping
-  - subgoals
-  - long-horizon tasks
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Offline goal-conditioned reinforcement learning"
+  - "hierarchical reinforcement learning"
+  - "policy bootstrapping"
+  - "subgoals"
+  - "long-horizon tasks"
 date: 2026-05-08
 content_hash: af4b3987b4a252c6
 ---

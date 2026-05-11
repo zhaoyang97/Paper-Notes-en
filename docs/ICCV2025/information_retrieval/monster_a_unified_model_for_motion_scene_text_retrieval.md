@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] MonSTeR: a Unified Model for Motion, Scene, Text Retrieval
 description: >-
-  [ICCV 2025][tri-modal retrieval] This paper proposes **MonSTeR**—the first **tri-modal retrieval model for motion, scene, and text**—which constructs a unified latent space via higher-order relationship modeling inspired by topological deep learning. By capturing intrinsic dependencies among all three modalities, MonSTeR substantially outperforms baselines that rely solely on unimodal representations across multiple retrieval tasks, and can further serve as an evaluation tool for human-scene interaction models.
+  [ICCV 2025][Information Retrieval & RAG][tri-modal retrieval] This paper proposes **MonSTeR**—the first **tri-modal retrieval model for motion, scene…
 tags:
-  - ICCV 2025
-  - tri-modal retrieval
-  - motion-scene-text
-  - higher-order relationship modeling
-  - contrastive learning
-  - human-scene interaction evaluation
+  - "ICCV 2025"
+  - "Information Retrieval & RAG"
+  - "tri-modal retrieval"
+  - "motion-scene-text"
+  - "higher-order relationship modeling"
+  - "contrastive learning"
+  - "human-scene interaction evaluation"
 date: 2026-05-08
 content_hash: 59153d06089d4dd0
 ---

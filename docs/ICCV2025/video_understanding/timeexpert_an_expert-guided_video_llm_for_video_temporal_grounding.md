@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] TimeExpert: An Expert-Guided Video LLM for Video Temporal Grounding
 description: >-
-  [ICCV 2025][Video Understanding][Video Temporal Grounding] This paper proposes TimeExpert — the first MoE-based Video-LLM framework that routes timestamps, saliency scores, and text descriptions to specialized experts via **task-aware dynamic gating** and **token-adaptive routing**, complemented by task-dependent auxiliary losses. TimeExpert achieves state-of-the-art performance across three VTG task categories: Dense Video Captioning, Moment Retrieval, and Video Highlight Detection.
+  [ICCV 2025][Video Understanding][Video Temporal Grounding] This paper proposes TimeExpert — the first MoE-based Video-LLM framework that routes timestamps, saliency scores…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - Video Temporal Grounding
-  - MoE
-  - Dynamic Routing
-  - Video-LLM
-  - Dense Video Captioning
-  - Moment Retrieval
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "Video Temporal Grounding"
+  - "MoE"
+  - "Dynamic Routing"
+  - "Video-LLM"
+  - "Dense Video Captioning"
+  - "Moment Retrieval"
 date: 2026-05-08
 content_hash: 6d01f7e528a488a5
 ---

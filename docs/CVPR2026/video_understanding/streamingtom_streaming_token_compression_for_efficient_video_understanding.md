@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] StreamingTOM: Streaming Token Compression for Efficient Video Understanding
 description: >-
-  [CVPR2026][Video Understanding][streaming video understanding] This paper proposes StreamingTOM, a training-free two-stage framework for streaming video understanding. Causal Temporal Reduction (CTR) compresses per-frame tokens from 196 to 50 via causal temporal selection before the LLM, while Online Quantized Memory (OQM) constrains kv-cache growth after the LLM through 4-bit quantization and on-demand retrieval. The framework achieves a 15.7× compression ratio, 1.2× lower peak memory, and 2× faster TTFT.
+  [CVPR2026][Video Understanding][streaming video understanding] This paper proposes StreamingTOM, a training-free two-stage framework for streaming video understanding. Causal Temporal Reduction (CTR) compresses per-frame…
 tags:
-  - CVPR2026
-  - Video Understanding
-  - streaming video understanding
-  - token compression
-  - kv-cache quantization
-  - training-free
-  - causal inference
+  - "CVPR2026"
+  - "Video Understanding"
+  - "streaming video understanding"
+  - "token compression"
+  - "kv-cache quantization"
+  - "training-free"
+  - "causal inference"
 date: 2026-05-08
 content_hash: 9a21d82c42c46ef1
 ---

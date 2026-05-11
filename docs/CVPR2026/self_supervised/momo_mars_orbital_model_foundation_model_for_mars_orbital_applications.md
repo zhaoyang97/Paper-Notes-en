@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MOMO: Mars Orbital Model — Foundation Model for Mars Orbital Applications
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Mars remote sensing] MOMO is the first foundation model for Mars remote sensing. It independently pre-trains MAE on three Mars sensors (HiRISE/CTX/THEMIS) and proposes an Equal Validation Loss (EVL) checkpoint selection strategy for model merging, outperforming ImageNet pre-training and Earth observation foundation models across 9 downstream tasks in Mars-Bench.
+  [CVPR 2026][Self-Supervised Learning][Mars remote sensing] MOMO is the first foundation model for Mars remote sensing. It independently pre-trains MAE on three Mars sensors (HiRISE/CTX/THEMIS) and proposes an Equal Valid…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - Mars remote sensing
-  - foundation model
-  - model merging
-  - checkpoint selection strategy
-  - multi-sensor
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Mars remote sensing"
+  - "foundation model"
+  - "model merging"
+  - "checkpoint selection strategy"
+  - "multi-sensor"
 date: 2026-05-08
 content_hash: 53117340c645ffa2
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] FastVAR: Linear Visual Autoregressive Modeling via Cached Token Pruning
 description: >-
-  [ICCV 2025][Model Compression][Visual Autoregressive] FastVAR proposes a training-free post-hoc acceleration method for VAR models. Grounded in the observation that large-scale steps primarily model high-frequency textures and are robust to pruning, it selects pivotal tokens via frequency-guided scoring (PTS) to retain only high-frequency tokens during the forward pass, and restores pruned positions using cached token maps from earlier scales (CTR). Built on top of FlashAttention, FastVAR achieves an additional 2.7× speedup with less than 1% performance degradation, and for the first time enables 2K image generation in 1.5 seconds on a single RTX 3090 GPU.
+  [ICCV 2025][Model Compression][Visual Autoregressive] FastVAR proposes a training-free post-hoc acceleration method for VAR models. Grounded in the observation that large-scale steps primarily model high-frequency textur…
 tags:
-  - ICCV 2025
-  - Model Compression
-  - Visual Autoregressive
-  - next-scale prediction
-  - token pruning
-  - high-resolution generation
-  - training-free acceleration
-  - cached token restoration
+  - "ICCV 2025"
+  - "Model Compression"
+  - "Visual Autoregressive"
+  - "next-scale prediction"
+  - "token pruning"
+  - "high-resolution generation"
+  - "training-free acceleration"
+  - "cached token restoration"
 date: 2026-05-08
 content_hash: b56a5aba2f353e90
 ---

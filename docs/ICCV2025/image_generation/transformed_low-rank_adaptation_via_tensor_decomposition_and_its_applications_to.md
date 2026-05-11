@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Transformed Low-rank Adaptation via Tensor Decomposition and Its Applications to Text-to-image Models
 description: >-
-  [ICCV 2025][Image Generation][Parameter-Efficient Fine-Tuning] This paper proposes TLoRA, which decomposes the fine-tuning of pretrained weights into a **Transform** adaptation and a **Residual** adaptation, parameterized respectively via Tensor Ring Matrix (TRM) and Tensor Ring (TR) decompositions. On SDXL, TLoRA achieves highly parameter-efficient fine-tuning with only 0.4M parameters while outperforming LoRA and other baselines.
+  [ICCV 2025][Image Generation][Parameter-Efficient Fine-Tuning] This paper proposes TLoRA, which decomposes the fine-tuning of pretrained weights into a **Transform** adaptation and a **Residual** adaptation…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Parameter-Efficient Fine-Tuning
-  - LoRA
-  - Tensor Decomposition
-  - Text-to-Image
-  - Subject-Driven Generation
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Parameter-Efficient Fine-Tuning"
+  - "LoRA"
+  - "Tensor Decomposition"
+  - "Text-to-Image"
+  - "Subject-Driven Generation"
 date: 2026-05-08
 content_hash: 16284f8d67a36224
 ---

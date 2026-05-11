@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Guiding a Diffusion Transformer with the Internal Dynamics of Itself
 description: >-
-  [CVPR 2026][Image Generation][internal guidance] This paper proposes Internal Guidance (IG), which adds auxiliary supervision losses to intermediate layers of a Diffusion Transformer to produce weaker generative outputs, then extrapolates the discrepancy between intermediate-layer and final-layer outputs at sampling time to achieve an Autoguidance-like effect — requiring no additional sampling steps or external model training. On ImageNet 256×256, IG pushes LightningDiT-XL/1 to FID 1.34 (without CFG) and 1.19 (+CFG), achieving state-of-the-art results among contemporaneous methods.
+  [CVPR 2026][Image Generation][internal guidance] This paper proposes Internal Guidance (IG), which adds auxiliary supervision losses to intermediate layers of a Diffusion Transformer to produce weaker generative outputs…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - internal guidance
-  - intermediate-layer supervision
-  - diffusion Transformer
-  - sampling guidance
-  - training acceleration
+  - "CVPR 2026"
+  - "Image Generation"
+  - "internal guidance"
+  - "intermediate-layer supervision"
+  - "diffusion Transformer"
+  - "sampling guidance"
+  - "training acceleration"
 date: 2026-05-08
 content_hash: e8656e9a3a094bd7
 ---

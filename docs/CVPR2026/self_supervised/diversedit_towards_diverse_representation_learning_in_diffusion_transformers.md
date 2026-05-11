@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DiverseDiT: Towards Diverse Representation Learning in Diffusion Transformers
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Diffusion Transformer] Through systematic analysis, this work identifies inter-block representation diversity as a key factor for effective learning in DiTs, and proposes DiverseDiT: long residual connections to diversify inputs combined with a representation diversity loss to explicitly promote feature differentiation across blocks—accelerating convergence and improving generation quality without any external guidance model.
+  [CVPR 2026][Self-Supervised Learning][Diffusion Transformer] Through systematic analysis, this work identifies inter-block representation diversity as a key factor for effective learning in DiTs…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - Diffusion Transformer
-  - representation diversity
-  - long residual connections
-  - diversity loss
-  - image generation
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Diffusion Transformer"
+  - "representation diversity"
+  - "long residual connections"
+  - "diversity loss"
+  - "image generation"
 date: 2026-05-08
 content_hash: 29108a9715fa3483
 ---

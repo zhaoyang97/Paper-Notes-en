@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Manipulating Feature Visualizations with Gradient Slingshots
 description: >-
-  [NeurIPS 2025][Robotics][Feature Visualization] This paper proposes Gradient Slingshots (GS), a method that "carves" a quadratic activation landscape in the out-of-distribution (OOD) input region of a model, directing the gradient-based optimization of Feature Visualization (FV) toward an arbitrary target image. The approach causes FV to converge to a predefined spurious image while leaving the model's architecture, classification accuracy, and internal feature representations largely intact, thereby exposing a serious vulnerability of FV as a model auditing tool.
+  [NeurIPS 2025][Robotics][Feature Visualization] This paper proposes Gradient Slingshots (GS), a method that "carves" a quadratic activation landscape in the out-of-distribution (OOD) input region of a model…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - Feature Visualization
-  - Gradient Slingshot
-  - Activation Maximization
-  - XAI Security
-  - Adversarial Fine-tuning
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "Feature Visualization"
+  - "Gradient Slingshot"
+  - "Activation Maximization"
+  - "XAI Security"
+  - "Adversarial Fine-tuning"
 date: 2026-05-08
 content_hash: 679f3dddbd3df0d7
 ---

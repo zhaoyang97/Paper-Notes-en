@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Solving Parameter-Robust Avoid Problems with Unknown Feasibility using Reinforcement Learning
 description: >-
-  [Reinforcement Learning] This paper proposes Feasibility-Guided Exploration (FGE), which simultaneously identifies the feasible parameter subset and learns a safe policy over that subset, addressing parameter-robust avoid problems with unknown feasibility. FGE covers more than 50% additional safe parameters compared to the best existing methods on MuJoCo tasks.
+  [Reinforcement Learning] This paper proposes Feasibility-Guided Exploration (FGE), which simultaneously identifies the feasible parameter subset and learns a safe policy over that subset…
 tags:
-  - Reinforcement Learning
+  - "Reinforcement Learning"
 date: 2026-05-08
 content_hash: 18997f6deb068f7a
 ---

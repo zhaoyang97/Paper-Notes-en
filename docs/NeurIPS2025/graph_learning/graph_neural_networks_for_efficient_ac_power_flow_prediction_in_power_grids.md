@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Graph Neural Networks for Efficient AC Power Flow Prediction in Power Grids
 description: >-
-  [NeurIPS 2025][Graph Learning][GNN] This work models power networks as graph structures (buses as nodes, transmission lines as edges) and investigates four GNN architectures — GCN, GAT, SAGEConv, and GraphConv — for predicting AC power flow solutions (voltage magnitudes and phase angles). Experiments on IEEE 14/30/57/118-bus test systems demonstrate that GNNs can efficiently substitute traditional Newton-Raphson solvers.
+  [NeurIPS 2025][Graph Learning][GNN] This work models power networks as graph structures (buses as nodes, transmission lines as edges) and investigates four GNN architectures — GCN, GAT, SAGEConv…
 tags:
-  - NeurIPS 2025
-  - Graph Learning
-  - GNN
-  - AC Power Flow
-  - Power Systems
-  - Graph Convolution
-  - Optimal Power Flow
+  - "NeurIPS 2025"
+  - "Graph Learning"
+  - "GNN"
+  - "AC Power Flow"
+  - "Power Systems"
+  - "Graph Convolution"
+  - "Optimal Power Flow"
 date: 2026-05-08
 content_hash: fed495c1148118b7
 ---

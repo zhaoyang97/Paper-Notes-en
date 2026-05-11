@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Repurposing 2D Diffusion Models with Gaussian Atlas for 3D Generation
 description: >-
-  [3D Vision] This paper proposes the Gaussian Atlas representation, which maps unordered 3D Gaussians onto a sphere via optimal transport and then flattens them into a structured 2D grid, enabling direct fine-tuning of pretrained 2D Latent Diffusion models for high-quality text-to-3D generation.
+  [3D Vision] This paper proposes the Gaussian Atlas representation, which maps unordered 3D Gaussians onto a sphere via optimal transport and then flattens them into a structured 2D grid…
 tags:
-  - 3D Vision
+  - "3D Vision"
 date: 2026-05-08
 content_hash: 966781ae663664f8
 ---

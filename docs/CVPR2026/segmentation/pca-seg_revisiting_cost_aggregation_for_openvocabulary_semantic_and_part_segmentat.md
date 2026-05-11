@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PCA-Seg: Revisiting Cost Aggregation for Open-Vocabulary Semantic and Part Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Open-vocabulary segmentation] PCA-Seg proposes a Parallel Cost Aggregation (PCA) paradigm to replace the conventional serial spatial-categorical aggregation architecture. It efficiently integrates semantic and spatial context streams via an Expert-driven Perception Learning (EPL) module, and eliminates redundancy between the two knowledge streams through a Feature Orthogonal Decoupling (FOD) strategy. Each parallel block adds only 0.35M parameters while achieving state-of-the-art performance across 8 open-vocabulary semantic and part segmentation benchmarks.
+  [CVPR 2026][Segmentation][Open-vocabulary segmentation] PCA-Seg proposes a Parallel Cost Aggregation (PCA) paradigm to replace the conventional serial spatial-categorical aggregation architecture. It efficiently integrat…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Open-vocabulary segmentation
-  - cost aggregation
-  - parallel architecture
-  - expert-driven learning
-  - feature orthogonal decoupling
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Open-vocabulary segmentation"
+  - "cost aggregation"
+  - "parallel architecture"
+  - "expert-driven learning"
+  - "feature orthogonal decoupling"
 date: 2026-05-08
 content_hash: ffa583960c234ffb
 ---

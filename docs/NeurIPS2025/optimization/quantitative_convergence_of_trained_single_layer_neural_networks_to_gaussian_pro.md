@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Quantitative Convergence of Trained Single Layer Neural Networks to Gaussian Processes
 description: >-
-  [NeurIPS 2025][Optimization][Neural Tangent Kernel] This paper establishes explicit quantitative upper bounds on the convergence of gradient-descent-trained shallow neural networks to Gaussian processes at any positive training time $t \geq 0$, proving that the squared 2-Wasserstein distance decays polynomially at rate $O(\log n_1 / n_1)$.
+  [NeurIPS 2025][Optimization][Neural Tangent Kernel] This paper establishes explicit quantitative upper bounds on the convergence of gradient-descent-trained shallow neural networks to Gaussian processes at any positive t…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Neural Tangent Kernel
-  - Gaussian Process
-  - Wasserstein Distance
-  - Finite Width
-  - Infinite-Width Limit
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Neural Tangent Kernel"
+  - "Gaussian Process"
+  - "Wasserstein Distance"
+  - "Finite Width"
+  - "Infinite-Width Limit"
 date: 2026-05-08
 content_hash: e005f5a98f1158e1
 ---

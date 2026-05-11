@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Extracting Events Like Code: A Multi-Agent Programming Framework for Zero-Shot Event Extraction
 description: >-
-  [AAAI 2026][Zero-Shot Event Extraction] This paper proposes Agent-Event-Coder (AEC), which reformulates zero-shot event extraction as a software engineering workflow. Four specialized agents (Retrieval→Planning→Coding→Verification) collaborate to perform extraction, while event schemas are encoded as executable Python classes to enable compiler-style deterministic validation and dual-loop iterative correction. AEC comprehensively outperforms zero-shot baselines across 5 domains and 6 LLMs.
+  [AAAI 2026][Code Intelligence][Zero-Shot Event Extraction] This paper proposes Agent-Event-Coder (AEC), which reformulates zero-shot event extraction as a software engineering workflow. Four specialized agents (Retrieval…
 tags:
-  - AAAI 2026
-  - Zero-Shot Event Extraction
-  - Multi-Agent
-  - Programmatic Framework
-  - Python Class Template
-  - Dual-Loop Refinement
+  - "AAAI 2026"
+  - "Code Intelligence"
+  - "Zero-Shot Event Extraction"
+  - "Multi-Agent"
+  - "Programmatic Framework"
+  - "Python Class Template"
+  - "Dual-Loop Refinement"
 date: 2026-05-08
 content_hash: cb31968a2a87c340
 ---

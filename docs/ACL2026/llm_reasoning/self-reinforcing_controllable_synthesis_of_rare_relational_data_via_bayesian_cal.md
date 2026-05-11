@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Self-Reinforcing Controllable Synthesis of Rare Relational Data via Bayesian Calibration
 description: >-
-  [ACL 2026][LLM Reasoning][Tabular data synthesis] This paper proposes RDDG, a tabular data synthesis framework based on progressive Chain-of-Thought, which guides LLMs to generate high-fidelity tabular data through coreset selection, relational mining, and a self-reinforcing feedback mechanism, achieving an average improvement of 2%+ Macro-F1 on imbalanced classification tasks.
+  [ACL 2026][LLM Reasoning][Tabular data synthesis] This paper proposes RDDG, a tabular data synthesis framework based on progressive Chain-of-Thought…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - Tabular data synthesis
-  - imbalanced classification
-  - self-reinforcing feedback
-  - Bayesian calibration
-  - in-context learning
+  - "ACL 2026"
+  - "LLM Reasoning"
+  - "Tabular data synthesis"
+  - "imbalanced classification"
+  - "self-reinforcing feedback"
+  - "Bayesian calibration"
+  - "in-context learning"
 date: 2026-05-08
 content_hash: 511ccb7137f2fce2
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Drift-Resilient Temporal Priors for Visual Tracking
 description: >-
-  [CVPR 2026][Video Understanding][visual tracking] This paper proposes DTPTrack—a lightweight plug-and-play temporal modeling module that assigns reliability scores to historical frames via a Temporal Reliability Calibrator (TRC) to filter noisy observations, and synthesizes the calibrated historical information into dynamic prior tokens via a Temporal Guidance Synthesizer (TGS) to suppress tracking drift, achieving state-of-the-art performance across multiple benchmarks.
+  [CVPR 2026][Video Understanding][visual tracking] This paper proposes DTPTrack—a lightweight plug-and-play temporal modeling module that assigns reliability scores to historical frames via a Temporal Reliability Calibrat…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - visual tracking
-  - model drift
-  - temporal modeling
-  - Transformer
-  - plug-and-play
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "visual tracking"
+  - "model drift"
+  - "temporal modeling"
+  - "Transformer"
+  - "plug-and-play"
 date: 2026-05-08
 content_hash: 68c913ea8a3d3bd6
 ---

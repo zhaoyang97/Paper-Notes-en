@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Token Warping Helps MLLMs Look from Nearby Viewpoints
 description: >-
-  [CVPR 2026][Multimodal VLM][viewpoint transformation] This paper proposes performing spatial warping on ViT image tokens within MLLMs—rather than conventional pixel-level warping—to simulate viewpoint changes. It is found that backward token warping maintains semantic consistency while remaining robust to depth estimation noise. The proposed method substantially outperforms pixel-level warping, specialized spatial-reasoning MLLMs, and generative warping approaches on the newly constructed ViewBench benchmark.
+  [CVPR 2026][Multimodal VLM][viewpoint transformation] This paper proposes performing spatial warping on ViT image tokens within MLLMs—rather than conventional pixel-level warping—to simulate viewpoint changes. It is foun…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - viewpoint transformation
-  - token warping
-  - spatial reasoning
-  - mental imagery
-  - MLLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "viewpoint transformation"
+  - "token warping"
+  - "spatial reasoning"
+  - "mental imagery"
+  - "MLLM"
 date: 2026-05-08
 content_hash: e52ae9f5c985d144
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Toward Real-world Text Image Forgery Localization: Structured and Interpretable Data Synthesis
 description: >-
-  [NeurIPS 2025][Text image forgery] This paper proposes FSTS, a Fourier-series-inspired forgery synthesis framework that models the "invisible distribution" (the high-dimensional distribution of forgery operation parameters) from 16,750 real-world forgery instances collected from 67 human participants, generating synthetic training data that more closely approximates real-world forgeries and substantially improving the generalization of text image forgery localization models.
+  [NeurIPS 2025][Interpretability][Text image forgery] This paper proposes FSTS, a Fourier-series-inspired forgery synthesis framework that models the "invisible distribution" (the high-dimensional distribution of forgery…
 tags:
-  - NeurIPS 2025
-  - Text image forgery
-  - synthetic data
-  - invisible distribution modeling
-  - Fourier series
-  - forgery parameters
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "Text image forgery"
+  - "synthetic data"
+  - "invisible distribution modeling"
+  - "Fourier series"
+  - "forgery parameters"
 date: 2026-05-08
 content_hash: 6185adca1a0f4c70
 ---

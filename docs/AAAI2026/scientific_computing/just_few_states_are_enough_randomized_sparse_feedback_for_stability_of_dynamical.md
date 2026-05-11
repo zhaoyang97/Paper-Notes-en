@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Just Few States are Enough: Randomized Sparse Feedback for Stability of Dynamical Systems
 description: >-
-  [AAAI2026][Scientific Computing][sparse feedback control] This paper proposes a randomized sparse feedback control framework in which the controller accesses only a random subset of the state vector at each time step. Feedback gain matrices and Bernoulli sparsification parameters are jointly designed via LMIs to guarantee asymptotic mean-square stability (AMSS) while minimizing the required number of active sensors. Experiments demonstrate that as few as 0.3% of state components suffice to achieve performance comparable to full-state feedback.
+  [AAAI2026][Scientific Computing][sparse feedback control] This paper proposes a randomized sparse feedback control framework in which the controller accesses only a random subset of the state vector at each time step. Fe…
 tags:
-  - AAAI2026
-  - Scientific Computing
-  - sparse feedback control
-  - randomized sparsification
-  - asymptotic mean-square stability
-  - LMI
-  - large-scale systems
+  - "AAAI2026"
+  - "Scientific Computing"
+  - "sparse feedback control"
+  - "randomized sparsification"
+  - "asymptotic mean-square stability"
+  - "LMI"
+  - "large-scale systems"
 date: 2026-05-08
 content_hash: c6e798b824964929
 ---

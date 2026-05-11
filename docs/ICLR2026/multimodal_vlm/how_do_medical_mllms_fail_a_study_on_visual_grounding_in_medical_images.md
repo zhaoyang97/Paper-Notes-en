@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] How Do Medical MLLMs Fail? A Study on Visual Grounding in Medical Images
 description: >-
-  [ICLR 2026][Multimodal VLM][Medical VQA] This work presents the first systematic diagnosis revealing that the root cause of poor zero-shot medical VQA performance in medical MLLMs is insufficient visual grounding—model attention systematically deviates from clinically relevant regions. Building on this finding, the authors propose VGRefine, a training-free inference-time attention correction method that achieves state-of-the-art results across 110K+ samples on 6 benchmarks spanning 8 imaging modalities.
+  [ICLR 2026][Multimodal VLM][Medical VQA] This work presents the first systematic diagnosis revealing that the root cause of poor zero-shot medical VQA performance in medical MLLMs is insufficient visual grounding—model a…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Medical VQA
-  - Visual Grounding
-  - Attention Analysis
-  - MLLM Failure Modes
-  - Inference-Time Correction
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Medical VQA"
+  - "Visual Grounding"
+  - "Attention Analysis"
+  - "MLLM Failure Modes"
+  - "Inference-Time Correction"
 date: 2026-05-08
 content_hash: 61af9fd67d17ab9d
 ---

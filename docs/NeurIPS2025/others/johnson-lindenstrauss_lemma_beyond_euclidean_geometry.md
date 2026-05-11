@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Johnson-Lindenstrauss Lemma Beyond Euclidean Geometry
 description: >-
-  [NeurIPS 2025][Dimensionality Reduction] This paper extends the Johnson-Lindenstrauss (JL) lemma from Euclidean space to general symmetric hollow dissimilarity matrices, proposing two complementary approaches — pseudo-Euclidean JL and generalized power distance JL — where the approximation error scales proportionally with the degree of deviation from Euclidean geometry.
+  [NeurIPS 2025][Dimensionality Reduction] This paper extends the Johnson-Lindenstrauss (JL) lemma from Euclidean space to general symmetric hollow dissimilarity matrices…
 tags:
-  - NeurIPS 2025
-  - Dimensionality Reduction
-  - Johnson-Lindenstrauss Lemma
-  - Non-Euclidean Geometry
-  - Pseudo-Euclidean Space
-  - Generalized Power Distance
+  - "NeurIPS 2025"
+  - "Dimensionality Reduction"
+  - "Johnson-Lindenstrauss Lemma"
+  - "Non-Euclidean Geometry"
+  - "Pseudo-Euclidean Space"
+  - "Generalized Power Distance"
 date: 2026-05-08
 content_hash: 36cbd1f736971781
 ---

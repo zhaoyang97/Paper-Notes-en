@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GestureHYDRA: Semantic Co-speech Gesture Synthesis via Hybrid Modality Diffusion Transformer and Cascaded-Synchronized Retrieval-Augmented Generation
 description: >-
-  [ICCV 2025][Human Understanding][Co-speech gesture generation] This paper proposes GestureHYDRA, a co-speech gesture synthesis system based on a Hybrid-Modality Diffusion Transformer and Cascaded-Synchronized Retrieval-Augmented Generation, capable of reliably activating semantically explicit gestures such as numerical and directional indications.
+  [ICCV 2025][Human Understanding][Co-speech gesture generation] This paper proposes GestureHYDRA, a co-speech gesture synthesis system based on a Hybrid-Modality Diffusion Transformer and Cascaded-Synchronized Retrieval-A…
 tags:
-  - ICCV 2025
-  - Human Understanding
-  - Co-speech gesture generation
-  - diffusion model
-  - Transformer
-  - retrieval-augmented generation
-  - semantic gesture
+  - "ICCV 2025"
+  - "Human Understanding"
+  - "Co-speech gesture generation"
+  - "diffusion model"
+  - "Transformer"
+  - "retrieval-augmented generation"
+  - "semantic gesture"
 date: 2026-05-08
 content_hash: 4239ba57633d8d0d
 ---

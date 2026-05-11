@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Protecting Bystander Privacy via Selective Hearing in Audio LLMs
 description: >-
-  [ACL 2026][LLM Safety][bystander privacy] This work introduces SH-Bench, the first benchmark for bystander privacy evaluation, and proposes Bystander Privacy Fine-Tuning (BPFT), a method that improves the ability of audio LLMs to focus exclusively on the target speaker and refuse to disclose bystander information in multi-speaker environments. After BPFT, the SE metric surpasses Gemini 2.5 Pro by 16%.
+  [ACL 2026][LLM Safety][bystander privacy] This work introduces SH-Bench, the first benchmark for bystander privacy evaluation, and proposes Bystander Privacy Fine-Tuning (BPFT)…
 tags:
-  - ACL 2026
-  - LLM Safety
-  - bystander privacy
-  - selective hearing
-  - audio LLM
-  - multi-speaker
-  - privacy-preserving fine-tuning
+  - "ACL 2026"
+  - "LLM Safety"
+  - "bystander privacy"
+  - "selective hearing"
+  - "audio LLM"
+  - "multi-speaker"
+  - "privacy-preserving fine-tuning"
 date: 2026-05-08
 content_hash: 2e058ff752d8a043
 ---

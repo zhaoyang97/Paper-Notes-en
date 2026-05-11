@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SoFlow: Solution Flow Models for One-Step Generative Modeling
 description: >-
-  [ICLR 2026][Image Generation][solution function] This paper proposes Solution Flow Models (SoFlow), which directly learn the solution function $f(x_t, t, s)$ of the velocity ODE (mapping $x_t$ at time $t$ to the solution at time $s$). Trained from scratch via a Flow Matching loss combined with a JVP-free solution consistency loss, SoFlow achieves a 1-NFE FID of 2.96 on ImageNet 256 (XL/2), outperforming MeanFlow (3.43).
+  [ICLR 2026][Image Generation][solution function] This paper proposes Solution Flow Models (SoFlow), which directly learn the solution function $f(x_t, t…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - solution function
-  - flow matching
-  - one-step generation
-  - consistency loss
-  - JVP-free
+  - "ICLR 2026"
+  - "Image Generation"
+  - "solution function"
+  - "flow matching"
+  - "one-step generation"
+  - "consistency loss"
+  - "JVP-free"
 date: 2026-05-08
 content_hash: c3888d08d273ade0
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Talk2Event: Grounded Understanding of Dynamic Scenes from Event Cameras
 description: >-
-  [NeurIPS 2025][Robotics][event camera] Talk2Event introduces the first large-scale visual grounding benchmark for event cameras (30,690 annotated referring expressions across four grounding attribute types), and proposes the EventRefer framework, which employs a Mixture of Event-Attribute Experts (MoEE) to dynamically fuse appearance, status, viewer-relation, and inter-object-relation features. EventRefer surpasses existing methods across all three evaluation settings: event-only, frame-only, and fusion.
+  [NeurIPS 2025][Robotics][event camera] Talk2Event introduces the first large-scale visual grounding benchmark for event cameras (30,690 annotated referring expressions across four grounding attribute types)…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - event camera
-  - visual grounding
-  - multimodal
-  - mixture of experts
-  - autonomous driving
-  - benchmark
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "event camera"
+  - "visual grounding"
+  - "multimodal"
+  - "mixture of experts"
+  - "autonomous driving"
+  - "benchmark"
 date: 2026-05-08
 content_hash: 633f715162d1d43b
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Peering into the Unknown: Active View Selection with Neural Uncertainty Maps for 3D Reconstruction
 description: >-
-  [ICLR 2026][3D Vision][active view selection] This paper proposes PUN (Peering into the UnkNowN), which employs a lightweight feed-forward network, UPNet, to directly predict the uncertainty distribution over all candidate viewpoints on a sphere from a single image — termed a neural uncertainty map (UMap) — thereby replacing the conventional iterative active view selection pipeline that requires repeated retraining of NeRF or 3DGS models. PUN achieves comparable reconstruction quality using only half the viewpoints of the upper bound, while delivering a 400× speedup and over 50% reduction in computational resource consumption during view selection.
+  [ICLR 2026][3D Vision][active view selection] This paper proposes PUN (Peering into the UnkNowN), which employs a lightweight feed-forward network, UPNet…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - active view selection
-  - neural uncertainty map
-  - 3D reconstruction
-  - NeRF
-  - 3DGS
+  - "ICLR 2026"
+  - "3D Vision"
+  - "active view selection"
+  - "neural uncertainty map"
+  - "3D reconstruction"
+  - "NeRF"
+  - "3DGS"
 date: 2026-05-08
 content_hash: 7bbdadc4d3a0ad00
 ---

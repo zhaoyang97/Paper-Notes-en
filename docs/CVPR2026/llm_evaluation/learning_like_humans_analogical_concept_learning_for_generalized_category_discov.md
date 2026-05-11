@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Like Humans: Analogical Concept Learning for Generalized Category Discovery
 description: >-
-  [CVPR 2026][LLM Evaluation][Generalized Category Discovery] This paper proposes AL-GCD, a framework that simulates human analogical reasoning by designing an Analogical Text Concept Generator (ATCG)—which analogically generates textual concepts for unlabeled samples by drawing on a visual-textual knowledge base built from labeled categories—thereby casting category discovery as a joint visual-textual reasoning task. AL-GCD achieves an average improvement of 5.0% across six benchmarks, with 7.1% gains on fine-grained datasets.
+  [CVPR 2026][LLM Evaluation][Generalized Category Discovery] This paper proposes AL-GCD, a framework that simulates human analogical reasoning by designing an Analogical Text Concept Generator (ATCG)—which analogically ge…
 tags:
-  - CVPR 2026
-  - LLM Evaluation
-  - Generalized Category Discovery
-  - Analogical Learning
-  - Vision-Language Models
-  - Cross-Modal Reasoning
-  - CLIP
+  - "CVPR 2026"
+  - "LLM Evaluation"
+  - "Generalized Category Discovery"
+  - "Analogical Learning"
+  - "Vision-Language Models"
+  - "Cross-Modal Reasoning"
+  - "CLIP"
 date: 2026-05-08
 content_hash: 34e6c7e4ce1589c1
 ---

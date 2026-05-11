@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Private Evolution Converges
 description: >-
-  [NeurIPS 2025][Differential Privacy] This paper provides the first convergence guarantee for the Private Evolution (PE) synthetic data generation algorithm that does not rely on unrealistic assumptions, proving that under appropriate hyperparameter settings, the $(ε,δ)$-DP synthetic dataset output by PE achieves a 1-Wasserstein distance of $\tilde{O}(d(nε)^{-1/d})$.
+  [NeurIPS 2025][Differential Privacy] This paper provides the first convergence guarantee for the Private Evolution (PE) synthetic data generation algorithm that does not rely on unrealistic assumptions…
 tags:
-  - NeurIPS 2025
-  - Differential Privacy
-  - Synthetic Data
-  - Private Evolution
-  - Wasserstein Distance
-  - Convergence Analysis
+  - "NeurIPS 2025"
+  - "Differential Privacy"
+  - "Synthetic Data"
+  - "Private Evolution"
+  - "Wasserstein Distance"
+  - "Convergence Analysis"
 date: 2026-05-08
 content_hash: 08a6c67b136f980d
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Domain-Aware Task Prompt Representations for Multi-Domain All-in-One Image Restoration
 description: >-
-  [ICLR 2026][Medical Imaging][All-in-one image restoration] This paper proposes DATPRL-IR, the first multi-domain all-in-one image restoration method, which learns domain-aware task prompt representations via a dual prompt pool (task prompt pool + domain prompt pool). Domain priors are distilled from an MLLM and injected into the backbone through adaptive gated fusion, achieving significant improvements over SOTA across 9 tasks spanning natural, medical, and remote sensing domains.
+  [ICLR 2026][Medical Imaging][All-in-one image restoration] This paper proposes DATPRL-IR, the first multi-domain all-in-one image restoration method…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - All-in-one image restoration
-  - multi-domain restoration
-  - prompt learning
-  - dual prompt pool
-  - cross-modal alignment
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "All-in-one image restoration"
+  - "multi-domain restoration"
+  - "prompt learning"
+  - "dual prompt pool"
+  - "cross-modal alignment"
 date: 2026-05-08
 content_hash: 33eac1c515b9534a
 ---

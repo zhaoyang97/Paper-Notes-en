@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BeeRNA: Tertiary Structure-Based RNA Inverse Folding Using Artificial Bee Colony
 description: >-
-  [AAAI2026][Optimization][RNA inverse folding] This paper proposes BeeRNA, which applies the Artificial Bee Colony (ABC) optimization algorithm to the RNA tertiary structure inverse folding problem. Through a two-stage fitness evaluation combining base-pair distance pre-screening and RMSD scoring, BeeRNA outperforms deep learning methods gRNAde and RiboDiffusion on short-to-medium-length RNAs (<100 nt).
+  [AAAI2026][Optimization][RNA inverse folding] This paper proposes BeeRNA, which applies the Artificial Bee Colony (ABC) optimization algorithm to the RNA tertiary structure inverse folding problem. Through a two-stage fi…
 tags:
-  - AAAI2026
-  - Optimization
-  - RNA inverse folding
-  - Artificial Bee Colony
-  - tertiary structure
-  - bio-inspired optimization
-  - RhoFold
+  - "AAAI2026"
+  - "Optimization"
+  - "RNA inverse folding"
+  - "Artificial Bee Colony"
+  - "tertiary structure"
+  - "bio-inspired optimization"
+  - "RhoFold"
 date: 2026-05-08
 content_hash: ff2adc497d41aef5
 ---

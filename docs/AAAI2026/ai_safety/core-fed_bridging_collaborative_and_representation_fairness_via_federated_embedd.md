@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CoRe-Fed: Bridging Collaborative and Representation Fairness via Federated Embedding Distillation
 description: >-
-  [AAAI 2026][AI Safety][Federated Learning] This paper proposes CoRe-Fed, a framework that simultaneously addresses representation fairness and collaborative fairness in federated learning through two synergistic modules—embedding-level contrastive alignment and contribution-aware aggregation—achieving significant improvements in both fairness and generalization of the global model under heterogeneous data distributions.
+  [AAAI 2026][AI Safety][Federated Learning] This paper proposes CoRe-Fed, a framework that simultaneously addresses representation fairness and collaborative fairness in federated learning through two synergistic modules—…
 tags:
-  - AAAI 2026
-  - AI Safety
-  - Federated Learning
-  - Fairness
-  - Representation Alignment
-  - Contrastive Learning
-  - Knowledge Distillation
+  - "AAAI 2026"
+  - "AI Safety"
+  - "Federated Learning"
+  - "Fairness"
+  - "Representation Alignment"
+  - "Contrastive Learning"
+  - "Knowledge Distillation"
 date: 2026-05-08
 content_hash: 559cb7874af2bbb0
 ---

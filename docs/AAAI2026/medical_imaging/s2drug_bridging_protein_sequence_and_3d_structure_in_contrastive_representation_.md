@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] S2Drug: Bridging Protein Sequence and 3D Structure in Contrastive Representation Learning for Virtual Screening
 description: >-
-  [AAAI 2026][Medical Imaging][Virtual screening] This paper proposes S2Drug, a two-stage contrastive learning framework. Stage 1 performs large-scale protein sequence–ligand contrastive pre-training on ChemBL with a bilateral data sampling strategy to reduce noise and redundancy. Stage 2 fine-tunes on PDBBind by fusing sequence and 3D structural information via a residue-level gating module and incorporating a binding site prediction auxiliary task. S2Drug substantially outperforms existing methods on the DUD-E and LIT-PCBA virtual screening benchmarks.
+  [AAAI 2026][Medical Imaging][Virtual screening] This paper proposes S2Drug, a two-stage contrastive learning framework. Stage 1 performs large-scale protein sequence–ligand contrastive pre-training on ChemBL with a bilat…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Virtual screening
-  - protein–ligand interaction
-  - contrastive learning
-  - protein sequence
-  - 3D structure
-  - binding site prediction
-  - drug discovery
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Virtual screening"
+  - "protein–ligand interaction"
+  - "contrastive learning"
+  - "protein sequence"
+  - "3D structure"
+  - "binding site prediction"
+  - "drug discovery"
 date: 2026-05-08
 content_hash: cd36305f4008ea89
 ---

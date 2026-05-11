@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multiscale Structure-Guided Latent Diffusion for Multimodal MRI Translation
 description: >-
-  [CVPR 2026][Medical Imaging][MRI synthesis] This paper proposes MSG-LDM, which introduces a multiscale structure-style disentanglement mechanism into a latent diffusion model. Through high-frequency injection, multimodal structural feature fusion, and structure-aware losses, MSG-LDM achieves multimodal MRI synthesis that preserves anatomical structures and fine-grained details under missing-modality scenarios.
+  [CVPR 2026][Medical Imaging][MRI synthesis] This paper proposes MSG-LDM, which introduces a multiscale structure-style disentanglement mechanism into a latent diffusion model. Through high-frequency injection…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - MRI synthesis
-  - latent diffusion model
-  - structure guidance
-  - style-structure disentanglement
-  - missing modality
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "MRI synthesis"
+  - "latent diffusion model"
+  - "structure guidance"
+  - "style-structure disentanglement"
+  - "missing modality"
 date: 2026-05-08
 content_hash: 50534cdf3a82fa50
 ---

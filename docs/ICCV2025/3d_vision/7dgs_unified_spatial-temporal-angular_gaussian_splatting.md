@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] 7DGS: Unified Spatial-Temporal-Angular Gaussian Splatting
 description: >-
-  [ICCV 2025][3D Vision][Gaussian Splatting] This work extends 3DGS to seven dimensions (spatial 3D + temporal 1D + directional 3D). A conditional slicing mechanism projects 7D Gaussians into 3D Gaussians compatible with the standard 3DGS pipeline, achieving up to 7.36 dB PSNR improvement on dynamic scenes with view-dependent effects while maintaining 401 FPS real-time rendering.
+  [ICCV 2025][3D Vision][Gaussian Splatting] This work extends 3DGS to seven dimensions (spatial 3D + temporal 1D + directional 3D). A conditional slicing mechanism projects 7D Gaussians into 3D Gaussians compatible with t…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Gaussian Splatting
-  - Dynamic Scene Rendering
-  - View-Dependent Effects
-  - Real-Time Rendering
-  - Novel View Synthesis
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Gaussian Splatting"
+  - "Dynamic Scene Rendering"
+  - "View-Dependent Effects"
+  - "Real-Time Rendering"
+  - "Novel View Synthesis"
 date: 2026-05-08
 content_hash: 445d3dd6112d4ef5
 ---

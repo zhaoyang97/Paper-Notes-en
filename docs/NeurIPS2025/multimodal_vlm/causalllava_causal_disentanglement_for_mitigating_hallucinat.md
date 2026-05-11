@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Causal-LLaVA: Causal Disentanglement for Mitigating Hallucination in Multimodal Large Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][hallucination] This paper identifies the root cause of object hallucination in MLLMs at the representation level—semantic entanglement induced by dataset co-occurrence bias—and proposes a dual-path causal disentanglement framework (Causal-Driven Projector + Causal Intervention Module). By applying backdoor adjustment at both the projector and the final Transformer layer to decouple co-occurring object representations, the method achieves a 22.6% improvement on MME-Perception.
+  [NeurIPS 2025][Multimodal VLM][hallucination] This paper identifies the root cause of object hallucination in MLLMs at the representation level—semantic entanglement induced by dataset co-occurrence bias—and proposes a d…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - hallucination
-  - causal inference
-  - disentanglement
-  - MLLM
-  - co-occurrence bias
-  - backdoor adjustment
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "hallucination"
+  - "causal inference"
+  - "disentanglement"
+  - "MLLM"
+  - "co-occurrence bias"
+  - "backdoor adjustment"
 date: 2026-05-08
 content_hash: 584a6f751c8dfeb5
 ---

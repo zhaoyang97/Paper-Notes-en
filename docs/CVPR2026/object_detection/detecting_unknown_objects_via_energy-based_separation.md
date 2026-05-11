@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Detecting Unknown Objects via Energy-Based Separation for Open World Object Detection
 description: >-
-  [CVPR 2026][Object Detection][Open World Object Detection] This paper proposes the DEUS framework, which introduces ETF-Subspace Unknown Separation (EUS) to effectively separate known, unknown, and background proposals via energy scores within geometrically orthogonal known/unknown subspaces, and designs an Energy-based Known Distinction (EKD) loss to reduce cross-task interference between old and new classes during incremental learning, achieving substantial improvements in unknown object recall on OWOD benchmarks.
+  [CVPR 2026][Object Detection][Open World Object Detection] This paper proposes the DEUS framework, which introduces ETF-Subspace Unknown Separation (EUS) to effectively separate known, unknown…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - Open World Object Detection
-  - Energy Function
-  - Unknown Object Detection
-  - Incremental Learning
-  - Catastrophic Forgetting
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Open World Object Detection"
+  - "Energy Function"
+  - "Unknown Object Detection"
+  - "Incremental Learning"
+  - "Catastrophic Forgetting"
 date: 2026-05-08
 content_hash: 5a94cd937a0a2666
 ---

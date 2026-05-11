@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Less is More but Where: Dynamic Token Compression via LLM-Guided Keyframe Prior
 description: >-
-  [NeurIPS 2025][Model Compression][video-understanding] This paper proposes DyToK, a training-free dynamic video token compression method that leverages query-conditioned keyframe priors inherent in the deep attention layers of VLLMs to adaptively allocate token budgets across frames, achieving plug-and-play optimal efficiency–accuracy trade-offs.
+  [NeurIPS 2025][Model Compression][video-understanding] This paper proposes DyToK, a training-free dynamic video token compression method that leverages query-conditioned keyframe priors inherent in the deep attention lay…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - video-understanding
-  - token-compression
-  - vllm
-  - efficiency
-  - keyframe-selection
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "video-understanding"
+  - "token-compression"
+  - "vllm"
+  - "efficiency"
+  - "keyframe-selection"
 date: 2026-05-08
 content_hash: 1c2730decfe4eb93
 ---

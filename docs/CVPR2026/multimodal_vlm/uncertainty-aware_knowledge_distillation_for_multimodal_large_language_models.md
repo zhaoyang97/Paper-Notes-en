@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Uncertainty-Aware Knowledge Distillation for Multimodal Large Language Models
 description: >-
-  [CVPR2026][Multimodal VLM][Knowledge Distillation] This paper proposes Beta-KD, an uncertainty-aware knowledge distillation framework grounded in a Bayesian perspective. By modeling teacher supervision as a Gibbs prior and deriving a closed-form solution via Laplace approximation, Beta-KD automatically balances data and teacher signals, consistently improving distillation performance on multimodal VQA benchmarks.
+  [CVPR2026][Multimodal VLM][Knowledge Distillation] This paper proposes Beta-KD, an uncertainty-aware knowledge distillation framework grounded in a Bayesian perspective. By modeling teacher supervision as a Gibbs prior a…
 tags:
-  - CVPR2026
-  - Multimodal VLM
-  - Knowledge Distillation
-  - Uncertainty Weighting
-  - Bayesian Inference
-  - Gibbs Prior
-  - Multi-task Balancing
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "Knowledge Distillation"
+  - "Uncertainty Weighting"
+  - "Bayesian Inference"
+  - "Gibbs Prior"
+  - "Multi-task Balancing"
 date: 2026-05-08
 content_hash: bd9eddcca5aa12b6
 ---

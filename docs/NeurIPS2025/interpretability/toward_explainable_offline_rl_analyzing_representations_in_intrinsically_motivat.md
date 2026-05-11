@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] How Intrinsic Motivation Shapes Learned Representations in Decision Transformers: A Cognitive Interpretability Analysis
 description: >-
-  [NeurIPS 2025][Intrinsic Motivation] This paper proposes a systematic post-hoc interpretability framework to analyze how intrinsic motivation (based on Random Network Distillation) shapes the geometric structure of the embedding space in Elastic Decision Transformers. The analysis reveals that different intrinsic motivation variants create fundamentally distinct representational structures—EDT-SIL promotes compact representations while EDT-TIL enhances orthogonality—and that embedding properties exhibit strong environment-specific correlations with task performance.
+  [NeurIPS 2025][Interpretability][Intrinsic Motivation] This paper proposes a systematic post-hoc interpretability framework to analyze how intrinsic motivation (based on Random Network Distillation) shapes the geometric…
 tags:
-  - NeurIPS 2025
-  - Intrinsic Motivation
-  - Decision Transformer
-  - Interpretability
-  - Embedding Analysis
-  - Representation Learning
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "Intrinsic Motivation"
+  - "Decision Transformer"
+  - "Embedding Analysis"
+  - "Representation Learning"
 date: 2026-05-08
 content_hash: b3e5b06d90cd203b
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Metis-SPECS: Decoupling Multimodal Learning via Self-distilled Preference-based Cold Start
 description: >-
-  [ICLR 2026][Reinforcement Learning][Cold Start] This paper proposes SPECS, a three-stage cold-start framework that (1) generates preference data via self-distillation (distinguishing only format differences), (2) applies DPO for format pre-alignment as the cold start, and (3) follows with GRPO fine-tuning. By decoupling format learning from reasoning learning, SPECS achieves consistent performance gains of +4.1% on MEGA-Bench and +12.2% on MathVista.
+  [ICLR 2026][Reinforcement Learning][Cold Start] This paper proposes SPECS, a three-stage cold-start framework that (1) generates preference data via self-distillation (distinguishing only format differences)…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Cold Start
-  - DPO
-  - Decoupled Learning
-  - Self-Distillation
-  - VLM Reasoning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Cold Start"
+  - "DPO"
+  - "Decoupled Learning"
+  - "Self-Distillation"
+  - "VLM Reasoning"
 date: 2026-05-08
 content_hash: fa1d2e6ae6d4ef2a
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Visual Leap in CLIP Compositionality Reasoning through Generation of Counterfactual Sets
 description: >-
-  [ICCV 2025][Causal Inference][CLIP] This paper proposes a counterfactual image-text pair generation method based on block-based diffusion, treating image entities as "puzzle pieces" for independent generation and assembly. Combined with a two-level intra-set/inter-set loss function for CLIP fine-tuning (LoRA), the method surpasses the previous state of the art—which uses 3M manually annotated samples—using only 10K–300K synthetic samples on multiple compositional reasoning benchmarks including ARO, Winoground, and sDCI.
+  [ICCV 2025][Causal Inference][CLIP] This paper proposes a counterfactual image-text pair generation method based on block-based diffusion…
 tags:
-  - ICCV 2025
-  - Causal Inference
-  - CLIP
-  - compositional reasoning
-  - counterfactual data augmentation
-  - block-based diffusion
-  - contrastive learning loss
+  - "ICCV 2025"
+  - "Causal Inference"
+  - "CLIP"
+  - "compositional reasoning"
+  - "counterfactual data augmentation"
+  - "block-based diffusion"
+  - "contrastive learning loss"
 date: 2026-05-08
 content_hash: ec02299e1ddf7257
 ---

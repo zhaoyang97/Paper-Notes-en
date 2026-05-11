@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] STRIDE-ED: A Strategy-Grounded Stepwise Reasoning Framework for Empathetic Dialogue Systems
 description: >-
-  [ACL 2026][Reinforcement Learning][Empathetic dialogue] This paper proposes the STRIDE-ED framework, which achieves state-of-the-art performance in empathetic dialogue across multiple open-source LLMs by constructing a comprehensive empathy strategy system covering positive/neutral/negative emotions, designing task-aligned multi-stage cognitive CoT reasoning, and combining strategy-aware data refinement with a two-stage SFT+PPO training paradigm. The framework attains an emotion accuracy of 57.25% and BLEU-4 of 4.67.
+  [ACL 2026][Reinforcement Learning][Empathetic dialogue] This paper proposes the STRIDE-ED framework, which achieves state-of-the-art performance in empathetic dialogue across multiple open-source LLMs by constructing a c…
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - Empathetic dialogue
-  - strategy-grounded reasoning
-  - chain-of-thought
-  - multi-objective reinforcement learning
-  - data refinement
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "Empathetic dialogue"
+  - "strategy-grounded reasoning"
+  - "chain-of-thought"
+  - "multi-objective reinforcement learning"
+  - "data refinement"
 date: 2026-05-08
 content_hash: 0f3cb05899144375
 ---

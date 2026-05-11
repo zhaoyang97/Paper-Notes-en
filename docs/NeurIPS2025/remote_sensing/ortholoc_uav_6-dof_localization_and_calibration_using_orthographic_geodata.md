@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OrthoLoC: UAV 6-DoF Localization and Calibration Using Orthographic Geodata
 description: >-
-  [NeurIPS 2025][Remote Sensing][UAV Localization] OrthoLoC introduces the first large-scale UAV 6-DoF localization benchmark built upon orthographic geodata (DOP+DSM), comprising 16,425 real UAV images across 47 regions in Germany and the United States. It further proposes AdHoP (Adaptive Homography Preprocessing), a plug-and-play matching enhancement that improves matching performance by 95% and reduces translation error by 63% without modifying the underlying feature matcher.
+  [NeurIPS 2025][Remote Sensing][UAV Localization] OrthoLoC introduces the first large-scale UAV 6-DoF localization benchmark built upon orthographic geodata (DOP+DSM), comprising 16…
 tags:
-  - NeurIPS 2025
-  - Remote Sensing
-  - UAV Localization
-  - 6-DoF
-  - Orthographic Geodata
-  - Feature Matching
-  - Domain Adaptation
+  - "NeurIPS 2025"
+  - "Remote Sensing"
+  - "UAV Localization"
+  - "6-DoF"
+  - "Orthographic Geodata"
+  - "Feature Matching"
+  - "Domain Adaptation"
 date: 2026-05-08
 content_hash: 3ef6fb567cbf5f5d
 ---

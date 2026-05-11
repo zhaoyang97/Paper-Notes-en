@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SciVid: Cross-Domain Evaluation of Video Models in Scientific Applications
 description: >-
-  [ICCV 2025][Medical Imaging][Video Foundation Models] This paper introduces SciVid, a benchmark comprising five interdisciplinary scientific video tasks—including animal behavior classification, tissue tracking, and weather forecasting—that systematically evaluates six categories of Video Foundation Models (ViFMs). The study finds that adapting a frozen ViFM backbone with a simple trainable readout suffices to achieve state-of-the-art performance on multiple scientific tasks, providing the first systematic evidence of the transferability of general-purpose ViFMs to scientific domains.
+  [ICCV 2025][Medical Imaging][Video Foundation Models] This paper introduces SciVid, a benchmark comprising five interdisciplinary scientific video tasks—including animal behavior classification, tissue tracking…
 tags:
-  - ICCV 2025
-  - Medical Imaging
-  - Video Foundation Models
-  - Cross-Domain Evaluation
-  - Scientific Applications
-  - Benchmark
-  - Spatiotemporal Modeling
+  - "ICCV 2025"
+  - "Medical Imaging"
+  - "Video Foundation Models"
+  - "Cross-Domain Evaluation"
+  - "Scientific Applications"
+  - "Benchmark"
+  - "Spatiotemporal Modeling"
 date: 2026-05-08
 content_hash: 4add54e08dddbc74
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Hierarchical Event Memory for Accurate and Low-latency Online Video Temporal Grounding
 description: >-
-  [ICCV 2025][Video Understanding][Online Video Temporal Grounding] This paper addresses the Online Video Temporal Grounding (OnVTG) task by proposing a hierarchical event memory mechanism that stores historical event information at multiple temporal scales. Combined with a segment-tree-based event proposal structure and a future prediction branch, the method achieves state-of-the-art grounding accuracy and low-latency prediction on TACoS, ActivityNet Captions, and MAD.
+  [ICCV 2025][Video Understanding][Online Video Temporal Grounding] This paper addresses the Online Video Temporal Grounding (OnVTG) task by proposing a hierarchical event memory mechanism that stores historical event info…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - Online Video Temporal Grounding
-  - Hierarchical Event Memory
-  - Event Proposal
-  - Future Prediction
-  - Low Latency
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "Online Video Temporal Grounding"
+  - "Hierarchical Event Memory"
+  - "Event Proposal"
+  - "Future Prediction"
+  - "Low Latency"
 date: 2026-05-08
 content_hash: a54cca868860092e
 ---

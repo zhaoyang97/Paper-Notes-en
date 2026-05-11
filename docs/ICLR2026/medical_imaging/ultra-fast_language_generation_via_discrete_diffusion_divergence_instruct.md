@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Ultra-Fast Language Generation via Discrete Diffusion Divergence Instruct
 description: >-
-  [ICLR 2026][Medical Imaging][Discrete Diffusion] This paper proposes DiDi-Instruct, a distillation framework based on Integrated KL Divergence (IKL) minimization that compresses a pretrained diffusion large language model (dLLM) into a few-step student model. Through four key designs—adversarial density ratio estimation, grouped reward normalization, score decomposition, and a Reward-Guided Ancestral Sampler (RGAS)—the student model surpasses the 1024-step teacher's perplexity on OpenWebText using only 16 steps, achieving up to 64× inference speedup at a training cost of just 1 GPU hour.
+  [ICLR 2026][Medical Imaging][Discrete Diffusion] This paper proposes DiDi-Instruct, a distillation framework based on Integrated KL Divergence (IKL) minimization that compresses a pretrained diffusion large language mode…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - Discrete Diffusion
-  - Distillation
-  - Masked Diffusion Model
-  - KL Divergence
-  - Few-Step Generation
-  - Policy Gradient
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Discrete Diffusion"
+  - "Distillation"
+  - "Masked Diffusion Model"
+  - "KL Divergence"
+  - "Few-Step Generation"
+  - "Policy Gradient"
 date: 2026-05-08
 content_hash: 8b9f4f5d0215c212
 ---

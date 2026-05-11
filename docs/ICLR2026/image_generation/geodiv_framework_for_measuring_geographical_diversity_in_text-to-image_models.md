@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GeoDiv: Framework for Measuring Geographical Diversity in Text-to-Image Models
 description: >-
-  [ICLR 2026][Image Generation][Geographical Diversity] This paper proposes GeoDiv, a framework that leverages the world knowledge embedded in LLMs and VLMs to systematically evaluate the geographical diversity of T2I models along two dimensions — the Socioeconomic Visual Index (SEVI) and the Visual Diversity Index (VDI) — revealing systematic impoverishment biases in model outputs for countries such as India and Nigeria.
+  [ICLR 2026][Image Generation][Geographical Diversity] This paper proposes GeoDiv, a framework that leverages the world knowledge embedded in LLMs and VLMs to systematically evaluate the geographical diversity of T2I mode…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Geographical Diversity
-  - Text-to-Image Models
-  - Socioeconomic Bias
-  - VLM Evaluation
-  - Interpretable Metrics
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Geographical Diversity"
+  - "Text-to-Image Models"
+  - "Socioeconomic Bias"
+  - "VLM Evaluation"
+  - "Interpretable Metrics"
 date: 2026-05-08
 content_hash: 0ce0264db4d9bb00
 ---

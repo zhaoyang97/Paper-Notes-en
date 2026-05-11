@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] SPENCE: A Syntactic Probe for Detecting Contamination in NL2SQL Benchmarks
 description: >-
-  [ACL 2026][data contamination detection] SPENCE detects and quantifies data contamination of LLMs on NL2SQL benchmarks by systematically generating syntactic paraphrases of benchmark queries and measuring the decay of execution accuracy as a function of syntactic distance. Older benchmarks (e.g., Spider) exhibit stronger contamination signals, while the more recent BIRD benchmark is largely unaffected.
+  [ACL 2026][Interpretability][data contamination detection] SPENCE detects and quantifies data contamination of LLMs on NL2SQL benchmarks by systematically generating syntactic paraphrases of benchmark queries and measuri…
 tags:
-  - ACL 2026
-  - data contamination detection
-  - NL2SQL
-  - syntactic probe
-  - benchmark leakage
-  - generalization evaluation
+  - "ACL 2026"
+  - "Interpretability"
+  - "data contamination detection"
+  - "NL2SQL"
+  - "syntactic probe"
+  - "benchmark leakage"
+  - "generalization evaluation"
 date: 2026-05-08
 content_hash: 4fccb14ad45a0ee8
 ---

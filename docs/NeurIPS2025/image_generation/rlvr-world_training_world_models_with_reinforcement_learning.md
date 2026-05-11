@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RLVR-World: Training World Models with Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Image Generation][World Models] This paper proposes the RLVR-World framework, extending the Reinforcement Learning with Verifiable Rewards (RLVR) paradigm to world model training. By directly optimizing target metrics (e.g., prediction accuracy, perceptual quality) as verifiable rewards, the framework achieves significant improvements on both language and video world models.
+  [NeurIPS 2025][Image Generation][World Models] This paper proposes the RLVR-World framework, extending the Reinforcement Learning with Verifiable Rewards (RLVR) paradigm to world model training. By directly optimizing ta…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - World Models
-  - RLVR
-  - GRPO
-  - Video Prediction
-  - Autoregressive Generation
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "World Models"
+  - "RLVR"
+  - "GRPO"
+  - "Video Prediction"
+  - "Autoregressive Generation"
 date: 2026-05-08
 content_hash: df78a2c7c4d82024
 ---

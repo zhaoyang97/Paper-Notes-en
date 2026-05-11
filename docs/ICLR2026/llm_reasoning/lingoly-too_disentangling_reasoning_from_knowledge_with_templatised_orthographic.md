@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LingOly-TOO: Disentangling Reasoning from Knowledge with Templatised Orthographic Obfuscation
 description: >-
-  [ICLR 2026][LLM Reasoning][reasoning benchmark] This paper introduces LingOly-TOO, a benchmark that applies expert-designed grapheme-level permutations to linguistics olympiad problems, preserving reasoning logic while eliminating knowledge and memorization shortcuts. The obfuscation reduces the top score across 15 frontier models from 0.59 to 0.48, systematically quantifying the extent to which LLM reasoning ability is overestimated due to knowledge effects.
+  [ICLR 2026][LLM Reasoning][reasoning benchmark] This paper introduces LingOly-TOO, a benchmark that applies expert-designed grapheme-level permutations to linguistics olympiad problems…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - reasoning benchmark
-  - orthographic obfuscation
-  - linguistics olympiad
-  - knowledge contamination
-  - LLM evaluation
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "reasoning benchmark"
+  - "orthographic obfuscation"
+  - "linguistics olympiad"
+  - "knowledge contamination"
+  - "LLM evaluation"
 date: 2026-05-08
 content_hash: 90894a67a5f73fec
 ---

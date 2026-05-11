@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Step-CoT: Stepwise Visual Chain-of-Thought for Medical Visual Question Answering
 description: >-
-  [CVPR 2026][LLM Reasoning][Medical VQA] This work constructs Step-CoT, the first structured multi-step CoT medical reasoning dataset aligned with clinical diagnostic workflows (10K+ cases / 70K QA pairs), and proposes a teacher-student framework based on graph attention networks for stepwise reasoning supervision, improving both accuracy and interpretability in Med-VQA.
+  [CVPR 2026][LLM Reasoning][Medical VQA] This work constructs Step-CoT, the first structured multi-step CoT medical reasoning dataset aligned with clinical diagnostic workflows (10K+ cases / 70K QA pairs)…
 tags:
-  - CVPR 2026
-  - LLM Reasoning
-  - Medical VQA
-  - Chain-of-Thought
-  - Stepwise Reasoning
-  - Knowledge Distillation
-  - Chest X-Ray
+  - "CVPR 2026"
+  - "LLM Reasoning"
+  - "Medical VQA"
+  - "Chain-of-Thought"
+  - "Stepwise Reasoning"
+  - "Knowledge Distillation"
+  - "Chest X-Ray"
 date: 2026-05-08
 content_hash: 229356471716a808
 ---

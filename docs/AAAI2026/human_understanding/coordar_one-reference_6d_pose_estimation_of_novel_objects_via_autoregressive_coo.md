@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CoordAR: One-Reference 6D Pose Estimation of Novel Objects via Autoregressive Coordinate Map Generation
 description: >-
-  [AAAI 2026][Human Understanding][6D pose estimation] This paper proposes CoordAR, which formulates 3D-3D correspondence estimation in single-reference-view 6D pose estimation as an autoregressive generation problem over discrete tokens. Through coordinate map tokenization, modality-decoupled encoding, and an autoregressive Transformer decoder, CoordAR substantially outperforms existing single-view methods on multiple benchmarks and demonstrates strong robustness to challenging scenarios such as symmetry and occlusion.
+  [AAAI 2026][Human Understanding][6D pose estimation] This paper proposes CoordAR, which formulates 3D-3D correspondence estimation in single-reference-view 6D pose estimation as an autoregressive generation problem over…
 tags:
-  - AAAI 2026
-  - Human Understanding
-  - 6D pose estimation
-  - autoregressive
-  - coordinate map
-  - VQ-VAE
-  - single reference view
+  - "AAAI 2026"
+  - "Human Understanding"
+  - "6D pose estimation"
+  - "autoregressive"
+  - "coordinate map"
+  - "VQ-VAE"
+  - "single reference view"
 date: 2026-05-08
 content_hash: ad5a29ee8ff469f6
 ---

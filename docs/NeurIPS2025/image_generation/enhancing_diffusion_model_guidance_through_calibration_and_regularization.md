@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Enhancing Diffusion Model Guidance through Calibration and Regularization
 description: >-
-  [NeurIPS 2025 (SPIGM Workshop)][Image Generation][classifier guidance] To address the vanishing gradient problem caused by overconfident classifiers in classifier-guided diffusion models, this paper proposes two complementary approaches: (1) a Smooth ECE calibration loss for fine-tuning classifiers, yielding ~3% FID improvement; and (2) regularized sampling guidance based on f-divergences (RKL/FKL/JS) that requires no retraining, achieving FID 2.13 on ImageNet 128×128.
+  [NeurIPS 2025 (SPIGM Workshop)][Image Generation][classifier guidance] To address the vanishing gradient problem caused by overconfident classifiers in classifier-guided diffusion models…
 tags:
-  - NeurIPS 2025 (SPIGM Workshop)
-  - Image Generation
-  - classifier guidance
-  - diffusion model
-  - f-divergence
-  - calibration
-  - conditional generation
+  - "NeurIPS 2025 (SPIGM Workshop)"
+  - "Image Generation"
+  - "classifier guidance"
+  - "diffusion model"
+  - "f-divergence"
+  - "calibration"
+  - "conditional generation"
 date: 2026-05-08
 content_hash: 1952ba25091fb40d
 ---

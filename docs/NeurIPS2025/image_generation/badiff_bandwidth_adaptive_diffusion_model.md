@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BADiff: Bandwidth Adaptive Diffusion Model
 description: >-
-  [NeurIPS 2025][Image Generation][bandwidth-adaptive] This paper proposes BADiff—the first bandwidth-adaptive diffusion model—which embeds target entropy constraints as explicit conditions into the diffusion reverse process, coupled with a differentiable entropy regularization loss and an adaptive stopping policy. The model dynamically adjusts generation quality according to real-time bandwidth and terminates sampling adaptively, reducing computational overhead while maintaining perceptual quality. This approach fundamentally avoids the compression artifacts and computational waste inherent in the conventional "high-quality generation → post-compression" pipeline.
+  [NeurIPS 2025][Image Generation][bandwidth-adaptive] This paper proposes BADiff—the first bandwidth-adaptive diffusion model—which embeds target entropy constraints as explicit conditions into the diffusion reverse proce…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - bandwidth-adaptive
-  - diffusion model
-  - entropy conditioning
-  - early stopping
-  - cloud streaming
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "bandwidth-adaptive"
+  - "diffusion model"
+  - "entropy conditioning"
+  - "early stopping"
+  - "cloud streaming"
 date: 2026-05-08
 content_hash: 84e873a7d6c7f8ee
 ---

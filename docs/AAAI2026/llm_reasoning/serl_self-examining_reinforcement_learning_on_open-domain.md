@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SERL: Self-Examining Reinforcement Learning on Open-Domain
 description: >-
-  [AAAI 2026][LLM Reasoning][Self-improvement] This paper proposes SERL, a self-improvement framework in which an LLM simultaneously acts as an Actor (generator) and a Judge (evaluator). It derives reward signals from the model's own judgments via the Copeland pairwise comparison method, requiring neither external reward models nor human annotations. SERL improves Qwen3-8B from 52.37% to 59.90% (+7.53%) on AlpacaEval 2.0, approaching the performance of Qwen3-32B.
+  [AAAI 2026][LLM Reasoning][Self-improvement] This paper proposes SERL, a self-improvement framework in which an LLM simultaneously acts as an Actor (generator) and a Judge (evaluator). It derives reward signals from the…
 tags:
-  - AAAI 2026
-  - LLM Reasoning
-  - Self-improvement
-  - Reinforcement Learning
-  - Pairwise Comparison
-  - Copeland Method
-  - External-Reward-Free
+  - "AAAI 2026"
+  - "LLM Reasoning"
+  - "Self-improvement"
+  - "Reinforcement Learning"
+  - "Pairwise Comparison"
+  - "Copeland Method"
+  - "External-Reward-Free"
 date: 2026-05-08
 content_hash: eb4f622211d1d916
 ---

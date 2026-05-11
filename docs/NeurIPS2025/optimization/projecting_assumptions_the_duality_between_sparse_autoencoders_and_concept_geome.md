@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Projecting Assumptions: The Duality Between Sparse Autoencoders and Concept Geometry
 description: >-
-  [NeurIPS 2025][Optimization][Sparse Autoencoders] This paper reveals a fundamental duality between sparse autoencoder (SAE) architectures and the concept structures they are capable of discovering — each SAE implicitly assumes a particular organization of concepts, and when this assumption is mismatched, concepts are systematically missed. Based on this analysis, the authors propose SpaDE, a novel SAE that accounts for nonlinear separability and dimensional heterogeneity.
+  [NeurIPS 2025][Optimization][Sparse Autoencoders] This paper reveals a fundamental duality between sparse autoencoder (SAE) architectures and the concept structures they are capable of discovering — each SAE implicitly a…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Sparse Autoencoders
-  - Concept Geometry
-  - Projection Nonlinearity
-  - Interpretability
-  - Duality
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Sparse Autoencoders"
+  - "Concept Geometry"
+  - "Projection Nonlinearity"
+  - "Interpretability"
+  - "Duality"
 date: 2026-05-08
 content_hash: dc15d008b43a3133
 ---

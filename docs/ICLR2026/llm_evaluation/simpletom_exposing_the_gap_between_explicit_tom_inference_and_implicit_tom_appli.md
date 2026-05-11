@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SimpleToM: Exposing the Gap between Explicit ToM Inference and Implicit ToM Application in LLMs
 description: >-
-  [ICLR 2026][LLM Evaluation][Theory of Mind] SimpleToM exposes a critical gap in LLMs' Theory of Mind capabilities: frontier models can accurately infer others' mental states (explicit ToM), but performance drops sharply when this knowledge must be applied to behavior prediction and behavior judgment (applied ToM), revealing a substantial divide between "knowing what" and "knowing how to use what is known."
+  [ICLR 2026][LLM Evaluation][Theory of Mind] SimpleToM exposes a critical gap in LLMs' Theory of Mind capabilities: frontier models can accurately infer others' mental states (explicit ToM)…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - Theory of Mind
-  - ToM
-  - LLM Social Reasoning
-  - Explicit vs. Applied ToM
-  - Information Asymmetry
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Theory of Mind"
+  - "ToM"
+  - "LLM Social Reasoning"
+  - "Explicit vs. Applied ToM"
+  - "Information Asymmetry"
 date: 2026-05-08
 content_hash: 74fc4a7e4a0dfdbc
 ---

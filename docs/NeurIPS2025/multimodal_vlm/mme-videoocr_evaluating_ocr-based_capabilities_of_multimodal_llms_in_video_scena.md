@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MME-VideoOCR: Evaluating OCR-Based Capabilities of Multimodal LLMs in Video Scenarios
 description: >-
-  [NeurIPS 2025][Multimodal VLM][video OCR] This paper introduces MME-VideoOCR, a comprehensive video OCR evaluation benchmark comprising 25 tasks, 44 scenarios, 1,464 videos, and 2,000 manually annotated QA pairs, spanning three levels of text recognition, understanding, and reasoning. Evaluation of 18 state-of-the-art MLLMs reveals that the strongest model (Gemini-2.5 Pro) achieves only 73.7% overall, with cross-frame understanding tasks falling below 25%.
+  [NeurIPS 2025][Multimodal VLM][video OCR] This paper introduces MME-VideoOCR, a comprehensive video OCR evaluation benchmark comprising 25 tasks, 44 scenarios, 1,464 videos, and 2,000 manually annotated QA pairs…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - video OCR
-  - benchmark
-  - cross-frame understanding
-  - language prior bias
-  - multimodal LLM evaluation
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "video OCR"
+  - "benchmark"
+  - "cross-frame understanding"
+  - "language prior bias"
+  - "multimodal LLM evaluation"
 date: 2026-05-08
 content_hash: 913cace3e2adef69
 ---

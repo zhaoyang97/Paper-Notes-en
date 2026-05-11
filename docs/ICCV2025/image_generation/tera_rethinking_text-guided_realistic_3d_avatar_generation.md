@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TeRA: Rethinking Text-guided Realistic 3D Avatar Generation
 description: >-
-  [ICCV 2025][Image Generation][3D Avatar] TeRA is proposed as the first text-guided 3D realistic avatar generation framework based on a latent diffusion model. By distilling a large-scale human reconstruction model to construct a structured latent space, TeRA generates realistic 3D human avatars in 12 seconds—two orders of magnitude faster than SDS-based methods.
+  [ICCV 2025][Image Generation][3D Avatar] TeRA is proposed as the first text-guided 3D realistic avatar generation framework based on a latent diffusion model. By distilling a large-scale human reconstruction model to con…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - 3D Avatar
-  - Latent Diffusion
-  - Text-to-3D
-  - SMPL-X
-  - UV Gaussian
+  - "ICCV 2025"
+  - "Image Generation"
+  - "3D Avatar"
+  - "Latent Diffusion"
+  - "Text-to-3D"
+  - "SMPL-X"
+  - "UV Gaussian"
 date: 2026-05-08
 content_hash: caae3f4f38edbf45
 ---

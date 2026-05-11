@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GeoPurify: A Data-Efficient Geometric Distillation Framework for Open-Vocabulary 3D Segmentation
 description: >-
-  [ICLR 2026][3D Vision][Open-vocabulary 3D segmentation] GeoPurify is proposed as a framework that purifies noisy features projected from 2D VLMs into 3D by distilling geometric priors from a 3D self-supervised teacher model, achieving performance on par with or superior to full-data SOTA open-vocabulary 3D segmentation using only ~1.5% of training data.
+  [ICLR 2026][3D Vision][Open-vocabulary 3D segmentation] GeoPurify is proposed as a framework that purifies noisy features projected from 2D VLMs into 3D by distilling geometric priors from a 3D self-supervised teacher mo…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Open-vocabulary 3D segmentation
-  - knowledge distillation
-  - geometric priors
-  - VLM feature purification
-  - data efficiency
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Open-vocabulary 3D segmentation"
+  - "knowledge distillation"
+  - "geometric priors"
+  - "VLM feature purification"
+  - "data efficiency"
 date: 2026-05-08
 content_hash: 8b8695f0cb977378
 ---

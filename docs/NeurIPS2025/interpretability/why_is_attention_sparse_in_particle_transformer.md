@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Why Is Attention Sparse in Particle Transformer?
 description: >-
-  [NeurIPS 2025][Particle Transformer] This paper systematically analyzes the near-binary sparse attention phenomenon observed in Particle Transformer (ParT) after training on jet tagging tasks. Through cross-dataset comparisons and ablation studies, it demonstrates that the sparsity primarily originates from the attention mechanism itself rather than the physics-inspired interaction matrix. Nevertheless, the interaction matrix remains indispensable to final performance by influencing the argmax particle selection for the vast majority of tokens.
+  [NeurIPS 2025][Interpretability][Particle Transformer] This paper systematically analyzes the near-binary sparse attention phenomenon observed in Particle Transformer (ParT) after training on jet tagging tasks. Through c…
 tags:
-  - NeurIPS 2025
-  - Particle Transformer
-  - sparse attention
-  - jet tagging
-  - interaction matrix
-  - interpretability
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "Particle Transformer"
+  - "sparse attention"
+  - "jet tagging"
+  - "interaction matrix"
 date: 2026-05-08
 content_hash: 544657001c081183
 ---

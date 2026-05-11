@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Evaluating Multiple Models Using Labeled and Unlabeled Data
 description: >-
-  [NeurIPS 2025][Social Computing][semi-supervised evaluation] This paper proposes **SSME (Semi-Supervised Model Evaluation)**, which leverages a small amount of labeled data and a large amount of unlabeled data to estimate the joint distribution $P(y, \mathbf{s})$ of multiple classifiers via a semi-supervised mixture model, enabling accurate classifier performance evaluation with errors reduced to 1/5 of those incurred when using labeled data alone.
+  [NeurIPS 2025][Social Computing][semi-supervised evaluation] This paper proposes **SSME (Semi-Supervised Model Evaluation)**, which leverages a small amount of labeled data and a large amount of unlabeled data to estimat…
 tags:
-  - NeurIPS 2025
-  - Social Computing
-  - semi-supervised evaluation
-  - model evaluation
-  - mixture model
-  - unlabeled data
-  - classifier performance
+  - "NeurIPS 2025"
+  - "Social Computing"
+  - "semi-supervised evaluation"
+  - "model evaluation"
+  - "mixture model"
+  - "unlabeled data"
+  - "classifier performance"
 date: 2026-05-08
 content_hash: c75a7c54d88e04e0
 ---

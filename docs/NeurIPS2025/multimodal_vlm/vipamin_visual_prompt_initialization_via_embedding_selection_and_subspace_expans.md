@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VIPAMIN: Visual Prompt Initialization via Embedding Selection and Subspace Expansion
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Visual Prompt Tuning] This paper proposes VIPAMIN—a zero-extra-parameter visual prompt initialization strategy comprising two modules: attention-guided semantic Matching and orthogonal subspace injection (Orthogonalizing). It addresses two failure modes of self-supervised VPT—prompt attention uniformization and subspace collapse—requiring only a single forward pass, and achieves state-of-the-art performance across 24 visual tasks.
+  [NeurIPS 2025][Multimodal VLM][Visual Prompt Tuning] This paper proposes VIPAMIN—a zero-extra-parameter visual prompt initialization strategy comprising two modules: attention-guided semantic Matching and orthogonal subs…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Visual Prompt Tuning
-  - Parameter-Efficient Fine-Tuning
-  - Self-Supervised Learning
-  - Vision Transformer
-  - Subspace Expansion
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Visual Prompt Tuning"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Self-Supervised Learning"
+  - "Vision Transformer"
+  - "Subspace Expansion"
 date: 2026-05-08
 content_hash: a5d06f2e8c28a796
 ---

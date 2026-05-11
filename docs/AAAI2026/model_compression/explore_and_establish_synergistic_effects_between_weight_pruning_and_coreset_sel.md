@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Explore and Establish Synergistic Effects between Weight Pruning and Coreset Selection
 description: >-
-  [AAAI 2026][Model Compression][Weight Pruning] This paper presents the first systematic investigation of the interaction between weight pruning and coreset selection, proposing the SWaST mechanism to alternately perform both operations and establish synergistic effects, while introducing a state preservation mechanism to address the "dual loss" problem, achieving up to 17.83% accuracy improvement under 10%–90% FLOPs reduction.
+  [AAAI 2026][Model Compression][Weight Pruning] This paper presents the first systematic investigation of the interaction between weight pruning and coreset selection…
 tags:
-  - AAAI 2026
-  - Model Compression
-  - Weight Pruning
-  - Coreset Selection
-  - Synergistic Effects
-  - Training Acceleration
-  - State Preservation Mechanism
+  - "AAAI 2026"
+  - "Model Compression"
+  - "Weight Pruning"
+  - "Coreset Selection"
+  - "Synergistic Effects"
+  - "Training Acceleration"
+  - "State Preservation Mechanism"
 date: 2026-05-08
 content_hash: fe21faaa21b6a1cf
 ---

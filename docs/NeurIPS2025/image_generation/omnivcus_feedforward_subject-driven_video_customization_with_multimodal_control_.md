@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OmniVCus: Feedforward Subject-driven Video Customization with Multimodal Control Conditions
 description: >-
-  [NeurIPS 2025][Image Generation][Subject-driven video customization] OmniVCus proposes a feedforward DiT framework that achieves multi-subject, multimodal-controlled video customization through a data construction pipeline called VideoCus-Factory and two novel embedding mechanisms (Lottery Embedding and Temporally Aligned Embedding), significantly surpassing prior SOTA in identity preservation and controllability.
+  [NeurIPS 2025][Image Generation][Subject-driven video customization] OmniVCus proposes a feedforward DiT framework that achieves multi-subject, multimodal-controlled video customization through a data construction pipeli…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Subject-driven video customization
-  - multimodal control
-  - DiT
-  - multi-subject generation
-  - feedforward generation
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Subject-driven video customization"
+  - "multimodal control"
+  - "DiT"
+  - "multi-subject generation"
+  - "feedforward generation"
 date: 2026-05-08
 content_hash: 6fccfddc2b2f1046
 ---

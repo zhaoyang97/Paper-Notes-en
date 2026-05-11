@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] RAxSS: Retrieval-Augmented Sparse Sampling for Explainable Variable-Length Medical Time Series Classification
 description: >-
-  [Medical Imaging] This paper proposes RAxSS, a framework that integrates retrieval augmentation into the random sparse sampling (SSS) pipeline. By replacing uniform averaging with intra-window similarity-weighted aggregation, RAxSS maintains competitive performance on variable-length medical time series classification while providing an interpretable evidence chain spanning from "where" to "why."
+  [Medical Imaging] This paper proposes RAxSS, a framework that integrates retrieval augmentation into the random sparse sampling (SSS) pipeline. By replacing uniform averaging with intra-window similarity-weighted aggrega…
 tags:
-  - Medical Imaging
+  - "Medical Imaging"
 date: 2026-05-08
 content_hash: 2be589f5260d7b36
 ---

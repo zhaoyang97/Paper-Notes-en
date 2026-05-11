@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mind the Gap: Bridging Thought Leap for Improved Chain-of-Thought Tuning
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Chain-of-Thought] This paper provides the first systematic formalization of the "Thought Leap" phenomenon in CoT reasoning chains, and proposes CoT-Bridge, a model that automatically detects and fills omitted intermediate steps. It achieves up to +5.87% improvement on NuminaMath and can serve as a plug-and-play module to enhance distillation and RL pipelines.
+  [NeurIPS 2025][LLM Reasoning][Chain-of-Thought] This paper provides the first systematic formalization of the "Thought Leap" phenomenon in CoT reasoning chains, and proposes CoT-Bridge…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - Chain-of-Thought
-  - Thought Leap
-  - Reasoning Completeness
-  - Data Augmentation
-  - Mathematical Reasoning
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "Chain-of-Thought"
+  - "Thought Leap"
+  - "Reasoning Completeness"
+  - "Data Augmentation"
+  - "Mathematical Reasoning"
 date: 2026-05-08
 content_hash: 59168e72d76c9ffc
 ---

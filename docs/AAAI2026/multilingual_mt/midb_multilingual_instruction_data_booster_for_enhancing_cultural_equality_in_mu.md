@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] MIDB: Multilingual Instruction Data Booster for Enhancing Cultural Equality in Multilingual Instruction Synthesis
 description: >-
-  [AAAI 2026][Multilingual instruction tuning] This paper proposes MIDB (Multilingual Instruction Data Booster), a unified model trained on 36.8k expert-annotated revision samples, which automatically repairs content errors, machine translation defects, and localization deficiencies in multilingual synthetic instruction data, significantly improving instruction data quality across 16 languages and enhancing downstream LLM multilingual/cultural understanding capabilities.
+  [AAAI 2026][Multilingual & Machine Translation][Multilingual instruction tuning] This paper proposes MIDB (Multilingual Instruction Data Booster), a unified model trained on 36.8k expert-annotated revision samples…
 tags:
-  - AAAI 2026
-  - Multilingual instruction tuning
-  - data quality enhancement
-  - cultural fairness
-  - machine translation correction
-  - LLM multilingual capability
+  - "AAAI 2026"
+  - "Multilingual & Machine Translation"
+  - "Multilingual instruction tuning"
+  - "data quality enhancement"
+  - "cultural fairness"
+  - "machine translation correction"
+  - "LLM multilingual capability"
 date: 2026-05-08
 content_hash: c78a6489958fa1c5
 ---

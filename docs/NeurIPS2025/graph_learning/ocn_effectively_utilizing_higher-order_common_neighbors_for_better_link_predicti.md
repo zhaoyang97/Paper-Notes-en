@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OCN: Effectively Utilizing Higher-Order Common Neighbors for Better Link Prediction
 description: >-
-  [NeurIPS 2025][Graph Learning][Link Prediction] This paper identifies redundancy and over-smoothing issues in higher-order common neighbors (CN) for link prediction, and proposes orthogonalization (Gram-Schmidt to remove inter-order linear dependence) combined with normalization (dividing by path count, a generalized resource allocation heuristic) as a solution. The method achieves an average improvement of 7.7% in HR@100 across 7 datasets, with a 13.3% gain on the DDI dataset.
+  [NeurIPS 2025][Graph Learning][Link Prediction] This paper identifies redundancy and over-smoothing issues in higher-order common neighbors (CN) for link prediction…
 tags:
-  - NeurIPS 2025
-  - Graph Learning
-  - Link Prediction
-  - Higher-Order Common Neighbors
-  - Orthogonalization
-  - Gram-Schmidt
-  - Resource Allocation Heuristic
+  - "NeurIPS 2025"
+  - "Graph Learning"
+  - "Link Prediction"
+  - "Higher-Order Common Neighbors"
+  - "Orthogonalization"
+  - "Gram-Schmidt"
+  - "Resource Allocation Heuristic"
 date: 2026-05-08
 content_hash: 303c0e5f06ec2119
 ---

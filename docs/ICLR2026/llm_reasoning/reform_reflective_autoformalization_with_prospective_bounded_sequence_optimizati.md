@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] ReForm: Reflective Autoformalization with Prospective Bounded Sequence Optimization
 description: >-
-  [ICLR 2026][LLM Reasoning][autoformalization] This paper proposes ReForm, a reflective autoformalization paradigm that transforms the process of converting natural-language mathematics problems into Lean formal statements from single-pass generation into an iterative "generate → semantic self-verify → correct" loop. It further introduces the PBSO algorithm to optimize heterogeneous reward signals, achieving an average improvement of 22.6 percentage points over the strongest baselines across four benchmarks.
+  [ICLR 2026][LLM Reasoning][autoformalization] This paper proposes ReForm, a reflective autoformalization paradigm that transforms the process of converting natural-language mathematics problems into Lean formal statement…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - autoformalization
-  - Lean
-  - semantic consistency
-  - self-correction
-  - reinforcement-learning
-  - heterogeneous reward
-  - PBSO
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "autoformalization"
+  - "Lean"
+  - "semantic consistency"
+  - "self-correction"
+  - "reinforcement-learning"
+  - "heterogeneous reward"
+  - "PBSO"
 date: 2026-05-08
 content_hash: b4b15d78576411bd
 ---

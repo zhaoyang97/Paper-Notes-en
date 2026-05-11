@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Affordance-Guided Coarse-to-Fine Exploration for Base Placement in Open-Vocabulary Mobile Manipulation
 description: >-
-  [AAAI 2026][Robotics][open-vocabulary mobile manipulation] This paper addresses the base placement problem in open-vocabulary mobile manipulation (OVMM) and proposes a zero-shot framework that constructs a cross-modal representation (Affordance RGB + Obstacle Map+) to project semantic affordance cues onto an obstacle map, followed by a coarse-to-fine iterative optimization that balances semantic and geometric constraints. The method achieves an 85% success rate across five manipulation tasks, substantially outperforming both geometric planners and pure VLM-based approaches.
+  [AAAI 2026][Robotics][open-vocabulary mobile manipulation] This paper addresses the base placement problem in open-vocabulary mobile manipulation (OVMM) and proposes a zero-shot framework that constructs a cross-modal re…
 tags:
-  - AAAI 2026
-  - Robotics
-  - open-vocabulary mobile manipulation
-  - base placement
-  - affordance reasoning
-  - VLM visual prompting
-  - coarse-to-fine optimization
+  - "AAAI 2026"
+  - "Robotics"
+  - "open-vocabulary mobile manipulation"
+  - "base placement"
+  - "affordance reasoning"
+  - "VLM visual prompting"
+  - "coarse-to-fine optimization"
 date: 2026-05-08
 content_hash: 58d1a28c19019728
 ---

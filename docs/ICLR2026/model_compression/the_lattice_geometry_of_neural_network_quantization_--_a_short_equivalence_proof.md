@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] The Lattice Geometry of Neural Network Quantization -- A Short Equivalence Proof of GPTQ and Babai's Algorithm
 description: >-
-  [ICLR 2026][Model Compression][GPTQ] Independently of Chen et al. (2026), this paper provides a more concise and elegant proof that GPTQ is equivalent to Babai's nearest plane algorithm, and clarifies the prospect of lattice basis reduction for improving neural network quantization.
+  [ICLR 2026][Model Compression][GPTQ] Independently of Chen et al. (2026), this paper provides a more concise and elegant proof that GPTQ is equivalent to Babai's nearest plane algorithm…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - GPTQ
-  - Babai's algorithm
-  - lattice theory
-  - CVP
-  - quantization
-  - equivalence proof
+  - "ICLR 2026"
+  - "Model Compression"
+  - "GPTQ"
+  - "Babai's algorithm"
+  - "lattice theory"
+  - "CVP"
+  - "quantization"
+  - "equivalence proof"
 date: 2026-05-08
 content_hash: 4a1f409078df1b30
 ---

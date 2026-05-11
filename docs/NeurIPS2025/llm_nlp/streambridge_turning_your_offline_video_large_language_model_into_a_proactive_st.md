@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] StreamBridge: Turning Your Offline Video Large Language Model into a Proactive Streaming Model
 description: >-
-  [NeurIPS 2025][LLM/NLP][Streaming Video Understanding] StreamBridge proposes a simple and generalizable framework that enables multi-turn streaming interaction via a memory buffer with round-decayed compression, and achieves proactive response through a decoupled lightweight activation model. Combined with the purpose-built Stream-IT dataset, it successfully converts offline Video-LLMs (e.g., Qwen2-VL, LLaVA-OV) into streaming assistants, surpassing GPT-4o and Gemini 1.5 Pro on OVO-Bench and Streaming-Bench.
+  [NeurIPS 2025][LLM/NLP][Streaming Video Understanding] StreamBridge proposes a simple and generalizable framework that enables multi-turn streaming interaction via a memory buffer with round-decayed compression…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - Streaming Video Understanding
-  - Video-LLM
-  - Proactive Response
-  - Multi-turn Interaction
-  - Activation Model
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "Streaming Video Understanding"
+  - "Video-LLM"
+  - "Proactive Response"
+  - "Multi-turn Interaction"
+  - "Activation Model"
 date: 2026-05-08
 content_hash: 1bdf23bf52367e24
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Moment- and Power-Spectrum-Based Gaussianity Regularization for Text-to-Image Models
 description: >-
-  [NeurIPS 2025][Image Generation][Gaussianity Regularization] This paper proposes a unified Gaussianity regularization framework that combines moment matching in the spatial domain with power spectrum matching in the frequency domain. It subsumes existing regularizers (KL divergence, kurtosis, norm) as special cases, and achieves the equivalent effect of PRNO's $\mathcal{O}(D^2)$ approach at $\mathcal{O}(D\log D)$ complexity, significantly outperforming all baselines on reward alignment tasks for text-to-image models.
+  [NeurIPS 2025][Image Generation][Gaussianity Regularization] This paper proposes a unified Gaussianity regularization framework that combines moment matching in the spatial domain with power spectrum matching in the freq…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Gaussianity Regularization
-  - Normalizing Flow
-  - Power Spectrum
-  - Moment Matching
-  - Reward Alignment
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Gaussianity Regularization"
+  - "Normalizing Flow"
+  - "Power Spectrum"
+  - "Moment Matching"
+  - "Reward Alignment"
 date: 2026-05-08
 content_hash: 3c77ef18d6d953e4
 ---

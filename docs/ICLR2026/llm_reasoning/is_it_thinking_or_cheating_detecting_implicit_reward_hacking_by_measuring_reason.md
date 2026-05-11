@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Is It Thinking or Cheating? Detecting Implicit Reward Hacking by Measuring Reasoning Effort
 description: >-
-  [ICLR 2026][LLM Reasoning][reward hacking] This paper proposes TRACE (Truncated Reasoning AUC Evaluation), a method that quantifies reasoning effort by progressively truncating chain-of-thought (CoT) reasoning and measuring how early a model can obtain reward. TRACE detects implicit reward hacking that CoT monitoring fails to identify, achieving detection F1 improvements of over 65% and 30% compared to the strongest CoT monitors on math and code tasks, respectively.
+  [ICLR 2026][LLM Reasoning][reward hacking] This paper proposes TRACE (Truncated Reasoning AUC Evaluation), a method that quantifies reasoning effort by progressively truncating chain-of-thought (CoT) reasoning and measur…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - reward hacking
-  - chain-of-thought
-  - reasoning effort
-  - TRACE
-  - AI safety
-  - scalable oversight
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "reward hacking"
+  - "chain-of-thought"
+  - "reasoning effort"
+  - "TRACE"
+  - "AI safety"
+  - "scalable oversight"
 date: 2026-05-08
 content_hash: c9d771ae26e82d41
 ---

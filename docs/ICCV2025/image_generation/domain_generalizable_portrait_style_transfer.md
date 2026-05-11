@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Domain Generalizable Portrait Style Transfer
 description: >-
-  [ICCV 2025][Image Generation][Portrait Style Transfer] DGPST proposes a diffusion-based portrait style transfer framework that establishes cross-domain dense semantic correspondences via a semantic adapter to warp the reference image, employs AdaIN-Wavelet Transform for latent space initialization to balance stylization and content preservation, and generates final results through a dual-conditional diffusion model combining ControlNet (high-frequency structural guidance) and a style adapter (style guidance). The model is trained solely on 30K real portrait photographs yet generalizes to diverse domains including photos, cartoons, sketches, and anime.
+  [ICCV 2025][Image Generation][Portrait Style Transfer] DGPST proposes a diffusion-based portrait style transfer framework that establishes cross-domain dense semantic correspondences via a semantic adapter to warp the re…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Portrait Style Transfer
-  - Semantic Correspondence
-  - Wavelet Transform
-  - Diffusion Model
-  - Cross-Domain Generalization
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Portrait Style Transfer"
+  - "Semantic Correspondence"
+  - "Wavelet Transform"
+  - "Diffusion Model"
+  - "Cross-Domain Generalization"
 date: 2026-05-08
 content_hash: 385dc56442ddd7a1
 ---

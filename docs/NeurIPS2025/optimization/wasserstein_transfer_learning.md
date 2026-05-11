@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Wasserstein Transfer Learning
 description: >-
-  [NeurIPS 2025][Optimization][Transfer Learning] This paper proposes WaTL, the first transfer learning framework for distributional outputs in Wasserstein space. It adopts a three-step procedure — weighted auxiliary estimation, bias correction, and projection — combined with adaptive source selection, to transfer knowledge from source domains and improve distributional regression in the target domain.
+  [NeurIPS 2025][Optimization][Transfer Learning] This paper proposes WaTL, the first transfer learning framework for distributional outputs in Wasserstein space. It adopts a three-step procedure — weighted auxiliary estim…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Transfer Learning
-  - Wasserstein Space
-  - Fréchet Regression
-  - Optimal Transport
-  - Distributional Data Analysis
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Transfer Learning"
+  - "Wasserstein Space"
+  - "Fréchet Regression"
+  - "Optimal Transport"
+  - "Distributional Data Analysis"
 date: 2026-05-08
 content_hash: c575e4d45119d92a
 ---

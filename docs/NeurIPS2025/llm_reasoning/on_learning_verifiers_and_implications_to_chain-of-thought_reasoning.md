@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] On Learning Verifiers and Implications to Chain-of-Thought Reasoning
 description: >-
-  [NeurIPS 2025][LLM Reasoning][verifier] This paper proposes a formal PAC learning framework for Chain-of-Thought verifiers, defining three progressively stronger verification objectives (Simple → Trustable → γ-Trustable). It proves that when each problem admits only a bounded number of correct proofs, the sample complexity is $O(\log|H|)$; however, when the number of correct proofs is unbounded, the sample complexity inevitably grows to $\Theta(|H|)$, unless the verifier class satisfies additional structural assumptions such as intersection-closure. The paper also exploits the USAT problem to demonstrate a computational complexity gap between verification and generation.
+  [NeurIPS 2025][LLM Reasoning][verifier] This paper proposes a formal PAC learning framework for Chain-of-Thought verifiers, defining three progressively stronger verification objectives (Simple → Trustable → γ-Trustable)…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - verifier
-  - chain-of-thought
-  - PAC learning
-  - sample complexity
-  - trustable verification
-  - computational complexity gap
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "verifier"
+  - "chain-of-thought"
+  - "PAC learning"
+  - "sample complexity"
+  - "trustable verification"
+  - "computational complexity gap"
 date: 2026-05-08
 content_hash: 2ed7ce70ccc0cd61
 ---

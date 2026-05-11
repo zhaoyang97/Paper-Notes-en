@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Lyra: An Efficient and Speech-Centric Framework for Omni-Cognition
 description: >-
-  [ICCV 2025][Audio & Speech][omni-cognition] This paper proposes Lyra, a speech-centric omni-modal MLLM framework consisting of three core components — a DTW-based cross-modality regularizer, multi-modality LoRA, and a latent multi-modality extractor — along with the first 12K long-speech SFT dataset. Using only 2.7M training samples and modest compute, Lyra achieves state-of-the-art performance simultaneously on vision-language, vision-speech, and speech-language benchmarks, while supporting speech inputs of up to 2 hours in length.
+  [ICCV 2025][Audio & Speech][omni-cognition] This paper proposes Lyra, a speech-centric omni-modal MLLM framework consisting of three core components — a DTW-based cross-modality regularizer, multi-modality LoRA…
 tags:
-  - ICCV 2025
+  - "ICCV 2025"
   - "Audio & Speech"
-  - omni-cognition
-  - speech-centric
-  - multi-modality LoRA
-  - latent cross-modality regularizer
-  - long speech
-  - token extraction
+  - "omni-cognition"
+  - "speech-centric"
+  - "multi-modality LoRA"
+  - "latent cross-modality regularizer"
+  - "long speech"
+  - "token extraction"
 date: 2026-05-08
 content_hash: a6df411c1b5fe0d4
 ---

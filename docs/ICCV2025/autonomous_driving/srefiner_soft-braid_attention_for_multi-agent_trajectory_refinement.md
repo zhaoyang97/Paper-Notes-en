@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SRefiner: Soft-Braid Attention for Multi-Agent Trajectory Refinement
 description: >-
-  [ICCV 2025][Autonomous Driving][trajectory prediction] This paper proposes Soft-Braid Attention, which explicitly models spatiotemporal topological relationships between trajectories and between trajectories and lanes via "soft crossing points" to guide multi-agent trajectory refinement. The method achieves significant improvements over four baseline methods on both Argoverse v2 and INTERACTION datasets, establishing a new state of the art for trajectory refinement.
+  [ICCV 2025][Autonomous Driving][trajectory prediction] This paper proposes Soft-Braid Attention, which explicitly models spatiotemporal topological relationships between trajectories and between trajectories and lanes vi…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - trajectory prediction
-  - trajectory refinement
-  - topological structure
-  - braid theory
-  - multi-agent interaction
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "trajectory prediction"
+  - "trajectory refinement"
+  - "topological structure"
+  - "braid theory"
+  - "multi-agent interaction"
 date: 2026-05-08
 content_hash: 4969f5e9f61440e0
 ---

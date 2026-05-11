@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Ground What You See: Hallucination-Resistant MLLMs via Caption Feedback, Diversity-Aware Sampling, and Conflict Regularization
 description: >-
-  [AAAI2026][Multimodal VLM][MLLM hallucination] This paper identifies three root causes of hallucination in RL-based MLLM training—visual misinterpretation, limited exploration diversity, and sample conflict—and addresses each with Caption Reward, reward-variance-guided sample selection, and NTK-similarity-based InfoNCE regularization, achieving significant hallucination reduction across multiple benchmarks.
+  [AAAI2026][Multimodal VLM][MLLM hallucination] This paper identifies three root causes of hallucination in RL-based MLLM training—visual misinterpretation, limited exploration diversity…
 tags:
-  - AAAI2026
-  - Multimodal VLM
-  - MLLM hallucination
-  - reinforcement-learning
-  - GRPO
-  - caption reward
-  - NTK similarity
-  - InfoNCE
+  - "AAAI2026"
+  - "Multimodal VLM"
+  - "MLLM hallucination"
+  - "reinforcement-learning"
+  - "GRPO"
+  - "caption reward"
+  - "NTK similarity"
+  - "InfoNCE"
 date: 2026-05-08
 content_hash: 02d4fbd3ef9e26c5
 ---

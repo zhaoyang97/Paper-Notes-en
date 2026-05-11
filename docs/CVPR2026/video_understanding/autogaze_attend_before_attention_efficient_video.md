@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AutoGaze: Attend Before Attention — Efficient and Scalable Video Understanding via Autoregressive Gazing
 description: >-
-  [CVPR 2026][Video Understanding][Autoregressive gazing] This paper proposes AutoGaze, a lightweight 3M-parameter module that autoregressively selects the minimal multi-scale patch set minimizing reconstruction loss prior to ViT processing, removing redundant information from video. It achieves 4×–100× token compression and up to 19× ViT speedup, enabling MLLMs to scale to 1K-frame 4K-resolution video and reach 67.0% on VideoMME.
+  [CVPR 2026][Video Understanding][Autoregressive gazing] This paper proposes AutoGaze, a lightweight 3M-parameter module that autoregressively selects the minimal multi-scale patch set minimizing reconstruction loss prior…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Autoregressive gazing
-  - token compression
-  - multi-scale patch selection
-  - video MLLM
-  - high-resolution long video
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Autoregressive gazing"
+  - "token compression"
+  - "multi-scale patch selection"
+  - "video MLLM"
+  - "high-resolution long video"
 date: 2026-05-08
 content_hash: f8152f292a2e8606
 ---

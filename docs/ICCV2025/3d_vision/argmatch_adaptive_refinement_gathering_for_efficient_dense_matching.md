@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ArgMatch: Adaptive Refinement Gathering for Efficient Dense Matching
 description: >-
-  [ICCV 2025][3D Vision][dense matching] This paper proposes an Adaptive Refinement Gathering pipeline that substantially reduces dependence on heavy feature extractors and global matchers through a content-aware offset estimator, a local-consistency matching corrector, and a local-consistency upsampler, achieving competitive dense matching performance with a lightweight network.
+  [ICCV 2025][3D Vision][dense matching] This paper proposes an Adaptive Refinement Gathering pipeline that substantially reduces dependence on heavy feature extractors and global matchers through a content-aware offset es…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - dense matching
-  - coarse-to-fine
-  - correlation volume
-  - adaptive refinement
-  - efficient matching
+  - "ICCV 2025"
+  - "3D Vision"
+  - "dense matching"
+  - "coarse-to-fine"
+  - "correlation volume"
+  - "adaptive refinement"
+  - "efficient matching"
 date: 2026-05-08
 content_hash: 31c804f1f9353bb7
 ---

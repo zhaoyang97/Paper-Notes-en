@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AudSemThinker: Enhancing Audio-Language Models through Reasoning over Semantics of Sound
 description: >-
-  [NeurIPS 2025][Audio & Speech][Audio Reasoning] AudSemThinker introduces a structured semantic reasoning framework for audio-language models by defining 9 categories of sound semantic descriptors (who/what/how/when/where, etc.). Built on Qwen2.5-Omni-7B and trained via SFT + GRPO (with verifiable rewards and length constraints), the model produces three-stage outputs in the format \<think\>\<semantic_elements\>\<answer\>, achieving 66.70% on the MMAU benchmark—surpassing Audio-Reasoner (61.71%) and Qwen2.5-Omni (65.60%).
+  [NeurIPS 2025][Audio & Speech][Audio Reasoning] AudSemThinker introduces a structured semantic reasoning framework for audio-language models by defining 9 categories of sound semantic descriptors (who/what/how/when/where…
 tags:
-  - NeurIPS 2025
+  - "NeurIPS 2025"
   - "Audio & Speech"
-  - Audio Reasoning
-  - Semantic Descriptors
-  - GRPO
-  - Chain-of-Thought
-  - Multimodal
+  - "Audio Reasoning"
+  - "Semantic Descriptors"
+  - "GRPO"
+  - "Chain-of-Thought"
+  - "Multimodal"
 date: 2026-05-08
 content_hash: 9e6dfc0712ec5644
 ---

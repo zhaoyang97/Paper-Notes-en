@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Spectral Super-Resolution via Adversarial Unfolding and Data-Driven Spectrum Regularization
 description: >-
-  [CVPR 2026][Image Restoration][Spectral Super-Resolution] This paper proposes UALNet, which integrates a data-driven spectral prior (PriorNet) and an adversarial learning term into a deep unfolding framework to perform spectral super-resolution from Sentinel-2 multispectral data (12 bands) to NASA AVIRIS hyperspectral imagery (186 bands), surpassing Transformer-based methods while requiring only 15% of their computation and 1/20 of their parameters.
+  [CVPR 2026][Image Restoration][Spectral Super-Resolution] This paper proposes UALNet, which integrates a data-driven spectral prior (PriorNet) and an adversarial learning term into a deep unfolding framework to perform s…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Spectral Super-Resolution
-  - Deep Unfolding
-  - Adversarial Learning
-  - Hyperspectral Reconstruction
-  - Remote Sensing
-  - Sentinel-2
-  - AVIRIS
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Spectral Super-Resolution"
+  - "Deep Unfolding"
+  - "Adversarial Learning"
+  - "Hyperspectral Reconstruction"
+  - "Remote Sensing"
+  - "Sentinel-2"
+  - "AVIRIS"
 date: 2026-05-08
 content_hash: adc558399802ccdc
 ---

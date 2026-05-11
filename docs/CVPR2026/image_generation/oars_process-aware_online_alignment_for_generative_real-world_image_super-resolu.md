@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] OARS: Process-Aware Online Alignment for Generative Real-World Image Super-Resolution
 description: >-
-  [CVPR 2026][Image Generation][Real-World Super-Resolution] This paper proposes OARS, a framework that systematically addresses human preference alignment in generative real-world image super-resolution for the first time. It introduces COMPASS, an MLLM-based process-aware reward model, and a progressive online reinforcement learning pipeline (cold start → reference-guided RL → non-reference RL), significantly improving perceptual quality while preserving fidelity.
+  [CVPR 2026][Image Generation][Real-World Super-Resolution] This paper proposes OARS, a framework that systematically addresses human preference alignment in generative real-world image super-resolution for the first time…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Real-World Super-Resolution
-  - RLHF
-  - reward model
-  - Online RL
-  - Flow Matching
-  - MLLM
-  - Image Quality Assessment
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Real-World Super-Resolution"
+  - "RLHF"
+  - "reward model"
+  - "Online RL"
+  - "Flow Matching"
+  - "MLLM"
+  - "Image Quality Assessment"
 date: 2026-05-08
 content_hash: aa36402e2c77fcc7
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Can AI-Generated Persuasion Be Detected? Persuaficial Benchmark and AI vs. Human Linguistic Differences
 description: >-
-  [ACL 2026][Robotics][Persuasion Detection] Persuaficial is a high-quality multilingual benchmark covering six languages for AI-generated persuasive text. Systematic evaluation reveals that subtle AI persuasion is harder to detect than human persuasion (F1 drops ~20%), while intensified persuasion is paradoxically easier to detect.
+  [ACL 2026][Robotics][Persuasion Detection] Persuaficial is a high-quality multilingual benchmark covering six languages for AI-generated persuasive text. Systematic evaluation reveals that subtle AI persuasion is harder…
 tags:
-  - ACL 2026
-  - Robotics
-  - Persuasion Detection
-  - AI-Generated Text
-  - Multilingual Benchmark
-  - Linguistic Difference Analysis
-  - Controllable Generation
+  - "ACL 2026"
+  - "Robotics"
+  - "Persuasion Detection"
+  - "AI-Generated Text"
+  - "Multilingual Benchmark"
+  - "Linguistic Difference Analysis"
+  - "Controllable Generation"
 content_hash: e687aaee38aca8ea
 ---
 

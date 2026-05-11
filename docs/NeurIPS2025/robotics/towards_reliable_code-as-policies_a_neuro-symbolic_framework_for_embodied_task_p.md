@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Reliable Code-as-Policies: A Neuro-Symbolic Framework for Embodied Task Planning
 description: >-
-  [NeurIPS 2025 (Spotlight)][Robotics][Code-as-Policies] This paper proposes a neuro-symbolic framework for embodied task planning that augments LLM-based code generation with explicit symbolic verification (checking whether preconditions are satisfied) and interactive verification (active exploration to acquire missing information), enabling more reliable code execution in dynamic and partially observable environments. On RLBench, task success rate improves from a baseline of 38.5% to 84.7%, with executability reaching 86.8%.
+  [NeurIPS 2025 (Spotlight)][Robotics][Code-as-Policies] This paper proposes a neuro-symbolic framework for embodied task planning that augments LLM-based code generation with explicit symbolic verification (checking wheth…
 tags:
-  - NeurIPS 2025 (Spotlight)
-  - Robotics
-  - Code-as-Policies
-  - neuro-symbolic framework
-  - task planning
-  - LLM code generation
-  - symbolic verification
+  - "NeurIPS 2025 (Spotlight)"
+  - "Robotics"
+  - "Code-as-Policies"
+  - "neuro-symbolic framework"
+  - "task planning"
+  - "LLM code generation"
+  - "symbolic verification"
 date: 2026-05-08
 content_hash: 66464a73e6d603cc
 ---

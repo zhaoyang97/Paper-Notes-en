@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CombatVLA: An Efficient Vision-Language-Action Model for Combat Tasks in 3D Action Role-Playing Games
 description: >-
-  [ICCV 2025][Robotics][Vision-Language-Action] This paper proposes CombatVLA, an efficient 3B-parameter VLA model designed for combat tasks in 3D action role-playing games. Through the Action-of-Thought data format and a truncated inference strategy, CombatVLA achieves inference speeds up to 50× faster than existing VLM-based game frameworks while surpassing human players in combat success rate.
+  [ICCV 2025][Robotics][Vision-Language-Action] This paper proposes CombatVLA, an efficient 3B-parameter VLA model designed for combat tasks in 3D action role-playing games. Through the Action-of-Thought data format and a…
 tags:
-  - ICCV 2025
-  - Robotics
-  - Vision-Language-Action
-  - 3D Games
-  - Real-Time Decision Making
-  - Action-of-Thought
-  - Efficient Inference
+  - "ICCV 2025"
+  - "Robotics"
+  - "Vision-Language-Action"
+  - "3D Games"
+  - "Real-Time Decision Making"
+  - "Action-of-Thought"
+  - "Efficient Inference"
 date: 2026-05-08
 content_hash: 9b5efddd123639dd
 ---

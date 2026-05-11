@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BiCLIP: Bidirectional and Consistent Language-Image Processing for Robust Medical Image Segmentation
 description: >-
-  [CVPR 2026][Medical Imaging][Medical image segmentation] This paper proposes BiCLIP, a framework that employs Bidirectional Multimodal Fusion (BMF) to refine text representations using visual information, and Image Augmentation Consistency (IAC) to enforce perturbation-invariant intermediate features. BiCLIP surpasses state-of-the-art methods on COVID-19 CT segmentation while remaining robust with as little as 1% labeled data.
+  [CVPR 2026][Medical Imaging][Medical image segmentation] This paper proposes BiCLIP, a framework that employs Bidirectional Multimodal Fusion (BMF) to refine text representations using visual information…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Medical image segmentation
-  - vision-language models
-  - bidirectional multimodal fusion
-  - augmentation consistency
-  - low-annotation robustness
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Medical image segmentation"
+  - "vision-language models"
+  - "bidirectional multimodal fusion"
+  - "augmentation consistency"
+  - "low-annotation robustness"
 date: 2026-05-08
 content_hash: 3e9214b2bca55dfa
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PERSIST: Persistent Instability in LLM's Personality Measurements
 description: >-
-  [AAAI 2026][LLM/NLP][LLM personality measurement] The PERSIST framework systematically evaluates personality measurement stability across 29 LLMs (1B–685B) on over 2 million responses, revealing a "reasoning paradox" in which CoT reasoning increases variability while reducing perplexity, as well as a scale-dependent effect whereby conversational history exerts opposite influences on large versus small models—collectively indicating that current LLMs lack the architectural foundation for behavioral consistency.
+  [AAAI 2026][LLM/NLP][LLM personality measurement] The PERSIST framework systematically evaluates personality measurement stability across 29 LLMs (1B–685B) on over 2 million responses…
 tags:
-  - AAAI 2026
-  - LLM/NLP
-  - LLM personality measurement
-  - behavioral consistency
-  - reasoning mode
-  - alignment evaluation
-  - psychometrics
+  - "AAAI 2026"
+  - "LLM/NLP"
+  - "LLM personality measurement"
+  - "behavioral consistency"
+  - "reasoning mode"
+  - "alignment evaluation"
+  - "psychometrics"
 date: 2026-05-08
 content_hash: 52da12a9a3c077c0
 ---

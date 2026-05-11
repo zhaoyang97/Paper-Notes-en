@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PRISM: Privacy-Aware Routing for Adaptive Cloud-Edge LLM Inference via Semantic Sketch Collaboration
 description: >-
-  [AAAI 2026][LLM Safety][Privacy Protection] This paper proposes PRISM, a framework that dynamically routes user prompts to one of three inference modes—cloud-only, edge-only, or collaborative—via a context-aware soft gating mechanism. In the collaborative mode, an adaptive two-layer local differential privacy (LDP) scheme and semantic sketch collaboration are employed to achieve a three-way balance among privacy, utility, and efficiency.
+  [AAAI 2026][LLM Safety][Privacy Protection] This paper proposes PRISM, a framework that dynamically routes user prompts to one of three inference modes—cloud-only, edge-only…
 tags:
-  - AAAI 2026
-  - LLM Safety
-  - Privacy Protection
-  - Cloud-Edge Collaborative Inference
-  - LLM Privacy
-  - Differential Privacy
-  - Semantic Sketch
+  - "AAAI 2026"
+  - "LLM Safety"
+  - "Privacy Protection"
+  - "Cloud-Edge Collaborative Inference"
+  - "LLM Privacy"
+  - "Differential Privacy"
+  - "Semantic Sketch"
 date: 2026-05-08
 content_hash: b219740b9c8e07bf
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] The GaoYao Benchmark: A Comprehensive Framework for Evaluating Multilingual and Multicultural Abilities of Large Language Models
 description: >-
-  [ACL 2026][multilingual benchmark] This paper presents the GaoYao benchmark, comprising 182.3K samples across 26 languages and 51 countries/regions. Through a three-tier cultural evaluation framework (general multilingual / cross-cultural / mono-cultural) and nine cognitive sub-layers, combined with a human-localized subjective test set and an expert-validated cross-cultural synthetic dataset SuperBLEnD, GaoYao performs in-depth diagnosis of 20+ flagship and compact LLMs, revealing pronounced geographic digital divides and task-level capability stratification.
+  [ACL 2026][Multilingual & Machine Translation][multilingual benchmark] This paper presents the GaoYao benchmark, comprising 182.3K samples across 26 languages and 51 countries/regions. Through a three-tier cultural evalu…
 tags:
-  - ACL 2026
-  - multilingual benchmark
-  - multicultural evaluation
-  - LLM evaluation
-  - linguistic fairness
-  - cultural understanding
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "multilingual benchmark"
+  - "multicultural evaluation"
+  - "LLM evaluation"
+  - "linguistic fairness"
+  - "cultural understanding"
 date: 2026-05-08
 content_hash: 5ea796a3f84023f3
 ---

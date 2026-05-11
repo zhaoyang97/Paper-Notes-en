@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Simulating Dual-Pixel Images From Ray Tracing For Depth Estimation
 description: >-
-  [ICCV2025][3D Vision][dual-pixel] Sdirt proposes a ray-tracing-based dual-pixel (DP) image simulation framework that computes spatially varying DP PSFs incorporating lens aberrations and phase-splitting characteristics, thereby bridging the domain gap between simulated and real DP data and improving the generalization of depth estimation models on real DP images.
+  [ICCV2025][3D Vision][dual-pixel] Sdirt proposes a ray-tracing-based dual-pixel (DP) image simulation framework that computes spatially varying DP PSFs incorporating lens aberrations and phase-splitting characteristics…
 tags:
-  - ICCV2025
-  - 3D Vision
-  - dual-pixel
-  - depth estimation
-  - ray tracing
-  - PSF simulation
-  - domain gap
+  - "ICCV2025"
+  - "3D Vision"
+  - "dual-pixel"
+  - "depth estimation"
+  - "ray tracing"
+  - "PSF simulation"
+  - "domain gap"
 date: 2026-05-08
 content_hash: 13c4442df9b22f3c
 ---

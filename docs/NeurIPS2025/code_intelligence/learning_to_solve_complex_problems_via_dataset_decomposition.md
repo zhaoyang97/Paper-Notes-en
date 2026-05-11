@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Learning to Solve Complex Problems via Dataset Decomposition
 description: >-
-  [NeurIPS 2025][dataset decomposition] This paper proposes Decomp, a method that employs a teacher model (GPT-4o) to recursively decompose complex math problems into simpler subproblems along reasoning steps, constructs a concept dependency graph to quantify difficulty, and trains student models following an easy-to-hard curriculum. Qwen2.5-1.5B achieves 51.6% on MATH-500 (surpassing MuggleMath's 50.4% with 147K samples), while Qwen3-4B reaches 16.7% on AIME2025 using only 385 samples (surpassing Qwen2.5-72B's 15.0%).
+  [NeurIPS 2025][Code Intelligence][dataset decomposition] This paper proposes Decomp, a method that employs a teacher model (GPT-4o) to recursively decompose complex math problems into simpler subproblems along reasoning…
 tags:
-  - NeurIPS 2025
-  - dataset decomposition
-  - curriculum learning
-  - mathematical reasoning
-  - subproblem generation
-  - skill graph
+  - "NeurIPS 2025"
+  - "Code Intelligence"
+  - "dataset decomposition"
+  - "curriculum learning"
+  - "mathematical reasoning"
+  - "subproblem generation"
+  - "skill graph"
 date: 2026-05-08
 content_hash: f108d12bc040bd17
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Challenging the Boundaries of Reasoning: An Olympiad-Level Math Benchmark for Large Language Models
 description: >-
-  [ACL 2026][LLM Reasoning][mathematical reasoning benchmark] This paper introduces OlymMATH, the first olympiad-level mathematical benchmark that unifies natural language evaluation and formal theorem proving. It comprises 350 bilingual (Chinese–English) problems, spanning OlymMATH-EASY/HARD (200 problems with numerical answers) and OlymMATH-LEAN (150 problems formalized in Lean 4). Experiments reveal that the strongest model achieves only 58.4% accuracy on the HARD subset.
+  [ACL 2026][LLM Reasoning][mathematical reasoning benchmark] This paper introduces OlymMATH, the first olympiad-level mathematical benchmark that unifies natural language evaluation and formal theorem proving. It comprise…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - mathematical reasoning benchmark
-  - olympiad mathematics
-  - formal verification
-  - Lean4
-  - bilingual evaluation
+  - "ACL 2026"
+  - "LLM Reasoning"
+  - "mathematical reasoning benchmark"
+  - "olympiad mathematics"
+  - "formal verification"
+  - "Lean4"
+  - "bilingual evaluation"
 date: 2026-05-08
 content_hash: d4018d6238c4e89e
 ---

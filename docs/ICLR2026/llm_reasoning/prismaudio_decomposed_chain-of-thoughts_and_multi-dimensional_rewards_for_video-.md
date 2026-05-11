@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PrismAudio: Decomposed Chain-of-Thoughts and Multi-dimensional Rewards for Video-to-Audio Generation
 description: >-
-  [ICLR 2026][LLM Reasoning][Video-to-Audio] This work is the first to integrate decomposed Chain-of-Thought reasoning with multi-dimensional reinforcement learning (RL) for video-to-audio (V2A) generation. It addresses the objective entanglement problem via four specialized CoT modules (semantic/temporal/aesthetic/spatial) paired with corresponding reward functions, and proposes the Fast-GRPO algorithm to substantially reduce RL training cost.
+  [ICLR 2026][LLM Reasoning][Video-to-Audio] This work is the first to integrate decomposed Chain-of-Thought reasoning with multi-dimensional reinforcement learning (RL) for video-to-audio (V2A) generation. It addresses th…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Video-to-Audio
-  - Chain-of-Thought
-  - Reinforcement Learning
-  - Multi-dimensional Rewards
-  - Diffusion Models
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "Video-to-Audio"
+  - "Chain-of-Thought"
+  - "Reinforcement Learning"
+  - "Multi-dimensional Rewards"
+  - "Diffusion Models"
 date: 2026-05-08
 content_hash: 057789224eea1f80
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HouseLayout3D: A Benchmark and Training-Free Baseline for 3D Layout Estimation in the Wild
 description: >-
-  [NeurIPS 2025][LLM Evaluation][3D layout estimation] This paper introduces HouseLayout3D—the first real-world 3D layout estimation benchmark targeting large-scale multi-floor buildings—and MultiFloor3D, a training-free baseline that combines modern 3D reconstruction and segmentation models to surpass existing deep learning methods on multi-floor building layout estimation.
+  [NeurIPS 2025][LLM Evaluation][3D layout estimation] This paper introduces HouseLayout3D—the first real-world 3D layout estimation benchmark targeting large-scale multi-floor buildings—and MultiFloor3D…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - 3D layout estimation
-  - multi-floor buildings
-  - benchmark
-  - training-free
-  - scene graph
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "3D layout estimation"
+  - "multi-floor buildings"
+  - "benchmark"
+  - "training-free"
+  - "scene graph"
 date: 2026-05-08
 content_hash: 5f6e3cd9dec25e4c
 ---

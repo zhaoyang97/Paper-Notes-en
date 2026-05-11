@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ORPO-Distill: Mixed-Policy Preference Optimization for Cross-Architecture LLM Distillation
 description: >-
-  [NeurIPS 2025][LLM Alignment][Knowledge Distillation] This paper proposes ORPO-Distill, which reformulates cross-architecture LLM knowledge distillation as a preference optimization problem. The teacher model generates positive reasoning chains while the student model generates negative ones; an ORPO contrastive loss is used for training, augmented by a mixed-policy update strategy for student negative samples. The method consistently outperforms black-box KD baselines across 5 QA benchmarks.
+  [NeurIPS 2025][LLM Alignment][Knowledge Distillation] This paper proposes ORPO-Distill, which reformulates cross-architecture LLM knowledge distillation as a preference optimization problem. The teacher model generates p…
 tags:
-  - NeurIPS 2025
-  - LLM Alignment
-  - Knowledge Distillation
-  - Preference Optimization
-  - ORPO
-  - Mixed Policy
-  - Cross-Architecture Distillation
+  - "NeurIPS 2025"
+  - "LLM Alignment"
+  - "Knowledge Distillation"
+  - "Preference Optimization"
+  - "ORPO"
+  - "Mixed Policy"
+  - "Cross-Architecture Distillation"
 date: 2026-05-08
 content_hash: 63b60338a83e9b9f
 ---

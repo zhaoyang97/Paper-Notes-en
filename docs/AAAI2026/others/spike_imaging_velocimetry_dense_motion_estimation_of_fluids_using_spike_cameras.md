@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Spike Imaging Velocimetry: Dense Motion Estimation of Fluids Using Spike Cameras
 description: >-
-  [AAAI 2026][Particle Image Velocimetry] This paper proposes Spike Imaging Velocimetry (SIV), the first systematic application of **spike cameras** (20,000 Hz ultra-high temporal resolution) to fluid velocimetry. Three fluid-aware modules are designed: Detail-Preserving Hierarchical Transform (DPHT), Graph Encoder (GE), and Multi-Scale Velocity Refinement (MSVR). A new PSSD dataset is constructed, and SIV comprehensively outperforms existing baselines on steady-state turbulence, high-speed flow, and HDR scenarios.
+  [AAAI 2026][Particle Image Velocimetry] This paper proposes Spike Imaging Velocimetry (SIV), the first systematic application of **spike cameras** (20…
 tags:
-  - AAAI 2026
-  - Particle Image Velocimetry
-  - Spike Camera
-  - Fluid Motion Estimation
-  - Graph Neural Network
-  - Multi-Scale Optimization
+  - "AAAI 2026"
+  - "Particle Image Velocimetry"
+  - "Spike Camera"
+  - "Fluid Motion Estimation"
+  - "Graph Neural Network"
+  - "Multi-Scale Optimization"
 date: 2026-05-08
 content_hash: 41a2dbe1334a0265
 ---

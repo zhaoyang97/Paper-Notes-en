@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Global and Local Entailment Learning for Natural World Imagery
 description: >-
-  [ICCV 2025][Multimodal VLM][Hierarchical Representation Learning] This paper proposes Radial Cross-Modal Embeddings (RCME), a framework that explicitly models the transitivity of entailment relations to learn hierarchical representations in vision-language models. RCME enables inference at arbitrary taxonomic ranks on the Tree of Life and achieves state-of-the-art performance on hierarchical classification and retrieval tasks.
+  [ICCV 2025][Multimodal VLM][Hierarchical Representation Learning] This paper proposes Radial Cross-Modal Embeddings (RCME), a framework that explicitly models the transitivity of entailment relations to learn hierarchica…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Hierarchical Representation Learning
-  - Entailment Learning
-  - Vision-Language Models
-  - Biological Taxonomy
-  - Partial Order Relations
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Hierarchical Representation Learning"
+  - "Entailment Learning"
+  - "Vision-Language Models"
+  - "Biological Taxonomy"
+  - "Partial Order Relations"
 date: 2026-05-08
 content_hash: 690aa91f99ac0e82
 ---

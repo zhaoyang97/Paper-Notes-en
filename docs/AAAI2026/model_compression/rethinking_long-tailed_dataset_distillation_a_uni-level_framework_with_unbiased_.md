@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Rethinking Long-tailed Dataset Distillation: A Uni-Level Framework with Unbiased Recovery and Relabeling
 description: >-
-  [AAAI 2026][Model Compression][Dataset Distillation] This paper proposes the first uni-level dataset distillation framework for long-tailed distributions. Through three core strategies — expert model debiasing, fair BN statistics calibration, and confidence-guided initialization — the method achieves +15.6% on CIFAR-100-LT and +11.8% on Tiny-ImageNet-LT, comprehensively outperforming DAMED.
+  [AAAI 2026][Model Compression][Dataset Distillation] This paper proposes the first uni-level dataset distillation framework for long-tailed distributions. Through three core strategies — expert model debiasing…
 tags:
-  - AAAI 2026
-  - Model Compression
-  - Dataset Distillation
-  - Long-tailed Distribution
-  - Uni-level Optimization
-  - BN Statistics Calibration
-  - Unbiased Recovery
+  - "AAAI 2026"
+  - "Model Compression"
+  - "Dataset Distillation"
+  - "Long-tailed Distribution"
+  - "Uni-level Optimization"
+  - "BN Statistics Calibration"
+  - "Unbiased Recovery"
 date: 2026-05-08
 content_hash: e1b82fdf627a61d7
 ---

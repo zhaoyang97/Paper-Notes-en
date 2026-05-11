@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Curvature Tuning: Provable Training-free Model Steering From a Single Parameter
 description: >-
-  [NeurIPS 2025][curvature tuning] This paper proposes Curvature Tuning (CT), which provably modulates the curvature of a model's decision boundary by injecting a single hyperparameter $\beta$ into the activation function. CT improves generalization and robustness without modifying weights, and as a fine-tuning method requires far fewer parameters than LoRA rank 1.
+  [NeurIPS 2025][Interpretability][curvature tuning] This paper proposes Curvature Tuning (CT), which provably modulates the curvature of a model's decision boundary by injecting a single hyperparameter $\beta$ into the ac…
 tags:
-  - NeurIPS 2025
-  - curvature tuning
-  - activation functions
-  - spline theory
-  - parameter-efficient fine-tuning
-  - decision boundary
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "curvature tuning"
+  - "activation functions"
+  - "spline theory"
+  - "parameter-efficient fine-tuning"
+  - "decision boundary"
 date: 2026-05-08
 content_hash: 3c95dfffe97db509
 ---

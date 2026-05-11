@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Note 1: Is CoT a Hallucination? A Data Distribution Perspective
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Chain-of-Thought] By constructing a fully controlled abstract environment DataAlchemy, this paper reveals that CoT reasoning is a form of hallucination — its effectiveness is entirely governed by training data distribution and proves extremely fragile under out-of-distribution scenarios.
+  [NeurIPS 2025][LLM Reasoning][Chain-of-Thought] By constructing a fully controlled abstract environment DataAlchemy, this paper reveals that CoT reasoning is a form of hallucination — its effectiveness is entirely govern…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - Chain-of-Thought
-  - Data Distribution
-  - Distribution Shift
-  - DataAlchemy
-  - Reasoning Capability
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "Chain-of-Thought"
+  - "Data Distribution"
+  - "Distribution Shift"
+  - "DataAlchemy"
+  - "Reasoning Capability"
 date: 2026-05-08
 content_hash: 4e4c6dbc989b0347
 ---

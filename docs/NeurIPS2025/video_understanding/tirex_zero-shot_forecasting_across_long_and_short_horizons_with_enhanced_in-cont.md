@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] TiRex: Zero-Shot Forecasting Across Long and Short Horizons with Enhanced In-Context Learning
 description: >-
-  [NeurIPS 2025][Video Understanding][Time series forecasting] This paper proposes TiRex, a pretrained time series forecasting model based on xLSTM. By introducing a Contiguous Patch Masking (CPM) strategy and data augmentation techniques, TiRex with only 35M parameters comprehensively outperforms larger models such as Chronos Bolt (200M) and TimesFM (500M) on the GiftEval and Chronos-ZS benchmarks, achieving state-of-the-art performance in both short- and long-horizon zero-shot forecasting.
+  [NeurIPS 2025][Video Understanding][Time series forecasting] This paper proposes TiRex, a pretrained time series forecasting model based on xLSTM. By introducing a Contiguous Patch Masking (CPM) strategy and data augment…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
-  - Time series forecasting
-  - zero-shot forecasting
-  - xLSTM
-  - in-context learning
-  - data augmentation
-  - pretrained models
+  - "NeurIPS 2025"
+  - "Video Understanding"
+  - "Time series forecasting"
+  - "zero-shot forecasting"
+  - "xLSTM"
+  - "in-context learning"
+  - "data augmentation"
+  - "pretrained models"
 date: 2026-05-08
 content_hash: bf7d2ac50b0dbeb4
 ---

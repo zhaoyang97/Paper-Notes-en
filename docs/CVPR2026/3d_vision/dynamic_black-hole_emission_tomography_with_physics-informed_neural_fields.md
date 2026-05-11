@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dynamic Black-hole Emission Tomography with Physics-informed Neural Fields
 description: >-
-  [CVPR2026][3D Vision][Black hole imaging] This paper proposes PI-DEF, a physics-informed coordinate neural network framework that jointly reconstructs the 4D (temporal + 3D spatial) emissivity field and 3D velocity field of gas near a black hole. Under sparse EHT measurements, PI-DEF significantly outperforms BH-NeRF, which enforces hard Keplerian dynamical constraints.
+  [CVPR2026][3D Vision][Black hole imaging] This paper proposes PI-DEF, a physics-informed coordinate neural network framework that jointly reconstructs the 4D (temporal + 3D spatial) emissivity field and 3D velocity field…
 tags:
-  - CVPR2026
-  - 3D Vision
-  - Black hole imaging
-  - neural radiance fields
-  - physics-informed constraints
-  - 4D tomography
-  - Event Horizon Telescope
+  - "CVPR2026"
+  - "3D Vision"
+  - "Black hole imaging"
+  - "neural radiance fields"
+  - "physics-informed constraints"
+  - "4D tomography"
+  - "Event Horizon Telescope"
 date: 2026-05-08
 content_hash: b27a85dd418ec5d8
 ---

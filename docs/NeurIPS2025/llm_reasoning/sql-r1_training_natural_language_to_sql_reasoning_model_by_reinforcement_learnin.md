@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] SQL-R1: Training Natural Language to SQL Reasoning Model By Reinforcement Learning
 description: >-
-  [NeurIPS 2025][LLM Reasoning][NL2SQL] This work presents the first systematic application of GRPO-based reinforcement learning to NL2SQL tasks. Through a four-level progressive reward function and a training strategy combining 200K cold-start data with 5K complex-sample RL fine-tuning, the 7B model achieves 88.7% on Spider and 66.6% on BIRD, surpassing GPT-4-based methods at comparable scale.
+  [NeurIPS 2025][LLM Reasoning][NL2SQL] This work presents the first systematic application of GRPO-based reinforcement learning to NL2SQL tasks. Through a four-level progressive reward function and a training strategy com…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - NL2SQL
-  - Reinforcement Learning
-  - GRPO
-  - Cold Start
-  - Synthetic Data
-  - Reasoning Capability
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "NL2SQL"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "Cold Start"
+  - "Synthetic Data"
+  - "Reasoning Capability"
 date: 2026-05-08
 content_hash: a16764603fb4c94c
 ---

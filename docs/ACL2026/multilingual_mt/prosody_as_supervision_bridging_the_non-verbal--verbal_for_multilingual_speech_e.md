@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Prosody as Supervision: Bridging the Non-Verbal–Verbal for Multilingual Speech Emotion Recognition
 description: >-
-  [ACL 2026][Non-verbal vocalization supervision] This paper proposes NOVA-ARC, the first framework to formulate multilingual speech emotion recognition (SER) as an unsupervised transfer problem from labeled non-verbal vocalizations (NVV) to unlabeled verbal speech (UVS). By leveraging a hyperbolic prosody vector-quantized codebook, a Hyperbolic Emotion Lens, and optimal transport prototype alignment, NOVA-ARC achieves cross-modal emotion transfer and validates the feasibility and superiority of NVV→UVS transfer across 6 datasets.
+  [ACL 2026][Multilingual & Machine Translation][Non-verbal vocalization supervision] This paper proposes NOVA-ARC, the first framework to formulate multilingual speech emotion recognition (SER) as an unsupervised transfer…
 tags:
-  - ACL 2026
-  - Non-verbal vocalization supervision
-  - hyperbolic representation learning
-  - optimal transport alignment
-  - prosody codebook
-  - cross-lingual emotion transfer
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "Non-verbal vocalization supervision"
+  - "hyperbolic representation learning"
+  - "optimal transport alignment"
+  - "prosody codebook"
+  - "cross-lingual emotion transfer"
 date: 2026-05-08
 content_hash: dfc40b75e680f98a
 ---

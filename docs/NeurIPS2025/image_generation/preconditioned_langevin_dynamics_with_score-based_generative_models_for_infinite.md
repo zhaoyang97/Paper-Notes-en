@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Preconditioned Langevin Dynamics with Score-Based Generative Models for Infinite-Dimensional Linear Bayesian Inverse Problems
 description: >-
-  [NeurIPS 2025][Image Generation][Preconditioned Langevin dynamics] This paper rigorously analyzes score-based generative model (SGM)-driven Langevin posterior samplers in infinite-dimensional Hilbert spaces, derives for the first time convergence bounds that explicitly depend on score approximation errors, and identifies an optimal preconditioner that jointly depends on the forward operator and score errors, guaranteeing uniform convergence rates across all posterior modes.
+  [NeurIPS 2025][Image Generation][Preconditioned Langevin dynamics] This paper rigorously analyzes score-based generative model (SGM)-driven Langevin posterior samplers in infinite-dimensional Hilbert spaces…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Preconditioned Langevin dynamics
-  - score-based generative models
-  - infinite-dimensional Bayesian inverse problems
-  - function space
-  - optimal preconditioner
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Preconditioned Langevin dynamics"
+  - "score-based generative models"
+  - "infinite-dimensional Bayesian inverse problems"
+  - "function space"
+  - "optimal preconditioner"
 date: 2026-05-08
 content_hash: 7df2e7300cdf4413
 ---

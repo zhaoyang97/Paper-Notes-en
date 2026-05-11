@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Spectrum Tuning: Post-Training for Distributional Coverage and In-Context Steerability
 description: >-
-  [ICLR 2026][Signal & Communication][post-training] This paper proposes Spectrum Tuning, a post-training method that trains language models on a distributional-fitting dataset spanning 90+ tasks, improving in-context steerability, output space coverage, and distributional alignment. It reveals that current instruction tuning systematically degrades in-context steerability.
+  [ICLR 2026][Signal & Communication][post-training] This paper proposes Spectrum Tuning, a post-training method that trains language models on a distributional-fitting dataset spanning 90+ tasks…
 tags:
-  - ICLR 2026
+  - "ICLR 2026"
   - "Signal & Communication"
-  - post-training
-  - distributional coverage
-  - in-context steerability
-  - meta-learning
-  - language models
+  - "post-training"
+  - "distributional coverage"
+  - "in-context steerability"
+  - "meta-learning"
+  - "language models"
 date: 2026-05-08
 content_hash: 65903deae5b130a6
 ---

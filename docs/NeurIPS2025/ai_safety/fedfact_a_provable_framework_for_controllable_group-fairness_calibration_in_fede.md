@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FedFACT: A Provable Framework for Controllable Group-Fairness Calibration in Federated Learning
 description: >-
-  [NeurIPS 2025][AI Safety][Federated Learning] This paper proposes FedFACT, a framework that characterizes the structure of the **Bayes-optimal fair classifier** under federated learning, and reduces fair federated learning to **personalized cost-sensitive learning** (in-processing) and **bi-level optimization** (post-processing), respectively. It is the first to achieve controllable coordination between global and local fairness in multi-class settings, with convergence and generalization guarantees.
+  [NeurIPS 2025][AI Safety][Federated Learning] This paper proposes FedFACT, a framework that characterizes the structure of the **Bayes-optimal fair classifier** under federated learning…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - Federated Learning
-  - Group Fairness
-  - Bayes-Optimal Classifier
-  - Cost-Sensitive Learning
-  - Post-Processing Calibration
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "Federated Learning"
+  - "Group Fairness"
+  - "Bayes-Optimal Classifier"
+  - "Cost-Sensitive Learning"
+  - "Post-Processing Calibration"
 date: 2026-05-08
 content_hash: 9baa4ac926b8ce3d
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Efficient Pre-Training of LLMs via Topology-Aware Communication Alignment on More Than 9600 GPUs
 description: >-
-  [NeurIPS 2025][LLM Pretraining][distributed training] This paper proposes Arnold, a scheduling system that aligns the communication patterns of LLM training (DP/PP groups) with the physical network topology of data centers. In simulation, Arnold reduces the maximum communication group span by 1.67×, and achieves a 10.6% end-to-end throughput improvement in production-scale training on 9,600+ GPUs.
+  [NeurIPS 2025][LLM Pretraining][distributed training] This paper proposes Arnold, a scheduling system that aligns the communication patterns of LLM training (DP/PP groups) with the physical network topology of data cente…
 tags:
-  - NeurIPS 2025
-  - LLM Pretraining
-  - distributed training
-  - GPU scheduling
-  - network topology
-  - communication alignment
-  - hybrid parallelism
-  - MIP
+  - "NeurIPS 2025"
+  - "LLM Pretraining"
+  - "distributed training"
+  - "GPU scheduling"
+  - "network topology"
+  - "communication alignment"
+  - "hybrid parallelism"
+  - "MIP"
 date: 2026-05-08
 content_hash: b0b1e7f81c25fcc8
 ---

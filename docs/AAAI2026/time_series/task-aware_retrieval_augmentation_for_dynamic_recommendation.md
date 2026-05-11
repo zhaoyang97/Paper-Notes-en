@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Task-Aware Retrieval Augmentation for Dynamic Recommendation
 description: >-
-  [AAAI 2026][Time Series][Retrieval Augmentation] This paper proposes TarDGR, a framework that automatically constructs training data via a task-aware evaluation mechanism, trains a Graph Transformer to assess the task relevance of historical subgraphs, and retrieves and integrates task-relevant subgraphs at inference time to enhance temporal generalization in recommendation.
+  [AAAI 2026][Time Series][Retrieval Augmentation] This paper proposes TarDGR, a framework that automatically constructs training data via a task-aware evaluation mechanism…
 tags:
-  - AAAI 2026
-  - Time Series
-  - Retrieval Augmentation
-  - Dynamic Graph Recommendation
-  - Task-Awareness
-  - Graph Transformer
-  - Temporal Generalization
+  - "AAAI 2026"
+  - "Time Series"
+  - "Retrieval Augmentation"
+  - "Dynamic Graph Recommendation"
+  - "Task-Awareness"
+  - "Graph Transformer"
+  - "Temporal Generalization"
 date: 2026-05-08
 content_hash: 400a28a2e604eb28
 ---

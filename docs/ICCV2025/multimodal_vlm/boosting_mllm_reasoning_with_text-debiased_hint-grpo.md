@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Boosting MLLM Reasoning with Text-Debiased Hint-GRPO
 description: >-
-  [ICCV 2025][Multimodal VLM][MLLM reasoning] This paper identifies two critical issues in applying GRPO to MLLM reasoning — low data utilization (invalid gradients when all sampled outputs for a hard question are incorrect) and text bias (the model ignores visual input and relies solely on textual reasoning) — and proposes two corresponding solutions: Hint-GRPO (adaptively providing reasoning hints) and text-debiasing calibration (enhancing image conditioning at test time). The approach achieves significant reasoning improvements across 11 datasets on 3 base MLLMs.
+  [ICCV 2025][Multimodal VLM][MLLM reasoning] This paper identifies two critical issues in applying GRPO to MLLM reasoning — low data utilization (invalid gradients when all sampled outputs for a hard question are incorrec…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - MLLM reasoning
-  - GRPO reinforcement learning
-  - data utilization
-  - text bias
-  - hint-guided training
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "MLLM reasoning"
+  - "GRPO reinforcement learning"
+  - "data utilization"
+  - "text bias"
+  - "hint-guided training"
 date: 2026-05-08
 content_hash: 4eba8e5a05428b76
 ---

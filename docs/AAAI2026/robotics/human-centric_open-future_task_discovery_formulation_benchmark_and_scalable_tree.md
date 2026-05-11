@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Human-Centric Open-Future Task Discovery: Formulation, Benchmark, and Scalable Tree-Based Search
 description: >-
-  [AAAI 2026][Robotics][Task Discovery] This paper formalizes the **Human-Centric Open-Future Task Discovery (HOTD)** problem—identifying tasks that reduce human burden across multiple possible futures in scenarios where human intentions are concurrent and dynamically evolving. The authors construct the HOTD-Bench benchmark (2K+ real-world videos) and propose **CMAST** (Collaborative Multi-Agent Search Tree), which substantially outperforms existing LMM baselines via a multi-agent system and a scalable search tree.
+  [AAAI 2026][Robotics][Task Discovery] This paper formalizes the **Human-Centric Open-Future Task Discovery (HOTD)** problem—identifying tasks that reduce human burden across multiple possible futures in scenarios where h…
 tags:
-  - AAAI 2026
-  - Robotics
-  - Task Discovery
-  - Open Future
-  - Multi-Agent
-  - Search Tree
-  - Embodied AI
+  - "AAAI 2026"
+  - "Robotics"
+  - "Task Discovery"
+  - "Open Future"
+  - "Multi-Agent"
+  - "Search Tree"
+  - "Embodied AI"
 date: 2026-05-08
 content_hash: d75a6a6eb62ea53b
 ---

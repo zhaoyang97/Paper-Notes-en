@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Language Models and Logic Programs for Trustworthy Tax Reasoning
 description: >-
-  [AAAI 2026][LLM/NLP][Statutory Reasoning] This paper reframes tax law reasoning as a semantic parsing task, where LLMs translate statutory text and case facts into Prolog logic programs that are subsequently executed by a symbolic solver. By combining gold-standard statute translations, retrieval-augmented case examples, and self-consistency checks, the system achieves 86/100 accuracy on the SARA dataset while reducing estimated deployment cost to \$15.78 per person — less than 6% of the average U.S. tax filing cost.
+  [AAAI 2026][LLM/NLP][Statutory Reasoning] This paper reframes tax law reasoning as a semantic parsing task, where LLMs translate statutory text and case facts into Prolog logic programs that are subsequently executed by…
 tags:
-  - AAAI 2026
-  - LLM/NLP
-  - Statutory Reasoning
-  - Tax Computation
-  - Neuro-Symbolic Systems
-  - Prolog
-  - Semantic Parsing
-  - LLM + Symbolic Solver
+  - "AAAI 2026"
+  - "LLM/NLP"
+  - "Statutory Reasoning"
+  - "Tax Computation"
+  - "Neuro-Symbolic Systems"
+  - "Prolog"
+  - "Semantic Parsing"
+  - "LLM + Symbolic Solver"
 date: 2026-05-08
 content_hash: 816e732b4f1800f8
 ---

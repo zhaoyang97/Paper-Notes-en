@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PNG: Diffusion-Based sRGB Real Noise Generation via Prompt-Driven Noise Representation Learning
 description: >-
-  [CVPR 2026][Image Restoration][sRGB noise generation] PNG introduces learnable Global/Local Prompt components to automatically extract noise characteristics from real noise (replacing metadata such as ISO and camera model). A Prompt AutoEncoder encodes noise into a latent space, and a Prompt DiT (based on a consistency model) generates latent codes in a single step, enabling realistic sRGB noise synthesis without any metadata. The downstream DnCNN denoiser trained on PNG-synthesized data trails real-data training by only 0.08 dB on SIDD.
+  [CVPR 2026][Image Restoration][sRGB noise generation] PNG introduces learnable Global/Local Prompt components to automatically extract noise characteristics from real noise (replacing metadata such as ISO and camera mode…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - sRGB noise generation
-  - prompt learning
-  - consistency model
-  - denoising
-  - metadata-free
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "sRGB noise generation"
+  - "prompt learning"
+  - "consistency model"
+  - "denoising"
+  - "metadata-free"
 date: 2026-05-08
 content_hash: fbb468f358fa8f16
 ---

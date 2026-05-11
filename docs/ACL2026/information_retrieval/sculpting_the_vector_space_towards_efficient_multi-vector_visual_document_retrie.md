@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Prune-then-Merge: Towards Efficient Multi-Vector Visual Document Retrieval
 description: >-
-  [ACL 2026][Visual Document Retrieval] This paper proposes Prune-then-Merge, a two-stage training-free multi-vector document compression framework. It first removes low-information patches via adaptive attention-based pruning, then applies hierarchical clustering to merge the remaining high-signal patches. Evaluated across 29 VDR datasets, the framework extends the near-lossless compression range from 50–60% to 60–70% and significantly outperforms single-stage methods at high compression ratios of 80%+.
+  [ACL 2026][Information Retrieval & RAG][Visual Document Retrieval] This paper proposes Prune-then-Merge, a two-stage training-free multi-vector document compression framework. It first removes low-information patches via…
 tags:
-  - ACL 2026
-  - Visual Document Retrieval
-  - Multi-Vector Compression
-  - Adaptive Pruning
-  - Hierarchical Aggregation
-  - ColPali
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Visual Document Retrieval"
+  - "Multi-Vector Compression"
+  - "Adaptive Pruning"
+  - "Hierarchical Aggregation"
+  - "ColPali"
 date: 2026-05-08
 content_hash: f9d07b6e0a5ce957
 ---

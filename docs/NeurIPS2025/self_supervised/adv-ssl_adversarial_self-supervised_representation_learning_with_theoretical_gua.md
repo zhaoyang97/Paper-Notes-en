@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Adv-SSL: Adversarial Self-Supervised Representation Learning with Theoretical Guarantees
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning] This paper proposes Adv-SSL, which rewrites the Frobenius norm of the covariance regularization term as a minimax dual form, eliminating the biased sample-level risk estimation present in methods such as Barlow Twins. The approach substantially improves downstream classification performance without incurring additional computational cost, and provides end-to-end theoretical convergence guarantees.
+  [NeurIPS 2025][Self-Supervised Learning][adversarial learning] This paper proposes Adv-SSL, which rewrites the Frobenius norm of the covariance regularization term as a minimax dual form…
 tags:
-  - NeurIPS 2025
-  - Self-Supervised Learning
-  - adversarial learning
-  - unbiased estimation
-  - transfer learning
-  - theoretical guarantees
-  - few-shot learning
+  - "NeurIPS 2025"
+  - "Self-Supervised Learning"
+  - "adversarial learning"
+  - "unbiased estimation"
+  - "transfer learning"
+  - "theoretical guarantees"
+  - "few-shot learning"
 date: 2026-05-08
 content_hash: c921f9b7efc054be
 ---

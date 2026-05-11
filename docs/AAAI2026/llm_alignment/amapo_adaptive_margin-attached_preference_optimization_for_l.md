@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] AMaPO: Adaptive Margin-attached Preference Optimization for Language Model Alignment
 description: >-
-  [AAAI 2026][LLM Alignment][Preference optimization] This paper proposes AMaPO, an algorithm that dynamically modulates gradient magnitudes via instance-level adaptive margins (combining Z-normalization and exponential scaling) to address the core overfitting-underfitting dilemma in offline preference optimization methods such as DPO, thereby substantially improving ranking accuracy and downstream alignment performance.
+  [AAAI 2026][LLM Alignment][Preference optimization] This paper proposes AMaPO, an algorithm that dynamically modulates gradient magnitudes via instance-level adaptive margins (combining Z-normalization and exponential sc…
 tags:
-  - AAAI 2026
-  - LLM Alignment
-  - Preference optimization
-  - adaptive margin
-  - ranking accuracy
-  - gradient dynamics analysis
+  - "AAAI 2026"
+  - "LLM Alignment"
+  - "Preference optimization"
+  - "adaptive margin"
+  - "ranking accuracy"
+  - "gradient dynamics analysis"
 date: 2026-05-08
 content_hash: a6ebb168db24b79b
 ---

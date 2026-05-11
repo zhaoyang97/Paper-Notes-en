@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DRPO: Efficient Reasoning via Decoupled Reward Policy Optimization
 description: >-
-  [ICLR 2026][LLM Reasoning][efficient reasoning] This paper diagnoses a fundamental flaw in GRPO with length penalties — correct but verbose responses may receive negative advantage values and thus be incorrectly penalized — and proposes DRPO, which decouples the reward signals for positive and negative samples to ensure length penalties are normalized only within the correct-response group. On a 1.5B model, DRPO achieves a 77% length reduction with only a 1.1% performance drop, compared to a 68% reduction with a 4.3% drop for the baseline.
+  [ICLR 2026][LLM Reasoning][efficient reasoning] This paper diagnoses a fundamental flaw in GRPO with length penalties — correct but verbose responses may receive negative advantage values and thus be incorrectly penalize…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - efficient reasoning
-  - overthinking
-  - GRPO
-  - length penalty
-  - reinforcement-learning
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "efficient reasoning"
+  - "overthinking"
+  - "GRPO"
+  - "length penalty"
+  - "reinforcement-learning"
 date: 2026-05-08
 content_hash: dc57cc1dba5fe1cb
 ---

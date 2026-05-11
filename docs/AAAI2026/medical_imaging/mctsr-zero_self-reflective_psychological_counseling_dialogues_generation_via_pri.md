@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MCTSr-Zero: Self-Reflective Psychological Counseling Dialogues Generation via Principles and Adaptive Exploration
 description: >-
-  [AAAI 2026][Medical Imaging][Monte Carlo Tree Search] This paper proposes the MCTSr-Zero framework, which combines MCTS with domain-principle-based self-evaluation and a meta-prompt adaptive exploration mechanism to generate high-quality multi-turn psychological counseling dialogue data. The resulting PsyLLM, fine-tuned on this data, achieves state-of-the-art performance on the authors' PsyEval benchmark.
+  [AAAI 2026][Medical Imaging][Monte Carlo Tree Search] This paper proposes the MCTSr-Zero framework, which combines MCTS with domain-principle-based self-evaluation and a meta-prompt adaptive exploration mechanism to gene…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Monte Carlo Tree Search
-  - psychological counseling
-  - dialogue generation
-  - self-reflection
-  - domain alignment
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Monte Carlo Tree Search"
+  - "psychological counseling"
+  - "dialogue generation"
+  - "self-reflection"
+  - "domain alignment"
 date: 2026-05-08
 content_hash: 767503fd8c730823
 ---

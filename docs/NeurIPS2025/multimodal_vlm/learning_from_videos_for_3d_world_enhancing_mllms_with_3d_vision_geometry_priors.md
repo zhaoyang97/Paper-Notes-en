@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning from Videos for 3D World: Enhancing MLLMs with 3D Vision Geometry Priors
 description: >-
-  [NeurIPS 2025][Multimodal VLM][MLLM] VG-LLM proposes integrating a 3D visual geometry encoder (VGGT) into multimodal large language models, enabling the extraction and fusion of 3D geometric priors from video input alone—without any explicit 3D data. This approach significantly improves MLLM performance on 3D scene understanding and spatial reasoning tasks, with the 4B model surpassing Gemini-1.5-Pro on VSI-Bench.
+  [NeurIPS 2025][Multimodal VLM][MLLM] VG-LLM proposes integrating a 3D visual geometry encoder (VGGT) into multimodal large language models…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - MLLM
-  - 3D Visual Geometry
-  - Spatial Reasoning
-  - Video Understanding
-  - VGGT
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "MLLM"
+  - "3D Visual Geometry"
+  - "Spatial Reasoning"
+  - "Video Understanding"
+  - "VGGT"
 date: 2026-05-08
 content_hash: 7d8a46194380e220
 ---

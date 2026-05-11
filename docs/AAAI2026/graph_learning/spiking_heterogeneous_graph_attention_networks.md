@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Spiking Heterogeneous Graph Attention Networks
 description: >-
-  [AAAI 2026][Graph Learning][Heterogeneous Graphs] This paper proposes SpikingHAN, the first framework to introduce **Spiking Neural Networks (SNNs)** into heterogeneous graph learning. It employs a single-layer graph convolution with shared parameters to aggregate meta-path-based neighborhood information, fuses multiple meta-path semantics via semantic-level attention, and encodes the resulting representations into 1-bit binary spike sequences. SpikingHAN achieves competitive node classification performance on three datasets with fewer parameters, faster inference, and lower energy consumption.
+  [AAAI 2026][Graph Learning][Heterogeneous Graphs] This paper proposes SpikingHAN, the first framework to introduce **Spiking Neural Networks (SNNs)** into heterogeneous graph learning. It employs a single-layer graph con…
 tags:
-  - AAAI 2026
-  - Graph Learning
-  - Heterogeneous Graphs
-  - Spiking Neural Networks
-  - Meta-path
-  - Graph Attention
-  - Energy-Efficient Computing
+  - "AAAI 2026"
+  - "Graph Learning"
+  - "Heterogeneous Graphs"
+  - "Spiking Neural Networks"
+  - "Meta-path"
+  - "Graph Attention"
+  - "Energy-Efficient Computing"
 date: 2026-05-08
 content_hash: af1c057dc7aede03
 ---

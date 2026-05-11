@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] An Empirical Study of Autoregressive Pre-training from Videos
 description: >-
-  [ICCV 2025][Video Understanding][Autoregressive Pre-training] This paper systematically investigates autoregressive pre-training from videos (termed Toto), training a causal Transformer on over one trillion visual tokens. Despite minimal inductive biases, the approach achieves competitive performance across image recognition, video classification, object tracking, and robot manipulation, while exhibiting scaling laws analogous to those of language models, albeit at a slower rate.
+  [ICCV 2025][Video Understanding][Autoregressive Pre-training] This paper systematically investigates autoregressive pre-training from videos (termed Toto)…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - Autoregressive Pre-training
-  - Video Models
-  - Visual Tokens
-  - Scaling Laws
-  - Representation Learning
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "Autoregressive Pre-training"
+  - "Video Models"
+  - "Visual Tokens"
+  - "Scaling Laws"
+  - "Representation Learning"
 date: 2026-05-08
 content_hash: 3015fd21cb9b8a49
 ---

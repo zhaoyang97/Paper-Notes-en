@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Interpreting ResNet-based CLIP via Neuron-Attention Decomposition
 description: >-
-  [NeurIPS 2025][Segmentation][CLIP interpretability] This paper proposes a neuron-attention decomposition method to interpret CLIP-ResNet by decomposing model outputs into pairwise contribution paths of neurons and attention pooling heads. The resulting neuron-head pairs are shown to admit rank-1 approximations, exhibit sparsity, and capture sub-concepts. The method is applied to training-free semantic segmentation (mIoU 26.2% on PASCAL Context, surpassing MaskCLIP by 15%) and dataset distribution shift monitoring.
+  [NeurIPS 2025][Segmentation][CLIP interpretability] This paper proposes a neuron-attention decomposition method to interpret CLIP-ResNet by decomposing model outputs into pairwise contribution paths of neurons and attent…
 tags:
-  - NeurIPS 2025
-  - Segmentation
-  - CLIP interpretability
-  - neuron-attention decomposition
-  - semantic segmentation
-  - ResNet
-  - mechanistic interpretability
+  - "NeurIPS 2025"
+  - "Segmentation"
+  - "CLIP interpretability"
+  - "neuron-attention decomposition"
+  - "semantic segmentation"
+  - "ResNet"
+  - "mechanistic interpretability"
 date: 2026-05-08
 content_hash: 7ea5a57ca5cc5db9
 ---

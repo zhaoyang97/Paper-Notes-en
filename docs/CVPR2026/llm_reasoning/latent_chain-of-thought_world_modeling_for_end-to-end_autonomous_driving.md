@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Latent Chain-of-Thought World Modeling for End-to-End Autonomous Driving
 description: >-
-  [CVPR 2026][LLM Reasoning][Latent space reasoning] LCDrive proposes a Latent Chain-of-Thought (Latent CoT) framework that replaces natural language CoT with action proposal tokens and world model prediction tokens for reasoning, achieving lower latency and superior trajectory quality in end-to-end autonomous driving via cold-start + RL post-training.
+  [CVPR 2026][LLM Reasoning][Latent space reasoning] LCDrive proposes a Latent Chain-of-Thought (Latent CoT) framework that replaces natural language CoT with action proposal tokens and world model prediction tokens for re…
 tags:
-  - CVPR 2026
-  - LLM Reasoning
-  - Latent space reasoning
-  - chain-of-thought
-  - world model
-  - end-to-end driving
-  - VLA model
+  - "CVPR 2026"
+  - "LLM Reasoning"
+  - "Latent space reasoning"
+  - "chain-of-thought"
+  - "world model"
+  - "end-to-end driving"
+  - "VLA model"
 date: 2026-05-08
 content_hash: e86b26268fba86de
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FlexAvatar: Learning Complete 3D Head Avatars with Partial Supervision
 description: >-
-  [CVPR 2026][Human Understanding][3D head avatars] FlexAvatar introduces learnable *bias sink* tokens to unify training across monocular and multi-view data, resolving the entanglement between driving signals and target viewpoints, and enables the generation of complete, high-quality, animatable 3D head avatars from a single image.
+  [CVPR 2026][Human Understanding][3D head avatars] FlexAvatar introduces learnable *bias sink* tokens to unify training across monocular and multi-view data…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - 3D head avatars
-  - single-image reconstruction
-  - bias sinks
-  - 3D Gaussian Splatting
-  - Transformer
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "3D head avatars"
+  - "single-image reconstruction"
+  - "bias sinks"
+  - "3D Gaussian Splatting"
+  - "Transformer"
 date: 2026-05-08
 content_hash: de6ef039dc702a6c
 ---

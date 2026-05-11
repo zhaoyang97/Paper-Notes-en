@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Democratizing LLM Efficiency: From Hyperscale Optimizations to Universal Deployability
 description: >-
-  [AAAI 2026][LLM Safety][LLM efficiency] This position paper argues that current LLM efficiency research is dominated by hyperscale assumptions. It identifies five open research challenges targeting small- and medium-scale deployers, and advocates for redefining efficiency metrics through an Overhead-Aware Efficiency (OAE) framework.
+  [AAAI 2026][LLM Safety][LLM efficiency] This position paper argues that current LLM efficiency research is dominated by hyperscale assumptions. It identifies five open research challenges targeting small- and medium-scal…
 tags:
-  - AAAI 2026
-  - LLM Safety
-  - LLM efficiency
-  - democratized deployment
-  - hyperscale optimization
-  - overhead-aware efficiency
-  - position paper
+  - "AAAI 2026"
+  - "LLM Safety"
+  - "LLM efficiency"
+  - "democratized deployment"
+  - "hyperscale optimization"
+  - "overhead-aware efficiency"
+  - "position paper"
 date: 2026-05-08
 content_hash: 0ac7a8251561e7ff
 ---

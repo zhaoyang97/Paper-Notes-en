@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Extending NGU to Multi-Agent RL: A Preliminary Study
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Never Give Up] This paper extends the single-agent NGU (Never Give Up) algorithm to multi-agent settings and conducts a systematic ablation across three design dimensions: shared replay buffer, shared novelty signal, and heterogeneous β parameters. The results show that NGU combined with a shared experience replay buffer significantly outperforms a multi-agent DQN baseline on the PettingZoo simple_tag pursuit task.
+  [NeurIPS 2025][Reinforcement Learning][Never Give Up] This paper extends the single-agent NGU (Never Give Up) algorithm to multi-agent settings and conducts a systematic ablation across three design dimensions: shared re…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Never Give Up
-  - Multi-Agent Reinforcement Learning
-  - Intrinsic Motivation
-  - Exploration
-  - Sparse Rewards
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Never Give Up"
+  - "Multi-Agent Reinforcement Learning"
+  - "Intrinsic Motivation"
+  - "Exploration"
+  - "Sparse Rewards"
 date: 2026-05-08
 content_hash: 88cf02626b9e84a1
 ---

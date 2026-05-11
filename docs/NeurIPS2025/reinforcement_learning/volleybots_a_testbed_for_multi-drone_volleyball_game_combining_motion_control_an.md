@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VolleyBots: A Testbed for Multi-Drone Volleyball Game Combining Motion Control and Strategic Play
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Multi-drone systems] This paper presents VolleyBots, a multi-drone volleyball competition testbed that integrates cooperative-adversarial gameplay, turn-based interaction, and agile 3D motion control. Built on Isaac Sim, it establishes a task curriculum from single-agent training to multi-agent competition. A hierarchical policy achieves a 69.5% win rate on the 3v3 task, with demonstrated zero-shot sim-to-real transfer.
+  [NeurIPS 2025][Reinforcement Learning][Multi-drone systems] This paper presents VolleyBots, a multi-drone volleyball competition testbed that integrates cooperative-adversarial gameplay, turn-based interaction…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Multi-drone systems
-  - robot sports
-  - multi-agent reinforcement learning
-  - game theory
-  - sim-to-real
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Multi-drone systems"
+  - "robot sports"
+  - "multi-agent reinforcement learning"
+  - "game theory"
+  - "sim-to-real"
 date: 2026-05-08
 content_hash: dd0677ac6ffb65c3
 ---

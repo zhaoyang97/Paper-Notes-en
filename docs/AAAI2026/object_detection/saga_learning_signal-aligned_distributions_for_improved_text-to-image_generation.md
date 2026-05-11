@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SAGA: Learning Signal-Aligned Distributions for Improved Text-to-Image Generation
 description: >-
-  [AAAI 2026][Object Detection][Diffusion Models] This paper proposes SAGA, a training-free method that learns prompt-aligned Gaussian distributions to improve semantic alignment in text-to-image generation models. Supporting both text and spatial conditioning, SAGA achieves substantial alignment gains on SD 1.4 and SD 3 (TIAM-3 improves from 8.4% to 50.7%).
+  [AAAI 2026][Object Detection][Diffusion Models] This paper proposes SAGA, a training-free method that learns prompt-aligned Gaussian distributions to improve semantic alignment in text-to-image generation models. Support…
 tags:
-  - AAAI 2026
-  - Object Detection
-  - Diffusion Models
-  - Text Alignment
-  - Gaussian Distribution Learning
-  - Training-Free Method
-  - Flow Matching
+  - "AAAI 2026"
+  - "Object Detection"
+  - "Diffusion Models"
+  - "Text Alignment"
+  - "Gaussian Distribution Learning"
+  - "Training-Free Method"
+  - "Flow Matching"
 date: 2026-05-08
 content_hash: 5025c53a93de930e
 ---

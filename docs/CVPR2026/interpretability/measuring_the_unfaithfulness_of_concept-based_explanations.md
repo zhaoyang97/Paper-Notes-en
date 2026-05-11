@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Measuring the (Un)Faithfulness of Concept-Based Explanations
 description: >-
-  [CVPR 2026][Concept explanations] This paper demonstrates that the faithfulness of existing unsupervised concept-based explanation methods (U-CBEMs) is systematically overestimated — due to the use of overly complex surrogate models and flawed deletion-based evaluation. The authors propose SURF (Surrogate Faithfulness), a simple linear surrogate with a dual-space metric framework, validated through a sanity check that "random concepts should be less faithful," and provide the first systematic benchmark revealing that multiple SOTA U-CBEMs are in fact not faithful.
+  [CVPR 2026][Interpretability][Concept explanations] This paper demonstrates that the faithfulness of existing unsupervised concept-based explanation methods (U-CBEMs) is systematically overestimated — due to the use of o…
 tags:
-  - CVPR 2026
-  - Concept explanations
-  - faithfulness measurement
-  - unsupervised concept methods
-  - surrogate models
-  - interpretability evaluation
+  - "CVPR 2026"
+  - "Interpretability"
+  - "Concept explanations"
+  - "faithfulness measurement"
+  - "unsupervised concept methods"
+  - "surrogate models"
+  - "interpretability evaluation"
 date: 2026-05-08
 content_hash: 3eab3a430ad09b1f
 ---

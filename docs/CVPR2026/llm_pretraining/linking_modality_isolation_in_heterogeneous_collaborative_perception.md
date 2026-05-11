@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Linking Modality Isolation in Heterogeneous Collaborative Perception
 description: >-
-  [CVPR 2026][LLM Pretraining][Collaborative Perception] CodeAlign constructs a discrete code space via codebooks and cross-modal Feature-Code-Feature (FCF) translation, becoming the first framework to solve the "modality isolation" problem in heterogeneous collaborative perception—where different modalities never co-occur in training data—using only 8% of HEAL's training parameters with 1024x communication reduction while achieving SOTA perception performance.
+  [CVPR 2026][LLM Pretraining][Collaborative Perception] CodeAlign constructs a discrete code space via codebooks and cross-modal Feature-Code-Feature (FCF) translation…
 tags:
-  - CVPR 2026
-  - LLM Pretraining
-  - Collaborative Perception
-  - Heterogeneous Alignment
-  - Modality Isolation
-  - Codebook
-  - Cross-Modal Translation
+  - "CVPR 2026"
+  - "LLM Pretraining"
+  - "Collaborative Perception"
+  - "Heterogeneous Alignment"
+  - "Modality Isolation"
+  - "Codebook"
+  - "Cross-Modal Translation"
 date: 2026-05-08
 content_hash: 52ed408ecb00533b
 ---

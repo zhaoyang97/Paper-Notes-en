@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Coarse-to-Fine Open-Set Graph Node Classification with Large Language Models
 description: >-
-  [AAAI2026][Medical Imaging][open-set classification] This paper proposes the Coarse-to-Fine Classification (CFC) framework, which leverages the zero-shot reasoning capability of LLMs to supply semantically grounded OOD samples and a potential OOD label space for open-set graph node classification, enabling the model not only to detect OOD nodes but also to classify them into specific unknown categories.
+  [AAAI2026][Medical Imaging][open-set classification] This paper proposes the Coarse-to-Fine Classification (CFC) framework, which leverages the zero-shot reasoning capability of LLMs to supply semantically grounded OOD s…
 tags:
-  - AAAI2026
-  - Medical Imaging
-  - open-set classification
-  - OOD detection
-  - graph neural networks
-  - large language models
-  - node classification
+  - "AAAI2026"
+  - "Medical Imaging"
+  - "open-set classification"
+  - "OOD detection"
+  - "graph neural networks"
+  - "large language models"
+  - "node classification"
 date: 2026-05-08
 content_hash: b79ef9b1794f93c8
 ---

@@ -2,15 +2,16 @@
 title: >-
   [Paper Note] Chain-of-Retrieval Augmented Generation (CoRAG)
 description: >-
-  [NeurIPS 2025][RAG] This paper proposes CoRAG, a framework that automatically generates intermediate retrieval chains (sub-query → sub-answer) via rejection sampling, fine-tunes an LLM to learn iterative retrieval and reasoning, and supports diverse test-time decoding strategies (greedy / Best-of-N / tree search) for flexible compute scaling. CoRAG achieves 26+ EM improvement on multi-hop QA and attains state-of-the-art on 9/10 tasks of the KILT benchmark.
+  [NeurIPS 2025][Information Retrieval & RAG][RAG] This paper proposes CoRAG, a framework that automatically generates intermediate retrieval chains (sub-query → sub-answer) via rejection sampling…
 tags:
-  - NeurIPS 2025
-  - RAG
-  - Chain-of-Retrieval
-  - multi-hop reasoning
-  - rejection sampling
-  - retrieval chain
-  - test-time compute scaling
+  - "NeurIPS 2025"
+  - "Information Retrieval & RAG"
+  - "RAG"
+  - "Chain-of-Retrieval"
+  - "multi-hop reasoning"
+  - "rejection sampling"
+  - "retrieval chain"
+  - "test-time compute scaling"
 date: 2026-05-08
 content_hash: 3bdf9fa1327e9bc9
 ---

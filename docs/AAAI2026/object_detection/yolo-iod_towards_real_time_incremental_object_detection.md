@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] YOLO-IOD: Towards Real Time Incremental Object Detection
 description: >-
-  [AAAI 2026][Object Detection][Incremental Object Detection] This work is the first to systematically integrate incremental object detection (IOD) into the YOLO real-time framework. It identifies three types of knowledge conflict, proposes a three-module solution (CPR + IKS + CAKD), and introduces the more realistic LoCo COCO benchmark for evaluation.
+  [AAAI 2026][Object Detection][Incremental Object Detection] This work is the first to systematically integrate incremental object detection (IOD) into the YOLO real-time framework. It identifies three types of knowledge…
 tags:
-  - AAAI 2026
-  - Object Detection
-  - Incremental Object Detection
-  - YOLO
-  - Knowledge Distillation
-  - Catastrophic Forgetting
-  - Pseudo Labels
+  - "AAAI 2026"
+  - "Object Detection"
+  - "Incremental Object Detection"
+  - "YOLO"
+  - "Knowledge Distillation"
+  - "Catastrophic Forgetting"
+  - "Pseudo Labels"
 date: 2026-05-08
 content_hash: 18059c938ef44682
 ---

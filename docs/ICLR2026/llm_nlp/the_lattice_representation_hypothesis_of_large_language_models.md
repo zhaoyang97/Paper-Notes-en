@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] The Lattice Representation Hypothesis of Large Language Models
 description: >-
-  [ICLR2026][LLM/NLP][Linear Representation Hypothesis] This paper proposes the **Lattice Representation Hypothesis (LRH)** for LLMs: by unifying the Linear Representation Hypothesis with Formal Concept Analysis (FCA), it demonstrates that attribute directions in LLM embedding spaces implicitly encode a **concept lattice** via half-space intersections, thereby bridging continuous geometry and symbolic abstraction.
+  [ICLR2026][LLM/NLP][Linear Representation Hypothesis] This paper proposes the **Lattice Representation Hypothesis (LRH)** for LLMs: by unifying the Linear Representation Hypothesis with Formal Concept Analysis (FCA)…
 tags:
-  - ICLR2026
-  - LLM/NLP
-  - Linear Representation Hypothesis
-  - Formal Concept Analysis
-  - Concept Lattice
-  - Half-Space Model
-  - Embedding Geometry
-  - Symbolic Reasoning
+  - "ICLR2026"
+  - "LLM/NLP"
+  - "Linear Representation Hypothesis"
+  - "Formal Concept Analysis"
+  - "Concept Lattice"
+  - "Half-Space Model"
+  - "Embedding Geometry"
+  - "Symbolic Reasoning"
 date: 2026-05-08
 content_hash: 45eeaf3a9106eafb
 ---

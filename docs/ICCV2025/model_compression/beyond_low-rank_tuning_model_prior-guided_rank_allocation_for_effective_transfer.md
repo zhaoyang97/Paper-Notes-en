@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond Low-Rank Tuning: Model Prior-Guided Rank Allocation for Effective Transfer in Low-Data and Large-Gap Regimes
 description: >-
-  [ICCV 2025][Model Compression][LoRA] This paper proposes SR-LoRA (Stable Rank-Guided LoRA), which leverages the stable rank of pretrained weight matrices as a natural prior to assign optimal per-layer ranks for LoRA modules. Without any search procedure, SR-LoRA achieves flexible layer-wise rank allocation and significantly outperforms fixed low-rank LoRA and other adaptive-rank methods in large-domain-gap and few-shot transfer scenarios such as medical imaging.
+  [ICCV 2025][Model Compression][LoRA] This paper proposes SR-LoRA (Stable Rank-Guided LoRA), which leverages the stable rank of pretrained weight matrices as a natural prior to assign optimal per-layer ranks for LoRA modu…
 tags:
-  - ICCV 2025
-  - Model Compression
-  - LoRA
-  - Stable Rank
-  - Parameter-Efficient Fine-Tuning
-  - Rank Allocation
-  - Few-Shot Transfer Learning
+  - "ICCV 2025"
+  - "Model Compression"
+  - "LoRA"
+  - "Stable Rank"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Rank Allocation"
+  - "Few-Shot Transfer Learning"
 date: 2026-05-08
 content_hash: 5af90e316ebd1715
 ---

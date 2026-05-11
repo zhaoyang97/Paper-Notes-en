@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dissecting Failure Dynamics in Large Language Model Reasoning
 description: >-
-  [ACL 2026][LLM Reasoning][Reasoning Failure Analysis] By analyzing LLM reasoning trajectories, this work finds that errors concentrate at a small number of critical turning points in the early stages, after which the model enters a "cognitive spiral"—continuously extending the reasoning in a locally coherent but globally erroneous manner. Based on these findings, the paper proposes the GUARD framework, which performs short-range branching repairs at high-risk turning points detected via entropy signals.
+  [ACL 2026][LLM Reasoning][Reasoning Failure Analysis] By analyzing LLM reasoning trajectories, this work finds that errors concentrate at a small number of critical turning points in the early stages…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - Reasoning Failure Analysis
-  - Entropy Signal
-  - Early Failure Onset
-  - Cognitive Spiral
-  - Inference-Time Intervention
+  - "ACL 2026"
+  - "LLM Reasoning"
+  - "Reasoning Failure Analysis"
+  - "Entropy Signal"
+  - "Early Failure Onset"
+  - "Cognitive Spiral"
+  - "Inference-Time Intervention"
 date: 2026-05-08
 content_hash: 1f6d9eedd4fe6803
 ---

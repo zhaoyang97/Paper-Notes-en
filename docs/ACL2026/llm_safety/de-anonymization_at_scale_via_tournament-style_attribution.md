@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] De-Anonymization at Scale via Tournament-Style Attribution
 description: >-
-  [ACL 2026][LLM Safety][Authorship Attribution] This paper proposes DAS (De-Anonymization at Scale), an LLM-based large-scale authorship de-anonymization method that combines tournament-style elimination, dense retrieval pre-filtering, and multi-round voting aggregation to perform author matching across tens of thousands of candidate texts, revealing the privacy threat that LLMs pose to anonymous platforms such as double-blind peer review.
+  [ACL 2026][LLM Safety][Authorship Attribution] This paper proposes DAS (De-Anonymization at Scale), an LLM-based large-scale authorship de-anonymization method that combines tournament-style elimination…
 tags:
-  - ACL 2026
-  - LLM Safety
-  - Authorship Attribution
-  - De-Anonymization
-  - LLM Privacy Threat
-  - Tournament-Style Matching
-  - Peer Review
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Authorship Attribution"
+  - "De-Anonymization"
+  - "LLM Privacy Threat"
+  - "Tournament-Style Matching"
+  - "Peer Review"
 date: 2026-05-08
 content_hash: e68ccd7224042a83
 ---

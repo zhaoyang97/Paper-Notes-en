@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unifying Proportional Fairness in Centroid and Non-Centroid Clustering
 description: >-
-  [NeurIPS 2025][AI Safety][fair clustering] This paper unifies the study of proportional fairness in centroid and non-centroid clustering under a single "semi-centroid clustering" framework, establishes an impossibility theorem showing the two cannot be simultaneously achieved, and designs novel algorithms that attain constant-factor core guarantees under dual metric loss.
+  [NeurIPS 2025][AI Safety][fair clustering] This paper unifies the study of proportional fairness in centroid and non-centroid clustering under a single "semi-centroid clustering" framework…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - fair clustering
-  - proportional fairness
-  - core stability
-  - semi-centroid clustering
-  - approximation algorithms
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "fair clustering"
+  - "proportional fairness"
+  - "core stability"
+  - "semi-centroid clustering"
+  - "approximation algorithms"
 date: 2026-05-08
 content_hash: 95c7dee36d921791
 ---

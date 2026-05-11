@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Cash Flow Underwriting with Bank Transaction Data: Advancing MSME Financial Inclusion in Malaysia
 description: >-
-  [AAAI 2026][Credit Scoring] This paper proposes an end-to-end cash flow underwriting workflow based on bank transaction data and constructs the first Malaysian MSME bank statement dataset (611 loan records). It demonstrates that features derived from bank transactions improve a logistic regression model's AUROC from 0.672 to 0.850 compared to traditional application information alone, significantly enhancing credit assessment capability for MSMEs lacking credit histories.
+  [AAAI 2026][Credit Scoring] This paper proposes an end-to-end cash flow underwriting workflow based on bank transaction data and constructs the first Malaysian MSME bank statement dataset (611 loan records). It demonstra…
 tags:
-  - AAAI 2026
-  - Credit Scoring
-  - Financial Inclusion
-  - Bank Statements
-  - MSMEs
-  - Cash Flow Underwriting
+  - "AAAI 2026"
+  - "Credit Scoring"
+  - "Financial Inclusion"
+  - "Bank Statements"
+  - "MSMEs"
+  - "Cash Flow Underwriting"
 date: 2026-05-08
 content_hash: 26acd07219da5c3c
 ---

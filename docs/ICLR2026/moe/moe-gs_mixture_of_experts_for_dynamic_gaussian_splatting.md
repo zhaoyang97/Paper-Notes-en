@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] MoE-GS: Mixture of Experts for Dynamic Gaussian Splatting
 description: >-
-  [ICLR 2026][3D Gaussian Splatting] This paper proposes MoE-GS, the first framework to introduce a Mixture-of-Experts architecture into dynamic Gaussian Splatting. Through a Volume-aware Pixel Router, it adaptively fuses multiple heterogeneous deformation priors (HexPlane / per-Gaussian / polynomial / interpolation), consistently surpassing state-of-the-art methods on the N3V and Technicolor datasets, while maintaining efficiency via single-pass rendering, gate-aware pruning, and knowledge distillation.
+  [ICLR 2026][3D Vision / Dynamic Scene Reconstruction][3D Gaussian Splatting] This paper proposes MoE-GS, the first framework to introduce a Mixture-of-Experts architecture into dynamic Gaussian Splatting. Through a Volum…
 tags:
-  - ICLR 2026
-  - 3D Gaussian Splatting
-  - dynamic scene
-  - mixture of experts
-  - novel view synthesis
-  - knowledge distillation
+  - "ICLR 2026"
+  - "3D Vision / Dynamic Scene Reconstruction"
+  - "3D Gaussian Splatting"
+  - "dynamic scene"
+  - "mixture of experts"
+  - "novel view synthesis"
+  - "knowledge distillation"
 date: 2026-05-08
 content_hash: 0bda90d0b4a01eaf
 ---

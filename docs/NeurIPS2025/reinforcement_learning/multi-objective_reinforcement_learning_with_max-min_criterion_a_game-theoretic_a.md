@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multi-Objective Reinforcement Learning with Max-Min Criterion: A Game-Theoretic Approach
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Multi-objective reinforcement learning] This work reformulates entropy-regularized max-min multi-objective reinforcement learning as a two-player zero-sum regularized game, proposes the ERAM/ARAM algorithms with closed-form weight updates via mirror descent, and establishes global last-iterate convergence, substantially outperforming baselines across multiple MORL benchmarks.
+  [NeurIPS 2025][Reinforcement Learning][Multi-objective reinforcement learning] This work reformulates entropy-regularized max-min multi-objective reinforcement learning as a two-player zero-sum regularized game…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Multi-objective reinforcement learning
-  - max-min fairness
-  - game theory
-  - mirror descent
-  - last-iterate convergence
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Multi-objective reinforcement learning"
+  - "max-min fairness"
+  - "game theory"
+  - "mirror descent"
+  - "last-iterate convergence"
 date: 2026-05-08
 content_hash: 0d12fb0e1f50f43a
 ---

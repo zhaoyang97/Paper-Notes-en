@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VarSplat: Uncertainty-aware 3D Gaussian Splatting for Robust RGB-D SLAM
 description: >-
-  [CVPR2026][3D Vision][3D Gaussian Splatting] This paper presents VarSplat, the first 3DGS-SLAM system that learns a **per-splat appearance variance** $\sigma^2$ and renders a **per-pixel uncertainty map** $V$ via the law of total variance. The uncertainty is uniformly applied to tracking, submap registration, and loop detection, achieving robust and state-of-the-art performance across four datasets.
+  [CVPR2026][3D Vision][3D Gaussian Splatting] This paper presents VarSplat, the first 3DGS-SLAM system that learns a **per-splat appearance variance** $\sigma^2$ and renders a **per-pixel uncertainty map** $V$ via the law…
 tags:
-  - CVPR2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - SLAM
-  - uncertainty modeling
-  - RGB-D
-  - alpha compositing
+  - "CVPR2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "SLAM"
+  - "uncertainty modeling"
+  - "RGB-D"
+  - "alpha compositing"
 date: 2026-05-08
 content_hash: 1bda8aaa170a2941
 ---

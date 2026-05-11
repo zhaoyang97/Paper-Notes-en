@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Token Bottleneck: One Token to Remember Dynamics
 description: >-
-  [NeurIPS 2025][Video Understanding][Self-supervised learning] This paper proposes Token Bottleneck (ToBo), a self-supervised visual representation learning pipeline that compresses a reference scene into a single bottleneck token and uses this token together with a minimal number of target scene patches to reconstruct the subsequent scene, thereby training visual backbone networks to simultaneously encode scene information conservatively and capture temporal dynamics.
+  [NeurIPS 2025][Video Understanding][Self-supervised learning] This paper proposes Token Bottleneck (ToBo), a self-supervised visual representation learning pipeline that compresses a reference scene into a single bottlen…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
-  - Self-supervised learning
-  - visual representation
-  - robot manipulation
-  - token bottleneck
-  - sequential scene understanding
+  - "NeurIPS 2025"
+  - "Video Understanding"
+  - "Self-supervised learning"
+  - "visual representation"
+  - "robot manipulation"
+  - "token bottleneck"
+  - "sequential scene understanding"
 date: 2026-05-08
 content_hash: a6cbb63d0b986536
 ---

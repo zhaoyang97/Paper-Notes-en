@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] JoDiffusion: Jointly Diffusing Image with Pixel-Level Annotations for Semantic Segmentation Promotion
 description: >-
-  [AAAI 2026][Segmentation][Semantic Segmentation] This paper proposes JoDiffusion, a framework that jointly diffuses images and pixel-level annotation masks in latent space, enabling—for the first time—simultaneous generation of semantically consistent image–annotation pairs conditioned solely on text prompts. JoDiffusion substantially outperforms existing Image2Mask and Mask2Image methods on Pascal VOC, COCO, and ADE20K.
+  [AAAI 2026][Segmentation][Semantic Segmentation] This paper proposes JoDiffusion, a framework that jointly diffuses images and pixel-level annotation masks in latent space…
 tags:
-  - AAAI 2026
-  - Segmentation
-  - Semantic Segmentation
-  - Dataset Generation
-  - Diffusion Models
-  - Joint Generation
-  - Annotation Masks
-  - Latent Space
+  - "AAAI 2026"
+  - "Segmentation"
+  - "Semantic Segmentation"
+  - "Dataset Generation"
+  - "Diffusion Models"
+  - "Joint Generation"
+  - "Annotation Masks"
+  - "Latent Space"
 date: 2026-05-08
 content_hash: 4bfa2f1d9e6a6009
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Decoding Open-Ended Information Seeking Goals from Eye Movements in Reading
 description: >-
-  [ICLR2026][Video Understanding][eye tracking] This paper introduces a novel task of decoding open-ended information seeking goals from eye movement trajectories during reading. Built upon the OneStop eye-tracking dataset (360 participants, 486 questions, 162 passages), the authors develop both discriminative and generative multimodal models. RoBERTEye-Fixations achieves 49.3% accuracy on three-way goal selection (random baseline: 33%) and 70.9% on different-critical-span conditions; DalEye-Llama/GPT also significantly outperforms eye-movement-free baselines on goal reconstruction.
+  [ICLR2026][Video Understanding][eye tracking] This paper introduces a novel task of decoding open-ended information seeking goals from eye movement trajectories during reading. Built upon the OneStop eye-tracking dataset…
 tags:
-  - ICLR2026
-  - Video Understanding
-  - eye tracking
-  - reading comprehension
-  - information seeking goal decoding
-  - multimodal LLM
-  - cognitive state decoding
+  - "ICLR2026"
+  - "Video Understanding"
+  - "eye tracking"
+  - "reading comprehension"
+  - "information seeking goal decoding"
+  - "multimodal LLM"
+  - "cognitive state decoding"
 date: 2026-05-08
 content_hash: c3e73d0b58655575
 ---

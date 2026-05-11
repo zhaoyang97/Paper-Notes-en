@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Deep Video Discovery: Agentic Search with Tool Use for Long-form Video Understanding
 description: >-
-  [NeurIPS 2025][LLM Agent][video understanding] This paper proposes DVD (Deep Video Discovery), an agent that frames long-form video understanding as a multi-step information search problem. It first constructs a multi-granular structured database from a long video (global summary + clip-level caption embeddings + frame-level pixels), then provides three search tools (Global Browse / Clip Search / Frame Inspect). A reasoning LLM autonomously orchestrates the search trajectory via an observe-reason-act loop. DVD achieves 74.2% on LVBench (surpassing the previous SOTA MR.Video by 13.4 pp), and 76.0% with subtitles.
+  [NeurIPS 2025][LLM Agent][video understanding] This paper proposes DVD (Deep Video Discovery), an agent that frames long-form video understanding as a multi-step information search problem. It first constructs a multi-gr…
 tags:
-  - NeurIPS 2025
-  - LLM Agent
-  - video understanding
-  - agentic search
-  - tool use
-  - long-form video
-  - multi-granular database
-  - adaptive workflow
+  - "NeurIPS 2025"
+  - "LLM Agent"
+  - "video understanding"
+  - "agentic search"
+  - "tool use"
+  - "long-form video"
+  - "multi-granular database"
+  - "adaptive workflow"
 date: 2026-05-08
 content_hash: 81b3838145fe21c3
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Speculative Sampling with Reinforcement Learning
 description: >-
-  [AAAI 2026][Reinforcement Learning][Speculative Sampling] This paper proposes Re-SpS, the first framework to formulate the draft tree hyperparameter optimization of Speculative Sampling (SpS) as an MDP and solve it via reinforcement learning. Through two key designs—feature reuse and action caching—Re-SpS achieves up to 1.12× additional speedup over EAGLE-3 without any loss in output fidelity.
+  [AAAI 2026][Reinforcement Learning][Speculative Sampling] This paper proposes Re-SpS, the first framework to formulate the draft tree hyperparameter optimization of Speculative Sampling (SpS) as an MDP and solve it via r…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - Speculative Sampling
-  - LLM Inference Acceleration
-  - Draft Tree Optimization
-  - PPO
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "Speculative Sampling"
+  - "LLM Inference Acceleration"
+  - "Draft Tree Optimization"
+  - "PPO"
 date: 2026-05-08
 content_hash: d6ada54ff2947f34
 ---

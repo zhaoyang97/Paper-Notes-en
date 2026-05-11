@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] LLM Probing with Contrastive Eigenproblems: Improving Understanding and Applicability of CCS
 description: >-
-  [NeurIPS 2025][CCS] This paper presents a rigorous analysis of the unsupervised probing method CCS (Contrast-Consistent Search) and proposes its reformulation as Contrastive Eigenproblems, yielding closed-form solutions with interpretable eigenvalues. This formulation eliminates CCS's sensitivity to random initialization and naturally extends to multivariate settings.
+  [NeurIPS 2025][Interpretability][CCS] This paper presents a rigorous analysis of the unsupervised probing method CCS (Contrast-Consistent Search) and proposes its reformulation as Contrastive Eigenproblems…
 tags:
-  - NeurIPS 2025
-  - CCS
-  - contrastive probing
-  - eigenproblems
-  - mechanistic interpretability
-  - latent knowledge elicitation
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "CCS"
+  - "contrastive probing"
+  - "eigenproblems"
+  - "mechanistic interpretability"
+  - "latent knowledge elicitation"
 date: 2026-05-08
 content_hash: 8791a37f0b4baeec
 ---

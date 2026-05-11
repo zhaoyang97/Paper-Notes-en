@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BoundRL: Efficient Structured Text Segmentation through Reinforced Boundary Generation
 description: >-
-  [ACL 2026][Segmentation][Structured Text Segmentation] BoundRL redefines structured text segmentation as a boundary generation task — generating only each segment's start tokens rather than the complete text, reducing output tokens by 90% and eliminating hallucination risk. Combined with a dual-objective reward function and selective perturbation strategy for RLVR training, a 1.7B model surpasses Claude-4 Sonnet's few-shot performance.
+  [ACL 2026][Segmentation][Structured Text Segmentation] BoundRL redefines structured text segmentation as a boundary generation task — generating only each segment's start tokens rather than the complete text…
 tags:
-  - ACL 2026
-  - Segmentation
-  - Structured Text Segmentation
-  - Boundary Generation
-  - RLVR
-  - Entropy Collapse
-  - Intermediate Candidates
+  - "ACL 2026"
+  - "Segmentation"
+  - "Structured Text Segmentation"
+  - "Boundary Generation"
+  - "RLVR"
+  - "Entropy Collapse"
+  - "Intermediate Candidates"
 date: 2025-04-17
 content_hash: 14a71de3f133cca3
 ---

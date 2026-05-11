@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RISK: A Framework for GUI Agents in E-commerce Risk Management
 description: >-
-  [ACL 2026][LLM Agent][GUI agents] This paper proposes the RISK framework, comprising a domain dataset (RISK-Data: 8,492 single-step + 2,386 multi-step trajectories), a benchmark (RISK-Bench), and a GRPO-based reinforcement fine-tuning method (RISK-R1) for GUI agents in e-commerce risk management. The 7B model surpasses state-of-the-art baselines with only 7.2% of their parameter count, achieving an online task success rate of 70.5%.
+  [ACL 2026][LLM Agent][GUI agents] This paper proposes the RISK framework, comprising a domain dataset (RISK-Data: 8,492 single-step + 2,386 multi-step trajectories), a benchmark (RISK-Bench)…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - GUI agents
-  - e-commerce risk management
-  - reinforcement fine-tuning
-  - web interaction
-  - multi-step reasoning
+  - "ACL 2026"
+  - "LLM Agent"
+  - "GUI agents"
+  - "e-commerce risk management"
+  - "reinforcement fine-tuning"
+  - "web interaction"
+  - "multi-step reasoning"
 date: 2026-05-08
 content_hash: 7af50fcfc70412f1
 ---

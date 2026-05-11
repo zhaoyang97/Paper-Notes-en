@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Pose-dIVE: Pose-Diversified Augmentation with Diffusion Model for Person Re-Identification
 description: >-
-  [CVPR 2026][Image Generation][Person Re-Identification] Pose-dIVE leverages the SMPL model to jointly control human body pose and camera viewpoint, using a diffusion model to generate person images with diversified poses and viewpoints. This approach systematically alleviates distributional bias in Re-ID training data, consistently improving the generalization capability of arbitrary Re-ID models across multiple benchmarks.
+  [CVPR 2026][Image Generation][Person Re-Identification] Pose-dIVE leverages the SMPL model to jointly control human body pose and camera viewpoint…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Person Re-Identification
-  - Data Augmentation
-  - Diffusion Model
-  - SMPL
-  - Pose Diversification
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Person Re-Identification"
+  - "Data Augmentation"
+  - "Diffusion Model"
+  - "SMPL"
+  - "Pose Diversification"
 date: 2026-05-08
 content_hash: 4fd13b3a51dc707c
 ---

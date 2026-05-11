@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CoMP: Collaborative Multi-Mode Pruning for Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Model Pruning] CoMP proposes a collaborative multi-mode pruning framework that eliminates inconsistencies between parameter and token pruning metrics via a Collaborative Importance Metric (CIM), and adaptively selects the optimal pruning mode at each stage through a Multi-mode Pruning Strategy (MPS), achieving significant improvements over single-mode and naive joint pruning approaches at high pruning ratios.
+  [CVPR 2026][Multimodal VLM][Model Pruning] CoMP proposes a collaborative multi-mode pruning framework that eliminates inconsistencies between parameter and token pruning metrics via a Collaborative Importance Metric (CIM…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Model Pruning
-  - Vision-Language Models
-  - Parameter Pruning
-  - Token Pruning
-  - Collaborative Compression
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Model Pruning"
+  - "Vision-Language Models"
+  - "Parameter Pruning"
+  - "Token Pruning"
+  - "Collaborative Compression"
 date: 2026-05-08
 content_hash: f2d5c87876788de1
 ---

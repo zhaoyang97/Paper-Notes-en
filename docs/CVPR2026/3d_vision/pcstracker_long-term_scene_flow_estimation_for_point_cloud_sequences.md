@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PCSTracker: Long-Term Scene Flow Estimation for Point Cloud Sequences
 description: >-
-  [CVPR 2026][3D Vision][point cloud scene flow] PCSTracker is the first end-to-end framework for long-term scene flow estimation on point cloud sequences. Through iterative joint geometry-motion optimization, spatiotemporal trajectory updates, and an overlapping sliding window strategy, it reduces EPE_3D by 57.9% on the synthetic dataset PointOdyssey3D while running in real time at 32.5 FPS.
+  [CVPR 2026][3D Vision][point cloud scene flow] PCSTracker is the first end-to-end framework for long-term scene flow estimation on point cloud sequences. Through iterative joint geometry-motion optimization…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - point cloud scene flow
-  - long-term trajectory estimation
-  - spatiotemporal Transformer
-  - sliding window
-  - 3D motion analysis
+  - "CVPR 2026"
+  - "3D Vision"
+  - "point cloud scene flow"
+  - "long-term trajectory estimation"
+  - "spatiotemporal Transformer"
+  - "sliding window"
+  - "3D motion analysis"
 date: 2026-05-08
 content_hash: b39dcf8f8a1daf4a
 ---

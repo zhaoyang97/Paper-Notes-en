@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Scaling Behaviors of LLM Reinforcement Learning Post-Training: An Empirical Study
 description: >-
-  [ACL 2026][Reinforcement Learning][RL post-training] This work presents the first systematic study of scaling behaviors in LLM reinforcement learning post-training, revealing power-law relationships between performance and training resources across the Qwen2.5 family (0.5B–72B), with learning efficiency saturating as model scale increases.
+  [ACL 2026][Reinforcement Learning][RL post-training] This work presents the first systematic study of scaling behaviors in LLM reinforcement learning post-training…
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - RL post-training
-  - scaling laws
-  - mathematical reasoning
-  - learning efficiency
-  - data reuse
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "RL post-training"
+  - "scaling laws"
+  - "mathematical reasoning"
+  - "learning efficiency"
+  - "data reuse"
 date: 2026-05-08
 content_hash: baf08de3b58a2e16
 ---

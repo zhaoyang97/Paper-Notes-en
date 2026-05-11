@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OpenScan: A Benchmark for Generalized Open-Vocabulary 3D Scene Understanding
 description: >-
-  [AAAI 2026][3D Vision][Open-Vocabulary 3D] This paper proposes the Generalized Open-Vocabulary 3D Scene Understanding (GOV-3D) task and the corresponding OpenScan benchmark, extending 3D scene understanding beyond object categories to eight linguistic attribute dimensions, revealing critical deficiencies of existing OV-3D methods in understanding abstract object attributes.
+  [AAAI 2026][3D Vision][Open-Vocabulary 3D] This paper proposes the Generalized Open-Vocabulary 3D Scene Understanding (GOV-3D) task and the corresponding OpenScan benchmark…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - Open-Vocabulary 3D
-  - Attribute Understanding
-  - 3D Scene Segmentation
-  - Benchmark
-  - Knowledge Graph
+  - "AAAI 2026"
+  - "3D Vision"
+  - "Open-Vocabulary 3D"
+  - "Attribute Understanding"
+  - "3D Scene Segmentation"
+  - "Benchmark"
+  - "Knowledge Graph"
 date: 2026-05-08
 content_hash: b08f2141bf9674c5
 ---

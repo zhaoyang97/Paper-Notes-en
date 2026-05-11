@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GROVER: Graph-guided Representation of Omics and Vision with Expert Regulation for Cancer Survival Prediction
 description: >-
-  [AAAI 2026][Medical Imaging][Spatial omics] This paper proposes GROVER, a spatial multi-omics framework that captures nonlinear spatial-feature dependencies via a KAN-GCN encoder, aligns heterogeneous modalities through spot-feature-pair contrastive learning, and dynamically routes and filters low-quality signals via a self-adaptive Mixture of Experts (MoE). GROVER achieves superior clustering performance over existing methods on four real-world spatial omics datasets.
+  [AAAI 2026][Medical Imaging][Spatial omics] This paper proposes GROVER, a spatial multi-omics framework that captures nonlinear spatial-feature dependencies via a KAN-GCN encoder…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Spatial omics
-  - multimodal fusion
-  - graph convolutional network
-  - mixture of experts
-  - contrastive learning
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Spatial omics"
+  - "multimodal fusion"
+  - "graph convolutional network"
+  - "mixture of experts"
+  - "contrastive learning"
 date: 2026-05-08
 content_hash: a2272b5215eaa055
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GOMPSNR: Reflourish the Signal-to-Noise Ratio Metric for Audio Generation Tasks
 description: >-
-  [AAAI2026][Audio & Speech][signal-to-noise ratio] This paper reconstructs the SNR metric by introducing omnidirectional phase derivatives to replace instantaneous phase, proposes GOMPSNR as a more reliable audio quality evaluation metric, and derives a family of novel loss functions that significantly improve neural vocoder performance.
+  [AAAI2026][Audio & Speech][signal-to-noise ratio] This paper reconstructs the SNR metric by introducing omnidirectional phase derivatives to replace instantaneous phase…
 tags:
-  - AAAI2026
+  - "AAAI2026"
   - "Audio & Speech"
-  - signal-to-noise ratio
-  - phase derivatives
-  - audio quality metric
-  - loss function
-  - neural vocoder
+  - "signal-to-noise ratio"
+  - "phase derivatives"
+  - "audio quality metric"
+  - "loss function"
+  - "neural vocoder"
 date: 2026-05-08
 content_hash: 04b19f1890c78f8b
 ---

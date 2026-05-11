@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MosaicDiff: Training-free Structural Pruning for Diffusion Model Acceleration Reflecting Pretraining Dynamics
 description: >-
-  [ICCV 2025][Image Generation][Structural Pruning] This paper proposes MosaicDiff, a training-free structural pruning method for diffusion models that dynamically partitions the inference trajectory into three stages based on pretraining learning-speed dynamics and applies stage-specific subnetworks with varying sparsity, achieving significant acceleration on DiT and SDXL without sacrificing generation quality.
+  [ICCV 2025][Image Generation][Structural Pruning] This paper proposes MosaicDiff, a training-free structural pruning method for diffusion models that dynamically partitions the inference trajectory into three stages base…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Structural Pruning
-  - Training-free Acceleration
-  - Pretraining Dynamics
-  - SNR-aware
-  - Second-order Pruning
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Structural Pruning"
+  - "Training-free Acceleration"
+  - "Pretraining Dynamics"
+  - "SNR-aware"
+  - "Second-order Pruning"
 date: 2026-05-08
 content_hash: 70fb58baa340be0a
 ---

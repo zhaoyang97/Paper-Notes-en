@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] On the Possible Detectability of Image-in-Image Steganography
 description: >-
-  [CVPR 2026][Steganography] This paper exposes a fundamental security flaw in mainstream image-in-image deep steganography schemes: the embedding process is essentially a mixing process that can be readily separated by Independent Component Analysis (ICA). The authors propose an interpretable steganalysis method based on statistical moments of wavelet-domain independent components (achieving 84.6% accuracy with only 8-dimensional features), and demonstrate that the classical SRM+SVM approach achieves detection rates exceeding 99%.
+  [CVPR 2026][Interpretability][Steganography] This paper exposes a fundamental security flaw in mainstream image-in-image deep steganography schemes: the embedding process is essentially a mixing process that can be readi…
 tags:
-  - CVPR 2026
-  - Steganography
-  - Steganalysis
-  - Independent Component Analysis
-  - Wavelet Decomposition
-  - Image Security
+  - "CVPR 2026"
+  - "Interpretability"
+  - "Steganography"
+  - "Steganalysis"
+  - "Independent Component Analysis"
+  - "Wavelet Decomposition"
+  - "Image Security"
 date: 2026-05-08
 content_hash: e0c8499cd5a67f43
 ---

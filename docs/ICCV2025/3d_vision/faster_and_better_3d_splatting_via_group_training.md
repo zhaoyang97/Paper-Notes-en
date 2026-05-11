@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Faster and Better 3D Splatting via Group Training
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes a **Group Training** strategy that accelerates 3DGS training by periodically partitioning Gaussian primitives into an "under-training group" and a "cached group," combined with **Opacity-based Priority Sampling** (OPS). Across four standard benchmarks, the method achieves approximately **30% training speedup** while simultaneously **improving rendering quality** and **reducing model size**, and can be applied as a plug-and-play module to 3DGS and Mip-Splatting frameworks.
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes a **Group Training** strategy that accelerates 3DGS training by periodically partitioning Gaussian primitives into an "under-training group" and a "cached…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - Training Acceleration
-  - Group Training
-  - Opacity-based Sampling
-  - Novel View Synthesis
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Training Acceleration"
+  - "Group Training"
+  - "Opacity-based Sampling"
+  - "Novel View Synthesis"
 date: 2026-05-08
 content_hash: 51193f0f97a34503
 ---

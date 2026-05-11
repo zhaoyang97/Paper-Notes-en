@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] InfoCLIP: Bridging Vision-Language Pretraining and Open-Vocabulary Semantic Segmentation via Information-Theoretic Alignment Transfer
 description: >-
-  [AAAI 2026][Segmentation][Open-vocabulary semantic segmentation] This paper proposes InfoCLIP, which adopts an information-theoretic perspective to design two objectives—information bottleneck compression and mutual information distillation—to remove noise in pretrained pixel-text alignment and preserve semantic alignment knowledge during CLIP fine-tuning. InfoCLIP achieves state-of-the-art results across six open-vocabulary semantic segmentation benchmarks (A-847: 16.6, A-150: 38.5, PC-59: 63.5 mIoU) while introducing only 0.53M additional parameters and negligible computational overhead.
+  [AAAI 2026][Segmentation][Open-vocabulary semantic segmentation] This paper proposes InfoCLIP, which adopts an information-theoretic perspective to design two objectives—information bottleneck compression and mutual info…
 tags:
-  - AAAI 2026
-  - Segmentation
-  - Open-vocabulary semantic segmentation
-  - CLIP fine-tuning
-  - information bottleneck
-  - mutual information distillation
-  - modality alignment
+  - "AAAI 2026"
+  - "Segmentation"
+  - "Open-vocabulary semantic segmentation"
+  - "CLIP fine-tuning"
+  - "information bottleneck"
+  - "mutual information distillation"
+  - "modality alignment"
 date: 2026-05-08
 content_hash: 2fa8d2856400acb0
 ---

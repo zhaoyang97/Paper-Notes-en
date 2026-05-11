@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Seen-to-Scene: Keep the Seen, Generate the Unseen for Video Outpainting
 description: >-
-  [CVPR 2026][Video Understanding][video outpainting] This paper proposes Seen-to-Scene, a unified video outpainting framework that integrates propagation-based and generation-based paradigms. By combining reference-frame-guided latent-space propagation with a video diffusion model, it achieves spatiotemporal consistency and visual fidelity in zero-shot inference that surpasses prior methods requiring input-specific adaptation.
+  [CVPR 2026][Video Understanding][video outpainting] This paper proposes Seen-to-Scene, a unified video outpainting framework that integrates propagation-based and generation-based paradigms. By combining reference-frame-…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - video outpainting
-  - propagation
-  - diffusion model
-  - optical flow
-  - temporal coherence
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "video outpainting"
+  - "propagation"
+  - "diffusion model"
+  - "optical flow"
+  - "temporal coherence"
 date: 2026-05-08
 content_hash: 9ed28f06cade6fe0
 ---

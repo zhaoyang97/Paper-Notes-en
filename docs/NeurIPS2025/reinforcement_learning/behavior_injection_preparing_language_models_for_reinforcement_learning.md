@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Behavior Injection: Preparing Language Models for Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][RL fine-tuning] This paper identifies the root cause of inconsistent LLM responses to RL fine-tuning. Through per-step influence analysis, it reveals that RL effectiveness depends on (1) the distribution of rollout accuracy (moderate is optimal) and (2) data co-influence magnitude. The proposed BRIDGE method injects exploration/exploitation behaviors during SFT, boosting subsequent RL gains from 6% to 46.6%.
+  [NeurIPS 2025][Reinforcement Learning][RL fine-tuning] This paper identifies the root cause of inconsistent LLM responses to RL fine-tuning. Through per-step influence analysis…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - RL fine-tuning
-  - behavior injection
-  - data augmentation
-  - GRPO
-  - per-step influence
-  - reasoning
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "RL fine-tuning"
+  - "behavior injection"
+  - "data augmentation"
+  - "GRPO"
+  - "per-step influence"
+  - "reasoning"
 date: 2026-05-08
 content_hash: 4651d0234b87c3b4
 ---

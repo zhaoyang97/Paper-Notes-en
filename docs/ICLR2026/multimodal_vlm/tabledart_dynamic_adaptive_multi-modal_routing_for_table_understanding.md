@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TableDART: Dynamic Adaptive Multi-Modal Routing for Table Understanding
 description: >-
-  [ICLR 2026][Multimodal VLM][Table Understanding] This paper proposes TableDART, which employs a lightweight MLP gating network with only 2.59M parameters to dynamically select the optimal processing path (Text-only / Image-only / Fusion) for each query-table pair. By reusing frozen unimodal expert models and introducing an LLM Agent for cross-modal fusion, TableDART achieves an average improvement of 4.02% over the strongest MLLM baseline HIPPO across 7 table understanding benchmarks, while reducing inference latency by 24.5%.
+  [ICLR 2026][Multimodal VLM][Table Understanding] This paper proposes TableDART, which employs a lightweight MLP gating network with only 2.59M parameters to dynamically select the optimal processing path (Text-only / Ima…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Table Understanding
-  - Dynamic Routing
-  - Multi-modal Fusion
-  - Gating Network
-  - LLM Agent
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Table Understanding"
+  - "Dynamic Routing"
+  - "Multi-modal Fusion"
+  - "Gating Network"
+  - "LLM Agent"
 date: 2026-05-08
 content_hash: 65bd63956521fbfc
 ---

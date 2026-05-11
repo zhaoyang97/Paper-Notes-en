@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Uncertainty-Aware Multi-Objective Reinforcement Learning-Guided Diffusion Models for 3D De Novo Molecular Design
 description: >-
-  [NeurIPS 2025][Medical Imaging][Diffusion Models] This paper proposes an uncertainty-aware multi-objective reinforcement learning framework that guides a 3D molecular diffusion model (EDM) to simultaneously optimize drug-likeness (QED), synthetic accessibility (SAS), and binding affinity. The framework dynamically shapes the reward function using predictive uncertainty from surrogate models, consistently outperforms baselines across three benchmark datasets, and validates candidate molecules through molecular dynamics simulations and ADMET analysis.
+  [NeurIPS 2025][Medical Imaging][Diffusion Models] This paper proposes an uncertainty-aware multi-objective reinforcement learning framework that guides a 3D molecular diffusion model (EDM) to simultaneously optimize drug…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Diffusion Models
-  - Reinforcement Learning
-  - Multi-Objective Optimization
-  - Uncertainty Quantification
-  - 3D Molecular Generation
-  - Drug Discovery
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Diffusion Models"
+  - "Reinforcement Learning"
+  - "Multi-Objective Optimization"
+  - "Uncertainty Quantification"
+  - "3D Molecular Generation"
+  - "Drug Discovery"
 date: 2026-05-08
 content_hash: 002ff4bcb9661e96
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Personality-guided Public-Private Domain Disentangled Hypergraph-Former Network for Multimodal Depression Detection
 description: >-
-  [AAAI 2026][Medical Imaging][Depression Detection] This paper proposes P3HF, a framework that achieves approximately 10% gains in accuracy and F1 on multi-event multimodal depression detection through three innovations: personality-guided feature gating, a temporally-aware Hypergraph-Former architecture, and event-level public-private domain disentanglement.
+  [AAAI 2026][Medical Imaging][Depression Detection] This paper proposes P3HF, a framework that achieves approximately 10% gains in accuracy and F1 on multi-event multimodal depression detection through three innovations:…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Depression Detection
-  - Multimodal Fusion
-  - Hypergraph Neural Network
-  - Personality-guided
-  - Domain Disentanglement
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Depression Detection"
+  - "Multimodal Fusion"
+  - "Hypergraph Neural Network"
+  - "Personality-guided"
+  - "Domain Disentanglement"
 date: 2026-05-08
 content_hash: 994084e69f0dc4ea
 ---

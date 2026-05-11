@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Composing Linear Layers from Irreducibles
 description: >-
-  [NeurIPS 2025][LLM/NLP][Clifford algebra] By leveraging Clifford algebra, this work represents linear layers as compositions of bivectors—specifically as rotor sandwich products—requiring only $O(\log^2 d)$ parameters to replace a $d \times d$ dense matrix. When applied to Q/K/V projections in LLM attention layers, performance closely matches the original model and strong baselines.
+  [NeurIPS 2025][LLM/NLP][Clifford algebra] By leveraging Clifford algebra, this work represents linear layers as compositions of bivectors—specifically as rotor sandwich products—requiring only $O(\log^2 d)$ parameters to…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - Clifford algebra
-  - rotor decomposition
-  - parameter efficiency
-  - linear layers
-  - geometric primitives
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "Clifford algebra"
+  - "rotor decomposition"
+  - "parameter efficiency"
+  - "linear layers"
+  - "geometric primitives"
 date: 2026-05-08
 content_hash: 607a6c1a3ee9433a
 ---

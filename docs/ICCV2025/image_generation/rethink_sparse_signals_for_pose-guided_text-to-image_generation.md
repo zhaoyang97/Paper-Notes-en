@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Rethink Sparse Signals for Pose-guided Text-to-Image Generation
 description: >-
-  [ICCV 2025][Image Generation][ControlNet] This paper proposes SP-Ctrl (Spatial-Pose ControlNet), which replaces the fixed RGB encoding of OpenPose with learnable Spatial-Pose Representations (SPR) and introduces a Keypoint Concept Learning (KCL) strategy that leverages cross-attention heatmap constraints to improve keypoint alignment. The method enables sparse pose signals to achieve pose control accuracy comparable to dense signals (depth maps / DensePose), while preserving image diversity and cross-species generation capability.
+  [ICCV 2025][Image Generation][ControlNet] This paper proposes SP-Ctrl (Spatial-Pose ControlNet), which replaces the fixed RGB encoding of OpenPose with learnable Spatial-Pose Representations (SPR) and introduces a Keypoi…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - ControlNet
-  - OpenPose
-  - Sparse Signal
-  - Keypoint Concept Learning
-  - Pose-guided Generation
+  - "ICCV 2025"
+  - "Image Generation"
+  - "ControlNet"
+  - "OpenPose"
+  - "Sparse Signal"
+  - "Keypoint Concept Learning"
+  - "Pose-guided Generation"
 date: 2026-05-08
 content_hash: 4ccc8667481b4ca0
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Audio Super-Resolution with Latent Bridge Models
 description: >-
-  [NeurIPS 2025][Image Restoration][Audio super-resolution] This paper proposes AudioLBM, which compresses audio waveforms into a continuous latent space and employs a bridge model to realize a latent-to-latent generation process from low-resolution to high-resolution. Combined with frequency-aware training for broader data utilization and a cascaded design to surpass the 48kHz ceiling, AudioLBM comprehensively outperforms methods such as AudioSR across speech, sound effects, and music, while achieving any-to-192kHz audio super-resolution for the first time.
+  [NeurIPS 2025][Image Restoration][Audio super-resolution] This paper proposes AudioLBM, which compresses audio waveforms into a continuous latent space and employs a bridge model to realize a latent-to-latent generation…
 tags:
-  - NeurIPS 2025
-  - Image Restoration
-  - Audio super-resolution
-  - latent bridge model
-  - frequency-aware training
-  - cascaded super-resolution
-  - any-to-192kHz
+  - "NeurIPS 2025"
+  - "Image Restoration"
+  - "Audio super-resolution"
+  - "latent bridge model"
+  - "frequency-aware training"
+  - "cascaded super-resolution"
+  - "any-to-192kHz"
 date: 2026-05-08
 content_hash: 5e3ab61e57f13f87
 ---

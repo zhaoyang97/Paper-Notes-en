@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mesh Interpolation Graph Network for Dynamic and Spatially Irregular Global Weather Forecasting
 description: >-
-  [NeurIPS 2025][3D Vision][Graph Neural Networks] This paper proposes MIGN, a framework that maps irregular weather station data onto a regular HEALPix mesh via a mesh interpolation strategy for message passing, and introduces parameterized spherical harmonics positional encoding to enhance spatial generalization, achieving significant improvements over existing methods on global weather forecasting tasks.
+  [NeurIPS 2025][3D Vision][Graph Neural Networks] This paper proposes MIGN, a framework that maps irregular weather station data onto a regular HEALPix mesh via a mesh interpolation strategy for message passing…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Graph Neural Networks
-  - Global Weather Forecasting
-  - Mesh Interpolation
-  - Spherical Harmonics
-  - Spatial Generalization
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Graph Neural Networks"
+  - "Global Weather Forecasting"
+  - "Mesh Interpolation"
+  - "Spherical Harmonics"
+  - "Spatial Generalization"
 date: 2026-05-08
 content_hash: 7181c128c0498d12
 ---

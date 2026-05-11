@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Attention! Your Vision Language Model Could Be Maliciously Manipulated
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Vision-Language Models] This paper proposes the Vision-language Model Manipulation Attack (VMA), an image-based adversarial attack method that combines first- and second-order momentum optimization with a differentiable transformation mechanism, enabling precise control over every output token of a VLM. The approach supports a range of attack scenarios (jailbreaking, hijacking, privacy breach, DoS, sponge examples) and can also be repurposed for copyright-protection watermark injection.
+  [NeurIPS 2025][Multimodal VLM][Vision-Language Models] This paper proposes the Vision-language Model Manipulation Attack (VMA), an image-based adversarial attack method that combines first- and second-order momentum opti…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Vision-Language Models
-  - Adversarial Examples
-  - VMA Attack
-  - Jailbreaking
-  - Watermarking
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Vision-Language Models"
+  - "Adversarial Examples"
+  - "VMA Attack"
+  - "Jailbreaking"
+  - "Watermarking"
 date: 2026-05-08
 content_hash: cf1c879967816d76
 ---

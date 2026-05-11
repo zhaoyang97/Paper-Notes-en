@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] De novo generation of functional terpene synthases using TpsGPT
 description: >-
-  [NeurIPS 2025][Medical Imaging][terpene synthase] TpsGPT fine-tunes a distilled ProtGPT2 Tiny (38.9M parameters) on 79K terpene synthase (TPS) sequences to generate 28K candidate sequences, which are subsequently filtered through a multi-stage pipeline (perplexity / pLDDT / EnzymeExplorer / CLEAN / InterPro / Foldseek) to yield 7 de novo TPS sequences that are evolutionarily distant (<60% sequence identity) yet structurally conserved. Wet-lab experiments confirm that 2 of the 7 candidates possess TPS enzymatic activity—achieving functional enzyme de novo design at a GPU cost below $200.
+  [NeurIPS 2025][Medical Imaging][terpene synthase] TpsGPT fine-tunes a distilled ProtGPT2 Tiny (38.9M parameters) on 79K terpene synthase (TPS) sequences to generate 28K candidate sequences…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - terpene synthase
-  - protein language model
-  - ProtGPT2
-  - de novo design
-  - wet-lab validation
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "terpene synthase"
+  - "protein language model"
+  - "ProtGPT2"
+  - "de novo design"
+  - "wet-lab validation"
 date: 2026-05-08
 content_hash: 9c1efd2b866e48c7
 ---

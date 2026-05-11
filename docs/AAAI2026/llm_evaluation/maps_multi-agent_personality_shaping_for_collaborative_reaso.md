@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MAPS: Multi-Agent Personality Shaping for Collaborative Reasoning
 description: >-
-  [AAAI 2026][LLM Evaluation][Big Five Personality Theory] This paper proposes MAPS, a five-agent collaborative reasoning framework that assigns distinct "personalities" to four functional agents based on the Big Five personality theory — Interpreter (Openness), Aligner (Agreeableness), Scholar (Conscientiousness), and Solver (Extraversion) — to achieve heterogeneous collaboration, complemented by a Critic Agent (Neuroticism → Socratic reflection) for iterative refinement. MAPS surpasses the GPT-4o baseline by 15.84% on MathVista/OlympiadBench/EMMA and, for the first time, exceeds human expert performance by 3.58%.
+  [AAAI 2026][LLM Evaluation][Big Five Personality Theory] This paper proposes MAPS, a five-agent collaborative reasoning framework that assigns distinct "personalities" to four functional agents based on the Big Five pers…
 tags:
-  - AAAI 2026
-  - LLM Evaluation
-  - Big Five Personality Theory
-  - Multi-Agent Collaboration
-  - Socratic Critique
-  - Multimodal Scientific Reasoning
-  - Personality Shaping
+  - "AAAI 2026"
+  - "LLM Evaluation"
+  - "Big Five Personality Theory"
+  - "Multi-Agent Collaboration"
+  - "Socratic Critique"
+  - "Multimodal Scientific Reasoning"
+  - "Personality Shaping"
 date: 2026-05-08
 content_hash: 3dd3d1160c3635cd
 ---

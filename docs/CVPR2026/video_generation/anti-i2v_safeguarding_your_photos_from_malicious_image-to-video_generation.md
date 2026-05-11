@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Anti-I2V: Safeguarding your photos from malicious image-to-video generation
 description: >-
-  [CVPR 2026][Video Generation][Adversarial Attack] Anti-I2V proposes a defense method against malicious image-to-video generation. By optimizing perturbations in both L\*a\*b\* color space and the frequency domain, and designing Internal Representation Collapse (IRC) and Anchor (IRA) losses to disrupt semantic feature propagation within the denoising network, the method achieves state-of-the-art protection across three architecturally distinct models: CogVideoX, DynamiCrafter, and Open-Sora.
+  [CVPR 2026][Video Generation][Adversarial Attack] Anti-I2V proposes a defense method against malicious image-to-video generation. By optimizing perturbations in both L\*a\*b\* color space and the frequency domain…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Adversarial Attack
-  - Video Diffusion Models
-  - Image Protection
-  - Dual-Space Perturbation
-  - Deep Feature Collapse
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Adversarial Attack"
+  - "Video Diffusion Models"
+  - "Image Protection"
+  - "Dual-Space Perturbation"
+  - "Deep Feature Collapse"
 date: 2026-05-08
 content_hash: 64181637317e10c6
 ---

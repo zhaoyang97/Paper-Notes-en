@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MAESTRO: Adaptive Sparse Attention and Robust Learning for Multimodal Dynamic Time Series
 description: >-
-  [NeurIPS 2025][Time Series][Multimodal time series] This paper proposes MAESTRO, a framework that addresses modality heterogeneity and arbitrary missingness in multimodal time series via symbolic tokenization, adaptive attention budgeting, sparse cross-modal attention, and dynamic MoE routing, substantially outperforming baselines under both complete and missing modality scenarios.
+  [NeurIPS 2025][Time Series][Multimodal time series] This paper proposes MAESTRO, a framework that addresses modality heterogeneity and arbitrary missingness in multimodal time series via symbolic tokenization…
 tags:
-  - NeurIPS 2025
-  - Time Series
-  - Multimodal time series
-  - sparse attention
-  - mixture of experts
-  - missing modality
-  - sensor fusion
+  - "NeurIPS 2025"
+  - "Time Series"
+  - "Multimodal time series"
+  - "sparse attention"
+  - "mixture of experts"
+  - "missing modality"
+  - "sensor fusion"
 date: 2026-05-08
 content_hash: 78163c9ecfb643d1
 ---

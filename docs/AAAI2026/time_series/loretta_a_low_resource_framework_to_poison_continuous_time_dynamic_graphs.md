@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] LoReTTA: A Low Resource Framework To Poison Continuous Time Dynamic Graphs
 description: >-
-  [AAAI 2026][Time Series][Temporal Graph Neural Networks] This paper proposes LoReTTA, a two-stage adversarial poisoning attack framework that requires no surrogate model. It first sparsifies high-influence edges via 16 temporal importance metrics, then replaces them with adversarial edges using a degree-preserving negative sampling algorithm. Across 4 datasets × 4 TGNN models, LoReTTA achieves an average performance degradation of 29.47%, while evading 4 anomaly detection systems and resisting 4 defense methods.
+  [AAAI 2026][Time Series][Temporal Graph Neural Networks] This paper proposes LoReTTA, a two-stage adversarial poisoning attack framework that requires no surrogate model. It first sparsifies high-influence edges via 16 t…
 tags:
-  - AAAI 2026
-  - Time Series
-  - Temporal Graph Neural Networks
-  - Adversarial Attack
-  - Data Poisoning
-  - Continuous-Time Dynamic Graphs
-  - Graph Sparsification
-  - Temporal PageRank
+  - "AAAI 2026"
+  - "Time Series"
+  - "Temporal Graph Neural Networks"
+  - "Adversarial Attack"
+  - "Data Poisoning"
+  - "Continuous-Time Dynamic Graphs"
+  - "Graph Sparsification"
+  - "Temporal PageRank"
 date: 2026-05-08
 content_hash: 4b20b698a2d44755
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Data-Driven Prism: Multi-View Source Separation with Diffusion Model Priors
 description: >-
-  [NeurIPS 2025][Image Generation][source separation] This paper proposes DDPRISM, a method that exploits structural differences among linear transformations across multi-view observations. Within an EM framework, it learns an independent diffusion model prior for each unknown source without requiring any isolated source samples, enabling source separation and posterior sampling. DDPRISM outperforms existing methods on both synthetic benchmarks and real galaxy observations.
+  [NeurIPS 2025][Image Generation][source separation] This paper proposes DDPRISM, a method that exploits structural differences among linear transformations across multi-view observations. Within an EM framework…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - source separation
-  - diffusion model
-  - multi-view
-  - expectation-maximization
-  - Bayesian inverse problem
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "source separation"
+  - "diffusion model"
+  - "multi-view"
+  - "expectation-maximization"
+  - "Bayesian inverse problem"
 date: 2026-05-08
 content_hash: 705bb6952f3c2098
 ---

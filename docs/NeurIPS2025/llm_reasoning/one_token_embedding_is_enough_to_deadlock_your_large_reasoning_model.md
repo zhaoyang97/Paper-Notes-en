@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] One Token Embedding Is Enough to Deadlock Your Large Reasoning Model
 description: >-
-  [NeurIPS 2025][LLM Reasoning][adversarial attack] This paper proposes the Deadlock Attack, which optimizes a single adversarial token embedding and implants it into a Large Reasoning Model (LRM) via a backdoor mechanism, causing the model to enter a permanent reasoning loop during inference (endlessly generating transition words such as "Wait" and "But"). The attack achieves a 100% attack success rate across 4 LRMs and 3 mathematical reasoning benchmarks, with negligible performance degradation on clean inputs.
+  [NeurIPS 2025][LLM Reasoning][adversarial attack] This paper proposes the Deadlock Attack, which optimizes a single adversarial token embedding and implants it into a Large Reasoning Model (LRM) via a backdoor mechanism…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - adversarial attack
-  - reasoning model security
-  - resource exhaustion attack
-  - backdoor attack
-  - Chain-of-Thought
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "adversarial attack"
+  - "reasoning model security"
+  - "resource exhaustion attack"
+  - "backdoor attack"
+  - "Chain-of-Thought"
 date: 2026-05-08
 content_hash: 32d994e5e258b532
 ---

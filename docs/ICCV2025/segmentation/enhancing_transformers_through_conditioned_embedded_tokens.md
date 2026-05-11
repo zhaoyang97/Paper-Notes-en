@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Enhancing Transformers Through Conditioned Embedded Tokens
 description: >-
-  [ICCV 2025][Segmentation][Transformer] This paper identifies an inherent ill-conditioning problem in the self-attention matrices of Transformers. Through theoretical analysis, it establishes a direct relationship between the condition number of the self-attention matrix and that of the embedded token matrix, and proposes Conditioned Embedded Tokens — an SVD-based correction term applied to the embedding matrix — achieving consistent performance improvements across image classification, object detection, instance segmentation, and NLP tasks.
+  [ICCV 2025][Segmentation][Transformer] This paper identifies an inherent ill-conditioning problem in the self-attention matrices of Transformers. Through theoretical analysis…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - Transformer
-  - condition number
-  - self-attention
-  - embedded tokens
-  - optimization stability
+  - "ICCV 2025"
+  - "Segmentation"
+  - "Transformer"
+  - "condition number"
+  - "self-attention"
+  - "embedded tokens"
+  - "optimization stability"
 date: 2026-05-08
 content_hash: 1cfcd22a920e4941
 ---

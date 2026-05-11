@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Test-Time Iterative Error Correction for Efficient Diffusion Models
 description: >-
-  [ICLR 2026][Image Generation][iterative error correction] This paper proposes IEC (Iterative Error Correction), a plug-and-play test-time method that iteratively corrects inference errors in efficient diffusion models, reducing error accumulation from exponential to linear growth.
+  [ICLR 2026][Image Generation][iterative error correction] This paper proposes IEC (Iterative Error Correction), a plug-and-play test-time method that iteratively corrects inference errors in efficient diffusion models…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - iterative error correction
-  - test-time enhancement
-  - quantized diffusion
-  - feature caching
-  - error propagation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "iterative error correction"
+  - "test-time enhancement"
+  - "quantized diffusion"
+  - "feature caching"
+  - "error propagation"
 date: 2026-05-08
 content_hash: 946f9abedc17f4d3
 ---

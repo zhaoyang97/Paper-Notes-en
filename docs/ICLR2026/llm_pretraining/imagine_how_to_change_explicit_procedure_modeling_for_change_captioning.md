@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Imagine How To Change: Explicit Procedure Modeling for Change Captioning
 description: >-
-  [ICLR 2026][LLM Pretraining][change captioning] ProCap reframes change captioning from static image-pair comparison to dynamic procedure modeling. In the first stage, a procedure encoder is trained via frame interpolation and masked reconstruction to capture spatiotemporal change dynamics; in the second stage, learnable process queries implicitly infer the change procedure, surpassing state-of-the-art methods on three benchmarks.
+  [ICLR 2026][LLM Pretraining][change captioning] ProCap reframes change captioning from static image-pair comparison to dynamic procedure modeling. In the first stage…
 tags:
-  - ICLR 2026
-  - LLM Pretraining
-  - change captioning
-  - procedure modeling
-  - frame interpolation
-  - masked reconstruction
-  - learnable queries
-  - vision-language
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "change captioning"
+  - "procedure modeling"
+  - "frame interpolation"
+  - "masked reconstruction"
+  - "learnable queries"
+  - "vision-language"
 date: 2026-05-08
 content_hash: 8cf6c4938ac73dde
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Music-Aligned Holistic 3D Dance Generation via Hierarchical Motion Modeling
 description: >-
-  [ICCV 2025][Image Generation][dance generation] This paper introduces the SoulDance dataset (the first high-quality 3D dance dataset encompassing body, hand, and facial motion) and the SoulNet framework (hierarchical residual vector quantization + music-aligned generative model + cross-modal retrieval), achieving the first whole-body 3D dance generation with coordinated facial expressions, body, and hand movements aligned to musical rhythm and emotion.
+  [ICCV 2025][Image Generation][dance generation] This paper introduces the SoulDance dataset (the first high-quality 3D dance dataset encompassing body, hand…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - dance generation
-  - music alignment
-  - whole-body motion
-  - hierarchical residual vector quantization
-  - cross-modal retrieval
+  - "ICCV 2025"
+  - "Image Generation"
+  - "dance generation"
+  - "music alignment"
+  - "whole-body motion"
+  - "hierarchical residual vector quantization"
+  - "cross-modal retrieval"
 date: 2026-05-08
 content_hash: a1a7eb68d82c3462
 ---

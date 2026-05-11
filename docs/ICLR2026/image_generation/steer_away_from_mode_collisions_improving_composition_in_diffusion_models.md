@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Steer Away From Mode Collisions: Improving Composition In Diffusion Models
 description: >-
-  [ICLR 2026][Image Generation][Compositional Generation] To address concept missing and collision in multi-concept prompts for diffusion models, this paper proposes the "mode collision" hypothesis — that the modes of the joint distribution overlap with those of individual concept distributions — and introduces CO3 (Concept Contrasting Corrector). CO3 corrects sampling via a contrasting distribution $\tilde{p}(x|C) \propto p(x|C) / \prod_i p(x|c_i)$ in Tweedie mean space to steer away from degenerate modes, achieving plug-and-play, gradient-free, and model-agnostic compositional generation improvement.
+  [ICLR 2026][Image Generation][Compositional Generation] To address concept missing and collision in multi-concept prompts for diffusion models…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Compositional Generation
-  - Mode Collision
-  - Tweedie Mean Composition
-  - Gradient-Free Correction
-  - Plug-and-Play
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Compositional Generation"
+  - "Mode Collision"
+  - "Tweedie Mean Composition"
+  - "Gradient-Free Correction"
+  - "Plug-and-Play"
 date: 2026-05-08
 content_hash: dc431a4c7a58b1cf
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Bias at the End of the Score: Demographic Biases in Reward Models for T2I
 description: >-
-  [CVPR 2026][LLM Alignment][Reward Model] This paper conducts a large-scale demographic bias audit of widely used reward models (PickScore, ImageReward, HPS, etc.) in text-to-image generation, revealing that reward-guided optimization disproportionately sexualizes female images, converges demographics toward white, and that reward scores correlate with real-world population frequency priors.
+  [CVPR 2026][LLM Alignment][Reward Model] This paper conducts a large-scale demographic bias audit of widely used reward models (PickScore, ImageReward, HPS, etc.) in text-to-image generation…
 tags:
-  - CVPR 2026
-  - LLM Alignment
-  - Reward Model
-  - Text-to-Image
-  - Demographic Bias
-  - Hypersexualization
-  - Fairness
+  - "CVPR 2026"
+  - "LLM Alignment"
+  - "Reward Model"
+  - "Text-to-Image"
+  - "Demographic Bias"
+  - "Hypersexualization"
+  - "Fairness"
 date: 2026-05-08
 content_hash: d345d1622a74f79b
 ---

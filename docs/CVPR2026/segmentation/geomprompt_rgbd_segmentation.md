@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GeomPrompt: Geometric Prompt Learning for RGB-D Semantic Segmentation Under Missing and Degraded Depth
 description: >-
-  [CVPR 2026][Segmentation][RGB-D semantic segmentation] GeomPrompt learns lightweight geometric prompt modules for frozen RGB-D segmentation models, synthesizing task-driven depth proxy signals from RGB (without depth supervision). It achieves gains of +6.1 mIoU under missing depth and up to +3.6 mIoU under degraded depth.
+  [CVPR 2026][Segmentation][RGB-D semantic segmentation] GeomPrompt learns lightweight geometric prompt modules for frozen RGB-D segmentation models…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - RGB-D semantic segmentation
-  - depth missing
-  - modality robustness
-  - geometric prompt
-  - lightweight adaptation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "RGB-D semantic segmentation"
+  - "depth missing"
+  - "modality robustness"
+  - "geometric prompt"
+  - "lightweight adaptation"
 date: 2026-05-08
 content_hash: 8ef44f2719f61554
 ---

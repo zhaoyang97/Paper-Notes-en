@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DiCo: Revitalizing ConvNets for Scalable and Efficient Diffusion Modeling
 description: >-
-  [NeurIPS 2025 (Spotlight)][Image Generation][ConvNet] This paper finds that the global self-attention in pretrained DiTs primarily captures local patterns and thus exhibits substantial redundancy in generative tasks. It proposes DiCo, a purely convolutional diffusion model built from standard convolution modules and a Compact Channel Attention (CCA) mechanism. DiCo achieves an FID of 2.05 on ImageNet-256, surpassing DiT-XL/2, with 2.7× faster inference at 256 resolution and 3.1× faster at 512 resolution.
+  [NeurIPS 2025 (Spotlight)][Image Generation][ConvNet] This paper finds that the global self-attention in pretrained DiTs primarily captures local patterns and thus exhibits substantial redundancy in generative tasks. It…
 tags:
-  - NeurIPS 2025 (Spotlight)
-  - Image Generation
-  - ConvNet
-  - diffusion models
-  - channel attention
-  - efficient generation
-  - U-shaped architecture
+  - "NeurIPS 2025 (Spotlight)"
+  - "Image Generation"
+  - "ConvNet"
+  - "diffusion models"
+  - "channel attention"
+  - "efficient generation"
+  - "U-shaped architecture"
 date: 2026-05-08
 content_hash: 2a391c113d1e7992
 ---

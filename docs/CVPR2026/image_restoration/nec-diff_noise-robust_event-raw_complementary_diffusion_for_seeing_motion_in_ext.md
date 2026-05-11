@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] NEC-Diff: Noise-Robust Event–RAW Complementary Diffusion for Seeing Motion in Extreme Darkness
 description: >-
-  [CVPR 2026][Image Restoration][Extreme-dark imaging] This paper proposes NEC-Diff, a diffusion-based event–RAW hybrid imaging framework that uses the illumination prior from RAW images to guide event denoising, and leverages the high-dynamic-range edges from denoised events to assist image denoising. Combined with dual-modality SNR-guided reliable information extraction and cross-modal attention diffusion, the method achieves high-quality dynamic scene reconstruction in extreme darkness (0.001–0.8 lux), reaching 24.51 dB PSNR on the REAL dataset.
+  [CVPR 2026][Image Restoration][Extreme-dark imaging] This paper proposes NEC-Diff, a diffusion-based event–RAW hybrid imaging framework that uses the illumination prior from RAW images to guide event denoising…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Extreme-dark imaging
-  - event camera
-  - RAW image
-  - collaborative denoising
-  - diffusion model
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Extreme-dark imaging"
+  - "event camera"
+  - "RAW image"
+  - "collaborative denoising"
+  - "diffusion model"
 date: 2026-05-08
 content_hash: 8d71e71edffc258f
 ---

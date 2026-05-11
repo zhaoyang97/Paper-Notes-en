@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Compression-Aware One-Step Diffusion Model for JPEG Artifact Removal
 description: >-
-  [ICCV 2025][Image Generation][JPEG artifact removal] This paper proposes CODiff, a compression-aware one-step diffusion model for JPEG artifact removal. The core contribution is a Compression-aware Visual Embedder (CaVE) that extracts JPEG compression priors via an explicit–implicit dual learning strategy, guiding the diffusion model toward high-quality restoration. CODiff comprehensively outperforms existing methods on LIVE-1, Urban100, and DIV2K-Val while achieving extremely high inference efficiency.
+  [ICCV 2025][Image Generation][JPEG artifact removal] This paper proposes CODiff, a compression-aware one-step diffusion model for JPEG artifact removal. The core contribution is a Compression-aware Visual Embedder (CaVE)…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - JPEG artifact removal
-  - one-step diffusion model
-  - compression prior
-  - dual learning
-  - image restoration
+  - "ICCV 2025"
+  - "Image Generation"
+  - "JPEG artifact removal"
+  - "one-step diffusion model"
+  - "compression prior"
+  - "dual learning"
+  - "image restoration"
 date: 2026-05-08
 content_hash: 807966ddc8aa402f
 ---

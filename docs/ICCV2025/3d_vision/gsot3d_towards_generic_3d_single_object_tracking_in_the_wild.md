@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] GSOT3D: Towards Generic 3D Single Object Tracking in the Wild
 description: >-
-  [ICCV 2025][3D Vision][3D single object tracking] This paper presents GSOT3D, the largest generic 3D single object tracking benchmark to date, comprising 620 multimodal sequences (point cloud + RGB + depth) spanning 54 object categories. It supports three 3D tracking tasks (PC / RGB-PC / RGB-D) and introduces PROT3D, a progressive spatiotemporal tracker that achieves state-of-the-art performance via 9DoF bounding box estimation.
+  [ICCV 2025][3D Vision][3D single object tracking] This paper presents GSOT3D, the largest generic 3D single object tracking benchmark to date…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D single object tracking
-  - generic tracking
-  - point cloud
-  - multimodal
-  - benchmark dataset
-  - 9DoF
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D single object tracking"
+  - "generic tracking"
+  - "point cloud"
+  - "multimodal"
+  - "benchmark dataset"
+  - "9DoF"
 date: 2026-05-08
 content_hash: 9b79844e94e6c77d
 ---

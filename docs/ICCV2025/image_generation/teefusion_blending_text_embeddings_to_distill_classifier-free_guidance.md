@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TeEFusion: Blending Text Embeddings to Distill Classifier-Free Guidance
 description: >-
-  [ICCV 2025][Image Generation][CFG Distillation] This paper proposes TeEFusion, which encodes the guidance magnitude of CFG directly as a linear combination of conditional and unconditional text embeddings to replace dual forward passes, achieving efficient CFG distillation with zero additional parameters. The method is compatible with complex teacher sampling strategies (e.g., Z-Sampling, W2SD), enabling a 6× inference speedup over the teacher model.
+  [ICCV 2025][Image Generation][CFG Distillation] This paper proposes TeEFusion, which encodes the guidance magnitude of CFG directly as a linear combination of conditional and unconditional text embeddings to replace dual…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - CFG Distillation
-  - Text Embedding Fusion
-  - Sampling Acceleration
-  - Guidance Distillation
-  - DiT
+  - "ICCV 2025"
+  - "Image Generation"
+  - "CFG Distillation"
+  - "Text Embedding Fusion"
+  - "Sampling Acceleration"
+  - "Guidance Distillation"
+  - "DiT"
 date: 2026-05-08
 content_hash: c815a69dd00f5122
 ---

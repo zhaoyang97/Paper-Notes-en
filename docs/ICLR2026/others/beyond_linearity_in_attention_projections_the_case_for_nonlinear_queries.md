@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Beyond Linearity in Attention Projections: The Case for Nonlinear Queries
 description: >-
-  [ICLR 2026 Workshop (GRaM)][nonlinear query] Motivated by the theoretical finding of algebraic redundancy in $W_Q$, this work replaces the linear Query projection with a nonlinear residual form $Q(X)=(X+f_\theta(X))/2$, outperforming a baseline with +12.5% more parameters while keeping parameter count unchanged.
+  [ICLR 2026 Workshop (GRaM)][nonlinear query] Motivated by the theoretical finding of algebraic redundancy in $W_Q$, this work replaces the linear Query projection with a nonlinear residual form $Q(X)=(X+f_\theta(X))/2$…
 tags:
-  - ICLR 2026 Workshop (GRaM)
-  - nonlinear query
-  - attention projection
-  - identity prior
-  - bottleneck MLP
-  - transformer architecture
+  - "ICLR 2026 Workshop (GRaM)"
+  - "nonlinear query"
+  - "attention projection"
+  - "identity prior"
+  - "bottleneck MLP"
+  - "transformer architecture"
 date: 2026-05-08
 content_hash: 31b1d3dc4a3fb452
 ---

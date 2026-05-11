@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Jailbreaking Large Language Models with Morality Attacks
 description: >-
-  [ACL 2026][LLM Safety][morality attack] This paper constructs a 10.3K morality attack dataset (covering value ambiguity and value conflict scenarios) and manipulates the moral judgment of LLMs via four adversarial strategies. It finds that both LLMs and guardrail models are highly vulnerable to morality attacks, and that larger models are paradoxically easier to compromise.
+  [ACL 2026][LLM Safety][morality attack] This paper constructs a 10.3K morality attack dataset (covering value ambiguity and value conflict scenarios) and manipulates the moral judgment of LLMs via four adversarial strate…
 tags:
-  - ACL 2026
-  - LLM Safety
-  - morality attack
-  - jailbreak attack
-  - value pluralism
-  - LLM robustness
-  - moral judgment
+  - "ACL 2026"
+  - "LLM Safety"
+  - "morality attack"
+  - "jailbreak attack"
+  - "value pluralism"
+  - "LLM robustness"
+  - "moral judgment"
 date: 2026-05-08
 content_hash: 3f634fce00e1b188
 ---

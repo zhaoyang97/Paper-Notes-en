@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SMART-R1: Advancing Multi-agent Traffic Simulation via R1-Style Reinforcement Fine-Tuning
 description: >-
-  [ICLR 2026][Autonomous Driving][multi-agent traffic simulation] SMART-R1 is the first work to introduce R1-style reinforcement fine-tuning (RFT) into multi-agent traffic simulation. It proposes the Metric-oriented Policy Optimization (MPO) algorithm and an iterative "SFT-RFT-SFT" training strategy, achieving first place on the WOSAC 2025 leaderboard with a Realism Meta score of 0.7858.
+  [ICLR 2026][Autonomous Driving][multi-agent traffic simulation] SMART-R1 is the first work to introduce R1-style reinforcement fine-tuning (RFT) into multi-agent traffic simulation. It proposes the Metric-oriented Policy…
 tags:
-  - ICLR 2026
-  - Autonomous Driving
-  - multi-agent traffic simulation
-  - R1-style
-  - reinforcement fine-tuning
-  - next-token prediction
-  - policy optimization
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "multi-agent traffic simulation"
+  - "R1-style"
+  - "reinforcement fine-tuning"
+  - "next-token prediction"
+  - "policy optimization"
 date: 2026-05-08
 content_hash: e42dcaaa0c11ff20
 ---

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Variance-Based Pruning for Accelerating and Compressing Trained Networks
 description: >-
-  [Model Compression] This paper proposes Variance-Based Pruning (VBP), a one-shot structured pruning method that removes neurons with the smallest activation variance in MLP hidden layers and compensates their mean activations into the subsequent layer's bias. With only 10 epochs of fine-tuning, VBP recovers 99% of the original accuracy while reducing computation by 35% and parameters by 36%.
+  [Model Compression] This paper proposes Variance-Based Pruning (VBP), a one-shot structured pruning method that removes neurons with the smallest activation variance in MLP hidden layers and compensates their mean activa…
 tags:
-  - Model Compression
+  - "Model Compression"
 date: 2026-05-08
 content_hash: f8cf0570083141b9
 ---

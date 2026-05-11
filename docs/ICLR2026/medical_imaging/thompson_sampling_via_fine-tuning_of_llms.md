@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Thompson Sampling via Fine-Tuning of LLMs
 description: >-
-  [Medical Imaging] This paper proposes ToSFiT, which extends Thompson Sampling to large-scale unstructured discrete spaces by fine-tuning large language models to directly parameterize the Probability of Maximality (PoM), thereby circumventing the intractability of acquisition function maximization.
+  [Medical Imaging] This paper proposes ToSFiT, which extends Thompson Sampling to large-scale unstructured discrete spaces by fine-tuning large language models to directly parameterize the Probability of Maximality (PoM)…
 tags:
-  - Medical Imaging
+  - "Medical Imaging"
 date: 2026-05-08
 content_hash: 7ec662966881b6ad
 ---

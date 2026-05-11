@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Note 6: Self-Evaluating LLMs - Step-Level Confidence Estimation for Multi-Step Tasks
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Failure Detection] This paper extends confidence estimation to multi-step tasks, demonstrating that step-level evaluation detects reasoning failures more effectively than response-level evaluation, achieving a 15% relative AUC-ROC improvement over holistic evaluation on CoQA, and providing a practical framework for trustworthy deployment of multi-step reasoning systems.
+  [NeurIPS 2025][LLM Reasoning][Failure Detection] This paper extends confidence estimation to multi-step tasks, demonstrating that step-level evaluation detects reasoning failures more effectively than response-level eval…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - Failure Detection
-  - Step-Level Evaluation
-  - Self-Teaching
-  - Multi-Hop Reasoning
-  - Confidence Estimation
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "Failure Detection"
+  - "Step-Level Evaluation"
+  - "Self-Teaching"
+  - "Multi-Hop Reasoning"
+  - "Confidence Estimation"
 date: 2026-05-08
 content_hash: 2831eff685b823ba
 ---

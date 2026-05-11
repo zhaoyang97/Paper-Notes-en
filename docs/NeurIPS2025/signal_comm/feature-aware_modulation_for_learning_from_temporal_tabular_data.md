@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Feature-aware Modulation for Learning from Temporal Tabular Data
 description: >-
-  [NeurIPS 2025][Signal & Communication][temporal shift] This paper argues that the core challenge in temporal tabular learning is not simply "adding a time embedding," but rather that the semantics of many features drift over time. To address this, the paper proposes feature-aware modulation, which uses temporal context to dynamically generate per-feature shift, scale, and nonlinear shape parameters, re-aligning cross-temporal semantics. The approach enables deep models to consistently outperform GBDT on average rank for the first time on the TabReD benchmark.
+  [NeurIPS 2025][Signal & Communication][temporal shift] This paper argues that the core challenge in temporal tabular learning is not simply "adding a time embedding…
 tags:
-  - NeurIPS 2025
+  - "NeurIPS 2025"
   - "Signal & Communication"
-  - temporal shift
-  - feature modulation
-  - concept drift
-  - Yeo-Johnson
-  - tabular deep learning
+  - "temporal shift"
+  - "feature modulation"
+  - "concept drift"
+  - "Yeo-Johnson"
+  - "tabular deep learning"
 date: 2026-05-08
 content_hash: a3beb6f1c9ced535
 ---

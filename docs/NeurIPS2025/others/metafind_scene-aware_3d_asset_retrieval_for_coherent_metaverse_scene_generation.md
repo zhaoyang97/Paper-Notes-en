@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] MetaFind: Scene-Aware 3D Asset Retrieval for Coherent Metaverse Scene Generation
 description: >-
-  [NeurIPS 2025][3D asset retrieval] MetaFind is a scene-aware tri-modal (text + image + point cloud) 3D asset retrieval framework that encodes scene layout information via an SE(3)-equivariant spatial-semantic graph neural network (ESSGNN), enabling iterative asset retrieval with style consistency and spatial coherence for metaverse scene generation.
+  [NeurIPS 2025][3D asset retrieval] MetaFind is a scene-aware tri-modal (text + image + point cloud) 3D asset retrieval framework that encodes scene layout information via an SE(3)-equivariant spatial-semantic graph neura…
 tags:
-  - NeurIPS 2025
-  - 3D asset retrieval
-  - scene awareness
-  - graph neural networks
-  - SE(3) equivariance
-  - multimodal fusion
+  - "NeurIPS 2025"
+  - "3D asset retrieval"
+  - "scene awareness"
+  - "graph neural networks"
+  - "SE(3) equivariance"
+  - "multimodal fusion"
 date: 2026-05-08
 content_hash: d3786f070caddf1d
 ---

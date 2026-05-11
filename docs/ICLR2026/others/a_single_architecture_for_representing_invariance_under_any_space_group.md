@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] A Single Architecture for Representing Invariance Under Any Space Group
 description: >-
-  [ICLR 2026][Space groups] A single architecture (Crystal Fourier Transformer) is proposed that adapts to the invariance requirements of any space group. By analytically deriving the constraints imposed by group operations on Fourier coefficients, the method constructs symmetry-adapted Fourier bases and achieves parameter sharing and zero-shot generalization across all 230 space groups via a dual graph representation of these constraints.
+  [ICLR 2026][Space groups] A single architecture (Crystal Fourier Transformer) is proposed that adapts to the invariance requirements of any space group. By analytically deriving the constraints imposed by group operation…
 tags:
-  - ICLR 2026
-  - Space groups
-  - symmetry invariance
-  - Fourier basis
-  - crystal structures
-  - zero-shot generalization
+  - "ICLR 2026"
+  - "Space groups"
+  - "symmetry invariance"
+  - "Fourier basis"
+  - "crystal structures"
+  - "zero-shot generalization"
 date: 2026-05-08
 content_hash: 62a2769cfb6c5de1
 ---

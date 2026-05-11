@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Magnitude-Modulated Equivariant Adapter for Parameter-Efficient Fine-Tuning of Equivariant Graph Neural Networks
 description: >-
-  [AAAI 2026][Graph Learning][Equivariant Graph Neural Networks] This paper proposes MMEA (Magnitude-Modulated Equivariant Adapter), a lightweight parameter-efficient fine-tuning method for spherical-harmonic-based equivariant GNNs. By employing scalar gating to independently modulate feature magnitudes along "order–multiplicity" channels, MMEA achieves state-of-the-art molecular potential energy prediction accuracy—surpassing both ELoRA and full fine-tuning—while strictly preserving equivariance and using fewer trainable parameters.
+  [AAAI 2026][Graph Learning][Equivariant Graph Neural Networks] This paper proposes MMEA (Magnitude-Modulated Equivariant Adapter), a lightweight parameter-efficient fine-tuning method for spherical-harmonic-based equivar…
 tags:
-  - AAAI 2026
-  - Graph Learning
-  - Equivariant Graph Neural Networks
-  - Parameter-Efficient Fine-Tuning
-  - Molecular Potential Energy Prediction
-  - Spherical Harmonics
-  - PEFT
+  - "AAAI 2026"
+  - "Graph Learning"
+  - "Equivariant Graph Neural Networks"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Molecular Potential Energy Prediction"
+  - "Spherical Harmonics"
+  - "PEFT"
 date: 2026-05-08
 content_hash: 331bf02a9932448e
 ---

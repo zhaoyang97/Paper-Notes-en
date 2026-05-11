@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Neighbor-Aware Localized Concept Erasure in Text-to-Image Diffusion Models
 description: >-
-  [CVPR 2026][Image Generation][Concept Erasure] This paper proposes NLCE, a training-free three-stage concept erasure framework for text-to-image diffusion models. It achieves precise localized erasure of target concepts through spectrally-weighted representation modulation, attention-guided spatial gating, and gated feature scrubbing, while explicitly preserving semantically neighboring concepts. NLCE outperforms existing methods on Oxford Flowers, Stanford Dogs, celebrity identity, and sensitive content erasure benchmarks.
+  [CVPR 2026][Image Generation][Concept Erasure] This paper proposes NLCE, a training-free three-stage concept erasure framework for text-to-image diffusion models. It achieves precise localized erasure of target concepts…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Concept Erasure
-  - Diffusion Models
-  - Neighbor Preservation
-  - Training-Free
-  - Localized Erasure
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Concept Erasure"
+  - "Diffusion Models"
+  - "Neighbor Preservation"
+  - "Training-Free"
+  - "Localized Erasure"
 date: 2026-05-08
 content_hash: 3406b043995aa3cc
 ---

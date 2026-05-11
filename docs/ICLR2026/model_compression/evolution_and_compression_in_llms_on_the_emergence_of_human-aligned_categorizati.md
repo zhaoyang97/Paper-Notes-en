@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Evolution and compression in LLMs: On the emergence of human-aligned categorization
 description: >-
-  [ICLR2026][Model Compression][information bottleneck] Through the Information Bottleneck (IB) framework and the Iterated In-Context Language Learning (IICLL) paradigm, this paper demonstrates that LLMs can spontaneously develop category structures that are highly aligned with human semantic categorization systems and achieve near-optimal compression efficiency, without having been trained on any IB objective.
+  [ICLR2026][Model Compression][information bottleneck] Through the Information Bottleneck (IB) framework and the Iterated In-Context Language Learning (IICLL) paradigm…
 tags:
-  - ICLR2026
-  - Model Compression
-  - information bottleneck
-  - color naming
-  - iterated learning
-  - semantic categories
-  - LLM alignment
+  - "ICLR2026"
+  - "Model Compression"
+  - "information bottleneck"
+  - "color naming"
+  - "iterated learning"
+  - "semantic categories"
+  - "LLM alignment"
 date: 2026-05-08
 content_hash: bec3533cc3aef582
 ---

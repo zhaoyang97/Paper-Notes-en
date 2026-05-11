@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Generalization or Hallucination? Understanding Out-of-Context Reasoning in Transformers
 description: >-
-  [NeurIPS 2025][Optimization][out-of-context reasoning] This paper argues that LLM generalization and hallucination share a common mechanism — out-of-context reasoning (OCR) — and provides theoretical guarantees on a single-layer attention model: the factorized parameterization $(W_O, W_V)$ can perform OCR due to the nuclear norm implicit bias of gradient descent, whereas the merged parameterization $W_{OV}$ cannot due to its Frobenius norm bias. Moreover, OCR is sample-efficient (requiring only $m_{\text{train}}>0$).
+  [NeurIPS 2025][Optimization][out-of-context reasoning] This paper argues that LLM generalization and hallucination share a common mechanism — out-of-context reasoning (OCR) — and provides theoretical guarantees on a sing…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - out-of-context reasoning
-  - hallucination
-  - generalization
-  - implicit bias
-  - nuclear norm
-  - matrix factorization
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "out-of-context reasoning"
+  - "hallucination"
+  - "generalization"
+  - "implicit bias"
+  - "nuclear norm"
+  - "matrix factorization"
 date: 2026-05-08
 content_hash: e85a6db6405d494b
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Binary Quadratic Quantization: Beyond First-Order Quantization for Real-Valued Matrix Compression
 description: >-
-  [NeurIPS 2025][Model Compression][Binary quantization] BQQ proposes quadratic binary quantization—representing weight matrices as products (rather than linear combinations) of binary matrices—thereby surpassing the expressive capacity of conventional first-order quantization. By extending AMFD (Annealed Mean-Field Descent) to PUBO problems for mixed-integer optimization, BQQ achieves a dramatic accuracy leap from 10.83% to 58.25% on 2-bit data-free ViT quantization.
+  [NeurIPS 2025][Model Compression][Binary quantization] BQQ proposes quadratic binary quantization—representing weight matrices as products (rather than linear combinations) of binary matrices—thereby surpassing the expre…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Binary quantization
-  - quadratic coding
-  - mixed-integer programming
-  - ViT compression
-  - ultra-low bitwidth
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Binary quantization"
+  - "quadratic coding"
+  - "mixed-integer programming"
+  - "ViT compression"
+  - "ultra-low bitwidth"
 date: 2026-05-08
 content_hash: e158348ba8b42521
 ---

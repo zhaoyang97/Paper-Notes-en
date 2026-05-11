@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] ToolTree: Efficient LLM Agent Tool Planning via Dual-Feedback Monte Carlo Tree Search and Bidirectional Pruning
 description: >-
-  [ICLR 2026][LLM Agent][Tool Planning] This paper proposes ToolTree, an MCTS-based tool planning framework for LLM agents that achieves look-ahead tool selection within a fixed computational budget through a dual-phase pre/post-execution evaluation mechanism and bidirectional pruning, yielding an average improvement of approximately 10% across 4 benchmarks.
+  [ICLR 2026][LLM Agent][Tool Planning] This paper proposes ToolTree, an MCTS-based tool planning framework for LLM agents that achieves look-ahead tool selection within a fixed computational budget through a dual-phase pr…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Tool Planning
-  - MCTS
-  - Search Planning
-  - Pruning
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Tool Planning"
+  - "MCTS"
+  - "Search Planning"
+  - "Pruning"
 date: 2026-05-08
 content_hash: 0afbb79b4cfe25bb
 ---

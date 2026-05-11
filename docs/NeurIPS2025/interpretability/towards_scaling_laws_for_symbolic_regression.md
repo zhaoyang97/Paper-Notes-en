@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Towards Scaling Laws for Symbolic Regression
 description: >-
-  [NeurIPS 2025][Symbolic Regression] This work presents the first systematic study of scaling laws for symbolic regression (SR), demonstrating that end-to-end Transformer-based SR follows power-law scaling trends across three orders of magnitude of compute, and derives empirical rules for the optimal token-to-parameter ratio ($\approx 15$), as well as batch size and learning rate scaling with model size.
+  [NeurIPS 2025][Interpretability][Symbolic Regression] This work presents the first systematic study of scaling laws for symbolic regression (SR)…
 tags:
-  - NeurIPS 2025
-  - Symbolic Regression
-  - Scaling Laws
-  - Transformer
-  - Power Law
-  - Compute-Optimal
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "Symbolic Regression"
+  - "Scaling Laws"
+  - "Transformer"
+  - "Power Law"
+  - "Compute-Optimal"
 date: 2026-05-08
 content_hash: 68ce99f6416e41a8
 ---

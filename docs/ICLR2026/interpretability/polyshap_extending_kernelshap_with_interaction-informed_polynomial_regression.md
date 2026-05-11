@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] PolySHAP: Extending KernelSHAP with Interaction-Informed Polynomial Regression
 description: >-
-  [ICLR 2026][Shapley values] This paper proposes PolySHAP, which extends KernelSHAP's linear approximation to higher-order polynomial regression to capture nonlinear feature interactions, thereby improving the estimation accuracy of Shapley values. The paper further provides a theoretical proof that paired sampling is equivalent to second-order PolySHAP, offering the first rigorous explanation for the superior performance of this widely used heuristic.
+  [ICLR 2026][Interpretability][Shapley values] This paper proposes PolySHAP, which extends KernelSHAP's linear approximation to higher-order polynomial regression to capture nonlinear feature interactions…
 tags:
-  - ICLR 2026
-  - Shapley values
-  - Explainable AI
-  - Polynomial regression
-  - Feature interactions
-  - KernelSHAP
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Shapley values"
+  - "Explainable AI"
+  - "Polynomial regression"
+  - "Feature interactions"
+  - "KernelSHAP"
 date: 2026-05-08
 content_hash: a845fe31b75d3254
 ---

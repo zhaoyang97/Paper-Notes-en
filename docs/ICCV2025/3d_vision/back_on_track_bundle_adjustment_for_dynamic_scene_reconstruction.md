@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Back on Track: Bundle Adjustment for Dynamic Scene Reconstruction
 description: >-
-  [ICCV 2025][3D Vision][Bundle Adjustment] This paper proposes BA-Track, a framework that leverages a 3D point tracker to decompose observed motion into camera motion and object motion, enabling classical Bundle Adjustment to jointly handle static and dynamic scene elements for accurate camera pose estimation and temporally consistent dense reconstruction.
+  [ICCV 2025][3D Vision][Bundle Adjustment] This paper proposes BA-Track, a framework that leverages a 3D point tracker to decompose observed motion into camera motion and object motion…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Bundle Adjustment
-  - Dynamic Scene
-  - Motion Decoupling
-  - 3D Tracking
-  - Depth Refinement
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Bundle Adjustment"
+  - "Dynamic Scene"
+  - "Motion Decoupling"
+  - "3D Tracking"
+  - "Depth Refinement"
 date: 2026-05-08
 content_hash: 5074e510676dd61f
 ---

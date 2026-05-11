@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Sign Language Recognition in the Age of LLMs
 description: >-
-  [CVPR 2026][LLM/NLP][sign language recognition] The first systematic evaluation of modern VLMs on zero-shot isolated sign language recognition (ISLR), revealing that open-source VLMs fall far behind specialized classifiers while large commercial models (GPT-5) demonstrate surprising potential.
+  [CVPR 2026][LLM/NLP][sign language recognition] The first systematic evaluation of modern VLMs on zero-shot isolated sign language recognition (ISLR)…
 tags:
-  - CVPR 2026
-  - LLM/NLP
-  - sign language recognition
-  - vision-language model
-  - zero-shot
-  - American Sign Language
-  - benchmark
+  - "CVPR 2026"
+  - "LLM/NLP"
+  - "sign language recognition"
+  - "vision-language model"
+  - "zero-shot"
+  - "American Sign Language"
+  - "benchmark"
 date: 2026-05-08
 content_hash: 43e31383a4b3e584
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] An Invariant Latent Space Perspective on Language Model Inversion
 description: >-
-  [AAAI 2026][LLM/NLP][language model inversion] This paper proposes the Invariant Latent Space Hypothesis (ILSH), which reframes the LLM inversion problem as reusing the LLM's own latent space. The Inv²A framework is designed to map outputs to denoised pseudo-representations via a lightweight inverse encoder, which are then decoded by a frozen LLM to recover hidden prompts. Inv²A achieves an average BLEU improvement of 4.77% across 9 datasets and attains comparable performance with only 20% of the training data.
+  [AAAI 2026][LLM/NLP][language model inversion] This paper proposes the Invariant Latent Space Hypothesis (ILSH), which reframes the LLM inversion problem as reusing the LLM's own latent space. The Inv²A framework is desi…
 tags:
-  - AAAI 2026
-  - LLM/NLP
-  - language model inversion
-  - privacy attack
-  - invariant latent space
-  - prompt recovery
-  - contrastive learning
+  - "AAAI 2026"
+  - "LLM/NLP"
+  - "language model inversion"
+  - "privacy attack"
+  - "invariant latent space"
+  - "prompt recovery"
+  - "contrastive learning"
 date: 2026-05-08
 content_hash: 977de5d74eb74903
 ---

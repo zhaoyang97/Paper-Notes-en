@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LoFT: Low-Rank Adaptation That Behaves Like Full Fine-Tuning
 description: >-
-  [ICLR 2026][Model Compression][LoRA] This paper proposes LoFT, a low-rank adaptation method composed of six building blocks that aligns the internal optimizer dynamics (momentum and second-order moments) with those of full fine-tuning. In the full-rank limit, LoFT exactly recovers AdamW, and it substantially closes the performance gap between LoRA and full fine-tuning across multiple benchmarks.
+  [ICLR 2026][Model Compression][LoRA] This paper proposes LoFT, a low-rank adaptation method composed of six building blocks that aligns the internal optimizer dynamics (momentum and second-order moments) with those of fu…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - LoRA
-  - Low-Rank Adaptation
-  - Full Fine-Tuning
-  - Optimizer State Alignment
-  - AdamW
+  - "ICLR 2026"
+  - "Model Compression"
+  - "LoRA"
+  - "Low-Rank Adaptation"
+  - "Full Fine-Tuning"
+  - "Optimizer State Alignment"
+  - "AdamW"
 date: 2026-05-08
 content_hash: 934f2bf2aed0864d
 ---

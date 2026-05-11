@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Aligning Moments in Time using Video Queries
 description: >-
-  [ICCV 2025][Video Generation][Video Moment Retrieval] This paper proposes MATR (Moment Alignment TRansformer), which conditions target video representations on query video features via dual-stage sequence alignment (soft-DTW), enabling video-to-video moment retrieval (Vid2VidMR). A self-supervised pretraining strategy is designed accordingly, achieving +13.1% R@1 and +8.1% mIoU on ActivityNet-VRL.
+  [ICCV 2025][Video Generation][Video Moment Retrieval] This paper proposes MATR (Moment Alignment TRansformer), which conditions target video representations on query video features via dual-stage sequence alignment (soft…
 tags:
-  - ICCV 2025
-  - Video Generation
-  - Video Moment Retrieval
-  - Video Query
-  - Sequence Alignment
-  - Self-Supervised Pretraining
-  - Transformer
+  - "ICCV 2025"
+  - "Video Generation"
+  - "Video Moment Retrieval"
+  - "Video Query"
+  - "Sequence Alignment"
+  - "Self-Supervised Pretraining"
+  - "Transformer"
 date: 2026-05-08
 content_hash: 9e1a56827f0960b7
 ---

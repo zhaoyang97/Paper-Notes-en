@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] DEXTER: Diffusion-Guided EXplanations with TExtual Reasoning for Vision Models
 description: >-
-  [Image Generation] This paper proposes DEXTER, a data-free framework that optimizes textual prompts to drive a diffusion model to generate images maximizing target classifier activations, then employs an LLM to reason over the synthesized samples and produce globally coherent, human-readable textual explanations, enabling bias discovery and global interpretation of model behavior.
+  [Image Generation] This paper proposes DEXTER, a data-free framework that optimizes textual prompts to drive a diffusion model to generate images maximizing target classifier activations…
 tags:
-  - Image Generation
+  - "Image Generation"
 date: 2026-05-08
 content_hash: 299dd4a7a542b8ca
 ---

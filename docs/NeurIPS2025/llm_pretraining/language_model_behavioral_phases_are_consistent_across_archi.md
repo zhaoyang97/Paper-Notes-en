@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Language Model Behavioral Phases are Consistent Across Architecture, Training Data, and Scale
 description: >-
-  [NeurIPS 2025][LLM Pretraining][language model training dynamics] Through systematic analysis of over 1,400 language model checkpoints—spanning Transformer/Mamba/RWKV architectures, 14M–12B parameter scales, and two training datasets—across 110K+ tokens, this work demonstrates that all autoregressive language models exhibit highly consistent behavioral phases during pre-training: predicted probabilities sequentially overfit to n-gram probabilities of increasing order. Three simple heuristics—word frequency, n-gram probability, and semantic similarity—account for up to 98% of behavioral variance.
+  [NeurIPS 2025][LLM Pretraining][language model training dynamics] Through systematic analysis of over 1,400 language model checkpoints—spanning Transformer/Mamba/RWKV architectures, 14M–12B parameter scales…
 tags:
-  - NeurIPS 2025
-  - LLM Pretraining
-  - language model training dynamics
-  - n-gram behavioral phases
-  - cross-architecture consistency
-  - pre-training analysis
-  - semantic similarity
+  - "NeurIPS 2025"
+  - "LLM Pretraining"
+  - "language model training dynamics"
+  - "n-gram behavioral phases"
+  - "cross-architecture consistency"
+  - "pre-training analysis"
+  - "semantic similarity"
 date: 2026-05-08
 content_hash: f47d163fa1d84da5
 ---

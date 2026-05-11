@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SEAL: Semantic-Aware Hierarchical Learning for Generalized Category Discovery
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][Generalized Category Discovery] This paper proposes SEAL, a framework that leverages naturally occurring semantic hierarchies (rather than manually constructed abstract hierarchies) to guide generalized category discovery. Through hierarchically semantic-guided soft contrastive learning and a cross-granularity consistency module, SEAL achieves state-of-the-art performance on fine-grained benchmarks.
+  [NeurIPS 2025][Self-Supervised Learning][Generalized Category Discovery] This paper proposes SEAL, a framework that leverages naturally occurring semantic hierarchies (rather than manually constructed abstract hierarchie…
 tags:
-  - NeurIPS 2025
-  - Self-Supervised Learning
-  - Generalized Category Discovery
-  - Hierarchical Learning
-  - Contrastive Learning
-  - Semantic Hierarchy
-  - Cross-Granularity Consistency
+  - "NeurIPS 2025"
+  - "Self-Supervised Learning"
+  - "Generalized Category Discovery"
+  - "Hierarchical Learning"
+  - "Contrastive Learning"
+  - "Semantic Hierarchy"
+  - "Cross-Granularity Consistency"
 date: 2026-05-08
 content_hash: c69c65a5ef9843e7
 ---

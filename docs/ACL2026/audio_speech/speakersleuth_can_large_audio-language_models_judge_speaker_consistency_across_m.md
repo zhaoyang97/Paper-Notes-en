@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SpeakerSleuth: Can Large Audio-Language Models Judge Speaker Consistency across Multi-turn Dialogues?
 description: >-
-  [ACL 2026][Audio & Speech][Large Audio-Language Models] SpeakerSleuth introduces the first benchmark (1,818 instances) for evaluating LALMs' ability to judge speaker consistency in multi-turn dialogues. Systematic evaluation of 12 LALMs and 6 embedding methods reveals that models struggle to detect and localize acoustic inconsistencies, exhibit severe text-over-acoustics modality bias, yet perform comparatively well on comparative/ranking tasks involving acoustic variants.
+  [ACL 2026][Audio & Speech][Large Audio-Language Models] SpeakerSleuth introduces the first benchmark (1,818 instances) for evaluating LALMs' ability to judge speaker consistency in multi-turn dialogues. Systematic evalua…
 tags:
-  - ACL 2026
+  - "ACL 2026"
   - "Audio & Speech"
-  - Large Audio-Language Models
-  - Speaker Consistency
-  - Multi-turn Dialogue
-  - Benchmark
-  - Modality Bias
+  - "Large Audio-Language Models"
+  - "Speaker Consistency"
+  - "Multi-turn Dialogue"
+  - "Benchmark"
+  - "Modality Bias"
 date: 2026-05-08
 content_hash: c1371a0bf1298e02
 ---

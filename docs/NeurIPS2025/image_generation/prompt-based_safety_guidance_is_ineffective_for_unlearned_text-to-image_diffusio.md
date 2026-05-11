@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Prompt-Based Safety Guidance Is Ineffective for Unlearned Text-to-Image Diffusion Models
 description: >-
-  [NeurIPS 2025][Image Generation][Concept Unlearning] This paper identifies that combining training-based concept unlearning with training-free safety guidance (negative prompt guidance) yields degraded performance, and proposes replacing explicit negative prompts with implicit concept embeddings obtained via Concept Inversion, effectively restoring the defensive capability of training-free methods on unlearned models.
+  [NeurIPS 2025][Image Generation][Concept Unlearning] This paper identifies that combining training-based concept unlearning with training-free safety guidance (negative prompt guidance) yields degraded performance…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Concept Unlearning
-  - Safety Guidance
-  - Negative Prompt
-  - Concept Inversion
-  - Text-to-Image Safety
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Concept Unlearning"
+  - "Safety Guidance"
+  - "Negative Prompt"
+  - "Concept Inversion"
+  - "Text-to-Image Safety"
 date: 2026-05-08
 content_hash: 9beec0fb9bca42ee
 ---

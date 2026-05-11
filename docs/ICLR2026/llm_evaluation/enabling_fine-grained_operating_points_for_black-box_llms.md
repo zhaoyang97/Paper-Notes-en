@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Enabling Fine-Grained Operating Points for Black-Box LLMs
 description: >-
-  [ICLR 2026][LLM Evaluation][Black-box LLM] This paper identifies that verbalized probabilities from black-box LLMs produce only 16–23 unique values (low-cardinality problem), resulting in coarse PR/ROC curves that prevent fine-grained threshold tuning. By injecting parameterized noise and an optional MLP correction, the number of unique values increases from 16 to 20,000+, matching the performance of 20-sample ensembles with only 1–2 API calls.
+  [ICLR 2026][LLM Evaluation][Black-box LLM] This paper identifies that verbalized probabilities from black-box LLMs produce only 16–23 unique values (low-cardinality problem)…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - Black-box LLM
-  - operating points
-  - probability calibration
-  - PR curve
-  - confidence estimation
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Black-box LLM"
+  - "operating points"
+  - "probability calibration"
+  - "PR curve"
+  - "confidence estimation"
 date: 2026-05-08
 content_hash: a45df34dcf83d94a
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Symbolic Regression Is All You Need: From Simulations to Scaling Laws in Binary Neutron Star Mergers
 description: >-
-  [NeurIPS 2025 (AI for Science Workshop)][Scientific Computing][Symbolic Regression] This work applies Symbolic Regression (SR) to automatically discover analytic calibration relations for post-merger accretion disk mass in binary neutron star mergers from numerical relativity simulation data. The resulting compact expressions comprehensively outperform existing empirical fitting formulae in the literature in terms of predictive accuracy, generalization, and interpretability.
+  [NeurIPS 2025 (AI for Science Workshop)][Scientific Computing][Symbolic Regression] This work applies Symbolic Regression (SR) to automatically discover analytic calibration relations for post-merger accretion disk mass…
 tags:
-  - NeurIPS 2025 (AI for Science Workshop)
-  - Scientific Computing
-  - Symbolic Regression
-  - Binary Neutron Stars
-  - Gravitational Waves
-  - Kilonova
-  - Equation of State
+  - "NeurIPS 2025 (AI for Science Workshop)"
+  - "Scientific Computing"
+  - "Symbolic Regression"
+  - "Binary Neutron Stars"
+  - "Gravitational Waves"
+  - "Kilonova"
+  - "Equation of State"
 date: 2026-05-08
 content_hash: 8ca051f19176be66
 ---

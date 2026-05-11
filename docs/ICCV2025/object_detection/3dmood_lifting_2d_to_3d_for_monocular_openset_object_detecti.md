@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] 3D-MOOD: Lifting 2D to 3D for Monocular Open-Set Object Detection
 description: >-
-  [ICCV 2025][Object Detection][Monocular 3D object detection] This paper proposes 3D-MOOD, the first end-to-end monocular open-set 3D object detector, which lifts open-set 2D detections into 3D space via geometry-aware 3D query generation and a canonical image space design, achieving state-of-the-art performance on both the Omni3D closed-set benchmark and the Argoverse 2 / ScanNet open-set benchmarks.
+  [ICCV 2025][Object Detection][Monocular 3D object detection] This paper proposes 3D-MOOD, the first end-to-end monocular open-set 3D object detector…
 tags:
-  - ICCV 2025
-  - Object Detection
-  - Monocular 3D object detection
-  - open-set detection
-  - 2D-to-3D lifting
-  - geometry-aware query
-  - canonical image space
+  - "ICCV 2025"
+  - "Object Detection"
+  - "Monocular 3D object detection"
+  - "open-set detection"
+  - "2D-to-3D lifting"
+  - "geometry-aware query"
+  - "canonical image space"
 date: 2026-05-08
 content_hash: c79fa90aff8c9d46
 ---

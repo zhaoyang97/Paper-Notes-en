@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ORBIT -- Open Recommendation Benchmark for Reproducible Research with Hidden Tests
 description: >-
-  [NeurIPS 2025][LLM Safety][Recommender Systems] This paper proposes ORBIT, a unified benchmark for recommender systems comprising standardized evaluation on 5 public datasets and a privacy-safe hidden test set, ClueWeb-Reco, constructed from real users' browsing histories. The benchmark systematically evaluates 12 recommendation models and introduces the LLM-QueryGen baseline, revealing the limitations of existing approaches in large-scale, real-world recommendation scenarios.
+  [NeurIPS 2025][LLM Safety][Recommender Systems] This paper proposes ORBIT, a unified benchmark for recommender systems comprising standardized evaluation on 5 public datasets and a privacy-safe hidden test set…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - Recommender Systems
-  - Benchmark
-  - Privacy-Preserving Dataset
-  - Web Recommendation
-  - LLM-based Recommendation
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "Recommender Systems"
+  - "Benchmark"
+  - "Privacy-Preserving Dataset"
+  - "Web Recommendation"
+  - "LLM-based Recommendation"
 date: 2026-05-08
 content_hash: 43cccc44844c3384
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] KoCo-Bench: Can Large Language Models Leverage Domain Knowledge in Software Development?
 description: >-
-  [ACL 2026][Domain-specific code generation] KoCo-Bench introduces the first code benchmark with an explicit domain knowledge corpus, covering 11 frameworks and 25 projects across 6 emerging domains (RL, Agent, RAG, etc.). It evaluates LLMs' ability to acquire and apply domain knowledge for code generation and knowledge comprehension, revealing that even the strongest coding agent, Claude Code, achieves only 34.2%.
+  [ACL 2026][Information Retrieval & RAG][Domain-specific code generation] KoCo-Bench introduces the first code benchmark with an explicit domain knowledge corpus…
 tags:
-  - ACL 2026
-  - Domain-specific code generation
-  - benchmark
-  - domain specialization
-  - knowledge corpus
-  - software engineering
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Domain-specific code generation"
+  - "benchmark"
+  - "domain specialization"
+  - "knowledge corpus"
+  - "software engineering"
 date: 2026-05-08
 content_hash: b2b2f03306cb5178
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RainbowPrompt: Diversity-Enhanced Prompt-Evolving for Continual Learning
 description: >-
-  [ICCV 2025][Video Understanding][Continual Learning] This paper proposes RainbowPrompt, a prompt-evolving mechanism that integrates multiple task-specific prompts into a diversity-enhanced unified prompt via attention-based transformation and task-guided alignment, achieving an average improvement of 8.23% over existing methods on image classification and video action recognition tasks.
+  [ICCV 2025][Video Understanding][Continual Learning] This paper proposes RainbowPrompt, a prompt-evolving mechanism that integrates multiple task-specific prompts into a diversity-enhanced unified prompt via attention-ba…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - Continual Learning
-  - Prompt Learning
-  - Knowledge Integration
-  - Class-Incremental Learning
-  - Video Action Recognition
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "Continual Learning"
+  - "Prompt Learning"
+  - "Knowledge Integration"
+  - "Class-Incremental Learning"
+  - "Video Action Recognition"
 date: 2026-05-08
 content_hash: c8190f5c20d4a3f8
 ---

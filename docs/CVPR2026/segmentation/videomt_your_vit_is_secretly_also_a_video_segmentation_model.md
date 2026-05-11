@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] VidEoMT: Your ViT is Secretly Also a Video Segmentation Model
 description: >-
-  [CVPR2026][Segmentation][encoder-only] This paper proposes VidEoMT, an encoder-only video segmentation architecture that unifies segmentation and temporal association within a single ViT encoder via query propagation and query fusion, achieving 5×–10× speedup (160 FPS with ViT-L) while maintaining accuracy comparable to state-of-the-art methods.
+  [CVPR2026][Segmentation][encoder-only] This paper proposes VidEoMT, an encoder-only video segmentation architecture that unifies segmentation and temporal association within a single ViT encoder via query propagation and…
 tags:
-  - CVPR2026
-  - Segmentation
-  - encoder-only
-  - ViT
-  - video instance segmentation
-  - video panoptic segmentation
-  - query propagation
-  - query fusion
-  - DINOv2
+  - "CVPR2026"
+  - "Segmentation"
+  - "encoder-only"
+  - "ViT"
+  - "video instance segmentation"
+  - "video panoptic segmentation"
+  - "query propagation"
+  - "query fusion"
+  - "DINOv2"
 date: 2026-05-08
 content_hash: fd570e19224a6ddf
 ---

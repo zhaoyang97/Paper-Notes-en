@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Uncovering Graph Reasoning in Decoder-only Transformers with Circuit Tracing
 description: >-
-  [NeurIPS 2025 (Workshop on Efficient Reasoning)][Graph Reasoning] This paper applies a circuit tracing framework to analyze the internal mechanisms of decoder-only Transformers on graph reasoning tasks, uncovering two core reasoning mechanisms: token merging and structural memorization.
+  [NeurIPS 2025 (Workshop on Efficient Reasoning)][Interpretability][Graph Reasoning] This paper applies a circuit tracing framework to analyze the internal mechanisms of decoder-only Transformers on graph reasoning tasks…
 tags:
-  - NeurIPS 2025 (Workshop on Efficient Reasoning)
-  - Graph Reasoning
-  - Transformer
-  - Circuit Tracing
-  - Token Merging
-  - Structural Memorization
+  - "NeurIPS 2025 (Workshop on Efficient Reasoning)"
+  - "Interpretability"
+  - "Graph Reasoning"
+  - "Transformer"
+  - "Circuit Tracing"
+  - "Token Merging"
+  - "Structural Memorization"
 date: 2026-05-08
 content_hash: 2498b15ef9fdf1df
 ---

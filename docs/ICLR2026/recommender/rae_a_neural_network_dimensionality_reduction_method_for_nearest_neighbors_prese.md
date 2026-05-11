@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] RAE: A Neural Network Dimensionality Reduction Method for Nearest Neighbors Preservation in Vector Search
 description: >-
-  [ICLR 2026][Recommender Systems][dimensionality reduction] This paper proposes RAE (Regularized Auto-Encoder), a dimensionality reduction method based on a linear autoencoder with Frobenius norm regularization. The authors theoretically prove that the regularization coefficient $\lambda$ constrains the condition number $\kappa(W)$ of the encoder matrix via the Rayleigh quotient property, thereby bounding the norm distortion rate and preserving k-NN structure. RAE consistently outperforms PCA, UMAP, MDS, and ISOMAP on four datasets, achieving at least 12% higher k-NN preservation accuracy than PCA under cosine distance, with training requiring only 8 seconds and inference at millisecond latency.
+  [ICLR 2026][Recommender Systems][dimensionality reduction] This paper proposes RAE (Regularized Auto-Encoder), a dimensionality reduction method based on a linear autoencoder with Frobenius norm regularization. The autho…
 tags:
-  - ICLR 2026
-  - Recommender Systems
-  - dimensionality reduction
-  - k-NN preservation
-  - autoencoder
-  - regularization
-  - Rayleigh quotient
-  - vector search
+  - "ICLR 2026"
+  - "Recommender Systems"
+  - "dimensionality reduction"
+  - "k-NN preservation"
+  - "autoencoder"
+  - "regularization"
+  - "Rayleigh quotient"
+  - "vector search"
 date: 2026-05-08
 content_hash: a65e204aaaf4dd9f
 ---

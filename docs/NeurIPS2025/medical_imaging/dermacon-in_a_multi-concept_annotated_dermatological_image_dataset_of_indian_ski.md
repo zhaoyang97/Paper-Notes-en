@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DermaCon-IN: A Multi-concept Annotated Dermatological Image Dataset of Indian Skin Disorders
 description: >-
-  [NeurIPS 2025][Medical Imaging][dermatology dataset] This work introduces DermaCon-IN—the first densely annotated dermatological image dataset predominantly featuring Indian skin tones (5,450 images / 3,002 patients / 245 diagnoses)—providing three-level hierarchical diagnostic labels, 47 lesion descriptors, and 49 anatomical site annotations, with benchmark evaluations using CNN, ViT, and concept bottleneck model architectures.
+  [NeurIPS 2025][Medical Imaging][dermatology dataset] This work introduces DermaCon-IN—the first densely annotated dermatological image dataset predominantly featuring Indian skin tones (5,450 images / 3…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - dermatology dataset
-  - Indian skin tone
-  - concept bottleneck model
-  - hierarchical classification
-  - explainable AI
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "dermatology dataset"
+  - "Indian skin tone"
+  - "concept bottleneck model"
+  - "hierarchical classification"
+  - "explainable AI"
 date: 2026-05-08
 content_hash: 3fe3cce7c2c964a9
 ---

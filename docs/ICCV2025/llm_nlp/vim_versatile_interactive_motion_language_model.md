@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VIM: Versatile Interactive Motion-Language Model
 description: >-
-  [ICCV 2025][LLM/NLP][interactive motion generation] This paper proposes VIM, the first multimodal large language model capable of simultaneously understanding and generating dyadic interactive motion and text within a unified framework. Accompanied by the Inter-MT² dataset containing 82.7K multi-turn interactive motion instruction samples, VIM supports a diverse set of tasks including text-to-motion, motion-to-text, reaction generation, motion editing, and motion reasoning.
+  [ICCV 2025][LLM/NLP][interactive motion generation] This paper proposes VIM, the first multimodal large language model capable of simultaneously understanding and generating dyadic interactive motion and text within a un…
 tags:
-  - ICCV 2025
-  - LLM/NLP
-  - interactive motion generation
-  - motion-language model
-  - multi-turn dialogue
-  - RQ-VAE
-  - dyadic interaction
+  - "ICCV 2025"
+  - "LLM/NLP"
+  - "interactive motion generation"
+  - "motion-language model"
+  - "multi-turn dialogue"
+  - "RQ-VAE"
+  - "dyadic interaction"
 date: 2026-05-08
 content_hash: b36282b77b9113cf
 ---

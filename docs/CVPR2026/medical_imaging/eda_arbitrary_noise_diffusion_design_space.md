@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Elucidating the Design Space of Arbitrary-Noise-Based Diffusion Models
 description: >-
-  [CVPR 2026][Medical Imaging][Arbitrary-noise diffusion] This paper proposes EDA, a framework that extends the EDM design space from isotropic Gaussian noise to arbitrary noise patterns. By driving SDEs with multivariate Gaussian distributions and multiple independent Wiener processes, EDA enables flexible noise diffusion while provably introducing no additional sampling overhead. With only 5 sampling steps, EDA achieves performance on par with or superior to 100-step Refusion and task-specific methods across three tasks: MRI bias field correction, CT metal artifact removal, and natural image shadow removal.
+  [CVPR 2026][Medical Imaging][Arbitrary-noise diffusion] This paper proposes EDA, a framework that extends the EDM design space from isotropic Gaussian noise to arbitrary noise patterns. By driving SDEs with multivariate…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Arbitrary-noise diffusion
-  - EDM unified framework
-  - SDE design space
-  - medical image denoising
-  - shadow removal
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Arbitrary-noise diffusion"
+  - "EDM unified framework"
+  - "SDE design space"
+  - "medical image denoising"
+  - "shadow removal"
 date: 2026-05-08
 content_hash: 9d7974971241c241
 ---

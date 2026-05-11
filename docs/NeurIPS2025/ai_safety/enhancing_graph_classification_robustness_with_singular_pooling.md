@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Enhancing Graph Classification Robustness with Singular Pooling
 description: >-
-  [NeurIPS 2025][AI Safety][GNN robustness] This paper presents the first systematic analysis of how flat pooling operators (Sum/Avg/Max) affect adversarial robustness in graph classification. It derives adversarial risk upper bounds for each operator and proposes RS-Pool—a method that constructs graph-level representations from the dominant singular vector of the node embedding matrix—achieving significant robustness improvements without sacrificing clean accuracy.
+  [NeurIPS 2025][AI Safety][GNN robustness] This paper presents the first systematic analysis of how flat pooling operators (Sum/Avg/Max) affect adversarial robustness in graph classification. It derives adversarial risk u…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - GNN robustness
-  - graph classification
-  - pooling
-  - adversarial attacks
-  - singular value decomposition
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "GNN robustness"
+  - "graph classification"
+  - "pooling"
+  - "adversarial attacks"
+  - "singular value decomposition"
 date: 2026-05-08
 content_hash: 572980db5a402dfa
 ---

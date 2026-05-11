@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] VIRST: Video-Instructed Reasoning Assistant for SpatioTemporal Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Video Object Segmentation] VIRST proposes an end-to-end framework that unifies global video reasoning and pixel-level mask prediction within a single vision-language model. Through Spatiotemporal Fusion (STF) and a Temporal Dynamic Anchor Updater (TDAU), the method achieves spatiotemporally consistent video segmentation, attaining J&F of 70.8 (+7.5 over SOTA) on ReVOS and 62.9 (+9.2) on MeViS, while achieving an inference speed of 5.1 FPS (1.3× faster than VRS-HQ).
+  [CVPR 2026][Segmentation][Video Object Segmentation] VIRST proposes an end-to-end framework that unifies global video reasoning and pixel-level mask prediction within a single vision-language model. Through Spatiotempora…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Video Object Segmentation
-  - RVOS
-  - Vision-Language Models
-  - Spatiotemporal Fusion
-  - Dynamic Anchors
-  - Reasoning Segmentation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Video Object Segmentation"
+  - "RVOS"
+  - "Vision-Language Models"
+  - "Spatiotemporal Fusion"
+  - "Dynamic Anchors"
+  - "Reasoning Segmentation"
 date: 2026-05-08
 content_hash: 8485112ba84a2343
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Text-Only Training for Image Captioning with Retrieval Augmentation and Modality Gap Correction
 description: >-
-  [CVPR 2026][Multimodal VLM][Image captioning] This paper proposes TOMCap — a text-only training approach for image captioning that combines retrieval augmentation, modality gap correction, and LoRA fine-tuning. The model trains exclusively on text yet processes images at inference time, surpassing existing training-free and text-only methods.
+  [CVPR 2026][Multimodal VLM][Image captioning] This paper proposes TOMCap — a text-only training approach for image captioning that combines retrieval augmentation, modality gap correction…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Image captioning
-  - text-only training
-  - retrieval augmentation
-  - modality gap correction
-  - CLIP
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Image captioning"
+  - "text-only training"
+  - "retrieval augmentation"
+  - "modality gap correction"
+  - "CLIP"
 date: 2026-05-08
 content_hash: fc6c3096e181e59f
 ---

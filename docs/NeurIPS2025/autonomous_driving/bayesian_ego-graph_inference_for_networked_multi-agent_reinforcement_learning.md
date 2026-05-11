@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BayesG: Bayesian Ego-Graph Inference for Networked Multi-Agent Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Autonomous Driving][Bayesian inference] BayesG enables each agent in networked MARL to learn the dynamic structure of its local communication graph via Bayesian variational inference — sampling edge masks with Gumbel-Softmax and jointly optimizing policy and graph structure under an ELBO objective — achieving 50%+ reward improvement over the best baseline in a 167-agent New York traffic scenario.
+  [NeurIPS 2025][Autonomous Driving][Bayesian inference] BayesG enables each agent in networked MARL to learn the dynamic structure of its local communication graph via Bayesian variational inference — sampling edge masks…
 tags:
-  - NeurIPS 2025
-  - Autonomous Driving
-  - Bayesian inference
-  - ego-graph
-  - networked MARL
-  - dynamic communication graph
-  - decentralization
+  - "NeurIPS 2025"
+  - "Autonomous Driving"
+  - "Bayesian inference"
+  - "ego-graph"
+  - "networked MARL"
+  - "dynamic communication graph"
+  - "decentralization"
 date: 2026-05-08
 content_hash: 295088048ce4d398
 ---

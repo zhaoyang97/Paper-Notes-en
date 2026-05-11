@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MAT-Agent: Adaptive Multi-Agent Training Optimization
 description: >-
-  [NeurIPS 2025][LLM Agent][multi-agent systems] This paper proposes MAT-Agent, a multi-agent framework consisting of four autonomous agents responsible for data augmentation, optimizer selection, learning rate scheduling, and loss function selection, respectively. The framework dynamically adjusts training configurations during the training process, employing DQN to learn policies as a replacement for conventional static hyperparameter configurations, and achieves state-of-the-art performance on multi-label image classification tasks.
+  [NeurIPS 2025][LLM Agent][multi-agent systems] This paper proposes MAT-Agent, a multi-agent framework consisting of four autonomous agents responsible for data augmentation, optimizer selection, learning rate scheduling…
 tags:
-  - NeurIPS 2025
-  - LLM Agent
-  - multi-agent systems
-  - training optimization
-  - multi-label classification
-  - reinforcement learning
-  - dynamic configuration
+  - "NeurIPS 2025"
+  - "LLM Agent"
+  - "multi-agent systems"
+  - "training optimization"
+  - "multi-label classification"
+  - "reinforcement learning"
+  - "dynamic configuration"
 date: 2026-05-08
 content_hash: 1f35c2187923ec94
 ---

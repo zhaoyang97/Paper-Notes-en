@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] No Answer Needed: Predicting LLM Answer Accuracy from Question-Only Linear Probes
 description: >-
-  [ICLR 2026][LLM Reasoning][Linear Probes] Prior to answer generation, a linear probe (difference-of-means) trained solely on residual stream activations at the question-processing stage can predict whether a model's forthcoming answer will be correct. This "pre-generation correctness direction," trained on TriviaQA, generalizes across multiple factual knowledge datasets (AUROC 0.68–0.88) but fails to generalize to mathematical reasoning (GSM8K), revealing a structural separation between representations of *factual correctness* and *reasoning correctness* within the model's internals.
+  [ICLR 2026][LLM Reasoning][Linear Probes] Prior to answer generation, a linear probe (difference-of-means) trained solely on residual stream activations at the question-processing stage can predict whether a model's fort…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Linear Probes
-  - Correctness Direction
-  - LLM Internal Representations
-  - Self-Assessment
-  - Linear Representation Hypothesis
-  - Confidence
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "Linear Probes"
+  - "Correctness Direction"
+  - "LLM Internal Representations"
+  - "Self-Assessment"
+  - "Linear Representation Hypothesis"
+  - "Confidence"
 date: 2026-05-08
 content_hash: 92c1258377ed89de
 ---

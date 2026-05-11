@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DARE-bench: Evaluating Modeling and Instruction Fidelity of LLMs in Data Science
 description: >-
-  [ICLR 2026][LLM Evaluation][data science benchmark] DARE-bench is a large-scale verifiable benchmark for data science tasks, comprising 6,300 Kaggle-derived tasks that support evaluation across two dimensions—ML modeling and instruction following—along with training data for SFT and RL. SFT improves Qwen3-32B by 1.83×, while RL improves Qwen3-4B by more than 8×.
+  [ICLR 2026][LLM Evaluation][data science benchmark] DARE-bench is a large-scale verifiable benchmark for data science tasks, comprising 6…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - data science benchmark
-  - instruction following
-  - ML modeling
-  - RLVR
-  - LLM agent
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "data science benchmark"
+  - "instruction following"
+  - "ML modeling"
+  - "RLVR"
+  - "LLM agent"
 date: 2026-05-08
 content_hash: 626e1966ef39c3e8
 ---

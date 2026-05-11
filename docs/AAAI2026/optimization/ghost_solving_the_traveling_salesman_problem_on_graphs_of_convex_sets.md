@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GHOST: Solving the Traveling Salesman Problem on Graphs of Convex Sets
 description: >-
-  [AAAI 2026][Optimization][Traveling Salesman Problem] This paper proposes GHOST, a hierarchical optimal search algorithm for solving the Traveling Salesman Problem on Graphs of Convex Sets (GCS). By combining combinatorial path search with convex trajectory optimization, and employing a novel abstract path expansion algorithm to compute admissible lower bounds that guide best-first search, GHOST achieves optimality guarantees while outperforming the monolithic mixed-integer convex programming (MICP) baseline by orders of magnitude in runtime.
+  [AAAI 2026][Optimization][Traveling Salesman Problem] This paper proposes GHOST, a hierarchical optimal search algorithm for solving the Traveling Salesman Problem on Graphs of Convex Sets (GCS). By combining combinatori…
 tags:
-  - AAAI 2026
-  - Optimization
-  - Traveling Salesman Problem
-  - Graphs of Convex Sets
-  - Trajectory Optimization
-  - Hierarchical Search
-  - Robot Motion Planning
+  - "AAAI 2026"
+  - "Optimization"
+  - "Traveling Salesman Problem"
+  - "Graphs of Convex Sets"
+  - "Trajectory Optimization"
+  - "Hierarchical Search"
+  - "Robot Motion Planning"
 date: 2026-05-08
 content_hash: 8a5b73da8e3df837
 ---

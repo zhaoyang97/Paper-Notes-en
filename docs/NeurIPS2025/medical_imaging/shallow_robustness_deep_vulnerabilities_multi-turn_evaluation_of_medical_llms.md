@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Shallow Robustness, Deep Vulnerabilities: Multi-Turn Evaluation of Medical LLMs
 description: >-
-  [NeurIPS 2025][Medical Imaging][Medical LLM] This paper proposes the MedQA-Followup framework to systematically evaluate the multi-turn robustness of medical LLMs. It reveals that models exhibit acceptable performance under single-turn perturbations (shallow robustness), yet accuracy can catastrophically drop from 91.2% to 13.5% under multi-turn follow-up challenges (deep vulnerability). Notably, indirect contextual manipulation proves more destructive than direct incorrect suggestions.
+  [NeurIPS 2025][Medical Imaging][Medical LLM] This paper proposes the MedQA-Followup framework to systematically evaluate the multi-turn robustness of medical LLMs. It reveals that models exhibit acceptable performance un…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Medical LLM
-  - Multi-Turn Dialogue Robustness
-  - Cognitive Bias
-  - MedQA
-  - Clinical Safety
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Medical LLM"
+  - "Multi-Turn Dialogue Robustness"
+  - "Cognitive Bias"
+  - "MedQA"
+  - "Clinical Safety"
 date: 2026-05-08
 content_hash: 488c9ec9aeb51271
 ---

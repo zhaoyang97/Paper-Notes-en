@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Did You Check the Right Pocket? Cost-Sensitive Store Routing for Memory-Augmented Agents
 description: >-
-  [ICLR 2026 Workshop][LLM Efficiency][memory-augmented agents] This paper formalizes multi-store retrieval in memory-augmented agents as a cost-sensitive store routing problem, demonstrates that selective retrieval can reduce context tokens by 62% while improving QA accuracy (86% vs. 81%) over exhaustive retrieval, and proposes a semantics-based heuristic routing baseline.
+  [ICLR 2026 Workshop][LLM Efficiency][memory-augmented agents] This paper formalizes multi-store retrieval in memory-augmented agents as a cost-sensitive store routing problem…
 tags:
-  - ICLR 2026 Workshop
-  - LLM Efficiency
-  - memory-augmented agents
-  - store routing
-  - cost-sensitive retrieval
-  - RAG
-  - memory architecture
+  - "ICLR 2026 Workshop"
+  - "LLM Efficiency"
+  - "memory-augmented agents"
+  - "store routing"
+  - "cost-sensitive retrieval"
+  - "RAG"
+  - "memory architecture"
 date: 2026-05-08
 content_hash: a3c6c71821bd9591
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] SVD-NO: Learning PDE Solution Operators with SVD Integral Kernels
 description: >-
-  [AAAI 2026][Neural Operators] This paper proposes SVD-NO, a neural operator that explicitly parameterizes the SVD decomposition of integral kernels, achieving $O(ndL)$ linear computational complexity while maintaining high expressiveness, and attaining new state-of-the-art performance on 5 PDE benchmarks.
+  [AAAI 2026][Neural Operators] This paper proposes SVD-NO, a neural operator that explicitly parameterizes the SVD decomposition of integral kernels…
 tags:
-  - AAAI 2026
-  - Neural Operators
-  - Singular Value Decomposition
-  - Partial Differential Equations
-  - Integral Kernels
-  - Low-Rank Approximation
+  - "AAAI 2026"
+  - "Neural Operators"
+  - "Singular Value Decomposition"
+  - "Partial Differential Equations"
+  - "Integral Kernels"
+  - "Low-Rank Approximation"
 date: 2026-05-08
 content_hash: 13468028efa79752
 ---

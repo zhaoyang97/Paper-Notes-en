@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Toward a Dynamic Stackelberg Game-Theoretic Framework for Agentic AI Defense Against LLM Jailbreaking
 description: >-
-  [ICLR 2026][LLM Agent][LLM Safety] This paper models the LLM jailbreak attack-defense interaction as a dynamic Stackelberg extensive-form game, explores the prompt space via Rapidly-exploring Random Trees (RRT), and proposes a "Purple Agent" defense architecture—embodying the "Think Red to Act Blue" philosophy—that anticipates attack trajectories through internal adversarial simulation and proactively neutralizes them.
+  [ICLR 2026][LLM Agent][LLM Safety] This paper models the LLM jailbreak attack-defense interaction as a dynamic Stackelberg extensive-form game, explores the prompt space via Rapidly-exploring Random Trees (RRT)…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - LLM Safety
-  - Jailbreak Defense
-  - Game Theory
-  - Stackelberg Game
-  - RRT Search
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "LLM Safety"
+  - "Jailbreak Defense"
+  - "Game Theory"
+  - "Stackelberg Game"
+  - "RRT Search"
 date: 2026-05-08
 content_hash: c56de2ae7e65a104
 ---

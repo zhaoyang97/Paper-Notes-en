@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Vector Contrastive Learning for Pixel-wise Pretraining in Medical Vision
 description: >-
-  [ICCV 2025][Medical Imaging][Contrastive Learning] This paper proposes Vector Contrastive Learning (Vector CL), which reformulates standard contrastive learning from a binary optimization problem into a vector regression problem. By modeling feature distances to quantify the degree of dispersion, it addresses the over-dispersion problem in pixel-wise medical vision pretraining, achieving significant improvements over 17 methods across 8 downstream tasks.
+  [ICCV 2025][Medical Imaging][Contrastive Learning] This paper proposes Vector Contrastive Learning (Vector CL), which reformulates standard contrastive learning from a binary optimization problem into a vector regression…
 tags:
-  - ICCV 2025
-  - Medical Imaging
-  - Contrastive Learning
-  - Pixel-wise Pretraining
-  - Medical Vision Foundation Model
-  - Displacement Vector Regression
-  - Over-dispersion Problem
+  - "ICCV 2025"
+  - "Medical Imaging"
+  - "Contrastive Learning"
+  - "Pixel-wise Pretraining"
+  - "Medical Vision Foundation Model"
+  - "Displacement Vector Regression"
+  - "Over-dispersion Problem"
 date: 2026-05-08
 content_hash: 114a0ab2b6904232
 ---

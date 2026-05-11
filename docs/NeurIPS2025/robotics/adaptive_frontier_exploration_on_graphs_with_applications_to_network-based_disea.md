@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Adaptive Frontier Exploration on Graphs with Applications to Network-Based Disease Testing
 description: >-
-  [NeurIPS 2025][Robotics][Gittins Index] This paper proposes the Adaptive Frontier Exploration on Graphs (AFEG) framework and designs a Gittins index-based policy that is provably optimal when the graph is a forest. On real-world sexually transmitted disease testing networks, the method identifies nearly all HIV-positive individuals by testing only half the population, substantially outperforming greedy and DQN baselines.
+  [NeurIPS 2025][Robotics][Gittins Index] This paper proposes the Adaptive Frontier Exploration on Graphs (AFEG) framework and designs a Gittins index-based policy that is provably optimal when the graph is a forest. On re…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - Gittins Index
-  - Branching Bandit
-  - Graph Frontier Exploration
-  - Disease Testing
-  - Markov Random Field
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "Gittins Index"
+  - "Branching Bandit"
+  - "Graph Frontier Exploration"
+  - "Disease Testing"
+  - "Markov Random Field"
 date: 2026-05-08
 content_hash: 3257c5e2d50f4da0
 ---

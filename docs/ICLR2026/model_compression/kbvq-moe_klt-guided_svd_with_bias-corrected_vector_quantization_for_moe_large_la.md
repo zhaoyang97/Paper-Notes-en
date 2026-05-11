@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] KBVQ-MoE: KLT-guided SVD with Bias-Corrected Vector Quantization for MoE Large Language Models
 description: >-
-  [ICLR 2026][Model Compression][MoE quantization] This paper proposes KBVQ-MoE, the first vector quantization framework specifically designed for MoE architectures. It eliminates inter-expert redundancy sharing (IDRE) via KLT-guided SVD and stabilizes outputs through bias-corrected output stabilization (BCOS), achieving 10%+ accuracy improvement over existing methods at 2-bit quantization.
+  [ICLR 2026][Model Compression][MoE quantization] This paper proposes KBVQ-MoE, the first vector quantization framework specifically designed for MoE architectures. It eliminates inter-expert redundancy sharing (IDRE) via…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - MoE quantization
-  - vector quantization
-  - KLT transform
-  - SVD redundancy elimination
-  - bias correction
+  - "ICLR 2026"
+  - "Model Compression"
+  - "MoE quantization"
+  - "vector quantization"
+  - "KLT transform"
+  - "SVD redundancy elimination"
+  - "bias correction"
 date: 2026-05-08
 content_hash: 4528be3a9a7a4134
 ---

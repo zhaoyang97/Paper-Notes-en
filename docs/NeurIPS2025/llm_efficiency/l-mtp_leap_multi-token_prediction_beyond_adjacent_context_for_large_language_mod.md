@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] L-MTP: Leap Multi-Token Prediction Beyond Adjacent Context for Large Language Models
 description: >-
-  [NeurIPS 2025][LLM Efficiency][Leap Prediction] L-MTP introduces a leap mechanism into multi-token prediction (MTP) by predicting tokens at non-adjacent positions (e.g., positions 1, 3, 5, 7 instead of 1, 2, 3, 4). A "looking backward" decoding strategy reuses prior predictions to fill the gaps, achieving a 22% inference speedup on 3B–12B models while maintaining or improving task performance.
+  [NeurIPS 2025][LLM Efficiency][Leap Prediction] L-MTP introduces a leap mechanism into multi-token prediction (MTP) by predicting tokens at non-adjacent positions (e.g., positions 1, 3, 5, 7 instead of 1, 2, 3…
 tags:
-  - NeurIPS 2025
-  - LLM Efficiency
-  - Leap Prediction
-  - Inference Efficiency
-  - Speculative Decoding
-  - Multi-Head Prediction
-  - Tree Attention
+  - "NeurIPS 2025"
+  - "LLM Efficiency"
+  - "Leap Prediction"
+  - "Inference Efficiency"
+  - "Speculative Decoding"
+  - "Multi-Head Prediction"
+  - "Tree Attention"
 date: 2026-05-08
 content_hash: 14de28b39dc45f05
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AIM-CoT: Active Information-driven Multimodal Chain-of-Thought for Vision-Language Reasoning
 description: >-
-  [ACL 2026][LLM Reasoning][interleaved multimodal chain-of-thought] This paper proposes AIM-CoT, a framework driven by Information Foraging Theory that addresses two core problems in Interleaved Multimodal Chain-of-Thought (I-MCoT)—*what to see* and *when to see*—through Active Visual Probing (AVP) based on information gain and a Dynamic Attention-shift Trigger (DAT) mechanism.
+  [ACL 2026][LLM Reasoning][interleaved multimodal chain-of-thought] This paper proposes AIM-CoT, a framework driven by Information Foraging Theory that addresses two core problems in Interleaved Multimodal Chain-of-Though…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - interleaved multimodal chain-of-thought
-  - information foraging theory
-  - active visual probing
-  - dynamic triggering
-  - visual question answering
+  - "ACL 2026"
+  - "LLM Reasoning"
+  - "interleaved multimodal chain-of-thought"
+  - "information foraging theory"
+  - "active visual probing"
+  - "dynamic triggering"
+  - "visual question answering"
 date: 2026-05-08
 content_hash: c6b9eaa2e863ab56
 ---

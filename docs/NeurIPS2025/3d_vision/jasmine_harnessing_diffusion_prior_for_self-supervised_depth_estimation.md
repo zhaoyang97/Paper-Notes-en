@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Jasmine: Harnessing Diffusion Prior for Self-Supervised Depth Estimation
 description: >-
-  [NeurIPS 2025][3D Vision][Self-supervised depth estimation] This paper is the first to incorporate the visual prior of Stable Diffusion into a self-supervised monocular depth estimation (SSMDE) framework. It proposes the Mix-Batch Image Reconstruction (MIR) proxy task to shield the SD prior from corruption by reprojection noise, and introduces the Scale-Shift GRU (SSG) to bridge the gap between SD's scale-shift-invariant (SSI) and self-supervised scale-invariant (SI) depth distributions. Jasmine achieves AbsRel = 0.090 on KITTI, establishing a new state of the art among all SSMDE methods, while comprehensively outperforming supervised SD methods such as Marigold, E2E FT, and Lotus in zero-shot generalization.
+  [NeurIPS 2025][3D Vision][Self-supervised depth estimation] This paper is the first to incorporate the visual prior of Stable Diffusion into a self-supervised monocular depth estimation (SSMDE) framework. It proposes the…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Self-supervised depth estimation
-  - Stable Diffusion
-  - diffusion prior
-  - Mix-Batch Image Reconstruction
-  - Scale-Shift GRU
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Self-supervised depth estimation"
+  - "Stable Diffusion"
+  - "diffusion prior"
+  - "Mix-Batch Image Reconstruction"
+  - "Scale-Shift GRU"
 date: 2026-05-08
 content_hash: d26a4243658e9587
 ---

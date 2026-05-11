@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AJAHR: Amputated Joint Aware 3D Human Mesh Recovery
 description: >-
-  [ICCV 2025][Human Understanding][Human Mesh Recovery] The first 3D human mesh recovery framework for amputees — by synthesizing 1M+ amputee images (A3D), designing the BPAC-Net amputation classifier to distinguish amputation from occlusion, and employing a dual-tokenizer switching strategy to encode amputation/normal pose priors separately. The method achieves substantial improvements on amputee data (MVE 16.87 lower than TokenHMR on ITW-amputee) while remaining competitive on non-amputee benchmarks.
+  [ICCV 2025][Human Understanding][Human Mesh Recovery] The first 3D human mesh recovery framework for amputees — by synthesizing 1M+ amputee images (A3D)…
 tags:
-  - ICCV 2025
-  - Human Understanding
-  - Human Mesh Recovery
-  - Amputees
-  - SMPL
-  - Synthetic Dataset
-  - Body Part Classifier
+  - "ICCV 2025"
+  - "Human Understanding"
+  - "Human Mesh Recovery"
+  - "Amputees"
+  - "SMPL"
+  - "Synthetic Dataset"
+  - "Body Part Classifier"
 date: 2026-05-08
 content_hash: 853aec8f4d03f647
 ---

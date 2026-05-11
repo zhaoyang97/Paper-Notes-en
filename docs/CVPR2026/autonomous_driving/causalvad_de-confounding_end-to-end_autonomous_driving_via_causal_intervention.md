@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] CausalVAD: De-confounding End-to-End Autonomous Driving via Causal Intervention
 description: >-
-  [CVPR2026][Autonomous Driving][Causal Inference] CausalVAD is proposed to parameterize Pearl's backdoor adjustment theory as a plug-and-play module (SCIS), performing multi-level causal intervention across the perception–prediction–planning pipeline of the VAD architecture to eliminate spurious correlations and achieve safer, more robust end-to-end autonomous driving.
+  [CVPR2026][Autonomous Driving][Causal Inference] CausalVAD is proposed to parameterize Pearl's backdoor adjustment theory as a plug-and-play module (SCIS)…
 tags:
-  - CVPR2026
-  - Autonomous Driving
-  - Causal Inference
-  - Backdoor Adjustment
-  - De-confounding
-  - End-to-End Autonomous Driving
-  - Sparse Vectorized Representation
-  - VAD
+  - "CVPR2026"
+  - "Autonomous Driving"
+  - "Causal Inference"
+  - "Backdoor Adjustment"
+  - "De-confounding"
+  - "End-to-End Autonomous Driving"
+  - "Sparse Vectorized Representation"
+  - "VAD"
 date: 2026-05-08
 content_hash: 00a8d3b9bbff64c7
 ---

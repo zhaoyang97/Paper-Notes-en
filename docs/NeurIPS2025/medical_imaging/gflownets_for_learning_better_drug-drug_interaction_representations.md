@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GFlowNets for Learning Better Drug-Drug Interaction Representations
 description: >-
-  [NeurIPS 2025][Medical Imaging][Drug-drug interaction] To address the severe class imbalance in drug-drug interaction (DDI) prediction, this paper proposes combining GFlowNet with a variational graph autoencoder (VGAE). By reward-guided generative sampling, the framework synthesizes training samples for rare interaction types, thereby enhancing predictive performance on infrequent yet clinically critical interaction categories.
+  [NeurIPS 2025][Medical Imaging][Drug-drug interaction] To address the severe class imbalance in drug-drug interaction (DDI) prediction, this paper proposes combining GFlowNet with a variational graph autoencoder (VGAE).…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Drug-drug interaction
-  - GFlowNet
-  - variational graph autoencoder
-  - class imbalance
-  - graph generation
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Drug-drug interaction"
+  - "GFlowNet"
+  - "variational graph autoencoder"
+  - "class imbalance"
+  - "graph generation"
 date: 2026-05-08
 content_hash: 550441606f9b7c16
 ---

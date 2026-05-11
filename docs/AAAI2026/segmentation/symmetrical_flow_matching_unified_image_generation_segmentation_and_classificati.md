@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Symmetrical Flow Matching: Unified Image Generation, Segmentation, and Classification with Score-Based Generative Models
 description: >-
-  [AAAI 2026][Segmentation][Flow Matching] This paper proposes Symmetrical Flow Matching (SymmFlow), which unifies semantic segmentation, classification, and image generation into a single model. By jointly modeling forward and reverse flow transformations through a symmetric learning objective, SymmFlow achieves state-of-the-art performance in semantic image synthesis with only 25 inference steps (CelebAMask-HQ FID 11.9, COCO-Stuff FID 7.0), while obtaining competitive results on segmentation and classification.
+  [AAAI 2026][Segmentation][Flow Matching] This paper proposes Symmetrical Flow Matching (SymmFlow), which unifies semantic segmentation, classification…
 tags:
-  - AAAI 2026
-  - Segmentation
-  - Flow Matching
-  - Semantic Segmentation
-  - Image Generation
-  - Classification
-  - Unified Framework
+  - "AAAI 2026"
+  - "Segmentation"
+  - "Flow Matching"
+  - "Semantic Segmentation"
+  - "Image Generation"
+  - "Classification"
+  - "Unified Framework"
 date: 2026-05-08
 content_hash: 9c631f72c26a2b13
 ---

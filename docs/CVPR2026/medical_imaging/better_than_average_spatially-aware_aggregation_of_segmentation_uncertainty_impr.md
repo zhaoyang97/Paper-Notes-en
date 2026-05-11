@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Better than Average: Spatially-Aware Aggregation of Segmentation Uncertainty Improves Downstream Performance
 description: >-
-  [CVPR 2026][Medical Imaging][Uncertainty Quantification] This paper presents the first systematic study of aggregation strategies for converting pixel-level uncertainty to image-level scores in segmentation. It proposes SMR aggregators incorporating spatial structural information (Moran's I, Edge Density, Shannon Entropy) and a GMM-based meta-aggregator, demonstrating across 10 datasets that global averaging (AVG) is suboptimal and that GMM-All achieves robust performance on both OoD and failure detection.
+  [CVPR 2026][Medical Imaging][Uncertainty Quantification] This paper presents the first systematic study of aggregation strategies for converting pixel-level uncertainty to image-level scores in segmentation. It proposes…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Uncertainty Quantification
-  - Spatial Aggregation Strategies
-  - OoD Detection
-  - Failure Detection
-  - Meta-Aggregation
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Uncertainty Quantification"
+  - "Spatial Aggregation Strategies"
+  - "OoD Detection"
+  - "Failure Detection"
+  - "Meta-Aggregation"
 date: 2026-05-08
 content_hash: f916a444f6653958
 ---

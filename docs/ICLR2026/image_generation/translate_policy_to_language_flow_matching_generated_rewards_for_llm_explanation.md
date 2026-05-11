@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Translate Policy to Language: Flow Matching Generated Rewards for LLM Explanations
 description: >-
-  [ICLR 2026][Image Generation][Policy Explanation] This paper proposes a general framework that leverages Rectified Flow to generate distributional rewards for training explanation-generating LLMs. By employing continuous normalizing flows (CNF) to capture the pluralistic and probabilistic nature of human judgments on explanations, the framework provides theoretical guarantees that CNF can effectively recover the true human reward distribution. It significantly outperforms RLHF/RLAIF baselines on SMAC, MMLU, MathQA, and other tasks.
+  [ICLR 2026][Image Generation][Policy Explanation] This paper proposes a general framework that leverages Rectified Flow to generate distributional rewards for training explanation-generating LLMs. By employing continuous…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Policy Explanation
-  - Rectified Flow
-  - Distributional Rewards
-  - RLAIF
-  - LLM Interpretability
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Policy Explanation"
+  - "Rectified Flow"
+  - "Distributional Rewards"
+  - "RLAIF"
+  - "LLM Interpretability"
 date: 2026-05-08
 content_hash: fd4a053c59dde9fa
 ---

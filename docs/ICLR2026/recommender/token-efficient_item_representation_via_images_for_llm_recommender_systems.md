@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Token-Efficient Item Representation via Images for LLM Recommender Systems
 description: >-
-  [ICLR 2026][Recommender Systems][LLM-based recommendation] This paper proposes I-LLMRec, which leverages item images in place of verbose textual descriptions to represent item semantics in recommender systems. Through a Recommendation-oriented Image-Semantic Alignment (RISA) module and a Recommendation-oriented Embedding Retrieval Inference (RERI) module, the method represents each item with a single token while preserving rich semantics, achieving approximately 2.93× inference speedup and surpassing text-description-based methods in recommendation performance.
+  [ICLR 2026][Recommender Systems][LLM-based recommendation] This paper proposes I-LLMRec, which leverages item images in place of verbose textual descriptions to represent item semantics in recommender systems. Through a…
 tags:
-  - ICLR 2026
-  - Recommender Systems
-  - LLM-based recommendation
-  - image representation
-  - token efficiency
-  - multimodal alignment
-  - retrieval-based recommendation
+  - "ICLR 2026"
+  - "Recommender Systems"
+  - "LLM-based recommendation"
+  - "image representation"
+  - "token efficiency"
+  - "multimodal alignment"
+  - "retrieval-based recommendation"
 date: 2026-05-08
 content_hash: 1bf272d5eb6dd81b
 ---

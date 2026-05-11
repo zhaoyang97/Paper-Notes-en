@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AcTTA: Rethinking Test-Time Adaptation via Dynamic Activation
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Test-Time Adaptation] This paper proposes AcTTA, a framework that for the first time treats activation functions as learnable components for test-time adaptation (TTA). By introducing a parameterized activation center shift $c$ and asymmetric gradient scaling $\lambda_{pos}, \lambda_{neg}$ to replace or augment conventional normalization-layer adaptation, AcTTA consistently outperforms all normalization-based TTA methods on CIFAR-10/100-C and ImageNet-C, while supporting learning rates up to 10× larger.
+  [CVPR 2026][Self-Supervised Learning][Test-Time Adaptation] This paper proposes AcTTA, a framework that for the first time treats activation functions as learnable components for test-time adaptation (TTA). By introducin…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - Test-Time Adaptation
-  - Dynamic Activation Functions
-  - Domain Shift
-  - Normalization Layers
-  - Gradient Flow
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Test-Time Adaptation"
+  - "Dynamic Activation Functions"
+  - "Domain Shift"
+  - "Normalization Layers"
+  - "Gradient Flow"
 date: 2026-05-08
 content_hash: a63c81e1c825d0c4
 ---

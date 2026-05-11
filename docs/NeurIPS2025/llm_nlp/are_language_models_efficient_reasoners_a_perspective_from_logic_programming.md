@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Are Language Models Efficient Reasoners? A Perspective from Logic Programming
 description: >-
-  [NeurIPS 2025][LLM/NLP][reasoning efficiency] This paper proposes a framework for evaluating LLM reasoning *efficiency* (rather than correctness alone) from a logic programming perspective. By mapping natural language proofs to logic program proofs via verbalized logic programs, the authors find that current LLMs not only suffer accuracy degradation on math problems containing irrelevant axioms, but also exhibit severely inefficient reasoning—more than half of all reasoning steps are unnecessary.
+  [NeurIPS 2025][LLM/NLP][reasoning efficiency] This paper proposes a framework for evaluating LLM reasoning *efficiency* (rather than correctness alone) from a logic programming perspective. By mapping natural language pr…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - reasoning efficiency
-  - logic programming
-  - irrelevant information
-  - proof length
-  - deductive reasoning
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "reasoning efficiency"
+  - "logic programming"
+  - "irrelevant information"
+  - "proof length"
+  - "deductive reasoning"
 date: 2026-05-08
 content_hash: 0f3d254834ce5b57
 ---

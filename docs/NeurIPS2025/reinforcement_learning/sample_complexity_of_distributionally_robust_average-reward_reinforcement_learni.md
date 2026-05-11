@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Sample Complexity of Distributionally Robust Average-Reward Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Distributionally robust optimization] This paper establishes the first finite-sample convergence guarantees for distributionally robust average-reward reinforcement learning (DR-AMDP), proposing two algorithms (discount reduction and anchoring) that achieve near-optimal sample complexity of $\widetilde{O}(|S||A|t_{\mathrm{mix}}^2\varepsilon^{-2})$ under both KL and $f_k$-divergence uncertainty sets.
+  [NeurIPS 2025][Reinforcement Learning][Distributionally robust optimization] This paper establishes the first finite-sample convergence guarantees for distributionally robust average-reward reinforcement learning (DR-AMD…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Distributionally robust optimization
-  - average-reward reinforcement learning
-  - sample complexity
-  - Markov decision processes
-  - KL divergence
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Distributionally robust optimization"
+  - "average-reward reinforcement learning"
+  - "sample complexity"
+  - "Markov decision processes"
+  - "KL divergence"
 date: 2026-05-08
 content_hash: 1e876891928083ea
 ---

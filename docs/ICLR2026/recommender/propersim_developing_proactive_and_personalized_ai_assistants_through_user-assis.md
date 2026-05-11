@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] ProPerSim: Developing Proactive and Personalized AI Assistants through User-Assistant Simulation
 description: >-
-  [ICLR 2026][Recommender Systems][proactive agent] This paper proposes ProPerSim, a simulation framework that models daily behaviors of 32 user personas grounded in the Big Five personality model within the Smallville household environment. The AI assistant makes proactive recommendation decisions every 2.5 minutes and learns user preferences via DPO, improving user satisfaction from 2.2/4 to 3.3/4 over a 14-day simulation—providing the first empirical validation of jointly achieving proactivity and personalization.
+  [ICLR 2026][Recommender Systems][proactive agent] This paper proposes ProPerSim, a simulation framework that models daily behaviors of 32 user personas grounded in the Big Five personality model within the Smallville hou…
 tags:
-  - ICLR 2026
-  - Recommender Systems
-  - proactive agent
-  - personalization
-  - user simulation
-  - DPO
-  - Big Five personality
-  - generative agents
+  - "ICLR 2026"
+  - "Recommender Systems"
+  - "proactive agent"
+  - "personalization"
+  - "user simulation"
+  - "DPO"
+  - "Big Five personality"
+  - "generative agents"
 date: 2026-05-08
 content_hash: 09dcdaab70980f9c
 ---

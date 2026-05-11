@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From Attribution to Action: Jointly ALIGNing Predictions and Explanations
 description: >-
-  [AAAI 2026][Segmentation][Explanation-Guided Learning] This paper proposes the ALIGN framework, which jointly trains a learnable masker and a classifier through alternating optimization to iteratively align model attribution maps with task-relevant region masks, simultaneously improving prediction accuracy and interpretability. ALIGN outperforms six strong baselines on the VLCS and Terra Incognita domain generalization benchmarks.
+  [AAAI 2026][Segmentation][Explanation-Guided Learning] This paper proposes the ALIGN framework, which jointly trains a learnable masker and a classifier through alternating optimization to iteratively align model attribu…
 tags:
-  - AAAI 2026
-  - Segmentation
-  - Explanation-Guided Learning
-  - Domain Generalization
-  - Interpretability
-  - Grad-CAM
-  - Mask Learning
+  - "AAAI 2026"
+  - "Segmentation"
+  - "Explanation-Guided Learning"
+  - "Domain Generalization"
+  - "Interpretability"
+  - "Grad-CAM"
+  - "Mask Learning"
 date: 2026-05-08
 content_hash: ccf78032f0068934
 ---

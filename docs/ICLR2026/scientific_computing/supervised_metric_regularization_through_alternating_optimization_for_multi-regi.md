@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Supervised Metric Regularization Through Alternating Optimization for Multi-Regime PINNs
 description: >-
-  [Scientific Computing] This paper proposes a Topology-Aware PINN (TAPINN) that structures the latent space via supervised metric regularization (Triplet Loss) and stabilizes training through an alternating optimization schedule. On the multi-regime Duffing oscillator benchmark, TAPINN reduces physics residuals by approximately 49% (0.082 vs. 0.160) and gradient variance by 2.18× compared to baselines.
+  [Scientific Computing] This paper proposes a Topology-Aware PINN (TAPINN) that structures the latent space via supervised metric regularization (Triplet Loss) and stabilizes training through an alternating optimization s…
 tags:
-  - Scientific Computing
+  - "Scientific Computing"
 date: 2026-05-08
 content_hash: 616a313793f4c41b
 ---

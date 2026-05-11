@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] NOVA: Sparse Control, Dense Synthesis for Pair-Free Video Editing
 description: >-
-  [CVPR 2026][Video Generation][pair-free video editing] This paper proposes NOVA, which formalizes for the first time the "sparse control, dense synthesis" paradigm for video editing: a sparse branch provides semantic guidance from user-edited multi-keyframes, while a dense branch injects motion and texture information from the original video. Combined with a degradation simulation training strategy, NOVA achieves learning without paired data and comprehensively outperforms existing methods in editing fidelity, motion preservation, and temporal consistency.
+  [CVPR 2026][Video Generation][pair-free video editing] This paper proposes NOVA, which formalizes for the first time the "sparse control, dense synthesis" paradigm for video editing: a sparse branch provides semantic gui…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - pair-free video editing
-  - dual-branch architecture
-  - sparse control
-  - degradation simulation training
-  - multi-keyframe
+  - "CVPR 2026"
+  - "Video Generation"
+  - "pair-free video editing"
+  - "dual-branch architecture"
+  - "sparse control"
+  - "degradation simulation training"
+  - "multi-keyframe"
 date: 2026-05-08
 content_hash: 385f9cf903969686
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GOT-Edit: Geometry-Aware Generic Object Tracking via Online Model Editing
 description: >-
-  [ICLR 2026][Knowledge Editing][Object Tracking] GOT-Edit integrates 3D geometric information from VGGT into a 2D generic object tracker via null-space-constrained online model editing, enhancing geometric awareness while preserving semantic discriminability, and achieving significant tracking improvements in occlusion and cluttered-background scenarios.
+  [ICLR 2026][Knowledge Editing][Object Tracking] GOT-Edit integrates 3D geometric information from VGGT into a 2D generic object tracker via null-space-constrained online model editing…
 tags:
-  - ICLR 2026
-  - Knowledge Editing
-  - Object Tracking
-  - 3D Geometry
-  - Null-Space Editing
-  - Online Model Updating
-  - VGGT
+  - "ICLR 2026"
+  - "Knowledge Editing"
+  - "Object Tracking"
+  - "3D Geometry"
+  - "Null-Space Editing"
+  - "Online Model Updating"
+  - "VGGT"
 date: 2026-05-08
 content_hash: 3ec1ac3c60ae6453
 ---

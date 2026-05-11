@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] Reasoning-Driven Multimodal LLM for Domain Generalization
 description: >-
-  [ICLR 2026][Multimodal VLM] This paper proposes RD-MLDG — the first framework to incorporate MLLM reasoning chains into domain generalization. It constructs the DomainBed-Reasoning dataset, systematically analyzes two core challenges of reasoning supervision (optimization gap + reasoning pattern mismatch), and addresses them jointly via MTCT (Multi-Task Cross-Training) and SARR (Self-Aligned Reasoning Regularization), achieving an average accuracy of 86.89% across four standard DG benchmarks — substantially surpassing GPT-4o (83.46%) and all CLIP/ViT-based methods.
+  [ICLR 2026][Multimodal VLM] This paper proposes RD-MLDG — the first framework to incorporate MLLM reasoning chains into domain generalization. It constructs the DomainBed-Reasoning dataset…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
 date: 2026-05-08
 content_hash: baf0727c071c6965
 ---

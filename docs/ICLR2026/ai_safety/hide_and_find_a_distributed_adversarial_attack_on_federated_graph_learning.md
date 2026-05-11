@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Hide and Find: A Distributed Adversarial Attack on Federated Graph Learning
 description: >-
-  [ICLR2026][AI Safety][Federated Graph Learning] This paper proposes FedShift, a two-stage "hide-and-find" distributed adversarial attack framework. In the first stage, covert shifters are injected into training graphs via gentle distributional shifts. In the second stage, the trained shifter generator serves as a warm initialization for efficiently searching adversarial perturbations, which are then aggregated across multiple malicious clients to form the final adversarial examples. FedShift achieves state-of-the-art attack success rates on six large-scale datasets, evades three mainstream defense algorithms, and improves convergence speed by over 90%.
+  [ICLR2026][AI Safety][Federated Graph Learning] This paper proposes FedShift, a two-stage "hide-and-find" distributed adversarial attack framework. In the first stage…
 tags:
-  - ICLR2026
-  - AI Safety
-  - Federated Graph Learning
-  - adversarial attack
-  - Backdoor Attack
-  - Graph Neural Networks
-  - Data Poisoning
+  - "ICLR2026"
+  - "AI Safety"
+  - "Federated Graph Learning"
+  - "adversarial attack"
+  - "Backdoor Attack"
+  - "Graph Neural Networks"
+  - "Data Poisoning"
 date: 2026-05-08
 content_hash: 1c341fec33c084bc
 ---

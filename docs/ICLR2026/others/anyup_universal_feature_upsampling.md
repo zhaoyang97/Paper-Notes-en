@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AnyUp: Universal Feature Upsampling
 description: >-
-   AnyUp proposes the first **encoder-agnostic** learnable feature upsampling method. Through feature-agnostic convolutional layers and window attention mechanisms, it requires only a single training pass to perform high-quality upsampling of arbitrary visual features across arbitrary resolutions, achieving state-of-the-art performance on semantic segmentation, depth estimation, and related tasks.
+  AnyUp proposes the first **encoder-agnostic** learnable feature upsampling method. Through feature-agnostic convolutional layers and window attention mechanisms…
 tags:
 
 date: 2026-05-08

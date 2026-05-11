@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Rapid Training of Hamiltonian Graph Networks using Random Features
 description: >-
-  [ICLR 2026][Optimization][Hamiltonian Graph Networks] This paper proposes RF-HGN, which constructs dense layer parameters via random feature sampling (ELM/SWIM) and solves a linear least-squares problem to train Hamiltonian Graph Networks. By completely bypassing gradient-descent-based iterative optimization, RF-HGN achieves 150–600× speedup on N-body physical systems while maintaining comparable accuracy and strong zero-shot generalization.
+  [ICLR 2026][Optimization][Hamiltonian Graph Networks] This paper proposes RF-HGN, which constructs dense layer parameters via random feature sampling (ELM/SWIM) and solves a linear least-squares problem to train Hamilton…
 tags:
-  - ICLR 2026
-  - Optimization
-  - Hamiltonian Graph Networks
-  - Random Features
-  - N-body Simulation
-  - Zero-shot Generalization
-  - Gradient-free Training
+  - "ICLR 2026"
+  - "Optimization"
+  - "Hamiltonian Graph Networks"
+  - "Random Features"
+  - "N-body Simulation"
+  - "Zero-shot Generalization"
+  - "Gradient-free Training"
 date: 2026-05-08
 content_hash: bc87771f4c863c5a
 ---

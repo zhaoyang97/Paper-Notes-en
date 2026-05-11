@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LaMoGen: Language to Motion Generation Through LLM-Guided Symbolic Inference
 description: >-
-  [CVPR 2026][Human Understanding][Text-driven motion generation] This paper proposes LabanLite, a symbolic motion representation, and the LaMoGen framework, which for the first time enables LLMs to autonomously compose motion sequences through interpretable Laban symbol reasoning, surpassing conventional text-motion joint embedding methods in temporal precision and controllability.
+  [CVPR 2026][Human Understanding][Text-driven motion generation] This paper proposes LabanLite, a symbolic motion representation, and the LaMoGen framework…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Text-driven motion generation
-  - Labanotation
-  - symbolic reasoning
-  - LLM Agent
-  - interpretable motion synthesis
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Text-driven motion generation"
+  - "Labanotation"
+  - "symbolic reasoning"
+  - "LLM Agent"
+  - "interpretable motion synthesis"
 date: 2026-05-08
 content_hash: ec7c6c51558c54e4
 ---

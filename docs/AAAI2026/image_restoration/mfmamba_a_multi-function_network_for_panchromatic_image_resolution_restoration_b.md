@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] MFmamba: A Multi-function Network for Panchromatic Image Resolution Restoration Based on State-Space Model
 description: >-
-  [AAAI 2026][Image Restoration][Remote sensing imagery] This paper proposes MFmamba, a multi-function network built upon a UNet++ backbone that integrates a Mamba Upsampling Block (MUB), Dual Pooling Attention (DPA), and a Multi-scale Hybrid Cross Block (MHCB). Using only panchromatic (PAN) images as input, the unified framework simultaneously supports three tasks: super-resolution, spectral restoration, and joint SR with colorization.
+  [AAAI 2026][Image Restoration][Remote sensing imagery] This paper proposes MFmamba, a multi-function network built upon a UNet++ backbone that integrates a Mamba Upsampling Block (MUB), Dual Pooling Attention (DPA)…
 tags:
-  - AAAI 2026
-  - Image Restoration
-  - Remote sensing imagery
-  - panchromatic image
-  - super-resolution
-  - spectral restoration
-  - Mamba
-  - state-space model
-  - UNet++
+  - "AAAI 2026"
+  - "Image Restoration"
+  - "Remote sensing imagery"
+  - "panchromatic image"
+  - "super-resolution"
+  - "spectral restoration"
+  - "Mamba"
+  - "state-space model"
+  - "UNet++"
 date: 2026-05-08
 content_hash: 5a32e9bcab1ddf42
 ---

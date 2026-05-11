@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RegionMarker: A Region-Triggered Semantic Watermarking Framework for Embedding-as-a-Service
 description: >-
-  [AAAI 2026][AI Safety][EaaS copyright protection] This paper proposes RegionMarker, a semantic watermarking framework based on region-triggered mechanisms. It defines trigger regions in a low-dimensional space and injects semantic watermarks, constituting the first EaaS copyright protection method capable of simultaneously resisting CSE attacks, paraphrasing attacks, and dimension perturbation attacks.
+  [AAAI 2026][AI Safety][EaaS copyright protection] This paper proposes RegionMarker, a semantic watermarking framework based on region-triggered mechanisms. It defines trigger regions in a low-dimensional space and inject…
 tags:
-  - AAAI 2026
-  - AI Safety
-  - EaaS copyright protection
-  - embedding watermarking
-  - semantic region triggering
-  - model extraction attack defense
-  - locality-sensitive hashing
+  - "AAAI 2026"
+  - "AI Safety"
+  - "EaaS copyright protection"
+  - "embedding watermarking"
+  - "semantic region triggering"
+  - "model extraction attack defense"
+  - "locality-sensitive hashing"
 date: 2026-05-08
 content_hash: ac8851e09347416d
 ---

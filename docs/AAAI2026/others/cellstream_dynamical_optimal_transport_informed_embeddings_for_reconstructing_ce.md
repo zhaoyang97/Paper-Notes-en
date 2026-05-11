@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] CellStream: Dynamical Optimal Transport Informed Embeddings for Reconstructing Cellular Trajectories from Snapshots Data
 description: >-
-  [AAAI 2026][single-cell RNA sequencing] This paper proposes CellStream, a deep learning framework that jointly learns an autoencoder and unbalanced dynamical optimal transport (OT) to simultaneously obtain low-dimensional embeddings and continuous cellular dynamics from discrete-time single-cell snapshot data, achieving significant improvements over existing methods in temporal consistency and velocity consistency.
+  [AAAI 2026][single-cell RNA sequencing] This paper proposes CellStream, a deep learning framework that jointly learns an autoencoder and unbalanced dynamical optimal transport (OT) to simultaneously obtain low-dimensiona…
 tags:
-  - AAAI 2026
-  - single-cell RNA sequencing
-  - optimal transport
-  - cellular trajectory inference
-  - dimensionality reduction embedding
-  - autoencoder
+  - "AAAI 2026"
+  - "single-cell RNA sequencing"
+  - "optimal transport"
+  - "cellular trajectory inference"
+  - "dimensionality reduction embedding"
+  - "autoencoder"
 date: 2026-05-08
 content_hash: ff3184f1c015b55e
 ---

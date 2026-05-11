@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Streaming Federated Learning with Markovian Data
 description: >-
-  [NeurIPS 2025][Optimization][Federated Learning] This work provides the first rigorous analysis of streaming federated learning with Markovian data under non-convex objectives, establishing that Minibatch SGD, Local SGD, and Local SGD-M all achieve sample complexity inversely proportional to the number of clients (linear speedup), and that Local SGD-M matches the communication complexity of Minibatch SGD without requiring heterogeneity assumptions.
+  [NeurIPS 2025][Optimization][Federated Learning] This work provides the first rigorous analysis of streaming federated learning with Markovian data under non-convex objectives, establishing that Minibatch SGD, Local SGD…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Federated Learning
-  - Markovian Data Streams
-  - Stochastic Gradient Descent
-  - Non-convex Optimization
-  - Client Drift
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Federated Learning"
+  - "Markovian Data Streams"
+  - "Stochastic Gradient Descent"
+  - "Non-convex Optimization"
+  - "Client Drift"
 date: 2026-05-08
 content_hash: bb5d61abb57e11c9
 ---

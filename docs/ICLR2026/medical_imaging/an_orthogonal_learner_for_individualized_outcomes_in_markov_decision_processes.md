@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] An Orthogonal Learner for Individualized Outcomes in Markov Decision Processes
 description: >-
-  [ICLR 2026][Medical Imaging][Q-function estimation] This paper systematically introduces semiparametric efficiency theory from causal inference into Q-function estimation for MDPs. It demonstrates that classical Q-regression and FQE are essentially naive plug-in learners subject to plug-in bias, and proposes the DRQQ-learner—a meta-learner that simultaneously achieves double robustness, Neyman orthogonality, and near-oracle efficiency. By deriving the efficient influence function (EIF) to construct a debiased two-stage loss, the method comprehensively outperforms baselines in Taxi and Frozen Lake environments.
+  [ICLR 2026][Medical Imaging][Q-function estimation] This paper systematically introduces semiparametric efficiency theory from causal inference into Q-function estimation for MDPs. It demonstrates that classical Q-regres…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - Q-function estimation
-  - double robustness
-  - Neyman orthogonality
-  - causal inference
-  - offline policy evaluation
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Q-function estimation"
+  - "double robustness"
+  - "Neyman orthogonality"
+  - "causal inference"
+  - "offline policy evaluation"
 date: 2026-05-08
 content_hash: a238ea59fad5900d
 ---

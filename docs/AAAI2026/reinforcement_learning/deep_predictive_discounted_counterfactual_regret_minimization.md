@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Deep (Predictive) Discounted Counterfactual Regret Minimization
 description: >-
-  [AAAI 2026][Reinforcement Learning][Counterfactual Regret Minimization] This paper proposes two model-free neural CFR algorithms, VR-DeepDCFR+ and VR-DeepPDCFR+, which integrate advanced tabular CFR variants (DCFR+/PDCFR+) into neural network approximation frameworks for the first time. Through bootstrapped cumulative advantage estimation, discounted clipping mechanisms, and baseline variance reduction, the proposed methods achieve faster convergence in standard imperfect information games.
+  [AAAI 2026][Reinforcement Learning][Counterfactual Regret Minimization] This paper proposes two model-free neural CFR algorithms, VR-DeepDCFR+ and VR-DeepPDCFR+…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - Counterfactual Regret Minimization
-  - Imperfect Information Games
-  - Nash Equilibrium
-  - Neural Network Approximation
-  - Variance Reduction
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "Counterfactual Regret Minimization"
+  - "Imperfect Information Games"
+  - "Nash Equilibrium"
+  - "Neural Network Approximation"
+  - "Variance Reduction"
 date: 2026-05-08
 content_hash: 9410de4b6e4e32e1
 ---

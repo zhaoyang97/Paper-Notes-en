@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] VPO: Aligning Text-to-Video Generation Models with Prompt Optimization
 description: >-
-  [Video Generation] > This paper proposes the VPO framework, which systematically optimizes text prompts for video generation based on three core principles (Harmless, Accurate, Helpful). Through principle-guided SFT and multi-feedback preference optimization, VPO significantly improves the safety, alignment, and quality of generated videos.
+  [Video Generation] > This paper proposes the VPO framework, which systematically optimizes text prompts for video generation based on three core principles (Harmless, Accurate…
 tags:
-  - Video Generation
+  - "Video Generation"
 date: 2026-05-08
 content_hash: ad6911d600f92e4f
 ---

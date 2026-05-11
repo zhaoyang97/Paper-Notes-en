@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Risk-Averse Constrained Reinforcement Learning with Optimized Certainty Equivalents
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Constrained Reinforcement Learning] This paper proposes a reward-based risk-aware constrained RL framework that applies Optimized Certainty Equivalent (OCE) risk measures to both objectives and constraints, establishes parametric strong duality, and delivers a modular algorithm that wraps standard RL solvers (e.g., PPO) as a black box.
+  [NeurIPS 2025][Reinforcement Learning][Constrained Reinforcement Learning] This paper proposes a reward-based risk-aware constrained RL framework that applies Optimized Certainty Equivalent (OCE) risk measures to both ob…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Constrained Reinforcement Learning
-  - Risk Aversion
-  - Optimized Certainty Equivalent (OCE)
-  - CVaR
-  - Partial Lagrangian Relaxation
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Constrained Reinforcement Learning"
+  - "Risk Aversion"
+  - "Optimized Certainty Equivalent (OCE)"
+  - "CVaR"
+  - "Partial Lagrangian Relaxation"
 date: 2026-05-08
 content_hash: fc373ac625f1b455
 ---

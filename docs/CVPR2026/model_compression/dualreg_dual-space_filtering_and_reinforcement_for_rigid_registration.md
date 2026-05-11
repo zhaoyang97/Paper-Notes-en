@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DualReg: Dual-Space Filtering and Reinforcement for Rigid Registration
 description: >-
-  [CVPR 2026][Model Compression][Rigid registration] DualReg proposes a dual-space registration paradigm that progressively filters feature-space correspondences via lightweight 1-point RANSAC followed by 3-point RANSAC, then constructs geometric proxy point sets from the filtered anchor correspondences for joint dual-space optimization. The method achieves state-of-the-art accuracy on 3DMatch while running 32× faster than MAC.
+  [CVPR 2026][Model Compression][Rigid registration] DualReg proposes a dual-space registration paradigm that progressively filters feature-space correspondences via lightweight 1-point RANSAC followed by 3-point RANSAC…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - Rigid registration
-  - dual-space optimization
-  - RANSAC
-  - point cloud correspondence
-  - geometric proxy
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Rigid registration"
+  - "dual-space optimization"
+  - "RANSAC"
+  - "point cloud correspondence"
+  - "geometric proxy"
 date: 2026-05-08
 content_hash: c61d0c56f8c70596
 ---

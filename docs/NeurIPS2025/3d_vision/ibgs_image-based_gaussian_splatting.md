@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] IBGS: Image-Based Gaussian Splatting
 description: >-
-  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] This paper proposes Image-Based Gaussian Splatting (IBGS), which enhances standard 3DGS rendering quality by learning color residuals from neighboring training images. The method significantly improves the modeling of high-frequency details and view-dependent effects without introducing additional storage overhead.
+  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] This paper proposes Image-Based Gaussian Splatting (IBGS), which enhances standard 3DGS rendering quality by learning color residuals from neighboring training images. The…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - Novel View Synthesis
-  - Image-Based Rendering
-  - Color Residual
-  - View-Dependent Effects
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Novel View Synthesis"
+  - "Image-Based Rendering"
+  - "Color Residual"
+  - "View-Dependent Effects"
 date: 2026-05-08
 content_hash: 23abec463aaa0c4d
 ---

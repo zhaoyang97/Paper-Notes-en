@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Time Is All It Takes: Spike-Retiming Attacks on Event-Driven Spiking Neural Networks
 description: >-
-  [ICLR 2026][AI Safety][Spiking Neural Networks] This paper proposes the Spike-Retiming Attack — a temporal attack that perturbs only spike timestamps without adding or removing spikes. It formalizes a unified tri-norm budget ($\mathcal{B}_\infty$ local jitter / $\mathcal{B}_1$ total delay / $\mathcal{B}_0$ tamper count) under a capacity-1 constraint, and employs Projected-in-the-Loop (PIL) optimization to decouple strict forward projection from soft backward differentiation. The method achieves >90% ASR with <2% spike perturbation on CIFAR10-DVS/DVS-Gesture/N-MNIST, revealing a critical temporal vulnerability in event-driven SNNs.
+  [ICLR 2026][AI Safety][Spiking Neural Networks] This paper proposes the Spike-Retiming Attack — a temporal attack that perturbs only spike timestamps without adding or removing spikes. It formalizes a unified tri-norm bu…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - Spiking Neural Networks
-  - Adversarial Attacks
-  - Spike Retiming
-  - Event-Driven
-  - Temporal Robustness
-  - LIF Neuron
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Spiking Neural Networks"
+  - "Adversarial Attacks"
+  - "Spike Retiming"
+  - "Event-Driven"
+  - "Temporal Robustness"
+  - "LIF Neuron"
 date: 2026-05-08
 content_hash: 735120ba3b08330d
 ---

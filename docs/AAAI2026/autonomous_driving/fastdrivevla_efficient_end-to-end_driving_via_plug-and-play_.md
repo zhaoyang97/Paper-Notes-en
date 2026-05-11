@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] FastDriveVLA: Efficient End-to-End Driving via Plug-and-Play Reconstruction-based Token Pruning
 description: >-
-  [AAAI 2026][Autonomous Driving][VLA model acceleration] FastDriveVLA is proposed to train a lightweight plug-and-play ReconPruner module (only 0.07B parameters) via MAE-style foreground pixel reconstruction. By employing an adversarial foreground-background reconstruction strategy, the method prioritizes the retention of foreground tokens critical for driving decisions. It achieves state-of-the-art performance across all pruning ratios on the nuScenes open-loop planning benchmark, and can be transferred to different VLA models sharing the same visual encoder without retraining.
+  [AAAI 2026][Autonomous Driving][VLA model acceleration] FastDriveVLA is proposed to train a lightweight plug-and-play ReconPruner module (only 0.07B parameters) via MAE-style foreground pixel reconstruction. By employing…
 tags:
-  - AAAI 2026
-  - Autonomous Driving
-  - VLA model acceleration
-  - visual token pruning
-  - foreground reconstruction
-  - plug-and-play
+  - "AAAI 2026"
+  - "Autonomous Driving"
+  - "VLA model acceleration"
+  - "visual token pruning"
+  - "foreground reconstruction"
+  - "plug-and-play"
 date: 2026-05-08
 content_hash: f41d1a8f1be111ca
 ---

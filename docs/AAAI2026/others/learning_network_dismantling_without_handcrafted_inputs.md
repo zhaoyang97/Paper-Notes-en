@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Learning Network Dismantling Without Handcrafted Inputs
 description: >-
-  [AAAI 2026][Network dismantling] This paper proposes MIND (Message Iteration Network Dismantler), which eliminates the dependence of GNNs on handcrafted features through a novel All-to-One attention mechanism and Message Iteration Profiles. Using only raw adjacency information, MIND achieves state-of-the-art network dismantling performance on real-world networks with up to millions of nodes, while maintaining the lowest computational complexity of $O(|V|+|E|)$.
+  [AAAI 2026][Network dismantling] This paper proposes MIND (Message Iteration Network Dismantler), which eliminates the dependence of GNNs on handcrafted features through a novel All-to-One attention mechanism and Message…
 tags:
-  - AAAI 2026
-  - Network dismantling
-  - graph neural networks
-  - attention mechanism
-  - reinforcement learning
-  - vital node identification
+  - "AAAI 2026"
+  - "Network dismantling"
+  - "graph neural networks"
+  - "attention mechanism"
+  - "reinforcement learning"
+  - "vital node identification"
 date: 2026-05-08
 content_hash: 5f857a1176bb11e1
 ---

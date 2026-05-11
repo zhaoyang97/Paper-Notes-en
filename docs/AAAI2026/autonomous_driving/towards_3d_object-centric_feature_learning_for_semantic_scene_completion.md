@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards 3D Object-Centric Feature Learning for Semantic Scene Completion
 description: >-
-  [AAAI 2026][Autonomous Driving][Semantic Scene Completion] This paper proposes Ocean, a framework that leverages instance masks extracted by MobileSAM to guide 3D object-centric feature learning. Through Semantic Group Attention (SGA3D) and Global Similarity-Guided Attention (GSGA), Ocean achieves instance-level feature aggregation in 3D space, and refines scene representations via an Instance-aware Local Diffusion (ILD) module, attaining state-of-the-art performance on SemanticKITTI and SSCBench-KITTI360.
+  [AAAI 2026][Autonomous Driving][Semantic Scene Completion] This paper proposes Ocean, a framework that leverages instance masks extracted by MobileSAM to guide 3D object-centric feature learning. Through Semantic Group A…
 tags:
-  - AAAI 2026
-  - Autonomous Driving
-  - Semantic Scene Completion
-  - Object-Centric Learning
-  - MobileSAM
-  - Linear Attention
-  - BEV Representation
+  - "AAAI 2026"
+  - "Autonomous Driving"
+  - "Semantic Scene Completion"
+  - "Object-Centric Learning"
+  - "MobileSAM"
+  - "Linear Attention"
+  - "BEV Representation"
 date: 2026-05-08
 content_hash: cc63b27de436ae84
 ---

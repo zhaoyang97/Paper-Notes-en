@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Quantifying the Role of OpenFold Components in Protein Structure Prediction
 description: >-
-  [NeurIPS 2025 (Workshop)][Medical Imaging][OpenFold] This paper proposes a systematic methodology for evaluating the contribution of individual Evoformer components in OpenFold/AlphaFold2 to protein structure prediction accuracy. The study finds that MSA column attention and MLP Transition layers are the most critical components, and that the importance of multiple components is significantly correlated with protein sequence length.
+  [NeurIPS 2025 (Workshop)][Medical Imaging][OpenFold] This paper proposes a systematic methodology for evaluating the contribution of individual Evoformer components in OpenFold/AlphaFold2 to protein structure prediction…
 tags:
-  - NeurIPS 2025 (Workshop)
-  - Medical Imaging
-  - OpenFold
-  - AlphaFold2
-  - Evoformer
-  - Component Ablation
-  - Protein Length
+  - "NeurIPS 2025 (Workshop)"
+  - "Medical Imaging"
+  - "OpenFold"
+  - "AlphaFold2"
+  - "Evoformer"
+  - "Component Ablation"
+  - "Protein Length"
 date: 2026-05-08
 content_hash: ede717efd11558a4
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Specialization after Generalization: Towards Understanding Test-Time Training in Foundation Models
 description: >-
-  [NeurIPS 2025][Model Compression][test-time training] This paper proposes a "specialization after generalization" framework that theoretically and empirically explains the effectiveness of test-time training (TTT) on in-distribution data under the Linear Representation Hypothesis (LRH). Foundation models are globally underparameterized, leading to concept superposition interference. TTT mitigates this by locally specializing the model—reallocating model capacity to the small subset of concepts relevant to the test task—thereby improving predictive performance without increasing model size.
+  [NeurIPS 2025][Model Compression][test-time training] This paper proposes a "specialization after generalization" framework that theoretically and empirically explains the effectiveness of test-time training (TTT) on in-…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - test-time training
-  - linear representation hypothesis
-  - sparse autoencoders
-  - foundation models
-  - local specialization
-  - underparameterization
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "test-time training"
+  - "linear representation hypothesis"
+  - "sparse autoencoders"
+  - "foundation models"
+  - "local specialization"
+  - "underparameterization"
 date: 2026-05-08
 content_hash: ceb06a3afdf3fdb6
 ---

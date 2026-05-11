@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DISTIL: Data-Free Inversion of Suspicious Trojan Inputs via Latent Diffusion
 description: >-
-  [ICCV 2025][Object Detection][Backdoor defense] DISTIL proposes a data-free trojan trigger inversion method that searches for trigger patterns in the latent space of a pretrained guided diffusion model—rather than in pixel space—and injects uniform noise regularization at each step to effectively distinguish genuine backdoor triggers from adversarial perturbations, achieving up to 7.1% accuracy improvement on BackdoorBench.
+  [ICCV 2025][Object Detection][Backdoor defense] DISTIL proposes a data-free trojan trigger inversion method that searches for trigger patterns in the latent space of a pretrained guided diffusion model—rather than in pix…
 tags:
-  - ICCV 2025
-  - Object Detection
-  - Backdoor defense
-  - trigger inversion
-  - diffusion models
-  - zero-shot detection
-  - model security
+  - "ICCV 2025"
+  - "Object Detection"
+  - "Backdoor defense"
+  - "trigger inversion"
+  - "diffusion models"
+  - "zero-shot detection"
+  - "model security"
 date: 2026-05-08
 content_hash: e674a48d423e0403
 ---

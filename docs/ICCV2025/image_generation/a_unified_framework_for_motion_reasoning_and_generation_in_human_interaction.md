@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Unified Framework for Motion Reasoning and Generation in Human Interaction
 description: >-
-  [ICCV 2025][Image Generation][human interaction motion] This paper proposes MoLaM, a unified interactive motion-language model that, through a three-stage training strategy and a newly constructed Inter-MT² dataset (82.7K multi-turn instructions), is the first to simultaneously achieve understanding, generation, editing, and reasoning of dyadic interaction motion within a single framework.
+  [ICCV 2025][Image Generation][human interaction motion] This paper proposes MoLaM, a unified interactive motion-language model that, through a three-stage training strategy and a newly constructed Inter-MT² dataset (82.7…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - human interaction motion
-  - motion-language model
-  - multi-turn dialogue
-  - instruction tuning
-  - motion reasoning
+  - "ICCV 2025"
+  - "Image Generation"
+  - "human interaction motion"
+  - "motion-language model"
+  - "multi-turn dialogue"
+  - "instruction tuning"
+  - "motion reasoning"
 date: 2026-05-08
 content_hash: ce728437f4f875c4
 ---

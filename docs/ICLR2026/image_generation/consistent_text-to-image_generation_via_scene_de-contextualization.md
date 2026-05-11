@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Consistent Text-to-Image Generation via Scene De-Contextualization
 description: >-
-  [ICLR 2026][Image Generation][consistent T2I] This paper identifies the root cause of identity (ID) shift in T2I models as *scene contextualization* — the injection of contextual information from scene tokens into ID tokens — and proposes a training-free method, Scene De-Contextualization (SDeC), that leverages SVD singular value directional stability analysis to identify and suppress latent scene–ID associations in prompt embeddings, enabling per-scene identity-consistent generation.
+  [ICLR 2026][Image Generation][consistent T2I] This paper identifies the root cause of identity (ID) shift in T2I models as *scene contextualization* — the injection of contextual information from scene tokens into ID tok…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - consistent T2I
-  - identity preservation
-  - scene contextualization
-  - SVD
-  - training-free
-  - prompt embedding
+  - "ICLR 2026"
+  - "Image Generation"
+  - "consistent T2I"
+  - "identity preservation"
+  - "scene contextualization"
+  - "SVD"
+  - "training-free"
+  - "prompt embedding"
 date: 2026-05-08
 content_hash: c66c2ff061a8683f
 ---

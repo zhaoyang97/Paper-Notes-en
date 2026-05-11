@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] StreamGaze: Gaze-Guided Temporal Reasoning and Proactive Understanding in Streaming Videos
 description: >-
-  [CVPR 2026][Video Understanding][Gaze signals] This work presents StreamGaze, the first gaze-guided streaming video understanding benchmark, comprising 8,521 QA pairs covering three task categories — past, present, and proactive prediction. A gaze trajectory–video alignment pipeline is proposed to generate spatiotemporally grounded QA pairs, revealing a substantial gap in current MLLMs' ability to leverage gaze signals for temporal reasoning.
+  [CVPR 2026][Video Understanding][Gaze signals] This work presents StreamGaze, the first gaze-guided streaming video understanding benchmark, comprising 8,521 QA pairs covering three task categories — past, present…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Gaze signals
-  - streaming video understanding
-  - temporal reasoning
-  - proactive prediction
-  - egocentric video
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Gaze signals"
+  - "streaming video understanding"
+  - "temporal reasoning"
+  - "proactive prediction"
+  - "egocentric video"
 date: 2026-05-08
 content_hash: 7166406c7d87c4fa
 ---

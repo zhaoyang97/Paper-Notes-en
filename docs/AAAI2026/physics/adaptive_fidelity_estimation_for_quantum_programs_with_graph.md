@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Adaptive Fidelity Estimation for Quantum Programs with Graph-Guided Noise Awareness
 description: >-
-  [AAAI 2026][Quantum fidelity estimation] This paper proposes QuFid, a framework that models quantum circuits as directed acyclic graphs (DAGs), characterizes noise propagation via control-flow-aware random walks, quantifies circuit complexity through spectral features of the propagation operator, and achieves adaptive measurement budget allocation — significantly reducing the number of measurement shots while maintaining fidelity accuracy.
+  [AAAI 2026][Physics][Quantum fidelity estimation] This paper proposes QuFid, a framework that models quantum circuits as directed acyclic graphs (DAGs), characterizes noise propagation via control-flow-aware random walks…
 tags:
-  - AAAI 2026
-  - Quantum fidelity estimation
-  - noise awareness
-  - graph structure analysis
-  - adaptive measurement
-  - spectral complexity
+  - "AAAI 2026"
+  - "Physics"
+  - "Quantum fidelity estimation"
+  - "noise awareness"
+  - "graph structure analysis"
+  - "adaptive measurement"
+  - "spectral complexity"
 date: 2026-05-08
 content_hash: e4a491ac4c6a9b5f
 ---

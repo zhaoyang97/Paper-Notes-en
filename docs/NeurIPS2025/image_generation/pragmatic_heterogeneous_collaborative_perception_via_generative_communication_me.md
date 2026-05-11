@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Pragmatic Heterogeneous Collaborative Perception via Generative Communication Mechanism
 description: >-
-  [NeurIPS 2025][Image Generation][Heterogeneous Collaborative Perception] This paper proposes GenComm — a generative communication mechanism for heterogeneous multi-agent collaborative perception. By extracting spatial messages and employing a conditional diffusion model, the ego agent locally generates aligned collaborator features without modifying any existing network, enabling new heterogeneous agents to be onboarded at minimal cost.
+  [NeurIPS 2025][Image Generation][Heterogeneous Collaborative Perception] This paper proposes GenComm — a generative communication mechanism for heterogeneous multi-agent collaborative perception. By extracting spatial me…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Heterogeneous Collaborative Perception
-  - Generative Communication
-  - Conditional Diffusion Model
-  - BEV Feature Generation
-  - Scalability
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Heterogeneous Collaborative Perception"
+  - "Generative Communication"
+  - "Conditional Diffusion Model"
+  - "BEV Feature Generation"
+  - "Scalability"
 date: 2026-05-08
 content_hash: f41f0e66ab90d8d6
 ---

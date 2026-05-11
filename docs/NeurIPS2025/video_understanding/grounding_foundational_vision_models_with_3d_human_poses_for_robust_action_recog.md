@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Grounding Foundational Vision Models with 3D Human Poses for Robust Action Recognition
 description: >-
-  [NEURIPS2025][Video Understanding][action recognition] A cross-attention multimodal architecture is proposed that integrates V-JEPA 2 visual context features with CoMotion 3D skeletal pose data, outperforming unimodal baselines on standard and high-occlusion action recognition benchmarks.
+  [NEURIPS2025][Video Understanding][action recognition] A cross-attention multimodal architecture is proposed that integrates V-JEPA 2 visual context features with CoMotion 3D skeletal pose data…
 tags:
-  - NEURIPS2025
-  - Video Understanding
-  - action recognition
-  - multimodal fusion
-  - 3D human pose
-  - cross-attention
-  - V-JEPA 2
-  - CoMotion
+  - "NEURIPS2025"
+  - "Video Understanding"
+  - "action recognition"
+  - "multimodal fusion"
+  - "3D human pose"
+  - "cross-attention"
+  - "V-JEPA 2"
+  - "CoMotion"
 date: 2026-05-08
 content_hash: f8b7744a1a01419e
 ---

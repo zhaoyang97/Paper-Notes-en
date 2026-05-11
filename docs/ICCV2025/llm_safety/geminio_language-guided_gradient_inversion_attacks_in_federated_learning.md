@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Geminio: Language-Guided Gradient Inversion Attacks in Federated Learning
 description: >-
-  [ICCV 2025][LLM Safety][Federated Learning] This paper proposes Geminio, the first gradient inversion attack (GIA) leveraging vision-language models (VLMs) to enable natural language-guided targeted reconstruction. A malicious server can specify the type of data to steal via natural language queries, precisely locating and reconstructing semantically matching private samples from large-batch gradients, without disrupting normal FL model training.
+  [ICCV 2025][LLM Safety][Federated Learning] This paper proposes Geminio, the first gradient inversion attack (GIA) leveraging vision-language models (VLMs) to enable natural language-guided targeted reconstruction. A mal…
 tags:
-  - ICCV 2025
-  - LLM Safety
-  - Federated Learning
-  - Gradient Inversion Attack
-  - Vision-Language Model
-  - Privacy Attack
-  - Natural Language Guidance
+  - "ICCV 2025"
+  - "LLM Safety"
+  - "Federated Learning"
+  - "Gradient Inversion Attack"
+  - "Vision-Language Model"
+  - "Privacy Attack"
+  - "Natural Language Guidance"
 date: 2026-05-08
 content_hash: c268a859750aec7f
 ---

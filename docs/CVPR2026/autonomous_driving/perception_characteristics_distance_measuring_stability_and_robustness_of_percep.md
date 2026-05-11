@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Perception Characteristics Distance: Measuring Stability and Robustness of Perception System in Dynamic Conditions under a Certain Decision Rule
 description: >-
-  [CVPR2026][Autonomous Driving][Perception evaluation metrics] This paper proposes the Perception Characteristics Distance (PCD), a novel metric that quantifies the maximum reliable detection range of a perception system by statistically modeling how the mean and variance of detection confidence evolve with distance. Given a detection quality threshold $y^{thres}$ and a probability threshold $p^{thres}$, PCD identifies the furthest distance at which reliability requirements are satisfied, addressing the inability of conventional static metrics such as AP and IoU to capture distance-dependent behavior and stochastic variation.
+  [CVPR2026][Autonomous Driving][Perception evaluation metrics] This paper proposes the Perception Characteristics Distance (PCD), a novel metric that quantifies the maximum reliable detection range of a perception system…
 tags:
-  - CVPR2026
-  - Autonomous Driving
-  - Perception evaluation metrics
-  - detection range reliability
-  - uncertainty modeling
-  - variance change-point detection
-  - autonomous driving safety
+  - "CVPR2026"
+  - "Autonomous Driving"
+  - "Perception evaluation metrics"
+  - "detection range reliability"
+  - "uncertainty modeling"
+  - "variance change-point detection"
+  - "autonomous driving safety"
 date: 2026-05-08
 content_hash: e8953a4fcd985b0f
 ---

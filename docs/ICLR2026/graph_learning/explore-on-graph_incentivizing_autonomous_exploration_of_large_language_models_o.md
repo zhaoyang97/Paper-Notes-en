@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Explore-on-Graph: Incentivizing Autonomous Exploration of LLMs on Knowledge Graphs
 description: >-
-  [ICLR 2026][Graph Learning][Knowledge Graph Question Answering] This paper proposes Explore-on-Graph (EoG), which leverages SFT followed by two-phase reinforcement learning (outcome reward + path-refined reward) to incentivize LLMs to autonomously explore reasoning paths on knowledge graphs beyond the training distribution, surpassing GPT-5 and Gemini 2.5 Pro on five KGQA benchmarks.
+  [ICLR 2026][Graph Learning][Knowledge Graph Question Answering] This paper proposes Explore-on-Graph (EoG), which leverages SFT followed by two-phase reinforcement learning (outcome reward + path-refined reward) to incen…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - Knowledge Graph Question Answering
-  - Autonomous Exploration
-  - Reinforcement Learning
-  - Path-refined Reward
-  - GRPO
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Knowledge Graph Question Answering"
+  - "Autonomous Exploration"
+  - "Reinforcement Learning"
+  - "Path-refined Reward"
+  - "GRPO"
 date: 2026-05-08
 content_hash: 8c69228c3014c8e5
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] How Patterns Dictate Learnability in Sequential Data
 description: >-
-  [NeurIPS 2025][Time Series][Predictive Information] This paper proposes an information-theoretic framework based on predictive information $\mathbf{I}(X_{\text{past}}; X_{\text{future}})$ to quantify the strength of temporal patterns in sequential data. It derives theoretical bounds linking predictive information to the minimum achievable risk, thereby enabling a distinction between "insufficient model capacity" and "intrinsically unpredictable data."
+  [NeurIPS 2025][Time Series][Predictive Information] This paper proposes an information-theoretic framework based on predictive information $\mathbf{I}(X_{\text{past}}…
 tags:
-  - NeurIPS 2025
-  - Time Series
-  - Predictive Information
-  - Mutual Information
-  - Learnability
-  - Sequential Data
-  - Information Theory
+  - "NeurIPS 2025"
+  - "Time Series"
+  - "Predictive Information"
+  - "Mutual Information"
+  - "Learnability"
+  - "Sequential Data"
+  - "Information Theory"
 date: 2026-05-08
 content_hash: 892b5d642b3475a8
 ---

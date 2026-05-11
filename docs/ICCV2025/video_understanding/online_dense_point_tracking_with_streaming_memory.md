@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Online Dense Point Tracking with Streaming Memory
 description: >-
-  [ICCV 2025][Video Understanding][Dense point tracking] This paper proposes SPOT, a framework for online dense long-range point tracking via a customized memory readout module, sensory memory, and visibility-guided splatting. SPOT achieves state-of-the-art performance on the CVO benchmark with 10× fewer parameters and 2× faster speed, while matching or surpassing offline methods on multiple sparse tracking benchmarks.
+  [ICCV 2025][Video Understanding][Dense point tracking] This paper proposes SPOT, a framework for online dense long-range point tracking via a customized memory readout module, sensory memory…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - Dense point tracking
-  - streaming memory
-  - optical flow
-  - online processing
-  - visibility estimation
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "Dense point tracking"
+  - "streaming memory"
+  - "optical flow"
+  - "online processing"
+  - "visibility estimation"
 date: 2026-05-08
 content_hash: 5d01e5b7d322f259
 ---

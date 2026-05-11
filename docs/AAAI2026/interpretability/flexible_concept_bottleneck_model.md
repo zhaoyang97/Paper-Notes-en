@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Flexible Concept Bottleneck Model
 description: >-
-  [AAAI 2026][Concept Bottleneck Model] This paper proposes the Flexible Concept Bottleneck Model (FCBM), which introduces a hypernetwork to dynamically generate concept weights and a sparsemax module with a learnable temperature parameter, enabling dynamic adaptation of the concept pool—including complete replacement. FCBM achieves accuracy comparable to state-of-the-art baselines with a similar number of effective concepts across five public datasets, and requires only a single epoch of fine-tuning to adapt to an entirely new concept set.
+  [AAAI 2026][Interpretability][Concept Bottleneck Model] This paper proposes the Flexible Concept Bottleneck Model (FCBM), which introduces a hypernetwork to dynamically generate concept weights and a sparsemax module wit…
 tags:
-  - AAAI 2026
-  - Concept Bottleneck Model
-  - Interpretability
-  - Hypernetwork
-  - Sparse Activation
-  - VLM
+  - "AAAI 2026"
+  - "Interpretability"
+  - "Concept Bottleneck Model"
+  - "Hypernetwork"
+  - "Sparse Activation"
+  - "VLM"
 date: 2026-05-08
 content_hash: 5dcf6bf7f871fd9e
 ---

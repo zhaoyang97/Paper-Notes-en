@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] What One Cannot, Two Can: Two-Layer Transformers Provably Represent Induction Heads on Any-Order Markov Chains
 description: >-
-  [NeurIPS 2025][LLM/NLP][induction heads] This paper theoretically proves that a two-layer single-head Transformer suffices to represent the conditional $k$-gram model (i.e., $k$-th order induction head) for any $k$-th order Markov process, establishing the tightest known characterization of the relationship between Transformer depth and Markov order. The key insight is leveraging ReLU and LayerNorm nonlinearities in the MLP to compensate for the reduced number of layers.
+  [NeurIPS 2025][LLM/NLP][induction heads] This paper theoretically proves that a two-layer single-head Transformer suffices to represent the conditional $k$-gram model (i.e.…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - induction heads
-  - in-context learning
-  - Markov chains
-  - transformer depth
-  - expressiveness
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "induction heads"
+  - "in-context learning"
+  - "Markov chains"
+  - "transformer depth"
+  - "expressiveness"
 date: 2026-05-08
 content_hash: c7640166ba5010a7
 ---

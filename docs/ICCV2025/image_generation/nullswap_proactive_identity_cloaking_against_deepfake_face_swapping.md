@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] NullSwap: Proactive Identity Cloaking Against Deepfake Face Swapping
 description: >-
-  [ICCV2025][Image Generation][Deepfake defense] This paper proposes NullSwap, which embeds identity-guided invisible perturbations into source images to cloak facial identity information, preventing Deepfake face-swapping models from extracting the correct identity, thereby enabling proactive defense against face-swapping attacks in a purely black-box setting.
+  [ICCV2025][Image Generation][Deepfake defense] This paper proposes NullSwap, which embeds identity-guided invisible perturbations into source images to cloak facial identity information…
 tags:
-  - ICCV2025
-  - Image Generation
-  - Deepfake defense
-  - face swapping
-  - proactive perturbation
-  - identity cloaking
-  - adversarial perturbation
-  - black-box defense
+  - "ICCV2025"
+  - "Image Generation"
+  - "Deepfake defense"
+  - "face swapping"
+  - "proactive perturbation"
+  - "identity cloaking"
+  - "adversarial perturbation"
+  - "black-box defense"
 date: 2026-05-08
 content_hash: 0366f5245c82e7b8
 ---

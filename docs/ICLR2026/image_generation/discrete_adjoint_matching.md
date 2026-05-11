@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Discrete Adjoint Matching
 description: >-
-  [ICLR 2026][Image Generation][Adjoint Matching] This paper proposes Discrete Adjoint Matching (DAM), which derives adjoint variables for discrete state spaces from a purely statistical perspective (rather than from control theory), extending the continuous-domain Adjoint Matching framework to discrete generative models based on continuous-time Markov chains (CTMCs). The approach enables effective fine-tuning of diffusion-based LLMs (LLaDA-8B), improving accuracy on Sudoku from 11.5% to 89.2%.
+  [ICLR 2026][Image Generation][Adjoint Matching] This paper proposes Discrete Adjoint Matching (DAM), which derives adjoint variables for discrete state spaces from a purely statistical perspective (rather than from contr…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Adjoint Matching
-  - discrete adjoint variables
-  - CTMC
-  - diffusion LLM fine-tuning
-  - entropy-regularized reward optimization
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Adjoint Matching"
+  - "discrete adjoint variables"
+  - "CTMC"
+  - "diffusion LLM fine-tuning"
+  - "entropy-regularized reward optimization"
 date: 2026-05-08
 content_hash: b99e1e5e2b65077e
 ---

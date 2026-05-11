@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ReasonVQA: A Multi-hop Reasoning Benchmark with Structural Knowledge for Visual Question Answering
 description: >-
-  [ICCV 2025][Multimodal VLM][VQA] This paper proposes ReasonVQA, a dataset constructed through a low-cost and scalable framework that automatically integrates structured encyclopedic knowledge (Wikidata) with images, generating 1/2/3-hop multi-hop reasoning questions. The benchmark comprises 598K images and 4.2M questions, posing significant challenges to existing VQA models.
+  [ICCV 2025][Multimodal VLM][VQA] This paper proposes ReasonVQA, a dataset constructed through a low-cost and scalable framework that automatically integrates structured encyclopedic knowledge (Wikidata) with images…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - VQA
-  - Multi-hop Reasoning
-  - Knowledge Graph
-  - Wikidata
-  - Benchmark Dataset
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "VQA"
+  - "Multi-hop Reasoning"
+  - "Knowledge Graph"
+  - "Wikidata"
+  - "Benchmark Dataset"
 date: 2026-05-08
 content_hash: 815cd16dd92aaeb1
 ---

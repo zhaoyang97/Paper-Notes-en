@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Object-Centric Representation Learning for Enhanced 3D Semantic Scene Graph Prediction
 description: >-
-  [NeurIPS 2025][3D Vision][3D semantic scene graph] Through empirical analysis, this paper identifies object feature discriminability as the critical bottleneck in 3D scene graph predicate prediction (object misclassification accounts for 92%+ of predicate errors). It proposes an independently contrastively pre-trained object encoder (3D-2D-Text tri-modal alignment), a geometry-regularized relation encoder, and a bidirectional edge-gated GNN, achieving new SOTA on 3DSSG with Object R@1 59.53% and Predicate R@50 91.40%.
+  [NeurIPS 2025][3D Vision][3D semantic scene graph] Through empirical analysis, this paper identifies object feature discriminability as the critical bottleneck in 3D scene graph predicate prediction (object misclassifica…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - 3D semantic scene graph
-  - object-centric representation
-  - contrastive pre-training
-  - GNN
-  - relation prediction
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "3D semantic scene graph"
+  - "object-centric representation"
+  - "contrastive pre-training"
+  - "GNN"
+  - "relation prediction"
 date: 2026-05-08
 content_hash: 200a4d4bc9829b84
 ---

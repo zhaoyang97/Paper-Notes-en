@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] P-GenRM: Personalized Generative Reward Model with Test-time User-based Scaling
 description: >-
-  [ICLR 2026][Reinforcement Learning][Personalized reward model] This paper proposes P-GenRM, the first personalized generative reward model. Through a three-stage training pipeline—PSI supervised fine-tuning to construct structured evaluation chains, CRE reinforcement learning to enhance reasoning under missing preference signals, and hard-negative curriculum learning to improve robustness—P-GenRM converts mixed preference signals into context-adaptive user personas and scoring rubrics. At inference time, a dual-granularity test-time scaling strategy is introduced: individual-level multi-sample aggregation and prototype-level collaborative filtering that borrows preferences from similar users. P-GenRM surpasses the previous SOTA by 2.31% on PersonalRewardBench, with test-time scaling yielding an additional ~3% gain, while generalizing to unseen users.
+  [ICLR 2026][Reinforcement Learning][Personalized reward model] This paper proposes P-GenRM, the first personalized generative reward model. Through a three-stage training pipeline—PSI supervised fine-tuning to construct…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Personalized reward model
-  - generative evaluation
-  - structured evaluation chain
-  - test-time scaling
-  - collaborative filtering
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Personalized reward model"
+  - "generative evaluation"
+  - "structured evaluation chain"
+  - "test-time scaling"
+  - "collaborative filtering"
 date: 2026-05-08
 content_hash: ed9394794007af21
 ---

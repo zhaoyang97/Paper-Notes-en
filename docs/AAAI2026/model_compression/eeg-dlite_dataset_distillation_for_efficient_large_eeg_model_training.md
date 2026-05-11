@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EEG-DLite: Dataset Distillation for Efficient Large EEG Model Training
 description: >-
-  [AAAI 2026][Model Compression][Dataset Distillation] This paper proposes EEG-DLite, a dataset distillation framework that combines self-supervised encoding, outlier filtering, and diversity sampling to compress a 2,500-hour EEG dataset to just 5% of its original size, achieving performance comparable to or exceeding full-data pretraining while reducing GPU pretraining time from 30 hours to 2 hours.
+  [AAAI 2026][Model Compression][Dataset Distillation] This paper proposes EEG-DLite, a dataset distillation framework that combines self-supervised encoding, outlier filtering, and diversity sampling to compress a 2…
 tags:
-  - AAAI 2026
-  - Model Compression
-  - Dataset Distillation
-  - EEG Foundation Model
-  - Self-Supervised Learning
-  - Coreset Selection
-  - Pretraining Efficiency
+  - "AAAI 2026"
+  - "Model Compression"
+  - "Dataset Distillation"
+  - "EEG Foundation Model"
+  - "Self-Supervised Learning"
+  - "Coreset Selection"
+  - "Pretraining Efficiency"
 date: 2026-05-08
 content_hash: 2ab1c868c3eff5da
 ---

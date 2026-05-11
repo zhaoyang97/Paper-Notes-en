@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SubSpec: Speculate Deep and Accurate — Lossless and Training-Free Acceleration for Offloaded LLMs
 description: >-
-  [NeurIPS 2025][LLM/NLP][Speculative Decoding] This paper proposes SubSpec, a plug-and-play lossless and training-free acceleration method for offloaded LLMs. The core idea is to construct a highly aligned quantized substitute draft model directly from the offloaded target model itself, and to maximize alignment by sharing GPU-resident layers and KV-Cache. SubSpec achieves a 9.1× speedup for Qwen2.5 7B under an 8GB VRAM budget and a 12.5× speedup for Qwen2.5 32B under 24GB VRAM.
+  [NeurIPS 2025][LLM/NLP][Speculative Decoding] This paper proposes SubSpec, a plug-and-play lossless and training-free acceleration method for offloaded LLMs. The core idea is to construct a highly aligned quantized subst…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - Speculative Decoding
-  - Parameter Offloading
-  - Training-Free Acceleration
-  - Quantization
-  - KV-Cache Sharing
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "Speculative Decoding"
+  - "Parameter Offloading"
+  - "Training-Free Acceleration"
+  - "Quantization"
+  - "KV-Cache Sharing"
 date: 2026-05-08
 content_hash: 79be68bdbfd62e0b
 ---

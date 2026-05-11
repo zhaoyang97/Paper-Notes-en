@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MarkushGrapher-2: End-to-end Multimodal Recognition of Chemical Structures
 description: >-
-  [CVPR 2026][Multimodal VLM][Chemical Structure Recognition] MarkushGrapher-2 proposes an end-to-end multimodal chemical structure recognition model that jointly encodes image, text, and layout information via a dedicated chemical OCR module. Combined with a two-stage training strategy (first adapting to OCSR features, then integrating multimodal encoding), the model substantially outperforms existing methods on Markush structure recognition (M2S accuracy 56% vs. 38%), while remaining competitive on standard molecular structure recognition.
+  [CVPR 2026][Multimodal VLM][Chemical Structure Recognition] MarkushGrapher-2 proposes an end-to-end multimodal chemical structure recognition model that jointly encodes image, text…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Chemical Structure Recognition
-  - Markush Structures
-  - Multimodal Encoding
-  - Patent Document Analysis
-  - OCR
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Chemical Structure Recognition"
+  - "Markush Structures"
+  - "Multimodal Encoding"
+  - "Patent Document Analysis"
+  - "OCR"
 date: 2026-05-08
 content_hash: 91555473cbcf327e
 ---

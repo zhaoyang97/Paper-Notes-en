@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Sharper Convergence Rates for Nonconvex Optimisation via Reduction Mappings
 description: >-
-  [NeurIPS 2025 (**Spotlight**)][Optimization][nonconvex optimization] This paper proposes the Reduction Mapping framework, which exploits the manifold structure of the optimal solution set (arising from over-parameterization or symmetry) to reparameterize the optimization problem, and proves that this improves curvature properties and theoretically accelerates the convergence of gradient-based methods.
+  [NeurIPS 2025 (**Spotlight**)][Optimization][nonconvex optimization] This paper proposes the Reduction Mapping framework, which exploits the manifold structure of the optimal solution set (arising from over-parameterizat…
 tags:
   - "NeurIPS 2025 (**Spotlight**)"
-  - Optimization
-  - nonconvex optimization
-  - reduction mapping
-  - convergence rate
-  - manifold structure
-  - over-parameterization
+  - "Optimization"
+  - "nonconvex optimization"
+  - "reduction mapping"
+  - "convergence rate"
+  - "manifold structure"
+  - "over-parameterization"
 date: 2026-05-08
 content_hash: 247d9ea01ca09e94
 ---

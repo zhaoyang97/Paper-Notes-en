@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RadioGS: Radiometrically Consistent Gaussian Surfels for Inverse Rendering
 description: >-
-  [ICLR 2026][3D Vision][Inverse Rendering] RadioGS introduces a radiometric consistency loss that minimizes the residual between the learned radiance of each Gaussian surfel and its physically rendered radiance, providing physics-based supervision for unobserved directions. This forms a self-correcting feedback loop that enables accurate indirect illumination and material decomposition, while supporting relighting in minutes.
+  [ICLR 2026][3D Vision][Inverse Rendering] RadioGS introduces a radiometric consistency loss that minimizes the residual between the learned radiance of each Gaussian surfel and its physically rendered radiance…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Inverse Rendering
-  - Gaussian Splatting
-  - Indirect Illumination
-  - Radiometric Consistency
-  - Ray Tracing
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Inverse Rendering"
+  - "Gaussian Splatting"
+  - "Indirect Illumination"
+  - "Radiometric Consistency"
+  - "Ray Tracing"
 date: 2026-05-08
 content_hash: c70f2f1d5fa86d70
 ---

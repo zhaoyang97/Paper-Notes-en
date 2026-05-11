@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] A Sustainable AI Economy Needs Data Deals That Work for Generators
 description: >-
-  [NeurIPS 2025 (Position Paper Track)][Data markets] This paper introduces the concept of the "Economic Data Processing Inequality" — in the ML value chain, data progresses from raw form to model weights to synthetic outputs, with each step refining technical signals while systematically stripping economic rights from data generators. The authors empirically validate this phenomenon through analysis of 73 publicly available data transactions, diagnose three structural deficiencies (missing provenance, asymmetric bargaining power, non-dynamic pricing), and propose the EDVEX framework as a solution blueprint.
+  [NeurIPS 2025 (Position Paper Track)][Data markets] This paper introduces the concept of the "Economic Data Processing Inequality" — in the ML value chain…
 tags:
-  - NeurIPS 2025 (Position Paper Track)
-  - Data markets
-  - data valuation
-  - economic data processing inequality
-  - EDVEX framework
-  - data generator rights
+  - "NeurIPS 2025 (Position Paper Track)"
+  - "Data markets"
+  - "data valuation"
+  - "economic data processing inequality"
+  - "EDVEX framework"
+  - "data generator rights"
 date: 2026-05-08
 content_hash: 9218fb92270f122c
 ---

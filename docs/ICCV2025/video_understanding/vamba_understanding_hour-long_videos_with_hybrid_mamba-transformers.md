@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Vamba: Understanding Hour-Long Videos with Hybrid Mamba-Transformers
 description: >-
-  [ICCV 2025][Video Understanding][Long video understanding] This paper proposes Vamba — a hybrid Mamba-Transformer large multimodal model (LMM) that encodes video tokens with linear complexity via Mamba-2 blocks and updates text tokens via cross-attention. Vamba processes up to 1024 frames on a single GPU and outperforms all efficient LMM methods on hour-level video understanding benchmarks.
+  [ICCV 2025][Video Understanding][Long video understanding] This paper proposes Vamba — a hybrid Mamba-Transformer large multimodal model (LMM) that encodes video tokens with linear complexity via Mamba-2 blocks and updat…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - Long video understanding
-  - Mamba
-  - hybrid architecture
-  - large multimodal models
-  - computational efficiency
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "Long video understanding"
+  - "Mamba"
+  - "hybrid architecture"
+  - "large multimodal models"
+  - "computational efficiency"
 date: 2026-05-08
 content_hash: 301c46c1e2ce5cd3
 ---

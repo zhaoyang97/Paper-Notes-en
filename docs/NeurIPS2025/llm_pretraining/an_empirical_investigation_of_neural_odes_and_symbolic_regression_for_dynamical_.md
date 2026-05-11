@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] An Empirical Investigation of Neural ODEs and Symbolic Regression for Dynamical Systems
 description: >-
-  [NeurIPS 2025][LLM Pretraining][Neural ODE] This paper presents a systematic empirical study of the extrapolation capabilities of Neural ODEs (NODEs) and the equation recovery ability of Symbolic Regression (SR) for dynamical systems. It finds that NODEs can extrapolate to new boundary conditions under dynamically similar settings, and proposes a NODE→SR pipeline: training a NODE on only 10% of the original data to generate augmented trajectories, from which SR recovers 2/3 of the governing equations exactly and provides good approximations for an additional 1/3.
+  [NeurIPS 2025][LLM Pretraining][Neural ODE] This paper presents a systematic empirical study of the extrapolation capabilities of Neural ODEs (NODEs) and the equation recovery ability of Symbolic Regression (SR) for dyna…
 tags:
-  - NeurIPS 2025
-  - LLM Pretraining
-  - Neural ODE
-  - symbolic regression
-  - dynamical systems
-  - extrapolation
-  - scientific discovery
+  - "NeurIPS 2025"
+  - "LLM Pretraining"
+  - "Neural ODE"
+  - "symbolic regression"
+  - "dynamical systems"
+  - "extrapolation"
+  - "scientific discovery"
 date: 2026-05-08
 content_hash: 5ae2a93e83eb76c8
 ---

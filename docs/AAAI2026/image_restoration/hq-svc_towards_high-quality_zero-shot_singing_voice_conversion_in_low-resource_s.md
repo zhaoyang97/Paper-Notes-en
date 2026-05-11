@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] HQ-SVC: Towards High-Quality Zero-Shot Singing Voice Conversion in Low-Resource Scenarios
 description: >-
-  [AAAI 2026][Image Restoration][Singing Voice Conversion] This paper proposes HQ-SVC, a framework that leverages a disentangled audio codec (FACodec) to jointly extract content and speaker features, integrates an Enhanced Voice Adaptor (EVA) to fuse acoustic features such as pitch and energy, and employs a progressive synthesis pipeline combining DDSP and a diffusion model. Trained on a single RTX 3090 with fewer than 80 hours of singing data, HQ-SVC achieves zero-shot singing voice conversion quality surpassing large-scale training baselines, and additionally supports speech super-resolution.
+  [AAAI 2026][Image Restoration][Singing Voice Conversion] This paper proposes HQ-SVC, a framework that leverages a disentangled audio codec (FACodec) to jointly extract content and speaker features…
 tags:
-  - AAAI 2026
-  - Image Restoration
-  - Singing Voice Conversion
-  - Zero-Shot
-  - Low-Resource
-  - Diffusion Model
-  - DDSP
-  - Audio Codec
+  - "AAAI 2026"
+  - "Image Restoration"
+  - "Singing Voice Conversion"
+  - "Zero-Shot"
+  - "Low-Resource"
+  - "Diffusion Model"
+  - "DDSP"
+  - "Audio Codec"
 date: 2026-05-08
 content_hash: 778e84b117903c92
 ---

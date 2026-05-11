@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mitigating Object Hallucination in LVLMs via Attention Imbalance Rectification
 description: >-
-  [CVPR 2026][Medical Imaging][Large Vision-Language Models] This paper introduces the concept of Attention Imbalance to explain object hallucination in LVLMs, and proposes a lightweight decoding-time intervention method, AIR, which rectifies attention imbalance via cross-modal attention reallocation and variance-constrained projection regularization. AIR reduces hallucination rates by up to 35.1% and improves general capability by up to 15.9% across four LVLMs.
+  [CVPR 2026][Medical Imaging][Large Vision-Language Models] This paper introduces the concept of Attention Imbalance to explain object hallucination in LVLMs, and proposes a lightweight decoding-time intervention method…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Large Vision-Language Models
-  - Object Hallucination
-  - Attention Imbalance
-  - Decoding-Time Intervention
-  - Attention Rectification
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Large Vision-Language Models"
+  - "Object Hallucination"
+  - "Attention Imbalance"
+  - "Decoding-Time Intervention"
+  - "Attention Rectification"
 date: 2026-05-08
 content_hash: 90a65feb129ea914
 ---

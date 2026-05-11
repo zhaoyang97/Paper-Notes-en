@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] DSS: Discover, Segment, and Select for Zero-shot Camouflaged Object Segmentation
 description: >-
-  [CVPR 2026][Segmentation][zero-shot segmentation] This paper proposes DSS, a three-stage progressive pipeline (Discover→Segment→Select) that achieves zero-shot, training-free camouflaged object segmentation by: discovering foreground regions via self-supervised visual encoders and Leiden clustering (FOD); generating candidate masks using SAM; and selecting the optimal mask through heuristic scoring combined with iterative pairwise MLLM comparison. The method demonstrates particularly strong performance in multi-instance camouflage scenarios.
+  [CVPR 2026][Segmentation][zero-shot segmentation] This paper proposes DSS, a three-stage progressive pipeline (Discover→Segment→Select) that achieves zero-shot…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - zero-shot segmentation
-  - camouflaged object detection
-  - SAM
-  - MLLM
-  - training-free pipeline
-  - clustering-based localization
+  - "CVPR 2026"
+  - "Segmentation"
+  - "zero-shot segmentation"
+  - "camouflaged object detection"
+  - "SAM"
+  - "MLLM"
+  - "training-free pipeline"
+  - "clustering-based localization"
 date: 2026-05-08
 content_hash: 319723303b86c732
 ---

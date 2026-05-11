@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Cross-Modal Emotion Transfer for Emotion Editing in Talking Face Video
 description: >-
-  [CVPR 2026][Image Generation][Emotion Editing] This paper proposes C-MET (Cross-Modal Emotion Transfer), which models the mapping of emotion semantic vectors between speech and facial expression spaces, achieving for the first time speech-driven talking face video generation for extended emotions (e.g., sarcasm, charisma), surpassing the state of the art in emotion accuracy by 14%.
+  [CVPR 2026][Image Generation][Emotion Editing] This paper proposes C-MET (Cross-Modal Emotion Transfer), which models the mapping of emotion semantic vectors between speech and facial expression spaces…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Emotion Editing
-  - Cross-Modal Transfer
-  - Talking Face Generation
-  - Emotion Semantic Vector
-  - Extended Emotions
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Emotion Editing"
+  - "Cross-Modal Transfer"
+  - "Talking Face Generation"
+  - "Emotion Semantic Vector"
+  - "Extended Emotions"
 date: 2026-05-08
 content_hash: 916a082f697981db
 ---

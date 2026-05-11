@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The Inter-Intra Modal Measure: A Predictive Lens on Fine-Tuning Outcomes in Vision-Language Models
 description: >-
-  [ICCV 2025][Multimodal VLM][Transferability estimation] This paper proposes the Inter-Intra Modal Measure (IIMM)—a metric that requires only a single forward pass to predict both the performance gain and the degree of catastrophic forgetting following fine-tuning of vision-language dual-encoder models. By quantifying intra-modal image embedding similarity and inter-modal misaligned label alignment, IIMM demonstrates strong linear predictive power ($R^2 > 0.85$) across 4 foundation models and 5 fine-tuning strategies.
+  [ICCV 2025][Multimodal VLM][Transferability estimation] This paper proposes the Inter-Intra Modal Measure (IIMM)—a metric that requires only a single forward pass to predict both the performance gain and the degree of ca…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Transferability estimation
-  - fine-tuning prediction
-  - modality gap
-  - contrastive learning
-  - catastrophic forgetting
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Transferability estimation"
+  - "fine-tuning prediction"
+  - "modality gap"
+  - "contrastive learning"
+  - "catastrophic forgetting"
 date: 2026-05-08
 content_hash: f95dcfa70c18194d
 ---

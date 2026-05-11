@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VIR-Bench: Evaluating Geospatial and Temporal Understanding of MLLMs via Travel Video Itinerary Reconstruction
 description: >-
-  [AAAI 2026][Multimodal VLM][Geospatial Understanding] This paper proposes VIR-Bench — a benchmark based on 200 Japanese travel vlog videos that evaluates MLLMs' geospatial and temporal understanding via an itinerary reconstruction task (visiting order graph construction). Findings reveal that SOTA models (including GPT-4.1 and Gemini-2.5) still struggle significantly with POI recognition and temporal transition reasoning.
+  [AAAI 2026][Multimodal VLM][Geospatial Understanding] This paper proposes VIR-Bench — a benchmark based on 200 Japanese travel vlog videos that evaluates MLLMs' geospatial and temporal understanding via an itinerary reco…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Geospatial Understanding
-  - Temporal Reasoning
-  - Travel Video
-  - Itinerary Reconstruction
-  - MLLM Evaluation
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Geospatial Understanding"
+  - "Temporal Reasoning"
+  - "Travel Video"
+  - "Itinerary Reconstruction"
+  - "MLLM Evaluation"
 date: 2026-05-08
 content_hash: b045eb6d3248acbd
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MagicID: Hybrid Preference Optimization for ID-Consistent and Dynamic-Preserved Video Customization
 description: >-
-  [ICCV 2025][LLM Alignment][Video Customization] This paper proposes MagicID, a framework that constructs hybrid video pair data capturing identity and dynamic preferences, and designs a two-stage Hybrid Preference Optimization (HPO) training strategy. MagicID is the first work to apply DPO to identity-customized video generation, simultaneously addressing identity degradation and motion weakening caused by conventional self-reconstruction training.
+  [ICCV 2025][LLM Alignment][Video Customization] This paper proposes MagicID, a framework that constructs hybrid video pair data capturing identity and dynamic preferences…
 tags:
-  - ICCV 2025
-  - LLM Alignment
-  - Video Customization
-  - Identity Consistency
-  - Preference Optimization
-  - Diffusion Models
-  - Hybrid Sampling
+  - "ICCV 2025"
+  - "LLM Alignment"
+  - "Video Customization"
+  - "Identity Consistency"
+  - "Preference Optimization"
+  - "Diffusion Models"
+  - "Hybrid Sampling"
 date: 2026-05-08
 content_hash: 22cb96b6f57d5f04
 ---

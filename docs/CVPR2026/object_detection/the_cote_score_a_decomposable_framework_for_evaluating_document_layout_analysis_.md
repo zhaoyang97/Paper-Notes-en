@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] The COTe Score: A Decomposable Framework for Evaluating Document Layout Analysis Models
 description: >-
-  [CVPR2026][Object Detection][Document Layout Analysis] This paper proposes COTe (Coverage, Overlap, Trespass, Excess), a decomposable evaluation framework for Document Layout Analysis (DLA), along with the concept of Structural Semantic Units (SSUs). Compared to conventional IoU/mAP/F1 metrics, COTe more accurately reflects page parsing quality and reveals model-specific failure modes.
+  [CVPR2026][Object Detection][Document Layout Analysis] This paper proposes COTe (Coverage, Overlap, Trespass, Excess), a decomposable evaluation framework for Document Layout Analysis (DLA)…
 tags:
-  - CVPR2026
-  - Object Detection
-  - Document Layout Analysis
-  - Evaluation Metrics
-  - Decomposable Metrics
-  - Structural Semantic Unit
-  - Page Parsing
-  - Granularity Robustness
+  - "CVPR2026"
+  - "Object Detection"
+  - "Document Layout Analysis"
+  - "Evaluation Metrics"
+  - "Decomposable Metrics"
+  - "Structural Semantic Unit"
+  - "Page Parsing"
+  - "Granularity Robustness"
 date: 2026-05-08
 content_hash: 5ddaa64ac1e288fd
 ---

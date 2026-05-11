@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Taught Well, Learned Ill: Towards Distillation-Conditional Backdoor Attack
 description: >-
-  [NeurIPS 2025][AI Safety][knowledge distillation] This paper proposes the Distillation-Conditional Backdoor Attack (DCBA) paradigm and its instantiation SCAR, which embeds a "dormant" backdoor into a teacher model via bi-level optimization. The backdoor remains undetectable on the teacher model but is activated and transferred to the student model during knowledge distillation, even when the distillation dataset is entirely clean.
+  [NeurIPS 2025][AI Safety][knowledge distillation] This paper proposes the Distillation-Conditional Backdoor Attack (DCBA) paradigm and its instantiation SCAR…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - knowledge distillation
-  - backdoor attack
-  - bi-level optimization
-  - implicit differentiation
-  - model security
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "knowledge distillation"
+  - "backdoor attack"
+  - "bi-level optimization"
+  - "implicit differentiation"
+  - "model security"
 date: 2026-05-08
 content_hash: 0a18375d40272c08
 ---

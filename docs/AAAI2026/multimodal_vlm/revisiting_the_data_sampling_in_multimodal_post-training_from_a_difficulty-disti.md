@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Revisiting the Data Sampling in Multimodal Post-training from a Difficulty-Distinguish View
 description: >-
-  [AAAI 2026][Multimodal VLM][Multimodal post-training] This paper proposes two multimodal data difficulty assessment strategies—PISM (Progressive Image Semantic Masking) and CMAB (Cross-Modality Attention Balance)—and demonstrates that training exclusively with GRPO on difficulty-stratified data consistently outperforms the conventional SFT+GRPO pipeline, establishing that strategic data selection is more consequential than complex training paradigms.
+  [AAAI 2026][Multimodal VLM][Multimodal post-training] This paper proposes two multimodal data difficulty assessment strategies—PISM (Progressive Image Semantic Masking) and CMAB (Cross-Modality Attention Balance)—and dem…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Multimodal post-training
-  - difficulty-aware sampling
-  - GRPO
-  - reinforcement learning
-  - data selection
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Multimodal post-training"
+  - "difficulty-aware sampling"
+  - "GRPO"
+  - "reinforcement learning"
+  - "data selection"
 date: 2026-05-08
 content_hash: 0c14ea331244a089
 ---

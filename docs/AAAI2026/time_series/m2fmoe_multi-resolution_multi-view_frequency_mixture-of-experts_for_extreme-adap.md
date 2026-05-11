@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] M2FMoE: Multi-Resolution Multi-View Frequency Mixture-of-Experts for Extreme-Adaptive Time Series Forecasting
 description: >-
-  [AAAI 2026][Time Series][Extreme event forecasting] This paper proposes M2FMoE, a framework that models both regular and extreme temporal patterns via frequency-domain Mixture-of-Experts from dual Fourier and wavelet perspectives. It incorporates a cross-view shared frequency-band splitter to align semantic correspondence across domains, multi-resolution adaptive fusion to capture multi-scale information, and temporal gated integration to combine short- and long-term features. On five hydrological extreme event datasets, M2FMoE surpasses all state-of-the-art methods — including label-supervised approaches — without requiring any extreme event labels, achieving an average RMSE improvement of 22.3%.
+  [AAAI 2026][Time Series][Extreme event forecasting] This paper proposes M2FMoE, a framework that models both regular and extreme temporal patterns via frequency-domain Mixture-of-Experts from dual Fourier and wavelet per…
 tags:
-  - AAAI 2026
-  - Time Series
-  - Extreme event forecasting
-  - frequency-domain modeling
-  - Mixture-of-Experts
-  - wavelet transform
-  - Fourier transform
-  - multi-resolution fusion
-  - hydrological forecasting
+  - "AAAI 2026"
+  - "Time Series"
+  - "Extreme event forecasting"
+  - "frequency-domain modeling"
+  - "Mixture-of-Experts"
+  - "wavelet transform"
+  - "Fourier transform"
+  - "multi-resolution fusion"
+  - "hydrological forecasting"
 date: 2026-05-08
 content_hash: 702e9e03c1bdbb59
 ---

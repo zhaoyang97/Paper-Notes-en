@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] pySpatial: Generating 3D Visual Programs for Zero-Shot Spatial Reasoning
 description: >-
-  [ICLR 2026][3D Vision][Visual Programming] pySpatial is a visual programming framework that enables MLLMs to generate Python code that automatically invokes 3D spatial tools (3D reconstruction, camera pose estimation, novel view synthesis, etc.), transforming limited 2D image inputs into interactively explorable 3D scenes. The framework achieves zero-shot, plug-and-play explicit 3D spatial reasoning, attaining an overall accuracy of 58.56% on the MindCube benchmark—surpassing GPT-4.1-mini by 12.94% and VLM-3R by 16.5%—while also successfully driving a real quadruped robot to perform indoor navigation.
+  [ICLR 2026][3D Vision][Visual Programming] pySpatial is a visual programming framework that enables MLLMs to generate Python code that automatically invokes 3D spatial tools (3D reconstruction, camera pose estimation…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Visual Programming
-  - 3D Reconstruction
-  - Spatial Reasoning
-  - Zero-Shot
-  - Robot Navigation
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Visual Programming"
+  - "3D Reconstruction"
+  - "Spatial Reasoning"
+  - "Zero-Shot"
+  - "Robot Navigation"
 date: 2026-05-08
 content_hash: 86a1855ecc3baa48
 ---

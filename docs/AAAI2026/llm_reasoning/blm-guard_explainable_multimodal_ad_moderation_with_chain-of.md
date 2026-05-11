@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BLM-Guard: Explainable Multimodal Ad Moderation with Chain-of-Thought and Policy-Aligned Rewards
 description: >-
-  [AAAI 2026][LLM Reasoning][Ad moderation] This paper proposes BLM-Guard, an explainable multimodal moderation framework for short-video commercial advertisements. It first establishes structured reasoning capability via rule-driven ICoT data synthesis and SFT cold-start, then applies Self-Adaptive GRPO reinforcement learning (combining rule correctness rewards and a self-adaptive consistency reward SCA-R) to optimize policy alignment, achieving 91.4% strict accuracy and 0.845 reasoning consistency score on a real-world ad benchmark.
+  [AAAI 2026][LLM Reasoning][Ad moderation] This paper proposes BLM-Guard, an explainable multimodal moderation framework for short-video commercial advertisements. It first establishes structured reasoning capability via…
 tags:
-  - AAAI 2026
-  - LLM Reasoning
-  - Ad moderation
-  - multimodal CoT reasoning
-  - policy-aligned RL
-  - GRPO
-  - cross-modal inconsistency detection
+  - "AAAI 2026"
+  - "LLM Reasoning"
+  - "Ad moderation"
+  - "multimodal CoT reasoning"
+  - "policy-aligned RL"
+  - "GRPO"
+  - "cross-modal inconsistency detection"
 date: 2026-05-08
 content_hash: 161b8625e50d6888
 ---

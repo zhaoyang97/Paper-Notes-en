@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PFΔ: A Benchmark Dataset for Power Flow under Load, Generation, and Topology Variations
 description: >-
-  [NeurIPS 2025][LLM Evaluation][Power Flow] PFΔ is the first power flow benchmark dataset to simultaneously encompass load, generation dispatch, and topology variations. It comprises 859,800 solved instances across six grid scales, includes close-to-infeasible extreme operating conditions, and introduces a standardized evaluation task suite for systematically assessing ML methods under diverse operating conditions.
+  [NeurIPS 2025][LLM Evaluation][Power Flow] PFΔ is the first power flow benchmark dataset to simultaneously encompass load, generation dispatch, and topology variations. It comprises 859…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - Power Flow
-  - Benchmark Dataset
-  - Graph Neural Networks
-  - Topology Perturbation
-  - Power Grid Simulation
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "Power Flow"
+  - "Benchmark Dataset"
+  - "Graph Neural Networks"
+  - "Topology Perturbation"
+  - "Power Grid Simulation"
 date: 2026-05-08
 content_hash: f4e8f5b5bf436606
 ---

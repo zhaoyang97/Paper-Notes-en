@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SproutBench: A Benchmark for Safe and Ethical Large Language Models for Youth
 description: >-
-  [AAAI 2026][LLM Safety][LLM safety evaluation] This paper introduces SproutBench, an evaluation benchmark comprising 1,283 developmentally-grounded adversarial prompts, designed to systematically assess the safety of 47 LLMs in contexts involving children and adolescents (ages 0–6, 7–12, and 13–18). Key findings reveal that safety and risk prevention are strongly correlated ($\rho = 0.86$), while a significant trade-off exists between interactivity and age-appropriateness ($\rho = -0.48$).
+  [AAAI 2026][LLM Safety][LLM safety evaluation] This paper introduces SproutBench, an evaluation benchmark comprising 1,283 developmentally-grounded adversarial prompts…
 tags:
-  - AAAI 2026
-  - LLM Safety
-  - LLM safety evaluation
-  - child AI safety
-  - developmental psychology
-  - age-stratified benchmark
-  - youth protection
+  - "AAAI 2026"
+  - "LLM Safety"
+  - "LLM safety evaluation"
+  - "child AI safety"
+  - "developmental psychology"
+  - "age-stratified benchmark"
+  - "youth protection"
 date: 2026-05-08
 content_hash: be4d16c80a9a6735
 ---

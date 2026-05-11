@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Reasoning-Based Refinement of Unsupervised Text Clusters with LLMs
 description: >-
-  [ACL 2026][AIGC Detection][text cluster refinement] A reasoning-based cluster refinement framework that uses LLMs as semantic judges (rather than embedding generators) to verify and restructure unsupervised clustering outputs through coherence verification, redundancy adjudication, and label grounding, significantly improving cluster consistency and human-aligned annotation quality on social media corpora.
+  [ACL 2026][AIGC Detection][text cluster refinement] A reasoning-based cluster refinement framework that uses LLMs as semantic judges (rather than embedding generators) to verify and restructure unsupervised clustering ou…
 tags:
-  - ACL 2026
-  - AIGC Detection
-  - text cluster refinement
-  - LLM semantic judge
-  - coherence verification
-  - redundancy adjudication
-  - label grounding
+  - "ACL 2026"
+  - "AIGC Detection"
+  - "text cluster refinement"
+  - "LLM semantic judge"
+  - "coherence verification"
+  - "redundancy adjudication"
+  - "label grounding"
 date: 2025-05-08
 content_hash: 699f43a33103ac44
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unleashing the Potential of Large Language Models for Text-to-Image Generation through Autoregressive Representation Alignment
 description: >-
-  [AAAI 2026][Medical Imaging][Autoregressive image generation] This paper proposes ARRA (Autoregressive Representation Alignment), a training framework that distills global visual representations from an external vision foundation model into the hidden states of an autoregressive LLM via a hybrid token \<HYBNEXT\>, significantly improving text-to-image generation quality without any architectural modification.
+  [AAAI 2026][Medical Imaging][Autoregressive image generation] This paper proposes ARRA (Autoregressive Representation Alignment), a training framework that distills global visual representations from an external vision f…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Autoregressive image generation
-  - representation alignment
-  - large language models
-  - text-to-image
-  - global consistency
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Autoregressive image generation"
+  - "representation alignment"
+  - "large language models"
+  - "text-to-image"
+  - "global consistency"
 date: 2026-05-08
 content_hash: 8ad68f3e975374e7
 ---

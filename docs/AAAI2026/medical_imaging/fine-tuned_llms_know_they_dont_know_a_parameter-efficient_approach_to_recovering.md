@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Fine-Tuned LLMs Know They Don't Know: A Parameter-Efficient Approach to Recovering Honesty
 description: >-
-  [AAAI 2026][Medical Imaging][LLM honesty] This paper reveals that the root cause of SFT-induced dishonesty in LLMs is **impaired self-expression** (rather than degraded self-knowledge), and proposes the HCNR framework accordingly. By identifying honesty-critical neurons via Fisher information and restoring them to their pre-trained states with Hessian-guided compensation, HCNR recovers 33.25% of honesty using only 256 data samples and 20% of parameters, achieving over 2.23× speedup.
+  [AAAI 2026][Medical Imaging][LLM honesty] This paper reveals that the root cause of SFT-induced dishonesty in LLMs is **impaired self-expression** (rather than degraded self-knowledge)…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - LLM honesty
-  - supervised fine-tuning
-  - knowledge boundary
-  - neuron restoration
-  - parameter-efficient
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "LLM honesty"
+  - "supervised fine-tuning"
+  - "knowledge boundary"
+  - "neuron restoration"
+  - "parameter-efficient"
 date: 2026-05-08
 content_hash: d36f2227d1e05c4b
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] NegoCollab: A Common Representation Negotiation Approach for Heterogeneous Collaborative Perception
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Collaborative Perception] This paper proposes the NegoCollab framework, which introduces a Negotiator module to negotiate a common representation from the local representations of heterogeneous multimodal agents during training, effectively eliminating domain gaps between heterogeneous collaborative agents and enabling low-cost collaborative connected perception.
+  [NeurIPS 2025][Multimodal VLM][Collaborative Perception] This paper proposes the NegoCollab framework, which introduces a Negotiator module to negotiate a common representation from the local representations of heterogen…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Collaborative Perception
-  - Heterogeneity
-  - Common Representation
-  - Domain Adaptation
-  - Autonomous Driving
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Collaborative Perception"
+  - "Heterogeneity"
+  - "Common Representation"
+  - "Domain Adaptation"
+  - "Autonomous Driving"
 date: 2026-05-08
 content_hash: 1a00b5689112eb42
 ---

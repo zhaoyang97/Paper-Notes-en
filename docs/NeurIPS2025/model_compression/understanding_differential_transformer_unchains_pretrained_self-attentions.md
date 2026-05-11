@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Understanding Differential Transformer Unchains Pretrained Self-Attentions
 description: >-
-  [NeurIPS 2025][Model Compression][Differential Transformer] This paper conducts an in-depth analysis of the internal mechanism of the Differential Transformer, revealing that the differential operation is equivalent to a robust attention denoising process — it "unchains" pretrained self-attentions from the constraints of softmax normalization, enabling attention weights to be more freely allocated to genuinely important tokens.
+  [NeurIPS 2025][Model Compression][Differential Transformer] This paper conducts an in-depth analysis of the internal mechanism of the Differential Transformer…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Differential Transformer
-  - attention mechanism analysis
-  - attention noise cancellation
-  - pretrained attention liberation
-  - interpretability
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Differential Transformer"
+  - "attention mechanism analysis"
+  - "attention noise cancellation"
+  - "pretrained attention liberation"
+  - "interpretability"
 date: 2026-05-08
 content_hash: e3b913b6608f5837
 ---

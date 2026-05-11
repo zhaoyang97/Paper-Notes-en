@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dual Goal Representations
 description: >-
-  [ICLR 2026][Reinforcement Learning][goal-conditioned RL] This paper proposes *dual goal representations*, which encode a goal state via the set of optimal temporal distances from all states to that goal. The authors theoretically prove that this representation is sufficient for recovering the optimal policy and naturally filters exogenous noise. A practical learning algorithm based on asymmetric inner product parameterization is designed, and the resulting module consistently improves three mainstream offline GCRL methods across 20 OGBench tasks as a plug-and-play component.
+  [ICLR 2026][Reinforcement Learning][goal-conditioned RL] This paper proposes *dual goal representations*, which encode a goal state via the set of optimal temporal distances from all states to that goal. The authors theo…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - goal-conditioned RL
-  - dual goal representation
-  - temporal distance
-  - asymmetric inner product parameterization
-  - OGBench
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "goal-conditioned RL"
+  - "dual goal representation"
+  - "temporal distance"
+  - "asymmetric inner product parameterization"
+  - "OGBench"
 date: 2026-05-08
 content_hash: 7128ac00f8678d68
 ---

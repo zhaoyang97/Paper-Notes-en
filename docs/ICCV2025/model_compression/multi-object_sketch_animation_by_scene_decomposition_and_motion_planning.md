@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multi-Object Sketch Animation by Scene Decomposition and Motion Planning
 description: >-
-  [ICCV 2025][Model Compression][Sketch Animation] MoSketch is the first method to address multi-object sketch animation. It integrates four modules — LLM-based scene decomposition, LLM-based motion planning, a motion refinement network, and compositional SDS — under a divide-and-conquer strategy to tackle two core challenges: object-aware motion modeling and complex motion optimization. High-quality multi-object sketch animation is achieved without any training data.
+  [ICCV 2025][Model Compression][Sketch Animation] MoSketch is the first method to address multi-object sketch animation. It integrates four modules — LLM-based scene decomposition, LLM-based motion planning…
 tags:
-  - ICCV 2025
-  - Model Compression
-  - Sketch Animation
-  - Multi-Object Animation
-  - LLM Motion Planning
-  - Score Distillation Sampling
-  - Compositional Generation
+  - "ICCV 2025"
+  - "Model Compression"
+  - "Sketch Animation"
+  - "Multi-Object Animation"
+  - "LLM Motion Planning"
+  - "Score Distillation Sampling"
+  - "Compositional Generation"
 date: 2026-05-08
 content_hash: 2b1591dc15eaa412
 ---

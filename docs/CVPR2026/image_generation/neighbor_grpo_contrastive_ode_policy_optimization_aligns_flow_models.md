@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Neighbor GRPO: Contrastive ODE Policy Optimization Aligns Flow Models
 description: >-
-  [CVPR 2026][Image Generation][GRPO] This paper reinterprets SDE-based GRPO as distance optimization / contrastive learning, and proposes Neighbor GRPO — which completely bypasses SDE conversion by constructing neighborhood candidate trajectories through perturbation of ODE initial noise, combined with a softmax distance surrogate policy for policy gradient optimization, while preserving all advantages of deterministic ODE sampling.
+  [CVPR 2026][Image Generation][GRPO] This paper reinterprets SDE-based GRPO as distance optimization / contrastive learning, and proposes Neighbor GRPO — which completely bypasses SDE conversion by constructing neighborho…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - GRPO
-  - Flow Matching
-  - Human Preference Alignment
-  - Contrastive Learning
-  - ODE Sampling
+  - "CVPR 2026"
+  - "Image Generation"
+  - "GRPO"
+  - "Flow Matching"
+  - "Human Preference Alignment"
+  - "Contrastive Learning"
+  - "ODE Sampling"
 date: 2026-05-08
 content_hash: c5a004e74ffa935c
 ---

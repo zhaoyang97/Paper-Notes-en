@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] ReMoT: Reinforcement Learning with Motion Contrast Triplets
 description: >-
-  [ICLR 2026][Reinforcement Learning][Vision-Language Models] ReMoT proposes a unified training paradigm that systematically enhances VLM spatiotemporal consistency reasoning through a rule-driven motion contrast triplet dataset (ReMoT-16K) and Group Relative Policy Optimization (GRPO) with composite reward optimization, achieving a 25.1% performance gain on spatiotemporal reasoning benchmarks.
+  [ICLR 2026][Reinforcement Learning][Vision-Language Models] ReMoT proposes a unified training paradigm that systematically enhances VLM spatiotemporal consistency reasoning through a rule-driven motion contrast triplet d…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Vision-Language Models
-  - Spatiotemporal Reasoning
-  - Motion Contrast Triplets
-  - GRPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Vision-Language Models"
+  - "Spatiotemporal Reasoning"
+  - "Motion Contrast Triplets"
+  - "GRPO"
 date: 2026-05-08
 content_hash: cf7163025fe0ceac
 ---

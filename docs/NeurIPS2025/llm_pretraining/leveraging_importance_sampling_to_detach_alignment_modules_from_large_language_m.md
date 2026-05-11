@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Leveraging Importance Sampling to Detach Alignment Modules from Large Language Models
 description: >-
-  [NeurIPS 2025][LLM Pretraining][LLM alignment] This paper proposes the Residual Alignment Model (RAM), which formalizes the LLM alignment process as importance sampling and decomposes a large model into a frozen Proposal Module and a trainable lightweight Residual Aligner. Using fewer than 1/8 of the parameters, RAM achieves alignment performance comparable to or exceeding full-parameter SFT/DPO, while also resolving the first-token latency problem.
+  [NeurIPS 2025][LLM Pretraining][LLM alignment] This paper proposes the Residual Alignment Model (RAM), which formalizes the LLM alignment process as importance sampling and decomposes a large model into a frozen Proposal…
 tags:
-  - NeurIPS 2025
-  - LLM Pretraining
-  - LLM alignment
-  - importance sampling
-  - residual alignment
-  - modular alignment
-  - token-level decoding
-  - parameter-efficient
+  - "NeurIPS 2025"
+  - "LLM Pretraining"
+  - "LLM alignment"
+  - "importance sampling"
+  - "residual alignment"
+  - "modular alignment"
+  - "token-level decoding"
+  - "parameter-efficient"
 date: 2026-05-08
 content_hash: 91b177883dc934f0
 ---

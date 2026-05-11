@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mixture of Noise for Pre-Trained Model-Based Class-Incremental Learning
 description: >-
-  [NeurIPS 2025][Model Compression][Class-incremental learning] This paper proposes learning beneficial "mixture of noise" to suppress parameter drift in pre-trained models during class-incremental learning. By dynamically mixing task-specific noise with learned weights across tasks, the method achieves state-of-the-art performance, particularly in the challenging 50-step incremental setting.
+  [NeurIPS 2025][Model Compression][Class-incremental learning] This paper proposes learning beneficial "mixture of noise" to suppress parameter drift in pre-trained models during class-incremental learning. By dynamically…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Class-incremental learning
-  - pre-trained models
-  - parameter drift
-  - positive noise
-  - catastrophic forgetting suppression
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Class-incremental learning"
+  - "pre-trained models"
+  - "parameter drift"
+  - "positive noise"
+  - "catastrophic forgetting suppression"
 date: 2026-05-08
 content_hash: 6f03ee8a5854d712
 ---

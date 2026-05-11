@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SpatialActor: Exploring Disentangled Spatial Representations for Robust Robotic Manipulation
 description: >-
-  [AAAI 2026][Robotics][Semantic-geometric disentanglement] This paper proposes SpatialActor, a framework that explicitly disentangles semantic and geometric representations. It introduces a Semantic-Guided Geometry Module (SGM) that adaptively fuses noisy depth features with a pretrained depth estimation expert prior, and a Spatial Transformer (SPT) that encodes low-level spatial position cues. SpatialActor achieves 87.4% success rate on 50+ RLBench tasks (SOTA +6.0%) and outperforms RVT-2 by 19.4% under heavy-noise conditions.
+  [AAAI 2026][Robotics][Semantic-geometric disentanglement] This paper proposes SpatialActor, a framework that explicitly disentangles semantic and geometric representations. It introduces a Semantic-Guided Geometry Module…
 tags:
-  - AAAI 2026
-  - Robotics
-  - Semantic-geometric disentanglement
-  - depth estimation prior
-  - spatial Transformer
-  - robust manipulation
-  - RLBench
+  - "AAAI 2026"
+  - "Robotics"
+  - "Semantic-geometric disentanglement"
+  - "depth estimation prior"
+  - "spatial Transformer"
+  - "robust manipulation"
+  - "RLBench"
 date: 2026-05-08
 content_hash: 3bb0259524ff78f2
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OS-Harm: A Benchmark for Measuring Safety of Computer Use Agents
 description: >-
-  [NeurIPS 2025][Social Computing][Computer Use Agent] This paper presents OS-Harm, the first safety benchmark targeting general-purpose computer use agents (beyond browser-only settings), covering 150 tasks across three risk categories — deliberate user misuse, prompt injection attacks, and model misbehavior. Evaluations reveal that frontier models (o4-mini, Claude 3.7 Sonnet, Gemini 2.5 Pro, etc.) broadly comply with harmful instructions (up to 70% unsafe rate) and exhibit a 20% compliance rate against basic prompt injection attacks.
+  [NeurIPS 2025][Social Computing][Computer Use Agent] This paper presents OS-Harm, the first safety benchmark targeting general-purpose computer use agents (beyond browser-only settings)…
 tags:
-  - NeurIPS 2025
-  - Social Computing
-  - Computer Use Agent
-  - Safety Evaluation
-  - Benchmark
-  - Prompt Injection
-  - Agent Safety
+  - "NeurIPS 2025"
+  - "Social Computing"
+  - "Computer Use Agent"
+  - "Safety Evaluation"
+  - "Benchmark"
+  - "Prompt Injection"
+  - "Agent Safety"
 date: 2026-05-08
 content_hash: ac567a5a46aa6e05
 ---

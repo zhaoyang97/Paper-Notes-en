@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LCA: Local Classifier Alignment for Continual Learning
 description: >-
-  [ICLR 2026][LLM Evaluation][Class-Incremental Learning] This paper proposes Local Classifier Alignment (LCA), a loss function that simultaneously minimizes classification loss and loss sensitivity within local regions of class prototype Gaussian distributions. LCA addresses the classifier mismatch problem arising from incremental backbone merging in continual learning. Combined with an Incremental Merging (IM) strategy for PEFT modules, the method achieves an overall average accuracy of 85.6% across 7 benchmark datasets, substantially outperforming prior state-of-the-art methods.
+  [ICLR 2026][LLM Evaluation][Class-Incremental Learning] This paper proposes Local Classifier Alignment (LCA), a loss function that simultaneously minimizes classification loss and loss sensitivity within local regions of…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - Class-Incremental Learning
-  - Classifier Alignment
-  - Model Merging
-  - Robustness
-  - Pre-trained Models
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Class-Incremental Learning"
+  - "Classifier Alignment"
+  - "Model Merging"
+  - "Robustness"
+  - "Pre-trained Models"
 date: 2026-05-08
 content_hash: d14d04d8ed50d8e4
 ---

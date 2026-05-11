@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MSTAR: Box-Free Multi-Query Scene Text Retrieval with Attention Recycling
 description: >-
-  [NeurIPS 2025][Object Detection][Scene text retrieval] This paper presents MSTAR, the first multi-query scene text retrieval method that requires no bounding box annotations. Through Progressive Vision Embedding (PVE), MSTAR progressively shifts attention from salient to non-salient regions. Combined with style-aware instructions and a Multi-Instance Matching (MIM) module, it achieves unified retrieval across four query types—word, phrase, combined, and semantic—and introduces MQTR, the first multi-query text retrieval benchmark.
+  [NeurIPS 2025][Object Detection][Scene text retrieval] This paper presents MSTAR, the first multi-query scene text retrieval method that requires no bounding box annotations. Through Progressive Vision Embedding (PVE)…
 tags:
-  - NeurIPS 2025
-  - Object Detection
-  - Scene text retrieval
-  - box-free annotation
-  - multi-query retrieval
-  - attention recycling
-  - vision-language model
+  - "NeurIPS 2025"
+  - "Object Detection"
+  - "Scene text retrieval"
+  - "box-free annotation"
+  - "multi-query retrieval"
+  - "attention recycling"
+  - "vision-language model"
 date: 2026-05-08
 content_hash: 423706639252a9e3
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Increasing the Utility of Synthetic Images through Chamfer Guidance
 description: >-
-  [NeurIPS 2025][Image Generation][Chamfer Distance] This paper proposes Chamfer Guidance — a training-free inference-time guidance method that uses a small number of real samples as references. By leveraging Chamfer distance, it simultaneously optimizes fidelity and diversity of synthetic images. On ImageNet-1k, using only 32 real images, it achieves 97.5% Precision and 92.7% Coverage, and delivers up to 16% accuracy improvement in downstream classifier training.
+  [NeurIPS 2025][Image Generation][Chamfer Distance] This paper proposes Chamfer Guidance — a training-free inference-time guidance method that uses a small number of real samples as references. By leveraging Chamfer dista…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Chamfer Distance
-  - diffusion model guidance
-  - synthetic training data
-  - image diversity
-  - distribution matching
-  - training-free inference guidance
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Chamfer Distance"
+  - "diffusion model guidance"
+  - "synthetic training data"
+  - "image diversity"
+  - "distribution matching"
+  - "training-free inference guidance"
 date: 2026-05-08
 content_hash: 66ce1038607dbd30
 ---

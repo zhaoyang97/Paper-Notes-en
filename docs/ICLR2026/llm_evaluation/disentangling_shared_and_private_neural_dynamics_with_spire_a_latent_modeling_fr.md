@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Disentangling Shared and Private Neural Dynamics with SPIRE: A Latent Modeling Framework for Deep Brain Stimulation
 description: >-
-  [ICLR2026][LLM Evaluation][latent variable model] This paper proposes SPIRE (Shared–Private Inter-Regional Encoder), a nonlinear dual-latent-space autoencoder framework that decomposes intracranial recordings from multiple brain regions into shared and private subspaces via cross-region alignment and orthogonal disentanglement losses. Trained exclusively on baseline data, SPIRE detects frequency-dependent network reorganization induced by DBS stimulation.
+  [ICLR2026][LLM Evaluation][latent variable model] This paper proposes SPIRE (Shared–Private Inter-Regional Encoder), a nonlinear dual-latent-space autoencoder framework that decomposes intracranial recordings from multip…
 tags:
-  - ICLR2026
-  - LLM Evaluation
-  - latent variable model
-  - shared-private disentanglement
-  - deep brain stimulation
-  - multi-region neural dynamics
-  - autoencoder
+  - "ICLR2026"
+  - "LLM Evaluation"
+  - "latent variable model"
+  - "shared-private disentanglement"
+  - "deep brain stimulation"
+  - "multi-region neural dynamics"
+  - "autoencoder"
 date: 2026-05-08
 content_hash: 0c485e3aaccf6580
 ---

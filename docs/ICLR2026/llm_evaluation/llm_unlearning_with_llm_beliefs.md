@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LLM Unlearning with LLM Beliefs
 description: >-
-  [ICLR 2026][LLM Evaluation][LLM unlearning] This paper reveals that LLM unlearning methods such as GA and NPO suffer from a *squeezing effect*—reducing the probability of a target response causes probability mass to redistribute toward semantically related high-likelihood regions, resulting in spurious unlearning. The authors propose a bootstrapping-based framework that leverages the model's own high-confidence predictions (model beliefs) as additional unlearning targets. Two instantiations, BS-T (token-level) and BS-S (sequence-level), achieve more thorough unlearning while preserving model utility across multiple benchmarks including TOFU, MUSE, and WMDP.
+  [ICLR 2026][LLM Evaluation][LLM unlearning] This paper reveals that LLM unlearning methods such as GA and NPO suffer from a *squeezing effect*—reducing the probability of a target response causes probability mass to redi…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - LLM unlearning
-  - gradient ascent
-  - squeezing effect
-  - bootstrapping
-  - model beliefs
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "LLM unlearning"
+  - "gradient ascent"
+  - "squeezing effect"
+  - "bootstrapping"
+  - "model beliefs"
 date: 2026-05-08
 content_hash: 24004a0a086ed282
 ---

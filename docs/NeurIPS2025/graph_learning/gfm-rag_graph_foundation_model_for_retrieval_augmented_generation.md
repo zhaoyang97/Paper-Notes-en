@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GFM-RAG: Graph Foundation Model for Retrieval Augmented Generation
 description: >-
-  [NeurIPS 2025][Graph Learning][Graph Foundation Model] This paper proposes GFM-RAG, the first graph foundation model-driven retrieval-augmented generation framework, which performs single-pass multi-hop reasoning over knowledge graphs via a query-dependent GNN. With only 8M parameters, GFM-RAG achieves zero-shot generalization to unseen datasets and substantially outperforms state-of-the-art methods on multi-hop QA retrieval benchmarks.
+  [NeurIPS 2025][Graph Learning][Graph Foundation Model] This paper proposes GFM-RAG, the first graph foundation model-driven retrieval-augmented generation framework…
 tags:
-  - NeurIPS 2025
-  - Graph Learning
-  - Graph Foundation Model
-  - RAG
-  - Knowledge Graph
-  - Multi-hop Reasoning
-  - GNN
+  - "NeurIPS 2025"
+  - "Graph Learning"
+  - "Graph Foundation Model"
+  - "RAG"
+  - "Knowledge Graph"
+  - "Multi-hop Reasoning"
+  - "GNN"
 date: 2026-05-08
 content_hash: 7d0595fd887a9425
 ---

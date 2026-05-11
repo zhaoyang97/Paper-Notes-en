@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Conformal Online Learning of Deep Koopman Linear Embeddings
 description: >-
-  [NEURIPS2025][LLM Evaluation][Koopman operator] This paper proposes the COLoKe framework, which reinterprets conformal prediction as a model consistency diagnostic tool. Parameter updates are triggered only when the Koopman model's prediction error exceeds a dynamically calibrated threshold, enabling efficient online Koopman linear embedding learning for nonlinear dynamical systems.
+  [NEURIPS2025][LLM Evaluation][Koopman operator] This paper proposes the COLoKe framework, which reinterprets conformal prediction as a model consistency diagnostic tool. Parameter updates are triggered only when the Koop…
 tags:
-  - NEURIPS2025
-  - LLM Evaluation
-  - Koopman operator
-  - online learning
-  - conformal prediction
-  - dynamical systems
-  - deep learning
+  - "NEURIPS2025"
+  - "LLM Evaluation"
+  - "Koopman operator"
+  - "online learning"
+  - "conformal prediction"
+  - "dynamical systems"
+  - "deep learning"
 date: 2026-05-08
 content_hash: d432ff86726ac5c9
 ---

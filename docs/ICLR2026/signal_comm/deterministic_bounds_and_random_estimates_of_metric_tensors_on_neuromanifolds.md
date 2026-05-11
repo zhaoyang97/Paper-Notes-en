@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Deterministic Bounds and Random Estimates of Metric Tensors on Neuromanifolds
 description: >-
-  [ICLR 2026][Signal & Communication][Fisher Information Matrix] By analyzing the spectral properties of the Fisher Information Matrix (FIM) in the low-dimensional kernel space of probability distributions, this paper establishes deterministic upper and lower bounds for the metric tensor on the neural network parameter space (neuromanifold), and introduces a family of unbiased stochastic estimators with bounded variance based on the Hutchinson trace estimator, computable efficiently with a single backward pass.
+  [ICLR 2026][Signal & Communication][Fisher Information Matrix] By analyzing the spectral properties of the Fisher Information Matrix (FIM) in the low-dimensional kernel space of probability distributions…
 tags:
-  - ICLR 2026
+  - "ICLR 2026"
   - "Signal & Communication"
-  - Fisher Information Matrix
-  - Neuromanifold
-  - Hutchinson Estimator
-  - Metric Tensor
-  - Spectral Analysis
+  - "Fisher Information Matrix"
+  - "Neuromanifold"
+  - "Hutchinson Estimator"
+  - "Metric Tensor"
+  - "Spectral Analysis"
 date: 2026-05-08
 content_hash: 195e7d99e563c8dd
 ---

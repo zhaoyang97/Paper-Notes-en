@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CBRS: Cognitive Blood Request System with Bilingual Dataset and Dual-Layer Filtering
 description: >-
-  [ACL 2026][Model Compression][Blood donation requests] CBRS proposes a multi-platform framework that efficiently detects and parses blood donation requests from social media message streams via a dual-layer filtering architecture (lightweight classifier + LLM). The work introduces the first bilingual dataset of 11K blood donation requests spanning Bengali, English, and transliterated Bengali. A LoRA fine-tuned Llama-3.2-3B achieves 92% zero-shot accuracy on the parsing task.
+  [ACL 2026][Model Compression][Blood donation requests] CBRS proposes a multi-platform framework that efficiently detects and parses blood donation requests from social media message streams via a dual-layer filtering arc…
 tags:
-  - ACL 2026
-  - Model Compression
-  - Blood donation requests
-  - bilingual dataset
-  - dual-layer filtering
-  - low-resource languages
-  - information extraction
+  - "ACL 2026"
+  - "Model Compression"
+  - "Blood donation requests"
+  - "bilingual dataset"
+  - "dual-layer filtering"
+  - "low-resource languages"
+  - "information extraction"
 date: 2026-05-08
 content_hash: 5b9122163f054f24
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GLSim: Detecting Object Hallucinations in LVLMs via Global-Local Similarity
 description: >-
-  [NeurIPS 2025][Multimodal VLM][object hallucination] GLSim is a training-free object hallucination detection method for LVLMs that combines a global scene similarity score (cosine similarity between the object token and the last instruction token) and a local visual grounding similarity score (cosine similarity between the object token and the Top-K image patch embeddings localized via Visual Logit Lens). It achieves 83.7% AUROC on MSCOCO, surpassing SVAR by 9% and Internal Confidence by 10.8%.
+  [NeurIPS 2025][Multimodal VLM][object hallucination] GLSim is a training-free object hallucination detection method for LVLMs that combines a global scene similarity score (cosine similarity between the object token and…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - object hallucination
-  - hallucination detection
-  - global-local similarity
-  - visual logit lens
-  - training-free
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "object hallucination"
+  - "hallucination detection"
+  - "global-local similarity"
+  - "visual logit lens"
+  - "training-free"
 date: 2026-05-08
 content_hash: 5f238babc4c095f5
 ---

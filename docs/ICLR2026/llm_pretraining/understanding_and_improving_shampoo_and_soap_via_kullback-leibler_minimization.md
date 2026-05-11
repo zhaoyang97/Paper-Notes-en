@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Understanding and Improving Shampoo and SOAP via Kullback-Leibler Minimization
 description: >-
-  [LLM Pretraining] This paper reinterprets the structured second-order moment estimation of Shampoo and SOAP through the lens of KL divergence minimization, reveals their inherent limitations, and proposes two practical methods—KL-Shampoo and KL-SOAP—that match or surpass the original methods without requiring Adam grafting.
+  [LLM Pretraining] This paper reinterprets the structured second-order moment estimation of Shampoo and SOAP through the lens of KL divergence minimization, reveals their inherent limitations…
 tags:
-  - LLM Pretraining
+  - "LLM Pretraining"
 date: 2026-05-08
 content_hash: d4c0fb649eb754c8
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SparseCoop: Cooperative Perception with Kinematic-Grounded Queries
 description: >-
-  [AAAI 2026][Autonomous Driving][Cooperative Perception] This paper proposes SparseCoop—the first fully sparse cooperative perception framework—which abandons dense BEV representations entirely through kinematic-grounded queries (KGQ), a coarse-to-fine aggregation module, and a cooperative instance denoising strategy. SparseCoop achieves state-of-the-art performance on V2X-Seq and Griffin datasets with minimal communication overhead and maximum computational efficiency (AP 0.530, transmission cost only 3.17×10⁴ BPS).
+  [AAAI 2026][Autonomous Driving][Cooperative Perception] This paper proposes SparseCoop—the first fully sparse cooperative perception framework—which abandons dense BEV representations entirely through kinematic-grounded…
 tags:
-  - AAAI 2026
-  - Autonomous Driving
-  - Cooperative Perception
-  - Sparse Query
+  - "AAAI 2026"
+  - "Autonomous Driving"
+  - "Cooperative Perception"
+  - "Sparse Query"
   - "3D Object Detection & Tracking"
-  - V2X Communication
-  - Vehicle-Road Cooperation
+  - "V2X Communication"
+  - "Vehicle-Road Cooperation"
 date: 2026-05-08
 content_hash: 25ac56e744e815c7
 ---

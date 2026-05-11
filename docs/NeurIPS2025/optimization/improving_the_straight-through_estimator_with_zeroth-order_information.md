@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Improving the Straight-Through Estimator with Zeroth-Order Information
 description: >-
-  [NeurIPS 2025][Optimization][quantization-aware training] This paper proposes FOGZO (First-Order-Guided Zeroth-Order Gradient Descent), which injects STE gradients as a bias source into zeroth-order gradient estimation. By retaining the computational efficiency of STE while leveraging zeroth-order information to correct occasional erroneous gradient directions, FOGZO achieves 1–22 point improvements in accuracy/perplexity on DeiT, ResNet, and LLaMA with only 2 additional forward passes.
+  [NeurIPS 2025][Optimization][quantization-aware training] This paper proposes FOGZO (First-Order-Guided Zeroth-Order Gradient Descent), which injects STE gradients as a bias source into zeroth-order gradient estimation.…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - quantization-aware training
-  - straight-through estimator
-  - zeroth-order optimization
-  - FOGZO
-  - gradient estimation
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "quantization-aware training"
+  - "straight-through estimator"
+  - "zeroth-order optimization"
+  - "FOGZO"
+  - "gradient estimation"
 date: 2026-05-08
 content_hash: 37a3ce0ad8390809
 ---

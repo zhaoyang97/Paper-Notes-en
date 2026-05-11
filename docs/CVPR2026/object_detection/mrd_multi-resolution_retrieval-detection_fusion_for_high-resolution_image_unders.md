@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] MRD: Multi-resolution Retrieval-Detection Fusion for High-Resolution Image Understanding
 description: >-
-  [CVPR2026][Object Detection][High-resolution image understanding] This paper proposes MRD, a training-free multi-resolution retrieval-detection fusion framework that mitigates object fragmentation via cross-resolution semantic fusion and suppresses background interference through an open-vocabulary detector, substantially improving MLLM understanding of high-resolution images.
+  [CVPR2026][Object Detection][High-resolution image understanding] This paper proposes MRD, a training-free multi-resolution retrieval-detection fusion framework that mitigates object fragmentation via cross-resolution se…
 tags:
-  - CVPR2026
-  - Object Detection
-  - High-resolution image understanding
-  - multimodal large language models
-  - retrieval-augmented perception
-  - open-vocabulary detection
-  - multi-resolution fusion
-  - training-free
+  - "CVPR2026"
+  - "Object Detection"
+  - "High-resolution image understanding"
+  - "multimodal large language models"
+  - "retrieval-augmented perception"
+  - "open-vocabulary detection"
+  - "multi-resolution fusion"
+  - "training-free"
 date: 2026-05-08
 content_hash: a5b23abd342964e5
 ---

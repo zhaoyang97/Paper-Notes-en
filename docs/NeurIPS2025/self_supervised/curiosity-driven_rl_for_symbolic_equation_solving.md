@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Curiosity-driven RL for Symbolic Equation Solving
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][Reinforcement Learning] This work combines curiosity-driven exploration mechanisms (RND, ICM, etc.) with a graph action space based on expression trees, enabling a PPO agent to solve nonlinear equations involving radicals, exponentials, and trigonometric functions — surpassing prior RL methods that were limited to linear equations.
+  [NeurIPS 2025][Self-Supervised Learning][Reinforcement Learning] This work combines curiosity-driven exploration mechanisms (RND, ICM, etc.) with a graph action space based on expression trees…
 tags:
-  - NeurIPS 2025
-  - Self-Supervised Learning
-  - Reinforcement Learning
-  - Symbolic Mathematics
-  - Curiosity-driven Exploration
-  - PPO
-  - Expression Tree
+  - "NeurIPS 2025"
+  - "Self-Supervised Learning"
+  - "Reinforcement Learning"
+  - "Symbolic Mathematics"
+  - "Curiosity-driven Exploration"
+  - "PPO"
+  - "Expression Tree"
 date: 2026-05-08
 content_hash: a9ccefc1854d8c2c
 ---

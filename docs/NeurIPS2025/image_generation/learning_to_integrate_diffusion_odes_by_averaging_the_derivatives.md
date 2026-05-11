@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning to Integrate Diffusion ODEs by Averaging the Derivatives
 description: >-
-  [NeurIPS 2025][Image Generation][Diffusion model acceleration] This paper proposes the **Secant Losses** family, which learns to integrate diffusion ODEs via Monte Carlo integration and Picard iteration, progressively extending the tangent of a diffusion model into a secant. The approach achieves an excellent balance between training stability and few-step inference.
+  [NeurIPS 2025][Image Generation][Diffusion model acceleration] This paper proposes the **Secant Losses** family, which learns to integrate diffusion ODEs via Monte Carlo integration and Picard iteration…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Diffusion model acceleration
-  - secant loss
-  - ODE integration
-  - Monte Carlo integration
-  - Picard iteration
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Diffusion model acceleration"
+  - "secant loss"
+  - "ODE integration"
+  - "Monte Carlo integration"
+  - "Picard iteration"
 date: 2026-05-08
 content_hash: 9b8512737024d6e3
 ---

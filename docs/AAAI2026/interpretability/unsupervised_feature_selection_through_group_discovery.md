@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Unsupervised Feature Selection Through Group Discovery
 description: >-
-  [AAAI 2026][Unsupervised feature selection] This paper proposes GroupFS, the first end-to-end differentiable unsupervised feature selection framework that simultaneously discovers latent feature groups and selects the most informative ones, requiring neither predefined groupings nor label supervision.
+  [AAAI 2026][Interpretability][Unsupervised feature selection] This paper proposes GroupFS, the first end-to-end differentiable unsupervised feature selection framework that simultaneously discovers latent feature groups…
 tags:
-  - AAAI 2026
-  - Unsupervised feature selection
-  - feature grouping
-  - graph Laplacian
-  - Gumbel-Softmax
-  - sparse regularization
+  - "AAAI 2026"
+  - "Interpretability"
+  - "Unsupervised feature selection"
+  - "feature grouping"
+  - "graph Laplacian"
+  - "Gumbel-Softmax"
+  - "sparse regularization"
 date: 2026-05-08
 content_hash: 4e665d4a924d807b
 ---

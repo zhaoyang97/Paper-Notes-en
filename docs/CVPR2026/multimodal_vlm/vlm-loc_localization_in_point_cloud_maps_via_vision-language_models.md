@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VLM-Loc: Localization in Point Cloud Maps via Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Text-to-point-cloud localization] This paper proposes VLM-Loc, a framework that converts 3D point cloud maps into BEV images and scene graphs for structured spatial reasoning with VLMs, and introduces a Partial Node Assignment (PNA) mechanism for fine-grained text-to-point-cloud localization. On the newly constructed CityLoc benchmark, VLM-Loc achieves a 14.20% improvement in Recall@5m over the previous state of the art.
+  [CVPR 2026][Multimodal VLM][Text-to-point-cloud localization] This paper proposes VLM-Loc, a framework that converts 3D point cloud maps into BEV images and scene graphs for structured spatial reasoning with VLMs…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Text-to-point-cloud localization
-  - BEV
-  - scene graph
-  - VLM spatial reasoning
-  - autonomous driving
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Text-to-point-cloud localization"
+  - "BEV"
+  - "scene graph"
+  - "VLM spatial reasoning"
+  - "autonomous driving"
 date: 2026-05-08
 content_hash: a02bf5106fe2d957
 ---

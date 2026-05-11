@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Seeing No Evil: Blinding Large Vision-Language Models to Safety Instructions via Adversarial Attention Hijacking
 description: >-
-  [ACL 2026][Multimodal VLM][visual jailbreak attack] This paper proposes Attention-Guided Visual Jailbreaking, which bypasses—rather than directly confronts—safety alignment mechanisms by suppressing model attention to safety instructions and anchoring attention to adversarial image features. The method achieves a 94.4% attack success rate (ASR) on Qwen-VL while reducing gradient conflicts by 45%.
+  [ACL 2026][Multimodal VLM][visual jailbreak attack] This paper proposes Attention-Guided Visual Jailbreaking, which bypasses—rather than directly confronts—safety alignment mechanisms by suppressing model attention to sa…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - visual jailbreak attack
-  - attention manipulation
-  - safety alignment
-  - gradient conflict
-  - large vision-language models
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "visual jailbreak attack"
+  - "attention manipulation"
+  - "safety alignment"
+  - "gradient conflict"
+  - "large vision-language models"
 date: 2026-05-08
 content_hash: f5ab0355cbae448c
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Realistic Curriculum Reinforcement Learning for Autonomous and Sustainable Marine Vessel Navigation
 description: >-
-  [AAAI 2026][Reinforcement Learning][Curriculum Reinforcement Learning] This paper proposes a Curriculum Reinforcement Learning (CRL) framework for autonomous and sustainable marine vessel navigation. The framework integrates a high-fidelity simulation environment built on real AIS data, a diffusion model-enhanced dynamic maritime traffic simulator, and a machine learning-based fuel consumption prediction module. A multi-objective reward function simultaneously optimizes navigation safety, emission reduction, timeliness, and goal completion.
+  [AAAI 2026][Reinforcement Learning][Curriculum Reinforcement Learning] This paper proposes a Curriculum Reinforcement Learning (CRL) framework for autonomous and sustainable marine vessel navigation. The framework integr…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - Curriculum Reinforcement Learning
-  - Autonomous Navigation
-  - Marine Sustainability
-  - Diffusion Models
-  - Fuel Consumption Prediction
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "Curriculum Reinforcement Learning"
+  - "Autonomous Navigation"
+  - "Marine Sustainability"
+  - "Diffusion Models"
+  - "Fuel Consumption Prediction"
 date: 2026-05-08
 content_hash: fd3a13aef2e94fd1
 ---

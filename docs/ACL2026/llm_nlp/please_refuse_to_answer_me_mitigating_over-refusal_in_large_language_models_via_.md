@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Please Refuse to Answer Me: Mitigating Over-Refusal in LLMs via Adaptive Contrastive Decoding
 description: >-
-  [ACL 2026][LLM/NLP][over-refusal] This paper proposes AdaCD (Adaptive Contrastive Decoding), which extracts a refusal token distribution by contrasting token distributions under an extreme safety prompt versus no prompt, then dynamically decides to amplify or suppress refusal behavior based on an agreement ratio. AdaCD reduces over-refusal by 10.35% while simultaneously improving the refusal rate on malicious queries by 0.13%.
+  [ACL 2026][LLM/NLP][over-refusal] This paper proposes AdaCD (Adaptive Contrastive Decoding), which extracts a refusal token distribution by contrasting token distributions under an extreme safety prompt versus no prompt…
 tags:
-  - ACL 2026
-  - LLM/NLP
-  - over-refusal
-  - contrastive decoding
-  - safety alignment
-  - inference-time intervention
-  - adaptive decoding
+  - "ACL 2026"
+  - "LLM/NLP"
+  - "over-refusal"
+  - "contrastive decoding"
+  - "safety alignment"
+  - "inference-time intervention"
+  - "adaptive decoding"
 date: 2026-05-08
 content_hash: 9fe54fd72d1f832a
 ---

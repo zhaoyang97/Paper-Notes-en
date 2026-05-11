@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond ReAct: A Planner-Centric Framework for Complex Tool-Augmented LLM Reasoning
 description: >-
-  [AAAI 2026][LLM Agent][Tool-augmented LLM] This paper proposes a Planner-centric Plan-Execute framework that transforms complex queries into DAG-based execution plans. Through two-stage SFT+GRPO training of a dedicated Planner model, the approach surpasses reactive methods such as ReAct on ComplexTool-Plan and StableToolBench, achieving higher success rates with fewer inference steps.
+  [AAAI 2026][LLM Agent][Tool-augmented LLM] This paper proposes a Planner-centric Plan-Execute framework that transforms complex queries into DAG-based execution plans. Through two-stage SFT+GRPO training of a dedicated P…
 tags:
-  - AAAI 2026
-  - LLM Agent
-  - Tool-augmented LLM
-  - DAG planning
-  - Plan-Execute paradigm
-  - GRPO reinforcement learning
-  - multi-tool orchestration
+  - "AAAI 2026"
+  - "LLM Agent"
+  - "Tool-augmented LLM"
+  - "DAG planning"
+  - "Plan-Execute paradigm"
+  - "GRPO reinforcement learning"
+  - "multi-tool orchestration"
 date: 2026-05-08
 content_hash: 4f0b3a844d10d869
 ---

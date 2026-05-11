@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MMPerspective: Do MLLMs Understand Perspective? A Comprehensive Benchmark for Perspective Perception, Reasoning, and Robustness
 description: >-
-  [NeurIPS 2025][Multimodal VLM][perspective understanding] The first benchmark to systematically evaluate the perspective understanding capabilities of multimodal large language models (MLLMs), comprising 10 tasks across 3 dimensions, 2,711 images, and 5,083 question–answer pairs. It reveals significant deficiencies in perspective reasoning and robustness across 43 state-of-the-art models.
+  [NeurIPS 2025][Multimodal VLM][perspective understanding] The first benchmark to systematically evaluate the perspective understanding capabilities of multimodal large language models (MLLMs)…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - perspective understanding
-  - multimodal large language models
-  - benchmark
-  - spatial reasoning
-  - geometric perception
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "perspective understanding"
+  - "multimodal large language models"
+  - "benchmark"
+  - "spatial reasoning"
+  - "geometric perception"
 date: 2026-05-08
 content_hash: 8e80e19d9b395d2f
 ---

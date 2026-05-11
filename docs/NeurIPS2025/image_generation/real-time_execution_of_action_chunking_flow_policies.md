@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Real-Time Execution of Action Chunking Flow Policies
 description: >-
-  [NeurIPS 2025][Image Generation][Real-time inference] This paper proposes Real-Time Chunking (RTC), which frames asynchronous action chunk execution as an inpainting problem. By freezing already-executed actions and "inpainting" the remainder to be consistent with the prefix, RTC enables smooth real-time execution of diffusion/flow policies without any retraining.
+  [NeurIPS 2025][Image Generation][Real-time inference] This paper proposes Real-Time Chunking (RTC), which frames asynchronous action chunk execution as an inpainting problem. By freezing already-executed actions and "inp…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Real-time inference
-  - action chunking
-  - flow matching
-  - inpainting guidance
-  - VLA
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Real-time inference"
+  - "action chunking"
+  - "flow matching"
+  - "inpainting guidance"
+  - "VLA"
 date: 2026-05-08
 content_hash: a8afd63e7f370ece
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Start Small, Think Big: Curriculum-based Relative Policy Optimization for Visual Grounding
 description: >-
-  [AAAI 2026][Reinforcement Learning][Visual Grounding] This work identifies that CoT reasoning can be counterproductive in visual grounding, and proposes CuRPO (Curriculum-based Relative Policy Optimization), which leverages CoT length and gIoU reward as data complexity proxies for curriculum-based RL training, achieving up to +12.52 mAP improvement over Visual-RFT on RefCOCO.
+  [AAAI 2026][Reinforcement Learning][Visual Grounding] This work identifies that CoT reasoning can be counterproductive in visual grounding, and proposes CuRPO (Curriculum-based Relative Policy Optimization)…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - Visual Grounding
-  - Curriculum Learning
-  - GRPO
-  - Chain-of-Thought
-  - Vision-Language Models
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "Visual Grounding"
+  - "Curriculum Learning"
+  - "GRPO"
+  - "Chain-of-Thought"
+  - "Vision-Language Models"
 date: 2026-05-08
 content_hash: 9299c6db21149095
 ---

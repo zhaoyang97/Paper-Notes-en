@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DMin: Scalable Training Data Influence Estimation for Diffusion Models
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Models] Proposes DMin, a scalable training data influence estimation framework for diffusion models. By using an efficient gradient compression pipeline, it reduces storage requirements from hundreds of terabytes down to MB/KB levels, enabling influence estimation for billion-parameter diffusion models for the first time and supporting sub-second top-k retrieval.
+  [CVPR 2026][Image Generation][Diffusion Models] Proposes DMin, a scalable training data influence estimation framework for diffusion models. By using an efficient gradient compression pipeline…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Models
-  - Influence Estimation
-  - Gradient Compression
-  - KNN
-  - Scalability
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "Influence Estimation"
+  - "Gradient Compression"
+  - "KNN"
+  - "Scalability"
 date: 2026-05-08
 content_hash: c1cd28729b16a7b7
 ---

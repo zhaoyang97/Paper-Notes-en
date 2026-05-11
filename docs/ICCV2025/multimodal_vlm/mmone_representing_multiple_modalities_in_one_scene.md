@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MMOne: Representing Multiple Modalities in One Scene
 description: >-
-  [ICCV 2025][Multimodal VLM][Multimodal scene representation] MMOne is a general framework that addresses property disparity and granularity disparity in multi-modal scene representation through a modality modeling module (with modality indicators) and a multi-modal decomposition mechanism. It jointly models RGB, thermal, and language modalities within a single 3DGS representation, achieving consistent improvements across all modalities.
+  [ICCV 2025][Multimodal VLM][Multimodal scene representation] MMOne is a general framework that addresses property disparity and granularity disparity in multi-modal scene representation through a modality modeling module…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Multimodal scene representation
-  - 3D Gaussian splatting
-  - modality conflict
-  - modality decomposition
-  - thermal imaging
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Multimodal scene representation"
+  - "3D Gaussian splatting"
+  - "modality conflict"
+  - "modality decomposition"
+  - "thermal imaging"
 date: 2026-05-08
 content_hash: 281f39640b602d9e
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VSPO: Validating Semantic Pitfalls in Ontology via LLM-Based CQ Generation
 description: >-
-  [AAAI 2026][LLM/NLP][Competency Question Generation] This paper proposes the VSPO framework, which constructs a definition–axiom misalignment dataset and fine-tunes LLaMA-3.1-8B-Instruct to generate competency questions (CQs) capable of validating semantic pitfalls in ontologies (e.g., misuse of `allValuesFrom`). The approach surpasses GPT-4.1 by 26% in precision and 28.2% in recall.
+  [AAAI 2026][LLM/NLP][Competency Question Generation] This paper proposes the VSPO framework, which constructs a definition–axiom misalignment dataset and fine-tunes LLaMA-3.1-8B-Instruct to generate competency questions…
 tags:
-  - AAAI 2026
-  - LLM/NLP
-  - Competency Question Generation
-  - Semantic Pitfall Detection
-  - Ontology Validation
-  - LLM Fine-tuning
-  - Misalignment Injection
+  - "AAAI 2026"
+  - "LLM/NLP"
+  - "Competency Question Generation"
+  - "Semantic Pitfall Detection"
+  - "Ontology Validation"
+  - "LLM Fine-tuning"
+  - "Misalignment Injection"
 date: 2026-05-08
 content_hash: 49a21b43fbe189ce
 ---

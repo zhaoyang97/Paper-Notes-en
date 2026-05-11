@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SCALE: Selective Resource Allocation for Overcoming Performance Bottlenecks in Mathematical Test-time Scaling
 description: >-
-  [AAAI 2026][LLM Reasoning][Test-time compute] Grounded in the dual-process theory from cognitive science, SCALE decomposes mathematical problems into sub-problems and allocates compute resources according to difficulty (System 1 for fast computation vs. System 2 for deep reasoning). On AIME25, it improves Qwen3-32B from 57.50% to 71.25% while reducing token consumption by 33–53% compared to InftyThink.
+  [AAAI 2026][LLM Reasoning][Test-time compute] Grounded in the dual-process theory from cognitive science, SCALE decomposes mathematical problems into sub-problems and allocates compute resources according to difficulty (…
 tags:
-  - AAAI 2026
-  - LLM Reasoning
-  - Test-time compute
-  - dual-process theory
-  - mathematical reasoning
-  - resource allocation
-  - sub-problem decomposition
+  - "AAAI 2026"
+  - "LLM Reasoning"
+  - "Test-time compute"
+  - "dual-process theory"
+  - "mathematical reasoning"
+  - "resource allocation"
+  - "sub-problem decomposition"
 date: 2026-05-08
 content_hash: 2fb0112d4db6ba1a
 ---

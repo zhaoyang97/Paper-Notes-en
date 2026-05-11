@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TransiT: Transient Transformer for Non-line-of-sight Videography
 description: >-
-  [ICCV 2025][Robotics][Non-line-of-sight imaging] TransiT is a novel architecture for real-time NLOS video reconstruction that achieves 64×64 resolution at 10 FPS from sparse fast-scan (16×16, 0.4 ms/point) transient measurements. The system integrates transient compression, inter-frame feature fusion, and a spatiotemporal Transformer, and further proposes an MMD-based transfer learning strategy to bridge the distribution gap between synthetic and real data.
+  [ICCV 2025][Robotics][Non-line-of-sight imaging] TransiT is a novel architecture for real-time NLOS video reconstruction that achieves 64×64 resolution at 10 FPS from sparse fast-scan (16×16…
 tags:
-  - ICCV 2025
-  - Robotics
-  - Non-line-of-sight imaging
-  - NLOS video reconstruction
-  - Transformer
-  - transient signals
-  - transfer learning
+  - "ICCV 2025"
+  - "Robotics"
+  - "Non-line-of-sight imaging"
+  - "NLOS video reconstruction"
+  - "Transformer"
+  - "transient signals"
+  - "transfer learning"
 date: 2026-05-08
 content_hash: 1e8d7a4120d0e522
 ---

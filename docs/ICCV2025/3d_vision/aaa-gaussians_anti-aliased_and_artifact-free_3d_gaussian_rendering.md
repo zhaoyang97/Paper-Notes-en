@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AAA-Gaussians: Anti-Aliased and Artifact-Free 3D Gaussian Rendering
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] AAA-Gaussians proposes a unified 3D Gaussian rasterization framework that simultaneously addresses the three persistent problems of 3DGS—aliasing, projection distortion, and popping artifacts—through an adaptive 3D smoothing filter, view-space perspective-correct bounding computation, and frustum-based 3D culling, all within a single framework. The method substantially outperforms competing approaches under out-of-distribution viewpoint evaluation while maintaining real-time rendering performance.
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] AAA-Gaussians proposes a unified 3D Gaussian rasterization framework that simultaneously addresses the three persistent problems of 3DGS—aliasing, projection distortion…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - anti-aliasing
-  - artifact removal
-  - frustum culling
-  - real-time rendering
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "anti-aliasing"
+  - "artifact removal"
+  - "frustum culling"
+  - "real-time rendering"
 date: 2026-05-08
 content_hash: db48ff5a953d8ecd
 ---

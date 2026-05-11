@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FACTS: Table Summarization via Offline Template Generation with Agentic Workflows
 description: >-
-  [ACL 2026][LLM Safety][Table Summarization] This paper proposes FACTS (Fast, Accurate, and Privacy-Compliant Table Summarization), a three-stage agentic workflow that automatically generates reusable offline templates (SQL queries + Jinja2 templates) for fast, accurate, and privacy-compliant query-focused table summarization, achieving state-of-the-art performance across FeTaQA, QTSumm, and QFMTS benchmarks.
+  [ACL 2026][LLM Safety][Table Summarization] This paper proposes FACTS (Fast, Accurate, and Privacy-Compliant Table Summarization), a three-stage agentic workflow that automatically generates reusable offline templates (S…
 tags:
-  - ACL 2026
-  - LLM Safety
-  - Table Summarization
-  - Offline Templates
-  - Agentic Workflow
-  - SQL Generation
-  - Privacy Compliance
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Table Summarization"
+  - "Offline Templates"
+  - "Agentic Workflow"
+  - "SQL Generation"
+  - "Privacy Compliance"
 date: 2026-05-08
 content_hash: fab5c30cc169ae73
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AFMRL: Attribute-Enhanced Fine-Grained Multi-Modal Representation Learning in E-commerce
 description: >-
-  [ACL 2026][Image Generation][e-commerce retrieval] This paper proposes the AFMRL framework, which formulates fine-grained product understanding in e-commerce as an attribute generation task. An MLLM generates key attributes to enhance contrastive learning (AGCL), while retrieval performance serves as a reward signal to inversely optimize the attribute generator (RAR), achieving state-of-the-art retrieval performance on large-scale e-commerce datasets.
+  [ACL 2026][Image Generation][e-commerce retrieval] This paper proposes the AFMRL framework, which formulates fine-grained product understanding in e-commerce as an attribute generation task. An MLLM generates key attribu…
 tags:
-  - ACL 2026
-  - Image Generation
-  - e-commerce retrieval
-  - fine-grained representation learning
-  - attribute generation
-  - reinforcement learning alignment
-  - contrastive learning
+  - "ACL 2026"
+  - "Image Generation"
+  - "e-commerce retrieval"
+  - "fine-grained representation learning"
+  - "attribute generation"
+  - "reinforcement learning alignment"
+  - "contrastive learning"
 date: 2026-05-08
 content_hash: 531fd9ede1efa375
 ---

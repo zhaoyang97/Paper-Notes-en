@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FlashCap: Millisecond-Accurate Human Motion Capture via Flashing LEDs and Event-Based Vision
 description: >-
-  [CVPR 2026][Autonomous Driving][Event camera] FlashCap is proposed as the first motion capture system combining flashing LEDs with event cameras, where each LED is assigned a unique flashing frequency for identity recognition. The system enables the construction of FlashMotion, the first human motion dataset with 1000Hz annotation precision (7.15 million frames), and introduces the ResPose baseline, reducing motion timing error from ~50ms to ~5ms and lowering pose estimation MPJPE by approximately 40%.
+  [CVPR 2026][Autonomous Driving][Event camera] FlashCap is proposed as the first motion capture system combining flashing LEDs with event cameras…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Event camera
-  - human motion capture
-  - LED markers
-  - high temporal resolution
-  - spiking neural network
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Event camera"
+  - "human motion capture"
+  - "LED markers"
+  - "high temporal resolution"
+  - "spiking neural network"
 date: 2026-05-08
 content_hash: cade70ae78989dc5
 ---

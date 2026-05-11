@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TSPO: Temporal Sampling Policy Optimization for Long-form Video Language Understanding
 description: >-
-  [AAAI 2026][Video Understanding][Long-form video understanding] This paper formulates keyframe selection and language generation as a joint decision-making process, and optimizes a lightweight temporal agent's sampling policy end-to-end via GRPO-based reinforcement learning. It achieves state-of-the-art results on four long-form video understanding benchmarks (LongVideoBench +5.0%, MLVU +6.0% on LLaVA-Video-7B) and transfers zero-shot to other Video-MLLMs.
+  [AAAI 2026][Video Understanding][Long-form video understanding] This paper formulates keyframe selection and language generation as a joint decision-making process…
 tags:
-  - AAAI 2026
-  - Video Understanding
-  - Long-form video understanding
-  - keyframe sampling
-  - reinforcement learning
-  - temporal policy optimization
-  - video multimodal large language models
+  - "AAAI 2026"
+  - "Video Understanding"
+  - "Long-form video understanding"
+  - "keyframe sampling"
+  - "reinforcement learning"
+  - "temporal policy optimization"
+  - "video multimodal large language models"
 date: 2026-05-08
 content_hash: cc84218d53bfdf0c
 ---

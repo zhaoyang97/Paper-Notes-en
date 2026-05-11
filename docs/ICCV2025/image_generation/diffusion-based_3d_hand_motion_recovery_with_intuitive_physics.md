@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Diffusion-based 3D Hand Motion Recovery with Intuitive Physics
 description: >-
-  [ICCV 2025][Image Generation][Diffusion Models] This paper proposes a physics-augmented conditional diffusion model that refines per-frame 3D hand reconstruction results into temporally consistent motion sequences via an iterative denoising process, incorporating intuitive physics constraints (kinematic and stability constraints) to substantially improve reconstruction accuracy and physical plausibility.
+  [ICCV 2025][Image Generation][Diffusion Models] This paper proposes a physics-augmented conditional diffusion model that refines per-frame 3D hand reconstruction results into temporally consistent motion sequences via an…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Diffusion Models
-  - 3D Hand Reconstruction
-  - Motion Refinement
-  - Intuitive Physics
-  - Hand-Object Interaction
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "3D Hand Reconstruction"
+  - "Motion Refinement"
+  - "Intuitive Physics"
+  - "Hand-Object Interaction"
 date: 2026-05-08
 content_hash: f5b22f03866ae37f
 ---

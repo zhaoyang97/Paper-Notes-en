@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Changes in Real Time: Online Scene Change Detection with Multi-View Fusion
 description: >-
-  [CVPR 2026][3D Vision][Scene Change Detection] This paper presents the first scene change detection (SCD) method that simultaneously achieves online inference, pose-agnosticism, label-free operation, and multi-view consistency. By replacing hard-threshold heuristics with a self-supervised fusion (SSF) loss that integrates pixel-level and feature-level change cues into a 3DGS change representation, the proposed approach surpasses all existing offline methods in detection accuracy while operating in real time at over 10 FPS.
+  [CVPR 2026][3D Vision][Scene Change Detection] This paper presents the first scene change detection (SCD) method that simultaneously achieves online inference, pose-agnosticism, label-free operation…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Scene Change Detection
-  - 3D Gaussian Splatting
-  - Online Inference
-  - Self-Supervised Fusion
-  - Scene Update
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Scene Change Detection"
+  - "3D Gaussian Splatting"
+  - "Online Inference"
+  - "Self-Supervised Fusion"
+  - "Scene Update"
 date: 2026-05-08
 content_hash: 32a33ffdf8aa8a46
 ---

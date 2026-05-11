@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond Cosine Similarity: Magnitude-Aware CLIP for No-Reference Image Quality Assessment
 description: >-
-  [AAAI 2026][LLM Evaluation][NR-IQA] This paper proposes MA-CLIP, which discovers and exploits the **magnitude information** of CLIP image features as a complementary perceptual quality cue. Combined with cosine similarity, it achieves training-free adaptive dual-cue fusion for image quality assessment.
+  [AAAI 2026][LLM Evaluation][NR-IQA] This paper proposes MA-CLIP, which discovers and exploits the **magnitude information** of CLIP image features as a complementary perceptual quality cue. Combined with cosine similarit…
 tags:
-  - AAAI 2026
-  - LLM Evaluation
-  - NR-IQA
-  - CLIP
-  - feature magnitude
-  - Box-Cox transformation
-  - zero-shot quality assessment
+  - "AAAI 2026"
+  - "LLM Evaluation"
+  - "NR-IQA"
+  - "CLIP"
+  - "feature magnitude"
+  - "Box-Cox transformation"
+  - "zero-shot quality assessment"
 date: 2026-05-08
 content_hash: 6b6f1e53b8f78bc7
 ---

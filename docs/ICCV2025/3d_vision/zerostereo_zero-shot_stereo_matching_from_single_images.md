@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ZeroStereo: Zero-shot Stereo Matching from Single Images
 description: >-
-  [ICCV2025][3D Vision][stereo matching] This paper proposes ZeroStereo, a pipeline that starts from an arbitrary single image, uses monocular depth estimation to generate pseudo disparity, and synthesizes high-quality right-view images via a fine-tuned diffusion inpainting model. The approach achieves state-of-the-art zero-shot stereo matching generalization using only 35K synthetic training samples.
+  [ICCV2025][3D Vision][stereo matching] This paper proposes ZeroStereo, a pipeline that starts from an arbitrary single image, uses monocular depth estimation to generate pseudo disparity…
 tags:
-  - ICCV2025
-  - 3D Vision
-  - stereo matching
-  - zero-shot generalization
-  - diffusion inpainting
-  - monocular depth estimation
-  - view synthesis
+  - "ICCV2025"
+  - "3D Vision"
+  - "stereo matching"
+  - "zero-shot generalization"
+  - "diffusion inpainting"
+  - "monocular depth estimation"
+  - "view synthesis"
 date: 2026-05-08
 content_hash: a3096b7548121fc5
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Grasp2Grasp: Vision-Based Dexterous Grasp Translation via Schrödinger Bridges
 description: >-
-  [NeurIPS 2025][Robotics][Dexterous Grasp Transfer] This paper proposes modeling cross-morphology visual dexterous grasp transfer as a Schrödinger Bridge problem. By learning Score and Flow Matching ([SF]²M) in a latent space and designing physics-aware optimal transport cost functions (over pose, contact maps, grasp wrench space, and Jacobian manipulability), the method achieves distribution-level transfer of grasp intent across different robot hands without requiring paired data.
+  [NeurIPS 2025][Robotics][Dexterous Grasp Transfer] This paper proposes modeling cross-morphology visual dexterous grasp transfer as a Schrödinger Bridge problem. By learning Score and Flow Matching ([SF]²M) in a latent s…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - Dexterous Grasp Transfer
-  - Schrödinger Bridge
-  - Optimal Transport
-  - Score and Flow Matching
-  - Physics-Guided Cost Function
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "Dexterous Grasp Transfer"
+  - "Schrödinger Bridge"
+  - "Optimal Transport"
+  - "Score and Flow Matching"
+  - "Physics-Guided Cost Function"
 date: 2026-05-08
 content_hash: 2fdc218d8f58e35f
 ---

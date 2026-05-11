@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] HSKBenchmark: Modeling and Benchmarking Chinese Second Language Acquisition in Large Language Models through Curriculum Tuning
 description: >-
-  [AAAI 2026][Chinese second language acquisition] This paper introduces HSKBenchmark, the first benchmark for staged modeling and writing assessment of Chinese second language acquisition (SLA) in LLMs. It comprises HSK levels 3–6 textbooks (6.76M tokens), 16K synthetic instruction data, 30 test prompts, a linguistically-grounded evaluation system, and a curriculum tuning framework designed to simulate human acquisition trajectories.
+  [AAAI 2026][Interpretability][Chinese second language acquisition] This paper introduces HSKBenchmark, the first benchmark for staged modeling and writing assessment of Chinese second language acquisition (SLA) in LLMs.…
 tags:
-  - AAAI 2026
-  - Chinese second language acquisition
-  - curriculum tuning
-  - HSK benchmark
-  - writing assessment
-  - linguistic complexity
+  - "AAAI 2026"
+  - "Interpretability"
+  - "Chinese second language acquisition"
+  - "curriculum tuning"
+  - "HSK benchmark"
+  - "writing assessment"
+  - "linguistic complexity"
 date: 2026-05-08
 content_hash: ed688a205054e043
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Minerva: Evaluating Complex Video Reasoning
 description: >-
-  [ICCV 2025][video reasoning] This paper introduces Minerva — a manually annotated benchmark of 1,515 complex video reasoning QA pairs, each with 5 answer choices and a detailed reasoning trace, designed to evaluate the video reasoning capabilities of multimodal large language models. It further establishes a video reasoning error taxonomy (Temporal / Perceptual / Logical / Completeness) and the MiRA automated evaluation framework.
+  [ICCV 2025][Interpretability][video reasoning] This paper introduces Minerva — a manually annotated benchmark of 1,515 complex video reasoning QA pairs, each with 5 answer choices and a detailed reasoning trace…
 tags:
-  - ICCV 2025
-  - video reasoning
-  - reasoning trace evaluation
-  - video QA
-  - benchmark
-  - reasoning error taxonomy
+  - "ICCV 2025"
+  - "Interpretability"
+  - "video reasoning"
+  - "reasoning trace evaluation"
+  - "video QA"
+  - "benchmark"
+  - "reasoning error taxonomy"
 date: 2026-05-08
 content_hash: d696cb1ffed0da1a
 ---

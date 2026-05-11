@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Efficient Equivariant Transformer for Self-Driving Agent Modeling
 description: >-
-  [CVPR 2026][Autonomous Driving][SE(2)-equivariance] This paper proposes DriveGATr, an equivariant Transformer architecture based on 2D Projective Geometric Algebra (PGA) that achieves SE(2)-equivariance without explicit pairwise relative position encoding (RPE), attaining state-of-the-art performance on traffic simulation tasks while substantially reducing computational cost.
+  [CVPR 2026][Autonomous Driving][SE(2)-equivariance] This paper proposes DriveGATr, an equivariant Transformer architecture based on 2D Projective Geometric Algebra (PGA) that achieves SE(2)-equivariance without explicit…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - SE(2)-equivariance
-  - Geometric Algebra
-  - Transformer
-  - Traffic Simulation
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "SE(2)-equivariance"
+  - "Geometric Algebra"
+  - "Transformer"
+  - "Traffic Simulation"
 date: 2026-05-08
 content_hash: 0bf7c7acb653462f
 ---

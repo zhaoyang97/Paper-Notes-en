@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TAdaRAG: Task Adaptive Retrieval-Augmented Generation via On-the-Fly Knowledge Graph Construction
 description: >-
-  [AAAI 2026][Reinforcement Learning][RAG] This paper proposes TAdaRAG, a task-adaptive RAG framework that performs on-the-fly knowledge graph construction via intent-driven template routing, supervised fine-tuning, and REINFORCE-based reinforcement learning. It addresses three core limitations of conventional RAG—chunking-induced hallucination, broken reasoning chains, and irrelevant information interference—achieving state-of-the-art performance on 6 public benchmarks and 1 commercial scenario benchmark.
+  [AAAI 2026][Reinforcement Learning][RAG] This paper proposes TAdaRAG, a task-adaptive RAG framework that performs on-the-fly knowledge graph construction via intent-driven template routing, supervised fine-tuning…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - RAG
-  - Knowledge Graph
-  - Task Adaptation
-  - REINFORCE
-  - Long-context Understanding
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "RAG"
+  - "Knowledge Graph"
+  - "Task Adaptation"
+  - "REINFORCE"
+  - "Long-context Understanding"
 date: 2026-05-08
 content_hash: c41d8df965679063
 ---

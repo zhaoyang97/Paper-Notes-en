@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Generate, Analyze, and Refine: Training-Free Sound Source Localization via MLLM Meta-Reasoning
 description: >-
-  [CVPR 2026][Multimodal VLM][Sound Source Localization] This paper proposes GAR-SSL, a training-free sound source localization (SSL) framework that reframes SSL as a three-stage metacognitive reasoning process—Generate, Analyze, and Refine—leveraging the intrinsic reasoning capabilities of MLLMs via prompt engineering alone. The method achieves performance comparable to or surpassing supervised approaches on both single-source and multi-source localization benchmarks.
+  [CVPR 2026][Multimodal VLM][Sound Source Localization] This paper proposes GAR-SSL, a training-free sound source localization (SSL) framework that reframes SSL as a three-stage metacognitive reasoning process—Generate…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Sound Source Localization
-  - Multimodal Large Language Model
-  - Training-Free
-  - Meta-Reasoning
-  - Audio-Visual Correspondence
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Sound Source Localization"
+  - "Multimodal Large Language Model"
+  - "Training-Free"
+  - "Meta-Reasoning"
+  - "Audio-Visual Correspondence"
 date: 2026-05-08
 content_hash: 1f532a54df40debf
 ---

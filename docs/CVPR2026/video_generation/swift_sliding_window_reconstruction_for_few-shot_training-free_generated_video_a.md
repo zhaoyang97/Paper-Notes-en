@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SWIFT: Sliding Window Reconstruction for Few-Shot Training-Free Generated Video Attribution
 description: >-
-  [CVPR 2026][Video Generation][Generated video attribution] SWIFT introduces the novel task of "few-shot training-free generated video attribution," exploiting the temporal mapping property of 3D VAEs — where $K$ pixel frames correspond to a single latent frame — by performing two reconstructions (normal and corrupted) via fixed-length sliding windows. The ratio of reconstruction losses over overlapping frames serves as the attribution signal. Using only 20 samples, SWIFT achieves over 90% average attribution accuracy, with a 5-model average of 94%.
+  [CVPR 2026][Video Generation][Generated video attribution] SWIFT introduces the novel task of "few-shot training-free generated video attribution…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Generated video attribution
-  - 3D VAE
-  - sliding window reconstruction
-  - training-free
-  - temporal consistency
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Generated video attribution"
+  - "3D VAE"
+  - "sliding window reconstruction"
+  - "training-free"
+  - "temporal consistency"
 date: 2026-05-08
 content_hash: d968c5215b598c81
 ---

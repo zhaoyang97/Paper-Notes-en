@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Breaking the Tuning Barrier: Zero-Hyperparameters Yield Multi-Corner Analysis Via Learned Priors
 description: >-
-  [CVPR2026][Self-Supervised Learning][Yield Analysis] This paper proposes a zero-hyperparameter yield multi-corner analysis framework based on Learned Priors (TabPFN foundation model). By replacing traditional GP/normalizing flow hyperparameter tuning with in-context Bayesian inference, and combining automatic feature selection, Cross-Corner knowledge transfer, and uncertainty-driven active learning, the framework achieves an MRE as low as 0.11% with no manual tuning, reducing verification cost by over 10×.
+  [CVPR2026][Self-Supervised Learning][Yield Analysis] This paper proposes a zero-hyperparameter yield multi-corner analysis framework based on Learned Priors (TabPFN foundation model). By replacing traditional GP/normaliz…
 tags:
-  - CVPR2026
-  - Self-Supervised Learning
-  - Yield Analysis
-  - Multi-Corner Simulation
-  - Hyperparameter Tuning
-  - Learned Priors
-  - TabPFN
-  - Active Learning
-  - Integrated Circuit Design
+  - "CVPR2026"
+  - "Self-Supervised Learning"
+  - "Yield Analysis"
+  - "Multi-Corner Simulation"
+  - "Hyperparameter Tuning"
+  - "Learned Priors"
+  - "TabPFN"
+  - "Active Learning"
+  - "Integrated Circuit Design"
 date: 2026-05-08
 content_hash: 5937c5f90dc4d13f
 ---

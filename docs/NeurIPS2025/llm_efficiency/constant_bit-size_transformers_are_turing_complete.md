@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Constant Bit-Size Transformers Are Turing Complete
 description: >-
-  [NeurIPS 2025][LLM Efficiency][Turing completeness] This paper provides the first proof that a Transformer with constant bit-size precision and a fixed number of parameters — permitting only context window growth — is Turing complete. It establishes the exact complexity equivalence WINDOW[s(n)] = SPACE[s(n)], demonstrating that expanding the context window, rather than model size, suffices for universal computation.
+  [NeurIPS 2025][LLM Efficiency][Turing completeness] This paper provides the first proof that a Transformer with constant bit-size precision and a fixed number of parameters — permitting only context window growth — is Tu…
 tags:
-  - NeurIPS 2025
-  - LLM Efficiency
-  - Turing completeness
-  - transformer theory
-  - computational complexity
-  - Post machines
-  - context window
+  - "NeurIPS 2025"
+  - "LLM Efficiency"
+  - "Turing completeness"
+  - "transformer theory"
+  - "computational complexity"
+  - "Post machines"
+  - "context window"
 date: 2026-05-08
 content_hash: fc516acff5246a70
 ---

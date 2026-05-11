@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The Rise of Parameter Specialization for Knowledge Storage in Large Language Models
 description: >-
-  [NeurIPS 2025][LLM/NLP][Parameter Specialization] This paper systematically analyzes 20 open-source LLMs and finds that stronger models exhibit higher degrees of parameter specialization in MLP value vectors — i.e., semantically similar knowledge tends to be concentrated in a small subset of parameter vectors. Causal experiments further confirm a causal relationship between this specialization degree and model performance on knowledge tasks.
+  [NeurIPS 2025][LLM/NLP][Parameter Specialization] This paper systematically analyzes 20 open-source LLMs and finds that stronger models exhibit higher degrees of parameter specialization in MLP value vectors — i.e.…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - Parameter Specialization
-  - Knowledge Storage
-  - MLP Interpretability
-  - Knowledge Superposition
-  - Large Language Models
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "Parameter Specialization"
+  - "Knowledge Storage"
+  - "MLP Interpretability"
+  - "Knowledge Superposition"
+  - "Large Language Models"
 date: 2026-05-08
 content_hash: 42f3f4a4a1f0336d
 ---

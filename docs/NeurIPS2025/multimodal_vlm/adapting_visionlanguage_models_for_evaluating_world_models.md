@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Adapting Vision-Language Models for Evaluating World Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][world model evaluation] This paper proposes UNIVERSE (UNIfied Vision-language Evaluator for Rollouts in Simulated Environments), a unified semantic evaluator for world model rollouts constructed by fine-tuning only the projection head of PaliGemma 2 (0.07% of total parameters). UNIVERSE achieves performance comparable to task-specific models on action recognition and character recognition, while exhibiting strong alignment with human judgments.
+  [NeurIPS 2025][Multimodal VLM][world model evaluation] This paper proposes UNIVERSE (UNIfied Vision-language Evaluator for Rollouts in Simulated Environments)…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - world model evaluation
-  - VLM adaptation
-  - action recognition
-  - character recognition
-  - lightweight fine-tuning
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "world model evaluation"
+  - "VLM adaptation"
+  - "action recognition"
+  - "character recognition"
+  - "lightweight fine-tuning"
 date: 2026-05-08
 content_hash: 2a8d3135ad042aab
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Inpaint4Drag: Repurposing Inpainting Models for Drag-Based Image Editing via Bidirectional Warping
 description: >-
-  [ICCV 2025][Image Generation][Drag-based editing] This paper proposes Inpaint4Drag, which decomposes drag-based image editing into two stages: pixel-space bidirectional warping and image inpainting. Inspired by elastic object deformation, the proposed bidirectional warping algorithm enables real-time preview (0.01s) and efficient generation (0.3s), achieving a 600× speedup over existing methods while serving as a universal adapter for arbitrary inpainting models.
+  [ICCV 2025][Image Generation][Drag-based editing] This paper proposes Inpaint4Drag, which decomposes drag-based image editing into two stages: pixel-space bidirectional warping and image inpainting. Inspired by elastic o…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Drag-based editing
-  - image inpainting
-  - bidirectional warping
-  - real-time preview
-  - pixel-space deformation
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Drag-based editing"
+  - "image inpainting"
+  - "bidirectional warping"
+  - "real-time preview"
+  - "pixel-space deformation"
 date: 2026-05-08
 content_hash: 031a2ee4ccdcae5a
 ---

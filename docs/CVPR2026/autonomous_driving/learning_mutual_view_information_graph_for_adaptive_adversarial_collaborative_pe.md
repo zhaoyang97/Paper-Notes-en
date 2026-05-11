@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Learning Mutual View Information Graph for Adaptive Adversarial Collaborative Perception
 description: >-
-  [CVPR 2026][Autonomous Driving][Collaborative perception security] This paper proposes MVIG, an adversarial attack framework that unifies the vulnerability modeling of diverse defense-equipped collaborative perception systems into a Mutual View Information Graph (MVIG). By combining temporal graph learning with entropy-aware vulnerability search, MVIG enables adaptive fabrication attacks that reduce the defense success rate by up to 62%.
+  [CVPR 2026][Autonomous Driving][Collaborative perception security] This paper proposes MVIG, an adversarial attack framework that unifies the vulnerability modeling of diverse defense-equipped collaborative perception sy…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Collaborative perception security
-  - adversarial attacks
-  - graph neural networks
-  - temporal modeling
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Collaborative perception security"
+  - "adversarial attacks"
+  - "graph neural networks"
+  - "temporal modeling"
 date: 2026-05-08
 content_hash: 673bb9a317f6ca65
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TTF-VLA: Temporal Token Fusion via Pixel-Attention Integration for Vision-Language-Action Models
 description: >-
-  [AAAI 2026][Multimodal VLM][VLA] TTF-VLA proposes a training-free temporal token fusion method that selectively reuses visual tokens from historical frames via a dual-dimension mechanism combining grayscale pixel difference and attention-based semantic detection, improving inference quality of VLA models on robotic manipulation tasks with an average gain of 4.0 percentage points on LIBERO.
+  [AAAI 2026][Multimodal VLM][VLA] TTF-VLA proposes a training-free temporal token fusion method that selectively reuses visual tokens from historical frames via a dual-dimension mechanism combining grayscale pixel differe…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - VLA
-  - Temporal Token Fusion
-  - Training-Free Inference Enhancement
-  - Dual-Dimension Detection
-  - Keyframe Mechanism
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "VLA"
+  - "Temporal Token Fusion"
+  - "Training-Free Inference Enhancement"
+  - "Dual-Dimension Detection"
+  - "Keyframe Mechanism"
 date: 2026-05-08
 content_hash: 4c63621ffb4af4d5
 ---

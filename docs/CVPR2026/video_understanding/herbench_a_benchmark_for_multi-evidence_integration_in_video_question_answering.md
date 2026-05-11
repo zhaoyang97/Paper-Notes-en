@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HERBench: A Benchmark for Multi-Evidence Integration in Video Question Answering
 description: >-
-  [CVPR 2026][Video Understanding][Video QA benchmark] HERBench is a video question answering benchmark specifically designed for multi-evidence integration, comprising 26,806 five-choice questions, each structurally requiring the fusion of $\ge 3$ temporally dispersed, non-overlapping visual cues. By introducing the Minimum Required Frame Set (MRFS) metric, the benchmark exposes two critical bottlenecks in current Video-LLMs: insufficient frame retrieval and evidence fusion failure.
+  [CVPR 2026][Video Understanding][Video QA benchmark] HERBench is a video question answering benchmark specifically designed for multi-evidence integration, comprising 26,806 five-choice questions…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Video QA benchmark
-  - multi-evidence integration
-  - frame selection
-  - long video understanding
-  - temporal reasoning
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Video QA benchmark"
+  - "multi-evidence integration"
+  - "frame selection"
+  - "long video understanding"
+  - "temporal reasoning"
 date: 2026-05-08
 content_hash: 5fc6caca1623ce21
 ---

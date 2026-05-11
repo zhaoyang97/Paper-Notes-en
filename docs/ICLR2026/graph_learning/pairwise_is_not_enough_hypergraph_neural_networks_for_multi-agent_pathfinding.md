@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Pairwise is Not Enough: Hypergraph Neural Networks for Multi-Agent Pathfinding
 description: >-
-  [ICLR2026][Graph Learning][MAPF] This paper proposes HMAGAT, which replaces the pairwise message passing of GNNs with a directed hypergraph attention network to model group interactions in multi-agent pathfinding, surpassing a 85M-parameter SOTA model using only 1M parameters and 1% of the training data.
+  [ICLR2026][Graph Learning][MAPF] This paper proposes HMAGAT, which replaces the pairwise message passing of GNNs with a directed hypergraph attention network to model group interactions in multi-agent pathfinding…
 tags:
-  - ICLR2026
-  - Graph Learning
-  - MAPF
-  - Hypergraph Neural Networks
-  - Attention Mechanism
-  - Imitation Learning
-  - Group Interaction
+  - "ICLR2026"
+  - "Graph Learning"
+  - "MAPF"
+  - "Hypergraph Neural Networks"
+  - "Attention Mechanism"
+  - "Imitation Learning"
+  - "Group Interaction"
 date: 2026-05-08
 content_hash: d2d9450e558870b3
 ---

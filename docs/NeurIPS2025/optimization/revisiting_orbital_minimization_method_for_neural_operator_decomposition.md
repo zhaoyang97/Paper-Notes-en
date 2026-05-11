@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Revisiting Orbital Minimization Method for Neural Operator Decomposition
 description: >-
-  [NeurIPS 2025][Optimization][Spectral Decomposition] This paper revisits the classical Orbital Minimization Method (OMM) originating from computational chemistry, provides a concise linear-algebraic consistency proof, reveals its deep connections to Sanger's rule and streaming PCA, and generalizes it into a unified framework for training neural networks to perform spectral decomposition of positive semidefinite operators.
+  [NeurIPS 2025][Optimization][Spectral Decomposition] This paper revisits the classical Orbital Minimization Method (OMM) originating from computational chemistry, provides a concise linear-algebraic consistency proof…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Spectral Decomposition
-  - Orbital Minimization Method
-  - Eigenfunction Learning
-  - Neural Operator
-  - Self-Supervised Learning
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Spectral Decomposition"
+  - "Orbital Minimization Method"
+  - "Eigenfunction Learning"
+  - "Neural Operator"
+  - "Self-Supervised Learning"
 date: 2026-05-08
 content_hash: 4dc083fead906146
 ---

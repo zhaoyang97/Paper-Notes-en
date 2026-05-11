@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Einstein Fields: A Neural Perspective To Computational General Relativity
 description: >-
-  [ICLR 2026][3D Vision][Neural Fields] This paper proposes EinFields, the first framework to apply neural implicit representations to the compression of four-dimensional general relativity simulations. By encoding the metric tensor field as compact neural network weights, it achieves 4000× storage compression and 5–7 digits of numerical precision, while tensor derivatives obtained via automatic differentiation are 5 orders of magnitude more accurate than those from finite differences.
+  [ICLR 2026][3D Vision][Neural Fields] This paper proposes EinFields, the first framework to apply neural implicit representations to the compression of four-dimensional general relativity simulations. By encoding the met…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Neural Fields
-  - General Relativity
-  - Tensor Field Compression
-  - Numerical Relativity
-  - Automatic Differentiation
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Neural Fields"
+  - "General Relativity"
+  - "Tensor Field Compression"
+  - "Numerical Relativity"
+  - "Automatic Differentiation"
 date: 2026-05-08
 content_hash: 52c52ab38aabcbe9
 ---

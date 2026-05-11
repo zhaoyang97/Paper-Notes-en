@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EMoTive: Event-Guided Trajectory Modeling for 3D Motion Estimation
 description: >-
-  [ICCV 2025][Video Understanding][Event Camera] This paper proposes EMoTive, an event camera-based 3D motion estimation framework that encodes fine-grained temporal evolution via Event Kymograph and models spatiotemporal trajectories using event-density-guided non-uniform NURBS parametric curves. Optical flow and motion-in-depth fields are derived from these trajectories, achieving state-of-the-art performance on the newly constructed CarlaEvent3D dataset and real-world benchmarks.
+  [ICCV 2025][Video Understanding][Event Camera] This paper proposes EMoTive, an event camera-based 3D motion estimation framework that encodes fine-grained temporal evolution via Event Kymograph and models spatiotemporal…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - Event Camera
-  - 3D Motion Estimation
-  - Non-uniform Parametric Curves
-  - Optical Flow
-  - Motion in Depth
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "Event Camera"
+  - "3D Motion Estimation"
+  - "Non-uniform Parametric Curves"
+  - "Optical Flow"
+  - "Motion in Depth"
 date: 2026-05-08
 content_hash: 351393f457276e05
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MDD: A Dataset for Text-and-Music Conditioned Duet Dance Generation
 description: >-
-  [ICCV 2025][Human Understanding][duet dance generation] This paper introduces the Multimodal DuetDance (MDD) dataset — the first large-scale, professional-grade duet dance dataset simultaneously integrating motion, music, and text descriptions. MDD comprises 620 minutes of motion capture data spanning 15 dance styles and over 10K fine-grained text annotations, and defines two new tasks: Text-to-Duet and Text-to-Dance Accompaniment.
+  [ICCV 2025][Human Understanding][duet dance generation] This paper introduces the Multimodal DuetDance (MDD) dataset — the first large-scale, professional-grade duet dance dataset simultaneously integrating motion, music…
 tags:
-  - ICCV 2025
-  - Human Understanding
-  - duet dance generation
-  - multimodal dataset
-  - text-conditioned motion generation
-  - motion capture
-  - SMPL-X
+  - "ICCV 2025"
+  - "Human Understanding"
+  - "duet dance generation"
+  - "multimodal dataset"
+  - "text-conditioned motion generation"
+  - "motion capture"
+  - "SMPL-X"
 date: 2026-05-08
 content_hash: a179ca7719f15987
 ---

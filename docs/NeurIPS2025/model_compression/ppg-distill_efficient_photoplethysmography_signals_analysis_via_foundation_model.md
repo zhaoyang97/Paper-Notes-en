@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PPG-Distill: Efficient Photoplethysmography Signals Analysis via Foundation Model Distillation
 description: >-
-  [NeurIPS 2025][Model Compression][Knowledge Distillation] PPG-Distill proposes a knowledge distillation framework tailored for PPG signals. By combining prediction-level, feature-level, and patch-level (morphology + rhythm) distillation, it transfers knowledge from large PPG foundation models to lightweight student models, achieving up to 21.8% performance improvement alongside 7× inference speedup and 19× memory compression.
+  [NeurIPS 2025][Model Compression][Knowledge Distillation] PPG-Distill proposes a knowledge distillation framework tailored for PPG signals. By combining prediction-level, feature-level…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Knowledge Distillation
-  - PPG Signals
-  - Foundation Model Compression
-  - Waveform Morphology Distillation
-  - Rhythm Distillation
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Knowledge Distillation"
+  - "PPG Signals"
+  - "Foundation Model Compression"
+  - "Waveform Morphology Distillation"
+  - "Rhythm Distillation"
 date: 2026-05-08
 content_hash: 034c7b9331a13dbd
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VoxMind: An End-to-End Agentic Spoken Dialogue System
 description: >-
-  [ACL 2026][Dialogue Systems][End-to-end spoken dialogue] This paper proposes VoxMind, a unified framework that endows end-to-end spoken dialogue models with agentic capabilities: explicit reasoning through a "Think-before-Speak" mechanism, combined with a multi-agent dynamic tool management architecture that decouples reasoning latency from tool scale, improving task completion rate from baseline 34.88% to 74.57%, surpassing Gemini-2.5-Pro.
+  [ACL 2026][Dialogue Systems][End-to-end spoken dialogue] This paper proposes VoxMind, a unified framework that endows end-to-end spoken dialogue models with agentic capabilities: explicit reasoning through a "Think-befor…
 tags:
-  - ACL 2026
-  - Dialogue Systems
-  - End-to-end spoken dialogue
-  - tool invocation
-  - think-speak mechanism
-  - multi-agent dynamic tool management
-  - speech agent
+  - "ACL 2026"
+  - "Dialogue Systems"
+  - "End-to-end spoken dialogue"
+  - "tool invocation"
+  - "think-speak mechanism"
+  - "multi-agent dynamic tool management"
+  - "speech agent"
 date: 2026-05-08
 content_hash: 88e27e2e2a8c04ca
 ---

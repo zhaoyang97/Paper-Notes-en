@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PASG: A Closed-Loop Framework for Automated Geometric Primitive Extraction and Semantic Anchoring in Robotic Manipulation
 description: >-
-  [ICCV 2025][Robotics][Geometric Primitive Extraction] This paper proposes PASG (Primitive-Aware Semantic Grounding), a closed-loop framework that dynamically couples low-level geometric features with high-level task semantics through automated geometric primitive extraction (keypoints, functional axes, principal axes) and VLM-driven semantic anchoring. PASG achieves near-human-annotation performance on robotic manipulation tasks, and introduces the Robocasa-PA benchmark along with the fine-tuned model Qwen2.5VL-PA.
+  [ICCV 2025][Robotics][Geometric Primitive Extraction] This paper proposes PASG (Primitive-Aware Semantic Grounding), a closed-loop framework that dynamically couples low-level geometric features with high-level task sema…
 tags:
-  - ICCV 2025
-  - Robotics
-  - Geometric Primitive Extraction
-  - Semantic Anchoring
-  - Robotic Manipulation
-  - VLM
-  - Closed-Loop Framework
+  - "ICCV 2025"
+  - "Robotics"
+  - "Geometric Primitive Extraction"
+  - "Semantic Anchoring"
+  - "Robotic Manipulation"
+  - "VLM"
+  - "Closed-Loop Framework"
 date: 2026-05-08
 content_hash: 33fc2a588fbe8333
 ---

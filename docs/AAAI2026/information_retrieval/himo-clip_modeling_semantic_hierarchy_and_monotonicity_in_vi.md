@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] HiMo-CLIP: Modeling Semantic Hierarchy and Monotonicity in Vision-Language Alignment
 description: >-
-  [AAAI 2026][Vision-language alignment] This paper proposes HiMo-CLIP, which applies in-batch PCA decomposition (HiDe) to text embeddings to extract multi-granularity semantic components, combined with a dual-branch monotonicity-aware contrastive loss (MoLo). Without modifying the encoder, the model learns that "more complete text should yield higher alignment scores" — a property termed semantic monotonicity — and significantly outperforms existing methods on long-text retrieval.
+  [AAAI 2026][Information Retrieval & RAG][Vision-language alignment] This paper proposes HiMo-CLIP, which applies in-batch PCA decomposition (HiDe) to text embeddings to extract multi-granularity semantic components…
 tags:
-  - AAAI 2026
-  - Vision-language alignment
-  - semantic hierarchy
-  - semantic monotonicity
-  - contrastive learning
-  - long-text retrieval
+  - "AAAI 2026"
+  - "Information Retrieval & RAG"
+  - "Vision-language alignment"
+  - "semantic hierarchy"
+  - "semantic monotonicity"
+  - "contrastive learning"
+  - "long-text retrieval"
 date: 2026-05-08
 content_hash: e48ff87d5194390f
 ---

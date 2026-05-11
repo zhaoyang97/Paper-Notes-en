@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LeapFactual: Reliable Visual Counterfactual Explanation Using Conditional Flow Matching
 description: >-
-  [NeurIPS 2025][Image Generation][Counterfactual Explanation] This paper proposes LeapFactual, a counterfactual explanation algorithm based on Conditional Flow Matching (CFM), which bridges flattened and structured latent spaces via a "Lift-Land" (Leap) mechanism to generate reliable, in-distribution counterfactual samples that remain effective even when the learned decision boundary deviates from the true boundary.
+  [NeurIPS 2025][Image Generation][Counterfactual Explanation] This paper proposes LeapFactual, a counterfactual explanation algorithm based on Conditional Flow Matching (CFM)…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Counterfactual Explanation
-  - Conditional Flow Matching
-  - Reliability
-  - Model-Agnostic
-  - Information Blending
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Counterfactual Explanation"
+  - "Conditional Flow Matching"
+  - "Reliability"
+  - "Model-Agnostic"
+  - "Information Blending"
 date: 2026-05-08
 content_hash: 29132396399a7ea9
 ---

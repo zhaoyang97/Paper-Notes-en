@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Machine Learning for Sustainable Rice Production: Region-Scale Monitoring of Water-Saving Practices in Punjab, India
 description: >-
-  [AAAI 2026][Remote Sensing][Rice cultivation monitoring] This paper proposes a dimensional classification approach that decouples the recognition of water-saving rice practices into two independent binary classification tasks — a seeding dimension (DSR vs. PTR) and an irrigation dimension (AWD vs. CF). Using only Sentinel-1 SAR imagery, the method achieves seeding F1=0.80 and irrigation F1=0.74, and performs large-scale inference over 3 million+ parcels in Punjab, with district-level adoption rates strongly correlated with government statistics (Spearman ρ=0.69).
+  [AAAI 2026][Remote Sensing][Rice cultivation monitoring] This paper proposes a dimensional classification approach that decouples the recognition of water-saving rice practices into two independent binary classification…
 tags:
-  - AAAI 2026
-  - Remote Sensing
-  - Rice cultivation monitoring
-  - water-saving practices
-  - Sentinel-1 SAR
-  - dimensional classification
-  - direct-seeded rice (DSR)
+  - "AAAI 2026"
+  - "Remote Sensing"
+  - "Rice cultivation monitoring"
+  - "water-saving practices"
+  - "Sentinel-1 SAR"
+  - "dimensional classification"
+  - "direct-seeded rice (DSR)"
 date: 2026-05-08
 content_hash: a8ac5d22454a30e7
 ---

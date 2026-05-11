@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Listen Like a Teacher: Mitigating Whisper Hallucinations using Adaptive Layer Attention and Knowledge Distillation
 description: >-
-  [AAAI2026][Audio & Speech][Speech Recognition] A two-stage framework is proposed: Adaptive Layer Attention (ALA) fuses multi-layer representations from the Whisper encoder to enhance noise robustness, while Multi-Objective Knowledge Distillation (MOKD) aligns the semantic and attention distributions of a clean-speech teacher with a noisy-speech student — achieving significant reductions in hallucination rate and WER on multilingual noisy ASR benchmarks.
+  [AAAI2026][Audio & Speech][Speech Recognition] A two-stage framework is proposed: Adaptive Layer Attention (ALA) fuses multi-layer representations from the Whisper encoder to enhance noise robustness…
 tags:
-  - AAAI2026
+  - "AAAI2026"
   - "Audio & Speech"
-  - Speech Recognition
-  - Whisper
-  - Hallucination Mitigation
-  - Adaptive Layer Attention
-  - Knowledge Distillation
-  - Noise Robustness
+  - "Speech Recognition"
+  - "Whisper"
+  - "Hallucination Mitigation"
+  - "Adaptive Layer Attention"
+  - "Knowledge Distillation"
+  - "Noise Robustness"
 date: 2026-05-08
 content_hash: 2dc55e4cb31af6b2
 ---

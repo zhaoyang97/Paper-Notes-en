@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Beyond Ground-Truth: Leveraging Image Quality Priors for Real-World Image Restoration
 description: >-
-  [CVPR 2026][Image Restoration] This paper proposes IQPIR, a framework that introduces image quality priors (IQP) derived from pretrained NR-IQA models as conditioning signals. Through three mechanisms—quality-conditioned Transformer, dual Codebook architecture, and quality optimization in discrete representation space—IQPIR guides the restoration process toward maximal perceptual quality, achieving state-of-the-art performance on blind face restoration and related tasks.
+  [CVPR 2026][Image Restoration][Image Quality Prior] This paper proposes IQPIR, a framework that introduces image quality priors (IQP) derived from pretrained NR-IQA models as conditioning signals. Through three mechanism…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Image Quality Prior
-  - Dual Codebook
-  - NR-IQA
-  - Quality-Conditioned
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Image Quality Prior"
+  - "Dual Codebook"
+  - "NR-IQA"
+  - "Quality-Conditioned"
 date: 2026-05-08
 content_hash: 08aa748c3c0d5804
 ---

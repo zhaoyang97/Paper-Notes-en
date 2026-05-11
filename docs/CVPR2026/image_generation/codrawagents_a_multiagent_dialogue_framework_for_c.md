@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] coDrawAgents: A Multi-Agent Dialogue Framework for Compositional Image Generation
 description: >-
-  [CVPR 2026][Image Generation][compositional T2I generation] This paper proposes coDrawAgents, an interactive multi-agent dialogue framework in which four specialized agents — Interpreter, Planner, Checker, and Painter — collaborate in a closed loop. A divide-and-conquer strategy incrementally plans layouts group by group according to semantic priority, grounding reasoning in canvas visual context with explicit error correction. The framework achieves an Overall Score of 0.94 on GenEval, substantially outperforming GPT Image 1 (0.84), and reaches 85.17 SOTA on DPG-Bench.
+  [CVPR 2026][Image Generation][compositional T2I generation] This paper proposes coDrawAgents, an interactive multi-agent dialogue framework in which four specialized agents — Interpreter, Planner, Checker…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - compositional T2I generation
-  - multi-agent dialogue
-  - layout planning
-  - visual context grounding
-  - error correction
+  - "CVPR 2026"
+  - "Image Generation"
+  - "compositional T2I generation"
+  - "multi-agent dialogue"
+  - "layout planning"
+  - "visual context grounding"
+  - "error correction"
 date: 2026-05-08
 content_hash: 788cee59e0d5157c
 ---

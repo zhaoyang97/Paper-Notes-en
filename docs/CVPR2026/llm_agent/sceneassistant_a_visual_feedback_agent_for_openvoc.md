@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] SceneAssistant: A Visual Feedback Agent for Open-Vocabulary 3D Scene Generation
 description: >-
-  [CVPR 2026][LLM Agent][3D scene generation] This paper proposes SceneAssistant—a VLM agentic framework driven purely by visual feedback—that designs 14 functionally complete Action APIs enabling Gemini-3.0-Flash to iteratively generate and refine open-vocabulary 3D scenes within a ReAct closed loop, requiring neither predefined spatial relation templates nor external layout solvers. On a human evaluation of 30 scenes, it achieves a Layout score of 7.600 (vs. SceneWeaver 5.800) and a Human Preference rate of 65%.
+  [CVPR 2026][LLM Agent][3D scene generation] This paper proposes SceneAssistant—a VLM agentic framework driven purely by visual feedback—that designs 14 functionally complete Action APIs enabling Gemini-3.0-Flash to itera…
 tags:
-  - CVPR 2026
-  - LLM Agent
-  - 3D scene generation
-  - open-vocabulary
-  - VLM agent
-  - visual feedback
-  - ReAct
-  - Action API
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "3D scene generation"
+  - "open-vocabulary"
+  - "VLM agent"
+  - "visual feedback"
+  - "ReAct"
+  - "Action API"
 date: 2026-05-08
 content_hash: 8263ecdc2ee7d08a
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Scalable Oversight via Partitioned Human Supervision
 description: >-
-  [ICLR2026][LLM Agent][Scalable oversight] This paper proposes a scalable oversight framework based on partitioned human supervision. When tasks exceed the competence of any single expert, domain experts provide complementary labels (i.e., excluding incorrect options) to construct an unbiased accuracy estimator, enabling evaluation and training of AI systems without requiring complete annotations.
+  [ICLR2026][LLM Agent][Scalable oversight] This paper proposes a scalable oversight framework based on partitioned human supervision. When tasks exceed the competence of any single expert…
 tags:
-  - ICLR2026
-  - LLM Agent
-  - Scalable oversight
-  - complementary labels
-  - partitioned human supervision
-  - unbiased estimation
-  - agent training
+  - "ICLR2026"
+  - "LLM Agent"
+  - "Scalable oversight"
+  - "complementary labels"
+  - "partitioned human supervision"
+  - "unbiased estimation"
+  - "agent training"
 date: 2026-05-08
 content_hash: bb8b7dcaa0049471
 ---

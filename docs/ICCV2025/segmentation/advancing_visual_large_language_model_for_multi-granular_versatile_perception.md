@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Advancing Visual Large Language Model for Multi-granular Versatile Perception
 description: >-
-  [ICCV 2025][Segmentation][VLLM] This paper proposes MVP-LM, a multi-granular versatile perception framework built upon a visual large language model. Through a novel multi-granular decoder and a CoT-inspired data unification strategy, MVP-LM is the first single model to simultaneously support all four perception combinations—box and mask predictions under both word-level and sentence-level instructions—achieving competitive performance on panoptic segmentation, object detection, visual grounding, and referring expression segmentation.
+  [ICCV 2025][Segmentation][VLLM] This paper proposes MVP-LM, a multi-granular versatile perception framework built upon a visual large language model. Through a novel multi-granular decoder and a CoT-inspired data unifica…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - VLLM
-  - multi-granular perception
-  - unified framework
-  - CoT data curation
-  - panoptic segmentation
+  - "ICCV 2025"
+  - "Segmentation"
+  - "VLLM"
+  - "multi-granular perception"
+  - "unified framework"
+  - "CoT data curation"
+  - "panoptic segmentation"
 date: 2026-05-08
 content_hash: ec643c0550a8c7a5
 ---

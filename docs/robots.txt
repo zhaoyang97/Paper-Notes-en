@@ -3,3 +3,5 @@ Allow: /
 Crawl-delay: 1
 
 Sitemap: https://en.papernotes.org/sitemap.xml
+Sitemap: https://en.papernotes.org/sitemap-sections.xml
+Sitemap: https://en.papernotes.org/sitemap-focus.xml

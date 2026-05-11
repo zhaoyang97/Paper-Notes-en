@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SwitchCraft: Training-Free Multi-Event Video Generation with Attention Controls
 description: >-
-  [CVPR 2026][Video Generation][Multi-event video generation] This paper proposes SwitchCraft, a training-free multi-event video generation framework that achieves clear temporal transitions and scene consistency without modifying model weights, via Event-Aligned Query Steering (EAQS) to align frame-level attention to corresponding event prompts, and Auto-Balance Strength Solver (ABSS) to adaptively balance guidance strength.
+  [CVPR 2026][Video Generation][Multi-event video generation] This paper proposes SwitchCraft, a training-free multi-event video generation framework that achieves clear temporal transitions and scene consistency without m…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Multi-event video generation
-  - attention control
-  - training-free framework
-  - diffusion models
-  - temporal alignment
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Multi-event video generation"
+  - "attention control"
+  - "training-free framework"
+  - "diffusion models"
+  - "temporal alignment"
 date: 2026-05-08
 content_hash: f5473682ac0049e4
 ---

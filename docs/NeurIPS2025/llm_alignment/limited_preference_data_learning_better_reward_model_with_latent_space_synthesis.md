@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Limited Preference Data? Learning Better Reward Model with Latent Space Synthesis
 description: >-
-  [NeurIPS 2025][LLM Alignment][reward modeling] This paper proposes LENS, a framework that synthesizes preference data pairs in the latent space of LLM embeddings via a VAE, bypassing costly text generation and achieving substantial improvements in reward model performance at dramatically reduced computational cost (16,000× smaller model, 18× faster generation).
+  [NeurIPS 2025][LLM Alignment][reward modeling] This paper proposes LENS, a framework that synthesizes preference data pairs in the latent space of LLM embeddings via a VAE…
 tags:
-  - NeurIPS 2025
-  - LLM Alignment
-  - reward modeling
-  - latent space synthesis
-  - VAE
-  - preference data augmentation
-  - RLHF
+  - "NeurIPS 2025"
+  - "LLM Alignment"
+  - "reward modeling"
+  - "latent space synthesis"
+  - "VAE"
+  - "preference data augmentation"
+  - "RLHF"
 date: 2026-05-08
 content_hash: 408918d006c5fe32
 ---

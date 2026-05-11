@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Aligning the True Semantics: Constrained Decoupling and Distribution Sampling for Cross-Modal Alignment
 description: >-
-  [AAAI 2026][Multimodal VLM][Cross-modal alignment] This paper proposes the CDDS algorithm, which decouples embeddings into semantic and modality components via a dual-path UNet, and employs a distribution sampling method to achieve cross-modal semantic alignment indirectly, avoiding distribution distortion caused by directly adjusting embeddings. CDDS surpasses the state of the art by 6.6%–14.2% on Flickr30K and MS-COCO.
+  [AAAI 2026][Multimodal VLM][Cross-modal alignment] This paper proposes the CDDS algorithm, which decouples embeddings into semantic and modality components via a dual-path UNet…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Cross-modal alignment
-  - embedding decoupling
-  - distribution sampling
-  - image-text retrieval
-  - contrastive learning
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Cross-modal alignment"
+  - "embedding decoupling"
+  - "distribution sampling"
+  - "image-text retrieval"
+  - "contrastive learning"
 date: 2026-05-08
 content_hash: f811371dc4db0817
 ---

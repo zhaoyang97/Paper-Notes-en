@@ -2,15 +2,16 @@
 title: >-
   [Paper Note] TikZero: Zero-Shot Text-Guided Graphics Program Synthesis
 description: >-
-  [ICCV 2025 (Highlight)][Graphics Program Synthesis] This paper proposes TikZero, which decouples graphics program generation from text understanding by using image representations as an intermediate bridge, enabling zero-shot text-guided TikZ graphics program synthesis without text-aligned training data. TikZero substantially outperforms baseline methods, and its end-to-end fine-tuned variant TikZero+ matches or surpasses large commercial models such as GPT-4o.
+  [ICCV 2025 (Highlight)][Code Intelligence][Graphics Program Synthesis] This paper proposes TikZero, which decouples graphics program generation from text understanding by using image representations as an intermediate br…
 tags:
-  - ICCV 2025 (Highlight)
-  - Graphics Program Synthesis
-  - TikZ
-  - Zero-Shot
-  - Text-Guided
-  - Multimodal Language Model
-  - Image Bridging
+  - "ICCV 2025 (Highlight)"
+  - "Code Intelligence"
+  - "Graphics Program Synthesis"
+  - "TikZ"
+  - "Zero-Shot"
+  - "Text-Guided"
+  - "Multimodal Language Model"
+  - "Image Bridging"
 date: 2026-05-08
 content_hash: 716492808f35f93a
 ---

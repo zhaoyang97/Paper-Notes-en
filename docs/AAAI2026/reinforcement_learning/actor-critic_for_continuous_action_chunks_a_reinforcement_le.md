@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Actor-Critic for Continuous Action Chunks: A Reinforcement Learning Framework for Long-Horizon Robotic Manipulation with Sparse Reward
 description: >-
-  [AAAI 2026][Reinforcement Learning][action chunking] AC3 proposes an actor-critic framework that directly learns continuous action sequences (action chunks), stabilizing long-horizon robotic manipulation under sparse rewards via an asymmetric actor update rule—updating the actor only from successful trajectories—and self-supervised anchor-based intrinsic rewards. The method achieves superior success rates over existing approaches across 25 tasks on BiGym and RLBench.
+  [AAAI 2026][Reinforcement Learning][action chunking] AC3 proposes an actor-critic framework that directly learns continuous action sequences (action chunks)…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - action chunking
-  - actor-critic
-  - sparse reward
-  - long-horizon manipulation
-  - self-supervised reward shaping
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "action chunking"
+  - "actor-critic"
+  - "sparse reward"
+  - "long-horizon manipulation"
+  - "self-supervised reward shaping"
 date: 2026-05-08
 content_hash: af2b654bd1703a5d
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Data Complexity of Querying Description Logic Knowledge Bases under Cost-Based Semantics
 description: >-
-  [AAAI 2026][Description Logics] This paper systematically investigates the data complexity of query answering over weighted description logic knowledge bases under cost-based semantics. It establishes that optimal-cost semantics is decidable within $\Delta_2^p$, and delivers a surprising positive result: for DL-Lite$_{\text{bool}}^{\mathcal{H}}$ ontologies with a fixed cost bound, both certain answers to instance queries and possible answers to conjunctive queries admit first-order rewritings, achieving the lowest possible data complexity (AC$^0$).
+  [AAAI 2026][Description Logics] This paper systematically investigates the data complexity of query answering over weighted description logic knowledge bases under cost-based semantics. It establishes that optimal-cost s…
 tags:
-  - AAAI 2026
-  - Description Logics
-  - Cost-Based Semantics
-  - Inconsistency Tolerance
-  - Ontology-Mediated Query Answering
-  - Computational Complexity
+  - "AAAI 2026"
+  - "Description Logics"
+  - "Cost-Based Semantics"
+  - "Inconsistency Tolerance"
+  - "Ontology-Mediated Query Answering"
+  - "Computational Complexity"
 date: 2026-05-08
 content_hash: c1e2db7a3eab262b
 ---

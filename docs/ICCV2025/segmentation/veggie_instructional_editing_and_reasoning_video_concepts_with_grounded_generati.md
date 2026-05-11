@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VEGGIE: Instructional Editing and Reasoning Video Concepts with Grounded Generation
 description: >-
-  [ICCV 2025][Segmentation][Video Editing] VEGGIE proposes an end-to-end unified framework that bridges an MLLM with a video diffusion model, enabling a single model to simultaneously accomplish 8 tasks—including instructional video editing, concept grounding, and reasoning segmentation—using only the diffusion loss.
+  [ICCV 2025][Segmentation][Video Editing] VEGGIE proposes an end-to-end unified framework that bridges an MLLM with a video diffusion model…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - Video Editing
-  - Instructional Editing
-  - Video Concept Grounding
-  - Reasoning Segmentation
-  - Unified Multi-Task Model
+  - "ICCV 2025"
+  - "Segmentation"
+  - "Video Editing"
+  - "Instructional Editing"
+  - "Video Concept Grounding"
+  - "Reasoning Segmentation"
+  - "Unified Multi-Task Model"
 date: 2026-05-08
 content_hash: 2a2bab26b0c82e5c
 ---

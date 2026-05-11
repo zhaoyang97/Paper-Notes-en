@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Membership Privacy Risks of Sharpness Aware Minimization
 description: >-
-  [ICLR 2026][AI Safety][Sharpness-Aware Minimization] This paper presents the first systematic study demonstrating that models trained with SAM (Sharpness-Aware Minimization), despite achieving better generalization, are more vulnerable to membership inference attacks (MIA) than SGD-trained models. Two complementary explanations are provided through theoretical analysis and experiments: memorization behavior and variance contraction.
+  [ICLR 2026][AI Safety][Sharpness-Aware Minimization] This paper presents the first systematic study demonstrating that models trained with SAM (Sharpness-Aware Minimization), despite achieving better generalization…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - Sharpness-Aware Minimization
-  - Membership Inference Attack
-  - Privacy Leakage
-  - Memorization
-  - Variance Reduction
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Sharpness-Aware Minimization"
+  - "Membership Inference Attack"
+  - "Privacy Leakage"
+  - "Memorization"
+  - "Variance Reduction"
 date: 2026-05-08
 content_hash: 857c9052a3faf15a
 ---

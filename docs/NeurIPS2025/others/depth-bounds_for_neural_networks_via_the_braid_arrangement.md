@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Depth-Bounds for Neural Networks via the Braid Arrangement
 description: >-
-  [NeurIPS 2025][ReLU network depth lower bounds] This paper proves that, under $\mathcal{B}_d^0$-conforming constraints, exactly representing $\max\{0, x_1, \ldots, x_d\}$ with a ReLU network requires $\Omega(\log \log d)$ layers—the first non-constant depth lower bound without weight restrictions. It also shows that rank-(3,2) maxout networks can compute the maximum of 7 values, demonstrating that the standard upper bound is not tight.
+  [NeurIPS 2025][ReLU network depth lower bounds] This paper proves that, under $\mathcal{B}_d^0$-conforming constraints, exactly representing $\max\{0, x_1, \ldots…
 tags:
-  - NeurIPS 2025
-  - ReLU network depth lower bounds
-  - piecewise linear functions
-  - braid arrangement
-  - maxout networks
-  - combinatorial proof
+  - "NeurIPS 2025"
+  - "ReLU network depth lower bounds"
+  - "piecewise linear functions"
+  - "braid arrangement"
+  - "maxout networks"
+  - "combinatorial proof"
 date: 2026-05-08
 content_hash: 0c6f87a5351357c8
 ---

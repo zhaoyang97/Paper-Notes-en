@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CounselBench: A Large-Scale Expert Evaluation and Adversarial Benchmarking of LLMs in Mental Health QA
 description: >-
-  [ICLR 2026 Oral][Medical Imaging][mental health QA] CounselBench is a two-component benchmark constructed with 100 licensed mental health professionals — CounselBench-EVAL (2,000 expert annotations across six clinical dimensions) and CounselBench-Adv (120 adversarial questions with 1,080 annotated responses) — systematically revealing that LLMs achieve superficially high scores in mental health open-ended QA while exhibiting safety risks such as over-generalization and unsolicited medical advice, and demonstrating that LLM-as-Judge is severely unreliable in safety-critical domains.
+  [ICLR 2026 Oral][Medical Imaging][mental health QA] CounselBench is a two-component benchmark constructed with 100 licensed mental health professionals — CounselBench-EVAL (2…
 tags:
-  - ICLR 2026 Oral
-  - Medical Imaging
-  - mental health QA
-  - expert annotation
-  - adversarial benchmark
-  - LLM-as-Judge
-  - safety evaluation
+  - "ICLR 2026 Oral"
+  - "Medical Imaging"
+  - "mental health QA"
+  - "expert annotation"
+  - "adversarial benchmark"
+  - "LLM-as-Judge"
+  - "safety evaluation"
 date: 2026-05-08
 content_hash: 9a2f550d26191b81
 ---

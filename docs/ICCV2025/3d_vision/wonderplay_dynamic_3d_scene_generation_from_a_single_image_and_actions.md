@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] WonderPlay: Dynamic 3D Scene Generation from a Single Image and Actions
 description: >-
-  [ICCV 2025][3D Vision][dynamic 3D scene generation] WonderPlay introduces a Hybrid Generative Simulator that combines coarse 3D dynamic simulation from a physics solver with high-quality generation from a video diffusion model, enabling realistic multi-material dynamic 3D scene generation from a single image and user-specified actions. The framework supports diverse material types including rigid bodies, cloth, liquids, smoke, and granular materials.
+  [ICCV 2025][3D Vision][dynamic 3D scene generation] WonderPlay introduces a Hybrid Generative Simulator that combines coarse 3D dynamic simulation from a physics solver with high-quality generation from a video diffusion…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - dynamic 3D scene generation
-  - physics simulation
-  - video generation
-  - hybrid generative simulator
-  - single-image interaction
+  - "ICCV 2025"
+  - "3D Vision"
+  - "dynamic 3D scene generation"
+  - "physics simulation"
+  - "video generation"
+  - "hybrid generative simulator"
+  - "single-image interaction"
 date: 2026-05-08
 content_hash: 710e57934e459c0b
 ---

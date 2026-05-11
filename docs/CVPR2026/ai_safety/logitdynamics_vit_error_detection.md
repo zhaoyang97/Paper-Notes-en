@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LogitDynamics: Reliable ViT Error Detection from Layerwise Logit Trajectories
 description: >-
-  [CVPR 2026][AI Safety][Error prediction] LogitDynamics attaches lightweight classification heads to each layer of a ViT to extract layerwise logit trajectories and top-K competition dynamics, then trains a linear probe to predict model errors, outperforming existing methods in cross-dataset generalization.
+  [CVPR 2026][AI Safety][Error prediction] LogitDynamics attaches lightweight classification heads to each layer of a ViT to extract layerwise logit trajectories and top-K competition dynamics…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Error prediction
-  - confidence estimation
-  - Vision Transformer
-  - layerwise dynamics
-  - hallucination detection
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Error prediction"
+  - "confidence estimation"
+  - "Vision Transformer"
+  - "layerwise dynamics"
+  - "hallucination detection"
 date: 2026-05-08
 content_hash: 1dee92bc9235b277
 ---

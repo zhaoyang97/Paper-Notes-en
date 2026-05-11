@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unsupervised Motion-Compensated Decomposition for Cardiac MRI Reconstruction via Neural Representation
 description: >-
-  [AAAI 2026][Medical Imaging][Cardiac MRI reconstruction] This paper proposes MoCo-INR, which for the first time integrates implicit neural representation (INR) into a motion compensation (MoCo) framework. Through an unsupervised approach, it achieves high-quality dynamic reconstruction of cardiac MRI, significantly outperforming existing unsupervised methods at ultra-high acceleration factors (20× Cartesian / 69× Non-Cartesian).
+  [AAAI 2026][Medical Imaging][Cardiac MRI reconstruction] This paper proposes MoCo-INR, which for the first time integrates implicit neural representation (INR) into a motion compensation (MoCo) framework. Through an unsu…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Cardiac MRI reconstruction
-  - motion compensation
-  - implicit neural representation
-  - unsupervised learning
-  - undersampled reconstruction
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Cardiac MRI reconstruction"
+  - "motion compensation"
+  - "implicit neural representation"
+  - "unsupervised learning"
+  - "undersampled reconstruction"
 date: 2026-05-08
 content_hash: 7972f182c544a2f3
 ---

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Seeing Beyond the Scene: Analyzing and Mitigating Background Bias in Action Recognition
 description: >-
-  [Video Understanding] This paper systematically analyzes background bias in action recognition across three model paradigms — classification models, contrastive pre-trained models (CLIP/SigLIP2), and video large language models (VLLMs) — and proposes two mitigation strategies: a dual-branch architecture that fuses segmented human inputs to reduce SBErr by 3.78% for classification models, and automated prompt tuning to reduce SBErr by 9.85% for VLLMs.
+  [Video Understanding] This paper systematically analyzes background bias in action recognition across three model paradigms — classification models, contrastive pre-trained models (CLIP/SigLIP2)…
 tags:
-  - Video Understanding
+  - "Video Understanding"
 date: 2026-05-08
 content_hash: 24142ae9c23d0114
 ---

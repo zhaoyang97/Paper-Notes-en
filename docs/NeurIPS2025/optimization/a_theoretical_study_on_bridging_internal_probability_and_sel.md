@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Theoretical Study on Bridging Internal Probability and Self-Consistency for LLM Reasoning
 description: >-
-  [NeurIPS 2025][Optimization][Self-Consistency] This paper proposes the first theoretical framework for sampling-based test-time scaling methods, decomposing reasoning error into estimation error and model error. It reveals the limitations of Self-Consistency (slow convergence) and Perplexity (large model error), and introduces the RPC method that combines the strengths of both, achieving comparable reasoning performance on 7 benchmarks with only 50% of the sampling cost.
+  [NeurIPS 2025][Optimization][Self-Consistency] This paper proposes the first theoretical framework for sampling-based test-time scaling methods…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Self-Consistency
-  - Perplexity
-  - Test-time Scaling
-  - Confidence Estimation
-  - LLM Reasoning
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Self-Consistency"
+  - "Perplexity"
+  - "Test-time Scaling"
+  - "Confidence Estimation"
+  - "LLM Reasoning"
 date: 2026-05-08
 content_hash: 4910a00ce6905c19
 ---

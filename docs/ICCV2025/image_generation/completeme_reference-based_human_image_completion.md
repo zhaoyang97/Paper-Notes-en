@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CompleteMe: Reference-based Human Image Completion
 description: >-
-  [ICCV 2025][Image Generation][Image Completion] This paper proposes the CompleteMe framework, which leverages a dual U-Net architecture and Region-focused Attention (RFA) Block to achieve high-fidelity reference-guided human image completion by exploiting fine-grained person-specific details (clothing textures, tattoos, etc.) from reference images.
+  [ICCV 2025][Image Generation][Image Completion] This paper proposes the CompleteMe framework, which leverages a dual U-Net architecture and Region-focused Attention (RFA) Block to achieve high-fidelity reference-guided h…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Image Completion
-  - Reference-based Inpainting
-  - Dual U-Net
-  - Attention Mechanism
-  - Human Body
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Image Completion"
+  - "Reference-based Inpainting"
+  - "Dual U-Net"
+  - "Attention Mechanism"
+  - "Human Body"
 date: 2026-05-08
 content_hash: 583af969aa7182e1
 ---

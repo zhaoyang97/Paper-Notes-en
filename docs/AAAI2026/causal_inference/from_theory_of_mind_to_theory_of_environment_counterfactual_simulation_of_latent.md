@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From Theory of Mind to Theory of Environment: Counterfactual Simulation of Latent Environmental Dynamics
 description: >-
-  [AAAI 2026 (Workshop: ToM4AI)][Causal Inference][Theory of Mind] This paper proposes the concept of "Theory of Environment" (ToE), arguing that humans may infer latent environmental dynamics through computational mechanisms shared with Theory of Mind (ToM), thereby expanding the dimensionality of motor exploration and facilitating behavioral innovation.
+  [AAAI 2026 (Workshop: ToM4AI)][Causal Inference][Theory of Mind] This paper proposes the concept of "Theory of Environment" (ToE), arguing that humans may infer latent environmental dynamics through computational mechani…
 tags:
   - "AAAI 2026 (Workshop: ToM4AI)"
-  - Causal Inference
-  - Theory of Mind
-  - Theory of Environment
-  - Counterfactual Simulation
-  - Motor Control
-  - Behavioral Innovation
+  - "Causal Inference"
+  - "Theory of Mind"
+  - "Theory of Environment"
+  - "Counterfactual Simulation"
+  - "Motor Control"
+  - "Behavioral Innovation"
 date: 2026-05-08
 content_hash: 6dbbb845d8c9066e
 ---

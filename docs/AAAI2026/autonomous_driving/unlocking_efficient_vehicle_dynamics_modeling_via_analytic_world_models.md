@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unlocking Efficient Vehicle Dynamics Modeling via Analytic World Models
 description: >-
-  [AAAI 2026][Autonomous Driving][Differentiable Simulator] This paper proposes Analytic World Models (AWMs), which exploit the differentiability of differentiable simulators to design three world modeling tasks—relative odometry, optimal planners, and inverse optimal state estimation—enabling end-to-end efficient training of state predictors without trial-and-error search. The approach is validated on the Waymax autonomous driving simulator.
+  [AAAI 2026][Autonomous Driving][Differentiable Simulator] This paper proposes Analytic World Models (AWMs), which exploit the differentiability of differentiable simulators to design three world modeling tasks—relative o…
 tags:
-  - AAAI 2026
-  - Autonomous Driving
-  - Differentiable Simulator
-  - World Models
-  - Analytic Policy Gradients
-  - Relative Odometry
-  - Model Predictive Control
+  - "AAAI 2026"
+  - "Autonomous Driving"
+  - "Differentiable Simulator"
+  - "World Models"
+  - "Analytic Policy Gradients"
+  - "Relative Odometry"
+  - "Model Predictive Control"
 date: 2026-05-08
 content_hash: 47fb06fbe9ca5631
 ---

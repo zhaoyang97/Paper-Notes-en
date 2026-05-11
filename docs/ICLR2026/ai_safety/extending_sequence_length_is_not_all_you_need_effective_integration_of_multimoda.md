@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Extending Sequence Length is Not All You Need: Effective Integration of Multimodal Signals for Gene Expression Prediction
 description: >-
-  [ICLR 2026][AI Safety][gene expression prediction] This paper challenges the prevailing "longer is better" paradigm in gene expression prediction, demonstrating that current SSM models fundamentally rely only on proximal information. It further identifies background chromatin signals (DNase-seq/Hi-C) as confounding variables that introduce spurious correlations, and proposes the Prism framework, which applies backdoor adjustment for deconfounding—achieving state-of-the-art performance with only 2k-length sequences, surpassing methods that use 200k-length sequences.
+  [ICLR 2026][AI Safety][gene expression prediction] This paper challenges the prevailing "longer is better" paradigm in gene expression prediction…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - gene expression prediction
-  - epigenomic signals
-  - causal inference
-  - backdoor adjustment
-  - confounding variables
+  - "ICLR 2026"
+  - "AI Safety"
+  - "gene expression prediction"
+  - "epigenomic signals"
+  - "causal inference"
+  - "backdoor adjustment"
+  - "confounding variables"
 date: 2026-05-08
 content_hash: a4fa592df4836eac
 ---

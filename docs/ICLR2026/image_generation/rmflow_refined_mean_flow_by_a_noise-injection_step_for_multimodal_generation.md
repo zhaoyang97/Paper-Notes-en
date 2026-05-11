@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RMFlow: Refined Mean Flow by a Noise-Injection Step for Multimodal Generation
 description: >-
-  [ICLR 2026][Image Generation][mean flow] This paper proposes RMFlow, which appends a noise-injection refinement step after 1-NFE MeanFlow transport to compensate for single-step transport errors, while incorporating a maximum likelihood objective during training to minimize the KL divergence between the learned and target distributions. RMFlow achieves near-SOTA 1-NFE results on text-to-image generation, molecular generation, and time-series generation.
+  [ICLR 2026][Image Generation][mean flow] This paper proposes RMFlow, which appends a noise-injection refinement step after 1-NFE MeanFlow transport to compensate for single-step transport errors…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - mean flow
-  - noise injection refinement
-  - 1-NFE
-  - likelihood maximization
-  - multimodal generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "mean flow"
+  - "noise injection refinement"
+  - "1-NFE"
+  - "likelihood maximization"
+  - "multimodal generation"
 date: 2026-05-08
 content_hash: b9416e188117ee8e
 ---

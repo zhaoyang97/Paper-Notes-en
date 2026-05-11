@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HIS-GPT: Towards 3D Human-In-Scene Multimodal Understanding
 description: >-
-  [ICCV 2025][Human Understanding][human-in-scene understanding] This paper proposes the HIS-QA task, the HIS-Bench benchmark, and HIS-GPT — the first foundation model for joint 3D human-in-scene understanding. Through an Auxiliary Interaction Module (AInt) and a Layout-Trajectory Positional Encoding (LTP), HIS-GPT captures fine-grained human–scene interactions and substantially outperforms GPT-4o and other baselines across 16 sub-tasks.
+  [ICCV 2025][Human Understanding][human-in-scene understanding] This paper proposes the HIS-QA task, the HIS-Bench benchmark, and HIS-GPT — the first foundation model for joint 3D human-in-scene understanding. Through an…
 tags:
-  - ICCV 2025
-  - Human Understanding
-  - human-in-scene understanding
-  - 3D multimodal
-  - large language models
-  - human motion
-  - QA benchmark
+  - "ICCV 2025"
+  - "Human Understanding"
+  - "human-in-scene understanding"
+  - "3D multimodal"
+  - "large language models"
+  - "human motion"
+  - "QA benchmark"
 date: 2026-05-08
 content_hash: 49bc080098b1c214
 ---

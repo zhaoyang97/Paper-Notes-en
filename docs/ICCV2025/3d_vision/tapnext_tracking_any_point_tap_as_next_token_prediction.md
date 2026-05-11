@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TAPNext: Tracking Any Point (TAP) as Next Token Prediction
 description: >-
-  [ICCV 2025][3D Vision][Point Tracking] TAPNext reformulates Tracking Any Point (TAP) in video as a sequential masked token decoding task, eliminating the tracking-specific inductive biases and heuristics prevalent in conventional approaches. It achieves causal online tracking and establishes new state-of-the-art results among both online and offline trackers, with remarkably low inference latency.
+  [ICCV 2025][3D Vision][Point Tracking] TAPNext reformulates Tracking Any Point (TAP) in video as a sequential masked token decoding task…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Point Tracking
-  - Next Token Prediction
-  - Online Tracking
-  - Occlusion Handling
-  - TAP
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Point Tracking"
+  - "Next Token Prediction"
+  - "Online Tracking"
+  - "Occlusion Handling"
+  - "TAP"
 date: 2026-05-08
 content_hash: 3caf03f7fc42ec4d
 ---

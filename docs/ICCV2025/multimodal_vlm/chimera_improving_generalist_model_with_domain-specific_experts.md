@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Chimera: Improving Generalist Model with Domain-Specific Experts
 description: >-
-  [ICCV 2025][Multimodal VLM][Multimodal reasoning] This paper proposes Chimera, a scalable and low-cost multimodal pipeline that integrates domain-specific expert knowledge (tables, charts, math, documents) into a generalist multimodal large model via a lightweight routing module for dynamic expert selection, a progressive training strategy, and a Generalist-Specialist Collaboration Masking (GSCM) mechanism. Chimera achieves 64.9% on MathVista (SOTA) and matches or surpasses specialist models on multiple visual structure extraction tasks.
+  [ICCV 2025][Multimodal VLM][Multimodal reasoning] This paper proposes Chimera, a scalable and low-cost multimodal pipeline that integrates domain-specific expert knowledge (tables, charts, math…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Multimodal reasoning
-  - expert model integration
-  - domain adaptation
-  - routing mechanism
-  - visual content extraction
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Multimodal reasoning"
+  - "expert model integration"
+  - "domain adaptation"
+  - "routing mechanism"
+  - "visual content extraction"
 date: 2026-05-08
 content_hash: ea82601ee8ce52c3
 ---

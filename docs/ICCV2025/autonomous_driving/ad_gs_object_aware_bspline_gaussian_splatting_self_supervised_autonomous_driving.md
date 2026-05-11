@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AD-GS: Object-Aware B-Spline Gaussian Splatting for Self-Supervised Autonomous Driving
 description: >-
-  [ICCV 2025][Autonomous Driving][Autonomous driving scene rendering] This paper proposes AD-GS, a self-supervised autonomous driving scene rendering framework that models dynamic object motion by combining locally-aware learnable B-spline curves with globally-aware trigonometric functions. It employs simplified pseudo 2D segmentation for scene decomposition, significantly outperforming existing self-supervised methods and approaching the performance of annotation-dependent approaches without relying on manual 3D annotations.
+  [ICCV 2025][Autonomous Driving][Autonomous driving scene rendering] This paper proposes AD-GS, a self-supervised autonomous driving scene rendering framework that models dynamic object motion by combining locally-aware l…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - Autonomous driving scene rendering
-  - Gaussian splatting
-  - B-spline curves
-  - self-supervised learning
-  - dynamic scene reconstruction
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "Autonomous driving scene rendering"
+  - "Gaussian splatting"
+  - "B-spline curves"
+  - "self-supervised learning"
+  - "dynamic scene reconstruction"
 date: 2026-05-08
 content_hash: f47efa1bc27692bf
 ---

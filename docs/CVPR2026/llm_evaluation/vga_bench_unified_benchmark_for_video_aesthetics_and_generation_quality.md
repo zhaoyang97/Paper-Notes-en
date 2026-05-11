@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VGA-Bench: A Unified Benchmark for Video Aesthetics and Generation Quality Evaluation
 description: >-
-  [CVPR 2026][LLM Evaluation][Video quality assessment] VGA-Bench proposes a unified AIGC video evaluation benchmark comprising a three-tier taxonomy (aesthetic quality, aesthetic labels, and generation quality), 1,016 prompts, 60,000 videos, and three dedicated evaluation models, enabling automated assessment aligned with human judgment.
+  [CVPR 2026][LLM Evaluation][Video quality assessment] VGA-Bench proposes a unified AIGC video evaluation benchmark comprising a three-tier taxonomy (aesthetic quality, aesthetic labels, and generation quality), 1…
 tags:
-  - CVPR 2026
-  - LLM Evaluation
-  - Video quality assessment
-  - aesthetic evaluation
-  - AIGC evaluation
-  - multi-task evaluator
-  - video generation
+  - "CVPR 2026"
+  - "LLM Evaluation"
+  - "Video quality assessment"
+  - "aesthetic evaluation"
+  - "AIGC evaluation"
+  - "multi-task evaluator"
+  - "video generation"
 date: 2026-05-08
 content_hash: 5fc62552e36a3180
 ---

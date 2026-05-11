@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Explicit Trait Inference for Multi-Agent Coordination
 description: >-
-  [ACL 2026][LLM Reasoning][Multi-agent coordination] This paper proposes Explicit Trait Inference (ETI), a method that enables LLM agents to reason about and track partners' behavioral traits along the psychological dimensions of warmth and competence. ETI reduces payoff loss by 45–77% in economic games and improves task performance by 3–29% on MultiAgentBench.
+  [ACL 2026][LLM Reasoning][Multi-agent coordination] This paper proposes Explicit Trait Inference (ETI), a method that enables LLM agents to reason about and track partners' behavioral traits along the psychological dimen…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - Multi-agent coordination
-  - trait inference
-  - warmth-competence dimensions
-  - social cognition
-  - game theory
+  - "ACL 2026"
+  - "LLM Reasoning"
+  - "Multi-agent coordination"
+  - "trait inference"
+  - "warmth-competence dimensions"
+  - "social cognition"
+  - "game theory"
 date: 2026-05-08
 content_hash: 0cbc653a1fbdf55a
 ---

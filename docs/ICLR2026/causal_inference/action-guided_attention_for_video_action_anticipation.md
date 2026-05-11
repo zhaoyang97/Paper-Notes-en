@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Action-Guided Attention for Video Action Anticipation
 description: >-
-  [ICLR 2026][Causal Inference][Action Anticipation] This paper proposes an Action-Guided Attention (AGA) mechanism that uses the model's own action prediction sequences as the Query and Key in attention (rather than pixel-level features), combined with adaptive gated fusion of historical context and current frame features. AGA achieves strong generalization from validation to test set on EPIC-Kitchens-100 and supports post-hoc interpretability analysis.
+  [ICLR 2026][Causal Inference][Action Anticipation] This paper proposes an Action-Guided Attention (AGA) mechanism that uses the model's own action prediction sequences as the Query and Key in attention (rather than pixel…
 tags:
-  - ICLR 2026
-  - Causal Inference
-  - Action Anticipation
-  - Attention Mechanism
-  - Video Transformer
-  - Interpretability
-  - EPIC-Kitchens
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "Action Anticipation"
+  - "Attention Mechanism"
+  - "Video Transformer"
+  - "Interpretability"
+  - "EPIC-Kitchens"
 date: 2026-05-08
 content_hash: 83ea1a837c3e00c5
 ---

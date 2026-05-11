@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unified Vision-Language Modeling via Concept Space Alignment
 description: >-
-  [ICLR 2026][Multimodal VLM][Vision-language embedding space] This paper proposes v-Sonar, which post-hoc aligns a visual encoder to the SONAR text embedding space, enabling the Large Concept Model (LCM) trained in the SONAR space to handle visual inputs in a zero-shot manner. Through instruction fine-tuning, v-Sonar is extended into v-LCM, which surpasses existing VLMs in 61 out of 62 languages.
+  [ICLR 2026][Multimodal VLM][Vision-language embedding space] This paper proposes v-Sonar, which post-hoc aligns a visual encoder to the SONAR text embedding space…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Vision-language embedding space
-  - latent diffusion model
-  - multilingual
-  - video captioning
-  - Large Concept Model
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Vision-language embedding space"
+  - "latent diffusion model"
+  - "multilingual"
+  - "video captioning"
+  - "Large Concept Model"
 date: 2026-05-08
 content_hash: 9c1eee2ee693654b
 ---

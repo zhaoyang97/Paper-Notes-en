@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] What's Missing in Screen-to-Action? Towards a UI-in-the-Loop Paradigm for Multimodal GUI Reasoning
 description: >-
-  [ACL 2026][Multimodal VLM][GUI reasoning] This paper proposes UILoop (UI-in-the-Loop), a paradigm that restructures GUI reasoning from the conventional "screen→action" pipeline into a cyclic "screen→UI elements→action" process. Through UI element-driven reinforcement fine-tuning, the model is trained to explicitly locate, understand, and leverage key UI elements, achieving state-of-the-art performance on GUI reasoning benchmarks.
+  [ACL 2026][Multimodal VLM][GUI reasoning] This paper proposes UILoop (UI-in-the-Loop), a paradigm that restructures GUI reasoning from the conventional "screen→action" pipeline into a cyclic "screen→UI elements→action" p…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - GUI reasoning
-  - UI understanding
-  - reinforcement fine-tuning
-  - multimodal agent
-  - UI element grounding
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "GUI reasoning"
+  - "UI understanding"
+  - "reinforcement fine-tuning"
+  - "multimodal agent"
+  - "UI element grounding"
 date: 2026-05-08
 content_hash: 51674df19a725d26
 ---

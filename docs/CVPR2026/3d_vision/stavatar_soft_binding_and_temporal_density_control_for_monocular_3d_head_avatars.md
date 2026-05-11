@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] STAvatar: Soft Binding and Temporal Density Control for Monocular 3D Head Avatars Reconstruction
 description: >-
-  [CVPR2026][3D Vision][3D Head Avatar] STAvatar is proposed, leveraging a UV-adaptive soft binding framework and a temporal adaptive density control strategy to reconstruct high-fidelity, drivable 3D head avatars from monocular video. It significantly outperforms existing methods in occluded regions (oral interior, eyelids) and fine-grained details.
+  [CVPR2026][3D Vision][3D Head Avatar] STAvatar is proposed, leveraging a UV-adaptive soft binding framework and a temporal adaptive density control strategy to reconstruct high-fidelity…
 tags:
-  - CVPR2026
-  - 3D Vision
-  - 3D Head Avatar
-  - 3D Gaussian Splatting
-  - Soft Binding
-  - Adaptive Density Control
-  - Monocular Reconstruction
+  - "CVPR2026"
+  - "3D Vision"
+  - "3D Head Avatar"
+  - "3D Gaussian Splatting"
+  - "Soft Binding"
+  - "Adaptive Density Control"
+  - "Monocular Reconstruction"
 date: 2026-05-08
 content_hash: 2a74fa0db90057fa
 ---

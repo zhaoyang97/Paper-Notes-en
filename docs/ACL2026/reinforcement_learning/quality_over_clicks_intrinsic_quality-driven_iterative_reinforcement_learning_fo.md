@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Quality Over Clicks: Intrinsic Quality-Driven Iterative RL for Cold-Start E-Commerce Query Suggestion
 description: >-
-  [ACL 2026][Reinforcement Learning][Cold-Start] This paper proposes Cold-EQS, a query suggestion framework for cold-start e-commerce scenarios. It leverages answerability, factual accuracy, and information gain as intrinsic quality rewards, and employs iterative reinforcement learning to continuously optimize query suggestion quality, achieving a 6.81% online chatUV improvement.
+  [ACL 2026][Reinforcement Learning][Cold-Start] This paper proposes Cold-EQS, a query suggestion framework for cold-start e-commerce scenarios. It leverages answerability, factual accuracy…
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - Cold-Start
-  - Query Suggestion
-  - Quality-Driven Reward
-  - Uncertainty Sampling
-  - E-Commerce Dialogue
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "Cold-Start"
+  - "Query Suggestion"
+  - "Quality-Driven Reward"
+  - "Uncertainty Sampling"
+  - "E-Commerce Dialogue"
 date: 2026-05-08
 content_hash: 263174c8f733696c
 ---

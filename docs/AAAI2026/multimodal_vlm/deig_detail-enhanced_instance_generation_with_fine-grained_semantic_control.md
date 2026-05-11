@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DEIG: Detail-Enhanced Instance Generation with Fine-Grained Semantic Control
 description: >-
-  [AAAI 2026][Multimodal VLM][Multi-Instance Generation] This paper proposes DEIG, a framework for fine-grained multi-instance image generation. It distills high-dimensional embeddings from a frozen LLM encoder into compact instance-aware representations via an Instance Detail Extractor (IDE), and employs instance masked attention in a Detail Fusion Module (DFM) to prevent attribute leakage. DEIG substantially outperforms existing methods on generation tasks with complex multi-attribute descriptions (color + material + texture).
+  [AAAI 2026][Multimodal VLM][Multi-Instance Generation] This paper proposes DEIG, a framework for fine-grained multi-instance image generation. It distills high-dimensional embeddings from a frozen LLM encoder into compac…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Multi-Instance Generation
-  - Fine-Grained Semantic Control
-  - Diffusion Models
-  - Attribute Binding
-  - Masked Attention
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Multi-Instance Generation"
+  - "Fine-Grained Semantic Control"
+  - "Diffusion Models"
+  - "Attribute Binding"
+  - "Masked Attention"
 date: 2026-05-08
 content_hash: 376987692234ca9a
 ---

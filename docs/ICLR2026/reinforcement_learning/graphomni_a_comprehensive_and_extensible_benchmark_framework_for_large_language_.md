@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] GraphOmni: A Comprehensive and Extensible Benchmark Framework for Large Language Models on Graph-theoretic Tasks
 description: >-
-  [ICLR 2026][Reinforcement Learning][Graph Reasoning] This paper proposes GraphOmni, a benchmark framework that systematically evaluates the graph-theoretic reasoning capabilities of 11 LLMs across 241K queries spanning 7 graph types × 7 serialization formats × 9 prompting strategies, reveals complex interaction effects among these three dimensions, and introduces an RL-guided combinatorial search method that achieves approximately 90% of optimal accuracy at roughly 25% of the evaluation cost.
+  [ICLR 2026][Reinforcement Learning][Graph Reasoning] This paper proposes GraphOmni, a benchmark framework that systematically evaluates the graph-theoretic reasoning capabilities of 11 LLMs across 241K queries spanning 7…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Graph Reasoning
-  - LLM Benchmarking
-  - Serialization Formats
-  - Prompting Strategies
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Graph Reasoning"
+  - "LLM Benchmarking"
+  - "Serialization Formats"
+  - "Prompting Strategies"
 date: 2026-05-08
 content_hash: 75cbb1fc61c5190c
 ---

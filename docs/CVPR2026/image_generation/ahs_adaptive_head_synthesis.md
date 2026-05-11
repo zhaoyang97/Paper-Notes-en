@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AHS: Adaptive Head Synthesis via Synthetic Data Augmentations
 description: >-
-  [CVPR 2026][Image Generation][Head Swapping] AHS overcomes the limitations of self-supervised training by using a head reenactment model (GAGAvatar) to generate synthetic augmented data. Combined with a dual-encoder attention mechanism and an adaptive masking strategy, it achieves SOTA results in head swapping tasks for full-body images.
+  [CVPR 2026][Image Generation][Head Swapping] AHS overcomes the limitations of self-supervised training by using a head reenactment model (GAGAvatar) to generate synthetic augmented data. Combined with a dual-encoder atte…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Head Swapping
-  - Data Augmentation
-  - Head Reenactment
-  - Diffusion Models
-  - Face Synthesis
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Head Swapping"
+  - "Data Augmentation"
+  - "Head Reenactment"
+  - "Diffusion Models"
+  - "Face Synthesis"
 date: 2026-05-08
 content_hash: 9420b1952a06c29d
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Fair Representation Learning with Controllable High Confidence Guarantees via Adversarial Inference
 description: >-
-  [NeurIPS 2025][AI Safety][fair representation learning] This paper proposes FRG (Fair Representation learning with high-confidence Guarantees), the first fair representation learning framework that allows users to specify a fairness threshold $\varepsilon$ and confidence level $1-\delta$. By combining VAE-based candidate selection, adversarial inference that maximizes covariance, and a Student's t-test to construct a high-confidence upper bound, FRG guarantees that $\Delta_{DP} \leq \varepsilon$ holds with probability at least $1-\delta$ for **any** downstream model and task.
+  [NeurIPS 2025][AI Safety][fair representation learning] This paper proposes FRG (Fair Representation learning with high-confidence Guarantees)…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - fair representation learning
-  - high-confidence guarantees
-  - adversarial inference
-  - statistical testing
-  - demographic parity
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "fair representation learning"
+  - "high-confidence guarantees"
+  - "adversarial inference"
+  - "statistical testing"
+  - "demographic parity"
 date: 2026-05-08
 content_hash: a29af3bdc44e8303
 ---

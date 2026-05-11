@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] CaDrift: A Time-dependent Causal Generator of Drifting Data Streams
 description: >-
-  [ICLR2026][concept drift] This paper proposes CaDrift, a time-dependent synthetic data stream generation framework based on structural causal models (SCMs). It introduces temporal correlation via EWMA smoothing and autoregressive noise, and realizes controllable distributional drift, covariate drift, severe drift, and local drift by modifying causal mapping functions. CaDrift fills the gap left by existing data stream generators that lack both causal structure and temporal dependence.
+  [ICLR2026][concept drift] This paper proposes CaDrift, a time-dependent synthetic data stream generation framework based on structural causal models (SCMs). It introduces temporal correlation via EWMA smoothing and autor…
 tags:
-  - ICLR2026
-  - concept drift
-  - structural causal model
-  - synthetic data generation
-  - data streams
-  - time dependence
+  - "ICLR2026"
+  - "concept drift"
+  - "structural causal model"
+  - "synthetic data generation"
+  - "data streams"
+  - "time dependence"
 date: 2026-05-08
 content_hash: 4111283611cda123
 ---

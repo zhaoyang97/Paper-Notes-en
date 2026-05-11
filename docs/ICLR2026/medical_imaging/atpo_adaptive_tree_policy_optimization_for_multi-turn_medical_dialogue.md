@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] ATPO: Adaptive Tree Policy Optimization for Multi-Turn Medical Dialogue
 description: >-
-  [ICLR 2026][Medical Imaging][multi-turn medical dialogue] This paper proposes ATPO (Adaptive Tree Policy Optimization), which models multi-turn medical dialogue as a hierarchical Markov decision process (H-MDP). ATPO dynamically allocates rollout budgets via an uncertainty-aware adaptive tree expansion mechanism, using a composite uncertainty measure combining Bellman error and action-value variance to guide exploration. With Qwen3-8B, ATPO surpasses GPT-4o on three medical dialogue benchmarks.
+  [ICLR 2026][Medical Imaging][multi-turn medical dialogue] This paper proposes ATPO (Adaptive Tree Policy Optimization), which models multi-turn medical dialogue as a hierarchical Markov decision process (H-MDP). ATPO dyn…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - multi-turn medical dialogue
-  - tree search
-  - policy optimization
-  - uncertainty-guided exploration
-  - hierarchical MDP
-  - value function estimation
-  - LLM alignment
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "multi-turn medical dialogue"
+  - "tree search"
+  - "policy optimization"
+  - "uncertainty-guided exploration"
+  - "hierarchical MDP"
+  - "value function estimation"
+  - "LLM alignment"
 date: 2026-05-08
 content_hash: 7f59d605e704c21c
 ---

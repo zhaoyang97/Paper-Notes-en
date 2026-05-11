@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Scaling Language-Free Visual Representation Learning
 description: >-
-  [ICCV 2025][Self-Supervised Learning][visual self-supervised learning] By training DINOv2/MAE-series models (1B–7B parameters) on MetaCLIP's 2 billion web images, this work systematically demonstrates that purely visual self-supervised learning (SSL) exhibits superior scaling behavior compared to CLIP in both model and data dimensions, surpassing CLIP on average VQA performance at 5B+ parameters—including OCR/Chart tasks conventionally assumed to require language supervision.
+  [ICCV 2025][Self-Supervised Learning][visual self-supervised learning] By training DINOv2/MAE-series models (1B–7B parameters) on MetaCLIP's 2 billion web images…
 tags:
-  - ICCV 2025
-  - Self-Supervised Learning
-  - visual self-supervised learning
-  - CLIP contrastive
-  - scaling law
-  - VQA evaluation
-  - language-free supervision
+  - "ICCV 2025"
+  - "Self-Supervised Learning"
+  - "visual self-supervised learning"
+  - "CLIP contrastive"
+  - "scaling law"
+  - "VQA evaluation"
+  - "language-free supervision"
 date: 2026-05-08
 content_hash: 0a03d78f43409218
 ---

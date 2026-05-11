@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EgoEMS: A High-Fidelity Multimodal Egocentric Dataset for Cognitive Assistance in Emergency Medical Services
 description: >-
-  [AAAI 2026][Medical Imaging][Egocentric perspective] This paper presents the first high-fidelity multi-person multimodal egocentric EMS dataset, comprising 233 trials with 20 hours of video, annotations covering 9 interventions and 67 critical steps, and three benchmark tasks (step classification / online segmentation / CPR quality estimation) to advance the development of cognitive assistance systems for EMS.
+  [AAAI 2026][Medical Imaging][Egocentric perspective] This paper presents the first high-fidelity multi-person multimodal egocentric EMS dataset, comprising 233 trials with 20 hours of video…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Egocentric perspective
-  - emergency medical services
-  - multimodal fusion
-  - cognitive assistance
-  - activity recognition
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Egocentric perspective"
+  - "emergency medical services"
+  - "multimodal fusion"
+  - "cognitive assistance"
+  - "activity recognition"
 date: 2026-05-08
 content_hash: 1db14d7797ec10b3
 ---

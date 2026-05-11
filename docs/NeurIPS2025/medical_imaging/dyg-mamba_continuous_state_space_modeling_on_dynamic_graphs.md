@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DyG-Mamba: Continuous State Space Modeling on Dynamic Graphs
 description: >-
-  [NeurIPS 2025][Medical Imaging][State Space Models] DyG-Mamba introduces continuous state space models (SSMs) into dynamic graph learning. It proposes a temporal span-aware continuous SSM that models irregular time intervals via an exponential decay function inspired by the Ebbinghaus forgetting curve, combined with input-dependent parameters constrained by spectral norm for Lipschitz robustness. The method achieves an average rank of 2.42 across 12 dynamic graph benchmarks (vs. DyGFormer's 2.92) while maintaining $O(bdL)$ linear complexity.
+  [NeurIPS 2025][Medical Imaging][State Space Models] DyG-Mamba introduces continuous state space models (SSMs) into dynamic graph learning. It proposes a temporal span-aware continuous SSM that models irregular time inter…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - State Space Models
-  - Dynamic Graphs
-  - Temporal Span Awareness
-  - Mamba
-  - Link Prediction
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "State Space Models"
+  - "Dynamic Graphs"
+  - "Temporal Span Awareness"
+  - "Mamba"
+  - "Link Prediction"
 date: 2026-05-08
 content_hash: 6875858122d6cc9d
 ---

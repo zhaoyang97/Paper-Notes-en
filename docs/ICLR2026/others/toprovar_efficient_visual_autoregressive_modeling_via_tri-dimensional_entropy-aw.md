@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ToProVAR: Efficient Visual Autoregressive Modeling via Tri-Dimensional Entropy-Aware Semantic Analysis and Sparsity Optimization
 description: >-
-   ToProVAR is a framework that employs attention entropy to uniformly analyze sparsity across three dimensions — token, layer, and scale — in VAR models, achieving up to 3.4× speedup with negligible image quality degradation, significantly outperforming FastVAR and SkipVAR.
+  ToProVAR is a framework that employs attention entropy to uniformly analyze sparsity across three dimensions — token, layer, and scale — in VAR models…
 tags:
 
 date: 2026-05-08

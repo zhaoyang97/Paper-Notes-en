@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Argumentative Debates for Transparent Bias Detection
 description: >-
-  [AAAI 2026][Social Computing][Bias Detection] This paper proposes ABIDE (Argumentative BIas Detection by DEbate), which constructs Quantitative Bipolar Argumentation Frameworks (QBAFs) via neighborhood-based argument schemes, models the bias detection process as a structured debate, enables transparent bias reasoning from individual neighborhoods to the global level, and formally proves the correspondence between QBAF semantics and the expected behavior of bias detection.
+  [AAAI 2026][Social Computing][Bias Detection] This paper proposes ABIDE (Argumentative BIas Detection by DEbate), which constructs Quantitative Bipolar Argumentation Frameworks (QBAFs) via neighborhood-based argument sch…
 tags:
-  - AAAI 2026
-  - Social Computing
-  - Bias Detection
-  - Argumentation Framework
-  - QBAF
-  - Transparency
-  - Fairness
-  - Debate
+  - "AAAI 2026"
+  - "Social Computing"
+  - "Bias Detection"
+  - "Argumentation Framework"
+  - "QBAF"
+  - "Transparency"
+  - "Fairness"
+  - "Debate"
 date: 2026-05-08
 content_hash: 0bc57a9141efb16c
 ---

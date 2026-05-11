@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] MindVote: When AI Meets the Wild West of Social Media Opinion
 description: >-
-  [AAAI 2026][LLM Evaluation][Social media public opinion] MindVote is a bilingual benchmark (3,918 naturally occurring Reddit/Weibo polls × 23 topics) for evaluating the opinion prediction capabilities of 15 LLMs. A key finding is that survey-specialized fine-tuned models underperform general-purpose models (the "specialization trap").
+  [AAAI 2026][LLM Evaluation][Social media public opinion] MindVote is a bilingual benchmark (3,918 naturally occurring Reddit/Weibo polls × 23 topics) for evaluating the opinion prediction capabilities of 15 LLMs. A key f…
 tags:
-  - AAAI 2026
-  - LLM Evaluation
-  - Social media public opinion
-  - bilingual polling
+  - "AAAI 2026"
+  - "LLM Evaluation"
+  - "Social media public opinion"
+  - "bilingual polling"
 date: 2026-05-08
 content_hash: 32323f13cc9dac38
 ---

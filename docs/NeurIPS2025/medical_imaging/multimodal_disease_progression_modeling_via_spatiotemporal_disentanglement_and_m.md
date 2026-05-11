@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multimodal Disease Progression Modeling via Spatiotemporal Disentanglement and Multiscale Alignment
 description: >-
-  [NeurIPS 2025][Medical Imaging][disease progression modeling] This paper proposes DiPro, a framework that addresses redundancy in longitudinal chest X-ray sequences and cross-modal temporal misalignment through region-aware spatiotemporal disentanglement (separating static anatomical from dynamic pathological features) and multiscale alignment (local–global fusion of CXR and EHR), achieving state-of-the-art performance on disease progression recognition and ICU prediction tasks.
+  [NeurIPS 2025][Medical Imaging][disease progression modeling] This paper proposes DiPro, a framework that addresses redundancy in longitudinal chest X-ray sequences and cross-modal temporal misalignment through region-aw…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - disease progression modeling
-  - multimodal fusion
-  - spatiotemporal disentanglement
-  - longitudinal CXR
-  - electronic health records
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "disease progression modeling"
+  - "multimodal fusion"
+  - "spatiotemporal disentanglement"
+  - "longitudinal CXR"
+  - "electronic health records"
 date: 2026-05-08
 content_hash: 9c990b4efe83ba1c
 ---

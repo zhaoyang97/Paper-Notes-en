@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Efficient Rectified Flow for Image Fusion
 description: >-
-  [NeurIPS 2025][Image Generation][Image Fusion] This paper proposes RFfusion, which introduces Rectified Flow into image fusion for the first time, enabling training-free one-step sampling. A two-stage fusion-oriented VAE training strategy is further designed, achieving comprehensive superiority over existing diffusion-based fusion methods in both speed and quality.
+  [NeurIPS 2025][Image Generation][Image Fusion] This paper proposes RFfusion, which introduces Rectified Flow into image fusion for the first time…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Image Fusion
-  - Rectified Flow
-  - diffusion model
-  - VAE
-  - One-Step Sampling
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Image Fusion"
+  - "Rectified Flow"
+  - "diffusion model"
+  - "VAE"
+  - "One-Step Sampling"
 date: 2026-05-08
 content_hash: 6bf1fc3f19c5e7c0
 ---

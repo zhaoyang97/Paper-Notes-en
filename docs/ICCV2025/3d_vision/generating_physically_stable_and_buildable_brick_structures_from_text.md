@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Generating Physically Stable and Buildable Brick Structures from Text
 description: >-
-  [ICCV2025][3D Vision][text-to-3D] BrickGPT is the first method to generate physically stable and assemblable interlocking brick structures directly from text prompts. The core idea is to formulate brick assembly as an autoregressive text generation task, augmented at inference time with physics-aware validity checking and a rollback mechanism to ensure structural stability and buildability.
+  [ICCV2025][3D Vision][text-to-3D] BrickGPT is the first method to generate physically stable and assemblable interlocking brick structures directly from text prompts. The core idea is to formulate brick assembly as an au…
 tags:
-  - ICCV2025
-  - 3D Vision
-  - text-to-3D
-  - brick assembly
-  - physical stability
-  - autoregressive LLM
-  - LEGO generation
+  - "ICCV2025"
+  - "3D Vision"
+  - "text-to-3D"
+  - "brick assembly"
+  - "physical stability"
+  - "autoregressive LLM"
+  - "LEGO generation"
 date: 2026-05-08
 content_hash: 31331760e0885130
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Distributional Adversarial Attacks and Training in Deep Hedging
 description: >-
-  [NeurIPS 2025][AI Safety][Adversarial Training] This paper is the first to introduce distributional adversarial attacks into the deep hedging framework. It proposes computationally tractable adversarial training methods based on Wasserstein balls (WPGD and WBPGD), achieving substantial improvements in robustness and out-of-sample performance under distribution shift and real market data.
+  [NeurIPS 2025][AI Safety][Adversarial Training] This paper is the first to introduce distributional adversarial attacks into the deep hedging framework. It proposes computationally tractable adversarial training methods…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - Adversarial Training
-  - Distributionally Robust Optimization
-  - Deep Hedging
-  - Wasserstein Distance
-  - Financial Derivatives
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "Adversarial Training"
+  - "Distributionally Robust Optimization"
+  - "Deep Hedging"
+  - "Wasserstein Distance"
+  - "Financial Derivatives"
 date: 2026-05-08
 content_hash: 90c2f9590a7bc9be
 ---

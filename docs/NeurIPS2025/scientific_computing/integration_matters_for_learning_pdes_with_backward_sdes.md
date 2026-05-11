@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Integration Matters for Learning PDEs with Backward SDEs
 description: >-
-  [NeurIPS 2025][Scientific Computing][BSDE] This paper identifies the root cause of why standard BSDE methods underperform PINNs — an irreducible discretization bias introduced by Euler-Maruyama integration — and proposes Heun-BSDE based on the Stratonovich formulation to fully eliminate this bias, achieving competitive performance against PINNs on high-dimensional PDEs.
+  [NeurIPS 2025][Scientific Computing][BSDE] This paper identifies the root cause of why standard BSDE methods underperform PINNs — an irreducible discretization bias introduced by Euler-Maruyama integration — and proposes…
 tags:
-  - NeurIPS 2025
-  - Scientific Computing
-  - BSDE
-  - PDE solving
-  - Stratonovich integration
-  - Heun method
-  - discretization bias
+  - "NeurIPS 2025"
+  - "Scientific Computing"
+  - "BSDE"
+  - "PDE solving"
+  - "Stratonovich integration"
+  - "Heun method"
+  - "discretization bias"
 date: 2026-05-08
 content_hash: cd2528c22f4ce112
 ---

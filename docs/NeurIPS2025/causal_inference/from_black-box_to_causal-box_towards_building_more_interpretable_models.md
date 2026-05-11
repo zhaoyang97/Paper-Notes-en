@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From Black-box to Causal-box: Towards Building More Interpretable Models
 description: >-
-  [NeurIPS 2025][Causal Inference][causal interpretability] This paper proposes a formal definition of *causal interpretability*, proves that both black-box models and concept bottleneck models fail to satisfy this property, establishes a complete graphical criterion for identifying which model architectures can consistently answer counterfactual queries, and reveals a fundamental tradeoff between causal interpretability and predictive accuracy.
+  [NeurIPS 2025][Causal Inference][causal interpretability] This paper proposes a formal definition of *causal interpretability*, proves that both black-box models and concept bottleneck models fail to satisfy this propert…
 tags:
-  - NeurIPS 2025
-  - Causal Inference
-  - causal interpretability
-  - counterfactual reasoning
-  - concept-based models
-  - structural causal models
-  - interpretability-accuracy tradeoff
+  - "NeurIPS 2025"
+  - "Causal Inference"
+  - "causal interpretability"
+  - "counterfactual reasoning"
+  - "concept-based models"
+  - "structural causal models"
+  - "interpretability-accuracy tradeoff"
 date: 2026-05-08
 content_hash: 90190c45124e03a0
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Reasoning With a Star: A Heliophysics Dataset and Benchmark for Agentic Scientific Reasoning
 description: >-
-  [NeurIPS 2025][scientific reasoning] This paper introduces Reasoning With a Star (RWS), a 158-question scientific reasoning benchmark derived from NASA heliophysics summer school problem sets, spanning three answer types (numeric/symbolic/textual). Paired with a unit-aware grader, it evaluates four multi-agent coordination paradigms (HMAW/PACE/PHASE/SCHEMA) and finds that no single paradigm dominates across all tasks — the systems-engineering-inspired SCHEMA achieves the strongest performance on tasks requiring rigorous constraint validation.
+  [NeurIPS 2025][Earth Science][scientific reasoning] This paper introduces Reasoning With a Star (RWS), a 158-question scientific reasoning benchmark derived from NASA heliophysics summer school problem sets…
 tags:
-  - NeurIPS 2025
-  - scientific reasoning
-  - multi-agent
-  - heliophysics
-  - systems engineering
-  - benchmark
+  - "NeurIPS 2025"
+  - "Earth Science"
+  - "scientific reasoning"
+  - "multi-agent"
+  - "heliophysics"
+  - "systems engineering"
+  - "benchmark"
 date: 2026-05-08
 content_hash: 68cfe251992ffc12
 ---

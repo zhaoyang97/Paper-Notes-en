@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TRivia: Self-supervised Fine-tuning of Vision-Language Models for Table Recognition
 description: >-
-  [CVPR 2026][Multimodal VLM][Table Recognition] This paper proposes TRivia, a self-supervised fine-tuning framework that leverages QA-driven GRPO reinforcement learning to enable VLMs to learn table recognition directly from unannotated table images. The resulting TRivia-3B surpasses proprietary models such as Gemini 2.5 Pro and GPT-5 on multiple benchmarks.
+  [CVPR 2026][Multimodal VLM][Table Recognition] This paper proposes TRivia, a self-supervised fine-tuning framework that leverages QA-driven GRPO reinforcement learning to enable VLMs to learn table recognition directly f…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Table Recognition
-  - Self-supervised Fine-tuning
-  - GRPO
-  - Vision-Language Models
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Table Recognition"
+  - "Self-supervised Fine-tuning"
+  - "GRPO"
+  - "Vision-Language Models"
+  - "Reinforcement Learning"
 date: 2026-05-08
 content_hash: 5fe40cb7239d8dd3
 ---

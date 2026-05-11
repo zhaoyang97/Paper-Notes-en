@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] DiVE-k: Differential Visual Reasoning for Fine-grained Image Recognition
 description: >-
-  [ICLR2026][Reinforcement Learning][fine-grained recognition] This paper proposes DiVE-k, a framework that constructs multiple-choice questions (MCQs) from the top-k outputs of a large vision-language model (LVLM) and trains the model via GRPO reinforcement learning to perform differential visual reasoning, achieving substantial improvements in base-to-novel generalization for fine-grained image recognition.
+  [ICLR2026][Reinforcement Learning][fine-grained recognition] This paper proposes DiVE-k, a framework that constructs multiple-choice questions (MCQs) from the top-k outputs of a large vision-language model (LVLM) and tra…
 tags:
-  - ICLR2026
-  - Reinforcement Learning
-  - fine-grained recognition
-  - reinforcement-learning
-  - GRPO
-  - visual reasoning
-  - multiple-choice question
-  - LVLM
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "fine-grained recognition"
+  - "reinforcement-learning"
+  - "GRPO"
+  - "visual reasoning"
+  - "multiple-choice question"
+  - "LVLM"
 date: 2026-05-08
 content_hash: 168f1cf2f391a056
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ES-dLLM: Efficient Inference for Diffusion Large Language Models by Early-Skipping
 description: >-
-  [ICLR2026][Model Compression][Diffusion LLM] To address the extensive computational redundancy in diffusion large language model (dLLM) inference, this paper proposes ES-dLLM, a training-free Early-Skipping acceleration framework. By estimating token importance and skipping low-importance positions in early layers, ES-dLLM achieves 5.6×–16.8× speedup on LLaDA-8B and Dream-7B without degrading generation quality.
+  [ICLR2026][Model Compression][Diffusion LLM] To address the extensive computational redundancy in diffusion large language model (dLLM) inference, this paper proposes ES-dLLM…
 tags:
-  - ICLR2026
-  - Model Compression
-  - Diffusion LLM
-  - Inference Acceleration
-  - Token Skipping
-  - KV Cache
-  - training-free
+  - "ICLR2026"
+  - "Model Compression"
+  - "Diffusion LLM"
+  - "Inference Acceleration"
+  - "Token Skipping"
+  - "KV Cache"
+  - "training-free"
 date: 2026-05-08
 content_hash: eaf4788a05a7c957
 ---

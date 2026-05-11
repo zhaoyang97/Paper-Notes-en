@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] YOLOE: Real-Time Seeing Anything
 description: >-
-  [ICCV 2025][Object Detection][open-vocabulary detection] This paper proposes YOLOE, which unifies text prompt, visual prompt, and prompt-free open-scenario detection and segmentation within the YOLO architecture. Through three key designs — RepRTA (Re-parameterizable Region-Text Alignment), SAVPE (Semantic-Activated Visual Prompt Encoder), and LRPC (Lazy Region-Prompt Contrast) — YOLOE achieves high efficiency and strong performance, surpassing YOLO-World v2 on LVIS with 3× lower training cost.
+  [ICCV 2025][Object Detection][open-vocabulary detection] This paper proposes YOLOE, which unifies text prompt, visual prompt, and prompt-free open-scenario detection and segmentation within the YOLO architecture. Through…
 tags:
-  - ICCV 2025
-  - Object Detection
-  - open-vocabulary detection
-  - YOLO
-  - text/visual/prompt-free
-  - re-parameterization
-  - real-time
+  - "ICCV 2025"
+  - "Object Detection"
+  - "open-vocabulary detection"
+  - "YOLO"
+  - "text/visual/prompt-free"
+  - "re-parameterization"
+  - "real-time"
 date: 2026-05-08
 content_hash: 4f45907704a7265a
 ---

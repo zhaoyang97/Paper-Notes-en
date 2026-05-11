@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] CARD: Towards Conditional Design of Multi-agent Topological Structures
 description: >-
-  [ICLR 2026][Multi-Agent Communication Topology] CARD proposes a Conditional Agentic Graph Designer framework that adaptively designs multi-agent communication topologies based on dynamic environment signals—including model capability changes, tool availability, and knowledge source updates—via a conditional variational graph encoder and environment-aware optimization. The approach consistently outperforms static and prompt-based baselines on HumanEval, MATH, and MMLU.
+  [ICLR 2026][Code Intelligence][Multi-Agent Communication Topology] CARD proposes a Conditional Agentic Graph Designer framework that adaptively designs multi-agent communication topologies based on dynamic environment si…
 tags:
-  - ICLR 2026
-  - Multi-Agent Communication Topology
-  - Conditional Graph Generation
-  - Graph Neural Networks
-  - Dynamic Environment Signals
-  - Agent Collaboration
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "Multi-Agent Communication Topology"
+  - "Conditional Graph Generation"
+  - "Graph Neural Networks"
+  - "Dynamic Environment Signals"
+  - "Agent Collaboration"
 date: 2026-05-08
 content_hash: d5c68c1fc8edec2d
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RoboCerebra: A Large-scale Benchmark for Long-horizon Robotic Manipulation Evaluation
 description: >-
-  [NeurIPS 2025][Robotics][Long-horizon manipulation] This paper proposes RoboCerebra, a long-horizon robotic manipulation benchmark comprising 1,000 human demonstration trajectories (averaging 2,972 steps, approximately 6× longer than existing benchmarks). Through a hierarchical planning and execution framework and a multi-dimensional evaluation protocol, it systematically assesses VLMs across three System 2 cognitive dimensions: planning, reflection, and memory.
+  [NeurIPS 2025][Robotics][Long-horizon manipulation] This paper proposes RoboCerebra, a long-horizon robotic manipulation benchmark comprising 1,000 human demonstration trajectories (averaging 2,972 steps…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - Long-horizon manipulation
-  - benchmark evaluation
-  - System 2 reasoning
-  - hierarchical planning
-  - VLM evaluation
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "Long-horizon manipulation"
+  - "benchmark evaluation"
+  - "System 2 reasoning"
+  - "hierarchical planning"
+  - "VLM evaluation"
 date: 2026-05-08
 content_hash: 856836f2db8f20e9
 ---

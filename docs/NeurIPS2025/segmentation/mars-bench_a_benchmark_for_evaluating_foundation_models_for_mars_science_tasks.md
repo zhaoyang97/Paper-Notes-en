@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mars-Bench: A Benchmark for Evaluating Foundation Models for Mars Science Tasks
 description: >-
-  [NeurIPS 2025][Segmentation][Mars science] This paper presents Mars-Bench — the first comprehensive benchmark for Mars science tasks, encompassing 20 datasets across three task types (classification, segmentation, and object detection). It systematically evaluates ImageNet-pretrained models, Earth observation foundation models, and vision-language models on Martian data, revealing significant gaps in current general-purpose models and calling for the development of Mars-specific foundation models.
+  [NeurIPS 2025][Segmentation][Mars science] This paper presents Mars-Bench — the first comprehensive benchmark for Mars science tasks, encompassing 20 datasets across three task types (classification, segmentation…
 tags:
-  - NeurIPS 2025
-  - Segmentation
-  - Mars science
-  - benchmark
-  - foundation model
-  - remote sensing segmentation
-  - planetary science
+  - "NeurIPS 2025"
+  - "Segmentation"
+  - "Mars science"
+  - "benchmark"
+  - "foundation model"
+  - "remote sensing segmentation"
+  - "planetary science"
 date: 2026-05-08
 content_hash: 99f89fd33cbc3315
 ---

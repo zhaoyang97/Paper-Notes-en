@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Minimum-Cost Network Flow with Dual Predictions
 description: >-
-  [AAAI 2026][Autonomous Driving][Minimum-cost flow] This paper presents the first learning-augmented algorithm for minimum-cost network flow (MCF) based on dual predictions. By warm-starting the classical ε-relaxation algorithm with machine-learned dual solutions, the proposed method ties its complexity bound to the $\ell_\infty$-norm of the prediction error (achieving both consistency and robustness), and demonstrates average speedups of 12.74× on traffic networks and 1.64× on chip escape routing.
+  [AAAI 2026][Autonomous Driving][Minimum-cost flow] This paper presents the first learning-augmented algorithm for minimum-cost network flow (MCF) based on dual predictions. By warm-starting the classical ε-relaxation alg…
 tags:
-  - AAAI 2026
-  - Autonomous Driving
-  - Minimum-cost flow
-  - dual predictions
-  - ε-relaxation
-  - algorithms with predictions
-  - chip routing
-  - traffic networks
+  - "AAAI 2026"
+  - "Autonomous Driving"
+  - "Minimum-cost flow"
+  - "dual predictions"
+  - "ε-relaxation"
+  - "algorithms with predictions"
+  - "chip routing"
+  - "traffic networks"
 date: 2026-05-08
 content_hash: 61b1816ae699d617
 ---

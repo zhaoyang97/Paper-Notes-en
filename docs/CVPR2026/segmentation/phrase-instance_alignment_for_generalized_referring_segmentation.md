@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Phrase-Instance Alignment for Generalized Referring Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Generalized Referring Segmentation] This paper proposes InstAlign, which reformulates Generalized Referring Expression Segmentation (GRES) as an instance-level reasoning problem. By introducing a Phrase-Object Alignment (POA) loss to establish fine-grained correspondences between linguistic phrases and visual instances, and employing a relevance-weighted aggregation mechanism to handle both multi-target and no-target scenarios in a unified manner, InstAlign achieves +3.22% cIoU and +12.25% N-acc improvements on gRefCOCO.
+  [CVPR 2026][Segmentation][Generalized Referring Segmentation] This paper proposes InstAlign, which reformulates Generalized Referring Expression Segmentation (GRES) as an instance-level reasoning problem. By introducing…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Generalized Referring Segmentation
-  - Phrase-Instance Alignment
-  - Instance-Level Reasoning
-  - Multi-Target Segmentation
-  - No-Target Detection
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Generalized Referring Segmentation"
+  - "Phrase-Instance Alignment"
+  - "Instance-Level Reasoning"
+  - "Multi-Target Segmentation"
+  - "No-Target Detection"
 date: 2026-05-08
 content_hash: 436f4759d122354c
 ---

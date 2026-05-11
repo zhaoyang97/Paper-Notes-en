@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MCGA: A Multi-task Classical Chinese Literary Genre Audio Corpus
 description: >-
-  [ACL 2026][Audio & Speech][classical literary speech corpus] This paper introduces MCGA, the first large-scale (119 hours, 22,000 samples) fully copyright-cleared audio corpus for classical Chinese literature, spanning five major literary genres (Fu, Shi, Wen, Ci, Qu) and six speech tasks (ASR/S2TT/SEC/SQA/SU/SR). An evaluation of 10 multimodal large models reveals substantial deficiencies in current models' ability to understand classical literary speech.
+  [ACL 2026][Audio & Speech][classical literary speech corpus] This paper introduces MCGA, the first large-scale (119 hours, 22,000 samples) fully copyright-cleared audio corpus for classical Chinese literature…
 tags:
-  - ACL 2026
+  - "ACL 2026"
   - "Audio & Speech"
-  - classical literary speech corpus
-  - multimodal large language models
-  - speech emotion analysis
-  - cross-modal consistency
-  - classical Chinese literary studies
+  - "classical literary speech corpus"
+  - "multimodal large language models"
+  - "speech emotion analysis"
+  - "cross-modal consistency"
+  - "classical Chinese literary studies"
 date: 2026-05-08
 content_hash: 00509eb6cf74dea2
 ---

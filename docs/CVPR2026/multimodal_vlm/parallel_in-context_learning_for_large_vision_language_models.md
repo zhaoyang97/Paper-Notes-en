@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Parallel In-context Learning for Large Vision Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][In-context learning] This paper proposes Parallel-ICL, which partitions the long demonstration context in multimodal in-context learning (MM-ICL) into chunks for parallel processing, and integrates predictions at the logit level via weighted Product-of-Experts (PoE). The method achieves performance on par with or superior to full-context MM-ICL while significantly reducing inference latency.
+  [CVPR 2026][Multimodal VLM][In-context learning] This paper proposes Parallel-ICL, which partitions the long demonstration context in multimodal in-context learning (MM-ICL) into chunks for parallel processing…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - In-context learning
-  - inference acceleration
-  - Product-of-Experts
-  - multimodal learning
-  - context chunking
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "In-context learning"
+  - "inference acceleration"
+  - "Product-of-Experts"
+  - "multimodal learning"
+  - "context chunking"
 date: 2026-05-08
 content_hash: d6f26f3c140ff818
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Analyzing Finetuning Representation Shift for Multimodal LLMs Steering
 description: >-
-  [ICCV 2025][Multimodal VLM][MLLM Interpretability] A training-free framework that reveals representation shifts in multimodal large language models (MLLMs) during finetuning through concept-level analysis, and leverages shift vectors for lightweight model behavior steering (debiasing, safety control).
+  [ICCV 2025][Multimodal VLM][MLLM Interpretability] A training-free framework that reveals representation shifts in multimodal large language models (MLLMs) during finetuning through concept-level analysis…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - MLLM Interpretability
-  - Concept Drift
-  - Representation Shift
-  - Model Steering
-  - Debiasing
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "MLLM Interpretability"
+  - "Concept Drift"
+  - "Representation Shift"
+  - "Model Steering"
+  - "Debiasing"
 date: 2026-05-08
 content_hash: c4f6bf36e050b596
 ---

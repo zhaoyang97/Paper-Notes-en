@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Minimizing False-Positive Attributions in Explanations of Non-Linear Models
 description: >-
-  [NeurIPS 2025][XAI] This paper proposes PatternLocal to address false-positive attributions caused by suppressor variables in XAI explanations of non-linear models. The method converts local discriminative surrogate weights into a generative representation, and significantly reduces false-positive feature attributions on three datasets: the XAI-TRIS benchmark, MRI artificial lesions, and EEG motor imagery.
+  [NeurIPS 2025][Interpretability][XAI] This paper proposes PatternLocal to address false-positive attributions caused by suppressor variables in XAI explanations of non-linear models. The method converts local discriminat…
 tags:
-  - NeurIPS 2025
-  - XAI
-  - suppressor variables
-  - local explanations
-  - generative explanation
-  - LIME
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "XAI"
+  - "suppressor variables"
+  - "local explanations"
+  - "generative explanation"
+  - "LIME"
 date: 2026-05-08
 content_hash: 360347bf0da4c028
 ---

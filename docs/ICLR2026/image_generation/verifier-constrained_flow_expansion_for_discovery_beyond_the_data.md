@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Verifier-Constrained Flow Expansion for Discovery Beyond the Data
 description: >-
-  [ICLR 2026][Image Generation][Flow Expansion] This paper proposes Flow Expander (FE), which expands the coverage of pretrained flow models in probability space via verifier-constrained entropy maximization, enabling the generation of design samples beyond the training data distribution while maintaining validity. FE increases diversity in molecular conformation design while preserving chemical validity.
+  [ICLR 2026][Image Generation][Flow Expansion] This paper proposes Flow Expander (FE), which expands the coverage of pretrained flow models in probability space via verifier-constrained entropy maximization…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Flow Expansion
-  - Verifier Constraint
-  - Entropy Maximization
-  - Mirror Descent
-  - Molecular Design
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Flow Expansion"
+  - "Verifier Constraint"
+  - "Entropy Maximization"
+  - "Mirror Descent"
+  - "Molecular Design"
 date: 2026-05-08
 content_hash: 866b11c17cb3623e
 ---

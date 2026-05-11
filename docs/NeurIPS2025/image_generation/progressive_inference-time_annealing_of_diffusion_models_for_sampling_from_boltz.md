@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Progressive Inference-Time Annealing of Diffusion Models for Sampling from Boltzmann Densities
 description: >-
-  [NeurIPS 2025][Image Generation][Boltzmann Sampling] This paper proposes PITA (Progressive Inference-Time Annealing), a framework that combines temperature annealing and diffusion smoothing as two complementary interpolation strategies. PITA trains an initial diffusion model at high temperature, then applies a novel Feynman-Kac PDE with SMC resampling to progressively anneal toward lower temperatures at inference time, training a sequence of diffusion models up to the target temperature. This approach achieves equilibrium sampling of alanine dipeptide and tripeptide in Cartesian coordinates for the first time.
+  [NeurIPS 2025][Image Generation][Boltzmann Sampling] This paper proposes PITA (Progressive Inference-Time Annealing), a framework that combines temperature annealing and diffusion smoothing as two complementary interpola…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Boltzmann Sampling
-  - Temperature Annealing
-  - Feynman-Kac
-  - Diffusion Models
-  - Molecular Conformation
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Boltzmann Sampling"
+  - "Temperature Annealing"
+  - "Feynman-Kac"
+  - "Diffusion Models"
+  - "Molecular Conformation"
 date: 2026-05-08
 content_hash: 3318da774f253a42
 ---

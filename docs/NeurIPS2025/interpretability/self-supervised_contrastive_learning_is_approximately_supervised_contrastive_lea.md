@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Self-Supervised Contrastive Learning is Approximately Supervised Contrastive Learning
 description: >-
-  [NeurIPS 2025][Contrastive Learning] This paper theoretically proves that self-supervised contrastive learning (DCL) is approximately equivalent to a supervised contrastive loss (NSCL), with the gap vanishing at rate $O(1/C)$ as the number of classes increases. It further proves that the global optimum of NSCL satisfies Neural Collapse (augmentation collapse + within-class collapse + Simplex ETF), and proposes a tighter few-shot error bound based on directional CDNV.
+  [NeurIPS 2025][Interpretability][Contrastive Learning] This paper theoretically proves that self-supervised contrastive learning (DCL) is approximately equivalent to a supervised contrastive loss (NSCL)…
 tags:
-  - NeurIPS 2025
-  - Contrastive Learning
-  - Self-Supervised Learning
-  - Supervised Contrastive Loss
-  - Neural Collapse
-  - Few-Shot Learning
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "Contrastive Learning"
+  - "Self-Supervised Learning"
+  - "Supervised Contrastive Loss"
+  - "Neural Collapse"
+  - "Few-Shot Learning"
 date: 2026-05-08
 content_hash: 6c1273a90cff607c
 ---

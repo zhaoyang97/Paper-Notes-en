@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Playmate2: Training-Free Multi-Character Audio-Driven Animation via Diffusion Transformer with Reward Feedback
 description: >-
-  [AAAI 2026][Image Generation][Audio-driven animation] This paper proposes a DiT-based audio-driven human video generation framework built on Wan2.1, featuring a LoRA training strategy for long video generation, partial parameter updates combined with DPO reward feedback to enhance lip synchronization and motion naturalness, and a novel training-free Mask-CFG method that enables multi-character (≥3 persons) audio-driven animation for the first time.
+  [AAAI 2026][Image Generation][Audio-driven animation] This paper proposes a DiT-based audio-driven human video generation framework built on Wan2.1, featuring a LoRA training strategy for long video generation…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Audio-driven animation
-  - multi-character animation
-  - Diffusion Transformer
-  - training-free inference
-  - DPO
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Audio-driven animation"
+  - "multi-character animation"
+  - "Diffusion Transformer"
+  - "training-free inference"
+  - "DPO"
 date: 2026-05-08
 content_hash: b2754ae753e1a1ec
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AnoStyler: Text-Driven Localized Anomaly Generation via Lightweight Style Transfer
 description: >-
-  [AAAI 2026][Image Generation][Anomaly Generation] This work formulates zero-shot anomaly generation as a text-guided localized style transfer problem. A lightweight U-Net trained with CLIP-based losses stylizes masked regions of normal images into semantically aligned anomalous images. With only 263M total parameters (0.61M trainable), AnoStyler surpasses diffusion-based baselines on MVTec-AD and VisA while significantly improving downstream anomaly detection performance.
+  [AAAI 2026][Image Generation][Anomaly Generation] This work formulates zero-shot anomaly generation as a text-guided localized style transfer problem. A lightweight U-Net trained with CLIP-based losses stylizes masked re…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Anomaly Generation
-  - Zero-Shot
-  - Style Transfer
-  - CLIP
-  - Industrial Defect Detection
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Anomaly Generation"
+  - "Zero-Shot"
+  - "Style Transfer"
+  - "CLIP"
+  - "Industrial Defect Detection"
 date: 2026-05-08
 content_hash: 35380a696fa20425
 ---

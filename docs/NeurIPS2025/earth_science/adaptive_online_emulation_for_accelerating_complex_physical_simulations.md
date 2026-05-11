@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Adaptive Online Emulation for Accelerating Complex Physical Simulations
 description: >-
-  [NeurIPS 2025][Online learning] This paper proposes Adaptive Online Emulation (AOE), a framework that dynamically trains an ELM-based neural network surrogate model during physical simulation execution to replace expensive computational components, requiring no offline pretraining. On an exoplanetary atmospheric simulation, AOE achieves an 11.1× speedup (91% time savings) with only ~0.01% accuracy loss.
+  [NeurIPS 2025][Earth Science][Online learning] This paper proposes Adaptive Online Emulation (AOE), a framework that dynamically trains an ELM-based neural network surrogate model during physical simulation execution to…
 tags:
-  - NeurIPS 2025
-  - Online learning
-  - neural network surrogate models
-  - time-stepping simulation
-  - ELM
-  - atmospheric modeling
+  - "NeurIPS 2025"
+  - "Earth Science"
+  - "Online learning"
+  - "neural network surrogate models"
+  - "time-stepping simulation"
+  - "ELM"
+  - "atmospheric modeling"
 date: 2026-05-08
 content_hash: 574a2c9d9c67a04f
 ---

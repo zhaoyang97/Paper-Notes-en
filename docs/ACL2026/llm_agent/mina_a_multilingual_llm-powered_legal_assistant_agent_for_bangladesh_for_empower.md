@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mina: A Multilingual LLM-Powered Legal Assistant Agent for Bangladesh
 description: >-
-  [ACL 2026][LLM Agent][Legal Assistant] This work presents Mina, a multilingual LLM-powered legal assistant for the Bangladeshi legal domain. Through a two-stage RAG pipeline that accurately retrieves relevant acts and specific provisions, combined with a tool chain and multilingual embeddings, Mina achieves 75–80% passing rates on the Bangladesh Bar Council exam while reducing legal consultation costs to just 0.12–0.61% of traditional methods.
+  [ACL 2026][LLM Agent][Legal Assistant] This work presents Mina, a multilingual LLM-powered legal assistant for the Bangladeshi legal domain. Through a two-stage RAG pipeline that accurately retrieves relevant acts and sp…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - Legal Assistant
-  - Multilingual Agent
-  - RAG
-  - Bangladesh Law
-  - Low-Resource Languages
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Legal Assistant"
+  - "Multilingual Agent"
+  - "RAG"
+  - "Bangladesh Law"
+  - "Low-Resource Languages"
 date: 2026-05-08
 content_hash: f65adeac5a05e4ff
 ---

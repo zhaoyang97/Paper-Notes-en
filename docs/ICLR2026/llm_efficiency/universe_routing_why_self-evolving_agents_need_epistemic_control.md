@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Universe Routing: Why Self-Evolving Agents Need Epistemic Control
 description: >-
-  [ICLR 2026][LLM Efficiency][epistemic routing] This paper formalizes the tendency of autonomous agents to conflate incompatible epistemological frameworks (e.g., frequentist vs. Bayesian) during chain-of-thought reasoning as the "universe routing" problem. A lightweight 465M-parameter router is trained to classify queries into 7 mutually exclusive belief spaces and dispatch them to dedicated solvers. The work demonstrates that hard routing is 7× faster than soft MoE at equal accuracy, and that a modular architecture with rehearsal enables continual learning with zero forgetting.
+  [ICLR 2026][LLM Efficiency][epistemic routing] This paper formalizes the tendency of autonomous agents to conflate incompatible epistemological frameworks (e.g.…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - epistemic routing
-  - belief space
-  - hard routing
-  - continual learning
-  - MoE
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "epistemic routing"
+  - "belief space"
+  - "hard routing"
+  - "continual learning"
+  - "MoE"
 date: 2026-05-08
 content_hash: 733f33fbe9656e3d
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PriVi: Towards a General-Purpose Video Model for Primate Behavior in the Wild
 description: >-
-  [CVPR 2026][Model Compression][primate behavior recognition] PriVi constructs a large-scale primate video pretraining dataset of 424 hours and performs **domain-level pretraining** (rather than dataset-level pretraining) on V-JEPA. This work is the first to demonstrate that domain-level pretraining of video models generalizes across datasets, surpassing fully fine-tuned specialized models on four primate behavior recognition benchmarks using a frozen classifier with only 220K parameters.
+  [CVPR 2026][Model Compression][primate behavior recognition] PriVi constructs a large-scale primate video pretraining dataset of 424 hours and performs **domain-level pretraining** (rather than dataset-level pretraining)…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - primate behavior recognition
-  - self-supervised pretraining
-  - V-JEPA
-  - domain-level pretraining
-  - data curation pipeline
+  - "CVPR 2026"
+  - "Model Compression"
+  - "primate behavior recognition"
+  - "self-supervised pretraining"
+  - "V-JEPA"
+  - "domain-level pretraining"
+  - "data curation pipeline"
 date: 2026-05-08
 content_hash: 955e257d4e8285a6
 ---

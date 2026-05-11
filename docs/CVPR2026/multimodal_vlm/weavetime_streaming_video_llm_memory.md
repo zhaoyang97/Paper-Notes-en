@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] WeaveTime: Stream from Earlier Frames into Emergent Memory in VideoLLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][Video-LLM] This paper diagnoses the *Time-Agnosticism* problem in current Video-LLMs and proposes WeaveTime, a framework that endows models with temporal awareness via a Shuffled-Order Prediction Enhancement (SOPE) auxiliary task during training, and achieves efficient adaptive memory retrieval at inference via an uncertainty-gated coarse-to-fine memory cache (PCDF-Cache), yielding significant gains on streaming video QA benchmarks.
+  [CVPR 2026][Multimodal VLM][Video-LLM] This paper diagnoses the *Time-Agnosticism* problem in current Video-LLMs and proposes WeaveTime…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Video-LLM
-  - streaming VQA
-  - temporal order
-  - memory cache
-  - uncertainty-gated retrieval
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Video-LLM"
+  - "streaming VQA"
+  - "temporal order"
+  - "memory cache"
+  - "uncertainty-gated retrieval"
 date: 2026-05-08
 content_hash: f0f02e46686f92f0
 ---

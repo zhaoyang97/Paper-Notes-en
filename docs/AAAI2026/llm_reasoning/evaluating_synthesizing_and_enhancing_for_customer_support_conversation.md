@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Evaluating, Synthesizing, and Enhancing for Customer Support Conversation
 description: >-
-  [AAAI 2026][LLM Reasoning][Customer support conversation] This paper defines five dialogue phases and twelve support strategies based on the COPC industry standard, generates 11,232 strategy-rich synthetic dialogues (RoleCS) via five-agent role-playing, and constructs a 1,855-sample evaluation set (CSConv) by rewriting real conversations. Fine-tuning on these resources substantially improves strategy-aligned response quality and issue resolution rates.
+  [AAAI 2026][LLM Reasoning][Customer support conversation] This paper defines five dialogue phases and twelve support strategies based on the COPC industry standard, generates 11…
 tags:
-  - AAAI 2026
-  - LLM Reasoning
-  - Customer support conversation
-  - COPC standard
-  - role-playing
-  - data synthesis
-  - strategy alignment
+  - "AAAI 2026"
+  - "LLM Reasoning"
+  - "Customer support conversation"
+  - "COPC standard"
+  - "role-playing"
+  - "data synthesis"
+  - "strategy alignment"
 date: 2026-05-08
 content_hash: f1c93beada601dd0
 ---

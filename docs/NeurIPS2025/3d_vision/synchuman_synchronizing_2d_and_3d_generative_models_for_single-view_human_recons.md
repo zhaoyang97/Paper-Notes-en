@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SyncHuman: Synchronizing 2D and 3D Generative Models for Single-View Human Reconstruction
 description: >-
-  [NeurIPS 2025][3D Vision][Single-view human reconstruction] SyncHuman is the first framework to unify 2D multi-view generative models and 3D native generative models within a single pipeline. Through pixel-aligned 2D-3D synchronized attention, the two branches mutually enhance each other, achieving high-fidelity textured mesh reconstruction under complex human poses and surpassing existing methods in both geometric accuracy and visual quality.
+  [NeurIPS 2025][3D Vision][Single-view human reconstruction] SyncHuman is the first framework to unify 2D multi-view generative models and 3D native generative models within a single pipeline. Through pixel-aligned 2D-3D…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Single-view human reconstruction
-  - 2D-3D generative model synchronization
-  - multi-view generation
-  - 3D Gaussian splatting
-  - textured mesh
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Single-view human reconstruction"
+  - "2D-3D generative model synchronization"
+  - "multi-view generation"
+  - "3D Gaussian splatting"
+  - "textured mesh"
 date: 2026-05-08
 content_hash: 989bb375201c69f7
 ---

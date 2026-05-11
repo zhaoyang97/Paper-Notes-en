@@ -2,16 +2,17 @@
 title: >-
   [Paper Note] Zero-Shot Performance Prediction for Probabilistic Scaling Laws
 description: >-
-  [NeurIPS 2025][scaling laws] This paper frames NLP learning curve prediction as a multi-task learning problem, employing a latent-variable multi-output Gaussian process (MaGP) to capture the bi-level hierarchical structure of datasets and inter-task correlations, enabling zero-shot prediction of learning curves and deriving probabilistic scaling laws via Monte Carlo simulation.
+  [NeurIPS 2025][Multilingual & Machine Translation][scaling laws] This paper frames NLP learning curve prediction as a multi-task learning problem…
 tags:
-  - NeurIPS 2025
-  - scaling laws
-  - learning curves
-  - Gaussian processes
-  - zero-shot prediction
-  - hierarchical modeling
-  - active learning
-  - multi-task learning
+  - "NeurIPS 2025"
+  - "Multilingual & Machine Translation"
+  - "scaling laws"
+  - "learning curves"
+  - "Gaussian processes"
+  - "zero-shot prediction"
+  - "hierarchical modeling"
+  - "active learning"
+  - "multi-task learning"
 date: 2026-05-08
 content_hash: 11a45150a452926f
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Scheduling Weight Transitions for Quantization-Aware Training
 description: >-
-  [ICCV 2025][Model Compression][Quantization-aware training] This paper identifies that conventional learning rate scheduling fails to control the effective step size of quantized weights in quantization-aware training (QAT), and proposes a Transition Rate (TR) scheduling technique that explicitly governs the number of discrete weight transitions via a Transition-Adaptive Learning Rate (TALR), substantially improving low-bit quantized model performance.
+  [ICCV 2025][Model Compression][Quantization-aware training] This paper identifies that conventional learning rate scheduling fails to control the effective step size of quantized weights in quantization-aware training (Q…
 tags:
-  - ICCV 2025
-  - Model Compression
-  - Quantization-aware training
-  - transition rate scheduling
-  - adaptive learning rate
-  - network quantization
-  - low-bit precision
+  - "ICCV 2025"
+  - "Model Compression"
+  - "Quantization-aware training"
+  - "transition rate scheduling"
+  - "adaptive learning rate"
+  - "network quantization"
+  - "low-bit precision"
 date: 2026-05-08
 content_hash: e88a2adf177fe016
 ---

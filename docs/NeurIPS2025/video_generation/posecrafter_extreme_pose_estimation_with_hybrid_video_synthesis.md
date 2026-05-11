@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PoseCrafter: Extreme Pose Estimation with Hybrid Video Synthesis
 description: >-
-  [NeurIPS 2025][Video Generation][Extreme Pose Estimation] This paper proposes PoseCrafter, a training-free framework for extreme pose estimation. It synthesizes high-fidelity intermediate frames via Hybrid Video Generation (HVG, a two-stage pipeline combining DynamiCrafter and ViewCrafter) to address pose estimation for image pairs with minimal or no overlap, and employs a Feature Matching Selector (FMS) to efficiently identify the most informative intermediate frames. The method achieves significant improvements in extreme pose estimation accuracy across four datasets.
+  [NeurIPS 2025][Video Generation][Extreme Pose Estimation] This paper proposes PoseCrafter, a training-free framework for extreme pose estimation. It synthesizes high-fidelity intermediate frames via Hybrid Video Generati…
 tags:
-  - NeurIPS 2025
-  - Video Generation
-  - Extreme Pose Estimation
-  - Video Diffusion
-  - Hybrid Video Generation
-  - Feature Matching Selection
-  - Sparse Overlap
+  - "NeurIPS 2025"
+  - "Video Generation"
+  - "Extreme Pose Estimation"
+  - "Video Diffusion"
+  - "Hybrid Video Generation"
+  - "Feature Matching Selection"
+  - "Sparse Overlap"
 date: 2026-05-08
 content_hash: bd20da943e9fe965
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Agentic Plan Caching: Test-Time Memory for Fast and Cost-Efficient LLM Agents
 description: >-
-  [NeurIPS 2025][LLM Agent][Agent caching] This paper proposes Agentic Plan Caching (APC), which extracts structured plan templates from agent execution logs and reuses them via keyword-matching cache hits with a small model for adaptation. APC reduces cost by 50.31% and latency by 27.28% on average while retaining 96.61% of accuracy-optimal performance.
+  [NeurIPS 2025][LLM Agent][Agent caching] This paper proposes Agentic Plan Caching (APC), which extracts structured plan templates from agent execution logs and reuses them via keyword-matching cache hits with a small mod…
 tags:
-  - NeurIPS 2025
-  - LLM Agent
-  - Agent caching
-  - plan templates
-  - test-time memory
-  - inference cost optimization
-  - Plan-Act paradigm
+  - "NeurIPS 2025"
+  - "LLM Agent"
+  - "Agent caching"
+  - "plan templates"
+  - "test-time memory"
+  - "inference cost optimization"
+  - "Plan-Act paradigm"
 date: 2026-05-08
 content_hash: df0cd4e915a8c9d5
 ---

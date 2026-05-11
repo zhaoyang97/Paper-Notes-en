@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] SpEx: A Spectral Approach to Explainable Clustering
 description: >-
-  [NeurIPS 2025][Explainable clustering] This paper proposes SpEx, a general spectral graph partitioning-based framework for explainable clustering that can "round" any reference clustering (without requiring centroids) into an explainable clustering via coordinate-cut decision trees, or perform reference-free clustering directly on a kNN graph.
+  [NeurIPS 2025][Interpretability][Explainable clustering] This paper proposes SpEx, a general spectral graph partitioning-based framework for explainable clustering that can "round" any reference clustering (without requi…
 tags:
-  - NeurIPS 2025
-  - Explainable clustering
-  - spectral graph partitioning
-  - coordinate cuts
-  - decision trees
-  - Cheeger inequality
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "Explainable clustering"
+  - "spectral graph partitioning"
+  - "coordinate cuts"
+  - "decision trees"
+  - "Cheeger inequality"
 date: 2026-05-08
 content_hash: c46a112cf85f7694
 ---

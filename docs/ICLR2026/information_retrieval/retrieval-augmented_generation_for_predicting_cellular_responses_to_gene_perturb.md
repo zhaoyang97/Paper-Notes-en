@@ -2,15 +2,16 @@
 title: >-
   [Paper Note] Retrieval-Augmented Generation for Predicting Cellular Responses to Gene Perturbation
 description: >-
-  [ICLR2026][RAG] This paper proposes **PT-RAG** (Perturbation-aware Two-stage Retrieval-Augmented Generation), the first application of differentiable retrieval-augmented generation to single-cell gene perturbation response prediction. The framework combines semantic retrieval of candidate perturbations via GenePT embeddings with Gumbel-Softmax-based conditional discrete sampling for cell-type-aware, end-to-end retrieval optimization. PT-RAG surpasses the STATE baseline on the Replogle-Nadig dataset (Pearson 0.633 vs. 0.624), while demonstrating that naïve RAG severely degrades performance (Pearson 0.396 only), establishing that **differentiable, cell-type-aware retrieval** is indispensable in this domain.
+  [ICLR2026][Information Retrieval & RAG][RAG] This paper proposes **PT-RAG** (Perturbation-aware Two-stage Retrieval-Augmented Generation)…
 tags:
-  - ICLR2026
-  - RAG
-  - differentiable retrieval
-  - gene perturbation prediction
-  - single-cell transcriptomics
-  - Gumbel-Softmax
-  - cell-type-aware
+  - "ICLR2026"
+  - "Information Retrieval & RAG"
+  - "RAG"
+  - "differentiable retrieval"
+  - "gene perturbation prediction"
+  - "single-cell transcriptomics"
+  - "Gumbel-Softmax"
+  - "cell-type-aware"
 date: 2026-05-08
 content_hash: 0903d2dac0d63d3a
 ---

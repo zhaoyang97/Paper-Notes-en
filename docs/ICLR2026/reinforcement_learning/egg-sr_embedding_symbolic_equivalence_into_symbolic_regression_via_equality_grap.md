@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EGG-SR: Embedding Symbolic Equivalence into Symbolic Regression via Equality Graph
 description: >-
-  [ICLR 2026][Reinforcement Learning][Symbolic Regression] This paper proposes Egg-SR, a unified framework that embeds symbolic equivalence via equality graphs (e-graphs) into three categories of symbolic regression methods—MCTS, DRL, and LLM—achieving subtree pruning, policy gradient variance reduction, and feedback prompt enrichment, respectively. Theoretical results prove that Egg-MCTS tightens the regret bound and Egg-DRL reduces gradient estimation variance, while experiments consistently validate improved expression discovery accuracy.
+  [ICLR 2026][Reinforcement Learning][Symbolic Regression] This paper proposes Egg-SR, a unified framework that embeds symbolic equivalence via equality graphs (e-graphs) into three categories of symbolic regression method…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Symbolic Regression
-  - Symbolic Equivalence
-  - Equality Graph
-  - Monte Carlo Tree Search
-  - Deep Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Symbolic Regression"
+  - "Symbolic Equivalence"
+  - "Equality Graph"
+  - "Monte Carlo Tree Search"
+  - "Deep Reinforcement Learning"
 date: 2026-05-08
 content_hash: 50a130ebe5ff3b55
 ---

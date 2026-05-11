@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Marker-Based 3D Reconstruction of Aggregates with a Comparative Analysis of 2D and 3D Morphologies
 description: >-
-  [CVPR 2026][Medical Imaging][3D reconstruction] This paper proposes a low-cost marker-based photogrammetric pipeline for high-quality 3D reconstruction of aggregate particles. Through a systematic comparative analysis of 2D and 3D morphological indices, it reveals the significant limitations of relying solely on 2D images for aggregate morphology assessment.
+  [CVPR 2026][Medical Imaging][3D reconstruction] This paper proposes a low-cost marker-based photogrammetric pipeline for high-quality 3D reconstruction of aggregate particles. Through a systematic comparative analysis of…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - 3D reconstruction
-  - photogrammetry
-  - aggregate morphology
-  - point cloud
-  - marker-based
-  - 2D-3D comparison
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "3D reconstruction"
+  - "photogrammetry"
+  - "aggregate morphology"
+  - "point cloud"
+  - "marker-based"
+  - "2D-3D comparison"
 date: 2026-05-08
 content_hash: 0c585cc05eb75a44
 ---

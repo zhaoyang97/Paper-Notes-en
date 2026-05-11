@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Generic Event Boundary Detection via Denoising Diffusion (DiffGEBD)
 description: >-
-  [ICCV 2025][Image Restoration][Generic Event Boundary Detection] DiffGEBD is the first work to introduce diffusion models into Generic Event Boundary Detection (GEBD). It frames boundary prediction as an iterative denoising process from random noise to a plausible boundary distribution, leverages Classifier-Free Guidance to control prediction diversity, and proposes two new evaluation metrics—Symmetric F1 and Diversity Score—to measure quality and diversity in multi-prediction scenarios.
+  [ICCV 2025][Image Restoration][Generic Event Boundary Detection] DiffGEBD is the first work to introduce diffusion models into Generic Event Boundary Detection (GEBD). It frames boundary prediction as an iterative denois…
 tags:
-  - ICCV 2025
-  - Image Restoration
-  - Generic Event Boundary Detection
-  - Diffusion Models
-  - Classifier-Free Guidance
-  - Diversity Evaluation
-  - Temporal Self-Similarity
+  - "ICCV 2025"
+  - "Image Restoration"
+  - "Generic Event Boundary Detection"
+  - "Diffusion Models"
+  - "Classifier-Free Guidance"
+  - "Diversity Evaluation"
+  - "Temporal Self-Similarity"
 date: 2026-05-08
 content_hash: bcb8195f0c5cb2cd
 ---

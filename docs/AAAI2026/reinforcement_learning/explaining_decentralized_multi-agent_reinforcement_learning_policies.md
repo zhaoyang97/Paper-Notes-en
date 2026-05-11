@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Explaining Decentralized Multi-Agent Reinforcement Learning Policies
 description: >-
-  [AAAI 2026][Reinforcement Learning][Explainable AI] This paper proposes the first explainability method for decentralized multi-agent reinforcement learning (MARL) policies, comprising Hasse diagram-based policy summarization and query-based natural language explanations (When / Why Not / What). The approach is demonstrated across four MARL domains, showing both generality and computational efficiency. A user study confirms that it significantly improves human understanding of policies and question-answering performance.
+  [AAAI 2026][Reinforcement Learning][Explainable AI] This paper proposes the first explainability method for decentralized multi-agent reinforcement learning (MARL) policies…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - Explainable AI
-  - Multi-Agent Reinforcement Learning
-  - Decentralized Policies
-  - Hasse Diagram
-  - Policy Summarization
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "Explainable AI"
+  - "Multi-Agent Reinforcement Learning"
+  - "Decentralized Policies"
+  - "Hasse Diagram"
+  - "Policy Summarization"
 date: 2026-05-08
 content_hash: a543fd08d39731d3
 ---

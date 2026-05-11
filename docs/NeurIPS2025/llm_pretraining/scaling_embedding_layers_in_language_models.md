@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Scaling Embedding Layers in Language Models
 description: >-
-  [NeurIPS 2025][LLM Pretraining][embedding scaling] This paper proposes Scone, a method that learns contextualized embeddings for high-frequency n-grams using a separate Transformer model, and offloads these embeddings to main memory/SSD at inference time. This enables a new scaling paradigm in which additional compute is consumed during training without increasing accelerator resource usage at inference. A 1B-parameter Scone model surpasses a 1.9B baseline.
+  [NeurIPS 2025][LLM Pretraining][embedding scaling] This paper proposes Scone, a method that learns contextualized embeddings for high-frequency n-grams using a separate Transformer model…
 tags:
-  - NeurIPS 2025
-  - LLM Pretraining
-  - embedding scaling
-  - n-gram embeddings
-  - reasoning efficiency
-  - offloading
-  - Scone
+  - "NeurIPS 2025"
+  - "LLM Pretraining"
+  - "embedding scaling"
+  - "n-gram embeddings"
+  - "reasoning efficiency"
+  - "offloading"
+  - "Scone"
 date: 2026-05-08
 content_hash: d14505a40fc0ce78
 ---

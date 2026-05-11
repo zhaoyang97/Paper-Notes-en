@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] On the Edge of Core (Non-)Emptiness: An Automated Reasoning Approach to Approval-Based Multi-Winner Voting
 description: >-
-  [AAAI 2026][Core Stability] This paper proposes an automated reasoning framework based on Mixed Integer Linear Programming (MILP) to investigate the major open problem of whether core stability always exists in approval-based multi-winner voting. The framework establishes new existence results, uncovers previously unknown relationships between core stability and other axioms (e.g., Lindahl pricability), and refutes an existing conjecture.
+  [AAAI 2026][Core Stability] This paper proposes an automated reasoning framework based on Mixed Integer Linear Programming (MILP) to investigate the major open problem of whether core stability always exists in approval-…
 tags:
-  - AAAI 2026
-  - Core Stability
-  - Multi-Winner Voting
-  - Mixed Integer Linear Programming
-  - Automated Reasoning
-  - Proportional Representation
+  - "AAAI 2026"
+  - "Core Stability"
+  - "Multi-Winner Voting"
+  - "Mixed Integer Linear Programming"
+  - "Automated Reasoning"
+  - "Proportional Representation"
 date: 2026-05-08
 content_hash: 77640815d2f09cf9
 ---

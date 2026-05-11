@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Posterior Sampling by Combining Diffusion Models with Annealed Langevin Dynamics
 description: >-
-  [NeurIPS 2025][Medical Imaging][posterior sampling] This paper proposes an algorithm combining diffusion models with annealed Langevin dynamics that requires only $L^4$-accurate score estimates to achieve polynomial-time posterior sampling under (locally) log-concave distributions, providing the first theoretical guarantees for warm-started inverse problem solving.
+  [NeurIPS 2025][Medical Imaging][posterior sampling] This paper proposes an algorithm combining diffusion models with annealed Langevin dynamics that requires only $L^4$-accurate score estimates to achieve polynomial-time…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - posterior sampling
-  - diffusion models
-  - Langevin dynamics
-  - inverse problems
-  - compressed sensing
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "posterior sampling"
+  - "diffusion models"
+  - "Langevin dynamics"
+  - "inverse problems"
+  - "compressed sensing"
 date: 2026-05-08
 content_hash: e289165faf416f33
 ---

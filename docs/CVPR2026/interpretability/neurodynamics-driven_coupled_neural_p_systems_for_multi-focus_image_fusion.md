@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Neurodynamics-Driven Coupled Neural P Systems for Multi-Focus Image Fusion
 description: >-
-  [CVPR 2026][Multi-focus image fusion] This paper proposes ND-CNPFuse, which performs neurodynamical analysis of coupled neural P (CNP) systems to establish constraint relationships between network parameters and input signals, preventing abnormal sustained neuronal firing. The method generates high-quality, interpretable decision maps for multi-focus image fusion (MFIF) without any training.
+  [CVPR 2026][Interpretability][Multi-focus image fusion] This paper proposes ND-CNPFuse, which performs neurodynamical analysis of coupled neural P (CNP) systems to establish constraint relationships between network param…
 tags:
-  - CVPR 2026
-  - Multi-focus image fusion
-  - coupled neural P systems
-  - neurodynamics
-  - decision map
-  - spiking mechanism
+  - "CVPR 2026"
+  - "Interpretability"
+  - "Multi-focus image fusion"
+  - "coupled neural P systems"
+  - "neurodynamics"
+  - "decision map"
+  - "spiking mechanism"
 date: 2026-05-08
 content_hash: 2b1d53fb4510a0eb
 ---

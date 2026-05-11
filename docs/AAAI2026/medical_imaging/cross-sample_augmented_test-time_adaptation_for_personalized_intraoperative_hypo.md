@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Cross-Sample Augmented Test-Time Adaptation for Personalized Intraoperative Hypotension Prediction
 description: >-
-  [AAAI 2026][Medical Imaging][intraoperative hypotension prediction] This paper proposes the CSA-TTA framework, which enhances personalized intraoperative hypotension prediction at test time by constructing a cross-sample bank, performing coarse-to-fine retrieval, and applying multi-task optimization to retrieve hypotension event signals from other patients' data.
+  [AAAI 2026][Medical Imaging][intraoperative hypotension prediction] This paper proposes the CSA-TTA framework, which enhances personalized intraoperative hypotension prediction at test time by constructing a cross-sample…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - intraoperative hypotension prediction
-  - test-time adaptation
-  - cross-sample retrieval
-  - time series forecasting
-  - personalized medicine
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "intraoperative hypotension prediction"
+  - "test-time adaptation"
+  - "cross-sample retrieval"
+  - "time series forecasting"
+  - "personalized medicine"
 date: 2026-05-08
 content_hash: 6e517ef4b39122a7
 ---

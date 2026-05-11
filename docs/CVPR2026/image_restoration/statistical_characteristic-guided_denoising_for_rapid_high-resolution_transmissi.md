@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Statistical Characteristic-Guided Denoising for Rapid High-Resolution Transmission Electron Microscopy Imaging
 description: >-
-  [CVPR 2026][Image Restoration][HRTEM Denoising] This paper proposes SCGN (Statistical Characteristic-Guided denoising Network), which adaptively enhances signal and suppresses noise in both spatial and frequency domains via window standard deviation weighting and frequency band-guided channel attention, respectively. Combined with an HRTEM-specific noise calibration method that generates realistic noisy datasets containing disordered structures, SCGN achieves high-quality denoising of high-resolution transmission electron microscopy images at millisecond-level acquisition speeds.
+  [CVPR 2026][Image Restoration][HRTEM Denoising] This paper proposes SCGN (Statistical Characteristic-Guided denoising Network), which adaptively enhances signal and suppresses noise in both spatial and frequency domains…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - HRTEM Denoising
-  - Statistical Characteristic Guidance
-  - Frequency-Domain Denoising
-  - Spatial Deviation Weighting
-  - Noise Calibration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "HRTEM Denoising"
+  - "Statistical Characteristic Guidance"
+  - "Frequency-Domain Denoising"
+  - "Spatial Deviation Weighting"
+  - "Noise Calibration"
 date: 2026-05-08
 content_hash: 085a2f233afe20ef
 ---

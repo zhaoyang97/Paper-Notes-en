@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Self-Consistency for LLM-Based Motion Trajectory Generation and Verification
 description: >-
-  [CVPR2026][Multimodal VLM][self-consistency] This paper extends the self-consistency paradigm of LLMs from natural language reasoning to the visual domain. It defines shape families for motion trajectories via a Lie transformation group hierarchy, and clusters multiple LLM-sampled trajectories under transformation-invariant distance metrics to achieve unsupervised trajectory generation improvement (+4–6%) and verification (precision +11.8%), without any training.
+  [CVPR2026][Multimodal VLM][self-consistency] This paper extends the self-consistency paradigm of LLMs from natural language reasoning to the visual domain. It defines shape families for motion trajectories via a Lie tran…
 tags:
-  - CVPR2026
-  - Multimodal VLM
-  - self-consistency
-  - motion trajectory
-  - Lie transformation groups
-  - shape family
-  - unsupervised verification
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "self-consistency"
+  - "motion trajectory"
+  - "Lie transformation groups"
+  - "shape family"
+  - "unsupervised verification"
 date: 2026-05-08
 content_hash: 7b44aec49d853328
 ---

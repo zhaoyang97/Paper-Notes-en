@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From Inpainting to Layer Decomposition: Repurposing Generative Inpainting Models for Image Layer Decomposition
 description: >-
-  [CVPR 2026][Image Generation][Layer Decomposition] This paper identifies an intrinsic connection between image layer decomposition and inpainting/outpainting, and proposes the Outpaint-and-Remove framework, which efficiently adapts a pretrained inpainting DiT model (FLUX.1-Fill-dev) for layer decomposition via lightweight LoRA fine-tuning. A multi-modal context fusion module is introduced to preserve fine details. The method achieves state-of-the-art performance using only 100K synthetic training samples.
+  [CVPR 2026][Image Generation][Layer Decomposition] This paper identifies an intrinsic connection between image layer decomposition and inpainting/outpainting, and proposes the Outpaint-and-Remove framework…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Layer Decomposition
-  - Image Inpainting
-  - Diffusion Models
-  - Foreground Extraction
-  - Parameter-Efficient Fine-Tuning
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Layer Decomposition"
+  - "Image Inpainting"
+  - "Diffusion Models"
+  - "Foreground Extraction"
+  - "Parameter-Efficient Fine-Tuning"
 date: 2026-05-08
 content_hash: 0a0c4a0f76ee7e6c
 ---

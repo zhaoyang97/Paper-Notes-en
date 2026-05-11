@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Blink: Dynamic Visual Token Resolution for Enhanced Multimodal Understanding
 description: >-
-  [CVPR 2026][Image Restoration][Visual token resolution] This paper proposes Blink, a framework that dynamically expands and discards visual tokens across different Transformer layers of an MLLM — simulating the human "rapid blinking" scanning process — to adaptively enhance visual perception within a single forward pass, improving LLaVA-1.5 performance across multiple multimodal benchmarks.
+  [CVPR 2026][Image Restoration][Visual token resolution] This paper proposes Blink, a framework that dynamically expands and discards visual tokens across different Transformer layers of an MLLM — simulating the human "ra…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Visual token resolution
-  - dynamic attention
-  - multimodal large language models
-  - saliency guidance
-  - token super-resolution
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Visual token resolution"
+  - "dynamic attention"
+  - "multimodal large language models"
+  - "saliency guidance"
+  - "token super-resolution"
 date: 2026-05-08
 content_hash: 7d46fd2374bc2bb1
 ---

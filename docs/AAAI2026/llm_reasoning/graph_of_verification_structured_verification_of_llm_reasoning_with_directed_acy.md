@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Graph of Verification: Structured Verification of LLM Reasoning with Directed Acyclic Graphs
 description: >-
-  [AAAI 2026][LLM Reasoning][reasoning verification] This paper proposes Graph of Verification (GoV), a structured verification framework that models LLM reasoning processes as directed acyclic graphs (DAGs). Through a flexible Node Block architecture, GoV enables multi-granularity verification—ranging from atomic-level steps in formal tasks to paragraph-level verification in natural language narratives—and substantially outperforms both holistic verification and other decomposed verification methods on both structured and loosely structured reasoning benchmarks.
+  [AAAI 2026][LLM Reasoning][reasoning verification] This paper proposes Graph of Verification (GoV), a structured verification framework that models LLM reasoning processes as directed acyclic graphs (DAGs). Through a fle…
 tags:
-  - AAAI 2026
-  - LLM Reasoning
-  - reasoning verification
-  - directed acyclic graph
-  - multi-granularity verification
-  - decomposed verification
-  - training-free method
+  - "AAAI 2026"
+  - "LLM Reasoning"
+  - "reasoning verification"
+  - "directed acyclic graph"
+  - "multi-granularity verification"
+  - "decomposed verification"
+  - "training-free method"
 date: 2026-05-08
 content_hash: 0a3293919b6fb107
 ---

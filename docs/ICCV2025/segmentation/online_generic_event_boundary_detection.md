@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Online Generic Event Boundary Detection
 description: >-
-  [ICCV2025][Segmentation][Online event boundary detection] This paper proposes Online Generic Event Boundary Detection (On-GEBD) as a new task—detecting event boundaries in real time from streaming video—and introduces the ESTimator framework inspired by the cognitive science Event Segmentation Theory (EST). Through the collaboration of a Consistent Event Anticipator (CEA) and an Online Boundary Discriminator (OBD), ESTimator achieves an Avg F1 of 0.748 on Kinetics-GEBD, surpassing all online baselines and approaching the performance of offline methods.
+  [ICCV2025][Segmentation][Online event boundary detection] This paper proposes Online Generic Event Boundary Detection (On-GEBD) as a new task—detecting event boundaries in real time from streaming video—and introduces th…
 tags:
-  - ICCV2025
-  - Segmentation
-  - Online event boundary detection
-  - Event Segmentation Theory
-  - streaming video
-  - dynamic thresholding
-  - Transformer decoder
+  - "ICCV2025"
+  - "Segmentation"
+  - "Online event boundary detection"
+  - "Event Segmentation Theory"
+  - "streaming video"
+  - "dynamic thresholding"
+  - "Transformer decoder"
 date: 2026-05-08
 content_hash: 542948cf8d8c4097
 ---

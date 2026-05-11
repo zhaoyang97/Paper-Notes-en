@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] No Hard Negatives Required: Concept Centric Learning Leads to Compositionality without Degrading Zero-shot Capabilities of Contrastive Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Compositional understanding] C2LIP proposes a contrastive learning fine-tuning approach that requires no hard negatives: by decomposing text into noun-phrase concepts and introducing cross-modal attention pooling, it achieves state-of-the-art performance on the SugarCrepe/SugarCrepe++ compositionality benchmarks while maintaining or improving zero-shot and retrieval performance.
+  [CVPR 2026][Multimodal VLM][Compositional understanding] C2LIP proposes a contrastive learning fine-tuning approach that requires no hard negatives: by decomposing text into noun-phrase concepts and introducing cross-mod…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Compositional understanding
-  - contrastive learning
-  - CLIP fine-tuning
-  - noun phrases
-  - zero-shot generalization
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Compositional understanding"
+  - "contrastive learning"
+  - "CLIP fine-tuning"
+  - "noun phrases"
+  - "zero-shot generalization"
 date: 2026-05-08
 content_hash: 59ba6ecc392ba35d
 ---

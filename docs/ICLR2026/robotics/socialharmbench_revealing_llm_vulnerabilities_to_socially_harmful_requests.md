@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SocialHarmBench: Revealing LLM Vulnerabilities to Socially Harmful Requests
 description: >-
-  [ICLR 2026][Robotics][LLM safety] This paper introduces SocialHarmBench, the first LLM safety evaluation benchmark specifically targeting sociopolitical harms. It comprises 585 prompts spanning 7 categories and 34 countries, revealing systemic safety vulnerabilities in current LLMs across politically sensitive scenarios such as historical revisionism and propaganda manipulation.
+  [ICLR 2026][Robotics][LLM safety] This paper introduces SocialHarmBench, the first LLM safety evaluation benchmark specifically targeting sociopolitical harms. It comprises 585 prompts spanning 7 categories and 34 countr…
 tags:
-  - ICLR 2026
-  - Robotics
-  - LLM safety
-  - sociopolitical harm
-  - adversarial attacks
-  - jailbreak attacks
-  - safety benchmarks
+  - "ICLR 2026"
+  - "Robotics"
+  - "LLM safety"
+  - "sociopolitical harm"
+  - "adversarial attacks"
+  - "jailbreak attacks"
+  - "safety benchmarks"
 date: 2026-05-08
 content_hash: 84dfcbf05fce3b7c
 ---

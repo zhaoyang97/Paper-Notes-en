@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Survey on MLLM-based Visually Rich Document Understanding: Methods, Challenges, and Emerging Trends
 description: >-
-  [ACL 2026][Multimodal VLM][visually rich document understanding] This paper presents a systematic survey of Multimodal Large Language Model (MLLM)-based Visually Rich Document Understanding (VRDU), organizing OCR-based and OCR-free methods along two dimensions—feature representation/fusion and training paradigms—while discussing emerging directions such as data scarcity, multi-page documents, multilingual support, RAG, and agent-based frameworks.
+  [ACL 2026][Multimodal VLM][visually rich document understanding] This paper presents a systematic survey of Multimodal Large Language Model (MLLM)-based Visually Rich Document Understanding (VRDU)…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - visually rich document understanding
-  - multimodal large language models
-  - OCR-free
-  - document information extraction
-  - retrieval-augmented generation
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "visually rich document understanding"
+  - "multimodal large language models"
+  - "OCR-free"
+  - "document information extraction"
+  - "retrieval-augmented generation"
 date: 2026-05-08
 content_hash: 4406f43d9bd4dead
 ---

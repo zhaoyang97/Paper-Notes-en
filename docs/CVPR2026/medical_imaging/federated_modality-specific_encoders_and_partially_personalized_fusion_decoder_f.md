@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Federated Modality-specific Encoders and Partially Personalized Fusion Decoder for Multimodal Brain Tumor Segmentation
 description: >-
-  [CVPR 2026][Medical Imaging][Federated Learning] This paper proposes FedMEPD, a framework that employs modality-specific encoders to address intermodal heterogeneity, a filter-level dynamic partial personalization decoder to balance knowledge sharing and personalization, and a multi-anchor cross-attention calibration module to compensate for missing modality information. FedMEPD comprehensively outperforms existing multimodal federated learning methods on BraTS 2018/2020.
+  [CVPR 2026][Medical Imaging][Federated Learning] This paper proposes FedMEPD, a framework that employs modality-specific encoders to address intermodal heterogeneity…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Federated Learning
-  - Multimodal Brain Tumor Segmentation
-  - Intermodal Heterogeneity
-  - Personalized FL
-  - Cross-Attention Calibration
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Federated Learning"
+  - "Multimodal Brain Tumor Segmentation"
+  - "Intermodal Heterogeneity"
+  - "Personalized FL"
+  - "Cross-Attention Calibration"
 date: 2026-05-08
 content_hash: 3aa27f74a88551fe
 ---

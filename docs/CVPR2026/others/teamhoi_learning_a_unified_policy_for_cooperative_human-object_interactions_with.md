@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] TeamHOI: Learning a Unified Policy for Cooperative Human-Object Interactions with Any Team Size
 description: >-
-  [CVPR 2026][multi-agent cooperation] TeamHOI proposes a framework using a Transformer-based decentralized policy network and Masked Adversarial Motion Prior (Masked AMP), enabling a single policy to generalize to cooperative carrying tasks with any number of agents, achieving 97%+ success rate for 2–8 humanoid agents cooperatively carrying a table.
+  [CVPR 2026][multi-agent cooperation] TeamHOI proposes a framework using a Transformer-based decentralized policy network and Masked Adversarial Motion Prior (Masked AMP)…
 tags:
-  - CVPR 2026
-  - multi-agent cooperation
-  - physics-based human motion control
-  - human-object interaction
-  - Transformer policy network
-  - adversarial motion prior
+  - "CVPR 2026"
+  - "multi-agent cooperation"
+  - "physics-based human motion control"
+  - "human-object interaction"
+  - "Transformer policy network"
+  - "adversarial motion prior"
 date: 2026-05-08
 content_hash: 7a493ad8832336c6
 ---

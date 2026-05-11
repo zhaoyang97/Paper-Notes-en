@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Improving Time Series Forecasting via Instance-aware Post-hoc Revision (PIR)
 description: >-
-  [NeurIPS 2025][Time Series][Instance-level revision] PIR proposes an instance-aware post-hoc revision framework that identifies poorly predicted instances via uncertainty estimation and applies a residual combination of local correction (covariate + exogenous variable Transformer) and global correction (retrieval-based weighted average over similar training instances) as a plug-and-play module, reducing SparseTSF MSE by 25.87% and PatchTST MSE by 8.99%.
+  [NeurIPS 2025][Time Series][Instance-level revision] PIR proposes an instance-aware post-hoc revision framework that identifies poorly predicted instances via uncertainty estimation and applies a residual combination of…
 tags:
-  - NeurIPS 2025
-  - Time Series
-  - Instance-level revision
-  - uncertainty estimation
-  - retrieval augmentation
-  - post-hoc processing
-  - long-tail distribution
+  - "NeurIPS 2025"
+  - "Time Series"
+  - "Instance-level revision"
+  - "uncertainty estimation"
+  - "retrieval augmentation"
+  - "post-hoc processing"
+  - "long-tail distribution"
 date: 2026-05-08
 content_hash: 88130e55a957e93a
 ---

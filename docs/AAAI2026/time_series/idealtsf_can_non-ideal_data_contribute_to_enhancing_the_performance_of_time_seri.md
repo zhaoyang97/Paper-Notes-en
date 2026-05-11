@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] IdealTSF: Can Non-Ideal Data Contribute to Enhancing Time Series Forecasting?
 description: >-
-  [AAAI 2026][Time Series][time series forecasting] IdealTSF is a three-stage progressive framework that (1) uses negative sample pre-training on synthetic non-ideal data to enhance robustness, (2) trains on repaired positive samples to learn underlying trends, and (3) applies the ECOS optimizer to guide parameters toward flat minima — achieving approximately 10% MSE improvement on time series data containing noise and missing values.
+  [AAAI 2026][Time Series][time series forecasting] IdealTSF is a three-stage progressive framework that (1) uses negative sample pre-training on synthetic non-ideal data to enhance robustness…
 tags:
-  - AAAI 2026
-  - Time Series
-  - time series forecasting
-  - negative sample pre-training
-  - adversarial training
-  - data robustness
-  - non-ideal data
+  - "AAAI 2026"
+  - "Time Series"
+  - "time series forecasting"
+  - "negative sample pre-training"
+  - "adversarial training"
+  - "data robustness"
+  - "non-ideal data"
 date: 2026-05-08
 content_hash: 985cc2ee28741704
 ---

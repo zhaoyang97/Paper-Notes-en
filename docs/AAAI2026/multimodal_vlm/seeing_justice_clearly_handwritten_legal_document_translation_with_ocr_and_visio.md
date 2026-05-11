@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Seeing Justice Clearly: Handwritten Legal Document Translation with OCR and Vision-Language Models
 description: >-
-  [AAAI 2026][Multimodal VLM][Handwritten document recognition] This paper systematically compares traditional OCR+machine translation (OCR-MT) pipelines against vision large language models (vLLMs) on the task of translating handwritten Marathi legal documents into English. The study finds that neither approach meets legal-grade deployment requirements: OCR-MT suffers severely from cascading errors, while vLLMs exhibit critical hallucination issues. Nevertheless, vLLMs demonstrate potential for unified end-to-end processing.
+  [AAAI 2026][Multimodal VLM][Handwritten document recognition] This paper systematically compares traditional OCR+machine translation (OCR-MT) pipelines against vision large language models (vLLMs) on the task of translat…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Handwritten document recognition
-  - OCR
-  - vision-language models
-  - legal document translation
-  - low-resource languages
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Handwritten document recognition"
+  - "OCR"
+  - "vision-language models"
+  - "legal document translation"
+  - "low-resource languages"
 date: 2026-05-08
 content_hash: 92b14824e0098a2c
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Forest vs Tree: The (N, K) Trade-off in Reproducible ML Evaluation
 description: >-
-  [AAAI 2026][Reproducibility] This paper investigates the optimal trade-off between the number of samples $N$ and the number of annotators per sample $K$ in machine learning evaluation. Under a fixed budget $N \times K$, by analyzing multi-annotator datasets and simulated distributions, the study finds that $K > 10$ is generally optimal when annotator disagreement is considered, and the required total budget $N \times K$ typically does not exceed 1000.
+  [AAAI 2026][Reproducibility] This paper investigates the optimal trade-off between the number of samples $N$ and the number of annotators per sample $K$ in machine learning evaluation. Under a fixed budget $N \times K$…
 tags:
-  - AAAI 2026
-  - Reproducibility
-  - Human Annotation
-  - Annotator Disagreement
-  - Evaluation Reliability
-  - Optimal Budget Allocation
+  - "AAAI 2026"
+  - "Reproducibility"
+  - "Human Annotation"
+  - "Annotator Disagreement"
+  - "Evaluation Reliability"
+  - "Optimal Budget Allocation"
 date: 2026-05-08
 content_hash: c468a7f80978739b
 ---

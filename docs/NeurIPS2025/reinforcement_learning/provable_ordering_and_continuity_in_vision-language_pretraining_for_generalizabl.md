@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Provable Ordering and Continuity in Vision-Language Pretraining for Generalizable Embodied Agents
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Vision-language pretraining] This paper proposes AcTOL, which learns ordered and continuous vision-language representations via a visual-language ordering loss and a Brownian bridge constraint, without relying on rigid goal-reaching assumptions, achieving significant improvements on downstream simulated and real-world robot manipulation tasks.
+  [NeurIPS 2025][Reinforcement Learning][Vision-language pretraining] This paper proposes AcTOL, which learns ordered and continuous vision-language representations via a visual-language ordering loss and a Brownian bridge…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Vision-language pretraining
-  - embodied intelligence
-  - imitation learning
-  - temporal consistency
-  - Brownian bridge
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Vision-language pretraining"
+  - "embodied intelligence"
+  - "imitation learning"
+  - "temporal consistency"
+  - "Brownian bridge"
 date: 2026-05-08
 content_hash: a1665bf199007675
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] VoluMe: Authentic 3D Video Calls from Live Gaussian Splat Prediction
 description: >-
-  [ICCV 2025][3D Vision][3D video calling] Microsoft proposes the first method for real-time prediction of 3D Gaussian Splatting reconstructions from a monocular 2D camera, simultaneously satisfying four requirements: authenticity, realism, liveness, and temporal stability. This enables anyone to conduct volumetric 3D video calls using only a standard laptop camera.
+  [ICCV 2025][3D Vision][3D video calling] Microsoft proposes the first method for real-time prediction of 3D Gaussian Splatting reconstructions from a monocular 2D camera…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D video calling
-  - Gaussian Splatting
-  - monocular reconstruction
-  - real-time 3D reconstruction
-  - digital humans
-  - video conferencing
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D video calling"
+  - "Gaussian Splatting"
+  - "monocular reconstruction"
+  - "real-time 3D reconstruction"
+  - "digital humans"
+  - "video conferencing"
 date: 2026-05-08
 content_hash: 4e5b9fbef0e86173
 ---

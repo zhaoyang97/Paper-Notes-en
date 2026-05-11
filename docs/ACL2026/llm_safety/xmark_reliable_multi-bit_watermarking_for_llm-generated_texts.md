@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] XMark: Reliable Multi-Bit Watermarking for LLM-Generated Texts
 description: >-
-  [ACL 2026][LLM Safety][Multi-bit watermarking] This paper proposes XMark, a multi-bit text watermarking method based on the Leave-one-Shard-out (LoSo) strategy and evergreen lists. By taking the intersection of green lists across multiple vocabulary permutations and employing a constrained token-shard mapping matrix, XMark significantly improves decoding accuracy under limited token budgets while preserving text quality.
+  [ACL 2026][LLM Safety][Multi-bit watermarking] This paper proposes XMark, a multi-bit text watermarking method based on the Leave-one-Shard-out (LoSo) strategy and evergreen lists. By taking the intersection of green lis…
 tags:
-  - ACL 2026
-  - LLM Safety
-  - Multi-bit watermarking
-  - LLM text detection
-  - digital watermarking
-  - text provenance
-  - logit perturbation
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Multi-bit watermarking"
+  - "LLM text detection"
+  - "digital watermarking"
+  - "text provenance"
+  - "logit perturbation"
 date: 2026-05-08
 content_hash: 1d2df4ba7f9c1bca
 ---

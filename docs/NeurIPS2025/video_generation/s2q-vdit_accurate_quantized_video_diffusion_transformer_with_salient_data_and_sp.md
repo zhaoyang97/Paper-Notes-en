@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] S²Q-VDiT: Accurate Quantized Video Diffusion Transformer with Salient Data and Sparse Token Distillation
 description: >-
-  [NeurIPS 2025][Video Generation][Post-training quantization] To address the high calibration variance and optimization difficulty caused by extremely long token sequences in video diffusion Transformers, this paper proposes the S²Q-VDiT framework. By combining Hessian-aware salient data selection and attention-guided sparse token distillation, it achieves lossless quantization under W4A6 settings for the first time, yielding 3.9× model compression and 1.3× inference speedup.
+  [NeurIPS 2025][Video Generation][Post-training quantization] To address the high calibration variance and optimization difficulty caused by extremely long token sequences in video diffusion Transformers…
 tags:
-  - NeurIPS 2025
-  - Video Generation
-  - Post-training quantization
-  - video diffusion models
-  - calibration data selection
-  - sparse attention
-  - model compression
+  - "NeurIPS 2025"
+  - "Video Generation"
+  - "Post-training quantization"
+  - "video diffusion models"
+  - "calibration data selection"
+  - "sparse attention"
+  - "model compression"
 date: 2026-05-08
 content_hash: 3ec85a366c3971e7
 ---

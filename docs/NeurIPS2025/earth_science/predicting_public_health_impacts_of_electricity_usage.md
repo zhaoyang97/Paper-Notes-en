@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Predicting Public Health Impacts of Electricity Usage
 description: >-
-  [NeurIPS 2025][Public Health] This paper proposes HealthPredictor, an AI pipeline that maps electricity consumption end-to-end to public health damages (measured in $/MWh), comprising three modules: fuel mix prediction, air quality conversion, and health impact assessment. Health-driven optimization significantly reduces health impact prediction error compared to fuel-mix-driven baselines, and achieves a 24–42% reduction in health damages in an EV charging scheduling case study.
+  [NeurIPS 2025][Earth Science][Public Health] This paper proposes HealthPredictor, an AI pipeline that maps electricity consumption end-to-end to public health damages (measured in $/MWh)…
 tags:
-  - NeurIPS 2025
-  - Public Health
-  - Power Systems
-  - Air Pollution
-  - End-to-End Prediction
-  - EV Charging Optimization
+  - "NeurIPS 2025"
+  - "Earth Science"
+  - "Public Health"
+  - "Power Systems"
+  - "Air Pollution"
+  - "End-to-End Prediction"
+  - "EV Charging Optimization"
 date: 2026-05-08
 content_hash: 7c15e01fc930505c
 ---

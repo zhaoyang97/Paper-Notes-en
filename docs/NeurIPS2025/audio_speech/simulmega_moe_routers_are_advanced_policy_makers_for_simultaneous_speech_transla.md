@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SimulMEGA: MoE Routers are Advanced Policy Makers for Simultaneous Speech Translation
 description: >-
-  [NeurIPS 2025][Audio & Speech][Simultaneous Speech Translation] This paper proposes SimulMEGA, a framework combining prefix training with a Mixture-of-Experts (MoE) refinement module to achieve unsupervised read/write policy learning. A 500M-parameter model achieves <7% BLEU degradation at 1.5-second latency across simultaneous speech translation in 6 languages, and extends to streaming TTS.
+  [NeurIPS 2025][Audio & Speech][Simultaneous Speech Translation] This paper proposes SimulMEGA, a framework combining prefix training with a Mixture-of-Experts (MoE) refinement module to achieve unsupervised read/write po…
 tags:
-  - NeurIPS 2025
+  - "NeurIPS 2025"
   - "Audio & Speech"
-  - Simultaneous Speech Translation
-  - MoE
-  - Unsupervised Policy Learning
-  - Streaming TTS
-  - Multilingual Translation
+  - "Simultaneous Speech Translation"
+  - "MoE"
+  - "Unsupervised Policy Learning"
+  - "Streaming TTS"
+  - "Multilingual Translation"
 date: 2026-05-08
 content_hash: b4656b3ecf7dca32
 ---

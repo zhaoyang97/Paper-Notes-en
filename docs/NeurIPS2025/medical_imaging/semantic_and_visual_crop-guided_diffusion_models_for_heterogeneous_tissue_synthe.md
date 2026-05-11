@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Semantic and Visual Crop-Guided Diffusion Models for Heterogeneous Tissue Synthesis in Histopathology
 description: >-
-  [NeurIPS 2025][Medical Imaging][Pathology Image Synthesis] This paper proposes HeteroTissue-Diffuse (HTD), a dual-conditioned Latent Diffusion Model that generates heterogeneous pathology images by simultaneously conditioning on semantic segmentation maps and real tissue crops (visual crops). On Camelyon16, the method reduces Fréchet Distance from 430 to 72 (a 6× improvement). DeepLabv3+ segmentation IoU trained on synthetic data falls within 1–2% of models trained on real data. The approach is further extended to 11,765 unannotated TCGA whole-slide images via self-supervised clustering.
+  [NeurIPS 2025][Medical Imaging][Pathology Image Synthesis] This paper proposes HeteroTissue-Diffuse (HTD), a dual-conditioned Latent Diffusion Model that generates heterogeneous pathology images by simultaneously conditi…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Pathology Image Synthesis
-  - Diffusion Models
-  - Dual-Condition Generation
-  - Heterogeneous Tissue
-  - Self-Supervised Clustering
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Pathology Image Synthesis"
+  - "Diffusion Models"
+  - "Dual-Condition Generation"
+  - "Heterogeneous Tissue"
+  - "Self-Supervised Clustering"
 date: 2026-05-08
 content_hash: e0a1e5dc2bb9b799
 ---

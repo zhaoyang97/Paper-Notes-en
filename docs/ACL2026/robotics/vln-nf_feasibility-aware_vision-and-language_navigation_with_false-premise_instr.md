@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VLN-NF: Feasibility-Aware Vision-and-Language Navigation with False-Premise Instructions
 description: >-
-  [ACL 2026][Robotics][Vision-Language Navigation] VLN-NF is the first benchmark requiring VLN agents to identify false-premise instructions and output NOT-FOUND in 3D partially observable environments. The paper also proposes REV-SPL evaluation metric and ROAM two-stage hybrid framework, achieving 6.1 REV-SPL (+45% over supervised baselines).
+  [ACL 2026][Robotics][Vision-Language Navigation] VLN-NF is the first benchmark requiring VLN agents to identify false-premise instructions and output NOT-FOUND in 3D partially observable environments. The paper also prop…
 tags:
-  - ACL 2026
-  - Robotics
-  - Vision-Language Navigation
-  - False Premise
-  - NOT-FOUND
-  - Embodied Exploration
-  - Feasibility Awareness
+  - "ACL 2026"
+  - "Robotics"
+  - "Vision-Language Navigation"
+  - "False Premise"
+  - "NOT-FOUND"
+  - "Embodied Exploration"
+  - "Feasibility Awareness"
 content_hash: 0c70fa9b2ad63116
 ---
 

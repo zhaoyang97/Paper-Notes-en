@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CQ-DINO: Mitigating Gradient Dilution via Category Queries for Vast Vocabulary Object Detection
 description: >-
-  [NeurIPS 2025][Object Detection][Large-vocabulary detection] To address positive gradient dilution and hard-negative gradient dilution in large-vocabulary (>10K category) object detection, this paper proposes CQ-DINO: replacing the classification head with learnable category queries and using image-guided Top-K category selection to reduce the negative space by 100×. CQ-DINO surpasses the previous SOTA by 2.1% AP on V3Det (13,204 categories) while remaining competitive on COCO.
+  [NeurIPS 2025][Object Detection][Large-vocabulary detection] To address positive gradient dilution and hard-negative gradient dilution in large-vocabulary (>10K category) object detection…
 tags:
-  - NeurIPS 2025
-  - Object Detection
-  - Large-vocabulary detection
-  - category queries
-  - gradient dilution
-  - V3Det
-  - DINO
+  - "NeurIPS 2025"
+  - "Object Detection"
+  - "Large-vocabulary detection"
+  - "category queries"
+  - "gradient dilution"
+  - "V3Det"
+  - "DINO"
 date: 2026-05-08
 content_hash: bb8a776cd49e3f38
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Multiplicative Orthogonal Sequential Editing for Language Models (MOSE)
 description: >-
-  [AAAI 2026][Knowledge Editing] This paper proposes MOSE (Multiplicative Orthogonal Sequential Editing), which injects new knowledge by left-multiplying the parameter matrix with an orthogonal matrix (rather than via additive updates), strictly preserving the Frobenius norm and condition number of the edited matrix. MOSE achieves a 12.08% performance improvement in sequential editing while retaining 95.73% of general capabilities.
+  [AAAI 2026][Knowledge Editing][Orthogonal Transformation] This paper proposes MOSE (Multiplicative Orthogonal Sequential Editing), which injects new knowledge by left-multiplying the parameter matrix with an orthogonal m…
 tags:
-  - AAAI 2026
-  - Knowledge Editing
-  - Orthogonal Transformation
-  - Sequential Editing
-  - Numerical Stability
-  - Model Editing
+  - "AAAI 2026"
+  - "Knowledge Editing"
+  - "Orthogonal Transformation"
+  - "Sequential Editing"
+  - "Numerical Stability"
+  - "Model Editing"
 date: 2026-05-08
 content_hash: 3ed5e63531e25601
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unveiling the Power of Multiple Gossip Steps: A Stability-Based Generalization Analysis in Decentralized Training
 description: >-
-  [NeurIPS 2025][Optimization][Decentralized SGD] This paper presents the first stability-based generalization analysis of Multiple Gossip Steps (MGS) in Decentralized SGD (DSGD), proving that MGS reduces optimization error at an exponential rate to tighten generalization bounds, while also establishing that even as the number of Gossip steps approaches infinity, DSGD cannot fully close the generalization gap with centralized training.
+  [NeurIPS 2025][Optimization][Decentralized SGD] This paper presents the first stability-based generalization analysis of Multiple Gossip Steps (MGS) in Decentralized SGD (DSGD)…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Decentralized SGD
-  - Gossip Communication
-  - Generalization Bounds
-  - Algorithmic Stability
-  - Data Heterogeneity
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Decentralized SGD"
+  - "Gossip Communication"
+  - "Generalization Bounds"
+  - "Algorithmic Stability"
+  - "Data Heterogeneity"
 date: 2026-05-08
 content_hash: bc17f1ac884e3c7c
 ---

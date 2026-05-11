@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] U4D: Uncertainty-Aware 4D World Modeling from LiDAR Sequences
 description: >-
-  [CVPR 2026][Autonomous Driving][LiDAR generation] This paper proposes U4D, the first uncertainty-aware 4D LiDAR world modeling framework. It adopts a "hard-first, easy-second" two-stage diffusion generation strategy that first reconstructs high-uncertainty regions and then conditionally completes the entire scene. A MoST module is designed to adaptively fuse spatio-temporal features for temporal consistency.
+  [CVPR 2026][Autonomous Driving][LiDAR generation] This paper proposes U4D, the first uncertainty-aware 4D LiDAR world modeling framework. It adopts a "hard-first…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - LiDAR generation
-  - uncertainty modeling
-  - diffusion models
-  - 4D world model
-  - spatio-temporal consistency
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "LiDAR generation"
+  - "uncertainty modeling"
+  - "diffusion models"
+  - "4D world model"
+  - "spatio-temporal consistency"
 date: 2026-05-08
 content_hash: 2422a8befb9ec89d
 ---

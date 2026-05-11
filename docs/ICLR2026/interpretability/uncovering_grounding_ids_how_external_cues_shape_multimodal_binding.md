@@ -2,15 +2,16 @@
 title: >-
   [Paper Note] Uncovering Grounding IDs: How External Cues Shape Multimodal Binding
 description: >-
-  [ICLR 2026][Grounding ID] This paper employs mechanistic interpretability tools to reveal the internal mechanism by which external visual cues (symbols + dividing lines) improve reasoning in LVLMs. Under structured inputs, the model spontaneously produces "Grounding IDs"—latent identifiers that bind visual regions to symbolic anchors. Causal activation swap experiments (swap accuracy = 0.98) demonstrate that this binding causally drives model predictions. Furthermore, the mechanism reduces Qwen2.5-VL's CHAIRs hallucination rate from 32.4% to 27.2% on MS-COCO, and generalizes to closed-source models such as GPT-4o.
+  [ICLR 2026][Interpretability][Grounding ID] This paper employs mechanistic interpretability tools to reveal the internal mechanism by which external visual cues (symbols + dividing lines) improve reasoning in LVLMs. Unde…
 tags:
-  - ICLR 2026
-  - Grounding ID
-  - external visual cues
-  - multimodal binding
-  - causal mediation analysis
-  - hallucination mitigation
-  - cross-modal alignment
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Grounding ID"
+  - "external visual cues"
+  - "multimodal binding"
+  - "causal mediation analysis"
+  - "hallucination mitigation"
+  - "cross-modal alignment"
 date: 2026-05-08
 content_hash: 44785c6659be8ed4
 ---

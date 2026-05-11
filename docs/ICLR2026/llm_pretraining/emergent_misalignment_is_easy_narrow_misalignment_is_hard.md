@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Emergent Misalignment is Easy, Narrow Misalignment is Hard
 description: >-
-  [ICLR 2026][LLM Pretraining][Emergent Misalignment] Fine-tuning on narrow-domain harmful data induces broad misalignment (emergent misalignment) because "general misalignment" constitutes a simpler and more efficient solution in parameter space than "misalignment confined to a specific domain"—the general solution exhibits smaller parameter norm and greater robustness to perturbations.
+  [ICLR 2026][LLM Pretraining][Emergent Misalignment] Fine-tuning on narrow-domain harmful data induces broad misalignment (emergent misalignment) because "general misalignment" constitutes a simpler and more efficient sol…
 tags:
-  - ICLR 2026
-  - LLM Pretraining
-  - Emergent Misalignment
-  - Fine-tuning Safety
-  - Narrow-domain Attack
-  - KL Divergence Regularization
-  - Model Organisms
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Emergent Misalignment"
+  - "Fine-tuning Safety"
+  - "Narrow-domain Attack"
+  - "KL Divergence Regularization"
+  - "Model Organisms"
 date: 2026-05-08
 content_hash: b07ce188cf7645b5
 ---

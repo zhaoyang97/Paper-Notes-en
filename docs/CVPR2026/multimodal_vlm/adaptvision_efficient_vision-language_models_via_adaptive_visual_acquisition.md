@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AdaptVision: Efficient Vision-Language Models via Adaptive Visual Acquisition
 description: >-
-  [CVPR2026][Multimodal VLM][visual token compression] This paper proposes AdaptVision, which enables VLMs to autonomously determine the minimum number of visual tokens required per sample through a coarse-to-fine active visual mechanism and reinforcement learning training, combined with Decoupled Turn Policy Optimization (DTPO) to achieve an optimal trade-off between efficiency and accuracy.
+  [CVPR2026][Multimodal VLM][visual token compression] This paper proposes AdaptVision, which enables VLMs to autonomously determine the minimum number of visual tokens required per sample through a coarse-to-fine active v…
 tags:
-  - CVPR2026
-  - Multimodal VLM
-  - visual token compression
-  - adaptive visual acquisition
-  - reinforcement learning
-  - tool calling
-  - efficient VLM
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "visual token compression"
+  - "adaptive visual acquisition"
+  - "reinforcement learning"
+  - "tool calling"
+  - "efficient VLM"
 date: 2026-05-08
 content_hash: 22979968e5cb759b
 ---

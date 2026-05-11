@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AnchorHOI: Zero-shot Generation of 4D Human-Object Interaction via Anchor-based Prior Distillation
 description: >-
-  [AAAI 2026][3D Vision][4D HOI Generation] AnchorHOI is proposed to achieve zero-shot text-driven 4D human-object interaction (HOI) generation by introducing two intermediate bridges — anchor NeRF and anchor keypoints — to distill interaction priors and motion priors from image and video diffusion models, respectively. The method outperforms existing approaches on both static 3D and dynamic 4D HOI generation.
+  [AAAI 2026][3D Vision][4D HOI Generation] AnchorHOI is proposed to achieve zero-shot text-driven 4D human-object interaction (HOI) generation by introducing two intermediate bridges — anchor NeRF and anchor keypoints — t…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - 4D HOI Generation
-  - Zero-shot
-  - Anchor-based Prior Distillation
-  - NeRF
-  - Video Diffusion Model
+  - "AAAI 2026"
+  - "3D Vision"
+  - "4D HOI Generation"
+  - "Zero-shot"
+  - "Anchor-based Prior Distillation"
+  - "NeRF"
+  - "Video Diffusion Model"
 date: 2026-05-08
 content_hash: b7c358b6e48ba534
 ---

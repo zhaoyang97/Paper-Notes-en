@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Benchmarking is Broken — Don't Let AI be its Own Judge
 description: >-
-  [NeurIPS 2025][LLM Evaluation][benchmark evaluation] This paper systematically critiques the fundamental flaws of current AI benchmark evaluation—data contamination (45%+ overlap in MMLU), selective reporting, and lack of proctoring—and proposes PeerBench: drawing on the proctoring paradigm of high-stakes exams (e.g., SAT/GRE), it constructs a next-generation AI evaluation infrastructure via a rolling confidential question bank, peer-review quality control, reputation-weighted scoring, and cryptographic commitment mechanisms.
+  [NeurIPS 2025][LLM Evaluation][benchmark evaluation] This paper systematically critiques the fundamental flaws of current AI benchmark evaluation—data contamination (45%+ overlap in MMLU), selective reporting…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - benchmark evaluation
-  - data contamination
-  - PeerBench
-  - peer review
-  - reputation system
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "benchmark evaluation"
+  - "data contamination"
+  - "PeerBench"
+  - "peer review"
+  - "reputation system"
 date: 2026-05-08
 content_hash: a894193d97cf9d21
 ---

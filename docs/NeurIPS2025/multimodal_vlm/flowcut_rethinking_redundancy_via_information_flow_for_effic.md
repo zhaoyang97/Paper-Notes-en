@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FlowCut: Rethinking Redundancy via Information Flow for Efficient Vision-Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][visual token pruning] Reexamining visual token redundancy in VLMs through the lens of Information Flow: the CLS token acts as an information relay, redundancy emerges progressively, and single-layer single-criterion scoring is unreliable. FlowCut—an information-flow-aware multi-criteria cumulative importance pruning framework—surpasses SOTA by 1.6% on LLaVA-1.5-7B at an 88.9% token reduction rate, and by 4.3% on LLaVA-NeXT-7B.
+  [NeurIPS 2025][Multimodal VLM][visual token pruning] Reexamining visual token redundancy in VLMs through the lens of Information Flow: the CLS token acts as an information relay, redundancy emerges progressively…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - visual token pruning
-  - information flow
-  - VLM efficiency
-  - attention analysis
-  - training-free
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "visual token pruning"
+  - "information flow"
+  - "VLM efficiency"
+  - "attention analysis"
+  - "training-free"
 date: 2026-05-08
 content_hash: 2c75120c99bef26a
 ---

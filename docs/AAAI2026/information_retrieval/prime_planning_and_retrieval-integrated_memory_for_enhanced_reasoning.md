@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] PRIME: Planning and Retrieval-Integrated Memory for Enhanced Reasoning
 description: >-
-  [AAAI 2026][Dual-system reasoning] Inspired by dual-process cognitive theory, PRIME is a multi-agent reasoning framework in which a Quick Thinking Agent (System 1) rapidly generates intuitive answers, a Reflection Agent evaluates their confidence, and—when uncertainty is detected—six specialized System 2 agents (Planning / Search / Reading / Hypothesis / Integration / Decision) are triggered for deep knowledge-retrieval reasoning. The framework enables open-source LLaMA 3 to approach GPT-4o performance on medical and multi-hop QA benchmarks.
+  [AAAI 2026][Information Retrieval & RAG][Dual-system reasoning] Inspired by dual-process cognitive theory, PRIME is a multi-agent reasoning framework in which a Quick Thinking Agent (System 1) rapidly generates intuitive…
 tags:
-  - AAAI 2026
-  - Dual-system reasoning
-  - fast-and-slow thinking
-  - retrieval augmentation
-  - multi-agent
-  - planning
+  - "AAAI 2026"
+  - "Information Retrieval & RAG"
+  - "Dual-system reasoning"
+  - "fast-and-slow thinking"
+  - "retrieval augmentation"
+  - "multi-agent"
+  - "planning"
 date: 2026-05-08
 content_hash: 7d3480fb3e6274c6
 ---

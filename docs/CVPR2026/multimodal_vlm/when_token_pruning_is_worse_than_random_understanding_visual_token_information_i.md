@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] When Token Pruning is Worse than Random: Understanding Visual Token Information in VLLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][token pruning] This paper identifies a phenomenon in which existing token pruning methods underperform random pruning in deep layers of VLLMs, proposes a method for quantifying visual token information based on changes in output probability, and reveals the "Information Horizon"—a critical layer at which visual token information uniformly dissipates to zero. The position of this horizon is dynamically influenced by task visual complexity and model capability. The paper further demonstrates that simply integrating random pruning can effectively improve existing methods.
+  [CVPR 2026][Multimodal VLM][token pruning] This paper identifies a phenomenon in which existing token pruning methods underperform random pruning in deep layers of VLLMs…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - token pruning
-  - information horizon
-  - visual token informativeness
-  - random pruning
-  - VLM inference acceleration
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "token pruning"
+  - "information horizon"
+  - "visual token informativeness"
+  - "random pruning"
+  - "VLM inference acceleration"
 date: 2026-05-08
 content_hash: 438ef42da6a13464
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GuardAlign: Test-time Safety Alignment in Multimodal Large Language Models
 description: >-
-  [ICLR 2026][LLM Alignment][LVLM Safety] This paper proposes GuardAlign, a training-free test-time safety defense framework for multimodal large language models. It leverages optimal transport (OT) to precisely detect and mask unsafe regions in images, and employs cross-modal attention calibration to sustain the influence of safety prefixes across layers. Evaluated on six LVLMs, GuardAlign reduces unsafe response rates by up to 39% while preserving or improving general capability.
+  [ICLR 2026][LLM Alignment][LVLM Safety] This paper proposes GuardAlign, a training-free test-time safety defense framework for multimodal large language models. It leverages optimal transport (OT) to precisely detect and…
 tags:
-  - ICLR 2026
-  - LLM Alignment
-  - LVLM Safety
-  - Optimal Transport
-  - Attention Calibration
-  - Test-time Defense
-  - Visual Safety Detection
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "LVLM Safety"
+  - "Optimal Transport"
+  - "Attention Calibration"
+  - "Test-time Defense"
+  - "Visual Safety Detection"
 date: 2026-05-08
 content_hash: 29fe2f9df0a3ed5a
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] 3DGS-LM: Faster Gaussian-Splatting Optimization with Levenberg-Marquardt
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes 3DGS-LM, which replaces the ADAM optimizer in 3D Gaussian Splatting with a customized second-order Levenberg-Marquardt (LM) optimizer. Combined with an efficient GPU parallelization scheme and a gradient caching structure, the method achieves a 20% training speedup while preserving reconstruction quality.
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes 3DGS-LM, which replaces the ADAM optimizer in 3D Gaussian Splatting with a customized second-order Levenberg-Marquardt (LM) optimizer. Combined with an ef…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - Levenberg-Marquardt
-  - Optimization Acceleration
-  - Novel View Synthesis
-  - CUDA Parallelism
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Levenberg-Marquardt"
+  - "Optimization Acceleration"
+  - "Novel View Synthesis"
+  - "CUDA Parallelism"
 date: 2026-05-08
 content_hash: c734809a64b6a645
 ---

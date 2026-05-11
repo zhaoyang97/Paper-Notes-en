@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LaF-GRPO: In-Situ Navigation Instruction Generation for the Visually Impaired via GRPO with LLM-as-Follower Reward
 description: >-
-  [AAAI 2026][Robotics][Visually impaired navigation] This paper proposes the LaF-GRPO framework, which employs an LLM to simulate the responses of visually impaired users to navigation instructions as a reward signal. By applying GRPO-based post-training to a VLM, the framework generates more precise and safer navigation instructions for the visually impaired. The authors also construct the NIG4VI benchmark dataset comprising 27k samples.
+  [AAAI 2026][Robotics][Visually impaired navigation] This paper proposes the LaF-GRPO framework, which employs an LLM to simulate the responses of visually impaired users to navigation instructions as a reward signal. By…
 tags:
-  - AAAI 2026
-  - Robotics
-  - Visually impaired navigation
-  - GRPO
-  - VLM post-training
-  - LLM-as-Follower
-  - navigation instruction generation
+  - "AAAI 2026"
+  - "Robotics"
+  - "Visually impaired navigation"
+  - "GRPO"
+  - "VLM post-training"
+  - "LLM-as-Follower"
+  - "navigation instruction generation"
 date: 2026-05-08
 content_hash: 1c83bd52ed9bb44d
 ---

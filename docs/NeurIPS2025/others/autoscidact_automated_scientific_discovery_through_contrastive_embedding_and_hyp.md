@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] AutoSciDACT: Automated Scientific Discovery through Contrastive Embedding and Hypothesis Testing
 description: >-
-  [NeurIPS 2025][contrastive learning] This work proposes the AutoSciDACT pipeline, which first employs supervised contrastive learning to compress high-dimensional scientific data into a 4-dimensional embedding space, then applies NPLM (New Physics Learning Machine) likelihood-ratio testing to statistically quantify distributional deviations in the embedding space. The pipeline achieves $\geq 3\sigma$ discovery at signal injection ratios of $\leq 1\%$ across astronomical, particle physics, pathology, image, and synthetic datasets.
+  [NeurIPS 2025][contrastive learning] This work proposes the AutoSciDACT pipeline, which first employs supervised contrastive learning to compress high-dimensional scientific data into a 4-dimensional embedding space…
 tags:
-  - NeurIPS 2025
-  - contrastive learning
-  - anomaly detection
-  - hypothesis testing
-  - novelty detection
-  - scientific discovery
+  - "NeurIPS 2025"
+  - "contrastive learning"
+  - "anomaly detection"
+  - "hypothesis testing"
+  - "novelty detection"
+  - "scientific discovery"
 date: 2026-05-08
 content_hash: e7828377387e3a1e
 ---

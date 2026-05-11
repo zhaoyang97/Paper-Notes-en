@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AQuaMaM: An Autoregressive, Quaternion Manifold Model for Rapidly Estimating Complex SO(3) Distributions
 description: >-
-  [NeurIPS 2025][Multimodal VLM][SO(3) distribution] This paper proposes AQuaMaM—a Transformer-based autoregressive quaternion manifold model that represents each projected component of the unit quaternion as a geometrically constrained mixture of uniform distributions, enabling exact likelihood computation and fast sampling on the SO(3) rotation manifold. AQuaMaM achieves 52× faster inference and 14% higher log-likelihood compared to IPDF, with sampled distributions that closely match the ground truth.
+  [NeurIPS 2025][Multimodal VLM][SO(3) distribution] This paper proposes AQuaMaM—a Transformer-based autoregressive quaternion manifold model that represents each projected component of the unit quaternion as a geometrical…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - SO(3) distribution
-  - quaternion
-  - autoregressive model
-  - mixture of uniforms
-  - pose estimation
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "SO(3) distribution"
+  - "quaternion"
+  - "autoregressive model"
+  - "mixture of uniforms"
+  - "pose estimation"
 date: 2026-05-08
 content_hash: 01b2d50ff289418e
 ---

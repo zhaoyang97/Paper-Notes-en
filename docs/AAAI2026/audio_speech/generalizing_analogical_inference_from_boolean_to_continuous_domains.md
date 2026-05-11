@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Generalizing Analogical Inference from Boolean to Continuous Domains
 description: >-
-  [AAAI 2026][Audio & Speech][analogical reasoning] This paper revisits the theoretical foundations of analogical inference: it first constructs a counterexample demonstrating the failure of classical generalization bounds in the Boolean domain, then proposes a unified analogical inference framework based on parameterized generalized means, extending discrete classification to continuous regression domains.
+  [AAAI 2026][Audio & Speech][analogical reasoning] This paper revisits the theoretical foundations of analogical inference: it first constructs a counterexample demonstrating the failure of classical generalization bounds…
 tags:
-  - AAAI 2026
+  - "AAAI 2026"
   - "Audio & Speech"
-  - analogical reasoning
-  - Boolean domain generalization
-  - continuous domain regression
-  - generalized mean
-  - error bounds
+  - "analogical reasoning"
+  - "Boolean domain generalization"
+  - "continuous domain regression"
+  - "generalized mean"
+  - "error bounds"
 date: 2026-05-08
 content_hash: fe1b5941bcf35a23
 ---

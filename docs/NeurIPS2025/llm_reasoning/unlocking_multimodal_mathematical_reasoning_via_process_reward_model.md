@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unlocking Multimodal Mathematical Reasoning via Process Reward Model
 description: >-
-  [NeurIPS 2025][LLM Reasoning][process reward model] This paper proposes URSA, a three-stage framework that sequentially constructs a million-scale multimodal CoT dataset (MMathCoT-1M) for base model training, a dual-perspective process supervision dataset (DualMath-1.1M) for PRM training, and a PS-GRPO algorithm that integrates the PRM into online RL. The resulting 8B model surpasses GPT-4o by an average of 2.7% across six mathematical benchmarks.
+  [NeurIPS 2025][LLM Reasoning][process reward model] This paper proposes URSA, a three-stage framework that sequentially constructs a million-scale multimodal CoT dataset (MMathCoT-1M) for base model training…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - process reward model
-  - multimodal math
-  - GRPO
-  - test-time scaling
-  - chain-of-thought
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "process reward model"
+  - "multimodal math"
+  - "GRPO"
+  - "test-time scaling"
+  - "chain-of-thought"
 date: 2026-05-08
 content_hash: 31969d1094fd8e05
 ---

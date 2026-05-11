@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Towards Reinforcement Learning from Neural Feedback: Mapping fNIRS Signals to Agent Performance
 description: >-
-  [AAAI 2026][Robotics][RLNF] This paper proposes the NEURO-LOOP framework, which leverages fNIRS (functional near-infrared spectroscopy) brain signals as implicit neural feedback to evaluate RL agent performance. The authors release an fNIRS dataset spanning 25 subjects × 3 domains × 6 conditions. Classification F1 reaches 67% (binary) / 46% (multi-class), with cross-subject fine-tuning yielding improvements of 17% and 41% respectively, laying the groundwork for Reinforcement Learning from Neural Feedback (RLNF).
+  [AAAI 2026][Robotics][RLNF] This paper proposes the NEURO-LOOP framework, which leverages fNIRS (functional near-infrared spectroscopy) brain signals as implicit neural feedback to evaluate RL agent performance. The auth…
 tags:
-  - AAAI 2026
-  - Robotics
-  - RLNF
-  - fNIRS
-  - Neural Feedback
-  - Implicit Signals
-  - Cross-Subject Generalization
-  - NEURO-LOOP
+  - "AAAI 2026"
+  - "Robotics"
+  - "RLNF"
+  - "fNIRS"
+  - "Neural Feedback"
+  - "Implicit Signals"
+  - "Cross-Subject Generalization"
+  - "NEURO-LOOP"
 date: 2026-05-08
 content_hash: 5c7389c8e8fb8ff3
 ---

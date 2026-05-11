@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] DeepMesh: Auto-Regressive Artist-Mesh Creation with Reinforcement Learning
 description: >-
-  [ICCV 2025][3D Vision][3D mesh generation] This paper proposes DeepMesh, a framework that achieves human preference alignment in 3D mesh generation through an improved efficient mesh tokenization algorithm (72% compression rate) and the first application of DPO-based reinforcement learning to 3D mesh generation, capable of producing high-quality artist-like triangle meshes with up to 30K faces.
+  [ICCV 2025][3D Vision][3D mesh generation] This paper proposes DeepMesh, a framework that achieves human preference alignment in 3D mesh generation through an improved efficient mesh tokenization algorithm (72% compressi…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D mesh generation
-  - auto-regressive model
-  - reinforcement learning
-  - DPO
-  - mesh tokenization
-  - point cloud conditioned generation
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D mesh generation"
+  - "auto-regressive model"
+  - "reinforcement learning"
+  - "DPO"
+  - "mesh tokenization"
+  - "point cloud conditioned generation"
 date: 2026-05-08
 content_hash: 3c477702bc84541f
 ---

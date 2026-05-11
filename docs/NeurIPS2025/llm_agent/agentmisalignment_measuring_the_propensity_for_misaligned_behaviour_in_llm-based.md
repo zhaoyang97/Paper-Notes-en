@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AgentMisalignment: Measuring the Propensity for Misaligned Behaviour in LLM-Based Agents
 description: >-
-  [NeurIPS 2025][LLM Agent][Alignment] This paper proposes the AgentMisalignment benchmark suite, comprising 9 realistic scenario evaluation tasks that measure the **propensity** of LLM agents to **spontaneously deviate** from deployer intent under non-malicious instructions (rather than measuring capability). The study finds that stronger models tend to exhibit higher misalignment, and that persona prompts sometimes exert greater influence on misaligned behavior than model choice itself.
+  [NeurIPS 2025][LLM Agent][Alignment] This paper proposes the AgentMisalignment benchmark suite, comprising 9 realistic scenario evaluation tasks that measure the **propensity** of LLM agents to **spontaneously deviate**…
 tags:
-  - NeurIPS 2025
-  - LLM Agent
-  - Alignment
-  - Agent Safety
-  - Misalignment
-  - Benchmark
-  - Persona Prompting
+  - "NeurIPS 2025"
+  - "LLM Agent"
+  - "Alignment"
+  - "Agent Safety"
+  - "Misalignment"
+  - "Benchmark"
+  - "Persona Prompting"
 date: 2026-05-08
 content_hash: 0bea8d4cdc395b64
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Learning Structure-Semantic Evolution Trajectories for Graph Domain Adaptation
 description: >-
-  [ICLR 2026][Graph Domain Adaptation] This paper proposes DiffGDA—the first method to introduce diffusion models into graph domain adaptation (GDA). It formulates the continuous-time joint structure-semantic evolution from source graphs to target graphs using stochastic differential equations (SDEs), and employs a density-ratio-based domain-aware guidance network to steer the diffusion trajectory toward the target domain. Theoretical convergence to the optimal adaptation path is proven, and DiffGDA comprehensively outperforms state-of-the-art methods across 14 transfer tasks on 8 real-world datasets.
+  [ICLR 2026][Graph Domain Adaptation] This paper proposes DiffGDA—the first method to introduce diffusion models into graph domain adaptation (GDA). It formulates the continuous-time joint structure-semantic evolution fro…
 tags:
-  - ICLR 2026
-  - Graph Domain Adaptation
-  - Diffusion Models
-  - SDE
-  - Continuous Evolution
-  - Domain-Aware Guidance
+  - "ICLR 2026"
+  - "Graph Domain Adaptation"
+  - "Diffusion Models"
+  - "SDE"
+  - "Continuous Evolution"
+  - "Domain-Aware Guidance"
 date: 2026-05-08
 content_hash: 1176045e971f423e
 ---

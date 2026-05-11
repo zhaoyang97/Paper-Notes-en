@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Prefix Parsing is Just Parsing
 description: >-
-  [ACL 2026][LLM/NLP][prefix parsing] This paper proposes **prefix grammar transformation**, an efficient method that reduces prefix parsing to ordinary parsing. Given a grammar, the approach constructs a new grammar that generates exactly the set of all prefix strings of the original language, thereby enabling direct reuse of any existing ordinary parsing algorithm without the need for specialized prefix parsing algorithms.
+  [ACL 2026][LLM/NLP][prefix parsing] This paper proposes **prefix grammar transformation**, an efficient method that reduces prefix parsing to ordinary parsing. Given a grammar…
 tags:
-  - ACL 2026
-  - LLM/NLP
-  - prefix parsing
-  - grammar transformation
-  - context-free language modeling
-  - prefix probability
-  - constrained generation
+  - "ACL 2026"
+  - "LLM/NLP"
+  - "prefix parsing"
+  - "grammar transformation"
+  - "context-free language modeling"
+  - "prefix probability"
+  - "constrained generation"
 date: 2026-05-08
 content_hash: d9efbc74a199d57b
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GraphKeeper: Graph Domain-Incremental Learning via Knowledge Disentanglement and Preservation
 description: >-
-  [NeurIPS 2025][Social Computing][Graph Incremental Learning] GraphKeeper is proposed to address catastrophic forgetting in **Graph Domain-Incremental Learning (Graph Domain-IL)** through three components: domain-specific LoRA parameter isolation, intra/inter-domain disentanglement, and ridge regression-based deviation-free knowledge preservation. It outperforms the second-best method by 6.5%–16.6% and can be seamlessly integrated with graph foundation models.
+  [NeurIPS 2025][Social Computing][Graph Incremental Learning] GraphKeeper is proposed to address catastrophic forgetting in **Graph Domain-Incremental Learning (Graph Domain-IL)** through three components: domain-specific…
 tags:
-  - NeurIPS 2025
-  - Social Computing
-  - Graph Incremental Learning
-  - Domain-Incremental Learning
-  - LoRA
-  - Knowledge Disentanglement
-  - Catastrophic Forgetting
+  - "NeurIPS 2025"
+  - "Social Computing"
+  - "Graph Incremental Learning"
+  - "Domain-Incremental Learning"
+  - "LoRA"
+  - "Knowledge Disentanglement"
+  - "Catastrophic Forgetting"
 date: 2026-05-08
 content_hash: 7d6beef2ea7c19dd
 ---

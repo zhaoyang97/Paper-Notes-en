@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VPN: Visual Prompt Navigation
 description: >-
-  [AAAI 2026][3D Vision][Visual Navigation] This paper proposes Visual Prompt Navigation (VPN), a novel navigation paradigm in which users annotate visual trajectories (keypoints connected by arrows) on 2D top-down maps to guide agent navigation, replacing natural language or image-goal instructions. Two datasets, R2R-VP and R2R-CE-VP, are constructed alongside a VPNet baseline model. Combined with view-level and trajectory-level data augmentation, the approach achieves strong performance in both discrete and continuous environments.
+  [AAAI 2026][3D Vision][Visual Navigation] This paper proposes Visual Prompt Navigation (VPN), a novel navigation paradigm in which users annotate visual trajectories (keypoints connected by arrows) on 2D top-down maps to…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - Visual Navigation
-  - Visual Prompt
-  - Top-down View
-  - Vision-Language Navigation
-  - Data Augmentation
+  - "AAAI 2026"
+  - "3D Vision"
+  - "Visual Navigation"
+  - "Visual Prompt"
+  - "Top-down View"
+  - "Vision-Language Navigation"
+  - "Data Augmentation"
 date: 2026-05-08
 content_hash: 781f7c3630239f6a
 ---

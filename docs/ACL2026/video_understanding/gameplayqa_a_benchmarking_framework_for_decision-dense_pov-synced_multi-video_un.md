@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GameplayQA: A Benchmarking Framework for Decision-Dense POV-Synced Multi-Video Understanding of 3D Virtual Agents
 description: >-
-  [ACL 2026][Video Understanding][Video QA] This paper presents GameplayQA, an end-to-end benchmarking framework built on multi-player 3D game videos. Through dense timeline annotation (1.22 labels/second) and a structured distractor taxonomy, it systematically evaluates multimodal large language models (MLLMs) on perception and reasoning in decision-dense, multi-view synchronized scenarios, revealing a substantial gap between frontier models and human performance.
+  [ACL 2026][Video Understanding][Video QA] This paper presents GameplayQA, an end-to-end benchmarking framework built on multi-player 3D game videos. Through dense timeline annotation (1.22 labels/second) and a structured…
 tags:
-  - ACL 2026
-  - Video Understanding
-  - Video QA
-  - Multi-View Understanding
-  - Game AI
-  - Hallucination Diagnosis
-  - Multi-Agent Perception
+  - "ACL 2026"
+  - "Video Understanding"
+  - "Video QA"
+  - "Multi-View Understanding"
+  - "Game AI"
+  - "Hallucination Diagnosis"
+  - "Multi-Agent Perception"
 date: 2026-05-08
 content_hash: c365fb04558d2d31
 ---

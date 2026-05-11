@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From Shortcut to Induction Head: How Data Diversity Shapes Algorithm Selection in Transformers
 description: >-
-  [NeurIPS 2025][LLM Efficiency][Induction Head] This paper provides rigorous theoretical analysis demonstrating that the diversity of pretraining data—characterized by the *max-sum ratio*—determines whether a single-layer Transformer learns a generalizable induction head or a non-OOD-generalizing positional shortcut, and derives a closed-form optimal pretraining distribution that promotes induction head formation.
+  [NeurIPS 2025][LLM Efficiency][Induction Head] This paper provides rigorous theoretical analysis demonstrating that the diversity of pretraining data—characterized by the *max-sum ratio*—determines whether a single-layer…
 tags:
-  - NeurIPS 2025
-  - LLM Efficiency
-  - Induction Head
-  - Positional Shortcut
-  - Data Diversity
-  - Algorithm Selection
-  - OOD Generalization
+  - "NeurIPS 2025"
+  - "LLM Efficiency"
+  - "Induction Head"
+  - "Positional Shortcut"
+  - "Data Diversity"
+  - "Algorithm Selection"
+  - "OOD Generalization"
 date: 2026-05-08
 content_hash: 5f5a05bc95d631cf
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Indoor Asset Detection in Large Scale 360° Drone-Captured Imagery via 3D Gaussian Splatting
 description: >-
-  [CVPR 2026][3D Vision][indoor asset detection] This paper proposes a pipeline based on a 3D Object Codebook that associates 2D segmentation masks into consistent 3D object instances within 3DGS using semantic and spatial constraints, enabling object-level detection on large-scale indoor 360° drone imagery. It achieves a 65% improvement in F1 score and 11% improvement in mAP over the state-of-the-art method GAGA.
+  [CVPR 2026][3D Vision][indoor asset detection] This paper proposes a pipeline based on a 3D Object Codebook that associates 2D segmentation masks into consistent 3D object instances within 3DGS using semantic and spatial…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - indoor asset detection
-  - 3DGS segmentation
-  - multi-view consistency
-  - object codebook
-  - drone 360° imaging
+  - "CVPR 2026"
+  - "3D Vision"
+  - "indoor asset detection"
+  - "3DGS segmentation"
+  - "multi-view consistency"
+  - "object codebook"
+  - "drone 360° imaging"
 date: 2026-05-08
 content_hash: 8f0c870b4d74f65b
 ---

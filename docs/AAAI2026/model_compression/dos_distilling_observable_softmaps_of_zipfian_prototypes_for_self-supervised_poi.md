@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DOS: Distilling Observable Softmaps of Zipfian Prototypes for Self-Supervised Point Representation
 description: >-
-  [AAAI 2026][Model Compression][Self-Supervised Learning] DOS is a framework that distills semantic softmaps exclusively over observable (unmasked) points, combined with Zipf-Sinkhorn regularization based on a Zipfian prior to handle the long-tail distribution of 3D semantics. It achieves state-of-the-art self-supervised learning performance on six 3D benchmarks, reaching 95% of supervised performance under linear probing.
+  [AAAI 2026][Model Compression][Self-Supervised Learning] DOS is a framework that distills semantic softmaps exclusively over observable (unmasked) points…
 tags:
-  - AAAI 2026
-  - Model Compression
-  - Self-Supervised Learning
-  - Point Cloud Representation
-  - Self-Distillation
-  - Long-Tail Distribution
-  - Semantic Softmap
+  - "AAAI 2026"
+  - "Model Compression"
+  - "Self-Supervised Learning"
+  - "Point Cloud Representation"
+  - "Self-Distillation"
+  - "Long-Tail Distribution"
+  - "Semantic Softmap"
 date: 2026-05-08
 content_hash: 22ca459ec1aa110c
 ---

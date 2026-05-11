@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Boosting Adversarial Transferability with Spatial Adversarial Alignment
 description: >-
-  [NEURIPS2025][AI Safety][adversarial transferability] This paper proposes Spatial Adversarial Alignment (SAA), which fine-tunes a surrogate model via two modules—spatial-aware alignment and adversarial-aware alignment—to align its features with those of a witness model, achieving significant improvements in cross-architecture adversarial transferability (CNN→ViT transfer rate improved by 25–39%).
+  [NEURIPS2025][AI Safety][adversarial transferability] This paper proposes Spatial Adversarial Alignment (SAA), which fine-tunes a surrogate model via two modules—spatial-aware alignment and adversarial-aware alignment—to…
 tags:
-  - NEURIPS2025
-  - AI Safety
-  - adversarial transferability
-  - model alignment
-  - cross-architecture attack
-  - spatial features
-  - adversarial features
+  - "NEURIPS2025"
+  - "AI Safety"
+  - "adversarial transferability"
+  - "model alignment"
+  - "cross-architecture attack"
+  - "spatial features"
+  - "adversarial features"
 date: 2026-05-08
 content_hash: bebb4db33292252c
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] INST-IT: Boosting Instance Understanding via Explicit Visual Prompt Instruction Tuning
 description: >-
-  [NeurIPS 2025][Video Understanding][Instance-level Understanding] This work presents the complete Inst-IT framework: a GPT-4o-assisted automatic annotation pipeline for generating instance-level fine-grained data, an Inst-IT Bench evaluation benchmark, a 335K QA-pair instruction tuning dataset, and a continual fine-tuning paradigm that effectively enhances instance-level understanding in LMMs while also improving general image and video comprehension.
+  [NeurIPS 2025][Video Understanding][Instance-level Understanding] This work presents the complete Inst-IT framework: a GPT-4o-assisted automatic annotation pipeline for generating instance-level fine-grained data…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
-  - Instance-level Understanding
-  - Visual Prompting
-  - Instruction Tuning
-  - Large Multimodal Models
-  - Spatiotemporal Understanding
+  - "NeurIPS 2025"
+  - "Video Understanding"
+  - "Instance-level Understanding"
+  - "Visual Prompting"
+  - "Instruction Tuning"
+  - "Large Multimodal Models"
+  - "Spatiotemporal Understanding"
 date: 2026-05-08
 content_hash: 3f834ab5f6f1a8e0
 ---

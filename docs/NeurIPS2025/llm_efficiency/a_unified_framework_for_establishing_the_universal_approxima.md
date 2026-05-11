@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Unified Framework for Establishing the Universal Approximation of Transformer-Type Architectures
 description: >-
-  [NeurIPS 2025][LLM Efficiency][Universal Approximation Property] A unified theoretical framework is established for proving the universal approximation property (UAP) of diverse Transformer architectures. The framework rests on two core conditions — nonlinear affine invariance of the feed-forward layer and token distinguishability of the attention layer — and leverages an analyticity assumption to reduce the latter to verification on only two-sample cases. The framework successfully covers a wide range of practical architectures, including softmax, RBF kernel, Performer, BigBird, Linformer, and others.
+  [NeurIPS 2025][LLM Efficiency][Universal Approximation Property] A unified theoretical framework is established for proving the universal approximation property (UAP) of diverse Transformer architectures. The framework r…
 tags:
-  - NeurIPS 2025
-  - LLM Efficiency
-  - Universal Approximation Property
-  - Token Distinguishability
-  - Attention Mechanism
-  - Permutation Equivariance
-  - Control Theory
+  - "NeurIPS 2025"
+  - "LLM Efficiency"
+  - "Universal Approximation Property"
+  - "Token Distinguishability"
+  - "Attention Mechanism"
+  - "Permutation Equivariance"
+  - "Control Theory"
 date: 2026-05-08
 content_hash: deda24503e9cb3be
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PromptMoE: Generalizable Zero-Shot Anomaly Detection via Visually-Guided Prompt Mixing of Experts
 description: >-
-  [AAAI 2026][LLM/NLP][Zero-Shot Anomaly Detection] PromptMoE shifts prompt learning from a monolithic paradigm to a compositional one. Through a visually-guided Mixture of Experts (MoE) mechanism, it dynamically assembles instance-adaptive normal/abnormal state prompts from a learnable semantic primitive bank, achieving state-of-the-art zero-shot anomaly detection (ZSAD) performance across 15 industrial and medical datasets.
+  [AAAI 2026][LLM/NLP][Zero-Shot Anomaly Detection] PromptMoE shifts prompt learning from a monolithic paradigm to a compositional one. Through a visually-guided Mixture of Experts (MoE) mechanism…
 tags:
-  - AAAI 2026
-  - LLM/NLP
-  - Zero-Shot Anomaly Detection
-  - CLIP
-  - Mixture of Experts
-  - Compositional Prompt Learning
-  - Visually-Guided Routing
+  - "AAAI 2026"
+  - "LLM/NLP"
+  - "Zero-Shot Anomaly Detection"
+  - "CLIP"
+  - "Mixture of Experts"
+  - "Compositional Prompt Learning"
+  - "Visually-Guided Routing"
 date: 2026-05-08
 content_hash: 327bd406bb0ea4b1
 ---

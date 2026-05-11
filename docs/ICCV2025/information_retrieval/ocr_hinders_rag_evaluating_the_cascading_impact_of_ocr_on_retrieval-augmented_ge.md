@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] OCR Hinders RAG: Evaluating the Cascading Impact of OCR on Retrieval-Augmented Generation
 description: >-
-  [ICCV 2025][OCR noise] This paper presents OHRBench—the first benchmark for evaluating the cascading impact of OCR on RAG systems. It comprises 8,561 document images across 7 domains and 8,498 QA pairs, and systematically reveals the distinct impact patterns of OCR-induced Semantic Noise and Formatting Noise on both the retrieval and generation stages.
+  [ICCV 2025][Information Retrieval & RAG][OCR noise] This paper presents OHRBench—the first benchmark for evaluating the cascading impact of OCR on RAG systems. It comprises 8,561 document images across 7 domains and 8…
 tags:
-  - ICCV 2025
-  - OCR noise
-  - RAG systems
-  - document parsing
-  - knowledge base quality
-  - benchmark
+  - "ICCV 2025"
+  - "Information Retrieval & RAG"
+  - "OCR noise"
+  - "RAG systems"
+  - "document parsing"
+  - "knowledge base quality"
+  - "benchmark"
 date: 2026-05-08
 content_hash: bfbb07ec756f67ec
 ---

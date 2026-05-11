@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] NewtonBench: Benchmarking Generalizable Scientific Law Discovery in LLM Agents
 description: >-
-  [ICLR 2026][LLM Agent][scientific discovery] This paper proposes NewtonBench, a benchmark for LLM-based scientific law discovery comprising 324 tasks across 12 physical domains. Novel tasks resistant to memorization are generated via "counterfactual law shifts," requiring agents to discover hidden physical equations through interactive experimentation. GPT-5 achieves the best performance (75.9% symbolic accuracy) but degrades sharply on complex systems (40.3%), and code tools surprisingly hurt stronger models.
+  [ICLR 2026][LLM Agent][scientific discovery] This paper proposes NewtonBench, a benchmark for LLM-based scientific law discovery comprising 324 tasks across 12 physical domains. Novel tasks resistant to memorization are…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - scientific discovery
-  - benchmark
-  - counterfactual physical laws
-  - symbolic regression
-  - interactive exploration
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "scientific discovery"
+  - "benchmark"
+  - "counterfactual physical laws"
+  - "symbolic regression"
+  - "interactive exploration"
 date: 2026-05-08
 content_hash: 62cc79d4eddd3a7c
 ---

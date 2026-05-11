@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Hierarchical Material Recognition from Local Appearance
 description: >-
-  [ICCV 2025][3D Vision][material recognition] This paper proposes a hierarchical material taxonomy designed for visual applications alongside a new in-the-wild dataset, Matador (~7,200 material images with depth maps, 57 categories). A graph attention network (GAT) leverages the taxonomic hierarchy for material recognition, achieving state-of-the-art results on multiple benchmarks while supporting few-shot learning of novel materials and material probing at arbitrary scene points.
+  [ICCV 2025][3D Vision][material recognition] This paper proposes a hierarchical material taxonomy designed for visual applications alongside a new in-the-wild dataset, Matador (~7,200 material images with depth maps…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - material recognition
-  - hierarchical classification
-  - graph attention network
-  - texture recognition
-  - material taxonomy
-  - novel view synthesis
-  - few-shot learning
+  - "ICCV 2025"
+  - "3D Vision"
+  - "material recognition"
+  - "hierarchical classification"
+  - "graph attention network"
+  - "texture recognition"
+  - "material taxonomy"
+  - "novel view synthesis"
+  - "few-shot learning"
 date: 2026-05-08
 content_hash: 0a9748de010a263b
 ---

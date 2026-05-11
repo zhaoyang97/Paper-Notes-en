@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Saber: Efficient Sampling with Adaptive Acceleration and Backtracking Enhanced Remasking for DLMs
 description: >-
-  [ACL 2026][Video Understanding][diffusion language models] This paper proposes Saber, a training-free sampling algorithm for diffusion language models (DLMs) that achieves an average Pass@1 improvement of 1.9% on code generation while delivering 251.4% inference speedup. This is accomplished through two strategies: adaptive acceleration (dynamically adjusting the amount of parallel decoding based on established context) and backtracking-enhanced remasking (revoking tokens falsified by newly established context).
+  [ACL 2026][Video Understanding][diffusion language models] This paper proposes Saber, a training-free sampling algorithm for diffusion language models (DLMs) that achieves an average Pass@1 improvement of 1.9% on code ge…
 tags:
-  - ACL 2026
-  - Video Understanding
-  - diffusion language models
-  - adaptive sampling
-  - backtracking remasking
-  - code generation acceleration
-  - speed-quality trade-off
+  - "ACL 2026"
+  - "Video Understanding"
+  - "diffusion language models"
+  - "adaptive sampling"
+  - "backtracking remasking"
+  - "code generation acceleration"
+  - "speed-quality trade-off"
 date: 2026-05-08
 content_hash: 5e9ebdcc21ad82c0
 ---

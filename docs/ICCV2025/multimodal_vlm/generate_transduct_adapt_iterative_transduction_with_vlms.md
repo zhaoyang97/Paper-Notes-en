@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GTA-CLIP: Generate, Transduct, Adapt — Iterative Transduction with VLMs
 description: >-
-  [ICCV 2025][Multimodal VLM][Transductive Learning] This paper proposes GTA-CLIP, which iteratively executes three steps — LLM-based attribute generation, attribute-enhanced transductive inference, and encoder fine-tuning — achieving an average zero-shot improvement of 9.5% and few-shot improvement of 3–4% across 12 datasets, and for the first time unifying attribute discovery, transductive inference, and model adaptation in a zero-label setting.
+  [ICCV 2025][Multimodal VLM][Transductive Learning] This paper proposes GTA-CLIP, which iteratively executes three steps — LLM-based attribute generation, attribute-enhanced transductive inference…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Transductive Learning
-  - Zero-shot Classification
-  - CLIP
-  - Attribute Generation
-  - VLM
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Transductive Learning"
+  - "Zero-shot Classification"
+  - "CLIP"
+  - "Attribute Generation"
+  - "VLM"
 date: 2026-05-08
 content_hash: 38534cdfd29afdad
 ---

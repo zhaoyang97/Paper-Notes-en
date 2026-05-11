@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] How Wide and How Deep? Mitigating Over-Squashing of GNNs via Channel Capacity Constrained Estimation
 description: >-
-  [AAAI 2026][over-squashing] From an information-theoretic perspective, this paper models spectral GNNs as communication channels and proposes the Channel Capacity Constrained Estimation (C3E) framework, which formalizes the selection of GNN hidden dimensions and depth as a nonlinear programming problem. The framework estimates optimal architectural parameters prior to training, effectively mitigating over-squashing and consistently improving representation learning across 9 datasets.
+  [AAAI 2026][over-squashing] From an information-theoretic perspective, this paper models spectral GNNs as communication channels and proposes the Channel Capacity Constrained Estimation (C3E) framework…
 tags:
-  - AAAI 2026
-  - over-squashing
-  - graph neural networks
-  - channel capacity
-  - information theory
-  - hidden dimension estimation
+  - "AAAI 2026"
+  - "over-squashing"
+  - "graph neural networks"
+  - "channel capacity"
+  - "information theory"
+  - "hidden dimension estimation"
 date: 2026-05-08
 content_hash: 1800ca65343b595e
 ---

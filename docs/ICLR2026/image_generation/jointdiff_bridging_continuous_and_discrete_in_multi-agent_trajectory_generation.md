@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] JointDiff: Bridging Continuous and Discrete in Multi-Agent Trajectory Generation
 description: >-
-  [ICLR 2026][Image Generation][joint diffusion] This paper proposes JointDiff, a joint continuous-discrete diffusion framework that, for the first time, unifies Gaussian diffusion (for trajectories) and multinomial diffusion (for ball-possession events) in a single model. It further introduces a CrossGuid module to support weak possession guidance and text-guided semantic controllable generation, achieving state-of-the-art performance on multi-agent trajectory generation in sports scenarios.
+  [ICLR 2026][Image Generation][joint diffusion] This paper proposes JointDiff, a joint continuous-discrete diffusion framework that, for the first time…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - joint diffusion
-  - continuous-discrete unification
-  - multi-agent
-  - trajectory generation
-  - controllable generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "joint diffusion"
+  - "continuous-discrete unification"
+  - "multi-agent"
+  - "trajectory generation"
+  - "controllable generation"
 date: 2026-05-08
 content_hash: 8fd1d598694f6574
 ---

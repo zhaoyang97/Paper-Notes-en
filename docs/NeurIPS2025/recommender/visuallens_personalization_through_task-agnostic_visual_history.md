@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VisualLens: Personalization through Task-Agnostic Visual History
 description: >-
-  [NeurIPS 2025][Recommender Systems][Multimodal Recommendation] This paper proposes VisualLens, a framework that leverages users' task-agnostic visual history (everyday photos) to enable cross-domain personalized recommendation via spectrum user profiles and multimodal large language models. On the newly constructed Google Review-V and Yelp-V datasets, VisualLens surpasses GPT-4o by 2–5% in Hit@3.
+  [NeurIPS 2025][Recommender Systems][Multimodal Recommendation] This paper proposes VisualLens, a framework that leverages users' task-agnostic visual history (everyday photos) to enable cross-domain personalized recommen…
 tags:
-  - NeurIPS 2025
-  - Recommender Systems
-  - Multimodal Recommendation
-  - Visual History
-  - Personalization
-  - MLLM
-  - User Profiling
+  - "NeurIPS 2025"
+  - "Recommender Systems"
+  - "Multimodal Recommendation"
+  - "Visual History"
+  - "Personalization"
+  - "MLLM"
+  - "User Profiling"
 date: 2026-05-08
 content_hash: d8e960290040419f
 ---

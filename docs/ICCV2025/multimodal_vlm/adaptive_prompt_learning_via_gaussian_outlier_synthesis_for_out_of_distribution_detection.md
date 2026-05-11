@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Adaptive Prompt Learning via Gaussian Outlier Synthesis for Out-of-distribution Detection
 description: >-
-  [ICCV 2025][Multimodal VLM][OOD detection] This paper proposes APLGOS, a framework that leverages prompt learning in vision-language models to synthesize virtual OOD prompts and images by sampling from low-probability regions of class-conditional Gaussian distributions, thereby enforcing more compact decision boundaries between in-distribution (ID) and out-of-distribution (OOD) categories. The method achieves state-of-the-art performance on four mainstream benchmarks.
+  [ICCV 2025][Multimodal VLM][OOD detection] This paper proposes APLGOS, a framework that leverages prompt learning in vision-language models to synthesize virtual OOD prompts and images by sampling from low-probability re…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - OOD detection
-  - prompt learning
-  - Gaussian outlier synthesis
-  - vision-language model
-  - contrastive learning
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "OOD detection"
+  - "prompt learning"
+  - "Gaussian outlier synthesis"
+  - "vision-language model"
+  - "contrastive learning"
 date: 2026-05-08
 content_hash: 269e3366fa4e4b1a
 ---

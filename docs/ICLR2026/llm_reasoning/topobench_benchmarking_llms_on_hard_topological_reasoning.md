@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] TopoBench: Benchmarking LLMs on Hard Topological Reasoning
 description: >-
-  [ICLR2026][LLM Reasoning][benchmark] TopoBench is a benchmark comprising 6 categories of topological puzzles × 3 difficulty levels for evaluating the global spatial reasoning capabilities of LLMs. Frontier models solve fewer than 24% of hard-tier instances. Causal intervention experiments reveal that error frequency does not equal causal impact — low-frequency constraint forgetting is more destructive than high-frequency repetitive reasoning.
+  [ICLR2026][LLM Reasoning][benchmark] TopoBench is a benchmark comprising 6 categories of topological puzzles × 3 difficulty levels for evaluating the global spatial reasoning capabilities of LLMs. Frontier models solve f…
 tags:
-  - ICLR2026
-  - LLM Reasoning
-  - benchmark
-  - topological reasoning
-  - spatial reasoning
-  - puzzle
-  - error diagnosis
-  - causal intervention
+  - "ICLR2026"
+  - "LLM Reasoning"
+  - "benchmark"
+  - "topological reasoning"
+  - "spatial reasoning"
+  - "puzzle"
+  - "error diagnosis"
+  - "causal intervention"
 date: 2026-05-08
 content_hash: cf690c779cba1112
 ---

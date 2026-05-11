@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ChangeBridge: Spatiotemporal Image Generation with Multimodal Controls for Remote Sensing
 description: >-
-  [CVPR 2026][Image Generation][Remote sensing change generation] Proposes ChangeBridge, which achieves conditional spatiotemporal image generation from pre-event to post-event in remote sensing scenes via a drift-asynchronous diffusion bridge. It supports multimodal controls including coordinate-text, semantic masks, and instance layouts, serving as a data generation engine for change detection tasks.
+  [CVPR 2026][Image Generation][Remote sensing change generation] Proposes ChangeBridge, which achieves conditional spatiotemporal image generation from pre-event to post-event in remote sensing scenes via a drift-asynchro…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Remote sensing change generation
-  - diffusion bridge model
-  - spatiotemporal image generation
-  - multimodal conditions
-  - change detection data engine
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Remote sensing change generation"
+  - "diffusion bridge model"
+  - "spatiotemporal image generation"
+  - "multimodal conditions"
+  - "change detection data engine"
 date: 2026-05-08
 content_hash: 8b670ba44517615b
 ---

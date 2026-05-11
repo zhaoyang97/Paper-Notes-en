@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Breaking the Correlation Plateau: On the Optimization and Capacity Limits of Attention-Based Regressors
 description: >-
-  [ICLR 2026][LLM Evaluation][Pearson correlation coefficient] This paper provides the first theoretical analysis of the "PCC plateau" phenomenon observed when training attention-based regression models with a joint MSE+PCC objective. The root causes are identified as the conflict between MSE optimization and PCC gradients, together with an expressivity upper bound imposed by the convex aggregation of softmax. The authors propose the ECA (Extrapolative Correlation Attention) framework, which breaks through this limitation via three components: scaled residual aggregation, dispersion-aware temperature softmax, and dispersion-normalized PCC loss.
+  [ICLR 2026][LLM Evaluation][Pearson correlation coefficient] This paper provides the first theoretical analysis of the "PCC plateau" phenomenon observed when training attention-based regression models with a joint MSE+PC…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - Pearson correlation coefficient
-  - attention regression
-  - PCC plateau
-  - convex aggregation
-  - optimization dynamics
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Pearson correlation coefficient"
+  - "attention regression"
+  - "PCC plateau"
+  - "convex aggregation"
+  - "optimization dynamics"
 date: 2026-05-08
 content_hash: b7485bc0562c7104
 ---

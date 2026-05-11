@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DCT-Shield: A Robust Frequency Domain Defense against Malicious Image Editing
 description: >-
-  [ICCV 2025][Image Generation][image immunization] DCT-Shield introduces adversarial perturbations in the Discrete Cosine Transform (DCT) domain rather than pixel space, making the immunization noise highly imperceptible and inherently robust to JPEG compression, thereby effectively defending against diffusion-model-based malicious image editing.
+  [ICCV 2025][Image Generation][image immunization] DCT-Shield introduces adversarial perturbations in the Discrete Cosine Transform (DCT) domain rather than pixel space…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - image immunization
-  - adversarial perturbation
-  - DCT frequency domain
-  - JPEG robustness
-  - diffusion model defense
+  - "ICCV 2025"
+  - "Image Generation"
+  - "image immunization"
+  - "adversarial perturbation"
+  - "DCT frequency domain"
+  - "JPEG robustness"
+  - "diffusion model defense"
 date: 2026-05-08
 content_hash: 447e45360b2bff46
 ---

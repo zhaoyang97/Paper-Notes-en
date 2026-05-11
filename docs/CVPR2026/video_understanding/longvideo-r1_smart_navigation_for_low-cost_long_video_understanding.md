@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] LongVideo-R1: Smart Navigation for Low-cost Long Video Understanding
 description: >-
-  [CVPR2026][Video Understanding][Long Video Understanding] This paper proposes LongVideo-R1, a reasoning-capable multimodal agent that organizes videos into a hierarchical tree structure and employs an intelligent navigation strategy to achieve efficient long-video question answering with an average of only 10.5 tool calls, significantly outperforming exhaustive methods on the accuracy–efficiency trade-off.
+  [CVPR2026][Video Understanding][Long Video Understanding] This paper proposes LongVideo-R1, a reasoning-capable multimodal agent that organizes videos into a hierarchical tree structure and employs an intelligent navigat…
 tags:
-  - CVPR2026
-  - Video Understanding
-  - Long Video Understanding
-  - Smart Navigation
-  - Multimodal Agent
-  - Hierarchical Reasoning
-  - Reinforcement Learning
-  - Chain-of-Thought
+  - "CVPR2026"
+  - "Video Understanding"
+  - "Long Video Understanding"
+  - "Smart Navigation"
+  - "Multimodal Agent"
+  - "Hierarchical Reasoning"
+  - "Reinforcement Learning"
+  - "Chain-of-Thought"
 date: 2026-05-08
 content_hash: dc49dbfc6dd4a347
 ---

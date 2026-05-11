@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] O3N: Omnidirectional Open-Vocabulary Occupancy Prediction
 description: >-
-  [CVPR 2026][Autonomous Driving][Omnidirectional Perception] O3N is the first work to introduce the omnidirectional open-vocabulary occupancy prediction task and proposes a purely vision-based end-to-end framework. Polar-spiral Mamba (PsM) models panoramic geometric continuity via spiral scanning in polar coordinate space; Occupancy Cost Aggregation (OCA) constructs a voxel-text matching cost volume to avoid overfitting from direct feature alignment; Natural Modality Alignment (NMA) aligns pixel-voxel-text tri-modal embeddings through gradient-free random walk. The method achieves 16.54 mIoU / 21.16 Novel mIoU on QuadOcc (SOTA), substantially outperforming the OVO baseline.
+  [CVPR 2026][Autonomous Driving][Omnidirectional Perception] O3N is the first work to introduce the omnidirectional open-vocabulary occupancy prediction task and proposes a purely vision-based end-to-end framework. Polar-…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Omnidirectional Perception
-  - Open-Vocabulary
-  - Occupancy Prediction
-  - Panoramic Images
-  - Mamba
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Omnidirectional Perception"
+  - "Open-Vocabulary"
+  - "Occupancy Prediction"
+  - "Panoramic Images"
+  - "Mamba"
 date: 2026-05-08
 content_hash: 3110d58c29a6201c
 ---

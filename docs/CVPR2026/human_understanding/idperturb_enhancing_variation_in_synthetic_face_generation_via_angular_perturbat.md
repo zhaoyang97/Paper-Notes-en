@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] IDperturb: Enhancing Variation in Synthetic Face Generation via Angular Perturbations
 description: >-
-  [CVPR 2026][Human Understanding][Synthetic faces] This paper proposes IDperturb, a geometry-driven sampling strategy that applies angular perturbations to identity embeddings on the unit hypersphere. Without modifying the generative model, it significantly enhances intra-class diversity in synthetic face datasets and improves downstream face recognition performance.
+  [CVPR 2026][Human Understanding][Synthetic faces] This paper proposes IDperturb, a geometry-driven sampling strategy that applies angular perturbations to identity embeddings on the unit hypersphere. Without modifying th…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Synthetic faces
-  - identity perturbation
-  - angular sampling
-  - diffusion models
-  - face recognition
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Synthetic faces"
+  - "identity perturbation"
+  - "angular sampling"
+  - "diffusion models"
+  - "face recognition"
 date: 2026-05-08
 content_hash: e4a65b83a4838866
 ---

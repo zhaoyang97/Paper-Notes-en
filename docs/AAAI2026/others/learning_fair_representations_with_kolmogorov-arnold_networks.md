@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Learning Fair Representations with Kolmogorov-Arnold Networks
 description: >-
-  [AAAI 2026][Kolmogorov-Arnold Networks] This paper proposes integrating Kolmogorov-Arnold Networks (KAN) into an adversarial debiasing framework, leveraging KAN's spline-based architecture to provide theoretical guarantees of Lipschitz continuity and smoothness. An adaptive $\lambda$ update mechanism is introduced to dynamically balance fairness and accuracy. The approach achieves significant improvements on fairness metrics on the UCI college admissions dataset.
+  [AAAI 2026][Kolmogorov-Arnold Networks] This paper proposes integrating Kolmogorov-Arnold Networks (KAN) into an adversarial debiasing framework…
 tags:
-  - AAAI 2026
-  - Kolmogorov-Arnold Networks
-  - adversarial debiasing
-  - fairness
-  - adaptive penalty
-  - college admissions
+  - "AAAI 2026"
+  - "Kolmogorov-Arnold Networks"
+  - "adversarial debiasing"
+  - "fairness"
+  - "adaptive penalty"
+  - "college admissions"
 date: 2026-05-08
 content_hash: 9c5ef6b3f69a69e4
 ---

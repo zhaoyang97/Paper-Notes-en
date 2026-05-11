@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TRiCo: Triadic Game-Theoretic Co-Training for Robust Semi-Supervised Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Semi-supervised learning] This paper proposes TRiCo, a framework that reformulates semi-supervised learning as a three-player Stackelberg game among a teacher, two student classifiers, and an adversarial generator. It replaces confidence-based thresholding with mutual information for pseudo-label selection and employs a meta-learning teacher to adaptively regulate training dynamics, achieving state-of-the-art performance under low-label regimes.
+  [NeurIPS 2025][Reinforcement Learning][Semi-supervised learning] This paper proposes TRiCo, a framework that reformulates semi-supervised learning as a three-player Stackelberg game among a teacher…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Semi-supervised learning
-  - game theory
-  - co-training
-  - meta-learning
-  - adversarial perturbation
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Semi-supervised learning"
+  - "game theory"
+  - "co-training"
+  - "meta-learning"
+  - "adversarial perturbation"
 date: 2026-05-08
 content_hash: c53dfc4395c8c9a9
 ---

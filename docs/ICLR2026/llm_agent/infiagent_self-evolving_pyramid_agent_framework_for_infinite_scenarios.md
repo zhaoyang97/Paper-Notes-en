@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] InfiAgent: Self-Evolving Pyramid Agent Framework for Infinite Scenarios
 description: >-
-  [ICLR 2026][LLM Agent][multi-agent system] This paper proposes InfiAgent, a DAG-based pyramidal multi-agent framework that achieves automated hierarchical task decomposition, dual-audit quality assurance, intelligent routing, and self-evolution through an agent-as-a-tool mechanism, outperforming ADAS by an average of 9.9% across multiple reasoning benchmarks.
+  [ICLR 2026][LLM Agent][multi-agent system] This paper proposes InfiAgent, a DAG-based pyramidal multi-agent framework that achieves automated hierarchical task decomposition, dual-audit quality assurance…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - multi-agent system
-  - DAG
-  - agent-as-a-tool
-  - self-evolution
-  - task decomposition
-  - hierarchical agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "multi-agent system"
+  - "DAG"
+  - "agent-as-a-tool"
+  - "self-evolution"
+  - "task decomposition"
+  - "hierarchical agent"
 date: 2026-05-08
 content_hash: 39deedc678af49ac
 ---

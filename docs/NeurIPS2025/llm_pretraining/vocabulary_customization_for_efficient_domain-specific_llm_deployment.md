@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Vocabulary Customization for Efficient Domain-Specific LLM Deployment
 description: >-
-  [NeurIPS 2025][LLM Pretraining][vocabulary expansion] This paper proposes a BPE tokenizer expansion algorithm that guarantees monotonically non-increasing encoding length, appending domain-frequent tokens to the Llama 3.1 vocabulary (+30K tokens). In an e-commerce setting, the approach shortens input sequences by 20% and improves inference throughput by 20–30%. After 10K steps of continual training, model quality is fully preserved, and in approximately 98% of cases the model actively generates the newly added tokens.
+  [NeurIPS 2025][LLM Pretraining][vocabulary expansion] This paper proposes a BPE tokenizer expansion algorithm that guarantees monotonically non-increasing encoding length…
 tags:
-  - NeurIPS 2025
-  - LLM Pretraining
-  - vocabulary expansion
-  - tokenizer adaptation
-  - domain adaptation
-  - BPE
-  - inference acceleration
+  - "NeurIPS 2025"
+  - "LLM Pretraining"
+  - "vocabulary expansion"
+  - "tokenizer adaptation"
+  - "domain adaptation"
+  - "BPE"
+  - "inference acceleration"
 date: 2026-05-08
 content_hash: d9605a34a7afed33
 ---

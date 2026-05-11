@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ODUTQA-MDC: A Task for Open-Domain Underspecified Tabular QA with Multi-turn Dialogue-based Clarification
 description: >-
-  [ACL 2026][LLM Evaluation][Tabular Question Answering] This paper introduces the ODUTQA-MDC task and benchmark, the first systematic study of underspecified query detection and multi-turn dialogue-based clarification in open-domain tabular QA. The authors construct a large-scale dataset of 25,105 QA pairs and propose the MAIC-TQA multi-agent framework to perform end-to-end "detect–clarify–reason" tabular question answering.
+  [ACL 2026][LLM Evaluation][Tabular Question Answering] This paper introduces the ODUTQA-MDC task and benchmark, the first systematic study of underspecified query detection and multi-turn dialogue-based clarification in…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - Tabular Question Answering
-  - Ambiguous Query Clarification
-  - Multi-turn Dialogue
-  - Multi-agent Framework
-  - Text-to-SQL
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "Tabular Question Answering"
+  - "Ambiguous Query Clarification"
+  - "Multi-turn Dialogue"
+  - "Multi-agent Framework"
+  - "Text-to-SQL"
 date: 2026-05-08
 content_hash: d0b3882512027a38
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LINR-PCGC: Lossless Implicit Neural Representations for Point Cloud Geometry Compression
 description: >-
-  [ICCV 2025][3D Vision][Lossless point cloud compression] LINR-PCGC proposes the first implicit neural representation (INR)-based method for lossless point cloud geometry compression. By designing a lightweight multi-scale SparseConv network with Scale Context Extraction (SCE) and Child Node Prediction (CNP) modules, combined with a GoP-level shared decoder and initialization strategy, the method achieves a 21.21% bitrate reduction over G-PCC TMC13v23 and a 21.95% reduction over SparsePCGC on the MVUB dataset, without relying on any specific training data distribution.
+  [ICCV 2025][3D Vision][Lossless point cloud compression] LINR-PCGC proposes the first implicit neural representation (INR)-based method for lossless point cloud geometry compression. By designing a lightweight multi-scal…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Lossless point cloud compression
-  - implicit neural representations
-  - multi-scale sparse convolution
-  - GoP coding
-  - model compression
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Lossless point cloud compression"
+  - "implicit neural representations"
+  - "multi-scale sparse convolution"
+  - "GoP coding"
+  - "model compression"
 date: 2026-05-08
 content_hash: 6ff258693e9c83c0
 ---

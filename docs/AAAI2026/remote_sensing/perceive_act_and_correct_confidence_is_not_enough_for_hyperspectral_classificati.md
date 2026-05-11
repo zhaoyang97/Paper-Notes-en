@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Perceive, Act and Correct: Confidence Is Not Enough for Hyperspectral Classification
 description: >-
-  [AAAI 2026][Remote Sensing][hyperspectral] This paper proposes the CABIN framework, which employs a closed-loop cognitive perceive–act–correct learning mechanism. By replacing naive confidence with epistemic uncertainty to guide sample selection and pseudo-label management in semi-supervised hyperspectral image classification, CABIN significantly outperforms fully supervised baselines while using only 75% of the labeled data.
+  [AAAI 2026][Remote Sensing][hyperspectral] This paper proposes the CABIN framework, which employs a closed-loop cognitive perceive–act–correct learning mechanism. By replacing naive confidence with epistemic uncertainty…
 tags:
-  - AAAI 2026
-  - Remote Sensing
-  - hyperspectral
-  - semi-supervised
-  - uncertainty
-  - pseudo-label
-  - evidential deep learning
+  - "AAAI 2026"
+  - "Remote Sensing"
+  - "hyperspectral"
+  - "semi-supervised"
+  - "uncertainty"
+  - "pseudo-label"
+  - "evidential deep learning"
 date: 2026-05-08
 content_hash: 2c832f581b3a3050
 ---

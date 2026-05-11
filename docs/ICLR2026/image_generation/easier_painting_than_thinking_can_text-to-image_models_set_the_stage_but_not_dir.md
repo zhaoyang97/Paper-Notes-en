@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Easier Painting Than Thinking: Can Text-to-Image Models Set the Stage, but Not Direct the Play?
 description: >-
-  [ICLR 2026][Image Generation][T2I evaluation] This paper proposes T2I-CoReBench, the first comprehensive benchmark that systematically evaluates both **compositional ability** (Composition) and **reasoning ability** (Reasoning) of T2I models. It covers 12 evaluation dimensions, 1,080 high-difficulty prompts, and approximately 13,500 checklist questions. Large-scale evaluation of 38 models reveals that reasoning capability lags far behind compositional capability, constituting the primary bottleneck in current T2I generation.
+  [ICLR 2026][Image Generation][T2I evaluation] This paper proposes T2I-CoReBench, the first comprehensive benchmark that systematically evaluates both **compositional ability** (Composition) and **reasoning ability** (Rea…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - T2I evaluation
-  - compositional generation
-  - reasoning ability
-  - benchmark
-  - scene graph
+  - "ICLR 2026"
+  - "Image Generation"
+  - "T2I evaluation"
+  - "compositional generation"
+  - "reasoning ability"
+  - "benchmark"
+  - "scene graph"
 date: 2026-05-08
 content_hash: 79e8be52a755d2b3
 ---

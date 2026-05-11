@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Real-world Display Inverse Rendering Dataset
 description: >-
-  [ICCV 2025][LLM Evaluation][Inverse Rendering] This paper presents the first real-world inverse rendering dataset built upon an LCD display-camera system, comprising stereo polarization images of 16 objects with diverse materials captured under OLAT illumination patterns alongside high-precision geometric ground truth. A simple yet effective display inverse rendering baseline is proposed, outperforming existing inverse rendering methods.
+  [ICCV 2025][LLM Evaluation][Inverse Rendering] This paper presents the first real-world inverse rendering dataset built upon an LCD display-camera system…
 tags:
-  - ICCV 2025
-  - LLM Evaluation
-  - Inverse Rendering
-  - Display-Camera System
-  - OLAT Illumination
-  - Polarization Imaging
-  - Photometric Stereo
+  - "ICCV 2025"
+  - "LLM Evaluation"
+  - "Inverse Rendering"
+  - "Display-Camera System"
+  - "OLAT Illumination"
+  - "Polarization Imaging"
+  - "Photometric Stereo"
 date: 2026-05-08
 content_hash: 6303c90313b44d66
 ---

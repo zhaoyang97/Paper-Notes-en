@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Inference-Time Backdoors via Hidden Instructions in LLM Chat Templates
 description: >-
-  [ICLR 2026][LLM Safety][backdoor attack] This paper exposes LLM chat templates (Jinja2) as a novel inference-time backdoor attack surface. Without modifying model weights, poisoning training data, or controlling inference infrastructure, an adversary can implant conditionally triggered backdoors by modifying only the template within a GGUF file. Attacks are validated across 18 models and 4 inference engines with a success rate exceeding 80%, while completely evading HuggingFace's security scanning.
+  [ICLR 2026][LLM Safety][backdoor attack] This paper exposes LLM chat templates (Jinja2) as a novel inference-time backdoor attack surface. Without modifying model weights, poisoning training data…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - backdoor attack
-  - chat template
-  - Jinja2
-  - inference-time attack
-  - supply chain security
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "backdoor attack"
+  - "chat template"
+  - "Jinja2"
+  - "inference-time attack"
+  - "supply chain security"
 date: 2026-05-08
 content_hash: 59cb9fe1ce8a9fe0
 ---

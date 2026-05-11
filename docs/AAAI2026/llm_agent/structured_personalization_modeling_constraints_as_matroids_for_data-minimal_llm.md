@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Structured Personalization: Modeling Constraints as Matroids for Data-Minimal LLM Agents
 description: >-
-  [AAAI 2026][LLM Agent][personalized data selection] This paper formalizes structured constraints in LLM agent personalization—comprising logical dependencies and hierarchical quotas—as laminar matroids, proves that greedy algorithms retain constant-factor approximation guarantees under such constraints, and addresses the data-minimization selection problem with dependency relations and hierarchical limits.
+  [AAAI 2026][LLM Agent][personalized data selection] This paper formalizes structured constraints in LLM agent personalization—comprising logical dependencies and hierarchical quotas—as laminar matroids…
 tags:
-  - AAAI 2026
-  - LLM Agent
-  - personalized data selection
-  - submodular optimization
-  - matroid constraints
-  - knowledge graph compilation
-  - data minimization
+  - "AAAI 2026"
+  - "LLM Agent"
+  - "personalized data selection"
+  - "submodular optimization"
+  - "matroid constraints"
+  - "knowledge graph compilation"
+  - "data minimization"
 date: 2026-05-08
 content_hash: a7ae21f92e3669c5
 ---

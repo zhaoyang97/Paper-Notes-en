@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Compose Your Policies! Improving Diffusion-based or Flow-based Robot Policies via Test-time Distribution-level Composition
 description: >-
-  [ICLR 2026][Image Generation][policy composition] This paper proposes General Policy Composition (GPC), which at test time convexly combines the distribution scores of multiple pretrained diffusion/flow policies without additional training, yielding a composite policy that surpasses any individual parent policy. Theoretical analysis proves that convex combination improves single-step score error, and this improvement propagates to the full sampling trajectory via a Grönwall bound.
+  [ICLR 2026][Image Generation][policy composition] This paper proposes General Policy Composition (GPC), which at test time convexly combines the distribution scores of multiple pretrained diffusion/flow policies without…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - policy composition
-  - diffusion policy
-  - distribution-level composition
-  - test-time search
-  - robot manipulation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "policy composition"
+  - "diffusion policy"
+  - "distribution-level composition"
+  - "test-time search"
+  - "robot manipulation"
 date: 2026-05-08
 content_hash: db9461a05ab20321
 ---

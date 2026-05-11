@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Online Optimization for Offline Safe Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Offline Safe Reinforcement Learning] This paper proposes O3SRL, a framework that formalizes offline safe reinforcement learning as a minimax optimization problem. By combining an offline RL oracle with EXP3-based online optimization for adaptive Lagrange multiplier adjustment, O3SRL avoids unstable off-policy evaluation and achieves high reward under strict safety constraints.
+  [NeurIPS 2025][Reinforcement Learning][Offline Safe Reinforcement Learning] This paper proposes O3SRL, a framework that formalizes offline safe reinforcement learning as a minimax optimization problem. By combining an of…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Offline Safe Reinforcement Learning
-  - Minimax Optimization
-  - Multi-Armed Bandit
-  - Constrained Policy Optimization
-  - No-Regret Algorithm
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Offline Safe Reinforcement Learning"
+  - "Minimax Optimization"
+  - "Multi-Armed Bandit"
+  - "Constrained Policy Optimization"
+  - "No-Regret Algorithm"
 date: 2026-05-08
 content_hash: b3ac1cfea70ab22f
 ---

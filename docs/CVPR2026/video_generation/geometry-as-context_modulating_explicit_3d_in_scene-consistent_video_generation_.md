@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Geometry-as-context: Modulating Explicit 3D in Scene-consistent Video Generation to Geometry Context
 description: >-
-  [CVPR 2026][Video Generation][scene-consistent video generation] This paper proposes the Geometry-as-Context (GaC) framework, which replaces the non-differentiable operators (3D reconstruction + rendering) in reconstruction-based scene video generation with a unified autoregressive video generation model. By embedding geometric information (depth maps) as interleaved context into the generation sequence, GaC enables end-to-end training and mitigates accumulated errors.
+  [CVPR 2026][Video Generation][scene-consistent video generation] This paper proposes the Geometry-as-Context (GaC) framework, which replaces the non-differentiable operators (3D reconstruction + rendering) in reconstruct…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - scene-consistent video generation
-  - geometry context
-  - autoregressive generation
-  - camera control
-  - 3D reconstruction
+  - "CVPR 2026"
+  - "Video Generation"
+  - "scene-consistent video generation"
+  - "geometry context"
+  - "autoregressive generation"
+  - "camera control"
+  - "3D reconstruction"
 date: 2026-05-08
 content_hash: 81a0d4ec9beedf8d
 ---

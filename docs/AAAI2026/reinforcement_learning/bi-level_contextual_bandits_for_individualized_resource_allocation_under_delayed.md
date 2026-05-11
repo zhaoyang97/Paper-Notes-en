@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Bi-Level Contextual Bandits for Individualized Resource Allocation under Delayed Feedback
 description: >-
-  [AAAI 2026][Reinforcement Learning][Contextual Bandits] This paper proposes MetaCUB — a bi-level contextual bandit framework for individualized resource allocation under delayed feedback, dynamic cohorts, cooldown constraints, and fairness requirements. The meta-level optimizes subgroup budget allocation to ensure fairness, while the base-level applies a UCB strategy to select the most promising individuals within each subgroup.
+  [AAAI 2026][Reinforcement Learning][Contextual Bandits] This paper proposes MetaCUB — a bi-level contextual bandit framework for individualized resource allocation under delayed feedback, dynamic cohorts…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - Contextual Bandits
-  - Resource Allocation
-  - Delayed Feedback
-  - Fairness
-  - Bi-Level Optimization
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "Contextual Bandits"
+  - "Resource Allocation"
+  - "Delayed Feedback"
+  - "Fairness"
+  - "Bi-Level Optimization"
 date: 2026-05-08
 content_hash: 3d100075f3a0dc12
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unsupervised Multi-Parameter Inverse Solving for Reducing Ring Artifacts in 3D X-Ray CBCT
 description: >-
-  [AAAI 2026][Medical Imaging][CT ring artifact removal] This paper proposes Riner, which formulates CT ring artifact removal (RAR) as a physics-based multi-parameter inverse problem. By jointly learning artifact-free images and detector physical parameters via implicit neural representation (INR), Riner achieves unsupervised 3D CBCT reconstruction that surpasses supervised state-of-the-art methods.
+  [AAAI 2026][Medical Imaging][CT ring artifact removal] This paper proposes Riner, which formulates CT ring artifact removal (RAR) as a physics-based multi-parameter inverse problem. By jointly learning artifact-free imag…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - CT ring artifact removal
-  - implicit neural representation
-  - unsupervised learning
-  - multi-parameter inverse problem
-  - CBCT reconstruction
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "CT ring artifact removal"
+  - "implicit neural representation"
+  - "unsupervised learning"
+  - "multi-parameter inverse problem"
+  - "CBCT reconstruction"
 date: 2026-05-08
 content_hash: 3f953a2cabe05fdd
 ---

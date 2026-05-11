@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AdaFuse: Accelerating Dynamic Adapter Inference via Token-Level Pre-Gating and Fused Kernel Optimization
 description: >-
-  [AAAI 2026][Model Compression][Dynamic Adapters] To address the severe inference latency overhead (250%–950%) of dynamic MoE-LoRA adapters, this paper proposes a token-level pre-gating architecture that performs a single global routing decision at the first layer. Combined with a custom SGMM fused CUDA kernel that merges all activated LoRA adapters into the backbone in one shot, the approach reduces decoding latency by 2.4× while preserving model accuracy.
+  [AAAI 2026][Model Compression][Dynamic Adapters] To address the severe inference latency overhead (250%–950%) of dynamic MoE-LoRA adapters…
 tags:
-  - AAAI 2026
-  - Model Compression
-  - Dynamic Adapters
-  - MoE-LoRA
-  - CUDA Kernel Optimization
-  - Inference Acceleration
-  - Token-Level Routing
+  - "AAAI 2026"
+  - "Model Compression"
+  - "Dynamic Adapters"
+  - "MoE-LoRA"
+  - "CUDA Kernel Optimization"
+  - "Inference Acceleration"
+  - "Token-Level Routing"
 date: 2026-05-08
 content_hash: 61a8bb9b63582a16
 ---

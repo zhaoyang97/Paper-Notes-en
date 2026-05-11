@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Distributed Algorithms for Euclidean Clustering
 description: >-
-  [ICLR2026][distributed clustering] This paper constructs $(1+\varepsilon)$-coresets for Euclidean $(k,z)$-clustering in the distributed setting, achieving communication complexity that matches known lower bounds (up to polylogarithmic factors) in both the coordinator model and the blackboard model.
+  [ICLR2026][distributed clustering] This paper constructs $(1+\varepsilon)$-coresets for Euclidean $(k,z)$-clustering in the distributed setting…
 tags:
-  - ICLR2026
-  - distributed clustering
-  - coreset
-  - communication complexity
-  - k-means
-  - k-median
+  - "ICLR2026"
+  - "distributed clustering"
+  - "coreset"
+  - "communication complexity"
+  - "k-means"
+  - "k-median"
 date: 2026-05-08
 content_hash: 34c7f6104d22fb4a
 ---

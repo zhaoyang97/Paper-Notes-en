@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Multiple Missing Values-Resistant Unsupervised Graph Anomaly Detection
 description: >-
-  [AAAI 2026][AI Safety][Graph Anomaly Detection] This paper proposes M2V-UGAD, the first framework to address unsupervised graph anomaly detection under simultaneous node attribute and graph topology missingness. Through three core mechanisms—dual-pathway independent imputation, hyperspherical latent space fusion, and pseudo-anomaly generation—the framework overcomes cross-view interference and imputation bias, consistently outperforming existing methods across 7 benchmark datasets.
+  [AAAI 2026][AI Safety][Graph Anomaly Detection] This paper proposes M2V-UGAD, the first framework to address unsupervised graph anomaly detection under simultaneous node attribute and graph topology missingness. Through…
 tags:
-  - AAAI 2026
-  - AI Safety
-  - Graph Anomaly Detection
-  - Missing Values
-  - Unsupervised Learning
-  - Pseudo-Anomaly Generation
-  - Sinkhorn Divergence
+  - "AAAI 2026"
+  - "AI Safety"
+  - "Graph Anomaly Detection"
+  - "Missing Values"
+  - "Unsupervised Learning"
+  - "Pseudo-Anomaly Generation"
+  - "Sinkhorn Divergence"
 date: 2026-05-08
 content_hash: 54559e8f118501cd
 ---

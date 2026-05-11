@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Generalizable Coarse-to-Fine Robot Manipulation via Language-Aligned 3D Keypoints
 description: >-
-  [ICLR 2026][3D Vision][Robot Manipulation] CLAP (Coarse-to-fine Language-Aligned manipulation Policy) achieves strong generalization to novel instructions and unseen environments through three core components: task decomposition, VLM fine-tuning for 3D keypoint prediction, and 3D-aware representation. It outperforms the state of the art by 12% on GemBench using only 1/5 of the training data.
+  [ICLR 2026][3D Vision][Robot Manipulation] CLAP (Coarse-to-fine Language-Aligned manipulation Policy) achieves strong generalization to novel instructions and unseen environments through three core components: task decom…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Robot Manipulation
-  - Coarse-to-Fine Policy
-  - 3D Keypoints
-  - VLM Fine-tuning
-  - Language Grounding
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Robot Manipulation"
+  - "Coarse-to-Fine Policy"
+  - "3D Keypoints"
+  - "VLM Fine-tuning"
+  - "Language Grounding"
 date: 2026-05-08
 content_hash: 9b80a714feb5a600
 ---

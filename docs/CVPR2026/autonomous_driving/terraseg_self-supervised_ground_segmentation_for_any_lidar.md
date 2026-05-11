@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TerraSeg: Self-Supervised Ground Segmentation for Any LiDAR
 description: >-
-  [CVPR 2026][Autonomous Driving][Ground Segmentation] This paper proposes TerraSeg, the first self-supervised, domain-agnostic LiDAR ground segmentation model. By constructing the large-scale unified OmniLiDAR dataset (12 public benchmarks, 15 sensor types, ~22 million scans) and a novel PseudoLabeler self-supervised pseudo-label generation module, TerraSeg achieves state-of-the-art performance on nuScenes, SemanticKITTI, and Waymo without any human annotation.
+  [CVPR 2026][Autonomous Driving][Ground Segmentation] This paper proposes TerraSeg, the first self-supervised, domain-agnostic LiDAR ground segmentation model. By constructing the large-scale unified OmniLiDAR dataset (12…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Ground Segmentation
-  - Self-Supervised Learning
-  - Cross-Sensor Generalization
-  - LiDAR Perception
-  - Pseudo Labels
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Ground Segmentation"
+  - "Self-Supervised Learning"
+  - "Cross-Sensor Generalization"
+  - "LiDAR Perception"
+  - "Pseudo Labels"
 date: 2026-05-08
 content_hash: 215eea8130c63215
 ---

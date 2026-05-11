@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SeHDR: Single-Exposure HDR Novel View Synthesis via 3D Gaussian Bracketing
 description: >-
-  [ICCV 2025][3D Vision][HDR novel view synthesis] SeHDR is proposed as the first framework for synthesizing HDR novel views from single-exposure multi-view LDR images. It generates bracketed exposures in 3D Gaussian space (Bracketed 3D Gaussians) and merges them into an HDR scene representation via differentiable Neural Exposure Fusion (NeEF).
+  [ICCV 2025][3D Vision][HDR novel view synthesis] SeHDR is proposed as the first framework for synthesizing HDR novel views from single-exposure multi-view LDR images. It generates bracketed exposures in 3D Gaussian space…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - HDR novel view synthesis
-  - 3D Gaussian splatting
-  - exposure bracketing
-  - single exposure
-  - differentiable rendering
+  - "ICCV 2025"
+  - "3D Vision"
+  - "HDR novel view synthesis"
+  - "3D Gaussian splatting"
+  - "exposure bracketing"
+  - "single exposure"
+  - "differentiable rendering"
 date: 2026-05-08
 content_hash: 14b368e08e5dc54b
 ---

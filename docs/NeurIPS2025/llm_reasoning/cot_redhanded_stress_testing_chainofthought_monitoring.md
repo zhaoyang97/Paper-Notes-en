@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] CoT Red-Handed: Stress Testing Chain-of-Thought Monitoring
 description: >-
-  [NeurIPS 2025][LLM Reasoning][CoT monitoring] This paper systematically evaluates the effectiveness of Chain-of-Thought monitoring within the AI Control framework. It finds that CoT monitoring outperforms action-only monitoring by +10pp on subtle sabotage tasks, but underperforms by −25pp on non-subtle tasks (due to deceptive rationalizations in reasoning misleading the monitor). A hybrid monitoring protocol—independently scoring CoT and action then combining via weighted fusion—consistently outperforms either approach alone across all scenarios, achieving up to a 2× improvement in detection rate.
+  [NeurIPS 2025][LLM Reasoning][CoT monitoring] This paper systematically evaluates the effectiveness of Chain-of-Thought monitoring within the AI Control framework. It finds that CoT monitoring outperforms action-only mon…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - CoT monitoring
-  - AI control
-  - red teaming
-  - trusted monitoring
-  - deceptive alignment
-  - hybrid monitor
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "CoT monitoring"
+  - "AI control"
+  - "red teaming"
+  - "trusted monitoring"
+  - "deceptive alignment"
+  - "hybrid monitor"
 date: 2026-05-08
 content_hash: 5a07aece37d5d74b
 ---

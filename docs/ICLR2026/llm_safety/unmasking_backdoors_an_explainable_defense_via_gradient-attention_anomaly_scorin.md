@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unmasking Backdoors: An Explainable Defense via Gradient-Attention Anomaly Scoring for Pre-trained Language Models
 description: >-
-  [ICLR 2026][LLM Safety][backdoor detection] This paper proposes X-GRAAD, an inference-time backdoor defense that combines attention anomaly scoring and gradient importance scoring to localize trigger tokens, followed by character-level perturbation to neutralize them. Across 5 Transformer models × 3 attack types, ASR is reduced to near 0% while maintaining 88–95%+ CACC, with a 30× speedup over PURE.
+  [ICLR 2026][LLM Safety][backdoor detection] This paper proposes X-GRAAD, an inference-time backdoor defense that combines attention anomaly scoring and gradient importance scoring to localize trigger tokens…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - backdoor detection
-  - gradient-attention anomaly scoring
-  - explainable defense
-  - NLP security
-  - inference-time defense
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "backdoor detection"
+  - "gradient-attention anomaly scoring"
+  - "explainable defense"
+  - "NLP security"
+  - "inference-time defense"
 date: 2026-05-08
 content_hash: f8ce6b39592b9091
 ---

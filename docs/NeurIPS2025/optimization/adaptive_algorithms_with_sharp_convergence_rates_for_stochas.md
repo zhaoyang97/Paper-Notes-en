@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Adaptive Algorithms with Sharp Convergence Rates for Stochastic Hierarchical Optimization
 description: >-
-  [NeurIPS 2025][Optimization][minimax optimization] This paper proposes Ada-Minimax and Ada-BiO, two adaptive algorithms that combine momentum normalization with a novel online noise estimation strategy to achieve, for the first time, sharp convergence rates of $\tilde{O}(1/\sqrt{T} + \sqrt{\bar{\sigma}}/T^{1/4})$ for nonconvex-strongly-concave minimax and nonconvex-strongly-convex bilevel optimization without requiring prior knowledge of the gradient noise level.
+  [NeurIPS 2025][Optimization][minimax optimization] This paper proposes Ada-Minimax and Ada-BiO, two adaptive algorithms that combine momentum normalization with a novel online noise estimation strategy to achieve…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - minimax optimization
-  - bilevel optimization
-  - adaptive algorithm
-  - momentum normalization
-  - convergence rate
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "minimax optimization"
+  - "bilevel optimization"
+  - "adaptive algorithm"
+  - "momentum normalization"
+  - "convergence rate"
 date: 2026-05-08
 content_hash: f35d752373879cd4
 ---

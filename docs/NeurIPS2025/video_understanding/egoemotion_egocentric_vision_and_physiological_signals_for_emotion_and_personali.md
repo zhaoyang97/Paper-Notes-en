@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] egoEMOTION: Egocentric Vision and Physiological Signals for Emotion and Personality Recognition in Real-World Tasks
 description: >-
-  [NeurIPS 2025][Video Understanding][egocentric vision] This paper introduces egoEMOTION — the first dataset combining egocentric vision (Meta Project Aria glasses) with physiological signals for emotion and personality recognition. It encompasses 43 participants, 50+ hours of recordings, and 16 tasks, and demonstrates that egocentric vision signals (particularly eye-tracking features) outperform conventional physiological signals for emotion prediction in real-world scenarios.
+  [NeurIPS 2025][Video Understanding][egocentric vision] This paper introduces egoEMOTION — the first dataset combining egocentric vision (Meta Project Aria glasses) with physiological signals for emotion and personality r…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
-  - egocentric vision
-  - emotion recognition
-  - personality
-  - physiological signals
-  - Project Aria
+  - "NeurIPS 2025"
+  - "Video Understanding"
+  - "egocentric vision"
+  - "emotion recognition"
+  - "personality"
+  - "physiological signals"
+  - "Project Aria"
 date: 2026-05-08
 content_hash: de8c7453a1a93ac7
 ---

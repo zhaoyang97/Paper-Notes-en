@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Estimation of Stochastic Optimal Transport Maps
 description: >-
-  [NeurIPS 2025][Signal & Communication][Stochastic OT maps] This paper introduces a transport error metric $\mathcal{E}_p$ for stochastic OT maps, decomposed into an optimality gap and a feasibility gap. Under minimal assumptions that require neither the existence nor uniqueness of a Brenier map, a computationally efficient rounding estimator is constructed that achieves a near-optimal convergence rate of $\tilde{O}(n^{-1/(d+2p)})$. The framework is further extended to Hölder-continuous kernels and adversarially corrupted data, establishing the first general theory for OT map estimation.
+  [NeurIPS 2025][Signal & Communication][Stochastic OT maps] This paper introduces a transport error metric $\mathcal{E}_p$ for stochastic OT maps…
 tags:
-  - NeurIPS 2025
+  - "NeurIPS 2025"
   - "Signal & Communication"
-  - Stochastic OT maps
-  - transport error
-  - finite-sample estimation
-  - robust statistics
-  - Markov kernels
+  - "Stochastic OT maps"
+  - "transport error"
+  - "finite-sample estimation"
+  - "robust statistics"
+  - "Markov kernels"
 date: 2026-05-08
 content_hash: 3b51f053b99766aa
 ---

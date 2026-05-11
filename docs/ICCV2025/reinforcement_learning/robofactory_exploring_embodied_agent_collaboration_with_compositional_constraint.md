@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RoboFactory: Exploring Embodied Agent Collaboration with Compositional Constraints
 description: >-
-  [ICCV 2025][Reinforcement Learning][Multi-agent collaboration] This paper introduces the concept of compositional constraints to formalize safety and efficiency requirements in multi-agent embodied collaboration, constructs the first multi-agent manipulation benchmark RoboFactory based on this formalization, and systematically investigates architectures and training strategies for multi-agent imitation learning.
+  [ICCV 2025][Reinforcement Learning][Multi-agent collaboration] This paper introduces the concept of compositional constraints to formalize safety and efficiency requirements in multi-agent embodied collaboration…
 tags:
-  - ICCV 2025
-  - Reinforcement Learning
-  - Multi-agent collaboration
-  - embodied manipulation
-  - compositional constraints
-  - imitation learning
-  - benchmark
+  - "ICCV 2025"
+  - "Reinforcement Learning"
+  - "Multi-agent collaboration"
+  - "embodied manipulation"
+  - "compositional constraints"
+  - "imitation learning"
+  - "benchmark"
 date: 2026-05-08
 content_hash: ba34458909db4946
 ---

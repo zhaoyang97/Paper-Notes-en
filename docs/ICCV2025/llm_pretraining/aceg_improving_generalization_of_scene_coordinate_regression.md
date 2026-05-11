@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ACE-G: Improving Generalization of Scene Coordinate Regression Through Query Pre-Training
 description: >-
-  [ICCV 2025][LLM Pretraining][scene coordinate regression] ACE-G decomposes a scene coordinate regressor into a scene-agnostic Transformer and a scene-specific map code, and achieves significant generalization gains under illumination and viewpoint variation by conducting alternating mapping/query pre-training across tens of thousands of scenes, while maintaining lightweight computational overhead.
+  [ICCV 2025][LLM Pretraining][scene coordinate regression] ACE-G decomposes a scene coordinate regressor into a scene-agnostic Transformer and a scene-specific map code…
 tags:
-  - ICCV 2025
-  - LLM Pretraining
-  - scene coordinate regression
-  - visual relocalization
-  - Transformer pretraining
-  - generalization
-  - map code
+  - "ICCV 2025"
+  - "LLM Pretraining"
+  - "scene coordinate regression"
+  - "visual relocalization"
+  - "Transformer pretraining"
+  - "generalization"
+  - "map code"
 date: 2026-05-08
 content_hash: 222dc75f2ec6387f
 ---

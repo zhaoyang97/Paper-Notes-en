@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Interpreting GFlowNets for Drug Discovery: Extracting Actionable Insights for Medicinal Chemistry
 description: >-
-  [NeurIPS 2025][Medical Imaging][GFlowNet] This work constructs a multi-level interpretability toolkit for SynFlowNet (a GFlowNet grounded in synthetic reaction templates), integrating gradient saliency, counterfactual perturbation, sparse autoencoders (SAE), and motif probes to reveal how internal representations encode physicochemical properties and functional group information relevant to medicinal chemistry.
+  [NeurIPS 2025][Medical Imaging][GFlowNet] This work constructs a multi-level interpretability toolkit for SynFlowNet (a GFlowNet grounded in synthetic reaction templates), integrating gradient saliency…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - GFlowNet
-  - Interpretability
-  - Drug Discovery
-  - Sparse Autoencoder
-  - Counterfactual Analysis
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "GFlowNet"
+  - "Interpretability"
+  - "Drug Discovery"
+  - "Sparse Autoencoder"
+  - "Counterfactual Analysis"
 date: 2026-05-08
 content_hash: 7421faf995df59fa
 ---

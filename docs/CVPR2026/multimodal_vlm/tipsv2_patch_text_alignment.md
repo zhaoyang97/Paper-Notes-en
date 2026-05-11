@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TIPSv2: Advancing Vision-Language Pretraining with Enhanced Patch-Text Alignment
 description: >-
-  [CVPR 2026][Multimodal VLM][Vision-language pretraining] TIPSv2 is proposed by discovering that distillation substantially improves patch-text alignment, and this insight is translated into a new pretraining objective, iBOT++ (where visible tokens also participate in the loss computation). Combined with head-only EMA and multi-granularity text augmentation, TIPSv2 achieves state-of-the-art performance across 9 tasks and 20 datasets.
+  [CVPR 2026][Multimodal VLM][Vision-language pretraining] TIPSv2 is proposed by discovering that distillation substantially improves patch-text alignment, and this insight is translated into a new pretraining objective…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Vision-language pretraining
-  - patch-text alignment
-  - iBOT++
-  - distillation
-  - zero-shot segmentation
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Vision-language pretraining"
+  - "patch-text alignment"
+  - "iBOT++"
+  - "distillation"
+  - "zero-shot segmentation"
 date: 2026-05-08
 content_hash: 3d65e5469f1be15b
 ---

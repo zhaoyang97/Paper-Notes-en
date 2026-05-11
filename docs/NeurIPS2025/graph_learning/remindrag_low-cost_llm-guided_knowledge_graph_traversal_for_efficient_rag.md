@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ReMindRAG: Low-Cost LLM-Guided Knowledge Graph Traversal for Efficient RAG
 description: >-
-  [NeurIPS 2025][Graph Learning][Knowledge Graph] This paper proposes ReMindRAG, a KG-RAG system that combines LLM-guided KG traversal (node exploration + exploitation) with a training-free memory replay mechanism. The system stores LLM traversal experience in edge embeddings, enabling significant reduction in LLM calls for subsequent similar queries (~50% cost reduction) while improving answer accuracy (5%–10% gain).
+  [NeurIPS 2025][Graph Learning][Knowledge Graph] This paper proposes ReMindRAG, a KG-RAG system that combines LLM-guided KG traversal (node exploration + exploitation) with a training-free memory replay mechanism. The sys…
 tags:
-  - NeurIPS 2025
-  - Graph Learning
-  - Knowledge Graph
-  - RAG
-  - LLM-Guided Graph Traversal
-  - Memory Replay
-  - Training-Free Memory
+  - "NeurIPS 2025"
+  - "Graph Learning"
+  - "Knowledge Graph"
+  - "RAG"
+  - "LLM-Guided Graph Traversal"
+  - "Memory Replay"
+  - "Training-Free Memory"
 date: 2026-05-08
 content_hash: bcac3306fe26ca8f
 ---

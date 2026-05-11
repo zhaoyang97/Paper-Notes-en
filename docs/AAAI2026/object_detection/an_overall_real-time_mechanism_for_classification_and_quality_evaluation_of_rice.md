@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] An Overall Real-Time Mechanism for Classification and Quality Evaluation of Rice
 description: >-
-  [AAAI2026][Object Detection][rice quality evaluation] This paper proposes a real-time overall mechanism for rice quality evaluation, integrating three modules: an improved YOLO-v5 (variety detection), an improved ConvNeXt-Tiny (intactness grading), and K-means (chalkiness region quantification). The system achieves 99.14% mAP and 97.89% detection accuracy on a self-constructed dataset of 20,000 images spanning six rice varieties.
+  [AAAI2026][Object Detection][rice quality evaluation] This paper proposes a real-time overall mechanism for rice quality evaluation, integrating three modules: an improved YOLO-v5 (variety detection)…
 tags:
-  - AAAI2026
-  - Object Detection
-  - rice quality evaluation
-  - YOLO-v5
-  - ConvNeXt-Tiny
-  - K-means
-  - SimAM
-  - ECA
+  - "AAAI2026"
+  - "Object Detection"
+  - "rice quality evaluation"
+  - "YOLO-v5"
+  - "ConvNeXt-Tiny"
+  - "K-means"
+  - "SimAM"
+  - "ECA"
 date: 2026-05-08
 content_hash: 2a7b1fd86e1ac1e7
 ---

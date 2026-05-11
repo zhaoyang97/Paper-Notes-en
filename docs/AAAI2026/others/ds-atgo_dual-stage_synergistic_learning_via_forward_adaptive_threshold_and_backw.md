@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] DS-ATGO: Dual-Stage Synergistic Learning via Forward Adaptive Threshold and Backward Gradient Optimization for Spiking Neural Networks
 description: >-
-  [AAAI 2026][Spiking Neural Networks] To address spike firing imbalance and gradient vanishing caused by membrane potential distribution shifts during SNN training, this paper proposes DS-ATGO — a dual-stage synergistic learning algorithm combining forward adaptive thresholding (AT) and backward threshold-driven gradient optimization (TGO) — achieving state-of-the-art performance on CIFAR-10/100 and ImageNet with low time-step latency.
+  [AAAI 2026][Spiking Neural Networks] To address spike firing imbalance and gradient vanishing caused by membrane potential distribution shifts during SNN training…
 tags:
-  - AAAI 2026
-  - Spiking Neural Networks
-  - Adaptive Threshold
-  - Surrogate Gradient Optimization
-  - Membrane Potential Dynamics
-  - Low-Latency Inference
+  - "AAAI 2026"
+  - "Spiking Neural Networks"
+  - "Adaptive Threshold"
+  - "Surrogate Gradient Optimization"
+  - "Membrane Potential Dynamics"
+  - "Low-Latency Inference"
 date: 2026-05-08
 content_hash: 44d10d1699b9d5a3
 ---

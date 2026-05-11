@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Benchmarking Endoscopic Surgical Image Restoration and Beyond
 description: >-
-  [CVPR 2026][Medical Imaging][Endoscopic image restoration] This work constructs SurgClean, the first multi-source real-world endoscopic surgical image restoration dataset (3,113 images covering three degradation types: smoke, fog, and liquid splash), and systematically benchmarks 22 representative image restoration methods (12 general-purpose + 10 task-specific) on it. The results reveal a significant gap between existing methods and clinical requirements, and further analyze the fundamental differences between surgical-scene and natural-scene degradations.
+  [CVPR 2026][Medical Imaging][Endoscopic image restoration] This work constructs SurgClean, the first multi-source real-world endoscopic surgical image restoration dataset (3…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Endoscopic image restoration
-  - surgical scene desmoke/defog/desplash
-  - benchmark dataset
-  - image quality assessment
-  - clinical applications
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Endoscopic image restoration"
+  - "surgical scene desmoke/defog/desplash"
+  - "benchmark dataset"
+  - "image quality assessment"
+  - "clinical applications"
 date: 2026-05-08
 content_hash: 5408b42c25d93d5a
 ---

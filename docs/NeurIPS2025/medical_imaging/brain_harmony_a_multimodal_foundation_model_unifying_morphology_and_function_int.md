@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Brain Harmony: A Multimodal Foundation Model Unifying Morphology and Function into 1D Tokens
 description: >-
-  [NeurIPS 2025][Medical Imaging][brain imaging foundation model] The first multimodal brain foundation model that unifies structural morphology (T1 sMRI) and functional dynamics (fMRI), compressing high-dimensional neuroimaging data into compact 1D token representations via Geometric Harmonics Pre-alignment and Temporally Adaptive Patch Embedding (TAPE). The model consistently outperforms prior methods on neurodevelopmental/neurodegenerative disease diagnosis and cognitive prediction tasks.
+  [NeurIPS 2025][Medical Imaging][brain imaging foundation model] The first multimodal brain foundation model that unifies structural morphology (T1 sMRI) and functional dynamics (fMRI)…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - brain imaging foundation model
-  - multimodal fusion
-  - fMRI
-  - sMRI
-  - 1D token
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "brain imaging foundation model"
+  - "multimodal fusion"
+  - "fMRI"
+  - "sMRI"
+  - "1D token"
 date: 2026-05-08
 content_hash: 3254f7dfd5b303b6
 ---

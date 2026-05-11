@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] TrajTok: Learning Trajectory Tokens Enhances Video Understanding
 description: >-
-  [CVPR2026][Video Understanding][Video tokenization] This paper proposes TrajTok — an end-to-end differentiable trajectory tokenizer that implicitly clusters video pixels into object trajectory tokens, replacing external segmentation-and-tracking pipelines. It achieves significant improvements across three settings: training from scratch (TrajViT2), feature adaptation (TrajAdapter), and vision-language model connectors (TrajVLM), with particularly large gains on long-video QA over patch pooling.
+  [CVPR2026][Video Understanding][Video tokenization] This paper proposes TrajTok — an end-to-end differentiable trajectory tokenizer that implicitly clusters video pixels into object trajectory tokens…
 tags:
-  - CVPR2026
-  - Video Understanding
-  - Video tokenization
-  - trajectory token
-  - end-to-end segmentation
-  - video CLIP
-  - VLM connector
-  - token compression
-  - object trajectory
+  - "CVPR2026"
+  - "Video Understanding"
+  - "Video tokenization"
+  - "trajectory token"
+  - "end-to-end segmentation"
+  - "video CLIP"
+  - "VLM connector"
+  - "token compression"
+  - "object trajectory"
 date: 2026-05-08
 content_hash: 177dfbddef4623a0
 ---

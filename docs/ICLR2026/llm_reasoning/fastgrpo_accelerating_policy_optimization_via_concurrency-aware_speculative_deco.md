@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FastGRPO: Accelerating Policy Optimization via Concurrency-aware Speculative Decoding and Online Draft Learning
 description: >-
-  [ICLR 2026][LLM Reasoning][GRPO Acceleration] Targeting the severe bottleneck in GRPO training where the generation phase consumes 91%–98% of total training time, this work proposes a concurrency-aware speculative decoding strategy (dynamically adjusting draft tree parameters to accommodate the real-time shift from high to low concurrency) and online draft model learning (continuously adapting to distribution drift using hidden states produced by the target model). The combined approach achieves 2.35×–2.72× end-to-end training speedup without degrading reasoning quality.
+  [ICLR 2026][LLM Reasoning][GRPO Acceleration] Targeting the severe bottleneck in GRPO training where the generation phase consumes 91%–98% of total training time…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - GRPO Acceleration
-  - Speculative Decoding
-  - Concurrency-aware
-  - Online Draft Learning
-  - Reinforcement Learning Training
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "GRPO Acceleration"
+  - "Speculative Decoding"
+  - "Concurrency-aware"
+  - "Online Draft Learning"
+  - "Reinforcement Learning Training"
 date: 2026-05-08
 content_hash: 48dc53b0f9534846
 ---

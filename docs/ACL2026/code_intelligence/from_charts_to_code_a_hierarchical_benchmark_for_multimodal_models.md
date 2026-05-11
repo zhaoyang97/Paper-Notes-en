@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] From Charts to Code: A Hierarchical Benchmark for Multimodal Models
 description: >-
-  [ACL 2026][chart generation] This paper proposes Chart2Code, a hierarchical benchmark comprising 2,186 tasks spanning 22 chart types, organized into three progressively challenging levels: chart reproduction (Level 1), chart editing (Level 2), and long-table-to-chart generation (Level 3). The benchmark evaluates 29 state-of-the-art multimodal models and reveals that even the strongest model, GPT-5.2, achieves a chart quality score of only 33.41 on editing tasks, exposing significant deficiencies in current models for practical chart code generation.
+  [ACL 2026][Code Intelligence][chart generation] This paper proposes Chart2Code, a hierarchical benchmark comprising 2,186 tasks spanning 22 chart types…
 tags:
-  - ACL 2026
-  - chart generation
-  - code generation
-  - multimodal benchmark
-  - hierarchical evaluation
-  - visual fidelity
+  - "ACL 2026"
+  - "Code Intelligence"
+  - "chart generation"
+  - "code generation"
+  - "multimodal benchmark"
+  - "hierarchical evaluation"
+  - "visual fidelity"
 date: 2026-05-08
 content_hash: b41669d038817251
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Note 4: WebThinker — Empowering Reasoning Models with Deep Research Capabilities
 description: >-
-  [NeurIPS 2025][Deep Research] WebThinker equips large reasoning models (LRMs) with autonomous web search and navigation capabilities. Through a Think-Search-Draft strategy, it seamlessly interleaves reasoning, information gathering, and report generation. After reinforcement learning optimization, it surpasses o1 and Gemini on complex reasoning and scientific report generation tasks.
+  [NeurIPS 2025][Deep Research] WebThinker equips large reasoning models (LRMs) with autonomous web search and navigation capabilities. Through a Think-Search-Draft strategy, it seamlessly interleaves reasoning…
 tags:
-  - NeurIPS 2025
-  - Deep Research
-  - Web Navigation
-  - Interactive Search
-  - DPO Training
-  - Multi-step Reasoning
+  - "NeurIPS 2025"
+  - "Deep Research"
+  - "Web Navigation"
+  - "Interactive Search"
+  - "DPO Training"
+  - "Multi-step Reasoning"
 date: 2026-05-08
 content_hash: a3c2a504db0f12bc
 ---

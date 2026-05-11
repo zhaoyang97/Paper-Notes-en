@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Bring Your Rear Cameras for Egocentric 3D Human Pose Estimation
 description: >-
-  [ICCV 2025][Human Understanding][egocentric view] This paper is the first to investigate the value of rear-mounted cameras on HMDs for egocentric 3D whole-body pose estimation. It proposes a Transformer-based multi-view heatmap refinement method with an uncertainty-aware masking mechanism, achieving >10% MPJPE improvement on the newly constructed Ego4View dataset.
+  [ICCV 2025][Human Understanding][egocentric view] This paper is the first to investigate the value of rear-mounted cameras on HMDs for egocentric 3D whole-body pose estimation. It proposes a Transformer-based multi-view…
 tags:
-  - ICCV 2025
-  - Human Understanding
-  - egocentric view
-  - 3D human pose estimation
-  - rear cameras
-  - multi-view fusion
-  - head-mounted devices
+  - "ICCV 2025"
+  - "Human Understanding"
+  - "egocentric view"
+  - "3D human pose estimation"
+  - "rear cameras"
+  - "multi-view fusion"
+  - "head-mounted devices"
 date: 2026-05-08
 content_hash: ca17267b722d3500
 ---

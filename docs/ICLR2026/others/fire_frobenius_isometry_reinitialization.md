@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] FIRE: Frobenius-Isometry Reinitialization for Balancing the Stability-Plasticity Tradeoff
 description: >-
-  [ICLR 2026 Oral][stability-plasticity] This paper formalizes the stability-plasticity tradeoff in continual learning as a constrained optimization problem—minimizing weight deviation (stability) subject to an orthogonality constraint (plasticity)—yielding a closed-form solution to the orthogonal Procrustes problem, $\tilde{W}^* = W(W^\top W)^{-1/2}$ (polar decomposition), implemented efficiently via Newton-Schulz iteration (<1% additional time). FIRE comprehensively outperforms baselines such as S&P across visual continual learning, LLM continual pre-training, and RL.
+  [ICLR 2026 Oral][stability-plasticity] This paper formalizes the stability-plasticity tradeoff in continual learning as a constrained optimization problem—minimizing weight deviation (stability) subject to an orthogonali…
 tags:
-  - ICLR 2026 Oral
-  - stability-plasticity
-  - reinitialization
-  - orthogonal Procrustes
-  - continual learning
-  - plasticity loss
+  - "ICLR 2026 Oral"
+  - "stability-plasticity"
+  - "reinitialization"
+  - "orthogonal Procrustes"
+  - "continual learning"
+  - "plasticity loss"
 date: 2026-05-08
 content_hash: 82d907bbc95380cf
 ---

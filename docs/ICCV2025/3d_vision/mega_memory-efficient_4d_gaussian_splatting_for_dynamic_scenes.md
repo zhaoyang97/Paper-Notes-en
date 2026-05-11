@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MEGA: Memory-Efficient 4D Gaussian Splatting for Dynamic Scenes
 description: >-
-  [ICCV 2025][3D Vision][4D Gaussian Splatting] This paper proposes MEGA, a memory-efficient framework for 4D Gaussian Splatting that eliminates redundant spherical harmonic coefficients via DC-AC color decomposition (8× compression) and reduces the total number of Gaussians through entropy-constrained Gaussian deformation. MEGA achieves approximately 190× and 125× storage compression on the Technicolor and Neural 3D Video datasets, respectively, while maintaining comparable rendering quality and real-time speed.
+  [ICCV 2025][3D Vision][4D Gaussian Splatting] This paper proposes MEGA, a memory-efficient framework for 4D Gaussian Splatting that eliminates redundant spherical harmonic coefficients via DC-AC color decomposition (8× c…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 4D Gaussian Splatting
-  - memory-efficient
-  - dynamic scenes
-  - color compression
-  - entropy-constrained deformation
+  - "ICCV 2025"
+  - "3D Vision"
+  - "4D Gaussian Splatting"
+  - "memory-efficient"
+  - "dynamic scenes"
+  - "color compression"
+  - "entropy-constrained deformation"
 date: 2026-05-08
 content_hash: cc17212e596a145b
 ---

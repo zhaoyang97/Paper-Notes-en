@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] No Pose at All: Self-Supervised Pose-Free 3D Gaussian Splatting from Sparse Views
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes SPFSplat, the first self-supervised 3DGS framework that requires no ground-truth poses at either training or inference time. By sharing a ViT backbone to jointly predict Gaussian primitives and camera poses, SPFSplat surpasses pose-dependent state-of-the-art methods under extreme viewpoint changes.
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes SPFSplat, the first self-supervised 3DGS framework that requires no ground-truth poses at either training or inference time. By sharing a ViT backbone to…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - pose-free training
-  - self-supervised
-  - sparse views
-  - pose estimation
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "pose-free training"
+  - "self-supervised"
+  - "sparse views"
+  - "pose estimation"
 date: 2026-05-08
 content_hash: c58cc11df73e98f8
 ---

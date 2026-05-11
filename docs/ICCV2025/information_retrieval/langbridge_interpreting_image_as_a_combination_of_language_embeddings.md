@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] LangBridge: Interpreting Image as a Combination of Language Embeddings
 description: >-
-   LangBridge achieves interpretable vision-language alignment by explicitly decomposing visual features into linear combinations of LLM vocabulary embeddings, and supports pretraining-free adapter transfer across different LLMs.
+  [Information Retrieval & RAG] LangBridge achieves interpretable vision-language alignment by explicitly decomposing visual features into linear combinations of LLM vocabulary embeddings…
 tags:
-
+  - "Information Retrieval & RAG"
 date: 2026-05-08
 content_hash: f2b853b5e9bc9486
 ---

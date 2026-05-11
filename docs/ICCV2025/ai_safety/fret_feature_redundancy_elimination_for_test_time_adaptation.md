@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FRET: Feature Redundancy Elimination for Test Time Adaptation
 description: >-
-  [ICCV 2025][AI Safety][Test-time adaptation] This paper proposes Feature Redundancy Elimination (FRET) as a novel perspective for test-time adaptation (TTA), observing that embedding feature redundancy increases significantly under distribution shift. Two methods are designed: S-FRET (direct minimization of the redundancy score) and G-FRET (GCN-based attention-redundancy decomposition with bi-level optimization). G-FRET achieves state-of-the-art performance across multiple architectures and datasets.
+  [ICCV 2025][AI Safety][Test-time adaptation] This paper proposes Feature Redundancy Elimination (FRET) as a novel perspective for test-time adaptation (TTA)…
 tags:
-  - ICCV 2025
-  - AI Safety
-  - Test-time adaptation
-  - feature redundancy elimination
-  - distribution shift
-  - graph convolutional network
-  - contrastive learning
+  - "ICCV 2025"
+  - "AI Safety"
+  - "Test-time adaptation"
+  - "feature redundancy elimination"
+  - "distribution shift"
+  - "graph convolutional network"
+  - "contrastive learning"
 date: 2026-05-08
 content_hash: 51a1e495bf21160d
 ---

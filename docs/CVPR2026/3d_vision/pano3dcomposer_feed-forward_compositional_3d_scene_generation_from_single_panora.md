@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Pano3DComposer: Feed-Forward Compositional 3D Scene Generation from Single Panoramic Image
 description: >-
-  [CVPR 2026][3D Vision][Panoramic 3D reconstruction] This paper proposes Pano3DComposer, a modular feed-forward compositional 3D scene generation framework that takes a single panoramic image as input. A plug-and-play Object-World Transformation Predictor (based on Alignment-VGGT) maps generated 3D objects from local coordinates to world coordinates, producing high-fidelity 3D scenes in approximately 20 seconds on an RTX 4090.
+  [CVPR 2026][3D Vision][Panoramic 3D reconstruction] This paper proposes Pano3DComposer, a modular feed-forward compositional 3D scene generation framework that takes a single panoramic image as input. A plug-and-play Obj…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Panoramic 3D reconstruction
-  - compositional scene generation
-  - feed-forward transformation prediction
-  - VGGT
-  - 3D Gaussian splatting
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Panoramic 3D reconstruction"
+  - "compositional scene generation"
+  - "feed-forward transformation prediction"
+  - "VGGT"
+  - "3D Gaussian splatting"
 date: 2026-05-08
 content_hash: 53c4ead9d07e8ea0
 ---

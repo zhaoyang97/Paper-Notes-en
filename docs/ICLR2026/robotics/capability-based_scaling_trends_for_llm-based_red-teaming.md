@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Capability-Based Scaling Trends for LLM-Based Red-Teaming
 description: >-
-  [ICLR 2026][Robotics][Red-teaming] This paper systematically evaluates 4 jailbreak methods across 600+ attacker–target LLM pairs and finds that attack success rate (ASR) follows a sigmoid scaling law with respect to the capability gap between attacker and target ($R^2=0.83$), where the capability gap is quantified via a logit transformation of MMLU-Pro scores.
+  [ICLR 2026][Robotics][Red-teaming] This paper systematically evaluates 4 jailbreak methods across 600+ attacker–target LLM pairs and finds that attack success rate (ASR) follows a sigmoid scaling law with respect to the…
 tags:
-  - ICLR 2026
-  - Robotics
-  - Red-teaming
-  - Jailbreak attacks
-  - Capability scaling
-  - Safety evaluation
-  - Attack success rate
+  - "ICLR 2026"
+  - "Robotics"
+  - "Red-teaming"
+  - "Jailbreak attacks"
+  - "Capability scaling"
+  - "Safety evaluation"
+  - "Attack success rate"
 date: 2026-05-08
 content_hash: 2f038cdb6acf90ac
 ---

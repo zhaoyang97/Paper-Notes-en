@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Sublinear Time Quantum Algorithm for Attention Approximation
 description: >-
-  [ICLR 2026][Quantum Computing] This paper proposes the first quantum data structure with **sublinear** time complexity in sequence length $n$ for approximating row queries of the Transformer attention matrix. The preprocessing time is $\widetilde{O}(\epsilon^{-1} n^{0.5} \cdot \text{poly}(d, s_\lambda, \alpha))$ and each row query takes $\widetilde{O}(s_\lambda^2 + s_\lambda d)$, achieving a quadratic speedup over classical algorithms with respect to $n$.
+  [ICLR 2026][Physics][Quantum Computing] This paper proposes the first quantum data structure with **sublinear** time complexity in sequence length $n$ for approximating row queries of the Transformer attention matrix. Th…
 tags:
-  - ICLR 2026
-  - Quantum Computing
-  - Attention Approximation
-  - Sublinear Algorithm
-  - Nyström Approximation
-  - Quantum Sampling
+  - "ICLR 2026"
+  - "Physics"
+  - "Quantum Computing"
+  - "Attention Approximation"
+  - "Sublinear Algorithm"
+  - "Nyström Approximation"
+  - "Quantum Sampling"
 date: 2026-05-08
 content_hash: d22be61fb4325847
 ---

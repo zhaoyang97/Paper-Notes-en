@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Scalable GPU-Accelerated Euler Characteristic Curves: Optimization and Differentiable Learning for PyTorch
 description: >-
-  [NeurIPS 2025 (NeurReps Workshop)][Euler characteristic curves] This paper proposes an ECC CUDA kernel optimized for modern Ampere GPUs, achieving 16–2000× speedup over prior GPU implementations, and introduces a differentiable PyTorch layer supporting end-to-end topological feature learning on dense grid images via DECT-style sigmoid relaxation.
+  [NeurIPS 2025 (NeurReps Workshop)][Euler characteristic curves] This paper proposes an ECC CUDA kernel optimized for modern Ampere GPUs, achieving 16–2000× speedup over prior GPU implementations…
 tags:
-  - NeurIPS 2025 (NeurReps Workshop)
-  - Euler characteristic curves
-  - GPU acceleration
-  - differentiable programming
-  - CUDA kernels
-  - topological data analysis
+  - "NeurIPS 2025 (NeurReps Workshop)"
+  - "Euler characteristic curves"
+  - "GPU acceleration"
+  - "differentiable programming"
+  - "CUDA kernels"
+  - "topological data analysis"
 date: 2026-05-08
 content_hash: af8bed90c2d41ee6
 ---

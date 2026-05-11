@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Adaptive Neighborhood-Constrained Q Learning for Offline Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][offline RL] This paper proposes ANQ (Adaptive Neighborhood-constrained Q learning), which introduces advantage-function-based adaptive neighborhood constraints for offline RL. ANQ offers a flexible middle ground between density constraints (overly conservative) and support constraints (requiring precise behavior policy modeling), and realizes efficient Q learning via a bilevel optimization framework, achieving state-of-the-art performance on the D4RL benchmark.
+  [NeurIPS 2025][Reinforcement Learning][offline RL] This paper proposes ANQ (Adaptive Neighborhood-constrained Q learning), which introduces advantage-function-based adaptive neighborhood constraints for offline RL. ANQ o…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - offline RL
-  - neighborhood constraint
-  - OOD actions
-  - adaptive conservatism
-  - bilevel optimization
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "offline RL"
+  - "neighborhood constraint"
+  - "OOD actions"
+  - "adaptive conservatism"
+  - "bilevel optimization"
 date: 2026-05-08
 content_hash: 456c2372604d18cc
 ---

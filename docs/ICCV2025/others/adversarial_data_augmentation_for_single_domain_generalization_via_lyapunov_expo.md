@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Adversarial Data Augmentation for Single Domain Generalization via Lyapunov Exponents
 description: >-
-  [ICCV 2025][single domain generalization] This paper proposes LEAwareSGD, an optimizer that dynamically adjusts the learning rate using Lyapunov exponents (LE) to guide model training toward the "edge of chaos," enabling broader parameter space exploration and stronger cross-domain generalization in single-source domain generalization tasks.
+  [ICCV 2025][single domain generalization] This paper proposes LEAwareSGD, an optimizer that dynamically adjusts the learning rate using Lyapunov exponents (LE) to guide model training toward the "edge of chaos…
 tags:
-  - ICCV 2025
-  - single domain generalization
-  - adversarial data augmentation
-  - Lyapunov exponents
-  - edge of chaos
-  - learning rate adjustment
+  - "ICCV 2025"
+  - "single domain generalization"
+  - "adversarial data augmentation"
+  - "Lyapunov exponents"
+  - "edge of chaos"
+  - "learning rate adjustment"
 date: 2026-05-08
 content_hash: d739de6612a9b28f
 ---

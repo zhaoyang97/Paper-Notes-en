@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FGBench: A Dataset and Benchmark for Molecular Property Reasoning at Functional Group-Level in Large Language Models
 description: >-
-  [NeurIPS 2025][Medical Imaging][Functional Groups] This paper presents FGBench, a dataset comprising 625K molecular property reasoning questions focused on functional group-level reasoning evaluation. Through three dimensions (single functional group effect, multi-functional group interaction, and molecular comparison), it systematically reveals the severe deficiencies of current LLMs in fine-grained chemical reasoning.
+  [NeurIPS 2025][Medical Imaging][Functional Groups] This paper presents FGBench, a dataset comprising 625K molecular property reasoning questions focused on functional group-level reasoning evaluation. Through three dimen…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Functional Groups
-  - Molecular Property Reasoning
-  - Chemistry Benchmark
-  - Structure-Activity Relationship
-  - LLM Reasoning
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Functional Groups"
+  - "Molecular Property Reasoning"
+  - "Chemistry Benchmark"
+  - "Structure-Activity Relationship"
+  - "LLM Reasoning"
 date: 2026-05-08
 content_hash: 204e4b75bfa6d5c4
 ---

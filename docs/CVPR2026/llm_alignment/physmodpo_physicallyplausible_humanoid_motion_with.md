@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PhysMoDPO: Physically-Plausible Humanoid Motion with Preference Optimization
 description: >-
-  [CVPR 2026][LLM Alignment][Diffusion motion generation] PhysMoDPO integrates a pretrained whole-body controller (WBC/DeepMimic) into the post-training pipeline of a diffusion-based motion generator. By automatically constructing preference pairs via physical simulation and fine-tuning with DPO, generated motions—after WBC execution—simultaneously satisfy physical plausibility and text/spatial condition faithfulness, enabling zero-shot transfer to the Unitree G1 real robot.
+  [CVPR 2026][LLM Alignment][Diffusion motion generation] PhysMoDPO integrates a pretrained whole-body controller (WBC/DeepMimic) into the post-training pipeline of a diffusion-based motion generator. By automatically cons…
 tags:
-  - CVPR 2026
-  - LLM Alignment
-  - Diffusion motion generation
-  - DPO preference optimization
-  - physical simulation
-  - humanoid robots
-  - zero-shot transfer
+  - "CVPR 2026"
+  - "LLM Alignment"
+  - "Diffusion motion generation"
+  - "DPO preference optimization"
+  - "physical simulation"
+  - "humanoid robots"
+  - "zero-shot transfer"
 date: 2026-05-08
 content_hash: 3be61b8f2f569433
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Accurate and Efficient Low-Rank Model Merging in Core Space
 description: >-
-  [NeurIPS 2025][Model Compression][Model Merging] This paper proposes the Core Space Merging framework, which performs model merging within a common reference basis space constructed from low-rank LoRA matrices. This approach **losslessly** reduces the merging operation from the full $m \times n$ space to a compact $Tr \times Tr$ space (where $T$ is the number of tasks and $r$ is the LoRA rank), achieving state-of-the-art merging accuracy on Llama 3 8B while reducing computational cost by several orders of magnitude.
+  [NeurIPS 2025][Model Compression][Model Merging] This paper proposes the Core Space Merging framework, which performs model merging within a common reference basis space constructed from low-rank LoRA matrices. This appr…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Model Merging
-  - LoRA
-  - Low-Rank Projection
-  - Parameter-Efficient Fine-Tuning
-  - Core Space
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Model Merging"
+  - "LoRA"
+  - "Low-Rank Projection"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Core Space"
 date: 2026-05-08
 content_hash: 34893fb0b3017ab5
 ---

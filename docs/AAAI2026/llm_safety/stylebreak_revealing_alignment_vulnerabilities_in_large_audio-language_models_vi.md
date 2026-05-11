@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] StyleBreak: Revealing Alignment Vulnerabilities in Large Audio-Language Models via Style-Aware Audio Jailbreak
 description: >-
-  [AAAI 2026][LLM Safety][Audio jailbreak] This paper proposes StyleBreak, the first audio jailbreak framework based on speech style, which systematically investigates the impact of linguistic, paralinguistic, and extralinguistic attributes on LAM alignment robustness through a two-stage style-aware transformation pipeline and a query-adaptive policy network. StyleBreak improves ASR by 7.1%–22.3% across multiple attack paradigms.
+  [AAAI 2026][LLM Safety][Audio jailbreak] This paper proposes StyleBreak, the first audio jailbreak framework based on speech style, which systematically investigates the impact of linguistic, paralinguistic…
 tags:
-  - AAAI 2026
-  - LLM Safety
-  - Audio jailbreak
-  - large audio-language models
-  - alignment robustness
-  - speech style attack
-  - adaptive strategy
+  - "AAAI 2026"
+  - "LLM Safety"
+  - "Audio jailbreak"
+  - "large audio-language models"
+  - "alignment robustness"
+  - "speech style attack"
+  - "adaptive strategy"
 date: 2026-05-08
 content_hash: d58926521e00ca50
 ---

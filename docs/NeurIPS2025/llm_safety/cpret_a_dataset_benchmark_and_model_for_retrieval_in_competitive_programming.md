@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] CPRet: A Dataset, Benchmark, and Model for Retrieval in Competitive Programming
 description: >-
-  [NeurIPS 2025][LLM Safety][competitive programming retrieval] To address the prevalence of duplicate and near-duplicate problems in competitive programming—which compromises contest fairness and inflates LLM evaluation scores—this work constructs CPRet, a large-scale benchmark spanning four retrieval tasks, and proposes CPRetriever, a domain-specific retrieval model trained with Group-InfoNCE loss. CPRetriever surpasses 20+ existing embedding models across all tasks and reveals systematic evaluation bias in LiveCodeBench attributable to problem similarity.
+  [NeurIPS 2025][LLM Safety][competitive programming retrieval] To address the prevalence of duplicate and near-duplicate problems in competitive programming—which compromises contest fairness and inflates LLM evaluation s…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - competitive programming retrieval
-  - duplicate problem detection
-  - embedding model
-  - Group-InfoNCE
-  - data contamination
-  - benchmark
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "competitive programming retrieval"
+  - "duplicate problem detection"
+  - "embedding model"
+  - "Group-InfoNCE"
+  - "data contamination"
+  - "benchmark"
 date: 2026-05-08
 content_hash: 212e3e56a41c02b6
 ---

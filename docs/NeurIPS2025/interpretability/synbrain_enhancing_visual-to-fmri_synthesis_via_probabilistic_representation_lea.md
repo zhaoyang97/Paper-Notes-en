@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] SynBrain: Enhancing Visual-to-fMRI Synthesis via Probabilistic Representation Learning
 description: >-
-  [NeurIPS 2025][visual-to-fMRI synthesis] This paper proposes SynBrain, a framework that models fMRI responses as visual-semantic-conditioned probability distributions via BrainVAE, and employs an S2N Mapper for one-step semantic-to-neural-space mapping. SynBrain substantially outperforms MindSimulator on visual-to-fMRI synthesis (65% reduction in MSE, 96% improvement in Pearson correlation), and the synthesized fMRI signals effectively enhance few-shot cross-subject decoding performance.
+  [NeurIPS 2025][Interpretability][visual-to-fMRI synthesis] This paper proposes SynBrain, a framework that models fMRI responses as visual-semantic-conditioned probability distributions via BrainVAE…
 tags:
-  - NeurIPS 2025
-  - visual-to-fMRI synthesis
-  - variational autoencoder
-  - probabilistic representation learning
-  - brain encoding
-  - few-shot adaptation
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "visual-to-fMRI synthesis"
+  - "variational autoencoder"
+  - "probabilistic representation learning"
+  - "brain encoding"
+  - "few-shot adaptation"
 date: 2026-05-08
 content_hash: 3bf406f2b3a682aa
 ---

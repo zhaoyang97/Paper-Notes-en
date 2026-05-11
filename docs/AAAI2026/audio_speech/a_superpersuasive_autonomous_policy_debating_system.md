@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] DeepDebater: A Superpersuasive Autonomous Policy Debating System
 description: >-
-  [AAAI 2026][Audio & Speech][Policy Debate] This paper presents DeepDebater, the first autonomous multi-agent system capable of participating in and winning a complete American-style policy debate (eight speeches plus cross-examination). The system employs a hierarchical agent workflow to construct affirmative (Advantage) and negative (DA+CP+Kritik) arguments, leverages over 3 million evidence cards from OpenDebateEvidence for retrieval-augmented generation, and integrates GPT-4o TTS speech synthesis with EchoMimic digital avatar animation for end-to-end presentation. Expert evaluations show DeepDebater significantly outperforms human-authored cases across all metrics (Quality: 4.32 vs. 3.65), achieving an 85% win rate in simulated rounds.
+  [AAAI 2026][Audio & Speech][Policy Debate] This paper presents DeepDebater, the first autonomous multi-agent system capable of participating in and winning a complete American-style policy debate (eight speeches plus cro…
 tags:
-  - AAAI 2026
+  - "AAAI 2026"
   - "Audio & Speech"
-  - Policy Debate
-  - Multi-Agent Collaboration
-  - LLM
-  - Evidence Retrieval
-  - Autonomous Debating
-  - TTS
+  - "Policy Debate"
+  - "Multi-Agent Collaboration"
+  - "LLM"
+  - "Evidence Retrieval"
+  - "Autonomous Debating"
+  - "TTS"
 date: 2026-05-08
 content_hash: 8b8bfebae2e37a20
 ---

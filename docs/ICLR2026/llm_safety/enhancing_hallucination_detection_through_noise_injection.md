@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Enhancing Hallucination Detection through Noise Injection
 description: >-
-  [ICLR 2026][LLM Safety][Hallucination detection] Injecting uniform noise into MLP activations of intermediate LLM layers to approximate the Bayesian posterior, capturing epistemic uncertainty that is complementary to the aleatoric uncertainty captured by sampling temperature. This raises hallucination detection AUROC on GSM8K from 71.56 to 76.14.
+  [ICLR 2026][LLM Safety][Hallucination detection] Injecting uniform noise into MLP activations of intermediate LLM layers to approximate the Bayesian posterior…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Hallucination detection
-  - noise injection
-  - epistemic uncertainty
-  - Bayesian approximation
-  - intermediate representations
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Hallucination detection"
+  - "noise injection"
+  - "epistemic uncertainty"
+  - "Bayesian approximation"
+  - "intermediate representations"
 date: 2026-05-08
 content_hash: e331b1b11a4e6ab5
 ---

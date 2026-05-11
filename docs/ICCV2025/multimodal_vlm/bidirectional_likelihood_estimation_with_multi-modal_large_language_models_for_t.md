@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Bidirectional Likelihood Estimation with Multi-Modal Large Language Models for Text-Video Retrieval
 description: >-
-  [ICCV 2025][Multimodal VLM][Text-video retrieval] This paper identifies the *candidate prior bias* problem in MLLM-based retrieval systems — where candidate likelihood estimation tends to favor candidates with high prior probability rather than those that are semantically most relevant — and proposes BLiM (Bidirectional Likelihood Estimation) and CPN (Candidate Prior Normalization) to address this issue, achieving an average R@1 gain of 6.4 across four text-video retrieval benchmarks.
+  [ICCV 2025][Multimodal VLM][Text-video retrieval] This paper identifies the *candidate prior bias* problem in MLLM-based retrieval systems — where candidate likelihood estimation tends to favor candidates with high prior…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Text-video retrieval
-  - multimodal large language models
-  - bidirectional likelihood estimation
-  - candidate prior bias
-  - score calibration
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Text-video retrieval"
+  - "multimodal large language models"
+  - "bidirectional likelihood estimation"
+  - "candidate prior bias"
+  - "score calibration"
 date: 2026-05-08
 content_hash: 04c1f900cc3f7a3e
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Diagnosing and Repairing Unsafe Channels in Vision-Language Models via Causal Discovery and Dual-Modal Safety Subspace Projection
 description: >-
-  [CVPR 2026][Multimodal VLM][VLM safety] The paper proposes CARE, a framework that first applies causal mediation analysis to precisely localize neurons and layers causally associated with unsafe behavior in VLMs (diagnosis), then constructs a dual-modal safety subspace via generalized eigendecomposition and projects activations onto it at inference time (repair), reducing attack success rates to below 10% with negligible loss of general capability.
+  [CVPR 2026][Multimodal VLM][VLM safety] The paper proposes CARE, a framework that first applies causal mediation analysis to precisely localize neurons and layers causally associated with unsafe behavior in VLMs (diagnos…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - VLM safety
-  - causal mediation analysis
-  - safety subspace projection
-  - adversarial attack defense
-  - dual-modal repair
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "VLM safety"
+  - "causal mediation analysis"
+  - "safety subspace projection"
+  - "adversarial attack defense"
+  - "dual-modal repair"
 date: 2026-05-08
 content_hash: a087c0c0497a7569
 ---

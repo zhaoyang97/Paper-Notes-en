@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MCAM: Multimodal Causal Analysis Model for Ego-Vehicle-Level Driving Video Understanding
 description: >-
-  [ICCV 2025][Autonomous Driving][driving video understanding] This paper proposes MCAM, which constructs a causal structure between visual and language modalities via a Driving State Directed Acyclic Graph (DSDAG), combined with a multi-level feature extractor and a causal analysis module, for behavior description and causal reasoning in ego-vehicle-level driving video understanding.
+  [ICCV 2025][Autonomous Driving][driving video understanding] This paper proposes MCAM, which constructs a causal structure between visual and language modalities via a Driving State Directed Acyclic Graph (DSDAG)…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - driving video understanding
-  - causal analysis
-  - directed acyclic graph
-  - vision-language
-  - ego-vehicle behavior understanding
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "driving video understanding"
+  - "causal analysis"
+  - "directed acyclic graph"
+  - "vision-language"
+  - "ego-vehicle behavior understanding"
 date: 2026-05-08
 content_hash: 47042448d8c95332
 ---

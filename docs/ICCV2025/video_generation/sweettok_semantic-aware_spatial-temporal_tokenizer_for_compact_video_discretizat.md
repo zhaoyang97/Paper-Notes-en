@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] SweetTok: Semantic-Aware Spatial-Temporal Tokenizer for Compact Video Discretization
 description: >-
-  [ICCV 2025][Video Generation][video discretization] This paper proposes SweetTok, a video tokenizer that decouples spatial and temporal information compression via a Decoupled Query AutoEncoder (DQAE), and assigns codewords by part-of-speech through a Motion-enhanced Language Codebook (MLC). Using only 25% of the token count, SweetTok achieves 42.8% improvement in rFVD and 15.1% improvement in gFVD, attaining an optimal balance between compression ratio and reconstruction fidelity.
+  [ICCV 2025][Video Generation][video discretization] This paper proposes SweetTok, a video tokenizer that decouples spatial and temporal information compression via a Decoupled Query AutoEncoder (DQAE)…
 tags:
-  - ICCV 2025
-  - Video Generation
-  - video discretization
-  - spatial-temporal decoupling
-  - vector quantization
-  - language codebook
+  - "ICCV 2025"
+  - "Video Generation"
+  - "video discretization"
+  - "spatial-temporal decoupling"
+  - "vector quantization"
+  - "language codebook"
 date: 2026-05-08
 content_hash: 7a9901ee28a02f3b
 ---

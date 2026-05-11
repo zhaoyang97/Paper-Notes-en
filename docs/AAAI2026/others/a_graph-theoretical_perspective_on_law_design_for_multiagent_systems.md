@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] A Graph-Theoretical Perspective on Law Design for Multiagent Systems
 description: >-
-  [AAAI 2026][law design] This paper studies the law design problem in multiagent systems from a graph-theoretical perspective, reducing the minimization of useful laws and gap-free laws to the vertex cover problem on hypergraphs, proving NP-hardness, and providing approximation algorithms.
+  [AAAI 2026][law design] This paper studies the law design problem in multiagent systems from a graph-theoretical perspective…
 tags:
-  - AAAI 2026
-  - law design
-  - multiagent systems
-  - vertex cover
-  - hypergraph
-  - responsibility gap
+  - "AAAI 2026"
+  - "law design"
+  - "multiagent systems"
+  - "vertex cover"
+  - "hypergraph"
+  - "responsibility gap"
 date: 2026-05-08
 content_hash: 270895477838c159
 ---

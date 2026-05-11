@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Deep Learning for Continuous-Time Stochastic Control with Jumps
 description: >-
-  [NeurIPS 2025][Stochastic Control] Two model-based deep learning algorithms (GPI-PINN and GPI-CBU) are proposed to solve finite-horizon continuous-time stochastic control problems with jumps. By iteratively training a policy network and a value network, the approach avoids discretization and simulation of state dynamics, and demonstrates strong performance in high-dimensional settings.
+  [NeurIPS 2025][Stochastic Control] Two model-based deep learning algorithms (GPI-PINN and GPI-CBU) are proposed to solve finite-horizon continuous-time stochastic control problems with jumps. By iteratively training a po…
 tags:
-  - NeurIPS 2025
-  - Stochastic Control
-  - Jump Diffusion
-  - HJB Equation
-  - Deep Learning
-  - Actor-Critic
+  - "NeurIPS 2025"
+  - "Stochastic Control"
+  - "Jump Diffusion"
+  - "HJB Equation"
+  - "Deep Learning"
+  - "Actor-Critic"
 date: 2026-05-08
 content_hash: fc2621c9c19ce62c
 ---

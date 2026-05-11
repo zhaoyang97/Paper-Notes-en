@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Shuffle-R1: Efficient RL Framework for Multimodal Large Language Models via Data-centric Dynamic Shuffle
 description: >-
-  [ICLR 2026][Multimodal VLM][Reinforcement Learning] Shuffle-R1 is proposed as an RL training framework that addresses two key efficiency bottlenecks—Advantage Collapsing and Rollout Silencing—through Pairwise Trajectory Sampling (selecting high-contrast trajectory pairs) and Advantage-based Batch Shuffle (redistributing training batches by advantage values). The framework achieves a 22% improvement over the baseline on Geo3K and surpasses GPT-4o on MathVerse.
+  [ICLR 2026][Multimodal VLM][Reinforcement Learning] Shuffle-R1 is proposed as an RL training framework that addresses two key efficiency bottlenecks—Advantage Collapsing and Rollout Silencing—through Pairwise Trajectory…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Reinforcement Learning
-  - Multimodal Reasoning
-  - Data-centric Optimization
-  - Trajectory Sampling
-  - GRPO
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Reinforcement Learning"
+  - "Multimodal Reasoning"
+  - "Data-centric Optimization"
+  - "Trajectory Sampling"
+  - "GRPO"
 date: 2026-05-08
 content_hash: 5958eebd5b6dfc42
 ---

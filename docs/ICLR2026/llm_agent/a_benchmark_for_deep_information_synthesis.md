@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Benchmark for Deep Information Synthesis (DeepSynth)
 description: >-
-  [ICLR 2026][LLM Agent][benchmark] This paper proposes DeepSynth, a benchmark comprising 120 real-world information synthesis tasks spanning 7 domains and 67 countries (averaging 5.5 hours of expert annotation per task). The benchmark requires agents to collect information from multiple web sources and perform structured reasoning. The strongest current agent (o3-deep-research) achieves only 8.97 F1 / 17.5% LLM-Judge, exposing a critical gap in LLM agents' information synthesis capabilities.
+  [ICLR 2026][LLM Agent][benchmark] This paper proposes DeepSynth, a benchmark comprising 120 real-world information synthesis tasks spanning 7 domains and 67 countries (averaging 5.5 hours of expert annotation per task).…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - benchmark
-  - information synthesis
-  - deep research
-  - multi-source reasoning
-  - agent evaluation
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "benchmark"
+  - "information synthesis"
+  - "deep research"
+  - "multi-source reasoning"
+  - "agent evaluation"
 date: 2026-05-08
 content_hash: 015728550e7d525e
 ---

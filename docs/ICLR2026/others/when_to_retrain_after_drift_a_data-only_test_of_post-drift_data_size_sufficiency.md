@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] When to Retrain after Drift: A Data-Only Test of Post-Drift Data Size Sufficiency
 description: >-
-  [ICLR 2026][Concept drift] CALIPER proposes a detector- and model-agnostic, data-only test that estimates the minimum amount of post-drift data required for safe retraining after abrupt concept drift. It tracks the monotonic non-increasing trend of a surrogate error from weighted local regression (WLR) as the locality parameter $\theta$ increases, combined with an effective sample size (ESS) gate, without requiring any actual retraining of the downstream model.
+  [ICLR 2026][Concept drift] CALIPER proposes a detector- and model-agnostic, data-only test that estimates the minimum amount of post-drift data required for safe retraining after abrupt concept drift. It tracks the monot…
 tags:
-  - ICLR 2026
-  - Concept drift
-  - retraining timing
-  - data sufficiency
-  - streaming learning
-  - weighted local regression
-  - state dependence
+  - "ICLR 2026"
+  - "Concept drift"
+  - "retraining timing"
+  - "data sufficiency"
+  - "streaming learning"
+  - "weighted local regression"
+  - "state dependence"
 date: 2026-05-08
 content_hash: cbe39f56e9d7dd8a
 ---

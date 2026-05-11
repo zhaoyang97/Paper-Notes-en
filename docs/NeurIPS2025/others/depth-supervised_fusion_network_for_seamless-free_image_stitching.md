@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Depth-Supervised Fusion Network for Seamless-Free Image Stitching
 description: >-
-  [NeurIPS 2025][image stitching] DSFN proposes a seamless image stitching method with depth consistency constraints: a depth-aware two-stage transformation estimation addresses large-parallax alignment, soft-seam region diffusion enables natural blending, and a re-parameterization strategy improves efficiency. The method comprehensively surpasses the state of the art on the UDIS-D and IVSD datasets.
+  [NeurIPS 2025][image stitching] DSFN proposes a seamless image stitching method with depth consistency constraints: a depth-aware two-stage transformation estimation addresses large-parallax alignment…
 tags:
-  - NeurIPS 2025
-  - image stitching
-  - depth supervision
-  - large-parallax alignment
-  - soft-seam fusion
-  - re-parameterization
+  - "NeurIPS 2025"
+  - "image stitching"
+  - "depth supervision"
+  - "large-parallax alignment"
+  - "soft-seam fusion"
+  - "re-parameterization"
 date: 2026-05-08
 content_hash: 5eb20a92780b69d4
 ---

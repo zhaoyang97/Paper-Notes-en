@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Environment Inference for Learning Generalizable Dynamical System
 description: >-
-  [NeurIPS 2025][AI Safety][dynamical systems] This paper proposes DynaInfer, a framework that infers environment labels for unlabeled trajectories by analyzing the prediction errors of a fixed neural network, enabling generalizable dynamical system learning without environment annotations. DynaInfer matches or surpasses Oracle (known-label) performance on ODE/PDE systems.
+  [NeurIPS 2025][AI Safety][dynamical systems] This paper proposes DynaInfer, a framework that infers environment labels for unlabeled trajectories by analyzing the prediction errors of a fixed neural network…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - dynamical systems
-  - environment inference
-  - OOD generalization
-  - multi-environment learning
-  - K-means analogy
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "dynamical systems"
+  - "environment inference"
+  - "OOD generalization"
+  - "multi-environment learning"
+  - "K-means analogy"
 date: 2026-05-08
 content_hash: fa1eb2aabf69656f
 ---

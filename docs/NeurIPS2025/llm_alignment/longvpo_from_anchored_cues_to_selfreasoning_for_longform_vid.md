@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LongVPO: From Anchored Cues to Self-Reasoning for Long-Form Video Preference Optimization
 description: >-
-  [NeurIPS 2025][LLM Alignment][Long video understanding] LongVPO proposes a two-stage DPO framework. Stage 1 constructs pseudo-long-video preference data by anchoring short clips and introduces an anchor-only reference model approximation to address context-length mismatch. Stage 2 performs self-training on real long videos via recursive captioning and multi-clip reasoning tasks. Using only 16K synthetic samples, the method surpasses long-video models trained with large-scale supervised data.
+  [NeurIPS 2025][LLM Alignment][Long video understanding] LongVPO proposes a two-stage DPO framework. Stage 1 constructs pseudo-long-video preference data by anchoring short clips and introduces an anchor-only reference mo…
 tags:
-  - NeurIPS 2025
-  - LLM Alignment
-  - Long video understanding
-  - DPO
-  - vision-language models
-  - preference optimization
-  - short-to-long transfer
+  - "NeurIPS 2025"
+  - "LLM Alignment"
+  - "Long video understanding"
+  - "DPO"
+  - "vision-language models"
+  - "preference optimization"
+  - "short-to-long transfer"
 date: 2026-05-08
 content_hash: ebb4d986d02234f3
 ---

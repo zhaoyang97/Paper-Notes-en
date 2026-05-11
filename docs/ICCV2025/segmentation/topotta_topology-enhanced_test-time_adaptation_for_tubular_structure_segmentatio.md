@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TopoTTA: Topology-Enhanced Test-Time Adaptation for Tubular Structure Segmentation
 description: >-
-  [ICCV 2025][Segmentation][tubular structure segmentation] The first test-time adaptation (TTA) framework specifically designed for tubular structure segmentation (TSS). It adapts to cross-domain topological structural differences via Topological Meta-Differential Convolutions (TopoMDCs), and restores topological continuity through a Topological Hard Sample Generation (TopoHG) strategy, achieving an average clDice improvement of 31.81% across 10 datasets.
+  [ICCV 2025][Segmentation][tubular structure segmentation] The first test-time adaptation (TTA) framework specifically designed for tubular structure segmentation (TSS). It adapts to cross-domain topological structural di…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - tubular structure segmentation
-  - test-time adaptation
-  - topological continuity
-  - differential convolution
-  - domain shift
+  - "ICCV 2025"
+  - "Segmentation"
+  - "tubular structure segmentation"
+  - "test-time adaptation"
+  - "topological continuity"
+  - "differential convolution"
+  - "domain shift"
 date: 2026-05-08
 content_hash: 47cabbad0502b0c6
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Precise Information Control in Long-Form Text Generation
 description: >-
-  [NeurIPS 2025][Social Computing][precise information control] This paper proposes the Precise Information Control (PIC) task, which requires LLMs to generate long-form text that strictly adheres to a given set of claims (neither omitting nor adding information). The authors construct PIC-Bench to evaluate 8 tasks, finding that over 70% of outputs from state-of-the-art models contain faithfulness hallucinations. Through weakly supervised preference data construction combined with DPO training, the proposed PIC-LM improves the F1 of an 8B model from 69.1% to 91.0%.
+  [NeurIPS 2025][Social Computing][precise information control] This paper proposes the Precise Information Control (PIC) task, which requires LLMs to generate long-form text that strictly adheres to a given set of claims…
 tags:
-  - NeurIPS 2025
-  - Social Computing
-  - precise information control
-  - faithfulness hallucination
-  - verifiable claims
-  - preference learning
-  - long-form generation
+  - "NeurIPS 2025"
+  - "Social Computing"
+  - "precise information control"
+  - "faithfulness hallucination"
+  - "verifiable claims"
+  - "preference learning"
+  - "long-form generation"
 date: 2026-05-08
 content_hash: cb370869d23a7a24
 ---

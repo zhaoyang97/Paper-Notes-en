@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unleashing Video Language Models for Fine-grained HRCT Report Generation
 description: >-
-  [CVPR 2026][Medical Imaging][CT report generation] This paper proposes AbSteering, a two-stage framework that adapts general-purpose VideoLMs to HRCT report generation via abnormality-centric Chain-of-Thought reasoning and DPO-based hard-negative contrastive learning, substantially outperforming specialized CT foundation models on clinical efficacy metrics.
+  [CVPR 2026][Medical Imaging][CT report generation] This paper proposes AbSteering, a two-stage framework that adapts general-purpose VideoLMs to HRCT report generation via abnormality-centric Chain-of-Thought reasoning a…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - CT report generation
-  - video language models
-  - Chain-of-Thought
-  - DPO
-  - anomaly detection
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "CT report generation"
+  - "video language models"
+  - "Chain-of-Thought"
+  - "DPO"
+  - "anomaly detection"
 date: 2026-05-08
 content_hash: 555df1348081be93
 ---

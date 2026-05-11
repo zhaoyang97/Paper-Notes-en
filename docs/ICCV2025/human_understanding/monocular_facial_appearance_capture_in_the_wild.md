@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Monocular Facial Appearance Capture in the Wild
 description: >-
-  [ICCV 2025][Human Understanding][facial appearance capture] This paper proposes a method for reconstructing facial appearance attributes (diffuse albedo, specular intensity, specular roughness) from monocular head-rotation videos. By introducing an occlusion-aware split-sum approximation shading model, the method achieves studio-grade facial appearance capture quality without imposing any simplifying assumptions on the illumination environment.
+  [ICCV 2025][Human Understanding][facial appearance capture] This paper proposes a method for reconstructing facial appearance attributes (diffuse albedo, specular intensity…
 tags:
-  - ICCV 2025
-  - Human Understanding
-  - facial appearance capture
-  - inverse rendering
-  - occlusion-aware
-  - monocular video
-  - split-sum approximation
+  - "ICCV 2025"
+  - "Human Understanding"
+  - "facial appearance capture"
+  - "inverse rendering"
+  - "occlusion-aware"
+  - "monocular video"
+  - "split-sum approximation"
 date: 2026-05-08
 content_hash: 4e746f3b10b1eec7
 ---

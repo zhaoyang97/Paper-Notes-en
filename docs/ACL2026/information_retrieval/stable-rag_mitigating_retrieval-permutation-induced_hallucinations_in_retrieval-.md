@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Stable-RAG: Mitigating Retrieval-Permutation-Induced Hallucinations in Retrieval-Augmented Generation
 description: >-
-  [ACL 2026][Retrieval-Augmented Generation] This paper identifies a critical yet previously overlooked vulnerability in RAG systems—high sensitivity to the ordering of retrieved documents—and proposes Stable-RAG, which applies spectral clustering over hidden states induced by document permutations to identify dominant reasoning patterns, then uses DPO alignment to redirect hallucinated outputs toward correct answers, achieving simultaneous improvements in accuracy and reasoning consistency across three QA datasets.
+  [ACL 2026][Information Retrieval & RAG][Retrieval-Augmented Generation] This paper identifies a critical yet previously overlooked vulnerability in RAG systems—high sensitivity to the ordering of retrieved documents—and…
 tags:
-  - ACL 2026
-  - Retrieval-Augmented Generation
-  - permutation sensitivity
-  - hallucination
-  - hidden-state clustering
-  - preference alignment
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Retrieval-Augmented Generation"
+  - "permutation sensitivity"
+  - "hallucination"
+  - "hidden-state clustering"
+  - "preference alignment"
 date: 2026-05-08
 content_hash: 8413afa3dea9ad53
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CLIPSym: Delving into Symmetry Detection with CLIP
 description: >-
-  [ICCV 2025][Multimodal VLM][Symmetry Detection] This paper proposes CLIPSym, the first method to leverage the multimodal understanding capability of pretrained CLIP for reflection and rotation symmetry detection. It introduces a Semantics-Aware Prompt Grouping (SAPG) strategy to integrate textual semantic cues and a decoder with theoretical rotation equivariance guarantees, achieving state-of-the-art results on three benchmarks: DENDI, SDRW, and LDRS.
+  [ICCV 2025][Multimodal VLM][Symmetry Detection] This paper proposes CLIPSym, the first method to leverage the multimodal understanding capability of pretrained CLIP for reflection and rotation symmetry detection. It intr…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Symmetry Detection
-  - CLIP
-  - Rotation Equivariance
-  - Semantics-Aware Prompt Grouping
-  - G-Convolution
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Symmetry Detection"
+  - "CLIP"
+  - "Rotation Equivariance"
+  - "Semantics-Aware Prompt Grouping"
+  - "G-Convolution"
 date: 2026-05-08
 content_hash: ca9aceaf4b01a20e
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Adjoint Schrödinger Bridge Sampler
 description: >-
-  [NeurIPS 2025][Schrödinger Bridge] This paper proposes the Adjoint Schrödinger Bridge Sampler (ASBS), which reinterprets the Schrödinger Bridge problem as a stochastic optimal control (SOC) problem. This eliminates the memoryless condition required by prior diffusion samplers, supports arbitrary source distributions (e.g., Gaussian, harmonic priors), and employs a scalable matching objective without importance weight estimation. ASBS consistently outperforms prior methods on multi-particle energy functions and molecular conformation generation.
+  [NeurIPS 2025][Schrödinger Bridge] This paper proposes the Adjoint Schrödinger Bridge Sampler (ASBS), which reinterprets the Schrödinger Bridge problem as a stochastic optimal control (SOC) problem. This eliminates the m…
 tags:
-  - NeurIPS 2025
-  - Schrödinger Bridge
-  - Diffusion Sampler
-  - Boltzmann Distribution
-  - Adjoint Matching
-  - Stochastic Optimal Control
+  - "NeurIPS 2025"
+  - "Schrödinger Bridge"
+  - "Diffusion Sampler"
+  - "Boltzmann Distribution"
+  - "Adjoint Matching"
+  - "Stochastic Optimal Control"
 date: 2026-05-08
 content_hash: 247e49a4c16cd5f7
 ---

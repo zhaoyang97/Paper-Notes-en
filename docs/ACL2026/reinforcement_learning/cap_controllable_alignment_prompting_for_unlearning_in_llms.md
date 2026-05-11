@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] CAP: Controllable Alignment Prompting for Unlearning in LLMs
 description: >-
-  [ACL 2026][Reinforcement Learning][LLM unlearning] This paper proposes the CAP framework, which trains a lightweight SLM to generate controllable prompt prefixes that guide a frozen LLM to selectively forget target knowledge. Without modifying model parameters, CAP achieves reversible and transferable knowledge unlearning in LLMs.
+  [ACL 2026][Reinforcement Learning][LLM unlearning] This paper proposes the CAP framework, which trains a lightweight SLM to generate controllable prompt prefixes that guide a frozen LLM to selectively forget target knowl…
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - LLM unlearning
-  - prompt-driven
-  - controllable alignment
-  - knowledge erasure
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "LLM unlearning"
+  - "prompt-driven"
+  - "controllable alignment"
+  - "knowledge erasure"
 date: 2026-05-08
 content_hash: 4c4d0fb66cb84bed
 ---

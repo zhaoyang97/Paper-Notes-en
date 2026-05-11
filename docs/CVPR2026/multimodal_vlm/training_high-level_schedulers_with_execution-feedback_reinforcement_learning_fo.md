@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Training High-Level Schedulers with Execution-Feedback Reinforcement Learning for Long-Horizon GUI Automation
 description: >-
-  [CVPR2026][Multimodal VLM][GUI automation] This paper proposes CES (Coordinator-Executor-State Tracker), a multi-agent framework coupled with a staged execution-feedback reinforcement learning algorithm. By decoupling high-level task planning from low-level execution, and through dedicated training of the Coordinator and State Tracker, CES significantly improves GUI agent planning and state management capabilities on long-horizon tasks.
+  [CVPR2026][Multimodal VLM][GUI automation] This paper proposes CES (Coordinator-Executor-State Tracker), a multi-agent framework coupled with a staged execution-feedback reinforcement learning algorithm. By decoupling hi…
 tags:
-  - CVPR2026
-  - Multimodal VLM
-  - GUI automation
-  - long-horizon tasks
-  - multi-agent framework
-  - reinforcement learning
-  - state tracking
-  - task scheduling
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "GUI automation"
+  - "long-horizon tasks"
+  - "multi-agent framework"
+  - "reinforcement learning"
+  - "state tracking"
+  - "task scheduling"
 date: 2026-05-08
 content_hash: a0d27faa961cd8cf
 ---

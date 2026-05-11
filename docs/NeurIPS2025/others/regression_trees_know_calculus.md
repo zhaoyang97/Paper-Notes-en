@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Regression Trees Know Calculus
 description: >-
-  [NeurIPS 2025][regression trees] This paper reveals gradient information latent in piecewise-constant regression trees — by treating the difference in child-node means as a finite-difference analogue, it efficiently extracts gradient estimates, thereby importing differential tools such as Active Subspaces (AS) and Integrated Gradients (IG) into tree models, broadening both their interpretability and predictive improvement capabilities.
+  [NeurIPS 2025][regression trees] This paper reveals gradient information latent in piecewise-constant regression trees — by treating the difference in child-node means as a finite-difference analogue…
 tags:
-  - NeurIPS 2025
-  - regression trees
-  - gradient estimation
-  - active subspace
-  - integrated gradients
-  - interpretability
+  - "NeurIPS 2025"
+  - "regression trees"
+  - "gradient estimation"
+  - "active subspace"
+  - "integrated gradients"
+  - "interpretability"
 date: 2026-05-08
 content_hash: 578ef03b91e04a36
 ---

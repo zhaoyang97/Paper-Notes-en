@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TriDF: Evaluating Perception, Detection, and Hallucination for Interpretable DeepFake Detection
 description: >-
-  [CVPR 2026][Image Generation][DeepFake Detection] This paper proposes TriDF — the first benchmark that comprehensively evaluates interpretable DeepFake detection across three dimensions: Perception, Detection, and Hallucination. It comprises 55K high-quality samples covering 16 DeepFake types and 3 modalities, and reveals a triadic coupling relationship in which accurate perception is a prerequisite for reliable detection, yet hallucination can severely undermine decision-making.
+  [CVPR 2026][Image Generation][DeepFake Detection] This paper proposes TriDF — the first benchmark that comprehensively evaluates interpretable DeepFake detection across three dimensions: Perception, Detection…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - DeepFake Detection
-  - Interpretable Detection
-  - Multimodal Large Language Models
-  - Hallucination Evaluation
-  - Artifact Taxonomy
+  - "CVPR 2026"
+  - "Image Generation"
+  - "DeepFake Detection"
+  - "Interpretable Detection"
+  - "Multimodal Large Language Models"
+  - "Hallucination Evaluation"
+  - "Artifact Taxonomy"
 date: 2026-05-08
 content_hash: 164693f666a6eb34
 ---

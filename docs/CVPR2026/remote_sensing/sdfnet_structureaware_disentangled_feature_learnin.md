@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SDF-Net: Structure-Aware Disentangled Feature Learning for Optical-SAR Ship Re-identification
 description: >-
-  [CVPR 2026][Remote Sensing][Optical-SAR cross-modal] This paper proposes SDF-Net, a physics-guided structure-aware disentangled feature learning network that enforces cross-modal geometric consistency via intermediate-layer gradient energy (SCL) and decouples shared/modality-specific features at the terminal layer (DFL) with parameter-free additive fusion, achieving 60.9% mAP (+3.5% vs. SOTA TransOSS) on HOSS-ReID.
+  [CVPR 2026][Remote Sensing][Optical-SAR cross-modal] This paper proposes SDF-Net, a physics-guided structure-aware disentangled feature learning network that enforces cross-modal geometric consistency via intermediate-la…
 tags:
-  - CVPR 2026
-  - Remote Sensing
-  - Optical-SAR cross-modal
-  - ship re-identification
-  - structure-aware
-  - feature disentanglement
-  - gradient energy
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Optical-SAR cross-modal"
+  - "ship re-identification"
+  - "structure-aware"
+  - "feature disentanglement"
+  - "gradient energy"
 date: 2026-05-08
 content_hash: 7219d1a13b56e179
 ---

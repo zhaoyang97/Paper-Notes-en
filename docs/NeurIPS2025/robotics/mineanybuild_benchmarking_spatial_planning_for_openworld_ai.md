@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MineAnyBuild: Benchmarking Spatial Planning for Open-world AI Agents
 description: >-
-  [NeurIPS 2025 (Datasets & Benchmarks)][Robotics][spatial planning] MineAnyBuild is a spatial planning benchmark built upon Minecraft, requiring AI agents to generate executable blueprint matrices from multimodal instructions. The benchmark comprises 4,000 tasks and 500+ architectural/decorative assets, and systematically evaluates MLLM spatial planning capabilities across four dimensions: spatial understanding, spatial reasoning, creativity, and spatial commonsense. Results reveal that even GPT-4o achieves only 41.02/100 overall, with open-source models performing substantially worse.
+  [NeurIPS 2025 (Datasets & Benchmarks)][Robotics][spatial planning] MineAnyBuild is a spatial planning benchmark built upon Minecraft, requiring AI agents to generate executable blueprint matrices from multimodal instruct…
 tags:
   - "NeurIPS 2025 (Datasets & Benchmarks)"
-  - Robotics
-  - spatial planning
-  - Minecraft
-  - open-world agent
-  - MLLM benchmark
-  - spatial intelligence
+  - "Robotics"
+  - "spatial planning"
+  - "Minecraft"
+  - "open-world agent"
+  - "MLLM benchmark"
+  - "spatial intelligence"
 date: 2026-05-08
 content_hash: a01d46c29d64bbe8
 ---

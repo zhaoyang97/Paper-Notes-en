@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Generating Effective CoT Traces for Mitigating Causal Hallucination
 description: >-
-  [ACL 2026][LLM Reasoning][causal hallucination] This paper first proposes the Causal Hallucination Rate (CHR) metric to quantify the tendency of small LLMs to over-predict causal relations in event causal identification (ECI). Through systematic experiments, two key criteria for effective CoT data are identified—sufficiently long semantic explanations paired with a distribution aligned to the target model—and a low-cost CoT data generation pipeline is designed accordingly. The pipeline reduces CHR of Qwen2.5-1.5B from 83.54% to 6.26% while improving mean accuracy to 66.00%.
+  [ACL 2026][LLM Reasoning][causal hallucination] This paper first proposes the Causal Hallucination Rate (CHR) metric to quantify the tendency of small LLMs to over-predict causal relations in event causal identification…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - causal hallucination
-  - chain-of-thought
-  - event causal identification
-  - small model fine-tuning
-  - data generation
+  - "ACL 2026"
+  - "LLM Reasoning"
+  - "causal hallucination"
+  - "chain-of-thought"
+  - "event causal identification"
+  - "small model fine-tuning"
+  - "data generation"
 date: 2026-05-08
 content_hash: f659f25fbcfe37bd
 ---

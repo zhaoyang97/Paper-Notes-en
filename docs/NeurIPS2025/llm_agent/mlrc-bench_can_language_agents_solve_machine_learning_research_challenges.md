@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MLRC-Bench: Can Language Agents Solve Machine Learning Research Challenges?
 description: >-
-  [NeurIPS 2025][LLM Agent][Research Agent] This paper proposes MLRC-Bench, a dynamic benchmark grounded in ML conference competition tasks, designed to objectively evaluate the ability of LLM agents to propose and implement novel research methods. The study finds that even the strongest agent (gemini-exp-1206) closes only 9.3% of the gap between the baseline and top human solutions, and that LLM subjective scores for "novelty" exhibit virtually no correlation with actual performance.
+  [NeurIPS 2025][LLM Agent][Research Agent] This paper proposes MLRC-Bench, a dynamic benchmark grounded in ML conference competition tasks…
 tags:
-  - NeurIPS 2025
-  - LLM Agent
-  - Research Agent
-  - Benchmark
-  - ML Competition
-  - Methodological Innovation
-  - LLM-as-Judge
+  - "NeurIPS 2025"
+  - "LLM Agent"
+  - "Research Agent"
+  - "Benchmark"
+  - "ML Competition"
+  - "Methodological Innovation"
+  - "LLM-as-Judge"
 date: 2026-05-08
 content_hash: 154f96df33dfe6ea
 ---

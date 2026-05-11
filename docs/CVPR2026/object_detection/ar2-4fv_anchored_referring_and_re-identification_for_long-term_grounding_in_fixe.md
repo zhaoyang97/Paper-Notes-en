@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AR²-4FV: Anchored Referring and Re-identification for Long-Term Grounding in Fixed-View Videos
 description: >-
-  [CVPR 2026][Object Detection][Long-term referring] By exploiting the temporal invariance of background structure in fixed-view videos, the paper constructs an offline Anchor Bank and an online Anchor Map as persistent language–scene memory. Combined with an anchor-guided re-entry prior and a ReID-Gating identity verification mechanism, the system achieves robust re-capture of targets after occlusion or departure, yielding a 10.3% improvement in RCR and a 24.2% reduction in RCL.
+  [CVPR 2026][Object Detection][Long-term referring] By exploiting the temporal invariance of background structure in fixed-view videos, the paper constructs an offline Anchor Bank and an online Anchor Map as persistent la…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - Long-term referring
-  - fixed-view video
-  - background anchor
-  - re-entry detection
-  - identity re-identification
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Long-term referring"
+  - "fixed-view video"
+  - "background anchor"
+  - "re-entry detection"
+  - "identity re-identification"
 date: 2026-05-08
 content_hash: 8c4a7ec7b7c532d2
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Solving Continuous Mean Field Games: Deep Reinforcement Learning for Non-Stationary Dynamics
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Mean Field Games] This paper proposes the DEDA-FP algorithm, which for the first time simultaneously learns Nash equilibrium policies and population distributions in non-stationary mean field games (MFGs) with continuous state/action spaces. By combining deep RL for best response computation, supervised learning for mean policy representation, and conditional Normalizing Flow for modeling time-varying population distributions, DEDA-FP achieves over 10× sampling efficiency compared to existing methods.
+  [NeurIPS 2025][Reinforcement Learning][Mean Field Games] This paper proposes the DEDA-FP algorithm, which for the first time simultaneously learns Nash equilibrium policies and population distributions in non-stationary…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Mean Field Games
-  - Deep Reinforcement Learning
-  - Fictitious Play
-  - Normalizing Flow
-  - Nash Equilibrium
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Mean Field Games"
+  - "Deep Reinforcement Learning"
+  - "Fictitious Play"
+  - "Normalizing Flow"
+  - "Nash Equilibrium"
 date: 2026-05-08
 content_hash: 015559bc4cee358f
 ---

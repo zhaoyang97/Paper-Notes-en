@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Scalable Multi-Task Low-Rank Model Adaptation
 description: >-
-  [ICLR 2026][Social Computing][LoRA] This paper systematically analyzes the root causes of multi-task LoRA collapse as the number of tasks scales (uniform regularization destroying shared knowledge + component-level LoRA amplifying gradient conflicts), and proposes mtLoRA: spectral-aware regularization + block-level adaptation + fine-grained routing. The method outperforms the state of the art by an average of 2.3% on 15–25 tasks, while reducing parameters by 47% and training time by 24%.
+  [ICLR 2026][Social Computing][LoRA] This paper systematically analyzes the root causes of multi-task LoRA collapse as the number of tasks scales (uniform regularization destroying shared knowledge + component-level LoRA…
 tags:
-  - ICLR 2026
-  - Social Computing
-  - LoRA
-  - multi-task learning
-  - spectral-aware regularization
-  - block-level adaptation
-  - fine-grained routing
+  - "ICLR 2026"
+  - "Social Computing"
+  - "LoRA"
+  - "multi-task learning"
+  - "spectral-aware regularization"
+  - "block-level adaptation"
+  - "fine-grained routing"
 date: 2026-05-08
 content_hash: c23b930c070eeedb
 ---

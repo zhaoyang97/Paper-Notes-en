@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning to Watermark: A Selective Watermarking Framework for Large Language Models via Multi-Objective Optimization
 description: >-
-  [NeurIPS 2025][LLM Safety][LLM watermarking] This paper proposes LTW (Learning to Watermark), a framework that employs a lightweight selector network to adaptively determine when to apply watermarks based on sentence embeddings, token entropy, and the current watermarking ratio. By leveraging multi-objective optimization via MGDA, LTW achieves a Pareto-optimal balance between detectability and text quality, substantially improving watermarked text quality without compromising detection performance.
+  [NeurIPS 2025][LLM Safety][LLM watermarking] This paper proposes LTW (Learning to Watermark), a framework that employs a lightweight selector network to adaptively determine when to apply watermarks based on sentence emb…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - LLM watermarking
-  - selective watermarking
-  - multi-objective optimization
-  - text quality
-  - watermark detectability
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "LLM watermarking"
+  - "selective watermarking"
+  - "multi-objective optimization"
+  - "text quality"
+  - "watermark detectability"
 date: 2026-05-08
 content_hash: 002a4eb7a5b7d686
 ---

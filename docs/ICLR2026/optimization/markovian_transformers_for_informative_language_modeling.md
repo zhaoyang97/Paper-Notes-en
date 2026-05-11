@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Markovian Transformers for Informative Language Modeling
 description: >-
-  [ICLR 2026][Optimization][Markov constraint] This paper proposes the Markovian Language Model (MLM) framework, which enforces CoT to serve as a causally necessary reasoning bottleneck through **structural constraints** (removing the original question during answer prediction, so that the answer is derived solely from the CoT). Analogous to the narrow latent layer in an autoencoder, this approach is combined with GRPO-style policy gradient training, improving accuracy on GSM8K from 19.6% to 57.1%. The learned CoT also transfers across model architectures (Llama→Mistral/Phi/GPT-2), demonstrating that CoT encodes natural language reasoning rather than steganography.
+  [ICLR 2026][Optimization][Markov constraint] This paper proposes the Markovian Language Model (MLM) framework, which enforces CoT to serve as a causally necessary reasoning bottleneck through **structural constraints** (…
 tags:
-  - ICLR 2026
-  - Optimization
-  - Markov constraint
-  - CoT faithfulness
-  - reasoning bottleneck
-  - autoencoder analogy
-  - GRPO training
-  - information theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Markov constraint"
+  - "CoT faithfulness"
+  - "reasoning bottleneck"
+  - "autoencoder analogy"
+  - "GRPO training"
+  - "information theory"
 date: 2026-05-08
 content_hash: 952828d852118fed
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Training-Free Scene Text Editing
 description: >-
-  [CVPR 2026][Robotics][Scene Text Editing] This paper proposes TextFlow, a training-free scene text editing framework that employs Flow Manifold Steering (FMS) during the early denoising stage to preserve style consistency and Attention Boost (AttnBoost) during the late stage to enhance text rendering accuracy, achieving editing quality comparable to or better than training-based methods without any task-specific training.
+  [CVPR 2026][Robotics][Scene Text Editing] This paper proposes TextFlow, a training-free scene text editing framework that employs Flow Manifold Steering (FMS) during the early denoising stage to preserve style consistenc…
 tags:
-  - CVPR 2026
-  - Robotics
-  - Scene Text Editing
-  - Training-Free
-  - Diffusion Models
-  - Attention Enhancement
-  - Flow Matching
+  - "CVPR 2026"
+  - "Robotics"
+  - "Scene Text Editing"
+  - "Training-Free"
+  - "Diffusion Models"
+  - "Attention Enhancement"
+  - "Flow Matching"
 date: 2026-05-08
 content_hash: fb35f928d35e330f
 ---

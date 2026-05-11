@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Earth-Adapter: Bridge Geospatial Domain Gaps with Mixture of Frequency Adaptation
 description: >-
-  [AAAI 2026][Model Compression][Remote sensing semantic segmentation] This paper proposes Earth-Adapter, the first parameter-efficient fine-tuning (PEFT) method specifically designed to address **artifact problems** in remote sensing imagery. Through a frequency-guided Mixture of Adapters (MoA), features are decomposed into high- and low-frequency subspaces, independently optimized, and then dynamically aggregated. The method outperforms the baseline Rein across three settings: remote sensing semantic segmentation (SS), domain adaptation (DA), and domain generalization (DG).
+  [AAAI 2026][Model Compression][Remote sensing semantic segmentation] This paper proposes Earth-Adapter, the first parameter-efficient fine-tuning (PEFT) method specifically designed to address **artifact problems** in re…
 tags:
-  - AAAI 2026
-  - Model Compression
-  - Remote sensing semantic segmentation
-  - parameter-efficient fine-tuning
-  - frequency-domain decomposition
-  - mixture of adapters
-  - artifact mitigation
+  - "AAAI 2026"
+  - "Model Compression"
+  - "Remote sensing semantic segmentation"
+  - "parameter-efficient fine-tuning"
+  - "frequency-domain decomposition"
+  - "mixture of adapters"
+  - "artifact mitigation"
 date: 2026-05-08
 content_hash: a3a911f16ce6fbba
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SAMA: Towards Multi-Turn Referential Grounded Video Chat with Large Language Models
 description: >-
-  [NeurIPS 2025][Video Understanding][Video grounding] This paper proposes the SAMA framework, which jointly models fine-grained spatio-temporal understanding and grounding in multi-turn referential video dialogue for the first time, through the construction of a unified dataset (SAMA-239K), model (spatio-temporal context aggregator + SAM), and benchmark (SAMA-Bench).
+  [NeurIPS 2025][Video Understanding][Video grounding] This paper proposes the SAMA framework, which jointly models fine-grained spatio-temporal understanding and grounding in multi-turn referential video dialogue for the…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
-  - Video grounding
-  - multi-turn dialogue
-  - spatio-temporal understanding
-  - SAM
-  - Video LMM
+  - "NeurIPS 2025"
+  - "Video Understanding"
+  - "Video grounding"
+  - "multi-turn dialogue"
+  - "spatio-temporal understanding"
+  - "SAM"
+  - "Video LMM"
 date: 2026-05-08
 content_hash: 2e41e81aff32c382
 ---

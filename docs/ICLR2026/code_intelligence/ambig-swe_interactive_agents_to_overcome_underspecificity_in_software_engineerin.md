@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Ambig-SWE: Interactive Agents to Overcome Underspecificity in Software Engineering
 description: >-
-  [ICLR 2026][underspecification] This paper introduces Ambig-SWE, an underspecified variant of SWE-Bench Verified, and systematically evaluates LLM coding agents across three dimensions of interactive capability—detecting underspecification, formulating clarification questions, and leveraging obtained information. Results show that interaction can improve resolution rates in underspecified settings by up to 74%, yet models default to non-interactive behavior and struggle to distinguish between well-specified and underspecified instructions.
+  [ICLR 2026][Code Intelligence][underspecification] This paper introduces Ambig-SWE, an underspecified variant of SWE-Bench Verified, and systematically evaluates LLM coding agents across three dimensions of interactive c…
 tags:
-  - ICLR 2026
-  - underspecification
-  - interactive agent
-  - SWE-Bench
-  - clarification
-  - software engineering
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "underspecification"
+  - "interactive agent"
+  - "SWE-Bench"
+  - "clarification"
+  - "software engineering"
 date: 2026-05-08
 content_hash: 47df0a899bcb49f3
 ---

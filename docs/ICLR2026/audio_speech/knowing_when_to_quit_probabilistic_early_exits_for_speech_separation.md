@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Knowing When to Quit: Probabilistic Early Exits for Speech Separation
 description: >-
-  [ICLR 2026][Audio & Speech][Speech Separation] This paper proposes PRESS (Probabilistic Early-exit for Speech Separation) and the PRESS-Net architecture. By jointly modeling clean speech signals and error variance within a probabilistic framework, PRESS derives an interpretable early-exit criterion based on signal-to-noise ratio (SNR), enabling fine-grained dynamic computation scaling for speech separation networks while maintaining performance competitive with static SOTA models.
+  [ICLR 2026][Audio & Speech][Speech Separation] This paper proposes PRESS (Probabilistic Early-exit for Speech Separation) and the PRESS-Net architecture. By jointly modeling clean speech signals and error variance within…
 tags:
-  - ICLR 2026
+  - "ICLR 2026"
   - "Audio & Speech"
-  - Speech Separation
-  - Early Exit
-  - Probabilistic Modeling
-  - Dynamic Computation
-  - TasNet
+  - "Speech Separation"
+  - "Early Exit"
+  - "Probabilistic Modeling"
+  - "Dynamic Computation"
+  - "TasNet"
 date: 2026-05-08
 content_hash: ca5611cb8d813d67
 ---

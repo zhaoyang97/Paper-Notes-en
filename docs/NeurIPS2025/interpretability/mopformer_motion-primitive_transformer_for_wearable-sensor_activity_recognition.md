@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] MoPFormer: Motion-Primitive Transformer for Wearable-Sensor Activity Recognition
 description: >-
-  [NeurIPS 2025][Motion Primitives] MoPFormer is proposed to decompose wearable sensor signals into sequences of motion primitives and model their temporal dependencies via a Transformer, surpassing state-of-the-art methods on multiple HAR benchmarks while maintaining a lightweight architecture.
+  [NeurIPS 2025][Interpretability][Motion Primitives] MoPFormer is proposed to decompose wearable sensor signals into sequences of motion primitives and model their temporal dependencies via a Transformer…
 tags:
-  - NeurIPS 2025
-  - Motion Primitives
-  - Transformer
-  - Wearable Sensors
-  - Activity Recognition
-  - Temporal Decomposition
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "Motion Primitives"
+  - "Transformer"
+  - "Wearable Sensors"
+  - "Activity Recognition"
+  - "Temporal Decomposition"
 date: 2026-05-08
 content_hash: a2b884a8f29f0d6b
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Accelerating Parallel Diffusion Model Serving with Residual Compression
 description: >-
-  [NeurIPS 2025][Image Generation][parallel inference] This paper proposes CompactFusion, a framework that eliminates communication redundancy in parallel diffusion inference via residual compression—transmitting only the activation differences between adjacent denoising steps rather than full activations. It achieves a 3.0× speedup on 4×L20 GPUs with generation quality significantly superior to DistriFusion, a 6.7× speedup under simulated Ethernet bandwidth, and maintains better quality than DistriFusion even at 100× compression.
+  [NeurIPS 2025][Image Generation][parallel inference] This paper proposes CompactFusion, a framework that eliminates communication redundancy in parallel diffusion inference via residual compression—transmitting only the…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - parallel inference
-  - communication compression
-  - residual compression
-  - diffusion model serving
-  - sequence parallelism
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "parallel inference"
+  - "communication compression"
+  - "residual compression"
+  - "diffusion model serving"
+  - "sequence parallelism"
 date: 2026-05-08
 content_hash: 9a09a826e0f01371
 ---

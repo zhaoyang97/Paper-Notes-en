@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DataRater: Meta-Learned Dataset Curation
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][Data curation] This paper proposes DataRater, a meta-gradient-based data valuation framework that employs meta-learning to automatically score and filter low-quality training samples. It achieves up to 46.6% net compute savings across multiple pre-training datasets, and a DataRater trained on a 400M internal model generalizes directly to LLM training at scales ranging from 50M to 1B parameters.
+  [NeurIPS 2025][Self-Supervised Learning][Data curation] This paper proposes DataRater, a meta-gradient-based data valuation framework that employs meta-learning to automatically score and filter low-quality training samp…
 tags:
-  - NeurIPS 2025
-  - Self-Supervised Learning
-  - Data curation
-  - meta-learning
-  - meta-gradient
-  - data quality assessment
-  - pre-training efficiency
+  - "NeurIPS 2025"
+  - "Self-Supervised Learning"
+  - "Data curation"
+  - "meta-learning"
+  - "meta-gradient"
+  - "data quality assessment"
+  - "pre-training efficiency"
 date: 2026-05-08
 content_hash: 1c63016d036aa47e
 ---

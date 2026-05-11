@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Saddle-to-Saddle Dynamics Explains A Simplicity Bias Across Neural Network Architectures
 description: >-
-  [ICLR 2026][Optimization][simplicity bias] This paper proposes a unified theoretical framework that explains the pervasive simplicity bias observed across multiple neural network architectures (fully connected, convolutional, and attention-based) through saddle-to-saddle learning dynamics — the phenomenon whereby gradient descent tends to learn simple solutions first before progressively learning more complex ones.
+  [ICLR 2026][Optimization][simplicity bias] This paper proposes a unified theoretical framework that explains the pervasive simplicity bias observed across multiple neural network architectures (fully connected…
 tags:
-  - ICLR 2026
-  - Optimization
-  - simplicity bias
-  - saddle-to-saddle dynamics
-  - neural network learning dynamics
-  - invariant manifolds
-  - gradient descent
+  - "ICLR 2026"
+  - "Optimization"
+  - "simplicity bias"
+  - "saddle-to-saddle dynamics"
+  - "neural network learning dynamics"
+  - "invariant manifolds"
+  - "gradient descent"
 date: 2026-05-08
 content_hash: 6df6015af74dec93
 ---

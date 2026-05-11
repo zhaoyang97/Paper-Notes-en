@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Echoes of Humanity: Exploring the Perceived Humanness of AI Music
 description: >-
-  [NeurIPS 2025][Audio & Speech][AI music perception] Through a randomized controlled crossover trial (RCCT) and mixed-methods content analysis, this paper systematically investigates listeners' ability to distinguish AI-generated music (AIM) from human-created music. Results show that listeners perform at chance level under random pairing (accuracy ≈ random guessing), but accuracy rises significantly to 66% under similar pairing. Vocal, sound, and technical cues are identified as the key factors enabling successful discrimination.
+  [NeurIPS 2025][Audio & Speech][AI music perception] Through a randomized controlled crossover trial (RCCT) and mixed-methods content analysis…
 tags:
-  - NeurIPS 2025
+  - "NeurIPS 2025"
   - "Audio & Speech"
-  - AI music perception
-  - Turing test
-  - randomized controlled crossover trial
-  - mixed-methods content analysis
-  - human perception
+  - "AI music perception"
+  - "Turing test"
+  - "randomized controlled crossover trial"
+  - "mixed-methods content analysis"
+  - "human perception"
 date: 2026-05-08
 content_hash: 217dbdca3fc8c1c3
 ---

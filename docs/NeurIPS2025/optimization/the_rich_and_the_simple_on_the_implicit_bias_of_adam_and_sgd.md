@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The Rich and the Simple: On the Implicit Bias of Adam and SGD
 description: >-
-  [NeurIPS 2025][Optimization][Implicit bias] This paper provides theoretical and empirical evidence that neural networks trained with SGD tend to learn simple linear features (simplicity bias), whereas Adam produces richer nonlinear features, yielding predictors closer to the Bayes-optimal classifier and better generalization under distribution shift.
+  [NeurIPS 2025][Optimization][Implicit bias] This paper provides theoretical and empirical evidence that neural networks trained with SGD tend to learn simple linear features (simplicity bias)…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Implicit bias
-  - Adam
-  - SGD
-  - simplicity bias
-  - feature learning
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Implicit bias"
+  - "Adam"
+  - "SGD"
+  - "simplicity bias"
+  - "feature learning"
 date: 2026-05-08
 content_hash: cfa4365504912054
 ---

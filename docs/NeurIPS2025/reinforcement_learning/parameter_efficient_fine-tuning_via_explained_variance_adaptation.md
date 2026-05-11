@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Parameter Efficient Fine-tuning via Explained Variance Adaptation
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Parameter-efficient fine-tuning] This paper proposes Explained Variance Adaptation (EVA), which initializes LoRA matrices via incremental SVD on activation vectors from downstream data, provably maximizing the expected gradient signal. Combined with an adaptive rank allocation mechanism, EVA establishes a new accuracy–efficiency Pareto frontier across language generation/understanding, image classification, and reinforcement learning.
+  [NeurIPS 2025][Reinforcement Learning][Parameter-efficient fine-tuning] This paper proposes Explained Variance Adaptation (EVA), which initializes LoRA matrices via incremental SVD on activation vectors from downstream d…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Parameter-efficient fine-tuning
-  - LoRA
-  - singular value decomposition
-  - adaptive rank allocation
-  - variance-optimal initialization
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Parameter-efficient fine-tuning"
+  - "LoRA"
+  - "singular value decomposition"
+  - "adaptive rank allocation"
+  - "variance-optimal initialization"
 date: 2026-05-08
 content_hash: c73bc0b62016a6f7
 ---

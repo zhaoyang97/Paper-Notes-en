@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] The Counting Power of Transformers
 description: >-
-  [ICLR 2026][Transformer expressivity] This paper proves that Transformers can express not only (semi-)linear counting properties but all **semi-algebraic counting properties** (i.e., Boolean combinations of multivariate polynomial inequalities), generalizing all prior results on the counting power of Transformers and deriving novel undecidability conclusions.
+  [ICLR 2026][Transformer expressivity] This paper proves that Transformers can express not only (semi-)linear counting properties but all **semi-algebraic counting properties** (i.e.…
 tags:
-  - ICLR 2026
-  - Transformer expressivity
-  - counting properties
-  - semi-algebraic properties
-  - undecidability
-  - formal languages
+  - "ICLR 2026"
+  - "Transformer expressivity"
+  - "counting properties"
+  - "semi-algebraic properties"
+  - "undecidability"
+  - "formal languages"
 date: 2026-05-08
 content_hash: 23566fb652774979
 ---

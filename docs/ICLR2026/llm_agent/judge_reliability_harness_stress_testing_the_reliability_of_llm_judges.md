@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Judge Reliability Harness: Stress Testing the Reliability of LLM Judges
 description: >-
-  [ICLR 2026][LLM Agent][LLM-as-judge] This paper proposes Judge Reliability Harness (JRH), an open-source framework that systematically evaluates the reliability of LLM judges through synthetic tests including label flip, format invariance, semantic paraphrase, verbosity bias, and stochastic stability. The framework stress-tests four state-of-the-art judges across four benchmarks (FORTRESS, HarmBench, Persuade, AgentHarm), finding that no single judge is reliable across all scenarios.
+  [ICLR 2026][LLM Agent][LLM-as-judge] This paper proposes Judge Reliability Harness (JRH), an open-source framework that systematically evaluates the reliability of LLM judges through synthetic tests including label flip…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - LLM-as-judge
-  - reliability testing
-  - perturbation robustness
-  - agentic evaluation
-  - benchmark
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "LLM-as-judge"
+  - "reliability testing"
+  - "perturbation robustness"
+  - "agentic evaluation"
+  - "benchmark"
 date: 2026-05-08
 content_hash: db166ea5a9068df9
 ---

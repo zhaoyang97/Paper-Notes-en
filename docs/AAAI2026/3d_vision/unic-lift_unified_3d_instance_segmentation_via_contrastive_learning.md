@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UniC-Lift: Unified 3D Instance Segmentation via Contrastive Learning
 description: >-
-  [AAAI 2026][3D Vision][3D instance segmentation] This paper proposes UniC-Lift, a unified single-stage 3D instance segmentation framework that learns optimizable vector embeddings on 3DGS primitives via contrastive loss and triplet loss, and directly decodes consistent 3D segmentation labels through a simple Embedding-to-Label procedure — eliminating post-processing clustering steps such as HDBSCAN and reducing training time from 15+ hours to under 40 minutes.
+  [AAAI 2026][3D Vision][3D instance segmentation] This paper proposes UniC-Lift, a unified single-stage 3D instance segmentation framework that learns optimizable vector embeddings on 3DGS primitives via contrastive loss…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - 3D instance segmentation
-  - 3D Gaussian splatting
-  - contrastive learning
-  - multi-view consistency
-  - embedding-to-label
+  - "AAAI 2026"
+  - "3D Vision"
+  - "3D instance segmentation"
+  - "3D Gaussian splatting"
+  - "contrastive learning"
+  - "multi-view consistency"
+  - "embedding-to-label"
 date: 2026-05-08
 content_hash: b2bff2a9a5c1fd56
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PropVG: End-to-End Proposal-Driven Visual Grounding with Multi-Granularity Discrimination
 description: >-
-  [ICCV 2025][Social Computing][visual grounding] This paper proposes PropVG, the first end-to-end proposal-based visual grounding framework that eliminates the need for pretrained detectors. It decomposes visual grounding into two stages — foreground proposal generation and contrastive learning-based referring scoring — and introduces a Multi-granularity Target Discrimination (MTD) module that integrates object-level and semantic-level information to determine target existence. PropVG achieves state-of-the-art performance on 10 datasets while running 4× faster than traditional proposal-based methods.
+  [ICCV 2025][Social Computing][visual grounding] This paper proposes PropVG, the first end-to-end proposal-based visual grounding framework that eliminates the need for pretrained detectors. It decomposes visual grounding…
 tags:
-  - ICCV 2025
-  - Social Computing
-  - visual grounding
-  - proposal-based
-  - contrastive learning
-  - referring expression
-  - target existence discrimination
+  - "ICCV 2025"
+  - "Social Computing"
+  - "visual grounding"
+  - "proposal-based"
+  - "contrastive learning"
+  - "referring expression"
+  - "target existence discrimination"
 date: 2026-05-08
 content_hash: 329141fe762f918a
 ---

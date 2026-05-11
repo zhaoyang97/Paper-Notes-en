@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Structure-Aware Spectral Sparsification via Uniform Edge Sampling
 description: >-
-  [NEURIPS2025][spectral sparsification] This paper proves that on graphs with sufficiently strong clustering structure (structure ratio $\Upsilon(k)$ large enough), **uniform edge sampling** suffices to preserve the spectral subspace structure required for spectral clustering, without expensive effective resistance precomputation — providing the first provable guarantee that uniform sampling preserves such structure.
+  [NEURIPS2025][spectral sparsification] This paper proves that on graphs with sufficiently strong clustering structure (structure ratio $\Upsilon(k)$ large enough)…
 tags:
-  - NEURIPS2025
-  - spectral sparsification
-  - uniform sampling
-  - spectral clustering
-  - effective resistance
-  - graph sparsification
+  - "NEURIPS2025"
+  - "spectral sparsification"
+  - "uniform sampling"
+  - "spectral clustering"
+  - "effective resistance"
+  - "graph sparsification"
 date: 2026-05-08
 content_hash: 47ddb76b81494ee1
 ---

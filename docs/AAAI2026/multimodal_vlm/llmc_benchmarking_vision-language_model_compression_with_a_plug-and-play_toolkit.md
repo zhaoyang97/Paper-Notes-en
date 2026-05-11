@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LLMC+: Benchmarking Vision-Language Model Compression with a Plug-and-play Toolkit
 description: >-
-  [AAAI 2026][Multimodal VLM][Vision-language models] This paper presents LLMC+, a comprehensive benchmark and plug-and-play toolkit for vision-language model (VLM) compression, supporting 20+ compression algorithms across 5 representative VLM families. It systematically investigates the independent and joint effects of token-level and model-level compression, revealing three key findings.
+  [AAAI 2026][Multimodal VLM][Vision-language models] This paper presents LLMC+, a comprehensive benchmark and plug-and-play toolkit for vision-language model (VLM) compression…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Vision-language models
-  - model compression
-  - token pruning
-  - quantization
-  - benchmarking
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Vision-language models"
+  - "model compression"
+  - "token pruning"
+  - "quantization"
+  - "benchmarking"
 date: 2026-05-08
 content_hash: e58d82f6fe8efbc8
 ---

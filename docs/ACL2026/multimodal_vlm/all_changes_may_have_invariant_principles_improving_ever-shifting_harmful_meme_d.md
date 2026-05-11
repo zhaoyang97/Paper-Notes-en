@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] All Changes May Have Invariant Principles: Improving Ever-Shifting Harmful Meme Detection via Design Concept Reproduction
 description: >-
-  [ACL 2026][Multimodal VLM][harmful meme detection] This paper proposes RepMD, a method that constructs a Design Concept Graph (DCG)—inspired by attack trees to model the steps and logic behind malicious meme creation—to guide MLLMs in detecting ever-shifting harmful memes, achieving 81.1% accuracy on GOAT-Bench.
+  [ACL 2026][Multimodal VLM][harmful meme detection] This paper proposes RepMD, a method that constructs a Design Concept Graph (DCG)—inspired by attack trees to model the steps and logic behind malicious meme creation—to…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - harmful meme detection
-  - design concept graph
-  - attack tree
-  - MLLM reasoning guidance
-  - category drift
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "harmful meme detection"
+  - "design concept graph"
+  - "attack tree"
+  - "MLLM reasoning guidance"
+  - "category drift"
 date: 2026-05-08
 content_hash: b516929e18e86e5d
 ---

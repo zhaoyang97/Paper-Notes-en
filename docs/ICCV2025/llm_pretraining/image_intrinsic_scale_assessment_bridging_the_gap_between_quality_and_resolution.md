@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Image Intrinsic Scale Assessment: Bridging the Gap Between Quality and Resolution
 description: >-
-  [ICCV 2025][LLM Pretraining][Image Quality Assessment] This paper introduces Image Intrinsic Scale (IIS)—the maximum scaling factor at which an image exhibits its highest perceptual quality—and proposes the IISA task, constructs a dataset of 785 images with expert annotations, and presents a weak-label training strategy (WIISA) that consistently improves IIS prediction across multiple NR-IQA methods.
+  [ICCV 2025][LLM Pretraining][Image Quality Assessment] This paper introduces Image Intrinsic Scale (IIS)—the maximum scaling factor at which an image exhibits its highest perceptual quality—and proposes the IISA task…
 tags:
-  - ICCV 2025
-  - LLM Pretraining
-  - Image Quality Assessment
-  - Intrinsic Scale
-  - Weak Labels
-  - Multi-Scale Perception
-  - Subjective Annotation
+  - "ICCV 2025"
+  - "LLM Pretraining"
+  - "Image Quality Assessment"
+  - "Intrinsic Scale"
+  - "Weak Labels"
+  - "Multi-Scale Perception"
+  - "Subjective Annotation"
 date: 2026-05-08
 content_hash: 3b32b57e44ef7180
 ---

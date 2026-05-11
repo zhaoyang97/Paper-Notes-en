@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Enhancing Sample Selection Against Label Noise by Cutting Mislabeled Easy Examples
 description: >-
-  [NeurIPS 2025][LLM Safety][noisy labels] This paper identifies and defines Mislabeled Easy Examples (MEEs)—samples whose incorrect labels are confidently learned by the model in the early stages of training—and demonstrates that these samples cause the greatest harm to generalization. An Early Cutting method is proposed to filter MEEs by recalibrating the early-stage confident subset using the model's later-stage state.
+  [NeurIPS 2025][LLM Safety][noisy labels] This paper identifies and defines Mislabeled Easy Examples (MEEs)—samples whose incorrect labels are confidently learned by the model in the early stages of training—and demonstra…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - noisy labels
-  - sample selection
-  - mislabeled easy examples
-  - Early Cutting
-  - robust training
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "noisy labels"
+  - "sample selection"
+  - "mislabeled easy examples"
+  - "Early Cutting"
+  - "robust training"
 date: 2026-05-08
 content_hash: eef029b38517c7dc
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AlphaSteer: Learning Refusal Steering with Principled Null-Space Constraint
 description: >-
-  [ICLR 2026][LLM Alignment][activation steering] This paper proposes AlphaSteer, which learns a null-space-constrained transformation matrix to dynamically construct steering vectors that produce near-zero vectors for benign inputs (preserving utility) while reconstructing the refusal direction vector for malicious inputs (enhancing safety), providing theoretical guarantees for the decoupling of safety and utility.
+  [ICLR 2026][LLM Alignment][activation steering] This paper proposes AlphaSteer, which learns a null-space-constrained transformation matrix to dynamically construct steering vectors that produce near-zero vectors for ben…
 tags:
-  - ICLR 2026
-  - LLM Alignment
-  - activation steering
-  - refusal direction
-  - null-space projection
-  - jailbreak defense
-  - safety-utility trade-off
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "activation steering"
+  - "refusal direction"
+  - "null-space projection"
+  - "jailbreak defense"
+  - "safety-utility trade-off"
 date: 2026-05-08
 content_hash: baadd38968c4a223
 ---

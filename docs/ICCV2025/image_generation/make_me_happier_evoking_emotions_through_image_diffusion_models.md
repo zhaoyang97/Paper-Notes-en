@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Make Me Happier: Evoking Emotions Through Image Diffusion Models
 description: >-
-  [ICCV 2025][Image Generation][Affective Image Editing] EmoEditor presents the first systematic **emotion-driven image generation** framework, employing a dual-branch diffusion model (global emotion conditioning + local semantic features) to generate target-emotion images from only a source image and a target emotion label — without manual text instructions or reference images. The work also introduces the EmoPair dataset containing 340K emotion-annotated image pairs.
+  [ICCV 2025][Image Generation][Affective Image Editing] EmoEditor presents the first systematic **emotion-driven image generation** framework…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Affective Image Editing
-  - Diffusion Models
-  - Sentiment Analysis
-  - Dual-Branch Architecture
-  - Iterative Emotion Inference
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Affective Image Editing"
+  - "Diffusion Models"
+  - "Sentiment Analysis"
+  - "Dual-Branch Architecture"
+  - "Iterative Emotion Inference"
 date: 2026-05-08
 content_hash: 55e5c41b32552858
 ---

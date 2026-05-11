@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DynaGuide: Steering Diffusion Policies with Active Dynamic Guidance
 description: >-
-  [NeurIPS 2025][Image Restoration][Diffusion Policy] This paper proposes DynaGuide, which applies classifier guidance to a frozen pretrained diffusion policy at inference time via an external latent dynamics model, steering the robot toward arbitrary positive/negative goals without modifying policy weights. It achieves an average success rate of 70% on CALVIN simulation and 80% on a real robot.
+  [NeurIPS 2025][Image Restoration][Diffusion Policy] This paper proposes DynaGuide, which applies classifier guidance to a frozen pretrained diffusion policy at inference time via an external latent dynamics model…
 tags:
-  - NeurIPS 2025
-  - Image Restoration
-  - Diffusion Policy
-  - Classifier Guidance
-  - Latent Dynamics Model
-  - DinoV2
-  - Robot Manipulation
+  - "NeurIPS 2025"
+  - "Image Restoration"
+  - "Diffusion Policy"
+  - "Classifier Guidance"
+  - "Latent Dynamics Model"
+  - "DinoV2"
+  - "Robot Manipulation"
 date: 2026-05-08
 content_hash: c9152560c4bce1b6
 ---

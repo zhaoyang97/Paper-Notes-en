@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Why Supervised Fine-Tuning Fails to Learn: A Systematic Study of Incomplete Learning in Large Language Models
 description: >-
-  [ACL 2026][LLM Safety][incomplete learning] This paper presents the first systematic study of the *Incomplete Learning Phenomenon* (ILP) in SFT — i.e., the model's inability to correctly reproduce a subset of training samples even after convergence. Five recurring causes are identified (knowledge absence, knowledge conflict, intra-dataset contradiction, left-side forgetting, and insufficient optimization), along with a diagnostic framework and targeted mitigation strategies.
+  [ACL 2026][LLM Safety][incomplete learning] This paper presents the first systematic study of the *Incomplete Learning Phenomenon* (ILP) in SFT — i.e.…
 tags:
-  - ACL 2026
-  - LLM Safety
-  - incomplete learning
-  - SFT diagnostics
-  - knowledge conflict
-  - forgetting
-  - fine-tuning failure modes
+  - "ACL 2026"
+  - "LLM Safety"
+  - "incomplete learning"
+  - "SFT diagnostics"
+  - "knowledge conflict"
+  - "forgetting"
+  - "fine-tuning failure modes"
 date: 2026-05-08
 content_hash: 6e0be553da6bfb76
 ---

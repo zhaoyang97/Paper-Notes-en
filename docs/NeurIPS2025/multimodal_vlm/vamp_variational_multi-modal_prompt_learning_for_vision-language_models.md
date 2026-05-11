@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VaMP: Variational Multi-Modal Prompt Learning for Vision-Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Prompt Learning] This paper proposes VaMP, a variational multi-modal prompt learning framework that models text-side prompts as latent variables and performs instance-level uncertainty modeling via variational inference. Combined with a class-aware prior for regularizing the latent space, VaMP significantly improves CLIP's downstream adaptation under few-shot and domain generalization settings.
+  [NeurIPS 2025][Multimodal VLM][Prompt Learning] This paper proposes VaMP, a variational multi-modal prompt learning framework that models text-side prompts as latent variables and performs instance-level uncertainty mode…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Prompt Learning
-  - Variational Inference
-  - CLIP
-  - Few-Shot Learning
-  - Domain Generalization
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Prompt Learning"
+  - "Variational Inference"
+  - "CLIP"
+  - "Few-Shot Learning"
+  - "Domain Generalization"
 date: 2026-05-08
 content_hash: 76c0fcfca82ba82c
 ---

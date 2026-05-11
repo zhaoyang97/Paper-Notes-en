@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] ShortageSim: Simulating Drug Shortages under Information Asymmetry
 description: >-
-  [AAAI 2026][drug shortage] This paper proposes ShortageSim, the first **LLM-based multi-agent** simulation framework for drug shortages. It models strategic decision-making among FDA regulators, manufacturers, and buyers under information asymmetry, achieving an 84% improvement in predicting resolution lag time on historical shortage data, and provides a controlled testbed for evaluating regulatory strategies.
+  [AAAI 2026][drug shortage] This paper proposes ShortageSim, the first **LLM-based multi-agent** simulation framework for drug shortages. It models strategic decision-making among FDA regulators, manufacturers…
 tags:
-  - AAAI 2026
-  - drug shortage
-  - multi-agent simulation
-  - large language models
-  - information asymmetry
-  - regulatory policy
+  - "AAAI 2026"
+  - "drug shortage"
+  - "multi-agent simulation"
+  - "large language models"
+  - "information asymmetry"
+  - "regulatory policy"
 date: 2026-05-08
 content_hash: 3cf819cc5a9618a6
 ---

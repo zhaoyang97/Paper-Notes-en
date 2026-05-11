@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Free-Form Motion Control: Controlling the 6D Poses of Camera and Objects in Video Generation
 description: >-
-  [ICCV 2025][Video Generation] This paper proposes SynFMC, a synthetic dataset (the first video dataset with complete 6D pose annotations for both camera and objects) and the FMC method, enabling independent or simultaneous 6D pose control of camera and objects in text-to-video generation. The approach produces high-fidelity videos across diverse scenarios and is compatible with multiple personalized T2I models.
+  [ICCV 2025][Video Generation][6D pose control] This paper proposes SynFMC, a synthetic dataset (the first video dataset with complete 6D pose annotations for both camera and objects) and the FMC method…
 tags:
-  - ICCV 2025
-  - Video Generation
-  - 6D pose control
-  - camera motion
-  - object motion
-  - synthetic dataset
-  - text-to-video
+  - "ICCV 2025"
+  - "Video Generation"
+  - "6D pose control"
+  - "camera motion"
+  - "object motion"
+  - "synthetic dataset"
+  - "text-to-video"
 date: 2026-05-08
 content_hash: 988939e967de703b
 ---

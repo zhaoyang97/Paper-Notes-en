@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AgentStealth: Reinforcing Large Language Model for Anonymizing User-generated Text
 description: >-
-  [NeurIPS 2025][LLM Safety][text anonymization] This paper proposes the AgentStealth framework, which trains a small language model (SLM) through a three-stage pipeline comprising an adversarial anonymization workflow, supervised fine-tuning (SFT), and online reinforcement learning, achieving effective anonymization of user-generated content while preserving text utility — yielding a 12.3% improvement in anonymization performance and 6.8% improvement in utility.
+  [NeurIPS 2025][LLM Safety][text anonymization] This paper proposes the AgentStealth framework, which trains a small language model (SLM) through a three-stage pipeline comprising an adversarial anonymization workflow…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - text anonymization
-  - privacy protection
-  - reinforcement learning
-  - adversarial training
-  - small language models
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "text anonymization"
+  - "privacy protection"
+  - "reinforcement learning"
+  - "adversarial training"
+  - "small language models"
 date: 2026-05-08
 content_hash: 281aad29219f23eb
 ---

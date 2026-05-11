@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Continual Learning for fMRI-Based Brain Disorder Diagnosis via Functional Connectivity Matrices Generative Replay
 description: >-
-  [CVPR 2026][Medical Imaging][continual learning] This paper proposes FORGE, the first continual learning framework specifically designed for cross-site fMRI-based brain disorder diagnosis. FORGE generates realistic functional connectivity matrices via a structure-aware VAE for privacy-preserving generative replay, and combines dual-level knowledge distillation with a hierarchical contextual bandit sampling strategy to effectively mitigate catastrophic forgetting.
+  [CVPR 2026][Medical Imaging][continual learning] This paper proposes FORGE, the first continual learning framework specifically designed for cross-site fMRI-based brain disorder diagnosis. FORGE generates realistic funct…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - continual learning
-  - fMRI
-  - functional connectivity
-  - generative replay
-  - knowledge distillation
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "continual learning"
+  - "fMRI"
+  - "functional connectivity"
+  - "generative replay"
+  - "knowledge distillation"
 date: 2026-05-08
 content_hash: 040d29fdbbe5111a
 ---

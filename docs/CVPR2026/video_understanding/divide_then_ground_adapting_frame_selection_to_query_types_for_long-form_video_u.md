@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DIvide, then Ground: Adapting Frame Selection to Query Types for Long-Form Video Understanding
 description: >-
-  [CVPR 2026][Video Understanding][long-form video understanding] This paper proposes DIG, a training-free frame selection framework that classifies queries into global and localization types. For global queries, uniform sampling is applied directly; for localization queries, a dedicated pipeline consisting of content-adaptive frame selection (CAFS), LMM-based reward scoring, and video refinement is employed. DIG consistently outperforms existing methods on three long-form video understanding benchmarks.
+  [CVPR 2026][Video Understanding][long-form video understanding] This paper proposes DIG, a training-free frame selection framework that classifies queries into global and localization types. For global queries…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - long-form video understanding
-  - frame selection
-  - query classification
-  - content-adaptive sampling
-  - large multimodal models
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "long-form video understanding"
+  - "frame selection"
+  - "query classification"
+  - "content-adaptive sampling"
+  - "large multimodal models"
 date: 2026-05-08
 content_hash: 9d068064cda1600c
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ProxyFL: A Proxy-Guided Framework for Federated Semi-Supervised Learning
 description: >-
-  [CVPR 2026][AI Safety][Federated Learning] ProxyFL is proposed as a framework that leverages classifier weights as unified proxies to simultaneously mitigate external heterogeneity (cross-client distribution discrepancy) and internal heterogeneity (distribution mismatch between labeled and unlabeled data) in federated semi-supervised learning, achieving substantial improvements over existing FSSL methods across multiple benchmarks.
+  [CVPR 2026][AI Safety][Federated Learning] ProxyFL is proposed as a framework that leverages classifier weights as unified proxies to simultaneously mitigate external heterogeneity (cross-client distribution discrepancy)…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Federated Learning
-  - Semi-Supervised Learning
-  - Data Heterogeneity
-  - Proxy Learning
-  - Pseudo-Labels
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Federated Learning"
+  - "Semi-Supervised Learning"
+  - "Data Heterogeneity"
+  - "Proxy Learning"
+  - "Pseudo-Labels"
 date: 2026-05-08
 content_hash: d413c33e52e81378
 ---

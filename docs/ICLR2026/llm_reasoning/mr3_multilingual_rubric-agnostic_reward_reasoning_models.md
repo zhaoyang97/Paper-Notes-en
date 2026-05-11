@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] mR3: Multilingual Rubric-Agnostic Reward Reasoning Models
 description: >-
-  [ICLR 2026][LLM Reasoning][multilingual reward models] This paper introduces mR3, a family of multilingual rubric-agnostic reward reasoning models covering 72 languages. Through systematic data construction (GPT-OSS-120B distillation with difficulty filtering) and curriculum learning, the 14B model surpasses the 120B teacher model and all comparable baselines on multilingual evaluation benchmarks, while supporting point-wise, pair-wise, and binary evaluation paradigms.
+  [ICLR 2026][LLM Reasoning][multilingual reward models] This paper introduces mR3, a family of multilingual rubric-agnostic reward reasoning models covering 72 languages. Through systematic data construction (GPT-OSS-120B…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - multilingual reward models
-  - reasoning-based evaluation
-  - curriculum learning
-  - rubric-based assessment
-  - knowledge distillation
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "multilingual reward models"
+  - "reasoning-based evaluation"
+  - "curriculum learning"
+  - "rubric-based assessment"
+  - "knowledge distillation"
 date: 2026-05-08
 content_hash: 932786bc15055935
 ---

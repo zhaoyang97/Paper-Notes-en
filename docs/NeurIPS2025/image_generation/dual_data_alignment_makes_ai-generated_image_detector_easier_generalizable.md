@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Dual Data Alignment Makes AI-Generated Image Detector Easier Generalizable
 description: >-
-  [NeurIPS 2025][Image Generation][AI-generated image detection] This paper proposes Dual Data Alignment (DDA), which generates synthetic training images via pixel-domain and frequency-domain dual alignment to eliminate spurious correlations caused by dataset bias. By forcing the detector to learn only forgery-relevant features, DDA achieves an average accuracy of 90.7% across 11 benchmarks, substantially outperforming existing methods.
+  [NeurIPS 2025][Image Generation][AI-generated image detection] This paper proposes Dual Data Alignment (DDA), which generates synthetic training images via pixel-domain and frequency-domain dual alignment to eliminate sp…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - AI-generated image detection
-  - data alignment
-  - frequency-domain alignment
-  - generalizability
-  - VAE reconstruction
-  - dataset bias
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "AI-generated image detection"
+  - "data alignment"
+  - "frequency-domain alignment"
+  - "generalizability"
+  - "VAE reconstruction"
+  - "dataset bias"
 date: 2026-05-08
 content_hash: 63610dc21072fcce
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MARVO: Marine-Adaptive Radiance-aware Visual Odometry
 description: >-
-  [CVPR 2026][Model Compression][underwater visual odometry] MARVO is an underwater visual odometry framework that embeds a Physics-Aware Radiance Adapter (PARA) into the LoFTR feature matcher to compensate for wavelength-dependent attenuation, integrates GTSAM multi-sensor factor graph fusion, and employs reinforcement learning-based pose graph optimization (RL-PGO), achieving robust localization in underwater scenes.
+  [CVPR 2026][Model Compression][underwater visual odometry] MARVO is an underwater visual odometry framework that embeds a Physics-Aware Radiance Adapter (PARA) into the LoFTR feature matcher to compensate for wavelength-…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - underwater visual odometry
-  - physics-aware feature matching
-  - factor graph optimization
-  - reinforcement learning pose graph optimization
-  - multi-sensor fusion
+  - "CVPR 2026"
+  - "Model Compression"
+  - "underwater visual odometry"
+  - "physics-aware feature matching"
+  - "factor graph optimization"
+  - "reinforcement learning pose graph optimization"
+  - "multi-sensor fusion"
 date: 2026-05-08
 content_hash: 3de92974fbebb23a
 ---

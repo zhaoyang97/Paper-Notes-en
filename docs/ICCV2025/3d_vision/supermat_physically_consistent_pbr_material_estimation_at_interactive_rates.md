@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] SuperMat: Physically Consistent PBR Material Estimation at Interactive Rates
 description: >-
-  [3D Vision] This paper proposes SuperMat, a single-step inference framework for PBR material decomposition. Through structured expert branches and scheduler correction, it enables end-to-end training and introduces a re-render loss to enforce physical consistency, accelerating inference from seconds to milliseconds.
+  [3D Vision] This paper proposes SuperMat, a single-step inference framework for PBR material decomposition. Through structured expert branches and scheduler correction…
 tags:
-  - 3D Vision
+  - "3D Vision"
 date: 2026-05-08
 content_hash: f728435e1065ec03
 ---

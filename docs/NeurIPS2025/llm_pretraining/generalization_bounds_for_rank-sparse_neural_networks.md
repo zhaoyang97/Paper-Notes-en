@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Generalization Bounds for Rank-sparse Neural Networks
 description: >-
-  [NeurIPS 2025][LLM Pretraining][generalization bounds] This paper establishes generalization bounds that exploit the approximate low-rank structure of neural network weight matrices. When the Schatten $p$ quasi-norm is small, the sample complexity reduces to $\widetilde{O}(WrL^2)$, where $W$, $L$, and $r$ denote the width, depth, and rank of the weight matrices, respectively.
+  [NeurIPS 2025][LLM Pretraining][generalization bounds] This paper establishes generalization bounds that exploit the approximate low-rank structure of neural network weight matrices. When the Schatten $p$ quasi-norm is s…
 tags:
-  - NeurIPS 2025
-  - LLM Pretraining
-  - generalization bounds
-  - low-rank structure
-  - Schatten norm
-  - bottleneck rank
-  - sample complexity
+  - "NeurIPS 2025"
+  - "LLM Pretraining"
+  - "generalization bounds"
+  - "low-rank structure"
+  - "Schatten norm"
+  - "bottleneck rank"
+  - "sample complexity"
 date: 2026-05-08
 content_hash: 97fba39ebabfc333
 ---

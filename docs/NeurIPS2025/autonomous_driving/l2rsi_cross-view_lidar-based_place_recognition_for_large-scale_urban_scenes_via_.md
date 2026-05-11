@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] L2RSI: Cross-View LiDAR-Based Place Recognition for Large-Scale Urban Scenes via Remote Sensing Imagery
 description: >-
-  [NeurIPS 2025][Autonomous Driving][Place Recognition] This paper proposes L2RSI, the first framework for LiDAR-based place recognition in ultra-large-scale urban scenes (100 km²) leveraging high-resolution remote sensing imagery. It aligns LiDAR BEV representations with remote sensing semantic spaces via semantic contrastive learning, and introduces Spatio-Temporal Particle Estimation (STPE) to aggregate spatio-temporal information from consecutive queries, achieving 83.27% Top-1 accuracy within a 100 km² retrieval range.
+  [NeurIPS 2025][Autonomous Driving][Place Recognition] This paper proposes L2RSI, the first framework for LiDAR-based place recognition in ultra-large-scale urban scenes (100 km²) leveraging high-resolution remote sensing…
 tags:
-  - NeurIPS 2025
-  - Autonomous Driving
-  - Place Recognition
-  - LiDAR
-  - Remote Sensing Imagery
-  - Cross-View Retrieval
-  - Particle Estimation
+  - "NeurIPS 2025"
+  - "Autonomous Driving"
+  - "Place Recognition"
+  - "LiDAR"
+  - "Remote Sensing Imagery"
+  - "Cross-View Retrieval"
+  - "Particle Estimation"
 date: 2026-05-08
 content_hash: 5f42e91bb8137427
 ---

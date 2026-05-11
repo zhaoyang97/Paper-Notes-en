@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Integrating Biological Knowledge for Robust Microscopy Image Profiling on De Novo Cell Lines
 description: >-
-  [ICCV 2025][Medical Imaging][Microscopy image representation learning] This paper proposes integrating external biological knowledge — protein–protein interaction graphs and transcriptomic features from single-cell foundation models — into microscopy image pretraining, explicitly decoupling perturbation-specific and cell-line-specific representations to improve generalization of perturbation screening on unseen (de novo) cell lines.
+  [ICCV 2025][Medical Imaging][Microscopy image representation learning] This paper proposes integrating external biological knowledge — protein–protein interaction graphs and transcriptomic features from single-cell found…
 tags:
-  - ICCV 2025
-  - Medical Imaging
-  - Microscopy image representation learning
-  - perturbation screening
-  - biological knowledge graph
-  - single-cell foundation model
-  - de novo cell lines
+  - "ICCV 2025"
+  - "Medical Imaging"
+  - "Microscopy image representation learning"
+  - "perturbation screening"
+  - "biological knowledge graph"
+  - "single-cell foundation model"
+  - "de novo cell lines"
 date: 2026-05-08
 content_hash: 46949c0593884534
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Watch and Learn: Learning to Use Computers from Online Videos
 description: >-
-  [CVPR2026][LLM Pretraining][computer-using agent] This paper proposes Watch & Learn (W&L), a framework that leverages an Inverse Dynamics Model (IDM) to automatically convert human computer-use tutorial videos from the internet into executable UI trajectory data. The system generates 53K+ high-quality trajectories that serve as either ICL demonstrations or SFT training data, significantly improving CUA performance across multiple models and platforms.
+  [CVPR2026][LLM Pretraining][computer-using agent] This paper proposes Watch & Learn (W&L), a framework that leverages an Inverse Dynamics Model (IDM) to automatically convert human computer-use tutorial videos from the i…
 tags:
-  - CVPR2026
-  - LLM Pretraining
-  - computer-using agent
-  - inverse dynamics model
-  - video-to-trajectory
-  - in-context learning
-  - supervised fine-tuning
-  - UI grounding
+  - "CVPR2026"
+  - "LLM Pretraining"
+  - "computer-using agent"
+  - "inverse dynamics model"
+  - "video-to-trajectory"
+  - "in-context learning"
+  - "supervised fine-tuning"
+  - "UI grounding"
 date: 2026-05-08
 content_hash: e70440f18b3ddf67
 ---

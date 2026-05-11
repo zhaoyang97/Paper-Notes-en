@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Free-MoRef: Instantly Multiplexing Context Perception Capabilities of Video-MLLMs within Single Inference
 description: >-
-  [ICCV 2025][Multimodal VLM][Long Video Understanding] This paper proposes Free-MoRef, a training-free method inspired by Mixture-of-Experts (MoE) that partitions long video tokens into multiple short sequences as multi-references, queries them in parallel via the MoRef attention mechanism, and fuses unified activation values. The approach enables efficient and comprehensive understanding of 2× to 8× longer frame inputs on a single A100 GPU, surpassing dedicated long-video models on VideoMME, MLVU, and LongVideoBench.
+  [ICCV 2025][Multimodal VLM][Long Video Understanding] This paper proposes Free-MoRef, a training-free method inspired by Mixture-of-Experts (MoE) that partitions long video tokens into multiple short sequences as multi-r…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Long Video Understanding
-  - Video-MLLM
-  - Training-Free Inference
-  - MoE-Inspired
-  - Attention Mechanism
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Long Video Understanding"
+  - "Video-MLLM"
+  - "Training-Free Inference"
+  - "MoE-Inspired"
+  - "Attention Mechanism"
 date: 2026-05-08
 content_hash: fb8640d23c0748f3
 ---

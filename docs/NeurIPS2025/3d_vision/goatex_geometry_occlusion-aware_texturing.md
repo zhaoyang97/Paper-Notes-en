@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GOATex: Geometry & Occlusion-Aware Texturing
 description: >-
-  [NeurIPS 2025][3D Vision][3D texture generation] GOATex proposes the first occlusion-aware 3D mesh texturing framework. It decomposes meshes into visibility layers ordered from outermost to innermost via a ray-casting-based hit-level mechanism, applies a two-stage visibility control strategy combining normal flipping and residual face clustering, and performs visibility-weighted blending in UV space—achieving high-quality texture generation for both exterior surfaces and occluded interior surfaces.
+  [NeurIPS 2025][3D Vision][3D texture generation] GOATex proposes the first occlusion-aware 3D mesh texturing framework. It decomposes meshes into visibility layers ordered from outermost to innermost via a ray-casting-ba…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - 3D texture generation
-  - occlusion awareness
-  - diffusion models
-  - UV texture blending
-  - multi-layer texturing
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "3D texture generation"
+  - "occlusion awareness"
+  - "diffusion models"
+  - "UV texture blending"
+  - "multi-layer texturing"
 date: 2026-05-08
 content_hash: 736535c7165d888f
 ---

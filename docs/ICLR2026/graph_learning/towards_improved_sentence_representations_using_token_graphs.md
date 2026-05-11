@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Improved Sentence Representations using Token Graphs
 description: >-
-  [ICLR 2026][Graph Learning][Sentence Representation] This paper proposes Glot, a lightweight structure-aware pooling module that constructs a latent similarity graph from token-level hidden states of a frozen LLM, refines them via a GNN, and aggregates them into a sentence representation. Glot achieves competitive performance with fine-tuning-based methods on GLUE/MTEB while requiring 20× fewer parameters and 100× faster training.
+  [ICLR 2026][Graph Learning][Sentence Representation] This paper proposes Glot, a lightweight structure-aware pooling module that constructs a latent similarity graph from token-level hidden states of a frozen LLM…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - Sentence Representation
-  - Graph Neural Networks
-  - Token Graph
-  - Pooling
-  - Frozen LLM
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Sentence Representation"
+  - "Graph Neural Networks"
+  - "Token Graph"
+  - "Pooling"
+  - "Frozen LLM"
 date: 2026-05-08
 content_hash: 655b5f2ff492496d
 ---

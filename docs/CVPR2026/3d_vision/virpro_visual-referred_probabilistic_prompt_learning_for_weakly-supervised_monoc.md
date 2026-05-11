@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VirPro: Visual-referred Probabilistic Prompt Learning for Weakly-Supervised Monocular 3D Detection
 description: >-
-  [CVPR 2026][3D Vision][Weakly-supervised monocular 3D detection] This paper proposes VirPro—an adaptive multimodal pre-training paradigm that provides scene-aware semantic supervision signals for weakly-supervised monocular 3D detection via visually guided probabilistic prompts (Adaptive Prompt Bank + Multi-Gaussian Prompt Modeling). VirPro can be seamlessly integrated into existing WS-M3D frameworks, achieving up to 4.8% AP improvement on KITTI.
+  [CVPR 2026][3D Vision][Weakly-supervised monocular 3D detection] This paper proposes VirPro—an adaptive multimodal pre-training paradigm that provides scene-aware semantic supervision signals for weakly-supervised monocu…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Weakly-supervised monocular 3D detection
-  - probabilistic prompt learning
-  - multimodal pre-training
-  - visual-language alignment
-  - CLIP
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Weakly-supervised monocular 3D detection"
+  - "probabilistic prompt learning"
+  - "multimodal pre-training"
+  - "visual-language alignment"
+  - "CLIP"
 date: 2026-05-08
 content_hash: 6fff74583fcee1b9
 ---

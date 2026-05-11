@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Hallucinate Less by Thinking More: Aspect-Based Causal Abstention for Large Language Models
 description: >-
-  [AAAI 2026][Causal Inference][Selective answering] This paper proposes ABCA (Aspect-Based Causal Abstention), a pre-generation abstention framework that employs dual-agent debate to identify "aspect variables" (e.g., discipline, legal context, temporal frame) for activating distinct knowledge branches within LLMs. It applies the AIPW doubly robust estimator to compute causal effects and uses Centroid Angular Deviation (CAD) to detect knowledge conflicts (Type-1) or knowledge insufficiency (Type-2), achieving 91.4% accuracy on TruthfulQA and 96.4% unanswerable question identification rate—far surpassing the baseline of 44%.
+  [AAAI 2026][Causal Inference][Selective answering] This paper proposes ABCA (Aspect-Based Causal Abstention), a pre-generation abstention framework that employs dual-agent debate to identify "aspect variables" (e.g.…
 tags:
-  - AAAI 2026
-  - Causal Inference
-  - Selective answering
-  - causal abstention
-  - aspect variables
-  - knowledge conflict detection
-  - AIPW estimation
+  - "AAAI 2026"
+  - "Causal Inference"
+  - "Selective answering"
+  - "causal abstention"
+  - "aspect variables"
+  - "knowledge conflict detection"
+  - "AIPW estimation"
 date: 2026-05-08
 content_hash: dc485b6edfaf3bcd
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MMTok: Multimodal Coverage Maximization for Efficient Inference of VLMs
 description: >-
-  [ICLR 2026][Multimodal VLM][vision token selection] This paper proposes MMTok, a multimodal visual token selection framework formulated as a Maximum Coverage Problem. By jointly leveraging text-visual and visual-visual coverage signals, MMTok selects the most informative subset of visual tokens in a training-free manner, significantly outperforming unimodal baselines and even surpassing methods that require fine-tuning.
+  [ICLR 2026][Multimodal VLM][vision token selection] This paper proposes MMTok, a multimodal visual token selection framework formulated as a Maximum Coverage Problem. By jointly leveraging text-visual and visual-visual c…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - vision token selection
-  - coverage maximization
-  - submodular optimization
-  - VLM efficiency
-  - token pruning
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "vision token selection"
+  - "coverage maximization"
+  - "submodular optimization"
+  - "VLM efficiency"
+  - "token pruning"
 date: 2026-05-08
 content_hash: a4dd214e5ee0c0e0
 ---

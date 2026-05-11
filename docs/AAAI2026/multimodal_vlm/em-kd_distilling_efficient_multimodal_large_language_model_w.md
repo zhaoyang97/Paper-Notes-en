@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EM-KD: Distilling Efficient Multimodal Large Language Model with Unbalanced Vision Tokens
 description: >-
-  [AAAI 2026][Multimodal VLM][Knowledge Distillation] This paper proposes EM-KD, a distillation framework that leverages the Hungarian algorithm to address the vision token count imbalance between teacher and student models. By combining Vision Semantic Distillation (VSD) and Vision-Language Affinity Distillation (VLAD), EM-KD transfers knowledge from a vanilla teacher to an efficient student MLLM, achieving an average score of 50.4 across 11 benchmarks at 144 tokens/patch — surpassing LLaVA-NeXT with 576 tokens (49.4) while delivering nearly 2× inference speedup.
+  [AAAI 2026][Multimodal VLM][Knowledge Distillation] This paper proposes EM-KD, a distillation framework that leverages the Hungarian algorithm to address the vision token count imbalance between teacher and student model…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Knowledge Distillation
-  - Efficient MLLM
-  - Vision Token Compression
-  - Hungarian Matching
-  - Cross-Modal Alignment
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Knowledge Distillation"
+  - "Efficient MLLM"
+  - "Vision Token Compression"
+  - "Hungarian Matching"
+  - "Cross-Modal Alignment"
 date: 2026-05-08
 content_hash: 16a69ede730eba00
 ---

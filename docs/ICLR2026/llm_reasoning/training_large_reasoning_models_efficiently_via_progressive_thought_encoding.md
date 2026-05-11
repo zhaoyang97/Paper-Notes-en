@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Training Large Reasoning Models Efficiently via Progressive Thought Encoding
 description: >-
-  [ICLR 2026][LLM Reasoning][Large Reasoning Models] This paper proposes Progressive Thought Encoding, which encodes evicted thought tokens into LoRA weights under KV cache constraints, halving GPU memory usage during RL training of large reasoning models while surpassing full-cache LoRA in reasoning accuracy (up to +23.4% on AIME2024/2025).
+  [ICLR 2026][LLM Reasoning][Large Reasoning Models] This paper proposes Progressive Thought Encoding, which encodes evicted thought tokens into LoRA weights under KV cache constraints…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Large Reasoning Models
-  - RL Training Efficiency
-  - KV Cache Compression
-  - Parameter-Efficient Fine-Tuning
-  - Progressive Thought Encoding
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "Large Reasoning Models"
+  - "RL Training Efficiency"
+  - "KV Cache Compression"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Progressive Thought Encoding"
 date: 2026-05-08
 content_hash: a709d7496de45bb2
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EVODiff: Entropy-aware Variance Optimized Diffusion Inference
 description: >-
-  [NeurIPS 2025][Image Generation][Diffusion models] This paper analyzes the inference process of diffusion models from an information-theoretic perspective and proposes EVODiff, a method that reduces conditional entropy by optimizing conditional variance, achieving significant sampling acceleration and quality improvement without modifying the underlying model.
+  [NeurIPS 2025][Image Generation][Diffusion models] This paper analyzes the inference process of diffusion models from an information-theoretic perspective and proposes EVODiff…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Diffusion models
-  - inference acceleration
-  - information theory
-  - conditional entropy
-  - variance optimization
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Diffusion models"
+  - "inference acceleration"
+  - "information theory"
+  - "conditional entropy"
+  - "variance optimization"
 date: 2026-05-08
 content_hash: 84e077379fedab81
 ---

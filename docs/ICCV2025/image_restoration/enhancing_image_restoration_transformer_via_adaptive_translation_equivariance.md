@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Enhancing Image Restoration Transformer via Adaptive Translation Equivariance
 description: >-
-  [ICCV 2025][Image Restoration][Translation Equivariance] This paper systematically investigates the impact of Translation Equivariance (TE) on the convergence speed and generalization ability of image restoration networks. It proposes Sliding Key-Value Self-Attention (SkvSA), its adaptive variant (ASkvSA), and Downsampled Self-Attention (DSA), and constructs TEAFormer, which achieves state-of-the-art performance on super-resolution, deblurring, denoising, and other tasks while maintaining linear complexity.
+  [ICCV 2025][Image Restoration][Translation Equivariance] This paper systematically investigates the impact of Translation Equivariance (TE) on the convergence speed and generalization ability of image restoration network…
 tags:
-  - ICCV 2025
-  - Image Restoration
-  - Translation Equivariance
-  - Transformer
-  - Adaptive Attention
-  - Super-Resolution
+  - "ICCV 2025"
+  - "Image Restoration"
+  - "Translation Equivariance"
+  - "Transformer"
+  - "Adaptive Attention"
+  - "Super-Resolution"
 date: 2026-05-08
 content_hash: 9eaec12e87aef15e
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Physics-Informed Autonomous LLM Agents for Explainable Power Electronics Modulation Design
 description: >-
-  [AAAI 2026][LLM Agent][physics-informed agent] This paper proposes PHIA, a system in which an LLM planner collects design requirements via a chat interface and autonomously coordinates a physics-informed neural network surrogate model (hierarchical PINN) with optimization algorithms to iteratively generate power converter modulation designs, achieving a 63.2% reduction in MAE, a 33× speedup in design time, and usability validated by 20 domain experts.
+  [AAAI 2026][LLM Agent][physics-informed agent] This paper proposes PHIA, a system in which an LLM planner collects design requirements via a chat interface and autonomously coordinates a physics-informed neural network s…
 tags:
-  - AAAI 2026
-  - LLM Agent
-  - physics-informed agent
-  - power electronics
-  - modulation design
-  - PINN
-  - explainability
+  - "AAAI 2026"
+  - "LLM Agent"
+  - "physics-informed agent"
+  - "power electronics"
+  - "modulation design"
+  - "PINN"
+  - "explainability"
 date: 2026-05-08
 content_hash: db3a53f5d60144ad
 ---

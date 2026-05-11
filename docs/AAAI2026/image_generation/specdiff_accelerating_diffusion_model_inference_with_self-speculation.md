@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SpecDiff: Accelerating Diffusion Model Inference with Self-Speculation
 description: >-
-  [AAAI 2026][Image Generation][Diffusion model acceleration] This paper proposes SpecDiff, a training-free multi-level feature caching strategy based on self-speculation. By leveraging a small number of speculative steps to introduce **future information** for token importance selection, SpecDiff overcomes the accuracy–speed bottleneck of methods that rely solely on historical information, achieving 2.80×/2.74×/3.17× speedup on Stable Diffusion 3/3.5 and FLUX with negligible quality loss.
+  [AAAI 2026][Image Generation][Diffusion model acceleration] This paper proposes SpecDiff, a training-free multi-level feature caching strategy based on self-speculation. By leveraging a small number of speculative steps…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Diffusion model acceleration
-  - feature caching
-  - self-speculation
-  - DiT
-  - information utilization
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Diffusion model acceleration"
+  - "feature caching"
+  - "self-speculation"
+  - "DiT"
+  - "information utilization"
 date: 2026-05-08
 content_hash: 8ad3a7cfd71f1303
 ---

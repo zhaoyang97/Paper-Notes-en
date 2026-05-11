@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The Geometry of Cortical Computation: Manifold Disentanglement and Predictive Dynamics in VCNet
 description: >-
-  [NeurIPS 2025 (Workshop: NeurReps & CogInterp)][LLM Evaluation][visual cortex network] This paper proposes VCNet—a neural network architecture that simulates the macroscopic organization of the primate visual cortex—reinterpreting dual-stream separation (manifold disentanglement) and predictive coding (geodesic refinement) through the language of geometry and dynamical systems. At an extremely compact size of 0.04 MB, VCNet achieves 92.1% accuracy on Spots-10 (10% above a distilled DenseNet), and attains 74.4% on light field classification at 3.52 MB (surpassing MobileNetV2 by 2.3%).
+  [NeurIPS 2025 (Workshop: NeurReps & CogInterp)][LLM Evaluation][visual cortex network] This paper proposes VCNet—a neural network architecture that simulates the macroscopic organization of the primate visual cortex—rein…
 tags:
   - "NeurIPS 2025 (Workshop: NeurReps & CogInterp)"
-  - LLM Evaluation
-  - visual cortex network
-  - manifold disentanglement
-  - predictive coding
-  - dual-stream processing
-  - biologically inspired architecture
+  - "LLM Evaluation"
+  - "visual cortex network"
+  - "manifold disentanglement"
+  - "predictive coding"
+  - "dual-stream processing"
+  - "biologically inspired architecture"
 date: 2026-05-08
 content_hash: b30b2e5fc09af844
 ---

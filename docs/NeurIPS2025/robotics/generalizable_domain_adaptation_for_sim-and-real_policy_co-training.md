@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Generalizable Domain Adaptation for Sim-and-Real Policy Co-Training
 description: >-
-  [NeurIPS 2025][Robotics][sim-to-real] This paper proposes a sim-and-real policy co-training framework based on Unbalanced Optimal Transport (UOT), which aligns the joint observation-action distribution (rather than only the marginal observation distribution), and incorporates a temporally aligned sampling strategy to handle data imbalance, achieving a 30% improvement in OOD generalization on robotic manipulation tasks.
+  [NeurIPS 2025][Robotics][sim-to-real] This paper proposes a sim-and-real policy co-training framework based on Unbalanced Optimal Transport (UOT)…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - sim-to-real
-  - optimal transport
-  - domain adaptation
-  - behavior cloning
-  - robotic manipulation
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "sim-to-real"
+  - "optimal transport"
+  - "domain adaptation"
+  - "behavior cloning"
+  - "robotic manipulation"
 date: 2026-05-08
 content_hash: d86f0a6dd852c7c9
 ---

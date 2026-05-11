@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Heterogeneous Adversarial Play in Interactive Environments
 description: >-
-  [NeurIPS 2025][LLM Evaluation][Adversarial Curriculum Learning] This paper proposes **HAP (Heterogeneous Adversarial Play)**, which formalizes teacher-student interaction as a minimax game: a teacher network automatically generates challenge tasks targeting student weaknesses, while the student policy continuously adapts and evolves, forming an adaptive curriculum without manual design. HAP outperforms state-of-the-art baselines in multi-task RL environments, and the generated curriculum proves effective for human learners as well.
+  [NeurIPS 2025][LLM Evaluation][Adversarial Curriculum Learning] This paper proposes **HAP (Heterogeneous Adversarial Play)**, which formalizes teacher-student interaction as a minimax game: a teacher network automaticall…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - Adversarial Curriculum Learning
-  - Heterogeneous Self-Play
-  - Teacher-Student
-  - Multi-Task RL
-  - Adaptive Curriculum
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "Adversarial Curriculum Learning"
+  - "Heterogeneous Self-Play"
+  - "Teacher-Student"
+  - "Multi-Task RL"
+  - "Adaptive Curriculum"
 date: 2026-05-08
 content_hash: 345fb141820b6174
 ---

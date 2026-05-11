@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Lost in Benchmarks? Rethinking Large Language Model Benchmarking with Item Response Theory
 description: >-
-  [AAAI 2026][LLM Evaluation][IRT] This paper proposes PSN-IRT (Pseudo-Siamese Network for IRT), an enhanced Item Response Theory framework that jointly estimates LLM ability parameters and four-parameter item characteristics (difficulty / discrimination / guessing / feasibility). Applied to 41,871 items across 11 benchmarks, the framework reveals systemic issues including widespread saturation, insufficient difficulty ceilings, and data contamination. Item subsets selected by PSN-IRT achieve a ranking consistency of Kendall $\tau = 1.00$.
+  [AAAI 2026][LLM Evaluation][IRT] This paper proposes PSN-IRT (Pseudo-Siamese Network for IRT), an enhanced Item Response Theory framework that jointly estimates LLM ability parameters and four-parameter item characterist…
 tags:
-  - AAAI 2026
-  - LLM Evaluation
-  - IRT
-  - benchmark evaluation
-  - condition number
-  - item quality
-  - PSN-IRT
+  - "AAAI 2026"
+  - "LLM Evaluation"
+  - "IRT"
+  - "benchmark evaluation"
+  - "condition number"
+  - "item quality"
+  - "PSN-IRT"
 date: 2026-05-08
 content_hash: ba081f0389fe7ecc
 ---

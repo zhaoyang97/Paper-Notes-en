@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Temporal Sparse Autoencoders: Leveraging the Sequential Nature of Language for Interpretability
 description: >-
-  [ICLR 2026][Sparse Autoencoders] This paper proposes Temporal SAEs (T-SAEs), which introduce a temporal contrastive loss to encourage high-level features to maintain consistent activations across adjacent tokens. Through self-supervised training without explicit semantic supervision, T-SAEs achieve disentanglement of semantic and syntactic features, recovering smoother and more coherent semantic concepts without sacrificing reconstruction quality.
+  [ICLR 2026][Interpretability][Sparse Autoencoders] This paper proposes Temporal SAEs (T-SAEs), which introduce a temporal contrastive loss to encourage high-level features to maintain consistent activations across adjace…
 tags:
-  - ICLR 2026
-  - Sparse Autoencoders
-  - Temporal Consistency
-  - Semantic Disentanglement
-  - Contrastive Learning
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Sparse Autoencoders"
+  - "Temporal Consistency"
+  - "Semantic Disentanglement"
+  - "Contrastive Learning"
 date: 2026-05-08
 content_hash: bada9dd11c3c8540
 ---

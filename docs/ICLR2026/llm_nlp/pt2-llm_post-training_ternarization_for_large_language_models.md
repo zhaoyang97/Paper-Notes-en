@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PT2-LLM: Post-Training Ternarization for Large Language Models
 description: >-
-  [ICLR 2026][LLM/NLP][Ternarization] This paper proposes PT2-LLM, the first post-training ternarization framework for LLMs. Through an asymmetric ternary quantizer (featuring iterative ternary fitting and activation-aware grid alignment) and a structural similarity reordering strategy, it achieves superior performance over 2-bit PTQ methods at 1.58-bit precision.
+  [ICLR 2026][LLM/NLP][Ternarization] This paper proposes PT2-LLM, the first post-training ternarization framework for LLMs. Through an asymmetric ternary quantizer (featuring iterative ternary fitting and activation-aware…
 tags:
-  - ICLR 2026
-  - LLM/NLP
-  - Ternarization
-  - Post-Training Quantization
-  - Ultra-Low Bit-Width
-  - LLM Compression
-  - Column Reordering
+  - "ICLR 2026"
+  - "LLM/NLP"
+  - "Ternarization"
+  - "Post-Training Quantization"
+  - "Ultra-Low Bit-Width"
+  - "LLM Compression"
+  - "Column Reordering"
 date: 2026-05-08
 content_hash: b9444eb6bf602fc2
 ---

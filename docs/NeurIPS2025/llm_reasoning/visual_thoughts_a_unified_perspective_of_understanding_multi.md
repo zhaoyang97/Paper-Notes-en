@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Visual Thoughts: A Unified Perspective of Understanding Multimodal Chain-of-Thought
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Multimodal CoT] This paper proposes "Visual Thoughts" as a unified framework for interpreting the effectiveness of multimodal chain-of-thought reasoning (MCoT). The core mechanism underlying performance gains in both textual MCoT (T-MCoT) and interleaved multimodal MCoT (I-MCoT) is the caching and transfer of visual information into the reasoning process. The paper defines four forms of visual thought expressions and reveals their role as image-to-reasoning intermediaries in deep Transformer layers.
+  [NeurIPS 2025][LLM Reasoning][Multimodal CoT] This paper proposes "Visual Thoughts" as a unified framework for interpreting the effectiveness of multimodal chain-of-thought reasoning (MCoT). The core mechanism underlying…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - Multimodal CoT
-  - Visual Thoughts
-  - T-MCoT
-  - I-MCoT
-  - Visual Information Transfer
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "Multimodal CoT"
+  - "Visual Thoughts"
+  - "T-MCoT"
+  - "I-MCoT"
+  - "Visual Information Transfer"
 date: 2026-05-08
 content_hash: 35b3836e60c36511
 ---

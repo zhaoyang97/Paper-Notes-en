@@ -2,15 +2,16 @@
 title: >-
   [Paper Note] Universal Properties of Activation Sparsity in Modern Large Language Models
 description: >-
-  [ICLR 2026][activation sparsity] This paper presents a systematic study of activation sparsity in modern LLMs (GLU architecture + SiLU/GELU), proposes a universal top-p sparsification framework and a critical sparsity metric, demonstrates that activation sparsity increases monotonically with model scale, identifies input sparsification as the most practical training-free acceleration scheme, and provides the first empirical evidence that diffusion-based LLMs also exhibit significant activation sparsity.
+  [ICLR 2026][Interpretability][activation sparsity] This paper presents a systematic study of activation sparsity in modern LLMs (GLU architecture + SiLU/GELU)…
 tags:
-  - ICLR 2026
-  - activation sparsity
-  - LLM acceleration
-  - GLU architecture
-  - critical sparsity
-  - top-p sparsification
-  - diffusion LLM
+  - "ICLR 2026"
+  - "Interpretability"
+  - "activation sparsity"
+  - "LLM acceleration"
+  - "GLU architecture"
+  - "critical sparsity"
+  - "top-p sparsification"
+  - "diffusion LLM"
 date: 2026-05-08
 content_hash: 56e14a7708beffcf
 ---

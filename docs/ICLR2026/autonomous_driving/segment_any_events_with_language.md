@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] SEAL: Segment Any Events with Language
 description: >-
-  [ICLR 2026][Autonomous Driving][Event camera] This paper introduces the open-vocabulary event instance segmentation (OV-EIS) task for the first time, and proposes the SEAL framework. Through multimodal hierarchical semantic guidance (MHSG) and a lightweight multimodal fusion network, SEAL achieves multi-granularity (instance-level + part-level) semantic segmentation of event streams using only event–image pairs (without dense annotations), substantially outperforming all baselines while achieving the fastest inference speed.
+  [ICLR 2026][Autonomous Driving][Event camera] This paper introduces the open-vocabulary event instance segmentation (OV-EIS) task for the first time…
 tags:
-  - ICLR 2026
-  - Autonomous Driving
-  - Event camera
-  - open-vocabulary instance segmentation
-  - SAM
-  - CLIP
-  - multimodal fusion
-  - annotation-free training
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "Event camera"
+  - "open-vocabulary instance segmentation"
+  - "SAM"
+  - "CLIP"
+  - "multimodal fusion"
+  - "annotation-free training"
 date: 2026-05-08
 content_hash: 99d16517771a5b23
 ---

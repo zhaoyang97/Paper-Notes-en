@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] DeToNATION: Decoupled Torch Network-Aware Training on Interlinked Online Nodes
 description: >-
-  [AAAI 2026][distributed training] This paper proposes FlexDeMo — a hybrid sharding training strategy that integrates Fully Sharded Data Parallelism (FSDP) with decoupled momentum optimization. It applies FSDP sharding within nodes and synchronizes only the fast-moving momentum components across nodes, achieving loss convergence comparable to full-synchronization AdamW while substantially accelerating training.
+  [AAAI 2026][distributed training] This paper proposes FlexDeMo — a hybrid sharding training strategy that integrates Fully Sharded Data Parallelism (FSDP) with decoupled momentum optimization. It applies FSDP sharding wi…
 tags:
-  - AAAI 2026
-  - distributed training
-  - decoupled momentum
-  - FSDP
-  - gradient compression
-  - large language models
+  - "AAAI 2026"
+  - "distributed training"
+  - "decoupled momentum"
+  - "FSDP"
+  - "gradient compression"
+  - "large language models"
 date: 2026-05-08
 content_hash: 46307d67da360615
 ---

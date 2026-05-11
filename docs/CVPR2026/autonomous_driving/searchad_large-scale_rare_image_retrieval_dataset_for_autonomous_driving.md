@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] SearchAD: Large-Scale Rare Image Retrieval Dataset for Autonomous Driving
 description: >-
-  [CVPR 2026][Autonomous Driving][Rare image retrieval] SearchAD introduces the first large-scale rare image retrieval dataset for autonomous driving, comprising 420K+ frames, 510K+ annotated bounding boxes, and 90 rare categories. It supports both text-to-image and image-to-image retrieval, and through comprehensive evaluation reveals the deficiencies of current multimodal retrieval models in retrieving rare objects.
+  [CVPR 2026][Autonomous Driving][Rare image retrieval] SearchAD introduces the first large-scale rare image retrieval dataset for autonomous driving, comprising 420K+ frames, 510K+ annotated bounding boxes…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Rare image retrieval
-  - long-tail distribution
-  - semantic retrieval
-  - dataset benchmark
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Rare image retrieval"
+  - "long-tail distribution"
+  - "semantic retrieval"
+  - "dataset benchmark"
 date: 2026-05-08
 content_hash: c207fa7d4c94a9f8
 ---

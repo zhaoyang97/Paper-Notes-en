@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Seek-CAD: A Self-Refined Generative Modeling for 3D Parametric CAD Using Local Inference via DeepSeek
 description: >-
-  [ICLR 2026][Image Generation][CAD parametric modeling] This paper proposes Seek-CAD, the first training-free CAD parametric model generation framework based on a locally deployed reasoning LLM (DeepSeek-R1). It achieves self-refinement through the synergy of step-wise visual feedback and Chain-of-Thought (CoT), and introduces a novel SSR triplet design paradigm to support complex CAD model generation.
+  [ICLR 2026][Image Generation][CAD parametric modeling] This paper proposes Seek-CAD, the first training-free CAD parametric model generation framework based on a locally deployed reasoning LLM (DeepSeek-R1). It achieves…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - CAD parametric modeling
-  - DeepSeek-R1
-  - training-free
-  - Chain-of-Thought
-  - self-refinement
-  - SSR design paradigm
+  - "ICLR 2026"
+  - "Image Generation"
+  - "CAD parametric modeling"
+  - "DeepSeek-R1"
+  - "training-free"
+  - "Chain-of-Thought"
+  - "self-refinement"
+  - "SSR design paradigm"
 date: 2026-05-08
 content_hash: cb4a4eb6ecd526d3
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Attention, May I Have Your Decision? Localizing Generative Choices in Diffusion Models
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Model Interpretability] This paper employs linear probing to demonstrate that **implicit decisions** in diffusion models—such as defaulting to male when gender is unspecified—are primarily governed by self-attention layers rather than cross-attention layers. Building on this finding, the paper proposes ICM, a method that intervenes on a small number of critical self-attention layers to achieve state-of-the-art debiasing while minimizing image quality degradation.
+  [CVPR 2026][Image Generation][Diffusion Model Interpretability] This paper employs linear probing to demonstrate that **implicit decisions** in diffusion models—such as defaulting to male when gender is unspecified—are p…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Model Interpretability
-  - Self-Attention
-  - Debiasing
-  - Linear Probing
-  - Implicit Decision
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Model Interpretability"
+  - "Self-Attention"
+  - "Debiasing"
+  - "Linear Probing"
+  - "Implicit Decision"
 date: 2026-05-08
 content_hash: c57c7247bd430f2c
 ---

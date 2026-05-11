@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] In-Token Rationality Optimization: Towards Accurate and Concise LLM Reasoning via Self-Feedback
 description: >-
-  [AAAI 2026][Reinforcement Learning][Chain-of-Thought reasoning] This paper proposes the InTRO framework, which aligns the model's generation policy with its answer-conditioned posterior via KL divergence minimization. By enabling token-level exploration and self-generated feedback within a single forward pass, InTRO improves both accuracy and conciseness of LLM reasoning without relying on any external supervision.
+  [AAAI 2026][Reinforcement Learning][Chain-of-Thought reasoning] This paper proposes the InTRO framework, which aligns the model's generation policy with its answer-conditioned posterior via KL divergence minimization. By…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - Chain-of-Thought reasoning
-  - token-level exploration
-  - self-feedback
-  - KL divergence alignment
-  - mathematical reasoning
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "Chain-of-Thought reasoning"
+  - "token-level exploration"
+  - "self-feedback"
+  - "KL divergence alignment"
+  - "mathematical reasoning"
 date: 2026-05-08
 content_hash: b2f71fbd2b5bbf0c
 ---

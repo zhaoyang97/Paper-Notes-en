@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] IGASA: Integrated Geometry-Aware and Skip-Attention Modules for Enhanced Point Cloud Registration
 description: >-
-  [CVPR2026][Autonomous Driving][Point Cloud Registration] This paper proposes the IGASA framework, which employs a three-stage pipeline consisting of a Hierarchical Pyramid Architecture (HPA), Hierarchical Cross-Layer Attention (HCLA), and Iterative Geometry-Aware Refinement (IGAR) to bridge the semantic gap across multi-scale features and dynamically suppress outliers, achieving state-of-the-art performance on four benchmarks: 3DMatch, 3DLoMatch, KITTI, and nuScenes.
+  [CVPR2026][Autonomous Driving][Point Cloud Registration] This paper proposes the IGASA framework, which employs a three-stage pipeline consisting of a Hierarchical Pyramid Architecture (HPA)…
 tags:
-  - CVPR2026
-  - Autonomous Driving
-  - Point Cloud Registration
-  - Geometry-Aware
-  - Skip-Attention
-  - Hierarchical Pyramid
-  - Coarse-to-Fine Matching
+  - "CVPR2026"
+  - "Autonomous Driving"
+  - "Point Cloud Registration"
+  - "Geometry-Aware"
+  - "Skip-Attention"
+  - "Hierarchical Pyramid"
+  - "Coarse-to-Fine Matching"
 date: 2026-05-08
 content_hash: b4e190845f87fb6f
 ---

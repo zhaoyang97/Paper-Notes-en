@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GeoExplorer: Active Geo-Localization with Curiosity-Driven Exploration
 description: >-
-  [ICCV 2025][Remote Sensing][Active Geo-Localization] This paper proposes GeoExplorer, an active geo-localization (AGL) agent that integrates goal-directed extrinsic rewards with curiosity-driven intrinsic rewards. By jointly modeling action-state dynamics and curiosity-based exploration within a reinforcement learning framework, GeoExplorer achieves more robust UAV search strategies and demonstrates superior generalization to unseen targets and environments.
+  [ICCV 2025][Remote Sensing][Active Geo-Localization] This paper proposes GeoExplorer, an active geo-localization (AGL) agent that integrates goal-directed extrinsic rewards with curiosity-driven intrinsic rewards. By joi…
 tags:
-  - ICCV 2025
-  - Remote Sensing
-  - Active Geo-Localization
-  - Curiosity-Driven Exploration
-  - Reinforcement Learning
-  - UAV Navigation
-  - Multi-Modal Target
+  - "ICCV 2025"
+  - "Remote Sensing"
+  - "Active Geo-Localization"
+  - "Curiosity-Driven Exploration"
+  - "Reinforcement Learning"
+  - "UAV Navigation"
+  - "Multi-Modal Target"
 date: 2026-05-08
 content_hash: 583acda1daddcff9
 ---

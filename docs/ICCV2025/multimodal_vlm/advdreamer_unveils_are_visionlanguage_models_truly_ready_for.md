@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AdvDreamer Unveils: Are Vision-Language Models Truly Ready for Real-World 3D Variations?
 description: >-
-  [ICCV 2025][Multimodal VLM][VLM robustness] This paper proposes AdvDreamer, a framework that generates physically reproducible adversarial 3D transformation (Adv-3DT) samples from single images via zero-shot monocular pose manipulation, a naturalness reward model, and an inverse semantic probability loss. The framework reveals that current VLMs—including GPT-4o—suffer performance drops of 50–80% under 3D variations, and establishes MM3DTBench, the first VQA benchmark for evaluating VLM robustness to 3D variations.
+  [ICCV 2025][Multimodal VLM][VLM robustness] This paper proposes AdvDreamer, a framework that generates physically reproducible adversarial 3D transformation (Adv-3DT) samples from single images via zero-shot monocular po…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - VLM robustness
-  - adversarial 3D transformations
-  - monocular pose manipulation
-  - naturalness reward model
-  - visual grounding
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "VLM robustness"
+  - "adversarial 3D transformations"
+  - "monocular pose manipulation"
+  - "naturalness reward model"
+  - "visual grounding"
 date: 2026-05-08
 content_hash: 6ba33c489a6adb20
 ---

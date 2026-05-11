@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Erasing More Than Intended? How Concept Erasure Degrades the Generation of Non-Target Concepts
 description: >-
-  [ICCV 2025][Image Generation][Concept Erasure] This paper systematically analyzes the unintended negative effects of concept erasure techniques on non-target concepts (spillover degradation) in text-to-image models. It proposes EraseBench, a comprehensive evaluation framework covering multiple dimensions including visual similarity, binomial association, and semantic relatedness. The findings reveal that current state-of-the-art erasure methods remain unreliable in preserving the generation quality of non-target concepts.
+  [ICCV 2025][Image Generation][Concept Erasure] This paper systematically analyzes the unintended negative effects of concept erasure techniques on non-target concepts (spillover degradation) in text-to-image models. It p…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Concept Erasure
-  - EraseBench
-  - Concept Entanglement
-  - Spillover Degradation
-  - Text-to-Image Safety
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Concept Erasure"
+  - "EraseBench"
+  - "Concept Entanglement"
+  - "Spillover Degradation"
+  - "Text-to-Image Safety"
 date: 2026-05-08
 content_hash: b7c736cc6511fddf
 ---

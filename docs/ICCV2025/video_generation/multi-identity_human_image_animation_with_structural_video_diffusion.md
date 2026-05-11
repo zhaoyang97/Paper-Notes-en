@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multi-identity Human Image Animation with Structural Video Diffusion
 description: >-
-  [ICCV 2025][Video Generation][Multi-identity human animation] This paper proposes the Structural Video Diffusion framework, which maintains multi-person appearance consistency via mask-guided identity-specific embeddings, jointly learns RGB/depth/normal tri-modal geometric structure to model human–object interactions, and introduces the Multi-HumanVid dataset of 25K multi-person interaction videos to enable multi-identity human video generation.
+  [ICCV 2025][Video Generation][Multi-identity human animation] This paper proposes the Structural Video Diffusion framework, which maintains multi-person appearance consistency via mask-guided identity-specific embeddings…
 tags:
-  - ICCV 2025
-  - Video Generation
-  - Multi-identity human animation
-  - video diffusion model
-  - identity embedding
-  - joint depth-normal learning
-  - human interaction
+  - "ICCV 2025"
+  - "Video Generation"
+  - "Multi-identity human animation"
+  - "video diffusion model"
+  - "identity embedding"
+  - "joint depth-normal learning"
+  - "human interaction"
 date: 2026-05-08
 content_hash: e5854f3538f06d5c
 ---

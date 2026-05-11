@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Curve-Aware Gaussian Splatting for 3D Parametric Curve Reconstruction
 description: >-
-  [ICCV 2025][3D Vision][Parametric curve reconstruction] This paper proposes CurveGaussian, a single-stage method that establishes a bidirectional coupling mechanism between parametric curves and edge-oriented Gaussian primitives, enabling direct end-to-end optimization of 3D parametric curves from multi-view edge maps. By eliminating the error accumulation inherent in two-stage pipelines, the method achieves comprehensive improvements over prior approaches in accuracy, efficiency, and compactness.
+  [ICCV 2025][3D Vision][Parametric curve reconstruction] This paper proposes CurveGaussian, a single-stage method that establishes a bidirectional coupling mechanism between parametric curves and edge-oriented Gaussian pr…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Parametric curve reconstruction
-  - 3DGS
-  - Bézier curves
-  - end-to-end optimization
-  - edge reconstruction
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Parametric curve reconstruction"
+  - "3DGS"
+  - "Bézier curves"
+  - "end-to-end optimization"
+  - "edge reconstruction"
 date: 2026-05-08
 content_hash: 9144d5846a6648df
 ---

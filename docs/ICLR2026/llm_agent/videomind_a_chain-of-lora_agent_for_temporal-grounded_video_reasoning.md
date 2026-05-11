@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VideoMind: A Chain-of-LoRA Agent for Temporal-Grounded Video Reasoning
 description: >-
-  [ICLR 2026][LLM Agent][Video Reasoning] This paper proposes VideoMind, a role-based video-language agent framework that achieves temporally grounded video reasoning through the collaboration of four roles—Planner, Grounder, Verifier, and Answerer. The core innovation is the Chain-of-LoRA mechanism, which enables seamless role switching on a unified backbone model by swapping role-specific LoRA adapters. A 2B-parameter VideoMind surpasses GPT-4o and Gemini-1.5-Pro on temporal grounding benchmarks.
+  [ICLR 2026][LLM Agent][Video Reasoning] This paper proposes VideoMind, a role-based video-language agent framework that achieves temporally grounded video reasoning through the collaboration of four roles—Planner…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Video Reasoning
-  - Temporal Grounding
-  - LoRA
-  - Multimodal Agent
-  - Video Question Answering
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Video Reasoning"
+  - "Temporal Grounding"
+  - "LoRA"
+  - "Multimodal Agent"
+  - "Video Question Answering"
 date: 2026-05-08
 content_hash: 40db9e6231347e7c
 ---

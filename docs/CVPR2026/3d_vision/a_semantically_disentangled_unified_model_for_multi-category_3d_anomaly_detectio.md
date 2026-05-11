@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Semantically Disentangled Unified Model for Multi-category 3D Anomaly Detection
 description: >-
-  [CVPR 2026][3D Vision][3D anomaly detection] This paper proposes SeDiR, a framework for semantically disentangled unified 3D anomaly detection, comprising three modules: Coarse-to-Fine Global Tokenization (CFGT), Category-Conditioned Contrastive Learning (C3L), and Geometry-Guided Decoder (GGD). SeDiR addresses the Inter-Category Entanglement (ICE) problem and outperforms the state of the art by 2.8% and 9.1% AUROC on Real3D-AD and Anomaly-ShapeNet, respectively.
+  [CVPR 2026][3D Vision][3D anomaly detection] This paper proposes SeDiR, a framework for semantically disentangled unified 3D anomaly detection, comprising three modules: Coarse-to-Fine Global Tokenization (CFGT)…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D anomaly detection
-  - unified model
-  - semantic disentanglement
-  - inter-category entanglement
-  - contrastive learning
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D anomaly detection"
+  - "unified model"
+  - "semantic disentanglement"
+  - "inter-category entanglement"
+  - "contrastive learning"
 date: 2026-05-08
 content_hash: 1e00b4e7cfb53d4c
 ---

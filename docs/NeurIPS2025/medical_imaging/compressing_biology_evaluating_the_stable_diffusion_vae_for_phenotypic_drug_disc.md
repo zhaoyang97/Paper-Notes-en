@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Compressing Biology: Evaluating the Stable Diffusion VAE for Phenotypic Drug Discovery
 description: >-
-  [NeurIPS 2025][Medical Imaging][Cell Painting] This work presents the first systematic evaluation of the Stable Diffusion VAE (SD-VAE) for reconstructing Cell Painting fluorescence microscopy images. Results show that SD-VAE preserves phenotypic information well at both the pixel level and the biological signal level (with negligible drop in Fraction Retrieved), and that the general-purpose feature extractor InceptionV3 matches or outperforms the domain-specific model OpenPhenom on retrieval tasks.
+  [NeurIPS 2025][Medical Imaging][Cell Painting] This work presents the first systematic evaluation of the Stable Diffusion VAE (SD-VAE) for reconstructing Cell Painting fluorescence microscopy images. Results show that SD…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Cell Painting
-  - Stable Diffusion VAE
-  - phenotypic drug discovery
-  - image reconstruction
-  - biological signal preservation
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Cell Painting"
+  - "Stable Diffusion VAE"
+  - "phenotypic drug discovery"
+  - "image reconstruction"
+  - "biological signal preservation"
 date: 2026-05-08
 content_hash: cc21824e2109f511
 ---

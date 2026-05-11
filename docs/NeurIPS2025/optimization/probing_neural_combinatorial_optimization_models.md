@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Probing Neural Combinatorial Optimization Models
 description: >-
-  [NeurIPS 2025][Optimization][Neural Combinatorial Optimization] This work is the first to systematically introduce probing methodology into the study of neural combinatorial optimization (NCO) models. It proposes a CS-Probing framework to analyze the decision-relevant knowledge, inductive biases, and generalization mechanisms encoded in model representations, and identifies critical embedding dimensions that can be leveraged to improve model generalization.
+  [NeurIPS 2025][Optimization][Neural Combinatorial Optimization] This work is the first to systematically introduce probing methodology into the study of neural combinatorial optimization (NCO) models. It proposes a CS-Pr…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Neural Combinatorial Optimization
-  - Interpretability
-  - Probing Analysis
-  - Embedding Representations
-  - Generalization
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Neural Combinatorial Optimization"
+  - "Interpretability"
+  - "Probing Analysis"
+  - "Embedding Representations"
+  - "Generalization"
 date: 2026-05-08
 content_hash: 09a7b57cb4d60e90
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SplitFlow: Flow Decomposition for Inversion-Free Text-to-Image Editing
 description: >-
-  [NeurIPS 2025][Image Generation][Rectified Flow] SplitFlow decomposes a target prompt into multiple sub-prompts, computes an independent editing flow for each, and combines them into a unified editing trajectory via latent trajectory projection and adaptive velocity field aggregation. This resolves gradient entanglement and achieves higher fidelity and editability in text-guided image editing without requiring inversion.
+  [NeurIPS 2025][Image Generation][Rectified Flow] SplitFlow decomposes a target prompt into multiple sub-prompts, computes an independent editing flow for each…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Rectified Flow
-  - Inversion-Free Editing
-  - Flow Decomposition
-  - Gradient Conflict
-  - Multi-Task Learning
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Rectified Flow"
+  - "Inversion-Free Editing"
+  - "Flow Decomposition"
+  - "Gradient Conflict"
+  - "Multi-Task Learning"
 date: 2026-05-08
 content_hash: 72e7890c42e38186
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Course Correction in Steerability Evaluation: Revealing Miscalibration and Side Effects in LLMs
 description: >-
-  [AAAI 2026][Reinforcement Learning][steerability evaluation] This paper proposes a multi-dimensional objective-space framework for evaluating LLM steerability, decomposing steering error into miscalibration and side effects (orthogonality). Experiments on text rewriting reveal that even the strongest LLMs produce severe side effects; prompt engineering proves ineffective, best-of-N sampling is prohibitively costly, and RL fine-tuning yields improvements but does not fully resolve the problem.
+  [AAAI 2026][Reinforcement Learning][steerability evaluation] This paper proposes a multi-dimensional objective-space framework for evaluating LLM steerability…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - steerability evaluation
-  - side effects
-  - miscalibration
-  - RL fine-tuning
-  - text rewriting
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "steerability evaluation"
+  - "side effects"
+  - "miscalibration"
+  - "RL fine-tuning"
+  - "text rewriting"
 date: 2026-05-08
 content_hash: cb5515d72734388d
 ---

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] UMDATrack: Unified Multi-Domain Adaptive Tracking Under Adverse Weather Conditions
 description: >-
-  [ICCV 2025][Video Understanding][visual object tracking] UMDATrack proposes the first unified multi-domain adaptive tracking framework. It leverages text-guided diffusion models to synthesize a small number (<2% of frames) of unlabeled multi-weather videos, employs Domain-Customized Adapters (DCA) to efficiently transfer object representations across weather domains, and introduces Target-aware Confidence Alignment (TCA) based on optimal transport to enhance cross-domain localization consistency. The framework substantially outperforms existing state-of-the-art trackers under nighttime, hazy, and rainy conditions.
+  [ICCV 2025][Video Understanding][visual object tracking] UMDATrack proposes the first unified multi-domain adaptive tracking framework. It leverages text-guided diffusion models to synthesize a small number (&lt;2% of frame…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - visual object tracking
-  - multi-domain adaptation
-  - adverse weather
-  - domain-customized adapter
-  - optimal transport
-  - text-to-image diffusion
-  - teacher-student
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "visual object tracking"
+  - "multi-domain adaptation"
+  - "adverse weather"
+  - "domain-customized adapter"
+  - "optimal transport"
+  - "text-to-image diffusion"
+  - "teacher-student"
 date: 2026-05-08
 content_hash: d03af417d7e3f842
 ---

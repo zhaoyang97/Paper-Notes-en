@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HARPO: Hierarchical Agentic Reasoning for User-Aligned Conversational Recommendation
 description: >-
-  [ACL 2026][Recommender Systems][Conversational Recommendation] This paper proposes HARPO, a framework that reformulates conversational recommendation as a structured decision-making problem explicitly optimizing for recommendation quality. HARPO integrates four components—hierarchical preference learning, value-network-guided tree search reasoning, virtual tool operation abstraction, and multi-agent refinement—achieving significant improvements over existing methods on three benchmarks: ReDial, INSPIRED, and MUSE.
+  [ACL 2026][Recommender Systems][Conversational Recommendation] This paper proposes HARPO, a framework that reformulates conversational recommendation as a structured decision-making problem explicitly optimizing for reco…
 tags:
-  - ACL 2026
-  - Recommender Systems
-  - Conversational Recommendation
-  - Agentic Reasoning
-  - Preference Optimization
-  - Tree Search
-  - Recommendation Quality
+  - "ACL 2026"
+  - "Recommender Systems"
+  - "Conversational Recommendation"
+  - "Agentic Reasoning"
+  - "Preference Optimization"
+  - "Tree Search"
+  - "Recommendation Quality"
 date: 2026-05-08
 content_hash: 8936d6b8be3ea303
 ---

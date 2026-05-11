@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] KL Penalty Control via Perturbation for Direct Preference Optimization
 description: >-
-  [NeurIPS 2025][LLM Alignment][DPO] This paper proposes ε-DPO, which achieves instance-level adaptive KL penalty control by monitoring the monotonicity of logits—used as preference model outputs—under small perturbations of $\beta$ during training. The method incurs no additional computational overhead and significantly outperforms DPO and most direct alignment algorithms, achieving a 46.4% LC win rate on AlpacaEval 2 (vs. 40.3% for DPO).
+  [NeurIPS 2025][LLM Alignment][DPO] This paper proposes ε-DPO, which achieves instance-level adaptive KL penalty control by monitoring the monotonicity of logits—used as preference model outputs—under small perturbations…
 tags:
-  - NeurIPS 2025
-  - LLM Alignment
-  - DPO
-  - KL penalty
-  - preference optimization
-  - instance-level adaptation
-  - direct alignment
-  - RLHF
+  - "NeurIPS 2025"
+  - "LLM Alignment"
+  - "DPO"
+  - "KL penalty"
+  - "preference optimization"
+  - "instance-level adaptation"
+  - "direct alignment"
+  - "RLHF"
 date: 2026-05-08
 content_hash: cd7033a375f5c1f9
 ---

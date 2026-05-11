@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Diffusion Reconstruction-Based Data Likelihood Estimation for Core-Set Selection
 description: >-
-  [AAAI 2026][Image Generation][Core-set selection] This paper proposes using the partial reverse denoising reconstruction bias of diffusion models as a theoretically grounded approximation of data likelihood, combined with information bottleneck theory for optimal reconstruction timestep selection, enabling distribution-aware core-set selection that achieves near-full-dataset training performance on ImageNet with only 50% of the data.
+  [AAAI 2026][Image Generation][Core-set selection] This paper proposes using the partial reverse denoising reconstruction bias of diffusion models as a theoretically grounded approximation of data likelihood…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Core-set selection
-  - diffusion models
-  - data likelihood
-  - reconstruction bias
-  - information bottleneck
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Core-set selection"
+  - "diffusion models"
+  - "data likelihood"
+  - "reconstruction bias"
+  - "information bottleneck"
 date: 2026-05-08
 content_hash: 320b0ce80d1594ea
 ---

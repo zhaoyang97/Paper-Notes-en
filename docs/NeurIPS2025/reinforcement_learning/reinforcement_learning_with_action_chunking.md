@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Reinforcement Learning with Action Chunking
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Action chunking] This paper proposes Q-chunking, which extends action chunking from imitation learning to TD-based reinforcement learning by running RL directly over a "chunked" action space, thereby improving exploration and sample efficiency in long-horizon sparse-reward tasks.
+  [NeurIPS 2025][Reinforcement Learning][Action chunking] This paper proposes Q-chunking, which extends action chunking from imitation learning to TD-based reinforcement learning by running RL directly over a "chunked" act…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Action chunking
-  - Q-learning
-  - offline-to-online RL
-  - sparse rewards
-  - manipulation tasks
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Action chunking"
+  - "Q-learning"
+  - "offline-to-online RL"
+  - "sparse rewards"
+  - "manipulation tasks"
 date: 2026-05-08
 content_hash: 1bc2ff6047ded700
 ---

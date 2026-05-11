@@ -2,16 +2,17 @@
 title: >-
   [Paper Note] Evolution of Concepts in Language Model Pre-Training
 description: >-
-  [ICLR 2026][Mechanistic interpretability] This paper is the first to apply crosscoders (cross-snapshot sparse dictionary learning) to track the emergence and evolution of features during language model pre-training. It identifies a two-phase transition from "statistical learning → feature learning" and causally links micro-level feature evolution to macro-level downstream task metrics through attribution analysis.
+  [ICLR 2026][Interpretability][Mechanistic interpretability] This paper is the first to apply crosscoders (cross-snapshot sparse dictionary learning) to track the emergence and evolution of features during language model…
 tags:
-  - ICLR 2026
-  - Mechanistic interpretability
-  - crosscoders
-  - sparse autoencoders
-  - training dynamics
-  - feature evolution
-  - pre-training
-  - Pythia
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Mechanistic interpretability"
+  - "crosscoders"
+  - "sparse autoencoders"
+  - "training dynamics"
+  - "feature evolution"
+  - "pre-training"
+  - "Pythia"
 date: 2026-05-08
 content_hash: 39ed24e24d5930aa
 ---

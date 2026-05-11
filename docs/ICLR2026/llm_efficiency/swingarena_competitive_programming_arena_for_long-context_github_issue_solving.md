@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SwingArena: Adversarial Programming Arena for Long-context GitHub Issue Solving
 description: >-
-  [ICLR 2026][LLM Efficiency][Adversarial Evaluation] This paper proposes SwingArena, an adversarial evaluation framework in which two LLMs alternately play the roles of patch submitter and test reviewer on real GitHub issues, with end-to-end verification through repository-native CI pipelines (compilation / lint / regression tests). Evaluated on 400 instances across C++, Python, Rust, and Go, the framework reveals behavioral divergence between models in terms of "aggressive patch generation" versus "defensive quality assurance."
+  [ICLR 2026][LLM Efficiency][Adversarial Evaluation] This paper proposes SwingArena, an adversarial evaluation framework in which two LLMs alternately play the roles of patch submitter and test reviewer on real GitHub iss…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Adversarial Evaluation
-  - CI Pipeline
-  - Submitter-Reviewer
-  - Retrieval-Augmented Code Generation (RACG)
-  - Multilingual Code Benchmark
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Adversarial Evaluation"
+  - "CI Pipeline"
+  - "Submitter-Reviewer"
+  - "Retrieval-Augmented Code Generation (RACG)"
+  - "Multilingual Code Benchmark"
 date: 2026-05-08
 content_hash: 48a8d3be7213ba6d
 ---

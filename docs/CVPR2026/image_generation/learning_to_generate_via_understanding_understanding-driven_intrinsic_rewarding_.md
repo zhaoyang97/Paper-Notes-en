@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Learning to Generate via Understanding: Understanding-Driven Intrinsic Rewarding for Unified Multimodal Models
 description: >-
-  [CVPR 2026][Image Generation][Unified Multimodal Models] This paper proposes GvU, a self-supervised RL framework (based on GRPO) that leverages the visual understanding branch of a unified multimodal model (UMM) as an intrinsic reward signal. Token-level text-image alignment probabilities are used to iteratively improve T2I generation quality without any external supervision, achieving a 43.3% improvement on GenEval++. Notably, the enhanced generation in turn promotes fine-grained visual understanding.
+  [CVPR 2026][Image Generation][Unified Multimodal Models] This paper proposes GvU, a self-supervised RL framework (based on GRPO) that leverages the visual understanding branch of a unified multimodal model (UMM) as an in…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Unified Multimodal Models
-  - Self-Supervised Reinforcement Learning
-  - Intrinsic Reward
-  - Text-Image Alignment
-  - GRPO
-  - Understanding-Enhanced Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Unified Multimodal Models"
+  - "Self-Supervised Reinforcement Learning"
+  - "Intrinsic Reward"
+  - "Text-Image Alignment"
+  - "GRPO"
+  - "Understanding-Enhanced Generation"
 date: 2026-05-08
 content_hash: 9349f16f658988fc
 ---

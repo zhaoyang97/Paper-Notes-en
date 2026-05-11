@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Revisiting the Uniform Information Density Hypothesis in LLM Reasoning
 description: >-
-  [ACL 2026][LLM Evaluation][Information density uniformity] This paper introduces the Uniform Information Density (UID) hypothesis from psycholinguistics into the analysis of LLM reasoning. It proposes an entropy-based, step-level information density measurement framework, revealing a counterintuitive pattern in high-quality reasoning trajectories characterized by *local uniformity combined with global non-uniformity*, and demonstrates that this pattern significantly outperforms conventional confidence/entropy baselines in Best-of-N sampling.
+  [ACL 2026][LLM Evaluation][Information density uniformity] This paper introduces the Uniform Information Density (UID) hypothesis from psycholinguistics into the analysis of LLM reasoning. It proposes an entropy-based…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - Information density uniformity
-  - reasoning quality assessment
-  - entropy analysis
-  - Best-of-N selection
-  - chain-of-thought
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "Information density uniformity"
+  - "reasoning quality assessment"
+  - "entropy analysis"
+  - "Best-of-N selection"
+  - "chain-of-thought"
 date: 2026-05-08
 content_hash: 049f2e2b32ea44d2
 ---

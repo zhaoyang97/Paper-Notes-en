@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] NeurIPS Should Lead Scientific Consensus on AI Policy
 description: >-
-  [NeurIPS 2025][Recommender Systems][Scientific Consensus] This position paper argues that NeurIPS should proactively assume the role of facilitating scientific consensus in AI policy, drawing on the successful experience of the IPCC (Intergovernmental Panel on Climate Change) in climate science to fill the current gap in AI policy consensus mechanisms.
+  [NeurIPS 2025][Recommender Systems][Scientific Consensus] This position paper argues that NeurIPS should proactively assume the role of facilitating scientific consensus in AI policy…
 tags:
-  - NeurIPS 2025
-  - Recommender Systems
-  - Scientific Consensus
-  - AI Policy
-  - IPCC Model
-  - NeurIPS
-  - Evidence-Based Policy
+  - "NeurIPS 2025"
+  - "Recommender Systems"
+  - "Scientific Consensus"
+  - "AI Policy"
+  - "IPCC Model"
+  - "NeurIPS"
+  - "Evidence-Based Policy"
 date: 2026-05-08
 content_hash: 078ec84467661918
 ---

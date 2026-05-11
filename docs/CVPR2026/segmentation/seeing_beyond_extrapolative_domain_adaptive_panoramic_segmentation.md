@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Seeing Beyond: Extrapolative Domain Adaptive Panoramic Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Panoramic semantic segmentation] This paper proposes EDA-PSeg, a framework that introduces two core modules — a Graph Matching Adapter (GMA) and an Euler-Margin Attention (EMA) — to achieve, for the first time, open-set unsupervised domain adaptive semantic segmentation from pinhole to 360° panoramic images, simultaneously addressing geometric FoV distortion and unknown category discovery.
+  [CVPR 2026][Segmentation][Panoramic semantic segmentation] This paper proposes EDA-PSeg, a framework that introduces two core modules — a Graph Matching Adapter (GMA) and an Euler-Margin Attention (EMA) — to achieve…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Panoramic semantic segmentation
-  - open-set domain adaptation
-  - field-of-view transfer
-  - graph matching
-  - Euler attention
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Panoramic semantic segmentation"
+  - "open-set domain adaptation"
+  - "field-of-view transfer"
+  - "graph matching"
+  - "Euler attention"
 date: 2026-05-08
 content_hash: 94f09541deef0ea0
 ---

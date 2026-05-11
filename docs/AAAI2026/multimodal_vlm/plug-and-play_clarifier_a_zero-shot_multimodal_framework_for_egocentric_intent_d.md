@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Plug-and-Play Clarifier: A Zero-Shot Multimodal Framework for Egocentric Intent Disambiguation
 description: >-
-  [Multimodal VLM] This paper proposes the Plug-and-Play Clarifier, a zero-shot, modular multimodal framework that decomposes egocentric intent disambiguation into three sub-tasks: textual clarification, visual quality assessment, and cross-modal gesture grounding. The framework improves performance of small (4–8B) models by approximately 30% on intent disambiguation benchmarks, approaching or surpassing the performance of much larger models.
+  [Multimodal VLM] This paper proposes the Plug-and-Play Clarifier, a zero-shot, modular multimodal framework that decomposes egocentric intent disambiguation into three sub-tasks: textual clarification…
 tags:
-  - Multimodal VLM
+  - "Multimodal VLM"
 date: 2026-05-08
 content_hash: d02c4cfb8d1b66c2
 ---

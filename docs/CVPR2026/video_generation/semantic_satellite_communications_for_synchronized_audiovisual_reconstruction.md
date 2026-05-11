@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Semantic Satellite Communications for Synchronized Audiovisual Reconstruction
 description: >-
-  [CVPR 2026][Video Generation][Satellite communications] This paper proposes an adaptive multimodal semantic transmission system for satellite communications. A dual-stream generative architecture (video-driven audio / audio-driven video) enables dynamic modality priority switching, combined with a dynamic knowledge base update mechanism and an LLM agent decision module, achieving high-fidelity synchronized audiovisual reconstruction under severe bandwidth constraints.
+  [CVPR 2026][Video Generation][Satellite communications] This paper proposes an adaptive multimodal semantic transmission system for satellite communications. A dual-stream generative architecture (video-driven audio / au…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Satellite communications
-  - semantic transmission
-  - audiovisual synchronization
-  - cross-modal generation
-  - LLM-based intelligent decision-making
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Satellite communications"
+  - "semantic transmission"
+  - "audiovisual synchronization"
+  - "cross-modal generation"
+  - "LLM-based intelligent decision-making"
 date: 2026-05-08
 content_hash: 9b37cae913f749bc
 ---

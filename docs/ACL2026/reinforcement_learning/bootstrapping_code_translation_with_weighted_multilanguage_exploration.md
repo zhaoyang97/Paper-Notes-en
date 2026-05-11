@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Bootstrapping Code Translation with Weighted Multilanguage Exploration
 description: >-
-  [ACL 2026][Reinforcement Learning][code translation] BootTrans proposes a bootstrapping multilingual code translation approach that leverages test cases from a single pivot language (Python) as cross-lingual verification oracles, employs a dual-pool architecture to expand training data through experience collection, and designs a language-aware weighting mechanism to dynamically prioritize difficult translation directions, achieving significant improvements over baselines on HumanEval-X and TransCoder-Test.
+  [ACL 2026][Reinforcement Learning][code translation] BootTrans proposes a bootstrapping multilingual code translation approach that leverages test cases from a single pivot language (Python) as cross-lingual verification…
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - code translation
-  - bootstrapping exploration
-  - language-aware weighting
-  - RLVR
-  - multilingual optimization
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "code translation"
+  - "bootstrapping exploration"
+  - "language-aware weighting"
+  - "RLVR"
+  - "multilingual optimization"
 date: 2026-05-08
 content_hash: 69b5183bd0e62380
 ---

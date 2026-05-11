@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MetaMind: Modeling Human Social Thoughts with Metacognitive Multi-Agent Systems
 description: >-
-  [NeurIPS 2025][Dialogue Systems][Theory of Mind] This paper proposes MetaMind — a multi-agent framework inspired by psychological metacognition theory — that significantly enhances the social reasoning capabilities of LLMs through three-stage collaboration: a ToM Agent (mental state hypothesis generation), a Moral Agent (social norm-constrained refinement), and a Response Agent (response generation with self-verification). MetaMind achieves state-of-the-art performance on multiple social intelligence benchmarks, approaching human-level performance for the first time.
+  [NeurIPS 2025][Dialogue Systems][Theory of Mind] This paper proposes MetaMind — a multi-agent framework inspired by psychological metacognition theory — that significantly enhances the social reasoning capabilities of LL…
 tags:
-  - NeurIPS 2025
-  - Dialogue Systems
-  - Theory of Mind
-  - Multi-Agent Systems
-  - Metacognition
-  - Social Reasoning
-  - LLM
+  - "NeurIPS 2025"
+  - "Dialogue Systems"
+  - "Theory of Mind"
+  - "Multi-Agent Systems"
+  - "Metacognition"
+  - "Social Reasoning"
+  - "LLM"
 date: 2026-05-08
 content_hash: f59a96cf8fb95ee4
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Universal Neural Operators through Multiphysics Pretraining
 description: >-
-  [NeurIPS 2025][Scientific Computing][neural operator] This paper proposes an adapter-based multiphysics pretraining framework for neural operators. By treating lifting/projection layers as problem-specific adapters and freezing shared kernel integration operator layers, the framework enables transfer learning across PDE problems, substantially reducing fine-tuning cost while improving generalization.
+  [NeurIPS 2025][Scientific Computing][neural operator] This paper proposes an adapter-based multiphysics pretraining framework for neural operators. By treating lifting/projection layers as problem-specific adapters and f…
 tags:
-  - NeurIPS 2025
-  - Scientific Computing
-  - neural operator
-  - transfer learning
-  - PDE
-  - multiphysics
-  - foundation model
+  - "NeurIPS 2025"
+  - "Scientific Computing"
+  - "neural operator"
+  - "transfer learning"
+  - "PDE"
+  - "multiphysics"
+  - "foundation model"
 date: 2026-05-08
 content_hash: b37a121c2551c025
 ---

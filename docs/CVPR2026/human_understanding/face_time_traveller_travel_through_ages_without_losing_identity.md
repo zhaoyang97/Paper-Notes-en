@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Face Time Traveller: Travel Through Ages Without Losing Identity
 description: >-
-  [CVPR2026][Human Understanding][Face aging] This paper proposes FaceTT, a framework that achieves high-fidelity, identity-consistent face age transformation via three core modules—face-attribute-aware prompt refinement, angular inversion, and adaptive attention control (AAC)—surpassing existing methods across multiple benchmarks.
+  [CVPR2026][Human Understanding][Face aging] This paper proposes FaceTT, a framework that achieves high-fidelity, identity-consistent face age transformation via three core modules—face-attribute-aware prompt refinement…
 tags:
-  - CVPR2026
-  - Human Understanding
-  - Face aging
-  - diffusion models
-  - identity preservation
-  - attention control
-  - tuning-free inversion
+  - "CVPR2026"
+  - "Human Understanding"
+  - "Face aging"
+  - "diffusion models"
+  - "identity preservation"
+  - "attention control"
+  - "tuning-free inversion"
 date: 2026-05-08
 content_hash: 1d1555b4b0b5ab5d
 ---

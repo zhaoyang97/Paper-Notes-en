@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HiLoMix: Robust High- and Low-Frequency Graph Learning Framework for Mixing Address Association
 description: >-
-  [AAAI 2026][Self-Supervised Learning][Graph Neural Networks] This paper proposes HiLoMix, a robust graph learning framework for the mixing address association task. It addresses three core challenges—graph sparsity, label scarcity, and label noise—through a Heterogeneous Attribute Mixing Interaction Graph (HAMIG), frequency-aware graph contrastive learning, and confidence-based label weighting supervision, respectively. HiLoMix surpasses the second-best baseline by 5.69%, 7.34%, and 15.61% on F1, AUC, and MRR.
+  [AAAI 2026][Self-Supervised Learning][Graph Neural Networks] This paper proposes HiLoMix, a robust graph learning framework for the mixing address association task. It addresses three core challenges—graph sparsity…
 tags:
-  - AAAI 2026
-  - Self-Supervised Learning
-  - Graph Neural Networks
-  - Blockchain Analysis
-  - Frequency-Aware Contrastive Learning
-  - Label Noise
-  - Tornado Cash
+  - "AAAI 2026"
+  - "Self-Supervised Learning"
+  - "Graph Neural Networks"
+  - "Blockchain Analysis"
+  - "Frequency-Aware Contrastive Learning"
+  - "Label Noise"
+  - "Tornado Cash"
 date: 2026-05-08
 content_hash: 0d665ed65f643a60
 ---

@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] Structured Sparse Transition Matrices to Enable State Tracking in State-Space Models
 description: >-
-  [NeurIPS 2025][Video Understanding] This paper proposes PD-SSM, a structured sparse parameterization for the state transition matrix of state-space models (SSMs). The core idea is to factorize the transition matrix as a product of a column-wise one-hot matrix P and a complex diagonal matrix D (i.e., $A = PD$), achieving expressiveness equivalent to unstructured (dense) SSMs while retaining computational efficiency comparable to diagonal SSMs at $\Theta(LN)$. A single layer suffices to simulate any $N$-state finite-state automaton (FSA). The paper provides theoretical guarantees on BIBO stability and optimal state dimensionality, with strong empirical results on FSA simulation, multivariate time-series classification, long-sequence benchmarks, and natural-language state-tracking tasks.
+  [NeurIPS 2025][Video Understanding] This paper proposes PD-SSM, a structured sparse parameterization for the state transition matrix of state-space models (SSMs). The core idea is to factorize the transition matrix as a…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
+  - "NeurIPS 2025"
+  - "Video Understanding"
 date: 2026-05-08
 content_hash: 104b59f2e448da16
 ---

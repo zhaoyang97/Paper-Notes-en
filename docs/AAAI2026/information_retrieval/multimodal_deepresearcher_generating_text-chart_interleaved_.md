@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Multimodal DeepResearcher: Generating Text-Chart Interleaved Reports From Scratch with Agentic Framework
 description: >-
-  [AAAI 2026 (Oral)][Deep Research Agent] This paper proposes Multimodal DeepResearcher, a four-stage agentic framework for generating text-chart interleaved research reports from scratch. It introduces Formal Description of Visualization (FDV) to enable LLMs to learn and produce diverse charts, and employs an Actor-Critic iterative refinement mechanism (LLM generates D3.js code → browser rendering → multimodal LLM review). The system achieves an 82% overall win rate (Claude 3.7) on the newly constructed MultimodalReportBench and a 100% win rate in human evaluation.
+  [AAAI 2026 (Oral)][Information Retrieval & RAG][Deep Research Agent] This paper proposes Multimodal DeepResearcher, a four-stage agentic framework for generating text-chart interleaved research reports from scratch. It i…
 tags:
-  - AAAI 2026 (Oral)
-  - Deep Research Agent
-  - Text-Chart Interleaved Reports
-  - Formal Description of Visualization (FDV)
-  - D3.js Chart Generation
-  - Actor-Critic Chart Refinement
+  - "AAAI 2026 (Oral)"
+  - "Information Retrieval & RAG"
+  - "Deep Research Agent"
+  - "Text-Chart Interleaved Reports"
+  - "Formal Description of Visualization (FDV)"
+  - "D3.js Chart Generation"
+  - "Actor-Critic Chart Refinement"
 date: 2026-05-08
 content_hash: 4f91cc0c5193f593
 ---

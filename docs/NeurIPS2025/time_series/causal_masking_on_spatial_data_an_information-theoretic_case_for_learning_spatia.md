@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Causal Masking on Spatial Data: An Information-Theoretic Case for Learning Spatial Datasets with Unimodal Language Models
 description: >-
-  [NeurIPS 2025][Time Series][causal masking] This paper demonstrates that applying causal masking directly to spatial data (chess board states in FEN format) for training a unimodal LLM outperforms first linearizing the data into sequences (PGN move records) and then applying causal masking — Llama 1.3B trained with FEN + causal masking achieves ~2630 Elo, whereas PGN + causal masking yields only ~2130 Elo.
+  [NeurIPS 2025][Time Series][causal masking] This paper demonstrates that applying causal masking directly to spatial data (chess board states in FEN format) for training a unimodal LLM outperforms first linearizing the d…
 tags:
-  - NeurIPS 2025
-  - Time Series
-  - causal masking
-  - spatial data
-  - chess
-  - FEN encoding
-  - bidirectional attention
-  - information theory
-  - unimodal LLM
+  - "NeurIPS 2025"
+  - "Time Series"
+  - "causal masking"
+  - "spatial data"
+  - "chess"
+  - "FEN encoding"
+  - "bidirectional attention"
+  - "information theory"
+  - "unimodal LLM"
 date: 2026-05-08
 content_hash: f3a9526d7bccc114
 ---

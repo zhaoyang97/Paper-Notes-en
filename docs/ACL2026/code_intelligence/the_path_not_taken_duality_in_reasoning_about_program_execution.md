@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] The Path Not Taken: Duality in Reasoning about Program Execution
 description: >-
-  [ACL 2026][Program Execution Reasoning] This paper introduces the concept of duality in program execution reasoning. Through the DexBench benchmark (445 paired instances), it jointly evaluates LLMs on forward execution reasoning (predicting code coverage under a given input) and backward counterfactual reasoning (inferring input mutations that redirect execution to a target branch). The results reveal that strong performance in a single direction does not transfer to success under joint evaluation, exposing a fundamental deficiency in models' causal understanding of program execution.
+  [ACL 2026][Code Intelligence][Program Execution Reasoning] This paper introduces the concept of duality in program execution reasoning. Through the DexBench benchmark (445 paired instances)…
 tags:
-  - ACL 2026
-  - Program Execution Reasoning
-  - Counterfactual Reasoning
-  - Dual-Path Reasoning
-  - Code Coverage
-  - LLM Code Understanding
+  - "ACL 2026"
+  - "Code Intelligence"
+  - "Program Execution Reasoning"
+  - "Counterfactual Reasoning"
+  - "Dual-Path Reasoning"
+  - "Code Coverage"
+  - "LLM Code Understanding"
 date: 2026-05-08
 content_hash: a2c7c88416e9ec3b
 ---

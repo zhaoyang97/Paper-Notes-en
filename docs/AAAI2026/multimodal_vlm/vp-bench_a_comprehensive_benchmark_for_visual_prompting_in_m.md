@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VP-Bench: A Comprehensive Benchmark for Visual Prompting in Multimodal Large Language Models
 description: >-
-  [AAAI 2026][Multimodal VLM][Visual Prompting] VP-Bench introduces the first systematic two-stage benchmark for evaluating MLLMs' understanding of visual prompts (VPs): Stage 1 covers 30K+ images across 8 VP shape types × 355 attribute combinations to assess VP perception ability, while Stage 2 evaluates the practical effectiveness of VPs on 6 downstream tasks. Experiments on 28 MLLMs reveal the critical impact of VP shape selection on model performance.
+  [AAAI 2026][Multimodal VLM][Visual Prompting] VP-Bench introduces the first systematic two-stage benchmark for evaluating MLLMs' understanding of visual prompts (VPs): Stage 1 covers 30K+ images across 8 VP shape types ×…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Visual Prompting
-  - MLLM Evaluation
-  - Visual Prompt Perception
-  - Region Referring
-  - Benchmark Design
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Visual Prompting"
+  - "MLLM Evaluation"
+  - "Visual Prompt Perception"
+  - "Region Referring"
+  - "Benchmark Design"
 date: 2026-05-08
 content_hash: 84a87512169b7a86
 ---

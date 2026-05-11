@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GASP: Efficient Black-Box Generation of Adversarial Suffixes for Jailbreaking LLMs
 description: >-
-  [NeurIPS 2025][LLM Alignment][adversarial suffix] This paper proposes GASP, a framework that trains a dedicated SuffixLLM to generate human-readable adversarial suffixes. It employs Latent Bayesian Optimization (LBO) to efficiently search the continuous embedding space and iteratively fine-tunes the generator via ORPO, achieving high attack success rates in a fully black-box setting while maintaining suffix readability.
+  [NeurIPS 2025][LLM Alignment][adversarial suffix] This paper proposes GASP, a framework that trains a dedicated SuffixLLM to generate human-readable adversarial suffixes. It employs Latent Bayesian Optimization (LBO) to…
 tags:
-  - NeurIPS 2025
-  - LLM Alignment
-  - adversarial suffix
-  - jailbreak attack
-  - Bayesian optimization
-  - black-box attack
-  - red teaming
+  - "NeurIPS 2025"
+  - "LLM Alignment"
+  - "adversarial suffix"
+  - "jailbreak attack"
+  - "Bayesian optimization"
+  - "black-box attack"
+  - "red teaming"
 date: 2026-05-08
 content_hash: c475cb54f5a1e687
 ---

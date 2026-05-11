@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Scaling Generalist Data-Analytic Agents
 description: >-
-  [ICLR 2026][LLM Reasoning][Data-Analytic Agent] This paper proposes DataMind — a complete training framework for data-analytic agents — achieving diverse query synthesis via fine-grained task taxonomy with recursive difficulty composition, ensuring data quality through knowledge-augmented trajectory sampling and self-consistency filtering, employing a dynamic SFT+RL mixed training strategy, and implementing a memory-efficient asynchronous rollout framework. The resulting DataMind-14B achieves a 71.16% average score across multiple benchmarks, establishing a new state of the art and surpassing GPT-5 and DeepSeek-V3.1.
+  [ICLR 2026][LLM Reasoning][Data-Analytic Agent] This paper proposes DataMind — a complete training framework for data-analytic agents — achieving diverse query synthesis via fine-grained task taxonomy with recursive diff…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Data-Analytic Agent
-  - Agent Training
-  - Multi-turn Code Execution
-  - Data Synthesis
-  - SFT+RL
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "Data-Analytic Agent"
+  - "Agent Training"
+  - "Multi-turn Code Execution"
+  - "Data Synthesis"
+  - "SFT+RL"
 date: 2026-05-08
 content_hash: c5a156f07cc058c0
 ---

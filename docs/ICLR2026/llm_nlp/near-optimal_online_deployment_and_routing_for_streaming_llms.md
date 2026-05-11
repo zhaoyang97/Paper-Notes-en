@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Near-Optimal Online Deployment and Routing for Streaming LLMs
 description: >-
-  [ICLR 2026][LLM/NLP][LLM routing] This work provides the first formal treatment of the joint LLM streaming online deployment and routing problem, where new models continuously arrive and existing models may become obsolete. Under a concurrency deployment cap $M_{\max}$ and cost budget constraints, the paper proposes StageRoute, a hierarchical algorithm that achieves a provable $\tilde{\mathcal{O}}(T^{2/3})$ regret bound with a matching lower bound, establishing near-optimality.
+  [ICLR 2026][LLM/NLP][LLM routing] This work provides the first formal treatment of the joint LLM streaming online deployment and routing problem…
 tags:
-  - ICLR 2026
-  - LLM/NLP
-  - LLM routing
-  - online deployment
-  - streaming bandits
-  - concurrency cap
-  - budget constraints
+  - "ICLR 2026"
+  - "LLM/NLP"
+  - "LLM routing"
+  - "online deployment"
+  - "streaming bandits"
+  - "concurrency cap"
+  - "budget constraints"
 date: 2026-05-08
 content_hash: db3e2e5c00e67383
 ---

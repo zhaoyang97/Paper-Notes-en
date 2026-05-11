@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MOOSE-Chem2: Exploring LLM Limits in Fine-Grained Scientific Hypothesis Discovery
 description: >-
-  [NeurIPS 2025][LLM/NLP][Hypothesis Generation] This work formalizes fine-grained scientific hypothesis generation as a combinatorial optimization problem and proposes Hierarchical Heuristic Search (HHS)—using LLM pairwise comparisons as gradient signals to navigate the hypothesis space, with hierarchical abstraction smoothing the reward landscape to reduce local optima entrapment. On an expert-annotated benchmark of 51 post-2024 chemistry papers, Soft Recall improves from 19.99% to 40.35%.
+  [NeurIPS 2025][LLM/NLP][Hypothesis Generation] This work formalizes fine-grained scientific hypothesis generation as a combinatorial optimization problem and proposes Hierarchical Heuristic Search (HHS)—using LLM pairwis…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - Hypothesis Generation
-  - Hierarchical Search
-  - Chemistry
-  - LLM Reasoning
-  - Combinatorial Optimization
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "Hypothesis Generation"
+  - "Hierarchical Search"
+  - "Chemistry"
+  - "LLM Reasoning"
+  - "Combinatorial Optimization"
 date: 2026-05-08
 content_hash: 3e122de7cd676e20
 ---

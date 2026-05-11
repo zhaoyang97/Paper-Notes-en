@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] PoSh: Using Scene Graphs to Guide LLMs-as-a-Judge for Detailed Image Descriptions
 description: >-
-  [ICLR 2026][detailed image description] This paper proposes PoSh, an evaluation metric that extracts scene graphs $G(d) = \langle O(d), E(d), K(d) \rangle$ from both generated and reference descriptions as structured rubrics, guiding an open-source 14B LLM (Qwen3-14B) to perform QA-based fine-grained error localization. PoSh surpasses GPT-4o-as-Judge by +0.05 Spearman ρ on the DOCENT artwork benchmark and CapArena, while remaining fully reproducible.
+  [ICLR 2026][Interpretability][detailed image description] This paper proposes PoSh, an evaluation metric that extracts scene graphs $G(d) = \langle O(d), E(d)…
 tags:
-  - ICLR 2026
-  - detailed image description
-  - scene graph
-  - LLM-as-Judge
-  - fine-grained evaluation
-  - assistive text
+  - "ICLR 2026"
+  - "Interpretability"
+  - "detailed image description"
+  - "scene graph"
+  - "LLM-as-Judge"
+  - "fine-grained evaluation"
+  - "assistive text"
 date: 2026-05-08
 content_hash: c28bab0e1cd27873
 ---

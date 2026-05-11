@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Steerable Adversarial Scenario Generation through Test-Time Preference Alignment (SAGE)
 description: >-
-  [ICLR 2026][Autonomous Driving][adversarial scenario generation] SAGE reformulates adversarial scenario generation for autonomous driving as a multi-objective preference alignment problem. By training two preference expert models and performing weight interpolation at inference time, it enables a continuous and steerable trade-off between adversariality and realism—without retraining—generating a full spectrum of scenarios from mild to aggressive, substantially improving closed-loop training performance.
+  [ICLR 2026][Autonomous Driving][adversarial scenario generation] SAGE reformulates adversarial scenario generation for autonomous driving as a multi-objective preference alignment problem. By training two preference expe…
 tags:
-  - ICLR 2026
-  - Autonomous Driving
-  - adversarial scenario generation
-  - preference alignment
-  - multi-objective optimization
-  - linear mode connectivity
-  - closed-loop training
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "adversarial scenario generation"
+  - "preference alignment"
+  - "multi-objective optimization"
+  - "linear mode connectivity"
+  - "closed-loop training"
 date: 2026-05-08
 content_hash: c2dfb33c2b1004b3
 ---

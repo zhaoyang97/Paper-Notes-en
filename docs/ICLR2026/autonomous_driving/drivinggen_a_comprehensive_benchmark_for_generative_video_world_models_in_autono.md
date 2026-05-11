@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DrivingGen: A Comprehensive Benchmark for Generative Video World Models in Autonomous Driving
 description: >-
-  [ICLR 2026][Autonomous Driving][Video world models] DrivingGen introduces the first comprehensive benchmark for autonomous driving video world models, comprising a diverse evaluation dataset spanning weather/geography/time/complex scenarios and a four-dimensional metric framework (distribution, quality, temporal consistency, trajectory alignment). Evaluation of 14 SOTA models reveals a fundamental trade-off between general-purpose and driving-specific models.
+  [ICLR 2026][Autonomous Driving][Video world models] DrivingGen introduces the first comprehensive benchmark for autonomous driving video world models…
 tags:
-  - ICLR 2026
-  - Autonomous Driving
-  - Video world models
-  - benchmark
-  - driving scene generation
-  - trajectory evaluation
-  - temporal consistency
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "Video world models"
+  - "benchmark"
+  - "driving scene generation"
+  - "trajectory evaluation"
+  - "temporal consistency"
 date: 2026-05-08
 content_hash: 4ebbf922b0c68e7b
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Sparfels: Fast Reconstruction from Sparse Unposed Imagery
 description: >-
-  [ICCV 2025][3D Vision][Sparse-view reconstruction] Sparfels integrates a 3D foundation model (MASt3R) with efficient test-time optimization (2DGS). MASt3R provides an initial point cloud, camera poses, and dense correspondences to guide optimization. A novel splat color variance loss is introduced, enabling state-of-the-art geometric reconstruction from sparse unposed images in under three minutes.
+  [ICCV 2025][3D Vision][Sparse-view reconstruction] Sparfels integrates a 3D foundation model (MASt3R) with efficient test-time optimization (2DGS). MASt3R provides an initial point cloud, camera poses…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Sparse-view reconstruction
-  - unposed reconstruction
-  - 2D Gaussian splatting
-  - MASt3R
-  - color variance regularization
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Sparse-view reconstruction"
+  - "unposed reconstruction"
+  - "2D Gaussian splatting"
+  - "MASt3R"
+  - "color variance regularization"
 date: 2026-05-08
 content_hash: fd75406ae11f70f9
 ---

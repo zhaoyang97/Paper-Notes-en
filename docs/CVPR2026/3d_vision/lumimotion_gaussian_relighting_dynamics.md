@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LumiMotion: Improving Gaussian Relighting with Scene Dynamics
 description: >-
-  [CVPR 2026][3D Vision][Inverse Rendering] LumiMotion is the first Gaussian-based inverse rendering method that leverages scene dynamics (motion regions) as supervision signals to improve material-lighting decomposition. Through static-dynamic separation and motion-revealed appearance changes, it achieves a 23% improvement in albedo LPIPS and a 15% improvement in relighting LPIPS.
+  [CVPR 2026][3D Vision][Inverse Rendering] LumiMotion is the first Gaussian-based inverse rendering method that leverages scene dynamics (motion regions) as supervision signals to improve material-lighting decomposition.…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Inverse Rendering
-  - 2D Gaussian Splatting
-  - Dynamic Scenes
-  - Material Estimation
-  - Relighting
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Inverse Rendering"
+  - "2D Gaussian Splatting"
+  - "Dynamic Scenes"
+  - "Material Estimation"
+  - "Relighting"
 date: 2026-05-08
 content_hash: 9993eb7ac693fc1e
 ---

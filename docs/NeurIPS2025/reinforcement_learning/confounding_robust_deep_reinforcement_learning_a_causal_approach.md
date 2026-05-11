@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Confounding Robust Deep Reinforcement Learning: A Causal Approach
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][confounded MDP] This paper extends DQN via partial identification theory, proposing Causal DQN to learn robust policies from offline data with unobserved confounders—by optimizing a worst-case lower bound on the value function to obtain safe policies—and consistently outperforms standard DQN across 12 confounded Atari games.
+  [NeurIPS 2025][Reinforcement Learning][confounded MDP] This paper extends DQN via partial identification theory, proposing Causal DQN to learn robust policies from offline data with unobserved confounders—by optimizing a…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - confounded MDP
-  - off-policy learning
-  - partial identification
-  - causal DQN
-  - Atari
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "confounded MDP"
+  - "off-policy learning"
+  - "partial identification"
+  - "causal DQN"
+  - "Atari"
 date: 2026-05-08
 content_hash: dd5e5b2cdccc4966
 ---

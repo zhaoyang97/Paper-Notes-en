@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GanitLLM: Difficulty-Aware Bengali Mathematical Reasoning through Curriculum-GRPO
 description: >-
-  [ACL 2026][LLM Reasoning][Bengali mathematical reasoning] This paper presents GanitLLM, the first mathematical reasoning model that genuinely reasons in Bengali (rather than translating or reasoning in English), together with Ganit, a difficulty-annotated Bengali math dataset. The proposed Curriculum-GRPO addresses the cold-start problem in GRPO training for low-resource languages. The 4B model achieves an 8 percentage-point accuracy gain on Bn-MGSM, and the proportion of Bengali reasoning tokens increases from 14% to 88%.
+  [ACL 2026][LLM Reasoning][Bengali mathematical reasoning] This paper presents GanitLLM, the first mathematical reasoning model that genuinely reasons in Bengali (rather than translating or reasoning in English)…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - Bengali mathematical reasoning
-  - curriculum learning
-  - GRPO cold start
-  - difficulty-aware
-  - low-resource language
+  - "ACL 2026"
+  - "LLM Reasoning"
+  - "Bengali mathematical reasoning"
+  - "curriculum learning"
+  - "GRPO cold start"
+  - "difficulty-aware"
+  - "low-resource language"
 date: 2026-05-08
 content_hash: 5c49d320faca4b44
 ---

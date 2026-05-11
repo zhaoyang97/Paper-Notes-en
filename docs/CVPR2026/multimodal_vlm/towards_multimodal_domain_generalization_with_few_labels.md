@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Multimodal Domain Generalization with Few Labels
 description: >-
-  [CVPR 2026][Multimodal VLM][Semi-supervised Learning] This paper defines and investigates the novel problem of Semi-Supervised Multimodal Domain Generalization (SSMDG), and proposes a unified framework integrating consensus-driven pseudo-labeling, disagreement-aware regularization, and cross-modal prototype alignment to achieve cross-domain generalization of multimodal models under limited annotation.
+  [CVPR 2026][Multimodal VLM][Semi-supervised Learning] This paper defines and investigates the novel problem of Semi-Supervised Multimodal Domain Generalization (SSMDG)…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Semi-supervised Learning
-  - Domain Generalization
-  - Multimodal Fusion
-  - Pseudo Labels
-  - Cross-modal Prototype Alignment
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Semi-supervised Learning"
+  - "Domain Generalization"
+  - "Multimodal Fusion"
+  - "Pseudo Labels"
+  - "Cross-modal Prototype Alignment"
 date: 2026-05-08
 content_hash: fde90cb1f73c1b45
 ---

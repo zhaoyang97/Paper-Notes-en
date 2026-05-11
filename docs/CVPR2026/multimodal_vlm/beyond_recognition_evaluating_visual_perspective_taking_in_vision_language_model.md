@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond Recognition: Evaluating Visual Perspective Taking in Vision Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Visual Perspective Taking] By constructing the Isle-Brick-V2 benchmark using psychologically inspired controlled LEGO scenes, this work systematically exposes significant deficiencies in current VLMs' Visual Perspective Taking (VPT) capabilities—even when scene understanding is near-perfect, spatial reasoning and perspective-taking performance degrade substantially, accompanied by persistent directional biases.
+  [CVPR 2026][Multimodal VLM][Visual Perspective Taking] By constructing the Isle-Brick-V2 benchmark using psychologically inspired controlled LEGO scenes…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Visual Perspective Taking
-  - Theory of Mind
-  - Spatial Reasoning
-  - VLM Evaluation
-  - Cognitive Science
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Visual Perspective Taking"
+  - "Theory of Mind"
+  - "Spatial Reasoning"
+  - "VLM Evaluation"
+  - "Cognitive Science"
 date: 2026-05-08
 content_hash: b4d56ee132ebf35b
 ---

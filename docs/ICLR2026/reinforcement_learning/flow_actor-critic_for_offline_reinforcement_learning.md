@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Flow Actor-Critic for Offline Reinforcement Learning (FAC)
 description: >-
-  [ICLR 2026][Reinforcement Learning][Offline RL] FAC is the first method to jointly leverage a continuous normalizing flow model to simultaneously construct an expressive actor policy and a critic penalty mechanism based on exact density estimation. By identifying OOD regions for selective conservative Q-value estimation, FAC achieves an average score of 60.3 across 55 OGBench tasks, substantially outperforming the previous best of 43.6.
+  [ICLR 2026][Reinforcement Learning][Offline RL] FAC is the first method to jointly leverage a continuous normalizing flow model to simultaneously construct an expressive actor policy and a critic penalty mechanism based…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Offline RL
-  - Flow Matching
-  - Actor-Critic
-  - OOD Detection
-  - Continuous Normalizing Flows
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Offline RL"
+  - "Flow Matching"
+  - "Actor-Critic"
+  - "OOD Detection"
+  - "Continuous Normalizing Flows"
 date: 2026-05-08
 content_hash: 5ac881ff7c08b009
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Neural Network for Simulating Radio Emission from Extensive Air Showers
 description: >-
-  [NeurIPS 2025][Cosmic rays] A simple fully connected neural network is employed to replace computationally expensive CoREAS Monte Carlo simulations, enabling fast prediction of radio pulses from extensive air showers (EAS) while achieving $X_{\text{max}}$ reconstruction resolution comparable to conventional simulations.
+  [NeurIPS 2025][Cosmic rays] A simple fully connected neural network is employed to replace computationally expensive CoREAS Monte Carlo simulations…
 tags:
-  - NeurIPS 2025
-  - Cosmic rays
-  - extensive air showers
-  - radio emission simulation
-  - neural network surrogate model
-  - "$X_{\text{max}}$ reconstruction"
+  - "NeurIPS 2025"
+  - "Cosmic rays"
+  - "extensive air showers"
+  - "radio emission simulation"
+  - "neural network surrogate model"
+  - "$X_{\\text{max}}$ reconstruction"
 date: 2026-05-08
 content_hash: c5712500f722735c
 ---

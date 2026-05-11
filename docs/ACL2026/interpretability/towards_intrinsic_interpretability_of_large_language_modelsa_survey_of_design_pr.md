@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Towards Intrinsic Interpretability of Large Language Models: A Survey of Design Principles and Architectures
 description: >-
-  [ACL 2026][Intrinsic interpretability] This paper presents a systematic survey of recent advances in intrinsic interpretability of LLMs, organizing existing methods into five design paradigms (functional transparency, concept alignment, representational decomposability, explicit modularity, and latent sparsity induction), and discusses open challenges and future directions.
+  [ACL 2026][Interpretability][Intrinsic interpretability] This paper presents a systematic survey of recent advances in intrinsic interpretability of LLMs…
 tags:
-  - ACL 2026
-  - Intrinsic interpretability
-  - large language models
-  - design paradigm taxonomy
-  - modular architecture
-  - latent sparsity induction
+  - "ACL 2026"
+  - "Interpretability"
+  - "Intrinsic interpretability"
+  - "large language models"
+  - "design paradigm taxonomy"
+  - "modular architecture"
+  - "latent sparsity induction"
 date: 2026-05-08
 content_hash: 917c43dad89eb444
 ---

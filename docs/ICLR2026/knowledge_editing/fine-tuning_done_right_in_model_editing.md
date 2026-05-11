@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Fine-tuning Done Right in Model Editing
 description: >-
-  [ICLR 2026][Knowledge Editing][Model Editing] This paper reveals that the underestimation of fine-tuning in model editing stems from an incorrect training pipeline (depth-first, sample-by-sample optimization). By correcting it to standard breadth-first mini-batch training and combining it with localized parameter updates, the proposed LocFT-BF achieves, for the first time, support for 100K sequential edits and models up to 72B parameters.
+  [ICLR 2026][Knowledge Editing][Model Editing] This paper reveals that the underestimation of fine-tuning in model editing stems from an incorrect training pipeline (depth-first…
 tags:
-  - ICLR 2026
-  - Knowledge Editing
-  - Model Editing
-  - Fine-tuning
-  - Catastrophic Forgetting
-  - Localized Fine-tuning
+  - "ICLR 2026"
+  - "Knowledge Editing"
+  - "Model Editing"
+  - "Fine-tuning"
+  - "Catastrophic Forgetting"
+  - "Localized Fine-tuning"
 date: 2026-05-08
 content_hash: bc1800159aa0a553
 ---

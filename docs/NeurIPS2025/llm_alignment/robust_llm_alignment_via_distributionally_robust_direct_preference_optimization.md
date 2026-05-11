@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Robust LLM Alignment via Distributionally Robust Direct Preference Optimization
 description: >-
-  [NeurIPS 2025][LLM Alignment][DRO] This paper proposes two robust DPO variants—WDPO (Wasserstein) and KLDPO (KL divergence)—under a distributionally robust optimization (DRO) framework to address alignment failures caused by shifts in user preference distributions. The approach provides $O(n^{-1/4})$ convergence guarantees and achieves significant improvements over standard DPO on multi-dimensional alignment tasks and the OpenLLM leaderboard.
+  [NeurIPS 2025][LLM Alignment][DRO] This paper proposes two robust DPO variants—WDPO (Wasserstein) and KLDPO (KL divergence)—under a distributionally robust optimization (DRO) framework to address alignment failures cause…
 tags:
-  - NeurIPS 2025
-  - LLM Alignment
-  - DRO
-  - DPO
-  - distributionally robust optimization
-  - preference shift
+  - "NeurIPS 2025"
+  - "LLM Alignment"
+  - "DRO"
+  - "DPO"
+  - "distributionally robust optimization"
+  - "preference shift"
 date: 2026-05-08
 content_hash: cb7d4ff0e3611a85
 ---

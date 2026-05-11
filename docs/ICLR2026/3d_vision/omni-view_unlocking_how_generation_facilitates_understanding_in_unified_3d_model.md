@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Omni-View: Unlocking How Generation Facilitates Understanding in Unified 3D Model based on Multiview images
 description: >-
-  [ICLR 2026][3D Vision][Unified Understanding and Generation] This paper presents Omni-View, a unified 3D scene understanding and generation model that enhances understanding performance through a texture module (novel view synthesis) and a geometry module (depth/pose estimation), achieving a score of 55.4 on VSI-Bench and surpassing all existing specialized 3D understanding models.
+  [ICLR 2026][3D Vision][Unified Understanding and Generation] This paper presents Omni-View, a unified 3D scene understanding and generation model that enhances understanding performance through a texture module (novel vi…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Unified Understanding and Generation
-  - 3D Scene Understanding
-  - Novel View Synthesis
-  - Spatial Reasoning
-  - Multi-view
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Unified Understanding and Generation"
+  - "3D Scene Understanding"
+  - "Novel View Synthesis"
+  - "Spatial Reasoning"
+  - "Multi-view"
 date: 2026-05-08
 content_hash: 4f9ac1b19ebf8631
 ---

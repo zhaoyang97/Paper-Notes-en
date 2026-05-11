@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] OminiControl: Minimal and Universal Control for Diffusion Transformer
 description: >-
-  [Image Generation] OminiControl is proposed to unify spatially aligned and non-aligned image control tasks on the DiT architecture with only 0.1% additional parameters. Core innovations include unified sequence processing, dynamic positional encoding, and an attention bias control mechanism.
+  [Image Generation] OminiControl is proposed to unify spatially aligned and non-aligned image control tasks on the DiT architecture with only 0.1% additional parameters. Core innovations include unified sequence processin…
 tags:
-  - Image Generation
+  - "Image Generation"
 date: 2026-05-08
 content_hash: 58744c7a821b2fd5
 ---

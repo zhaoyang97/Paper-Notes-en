@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Not All Splits Are Equal: Rethinking Attribute Generalization Across Unrelated Categories
 description: >-
-  [NEURIPS2025][LLM Evaluation][attribute generalization] This paper presents the first systematic evaluation of how train/test splitting strategies affect generalization performance in attribute prediction tasks. It proposes four progressively harder splitting schemes based on LLM semantic grouping, embedding similarity, embedding clustering, and ground-truth supercategory labels. The study finds that unsupervised clustering-based splitting achieves leakage reduction comparable to ground-truth supercategory splits—without requiring any annotations—while retaining substantially better predictive performance.
+  [NEURIPS2025][LLM Evaluation][attribute generalization] This paper presents the first systematic evaluation of how train/test splitting strategies affect generalization performance in attribute prediction tasks. It propo…
 tags:
-  - NEURIPS2025
-  - LLM Evaluation
-  - attribute generalization
-  - train/test splits
-  - semantic leakage
-  - clustering
-  - linear probing
-  - visual representations
+  - "NEURIPS2025"
+  - "LLM Evaluation"
+  - "attribute generalization"
+  - "train/test splits"
+  - "semantic leakage"
+  - "clustering"
+  - "linear probing"
+  - "visual representations"
 date: 2026-05-08
 content_hash: 221605ea9f094425
 ---

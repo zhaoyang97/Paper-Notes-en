@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] EmbodiedSplat: Personalized Real-to-Sim-to-Real Navigation with Gaussian Splats from a Mobile Device
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes EmbodiedSplat, a complete pipeline that captures real environments via iPhone video → reconstructs 3D Gaussian Splat meshes → fine-tunes navigation policies in Habitat-Sim → deploys to the real world. The approach achieves 20%–40% absolute success rate improvement over zero-shot baselines on real-scene ImageNav tasks, with a sim-vs-real Spearman rank correlation coefficient of 0.87–0.97.
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes EmbodiedSplat, a complete pipeline that captures real environments via iPhone video → reconstructs 3D Gaussian Splat meshes → fine-tunes navigation polici…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - Embodied Navigation
-  - Sim-to-Real Transfer
-  - Scene Reconstruction
-  - Personalized Policy Training
-  - ImageNav
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Embodied Navigation"
+  - "Sim-to-Real Transfer"
+  - "Scene Reconstruction"
+  - "Personalized Policy Training"
+  - "ImageNav"
 date: 2026-05-08
 content_hash: 1331d0e4459d8321
 ---

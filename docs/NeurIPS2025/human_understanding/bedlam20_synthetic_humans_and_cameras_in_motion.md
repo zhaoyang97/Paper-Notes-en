@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] BEDLAM2.0: Synthetic Humans and Cameras in Motion
 description: >-
-  [NeurIPS 2025][Human Understanding][synthetic data] BEDLAM2.0 is a comprehensive upgrade over BEDLAM, introducing diverse camera motions (synthetic translation/tracking/orbit + handheld/head-mounted capture), broader body shape coverage (BMI 18–41), strand-based hair, shoes, size-graded clothing, and more 3D environments. The resulting dataset comprises 27K+ sequences and 8M+ frames; models trained exclusively on this synthetic data surpass the state of the art in world-coordinate human motion estimation.
+  [NeurIPS 2025][Human Understanding][synthetic data] BEDLAM2.0 is a comprehensive upgrade over BEDLAM, introducing diverse camera motions (synthetic translation/tracking/orbit + handheld/head-mounted capture)…
 tags:
-  - NeurIPS 2025
-  - Human Understanding
-  - synthetic data
-  - SMPL-X
-  - camera motion
-  - HPS estimation
-  - world coordinates
-  - BEDLAM
+  - "NeurIPS 2025"
+  - "Human Understanding"
+  - "synthetic data"
+  - "SMPL-X"
+  - "camera motion"
+  - "HPS estimation"
+  - "world coordinates"
+  - "BEDLAM"
 date: 2026-05-08
 content_hash: fe2c0dc16f324e0c
 ---

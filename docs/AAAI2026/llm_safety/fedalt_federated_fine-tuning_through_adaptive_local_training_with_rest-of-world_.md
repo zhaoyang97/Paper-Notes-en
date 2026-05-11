@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FedALT: Federated Fine-Tuning through Adaptive Local Training with Rest-of-World LoRA
 description: >-
-  [AAAI 2026][LLM Safety][Federated Learning] FedALT is proposed to maintain a trainable Individual LoRA (updated locally) and a frozen Rest-of-World (RoW) LoRA (averaged from other clients) for each client, combined with an adaptive MoE mixer that dynamically balances local and global knowledge. This design fundamentally eliminates cross-client interference caused by FedAvg aggregation, achieving significant improvements over SOTA on heterogeneous-task federated LLM fine-tuning.
+  [AAAI 2026][LLM Safety][Federated Learning] FedALT is proposed to maintain a trainable Individual LoRA (updated locally) and a frozen Rest-of-World (RoW) LoRA (averaged from other clients) for each client…
 tags:
-  - AAAI 2026
-  - LLM Safety
-  - Federated Learning
-  - LoRA Fine-Tuning
-  - Personalization
-  - Cross-Client Interference
-  - MoE
+  - "AAAI 2026"
+  - "LLM Safety"
+  - "Federated Learning"
+  - "LoRA Fine-Tuning"
+  - "Personalization"
+  - "Cross-Client Interference"
+  - "MoE"
 date: 2026-05-08
 content_hash: 16fe7ca796b80a9d
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] CRAFT: Training-Free Cascaded Retrieval for Tabular QA
 description: >-
-  [ACL 2026][Table Retrieval] This paper proposes CRAFT, a three-stage cascaded table retrieval framework requiring no dataset-specific training (SPLADE sparse filtering → semantic mini-table ranking → neural re-ranking). By augmenting table representations with Gemini-generated captions and descriptions, CRAFT achieves SOTA on NQ-Tables (R@1 49.84), demonstrates strong zero-shot generalization on OTT-QA, and exhibits remarkable robustness to query paraphrasing.
+  [ACL 2026][Information Retrieval & RAG][Table Retrieval] This paper proposes CRAFT, a three-stage cascaded table retrieval framework requiring no dataset-specific training (SPLADE sparse filtering → semantic mini-table r…
 tags:
-  - ACL 2026
-  - Table Retrieval
-  - Cascaded Retrieval
-  - Zero-Shot
-  - Tabular QA
-  - Training-Free
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Table Retrieval"
+  - "Cascaded Retrieval"
+  - "Zero-Shot"
+  - "Tabular QA"
+  - "Training-Free"
 date: 2026-05-08
 content_hash: bcef5401a964348f
 ---

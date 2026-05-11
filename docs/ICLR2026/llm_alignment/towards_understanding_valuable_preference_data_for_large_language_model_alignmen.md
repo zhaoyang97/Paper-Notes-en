@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Understanding Valuable Preference Data for Large Language Model Alignment
 description: >-
-  [ICLR 2026][LLM Alignment][Preference data selection] This work studies preference data quality from a model-dependent perspective. It proposes Truncated Influence Functions (TIF), revealing that data with medium IF values—rather than high IF values as conventionally assumed—is most valuable. Two lightweight proxy metrics, LossDiff and IRM, are designed to approximate TIF. The combined LossDiff-IRM selector achieves an average WinRate improvement of 13.58% using only 50–64% of the data, with consistent effectiveness across multiple LLM families and alignment benchmarks.
+  [ICLR 2026][LLM Alignment][Preference data selection] This work studies preference data quality from a model-dependent perspective. It proposes Truncated Influence Functions (TIF)…
 tags:
-  - ICLR 2026
-  - LLM Alignment
-  - Preference data selection
-  - influence function
-  - DPO
-  - data quality
-  - model dependency
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Preference data selection"
+  - "influence function"
+  - "DPO"
+  - "data quality"
+  - "model dependency"
 date: 2026-05-08
 content_hash: ba7b830cbae50097
 ---

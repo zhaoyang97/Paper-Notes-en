@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] GenFlowRL: Shaping Rewards with Generative Object-Centric Flow in Visual Reinforcement Learning
 description: >-
-  [ICCV 2025][Image Generation][Reinforcement Learning] This paper proposes GenFlowRL, which integrates generative object-centric optical flow with reinforcement learning by shaping rewards using a δ-flow representation extracted from a flow generation model trained on cross-embodiment datasets. The approach enables robust and generalizable robot manipulation policy learning, significantly outperforming flow-based imitation learning and video-guided RL methods across 10 manipulation tasks.
+  [ICCV 2025][Image Generation][Reinforcement Learning] This paper proposes GenFlowRL, which integrates generative object-centric optical flow with reinforcement learning by shaping rewards using a δ-flow representation ex…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Reinforcement Learning
-  - Object-Centric Flow
-  - Reward Shaping
-  - Robot Manipulation
-  - Cross-Embodiment
-  - Video Generative Models
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Reinforcement Learning"
+  - "Object-Centric Flow"
+  - "Reward Shaping"
+  - "Robot Manipulation"
+  - "Cross-Embodiment"
+  - "Video Generative Models"
 date: 2026-05-08
 content_hash: 733998b6bf3edbb7
 ---

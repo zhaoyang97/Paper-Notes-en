@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DA-VAE: Plug-in Latent Compression for Diffusion via Detail Alignment
 description: >-
-  [CVPR 2026][Image Generation][VAE] This paper proposes Detail-Aligned VAE (DA-VAE), which introduces structured latent representations (base + detail channels) with an alignment loss to achieve a 4× compression ratio increase over pretrained VAEs without retraining diffusion models from scratch, requiring only 5 H100-days to adapt SD3.5 for 1024×1024 image generation.
+  [CVPR 2026][Image Generation][VAE] This paper proposes Detail-Aligned VAE (DA-VAE), which introduces structured latent representations (base + detail channels) with an alignment loss to achieve a 4× compression ratio inc…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - VAE
-  - Latent Compression
-  - Diffusion Transformer
-  - Token Efficiency
-  - High-Resolution Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "VAE"
+  - "Latent Compression"
+  - "Diffusion Transformer"
+  - "Token Efficiency"
+  - "High-Resolution Generation"
 date: 2026-05-08
 content_hash: 3281567557f77e40
 ---

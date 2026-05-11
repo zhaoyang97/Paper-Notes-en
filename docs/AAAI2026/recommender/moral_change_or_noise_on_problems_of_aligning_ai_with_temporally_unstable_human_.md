@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Moral Change or Noise? On Problems of Aligning AI With Temporally Unstable Human Feedback
 description: >-
-  [AAAI 2026][Recommender Systems][AI Alignment] Through a longitudinal study involving 400+ participants across 3–5 sessions in the domain of kidney transplant allocation, this paper reveals significant temporal instability in human moral preferences (6–20% response change rate) and demonstrates that such instability substantially degrades the predictive performance of AI alignment models, thereby challenging the validity of current alignment approaches that assume static preferences.
+  [AAAI 2026][Recommender Systems][AI Alignment] Through a longitudinal study involving 400+ participants across 3–5 sessions in the domain of kidney transplant allocation…
 tags:
-  - AAAI 2026
-  - Recommender Systems
-  - AI Alignment
-  - Preference Instability
-  - Moral Preferences
-  - Temporal Dynamics
-  - Kidney Allocation
+  - "AAAI 2026"
+  - "Recommender Systems"
+  - "AI Alignment"
+  - "Preference Instability"
+  - "Moral Preferences"
+  - "Temporal Dynamics"
+  - "Kidney Allocation"
 date: 2026-05-08
 content_hash: ab8496401adfcc0d
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Matryoshka Pilot: Learning to Drive Black-Box LLMs with LLMs
 description: >-
-  [NeurIPS 2025][Model Compression][Black-Box LLM] This paper proposes Matryoshka Pilot (M-Pilot), which employs a lightweight white-box LLM as a controller to generate intermediate guidance (task decomposition, high-level plans, user profiles) for driving black-box LLMs on complex long-horizon tasks such as reasoning, planning, and personalization, with iterative DPO enabling continual self-improvement.
+  [NeurIPS 2025][Model Compression][Black-Box LLM] This paper proposes Matryoshka Pilot (M-Pilot), which employs a lightweight white-box LLM as a controller to generate intermediate guidance (task decomposition…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Black-Box LLM
-  - White-Box Controller
-  - Iterative DPO
-  - Intermediate Guidance
-  - Multi-Turn Interaction
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Black-Box LLM"
+  - "White-Box Controller"
+  - "Iterative DPO"
+  - "Intermediate Guidance"
+  - "Multi-Turn Interaction"
 date: 2026-05-08
 content_hash: ed41259b5f56efa8
 ---

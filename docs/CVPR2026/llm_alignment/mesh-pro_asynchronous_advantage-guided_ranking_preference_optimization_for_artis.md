@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Mesh-Pro: Asynchronous Advantage-guided Ranking Preference Optimization for Artist-style Quadrilateral Mesh Generation
 description: >-
-  [CVPR2026][LLM Alignment][mesh generation] This paper proposes Mesh-Pro, the first asynchronous online reinforcement learning framework for 3D quadrilateral mesh generation. Its core algorithm, ARPO (Advantage-guided Ranking Preference Optimization), combines the Plackett-Luce ranking model with advantage-function weighting to achieve simultaneous improvements in efficiency (3.75× faster than offline DPO) and generalization, attaining state-of-the-art generation quality for both artist-style and dense meshes.
+  [CVPR2026][LLM Alignment][mesh generation] This paper proposes Mesh-Pro, the first asynchronous online reinforcement learning framework for 3D quadrilateral mesh generation. Its core algorithm…
 tags:
-  - CVPR2026
-  - LLM Alignment
-  - mesh generation
-  - reinforcement-learning
-  - preference optimization
-  - artist-style mesh
-  - quadrilateral mesh
-  - online RL
+  - "CVPR2026"
+  - "LLM Alignment"
+  - "mesh generation"
+  - "reinforcement-learning"
+  - "preference optimization"
+  - "artist-style mesh"
+  - "quadrilateral mesh"
+  - "online RL"
 date: 2026-05-08
 content_hash: 6b41f0b1c9fdc7d0
 ---

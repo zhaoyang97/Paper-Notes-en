@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] WorldScore: A Unified Evaluation Benchmark for World Generation
 description: >-
-  [ICCV 2025][Video Generation][World generation] This paper proposes WorldScore — the first unified evaluation benchmark for world generation. It decomposes world generation into a series of next-scene generation tasks, enabling unified evaluation of 3D, 4D, I2V, and T2V models across 3,000 test samples and 10 evaluation metrics.
+  [ICCV 2025][Video Generation][World generation] This paper proposes WorldScore — the first unified evaluation benchmark for world generation. It decomposes world generation into a series of next-scene generation tasks…
 tags:
-  - ICCV 2025
-  - Video Generation
-  - World generation
-  - unified evaluation benchmark
-  - 3D/4D scene generation
-  - multi-dimensional evaluation metrics
+  - "ICCV 2025"
+  - "Video Generation"
+  - "World generation"
+  - "unified evaluation benchmark"
+  - "3D/4D scene generation"
+  - "multi-dimensional evaluation metrics"
 date: 2026-05-08
 content_hash: b83ea59343f67da8
 ---

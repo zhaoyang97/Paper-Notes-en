@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] SITE: Soft Head Selection for Injecting ICL-Derived Task Embeddings
 description: >-
-  [ACL 2026][Attention head selection] SITE proposes a gradient-based soft attention head selection method that identifies task-relevant attention heads to effectively inject ICL-derived task embeddings. Across 12 LLMs (4B–70B), SITE substantially outperforms ICL and existing embedding injection methods while achieving performance comparable to PEFT with far fewer trainable parameters.
+  [ACL 2026][Interpretability][Attention head selection] SITE proposes a gradient-based soft attention head selection method that identifies task-relevant attention heads to effectively inject ICL-derived task embeddings.…
 tags:
-  - ACL 2026
-  - Attention head selection
-  - task embeddings
-  - in-context learning
-  - activation patching
-  - parameter efficiency
+  - "ACL 2026"
+  - "Interpretability"
+  - "Attention head selection"
+  - "task embeddings"
+  - "in-context learning"
+  - "activation patching"
+  - "parameter efficiency"
 date: 2026-05-08
 content_hash: 688777e2536325ab
 ---

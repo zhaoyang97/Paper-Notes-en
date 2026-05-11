@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] More than the Sum: Panorama-Language Models for Adverse Omni-Scenes
 description: >-
-  [CVPR 2026][Multimodal VLM][Panoramic image understanding] This paper proposes the Panorama-Language Modeling (PLM) paradigm and the PanoVQA large-scale panoramic VQA dataset (653K QA pairs). A plug-and-play panoramic sparse attention (PSA) module is designed to enable existing VLMs to process equirectangular projection (ERP) panoramic images without retraining, achieving superior global reasoning over multi-view stitching approaches in adverse scenarios such as occlusion and accidents.
+  [CVPR 2026][Multimodal VLM][Panoramic image understanding] This paper proposes the Panorama-Language Modeling (PLM) paradigm and the PanoVQA large-scale panoramic VQA dataset (653K QA pairs). A plug-and-play panoramic sp…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Panoramic image understanding
-  - 360° vision
-  - VQA
-  - sparse attention
-  - autonomous driving
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Panoramic image understanding"
+  - "360° vision"
+  - "VQA"
+  - "sparse attention"
+  - "autonomous driving"
 date: 2026-05-08
 content_hash: 1d4485485fa97b93
 ---

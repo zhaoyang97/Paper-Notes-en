@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multi-agent Coordination via Flow Matching
 description: >-
-  [ICLR 2026][Image Generation][Multi-agent coordination] This paper proposes MAC-Flow, which first learns a centralized joint behavior distribution via Flow Matching, then distills it into decentralized single-step policies through IGM (Individual-Global-Max) decomposition combined with Q-value maximization for behavior-regularized training. Evaluated across 4 benchmarks, 12 environments, and 34 datasets, MAC-Flow achieves approximately 14.5× inference speedup over diffusion-based methods while maintaining coordination performance comparable to diffusion policies.
+  [ICLR 2026][Image Generation][Multi-agent coordination] This paper proposes MAC-Flow, which first learns a centralized joint behavior distribution via Flow Matching…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Multi-agent coordination
-  - Flow Matching
-  - Offline MARL
-  - IGM policy distillation
-  - Decentralized execution
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Multi-agent coordination"
+  - "Flow Matching"
+  - "Offline MARL"
+  - "IGM policy distillation"
+  - "Decentralized execution"
 date: 2026-05-08
 content_hash: be2fbd21d920e4fe
 ---

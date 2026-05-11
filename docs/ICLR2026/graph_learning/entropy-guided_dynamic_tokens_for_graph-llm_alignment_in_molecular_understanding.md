@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Entropy-Guided Dynamic Tokens for Graph-LLM Alignment in Molecular Understanding
 description: >-
-  [ICLR 2026][Graph Learning][Graph-LLM Alignment] This paper proposes EDT-Former (Entropy-guided Dynamic Token Transformer), which establishes efficient alignment between a frozen graph encoder and a frozen LLM via an entropy-guided dynamic token generation mechanism. Without fine-tuning the LLM backbone, EDT-Former achieves state-of-the-art performance across multiple benchmarks including molecular question answering, molecular instruction following, and property prediction.
+  [ICLR 2026][Graph Learning][Graph-LLM Alignment] This paper proposes EDT-Former (Entropy-guided Dynamic Token Transformer), which establishes efficient alignment between a frozen graph encoder and a frozen LLM via an ent…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - Graph-LLM Alignment
-  - Dynamic Tokens
-  - Molecular Graph
-  - Q-Former
-  - Entropy Guidance
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Graph-LLM Alignment"
+  - "Dynamic Tokens"
+  - "Molecular Graph"
+  - "Q-Former"
+  - "Entropy Guidance"
 date: 2026-05-08
 content_hash: b355f6f588a4339d
 ---

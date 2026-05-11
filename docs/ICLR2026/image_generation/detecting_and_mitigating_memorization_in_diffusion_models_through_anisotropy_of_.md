@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Detecting and Mitigating Memorization in Diffusion Models through Anisotropy of the Log-Probability
 description: >-
-  [ICLR 2026][Image Generation][memorization detection] This paper demonstrates that norm-based memorization detection metrics are valid only under isotropic log-probability distributions and fail in low-noise anisotropic regimes. A denoising-free detection metric is proposed that combines high-noise norms with low-noise angular alignment (cosine similarity), surpassing existing denoising-free methods on SD v1.4/v2.0 while being over 5× faster.
+  [ICLR 2026][Image Generation][memorization detection] This paper demonstrates that norm-based memorization detection metrics are valid only under isotropic log-probability distributions and fail in low-noise anisotropic…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - memorization detection
-  - anisotropy
-  - score function
-  - cosine similarity
-  - denoising-free detection
+  - "ICLR 2026"
+  - "Image Generation"
+  - "memorization detection"
+  - "anisotropy"
+  - "score function"
+  - "cosine similarity"
+  - "denoising-free detection"
 date: 2026-05-08
 content_hash: 28bea0132602ffbb
 ---

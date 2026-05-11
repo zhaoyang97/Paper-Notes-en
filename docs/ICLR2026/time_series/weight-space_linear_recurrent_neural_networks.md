@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] WARP: Weight-Space Linear Recurrent Neural Networks
 description: >-
-  [ICLR 2026][Time Series][Weight-space learning] This paper proposes WARP (Weight-space Adaptive Recurrent Prediction), which explicitly parameterizes the hidden state of a linear RNN as the weights and biases of an auxiliary MLP. Input differences drive a linear recurrence to update these weights, and a nonlinear decoding step enables efficient sequence modeling. WARP achieves state-of-the-art performance on classification, forecasting, and dynamical system reconstruction tasks.
+  [ICLR 2026][Time Series][Weight-space learning] This paper proposes WARP (Weight-space Adaptive Recurrent Prediction), which explicitly parameterizes the hidden state of a linear RNN as the weights and biases of an auxil…
 tags:
-  - ICLR 2026
-  - Time Series
-  - Weight-space learning
-  - Linear RNN
-  - Adaptive prediction
-  - Dynamical system reconstruction
-  - Gradient-free adaptation
+  - "ICLR 2026"
+  - "Time Series"
+  - "Weight-space learning"
+  - "Linear RNN"
+  - "Adaptive prediction"
+  - "Dynamical system reconstruction"
+  - "Gradient-free adaptation"
 date: 2026-05-08
 content_hash: af5dec63340b7c6b
 ---

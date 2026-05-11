@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mind the Hitch: Dynamic Calibration and Articulated Perception for Autonomous Trucks
 description: >-
-  [CVPR 2026][Autonomous Driving][Autonomous trucks] This paper proposes the dCAP framework, which achieves real-time 6-DoF relative pose estimation between the tractor and trailer in articulated autonomous trucks via Transformer-based cross-view and temporal attention mechanisms. The framework is integrated into BEVFormer to improve 3D object detection performance under articulated motion, achieving a translation error of 0.452 m and a rotation error of 0.042 rad.
+  [CVPR 2026][Autonomous Driving][Autonomous trucks] This paper proposes the dCAP framework, which achieves real-time 6-DoF relative pose estimation between the tractor and trailer in articulated autonomous trucks via Tran…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Autonomous trucks
-  - dynamic calibration
-  - articulated perception
-  - trailer pose estimation
-  - BEV detection
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Autonomous trucks"
+  - "dynamic calibration"
+  - "articulated perception"
+  - "trailer pose estimation"
+  - "BEV detection"
 date: 2026-05-08
 content_hash: 8a044f7bc17ea944
 ---

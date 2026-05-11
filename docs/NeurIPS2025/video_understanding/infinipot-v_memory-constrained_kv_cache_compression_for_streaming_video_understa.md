@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] InfiniPot-V: Memory-Constrained KV Cache Compression for Streaming Video Understanding
 description: >-
-  [NeurIPS 2025][Video Understanding][KV Cache Compression] This paper proposes InfiniPot-V, the first training-free and query-agnostic streaming video understanding framework. It achieves online KV cache compression via two complementary metrics — Temporal-axis Redundancy (TaR) and Value-Norm (VaN) — enabling streaming video understanding of arbitrary length under a fixed memory budget.
+  [NeurIPS 2025][Video Understanding][KV Cache Compression] This paper proposes InfiniPot-V, the first training-free and query-agnostic streaming video understanding framework. It achieves online KV cache compression via t…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
-  - KV Cache Compression
-  - Streaming Video Understanding
-  - Multimodal Large Language Models
-  - Temporal Redundancy
-  - Edge Deployment
+  - "NeurIPS 2025"
+  - "Video Understanding"
+  - "KV Cache Compression"
+  - "Streaming Video Understanding"
+  - "Multimodal Large Language Models"
+  - "Temporal Redundancy"
+  - "Edge Deployment"
 date: 2026-05-08
 content_hash: 43f1940ff76075fb
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Localized Concept Erasure in Text-to-Image Diffusion Models via High-Level Representation Misdirection
 description: >-
-  [ICLR 2026][Image Generation][concept erasure] HiRM introduces a concept erasure strategy that decouples the update location from the erasure target — updating only the first-layer weights of the CLIP text encoder while imposing erasure supervision on the high-level semantic representations at the final layer. By steering target concept representations toward random directions (HiRM-R) or semantically meaningful directions (HiRM-S), the method achieves effective erasure of styles, objects, and NSFW content on the UnlearnCanvas and NSFW benchmarks, with zero-shot transferability to the Flux architecture.
+  [ICLR 2026][Image Generation][concept erasure] HiRM introduces a concept erasure strategy that decouples the update location from the erasure target — updating only the first-layer weights of the CLIP text encoder while…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - concept erasure
-  - text encoder
-  - causal localization
-  - representation misdirection
-  - modular safety patch
+  - "ICLR 2026"
+  - "Image Generation"
+  - "concept erasure"
+  - "text encoder"
+  - "causal localization"
+  - "representation misdirection"
+  - "modular safety patch"
 date: 2026-05-08
 content_hash: 8681c8406d78d404
 ---

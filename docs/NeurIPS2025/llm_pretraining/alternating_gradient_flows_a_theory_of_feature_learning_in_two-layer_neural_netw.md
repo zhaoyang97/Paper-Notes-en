@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Alternating Gradient Flows: A Theory of Feature Learning in Two-layer Neural Networks
 description: >-
-  [NeurIPS 2025][LLM Pretraining][Feature Learning] This paper proposes the Alternating Gradient Flow (AGF) theoretical framework to explain the stepwise "saddle-to-saddle" feature learning dynamics in neural networks. Training is modeled as an alternating process between utility maximization for dormant neurons and cost minimization for active neurons, unifying feature selection analysis across diagonal linear networks, attention models, and modular addition. Predictions from AGF exhibit high agreement with actual gradient flow behavior.
+  [NeurIPS 2025][LLM Pretraining][Feature Learning] This paper proposes the Alternating Gradient Flow (AGF) theoretical framework to explain the stepwise "saddle-to-saddle" feature learning dynamics in neural networks. Tra…
 tags:
-  - NeurIPS 2025
-  - LLM Pretraining
-  - Feature Learning
-  - Saddle-point Dynamics
-  - Alternating Gradient Flows
-  - Dormant Neurons
-  - Two-layer Networks
+  - "NeurIPS 2025"
+  - "LLM Pretraining"
+  - "Feature Learning"
+  - "Saddle-point Dynamics"
+  - "Alternating Gradient Flows"
+  - "Dormant Neurons"
+  - "Two-layer Networks"
 date: 2026-05-08
 content_hash: c32004279d62193a
 ---

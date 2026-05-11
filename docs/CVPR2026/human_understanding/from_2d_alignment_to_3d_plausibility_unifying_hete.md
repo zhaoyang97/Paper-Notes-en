@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A2P: From 2D Alignment to 3D Plausibility for Occlusion-Robust Two-Hand Reconstruction
 description: >-
-  [CVPR 2026][Human Understanding][two-hand reconstruction] The paper decouples two-hand reconstruction into 2D structural alignment and 3D spatial interaction alignment. Stage 1 employs a Fusion Alignment Encoder (FAE) to implicitly distill three 2D priors from Sapiens (keypoints, segmentation, depth), eliminating the need for the foundation model at inference (56 fps). Stage 2 maps penetrating poses to physically plausible configurations via a penetration-aware diffusion model with collision gradient guidance. On InterHand2.6M, MPJPE is reduced to 5.36 mm (surpassing SOTA 4DHands by 2.13 mm) and penetration volume is reduced by 7×.
+  [CVPR 2026][Human Understanding][two-hand reconstruction] The paper decouples two-hand reconstruction into 2D structural alignment and 3D spatial interaction alignment. Stage 1 employs a Fusion Alignment Encoder (FAE) to…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - two-hand reconstruction
-  - fusion alignment encoder
-  - penetration-free diffusion
-  - MANO
-  - Sapiens
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "two-hand reconstruction"
+  - "fusion alignment encoder"
+  - "penetration-free diffusion"
+  - "MANO"
+  - "Sapiens"
 date: 2026-05-08
 content_hash: ed673bf46d0cba40
 ---

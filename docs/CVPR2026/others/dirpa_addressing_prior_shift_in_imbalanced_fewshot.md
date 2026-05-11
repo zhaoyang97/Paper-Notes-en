@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] DirPA: Addressing Prior Shift in Imbalanced Few-shot Crop-type Classification
 description: >-
-  [CVPR 2026][few-shot learning] This paper proposes Dirichlet Prior Augmentation (DirPA), which constructs imbalanced episodes during FSL training by sampling class proportion vectors from a Dirichlet distribution, actively simulating real-world long-tail distributions to eliminate prior shift. The method demonstrates consistent robustness improvements and rare-class accuracy gains on crop-type classification tasks across multiple European countries.
+  [CVPR 2026][few-shot learning] This paper proposes Dirichlet Prior Augmentation (DirPA), which constructs imbalanced episodes during FSL training by sampling class proportion vectors from a Dirichlet distribution…
 tags:
-  - CVPR 2026
-  - few-shot learning
-  - class imbalance
-  - prior shift
-  - Dirichlet augmentation
-  - crop classification
+  - "CVPR 2026"
+  - "few-shot learning"
+  - "class imbalance"
+  - "prior shift"
+  - "Dirichlet augmentation"
+  - "crop classification"
 date: 2026-05-08
 content_hash: de4690ae30a5ed8b
 ---

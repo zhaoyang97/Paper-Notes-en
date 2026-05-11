@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FaceCraft4D: Animated 3D Facial Avatar Generation from a Single Image
 description: >-
-  [ICCV 2025][Image Generation][4D head generation] This paper proposes FaceCraft4D, a framework that generates animatable 360° 4D facial avatars from a single image by combining three complementary priors: a 3D shape prior (PanoHead GAN inversion), a 2D image prior (diffusion model texture enhancement), and a video prior (LivePortrait expression animation). A COIN training strategy is introduced to address multi-view data inconsistency, enabling high-quality real-time rendering at 156 FPS.
+  [ICCV 2025][Image Generation][4D head generation] This paper proposes FaceCraft4D, a framework that generates animatable 360° 4D facial avatars from a single image by combining three complementary priors: a 3D shape prio…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - 4D head generation
-  - single-image-driven
-  - 3D Gaussian
-  - FLAME
-  - multi-view consistency
+  - "ICCV 2025"
+  - "Image Generation"
+  - "4D head generation"
+  - "single-image-driven"
+  - "3D Gaussian"
+  - "FLAME"
+  - "multi-view consistency"
 date: 2026-05-08
 content_hash: 5baca08a7a8181e1
 ---

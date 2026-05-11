@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] GCL-OT: Graph Contrastive Learning with Optimal Transport for Heterophilic Text-Attributed Graphs
 description: >-
-  [AAAI 2026][Graph Learning][Graph Contrastive Learning] This paper proposes GCL-OT, the first framework to introduce Optimal Transport (OT) into graph contrastive learning for heterophilic text-attributed graphs. Three dedicated modules — RealSoftMax similarity estimation, a filter-prompt mechanism, and OT-guided latent homophily mining — address three multi-granularity heterophily challenges: partial heterophily, complete heterophily, and latent homophily, respectively.
+  [AAAI 2026][Graph Learning][Graph Contrastive Learning] This paper proposes GCL-OT, the first framework to introduce Optimal Transport (OT) into graph contrastive learning for heterophilic text-attributed graphs. Three d…
 tags:
-  - AAAI 2026
-  - Graph Learning
-  - Graph Contrastive Learning
-  - Optimal Transport
-  - Heterophilic Graphs
-  - Text-Attributed Graphs
-  - Multi-Granularity Heterophily
-  - RealSoftMax
-  - Sinkhorn
+  - "AAAI 2026"
+  - "Graph Learning"
+  - "Graph Contrastive Learning"
+  - "Optimal Transport"
+  - "Heterophilic Graphs"
+  - "Text-Attributed Graphs"
+  - "Multi-Granularity Heterophily"
+  - "RealSoftMax"
+  - "Sinkhorn"
 date: 2026-05-08
 content_hash: 01e22b7889c47535
 ---

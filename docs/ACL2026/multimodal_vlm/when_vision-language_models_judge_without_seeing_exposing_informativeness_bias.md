@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] When Vision-Language Models Judge Without Seeing: Exposing Informativeness Bias
 description: >-
-  [ACL 2026][Multimodal VLM][VLM-as-a-Judge] This paper exposes a severe *informativeness bias* in VLM-as-a-Judge systems—judges tend to favor more detailed and elaborate responses even when such responses contradict the image content. The proposed BIRCH paradigm first calibrates candidate answers against the image before comparison, reducing bias by up to 17% and improving performance by up to 9.8%.
+  [ACL 2026][Multimodal VLM][VLM-as-a-Judge] This paper exposes a severe *informativeness bias* in VLM-as-a-Judge systems—judges tend to favor more detailed and elaborate responses even when such responses contradict the i…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - VLM-as-a-Judge
-  - informativeness bias
-  - visual grounding
-  - evaluation reliability
-  - multimodal evaluation
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "VLM-as-a-Judge"
+  - "informativeness bias"
+  - "visual grounding"
+  - "evaluation reliability"
+  - "multimodal evaluation"
 date: 2026-05-08
 content_hash: 69d4abcb3ecf83b0
 ---

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] SEED-SET: Scalable Evolving Experimental Design for System-level Ethical Testing
 description: >-
-   This paper proposes SEED-SET, a framework that formulates ethical evaluation of autonomous systems as a hierarchical Bayesian experimental design problem, jointly integrating objective metrics and subjective value judgments to efficiently generate test cases with high ethical alignment under limited evaluation budgets.
+  [Interpretability] This paper proposes SEED-SET, a framework that formulates ethical evaluation of autonomous systems as a hierarchical Bayesian experimental design problem…
 tags:
-
+  - "Interpretability"
 date: 2026-05-08
 content_hash: eb5a16dd6330ce2d
 ---

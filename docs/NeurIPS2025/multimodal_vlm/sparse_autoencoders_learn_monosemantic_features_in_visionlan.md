@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Sparse Autoencoders Learn Monosemantic Features in Vision-Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Sparse Autoencoders] This paper extends sparse autoencoders (SAEs) to vision-language models (e.g., CLIP), proposes the MonoSemanticity score (MS) to quantitatively evaluate the monosemanticity of neurons, and demonstrates that manipulating SAE neurons can directly steer multimodal large language models (e.g., LLaVA) to insert or suppress specific concepts.
+  [NeurIPS 2025][Multimodal VLM][Sparse Autoencoders] This paper extends sparse autoencoders (SAEs) to vision-language models (e.g., CLIP)…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Sparse Autoencoders
-  - Monosemanticity
-  - CLIP
-  - Interpretability
-  - Model Steering
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Sparse Autoencoders"
+  - "Monosemanticity"
+  - "CLIP"
+  - "Interpretability"
+  - "Model Steering"
 date: 2026-05-08
 content_hash: f3ffcfe9aa496278
 ---

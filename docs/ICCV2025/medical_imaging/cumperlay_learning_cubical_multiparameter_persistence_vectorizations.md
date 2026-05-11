@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CuMPerLay: Learning Cubical Multiparameter Persistence Vectorizations
 description: >-
-  [ICCV 2025][Medical Imaging][Multiparameter Persistent Homology] This paper proposes CuMPerLay, a differentiable Cubical Multiparameter Persistence (CMP) vectorization layer that decomposes CMP into multiple learnable single-parameter persistence lines. By jointly learning bifiltration functions for end-to-end training and embedding the layer into Swin Transformer, the method achieves significant improvements on medical image classification and semantic segmentation tasks, particularly in data-scarce settings.
+  [ICCV 2025][Medical Imaging][Multiparameter Persistent Homology] This paper proposes CuMPerLay, a differentiable Cubical Multiparameter Persistence (CMP) vectorization layer that decomposes CMP into multiple learnable si…
 tags:
-  - ICCV 2025
-  - Medical Imaging
-  - Multiparameter Persistent Homology
-  - Cubical Complex
-  - Differentiable Vectorization
-  - Topological Data Analysis
-  - Swin Transformer
+  - "ICCV 2025"
+  - "Medical Imaging"
+  - "Multiparameter Persistent Homology"
+  - "Cubical Complex"
+  - "Differentiable Vectorization"
+  - "Topological Data Analysis"
+  - "Swin Transformer"
 date: 2026-05-08
 content_hash: 1987cae50f73c6e4
 ---

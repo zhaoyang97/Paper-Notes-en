@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] InsideOut: Integrated RGB-Radiative Gaussian Splatting for Comprehensive 3D Object Representation
 description: >-
-  [ICCV 2025][Medical Imaging][3D Gaussian Splatting] InsideOut extends 3D Gaussian Splatting (3DGS) beyond RGB surface modeling to simultaneously represent internal X-ray structures, achieving joint representation of RGB appearance and internal radiative structure through hierarchical fitting and an X-ray reference loss.
+  [ICCV 2025][Medical Imaging][3D Gaussian Splatting] InsideOut extends 3D Gaussian Splatting (3DGS) beyond RGB surface modeling to simultaneously represent internal X-ray structures…
 tags:
-  - ICCV 2025
-  - Medical Imaging
-  - 3D Gaussian Splatting
-  - X-ray Imaging
-  - Multimodal Fusion
-  - 3D Reconstruction
-  - Non-Destructive Testing
+  - "ICCV 2025"
+  - "Medical Imaging"
+  - "3D Gaussian Splatting"
+  - "X-ray Imaging"
+  - "Multimodal Fusion"
+  - "3D Reconstruction"
+  - "Non-Destructive Testing"
 date: 2026-05-08
 content_hash: 98e4dcebde96b40e
 ---

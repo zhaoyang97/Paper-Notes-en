@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CoreGuard: Safeguarding Foundational Capabilities of LLMs Against Model Stealing in Edge Deployment
 description: >-
-  [NeurIPS 2025][LLM Safety][model protection] This paper proposes CoreGuard, which locks Transformer linear layer weights via row permutation and reduces TEE authorization to a single invocation through a column-permutation propagation protocol, protecting foundational capabilities of edge-deployed LLMs against model stealing attacks with negligible computational and communication overhead.
+  [NeurIPS 2025][LLM Safety][model protection] This paper proposes CoreGuard, which locks Transformer linear layer weights via row permutation and reduces TEE authorization to a single invocation through a column-permutati…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - model protection
-  - edge deployment
-  - TEE
-  - permutation
-  - model stealing
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "model protection"
+  - "edge deployment"
+  - "TEE"
+  - "permutation"
+  - "model stealing"
 date: 2026-05-08
 content_hash: 3692267d2c78d0f8
 ---

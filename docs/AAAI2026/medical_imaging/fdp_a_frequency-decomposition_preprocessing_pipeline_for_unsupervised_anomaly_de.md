@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FDP: A Frequency-Decomposition Preprocessing Pipeline for Unsupervised Anomaly Detection in Brain MRI
 description: >-
-  [AAAI 2026][Medical Imaging][Unsupervised Anomaly Detection] This work presents the first systematic frequency-domain analysis of brain MRI anomalies, demonstrating that lesions are predominantly concentrated in low-frequency components. Based on this finding, the authors propose the **Frequency Decomposition Preprocessing (FDP)** framework, which reconstructs low-frequency signals via a learnable prior context bank to suppress lesions while preserving anatomical structures. As a plug-and-play module, FDP consistently improves detection performance across multiple UAD baselines (achieving a 17.63% DICE gain on LDM).
+  [AAAI 2026][Medical Imaging][Unsupervised Anomaly Detection] This work presents the first systematic frequency-domain analysis of brain MRI anomalies…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Unsupervised Anomaly Detection
-  - Brain MRI
-  - Frequency Domain Analysis
-  - Frequency Decomposition
-  - Diffusion Models
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Unsupervised Anomaly Detection"
+  - "Brain MRI"
+  - "Frequency Domain Analysis"
+  - "Frequency Decomposition"
+  - "Diffusion Models"
 date: 2026-05-08
 content_hash: bebef47f9d81664c
 ---

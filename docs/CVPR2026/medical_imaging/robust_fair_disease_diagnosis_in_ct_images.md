@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Robust Fair Disease Diagnosis in CT Images
 description: >-
-  [CVPR 2026][Medical Imaging][CT Diagnosis] This paper proposes a dual-objective training framework combining Logit-Adjusted Cross-Entropy (for class imbalance) and CVaR aggregation (for demographic fairness), achieving a gender-averaged macro F1 of 0.8403 with a fairness gap of only 0.0239 on CT disease diagnosis.
+  [CVPR 2026][Medical Imaging][CT Diagnosis] This paper proposes a dual-objective training framework combining Logit-Adjusted Cross-Entropy (for class imbalance) and CVaR aggregation (for demographic fairness)…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - CT Diagnosis
-  - Fairness
-  - Class Imbalance
-  - CVaR
-  - Logit Adjustment
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "CT Diagnosis"
+  - "Fairness"
+  - "Class Imbalance"
+  - "CVaR"
+  - "Logit Adjustment"
 date: 2026-05-08
 content_hash: 7e28204277beb421
 ---

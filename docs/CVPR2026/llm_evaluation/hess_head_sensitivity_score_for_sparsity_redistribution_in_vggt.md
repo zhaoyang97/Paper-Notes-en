@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HeSS: Head Sensitivity Score for Sparsity Redistribution in VGGT
 description: >-
-  [CVPR 2026][LLM Evaluation][Attention Sparsification] HeSS proposes a Head Sensitivity Score to quantify the sensitivity of each attention head in VGGT's global attention layers to sparsification, and redistributes the attention budget from insensitive heads to sensitive ones accordingly. This approach significantly outperforms the uniform sparsification method SparseVGGT at high sparsity ratios with virtually no additional runtime overhead.
+  [CVPR 2026][LLM Evaluation][Attention Sparsification] HeSS proposes a Head Sensitivity Score to quantify the sensitivity of each attention head in VGGT's global attention layers to sparsification…
 tags:
-  - CVPR 2026
-  - LLM Evaluation
-  - Attention Sparsification
-  - VGGT
-  - Head Sensitivity
-  - Fisher Information Matrix
-  - 3D Reconstruction Acceleration
+  - "CVPR 2026"
+  - "LLM Evaluation"
+  - "Attention Sparsification"
+  - "VGGT"
+  - "Head Sensitivity"
+  - "Fisher Information Matrix"
+  - "3D Reconstruction Acceleration"
 date: 2026-05-08
 content_hash: 93cefbf47fa06837
 ---

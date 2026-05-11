@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GeoLink: Empowering Remote Sensing Foundation Model with OpenStreetMap Data
 description: >-
-  [NeurIPS 2025][Remote Sensing][Remote sensing foundation model] GeoLink directly integrates OpenStreetMap vector data into remote sensing foundation model pretraining by encoding OSM data with a heterogeneous GNN and designing multi-granularity cross-modal learning objectives (region–image-level contrastive + object–patch-level fusion). Pretrained efficiently on 1.27 million sample pairs, GeoLink surpasses existing RS FMs across 7 classification and 4 segmentation/change detection benchmarks.
+  [NeurIPS 2025][Remote Sensing][Remote sensing foundation model] GeoLink directly integrates OpenStreetMap vector data into remote sensing foundation model pretraining by encoding OSM data with a heterogeneous GNN and des…
 tags:
-  - NeurIPS 2025
-  - Remote Sensing
-  - Remote sensing foundation model
-  - OpenStreetMap
-  - multimodal pretraining
-  - heterogeneous graph neural network
-  - cross-modal alignment
+  - "NeurIPS 2025"
+  - "Remote Sensing"
+  - "Remote sensing foundation model"
+  - "OpenStreetMap"
+  - "multimodal pretraining"
+  - "heterogeneous graph neural network"
+  - "cross-modal alignment"
 date: 2026-05-08
 content_hash: 355dab5e9628432a
 ---

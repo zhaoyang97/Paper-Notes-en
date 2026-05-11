@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Scaling Offline RL via Efficient and Expressive Shortcut Models
 description: >-
-  [NeurIPS 2025][Image Generation][Offline RL] This paper proposes SORL, which leverages the self-consistency property of shortcut models to enable efficient single-stage training with variable inference steps for policy optimization in offline RL, while supporting both sequential and parallel test-time scaling.
+  [NeurIPS 2025][Image Generation][Offline RL] This paper proposes SORL, which leverages the self-consistency property of shortcut models to enable efficient single-stage training with variable inference steps for policy o…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Offline RL
-  - Shortcut Models
-  - Flow Matching
-  - Self-Consistency
-  - Test-time Scaling
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Offline RL"
+  - "Shortcut Models"
+  - "Flow Matching"
+  - "Self-Consistency"
+  - "Test-time Scaling"
 date: 2026-05-08
 content_hash: e071081584e40e49
 ---

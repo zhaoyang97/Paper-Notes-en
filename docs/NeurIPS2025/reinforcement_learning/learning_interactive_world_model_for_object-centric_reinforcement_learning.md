@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Interactive World Model for Object-Centric Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][world model] This paper proposes FIOC-WM, which learns the interaction structure among objects in a world model via a two-level factorization at the object and attribute levels. It trains a hierarchical policy grounded in interaction primitives, achieving more efficient policy learning and compositional generalization across multiple robot control tasks.
+  [NeurIPS 2025][Reinforcement Learning][world model] This paper proposes FIOC-WM, which learns the interaction structure among objects in a world model via a two-level factorization at the object and attribute levels. It…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - world model
-  - Object-Centric RL
-  - Interaction Learning
-  - Hierarchical Policy
-  - Compositional Generalization
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "world model"
+  - "Object-Centric RL"
+  - "Interaction Learning"
+  - "Hierarchical Policy"
+  - "Compositional Generalization"
 date: 2026-05-08
 content_hash: bd99068231db335d
 ---

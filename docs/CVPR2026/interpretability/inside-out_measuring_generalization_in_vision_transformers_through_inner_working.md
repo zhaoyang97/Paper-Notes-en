@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Inside-Out: Measuring Generalization in Vision Transformers Through Inner Workings
 description: >-
-  [CVPR 2026][generalization measurement] This paper proposes generalization performance prediction metrics based on model-internal circuits, including Dependency Depth Bias (DDB) for pre-deployment model selection and Circuit Shift Score (CSS) for post-deployment performance monitoring, improving average correlation over existing proxy metrics by 13.4% and 34.1%, respectively.
+  [CVPR 2026][Interpretability][generalization measurement] This paper proposes generalization performance prediction metrics based on model-internal circuits…
 tags:
-  - CVPR 2026
-  - generalization measurement
-  - circuit discovery
-  - Vision Transformer
-  - distribution shift
-  - mechanistic interpretability
+  - "CVPR 2026"
+  - "Interpretability"
+  - "generalization measurement"
+  - "circuit discovery"
+  - "Vision Transformer"
+  - "distribution shift"
+  - "mechanistic interpretability"
 date: 2026-05-08
 content_hash: 483b418ee602ffdd
 ---

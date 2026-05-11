@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Self-Destructive Language Model
 description: >-
-  [ICLR 2026][LLM Safety][harmful fine-tuning defense] This paper proposes Seam, which couples the optimization trajectories of benign and harmful data (forcing their gradients into opposite directions) to transform an LLM into a "self-destructive model." Harmful fine-tuning automatically triggers catastrophic performance collapse, creating an inescapable dilemma for attackers: low-intensity attacks are ineffective, while high-intensity attacks render the model unusable.
+  [ICLR 2026][LLM Safety][harmful fine-tuning defense] This paper proposes Seam, which couples the optimization trajectories of benign and harmful data (forcing their gradients into opposite directions) to transform an LLM…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - harmful fine-tuning defense
-  - self-destructive model
-  - gradient coupling
-  - alignment safety
-  - Hessian-free optimization
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "harmful fine-tuning defense"
+  - "self-destructive model"
+  - "gradient coupling"
+  - "alignment safety"
+  - "Hessian-free optimization"
 date: 2026-05-08
 content_hash: f031bf466f48d170
 ---

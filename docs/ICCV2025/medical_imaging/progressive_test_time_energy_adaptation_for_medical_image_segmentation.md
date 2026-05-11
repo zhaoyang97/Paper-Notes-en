@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Progressive Test Time Energy Adaptation for Medical Image Segmentation
 description: >-
-  [ICCV 2025][Medical Imaging][test-time adaptation] This paper proposes a progressive test-time adaptation method based on energy-based models. A shape energy model is trained as an in-distribution/out-of-distribution discriminator; at test time, energy minimization guides the segmentation model to adapt to the target domain. The method consistently outperforms baselines across 8 public datasets covering cardiac, spinal cord, and lung segmentation tasks.
+  [ICCV 2025][Medical Imaging][test-time adaptation] This paper proposes a progressive test-time adaptation method based on energy-based models. A shape energy model is trained as an in-distribution/out-of-distribution dis…
 tags:
-  - ICCV 2025
-  - Medical Imaging
-  - test-time adaptation
-  - energy-based model
-  - medical image segmentation
-  - domain shift
-  - shape prior
+  - "ICCV 2025"
+  - "Medical Imaging"
+  - "test-time adaptation"
+  - "energy-based model"
+  - "medical image segmentation"
+  - "domain shift"
+  - "shape prior"
 date: 2026-05-08
 content_hash: f221299bc0eb5786
 ---

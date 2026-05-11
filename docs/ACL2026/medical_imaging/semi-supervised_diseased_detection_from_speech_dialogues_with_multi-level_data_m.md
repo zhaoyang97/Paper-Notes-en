@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Semi-Supervised Diseased Detection from Speech Dialogues with Multi-Level Data Modeling
 description: >-
-  [ACL 2026][Medical Imaging][Semi-supervised learning] This paper proposes an audio-only semi-supervised learning framework that jointly models pathological speech features in clinical dialogues at three levels—session, clip, and frame—using an EMA teacher-student network to dynamically generate high-quality pseudo-labels. With only 11 annotated samples, the framework achieves 90% of fully supervised performance on depression and Alzheimer's disease detection.
+  [ACL 2026][Medical Imaging][Semi-supervised learning] This paper proposes an audio-only semi-supervised learning framework that jointly models pathological speech features in clinical dialogues at three levels—session…
 tags:
-  - ACL 2026
-  - Medical Imaging
-  - Semi-supervised learning
-  - pathological speech detection
-  - multi-granularity modeling
-  - pseudo-labeling
-  - clinical dialogue
+  - "ACL 2026"
+  - "Medical Imaging"
+  - "Semi-supervised learning"
+  - "pathological speech detection"
+  - "multi-granularity modeling"
+  - "pseudo-labeling"
+  - "clinical dialogue"
 date: 2026-05-08
 content_hash: 131474fdd3b39435
 ---

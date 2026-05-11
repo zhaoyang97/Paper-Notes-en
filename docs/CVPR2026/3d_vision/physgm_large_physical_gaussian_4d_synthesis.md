@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] PhysGM: Large Physical Gaussian Model for Feed-Forward 4D Synthesis
 description: >-
-  [CVPR 2026][3D Vision][4D synthesis] The first framework for feed-forward prediction of 3DGS and physical attributes (material category, Young's modulus, Poisson's ratio) from a single image. A two-stage training pipeline (supervised pretraining + DPO preference fine-tuning) entirely bypasses SDS and differentiable physics engines. Combined with the 50K+ PhysAssets dataset, the method generates high-fidelity 4D physical simulations within one minute, surpassing per-scene optimization methods in both CLIP similarity and human preference rate.
+  [CVPR 2026][3D Vision][4D synthesis] The first framework for feed-forward prediction of 3DGS and physical attributes (material category, Young's modulus…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 4D synthesis
-  - physics-aware Gaussian
-  - feed-forward inference
-  - DPO alignment
-  - single image to 4D
-  - MPM simulation
+  - "CVPR 2026"
+  - "3D Vision"
+  - "4D synthesis"
+  - "physics-aware Gaussian"
+  - "feed-forward inference"
+  - "DPO alignment"
+  - "single image to 4D"
+  - "MPM simulation"
 date: 2026-05-08
 content_hash: 283dceb7fa7062ad
 ---

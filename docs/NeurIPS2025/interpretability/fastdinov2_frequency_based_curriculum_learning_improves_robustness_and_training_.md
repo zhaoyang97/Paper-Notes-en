@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] FastDINOv2: Frequency Based Curriculum Learning Improves Robustness and Training Speed
 description: >-
-  [NeurIPS 2025][DINOv2] This paper proposes FastDINOv2, a two-stage frequency-based curriculum learning strategy: the model is first trained on low-resolution images for 75% of epochs to learn low-frequency features and accelerate convergence, then trained at full resolution with Gaussian noise patching for the remaining 25% to balance frequency bias. The approach achieves a 1.6× speedup and 2.25× FLOPs reduction while improving robustness.
+  [NeurIPS 2025][Interpretability][DINOv2] This paper proposes FastDINOv2, a two-stage frequency-based curriculum learning strategy: the model is first trained on low-resolution images for 75% of epochs to learn low-freque…
 tags:
-  - NeurIPS 2025
-  - DINOv2
-  - curriculum learning
-  - frequency bias
-  - robustness
-  - training acceleration
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "DINOv2"
+  - "curriculum learning"
+  - "frequency bias"
+  - "robustness"
+  - "training acceleration"
 date: 2026-05-08
 content_hash: a620977e0b7b9809
 ---

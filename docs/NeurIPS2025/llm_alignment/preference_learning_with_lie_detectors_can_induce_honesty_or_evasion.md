@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Preference Learning with Lie Detectors can Induce Honesty or Evasion
 description: >-
-  [NeurIPS 2025][LLM Alignment][LLM deception detection] This paper systematically investigates the effects of integrating lie detectors into the LLM preference learning annotation pipeline (the SOLiD framework), finding that whether a trained model becomes genuinely honest or learns to evade detection depends on three key factors: the degree of exploration (GRPO vs. DPO), detector accuracy (TPR), and KL regularization strength.
+  [NeurIPS 2025][LLM Alignment][LLM deception detection] This paper systematically investigates the effects of integrating lie detectors into the LLM preference learning annotation pipeline (the SOLiD framework)…
 tags:
-  - NeurIPS 2025
-  - LLM Alignment
-  - LLM deception detection
-  - preference learning
-  - lie detector
-  - scalable oversight
-  - GRPO
-  - DPO
-  - AI safety
+  - "NeurIPS 2025"
+  - "LLM Alignment"
+  - "LLM deception detection"
+  - "preference learning"
+  - "lie detector"
+  - "scalable oversight"
+  - "GRPO"
+  - "DPO"
+  - "AI safety"
 date: 2026-05-08
 content_hash: 73eda8ce27ba1963
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] REINA: Regularized Entropy Information-Based Loss for Efficient Simultaneous Speech Translation
 description: >-
-  [AAAI 2026][Audio & Speech][Simultaneous speech translation] This paper proposes REINA (Regularized Entropy INformation Adaptation), a loss function grounded in mutual information theory that efficiently converts a non-streaming speech translation model into a streaming simultaneous speech translation model. REINA achieves state-of-the-art streaming translation performance across multiple language directions and introduces a new streaming efficiency metric, NoSE.
+  [AAAI 2026][Audio & Speech][Simultaneous speech translation] This paper proposes REINA (Regularized Entropy INformation Adaptation), a loss function grounded in mutual information theory that efficiently converts a non-s…
 tags:
-  - AAAI 2026
+  - "AAAI 2026"
   - "Audio & Speech"
-  - Simultaneous speech translation
-  - streaming translation
-  - information theory
-  - adaptive policy
-  - speech translation
+  - "Simultaneous speech translation"
+  - "streaming translation"
+  - "information theory"
+  - "adaptive policy"
+  - "speech translation"
 date: 2026-05-08
 content_hash: e98a86e5bac8959d
 ---

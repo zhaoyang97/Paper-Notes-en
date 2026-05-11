@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Pixel-level Scene Understanding in One Token: Visual States Need What-is-Where Composition
 description: >-
-  [CVPR 2026][Robotics][Visual state representation] This paper proposes CroBo, a self-supervised framework that learns visual state representations via a global-local reconstruction objective: a global reference image is compressed into a single bottleneck token, which is then used to reconstruct a heavily masked (90%) local crop, compelling the bottleneck token to encode pixel-level "what-is-where" scene composition. CroBo achieves state-of-the-art performance on the Franka Kitchen and DMC robot policy learning benchmarks.
+  [CVPR 2026][Robotics][Visual state representation] This paper proposes CroBo, a self-supervised framework that learns visual state representations via a global-local reconstruction objective: a global reference image is…
 tags:
-  - CVPR 2026
-  - Robotics
-  - Visual state representation
-  - self-supervised learning
-  - robot policy learning
-  - bottleneck token
-  - global-local reconstruction
+  - "CVPR 2026"
+  - "Robotics"
+  - "Visual state representation"
+  - "self-supervised learning"
+  - "robot policy learning"
+  - "bottleneck token"
+  - "global-local reconstruction"
 date: 2026-05-08
 content_hash: 9fd4d34805137b26
 ---

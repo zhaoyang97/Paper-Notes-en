@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Variance-Aware Feel-Good Thompson Sampling for Contextual Bandits
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][contextual bandits] This paper proposes the FGTS-VA algorithm, which for the first time achieves a variance-aware contextual bandit algorithm based on Feel-Good Thompson Sampling. The resulting regret bound is optimal in the model dimension $d$, matching the best variance-dependent regret bounds established by UCB-based methods.
+  [NeurIPS 2025][Reinforcement Learning][contextual bandits] This paper proposes the FGTS-VA algorithm, which for the first time achieves a variance-aware contextual bandit algorithm based on Feel-Good Thompson Sampling. T…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - contextual bandits
-  - Thompson sampling
-  - variance-aware
-  - feel-good exploration
-  - regret bounds
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "contextual bandits"
+  - "Thompson sampling"
+  - "variance-aware"
+  - "feel-good exploration"
+  - "regret bounds"
 date: 2026-05-08
 content_hash: 6915630233762aaf
 ---

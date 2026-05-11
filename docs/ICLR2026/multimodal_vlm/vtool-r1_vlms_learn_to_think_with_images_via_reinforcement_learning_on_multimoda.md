@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] VTool-R1: VLMs Learn to Think with Images via Reinforcement Learning on Multimodal Tool Use
 description: >-
-  [Multimodal VLM] This paper proposes VTool-R1, the first framework that trains VLMs via reinforcement fine-tuning to generate interleaved textual and visual intermediate reasoning steps, enabling models to "think with images."
+  [Multimodal VLM] This paper proposes VTool-R1, the first framework that trains VLMs via reinforcement fine-tuning to generate interleaved textual and visual intermediate reasoning steps…
 tags:
-  - Multimodal VLM
+  - "Multimodal VLM"
 date: 2026-05-08
 content_hash: f1183d911b5ed394
 ---

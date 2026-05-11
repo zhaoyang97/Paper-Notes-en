@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Post Hoc Regression Refinement via Pairwise Rankings
 description: >-
-  [NeurIPS 2025][LLM/NLP][regression refinement] This paper proposes RankRefine, a model-agnostic post-processing regression refinement method that fuses predictions from a base regressor with estimates derived from pairwise rankings via inverse-variance weighting. Without any retraining, the method achieves up to 10% relative MAE reduction in molecular property prediction using only 20 pairwise comparisons and a general-purpose LLM.
+  [NeurIPS 2025][LLM/NLP][regression refinement] This paper proposes RankRefine, a model-agnostic post-processing regression refinement method that fuses predictions from a base regressor with estimates derived from pairwi…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - regression refinement
-  - pairwise ranking
-  - inverse-variance weighting
-  - LLM ranker
-  - few-shot learning
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "regression refinement"
+  - "pairwise ranking"
+  - "inverse-variance weighting"
+  - "LLM ranker"
+  - "few-shot learning"
 date: 2026-05-08
 content_hash: 6ed341f9eb0bc15b
 ---

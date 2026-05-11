@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Radial Attention: O(n log n) Sparse Attention with Energy Decay for Long Video Generation
 description: >-
-  [NeurIPS 2025][Video Generation][Sparse Attention] Radial Attention identifies a "spatiotemporal energy decay" phenomenon in video diffusion models, wherein attention scores decay exponentially with spatiotemporal distance. Based on this finding, the authors design a static sparse attention mask with O(n log n) complexity, achieving up to 3.7× inference speedup on models such as HunyuanVideo and Wan2.1, and enabling 4× longer video generation via LoRA fine-tuning.
+  [NeurIPS 2025][Video Generation][Sparse Attention] Radial Attention identifies a "spatiotemporal energy decay" phenomenon in video diffusion models…
 tags:
-  - NeurIPS 2025
-  - Video Generation
-  - Sparse Attention
-  - Spatiotemporal Energy Decay
-  - O(n log n)
-  - Long Video Generation
-  - LoRA Fine-tuning
+  - "NeurIPS 2025"
+  - "Video Generation"
+  - "Sparse Attention"
+  - "Spatiotemporal Energy Decay"
+  - "O(n log n)"
+  - "Long Video Generation"
+  - "LoRA Fine-tuning"
 date: 2026-05-08
 content_hash: 8353051df865a2b5
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Reviving ConvNeXt for Efficient Convolutional Diffusion Models
 description: >-
-  [CVPR 2026][Image Generation][Diffusion models] This paper proposes FCDM (Fully Convolutional Diffusion Model), which adapts the ConvNeXt architecture as a backbone for conditional diffusion models. Using only 50% of DiT-XL's FLOPs, FCDM achieves a competitive FID of 2.03 on ImageNet and can train an XL-scale model on 4× RTX 4090 GPUs, demonstrating the severely underestimated efficiency of fully convolutional architectures in generative modeling.
+  [CVPR 2026][Image Generation][Diffusion models] This paper proposes FCDM (Fully Convolutional Diffusion Model), which adapts the ConvNeXt architecture as a backbone for conditional diffusion models. Using only 50% of DiT…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion models
-  - ConvNeXt
-  - fully convolutional
-  - efficient generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion models"
+  - "ConvNeXt"
+  - "fully convolutional"
+  - "efficient generation"
 date: 2026-05-08
 content_hash: f2c5cb752098f988
 ---

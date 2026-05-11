@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Study of LLMs' Preferences for Libraries and Programming Languages
 description: >-
-  [ACL 2026 (Findings)][LLM/NLP][code generation preference] This paper presents the first systematic study of library and programming language preferences in code generation across 8 LLMs, revealing that LLMs exhibit strong biases toward popular libraries such as NumPy (with 45% of usages deemed unnecessary) and toward Python (chosen in 58% of high-performance tasks), and that natural language recommendations are inconsistent with actual code generation behavior.
+  [ACL 2026 (Findings)][LLM/NLP][code generation preference] This paper presents the first systematic study of library and programming language preferences in code generation across 8 LLMs…
 tags:
-  - ACL 2026 (Findings)
-  - LLM/NLP
-  - code generation preference
-  - library selection bias
-  - programming language preference
-  - LLM behavior analysis
-  - technological diversity
+  - "ACL 2026 (Findings)"
+  - "LLM/NLP"
+  - "code generation preference"
+  - "library selection bias"
+  - "programming language preference"
+  - "LLM behavior analysis"
+  - "technological diversity"
 date: 2026-05-08
 content_hash: 74e7b5f6d7617f90
 ---

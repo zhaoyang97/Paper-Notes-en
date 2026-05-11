@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] FeatureBench: Benchmarking Agentic Coding for Complex Feature Development
 description: >-
-  [ICLR 2026][LLM Agent][agentic coding] This paper introduces FeatureBench, a benchmark for evaluating code agents on feature-level software development. Through a test-driven automated pipeline, it extracts verifiable feature implementation tasks from open-source repositories. The strongest model, Claude Opus 4.5, resolves only 11.0% of tasks, revealing a substantial gap between current agents and the demands of complex feature development.
+  [ICLR 2026][LLM Agent][agentic coding] This paper introduces FeatureBench, a benchmark for evaluating code agents on feature-level software development. Through a test-driven automated pipeline…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - agentic coding
-  - benchmark
-  - feature development
-  - test-driven
-  - SWE-bench
-  - code agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "agentic coding"
+  - "benchmark"
+  - "feature development"
+  - "test-driven"
+  - "SWE-bench"
+  - "code agent"
 date: 2026-05-08
 content_hash: 7f4ac60758ea273e
 ---

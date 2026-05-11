@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Evaluating Few-Shot Pill Recognition Under Visual Domain Shift
 description: >-
-  [CVPR 2026][Object Detection][few-shot object detection] This paper systematically evaluates the generalization of pill recognition under cross-domain few-shot conditions from a deployment perspective. It reveals a decoupling phenomenon in which semantic classification saturates at 1-shot while localization and recall degrade sharply under occlusion and overlap, and demonstrates that the visual realism of training data is far more critical than data volume or shot count.
+  [CVPR 2026][Object Detection][few-shot object detection] This paper systematically evaluates the generalization of pill recognition under cross-domain few-shot conditions from a deployment perspective. It reveals a decou…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - few-shot object detection
-  - pill recognition
-  - domain shift
-  - deployment readiness
-  - cross-dataset evaluation
+  - "CVPR 2026"
+  - "Object Detection"
+  - "few-shot object detection"
+  - "pill recognition"
+  - "domain shift"
+  - "deployment readiness"
+  - "cross-dataset evaluation"
 date: 2026-05-08
 content_hash: 78e75cf997fb9077
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Dataset Distillation for Pre-Trained Self-Supervised Vision Models
 description: >-
-  [NeurIPS 2025][dataset distillation] This paper proposes Linear Gradient Matching, a dataset distillation method for pre-trained self-supervised vision models. A single synthetic image per class suffices to train a linear classifier approaching full-dataset performance, and the distilled images transfer across model architectures.
+  [NeurIPS 2025][Interpretability][dataset distillation] This paper proposes Linear Gradient Matching, a dataset distillation method for pre-trained self-supervised vision models. A single synthetic image per class suffice…
 tags:
-  - NeurIPS 2025
-  - dataset distillation
-  - self-supervised learning
-  - linear probing
-  - gradient matching
-  - CLIP/DINO
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "dataset distillation"
+  - "self-supervised learning"
+  - "linear probing"
+  - "gradient matching"
+  - "CLIP/DINO"
 date: 2026-05-08
 content_hash: e07844134add40f6
 ---

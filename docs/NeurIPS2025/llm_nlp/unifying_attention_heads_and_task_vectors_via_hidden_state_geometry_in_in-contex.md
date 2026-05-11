@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Unifying Attention Heads and Task Vectors via Hidden State Geometry in In-Context Learning
 description: >-
-  [NeurIPS 2025][LLM/NLP][in-context learning] This paper proposes a unified framework based on hidden state geometry (separability + alignment) that bridges the two major explanatory lines of ICL — attention heads (PTH/IH) and task vectors — revealing a two-phase mechanism in classification tasks: early layers establish separability via PTH, while later layers improve alignment with label unembedding directions via IH.
+  [NeurIPS 2025][LLM/NLP][in-context learning] This paper proposes a unified framework based on hidden state geometry (separability + alignment) that bridges the two major explanatory lines of ICL — attention heads (PTH/IH…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - in-context learning
-  - attention heads
-  - task vectors
-  - hidden state geometry
-  - separability
-  - alignment
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "in-context learning"
+  - "attention heads"
+  - "task vectors"
+  - "hidden state geometry"
+  - "separability"
+  - "alignment"
 date: 2026-05-08
 content_hash: e97da4b7782dae21
 ---

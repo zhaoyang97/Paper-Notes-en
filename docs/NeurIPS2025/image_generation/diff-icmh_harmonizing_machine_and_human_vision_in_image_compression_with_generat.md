@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Diff-ICMH: Harmonizing Machine and Human Vision in Image Compression with Generative Prior
 description: >-
-  [Image Generation] This paper proposes Diff-ICMH, a diffusion-based generative image compression framework that preserves semantic integrity via a Semantic Consistency (SC) loss and activates generative priors via a Tag Guidance Module (TGM). Using a single encoder-decoder and a single bitstream, the framework simultaneously serves 10+ machine intelligence tasks and human visual perception without any task-specific adaptation.
+  [Image Generation] This paper proposes Diff-ICMH, a diffusion-based generative image compression framework that preserves semantic integrity via a Semantic Consistency (SC) loss and activates generative priors via a Tag…
 tags:
-  - Image Generation
+  - "Image Generation"
 date: 2026-05-08
 content_hash: c68d5fe020af66f7
 ---

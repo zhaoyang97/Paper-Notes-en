@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Meta-learning In-Context Enables Training-Free Cross Subject Brain Decoding
 description: >-
-  [CVPR 2026][3D Vision][Brain decoding] This paper proposes BrainCoDec, a framework that performs fMRI-based visual decoding generalizable to new subjects without any fine-tuning. It employs a two-stage hierarchical in-context learning approach: first estimating encoder parameters for each voxel, then aggregating across voxels via functional inversion. Top-1 retrieval accuracy improves from 3.9% (MindEye2) to 22.7%.
+  [CVPR 2026][3D Vision][Brain decoding] This paper proposes BrainCoDec, a framework that performs fMRI-based visual decoding generalizable to new subjects without any fine-tuning. It employs a two-stage hierarchical in-co…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Brain decoding
-  - meta-learning
-  - in-context learning
-  - fMRI
-  - cross-subject generalization
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Brain decoding"
+  - "meta-learning"
+  - "in-context learning"
+  - "fMRI"
+  - "cross-subject generalization"
 date: 2026-05-08
 content_hash: b535e547c4a6a920
 ---

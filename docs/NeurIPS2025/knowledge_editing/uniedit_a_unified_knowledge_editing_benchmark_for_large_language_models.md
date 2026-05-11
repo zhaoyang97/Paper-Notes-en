@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] UniEdit: A Unified Knowledge Editing Benchmark for Large Language Models
 description: >-
-  [NeurIPS 2025 (Datasets & Benchmarks Track)][Knowledge Editing] This paper presents UniEdit — the first unified LLM knowledge editing benchmark built upon an open-domain knowledge graph (Wikidata), covering 311K samples across 25 domains in 5 major categories. By introducing the Neighborhood Multi-hop Chain Sampling (NMCS) algorithm, UniEdit integrates diverse generalization and locality evaluation criteria into a single framework, systematically revealing the shortcomings of existing editing methods under complex ripple effect evaluations.
+  [NeurIPS 2025 (Datasets & Benchmarks Track)][Knowledge Editing][LLM benchmark] This paper presents UniEdit — the first unified LLM knowledge editing benchmark built upon an open-domain knowledge graph (Wikidata)…
 tags:
   - "NeurIPS 2025 (Datasets & Benchmarks Track)"
-  - Knowledge Editing
-  - LLM benchmark
-  - ripple effect
-  - knowledge graph
-  - multi-hop reasoning
+  - "Knowledge Editing"
+  - "LLM benchmark"
+  - "ripple effect"
+  - "knowledge graph"
+  - "multi-hop reasoning"
 date: 2026-05-08
 content_hash: 5c8466f5ea7f7c03
 ---

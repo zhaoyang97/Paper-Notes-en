@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Rethinking MLLM Itself as a Segmenter with a Single Segmentation Token
 description: >-
-  [CVPR 2026][Multimodal VLM][MLLM segmentation] This paper proposes SELF1E, the first MLLM segmentation method that requires neither a dedicated mask decoder nor more than a single [SEG] token. By introducing Residual Features Refilling (RFR) and Residual Features Amplifier (RFA) to recover resolution lost during pixel-shuffle compression, SELF1E achieves performance competitive with decoder-based methods across multiple segmentation tasks.
+  [CVPR 2026][Multimodal VLM][MLLM segmentation] This paper proposes SELF1E, the first MLLM segmentation method that requires neither a dedicated mask decoder nor more than a single [SEG] token. By introducing Residual Fea…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - MLLM segmentation
-  - decoder-free segmentation
-  - single-token segmentation
-  - Pixel-Unshuffle
-  - feature refinement
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "MLLM segmentation"
+  - "decoder-free segmentation"
+  - "single-token segmentation"
+  - "Pixel-Unshuffle"
+  - "feature refinement"
 date: 2026-05-08
 content_hash: 7fbdaf4a810c3c95
 ---

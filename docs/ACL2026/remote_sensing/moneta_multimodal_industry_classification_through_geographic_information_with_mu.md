@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MONETA: Multimodal Industry Classification through Geographic Information with Multi Agent Systems
 description: >-
-  [ACL 2026][Remote Sensing][Industry Classification] The paper proposes MONETA, the first multimodal industry classification benchmark combining text (websites, Wikipedia, Wikidata) and geospatial data (OpenStreetMap, satellite imagery), with zero-shot and multi-turn multi-agent training-free pipelines using open-source and proprietary MLLMs achieving 62.10%-74.10% accuracy on 20-class NACE industry classification, with multi-turn design improving up to 22.80%.
+  [ACL 2026][Remote Sensing][Industry Classification] The paper proposes MONETA, the first multimodal industry classification benchmark combining text (websites, Wikipedia, Wikidata) and geospatial data (OpenStreetMap…
 tags:
-  - ACL 2026
-  - Remote Sensing
-  - Industry Classification
-  - Geographic Information
-  - Multimodal LLM
-  - Multi-Agent
-  - OpenStreetMap
+  - "ACL 2026"
+  - "Remote Sensing"
+  - "Industry Classification"
+  - "Geographic Information"
+  - "Multimodal LLM"
+  - "Multi-Agent"
+  - "OpenStreetMap"
 date: 2025-05-08
 content_hash: b2310b81944550a2
 ---

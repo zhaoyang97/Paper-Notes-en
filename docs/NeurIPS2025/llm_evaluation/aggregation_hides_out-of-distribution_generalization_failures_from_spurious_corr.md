@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Aggregation Hides OOD Generalization Failures from Spurious Correlations
 description: >-
-  [NeurIPS 2025][LLM Evaluation][OOD generalization] This paper reveals the "aggregation masking" phenomenon in OOD generalization benchmarks: while aggregate evaluation exhibits accuracy-on-the-line (AoTL)—a positive correlation between ID and OOD accuracy—the proposed OODSelect method can identify large, semantically coherent subsets (up to 75%) from the same OOD data on which higher ID accuracy corresponds to lower OOD accuracy (Pearson R as low as −0.92), demonstrating that the harm of spurious correlations is systematically concealed by aggregate evaluation.
+  [NeurIPS 2025][LLM Evaluation][OOD generalization] This paper reveals the "aggregation masking" phenomenon in OOD generalization benchmarks: while aggregate evaluation exhibits accuracy-on-the-line (AoTL)—a positive corr…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - OOD generalization
-  - spurious correlations
-  - aggregation bias
-  - accuracy-on-the-line
-  - subset analysis
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "OOD generalization"
+  - "spurious correlations"
+  - "aggregation bias"
+  - "accuracy-on-the-line"
+  - "subset analysis"
 date: 2026-05-08
 content_hash: 5ef64824c130fa55
 ---

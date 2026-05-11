@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MEMOIR: Lifelong Model Editing with Minimal Overwrite and Informed Retention for LLMs
 description: >-
-  [NeurIPS 2025][Knowledge Editing][Model Editing] MEMOIR introduces a framework that incorporates zero-initialized residual memory matrices into FFN layers, employs TopHash-based sparse masks to confine each edit to a distinct subset of memory parameters, and at inference time conditionally activates stored knowledge by measuring mask overlap. The approach achieves an optimal balance among reliability, generalization, and locality across 15,000 sequential edits.
+  [NeurIPS 2025][Knowledge Editing][Model Editing] MEMOIR introduces a framework that incorporates zero-initialized residual memory matrices into FFN layers…
 tags:
-  - NeurIPS 2025
-  - Knowledge Editing
-  - Model Editing
-  - Lifelong Learning
-  - Sparse Masking
-  - Residual Memory
-  - Catastrophic Forgetting
+  - "NeurIPS 2025"
+  - "Knowledge Editing"
+  - "Model Editing"
+  - "Lifelong Learning"
+  - "Sparse Masking"
+  - "Residual Memory"
+  - "Catastrophic Forgetting"
 date: 2026-05-08
 content_hash: bdbcdd9012fc2ec9
 ---

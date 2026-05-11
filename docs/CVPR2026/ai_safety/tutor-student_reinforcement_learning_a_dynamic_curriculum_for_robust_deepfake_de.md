@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Tutor-Student Reinforcement Learning: A Dynamic Curriculum for Robust Deepfake Detection
 description: >-
-  [CVPR 2026][AI Safety][deepfake detection] This paper proposes the Tutor-Student Reinforcement Learning (TSRL) framework, which formulates the training process of a deepfake detector as a Markov Decision Process. A "tutor" (PPO agent) dynamically assigns loss weights to individual samples based on their visual features and historical learning dynamics (EMA loss, forgetting count). A "state-change" reward signal guides the "student" (detector) to prioritize high-value samples, substantially improving generalization in cross-dataset and cross-method evaluations.
+  [CVPR 2026][AI Safety][deepfake detection] This paper proposes the Tutor-Student Reinforcement Learning (TSRL) framework, which formulates the training process of a deepfake detector as a Markov Decision Process. A "tuto…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - deepfake detection
-  - reinforcement learning
-  - curriculum learning
-  - dynamic sample weighting
-  - cross-domain generalization
+  - "CVPR 2026"
+  - "AI Safety"
+  - "deepfake detection"
+  - "reinforcement learning"
+  - "curriculum learning"
+  - "dynamic sample weighting"
+  - "cross-domain generalization"
 date: 2026-05-08
 content_hash: e8708fab6422af9f
 ---

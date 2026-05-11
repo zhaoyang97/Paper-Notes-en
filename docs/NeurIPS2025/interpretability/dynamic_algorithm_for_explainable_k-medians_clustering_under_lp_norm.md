@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Dynamic Algorithm for Explainable k-medians Clustering under lp Norm
 description: >-
-  [NeurIPS 2025][Explainable clustering] This paper presents the first explainable k-medians clustering algorithm for general $\ell_p$ norms, achieving an approximation ratio of $\tilde{O}(p(\log k)^{1+1/p-1/p^2})$ (improving the best known bound for $p=2$), along with the first dynamic variant: maintaining an explainable clustering under center insertions/deletions with $O(d \log^3 k)$ amortized update time and $O(\log k)$ amortized reassignments.
+  [NeurIPS 2025][Interpretability][Explainable clustering] This paper presents the first explainable k-medians clustering algorithm for general $\ell_p$ norms…
 tags:
-  - NeurIPS 2025
-  - Explainable clustering
-  - k-medians
-  - decision trees
-  - dynamic algorithms
-  - approximation ratio
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "Explainable clustering"
+  - "k-medians"
+  - "decision trees"
+  - "dynamic algorithms"
+  - "approximation ratio"
 date: 2026-05-08
 content_hash: 69dcc9e3549d8412
 ---

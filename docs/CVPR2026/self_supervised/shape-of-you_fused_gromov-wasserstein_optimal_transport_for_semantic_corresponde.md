@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Shape-of-You: Fused Gromov-Wasserstein Optimal Transport for Semantic Correspondence in-the-Wild
 description: >-
-  [CVPR2026][Self-Supervised Learning][Semantic Correspondence] This paper reformulates semantic correspondence as a Fused Gromov-Wasserstein (FGW) optimal transport problem, leveraging geometric structural constraints from 3D foundation models to generate globally consistent pseudo labels, thereby addressing the geometric inconsistency caused by the locality and 2D appearance ambiguity inherent in conventional nearest-neighbor matching.
+  [CVPR2026][Self-Supervised Learning][Semantic Correspondence] This paper reformulates semantic correspondence as a Fused Gromov-Wasserstein (FGW) optimal transport problem…
 tags:
-  - CVPR2026
-  - Self-Supervised Learning
-  - Semantic Correspondence
-  - Optimal Transport
-  - Gromov-Wasserstein
-  - 3D Geometric Constraints
-  - Pseudo Labels
-  - Foundation Models
+  - "CVPR2026"
+  - "Self-Supervised Learning"
+  - "Semantic Correspondence"
+  - "Optimal Transport"
+  - "Gromov-Wasserstein"
+  - "3D Geometric Constraints"
+  - "Pseudo Labels"
+  - "Foundation Models"
 date: 2026-05-08
 content_hash: aa609240a17a63a5
 ---

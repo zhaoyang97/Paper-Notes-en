@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] A Cortically Inspired Architecture for Modular Perceptual AI
 description: >-
-  [ICLR 2026][cortically inspired architecture] This paper proposes a cortically inspired modular perceptual AI architecture blueprint grounded in neuroscience, comprising four components — dedicated encoders, a shared cross-modal latent space, a routing controller, and a recursive predictive feedback loop — and validates through sparse autoencoder experiments that modular decomposition improves within-domain feature stability (+15.4pp Jaccard overlap).
+  [ICLR 2026][Interpretability][cortically inspired architecture] This paper proposes a cortically inspired modular perceptual AI architecture blueprint grounded in neuroscience…
 tags:
-  - ICLR 2026
-  - cortically inspired architecture
-  - modular perception
-  - predictive coding
-  - cross-modal fusion
-  - sparse autoencoder
+  - "ICLR 2026"
+  - "Interpretability"
+  - "cortically inspired architecture"
+  - "modular perception"
+  - "predictive coding"
+  - "cross-modal fusion"
+  - "sparse autoencoder"
 date: 2026-05-08
 content_hash: 15e22fef1574b6cf
 ---

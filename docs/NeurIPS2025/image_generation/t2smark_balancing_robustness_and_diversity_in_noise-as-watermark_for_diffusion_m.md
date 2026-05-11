@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] T2SMark: Balancing Robustness and Diversity in Noise-as-Watermark for Diffusion Models
 description: >-
-  [NeurIPS 2025][Image Generation][Image Watermarking] This paper proposes T2SMark, a two-stage watermarking scheme for diffusion models based on Tail-Truncated Sampling (TTS). By embedding watermark bits in the tail regions of the Gaussian distribution while sampling randomly from the central region, T2SMark is the first method to achieve an optimal balance between watermark robustness and generation diversity.
+  [NeurIPS 2025][Image Generation][Image Watermarking] This paper proposes T2SMark, a two-stage watermarking scheme for diffusion models based on Tail-Truncated Sampling (TTS). By embedding watermark bits in the tail regio…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Image Watermarking
-  - Diffusion Models
-  - Noise-as-Watermark
-  - Tail-Truncated Sampling
-  - Robustness-Diversity Trade-off
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Image Watermarking"
+  - "Diffusion Models"
+  - "Noise-as-Watermark"
+  - "Tail-Truncated Sampling"
+  - "Robustness-Diversity Trade-off"
 date: 2026-05-08
 content_hash: d229118e7f65a706
 ---

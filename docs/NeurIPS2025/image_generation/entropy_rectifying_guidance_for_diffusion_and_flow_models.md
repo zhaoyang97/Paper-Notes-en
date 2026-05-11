@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Entropy Rectifying Guidance for Diffusion and Flow Models
 description: >-
-  [NeurIPS 2025][Image Generation][diffusion models] This paper proposes Entropy Rectifying Guidance (ERG), which manipulates the Hopfield energy landscape of attention layers (via temperature scaling and step-size adjustment) to obtain a weak prediction signal as a substitute for the unconditional prediction in conventional CFG, simultaneously improving quality, diversity, and consistency in text-to-image, class-conditional, and unconditional generation.
+  [NeurIPS 2025][Image Generation][diffusion models] This paper proposes Entropy Rectifying Guidance (ERG), which manipulates the Hopfield energy landscape of attention layers (via temperature scaling and step-size adjustm…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - diffusion models
-  - guidance mechanism
-  - attention energy
-  - classifier-free guidance
-  - flow matching
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "diffusion models"
+  - "guidance mechanism"
+  - "attention energy"
+  - "classifier-free guidance"
+  - "flow matching"
 date: 2026-05-08
 content_hash: 6b27460116c17dc7
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dual-level Adaptation for Multi-Object Tracking: Building Test-Time Calibration from Experience and Intuition
 description: >-
-  [CVPR 2026][Video Understanding][Multi-Object Tracking] Inspired by Kahneman's dual-process theory, the TCEI framework proposes a test-time adaptation method that combines an intuitive system (rapid inference via transient memory of recently observed objects) with an experiential system (calibration of intuitive predictions using knowledge accumulated from historical videos), achieving significant improvements in multi-object tracking under distribution shift without requiring backpropagation.
+  [CVPR 2026][Video Understanding][Multi-Object Tracking] Inspired by Kahneman's dual-process theory, the TCEI framework proposes a test-time adaptation method that combines an intuitive system (rapid inference via transie…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Multi-Object Tracking
-  - Test-Time Adaptation
-  - Dual-System Theory
-  - Distribution Shift
-  - Identity Association
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Multi-Object Tracking"
+  - "Test-Time Adaptation"
+  - "Dual-System Theory"
+  - "Distribution Shift"
+  - "Identity Association"
 date: 2026-05-08
 content_hash: d5c8d65595c5a09e
 ---

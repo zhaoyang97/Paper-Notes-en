@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Noise2Score3D: Tweedie's Approach for Unsupervised Point Cloud Denoising
 description: >-
-  [ICCV 2025][3D Vision][Point cloud denoising] This paper proposes Noise2Score3D, a fully unsupervised point cloud denoising framework based on Tweedie's formula. It learns the score function directly from noisy data and achieves single-step denoising, while introducing point cloud total variation to estimate unknown noise parameters.
+  [ICCV 2025][3D Vision][Point cloud denoising] This paper proposes Noise2Score3D, a fully unsupervised point cloud denoising framework based on Tweedie's formula. It learns the score function directly from noisy data and…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Point cloud denoising
-  - unsupervised learning
-  - Tweedie's formula
-  - score function
-  - total variation
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Point cloud denoising"
+  - "unsupervised learning"
+  - "Tweedie's formula"
+  - "score function"
+  - "total variation"
 date: 2026-05-08
 content_hash: 214c3cd3b8d40e61
 ---

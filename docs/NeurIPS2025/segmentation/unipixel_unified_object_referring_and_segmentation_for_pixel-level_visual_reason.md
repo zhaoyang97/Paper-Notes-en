@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UniPixel: Unified Object Referring and Segmentation for Pixel-Level Visual Reasoning
 description: >-
-  [NeurIPS 2025][Segmentation][Multimodal Large Models] UniPixel proposes the first end-to-end large multimodal model that unifies object referring and segmentation, leveraging a novel Object Memory Bank design to transform sparse visual prompts into dense object mask features and inject them into the reasoning process. The model achieves state-of-the-art performance on 10 benchmarks and introduces PixelQA, a new task requiring simultaneous referring, segmentation, and question answering.
+  [NeurIPS 2025][Segmentation][Multimodal Large Models] UniPixel proposes the first end-to-end large multimodal model that unifies object referring and segmentation…
 tags:
-  - NeurIPS 2025
-  - Segmentation
-  - Multimodal Large Models
-  - Pixel-Level Reasoning
-  - Unified Object Referring and Segmentation
-  - Object Memory Bank
-  - Video Understanding
+  - "NeurIPS 2025"
+  - "Segmentation"
+  - "Multimodal Large Models"
+  - "Pixel-Level Reasoning"
+  - "Unified Object Referring and Segmentation"
+  - "Object Memory Bank"
+  - "Video Understanding"
 date: 2026-05-08
 content_hash: 940ac3c58314e759
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The Silent Assistant: NoiseQuery as Implicit Guidance for Goal-Driven Image Generation
 description: >-
-  [ICCV 2025][Image Generation][Initial noise optimization] This paper proposes NoiseQuery, a training-free T2I generation enhancement method that pre-constructs a large-scale noise library and retrieves the initial noise best matching the user's goal at inference time, enabling fine-grained control over both high-level semantics and low-level visual attributes, with only 0.002s/prompt additional overhead, improving performance across multiple T2I models and enhancement techniques.
+  [ICCV 2025][Image Generation][Initial noise optimization] This paper proposes NoiseQuery, a training-free T2I generation enhancement method that pre-constructs a large-scale noise library and retrieves the initial noise…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Initial noise optimization
-  - Noise Library
-  - cross-model consistency
-  - low-level visual attribute control
-  - T2I enhancement
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Initial noise optimization"
+  - "Noise Library"
+  - "cross-model consistency"
+  - "low-level visual attribute control"
+  - "T2I enhancement"
 date: 2026-05-08
 content_hash: be77ef274c9ad068
 ---

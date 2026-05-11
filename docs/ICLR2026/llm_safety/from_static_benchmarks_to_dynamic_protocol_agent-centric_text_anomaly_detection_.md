@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From Static Benchmarks to Dynamic Protocol: Agent-Centric Text Anomaly Detection for Evaluating LLM Reasoning
 description: >-
-  [ICLR 2026][LLM Safety][dynamic benchmark] This paper proposes ATAD (Agent-Centric Text Anomaly Detection), which replaces static benchmarks with a Teacher-Orchestrator-Student three-agent competition and validation loop. Using text anomaly detection as the task format, ATAD achieves self-calibrating, dynamically evolving LLM reasoning evaluation — all evaluated LLMs achieve average accuracies of only 54–59% (far below 90%+ on static benchmarks), effectively exposing reasoning weaknesses.
+  [ICLR 2026][LLM Safety][dynamic benchmark] This paper proposes ATAD (Agent-Centric Text Anomaly Detection), which replaces static benchmarks with a Teacher-Orchestrator-Student three-agent competition and validation loop…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - dynamic benchmark
-  - text anomaly detection
-  - agent-centric evaluation
-  - LLM reasoning
-  - teacher-student
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "dynamic benchmark"
+  - "text anomaly detection"
+  - "agent-centric evaluation"
+  - "LLM reasoning"
+  - "teacher-student"
 date: 2026-05-08
 content_hash: b2f87e9351e03bee
 ---

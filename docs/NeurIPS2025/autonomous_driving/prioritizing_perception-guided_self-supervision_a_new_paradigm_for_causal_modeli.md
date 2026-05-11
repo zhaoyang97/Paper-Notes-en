@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Prioritizing Perception-Guided Self-Supervision: A New Paradigm for Causal Modeling in End-to-End Autonomous Driving
 description: >-
-  [NeurIPS 2025][Autonomous Driving][Causal Confusion] This work addresses causal confusion in end-to-end autonomous driving by leveraging perception outputs (lane centerlines, agent trajectories) and self-supervised learning to establish causal relationships, achieving state-of-the-art performance on the Bench2Drive closed-loop benchmark (Driving Score 78.08).
+  [NeurIPS 2025][Autonomous Driving][Causal Confusion] This work addresses causal confusion in end-to-end autonomous driving by leveraging perception outputs (lane centerlines…
 tags:
-  - NeurIPS 2025
-  - Autonomous Driving
-  - Causal Confusion
-  - Self-Supervised Learning
-  - End-to-End Driving
-  - Perception-Guided
-  - Closed-Loop Evaluation
+  - "NeurIPS 2025"
+  - "Autonomous Driving"
+  - "Causal Confusion"
+  - "Self-Supervised Learning"
+  - "End-to-End Driving"
+  - "Perception-Guided"
+  - "Closed-Loop Evaluation"
 date: 2026-05-08
 content_hash: 91ca5ac5c9c123fb
 ---

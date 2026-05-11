@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Reverse Engineering Human Preferences with Reinforcement Learning
 description: >-
-  [NeurIPS 2025 (Spotlight)][LLM Safety][LLM-as-a-Judge] A reinforcement learning-trained preamble generator is used to inflate the evaluation scores of downstream LLMs, exposing critical vulnerabilities in the LLM-as-a-Judge evaluation framework. The attack is nearly undetectable and demonstrates cross-model transferability.
+  [NeurIPS 2025 (Spotlight)][LLM Safety][LLM-as-a-Judge] A reinforcement learning-trained preamble generator is used to inflate the evaluation scores of downstream LLMs…
 tags:
-  - NeurIPS 2025 (Spotlight)
-  - LLM Safety
-  - LLM-as-a-Judge
-  - Adversarial Attack
-  - Preference Reverse Engineering
-  - Reinforcement Learning
-  - Detectability
+  - "NeurIPS 2025 (Spotlight)"
+  - "LLM Safety"
+  - "LLM-as-a-Judge"
+  - "Adversarial Attack"
+  - "Preference Reverse Engineering"
+  - "Reinforcement Learning"
+  - "Detectability"
 date: 2026-05-08
 content_hash: dc50ef4517904c06
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Accelerate Creation of Product Claims Using Generative AI
 description: >-
-  [NeurIPS 2025][Audio & Speech][product claims] This paper develops the Claim Advisor platform, leveraging LLM in-context learning and LoRA fine-tuning to accelerate the search, generation, refinement, and ranking of product claims for consumer goods. By emulating the MaxDiff research methodology, a fine-tuned Phi-3 14B model outperforms GPT-4o on claim ranking using only 1 in-context example versus GPT-4o's 100, and after three iterative rounds, 100% of generated claims achieve a "highly appealing" rating.
+  [NeurIPS 2025][Audio & Speech][product claims] This paper develops the Claim Advisor platform, leveraging LLM in-context learning and LoRA fine-tuning to accelerate the search, generation, refinement…
 tags:
-  - NeurIPS 2025
+  - "NeurIPS 2025"
   - "Audio & Speech"
-  - product claims
-  - in-context learning
-  - LoRA fine-tuning
-  - MaxDiff
-  - consumer simulation
+  - "product claims"
+  - "in-context learning"
+  - "LoRA fine-tuning"
+  - "MaxDiff"
+  - "consumer simulation"
 date: 2026-05-08
 content_hash: c348da3b5a4b4d25
 ---

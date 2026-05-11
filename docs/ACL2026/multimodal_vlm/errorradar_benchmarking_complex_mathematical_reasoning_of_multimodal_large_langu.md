@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ErrorRadar: Benchmarking Complex Mathematical Reasoning of Multimodal Large Language Models Via Error Detection
 description: >-
-  [ACL 2026][Multimodal VLM][Multimodal error detection] This paper formally defines the multimodal error detection task and constructs the ErrorRadar benchmark — comprising 2,500 K-12 multimodal math problems drawn from real student responses — to evaluate MLLMs on two subtasks: error step identification (STEP) and error type classification (CATE). The strongest model, GPT-4o, still lags behind human evaluators by approximately 10–15%.
+  [ACL 2026][Multimodal VLM][Multimodal error detection] This paper formally defines the multimodal error detection task and constructs the ErrorRadar benchmark — comprising 2…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Multimodal error detection
-  - mathematical reasoning benchmark
-  - K-12 education
-  - error step localization
-  - error classification
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Multimodal error detection"
+  - "mathematical reasoning benchmark"
+  - "K-12 education"
+  - "error step localization"
+  - "error classification"
 date: 2026-05-08
 content_hash: fa71170fa6a49517
 ---

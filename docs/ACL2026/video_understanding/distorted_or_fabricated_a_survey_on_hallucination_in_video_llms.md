@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Distorted or Fabricated? A Survey on Hallucination in Video LLMs
 description: >-
-  [ACL 2026][Video Understanding][Video LLM Hallucination] This paper presents the first systematic taxonomy of hallucination phenomena in Video Large Language Models (Vid-LLMs), proposing a mechanism-driven classification framework that distinguishes between "dynamic distortion" (spatiotemporal relationship and reference consistency errors) and "content fabrication" (driven by statistical priors and audio-visual conflicts), while surveying evaluation benchmarks, mitigation strategies, and root cause analysis.
+  [ACL 2026][Video Understanding][Video LLM Hallucination] This paper presents the first systematic taxonomy of hallucination phenomena in Video Large Language Models (Vid-LLMs)…
 tags:
-  - ACL 2026
-  - Video Understanding
-  - Video LLM Hallucination
-  - Dynamic Distortion
-  - Content Fabrication
-  - Spatiotemporal Reasoning
-  - Multimodal
+  - "ACL 2026"
+  - "Video Understanding"
+  - "Video LLM Hallucination"
+  - "Dynamic Distortion"
+  - "Content Fabrication"
+  - "Spatiotemporal Reasoning"
+  - "Multimodal"
 date: 2026-05-08
 content_hash: 4c42f0388c9bbd1b
 ---

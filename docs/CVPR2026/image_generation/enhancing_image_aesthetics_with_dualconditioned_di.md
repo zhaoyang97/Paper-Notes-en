@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Enhancing Image Aesthetics with Dual-Conditioned Diffusion Models Guided by Multimodal Perception
 description: >-
-  [CVPR 2026][Image Generation][Image Aesthetic Enhancement] DIAE proposes a Multimodal Aesthetic Perception (MAP) module to convert vague aesthetic instructions into explicit control signals (HSV + contour maps + text). It constructs a "imperfectly paired" dataset, IIAEData, and utilizes a dual-branch supervision framework for weakly supervised training, achieving content-consistent aesthetic enhancement with a 17.4% improvement in LAION aesthetic scores.
+  [CVPR 2026][Image Generation][Image Aesthetic Enhancement] DIAE proposes a Multimodal Aesthetic Perception (MAP) module to convert vague aesthetic instructions into explicit control signals (HSV + contour maps + text). I…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Image Aesthetic Enhancement
-  - Multimodal Aesthetic Perception
-  - Weakly Supervised Diffusion Models
-  - Imperfectly Paired Data
-  - ControlNet
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Image Aesthetic Enhancement"
+  - "Multimodal Aesthetic Perception"
+  - "Weakly Supervised Diffusion Models"
+  - "Imperfectly Paired Data"
+  - "ControlNet"
 date: 2026-05-08
 content_hash: baeedf73f54bb6f1
 ---

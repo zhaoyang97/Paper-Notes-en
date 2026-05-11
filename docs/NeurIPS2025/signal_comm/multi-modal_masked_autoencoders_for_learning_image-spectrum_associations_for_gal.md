@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multi-Modal Masked Autoencoders for Learning Image-Spectrum Associations for Galaxy Evolution and Cosmology
 description: >-
-  [NeurIPS 2025][Signal & Communication][multi-modal masked autoencoder] A multi-modal image–spectrum–redshift dataset (GalaxiesML-Spectra) comprising 134,533 galaxies is constructed and adapted for a Multi-Modal Masked Autoencoder (MMAE) that performs joint reconstruction of images and spectra alongside redshift regression. Experiments demonstrate that, even when spectra are entirely absent at test time, using only 25% masked images achieves a redshift prediction scatter of $\sigma_{NMAD} = 0.016$, outperforming AstroCLIP.
+  [NeurIPS 2025][Signal & Communication][multi-modal masked autoencoder] A multi-modal image–spectrum–redshift dataset (GalaxiesML-Spectra) comprising 134…
 tags:
-  - NeurIPS 2025
+  - "NeurIPS 2025"
   - "Signal & Communication"
-  - multi-modal masked autoencoder
-  - galaxy images
-  - spectral reconstruction
-  - redshift regression
-  - missing modality learning
+  - "multi-modal masked autoencoder"
+  - "galaxy images"
+  - "spectral reconstruction"
+  - "redshift regression"
+  - "missing modality learning"
 date: 2026-05-08
 content_hash: c31d13bb46e0edbc
 ---

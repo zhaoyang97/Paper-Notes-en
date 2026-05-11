@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Parametric Pareto Set Learning for Expensive Multi-Objective Optimization
 description: >-
-  [AAAI 2026][Model Compression][Pareto Set Learning] This paper proposes the PPSL-MOBO framework, which employs a hypernetwork + LoRA architecture to learn a unified mapping from preference vectors and extrinsic parameters to Pareto-optimal solutions. Combined with Gaussian process surrogate models and hypervolume improvement acquisition strategies, the framework efficiently addresses expensive parametric multi-objective optimization problems.
+  [AAAI 2026][Model Compression][Pareto Set Learning] This paper proposes the PPSL-MOBO framework, which employs a hypernetwork + LoRA architecture to learn a unified mapping from preference vectors and extrinsic parameter…
 tags:
-  - AAAI 2026
-  - Model Compression
-  - Pareto Set Learning
-  - Multi-Objective Bayesian Optimization
-  - Hypernetwork
-  - LoRA
-  - Parametric Multi-Objective Optimization
+  - "AAAI 2026"
+  - "Model Compression"
+  - "Pareto Set Learning"
+  - "Multi-Objective Bayesian Optimization"
+  - "Hypernetwork"
+  - "LoRA"
+  - "Parametric Multi-Objective Optimization"
 date: 2026-05-08
 content_hash: deeb712976743274
 ---

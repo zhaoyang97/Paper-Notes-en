@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Learning Conformational Ensembles of Proteins Based on Backbone Geometry
 description: >-
-  [NeurIPS 2025][Medical Imaging][protein conformational ensembles] This paper proposes BBFlow, a flow matching generative model based on protein backbone geometry for conformational ensemble sampling. BBFlow requires neither evolutionary sequence information nor pretrained folding models, achieves inference speeds more than an order of magnitude faster than AlphaFlow, and generalizes to multi-chain proteins.
+  [NeurIPS 2025][Medical Imaging][protein conformational ensembles] This paper proposes BBFlow, a flow matching generative model based on protein backbone geometry for conformational ensemble sampling. BBFlow requires neit…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - protein conformational ensembles
-  - flow matching
-  - backbone geometry
-  - molecular dynamics simulation
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "protein conformational ensembles"
+  - "flow matching"
+  - "backbone geometry"
+  - "molecular dynamics simulation"
 date: 2026-05-08
 content_hash: 14a6d7744fc71b7c
 ---

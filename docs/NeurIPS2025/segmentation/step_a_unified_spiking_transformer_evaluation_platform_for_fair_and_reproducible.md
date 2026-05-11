@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] STEP: A Unified Spiking Transformer Evaluation Platform for Fair and Reproducible Benchmarking
 description: >-
-  [NeurIPS 2025][Segmentation][Spiking Transformer] STEP is the first unified evaluation platform for Spiking Transformers (STs), supporting multi-task benchmarking (classification/segmentation/detection), multiple backends (SpikingJelly/BrainCog/BrainPy). Through systematic ablation, it reveals that current STs rely heavily on convolutional frontends, that attention contributes minimally, and that temporal modeling capacity is insufficient. The platform further proposes a unified energy consumption analysis framework accounting for bit-width sparsity and memory access costs.
+  [NeurIPS 2025][Segmentation][Spiking Transformer] STEP is the first unified evaluation platform for Spiking Transformers (STs), supporting multi-task benchmarking (classification/segmentation/detection)…
 tags:
-  - NeurIPS 2025
-  - Segmentation
-  - Spiking Transformer
-  - unified benchmark
-  - energy consumption modeling
-  - spiking neural networks
-  - reproducible evaluation
+  - "NeurIPS 2025"
+  - "Segmentation"
+  - "Spiking Transformer"
+  - "unified benchmark"
+  - "energy consumption modeling"
+  - "spiking neural networks"
+  - "reproducible evaluation"
 date: 2026-05-08
 content_hash: eb71275e0d698cb0
 ---

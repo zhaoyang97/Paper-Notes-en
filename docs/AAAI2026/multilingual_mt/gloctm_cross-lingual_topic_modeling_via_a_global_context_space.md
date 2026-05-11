@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] GloCTM: Cross-Lingual Topic Modeling via a Global Context Space
 description: >-
-  [AAAI 2026][Cross-lingual] This paper proposes GloCTM, a dual-path VAE architecture (local language path + global context path) that enforces cross-lingual alignment at four levels—Polyglot Augmentation (cross-lingual neighbor-based input expansion), KL divergence internal alignment, unified decoder structural alignment, and CKA semantic alignment—achieving state-of-the-art topic quality and cross-lingual alignment on three cross-lingual datasets.
+  [AAAI 2026][Multilingual & Machine Translation][Cross-lingual] This paper proposes GloCTM, a dual-path VAE architecture (local language path + global context path) that enforces cross-lingual alignment at four levels—Pol…
 tags:
-  - AAAI 2026
-  - Cross-lingual
-  - Topic Model
-  - VAE
-  - Multilingual Embeddings
-  - CKA Alignment
+  - "AAAI 2026"
+  - "Multilingual & Machine Translation"
+  - "Cross-lingual"
+  - "Topic Model"
+  - "VAE"
+  - "Multilingual Embeddings"
+  - "CKA Alignment"
 date: 2026-05-08
 content_hash: dad214069f43dfce
 ---

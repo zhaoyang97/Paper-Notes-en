@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BillBoard Splatting (BBSplat): Learnable Textured Primitives for Novel View Synthesis
 description: >-
-  [ICCV 2025][3D Vision][Gaussian Splatting] This paper proposes BBSplat, which replaces the Gaussian opacity in 2D Gaussian Splatting with learnable RGB texture maps and alpha maps, enabling each planar primitive to possess arbitrary shape and per-pixel color control. With fewer primitives, BBSplat closes the rendering quality gap between 2DGS and 3DGS while preserving accurate mesh extraction capability and achieving up to ×17 storage compression.
+  [ICCV 2025][3D Vision][Gaussian Splatting] This paper proposes BBSplat, which replaces the Gaussian opacity in 2D Gaussian Splatting with learnable RGB texture maps and alpha maps…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Gaussian Splatting
-  - textured primitives
-  - novel view synthesis
-  - model compression
-  - mesh extraction
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Gaussian Splatting"
+  - "textured primitives"
+  - "novel view synthesis"
+  - "model compression"
+  - "mesh extraction"
 date: 2026-05-08
 content_hash: 0624c2fbcf4add96
 ---

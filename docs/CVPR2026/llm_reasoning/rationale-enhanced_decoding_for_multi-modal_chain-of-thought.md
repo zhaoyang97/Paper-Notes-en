@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Rationale-Enhanced Decoding for Multi-modal Chain-of-Thought
 description: >-
-  [CVPR 2026][LLM Reasoning][Chain-of-Thought reasoning] This work identifies that existing LVLMs effectively ignore intermediate rationale content during CoT reasoning, and proposes RED (Rationale-Enhanced Decoding)—multiplying the image-conditioned and rationale-conditioned next-token distributions at the logit level. This approach is theoretically equivalent to the optimal solution of KL-constrained reward maximization, and significantly improves multimodal reasoning accuracy without any training.
+  [CVPR 2026][LLM Reasoning][Chain-of-Thought reasoning] This work identifies that existing LVLMs effectively ignore intermediate rationale content during CoT reasoning…
 tags:
-  - CVPR 2026
-  - LLM Reasoning
-  - Chain-of-Thought reasoning
-  - multimodal large language models
-  - decoding strategy
-  - rationale grounding
-  - plug-and-play
+  - "CVPR 2026"
+  - "LLM Reasoning"
+  - "Chain-of-Thought reasoning"
+  - "multimodal large language models"
+  - "decoding strategy"
+  - "rationale grounding"
+  - "plug-and-play"
 date: 2026-05-08
 content_hash: 044abd00354566cf
 ---

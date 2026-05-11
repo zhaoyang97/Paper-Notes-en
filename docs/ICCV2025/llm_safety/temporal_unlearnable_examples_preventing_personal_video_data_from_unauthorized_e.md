@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Temporal Unlearnable Examples: Preventing Personal Video Data from Unauthorized Exploitation
 description: >-
-  [ICCV 2025][LLM Safety][video data privacy] This paper presents the first study on preventing video data from being exploited by deep trackers without authorization. It proposes a DiT-based generative framework for producing Temporal Unlearnable Examples (TUE), employing a temporal contrastive loss to induce trackers to rely on perturbation noise for temporal matching rather than learning genuine data structure. The method achieves strong transferability across models, datasets, and tasks.
+  [ICCV 2025][LLM Safety][video data privacy] This paper presents the first study on preventing video data from being exploited by deep trackers without authorization. It proposes a DiT-based generative framework for produ…
 tags:
-  - ICCV 2025
-  - LLM Safety
-  - video data privacy
-  - unlearnable examples
-  - visual object tracking
-  - generative perturbation
-  - contrastive learning
+  - "ICCV 2025"
+  - "LLM Safety"
+  - "video data privacy"
+  - "unlearnable examples"
+  - "visual object tracking"
+  - "generative perturbation"
+  - "contrastive learning"
 date: 2026-05-08
 content_hash: 70b801fc072c26a3
 ---

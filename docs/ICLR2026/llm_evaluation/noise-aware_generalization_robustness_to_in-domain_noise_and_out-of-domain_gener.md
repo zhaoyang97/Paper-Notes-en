@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Noise-Aware Generalization: Robustness to In-Domain Noise and Out-of-Domain Generalization
 description: >-
-  [ICLR 2026][LLM Evaluation][Noise-Aware Generalization] This paper is the first to formally define the Noise-Aware Generalization (NAG) problem — simultaneously pursuing in-domain robustness and out-of-domain generalization under label noise — and proposes DL4ND, a method that detects noisy labels via cross-domain comparison, achieving up to 12.5% improvement across 7 datasets.
+  [ICLR 2026][LLM Evaluation][Noise-Aware Generalization] This paper is the first to formally define the Noise-Aware Generalization (NAG) problem — simultaneously pursuing in-domain robustness and out-of-domain generalizat…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - Noise-Aware Generalization
-  - Domain Generalization
-  - Learning with Noisy Labels
-  - Cross-Domain Noise Detection
-  - DL4ND
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Noise-Aware Generalization"
+  - "Domain Generalization"
+  - "Learning with Noisy Labels"
+  - "Cross-Domain Noise Detection"
+  - "DL4ND"
 date: 2026-05-08
 content_hash: 078c657547568c1b
 ---

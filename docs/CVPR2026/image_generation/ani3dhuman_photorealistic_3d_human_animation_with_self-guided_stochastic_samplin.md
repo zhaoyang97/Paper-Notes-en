@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Ani3DHuman: Photorealistic 3D Human Animation with Self-guided Stochastic Sampling
 description: >-
-  [CVPR2026][Image Generation][3D Human Animation] The Ani3DHuman framework is proposed, combining kinematics-driven mesh animation with video diffusion priors. Through Self-guided Stochastic Sampling, it restores low-quality rigid body renderings into high-fidelity videos, achieving realistic modeling of non-rigid clothing dynamics.
+  [CVPR2026][Image Generation][3D Human Animation] The Ani3DHuman framework is proposed, combining kinematics-driven mesh animation with video diffusion priors. Through Self-guided Stochastic Sampling…
 tags:
-  - CVPR2026
-  - Image Generation
-  - 3D Human Animation
-  - Video Diffusion Priors
-  - Stochastic Sampling
-  - Non-rigid Motion
-  - 3D Gaussian Splatting
+  - "CVPR2026"
+  - "Image Generation"
+  - "3D Human Animation"
+  - "Video Diffusion Priors"
+  - "Stochastic Sampling"
+  - "Non-rigid Motion"
+  - "3D Gaussian Splatting"
 date: 2026-05-08
 content_hash: 35cdddead8fd8fce
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Human-Inspired Multi-Level Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][rating-based RL] This paper proposes RbRL-KL, which augments rating-based RL (RbRL) with a KL divergence-driven policy loss term. By leveraging failure experiences across different rating levels with varying weights to repel the current policy, RbRL-KL outperforms standard RbRL across 6 DeepMind Control environments.
+  [NeurIPS 2025][Reinforcement Learning][rating-based RL] This paper proposes RbRL-KL, which augments rating-based RL (RbRL) with a KL divergence-driven policy loss term. By leveraging failure experiences across different…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - rating-based RL
-  - KL divergence
-  - human feedback
-  - multi-level learning
-  - reward-free RL
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "rating-based RL"
+  - "KL divergence"
+  - "human feedback"
+  - "multi-level learning"
+  - "reward-free RL"
 date: 2026-05-08
 content_hash: 5c29fd38727f0ab9
 ---

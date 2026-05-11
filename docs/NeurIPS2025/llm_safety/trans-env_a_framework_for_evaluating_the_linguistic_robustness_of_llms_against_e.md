@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Trans-EnV: A Framework for Evaluating the Linguistic Robustness of LLMs Against English Varieties
 description: >-
-  [NeurIPS 2025][LLM Safety][Linguistic Robustness] This paper proposes the Trans-EnV framework, which combines expert linguistic knowledge with the transformation capabilities of LLMs to automatically convert Standard American English (SAE) datasets into 38 English varieties (18 dialects + 20 ESL Englishes), revealing performance degradations of up to 46.3% on non-standard English and highlighting critical linguistic fairness concerns.
+  [NeurIPS 2025][LLM Safety][Linguistic Robustness] This paper proposes the Trans-EnV framework, which combines expert linguistic knowledge with the transformation capabilities of LLMs to automatically convert Standard Ame…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - Linguistic Robustness
-  - English Dialects
-  - Fairness
-  - LLM Evaluation
-  - ESL English
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "Linguistic Robustness"
+  - "English Dialects"
+  - "Fairness"
+  - "LLM Evaluation"
+  - "ESL English"
 date: 2026-05-08
 content_hash: 069a7a18ac570ab6
 ---

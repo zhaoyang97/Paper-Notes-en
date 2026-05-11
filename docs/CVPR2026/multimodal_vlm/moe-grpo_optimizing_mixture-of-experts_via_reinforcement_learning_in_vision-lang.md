@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MoE-GRPO: Optimizing Mixture-of-Experts via Reinforcement Learning in Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Mixture-of-Experts] This paper models expert selection in MoE as a sequential decision problem and optimizes the routing strategy via GRPO-based reinforcement learning. By introducing modality-aware router guidance, the proposed method consistently outperforms deterministic top-K routing and its variants on image and video understanding tasks in VLMs.
+  [CVPR 2026][Multimodal VLM][Mixture-of-Experts] This paper models expert selection in MoE as a sequential decision problem and optimizes the routing strategy via GRPO-based reinforcement learning. By introducing modality…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Mixture-of-Experts
-  - Reinforcement Learning
-  - Routing Strategy Optimization
-  - Vision-Language Models
-  - GRPO
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Mixture-of-Experts"
+  - "Reinforcement Learning"
+  - "Routing Strategy Optimization"
+  - "Vision-Language Models"
+  - "GRPO"
 date: 2026-05-08
 content_hash: c82023bbf9891701
 ---

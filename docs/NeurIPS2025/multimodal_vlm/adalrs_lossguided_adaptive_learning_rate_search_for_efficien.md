@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AdaLRS: Loss-Guided Adaptive Learning Rate Search for Efficient Foundation Model Pretraining
 description: >-
-  [NeurIPS 2025][Multimodal VLM][learning rate search] AdaLRS is proposed as a plug-and-play online learning rate search algorithm that adaptively adjusts the learning rate by monitoring the loss descent velocity, reducing the cost of learning rate hyperparameter search from multiple independent training runs to a single run, achieving approximately 50% savings in training cost.
+  [NeurIPS 2025][Multimodal VLM][learning rate search] AdaLRS is proposed as a plug-and-play online learning rate search algorithm that adaptively adjusts the learning rate by monitoring the loss descent velocity…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - learning rate search
-  - online optimization
-  - loss velocity
-  - foundation model pretraining
-  - cosine scheduler
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "learning rate search"
+  - "online optimization"
+  - "loss velocity"
+  - "foundation model pretraining"
+  - "cosine scheduler"
 date: 2026-05-08
 content_hash: c872c2e3c6b317eb
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Active Target Discovery under Uninformative Prior: The Power of Permanent and Transient Memory
 description: >-
-  [NEURIPS2025][Medical Imaging][active target discovery] This paper proposes EM-PTDM, a framework inspired by the dual-memory system in neuroscience. It leverages a pretrained diffusion model as "permanent memory" and incorporates a lightweight "transient memory" module based on Doob's h-transform to achieve efficient active target discovery **without any domain-specific prior data**, with theoretical guarantees of monotonic prior improvement.
+  [NEURIPS2025][Medical Imaging][active target discovery] This paper proposes EM-PTDM, a framework inspired by the dual-memory system in neuroscience. It leverages a pretrained diffusion model as "permanent memory" and inc…
 tags:
-  - NEURIPS2025
-  - Medical Imaging
-  - active target discovery
-  - diffusion model
-  - Doob's h-transform
-  - dual memory
-  - EM algorithm
-  - uninformative prior
+  - "NEURIPS2025"
+  - "Medical Imaging"
+  - "active target discovery"
+  - "diffusion model"
+  - "Doob's h-transform"
+  - "dual memory"
+  - "EM algorithm"
+  - "uninformative prior"
 date: 2026-05-08
 content_hash: 5e0b7b2d3369c168
 ---

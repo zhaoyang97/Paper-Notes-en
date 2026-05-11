@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] 4C4D: 4 Camera 4D Gaussian Splatting
 description: >-
-  [CVPR 2026][3D Vision][4D Gaussian Splatting] This paper proposes the 4C4D framework, which employs a Neural Decaying Function to adaptively control Gaussian opacity decay, addressing the geometry–appearance learning imbalance in sparse-view (only 4 cameras) 4D Gaussian Splatting, and achieves state-of-the-art performance across multiple benchmarks.
+  [CVPR 2026][3D Vision][4D Gaussian Splatting] This paper proposes the 4C4D framework, which employs a Neural Decaying Function to adaptively control Gaussian opacity decay…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 4D Gaussian Splatting
-  - Sparse-View
-  - Dynamic Scene Reconstruction
-  - Neural Decaying Function
-  - Geometry-Appearance Balance
+  - "CVPR 2026"
+  - "3D Vision"
+  - "4D Gaussian Splatting"
+  - "Sparse-View"
+  - "Dynamic Scene Reconstruction"
+  - "Neural Decaying Function"
+  - "Geometry-Appearance Balance"
 date: 2026-05-08
 content_hash: b763f704be2f644e
 ---

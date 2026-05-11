@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SegmentDreamer: Towards High-Fidelity Text-to-3D Synthesis with Segmented Consistency Trajectory Distillation
 description: >-
-  [ICCV 2025][3D Vision][Text-to-3D Generation] This paper proposes SegmentDreamer, which reformulates the SDS loss via Segmented Consistency Trajectory Distillation (SCTD) to address the imbalance between self-consistency and cross-consistency in existing consistency distillation (CD) methods, enabling high-fidelity 3D asset generation via 3DGS in ~32 minutes on a single A100 GPU.
+  [ICCV 2025][3D Vision][Text-to-3D Generation] This paper proposes SegmentDreamer, which reformulates the SDS loss via Segmented Consistency Trajectory Distillation (SCTD) to address the imbalance between self-consistency…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Text-to-3D Generation
-  - Consistency Distillation
-  - Score Distillation
-  - 3D Gaussian Splatting
-  - Diffusion Models
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Text-to-3D Generation"
+  - "Consistency Distillation"
+  - "Score Distillation"
+  - "3D Gaussian Splatting"
+  - "Diffusion Models"
 date: 2026-05-08
 content_hash: 5b527400dd4a2c85
 ---

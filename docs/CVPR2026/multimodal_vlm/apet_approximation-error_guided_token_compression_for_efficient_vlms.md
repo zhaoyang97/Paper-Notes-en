@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ApET: Approximation-Error Guided Token Compression for Efficient VLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][token compression] From an information-theoretic angle, this paper proposes a visual token importance measure based on linear-approximation reconstruction error. The method requires no attention weights, is naturally compatible with FlashAttention, and on LLaVA-1.5 retains 95.2% of the original performance after compressing away 88.9% of visual tokens.
+  [CVPR 2026][Multimodal VLM][token compression] From an information-theoretic angle, this paper proposes a visual token importance measure based on linear-approximation reconstruction error. The method requires no attenti…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - token compression
-  - visual token redundancy
-  - approximation error
-  - FlashAttention compatibility
-  - VLM acceleration
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "token compression"
+  - "visual token redundancy"
+  - "approximation error"
+  - "FlashAttention compatibility"
+  - "VLM acceleration"
 date: 2026-05-08
 content_hash: e3f3bce07ab27c80
 ---

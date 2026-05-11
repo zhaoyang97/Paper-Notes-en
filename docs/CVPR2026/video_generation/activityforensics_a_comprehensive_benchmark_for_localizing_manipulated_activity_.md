@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ActivityForensics: A Comprehensive Benchmark for Localizing Manipulated Activity in Videos
 description: >-
-  [CVPR 2026][Video Generation][Video Manipulation Detection] This work introduces the first activity-level video forgery localization task and the large-scale ActivityForensics benchmark (6K+ forged clips). A grounding-assisted automated data construction pipeline is proposed to produce highly realistic activity manipulations, and a baseline method, Temporal Artifact Diffuser (TADiff), is presented to amplify forgery cues via diffusion-based feature regularization.
+  [CVPR 2026][Video Generation][Video Manipulation Detection] This work introduces the first activity-level video forgery localization task and the large-scale ActivityForensics benchmark (6K+ forged clips). A grounding-as…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Video Manipulation Detection
-  - Activity-Level Forgery
-  - Temporal Localization
-  - Diffusion Model Feature Regularization
-  - Video Forensics
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Video Manipulation Detection"
+  - "Activity-Level Forgery"
+  - "Temporal Localization"
+  - "Diffusion Model Feature Regularization"
+  - "Video Forensics"
 date: 2026-05-08
 content_hash: 845dfc94a90a37bc
 ---

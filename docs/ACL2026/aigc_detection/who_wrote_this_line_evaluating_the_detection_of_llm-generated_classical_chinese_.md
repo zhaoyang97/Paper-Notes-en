@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Who Wrote This Line? Evaluating the Detection of LLM-Generated Classical Chinese Poetry
 description: >-
-  [ACL 2026][AIGC Detection][classical poetry detection] This paper constructs the first detection benchmark for LLM-generated classical Chinese poetry, ChangAn (30,664 poems), systematically evaluating 12 AI detection methods across different text granularities and generation strategies, revealing severe limitations of current Chinese text detectors in the classical poetry domain.
+  [ACL 2026][AIGC Detection][classical poetry detection] This paper constructs the first detection benchmark for LLM-generated classical Chinese poetry, ChangAn (30,664 poems)…
 tags:
-  - ACL 2026
-  - AIGC Detection
-  - classical poetry detection
-  - AI-generated text
-  - Chinese NLP
-  - benchmark
-  - literary creation
+  - "ACL 2026"
+  - "AIGC Detection"
+  - "classical poetry detection"
+  - "AI-generated text"
+  - "Chinese NLP"
+  - "benchmark"
+  - "literary creation"
 date: 2026-05-08
 content_hash: bca614b6d3ce5440
 ---

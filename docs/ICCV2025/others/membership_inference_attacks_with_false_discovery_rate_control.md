@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Membership Inference Attacks with False Discovery Rate Control
 description: >-
-  [ICCV 2025][membership inference attack] This paper proposes MIAFdR, the first membership inference attack (MIA) method with theoretical false discovery rate (FDR) guarantees. By designing a novel non-member conformity score function and an adjusted membership decision strategy, MIAFdR controls FDR and can be integrated as a plug-and-play wrapper into existing MIA methods, maintaining attack performance while providing FDR guarantees.
+  [ICCV 2025][membership inference attack] This paper proposes MIAFdR, the first membership inference attack (MIA) method with theoretical false discovery rate (FDR) guarantees. By designing a novel non-member conformity s…
 tags:
-  - ICCV 2025
-  - membership inference attack
-  - false discovery rate control
-  - conformal inference
-  - multiple hypothesis testing
-  - privacy security
+  - "ICCV 2025"
+  - "membership inference attack"
+  - "false discovery rate control"
+  - "conformal inference"
+  - "multiple hypothesis testing"
+  - "privacy security"
 date: 2026-05-08
 content_hash: c2a227d26c466d42
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Understanding Flatness in Generative Models: Its Role and Benefits
 description: >-
-  [ICCV 2025][Image Generation][flat minima] This paper presents the first systematic study of loss landscape flatness in generative models, particularly diffusion models. It theoretically demonstrates that flat minima enhance robustness to perturbations in the prior distribution, and empirically shows that SAM effectively promotes flatness in diffusion models, leading to improved generation quality, reduced exposure bias, and greater quantization robustness.
+  [ICCV 2025][Image Generation][flat minima] This paper presents the first systematic study of loss landscape flatness in generative models…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - flat minima
-  - diffusion models
-  - SAM
-  - generalization
-  - quantization robustness
-  - exposure bias
+  - "ICCV 2025"
+  - "Image Generation"
+  - "flat minima"
+  - "diffusion models"
+  - "SAM"
+  - "generalization"
+  - "quantization robustness"
+  - "exposure bias"
 date: 2026-05-08
 content_hash: d8de1814a43e7942
 ---

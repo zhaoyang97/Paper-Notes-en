@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] TPA: Next Token Probability Attribution for Detecting Hallucinations in RAG
 description: >-
-  [ACL 2026][RAG hallucination detection] This paper proposes TPA, a framework that mathematically decomposes the generation probability of each token in an LLM into contributions from seven sources (Query, RAG Context, Past Token, Self Token, FFN, Final LayerNorm, and Initial Embedding), and combines part-of-speech (POS) tagging for feature aggregation to achieve state-of-the-art hallucination detection in RAG settings.
+  [ACL 2026][Information Retrieval & RAG][RAG hallucination detection] This paper proposes TPA, a framework that mathematically decomposes the generation probability of each token in an LLM into contributions from seven so…
 tags:
-  - ACL 2026
-  - RAG hallucination detection
-  - probability attribution
-  - residual stream decomposition
-  - part-of-speech tagging
-  - attention mechanism
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "RAG hallucination detection"
+  - "probability attribution"
+  - "residual stream decomposition"
+  - "part-of-speech tagging"
+  - "attention mechanism"
 date: 2026-05-08
 content_hash: 07900d656dfb02be
 ---

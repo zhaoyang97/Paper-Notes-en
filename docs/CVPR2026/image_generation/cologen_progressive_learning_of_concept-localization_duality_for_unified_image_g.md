@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CoLoGen: Progressive Learning of Concept-Localization Duality for Unified Image Generation
 description: >-
-  [CVPR 2026][Image Generation][Unified Generation Framework] Introduces CoLoGen, a unified image generation framework based on "Concept-Localization Duality." Through progressive staged training and the Progressive Representation Weaving (PRW) dynamic expert routing architecture, it simultaneously matches or exceeds specialized models across three major tasks: instruction editing, controllable generation, and personalized generation.
+  [CVPR 2026][Image Generation][Unified Generation Framework] Introduces CoLoGen, a unified image generation framework based on "Concept-Localization Duality." Through progressive staged training and the Progressive Repres…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Unified Generation Framework
-  - Concept-Localization Duality
-  - Progressive Training
-  - Expert Routing
-  - FLUX
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Unified Generation Framework"
+  - "Concept-Localization Duality"
+  - "Progressive Training"
+  - "Expert Routing"
+  - "FLUX"
 date: 2026-05-08
 content_hash: 1045a06dcd00602b
 ---

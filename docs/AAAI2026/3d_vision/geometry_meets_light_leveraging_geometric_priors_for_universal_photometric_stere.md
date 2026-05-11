@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Geometry Meets Light: Leveraging Geometric Priors for Universal Photometric Stereo under Limited Multi-Illumination Cues
 description: >-
-  [AAAI 2026][3D Vision][Photometric Stereo] This paper proposes GeoUniPS, which injects geometric priors learned by a large-scale 3D reconstruction model (VGGT) into a universal photometric stereo pipeline. Through a light–geometry dual-branch encoder, the method recovers plausible surface normals even when multi-illumination cues are unreliable (e.g., shadows, self-occlusions, biased lighting). A new perspective-projection training dataset, PS-Perp, is also introduced to bridge the gap between the orthographic projection assumption and real-world cameras.
+  [AAAI 2026][3D Vision][Photometric Stereo] This paper proposes GeoUniPS, which injects geometric priors learned by a large-scale 3D reconstruction model (VGGT) into a universal photometric stereo pipeline. Through a ligh…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - Photometric Stereo
-  - Geometric Priors
-  - 3D Reconstruction Foundation Model
-  - VGGT
-  - Perspective Projection
+  - "AAAI 2026"
+  - "3D Vision"
+  - "Photometric Stereo"
+  - "Geometric Priors"
+  - "3D Reconstruction Foundation Model"
+  - "VGGT"
+  - "Perspective Projection"
 date: 2026-05-08
 content_hash: 22a4cc9a3893384e
 ---

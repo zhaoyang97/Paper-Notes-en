@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] TITAN: A Trajectory-Informed Technique for Adaptive Parameter Freezing in Large-Scale VQE
 description: >-
-  [NeurIPS 2025][VQE] This paper proposes TITAN, a framework that employs deep learning models to predict "frozen parameters" in VQE—parameters that remain inactive throughout training—enabling 40–60% of parameters to be frozen at initialization, achieving up to 3× convergence speedup and 40–60% reduction in circuit evaluations, while matching or surpassing baseline accuracy on molecular systems of up to 30 qubits.
+  [NeurIPS 2025][Physics][VQE] This paper proposes TITAN, a framework that employs deep learning models to predict "frozen parameters" in VQE—parameters that remain inactive throughout training—enabling 40–60% of parameter…
 tags:
-  - NeurIPS 2025
-  - VQE
-  - parameter freezing
-  - barren plateau
-  - quantum chemistry
-  - deep learning-assisted quantum computing
+  - "NeurIPS 2025"
+  - "Physics"
+  - "VQE"
+  - "parameter freezing"
+  - "barren plateau"
+  - "quantum chemistry"
+  - "deep learning-assisted quantum computing"
 date: 2026-05-08
 content_hash: a0acf2751853b794
 ---

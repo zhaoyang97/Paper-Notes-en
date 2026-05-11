@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Exploration with Foundation Models: Capabilities, Limitations, and Hybrid Approaches
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][foundation models] This paper systematically evaluates the zero-shot exploration capabilities of LLMs/VLMs on classic RL exploration tasks (bandits, Gridworld, Atari), identifies a *knowing-doing gap* in VLMs — where high-level reasoning succeeds but low-level control fails — and proposes a simple VLM-RL hybrid framework that substantially accelerates learning under idealized conditions.
+  [NeurIPS 2025][Reinforcement Learning][foundation models] This paper systematically evaluates the zero-shot exploration capabilities of LLMs/VLMs on classic RL exploration tasks (bandits, Gridworld, Atari)…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - foundation models
-  - exploration
-  - reinforcement-learning
-  - VLM
-  - knowing-doing gap
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "foundation models"
+  - "exploration"
+  - "reinforcement-learning"
+  - "VLM"
+  - "knowing-doing gap"
 date: 2026-05-08
 content_hash: e2363cb94ba0a656
 ---

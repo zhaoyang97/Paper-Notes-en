@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] ResQ: A Novel Framework to Implement Residual Neural Networks on Analog Rydberg Atom Quantum Computers
 description: >-
-  [ICCV 2025][Quantum Machine Learning] This paper proposes ResQ — the first framework to natively implement residual neural networks (ResNets) on analog Rydberg atom quantum computers by exploiting continuous-time Hamiltonian evolution, encoding input features and trainable parameters via piecewise parameterized laser pulses, achieving an average 50% improvement over classical models of equivalent scale on MNIST, FashionMNIST, and medical dataset classification tasks.
+  [ICCV 2025][Physics][Quantum Machine Learning] This paper proposes ResQ — the first framework to natively implement residual neural networks (ResNets) on analog Rydberg atom quantum computers by exploiting continuous-tim…
 tags:
-  - ICCV 2025
-  - Quantum Machine Learning
-  - Residual Networks
-  - Rydberg Atoms
-  - Analog Quantum Computing
-  - Neural ODE
+  - "ICCV 2025"
+  - "Physics"
+  - "Quantum Machine Learning"
+  - "Residual Networks"
+  - "Rydberg Atoms"
+  - "Analog Quantum Computing"
+  - "Neural ODE"
 date: 2026-05-08
 content_hash: 7c7259584fe73f03
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] POLISH'ing the Sky: Wide-Field and High-Dynamic Range Interferometric Image Reconstruction
 description: >-
-  [CVPR 2026][Radio interferometric imaging] POLISH++ extends the POLISH framework by introducing a patch-wise training-and-stitching strategy and an arcsinh nonlinear transformation, addressing two major practical deployment challenges in radio interferometric imaging: wide-field imaging (images exceeding ten thousand pixels) and high dynamic range ($10^4$–$10^6$). On T-RECS simulated data, POLISH++ substantially outperforms CLEAN in source detection accuracy, recovers strong gravitational lens systems near the PSF scale through super-resolution, and is projected to increase the number of gravitational lens discoveries in DSA surveys by approximately one order of magnitude.
+  [CVPR 2026][Radio interferometric imaging] POLISH++ extends the POLISH framework by introducing a patch-wise training-and-stitching strategy and an arcsinh nonlinear transformation…
 tags:
-  - CVPR 2026
-  - Radio interferometric imaging
-  - deep learning deconvolution
-  - super-resolution
-  - high dynamic range
-  - strong gravitational lensing
+  - "CVPR 2026"
+  - "Radio interferometric imaging"
+  - "deep learning deconvolution"
+  - "super-resolution"
+  - "high dynamic range"
+  - "strong gravitational lensing"
 date: 2026-05-08
 content_hash: c02cfa87dd0c9ef8
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VA-GS: Enhancing the Geometric Representation of Gaussian Splatting via View Alignment
 description: >-
-  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] By introducing four view alignment strategies — edge-aware image supervision, visibility-aware multi-view photometric alignment, normal consistency constraints, and depth image feature alignment — VA-GS significantly improves the geometric representation accuracy of 3D Gaussian Splatting, achieving state-of-the-art performance in surface reconstruction and novel view synthesis.
+  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] By introducing four view alignment strategies — edge-aware image supervision, visibility-aware multi-view photometric alignment, normal consistency constraints…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - surface reconstruction
-  - multi-view alignment
-  - normal consistency
-  - geometric representation
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "surface reconstruction"
+  - "multi-view alignment"
+  - "normal consistency"
+  - "geometric representation"
 date: 2026-05-08
 content_hash: dcebf2de4ddeeee0
 ---

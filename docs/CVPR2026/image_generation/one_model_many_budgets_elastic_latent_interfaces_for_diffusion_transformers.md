@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] One Model, Many Budgets: Elastic Latent Interfaces for Diffusion Transformers
 description: >-
-  [CVPR2026][Image Generation][Diffusion Transformer] This paper proposes ELIT (Elastic Latent Interface Transformer), which inserts variable-length latent interfaces and lightweight Read/Write cross-attention layers into DiT, enabling a single model to dynamically adjust its computational budget at inference time while non-uniformly allocating computation to more difficult image regions, achieving up to 53% FID reduction on ImageNet 512px.
+  [CVPR2026][Image Generation][Diffusion Transformer] This paper proposes ELIT (Elastic Latent Interface Transformer), which inserts variable-length latent interfaces and lightweight Read/Write cross-attention layers into…
 tags:
-  - CVPR2026
-  - Image Generation
-  - Diffusion Transformer
-  - elastic inference
-  - latent interface
-  - adaptive computation
-  - multi-budget model
-  - cross-attention
+  - "CVPR2026"
+  - "Image Generation"
+  - "Diffusion Transformer"
+  - "elastic inference"
+  - "latent interface"
+  - "adaptive computation"
+  - "multi-budget model"
+  - "cross-attention"
 date: 2026-05-08
 content_hash: 79985b582be5b457
 ---

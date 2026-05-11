@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] The Limits of Long-Context Reasoning in Automated Bug Fixing
 description: >-
-  [ICLR 2026][long-context reasoning] This paper systematically evaluates the limits of current LLMs in long-context code debugging. It finds that the success of agentic workflows stems from task decomposition rather than long-context reasoning (successful trajectories consume only 20–30K tokens), while performance degrades sharply under 64K single-pass patch generation (GPT-5-nano achieves 0%), revealing a significant gap between nominal context length and actual usable context capacity.
+  [ICLR 2026][Code Intelligence][long-context reasoning] This paper systematically evaluates the limits of current LLMs in long-context code debugging. It finds that the success of agentic workflows stems from task decompo…
 tags:
-  - ICLR 2026
-  - long-context reasoning
-  - automated bug fixing
-  - SWE-bench
-  - agentic workflow
-  - context window
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "long-context reasoning"
+  - "automated bug fixing"
+  - "SWE-bench"
+  - "agentic workflow"
+  - "context window"
 date: 2026-05-08
 content_hash: 068c1dd31d9e3389
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Self-Improving Loops for Visual Robotic Planning
 description: >-
-  [ICLR 2026][Image Generation][Visual Planning] This paper proposes SILVR, a framework that achieves continual self-improvement on unseen tasks by iteratively fine-tuning an in-domain video generation model on self-collected online trajectories. SILVR achieves up to 285% performance improvement on MetaWorld and real-robot benchmarks.
+  [ICLR 2026][Image Generation][Visual Planning] This paper proposes SILVR, a framework that achieves continual self-improvement on unseen tasks by iteratively fine-tuning an in-domain video generation model on self-collec…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Visual Planning
-  - Self-Improvement
-  - Video Generation Models
-  - Inverse Dynamics Model
-  - Online Experience
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Visual Planning"
+  - "Self-Improvement"
+  - "Video Generation Models"
+  - "Inverse Dynamics Model"
+  - "Online Experience"
 date: 2026-05-08
 content_hash: 0781d922c6869bbb
 ---

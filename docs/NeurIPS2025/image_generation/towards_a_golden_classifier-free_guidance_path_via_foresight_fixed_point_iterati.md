@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards a Golden Classifier-Free Guidance Path via Foresight Fixed Point Iterations
 description: >-
-  [NeurIPS 2025][Image Generation][Classifier-Free Guidance] This paper unifies conditional guidance under a fixed-point iteration framework, showing that CFG and its variants are all special cases of single-step iterations over short intervals. It theoretically proves their suboptimality and proposes Foresight Guidance (FSG)—performing multi-step iterations over longer intervals in early diffusion stages to achieve better alignment quality with less computation.
+  [NeurIPS 2025][Image Generation][Classifier-Free Guidance] This paper unifies conditional guidance under a fixed-point iteration framework, showing that CFG and its variants are all special cases of single-step iteration…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Classifier-Free Guidance
-  - Fixed Point Iteration
-  - Conditional Guidance
-  - Golden Path
-  - Inference-Time Optimization
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Classifier-Free Guidance"
+  - "Fixed Point Iteration"
+  - "Conditional Guidance"
+  - "Golden Path"
+  - "Inference-Time Optimization"
 date: 2026-05-08
 content_hash: ce95a6d458bbc973
 ---

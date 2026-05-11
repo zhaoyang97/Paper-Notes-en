@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Product Distribution Learning with Imperfect Advice
 description: >-
-  [NeurIPS 2025][distribution learning] This paper studies the problem of learning product distributions over the Boolean hypercube given an imperfect advice distribution, and proposes an efficient algorithm that achieves sub-linear dependence on dimension $d$ in sample complexity when the advice is of sufficient quality.
+  [NeurIPS 2025][distribution learning] This paper studies the problem of learning product distributions over the Boolean hypercube given an imperfect advice distribution…
 tags:
-  - NeurIPS 2025
-  - distribution learning
-  - algorithms with predictions
-  - product distributions
-  - sample complexity
-  - tolerant testing
+  - "NeurIPS 2025"
+  - "distribution learning"
+  - "algorithms with predictions"
+  - "product distributions"
+  - "sample complexity"
+  - "tolerant testing"
 date: 2026-05-08
 content_hash: bc1ea4ca50344e16
 ---

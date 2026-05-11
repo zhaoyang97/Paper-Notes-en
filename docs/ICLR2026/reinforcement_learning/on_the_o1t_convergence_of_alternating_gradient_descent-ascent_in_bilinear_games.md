@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] On the $O(1/T)$ Convergence of Alternating Gradient Descent-Ascent in Bilinear Games
 description: >-
-  [ICLR 2026][Reinforcement Learning][Alternating gradient descent-ascent] This paper provides the first proof that alternating gradient descent-ascent (AltGDA) converges to a Nash equilibrium at an $O(1/T)$ rate in constrained bilinear zero-sum games (when an interior NE exists), outperforming simultaneous GDA's $O(1/\sqrt{T})$ rate. The analysis characterizes the "friction" effect produced when trajectories collide with the boundary via an energy function decay argument, and further optimizes step sizes through performance estimation programming (PEP).
+  [ICLR 2026][Reinforcement Learning][Alternating gradient descent-ascent] This paper provides the first proof that alternating gradient descent-ascent (AltGDA) converges to a Nash equilibrium at an $O(1/T)$ rate in constr…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Alternating gradient descent-ascent
-  - bilinear games
-  - Nash equilibrium
-  - convergence rate
-  - performance estimation programming
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Alternating gradient descent-ascent"
+  - "bilinear games"
+  - "Nash equilibrium"
+  - "convergence rate"
+  - "performance estimation programming"
 date: 2026-05-08
 content_hash: 667ab7ac6b234d3c
 ---

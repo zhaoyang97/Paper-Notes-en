@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Learning Task-Agnostic Representations through Multi-Teacher Distillation
 description: >-
-  [NeurIPS 2025][Knowledge Distillation] This paper proposes a task-agnostic multi-teacher distillation framework based on mutual information maximization. By estimating the conditional distribution of teacher embeddings via Gaussian kernels, the student model learns high-information-density general-purpose representations without relying on any downstream task labels, achieving state-of-the-art performance among same-scale models across text, vision, and molecular modeling domains.
+  [NeurIPS 2025][Information Retrieval & RAG][Knowledge Distillation] This paper proposes a task-agnostic multi-teacher distillation framework based on mutual information maximization. By estimating the conditional distrib…
 tags:
-  - NeurIPS 2025
-  - Knowledge Distillation
-  - Multi-Teacher
-  - Task-Agnostic
-  - Representation Learning
-  - Mutual Information
+  - "NeurIPS 2025"
+  - "Information Retrieval & RAG"
+  - "Knowledge Distillation"
+  - "Multi-Teacher"
+  - "Task-Agnostic"
+  - "Representation Learning"
+  - "Mutual Information"
 date: 2026-05-08
 content_hash: 1a3c1db392f36236
 ---

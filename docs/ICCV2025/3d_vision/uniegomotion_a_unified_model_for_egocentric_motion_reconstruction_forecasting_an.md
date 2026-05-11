@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] UniEgoMotion: A Unified Model for Egocentric Motion Reconstruction, Forecasting, and Generation
 description: >-
-  [ICCV 2025][3D Vision][egocentric motion] This paper proposes UniEgoMotion, the first unified egocentric motion model that achieves 3D human motion reconstruction, forecasting, and generation from an egocentric perspective within a single model, via a conditional motion diffusion framework and a head-centric motion representation. The large-scale EE4D-Motion dataset is also released.
+  [ICCV 2025][3D Vision][egocentric motion] This paper proposes UniEgoMotion, the first unified egocentric motion model that achieves 3D human motion reconstruction, forecasting…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - egocentric motion
-  - diffusion model
-  - motion reconstruction
-  - motion forecasting
-  - motion generation
-  - head-centric representation
+  - "ICCV 2025"
+  - "3D Vision"
+  - "egocentric motion"
+  - "diffusion model"
+  - "motion reconstruction"
+  - "motion forecasting"
+  - "motion generation"
+  - "head-centric representation"
 date: 2026-05-08
 content_hash: a32e84a719d5d62d
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Efficient and Reliable Hitting-Set Computations for the Implicit Hitting Set Approach
 description: >-
-  [AAAI2026][Optimization][implicit hitting set] To address numerical instability arising from the reliance on commercial IP solvers in the hitting-set component of the implicit hitting set (IHS) framework, this paper proposes alternative approaches based on pseudo-Boolean (PB) reasoning and stochastic local search (SLS), as well as hybrid strategies. The work realizes the first certifiable IHS computation and demonstrates effective trade-offs between efficiency and reliability across 1,786 benchmark instances.
+  [AAAI2026][Optimization][implicit hitting set] To address numerical instability arising from the reliance on commercial IP solvers in the hitting-set component of the implicit hitting set (IHS) framework…
 tags:
-  - AAAI2026
-  - Optimization
-  - implicit hitting set
-  - pseudo-Boolean optimization
-  - certifiable computation
-  - stochastic local search
-  - IP solver
+  - "AAAI2026"
+  - "Optimization"
+  - "implicit hitting set"
+  - "pseudo-Boolean optimization"
+  - "certifiable computation"
+  - "stochastic local search"
+  - "IP solver"
 date: 2026-05-08
 content_hash: 17b2aa555825d3b5
 ---

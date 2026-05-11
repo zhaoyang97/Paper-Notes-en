@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning to Solve Orienteering Problem with Time Windows and Variable Profits
 description: >-
-  [ICLR 2026][Optimization][Orienteering Problem] This paper proposes DeCoST, a learning-based two-stage framework that decouples the coupled discrete routing decisions and continuous service time allocation in OPTWVP. The first stage employs a parallel decoder to jointly generate routes and initial service times, while the second stage applies LP to optimally allocate service times (globally optimal). Cross-stage coordination is achieved via pTAR feedback. DeCoST achieves optimality gaps of only 0.83%–3.31% on OPTWVP instances with 50–500 nodes, with inference up to 45× faster than metaheuristics.
+  [ICLR 2026][Optimization][Orienteering Problem] This paper proposes DeCoST, a learning-based two-stage framework that decouples the coupled discrete routing decisions and continuous service time allocation in OPTWVP. The…
 tags:
-  - ICLR 2026
-  - Optimization
-  - Orienteering Problem
-  - Time Windows
-  - Variable Profits
-  - Discrete-Continuous Decoupling
-  - Linear Programming
+  - "ICLR 2026"
+  - "Optimization"
+  - "Orienteering Problem"
+  - "Time Windows"
+  - "Variable Profits"
+  - "Discrete-Continuous Decoupling"
+  - "Linear Programming"
 date: 2026-05-08
 content_hash: cb6dccb371a83f1e
 ---

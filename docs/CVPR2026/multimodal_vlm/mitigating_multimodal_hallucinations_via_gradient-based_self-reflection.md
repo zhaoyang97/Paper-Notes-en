@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Mitigating Multimodal Hallucinations via Gradient-based Self-Reflection
 description: >-
-  [CVPR2026][Multimodal VLM][Multimodal hallucination] This paper proposes GACD (Gradient-based Influence-Aware Constrained Decoding), which employs first-order Taylor gradient estimation to quantify each token's influence on the output. GACD simultaneously mitigates multimodal hallucinations caused by text-visual bias and co-occurrence bias at inference time, requiring neither auxiliary models nor fine-tuning.
+  [CVPR2026][Multimodal VLM][Multimodal hallucination] This paper proposes GACD (Gradient-based Influence-Aware Constrained Decoding), which employs first-order Taylor gradient estimation to quantify each token's influence…
 tags:
-  - CVPR2026
-  - Multimodal VLM
-  - Multimodal hallucination
-  - gradient attribution
-  - constrained decoding
-  - co-occurrence bias
-  - text-visual bias
-  - inference-time mitigation
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "Multimodal hallucination"
+  - "gradient attribution"
+  - "constrained decoding"
+  - "co-occurrence bias"
+  - "text-visual bias"
+  - "inference-time mitigation"
 date: 2026-05-08
 content_hash: e5ce9810503e53fd
 ---

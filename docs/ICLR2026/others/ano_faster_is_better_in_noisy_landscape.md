@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] ANO: Faster is Better in Noisy Landscapes
 description: >-
-  [ICLR 2026][optimizer] This paper proposes the Ano optimizer, which decouples the update direction from its magnitude — the direction is determined by the sign of the momentum for noise robustness, while the magnitude is determined by the instantaneous gradient absolute value (rather than the momentum magnitude) for responsiveness. Combined with an improved Yogi-style variance estimator, Ano significantly outperforms Adam/Lion/Adan in noisy and non-stationary environments (e.g., RL), while remaining competitive on standard tasks.
+  [ICLR 2026][optimizer] This paper proposes the Ano optimizer, which decouples the update direction from its magnitude — the direction is determined by the sign of the momentum for noise robustness…
 tags:
-  - ICLR 2026
-  - optimizer
-  - sign-based
-  - noise robustness
-  - reinforcement-learning
-  - direction-magnitude decoupling
+  - "ICLR 2026"
+  - "optimizer"
+  - "sign-based"
+  - "noise robustness"
+  - "reinforcement-learning"
+  - "direction-magnitude decoupling"
 date: 2026-05-08
 content_hash: 0d4f72e7a587290a
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Taming the Untamed: Graph-Based Knowledge Retrieval and Reasoning for MLLMs to Conquer the Unknown
 description: >-
-  [ICCV 2025][Multimodal VLM][Multimodal Knowledge Graph] Using *Monster Hunter: World* as a testbed, this paper constructs a multimodal knowledge graph (MH-MMKG) containing text, images, video, and complex entity relations, designs 238 complex queries along with a multi-agent knowledge retrieval method, and reveals the inadequacy of current MLLMs in domain-specific knowledge retrieval and reasoning tasks.
+  [ICCV 2025][Multimodal VLM][Multimodal Knowledge Graph] Using *Monster Hunter: World* as a testbed, this paper constructs a multimodal knowledge graph (MH-MMKG) containing text, images, video…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Multimodal Knowledge Graph
-  - Multi-Agent Retrieval
-  - MLLM
-  - Knowledge-Augmented Reasoning
-  - Game Cognition
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Multimodal Knowledge Graph"
+  - "Multi-Agent Retrieval"
+  - "MLLM"
+  - "Knowledge-Augmented Reasoning"
+  - "Game Cognition"
 date: 2026-05-08
 content_hash: 0ac1dca44814a634
 ---

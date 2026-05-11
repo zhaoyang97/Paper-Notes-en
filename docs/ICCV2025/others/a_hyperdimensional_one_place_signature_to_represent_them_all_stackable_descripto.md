@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] A Hyperdimensional One Place Signature to Represent Them All: Stackable Descriptors For Visual Place Recognition
 description: >-
-  [ICCV 2025][Visual Place Recognition] This paper proposes HOPS (Hyperdimensional One Place Signatures), a framework leveraging hyperdimensional computing (HDC) to fuse multiple reference descriptors of the same place captured under varying environmental conditions into a unified representation, substantially improving the robustness and recall of Visual Place Recognition (VPR) without increasing computational or memory overhead.
+  [ICCV 2025][Visual Place Recognition] This paper proposes HOPS (Hyperdimensional One Place Signatures), a framework leveraging hyperdimensional computing (HDC) to fuse multiple reference descriptors of the same place cap…
 tags:
-  - ICCV 2025
-  - Visual Place Recognition
-  - Hyperdimensional Computing
-  - Descriptor Fusion
-  - Multi-Reference Traversal
-  - Appearance Invariance
+  - "ICCV 2025"
+  - "Visual Place Recognition"
+  - "Hyperdimensional Computing"
+  - "Descriptor Fusion"
+  - "Multi-Reference Traversal"
+  - "Appearance Invariance"
 date: 2026-05-08
 content_hash: 14f45865fba6bebe
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Can Vision–Language Models Assess Graphic Design Aesthetics? A Benchmark, Evaluation, and Dataset Perspective
 description: >-
-  [ICLR2026][LLM Evaluation][design aesthetics] This paper proposes AesEval-Bench, the first benchmark for systematically evaluating VLMs on graphic design aesthetics (4 dimensions × 12 indicators × 3 tasks). It finds that existing VLMs—including reasoning-augmented models—perform poorly on design aesthetics, and constructs training data via human-guided VLM labeling combined with indicator-grounded reasoning. Fine-tuning a 7B model with this data surpasses GPT-5 on the precise localization task.
+  [ICLR2026][LLM Evaluation][design aesthetics] This paper proposes AesEval-Bench, the first benchmark for systematically evaluating VLMs on graphic design aesthetics (4 dimensions × 12 indicators × 3 tasks). It finds that…
 tags:
-  - ICLR2026
-  - LLM Evaluation
-  - design aesthetics
-  - VLM evaluation
-  - benchmark
-  - indicator-grounded reasoning
-  - graphic design
+  - "ICLR2026"
+  - "LLM Evaluation"
+  - "design aesthetics"
+  - "VLM evaluation"
+  - "benchmark"
+  - "indicator-grounded reasoning"
+  - "graphic design"
 date: 2026-05-08
 content_hash: c56fab561e61d4f0
 ---

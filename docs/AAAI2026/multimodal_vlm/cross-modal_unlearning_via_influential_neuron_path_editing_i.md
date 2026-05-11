@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Cross-Modal Unlearning via Influential Neuron Path Editing in Multimodal Large Language Models
 description: >-
-  [AAAI 2026][Multimodal VLM][Machine Unlearning] This paper proposes MIP-Editor, which localizes **influential neuron paths** encoding forget-target knowledge in MLLMs via cross-layer gradient integration (text branch) and Fisher integration (visual branch), then edits these neurons using path-based Representation Misdirection Unlearning (RMisU), achieving up to 87.75% forget rate and 54.26% improvement in general knowledge retention on MLLMU-Bench.
+  [AAAI 2026][Multimodal VLM][Machine Unlearning] This paper proposes MIP-Editor, which localizes **influential neuron paths** encoding forget-target knowledge in MLLMs via cross-layer gradient integration (text branch) an…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Machine Unlearning
-  - Multimodal Large Language Models
-  - Neuron Path Editing
-  - Representation Misdirection
-  - Cross-Modal Consistency
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Machine Unlearning"
+  - "Multimodal Large Language Models"
+  - "Neuron Path Editing"
+  - "Representation Misdirection"
+  - "Cross-Modal Consistency"
 date: 2026-05-08
 content_hash: d3ca07290c7f0919
 ---

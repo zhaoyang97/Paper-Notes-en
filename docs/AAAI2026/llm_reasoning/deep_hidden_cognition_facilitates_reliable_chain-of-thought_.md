@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Deep Hidden Cognition Facilitates Reliable Chain-of-Thought Reasoning
 description: >-
-  [AAAI 2026][LLM Reasoning][CoT reasoning reliability] This paper demonstrates that attention head activations in intermediate layers of LLMs implicitly encode truthfulness information about reasoning steps during CoT inference (probing accuracy up to 85%). Based on this finding, confidence predictors are trained to guide beam search in dynamically selecting high-confidence reasoning paths, surpassing Self-Consistency and PRM Guided Search on mathematical, symbolic, and commonsense reasoning tasks.
+  [AAAI 2026][LLM Reasoning][CoT reasoning reliability] This paper demonstrates that attention head activations in intermediate layers of LLMs implicitly encode truthfulness information about reasoning steps during CoT inf…
 tags:
-  - AAAI 2026
-  - LLM Reasoning
-  - CoT reasoning reliability
-  - internal cognition
-  - attention head probing
-  - confidence predictor
-  - beam search guidance
+  - "AAAI 2026"
+  - "LLM Reasoning"
+  - "CoT reasoning reliability"
+  - "internal cognition"
+  - "attention head probing"
+  - "confidence predictor"
+  - "beam search guidance"
 date: 2026-05-08
 content_hash: a1508b561c18e665
 ---

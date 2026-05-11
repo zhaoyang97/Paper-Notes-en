@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SpikCommander: A High-Performance Spiking Transformer with Multi-View Learning for Efficient Speech Command Recognition
 description: >-
-  [AAAI 2026][LLM Evaluation][Spiking Neural Networks] This paper proposes SpikCommander, a fully spike-driven Transformer architecture that jointly enhances temporal and channel feature modeling via **Multi-view Spike Temporal-Aware Self-Attention (MSTASA)** and **Spike Context Refinement MLP (SCR-MLP)**, surpassing state-of-the-art SNN methods on SHD/SSC/GSC benchmarks with fewer parameters.
+  [AAAI 2026][LLM Evaluation][Spiking Neural Networks] This paper proposes SpikCommander, a fully spike-driven Transformer architecture that jointly enhances temporal and channel feature modeling via **Multi-view Spike Tem…
 tags:
-  - AAAI 2026
-  - LLM Evaluation
-  - Spiking Neural Networks
-  - Speech Command Recognition
-  - Spiking Transformer
-  - Multi-View Learning
-  - Energy Efficiency
+  - "AAAI 2026"
+  - "LLM Evaluation"
+  - "Spiking Neural Networks"
+  - "Speech Command Recognition"
+  - "Spiking Transformer"
+  - "Multi-View Learning"
+  - "Energy Efficiency"
 date: 2026-05-08
 content_hash: 0f5b5cc640c07195
 ---

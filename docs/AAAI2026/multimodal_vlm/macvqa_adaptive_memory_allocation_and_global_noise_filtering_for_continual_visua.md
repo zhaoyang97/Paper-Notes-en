@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MacVQA: Adaptive Memory Allocation and Global Noise Filtering for Continual Visual Question Answering
 description: >-
-  [AAAI 2026][Multimodal VLM][Continual Learning] This paper proposes MacVQA, a framework that enhances the robustness of visual features via Global Noise Filtering (GonF) and optimizes cross-task knowledge retention and update via Adaptive Memory Allocation (AMA) based on prototype retrieval and memory decay. MacVQA achieves 43.38% average accuracy (+3.57%) and 2.32% forgetting rate across 10 continual learning tasks on VQA v2.
+  [AAAI 2026][Multimodal VLM][Continual Learning] This paper proposes MacVQA, a framework that enhances the robustness of visual features via Global Noise Filtering (GonF) and optimizes cross-task knowledge retention and u…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Continual Learning
-  - Visual Question Answering
-  - Noise Filtering
-  - Memory Allocation
-  - Prototype Learning
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Continual Learning"
+  - "Visual Question Answering"
+  - "Noise Filtering"
+  - "Memory Allocation"
+  - "Prototype Learning"
 date: 2026-05-08
 content_hash: 82cee0af80f5adcd
 ---

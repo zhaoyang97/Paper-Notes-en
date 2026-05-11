@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] EAMamba: Efficient All-Around Vision State Space Model for Image Restoration
 description: >-
-  [ICCV 2025][Image Restoration][Vision Mamba] This paper proposes EAMamba, a framework that introduces a Multi-Head Selective Scan Module (MHSSM) and an all-around scanning strategy to achieve multi-directional scanning without increasing computational complexity or parameter count. EAMamba addresses the computational overhead and local pixel forgetting issues of Vision Mamba in image restoration, achieving 31–89% FLOPs reduction while maintaining competitive performance across super-resolution, denoising, deblurring, and dehazing tasks.
+  [ICCV 2025][Image Restoration][Vision Mamba] This paper proposes EAMamba, a framework that introduces a Multi-Head Selective Scan Module (MHSSM) and an all-around scanning strategy to achieve multi-directional scanning w…
 tags:
-  - ICCV 2025
-  - Image Restoration
-  - Vision Mamba
-  - state space model
-  - multi-head selective scan
-  - all-around scanning
+  - "ICCV 2025"
+  - "Image Restoration"
+  - "Vision Mamba"
+  - "state space model"
+  - "multi-head selective scan"
+  - "all-around scanning"
 date: 2026-05-08
 content_hash: 6c1049508eb5e272
 ---

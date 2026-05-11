@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] JOPP-3D: Joint Open Vocabulary Semantic Segmentation on Point Clouds and Panoramas
 description: >-
-  [CVPR 2026][3D Vision][Open-vocabulary 3D segmentation] This paper proposes JOPP-3D — the first open-vocabulary semantic segmentation framework that jointly processes 3D point clouds and panoramic images. It decomposes panoramas into 20 perspective views via icosahedral tangential projection to accommodate SAM/CLIP, extracts mask-isolated instance-level CLIP embeddings for 3D semantic segmentation, and back-projects results to the panoramic domain via depth correspondence. Without any training, the method achieves 80.9% mIoU on S3DIS, surpassing all supervised approaches.
+  [CVPR 2026][3D Vision][Open-vocabulary 3D segmentation] This paper proposes JOPP-3D — the first open-vocabulary semantic segmentation framework that jointly processes 3D point clouds and panoramic images. It decomposes p…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Open-vocabulary 3D segmentation
-  - joint point cloud–panorama segmentation
-  - icosahedral tangential decomposition
-  - SAM+CLIP semantic alignment
-  - 3D-to-panorama back-projection
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Open-vocabulary 3D segmentation"
+  - "joint point cloud–panorama segmentation"
+  - "icosahedral tangential decomposition"
+  - "SAM+CLIP semantic alignment"
+  - "3D-to-panorama back-projection"
 date: 2026-05-08
 content_hash: 3d295fe56ce61e10
 ---

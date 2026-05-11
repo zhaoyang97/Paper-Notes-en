@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CausalTrace: A Neurosymbolic Causal Analysis Agent for Smart Manufacturing
 description: >-
-  [AAAI 2026][LLM Agent][Neurosymbolic Systems] This paper proposes CausalTrace — a neurosymbolic causal analysis agent integrated into an industrial CoPilot (SmartPilot) that combines data-driven causal discovery with industrial ontologies and knowledge graphs, enabling real-time root cause analysis, counterfactual reasoning, and interpretable decision support.
+  [AAAI 2026][LLM Agent][Neurosymbolic Systems] This paper proposes CausalTrace — a neurosymbolic causal analysis agent integrated into an industrial CoPilot (SmartPilot) that combines data-driven causal discovery with ind…
 tags:
-  - AAAI 2026
-  - LLM Agent
-  - Neurosymbolic Systems
-  - Causal Analysis
-  - Root Cause Analysis
-  - Knowledge Graph
-  - Industrial CoPilot
+  - "AAAI 2026"
+  - "LLM Agent"
+  - "Neurosymbolic Systems"
+  - "Causal Analysis"
+  - "Root Cause Analysis"
+  - "Knowledge Graph"
+  - "Industrial CoPilot"
 date: 2026-05-08
 content_hash: 6b23c5fa760e8ee5
 ---

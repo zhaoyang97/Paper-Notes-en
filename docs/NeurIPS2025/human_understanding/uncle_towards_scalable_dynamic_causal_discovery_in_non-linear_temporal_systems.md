@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UnCLe: Towards Scalable Dynamic Causal Discovery in Non-Linear Temporal Systems
 description: >-
-  [NeurIPS 2025][Human Understanding][dynamic causal discovery] This paper proposes UnCLe, a scalable dynamic causal discovery method based on TCN autoencoder disentanglement and autoregressive dependency matrices. It infers time-varying causal relationships by measuring per-timestep prediction error increments following temporal perturbation, achieving state-of-the-art performance on both static and dynamic causal discovery benchmarks.
+  [NeurIPS 2025][Human Understanding][dynamic causal discovery] This paper proposes UnCLe, a scalable dynamic causal discovery method based on TCN autoencoder disentanglement and autoregressive dependency matrices. It infe…
 tags:
-  - NeurIPS 2025
-  - Human Understanding
-  - dynamic causal discovery
-  - time series
-  - Granger causality
-  - temporal perturbation
-  - nonlinear systems
+  - "NeurIPS 2025"
+  - "Human Understanding"
+  - "dynamic causal discovery"
+  - "time series"
+  - "Granger causality"
+  - "temporal perturbation"
+  - "nonlinear systems"
 date: 2026-05-08
 content_hash: e15591bf5bb4ab06
 ---

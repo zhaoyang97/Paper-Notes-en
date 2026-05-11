@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CRFT: Consistent-Recurrent Feature Flow Transformer for Cross-Modal Image Registration
 description: >-
-  [CVPR 2026][Medical Imaging][Cross-modal registration] CRFT is a unified coarse-to-fine cross-modal image registration framework that learns modality-agnostic feature flow representations within a Transformer architecture. It employs 1/8-resolution global correspondence at the coarse stage and multi-scale local refinement at 1/2–1/4 resolution at the fine stage, coupled with iterative discrepancy-guided attention and Spatial Geometric Transform (SGT) to recursively refine flow fields and capture subtle spatial inconsistencies. CRFT outperforms SOTA methods including RAFT, GMFlow, and LoFTR across diverse cross-modal datasets covering optical, infrared, SAR, and multispectral imagery.
+  [CVPR 2026][Medical Imaging][Cross-modal registration] CRFT is a unified coarse-to-fine cross-modal image registration framework that learns modality-agnostic feature flow representations within a Transformer architectur…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Cross-modal registration
-  - feature flow learning
-  - coarse-to-fine
-  - discrepancy-guided attention
-  - spatial geometric transformation
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Cross-modal registration"
+  - "feature flow learning"
+  - "coarse-to-fine"
+  - "discrepancy-guided attention"
+  - "spatial geometric transformation"
 date: 2026-05-08
 content_hash: da8d376f47147013
 ---

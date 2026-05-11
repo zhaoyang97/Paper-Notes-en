@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mixing Importance with Diversity: Joint Optimization for KV Cache Compression in Large Vision-Language Models
 description: >-
-  [ICLR 2026][Multimodal VLM][KV Cache Compression] This paper identifies modality-specific and attention-head-specific semantic redundancy in the KV Cache of LVLMs, demonstrating that importance-only selection fails to preserve semantic coverage. The proposed MixKV adaptively mixes importance and diversity scores per attention head for KV Cache compression, achieving an average improvement of 5.1% under extreme compression ratios.
+  [ICLR 2026][Multimodal VLM][KV Cache Compression] This paper identifies modality-specific and attention-head-specific semantic redundancy in the KV Cache of LVLMs…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - KV Cache Compression
-  - Semantic Redundancy
-  - Diversity
-  - Attention Heads
-  - Vision-Language Models
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "KV Cache Compression"
+  - "Semantic Redundancy"
+  - "Diversity"
+  - "Attention Heads"
+  - "Vision-Language Models"
 date: 2026-05-08
 content_hash: 4186b7bf1a0714f6
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MemoryVLA: Perceptual-Cognitive Memory in Vision-Language-Action Models for Robotic Manipulation
 description: >-
-  [ICLR 2026][Robotics][VLA] Inspired by the dual-memory system in cognitive science, this paper proposes MemoryVLA, a framework that introduces a Perceptual-Cognitive Memory Bank (PCMB) into VLA models. By incorporating memory retrieval, gated fusion, and consolidation mechanisms to capture long-horizon temporal dependencies, MemoryVLA comprehensively outperforms CogACT and π₀ across 150+ tasks on SimplerEnv, LIBERO, and real-world benchmarks.
+  [ICLR 2026][Robotics][VLA] Inspired by the dual-memory system in cognitive science, this paper proposes MemoryVLA, a framework that introduces a Perceptual-Cognitive Memory Bank (PCMB) into VLA models. By incorporating m…
 tags:
-  - ICLR 2026
-  - Robotics
-  - VLA
-  - memory mechanism
-  - long-horizon manipulation
-  - diffusion policy
-  - cognitive science
+  - "ICLR 2026"
+  - "Robotics"
+  - "VLA"
+  - "memory mechanism"
+  - "long-horizon manipulation"
+  - "diffusion policy"
+  - "cognitive science"
 date: 2026-05-08
 content_hash: 2224509cf7303cd2
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Is the Information Bottleneck Robust Enough? Towards Label-Noise Resistant Information Bottleneck Learning
 description: >-
-  [AAAI 2026][Knowledge Editing][Information Bottleneck] This paper identifies the inherent vulnerability of the Information Bottleneck (IB) principle under label noise and proposes LaT-IB, which decomposes representations into a clean-label subspace and a noisy-label subspace. Combined with a Minimal-Sufficient-Clean (MSC) criterion and a three-stage training framework, LaT-IB significantly outperforms existing IB methods across diverse noise conditions.
+  [AAAI 2026][Knowledge Editing][Information Bottleneck] This paper identifies the inherent vulnerability of the Information Bottleneck (IB) principle under label noise and proposes LaT-IB…
 tags:
-  - AAAI 2026
-  - Knowledge Editing
-  - Information Bottleneck
-  - Label Noise
-  - Representation Learning
-  - Robustness
-  - Mutual Information
+  - "AAAI 2026"
+  - "Knowledge Editing"
+  - "Information Bottleneck"
+  - "Label Noise"
+  - "Representation Learning"
+  - "Robustness"
+  - "Mutual Information"
 date: 2026-05-08
 content_hash: 0f84829c5bef7ad6
 ---

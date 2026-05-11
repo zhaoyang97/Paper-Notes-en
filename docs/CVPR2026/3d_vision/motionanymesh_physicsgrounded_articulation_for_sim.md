@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MotionAnymesh: Physics-Grounded Articulation for Simulation-Ready Digital Twins
 description: >-
-  [CVPR 2026][3D Vision][articulated objects] This paper proposes MotionAnymesh, a zero-shot framework that uses SP4D kinematic priors to guide VLMs in eliminating kinematic hallucinations, and employs physics-constrained trajectory optimization to guarantee collision-free articulation. The framework automatically converts static 3D meshes into simulation-ready URDF digital twins directly deployable in physics engines such as SAPIEN, achieving a physical executability rate of 87%—far exceeding existing methods.
+  [CVPR 2026][3D Vision][articulated objects] This paper proposes MotionAnymesh, a zero-shot framework that uses SP4D kinematic priors to guide VLMs in eliminating kinematic hallucinations…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - articulated objects
-  - digital twins
-  - physical constraints
-  - VLM reasoning
-  - URDF generation
+  - "CVPR 2026"
+  - "3D Vision"
+  - "articulated objects"
+  - "digital twins"
+  - "physical constraints"
+  - "VLM reasoning"
+  - "URDF generation"
 date: 2026-05-08
 content_hash: 28ff92af57ee4c5c
 ---

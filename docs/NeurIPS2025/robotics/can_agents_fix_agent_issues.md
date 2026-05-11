@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Can Agents Fix Agent Issues?
 description: >-
-  [NeurIPS 2025][Robotics][Agent system maintenance] This paper presents the first systematic study of automated issue resolution in LLM-based agent systems. Through manual analysis of 201 real-world agent issues, the authors construct a taxonomy comprising 6 categories and 20 subcategories, invest approximately 500 person-hours to build AgentIssue-Bench—a benchmark of 50 reproducible tasks—and find that state-of-the-art software engineering (SE) agents (e.g., SWE-agent, Agentless, AutoCodeRover) achieve correct resolution rates of only 3.33%–12.67% on agent issues, far below their 23%–51% rates on conventional software.
+  [NeurIPS 2025][Robotics][Agent system maintenance] This paper presents the first systematic study of automated issue resolution in LLM-based agent systems. Through manual analysis of 201 real-world agent issues…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - Agent system maintenance
-  - automated issue resolution
-  - software engineering agents
-  - bug taxonomy
-  - benchmark
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "Agent system maintenance"
+  - "automated issue resolution"
+  - "software engineering agents"
+  - "bug taxonomy"
+  - "benchmark"
 date: 2026-05-08
 content_hash: b886db7142058587
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Unified Shape-Aware Foundation Model for Time Series Classification
 description: >-
-  [AAAI 2026][Time Series][Time Series Classification] This paper proposes UniShape — a foundation model for time series classification that adaptively aggregates multi-scale discriminative subsequences (shapelets) via a shape-aware adapter, and learns transferable shapelet representations at both instance and shape levels through prototype-based contrastive pretraining. With only 3.1M parameters, UniShape achieves state-of-the-art performance on 128 UCR datasets (average accuracy 87.08%) while providing strong classification interpretability.
+  [AAAI 2026][Time Series][Time Series Classification] This paper proposes UniShape — a foundation model for time series classification that adaptively aggregates multi-scale discriminative subsequences (shapelets) via a s…
 tags:
-  - AAAI 2026
-  - Time Series
-  - Time Series Classification
-  - Foundation Model
-  - Shapelet
-  - Prototype Learning
-  - Interpretability
+  - "AAAI 2026"
+  - "Time Series"
+  - "Time Series Classification"
+  - "Foundation Model"
+  - "Shapelet"
+  - "Prototype Learning"
+  - "Interpretability"
 date: 2026-05-08
 content_hash: 2dd87f0e8c7fb442
 ---

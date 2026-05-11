@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Non-Asymptotic Analysis of Data Augmentation for Precision Matrix Estimation
 description: >-
-  [NeurIPS 2025 (Spotlight)][Image Generation][Precision matrix estimation] This paper provides a non-asymptotic analysis of data augmentation (DA) for high-dimensional precision matrix (inverse covariance matrix) estimation. It establishes quadratic error concentration bounds for both linear shrinkage estimators and DA estimators, and introduces a novel deterministic equivalent framework for generalized resolvent matrices with dependent structure.
+  [NeurIPS 2025 (Spotlight)][Image Generation][Precision matrix estimation] This paper provides a non-asymptotic analysis of data augmentation (DA) for high-dimensional precision matrix (inverse covariance matrix) estimati…
 tags:
-  - NeurIPS 2025 (Spotlight)
-  - Image Generation
-  - Precision matrix estimation
-  - data augmentation
-  - linear shrinkage estimator
-  - random matrix theory
-  - concentration inequalities
+  - "NeurIPS 2025 (Spotlight)"
+  - "Image Generation"
+  - "Precision matrix estimation"
+  - "data augmentation"
+  - "linear shrinkage estimator"
+  - "random matrix theory"
+  - "concentration inequalities"
 date: 2026-05-08
 content_hash: 62591e7b95643903
 ---

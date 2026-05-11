@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FiDeSR: High-Fidelity and Detail-Preserving One-Step Diffusion Super-Resolution
 description: >-
-  [CVPR 2026][Image Restoration][one-step diffusion SR] This paper proposes FiDeSR, a high-fidelity and detail-preserving one-step diffusion super-resolution framework that simultaneously addresses structural fidelity degradation and insufficient high-frequency detail recovery in one-step diffusion SR through three complementary components: Detail-Aware Weighting (DAW), Latent Residual Refinement Block (LRRB), and Latent Frequency Injection Module (LFIM).
+  [CVPR 2026][Image Restoration][one-step diffusion SR] This paper proposes FiDeSR, a high-fidelity and detail-preserving one-step diffusion super-resolution framework that simultaneously addresses structural fidelity degr…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - one-step diffusion SR
-  - frequency-aware
-  - residual refinement
-  - detail weighting
-  - high fidelity
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "one-step diffusion SR"
+  - "frequency-aware"
+  - "residual refinement"
+  - "detail weighting"
+  - "high fidelity"
 date: 2026-05-08
 content_hash: 58e42f88222db9d7
 ---

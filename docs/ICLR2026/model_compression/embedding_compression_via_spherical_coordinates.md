@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Embedding Compression via Spherical Coordinates
 description: >-
-  [ICLR 2026][Model Compression][embedding compression] This paper proposes an embedding compression method based on spherical coordinate transformation. By exploiting the mathematical property that angular coordinates of high-dimensional unit vectors concentrate near $\pi/2$, the method substantially reduces the entropy of the exponent bits and high-order mantissa bits in IEEE 754 floating-point representations, achieving a 1.5× compression ratio — a 25% improvement over the best lossless methods — with reconstruction error below float32 machine precision.
+  [ICLR 2026][Model Compression][embedding compression] This paper proposes an embedding compression method based on spherical coordinate transformation. By exploiting the mathematical property that angular coordinates of…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - embedding compression
-  - spherical coordinates
-  - IEEE 754
-  - lossless compression
-  - unit vectors
+  - "ICLR 2026"
+  - "Model Compression"
+  - "embedding compression"
+  - "spherical coordinates"
+  - "IEEE 754"
+  - "lossless compression"
+  - "unit vectors"
 date: 2026-05-08
 content_hash: 9601e6b5ec55e6d2
 ---

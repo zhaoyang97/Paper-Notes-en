@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] KoCo: Conditioning Language Model Pre-training on Knowledge Coordinates
 description: >-
-  [ACL 2026][LLM Safety][knowledge coordinates] This paper proposes Knowledge Coordinate-conditioned pre-training (KoCo), which maps each document to a three-dimensional semantic coordinate (Source, Content, Stability) and injects this as a natural language prefix during pre-training. This endows the model with explicit context-awareness, yielding performance gains across 10 downstream tasks, approximately 30% faster convergence, and effective hallucination mitigation.
+  [ACL 2026][LLM Safety][knowledge coordinates] This paper proposes Knowledge Coordinate-conditioned pre-training (KoCo), which maps each document to a three-dimensional semantic coordinate (Source, Content…
 tags:
-  - ACL 2026
-  - LLM Safety
-  - knowledge coordinates
-  - conditional pre-training
-  - hallucination mitigation
-  - data contextualization
-  - pre-training acceleration
+  - "ACL 2026"
+  - "LLM Safety"
+  - "knowledge coordinates"
+  - "conditional pre-training"
+  - "hallucination mitigation"
+  - "data contextualization"
+  - "pre-training acceleration"
 date: 2026-05-08
 content_hash: e909c4a6bd9614a9
 ---

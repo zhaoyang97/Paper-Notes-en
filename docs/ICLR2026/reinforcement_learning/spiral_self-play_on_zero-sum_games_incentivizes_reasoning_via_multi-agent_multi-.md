@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] SPIRAL: Self-Play on Zero-Sum Games Incentivizes Reasoning via Multi-Agent Multi-Turn Reinforcement Learning
 description: >-
-  [Reinforcement Learning] This paper proposes SPIRAL, a framework that trains LLMs via self-play in multi-turn zero-sum games. Through Role-conditioned Advantage Estimation (RAE) to stabilize training, SPIRAL improves reasoning performance by up to 10% without domain-specific data, and reveals that different games cultivate complementary cognitive abilities.
+  [Reinforcement Learning] This paper proposes SPIRAL, a framework that trains LLMs via self-play in multi-turn zero-sum games. Through Role-conditioned Advantage Estimation (RAE) to stabilize training…
 tags:
-  - Reinforcement Learning
+  - "Reinforcement Learning"
 date: 2026-05-08
 content_hash: 239e5e11634a982f
 ---

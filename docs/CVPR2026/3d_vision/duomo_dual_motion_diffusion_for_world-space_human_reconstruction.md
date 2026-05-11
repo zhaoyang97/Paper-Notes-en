@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DuoMo: Dual Motion Diffusion for World-Space Human Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][Human motion reconstruction] DuoMo decomposes world-space human motion reconstruction into two independent diffusion models: a camera-space model that extracts generalizable motion estimates from video in camera coordinates, and a world-space model that refines the noisy lifted proposals into globally consistent world-space motion. By directly generating mesh vertex motion rather than SMPL parameters, DuoMo reduces W-MPJPE by 16% on EMDB and 30% on RICH.
+  [CVPR 2026][3D Vision][Human motion reconstruction] DuoMo decomposes world-space human motion reconstruction into two independent diffusion models: a camera-space model that extracts generalizable motion estimates from v…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Human motion reconstruction
-  - diffusion model
-  - world coordinate system
-  - camera space
-  - mesh vertices
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Human motion reconstruction"
+  - "diffusion model"
+  - "world coordinate system"
+  - "camera space"
+  - "mesh vertices"
 date: 2026-05-08
 content_hash: f0e4bd72e2f75b7d
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Convolutional Monge Mapping between EEG Datasets to Support Independent Component Labeling
 description: >-
-  [NeurIPS 2025][Medical Imaging][EEG] This paper extends CMMN (Convolutional Monge Mapping Normalization) by proposing two strategies — channel-averaged PSD with $\ell_1$-normalized barycenter and subject-to-subject matching — to generate a single time-domain filter for domain adaptation across EEG datasets with differing channel counts. On independent component (IC) brain/non-brain classification, the F1 score improves from 0.77 to 0.84, surpassing ICLabel (0.88→0.91).
+  [NeurIPS 2025][Medical Imaging][EEG] This paper extends CMMN (Convolutional Monge Mapping Normalization) by proposing two strategies — channel-averaged PSD with $\ell_1$-normalized barycenter and subject-to-subject match…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - EEG
-  - Domain Adaptation
-  - Optimal Transport
-  - Convolutional Monge Mapping
-  - Independent Component Classification
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "EEG"
+  - "Domain Adaptation"
+  - "Optimal Transport"
+  - "Convolutional Monge Mapping"
+  - "Independent Component Classification"
 date: 2026-05-08
 content_hash: d4e31ee2b24c2c09
 ---

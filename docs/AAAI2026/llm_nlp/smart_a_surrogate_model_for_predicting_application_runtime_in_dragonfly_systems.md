@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Smart: A GNN-LLM Hybrid Surrogate Model for Dragonfly System Application Runtime Prediction
 description: >-
-  [AAAI 2026][LLM/NLP][Dragonfly Network] This paper proposes Smart (Surrogate Model for Predicting Application RunTime), the first approach to integrate GNN and LLM (Time-LLM) for iterative application runtime prediction in Dragonfly interconnection networks. On a 1,056-node system, Smart achieves a minimum MAPE of 1.78% (LAMMPS) with an inference time of only 0.515 seconds, delivering orders-of-magnitude speedup over full-scale simulation.
+  [AAAI 2026][LLM/NLP][Dragonfly Network] This paper proposes Smart (Surrogate Model for Predicting Application RunTime), the first approach to integrate GNN and LLM (Time-LLM) for iterative application runtime prediction…
 tags:
-  - AAAI 2026
-  - LLM/NLP
-  - Dragonfly Network
-  - Graph Neural Network
-  - Large Language Model
-  - Surrogate Model
-  - Hybrid Simulation
-  - Runtime Prediction
+  - "AAAI 2026"
+  - "LLM/NLP"
+  - "Dragonfly Network"
+  - "Graph Neural Network"
+  - "Large Language Model"
+  - "Surrogate Model"
+  - "Hybrid Simulation"
+  - "Runtime Prediction"
 date: 2026-05-08
 content_hash: 432e06d9333a2b98
 ---

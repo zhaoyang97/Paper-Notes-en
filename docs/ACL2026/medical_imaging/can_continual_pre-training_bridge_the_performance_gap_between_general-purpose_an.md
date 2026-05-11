@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Can Continual Pre-training Bridge the Performance Gap between General-purpose and Specialized Language Models in the Medical Domain?
 description: >-
-  [ACL 2026][Medical Imaging][Continual pre-training] This paper constructs a high-quality German medical corpus, FineMed-de (7.3 million documents / 5.1 billion tokens filtered from FineWeb2), applies continual pre-training and SLERP model merging to three LLMs (7B–24B), and creates the DeFineMed model family. The results demonstrate that a domain-specialized 7B model can substantially narrow the performance gap with a 24B general-purpose model on German medical tasks, improving the win rate by approximately 3.5×.
+  [ACL 2026][Medical Imaging][Continual pre-training] This paper constructs a high-quality German medical corpus, FineMed-de (7.3 million documents / 5.1 billion tokens filtered from FineWeb2)…
 tags:
-  - ACL 2026
-  - Medical Imaging
-  - Continual pre-training
-  - domain adaptation
-  - German medical LLM
-  - model merging
-  - data filtering
+  - "ACL 2026"
+  - "Medical Imaging"
+  - "Continual pre-training"
+  - "domain adaptation"
+  - "German medical LLM"
+  - "model merging"
+  - "data filtering"
 date: 2026-05-08
 content_hash: c704b4eed89e50c5
 ---

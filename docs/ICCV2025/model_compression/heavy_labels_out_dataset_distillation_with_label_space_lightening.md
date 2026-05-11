@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Heavy Labels Out! Dataset Distillation with Label Space Lightening
 description: >-
-  [ICCV 2025][Model Compression][dataset distillation] This paper proposes the HeLlO framework, which constructs a lightweight image-label projector using a CLIP pretrained model and LoRA-like low-rank knowledge transfer, reducing soft label storage in dataset distillation to 0.003% of the original while maintaining or surpassing SOTA performance.
+  [ICCV 2025][Model Compression][dataset distillation] This paper proposes the HeLlO framework, which constructs a lightweight image-label projector using a CLIP pretrained model and LoRA-like low-rank knowledge transfer…
 tags:
-  - ICCV 2025
-  - Model Compression
-  - dataset distillation
-  - soft label compression
-  - CLIP
-  - LoRA
-  - label space lightening
+  - "ICCV 2025"
+  - "Model Compression"
+  - "dataset distillation"
+  - "soft label compression"
+  - "CLIP"
+  - "LoRA"
+  - "label space lightening"
 date: 2026-05-08
 content_hash: 6179d56aeaf1bde0
 ---

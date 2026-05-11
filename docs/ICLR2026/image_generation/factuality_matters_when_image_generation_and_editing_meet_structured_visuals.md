@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Factuality Matters: When Image Generation and Editing Meet Structured Visuals
 description: >-
-  [ICLR2026][Image Generation][structured image generation] The first systematic study on the generation and editing of structured images (charts, mathematical figures, diagrams, tables, etc.), contributing a 1.3M-pair code-aligned training dataset with CoT reasoning annotations, a unified VLM+diffusion model architecture, and the StructBench benchmark with 1,700+ samples. The work reveals that reasoning capability is the key bottleneck for current models in handling structured visual content.
+  [ICLR2026][Image Generation][structured image generation] The first systematic study on the generation and editing of structured images (charts, mathematical figures, diagrams, tables, etc.)…
 tags:
-  - ICLR2026
-  - Image Generation
-  - structured image generation
-  - image editing
-  - chain-of-thought reasoning
-  - benchmark
-  - diffusion transformer
+  - "ICLR2026"
+  - "Image Generation"
+  - "structured image generation"
+  - "image editing"
+  - "chain-of-thought reasoning"
+  - "benchmark"
+  - "diffusion transformer"
 date: 2026-05-08
 content_hash: eb10aa251ea42175
 ---

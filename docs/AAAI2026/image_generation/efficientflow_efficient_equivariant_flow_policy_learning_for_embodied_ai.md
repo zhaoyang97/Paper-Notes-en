@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EfficientFlow: Efficient Equivariant Flow Policy Learning for Embodied AI
 description: >-
-  [AAAI 2026][Image Generation][Flow Matching] This paper proposes EfficientFlow, which incorporates equivariance into the Flow Matching policy learning framework. It theoretically proves that an isotropic prior combined with an equivariant velocity network guarantees an equivariant action distribution, and introduces Flow Acceleration Upper Bound (FABO) regularization to accelerate sampling. On 12 tasks from MimicGen, EfficientFlow achieves 20–56× faster inference than EquiDiff with superior performance.
+  [AAAI 2026][Image Generation][Flow Matching] This paper proposes EfficientFlow, which incorporates equivariance into the Flow Matching policy learning framework. It theoretically proves that an isotropic prior combined w…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Flow Matching
-  - Equivariance
-  - Policy Learning
-  - Acceleration Regularization
-  - Robotic Manipulation
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Flow Matching"
+  - "Equivariance"
+  - "Policy Learning"
+  - "Acceleration Regularization"
+  - "Robotic Manipulation"
 date: 2026-05-08
 content_hash: cc697d3c44ff068b
 ---

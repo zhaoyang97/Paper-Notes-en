@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Uni-DAD: Unified Distillation and Adaptation of Diffusion Models for Few-step Few-shot Image Generation
 description: >-
-  [CVPR 2026][Image Generation][Diffusion model distillation] This paper proposes Uni-DAD, the first method to unify diffusion model distillation and domain adaptation into a single-stage pipeline. Through a dual-domain DMD loss and a multi-head GAN loss, Uni-DAD achieves high-quality and diverse generation in few-shot target domains using only 1–4 sampling steps.
+  [CVPR 2026][Image Generation][Diffusion model distillation] This paper proposes Uni-DAD, the first method to unify diffusion model distillation and domain adaptation into a single-stage pipeline. Through a dual-domain DM…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion model distillation
-  - few-shot image generation
-  - domain adaptation
-  - GAN
-  - distribution matching distillation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion model distillation"
+  - "few-shot image generation"
+  - "domain adaptation"
+  - "GAN"
+  - "distribution matching distillation"
 date: 2026-05-08
 content_hash: bea5a55f57abe521
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] VL-SAE: Interpreting and Enhancing Vision-Language Alignment with a Unified Concept Set
 description: >-
-  [NeurIPS 2025][Sparse Autoencoder] This paper proposes VL-SAE, a sparse autoencoder with a distance-based encoder and modality-specific decoders that maps the semantics of both visual and linguistic representations onto a unified concept set, thereby interpreting and enhancing the vision-language alignment mechanism of VLMs. The approach yields an average improvement of 0.6–0.9% on zero-shot classification and outperforms the dedicated method VCD on POPE hallucination mitigation.
+  [NeurIPS 2025][Interpretability][Sparse Autoencoder] This paper proposes VL-SAE, a sparse autoencoder with a distance-based encoder and modality-specific decoders that maps the semantics of both visual and linguistic rep…
 tags:
-  - NeurIPS 2025
-  - Sparse Autoencoder
-  - vision-language alignment
-  - unified concept set
-  - interpretability
-  - hallucination mitigation
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "Sparse Autoencoder"
+  - "vision-language alignment"
+  - "unified concept set"
+  - "hallucination mitigation"
 date: 2026-05-08
 content_hash: 2247a39e529116db
 ---

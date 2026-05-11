@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SparseLaneSTP: Leveraging Spatio-Temporal Priors with Sparse Transformers for 3D Lane Detection
 description: >-
-  [ICCV 2025][Autonomous Driving][3D lane detection] This paper proposes SparseLaneSTP, which integrates lane geometry priors (parallelism, continuity) and temporal information into a sparse Transformer architecture. Through Catmull-Rom spline representation, spatio-temporal attention mechanisms, and temporal regularization, the method achieves state-of-the-art performance on multiple 3D lane detection benchmarks.
+  [ICCV 2025][Autonomous Driving][3D lane detection] This paper proposes SparseLaneSTP, which integrates lane geometry priors (parallelism…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - 3D lane detection
-  - sparse Transformer
-  - spatio-temporal priors
-  - Catmull-Rom spline
-  - temporal fusion
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "3D lane detection"
+  - "sparse Transformer"
+  - "spatio-temporal priors"
+  - "Catmull-Rom spline"
+  - "temporal fusion"
 date: 2026-05-08
 content_hash: 77f6d75333440390
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Exploring Variational Graph Autoencoders for Distribution Grid Data Generation
 description: >-
-  [NeurIPS 2025][Image Generation][Variational Graph Autoencoder] This paper systematically evaluates four variational graph autoencoder (VGAE) decoder architectures for synthesizing distribution grid topologies. The Iterative-GCN decoder is found to adequately reproduce structural and spectral characteristics of real grids on small, homogeneous datasets; however, on large, heterogeneous datasets, all methods exhibit critical failure modes including disconnected components and repetitive patterns.
+  [NeurIPS 2025][Image Generation][Variational Graph Autoencoder] This paper systematically evaluates four variational graph autoencoder (VGAE) decoder architectures for synthesizing distribution grid topologies. The Itera…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Variational Graph Autoencoder
-  - Distribution Grid Generation
-  - Synthetic Graph Data
-  - Graph Neural Networks
-  - Energy AI
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Variational Graph Autoencoder"
+  - "Distribution Grid Generation"
+  - "Synthetic Graph Data"
+  - "Graph Neural Networks"
+  - "Energy AI"
 date: 2026-05-08
 content_hash: 2834b84adfb7cfb2
 ---

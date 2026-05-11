@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LiViBench: An Omnimodal Benchmark for Interactive Livestream Video Understanding
 description: >-
-  [AAAI 2026][Video Understanding][livestream video understanding] This paper presents LiViBench, the first omnimodal benchmark for interactive livestream video understanding (3,168 videos, 3,175 MCQs, 24 tasks), introduces a multi-agent seed-guided semi-automatic annotation pipeline, and develops LiVi-LLM-7B — a specialized model featuring a Video-to-Comment Retrieval (VCR) module and two-stage instruction tuning — which surpasses 72B open-source models at the 7B scale.
+  [AAAI 2026][Video Understanding][livestream video understanding] This paper presents LiViBench, the first omnimodal benchmark for interactive livestream video understanding (3,168 videos, 3,175 MCQs, 24 tasks)…
 tags:
-  - AAAI 2026
-  - Video Understanding
-  - livestream video understanding
-  - multimodal benchmark
-  - real-time comments
-  - instruction tuning
-  - omnimodal model
+  - "AAAI 2026"
+  - "Video Understanding"
+  - "livestream video understanding"
+  - "multimodal benchmark"
+  - "real-time comments"
+  - "instruction tuning"
+  - "omnimodal model"
 date: 2026-05-08
 content_hash: c8fa0ce042c1098e
 ---

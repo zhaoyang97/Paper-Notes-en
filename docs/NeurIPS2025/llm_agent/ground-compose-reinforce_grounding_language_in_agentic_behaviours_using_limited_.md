@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Ground-Compose-Reinforce: Grounding Language in Agentic Behaviours using Limited Data
 description: >-
-  [NeurIPS 2025][LLM Agent][Language Grounding] This paper proposes Ground-Compose-Reinforce (GCR), an end-to-end neuro-symbolic framework that learns the grounding semantics of atomic propositions from a small number of annotated trajectories (only 350), composes them into complex task specifications via Reward Machines, and trains an RL agent using self-generated dense rewards — eliciting out-of-distribution complex behaviours without any hand-crafted reward functions.
+  [NeurIPS 2025][LLM Agent][Language Grounding] This paper proposes Ground-Compose-Reinforce (GCR), an end-to-end neuro-symbolic framework that learns the grounding semantics of atomic propositions from a small number of a…
 tags:
-  - NeurIPS 2025
-  - LLM Agent
-  - Language Grounding
-  - Reward Machine
-  - Compositional Generalization
-  - Neuro-Symbolic
-  - Reward Shaping
+  - "NeurIPS 2025"
+  - "LLM Agent"
+  - "Language Grounding"
+  - "Reward Machine"
+  - "Compositional Generalization"
+  - "Neuro-Symbolic"
+  - "Reward Shaping"
 date: 2026-05-08
 content_hash: 720630bf4b2e35e0
 ---

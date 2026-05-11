@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Journey to the Centre of Cluster: Harnessing Interior Nodes for A/B Testing under Network Interference
 description: >-
-  [ICLR2026][Causal Inference][A/B testing] To address the high-variance problem in GATE estimation for A/B testing under network interference, this paper proposes the Mean-in-Interior (MII) estimator—which averages only over interior nodes within each cluster to substantially reduce variance—and further introduces a counterfactual predictor to correct for covariate shift, yielding the augmented AMII estimator that achieves low bias and low variance simultaneously.
+  [ICLR2026][Causal Inference][A/B testing] To address the high-variance problem in GATE estimation for A/B testing under network interference…
 tags:
-  - ICLR2026
-  - Causal Inference
-  - A/B testing
-  - network interference
-  - cluster randomization
-  - GATE estimation
+  - "ICLR2026"
+  - "Causal Inference"
+  - "A/B testing"
+  - "network interference"
+  - "cluster randomization"
+  - "GATE estimation"
 date: 2026-05-08
 content_hash: 454065308f66c081
 ---

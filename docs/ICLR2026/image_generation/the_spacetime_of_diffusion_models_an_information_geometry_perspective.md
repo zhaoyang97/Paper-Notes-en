@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The Spacetime of Diffusion Models: An Information Geometry Perspective
 description: >-
-  [ICLR 2026][Image Generation][Spacetime Geometry] This paper proposes a "spacetime" framework for diffusion models from an information-geometric perspective. It proves that the standard pullback geometry degenerates to straight lines in diffusion models, and introduces instead a spacetime geometry based on the Fisher-Rao metric, from which practically computable diffusion edit distances (DiffED) and transition path sampling methods are derived.
+  [ICLR 2026][Image Generation][Spacetime Geometry] This paper proposes a "spacetime" framework for diffusion models from an information-geometric perspective. It proves that the standard pullback geometry degenerates to s…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Spacetime Geometry
-  - Fisher-Rao Metric
-  - Pullback Geometry
-  - Diffusion Edit Distance
-  - Transition Path Sampling
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Spacetime Geometry"
+  - "Fisher-Rao Metric"
+  - "Pullback Geometry"
+  - "Diffusion Edit Distance"
+  - "Transition Path Sampling"
 date: 2026-05-08
 content_hash: b850e72cd9eac839
 ---

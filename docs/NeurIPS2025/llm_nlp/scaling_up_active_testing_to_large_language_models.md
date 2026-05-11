@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Scaling Up Active Testing to Large Language Models
 description: >-
-  [NeurIPS 2025][LLM/NLP][active testing] By introducing three key simplifications—constructing a fixed surrogate model via in-context learning, using a small surrogate model to evaluate a large target model, and eliminating the need for target model predictions during data acquisition—this work scales active testing to LLMs, reducing risk estimation error by 25%–80% relative to random sampling.
+  [NeurIPS 2025][LLM/NLP][active testing] By introducing three key simplifications—constructing a fixed surrogate model via in-context learning, using a small surrogate model to evaluate a large target model…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - active testing
-  - LLM evaluation
-  - risk estimation
-  - surrogate model
-  - label efficiency
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "active testing"
+  - "LLM evaluation"
+  - "risk estimation"
+  - "surrogate model"
+  - "label efficiency"
 date: 2026-05-08
 content_hash: 45136d23ec8130bf
 ---

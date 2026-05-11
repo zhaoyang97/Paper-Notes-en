@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AUVIC: Adversarial Unlearning of Visual Concepts for Multi-modal Large Language Models
 description: >-
-  [AAAI 2026][LLM Safety][Machine Unlearning] This paper proposes AUVIC, a framework that combines an adversarial perturbation generator with a dynamic anchor preservation mechanism to precisely unlearn target visual concepts (e.g., specific faces) in MLLMs, while avoiding collateral forgetting of semantically similar concepts. The paper also introduces VCUBench, the first evaluation benchmark for visual concept unlearning in group-scene scenarios.
+  [AAAI 2026][LLM Safety][Machine Unlearning] This paper proposes AUVIC, a framework that combines an adversarial perturbation generator with a dynamic anchor preservation mechanism to precisely unlearn target visual conce…
 tags:
-  - AAAI 2026
-  - LLM Safety
-  - Machine Unlearning
-  - Adversarial Perturbation
-  - Multimodal Large Language Models
-  - Visual Concept Forgetting
-  - Privacy Protection
+  - "AAAI 2026"
+  - "LLM Safety"
+  - "Machine Unlearning"
+  - "Adversarial Perturbation"
+  - "Multimodal Large Language Models"
+  - "Visual Concept Forgetting"
+  - "Privacy Protection"
 date: 2026-05-08
 content_hash: ec2d424e88ee1fe4
 ---

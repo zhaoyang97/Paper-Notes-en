@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Language Reconstruction with Brain Predictive Coding from fMRI Data
 description: >-
-  [ACL 2026][Medical Imaging][fMRI language reconstruction] This paper proposes PredFT, an end-to-end fMRI-to-Text decoding model comprising a main network (language decoding) and a side network (brain predictive coding representations). By extracting prospective semantic representations from prediction-related brain regions (PTO areas) and integrating them into the decoding process, PredFT achieves a BLEU-1 of 34.95% on the LeBel dataset (Sub-1), outperforming the strongest baseline MapGuide by 7.84 percentage points.
+  [ACL 2026][Medical Imaging][fMRI language reconstruction] This paper proposes PredFT, an end-to-end fMRI-to-Text decoding model comprising a main network (language decoding) and a side network (brain predictive coding re…
 tags:
-  - ACL 2026
-  - Medical Imaging
-  - fMRI language reconstruction
-  - predictive coding
-  - brain signal decoding
-  - neurolinguistics
-  - side network
+  - "ACL 2026"
+  - "Medical Imaging"
+  - "fMRI language reconstruction"
+  - "predictive coding"
+  - "brain signal decoding"
+  - "neurolinguistics"
+  - "side network"
 date: 2026-05-08
 content_hash: 1c95ed7e46f6aeea
 ---

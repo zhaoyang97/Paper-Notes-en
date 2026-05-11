@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] GEM: Generative Entropy-Guided Preference Modeling for Few-shot Alignment of LLMs
 description: >-
-  [Medical Imaging] GEM proposes a generative entropy-guided preference modeling approach that achieves efficient LLM alignment in low-resource settings (only 3,000 preference pairs) through cognitive filtering (entropy-based CoT scoring) and the SEGA algorithm (Self-Evaluated Group Advantage policy optimization).
+  [Medical Imaging] GEM proposes a generative entropy-guided preference modeling approach that achieves efficient LLM alignment in low-resource settings (only 3…
 tags:
-  - Medical Imaging
+  - "Medical Imaging"
 date: 2026-05-08
 content_hash: 8bbd2ecc2bf1645f
 ---

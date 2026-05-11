@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Visual-RFT: Visual Reinforcement Fine-Tuning
 description: >-
-  [ICCV 2025][Object Detection][Reinforcement Fine-Tuning] Visual-RFT extends the Reinforcement Learning with Verifiable Rewards (RLVR) paradigm from DeepSeek R1—originally applied to mathematics and code—to visual perception tasks. It introduces task-specific verifiable reward functions, including an IoU reward for object detection and a CLS reward for classification, achieving substantial improvements over SFT on fine-grained classification, few-shot detection, and grounded reasoning with only a fraction of the training data.
+  [ICCV 2025][Object Detection][Reinforcement Fine-Tuning] Visual-RFT extends the Reinforcement Learning with Verifiable Rewards (RLVR) paradigm from DeepSeek R1—originally applied to mathematics and code—to visual percept…
 tags:
-  - ICCV 2025
-  - Object Detection
-  - Reinforcement Fine-Tuning
-  - GRPO
-  - Verifiable Reward
-  - Visual Perception
-  - Few-Shot Learning
+  - "ICCV 2025"
+  - "Object Detection"
+  - "Reinforcement Fine-Tuning"
+  - "GRPO"
+  - "Verifiable Reward"
+  - "Visual Perception"
+  - "Few-Shot Learning"
 date: 2026-05-08
 content_hash: 0e108acaced23420
 ---

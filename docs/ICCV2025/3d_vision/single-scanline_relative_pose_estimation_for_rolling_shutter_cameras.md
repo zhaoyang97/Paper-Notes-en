@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Single-Scanline Relative Pose Estimation for Rolling Shutter Cameras
 description: >-
-  [ICCV 2025][3D Vision][Rolling shutter] This paper proposes a rolling shutter relative pose estimation method that requires no explicit camera motion modeling. It recovers camera pose solely from the intersections of line projections with a single selected scanline per image, and develops multiple minimal solvers for special configurations such as parallel lines and known gravity direction.
+  [ICCV 2025][3D Vision][Rolling shutter] This paper proposes a rolling shutter relative pose estimation method that requires no explicit camera motion modeling. It recovers camera pose solely from the intersections of lin…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Rolling shutter
-  - relative pose estimation
-  - minimal solvers
-  - motion artifact
-  - line field motion
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Rolling shutter"
+  - "relative pose estimation"
+  - "minimal solvers"
+  - "motion artifact"
+  - "line field motion"
 date: 2026-05-08
 content_hash: 5f9f0d518b37b2be
 ---

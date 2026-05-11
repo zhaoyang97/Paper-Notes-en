@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] VisRef: Visual Refocusing while Thinking Improves Test-Time Scaling in Multi-Modal Large Reasoning Models
 description: >-
-  [CVPR 2026][LLM Reasoning][visual refocusing] This paper proposes VisRef, a training-free visual refocusing framework that, during inference in multimodal large reasoning models (MLRMs), adaptively selects a semantically relevant and visually diverse subset of tokens at each reasoning step via Determinantal Point Processes (DPP) and reinjects them into the context. An entropy-based stopping criterion prevents overthinking. Under a fixed compute budget, VisRef improves visual reasoning accuracy by up to 6.4%.
+  [CVPR 2026][LLM Reasoning][visual refocusing] This paper proposes VisRef, a training-free visual refocusing framework that, during inference in multimodal large reasoning models (MLRMs)…
 tags:
-  - CVPR 2026
-  - LLM Reasoning
-  - visual refocusing
-  - test-time scaling
-  - multimodal reasoning
-  - DPP
-  - visual token selection
-  - training-free
+  - "CVPR 2026"
+  - "LLM Reasoning"
+  - "visual refocusing"
+  - "test-time scaling"
+  - "multimodal reasoning"
+  - "DPP"
+  - "visual token selection"
+  - "training-free"
 date: 2026-05-08
 content_hash: 751e318900d8c7e4
 ---

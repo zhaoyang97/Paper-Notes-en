@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Sparse Approximate Inverse Preconditioners for Conjugate Gradient Solvers on GPUs
 description: >-
-  [NeurIPS 2025][Optimization][preconditioner] This paper proposes a graph neural network (GNN)-based method for learning sparse approximate inverse (SPAI) preconditioners, exploiting the natural compatibility between SPAI's locality and GNN message passing, and introduces a scale-invariant loss function (SAI loss) that achieves 40%–53% reduction in solve time (68%–113% speedup) on GPUs.
+  [NeurIPS 2025][Optimization][preconditioner] This paper proposes a graph neural network (GNN)-based method for learning sparse approximate inverse (SPAI) preconditioners…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - preconditioner
-  - conjugate gradient method
-  - graph neural network
-  - GPU acceleration
-  - sparse approximate inverse
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "preconditioner"
+  - "conjugate gradient method"
+  - "graph neural network"
+  - "GPU acceleration"
+  - "sparse approximate inverse"
 date: 2026-05-08
 content_hash: 77f0f62ef0c3ea7a
 ---

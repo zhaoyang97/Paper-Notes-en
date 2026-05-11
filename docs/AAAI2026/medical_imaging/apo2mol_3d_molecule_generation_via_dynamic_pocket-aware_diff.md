@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Apo2Mol: 3D Molecule Generation via Dynamic Pocket-Aware Diffusion Models
 description: >-
-  [AAAI 2026][Medical Imaging][Structure-based drug design] This paper proposes Apo2Mol, a diffusion-based all-atom framework that simultaneously generates 3D ligand molecules and corresponding holo (bound-state) pocket conformations from protein apo (unbound) conformations. Trained on 24K experimentally resolved apo-holo structure pairs, it achieves state-of-the-art performance in binding affinity (Vina min −7.86) and drug-likeness.
+  [AAAI 2026][Medical Imaging][Structure-based drug design] This paper proposes Apo2Mol, a diffusion-based all-atom framework that simultaneously generates 3D ligand molecules and corresponding holo (bound-state) pocket co…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Structure-based drug design
-  - apo-holo conformational change
-  - protein pocket dynamics
-  - 3D molecule generation
-  - SE(3) equivariance
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Structure-based drug design"
+  - "apo-holo conformational change"
+  - "protein pocket dynamics"
+  - "3D molecule generation"
+  - "SE(3) equivariance"
 date: 2026-05-08
 content_hash: 55c966c93a39e635
 ---

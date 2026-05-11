@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CVPT: Cross Visual Prompt Tuning
 description: >-
-  [ICCV2025][Multimodal VLM][Visual Prompt Tuning] To address the computational redundancy and attention disruption caused by prompt tokens participating in self-attention in Visual Prompt Tuning (VPT), this paper proposes CVPT, which decouples the interaction between prompt and image tokens via cross-attention and leverages a weight-sharing mechanism to initialize the cross-attention module. CVPT significantly outperforms VPT across 25 datasets and achieves performance comparable to mainstream adapter-based methods.
+  [ICCV2025][Multimodal VLM][Visual Prompt Tuning] To address the computational redundancy and attention disruption caused by prompt tokens participating in self-attention in Visual Prompt Tuning (VPT)…
 tags:
-  - ICCV2025
-  - Multimodal VLM
-  - Visual Prompt Tuning
-  - Cross-Attention
-  - PEFT
-  - parameter-efficient fine-tuning
-  - Weight Sharing
+  - "ICCV2025"
+  - "Multimodal VLM"
+  - "Visual Prompt Tuning"
+  - "Cross-Attention"
+  - "PEFT"
+  - "parameter-efficient fine-tuning"
+  - "Weight Sharing"
 date: 2026-05-08
 content_hash: e4ba812d00dc558f
 ---

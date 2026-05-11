@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AlignVAR: Towards Globally Consistent Visual Autoregression for Image Super-Resolution
 description: >-
-  [CVPR 2026][Image Generation][Visual Autoregression] AlignVAR addresses two consistency failures of visual autoregressive (VAR) models in image super-resolution (ISR): spatially incoherent reconstructions caused by locally biased attention, and cross-scale error accumulation induced by residual supervision. The proposed framework introduces Spatial Consistency Autoregression (SCA) and Hierarchical Consistency Constraint (HCC) to jointly resolve both issues, achieving reconstruction quality superior to diffusion-based methods while delivering over 10× faster inference.
+  [CVPR 2026][Image Generation][Visual Autoregression] AlignVAR addresses two consistency failures of visual autoregressive (VAR) models in image super-resolution (ISR): spatially incoherent reconstructions caused by local…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Visual Autoregression
-  - Image Super-Resolution
-  - Spatial Consistency
-  - Hierarchical Consistency
-  - Next-Scale Prediction
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Visual Autoregression"
+  - "Image Super-Resolution"
+  - "Spatial Consistency"
+  - "Hierarchical Consistency"
+  - "Next-Scale Prediction"
 date: 2026-05-08
 content_hash: 4e2eb472793e9200
 ---

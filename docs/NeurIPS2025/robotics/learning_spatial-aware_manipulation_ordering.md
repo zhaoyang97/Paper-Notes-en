@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Spatial-Aware Manipulation Ordering
 description: >-
-  [NeurIPS 2025][Robotics][manipulation ordering] This paper proposes OrderMind, a unified framework that learns manipulation ordering of objects in cluttered scenes directly from RGB-D images via a Spatial Context Understanding encoder and a Temporal Priority Structuring module. Training annotations are generated through VLM distillation with spatial priors. OrderMind significantly outperforms VLM baselines in both simulation and real-world environments while supporting real-time inference (5.6 FPS, 21.3 FPS for the lightweight variant).
+  [NeurIPS 2025][Robotics][manipulation ordering] This paper proposes OrderMind, a unified framework that learns manipulation ordering of objects in cluttered scenes directly from RGB-D images via a Spatial Context Underst…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - manipulation ordering
-  - spatial graph
-  - cluttered environment
-  - VLM distillation
-  - real-time inference
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "manipulation ordering"
+  - "spatial graph"
+  - "cluttered environment"
+  - "VLM distillation"
+  - "real-time inference"
 date: 2026-05-08
 content_hash: 043334aa11335548
 ---

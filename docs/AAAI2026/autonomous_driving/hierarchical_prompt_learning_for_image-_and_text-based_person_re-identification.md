@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Hierarchical Prompt Learning for Image- and Text-Based Person Re-Identification
 description: >-
-  [AAAI 2026][Autonomous Driving][Person Re-Identification] This paper proposes HPL, a unified framework that decouples I2I and T2I tasks via a Task-Routed Transformer (dual classification tokens), and employs hierarchical prompt learning (identity-level + instance-level pseudo-text tokens) combined with cross-modal prompt regularization, achieving simultaneous state-of-the-art performance on both image-to-image and text-to-image person re-identification within a single model for the first time.
+  [AAAI 2026][Autonomous Driving][Person Re-Identification] This paper proposes HPL, a unified framework that decouples I2I and T2I tasks via a Task-Routed Transformer (dual classification tokens)…
 tags:
-  - AAAI 2026
-  - Autonomous Driving
-  - Person Re-Identification
-  - Prompt Learning
-  - Cross-Modal Alignment
-  - CLIP
-  - Unified Retrieval Framework
+  - "AAAI 2026"
+  - "Autonomous Driving"
+  - "Person Re-Identification"
+  - "Prompt Learning"
+  - "Cross-Modal Alignment"
+  - "CLIP"
+  - "Unified Retrieval Framework"
 date: 2026-05-08
 content_hash: fec0912aeacd88ad
 ---

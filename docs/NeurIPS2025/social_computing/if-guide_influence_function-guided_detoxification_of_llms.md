@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] IF-GUIDE: Influence Function-Guided Detoxification of LLMs
 description: >-
-  [NeurIPS 2025][Social Computing][LLM detoxification] This paper proposes IF-Guide, which leverages influence functions to identify toxic content in training data at the token granularity and actively suppresses the model from learning toxic behaviors during pre-training or fine-tuning via a penalty-based training objective, substantially outperforming passive alignment methods such as DPO and RAD.
+  [NeurIPS 2025][Social Computing][LLM detoxification] This paper proposes IF-Guide, which leverages influence functions to identify toxic content in training data at the token granularity and actively suppresses the model…
 tags:
-  - NeurIPS 2025
-  - Social Computing
-  - LLM detoxification
-  - influence functions
-  - training data attribution
-  - token-level suppression
-  - proactive safety
+  - "NeurIPS 2025"
+  - "Social Computing"
+  - "LLM detoxification"
+  - "influence functions"
+  - "training data attribution"
+  - "token-level suppression"
+  - "proactive safety"
 date: 2026-05-08
 content_hash: e465b9129c69854d
 ---

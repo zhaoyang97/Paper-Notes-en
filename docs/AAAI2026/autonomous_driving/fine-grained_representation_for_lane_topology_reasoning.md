@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Fine-Grained Representation for Lane Topology Reasoning
 description: >-
-  [AAAI 2026][Autonomous Driving][Lane topology reasoning] This paper proposes TopoFG, a framework that replaces conventional single-query lane modeling with fine-grained queries (each lane represented by multiple spatially-aware queries), combined with hierarchical prior extraction, region-focused decoding, and boundary-point-based robust topology reasoning, achieving new state-of-the-art results of 48.0% OLS (subset\_A) and 45.4% OLS (subset\_B) on OpenLane-V2.
+  [AAAI 2026][Autonomous Driving][Lane topology reasoning] This paper proposes TopoFG, a framework that replaces conventional single-query lane modeling with fine-grained queries (each lane represented by multiple spatiall…
 tags:
-  - AAAI 2026
-  - Autonomous Driving
-  - Lane topology reasoning
-  - fine-grained queries
-  - BEV perception
-  - boundary point topology
-  - denoising training
+  - "AAAI 2026"
+  - "Autonomous Driving"
+  - "Lane topology reasoning"
+  - "fine-grained queries"
+  - "BEV perception"
+  - "boundary point topology"
+  - "denoising training"
 date: 2026-05-08
 content_hash: 2bb0f1ce812aac38
 ---

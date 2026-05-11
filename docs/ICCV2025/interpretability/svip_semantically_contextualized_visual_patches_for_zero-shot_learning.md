@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] SVIP: Semantically Contextualized Visual Patches for Zero-Shot Learning
 description: >-
-  [ICCV 2025][zero-shot learning] This paper proposes the SVIP framework, which addresses semantic misalignment in zero-shot learning at its source by identifying and replacing semantically irrelevant image patches **at the input stage** with learnable embeddings initialized from attribute-level word embeddings.
+  [ICCV 2025][Interpretability][zero-shot learning] This paper proposes the SVIP framework, which addresses semantic misalignment in zero-shot learning at its source by identifying and replacing semantically irrelevant ima…
 tags:
-  - ICCV 2025
-  - zero-shot learning
-  - semantic alignment
-  - ViT
-  - patch selection
-  - attribute localization
+  - "ICCV 2025"
+  - "Interpretability"
+  - "zero-shot learning"
+  - "semantic alignment"
+  - "ViT"
+  - "patch selection"
+  - "attribute localization"
 date: 2026-05-08
 content_hash: 203e5a8b6d16245a
 ---

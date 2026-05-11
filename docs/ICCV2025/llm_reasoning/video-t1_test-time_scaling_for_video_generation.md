@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Video-T1: Test-Time Scaling for Video Generation
 description: >-
-  [ICCV 2025][LLM Reasoning][Test-time scaling] This paper transfers the test-time scaling (TTS) paradigm from LLMs to video generation by reformulating TTS as a search problem over trajectories from Gaussian noise space to the target video distribution. It proposes the Tree-of-Frames (ToF) search algorithm for efficient inference-time compute scaling, achieving consistent quality improvements across diverse video generation models on VBench.
+  [ICCV 2025][LLM Reasoning][Test-time scaling] This paper transfers the test-time scaling (TTS) paradigm from LLMs to video generation by reformulating TTS as a search problem over trajectories from Gaussian noise space t…
 tags:
-  - ICCV 2025
-  - LLM Reasoning
-  - Test-time scaling
-  - video generation
-  - Tree-of-Frames
-  - diffusion models
-  - autoregressive video
+  - "ICCV 2025"
+  - "LLM Reasoning"
+  - "Test-time scaling"
+  - "video generation"
+  - "Tree-of-Frames"
+  - "diffusion models"
+  - "autoregressive video"
 date: 2026-05-08
 content_hash: 57e03e5f59173378
 ---

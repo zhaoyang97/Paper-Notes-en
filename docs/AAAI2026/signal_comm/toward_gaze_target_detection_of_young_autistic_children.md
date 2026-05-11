@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Toward Gaze Target Detection in Young Autistic Children
 description: >-
-  [AAAI 2026][Signal & Communication][Gaze Target Detection] To address the severe class imbalance in gaze target detection for autistic children—where face-directed gaze accounts for only 6.6% of samples—this paper proposes the Socially Aware Coarse-to-Fine (SACF) framework. A fine-tuned Qwen2.5-VL serves as a social-context-aware gate that routes inputs to either a socially aware or a socially agnostic expert model. Evaluated on the newly introduced AGT dataset, the framework substantially improves face gaze detection performance (Face L2 reduced by 13.9% on Sharingan; F1 improved from 0.753 to 0.761).
+  [AAAI 2026][Signal & Communication][Gaze Target Detection] To address the severe class imbalance in gaze target detection for autistic children—where face-directed gaze accounts for only 6.6% of samples—this paper propos…
 tags:
-  - AAAI 2026
+  - "AAAI 2026"
   - "Signal & Communication"
-  - Gaze Target Detection
-  - Autism Spectrum Disorder
-  - Class Imbalance
-  - Multimodal Large Language Models
-  - Coarse-to-Fine Framework
+  - "Gaze Target Detection"
+  - "Autism Spectrum Disorder"
+  - "Class Imbalance"
+  - "Multimodal Large Language Models"
+  - "Coarse-to-Fine Framework"
 date: 2026-05-08
 content_hash: 8975ea353c41e4b8
 ---

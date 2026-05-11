@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Free4D: Tuning-free 4D Scene Generation with Spatial-Temporal Consistency
 description: >-
-  [ICCV 2025][Image Generation][4D generation] This paper proposes Free4D, the first tuning-free framework for single-image 4D scene generation. It achieves spatial consistency via 4D geometric structure initialization and adaptive guidance denoising, temporal consistency via reference latent replacement, and integrates multi-view information into a coherent 4D Gaussian representation through modulation-based refinement, enabling real-time controllable rendering.
+  [ICCV 2025][Image Generation][4D generation] This paper proposes Free4D, the first tuning-free framework for single-image 4D scene generation. It achieves spatial consistency via 4D geometric structure initialization and…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - 4D generation
-  - tuning-free
-  - spatial-temporal consistency
-  - 4D Gaussian splatting
-  - multi-view video generation
+  - "ICCV 2025"
+  - "Image Generation"
+  - "4D generation"
+  - "tuning-free"
+  - "spatial-temporal consistency"
+  - "4D Gaussian splatting"
+  - "multi-view video generation"
 date: 2026-05-08
 content_hash: 9d696ef9b562050d
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Do You See What I Am Pointing At? Gesture-Based Egocentric Video Question Answering
 description: >-
-  [CVPR 2026][Video Understanding][Egocentric Video QA] This paper proposes the EgoPointVQA dataset and the HINT (Hand Intent Tokens) method, which encodes 3D hand keypoints into hand intent tokens interleaved with visual tokens as input to an MLLM, addressing deictic gesture-based question answering in egocentric video. HINT-14B achieves 68.1% accuracy, surpassing InternVL3-14B by 5.4 pp.
+  [CVPR 2026][Video Understanding][Egocentric Video QA] This paper proposes the EgoPointVQA dataset and the HINT (Hand Intent Tokens) method…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Egocentric Video QA
-  - Gesture Understanding
-  - Deictic Reference
-  - 3D Hand Keypoints
-  - Multimodal Large Language Models
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Egocentric Video QA"
+  - "Gesture Understanding"
+  - "Deictic Reference"
+  - "3D Hand Keypoints"
+  - "Multimodal Large Language Models"
 date: 2026-05-08
 content_hash: 9733166984705a9e
 ---

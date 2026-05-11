@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Cleaning the Pool: Progressive Filtering of Unlabeled Pools in Deep Active Learning
 description: >-
-  [CVPR 2026][Audio & Speech][Active Learning] This paper proposes Refine, an ensemble active learning method that employs a two-stage strategy—progressive filtering (iteratively refining the unlabeled pool via multiple strategies) and coverage-based selection (selecting high-value, diverse samples from the refined pool)—to consistently outperform individual AL strategies and existing ensemble methods without requiring prior knowledge of the optimal strategy.
+  [CVPR 2026][Audio & Speech][Active Learning] This paper proposes Refine, an ensemble active learning method that employs a two-stage strategy—progressive filtering (iteratively refining the unlabeled pool via multiple st…
 tags:
-  - CVPR 2026
+  - "CVPR 2026"
   - "Audio & Speech"
-  - Active Learning
-  - Ensemble Strategy
-  - Progressive Filtering
-  - Foundation Models
-  - Coverage-Based Selection
+  - "Active Learning"
+  - "Ensemble Strategy"
+  - "Progressive Filtering"
+  - "Foundation Models"
+  - "Coverage-Based Selection"
 date: 2026-05-08
 content_hash: b0fe24adcd481e55
 ---

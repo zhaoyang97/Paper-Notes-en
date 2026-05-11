@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] LocalDyGS: Multi-view Global Dynamic Scene Modeling via Adaptive Local Implicit Feature Decoupling
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes LocalDyGS, a framework that decomposes complex global dynamic scenes into local spaces defined by seed points and generates temporal Gaussians via static-dynamic feature decoupling to model local motions independently, achieving high-quality reconstruction of large-scale complex dynamic scenes for the first time.
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes LocalDyGS, a framework that decomposes complex global dynamic scenes into local spaces defined by seed points and generates temporal Gaussians via static-…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - dynamic scene reconstruction
-  - multi-view
-  - local spatial modeling
-  - static-dynamic decoupling
-  - temporal Gaussians
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "dynamic scene reconstruction"
+  - "multi-view"
+  - "local spatial modeling"
+  - "static-dynamic decoupling"
+  - "temporal Gaussians"
 date: 2026-05-08
 content_hash: 24cb1adc0774cf5d
 ---

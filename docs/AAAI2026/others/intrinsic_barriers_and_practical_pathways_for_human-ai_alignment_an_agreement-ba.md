@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Intrinsic Barriers and Practical Pathways for Human-AI Alignment: An Agreement-Based Complexity Analysis
 description: >-
-  [AAAI 2026][AI alignment] This paper formalizes AI alignment as an $\langle M,N,\varepsilon,\delta\rangle$-agreement multi-objective optimization problem, proves information-theoretic lower bounds on alignment (encoding "all human values" is fundamentally intractable) from a communication complexity perspective, and derives explicit achievable algorithms and tight upper bounds for unbounded/bounded rational agents, revealing the theoretical basis for the global inevitability of reward hacking in large state spaces.
+  [AAAI 2026][AI alignment] This paper formalizes AI alignment as an $\langle M,N,\varepsilon,\delta\rangle$-agreement multi-objective optimization problem…
 tags:
-  - AAAI 2026
-  - AI alignment
-  - communication complexity
-  - agreement framework
-  - No-Free-Lunch
-  - reward hacking
+  - "AAAI 2026"
+  - "AI alignment"
+  - "communication complexity"
+  - "agreement framework"
+  - "No-Free-Lunch"
+  - "reward hacking"
 date: 2026-05-08
 content_hash: 7b59fba969cfaeef
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The Power of Decaying Steps: Enhancing Attack Stability and Transferability for Sign-based Optimizers
 description: >-
-  [CVPR 2026][Optimization][adversarial attack] This paper reformulates sign-based adversarial attack optimizers as coordinate-wise gradient descent, reveals that non-decaying step sizes are the root cause of non-convergence and instability, and proposes a Monotonically Decreasing Coordinate Step-size (MDCS) strategy. Theoretical analysis proves that MDCS-MI achieves the optimal $O(1/\sqrt{T})$ convergence rate, with significant improvements in attack transferability and stability demonstrated on image classification and cross-modal retrieval tasks.
+  [CVPR 2026][Optimization][adversarial attack] This paper reformulates sign-based adversarial attack optimizers as coordinate-wise gradient descent…
 tags:
-  - CVPR 2026
-  - Optimization
-  - adversarial attack
-  - transferability
-  - sign-based optimizer
-  - step-size scheduling
-  - convergence guarantee
+  - "CVPR 2026"
+  - "Optimization"
+  - "adversarial attack"
+  - "transferability"
+  - "sign-based optimizer"
+  - "step-size scheduling"
+  - "convergence guarantee"
 date: 2026-05-08
 content_hash: 9c2d0db860eb43a8
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BOSCH: Black-Box Binary Optimization for Short-Context Attention-Head Selection in LLMs
 description: >-
-  [ACL 2026][LLM Efficiency][Sliding Window Attention] BOSCH is a training-free head-level SWA mixing method that models SWA head selection as a large neighborhood search problem decomposed into three stages (layer importance probing → adaptive ratio allocation → grouped head selection), systematically outperforming layer-level heuristics and 6 static head-level methods across 4 models and 4 ratio settings.
+  [ACL 2026][LLM Efficiency][Sliding Window Attention] BOSCH is a training-free head-level SWA mixing method that models SWA head selection as a large neighborhood search problem decomposed into three stages (layer importa…
 tags:
-  - ACL 2026
-  - LLM Efficiency
-  - Sliding Window Attention
-  - Attention Head Selection
-  - Black-Box Optimization
-  - Large Neighborhood Search
-  - KV-Cache
+  - "ACL 2026"
+  - "LLM Efficiency"
+  - "Sliding Window Attention"
+  - "Attention Head Selection"
+  - "Black-Box Optimization"
+  - "Large Neighborhood Search"
+  - "KV-Cache"
 content_hash: 3865638624679721
 ---
 

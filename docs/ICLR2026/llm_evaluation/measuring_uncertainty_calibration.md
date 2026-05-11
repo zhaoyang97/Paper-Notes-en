@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Measuring Uncertainty Calibration
 description: >-
-  [ICLR 2026][LLM Evaluation][Calibration error] For the problem of estimating the $L_1$ calibration error of binary classifiers from finite samples, this paper proposes the first non-asymptotic, distribution-free certifiable upper bound methods under two structural assumptions—bounded variation and bounded derivatives—where the latter can be guaranteed by applying a small perturbation to classifier outputs. Experiments demonstrate that the calibration error upper bound can be controlled to approximately 0.02 with $10^7$ samples.
+  [ICLR 2026][LLM Evaluation][Calibration error] For the problem of estimating the $L_1$ calibration error of binary classifiers from finite samples, this paper proposes the first non-asymptotic…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - Calibration error
-  - finite-sample bounds
-  - distribution-free
-  - bounded variation
-  - kernel estimation
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Calibration error"
+  - "finite-sample bounds"
+  - "distribution-free"
+  - "bounded variation"
+  - "kernel estimation"
 date: 2026-05-08
 content_hash: 0958a155688ee157
 ---

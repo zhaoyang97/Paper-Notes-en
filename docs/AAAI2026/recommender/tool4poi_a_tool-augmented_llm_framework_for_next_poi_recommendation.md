@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Tool4POI: A Tool-Augmented LLM Framework for Next POI Recommendation
 description: >-
-  [AAAI 2026][Recommender Systems][POI Recommendation] This paper is the first to introduce the tool-augmented LLM paradigm to the next POI recommendation task. Through three modules—preference extraction, multi-round candidate retrieval, and reranking—the framework enables LLMs to retrieve recommendations from the full POI pool. It achieves over 40% accuracy in Out-of-History (OOH) scenarios (where existing methods yield 0%), with average Acc@5/10 improvements of 20%/30%.
+  [AAAI 2026][Recommender Systems][POI Recommendation] This paper is the first to introduce the tool-augmented LLM paradigm to the next POI recommendation task. Through three modules—preference extraction…
 tags:
-  - AAAI 2026
-  - Recommender Systems
-  - POI Recommendation
-  - Tool-Augmented LLM
-  - Agent
-  - Open-Set Recommendation
-  - Location-Based Services
+  - "AAAI 2026"
+  - "Recommender Systems"
+  - "POI Recommendation"
+  - "Tool-Augmented LLM"
+  - "Agent"
+  - "Open-Set Recommendation"
+  - "Location-Based Services"
 date: 2026-05-08
 content_hash: 966b96a377447a2f
 ---

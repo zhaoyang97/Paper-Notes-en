@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Benchmarking LLMs for Political Science: A United Nations Perspective
 description: >-
-  [AAAI 2026][LLM Evaluation][UN Security Council] This paper presents UNBench, the first comprehensive LLM evaluation benchmark for political science grounded in UN Security Council records from 1994 to 2024. It encompasses four interrelated tasks—resolution drafting, voting simulation, adoption prediction, and representative statement generation—to systematically assess LLMs' ability to understand and simulate complex political dynamics.
+  [AAAI 2026][LLM Evaluation][UN Security Council] This paper presents UNBench, the first comprehensive LLM evaluation benchmark for political science grounded in UN Security Council records from 1994 to 2024. It encompass…
 tags:
-  - AAAI 2026
-  - LLM Evaluation
-  - UN Security Council
-  - political science benchmark
-  - voting simulation
-  - resolution prediction
-  - diplomatic text generation
+  - "AAAI 2026"
+  - "LLM Evaluation"
+  - "UN Security Council"
+  - "political science benchmark"
+  - "voting simulation"
+  - "resolution prediction"
+  - "diplomatic text generation"
 date: 2026-05-08
 content_hash: 4b68681130a93bcd
 ---

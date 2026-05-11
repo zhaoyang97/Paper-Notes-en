@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HATS: Hardness-Aware Trajectory Synthesis for GUI Agents
 description: >-
-  [CVPR 2026][LLM Agent][GUI Agent] This paper proposes HATS (Hardness-Aware Trajectory Synthesis), a difficulty-aware trajectory synthesis framework that employs a closed-loop mechanism of hardness-driven exploration and alignment-guided refinement. By focusing on the collection and correction of training trajectories for semantically ambiguous actions, HATS substantially improves the generalization capability of GUI Agents in complex real-world scenarios.
+  [CVPR 2026][LLM Agent][GUI Agent] This paper proposes HATS (Hardness-Aware Trajectory Synthesis), a difficulty-aware trajectory synthesis framework that employs a closed-loop mechanism of hardness-driven exploration and…
 tags:
-  - CVPR 2026
-  - LLM Agent
-  - GUI Agent
-  - Trajectory Synthesis
-  - Semantic Ambiguity
-  - Monte Carlo Tree Search
-  - Data Alignment
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "GUI Agent"
+  - "Trajectory Synthesis"
+  - "Semantic Ambiguity"
+  - "Monte Carlo Tree Search"
+  - "Data Alignment"
 date: 2026-05-08
 content_hash: a841a8d1a07fa8f9
 ---

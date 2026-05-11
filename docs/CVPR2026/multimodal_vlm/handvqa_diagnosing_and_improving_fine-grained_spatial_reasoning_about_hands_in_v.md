@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HandVQA: Diagnosing and Improving Fine-Grained Spatial Reasoning about Hands in Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][hand spatial reasoning] This paper introduces HandVQA — a large-scale diagnostic benchmark containing over 1.6 million multiple-choice questions, automatically generated from 3D hand joint annotations. The benchmark covers joint angles, distances, and relative positions, and systematically exposes severe deficiencies of current VLMs in fine-grained hand spatial reasoning. The paper further demonstrates that models fine-tuned on HandVQA can zero-shot transfer to downstream tasks such as gesture recognition (+10.33%) and hand-object interaction recognition (+2.63%).
+  [CVPR 2026][Multimodal VLM][hand spatial reasoning] This paper introduces HandVQA — a large-scale diagnostic benchmark containing over 1.6 million multiple-choice questions…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - hand spatial reasoning
-  - VQA benchmark
-  - vision-language models
-  - fine-grained understanding
-  - zero-shot transfer
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "hand spatial reasoning"
+  - "VQA benchmark"
+  - "vision-language models"
+  - "fine-grained understanding"
+  - "zero-shot transfer"
 date: 2026-05-08
 content_hash: 98d8325bac262b87
 ---

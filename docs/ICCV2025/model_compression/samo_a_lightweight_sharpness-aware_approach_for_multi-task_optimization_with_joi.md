@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SAMO: A Lightweight Sharpness-Aware Approach for Multi-Task Optimization with Joint Global-Local Perturbation
 description: >-
-  [ICCV 2025][Model Compression][Multi-task learning] This paper proposes SAMO, a lightweight sharpness-aware multi-task optimization method that mitigates task gradient conflicts via joint global-local perturbation, while substantially reducing computational overhead through zeroth-order gradient approximation and layer-wise normalization.
+  [ICCV 2025][Model Compression][Multi-task learning] This paper proposes SAMO, a lightweight sharpness-aware multi-task optimization method that mitigates task gradient conflicts via joint global-local perturbation…
 tags:
-  - ICCV 2025
-  - Model Compression
-  - Multi-task learning
-  - sharpness-aware minimization
-  - gradient conflict
-  - zeroth-order gradient estimation
-  - layer-wise normalization
+  - "ICCV 2025"
+  - "Model Compression"
+  - "Multi-task learning"
+  - "sharpness-aware minimization"
+  - "gradient conflict"
+  - "zeroth-order gradient estimation"
+  - "layer-wise normalization"
 date: 2026-05-08
 content_hash: e1a566a6f75839c8
 ---

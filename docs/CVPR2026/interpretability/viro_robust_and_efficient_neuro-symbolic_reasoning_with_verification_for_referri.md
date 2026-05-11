@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] VIRO: Robust and Efficient Neuro-Symbolic Reasoning with Verification for Referring Expression Comprehension
 description: >-
-  [CVPR 2026][Referring Expression Comprehension] VIRO embeds lightweight operator-level verification mechanisms (CLIP uncertainty verification + spatial logic verification) into a neuro-symbolic REC pipeline, enabling each reasoning step to self-verify and terminate early when no target exists. Under a zero-shot setting, it achieves 61.1% balanced accuracy, substantially outperforming compositional reasoning baselines, while maintaining a program failure rate below 0.3% and efficient inference speed.
+  [CVPR 2026][Interpretability][Referring Expression Comprehension] VIRO embeds lightweight operator-level verification mechanisms (CLIP uncertainty verification + spatial logic verification) into a neuro-symbolic REC pipe…
 tags:
-  - CVPR 2026
-  - Referring Expression Comprehension
-  - Neuro-Symbolic Reasoning
-  - Operator-Level Verification
-  - Zero-Shot Learning
-  - Target-Absent Detection
+  - "CVPR 2026"
+  - "Interpretability"
+  - "Referring Expression Comprehension"
+  - "Neuro-Symbolic Reasoning"
+  - "Operator-Level Verification"
+  - "Zero-Shot Learning"
+  - "Target-Absent Detection"
 date: 2026-05-08
 content_hash: ade76f478b34ffc8
 ---

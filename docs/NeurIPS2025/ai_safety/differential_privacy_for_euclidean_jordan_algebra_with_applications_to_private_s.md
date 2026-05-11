@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Differential Privacy for Euclidean Jordan Algebra with Applications to Private Symmetric Cone Programming
 description: >-
-  [NeurIPS 2025][AI Safety][differential privacy] This paper proposes a general Gaussian privacy mechanism based on Euclidean Jordan Algebra (EJA) and, building upon it, designs the first differentially private algorithm for Symmetric Cone Programming (SCP), thereby resolving an important open problem on differentially private semidefinite programming posed by Hsu et al. (ICALP 2014).
+  [NeurIPS 2025][AI Safety][differential privacy] This paper proposes a general Gaussian privacy mechanism based on Euclidean Jordan Algebra (EJA) and, building upon it…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - differential privacy
-  - Euclidean Jordan Algebra
-  - Symmetric Cone Programming
-  - Semidefinite Programming
-  - Gaussian Mechanism
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "differential privacy"
+  - "Euclidean Jordan Algebra"
+  - "Symmetric Cone Programming"
+  - "Semidefinite Programming"
+  - "Gaussian Mechanism"
 date: 2026-05-08
 content_hash: 99c53f0394b28108
 ---

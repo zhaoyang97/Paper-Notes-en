@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ADIEE: Automatic Dataset Creation and Scorer for Instruction-Guided Image Editing Evaluation
 description: >-
-  [ICCV 2025][Image Generation][image editing evaluation] This paper proposes ADIEE, an automated pipeline for constructing a training dataset of over 100,000 samples for image editing evaluation. It fine-tunes LLaVA-NeXT-8B as an editing quality scorer and surpasses open-source VLMs and Gemini-Pro 1.5 on multiple benchmarks. The resulting scorer can also serve as a reward model to improve editing model performance.
+  [ICCV 2025][Image Generation][image editing evaluation] This paper proposes ADIEE, an automated pipeline for constructing a training dataset of over 100…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - image editing evaluation
-  - automated scoring
-  - VLM fine-tuning
-  - reward model
-  - instruction-guided editing
+  - "ICCV 2025"
+  - "Image Generation"
+  - "image editing evaluation"
+  - "automated scoring"
+  - "VLM fine-tuning"
+  - "reward model"
+  - "instruction-guided editing"
 date: 2026-05-08
 content_hash: 17c5124917d5a1f4
 ---

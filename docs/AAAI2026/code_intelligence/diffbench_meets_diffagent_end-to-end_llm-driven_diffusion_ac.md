@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] DiffBench Meets DiffAgent: End-to-End LLM-Driven Diffusion Acceleration Code Generation
 description: >-
-  [AAAI 2026][LLM Agent] This paper proposes DiffBench (an evaluation benchmark comprising 604 diffusion model acceleration tasks across 5 difficulty levels) and DiffAgent (a closed-loop framework integrating Planning, Coding, and Debugging agents with a genetic algorithm-based selector). On Claude Sonnet 4, the framework improves the pass rate for diffusion acceleration code generation from 54.30% to 81.59%, achieving a 68.27% success rate on complex optimization tasks.
+  [AAAI 2026][Code Intelligence][LLM Agent] This paper proposes DiffBench (an evaluation benchmark comprising 604 diffusion model acceleration tasks across 5 difficulty levels) and DiffAgent (a closed-loop framework integr…
 tags:
-  - AAAI 2026
-  - LLM Agent
-  - diffusion model acceleration
-  - code generation
-  - benchmark
-  - genetic algorithm optimization
+  - "AAAI 2026"
+  - "Code Intelligence"
+  - "LLM Agent"
+  - "diffusion model acceleration"
+  - "code generation"
+  - "benchmark"
+  - "genetic algorithm optimization"
 date: 2026-05-08
 content_hash: 8b6f75fe8bc8404d
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Granular Study of Safety Pretraining under Model Abliteration
 description: >-
-  [NeurIPS 2025][Model Compression][LLM safety] This paper systematically investigates the effects of model abliteration—a inference-time activation space editing attack—on various data-driven safety pretraining stages. It finds that safety mechanisms relying solely on refusal training are highly vulnerable, whereas **combining multiple safety signals** (safe-only filtering + rephrasing + metatags + refusals) distributes safety behavior across a broader representational space, making it substantially more resistant to single-direction projection removal.
+  [NeurIPS 2025][Model Compression][LLM safety] This paper systematically investigates the effects of model abliteration—a inference-time activation space editing attack—on various data-driven safety pretraining stages. It…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - LLM safety
-  - abliteration
-  - safety pretraining
-  - activation space editing
-  - refusal behavior
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "LLM safety"
+  - "abliteration"
+  - "safety pretraining"
+  - "activation space editing"
+  - "refusal behavior"
 date: 2026-05-08
 content_hash: 0bc25f8b105dc99f
 ---

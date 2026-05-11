@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CLAWS: Creativity Detection for LLM-Generated Solutions Using Attention Window of Sections
 description: >-
-  [NeurIPS 2025][AIGC Detection][LLM creativity detection] This paper proposes CLAWS, a method that analyzes the attention weight distribution of LLMs across different prompt sections during mathematical solution generation to classify outputs as "creative," "typical," or "hallucinated," without requiring human evaluation.
+  [NeurIPS 2025][AIGC Detection][LLM creativity detection] This paper proposes CLAWS, a method that analyzes the attention weight distribution of LLMs across different prompt sections during mathematical solution generatio…
 tags:
-  - NeurIPS 2025
-  - AIGC Detection
-  - LLM creativity detection
-  - attention analysis
-  - mathematical reasoning
-  - hallucination detection
-  - white-box method
+  - "NeurIPS 2025"
+  - "AIGC Detection"
+  - "LLM creativity detection"
+  - "attention analysis"
+  - "mathematical reasoning"
+  - "hallucination detection"
+  - "white-box method"
 date: 2026-05-08
 content_hash: fabe7d8fd53f4835
 ---

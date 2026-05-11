@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Constrained Particle Seeking: Solving Diffusion Inverse Problems with Just Forward Passes
 description: >-
-  [AAAI 2026][Image Generation][Diffusion Models] This paper proposes Constrained Particle Seeking (CPS), a gradient-free method for solving diffusion model inverse problems. CPS constructs a locally linear surrogate of the forward process using all candidate particles, then seeks the optimal particle under a hyperspherical constraint within the high-density region of the transition kernel, achieving performance competitive with gradient-based methods.
+  [AAAI 2026][Image Generation][Diffusion Models] This paper proposes Constrained Particle Seeking (CPS), a gradient-free method for solving diffusion model inverse problems. CPS constructs a locally linear surrogate of th…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Diffusion Models
-  - Inverse Problems
-  - Gradient-Free Methods
-  - Particle Optimization
-  - Constrained Optimization
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "Inverse Problems"
+  - "Gradient-Free Methods"
+  - "Particle Optimization"
+  - "Constrained Optimization"
 date: 2026-05-08
 content_hash: b8bce44a978abf75
 ---

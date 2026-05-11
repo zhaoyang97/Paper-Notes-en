@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Alignment through Meta-Weighted Online Sampling: Bridging the Gap between Data Generation and Preference Optimization
 description: >-
-  [ICLR 2026][LLM Alignment][Preference Optimization] This paper proposes MetaAPO, a framework that employs a lightweight meta-learner (a two-layer MLP) to dynamically estimate the alignment gap between offline and online data. The meta-learner simultaneously guides *where* to perform online sampling (addressing distribution mismatch) and adaptively reweights offline/online data during training (improving learning efficiency). MetaAPO outperforms DPO, Online DPO, and other baselines on AlpacaEval 2, Arena-Hard, and MT-Bench, while reducing online annotation costs by 42%.
+  [ICLR 2026][LLM Alignment][Preference Optimization] This paper proposes MetaAPO, a framework that employs a lightweight meta-learner (a two-layer MLP) to dynamically estimate the alignment gap between offline and online…
 tags:
-  - ICLR 2026
-  - LLM Alignment
-  - Preference Optimization
-  - Online Sampling
-  - Meta-Learned Weights
-  - Distribution Mismatch
-  - DPO
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Preference Optimization"
+  - "Online Sampling"
+  - "Meta-Learned Weights"
+  - "Distribution Mismatch"
+  - "DPO"
 date: 2026-05-08
 content_hash: 5ac3db987d6f1952
 ---

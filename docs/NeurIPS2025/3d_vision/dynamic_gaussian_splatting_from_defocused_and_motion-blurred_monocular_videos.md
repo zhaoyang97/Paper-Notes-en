@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dynamic Gaussian Splatting from Defocused and Motion-blurred Monocular Videos
 description: >-
-  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] A unified framework is proposed that jointly models defocus blur and motion blur via learnable blur kernel convolution, combined with a dynamic Gaussian densification strategy and unseen-view constraints, enabling high-quality novel view synthesis of dynamic scenes from blurry monocular videos using 3DGS.
+  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] A unified framework is proposed that jointly models defocus blur and motion blur via learnable blur kernel convolution…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - dynamic scene reconstruction
-  - defocus blur
-  - motion blur
-  - novel view synthesis
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "dynamic scene reconstruction"
+  - "defocus blur"
+  - "motion blur"
+  - "novel view synthesis"
 date: 2026-05-08
 content_hash: 49c9027a1b8fb3ec
 ---

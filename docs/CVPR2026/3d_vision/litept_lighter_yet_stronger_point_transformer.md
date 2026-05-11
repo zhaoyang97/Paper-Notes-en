@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LitePT: Lighter Yet Stronger Point Transformer
 description: >-
-  [CVPR 2026][3D Vision][Point Cloud Transformer] LitePT conducts a systematic analysis of the roles played by convolution and attention at different U-Net stages, and proposes a hierarchical hybrid architecture that employs sparse convolution in shallow stages and attention in deep stages. Combined with the parameter-free PointROPE positional encoding, LitePT achieves 3.6× fewer parameters, 2× faster inference, and 2× lower memory consumption compared to Point Transformer V3, while matching or surpassing its performance across multiple point cloud benchmarks.
+  [CVPR 2026][3D Vision][Point Cloud Transformer] LitePT conducts a systematic analysis of the roles played by convolution and attention at different U-Net stages…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Point Cloud Transformer
-  - Hybrid Architecture
-  - Positional Encoding
-  - Efficient Inference
-  - 3D Semantic Segmentation
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Point Cloud Transformer"
+  - "Hybrid Architecture"
+  - "Positional Encoding"
+  - "Efficient Inference"
+  - "3D Semantic Segmentation"
 date: 2026-05-08
 content_hash: 0da083805a85f3d1
 ---

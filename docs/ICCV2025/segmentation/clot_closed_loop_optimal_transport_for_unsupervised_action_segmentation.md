@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CLOT: Closed Loop Optimal Transport for Unsupervised Action Segmentation
 description: >-
-  [ICCV 2025][Segmentation][Unsupervised Action Segmentation] This paper proposes Closed Loop Optimal Transport (CLOT), a framework that jointly solves three OT problems through a three-level cyclic feature learning pipeline (frame embeddings → segment embeddings → cross-attention refined frame embeddings), establishing an explicit feedback loop between frame-level and segment-level representations to substantially improve boundary detection and clustering quality in unsupervised action segmentation.
+  [ICCV 2025][Segmentation][Unsupervised Action Segmentation] This paper proposes Closed Loop Optimal Transport (CLOT), a framework that jointly solves three OT problems through a three-level cyclic feature learning pipeli…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - Unsupervised Action Segmentation
-  - Optimal Transport
-  - Closed-Loop Learning
-  - Encoder-Decoder
-  - Sliced Wasserstein Distance
+  - "ICCV 2025"
+  - "Segmentation"
+  - "Unsupervised Action Segmentation"
+  - "Optimal Transport"
+  - "Closed-Loop Learning"
+  - "Encoder-Decoder"
+  - "Sliced Wasserstein Distance"
 date: 2026-05-08
 content_hash: b3982c62a4d8e7a7
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] On Universality Classes of Equivariant Networks
 description: >-
-  [NeurIPS 2025][equivariant neural networks] This paper proves that the separation power of equivariant neural networks (i.e., their ability to distinguish symmetry-inequivalent inputs) is insufficient to fully characterize their approximation capacity—models with identical separation power may possess strictly different approximation abilities. The paper provides a complete characterization of universality classes for shallow invariant networks and establishes sufficient conditions for universality failure.
+  [NeurIPS 2025][equivariant neural networks] This paper proves that the separation power of equivariant neural networks (i.e., their ability to distinguish symmetry-inequivalent inputs) is insufficient to fully characteri…
 tags:
-  - NeurIPS 2025
-  - equivariant neural networks
-  - universal approximation
-  - separation power
-  - symmetry groups
-  - universality classes
+  - "NeurIPS 2025"
+  - "equivariant neural networks"
+  - "universal approximation"
+  - "separation power"
+  - "symmetry groups"
+  - "universality classes"
 date: 2026-05-08
 content_hash: 78d9f53f8abe2432
 ---

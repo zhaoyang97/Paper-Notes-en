@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Q-FSRU: Quantum-Augmented Frequency-Spectral Fusion for Medical Visual Question Answering
 description: >-
-  [AAAI 2026][Medical Imaging][Medical VQA] This paper proposes Q-FSRU, a model that transforms medical image and text features into the frequency domain via FFT for multimodal fusion, and incorporates external medical knowledge through a quantum-inspired retrieval-augmented generation (Quantum RAG) mechanism, achieving 90% accuracy and a ROC-AUC of 0.9541 on the VQA-RAD dataset.
+  [AAAI 2026][Medical Imaging][Medical VQA] This paper proposes Q-FSRU, a model that transforms medical image and text features into the frequency domain via FFT for multimodal fusion…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Medical VQA
-  - Frequency-Domain Fusion
-  - Quantum Retrieval-Augmented Generation
-  - Fast Fourier Transform
-  - Cross-Modal Reasoning
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Medical VQA"
+  - "Frequency-Domain Fusion"
+  - "Quantum Retrieval-Augmented Generation"
+  - "Fast Fourier Transform"
+  - "Cross-Modal Reasoning"
 date: 2026-05-08
 content_hash: 712d8dec9d5b79c6
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LLaVA-3D: A Simple yet Effective Pathway to Empowering LMMs with 3D Capabilities
 description: >-
-  [ICCV 2025][3D Vision][3D Scene Understanding] This paper proposes LLaVA-3D, which constructs "3D Patches" by injecting 3D positional embeddings into 2D CLIP patch features, extending a 2D LMM (LLaVA-Video) into a unified 2D/3D understanding model with minimal architectural modifications. The approach achieves 3.5× faster training convergence than existing 3D LMMs, reaches state-of-the-art performance on multiple 3D benchmarks, and preserves 2D capabilities without degradation.
+  [ICCV 2025][3D Vision][3D Scene Understanding] This paper proposes LLaVA-3D, which constructs "3D Patches" by injecting 3D positional embeddings into 2D CLIP patch features…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D Scene Understanding
-  - Large Multimodal Models
-  - 3D Patch
-  - Positional Encoding
-  - Visual Grounding
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D Scene Understanding"
+  - "Large Multimodal Models"
+  - "3D Patch"
+  - "Positional Encoding"
+  - "Visual Grounding"
 date: 2026-05-08
 content_hash: 82888ef685edc6ea
 ---

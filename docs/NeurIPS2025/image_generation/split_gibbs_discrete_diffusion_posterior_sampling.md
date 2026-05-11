@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Split Gibbs Discrete Diffusion Posterior Sampling
 description: >-
-  [NeurIPS 2025][Image Generation][Discrete Diffusion Models] This paper proposes SGDD (Split Gibbs Discrete Diffusion), a plug-and-play posterior sampling algorithm for discrete diffusion models based on the split Gibbs sampling principle. By introducing auxiliary variables and a Hamming-distance-based regularization potential, SGDD decomposes posterior sampling into alternating likelihood and prior sampling steps, achieving substantial improvements over baselines on DNA sequence design, discrete image inverse problems, and music infilling tasks.
+  [NeurIPS 2025][Image Generation][Discrete Diffusion Models] This paper proposes SGDD (Split Gibbs Discrete Diffusion), a plug-and-play posterior sampling algorithm for discrete diffusion models based on the split Gibbs s…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Discrete Diffusion Models
-  - Posterior Sampling
-  - Split Gibbs Sampling
-  - Inverse Problems
-  - DNA Sequence Design
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Discrete Diffusion Models"
+  - "Posterior Sampling"
+  - "Split Gibbs Sampling"
+  - "Inverse Problems"
+  - "DNA Sequence Design"
 date: 2026-05-08
 content_hash: eb3f77fe2477f0e1
 ---

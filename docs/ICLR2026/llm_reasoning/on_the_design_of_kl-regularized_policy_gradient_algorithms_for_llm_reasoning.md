@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] On the Design of KL-Regularized Policy Gradient Algorithms for LLM Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][KL Regularization] This paper proposes the Regularized Policy Gradient (RPG) framework, which systematically derives and analyzes policy gradient methods based on Forward/Reverse KL divergence (in both normalized and unnormalized forms). It identifies a theoretical inconsistency in GRPO's KL term and achieves superior performance over GRPO, REINFORCE++, and DAPO on mathematical reasoning benchmarks.
+  [ICLR 2026][LLM Reasoning][KL Regularization] This paper proposes the Regularized Policy Gradient (RPG) framework, which systematically derives and analyzes policy gradient methods based on Forward/Reverse KL divergence…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - KL Regularization
-  - Policy Gradient
-  - GRPO
-  - REINFORCE
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "KL Regularization"
+  - "Policy Gradient"
+  - "GRPO"
+  - "REINFORCE"
 date: 2026-05-08
 content_hash: 4cac7cd45df5fd57
 ---

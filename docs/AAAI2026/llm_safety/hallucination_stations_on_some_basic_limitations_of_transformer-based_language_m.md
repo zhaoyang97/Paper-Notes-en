@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Hallucination Stations: On Some Basic Limitations of Transformer-Based Language Models
 description: >-
-  [AAAI 2026][LLM Safety][Hallucination] This paper employs computational complexity theory to demonstrate that the per-step inference complexity of Transformer-based LLMs is $O(N^2 \cdot d)$. Grounded in the Hartmanis–Stearns Time Hierarchy Theorem, it proves that any computational task exceeding this complexity bound—such as $O(n^3)$ matrix multiplication, $O(n^k)$ token enumeration, or TSP verification—necessarily causes hallucination. Furthermore, LLM agents are shown to be incapable of verifying the correctness of such tasks.
+  [AAAI 2026][LLM Safety][Hallucination] This paper employs computational complexity theory to demonstrate that the per-step inference complexity of Transformer-based LLMs is $O(N^2 \cdot d)$. Grounded in the Hartmanis–Ste…
 tags:
-  - AAAI 2026
-  - LLM Safety
-  - Hallucination
-  - Computational Complexity
-  - Time Hierarchy Theorem
-  - Transformer
-  - Agentic AI
-  - Verification Impossibility
+  - "AAAI 2026"
+  - "LLM Safety"
+  - "Hallucination"
+  - "Computational Complexity"
+  - "Time Hierarchy Theorem"
+  - "Transformer"
+  - "Agentic AI"
+  - "Verification Impossibility"
 date: 2026-05-08
 content_hash: 715b035e59cfa0b8
 ---

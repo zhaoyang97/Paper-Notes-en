@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] CASL: Curvature-Augmented Self-supervised Learning for 3D Anomaly Detection
 description: >-
-  [AAAI2026][3D anomaly detection] This work identifies point cloud curvature as a powerful cue for anomaly detection and proposes CASL, a curvature-augmented self-supervised learning framework. By guiding coordinate reconstruction with multi-scale curvature prompts, CASL learns generalizable 3D representations without any anomaly-detection-specific mechanisms, achieving a 5.6% O-AUROC improvement over the previous state of the art on Real3D-AD.
+  [AAAI2026][3D anomaly detection] This work identifies point cloud curvature as a powerful cue for anomaly detection and proposes CASL…
 tags:
-  - AAAI2026
-  - 3D anomaly detection
-  - self-supervised learning
-  - curvature
-  - point cloud
-  - U-Net
+  - "AAAI2026"
+  - "3D anomaly detection"
+  - "self-supervised learning"
+  - "curvature"
+  - "point cloud"
+  - "U-Net"
 date: 2026-05-08
 content_hash: 5750ba6f413f039f
 ---

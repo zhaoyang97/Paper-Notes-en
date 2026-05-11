@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] NeurIPT: Foundation Model for Neural Interfaces
 description: >-
-  [NeurIPS 2025][Medical Imaging][EEG foundation model] NeurIPT is an EEG foundation model for diverse brain–computer interface (BCI) applications. Through four key innovations—Amplitude-Aware Masking Pre-training (AAMP), Progressive Mixture-of-Experts (PMoE) architecture, 3D electrode spatial encoding, and Intra- and Inter-Lobe Pooling (IILP)—it achieves state-of-the-art performance across eight downstream BCI tasks.
+  [NeurIPS 2025][Medical Imaging][EEG foundation model] NeurIPT is an EEG foundation model for diverse brain–computer interface (BCI) applications. Through four key innovations—Amplitude-Aware Masking Pre-training (AAMP)…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - EEG foundation model
-  - self-supervised pre-training
-  - Mixture-of-Experts
-  - EEG signals
-  - brain–computer interface
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "EEG foundation model"
+  - "self-supervised pre-training"
+  - "Mixture-of-Experts"
+  - "EEG signals"
+  - "brain–computer interface"
 date: 2026-05-08
 content_hash: 9fa95a5ceabdaf07
 ---

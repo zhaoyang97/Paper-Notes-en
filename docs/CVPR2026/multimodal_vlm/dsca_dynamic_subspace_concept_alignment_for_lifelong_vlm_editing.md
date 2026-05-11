@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DSCA: Dynamic Subspace Concept Alignment for Lifelong VLM Editing
 description: >-
-  [CVPR 2026][Multimodal VLM][Knowledge editing] DSCA decomposes the VLM representation space into a set of orthogonal semantic subspaces and performs gated residual interventions within each subspace for knowledge editing, achieving >95% editing success rate with near-zero forgetting after 1,000 sequential edits.
+  [CVPR 2026][Multimodal VLM][Knowledge editing] DSCA decomposes the VLM representation space into a set of orthogonal semantic subspaces and performs gated residual interventions within each subspace for knowledge editing…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Knowledge editing
-  - vision-language models
-  - subspace decomposition
-  - continual learning
-  - catastrophic forgetting
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Knowledge editing"
+  - "vision-language models"
+  - "subspace decomposition"
+  - "continual learning"
+  - "catastrophic forgetting"
 date: 2026-05-08
 content_hash: ca852f9b7b4b1468
 ---

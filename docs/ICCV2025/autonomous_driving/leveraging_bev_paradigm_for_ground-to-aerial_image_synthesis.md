@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SkyDiffusion: Leveraging BEV Paradigm for Ground-to-Aerial Image Synthesis
 description: >-
-  [ICCV 2025][Autonomous Driving][Cross-view image synthesis] This paper proposes SkyDiffusion, which combines a Curved-BEV transformation with a BEV-guided diffusion model to achieve high-quality cross-view synthesis from ground-level street view images to aerial/satellite imagery, and introduces the Ground2Aerial-3 multi-scene dataset.
+  [ICCV 2025][Autonomous Driving][Cross-view image synthesis] This paper proposes SkyDiffusion, which combines a Curved-BEV transformation with a BEV-guided diffusion model to achieve high-quality cross-view synthesis from…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - Cross-view image synthesis
-  - Bird's-eye view transformation
-  - Diffusion models
-  - Ground-to-aerial generation
-  - Street view to satellite imagery
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "Cross-view image synthesis"
+  - "Bird's-eye view transformation"
+  - "Diffusion models"
+  - "Ground-to-aerial generation"
+  - "Street view to satellite imagery"
 date: 2026-05-08
 content_hash: 080e7bdfd185f2e3
 ---

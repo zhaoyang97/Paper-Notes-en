@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Conditionally Whitened Generative Models for Probabilistic Time Series Forecasting
 description: >-
-  [ICLR 2026][Image Generation][probabilistic forecasting] This paper proposes CW-Gen (Conditionally Whitened Generative Models), which replaces the standard Gaussian terminal distribution in diffusion models and flow matching by jointly estimating the conditional mean and a sliding-window covariance matrix. The authors provide theoretical guarantees showing that sampling quality is necessarily improved when the estimator satisfies sufficient conditions, and demonstrate consistent improvements in multivariate time series probabilistic forecasting across 5 datasets × 6 generative models.
+  [ICLR 2026][Image Generation][probabilistic forecasting] This paper proposes CW-Gen (Conditionally Whitened Generative Models), which replaces the standard Gaussian terminal distribution in diffusion models and flow matc…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - probabilistic forecasting
-  - diffusion model
-  - flow matching
-  - conditional whitening
-  - covariance estimation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "probabilistic forecasting"
+  - "diffusion model"
+  - "flow matching"
+  - "conditional whitening"
+  - "covariance estimation"
 date: 2026-05-08
 content_hash: b30b69395ede7e3e
 ---

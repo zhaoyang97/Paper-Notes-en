@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Boost 3D Reconstruction using Diffusion-based Monocular Camera Calibration
 description: >-
-  [ICCV 2025][3D Vision][Monocular camera calibration] This paper proposes DM-Calib, which leverages Stable Diffusion priors for monocular camera intrinsic estimation. It introduces a Camera Image representation that losslessly encodes intrinsics as an image, and recovers focal length and principal point via RANSAC. DM-Calib significantly outperforms existing calibration methods on 5 zero-shot datasets and advances downstream tasks including metric depth estimation, pose estimation, and sparse-view reconstruction.
+  [ICCV 2025][3D Vision][Monocular camera calibration] This paper proposes DM-Calib, which leverages Stable Diffusion priors for monocular camera intrinsic estimation. It introduces a Camera Image representation that lossl…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Monocular camera calibration
-  - diffusion model
-  - depth estimation
-  - 3D reconstruction
-  - Camera Image
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Monocular camera calibration"
+  - "diffusion model"
+  - "depth estimation"
+  - "3D reconstruction"
+  - "Camera Image"
 date: 2026-05-08
 content_hash: 57e586014443d065
 ---

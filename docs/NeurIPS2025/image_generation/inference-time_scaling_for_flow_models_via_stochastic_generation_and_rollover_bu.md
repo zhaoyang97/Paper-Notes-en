@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Inference-Time Scaling for Flow Models via Stochastic Generation and Rollover Budget Forcing
 description: >-
-  [NeurIPS2025][Image Generation][Flow Models] This paper proposes inference-time scaling methods for flow models: stochasticity is introduced via ODE→SDE conversion to enable particle sampling; the search space is expanded through linear→VP interpolant conversion; and a Rollover Budget Forcing (RBF) strategy is designed to adaptively allocate the computational budget. The approach substantially outperforms all existing methods on compositional text-to-image generation and quantity-aware generation tasks.
+  [NeurIPS2025][Image Generation][Flow Models] This paper proposes inference-time scaling methods for flow models: stochasticity is introduced via ODE→SDE conversion to enable particle sampling…
 tags:
-  - NeurIPS2025
-  - Image Generation
-  - Flow Models
-  - Inference-Time Scaling
-  - Particle Sampling
-  - SDE Conversion
-  - Interpolant Conversion
-  - Rollover Budget Forcing
-  - FLUX
+  - "NeurIPS2025"
+  - "Image Generation"
+  - "Flow Models"
+  - "Inference-Time Scaling"
+  - "Particle Sampling"
+  - "SDE Conversion"
+  - "Interpolant Conversion"
+  - "Rollover Budget Forcing"
+  - "FLUX"
 date: 2026-05-08
 content_hash: 3b4c37611636ab2a
 ---

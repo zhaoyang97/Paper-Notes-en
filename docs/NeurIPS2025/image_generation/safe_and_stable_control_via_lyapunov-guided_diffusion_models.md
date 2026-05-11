@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Safe and Stable Control via Lyapunov-Guided Diffusion Models
 description: >-
-  [NeurIPS 2025][Image Generation][Diffusion models] This paper proposes S²Diff, a model-based diffusion planning framework that leverages Control Lyapunov Barrier Functions (CLBF) to guide diffusion sampling for generating trajectory-level control policies. Without requiring control-affine assumptions or quadratic programming, S²Diff simultaneously guarantees safety and stability on a variety of nonlinear dynamical systems, achieving an average safety rate of 98.75%.
+  [NeurIPS 2025][Image Generation][Diffusion models] This paper proposes S²Diff, a model-based diffusion planning framework that leverages Control Lyapunov Barrier Functions (CLBF) to guide diffusion sampling for generatin…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Diffusion models
-  - Lyapunov stability
-  - safe control
-  - certificate functions
-  - Almost Lyapunov theory
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Diffusion models"
+  - "Lyapunov stability"
+  - "safe control"
+  - "certificate functions"
+  - "Almost Lyapunov theory"
 date: 2026-05-08
 content_hash: 56aae182e2776175
 ---

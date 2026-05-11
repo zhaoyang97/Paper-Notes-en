@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SpikeTrack: A Spike-driven Framework for Efficient Visual Tracking
 description: >-
-  [CVPR 2026][Video Understanding][Spiking Neural Networks] SpikeTrack is proposed as the first RGB visual tracking framework fully compliant with the spike-driven paradigm. Through asymmetric temporal step expansion, unidirectional information flow, and a brain-inspired Memory Retrieval Module (MRM), it achieves SOTA among SNN-based trackers and is on par with ANN-based trackers, while consuming only 1/26 the energy of TransT.
+  [CVPR 2026][Video Understanding][Spiking Neural Networks] SpikeTrack is proposed as the first RGB visual tracking framework fully compliant with the spike-driven paradigm. Through asymmetric temporal step expansion…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Spiking Neural Networks
-  - Visual Tracking
-  - Energy Efficiency
-  - Asymmetric Architecture
-  - Memory Retrieval
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Spiking Neural Networks"
+  - "Visual Tracking"
+  - "Energy Efficiency"
+  - "Asymmetric Architecture"
+  - "Memory Retrieval"
 date: 2026-05-08
 content_hash: 1e1000596de03780
 ---

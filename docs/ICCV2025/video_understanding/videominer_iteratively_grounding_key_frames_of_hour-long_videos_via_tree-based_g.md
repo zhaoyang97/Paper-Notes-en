@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] VideoMiner: Iteratively Grounding Key Frames of Hour-Long Videos via Tree-based Group Relative Policy Optimization
 description: >-
-  [ICCV 2025][Video Understanding][Long-form video understanding] This paper proposes VideoMiner, a tree-structured reinforcement learning framework for long-form video understanding. It iteratively applies segmentation–captioning–clustering to construct a hierarchical video tree, and introduces T-GRPO (Tree-based Group Relative Policy Optimization) to guide a policy model in adaptively exploring key frames. VideoMiner achieves state-of-the-art performance on four long-video benchmarks, and it is observed that T-GRPO spontaneously elicits chain-of-thought reasoning.
+  [ICCV 2025][Video Understanding][Long-form video understanding] This paper proposes VideoMiner, a tree-structured reinforcement learning framework for long-form video understanding. It iteratively applies segmentation–ca…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - Long-form video understanding
-  - key frame extraction
-  - reinforcement learning
-  - GRPO
-  - tree structure
-  - hierarchical video representation
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "Long-form video understanding"
+  - "key frame extraction"
+  - "reinforcement learning"
+  - "GRPO"
+  - "tree structure"
+  - "hierarchical video representation"
 date: 2026-05-08
 content_hash: fcbb8eb725a390cd
 ---

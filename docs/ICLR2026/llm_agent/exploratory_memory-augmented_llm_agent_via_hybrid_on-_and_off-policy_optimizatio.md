@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Exploratory Memory-Augmented LLM Agent via Hybrid On- and Off-Policy Optimization
 description: >-
-  [ICLR 2026][LLM Agent] This paper proposes EMPO2, an RL framework that combines an external memory module with hybrid on-policy/off-policy updates. By leveraging memory-guided exploration and knowledge distillation to internalize exploration gains into model parameters, EMPO2 achieves improvements of 128.6% and 11.3% over GRPO on ScienceWorld and WebShop, respectively.
+  [ICLR 2026][LLM Agent][Reinforcement Learning] This paper proposes EMPO2, an RL framework that combines an external memory module with hybrid on-policy/off-policy updates. By leveraging memory-guided exploration and know…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Reinforcement Learning
-  - Exploration
-  - External Memory
-  - Hybrid Policy Optimization
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Reinforcement Learning"
+  - "Exploration"
+  - "External Memory"
+  - "Hybrid Policy Optimization"
 date: 2026-05-08
 content_hash: f48c87d065d9ff5a
 ---

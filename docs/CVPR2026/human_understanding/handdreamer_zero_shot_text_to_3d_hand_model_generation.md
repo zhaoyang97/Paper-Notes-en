@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HandDreamer: Zero-Shot Text to 3D Hand Model Generation
 description: >-
-  [CVPR 2026][Human Understanding][text-to-3D] This paper presents HandDreamer, the first method for zero-shot 3D hand model generation from text prompts. It addresses view inconsistency and geometric distortion in SDS-based optimization through MANO initialization, skeleton-guided diffusion, and a corrective hand shape loss.
+  [CVPR 2026][Human Understanding][text-to-3D] This paper presents HandDreamer, the first method for zero-shot 3D hand model generation from text prompts. It addresses view inconsistency and geometric distortion in SDS-bas…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - text-to-3D
-  - hand generation
-  - SDS
-  - MANO
-  - view consistency
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "text-to-3D"
+  - "hand generation"
+  - "SDS"
+  - "MANO"
+  - "view consistency"
 date: 2026-05-08
 content_hash: f114a684ec415632
 ---

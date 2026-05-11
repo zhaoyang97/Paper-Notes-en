@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MoSA: Motion-Coherent Human Video Generation via Structure-Appearance Decoupling
 description: >-
-  [ICLR 2026][Video Generation][Human video generation] MoSA decomposes human video generation into a **structure generation** stage (a 3D Transformer generates physically plausible motion skeletons) and an **appearance generation** stage (a DiT synthesizes video conditioned on the skeletons). A Human-Aware Dynamic Control (HADC) module propagates sparse skeleton signals across the entire motion region. Combined with a dense tracking loss and contact constraints, MoSA comprehensively outperforms SOTA models such as HunyuanVideo and Wan 2.1 on FVD, CLIPSIM, and other metrics.
+  [ICLR 2026][Video Generation][Human video generation] MoSA decomposes human video generation into a **structure generation** stage (a 3D Transformer generates physically plausible motion skeletons) and an **appearance ge…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - Human video generation
-  - structure-appearance decoupling
-  - 3D motion generation
-  - DiT
-  - dense tracking loss
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Human video generation"
+  - "structure-appearance decoupling"
+  - "3D motion generation"
+  - "DiT"
+  - "dense tracking loss"
 date: 2026-05-08
 content_hash: 78f6035cb3bd1cdf
 ---

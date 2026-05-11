@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Federated ADMM from Bayesian Duality
 description: >-
-  [ICLR 2026][ADMM] This paper derives a Bayesian dual structure for ADMM from a variational Bayes (VB) perspective, proving that classical ADMM is a special case of VB over isotropic Gaussian families. Two novel extensions are introduced: a Newton-like variant (one-round convergence on quadratic objectives) and an Adam-like variant (IVON-ADMM, achieving +7% accuracy in heterogeneous deep learning settings).
+  [ICLR 2026][ADMM] This paper derives a Bayesian dual structure for ADMM from a variational Bayes (VB) perspective, proving that classical ADMM is a special case of VB over isotropic Gaussian families. Two novel extension…
 tags:
-  - ICLR 2026
-  - ADMM
-  - Variational Bayes
-  - Natural Gradient
-  - Federated Learning
-  - Bayesian Duality
+  - "ICLR 2026"
+  - "ADMM"
+  - "Variational Bayes"
+  - "Natural Gradient"
+  - "Federated Learning"
+  - "Bayesian Duality"
 date: 2026-05-08
 content_hash: 76576fb2109b5dd4
 ---

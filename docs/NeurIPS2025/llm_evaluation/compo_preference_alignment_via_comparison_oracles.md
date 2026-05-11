@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ComPO: Preference Alignment via Comparison Oracles
 description: >-
-  [NeurIPS 2025][LLM Evaluation][Preference Alignment] To address likelihood displacement and verbosity caused by noisy preference pairs (where preferred and dispreferred responses are highly similar) in DPO, this paper proposes ComPO, a zeroth-order preference alignment method based on comparison oracles. The approach partitions data into clean and noisy subsets, applying DPO to the clean subset and ComPO to extract alignment signals from the noisy subset, achieving consistent improvements in LC win rate on benchmarks such as AlpacaEval 2.
+  [NeurIPS 2025][LLM Evaluation][Preference Alignment] To address likelihood displacement and verbosity caused by noisy preference pairs (where preferred and dispreferred responses are highly similar) in DPO…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - Preference Alignment
-  - DPO
-  - Comparison Oracle
-  - Likelihood Displacement
-  - Zeroth-Order Optimization
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "Preference Alignment"
+  - "DPO"
+  - "Comparison Oracle"
+  - "Likelihood Displacement"
+  - "Zeroth-Order Optimization"
 date: 2026-05-08
 content_hash: a2900718ecdf3799
 ---

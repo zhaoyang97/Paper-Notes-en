@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Functional Embeddings Enable Aggregation of Multi-Area SEEG Data for Robust BCI
 description: >-
-  [ICLR 2026][Social Computing][Brain-Computer Interface] This paper proposes FunctionalMap, a framework that uses contrastive learning to learn subject-agnostic functional embeddings from intracranial local field potentials (LFPs) as a "functional coordinate system," replacing unreliable MNI anatomical coordinates. Combined with a Transformer, it enables cross-subject and cross-electrode aggregation of neural data and signal reconstruction, validated on a multi-area SEEG dataset from 20 subjects.
+  [ICLR 2026][Social Computing][Brain-Computer Interface] This paper proposes FunctionalMap, a framework that uses contrastive learning to learn subject-agnostic functional embeddings from intracranial local field potentia…
 tags:
-  - ICLR 2026
-  - Social Computing
-  - Brain-Computer Interface
-  - SEEG
-  - Functional Embedding
-  - Contrastive Learning
-  - Transformer
-  - Cross-Subject Modeling
-  - Neural Signals
+  - "ICLR 2026"
+  - "Social Computing"
+  - "Brain-Computer Interface"
+  - "SEEG"
+  - "Functional Embedding"
+  - "Contrastive Learning"
+  - "Transformer"
+  - "Cross-Subject Modeling"
+  - "Neural Signals"
 date: 2026-05-08
 content_hash: bffe6b28d40b0c3f
 ---

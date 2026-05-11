@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DeepPersona: A Generative Engine for Scaling Deep Synthetic Personas
 description: >-
-  [NeurIPS 2025][LLM Safety][Synthetic Personas] This paper presents DeepPersona, a two-stage taxonomy-guided synthetic persona generation engine. Stage 1 mines a human attribute taxonomy with 8,000+ nodes from real user–ChatGPT conversations; Stage 2 generates narratively coherent personas averaging 200+ structured attributes via progressive attribute sampling. The approach achieves an 11.6% improvement in personalized QA accuracy and a 31.7% reduction in social survey simulation bias.
+  [NeurIPS 2025][LLM Safety][Synthetic Personas] This paper presents DeepPersona, a two-stage taxonomy-guided synthetic persona generation engine. Stage 1 mines a human attribute taxonomy with 8…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - Synthetic Personas
-  - Persona Simulation
-  - LLM Personalization
-  - Social Simulation
-  - Attribute Taxonomy
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "Synthetic Personas"
+  - "Persona Simulation"
+  - "LLM Personalization"
+  - "Social Simulation"
+  - "Attribute Taxonomy"
 date: 2026-05-08
 content_hash: 14ca72a9d58eac12
 ---

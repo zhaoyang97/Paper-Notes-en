@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Hear What Matters! Text-conditioned Selective Video-to-Audio Generation
 description: >-
-  [CVPR 2026][Video Understanding][Selective Audio Generation] SelVA introduces the text-conditioned selective video-to-audio (V2A) generation task. Through a learnable supplementary token [SUP] and a self-supervised video mixing strategy, the model generates only the user-specified target sound from multi-source videos guided by text prompts, surpassing existing methods in audio quality, semantic alignment, and temporal synchronization.
+  [CVPR 2026][Video Understanding][Selective Audio Generation] SelVA introduces the text-conditioned selective video-to-audio (V2A) generation task. Through a learnable supplementary token [SUP] and a self-supervised video…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Selective Audio Generation
-  - Video-to-Audio
-  - Text Conditioning
-  - Cross-Modal Attention
-  - Self-Supervised Video Mixing
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Selective Audio Generation"
+  - "Video-to-Audio"
+  - "Text Conditioning"
+  - "Cross-Modal Attention"
+  - "Self-Supervised Video Mixing"
 date: 2026-05-08
 content_hash: 91b22e9af7b5e109
 ---

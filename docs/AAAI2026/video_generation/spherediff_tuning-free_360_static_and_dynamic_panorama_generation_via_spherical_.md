@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SphereDiff: Tuning-free Omnidirectional Panoramic Image and Video Generation via Spherical Latent Representation
 description: >-
-  [AAAI 2026][Video Generation][Panoramic Generation] This paper proposes SphereDiff, which defines a spherical latent representation (uniformly distributed via Fibonacci Lattice) to replace conventional equirectangular projection (ERP), combined with a dynamic sampling algorithm and distortion-aware weighted averaging. Without any fine-tuning, SphereDiff leverages pretrained diffusion models such as SANA and LTX Video to generate seamless, low-distortion 360° panoramic images and videos.
+  [AAAI 2026][Video Generation][Panoramic Generation] This paper proposes SphereDiff, which defines a spherical latent representation (uniformly distributed via Fibonacci Lattice) to replace conventional equirectangular pr…
 tags:
-  - AAAI 2026
-  - Video Generation
-  - Panoramic Generation
-  - Spherical Latent Space
-  - MultiDiffusion
-  - Diffusion Models
-  - VR/AR
+  - "AAAI 2026"
+  - "Video Generation"
+  - "Panoramic Generation"
+  - "Spherical Latent Space"
+  - "MultiDiffusion"
+  - "Diffusion Models"
+  - "VR/AR"
 date: 2026-05-08
 content_hash: 68d39d16a5a9c11a
 ---

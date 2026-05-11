@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Guiding Noisy Label Conditional Diffusion Models with Score-based Discriminator Correction
 description: >-
-  [ICCV 2025][Image Generation][Noisy Labels] This paper proposes Score-based Discriminator Correction (SBDC), which trains a lightweight discriminator to correct the generation trajectory of noisy-label conditional diffusion models at inference time. The discriminator is trained by partitioning the training set into clean and corrupted subsets via noise detection, and the paper finds that applying guidance only during the early-to-middle stages of the sampling process yields optimal results.
+  [ICCV 2025][Image Generation][Noisy Labels] This paper proposes Score-based Discriminator Correction (SBDC), which trains a lightweight discriminator to correct the generation trajectory of noisy-label conditional diffus…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Noisy Labels
-  - Discriminator Guidance
-  - Inference-time Correction
-  - Conditional Diffusion Models
-  - Score-based Correction
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Noisy Labels"
+  - "Discriminator Guidance"
+  - "Inference-time Correction"
+  - "Conditional Diffusion Models"
+  - "Score-based Correction"
 date: 2026-05-08
 content_hash: f3d23c44dffb4096
 ---

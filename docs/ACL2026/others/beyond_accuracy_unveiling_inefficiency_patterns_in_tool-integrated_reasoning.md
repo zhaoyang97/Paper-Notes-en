@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Beyond Accuracy: Unveiling Inefficiency Patterns in Tool-Integrated Reasoning
 description: >-
-  [ACL 2026][Tool-integrated reasoning] This paper proposes PTE (Prefill Token Equivalents), a hardware-aware efficiency metric for tool-integrated reasoning (TIR) that unifies the costs of internal reasoning and external tool use. Through large-scale experiments, the paper identifies four inefficiency patterns in TIR: confirmatory tool use, tool mixing, lack of tool priors, and tool format collapse.
+  [ACL 2026][Tool-integrated reasoning] This paper proposes PTE (Prefill Token Equivalents), a hardware-aware efficiency metric for tool-integrated reasoning (TIR) that unifies the costs of internal reasoning and external…
 tags:
-  - ACL 2026
-  - Tool-integrated reasoning
-  - efficiency metrics
-  - KV-Cache
-  - prefill-decode asymmetry
-  - reasoning patterns
+  - "ACL 2026"
+  - "Tool-integrated reasoning"
+  - "efficiency metrics"
+  - "KV-Cache"
+  - "prefill-decode asymmetry"
+  - "reasoning patterns"
 date: 2026-05-08
 content_hash: 93fc12747ba38b75
 ---

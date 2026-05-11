@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TemporalVLM: Video LLMs for Temporal Reasoning in Long Videos
 description: >-
-  [ACL 2026][Segmentation][Video LLM] This paper proposes TemporalVLM, which extracts local fine-grained temporal features through a time-aware segment encoder (overlapping sliding Video Q-Former + fusion module), then aggregates global long-range dependencies using BiLSTM. This is the first work to introduce LSTM into Video LLMs, outperforming prior methods on four tasks: dense video captioning, temporal grounding, highlight detection, and action segmentation.
+  [ACL 2026][Segmentation][Video LLM] This paper proposes TemporalVLM, which extracts local fine-grained temporal features through a time-aware segment encoder (overlapping sliding Video Q-Former + fusion module)…
 tags:
-  - ACL 2026
-  - Segmentation
-  - Video LLM
-  - Time-Aware Encoding
-  - BiLSTM
-  - Long Video Understanding
-  - Industrial Assembly Dataset
+  - "ACL 2026"
+  - "Segmentation"
+  - "Video LLM"
+  - "Time-Aware Encoding"
+  - "BiLSTM"
+  - "Long Video Understanding"
+  - "Industrial Assembly Dataset"
 date: 2025-04-17
 content_hash: e1793f68093e5e6a
 ---

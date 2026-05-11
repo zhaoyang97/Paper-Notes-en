@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Many LLMs Are More Utilitarian Than One
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Multi-Agent Systems] A controlled study across six LLMs identifies a "Utilitarian Boost" phenomenon: LLMs engaged in dyadic or triadic moral deliberation are more likely than their solo counterparts to endorse harming a minority for the benefit of the majority. This effect is especially pronounced in personal dilemmas involving direct harm ($\beta=0.31, p<.0001$), and the underlying mechanisms differ across models—some exhibit reduced norm sensitivity, others heightened impartiality.
+  [NeurIPS 2025][LLM Reasoning][Multi-Agent Systems] A controlled study across six LLMs identifies a "Utilitarian Boost" phenomenon: LLMs engaged in dyadic or triadic moral deliberation are more likely than their solo coun…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - Multi-Agent Systems
-  - Moral Reasoning
-  - Utilitarian Boost
-  - Group Deliberation
-  - AI Alignment
-  - Deontology
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "Multi-Agent Systems"
+  - "Moral Reasoning"
+  - "Utilitarian Boost"
+  - "Group Deliberation"
+  - "AI Alignment"
+  - "Deontology"
 date: 2026-05-08
 content_hash: 901b2649c63da924
 ---

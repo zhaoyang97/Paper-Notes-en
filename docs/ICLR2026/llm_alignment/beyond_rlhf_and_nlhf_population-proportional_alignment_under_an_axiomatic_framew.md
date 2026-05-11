@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Beyond RLHF and NLHF: Population-Proportional Alignment under an Axiomatic Framework
 description: >-
-  [ICLR 2026][LLM Alignment][RLHF] This paper proposes a preference learning framework grounded in social choice theory axioms. It infers the feasible set of evaluator population distributions from pairwise comparison data and constructs policies satisfying two axioms: Population-Proportional Alignment (PPA) and Population-Bounded Manipulability (PBM).
+  [ICLR 2026][LLM Alignment][RLHF] This paper proposes a preference learning framework grounded in social choice theory axioms. It infers the feasible set of evaluator population distributions from pairwise comparison data…
 tags:
-  - ICLR 2026
-  - LLM Alignment
-  - RLHF
-  - NLHF
-  - preference learning
-  - social choice theory
-  - population-proportional alignment
-  - axiomatic framework
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "RLHF"
+  - "NLHF"
+  - "preference learning"
+  - "social choice theory"
+  - "population-proportional alignment"
+  - "axiomatic framework"
 date: 2026-05-08
 content_hash: 4204910332dd3a1a
 ---

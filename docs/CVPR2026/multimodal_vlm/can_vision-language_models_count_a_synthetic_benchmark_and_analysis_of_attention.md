@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Can Vision-Language Models Count? A Synthetic Benchmark and Analysis of Attention-Based Interventions
 description: >-
-  [CVPR 2026][Multimodal VLM][VLM] This paper constructs a synthetic counting benchmark dataset, systematically evaluates the counting capabilities of open-source VLMs under varying image and prompt conditions, and investigates mechanisms for improving counting behavior through visual attention reweighting at the decoder level.
+  [CVPR 2026][Multimodal VLM][VLM] This paper constructs a synthetic counting benchmark dataset, systematically evaluates the counting capabilities of open-source VLMs under varying image and prompt conditions…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - VLM
-  - counting ability
-  - attention mechanism
-  - synthetic benchmark
-  - visual attention intervention
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "VLM"
+  - "counting ability"
+  - "attention mechanism"
+  - "synthetic benchmark"
+  - "visual attention intervention"
 date: 2026-05-08
 content_hash: 4eed9f4baa44d5f5
 ---

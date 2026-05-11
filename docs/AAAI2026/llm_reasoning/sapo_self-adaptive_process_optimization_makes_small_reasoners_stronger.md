@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SAPO: Self-Adaptive Process Optimization Makes Small Reasoners Stronger
 description: >-
-  [AAAI 2026][LLM Reasoning][process supervision] Inspired by Error-Related Negativity (ERN) in neuroscience, this paper proposes SAPO, a self-adaptive process optimization method that replaces costly step-wise Monte Carlo rollouts with first error detection and local posterior estimation. SAPO reduces computational cost by 2–3× while enabling joint optimization of the reasoner and verifier, allowing small language models (≤2B) to outperform most self-evolution methods on mathematical and code reasoning tasks.
+  [AAAI 2026][LLM Reasoning][process supervision] Inspired by Error-Related Negativity (ERN) in neuroscience, this paper proposes SAPO, a self-adaptive process optimization method that replaces costly step-wise Monte Carlo…
 tags:
-  - AAAI 2026
-  - LLM Reasoning
-  - process supervision
-  - self-evolution
-  - first error detection
-  - small language models
-  - reasoner-verifier gap
+  - "AAAI 2026"
+  - "LLM Reasoning"
+  - "process supervision"
+  - "self-evolution"
+  - "first error detection"
+  - "small language models"
+  - "reasoner-verifier gap"
 date: 2026-05-08
 content_hash: ceec10a6ef9b2f3a
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OmniSync: Towards Universal Lip Synchronization via Diffusion Transformers
 description: >-
-  [NeurIPS 2025 (Spotlight)][Image Generation][Lip Synchronization] OmniSync proposes a universal lip synchronization framework based on Diffusion Transformers, introducing three key innovations—a mask-free training paradigm, Flow Matching-based progressive noise initialization, and dynamic spatiotemporal CFG—to substantially outperform prior methods on both real and AI-generated videos, achieving an 87.78% success rate on stylized character lip sync (vs. 67.78% for the previous best).
+  [NeurIPS 2025 (Spotlight)][Image Generation][Lip Synchronization] OmniSync proposes a universal lip synchronization framework based on Diffusion Transformers…
 tags:
-  - NeurIPS 2025 (Spotlight)
-  - Image Generation
-  - Lip Synchronization
-  - Diffusion Transformer
-  - Flow Matching
-  - Classifier-Free Guidance
-  - AIGC Video
+  - "NeurIPS 2025 (Spotlight)"
+  - "Image Generation"
+  - "Lip Synchronization"
+  - "Diffusion Transformer"
+  - "Flow Matching"
+  - "Classifier-Free Guidance"
+  - "AIGC Video"
 date: 2026-05-08
 content_hash: dd76daa7dd40e3ca
 ---

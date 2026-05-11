@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MacPrompt: Maraconic-guided Jailbreak against Text-to-Image Models
 description: >-
-  [AAAI 2026][Image Generation][Text-to-image safety] This paper proposes MacPrompt, a black-box cross-lingual attack method that translates harmful words into multi-language candidates and performs character-level recombination to construct "macaronic words" as adversarial prompts. The method simultaneously bypasses text safety filters and concept removal defenses, achieving attack success rates of up to 92% on sexual content and 90% on violent content.
+  [AAAI 2026][Image Generation][Text-to-image safety] This paper proposes MacPrompt, a black-box cross-lingual attack method that translates harmful words into multi-language candidates and performs character-level recombi…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Text-to-image safety
-  - jailbreak attack
-  - cross-lingual adversarial
-  - macaronic words
-  - concept removal
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Text-to-image safety"
+  - "jailbreak attack"
+  - "cross-lingual adversarial"
+  - "macaronic words"
+  - "concept removal"
 date: 2026-05-08
 content_hash: 04c70928d1c1c21f
 ---

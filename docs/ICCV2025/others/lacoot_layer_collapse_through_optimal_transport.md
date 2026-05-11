@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] LaCoOT: Layer Collapse through Optimal Transport
 description: >-
-  [ICCV2025][optimal transport] This paper proposes LaCoOT, an optimal transport-based regularization strategy that minimizes the Max-Sliced Wasserstein distance between intermediate feature distributions within a network during training, enabling the removal of entire layers post-training while maintaining performance and significantly reducing model depth and inference time.
+  [ICCV2025][optimal transport] This paper proposes LaCoOT, an optimal transport-based regularization strategy that minimizes the Max-Sliced Wasserstein distance between intermediate feature distributions within a network…
 tags:
-  - ICCV2025
-  - optimal transport
-  - layer removal
-  - depth reduction
-  - Max-Sliced Wasserstein distance
-  - model compression
+  - "ICCV2025"
+  - "optimal transport"
+  - "layer removal"
+  - "depth reduction"
+  - "Max-Sliced Wasserstein distance"
+  - "model compression"
 date: 2026-05-08
 content_hash: d30b02da3cdec1a3
 ---

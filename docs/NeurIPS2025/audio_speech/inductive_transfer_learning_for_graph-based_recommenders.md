@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Inductive Transfer Learning for Graph-Based Recommenders
 description: >-
-  [NeurIPS 2025][Audio & Speech][Graph Neural Networks] This paper proposes NBF-Rec, a graph-based recommendation model built upon the Neural Bellman-Ford Network, which supports inductive transfer learning across datasets with completely disjoint users and items, enabling zero-shot cross-domain recommendation and lightweight fine-tuning adaptation.
+  [NeurIPS 2025][Audio & Speech][Graph Neural Networks] This paper proposes NBF-Rec, a graph-based recommendation model built upon the Neural Bellman-Ford Network…
 tags:
-  - NeurIPS 2025
+  - "NeurIPS 2025"
   - "Audio & Speech"
-  - Graph Neural Networks
-  - Transfer Learning
-  - Recommender Systems
-  - Inductive Inference
-  - Zero-Shot Recommendation
+  - "Graph Neural Networks"
+  - "Transfer Learning"
+  - "Recommender Systems"
+  - "Inductive Inference"
+  - "Zero-Shot Recommendation"
 date: 2026-05-08
 content_hash: 3b03e4df67812aea
 ---

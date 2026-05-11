@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FedAFD: Multimodal Federated Learning via Adversarial Fusion and Distillation
 description: >-
-  [CVPR 2026][AI Safety][Multimodal Federated Learning] This paper proposes FedAFD, a framework that simultaneously improves model performance for both heterogeneous clients and the server in multimodal federated learning through a three-stage design comprising bi-level adversarial alignment, granularity-aware feature fusion, and similarity-guided ensemble distillation.
+  [CVPR 2026][AI Safety][Multimodal Federated Learning] This paper proposes FedAFD, a framework that simultaneously improves model performance for both heterogeneous clients and the server in multimodal federated learning…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Multimodal Federated Learning
-  - Adversarial Alignment
-  - Feature Fusion
-  - knowledge distillation
-  - Model Heterogeneity
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Multimodal Federated Learning"
+  - "Adversarial Alignment"
+  - "Feature Fusion"
+  - "knowledge distillation"
+  - "Model Heterogeneity"
 date: 2026-05-08
 content_hash: b84008a1e0a41248
 ---

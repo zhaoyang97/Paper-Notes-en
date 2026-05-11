@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Certified but Fooled! Breaking Certified Defences with Ghost Certificates
 description: >-
-  [AAAI 2026][adversarial attack] This paper proposes GhostCert, a salient-region-based adversarial attack that misleads classifiers while maintaining imperceptible perturbations and forging large-radius robustness certificates (ghost certificates). On ImageNet, GhostCert achieves substantially higher attack success rates and larger spoofed certification radii than Shadow Attack against state-of-the-art certified defences including DensePure.
+  [AAAI 2026][adversarial attack] This paper proposes GhostCert, a salient-region-based adversarial attack that misleads classifiers while maintaining imperceptible perturbations and forging large-radius robustness certifi…
 tags:
-  - AAAI 2026
-  - adversarial attack
-  - certified defence
-  - randomized smoothing
-  - certificate spoofing
-  - region-based perturbation
+  - "AAAI 2026"
+  - "adversarial attack"
+  - "certified defence"
+  - "randomized smoothing"
+  - "certificate spoofing"
+  - "region-based perturbation"
 date: 2026-05-08
 content_hash: 04540af513173184
 ---

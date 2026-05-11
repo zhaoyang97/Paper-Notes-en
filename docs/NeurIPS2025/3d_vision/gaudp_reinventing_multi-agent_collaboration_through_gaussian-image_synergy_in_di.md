@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GauDP: Reinventing Multi-Agent Collaboration through Gaussian-Image Synergy in Diffusion Policies
 description: >-
-  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] GauDP is proposed to enable scalable, perception-enhanced multi-agent collaborative imitation learning by constructing a globally consistent 3D Gaussian field from decentralized RGB observations of multiple agents and dynamically allocating Gaussian attributes back to each agent's local viewpoint.
+  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] GauDP is proposed to enable scalable, perception-enhanced multi-agent collaborative imitation learning by constructing a globally consistent 3D Gaussian field from decentr…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - Multi-Agent Collaboration
-  - Diffusion Policy
-  - Imitation Learning
-  - Robot Manipulation
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Multi-Agent Collaboration"
+  - "Diffusion Policy"
+  - "Imitation Learning"
+  - "Robot Manipulation"
 date: 2026-05-08
 content_hash: be56c42760b881e8
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond Higher Rank: Token-wise Input-Output Projections for Efficient Low-Rank Adaptation
 description: >-
-  [NeurIPS 2025][Model Compression][LoRA] TopLoRA analyzes the expressive capacity of LoRA from an input-output projection perspective, identifying that all tokens sharing a single projection matrix constitutes a critical bottleneck. It proposes dynamically adjusting LoRA weights via a learnable token-wise diagonal matrix $\Sigma_X$ (i.e., $\Delta W_X = B\Sigma_X A$), achieving fine-grained adaptation without increasing rank, and consistently outperforming LoRA by 2–3% across tasks.
+  [NeurIPS 2025][Model Compression][LoRA] TopLoRA analyzes the expressive capacity of LoRA from an input-output projection perspective…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - LoRA
-  - Low-Rank Adaptation
-  - Token-wise Adaptation
-  - Input-Output Projection
-  - PEFT
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "LoRA"
+  - "Low-Rank Adaptation"
+  - "Token-wise Adaptation"
+  - "Input-Output Projection"
+  - "PEFT"
 date: 2026-05-08
 content_hash: fef616351e67d1b6
 ---

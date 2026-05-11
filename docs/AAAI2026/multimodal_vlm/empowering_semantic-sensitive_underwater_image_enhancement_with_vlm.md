@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Empowering Semantic-Sensitive Underwater Image Enhancement with VLM
 description: >-
-  [AAAI2026][Multimodal VLM][Underwater Image Enhancement] This work leverages a VLM to generate spatially-aware semantic guidance maps, and introduces a dual-guidance mechanism comprising cross-attention injection and a semantic alignment loss to endow underwater image enhancement networks with semantic awareness, yielding enhanced results that benefit both human perception and downstream detection/segmentation tasks.
+  [AAAI2026][Multimodal VLM][Underwater Image Enhancement] This work leverages a VLM to generate spatially-aware semantic guidance maps, and introduces a dual-guidance mechanism comprising cross-attention injection and a s…
 tags:
-  - AAAI2026
-  - Multimodal VLM
-  - Underwater Image Enhancement
-  - Vision-Language Model
-  - Semantic Guidance
-  - Cross-Attention
-  - Downstream Tasks
+  - "AAAI2026"
+  - "Multimodal VLM"
+  - "Underwater Image Enhancement"
+  - "Vision-Language Model"
+  - "Semantic Guidance"
+  - "Cross-Attention"
+  - "Downstream Tasks"
 date: 2026-05-08
 content_hash: 799f6e9b56dc15c7
 ---

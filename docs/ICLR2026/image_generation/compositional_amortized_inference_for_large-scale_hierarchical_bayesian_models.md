@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Compositional amortized inference for large-scale hierarchical Bayesian models
 description: >-
-  [ICLR 2026][Image Generation][amortized Bayesian inference] This paper extends compositional score matching (CSM) to hierarchical Bayesian models, addressing numerical instability under large numbers of data groups via a novel error-damping estimator and mini-batch strategy. It achieves, for the first time, amortized inference over hierarchical models exceeding 750,000 parameters (250,000+ data groups), validated on a real-world fluorescence lifetime imaging application.
+  [ICLR 2026][Image Generation][amortized Bayesian inference] This paper extends compositional score matching (CSM) to hierarchical Bayesian models…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - amortized Bayesian inference
-  - hierarchical model
-  - compositional score matching
-  - diffusion model
-  - scalability
+  - "ICLR 2026"
+  - "Image Generation"
+  - "amortized Bayesian inference"
+  - "hierarchical model"
+  - "compositional score matching"
+  - "diffusion model"
+  - "scalability"
 date: 2026-05-08
 content_hash: 88644ac3ed1f3263
 ---

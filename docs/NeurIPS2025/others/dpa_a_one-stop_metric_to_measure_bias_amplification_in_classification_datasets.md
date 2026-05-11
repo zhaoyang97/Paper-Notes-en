@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] DPA: A One-Stop Metric to Measure Bias Amplification in Classification Datasets
 description: >-
-  [NeurIPS 2025][bias amplification] This paper proposes Directional Predictability Amplification (DPA), a predictability-based metric for measuring bias amplification. It is the only one-stop metric that simultaneously satisfies directionality, applicability to both balanced and imbalanced datasets, and correct identification of positive and negative bias amplification, by measuring the relative change between model bias and dataset bias.
+  [NeurIPS 2025][bias amplification] This paper proposes Directional Predictability Amplification (DPA), a predictability-based metric for measuring bias amplification. It is the only one-stop metric that simultaneously sa…
 tags:
-  - NeurIPS 2025
-  - bias amplification
-  - fairness metric
-  - predictability
-  - directional bias
-  - classification fairness
+  - "NeurIPS 2025"
+  - "bias amplification"
+  - "fairness metric"
+  - "predictability"
+  - "directional bias"
+  - "classification fairness"
 date: 2026-05-08
 content_hash: 88581f61af1fe33b
 ---

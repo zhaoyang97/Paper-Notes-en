@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GazeInterpreter: Parsing Eye Gaze to Generate Eye-Body-Coordinated Narrations
 description: >-
-  [AAAI 2026][LLM Evaluation][Eye Gaze Analysis] This paper proposes GazeInterpreter, an LLM-based hierarchical framework that converts raw gaze signals into textual narrations via a symbolic gaze parser, integrates them with body motion narrations to produce eye-body-coordinated descriptions, and iteratively refines outputs through a self-correction loop, yielding significant improvements on downstream tasks including text-driven motion generation, action prediction, and behavior summarization.
+  [AAAI 2026][LLM Evaluation][Eye Gaze Analysis] This paper proposes GazeInterpreter, an LLM-based hierarchical framework that converts raw gaze signals into textual narrations via a symbolic gaze parser…
 tags:
-  - AAAI 2026
-  - LLM Evaluation
-  - Eye Gaze Analysis
-  - Human Behavior Understanding
-  - Large Language Models
-  - Multimodal Fusion
-  - Motion Generation
+  - "AAAI 2026"
+  - "LLM Evaluation"
+  - "Eye Gaze Analysis"
+  - "Human Behavior Understanding"
+  - "Large Language Models"
+  - "Multimodal Fusion"
+  - "Motion Generation"
 date: 2026-05-08
 content_hash: 7e206fb028ea6aa1
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AIComposer: Any Style and Content Image Composition via Feature Integration
 description: >-
-  [ICCV 2025][Image Generation][Cross-domain image composition] AIComposer proposes the first cross-domain image composition method that requires no text prompts. By fusing foreground and background CLIP features via an MLP network, combined with backward inversion + forward denoising and a local cross-attention strategy, the method achieves natural stylization and seamless composition without training the diffusion model, improving LPIPS and CSD metrics by 30.5% and 18.1%, respectively.
+  [ICCV 2025][Image Generation][Cross-domain image composition] AIComposer proposes the first cross-domain image composition method that requires no text prompts. By fusing foreground and background CLIP features via an ML…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Cross-domain image composition
-  - text-prompt-free
-  - CLIP feature fusion
-  - local cross-attention
-  - diffusion model inversion
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Cross-domain image composition"
+  - "text-prompt-free"
+  - "CLIP feature fusion"
+  - "local cross-attention"
+  - "diffusion model inversion"
 date: 2026-05-08
 content_hash: 69ae504882293fbf
 ---

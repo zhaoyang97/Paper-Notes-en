@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] An Adaptive Algorithm for Bilevel Optimization on Riemannian Manifolds
 description: >-
-  [NeurIPS 2025][Optimization][Riemannian manifold] AdaRHD is the first adaptive algorithm for Riemannian bilevel optimization (RBO) that requires no prior knowledge of problem-specific parameters (strong convexity constants, Lipschitz bounds, manifold curvature). By adopting an inverse cumulative gradient norm strategy for adaptive step size selection and solving the lower-level problem, linear system, and upper-level update sequentially within a three-stage framework, AdaRHD achieves a convergence rate of $O(1/\epsilon)$ matching non-adaptive methods, while exhibiting substantially greater robustness to initial step size choices compared to RHGD.
+  [NeurIPS 2025][Optimization][Riemannian manifold] AdaRHD is the first adaptive algorithm for Riemannian bilevel optimization (RBO) that requires no prior knowledge of problem-specific parameters (strong convexity constan…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Riemannian manifold
-  - bilevel optimization
-  - adaptive step size
-  - hypergradient
-  - conjugate gradient
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Riemannian manifold"
+  - "bilevel optimization"
+  - "adaptive step size"
+  - "hypergradient"
+  - "conjugate gradient"
 date: 2026-05-08
 content_hash: 774ef8948b2353ca
 ---

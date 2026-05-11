@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Asynchronous Event Error-Minimizing Noise for Safeguarding Event Dataset
 description: >-
-  [ICCV 2025][LLM Safety][Unlearnable Examples] This paper proposes UEvs, the first unlearnable example generation method for asynchronous event data. It introduces Event Error-Minimizing Noise (E²MN) and an adaptive projection mechanism that prevent unauthorized models from learning from event datasets while preserving utility for legitimate use.
+  [ICCV 2025][LLM Safety][Unlearnable Examples] This paper proposes UEvs, the first unlearnable example generation method for asynchronous event data. It introduces Event Error-Minimizing Noise (E²MN) and an adaptive proje…
 tags:
-  - ICCV 2025
-  - LLM Safety
-  - Unlearnable Examples
-  - Event Camera
-  - Dataset Protection
-  - Error-Minimizing Noise
-  - Asynchronous Event Stream
+  - "ICCV 2025"
+  - "LLM Safety"
+  - "Unlearnable Examples"
+  - "Event Camera"
+  - "Dataset Protection"
+  - "Error-Minimizing Noise"
+  - "Asynchronous Event Stream"
 date: 2026-05-08
 content_hash: 4bf66fd648ab1abc
 ---

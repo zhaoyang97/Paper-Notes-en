@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FedRTS: Federated Robust Pruning via Combinatorial Thompson Sampling
 description: >-
-  [NeurIPS 2025][Optimization][Federated Learning] This paper reformulates federated dynamic pruning as a Combinatorial Multi-Armed Bandit (CMAB) problem and proposes TSAdj, a Thompson Sampling-based topology adjustment mechanism. By replacing deterministic decisions with probabilistic ones, the method obtains more robust sparse model topologies while significantly reducing communication overhead.
+  [NeurIPS 2025][Optimization][Federated Learning] This paper reformulates federated dynamic pruning as a Combinatorial Multi-Armed Bandit (CMAB) problem and proposes TSAdj…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Federated Learning
-  - Dynamic Pruning
-  - Thompson Sampling
-  - Combinatorial Multi-Armed Bandit
-  - Sparse Training
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Federated Learning"
+  - "Dynamic Pruning"
+  - "Thompson Sampling"
+  - "Combinatorial Multi-Armed Bandit"
+  - "Sparse Training"
 date: 2026-05-08
 content_hash: 11a07fd1f96fce83
 ---

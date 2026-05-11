@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] NaiLIA: Multimodal Nail Design Retrieval Based on Dense Intent Descriptions and Palette Queries
 description: >-
-  [CVPR2026][multimodal retrieval] This paper proposes NaiLIA, a multimodal retrieval method for nail design images that achieves fine-grained matching via dense intent descriptions and palette queries. A confidence-based relaxed contrastive (CRC) loss is introduced to handle unlabeled positives. NaiLIA substantially outperforms existing methods on the authors' newly constructed NAIL-STAR benchmark and on Marqo Fashion200K.
+  [CVPR2026][multimodal retrieval] This paper proposes NaiLIA, a multimodal retrieval method for nail design images that achieves fine-grained matching via dense intent descriptions and palette queries. A confidence-based…
 tags:
-  - CVPR2026
-  - multimodal retrieval
-  - dense intent description
-  - palette query
-  - contrastive learning
-  - unlabeled positive
-  - fashion AI
-  - nail design
+  - "CVPR2026"
+  - "multimodal retrieval"
+  - "dense intent description"
+  - "palette query"
+  - "contrastive learning"
+  - "unlabeled positive"
+  - "fashion AI"
+  - "nail design"
 date: 2026-05-08
 content_hash: a84be19d1c116b5e
 ---

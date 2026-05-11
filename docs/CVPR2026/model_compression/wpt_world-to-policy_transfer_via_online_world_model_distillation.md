@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] WPT: World-to-Policy Transfer via Online World Model Distillation
 description: >-
-  [CVPR 2026][Model Compression][World Model] WPT proposes a world-to-policy transfer training paradigm that injects future-predictive knowledge from a world model into a teacher policy via a trainable reward model, then transfers this knowledge to a lightweight student policy through policy distillation and world reward distillation, achieving a closed-loop driving score of 79.23 with a 4.9× inference speedup.
+  [CVPR 2026][Model Compression][World Model] WPT proposes a world-to-policy transfer training paradigm that injects future-predictive knowledge from a world model into a teacher policy via a trainable reward model…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - World Model
-  - Policy Distillation
-  - Reward Model
-  - Autonomous Driving
-  - Online Distillation
+  - "CVPR 2026"
+  - "Model Compression"
+  - "World Model"
+  - "Policy Distillation"
+  - "Reward Model"
+  - "Autonomous Driving"
+  - "Online Distillation"
 date: 2026-05-08
 content_hash: c39aad851e186c37
 ---

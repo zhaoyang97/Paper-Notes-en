@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MotionScale: Reconstructing Appearance, Geometry, and Motion of Dynamic Scenes with Scalable 4D Gaussian Splatting
 description: >-
-  [CVPR 2026][3D Vision][4D Reconstruction] This paper proposes MotionScale, a scalable 4D Gaussian Splatting framework that reconstructs the appearance, geometry, and motion of large-scale dynamic scenes from monocular video with high fidelity. Through a clustering-based adaptive motion field and a progressive optimization strategy, MotionScale achieves a PSNR of 17.98 on DyCheck and reduces 3D tracking EPE to 0.070, substantially outperforming existing methods.
+  [CVPR 2026][3D Vision][4D Reconstruction] This paper proposes MotionScale, a scalable 4D Gaussian Splatting framework that reconstructs the appearance, geometry…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 4D Reconstruction
-  - Gaussian Splatting
-  - Dynamic Scenes
-  - Motion Field
-  - Monocular Video
+  - "CVPR 2026"
+  - "3D Vision"
+  - "4D Reconstruction"
+  - "Gaussian Splatting"
+  - "Dynamic Scenes"
+  - "Motion Field"
+  - "Monocular Video"
 date: 2026-05-08
 content_hash: 1734f3c81abc493a
 ---

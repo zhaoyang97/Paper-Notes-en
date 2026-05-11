@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PolicyLLM: Towards Excellent Comprehension of Public Policy for Large Language Models
 description: >-
-  [ACL 2026 (Findings)][Signal & Communication][Public Policy Understanding] This paper proposes PolicyBench (a 21K-question cross-system policy understanding benchmark spanning China and the US) and PolicyMoE (a cognitive-level-aligned Mixture of Experts model), systematically evaluating 11 SOTA LLMs across memory/understanding/application cognitive levels and finding that models perform well on structured reasoning but remain weak on abstract policy concepts.
+  [ACL 2026 (Findings)][Signal & Communication][Public Policy Understanding] This paper proposes PolicyBench (a 21K-question cross-system policy understanding benchmark spanning China and the US) and PolicyMoE (a cognitive…
 tags:
-  - ACL 2026 (Findings)
+  - "ACL 2026 (Findings)"
   - "Signal & Communication"
-  - Public Policy Understanding
-  - Cross-System Benchmark
-  - Bloom Cognitive Taxonomy
-  - Mixture of Experts
-  - Policy Reasoning
+  - "Public Policy Understanding"
+  - "Cross-System Benchmark"
+  - "Bloom Cognitive Taxonomy"
+  - "Mixture of Experts"
+  - "Policy Reasoning"
 date: 2025-04-17
 content_hash: 6bda10041d097535
 ---

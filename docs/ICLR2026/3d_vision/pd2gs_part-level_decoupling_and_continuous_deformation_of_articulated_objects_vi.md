@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PD²GS: Part-Level Decoupling and Continuous Deformation of Articulated Objects via Gaussian Splatting
 description: >-
-  [ICLR 2026][3D Vision][articulated objects] PD²GS is proposed as a framework that learns a shared canonical Gaussian field and models each interaction state as a continuous deformation thereof, enabling part-level decoupling, reconstruction, and continuous control of articulated objects via coarse-to-fine motion trajectory clustering and SAM-guided boundary refinement, without any manual supervision.
+  [ICLR 2026][3D Vision][articulated objects] PD²GS is proposed as a framework that learns a shared canonical Gaussian field and models each interaction state as a continuous deformation thereof…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - articulated objects
-  - 3D Gaussian Splatting
-  - part segmentation
-  - continuous deformation
-  - SAM
+  - "ICLR 2026"
+  - "3D Vision"
+  - "articulated objects"
+  - "3D Gaussian Splatting"
+  - "part segmentation"
+  - "continuous deformation"
+  - "SAM"
 date: 2026-05-08
 content_hash: a033cd31dc0be1b8
 ---

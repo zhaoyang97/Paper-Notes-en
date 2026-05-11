@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Brain-Semantoks: Learning Semantic Tokens of Brain Dynamics with a Self-Distilled Foundation Model
 description: >-
-  [ICLR2026][Time Series][fMRI foundation model] This paper proposes Brain-Semantoks, an fMRI foundation model based on a semantic tokenizer and a self-distillation objective. It aggregates functional network signals into robust semantic tokens and learns abstract brain dynamic representations through cross-temporal view consistency, achieving state-of-the-art performance under a linear probing setting.
+  [ICLR2026][Time Series][fMRI foundation model] This paper proposes Brain-Semantoks, an fMRI foundation model based on a semantic tokenizer and a self-distillation objective. It aggregates functional network signals into…
 tags:
-  - ICLR2026
-  - Time Series
-  - fMRI foundation model
-  - self-distillation
-  - semantic tokenizer
-  - brain dynamics representation learning
-  - linear probing
+  - "ICLR2026"
+  - "Time Series"
+  - "fMRI foundation model"
+  - "self-distillation"
+  - "semantic tokenizer"
+  - "brain dynamics representation learning"
+  - "linear probing"
 date: 2026-05-08
 content_hash: bb8e1141f239de06
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] 3D4D: An Interactive Editable 4D World Model via 3D Video Generation
 description: >-
-  [AAAI 2026][Video Generation][4D scene] This paper proposes 3D4D, an interactive 4D visualization framework integrating WebGL and Supersplat rendering. A four-module backend pipeline converts static images and text prompts into editable 4D scenes, while a VLM-guided foveated rendering strategy enables 60fps real-time interaction, achieving state-of-the-art performance on both CLIP Consistency and CLIP Score.
+  [AAAI 2026][Video Generation][4D scene] This paper proposes 3D4D, an interactive 4D visualization framework integrating WebGL and Supersplat rendering. A four-module backend pipeline converts static images and text promp…
 tags:
-  - AAAI 2026
-  - Video Generation
-  - 4D scene
-  - WebGL
-  - Gaussian Splatting
-  - foveated rendering
-  - VLM-guided
+  - "AAAI 2026"
+  - "Video Generation"
+  - "4D scene"
+  - "WebGL"
+  - "Gaussian Splatting"
+  - "foveated rendering"
+  - "VLM-guided"
 date: 2026-05-08
 content_hash: 7c9a51eba27c726c
 ---

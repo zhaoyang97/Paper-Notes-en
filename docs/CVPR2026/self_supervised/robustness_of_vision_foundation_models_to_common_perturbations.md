@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Robustness of Vision Foundation Models to Common Perturbations
 description: >-
-  [CVPR 2026][Self-Supervised Learning][foundation model] This paper presents the first systematic study on the robustness of vision foundation models to common perturbations (e.g., JPEG compression, brightness adjustment). It proposes three robustness metrics, formalizes five mathematical properties, finds that foundation models are generally non-robust, and introduces a fine-tuning method that improves robustness without sacrificing utility.
+  [CVPR 2026][Self-Supervised Learning][foundation model] This paper presents the first systematic study on the robustness of vision foundation models to common perturbations (e.g., JPEG compression…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - foundation model
-  - robustness
-  - common perturbation
-  - embedding
-  - CLIP
-  - DINOv2
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "foundation model"
+  - "robustness"
+  - "common perturbation"
+  - "embedding"
+  - "CLIP"
+  - "DINOv2"
 date: 2026-05-08
 content_hash: c4d8c3eacc7bdd28
 ---

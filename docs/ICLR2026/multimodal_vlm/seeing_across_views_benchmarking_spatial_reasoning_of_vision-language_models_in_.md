@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Seeing Across Views: Benchmarking Spatial Reasoning of Vision-Language Models in Robotic Scenes
 description: >-
-  [ICLR2026][Multimodal VLM][multi-view spatial reasoning] This paper proposes MV-RoboBench, the first benchmark integrating multi-view spatial reasoning with robotic manipulation evaluation, comprising 1.7K manually annotated QA pairs. It reveals a large performance gap between the best current VLM (GPT-5 at 56.4%) and humans (91.0%).
+  [ICLR2026][Multimodal VLM][multi-view spatial reasoning] This paper proposes MV-RoboBench, the first benchmark integrating multi-view spatial reasoning with robotic manipulation evaluation…
 tags:
-  - ICLR2026
-  - Multimodal VLM
-  - multi-view spatial reasoning
-  - robotic manipulation
-  - VLM benchmark
-  - embodied AI
-  - MV-RoboBench
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "multi-view spatial reasoning"
+  - "robotic manipulation"
+  - "VLM benchmark"
+  - "embodied AI"
+  - "MV-RoboBench"
 date: 2026-05-08
 content_hash: dc704f229539c892
 ---

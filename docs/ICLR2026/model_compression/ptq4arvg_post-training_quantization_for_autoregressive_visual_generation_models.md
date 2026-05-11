@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PTQ4ARVG: Post-Training Quantization for AutoRegressive Visual Generation Models
 description: >-
-  [ICLR 2026][Model Compression][Visual Generation] PTQ4ARVG is proposed as the first systematic PTQ framework for autoregressive visual generation (ARVG) models. It addresses three ARVG-specific quantization challenges via Gain-Projected Scaling (GPS), Static Token-Wise Quantization (STWQ), and Distribution-Guided Calibration (DGC).
+  [ICLR 2026][Model Compression][Visual Generation] PTQ4ARVG is proposed as the first systematic PTQ framework for autoregressive visual generation (ARVG) models. It addresses three ARVG-specific quantization challenges vi…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Visual Generation
-  - Autoregressive Models
-  - Post-Training Quantization
-  - Activation Quantization
-  - Outlier Suppression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Visual Generation"
+  - "Autoregressive Models"
+  - "Post-Training Quantization"
+  - "Activation Quantization"
+  - "Outlier Suppression"
 date: 2026-05-08
 content_hash: 3f98144cb6368582
 ---

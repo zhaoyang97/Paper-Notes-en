@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Refer to Any Segmentation Mask Group With Vision-Language Prompts
 description: >-
-  [ICCV 2025][Segmentation][Omni-modal referring segmentation] This paper proposes the Omni-modal Referring Expression Segmentation (ORES) task and the RAS framework, which leverages a mask-level LMM with a non-autoregressive decoding mechanism to select target mask groups from a candidate pool based on vision-language hybrid prompts. The approach achieves state-of-the-art performance on the newly introduced ORES dataset as well as classical RES/GRES benchmarks.
+  [ICCV 2025][Segmentation][Omni-modal referring segmentation] This paper proposes the Omni-modal Referring Expression Segmentation (ORES) task and the RAS framework…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - Omni-modal referring segmentation
-  - mask grouping
-  - vision-language prompts
-  - large multimodal models
-  - non-autoregressive decoding
+  - "ICCV 2025"
+  - "Segmentation"
+  - "Omni-modal referring segmentation"
+  - "mask grouping"
+  - "vision-language prompts"
+  - "large multimodal models"
+  - "non-autoregressive decoding"
 date: 2026-05-08
 content_hash: 617fdefd182a52e1
 ---

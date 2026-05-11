@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Hilbert-Guided Sparse Local Attention
 description: >-
-  [ICLR 2026][Hilbert curve] By reordering 2D image tokens into a 1D sequence via Hilbert space-filling curves—which preserve spatial locality—this work substantially increases the empty-block ratio in local attention (from 87.5% to 96.9%), enabling 4× speedup for window attention and 18× for sliding-window attention via FlexAttention, with negligible accuracy loss.
+  [ICLR 2026][Hilbert curve] By reordering 2D image tokens into a 1D sequence via Hilbert space-filling curves—which preserve spatial locality—this work substantially increases the empty-block ratio in local attention (fro…
 tags:
-  - ICLR 2026
-  - Hilbert curve
-  - local attention
-  - block sparsity
-  - FlexAttention
-  - Vision Transformer
+  - "ICLR 2026"
+  - "Hilbert curve"
+  - "local attention"
+  - "block sparsity"
+  - "FlexAttention"
+  - "Vision Transformer"
 date: 2026-05-08
 content_hash: ed72649a26efcb8c
 ---

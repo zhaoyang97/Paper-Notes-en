@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unraveling the Effects of Synthetic Data on End-to-End Autonomous Driving
 description: >-
-  [ICCV 2025][Autonomous Driving][Synthetic Data] This paper proposes SceneCrafter, a unified 3DGS-based simulation framework that simultaneously supports synthetic data generation and closed-loop evaluation via an adaptive kinematic model and bidirectional interactive agent control. Experiments demonstrate that synthetic data significantly improves the generalization of end-to-end autonomous driving models, yielding up to 18% improvement in Route Completion.
+  [ICCV 2025][Autonomous Driving][Synthetic Data] This paper proposes SceneCrafter, a unified 3DGS-based simulation framework that simultaneously supports synthetic data generation and closed-loop evaluation via an adaptiv…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - Synthetic Data
-  - End-to-End Autonomous Driving
-  - 3D Gaussian Splatting
-  - Closed-Loop Evaluation
-  - Interactive Simulation
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "Synthetic Data"
+  - "End-to-End Autonomous Driving"
+  - "3D Gaussian Splatting"
+  - "Closed-Loop Evaluation"
+  - "Interactive Simulation"
 date: 2026-05-08
 content_hash: dccb4c4bcc7bf575
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Hyperbolic Busemann Neural Networks
 description: >-
-  [CVPR 2026][Graph Learning][Hyperbolic neural networks] This paper intrinsically lifts multinomial logistic regression (MLR) and fully connected (FC) layers to hyperbolic space via Busemann functions, proposing two unified components—BMLR and BFC—applicable to both the Poincaré ball and the Lorentz model. The proposed components outperform existing hyperbolic layers across four task categories: image classification, genomic sequence classification, node classification, and link prediction.
+  [CVPR 2026][Graph Learning][Hyperbolic neural networks] This paper intrinsically lifts multinomial logistic regression (MLR) and fully connected (FC) layers to hyperbolic space via Busemann functions…
 tags:
-  - CVPR 2026
-  - Graph Learning
-  - Hyperbolic neural networks
-  - Busemann function
-  - hyperbolic classification
-  - fully connected layer
-  - manifold learning
+  - "CVPR 2026"
+  - "Graph Learning"
+  - "Hyperbolic neural networks"
+  - "Busemann function"
+  - "hyperbolic classification"
+  - "fully connected layer"
+  - "manifold learning"
 date: 2026-05-08
 content_hash: 93913ab2a75f3072
 ---

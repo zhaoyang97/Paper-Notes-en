@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Do LLMs Feel? Teaching Emotion Recognition with Prompts, Retrieval, and Curriculum Learning
 description: >-
-  [AAAI2026][Audio & Speech][Emotion Recognition in Conversation] This paper proposes PRC-Emo, a framework that integrates explicit/implicit emotion prompting, a dedicated retrieval database, and curriculum learning to enhance LLM performance on Emotion Recognition in Conversation (ERC), achieving state-of-the-art results on the IEMOCAP and MELD benchmarks.
+  [AAAI2026][Audio & Speech][Emotion Recognition in Conversation] This paper proposes PRC-Emo, a framework that integrates explicit/implicit emotion prompting, a dedicated retrieval database…
 tags:
-  - AAAI2026
+  - "AAAI2026"
   - "Audio & Speech"
-  - Emotion Recognition in Conversation
-  - Prompt Engineering
-  - Retrieval-Augmented Generation
-  - Curriculum Learning
-  - LLM Fine-tuning
+  - "Emotion Recognition in Conversation"
+  - "Prompt Engineering"
+  - "Retrieval-Augmented Generation"
+  - "Curriculum Learning"
+  - "LLM Fine-tuning"
 date: 2026-05-08
 content_hash: b1d48b0a3368e693
 ---

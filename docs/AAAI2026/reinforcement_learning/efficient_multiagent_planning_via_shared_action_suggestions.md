@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Efficient Multiagent Planning via Shared Action Suggestions
 description: >-
-  [AAAI 2026][Reinforcement Learning][Dec-POMDP] This paper proposes the MCAS algorithm, which communicates only suggested joint actions (rather than shared observations) within a Dec-POMDP, uses action information to infer other agents' belief states, achieves coordination performance close to centralized methods, and substantially reduces computational complexity.
+  [AAAI 2026][Reinforcement Learning][Dec-POMDP] This paper proposes the MCAS algorithm, which communicates only suggested joint actions (rather than shared observations) within a Dec-POMDP…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - Dec-POMDP
-  - multiagent planning
-  - action suggestion communication
-  - belief inference
-  - joint belief estimation
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "Dec-POMDP"
+  - "multiagent planning"
+  - "action suggestion communication"
+  - "belief inference"
+  - "joint belief estimation"
 date: 2026-05-08
 content_hash: c83ed223409b70ee
 ---

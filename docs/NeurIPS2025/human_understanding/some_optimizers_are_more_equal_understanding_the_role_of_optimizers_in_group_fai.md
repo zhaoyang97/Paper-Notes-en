@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Some Optimizers are More Equal: Understanding the Role of Optimizers in Group Fairness
 description: >-
-  [NeurIPS 2025][Human Understanding][group fairness] This paper presents the first systematic study on how the choice of optimization algorithm affects group fairness in deep learning. Through stochastic differential equation (SDE) analysis and two novel theorems, it demonstrates that adaptive optimizers (RMSProp/Adam) are more likely to converge to fair minima than SGD, particularly under severe data imbalance.
+  [NeurIPS 2025][Human Understanding][group fairness] This paper presents the first systematic study on how the choice of optimization algorithm affects group fairness in deep learning. Through stochastic differential equa…
 tags:
-  - NeurIPS 2025
-  - Human Understanding
-  - group fairness
-  - optimizers
-  - adaptive gradients
-  - stochastic differential equations
-  - fairness in deep learning
+  - "NeurIPS 2025"
+  - "Human Understanding"
+  - "group fairness"
+  - "optimizers"
+  - "adaptive gradients"
+  - "stochastic differential equations"
+  - "fairness in deep learning"
 date: 2026-05-08
 content_hash: 6e4d9e3569a4103a
 ---

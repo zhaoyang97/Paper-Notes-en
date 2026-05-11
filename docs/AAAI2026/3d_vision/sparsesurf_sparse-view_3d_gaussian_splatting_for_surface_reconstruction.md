@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SparseSurf: Sparse-View 3D Gaussian Splatting for Surface Reconstruction
 description: >-
-  [AAAI 2026][3D Vision][sparse-view] SparseSurf is proposed to achieve simultaneous high-accuracy surface reconstruction and high-quality novel view synthesis under sparse-view settings via Stereo Geometry-Texture Alignment and Pseudo-Feature Enhanced Geometry Consistency, attaining state-of-the-art performance on the DTU, BlendedMVS, and Mip-NeRF360 datasets.
+  [AAAI 2026][3D Vision][sparse-view] SparseSurf is proposed to achieve simultaneous high-accuracy surface reconstruction and high-quality novel view synthesis under sparse-view settings via Stereo Geometry-Texture Alignme…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - sparse-view
-  - surface reconstruction
-  - Gaussian splatting
-  - stereo matching
-  - multi-view consistency
+  - "AAAI 2026"
+  - "3D Vision"
+  - "sparse-view"
+  - "surface reconstruction"
+  - "Gaussian splatting"
+  - "stereo matching"
+  - "multi-view consistency"
 date: 2026-05-08
 content_hash: f0384705df27d2ce
 ---

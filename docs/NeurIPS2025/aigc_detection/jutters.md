@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] "Jutters"
 description: >-
-  [NeurIPS 2025 (Creative AI Track)][AIGC Detection][AI-generated content] Through the metaphor of the Dutch tradition of *jutters* (beachcombers), this work constructs an immersive installation art piece that integrates real beach debris with AI-generated images and videos, guiding visitors to adopt a beachcomber's mindset in reflecting on how to engage with AI-generated content.
+  [NeurIPS 2025 (Creative AI Track)][AIGC Detection][AI-generated content] Through the metaphor of the Dutch tradition of *jutters* (beachcombers), this work constructs an immersive installation art piece that integrates r…
 tags:
-  - NeurIPS 2025 (Creative AI Track)
-  - AIGC Detection
-  - AI-generated content
-  - art installation
-  - human-AI interaction
-  - digital curation
-  - AI imagery
+  - "NeurIPS 2025 (Creative AI Track)"
+  - "AIGC Detection"
+  - "AI-generated content"
+  - "art installation"
+  - "human-AI interaction"
+  - "digital curation"
+  - "AI imagery"
 date: 2026-05-08
 content_hash: cf421fdc35642178
 ---

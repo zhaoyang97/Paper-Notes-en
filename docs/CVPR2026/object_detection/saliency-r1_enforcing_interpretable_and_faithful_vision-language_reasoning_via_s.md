@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Saliency-R1: Enforcing Interpretable and Faithful Vision-language Reasoning via Saliency-map Alignment Reward
 description: >-
-  [CVPR 2026][Object Detection][Vision-language models] This paper proposes Saliency-R1, which uses a logit-decomposition-based efficient saliency map technique and chain-of-thought bottleneck attention rollout to compute alignment between saliency maps and human-annotated bounding boxes as a GRPO reward, training VLMs to focus on task-relevant image regions during reasoning and thereby improving the interpretability and faithfulness of the reasoning process.
+  [CVPR 2026][Object Detection][Vision-language models] This paper proposes Saliency-R1, which uses a logit-decomposition-based efficient saliency map technique and chain-of-thought bottleneck attention rollout to compute…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - Vision-language models
-  - saliency maps
-  - GRPO reinforcement learning
-  - interpretable reasoning
-  - attention alignment
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Vision-language models"
+  - "saliency maps"
+  - "GRPO reinforcement learning"
+  - "interpretable reasoning"
+  - "attention alignment"
 date: 2026-05-08
 content_hash: 4b225c1ffa436c4c
 ---

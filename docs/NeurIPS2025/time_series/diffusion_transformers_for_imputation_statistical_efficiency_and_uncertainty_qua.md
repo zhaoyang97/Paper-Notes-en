@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Diffusion Transformers for Imputation: Statistical Efficiency and Uncertainty Quantification
 description: >-
-  [NeurIPS 2025][Time Series][Diffusion models] This paper analyzes the sample complexity and uncertainty quantification performance of conditional diffusion Transformers (DiT) for time series imputation from a statistical learning perspective, and proposes a mixed-masking training strategy to improve imputation quality.
+  [NeurIPS 2025][Time Series][Diffusion models] This paper analyzes the sample complexity and uncertainty quantification performance of conditional diffusion Transformers (DiT) for time series imputation from a statistical…
 tags:
-  - NeurIPS 2025
-  - Time Series
-  - Diffusion models
-  - Transformer
-  - time series imputation
-  - uncertainty quantification
-  - statistical learning theory
+  - "NeurIPS 2025"
+  - "Time Series"
+  - "Diffusion models"
+  - "Transformer"
+  - "time series imputation"
+  - "uncertainty quantification"
+  - "statistical learning theory"
 date: 2026-05-08
 content_hash: a7e0967cabe11c5a
 ---

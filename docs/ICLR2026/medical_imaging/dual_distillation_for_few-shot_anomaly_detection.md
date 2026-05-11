@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Dual Distillation for Few-Shot Anomaly Detection
 description: >-
-  [ICLR 2026][Medical Imaging][few-shot anomaly detection] This paper proposes D24FAD, a dual distillation framework that combines teacher-student distillation on query images (TSD) and student self-distillation on support images (SSD), augmented by a learning-to-weight mechanism (L2W) for adaptive support importance estimation. The method achieves 100% AUROC on the APTOS fundus dataset with only 2-shot support.
+  [ICLR 2026][Medical Imaging][few-shot anomaly detection] This paper proposes D24FAD, a dual distillation framework that combines teacher-student distillation on query images (TSD) and student self-distillation on support…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - few-shot anomaly detection
-  - dual distillation
-  - teacher-student
-  - self-distillation
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "few-shot anomaly detection"
+  - "dual distillation"
+  - "teacher-student"
+  - "self-distillation"
 date: 2026-05-08
 content_hash: 773f523b0152632a
 ---

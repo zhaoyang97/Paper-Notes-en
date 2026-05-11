@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dynamic Dictionary Learning for Remote Sensing Image Segmentation
 description: >-
-  [ICCV 2025][Segmentation][Dynamic Dictionary Learning] This paper proposes D2LS, a dynamic dictionary learning framework that iteratively updates category-aware semantic embeddings (the dictionary) via multi-stage alternating cross-attention, and incorporates contrastive constraints to enhance inter-class separability. D2LS surpasses the state of the art on both coarse-grained and fine-grained remote sensing image segmentation benchmarks.
+  [ICCV 2025][Segmentation][Dynamic Dictionary Learning] This paper proposes D2LS, a dynamic dictionary learning framework that iteratively updates category-aware semantic embeddings (the dictionary) via multi-stage altern…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - Dynamic Dictionary Learning
-  - Remote Sensing Image Segmentation
-  - Category Embeddings
-  - Cross-Attention
-  - Contrastive Learning
+  - "ICCV 2025"
+  - "Segmentation"
+  - "Dynamic Dictionary Learning"
+  - "Remote Sensing Image Segmentation"
+  - "Category Embeddings"
+  - "Cross-Attention"
+  - "Contrastive Learning"
 date: 2026-05-08
 content_hash: a6f5859743332122
 ---

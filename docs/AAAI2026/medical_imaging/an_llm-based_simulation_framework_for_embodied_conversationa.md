@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] An LLM-Based Simulation Framework for Embodied Conversational Agents in Psychological Counseling
 description: >-
-  [AAAI 2026][Medical Imaging][Embodied Conversational Agents] This paper proposes the ECAs framework, which grounds psychological counseling simulation in established theories such as Cognitive Behavioral Therapy (CBT). By leveraging LLMs to expand real counseling cases into embodied cognitive memory spaces, the framework simulates the complete cognitive processes of clients in counseling sessions and generates high-fidelity dialogue data. ECAs significantly outperforms baselines in both expert and automated evaluations.
+  [AAAI 2026][Medical Imaging][Embodied Conversational Agents] This paper proposes the ECAs framework, which grounds psychological counseling simulation in established theories such as Cognitive Behavioral Therapy (CBT). B…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Embodied Conversational Agents
-  - Psychological Counseling Simulation
-  - Cognitive Behavioral Therapy
-  - LLM Data Synthesis
-  - Memory-Driven Dialogue
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Embodied Conversational Agents"
+  - "Psychological Counseling Simulation"
+  - "Cognitive Behavioral Therapy"
+  - "LLM Data Synthesis"
+  - "Memory-Driven Dialogue"
 date: 2026-05-08
 content_hash: 41afc4c76964c224
 ---

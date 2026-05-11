@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Where, What, Why: Towards Explainable Driver Attention Prediction
 description: >-
-  [ICCV 2025][Autonomous Driving][driver attention prediction] This paper proposes a new paradigm of "explainable driver attention prediction," introducing the first large-scale W³DA dataset and the LLada framework, which unifies spatial attention prediction (Where), semantic parsing (What), and cognitive reasoning (Why) within a single end-to-end large language model-driven architecture.
+  [ICCV 2025][Autonomous Driving][driver attention prediction] This paper proposes a new paradigm of "explainable driver attention prediction," introducing the first large-scale W³DA dataset and the LLada framework…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - driver attention prediction
-  - explainability
-  - multimodal large language models
-  - cognitive reasoning
-  - gaze prediction
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "driver attention prediction"
+  - "explainability"
+  - "multimodal large language models"
+  - "cognitive reasoning"
+  - "gaze prediction"
 date: 2026-05-08
 content_hash: 5f953b187fb58b82
 ---

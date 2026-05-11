@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The Primacy of Magnitude in Low-Rank Adaptation
 description: >-
-  [NeurIPS 2025][Scientific Computing][LoRA] This paper reveals that weight update magnitude is the fundamental driver of performance in LoRA, unifying the influence of learning rate, scaling factor, and initialization strategy under a single framework. It further proposes LoRAM—an efficient initialization method based on deterministic orthogonal bases and magnitude scaling—that matches or surpasses spectral initialization methods without requiring SVD.
+  [NeurIPS 2025][Scientific Computing][LoRA] This paper reveals that weight update magnitude is the fundamental driver of performance in LoRA, unifying the influence of learning rate, scaling factor…
 tags:
-  - NeurIPS 2025
-  - Scientific Computing
-  - LoRA
-  - parameter-efficient fine-tuning
-  - initialization strategy
-  - weight update magnitude
-  - low-rank adaptation
+  - "NeurIPS 2025"
+  - "Scientific Computing"
+  - "LoRA"
+  - "parameter-efficient fine-tuning"
+  - "initialization strategy"
+  - "weight update magnitude"
+  - "low-rank adaptation"
 date: 2026-05-08
 content_hash: b1d40a115c5ad56a
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Kuramoto Orientation Diffusion Models
 description: >-
-  [NeurIPS 2025][Image Generation][Kuramoto model] This work introduces Kuramoto synchronization dynamics from biological systems into score-based generative models, constructing a forward synchronization / reverse desynchronization diffusion framework over the periodic domain. The proposed approach achieves substantially superior generation quality over standard diffusion models on orientation-dense data such as fingerprints and textures, while remaining competitive on CIFAR-10.
+  [NeurIPS 2025][Image Generation][Kuramoto model] This work introduces Kuramoto synchronization dynamics from biological systems into score-based generative models…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Kuramoto model
-  - synchronization dynamics
-  - orientation field
-  - periodic domain
-  - score-based generative models
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Kuramoto model"
+  - "synchronization dynamics"
+  - "orientation field"
+  - "periodic domain"
+  - "score-based generative models"
 date: 2026-05-08
 content_hash: 98d763f55ead1323
 ---

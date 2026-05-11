@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UniRes: Universal Image Restoration for Complex Degradations
 description: >-
-  [ICCV 2025][Image Restoration][Complex degradations] This paper proposes UniRes — a diffusion-based universal image restoration framework that acquires expert knowledge across four tasks (super-resolution, motion deblurring, defocus deblurring, and denoising) through multi-task training. At inference time, it handles arbitrary combinations of real-world complex degradations end-to-end by flexibly composing latent-space prediction weights from different tasks.
+  [ICCV 2025][Image Restoration][Complex degradations] This paper proposes UniRes — a diffusion-based universal image restoration framework that acquires expert knowledge across four tasks (super-resolution…
 tags:
-  - ICCV 2025
-  - Image Restoration
-  - Complex degradations
-  - diffusion models
-  - multi-task training
-  - latent space composition
-  - real-world restoration
+  - "ICCV 2025"
+  - "Image Restoration"
+  - "Complex degradations"
+  - "diffusion models"
+  - "multi-task training"
+  - "latent space composition"
+  - "real-world restoration"
 date: 2026-05-08
 content_hash: 25f6f1b62fe8d387
 ---

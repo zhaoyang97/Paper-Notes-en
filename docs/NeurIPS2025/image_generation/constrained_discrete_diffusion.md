@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Constrained Discrete Diffusion
 description: >-
-  [NeurIPS 2025][Image Generation][Discrete diffusion models] This paper proposes CDD (Constrained Discrete Diffusion), which embeds a differentiable constrained optimization projection operator into the denoising process of discrete diffusion models. Without retraining, CDD enforces sequence-level constraints at sampling time, achieving zero constraint violations across three task categories: toxic text generation, molecular design, and instruction following.
+  [NeurIPS 2025][Image Generation][Discrete diffusion models] This paper proposes CDD (Constrained Discrete Diffusion), which embeds a differentiable constrained optimization projection operator into the denoising process…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Discrete diffusion models
-  - constrained optimization
-  - augmented Lagrangian
-  - controllable text generation
-  - molecular generation
-  - toxicity mitigation
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Discrete diffusion models"
+  - "constrained optimization"
+  - "augmented Lagrangian"
+  - "controllable text generation"
+  - "molecular generation"
+  - "toxicity mitigation"
 date: 2026-05-08
 content_hash: 5b9087cc3153dd54
 ---

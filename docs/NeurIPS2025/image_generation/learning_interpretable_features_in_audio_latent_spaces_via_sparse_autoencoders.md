@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Interpretable Features in Audio Latent Spaces via Sparse Autoencoders
 description: >-
-  [NeurIPS 2025][Image Generation][Sparse Autoencoders] This paper proposes a framework for extracting interpretable features from the latent spaces of audio generative models via sparse autoencoders (SAEs). Linear probes are used to map SAE features to human-understandable acoustic concepts (pitch, amplitude, timbre), enabling controllable manipulation and visualization of the audio generation process.
+  [NeurIPS 2025][Image Generation][Sparse Autoencoders] This paper proposes a framework for extracting interpretable features from the latent spaces of audio generative models via sparse autoencoders (SAEs). Linear probes…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Sparse Autoencoders
-  - Audio Latent Space
-  - Interpretability
-  - Music Generation
-  - Control Vectors
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Sparse Autoencoders"
+  - "Audio Latent Space"
+  - "Interpretability"
+  - "Music Generation"
+  - "Control Vectors"
 date: 2026-05-08
 content_hash: 35467ab21973336d
 ---

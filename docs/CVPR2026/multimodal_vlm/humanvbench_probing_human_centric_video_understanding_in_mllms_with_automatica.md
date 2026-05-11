@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HumanVBench: Probing Human-Centric Video Understanding in MLLMs with Automatically Synthesized Benchmarks
 description: >-
-  [CVPR 2026][Multimodal VLM][Video benchmark] This paper introduces HumanVBench, a human-centric video understanding benchmark comprising 16 fine-grained tasks, accompanied by two automated pipelines (video annotation and distractor-aware QA synthesis). Evaluation of 30 mainstream video MLLMs reveals critical deficiencies in current models regarding nuanced emotion perception and speech-visual alignment.
+  [CVPR 2026][Multimodal VLM][Video benchmark] This paper introduces HumanVBench, a human-centric video understanding benchmark comprising 16 fine-grained tasks…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Video benchmark
-  - human-centric video understanding
-  - multimodal large language models
-  - emotion perception
-  - speech-visual alignment
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Video benchmark"
+  - "human-centric video understanding"
+  - "multimodal large language models"
+  - "emotion perception"
+  - "speech-visual alignment"
 date: 2026-05-08
 content_hash: 33694116b7b99929
 ---

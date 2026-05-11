@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OmniGCD: Abstracting Generalized Category Discovery for Modality Agnosticism
 description: >-
-  [CVPR 2026][Self-Supervised Learning][generalized category discovery] This paper proposes OmniGCD, the first modality-agnostic generalized category discovery method. A GCDformer trained on synthetic data transforms the GCD latent space of arbitrary modalities at test time into representations more amenable to clustering, achieving zero-shot GCD across 16 datasets spanning four modalities.
+  [CVPR 2026][Self-Supervised Learning][generalized category discovery] This paper proposes OmniGCD, the first modality-agnostic generalized category discovery method. A GCDformer trained on synthetic data transforms the G…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - generalized category discovery
-  - modality-agnostic
-  - zero-shot
-  - transformer
-  - synthetic training
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "generalized category discovery"
+  - "modality-agnostic"
+  - "zero-shot"
+  - "transformer"
+  - "synthetic training"
 date: 2026-05-08
 content_hash: 71822e3bb2a3b18f
 ---

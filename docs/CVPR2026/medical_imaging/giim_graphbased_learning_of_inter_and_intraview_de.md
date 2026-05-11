@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GIIM: Graph-based Learning of Inter- and Intra-view Dependencies for Multi-view Medical Image Diagnosis
 description: >-
-  [CVPR 2026][Medical Imaging][Multi-heterogeneous graph] This paper proposes the GIIM framework, which constructs a Multi-Heterogeneous Graph (MHG) with four types of edge relations to simultaneously model the dynamic changes of individual lesions across imaging phases and the spatial associations among different lesions. Four missing-view imputation strategies are designed. GIIM achieves significant improvements over existing methods on three modalities: liver CT, breast mammography, and breast MRI.
+  [CVPR 2026][Medical Imaging][Multi-heterogeneous graph] This paper proposes the GIIM framework, which constructs a Multi-Heterogeneous Graph (MHG) with four types of edge relations to simultaneously model the dynamic cha…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Multi-heterogeneous graph
-  - multi-view diagnosis
-  - intra-/inter-view dependencies
-  - missing view handling
-  - CADx
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Multi-heterogeneous graph"
+  - "multi-view diagnosis"
+  - "intra-/inter-view dependencies"
+  - "missing view handling"
+  - "CADx"
 date: 2026-05-08
 content_hash: e83b7387b3547867
 ---

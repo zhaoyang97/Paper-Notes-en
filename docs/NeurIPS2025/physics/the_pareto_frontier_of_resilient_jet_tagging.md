@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] The Pareto Frontier of Resilient Jet Tagging
 description: >-
-  [NeurIPS 2025][jet tagging] This work systematically evaluates the AUC–resilience trade-off across multiple architectures (DNN/PFN/EFN/ParT) for LHC jet tagging tasks, revealing that more complex models achieve higher AUC but exhibit stronger Monte Carlo model dependence. A Pareto frontier is constructed, and a case study demonstrates that low-resilience classifiers introduce bias in downstream parameter estimation even after calibration.
+  [NeurIPS 2025][Physics][jet tagging] This work systematically evaluates the AUC–resilience trade-off across multiple architectures (DNN/PFN/EFN/ParT) for LHC jet tagging tasks…
 tags:
-  - NeurIPS 2025
-  - jet tagging
-  - Pareto frontier
-  - resilience
-  - model dependence
-  - quark/gluon discrimination
+  - "NeurIPS 2025"
+  - "Physics"
+  - "jet tagging"
+  - "Pareto frontier"
+  - "resilience"
+  - "model dependence"
+  - "quark/gluon discrimination"
 date: 2026-05-08
 content_hash: 01ebb8bbdbb8f9bf
 ---

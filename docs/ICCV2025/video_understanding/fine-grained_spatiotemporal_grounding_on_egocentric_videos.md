@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Fine-grained Spatiotemporal Grounding on Egocentric Videos
 description: >-
-  [ICCV 2025][Video Understanding][egocentric video] This paper presents EgoMask, the first pixel-level spatiotemporal grounding benchmark for egocentric videos, comprising short/medium/long evaluation splits and a large-scale training set EgoMask-Train. Through systematic analysis, it reveals key differences between egocentric and exocentric videos, and demonstrates that fine-tuned models can achieve substantial performance gains.
+  [ICCV 2025][Video Understanding][egocentric video] This paper presents EgoMask, the first pixel-level spatiotemporal grounding benchmark for egocentric videos…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - egocentric video
-  - spatiotemporal grounding
-  - pixel-level segmentation
-  - benchmark
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "egocentric video"
+  - "spatiotemporal grounding"
+  - "pixel-level segmentation"
+  - "benchmark"
 date: 2026-05-08
 content_hash: 98ff53ae70116f8a
 ---

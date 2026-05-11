@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UniCreative: Unifying Long-form Logic and Short-form Sparkle via Reference-Free Reinforcement Learning
 description: >-
-  [ACL 2026][Reinforcement Learning][Creative Writing] This paper proposes UniCreative, a framework that unifies long-form (plan→write) and short-form (direct generation) creative writing modes through Adaptive Constraint Preference Optimization (ACPO) and an Adaptive Criteria Generative Reward Model (AC-GenRM), requiring neither SFT nor reference answers. The trained model exhibits emergent metacognitive ability to autonomously distinguish between task types.
+  [ACL 2026][Reinforcement Learning][Creative Writing] This paper proposes UniCreative, a framework that unifies long-form (plan→write) and short-form (direct generation) creative writing modes through Adaptive Constraint…
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - Creative Writing
-  - Reference-Free Reinforcement Learning
-  - Preference Optimization
-  - Generative Reward Model
-  - Metacognition
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "Creative Writing"
+  - "Reference-Free Reinforcement Learning"
+  - "Preference Optimization"
+  - "Generative Reward Model"
+  - "Metacognition"
 date: 2026-05-08
 content_hash: 40a145bc7f4aca79
 ---

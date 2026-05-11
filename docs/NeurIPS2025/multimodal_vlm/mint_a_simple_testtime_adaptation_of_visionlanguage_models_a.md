@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Mint: A Simple Test-Time Adaptation of Vision-Language Models against Common Corruptions
 description: >-
-  [NeurIPS 2025][Multimodal VLM][test-time adaptation] This work identifies **embedding variance collapse**—the simultaneous shrinkage of intra- and inter-class variance that erodes discriminability in the embedding space—as the root cause of CLIP's performance degradation under image corruptions. It proposes Mint, which restores embedding geometry online by maximizing pseudo-label inter-class variance (PL-inter) using only two lightweight components: a mean accumulator and a gradient accumulator. Mint consistently improves CLIP's classification accuracy across multiple corruption benchmarks even at BS=1, while running 45× faster than the strongest baseline.
+  [NeurIPS 2025][Multimodal VLM][test-time adaptation] This work identifies **embedding variance collapse**—the simultaneous shrinkage of intra- and inter-class variance that erodes discriminability in the embedding space—…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - test-time adaptation
-  - CLIP
-  - corruption robustness
-  - embedding variance collapse
-  - inter-class variance
-  - pseudo-label
-  - LayerNorm
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "test-time adaptation"
+  - "CLIP"
+  - "corruption robustness"
+  - "embedding variance collapse"
+  - "inter-class variance"
+  - "pseudo-label"
+  - "LayerNorm"
 date: 2026-05-08
 content_hash: 891c65c370e220bf
 ---

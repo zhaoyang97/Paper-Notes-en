@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Snapshot of Influence: A Local Data Attribution Framework for Online Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Robotics][Data Attribution] This work is the first to introduce data attribution into online reinforcement learning. It proposes a local attribution framework to quantify each training record's contribution to policy updates, and builds upon it an Iterative Influence Filtering (IIF) algorithm that substantially improves sample efficiency and final performance on both classical RL benchmarks and LLM RLHF.
+  [NeurIPS 2025][Robotics][Data Attribution] This work is the first to introduce data attribution into online reinforcement learning. It proposes a local attribution framework to quantify each training record's contributio…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - Data Attribution
-  - Online Reinforcement Learning
-  - PPO
-  - Influence Functions
-  - Experience Filtering
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "Data Attribution"
+  - "Online Reinforcement Learning"
+  - "PPO"
+  - "Influence Functions"
+  - "Experience Filtering"
 date: 2026-05-08
 content_hash: cfca29f4b9e5dc94
 ---

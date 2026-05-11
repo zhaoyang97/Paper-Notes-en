@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] RiverMamba: A State Space Model for Global River Discharge and Flood Forecasting
 description: >-
-  [NeurIPS 2025][Time Series][River discharge forecasting] The first deep learning model capable of 7-day river discharge forecasting on a 0.05° (~5.5 km) global grid — global grid points are serialized via space-filling curves into 3D spatiotemporal point sequences fed into bidirectional Mamba blocks, driven by ECMWF HRES meteorological forecasts, achieving F1 = 0.459 on flood detection across 1.5–500-year return periods, surpassing LSTM (0.358) and the physical model GloFAS.
+  [NeurIPS 2025][Time Series][River discharge forecasting] The first deep learning model capable of 7-day river discharge forecasting on a 0.05° (~5.5 km) global grid — global grid points are serialized via space-filling c…
 tags:
-  - NeurIPS 2025
-  - Time Series
-  - River discharge forecasting
-  - flood prediction
-  - Mamba
-  - spatiotemporal modeling
-  - global scale
-  - GloFAS
+  - "NeurIPS 2025"
+  - "Time Series"
+  - "River discharge forecasting"
+  - "flood prediction"
+  - "Mamba"
+  - "spatiotemporal modeling"
+  - "global scale"
+  - "GloFAS"
 date: 2026-05-08
 content_hash: 9fbc2065e386007f
 ---

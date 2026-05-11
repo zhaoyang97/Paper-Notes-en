@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VirtueBench: Evaluating Trustworthiness under Uncertainty in Long Video Understanding
 description: >-
-  [CVPR 2026][Video Understanding][Video Understanding Benchmark] This paper proposes VirtueBench, the first long video understanding benchmark for evaluating VLM trustworthiness under uncertainty. By constructing multi-level frame sampling for each video and annotating answerable/unanswerable ground truth at each level, it reveals that existing models tend to guess rather than honestly refuse to answer.
+  [CVPR 2026][Video Understanding][Video Understanding Benchmark] This paper proposes VirtueBench, the first long video understanding benchmark for evaluating VLM trustworthiness under uncertainty. By constructing multi-le…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Video Understanding Benchmark
-  - Trustworthiness under Uncertainty
-  - Long Video Understanding
-  - Refusal Behavior Evaluation
-  - VLM Evaluation
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Video Understanding Benchmark"
+  - "Trustworthiness under Uncertainty"
+  - "Long Video Understanding"
+  - "Refusal Behavior Evaluation"
+  - "VLM Evaluation"
 date: 2026-05-08
 content_hash: 7c7fbc033ba2d1bf
 ---

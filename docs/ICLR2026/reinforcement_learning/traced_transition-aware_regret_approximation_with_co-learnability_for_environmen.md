@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] TRACED: Transition-aware Regret Approximation with Co-learnability for Environment Design
 description: >-
-  [ICLR 2026][Reinforcement Learning][Unsupervised Environment Design] TRACED improves regret approximation in Unsupervised Environment Design (UED) by augmenting the conventional PVL with an Approximate Transition Prediction Loss (ATPL) to capture dynamics model mismatch, and introduces a Co-Learnability measure to quantify inter-task transfer benefits. On MiniGrid and BipedalWalker, TRACED surpasses all baselines' 20k-update performance using only 10k updates.
+  [ICLR 2026][Reinforcement Learning][Unsupervised Environment Design] TRACED improves regret approximation in Unsupervised Environment Design (UED) by augmenting the conventional PVL with an Approximate Transition Predict…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Unsupervised Environment Design
-  - Curriculum Learning
-  - Regret Approximation
-  - Transition Prediction Error
-  - Co-Learnability
-  - Zero-shot Transfer
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Unsupervised Environment Design"
+  - "Curriculum Learning"
+  - "Regret Approximation"
+  - "Transition Prediction Error"
+  - "Co-Learnability"
+  - "Zero-shot Transfer"
 date: 2026-05-08
 content_hash: 1862dea58390b89d
 ---

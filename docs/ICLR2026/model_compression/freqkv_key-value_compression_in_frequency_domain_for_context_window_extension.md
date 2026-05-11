@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FreqKV: Key-Value Compression in Frequency Domain for Context Window Extension
 description: >-
-  [ICLR 2026][Model Compression][KV cache compression] This paper proposes FreqKV, a parameter-free and architecture-agnostic KV cache compression method that iteratively compresses KV states in the frequency domain by retaining low-frequency components and discarding high-frequency ones. With only lightweight fine-tuning on 8K-length sequences, FreqKV extends the context window of LLaMA-2-7B to 256K while maintaining stable perplexity.
+  [ICLR 2026][Model Compression][KV cache compression] This paper proposes FreqKV, a parameter-free and architecture-agnostic KV cache compression method that iteratively compresses KV states in the frequency domain by ret…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - KV cache compression
-  - frequency domain transform
-  - context window extension
-  - DCT
-  - long-context inference
+  - "ICLR 2026"
+  - "Model Compression"
+  - "KV cache compression"
+  - "frequency domain transform"
+  - "context window extension"
+  - "DCT"
+  - "long-context inference"
 date: 2026-05-08
 content_hash: f7dd3a4dda10b9d9
 ---

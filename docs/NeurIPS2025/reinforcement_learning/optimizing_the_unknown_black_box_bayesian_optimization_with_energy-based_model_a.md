@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Optimizing the Unknown: Black Box Bayesian Optimization with Energy-Based Model and Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Bayesian Optimization] This paper proposes REBMBO, a framework that unifies Gaussian Processes (local modeling), Energy-Based Models (EBM, global exploration), and PPO-based reinforcement learning (multi-step look-ahead) into a closed-loop Bayesian optimization system, achieving significant improvements over conventional BO methods on high-dimensional and multi-modal black-box optimization tasks.
+  [NeurIPS 2025][Reinforcement Learning][Bayesian Optimization] This paper proposes REBMBO, a framework that unifies Gaussian Processes (local modeling), Energy-Based Models (EBM, global exploration)…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Bayesian Optimization
-  - Energy-Based Model
-  - PPO
-  - Black-Box Optimization
-  - Multi-Step Look-Ahead
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Bayesian Optimization"
+  - "Energy-Based Model"
+  - "PPO"
+  - "Black-Box Optimization"
+  - "Multi-Step Look-Ahead"
 date: 2026-05-08
 content_hash: 9b347ba94a7a7dd2
 ---

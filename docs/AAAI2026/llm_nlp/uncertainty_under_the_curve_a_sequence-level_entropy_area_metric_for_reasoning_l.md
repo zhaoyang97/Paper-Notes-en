@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Uncertainty Under the Curve: A Sequence-Level Entropy Area Metric for Reasoning LLMs
 description: >-
-  [AAAI 2026][LLM/NLP][Entropy Area Score] This paper proposes the Entropy Area Score (EAS)—a method that quantifies uncertainty in reasoning LLMs by integrating token-level predictive entropy via a single forward pass. EAS requires neither external models nor repeated sampling, achieves strong correlation with answer entropy (Pearson $r=0.82$), and when applied to training data selection outperforms Pass Rate filtering by 1.2–2.3% Pass@1, making it an efficient and interpretable uncertainty estimation tool for LLMs.
+  [AAAI 2026][LLM/NLP][Entropy Area Score] This paper proposes the Entropy Area Score (EAS)—a method that quantifies uncertainty in reasoning LLMs by integrating token-level predictive entropy via a single forward pass. EA…
 tags:
-  - AAAI 2026
-  - LLM/NLP
-  - Entropy Area Score
-  - uncertainty estimation
-  - token-level entropy
-  - training data selection
-  - reasoning LLM
+  - "AAAI 2026"
+  - "LLM/NLP"
+  - "Entropy Area Score"
+  - "uncertainty estimation"
+  - "token-level entropy"
+  - "training data selection"
+  - "reasoning LLM"
 date: 2026-05-08
 content_hash: f158eb035d58abb8
 ---

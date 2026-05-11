@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ZipVoice-Dialog: Non-Autoregressive Spoken Dialogue Generation with Flow Matching
 description: >-
-  [ACL 2026][Image Generation][spoken dialogue generation] This paper proposes ZipVoice-Dialog, the first non-autoregressive zero-shot spoken dialogue generation model based on flow matching. Through two simple designs—curriculum learning and speaker-turn embeddings—it addresses the unintelligible speech and turn confusion problems that arise when flow matching is directly applied to dialogue scenarios. The paper also releases OpenDialog (6.8k hours), the first large-scale open-source spoken dialogue dataset.
+  [ACL 2026][Image Generation][spoken dialogue generation] This paper proposes ZipVoice-Dialog, the first non-autoregressive zero-shot spoken dialogue generation model based on flow matching. Through two simple designs—cur…
 tags:
-  - ACL 2026
-  - Image Generation
-  - spoken dialogue generation
-  - non-autoregressive
-  - flow matching
-  - speaker turn
-  - curriculum learning
+  - "ACL 2026"
+  - "Image Generation"
+  - "spoken dialogue generation"
+  - "non-autoregressive"
+  - "flow matching"
+  - "speaker turn"
+  - "curriculum learning"
 date: 2026-05-08
 content_hash: 7807ac61647b912d
 ---

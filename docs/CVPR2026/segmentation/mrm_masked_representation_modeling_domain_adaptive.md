@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Masked Representation Modeling for Domain-Adaptive Segmentation
 description: >-
-  [CVPR 2026][Segmentation][unsupervised domain adaptation] The paper proposes Masked Representation Modeling (MRM), which randomly masks and reconstructs features in the encoder's latent space and supervises the reconstruction with a pixel classification loss. As a plug-in auxiliary task it lifts four UDA baselines by an average of +2.3 / +2.8 mIoU on GTA→Cityscapes / Synthia→Cityscapes, with zero inference-time overhead.
+  [CVPR 2026][Segmentation][unsupervised domain adaptation] The paper proposes Masked Representation Modeling (MRM), which randomly masks and reconstructs features in the encoder's latent space and supervises the reconstru…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - unsupervised domain adaptation
-  - masked representation modeling
-  - semantic segmentation
-  - auxiliary task
-  - Rebuilder
+  - "CVPR 2026"
+  - "Segmentation"
+  - "unsupervised domain adaptation"
+  - "masked representation modeling"
+  - "semantic segmentation"
+  - "auxiliary task"
+  - "Rebuilder"
 date: 2026-05-08
 content_hash: 0952502a70786763
 ---

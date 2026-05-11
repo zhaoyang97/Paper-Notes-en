@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PMark: Towards Robust and Distortion-free Semantic-level Watermarking with Channel Constraints
 description: >-
-  [ICLR 2026][LLM Safety][LLM watermarking] PMark is a theoretically distortion-free and paraphrase-robust semantic-level watermarking method for LLMs. It employs cascaded binary filtering over candidate sentences using multiple orthogonal pivot vectors, with median-based sampling to guarantee distortion-freeness. Multi-channel design increases watermark evidence density and enhances robustness. Under paraphrase attacks, TP@FP1% reaches 95%+, outperforming prior SWM methods by 14.8%.
+  [ICLR 2026][LLM Safety][LLM watermarking] PMark is a theoretically distortion-free and paraphrase-robust semantic-level watermarking method for LLMs. It employs cascaded binary filtering over candidate sentences using mu…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - LLM watermarking
-  - semantic-level watermarking
-  - distortion-free
-  - multi-channel constraints
-  - robustness theory
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "LLM watermarking"
+  - "semantic-level watermarking"
+  - "distortion-free"
+  - "multi-channel constraints"
+  - "robustness theory"
 date: 2026-05-08
 content_hash: dbe209b92473e040
 ---

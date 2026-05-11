@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Aligning by Misaligning: Boundary-aware Curriculum Learning for Multimodal Alignment
 description: >-
-  [NeurIPS 2025][Multimodal VLM][multimodal alignment] This paper proposes BACL (Boundary-Aware Curriculum with Local Attention), which combines a learnable boundary-aware negative sampler (via easy-to-hard curriculum learning) with a contrastive local attention loss (for token-level mismatch localization). On LAION-400M, BACL yields a +32% R@1 improvement over CLIP and achieves state-of-the-art results on four large-scale benchmarks.
+  [NeurIPS 2025][Multimodal VLM][multimodal alignment] This paper proposes BACL (Boundary-Aware Curriculum with Local Attention), which combines a learnable boundary-aware negative sampler (via easy-to-hard curriculum lear…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - multimodal alignment
-  - contrastive learning
-  - curriculum learning
-  - hard negatives
-  - boundary-aware sampling
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "multimodal alignment"
+  - "contrastive learning"
+  - "curriculum learning"
+  - "hard negatives"
+  - "boundary-aware sampling"
 date: 2026-05-08
 content_hash: 3ea84c8be265d823
 ---

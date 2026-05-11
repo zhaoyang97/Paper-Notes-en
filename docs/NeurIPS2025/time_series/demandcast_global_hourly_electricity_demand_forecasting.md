@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DemandCast: Global hourly electricity demand forecasting
 description: >-
-  [NeurIPS 2025][Time Series][Electricity demand forecasting] DemandCast is an open-source machine learning framework that leverages XGBoost to integrate historical electricity demand, ERA5 temperature data, and socioeconomic features for hourly electricity demand forecasting across 56 countries/regions worldwide. By normalizing the target variable as a fraction of annual demand, the framework achieves cross-country comparability and attains a MAPE of 9.2% on a temporally held-out test set.
+  [NeurIPS 2025][Time Series][Electricity demand forecasting] DemandCast is an open-source machine learning framework that leverages XGBoost to integrate historical electricity demand, ERA5 temperature data…
 tags:
-  - NeurIPS 2025
-  - Time Series
-  - Electricity demand forecasting
-  - XGBoost
-  - global scale
-  - ERA5 meteorological data
-  - normalized target
+  - "NeurIPS 2025"
+  - "Time Series"
+  - "Electricity demand forecasting"
+  - "XGBoost"
+  - "global scale"
+  - "ERA5 meteorological data"
+  - "normalized target"
 date: 2026-05-08
 content_hash: 49b42fcbc401a576
 ---

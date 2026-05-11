@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] AFUNet: Cross-Iterative Alignment-Fusion Synergy for HDR Reconstruction via Deep Unfolding Paradigm
 description: >-
-  [ICCV 2025][HDR imaging] This paper formulates multi-exposure HDR reconstruction from a MAP estimation perspective, decomposes the problem into two alternating subproblems—alignment and fusion—via a spatial correspondence prior, and unfolds them into an end-to-end trainable AFUNet comprising SAM (spatial alignment), CFM (channel fusion), and DCM (data consistency) modules. The method achieves state-of-the-art performance on three HDR benchmarks, reaching PSNR-μ of 44.91 dB on the Kalantari dataset.
+  [ICCV 2025][HDR imaging] This paper formulates multi-exposure HDR reconstruction from a MAP estimation perspective, decomposes the problem into two alternating subproblems—alignment and fusion—via a spatial correspondenc…
 tags:
-  - ICCV 2025
-  - HDR imaging
-  - deep unfolding network
-  - MAP estimation
-  - alignment-fusion alternating optimization
-  - deghosting
+  - "ICCV 2025"
+  - "HDR imaging"
+  - "deep unfolding network"
+  - "MAP estimation"
+  - "alignment-fusion alternating optimization"
+  - "deghosting"
 date: 2026-05-08
 content_hash: b9992c2c39574880
 ---

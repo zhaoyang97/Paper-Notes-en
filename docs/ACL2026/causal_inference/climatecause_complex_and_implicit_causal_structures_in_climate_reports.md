@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ClimateCause: Complex and Implicit Causal Structures in Climate Reports
 description: >-
-  [ACL 2026][Causal Inference][Causal Discovery] ClimateCause constructs the first expert-annotated dataset for complex and implicit causal structures in climate reports (874 causal relations), supporting nested causality, multi-event decomposition, correlation direction, and spatiotemporal context annotation. LLM benchmarking shows causal chain reasoning remains a major challenge.
+  [ACL 2026][Causal Inference][Causal Discovery] ClimateCause constructs the first expert-annotated dataset for complex and implicit causal structures in climate reports (874 causal relations), supporting nested causality…
 tags:
-  - ACL 2026
-  - Causal Inference
-  - Causal Discovery
-  - Climate Change
-  - Implicit Causality
-  - Nested Causality
-  - IPCC Report
+  - "ACL 2026"
+  - "Causal Inference"
+  - "Causal Discovery"
+  - "Climate Change"
+  - "Implicit Causality"
+  - "Nested Causality"
+  - "IPCC Report"
 content_hash: 158d3a4bfe2d51f2
 ---
 

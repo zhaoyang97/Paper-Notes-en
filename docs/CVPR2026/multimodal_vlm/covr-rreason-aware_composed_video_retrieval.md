@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CoVR-R: Reason-Aware Composed Video Retrieval
 description: >-
-  [CVPR 2026][Multimodal VLM][composed video retrieval] CoVR-R proposes a reasoning-first zero-shot composed video retrieval framework that leverages a large multimodal model (Qwen3-VL) to explicitly reason about the "after-effects" (state transitions, temporal phases, shot changes, etc.) implied by edit instructions. The paper further introduces the CoVR-R benchmark, comprising structured reasoning traces and hard negatives, to evaluate reasoning capability. The method substantially outperforms existing approaches in retrieval accuracy.
+  [CVPR 2026][Multimodal VLM][composed video retrieval] CoVR-R proposes a reasoning-first zero-shot composed video retrieval framework that leverages a large multimodal model (Qwen3-VL) to explicitly reason about the "afte…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - composed video retrieval
-  - reason-aware retrieval
-  - after-effect reasoning
-  - zero-shot retrieval
-  - large multimodal models
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "composed video retrieval"
+  - "reason-aware retrieval"
+  - "after-effect reasoning"
+  - "zero-shot retrieval"
+  - "large multimodal models"
 date: 2026-05-08
 content_hash: 3a9bdb3a31010184
 ---

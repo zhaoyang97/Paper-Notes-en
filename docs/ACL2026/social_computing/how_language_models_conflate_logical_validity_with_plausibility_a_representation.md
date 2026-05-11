@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] How Language Models Conflate Logical Validity with Plausibility: A Representational Analysis of Content Effects
 description: >-
-  [ACL 2026][Social Computing][Content Effects] Through representational analysis, this work reveals that the concepts of "logical validity" and "plausibility" are highly aligned in LLM hidden layer spaces, causing models to conflate plausibility with validity (content effects). The paper constructs debiasing steering vectors that effectively decouple these two concepts, reducing content effects while improving reasoning accuracy.
+  [ACL 2026][Social Computing][Content Effects] Through representational analysis, this work reveals that the concepts of "logical validity" and "plausibility" are highly aligned in LLM hidden layer spaces…
 tags:
-  - ACL 2026
-  - Social Computing
-  - Content Effects
-  - Logical Validity
-  - Plausibility
-  - Linear Representations
-  - Steering Vectors
+  - "ACL 2026"
+  - "Social Computing"
+  - "Content Effects"
+  - "Logical Validity"
+  - "Plausibility"
+  - "Linear Representations"
+  - "Steering Vectors"
 date: 2026-05-08
 content_hash: 9843776fdfb796dc
 ---

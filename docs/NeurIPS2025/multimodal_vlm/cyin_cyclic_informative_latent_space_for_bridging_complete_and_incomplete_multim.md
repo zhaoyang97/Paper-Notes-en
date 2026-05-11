@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CyIN: Cyclic Informative Latent Space for Bridging Complete and Incomplete Multimodal Learning
 description: >-
-  [NeurIPS 2025][Multimodal VLM][incomplete multimodal learning] This paper proposes the CyIN framework, which constructs an informative latent space via token-level and label-level information bottlenecks (IB), and employs cyclic cross-modal translation to reconstruct missing modality information, simultaneously optimizing complete and incomplete multimodal learning within a single unified model.
+  [NeurIPS 2025][Multimodal VLM][incomplete multimodal learning] This paper proposes the CyIN framework, which constructs an informative latent space via token-level and label-level information bottlenecks (IB)…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - incomplete multimodal learning
-  - information bottleneck
-  - cyclic translation
-  - variational approximation
-  - modality missing
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "incomplete multimodal learning"
+  - "information bottleneck"
+  - "cyclic translation"
+  - "variational approximation"
+  - "modality missing"
 date: 2026-05-08
 content_hash: 89bb160b1d19219a
 ---

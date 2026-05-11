@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From Static to Dynamic: Exploring Self-supervised Image-to-Video Representation Transfer Learning
 description: >-
-  [CVPR 2026][Video Generation][Image-to-video transfer] This paper proposes Co-Settle, a framework that trains a lightweight linear projection layer on top of a frozen image-pretrained encoder. Using temporal cycle consistency loss and semantic separability constraints, the method achieves consistent improvements across multi-granularity video downstream tasks on 8 image foundation models with only 5 epochs of self-supervised training.
+  [CVPR 2026][Video Generation][Image-to-video transfer] This paper proposes Co-Settle, a framework that trains a lightweight linear projection layer on top of a frozen image-pretrained encoder. Using temporal cycle consis…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Image-to-video transfer
-  - self-supervised learning
-  - temporal consistency
-  - semantic separability
-  - lightweight projection
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Image-to-video transfer"
+  - "self-supervised learning"
+  - "temporal consistency"
+  - "semantic separability"
+  - "lightweight projection"
 date: 2026-05-08
 content_hash: 61ef6710d3896abe
 ---

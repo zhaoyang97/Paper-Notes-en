@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Bridging the Skill Gap in Clinical CBCT Interpretation with CBCTRepD
 description: >-
-  [CVPR 2026][Medical Imaging][CBCT] This work constructs a large-scale CBCT-report paired dataset of 7,408 cases covering 55 oral diseases, and develops CBCTRepD, a bilingual oral-maxillofacial CBCT report generation system. Through a collaborative paradigm of AI-generated drafts followed by radiologist editing, the system is shown via multi-level clinical evaluation to elevate junior radiologists to an intermediate level, intermediate radiologists to near-senior level, and reduce omissions for senior radiologists.
+  [CVPR 2026][Medical Imaging][CBCT] This work constructs a large-scale CBCT-report paired dataset of 7,408 cases covering 55 oral diseases, and develops CBCTRepD…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - CBCT
-  - oral-maxillofacial report generation
-  - bilingual system
-  - human-AI collaboration
-  - multi-level evaluation
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "CBCT"
+  - "oral-maxillofacial report generation"
+  - "bilingual system"
+  - "human-AI collaboration"
+  - "multi-level evaluation"
 date: 2026-05-08
 content_hash: 7823d0b407f97547
 ---

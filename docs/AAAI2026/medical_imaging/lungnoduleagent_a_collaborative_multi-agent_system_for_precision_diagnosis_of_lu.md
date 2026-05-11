@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LungNoduleAgent: A Collaborative Multi-Agent System for Precision Diagnosis of Lung Nodules
 description: >-
-  [AAAI 2026][Medical Imaging][lung nodule diagnosis] This paper proposes LungNoduleAgent, the first collaborative multi-agent system for lung nodule analysis. It simulates the clinical workflow through a three-stage pipeline—Nodule Spotter, Simulated Radiologist, and Doctor Agent System—and substantially outperforms mainstream VLMs (GPT-4o, Claude 3.7 Sonnet) and medical agents (MedAgent-Pro) on CT report generation and malignancy grading tasks.
+  [AAAI 2026][Medical Imaging][lung nodule diagnosis] This paper proposes LungNoduleAgent, the first collaborative multi-agent system for lung nodule analysis. It simulates the clinical workflow through a three-stage pipel…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - lung nodule diagnosis
-  - multi-agent collaboration
-  - vision-language model
-  - CT report generation
-  - malignancy grading
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "lung nodule diagnosis"
+  - "multi-agent collaboration"
+  - "vision-language model"
+  - "CT report generation"
+  - "malignancy grading"
 date: 2026-05-08
 content_hash: 4608c48a623a9905
 ---

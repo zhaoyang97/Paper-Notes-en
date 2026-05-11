@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] REXO: Indoor Multi-View Radar Object Detection via 3D Bounding Box Diffusion
 description: >-
-  [AAAI 2026][Object Detection][Radar Perception] This paper extends the 2D bounding box diffusion paradigm of DiffusionDet to 3D radar space, proposing the REXO framework. It enables explicit cross-view radar feature association guided by noisy 3D bounding box projections, and introduces a ground-level constraint to reduce the diffusion parameter space. REXO surpasses the state of the art by +4.22 AP and +11.02 AP on the HIBER and MMVR indoor radar datasets, respectively.
+  [AAAI 2026][Object Detection][Radar Perception] This paper extends the 2D bounding box diffusion paradigm of DiffusionDet to 3D radar space…
 tags:
-  - AAAI 2026
-  - Object Detection
-  - Radar Perception
-  - Multi-View Fusion
-  - Diffusion Model
-  - 3D Object Detection
-  - Indoor Human Detection
-  - Cross-View Feature Association
+  - "AAAI 2026"
+  - "Object Detection"
+  - "Radar Perception"
+  - "Multi-View Fusion"
+  - "Diffusion Model"
+  - "3D Object Detection"
+  - "Indoor Human Detection"
+  - "Cross-View Feature Association"
 date: 2026-05-08
 content_hash: fdc356f2412674bd
 ---

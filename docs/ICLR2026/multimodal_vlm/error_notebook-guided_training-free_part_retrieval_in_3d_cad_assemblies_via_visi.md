@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Error Notebook-Guided, Training-Free Part Retrieval in 3D CAD Assemblies via Vision-Language Models
 description: >-
-  [ICLR 2026][Multimodal VLM][CAD part retrieval] This paper proposes a training-free two-stage VLM framework that records corrected reasoning trajectories in an Error Notebook and applies RAG-based test-time adaptation. On specification-driven part retrieval in 3D CAD assemblies, GPT-4o accuracy improves from 41.7% to 65.1% (+23.4%), with a further +4.5% gain from a grammar-constrained validator.
+  [ICLR 2026][Multimodal VLM][CAD part retrieval] This paper proposes a training-free two-stage VLM framework that records corrected reasoning trajectories in an Error Notebook and applies RAG-based test-time adaptation. O…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - CAD part retrieval
-  - test-time adaptation
-  - Error Notebook
-  - RAG
-  - training-free VLM inference
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "CAD part retrieval"
+  - "test-time adaptation"
+  - "Error Notebook"
+  - "RAG"
+  - "training-free VLM inference"
 date: 2026-05-08
 content_hash: 929caf6ebfe33a3c
 ---

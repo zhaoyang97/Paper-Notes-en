@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MOBA: A Material-Oriented Backdoor Attack against LiDAR-based 3D Object Detection
 description: >-
-  [AAAI 2026][Autonomous Driving][backdoor attack] This paper proposes MOBA (Material-Oriented Backdoor Attack), the first physically realizable backdoor attack framework grounded in **material reflectance modeling**. It systematically selects titanium dioxide (TiO₂) as the trigger material and employs an **angle-independent approximation of the Oren-Nayar BRDF model** for LiDAR intensity simulation, achieving an **attack success rate (ASR) of 93.50%** on real physical data—more than 41% above existing methods.
+  [AAAI 2026][Autonomous Driving][backdoor attack] This paper proposes MOBA (Material-Oriented Backdoor Attack), the first physically realizable backdoor attack framework grounded in **material reflectance modeling**. It s…
 tags:
-  - AAAI 2026
-  - Autonomous Driving
-  - backdoor attack
-  - LiDAR 3D object detection
-  - physically realizable attack
-  - BRDF reflectance model
-  - material modeling
+  - "AAAI 2026"
+  - "Autonomous Driving"
+  - "backdoor attack"
+  - "LiDAR 3D object detection"
+  - "physically realizable attack"
+  - "BRDF reflectance model"
+  - "material modeling"
 date: 2026-05-08
 content_hash: ec0bbde577e05c6b
 ---

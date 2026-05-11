@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] C4D: 4D Made from 3D through Dual Correspondences
 description: >-
-  [ICCV 2025][4D reconstruction] This paper proposes C4D, a framework that upgrades existing 3D reconstruction paradigms to full 4D reconstruction by jointly capturing dual temporal correspondences — short-term optical flow and dynamic-aware long-term point tracking (DynPT) — on top of DUSt3R's 3D pointmap predictions. Motion masks are generated to separate static and dynamic regions. Three optimization objectives are introduced: camera motion alignment, camera trajectory smoothing, and point trajectory smoothing. The resulting system produces per-frame point clouds, camera parameters, and 2D/3D trajectories, achieving competitive performance across depth estimation, pose estimation, and point tracking tasks.
+  [ICCV 2025][4D reconstruction] This paper proposes C4D, a framework that upgrades existing 3D reconstruction paradigms to full 4D reconstruction by jointly capturing dual temporal correspondences — short-term optical flo…
 tags:
-  - ICCV 2025
-  - 4D reconstruction
-  - temporal correspondence
-  - point tracking
-  - motion segmentation
-  - DUSt3R
+  - "ICCV 2025"
+  - "4D reconstruction"
+  - "temporal correspondence"
+  - "point tracking"
+  - "motion segmentation"
+  - "DUSt3R"
 date: 2026-05-08
 content_hash: b716084ab1990fa7
 ---

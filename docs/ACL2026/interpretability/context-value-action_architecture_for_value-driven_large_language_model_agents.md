@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Context-Value-Action Architecture for Value-Driven Large Language Model Agents
 description: >-
-  [ACL 2026 (Findings)][Value-driven agents] This paper proposes the CVA (Context-Value-Action) architecture, grounded in the S-O-R psychological model and Schwartz's theory of basic human values. By training a Value Verifier on real human data, CVA decouples action generation from cognitive reasoning, effectively mitigating behavioral polarization in LLM agents. The approach achieves substantial improvements over baselines on CVABench, a benchmark comprising over 1.1 million real interaction trajectories.
+  [ACL 2026 (Findings)][Interpretability][Value-driven agents] This paper proposes the CVA (Context-Value-Action) architecture, grounded in the S-O-R psychological model and Schwartz's theory of basic human values. By trai…
 tags:
-  - ACL 2026 (Findings)
-  - Value-driven agents
-  - behavior simulation
-  - Schwartz value theory
-  - behavior polarization
-  - verifier
+  - "ACL 2026 (Findings)"
+  - "Interpretability"
+  - "Value-driven agents"
+  - "behavior simulation"
+  - "Schwartz value theory"
+  - "behavior polarization"
+  - "verifier"
 date: 2026-05-08
 content_hash: dd9e2787b122a2d0
 ---

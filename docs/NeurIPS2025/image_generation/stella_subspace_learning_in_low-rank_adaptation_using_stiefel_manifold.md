@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] StelLA: Subspace Learning in Low-rank Adaptation using Stiefel Manifold
 description: >-
-  [NeurIPS 2025][Image Generation][LoRA] This paper proposes StelLA, which decomposes the LoRA adaptation matrix into a three-factor form $USV^\top$ and constrains $U$ and $V$ to the Stiefel manifold for Riemannian optimization, enabling explicit subspace learning during training. StelLA consistently outperforms existing LoRA variants across multiple downstream tasks.
+  [NeurIPS 2025][Image Generation][LoRA] This paper proposes StelLA, which decomposes the LoRA adaptation matrix into a three-factor form $USV^\top$ and constrains $U$ and $V$ to the Stiefel manifold for Riemannian optimiz…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - LoRA
-  - Stiefel Manifold
-  - Subspace Learning
-  - Riemannian Optimization
-  - Three-Factor Decomposition
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "LoRA"
+  - "Stiefel Manifold"
+  - "Subspace Learning"
+  - "Riemannian Optimization"
+  - "Three-Factor Decomposition"
 date: 2026-05-08
 content_hash: 586ec745a509fc45
 ---

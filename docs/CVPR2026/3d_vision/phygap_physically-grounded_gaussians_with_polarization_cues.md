@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] PhyGaP: Physically-Grounded Gaussians with Polarization Cues
 description: >-
-  [CVPR2026][3D Vision][3D Gaussian Splatting] This paper proposes PhyGaP, which integrates polarization cues into 2DGS optimization via a polarization deferred rendering pipeline (PolarDR), and introduces a self-occlusion-aware GridMap environment representation, enabling accurate reflection decomposition and realistic relighting of glossy objects.
+  [CVPR2026][3D Vision][3D Gaussian Splatting] This paper proposes PhyGaP, which integrates polarization cues into 2DGS optimization via a polarization deferred rendering pipeline (PolarDR)…
 tags:
-  - CVPR2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - polarization imaging
-  - inverse rendering
-  - relighting
-  - reflection decomposition
-  - pBRDF
-  - environment lighting
+  - "CVPR2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "polarization imaging"
+  - "inverse rendering"
+  - "relighting"
+  - "reflection decomposition"
+  - "pBRDF"
+  - "environment lighting"
 date: 2026-05-08
 content_hash: 7f03e81784b7951d
 ---

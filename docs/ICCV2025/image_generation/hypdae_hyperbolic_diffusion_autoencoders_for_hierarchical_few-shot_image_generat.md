@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HypDAE: Hyperbolic Diffusion Autoencoders for Hierarchical Few-shot Image Generation
 description: >-
-  [ICCV 2025][Image Generation][Hyperbolic Space] This work combines the hierarchical representation learning capacity of hyperbolic space with the high-quality generative capability of diffusion autoencoders. By manipulating the radius and direction of latent codes within the Poincaré disk, it achieves controllable, diverse, and class-consistent few-shot image generation.
+  [ICCV 2025][Image Generation][Hyperbolic Space] This work combines the hierarchical representation learning capacity of hyperbolic space with the high-quality generative capability of diffusion autoencoders. By manipulat…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Hyperbolic Space
-  - Diffusion Autoencoders
-  - Hierarchical Representation
-  - Few-shot Generation
-  - Poincaré Disk
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Hyperbolic Space"
+  - "Diffusion Autoencoders"
+  - "Hierarchical Representation"
+  - "Few-shot Generation"
+  - "Poincaré Disk"
 date: 2026-05-08
 content_hash: d737d978e9951567
 ---

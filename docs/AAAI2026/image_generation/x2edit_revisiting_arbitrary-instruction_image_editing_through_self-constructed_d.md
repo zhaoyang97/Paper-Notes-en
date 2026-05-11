@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] X2Edit: Revisiting Arbitrary-Instruction Image Editing through Self-Constructed Data and Task-Aware Representation Learning
 description: >-
-  [AAAI2026][Image Generation][image editing] A 3.7M high-quality editing dataset covering 14 task categories is constructed, and a lightweight (0.9B parameter) plug-and-play editing module based on Task-Aware MoE-LoRA and Contrastive Learning is proposed, achieving performance comparable to 12B fully fine-tuned models.
+  [AAAI2026][Image Generation][image editing] A 3.7M high-quality editing dataset covering 14 task categories is constructed, and a lightweight (0.9B parameter) plug-and-play editing module based on Task-Aware MoE-LoRA and…
 tags:
-  - AAAI2026
-  - Image Generation
-  - image editing
-  - MoE-LoRA
-  - contrastive learning
-  - dataset construction
-  - FLUX
-  - task-aware
+  - "AAAI2026"
+  - "Image Generation"
+  - "image editing"
+  - "MoE-LoRA"
+  - "contrastive learning"
+  - "dataset construction"
+  - "FLUX"
+  - "task-aware"
 date: 2026-05-08
 content_hash: 5539749b7fb48f86
 ---

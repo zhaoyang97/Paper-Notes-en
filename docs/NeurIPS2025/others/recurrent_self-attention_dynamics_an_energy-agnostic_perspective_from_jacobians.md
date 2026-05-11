@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Recurrent Self-Attention Dynamics: An Energy-Agnostic Perspective from Jacobians
 description: >-
-  [NeurIPS 2025][Self-Attention] This paper adopts a dynamical systems perspective grounded in Jacobian analysis to move beyond the symmetry constraints imposed by traditional energy-function frameworks. It reveals the critical role of normalization layers in suppressing the spectral norm and oscillatory components of self-attention, identifies that high-performing recurrent self-attention models exhibit Lyapunov exponents approaching zero (a criticality regime), and proposes a spectral regularization method that substantially improves inference performance.
+  [NeurIPS 2025][Self-Attention] This paper adopts a dynamical systems perspective grounded in Jacobian analysis to move beyond the symmetry constraints imposed by traditional energy-function frameworks. It reveals the cri…
 tags:
-  - NeurIPS 2025
-  - Self-Attention
-  - Jacobian Matrix
-  - Lyapunov Exponents
-  - Normalization Layers
-  - Recurrent Architectures
+  - "NeurIPS 2025"
+  - "Self-Attention"
+  - "Jacobian Matrix"
+  - "Lyapunov Exponents"
+  - "Normalization Layers"
+  - "Recurrent Architectures"
 date: 2026-05-08
 content_hash: 2d9d779a537e1890
 ---

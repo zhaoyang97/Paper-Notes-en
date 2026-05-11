@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Hyperbolic Dataset Distillation
 description: >-
-  [NeurIPS 2025][Model Compression][dataset distillation] This paper proposes HDD, the first method to incorporate hyperbolic space into dataset distillation. By matching the Riemannian centroids of real and synthetic data in the Lorentz hyperbolic space—rather than performing distribution matching in Euclidean space—HDD leverages the hierarchical weighting property of hyperbolic geometry to assign higher influence to more representative, low-level samples. The method consistently improves over DM/IDM baselines across multiple datasets.
+  [NeurIPS 2025][Model Compression][dataset distillation] This paper proposes HDD, the first method to incorporate hyperbolic space into dataset distillation. By matching the Riemannian centroids of real and synthetic data…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - dataset distillation
-  - hyperbolic space
-  - distribution matching
-  - Lorentz model
-  - hierarchical pruning
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "dataset distillation"
+  - "hyperbolic space"
+  - "distribution matching"
+  - "Lorentz model"
+  - "hierarchical pruning"
 date: 2026-05-08
 content_hash: 73072b85c206b54d
 ---

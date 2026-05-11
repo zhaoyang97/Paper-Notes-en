@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CADMorph: Geometry-Driven Parametric CAD Editing via a Plan-Generate-Verify Loop
 description: >-
-  [NEURIPS2025][Image Generation][CAD editing] This paper proposes CADMorph, an iterative plan–generate–verify framework that leverages a pretrained Parameter-to-Shape (P2S) diffusion model and a Masked-Parameter-Prediction (MPP) large language model to achieve geometry-driven parametric CAD editing without requiring triplet training data.
+  [NEURIPS2025][Image Generation][CAD editing] This paper proposes CADMorph, an iterative plan–generate–verify framework that leverages a pretrained Parameter-to-Shape (P2S) diffusion model and a Masked-Parameter-Predictio…
 tags:
-  - NEURIPS2025
-  - Image Generation
-  - CAD editing
-  - parametric sequence
-  - latent diffusion
-  - masked prediction
-  - test-time scaling
+  - "NEURIPS2025"
+  - "Image Generation"
+  - "CAD editing"
+  - "parametric sequence"
+  - "latent diffusion"
+  - "masked prediction"
+  - "test-time scaling"
 date: 2026-05-08
 content_hash: 287721aa3855bcc2
 ---

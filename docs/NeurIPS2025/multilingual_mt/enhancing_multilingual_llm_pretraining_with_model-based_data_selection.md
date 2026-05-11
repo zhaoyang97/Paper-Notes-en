@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Enhancing Multilingual LLM Pretraining with Model-Based Data Selection
 description: >-
-  [NeurIPS 2025][multilingual pretraining] This paper proposes a transparent, simple, and efficient model-based data selection framework for multilingual pretraining. It leverages FastText and Transformer (XLM-RoBERTa) embedding classifiers to identify structured and knowledge-rich samples. On the FineWeb-2 dataset, the framework matches baseline MMLU scores using only 15% of tokens, and is extended to 20 languages with publicly released curated pretraining datasets.
+  [NeurIPS 2025][Multilingual & Machine Translation][multilingual pretraining] This paper proposes a transparent, simple, and efficient model-based data selection framework for multilingual pretraining. It leverages FastTe…
 tags:
-  - NeurIPS 2025
-  - multilingual pretraining
-  - data selection
-  - model-based filtering
-  - FineWeb-2
-  - data curation
+  - "NeurIPS 2025"
+  - "Multilingual & Machine Translation"
+  - "multilingual pretraining"
+  - "data selection"
+  - "model-based filtering"
+  - "FineWeb-2"
+  - "data curation"
 date: 2026-05-08
 content_hash: 5d9976982055fa10
 ---

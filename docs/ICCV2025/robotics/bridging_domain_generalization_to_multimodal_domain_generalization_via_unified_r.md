@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Bridging Domain Generalization to Multimodal Domain Generalization via Unified Representations
 description: >-
-  [ICCV 2025][Robotics][Multimodal Domain Generalization] This paper proposes URMMDG, a framework that constructs a cross-modal unified representation space via supervised contrastive learning and decouples class-generic information from modality/domain-specific information through mutual information minimization. This enables effective transfer of classical single-modal domain generalization methods (Mixup, JiGen, IBN-Net) to multimodal domain generalization (MMDG) settings, achieving state-of-the-art performance on the EPIC-Kitchens and HAC benchmarks.
+  [ICCV 2025][Robotics][Multimodal Domain Generalization] This paper proposes URMMDG, a framework that constructs a cross-modal unified representation space via supervised contrastive learning and decouples class-generic i…
 tags:
-  - ICCV 2025
-  - Robotics
-  - Multimodal Domain Generalization
-  - Unified Representation
-  - Supervised Contrastive Learning
-  - Information Decoupling
-  - Mixup
+  - "ICCV 2025"
+  - "Robotics"
+  - "Multimodal Domain Generalization"
+  - "Unified Representation"
+  - "Supervised Contrastive Learning"
+  - "Information Decoupling"
+  - "Mixup"
 date: 2026-05-08
 content_hash: 18e609fe8ccca26b
 ---

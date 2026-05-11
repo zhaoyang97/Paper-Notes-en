@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] TaxPraBen: A Scalable Benchmark for Structured Evaluation of LLMs in Chinese Real-World Tax Practice
 description: >-
-  [ACL 2026][Tax Practice] This paper introduces TaxPraBen, the first LLM evaluation benchmark targeting Chinese real-world tax practice. It comprises 14 datasets with 7.3K samples spanning three authentic scenarios—tax risk prevention, tax inspection analysis, and tax planning. The paper proposes a scalable evaluation paradigm based on structured parsing, field-aligned extraction, and hybrid numerical–textual matching. Evaluation of 19 LLMs reveals that closed-source models and Chinese-optimized models outperform others, while YaYi2, a tax-domain fine-tuned model, yields only marginal improvements.
+  [ACL 2026][Information Retrieval & RAG][Tax Practice] This paper introduces TaxPraBen, the first LLM evaluation benchmark targeting Chinese real-world tax practice. It comprises 14 datasets with 7.3K samples spanning thr…
 tags:
-  - ACL 2026
-  - Tax Practice
-  - LLM Evaluation Benchmark
-  - Structured Evaluation
-  - Chinese Taxation
-  - Bloom's Taxonomy
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Tax Practice"
+  - "LLM Evaluation Benchmark"
+  - "Structured Evaluation"
+  - "Chinese Taxation"
+  - "Bloom's Taxonomy"
 date: 2026-05-08
 content_hash: c151c2d5db745e9c
 ---

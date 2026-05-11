@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FastDiSS: Few-step Match Many-step Diffusion Language Model on Sequence-to-Sequence Generation
 description: >-
-  [ACL 2026][LLM/NLP][diffusion language model] This paper analyzes two bottlenecks in continuous diffusion language models under few-step sampling — self-conditioning signal mismatch and training saturation — and proposes the FastDiSS framework, which introduces Self-Conditioning Perturbation (SCP) and Model-Aware Noise Scaling (MANS) to improve robustness, achieving 4×–400× speedup while preserving generation quality across 6 benchmarks.
+  [ACL 2026][LLM/NLP][diffusion language model] This paper analyzes two bottlenecks in continuous diffusion language models under few-step sampling — self-conditioning signal mismatch and training saturation — and proposes…
 tags:
-  - ACL 2026
-  - LLM/NLP
-  - diffusion language model
-  - few-step sampling
-  - self-conditioning perturbation
-  - noise scaling
-  - sequence-to-sequence
+  - "ACL 2026"
+  - "LLM/NLP"
+  - "diffusion language model"
+  - "few-step sampling"
+  - "self-conditioning perturbation"
+  - "noise scaling"
+  - "sequence-to-sequence"
 date: 2026-05-08
 content_hash: b5884490e7d0fc88
 ---

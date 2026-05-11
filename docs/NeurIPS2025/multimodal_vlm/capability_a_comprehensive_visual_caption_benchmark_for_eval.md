@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CAPability: A Comprehensive Visual Caption Benchmark for Evaluating Both Correctness and Thoroughness
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Visual captioning evaluation] This paper proposes CAPability, a comprehensive visual captioning benchmark covering 12 dimensions across 6 perspectives. It annotates visual elements (rather than sentences) for nearly 11K images and videos, simultaneously evaluating caption correctness (precision) and thoroughness (hit). A novel "Knows but doesn't Tell" ($K\bar{T}$) metric is introduced to reveal the significant capability gap between MLLMs in QA versus captioning tasks.
+  [NeurIPS 2025][Multimodal VLM][Visual captioning evaluation] This paper proposes CAPability, a comprehensive visual captioning benchmark covering 12 dimensions across 6 perspectives. It annotates visual elements (rather…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Visual captioning evaluation
-  - multi-dimensional benchmark
-  - multimodal large language models
-  - correctness and thoroughness
-  - caption assessment
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Visual captioning evaluation"
+  - "multi-dimensional benchmark"
+  - "multimodal large language models"
+  - "correctness and thoroughness"
+  - "caption assessment"
 date: 2026-05-08
 content_hash: e6f8e4d3e23aff2c
 ---

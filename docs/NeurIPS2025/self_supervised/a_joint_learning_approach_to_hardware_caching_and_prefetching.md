@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Joint Learning Approach to Hardware Caching and Prefetching
 description: >-
-  [NeurIPS 2025 (ML for Systems Workshop)][Self-Supervised Learning][Cache replacement] This paper proposes a joint training framework that unifies hardware cache replacement and prefetching policies. By constructing shared feature representations via a joint encoder and contrastive learning, the framework breaks the performance bottleneck imposed by independently trained policies.
+  [NeurIPS 2025 (ML for Systems Workshop)][Self-Supervised Learning][Cache replacement] This paper proposes a joint training framework that unifies hardware cache replacement and prefetching policies. By constructing share…
 tags:
-  - NeurIPS 2025 (ML for Systems Workshop)
-  - Self-Supervised Learning
-  - Cache replacement
-  - prefetching
-  - joint learning
-  - shared representations
-  - contrastive learning
+  - "NeurIPS 2025 (ML for Systems Workshop)"
+  - "Self-Supervised Learning"
+  - "Cache replacement"
+  - "prefetching"
+  - "joint learning"
+  - "shared representations"
+  - "contrastive learning"
 date: 2026-05-08
 content_hash: f60e83f4d4a1ceb0
 ---

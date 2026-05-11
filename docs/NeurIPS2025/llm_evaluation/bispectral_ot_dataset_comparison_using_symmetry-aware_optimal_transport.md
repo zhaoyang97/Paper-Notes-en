@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Bispectral OT: Dataset Comparison using Symmetry-Aware Optimal Transport
 description: >-
-  [NeurIPS 2025][LLM Evaluation][optimal transport] This paper proposes Bispectral Optimal Transport (BOT), which replaces the cost matrix in discrete optimal transport from raw pixel distances to bispectrum (group Fourier invariant) distances, enabling transport plans to eliminate group-action-induced variation (e.g., rotation) while preserving signal structure. On rotation-augmented MNIST and related datasets, the class-preservation accuracy improves from 33% to 84%.
+  [NeurIPS 2025][LLM Evaluation][optimal transport] This paper proposes Bispectral Optimal Transport (BOT), which replaces the cost matrix in discrete optimal transport from raw pixel distances to bispectrum (group Fourier…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - optimal transport
-  - bispectrum
-  - symmetry invariance
-  - dataset comparison
-  - Fourier transform
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "optimal transport"
+  - "bispectrum"
+  - "symmetry invariance"
+  - "dataset comparison"
+  - "Fourier transform"
 date: 2026-05-08
 content_hash: 905ec2d2879ee486
 ---

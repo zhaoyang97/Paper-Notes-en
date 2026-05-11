@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ChA-MAEViT: Unifying Channel-Aware Masked Autoencoders and Multi-Channel Vision Transformers for Improved Cross-Channel Learning
 description: >-
-  [NeurIPS 2025][Remote Sensing][Masked Autoencoder] This paper proposes ChA-MAEViT, which enhances cross-channel feature learning for multi-channel images (MCI) through four key components: dynamic channel-patch joint masking, memory tokens, hybrid token fusion, and a channel-aware decoder. The method outperforms the state of the art by an average of 3.0–21.5% across three satellite and microscopy datasets.
+  [NeurIPS 2025][Remote Sensing][Masked Autoencoder] This paper proposes ChA-MAEViT, which enhances cross-channel feature learning for multi-channel images (MCI) through four key components: dynamic channel-patch joint mas…
 tags:
-  - NeurIPS 2025
-  - Remote Sensing
-  - Masked Autoencoder
-  - Multi-Channel Imaging
-  - Vision Transformer
-  - Cross-Channel Learning
-  - Self-Supervised Learning
+  - "NeurIPS 2025"
+  - "Remote Sensing"
+  - "Masked Autoencoder"
+  - "Multi-Channel Imaging"
+  - "Vision Transformer"
+  - "Cross-Channel Learning"
+  - "Self-Supervised Learning"
 date: 2026-05-08
 content_hash: fd24adaf3b67f2b6
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Bandit Learning in Housing Markets
 description: >-
-  [AAAI 2026][multi-armed-bandit] This paper is the first to introduce the multi-armed bandit (MAB) framework into housing markets (one-sided matching markets). It defines regret based on the core solution concept, proposes a decentralized ETC algorithm and a centralized UCB algorithm, proves a decentralized regret upper bound of $\mathcal{O}(N\log T / \Delta_{\min}^2)$ along with a matching lower bound, and establishes order-optimality.
+  [AAAI 2026][multi-armed-bandit] This paper is the first to introduce the multi-armed bandit (MAB) framework into housing markets (one-sided matching markets). It defines regret based on the core solution concept…
 tags:
-  - AAAI 2026
-  - multi-armed-bandit
-  - housing-market
-  - matching
-  - online-learning
-  - game-theory
+  - "AAAI 2026"
+  - "multi-armed-bandit"
+  - "housing-market"
+  - "matching"
+  - "online-learning"
+  - "game-theory"
 date: 2026-05-08
 content_hash: d77f69d85470faef
 ---

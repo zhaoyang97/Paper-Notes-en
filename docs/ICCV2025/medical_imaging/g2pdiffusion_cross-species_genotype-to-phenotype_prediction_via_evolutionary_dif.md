@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] G2PDiffusion: Cross-Species Genotype-to-Phenotype Prediction via Evolutionary Diffusion
 description: >-
-  [ICCV 2025][Medical Imaging][genotype-to-phenotype] This paper proposes G2PDiffusion, the first diffusion model-based cross-species genotype-to-phenotype prediction framework, which generates morphological images conditioned on evolutionary signals (multiple sequence alignments, MSA, and environmental context) to predict species appearance from DNA sequences.
+  [ICCV 2025][Medical Imaging][genotype-to-phenotype] This paper proposes G2PDiffusion, the first diffusion model-based cross-species genotype-to-phenotype prediction framework…
 tags:
-  - ICCV 2025
-  - Medical Imaging
-  - genotype-to-phenotype
-  - diffusion model
-  - multiple sequence alignment
-  - cross-species
-  - evolutionary biology
+  - "ICCV 2025"
+  - "Medical Imaging"
+  - "genotype-to-phenotype"
+  - "diffusion model"
+  - "multiple sequence alignment"
+  - "cross-species"
+  - "evolutionary biology"
 date: 2026-05-08
 content_hash: beeccc00ee4d6a94
 ---

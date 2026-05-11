@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] No Caption, No Problem: Caption-Free Membership Inference via Model-Fitted Embeddings
 description: >-
-  [ICLR 2026][Image Generation][Membership Inference Attack] This paper proposes MoFit, the first membership inference attack (MIA) framework for diffusion models under a caption-free setting. By constructing surrogate images and conditional embeddings that overfit to the target model, MoFit exploits the asymmetric sensitivity of member samples to conditioning mismatch to enable effective inference.
+  [ICLR 2026][Image Generation][Membership Inference Attack] This paper proposes MoFit, the first membership inference attack (MIA) framework for diffusion models under a caption-free setting. By constructing surrogate ima…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Membership Inference Attack
-  - Diffusion Models
-  - Caption-Free Setting
-  - Model-Fitted Embeddings
-  - Privacy Auditing
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Membership Inference Attack"
+  - "Diffusion Models"
+  - "Caption-Free Setting"
+  - "Model-Fitted Embeddings"
+  - "Privacy Auditing"
 date: 2026-05-08
 content_hash: cf7b194d452f578f
 ---

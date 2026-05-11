@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Synergy over Discrepancy: A Partition-Based Approach to Multi-Domain LLM Fine-Tuning
 description: >-
-  [NeurIPS 2025][LLM/NLP][multi-domain fine-tuning] This paper proposes a partition-based multi-stage fine-tuning framework that strategically partitions multiple domains into subsets (stages) to maximize inter-domain synergy while minimizing negative transfer, and derives a novel generalization bound to theoretically support the partitioning strategy.
+  [NeurIPS 2025][LLM/NLP][multi-domain fine-tuning] This paper proposes a partition-based multi-stage fine-tuning framework that strategically partitions multiple domains into subsets (stages) to maximize inter-domain syne…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - multi-domain fine-tuning
-  - inter-domain synergy
-  - partition strategy
-  - generalization bound
-  - Adapter
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "multi-domain fine-tuning"
+  - "inter-domain synergy"
+  - "partition strategy"
+  - "generalization bound"
+  - "Adapter"
 date: 2026-05-08
 content_hash: 53ef8b56469838f7
 ---

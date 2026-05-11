@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SMARTIES: Spectrum-Aware Multi-Sensor Auto-Encoder for Remote Sensing Images
 description: >-
-  [ICCV 2025][Remote Sensing][Remote sensing foundation model] This paper proposes SMARTIES, a unified sensor-agnostic foundation model for remote sensing that maps heterogeneous sensor data into a shared space via spectrum-aware projection. Combined with cross-sensor token mixing and masked reconstruction for self-supervised pre-training, SMARTIES surpasses sensor-specific models on both unimodal and multimodal tasks and generalizes to sensors unseen during pre-training.
+  [ICCV 2025][Remote Sensing][Remote sensing foundation model] This paper proposes SMARTIES, a unified sensor-agnostic foundation model for remote sensing that maps heterogeneous sensor data into a shared space via spectru…
 tags:
-  - ICCV 2025
-  - Remote Sensing
-  - Remote sensing foundation model
-  - multi-sensor
-  - spectrum-aware
-  - masked autoencoder
-  - sensor-agnostic representation
+  - "ICCV 2025"
+  - "Remote Sensing"
+  - "Remote sensing foundation model"
+  - "multi-sensor"
+  - "spectrum-aware"
+  - "masked autoencoder"
+  - "sensor-agnostic representation"
 date: 2026-05-08
 content_hash: 0bb4270fd4392b33
 ---

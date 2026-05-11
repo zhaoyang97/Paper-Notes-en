@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Model Editing as a Double-Edged Sword: Steering Agent Ethical Behavior
 description: >-
-  [AAAI 2026][Knowledge Editing][Model Editing] This paper frames the steering of agent ethical behavior as a model editing task (Behavior Editing), proposes a three-tier BehaviorBench grounded in psychological moral theory, and validates on 9 open-source and 20 closed-source models that model editing can precisely steer agents toward either benevolent or malicious behavior, with a single edit potentially causing global moral alignment drift.
+  [AAAI 2026][Knowledge Editing][Model Editing] This paper frames the steering of agent ethical behavior as a model editing task (Behavior Editing)…
 tags:
-  - AAAI 2026
-  - Knowledge Editing
-  - Model Editing
-  - Ethical Behavior
-  - Agent Safety
-  - Moral Alignment
-  - BehaviorBench
+  - "AAAI 2026"
+  - "Knowledge Editing"
+  - "Model Editing"
+  - "Ethical Behavior"
+  - "Agent Safety"
+  - "Moral Alignment"
+  - "BehaviorBench"
 date: 2026-05-08
 content_hash: a12b0f4bcba9aa4d
 ---

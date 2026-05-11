@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] How Catastrophic is Your LLM? Certifying Risk in Conversation
 description: >-
-  [ICLR 2026][LLM/NLP][safety certification] This paper proposes C3LLM (Certification of Catastrophic risks in multi-turn Conversation for LLMs), the first framework to provide statistical certification of catastrophic risks in multi-turn LLM conversations. It models conversation distributions as Markov processes over a semantic similarity graph, defines three conversation sampling strategies augmented with a jailbreak layer, and applies Clopper-Pearson 95% confidence intervals to certify the probability that a model produces harmful outputs—finding that the worst-performing model has a risk lower bound as high as 72%.
+  [ICLR 2026][LLM/NLP][safety certification] This paper proposes C3LLM (Certification of Catastrophic risks in multi-turn Conversation for LLMs)…
 tags:
-  - ICLR 2026
-  - LLM/NLP
-  - safety certification
-  - multi-turn attack
-  - Markov process
-  - catastrophic risk
-  - statistical guarantee
+  - "ICLR 2026"
+  - "LLM/NLP"
+  - "safety certification"
+  - "multi-turn attack"
+  - "Markov process"
+  - "catastrophic risk"
+  - "statistical guarantee"
 date: 2026-05-08
 content_hash: 5b11e30833842910
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Real-World Point Tracking with Verifier-Guided Pseudo-Labeling
 description: >-
-  [CVPR 2026][Video Understanding][point tracking] This paper proposes a learnable Verifier meta-model trained on synthetic data to assess the reliability of tracker predictions and transfer this capability to the real world. By evaluating per-frame predictions from six pretrained trackers and selecting the most reliable as pseudo-labels, the proposed Track-On-R model is fine-tuned on only ~5K real videos and achieves comprehensive state-of-the-art performance across four real-world benchmarks.
+  [CVPR 2026][Video Understanding][point tracking] This paper proposes a learnable Verifier meta-model trained on synthetic data to assess the reliability of tracker predictions and transfer this capability to the real wor…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - point tracking
-  - pseudo-labeling
-  - verifier
-  - multi-teacher ensemble
-  - sim-to-real adaptation
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "point tracking"
+  - "pseudo-labeling"
+  - "verifier"
+  - "multi-teacher ensemble"
+  - "sim-to-real adaptation"
 date: 2026-05-08
 content_hash: 20687e8c6c6159c3
 ---

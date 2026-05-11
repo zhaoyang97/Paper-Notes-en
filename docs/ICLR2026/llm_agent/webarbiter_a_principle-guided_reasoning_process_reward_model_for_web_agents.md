@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] WebArbiter: A Principle-Guided Reasoning Process Reward Model for Web Agents
 description: >-
-  [ICLR2026][LLM Agent][Web Agent] WebArbiter proposes a reasoning-first, principle-guided Process Reward Model (WebPRM) that formulates reward modeling as a text generation task. Through a two-stage training pipeline of reasoning distillation followed by reinforcement learning, a 7B model achieves performance surpassing GPT-5 by 9.1 percentage points on WebPRMBench.
+  [ICLR2026][LLM Agent][Web Agent] WebArbiter proposes a reasoning-first, principle-guided Process Reward Model (WebPRM) that formulates reward modeling as a text generation task. Through a two-stage training pipeline of r…
 tags:
-  - ICLR2026
-  - LLM Agent
-  - Web Agent
-  - Process Reward Model
-  - Reasoning-First
-  - Principle-Guided
-  - Reinforcement Learning
-  - Reasoning Distillation
+  - "ICLR2026"
+  - "LLM Agent"
+  - "Web Agent"
+  - "Process Reward Model"
+  - "Reasoning-First"
+  - "Principle-Guided"
+  - "Reinforcement Learning"
+  - "Reasoning Distillation"
 date: 2026-05-08
 content_hash: 8a5af68ba06d353c
 ---

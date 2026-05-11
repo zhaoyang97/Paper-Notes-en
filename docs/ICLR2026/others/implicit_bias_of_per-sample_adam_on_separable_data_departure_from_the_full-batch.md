@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Implicit Bias of Per-sample Adam on Separable Data: Departure from the Full-batch Regime
 description: >-
-  [ICLR 2026][Adam] This paper provides the first proof that mini-batch Adam exhibits a different implicit bias from its full-batch counterpart: a constructed dataset causes per-sample Adam to converge to an $\ell_2$ maximum-margin classifier (whereas full-batch Adam converges to $\ell_\infty$), and a proxy algorithm, AdamProxy, is introduced to characterize data-adaptive Mahalanobis-norm margin maximization on general datasets.
+  [ICLR 2026][Adam] This paper provides the first proof that mini-batch Adam exhibits a different implicit bias from its full-batch counterpart: a constructed dataset causes per-sample Adam to converge to an $\ell_2$ maxim…
 tags:
-  - ICLR 2026
-  - Adam
-  - implicit bias
-  - maximum margin
-  - mini-batch
-  - Mahalanobis norm
+  - "ICLR 2026"
+  - "Adam"
+  - "implicit bias"
+  - "maximum margin"
+  - "mini-batch"
+  - "Mahalanobis norm"
 date: 2026-05-08
 content_hash: aa50f638e6fe9978
 ---

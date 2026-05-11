@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning 3D Reconstruction with Priors in Test Time
 description: >-
-  [CVPR 2026][3D Vision][test-time optimization] This paper proposes Test-time Constrained Optimization (TCO), a framework that improves 3D reconstruction accuracy by treating available priors (camera poses, intrinsics, depth) as output constraints optimized at inference time, without retraining or modifying the architecture of pretrained multiview Transformers.
+  [CVPR 2026][3D Vision][test-time optimization] This paper proposes Test-time Constrained Optimization (TCO), a framework that improves 3D reconstruction accuracy by treating available priors (camera poses, intrinsics…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - test-time optimization
-  - 3D reconstruction
-  - multiview transformer
-  - camera pose
-  - LoRA
+  - "CVPR 2026"
+  - "3D Vision"
+  - "test-time optimization"
+  - "3D reconstruction"
+  - "multiview transformer"
+  - "camera pose"
+  - "LoRA"
 date: 2026-05-08
 content_hash: ad8368c0b39aacf7
 ---

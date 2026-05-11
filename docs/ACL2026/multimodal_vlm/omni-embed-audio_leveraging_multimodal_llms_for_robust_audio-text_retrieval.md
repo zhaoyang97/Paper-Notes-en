@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Omni-Embed-Audio: Leveraging Multimodal LLMs for Robust Audio-Text Retrieval
 description: >-
-  [ACL 2026][Multimodal VLM][Audio-text retrieval] This paper proposes OEA (Omni-Embed-Audio), which employs a multimodal LLM as a unified encoder to construct a retrieval-oriented audio-text embedding space. It introduces the User-Intent Queries (UIQ) benchmark and hard-negative discrimination metrics (HNSR/TFR), demonstrating that the LLM backbone significantly outperforms CLAP-based methods on T2T retrieval (+22%) and hard negative discrimination (+4.3%p HNSR@10).
+  [ACL 2026][Multimodal VLM][Audio-text retrieval] This paper proposes OEA (Omni-Embed-Audio), which employs a multimodal LLM as a unified encoder to construct a retrieval-oriented audio-text embedding space. It introduces…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Audio-text retrieval
-  - CLAP
-  - multimodal LLM
-  - user-intent queries
-  - hard negative discrimination
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Audio-text retrieval"
+  - "CLAP"
+  - "multimodal LLM"
+  - "user-intent queries"
+  - "hard negative discrimination"
 date: 2026-05-08
 content_hash: 7eb9cd3f655afb9f
 ---

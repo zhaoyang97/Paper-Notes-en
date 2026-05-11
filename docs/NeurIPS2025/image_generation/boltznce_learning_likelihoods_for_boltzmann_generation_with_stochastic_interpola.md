@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BoltzNCE: Learning Likelihoods for Boltzmann Generation with Stochastic Interpolants
 description: >-
-  [NeurIPS 2025][Image Generation][Boltzmann distribution] BoltzNCE trains an Energy-Based Model (EBM) via a hybrid Score Matching + InfoNCE objective to approximate the likelihood of a Boltzmann Generator, eliminating expensive Jacobian trace computations. On alanine dipeptide conformation generation, it achieves a 100× inference speedup with a free energy error of only 0.02 $k_BT$.
+  [NeurIPS 2025][Image Generation][Boltzmann distribution] BoltzNCE trains an Energy-Based Model (EBM) via a hybrid Score Matching + InfoNCE objective to approximate the likelihood of a Boltzmann Generator…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Boltzmann distribution
-  - noise contrastive estimation
-  - stochastic interpolants
-  - molecular conformation
-  - free energy
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Boltzmann distribution"
+  - "noise contrastive estimation"
+  - "stochastic interpolants"
+  - "molecular conformation"
+  - "free energy"
 date: 2026-05-08
 content_hash: cb0e70b6af1381e6
 ---

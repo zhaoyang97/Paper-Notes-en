@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] GraphTextack: A Realistic Black-Box Node Injection Attack on LLM-Enhanced GNNs
 description: >-
-  [AAAI 2026][LLM Safety][Text-attributed graphs] This paper proposes GraphTextack — the first black-box multimodal node injection poisoning attack targeting LLM-enhanced GNNs. It jointly optimizes the graph structural connections and semantic features of injected nodes via an evolutionary optimization framework, requiring neither internal model information nor surrogate models. GraphTextack significantly outperforms 12 baseline methods across 5 datasets and 2 types of LLM-GNN models.
+  [AAAI 2026][LLM Safety][Text-attributed graphs] This paper proposes GraphTextack — the first black-box multimodal node injection poisoning attack targeting LLM-enhanced GNNs. It jointly optimizes the graph structural con…
 tags:
-  - AAAI 2026
-  - LLM Safety
-  - Text-attributed graphs
-  - adversarial attacks
-  - node injection
-  - LLM-enhanced GNN
-  - evolutionary optimization
-  - black-box attack
-  - multimodal attack
+  - "AAAI 2026"
+  - "LLM Safety"
+  - "Text-attributed graphs"
+  - "adversarial attacks"
+  - "node injection"
+  - "LLM-enhanced GNN"
+  - "evolutionary optimization"
+  - "black-box attack"
+  - "multimodal attack"
 date: 2026-05-08
 content_hash: be971426f2007ae0
 ---

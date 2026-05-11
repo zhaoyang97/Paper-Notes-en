@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Semantic Alignment and Reinforcement for Data-Free Quantization of Vision Transformers
 description: >-
-  [ICCV 2025][AI Safety][Data-free quantization] This paper proposes SARDFQ to address **semantic distortion** and **semantic insufficiency** in data-free quantization (DFQ) of ViTs. Attention Prior Alignment (APA) guides synthetic images to match the attention patterns of real images, while Multi-Semantic Reinforcement (MSR) enriches local patch semantics. SARDFQ achieves a 15.52% Top-1 accuracy improvement on ImageNet W4A4 ViT-B.
+  [ICCV 2025][AI Safety][Data-free quantization] This paper proposes SARDFQ to address **semantic distortion** and **semantic insufficiency** in data-free quantization (DFQ) of ViTs. Attention Prior Alignment (APA) guides…
 tags:
-  - ICCV 2025
-  - AI Safety
-  - Data-free quantization
-  - Vision Transformer
-  - attention prior alignment
-  - multi-semantic reinforcement
-  - synthetic images
+  - "ICCV 2025"
+  - "AI Safety"
+  - "Data-free quantization"
+  - "Vision Transformer"
+  - "attention prior alignment"
+  - "multi-semantic reinforcement"
+  - "synthetic images"
 date: 2026-05-08
 content_hash: 91f649271b9904b5
 ---

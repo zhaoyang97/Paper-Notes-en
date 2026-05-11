@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Uncovering Zero-Shot Generalization Gaps in Time-Series Foundation Models Using Real-World Videos
 description: >-
-  [AAAI 2026][Video Understanding][Time-Series Foundation Models] This paper proposes a pipeline for extracting time-series data from real-world videos via optical flow, constructs the REAL-V-TSFM dataset (6,130 sequences), and reveals significant zero-shot generalization gaps in current time-series foundation models (TSFMs) such as Chronos and TimesFM when confronted with real physical dynamics.
+  [AAAI 2026][Video Understanding][Time-Series Foundation Models] This paper proposes a pipeline for extracting time-series data from real-world videos via optical flow, constructs the REAL-V-TSFM dataset (6,130 sequences)…
 tags:
-  - AAAI 2026
-  - Video Understanding
-  - Time-Series Foundation Models
-  - Zero-Shot Generalization
-  - Optical Flow
-  - Video Data
-  - Benchmark
+  - "AAAI 2026"
+  - "Video Understanding"
+  - "Time-Series Foundation Models"
+  - "Zero-Shot Generalization"
+  - "Optical Flow"
+  - "Video Data"
+  - "Benchmark"
 date: 2026-05-08
 content_hash: e73e725339b95319
 ---

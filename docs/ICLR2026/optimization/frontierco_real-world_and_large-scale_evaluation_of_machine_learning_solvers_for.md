@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FrontierCO: Real-World and Large-Scale Evaluation of Machine Learning Solvers for Combinatorial Optimization
 description: >-
-  [ICLR 2026][Optimization][combinatorial optimization] FrontierCO is a large-scale, real-world benchmark covering 8 categories of combinatorial optimization problems (TSP, MIS, CVRP, etc.), evaluating 16 ML solvers (neural methods + LLM agents) against state-of-the-art classical solvers. The benchmark reveals that ML methods remain significantly behind classical approaches on structurally complex and extremely large-scale instances, though they show potential to surpass classical methods in certain scenarios.
+  [ICLR 2026][Optimization][combinatorial optimization] FrontierCO is a large-scale, real-world benchmark covering 8 categories of combinatorial optimization problems (TSP, MIS, CVRP, etc.)…
 tags:
-  - ICLR 2026
-  - Optimization
-  - combinatorial optimization
-  - ML solver
-  - benchmark
-  - real-world instances
-  - LLM agent
+  - "ICLR 2026"
+  - "Optimization"
+  - "combinatorial optimization"
+  - "ML solver"
+  - "benchmark"
+  - "real-world instances"
+  - "LLM agent"
 date: 2026-05-08
 content_hash: 7dafedabc177a540
 ---

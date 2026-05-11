@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Open-World Drone Active Tracking with Goal-Centered Rewards
 description: >-
-  [NeurIPS 2025][Video Understanding][Drone Active Tracking] This paper introduces DAT, the first open-world drone active tracking benchmark comprising 24 city-scale scenes with high-fidelity dynamics simulation, along with GC-VAT, a reinforcement learning tracking method based on goal-centered rewards and curriculum learning, achieving approximately 72% tracking success rate in simulation.
+  [NeurIPS 2025][Video Understanding][Drone Active Tracking] This paper introduces DAT, the first open-world drone active tracking benchmark comprising 24 city-scale scenes with high-fidelity dynamics simulation…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
-  - Drone Active Tracking
-  - Reinforcement Learning
-  - Goal-Centered Reward
-  - Curriculum Learning
-  - Open-World Benchmark
+  - "NeurIPS 2025"
+  - "Video Understanding"
+  - "Drone Active Tracking"
+  - "Reinforcement Learning"
+  - "Goal-Centered Reward"
+  - "Curriculum Learning"
+  - "Open-World Benchmark"
 date: 2026-05-08
 content_hash: 06c350d701458037
 ---

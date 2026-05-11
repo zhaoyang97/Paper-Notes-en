@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unified All-Atom Molecule Generation with Neural Fields
 description: >-
-  [NeurIPS 2025][Medical Imaging][Neural fields] This paper proposes FuncBind, a framework that represents molecules as continuous atomic density functions via neural fields, constructing a unified conditional generative model capable of target-conditioned generation across three drug modalities: small molecules, macrocyclic peptides, and antibody CDR loops.
+  [NeurIPS 2025][Medical Imaging][Neural fields] This paper proposes FuncBind, a framework that represents molecules as continuous atomic density functions via neural fields…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Neural fields
-  - molecule generation
-  - all-atom representation
-  - structure-based drug design
-  - diffusion models
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Neural fields"
+  - "molecule generation"
+  - "all-atom representation"
+  - "structure-based drug design"
+  - "diffusion models"
 date: 2026-05-08
 content_hash: 2cee232ba156b539
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CVA: Context-aware Video-text Alignment for Video Temporal Grounding
 description: >-
-  [CVPR 2026][Video Understanding][Video Temporal Grounding] This paper proposes CVA (Context-aware Video-text Alignment), a framework comprising three synergistic components—Query-aware Context Diversification (QCD), Context-invariant Boundary Discrimination (CBD) loss, and Context-enhanced Transformer Encoder (CTE)—to address false negatives and background association issues in video temporal grounding, achieving approximately 5-point improvement in R1@0.7 on QVHighlights.
+  [CVPR 2026][Video Understanding][Video Temporal Grounding] This paper proposes CVA (Context-aware Video-text Alignment), a framework comprising three synergistic components—Query-aware Context Diversification (QCD)…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Video Temporal Grounding
-  - Data Augmentation
-  - Contrastive Learning
-  - Context Invariance
-  - Video-Text Alignment
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Video Temporal Grounding"
+  - "Data Augmentation"
+  - "Contrastive Learning"
+  - "Context Invariance"
+  - "Video-Text Alignment"
 date: 2026-05-08
 content_hash: 2b45fecbbc57f0b1
 ---

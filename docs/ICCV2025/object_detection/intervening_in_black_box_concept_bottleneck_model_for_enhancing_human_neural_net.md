@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Intervening in Black Box: Concept Bottleneck Model for Enhancing Human-Neural Network Mutual Understanding
 description: >-
-  [ICCV 2025][Object Detection][Interpretability] This paper proposes the CBM-HNMU framework, which approximates the reasoning process of a black-box model via a Concept Bottleneck Model (CBM), automatically identifies and corrects harmful concepts, and distills the corrected knowledge back into the black-box model, enabling systematic model intervention and accuracy improvement beyond the sample level.
+  [ICCV 2025][Object Detection][Interpretability] This paper proposes the CBM-HNMU framework, which approximates the reasoning process of a black-box model via a Concept Bottleneck Model (CBM)…
 tags:
-  - ICCV 2025
-  - Object Detection
-  - Interpretability
-  - Concept Bottleneck Model
-  - Black-Box Intervention
-  - Knowledge Distillation
-  - Model Correction
+  - "ICCV 2025"
+  - "Object Detection"
+  - "Interpretability"
+  - "Concept Bottleneck Model"
+  - "Black-Box Intervention"
+  - "Knowledge Distillation"
+  - "Model Correction"
 date: 2026-05-08
 content_hash: 86975c00a34b1697
 ---

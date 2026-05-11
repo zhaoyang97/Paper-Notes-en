@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Bitrate-Controlled Diffusion for Disentangling Motion and Content in Video
 description: >-
-  [ICCV 2025][Image Generation][video disentanglement] This paper proposes BCD (Bitrate-Controlled Diffusion), a general self-supervised video disentanglement framework that separates per-frame motion features from global content features via a low-bitrate vector quantization information bottleneck, and reconstructs video using a conditional diffusion model. The approach demonstrates high-quality motion transfer and autoregressive video generation on talking-head and pixel-art cartoon datasets.
+  [ICCV 2025][Image Generation][video disentanglement] This paper proposes BCD (Bitrate-Controlled Diffusion), a general self-supervised video disentanglement framework that separates per-frame motion features from global…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - video disentanglement
-  - motion-content separation
-  - information bottleneck
-  - vector quantization
-  - diffusion models
+  - "ICCV 2025"
+  - "Image Generation"
+  - "video disentanglement"
+  - "motion-content separation"
+  - "information bottleneck"
+  - "vector quantization"
+  - "diffusion models"
 date: 2026-05-08
 content_hash: 59727055043105db
 ---

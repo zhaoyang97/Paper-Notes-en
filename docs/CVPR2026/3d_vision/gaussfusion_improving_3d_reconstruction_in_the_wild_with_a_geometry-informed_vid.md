@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GaussFusion: Improving 3D Reconstruction in the Wild with A Geometry-Informed Video Generator
 description: >-
-  [CVPR 2026][3D Vision][3D Gaussian Splatting] This paper proposes GaussFusion, a geometry-informed video-to-video generative model that conditions a video generator on a rendered Gaussian Primitives Buffer (GP-Buffer) — encoding depth, normals, opacity, and covariance — to effectively remove floaters, flickering, and blurring artifacts in 3DGS reconstructions. The framework is compatible with both optimization-based and feed-forward reconstruction paradigms, and its distilled variant achieves real-time inference at 16 FPS.
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] This paper proposes GaussFusion, a geometry-informed video-to-video generative model that conditions a video generator on a rendered Gaussian Primitives Buffer (GP-Buffer) —…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - video generative model
-  - geometry prior
-  - artifact removal
-  - real-time inference
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "video generative model"
+  - "geometry prior"
+  - "artifact removal"
+  - "real-time inference"
 date: 2026-05-08
 content_hash: e21c52cd32c8cd10
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] I²-World: Intra-Inter Tokenization for Efficient Dynamic 4D Scene Forecasting
 description: >-
-  [ICCV 2025][Time Series][4D occupancy forecasting] This paper proposes I²-World, which decouples 3D scene tokenization into two complementary processes — intra-scene multi-scale residual quantization and inter-scene temporal quantization — thereby retaining the high compression ratio of 3D tokenizers while incorporating the temporal modeling capability of 4D tokenizers, enabling efficient and high-quality 4D occupancy forecasting.
+  [ICCV 2025][Time Series][4D occupancy forecasting] This paper proposes I²-World, which decouples 3D scene tokenization into two complementary processes — intra-scene multi-scale residual quantization and inter-scene temp…
 tags:
-  - ICCV 2025
-  - Time Series
-  - 4D occupancy forecasting
-  - scene tokenization
-  - world model
-  - autoregressive generation
-  - autonomous driving
+  - "ICCV 2025"
+  - "Time Series"
+  - "4D occupancy forecasting"
+  - "scene tokenization"
+  - "world model"
+  - "autoregressive generation"
+  - "autonomous driving"
 date: 2026-05-08
 content_hash: 38d096414c6cadbc
 ---

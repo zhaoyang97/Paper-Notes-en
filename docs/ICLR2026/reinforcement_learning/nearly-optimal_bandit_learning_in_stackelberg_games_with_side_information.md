@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Nearly-Optimal Bandit Learning in Stackelberg Games with Side Information
 description: >-
-  [ICLR 2026][Reinforcement Learning][Stackelberg games] By linearizing the leader's utility space in Stackelberg games, this paper proposes a reduction to linear contextual bandits that improves the regret bound from $\tilde{O}(T^{2/3})$ to the nearly-optimal $\tilde{O}(T^{1/2})$ under bandit feedback with side information.
+  [ICLR 2026][Reinforcement Learning][Stackelberg games] By linearizing the leader's utility space in Stackelberg games, this paper proposes a reduction to linear contextual bandits that improves the regret bound from $\ti…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Stackelberg games
-  - online learning
-  - contextual bandits
-  - side information
-  - regret bounds
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Stackelberg games"
+  - "online learning"
+  - "contextual bandits"
+  - "side information"
+  - "regret bounds"
 date: 2026-05-08
 content_hash: 86e8571daa0d07a1
 ---

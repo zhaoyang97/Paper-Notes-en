@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Group-DINOmics: Incorporating People Dynamics into DINO for Self-supervised Group Activity Feature Learning
 description: >-
-  [CVPR 2026][Self-Supervised Learning][group activity] This paper proposes leveraging DINOv3 with two self-supervised pretraining tasks — individual optical flow estimation and group-relevant object localization — to learn group activity features (GAF), achieving substantial improvements over existing methods without any group activity annotations.
+  [CVPR 2026][Self-Supervised Learning][group activity] This paper proposes leveraging DINOv3 with two self-supervised pretraining tasks — individual optical flow estimation and group-relevant object localization — to lear…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - group activity
-  - DINO
-  - optical flow
-  - activity retrieval
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "group activity"
+  - "DINO"
+  - "optical flow"
+  - "activity retrieval"
 date: 2026-05-08
 content_hash: 00104205bb7ddfc9
 ---

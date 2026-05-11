@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SJD-PAC: Accelerating Speculative Jacobi Decoding via Proactive Drafting and Adaptive Continuation
 description: >-
-  [CVPR 2026][Image Generation][Autoregressive image generation] This paper analyzes the bottleneck of severely skewed acceptance-length distributions in Speculative Jacobi Decoding (SJD) for text-to-image generation, and proposes the SJD-PAC framework. By introducing two techniques—Proactive Drafting (PD) and Adaptive Continuation (AC)—SJD-PAC achieves a strictly lossless 3.8× inference speedup, substantially surpassing the ~2× acceleration of vanilla SJD.
+  [CVPR 2026][Image Generation][Autoregressive image generation] This paper analyzes the bottleneck of severely skewed acceptance-length distributions in Speculative Jacobi Decoding (SJD) for text-to-image generation…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Autoregressive image generation
-  - inference acceleration
-  - speculative decoding
-  - Jacobi decoding
-  - lossless acceleration
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Autoregressive image generation"
+  - "inference acceleration"
+  - "speculative decoding"
+  - "Jacobi decoding"
+  - "lossless acceleration"
 date: 2026-05-08
 content_hash: 527f5a987ded36ef
 ---

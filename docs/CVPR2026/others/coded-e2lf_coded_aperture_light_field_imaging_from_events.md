@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Coded-E2LF: Coded Aperture Light Field Imaging from Events
 description: >-
-  [CVPR2026][light field imaging] This paper provides the first demonstration that an event camera alone (without conventional intensity images) can reconstruct a 4D light field at pixel-level accuracy. The proposed Coded-E2LF system triggers events via a coded aperture pattern sequence and accumulates them into event images. By introducing an all-black pattern, a mathematical equivalence between event-based and intensity-based coded aperture imaging is established. Combined with end-to-end deep optics training, the system achieves 8×8 sub-aperture light field reconstruction.
+  [CVPR2026][light field imaging] This paper provides the first demonstration that an event camera alone (without conventional intensity images) can reconstruct a 4D light field at pixel-level accuracy. The proposed Coded-…
 tags:
-  - CVPR2026
-  - light field imaging
-  - event camera
-  - coded aperture
-  - deep optics
-  - end-to-end optimization
-  - black-first coding sequence
+  - "CVPR2026"
+  - "light field imaging"
+  - "event camera"
+  - "coded aperture"
+  - "deep optics"
+  - "end-to-end optimization"
+  - "black-first coding sequence"
 date: 2026-05-08
 content_hash: 3c3681b68b4527bc
 ---

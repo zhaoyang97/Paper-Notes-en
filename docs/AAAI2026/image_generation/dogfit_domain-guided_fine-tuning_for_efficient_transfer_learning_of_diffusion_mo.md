@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DogFit: Domain-guided Fine-tuning for Efficient Transfer Learning of Diffusion Models
 description: >-
-  [AAAI 2026][Image Generation][Diffusion Models] This paper proposes DogFit, which internalizes Domain Guidance (DoG) into the fine-tuning loss of diffusion models, enabling the model to learn the guidance direction during training. At inference time, a controllable fidelity–diversity trade-off is achieved without double forward passes, surpassing the state-of-the-art guidance methods on 6 target domains with half the sampling TFLOPS.
+  [AAAI 2026][Image Generation][Diffusion Models] This paper proposes DogFit, which internalizes Domain Guidance (DoG) into the fine-tuning loss of diffusion models…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Diffusion Models
-  - Transfer Learning
-  - Guidance Mechanism
-  - Domain Adaptation
-  - Efficient Inference
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "Transfer Learning"
+  - "Guidance Mechanism"
+  - "Domain Adaptation"
+  - "Efficient Inference"
 date: 2026-05-08
 content_hash: b0159e1a3cbf89f5
 ---

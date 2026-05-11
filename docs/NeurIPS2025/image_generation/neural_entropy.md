@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Neural Entropy
 description: >-
-  [NeurIPS 2025][Image Generation][Diffusion Models] This paper explores the connection between deep learning and information theory through the lens of diffusion models, introducing a "neural entropy" measure to quantify the amount of information stored in neural networks during the diffusion process, revealing that image diffusion models achieve remarkably high compression efficiency on structured data.
+  [NeurIPS 2025][Image Generation][Diffusion Models] This paper explores the connection between deep learning and information theory through the lens of diffusion models…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Diffusion Models
-  - Information Theory
-  - Entropy
-  - Data Compression
-  - Neural Networks
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "Information Theory"
+  - "Entropy"
+  - "Data Compression"
+  - "Neural Networks"
 date: 2026-05-08
 content_hash: 0edb1570520bde5f
 ---

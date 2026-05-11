@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dynamic Point Maps: A Versatile Representation for Dynamic 3D Reconstruction
 description: >-
-  [ICCV 2025][3D Vision][Dynamic 3D Reconstruction] This paper proposes Dynamic Point Maps (DPM), extending DUSt3R's viewpoint-invariant point maps into a spatiotemporal-invariant representation that jointly controls viewpoint and time. By predicting only four sets of point maps in a feed-forward manner, DPM simultaneously addresses multiple 4D tasks including depth estimation, scene flow, motion segmentation, and 3D object tracking.
+  [ICCV 2025][3D Vision][Dynamic 3D Reconstruction] This paper proposes Dynamic Point Maps (DPM), extending DUSt3R's viewpoint-invariant point maps into a spatiotemporal-invariant representation that jointly controls viewp…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Dynamic 3D Reconstruction
-  - Point Map Representation
-  - Scene Flow
-  - Motion Segmentation
-  - DUSt3R
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Dynamic 3D Reconstruction"
+  - "Point Map Representation"
+  - "Scene Flow"
+  - "Motion Segmentation"
+  - "DUSt3R"
 date: 2026-05-08
 content_hash: e681459e33d402c1
 ---

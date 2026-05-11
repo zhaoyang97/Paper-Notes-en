@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] HyperSHAP: Shapley Values and Interactions for Explaining Hyperparameter Optimization
 description: >-
-  [AAAI 2026][Hyperparameter Optimization] HyperSHAP proposes a game-theoretic framework based on Shapley values and Shapley interactions to explain hyperparameter optimization (HPO). By defining four categories of explanation games—ablation, sensitivity, tunability, and optimizer bias—it provides more actionable hyperparameter importance analysis than fANOVA.
+  [AAAI 2026][Hyperparameter Optimization] HyperSHAP proposes a game-theoretic framework based on Shapley values and Shapley interactions to explain hyperparameter optimization (HPO). By defining four categories of explana…
 tags:
-  - AAAI 2026
-  - Hyperparameter Optimization
-  - Shapley Values
-  - Explainability
-  - Game Theory
-  - Hyperparameter Importance
+  - "AAAI 2026"
+  - "Hyperparameter Optimization"
+  - "Shapley Values"
+  - "Explainability"
+  - "Game Theory"
+  - "Hyperparameter Importance"
 date: 2026-05-08
 content_hash: 4db8cec7180c27fb
 ---

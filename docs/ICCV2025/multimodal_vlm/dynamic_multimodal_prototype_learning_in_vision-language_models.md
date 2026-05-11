@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dynamic Multimodal Prototype Learning in Vision-Language Models
 description: >-
-  [ICCV 2025][Multimodal VLM][test-time adaptation] This paper proposes ProtoMM, a training-free multimodal prototype learning framework that models prototypes as discrete distributions over textual descriptions and visual particles. By leveraging optimal transport to dynamically update multimodal prototypes, ProtoMM achieves state-of-the-art performance across 15 zero-shot benchmarks.
+  [ICCV 2025][Multimodal VLM][test-time adaptation] This paper proposes ProtoMM, a training-free multimodal prototype learning framework that models prototypes as discrete distributions over textual descriptions and visual…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - test-time adaptation
-  - CLIP
-  - Multimodal Prototype
-  - optimal transport
-  - Zero-Shot Classification
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "test-time adaptation"
+  - "CLIP"
+  - "Multimodal Prototype"
+  - "optimal transport"
+  - "Zero-Shot Classification"
 date: 2026-05-08
 content_hash: 2334ce366a546f04
 ---

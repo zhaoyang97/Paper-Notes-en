@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Agentic Persona Control and Task State Tracking for Realistic User Simulation
 description: >-
-  [NeurIPS 2025 (Workshop on SEA)][Video Understanding][Multi-agent framework] A three-agent collaborative framework for realistic user simulation is proposed, comprising a User Agent (coordination), a State Tracking Agent (structured task state), and a Message Attributes Generation Agent (behavior attribute control conditioned on persona and state). On a restaurant ordering scenario, the framework achieves a 102.6% improvement in composite realism score (CRRS), +19.9% in persona adherence, and +284.5% in behavioral variability. A core finding is that behavior control without state awareness yields BVS = 0 (completely rigid behavior).
+  [NeurIPS 2025 (Workshop on SEA)][Video Understanding][Multi-agent framework] A three-agent collaborative framework for realistic user simulation is proposed, comprising a User Agent (coordination)…
 tags:
-  - NeurIPS 2025 (Workshop on SEA)
-  - Video Understanding
-  - Multi-agent framework
-  - user simulation
-  - persona control
-  - state tracking
-  - restaurant ordering
+  - "NeurIPS 2025 (Workshop on SEA)"
+  - "Video Understanding"
+  - "Multi-agent framework"
+  - "user simulation"
+  - "persona control"
+  - "state tracking"
+  - "restaurant ordering"
 date: 2026-05-08
 content_hash: 62f1709e13be07b1
 ---

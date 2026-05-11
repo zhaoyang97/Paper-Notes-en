@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Distilling Balanced Knowledge from a Biased Teacher
 description: >-
-  [CVPR 2026][Model Compression][Knowledge Distillation] To address the head-class bias of teacher models in knowledge distillation under long-tailed distributions, this paper decomposes the conventional KL divergence loss into a cross-group component and a within-group component. By rebalancing the cross-group loss to calibrate the teacher's group-level predictions and reweighting the within-group loss to ensure equal contribution across groups, the proposed method consistently outperforms existing approaches on CIFAR-100-LT, TinyImageNet-LT, and ImageNet-LT — and even surpasses the teacher model itself.
+  [CVPR 2026][Model Compression][Knowledge Distillation] To address the head-class bias of teacher models in knowledge distillation under long-tailed distributions…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - Knowledge Distillation
-  - Long-Tail Distribution
-  - KL Divergence Decomposition
-  - Class Imbalance
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Knowledge Distillation"
+  - "Long-Tail Distribution"
+  - "KL Divergence Decomposition"
+  - "Class Imbalance"
 date: 2026-05-08
 content_hash: 58d6f4958889e2fc
 ---

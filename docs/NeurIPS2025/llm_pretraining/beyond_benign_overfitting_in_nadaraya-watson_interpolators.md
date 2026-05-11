@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Beyond Benign Overfitting in Nadaraya-Watson Interpolators
 description: >-
-  [NeurIPS 2025][LLM Pretraining][benign overfitting] By tuning a single bandwidth parameter $\beta$ in the Nadaraya-Watson interpolator, this paper precisely characterizes the complete phase transition spectrum from catastrophic overfitting ($\beta < d$) → benign overfitting ($\beta = d$) → tempered overfitting ($\beta > d$), demonstrating that overestimating the intrinsic dimensionality of data is safer than underestimating it.
+  [NeurIPS 2025][LLM Pretraining][benign overfitting] By tuning a single bandwidth parameter $\beta$ in the Nadaraya-Watson interpolator, this paper precisely characterizes the complete phase transition spectrum from catas…
 tags:
-  - NeurIPS 2025
-  - LLM Pretraining
-  - benign overfitting
-  - Nadaraya-Watson
-  - kernel regression
-  - interpolation
-  - generalization theory
-  - overfitting phase transition
+  - "NeurIPS 2025"
+  - "LLM Pretraining"
+  - "benign overfitting"
+  - "Nadaraya-Watson"
+  - "kernel regression"
+  - "interpolation"
+  - "generalization theory"
+  - "overfitting phase transition"
 date: 2026-05-08
 content_hash: c4b90492025e0b3d
 ---

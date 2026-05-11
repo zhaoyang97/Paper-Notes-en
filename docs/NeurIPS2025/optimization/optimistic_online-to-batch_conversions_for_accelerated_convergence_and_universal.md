@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Optimistic Online-to-Batch Conversions for Accelerated Convergence and Universality
 description: >-
-  [NeurIPS 2025][Optimization][Online Learning] This paper proposes an optimistic online-to-batch (O2B) conversion framework that relocates optimism from the online algorithm to the conversion mechanism itself, enabling simple online gradient descent (OGD) to achieve an $O(T^{-2})$ accelerated convergence rate. It is the first to achieve optimal convergence for strongly convex smooth objectives via O2B conversion, while simultaneously attaining universality with respect to smoothness.
+  [NeurIPS 2025][Optimization][Online Learning] This paper proposes an optimistic online-to-batch (O2B) conversion framework that relocates optimism from the online algorithm to the conversion mechanism itself…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Online Learning
-  - Accelerated Convergence
-  - Nesterov Acceleration
-  - O2B Conversion
-  - Universal Optimization
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Online Learning"
+  - "Accelerated Convergence"
+  - "Nesterov Acceleration"
+  - "O2B Conversion"
+  - "Universal Optimization"
 date: 2026-05-08
 content_hash: 989f86d26e1b017c
 ---

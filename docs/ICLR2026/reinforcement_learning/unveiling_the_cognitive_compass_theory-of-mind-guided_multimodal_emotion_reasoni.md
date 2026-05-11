@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Unveiling the Cognitive Compass: Theory-of-Mind-Guided Multimodal Emotion Reasoning
 description: >-
-  [Reinforcement Learning] This paper constructs HitEmotion, a hierarchical multimodal emotion understanding benchmark grounded in Theory of Mind (ToM), and proposes the TMPO framework, which leverages intermediate mental states as process-level supervision to enhance the emotion reasoning capabilities of MLLMs.
+  [Reinforcement Learning] This paper constructs HitEmotion, a hierarchical multimodal emotion understanding benchmark grounded in Theory of Mind (ToM), and proposes the TMPO framework…
 tags:
-  - Reinforcement Learning
+  - "Reinforcement Learning"
 date: 2026-05-08
 content_hash: 8c7c14d330c1a75a
 ---

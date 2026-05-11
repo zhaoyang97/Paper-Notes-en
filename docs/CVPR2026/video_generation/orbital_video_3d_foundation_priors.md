@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Realistic and Consistent Orbital Video Generation via 3D Foundation Priors
 description: >-
-  [CVPR 2026][Video Generation][orbital video generation] This paper proposes leveraging the latent features of a 3D foundation generative model (Hunyuan3D) as shape priors, injecting them into a base video diffusion model via a multi-scale 3D adapter, to generate geometrically realistic and view-consistent orbital videos from a single image.
+  [CVPR 2026][Video Generation][orbital video generation] This paper proposes leveraging the latent features of a 3D foundation generative model (Hunyuan3D) as shape priors…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - orbital video generation
-  - 3D priors
-  - video diffusion
-  - multi-view consistency
-  - geometric realism
+  - "CVPR 2026"
+  - "Video Generation"
+  - "orbital video generation"
+  - "3D priors"
+  - "video diffusion"
+  - "multi-view consistency"
+  - "geometric realism"
 date: 2026-05-08
 content_hash: d8dfbbdb92c51df9
 ---

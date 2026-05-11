@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Probabilistic Reasoning with LLMs for K-Anonymity Estimation
 description: >-
-  [NeurIPS 2025][LLM Safety][privacy risk estimation] This paper proposes Branch, a framework that leverages large language models to model personal information disclosed in user-generated text as a joint probability distribution over a Bayesian network. By estimating conditional probabilities for individual attributes and composing them to compute k-anonymity values (i.e., the number of individuals globally matching a given profile), Branch achieves 73% accuracy on privacy risk estimation, outperforming o3-mini chain-of-thought reasoning by 13%.
+  [NeurIPS 2025][LLM Safety][privacy risk estimation] This paper proposes Branch, a framework that leverages large language models to model personal information disclosed in user-generated text as a joint probability distr…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - privacy risk estimation
-  - k-anonymity
-  - Bayesian networks
-  - probabilistic reasoning
-  - large language models
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "privacy risk estimation"
+  - "k-anonymity"
+  - "Bayesian networks"
+  - "probabilistic reasoning"
+  - "large language models"
 date: 2026-05-08
 content_hash: d589263730547ba6
 ---

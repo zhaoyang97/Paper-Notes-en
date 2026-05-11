@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DreamRunner: Fine-Grained Compositional Story-to-Video Generation with Retrieval-Augmented Motion Adaptation
 description: >-
-  [AAAI 2026][Video Generation][Story video generation] This paper proposes DreamRunner, a framework that achieves fine-grained controllable multi-character multi-event story video generation via LLM-based dual-level planning, retrieval-augmented motion prior learning, and a spatial-temporal region-based 3D attention injection module (SR3AI).
+  [AAAI 2026][Video Generation][Story video generation] This paper proposes DreamRunner, a framework that achieves fine-grained controllable multi-character multi-event story video generation via LLM-based dual-level plann…
 tags:
-  - AAAI 2026
-  - Video Generation
-  - Story video generation
-  - retrieval-augmented motion adaptation
-  - regional attention
-  - compositional video generation
-  - LoRA injection
+  - "AAAI 2026"
+  - "Video Generation"
+  - "Story video generation"
+  - "retrieval-augmented motion adaptation"
+  - "regional attention"
+  - "compositional video generation"
+  - "LoRA injection"
 date: 2026-05-08
 content_hash: 47149824f6ce1dd2
 ---

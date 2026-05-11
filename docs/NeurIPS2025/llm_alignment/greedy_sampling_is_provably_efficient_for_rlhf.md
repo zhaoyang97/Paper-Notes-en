@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Greedy Sampling Is Provably Efficient for RLHF
 description: >-
-  [NeurIPS 2025][LLM Alignment][Greedy Sampling] This paper proves that, under KL-regularized RLHF, directly applying greedy sampling based on empirical estimates—without constructing optimistic or pessimistic confidence sets—achieves $O(\log T)$ regret in the online setting and $O(\varepsilon^{-1})$ sample complexity in the offline setting. These are the first results of such order under general preference models.
+  [NeurIPS 2025][LLM Alignment][Greedy Sampling] This paper proves that, under KL-regularized RLHF, directly applying greedy sampling based on empirical estimates—without constructing optimistic or pessimistic confidence s…
 tags:
-  - NeurIPS 2025
-  - LLM Alignment
-  - Greedy Sampling
-  - KL Regularization
-  - Preference Learning
-  - Regret Bounds
-  - Bradley-Terry Model
+  - "NeurIPS 2025"
+  - "LLM Alignment"
+  - "Greedy Sampling"
+  - "KL Regularization"
+  - "Preference Learning"
+  - "Regret Bounds"
+  - "Bradley-Terry Model"
 date: 2026-05-08
 content_hash: 4448b06b7114ed7e
 ---

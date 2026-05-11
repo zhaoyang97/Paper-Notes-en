@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] 4DSurf: High-Fidelity Dynamic Scene Surface Reconstruction
 description: >-
-  [CVPR 2026][Human Understanding][dynamic surface reconstruction] This paper proposes 4DSurf, a general-purpose dynamic scene surface reconstruction framework based on 2D Gaussian splatting. By introducing Gaussian motion-induced SDF flow regularization to constrain the temporally consistent evolution of surfaces, and adopting an overlapping segment partitioning strategy to handle large deformations, 4DSurf surpasses existing SOTA methods by 49% and 19% in Chamfer distance on the Hi4D and CMU Panoptic datasets, respectively.
+  [CVPR 2026][Human Understanding][dynamic surface reconstruction] This paper proposes 4DSurf, a general-purpose dynamic scene surface reconstruction framework based on 2D Gaussian splatting. By introducing Gaussian motion…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - dynamic surface reconstruction
-  - Gaussian splatting
-  - SDF flow regularization
-  - temporal consistency
-  - large deformation handling
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "dynamic surface reconstruction"
+  - "Gaussian splatting"
+  - "SDF flow regularization"
+  - "temporal consistency"
+  - "large deformation handling"
 date: 2026-05-08
 content_hash: 8b24f15f6521183e
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Why Did Apple Fall: Evaluating Curiosity in Large Language Models
 description: >-
-  [ACL 2026][LLM/NLP][Curiosity] This paper proposes the first psychologically inspired framework for systematically evaluating curiosity-like behaviors in LLMs. Through a combination of self-report questionnaires and behavioral experiments, it finds that LLMs exhibit curiosity-like behavioral patterns that arise from data fitting and safety constraints rather than intrinsic drives. A curiosity-driven questioning pipeline is further designed to demonstrate that simulating curious behavior can improve downstream reasoning performance.
+  [ACL 2026][LLM/NLP][Curiosity] This paper proposes the first psychologically inspired framework for systematically evaluating curiosity-like behaviors in LLMs. Through a combination of self-report questionnaires and beha…
 tags:
-  - ACL 2026
-  - LLM/NLP
-  - Curiosity
-  - LLM Behavioral Evaluation
-  - Psychological Scales
-  - Behavioral Experiments
-  - Reasoning Enhancement
+  - "ACL 2026"
+  - "LLM/NLP"
+  - "Curiosity"
+  - "LLM Behavioral Evaluation"
+  - "Psychological Scales"
+  - "Behavioral Experiments"
+  - "Reasoning Enhancement"
 date: 2026-05-08
 content_hash: 80e9f7d347eba455
 ---

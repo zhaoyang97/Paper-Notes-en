@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Cue3D: Quantifying the Role of Image Cues in Single-Image 3D Generation
 description: >-
-  [NeurIPS 2025][3D Vision][Single-image 3D generation] Cue3D is the first model-agnostic framework for quantifying the importance of image cues in single-image 3D generation. By systematically perturbing six visual cues—illumination, texture, silhouette, perspective, edges, and local continuity—across seven methods spanning three paradigms (regression-based, multi-view, and native 3D generation), it reveals key insights: shape meaningfulness rather than texture governs generalization ability, illumination matters more than texture, and models are overly dependent on input silhouettes.
+  [NeurIPS 2025][3D Vision][Single-image 3D generation] Cue3D is the first model-agnostic framework for quantifying the importance of image cues in single-image 3D generation. By systematically perturbing six visual cues—i…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Single-image 3D generation
-  - visual cues
-  - interpretability
-  - illumination
-  - texture
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Single-image 3D generation"
+  - "visual cues"
+  - "interpretability"
+  - "illumination"
+  - "texture"
 date: 2026-05-08
 content_hash: 18a059cc6153a545
 ---

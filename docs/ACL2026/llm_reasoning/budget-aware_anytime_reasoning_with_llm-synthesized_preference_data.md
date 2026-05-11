@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Budget-Aware Anytime Reasoning with LLM-Synthesized Preference Data
 description: >-
-  [ACL 2026][LLM Reasoning][budget-aware reasoning] This paper proposes a budget-aware anytime reasoning framework and an Anytime Index metric to quantify the quality-efficiency trade-off of LLM reasoning under limited token budgets. It further introduces Preference Data Prompting (PDP), a test-time self-improvement method based on LLM-synthesized preference data, achieving substantial improvements in both intermediate and final solution quality across planning, mathematics, and science QA tasks.
+  [ACL 2026][LLM Reasoning][budget-aware reasoning] This paper proposes a budget-aware anytime reasoning framework and an Anytime Index metric to quantify the quality-efficiency trade-off of LLM reasoning under limited tok…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - budget-aware reasoning
-  - Anytime Index
-  - preference data prompting
-  - test-time scaling
-  - reasoning efficiency
+  - "ACL 2026"
+  - "LLM Reasoning"
+  - "budget-aware reasoning"
+  - "Anytime Index"
+  - "preference data prompting"
+  - "test-time scaling"
+  - "reasoning efficiency"
 date: 2026-05-08
 content_hash: fb33fa8a4d9a265c
 ---

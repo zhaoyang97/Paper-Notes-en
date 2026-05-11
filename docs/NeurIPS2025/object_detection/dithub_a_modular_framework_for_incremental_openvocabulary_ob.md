@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] DitHub: A Modular Framework for Incremental Open-Vocabulary Object Detection
 description: >-
-  [NeurIPS 2025][Object Detection][open-vocabulary detection] DitHub reformulates the incremental adaptation problem in open-vocabulary object detection as a "version control" problem — training independent LoRA expert modules per category and managing an ever-growing module library via three primitives: branch, fetch, and merge. On ODinW-13 with full data, the method achieves 62.19 mAP, surpassing ZiRa by 4.21 points, while maintaining 47.01 zero-shot COCO performance.
+  [NeurIPS 2025][Object Detection][open-vocabulary detection] DitHub reformulates the incremental adaptation problem in open-vocabulary object detection as a "version control" problem — training independent LoRA expert mod…
 tags:
-  - NeurIPS 2025
-  - Object Detection
-  - open-vocabulary detection
-  - incremental learning
-  - modular deep learning
-  - LoRA
-  - model merging
-  - version control
+  - "NeurIPS 2025"
+  - "Object Detection"
+  - "open-vocabulary detection"
+  - "incremental learning"
+  - "modular deep learning"
+  - "LoRA"
+  - "model merging"
+  - "version control"
 date: 2026-05-08
 content_hash: 35a6107786258f44
 ---

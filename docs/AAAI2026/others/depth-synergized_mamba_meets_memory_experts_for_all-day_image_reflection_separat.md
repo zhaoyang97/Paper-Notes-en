@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Depth-Synergized Mamba Meets Memory Experts for All-Day Image Reflection Separation
 description: >-
-  [AAAI 2026][Image Reflection Separation] This paper proposes DMDNet, which employs a depth-aware scanning strategy (DAScan) to guide Mamba toward salient structures, incorporates a depth-synergized state space model (DS-SSM) to suppress ambiguous feature propagation, and introduces a memory expert compensation module (MECM) to leverage cross-image historical knowledge, achieving all-day (daytime + nighttime) image reflection separation.
+  [AAAI 2026][Image Reflection Separation] This paper proposes DMDNet, which employs a depth-aware scanning strategy (DAScan) to guide Mamba toward salient structures…
 tags:
-  - AAAI 2026
-  - Image Reflection Separation
-  - Mamba
-  - Depth Awareness
-  - Memory Experts
-  - Nighttime Imaging
+  - "AAAI 2026"
+  - "Image Reflection Separation"
+  - "Mamba"
+  - "Depth Awareness"
+  - "Memory Experts"
+  - "Nighttime Imaging"
 date: 2026-05-08
 content_hash: a11d8bc9b9fbb54a
 ---

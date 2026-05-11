@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AVION: Aerial Vision-Language Instruction from Offline Teacher to Prompt-Tuned Network
 description: >-
-  [CVPR 2026][Remote Sensing][Vision-Language Model] AVION proposes a knowledge distillation framework that generates semantically rich text prototypes via LLMs and employs visual-textual dual-side prompt tuning with tri-aspect alignment distillation, addressing semantic poverty and visual rigidity in remote sensing VLM adaptation and comprehensively surpassing SOTA on few-shot classification, base-to-novel generalization, and cross-modal retrieval.
+  [CVPR 2026][Remote Sensing][Vision-Language Model] AVION proposes a knowledge distillation framework that generates semantically rich text prototypes via LLMs and employs visual-textual dual-side prompt tuning with tri-a…
 tags:
-  - CVPR 2026
-  - Remote Sensing
-  - Vision-Language Model
-  - Knowledge Distillation
-  - Parameter-Efficient Fine-Tuning
-  - Remote Sensing Scene Classification
-  - Prompt Learning
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Vision-Language Model"
+  - "Knowledge Distillation"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Remote Sensing Scene Classification"
+  - "Prompt Learning"
 date: 2026-05-08
 content_hash: 1ccc20eb39f6b391
 ---

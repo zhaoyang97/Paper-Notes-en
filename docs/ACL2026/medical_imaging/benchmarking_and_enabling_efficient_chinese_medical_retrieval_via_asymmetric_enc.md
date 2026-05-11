@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Benchmarking and Enabling Efficient Chinese Medical Retrieval via Asymmetric Encoders
 description: >-
-  [ACL 2026][Medical Imaging][Medical text retrieval] This paper proposes CMedTEB (Chinese Medical Text Embedding Benchmark) and CARE (asymmetric retrieval framework). CMedTEB constructs a high-quality Chinese medical retrieval/reranking/STS benchmark via multi-LLM voting with expert validation, while CARE adopts an asymmetric architecture that encodes queries with a lightweight BERT and documents with a large LLM. Through a two-stage progressive alignment strategy, CARE achieves LLM-level retrieval accuracy at BERT-level online latency.
+  [ACL 2026][Medical Imaging][Medical text retrieval] This paper proposes CMedTEB (Chinese Medical Text Embedding Benchmark) and CARE (asymmetric retrieval framework). CMedTEB constructs a high-quality Chinese medical retr…
 tags:
-  - ACL 2026
-  - Medical Imaging
-  - Medical text retrieval
-  - asymmetric encoders
-  - Chinese medical benchmark
-  - embedding models
-  - RAG
+  - "ACL 2026"
+  - "Medical Imaging"
+  - "Medical text retrieval"
+  - "asymmetric encoders"
+  - "Chinese medical benchmark"
+  - "embedding models"
+  - "RAG"
 date: 2026-05-08
 content_hash: e7e83c337a9308be
 ---

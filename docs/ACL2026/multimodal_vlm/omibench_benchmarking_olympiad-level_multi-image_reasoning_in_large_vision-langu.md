@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OMIBench: Benchmarking Olympiad-Level Multi-Image Reasoning in Large Vision-Language Models
 description: >-
-  [ACL 2026][Multimodal VLM][Multi-image reasoning] This paper presents OMIBench — the first large-scale benchmark for olympiad-level multi-image reasoning, covering 1,000+ competition problems across biology, chemistry, mathematics, and physics. Even the strongest LVLM (Gemini-3-Pro) achieves only ~50% accuracy, a drop of more than 25% compared to single-image benchmarks.
+  [ACL 2026][Multimodal VLM][Multi-image reasoning] This paper presents OMIBench — the first large-scale benchmark for olympiad-level multi-image reasoning, covering 1,000+ competition problems across biology, chemistry…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Multi-image reasoning
-  - Olympiad-level reasoning
-  - Vision-language model benchmark
-  - Cross-image association
-  - Scientific reasoning
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Multi-image reasoning"
+  - "Olympiad-level reasoning"
+  - "Vision-language model benchmark"
+  - "Cross-image association"
+  - "Scientific reasoning"
 date: 2026-05-08
 content_hash: 3d9f9567a9a2dc4a
 ---

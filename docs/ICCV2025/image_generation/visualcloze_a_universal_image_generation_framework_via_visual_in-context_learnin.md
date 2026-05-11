@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VisualCloze: A Universal Image Generation Framework via Visual In-Context Learning
 description: >-
-  [ICCV 2025][Image Generation][universal image generation] This paper presents VisualCloze, which unifies diverse image generation tasks under a "visual cloze" paradigm—defining tasks via visual in-context examples rather than text instructions, performing unified generation through an image infilling model, and constructing the Graph200K graph-structured dataset to enhance cross-task knowledge transfer. The framework supports in-distribution tasks, unseen-task generalization, multi-task composition, and reverse generation.
+  [ICCV 2025][Image Generation][universal image generation] This paper presents VisualCloze, which unifies diverse image generation tasks under a "visual cloze" paradigm—defining tasks via visual in-context examples rather…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - universal image generation
-  - visual in-context learning
-  - image infilling
-  - Graph200K
-  - multi-task unification
+  - "ICCV 2025"
+  - "Image Generation"
+  - "universal image generation"
+  - "visual in-context learning"
+  - "image infilling"
+  - "Graph200K"
+  - "multi-task unification"
 date: 2026-05-08
 content_hash: 2d0c01ca74caa0ea
 ---

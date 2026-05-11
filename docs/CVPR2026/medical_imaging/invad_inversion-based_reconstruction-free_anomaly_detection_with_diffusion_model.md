@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] InvAD: Inversion-based Reconstruction-Free Anomaly Detection with Diffusion Models
 description: >-
-  [CVPR 2026][Medical Imaging][Anomaly detection] This paper proposes InvAD, which shifts diffusion-based anomaly detection from a "denoising-reconstruction in RGB space" paradigm to a "noising-inversion in latent space" paradigm. By applying DDIM inversion to directly infer the terminal latent variable and measuring deviation under the prior distribution, anomalies are detected without reconstruction. Only 3 inversion steps suffice to achieve state-of-the-art performance, with approximately 2× inference speedup.
+  [CVPR 2026][Medical Imaging][Anomaly detection] This paper proposes InvAD, which shifts diffusion-based anomaly detection from a "denoising-reconstruction in RGB space" paradigm to a "noising-inversion in latent space" p…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Anomaly detection
-  - diffusion models
-  - DDIM inversion
-  - reconstruction-free paradigm
-  - industrial/medical defect detection
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Anomaly detection"
+  - "diffusion models"
+  - "DDIM inversion"
+  - "reconstruction-free paradigm"
+  - "industrial/medical defect detection"
 date: 2026-05-08
 content_hash: 7975866f4f3ab53e
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Who You Are Matters: Bridging Topics and Social Roles via LLM-Enhanced Logical Recommendation
 description: >-
-  [NeurIPS 2025][Recommender Systems] This paper proposes TagCF, a framework that employs MLLM to extract user role tags and item topic tags, then uses LLM reasoning to construct U2I/I2U logic graphs (causal associations between user roles and item types). Three integration strategies — a tag encoder, contrastive learning augmentation, and logic-based scoring — are used to enhance recommendations. On an industrial platform with hundreds of millions of users, online A/B testing yields a 0.946% improvement in engagement metrics and a 0.102% gain in diversity; offline experiments show an 8.06% improvement in NDCG@10.
+  [NeurIPS 2025][Recommender Systems][User Role Modeling] This paper proposes TagCF, a framework that employs MLLM to extract user role tags and item topic tags…
 tags:
-  - NeurIPS 2025
-  - Recommender Systems
-  - User Role Modeling
-  - LLM Knowledge Extraction
-  - Tag-based Collaborative Filtering
-  - Logical Reasoning Graph
+  - "NeurIPS 2025"
+  - "Recommender Systems"
+  - "User Role Modeling"
+  - "LLM Knowledge Extraction"
+  - "Tag-based Collaborative Filtering"
+  - "Logical Reasoning Graph"
 date: 2026-05-08
 content_hash: 4f3b639c2132f2b5
 ---

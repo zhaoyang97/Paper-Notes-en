@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] How Different from the Past? Spatio-Temporal Time Series Forecasting with Self-Supervised Deviation Learning
 description: >-
-  [NeurIPS 2025][Autonomous Driving][spatio-temporal forecasting] This paper proposes ST-SSDL, a framework that captures dynamic deviations between current inputs and historical patterns via self-supervised deviation learning (SSDL). It discretizes the latent space using learnable prototypes and enforces relative distance consistency through a contrastive loss and a deviation loss, achieving state-of-the-art performance on six spatio-temporal benchmarks.
+  [NeurIPS 2025][Autonomous Driving][spatio-temporal forecasting] This paper proposes ST-SSDL, a framework that captures dynamic deviations between current inputs and historical patterns via self-supervised deviation learn…
 tags:
-  - NeurIPS 2025
-  - Autonomous Driving
-  - spatio-temporal forecasting
-  - self-supervised learning
-  - deviation modeling
-  - prototype learning
-  - contrastive learning
+  - "NeurIPS 2025"
+  - "Autonomous Driving"
+  - "spatio-temporal forecasting"
+  - "self-supervised learning"
+  - "deviation modeling"
+  - "prototype learning"
+  - "contrastive learning"
 date: 2026-05-08
 content_hash: 43ba6fd156806abc
 ---

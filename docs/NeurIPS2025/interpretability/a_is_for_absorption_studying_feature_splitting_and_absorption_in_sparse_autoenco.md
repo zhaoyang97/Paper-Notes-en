@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] A is for Absorption: Studying Feature Splitting and Absorption in Sparse Autoencoders
 description: >-
-  [NeurIPS 2025][Sparse Autoencoder] This paper identifies and systematically studies the phenomenon of "feature absorption" in SAEs: apparently monosemantic SAE latents fail to activate on certain tokens because their feature directions are "absorbed" by more specific sub-latents. This is shown to be an inevitable consequence of hierarchical features combined with sparsity loss, posing a fundamental challenge to using SAEs for reliable LLM interpretation.
+  [NeurIPS 2025][Interpretability][Sparse Autoencoder] This paper identifies and systematically studies the phenomenon of "feature absorption" in SAEs: apparently monosemantic SAE latents fail to activate on certain tokens…
 tags:
-  - NeurIPS 2025
-  - Sparse Autoencoder
-  - Feature Absorption
-  - Feature Splitting
-  - Mechanistic Interpretability
-  - LLM Internal Representations
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "Sparse Autoencoder"
+  - "Feature Absorption"
+  - "Feature Splitting"
+  - "Mechanistic Interpretability"
+  - "LLM Internal Representations"
 date: 2026-05-08
 content_hash: 9f96f1b0fad5fe7f
 ---

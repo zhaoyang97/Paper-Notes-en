@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ResWorld: Temporal Residual World Model for End-to-End Autonomous Driving
 description: >-
-  [ICLR 2026][Autonomous Driving][Temporal Residual] ResWorld proposes a Temporal Residual World Model (TR-World) that extracts dynamic object information by computing temporal residuals of BEV scene representations—without relying on detection or tracking—thereby avoiding redundant modeling of static regions. Combined with a Future-Guided Trajectory Refinement (FGTR) module that leverages predicted future BEV features to refine planned trajectories, ResWorld achieves state-of-the-art planning performance on nuScenes and NAVSIM.
+  [ICLR 2026][Autonomous Driving][Temporal Residual] ResWorld proposes a Temporal Residual World Model (TR-World) that extracts dynamic object information by computing temporal residuals of BEV scene representations—withou…
 tags:
-  - ICLR 2026
-  - Autonomous Driving
-  - Temporal Residual
-  - World Model
-  - End-to-End Autonomous Driving
-  - BEV Features
-  - Trajectory Refinement
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "Temporal Residual"
+  - "World Model"
+  - "End-to-End Autonomous Driving"
+  - "BEV Features"
+  - "Trajectory Refinement"
 date: 2026-05-08
 content_hash: ba60bd15153b4e8c
 ---

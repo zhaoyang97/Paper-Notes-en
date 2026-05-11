@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Multi-Agent Conversational Bandit Approach to Online Evaluation and Selection of User-Aligned LLM Responses
 description: >-
-  [AAAI 2026][LLM Agent][Multi-Armed Bandit] This paper proposes MACO (Multi-Agent Conversational Online Learning), which formulates LLM response selection as a multi-agent conversational bandit problem. It employs local agents to eliminate low-quality responses and a cloud-side adaptive keyword-based dialogue to collect user preferences, achieving near-optimal online response evaluation and user preference alignment.
+  [AAAI 2026][LLM Agent][Multi-Armed Bandit] This paper proposes MACO (Multi-Agent Conversational Online Learning), which formulates LLM response selection as a multi-agent conversational bandit problem. It employs local a…
 tags:
-  - AAAI 2026
-  - LLM Agent
-  - Multi-Armed Bandit
-  - Online Learning
-  - Preference Alignment
-  - Multi-Agent
-  - Conversational Selection
+  - "AAAI 2026"
+  - "LLM Agent"
+  - "Multi-Armed Bandit"
+  - "Online Learning"
+  - "Preference Alignment"
+  - "Multi-Agent"
+  - "Conversational Selection"
 date: 2026-05-08
 content_hash: 2e4b3099e2775aaa
 ---

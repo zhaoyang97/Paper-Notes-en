@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UME-R1: Exploring Reasoning-Driven Generative Multimodal Embeddings
 description: >-
-  [ICLR 2026][Reinforcement Learning][multimodal embeddings] This paper proposes UME-R1, the first framework to explore a reasoning-driven generative multimodal embedding paradigm. Through a two-stage training pipeline (cold-start SFT followed by reinforcement learning), the embedding model learns to reason before generating representations, achieving significant improvements over traditional discriminative embedding models across 78 tasks on the MMEB-V2 benchmark.
+  [ICLR 2026][Reinforcement Learning][multimodal embeddings] This paper proposes UME-R1, the first framework to explore a reasoning-driven generative multimodal embedding paradigm. Through a two-stage training pipeline (co…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - multimodal embeddings
-  - reasoning-driven generation
-  - reinforcement-learning
-  - MLLM
-  - inference-time scaling
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "multimodal embeddings"
+  - "reasoning-driven generation"
+  - "reinforcement-learning"
+  - "MLLM"
+  - "inference-time scaling"
 date: 2026-05-08
 content_hash: f17be8ec0a4ab6ae
 ---

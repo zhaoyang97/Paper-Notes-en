@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Prototype-Based Knowledge Guidance for Fine-Grained Structured Radiology Reporting
 description: >-
-  [CVPR 2026][Medical Imaging][Structured radiology reporting] This paper proposes ProtoSR, which employs an LLM-driven pipeline to mine template-aligned visual prototype knowledge bases from 227,000 free-text MIMIC-CXR reports, and introduces a prototype-conditioned late-fusion module that injects retrieved prototype evidence as logit residuals into a hierarchical structured reporting model. ProtoSR achieves state-of-the-art performance on the Rad-ReStruct benchmark, improving L3 fine-grained attribute F1 from 4.3 to 7.4 (+72.1% relative gain).
+  [CVPR 2026][Medical Imaging][Structured radiology reporting] This paper proposes ProtoSR, which employs an LLM-driven pipeline to mine template-aligned visual prototype knowledge bases from 227…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Structured radiology reporting
-  - prototype knowledge base
-  - LLM knowledge extraction
-  - long-tail attributes
-  - late fusion
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Structured radiology reporting"
+  - "prototype knowledge base"
+  - "LLM knowledge extraction"
+  - "long-tail attributes"
+  - "late fusion"
 date: 2026-05-08
 content_hash: 3914bd9ca177f946
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Stylos: Multi-View 3D Stylization with Single-Forward Gaussian Splatting
 description: >-
-  [ICLR 2026][3D Vision][3D style transfer] Stylos proposes a single-forward 3D style transfer framework that achieves zero-shot 3D stylization from uncalibrated inputs via a dual-path design with a shared Transformer backbone (geometry self-attention + style cross-attention) and a voxel-level 3D style loss, supporting scalability from single-view to hundreds of views.
+  [ICLR 2026][3D Vision][3D style transfer] Stylos proposes a single-forward 3D style transfer framework that achieves zero-shot 3D stylization from uncalibrated inputs via a dual-path design with a shared Transformer back…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - 3D style transfer
-  - Gaussian splatting
-  - cross-view consistency
-  - voxel style loss
-  - feed-forward model
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3D style transfer"
+  - "Gaussian splatting"
+  - "cross-view consistency"
+  - "voxel style loss"
+  - "feed-forward model"
 date: 2026-05-08
 content_hash: 80dd732feb01158c
 ---

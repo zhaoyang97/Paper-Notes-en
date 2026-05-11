@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Structured Language Generation Model: Loss Calibration and Formatted Decoding for Efficient Text
 description: >-
-  [LLM Evaluation] This paper proposes the SLGM framework, which reformulates structured prediction tasks for generative language models as classification problems via three components: **structured input format**, **format loss**, and **format-aware decoding**. Without introducing additional model parameters, SLGM significantly improves structural prediction performance of sub-1B models across 13 datasets spanning 5 task categories, including NER, RE, and SRL.
+  [LLM Evaluation] This paper proposes the SLGM framework, which reformulates structured prediction tasks for generative language models as classification problems via three components: **structured input format**…
 tags:
-  - LLM Evaluation
+  - "LLM Evaluation"
 date: 2026-05-08
 content_hash: 5de455950514ea45
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Controllable and Expressive One-Shot Video Head Swapping
 description: >-
-  [ICCV 2025][Human Understanding][head swapping] This paper proposes a diffusion-based multi-condition controllable video head swapping framework (SwapAnyHead) that achieves high-fidelity identity preservation, seamless background blending, and accurate cross-identity expression transfer and editing via a shape-agnostic mask strategy, a hair enhancement strategy, and an expression-aware 3DMM-driven landmark retargeting module.
+  [ICCV 2025][Human Understanding][head swapping] This paper proposes a diffusion-based multi-condition controllable video head swapping framework (SwapAnyHead) that achieves high-fidelity identity preservation…
 tags:
-  - ICCV 2025
-  - Human Understanding
-  - head swapping
-  - diffusion model
-  - expression transfer
-  - identity preservation
-  - video generation
+  - "ICCV 2025"
+  - "Human Understanding"
+  - "head swapping"
+  - "diffusion model"
+  - "expression transfer"
+  - "identity preservation"
+  - "video generation"
 date: 2026-05-08
 content_hash: d4a2ac75d4d76022
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Understanding and Mitigating Hallucinations in Multimodal Chain-of-Thought Models
 description: >-
-  [CVPR 2026][LLM Reasoning][Multimodal Hallucination] This paper systematically analyzes the causes of hallucinations in multimodal CoT models, identifies "divergent thinking" (associative reasoning) as the core trigger, and proposes a training-free detection and decoding intervention strategy based on visual entropy. The method reduces CHAIRS by over 30% on Object HalBench while maintaining or improving general reasoning capability.
+  [CVPR 2026][LLM Reasoning][Multimodal Hallucination] This paper systematically analyzes the causes of hallucinations in multimodal CoT models, identifies "divergent thinking" (associative reasoning) as the core trigger…
 tags:
-  - CVPR 2026
-  - LLM Reasoning
-  - Multimodal Hallucination
-  - Chain-of-Thought Reasoning
-  - Divergent Thinking
-  - Visual Entropy
-  - Decoding Intervention
+  - "CVPR 2026"
+  - "LLM Reasoning"
+  - "Multimodal Hallucination"
+  - "Chain-of-Thought Reasoning"
+  - "Divergent Thinking"
+  - "Visual Entropy"
+  - "Decoding Intervention"
 date: 2026-05-08
 content_hash: e886895d16b3bd6a
 ---

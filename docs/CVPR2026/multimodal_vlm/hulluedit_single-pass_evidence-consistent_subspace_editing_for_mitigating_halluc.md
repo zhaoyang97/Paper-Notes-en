@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] HulluEdit: Single-Pass Evidence-Consistent Subspace Editing for Mitigating Hallucinations in Large Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM] This paper proposes HulluEdit, a single-pass, reference-free subspace editing framework that decomposes hidden states into three orthogonal subspaces—a visual evidence subspace, a conflicting prior subspace, and a residual uncertainty subspace—to selectively suppress hallucination patterns without interfering with visual grounding, achieving state-of-the-art hallucination mitigation on the POPE and CHAIR benchmarks.
+  [CVPR 2026][Multimodal VLM] This paper proposes HulluEdit, a single-pass, reference-free subspace editing framework that decomposes hidden states into three orthogonal subspaces—a visual evidence subspace…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
 date: 2026-05-08
 content_hash: a7501cafd189177c
 ---

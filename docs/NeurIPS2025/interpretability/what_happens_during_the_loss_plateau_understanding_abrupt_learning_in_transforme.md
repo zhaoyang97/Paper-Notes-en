@@ -2,15 +2,16 @@
 title: >-
   [Paper Note] What Happens During the Loss Plateau? Understanding Abrupt Learning in Transformers
 description: >-
-  [NeurIPS 2025][abrupt learning] This paper systematically investigates the phenomenon of "abrupt learning" in Transformer training, revealing that during the loss plateau the model has already learned partial solutions while simultaneously exhibiting output repetition bias and representation collapse. It further demonstrates that the slow learning of attention maps constitutes the key bottleneck, with findings validated in the early pretraining stages of LLMs such as Pythia and OLMo.
+  [NeurIPS 2025][Interpretability][abrupt learning] This paper systematically investigates the phenomenon of "abrupt learning" in Transformer training…
 tags:
-  - NeurIPS 2025
-  - abrupt learning
-  - loss plateau
-  - Transformer training dynamics
-  - representation collapse
-  - repetition bias
-  - attention map
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "abrupt learning"
+  - "loss plateau"
+  - "Transformer training dynamics"
+  - "representation collapse"
+  - "repetition bias"
+  - "attention map"
 date: 2026-05-08
 content_hash: b76be2f887637f44
 ---

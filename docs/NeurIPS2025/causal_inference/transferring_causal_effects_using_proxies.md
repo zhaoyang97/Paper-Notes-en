@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Transferring Causal Effects using Proxies
 description: >-
-  [NEURIPS2025][Causal Inference][proximal causal inference] This paper proposes a multi-domain causal effect transfer method based on proxy variables. Given that only proxy variable $W$ is observed in the target domain, the method leverages multi-source domain data to identify and estimate the interventional distribution under unobserved confounders in the target domain, and provides two consistent estimators with asymptotic confidence intervals.
+  [NEURIPS2025][Causal Inference][proximal causal inference] This paper proposes a multi-domain causal effect transfer method based on proxy variables. Given that only proxy variable $W$ is observed in the target domain…
 tags:
-  - NEURIPS2025
-  - Causal Inference
-  - proximal causal inference
-  - domain adaptation
-  - unobserved confounders
-  - proxy variables
-  - interventional distribution
+  - "NEURIPS2025"
+  - "Causal Inference"
+  - "proximal causal inference"
+  - "domain adaptation"
+  - "unobserved confounders"
+  - "proxy variables"
+  - "interventional distribution"
 date: 2026-05-08
 content_hash: 86cf72b9c48d5a0e
 ---

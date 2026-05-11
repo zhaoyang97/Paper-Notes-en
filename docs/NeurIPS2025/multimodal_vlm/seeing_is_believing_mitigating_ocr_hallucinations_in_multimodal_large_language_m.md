@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Seeing is Believing? Mitigating OCR Hallucinations in Multimodal Large Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][OCR hallucination] This paper addresses OCR hallucinations in MLLMs under degraded document conditions. It introduces KIE-HVQA, the first benchmark for evaluating hallucinations in degraded document scenarios, and proposes a multi-objective reward reinforcement learning framework based on GRPO. The resulting 7B-parameter model achieves approximately 28% higher hallucination-suppression accuracy than GPT-4o.
+  [NeurIPS 2025][Multimodal VLM][OCR hallucination] This paper addresses OCR hallucinations in MLLMs under degraded document conditions. It introduces KIE-HVQA…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - OCR hallucination
-  - document understanding
-  - reinforcement learning
-  - GRPO
-  - visual degradation
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "OCR hallucination"
+  - "document understanding"
+  - "reinforcement learning"
+  - "GRPO"
+  - "visual degradation"
 date: 2026-05-08
 content_hash: 7b1398c7360044d6
 ---

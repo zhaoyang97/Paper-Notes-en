@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Elastic Weight Consolidation for Knowledge Graph Continual Learning: An Empirical Evaluation
 description: >-
-  [NeurIPS 2025 (NORA Workshop)][Graph Learning][Continual Learning] This paper systematically evaluates Elastic Weight Consolidation (EWC) for continual learning of TransE knowledge graph embeddings on FB15k-237, finding that EWC reduces catastrophic forgetting from 12.62% to 6.85% (a 45.7% reduction), and reveals that task partitioning strategy (relation-based vs. random) has a substantial impact on forgetting metrics (a difference of 9.8 percentage points).
+  [NeurIPS 2025 (NORA Workshop)][Graph Learning][Continual Learning] This paper systematically evaluates Elastic Weight Consolidation (EWC) for continual learning of TransE knowledge graph embeddings on FB15k-237…
 tags:
-  - NeurIPS 2025 (NORA Workshop)
-  - Graph Learning
-  - Continual Learning
-  - Knowledge Graphs
-  - Elastic Weight Consolidation
-  - Catastrophic Forgetting
-  - Link Prediction
+  - "NeurIPS 2025 (NORA Workshop)"
+  - "Graph Learning"
+  - "Continual Learning"
+  - "Knowledge Graphs"
+  - "Elastic Weight Consolidation"
+  - "Catastrophic Forgetting"
+  - "Link Prediction"
 date: 2026-05-08
 content_hash: 83ac0854db9761dc
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Efficient Thought Space Exploration Through Strategic Intervention
 description: >-
-  [AAAI 2026][LLM Reasoning][Reasoning Efficiency] This paper proposes the Hint-Practice Reasoning (HPR) framework, in which a large model (hinter) provides short hints at sparse critical tokens while a small model (practitioner) handles the majority of the reasoning. HPR achieves performance comparable to the self-consistency baseline using only 1/5 of the tokens, and improves accuracy by up to 5.1% under the same FLOPs budget.
+  [AAAI 2026][LLM Reasoning][Reasoning Efficiency] This paper proposes the Hint-Practice Reasoning (HPR) framework, in which a large model (hinter) provides short hints at sparse critical tokens while a small model (practi…
 tags:
-  - AAAI 2026
-  - LLM Reasoning
-  - Reasoning Efficiency
-  - Large-Small Model Collaboration
-  - Thought Space Exploration
-  - Distributional Inconsistency
-  - Tree-Structured Reasoning
+  - "AAAI 2026"
+  - "LLM Reasoning"
+  - "Reasoning Efficiency"
+  - "Large-Small Model Collaboration"
+  - "Thought Space Exploration"
+  - "Distributional Inconsistency"
+  - "Tree-Structured Reasoning"
 date: 2026-05-08
 content_hash: 2a0110d69656c74e
 ---

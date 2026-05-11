@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] QD-PCQA: Quality-Aware Domain Adaptation for Point Cloud Quality Assessment
 description: >-
-  [CVPR 2026][3D Vision][Point cloud quality assessment] This paper proposes QD-PCQA, a quality-aware domain adaptation framework that transfers image-domain quality assessment priors to the point cloud domain via two core strategies: Rank-weighted Conditional Alignment (RCA) and Quality-guided Feature Augmentation (QFA).
+  [CVPR 2026][3D Vision][Point cloud quality assessment] This paper proposes QD-PCQA, a quality-aware domain adaptation framework that transfers image-domain quality assessment priors to the point cloud domain via two core…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Point cloud quality assessment
-  - unsupervised domain adaptation
-  - quality-aware feature alignment
-  - cross-domain transfer
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Point cloud quality assessment"
+  - "unsupervised domain adaptation"
+  - "quality-aware feature alignment"
+  - "cross-domain transfer"
 date: 2026-05-08
 content_hash: ca928b4b2883adaa
 ---

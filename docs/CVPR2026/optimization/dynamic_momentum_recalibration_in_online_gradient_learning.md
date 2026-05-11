@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dynamic Momentum Recalibration in Online Gradient Learning
 description: >-
-  [CVPR 2026][Optimization][optimizer] From a signal processing perspective, this work identifies the inherent bias-variance tradeoff deficiencies of fixed momentum coefficients and proposes the SGDF optimizer, which dynamically balances noise suppression and signal preservation in gradient estimation by computing optimal time-varying gains online under the minimum mean squared error principle, outperforming SGD momentum and Adam variants across multiple vision tasks.
+  [CVPR 2026][Optimization][optimizer] From a signal processing perspective, this work identifies the inherent bias-variance tradeoff deficiencies of fixed momentum coefficients and proposes the SGDF optimizer…
 tags:
-  - CVPR 2026
-  - Optimization
-  - optimizer
-  - momentum
-  - bias-variance tradeoff
-  - optimal linear filter
-  - gradient estimation
+  - "CVPR 2026"
+  - "Optimization"
+  - "optimizer"
+  - "momentum"
+  - "bias-variance tradeoff"
+  - "optimal linear filter"
+  - "gradient estimation"
 date: 2026-05-08
 content_hash: 6ded7e008a5e741e
 ---

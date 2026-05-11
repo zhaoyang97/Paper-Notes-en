@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BiasBusters: Uncovering and Mitigating Tool Selection Bias in Large Language Models
 description: >-
-  [ICLR 2026][LLM Safety][tool selection bias] This paper presents the first systematic study of bias in LLM tool selection. When multiple functionally equivalent APIs are available, LLMs systematically favor certain tools due to semantic alignment, positional effects, and pretraining exposure. The authors propose a total variation–based bias metric, a benchmark spanning 10 tool categories, and a lightweight debiasing strategy based on filtering followed by uniform sampling.
+  [ICLR 2026][LLM Safety][tool selection bias] This paper presents the first systematic study of bias in LLM tool selection. When multiple functionally equivalent APIs are available…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - tool selection bias
-  - LLM agent
-  - fairness
-  - API marketplace
-  - debiasing
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "tool selection bias"
+  - "LLM agent"
+  - "fairness"
+  - "API marketplace"
+  - "debiasing"
 date: 2026-05-08
 content_hash: 59b1fbaea5398fc7
 ---

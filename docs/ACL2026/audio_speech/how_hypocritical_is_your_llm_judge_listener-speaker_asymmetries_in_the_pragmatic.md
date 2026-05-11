@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] How Hypocritical Is Your LLM Judge? Listener–Speaker Asymmetries in the Pragmatic Competence of Large Language Models
 description: >-
-  [ACL 2026][Audio & Speech][Pragmatic competence] This paper systematically compares 14 LLMs as pragmatic listeners (judging pragmatic appropriateness) and pragmatic speakers (generating pragmatically appropriate language) across three tasks—false presuppositions, antipresuppositions, and deductive reasoning—revealing pervasive listener–speaker asymmetries: most models perform substantially better as judges than as generators, and item-level analysis shows that correct judgments do not reliably predict successful generation.
+  [ACL 2026][Audio & Speech][Pragmatic competence] This paper systematically compares 14 LLMs as pragmatic listeners (judging pragmatic appropriateness) and pragmatic speakers (generating pragmatically appropriate language…
 tags:
-  - ACL 2026
+  - "ACL 2026"
   - "Audio & Speech"
-  - Pragmatic competence
-  - listener–speaker asymmetry
-  - LLM-as-a-judge
-  - false presuppositions
-  - deductive reasoning
+  - "Pragmatic competence"
+  - "listener–speaker asymmetry"
+  - "LLM-as-a-judge"
+  - "false presuppositions"
+  - "deductive reasoning"
 date: 2026-05-08
 content_hash: b3a22f28fd17496b
 ---

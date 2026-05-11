@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SenseFlow: Scaling Distribution Matching for Flow-based Text-to-Image Distillation
 description: >-
-  [ICLR 2026][Image Generation][distribution matching distillation] This paper proposes SenseFlow, which scales distribution matching distillation (DMD) to large-scale flow-based text-to-image models (SD 3.5 Large 8B / FLUX.1 dev 12B) via Implicit Distribution Alignment (IDA) and Intra-Segment Guidance (ISG), enabling high-quality 4-step image generation.
+  [ICLR 2026][Image Generation][distribution matching distillation] This paper proposes SenseFlow, which scales distribution matching distillation (DMD) to large-scale flow-based text-to-image models (SD 3.5 Large 8B / FLU…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - distribution matching distillation
-  - flow matching
-  - text-to-image
-  - few-step generation
-  - FLUX
+  - "ICLR 2026"
+  - "Image Generation"
+  - "distribution matching distillation"
+  - "flow matching"
+  - "text-to-image"
+  - "few-step generation"
+  - "FLUX"
 date: 2026-05-08
 content_hash: 0b29971c7258e435
 ---

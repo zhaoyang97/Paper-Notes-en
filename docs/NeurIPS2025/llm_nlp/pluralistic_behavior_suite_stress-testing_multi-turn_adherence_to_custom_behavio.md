@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PluralisticBehaviorSuite: Stress-Testing Multi-Turn Adherence to Custom Behavioral Policies
 description: >-
-  [NeurIPS 2025][LLM/NLP][pluralistic alignment] This paper introduces PBSuite, an evaluation suite comprising 300 industry-specific behavioral policies and a dynamic multi-turn adversarial evaluation framework. It reveals that mainstream LLMs exhibit high compliance under single-turn settings (violation rate <4%), but compliance degrades sharply under multi-turn adversarial interactions (violation rate up to 84%).
+  [NeurIPS 2025][LLM/NLP][pluralistic alignment] This paper introduces PBSuite, an evaluation suite comprising 300 industry-specific behavioral policies and a dynamic multi-turn adversarial evaluation framework. It reveals…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - pluralistic alignment
-  - behavioral policy
-  - multi-turn evaluation
-  - red-teaming
-  - LLM safety
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "pluralistic alignment"
+  - "behavioral policy"
+  - "multi-turn evaluation"
+  - "red-teaming"
+  - "LLM safety"
 date: 2026-05-08
 content_hash: 0e26ad80f84061dc
 ---

@@ -2,19 +2,19 @@
 title: >-
   [Paper Note] Fin3R: Fine-tuning Feed-forward 3D Reconstruction Models via Monocular Knowledge Distillation
 description: >-
-  [NeurIPS 2025][3D Vision][3D Reconstruction] Fin3R is proposed to improve the geometric accuracy and robustness of feed-forward 3D reconstruction models (DUSt3R/MASt3R/CUT3R/VGGT) in a unified and lightweight manner, by freezing the decoder and fine-tuning the encoder via monocular knowledge distillation with re-normalization LoRA adapters.
+  [NeurIPS 2025][3D Vision][3D Reconstruction] Fin3R is proposed to improve the geometric accuracy and robustness of feed-forward 3D reconstruction models (DUSt3R/MASt3R/CUT3R/VGGT) in a unified and lightweight manner…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - 3D Reconstruction
-  - Feed-forward Reconstruction
-  - Knowledge Distillation
-  - LoRA Fine-tuning
-  - Monocular Depth Estimation
-  - DUSt3R
-  - MASt3R
-  - CUT3R
-  - VGGT
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "3D Reconstruction"
+  - "Feed-forward Reconstruction"
+  - "Knowledge Distillation"
+  - "LoRA Fine-tuning"
+  - "Monocular Depth Estimation"
+  - "DUSt3R"
+  - "MASt3R"
+  - "CUT3R"
+  - "VGGT"
 date: 2026-05-08
 content_hash: c360e6541abb3c96
 ---

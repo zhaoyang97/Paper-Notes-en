@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] AI Progress Should Be Measured by Capability-Per-Resource, Not Scale Alone: A Framework for Gradient-Guided Resource Allocation in LLMs
 description: >-
-  [NEURIPS2025][LLM Pretraining][capability-per-resource] This position paper challenges "scaling fundamentalism" by proposing **Capability-Per-Resource (CPR)** as a replacement for raw scale as the primary measure of AI progress. The paper presents a gradient-guided resource allocation framework in which foundation model developers publish "gradient blueprint" metadata, enabling downstream adapters to fine-tune only a high-influence parameter subset while substantially reducing resource consumption and maintaining performance close to full-parameter fine-tuning.
+  [NEURIPS2025][LLM Pretraining][capability-per-resource] This position paper challenges "scaling fundamentalism" by proposing **Capability-Per-Resource (CPR)** as a replacement for raw scale as the primary measure of AI p…
 tags:
-  - NEURIPS2025
-  - LLM Pretraining
-  - capability-per-resource
-  - gradient blueprint
-  - parameter-efficient fine-tuning
-  - resource efficiency
-  - scaling law
-  - sustainable AI
+  - "NEURIPS2025"
+  - "LLM Pretraining"
+  - "capability-per-resource"
+  - "gradient blueprint"
+  - "parameter-efficient fine-tuning"
+  - "resource efficiency"
+  - "scaling law"
+  - "sustainable AI"
 date: 2026-05-08
 content_hash: feaefa187c1f650e
 ---

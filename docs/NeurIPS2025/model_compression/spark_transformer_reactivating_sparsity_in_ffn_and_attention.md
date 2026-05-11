@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Spark Transformer: Reactivating Sparsity in FFN and Attention
 description: >-
-  [NeurIPS 2025][Model Compression][activation sparsity] This paper proposes the Spark Transformer architecture, which simultaneously achieves high-level activation sparsity in both FFN and attention mechanisms (only 8% of neurons activated in FFN; each token attends to at most 256 tokens) via a Statistical Top-k operator. The approach achieves a 2.5× FLOPs reduction and up to 1.79× inference speedup while maintaining quality comparable to Gemma-2.
+  [NeurIPS 2025][Model Compression][activation sparsity] This paper proposes the Spark Transformer architecture, which simultaneously achieves high-level activation sparsity in both FFN and attention mechanisms (only 8% of…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - activation sparsity
-  - Statistical Top-k
-  - inference acceleration
-  - FFN sparsity
-  - attention sparsity
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "activation sparsity"
+  - "Statistical Top-k"
+  - "inference acceleration"
+  - "FFN sparsity"
+  - "attention sparsity"
 date: 2026-05-08
 content_hash: a2a8adf64be243b3
 ---

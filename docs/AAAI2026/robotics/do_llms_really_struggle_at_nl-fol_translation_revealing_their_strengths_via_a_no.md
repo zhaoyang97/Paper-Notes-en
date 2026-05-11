@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Do LLMs Really Struggle at NL-FOL Translation? Revealing Their Strengths via a Novel Benchmarking Strategy
 description: >-
-  [AAAI 2026][Robotics][NL-FOL translation] This paper critically examines existing evaluation methodologies for natural language to first-order logic (FOL) translation — specifically FOLIO and MALLS — exposing fundamental flaws in their datasets and evaluation protocols. The authors propose a novel benchmarking strategy that decomposes the translation task into ontology extraction (OE) and logical translation (LT), augmented with "most similar selection" and "ranking" subtasks. Experiments demonstrate that conversational LLMs (o3-mini, GPT-4o-mini, Qwen3 series) exhibit strong NL-FOL translation capabilities and genuine logical semantic understanding, while embedding-based models perform significantly worse.
+  [AAAI 2026][Robotics][NL-FOL translation] This paper critically examines existing evaluation methodologies for natural language to first-order logic (FOL) translation — specifically FOLIO and MALLS — exposing fundamental…
 tags:
-  - AAAI 2026
-  - Robotics
-  - NL-FOL translation
-  - autoformalization
-  - first-order logic
-  - LLM evaluation
-  - benchmark
-  - semantic understanding
+  - "AAAI 2026"
+  - "Robotics"
+  - "NL-FOL translation"
+  - "autoformalization"
+  - "first-order logic"
+  - "LLM evaluation"
+  - "benchmark"
+  - "semantic understanding"
 date: 2026-05-08
 content_hash: d728104deb56d020
 ---

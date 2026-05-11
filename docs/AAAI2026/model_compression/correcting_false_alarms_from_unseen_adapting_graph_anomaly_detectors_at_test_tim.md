@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Correcting False Alarms from Unseen: Adapting Graph Anomaly Detectors at Test Time
 description: >-
-  [AAAI 2026][Model Compression][Graph Anomaly Detection] This paper proposes TUNE, a plug-and-play test-time adaptation framework that addresses the "normality shift" problem in graph anomaly detection—caused by the emergence of new normal node categories—by transforming node features via a graph aligner. It leverages the degree of aggregation contamination as an unsupervised adaptation signal and significantly enhances the generalization of various pretrained GAD models across 10 real-world datasets.
+  [AAAI 2026][Model Compression][Graph Anomaly Detection] This paper proposes TUNE, a plug-and-play test-time adaptation framework that addresses the "normality shift" problem in graph anomaly detection—caused by the emerg…
 tags:
-  - AAAI 2026
-  - Model Compression
-  - Graph Anomaly Detection
-  - Test-Time Adaptation
-  - Normality Shift
-  - Aggregation Contamination
-  - Plug-and-Play
+  - "AAAI 2026"
+  - "Model Compression"
+  - "Graph Anomaly Detection"
+  - "Test-Time Adaptation"
+  - "Normality Shift"
+  - "Aggregation Contamination"
+  - "Plug-and-Play"
 date: 2026-05-08
 content_hash: 2fe553f7e44c685e
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] RAR: Restore, Assess, Repeat - A Unified Framework for Iterative Image Restoration
 description: >-
-  [CVPR 2026][Image Restoration] RAR deeply integrates image quality assessment (IQA) with image restoration (IR) into a unified end-to-end model, iteratively executing an "assess–restore–verify" loop in the latent space. It achieves a +2.71 dB PSNR gain under composite degradation scenarios while running 11.27× faster than AgenticIR.
+  [CVPR 2026][Image Restoration][Image Quality Assessment] RAR deeply integrates image quality assessment (IQA) with image restoration (IR) into a unified end-to-end model…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Image Quality Assessment
-  - Iterative Restoration
-  - Composite Degradation
-  - Flow Matching
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Image Quality Assessment"
+  - "Iterative Restoration"
+  - "Composite Degradation"
+  - "Flow Matching"
 date: 2026-05-08
 content_hash: dd687c493ea858e1
 ---

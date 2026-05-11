@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] SERM: Self-Evolving Relevance Model with Agent-Driven Learning from Massive Query Streams
 description: >-
-  [ACL 2026][Search relevance] This paper proposes the SERM framework, which continuously self-evolves a search relevance model from large-scale real-world query streams via a multi-agent sample miner and a multi-agent relevance annotator. After three iterative rounds on an industrial search platform, SERM achieves a NDCG@1 improvement of +2.99, and significantly improves user retention in online A/B testing.
+  [ACL 2026][Multilingual & Machine Translation][Search relevance] This paper proposes the SERM framework, which continuously self-evolves a search relevance model from large-scale real-world query streams via a multi-agen…
 tags:
-  - ACL 2026
-  - Search relevance
-  - self-evolving model
-  - multi-agent annotation
-  - query stream adaptation
-  - distribution shift
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "Search relevance"
+  - "self-evolving model"
+  - "multi-agent annotation"
+  - "query stream adaptation"
+  - "distribution shift"
 date: 2026-05-08
 content_hash: 9c35c4a58821a20f
 ---

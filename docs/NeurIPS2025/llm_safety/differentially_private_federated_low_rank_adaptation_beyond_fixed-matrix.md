@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Differentially Private Federated Low Rank Adaptation Beyond Fixed-Matrix
 description: >-
-  [NeurIPS 2025][LLM Safety][Differential Privacy] This paper proposes FedASK, a framework that employs a **two-stage sketching pipeline** (inspired by randomized SVD) to, for the first time under differential privacy, enable **simultaneous effective updates of both low-rank matrices A and B** in federated LoRA, achieving up to 11.5% improvement on MMLU and 46% on GSM8K over baselines on Llama-2 7B/13B.
+  [NeurIPS 2025][LLM Safety][Differential Privacy] This paper proposes FedASK, a framework that employs a **two-stage sketching pipeline** (inspired by randomized SVD) to, for the first time under differential privacy…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - Differential Privacy
-  - Federated Learning
-  - LoRA
-  - Low-Rank Adaptation
-  - LLM Fine-Tuning
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "Differential Privacy"
+  - "Federated Learning"
+  - "LoRA"
+  - "Low-Rank Adaptation"
+  - "LLM Fine-Tuning"
 date: 2026-05-08
 content_hash: 5eff369fc766dcde
 ---

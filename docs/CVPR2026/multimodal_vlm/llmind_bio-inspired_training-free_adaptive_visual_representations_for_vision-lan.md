@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LLMind: Bio-inspired Training-free Adaptive Visual Representations for Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Bio-inspired visual sampling] Inspired by foveal encoding and cortical magnification in the human visual system, this paper proposes LLMind, a training-free adaptive sampling framework that leverages Möbius transformations for non-uniform pixel allocation. A closed-loop semantic feedback mechanism optimizes sampling parameters at test time, achieving substantial improvements over uniform sampling under tight pixel budgets of only 1%–5%.
+  [CVPR 2026][Multimodal VLM][Bio-inspired visual sampling] Inspired by foveal encoding and cortical magnification in the human visual system, this paper proposes LLMind…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Bio-inspired visual sampling
-  - Möbius transformation
-  - training-free
-  - pixel budget
-  - VQA
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Bio-inspired visual sampling"
+  - "Möbius transformation"
+  - "training-free"
+  - "pixel budget"
+  - "VQA"
 date: 2026-05-08
 content_hash: 658a0226449cbb48
 ---

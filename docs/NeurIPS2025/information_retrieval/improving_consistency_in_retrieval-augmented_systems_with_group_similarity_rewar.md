@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Improving Consistency in Retrieval-Augmented Systems with Group Similarity Rewards
 description: >-
-  [NeurIPS 2025][RAG consistency] This paper proposes Con-RAG, a framework that trains RAG generators to produce informationally consistent outputs under paraphrased inputs by computing group similarity rewards across multiple generations of semantically equivalent queries via Paraphrased Set GRPO (PS-GRPO), simultaneously improving both consistency and accuracy without requiring explicit ground-truth supervision.
+  [NeurIPS 2025][Information Retrieval & RAG][RAG consistency] This paper proposes Con-RAG, a framework that trains RAG generators to produce informationally consistent outputs under paraphrased inputs by computing group s…
 tags:
-  - NeurIPS 2025
-  - RAG consistency
-  - GRPO
-  - information consistency
-  - semantically equivalent queries
-  - reinforcement learning alignment
+  - "NeurIPS 2025"
+  - "Information Retrieval & RAG"
+  - "RAG consistency"
+  - "GRPO"
+  - "information consistency"
+  - "semantically equivalent queries"
+  - "reinforcement learning alignment"
 date: 2026-05-08
 content_hash: 9ff86321dc96a391
 ---

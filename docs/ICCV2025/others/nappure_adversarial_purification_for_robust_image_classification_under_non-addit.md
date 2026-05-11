@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] NAPPure: Adversarial Purification for Robust Image Classification under Non-Additive Perturbations
 description: >-
-  [ICCV 2025][adversarial purification] This paper proposes NAPPure, a framework that jointly optimizes the underlying clean image and perturbation parameters via likelihood maximization, extending adversarial purification beyond additive perturbations to handle blur, occlusion, and geometric distortion. NAPPure achieves an average robust accuracy of 73.93% on GTSRB, compared to only 43.2% for conventional methods.
+  [ICCV 2025][adversarial purification] This paper proposes NAPPure, a framework that jointly optimizes the underlying clean image and perturbation parameters via likelihood maximization…
 tags:
-  - ICCV 2025
-  - adversarial purification
-  - non-additive perturbations
-  - diffusion models
-  - robust classification
-  - blur attacks
-  - occlusion attacks
-  - geometric distortion
+  - "ICCV 2025"
+  - "adversarial purification"
+  - "non-additive perturbations"
+  - "diffusion models"
+  - "robust classification"
+  - "blur attacks"
+  - "occlusion attacks"
+  - "geometric distortion"
 date: 2026-05-08
 content_hash: 4f07071cf0f64884
 ---

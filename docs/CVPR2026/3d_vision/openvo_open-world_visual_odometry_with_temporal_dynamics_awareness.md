@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OpenVO: Open-World Visual Odometry with Temporal Dynamics Awareness
 description: >-
-  [CVPR2026][3D Vision][Visual Odometry] This paper proposes OpenVO, an open-world monocular visual odometry framework that achieves robust metric-scale ego-motion estimation under uncalibrated cameras and varying frame rates, via a time-aware flow encoder and a geometry-aware context encoder. OpenVO achieves over 20% ATE improvement across datasets and reduces error by 46%–92% under variable frame-rate settings.
+  [CVPR2026][3D Vision][Visual Odometry] This paper proposes OpenVO, an open-world monocular visual odometry framework that achieves robust metric-scale ego-motion estimation under uncalibrated cameras and varying frame ra…
 tags:
-  - CVPR2026
-  - 3D Vision
-  - Visual Odometry
-  - Temporal Dynamics Awareness
-  - Camera-Free
-  - 3D Flow Field
-  - Autonomous Driving
+  - "CVPR2026"
+  - "3D Vision"
+  - "Visual Odometry"
+  - "Temporal Dynamics Awareness"
+  - "Camera-Free"
+  - "3D Flow Field"
+  - "Autonomous Driving"
 date: 2026-05-08
 content_hash: 01ee8b3a51b3bfa6
 ---

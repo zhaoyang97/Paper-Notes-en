@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PoseMaster: A Unified 3D Native Framework for Stylized Pose Generation
 description: >-
-  [CVPR 2026][3D Vision][3D pose stylization] PoseMaster proposes a 3D native framework that unifies pose stylization and 3D generation in an end-to-end pipeline. It directly uses 3D skeletons as pose control signals (rather than 2D skeleton images), designs a skeleton densification strategy and a Point Transformer encoder to extract fine-grained spatial topology features, and trains on large-scale Image-Skeleton-Mesh triplet data, achieving state-of-the-art performance on both pose canonicalization and arbitrary pose stylization.
+  [CVPR 2026][3D Vision][3D pose stylization] PoseMaster proposes a 3D native framework that unifies pose stylization and 3D generation in an end-to-end pipeline. It directly uses 3D skeletons as pose control signals (rath…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D pose stylization
-  - skeleton encoder
-  - 3D native generation
-  - data engine
-  - end-to-end
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D pose stylization"
+  - "skeleton encoder"
+  - "3D native generation"
+  - "data engine"
+  - "end-to-end"
 date: 2026-05-08
 content_hash: cdb110303719b565
 ---

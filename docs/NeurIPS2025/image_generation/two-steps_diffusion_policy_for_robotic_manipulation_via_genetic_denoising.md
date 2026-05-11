@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Two-Steps Diffusion Policy for Robotic Manipulation via Genetic Denoising
 description: >-
-  [NeurIPS 2025][Image Generation][Genetic Denoising Policy] By revealing the distributional mismatch caused by clipping operations in diffusion policies, this paper proposes GDP—a method combining denoising schedule optimization and genetic algorithm-based population selection—that enables off-the-shelf DDPM diffusion policies to match or surpass 100-step baselines with only 2-step inference, **without any retraining**.
+  [NeurIPS 2025][Image Generation][Genetic Denoising Policy] By revealing the distributional mismatch caused by clipping operations in diffusion policies…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Genetic Denoising Policy
-  - Clipping Artifacts
-  - Few-Step Denoising
-  - Population Sampling
-  - OoD Risk
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Genetic Denoising Policy"
+  - "Clipping Artifacts"
+  - "Few-Step Denoising"
+  - "Population Sampling"
+  - "OoD Risk"
 date: 2026-05-08
 content_hash: e487aa2686ec5b82
 ---

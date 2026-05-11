@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Flex-Judge: Text-Only Reasoning Unleashes Zero-Shot Multimodal Evaluators
 description: >-
-  [NeurIPS 2025][Image Generation][LLM-as-a-Judge] This paper proposes Flex-Judge, which fine-tunes a multimodal large language model on only 1K text-only reasoning samples to achieve zero-shot generalization across image, video, audio, and molecular evaluation tasks, matching or surpassing commercial APIs such as GPT-4o and specialized evaluators trained on large-scale annotated data.
+  [NeurIPS 2025][Image Generation][LLM-as-a-Judge] This paper proposes Flex-Judge, which fine-tunes a multimodal large language model on only 1K text-only reasoning samples to achieve zero-shot generalization across image…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - LLM-as-a-Judge
-  - Multimodal Evaluation
-  - Reasoning-Guided Training
-  - Cross-Modal Transfer
-  - Zero-Shot Generalization
-  - Preference Optimization
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "LLM-as-a-Judge"
+  - "Multimodal Evaluation"
+  - "Reasoning-Guided Training"
+  - "Cross-Modal Transfer"
+  - "Zero-Shot Generalization"
+  - "Preference Optimization"
 date: 2026-05-08
 content_hash: 5ae82e25ad6be89d
 ---

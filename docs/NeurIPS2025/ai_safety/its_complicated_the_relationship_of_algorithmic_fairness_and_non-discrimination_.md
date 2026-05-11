@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] It's Complicated: The Relationship of Algorithmic Fairness and Non-Discrimination Provisions for High-Risk Systems in the EU AI Act
 description: >-
-  [NeurIPS 2025][AI Safety][EU AI Act] This paper systematically analyzes the complex relationship between the non-discrimination provisions for high-risk AI systems in the EU AI Act (AIA) and the field of algorithmic fairness in machine learning. It reveals critical gaps in the legal text concerning input-side bias detection, the absence of output-side protections, and standardization challenges, providing a foundational framework for interdisciplinary collaboration between computer science and law.
+  [NeurIPS 2025][AI Safety][EU AI Act] This paper systematically analyzes the complex relationship between the non-discrimination provisions for high-risk AI systems in the EU AI Act (AIA) and the field of algorithmic fair…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - EU AI Act
-  - High-Risk AI Systems
-  - Algorithmic Fairness
-  - Anti-Discrimination Law
-  - Standardization
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "EU AI Act"
+  - "High-Risk AI Systems"
+  - "Algorithmic Fairness"
+  - "Anti-Discrimination Law"
+  - "Standardization"
 date: 2026-05-08
 content_hash: f7cb249d01830954
 ---

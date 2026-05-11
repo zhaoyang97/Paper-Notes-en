@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EffectErase: Joint Video Object Removal and Insertion for High-Quality Effect Erasing
 description: >-
-  [CVPR 2026][Image Generation][Video Object Removal] This paper proposes EffectErase, a framework that jointly learns video object insertion as an inverse auxiliary task to object removal, and constructs a large-scale VOR dataset containing 60K video pairs, enabling high-quality erasure of objects along with their associated visual side effects, including occlusion, shadow, reflection, illumination changes, and deformation.
+  [CVPR 2026][Image Generation][Video Object Removal] This paper proposes EffectErase, a framework that jointly learns video object insertion as an inverse auxiliary task to object removal…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Video Object Removal
-  - Visual Side Effects
-  - Diffusion Models
-  - Dual Learning
-  - Dataset
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Video Object Removal"
+  - "Visual Side Effects"
+  - "Diffusion Models"
+  - "Dual Learning"
+  - "Dataset"
 date: 2026-05-08
 content_hash: 12fdba2931300957
 ---

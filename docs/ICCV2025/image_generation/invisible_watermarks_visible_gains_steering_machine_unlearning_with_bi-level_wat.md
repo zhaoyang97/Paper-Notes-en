@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Invisible Watermarks, Visible Gains: Steering Machine Unlearning with Bi-Level Watermarking Design
 description: >-
-  [ICCV 2025][Image Generation][Machine Unlearning] This paper proposes Water4MU, a framework that integrates digital watermarking with machine unlearning (MU) via bi-level optimization (BLO). The upper level optimizes the watermark network to facilitate unlearning, while the lower level performs the unlearning optimization, thereby substantially improving unlearning effectiveness without significantly compromising model utility.
+  [ICCV 2025][Image Generation][Machine Unlearning] This paper proposes Water4MU, a framework that integrates digital watermarking with machine unlearning (MU) via bi-level optimization (BLO). The upper level optimizes the…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Machine Unlearning
-  - Digital Watermarking
-  - Bi-Level Optimization
-  - Implicit Gradients
-  - Diffusion Model Concept Erasure
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Machine Unlearning"
+  - "Digital Watermarking"
+  - "Bi-Level Optimization"
+  - "Implicit Gradients"
+  - "Diffusion Model Concept Erasure"
 date: 2026-05-08
 content_hash: 9ec86f6db0ff0acd
 ---

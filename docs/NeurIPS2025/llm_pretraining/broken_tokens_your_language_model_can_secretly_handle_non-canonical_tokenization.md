@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Broken Tokens: Your Language Model Can Secretly Handle Non-Canonical Tokenization
 description: >-
-  [NeurIPS 2025][LLM Pretraining][non-canonical tokenization] This paper reveals that LLMs can secretly handle non-canonical tokenizations (e.g., splitting "Hello" into "He"+"llo" instead of the canonical whole-word token)—even when the input token sequence differs from training, models exhibit surprising robustness. This capability stems from the property that sub-word embeddings in the embedding space can linearly combine to approximate whole-word embeddings.
+  [NeurIPS 2025][LLM Pretraining][non-canonical tokenization] This paper reveals that LLMs can secretly handle non-canonical tokenizations (e.g.…
 tags:
-  - NeurIPS 2025
-  - LLM Pretraining
-  - non-canonical tokenization
-  - character-level
-  - robustness
-  - embedding space
-  - vocabulary attack
+  - "NeurIPS 2025"
+  - "LLM Pretraining"
+  - "non-canonical tokenization"
+  - "character-level"
+  - "robustness"
+  - "embedding space"
+  - "vocabulary attack"
 date: 2026-05-08
 content_hash: 5bfbcfe23077c0e8
 ---

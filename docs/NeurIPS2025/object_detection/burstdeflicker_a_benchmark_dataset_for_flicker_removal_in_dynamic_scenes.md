@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BurstDeflicker: A Benchmark Dataset for Flicker Removal in Dynamic Scenes
 description: >-
-  [NeurIPS 2025][Object Detection][flicker removal] This paper introduces BurstDeflicker, the first large-scale benchmark dataset for multi-frame flicker removal (MFFR), comprising three complementary subsets — Retinex-based synthetic data, real-world static data, and green-screen dynamic data — systematically addressing the core bottleneck of obtaining aligned flickering–clean image pairs in dynamic scenes.
+  [NeurIPS 2025][Object Detection][flicker removal] This paper introduces BurstDeflicker, the first large-scale benchmark dataset for multi-frame flicker removal (MFFR)…
 tags:
-  - NeurIPS 2025
-  - Object Detection
-  - flicker removal
-  - rolling shutter
-  - burst imaging
-  - dataset
-  - Retinex
+  - "NeurIPS 2025"
+  - "Object Detection"
+  - "flicker removal"
+  - "rolling shutter"
+  - "burst imaging"
+  - "dataset"
+  - "Retinex"
 date: 2026-05-08
 content_hash: 11b69d5cfb8cbeae
 ---

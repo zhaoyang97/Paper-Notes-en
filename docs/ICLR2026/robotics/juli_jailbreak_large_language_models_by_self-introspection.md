@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] JULI: Jailbreak Large Language Models by Self-Introspection
 description: >-
-  [ICLR 2026][Robotics][jailbreak] This paper reveals that top-k token log probabilities returned by aligned LLM APIs still contain harmful knowledge leakage, and proposes JULI—a BiasNet plugin with fewer than 1% of the target model's parameters—that manipulates logit bias to successfully jailbreak Gemini-2.5-Pro (Harmful Info Score 4.19/5) under API settings restricted to top-5 token probabilities, achieving approximately 140× speedup over LINT while doubling harmfulness scores.
+  [ICLR 2026][Robotics][jailbreak] This paper reveals that top-k token log probabilities returned by aligned LLM APIs still contain harmful knowledge leakage…
 tags:
-  - ICLR 2026
-  - Robotics
-  - jailbreak
-  - logit bias
-  - API attack
-  - token log probability
-  - BiasNet
+  - "ICLR 2026"
+  - "Robotics"
+  - "jailbreak"
+  - "logit bias"
+  - "API attack"
+  - "token log probability"
+  - "BiasNet"
 date: 2026-05-08
 content_hash: 5488ebf755c85f8e
 ---

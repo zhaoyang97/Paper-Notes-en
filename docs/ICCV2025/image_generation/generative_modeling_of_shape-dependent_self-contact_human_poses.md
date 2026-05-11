@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Generative Modeling of Shape-Dependent Self-Contact Human Poses
 description: >-
-  [ICCV 2025][Image Generation][Self-Contact] This work constructs Goliath-SC, the first large-scale self-contact pose dataset with accurate shape annotations (383K poses / 130 subjects), proposes PAPoseDiff—a shape-conditioned part-aware latent diffusion model for modeling body-shape-dependent self-contact pose distributions—and leverages the learned diffusion prior for monocular pose refinement, outperforming SOTA methods such as BUDDI and SMPLer-X on unseen subjects.
+  [ICCV 2025][Image Generation][Self-Contact] This work constructs Goliath-SC, the first large-scale self-contact pose dataset with accurate shape annotations (383K poses / 130 subjects)…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Self-Contact
-  - Body Shape
-  - diffusion model
-  - SMPL-X
-  - Pose Generation
-  - Pose Refinement
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Self-Contact"
+  - "Body Shape"
+  - "diffusion model"
+  - "SMPL-X"
+  - "Pose Generation"
+  - "Pose Refinement"
 date: 2026-05-08
 content_hash: d2639d0c12c86643
 ---

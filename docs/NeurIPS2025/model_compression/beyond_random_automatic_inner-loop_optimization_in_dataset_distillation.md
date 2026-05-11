@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond Random: Automatic Inner-Loop Optimization in Dataset Distillation
 description: >-
-  [NeurIPS 2025][Model Compression][Dataset Distillation] This paper proposes AT-BPTT (Adaptive Truncation BPTT), which partitions DNN training into early/middle/late stages and adaptively adjusts truncation strategies and window sizes accordingly. The method achieves average accuracy gains of 3–17% on CIFAR-10/100/Tiny-ImageNet/ImageNet-1K, while delivering 3.9× speedup and 63% memory reduction.
+  [NeurIPS 2025][Model Compression][Dataset Distillation] This paper proposes AT-BPTT (Adaptive Truncation BPTT), which partitions DNN training into early/middle/late stages and adaptively adjusts truncation strategies and…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Dataset Distillation
-  - BPTT Truncation
-  - Adaptive Truncation
-  - Low-Rank Hessian Approximation
-  - Patch-wise Semantic Preservation
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Dataset Distillation"
+  - "BPTT Truncation"
+  - "Adaptive Truncation"
+  - "Low-Rank Hessian Approximation"
+  - "Patch-wise Semantic Preservation"
 date: 2026-05-08
 content_hash: 3cdd85caccbb8386
 ---

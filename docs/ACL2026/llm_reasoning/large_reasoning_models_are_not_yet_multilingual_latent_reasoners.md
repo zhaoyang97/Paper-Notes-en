@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Large Reasoning Models Are (Not Yet) Multilingual Latent Reasoners
 description: >-
-  [ACL 2026][LLM Reasoning][multilingual reasoning] This paper systematically investigates the latent reasoning behavior of large reasoning models (LRMs) across 11 languages, finding that latent reasoning capability exists multilingually but is unevenly distributed (stronger for high-resource languages, weaker for low-resource ones), and that internal reasoning dynamics tend toward an English-centric shared pathway.
+  [ACL 2026][LLM Reasoning][multilingual reasoning] This paper systematically investigates the latent reasoning behavior of large reasoning models (LRMs) across 11 languages…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - multilingual reasoning
-  - latent reasoning
-  - chain-of-thought truncation
-  - representation analysis
-  - reasoning models
+  - "ACL 2026"
+  - "LLM Reasoning"
+  - "multilingual reasoning"
+  - "latent reasoning"
+  - "chain-of-thought truncation"
+  - "representation analysis"
+  - "reasoning models"
 date: 2026-05-08
 content_hash: f4e6b11231d7c537
 ---

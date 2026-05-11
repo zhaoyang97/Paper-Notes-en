@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] INC: An Indirect Neural Corrector for Auto-Regressive Hybrid PDE Solvers
 description: >-
-  [NEURIPS2025][Scientific Computing][PDE solving] This paper proposes the Indirect Neural Corrector (INC), which embeds learned correction terms into the right-hand side (RHS) of PDEs rather than directly modifying the state. The approach is theoretically shown to reduce error amplification by a factor of $\mathcal{O}(\Delta t^{-1}+L)$, and achieves substantial improvements in long-term trajectory performance across 6 PDE systems (from 1D chaos to 3D turbulence), with R² gains up to 158.7% and up to 330× acceleration.
+  [NEURIPS2025][Scientific Computing][PDE solving] This paper proposes the Indirect Neural Corrector (INC), which embeds learned correction terms into the right-hand side (RHS) of PDEs rather than directly modifying the st…
 tags:
-  - NEURIPS2025
-  - Scientific Computing
-  - PDE solving
-  - hybrid solver
-  - neural corrector
-  - auto-regressive stability
-  - indirect correction
+  - "NEURIPS2025"
+  - "Scientific Computing"
+  - "PDE solving"
+  - "hybrid solver"
+  - "neural corrector"
+  - "auto-regressive stability"
+  - "indirect correction"
 date: 2026-05-08
 content_hash: c3b0ed70f0d43963
 ---

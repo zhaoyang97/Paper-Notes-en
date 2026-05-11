@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Vision-Only Gaussian Splatting for Collaborative Semantic Occupancy Prediction
 description: >-
-  [AAAI 2026][Autonomous Driving][Collaborative Perception] This paper proposes the first vision-only semantic occupancy prediction framework that uses sparse 3D semantic Gaussian primitives as the communication medium for collaborative perception. Through ROI cropping, rigid transformation of Gaussians, and a neighborhood fusion module to suppress noise and redundancy, the method achieves +8.42 mIoU over the single-agent baseline and +3.28 mIoU over the baseline collaborative method.
+  [AAAI 2026][Autonomous Driving][Collaborative Perception] This paper proposes the first vision-only semantic occupancy prediction framework that uses sparse 3D semantic Gaussian primitives as the communication medium for…
 tags:
-  - AAAI 2026
-  - Autonomous Driving
-  - Collaborative Perception
-  - 3D Gaussian Splatting
-  - Semantic Occupancy
-  - V2X Communication
-  - Vision-Only
+  - "AAAI 2026"
+  - "Autonomous Driving"
+  - "Collaborative Perception"
+  - "3D Gaussian Splatting"
+  - "Semantic Occupancy"
+  - "V2X Communication"
+  - "Vision-Only"
 date: 2026-05-08
 content_hash: b9426352e1a2c906
 ---

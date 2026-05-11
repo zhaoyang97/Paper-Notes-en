@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ARCHE: A Novel Task to Evaluate LLMs on Latent Reasoning Chain Extraction
 description: >-
-  [AAAI 2026][LLM Reasoning][Latent reasoning chain extraction] This paper proposes the Latent Reasoning Chain Extraction (ARCHE) task, which requires LLMs to decompose scientific paper argumentation into Reasoning Logic Trees (RLTs) grounded in Peirce's three reasoning paradigms. Through two complementary metrics—Entity Coverage (EC) and Reasoning Edge Accuracy (REA)—the study reveals a fundamental trade-off between content completeness and logical correctness across 10 mainstream LLMs.
+  [AAAI 2026][LLM Reasoning][Latent reasoning chain extraction] This paper proposes the Latent Reasoning Chain Extraction (ARCHE) task, which requires LLMs to decompose scientific paper argumentation into Reasoning Logic T…
 tags:
-  - AAAI 2026
-  - LLM Reasoning
-  - Latent reasoning chain extraction
-  - Peircean reasoning paradigms
-  - deduction/induction/abduction
-  - reasoning logic tree
-  - benchmark
+  - "AAAI 2026"
+  - "LLM Reasoning"
+  - "Latent reasoning chain extraction"
+  - "Peircean reasoning paradigms"
+  - "deduction/induction/abduction"
+  - "reasoning logic tree"
+  - "benchmark"
 date: 2026-05-08
 content_hash: 991a07ead08033f0
 ---

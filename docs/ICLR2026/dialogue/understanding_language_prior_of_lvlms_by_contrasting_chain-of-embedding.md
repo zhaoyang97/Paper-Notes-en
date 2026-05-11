@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Understanding Language Prior of LVLMs by Contrasting Chain-of-Embedding
 description: >-
-  [ICLR 2026][Dialogue Systems][Language Prior] By contrasting layer-wise hidden representations (chain-of-embedding) with and without visual input, this paper identifies a "Visual Integration Point" (VIP) layer in LVLMs and proposes the Total Visual Integration (TVI) metric to quantify the strength of language priors.
+  [ICLR 2026][Dialogue Systems][Language Prior] By contrasting layer-wise hidden representations (chain-of-embedding) with and without visual input…
 tags:
-  - ICLR 2026
-  - Dialogue Systems
-  - Language Prior
-  - Visual Integration Point
-  - Large Vision-Language Models
-  - Representation Analysis
-  - Interpretability
+  - "ICLR 2026"
+  - "Dialogue Systems"
+  - "Language Prior"
+  - "Visual Integration Point"
+  - "Large Vision-Language Models"
+  - "Representation Analysis"
+  - "Interpretability"
 date: 2026-05-08
 content_hash: 205bd9a93fed8cd1
 ---

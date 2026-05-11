@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DSERT-RoLL: Robust Multi-Modal Perception for Diverse Driving Conditions
 description: >-
-  [CVPR 2026][Multimodal VLM][multi-modal dataset] This paper introduces the DSERT-RoLL driving dataset, the first to integrate six sensor modalities — stereo event cameras, RGB, thermal imaging, 4D radar, and dual LiDAR — covering diverse weather and lighting conditions, along with a unified multi-modal 3D detection fusion framework.
+  [CVPR 2026][Multimodal VLM][multi-modal dataset] This paper introduces the DSERT-RoLL driving dataset, the first to integrate six sensor modalities — stereo event cameras, RGB, thermal imaging, 4D radar…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - multi-modal dataset
-  - event camera
-  - 4D radar
-  - thermal camera
-  - 3D detection
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "multi-modal dataset"
+  - "event camera"
+  - "4D radar"
+  - "thermal camera"
+  - "3D detection"
 date: 2026-05-08
 content_hash: 0519a34ffbf0e71d
 ---

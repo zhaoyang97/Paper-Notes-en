@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Reangle-A-Video: 4D Video Generation as Video-to-Video Translation
 description: >-
-  [ICCV 2025][Video Generation][Multi-view video] Reangle-A-Video reformulates multi-view video generation as a video-to-video translation problem. It learns view-invariant motion via self-supervised fine-tuning of a video diffusion model, and combines DUSt3R-guided multi-view consistent inpainting to generate synchronized multi-view videos from a monocular input video.
+  [ICCV 2025][Video Generation][Multi-view video] Reangle-A-Video reformulates multi-view video generation as a video-to-video translation problem. It learns view-invariant motion via self-supervised fine-tuning of a video…
 tags:
-  - ICCV 2025
-  - Video Generation
-  - Multi-view video
-  - video translation
-  - view transfer
-  - camera control
-  - diffusion models
-  - LoRA
-  - DUSt3R
+  - "ICCV 2025"
+  - "Video Generation"
+  - "Multi-view video"
+  - "video translation"
+  - "view transfer"
+  - "camera control"
+  - "diffusion models"
+  - "LoRA"
+  - "DUSt3R"
 date: 2026-05-08
 content_hash: 77e6af847a52e472
 ---

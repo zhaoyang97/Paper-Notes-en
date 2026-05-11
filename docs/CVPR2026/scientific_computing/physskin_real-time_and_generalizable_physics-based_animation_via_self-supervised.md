@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PhysSkin: Real-Time and Generalizable Physics-Based Skin Simulation
 description: >-
-  [CVPR 2026][Scientific Computing][Physics-based Animation] PhysSkin is a generalizable physics-informed framework that learns continuous skinning weight fields directly from static 3D geometry via a neural skinning field autoencoder, coupled with a physics-informed self-supervised learning strategy (energy minimization + smoothness + orthogonality constraints), enabling real-time physics-based animation that generalizes across shapes and discretizations without any annotated data or simulation trajectories.
+  [CVPR 2026][Scientific Computing][Physics-based Animation] PhysSkin is a generalizable physics-informed framework that learns continuous skinning weight fields directly from static 3D geometry via a neural skinning field…
 tags:
-  - CVPR 2026
-  - Scientific Computing
-  - Physics-based Animation
-  - Neural Skinning Field
-  - Self-Supervised Learning
-  - Subspace Physics
-  - Linear Blend Skinning
+  - "CVPR 2026"
+  - "Scientific Computing"
+  - "Physics-based Animation"
+  - "Neural Skinning Field"
+  - "Self-Supervised Learning"
+  - "Subspace Physics"
+  - "Linear Blend Skinning"
 date: 2026-05-08
 content_hash: 76a29ae1b4c85dd8
 ---

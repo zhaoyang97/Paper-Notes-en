@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Co-EPG: A Framework for Co-Evolution of Planning and Grounding in Autonomous GUI Agents
 description: >-
-  [AAAI 2026][LLM Agent][GUI Agent] This paper proposes Co-EPG, a framework that decouples a GUI Agent into separate Planning and Grounding models, establishes a positive feedback loop via GRPO co-training and a Confidence-based Dynamic Reward Ensemble Mechanism (C-DREM), enabling both models to co-evolve through self-iteration. Using only benchmark datasets (no external data), Co-EPG achieves state-of-the-art results on Multimodal-Mind2Web (58.4%) and AndroidControl (83.1%).
+  [AAAI 2026][LLM Agent][GUI Agent] This paper proposes Co-EPG, a framework that decouples a GUI Agent into separate Planning and Grounding models…
 tags:
-  - AAAI 2026
-  - LLM Agent
-  - GUI Agent
-  - Planning-Grounding Co-Evolution
-  - GRPO
-  - Self-Iterative Training
-  - Reward Ensemble
+  - "AAAI 2026"
+  - "LLM Agent"
+  - "GUI Agent"
+  - "Planning-Grounding Co-Evolution"
+  - "GRPO"
+  - "Self-Iterative Training"
+  - "Reward Ensemble"
 date: 2026-05-08
 content_hash: 5fafca2fb760a5b8
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Catalyst4D: High-Fidelity 3D-to-4D Scene Editing via Dynamic Propagation
 description: >-
-  [CVPR 2026][3D Vision][4D editing] This paper proposes Catalyst4D, a framework that propagates mature 3D static editing results into 4D dynamic Gaussian scenes via Anchor-based Motion Guidance (AMG, which establishes region-level correspondences using optimal transport) and Color Uncertainty-guided Appearance Refinement (CUAR, which automatically identifies and corrects occlusion artifacts). The method consistently outperforms existing approaches in CLIP semantic similarity.
+  [CVPR 2026][3D Vision][4D editing] This paper proposes Catalyst4D, a framework that propagates mature 3D static editing results into 4D dynamic Gaussian scenes via Anchor-based Motion Guidance (AMG…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 4D editing
-  - 3DGS
-  - dynamic scenes
-  - motion propagation
-  - optimal transport
-  - color uncertainty
+  - "CVPR 2026"
+  - "3D Vision"
+  - "4D editing"
+  - "3DGS"
+  - "dynamic scenes"
+  - "motion propagation"
+  - "optimal transport"
+  - "color uncertainty"
 date: 2026-05-08
 content_hash: ffc2e0f4a5e1c3a4
 ---

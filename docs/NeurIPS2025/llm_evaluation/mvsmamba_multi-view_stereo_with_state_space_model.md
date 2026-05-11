@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MVSMamba: Multi-View Stereo with State Space Model
 description: >-
-  [NeurIPS 2025][LLM Evaluation][Multi-View Stereo] This paper proposes MVSMamba, the first Mamba-based Multi-View Stereo (MVS) network, which achieves efficient intra-view and inter-view global omnidirectional feature aggregation via a reference-centered dynamic scanning strategy, attaining state-of-the-art performance on DTU and Tanks-and-Temples with superior efficiency.
+  [NeurIPS 2025][LLM Evaluation][Multi-View Stereo] This paper proposes MVSMamba, the first Mamba-based Multi-View Stereo (MVS) network, which achieves efficient intra-view and inter-view global omnidirectional feature agg…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - Multi-View Stereo
-  - Mamba
-  - State Space Model
-  - Feature Matching
-  - Depth Estimation
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "Multi-View Stereo"
+  - "Mamba"
+  - "State Space Model"
+  - "Feature Matching"
+  - "Depth Estimation"
 date: 2026-05-08
 content_hash: fe55b55a63e82e71
 ---

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] ReCAD: Reinforcement Learning Enhanced Parametric CAD Model Generation with Vision-Language Models
 description: >-
-  [Multimodal VLM] This paper proposes the ReCAD framework, which rewrites CAD scripts as parametric code for SFT, then applies GRPO-based reinforcement learning with a hierarchical primitive curriculum learning strategy, enabling VLMs to generate high-precision, editable parametric CAD models from text or image inputs. The approach substantially outperforms existing methods in both in-distribution and out-of-distribution settings.
+  [Multimodal VLM] This paper proposes the ReCAD framework, which rewrites CAD scripts as parametric code for SFT, then applies GRPO-based reinforcement learning with a hierarchical primitive curriculum learning strategy…
 tags:
-  - Multimodal VLM
+  - "Multimodal VLM"
 date: 2026-05-08
 content_hash: 77165a08505ab0ae
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Fostering the Ecosystem of AI for Social Impact Requires Expanding and Strengthening Evaluation Standards
 description: >-
-  [NeurIPS 2025][AI for Social Impact] This paper argues that the academic ecosystem of AI for Social Impact (AISI) requires a dual-track reform: broadening the definition of "impact" to recognize contributions beyond deployment or methodological novelty, while simultaneously demanding causal-inference-level rigor in evaluating deployed systems.
+  [NeurIPS 2025][AI for Social Impact] This paper argues that the academic ecosystem of AI for Social Impact (AISI) requires a dual-track reform: broadening the definition of "impact" to recognize contributions beyond depl…
 tags:
-  - NeurIPS 2025
-  - AI for Social Impact
-  - evaluation standards
-  - deployment
-  - field experiments
-  - research ecosystem
-  - causal inference
+  - "NeurIPS 2025"
+  - "AI for Social Impact"
+  - "evaluation standards"
+  - "deployment"
+  - "field experiments"
+  - "research ecosystem"
+  - "causal inference"
 date: 2026-05-08
 content_hash: be7755480961d15c
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Tab-PET: Graph-Based Positional Encodings for Tabular Transformers
 description: >-
-  [AAAI 2026][Positional Encoding] Tab-PET estimates a graph structure from inter-feature correlations in tabular data, constructs positional encodings (PE) from graph Laplacian eigenvectors, and injects them into tabular Transformers. Both theoretical analysis and experiments demonstrate that PE reduces the effective rank of embeddings, thereby improving generalization. Consistent improvements are observed across 50 datasets for TabTransformer, SAINT, and FT-Transformer, with the Spearman correlation graph yielding the best results.
+  [AAAI 2026][Positional Encoding] Tab-PET estimates a graph structure from inter-feature correlations in tabular data, constructs positional encodings (PE) from graph Laplacian eigenvectors…
 tags:
-  - AAAI 2026
-  - Positional Encoding
-  - Tabular Data
-  - Graph Laplacian
-  - Transformer
-  - Effective Rank
+  - "AAAI 2026"
+  - "Positional Encoding"
+  - "Tabular Data"
+  - "Graph Laplacian"
+  - "Transformer"
+  - "Effective Rank"
 date: 2026-05-08
 content_hash: 371f1f30263d15ef
 ---

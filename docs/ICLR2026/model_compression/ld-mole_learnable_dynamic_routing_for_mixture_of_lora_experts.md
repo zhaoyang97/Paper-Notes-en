@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LD-MoLE: Learnable Dynamic Routing for Mixture of LoRA Experts
 description: >-
-  [ICLR 2026][Model Compression][LoRA] This paper proposes LD-MoLE, which replaces conventional TopK routing with a Sparsegen closed-form projection to achieve differentiable, dynamic, token-adaptive LoRA expert assignment. A lightweight MLP predicts sparse factors, and an analytic sparsity loss is employed. LD-MoLE outperforms fixed-routing and ReLU-routing baselines across multiple benchmarks.
+  [ICLR 2026][Model Compression][LoRA] This paper proposes LD-MoLE, which replaces conventional TopK routing with a Sparsegen closed-form projection to achieve differentiable, dynamic…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - LoRA
-  - Mixture-of-Experts
-  - dynamic routing
-  - Sparsegen
-  - parameter-efficient fine-tuning
+  - "ICLR 2026"
+  - "Model Compression"
+  - "LoRA"
+  - "Mixture-of-Experts"
+  - "dynamic routing"
+  - "Sparsegen"
+  - "parameter-efficient fine-tuning"
 date: 2026-05-08
 content_hash: b88822f5503c05f8
 ---

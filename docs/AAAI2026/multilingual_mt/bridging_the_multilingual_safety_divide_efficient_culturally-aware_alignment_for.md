@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Bridging the Multilingual Safety Divide: Efficient, Culturally-Aware Alignment for Global South Languages
 description: >-
-  [AAAI 2026][Multilingual Safety] This paper synthesizes multiple empirical studies to reveal critical failures of LLM safety mechanisms in low-resource and code-mixed settings, and proposes a resource-aware blueprint grounded in parameter-efficient safety steering, culturally driven preference data, and community-participatory alignment.
+  [AAAI 2026][Multilingual & Machine Translation][Multilingual Safety] This paper synthesizes multiple empirical studies to reveal critical failures of LLM safety mechanisms in low-resource and code-mixed settings…
 tags:
-  - AAAI 2026
-  - Multilingual Safety
-  - Parameter-Efficient Alignment
-  - Cultural Sensitivity
-  - Low-Resource Languages
-  - Code-Mixing
+  - "AAAI 2026"
+  - "Multilingual & Machine Translation"
+  - "Multilingual Safety"
+  - "Parameter-Efficient Alignment"
+  - "Cultural Sensitivity"
+  - "Low-Resource Languages"
+  - "Code-Mixing"
 date: 2026-05-08
 content_hash: b3c99dd6770a17b1
 ---

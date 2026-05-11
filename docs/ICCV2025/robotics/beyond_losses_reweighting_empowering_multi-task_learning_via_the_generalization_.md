@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond Losses Reweighting: Empowering Multi-Task Learning via the Generalization Perspective
 description: >-
-  [ICCV 2025][Robotics][Multi-task learning] From a generalization perspective, this paper introduces Sharpness-Aware Minimization (SAM) into multi-task learning (MTL). By decomposing each task's SAM gradient into a "low-loss direction" and a "flat direction" and aggregating them separately, the method reduces gradient conflicts and guides the model toward a jointly flat low-loss region shared across tasks.
+  [ICCV 2025][Robotics][Multi-task learning] From a generalization perspective, this paper introduces Sharpness-Aware Minimization (SAM) into multi-task learning (MTL). By decomposing each task's SAM gradient into a "low-l…
 tags:
-  - ICCV 2025
-  - Robotics
-  - Multi-task learning
-  - flat minima
-  - sharpness-aware minimization
-  - gradient conflict
-  - generalization
+  - "ICCV 2025"
+  - "Robotics"
+  - "Multi-task learning"
+  - "flat minima"
+  - "sharpness-aware minimization"
+  - "gradient conflict"
+  - "generalization"
 date: 2026-05-08
 content_hash: 5808fa6dc6c9c2e6
 ---

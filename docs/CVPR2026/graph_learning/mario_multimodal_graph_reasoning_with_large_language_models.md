@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mario: Multimodal Graph Reasoning with Large Language Models
 description: >-
-  [CVPR 2026][Graph Learning][Multimodal graphs] Mario is proposed for LLM reasoning on multimodal graphs (MMGs). It achieves topology-aware cross-modal alignment via a Graph-conditioned Vision-Language Model (GVLM), and employs a Modality-Adaptive Prompt Router (MAPR) to select the optimal modality configuration for each node, attaining state-of-the-art performance on node classification and link prediction.
+  [CVPR 2026][Graph Learning][Multimodal graphs] Mario is proposed for LLM reasoning on multimodal graphs (MMGs). It achieves topology-aware cross-modal alignment via a Graph-conditioned Vision-Language Model (GVLM)…
 tags:
-  - CVPR 2026
-  - Graph Learning
-  - Multimodal graphs
-  - LLM reasoning
-  - vision-language alignment
-  - modality-adaptive routing
-  - instruction tuning
+  - "CVPR 2026"
+  - "Graph Learning"
+  - "Multimodal graphs"
+  - "LLM reasoning"
+  - "vision-language alignment"
+  - "modality-adaptive routing"
+  - "instruction tuning"
 date: 2026-05-08
 content_hash: 897514b43ad7586e
 ---

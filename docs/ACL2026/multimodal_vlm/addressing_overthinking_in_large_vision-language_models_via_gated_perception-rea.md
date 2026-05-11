@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Addressing Overthinking in Large Vision-Language Models via Gated Perception-Reasoning Optimization
 description: >-
-  [ACL 2026][Multimodal VLM][overthinking] This paper proposes the GPRO framework, which addresses the overthinking problem in LVLMs by inserting a meta-reasoning controller that dynamically routes computation at each token generation step to one of three paths (fast / perception re-examination / reasoning reflection), simultaneously improving both accuracy and efficiency.
+  [ACL 2026][Multimodal VLM][overthinking] This paper proposes the GPRO framework, which addresses the overthinking problem in LVLMs by inserting a meta-reasoning controller that dynamically routes computation at each toke…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - overthinking
-  - perception-reasoning disentanglement
-  - meta-reasoning controller
-  - adaptive computation
-  - multi-objective reinforcement learning
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "overthinking"
+  - "perception-reasoning disentanglement"
+  - "meta-reasoning controller"
+  - "adaptive computation"
+  - "multi-objective reinforcement learning"
 date: 2026-05-08
 content_hash: 6a5f603285e3fb35
 ---

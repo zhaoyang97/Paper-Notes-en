@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] ELogitNorm: Enhancing OOD Detection with Extended Logit Normalization
 description: >-
-  [CVPR 2026][out-of-distribution detection] This paper diagnoses two feature collapse problems in LogitNorm (dimensional collapse and origin collapse), and proposes ELogitNorm — replacing the feature norm with the average distance to decision boundaries as an adaptive temperature scaling factor. The method requires no hyperparameters, is compatible with all post-hoc OOD detection methods, achieves a 10.48% far-OOD AUROC improvement on CIFAR-10 (with SCALE), reduces FPR95 from 51.45% to 27.74% on ImageNet-1K, and simultaneously improves classification accuracy and ECE calibration.
+  [CVPR 2026][out-of-distribution detection] This paper diagnoses two feature collapse problems in LogitNorm (dimensional collapse and origin collapse)…
 tags:
-  - CVPR 2026
-  - out-of-distribution detection
-  - logit normalization
-  - feature collapse
-  - decision boundary
-  - calibration
+  - "CVPR 2026"
+  - "out-of-distribution detection"
+  - "logit normalization"
+  - "feature collapse"
+  - "decision boundary"
+  - "calibration"
 date: 2026-05-08
 content_hash: 413b527e50dd9eb4
 ---

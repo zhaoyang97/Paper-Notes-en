@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unifying Appearance Codes and Bilateral Grids for Driving Scene Gaussian Splatting
 description: >-
-  [NeurIPS 2025][Autonomous Driving][Gaussian Splatting] A multi-scale bilateral grid pyramid is proposed to unify global appearance codes and pixel-level bilateral grids. A 3-level hierarchy (coarse→medium→fine) captures global/regional/pixel-level photometric variation respectively. By employing a luminance-guided slice-and-blend pipeline and adaptive regularization, the method addresses photometric inconsistency in driving scene 3DGS, achieving a 28.2% improvement in Chamfer Distance over OmniRe on Waymo.
+  [NeurIPS 2025][Autonomous Driving][Gaussian Splatting] A multi-scale bilateral grid pyramid is proposed to unify global appearance codes and pixel-level bilateral grids. A 3-level hierarchy (coarse→medium→fine) captures…
 tags:
-  - NeurIPS 2025
-  - Autonomous Driving
-  - Gaussian Splatting
-  - Bilateral Grid
-  - Appearance Modeling
-  - Driving Scene
-  - Photometric Consistency
+  - "NeurIPS 2025"
+  - "Autonomous Driving"
+  - "Gaussian Splatting"
+  - "Bilateral Grid"
+  - "Appearance Modeling"
+  - "Driving Scene"
+  - "Photometric Consistency"
 date: 2026-05-08
 content_hash: 68d071d9b110d3c2
 ---

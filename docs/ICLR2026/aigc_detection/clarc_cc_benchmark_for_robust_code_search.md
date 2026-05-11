@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] CLARC: C/C++ Benchmark for Robust Code Search
 description: >-
-  [ICLR 2026][AIGC Detection][Code Retrieval] This paper introduces CLARC, the first compilable C/C++ code retrieval benchmark comprising 6,717 query–code pairs. An automated pipeline extracts code from GitHub and employs LLMs combined with hypothesis testing to generate and validate queries. The benchmark covers four retrieval scenarios—standard, anonymized, assembly, and WebAssembly—and reveals that existing code embedding models over-rely on lexical features (NDCG@10 drops from 0.89 to 0.67 after anonymization) and perform poorly on binary-level retrieval.
+  [ICLR 2026][AIGC Detection][Code Retrieval] This paper introduces CLARC, the first compilable C/C++ code retrieval benchmark comprising 6…
 tags:
-  - ICLR 2026
-  - AIGC Detection
-  - Code Retrieval
-  - C/C++ Benchmark
-  - Compilation Verification
-  - Code Embedding
-  - Assembly Language
-  - Robustness
+  - "ICLR 2026"
+  - "AIGC Detection"
+  - "Code Retrieval"
+  - "C/C++ Benchmark"
+  - "Compilation Verification"
+  - "Code Embedding"
+  - "Assembly Language"
+  - "Robustness"
 date: 2026-05-08
 content_hash: e775b641f91e4bd5
 ---

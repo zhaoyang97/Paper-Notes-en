@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Unsupervised Domain Bridging via Image Degradation in Semantic Segmentation
 description: >-
-  [NeurIPS 2025][Segmentation][Unsupervised Domain Adaptation] This paper proposes DiDA, which formalizes image degradation operations as the forward process of diffusion models to construct a continuous intermediate domain between the source and target domains. Combined with a semantic shift compensation mechanism, DiDA serves as a plug-and-play module that consistently improves existing UDA semantic segmentation methods.
+  [NeurIPS 2025][Segmentation][Unsupervised Domain Adaptation] This paper proposes DiDA, which formalizes image degradation operations as the forward process of diffusion models to construct a continuous intermediate domai…
 tags:
-  - NeurIPS 2025
-  - Segmentation
-  - Unsupervised Domain Adaptation
-  - Semantic Segmentation
-  - Diffusion Process
-  - Image Degradation
-  - Domain Bridging
+  - "NeurIPS 2025"
+  - "Segmentation"
+  - "Unsupervised Domain Adaptation"
+  - "Semantic Segmentation"
+  - "Diffusion Process"
+  - "Image Degradation"
+  - "Domain Bridging"
 date: 2026-05-08
 content_hash: f8240969e183c2f9
 ---

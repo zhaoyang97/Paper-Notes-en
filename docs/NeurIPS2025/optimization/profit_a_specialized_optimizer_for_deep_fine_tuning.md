@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PROFIT: A Specialized Optimizer for Deep Fine Tuning
 description: >-
-  [NeurIPS 2025][Optimization][Fine-tuning optimizer] PROFIT frames fine-tuning as a multi-task learning problem across the time dimension, and achieves forgetting-resistant fine-tuning without additional data or parameters by orthogonally projecting new-task gradients onto the direction of a "regression equilibrium point."
+  [NeurIPS 2025][Optimization][Fine-tuning optimizer] PROFIT frames fine-tuning as a multi-task learning problem across the time dimension…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Fine-tuning optimizer
-  - catastrophic forgetting
-  - gradient orthogonalization
-  - multi-task learning
-  - proximal fine-tuning
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Fine-tuning optimizer"
+  - "catastrophic forgetting"
+  - "gradient orthogonalization"
+  - "multi-task learning"
+  - "proximal fine-tuning"
 date: 2026-05-08
 content_hash: 6ca0221b3d9af928
 ---

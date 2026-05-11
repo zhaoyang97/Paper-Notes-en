@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Robust Adverse Weather Removal via Spectral-based Spatial Grouping (SSGformer)
 description: >-
-  [ICCV 2025][Image Restoration][All-in-One weather removal] SSGformer proposes an All-in-One adverse weather image restoration method based on spectral decomposition and grouping attention: it extracts high-frequency edge information via the Sobel operator and analyzes low-frequency degradation textures via SVD, fuses both to generate spatial grouping masks, and performs channel and spatial attention within groups to achieve robust removal of multiple weather degradations (rain, snow, haze, raindrops).
+  [ICCV 2025][Image Restoration][All-in-One weather removal] SSGformer proposes an All-in-One adverse weather image restoration method based on spectral decomposition and grouping attention: it extracts high-frequency edge…
 tags:
-  - ICCV 2025
-  - Image Restoration
-  - All-in-One weather removal
-  - spectral decomposition
-  - spatial grouping
-  - Transformer
-  - Sobel operator
-  - SVD
-  - attention mechanism
+  - "ICCV 2025"
+  - "Image Restoration"
+  - "All-in-One weather removal"
+  - "spectral decomposition"
+  - "spatial grouping"
+  - "Transformer"
+  - "Sobel operator"
+  - "SVD"
+  - "attention mechanism"
 date: 2026-05-08
 content_hash: d7a94fc94a58ef42
 ---

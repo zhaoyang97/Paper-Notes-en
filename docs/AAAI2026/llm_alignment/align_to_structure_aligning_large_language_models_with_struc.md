@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Align to Structure: Aligning Large Language Models with Structural Information
 description: >-
-  [AAAI 2026][LLM Alignment][Structural Alignment] This paper proposes Structural Alignment, a method that integrates linguistic discourse structure frameworks—surface-level text structure scoring and an RST-based discourse motif classifier—into PPO reinforcement learning training, and introduces a discourse motif-based dense reward mechanism. This enables LLMs to generate more coherent, human-like long-form text, outperforming standard RLHF models on academic essay writing and long document summarization tasks.
+  [AAAI 2026][LLM Alignment][Structural Alignment] This paper proposes Structural Alignment, a method that integrates linguistic discourse structure frameworks—surface-level text structure scoring and an RST-based discours…
 tags:
-  - AAAI 2026
-  - LLM Alignment
-  - Structural Alignment
-  - Discourse Structure
-  - PPO Reinforcement Learning
-  - Long-form Text Generation
-  - Dense Reward
+  - "AAAI 2026"
+  - "LLM Alignment"
+  - "Structural Alignment"
+  - "Discourse Structure"
+  - "PPO Reinforcement Learning"
+  - "Long-form Text Generation"
+  - "Dense Reward"
 date: 2026-05-08
 content_hash: 735c3e74ec9982b1
 ---

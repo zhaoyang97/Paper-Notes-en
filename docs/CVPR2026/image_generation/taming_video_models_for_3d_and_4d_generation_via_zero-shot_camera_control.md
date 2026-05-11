@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Taming Video Models for 3D and 4D Generation via Zero-Shot Camera Control
 description: >-
-  [CVPR 2026][Image Generation][Video Diffusion Models] WorldForge proposes a fully training-free inference-time guidance framework that adapts pretrained video diffusion models into precise camera-trajectory-controllable 3D/4D generation tools via three synergistic components—Intra-Step Recursive Refinement (IRR), Flow-Gated Latent Fusion (FLF), and Dual-Path Self-Corrective Guidance (DSG)—simultaneously surpassing both training-based and inference-based baselines in trajectory accuracy and perceptual quality.
+  [CVPR 2026][Image Generation][Video Diffusion Models] WorldForge proposes a fully training-free inference-time guidance framework that adapts pretrained video diffusion models into precise camera-trajectory-controllable…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Video Diffusion Models
-  - 3D Generation
-  - 4D Generation
-  - Camera Control
-  - Training-Free Inference
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Video Diffusion Models"
+  - "3D Generation"
+  - "4D Generation"
+  - "Camera Control"
+  - "Training-Free Inference"
 date: 2026-05-08
 content_hash: 2464e74851c5962e
 ---

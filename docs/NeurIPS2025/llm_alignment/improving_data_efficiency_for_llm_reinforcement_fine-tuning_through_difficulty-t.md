@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Improving Data Efficiency for LLM Reinforcement Fine-tuning Through Difficulty-targeted Online Data Selection and Rollout Replay
 description: >-
-  [NeurIPS 2025][LLM Alignment][LLM reinforcement fine-tuning] Two complementary techniques are proposed to improve the data efficiency of LLM reinforcement fine-tuning (GRPO): (1) DOTS — an attention-based mechanism for predicting adaptive difficulty that prioritizes moderate-difficulty questions to maximize gradient signal; and (2) Rollout Replay — reusing recent rollouts to reduce per-step computational overhead. Together, these techniques reduce training time by an average of 40.7% across 6 model–dataset combinations.
+  [NeurIPS 2025][LLM Alignment][LLM reinforcement fine-tuning] Two complementary techniques are proposed to improve the data efficiency of LLM reinforcement fine-tuning (GRPO): (1) DOTS — an attention-based mechanism for p…
 tags:
-  - NeurIPS 2025
-  - LLM Alignment
-  - LLM reinforcement fine-tuning
-  - data efficiency
-  - adaptive difficulty
-  - online data selection
-  - experience replay
-  - GRPO
+  - "NeurIPS 2025"
+  - "LLM Alignment"
+  - "LLM reinforcement fine-tuning"
+  - "data efficiency"
+  - "adaptive difficulty"
+  - "online data selection"
+  - "experience replay"
+  - "GRPO"
 date: 2026-05-08
 content_hash: a8b9d840133aa48b
 ---

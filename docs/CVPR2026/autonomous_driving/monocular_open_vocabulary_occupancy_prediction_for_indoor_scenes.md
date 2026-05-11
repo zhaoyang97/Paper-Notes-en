@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Monocular Open Vocabulary Occupancy Prediction for Indoor Scenes (LegoOcc)
 description: >-
-  [CVPR 2026][Autonomous Driving][Open-vocabulary occupancy prediction] This paper proposes LegoOcc, which leverages Language-Embedded Gaussians (LE-Gaussians) as a unified geometric-semantic intermediate representation. Combined with a Poisson-process-based Gaussian-to-Occupancy (G2O) operator and a progressive temperature decay strategy, LegoOcc achieves monocular open-vocabulary occupancy prediction for indoor scenes using only binary occupancy labels (without semantic annotations), attaining 59.50 IoU / 21.05 mIoU on Occ-ScanNet.
+  [CVPR 2026][Autonomous Driving][Open-vocabulary occupancy prediction] This paper proposes LegoOcc, which leverages Language-Embedded Gaussians (LE-Gaussians) as a unified geometric-semantic intermediate representation. C…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Open-vocabulary occupancy prediction
-  - 3D Gaussian representation
-  - Poisson aggregation
-  - temperature decay
-  - indoor scenes
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Open-vocabulary occupancy prediction"
+  - "3D Gaussian representation"
+  - "Poisson aggregation"
+  - "temperature decay"
+  - "indoor scenes"
 date: 2026-05-08
 content_hash: 81feea3c16137f35
 ---

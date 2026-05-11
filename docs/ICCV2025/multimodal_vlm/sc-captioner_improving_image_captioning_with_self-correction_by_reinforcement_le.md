@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] SC-Captioner: Improving Image Captioning with Self-Correction by Reinforcement Learning
 description: >-
-  [Multimodal VLM] SC-Captioner proposes a multi-turn reinforcement learning framework based on policy gradient. By designing a correction reward function that incorporates correctness bonuses and mistake punishments, it enables large vision-language models to acquire self-correction capabilities for image captioning, while also introducing an improved CAPTURE evaluation metric.
+  [Multimodal VLM] SC-Captioner proposes a multi-turn reinforcement learning framework based on policy gradient. By designing a correction reward function that incorporates correctness bonuses and mistake punishments…
 tags:
-  - Multimodal VLM
+  - "Multimodal VLM"
 date: 2026-05-08
 content_hash: f7902d8a16d29962
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] U-MARVEL: Unveiling Key Factors for Universal Multimodal Retrieval via Embedding Learning
 description: >-
-  [ICLR 2026][Multimodal VLM][Universal Multimodal Retrieval] This work systematically ablates the design space of MLLM embedding learning, revealing key factors such as bidirectional attention + mean pooling outperforming the mainstream last-token approach, and learnable temperature being severely underestimated. Based on these findings, the authors construct U-MARVEL, a three-stage framework (progressive transition → filtered hard negatives → reranker distillation), achieving 63.2% Avg on M-BEIR with a single model, substantially surpassing existing SOTA, while also leading on zero-shot CIR and T2V transfer.
+  [ICLR 2026][Multimodal VLM][Universal Multimodal Retrieval] This work systematically ablates the design space of MLLM embedding learning, revealing key factors such as bidirectional attention + mean pooling outperforming…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Universal Multimodal Retrieval
-  - MLLM Embedding Learning
-  - Contrastive Learning
-  - Progressive Training
-  - Reranker Distillation
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Universal Multimodal Retrieval"
+  - "MLLM Embedding Learning"
+  - "Contrastive Learning"
+  - "Progressive Training"
+  - "Reranker Distillation"
 date: 2026-05-08
 content_hash: 7fb0199d9ec25e57
 ---

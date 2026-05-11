@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Integration of Deep Generative Anomaly Detection Algorithm in High-Speed Industrial Line
 description: >-
-  [CVPR 2026][Anomaly Detection] This paper proposes a semi-supervised anomaly detection framework based on GAN and a Dense Residual Autoencoder (DRAE), specifically designed for high-speed online quality inspection in pharmaceutical Blow-Fill-Seal (BFS) production lines. Trained exclusively on non-defective samples, the system achieves 96.4% accuracy with a per-patch inference latency of only 0.17ms, satisfying the strict industrial constraint of a 500ms inspection cycle.
+  [CVPR 2026][Anomaly Detection] This paper proposes a semi-supervised anomaly detection framework based on GAN and a Dense Residual Autoencoder (DRAE)…
 tags:
-  - CVPR 2026
-  - Anomaly Detection
-  - Industrial Visual Inspection
-  - Generative Adversarial Network
-  - Residual Autoencoder
-  - Online Deployment
+  - "CVPR 2026"
+  - "Anomaly Detection"
+  - "Industrial Visual Inspection"
+  - "Generative Adversarial Network"
+  - "Residual Autoencoder"
+  - "Online Deployment"
 date: 2026-05-08
 content_hash: e28ebd95e886480d
 ---

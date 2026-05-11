@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Causality Matters: How Temporal Information Emerges in Video Language Models
 description: >-
-  [AAAI 2026][Video Understanding][Video Language Models] Through systematic ablation experiments, this work demonstrates that the temporal understanding capability of VideoLMs does not originate from positional encoding (PE), but rather emerges from the sequence sensitivity of causal attention masks. Temporal information is constructed layer by layer along a causal pathway of "inter-frame interaction → last-frame aggregation → query integration," based on which two lossless inference acceleration strategies are proposed.
+  [AAAI 2026][Video Understanding][Video Language Models] Through systematic ablation experiments, this work demonstrates that the temporal understanding capability of VideoLMs does not originate from positional encoding (…
 tags:
-  - AAAI 2026
-  - Video Understanding
-  - Video Language Models
-  - Temporal Understanding
-  - Causal Attention
-  - Positional Encoding
-  - Model Interpretability
-  - Inference Acceleration
+  - "AAAI 2026"
+  - "Video Understanding"
+  - "Video Language Models"
+  - "Temporal Understanding"
+  - "Causal Attention"
+  - "Positional Encoding"
+  - "Model Interpretability"
+  - "Inference Acceleration"
 date: 2026-05-08
 content_hash: ea8f3a04525c7af5
 ---

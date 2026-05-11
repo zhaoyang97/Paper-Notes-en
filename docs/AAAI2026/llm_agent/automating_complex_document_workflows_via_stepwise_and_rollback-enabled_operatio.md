@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Automating Complex Document Workflows via Stepwise and Rollback-Enabled Operations
 description: >-
-  [AAAI 2026][LLM Agent][document workflows] This paper proposes AutoDW, a framework that automates complex document workflows through stepwise planning (generating one API call at a time) combined with adaptive rollback (parameter-level and API-level). On DWBench—a benchmark of 250 sessions and 1,708 instructions—AutoDW achieves 90% instruction-level and 62% session-level completion rates, surpassing the strongest baseline by 40% and 76%, respectively.
+  [AAAI 2026][LLM Agent][document workflows] This paper proposes AutoDW, a framework that automates complex document workflows through stepwise planning (generating one API call at a time) combined with adaptive rollback (…
 tags:
-  - AAAI 2026
-  - LLM Agent
-  - document workflows
-  - multi-step operations
-  - rollback mechanism
-  - error recovery
-  - AutoDW
+  - "AAAI 2026"
+  - "LLM Agent"
+  - "document workflows"
+  - "multi-step operations"
+  - "rollback mechanism"
+  - "error recovery"
+  - "AutoDW"
 date: 2026-05-08
 content_hash: c4bfc1d14135c485
 ---

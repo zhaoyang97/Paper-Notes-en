@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DreamOn: Diffusion Language Models For Code Infilling Beyond Fixed-size Canvas
 description: >-
-  [ICLR 2026][LLM/NLP][diffusion language model] DreamOn introduces two special states, [expand] and [delete], to overcome the fixed-length generation constraint of diffusion language models (DLMs), enabling variable-length code infilling without any architectural modification. It achieves an average improvement of 26.4% over diffusion baselines on HumanEval-Infilling, reaching performance on par with state-of-the-art autoregressive models.
+  [ICLR 2026][LLM/NLP][diffusion language model] DreamOn introduces two special states, [expand] and [delete], to overcome the fixed-length generation constraint of diffusion language models (DLMs)…
 tags:
-  - ICLR 2026
-  - LLM/NLP
-  - diffusion language model
-  - code infilling
-  - variable-length generation
-  - discrete diffusion
-  - DLM
+  - "ICLR 2026"
+  - "LLM/NLP"
+  - "diffusion language model"
+  - "code infilling"
+  - "variable-length generation"
+  - "discrete diffusion"
+  - "DLM"
 date: 2026-05-08
 content_hash: 9348474a7f8eaf54
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Generative Graph Pattern Machine
 description: >-
-  [NeurIPS 2025][Graph Learning][graph pre-training] This paper proposes the Generative Graph Pattern Machine (G2PM), a fully message-passing-free generative Transformer framework for graph pre-training. It tokenizes graph instances (nodes/edges/graphs) into substructure sequences via random walks and performs self-supervised pre-training under a Masked Substructure Modeling objective. G2PM comprehensively outperforms existing graph pre-training methods on node/link/graph classification and cross-domain transfer tasks, while exhibiting model and data scaling laws analogous to those observed in NLP and CV.
+  [NeurIPS 2025][Graph Learning][graph pre-training] This paper proposes the Generative Graph Pattern Machine (G2PM), a fully message-passing-free generative Transformer framework for graph pre-training. It tokenizes graph…
 tags:
-  - NeurIPS 2025
-  - Graph Learning
-  - graph pre-training
-  - generative Transformer
-  - substructure tokenization
-  - masked substructure modeling
-  - random walk
-  - message-passing-free
+  - "NeurIPS 2025"
+  - "Graph Learning"
+  - "graph pre-training"
+  - "generative Transformer"
+  - "substructure tokenization"
+  - "masked substructure modeling"
+  - "random walk"
+  - "message-passing-free"
 date: 2026-05-08
 content_hash: 33390181f6977912
 ---

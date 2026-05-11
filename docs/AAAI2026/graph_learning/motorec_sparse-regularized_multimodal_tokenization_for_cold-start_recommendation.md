@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MoToRec: Sparse-Regularized Multimodal Tokenization for Cold-Start Recommendation
 description: >-
-  [AAAI 2026][Graph Learning][Cold-start recommendation] MoToRec reformulates multimodal recommendation as a discrete semantic tokenization task. By leveraging a sparsely-regularized Residual Quantization VAE (RQ-VAE), raw multimodal features are transformed into composable discrete semantic codes. Combined with adaptive rarity amplification and a hierarchical multi-source graph encoder, the framework effectively addresses the item cold-start problem.
+  [AAAI 2026][Graph Learning][Cold-start recommendation] MoToRec reformulates multimodal recommendation as a discrete semantic tokenization task. By leveraging a sparsely-regularized Residual Quantization VAE (RQ-VAE)…
 tags:
-  - AAAI 2026
-  - Graph Learning
-  - Cold-start recommendation
-  - multimodal recommendation
-  - discrete semantic tokenization
-  - residual quantization VAE
-  - graph neural networks
+  - "AAAI 2026"
+  - "Graph Learning"
+  - "Cold-start recommendation"
+  - "multimodal recommendation"
+  - "discrete semantic tokenization"
+  - "residual quantization VAE"
+  - "graph neural networks"
 date: 2026-05-08
 content_hash: 6615a735d49517bb
 ---

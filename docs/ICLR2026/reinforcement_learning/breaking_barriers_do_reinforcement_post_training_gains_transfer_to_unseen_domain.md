@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Breaking Barriers: Do Reinforcement Post Training Gains Transfer To Unseen Domains?
 description: >-
-  [ICLR2026][Reinforcement Learning][Reinforcement Post-Training (RPT)] Through an observational study (18 open-source RPT models) and an interventional study (single-domain GRPO training), this paper systematically reveals the generalization limitations of Reinforcement Post-Training (RPT/RLVR): RPT yields substantial within-domain gains, but cross-domain generalization is inconsistent — structured domains (math ↔ code) exhibit mutual transfer, whereas gains do not generalize to unstructured domains (law/finance/medicine). This finding holds consistently across algorithms, model scales, and training steps.
+  [ICLR2026][Reinforcement Learning][Reinforcement Post-Training (RPT)] Through an observational study (18 open-source RPT models) and an interventional study (single-domain GRPO training)…
 tags:
-  - ICLR2026
-  - Reinforcement Learning
-  - Reinforcement Post-Training (RPT)
-  - RLVR
-  - Cross-Domain Generalization
-  - Structured Reasoning
-  - Unstructured Reasoning
-  - LLM
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "Reinforcement Post-Training (RPT)"
+  - "RLVR"
+  - "Cross-Domain Generalization"
+  - "Structured Reasoning"
+  - "Unstructured Reasoning"
+  - "LLM"
 date: 2026-05-08
 content_hash: fead83f434632ca5
 ---

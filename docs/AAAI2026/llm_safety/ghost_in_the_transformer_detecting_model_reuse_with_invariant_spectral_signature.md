@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Ghost in the Transformer: Detecting Model Reuse with Invariant Spectral Signatures
 description: >-
-  [LLM Safety] This paper proposes GhostSpec, a data-free, white-box method that does not modify model behavior. It extracts spectral fingerprints by applying SVD to invariant matrix products of attention weight matrices, enabling robust verification of LLM lineage under fine-tuning, pruning, merging, expansion, and even adversarial transformations.
+  [LLM Safety] This paper proposes GhostSpec, a data-free, white-box method that does not modify model behavior. It extracts spectral fingerprints by applying SVD to invariant matrix products of attention weight matrices…
 tags:
-  - LLM Safety
+  - "LLM Safety"
 date: 2026-05-08
 content_hash: 35f402da980573a0
 ---

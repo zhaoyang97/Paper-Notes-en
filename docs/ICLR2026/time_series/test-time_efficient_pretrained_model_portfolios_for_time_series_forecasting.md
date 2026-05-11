@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Test-Time Efficient Pretrained Model Portfolios for Time Series Forecasting
 description: >-
-  [ICLR 2026][Time Series][Model portfolio] This paper proposes Chroma — a portfolio framework of small pretrained time series models: frequency/domain expert models are derived from a general model via post-training (achieving 10× training speedup), and at test time predictions are combined through model selection or greedy ensemble. A 4M-parameter portfolio matches the performance of 205M–500M parameter monolithic models on Chronos Benchmark II, while requiring far less inference computation than test-time fine-tuning.
+  [ICLR 2026][Time Series][Model portfolio] This paper proposes Chroma — a portfolio framework of small pretrained time series models: frequency/domain expert models are derived from a general model via post-training (achi…
 tags:
-  - ICLR 2026
-  - Time Series
-  - Model portfolio
-  - mixture of experts
-  - test-time selection
-  - time series foundation models
-  - Chronos-Bolt
+  - "ICLR 2026"
+  - "Time Series"
+  - "Model portfolio"
+  - "mixture of experts"
+  - "test-time selection"
+  - "time series foundation models"
+  - "Chronos-Bolt"
 date: 2026-05-08
 content_hash: 725fc737d33d8c32
 ---

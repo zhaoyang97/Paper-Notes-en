@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Learning to Collaborate: An Orchestrated-Decentralized Framework for Peer-to-Peer Collaborative Learning
 description: >-
-  [AI Safety] This paper proposes KNEXA-FL, a framework that models P2P collaboration as a contextual bandit problem via a Central Pairing Manager (CPM) that never accesses model parameters. Using LinUCB to learn optimal pairing strategies, KNEXA-FL achieves approximately 50% higher Pass@1 than random P2P in heterogeneous LLM federated learning, while avoiding the catastrophic collapse observed in centralized distillation.
+  [AI Safety] This paper proposes KNEXA-FL, a framework that models P2P collaboration as a contextual bandit problem via a Central Pairing Manager (CPM) that never accesses model parameters. Using LinUCB to learn optimal p…
 tags:
-  - AI Safety
+  - "AI Safety"
 date: 2026-05-08
 content_hash: d112395d2a5504eb
 ---

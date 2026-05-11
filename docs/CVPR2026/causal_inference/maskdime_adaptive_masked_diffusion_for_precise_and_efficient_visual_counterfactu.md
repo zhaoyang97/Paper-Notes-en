@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MaskDiME: Adaptive Masked Diffusion for Precise and Efficient Visual Counterfactual Explanations
 description: >-
-  [CVPR 2026][Causal Inference][Visual counterfactual explanations] This paper proposes MaskDiME, a training-free diffusion framework that transforms global classifier guidance into decision-driven local editing via an adaptive dual-mask mechanism, enabling precise and efficient visual counterfactual explanations. MaskDiME achieves inference speeds more than 30× faster than DiME while requiring only one-tenth the GPU memory of ACE/RCSB.
+  [CVPR 2026][Causal Inference][Visual counterfactual explanations] This paper proposes MaskDiME, a training-free diffusion framework that transforms global classifier guidance into decision-driven local editing via an ada…
 tags:
-  - CVPR 2026
-  - Causal Inference
-  - Visual counterfactual explanations
-  - diffusion models
-  - adaptive masking
-  - explainable AI
-  - classifier guidance
+  - "CVPR 2026"
+  - "Causal Inference"
+  - "Visual counterfactual explanations"
+  - "diffusion models"
+  - "adaptive masking"
+  - "explainable AI"
+  - "classifier guidance"
 date: 2026-05-08
 content_hash: 985f2aeef512fce0
 ---

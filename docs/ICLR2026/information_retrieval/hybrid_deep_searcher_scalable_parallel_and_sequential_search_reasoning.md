@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Hybrid Deep Searcher: Scalable Parallel and Sequential Search Reasoning
 description: >-
-  [ICLR 2026][deep search] This paper proposes HybridDeepSearcher, which constructs the HDS-QA dataset to train a large language reasoning model (LRM) to distinguish parallelizable from sequentially dependent search queries. The approach achieves F1 gains of +15.9 on FanOutQA and +11.5 on a BrowseComp subset, while substantially reducing inference latency and demonstrating consistent test-time search scaling.
+  [ICLR 2026][Information Retrieval & RAG][deep search] This paper proposes HybridDeepSearcher, which constructs the HDS-QA dataset to train a large language reasoning model (LRM) to distinguish parallelizable from sequent…
 tags:
-  - ICLR 2026
-  - deep search
-  - parallel search
-  - retrieval-augmented generation
-  - large language reasoning models
-  - test-time search scaling
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "deep search"
+  - "parallel search"
+  - "retrieval-augmented generation"
+  - "large language reasoning models"
+  - "test-time search scaling"
 date: 2026-05-08
 content_hash: f6963aa10fc0c5f3
 ---

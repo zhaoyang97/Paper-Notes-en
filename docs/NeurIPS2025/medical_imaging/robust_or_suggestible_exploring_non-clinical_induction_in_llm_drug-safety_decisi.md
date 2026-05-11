@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Robust or Suggestible? Exploring Non-Clinical Induction in LLM Drug-Safety Decisions
 description: >-
-  [NeurIPS 2025][Medical Imaging][LLM fairness] Through a persona-based evaluation framework, this paper finds that ChatGPT-4o and Bio-Medical-Llama-3-8B are systematically influenced by clinically irrelevant sociodemographic attributes (education, insurance, housing, etc.) in adverse drug event prediction, exhibiting both explicit and implicit bias patterns.
+  [NeurIPS 2025][Medical Imaging][LLM fairness] Through a persona-based evaluation framework, this paper finds that ChatGPT-4o and Bio-Medical-Llama-3-8B are systematically influenced by clinically irrelevant sociodemograp…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - LLM fairness
-  - drug safety
-  - adverse event prediction
-  - sociodemographic bias
-  - persona bias
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "LLM fairness"
+  - "drug safety"
+  - "adverse event prediction"
+  - "sociodemographic bias"
+  - "persona bias"
 date: 2026-05-08
 content_hash: 3b3342ca5411b6aa
 ---

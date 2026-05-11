@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Manipulating 3D Molecules in a Fixed-Dimensional E(3)-Equivariant Latent Space
 description: >-
-  [NeurIPS 2025][Medical Imaging][Molecular Generation] This paper proposes MolFLAE, a 3D molecular variational autoencoder that learns a fixed-dimensional, E(3)-equivariant latent space. By introducing learnable virtual nodes and a Bayesian Flow Network (BFN) decoder, MolFLAE enables zero-shot molecular editing — including atom-count editing, structural reconstruction, and property interpolation — and demonstrates practical utility in drug optimization targeting the human glucocorticoid receptor (hGR).
+  [NeurIPS 2025][Medical Imaging][Molecular Generation] This paper proposes MolFLAE, a 3D molecular variational autoencoder that learns a fixed-dimensional…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Molecular Generation
-  - VAE
-  - E(3)-Equivariance
-  - Latent Space Manipulation
-  - Bayesian Flow Networks
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Molecular Generation"
+  - "VAE"
+  - "E(3)-Equivariance"
+  - "Latent Space Manipulation"
+  - "Bayesian Flow Networks"
 date: 2026-05-08
 content_hash: 3202c2e8b314cae9
 ---

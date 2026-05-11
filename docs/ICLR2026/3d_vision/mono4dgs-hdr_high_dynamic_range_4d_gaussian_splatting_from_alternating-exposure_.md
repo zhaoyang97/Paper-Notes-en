@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mono4DGS-HDR: High Dynamic Range 4D Gaussian Splatting from Alternating-exposure Monocular Videos
 description: >-
-  [ICLR 2026][3D Vision][4D Gaussian Splatting] This work is the first to address the problem of reconstructing renderable 4D HDR scenes from pose-free alternating-exposure monocular videos. Through a two-stage optimization pipeline (orthographic video space → world space), a Video-to-World Gaussian transformation strategy, and temporal luminance regularization, the method achieves 37.64 dB HDR PSNR and 161 FPS on synthetic data, comprehensively outperforming existing approaches.
+  [ICLR 2026][3D Vision][4D Gaussian Splatting] This work is the first to address the problem of reconstructing renderable 4D HDR scenes from pose-free alternating-exposure monocular videos. Through a two-stage optimizatio…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - 4D Gaussian Splatting
-  - HDR
-  - monocular video
-  - alternating exposure
-  - dynamic scene
+  - "ICLR 2026"
+  - "3D Vision"
+  - "4D Gaussian Splatting"
+  - "HDR"
+  - "monocular video"
+  - "alternating exposure"
+  - "dynamic scene"
 date: 2026-05-08
 content_hash: aa16a920fd62b3f9
 ---

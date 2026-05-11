@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Neural Exposure Fields for View Synthesis
 description: >-
-  [NeurIPS 2025][3D Vision][Neural Radiance Fields] This paper proposes Neural Exposure Fields (NExF), which achieves 3D-consistent high-quality view synthesis by learning optimal exposure values per 3D point rather than per image. On HDR scenes, NExF surpasses the state-of-the-art by 3.5+ dB in PSNR while being 50× faster.
+  [NeurIPS 2025][3D Vision][Neural Radiance Fields] This paper proposes Neural Exposure Fields (NExF), which achieves 3D-consistent high-quality view synthesis by learning optimal exposure values per 3D point rather than p…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Neural Radiance Fields
-  - View Synthesis
-  - Exposure Compensation
-  - 3D Consistency
-  - High Dynamic Range
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Neural Radiance Fields"
+  - "View Synthesis"
+  - "Exposure Compensation"
+  - "3D Consistency"
+  - "High Dynamic Range"
 date: 2026-05-08
 content_hash: 4bd2a2b339ebfafd
 ---

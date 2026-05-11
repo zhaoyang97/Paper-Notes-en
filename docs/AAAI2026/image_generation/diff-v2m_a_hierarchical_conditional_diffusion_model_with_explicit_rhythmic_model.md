@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Diff-V2M: A Hierarchical Conditional Diffusion Model with Explicit Rhythmic Modeling for Video-to-Music Generation
 description: >-
-  [AAAI 2026][Image Generation][Video-to-music generation] This paper proposes Diff-V2M, a hierarchical conditional diffusion Transformer framework for video-to-music generation that integrates affective, semantic, and rhythmic features via explicit rhythmic modeling (low-resolution ODF) and a hierarchical cross-attention mechanism, achieving state-of-the-art performance on both in-domain and out-of-domain datasets.
+  [AAAI 2026][Image Generation][Video-to-music generation] This paper proposes Diff-V2M, a hierarchical conditional diffusion Transformer framework for video-to-music generation that integrates affective, semantic…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Video-to-music generation
-  - diffusion model
-  - rhythmic modeling
-  - hierarchical cross-attention
-  - feature fusion
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Video-to-music generation"
+  - "diffusion model"
+  - "rhythmic modeling"
+  - "hierarchical cross-attention"
+  - "feature fusion"
 date: 2026-05-08
 content_hash: 33bba60f58755df3
 ---

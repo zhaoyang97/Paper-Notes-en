@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RealCam-I2V: Real-World Image-to-Video Generation with Interactive Complex Camera Control
 description: >-
-  [ICCV 2025][Video Generation][Camera Control] RealCam-I2V integrates monocular metric depth estimation to construct 3D scenes for metric-scale-aligned training, provides an interactive 3D scene trajectory drawing interface, and introduces a scene-constrained noise shaping mechanism, addressing the scale inconsistency and real-world usability issues inherent in existing trajectory-guided I2V methods.
+  [ICCV 2025][Video Generation][Camera Control] RealCam-I2V integrates monocular metric depth estimation to construct 3D scenes for metric-scale-aligned training…
 tags:
-  - ICCV 2025
-  - Video Generation
-  - Camera Control
-  - Metric Depth
-  - Video Diffusion
-  - Noise Shaping
-  - I2V
+  - "ICCV 2025"
+  - "Video Generation"
+  - "Camera Control"
+  - "Metric Depth"
+  - "Video Diffusion"
+  - "Noise Shaping"
+  - "I2V"
 date: 2026-05-08
 content_hash: f10f45a2225fd029
 ---

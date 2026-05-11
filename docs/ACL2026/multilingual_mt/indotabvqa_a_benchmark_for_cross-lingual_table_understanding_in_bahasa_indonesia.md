@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] IndoTabVQA: A Benchmark for Cross-Lingual Table Understanding in Bahasa Indonesia Documents
 description: >-
-  [ACL 2026][Cross-lingual table understanding] This paper presents IndoTabVQA, a cross-lingual visual question answering benchmark for table understanding in Bahasa Indonesia documents. The dataset comprises 1,593 document images annotated with QA pairs in four languages (Indonesian, English, Hindi, and Arabic). The benchmark reveals substantial performance gaps in VLMs for low-resource languages and cross-lingual table understanding, with fine-tuning combined with spatial priors achieving up to 48.5% In-Match accuracy.
+  [ACL 2026][Multilingual & Machine Translation][Cross-lingual table understanding] This paper presents IndoTabVQA, a cross-lingual visual question answering benchmark for table understanding in Bahasa Indonesia documents.…
 tags:
-  - ACL 2026
-  - Cross-lingual table understanding
-  - visual question answering
-  - Bahasa Indonesia documents
-  - spatial priors
-  - low-resource languages
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "Cross-lingual table understanding"
+  - "visual question answering"
+  - "Bahasa Indonesia documents"
+  - "spatial priors"
+  - "low-resource languages"
 date: 2026-05-08
 content_hash: 256115242cd38f18
 ---

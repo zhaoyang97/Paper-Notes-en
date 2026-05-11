@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Spectral Gaps and Spatial Priors: Studying Hyperspectral Downstream Adaptation Using TerraMind
 description: >-
-  [ICLR 2026][Remote Sensing][Hyperspectral Imaging] This paper investigates whether TerraMind, a multimodal geospatial foundation model not pretrained on hyperspectral data, can be effectively adapted to hyperspectral downstream tasks via channel adaptation strategies (naive band selection vs. SRF-based grouping). Results demonstrate that naive band selection consistently outperforms the physically-informed SRF approach, with the performance gap widening as the spectral complexity of the task increases.
+  [ICLR 2026][Remote Sensing][Hyperspectral Imaging] This paper investigates whether TerraMind, a multimodal geospatial foundation model not pretrained on hyperspectral data…
 tags:
-  - ICLR 2026
-  - Remote Sensing
-  - Hyperspectral Imaging
-  - Geospatial Foundation Models
-  - Channel Adaptation
-  - TerraMind
-  - Spectral Response Function
+  - "ICLR 2026"
+  - "Remote Sensing"
+  - "Hyperspectral Imaging"
+  - "Geospatial Foundation Models"
+  - "Channel Adaptation"
+  - "TerraMind"
+  - "Spectral Response Function"
 date: 2026-05-08
 content_hash: 11debe1707c97b7b
 ---

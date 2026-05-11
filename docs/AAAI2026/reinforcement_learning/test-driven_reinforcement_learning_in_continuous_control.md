@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Test-driven Reinforcement Learning in Continuous Control
 description: >-
-  [AAAI 2026 (Oral)][Reinforcement Learning][Test-driven RL] This paper proposes the Test-driven Reinforcement Learning (TdRL) framework, which replaces a single reward function with multiple test functions — pass-fail tests defining optimality criteria and indicative tests guiding learning — to represent task objectives. A return function is learned via lexicographic-heuristic trajectory comparison, matching or surpassing hand-crafted reward methods on the DeepMind Control Suite while naturally supporting multi-objective optimization.
+  [AAAI 2026 (Oral)][Reinforcement Learning][Test-driven RL] This paper proposes the Test-driven Reinforcement Learning (TdRL) framework, which replaces a single reward function with multiple test functions — pass-fail tes…
 tags:
-  - AAAI 2026 (Oral)
-  - Reinforcement Learning
-  - Test-driven RL
-  - Satisficing Theory
-  - Multi-objective Optimization
-  - Trajectory Return Function
-  - Lexicographic Comparison
+  - "AAAI 2026 (Oral)"
+  - "Reinforcement Learning"
+  - "Test-driven RL"
+  - "Satisficing Theory"
+  - "Multi-objective Optimization"
+  - "Trajectory Return Function"
+  - "Lexicographic Comparison"
 date: 2026-05-08
 content_hash: 945cf5503b080059
 ---

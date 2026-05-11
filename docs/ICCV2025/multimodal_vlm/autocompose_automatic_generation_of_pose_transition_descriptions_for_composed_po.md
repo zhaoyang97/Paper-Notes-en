@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AutoComPose: Automatic Generation of Pose Transition Descriptions for Composed Pose Retrieval Using Multimodal LLMs
 description: >-
-  [ICCV 2025][Multimodal VLM][Composed Pose Retrieval] This paper proposes AutoComPose, the first framework leveraging multimodal large language models (MLLMs) to automatically generate human pose transition descriptions. Through body-part-level description generation, diversification augmentation, and a cyclic consistency loss, AutoComPose achieves superior composed pose retrieval performance while eliminating the need for costly manual annotation.
+  [ICCV 2025][Multimodal VLM][Composed Pose Retrieval] This paper proposes AutoComPose, the first framework leveraging multimodal large language models (MLLMs) to automatically generate human pose transition descriptions.…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Composed Pose Retrieval
-  - MLLM
-  - Pose Transition
-  - Cyclic Consistency
-  - Data Annotation
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Composed Pose Retrieval"
+  - "MLLM"
+  - "Pose Transition"
+  - "Cyclic Consistency"
+  - "Data Annotation"
 date: 2026-05-08
 content_hash: 5221a9c2d8859b6a
 ---

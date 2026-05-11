@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MotionDiff: Training-Free Zero-Shot Interactive Motion Editing via Flow-Assisted Multi-View Diffusion
 description: >-
-  [ICCV 2025][Image Generation][Motion Editing] MotionDiff proposes a training-free, zero-shot multi-view motion editing approach that estimates multi-view optical flow from static scenes via a Point Kinematics Model (PKM), and leverages a decoupled motion representation to guide Stable Diffusion in generating high-quality, multi-view-consistent motion editing results.
+  [ICCV 2025][Image Generation][Motion Editing] MotionDiff proposes a training-free, zero-shot multi-view motion editing approach that estimates multi-view optical flow from static scenes via a Point Kinematics Model (PKM)…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Motion Editing
-  - Optical Flow Guidance
-  - Multi-View Consistency
-  - Training-Free Diffusion
-  - 3D Point Cloud
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Motion Editing"
+  - "Optical Flow Guidance"
+  - "Multi-View Consistency"
+  - "Training-Free Diffusion"
+  - "3D Point Cloud"
 date: 2026-05-08
 content_hash: 1955f13cf9d68df8
 ---

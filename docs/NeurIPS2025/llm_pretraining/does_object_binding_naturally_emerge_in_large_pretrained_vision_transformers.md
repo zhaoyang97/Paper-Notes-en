@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Does Object Binding Naturally Emerge in Large Pretrained Vision Transformers?
 description: >-
-  [NeurIPS 2025][LLM Pretraining][Object Binding] By defining the IsSameObject predicate and designing quadratic probes, this work demonstrates that large-scale pretrained ViTs — particularly DINO and CLIP — naturally develop object binding capabilities. This signal is encoded in a low-dimensional subspace and actively guides the attention mechanism, challenging the cognitive science community's view that ViTs lack binding ability.
+  [NeurIPS 2025][LLM Pretraining][Object Binding] By defining the IsSameObject predicate and designing quadratic probes, this work demonstrates that large-scale pretrained ViTs — particularly DINO and CLIP — naturally deve…
 tags:
-  - NeurIPS 2025
-  - LLM Pretraining
-  - Object Binding
-  - Vision Transformer
-  - IsSameObject
-  - Self-Supervised Learning
-  - Probing Analysis
+  - "NeurIPS 2025"
+  - "LLM Pretraining"
+  - "Object Binding"
+  - "Vision Transformer"
+  - "IsSameObject"
+  - "Self-Supervised Learning"
+  - "Probing Analysis"
 date: 2026-05-08
 content_hash: 86ce22475e934b6a
 ---

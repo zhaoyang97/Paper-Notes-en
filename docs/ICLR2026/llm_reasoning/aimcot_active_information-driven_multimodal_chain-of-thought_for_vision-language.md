@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AIMCoT: Active Information-driven Multimodal Chain-of-Thought for Vision-Language Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][multimodal CoT] AIMCoT reframes visual information selection in multimodal CoT from "passively attending to high-attention regions" to "actively seeking regions of maximal information gain." Three collaborative modules — CAG (Context-enhanced Attention-map Generation), AVP (Active Visual Probing), and DAT (Dynamic Attention-shifting Trigger) — constitute a training-free, plug-and-play framework that outperforms ICoT by 18.25% on LLaVA-W (0-shot).
+  [ICLR 2026][LLM Reasoning][multimodal CoT] AIMCoT reframes visual information selection in multimodal CoT from "passively attending to high-attention regions" to "actively seeking regions of maximal information gain." Th…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - multimodal CoT
-  - information gain
-  - active visual probing
-  - attention map
-  - interleaved reasoning
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "multimodal CoT"
+  - "information gain"
+  - "active visual probing"
+  - "attention map"
+  - "interleaved reasoning"
 date: 2026-05-08
 content_hash: f6eb980ae983b401
 ---

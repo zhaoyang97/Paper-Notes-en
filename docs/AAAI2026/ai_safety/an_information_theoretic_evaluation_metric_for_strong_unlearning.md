@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] An Information Theoretic Evaluation Metric for Strong Unlearning
 description: >-
-  [AAAI 2026][AI Safety][Machine Unlearning] This paper exposes a fundamental flaw in existing black-box unlearning evaluation metrics (MIA, JSD, etc.)—modifying only the final classification head is sufficient to satisfy all black-box metrics while intermediate layers fully retain information about the forget set. The paper proposes IDI, a white-box metric that quantifies unlearning effectiveness by estimating, via InfoNCE, the mutual information between each layer's representations and the forget labels. It further proposes COLA, an unlearning method that achieves IDI scores approaching Retrain on CIFAR-10/100 and ImageNet-1K.
+  [AAAI 2026][AI Safety][Machine Unlearning] This paper exposes a fundamental flaw in existing black-box unlearning evaluation metrics (MIA, JSD…
 tags:
-  - AAAI 2026
-  - AI Safety
-  - Machine Unlearning
-  - Mutual Information
-  - White-Box Evaluation
-  - IDI Metric
-  - COLA Method
+  - "AAAI 2026"
+  - "AI Safety"
+  - "Machine Unlearning"
+  - "Mutual Information"
+  - "White-Box Evaluation"
+  - "IDI Metric"
+  - "COLA Method"
 date: 2026-05-08
 content_hash: 3e431baec5717825
 ---

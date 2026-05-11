@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] S-DAG: A Subject-Based Directed Acyclic Graph for Multi-Agent Heterogeneous Reasoning
 description: >-
-  [AAAI 2026][Graph Learning][Subject-level analysis] This paper proposes S-DAG, which uses a GNN to identify relevant subjects and their dependencies from a given question, constructing a directed acyclic graph. Subject nodes are matched to the most capable expert LLMs (14 domain-specific models of 7–13B parameters), and collaborative reasoning proceeds in DAG topological order (supporting subjects → dominant subject). The resulting small-model pool surpasses GPT-4o-mini (59.73 vs. 58.52) and approaches the performance of a 72B model.
+  [AAAI 2026][Graph Learning][Subject-level analysis] This paper proposes S-DAG, which uses a GNN to identify relevant subjects and their dependencies from a given question…
 tags:
-  - AAAI 2026
-  - Graph Learning
-  - Subject-level analysis
-  - directed acyclic graph
-  - GNN reasoning
-  - expert model composition
-  - heterogeneous reasoning
+  - "AAAI 2026"
+  - "Graph Learning"
+  - "Subject-level analysis"
+  - "directed acyclic graph"
+  - "GNN reasoning"
+  - "expert model composition"
+  - "heterogeneous reasoning"
 date: 2026-05-08
 content_hash: b7d6737be02f94e8
 ---

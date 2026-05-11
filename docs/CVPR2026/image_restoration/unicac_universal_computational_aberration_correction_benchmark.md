@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Towards Universal Computational Aberration Correction in Photographic Cameras: A Comprehensive Benchmark Analysis
 description: >-
-  [CVPR 2026][Image Restoration][Computational Aberration Correction] This paper presents UniCAC, the first large-scale universal benchmark for Computational Aberration Correction (CAC). It introduces an Optical Degradation Evaluator (ODE) to quantify aberration difficulty and comprehensively evaluates 24 image restoration/CAC algorithms, revealing the impact of three key factors—prior utilization, network architecture, and training strategy—on CAC performance.
+  [CVPR 2026][Image Restoration][Computational Aberration Correction] This paper presents UniCAC, the first large-scale universal benchmark for Computational Aberration Correction (CAC). It introduces an Optical Degradatio…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Computational Aberration Correction
-  - Optical Degradation Evaluation
-  - Benchmark
-  - Automatic Optical Design
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Computational Aberration Correction"
+  - "Optical Degradation Evaluation"
+  - "Benchmark"
+  - "Automatic Optical Design"
 date: 2026-05-08
 content_hash: fa72020b568f5808
 ---

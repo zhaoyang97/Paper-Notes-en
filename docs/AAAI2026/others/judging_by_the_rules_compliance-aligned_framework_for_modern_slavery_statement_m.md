@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Judging by the Rules: Compliance-Aligned Framework for Modern Slavery Statement Monitoring
 description: >-
-  [AAAI 2026][Compliance Verification] This paper proposes a training framework centered on a Compliance-Aligned Judge (CA-Judge) that trains a 3B-parameter CALLM model using rule-level alignment feedback, enabling the generation of traceable compliance judgments grounded in statutory provisions. The model surpasses GPT-4o and DeepSeek-R1 on sentence-level compliance classification of modern slavery statements.
+  [AAAI 2026][Compliance Verification] This paper proposes a training framework centered on a Compliance-Aligned Judge (CA-Judge) that trains a 3B-parameter CALLM model using rule-level alignment feedback…
 tags:
-  - AAAI 2026
-  - Compliance Verification
-  - Modern Slavery Act
-  - LLM-as-Judge
-  - Rule Alignment
-  - GRPO
+  - "AAAI 2026"
+  - "Compliance Verification"
+  - "Modern Slavery Act"
+  - "LLM-as-Judge"
+  - "Rule Alignment"
+  - "GRPO"
 date: 2026-05-08
 content_hash: 44d466c30fefdd77
 ---

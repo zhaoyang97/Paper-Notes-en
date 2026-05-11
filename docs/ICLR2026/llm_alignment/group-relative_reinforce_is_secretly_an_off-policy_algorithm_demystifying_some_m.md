@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Group-Relative REINFORCE Is Secretly an Off-Policy Algorithm: Demystifying Some Myths About GRPO and Its Friends
 description: >-
-  [ICLR 2026][LLM Alignment][GRPO] By constructing a KL-regularized surrogate objective and deriving a pairwise consistency condition from first principles, this paper proves that group-relative REINFORCE (GRPO) is inherently an off-policy algorithm. Component isolation experiments further reveal that clipping is the sole driver of training stability while importance sampling can be entirely removed. Within this unified framework, the paper reinterprets several seemingly independent algorithms—including Kimi OPMD and Meta AsymRE—under a common theoretical lens.
+  [ICLR 2026][LLM Alignment][GRPO] By constructing a KL-regularized surrogate objective and deriving a pairwise consistency condition from first principles…
 tags:
-  - ICLR 2026
-  - LLM Alignment
-  - GRPO
-  - off-policy RL
-  - importance sampling
-  - clipping
-  - REINFORCE
-  - policy optimization
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "GRPO"
+  - "off-policy RL"
+  - "importance sampling"
+  - "clipping"
+  - "REINFORCE"
+  - "policy optimization"
 date: 2026-05-08
 content_hash: b3a29039e65b29c0
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Node-Based Editing for Multimodal Generation of Text, Audio, Image, and Video
 description: >-
-  [NeurIPS 2025][Audio & Speech][Node graph interface] This paper proposes a node-graph-based story editing system that allows creators to iteratively generate, edit, and compare multimodal content (text, audio, image, and video) through natural language and node-level operations, supporting both linear and branching narrative structures.
+  [NeurIPS 2025][Audio & Speech][Node graph interface] This paper proposes a node-graph-based story editing system that allows creators to iteratively generate, edit, and compare multimodal content (text, audio, image…
 tags:
-  - NeurIPS 2025
+  - "NeurIPS 2025"
   - "Audio & Speech"
-  - Node graph interface
-  - narrative generation
-  - multimodal generation
-  - human-AI collaboration
+  - "Node graph interface"
+  - "narrative generation"
+  - "multimodal generation"
+  - "human-AI collaboration"
 date: 2026-05-08
 content_hash: c4d5fbd7b3449ed5
 ---

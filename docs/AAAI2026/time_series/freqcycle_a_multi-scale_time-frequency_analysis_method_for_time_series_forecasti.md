@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FreqCycle: A Multi-Scale Time-Frequency Analysis Method for Time Series Forecasting
 description: >-
-  [AAAI 2026][Time Series][Time series forecasting] This paper proposes the FreqCycle framework, which explicitly learns shared periodic patterns via the FECF module, enhances mid-to-high frequency energy contributions via the SFPL module, and extends to MFreqCycle for handling coupled multi-periodicity. The framework achieves an optimal balance of SOTA performance and efficiency across 7 benchmarks.
+  [AAAI 2026][Time Series][Time series forecasting] This paper proposes the FreqCycle framework, which explicitly learns shared periodic patterns via the FECF module…
 tags:
-  - AAAI 2026
-  - Time Series
-  - Time series forecasting
-  - frequency-domain analysis
-  - periodicity modeling
-  - mid-to-high frequency enhancement
-  - multi-scale decomposition
+  - "AAAI 2026"
+  - "Time Series"
+  - "Time series forecasting"
+  - "frequency-domain analysis"
+  - "periodicity modeling"
+  - "mid-to-high frequency enhancement"
+  - "multi-scale decomposition"
 date: 2026-05-08
 content_hash: a1de66ea46856d14
 ---

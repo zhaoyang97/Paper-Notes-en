@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Implicit Bias and Loss of Plasticity in Matrix Completion: Depth Promotes Low-Rank
 description: >-
-  [ICLR 2026][LLM Pretraining][matrix completion] By analyzing the gradient flow dynamics of deep matrix factorization (deep linear networks) in matrix completion, this paper proves that coupled dynamics is the key mechanism underlying the low-rank implicit bias of deep networks, and that networks of depth $\geq 3$ inevitably exhibit coupling except under diagonal initialization. This provides a theoretical explanation for why deep models are able to avoid loss of plasticity.
+  [ICLR 2026][LLM Pretraining][matrix completion] By analyzing the gradient flow dynamics of deep matrix factorization (deep linear networks) in matrix completion…
 tags:
-  - ICLR 2026
-  - LLM Pretraining
-  - matrix completion
-  - deep matrix factorization
-  - implicit bias
-  - low-rank preference
-  - loss of plasticity
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "matrix completion"
+  - "deep matrix factorization"
+  - "implicit bias"
+  - "low-rank preference"
+  - "loss of plasticity"
 date: 2026-05-08
 content_hash: 6d0bc6727dbe2d7c
 ---

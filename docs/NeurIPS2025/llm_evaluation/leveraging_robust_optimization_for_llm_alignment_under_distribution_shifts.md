@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Leveraging Robust Optimization for LLM Alignment under Distribution Shifts
 description: >-
-  [NeurIPS 2025][LLM Evaluation][LLM alignment] This paper proposes DoRA (Distribution-aware Optimization for Robust Alignment), which trains a distribution classifier to assign calibrated weights to individual samples and incorporates them into a KL-DRO framework to minimize worst-case loss. DoRA operates as a model-agnostic plug-and-play module that consistently improves the robustness of various alignment algorithms—including DPO, RRHF, and LIRE—under distribution shifts.
+  [NeurIPS 2025][LLM Evaluation][LLM alignment] This paper proposes DoRA (Distribution-aware Optimization for Robust Alignment), which trains a distribution classifier to assign calibrated weights to individual samples and…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - LLM alignment
-  - distributionally robust optimization
-  - distribution shift
-  - synthetic data
-  - preference optimization
-  - calibration
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "LLM alignment"
+  - "distributionally robust optimization"
+  - "distribution shift"
+  - "synthetic data"
+  - "preference optimization"
+  - "calibration"
 date: 2026-05-08
 content_hash: fe5353dcea32170b
 ---

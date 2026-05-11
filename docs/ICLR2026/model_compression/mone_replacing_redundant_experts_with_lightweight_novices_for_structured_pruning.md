@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MoNE: Replacing Redundant Experts with Lightweight Novices for Structured Pruning of MoE
 description: >-
-  [ICLR 2026][Model Compression][MoE pruning] This paper proposes MoNE (Mixture-of-Novices-and-Experts), which identifies redundant experts via joint evaluation of access frequency and output variance, and replaces them with their output mean vectors ("novices"). MoNE achieves more effective and robust compression than existing pruning methods across 5 MoE models, with an average accuracy drop of only 0.14 at a 25% pruning ratio.
+  [ICLR 2026][Model Compression][MoE pruning] This paper proposes MoNE (Mixture-of-Novices-and-Experts), which identifies redundant experts via joint evaluation of access frequency and output variance…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - MoE pruning
-  - expert redundancy
-  - novice replacement
-  - structured compression
-  - access frequency
+  - "ICLR 2026"
+  - "Model Compression"
+  - "MoE pruning"
+  - "expert redundancy"
+  - "novice replacement"
+  - "structured compression"
+  - "access frequency"
 date: 2026-05-08
 content_hash: adfdc2701905a422
 ---

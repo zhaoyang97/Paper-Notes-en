@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Exploring LLMs for Scientific Information Extraction using the SciEx Framework
 description: >-
-  [AAAI 2026][Multimodal VLM][Scientific Information Extraction] This paper proposes SciEx, a modular and composable scientific information extraction framework that decouples PDF parsing, multimodal retrieval, schema-guided extraction, and cross-document aggregation into independent components. The framework evaluates the extraction capabilities of GPT-4o and Gemini-2.5-Flash on a dataset of 143 papers spanning medicine and environmental science, revealing systematic deficiencies in current LLMs with respect to cross-modal reasoning, numerical precision, and domain generalization.
+  [AAAI 2026][Multimodal VLM][Scientific Information Extraction] This paper proposes SciEx, a modular and composable scientific information extraction framework that decouples PDF parsing, multimodal retrieval…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Scientific Information Extraction
-  - LLM
-  - RAG
-  - Multimodal Reasoning
-  - Modular Framework
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Scientific Information Extraction"
+  - "LLM"
+  - "RAG"
+  - "Multimodal Reasoning"
+  - "Modular Framework"
 date: 2026-05-08
 content_hash: 55824aac21d9e303
 ---

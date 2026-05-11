@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EgoGazeVQA: Egocentric Gaze-Guided Video Question Answering Benchmark
 description: >-
-  [NeurIPS 2025][Video Understanding][Egocentric Video] This paper introduces EgoGazeVQA, the first egocentric video question answering benchmark that incorporates user eye-gaze data. Through gaze-guided prompting strategies (textual, visual, and salience map), the benchmark demonstrates substantial improvements in MLLMs' ability to understand user intent. The Gaze Salience Map strategy raises MiniCPM-o's accuracy from 35.9% to 53.7%.
+  [NeurIPS 2025][Video Understanding][Egocentric Video] This paper introduces EgoGazeVQA, the first egocentric video question answering benchmark that incorporates user eye-gaze data. Through gaze-guided prompting strategi…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
-  - Egocentric Video
-  - Gaze Guidance
-  - Video Question Answering
-  - User Intent Understanding
-  - Multimodal Large Language Models
+  - "NeurIPS 2025"
+  - "Video Understanding"
+  - "Egocentric Video"
+  - "Gaze Guidance"
+  - "Video Question Answering"
+  - "User Intent Understanding"
+  - "Multimodal Large Language Models"
 date: 2026-05-08
 content_hash: c44d9789cd4444b5
 ---

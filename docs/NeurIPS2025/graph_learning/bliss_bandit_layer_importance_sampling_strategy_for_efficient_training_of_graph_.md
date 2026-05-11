@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BLISS: Bandit Layer Importance Sampling Strategy for Efficient Training of Graph Neural Networks
 description: >-
-  [NeurIPS 2025][Graph Learning][Graph Sampling] This paper proposes BLISS, which formulates layer-wise neighbor sampling in GNNs as a multi-armed bandit problem. Using the EXP3 algorithm, it dynamically adjusts per-edge sampling probabilities with the variance contribution of neighbors to node representations as the reward signal, achieving accuracy on par with or exceeding full-batch training on GCN and GAT.
+  [NeurIPS 2025][Graph Learning][Graph Sampling] This paper proposes BLISS, which formulates layer-wise neighbor sampling in GNNs as a multi-armed bandit problem. Using the EXP3 algorithm…
 tags:
-  - NeurIPS 2025
-  - Graph Learning
-  - Graph Sampling
-  - Layer-wise Importance Sampling
-  - Multi-Armed Bandit
-  - GNN Training
-  - Scalability
+  - "NeurIPS 2025"
+  - "Graph Learning"
+  - "Graph Sampling"
+  - "Layer-wise Importance Sampling"
+  - "Multi-Armed Bandit"
+  - "GNN Training"
+  - "Scalability"
 date: 2026-05-08
 content_hash: fea9f21d4722e5ed
 ---

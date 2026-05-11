@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Kaputt: A Large-Scale Dataset for Visual Defect Detection
 description: >-
-  [ICCV 2025][defect detection] Kaputt introduces a large-scale retail logistics defect detection dataset comprising 230,000+ images and 48,000+ unique items — 40× the scale of MVTec-AD — and is the first to incorporate significant pose and appearance variation. State-of-the-art anomaly detection methods achieve no more than 56.96% AUROC on this benchmark, exposing critical shortcomings of existing approaches in real-world retail scenarios.
+  [ICCV 2025][defect detection] Kaputt introduces a large-scale retail logistics defect detection dataset comprising 230,000+ images and 48…
 tags:
-  - ICCV 2025
-  - defect detection
-  - anomaly detection
-  - large-scale dataset
-  - retail logistics
-  - benchmark
+  - "ICCV 2025"
+  - "defect detection"
+  - "anomaly detection"
+  - "large-scale dataset"
+  - "retail logistics"
+  - "benchmark"
 date: 2026-05-08
 content_hash: 2ad635cb25964714
 ---

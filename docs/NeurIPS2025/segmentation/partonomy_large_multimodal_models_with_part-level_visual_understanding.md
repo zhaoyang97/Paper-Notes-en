@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] PARTONOMY: Large Multimodal Models with Part-Level Visual Understanding
 description: >-
-  [NeurIPS 2025][Segmentation][part-level understanding] This paper introduces the Partonomy part-level segmentation benchmark (862 part labels / 534 object labels) and the Plum model, which replaces the [SEG] token with BIO span tagging and incorporates a mask feedback loop. The study reveals that state-of-the-art segmentation LMMs achieve only 5.9% gIoU on part understanding; Plum achieves significant improvements by avoiding distribution shift and leveraging historical predictions.
+  [NeurIPS 2025][Segmentation][part-level understanding] This paper introduces the Partonomy part-level segmentation benchmark (862 part labels / 534 object labels) and the Plum model…
 tags:
-  - NeurIPS 2025
-  - Segmentation
-  - part-level understanding
-  - LMM
-  - interpretable part segmentation
-  - span tagging
-  - mask feedback
-  - benchmark
+  - "NeurIPS 2025"
+  - "Segmentation"
+  - "part-level understanding"
+  - "LMM"
+  - "interpretable part segmentation"
+  - "span tagging"
+  - "mask feedback"
+  - "benchmark"
 date: 2026-05-08
 content_hash: 23f14dad1a14c7ba
 ---

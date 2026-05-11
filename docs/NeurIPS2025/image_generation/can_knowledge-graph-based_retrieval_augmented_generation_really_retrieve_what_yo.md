@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Can Knowledge-Graph-based Retrieval Augmented Generation Really Retrieve What You Need?
 description: >-
-  [NeurIPS 2025][Image Generation][Knowledge Graph] This paper proposes GraphFlow, a framework that models retrieval over knowledge graphs as a flow-matching problem under GFlowNet, jointly training a retrieval policy and flow estimator via a detailed balance objective and local exploration strategy. On the STaRK benchmark, GraphFlow surpasses GPT-4o by approximately 10% in both retrieval accuracy and diversity.
+  [NeurIPS 2025][Image Generation][Knowledge Graph] This paper proposes GraphFlow, a framework that models retrieval over knowledge graphs as a flow-matching problem under GFlowNet…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Knowledge Graph
-  - Retrieval-Augmented Generation
-  - GFlowNet
-  - Process Reward Model
-  - Optimal Transport
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Knowledge Graph"
+  - "Retrieval-Augmented Generation"
+  - "GFlowNet"
+  - "Process Reward Model"
+  - "Optimal Transport"
 date: 2026-05-08
 content_hash: cf6fa95cc8f53521
 ---

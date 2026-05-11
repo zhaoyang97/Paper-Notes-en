@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Knowledge Completes the Vision: A Multimodal Entity-aware Retrieval-Augmented Generation Framework for News Image Captioning
 description: >-
-  [AAAI 2026][News Image Captioning] This paper proposes MERGE, the first multimodal entity-aware RAG framework for news image captioning. Through three core components — an Entity-centric Multimodal Knowledge Base (EMKB), Hypothetical Caption-guided Multimodal Alignment (HCMA), and Retrieval-driven Multimodal Knowledge Integration (RMKI) — MERGE achieves CIDEr +6.84 and F1 +4.14 on GoodNews, and demonstrates strong generalization with CIDEr +20.17 on the unseen Visual News benchmark.
+  [AAAI 2026][Information Retrieval & RAG][News Image Captioning] This paper proposes MERGE, the first multimodal entity-aware RAG framework for news image captioning. Through three core components — an Entity-centric Mult…
 tags:
-  - AAAI 2026
-  - News Image Captioning
-  - RAG
-  - Entity Knowledge Base
-  - Cross-modal Alignment
-  - Multimodal Large Language Model
+  - "AAAI 2026"
+  - "Information Retrieval & RAG"
+  - "News Image Captioning"
+  - "RAG"
+  - "Entity Knowledge Base"
+  - "Cross-modal Alignment"
+  - "Multimodal Large Language Model"
 date: 2026-05-08
 content_hash: 209b14e493959b71
 ---

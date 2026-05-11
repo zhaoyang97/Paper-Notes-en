@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Near-Exponential Savings for Mean Estimation with Active Learning
 description: >-
-  [NeurIPS 2025][Optimization][Active Learning] This paper proposes the PartiBandits algorithm, which combines disagreement-based active learning with UCB-style stratified sampling to achieve near-exponential label savings for mean estimation when auxiliary information $X$ is predictive of the target variable $Y$.
+  [NeurIPS 2025][Optimization][Active Learning] This paper proposes the PartiBandits algorithm, which combines disagreement-based active learning with UCB-style stratified sampling to achieve near-exponential label savings…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Active Learning
-  - Mean Estimation
-  - Stratified Sampling
-  - UCB Algorithm
-  - Minimax Optimality
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Active Learning"
+  - "Mean Estimation"
+  - "Stratified Sampling"
+  - "UCB Algorithm"
+  - "Minimax Optimality"
 date: 2026-05-08
 content_hash: d0dd1021326c72f8
 ---

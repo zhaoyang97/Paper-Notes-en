@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Do Neural Networks Need Gradient Descent to Generalize? A Theoretical Study
 description: >-
-  [NeurIPS 2025][Optimization][generalization] This paper establishes, within the matrix factorization framework (a canonical theoretical testbed for neural networks), that Guess & Check (G&C; randomly sampling parameters until the training set is fit) exhibits generalization that degrades with increasing width (the first provable demonstration of a canonical setting where G&C is strictly inferior to gradient descent) yet improves with increasing depth, revealing the fundamentally opposite roles that width and depth play in generalization.
+  [NeurIPS 2025][Optimization][generalization] This paper establishes, within the matrix factorization framework (a canonical theoretical testbed for neural networks), that Guess & Check (G&C…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - generalization
-  - volume hypothesis
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "generalization"
+  - "volume hypothesis"
   - "Guess & Check"
-  - matrix factorization
-  - implicit bias
+  - "matrix factorization"
+  - "implicit bias"
 date: 2026-05-08
 content_hash: 0ff34ad3fd903469
 ---

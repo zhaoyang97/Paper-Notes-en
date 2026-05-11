@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] RLP: Reinforcement as a Pretraining Objective
 description: >-
-  [ICLR 2026][Reinforcement Learning][Pretraining] This paper proposes RLP (Reinforcement Learning Pretraining), an information-gain-driven RL pretraining objective that rewards Chain-of-Thought (CoT) reasoning when it improves next-token prediction probability. RLP shifts reinforcement learning from the post-training stage into pretraining, enabling dense reward signals without any verifier.
+  [ICLR 2026][Reinforcement Learning][Pretraining] This paper proposes RLP (Reinforcement Learning Pretraining), an information-gain-driven RL pretraining objective that rewards Chain-of-Thought (CoT) reasoning when it imp…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Pretraining
-  - Information Gain
-  - Chain-of-Thought
-  - Next-Token Prediction
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Pretraining"
+  - "Information Gain"
+  - "Chain-of-Thought"
+  - "Next-Token Prediction"
 date: 2026-05-08
 content_hash: 4de4445d207c2769
 ---

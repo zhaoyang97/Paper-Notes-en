@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Neural Green's Functions
 description: >-
-  [NeurIPS 2025][3D Vision][Green's functions] This paper proposes Neural Green's Functions, a learnable linear PDE solution operator based on eigendecomposition: pointwise geometric features are extracted from the domain geometry to predict the eigendecomposition of the Green's function, enabling one-time training to solve for arbitrary source functions and boundary conditions via numerical integration. On mechanical part thermal analysis, the method reduces error by 13.9% over the state-of-the-art neural operator while running 350× faster than numerical solvers.
+  [NeurIPS 2025][3D Vision][Green's functions] This paper proposes Neural Green's Functions, a learnable linear PDE solution operator based on eigendecomposition: pointwise geometric features are extracted from the domain…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Green's functions
-  - neural operators
-  - PDE solving
-  - eigendecomposition
-  - domain generalization
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Green's functions"
+  - "neural operators"
+  - "PDE solving"
+  - "eigendecomposition"
+  - "domain generalization"
 date: 2026-05-08
 content_hash: 1ef9d4dec47a5652
 ---

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Contact-Guided 3D Genome Structure Generation of E. coli via Diffusion Transformers
 description: >-
-  [ICLR2026][Image Generation][3D genome] This paper proposes DiffBacChrom — a conditional diffusion Transformer (CrossDiT) that generates ensembles of 3D genome conformations for *E. coli* from Hi-C contact maps. The method employs a ResNet VAE to maintain bin-aligned latent encodings, a Transformer encoder with cross-attention for Hi-C conditioning, and flow-matching training. The generated ensembles exhibit high agreement with input Hi-C data in terms of distance-decay curves $P(s)$ and SCC metrics, while preserving conformational diversity.
+  [ICLR2026][Image Generation][3D genome] This paper proposes DiffBacChrom — a conditional diffusion Transformer (CrossDiT) that generates ensembles of 3D genome conformations for *E. coli* from Hi-C contact maps. The meth…
 tags:
-  - ICLR2026
-  - Image Generation
-  - 3D genome
-  - Hi-C
-  - diffusion transformer
-  - CrossDiT
-  - latent diffusion
-  - flow matching
-  - E. coli
+  - "ICLR2026"
+  - "Image Generation"
+  - "3D genome"
+  - "Hi-C"
+  - "diffusion transformer"
+  - "CrossDiT"
+  - "latent diffusion"
+  - "flow matching"
+  - "E. coli"
 date: 2026-05-08
 content_hash: 9b8900fd934d54ff
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Certifying Concavity and Monotonicity in Games via Sum-of-Squares Hierarchies
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Concave games] This paper proves that verifying concavity and monotonicity in games with polynomial utilities and semi-algebraic strategy sets is NP-hard, and proposes two hierarchical certification schemes based on sum-of-squares (SOS) programming, each solvable in polynomial time at every level of the hierarchy.
+  [NeurIPS 2025][Reinforcement Learning][Concave games] This paper proves that verifying concavity and monotonicity in games with polynomial utilities and semi-algebraic strategy sets is NP-hard…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Concave games
-  - monotone games
-  - sum-of-squares programming
-  - Nash equilibrium
-  - imperfect-recall games
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Concave games"
+  - "monotone games"
+  - "sum-of-squares programming"
+  - "Nash equilibrium"
+  - "imperfect-recall games"
 date: 2026-05-08
 content_hash: 759d117bfcc8053a
 ---

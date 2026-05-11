@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Exploring the Effects of Alignment on Numerical Bias in Large Language Models
 description: >-
-  [AAAI 2026][LLM Alignment][Numerical Bias] This paper systematically demonstrates that the LLM alignment process (instruction tuning + preference tuning) is the root cause of numerical bias in LLM evaluators, and validates that score range adjustment is the most effective mitigation strategy.
+  [AAAI 2026][LLM Alignment][Numerical Bias] This paper systematically demonstrates that the LLM alignment process (instruction tuning + preference tuning) is the root cause of numerical bias in LLM evaluators…
 tags:
-  - AAAI 2026
-  - LLM Alignment
-  - Numerical Bias
-  - LLM-as-a-Judge
-  - Alignment Side Effects
-  - Kurtosis Analysis
-  - Evaluation Robustness
-  - Score Range Adjustment
+  - "AAAI 2026"
+  - "LLM Alignment"
+  - "Numerical Bias"
+  - "LLM-as-a-Judge"
+  - "Alignment Side Effects"
+  - "Kurtosis Analysis"
+  - "Evaluation Robustness"
+  - "Score Range Adjustment"
 date: 2026-05-08
 content_hash: 0a30e5a9e7316f2e
 ---

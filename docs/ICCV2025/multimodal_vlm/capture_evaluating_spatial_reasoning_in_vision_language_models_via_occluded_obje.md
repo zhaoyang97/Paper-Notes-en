@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CAPTURe: Evaluating Spatial Reasoning in Vision Language Models via Occluded Object Counting
 description: >-
-  [ICCV 2025][Multimodal VLM][VLM evaluation] This paper introduces CAPTURe, a benchmark that evaluates spatial reasoning and world model construction in VLMs by requiring amodal counting of regularly arranged objects under occlusion. Results show that even the strongest model, GPT-4o, achieves a 14.75% counting error under occlusion, while humans perform nearly perfectly.
+  [ICCV 2025][Multimodal VLM][VLM evaluation] This paper introduces CAPTURe, a benchmark that evaluates spatial reasoning and world model construction in VLMs by requiring amodal counting of regularly arranged objects unde…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - VLM evaluation
-  - spatial reasoning
-  - amodal completion
-  - occlusion
-  - counting benchmark
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "VLM evaluation"
+  - "spatial reasoning"
+  - "amodal completion"
+  - "occlusion"
+  - "counting benchmark"
 date: 2026-05-08
 content_hash: ec7a1bcec3c28b4e
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Verifying Chain-of-Thought Reasoning via Its Computational Graph
 description: >-
-  [ICLR 2026][LLM Reasoning][Chain-of-Thought] This paper proposes CRV (Circuit-based Reasoning Verification), which constructs interpretable attribution graphs by replacing LLM MLPs with transcoders, extracts structural "fingerprints" of reasoning errors from these graphs, and enables white-box CoT reasoning verification with the capacity to correct erroneous reasoning via causal intervention.
+  [ICLR 2026][LLM Reasoning][Chain-of-Thought] This paper proposes CRV (Circuit-based Reasoning Verification), which constructs interpretable attribution graphs by replacing LLM MLPs with transcoders…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Chain-of-Thought
-  - Attribution Graph
-  - Transcoder
-  - Reasoning Verification
-  - Causal Intervention
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "Chain-of-Thought"
+  - "Attribution Graph"
+  - "Transcoder"
+  - "Reasoning Verification"
+  - "Causal Intervention"
 date: 2026-05-08
 content_hash: 5fbf0bbf66c6b5da
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VeriTrail: Closed-Domain Hallucination Detection with Traceability
 description: >-
-  [ICLR2026][LLM Safety][hallucination detection] This paper proposes VeriTrail — the first closed-domain hallucination detection method that provides traceability for multi-generative-step (MGS) processes. It models the generation process as a DAG and performs layer-by-layer verification along paths, while also introducing the first MGS datasets that include all intermediate outputs with human annotations.
+  [ICLR2026][LLM Safety][hallucination detection] This paper proposes VeriTrail — the first closed-domain hallucination detection method that provides traceability for multi-generative-step (MGS) processes. It models the g…
 tags:
-  - ICLR2026
-  - LLM Safety
-  - hallucination detection
-  - faithfulness evaluation
-  - traceability
-  - multi-generative-step
-  - DAG
+  - "ICLR2026"
+  - "LLM Safety"
+  - "hallucination detection"
+  - "faithfulness evaluation"
+  - "traceability"
+  - "multi-generative-step"
+  - "DAG"
 date: 2026-05-08
 content_hash: 6f20b5c0b2670988
 ---

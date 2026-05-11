@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] COACH: Collaborative Agents for Contextual Highlighting -- A Multi-Agent Framework for Sports Video Analysis
 description: >-
-  [AAAI 2026][LLM Agent][Multi-Agent Systems] This paper proposes COACH — a reconfigurable multi-agent framework built on a shared backbone model — that achieves role specialization via intent-driven strategy orchestration and structured CoT fine-tuning, significantly outperforming generalist models such as Gemini 2.5 Pro on both QA and summarization tasks in badminton video analysis.
+  [AAAI 2026][LLM Agent][Multi-Agent Systems] This paper proposes COACH — a reconfigurable multi-agent framework built on a shared backbone model — that achieves role specialization via intent-driven strategy orchestration…
 tags:
-  - AAAI 2026
-  - LLM Agent
-  - Multi-Agent Systems
-  - Video QA
-  - Video Summarization
-  - Structured Chain-of-Thought
-  - Role Specialization
+  - "AAAI 2026"
+  - "LLM Agent"
+  - "Multi-Agent Systems"
+  - "Video QA"
+  - "Video Summarization"
+  - "Structured Chain-of-Thought"
+  - "Role Specialization"
 date: 2026-05-08
 content_hash: ed8e1cfff018188d
 ---

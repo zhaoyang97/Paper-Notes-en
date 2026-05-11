@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Rare Text Semantics Were Always There in Your Diffusion Transformer
 description: >-
-  [NeurIPS 2025][Image Generation][Diffusion Transformer] This paper discovers that scaling up the variance of text token embeddings before the joint attention blocks in MM-DiT enables diffusion models to render rare text semantics, without any additional training or external modules.
+  [NeurIPS 2025][Image Generation][Diffusion Transformer] This paper discovers that scaling up the variance of text token embeddings before the joint attention blocks in MM-DiT enables diffusion models to render rare text…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Diffusion Transformer
-  - MM-DiT
-  - Rare Semantics
-  - Text-to-Image
-  - Variance Scaling
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Diffusion Transformer"
+  - "MM-DiT"
+  - "Rare Semantics"
+  - "Text-to-Image"
+  - "Variance Scaling"
 date: 2026-05-08
 content_hash: 886047d761704943
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multimodal Generative Flows for LHC Jets
 description: >-
-  [NeurIPS 2025][Image Generation][flow matching] This paper proposes a Transformer-based multimodal flow matching framework (MMF) that jointly models continuous flow matching and continuous-time Markov jump bridges, enabling unified generation of particle kinematics (continuous) and flavor quantum numbers (discrete) in LHC jets.
+  [NeurIPS 2025][Image Generation][flow matching] This paper proposes a Transformer-based multimodal flow matching framework (MMF) that jointly models continuous flow matching and continuous-time Markov jump bridges…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - flow matching
-  - multimodal generation
-  - particle physics
-  - continuous-time Markov jump
-  - transformer
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "flow matching"
+  - "multimodal generation"
+  - "particle physics"
+  - "continuous-time Markov jump"
+  - "transformer"
 date: 2026-05-08
 content_hash: 42c5ee3523aeab61
 ---

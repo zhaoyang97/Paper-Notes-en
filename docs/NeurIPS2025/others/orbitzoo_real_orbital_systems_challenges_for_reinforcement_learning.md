@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] OrbitZoo: Real Orbital Systems Challenges for Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Multi-agent reinforcement learning] This paper presents OrbitZoo, a multi-agent RL environment built on the industrial-grade astrodynamics library Orekit. It integrates high-fidelity orbital dynamics (including atmospheric drag, solar radiation pressure, and third-body effects), a PettingZoo multi-agent interface, and real-time 3D visualization. Validation against real Starlink ephemerides yields a mean MAPE of only 0.16%.
+  [NeurIPS 2025][Multi-agent reinforcement learning] This paper presents OrbitZoo, a multi-agent RL environment built on the industrial-grade astrodynamics library Orekit. It integrates high-fidelity orbital dynamics (incl…
 tags:
-  - NeurIPS 2025
-  - Multi-agent reinforcement learning
-  - orbital dynamics
-  - high-fidelity simulation
-  - collision avoidance
-  - PettingZoo
+  - "NeurIPS 2025"
+  - "Multi-agent reinforcement learning"
+  - "orbital dynamics"
+  - "high-fidelity simulation"
+  - "collision avoidance"
+  - "PettingZoo"
 date: 2026-05-08
 content_hash: b7608a0d09076000
 ---

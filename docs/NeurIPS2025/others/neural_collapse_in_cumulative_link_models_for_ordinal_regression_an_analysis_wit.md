@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Neural Collapse in Cumulative Link Models for Ordinal Regression: An Analysis with Unconstrained Feature Model
 description: >-
-  [NeurIPS 2025][Neural Collapse] This paper extends Neural Collapse (NC) theory to ordinal regression (OR) tasks based on cumulative link models (CLM). Under the unconstrained feature model (UFM) framework, three hallmark properties of Ordinal Neural Collapse (ONC) are formally proven: within-class mean collapse (ONC1), feature collapse onto a one-dimensional subspace (ONC2), and ordered arrangement of latent variables by class (ONC3). In the zero-regularization limit, a concise geometric relationship between latent variables and thresholds is revealed.
+  [NeurIPS 2025][Neural Collapse] This paper extends Neural Collapse (NC) theory to ordinal regression (OR) tasks based on cumulative link models (CLM). Under the unconstrained feature model (UFM) framework…
 tags:
-  - NeurIPS 2025
-  - Neural Collapse
-  - ordinal regression
-  - cumulative link models
-  - unconstrained feature model
-  - regularization
-  - threshold models
+  - "NeurIPS 2025"
+  - "Neural Collapse"
+  - "ordinal regression"
+  - "cumulative link models"
+  - "unconstrained feature model"
+  - "regularization"
+  - "threshold models"
 date: 2026-05-08
 content_hash: d8fde7ec29ac45ec
 ---

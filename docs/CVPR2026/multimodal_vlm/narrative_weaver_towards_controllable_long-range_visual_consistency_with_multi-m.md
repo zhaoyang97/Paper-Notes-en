@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Narrative Weaver: Towards Controllable Long-Range Visual Consistency with Multi-Modal Conditioning
 description: >-
-  [CVPR 2026][Multimodal VLM][Long-range visual consistency] This paper proposes the Narrative Weaver framework, which combines narrative planning via MLLMs with fine-grained generation via diffusion models. Through learnable queries and a dynamic Memory Bank, the framework achieves long-range visually consistent generation under multi-modal conditioning. The authors also introduce EAVSD, the first e-commerce advertising video storyboard dataset, comprising 330K+ images.
+  [CVPR 2026][Multimodal VLM][Long-range visual consistency] This paper proposes the Narrative Weaver framework, which combines narrative planning via MLLMs with fine-grained generation via diffusion models. Through learna…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Long-range visual consistency
-  - narrative generation
-  - AR+Diffusion
-  - Memory Bank
-  - e-commerce advertising
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Long-range visual consistency"
+  - "narrative generation"
+  - "AR+Diffusion"
+  - "Memory Bank"
+  - "e-commerce advertising"
 date: 2026-05-08
 content_hash: 69d3360787cce1aa
 ---

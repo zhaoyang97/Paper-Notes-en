@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HUMOTO: A 4D Dataset of Mocap Human Object Interactions
 description: >-
-  [ICCV 2025][Human Understanding][HOI dataset] This paper presents HUMOTO, a high-fidelity 4D human-object interaction dataset comprising 735 sequences (7,875 seconds at 30fps), covering 63 precisely modeled objects with 72 articulated parts. It introduces an LLM-driven scene scripting pipeline and a multi-sensor capture system, achieving significantly superior hand pose accuracy and interaction quality compared to existing datasets.
+  [ICCV 2025][Human Understanding][HOI dataset] This paper presents HUMOTO, a high-fidelity 4D human-object interaction dataset comprising 735 sequences (7,875 seconds at 30fps)…
 tags:
-  - ICCV 2025
-  - Human Understanding
-  - HOI dataset
-  - motion capture
-  - hand pose
-  - multi-object interaction
-  - LLM script generation
+  - "ICCV 2025"
+  - "Human Understanding"
+  - "HOI dataset"
+  - "motion capture"
+  - "hand pose"
+  - "multi-object interaction"
+  - "LLM script generation"
 date: 2026-05-08
 content_hash: 962ca4df2616e8e2
 ---

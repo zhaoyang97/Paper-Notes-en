@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SpeakerLM: End-to-End Versatile Speaker Diarization and Recognition with Multimodal Large Language Models
 description: >-
-  [AAAI 2026][Multimodal VLM][Speaker Diarization and Recognition] SpeakerLM is the first multimodal large language model designed specifically for end-to-end Speaker Diarization and Recognition (SDR). Through an audio encoder–projector–LLM architecture and a flexible speaker enrollment mechanism, it significantly outperforms cascaded baseline systems on multiple public benchmarks (absolute cpCER reduction up to 13.82%) and demonstrates strong robustness on out-of-domain test sets.
+  [AAAI 2026][Multimodal VLM][Speaker Diarization and Recognition] SpeakerLM is the first multimodal large language model designed specifically for end-to-end Speaker Diarization and Recognition (SDR). Through an audio enc…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Speaker Diarization and Recognition
-  - Multimodal Large Language Models
-  - End-to-End SDR
-  - Speaker Enrollment
-  - Speech Understanding
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Speaker Diarization and Recognition"
+  - "Multimodal Large Language Models"
+  - "End-to-End SDR"
+  - "Speaker Enrollment"
+  - "Speech Understanding"
 date: 2026-05-08
 content_hash: 15fdd13822466a27
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] River-LLM: Large Language Model Seamless Exit Based on KV Share
 description: >-
-  [ACL 2026][Early Exit] This paper proposes River-LLM, a training-free framework that addresses the KV Cache absence problem in Early Exit for decoder-only architectures by constructing a lightweight KV-shared exit channel (Exit River). It leverages state transition similarity to guide exit decisions, achieving 1.71×–2.16× real wall-clock inference speedup with near-lossless generation quality.
+  [ACL 2026][Code Intelligence][Early Exit] This paper proposes River-LLM, a training-free framework that addresses the KV Cache absence problem in Early Exit for decoder-only architectures by constructing a lightweight KV…
 tags:
-  - ACL 2026
-  - Early Exit
-  - KV Cache
-  - Dynamic Inference
-  - Model Acceleration
-  - Quantization
+  - "ACL 2026"
+  - "Code Intelligence"
+  - "Early Exit"
+  - "KV Cache"
+  - "Dynamic Inference"
+  - "Model Acceleration"
+  - "Quantization"
 date: 2026-05-08
 content_hash: 1cb41e0310a45e95
 ---

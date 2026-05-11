@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Vocab Diet: Reshaping the Vocabulary of LLMs via Vector Arithmetic
 description: >-
-  [ACL 2026][Compositional vocabulary] This paper demonstrates that LLMs encode morphological inflections (e.g., walk→walked) as linear directions in embedding space, and proposes a compositional vocabulary design: replacing independently assigned tokens for each surface form with additive combinations of base words and transformation vectors. With the pretrained backbone frozen, only a small adapter module is trained, freeing 10–40% of vocabulary slots for multilingual expansion with negligible impact on downstream performance.
+  [ACL 2026][Multilingual & Machine Translation][Compositional vocabulary] This paper demonstrates that LLMs encode morphological inflections (e.g., walk→walked) as linear directions in embedding space…
 tags:
-  - ACL 2026
-  - Compositional vocabulary
-  - vector arithmetic
-  - morphological transformation
-  - vocabulary compression
-  - multilingual coverage
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "Compositional vocabulary"
+  - "vector arithmetic"
+  - "morphological transformation"
+  - "vocabulary compression"
+  - "multilingual coverage"
 date: 2026-05-08
 content_hash: addb2c0d1f49d106
 ---

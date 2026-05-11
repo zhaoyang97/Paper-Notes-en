@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Backdoor Mitigation by Distance-Driven Detoxification
 description: >-
-  [ICCV 2025][AI Safety][backdoor defense] This paper proposes Distance-Driven Detoxification (D3), which reformulates backdoor defense as a constrained optimization problem — maximizing the distance between the fine-tuned model weights and the poisoned initial weights, subject to a constraint that the clean sample loss does not exceed a threshold. This allows the model to effectively escape the "backdoor region," achieving best or second-best defense performance across 7 state-of-the-art attacks.
+  [ICCV 2025][AI Safety][backdoor defense] This paper proposes Distance-Driven Detoxification (D3), which reformulates backdoor defense as a constrained optimization problem — maximizing the distance between the fine-tuned…
 tags:
-  - ICCV 2025
-  - AI Safety
-  - backdoor defense
-  - fine-tuning
-  - distance-driven
-  - constrained optimization
-  - model purification
+  - "ICCV 2025"
+  - "AI Safety"
+  - "backdoor defense"
+  - "fine-tuning"
+  - "distance-driven"
+  - "constrained optimization"
+  - "model purification"
 date: 2026-05-08
 content_hash: 725e8d846a73a7a0
 ---

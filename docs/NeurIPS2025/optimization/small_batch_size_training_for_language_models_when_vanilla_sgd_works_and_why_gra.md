@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Small Batch Size Training for Language Models: When Vanilla SGD Works, and Why Gradient Accumulation Is Wasteful
 description: >-
-  [NeurIPS 2025][Optimization][small batch training] This paper systematically investigates the behavior of small batch sizes (down to batch size = 1) in language model pre-training and fine-tuning. It proposes a scaling rule for Adam $\beta_2$ based on fixing the "token half-life," demonstrates that small-batch training is stable, shows that vanilla SGD becomes competitive with adaptive optimizers under small batches, and recommends avoiding gradient accumulation.
+  [NeurIPS 2025][Optimization][small batch training] This paper systematically investigates the behavior of small batch sizes (down to batch size = 1) in language model pre-training and fine-tuning. It proposes a scaling r…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - small batch training
-  - SGD
-  - Adam
-  - gradient accumulation
-  - language models
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "small batch training"
+  - "SGD"
+  - "Adam"
+  - "gradient accumulation"
+  - "language models"
 date: 2026-05-08
 content_hash: 2aa9c44b1131d080
 ---

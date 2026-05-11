@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Discovering Divergent Representations between Text-to-Image Models
 description: >-
-  [ICCV 2025][Image Generation][text-to-image model comparison] This paper proposes CompCon (Comparing Concepts), an evolutionary search algorithm that automatically discovers "divergent representations" between two text-to-image models — identifying which visual attributes differ between models and which prompt types trigger these differences — and introduces the ID² benchmark dataset for systematic evaluation.
+  [ICCV 2025][Image Generation][text-to-image model comparison] This paper proposes CompCon (Comparing Concepts), an evolutionary search algorithm that automatically discovers "divergent representations" between two text-t…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - text-to-image model comparison
-  - divergent representation discovery
-  - evolutionary search
-  - visual attributes
-  - model bias
+  - "ICCV 2025"
+  - "Image Generation"
+  - "text-to-image model comparison"
+  - "divergent representation discovery"
+  - "evolutionary search"
+  - "visual attributes"
+  - "model bias"
 date: 2026-05-08
 content_hash: 5c61317cede1a752
 ---

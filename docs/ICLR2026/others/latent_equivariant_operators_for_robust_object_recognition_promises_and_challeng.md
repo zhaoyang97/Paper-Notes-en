@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Latent Equivariant Operators for Robust Object Recognition: Promises and Challenges
 description: >-
-  [ICLR 2026][Equivariant Operators] This paper proposes learning or predefining equivariant shift operators in latent space to handle group transformations such as rotation and translation. At inference time, transformation parameters are estimated via KNN search, and inputs are mapped back to a canonical pose before classification. Experiments on MNIST demonstrate successful extrapolation to out-of-training-range transformations, offering greater flexibility than standard networks and equivariant networks, though scaling to more complex datasets remains an open challenge.
+  [ICLR 2026][Equivariant Operators] This paper proposes learning or predefining equivariant shift operators in latent space to handle group transformations such as rotation and translation. At inference time…
 tags:
-  - ICLR 2026
-  - Equivariant Operators
-  - OOD Generalization
-  - Group Transformations
-  - Latent Space
-  - KNN Inference
+  - "ICLR 2026"
+  - "Equivariant Operators"
+  - "OOD Generalization"
+  - "Group Transformations"
+  - "Latent Space"
+  - "KNN Inference"
 date: 2026-05-08
 content_hash: 93fd1aab7993cade
 ---

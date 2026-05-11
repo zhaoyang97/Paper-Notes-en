@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] On Entropy Control in LLM-RL Algorithms
 description: >-
-  [ICLR 2026][Robotics][Entropy control] This paper provides a theoretical explanation for why conventional entropy regularization is nearly ineffective in LLM-RL (due to the extremely large action space and sparse optimal actions causing entropy bias to overwhelm optimization gains), and proposes AEnt — a method combining clamped entropy (computed over a reduced token space) with an adaptive coefficient — to effectively balance bias and benefit, consistently outperforming baselines on mathematical reasoning tasks.
+  [ICLR 2026][Robotics][Entropy control] This paper provides a theoretical explanation for why conventional entropy regularization is nearly ineffective in LLM-RL (due to the extremely large action space and sparse optimal…
 tags:
-  - ICLR 2026
-  - Robotics
-  - Entropy control
-  - RLVR
-  - LLM-RL
-  - policy optimization
-  - exploration-exploitation
+  - "ICLR 2026"
+  - "Robotics"
+  - "Entropy control"
+  - "RLVR"
+  - "LLM-RL"
+  - "policy optimization"
+  - "exploration-exploitation"
 date: 2026-05-08
 content_hash: fb95e96ff7801051
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Set of Generalized Components to Achieve Effective Poison-only Clean-label Backdoor Attacks with Collaborative Sample Selection and Triggers
 description: >-
-  [NeurIPS 2025][AI Safety][backdoor attack] This paper proposes a set of generalized components (Component A/B/C) that establish a bidirectional collaborative relationship between sample selection and trigger design, simultaneously improving the attack success rate (ASR) and stealthiness of Poison-only Clean-label Backdoor Attacks (PCBA), with strong generalizability across multiple attack types.
+  [NeurIPS 2025][AI Safety][backdoor attack] This paper proposes a set of generalized components (Component A/B/C) that establish a bidirectional collaborative relationship between sample selection and trigger design…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - backdoor attack
-  - clean-label
-  - sample selection
-  - trigger optimization
-  - adversarial robustness
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "backdoor attack"
+  - "clean-label"
+  - "sample selection"
+  - "trigger optimization"
+  - "adversarial robustness"
 date: 2026-05-08
 content_hash: e1e418cf0527b620
 ---

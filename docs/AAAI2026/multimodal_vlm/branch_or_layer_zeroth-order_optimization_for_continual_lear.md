@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Branch, or Layer? Zeroth-Order Optimization for Continual Learning of Vision-Language Models
 description: >-
-  [AAAI 2026][Multimodal VLM][Zeroth-order optimization] This paper systematically investigates the application of zeroth-order (ZO) optimization in PEFT-based vision-language continual learning (VLCL). It finds that naively replacing first-order (FO) optimization with ZO causes training instability, and proposes a progressive ZO-FO hybrid strategy ranging from branch-wise to layer-wise granularity. Building on the theoretical finding that visual modality exhibits larger gradient variance, the paper further proposes MoZO (gradient sign normalization + visual perturbation constraint), achieving state-of-the-art performance across four benchmarks.
+  [AAAI 2026][Multimodal VLM][Zeroth-order optimization] This paper systematically investigates the application of zeroth-order (ZO) optimization in PEFT-based vision-language continual learning (VLCL). It finds that naive…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Zeroth-order optimization
-  - continual learning
-  - CLIP
-  - parameter-efficient fine-tuning
-  - modality-aware optimization
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Zeroth-order optimization"
+  - "continual learning"
+  - "CLIP"
+  - "parameter-efficient fine-tuning"
+  - "modality-aware optimization"
 date: 2026-05-08
 content_hash: 4b187f9bc91b76f4
 ---

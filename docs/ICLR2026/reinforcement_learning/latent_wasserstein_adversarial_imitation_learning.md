@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Latent Wasserstein Adversarial Imitation Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Wasserstein distance] LWAIL leverages ICVF to learn a dynamics-aware latent representation from a small amount of random data, replacing the Euclidean ground metric in Wasserstein-based imitation learning with a latent-space distance. The method achieves expert-level imitation performance using only a single state-only expert trajectory.
+  [ICLR 2026][Reinforcement Learning][Wasserstein distance] LWAIL leverages ICVF to learn a dynamics-aware latent representation from a small amount of random data…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Wasserstein distance
-  - ICVF
-  - dynamics-aware embedding
-  - state-only imitation
-  - few-shot
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Wasserstein distance"
+  - "ICVF"
+  - "dynamics-aware embedding"
+  - "state-only imitation"
+  - "few-shot"
 date: 2026-05-08
 content_hash: 9543bd4920fc32d3
 ---

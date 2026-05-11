@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Combining Boundary Supervision and Segment-Level Regularization for Fine-Grained Action Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Temporal Action Segmentation] This paper proposes a lightweight dual-loss training framework for temporal action segmentation (TAS) that requires only one additional boundary output channel and two auxiliary losses—a boundary regression loss and a CDF segment shape regularization loss. The framework consistently improves F1 and Edit scores across three architectures (MS-TCN, C2F-TCN, and FACT), demonstrating that precise segmentation can be achieved through simple loss design rather than heavier architectural modifications.
+  [CVPR 2026][Segmentation][Temporal Action Segmentation] This paper proposes a lightweight dual-loss training framework for temporal action segmentation (TAS) that requires only one additional boundary output channel and…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Temporal Action Segmentation
-  - Boundary Supervision
-  - Segment-Level Regularization
-  - CDF Loss
-  - Plug-and-Play
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Temporal Action Segmentation"
+  - "Boundary Supervision"
+  - "Segment-Level Regularization"
+  - "CDF Loss"
+  - "Plug-and-Play"
 date: 2026-05-08
 content_hash: 07c174ee3896d7fb
 ---

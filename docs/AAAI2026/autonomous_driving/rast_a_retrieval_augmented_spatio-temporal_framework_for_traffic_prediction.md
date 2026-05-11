@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RAST: A Retrieval Augmented Spatio-Temporal Framework for Traffic Prediction
 description: >-
-  [AAAI2026][Autonomous Driving][traffic prediction] This work introduces the RAG paradigm into spatio-temporal forecasting by maintaining a dual-dimensional memory bank to store historical spatio-temporal patterns and retrieving them at inference time for fusion. The resulting general-purpose retrieval-augmented spatio-temporal prediction framework, RAST, achieves state-of-the-art performance on six traffic datasets while requiring only 1/12 the GPU memory of competing methods.
+  [AAAI2026][Autonomous Driving][traffic prediction] This work introduces the RAG paradigm into spatio-temporal forecasting by maintaining a dual-dimensional memory bank to store historical spatio-temporal patterns and ret…
 tags:
-  - AAAI2026
-  - Autonomous Driving
-  - traffic prediction
-  - retrieval-augmented
-  - spatio-temporal forecasting
-  - memory bank
-  - STGNN
+  - "AAAI2026"
+  - "Autonomous Driving"
+  - "traffic prediction"
+  - "retrieval-augmented"
+  - "spatio-temporal forecasting"
+  - "memory bank"
+  - "STGNN"
 date: 2026-05-08
 content_hash: 026dbceab78edaac
 ---

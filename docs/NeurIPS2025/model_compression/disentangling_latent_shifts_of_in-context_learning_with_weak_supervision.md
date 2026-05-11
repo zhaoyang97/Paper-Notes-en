@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Disentangling Latent Shifts of In-Context Learning with Weak Supervision
 description: >-
-  [NeurIPS 2025][Model Compression][In-Context Learning] WILDA treats ICL as a weak supervision signal and encodes demonstration-induced latent shifts into lightweight LoRA adapters via a teacher-student framework, enabling efficient inference without repeated prompting. The student surpasses the teacher through pseudo-label correction and coverage extension, demonstrating weak-to-strong generalization.
+  [NeurIPS 2025][Model Compression][In-Context Learning] WILDA treats ICL as a weak supervision signal and encodes demonstration-induced latent shifts into lightweight LoRA adapters via a teacher-student framework…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - In-Context Learning
-  - Weak Supervision
-  - Adapter Arithmetic
-  - Latent Shift Disentanglement
-  - LoRA
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "In-Context Learning"
+  - "Weak Supervision"
+  - "Adapter Arithmetic"
+  - "Latent Shift Disentanglement"
+  - "LoRA"
 date: 2026-05-08
 content_hash: 16bbaab823e309fb
 ---

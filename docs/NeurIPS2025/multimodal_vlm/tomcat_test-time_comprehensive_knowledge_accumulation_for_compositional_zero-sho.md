@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TOMCAT: Test-time Comprehensive Knowledge Accumulation for Compositional Zero-Shot Learning
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Compositional Zero-Shot Learning] This paper proposes TOMCAT, which dynamically updates compositional prototypes by accumulating dual-modality (textual and visual) knowledge from unlabeled test data at test time, addressing label distribution shift and achieving state-of-the-art performance on four CZSL benchmarks.
+  [NeurIPS 2025][Multimodal VLM][Compositional Zero-Shot Learning] This paper proposes TOMCAT, which dynamically updates compositional prototypes by accumulating dual-modality (textual and visual) knowledge from unlabeled…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Compositional Zero-Shot Learning
-  - Test-Time Adaptation
-  - Knowledge Accumulation
-  - Multimodal Prototypes
-  - CLIP
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Compositional Zero-Shot Learning"
+  - "Test-Time Adaptation"
+  - "Knowledge Accumulation"
+  - "Multimodal Prototypes"
+  - "CLIP"
 date: 2026-05-08
 content_hash: fdcbff4e45416d33
 ---

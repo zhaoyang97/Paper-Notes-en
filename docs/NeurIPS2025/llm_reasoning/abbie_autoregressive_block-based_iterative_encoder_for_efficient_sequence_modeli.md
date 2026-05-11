@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AbbIE: Autoregressive Block-Based Iterative Encoder for Efficient Sequence Modeling
 description: >-
-  [NeurIPS 2025][LLM Reasoning][recurrent Transformer] This paper proposes AbbIE, an architecture that recursively iterates the intermediate layers (Body) of a decoder-only Transformer. Trained with only 2 iterations, AbbIE achieves upward generalization at inference time by increasing the number of iterations, surpassing standard Transformers on both language modeling perplexity and zero-shot ICL benchmarks, while serving as a drop-in replacement for standard Transformers.
+  [NeurIPS 2025][LLM Reasoning][recurrent Transformer] This paper proposes AbbIE, an architecture that recursively iterates the intermediate layers (Body) of a decoder-only Transformer. Trained with only 2 iterations…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - recurrent Transformer
-  - iterative encoder
-  - test-time scaling
-  - fixed point
-  - upward generalization
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "recurrent Transformer"
+  - "iterative encoder"
+  - "test-time scaling"
+  - "fixed point"
+  - "upward generalization"
 date: 2026-05-08
 content_hash: 297702ed39a48185
 ---

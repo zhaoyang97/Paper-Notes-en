@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MotionShot: Adaptive Motion Transfer across Arbitrary Objects for Text-to-Video Generation
 description: >-
-  [ICCV 2025][Video Generation][motion transfer] This paper proposes MotionShot, a training-free motion transfer framework that achieves high-fidelity motion transfer between arbitrary reference–target object pairs with significant appearance and structural differences, via a two-level motion alignment strategy combining high-level semantic alignment and low-level morphological alignment.
+  [ICCV 2025][Video Generation][motion transfer] This paper proposes MotionShot, a training-free motion transfer framework that achieves high-fidelity motion transfer between arbitrary reference–target object pairs with si…
 tags:
-  - ICCV 2025
-  - Video Generation
-  - motion transfer
-  - text-to-video
-  - training-free
-  - TPS warping
-  - temporal attention guidance
+  - "ICCV 2025"
+  - "Video Generation"
+  - "motion transfer"
+  - "text-to-video"
+  - "training-free"
+  - "TPS warping"
+  - "temporal attention guidance"
 date: 2026-05-08
 content_hash: 85cfab2ec4caa1fd
 ---

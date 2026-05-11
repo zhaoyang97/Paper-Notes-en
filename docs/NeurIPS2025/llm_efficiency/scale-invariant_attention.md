@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Scale-invariant Attention
 description: >-
-  [NeurIPS 2025][LLM Efficiency][scale invariance] Drawing inspiration from the scale invariance of natural images, this paper proposes a position-dependent affine transformation on attention logits—comprising a multiplicative scaling and an additive shift—such that the total attention weight and sparsity over any token range satisfy scale invariance. This enables zero-shot generalization from short-context training to long-context inference (4k→64k) with a single hyperparameter $\tau$.
+  [NeurIPS 2025][LLM Efficiency][scale invariance] Drawing inspiration from the scale invariance of natural images, this paper proposes a position-dependent affine transformation on attention logits—comprising a multiplica…
 tags:
-  - NeurIPS 2025
-  - LLM Efficiency
-  - scale invariance
-  - long context
-  - attention logits
-  - zero-shot length generalization
-  - pp-RoPE
-  - entropy control
+  - "NeurIPS 2025"
+  - "LLM Efficiency"
+  - "scale invariance"
+  - "long context"
+  - "attention logits"
+  - "zero-shot length generalization"
+  - "pp-RoPE"
+  - "entropy control"
 date: 2026-05-08
 content_hash: c9185aa5b05e91a7
 ---

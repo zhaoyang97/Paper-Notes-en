@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] When Personalization Tricks Detectors: The Feature-Inversion Trap in Machine-Generated Text Detection
 description: >-
-  [ACL 2026][AIGC Detection][machine-generated text detection] This paper reveals the "feature-inversion trap" in MGT detectors under personalization—features that distinguish human-written and machine-generated text in the general domain get inverted in the personalized domain, causing detector performance to plummet or even flip. The proposed StyloCheck framework predicts cross-domain performance changes by quantifying detector reliance on inverted features, achieving prediction correlation above 0.85.
+  [ACL 2026][AIGC Detection][machine-generated text detection] This paper reveals the "feature-inversion trap" in MGT detectors under personalization—features that distinguish human-written and machine-generated text in th…
 tags:
-  - ACL 2026
-  - AIGC Detection
-  - machine-generated text detection
-  - personalized text
-  - feature inversion
-  - style transfer
-  - robustness
+  - "ACL 2026"
+  - "AIGC Detection"
+  - "machine-generated text detection"
+  - "personalized text"
+  - "feature inversion"
+  - "style transfer"
+  - "robustness"
 date: 2026-05-08
 content_hash: 4d10f6847fe29a54
 ---

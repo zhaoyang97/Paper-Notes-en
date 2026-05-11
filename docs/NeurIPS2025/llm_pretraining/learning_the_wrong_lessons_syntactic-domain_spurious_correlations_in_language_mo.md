@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Learning the Wrong Lessons: Syntactic-Domain Spurious Correlations in Language Models
 description: >-
-  [NeurIPS 2025][LLM Pretraining][spurious correlations] This paper reveals that LLMs learn spurious correlations between syntactic templates (PoS n-grams) and domains, leading to sharp performance drops in cross-domain settings. Furthermore, this correlation can be exploited to bypass safety refusal mechanisms, reducing the refusal rate from 40% to 2.5% on OLMo-2.
+  [NeurIPS 2025][LLM Pretraining][spurious correlations] This paper reveals that LLMs learn spurious correlations between syntactic templates (PoS n-grams) and domains…
 tags:
-  - NeurIPS 2025
-  - LLM Pretraining
-  - spurious correlations
-  - syntactic templates
-  - LLM safety
-  - jailbreak attacks
-  - instruction fine-tuning
-  - domain generalization
+  - "NeurIPS 2025"
+  - "LLM Pretraining"
+  - "spurious correlations"
+  - "syntactic templates"
+  - "LLM safety"
+  - "jailbreak attacks"
+  - "instruction fine-tuning"
+  - "domain generalization"
 date: 2026-05-08
 content_hash: 62f6e944e07ce388
 ---

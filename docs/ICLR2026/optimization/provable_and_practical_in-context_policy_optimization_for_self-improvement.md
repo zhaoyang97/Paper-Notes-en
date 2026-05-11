@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Provable and Practical In-Context Policy Optimization for Self-Improvement
 description: >-
-  [ICLR 2026][Optimization][in-context learning] This paper proposes the In-Context Policy Optimization (ICPO) framework, theoretically proving that a single-layer linear self-attention Transformer, after sufficient pretraining, can simulate a policy optimization algorithm in context. Building on this, the paper designs a practical ME-ICPO algorithm that achieves multi-round test-time self-reflection via minimum-entropy selection and self-evaluation rewards, yielding significant gains on mathematical reasoning tasks (Qwen2.5-Math-7B improves from 11% to 30% on AIME 2024).
+  [ICLR 2026][Optimization][in-context learning] This paper proposes the In-Context Policy Optimization (ICPO) framework, theoretically proving that a single-layer linear self-attention Transformer…
 tags:
-  - ICLR 2026
-  - Optimization
-  - in-context learning
-  - policy optimization
-  - test-time scaling
-  - self-reflection
-  - mathematical reasoning
+  - "ICLR 2026"
+  - "Optimization"
+  - "in-context learning"
+  - "policy optimization"
+  - "test-time scaling"
+  - "self-reflection"
+  - "mathematical reasoning"
 date: 2026-05-08
 content_hash: ec091d4ee86794c9
 ---

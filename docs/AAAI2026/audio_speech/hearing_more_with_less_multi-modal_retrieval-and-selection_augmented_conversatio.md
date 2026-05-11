@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Hearing More with Less: Multi-Modal Retrieval-and-Selection Augmented Conversational LLM-Based ASR
 description: >-
-  [AAAI 2026][Audio & Speech][Conversational ASR] MARS proposes a multimodal retrieval-and-selection approach to identify the most relevant historical context for conversational LLM-ASR—rather than relying on a fixed number of preceding utterances or the entire history—achieving state-of-the-art performance with only 1.5K hours of training data, surpassing TEA-ASLP trained on 179K hours.
+  [AAAI 2026][Audio & Speech][Conversational ASR] MARS proposes a multimodal retrieval-and-selection approach to identify the most relevant historical context for conversational LLM-ASR—rather than relying on a fixed numbe…
 tags:
-  - AAAI 2026
+  - "AAAI 2026"
   - "Audio & Speech"
-  - Conversational ASR
-  - LLM-ASR
-  - Multimodal Retrieval
-  - RAG
-  - Historical Context Selection
+  - "Conversational ASR"
+  - "LLM-ASR"
+  - "Multimodal Retrieval"
+  - "RAG"
+  - "Historical Context Selection"
 date: 2026-05-08
 content_hash: 962677a3dffb6e70
 ---

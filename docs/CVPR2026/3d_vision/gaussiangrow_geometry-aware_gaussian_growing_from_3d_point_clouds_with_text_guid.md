@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GaussianGrow: Geometry-aware Gaussian Growing from 3D Point Clouds with Text Guidance
 description: >-
-  [CVPR 2026][3D Vision][3D Gaussian Splatting] This paper proposes GaussianGrow, which replaces the conventional paradigm of jointly predicting geometry and appearance from scratch by "growing" 3D Gaussians from readily available 3D point clouds. It employs a geometry-aware multi-view diffusion model to generate consistent appearance supervision, and addresses view-fusion artifacts and invisible-region problems through an overlap-region detection mechanism coupled with an iterative inpainting strategy, achieving substantial improvements over state-of-the-art methods on both synthetic and real-scan point clouds.
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] This paper proposes GaussianGrow, which replaces the conventional paradigm of jointly predicting geometry and appearance from scratch by "growing" 3D Gaussians from readily a…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - Point Clouds
-  - Text Guidance
-  - Multi-view Diffusion
-  - Appearance Generation
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Point Clouds"
+  - "Text Guidance"
+  - "Multi-view Diffusion"
+  - "Appearance Generation"
 date: 2026-05-08
 content_hash: cd4a6e5d2e3ee4f4
 ---

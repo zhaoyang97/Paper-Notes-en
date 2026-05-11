@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] MeshA*: Efficient Path Planning With Motion Primitives
 description: >-
-  [AAAI 2026][3D Vision][motion primitives] This paper proposes MeshA*, an algorithm that reformulates lattice-based path planning from "searching at the motion primitive level" to "searching at the grid cell level while simultaneously fitting primitive sequences." By defining a novel search space based on *extended cells*, MeshA* achieves 1.5×–2× runtime speedup over standard LBA* while preserving completeness and optimality guarantees.
+  [AAAI 2026][3D Vision][motion primitives] This paper proposes MeshA*, an algorithm that reformulates lattice-based path planning from "searching at the motion primitive level" to "searching at the grid cell level while s…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - motion primitives
-  - lattice-based planning
+  - "AAAI 2026"
+  - "3D Vision"
+  - "motion primitives"
+  - "lattice-based planning"
   - "A*"
-  - extended cell
-  - branching factor reduction
-  - mobile robots
+  - "extended cell"
+  - "branching factor reduction"
+  - "mobile robots"
 date: 2026-05-08
 content_hash: 18c0d3879a41c537
 ---

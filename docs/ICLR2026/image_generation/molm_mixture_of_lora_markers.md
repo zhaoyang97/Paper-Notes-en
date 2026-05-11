@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MOLM: Mixture of LoRA Markers
 description: >-
-  [ICLR 2026][Image Generation][Watermarking] This paper proposes MOLM, a watermarking framework that reinterprets LoRA adapters as watermark carriers. A binary key-driven routing mechanism embeds verifiable and robust watermarks into a frozen generative model without per-key retraining.
+  [ICLR 2026][Image Generation][Watermarking] This paper proposes MOLM, a watermarking framework that reinterprets LoRA adapters as watermark carriers. A binary key-driven routing mechanism embeds verifiable and robust wat…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Watermarking
-  - LoRA
-  - Diffusion Models
-  - Routing Mechanism
-  - Robustness
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Watermarking"
+  - "LoRA"
+  - "Diffusion Models"
+  - "Routing Mechanism"
+  - "Robustness"
 date: 2026-05-08
 content_hash: 6293baf8d3331179
 ---

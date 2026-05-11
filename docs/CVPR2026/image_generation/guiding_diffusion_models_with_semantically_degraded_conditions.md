@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Guiding Diffusion Models with Semantically Degraded Conditions
 description: >-
-  [CVPR 2026][Image Generation][Classifier-Free Guidance] This paper proposes Condition-Degradation Guidance (CDG), which replaces the null prompt $\emptyset$ in CFG with a semantically degraded condition $\boldsymbol{c}_{\text{deg}}$, transforming the guidance paradigm from a coarse-grained "good vs. empty" contrast to a fine-grained "good vs. slightly worse" contrast. Through a stratified degradation strategy—first degrading content tokens, then context-aggregating tokens—CDG constructs adaptive negative samples and achieves plug-and-play improvements in compositional generation accuracy on models including SD3, FLUX, and Qwen-Image, with negligible additional overhead.
+  [CVPR 2026][Image Generation][Classifier-Free Guidance] This paper proposes Condition-Degradation Guidance (CDG), which replaces the null prompt $\emptyset$ in CFG with a semantically degraded condition $\boldsymbol{c}_{…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Classifier-Free Guidance
-  - Condition Degradation Guidance
-  - Text-to-Image
-  - Diffusion Models
-  - Compositional Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Classifier-Free Guidance"
+  - "Condition Degradation Guidance"
+  - "Text-to-Image"
+  - "Diffusion Models"
+  - "Compositional Generation"
 date: 2026-05-08
 content_hash: 840aafda2bbe6220
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Contamination Detection for VLMs using Multi-Modal Semantic Perturbation
 description: >-
-  [ICLR2026][Multimodal VLM][data contamination] This paper proposes a multi-modal semantic perturbation framework for detecting data contamination in VLMs. It uses an LLM to generate dense captions and Flux ControlNet to alter answer-relevant semantic elements while preserving image composition. Contaminated models suffer sharp performance drops on perturbed samples due to memorization of original image-text pairs, whereas clean models are unaffected thanks to genuine reasoning ability. The paper also provides the first systematic validation that most existing LLM-based contamination detection methods are unreliable in VLM settings.
+  [ICLR2026][Multimodal VLM][data contamination] This paper proposes a multi-modal semantic perturbation framework for detecting data contamination in VLMs. It uses an LLM to generate dense captions and Flux ControlNet to…
 tags:
-  - ICLR2026
-  - Multimodal VLM
-  - data contamination
-  - VLM
-  - benchmark leakage
-  - semantic perturbation
-  - ControlNet
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "data contamination"
+  - "VLM"
+  - "benchmark leakage"
+  - "semantic perturbation"
+  - "ControlNet"
 date: 2026-05-08
 content_hash: b85adb75432afbcf
 ---

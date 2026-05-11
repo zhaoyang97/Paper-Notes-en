@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Hierarchical Retrieval: The Geometry and a Pretrain-Finetune Recipe
 description: >-
-  [NeurIPS 2025][hierarchical retrieval] This paper investigates the feasibility of Dual Encoders (DE) for Hierarchical Retrieval (HR), theoretically proving that embedding dimensionality need only grow linearly with hierarchy depth and logarithmically with document count. After identifying the "lost-in-the-long-distance" phenomenon, the paper proposes a pretrain-finetune strategy that improves long-distance recall from 19% to 76% on WordNet.
+  [NeurIPS 2025][Information Retrieval & RAG][hierarchical retrieval] This paper investigates the feasibility of Dual Encoders (DE) for Hierarchical Retrieval (HR)…
 tags:
-  - NeurIPS 2025
-  - hierarchical retrieval
-  - dual encoder
-  - embedding geometry
-  - pretrain-finetune
-  - long-distance retrieval
+  - "NeurIPS 2025"
+  - "Information Retrieval & RAG"
+  - "hierarchical retrieval"
+  - "dual encoder"
+  - "embedding geometry"
+  - "pretrain-finetune"
+  - "long-distance retrieval"
 date: 2026-05-08
 content_hash: 9d5bef2d0725670b
 ---

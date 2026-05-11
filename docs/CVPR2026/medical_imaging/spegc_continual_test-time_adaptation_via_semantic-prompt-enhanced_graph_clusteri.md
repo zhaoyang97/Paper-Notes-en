@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] SPEGC: Continual Test-Time Adaptation via Semantic-Prompt-Enhanced Graph Clustering for Medical Image Segmentation
 description: >-
-  [CVPR2026][Medical Imaging][Continual Test-Time Adaptation] This paper proposes the SPEGC framework, which combines semantic-prompt-enhanced feature representations with a differentiable graph clustering solver to refine raw similarity matrices into higher-order structural representations. These representations guide the adaptation of medical image segmentation models to continuously shifting target domains, effectively mitigating error accumulation and catastrophic forgetting.
+  [CVPR2026][Medical Imaging][Continual Test-Time Adaptation] This paper proposes the SPEGC framework, which combines semantic-prompt-enhanced feature representations with a differentiable graph clustering solver to refine…
 tags:
-  - CVPR2026
-  - Medical Imaging
-  - Continual Test-Time Adaptation
-  - Graph Clustering
-  - Semantic Prompt
-  - Optimal Transport
-  - Domain Shift
-  - Retinal/Polyp Segmentation
+  - "CVPR2026"
+  - "Medical Imaging"
+  - "Continual Test-Time Adaptation"
+  - "Graph Clustering"
+  - "Semantic Prompt"
+  - "Optimal Transport"
+  - "Domain Shift"
+  - "Retinal/Polyp Segmentation"
 date: 2026-05-08
 content_hash: 959c61e475018dd6
 ---

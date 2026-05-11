@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] IsoCLIP: Decomposing CLIP Projectors for Efficient Intra-modal Alignment
 description: >-
-  [CVPR 2026][Multimodal VLM][CLIP] IsoCLIP provides a theoretical analysis of the CLIP projection head structure, revealing that the cosine similarity computation implicitly contains an inter-modal operator $\Psi = W_i^\top W_t$ responsible for cross-modal alignment, and an intra-modal operator $\Psi_i = W_i^\top W_i$ responsible solely for normalization without promoting intra-modal alignment. By applying singular value decomposition to $\Psi$, the method identifies an approximately isotropic alignment subspace and, by removing anisotropic directions, significantly improves intra-modal retrieval and classification performance without any training.
+  [CVPR 2026][Multimodal VLM][CLIP] IsoCLIP provides a theoretical analysis of the CLIP projection head structure, revealing that the cosine similarity computation implicitly contains an inter-modal operator $\Psi = W_i^\t…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - CLIP
-  - intra-modal alignment
-  - projection head analysis
-  - singular value decomposition
-  - isotropic subspace
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "CLIP"
+  - "intra-modal alignment"
+  - "projection head analysis"
+  - "singular value decomposition"
+  - "isotropic subspace"
 date: 2026-05-08
 content_hash: 3af9396f40149bac
 ---

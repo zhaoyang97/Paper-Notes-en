@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Fair Model-Based Clustering
 description: >-
-  [AAAI 2026][AI Safety][Fair clustering] This paper proposes FMC, a fair clustering algorithm based on finite mixture models. By imposing fairness constraints on model parameters rather than sample-level assignments, FMC achieves scalable fair clustering whose parameter count is independent of the sample size $N$. It supports mini-batch learning and categorical data, and substantially outperforms existing methods on large-scale datasets.
+  [AAAI 2026][AI Safety][Fair clustering] This paper proposes FMC, a fair clustering algorithm based on finite mixture models. By imposing fairness constraints on model parameters rather than sample-level assignments…
 tags:
-  - AAAI 2026
-  - AI Safety
-  - Fair clustering
-  - finite mixture models
-  - EM algorithm
-  - mini-batch learning
-  - scalability
+  - "AAAI 2026"
+  - "AI Safety"
+  - "Fair clustering"
+  - "finite mixture models"
+  - "EM algorithm"
+  - "mini-batch learning"
+  - "scalability"
 date: 2026-05-08
 content_hash: baee506651529a28
 ---

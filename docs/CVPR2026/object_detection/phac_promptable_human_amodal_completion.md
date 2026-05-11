@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PHAC: Promptable Human Amodal Completion
 description: >-
-  [CVPR 2026][Object Detection][human amodal completion] This paper introduces Promptable Human Amodal Completion (PHAC), a novel task that accepts point-based user prompts (pose/bounding box) via dedicated ControlNet modules to inject conditional signals, and designs an inpainting-based refinement module to preserve the appearance of visible regions, achieving high-quality and controllable completion of occluded human images.
+  [CVPR 2026][Object Detection][human amodal completion] This paper introduces Promptable Human Amodal Completion (PHAC), a novel task that accepts point-based user prompts (pose/bounding box) via dedicated ControlNet modu…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - human amodal completion
-  - diffusion model
-  - ControlNet
-  - pose-guided generation
-  - image inpainting
+  - "CVPR 2026"
+  - "Object Detection"
+  - "human amodal completion"
+  - "diffusion model"
+  - "ControlNet"
+  - "pose-guided generation"
+  - "image inpainting"
 date: 2026-05-08
 content_hash: 1f24b044cb682a55
 ---

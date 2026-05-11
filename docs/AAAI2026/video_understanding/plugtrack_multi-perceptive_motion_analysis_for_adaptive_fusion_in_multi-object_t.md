@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PlugTrack: Multi-Perceptive Motion Analysis for Adaptive Fusion in Multi-Object Tracking
 description: >-
-  [AAAI 2026][Video Understanding][Multi-Object Tracking] This paper proposes PlugTrack, a framework that achieves, for the first time, adaptive fusion of Kalman filters and data-driven motion predictors via a Context Motion Encoder (CME) and an Adaptive Blending factor Generator (ABG), yielding significant improvements under both linear and nonlinear motion scenarios.
+  [AAAI 2026][Video Understanding][Multi-Object Tracking] This paper proposes PlugTrack, a framework that achieves, for the first time, adaptive fusion of Kalman filters and data-driven motion predictors via a Context Moti…
 tags:
-  - AAAI 2026
-  - Video Understanding
-  - Multi-Object Tracking
-  - Kalman Filter
-  - Adaptive Fusion
-  - Motion Prediction
-  - Plug-and-Play
+  - "AAAI 2026"
+  - "Video Understanding"
+  - "Multi-Object Tracking"
+  - "Kalman Filter"
+  - "Adaptive Fusion"
+  - "Motion Prediction"
+  - "Plug-and-Play"
 date: 2026-05-08
 content_hash: 3aa19425f7ff5aa6
 ---

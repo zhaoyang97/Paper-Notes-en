@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unifying Text Semantics and Graph Structures for Temporal Text-attributed Graphs with LLMs
 description: >-
-  [NeurIPS 2025][Graph Learning][Temporal Text-Attributed Graphs] This paper proposes the Cross framework, which employs LLMs to dynamically summarize the semantic evolution of node neighborhoods at strategically sampled temporal points (Temporal Reasoning Chain), then bidirectionally fuses text semantics and graph structural temporal information via a semantic-structural co-encoder. The approach achieves an average MRR improvement of 24.7% on temporal link prediction and a 3.7% AUC gain on an industrial dataset (WeChat).
+  [NeurIPS 2025][Graph Learning][Temporal Text-Attributed Graphs] This paper proposes the Cross framework, which employs LLMs to dynamically summarize the semantic evolution of node neighborhoods at strategically sampled t…
 tags:
-  - NeurIPS 2025
-  - Graph Learning
-  - Temporal Text-Attributed Graphs
-  - LLM
-  - Semantic-Structural Co-Encoding
-  - Link Prediction
-  - Cross Framework
+  - "NeurIPS 2025"
+  - "Graph Learning"
+  - "Temporal Text-Attributed Graphs"
+  - "LLM"
+  - "Semantic-Structural Co-Encoding"
+  - "Link Prediction"
+  - "Cross Framework"
 date: 2026-05-08
 content_hash: 1e1f8e460edcdcc7
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] ChatInject: Abusing Chat Templates for Prompt Injection in LLM Agents
 description: >-
-  [ICLR 2026][LLM Agent][prompt injection] This paper exposes a structural vulnerability in chat templates used by LLM agents: by embedding forged role labels (e.g., `<system>`, `<user>`) in tool-returned data, attackers can hijack the model's role hierarchy perception and disguise malicious instructions as high-priority directives, raising ASR from 5–15% to 32–52%.
+  [ICLR 2026][LLM Agent][prompt injection] This paper exposes a structural vulnerability in chat templates used by LLM agents: by embedding forged role labels (e.g., `<system>`, `<user>`) in tool-returned data…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - prompt injection
-  - chat template
-  - role hierarchy
-  - multi-turn attack
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "prompt injection"
+  - "chat template"
+  - "role hierarchy"
+  - "multi-turn attack"
 date: 2026-05-08
 content_hash: f24a55eedfce69a5
 ---

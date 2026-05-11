@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] LLM Agents for Knowledge Discovery in Atomic Layer Processing
 description: >-
-  [NeurIPS 2025][LLM Agent] By having an LLM agent control a simulated chemical reactor (a black-box function), this work demonstrates that agents can explore, discover, and summarize the rules of an unknown chemical system through trial and error without any prior knowledge, revealing both the capabilities and limitations of agents for open-ended scientific discovery.
+  [NeurIPS 2025][LLM Agent][knowledge discovery] By having an LLM agent control a simulated chemical reactor (a black-box function), this work demonstrates that agents can explore, discover…
 tags:
-  - NeurIPS 2025
-  - LLM Agent
-  - knowledge discovery
-  - atomic layer processing
-  - scientific exploration
-  - tool-augmented reasoning
+  - "NeurIPS 2025"
+  - "LLM Agent"
+  - "knowledge discovery"
+  - "atomic layer processing"
+  - "scientific exploration"
+  - "tool-augmented reasoning"
 date: 2026-05-08
 content_hash: bbbbd98c60fdaa26
 ---

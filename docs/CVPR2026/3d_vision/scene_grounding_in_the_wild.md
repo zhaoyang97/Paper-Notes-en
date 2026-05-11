@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Scene Grounding In the Wild
 description: >-
-  [CVPR 2026][3D Vision][Scene Grounding] This paper proposes a semantic feature-based inverse optimization framework that aligns in-the-wild local 3D reconstructions (SfM) to a complete pseudo-synthetic reference model (e.g., Google Earth Studio). By leveraging DINOv2 features and robust optimization, the method addresses large domain gaps and achieves globally consistent fusion of non-overlapping local reconstructions.
+  [CVPR 2026][3D Vision][Scene Grounding] This paper proposes a semantic feature-based inverse optimization framework that aligns in-the-wild local 3D reconstructions (SfM) to a complete pseudo-synthetic reference model (e…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Scene Grounding
-  - 3D Reconstruction
-  - Gaussian Splatting
-  - Semantic Features
-  - Cross-Domain Alignment
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Scene Grounding"
+  - "3D Reconstruction"
+  - "Gaussian Splatting"
+  - "Semantic Features"
+  - "Cross-Domain Alignment"
 date: 2026-05-08
 content_hash: 06052b3d0abb3aa8
 ---

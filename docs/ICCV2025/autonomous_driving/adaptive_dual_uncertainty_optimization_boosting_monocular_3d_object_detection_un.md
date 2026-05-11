@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Adaptive Dual Uncertainty Optimization: Boosting Monocular 3D Object Detection under Test-Time Shifts
 description: >-
-  [ICCV 2025][Autonomous Driving][Monocular 3D Detection] This paper proposes DUO (Dual Uncertainty Optimization), the first test-time adaptation framework that jointly minimizes semantic uncertainty and geometric uncertainty, achieving robust monocular 3D object detection via conjugate focal loss and normal field constraints.
+  [ICCV 2025][Autonomous Driving][Monocular 3D Detection] This paper proposes DUO (Dual Uncertainty Optimization), the first test-time adaptation framework that jointly minimizes semantic uncertainty and geometric uncertai…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - Monocular 3D Detection
-  - Test-Time Adaptation
-  - Uncertainty Optimization
-  - Domain Shift
-  - Convex Optimization
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "Monocular 3D Detection"
+  - "Test-Time Adaptation"
+  - "Uncertainty Optimization"
+  - "Domain Shift"
+  - "Convex Optimization"
 date: 2026-05-08
 content_hash: d35073ca4fbc427d
 ---

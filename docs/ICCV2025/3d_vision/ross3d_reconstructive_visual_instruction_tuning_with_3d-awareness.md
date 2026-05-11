@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Ross3D: Reconstructive Visual Instruction Tuning with 3D-Awareness
 description: >-
-  [ICCV 2025][3D Vision][3D scene understanding] Ross3D introduces 3D-aware visual reconstruction pretraining tasks—cross-view reconstruction and global BEV reconstruction—into the training pipeline of 2D large multimodal models (LMMs). Without modifying the input representation, it significantly improves 3D scene understanding through output-level supervision signals, achieving state-of-the-art performance on five benchmarks: SQA3D, ScanQA, Scan2Cap, ScanRefer, and Multi3DRefer.
+  [ICCV 2025][3D Vision][3D scene understanding] Ross3D introduces 3D-aware visual reconstruction pretraining tasks—cross-view reconstruction and global BEV reconstruction—into the training pipeline of 2D large multimodal…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D scene understanding
-  - large multimodal models
-  - visual reconstruction supervision
-  - cross-view reconstruction
-  - bird's-eye-view reconstruction
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D scene understanding"
+  - "large multimodal models"
+  - "visual reconstruction supervision"
+  - "cross-view reconstruction"
+  - "bird's-eye-view reconstruction"
 date: 2026-05-08
 content_hash: 9c0a93c221c1005a
 ---

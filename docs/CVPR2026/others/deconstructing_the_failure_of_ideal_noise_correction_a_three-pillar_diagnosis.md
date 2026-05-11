@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Deconstructing the Failure of Ideal Noise Correction: A Three-Pillar Diagnosis
 description: >-
-  [CVPR2026][Learning with noisy labels] Through controlled experiments, this paper demonstrates that even given a perfect noise transition matrix $T$, forward correction (FC) still suffers from performance collapse in the late stages of training. The paper systematically diagnoses the root causes of this failure from three complementary perspectives: macroscopic convergence states, microscopic optimization dynamics, and information theory.
+  [CVPR2026][Learning with noisy labels] Through controlled experiments, this paper demonstrates that even given a perfect noise transition matrix $T$…
 tags:
-  - CVPR2026
-  - Learning with noisy labels
-  - noise transition matrix
-  - forward correction
-  - statistical consistency
-  - information theory
+  - "CVPR2026"
+  - "Learning with noisy labels"
+  - "noise transition matrix"
+  - "forward correction"
+  - "statistical consistency"
+  - "information theory"
 date: 2026-05-08
 content_hash: dc5570414cfdbb59
 ---

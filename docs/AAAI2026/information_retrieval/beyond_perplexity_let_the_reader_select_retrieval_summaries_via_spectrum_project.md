@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Beyond Perplexity: Let the Reader Select Retrieval Summaries via Spectrum Projection Score
 description: >-
-  [AAAI 2026][Retrieval-Augmented Generation] This paper proposes Spectrum Projection Score (SPS), a training-free metric that evaluates retrieval summary quality by measuring the alignment between summary token embeddings and the principal subspace of the reader LLM, serving as a replacement for conventional perplexity-based metrics. Combined with the xCompress inference-time controller, SPS achieves substantial improvements over perplexity-based methods across 5 QA datasets (HotpotQA EM +3.6).
+  [AAAI 2026][Information Retrieval & RAG][Retrieval-Augmented Generation] This paper proposes Spectrum Projection Score (SPS), a training-free metric that evaluates retrieval summary quality by measuring the alignment bet…
 tags:
-  - AAAI 2026
-  - Retrieval-Augmented Generation
-  - Perplexity
-  - Spectrum Projection Score
-  - Summary Compression
-  - Representation Space Alignment
+  - "AAAI 2026"
+  - "Information Retrieval & RAG"
+  - "Retrieval-Augmented Generation"
+  - "Perplexity"
+  - "Spectrum Projection Score"
+  - "Summary Compression"
+  - "Representation Space Alignment"
 date: 2026-05-08
 content_hash: a8d97390d70d0238
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] D2Dewarp: Dual Dimensions Geometric Representation Learning Based Document Image Dewarping
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Document Dewarping] This paper proposes D2Dewarp—the first document dewarping method that learns geometric representations from both horizontal and vertical dimensions. A UNet with dual decoders predicts horizontal lines (top/bottom boundaries of documents, tables, and text lines) and vertical lines (left/right boundaries) respectively. An HV Fusion Module cross-fuses features from both directions via mixed attention. The authors also introduce the DocDewarpHV dataset containing 114K images with dual-dimension annotations.
+  [CVPR 2026][Self-Supervised Learning][Document Dewarping] This paper proposes D2Dewarp—the first document dewarping method that learns geometric representations from both horizontal and vertical dimensions. A UNet with d…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - Document Dewarping
-  - Dual Dimension
-  - Geometric Lines
-  - UNet
-  - HV Fusion
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Document Dewarping"
+  - "Dual Dimension"
+  - "Geometric Lines"
+  - "UNet"
+  - "HV Fusion"
 date: 2026-05-08
 content_hash: aab685c3af02747d
 ---

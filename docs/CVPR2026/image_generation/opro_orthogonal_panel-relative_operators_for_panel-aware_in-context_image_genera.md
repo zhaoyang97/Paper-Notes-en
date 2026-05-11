@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OPRO: Orthogonal Panel-Relative Operators for Panel-Aware In-Context Image Generation
 description: >-
-  [CVPR 2026][Image Generation][In-context image generation] This paper proposes OPRO, a parameter-efficient adaptation method based on orthogonal matrices. By applying learnable panel-specific orthogonal operators to position-aware queries and keys of a frozen backbone, OPRO explicitly modulates cross-panel attention interactions while preserving the pre-trained same-panel synthesis behavior. With only 0.93M additional parameters, it significantly improves the editing quality of multiple state-of-the-art methods on MagicBrush.
+  [CVPR 2026][Image Generation][In-context image generation] This paper proposes OPRO, a parameter-efficient adaptation method based on orthogonal matrices. By applying learnable panel-specific orthogonal operators to posi…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - In-context image generation
-  - orthogonal operators
-  - parameter-efficient fine-tuning
-  - panel-aware attention
-  - diffusion Transformer
+  - "CVPR 2026"
+  - "Image Generation"
+  - "In-context image generation"
+  - "orthogonal operators"
+  - "parameter-efficient fine-tuning"
+  - "panel-aware attention"
+  - "diffusion Transformer"
 date: 2026-05-08
 content_hash: 91e8113985bd9e5c
 ---

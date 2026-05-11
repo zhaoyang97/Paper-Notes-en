@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] ViDia2Std: A Parallel Corpus and Methods for Low-Resource Vietnamese Dialect-to-Standard Translation
 description: >-
-  [AAAI 2026][Vietnamese dialect] ViDia2Std constructs the first manually annotated Vietnamese dialect-to-standard parallel corpus covering all 63 provinces of Vietnam (13,000+ sentence pairs), evaluates multiple seq2seq models on the dialect normalization task, and demonstrates that dialect normalization as a preprocessing step significantly improves downstream task performance in machine translation and sentiment analysis.
+  [AAAI 2026][Multilingual & Machine Translation][Vietnamese dialect] ViDia2Std constructs the first manually annotated Vietnamese dialect-to-standard parallel corpus covering all 63 provinces of Vietnam (13…
 tags:
-  - AAAI 2026
-  - Vietnamese dialect
-  - dialect normalization
-  - low-resource language
-  - parallel corpus
-  - sequence-to-sequence model
+  - "AAAI 2026"
+  - "Multilingual & Machine Translation"
+  - "Vietnamese dialect"
+  - "dialect normalization"
+  - "low-resource language"
+  - "parallel corpus"
+  - "sequence-to-sequence model"
 date: 2026-05-08
 content_hash: 1667bb0ef6c5299d
 ---

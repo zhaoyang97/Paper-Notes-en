@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GGPT: Geometry-Grounded Point Transformer
 description: >-
-  [CVPR 2026][3D Vision][sparse-view 3D reconstruction] This paper proposes the GGPT framework, which first obtains geometrically consistent sparse point clouds via an improved lightweight SfM pipeline (dense matching + sparse BA + DLT triangulation), then employs Point Transformer V3 to jointly process sparse geometric guidance and feed-forward dense predictions directly in 3D space for residual refinement. Trained exclusively on ScanNet++, GGPT significantly improves multiple feed-forward 3D reconstruction models across architectures and datasets without any fine-tuning.
+  [CVPR 2026][3D Vision][sparse-view 3D reconstruction] This paper proposes the GGPT framework, which first obtains geometrically consistent sparse point clouds via an improved lightweight SfM pipeline (dense matching + sp…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - sparse-view 3D reconstruction
-  - Point Transformer
-  - SfM
-  - feed-forward
-  - multi-view geometry
+  - "CVPR 2026"
+  - "3D Vision"
+  - "sparse-view 3D reconstruction"
+  - "Point Transformer"
+  - "SfM"
+  - "feed-forward"
+  - "multi-view geometry"
 date: 2026-05-08
 content_hash: 14e081b5479b09ce
 ---

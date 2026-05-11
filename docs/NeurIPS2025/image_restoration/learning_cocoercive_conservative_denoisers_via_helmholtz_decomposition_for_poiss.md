@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Cocoercive Conservative Denoisers via Helmholtz Decomposition for Poisson Inverse Problems
 description: >-
-  [NeurIPS 2025][Image Restoration][Plug-and-Play] This paper introduces the concept of Cocoercive Conservative (CoCo) denoisers and proposes a novel training strategy via generalized Helmholtz decomposition — Hamiltonian regularization to promote conservativeness and spectral regularization to promote cocoerciveness — enabling denoisers to serve as proximal operators of implicit weakly convex priors, thereby achieving convergence-guaranteed and high-performance PnP methods for Poisson inverse problems (photon-limited deconvolution, low-dose CT, etc.).
+  [NeurIPS 2025][Image Restoration][Plug-and-Play] This paper introduces the concept of Cocoercive Conservative (CoCo) denoisers and proposes a novel training strategy via generalized Helmholtz decomposition — Hamiltonian…
 tags:
-  - NeurIPS 2025
-  - Image Restoration
-  - Plug-and-Play
-  - Poisson inverse problems
-  - cocoercive denoiser
-  - Helmholtz decomposition
-  - convergence guarantees
+  - "NeurIPS 2025"
+  - "Image Restoration"
+  - "Plug-and-Play"
+  - "Poisson inverse problems"
+  - "cocoercive denoiser"
+  - "Helmholtz decomposition"
+  - "convergence guarantees"
 date: 2026-05-08
 content_hash: 406d27f99e3d1669
 ---

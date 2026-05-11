@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Adaptive Cooperative Transmission Design for URLLC via Deep RL
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][URLLC] This paper proposes DRL-CoLA, a dual-agent DQN algorithm that adaptively configures 5G NR transmission parameters (numerology, mini-slot, MCS) at the source and relay nodes respectively. Operating over a two-hop relay system with only local CSI, DRL-CoLA achieves URLLC reliability close to the optimum attained under full global CSI.
+  [NeurIPS 2025][Reinforcement Learning][URLLC] This paper proposes DRL-CoLA, a dual-agent DQN algorithm that adaptively configures 5G NR transmission parameters (numerology, mini-slot…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - URLLC
-  - cooperative transmission
-  - deep reinforcement learning
-  - 5G NR
-  - dual-agent DQN
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "URLLC"
+  - "cooperative transmission"
+  - "deep reinforcement learning"
+  - "5G NR"
+  - "dual-agent DQN"
 date: 2026-05-08
 content_hash: fd101ad6730c87de
 ---

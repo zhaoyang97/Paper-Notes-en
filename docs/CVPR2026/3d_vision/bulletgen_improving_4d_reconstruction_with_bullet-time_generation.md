@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BulletGen: Improving 4D Reconstruction with Bullet-Time Generation
 description: >-
-  [CVPR 2026][3D Vision][4D reconstruction] BulletGen is proposed to generate novel views at selected "bullet-time" frozen frames using a static video diffusion model. The generated views are precisely localized and used to supervise 4D Gaussian scene optimization, achieving state-of-the-art performance in extreme novel view synthesis and 2D/3D tracking from monocular video input only.
+  [CVPR 2026][3D Vision][4D reconstruction] BulletGen is proposed to generate novel views at selected "bullet-time" frozen frames using a static video diffusion model. The generated views are precisely localized and used t…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 4D reconstruction
-  - bullet-time
-  - video diffusion model
-  - Gaussian splatting
-  - novel view synthesis
+  - "CVPR 2026"
+  - "3D Vision"
+  - "4D reconstruction"
+  - "bullet-time"
+  - "video diffusion model"
+  - "Gaussian splatting"
+  - "novel view synthesis"
 date: 2026-05-08
 content_hash: 111e351aa4967d72
 ---

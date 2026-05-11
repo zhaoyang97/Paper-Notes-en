@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] One-Prompt Strikes Back: Sparse Mixture of Experts for Prompt-based Continual Learning
 description: >-
-  [ICLR 2026][LLM Efficiency][continual learning] This paper proposes SMoPE, a framework that organizes a single shared prompt into multiple prompt experts within a sparse MoE structure. Dynamic sparse activation is achieved via prompt-attention score aggregation, significantly alleviating knowledge interference while maintaining high parameter efficiency, achieving SOTA on multiple continual learning benchmarks.
+  [ICLR 2026][LLM Efficiency][continual learning] This paper proposes SMoPE, a framework that organizes a single shared prompt into multiple prompt experts within a sparse MoE structure. Dynamic sparse activation is achiev…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - continual learning
-  - prompt tuning
-  - Mixture of Experts
-  - Sparse MoE
-  - Prefix Tuning
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "continual learning"
+  - "prompt tuning"
+  - "Mixture of Experts"
+  - "Sparse MoE"
+  - "Prefix Tuning"
 date: 2026-05-08
 content_hash: d6c1967e3a79971c
 ---

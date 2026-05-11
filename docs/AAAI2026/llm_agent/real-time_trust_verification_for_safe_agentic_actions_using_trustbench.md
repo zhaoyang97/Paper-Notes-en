@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Real-Time Trust Verification for Safe Agentic Actions Using TrustBench
 description: >-
-  [AAAI 2026][LLM Agent][Trust Verification] This paper proposes a real-time trust verification framework and the TrustBench benchmark for evaluating and ensuring the safety and trustworthiness of AI agent actions during execution.
+  [AAAI 2026][LLM Agent][Trust Verification] This paper proposes a real-time trust verification framework and the TrustBench benchmark for evaluating and ensuring the safety and trustworthiness of AI agent actions during e…
 tags:
-  - AAAI 2026
-  - LLM Agent
-  - Trust Verification
-  - Agent Safety
-  - TrustBench
-  - Real-Time Monitoring
+  - "AAAI 2026"
+  - "LLM Agent"
+  - "Trust Verification"
+  - "Agent Safety"
+  - "TrustBench"
+  - "Real-Time Monitoring"
 date: 2026-05-08
 content_hash: 038c61c70f1d86bf
 ---

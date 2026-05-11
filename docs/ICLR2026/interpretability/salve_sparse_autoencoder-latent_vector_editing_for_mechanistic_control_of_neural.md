@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] SALVE: Sparse Autoencoder-Latent Vector Editing for Mechanistic Control of Neural Networks
 description: >-
-  [ICLR2026][Mechanistic Interpretability] This paper proposes SALVE, a three-stage "Discover–Verify–Control" framework: (1) an L1-regularized sparse autoencoder (SAE) is trained to discover interpretable feature bases within a model; (2) Grad-FAM visualization is employed to verify the semantic meaning of discovered features; (3) the SAE decoder matrix guides permanent weight-space editing. The framework is validated on ResNet-18 and ViT-B/16, demonstrating precise, persistent, and low-side-effect control ranging from class suppression to cross-class feature modulation.
+  [ICLR2026][Interpretability][Mechanistic Interpretability] This paper proposes SALVE, a three-stage "Discover–Verify–Control" framework: (1) an L1-regularized sparse autoencoder (SAE) is trained to discover interpretable…
 tags:
-  - ICLR2026
-  - Mechanistic Interpretability
-  - Sparse Autoencoder
-  - Model Editing
-  - Feature Visualization
-  - Weight-Space Intervention
+  - "ICLR2026"
+  - "Interpretability"
+  - "Mechanistic Interpretability"
+  - "Sparse Autoencoder"
+  - "Model Editing"
+  - "Feature Visualization"
+  - "Weight-Space Intervention"
 date: 2026-05-08
 content_hash: 190583c5c1c8b287
 ---

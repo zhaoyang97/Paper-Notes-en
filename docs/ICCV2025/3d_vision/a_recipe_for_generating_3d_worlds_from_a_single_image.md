@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Recipe for Generating 3D Worlds from a Single Image
 description: >-
-  [ICCV 2025][3D Vision][Single-image 3D scene generation] The problem of single-image-to-3D-world generation is decomposed into two simpler sub-problems—panorama synthesis (training-free in-context learning) and point-cloud-conditioned inpainting (ControlNet fine-tuned for only 5k steps)—combined with 3DGS reconstruction to produce immersive 3D environments navigable within a 2 m³ volume in VR, surpassing SOTA methods such as WonderJourney and DimensionX across all image quality metrics.
+  [ICCV 2025][3D Vision][Single-image 3D scene generation] The problem of single-image-to-3D-world generation is decomposed into two simpler sub-problems—panorama synthesis (training-free in-context learning) and point-clo…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Single-image 3D scene generation
-  - panorama synthesis
-  - point-cloud-conditioned inpainting
-  - 3DGS
-  - VR
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Single-image 3D scene generation"
+  - "panorama synthesis"
+  - "point-cloud-conditioned inpainting"
+  - "3DGS"
+  - "VR"
 date: 2026-05-08
 content_hash: 5399edf3b70542be
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Sat2City: 3D City Generation from A Single Satellite Image with Cascaded Latent Diffusion
 description: >-
-  [ICCV 2025][3D Vision][City-scale 3D generation] This paper presents Sat2City, the first 3D generation framework capable of simultaneously producing city-scale geometry and appearance from a single satellite image. By integrating sparse voxel grids with a cascaded latent diffusion model, it introduces a Re-Hash multi-scale feature grid and an inverse sampling strategy, achieving high-fidelity generation superior to existing methods on a self-constructed 3D city dataset.
+  [ICCV 2025][3D Vision][City-scale 3D generation] This paper presents Sat2City, the first 3D generation framework capable of simultaneously producing city-scale geometry and appearance from a single satellite image. By in…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - City-scale 3D generation
-  - satellite imagery
-  - sparse voxel grids
-  - cascaded latent diffusion
-  - appearance modeling
+  - "ICCV 2025"
+  - "3D Vision"
+  - "City-scale 3D generation"
+  - "satellite imagery"
+  - "sparse voxel grids"
+  - "cascaded latent diffusion"
+  - "appearance modeling"
 date: 2026-05-08
 content_hash: da427a9a0f7e51e0
 ---

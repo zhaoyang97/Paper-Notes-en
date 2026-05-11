@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Menlo: From Preferences to Proficiency – Evaluating and Modeling Native-like Quality Across 47 Languages
 description: >-
-  [ICLR 2026][Reinforcement Learning][Multilingual Evaluation] This paper proposes the Menlo framework, which decomposes native-like response quality into four dimensions grounded in audience design theory, constructs a preference dataset of 6,423 annotated pairs covering 47 language varieties, and demonstrates that pairwise evaluation combined with RL-trained LLM judges can approach human annotator agreement levels.
+  [ICLR 2026][Reinforcement Learning][Multilingual Evaluation] This paper proposes the Menlo framework, which decomposes native-like response quality into four dimensions grounded in audience design theory…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Multilingual Evaluation
-  - Native-like Quality
-  - LLM-as-Judge
-  - Preference Learning
-  - Audience Design
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Multilingual Evaluation"
+  - "Native-like Quality"
+  - "LLM-as-Judge"
+  - "Preference Learning"
+  - "Audience Design"
 date: 2026-05-08
 content_hash: a6a4fb6877d1f824
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Probing and Bridging Geometry–Interaction Cues for Affordance Reasoning in Vision Foundation Models
 description: >-
-  [CVPR 2026][Image Generation][affordance reasoning] This work systematically probes affordance capabilities in vision foundation models (VFMs), revealing that DINO encodes part-level geometric structure while Flux encodes verb-conditioned interaction priors. By training-free fusion of both, the method achieves zero-shot affordance estimation competitive with weakly supervised approaches.
+  [CVPR 2026][Image Generation][affordance reasoning] This work systematically probes affordance capabilities in vision foundation models (VFMs)…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - affordance reasoning
-  - vision foundation models
-  - geometry perception
-  - interaction prior
-  - training-free fusion
+  - "CVPR 2026"
+  - "Image Generation"
+  - "affordance reasoning"
+  - "vision foundation models"
+  - "geometry perception"
+  - "interaction prior"
+  - "training-free fusion"
 date: 2026-05-08
 content_hash: 2855f58ae875235f
 ---

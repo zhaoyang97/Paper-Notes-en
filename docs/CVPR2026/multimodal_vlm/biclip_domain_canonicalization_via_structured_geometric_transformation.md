@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BiCLIP: Domain Canonicalization via Structured Geometric Transformation
 description: >-
-  [CVPR 2026][Multimodal VLM][CLIP adaptation] This paper proposes BiCLIP, a minimalist few-shot adaptation method for CLIP that applies a bilinear transformation matrix with an upper-triangular structural constraint to geometrically align image features with text embeddings, achieving state-of-the-art performance across 11 standard benchmarks with an exceptionally low parameter count.
+  [CVPR 2026][Multimodal VLM][CLIP adaptation] This paper proposes BiCLIP, a minimalist few-shot adaptation method for CLIP that applies a bilinear transformation matrix with an upper-triangular structural constraint to ge…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - CLIP adaptation
-  - few-shot classification
-  - bilinear transformation
-  - modality alignment
-  - domain generalization
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "CLIP adaptation"
+  - "few-shot classification"
+  - "bilinear transformation"
+  - "modality alignment"
+  - "domain generalization"
 date: 2026-05-08
 content_hash: 59f607c580e60346
 ---

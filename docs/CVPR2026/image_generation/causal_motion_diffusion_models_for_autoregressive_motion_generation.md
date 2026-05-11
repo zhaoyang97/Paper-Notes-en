@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Causal Motion Diffusion Models for Autoregressive Motion Generation
 description: >-
-  [CVPR 2026][Image Generation][Causal Diffusion] This paper proposes CMDM, a framework that unifies diffusion denoising and autoregressive generation within a motion-language-aligned causal latent space. By employing frame-wise independent noise and a causal uncertainty-based sampling schedule, CMDM achieves high-quality, low-latency text-to-motion generation and long-sequence streaming synthesis.
+  [CVPR 2026][Image Generation][Causal Diffusion] This paper proposes CMDM, a framework that unifies diffusion denoising and autoregressive generation within a motion-language-aligned causal latent space. By employing fram…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Causal Diffusion
-  - Autoregressive Motion Generation
-  - Text-to-Motion
-  - Streaming Generation
-  - Frame-wise Sampling Schedule
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Causal Diffusion"
+  - "Autoregressive Motion Generation"
+  - "Text-to-Motion"
+  - "Streaming Generation"
+  - "Frame-wise Sampling Schedule"
 date: 2026-05-08
 content_hash: 893c1413977dcfcb
 ---

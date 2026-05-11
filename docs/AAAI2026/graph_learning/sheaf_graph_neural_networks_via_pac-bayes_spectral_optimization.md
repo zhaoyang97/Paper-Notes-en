@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Sheaf Graph Neural Networks via PAC-Bayes Spectral Optimization
 description: >-
-  [AAAI 2026][Graph Learning][Sheaf Neural Networks] This paper proposes SGPC (Sheaf GNNs with PAC-Bayes Calibration), which integrates Wasserstein optimal transport for learning sheaf restriction maps, variance-reduced diffusion with an adaptive frequency mixing layer, and PAC-Bayes spectral regularization. SGPC consistently outperforms existing GNN and sheaf methods on both homophilic and heterophilic graph node classification benchmarks while providing theoretical generalization guarantees.
+  [AAAI 2026][Graph Learning][Sheaf Neural Networks] This paper proposes SGPC (Sheaf GNNs with PAC-Bayes Calibration), which integrates Wasserstein optimal transport for learning sheaf restriction maps…
 tags:
-  - AAAI 2026
-  - Graph Learning
-  - Sheaf Neural Networks
-  - PAC-Bayes
-  - Spectral Optimization
-  - Heterophilic Graphs
-  - Optimal Transport
-  - Semi-supervised Node Classification
+  - "AAAI 2026"
+  - "Graph Learning"
+  - "Sheaf Neural Networks"
+  - "PAC-Bayes"
+  - "Spectral Optimization"
+  - "Heterophilic Graphs"
+  - "Optimal Transport"
+  - "Semi-supervised Node Classification"
 date: 2026-05-08
 content_hash: 54736f2764f26490
 ---

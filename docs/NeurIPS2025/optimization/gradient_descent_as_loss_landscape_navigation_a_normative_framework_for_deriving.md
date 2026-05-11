@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Gradient Descent as Loss Landscape Navigation: a Normative Framework for Deriving Learning Rules
 description: >-
-  [NeurIPS 2025][Optimization][learning rules] This paper proposes treating learning rules as optimal navigation policies in a (partially observable) loss landscape. By solving a continuous-time optimal control problem via variational calculus, it derives gradient descent, momentum, natural gradient, Adam, and continual learning strategies within a unified framework.
+  [NeurIPS 2025][Optimization][learning rules] This paper proposes treating learning rules as optimal navigation policies in a (partially observable) loss landscape. By solving a continuous-time optimal control problem via…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - learning rules
-  - optimal control
-  - loss landscape navigation
-  - momentum
-  - adaptive optimizers
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "learning rules"
+  - "optimal control"
+  - "loss landscape navigation"
+  - "momentum"
+  - "adaptive optimizers"
 date: 2026-05-08
 content_hash: 8431fd01378cd042
 ---

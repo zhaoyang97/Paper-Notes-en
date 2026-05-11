@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EnCompass: Enhancing Agent Programming with Search Over Program Execution Paths
 description: >-
-  [NeurIPS 2025][LLM/NLP][Agent framework] This paper proposes the Probabilistic Angelic Nondeterminism (PAN) programming model and the EnCompass Python framework, which decouple an agent's core workflow logic from its inference-time search strategy. Programmers only need to insert `branchpoint()` markers at LLM call sites and switch among best-of-N, beam search, tree search, and other strategies via a few configuration parameters, reducing the amount of code modification by 3–6×.
+  [NeurIPS 2025][LLM/NLP][Agent framework] This paper proposes the Probabilistic Angelic Nondeterminism (PAN) programming model and the EnCompass Python framework…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - Agent framework
-  - inference-time search
-  - nondeterministic programming
-  - Beam Search
-  - program execution paths
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "Agent framework"
+  - "inference-time search"
+  - "nondeterministic programming"
+  - "Beam Search"
+  - "program execution paths"
 date: 2026-05-08
 content_hash: 8bffa31b8a70a778
 ---

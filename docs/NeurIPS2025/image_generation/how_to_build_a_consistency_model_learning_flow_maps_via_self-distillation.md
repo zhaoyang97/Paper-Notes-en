@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] How to Build a Consistency Model: Learning Flow Maps via Self-Distillation
 description: >-
-  [NeurIPS 2025][Image Generation][Flow Map] This paper proposes a unified self-distillation framework for directly learning flow maps (the generalized form of consistency models). By exploiting the tangent condition, any distillation scheme is converted into a direct training algorithm that requires no pretrained teacher. Three algorithm families are derived (Eulerian / Lagrangian / Progressive), among which the Lagrangian method avoids spatial gradients and bootstrapping, achieving the most stable training and best performance.
+  [NeurIPS 2025][Image Generation][Flow Map] This paper proposes a unified self-distillation framework for directly learning flow maps (the generalized form of consistency models). By exploiting the tangent condition…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Flow Map
-  - Consistency Model
-  - Self-Distillation
-  - Accelerated Inference
-  - Flow Matching
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Flow Map"
+  - "Consistency Model"
+  - "Self-Distillation"
+  - "Accelerated Inference"
+  - "Flow Matching"
 date: 2026-05-08
 content_hash: f5c6048c3686c887
 ---

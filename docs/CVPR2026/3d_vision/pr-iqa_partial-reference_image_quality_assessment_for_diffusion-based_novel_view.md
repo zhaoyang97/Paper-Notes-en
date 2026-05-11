@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PR-IQA: Partial-Reference Image Quality Assessment for Diffusion-Based Novel View Synthesis
 description: >-
-  [CVPR 2026][3D Vision][Image quality assessment] This paper proposes PR-IQA, a cross-reference image quality assessment method that first computes geometrically consistent local quality maps in multi-view overlapping regions, then propagates quality information to non-overlapping regions via a reference-conditioned cross-attention network, producing dense quality maps approaching full-reference accuracy. Integrated into a 3DGS pipeline with a dual-filtering strategy, it significantly improves sparse-view 3D reconstruction quality.
+  [CVPR 2026][3D Vision][Image quality assessment] This paper proposes PR-IQA, a cross-reference image quality assessment method that first computes geometrically consistent local quality maps in multi-view overlapping reg…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Image quality assessment
-  - cross-reference
-  - novel view synthesis
-  - 3D Gaussian splatting
-  - diffusion models
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Image quality assessment"
+  - "cross-reference"
+  - "novel view synthesis"
+  - "3D Gaussian splatting"
+  - "diffusion models"
 date: 2026-05-08
 content_hash: a6c36e2bcebce0f8
 ---

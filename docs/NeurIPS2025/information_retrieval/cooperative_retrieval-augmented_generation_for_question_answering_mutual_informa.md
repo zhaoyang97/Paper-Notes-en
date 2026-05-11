@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Cooperative Retrieval-Augmented Generation for Question Answering: Mutual Information Exchange and Ranking by Contrasting Layers
 description: >-
-  [NeurIPS 2025][RAG] CoopRAG is a framework that achieves bidirectional cooperation between the retriever and the LLM through query expansion, retriever layer-contrastive reranking, and reasoning chain completion. It surpasses HippoRAG2 by 5.3% on multi-hop QA and by 35.2% on single-hop QA.
+  [NeurIPS 2025][Information Retrieval & RAG][RAG] CoopRAG is a framework that achieves bidirectional cooperation between the retriever and the LLM through query expansion, retriever layer-contrastive reranking…
 tags:
-  - NeurIPS 2025
-  - RAG
-  - query expansion
-  - layer-contrastive ranking
-  - multi-hop QA
-  - cooperative mechanism
+  - "NeurIPS 2025"
+  - "Information Retrieval & RAG"
+  - "RAG"
+  - "query expansion"
+  - "layer-contrastive ranking"
+  - "multi-hop QA"
+  - "cooperative mechanism"
 date: 2026-05-08
 content_hash: 21b91d932cf1537a
 ---

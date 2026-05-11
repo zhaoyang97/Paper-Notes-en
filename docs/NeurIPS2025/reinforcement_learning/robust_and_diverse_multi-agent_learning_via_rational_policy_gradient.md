@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Robust and Diverse Multi-Agent Learning via Rational Policy Gradient
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Multi-Agent Reinforcement Learning] This paper proposes the Rationality-Preserving Optimization (RPO) framework and the Rational Policy Gradient (RPG) algorithm. By introducing manipulator agents and opponent shaping techniques, RPG eliminates suicidal behavior induced by adversarial optimization in both cooperative and general-sum games, while simultaneously achieving policy robustness and diversity.
+  [NeurIPS 2025][Reinforcement Learning][Multi-Agent Reinforcement Learning] This paper proposes the Rationality-Preserving Optimization (RPO) framework and the Rational Policy Gradient (RPG) algorithm. By introducing mani…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Multi-Agent Reinforcement Learning
-  - Adversarial Optimization
-  - Suicidal Behavior
-  - Policy Gradient
-  - Cooperative Games
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Multi-Agent Reinforcement Learning"
+  - "Adversarial Optimization"
+  - "Suicidal Behavior"
+  - "Policy Gradient"
+  - "Cooperative Games"
 date: 2026-05-08
 content_hash: dfa883b73ee3070a
 ---

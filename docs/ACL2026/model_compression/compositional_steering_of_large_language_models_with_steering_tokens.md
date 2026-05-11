@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Compositional Steering of Large Language Models with Steering Tokens
 description: >-
-  [ACL 2026][Model Compression][Compositional Steering] This paper proposes compositional steering tokens that compress behavioral instructions into input-space embedding vectors via self-distillation, and trains a dedicated composition token <and> to capture the general concept of "composition." The approach demonstrates strong generalization to unseen behavior combinations, unseen behaviors, and unseen numbers of behaviors to compose.
+  [ACL 2026][Model Compression][Compositional Steering] This paper proposes compositional steering tokens that compress behavioral instructions into input-space embedding vectors via self-distillation…
 tags:
-  - ACL 2026
-  - Model Compression
-  - Compositional Steering
-  - Steering Tokens
-  - Self-Distillation
-  - Multi-Behavior Control
-  - Zero-Shot Composition
+  - "ACL 2026"
+  - "Model Compression"
+  - "Compositional Steering"
+  - "Steering Tokens"
+  - "Self-Distillation"
+  - "Multi-Behavior Control"
+  - "Zero-Shot Composition"
 date: 2026-05-08
 content_hash: 3bd93e0c2f9d8a31
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] BD-Merging: Bias-Aware Dynamic Model Merging with Evidence-Guided Contrastive Learning
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Model Merging] This paper proposes the BD-Merging framework, which trains a debiased router via Dirichlet evidential modeling, Adjacency Discrepancy Score (ADS), and discrepancy-aware contrastive learning to adaptively assign model merging weights, significantly improving the robustness and generalization of merged models under test-time distribution shifts and on unseen tasks.
+  [CVPR 2026][Self-Supervised Learning][Model Merging] This paper proposes the BD-Merging framework, which trains a debiased router via Dirichlet evidential modeling, Adjacency Discrepancy Score (ADS)…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - Model Merging
-  - Multi-Task Learning
-  - Evidential Deep Learning
-  - Distribution Shift
-  - Contrastive Learning
-  - uncertainty estimation
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Model Merging"
+  - "Multi-Task Learning"
+  - "Evidential Deep Learning"
+  - "Distribution Shift"
+  - "Contrastive Learning"
+  - "uncertainty estimation"
 date: 2026-05-08
 content_hash: a82023b498606492
 ---

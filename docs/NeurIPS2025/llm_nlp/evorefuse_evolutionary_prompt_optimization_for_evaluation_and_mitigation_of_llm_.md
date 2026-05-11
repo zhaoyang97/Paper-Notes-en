@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EvoRefuse: Evaluating and Mitigating LLM Over-Refusal via Evolutionary Prompt Optimization
 description: >-
-  [NeurIPS 2025][LLM/NLP][over-refusal] This paper proposes EvoRefuse, a framework that employs evolutionary search to maximize the ELBO for automatically generating diverse pseudo-malicious instructions, yielding a more challenging over-refusal evaluation benchmark (EvoRefuse-Test) and an effective alignment mitigation dataset (EvoRefuse-Align).
+  [NeurIPS 2025][LLM/NLP][over-refusal] This paper proposes EvoRefuse, a framework that employs evolutionary search to maximize the ELBO for automatically generating diverse pseudo-malicious instructions…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - over-refusal
-  - safety alignment
-  - evolutionary algorithms
-  - prompt optimization
-  - pseudo-malicious instructions
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "over-refusal"
+  - "safety alignment"
+  - "evolutionary algorithms"
+  - "prompt optimization"
+  - "pseudo-malicious instructions"
 date: 2026-05-08
 content_hash: f181d15053dc2f59
 ---

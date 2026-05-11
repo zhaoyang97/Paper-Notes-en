@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Why Isn't Relational Learning Taking Over the World?
 description: >-
-  [AAAI 2026][Relational Learning] This position paper systematically analyzes why relational learning has failed to dominate the AI landscape, identifying core issues including unrealistic datasets, fundamentally flawed evaluation methodologies, the absence of negative examples, and theoretical difficulties with aggregation operations. It further delineates the key improvements necessary for relational learning to realize its potential.
+  [AAAI 2026][Relational Learning] This position paper systematically analyzes why relational learning has failed to dominate the AI landscape, identifying core issues including unrealistic datasets…
 tags:
-  - AAAI 2026
-  - Relational Learning
-  - Knowledge Graphs
-  - Statistical Relational AI
-  - Evaluation Methodology
-  - Entity Prediction
+  - "AAAI 2026"
+  - "Relational Learning"
+  - "Knowledge Graphs"
+  - "Statistical Relational AI"
+  - "Evaluation Methodology"
+  - "Entity Prediction"
 date: 2026-05-08
 content_hash: 2909a9418764b53f
 ---

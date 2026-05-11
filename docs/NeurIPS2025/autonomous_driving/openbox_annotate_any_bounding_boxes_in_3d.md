@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] OpenBox: Annotate Any Bounding Boxes in 3D
 description: >-
-  [NeurIPS 2025][Autonomous Driving][3D auto-annotation] This paper proposes OpenBox, a two-stage automatic 3D bounding box annotation pipeline that first maps instance-level information from 2D visual foundation models to 3D point clouds via cross-modal instance alignment, then adaptively generates high-quality 3D bounding boxes based on the physical state of each object (static rigid / dynamic rigid / deformable), without requiring any self-training iterations.
+  [NeurIPS 2025][Autonomous Driving][3D auto-annotation] This paper proposes OpenBox, a two-stage automatic 3D bounding box annotation pipeline that first maps instance-level information from 2D visual foundation models to…
 tags:
-  - NeurIPS 2025
-  - Autonomous Driving
-  - 3D auto-annotation
-  - open-vocabulary
-  - visual foundation models
-  - point cloud
+  - "NeurIPS 2025"
+  - "Autonomous Driving"
+  - "3D auto-annotation"
+  - "open-vocabulary"
+  - "visual foundation models"
+  - "point cloud"
 date: 2026-05-08
 content_hash: 4024f84a073faffa
 ---

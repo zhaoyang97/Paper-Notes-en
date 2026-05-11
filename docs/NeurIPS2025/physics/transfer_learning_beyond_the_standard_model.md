@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Transfer Learning Beyond the Standard Model
 description: >-
-  [NeurIPS 2025][Transfer Learning] This work investigates whether neural networks pre-trained on the standard cosmological model (ΛCDM) can transfer to beyond-standard-model scenarios (massive neutrinos, modified gravity, primordial non-Gaussianity). The study finds that a dummy node architecture can reduce simulation requirements by an order of magnitude, but negative transfer emerges when parameters exhibit strong physical degeneracies (e.g., $\sigma_8$–$M_\nu$).
+  [NeurIPS 2025][Physics][Transfer Learning] This work investigates whether neural networks pre-trained on the standard cosmological model (ΛCDM) can transfer to beyond-standard-model scenarios (massive neutrinos…
 tags:
-  - NeurIPS 2025
-  - Transfer Learning
-  - Cosmological Inference
-  - ΛCDM
-  - Negative Transfer
-  - Foundation Models
+  - "NeurIPS 2025"
+  - "Physics"
+  - "Transfer Learning"
+  - "Cosmological Inference"
+  - "ΛCDM"
+  - "Negative Transfer"
+  - "Foundation Models"
 date: 2026-05-08
 content_hash: ecc298a9384011c7
 ---

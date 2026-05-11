@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Pano360: Perspective to Panoramic Vision with Geometric Consistency
 description: >-
-  [CVPR2026][3D Vision][panorama stitching] Pano360 extends panoramic image stitching from conventional 2D pairwise matching to the 3D photogrammetric space, leveraging a Transformer architecture to achieve globally geometrically consistent multi-view alignment. It attains a 97.8% success rate under challenging scenarios including weak texture, large parallax, and repetitive patterns.
+  [CVPR2026][3D Vision][panorama stitching] Pano360 extends panoramic image stitching from conventional 2D pairwise matching to the 3D photogrammetric space…
 tags:
-  - CVPR2026
-  - 3D Vision
-  - panorama stitching
-  - 3D geometric consistency
-  - transformer
-  - multi-view alignment
-  - seam detection
+  - "CVPR2026"
+  - "3D Vision"
+  - "panorama stitching"
+  - "3D geometric consistency"
+  - "transformer"
+  - "multi-view alignment"
+  - "seam detection"
 date: 2026-05-08
 content_hash: b68937ba4c594fef
 ---

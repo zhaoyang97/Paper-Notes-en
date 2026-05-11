@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Rethinking SNN Online Training and Deployment: Gradient-Coherent Learning via Hybrid-Driven LIF Model
 description: >-
-  [CVPR 2026][SNN] This paper proposes HD-LIF (Hybrid-Driven LIF), a family of spiking neuron models that adopts distinct spike computation mechanisms above and below the firing threshold. It theoretically establishes gradient separability and alignment, resolving the forward–backward propagation inconsistency in SNN online training, while simultaneously achieving full-pipeline optimization of learning accuracy, memory complexity, and power consumption—attaining 78.61% accuracy on CIFAR-100 with 10× parameter compression, 11× power reduction, and 30% NOPs savings.
+  [CVPR 2026][SNN] This paper proposes HD-LIF (Hybrid-Driven LIF), a family of spiking neuron models that adopts distinct spike computation mechanisms above and below the firing threshold. It theoretically establishes grad…
 tags:
-  - CVPR 2026
-  - SNN
-  - online training
-  - LIF model
-  - gradient separability
-  - low-power inference
+  - "CVPR 2026"
+  - "SNN"
+  - "online training"
+  - "LIF model"
+  - "gradient separability"
+  - "low-power inference"
 date: 2026-05-08
 content_hash: 1ba8d2ea6720dccc
 ---

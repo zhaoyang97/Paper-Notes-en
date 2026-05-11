@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Rethinking Detecting Salient and Camouflaged Objects in Unconstrained Scenes
 description: >-
-  [ICCV 2025][Segmentation][Salient Object Detection] This paper constructs USC12K, the first unconstrained dataset for salient and camouflaged object detection covering four scene types, proposes USCNet built upon SAM, introduces an Attribute Relationship Modeling (ARM) module to explicitly model the relationship between salient and camouflaged objects, and designs a new metric CSCS to quantify confusion between the two categories, achieving state-of-the-art performance across all scene types.
+  [ICCV 2025][Segmentation][Salient Object Detection] This paper constructs USC12K, the first unconstrained dataset for salient and camouflaged object detection covering four scene types, proposes USCNet built upon SAM…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - Salient Object Detection
-  - Camouflaged Object Detection
-  - Unconstrained Scenes
-  - Attribute Relationship Modeling
-  - SAM
+  - "ICCV 2025"
+  - "Segmentation"
+  - "Salient Object Detection"
+  - "Camouflaged Object Detection"
+  - "Unconstrained Scenes"
+  - "Attribute Relationship Modeling"
+  - "SAM"
 date: 2026-05-08
 content_hash: 9f1579343a9fc884
 ---

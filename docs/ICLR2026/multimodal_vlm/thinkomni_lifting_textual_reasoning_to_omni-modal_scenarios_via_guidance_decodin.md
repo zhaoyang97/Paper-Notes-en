@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ThinkOmni: Lifting Textual Reasoning to Omni-modal Scenarios via Guidance Decoding
 description: >-
-  [ICLR 2026][Multimodal VLM][Omni-modal reasoning] ThinkOmni is a training-free framework that leverages a text-only large reasoning model (LRM) to guide an omni-modal LLM (OLLM) during decoding via Stepwise Contrastive Scaling, which adaptively balances perception and reasoning signals. The method achieves 70.2% on MathVista and 75.5% on MMAU, matching or surpassing RFT-based approaches.
+  [ICLR 2026][Multimodal VLM][Omni-modal reasoning] ThinkOmni is a training-free framework that leverages a text-only large reasoning model (LRM) to guide an omni-modal LLM (OLLM) during decoding via Stepwise Contrastive S…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Omni-modal reasoning
-  - guidance decoding
-  - LRM
-  - training-free
-  - contrastive scaling
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Omni-modal reasoning"
+  - "guidance decoding"
+  - "LRM"
+  - "training-free"
+  - "contrastive scaling"
 date: 2026-05-08
 content_hash: f6a53ba82c801927
 ---

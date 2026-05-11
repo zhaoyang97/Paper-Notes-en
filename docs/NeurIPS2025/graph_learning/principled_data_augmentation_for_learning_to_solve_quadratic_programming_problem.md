@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Principled Data Augmentation for Learning to Solve Quadratic Programming Problems
 description: >-
-  [NeurIPS 2025][Graph Learning][Data Augmentation] This paper proposes a principled data augmentation framework based on affine transformations of the KKT system, generating optimality-preserving augmented instances for MPNN-based learning-to-optimize (L2O) on linear programming (LP) and quadratic programming (QP) tasks. Combined with contrastive pretraining, the framework substantially improves performance in data-scarce and out-of-distribution (OOD) generalization settings.
+  [NeurIPS 2025][Graph Learning][Data Augmentation] This paper proposes a principled data augmentation framework based on affine transformations of the KKT system…
 tags:
-  - NeurIPS 2025
-  - Graph Learning
-  - Data Augmentation
-  - Quadratic Programming
-  - Graph Neural Networks
-  - Contrastive Learning
-  - Learning to Optimize
-  - KKT Conditions
+  - "NeurIPS 2025"
+  - "Graph Learning"
+  - "Data Augmentation"
+  - "Quadratic Programming"
+  - "Graph Neural Networks"
+  - "Contrastive Learning"
+  - "Learning to Optimize"
+  - "KKT Conditions"
 date: 2026-05-08
 content_hash: c43d6c9b509afc39
 ---

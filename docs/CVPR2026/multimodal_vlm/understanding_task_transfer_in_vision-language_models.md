@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Understanding Task Transfer in Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Vision-Language Models] This paper presents the first systematic study of how fine-tuning a VLM on one visual perception task affects its zero-shot performance on other perception tasks. It proposes the Perfection Gap Factor (PGF), a normalized metric for quantifying cross-task transfer, and reveals structural regularities in task transfer (positive/negative transfer cliques, task personas, scale dependence) across three scales of Qwen-2.5-VL. The paper further demonstrates that PGF can guide data selection to improve fine-tuning efficiency.
+  [CVPR 2026][Multimodal VLM][Vision-Language Models] This paper presents the first systematic study of how fine-tuning a VLM on one visual perception task affects its zero-shot performance on other perception tasks. It pr…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Vision-Language Models
-  - Task Transfer
-  - Perceptual Tasks
-  - Fine-Tuning
-  - Perfection Gap Factor
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Vision-Language Models"
+  - "Task Transfer"
+  - "Perceptual Tasks"
+  - "Fine-Tuning"
+  - "Perfection Gap Factor"
 date: 2026-05-08
 content_hash: eca9ee9a0e4b8850
 ---

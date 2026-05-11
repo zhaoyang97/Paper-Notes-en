@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] The Persistence of Neural Collapse Despite Low-Rank Bias
 description: >-
-  [NeurIPS 2025][Neural Collapse] This paper theoretically demonstrates that Deep Neural Collapse (DNC) is globally suboptimal in deep unconstrained feature models due to the low-rank bias induced by L2 regularization, while providing the first theoretical explanation for the persistent empirical occurrence of DNC — its solution-space dimensionality grows faster with network width than that of low-rank solutions.
+  [NeurIPS 2025][Neural Collapse] This paper theoretically demonstrates that Deep Neural Collapse (DNC) is globally suboptimal in deep unconstrained feature models due to the low-rank bias induced by L2 regularization…
 tags:
-  - NeurIPS 2025
-  - Neural Collapse
-  - Low-Rank Bias
-  - Deep Unconstrained Feature Model
-  - Loss Landscape
-  - Schatten Quasi-Norm
+  - "NeurIPS 2025"
+  - "Neural Collapse"
+  - "Low-Rank Bias"
+  - "Deep Unconstrained Feature Model"
+  - "Loss Landscape"
+  - "Schatten Quasi-Norm"
 date: 2026-05-08
 content_hash: 0d63244bf89c7f2b
 ---

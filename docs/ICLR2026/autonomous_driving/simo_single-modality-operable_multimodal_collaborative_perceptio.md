@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SiMO: Single-Modality-Operable Multimodal Collaborative Perception
 description: >-
-  [ICLR 2026][Autonomous Driving][collaborative perception] This paper proposes SiMO, a framework that introduces the LAMMA fusion module and PAFR training strategy to achieve, for the first time in multi-agent collaborative perception, a multimodal perception system that remains operational under arbitrary modality absence—particularly when LiDAR fails and only cameras are available. The design is analogous to a parallel circuit: the system functions as long as at least one pathway is active.
+  [ICLR 2026][Autonomous Driving][collaborative perception] This paper proposes SiMO, a framework that introduces the LAMMA fusion module and PAFR training strategy to achieve…
 tags:
-  - ICLR 2026
-  - Autonomous Driving
-  - collaborative perception
-  - multimodal fusion
-  - modality failure
-  - BEV
-  - 3D detection
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "collaborative perception"
+  - "multimodal fusion"
+  - "modality failure"
+  - "BEV"
+  - "3D detection"
 date: 2026-05-08
 content_hash: 2566235c82e64a18
 ---

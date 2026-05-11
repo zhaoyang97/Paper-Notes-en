@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] APC: Transferable and Efficient Adversarial Point Counterattack for Robust 3D Point Cloud Recognition
 description: >-
-  [CVPR 2026][3D Vision][Adversarial Defense] APC proposes a lightweight input-level purification module that neutralizes adversarial attacks by generating point-wise counter-perturbations, trained under dual geometric and semantic consistency constraints to achieve strong robustness across diverse attacks and models.
+  [CVPR 2026][3D Vision][Adversarial Defense] APC proposes a lightweight input-level purification module that neutralizes adversarial attacks by generating point-wise counter-perturbations…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Adversarial Defense
-  - 3D Point Cloud
-  - Counter-Perturbation
-  - Cross-Model Transfer
-  - Input-Level Purification
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Adversarial Defense"
+  - "3D Point Cloud"
+  - "Counter-Perturbation"
+  - "Cross-Model Transfer"
+  - "Input-Level Purification"
 date: 2026-05-08
 content_hash: b30dd946d593bb93
 ---

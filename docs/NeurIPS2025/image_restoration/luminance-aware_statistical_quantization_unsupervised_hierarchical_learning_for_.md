@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Luminance-Aware Statistical Quantization: Unsupervised Hierarchical Learning for Illumination Enhancement
 description: >-
-  [NeurIPS 2025][Image Restoration][Low-light image enhancement] This paper proposes the LASQ framework, which reformulates low-light image enhancement (LLIE) as a statistical sampling process over hierarchical luminance distributions. By exploiting the power-law distribution inherent in natural luminance transitions, LASQ employs MCMC sampling to generate hierarchical luminance adaptation operators (LAOs) that are embedded into the forward process of a diffusion model, enabling fully unsupervised enhancement without requiring any normal-light reference images.
+  [NeurIPS 2025][Image Restoration][Low-light image enhancement] This paper proposes the LASQ framework, which reformulates low-light image enhancement (LLIE) as a statistical sampling process over hierarchical luminance d…
 tags:
-  - NeurIPS 2025
-  - Image Restoration
-  - Low-light image enhancement
-  - diffusion model
-  - power-law distribution
-  - MCMC sampling
-  - unsupervised learning
+  - "NeurIPS 2025"
+  - "Image Restoration"
+  - "Low-light image enhancement"
+  - "diffusion model"
+  - "power-law distribution"
+  - "MCMC sampling"
+  - "unsupervised learning"
 date: 2026-05-08
 content_hash: 21971895b66b7500
 ---

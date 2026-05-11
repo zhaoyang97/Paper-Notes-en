@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] TAR3D: Creating High-Quality 3D Assets via Next-Part Prediction
 description: >-
-  [ICCV2025][3D Vision][3D generation] TAR3D is proposed as the first framework to quantize triplane representations into discrete geometric parts and generate them autoregressively via GPT. A 3D VQ-VAE encodes meshes of arbitrary face counts into fixed-length sequences, while TriPE positional encoding preserves 3D spatial information. The method comprehensively outperforms existing approaches on text/image-to-3D tasks.
+  [ICCV2025][3D Vision][3D generation] TAR3D is proposed as the first framework to quantize triplane representations into discrete geometric parts and generate them autoregressively via GPT. A 3D VQ-VAE encodes meshes of a…
 tags:
-  - ICCV2025
-  - 3D Vision
-  - 3D generation
-  - autoregressive
-  - VQ-VAE
-  - triplane representation
-  - next-part prediction
-  - GPT
+  - "ICCV2025"
+  - "3D Vision"
+  - "3D generation"
+  - "autoregressive"
+  - "VQ-VAE"
+  - "triplane representation"
+  - "next-part prediction"
+  - "GPT"
 date: 2026-05-08
 content_hash: fc9674d0542f047d
 ---

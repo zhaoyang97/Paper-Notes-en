@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FairContrast: Enhancing Fairness through Contrastive Learning and Customized Augmentation
 description: >-
-  [NeurIPS 2025][AI Safety][Fairness] FairContrast proposes a fair contrastive learning framework for tabular data. By strategically selecting positive pairs—pairing advantaged-group samples with favorable outcomes against their disadvantaged-group counterparts—and training end-to-end with supervised or self-supervised contrastive loss combined with cross-entropy loss, the framework achieves significant bias reduction with minimal accuracy loss, without introducing any additional fairness constraint losses.
+  [NeurIPS 2025][AI Safety][Fairness] FairContrast proposes a fair contrastive learning framework for tabular data. By strategically selecting positive pairs—pairing advantaged-group samples with favorable outcomes against…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - Fairness
-  - Contrastive Learning
-  - Tabular Data
-  - Representation Learning
-  - Demographic Parity
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "Fairness"
+  - "Contrastive Learning"
+  - "Tabular Data"
+  - "Representation Learning"
+  - "Demographic Parity"
 date: 2026-05-08
 content_hash: 74e95e348ec53671
 ---

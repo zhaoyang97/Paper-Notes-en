@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Turbocharging Gaussian Process Inference with Approximate Sketch-and-Project
 description: >-
-  [NeurIPS 2025][LLM Evaluation][Gaussian Process] This paper proposes the ADASAP algorithm, which extends the sketch-and-project framework to large-scale GP inference via approximate subspace preconditioning, distributed computation, and Nesterov acceleration. It is the first method to scale exact GP inference beyond $>3\times10^8$ samples, while theoretically establishing condition number-free convergence guarantees for the SAP family.
+  [NeurIPS 2025][LLM Evaluation][Gaussian Process] This paper proposes the ADASAP algorithm, which extends the sketch-and-project framework to large-scale GP inference via approximate subspace preconditioning…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - Gaussian Process
-  - Sketch-and-Project
-  - Large-Scale Inference
-  - Distributed Computing
-  - Nyström Approximation
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "Gaussian Process"
+  - "Sketch-and-Project"
+  - "Large-Scale Inference"
+  - "Distributed Computing"
+  - "Nyström Approximation"
 date: 2026-05-08
 content_hash: bb953d5e0abd0568
 ---

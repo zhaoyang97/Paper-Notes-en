@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PRUE: A Practical Recipe for Field Boundary Segmentation at Scale
 description: >-
-  [CVPR 2026][Segmentation][Field boundary segmentation] This paper systematically evaluates 18 segmentation and geospatial foundation models (GFMs), and proposes PRUE—a field boundary segmentation recipe combining a U-Net backbone, composite loss function, and targeted data augmentation. PRUE achieves 76% IoU and 47% object-F1 on the FTW benchmark, surpassing the baseline by 6% and 9% respectively, while introducing a novel set of metrics for evaluating deployment robustness.
+  [CVPR 2026][Segmentation][Field boundary segmentation] This paper systematically evaluates 18 segmentation and geospatial foundation models (GFMs)…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Field boundary segmentation
-  - geospatial foundation models
-  - U-Net
-  - deployment robustness
-  - large-scale mapping
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Field boundary segmentation"
+  - "geospatial foundation models"
+  - "U-Net"
+  - "deployment robustness"
+  - "large-scale mapping"
 date: 2026-05-08
 content_hash: 1f23f9b283b18a09
 ---

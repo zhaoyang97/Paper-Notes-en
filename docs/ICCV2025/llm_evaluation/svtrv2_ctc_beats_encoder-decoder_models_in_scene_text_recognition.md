@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SVTRv2: CTC Beats Encoder-Decoder Models in Scene Text Recognition
 description: >-
-  [ICCV 2025][LLM Evaluation][Scene Text Recognition] SVTRv2 is proposed with three key designs — Multi-Size Resize (MSR), Feature Rearrangement Module (FRM), and Semantic Guidance Module (SGM) — enabling a CTC-based model to comprehensively outperform encoder-decoder methods across multi-scene benchmarks for the first time, while retaining inference speed advantages.
+  [ICCV 2025][LLM Evaluation][Scene Text Recognition] SVTRv2 is proposed with three key designs — Multi-Size Resize (MSR), Feature Rearrangement Module (FRM)…
 tags:
-  - ICCV 2025
-  - LLM Evaluation
-  - Scene Text Recognition
-  - CTC
-  - Irregular Text
-  - Semantic Guidance
-  - Multi-Size Resize
+  - "ICCV 2025"
+  - "LLM Evaluation"
+  - "Scene Text Recognition"
+  - "CTC"
+  - "Irregular Text"
+  - "Semantic Guidance"
+  - "Multi-Size Resize"
 date: 2026-05-08
 content_hash: 9ecff171cf40d75e
 ---

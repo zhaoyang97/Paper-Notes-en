@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Purifying Shampoo: Investigating Shampoo's Heuristics by Decomposing its Preconditioner
 description: >-
-  [NeurIPS 2025][Optimization][Shampoo optimizer] By decomposing Shampoo's preconditioner into eigenvalue and eigenbasis components, this work reveals that learning rate grafting essentially compensates for eigenvalue staleness and scaling bias, and proposes eigenvalue correction and adaptive eigenbasis update frequency as principled replacements for these heuristics.
+  [NeurIPS 2025][Optimization][Shampoo optimizer] By decomposing Shampoo's preconditioner into eigenvalue and eigenbasis components, this work reveals that learning rate grafting essentially compensates for eigenvalue stal…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Shampoo optimizer
-  - preconditioner
-  - Kronecker factor
-  - learning rate grafting
-  - adaptive eigenbasis update
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Shampoo optimizer"
+  - "preconditioner"
+  - "Kronecker factor"
+  - "learning rate grafting"
+  - "adaptive eigenbasis update"
 date: 2026-05-08
 content_hash: 062a5d0e5eae48d4
 ---

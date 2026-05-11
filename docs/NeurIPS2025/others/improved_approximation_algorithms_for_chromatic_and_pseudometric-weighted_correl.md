@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Improved Approximation Algorithms for Chromatic and Pseudometric-Weighted Correlation Clustering
 description: >-
-  [NeurIPS 2025][Correlation Clustering] For two important generalizations of Correlation Clustering—Chromatic CC and pseudometric-weighted CC—this paper achieves a 2.15-approximation and a tight 10/3-approximation, respectively, via LP relaxation and carefully designed rounding functions, significantly improving upon the previous best results of 2.5 and 6.
+  [NeurIPS 2025][Correlation Clustering] For two important generalizations of Correlation Clustering—Chromatic CC and pseudometric-weighted CC—this paper achieves a 2.15-approximation and a tight 10/3-approximation…
 tags:
-  - NeurIPS 2025
-  - Correlation Clustering
-  - Approximation Algorithms
-  - LP Rounding
-  - Chromatic CC
-  - Pseudometric
+  - "NeurIPS 2025"
+  - "Correlation Clustering"
+  - "Approximation Algorithms"
+  - "LP Rounding"
+  - "Chromatic CC"
+  - "Pseudometric"
 date: 2026-05-08
 content_hash: d6071bf12160f9f6
 ---

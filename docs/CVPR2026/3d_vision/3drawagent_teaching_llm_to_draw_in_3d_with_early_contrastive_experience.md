@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] 3DrawAgent: Teaching LLM to Draw in 3D with Early Contrastive Experience
 description: >-
-  [CVPR 2026][3D Vision][3D sketch generation] This paper proposes 3DrawAgent, a training-free framework that enables a frozen LLM to acquire 3D spatial reasoning through *contrastive knowledge extraction* (CKE), generating language-driven 3D Bézier sketches in an autoregressive manner without any parameter updates, achieving performance competitive with trained methods.
+  [CVPR 2026][3D Vision][3D sketch generation] This paper proposes 3DrawAgent, a training-free framework that enables a frozen LLM to acquire 3D spatial reasoning through *contrastive knowledge extraction* (CKE)…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D sketch generation
-  - LLM
-  - training-free
-  - contrastive experience optimization
-  - Bézier curves
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D sketch generation"
+  - "LLM"
+  - "training-free"
+  - "contrastive experience optimization"
+  - "Bézier curves"
 date: 2026-05-08
 content_hash: e01e424815754826
 ---

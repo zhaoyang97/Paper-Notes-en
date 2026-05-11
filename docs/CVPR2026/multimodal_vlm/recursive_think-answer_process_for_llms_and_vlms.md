@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Recursive Think-Answer Process for LLMs and VLMs
 description: >-
-  [CVPR 2026 (Findings)][Multimodal VLM][recursive reasoning] R-TAP proposes a recursive think-answer process that employs a confidence generator to assess the certainty of model responses and guide iterative reasoning refinement. Combined with dual reinforcement signals—a recursive confidence growth reward and a final answer confidence reward—R-TAP consistently outperforms single-pass inference methods on both LLMs and VLMs, while substantially reducing "Oops!"-style self-reflection expressions during reasoning.
+  [CVPR 2026 (Findings)][Multimodal VLM][recursive reasoning] R-TAP proposes a recursive think-answer process that employs a confidence generator to assess the certainty of model responses and guide iterative reasoning ref…
 tags:
-  - CVPR 2026 (Findings)
-  - Multimodal VLM
-  - recursive reasoning
-  - Think-Answer
-  - confidence generator
-  - reasoning refinement
-  - test-time scaling
+  - "CVPR 2026 (Findings)"
+  - "Multimodal VLM"
+  - "recursive reasoning"
+  - "Think-Answer"
+  - "confidence generator"
+  - "reasoning refinement"
+  - "test-time scaling"
 date: 2026-05-08
 content_hash: 11943a980d7704ed
 ---

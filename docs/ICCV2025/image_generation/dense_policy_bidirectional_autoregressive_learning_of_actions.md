@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dense Policy: Bidirectional Autoregressive Learning of Actions
 description: >-
-  [ICCV 2025][Image Generation][autoregressive policy] This paper proposes Dense Policy, a robot manipulation policy based on bidirectional autoregressive expansion, which achieves hierarchical coarse-to-fine action generation in logarithmic time and surpasses mainstream generative policies such as Diffusion Policy and ACT on both simulation and real-world tasks.
+  [ICCV 2025][Image Generation][autoregressive policy] This paper proposes Dense Policy, a robot manipulation policy based on bidirectional autoregressive expansion…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - autoregressive policy
-  - bidirectional expansion
-  - coarse-to-fine generation
-  - diffusion policy
-  - imitation learning
+  - "ICCV 2025"
+  - "Image Generation"
+  - "autoregressive policy"
+  - "bidirectional expansion"
+  - "coarse-to-fine generation"
+  - "diffusion policy"
+  - "imitation learning"
 date: 2026-05-08
 content_hash: 078763e0163bfeea
 ---

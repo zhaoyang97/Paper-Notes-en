@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Love Me, Love My Label: Rethinking the Role of Labels in Prompt Retrieval for Visual In-Context Learning
 description: >-
-  [CVPR 2026][Segmentation][Visual in-context learning] This paper identifies a critical yet overlooked problem in visual in-context learning (VICL): existing prompt retrieval methods ignore label information, leading to label inconsistency. The proposed LaPR framework addresses this through joint image-label representation and a mixture-of-experts (MoE) mechanism, achieving label-aware prompt retrieval that consistently outperforms state-of-the-art methods on foreground segmentation, object detection, and image colorization tasks.
+  [CVPR 2026][Segmentation][Visual in-context learning] This paper identifies a critical yet overlooked problem in visual in-context learning (VICL): existing prompt retrieval methods ignore label information…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Visual in-context learning
-  - prompt retrieval
-  - label consistency
-  - mixture of experts
-  - contrastive learning
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Visual in-context learning"
+  - "prompt retrieval"
+  - "label consistency"
+  - "mixture of experts"
+  - "contrastive learning"
 date: 2026-05-08
 content_hash: f708f967594a1bff
 ---

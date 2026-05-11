@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Truthfulness Despite Weak Supervision: Evaluating and Training LLMs Using Peer Prediction
 description: >-
-  [ICLR 2026][LLM Evaluation][Peer Prediction] This paper proposes applying the Peer Prediction mechanism from game theory to LLM evaluation and training. By measuring the mutual predictability of participants' answers, the method distinguishes honest from deceptive responses without requiring ground-truth labels, thereby incentivizing truthfulness. It exhibits a striking *inverse scaling* property — weaker experts are actually more resistant to deception by stronger models.
+  [ICLR 2026][LLM Evaluation][Peer Prediction] This paper proposes applying the Peer Prediction mechanism from game theory to LLM evaluation and training. By measuring the mutual predictability of participants' answers…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - Peer Prediction
-  - Honesty Training
-  - Deception Resistance
-  - Weak Supervision
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Peer Prediction"
+  - "Honesty Training"
+  - "Deception Resistance"
+  - "Weak Supervision"
 date: 2026-05-08
 content_hash: 0767d00b11ac9aaf
 ---

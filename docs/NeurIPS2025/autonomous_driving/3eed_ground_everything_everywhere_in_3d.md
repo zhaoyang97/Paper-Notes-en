@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] 3EED: Ground Everything Everywhere in 3D
 description: >-
-  [NeurIPS 2025][Autonomous Driving][3D visual grounding] This paper introduces 3EED — the first large-scale multi-platform (vehicle, drone, quadruped robot), multimodal (LiDAR + RGB) outdoor 3D visual grounding benchmark, containing over 128K objects and 22K language descriptions, making it 10× larger than existing outdoor datasets. A baseline method incorporating cross-platform alignment, multi-scale sampling, and scale-adaptive fusion is also proposed, revealing substantial performance gaps in cross-platform 3D grounding.
+  [NeurIPS 2025][Autonomous Driving][3D visual grounding] This paper introduces 3EED — the first large-scale multi-platform (vehicle, drone, quadruped robot), multimodal (LiDAR + RGB) outdoor 3D visual grounding benchmark…
 tags:
-  - NeurIPS 2025
-  - Autonomous Driving
-  - 3D visual grounding
-  - multi-platform
-  - multimodal
-  - outdoor scenes
-  - cross-platform transfer
+  - "NeurIPS 2025"
+  - "Autonomous Driving"
+  - "3D visual grounding"
+  - "multi-platform"
+  - "multimodal"
+  - "outdoor scenes"
+  - "cross-platform transfer"
 date: 2026-05-08
 content_hash: 1b653c30684465e0
 ---

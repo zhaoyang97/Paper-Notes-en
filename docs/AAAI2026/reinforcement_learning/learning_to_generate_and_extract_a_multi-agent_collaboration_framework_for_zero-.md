@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Learning to Generate and Extract: A Multi-Agent Collaboration Framework for Zero-shot Document-level Event Arguments Extraction
 description: >-
-  [AAAI 2026][Reinforcement Learning][Zero-shot Learning] This paper proposes a "Propose-Evaluate-Revise" multi-agent collaboration framework (comprising a generator agent and an evaluator agent) to address zero-shot document-level event argument extraction (ZS-DEAE). The generator agent synthesizes training data for unseen event types, while the evaluator agent provides log-likelihood-based quality scores to guide reinforcement learning for iterative optimization, simultaneously improving synthetic data quality and extraction performance.
+  [AAAI 2026][Reinforcement Learning][Zero-shot Learning] This paper proposes a "Propose-Evaluate-Revise" multi-agent collaboration framework (comprising a generator agent and an evaluator agent) to address zero-shot docum…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - Zero-shot Learning
-  - Document-level Event Argument Extraction
-  - Multi-Agent Collaboration
-  - Synthetic Data
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "Zero-shot Learning"
+  - "Document-level Event Argument Extraction"
+  - "Multi-Agent Collaboration"
+  - "Synthetic Data"
 date: 2026-05-08
 content_hash: 0d56fdfbb5341e23
 ---

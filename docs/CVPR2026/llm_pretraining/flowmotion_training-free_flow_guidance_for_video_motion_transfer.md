@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FlowMotion: Training-Free Flow Guidance for Video Motion Transfer
 description: >-
-  [CVPR 2026][LLM Pretraining][Video Motion Transfer] FlowMotion is a training-free video motion transfer framework that directly leverages the latent prediction output of flow-based T2V models to construct motion guidance signals, avoiding gradient backpropagation through internal model layers while maintaining motion fidelity and significantly reducing inference time and memory overhead.
+  [CVPR 2026][LLM Pretraining][Video Motion Transfer] FlowMotion is a training-free video motion transfer framework that directly leverages the latent prediction output of flow-based T2V models to construct motion guidance…
 tags:
-  - CVPR 2026
-  - LLM Pretraining
-  - Video Motion Transfer
-  - Flow Matching
-  - Training-Free
-  - Latent Prediction
-  - Velocity Regularization
+  - "CVPR 2026"
+  - "LLM Pretraining"
+  - "Video Motion Transfer"
+  - "Flow Matching"
+  - "Training-Free"
+  - "Latent Prediction"
+  - "Velocity Regularization"
 date: 2026-05-08
 content_hash: f1c191ae39aad357
 ---

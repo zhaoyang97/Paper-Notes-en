@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards a Common Framework for Autoformalization
 description: >-
-  [AAAI 2026][LLM Evaluation][autoformalization] This paper systematically surveys existing work on autoformalization across mathematics, logical reasoning, planning, and knowledge representation, and proposes a unified cross-disciplinary definitional framework. Autoformalization is defined as the semantically equivalent transformation from informal language to formal reasoning languages, with the goal of facilitating methodology sharing across research communities and accelerating the development of next-generation AI reasoning systems.
+  [AAAI 2026][LLM Evaluation][autoformalization] This paper systematically surveys existing work on autoformalization across mathematics, logical reasoning, planning, and knowledge representation…
 tags:
-  - AAAI 2026
-  - LLM Evaluation
-  - autoformalization
-  - formalization
-  - LLM
-  - semantic parsing
-  - formal verification
+  - "AAAI 2026"
+  - "LLM Evaluation"
+  - "autoformalization"
+  - "formalization"
+  - "LLM"
+  - "semantic parsing"
+  - "formal verification"
 date: 2026-05-08
 content_hash: a23a9e69e90f62b4
 ---

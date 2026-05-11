@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CoMPaSS: Enhancing Spatial Understanding in Text-to-Image Diffusion Models
 description: >-
-  [ICCV 2025][Image Generation][Text-to-image generation] CoMPaSS leverages the SCOP data engine to curate spatially unambiguous training data and introduces the parameter-free TENOR module to inject token ordering information into the attention mechanism, substantially improving spatial relationship generation accuracy in T2I diffusion models (VISOR +98%, GenEval Position +131%).
+  [ICCV 2025][Image Generation][Text-to-image generation] CoMPaSS leverages the SCOP data engine to curate spatially unambiguous training data and introduces the parameter-free TENOR module to inject token ordering informa…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Text-to-image generation
-  - spatial understanding
-  - diffusion models
-  - data engine
-  - token positional encoding
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Text-to-image generation"
+  - "spatial understanding"
+  - "diffusion models"
+  - "data engine"
+  - "token positional encoding"
 date: 2026-05-08
 content_hash: a2f08e127b32af4a
 ---

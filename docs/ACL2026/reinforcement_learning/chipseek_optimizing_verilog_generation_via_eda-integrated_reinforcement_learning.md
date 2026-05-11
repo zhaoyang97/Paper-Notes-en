@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ChipSeek: Optimizing Verilog Generation via EDA-Integrated Reinforcement Learning
 description: >-
-  [ACL 2026][Reinforcement Learning][Verilog Generation] ChipSeek proposes a hierarchical reward RL framework that integrates the EDA toolchain directly into the training loop. Through Curriculum-guided Dynamic Policy Optimization (CDPO), it enables LLMs to generate RTL code that simultaneously satisfies functional correctness and PPA (Power-Performance-Area) optimization, achieving SOTA on standard benchmarks.
+  [ACL 2026][Reinforcement Learning][Verilog Generation] ChipSeek proposes a hierarchical reward RL framework that integrates the EDA toolchain directly into the training loop. Through Curriculum-guided Dynamic Policy Opti…
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - Verilog Generation
-  - EDA Integration
-  - Hierarchical Rewards
-  - PPA Optimization
-  - Curriculum-Guided Policy Optimization
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "Verilog Generation"
+  - "EDA Integration"
+  - "Hierarchical Rewards"
+  - "PPA Optimization"
+  - "Curriculum-Guided Policy Optimization"
 date: 2026-05-08
 content_hash: 0bbf2aa9f4c6a65b
 ---

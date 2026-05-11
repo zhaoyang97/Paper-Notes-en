@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EgoHandICL: Egocentric 3D Hand Reconstruction with In-Context Learning
 description: >-
-  [ICLR 2026][Multimodal VLM][Egocentric view] This work introduces the in-context learning (ICL) paradigm to 3D hand reconstruction for the first time. Through VLM-guided template retrieval, a multimodal ICL tokenizer, and an MAE-driven reconstruction pipeline, EgoHandICL significantly outperforms state-of-the-art methods on the ARCTIC and EgoExo4D benchmarks.
+  [ICLR 2026][Multimodal VLM][Egocentric view] This work introduces the in-context learning (ICL) paradigm to 3D hand reconstruction for the first time. Through VLM-guided template retrieval, a multimodal ICL tokenizer…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Egocentric view
-  - 3D hand reconstruction
-  - in-context learning
-  - vision-language model
-  - MANO
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Egocentric view"
+  - "3D hand reconstruction"
+  - "in-context learning"
+  - "vision-language model"
+  - "MANO"
 date: 2026-05-08
 content_hash: b4cba30d5d131f52
 ---

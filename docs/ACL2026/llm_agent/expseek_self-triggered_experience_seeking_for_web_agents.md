@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ExpSeek: Self-Triggered Experience Seeking for Web Agents
 description: >-
-  [ACL 2026][LLM Agent][Web Agent] ExpSeek proposes a step-level entropy self-triggered framework for proactive experience seeking, enabling web agents to determine when and what guidance is needed based on intrinsic model signals during interaction, achieving absolute improvements of 9.3% and 7.5% on Qwen3-8B and Qwen3-32B, respectively.
+  [ACL 2026][LLM Agent][Web Agent] ExpSeek proposes a step-level entropy self-triggered framework for proactive experience seeking…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - Web Agent
-  - experience intervention
-  - entropy triggering
-  - proactive guidance seeking
-  - multi-turn interaction
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Web Agent"
+  - "experience intervention"
+  - "entropy triggering"
+  - "proactive guidance seeking"
+  - "multi-turn interaction"
 date: 2026-05-08
 content_hash: ecd003aed2699335
 ---

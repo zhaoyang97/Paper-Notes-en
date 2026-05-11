@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mitigating Object Hallucinations via Sentence-Level Early Intervention
 description: >-
-  [ICCV 2025][Human Understanding][Object Hallucination] This paper proposes SENTINEL, a framework that mitigates object hallucinations in MLLMs via sentence-level early intervention and in-domain preference learning. It reduces hallucination rates by over 90% on Object HalBench while maintaining or even improving general-purpose capabilities.
+  [ICCV 2025][Human Understanding][Object Hallucination] This paper proposes SENTINEL, a framework that mitigates object hallucinations in MLLMs via sentence-level early intervention and in-domain preference learning. It r…
 tags:
-  - ICCV 2025
-  - Human Understanding
-  - Object Hallucination
-  - Preference Learning
-  - Early Intervention
-  - In-domain Data
-  - DPO
+  - "ICCV 2025"
+  - "Human Understanding"
+  - "Object Hallucination"
+  - "Preference Learning"
+  - "Early Intervention"
+  - "In-domain Data"
+  - "DPO"
 date: 2026-05-08
 content_hash: 2c152b65d97e6989
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] ValuePilot: A Two-Phase Framework for Value-Driven Decision-Making
 description: >-
-  [NeurIPS 2025][value-driven decision-making] This paper proposes ValuePilot, a two-phase framework that constructs value-annotated decision scenarios via a Dataset Generation Toolkit (DGT) and performs multi-criteria decision-making through a Decision-Making Module (DMM) conditioned on personalized user value preferences, outperforming strong baselines including GPT-5 in alignment with human decisions.
+  [NeurIPS 2025][Interpretability][value-driven decision-making] This paper proposes ValuePilot, a two-phase framework that constructs value-annotated decision scenarios via a Dataset Generation Toolkit (DGT) and performs…
 tags:
-  - NeurIPS 2025
-  - value-driven decision-making
-  - personalized AI
-  - PROMETHEE
-  - multi-criteria decision-making
-  - human values
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "value-driven decision-making"
+  - "personalized AI"
+  - "PROMETHEE"
+  - "multi-criteria decision-making"
+  - "human values"
 date: 2026-05-08
 content_hash: d383c341b5f49d88
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] WDT-MD: Wavelet Diffusion Transformers for Microaneurysm Detection in Fundus Images
 description: >-
-  [AAAI 2026][Medical Imaging][Microaneurysm Detection] This paper proposes WDT-MD, a framework that addresses three fundamental challenges in fundus image microaneurysm (MA) detection—identity mapping, high false positives, and poor normal-feature reconstruction quality—through noise-encoded image conditioning, pseudo-normal pattern synthesis, and a wavelet diffusion Transformer architecture.
+  [AAAI 2026][Medical Imaging][Microaneurysm Detection] This paper proposes WDT-MD, a framework that addresses three fundamental challenges in fundus image microaneurysm (MA) detection—identity mapping…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Microaneurysm Detection
-  - Diffusion Models
-  - Wavelet Transform
-  - Anomaly Detection
-  - Diabetic Retinopathy
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Microaneurysm Detection"
+  - "Diffusion Models"
+  - "Wavelet Transform"
+  - "Anomaly Detection"
+  - "Diabetic Retinopathy"
 date: 2026-05-08
 content_hash: d8009e6c6a2de19f
 ---

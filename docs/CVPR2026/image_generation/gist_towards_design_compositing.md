@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GIST: Towards Design Compositing
 description: >-
-  [CVPR 2026][Image Generation][design compositing] This paper proposes GIST, a training-free identity-preserving image compositing method that achieves style harmonization across multi-source visual elements via cross-attention-guided token injection and Flow Matched latent space initialization, serving as a plug-and-play compositing stage between layout prediction and typography generation.
+  [CVPR 2026][Image Generation][design compositing] This paper proposes GIST, a training-free identity-preserving image compositing method that achieves style harmonization across multi-source visual elements via cross-att…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - design compositing
-  - identity preservation
-  - image harmonization
-  - diffusion model
-  - graphic design
+  - "CVPR 2026"
+  - "Image Generation"
+  - "design compositing"
+  - "identity preservation"
+  - "image harmonization"
+  - "diffusion model"
+  - "graphic design"
 date: 2026-05-08
 content_hash: e46babfec3547497
 ---

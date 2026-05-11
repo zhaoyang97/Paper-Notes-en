@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] TAViS: Text-bridged Audio-Visual Segmentation with Foundation Models
 description: >-
-  [ICCV 2025][Segmentation][Audio-visual segmentation] TAViS is a text-bridged audio-visual segmentation framework that couples the cross-modal alignment capability of ImageBind with the precise segmentation capability of SAM2. By introducing a text-bridged hybrid prompting mechanism and alignment supervision strategy, TAViS achieves state-of-the-art performance across single-source, multi-source, semantic, and zero-shot segmentation scenarios.
+  [ICCV 2025][Segmentation][Audio-visual segmentation] TAViS is a text-bridged audio-visual segmentation framework that couples the cross-modal alignment capability of ImageBind with the precise segmentation capability of…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - Audio-visual segmentation
-  - foundation models
-  - SAM2
-  - ImageBind
-  - text bridging
-  - cross-modal alignment
-  - zero-shot segmentation
+  - "ICCV 2025"
+  - "Segmentation"
+  - "Audio-visual segmentation"
+  - "foundation models"
+  - "SAM2"
+  - "ImageBind"
+  - "text bridging"
+  - "cross-modal alignment"
+  - "zero-shot segmentation"
 date: 2026-05-08
 content_hash: 425f98b8249d1cbd
 ---

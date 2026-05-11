@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning from Synthetic Data Improves Multi-hop Reasoning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Synthetic Data] This paper finds that RLVR training on fully fictitious, rule-generated synthetic data significantly improves LLM performance on real-world multi-hop reasoning tasks (56%–131% gains for Qwen3-0.6B), because the model learns knowledge composition as a generalizable reasoning skill rather than memorizing factual knowledge.
+  [ICLR 2026][Reinforcement Learning][Synthetic Data] This paper finds that RLVR training on fully fictitious, rule-generated synthetic data significantly improves LLM performance on real-world multi-hop reasoning tasks (5…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Synthetic Data
-  - Multi-hop Reasoning
-  - RLVR
-  - Knowledge Composition
-  - Phantom Worlds
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Synthetic Data"
+  - "Multi-hop Reasoning"
+  - "RLVR"
+  - "Knowledge Composition"
+  - "Phantom Worlds"
 date: 2026-05-08
 content_hash: 17fc9074d7b12068
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RadZero: Similarity-Based Cross-Attention for Explainable Vision-Language Alignment in Chest X-ray
 description: >-
-  [NeurIPS 2025][Medical Imaging][Vision-language alignment] This paper proposes RadZero, a framework centered on VL-CABS (Vision-Language Cross-Attention Based on Similarity), enabling explainable and fine-grained vision-language alignment on chest X-rays with unified support for zero-shot classification, localization, and segmentation.
+  [NeurIPS 2025][Medical Imaging][Vision-language alignment] This paper proposes RadZero, a framework centered on VL-CABS (Vision-Language Cross-Attention Based on Similarity)…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Vision-language alignment
-  - chest X-ray
-  - zero-shot
-  - explainability
-  - cross-attention
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Vision-language alignment"
+  - "chest X-ray"
+  - "zero-shot"
+  - "explainability"
+  - "cross-attention"
 date: 2026-05-08
 content_hash: 9152623c0c49c49f
 ---

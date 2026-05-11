@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Expert-Guided Prompting and Retrieval-Augmented Generation for Emergency Medical Service Question Answering
 description: >-
-  [AAAI2026][Medical Imaging][RAG] This paper constructs EMSQA, the first multiple-choice QA dataset for the emergency medical services domain (24.3K questions, 10 clinical topics, 4 certification levels), and proposes the Expert-CoT and ExpertRAG frameworks to inject domain expertise into LLM reasoning and retrieval, achieving up to 4.59% accuracy improvement over standard RAG.
+  [AAAI2026][Medical Imaging][RAG] This paper constructs EMSQA, the first multiple-choice QA dataset for the emergency medical services domain (24.3K questions, 10 clinical topics, 4 certification levels)…
 tags:
-  - AAAI2026
-  - Medical Imaging
-  - RAG
-  - chain-of-thought
-  - EMS
-  - domain expertise
-  - MCQA
+  - "AAAI2026"
+  - "Medical Imaging"
+  - "RAG"
+  - "chain-of-thought"
+  - "EMS"
+  - "domain expertise"
+  - "MCQA"
 date: 2026-05-08
 content_hash: 6e4a8a6c03787cf1
 ---

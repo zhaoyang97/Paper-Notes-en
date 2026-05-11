@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] StreamSTGS: Streaming Spatial and Temporal Gaussian Grids for Real-Time Free-Viewpoint Video
 description: >-
-  [AAAI 2026][3D Vision][Free-viewpoint video] This paper proposes StreamSTGS, a streamable spatial-temporal Gaussian grid representation that encodes canonical 3D Gaussian attributes as 2D images and temporal features as video, enabling real-time free-viewpoint video streaming at only 170 KB per frame. Reconstruction quality is maintained (PSNR 32.30 dB) through Transformer-assisted training and a sliding window mechanism.
+  [AAAI 2026][3D Vision][Free-viewpoint video] This paper proposes StreamSTGS, a streamable spatial-temporal Gaussian grid representation that encodes canonical 3D Gaussian attributes as 2D images and temporal features as…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - Free-viewpoint video
-  - 3D Gaussian splatting
-  - real-time streaming
-  - dynamic scene reconstruction
-  - adaptive bitrate
+  - "AAAI 2026"
+  - "3D Vision"
+  - "Free-viewpoint video"
+  - "3D Gaussian splatting"
+  - "real-time streaming"
+  - "dynamic scene reconstruction"
+  - "adaptive bitrate"
 date: 2026-05-08
 content_hash: f64012ea2ff4aea1
 ---

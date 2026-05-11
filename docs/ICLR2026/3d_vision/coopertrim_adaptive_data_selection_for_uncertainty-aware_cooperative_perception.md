@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] COOPERTRIM: Adaptive Data Selection for Uncertainty-Aware Cooperative Perception
 description: >-
-  [ICLR 2026][3D Vision][cooperative perception] CooperTrim is an adaptive feature selection framework that evaluates feature relevance via conformal temporal uncertainty estimation and dynamically determines the sharing volume through a data-driven mechanism. It achieves 80.28% bandwidth reduction with comparable performance on cooperative semantic segmentation, and is the first to apply selective sharing to cooperative segmentation tasks.
+  [ICLR 2026][3D Vision][cooperative perception] CooperTrim is an adaptive feature selection framework that evaluates feature relevance via conformal temporal uncertainty estimation and dynamically determines the sharing v…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - cooperative perception
-  - bandwidth optimization
-  - temporal uncertainty
-  - feature selection
-  - conformal prediction
+  - "ICLR 2026"
+  - "3D Vision"
+  - "cooperative perception"
+  - "bandwidth optimization"
+  - "temporal uncertainty"
+  - "feature selection"
+  - "conformal prediction"
 date: 2026-05-08
 content_hash: da53b49a88b4426c
 ---

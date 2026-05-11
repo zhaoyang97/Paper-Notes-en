@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Generalized Geometry Encoding Volume for Real-time Stereo Matching
 description: >-
-  [AAAI 2026][3D Vision][Stereo Matching] This paper proposes GGEV, which integrates depth priors from a monocular depth foundation model (Depth Anything V2) into the cost aggregation process in a lightweight manner. Through Depth-aware Dynamic Cost Aggregation (DDCA), GGEV adaptively enhances matching relationships across different disparity hypotheses, achieving strong generalization at real-time inference speed.
+  [AAAI 2026][3D Vision][Stereo Matching] This paper proposes GGEV, which integrates depth priors from a monocular depth foundation model (Depth Anything V2) into the cost aggregation process in a lightweight manner. Throu…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - Stereo Matching
-  - Real-time Inference
-  - Zero-shot Generalization
-  - Monocular Depth Foundation Model
-  - Dynamic Cost Aggregation
+  - "AAAI 2026"
+  - "3D Vision"
+  - "Stereo Matching"
+  - "Real-time Inference"
+  - "Zero-shot Generalization"
+  - "Monocular Depth Foundation Model"
+  - "Dynamic Cost Aggregation"
 date: 2026-05-08
 content_hash: d1de77228d59c86f
 ---

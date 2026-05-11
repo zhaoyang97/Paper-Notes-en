@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Leveraging Data to Say No: Memory Augmented Plug-and-Play Selective Prediction
 description: >-
-  [ICLR 2026][Selective Prediction] This paper proposes MA-PaPSP, a training-free plug-and-play selective prediction framework for arbitrary VLMs. It constructs proxy embeddings via k-NN weighted averaging over an external retrieval dataset (reducing representational variance) and applies contrastive normalization scoring (improving calibration). MA-PaPSP consistently outperforms PaPSP and LLM-as-judge baselines on selective prediction across image captioning, image-text matching, and classification tasks.
+  [ICLR 2026][Information Retrieval & RAG][Selective Prediction] This paper proposes MA-PaPSP, a training-free plug-and-play selective prediction framework for arbitrary VLMs. It constructs proxy embeddings via k-NN weight…
 tags:
-  - ICLR 2026
-  - Selective Prediction
-  - VLM Reliability
-  - Retrieval Augmentation
-  - Contrastive Scoring
-  - CLIP
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Selective Prediction"
+  - "VLM Reliability"
+  - "Retrieval Augmentation"
+  - "Contrastive Scoring"
+  - "CLIP"
 date: 2026-05-08
 content_hash: 5966b808bd824e2a
 ---

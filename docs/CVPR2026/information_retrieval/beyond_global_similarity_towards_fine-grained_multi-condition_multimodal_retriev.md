@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Beyond Global Similarity: Towards Fine-Grained, Multi-Condition Multimodal Retrieval
 description: >-
-  [CVPR 2026][multi-condition retrieval] This paper introduces MCMR (Multi-Conditional Multimodal Retrieval), a large-scale benchmark that employs a dual-evidence design — where certain attributes are inferable only from images and others only from text — to ensure retrieval tasks cannot be solved unimodally. The benchmark systematically evaluates 5 retrievers and 7 MLLM rerankers, revealing modality asymmetry and fine-grained reasoning gaps.
+  [CVPR 2026][Information Retrieval & RAG][multi-condition retrieval] This paper introduces MCMR (Multi-Conditional Multimodal Retrieval), a large-scale benchmark that employs a dual-evidence design — where certain attribu…
 tags:
-  - CVPR 2026
-  - multi-condition retrieval
-  - fine-grained matching
-  - dual-evidence
-  - MLLM reranking
-  - cross-modal reasoning
+  - "CVPR 2026"
+  - "Information Retrieval & RAG"
+  - "multi-condition retrieval"
+  - "fine-grained matching"
+  - "dual-evidence"
+  - "MLLM reranking"
+  - "cross-modal reasoning"
 date: 2026-05-08
 content_hash: 4c26c1a9dfdd0d91
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Team LEYA in 10th ABAW Competition: Multimodal Ambivalence/Hesitancy Recognition Approach
 description: >-
-  [CVPR 2026 (ABAW Workshop)][Human Understanding][Ambivalence/Hesitancy Recognition] A four-modality fusion pipeline (scene VideoMAE + face EfficientNetB0 + audio Wav2Vec2.0/Mamba + text EmotionDistilRoBERTa) is proposed. Each modality embedding is projected into a shared 128-dimensional space via a prototype-augmented Transformer fusion module and regularized with a prototype classification auxiliary loss. A 5-model ensemble achieves **71.43% Macro F1** on the final test set of the BAH corpus, substantially outperforming all unimodal baselines.
+  [CVPR 2026 (ABAW Workshop)][Human Understanding][Ambivalence/Hesitancy Recognition] A four-modality fusion pipeline (scene VideoMAE + face EfficientNetB0 + audio Wav2Vec2.0/Mamba + text EmotionDistilRoBERTa) is proposed.…
 tags:
-  - CVPR 2026 (ABAW Workshop)
-  - Human Understanding
-  - Ambivalence/Hesitancy Recognition
-  - Multimodal Fusion
-  - Prototype-Augmented Classification
-  - Mamba
-  - VideoMAE
-  - ABAW Competition
+  - "CVPR 2026 (ABAW Workshop)"
+  - "Human Understanding"
+  - "Ambivalence/Hesitancy Recognition"
+  - "Multimodal Fusion"
+  - "Prototype-Augmented Classification"
+  - "Mamba"
+  - "VideoMAE"
+  - "ABAW Competition"
 date: 2026-05-08
 content_hash: 5ef17cb4b843d71e
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BALM: A Model-Agnostic Framework for Balanced Multimodal Learning under Imbalanced Missing Rates
 description: >-
-  [CVPR 2026][Multimodal VLM][Multimodal Learning] BALM proposes a model-agnostic plug-and-play framework to address multimodal learning under **Imbalanced Missing Rates (IMR)**. It introduces a Feature Calibration Module (FCM) to align representations across different missing patterns, and a Gradient Rebalancing Module (GRM) to balance the optimization dynamics of each modality from both distributional and spatial perspectives. The framework consistently improves the robustness of various backbone networks across multiple multimodal sentiment recognition benchmarks.
+  [CVPR 2026][Multimodal VLM][Multimodal Learning] BALM proposes a model-agnostic plug-and-play framework to address multimodal learning under **Imbalanced Missing Rates (IMR)**. It introduces a Feature Calibration Module…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Multimodal Learning
-  - Missing Modality
-  - Imbalanced Missing Rate
-  - Gradient Rebalancing
-  - Feature Calibration
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Multimodal Learning"
+  - "Missing Modality"
+  - "Imbalanced Missing Rate"
+  - "Gradient Rebalancing"
+  - "Feature Calibration"
 date: 2026-05-08
 content_hash: a368e6715941528f
 ---

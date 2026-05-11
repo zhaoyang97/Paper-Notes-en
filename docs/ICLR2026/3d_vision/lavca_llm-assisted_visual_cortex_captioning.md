@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LaVCa: LLM-assisted Visual Cortex Captioning
 description: >-
-  [ICLR 2026][3D Vision][visual cortex] This paper proposes LaVCa, a method that leverages LLMs to generate natural language captions for individual voxels in the human visual cortex. Through a four-step pipeline—encoding model construction, optimal image selection, MLLM-based captioning, and LLM-driven keyword extraction with sentence composition—LaVCa reveals voxel-level visual selectivity more accurately and with greater semantic diversity than the prior method BrainSCUBA.
+  [ICLR 2026][3D Vision][visual cortex] This paper proposes LaVCa, a method that leverages LLMs to generate natural language captions for individual voxels in the human visual cortex. Through a four-step pipeline—encoding…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - visual cortex
-  - voxel selectivity
-  - LLM
-  - fMRI encoding model
-  - brain activity prediction
+  - "ICLR 2026"
+  - "3D Vision"
+  - "visual cortex"
+  - "voxel selectivity"
+  - "LLM"
+  - "fMRI encoding model"
+  - "brain activity prediction"
 date: 2026-05-08
 content_hash: e2bd04b3aade15fc
 ---

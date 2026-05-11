@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] 3D-Agent: Tri-Modal Multi-Agent Collaboration for Scalable 3D Object Annotation
 description: >-
-  [NeurIPS 2025][3D Vision][3D object annotation] This paper proposes Tri-MARF, a tri-modal multi-agent framework comprising a VLM annotation agent (multi-view, multi-candidate description generation), an information aggregation agent (BERT clustering + CLIP weighting + UCB1 Multi-Armed Bandit selection), and a point cloud gating agent (Uni3D text–point cloud alignment for hallucination filtering). The system achieves a CLIPScore of 88.7 (surpassing human annotation at 82.4), a throughput of 12k objects/hour, and has annotated approximately 2 million 3D models.
+  [NeurIPS 2025][3D Vision][3D object annotation] This paper proposes Tri-MARF, a tri-modal multi-agent framework comprising a VLM annotation agent (multi-view, multi-candidate description generation)…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - 3D object annotation
-  - multi-agent collaboration
-  - VLM
-  - Multi-Armed Bandit
-  - point cloud verification
-  - cross-modal alignment
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "3D object annotation"
+  - "multi-agent collaboration"
+  - "VLM"
+  - "Multi-Armed Bandit"
+  - "point cloud verification"
+  - "cross-modal alignment"
 date: 2026-05-08
 content_hash: 7af76d16b6ac9b31
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] T1: One-to-One Channel-Head Binding for Multivariate Time-Series Imputation
 description: >-
-  [ICLR 2026][Time Series][time series imputation] This paper proposes T1, a CNN-Transformer hybrid architecture whose core innovation is Channel-Head Binding (CHead Attention): a shared depthwise convolution extracts $C$ types of temporal features (trend, periodicity, abrupt changes, etc.) for each variable, and each CNN channel is then bound one-to-one to a single attention head, enabling cross-variable information transfer to proceed independently at the feature level. When missing data prevents a channel from extracting a valid pattern, the corresponding attention head automatically down-weights, achieving adaptive missing-data handling without explicit design. On 11 benchmark datasets, the average MSE is reduced by 46%, with even larger gains under 70% extreme missingness.
+  [ICLR 2026][Time Series][time series imputation] This paper proposes T1, a CNN-Transformer hybrid architecture whose core innovation is Channel-Head Binding (CHead Attention): a shared depthwise convolution extracts $C$…
 tags:
-  - ICLR 2026
-  - Time Series
-  - time series imputation
-  - CNN-Transformer hybrid
-  - channel-head binding
-  - selective information transfer
-  - missing pattern generalization
+  - "ICLR 2026"
+  - "Time Series"
+  - "time series imputation"
+  - "CNN-Transformer hybrid"
+  - "channel-head binding"
+  - "selective information transfer"
+  - "missing pattern generalization"
 date: 2026-05-08
 content_hash: ac5c882beab5c5b3
 ---

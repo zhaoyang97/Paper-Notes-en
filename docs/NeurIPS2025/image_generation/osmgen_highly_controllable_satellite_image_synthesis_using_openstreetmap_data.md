@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OSMGen: Highly Controllable Satellite Image Synthesis using OpenStreetMap Data
 description: >-
-  [NeurIPS 2025 (Workshop: UrbanAI 2025)][Image Generation][Satellite image synthesis] OSMGen synthesizes high-fidelity satellite images directly from OSM JSON data (vector geometry, semantic tags, location, and temporal information), and generates temporally consistent before-after image pairs via DDIM inversion, enabling urban change simulation and data augmentation.
+  [NeurIPS 2025 (Workshop: UrbanAI 2025)][Image Generation][Satellite image synthesis] OSMGen synthesizes high-fidelity satellite images directly from OSM JSON data (vector geometry, semantic tags, location…
 tags:
   - "NeurIPS 2025 (Workshop: UrbanAI 2025)"
-  - Image Generation
-  - Satellite image synthesis
-  - OpenStreetMap
-  - ControlNet
-  - DDIM inversion
-  - change detection
+  - "Image Generation"
+  - "Satellite image synthesis"
+  - "OpenStreetMap"
+  - "ControlNet"
+  - "DDIM inversion"
+  - "change detection"
 date: 2026-05-08
 content_hash: c8fb40746d37da56
 ---

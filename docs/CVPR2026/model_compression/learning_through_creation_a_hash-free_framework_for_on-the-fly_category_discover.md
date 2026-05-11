@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning through Creation: A Hash-Free Framework for On-the-Fly Category Discovery
 description: >-
-  [CVPR2026][Model Compression][On-the-Fly Category Discovery] This paper proposes the LTC framework, which leverages MKEE (Minimize Kernel Energy + Maximize Entropy) to online-generate pseudo-unknown class samples during training. Combined with a dual max-margin loss and an adaptive threshold mechanism, LTC achieves 1.5%–13.1% all-class accuracy improvements across 7 datasets, entirely eliminating the semantic degradation caused by hash encoding.
+  [CVPR2026][Model Compression][On-the-Fly Category Discovery] This paper proposes the LTC framework, which leverages MKEE (Minimize Kernel Energy + Maximize Entropy) to online-generate pseudo-unknown class samples during…
 tags:
-  - CVPR2026
-  - Model Compression
-  - On-the-Fly Category Discovery
-  - pseudo-unknown class generation
-  - hash-free framework
-  - dynamic prototype dictionary
-  - max-margin loss
+  - "CVPR2026"
+  - "Model Compression"
+  - "On-the-Fly Category Discovery"
+  - "pseudo-unknown class generation"
+  - "hash-free framework"
+  - "dynamic prototype dictionary"
+  - "max-margin loss"
 date: 2026-05-08
 content_hash: 978f7851b524b07a
 ---

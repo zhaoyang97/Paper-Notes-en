@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Efficient and Effective Internal Memory Retrieval for LLM-Based Healthcare Prediction
 description: >-
-  [ACL 2026][Medical Imaging][Internal memory retrieval] This paper proposes the K2K framework, which treats the FFN parameter space of LLMs as a retrievable knowledge base. Clinical knowledge is injected via LoRA, activation-guided probes enable precise retrieval, and cross-attention reranking adaptively integrates multi-source internal knowledge — achieving state-of-the-art healthcare prediction without external retrieval latency.
+  [ACL 2026][Medical Imaging][Internal memory retrieval] This paper proposes the K2K framework, which treats the FFN parameter space of LLMs as a retrievable knowledge base. Clinical knowledge is injected via LoRA…
 tags:
-  - ACL 2026
-  - Medical Imaging
-  - Internal memory retrieval
-  - FFN key-value memory
-  - healthcare prediction
-  - knowledge injection
-  - cross-attention reranking
+  - "ACL 2026"
+  - "Medical Imaging"
+  - "Internal memory retrieval"
+  - "FFN key-value memory"
+  - "healthcare prediction"
+  - "knowledge injection"
+  - "cross-attention reranking"
 date: 2026-05-08
 content_hash: 78861497ee410ea3
 ---

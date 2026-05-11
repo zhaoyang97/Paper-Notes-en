@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Cross-View Object Correspondence via Cycle-Consistent Mask Prediction
 description: >-
-  [CVPR 2026][Segmentation][cross-view correspondence] This paper proposes CCMP, a cross-view object correspondence framework based on conditional binary segmentation. It leverages cycle-consistency constraints as a self-supervised signal and supports test-time training (TTT), achieving state-of-the-art performance of 44.57% mIoU on Ego-Exo4D.
+  [CVPR 2026][Segmentation][cross-view correspondence] This paper proposes CCMP, a cross-view object correspondence framework based on conditional binary segmentation. It leverages cycle-consistency constraints as a self-s…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - cross-view correspondence
-  - cycle consistency
-  - conditional segmentation
-  - test-time training
-  - egocentric view
+  - "CVPR 2026"
+  - "Segmentation"
+  - "cross-view correspondence"
+  - "cycle consistency"
+  - "conditional segmentation"
+  - "test-time training"
+  - "egocentric view"
 date: 2026-05-08
 content_hash: 561390d9a89facca
 ---

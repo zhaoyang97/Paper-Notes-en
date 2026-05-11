@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AutoFigure: Generating and Refining Publication-Ready Scientific Illustrations
 description: >-
-  [ICLR 2026][Audio & Speech][Scientific illustration generation] This paper proposes AutoFigure — the first agent framework based on a "Reasoned Rendering" paradigm — which automatically generates publication-ready scientific illustrations from long scientific texts by decoupling structural layout planning and aesthetic rendering into two stages. It is accompanied by FigureBench, the first large-scale benchmark (3,300 pairs) for systematic evaluation, with 66.7% of generated results deemed usable in camera-ready submissions by the original authors.
+  [ICLR 2026][Audio & Speech][Scientific illustration generation] This paper proposes AutoFigure — the first agent framework based on a "Reasoned Rendering" paradigm — which automatically generates publication-ready scient…
 tags:
-  - ICLR 2026
+  - "ICLR 2026"
   - "Audio & Speech"
-  - Scientific illustration generation
-  - multi-agent framework
-  - long-context understanding
-  - FigureBench
-  - VLM evaluation
+  - "Scientific illustration generation"
+  - "multi-agent framework"
+  - "long-context understanding"
+  - "FigureBench"
+  - "VLM evaluation"
 date: 2026-05-08
 content_hash: b308c728ac4454d2
 ---

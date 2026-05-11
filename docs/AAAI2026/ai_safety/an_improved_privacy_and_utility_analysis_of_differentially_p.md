@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] An Improved Privacy and Utility Analysis of Differentially Private SGD with Bounded Domain and Smooth Losses
 description: >-
-  [AAAI 2026][AI Safety][Differential Privacy] Under the sole assumption of $L$-smoothness (without convexity), this paper derives tighter closed-form RDP privacy bounds for DPSGD and, for the first time, provides a complete convergence/utility analysis in the bounded-domain setting, revealing that a smaller parameter domain diameter simultaneously improves both privacy and utility.
+  [AAAI 2026][AI Safety][Differential Privacy] Under the sole assumption of $L$-smoothness (without convexity), this paper derives tighter closed-form RDP privacy bounds for DPSGD and, for the first time…
 tags:
-  - AAAI 2026
-  - AI Safety
-  - Differential Privacy
-  - DPSGD
-  - Rényi Differential Privacy
-  - Bounded Domain
-  - Privacy-Utility Trade-off
+  - "AAAI 2026"
+  - "AI Safety"
+  - "Differential Privacy"
+  - "DPSGD"
+  - "Rényi Differential Privacy"
+  - "Bounded Domain"
+  - "Privacy-Utility Trade-off"
 date: 2026-05-08
 content_hash: 353b81ffdcdd3bd3
 ---

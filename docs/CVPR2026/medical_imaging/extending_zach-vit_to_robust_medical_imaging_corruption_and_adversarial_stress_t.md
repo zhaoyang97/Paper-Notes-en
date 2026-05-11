@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Extending ZACH-ViT to Robust Medical Imaging: Corruption and Adversarial Stress Testing in Low-Data Regimes
 description: >-
-  [CVPR 2026 Workshop (PHAROS-AIF-MIH)][Medical Imaging][Vision Transformer] This work presents the first robustness extension evaluation of ZACH-ViT, a compact permutation-invariant ViT architecture, in low-data medical imaging settings. Across 7 MedMNIST datasets, ZACH-ViT ranks first under both clean and common corruption conditions (Mean Rank 1.57), ranks first under FGSM (2.00), and second under PGD (2.29).
+  [CVPR 2026 Workshop (PHAROS-AIF-MIH)][Medical Imaging][Vision Transformer] This work presents the first robustness extension evaluation of ZACH-ViT, a compact permutation-invariant ViT architecture…
 tags:
-  - CVPR 2026 Workshop (PHAROS-AIF-MIH)
-  - Medical Imaging
-  - Vision Transformer
-  - Robustness
-  - Medical Image Classification
-  - Adversarial Attack
-  - Low-Data
-  - Permutation Invariance
+  - "CVPR 2026 Workshop (PHAROS-AIF-MIH)"
+  - "Medical Imaging"
+  - "Vision Transformer"
+  - "Robustness"
+  - "Medical Image Classification"
+  - "Adversarial Attack"
+  - "Low-Data"
+  - "Permutation Invariance"
 date: 2026-05-08
 content_hash: 86e61a75d2d30d9b
 ---

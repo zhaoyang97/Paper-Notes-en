@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] MoKus: Leveraging Cross-Modal Knowledge Transfer for Knowledge-Aware Concept Customization
 description: >-
-  [CVPR 2026][Knowledge Editing][Concept Customization] This paper introduces a new task termed "knowledge-aware concept customization," and discovers that knowledge editing applied to LLM text encoders naturally transfers to the visual generation modality (cross-modal knowledge transfer). Building on this finding, the paper proposes MoKus: a two-stage framework that first binds a rare token to a visual concept as an anchor representation via LoRA fine-tuning, then efficiently maps multiple natural-language knowledge statements onto the anchor representation via knowledge editing—requiring only ~7 seconds per knowledge update.
+  [CVPR 2026][Knowledge Editing][Concept Customization] This paper introduces a new task termed "knowledge-aware concept customization," and discovers that knowledge editing applied to LLM text encoders naturally transfers…
 tags:
-  - CVPR 2026
-  - Knowledge Editing
-  - Concept Customization
-  - Cross-Modal Knowledge Transfer
-  - DiT
-  - LLM Text Encoder
+  - "CVPR 2026"
+  - "Knowledge Editing"
+  - "Concept Customization"
+  - "Cross-Modal Knowledge Transfer"
+  - "DiT"
+  - "LLM Text Encoder"
 date: 2026-05-08
 content_hash: 7f47ce15fde46029
 ---

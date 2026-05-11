@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Distribution Learning Meets Graph Structure Sampling
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Bayesian networks] This paper establishes a novel connection between PAC learning of high-dimensional probabilistic graphical models and efficient counting/sampling of graph structures. By reducing the maintenance of an exponentially large expert pool to a weighted DAG sampling problem via online learning frameworks (EWA/RWM), the paper presents the first efficient agnostic learning algorithm for Bayesian networks with chordal graph skeletons, and improves the sample complexity for tree-structured distributions from $O(nk^3/\varepsilon)$ to the optimal $O(nk^2/\varepsilon)$.
+  [NeurIPS 2025][Reinforcement Learning][Bayesian networks] This paper establishes a novel connection between PAC learning of high-dimensional probabilistic graphical models and efficient counting/sampling of graph structu…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Bayesian networks
-  - distribution learning
-  - graph structure sampling
-  - online learning
-  - chordal graphs
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Bayesian networks"
+  - "distribution learning"
+  - "graph structure sampling"
+  - "online learning"
+  - "chordal graphs"
 date: 2026-05-08
 content_hash: 93ff7201a4185b47
 ---

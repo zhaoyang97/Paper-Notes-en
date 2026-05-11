@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Understanding and Improving Length Generalization in Hierarchical Sparse Attention Models
 description: >-
-  [ICLR 2026][LLM Efficiency][Long Context] This paper systematically dissects chunk-based sparse attention architectures, identifies three critical design principles (nonlinear Chunk Encoder + CLS token, Bypassing Residual Path, and enforced training-time sparsity), and successfully extrapolates a model trained on 4K context to 32 million tokens.
+  [ICLR 2026][LLM Efficiency][Long Context] This paper systematically dissects chunk-based sparse attention architectures, identifies three critical design principles (nonlinear Chunk Encoder + CLS token…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Long Context
-  - Sparse Attention
-  - Length Generalization
-  - Chunk-based Attention
-  - Hierarchical Sparse Attention
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Long Context"
+  - "Sparse Attention"
+  - "Length Generalization"
+  - "Chunk-based Attention"
+  - "Hierarchical Sparse Attention"
 date: 2026-05-08
 content_hash: 1b30d2dc87027188
 ---

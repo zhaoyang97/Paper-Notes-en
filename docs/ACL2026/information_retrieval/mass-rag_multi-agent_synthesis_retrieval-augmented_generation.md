@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] MASS-RAG: Multi-Agent Synthesis Retrieval-Augmented Generation
 description: >-
-  [ACL 2026][Multi-Agent RAG] This paper proposes MASS-RAG, a training-free multi-agent synthesis RAG framework that employs three specialized filtering agents—Summarizer, Extractor, and Reasoner—to process retrieved documents from complementary perspectives, followed by a Synthesis Agent that integrates multi-perspective evidence or candidate answers, consistently outperforming strong baselines across four benchmarks.
+  [ACL 2026][Information Retrieval & RAG][Multi-Agent RAG] This paper proposes MASS-RAG, a training-free multi-agent synthesis RAG framework that employs three specialized filtering agents—Summarizer, Extractor…
 tags:
-  - ACL 2026
-  - Multi-Agent RAG
-  - Evidence Synthesis
-  - Training-Free
-  - Multi-Perspective Filtering
-  - Heterogeneous Evidence Fusion
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Multi-Agent RAG"
+  - "Evidence Synthesis"
+  - "Training-Free"
+  - "Multi-Perspective Filtering"
+  - "Heterogeneous Evidence Fusion"
 date: 2026-05-08
 content_hash: 2c32b076e0e10a65
 ---

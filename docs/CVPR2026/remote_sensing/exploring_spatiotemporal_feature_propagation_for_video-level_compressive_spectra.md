@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Exploring Spatiotemporal Feature Propagation for Video-Level Compressive Spectral Reconstruction
 description: >-
-  [CVPR 2026][Remote Sensing][Spectral Compressed Imaging] The first work to advance spectral compressed imaging (SCI) from image-level to video-level reconstruction, introducing the first high-quality dynamic hyperspectral dataset DynaSpec (30 sequences / 300 frames), and proposing PG-SVRT with spatial-then-temporal attention plus bridge tokens that achieves 41.52 dB PSNR with optimal temporal consistency at lower FLOPs (28.18G) than several image-level SOTAs.
+  [CVPR 2026][Remote Sensing][Spectral Compressed Imaging] The first work to advance spectral compressed imaging (SCI) from image-level to video-level reconstruction…
 tags:
-  - CVPR 2026
-  - Remote Sensing
-  - Spectral Compressed Imaging
-  - Hyperspectral Video Reconstruction
-  - Spatiotemporal Feature Propagation
-  - Transformer
-  - DynaSpec Dataset
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Spectral Compressed Imaging"
+  - "Hyperspectral Video Reconstruction"
+  - "Spatiotemporal Feature Propagation"
+  - "Transformer"
+  - "DynaSpec Dataset"
 date: 2026-05-08
 content_hash: 7e25b7c34c33198a
 ---

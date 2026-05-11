@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CORAL: Disentangling Latent Representations in Long-Tailed Diffusion
 description: >-
-  [NeurIPS 2025][Image Generation][diffusion model] This paper diagnoses the root cause of tail-class generation degradation in diffusion models trained on long-tailed data as *representation entanglement* in the U-Net bottleneck layer, and proposes CORAL, which applies a supervised contrastive loss at the bottleneck to disentangle class representations. CORAL consistently outperforms baselines including DDPM, CBDM, and T2H on CIFAR10/100-LT, CelebA-5, and ImageNet-LT.
+  [NeurIPS 2025][Image Generation][diffusion model] This paper diagnoses the root cause of tail-class generation degradation in diffusion models trained on long-tailed data as *representation entanglement* in the U-Net bot…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - diffusion model
-  - long-tailed distribution
-  - contrastive learning
-  - latent space
-  - representation entanglement
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "diffusion model"
+  - "long-tailed distribution"
+  - "contrastive learning"
+  - "latent space"
+  - "representation entanglement"
 date: 2026-05-08
 content_hash: b5cbcaa8272c96cc
 ---

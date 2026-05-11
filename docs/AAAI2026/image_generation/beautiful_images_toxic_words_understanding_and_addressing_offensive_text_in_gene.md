@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beautiful Images, Toxic Words: Understanding and Addressing Offensive Text in Generated Images
 description: >-
-  [AAAI2026][Image Generation][Diffusion Models] This paper identifies a novel threat of NSFW text embedded in diffusion-model-generated images, proposes NSFW-Intervention — a targeted LoRA fine-tuning method applied to text-rendering layers — and releases the ToxicBench benchmark.
+  [AAAI2026][Image Generation][Diffusion Models] This paper identifies a novel threat of NSFW text embedded in diffusion-model-generated images…
 tags:
-  - AAAI2026
-  - Image Generation
-  - Diffusion Models
-  - NSFW Safety
-  - Text-in-Image
-  - Safety Fine-tuning
-  - benchmark
+  - "AAAI2026"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "NSFW Safety"
+  - "Text-in-Image"
+  - "Safety Fine-tuning"
+  - "benchmark"
 date: 2026-05-08
 content_hash: 8185587695c1c71f
 ---

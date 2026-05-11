@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Beyond Black-Box Interventions: Latent Probing for Faithful Retrieval-Augmented Generation
 description: >-
-  [ACL 2026][RAG faithfulness] This paper proposes ProbeRAG, which discovers the linear separability of conflicting and aligned knowledge in LLM latent spaces, and designs a three-stage framework (fine-grained knowledge pruning → latent conflict probing → conflict-aware attention) to address RAG faithfulness from the perspective of the model's internal mechanisms.
+  [ACL 2026][Information Retrieval & RAG][RAG faithfulness] This paper proposes ProbeRAG, which discovers the linear separability of conflicting and aligned knowledge in LLM latent spaces…
 tags:
-  - ACL 2026
-  - RAG faithfulness
-  - knowledge conflict
-  - latent space probing
-  - attention guidance
-  - context pruning
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "RAG faithfulness"
+  - "knowledge conflict"
+  - "latent space probing"
+  - "attention guidance"
+  - "context pruning"
 date: 2026-05-08
 content_hash: 5153c3a5a33501a9
 ---

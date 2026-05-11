@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LLM Targeted Underperformance Disproportionately Impacts Vulnerable Users
 description: >-
-  [AAAI 2026][LLM Safety][user bias] Systematic experiments demonstrate that mainstream LLMs (GPT-4, Claude 3 Opus, Llama 3-8B) exhibit significant discriminatory degradation in information accuracy, truthfulness, and refusal rates toward users with lower English proficiency, lower educational attainment, and non-US backgrounds, making the most vulnerable users the least reliably served.
+  [AAAI 2026][LLM Safety][user bias] Systematic experiments demonstrate that mainstream LLMs (GPT-4, Claude 3 Opus, Llama 3-8B) exhibit significant discriminatory degradation in information accuracy, truthfulness…
 tags:
-  - AAAI 2026
-  - LLM Safety
-  - user bias
-  - information accuracy
-  - vulnerable populations
-  - sycophancy
-  - targeted underperformance
+  - "AAAI 2026"
+  - "LLM Safety"
+  - "user bias"
+  - "information accuracy"
+  - "vulnerable populations"
+  - "sycophancy"
+  - "targeted underperformance"
 date: 2026-05-08
 content_hash: c0ff003e341fe506
 ---

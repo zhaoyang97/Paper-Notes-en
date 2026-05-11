@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Veritas: Generalizable Deepfake Detection via Pattern-Aware Reasoning
 description: >-
-  [ICLR 2026][LLM Safety][Deepfake Detection] This paper proposes Veritas, an MLLM-based deepfake detector that simulates human authentication reasoning via pattern-aware reasoning (fast judgment → reasoning → planning → self-reflection → conclusion). It introduces a two-stage training pipeline (SFT+MiPO cold-start + P-GRPO reinforcement learning) and constructs the HydraFake benchmark with a four-level OOD evaluation protocol. Veritas achieves an average accuracy of 90.7% across cross-forgery and cross-domain scenarios, surpassing the previous SOTA by 6.0%.
+  [ICLR 2026][LLM Safety][Deepfake Detection] This paper proposes Veritas, an MLLM-based deepfake detector that simulates human authentication reasoning via pattern-aware reasoning (fast judgment → reasoning → planning → s…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Deepfake Detection
-  - MLLM
-  - Pattern-Aware Reasoning
-  - Reinforcement Learning
-  - HydraFake
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Deepfake Detection"
+  - "MLLM"
+  - "Pattern-Aware Reasoning"
+  - "Reinforcement Learning"
+  - "HydraFake"
 date: 2026-05-08
 content_hash: 89e1b1d68b477b84
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PCPO: Proportionate Credit Policy Optimization for Aligning Image Generation Models
 description: >-
-  [ICLR 2026][Image Generation][Policy Gradient] This paper proposes PCPO, which corrects the disproportionate credit assignment inherent in policy gradient methods for diffusion/flow models via a stabilized objective reformulation and principled timestep reweighting, significantly accelerating convergence and mitigating model collapse.
+  [ICLR 2026][Image Generation][Policy Gradient] This paper proposes PCPO, which corrects the disproportionate credit assignment inherent in policy gradient methods for diffusion/flow models via a stabilized objective refo…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Policy Gradient
-  - Credit Assignment
-  - Diffusion Models
-  - Flow Matching
-  - Model Collapse
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Policy Gradient"
+  - "Credit Assignment"
+  - "Diffusion Models"
+  - "Flow Matching"
+  - "Model Collapse"
 date: 2026-05-08
 content_hash: c124ba1541c9304d
 ---

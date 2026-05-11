@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] APPLE: Attribute-Preserving Pseudo-Labeling for Diffusion-Based Face Swapping
 description: >-
-  [CVPR 2026][Image Generation][Face Swapping] APPLE proposes a teacher-student framework based on diffusion models. It trains a teacher model using conditional deblurring (instead of traditional conditional inpainting) to generate attribute-aligned pseudo-labels, which are then used to train a student model. This achieves SOTA performance in attribute preservation (FID 2.18, Pose Error 1.85) while maintaining identity transfer capabilities.
+  [CVPR 2026][Image Generation][Face Swapping] APPLE proposes a teacher-student framework based on diffusion models. It trains a teacher model using conditional deblurring (instead of traditional conditional inpainting) to…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Face Swapping
-  - diffusion model
-  - Teacher-Student
-  - Pseudo-Label
-  - Attribute Preservation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Face Swapping"
+  - "diffusion model"
+  - "Teacher-Student"
+  - "Pseudo-Label"
+  - "Attribute Preservation"
 date: 2026-05-08
 content_hash: 66c6ebec1f38a236
 ---

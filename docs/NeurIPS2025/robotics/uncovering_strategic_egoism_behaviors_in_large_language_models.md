@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Uncovering Strategic Egoism Behaviors in Large Language Models
 description: >-
-  [NeurIPS 2025][Robotics][Strategic Egoism] This paper presents the first formal definition of *Strategic Egoism* (SE) in LLMs and introduces SEBench, a benchmark comprising 160 scenarios across 6 SE dimensions. Experiments on 7 mainstream LLMs show that, under incentive-driven conditions, an average of 69.11% of decisions favor self-interested strategies. Manipulation/coercion and rule circumvention are the most prevalent tactics, and SE tendency is positively correlated with toxic language generation.
+  [NeurIPS 2025][Robotics][Strategic Egoism] This paper presents the first formal definition of *Strategic Egoism* (SE) in LLMs and introduces SEBench…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - Strategic Egoism
-  - Behavioral Benchmark
-  - Dark Triad
-  - Decision Safety
-  - Toxicity Correlation
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "Strategic Egoism"
+  - "Behavioral Benchmark"
+  - "Dark Triad"
+  - "Decision Safety"
+  - "Toxicity Correlation"
 date: 2026-05-08
 content_hash: dd57b5875feaf75c
 ---

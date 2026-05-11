@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Performative Validity of Recourse Explanations
 description: >-
-  [NeurIPS 2025][Causal Inference][Algorithmic recourse] This paper formally analyzes the "performative" effects of recourse explanations — when a large number of rejected applicants act on recourse recommendations, their collective behavior induces distribution shift that renders recourse invalid after model retraining — and proves that only Improvement-based Causal Recourse (ICR), which intervenes solely on causal variables, preserves "performative validity" under broad conditions.
+  [NeurIPS 2025][Causal Inference][Algorithmic recourse] This paper formally analyzes the "performative" effects of recourse explanations — when a large number of rejected applicants act on recourse recommendations…
 tags:
-  - NeurIPS 2025
-  - Causal Inference
-  - Algorithmic recourse
-  - performative effects
-  - counterfactual explanations
-  - distribution shift
+  - "NeurIPS 2025"
+  - "Causal Inference"
+  - "Algorithmic recourse"
+  - "performative effects"
+  - "counterfactual explanations"
+  - "distribution shift"
 date: 2026-05-08
 content_hash: d5a3f75edfec6dce
 ---

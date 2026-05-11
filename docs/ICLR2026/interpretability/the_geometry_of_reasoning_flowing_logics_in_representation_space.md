@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] The Geometry of Reasoning: Flowing Logics in Representation Space
 description: >-
-  [ICLR 2026][Reasoning Geometry] This paper proposes a geometric framework that models the reasoning process of LLMs as "flows" (embedding trajectories) in representation space. Through controlled experiments that decouple logical structure from semantic content, it demonstrates that LLMs internalize logical invariants beyond surface form, and identifies potentially universal representation regularities across model families.
+  [ICLR 2026][Interpretability][Reasoning Geometry] This paper proposes a geometric framework that models the reasoning process of LLMs as "flows" (embedding trajectories) in representation space. Through controlled experi…
 tags:
-  - ICLR 2026
-  - Reasoning Geometry
-  - Representation Flow
-  - Logical Invariants
-  - LLM Interpretability
-  - Concept Space
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Reasoning Geometry"
+  - "Representation Flow"
+  - "Logical Invariants"
+  - "LLM Interpretability"
+  - "Concept Space"
 date: 2026-05-08
 content_hash: 0f70acf0239113f0
 ---

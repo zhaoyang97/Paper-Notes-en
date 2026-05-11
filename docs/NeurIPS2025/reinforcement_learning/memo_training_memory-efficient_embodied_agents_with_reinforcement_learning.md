@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Memo: Training Memory-Efficient Embodied Agents with Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Memory Augmentation] This paper proposes Memo, a Transformer-based memory-augmented framework that periodically generates summary tokens to compress historical context. Memo matches or exceeds the performance of full-context Transformers while reducing the KV cache at inference time by 8–10×, and demonstrates superior generalization to long contexts as well as robustness under streaming inference.
+  [NeurIPS 2025][Reinforcement Learning][Memory Augmentation] This paper proposes Memo, a Transformer-based memory-augmented framework that periodically generates summary tokens to compress historical context. Memo matches…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Memory Augmentation
-  - Transformer
-  - Context Compression
-  - Long-Horizon Planning
-  - Embodied Intelligence
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Memory Augmentation"
+  - "Transformer"
+  - "Context Compression"
+  - "Long-Horizon Planning"
+  - "Embodied Intelligence"
 date: 2026-05-08
 content_hash: f2ff1c87bab1f25a
 ---

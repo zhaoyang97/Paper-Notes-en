@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] FractalBench: Diagnosing Visual-Mathematical Reasoning Through Recursive Program Synthesis
 description: >-
-  [NeurIPS 2025][Fractals] This paper introduces FractalBench, a benchmark for diagnosing visual-mathematical reasoning in MLLMs via fractal image program synthesis. Comprising 12 classical fractals, 610 test images, and evaluations across 4 MLLMs, it reveals that while 76% of generated code is executable, only 4% is visually correct, exposing fundamental deficiencies in recursive abstraction capabilities.
+  [NeurIPS 2025][Code Intelligence][Fractals] This paper introduces FractalBench, a benchmark for diagnosing visual-mathematical reasoning in MLLMs via fractal image program synthesis. Comprising 12 classical fractals…
 tags:
-  - NeurIPS 2025
-  - Fractals
-  - Visual-Mathematical Reasoning
-  - Program Synthesis
-  - MLLM Evaluation
-  - Recursive Abstraction
+  - "NeurIPS 2025"
+  - "Code Intelligence"
+  - "Fractals"
+  - "Visual-Mathematical Reasoning"
+  - "Program Synthesis"
+  - "MLLM Evaluation"
+  - "Recursive Abstraction"
 date: 2026-05-08
 content_hash: 3ea6133d362029c2
 ---

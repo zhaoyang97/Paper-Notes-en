@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Sample-Adaptivity Tradeoff in On-Demand Sampling
 description: >-
-  [NeurIPS 2025][Multi-distribution learning] This paper systematically studies the tradeoff between sample complexity and adaptive rounds in on-demand sampling. In the realizable setting, it proves that the optimal sample complexity of $r$-round algorithms is $dk^{\Theta(1/r)}/\varepsilon$. In the agnostic setting, it proposes the LazyHedge algorithm that achieves near-optimal sample complexity in only $\widetilde{O}(\sqrt{k})$ rounds, and introduces the OODS abstract framework to establish nearly tight round complexity lower bounds.
+  [NeurIPS 2025][Multi-distribution learning] This paper systematically studies the tradeoff between sample complexity and adaptive rounds in on-demand sampling. In the realizable setting…
 tags:
-  - NeurIPS 2025
-  - Multi-distribution learning
-  - sample complexity
-  - round complexity
-  - adaptive sampling
-  - online optimization
-  - Boosting
+  - "NeurIPS 2025"
+  - "Multi-distribution learning"
+  - "sample complexity"
+  - "round complexity"
+  - "adaptive sampling"
+  - "online optimization"
+  - "Boosting"
 date: 2026-05-08
 content_hash: c5aa661741daf178
 ---

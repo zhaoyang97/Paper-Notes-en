@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] ExPO: Unlocking Hard Reasoning with Self-Explanation-Guided Reinforcement Learning
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Self-Explanation] This paper proposes Self-Explanation Policy Optimization (ExPO), a modular framework that addresses the fundamental challenge of distribution sharpening in RL post-training methods such as GRPO. When the model's initial success rate on hard reasoning tasks is near zero, effective positive samples are unavailable for learning. ExPO resolves this by prompting the model to generate reasoning chains (self-explanations) conditioned on the ground-truth answer. The resulting self-explanation samples are both in-distribution with respect to the current policy and provide positive learning signals. ExPO integrates seamlessly into both DPO and GRPO frameworks.
+  [NeurIPS 2025][LLM Reasoning][Self-Explanation] This paper proposes Self-Explanation Policy Optimization (ExPO), a modular framework that addresses the fundamental challenge of distribution sharpening in RL post-training…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - Self-Explanation
-  - GRPO
-  - DPO
-  - Positive Sample Generation
-  - Hard Reasoning
-  - Distribution Sharpening
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "Self-Explanation"
+  - "GRPO"
+  - "DPO"
+  - "Positive Sample Generation"
+  - "Hard Reasoning"
+  - "Distribution Sharpening"
 date: 2026-05-08
 content_hash: 573cedf634182284
 ---

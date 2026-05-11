@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] IrisFP: Adversarial-Example-based Model Fingerprinting with Enhanced Uniqueness and Robustness
 description: >-
-  [CVPR 2026][model fingerprinting] This paper proposes IrisFP, a model fingerprinting framework that simultaneously enhances fingerprint uniqueness and robustness through three innovations: placing fingerprints at the intersection of multi-class decision boundaries, constructing composite sample fingerprints, and performing statistically-guided fingerprint selection. IrisFP consistently achieves higher AUC than state-of-the-art methods across 5 datasets.
+  [CVPR 2026][model fingerprinting] This paper proposes IrisFP, a model fingerprinting framework that simultaneously enhances fingerprint uniqueness and robustness through three innovations: placing fingerprints at the int…
 tags:
-  - CVPR 2026
-  - model fingerprinting
-  - adversarial examples
-  - intellectual property protection
-  - ownership verification
-  - decision boundary
+  - "CVPR 2026"
+  - "model fingerprinting"
+  - "adversarial examples"
+  - "intellectual property protection"
+  - "ownership verification"
+  - "decision boundary"
 date: 2026-05-08
 content_hash: 4c1aca3c517f184e
 ---

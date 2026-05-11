@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BiasFreeBench: a Benchmark for Mitigating Bias in Large Language Model Responses
 description: >-
-  [ICLR 2026][Social Computing][bias mitigation] This paper presents BiasFreeBench, the first unified framework to systematically compare 8 mainstream debiasing methods (4 prompting + 4 training) at the response level for LLMs. It introduces the Bias-Free Score (BFS) metric and finds that prompting methods—particularly CoT—generally outperform training-based approaches, while DPO demonstrates superior cross-bias-type generalization.
+  [ICLR 2026][Social Computing][bias mitigation] This paper presents BiasFreeBench, the first unified framework to systematically compare 8 mainstream debiasing methods (4 prompting + 4 training) at the response level for…
 tags:
-  - ICLR 2026
-  - Social Computing
-  - bias mitigation
-  - debiasing
-  - LLM fairness
-  - benchmark
-  - Bias-Free Score
+  - "ICLR 2026"
+  - "Social Computing"
+  - "bias mitigation"
+  - "debiasing"
+  - "LLM fairness"
+  - "benchmark"
+  - "Bias-Free Score"
 date: 2026-05-08
 content_hash: 6e440f61df52af7b
 ---

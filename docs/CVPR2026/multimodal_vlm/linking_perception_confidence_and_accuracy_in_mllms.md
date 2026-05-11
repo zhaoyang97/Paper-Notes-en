@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Linking Perception, Confidence and Accuracy in MLLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][Multimodal Large Language Models] This paper reveals a severe confidence miscalibration problem in MLLMs—accuracy drops sharply when visual inputs are degraded while confidence remains unchanged—and proposes CDRL (Confidence-Driven Reinforcement Learning with clean-noisy image pairs) for perception-sensitive training. The calibrated confidence is then leveraged for adaptive test-time scaling via CA-TTS, achieving an average improvement of 8.8% across four benchmarks.
+  [CVPR 2026][Multimodal VLM][Multimodal Large Language Models] This paper reveals a severe confidence miscalibration problem in MLLMs—accuracy drops sharply when visual inputs are degraded while confidence remains unchang…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Multimodal Large Language Models
-  - Confidence Calibration
-  - Reinforcement Learning
-  - Test-Time Scaling
-  - Visual Perception
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Multimodal Large Language Models"
+  - "Confidence Calibration"
+  - "Reinforcement Learning"
+  - "Test-Time Scaling"
+  - "Visual Perception"
 date: 2026-05-08
 content_hash: 2bccda9ba54e2cc9
 ---

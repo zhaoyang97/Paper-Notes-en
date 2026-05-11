@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Rethinking Consistent Multi-Label Classification Under Inexact Supervision
 description: >-
-  [ICLR 2026][Optimization][multi-label classification] The paper proposes the COMES framework, which provides consistent risk estimators for multi-label classification under inexact supervision via first-order (Hamming loss) and second-order (Ranking loss) strategies, without requiring estimation of the label generation process or uniform distribution assumptions.
+  [ICLR 2026][Optimization][multi-label classification] The paper proposes the COMES framework, which provides consistent risk estimators for multi-label classification under inexact supervision via first-order (Hamming lo…
 tags:
-  - ICLR 2026
-  - Optimization
-  - multi-label classification
-  - weakly supervised learning
-  - partial multi-label learning
-  - complementary multi-label learning
-  - risk consistency
+  - "ICLR 2026"
+  - "Optimization"
+  - "multi-label classification"
+  - "weakly supervised learning"
+  - "partial multi-label learning"
+  - "complementary multi-label learning"
+  - "risk consistency"
 date: 2026-05-08
 content_hash: b2fc5652e064d799
 ---

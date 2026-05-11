@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] What Does It Take to Build a Performant Selective Classifier?
 description: >-
-  [NeurIPS 2025][LLM Evaluation][selective classification] This paper presents the first finite-sample decomposition of the selective classification gap, attributing it to five sources—Bayes noise, approximation error, ranking error, statistical noise, and implementation bias—and demonstrates that monotone calibration methods have limited effect on closing this gap.
+  [NeurIPS 2025][LLM Evaluation][selective classification] This paper presents the first finite-sample decomposition of the selective classification gap, attributing it to five sources—Bayes noise, approximation error…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - selective classification
-  - confidence calibration
-  - oracle bound
-  - error decomposition
-  - uncertainty estimation
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "selective classification"
+  - "confidence calibration"
+  - "oracle bound"
+  - "error decomposition"
+  - "uncertainty estimation"
 date: 2026-05-08
 content_hash: 49f9895c218c141f
 ---

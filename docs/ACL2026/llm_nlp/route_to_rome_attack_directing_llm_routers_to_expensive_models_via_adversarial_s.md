@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Route to Rome Attack: Directing LLM Routers to Expensive Models via Adversarial Suffixes
 description: >-
-  [ACL 2026][LLM/NLP][LLM routing attack] This paper proposes R2A (Route to Rome Attack), which constructs a hybrid ensemble surrogate router in a black-box setting and optimizes universal adversarial suffixes to redirect LLM router decisions from cheap weak models toward expensive strong models — achieving an average attack success rate improvement of 49% across 7 open-source routers and 2 commercial routers (GPT-5-Auto, OpenRouter), with inference costs increasing by 2.7–2.9×.
+  [ACL 2026][LLM/NLP][LLM routing attack] This paper proposes R2A (Route to Rome Attack), which constructs a hybrid ensemble surrogate router in a black-box setting and optimizes universal adversarial suffixes to redirect…
 tags:
-  - ACL 2026
-  - LLM/NLP
-  - LLM routing attack
-  - adversarial suffix
-  - black-box attack
-  - surrogate router
-  - inference cost
+  - "ACL 2026"
+  - "LLM/NLP"
+  - "LLM routing attack"
+  - "adversarial suffix"
+  - "black-box attack"
+  - "surrogate router"
+  - "inference cost"
 date: 2026-05-08
 content_hash: 7f0c76554519944d
 ---

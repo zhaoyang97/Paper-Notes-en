@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Vision Function Layer in Multimodal LLMs
 description: >-
-  [NeurIPS 2025][Multimodal VLM][MLLM Internal Mechanism] This paper identifies that vision-related functional decoding in MLLMs is concentrated in specific narrow layer blocks (Vision Function Layers), exhibiting a consistent hierarchical order across model families (recognition → counting → grounding → OCR). Building on this finding, the authors propose VFL-LoRA (matching full-LoRA performance with only 1/3 of the parameters) and VFL-select (achieving 98% of full-data performance with 20% of the data).
+  [NeurIPS 2025][Multimodal VLM][MLLM Internal Mechanism] This paper identifies that vision-related functional decoding in MLLMs is concentrated in specific narrow layer blocks (Vision Function Layers)…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - MLLM Internal Mechanism
-  - Vision Function Layer
-  - Token Swapping
-  - LoRA
-  - Data Selection
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "MLLM Internal Mechanism"
+  - "Vision Function Layer"
+  - "Token Swapping"
+  - "LoRA"
+  - "Data Selection"
 date: 2026-05-08
 content_hash: 5639fb3542fbec82
 ---

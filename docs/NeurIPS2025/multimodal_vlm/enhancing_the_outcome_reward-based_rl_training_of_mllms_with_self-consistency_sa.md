@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Enhancing Outcome Reward-Based RL Training of MLLMs with Self-Consistency Sampling
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Reinforcement Learning] To address the problem of "unfaithful reasoning trajectories induced by outcome-reward RL training in multimodal multiple-choice tasks," this paper proposes Self-Consistency Sampling (SCS), which obtains consistency rewards via truncation-resampling and visual perturbation to penalize spurious reasoning. When combined with RLOO, SCS achieves an average improvement of 7.7 percentage points across six benchmarks.
+  [NeurIPS 2025][Multimodal VLM][Reinforcement Learning] To address the problem of "unfaithful reasoning trajectories induced by outcome-reward RL training in multimodal multiple-choice tasks…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Reinforcement Learning
-  - Self-Consistency Sampling
-  - Reasoning Faithfulness
-  - Multimodal Reasoning
-  - Outcome Reward
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Reinforcement Learning"
+  - "Self-Consistency Sampling"
+  - "Reasoning Faithfulness"
+  - "Multimodal Reasoning"
+  - "Outcome Reward"
 date: 2026-05-08
 content_hash: 2dd8e40b93d04774
 ---

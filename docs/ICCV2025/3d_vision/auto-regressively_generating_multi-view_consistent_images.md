@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Auto-Regressively Generating Multi-View Consistent Images
 description: >-
-  [ICCV 2025][3D Vision][Multi-view generation] This paper proposes MV-AR, the first autoregressive model for multi-view image generation. It progressively generates each subsequent view conditioned on all previously generated views, incorporating a unified multimodal condition injection module and a Shuffle View data augmentation strategy. MV-AR achieves consistency comparable to diffusion-based methods under text, image, and shape conditioning.
+  [ICCV 2025][3D Vision][Multi-view generation] This paper proposes MV-AR, the first autoregressive model for multi-view image generation. It progressively generates each subsequent view conditioned on all previously gener…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Multi-view generation
-  - autoregressive models
-  - 3D content creation
-  - multimodal conditioning
-  - view consistency
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Multi-view generation"
+  - "autoregressive models"
+  - "3D content creation"
+  - "multimodal conditioning"
+  - "view consistency"
 date: 2026-05-08
 content_hash: 7b7228c049072a1c
 ---

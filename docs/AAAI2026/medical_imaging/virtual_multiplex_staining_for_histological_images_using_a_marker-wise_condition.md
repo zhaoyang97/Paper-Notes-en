@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Virtual Multiplex Staining for Histological Images Using a Marker-wise Conditioned Diffusion Model
 description: >-
-  [AAAI 2026][Medical Imaging][Virtual multiplex staining] This paper proposes a virtual multiplex staining framework based on a marker-wise conditioned diffusion model. Through a two-stage training procedure (marker-wise conditional diffusion learning followed by pixel-level fine-tuning), it is the first method to generate multiplex immunofluorescence images of up to 18 distinct markers from a single H&E image, achieving state-of-the-art performance on two public datasets, HEMIT and Orion-CRC.
+  [AAAI 2026][Medical Imaging][Virtual multiplex staining] This paper proposes a virtual multiplex staining framework based on a marker-wise conditioned diffusion model. Through a two-stage training procedure (marker-wise…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Virtual multiplex staining
-  - conditional diffusion model
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Virtual multiplex staining"
+  - "conditional diffusion model"
   - "H&E-to-immunofluorescence"
-  - marker-wise conditional generation
-  - latent diffusion model
+  - "marker-wise conditional generation"
+  - "latent diffusion model"
 date: 2026-05-08
 content_hash: 8cc4519df5026810
 ---

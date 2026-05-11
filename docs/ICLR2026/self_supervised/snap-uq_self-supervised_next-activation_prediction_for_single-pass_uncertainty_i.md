@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SNAP-UQ: Self-supervised Next-Activation Prediction for Single-Pass Uncertainty
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Uncertainty Estimation] SNAP-UQ proposes a single-forward-pass uncertainty estimation method tailored for TinyML scenarios. Lightweight int8 prediction heads are attached at selected tap layers of a backbone network; these heads predict the activation statistics of the next layer in a self-supervised manner. The deviation ("surprisal") between predicted and actual activations is aggregated into an uncertainty score. The method requires no additional forward passes, temporal buffers, or ensembles, and adds only tens of kilobytes of flash memory, enabling reliable distribution-shift detection and failure detection on microcontrollers.
+  [ICLR 2026][Self-Supervised Learning][Uncertainty Estimation] SNAP-UQ proposes a single-forward-pass uncertainty estimation method tailored for TinyML scenarios. Lightweight int8 prediction heads are attached at selected…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
-  - Uncertainty Estimation
-  - TinyML
-  - Single-Pass Inference
-  - Microcontroller Deployment
-  - OOD Detection
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Uncertainty Estimation"
+  - "TinyML"
+  - "Single-Pass Inference"
+  - "Microcontroller Deployment"
+  - "OOD Detection"
 date: 2026-05-08
 content_hash: df4e598ab02bf282
 ---

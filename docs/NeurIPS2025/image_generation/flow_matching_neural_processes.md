@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Flow Matching Neural Processes
 description: >-
-  [NeurIPS 2025][Image Generation][neural processes] This paper proposes FlowNP, which integrates flow matching into the neural process framework. By employing a transformer to predict velocity fields at target points, FlowNP enables parallel sampling from conditional distributions, achieving state-of-the-art performance on three benchmarks spanning 1D Gaussian processes, image data, and meteorological data.
+  [NeurIPS 2025][Image Generation][neural processes] This paper proposes FlowNP, which integrates flow matching into the neural process framework. By employing a transformer to predict velocity fields at target points…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - neural processes
-  - flow matching
-  - stochastic processes
-  - conditional generation
-  - transformer
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "neural processes"
+  - "flow matching"
+  - "stochastic processes"
+  - "conditional generation"
+  - "transformer"
 date: 2026-05-08
 content_hash: e7b9d9837910e780
 ---

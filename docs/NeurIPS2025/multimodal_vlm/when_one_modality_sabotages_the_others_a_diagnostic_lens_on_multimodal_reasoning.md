@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] When One Modality Sabotages the Others: A Diagnostic Lens on Multimodal Reasoning
 description: >-
-  [NeurIPS 2025][Multimodal VLM][modality sabotage] This paper introduces the concept of *modality sabotage* as a diagnostic failure mode, proposes a lightweight and model-agnostic evaluation layer that treats each modality as an independent agent, and exposes "contributors" versus "saboteurs" through simple fusion. Applied to multimodal sentiment recognition benchmarks, the framework reveals systematic differences in per-modality reliability.
+  [NeurIPS 2025][Multimodal VLM][modality sabotage] This paper introduces the concept of *modality sabotage* as a diagnostic failure mode…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - modality sabotage
-  - multimodal fusion
-  - sentiment recognition
-  - interpretability
-  - diagnostic framework
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "modality sabotage"
+  - "multimodal fusion"
+  - "sentiment recognition"
+  - "interpretability"
+  - "diagnostic framework"
 date: 2026-05-08
 content_hash: 133c19e2cad7a39a
 ---

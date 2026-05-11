@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Real2Edit2Real: Generating Robotic Demonstrations via a 3D Control Interface
 description: >-
-  [CVPR 2026][3D Vision][robotic demonstration generation] This paper proposes the Real2Edit2Real framework, a three-stage pipeline of "3D reconstruction → point cloud editing to generate new trajectories → depth-guided video generation for synthesizing demonstrations." Starting from only 1–5 real demonstrations, the framework generates large quantities of diverse manipulation demonstrations, enabling policy performance that matches or exceeds training on 50 real demonstrations—achieving a 10–50× improvement in data efficiency.
+  [CVPR 2026][3D Vision][robotic demonstration generation] This paper proposes the Real2Edit2Real framework, a three-stage pipeline of "3D reconstruction → point cloud editing to generate new trajectories → depth-guided vi…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - robotic demonstration generation
-  - 3D editing
-  - video generation
-  - data augmentation
-  - spatial generalization
+  - "CVPR 2026"
+  - "3D Vision"
+  - "robotic demonstration generation"
+  - "3D editing"
+  - "video generation"
+  - "data augmentation"
+  - "spatial generalization"
 date: 2026-05-08
 content_hash: 7947ebcb98524010
 ---

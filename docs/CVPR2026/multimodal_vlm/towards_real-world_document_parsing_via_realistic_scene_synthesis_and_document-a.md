@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Real-World Document Parsing via Realistic Scene Synthesis and Document-Aware Training
 description: >-
-  [CVPR 2026][Multimodal VLM][document parsing] This paper proposes DocHumming, a data-training co-design framework that constructs the large-scale synthetic dataset DocMix-3M via Realistic Scene Synthesis, and introduces a Document-Aware Training Recipe (DATR) combining progressive learning and structure token weighting. On a 1B-parameter MLLM, DocHumming achieves an OmniDocBench Overall score of 93.75, surpassing Qwen3-VL-235B (89.15), with only a 6.72-point degradation under real-world capture conditions (vs. 18–20 points for pipeline-based methods).
+  [CVPR 2026][Multimodal VLM][document parsing] This paper proposes DocHumming, a data-training co-design framework that constructs the large-scale synthetic dataset DocMix-3M via Realistic Scene Synthesis…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - document parsing
-  - synthetic data
-  - progressive training
-  - structure token weighting
-  - real-world robustness
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "document parsing"
+  - "synthetic data"
+  - "progressive training"
+  - "structure token weighting"
+  - "real-world robustness"
 date: 2026-05-08
 content_hash: 2b320693972f21b3
 ---

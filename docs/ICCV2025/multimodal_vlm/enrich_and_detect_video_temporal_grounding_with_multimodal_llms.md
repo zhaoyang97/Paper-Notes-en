@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Enrich and Detect: Video Temporal Grounding with Multimodal LLMs
 description: >-
-  [ICCV 2025][Multimodal VLM][Video Temporal Grounding] This paper proposes ED-VTG, a two-stage framework for video temporal grounding (VTG) that first enriches the input query and then predicts temporal intervals. By leveraging the descriptive capability of multimodal LLMs to supplement query details, combined with a lightweight interval decoder and a multiple instance learning (MIL) framework, ED-VTG is the first LLM-based method to comprehensively match or surpass specialized models across multiple benchmarks.
+  [ICCV 2025][Multimodal VLM][Video Temporal Grounding] This paper proposes ED-VTG, a two-stage framework for video temporal grounding (VTG) that first enriches the input query and then predicts temporal intervals. By leve…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Video Temporal Grounding
-  - Multimodal LLM
-  - Query Enrichment
-  - Multiple Instance Learning
-  - Temporal Detection
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Video Temporal Grounding"
+  - "Multimodal LLM"
+  - "Query Enrichment"
+  - "Multiple Instance Learning"
+  - "Temporal Detection"
 date: 2026-05-08
 content_hash: ac3c952a3f12b508
 ---

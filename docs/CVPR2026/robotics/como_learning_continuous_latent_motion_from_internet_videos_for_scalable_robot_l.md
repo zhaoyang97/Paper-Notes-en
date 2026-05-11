@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CoMo: Learning Continuous Latent Motion from Internet Videos for Scalable Robot Learning
 description: >-
-  [CVPR 2026][Robotics][continuous latent motion] CoMo is proposed to jointly address the shortcut learning problem in continuous latent motion learning via two mechanisms — Early Temporal Difference (Td) and Temporal Contrastive Learning (Tcl) — enabling the extraction of fine-grained continuous pseudo-action labels from internet videos and joint training of video data and robot actions under a unified continuous distribution, substantially improving policy performance.
+  [CVPR 2026][Robotics][continuous latent motion] CoMo is proposed to jointly address the shortcut learning problem in continuous latent motion learning via two mechanisms — Early Temporal Difference (Td) and Temporal Cont…
 tags:
-  - CVPR 2026
-  - Robotics
-  - continuous latent motion
-  - pseudo-action labels
-  - inverse dynamics model
-  - temporal contrastive learning
-  - video-robot joint training
+  - "CVPR 2026"
+  - "Robotics"
+  - "continuous latent motion"
+  - "pseudo-action labels"
+  - "inverse dynamics model"
+  - "temporal contrastive learning"
+  - "video-robot joint training"
 date: 2026-05-08
 content_hash: 7af77a65a96c5828
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AtlasGS: Atlanta-world Guided Surface Reconstruction with Implicit Structured Gaussians
 description: >-
-  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] AtlasGS is proposed to achieve smooth, high-frequency-detail-preserving surface reconstruction in indoor and urban scenes by incorporating the Atlanta-world structural prior into an implicit-structured Gaussian representation, comprehensively outperforming existing implicit and explicit methods.
+  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] AtlasGS is proposed to achieve smooth, high-frequency-detail-preserving surface reconstruction in indoor and urban scenes by incorporating the Atlanta-world structural pri…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - surface reconstruction
-  - Atlanta-world assumption
-  - implicit representation
-  - indoor/urban scenes
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "surface reconstruction"
+  - "Atlanta-world assumption"
+  - "implicit representation"
+  - "indoor/urban scenes"
 date: 2026-05-08
 content_hash: 1fef22cb804affc6
 ---

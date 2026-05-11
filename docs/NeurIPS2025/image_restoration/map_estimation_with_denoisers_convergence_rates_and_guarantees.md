@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] MAP Estimation with Denoisers: Convergence Rates and Guarantees
 description: >-
-  [NeurIPS 2025][Image Restoration][MAP estimation] This paper proves that a simple iterative averaging algorithm based on MMSE denoisers—closely related to practical methods such as Cold Diffusion—provably converges to the proximal operator of the negative log-prior under log-concave prior assumptions, achieving a convergence rate of $\tilde{O}(1/k)$. The work provides rigorous theoretical foundations for a class of denoising methods that have demonstrated empirical success but lacked theoretical guarantees, and embeds the approach within a proximal gradient descent framework for MAP estimation.
+  [NeurIPS 2025][Image Restoration][MAP estimation] This paper proves that a simple iterative averaging algorithm based on MMSE denoisers—closely related to practical methods such as Cold Diffusion—provably converges to th…
 tags:
-  - NeurIPS 2025
-  - Image Restoration
-  - MAP estimation
-  - proximal operator
-  - denoiser
-  - convergence rates
-  - inverse problems
-  - plug-and-play
+  - "NeurIPS 2025"
+  - "Image Restoration"
+  - "MAP estimation"
+  - "proximal operator"
+  - "denoiser"
+  - "convergence rates"
+  - "inverse problems"
+  - "plug-and-play"
 date: 2026-05-08
 content_hash: 825366a858e3ecda
 ---

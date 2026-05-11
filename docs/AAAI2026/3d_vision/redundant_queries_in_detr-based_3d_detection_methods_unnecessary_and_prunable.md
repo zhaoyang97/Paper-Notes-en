@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Redundant Queries in DETR-Based 3D Detection: Unnecessary and Prunable
 description: >-
-  [AAAI 2026][3D Vision][3D Object Detection] This paper proposes GPQ (Gradually Pruning Queries), a method that progressively prunes redundant object queries in DETR-based 3D detectors using classification scores. Without introducing any additional learnable parameters, GPQ can be applied as a fine-tuning step directly on pretrained checkpoints, achieving up to 67.86% FLOPs reduction and 65.16% inference time reduction on edge devices.
+  [AAAI 2026][3D Vision][3D Object Detection] This paper proposes GPQ (Gradually Pruning Queries), a method that progressively prunes redundant object queries in DETR-based 3D detectors using classification scores. Without…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - 3D Object Detection
-  - DETR
-  - Query Pruning
-  - Model Compression
-  - Autonomous Driving
+  - "AAAI 2026"
+  - "3D Vision"
+  - "3D Object Detection"
+  - "DETR"
+  - "Query Pruning"
+  - "Model Compression"
+  - "Autonomous Driving"
 date: 2026-05-08
 content_hash: 6487c121b7750821
 ---

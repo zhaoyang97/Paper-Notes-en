@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Real-Time 3D Object Detection with Inference-Aligned Learning
 description: >-
-  [AAAI 2026][Object Detection][3D object detection] This paper proposes SR3D, a framework that bridges the training-inference gap in indoor dense 3D object detection via two training-phase components: Spatial-Priority Optimal Transport Assignment (SPOTA) and Ranking-Aware adaptive Self-distillation (RAS). SR3D achieves state-of-the-art performance among dense detectors on ScanNet V2 and SUN RGB-D at a real-time speed of 42ms.
+  [AAAI 2026][Object Detection][3D object detection] This paper proposes SR3D, a framework that bridges the training-inference gap in indoor dense 3D object detection via two training-phase components: Spatial-Priority Opt…
 tags:
-  - AAAI 2026
-  - Object Detection
-  - 3D object detection
-  - point cloud
-  - indoor scene
-  - optimal transport
-  - label assignment
-  - self-distillation
-  - real-time
+  - "AAAI 2026"
+  - "Object Detection"
+  - "3D object detection"
+  - "point cloud"
+  - "indoor scene"
+  - "optimal transport"
+  - "label assignment"
+  - "self-distillation"
+  - "real-time"
 date: 2026-05-08
 content_hash: 691ab205fd0c8c4e
 ---

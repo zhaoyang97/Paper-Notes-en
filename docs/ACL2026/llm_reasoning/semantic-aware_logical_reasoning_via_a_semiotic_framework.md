@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Semantic-Aware Logical Reasoning via a Semiotic Framework
 description: >-
-  [ACL 2026][LLM Reasoning][symbolic reasoning] This paper proposes LogicAgent, a logical reasoning framework grounded in the Greimas Semiotic Square. By performing multi-perspective semantic analysis and reflective verification, LogicAgent achieves state-of-the-art logical reasoning performance under the dual challenges of semantic and logical complexity.
+  [ACL 2026][LLM Reasoning][symbolic reasoning] This paper proposes LogicAgent, a logical reasoning framework grounded in the Greimas Semiotic Square. By performing multi-perspective semantic analysis and reflective verifi…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - symbolic reasoning
-  - Greimas semiotic square
-  - logical reasoning
-  - semantic complexity
-  - multi-perspective reasoning
+  - "ACL 2026"
+  - "LLM Reasoning"
+  - "symbolic reasoning"
+  - "Greimas semiotic square"
+  - "logical reasoning"
+  - "semantic complexity"
+  - "multi-perspective reasoning"
 date: 2026-05-08
 content_hash: e156995162aaf7a9
 ---

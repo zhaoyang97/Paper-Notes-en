@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Graph-Based Alternatives to LLMs for Human Simulation
 description: >-
-  [ACL 2026][Graph Learning][GNN] GEMS models closed-form human behavior simulation as link prediction on heterogeneous graphs with three node types (subgroups, individuals, choices) and two bidirectional relations, matching or surpassing strong LLM baselines across three datasets and three evaluation settings while using 1000x fewer parameters.
+  [ACL 2026][Graph Learning][GNN] GEMS models closed-form human behavior simulation as link prediction on heterogeneous graphs with three node types (subgroups, individuals, choices) and two bidirectional relations…
 tags:
-  - ACL 2026
-  - Graph Learning
-  - GNN
-  - Human Simulation
-  - Link Prediction
-  - Heterogeneous Graph
-  - Survey Prediction
+  - "ACL 2026"
+  - "Graph Learning"
+  - "GNN"
+  - "Human Simulation"
+  - "Link Prediction"
+  - "Heterogeneous Graph"
+  - "Survey Prediction"
 content_hash: 987dc5fe8763a8bf
 ---
 

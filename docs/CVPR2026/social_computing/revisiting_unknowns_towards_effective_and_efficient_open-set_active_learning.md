@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Revisiting Unknowns: Towards Effective and Efficient Open-Set Active Learning
 description: >-
-  [CVPR2026][Social Computing][open-set active learning] This paper proposes E2OAL, a detector-free open-set active learning framework that discovers latent structures among unknown classes via label-guided clustering, jointly models known and unknown categories through a Dirichlet calibration auxiliary head, and introduces a two-stage adaptive querying strategy. E2OAL simultaneously achieves high accuracy, high query purity, and high training efficiency across multiple benchmarks.
+  [CVPR2026][Social Computing][open-set active learning] This paper proposes E2OAL, a detector-free open-set active learning framework that discovers latent structures among unknown classes via label-guided clustering…
 tags:
-  - CVPR2026
-  - Social Computing
-  - open-set active learning
-  - Dirichlet calibration
-  - unknown class exploitation
-  - adaptive querying
-  - detector-free
+  - "CVPR2026"
+  - "Social Computing"
+  - "open-set active learning"
+  - "Dirichlet calibration"
+  - "unknown class exploitation"
+  - "adaptive querying"
+  - "detector-free"
 date: 2026-05-08
 content_hash: 6734286f1b5f2a43
 ---

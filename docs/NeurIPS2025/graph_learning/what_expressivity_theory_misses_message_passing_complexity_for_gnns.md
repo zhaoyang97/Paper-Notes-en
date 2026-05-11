@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] What Expressivity Theory Misses: Message Passing Complexity for GNNs
 description: >-
-  [NeurIPS 2025][Graph Learning][message passing complexity] This paper critiques the binary expressivity theory of GNNs for its inability to explain practical performance differences, and proposes MPC—a continuous, task-specific complexity measure grounded in probabilistic lossyWL—achieving a Spearman correlation of -1 with accuracy (versus ρ = 0 for classical WLC), and successfully explaining why GCN with virtual nodes outperforms higher-expressivity higher-order models on long-range tasks.
+  [NeurIPS 2025][Graph Learning][message passing complexity] This paper critiques the binary expressivity theory of GNNs for its inability to explain practical performance differences, and proposes MPC—a continuous…
 tags:
-  - NeurIPS 2025
-  - Graph Learning
-  - message passing complexity
-  - lossyWL
-  - GNN expressivity
-  - over-squashing
-  - continuous metric
+  - "NeurIPS 2025"
+  - "Graph Learning"
+  - "message passing complexity"
+  - "lossyWL"
+  - "GNN expressivity"
+  - "over-squashing"
+  - "continuous metric"
 date: 2026-05-08
 content_hash: 3b3e2294b4e49bff
 ---

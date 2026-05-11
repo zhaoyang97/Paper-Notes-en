@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Seeing is Improving: Visual Feedback for Iterative Text Layout Refinement
 description: >-
-  [CVPR 2026][Reinforcement Learning][visual feedback] VFLM proposes a layout generation framework that leverages visual feedback for iterative refinement. By combining a visually grounded reward model based on OCR accuracy with reinforcement learning training, the framework enables multimodal large language models to "see" rendered outputs and repeatedly self-correct, achieving substantial improvements in text layout quality over code-only generation approaches.
+  [CVPR 2026][Reinforcement Learning][visual feedback] VFLM proposes a layout generation framework that leverages visual feedback for iterative refinement. By combining a visually grounded reward model based on OCR accurac…
 tags:
-  - CVPR 2026
-  - Reinforcement Learning
-  - visual feedback
-  - text layout
-  - layout generation
-  - iterative refinement
+  - "CVPR 2026"
+  - "Reinforcement Learning"
+  - "visual feedback"
+  - "text layout"
+  - "layout generation"
+  - "iterative refinement"
 date: 2026-05-08
 content_hash: 22de007183fe42ac
 ---

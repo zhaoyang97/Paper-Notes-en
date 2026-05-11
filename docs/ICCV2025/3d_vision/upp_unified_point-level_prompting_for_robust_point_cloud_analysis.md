@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UPP: Unified Point-Level Prompting for Robust Point Cloud Analysis
 description: >-
-  [ICCV 2025][3D Vision][point cloud analysis] This paper proposes UPP, a unified point-level prompting framework that reformulates point cloud denoising and completion as prompting mechanisms for downstream tasks. It introduces a Rectification Prompter to filter noise, a Completion Prompter to recover missing regions, and a Shape-Aware Unit to capture geometry-sensitive features. With only 6.3% of the parameters, UPP surpasses full fine-tuning on noisy and incomplete point clouds.
+  [ICCV 2025][3D Vision][point cloud analysis] This paper proposes UPP, a unified point-level prompting framework that reformulates point cloud denoising and completion as prompting mechanisms for downstream tasks. It intr…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - point cloud analysis
-  - parameter-efficient fine-tuning
-  - denoising
-  - completion
-  - prompt learning
+  - "ICCV 2025"
+  - "3D Vision"
+  - "point cloud analysis"
+  - "parameter-efficient fine-tuning"
+  - "denoising"
+  - "completion"
+  - "prompt learning"
 date: 2026-05-08
 content_hash: fbe797bbe14b84d3
 ---

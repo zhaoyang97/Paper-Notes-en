@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CoMoGaussian: Continuous Motion-Aware Gaussian Splatting from Motion-Blurred Images
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] A Neural ODE is used to model continuous camera motion trajectories during exposure, combining rigid-body transformations with a learnable Continuous Motion Refinement (CMR) transform to reconstruct sharp 3D Gaussian scenes from motion-blurred images, achieving substantial improvements over the state of the art across all benchmarks.
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] A Neural ODE is used to model continuous camera motion trajectories during exposure, combining rigid-body transformations with a learnable Continuous Motion Refinement (CMR)…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - motion blur
-  - neural ODE
-  - camera trajectory
-  - deblurring
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "motion blur"
+  - "neural ODE"
+  - "camera trajectory"
+  - "deblurring"
 date: 2026-05-08
 content_hash: 2900151fd083ece8
 ---

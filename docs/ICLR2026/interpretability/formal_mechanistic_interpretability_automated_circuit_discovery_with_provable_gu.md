@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Formal Mechanistic Interpretability: Automated Circuit Discovery with Provable Guarantees
 description: >-
-  [ICLR 2026][mechanistic interpretability] This paper introduces neural network (NN) verification into mechanistic interpretability, proposing the first circuit discovery framework with provable guarantees: input robustness guarantees circuit faithfulness over continuous input domains, patching robustness guarantees circuit consistency over continuous patching domains, and a four-level minimality hierarchy (quasi → local → subset → cardinal) is formalized. A monotonicity theory unifies all three types of guarantees.
+  [ICLR 2026][Interpretability][mechanistic interpretability] This paper introduces neural network (NN) verification into mechanistic interpretability…
 tags:
-  - ICLR 2026
-  - mechanistic interpretability
-  - circuit discovery
-  - neural network verification
-  - provable guarantees
-  - minimality
+  - "ICLR 2026"
+  - "Interpretability"
+  - "mechanistic interpretability"
+  - "circuit discovery"
+  - "neural network verification"
+  - "provable guarantees"
+  - "minimality"
 date: 2026-05-08
 content_hash: 7842156acdba9c18
 ---

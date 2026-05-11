@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] I'm a Map! Interpretable Motion-Attentive Maps: Spatio-Temporally Localizing Concepts in Video Diffusion Transformers
 description: >-
-  [CVPR 2026][Video Generation][Video Diffusion Models] This paper proposes IMAP (Interpretable Motion-Attentive Maps), a training-free framework that extracts spatio-temporal saliency maps for motion concepts from Video DiTs via two modules: GramCol for spatial localization and motion head selection for temporal localization. IMAP surpasses existing methods on motion localization and zero-shot video semantic segmentation benchmarks.
+  [CVPR 2026][Video Generation][Video Diffusion Models] This paper proposes IMAP (Interpretable Motion-Attentive Maps), a training-free framework that extracts spatio-temporal saliency maps for motion concepts from Video D…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Video Diffusion Models
-  - Interpretability
-  - Motion Localization
-  - Attention Analysis
-  - Saliency Maps
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Video Diffusion Models"
+  - "Interpretability"
+  - "Motion Localization"
+  - "Attention Analysis"
+  - "Saliency Maps"
 date: 2026-05-08
 content_hash: 45d67b7cd3ea6f51
 ---

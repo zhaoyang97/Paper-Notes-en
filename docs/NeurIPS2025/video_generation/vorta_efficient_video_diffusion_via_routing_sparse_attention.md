@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] VORTA: Efficient Video Diffusion via Routing Sparse Attention
 description: >-
-  [NeurIPS 2025][Video Generation][Video diffusion model acceleration] This paper proposes VORTA, a framework that achieves end-to-end 1.76× acceleration of video diffusion Transformers without quality degradation, through bucketed coreset attention (for modeling long-range dependencies) and a signal-aware routing mechanism (for adaptively selecting sparse attention branches). Combined with caching and distillation methods, it achieves up to 14.41× acceleration.
+  [NeurIPS 2025][Video Generation][Video diffusion model acceleration] This paper proposes VORTA, a framework that achieves end-to-end 1.76× acceleration of video diffusion Transformers without quality degradation…
 tags:
-  - NeurIPS 2025
-  - Video Generation
-  - Video diffusion model acceleration
-  - sparse attention
-  - routing mechanism
-  - coreset selection
+  - "NeurIPS 2025"
+  - "Video Generation"
+  - "Video diffusion model acceleration"
+  - "sparse attention"
+  - "routing mechanism"
+  - "coreset selection"
 date: 2026-05-08
 content_hash: e04c1c175fdd5c7a
 ---

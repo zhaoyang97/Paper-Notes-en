@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] MagicDrive-V2: High-Resolution Long Video Generation for Autonomous Driving with Adaptive Control
 description: >-
-  [ICCV 2025][Video Generation] MagicDrive-V2 proposes a multi-view driving video generation framework based on DiT + 3D VAE. Through a spatial-temporal condition encoding module and a progressive training strategy, it achieves high-resolution long video generation at 848×1600×6 views and 241 frames, significantly surpassing existing methods in both resolution and frame count.
+  [ICCV 2025][Video Generation][DiT] MagicDrive-V2 proposes a multi-view driving video generation framework based on DiT + 3D VAE. Through a spatial-temporal condition encoding module and a progressive training strategy…
 tags:
-  - ICCV 2025
-  - Video Generation
-  - DiT
-  - 3D VAE
-  - Multi-view
-  - Controllable Generation
+  - "ICCV 2025"
+  - "Video Generation"
+  - "DiT"
+  - "3D VAE"
+  - "Multi-view"
+  - "Controllable Generation"
 date: 2026-05-08
 content_hash: bf6a8c2269d07ea1
 ---

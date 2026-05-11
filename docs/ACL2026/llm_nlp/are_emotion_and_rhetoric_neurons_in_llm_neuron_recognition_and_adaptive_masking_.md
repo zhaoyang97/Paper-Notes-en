@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Are Emotion and Rhetoric Neurons in LLM? Neuron Recognition and Adaptive Masking for Emotion-Rhetoric Prediction Steering
 description: >-
-  [ACL 2026][LLM/NLP][emotion neurons] This paper systematically investigates the representational mechanisms of emotion and rhetoric neurons in LLMs and their intrinsic relationships. It proposes a multi-dimensional neuron recognition framework and an adaptive masking validation method, enabling targeted steering of emotion/rhetoric predictions and rhetoric-neuron-assisted emotion recognition.
+  [ACL 2026][LLM/NLP][emotion neurons] This paper systematically investigates the representational mechanisms of emotion and rhetoric neurons in LLMs and their intrinsic relationships. It proposes a multi-dimensional neuro…
 tags:
-  - ACL 2026
-  - LLM/NLP
-  - emotion neurons
-  - rhetoric neurons
-  - adaptive masking
-  - neuron intervention
-  - LLM interpretability
+  - "ACL 2026"
+  - "LLM/NLP"
+  - "emotion neurons"
+  - "rhetoric neurons"
+  - "adaptive masking"
+  - "neuron intervention"
+  - "LLM interpretability"
 date: 2026-05-08
 content_hash: be2254d8cba16d87
 ---

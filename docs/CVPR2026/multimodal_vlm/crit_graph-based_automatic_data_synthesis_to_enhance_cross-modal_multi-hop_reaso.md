@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CRIT: Graph-Based Automatic Data Synthesis to Enhance Cross-Modal Multi-Hop Reasoning
 description: >-
-  [CVPR 2026][Multimodal VLM][Cross-Modal Reasoning] This paper proposes a graph-based automatic data generation pipeline that constructs the CRIT dataset and benchmark for training and evaluating VLMs on cross-modal multi-hop reasoning over interleaved image-text content. Models fine-tuned on CRIT achieve significant improvements on multiple benchmarks including SPIQA.
+  [CVPR 2026][Multimodal VLM][Cross-Modal Reasoning] This paper proposes a graph-based automatic data generation pipeline that constructs the CRIT dataset and benchmark for training and evaluating VLMs on cross-modal multi…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Cross-Modal Reasoning
-  - Multi-Hop Reasoning
-  - Data Synthesis
-  - Graph-Based Pipeline
-  - VLM Benchmark
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Cross-Modal Reasoning"
+  - "Multi-Hop Reasoning"
+  - "Data Synthesis"
+  - "Graph-Based Pipeline"
+  - "VLM Benchmark"
 date: 2026-05-08
 content_hash: 84b305d7a4a422a2
 ---

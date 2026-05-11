@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Worse than Zero-shot? A Fact-Checking Dataset for Evaluating the Robustness of RAG Against Misleading Retrievals
 description: >-
-  [NeurIPS 2025][RAG robustness] This paper introduces RAGuard, the first benchmark dataset to systematically evaluate the robustness of RAG systems against misleading retrieved content. By constructing a realistic retrieval corpus from Reddit — containing supporting, misleading, and unrelated documents — it demonstrates that all tested LLM-RAG systems perform **worse than a zero-shot baseline** when exposed to misleading retrievals, whereas human annotators maintain consistent judgment.
+  [NeurIPS 2025][Information Retrieval & RAG][RAG robustness] This paper introduces RAGuard, the first benchmark dataset to systematically evaluate the robustness of RAG systems against misleading retrieved content. By con…
 tags:
-  - NeurIPS 2025
-  - RAG robustness
-  - fact-checking
-  - misleading retrieval
-  - benchmark
-  - misinformation
+  - "NeurIPS 2025"
+  - "Information Retrieval & RAG"
+  - "RAG robustness"
+  - "fact-checking"
+  - "misleading retrieval"
+  - "benchmark"
+  - "misinformation"
 date: 2026-05-08
 content_hash: 1403fb8793a2f874
 ---

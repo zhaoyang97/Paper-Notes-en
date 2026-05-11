@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FA: Forced Prompt Learning of Vision-Language Models for Out-of-Distribution Detection
 description: >-
-  [ICCV 2025][Multimodal VLM][OOD detection] This paper proposes FA (Forced prompt leArning), which introduces a learnable "forced prompt" and trains it to produce higher ID-class matching scores than a frozen original prompt, compelling it to capture richer ID class descriptions beyond label text semantics. FA achieves significant improvements in CLIP-based few-shot OOD detection without external auxiliary data or additional parameters.
+  [ICCV 2025][Multimodal VLM][OOD detection] This paper proposes FA (Forced prompt leArning), which introduces a learnable "forced prompt" and trains it to produce higher ID-class matching scores than a frozen original pro…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - OOD detection
-  - CLIP prompt learning
-  - few-shot learning
-  - out-of-distribution detection
-  - forced prompt
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "OOD detection"
+  - "CLIP prompt learning"
+  - "few-shot learning"
+  - "out-of-distribution detection"
+  - "forced prompt"
 date: 2026-05-08
 content_hash: 0ac5c93ce625c792
 ---

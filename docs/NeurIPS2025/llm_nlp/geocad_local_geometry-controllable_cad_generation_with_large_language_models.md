@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GeoCAD: Local Geometry-Controllable CAD Generation with Large Language Models
 description: >-
-  [NeurIPS 2025][LLM/NLP][CAD generation] GeoCAD is proposed as the first method for locally geometry-controllable CAD generation. It introduces a complementary captioning strategy to generate geometric instructions for local parts and fine-tunes an LLM to enable precise modification of local CAD components according to user-defined text instructions.
+  [NeurIPS 2025][LLM/NLP][CAD generation] GeoCAD is proposed as the first method for locally geometry-controllable CAD generation. It introduces a complementary captioning strategy to generate geometric instructions for lo…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - CAD generation
-  - local geometry control
-  - large language models
-  - text-to-CAD
-  - complementary captioning
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "CAD generation"
+  - "local geometry control"
+  - "large language models"
+  - "text-to-CAD"
+  - "complementary captioning"
 date: 2026-05-08
 content_hash: 785d52822904c4c3
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unsupervised Conformal Inference: Bootstrapping and Alignment to Control LLM Uncertainty
 description: >-
-  [ICLR 2026][Image Generation][Unsupervised conformal inference] This paper proposes an unsupervised conformal inference framework (BB-UCP) that achieves distribution-free finite-sample coverage guarantees for LLM generation under label-free, API-compatible conditions, via Gram matrix interaction energy scoring, batch bootstrap calibration, and conformal alignment, effectively detecting and filtering hallucinated outputs.
+  [ICLR 2026][Image Generation][Unsupervised conformal inference] This paper proposes an unsupervised conformal inference framework (BB-UCP) that achieves distribution-free finite-sample coverage guarantees for LLM generat…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Unsupervised conformal inference
-  - bootstrapping
-  - LLM hallucination detection
-  - Gram matrix
-  - conformal alignment
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Unsupervised conformal inference"
+  - "bootstrapping"
+  - "LLM hallucination detection"
+  - "Gram matrix"
+  - "conformal alignment"
 date: 2026-05-08
 content_hash: 58220dd2298f5558
 ---

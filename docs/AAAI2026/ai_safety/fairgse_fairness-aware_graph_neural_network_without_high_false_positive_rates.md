@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FairGSE: Fairness-Aware Graph Neural Network without High False Positive Rates
 description: >-
-  [AAAI 2026][AI Safety][Graph Neural Networks] This paper is the first to identify the "FPR shortcut" problem in fairness-aware GNNs — existing methods achieve favorable fairness metrics by massively misclassifying negative samples as positive — and proposes the FairGSE framework, which reweights graph edges by maximizing 2D structural entropy to simultaneously improve fairness and reduce the false positive rate, achieving a 39% reduction in FPR.
+  [AAAI 2026][AI Safety][Graph Neural Networks] This paper is the first to identify the "FPR shortcut" problem in fairness-aware GNNs — existing methods achieve favorable fairness metrics by massively misclassifying negati…
 tags:
-  - AAAI 2026
-  - AI Safety
-  - Graph Neural Networks
-  - Fairness
-  - False Positive Rate
-  - Structural Entropy
-  - Contrastive Learning
+  - "AAAI 2026"
+  - "AI Safety"
+  - "Graph Neural Networks"
+  - "Fairness"
+  - "False Positive Rate"
+  - "Structural Entropy"
+  - "Contrastive Learning"
 date: 2026-05-08
 content_hash: 843eb9d3aee9c469
 ---

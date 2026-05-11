@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CoEvo: Continual Evolution of Symbolic Solutions Using Large Language Models
 description: >-
-  [AAAI 2026][LLM/NLP][Symbolic Regression] This paper proposes CoEvo, a framework that integrates LLMs with evolutionary search methodology to achieve continual open-ended evolution of symbolic solutions through a dynamic knowledge library and multi-representation spaces (natural language / mathematical formulas / code), significantly outperforming existing symbolic regression methods on the AI Feynman benchmark.
+  [AAAI 2026][LLM/NLP][Symbolic Regression] This paper proposes CoEvo, a framework that integrates LLMs with evolutionary search methodology to achieve continual open-ended evolution of symbolic solutions through a dynamic…
 tags:
-  - AAAI 2026
-  - LLM/NLP
-  - Symbolic Regression
-  - LLM-based Evolutionary Search
-  - Knowledge Library
-  - Open-ended Innovation
-  - Multi-representation Space
+  - "AAAI 2026"
+  - "LLM/NLP"
+  - "Symbolic Regression"
+  - "LLM-based Evolutionary Search"
+  - "Knowledge Library"
+  - "Open-ended Innovation"
+  - "Multi-representation Space"
 date: 2026-05-08
 content_hash: 826e1492d00bd3e9
 ---

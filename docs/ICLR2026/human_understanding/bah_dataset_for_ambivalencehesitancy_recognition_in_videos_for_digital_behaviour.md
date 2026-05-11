@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BAH Dataset for Ambivalence/Hesitancy Recognition in Videos for Digital Behaviour Analysis
 description: >-
-  [ICLR 2026][Human Understanding][ambivalence/hesitancy recognition] This paper introduces BAH, the first multimodal dataset for Ambivalence/Hesitancy (A/H) recognition in videos, comprising 1,118 video clips (8.26 hours total) from 224 participants across 9 Canadian provinces, annotated by behavioural science experts, with frame-level and video-level baseline experimental results provided.
+  [ICLR 2026][Human Understanding][ambivalence/hesitancy recognition] This paper introduces BAH, the first multimodal dataset for Ambivalence/Hesitancy (A/H) recognition in videos, comprising 1…
 tags:
-  - ICLR 2026
-  - Human Understanding
-  - ambivalence/hesitancy recognition
-  - multimodal video dataset
-  - behaviour change
-  - affective computing
-  - domain adaptation
+  - "ICLR 2026"
+  - "Human Understanding"
+  - "ambivalence/hesitancy recognition"
+  - "multimodal video dataset"
+  - "behaviour change"
+  - "affective computing"
+  - "domain adaptation"
 date: 2026-05-08
 content_hash: cd8122570d996b1a
 ---

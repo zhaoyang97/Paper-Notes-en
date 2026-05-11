@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Boosting Multi-View Indoor 3D Object Detection via Adaptive 3D Volume Construction
 description: >-
-  [ICCV 2025][Object Detection][multi-view 3D object detection] SGCDet achieves state-of-the-art performance in multi-view indoor 3D object detection without ground-truth geometric supervision, through a geometry- and context-aware aggregation module (3D deformable attention + multi-view attention fusion) and an occupancy-probability-based sparse voxel construction strategy, while substantially reducing computational overhead.
+  [ICCV 2025][Object Detection][multi-view 3D object detection] SGCDet achieves state-of-the-art performance in multi-view indoor 3D object detection without ground-truth geometric supervision…
 tags:
-  - ICCV 2025
-  - Object Detection
-  - multi-view 3D object detection
-  - indoor scene
-  - sparse voxel construction
-  - deformable attention
-  - occupancy prediction
+  - "ICCV 2025"
+  - "Object Detection"
+  - "multi-view 3D object detection"
+  - "indoor scene"
+  - "sparse voxel construction"
+  - "deformable attention"
+  - "occupancy prediction"
 date: 2026-05-08
 content_hash: 0942c3b80b1af135
 ---

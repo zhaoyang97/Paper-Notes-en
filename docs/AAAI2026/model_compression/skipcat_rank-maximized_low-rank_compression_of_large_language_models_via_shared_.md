@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SkipCat: Rank-Maximized Low-Rank Compression of Large Language Models via Shared Projection and Block Skipping
 description: >-
-  [AAAI 2026][Model Compression][Low-rank compression] SkipCat proposes a rank-maximized low-rank compression framework that introduces two techniques—intra-layer shared projection (Cat) and block skipping (Skip)—to retain more effective rank under the same compression ratio. Without any fine-tuning, it achieves up to 7% accuracy improvement on zero-shot tasks over existing low-rank methods.
+  [AAAI 2026][Model Compression][Low-rank compression] SkipCat proposes a rank-maximized low-rank compression framework that introduces two techniques—intra-layer shared projection (Cat) and block skipping (Skip)—to retain…
 tags:
-  - AAAI 2026
-  - Model Compression
-  - Low-rank compression
-  - SVD
-  - rank maximization
-  - block skipping
-  - shared projection
+  - "AAAI 2026"
+  - "Model Compression"
+  - "Low-rank compression"
+  - "SVD"
+  - "rank maximization"
+  - "block skipping"
+  - "shared projection"
 date: 2026-05-08
 content_hash: eaa68f979625f800
 ---

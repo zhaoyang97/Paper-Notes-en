@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Distillation Dynamics: Towards Understanding Feature-Based Distillation in Vision Transformers
 description: >-
-  [AAAI 2026][Video Understanding][Knowledge Distillation] This paper proposes a "Distillation Dynamics" analytical framework (channel-wise FFT spectral analysis + Shannon entropy + activation magnitude tracking) to reveal that ViTs exhibit a distinctive U-shaped information processing pattern (compression followed by expansion). The work demonstrates that the fundamental cause of feature-based distillation failure in ViTs is a representational paradigm mismatch between the teacher's distributed high-dimensional encoding in later layers and the student's limited channel capacity—rather than a simple capacity gap.
+  [AAAI 2026][Video Understanding][Knowledge Distillation] This paper proposes a "Distillation Dynamics" analytical framework (channel-wise FFT spectral analysis + Shannon entropy + activation magnitude tracking) to reveal…
 tags:
-  - AAAI 2026
-  - Video Understanding
-  - Knowledge Distillation
-  - Vision Transformer
-  - Spectral Analysis
-  - Information Bottleneck
-  - Negative Transfer
+  - "AAAI 2026"
+  - "Video Understanding"
+  - "Knowledge Distillation"
+  - "Vision Transformer"
+  - "Spectral Analysis"
+  - "Information Bottleneck"
+  - "Negative Transfer"
 date: 2026-05-08
 content_hash: 66155f8d8e8c9b95
 ---

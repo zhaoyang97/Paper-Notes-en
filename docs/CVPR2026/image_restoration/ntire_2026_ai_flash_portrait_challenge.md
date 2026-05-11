@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] NTIRE 2026 The 3rd RAIM Challenge: AI Flash Portrait (Track 3)
 description: >-
-  [CVPR 2026 (Workshop)][Image Restoration][Low-light portrait] NTIRE 2026 3rd RAIM Challenge AI Flash Portrait Track: mapping weak-flash low-light portraits to strong-flash professional-grade portraits, providing 800 real paired samples (with professional retoucher GT), adopting a dual evaluation system combining region-aware objective metrics and expert blind assessment. 118 teams registered with 3,187 valid submissions.
+  [CVPR 2026 (Workshop)][Image Restoration][Low-light portrait] NTIRE 2026 3rd RAIM Challenge AI Flash Portrait Track: mapping weak-flash low-light portraits to strong-flash professional-grade portraits…
 tags:
-  - CVPR 2026 (Workshop)
-  - Image Restoration
-  - Low-light portrait
-  - flash simulation
-  - portrait restoration
-  - subjective-objective evaluation
-  - NTIRE
+  - "CVPR 2026 (Workshop)"
+  - "Image Restoration"
+  - "Low-light portrait"
+  - "flash simulation"
+  - "portrait restoration"
+  - "subjective-objective evaluation"
+  - "NTIRE"
 date: 2026-05-08
 content_hash: d3ff303d3b7c5502
 ---

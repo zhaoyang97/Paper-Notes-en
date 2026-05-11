@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Remedying Target-Domain Astigmatism for Cross-Domain Few-Shot Object Detection
 description: >-
-  [CVPR 2026][Object Detection][cross-domain few-shot detection] This paper is the first to identify an "astigmatism" phenomenon in cross-domain few-shot object detection (CD-FSOD), wherein model attention remains persistently diffuse in the target domain. Inspired by the human foveal visual system, the authors design three complementary modules — Positive Pattern Refinement (PPR), Negative Context Modulation (NCM), and Text Semantic Alignment (TSA) — to reshape attention, achieving state-of-the-art performance with significant margins across six cross-domain benchmarks.
+  [CVPR 2026][Object Detection][cross-domain few-shot detection] This paper is the first to identify an "astigmatism" phenomenon in cross-domain few-shot object detection (CD-FSOD)…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - cross-domain few-shot detection
-  - attention astigmatism
-  - bio-inspired foveal vision
-  - prototype learning
-  - negative context modeling
+  - "CVPR 2026"
+  - "Object Detection"
+  - "cross-domain few-shot detection"
+  - "attention astigmatism"
+  - "bio-inspired foveal vision"
+  - "prototype learning"
+  - "negative context modeling"
 date: 2026-05-08
 content_hash: 7f06f65a2c490720
 ---

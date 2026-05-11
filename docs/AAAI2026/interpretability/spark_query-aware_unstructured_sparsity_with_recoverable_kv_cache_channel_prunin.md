@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] SparK: Query-Aware Unstructured Sparsity with Recoverable KV Cache Channel Pruning
 description: >-
-  [AAAI 2026][KV Cache Compression] This paper proposes SparK — a training-free, token-wise unstructured channel pruning method for KV cache. It selects salient channels via query-aware saliency scoring and recovers the contribution of pruned channels through a recovery mechanism. At an 80% pruning ratio, performance degradation remains below 5%. The method is orthogonal to token eviction approaches and can reduce KV cache storage by an additional 30%+.
+  [AAAI 2026][Interpretability][KV Cache Compression] This paper proposes SparK — a training-free, token-wise unstructured channel pruning method for KV cache. It selects salient channels via query-aware saliency scoring a…
 tags:
-  - AAAI 2026
-  - KV Cache Compression
-  - Channel Pruning
-  - Unstructured Sparsity
-  - Long-Context Inference
-  - Attention Mechanism
+  - "AAAI 2026"
+  - "Interpretability"
+  - "KV Cache Compression"
+  - "Channel Pruning"
+  - "Unstructured Sparsity"
+  - "Long-Context Inference"
+  - "Attention Mechanism"
 date: 2026-05-08
 content_hash: 4fed46c91e657bd6
 ---

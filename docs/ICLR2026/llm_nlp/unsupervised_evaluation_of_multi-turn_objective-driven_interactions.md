@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Unsupervised Evaluation of Multi-Turn Objective-Driven Interactions
 description: >-
-  [ICLR2026][LLM/NLP][Unsupervised Evaluation] Three **unsupervised** metrics are proposed—LLM-guided clustering (goal identification), interaction completeness detection via fine-tuned completion models, and response trees (LLM uncertainty quantification)—for evaluating multi-turn objective-driven dialogues without labeled data or LLM-as-a-judge, achieving performance that matches or exceeds a 70B judge using only an 8B model.
+  [ICLR2026][LLM/NLP][Unsupervised Evaluation] Three **unsupervised** metrics are proposed—LLM-guided clustering (goal identification), interaction completeness detection via fine-tuned completion models…
 tags:
-  - ICLR2026
-  - LLM/NLP
-  - Unsupervised Evaluation
-  - Multi-Turn Dialogue
-  - Goal Completion
-  - LLM Uncertainty
-  - Response Tree
-  - LLM-Guided Clustering
+  - "ICLR2026"
+  - "LLM/NLP"
+  - "Unsupervised Evaluation"
+  - "Multi-Turn Dialogue"
+  - "Goal Completion"
+  - "LLM Uncertainty"
+  - "Response Tree"
+  - "LLM-Guided Clustering"
 date: 2026-05-08
 content_hash: 1ff2058c06f45ed4
 ---

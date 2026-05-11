@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TimePerceiver: An Encoder-Decoder Framework for Generalized Time-Series Forecasting
 description: >-
-  [NeurIPS 2025][Time Series][Time series forecasting] TimePerceiver proposes a unified encoder-decoder framework that generalizes the forecasting task (encompassing extrapolation, interpolation, and imputation) and employs a latent bottleneck encoder with a query-based decoder, achieving comprehensive state-of-the-art performance across 8 standard benchmarks.
+  [NeurIPS 2025][Time Series][Time series forecasting] TimePerceiver proposes a unified encoder-decoder framework that generalizes the forecasting task (encompassing extrapolation, interpolation…
 tags:
-  - NeurIPS 2025
-  - Time Series
-  - Time series forecasting
-  - encoder-decoder
-  - latent bottleneck
-  - generalized forecasting formulation
-  - cross-attention
+  - "NeurIPS 2025"
+  - "Time Series"
+  - "Time series forecasting"
+  - "encoder-decoder"
+  - "latent bottleneck"
+  - "generalized forecasting formulation"
+  - "cross-attention"
 date: 2026-05-08
 content_hash: d3ecafc55c3efcef
 ---

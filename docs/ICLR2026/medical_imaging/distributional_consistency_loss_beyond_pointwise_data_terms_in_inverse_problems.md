@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Distributional Consistency Loss: Beyond Pointwise Data Terms in Inverse Problems
 description: >-
-  [ICLR 2026][Medical Imaging][Inverse Problems] This paper proposes the Distributional Consistency (DC) loss, which replaces conventional pointwise data fidelity terms (e.g., MSE/NLL) with distribution-level calibration, thereby eliminating overfitting to noise. The approach achieves significant performance gains in DIP-based denoising and PET image reconstruction without requiring early stopping.
+  [ICLR 2026][Medical Imaging][Inverse Problems] This paper proposes the Distributional Consistency (DC) loss, which replaces conventional pointwise data fidelity terms (e.g., MSE/NLL) with distribution-level calibration…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - Inverse Problems
-  - Data Fidelity
-  - Distributional Consistency
-  - PET Reconstruction
-  - Deep Image Prior
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Inverse Problems"
+  - "Data Fidelity"
+  - "Distributional Consistency"
+  - "PET Reconstruction"
+  - "Deep Image Prior"
 date: 2026-05-08
 content_hash: 0693557abf0b07ab
 ---

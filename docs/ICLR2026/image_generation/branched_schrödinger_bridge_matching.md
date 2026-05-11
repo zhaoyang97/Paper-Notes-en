@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Branched Schrödinger Bridge Matching
 description: >-
-  [ICLR 2026][Image Generation][Schrödinger Bridge] This paper proposes BranchSBM, a framework that extends Schrödinger Bridge Matching to branching scenarios by parameterizing multiple time-dependent velocity fields and growth processes. It models bifurcating dynamics from a single initial distribution to multiple target distributions, significantly outperforming single-branch methods on tasks such as LiDAR surface navigation and single-cell perturbation modeling.
+  [ICLR 2026][Image Generation][Schrödinger Bridge] This paper proposes BranchSBM, a framework that extends Schrödinger Bridge Matching to branching scenarios by parameterizing multiple time-dependent velocity fields and g…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Schrödinger Bridge
-  - branching trajectories
-  - flow matching
-  - cell fate differentiation
-  - optimal transport
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Schrödinger Bridge"
+  - "branching trajectories"
+  - "flow matching"
+  - "cell fate differentiation"
+  - "optimal transport"
 date: 2026-05-08
 content_hash: 090b2816c5f32b72
 ---

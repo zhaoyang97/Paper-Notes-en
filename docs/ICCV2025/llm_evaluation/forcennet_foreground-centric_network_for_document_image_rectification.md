@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ForCenNet: Foreground-Centric Network for Document Image Rectification
 description: >-
-  [ICCV 2025][LLM Evaluation][document image rectification] This paper proposes ForCenNet, a foreground-centric document rectification network featuring three key contributions: foreground label generation, a mask-guided Transformer decoder, and a curvature consistency loss. The method requires only undistorted images for training and achieves state-of-the-art performance on four benchmarks: DocUNet, DIR300, WarpDoc, and DocReal.
+  [ICCV 2025][LLM Evaluation][document image rectification] This paper proposes ForCenNet, a foreground-centric document rectification network featuring three key contributions: foreground label generation…
 tags:
-  - ICCV 2025
-  - LLM Evaluation
-  - document image rectification
-  - foreground guidance
-  - curvature consistency loss
-  - mask guidance
-  - deformation field prediction
+  - "ICCV 2025"
+  - "LLM Evaluation"
+  - "document image rectification"
+  - "foreground guidance"
+  - "curvature consistency loss"
+  - "mask guidance"
+  - "deformation field prediction"
 date: 2026-05-08
 content_hash: bb156f354b39558d
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CURE: Curriculum-guided Multi-task Training for Reliable Anatomy Grounded Report Generation
 description: >-
-  [CVPR 2026][Medical Imaging][Curriculum Learning] This paper proposes CURE — an error-aware curriculum learning framework for multi-task training that dynamically adjusts sampling distributions to emphasize hard samples, improving visual grounding accuracy by +0.37 IoU and reducing hallucination rate by 18.6% without introducing additional data.
+  [CVPR 2026][Medical Imaging][Curriculum Learning] This paper proposes CURE — an error-aware curriculum learning framework for multi-task training that dynamically adjusts sampling distributions to emphasize hard samples…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Curriculum Learning
-  - Visual Grounding
-  - Radiology Report Generation
-  - Multi-task Learning
-  - Hallucination Mitigation
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Curriculum Learning"
+  - "Visual Grounding"
+  - "Radiology Report Generation"
+  - "Multi-task Learning"
+  - "Hallucination Mitigation"
 date: 2026-05-08
 content_hash: 8e9166d59fe2003c
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Perturbation Bounds for Low-Rank Inverse Approximations under Noise
 description: >-
-  [NeurIPS 2025][AI Safety][Low-rank approximation] This paper provides the first non-asymptotic spectral norm perturbation bounds for low-rank inverse approximations $\|(\tilde{A}^{-1})_p - A_p^{-1}\|$ under additive noise. Using contour integration techniques, sharp bounds are derived that depend on the eigengap, spectral decay, and noise alignment, improving upon classical full-inverse bounds by up to a factor of $\sqrt{n}$.
+  [NeurIPS 2025][AI Safety][Low-rank approximation] This paper provides the first non-asymptotic spectral norm perturbation bounds for low-rank inverse approximations $\|(\tilde{A}^{-1})_p - A_p^{-1}\|$ under additive nois…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - Low-rank approximation
-  - pseudoinverse
-  - perturbation bounds
-  - spectral norm
-  - eigengap
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "Low-rank approximation"
+  - "pseudoinverse"
+  - "perturbation bounds"
+  - "spectral norm"
+  - "eigengap"
 date: 2026-05-08
 content_hash: ee5ea95078e2a6f1
 ---

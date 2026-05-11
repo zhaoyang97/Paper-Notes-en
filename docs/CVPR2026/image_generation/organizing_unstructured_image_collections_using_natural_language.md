@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Organizing Unstructured Image Collections using Natural Language
 description: >-
-  [CVPR 2026][Image Generation][Open Semantic Multi-Clustering] This paper introduces a new task, Open Semantic Multi-Clustering (OpenSMC), and proposes the X-Cluster framework, which converts images into text via an MLLM and subsequently employs an LLM to automatically discover clustering criteria and semantic substructures. Without any human-specified priors, the framework organizes large-scale unlabeled image collections into multi-dimensional, multi-granularity, and interpretable semantic clusters.
+  [CVPR 2026][Image Generation][Open Semantic Multi-Clustering] This paper introduces a new task, Open Semantic Multi-Clustering (OpenSMC), and proposes the X-Cluster framework…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Open Semantic Multi-Clustering
-  - Image Organization
-  - Natural Language
-  - Large Language Models
-  - Multi-Granularity Clustering
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Open Semantic Multi-Clustering"
+  - "Image Organization"
+  - "Natural Language"
+  - "Large Language Models"
+  - "Multi-Granularity Clustering"
 date: 2026-05-08
 content_hash: db37724ee29c8c95
 ---

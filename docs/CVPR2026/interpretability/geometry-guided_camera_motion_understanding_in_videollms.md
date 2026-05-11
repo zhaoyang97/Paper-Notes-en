@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Geometry-Guided Camera Motion Understanding in VideoLLMs
 description: >-
-  [CVPR 2026][VideoLLM] This paper reveals that VideoLLMs perform near random-chance on fine-grained camera motion primitives (pan/tilt/dolly, etc.), constructs CameraMotionDataset (12K clips × 15 atomic motions) and the CameraMotionVQA benchmark, and proposes a model-agnostic approach that injects geometric camera cues extracted by a frozen 3D foundation model (VGGT) via a lightweight temporal classifier and structured prompting — bridging this capability gap without any fine-tuning of the VideoLLM.
+  [CVPR 2026][Interpretability][VideoLLM] This paper reveals that VideoLLMs perform near random-chance on fine-grained camera motion primitives (pan/tilt/dolly, etc.)…
 tags:
-  - CVPR 2026
-  - VideoLLM
-  - camera motion recognition
-  - 3D foundation model
-  - structured prompting
-  - VGGT
+  - "CVPR 2026"
+  - "Interpretability"
+  - "VideoLLM"
+  - "camera motion recognition"
+  - "3D foundation model"
+  - "structured prompting"
+  - "VGGT"
 date: 2026-05-08
 content_hash: 201bc386fa897744
 ---

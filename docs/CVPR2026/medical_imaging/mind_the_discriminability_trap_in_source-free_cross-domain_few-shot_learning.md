@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mind the Discriminability Trap in Source-Free Cross-domain Few-shot Learning
 description: >-
-  [CVPR2026][Medical Imaging][Source-Free CDFSL] This paper reveals that enhancing visual discriminability during VLM fine-tuning for cross-domain few-shot learning paradoxically degrades cross-modal alignment — a phenomenon termed the "discriminability trap." Two plug-and-play modules, SVL and RA, are proposed to suppress visual learning shortcuts and guide cross-modal alignment, achieving state-of-the-art performance on 4 CDFSL benchmarks and 11 FSL datasets.
+  [CVPR2026][Medical Imaging][Source-Free CDFSL] This paper reveals that enhancing visual discriminability during VLM fine-tuning for cross-domain few-shot learning paradoxically degrades cross-modal alignment — a phenomen…
 tags:
-  - CVPR2026
-  - Medical Imaging
-  - Source-Free CDFSL
-  - Vision-Language Model
-  - Cross-Modal Alignment
-  - Visual Discriminability Trap
-  - CLIP Fine-tuning
+  - "CVPR2026"
+  - "Medical Imaging"
+  - "Source-Free CDFSL"
+  - "Vision-Language Model"
+  - "Cross-Modal Alignment"
+  - "Visual Discriminability Trap"
+  - "CLIP Fine-tuning"
 date: 2026-05-08
 content_hash: dd7202c15f98d0aa
 ---

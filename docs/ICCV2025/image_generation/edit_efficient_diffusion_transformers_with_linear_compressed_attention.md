@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] EDiT: Efficient Diffusion Transformers with Linear Compressed Attention
 description: >-
-  [Image Generation] EDiT proposes a linear compressed attention mechanism that enhances query local information via ConvFusion and compresses key/value tokens via a Spatial Compressor, achieving up to 2.2× acceleration over DiT and MM-DiT architectures while maintaining comparable image quality.
+  [Image Generation] EDiT proposes a linear compressed attention mechanism that enhances query local information via ConvFusion and compresses key/value tokens via a Spatial Compressor…
 tags:
-  - Image Generation
+  - "Image Generation"
 date: 2026-05-08
 content_hash: 19ee8871f019b9d6
 ---

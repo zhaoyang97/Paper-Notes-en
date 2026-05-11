@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MotionAgent: Fine-grained Controllable Video Generation via Motion Field Agent
 description: >-
-  [ICCV 2025][Video Generation][Image-to-video generation] This paper proposes MotionAgent, which leverages a Motion Field Agent to parse motion descriptions from text into object trajectories and camera extrinsics, then unifies them into optical flow maps via an analytical flow synthesis module, enabling fine-grained and precise control over both object motion and camera motion in I2V generation using only text input.
+  [ICCV 2025][Video Generation][Image-to-video generation] This paper proposes MotionAgent, which leverages a Motion Field Agent to parse motion descriptions from text into object trajectories and camera extrinsics…
 tags:
-  - ICCV 2025
-  - Video Generation
-  - Image-to-video generation
-  - motion field agent
-  - optical flow
-  - fine-grained motion control
-  - diffusion models
+  - "ICCV 2025"
+  - "Video Generation"
+  - "Image-to-video generation"
+  - "motion field agent"
+  - "optical flow"
+  - "fine-grained motion control"
+  - "diffusion models"
 date: 2026-05-08
 content_hash: 7eadf0a06d7a10d2
 ---

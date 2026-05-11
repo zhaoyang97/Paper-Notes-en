@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Do We Really Need Permutations? Impact of Model Width on Linear Mode Connectivity
 description: >-
-  [ICLR 2026][LLM Evaluation][linear mode connectivity] This paper empirically demonstrates that linear mode connectivity (LMC) between independently trained models can be achieved by simply increasing model width, without any parameter permutation. It further proposes *Layer-wise Exponentially Weighted Connectivity* (LEWC) to explain the underlying mechanism.
+  [ICLR 2026][LLM Evaluation][linear mode connectivity] This paper empirically demonstrates that linear mode connectivity (LMC) between independently trained models can be achieved by simply increasing model width…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - linear mode connectivity
-  - model merging
-  - permutation symmetry
-  - model width
-  - loss landscape
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "linear mode connectivity"
+  - "model merging"
+  - "permutation symmetry"
+  - "model width"
+  - "loss landscape"
 date: 2026-05-08
 content_hash: aff79b65f91a7d64
 ---

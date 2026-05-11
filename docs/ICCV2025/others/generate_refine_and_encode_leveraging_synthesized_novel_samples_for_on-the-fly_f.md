@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Generate, Refine, and Encode: Leveraging Synthesized Novel Samples for On-the-Fly Fine-Grained Category Discovery
 description: >-
-  [ICCV 2025][on-the-fly category discovery] This paper proposes DiffGRE, a diffusion-model-based framework for on-the-fly category discovery. It synthesizes novel samples containing virtual category information via Attribute Composition Generation (ACG), filters low-quality samples through Diversity-Driven Refinement (DDR), and injects additional category knowledge via Semi-supervised Leader Encoding (SLE). DiffGRE achieves substantial performance gains over existing OCD methods across 6 fine-grained datasets (average ACC-ALL improvement of 6.5%).
+  [ICCV 2025][on-the-fly category discovery] This paper proposes DiffGRE, a diffusion-model-based framework for on-the-fly category discovery. It synthesizes novel samples containing virtual category information via Attrib…
 tags:
-  - ICCV 2025
-  - on-the-fly category discovery
-  - diffusion models
-  - attribute composition generation
-  - fine-grained recognition
-  - online clustering inference
+  - "ICCV 2025"
+  - "on-the-fly category discovery"
+  - "diffusion models"
+  - "attribute composition generation"
+  - "fine-grained recognition"
+  - "online clustering inference"
 date: 2026-05-08
 content_hash: d91ac06d852a4bbb
 ---

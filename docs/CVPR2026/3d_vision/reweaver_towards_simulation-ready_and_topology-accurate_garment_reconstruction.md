@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ReWeaver: Towards Simulation-Ready and Topology-Accurate Garment Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][Garment Reconstruction] This paper proposes ReWeaver, a framework that jointly reconstructs 3D garment geometry and 2D sewing patterns from as few as four multi-view RGB images. A dual-path Transformer predicts 3D patches/curves and their topological connectivity, after which an intra-group attention module unfolds the 3D structure into 2D panel edges. ReWeaver is the first method to produce topology-accurate garment assets that are directly usable in physical simulation.
+  [CVPR 2026][3D Vision][Garment Reconstruction] This paper proposes ReWeaver, a framework that jointly reconstructs 3D garment geometry and 2D sewing patterns from as few as four multi-view RGB images. A dual-path Transfo…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Garment Reconstruction
-  - Sewing Pattern
-  - Topology Reconstruction
-  - Multi-View Reconstruction
-  - Physical Simulation
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Garment Reconstruction"
+  - "Sewing Pattern"
+  - "Topology Reconstruction"
+  - "Multi-View Reconstruction"
+  - "Physical Simulation"
 date: 2026-05-08
 content_hash: b0df561d5e4ab35a
 ---

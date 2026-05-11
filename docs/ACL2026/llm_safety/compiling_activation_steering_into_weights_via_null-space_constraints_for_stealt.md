@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Compiling Activation Steering into Weights via Null-Space Constraints for Stealthy Backdoors
 description: >-
-  [ACL 2026][LLM Safety][backdoor attack] This paper proposes STEEREDIT, a backdoor injection framework that compiles dynamic activation steering into static weight modifications. By extracting a compliance direction and applying null-space constraints, the injected backdoor activates only in the presence of a trigger token. The method achieves high attack success rates on multiple safety-aligned LLMs while preserving safe behavior and general capability in trigger-absent scenarios.
+  [ACL 2026][LLM Safety][backdoor attack] This paper proposes STEEREDIT, a backdoor injection framework that compiles dynamic activation steering into static weight modifications. By extracting a compliance direction and a…
 tags:
-  - ACL 2026
-  - LLM Safety
-  - backdoor attack
-  - activation steering
-  - weight editing
-  - null-space constraint
+  - "ACL 2026"
+  - "LLM Safety"
+  - "backdoor attack"
+  - "activation steering"
+  - "weight editing"
+  - "null-space constraint"
 date: 2026-05-08
 content_hash: b4bae1108220586a
 ---

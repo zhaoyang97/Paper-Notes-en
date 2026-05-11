@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FlashDepth: Real-time Streaming Video Depth Estimation at 2K Resolution
 description: >-
-  [ICCV 2025][3D Vision][video depth estimation] FlashDepth augments Depth Anything v2 with a Mamba recurrent module for cross-frame scale consistency, and introduces a Small-Large hybrid architecture that achieves real-time streaming video depth estimation at 2K resolution and 24 FPS with significantly sharper boundaries than existing methods.
+  [ICCV 2025][3D Vision][video depth estimation] FlashDepth augments Depth Anything v2 with a Mamba recurrent module for cross-frame scale consistency…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - video depth estimation
-  - real-time streaming
-  - 2K resolution
-  - Mamba recurrent network
-  - hybrid model
+  - "ICCV 2025"
+  - "3D Vision"
+  - "video depth estimation"
+  - "real-time streaming"
+  - "2K resolution"
+  - "Mamba recurrent network"
+  - "hybrid model"
 date: 2026-05-08
 content_hash: a711f4c87507ce94
 ---

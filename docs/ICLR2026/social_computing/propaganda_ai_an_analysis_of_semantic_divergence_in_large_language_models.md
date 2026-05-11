@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Propaganda AI: An Analysis of Semantic Divergence in Large Language Models
 description: >-
-  [ICLR 2026][Social Computing][LLM Safety] This paper proposes the RAVEN audit framework, which detects concept-conditioned semantic divergence in LLMs—a propaganda-like behavioral pattern wherein high-level conceptual cues (e.g., ideologies, public figures) trigger anomalously consistent stance responses—by combining intra-model semantic entropy with cross-model divergence analysis.
+  [ICLR 2026][Social Computing][LLM Safety] This paper proposes the RAVEN audit framework, which detects concept-conditioned semantic divergence in LLMs—a propaganda-like behavioral pattern wherein high-level conceptual cu…
 tags:
-  - ICLR 2026
-  - Social Computing
-  - LLM Safety
-  - Semantic Divergence
-  - Concept Triggering
-  - Audit Framework
-  - Propaganda Behavior
+  - "ICLR 2026"
+  - "Social Computing"
+  - "LLM Safety"
+  - "Semantic Divergence"
+  - "Concept Triggering"
+  - "Audit Framework"
+  - "Propaganda Behavior"
 date: 2026-05-08
 content_hash: 5f1fed4450162b23
 ---

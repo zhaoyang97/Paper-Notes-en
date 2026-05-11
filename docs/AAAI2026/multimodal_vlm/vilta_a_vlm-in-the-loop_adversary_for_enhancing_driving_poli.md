@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VILTA: A VLM-in-the-Loop Adversary for Enhancing Driving Policy Robustness
 description: >-
-  [AAAI 2026][Multimodal VLM][VLM-in-the-Loop] VILTA embeds a VLM (Gemini-2.5-Flash) directly into the RL training loop for autonomous driving. Via a Vision-Language-Editing (VLE) paradigm, the VLM edits the future trajectories of surrounding vehicles to generate challenging hazardous scenarios. The resulting driving policy achieves a 13.3% improvement in route completion rate and a 28.5% reduction in collision rate on CARLA challenging scenarios.
+  [AAAI 2026][Multimodal VLM][VLM-in-the-Loop] VILTA embeds a VLM (Gemini-2.5-Flash) directly into the RL training loop for autonomous driving. Via a Vision-Language-Editing (VLE) paradigm…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - VLM-in-the-Loop
-  - Adversarial Trajectory Generation
-  - Closed-Loop Training
-  - Long-Tail Scenarios
-  - Driving Policy Robustness
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "VLM-in-the-Loop"
+  - "Adversarial Trajectory Generation"
+  - "Closed-Loop Training"
+  - "Long-Tail Scenarios"
+  - "Driving Policy Robustness"
 date: 2026-05-08
 content_hash: f7bc097ece7cedf0
 ---

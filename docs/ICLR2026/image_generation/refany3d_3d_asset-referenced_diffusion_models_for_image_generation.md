@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RefAny3D: 3D Asset-Referenced Diffusion Models for Image Generation
 description: >-
-  [ICLR 2026][Image Generation][3D asset reference] This paper proposes RefAny3D, a 3D asset-referenced image generation framework that achieves precise geometric and texture consistency between generated images and 3D reference assets through a dual-branch generation strategy that jointly models RGB images and point maps.
+  [ICLR 2026][Image Generation][3D asset reference] This paper proposes RefAny3D, a 3D asset-referenced image generation framework that achieves precise geometric and texture consistency between generated images and 3D ref…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - 3D asset reference
-  - dual-branch generation
-  - point map
-  - domain decoupling
-  - subject-driven generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "3D asset reference"
+  - "dual-branch generation"
+  - "point map"
+  - "domain decoupling"
+  - "subject-driven generation"
 date: 2026-05-08
 content_hash: fbc1f4c5100c456e
 ---

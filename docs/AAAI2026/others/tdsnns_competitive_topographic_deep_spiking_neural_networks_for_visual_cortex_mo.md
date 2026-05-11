@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] TDSNNs: Competitive Topographic Deep Spiking Neural Networks for Visual Cortex Modeling
 description: >-
-  [AAAI 2026][Spiking Neural Networks] This paper proposes Topographic Deep Spiking Neural Networks (TDSNNs), which introduce a Spatiotemporal Constraint (STC) loss to successfully replicate the hierarchical topographic organization of the primate visual cortex from V1 to IT in deep SNNs, achieving zero accuracy degradation on ImageNet (top-1) while substantially outperforming existing topographic ANNs in brain similarity.
+  [AAAI 2026][Spiking Neural Networks] This paper proposes Topographic Deep Spiking Neural Networks (TDSNNs), which introduce a Spatiotemporal Constraint (STC) loss to successfully replicate the hierarchical topographic or…
 tags:
-  - AAAI 2026
-  - Spiking Neural Networks
-  - Topographic Organization
-  - Visual Cortex Modeling
-  - Spatiotemporal Constraints
-  - Biological Plausibility
+  - "AAAI 2026"
+  - "Spiking Neural Networks"
+  - "Topographic Organization"
+  - "Visual Cortex Modeling"
+  - "Spatiotemporal Constraints"
+  - "Biological Plausibility"
 date: 2026-05-08
 content_hash: 73927a6629348719
 ---

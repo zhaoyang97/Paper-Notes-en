@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DisCO: Reinforcing Large Reasoning Models with Discriminative Constrained Optimization
 description: >-
-  [NeurIPS 2025][LLM Reasoning][GRPO] This paper analyzes the GRPO objective and reveals two inherent issues: difficulty bias (underweighting questions that are too hard or too easy) and entropy instability. It proposes DisCO, a discriminative constrained optimization framework that addresses these issues via a clip-free scoring function, squared hinge constrained optimization, and distributionally robust optimization (DRO) for imbalanced rollouts. On 1.5B models, DisCO outperforms GRPO by 7% and DAPO by 6% on average.
+  [NeurIPS 2025][LLM Reasoning][GRPO] This paper analyzes the GRPO objective and reveals two inherent issues: difficulty bias (underweighting questions that are too hard or too easy) and entropy instability. It proposes Di…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - GRPO
-  - discriminative optimization
-  - AUC maximization
-  - constrained optimization
-  - data imbalance
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "GRPO"
+  - "discriminative optimization"
+  - "AUC maximization"
+  - "constrained optimization"
+  - "data imbalance"
 date: 2026-05-08
 content_hash: 2fc80a1b68d76418
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Domain-Adaptive Transformer for Data-Efficient Glioma Segmentation in Sub-Saharan MRI
 description: >-
-  [NeurIPS 2025][Medical Imaging][Glioma segmentation] This paper proposes SegFormer3D+, a domain-adaptive Transformer architecture tailored for heterogeneous MRI data from Sub-Saharan Africa. By integrating histogram matching, radiomics-guided stratified sampling, a frequency-aware dual-path encoder, and a dual attention mechanism, the model achieves a mean Dice of 0.81 for glioma segmentation with only 60 annotated cases for fine-tuning, outperforming nnU-Net by +2.5%.
+  [NeurIPS 2025][Medical Imaging][Glioma segmentation] This paper proposes SegFormer3D+, a domain-adaptive Transformer architecture tailored for heterogeneous MRI data from Sub-Saharan Africa. By integrating histogram matc…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Glioma segmentation
-  - domain adaptation
-  - Transformer
-  - resource-constrained
-  - BraTS-Africa
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Glioma segmentation"
+  - "domain adaptation"
+  - "Transformer"
+  - "resource-constrained"
+  - "BraTS-Africa"
 date: 2026-05-08
 content_hash: e696200a55c5525c
 ---

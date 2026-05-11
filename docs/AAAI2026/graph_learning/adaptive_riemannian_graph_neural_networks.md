@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Adaptive Riemannian Graph Neural Networks
 description: >-
-  [AAAI 2026][Graph Learning][Riemannian geometry] This paper proposes ARGNN, a framework that learns a continuous, anisotropic diagonal Riemannian metric tensor for each node in a graph, enabling adaptive capture of local geometric properties across different graph regions (hierarchical structures vs. dense communities). ARGNN unifies and outperforms geometric GNN methods based on fixed curvature or discrete mixed-curvature spaces.
+  [AAAI 2026][Graph Learning][Riemannian geometry] This paper proposes ARGNN, a framework that learns a continuous, anisotropic diagonal Riemannian metric tensor for each node in a graph…
 tags:
-  - AAAI 2026
-  - Graph Learning
-  - Riemannian geometry
-  - adaptive metric tensor
-  - Ricci flow regularization
-  - geometric heterogeneity
-  - message passing
+  - "AAAI 2026"
+  - "Graph Learning"
+  - "Riemannian geometry"
+  - "adaptive metric tensor"
+  - "Ricci flow regularization"
+  - "geometric heterogeneity"
+  - "message passing"
 date: 2026-05-08
 content_hash: 9b67600214b1b492
 ---

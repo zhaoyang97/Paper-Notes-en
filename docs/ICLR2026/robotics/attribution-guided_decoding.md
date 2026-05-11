@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Attribution-Guided Decoding
 description: >-
-  [ICLR 2026][Robotics][attribution method] This paper proposes AGD, a decoding strategy that, at each generation step, selects from high-probability candidate tokens the one with the highest attribution score toward a user-specified region of interest (ROI). This reframes attribution methods from passive analysis tools into active generation guidance mechanisms, achieving significant improvements on both instruction-following and factuality tasks.
+  [ICLR 2026][Robotics][attribution method] This paper proposes AGD, a decoding strategy that, at each generation step, selects from high-probability candidate tokens the one with the highest attribution score toward a use…
 tags:
-  - ICLR 2026
-  - Robotics
-  - attribution method
-  - LRP
-  - instruction following
-  - factuality
-  - entropy-gating
-  - controlled decoding
+  - "ICLR 2026"
+  - "Robotics"
+  - "attribution method"
+  - "LRP"
+  - "instruction following"
+  - "factuality"
+  - "entropy-gating"
+  - "controlled decoding"
 date: 2026-05-08
 content_hash: f1afa67caa9fb207
 ---

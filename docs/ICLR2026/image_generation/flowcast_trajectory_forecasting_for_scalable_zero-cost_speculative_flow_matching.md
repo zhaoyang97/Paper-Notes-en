@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FlowCast: Trajectory Forecasting for Scalable Zero-Cost Speculative Flow Matching
 description: >-
-  [ICLR 2026][Image Generation][Flow Matching] FlowCast is a framework that introduces speculative decoding into Flow Matching models. It exploits the local smoothness of the velocity field to extrapolate future states using the current velocity prediction as a zero-cost draft, then selectively skips redundant steps via MSE-based verification, achieving >2.5× speedup without quality degradation.
+  [ICLR 2026][Image Generation][Flow Matching] FlowCast is a framework that introduces speculative decoding into Flow Matching models. It exploits the local smoothness of the velocity field to extrapolate future states usi…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Flow Matching
-  - Speculative Decoding
-  - Zero-Cost Acceleration
-  - Inference Optimization
-  - Trajectory Forecasting
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Flow Matching"
+  - "Speculative Decoding"
+  - "Zero-Cost Acceleration"
+  - "Inference Optimization"
+  - "Trajectory Forecasting"
 date: 2026-05-08
 content_hash: eb5f5593387f24a2
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Systematic Evaluation of Preference Aggregation in Federated RLHF for Pluralistic Alignment of LLMs
 description: >-
-  [NEURIPS2025][LLM Alignment][federated learning] This paper proposes an Adaptive Alpha aggregation strategy that dynamically adjusts reward weights based on each user group's historical alignment performance within a federated RLHF framework, simultaneously achieving high fairness and strong alignment performance for pluralistic preference alignment.
+  [NEURIPS2025][LLM Alignment][federated learning] This paper proposes an Adaptive Alpha aggregation strategy that dynamically adjusts reward weights based on each user group's historical alignment performance within a fed…
 tags:
-  - NEURIPS2025
-  - LLM Alignment
-  - federated learning
-  - RLHF
-  - Pluralistic Alignment
-  - Preference Aggregation
-  - Fairness
+  - "NEURIPS2025"
+  - "LLM Alignment"
+  - "federated learning"
+  - "RLHF"
+  - "Pluralistic Alignment"
+  - "Preference Aggregation"
+  - "Fairness"
 date: 2026-05-08
 content_hash: 3dc21b1aa1d3c3c6
 ---

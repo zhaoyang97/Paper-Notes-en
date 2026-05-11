@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Perturb and Recover: Fine-tuning for Effective Backdoor Removal from CLIP
 description: >-
-  [CVPR 2026][LLM Safety][backdoor attack] This paper proposes PAR (Perturb and Recover), a simple yet effective backdoor cleansing method for CLIP: by explicitly pushing model embeddings away from the poisoned state (Perturb) while recovering clean performance via the standard CLIP loss (Recover), PAR achieves robust backdoor removal against arbitrary trigger types without relying on strong data augmentation, and remains effective even when using only synthetic data.
+  [CVPR 2026][LLM Safety][backdoor attack] This paper proposes PAR (Perturb and Recover), a simple yet effective backdoor cleansing method for CLIP: by explicitly pushing model embeddings away from the poisoned state (Pert…
 tags:
-  - CVPR 2026
-  - LLM Safety
-  - backdoor attack
-  - CLIP model cleansing
-  - fine-tuning defense
-  - structured triggers
-  - synthetic data
+  - "CVPR 2026"
+  - "LLM Safety"
+  - "backdoor attack"
+  - "CLIP model cleansing"
+  - "fine-tuning defense"
+  - "structured triggers"
+  - "synthetic data"
 date: 2026-05-08
 content_hash: fcb26ed516365082
 ---

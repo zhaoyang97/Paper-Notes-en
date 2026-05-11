@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] CodeRL+: Improving Code Generation via Reinforcement with Execution Semantics Alignment
 description: >-
-  [ACL 2026][Code Generation] This paper proposes CodeRL+, which integrates execution semantics alignment into the RLVR training pipeline. By training the model to infer variable-level execution traces, CodeRL+ bridges the gap between code text representations and execution semantics, achieving an average pass@1 improvement of 4.6% on code generation, 15.5% on code reasoning, and 4.4% on test output generation benchmarks.
+  [ACL 2026][Code Intelligence][Code Generation] This paper proposes CodeRL+, which integrates execution semantics alignment into the RLVR training pipeline. By training the model to infer variable-level execution traces…
 tags:
-  - ACL 2026
-  - Code Generation
-  - Execution Semantics Alignment
-  - RLVR
-  - GRPO
-  - Program Execution Traces
+  - "ACL 2026"
+  - "Code Intelligence"
+  - "Code Generation"
+  - "Execution Semantics Alignment"
+  - "RLVR"
+  - "GRPO"
+  - "Program Execution Traces"
 date: 2026-05-08
 content_hash: 7ee270099f050e69
 ---

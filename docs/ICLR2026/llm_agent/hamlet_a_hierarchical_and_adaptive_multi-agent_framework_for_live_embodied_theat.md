@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] HAMLET: A Hierarchical and Adaptive Multi-Agent Framework for Live Embodied Theatre
 description: >-
-  [ICLR 2026][LLM Agent][Multi-agent framework] This paper proposes HAMLET, a multi-agent framework that decouples AI theatrical creation and live performance into an offline planning phase and an online performance phase. Through a narrative blueprint, a Perceive And Decide (PAD) module, and a hierarchical control system, HAMLET enables an AI theatre experience characterized by proactivity, physical environment interaction, and improvisational freedom.
+  [ICLR 2026][LLM Agent][Multi-agent framework] This paper proposes HAMLET, a multi-agent framework that decouples AI theatrical creation and live performance into an offline planning phase and an online performance phase.…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Multi-agent framework
-  - theatrical performance
-  - perception and decision-making
-  - interactive narrative
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Multi-agent framework"
+  - "theatrical performance"
+  - "perception and decision-making"
+  - "interactive narrative"
 date: 2026-05-08
 content_hash: 12e995cae489924f
 ---

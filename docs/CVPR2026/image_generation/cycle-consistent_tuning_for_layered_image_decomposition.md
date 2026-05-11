@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Cycle-Consistent Tuning for Layered Image Decomposition
 description: >-
-  [CVPR 2026][Image Generation][Image Decomposition] A cycle-consistent fine-tuning framework based on diffusion models is proposed to achieve image layer separation (e.g., logo-object decomposition) by jointly training decomposition and synthesis models. A progressive self-improving data augmentation strategy is introduced to achieve robust decomposition in scenarios with non-linear layer interactions.
+  [CVPR 2026][Image Generation][Image Decomposition] A cycle-consistent fine-tuning framework based on diffusion models is proposed to achieve image layer separation (e.g.…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Image Decomposition
-  - Cycle Consistency
-  - Diffusion Models
-  - LoRA Fine-tuning
-  - In-Context Learning
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Image Decomposition"
+  - "Cycle Consistency"
+  - "Diffusion Models"
+  - "LoRA Fine-tuning"
+  - "In-Context Learning"
 date: 2026-05-08
 content_hash: 6c0fd549de1d4714
 ---

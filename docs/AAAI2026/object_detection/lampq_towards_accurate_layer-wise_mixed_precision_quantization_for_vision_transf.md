@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LampQ: Towards Accurate Layer-wise Mixed Precision Quantization for Vision Transformers
 description: >-
-  [AAAI 2026][Object Detection][Mixed Precision Quantization] This paper proposes LampQ, a metric-based layer-wise mixed precision quantization method that measures the quantization sensitivity of each ViT layer via a type-aware Fisher information metric, combines integer linear programming to optimize bit-width allocation, and iteratively refines the allocation. LampQ achieves state-of-the-art performance across image classification, object detection, and zero-shot quantization tasks.
+  [AAAI 2026][Object Detection][Mixed Precision Quantization] This paper proposes LampQ, a metric-based layer-wise mixed precision quantization method that measures the quantization sensitivity of each ViT layer via a type…
 tags:
-  - AAAI 2026
-  - Object Detection
-  - Mixed Precision Quantization
-  - Vision Transformer
-  - Layer-Adaptive
-  - Fisher Information
-  - Integer Linear Programming
+  - "AAAI 2026"
+  - "Object Detection"
+  - "Mixed Precision Quantization"
+  - "Vision Transformer"
+  - "Layer-Adaptive"
+  - "Fisher Information"
+  - "Integer Linear Programming"
 date: 2026-05-08
 content_hash: 279a341928ce8883
 ---

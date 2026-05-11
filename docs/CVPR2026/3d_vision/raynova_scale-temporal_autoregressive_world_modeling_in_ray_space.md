@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RayNova: Scale-Temporal Autoregressive World Modeling in Ray Space
 description: >-
-  [CVPR 2026][3D Vision][World Model] This paper proposes RayNova, a geometry-agnostic multi-view world model based on dual-causal (scale + temporal) autoregressive modeling. By leveraging relative Plücker ray positional encodings, RayNova achieves unified 4D spatiotemporal reasoning and attains state-of-the-art multi-view video generation performance on nuScenes.
+  [CVPR 2026][3D Vision][World Model] This paper proposes RayNova, a geometry-agnostic multi-view world model based on dual-causal (scale + temporal) autoregressive modeling. By leveraging relative Plücker ray positional e…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - World Model
-  - Multi-View Video Generation
-  - Autoregressive
-  - Plücker Rays
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "3D Vision"
+  - "World Model"
+  - "Multi-View Video Generation"
+  - "Autoregressive"
+  - "Plücker Rays"
+  - "Autonomous Driving"
 date: 2026-05-08
 content_hash: 3c1352b97bb323a1
 ---

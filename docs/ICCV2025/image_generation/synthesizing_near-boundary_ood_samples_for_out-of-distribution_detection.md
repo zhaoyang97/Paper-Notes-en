@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Synthesizing Near-Boundary OOD Samples for Out-of-Distribution Detection
 description: >-
-  [ICCV 2025][Image Generation][Out-of-distribution detection] This paper proposes SynOOD, which synthesizes challenging near-boundary OOD samples by combining MLLM-based contextual semantic extraction, iterative diffusion inpainting, and OOD gradient guidance. The synthesized samples are used to fine-tune the CLIP image encoder and negative label features, achieving a 2.80% AUROC improvement and 11.13% FPR95 reduction on the ImageNet benchmark.
+  [ICCV 2025][Image Generation][Out-of-distribution detection] This paper proposes SynOOD, which synthesizes challenging near-boundary OOD samples by combining MLLM-based contextual semantic extraction…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Out-of-distribution detection
-  - near-boundary sample synthesis
-  - CLIP fine-tuning
-  - diffusion model generation
-  - negative labels
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Out-of-distribution detection"
+  - "near-boundary sample synthesis"
+  - "CLIP fine-tuning"
+  - "diffusion model generation"
+  - "negative labels"
 date: 2026-05-08
 content_hash: d6a591382382d391
 ---

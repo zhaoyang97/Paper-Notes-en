@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Can LLMs Outshine Conventional Recommenders? A Comparative Evaluation
 description: >-
-  [NeurIPS 2025][Audio & Speech][LLM-as-RS] This paper proposes RecBench, a comprehensive evaluation framework that systematically compares 17 LLMs against 10 conventional DLRMs across 5 domain-specific datasets. Results show that LLM-based recommenders achieve up to 5% AUC improvement on CTR tasks and up to 170% NDCG@10 improvement on sequential recommendation, yet incur 10–1000× slower inference. Conventional DLRMs augmented with LLM semantic embeddings (LLM-for-RS) attain approximately 95% of LLM performance at 20× higher throughput, making this paradigm the most industrially viable solution at present.
+  [NeurIPS 2025][Audio & Speech][LLM-as-RS] This paper proposes RecBench, a comprehensive evaluation framework that systematically compares 17 LLMs against 10 conventional DLRMs across 5 domain-specific datasets. Results s…
 tags:
-  - NeurIPS 2025
+  - "NeurIPS 2025"
   - "Audio & Speech"
-  - LLM-as-RS
-  - RecBench
-  - CTR prediction
-  - sequential recommendation
-  - item representation
-  - inference efficiency
+  - "LLM-as-RS"
+  - "RecBench"
+  - "CTR prediction"
+  - "sequential recommendation"
+  - "item representation"
+  - "inference efficiency"
 date: 2026-05-08
 content_hash: e73133a820fbf053
 ---

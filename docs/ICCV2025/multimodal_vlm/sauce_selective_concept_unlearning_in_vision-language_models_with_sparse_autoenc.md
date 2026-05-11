@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SAUCE: Selective Concept Unlearning in Vision-Language Models with Sparse Autoencoders
 description: >-
-  [ICCV 2025][Multimodal VLM][concept unlearning] SAUCE leverages sparse autoencoders (SAEs) to identify and selectively suppress features associated with target concepts in VLM intermediate representations, enabling fine-grained concept unlearning without weight updates. Evaluated across 60 concepts, it surpasses the previous SOTA in forgetting quality by 18%.
+  [ICCV 2025][Multimodal VLM][concept unlearning] SAUCE leverages sparse autoencoders (SAEs) to identify and selectively suppress features associated with target concepts in VLM intermediate representations…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - concept unlearning
-  - sparse autoencoder
-  - vision-language model
-  - machine unlearning
-  - fine-grained control
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "concept unlearning"
+  - "sparse autoencoder"
+  - "vision-language model"
+  - "machine unlearning"
+  - "fine-grained control"
 date: 2026-05-08
 content_hash: 75e49df643e4a526
 ---

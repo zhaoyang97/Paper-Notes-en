@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PanoAffordanceNet: Towards Holistic Affordance Grounding in 360° Indoor Environments
 description: >-
-  [CVPR 2026][Robotics][Panoramic affordance grounding] PanoAffordanceNet introduces a novel task of holistic affordance grounding in 360° indoor environments. It employs a Distortion-Aware Spectrum Modulator (DASM) to correct ERP geometric distortions, an Omnidirectional Sphere Densification Head (OSDH) to recover continuous affordance regions from sparse activations, and multi-level training objectives. The method achieves substantial gains over existing approaches on 360-AGD, the first panoramic affordance dataset constructed by the authors.
+  [CVPR 2026][Robotics][Panoramic affordance grounding] PanoAffordanceNet introduces a novel task of holistic affordance grounding in 360° indoor environments. It employs a Distortion-Aware Spectrum Modulator (DASM) to cor…
 tags:
-  - CVPR 2026
-  - Robotics
-  - Panoramic affordance grounding
-  - 360° indoor perception
-  - distortion-aware modulation
-  - omnidirectional densification
-  - one-shot learning
+  - "CVPR 2026"
+  - "Robotics"
+  - "Panoramic affordance grounding"
+  - "360° indoor perception"
+  - "distortion-aware modulation"
+  - "omnidirectional densification"
+  - "one-shot learning"
 date: 2026-05-08
 content_hash: 3ebf9247487618f0
 ---

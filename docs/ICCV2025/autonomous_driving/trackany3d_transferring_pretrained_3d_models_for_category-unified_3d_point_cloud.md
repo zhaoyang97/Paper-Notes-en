@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TrackAny3D: Transferring Pretrained 3D Models for Category-unified 3D Point Cloud Tracking
 description: >-
-  [ICCV 2025][Autonomous Driving][3D Single Object Tracking] TrackAny3D is the first work to transfer large-scale pretrained 3D models to category-agnostic 3D single object tracking. By introducing a dual-path adapter, a Mixture of Geometry Experts (MoGE) module, and a temporal context optimization strategy, it achieves state-of-the-art performance on cross-category unified tracking within a single model.
+  [ICCV 2025][Autonomous Driving][3D Single Object Tracking] TrackAny3D is the first work to transfer large-scale pretrained 3D models to category-agnostic 3D single object tracking. By introducing a dual-path adapter…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - 3D Single Object Tracking
-  - Pretrained Model Transfer
-  - Mixture of Geometry Experts
-  - Parameter-Efficient Fine-Tuning
-  - Point Cloud
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "3D Single Object Tracking"
+  - "Pretrained Model Transfer"
+  - "Mixture of Geometry Experts"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Point Cloud"
 date: 2026-05-08
 content_hash: ff17a9608238029c
 ---

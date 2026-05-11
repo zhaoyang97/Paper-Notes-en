@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SSR: Semantic and Spatial Rectification for CLIP-based Weakly Supervised Segmentation
 description: >-
-  [AAAI 2026][Segmentation][Weakly supervised semantic segmentation] This paper proposes SSR, a dual-level semantic and spatial rectification framework that addresses non-target foreground over-activation caused by CLIP's cross-modal semantic misalignment via Cross-Modal Prototype Alignment (CMPA), and background over-activation during affinity propagation via Superpixel-Guided Correction (SGC). SSR achieves state-of-the-art performance on PASCAL VOC and MS COCO, surpassing both single-stage and multi-stage methods.
+  [AAAI 2026][Segmentation][Weakly supervised semantic segmentation] This paper proposes SSR, a dual-level semantic and spatial rectification framework that addresses non-target foreground over-activation caused by CLIP's…
 tags:
-  - AAAI 2026
-  - Segmentation
-  - Weakly supervised semantic segmentation
-  - CLIP
-  - cross-modal prototype alignment
-  - superpixel-guided correction
-  - class activation map
+  - "AAAI 2026"
+  - "Segmentation"
+  - "Weakly supervised semantic segmentation"
+  - "CLIP"
+  - "cross-modal prototype alignment"
+  - "superpixel-guided correction"
+  - "class activation map"
 date: 2026-05-08
 content_hash: ece48df4c0e1b0b8
 ---

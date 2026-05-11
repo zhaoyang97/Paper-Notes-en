@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LiveNewsBench: Evaluating LLM Web Search Capabilities with Freshly Curated News
 description: >-
-  [ICLR 2026][LLM Agent][LLM Web Search] This paper proposes LiveNewsBench, an automatically generated and periodically refreshed benchmark derived from recent news articles. It evaluates LLMs' agentic web search capabilities through multi-hop, factual question answering, effectively decoupling models' parametric knowledge from their retrieval ability. Model performance ranges from 11% to 90%, demonstrating strong discriminative power.
+  [ICLR 2026][LLM Agent][LLM Web Search] This paper proposes LiveNewsBench, an automatically generated and periodically refreshed benchmark derived from recent news articles. It evaluates LLMs' agentic web search capabilit…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - LLM Web Search
-  - Agentic Search
-  - benchmark
-  - News QA
-  - Multi-hop Retrieval
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "LLM Web Search"
+  - "Agentic Search"
+  - "benchmark"
+  - "News QA"
+  - "Multi-hop Retrieval"
 date: 2026-05-08
 content_hash: fd23e0ab1b4863b4
 ---

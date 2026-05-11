@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Metacognitive Sensitivity for Test-Time Dynamic Model Selection
 description: >-
-  [NeurIPS 2025 (CogInterp Workshop)][Multimodal VLM][metacognition] Inspired by the concept of metacognitive sensitivity (meta-d') from cognitive science, this paper proposes a test-time dynamic model selection framework that quantifies a model's ability to "know what it doesn't know" via meta-d', combines it with instantaneous confidence scores to form a context vector, and employs a contextual bandit to online-select the optimal model, outperforming individual models across multiple datasets.
+  [NeurIPS 2025 (CogInterp Workshop)][Multimodal VLM][metacognition] Inspired by the concept of metacognitive sensitivity (meta-d') from cognitive science…
 tags:
-  - NeurIPS 2025 (CogInterp Workshop)
-  - Multimodal VLM
-  - metacognition
-  - meta-d'
-  - dynamic model selection
-  - contextual bandit
-  - signal detection theory
+  - "NeurIPS 2025 (CogInterp Workshop)"
+  - "Multimodal VLM"
+  - "metacognition"
+  - "meta-d'"
+  - "dynamic model selection"
+  - "contextual bandit"
+  - "signal detection theory"
 date: 2026-05-08
 content_hash: 286430104d88180d
 ---

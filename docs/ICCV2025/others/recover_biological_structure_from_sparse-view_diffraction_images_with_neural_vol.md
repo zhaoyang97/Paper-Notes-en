@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Recover Biological Structure from Sparse-View Diffraction Images with Neural Volumetric Prior
 description: >-
-  [ICCV 2025][sparse-view reconstruction] This paper proposes Neural Volumetric Prior (NVP), a hybrid neural representation combining an explicit 3D feature grid with an implicit MLP, integrated with a physically accurate diffraction-based rendering equation. NVP enables, for the first time, high-fidelity volumetric reconstruction of the 3D refractive index of semi-transparent biological specimens from sparse-view inputs (as few as 6–7 fluorescence images), reducing the required number of images by approximately 50× and processing time by 3×.
+  [ICCV 2025][sparse-view reconstruction] This paper proposes Neural Volumetric Prior (NVP), a hybrid neural representation combining an explicit 3D feature grid with an implicit MLP…
 tags:
-  - ICCV 2025
-  - sparse-view reconstruction
-  - neural volumetric prior
-  - diffractive optics
-  - refractive index reconstruction
-  - fluorescence diffraction tomography
+  - "ICCV 2025"
+  - "sparse-view reconstruction"
+  - "neural volumetric prior"
+  - "diffractive optics"
+  - "refractive index reconstruction"
+  - "fluorescence diffraction tomography"
 date: 2026-05-08
 content_hash: 376e0f9e71f5e577
 ---

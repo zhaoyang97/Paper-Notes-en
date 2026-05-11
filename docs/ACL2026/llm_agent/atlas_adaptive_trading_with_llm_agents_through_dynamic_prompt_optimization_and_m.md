@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ATLAS: Adaptive Trading with LLM AgentS Through Dynamic Prompt Optimization and Multi-Agent Coordination
 description: >-
-  [ACL 2026][LLM Agent][LLM trading agent] This paper proposes ATLAS, a multi-agent financial trading framework, and Adaptive-OPRO, a prompt optimization method. ATLAS employs specialized analyst agents to prepare heterogeneous market information and dynamically optimizes the instruction prompt of a central trading agent based on delayed and noisy feedback, achieving significant improvements over baselines across diverse market volatility conditions.
+  [ACL 2026][LLM Agent][LLM trading agent] This paper proposes ATLAS, a multi-agent financial trading framework, and Adaptive-OPRO, a prompt optimization method. ATLAS employs specialized analyst agents to prepare heteroge…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - LLM trading agent
-  - prompt optimization
-  - multi-agent coordination
-  - financial decision-making
-  - adaptive strategy
+  - "ACL 2026"
+  - "LLM Agent"
+  - "LLM trading agent"
+  - "prompt optimization"
+  - "multi-agent coordination"
+  - "financial decision-making"
+  - "adaptive strategy"
 date: 2026-05-08
 content_hash: fae76e67b897f782
 ---

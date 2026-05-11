@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Quality-Guided Mixture of Score-Fusion Experts Framework for Human Recognition
 description: >-
-  [ICCV 2025][Multimodal VLM][Whole-body biometric recognition] This paper proposes a Quality-guided Mixture of score-fusion Experts (QME) framework that employs a quality-guided MoE strategy to perform learnable fusion of similarity scores from heterogeneous biometric modalities (face, gait, body). Combined with a pseudo-quality loss and a score triplet loss, QME achieves state-of-the-art performance on multiple whole-body biometric recognition benchmarks.
+  [ICCV 2025][Multimodal VLM][Whole-body biometric recognition] This paper proposes a Quality-guided Mixture of score-fusion Experts (QME) framework that employs a quality-guided MoE strategy to perform learnable fusion of…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Whole-body biometric recognition
-  - score fusion
-  - mixture of experts
-  - quality estimation
-  - multimodal fusion
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Whole-body biometric recognition"
+  - "score fusion"
+  - "mixture of experts"
+  - "quality estimation"
+  - "multimodal fusion"
 date: 2026-05-08
 content_hash: b2b743a0a475be56
 ---

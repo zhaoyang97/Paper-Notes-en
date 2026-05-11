@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Stop Wasting Your Tokens: Towards Efficient Runtime Multi-Agent Systems
 description: >-
-  [ICLR 2026][Social Computing][Multi-agent systems] This paper proposes SupervisorAgent, a lightweight real-time adaptive supervision framework that actively intervenes at critical interaction nodes (error correction, guidance provision, observation purification) via an LLM-free adaptive filter, reducing token consumption of Smolagent on the GAIA benchmark by 29.68% without sacrificing success rate.
+  [ICLR 2026][Social Computing][Multi-agent systems] This paper proposes SupervisorAgent, a lightweight real-time adaptive supervision framework that actively intervenes at critical interaction nodes (error correction…
 tags:
-  - ICLR 2026
-  - Social Computing
-  - Multi-agent systems
-  - Token efficiency
-  - Runtime supervision
-  - Adaptive filtering
-  - Error correction
+  - "ICLR 2026"
+  - "Social Computing"
+  - "Multi-agent systems"
+  - "Token efficiency"
+  - "Runtime supervision"
+  - "Adaptive filtering"
+  - "Error correction"
 date: 2026-05-08
 content_hash: 235389b2f52eca35
 ---

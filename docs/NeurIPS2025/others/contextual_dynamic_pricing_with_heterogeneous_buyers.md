@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Contextual Dynamic Pricing with Heterogeneous Buyers
 description: >-
-  [NeurIPS 2025][Dynamic Pricing] This paper presents the first systematic study of contextual dynamic pricing with heterogeneous buyers of $K_\star$ unknown types. It proposes an Optimistic Posterior Sampling (OPS)-based algorithm achieving an $\tilde{O}(K_\star\sqrt{dT})$ regret bound (optimal in $d$ and $T$), and further introduces ZoomV—a variance-aware adaptive discretization algorithm—achieving the optimal $\tilde{O}(\sqrt{K_\star T})$ regret in the non-contextual setting.
+  [NeurIPS 2025][Dynamic Pricing] This paper presents the first systematic study of contextual dynamic pricing with heterogeneous buyers of $K_\star$ unknown types. It proposes an Optimistic Posterior Sampling (OPS)-based…
 tags:
-  - NeurIPS 2025
-  - Dynamic Pricing
-  - Heterogeneous Buyers
-  - Contextual Bandits
-  - Posterior Sampling
-  - Disagreement Coefficient
-  - Lipschitz Bandits
+  - "NeurIPS 2025"
+  - "Dynamic Pricing"
+  - "Heterogeneous Buyers"
+  - "Contextual Bandits"
+  - "Posterior Sampling"
+  - "Disagreement Coefficient"
+  - "Lipschitz Bandits"
 date: 2026-05-08
 content_hash: cc35052a3b8503b5
 ---

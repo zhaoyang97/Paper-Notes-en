@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] LIMOPro: Reasoning Refinement for Efficient and Effective Test-time Scaling
 description: >-
-  [NeurIPS 2025][LLM Reasoning][reasoning refinement] This paper proposes PIR (Perplexity-based Importance Refinement), a framework that categorizes reasoning chains distilled from LRMs into "progressive reasoning" and "functional steps" (verification / multi-method validation / error correction), and prunes only functional steps with low PIR scores while preserving the progressive reasoning backbone intact. Fine-tuning on the refined data improves accuracy by 0.9%–6.6% on AIME/AMC/GPQA while reducing token usage by 3%–41%, yielding up to 71% efficiency gain.
+  [NeurIPS 2025][LLM Reasoning][reasoning refinement] This paper proposes PIR (Perplexity-based Importance Refinement), a framework that categorizes reasoning chains distilled from LRMs into "progressive reasoning" and "fu…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - reasoning refinement
-  - chain-of-thought
-  - perplexity-based pruning
-  - test-time scaling
-  - efficient reasoning
-  - PIR
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "reasoning refinement"
+  - "chain-of-thought"
+  - "perplexity-based pruning"
+  - "test-time scaling"
+  - "efficient reasoning"
+  - "PIR"
 date: 2026-05-08
 content_hash: 5843fb3192eb594f
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Visual Structures Help Visual Reasoning: Addressing the Binding Problem in LVLMs
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Visual reasoning] This paper proposes VISER (Visual Input Structure for Enhanced Reasoning), which constructs spatial partitions by superimposing equidistant horizontal lines with numeric labels onto input images, combined with a "row-by-row scan" textual instruction. This approach converts the parallel visual processing of LVLMs into sequential region-by-region parsing. Without modifying the model, without training, and within a single query, VISER substantially mitigates the binding problem and improves performance on visual reasoning tasks including counting, visual search, scene description, and spatial relationship understanding.
+  [NeurIPS 2025][Multimodal VLM][Visual reasoning] This paper proposes VISER (Visual Input Structure for Enhanced Reasoning), which constructs spatial partitions by superimposing equidistant horizontal lines with numeric l…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Visual reasoning
-  - binding problem
-  - visual prompting
-  - LVLM
-  - spatial structure
-  - cognitive science
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Visual reasoning"
+  - "binding problem"
+  - "visual prompting"
+  - "LVLM"
+  - "spatial structure"
+  - "cognitive science"
 date: 2026-05-08
 content_hash: bc5f75125c3877c8
 ---

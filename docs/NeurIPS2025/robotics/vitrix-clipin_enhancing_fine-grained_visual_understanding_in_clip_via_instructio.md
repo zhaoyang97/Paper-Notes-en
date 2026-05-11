@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VITRIX-CLIPIN: Enhancing Fine-Grained Visual Understanding in CLIP via Instruction Editing Data and Long Captions
 description: >-
-  [NeurIPS 2025][Robotics][CLIP] This paper proposes the CLIP-IN framework, which leverages instruction editing datasets as hard negatives and incorporates long captions to enhance CLIP's fine-grained visual understanding. The approach achieves significant improvements on benchmarks such as MMVP without compromising zero-shot performance, and when integrated into MLLMs, it substantially reduces visual hallucinations.
+  [NeurIPS 2025][Robotics][CLIP] This paper proposes the CLIP-IN framework, which leverages instruction editing datasets as hard negatives and incorporates long captions to enhance CLIP's fine-grained visual understanding.…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - CLIP
-  - fine-grained visual understanding
-  - instruction editing data
-  - hard negatives
-  - long captions
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "CLIP"
+  - "fine-grained visual understanding"
+  - "instruction editing data"
+  - "hard negatives"
+  - "long captions"
 date: 2026-05-08
 content_hash: ed4581e6d020d459
 ---

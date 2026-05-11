@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DictAS: A Framework for Class-Generalizable Few-Shot Anomaly Segmentation via Dictionary Lookup
 description: >-
-  [ICCV 2025][Medical Imaging][Anomaly Detection] Inspired by the intuition of human inspectors "consulting a dictionary," DictAS reformulates few-shot anomaly segmentation (FSAS) as a dictionary lookup task—a query feature is deemed anomalous if it cannot be retrieved from a dictionary of normal samples. Through self-supervised training, the framework acquires class-agnostic lookup capability and achieves state-of-the-art FSAS performance and inference speed across 7 industrial and medical datasets.
+  [ICCV 2025][Medical Imaging][Anomaly Detection] Inspired by the intuition of human inspectors "consulting a dictionary," DictAS reformulates few-shot anomaly segmentation (FSAS) as a dictionary lookup task—a query featur…
 tags:
-  - ICCV 2025
-  - Medical Imaging
-  - Anomaly Detection
-  - Few-Shot Anomaly Segmentation
-  - Dictionary Lookup
-  - CLIP
-  - Self-Supervised Learning
+  - "ICCV 2025"
+  - "Medical Imaging"
+  - "Anomaly Detection"
+  - "Few-Shot Anomaly Segmentation"
+  - "Dictionary Lookup"
+  - "CLIP"
+  - "Self-Supervised Learning"
 date: 2026-05-08
 content_hash: ac3f06b905516f2b
 ---

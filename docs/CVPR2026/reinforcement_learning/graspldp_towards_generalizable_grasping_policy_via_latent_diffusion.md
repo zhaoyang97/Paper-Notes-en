@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GraspLDP: Towards Generalizable Grasping Policy via Latent Diffusion
 description: >-
-  [CVPR 2026][Reinforcement Learning][Robot Grasping] This paper proposes GraspLDP, which injects grasp pose priors from a pretrained grasp detector and graspness map visual cues into a latent diffusion policy framework. By leveraging VAE-encoded action latent spaces for guidance and a self-supervised reconstruction objective, GraspLDP substantially improves grasping accuracy and generalization.
+  [CVPR 2026][Reinforcement Learning][Robot Grasping] This paper proposes GraspLDP, which injects grasp pose priors from a pretrained grasp detector and graspness map visual cues into a latent diffusion policy framework. B…
 tags:
-  - CVPR 2026
-  - Reinforcement Learning
-  - Robot Grasping
-  - Latent Diffusion Policy
-  - Grasp Prior
-  - Imitation Learning
-  - Generalization
+  - "CVPR 2026"
+  - "Reinforcement Learning"
+  - "Robot Grasping"
+  - "Latent Diffusion Policy"
+  - "Grasp Prior"
+  - "Imitation Learning"
+  - "Generalization"
 date: 2026-05-08
 content_hash: f243faddc17bc052
 ---

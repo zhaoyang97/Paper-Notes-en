@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dynamics of Spontaneous Topic Changes in Next Token Prediction with Self-Attention
 description: >-
-  [NeurIPS 2025][LLM Efficiency][spontaneous thought] This paper investigates, both theoretically and empirically, the dynamics of spontaneous topic changes in self-attention models. For a single-layer self-attention model, it establishes three results: (1) training on mixed topics preserves the token priority ordering of the original topic; (2) topic changes occur only when the number of low-priority tokens exceeds that of high-priority tokens; and (3) longer inputs and more ambiguous topics do not increase the probability of topic change — contrary to human cognition.
+  [NeurIPS 2025][LLM Efficiency][spontaneous thought] This paper investigates, both theoretically and empirically, the dynamics of spontaneous topic changes in self-attention models. For a single-layer self-attention model…
 tags:
-  - NeurIPS 2025
-  - LLM Efficiency
-  - spontaneous thought
-  - topic change
-  - self-attention theory
-  - token priority graph
-  - cognitive gap
+  - "NeurIPS 2025"
+  - "LLM Efficiency"
+  - "spontaneous thought"
+  - "topic change"
+  - "self-attention theory"
+  - "token priority graph"
+  - "cognitive gap"
 date: 2026-05-08
 content_hash: 7c98f03cc84df6f3
 ---

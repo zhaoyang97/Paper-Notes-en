@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UNICBench: UNIfied Counting Benchmark for MLLM
 description: >-
-  [CVPR 2026][Multimodal VLM][counting benchmark] This paper introduces UNICBench, the first unified cross-modal (image/text/audio) multi-level counting benchmark, comprising 5,508 + 5,888 + 2,905 = 14,301 QA pairs organized along a three-level capability taxonomy (Pattern/Semantic/Reasoning) × three-level difficulty taxonomy (Easy/Medium/Hard). The benchmark systematically evaluates 45 state-of-the-art MLLMs, revealing that basic counting tasks are near saturation while reasoning-level and hard-difficulty tasks exhibit substantial performance gaps.
+  [CVPR 2026][Multimodal VLM][counting benchmark] This paper introduces UNICBench, the first unified cross-modal (image/text/audio) multi-level counting benchmark, comprising 5,508 + 5,888 + 2,905 = 14…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - counting benchmark
-  - multimodal LLM
-  - image-text-audio
-  - unified evaluation
-  - stratified difficulty
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "counting benchmark"
+  - "multimodal LLM"
+  - "image-text-audio"
+  - "unified evaluation"
+  - "stratified difficulty"
 date: 2026-05-08
 content_hash: ab6fc9718a71e450
 ---

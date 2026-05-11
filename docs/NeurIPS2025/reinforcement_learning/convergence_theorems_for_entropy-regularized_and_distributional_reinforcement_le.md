@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Convergence Theorems for Entropy-Regularized and Distributional Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][entropy regularization] This paper proposes the **temperature decoupling gambit**, proving that in entropy-regularized reinforcement learning, by decoupling the evaluation temperature from the behavioral temperature, both the policy and the return distribution converge—as the temperature tends to zero—to an interpretable, diversity-preserving optimal policy.
+  [NeurIPS 2025][Reinforcement Learning][entropy regularization] This paper proposes the **temperature decoupling gambit**, proving that in entropy-regularized reinforcement learning…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - entropy regularization
-  - distributional reinforcement learning
-  - convergence
-  - temperature decoupling
-  - optimal policy
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "entropy regularization"
+  - "distributional reinforcement learning"
+  - "convergence"
+  - "temperature decoupling"
+  - "optimal policy"
 date: 2026-05-08
 content_hash: b8eecbe4b2ff70d0
 ---

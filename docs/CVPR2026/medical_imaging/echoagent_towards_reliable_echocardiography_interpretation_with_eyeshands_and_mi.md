@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EchoAgent: Towards Reliable Echocardiography Interpretation with "Eyes", "Hands" and "Minds"
 description: >-
-  [CVPR 2026][Medical Imaging][Echocardiography] This paper proposes EchoAgent, an agent system that simulates the "eyes–hands–minds" collaborative workflow of echocardiography clinicians. Through three stages—an Expertise-Driven Cognition engine (mind), a Hierarchical Collaboration Toolkit (eyes + hands), and an Orchestrated Reasoning Hub—the system achieves end-to-end reliable echocardiography interpretation, attaining state-of-the-art performance on multiple benchmarks.
+  [CVPR 2026][Medical Imaging][Echocardiography] This paper proposes EchoAgent, an agent system that simulates the "eyes–hands–minds" collaborative workflow of echocardiography clinicians. Through three stages—an Expertise…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Echocardiography
-  - Agent System
-  - Multimodal Large Language Model
-  - Cardiac Function Assessment
-  - Tool Calling
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Echocardiography"
+  - "Agent System"
+  - "Multimodal Large Language Model"
+  - "Cardiac Function Assessment"
+  - "Tool Calling"
 date: 2026-05-08
 content_hash: 5c3156fb90f52b14
 ---

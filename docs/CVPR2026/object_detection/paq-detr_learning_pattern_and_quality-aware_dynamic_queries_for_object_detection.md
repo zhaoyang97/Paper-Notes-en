@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] PaQ-DETR: Learning Pattern and Quality-Aware Dynamic Queries for Object Detection
 description: >-
-  [CVPR 2026][Object Detection][DETR] PaQ-DETR proposes pattern-based dynamic query generation (content-aware weighted combination of shared basis patterns) combined with quality-aware one-to-many assignment (adaptive positive sample selection based on localization–classification consistency), jointly addressing query representation imbalance and supervision sparsity in DETR. It achieves consistent gains of 1.5%–4.2% mAP across multiple backbones.
+  [CVPR 2026][Object Detection][DETR] PaQ-DETR proposes pattern-based dynamic query generation (content-aware weighted combination of shared basis patterns) combined with quality-aware one-to-many assignment (adaptive posi…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - DETR
-  - dynamic queries
-  - pattern learning
-  - quality-aware assignment
+  - "CVPR 2026"
+  - "Object Detection"
+  - "DETR"
+  - "dynamic queries"
+  - "pattern learning"
+  - "quality-aware assignment"
 date: 2026-05-08
 content_hash: fd3554b8fb07d2a3
 ---

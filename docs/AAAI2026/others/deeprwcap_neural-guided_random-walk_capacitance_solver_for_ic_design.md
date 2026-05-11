@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] DeepRWCap: Neural-Guided Random-Walk Capacitance Solver for IC Design
 description: >-
-  [AAAI 2026][Capacitance Extraction] This paper proposes DeepRWCap, a machine-learning-guided random-walk capacitance solver that accelerates multi-dielectric capacitance extraction in IC design via a two-stage neural network architecture for transition kernel prediction, achieving an average error of 1.24% and 23% speedup across 10 industrial test cases.
+  [AAAI 2026][Capacitance Extraction] This paper proposes DeepRWCap, a machine-learning-guided random-walk capacitance solver that accelerates multi-dielectric capacitance extraction in IC design via a two-stage neural net…
 tags:
-  - AAAI 2026
-  - Capacitance Extraction
-  - Random Walk
-  - CNN
-  - IC Design
-  - EDA
+  - "AAAI 2026"
+  - "Capacitance Extraction"
+  - "Random Walk"
+  - "CNN"
+  - "IC Design"
+  - "EDA"
 date: 2026-05-08
 content_hash: 6241a15bbd92d7dd
 ---

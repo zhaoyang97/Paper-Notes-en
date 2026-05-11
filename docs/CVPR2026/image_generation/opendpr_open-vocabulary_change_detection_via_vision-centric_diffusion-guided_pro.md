@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OpenDPR: Open-Vocabulary Change Detection via Vision-Centric Diffusion-Guided Prototype Retrieval for Remote Sensing Imagery
 description: >-
-  [CVPR 2026][Image Generation][open-vocabulary change detection] OpenDPR proposes a training-free, vision-centric framework that leverages diffusion models to offline generate diverse visual prototypes for target categories, and performs open-vocabulary change detection in remote sensing imagery via similarity-based retrieval in visual feature space at inference time, achieving state-of-the-art performance on four benchmark datasets.
+  [CVPR 2026][Image Generation][open-vocabulary change detection] OpenDPR proposes a training-free, vision-centric framework that leverages diffusion models to offline generate diverse visual prototypes for target categori…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - open-vocabulary change detection
-  - remote sensing imagery
-  - diffusion models
-  - prototype retrieval
-  - vision foundation models
+  - "CVPR 2026"
+  - "Image Generation"
+  - "open-vocabulary change detection"
+  - "remote sensing imagery"
+  - "diffusion models"
+  - "prototype retrieval"
+  - "vision foundation models"
 date: 2026-05-08
 content_hash: 6b92c06d67e6805a
 ---

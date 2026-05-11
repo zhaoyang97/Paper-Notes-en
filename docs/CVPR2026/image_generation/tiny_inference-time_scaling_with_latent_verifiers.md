@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Tiny Inference-Time Scaling with Latent Verifiers
 description: >-
-  [CVPR 2026][Image Generation][Inference-time scaling] This paper proposes VHS (Verifier on Hidden States), a verifier that operates directly on the intermediate hidden states of a DiT generator, bypassing the decode–re-encode overhead. In the inference-time scaling setting for single-step image generation, VHS reduces joint generation-verification latency by 63.3% and FLOPs by 51%, while achieving a 2.7% performance gain on GenEval under the same time budget.
+  [CVPR 2026][Image Generation][Inference-time scaling] This paper proposes VHS (Verifier on Hidden States), a verifier that operates directly on the intermediate hidden states of a DiT generator…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Inference-time scaling
-  - latent verifier
-  - single-step generation
-  - DiT
-  - MLLM
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Inference-time scaling"
+  - "latent verifier"
+  - "single-step generation"
+  - "DiT"
+  - "MLLM"
 date: 2026-05-08
 content_hash: 956084c8f925e6a4
 ---

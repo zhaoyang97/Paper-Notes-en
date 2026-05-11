@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Diffusion Probe: Generated Image Result Prediction Using CNN Probes
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Models] This work discovers that the cross-attention distribution in early denoising steps of diffusion models is highly correlated with final image quality. It proposes Diffusion Probe — a lightweight CNN that predicts generation quality from early attention maps — enabling pre-filtering of low-quality generation trajectories after only 10% of denoising steps, thereby accelerating prompt optimization, seed selection, and GRPO training.
+  [CVPR 2026][Image Generation][Diffusion Models] This work discovers that the cross-attention distribution in early denoising steps of diffusion models is highly correlated with final image quality. It proposes Diffusion…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Models
-  - Probe
-  - Cross-Attention
-  - Early Quality Prediction
-  - Generation Acceleration
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "Probe"
+  - "Cross-Attention"
+  - "Early Quality Prediction"
+  - "Generation Acceleration"
 date: 2026-05-08
 content_hash: 6cb0780ae8b8e6e4
 ---

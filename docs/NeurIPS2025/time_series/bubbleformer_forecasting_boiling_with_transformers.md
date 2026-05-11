@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BubbleFormer: Forecasting Boiling with Transformers
 description: >-
-  [NeurIPS 2025][Time Series][Boiling prediction] This paper proposes BubbleFormer, a Transformer architecture based on decomposed spatiotemporal attention for forecasting boiling dynamics—including the notoriously difficult spontaneous bubble nucleation events—accompanied by the BubbleML 2.0 dataset (160+ high-fidelity simulations), achieving accurate spatiotemporal boiling predictions across diverse fluids, geometries, and wall conditions.
+  [NeurIPS 2025][Time Series][Boiling prediction] This paper proposes BubbleFormer, a Transformer architecture based on decomposed spatiotemporal attention for forecasting boiling dynamics—including the notoriously difficu…
 tags:
-  - NeurIPS 2025
-  - Time Series
-  - Boiling prediction
-  - Transformer
-  - BubbleML
-  - spatiotemporal decomposed attention
-  - spontaneous nucleation
+  - "NeurIPS 2025"
+  - "Time Series"
+  - "Boiling prediction"
+  - "Transformer"
+  - "BubbleML"
+  - "spatiotemporal decomposed attention"
+  - "spontaneous nucleation"
 date: 2026-05-08
 content_hash: f908173d352f101d
 ---

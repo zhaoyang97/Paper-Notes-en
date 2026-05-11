@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Evolve to Inspire: Novelty Search for Diverse Image Generation
 description: >-
-  [NeurIPS 2025][Image Generation][Novelty Search] This paper proposes Wander, a framework that leverages novelty search and LLM-driven prompt evolution to generate highly diverse image collections from a single text prompt, surpassing existing evolutionary prompt optimization baselines on the Vendi Score metric.
+  [NeurIPS 2025][Image Generation][Novelty Search] This paper proposes Wander, a framework that leverages novelty search and LLM-driven prompt evolution to generate highly diverse image collections from a single text promp…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Novelty Search
-  - Image Diversity
-  - Evolutionary Strategy
-  - Prompt Optimization
-  - CLIP
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Novelty Search"
+  - "Image Diversity"
+  - "Evolutionary Strategy"
+  - "Prompt Optimization"
+  - "CLIP"
 date: 2026-05-08
 content_hash: 06ea04d3ba84e5f2
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SUSD: Structured Unsupervised Skill Discovery through State Factorization
 description: >-
-  [ICLR 2026][Reinforcement Learning][unsupervised skill discovery] This paper proposes SUSD (Structured Unsupervised Skill Discovery), which factorizes the state space into independent factors and assigns dedicated skill variables to each factor. Combined with a curiosity-driven factor-weighting mechanism, SUSD discovers diverse skills that cover all controllable factors in complex multi-object and multi-agent environments.
+  [ICLR 2026][Reinforcement Learning][unsupervised skill discovery] This paper proposes SUSD (Structured Unsupervised Skill Discovery), which factorizes the state space into independent factors and assigns dedicated skill…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - unsupervised skill discovery
-  - state factorization
-  - distance maximization
-  - curiosity-driven
-  - hierarchical reinforcement learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "unsupervised skill discovery"
+  - "state factorization"
+  - "distance maximization"
+  - "curiosity-driven"
+  - "hierarchical reinforcement learning"
 date: 2026-05-08
 content_hash: ba85b08544e2a196
 ---

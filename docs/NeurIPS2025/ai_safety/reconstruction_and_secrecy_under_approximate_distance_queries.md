@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Reconstruction and Secrecy under Approximate Distance Queries
 description: >-
-  [NeurIPS 2025][AI Safety][Reconstruction attacks] Under the approximate distance query model, this paper studies the reconstruction game from a learning-theoretic perspective, proves a geometric characterization of the optimal reconstruction error as the Chebyshev radius, and provides a complete classification of pseudo-finiteness for Euclidean convex spaces.
+  [NeurIPS 2025][AI Safety][Reconstruction attacks] Under the approximate distance query model, this paper studies the reconstruction game from a learning-theoretic perspective…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - Reconstruction attacks
-  - privacy protection
-  - approximate distance queries
-  - metric spaces
-  - Chebyshev radius
-  - pseudo-finite spaces
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "Reconstruction attacks"
+  - "privacy protection"
+  - "approximate distance queries"
+  - "metric spaces"
+  - "Chebyshev radius"
+  - "pseudo-finite spaces"
 date: 2026-05-08
 content_hash: 35380372890c1da3
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mistake Attribution: Fine-Grained Mistake Understanding in Egocentric Videos
 description: >-
-  [CVPR 2026][Video Understanding][mistake attribution] This paper introduces the Mistake Attribution (MATT) task, which attributes action mistakes in egocentric videos along three dimensions: semantic (which component of the instruction was violated), temporal (at which frame the point of no return, PNR, occurs), and spatial (which region in the PNR frame contains the error). A data engine called MisEngine automatically constructs large-scale mistake samples from existing action datasets, and a unified Transformer model, MisFormer, simultaneously addresses all three attribution sub-tasks, surpassing task-specific SOTA methods across multiple benchmarks.
+  [CVPR 2026][Video Understanding][mistake attribution] This paper introduces the Mistake Attribution (MATT) task, which attributes action mistakes in egocentric videos along three dimensions: semantic (which component of…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - mistake attribution
-  - egocentric video
-  - semantic role labeling
-  - spatiotemporal localization
-  - instruction alignment
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "mistake attribution"
+  - "egocentric video"
+  - "semantic role labeling"
+  - "spatiotemporal localization"
+  - "instruction alignment"
 date: 2026-05-08
 content_hash: 7f05b6051f613461
 ---

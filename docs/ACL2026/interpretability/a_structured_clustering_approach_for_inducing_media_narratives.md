@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] A Structured Clustering Approach for Inducing Media Narratives
 description: >-
-  [ACL 2026][media narratives] This paper proposes a framework for automatically inducing media narrative patterns from large-scale news corpora. By jointly modeling causal event chains and character roles (hero/villain/victim), the framework employs a role-constrained clustering algorithm to organize narrative chains into semantically coherent narrative patterns. The approach generates interpretable narrative patterns consistent with framing theory in two domains: immigration and gun control.
+  [ACL 2026][Interpretability][media narratives] This paper proposes a framework for automatically inducing media narrative patterns from large-scale news corpora. By jointly modeling causal event chains and character role…
 tags:
-  - ACL 2026
-  - media narratives
-  - structured clustering
-  - causal event chains
-  - role analysis
-  - framing theory
+  - "ACL 2026"
+  - "Interpretability"
+  - "media narratives"
+  - "structured clustering"
+  - "causal event chains"
+  - "role analysis"
+  - "framing theory"
 date: 2026-05-08
 content_hash: 68faf9ba230810c1
 ---

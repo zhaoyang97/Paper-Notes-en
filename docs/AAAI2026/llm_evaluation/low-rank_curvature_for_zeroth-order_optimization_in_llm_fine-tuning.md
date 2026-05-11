@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Low-Rank Curvature for Zeroth-Order Optimization in LLM Fine-Tuning
 description: >-
-  [AAAI 2026][LLM Evaluation][zeroth-order optimization] This paper proposes LOREN, a curvature-aware zeroth-order optimization method that captures the anisotropic curvature of the loss landscape via a low-rank block-diagonal preconditioner, combined with REINFORCE Leave-One-Out (RLOO) variance reduction. LOREN achieves higher accuracy and faster convergence in LLM fine-tuning while reducing peak memory by up to 27.3% compared to MeZO-Adam.
+  [AAAI 2026][LLM Evaluation][zeroth-order optimization] This paper proposes LOREN, a curvature-aware zeroth-order optimization method that captures the anisotropic curvature of the loss landscape via a low-rank block-diag…
 tags:
-  - AAAI 2026
-  - LLM Evaluation
-  - zeroth-order optimization
-  - curvature-aware
-  - low-rank preconditioner
-  - variance reduction
-  - memory-efficient
+  - "AAAI 2026"
+  - "LLM Evaluation"
+  - "zeroth-order optimization"
+  - "curvature-aware"
+  - "low-rank preconditioner"
+  - "variance reduction"
+  - "memory-efficient"
 date: 2026-05-08
 content_hash: 0ac705272e554406
 ---

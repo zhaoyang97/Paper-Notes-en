@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] OpenFly: A Comprehensive Platform for Aerial Vision-Language Navigation
 description: >-
-  [ICLR 2026][3D Vision][Aerial VLN] This paper presents OpenFly, a comprehensive platform for aerial vision-language navigation (VLN) that integrates four rendering engines (UE / GTA V / Google Earth / 3DGS), develops a fully automated data generation pipeline (point cloud acquisition → semantic segmentation → trajectory generation → GPT-4o instruction synthesis), constructs a large-scale dataset of 100K trajectories across 18 scenes, and proposes a keyframe-aware VLN model (OpenFly-Agent) combining keyframe selection with visual token merging. OpenFly-Agent outperforms existing methods by 14.0% and 7.9% in success rate on seen and unseen scenes, respectively.
+  [ICLR 2026][3D Vision][Aerial VLN] This paper presents OpenFly, a comprehensive platform for aerial vision-language navigation (VLN) that integrates four rendering engines (UE / GTA V / Google Earth / 3DGS)…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Aerial VLN
-  - UAV Navigation
-  - Multi-Rendering Engine
-  - Automatic Data Generation
-  - Keyframe-Aware
-  - 3D Gaussian Splatting
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Aerial VLN"
+  - "UAV Navigation"
+  - "Multi-Rendering Engine"
+  - "Automatic Data Generation"
+  - "Keyframe-Aware"
+  - "3D Gaussian Splatting"
 date: 2026-05-08
 content_hash: 877aba9ec625f914
 ---

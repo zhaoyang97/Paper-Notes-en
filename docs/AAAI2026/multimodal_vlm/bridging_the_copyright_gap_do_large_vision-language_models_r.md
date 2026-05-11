@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Bridging the Copyright Gap: Do Large Vision-Language Models Recognize and Respect Copyrighted Content?
 description: >-
-  [AAAI 2026][Multimodal VLM][VLM copyright compliance] This paper presents the first systematic evaluation of LVLMs' ability to recognize and respect copyrighted content in multimodal contexts. It constructs a large-scale benchmark of 50,000 multimodal query–content pairs, finds that 11 out of 12 SOTA LVLMs fail to refuse infringing requests even when explicit copyright notices are present, and proposes CopyGuard—a tool-augmented framework that raises the infringement rejection rate from ~3% to ~62%.
+  [AAAI 2026][Multimodal VLM][VLM copyright compliance] This paper presents the first systematic evaluation of LVLMs' ability to recognize and respect copyrighted content in multimodal contexts. It constructs a large-scale…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - VLM copyright compliance
-  - multimodal benchmark
-  - copyright notice
-  - CopyGuard
-  - tool-augmented defense
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "VLM copyright compliance"
+  - "multimodal benchmark"
+  - "copyright notice"
+  - "CopyGuard"
+  - "tool-augmented defense"
 date: 2026-05-08
 content_hash: a0ee2927d5885aa3
 ---

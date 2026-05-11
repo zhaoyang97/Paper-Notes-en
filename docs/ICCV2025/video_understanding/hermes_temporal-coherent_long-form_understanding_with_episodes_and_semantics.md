@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HERMES: temporal-coHERent long-forM understanding with Episodes and Semantics
 description: >-
-  [ICCV 2025][Video Understanding][long-form video understanding] This paper proposes HERMES, a framework comprising two general-purpose modules — the Episodic COmpressor (ECO) and the Semantics reTRiever (SeTR) — that capture episodic memory and semantic information from video respectively. HERMES can serve as a standalone system achieving state-of-the-art performance, or be integrated as plug-and-play components into existing video-language models, simultaneously reducing inference latency by up to 43% and memory consumption by up to 46%.
+  [ICCV 2025][Video Understanding][long-form video understanding] This paper proposes HERMES, a framework comprising two general-purpose modules — the Episodic COmpressor (ECO) and the Semantics reTRiever (SeTR) — that cap…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - long-form video understanding
-  - episodic compression
-  - semantic retrieval
-  - video question answering
-  - plug-and-play module
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "long-form video understanding"
+  - "episodic compression"
+  - "semantic retrieval"
+  - "video question answering"
+  - "plug-and-play module"
 date: 2026-05-08
 content_hash: ff348ccdfeea9acd
 ---

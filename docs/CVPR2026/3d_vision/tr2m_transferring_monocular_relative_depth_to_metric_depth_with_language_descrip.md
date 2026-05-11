@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] TR2M: Transferring Monocular Relative Depth to Metric Depth with Language Descriptions and Dual-Level Scale-Oriented Contrast
 description: >-
-  [CVPR 2026][3D Vision][Monocular depth estimation] TR2M is a framework that leverages images and textual descriptions to predict pixel-wise scale/shift maps, converting generalizable but scale-ambiguous relative depth into metric depth. With only 19M trainable parameters and 102K training images, it achieves zero-shot cross-domain metric depth estimation.
+  [CVPR 2026][3D Vision][Monocular depth estimation] TR2M is a framework that leverages images and textual descriptions to predict pixel-wise scale/shift maps…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Monocular depth estimation
-  - relative-to-metric depth transfer
-  - language descriptions
-  - cross-modal attention
-  - contrastive learning
-  - pixel-level scaling
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Monocular depth estimation"
+  - "relative-to-metric depth transfer"
+  - "language descriptions"
+  - "cross-modal attention"
+  - "contrastive learning"
+  - "pixel-level scaling"
 date: 2026-05-08
 content_hash: ee70a1b927d8c884
 ---

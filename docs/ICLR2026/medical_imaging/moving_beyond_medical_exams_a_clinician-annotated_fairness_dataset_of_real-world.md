@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Moving Beyond Medical Exams: A Clinician-Annotated Fairness Dataset of Real-World Tasks and Ambiguity in Mental Healthcare
 description: >-
-  [ICLR 2026][Medical Imaging][mental healthcare] This paper introduces MENTAT—an evaluation dataset designed and annotated by 9 U.S. psychiatrists, comprising 203 base questions (each with 5 answer choices) expanded via demographic variable substitution, covering 5 clinical practice domains: diagnosis, treatment, triage, monitoring, and documentation. By systematically substituting patient age, race, and gender, the benchmark evaluates decision-making bias across 22 language models, revealing significant and unpredictable accuracy disparities along demographic dimensions.
+  [ICLR 2026][Medical Imaging][mental healthcare] This paper introduces MENTAT—an evaluation dataset designed and annotated by 9 U.S. psychiatrists…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - mental healthcare
-  - fairness benchmark
-  - clinical decision-making
-  - demographic bias
-  - expert annotation
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "mental healthcare"
+  - "fairness benchmark"
+  - "clinical decision-making"
+  - "demographic bias"
+  - "expert annotation"
 date: 2026-05-08
 content_hash: 87a642ff170346b5
 ---

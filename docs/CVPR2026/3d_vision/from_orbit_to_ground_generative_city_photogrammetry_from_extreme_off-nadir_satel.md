@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From Orbit to Ground: Generative City Photogrammetry from Extreme Off-Nadir Satellite Images
 description: >-
-  [CVPR 2026][3D Vision][Urban Reconstruction] A two-stage pipeline for reconstructing city-scale 3D models from sparse satellite images: Z-Monotonic SDF for geometry to ensure structural integrity of buildings, followed by a fine-tuned FLUX diffusion model for "deterministic inpainting" that synthesizes photorealistic textures from degraded maps, enabling view extrapolation of nearly 90° from orbit to ground level.
+  [CVPR 2026][3D Vision][Urban Reconstruction] A two-stage pipeline for reconstructing city-scale 3D models from sparse satellite images: Z-Monotonic SDF for geometry to ensure structural integrity of buildings…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Urban Reconstruction
-  - Satellite Imagery
-  - 2.5D SDF
-  - Texture Restoration
-  - View Extrapolation
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Urban Reconstruction"
+  - "Satellite Imagery"
+  - "2.5D SDF"
+  - "Texture Restoration"
+  - "View Extrapolation"
 date: 2026-05-08
 content_hash: c411cb1e5f7f7cc8
 ---

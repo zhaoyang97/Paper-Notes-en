@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Find Your Optimal Teacher: Personalized Data Synthesis via Router-Guided Multi-Teacher Distillation
 description: >-
-  [ACL 2026][Model Compression][Knowledge Distillation] This paper proposes PerSyn (Personalized data Synthesis), which adopts a "Route then Generate" paradigm where a router assigns the optimal teacher model to each prompt by jointly considering student learnability and teacher response quality. Compared to the conventional "Generate then Select" paradigm, PerSyn is more efficient and effective, consistently outperforming all baselines across instruction tuning and mathematical reasoning tasks.
+  [ACL 2026][Model Compression][Knowledge Distillation] This paper proposes PerSyn (Personalized data Synthesis), which adopts a "Route then Generate" paradigm where a router assigns the optimal teacher model to each promp…
 tags:
-  - ACL 2026
-  - Model Compression
-  - Knowledge Distillation
-  - Synthetic Data
-  - Multi-Teacher
-  - Routing Mechanism
-  - Personalized Distillation
+  - "ACL 2026"
+  - "Model Compression"
+  - "Knowledge Distillation"
+  - "Synthetic Data"
+  - "Multi-Teacher"
+  - "Routing Mechanism"
+  - "Personalized Distillation"
 date: 2026-05-08
 content_hash: 6f6f067cc8ec7291
 ---

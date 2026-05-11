@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HaltNav: Reactive Visual Halting over Lightweight Topological Priors for Robust Vision-Language Navigation
 description: >-
-  [CVPR 2026][Image Generation][VLN] This paper proposes HaltNav, a hierarchical navigation framework that combines lightweight textual topological priors (osmAG) for global planning with a VLN model for local execution. A Reactive Visual Halting (RVH) mechanism monitors egocentric observations to detect unexpected obstacles, dynamically updates the topology, and triggers replanning. The approach substantially improves long-range navigation robustness in both simulation and real-robot settings.
+  [CVPR 2026][Image Generation][VLN] This paper proposes HaltNav, a hierarchical navigation framework that combines lightweight textual topological priors (osmAG) for global planning with a VLN model for local execution. A…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - VLN
-  - topological prior
-  - osmAG
-  - reactive halting
-  - hierarchical navigation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "VLN"
+  - "topological prior"
+  - "osmAG"
+  - "reactive halting"
+  - "hierarchical navigation"
 date: 2026-05-08
 content_hash: 01601605362c24ce
 ---

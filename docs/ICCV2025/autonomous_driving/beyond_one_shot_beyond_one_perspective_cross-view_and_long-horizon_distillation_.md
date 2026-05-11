@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond One Shot, Beyond One Perspective: Cross-View and Long-Horizon Distillation for Better LiDAR Representations
 description: >-
-  [ICCV 2025][Autonomous Driving][LiDAR representation learning] LiMA proposes a long-horizon image-to-LiDAR memory aggregation framework that explicitly leverages spatiotemporal cues in LiDAR sequences via three modules—cross-view aggregation, long-term feature propagation, and cross-sequence memory alignment—to enhance LiDAR representation learning, achieving substantial improvements over existing pre-training methods on semantic segmentation and 3D object detection.
+  [ICCV 2025][Autonomous Driving][LiDAR representation learning] LiMA proposes a long-horizon image-to-LiDAR memory aggregation framework that explicitly leverages spatiotemporal cues in LiDAR sequences via three modules—c…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - LiDAR representation learning
-  - image-to-LiDAR distillation
-  - cross-view aggregation
-  - long-horizon feature propagation
-  - pre-training
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "LiDAR representation learning"
+  - "image-to-LiDAR distillation"
+  - "cross-view aggregation"
+  - "long-horizon feature propagation"
+  - "pre-training"
 date: 2026-05-08
 content_hash: 833750a7d639a4b9
 ---

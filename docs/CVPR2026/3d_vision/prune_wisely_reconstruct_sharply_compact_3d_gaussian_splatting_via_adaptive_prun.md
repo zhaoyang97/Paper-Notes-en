@@ -4,13 +4,13 @@ title: >-
 description: >-
   [CVPR 2026][3D Vision][3D Gaussian Splatting] An adaptive reconstruction-aware pruning scheduler (RPS) and 3D DoG primitives are proposed to achieve 90% Gaussian pruning while preserving rendering quality.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - model pruning
-  - Difference-of-Gaussians
-  - compact representation
-  - novel view synthesis
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "model pruning"
+  - "Difference-of-Gaussians"
+  - "compact representation"
+  - "novel view synthesis"
 date: 2026-05-08
 content_hash: c09f094850ef8318
 ---

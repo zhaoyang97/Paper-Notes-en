@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] SeqGrowGraph: Learning Lane Topology as a Chain of Graph Expansions
 description: >-
-  [Autonomous Driving] Inspired by the human sketching process, this work models lane topology as a chain of sequential graph expansions, incrementally constructing directed lane graphs via an autoregressive transformer, thereby overcoming the inability of DAG-based methods to represent cycles and bidirectional lanes.
+  [Autonomous Driving] Inspired by the human sketching process, this work models lane topology as a chain of sequential graph expansions, incrementally constructing directed lane graphs via an autoregressive transformer…
 tags:
-  - Autonomous Driving
+  - "Autonomous Driving"
 date: 2026-05-08
 content_hash: e06ae67cb67744c7
 ---

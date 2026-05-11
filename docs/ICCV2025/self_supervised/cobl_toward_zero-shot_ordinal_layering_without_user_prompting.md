@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] CObL: Toward Zero-Shot Ordinal Layering without User Prompting
 description: >-
-  [ICCV 2025][Self-Supervised Learning][object layers] This paper presents CObL, an architecture based on multiple frozen Stable Diffusion UNets operating in parallel, capable of inferring an occlusion-ordered object layer representation (one amodally-completed object per layer) from a single image without any user prompts or prior knowledge of object count. Trained on only a few thousand synthetic tabletop scenes, CObL generalizes zero-shot to real-world photographs.
+  [ICCV 2025][Self-Supervised Learning][object layers] This paper presents CObL, an architecture based on multiple frozen Stable Diffusion UNets operating in parallel…
 tags:
-  - ICCV 2025
-  - Self-Supervised Learning
-  - object layers
-  - amodal completion
-  - diffusion model
-  - zero-shot generalization
-  - occlusion ordering
-  - scene decomposition
+  - "ICCV 2025"
+  - "Self-Supervised Learning"
+  - "object layers"
+  - "amodal completion"
+  - "diffusion model"
+  - "zero-shot generalization"
+  - "occlusion ordering"
+  - "scene decomposition"
 date: 2026-05-08
 content_hash: 214a7b75938794ff
 ---

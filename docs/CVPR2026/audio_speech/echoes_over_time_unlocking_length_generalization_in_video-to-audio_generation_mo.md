@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Echoes Over Time: Unlocking Length Generalization in Video-to-Audio Generation Models
 description: >-
-  [CVPR 2026][Audio & Speech][Video-to-Audio generation] This paper proposes MMHNet, a Multimodal Hierarchical Network based on a hierarchical architecture and non-causal Mamba-2, achieving length generalization by training on short clips (8 seconds) while generating high-quality, well-aligned audio for long videos (5+ minutes). MMHNet substantially outperforms existing methods on the UnAV100 and LongVale benchmarks.
+  [CVPR 2026][Audio & Speech][Video-to-Audio generation] This paper proposes MMHNet, a Multimodal Hierarchical Network based on a hierarchical architecture and non-causal Mamba-2…
 tags:
-  - CVPR 2026
+  - "CVPR 2026"
   - "Audio & Speech"
-  - Video-to-Audio generation
-  - long-sequence generation
-  - hierarchical network
-  - Mamba
-  - multimodal alignment
+  - "Video-to-Audio generation"
+  - "long-sequence generation"
+  - "hierarchical network"
+  - "Mamba"
+  - "multimodal alignment"
 date: 2026-05-08
 content_hash: f30f1068c7dc3028
 ---

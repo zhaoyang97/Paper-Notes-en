@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DropAnSH-GS: Dropping Anchor and Spherical Harmonics for Sparse-view Gaussian Splatting
 description: >-
-  [CVPR 2026][3D Vision][3D Gaussian Splatting] To address overfitting in 3DGS under sparse-view settings, this paper proposes DropAnSH-GS, which replaces independent random Dropout with Anchor-based Dropout—dropping entire clusters of spatially correlated Gaussians around selected anchors to disrupt local redundancy compensation—while introducing Spherical Harmonics (SH) Dropout to suppress high-order SH overfitting and enable lossless post-training compression.
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] To address overfitting in 3DGS under sparse-view settings, this paper proposes DropAnSH-GS…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - sparse-view
-  - dropout regularization
-  - spherical harmonics
-  - novel view synthesis
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "sparse-view"
+  - "dropout regularization"
+  - "spherical harmonics"
+  - "novel view synthesis"
 date: 2026-05-08
 content_hash: cca3a70288b1e002
 ---

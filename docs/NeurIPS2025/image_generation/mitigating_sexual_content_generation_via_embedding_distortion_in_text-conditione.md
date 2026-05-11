@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mitigating Sexual Content Generation via Embedding Distortion in Text-conditioned Diffusion Models
 description: >-
-  [NeurIPS 2025][Image Generation][Unsafe content mitigation] This paper proposes Distorting Embedding Space (DES), a text-encoder-based defense framework that achieves state-of-the-art sexual content mitigation on FLUX.1 and SD v1.5 (reducing ASR to 9.47% and 0.52%, respectively) by transforming unsafe embeddings into safe regions, preserving safe embeddings, and neutralizing "nudity" semantics, while maintaining high-quality benign image generation.
+  [NeurIPS 2025][Image Generation][Unsafe content mitigation] This paper proposes Distorting Embedding Space (DES), a text-encoder-based defense framework that achieves state-of-the-art sexual content mitigation on FLUX.1…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Unsafe content mitigation
-  - embedding space distortion
-  - text encoder
-  - adversarial attack defense
-  - NSFW filtering
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Unsafe content mitigation"
+  - "embedding space distortion"
+  - "text encoder"
+  - "adversarial attack defense"
+  - "NSFW filtering"
 date: 2026-05-08
 content_hash: e860e8dc7000920c
 ---

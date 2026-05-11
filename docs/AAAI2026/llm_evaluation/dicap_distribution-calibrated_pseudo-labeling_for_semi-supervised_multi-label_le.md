@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DiCaP: Distribution-Calibrated Pseudo-labeling for Semi-Supervised Multi-Label Learning
 description: >-
-  [AAAI 2026][LLM Evaluation][Semi-supervised learning] This paper proposes DiCaP (Distribution-Calibrated Pseudo-labeling), which estimates the posterior correctness rate of pseudo-labels to calibrate their weights, introduces a dual-threshold mechanism to separate confident and ambiguous regions with differentiated strategies, and surpasses the state of the art by up to 4.27% in semi-supervised multi-label learning.
+  [AAAI 2026][LLM Evaluation][Semi-supervised learning] This paper proposes DiCaP (Distribution-Calibrated Pseudo-labeling), which estimates the posterior correctness rate of pseudo-labels to calibrate their weights…
 tags:
-  - AAAI 2026
-  - LLM Evaluation
-  - Semi-supervised learning
-  - multi-label learning
-  - pseudo-labeling
-  - calibrated weighting
-  - contrastive learning
+  - "AAAI 2026"
+  - "LLM Evaluation"
+  - "Semi-supervised learning"
+  - "multi-label learning"
+  - "pseudo-labeling"
+  - "calibrated weighting"
+  - "contrastive learning"
 date: 2026-05-08
 content_hash: ae76617e1eee99cb
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] LLM Circuit Analyses Are Consistent Across Training and Scale
 description: >-
-  [AAAI 2026][Mechanistic Interpretability] This paper presents the first systematic tracking of internal circuits in decoder-only LLMs across 300 billion tokens of training and model scales ranging from 70M to 2.8B parameters. It finds that while specific attention heads may be replaced over the course of training, the underlying algorithms remain stable and consistent across scales, suggesting that circuit analyses conducted on smaller models generalize to larger models and longer training runs.
+  [AAAI 2026][Interpretability][Mechanistic Interpretability] This paper presents the first systematic tracking of internal circuits in decoder-only LLMs across 300 billion tokens of training and model scales ranging from…
 tags:
-  - AAAI 2026
-  - Mechanistic Interpretability
-  - Circuit Analysis
-  - Training Dynamics
-  - Model Scale
-  - Attention Heads
+  - "AAAI 2026"
+  - "Interpretability"
+  - "Mechanistic Interpretability"
+  - "Circuit Analysis"
+  - "Training Dynamics"
+  - "Model Scale"
+  - "Attention Heads"
 date: 2026-05-08
 content_hash: 74342cfa2daa0b5b
 ---

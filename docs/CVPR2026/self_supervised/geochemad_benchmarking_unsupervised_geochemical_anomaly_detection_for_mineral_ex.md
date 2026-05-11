@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GeoChemAD: Benchmarking Unsupervised Geochemical Anomaly Detection for Mineral Exploration
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Geochemical Anomaly Detection] This paper introduces GeoChemAD, an open-source benchmark dataset, and GeoChemFormer, a two-stage framework that performs unsupervised geochemical anomaly detection via spatial context learning and elemental dependency modeling, achieving an average AUC of 0.7712 across 8 subsets.
+  [CVPR 2026][Self-Supervised Learning][Geochemical Anomaly Detection] This paper introduces GeoChemAD, an open-source benchmark dataset, and GeoChemFormer…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - Geochemical Anomaly Detection
-  - Unsupervised Learning
-  - Transformer
-  - Benchmark Dataset
-  - Mineral Exploration
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Geochemical Anomaly Detection"
+  - "Unsupervised Learning"
+  - "Transformer"
+  - "Benchmark Dataset"
+  - "Mineral Exploration"
 date: 2026-05-08
 content_hash: a486f4f7318957d2
 ---

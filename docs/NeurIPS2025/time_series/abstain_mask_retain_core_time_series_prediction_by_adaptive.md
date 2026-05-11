@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Abstain Mask Retain Core: Time Series Prediction by Adaptive Masking Loss with Representation Consistency
 description: >-
-  [NeurIPS 2025 (Spotlight)][Time Series][time series forecasting] This paper reveals a counter-intuitive phenomenon in time series forecasting — that appropriately truncating historical inputs can improve prediction accuracy (termed the redundant feature learning problem) — and proposes AMRC based on information bottleneck theory. AMRC suppresses redundant feature learning via adaptive masking loss and representation consistency constraints, serving as a model-agnostic training framework that consistently improves performance across diverse architectures.
+  [NeurIPS 2025 (Spotlight)][Time Series][time series forecasting] This paper reveals a counter-intuitive phenomenon in time series forecasting — that appropriately truncating historical inputs can improve prediction accur…
 tags:
-  - NeurIPS 2025 (Spotlight)
-  - Time Series
-  - time series forecasting
-  - information bottleneck
-  - adaptive masking
-  - representation consistency
-  - redundant features
+  - "NeurIPS 2025 (Spotlight)"
+  - "Time Series"
+  - "time series forecasting"
+  - "information bottleneck"
+  - "adaptive masking"
+  - "representation consistency"
+  - "redundant features"
 date: 2026-05-08
 content_hash: af0c721b3f9f8645
 ---

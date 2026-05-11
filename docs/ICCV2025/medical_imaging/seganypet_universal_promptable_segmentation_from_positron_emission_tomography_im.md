@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SegAnyPET: Universal Promptable Segmentation from Positron Emission Tomography Images
 description: >-
-  [ICCV 2025][Medical Imaging][PET segmentation] This paper introduces PETS-5k, the largest PET segmentation dataset to date (5,731 3D whole-body PET scans, over 1.3 million 2D slices), and proposes SegAnyPET — the first 3D promptable segmentation foundation model tailored for PET imaging. Through a Cross-Prompt Confidence Learning (CPCL) strategy to handle inconsistent annotation quality, SegAnyPET substantially outperforms existing foundation models and task-specific models on both seen and unseen targets.
+  [ICCV 2025][Medical Imaging][PET segmentation] This paper introduces PETS-5k, the largest PET segmentation dataset to date (5,731 3D whole-body PET scans, over 1.3 million 2D slices)…
 tags:
-  - ICCV 2025
-  - Medical Imaging
-  - PET segmentation
-  - foundation model
-  - 3D segmentation
-  - noisy label learning
-  - SAM adaptation
+  - "ICCV 2025"
+  - "Medical Imaging"
+  - "PET segmentation"
+  - "foundation model"
+  - "3D segmentation"
+  - "noisy label learning"
+  - "SAM adaptation"
 date: 2026-05-08
 content_hash: a64e2ec001411990
 ---

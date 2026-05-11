@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dynamic Token Reweighting for Robust Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][VLM safety] This paper proposes DTR (Dynamic Token Reweighting), the first inference-time defense against multimodal jailbreak attacks that operates by optimizing the KV cache of VLMs. DTR introduces the concept of "Reversal Safety-Relevant Shift" (RSS) to identify visual tokens responsible for safety degradation, dynamically adjusts their weights to restore the model's safety alignment, and preserves benign task performance.
+  [CVPR 2026][Multimodal VLM][VLM safety] This paper proposes DTR (Dynamic Token Reweighting), the first inference-time defense against multimodal jailbreak attacks that operates by optimizing the KV cache of VLMs. DTR int…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - VLM safety
-  - jailbreak defense
-  - KV cache optimization
-  - token reweighting
-  - refusal direction
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "VLM safety"
+  - "jailbreak defense"
+  - "KV cache optimization"
+  - "token reweighting"
+  - "refusal direction"
 date: 2026-05-08
 content_hash: ab7119b5c7d6132d
 ---

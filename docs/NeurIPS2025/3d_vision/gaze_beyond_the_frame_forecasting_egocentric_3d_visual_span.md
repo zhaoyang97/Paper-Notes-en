@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Gaze Beyond the Frame: Forecasting Egocentric 3D Visual Span
 description: >-
-  [NeurIPS 2025][3D Vision][Egocentric Vision] This paper proposes EgoSpanLift, a method that lifts egocentric 2D gaze predictions into 3D space, constructing multi-level volumetric visual span representations. Combined with a 3D U-Net and a causal Transformer, the framework forecasts future 3D regions of visual attention.
+  [NeurIPS 2025][3D Vision][Egocentric Vision] This paper proposes EgoSpanLift, a method that lifts egocentric 2D gaze predictions into 3D space…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Egocentric Vision
-  - Gaze Prediction
-  - 3D Visual Span
-  - SLAM
-  - Voxel Prediction
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Egocentric Vision"
+  - "Gaze Prediction"
+  - "3D Visual Span"
+  - "SLAM"
+  - "Voxel Prediction"
 date: 2026-05-08
 content_hash: 0b264ababd7dea01
 ---

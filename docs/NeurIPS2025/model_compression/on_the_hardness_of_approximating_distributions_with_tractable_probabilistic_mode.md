@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] On the Hardness of Approximating Distributions with Tractable Probabilistic Models
 description: >-
-  [NeurIPS 2025][Model Compression][probabilistic circuits] This paper proves that approximating arbitrary distributions with tractable probabilistic models (e.g., decomposable probabilistic circuits) under bounded $f$-divergence is NP-hard, and establishes an exponential size separation between decomposable PCs and (deterministic + decomposable) PCs under approximate modeling, demonstrating that approximation relaxations do not alleviate the complexity bottlenecks inherent in exact modeling.
+  [NeurIPS 2025][Model Compression][probabilistic circuits] This paper proves that approximating arbitrary distributions with tractable probabilistic models (e.g.…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - probabilistic circuits
-  - tractable probabilistic models
-  - approximate modeling
-  - NP-hardness
-  - expressive efficiency
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "probabilistic circuits"
+  - "tractable probabilistic models"
+  - "approximate modeling"
+  - "NP-hardness"
+  - "expressive efficiency"
 date: 2026-05-08
 content_hash: d362067bd531d1e4
 ---

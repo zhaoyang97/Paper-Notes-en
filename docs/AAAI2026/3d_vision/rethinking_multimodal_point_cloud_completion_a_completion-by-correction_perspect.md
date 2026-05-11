@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Rethinking Multimodal Point Cloud Completion: A Completion-by-Correction Perspective
 description: >-
-  [AAAI 2026][3D Vision][Point Cloud Completion] This paper proposes a novel Completion-by-Correction paradigm that leverages a pretrained image-to-3D model to generate a topologically complete shape prior, then corrects it in feature space to align with local observations. This replaces the conventional Completion-by-Inpainting approach, achieving a 23.5% reduction in average CD and a 7.1% improvement in F-score on ShapeNet-ViPC.
+  [AAAI 2026][3D Vision][Point Cloud Completion] This paper proposes a novel Completion-by-Correction paradigm that leverages a pretrained image-to-3D model to generate a topologically complete shape prior…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - Point Cloud Completion
-  - Multimodal Fusion
-  - Generative Prior
-  - Correction Paradigm
-  - Feature Alignment
+  - "AAAI 2026"
+  - "3D Vision"
+  - "Point Cloud Completion"
+  - "Multimodal Fusion"
+  - "Generative Prior"
+  - "Correction Paradigm"
+  - "Feature Alignment"
 date: 2026-05-08
 content_hash: b3a042840d8db123
 ---

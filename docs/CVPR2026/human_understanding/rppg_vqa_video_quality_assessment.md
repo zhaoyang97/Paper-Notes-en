@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] rPPG-VQA: A Video Quality Assessment Framework for Unsupervised rPPG Training
 description: >-
-  [CVPR 2026][Human Understanding][Remote Photoplethysmography] rPPG-VQA proposes the first video quality assessment framework tailored for remote heart rate detection (rPPG), combining signal-level multi-method consensus SNR with scene-level MLLM disturbance recognition, along with a two-stage adaptive sampling strategy to curate in-the-wild training data.
+  [CVPR 2026][Human Understanding][Remote Photoplethysmography] rPPG-VQA proposes the first video quality assessment framework tailored for remote heart rate detection (rPPG)…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Remote Photoplethysmography
-  - Video Quality Assessment
-  - Unsupervised Learning
-  - Multimodal Large Language Models
-  - Data Curation
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Remote Photoplethysmography"
+  - "Video Quality Assessment"
+  - "Unsupervised Learning"
+  - "Multimodal Large Language Models"
+  - "Data Curation"
 date: 2026-05-08
 content_hash: da95250e92ff106d
 ---

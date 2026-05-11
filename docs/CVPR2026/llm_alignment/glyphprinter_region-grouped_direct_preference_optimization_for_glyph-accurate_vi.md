@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GlyphPrinter: Region-Grouped Direct Preference Optimization for Glyph-Accurate Visual Text Rendering
 description: >-
-  [CVPR 2026][LLM Alignment][Visual Text Rendering] GlyphPrinter constructs a region-level glyph preference dataset (GlyphCorrector) and proposes Region-Grouped DPO (R-GDPO) to significantly improve glyph accuracy in visual text rendering without relying on explicit reward models, while introducing inference-time Regional Reward Guidance (RRG) for controllable generation.
+  [CVPR 2026][LLM Alignment][Visual Text Rendering] GlyphPrinter constructs a region-level glyph preference dataset (GlyphCorrector) and proposes Region-Grouped DPO (R-GDPO) to significantly improve glyph accuracy in visua…
 tags:
-  - CVPR 2026
-  - LLM Alignment
-  - Visual Text Rendering
-  - DPO
-  - Glyph Accuracy
-  - Region-level Preference Optimization
-  - FLUX
+  - "CVPR 2026"
+  - "LLM Alignment"
+  - "Visual Text Rendering"
+  - "DPO"
+  - "Glyph Accuracy"
+  - "Region-level Preference Optimization"
+  - "FLUX"
 date: 2026-05-08
 content_hash: 6ac03ceb14ecbb1e
 ---

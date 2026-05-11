@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Adaptive Articulated Object Manipulation On The Fly with Foundation Model Reasoning and Part Grounding
 description: >-
-  [ICCV 2025][Robotics][articulated object manipulation] This paper proposes AdaRPG, a framework that leverages foundation vision-language models for part-level segmentation and affordance reasoning on articulated objects, and employs GPT-4o to generate high-level control code for adaptively scheduling atomic manipulation skills, achieving cross-category zero-shot generalization in both simulation and real-world environments.
+  [ICCV 2025][Robotics][articulated object manipulation] This paper proposes AdaRPG, a framework that leverages foundation vision-language models for part-level segmentation and affordance reasoning on articulated objects…
 tags:
-  - ICCV 2025
-  - Robotics
-  - articulated object manipulation
-  - foundation models
-  - part segmentation
-  - affordance prediction
-  - adaptive policy
+  - "ICCV 2025"
+  - "Robotics"
+  - "articulated object manipulation"
+  - "foundation models"
+  - "part segmentation"
+  - "affordance prediction"
+  - "adaptive policy"
 date: 2026-05-08
 content_hash: e135656a961dc5c4
 ---

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] LiT: Delving into a Simple Linear Diffusion Transformer for Image Generation
 description: >-
-  [Image Generation] > This paper systematically investigates how to safely and efficiently convert a pretrained DiT into a linear attention variant called LiT. It proposes five practical guidelines—depth-wise convolution augmentation, fewer heads, weight inheritance, selective parameter loading, and hybrid distillation—achieving comparable performance with only 20% of DiT's training steps.
+  [Image Generation] > This paper systematically investigates how to safely and efficiently convert a pretrained DiT into a linear attention variant called LiT. It proposes five practical guidelines—depth-wise convolution…
 tags:
-  - Image Generation
+  - "Image Generation"
 date: 2026-05-08
 content_hash: 0b1f08f0eb3443f4
 ---

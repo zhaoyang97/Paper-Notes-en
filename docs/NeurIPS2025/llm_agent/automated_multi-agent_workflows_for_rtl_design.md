@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Automated Multi-Agent Workflows for RTL Design
 description: >-
-  [NeurIPS 2025 (ML for Systems Workshop)][LLM Agent][multi-agent workflow] VeriMaAS is a multi-agent framework that integrates HDL formal verification feedback (Yosys + OpenSTA) into the automated workflow generation process, adaptively selecting reasoning operators (I/O → CoT → ReAct → SelfRefine → Debate) for RTL code generation tasks. With only a few hundred training samples, it achieves 5–7% higher pass@k performance than fine-tuning baselines.
+  [NeurIPS 2025 (ML for Systems Workshop)][LLM Agent][multi-agent workflow] VeriMaAS is a multi-agent framework that integrates HDL formal verification feedback (Yosys + OpenSTA) into the automated workflow generation proc…
 tags:
-  - NeurIPS 2025 (ML for Systems Workshop)
-  - LLM Agent
-  - multi-agent workflow
-  - RTL code generation
-  - formal verification
-  - Verilog
-  - automated workflow orchestration
+  - "NeurIPS 2025 (ML for Systems Workshop)"
+  - "LLM Agent"
+  - "multi-agent workflow"
+  - "RTL code generation"
+  - "formal verification"
+  - "Verilog"
+  - "automated workflow orchestration"
 date: 2026-05-08
 content_hash: 640ef3292ed02f0d
 ---

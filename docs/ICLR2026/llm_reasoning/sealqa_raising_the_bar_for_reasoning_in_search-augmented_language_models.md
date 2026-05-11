@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] SealQA: Raising the Bar for Reasoning in Search-Augmented Language Models
 description: >-
-  [ICLR 2026][LLM Reasoning][benchmark] This paper introduces SealQA, a challenging benchmark with three variants (Seal-0/Seal-Hard/LongSeal), where each question is carefully crafted by NLP researchers to trigger ambiguous, conflicting, or noisy search results. Even GPT-5 achieves at most 43.2% accuracy, revealing that test-time scaling does not yield reliable gains under noisy retrieval conditions.
+  [ICLR 2026][LLM Reasoning][benchmark] This paper introduces SealQA, a challenging benchmark with three variants (Seal-0/Seal-Hard/LongSeal)…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - benchmark
-  - search-augmented LLM
-  - RAG
-  - noisy retrieval
-  - test-time scaling
-  - knowledge conflict
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "benchmark"
+  - "search-augmented LLM"
+  - "RAG"
+  - "noisy retrieval"
+  - "test-time scaling"
+  - "knowledge conflict"
 date: 2026-05-08
 content_hash: ba9bd69cc812b905
 ---

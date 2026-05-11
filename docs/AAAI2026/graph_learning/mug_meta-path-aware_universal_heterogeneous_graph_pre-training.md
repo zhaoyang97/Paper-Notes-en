@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] MUG: Meta-path-aware Universal Heterogeneous Graph Pre-Training
 description: >-
-  [AAAI 2026][Graph Learning][Heterogeneous graph] MUG is the first universal heterogeneous graph pre-training method that requires no LLM. It unifies heterogeneous node/relation types via contextual structural encoding, aligns representation spaces across graphs with a dimension-aware encoder, and achieves transferable encoding and aggregation through a shared GNN encoder over meta-path views combined with global scatter regularization. MUG substantially outperforms existing methods on cross-domain and few-shot node classification.
+  [AAAI 2026][Graph Learning][Heterogeneous graph] MUG is the first universal heterogeneous graph pre-training method that requires no LLM. It unifies heterogeneous node/relation types via contextual structural encoding…
 tags:
-  - AAAI 2026
-  - Graph Learning
-  - Heterogeneous graph
-  - universal graph pre-training
-  - meta-path
-  - graph foundation model
-  - cross-domain transfer
-  - self-supervised learning
-  - masked autoencoding
+  - "AAAI 2026"
+  - "Graph Learning"
+  - "Heterogeneous graph"
+  - "universal graph pre-training"
+  - "meta-path"
+  - "graph foundation model"
+  - "cross-domain transfer"
+  - "self-supervised learning"
+  - "masked autoencoding"
 date: 2026-05-08
 content_hash: 0040e5ff6480c4ab
 ---

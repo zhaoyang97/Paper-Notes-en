@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Efficient Fuse-and-Refine for Feed-Forward 3D Gaussian Splatting
 description: >-
-  [NeurIPS 2025][3D Vision][3DGS] This paper proposes a Fuse-and-Refine module that aggregates pixel-aligned Gaussian primitives into a coarse-to-fine voxel hierarchy via a hybrid Splat-Voxel representation. A sparse voxel Transformer fuses approximately 200K primitives within 15 ms, yielding ~2 dB PSNR improvement. The model is trained exclusively on static scenes yet generalizes zero-shot to streaming dynamic scene reconstruction.
+  [NeurIPS 2025][3D Vision][3DGS] This paper proposes a Fuse-and-Refine module that aggregates pixel-aligned Gaussian primitives into a coarse-to-fine voxel hierarchy via a hybrid Splat-Voxel representation. A sparse voxel…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - 3DGS
-  - Splat-Voxel
-  - feed-forward reconstruction
-  - streaming dynamic scenes
-  - sparse-view
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "3DGS"
+  - "Splat-Voxel"
+  - "feed-forward reconstruction"
+  - "streaming dynamic scenes"
+  - "sparse-view"
 date: 2026-05-08
 content_hash: 60f92fcc3b65be7a
 ---

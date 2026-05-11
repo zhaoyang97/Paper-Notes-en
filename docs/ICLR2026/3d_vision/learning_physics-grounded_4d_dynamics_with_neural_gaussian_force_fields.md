@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Physics-Grounded 4D Dynamics with Neural Gaussian Force Fields
 description: >-
-  [ICLR 2026][3D Vision][3D Gaussian Splatting] This paper proposes the NGFF framework, which reconstructs 3D Gaussian representations from multi-view RGB images and learns explicit neural force fields to drive physics-based dynamics. By solving ODEs, the framework enables interactive, physically plausible 4D video generation that is two orders of magnitude faster than traditional Gaussian simulators, surpassing Veo3 and NVIDIA Cosmos.
+  [ICLR 2026][3D Vision][3D Gaussian Splatting] This paper proposes the NGFF framework, which reconstructs 3D Gaussian representations from multi-view RGB images and learns explicit neural force fields to drive physics-bas…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - Force Field Learning
-  - Physical Reasoning
-  - 4D Video Prediction
-  - Neural Operator
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Force Field Learning"
+  - "Physical Reasoning"
+  - "4D Video Prediction"
+  - "Neural Operator"
 date: 2026-05-08
 content_hash: 97f07a10778ed9a5
 ---

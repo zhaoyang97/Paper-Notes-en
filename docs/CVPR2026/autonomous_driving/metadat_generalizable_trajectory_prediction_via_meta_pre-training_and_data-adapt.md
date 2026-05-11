@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MetaDAT: Generalizable Trajectory Prediction via Meta Pre-training and Data-Adaptive Test-Time Updating
 description: >-
-  [CVPR 2026][Autonomous Driving][Trajectory Prediction] This paper proposes the MetaDAT framework, which obtains a model initialization amenable to online adaptation via meta pre-training, and achieves data-adaptive model adjustment at test time through dynamic learning rate optimization (DLO) and hard-sample-driven updates (HSD). MetaDAT surpasses all existing TTT methods under cross-dataset distribution shift settings across nuScenes, Lyft, and Waymo.
+  [CVPR 2026][Autonomous Driving][Trajectory Prediction] This paper proposes the MetaDAT framework, which obtains a model initialization amenable to online adaptation via meta pre-training…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Trajectory Prediction
-  - Test-Time Training
-  - Meta-Learning
-  - Distribution Shift
-  - Online Adaptation
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Trajectory Prediction"
+  - "Test-Time Training"
+  - "Meta-Learning"
+  - "Distribution Shift"
+  - "Online Adaptation"
 date: 2026-05-08
 content_hash: 67694e8b0f013c99
 ---

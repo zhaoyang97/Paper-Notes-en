@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Soft Task-Aware Routing of Experts for Equivariant Representation Learning
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][equivariant representation] This paper proposes STAR (Soft Task-Aware Routing), which employs a MoE routing mechanism to coordinate shared and task-specific information between invariant and equivariant representation learning objectives, reducing redundant feature learning and improving downstream transfer performance.
+  [NeurIPS 2025][Self-Supervised Learning][equivariant representation] This paper proposes STAR (Soft Task-Aware Routing), which employs a MoE routing mechanism to coordinate shared and task-specific information between in…
 tags:
-  - NeurIPS 2025
-  - Self-Supervised Learning
-  - equivariant representation
-  - mixture of experts
-  - redundant feature learning
-  - routing
+  - "NeurIPS 2025"
+  - "Self-Supervised Learning"
+  - "equivariant representation"
+  - "mixture of experts"
+  - "redundant feature learning"
+  - "routing"
 date: 2026-05-08
 content_hash: 8ec51411428f5805
 ---

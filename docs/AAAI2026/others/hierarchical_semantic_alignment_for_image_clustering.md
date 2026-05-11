@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] CAE: Hierarchical Semantic Alignment for Image Clustering
 description: >-
-  [AAAI 2026][image clustering] By combining two complementary semantic sources — noun-level (WordNet) and caption-level (Flickr image captions) — and constructing a semantic space via optimal transport alignment followed by adaptive fusion, this work achieves training-free image clustering with a 4.2% accuracy improvement on ImageNet-1K.
+  [AAAI 2026][image clustering] By combining two complementary semantic sources — noun-level (WordNet) and caption-level (Flickr image captions) — and constructing a semantic space via optimal transport alignment followed…
 tags:
-  - AAAI 2026
-  - image clustering
-  - semantic alignment
-  - optimal transport
-  - caption-level semantics
-  - training-free
+  - "AAAI 2026"
+  - "image clustering"
+  - "semantic alignment"
+  - "optimal transport"
+  - "caption-level semantics"
+  - "training-free"
 date: 2026-05-08
 content_hash: 25f201f23b7082c4
 ---

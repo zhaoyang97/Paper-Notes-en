@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Photography Perspective Composition: Towards Aesthetic Perspective Recommendation
 description: >-
-  [NeurIPS 2025][Video Generation][Photography Composition] This paper proposes a novel "Photography Perspective Composition" (PPC) paradigm that goes beyond traditional cropping-based approaches. It constructs a perspective transformation dataset via 3D reconstruction, generates recommended viewpoints through Image-to-Video generation, aligns with human preferences via RLHF, and evaluates perspective quality using a PQA model.
+  [NeurIPS 2025][Video Generation][Photography Composition] This paper proposes a novel "Photography Perspective Composition" (PPC) paradigm that goes beyond traditional cropping-based approaches. It constructs a perspecti…
 tags:
-  - NeurIPS 2025
-  - Video Generation
-  - Photography Composition
-  - Perspective Transformation
-  - Aesthetic Assessment
-  - RLHF
+  - "NeurIPS 2025"
+  - "Video Generation"
+  - "Photography Composition"
+  - "Perspective Transformation"
+  - "Aesthetic Assessment"
+  - "RLHF"
 date: 2026-05-08
 content_hash: 924240bb3c9e0d91
 ---

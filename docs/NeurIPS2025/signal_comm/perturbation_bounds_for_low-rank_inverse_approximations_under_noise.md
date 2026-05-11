@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Perturbation Bounds for Low-Rank Inverse Approximations under Noise
 description: >-
-  [NeurIPS 2025][Signal & Communication][low-rank inverse approximation] This work derives the first non-asymptotic spectral norm perturbation bounds for low-rank inverse approximations $\|(\tilde{A}^{-1})_p - A_p^{-1}\|$ under noise, via a novel *contour bootstrapping* technique that handles the non-entire function $f(z) = 1/z$. Under favorable conditions, the proposed bounds improve upon classical bounds by a factor of $\sqrt{n}$.
+  [NeurIPS 2025][Signal & Communication][low-rank inverse approximation] This work derives the first non-asymptotic spectral norm perturbation bounds for low-rank inverse approximations $\|(\tilde{A}^{-1})_p - A_p^{-1}\|$…
 tags:
-  - NeurIPS 2025
+  - "NeurIPS 2025"
   - "Signal & Communication"
-  - low-rank inverse approximation
-  - matrix perturbation theory
-  - spectral norm bounds
-  - contour integration
-  - eigengap
+  - "low-rank inverse approximation"
+  - "matrix perturbation theory"
+  - "spectral norm bounds"
+  - "contour integration"
+  - "eigengap"
 date: 2026-05-08
 content_hash: 3748a22ffca5500c
 ---

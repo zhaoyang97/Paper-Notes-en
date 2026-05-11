@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] NeMo-map: Neural Implicit Flow Fields for Spatio-Temporal Motion Mapping
 description: >-
-  [ICLR 2026][Autonomous Driving][dynamic map] NeMo-map is proposed as a continuous spatio-temporal dynamic map based on neural implicit functions, directly mapping spatial-temporal coordinates to Semi-Wrapped Gaussian Mixture Model (SWGMM) parameters. It eliminates the spatial discretization and temporal segmentation constraints of conventional methods, achieving lower NLL and smoother velocity distributions on real pedestrian tracking data.
+  [ICLR 2026][Autonomous Driving][dynamic map] NeMo-map is proposed as a continuous spatio-temporal dynamic map based on neural implicit functions…
 tags:
-  - ICLR 2026
-  - Autonomous Driving
-  - dynamic map
-  - neural implicit representation
-  - semi-wrapped Gaussian mixture
-  - human motion patterns
-  - spatio-temporal continuity
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "dynamic map"
+  - "neural implicit representation"
+  - "semi-wrapped Gaussian mixture"
+  - "human motion patterns"
+  - "spatio-temporal continuity"
 date: 2026-05-08
 content_hash: a992570993541419
 ---

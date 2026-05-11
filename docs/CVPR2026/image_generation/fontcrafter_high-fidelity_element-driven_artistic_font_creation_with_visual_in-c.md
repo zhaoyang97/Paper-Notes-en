@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FontCrafter: High-Fidelity Element-Driven Artistic Font Creation with Visual In-Context Generation
 description: >-
-  [CVPR 2026][Image Generation][artistic font generation] FontCrafter reframes artistic font generation as a visual in-context generation task. By horizontally concatenating reference element images with a blank canvas and feeding the result into a pretrained inpainting model (FLUX.1-Fill), it achieves high-fidelity element-driven font creation, significantly outperforming existing methods in both texture and structural fidelity.
+  [CVPR 2026][Image Generation][artistic font generation] FontCrafter reframes artistic font generation as a visual in-context generation task. By horizontally concatenating reference element images with a blank canvas and…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - artistic font generation
-  - element-driven
-  - visual in-context generation
-  - image inpainting
-  - style control
+  - "CVPR 2026"
+  - "Image Generation"
+  - "artistic font generation"
+  - "element-driven"
+  - "visual in-context generation"
+  - "image inpainting"
+  - "style control"
 date: 2026-05-08
 content_hash: 5315867c2acf2fc8
 ---

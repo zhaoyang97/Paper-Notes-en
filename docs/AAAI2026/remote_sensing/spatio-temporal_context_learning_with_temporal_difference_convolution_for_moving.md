@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TDCNet: Spatio-Temporal Context Learning with Temporal Difference Convolution for Moving IRSTD
 description: >-
-  [AAAI 2026][Remote Sensing][Infrared small target detection] This paper proposes TDCNet, which unifies temporal difference and 3D convolution into a single Temporal Difference Convolution (TDC). Through re-parameterization, TDC introduces zero additional inference overhead. Combined with TDC-guided spatio-temporal attention (TDCSTA), TDCNet achieves an F1 of 97.12% (AP50 93.83%) on the newly constructed IRSTD-UAV dataset, which contains 15,106 frames of real infrared UAV imagery.
+  [AAAI 2026][Remote Sensing][Infrared small target detection] This paper proposes TDCNet, which unifies temporal difference and 3D convolution into a single Temporal Difference Convolution (TDC). Through re-parameterizati…
 tags:
-  - AAAI 2026
-  - Remote Sensing
-  - Infrared small target detection
-  - temporal difference convolution
-  - re-parameterization
-  - spatio-temporal attention
-  - UAV
+  - "AAAI 2026"
+  - "Remote Sensing"
+  - "Infrared small target detection"
+  - "temporal difference convolution"
+  - "re-parameterization"
+  - "spatio-temporal attention"
+  - "UAV"
 date: 2026-05-08
 content_hash: 78982ccbccfc9890
 ---

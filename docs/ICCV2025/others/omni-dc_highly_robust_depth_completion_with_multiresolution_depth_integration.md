@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Omni-DC: Highly Robust Depth Completion with Multiresolution Depth Integration
 description: >-
-  [ICCV 2025][depth completion] This paper presents OMNI-DC, a highly robust depth completion model that achieves zero-shot generalization across diverse datasets and sparse depth patterns via a multiresolution Discrete Depth Integration module (Multi-res DDI), a Laplacian loss, and scale normalization.
+  [ICCV 2025][depth completion] This paper presents OMNI-DC, a highly robust depth completion model that achieves zero-shot generalization across diverse datasets and sparse depth patterns via a multiresolution Discrete De…
 tags:
-  - ICCV 2025
-  - depth completion
-  - multiresolution depth integration
-  - zero-shot generalization
-  - Laplacian loss
-  - scale normalization
+  - "ICCV 2025"
+  - "depth completion"
+  - "multiresolution depth integration"
+  - "zero-shot generalization"
+  - "Laplacian loss"
+  - "scale normalization"
 date: 2026-05-08
 content_hash: 0e2f8062e331217e
 ---

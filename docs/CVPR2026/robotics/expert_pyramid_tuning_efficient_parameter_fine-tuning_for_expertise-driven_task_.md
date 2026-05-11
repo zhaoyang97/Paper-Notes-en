@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Expert Pyramid Tuning: Efficient Parameter Fine-Tuning for Expertise-Driven Task Allocation
 description: >-
-  [CVPR 2026][Robotics][PEFT] To address the limitation of MoE-LoRA methods where all experts share identical structures (uniform rank) and thus cannot adapt to tasks of varying complexity, this paper proposes EPT: a parameter pyramid constructed via a shared meta-knowledge subspace and deconvolution experts with varying kernel sizes, coupled with an Adaptive LoRA Pruner and contrastive learning-based Task Embedding. EPT achieves an average score of 87.0% on GLUE with only 0.41M parameters per task, outperforming all MoE-LoRA variants.
+  [CVPR 2026][Robotics][PEFT] To address the limitation of MoE-LoRA methods where all experts share identical structures (uniform rank) and thus cannot adapt to tasks of varying complexity…
 tags:
-  - CVPR 2026
-  - Robotics
-  - PEFT
-  - LoRA
-  - Mixture-of-Experts
-  - Multi-Scale Feature Pyramid
-  - Deconvolution Projection
+  - "CVPR 2026"
+  - "Robotics"
+  - "PEFT"
+  - "LoRA"
+  - "Mixture-of-Experts"
+  - "Multi-Scale Feature Pyramid"
+  - "Deconvolution Projection"
 date: 2026-05-08
 content_hash: ddadd598eeb0c85b
 ---

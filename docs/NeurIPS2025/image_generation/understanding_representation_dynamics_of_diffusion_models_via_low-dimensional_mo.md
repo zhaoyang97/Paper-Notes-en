@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Understanding Representation Dynamics of Diffusion Models via Low-Dimensional Models
 description: >-
-  [NeurIPS 2025][Image Generation][Diffusion Models] Under a Mixture of Low-Rank Gaussians (MoLRG) data model, this paper theoretically proves that the unimodal dynamics of representation quality across noise levels arise from a trade-off between denoising strength and class discriminability, and empirically demonstrates that the emergence of unimodal dynamics serves as a reliable indicator of model generalization.
+  [NeurIPS 2025][Image Generation][Diffusion Models] Under a Mixture of Low-Rank Gaussians (MoLRG) data model, this paper theoretically proves that the unimodal dynamics of representation quality across noise levels arise…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Diffusion Models
-  - Representation Learning
-  - Unimodal Dynamics
-  - Low-Rank Gaussian Mixture
-  - Generalization-Memorization
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "Representation Learning"
+  - "Unimodal Dynamics"
+  - "Low-Rank Gaussian Mixture"
+  - "Generalization-Memorization"
 date: 2026-05-08
 content_hash: aba84b8c22c32358
 ---

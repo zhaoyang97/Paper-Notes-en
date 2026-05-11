@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Compositional Generalization from Learned Skills via CoT Training: A Theoretical and Structural Analysis for Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][Compositional Generalization] This paper leverages information-theoretic generalization bounds and mechanistic interpretability to demonstrate that the core mechanism of CoT training is **compositional generalization**—the model learns to systematically compose previously acquired simple skills to solve novel complex problems, internalizing this ability as a two-stage compositional reasoning circuit that extracts intermediate results at shallower layers, freeing deeper layers to focus on subsequent reasoning steps.
+  [ICLR 2026][LLM Reasoning][Compositional Generalization] This paper leverages information-theoretic generalization bounds and mechanistic interpretability to demonstrate that the core mechanism of CoT training is **compo…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Compositional Generalization
-  - Chain-of-Thought Training
-  - Information-Theoretic Generalization Bounds
-  - Reasoning Circuits
-  - OOD Generalization
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "Compositional Generalization"
+  - "Chain-of-Thought Training"
+  - "Information-Theoretic Generalization Bounds"
+  - "Reasoning Circuits"
+  - "OOD Generalization"
 date: 2026-05-08
 content_hash: b1877680afa737f3
 ---

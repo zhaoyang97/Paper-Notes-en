@@ -2,13 +2,14 @@
 title: >-
   [Paper Note] A Unified Reasoning Framework for Holistic Zero-Shot Video Anomaly Analysis
 description: >-
-  [NeurIPS 2025][Video Anomaly Detection] A fully zero-shot, training-free video anomaly analysis framework that employs Intra-Task Reasoning (confidence-gated self-refinement) and Inter-Task Chaining (cascaded prompt passing from temporal detection to spatial localization to semantic understanding), achieving comprehensive improvements of 4–6% AUC over prior zero-shot methods across 4 benchmarks.
+  [NeurIPS 2025][Interpretability][Video Anomaly Detection] A fully zero-shot, training-free video anomaly analysis framework that employs Intra-Task Reasoning (confidence-gated self-refinement) and Inter-Task Chaining (ca…
 tags:
-  - NeurIPS 2025
-  - Video Anomaly Detection
-  - Zero-Shot
-  - Chain-of-Thought Reasoning
-  - VLM
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "Video Anomaly Detection"
+  - "Zero-Shot"
+  - "Chain-of-Thought Reasoning"
+  - "VLM"
   - "Anomaly Localization & Understanding"
 date: 2026-05-08
 content_hash: e31f95f420f571fa

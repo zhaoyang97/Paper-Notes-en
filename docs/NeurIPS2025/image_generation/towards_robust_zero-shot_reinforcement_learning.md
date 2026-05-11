@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Robust Zero-Shot Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Image Generation][Zero-shot reinforcement learning] This paper proposes BREEZE, a framework that systematically addresses out-of-distribution (OOD) extrapolation errors and insufficient expressivity in FB-based zero-shot RL through behavior-regularized representation guidance, task-conditioned diffusion policy extraction, and attention-enhanced representation modeling. BREEZE achieves state-of-the-art or near-state-of-the-art robust zero-shot generalization on ExORL and D4RL Kitchen benchmarks.
+  [NeurIPS 2025][Image Generation][Zero-shot reinforcement learning] This paper proposes BREEZE, a framework that systematically addresses out-of-distribution (OOD) extrapolation errors and insufficient expressivity in FB-…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Zero-shot reinforcement learning
-  - Forward-Backward representation
-  - behavior regularization
-  - diffusion policy
-  - attention architecture
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Zero-shot reinforcement learning"
+  - "Forward-Backward representation"
+  - "behavior regularization"
+  - "diffusion policy"
+  - "attention architecture"
 date: 2026-05-08
 content_hash: 756cdd40d6d84c5c
 ---

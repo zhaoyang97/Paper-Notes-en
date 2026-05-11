@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Explaining and Mitigating Crosslingual Tokenizer Inequities
 description: >-
-  [NeurIPS 2025][Robotics][Token Premium] This work systematically trains approximately 7,000 monolingual tokenizers covering 97 languages, providing the first demonstration that significant token premium disparities persist across languages even after controlling for training data size, vocabulary size, and algorithm. It further identifies vocabulary size and pre-tokenization strategy as key contributing factors, and proposes two mitigation approaches: language-specific optimal vocabulary size and SuperBPE.
+  [NeurIPS 2025][Robotics][Token Premium] This work systematically trains approximately 7,000 monolingual tokenizers covering 97 languages…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - Token Premium
-  - Crosslingual Tokenization
-  - BPE
-  - Vocabulary Size
-  - Pre-tokenization
-  - Compression Rate
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "Token Premium"
+  - "Crosslingual Tokenization"
+  - "BPE"
+  - "Vocabulary Size"
+  - "Pre-tokenization"
+  - "Compression Rate"
 date: 2026-05-08
 content_hash: bd9d1337e3b4a2c9
 ---

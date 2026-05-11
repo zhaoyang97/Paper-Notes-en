@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DP-GenG: Differentially Private Dataset Distillation Guided by DP-Generated Data
 description: >-
-  [AAAI2026][Model Compression][differential privacy] This paper proposes DP-GenG, a framework that leverages differentially private generated data (DP-generated data) to guide three stages of dataset distillation — initialization, feature matching, and expert calibration — significantly improving the utility and privacy protection of the distilled dataset under a limited privacy budget.
+  [AAAI2026][Model Compression][differential privacy] This paper proposes DP-GenG, a framework that leverages differentially private generated data (DP-generated data) to guide three stages of dataset distillation — initia…
 tags:
-  - AAAI2026
-  - Model Compression
-  - differential privacy
-  - Dataset Distillation
-  - DP-Generated Data
-  - Feature Matching
-  - Privacy Budget Allocation
+  - "AAAI2026"
+  - "Model Compression"
+  - "differential privacy"
+  - "Dataset Distillation"
+  - "DP-Generated Data"
+  - "Feature Matching"
+  - "Privacy Budget Allocation"
 date: 2026-05-08
 content_hash: 6c7f3ce83ce2379a
 ---

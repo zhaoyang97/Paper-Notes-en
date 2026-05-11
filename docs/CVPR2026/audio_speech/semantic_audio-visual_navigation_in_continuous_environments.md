@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Semantic Audio-Visual Navigation in Continuous Environments
 description: >-
-  [CVPR 2026][Audio & Speech][audio-visual navigation] This paper introduces the SAVN-CE task, extending semantic audio-visual navigation to continuous 3D environments, and proposes MAGNet (Memory-Augmented Goal description Network). By fusing historical context and ego-motion cues, MAGNet achieves robust goal inference after target sounds cease, yielding absolute success rate improvements of up to 12.1%.
+  [CVPR 2026][Audio & Speech][audio-visual navigation] This paper introduces the SAVN-CE task, extending semantic audio-visual navigation to continuous 3D environments…
 tags:
-  - CVPR 2026
+  - "CVPR 2026"
   - "Audio & Speech"
-  - audio-visual navigation
-  - continuous environments
-  - memory augmentation
-  - goal reasoning
-  - embodied intelligence
+  - "audio-visual navigation"
+  - "continuous environments"
+  - "memory augmentation"
+  - "goal reasoning"
+  - "embodied intelligence"
 date: 2026-05-08
 content_hash: d76456fde69fb9e2
 ---

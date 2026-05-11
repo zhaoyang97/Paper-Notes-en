@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Reliable Active Learning from Unreliable Labels via Neural Collapse Geometry
 description: >-
-  [NeurIPS 2025 (Workshop)][Active Learning] This paper proposes NCAL-R, which leverages the Neural Collapse (NC) geometry emerging in the terminal training phase of deep networks. Two scoring metrics—Class Mean Alignment Perturbation (CMAP) and Feature Fluctuation (FF)—are designed for sample selection, making active learning more reliable under label noise and distribution shift. The method consistently outperforms conventional AL baselines on ImageNet-100 and CIFAR-100.
+  [NeurIPS 2025 (Workshop)][Active Learning] This paper proposes NCAL-R, which leverages the Neural Collapse (NC) geometry emerging in the terminal training phase of deep networks. Two scoring metrics—Class Mean Alignment…
 tags:
-  - NeurIPS 2025 (Workshop)
-  - Active Learning
-  - Neural Collapse
-  - Feature Geometry
-  - Noise-Robust Learning
-  - OOD Generalization
+  - "NeurIPS 2025 (Workshop)"
+  - "Active Learning"
+  - "Neural Collapse"
+  - "Feature Geometry"
+  - "Noise-Robust Learning"
+  - "OOD Generalization"
 date: 2026-05-08
 content_hash: 0bef719509c76d02
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Bayesian Social Deduction with Graph-Informed Language Models
 description: >-
-  [ACL 2026][LLM Agent][social reasoning] This paper proposes GRAIL (Graph Reasoning Agent Informed through Language), a hybrid reasoning framework that externalizes probabilistic inference to a factor graph model while delegating language understanding and interaction to an LLM. GRAIL is the first agent to defeat human players in the social deduction game Avalon (67% win rate) while consuming far fewer computational resources than large-scale reasoning models.
+  [ACL 2026][LLM Agent][social reasoning] This paper proposes GRAIL (Graph Reasoning Agent Informed through Language), a hybrid reasoning framework that externalizes probabilistic inference to a factor graph model while de…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - social reasoning
-  - probabilistic graphical models
-  - theory of mind
-  - game-playing agents
-  - human-AI interaction
+  - "ACL 2026"
+  - "LLM Agent"
+  - "social reasoning"
+  - "probabilistic graphical models"
+  - "theory of mind"
+  - "game-playing agents"
+  - "human-AI interaction"
 date: 2026-05-08
 content_hash: 8c05807a448ea989
 ---

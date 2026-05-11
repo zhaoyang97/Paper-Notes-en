@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Circuit Mechanisms for Spatial Relation Generation in Diffusion Transformers
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Transformer] Internal circuit mechanisms for spatial relation generation in Diffusion Transformers (DiT) are revealed through mechanistic interpretability: Randomized Token Embedding (RTE) models utilize a two-stage modular circuit (Relation Heads + Object Generation Heads), while T5-encoded models fused relation information into object tokens for single-token decoding, showing significant differences in robustness.
+  [CVPR 2026][Image Generation][Diffusion Transformer] Internal circuit mechanisms for spatial relation generation in Diffusion Transformers (DiT) are revealed through mechanistic interpretability: Randomized Token Embeddi…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Transformer
-  - Spatial Relation Generation
-  - Mechanistic Interpretability
-  - Attention Circuits
-  - Text Encoder
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Transformer"
+  - "Spatial Relation Generation"
+  - "Mechanistic Interpretability"
+  - "Attention Circuits"
+  - "Text Encoder"
 date: 2026-05-08
 content_hash: 3550691ad748fda6
 ---

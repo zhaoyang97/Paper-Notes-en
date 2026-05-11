@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SciPostGen: Bridging the Gap between Scientific Papers and Poster Layouts
 description: >-
-  [CVPR 2026][Multimodal VLM][Poster layout generation] This work introduces SciPostGen, a large-scale dataset of 18,097 paper–poster pairs. Analysis reveals a moderate correlation between paper structure and the number of poster layout elements. A retrieval-augmented poster layout generation framework is proposed, which leverages contrastive learning to retrieve layout templates matching the input paper and guides an LLM to generate the final poster layout.
+  [CVPR 2026][Multimodal VLM][Poster layout generation] This work introduces SciPostGen, a large-scale dataset of 18,097 paper–poster pairs. Analysis reveals a moderate correlation between paper structure and the number of…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Poster layout generation
-  - scientific papers
-  - retrieval-augmented generation
-  - contrastive learning
-  - document layout analysis
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Poster layout generation"
+  - "scientific papers"
+  - "retrieval-augmented generation"
+  - "contrastive learning"
+  - "document layout analysis"
 date: 2026-05-08
 content_hash: c49d09f88bb434e9
 ---

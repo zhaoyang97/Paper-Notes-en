@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ParoQuant: Pairwise Rotation Quantization for Efficient Reasoning LLM Inference
 description: >-
-  [ICLR 2026][Model Compression][Post-training quantization] ParoQuant is proposed to eliminate weight outliers via hardware-efficient and optimizable independent Givens rotations combined with channel scaling, achieving high-accuracy, low-overhead 4-bit weight quantization for reasoning LLMs.
+  [ICLR 2026][Model Compression][Post-training quantization] ParoQuant is proposed to eliminate weight outliers via hardware-efficient and optimizable independent Givens rotations combined with channel scaling…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Post-training quantization
-  - Givens rotation
-  - Reasoning LLM
-  - Quantization efficiency
-  - Algorithm-system co-design
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Post-training quantization"
+  - "Givens rotation"
+  - "Reasoning LLM"
+  - "Quantization efficiency"
+  - "Algorithm-system co-design"
 date: 2026-05-08
 content_hash: c1bd396bd33db663
 ---

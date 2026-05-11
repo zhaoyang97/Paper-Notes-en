@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Revisiting the Past: Data Unlearning with Model State History
 description: >-
-  [ICLR 2026][LLM Evaluation][Machine Unlearning] This paper proposes MSA (Model State Arithmetic), an algorithm that leverages intermediate training checkpoints to construct "forgetting vectors" and removes the influence of specific data via parameter-space arithmetic. MSA consistently outperforms existing unlearning methods such as NPO, RMU, and GradDiff on the TOFU and RESTOR benchmarks, while maintaining model utility even without a retain set.
+  [ICLR 2026][LLM Evaluation][Machine Unlearning] This paper proposes MSA (Model State Arithmetic), an algorithm that leverages intermediate training checkpoints to construct "forgetting vectors" and removes the influence…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - Machine Unlearning
-  - Model State Arithmetic
-  - Checkpoints
-  - Forgetting Vector
-  - Large Language Models
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Machine Unlearning"
+  - "Model State Arithmetic"
+  - "Checkpoints"
+  - "Forgetting Vector"
+  - "Large Language Models"
 date: 2026-05-08
 content_hash: 307d0e98dbf36c1b
 ---

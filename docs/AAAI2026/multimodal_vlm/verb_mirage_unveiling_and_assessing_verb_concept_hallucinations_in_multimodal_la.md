@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Verb Mirage: Unveiling and Assessing Verb Concept Hallucinations in Multimodal Large Language Models
 description: >-
-  [AAAI 2026][Multimodal VLM][verb hallucination] This paper presents the first systematic study of verb concept hallucinations in multimodal large language models (MLLMs), constructs a multi-dimensional benchmark, demonstrates that existing hallucination mitigation methods are ineffective against verb hallucinations, and proposes a fine-tuning baseline enriched with verb knowledge that significantly alleviates verb hallucinations.
+  [AAAI 2026][Multimodal VLM][verb hallucination] This paper presents the first systematic study of verb concept hallucinations in multimodal large language models (MLLMs), constructs a multi-dimensional benchmark…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - verb hallucination
-  - MLLM
-  - hallucination evaluation
-  - action understanding
-  - fine-grained evaluation
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "verb hallucination"
+  - "MLLM"
+  - "hallucination evaluation"
+  - "action understanding"
+  - "fine-grained evaluation"
 date: 2026-05-08
 content_hash: 814fef455f3f8bbb
 ---

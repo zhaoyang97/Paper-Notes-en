@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Seeing the Unseen: Zooming in the Dark with Event Cameras
 description: >-
-  [AAAI 2026][Video Generation][Low-light video super-resolution] This paper proposes RetinexEVSR, the first event-driven low-light video super-resolution (LVSR) framework. Through a Retinex-inspired bidirectional fusion strategy (RBF)—which first uses illumination maps to guide event feature denoising (IEE), then leverages enhanced event features to recover reflectance details (ERE)—the method achieves a 2.95 dB gain on the SDSD benchmark while reducing runtime by 65%.
+  [AAAI 2026][Video Generation][Low-light video super-resolution] This paper proposes RetinexEVSR, the first event-driven low-light video super-resolution (LVSR) framework. Through a Retinex-inspired bidirectional fusion s…
 tags:
-  - AAAI 2026
-  - Video Generation
-  - Low-light video super-resolution
-  - event camera
-  - Retinex decomposition
-  - cross-modal fusion
-  - bidirectional enhancement
+  - "AAAI 2026"
+  - "Video Generation"
+  - "Low-light video super-resolution"
+  - "event camera"
+  - "Retinex decomposition"
+  - "cross-modal fusion"
+  - "bidirectional enhancement"
 date: 2026-05-08
 content_hash: 1a381e89838ef08b
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UrbanVerse: Scaling Urban Simulation by Watching City-Tour Videos
 description: >-
-  [ICLR 2026][Robotics][urban simulation] UrbanVerse is a data-driven real-to-sim system that converts crowdsourced city-tour videos into physically-aware, interactive simulation environments. It comprises a 100K+ annotated 3D asset library and an automated scene construction pipeline, generating 160 high-quality scenes in IsaacSim. A PPO navigation policy trained on these scenes achieves an 89.7% success rate in zero-shot real-world transfer, completing a 337 m long-range task with only 2 human interventions.
+  [ICLR 2026][Robotics][urban simulation] UrbanVerse is a data-driven real-to-sim system that converts crowdsourced city-tour videos into physically-aware…
 tags:
-  - ICLR 2026
-  - Robotics
-  - urban simulation
-  - real-to-sim
-  - embodied AI
-  - 3D asset library
-  - navigation policy
+  - "ICLR 2026"
+  - "Robotics"
+  - "urban simulation"
+  - "real-to-sim"
+  - "embodied AI"
+  - "3D asset library"
+  - "navigation policy"
 date: 2026-05-08
 content_hash: 2147bd1b504cdb51
 ---

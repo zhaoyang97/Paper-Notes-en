@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RAISE: Requirement-Adaptive Evolutionary Refinement for Training-Free Text-to-Image Alignment
 description: >-
-  [CVPR 2026][Image Generation][Inference-time compute scaling] This paper proposes RAISE, a framework that models T2I generation as a requirement-driven adaptive evolutionary process. A requirement analyzer decomposes prompts into structured checklists; multi-action mutations (prompt rewriting + noise resampling + instruction-based editing) evolve candidate populations in parallel; tool-augmented visual verification eliminates non-compliant candidates each round. The result is adaptive inference-time scaling that achieves 0.94 SOTA on GenEval while reducing generated samples by 30–40% and VLM calls by 80% compared to reflection fine-tuning baselines.
+  [CVPR 2026][Image Generation][Inference-time compute scaling] This paper proposes RAISE, a framework that models T2I generation as a requirement-driven adaptive evolutionary process. A requirement analyzer decomposes pro…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Inference-time compute scaling
-  - text-to-image alignment
-  - evolutionary optimization
-  - requirement-driven
-  - multi-agent
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Inference-time compute scaling"
+  - "text-to-image alignment"
+  - "evolutionary optimization"
+  - "requirement-driven"
+  - "multi-agent"
 date: 2026-05-08
 content_hash: 43417658ab1a888d
 ---

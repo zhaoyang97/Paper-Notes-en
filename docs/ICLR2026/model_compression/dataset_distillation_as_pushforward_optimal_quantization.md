@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dataset Distillation as Pushforward Optimal Quantization
 description: >-
-  [ICLR2026][Model Compression][Dataset Distillation] This work reformulates decoupled dataset distillation as an optimal quantization problem, proves that latent-space clustering with learned weights via a diffusion prior can converge to approximate the true data distribution, and proposes the DDOQ algorithm, which surpasses baselines such as D4M on ImageNet-1K with minimal additional computation.
+  [ICLR2026][Model Compression][Dataset Distillation] This work reformulates decoupled dataset distillation as an optimal quantization problem…
 tags:
-  - ICLR2026
-  - Model Compression
-  - Dataset Distillation
-  - Optimal Quantization
-  - Wasserstein Distance
-  - Diffusion Models
-  - Latent Space Clustering
+  - "ICLR2026"
+  - "Model Compression"
+  - "Dataset Distillation"
+  - "Optimal Quantization"
+  - "Wasserstein Distance"
+  - "Diffusion Models"
+  - "Latent Space Clustering"
 date: 2026-05-08
 content_hash: c9b8c5150a3fead1
 ---

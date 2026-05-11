@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Chart Deep Research in LVLMs via Parallel Relative Policy Optimization
 description: >-
-  [ICLR2026][chart understanding] This paper proposes PRPO (Parallel Relative Policy Optimization), which addresses GRPO's training bottlenecks under multi-dimensional reward interference and heterogeneous data gradient conflicts through two-level parallel decoupled optimization — across reward dimensions and data types. It also introduces MCDR-Bench, which leverages an "error uniqueness principle" to transform subjective generation evaluation into objective error identification, enabling quantitative assessment of chart deep research capabilities.
+  [ICLR2026][chart understanding] This paper proposes PRPO (Parallel Relative Policy Optimization), which addresses GRPO's training bottlenecks under multi-dimensional reward interference and heterogeneous data gradient co…
 tags:
-  - ICLR2026
-  - chart understanding
-  - deep research
-  - RLHF
-  - policy optimization
-  - benchmark
+  - "ICLR2026"
+  - "chart understanding"
+  - "deep research"
+  - "RLHF"
+  - "policy optimization"
+  - "benchmark"
 date: 2026-05-08
 content_hash: 9a6de6a6533d36ec
 ---

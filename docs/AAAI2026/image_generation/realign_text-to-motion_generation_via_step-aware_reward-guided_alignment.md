@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ReAlign: Text-to-Motion Generation via Step-Aware Reward-Guided Alignment
 description: >-
-  [AAAI 2026][Image Generation][Text-to-Motion Generation] This paper proposes ReAlign (Reward-guided sampling Alignment), which employs a step-aware reward model and a reward-guided sampling strategy to dynamically steer sampling trajectories toward distributions with high text-motion alignment during diffusion inference, significantly improving the generation quality of various motion generation methods without fine-tuning any diffusion model. Using MLD as a baseline, R@1 improves by 17.9% and FID improves by 58.8%.
+  [AAAI 2026][Image Generation][Text-to-Motion Generation] This paper proposes ReAlign (Reward-guided sampling Alignment), which employs a step-aware reward model and a reward-guided sampling strategy to dynamically steer…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Text-to-Motion Generation
-  - Diffusion Models
-  - Reward-Guided Sampling
-  - Text-Motion Alignment
-  - Plug-and-Play
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Text-to-Motion Generation"
+  - "Diffusion Models"
+  - "Reward-Guided Sampling"
+  - "Text-Motion Alignment"
+  - "Plug-and-Play"
 date: 2026-05-08
 content_hash: d4d379a4bad428fd
 ---

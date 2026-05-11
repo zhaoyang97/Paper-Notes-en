@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Intra-view and Inter-view Correlation Guided Multi-view Novel Class Discovery
 description: >-
-  [ICCV 2025][Novel Class Discovery] This paper proposes IICMVNCD, the first framework extending Novel Class Discovery (NCD) to the multi-view setting. It captures distributional consistency between known and novel classes via intra-view matrix factorization, and transfers view relationships learned from known classes to novel classes through inter-view weight learning, eliminating the need for pseudo-labels.
+  [ICCV 2025][Novel Class Discovery] This paper proposes IICMVNCD, the first framework extending Novel Class Discovery (NCD) to the multi-view setting. It captures distributional consistency between known and novel classes…
 tags:
-  - ICCV 2025
-  - Novel Class Discovery
-  - Multi-view Learning
-  - Matrix Factorization
-  - View Weighting
-  - Clustering
+  - "ICCV 2025"
+  - "Novel Class Discovery"
+  - "Multi-view Learning"
+  - "Matrix Factorization"
+  - "View Weighting"
+  - "Clustering"
 date: 2026-05-08
 content_hash: 8f915dc1e1452c59
 ---

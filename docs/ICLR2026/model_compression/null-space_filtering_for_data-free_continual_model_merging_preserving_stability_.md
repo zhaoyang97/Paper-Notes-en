@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Null-Space Filtering for Data-Free Continual Model Merging: Preserving Stability, Promoting Plasticity
 description: >-
-  [ICLR 2026][Model Compression][Model Merging] This paper proposes NUFILT, a framework that exploits the geometric property of approximate alignment between task vectors and representation subspaces. By applying null-space filtering to suppress interference with previous tasks and projection-aware LoRA to restore plasticity for new tasks, NUFILT achieves continual model merging without accessing any data. It outperforms OPCM by 4–8% on vision, NLP, and multimodal benchmarks, approaching the upper bound of individual fine-tuning.
+  [ICLR 2026][Model Compression][Model Merging] This paper proposes NUFILT, a framework that exploits the geometric property of approximate alignment between task vectors and representation subspaces. By applying null-spac…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Model Merging
-  - Continual Learning
-  - Null-Space Projection
-  - Stability-Plasticity
-  - Data-Free
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Model Merging"
+  - "Continual Learning"
+  - "Null-Space Projection"
+  - "Stability-Plasticity"
+  - "Data-Free"
 date: 2026-05-08
 content_hash: 97c5d186bc435c5a
 ---

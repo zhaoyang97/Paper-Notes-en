@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MMTU: A Massive Multi-Task Table Understanding and Reasoning Benchmark
 description: >-
-  [NeurIPS 2025][Robotics][table understanding] This paper introduces MMTU, a large-scale benchmark comprising 28,136 questions spanning 25 real-world table tasks, designed to systematically evaluate LLMs on professional-level table understanding, reasoning, and manipulation. Even frontier reasoning models such as GPT-5 achieve only approximately 69.6% on this benchmark.
+  [NeurIPS 2025][Robotics][table understanding] This paper introduces MMTU, a large-scale benchmark comprising 28,136 questions spanning 25 real-world table tasks…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - table understanding
-  - benchmark
-  - LLM evaluation
-  - multi-task reasoning
-  - structured data
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "table understanding"
+  - "benchmark"
+  - "LLM evaluation"
+  - "multi-task reasoning"
+  - "structured data"
 date: 2026-05-08
 content_hash: 1cde311b9fa7198e
 ---

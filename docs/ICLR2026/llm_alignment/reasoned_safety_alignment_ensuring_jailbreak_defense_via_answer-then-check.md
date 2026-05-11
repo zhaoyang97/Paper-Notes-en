@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Reasoned Safety Alignment: Ensuring Jailbreak Defense via Answer-Then-Check
 description: >-
-  [ICLR 2026][LLM Alignment][Jailbreak Defense] This paper proposes an Answer-Then-Check strategy: the model first generates an intended answer summary in its chain-of-thought, then conducts safety analysis against a safety policy, and finally decides whether to output or refuse. After training on the constructed 80K ReSA dataset, the method achieves a 99.3% defense rate against 7 jailbreak attacks (RL variant), with only 500 samples needed to match full-dataset performance.
+  [ICLR 2026][LLM Alignment][Jailbreak Defense] This paper proposes an Answer-Then-Check strategy: the model first generates an intended answer summary in its chain-of-thought…
 tags:
-  - ICLR 2026
-  - LLM Alignment
-  - Jailbreak Defense
-  - Answer-Then-Check
-  - Safety Reasoning
-  - Long Chain-of-Thought
-  - Data-Efficient Alignment
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Jailbreak Defense"
+  - "Answer-Then-Check"
+  - "Safety Reasoning"
+  - "Long Chain-of-Thought"
+  - "Data-Efficient Alignment"
 date: 2026-05-08
 content_hash: 301cae7306fbf6d7
 ---

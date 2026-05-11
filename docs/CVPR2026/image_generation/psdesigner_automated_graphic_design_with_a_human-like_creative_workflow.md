@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PSDesigner: Automated Graphic Design with a Human-Like Creative Workflow
 description: >-
-  [CVPR 2026][Image Generation][Automated graphic design] This paper presents PSDesigner, an automated graphic design system that simulates the creative workflow of human designers. It operates through three collaborative modules — AssetCollector (resource collection), GraphicPlanner (tool-call planning), and ToolExecutor (PSD operation execution) — and is trained on CreativePSD, the first PSD-format design dataset, enabling the system to learn professional design workflows and directly generate editable PSD files.
+  [CVPR 2026][Image Generation][Automated graphic design] This paper presents PSDesigner, an automated graphic design system that simulates the creative workflow of human designers. It operates through three collaborative…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Automated graphic design
-  - PSD file manipulation
-  - tool invocation
-  - reinforcement learning
-  - creative workflow
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Automated graphic design"
+  - "PSD file manipulation"
+  - "tool invocation"
+  - "reinforcement learning"
+  - "creative workflow"
 date: 2026-05-08
 content_hash: f235a8e30ff15d6f
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] StegaVAR: Privacy-Preserving Video Action Recognition via Steganographic Domain Analysis
 description: >-
-  [AAAI2026][Video Understanding][privacy-preserving] This paper proposes StegaVAR, the first framework to integrate video steganography with action recognition. Privacy-sensitive videos are embedded into natural cover videos, and classification is performed directly in the steganographic domain. Through STeP (secret video-guided spatiotemporal feature learning) and CroDA (cross-band difference attention), the framework achieves recognition accuracy approaching that of raw video while providing stronger privacy protection than anonymization-based methods.
+  [AAAI2026][Video Understanding][privacy-preserving] This paper proposes StegaVAR, the first framework to integrate video steganography with action recognition. Privacy-sensitive videos are embedded into natural cover vid…
 tags:
-  - AAAI2026
-  - Video Understanding
-  - privacy-preserving
-  - video action recognition
-  - steganography
-  - wavelet transform
-  - cross-band attention
+  - "AAAI2026"
+  - "Video Understanding"
+  - "privacy-preserving"
+  - "video action recognition"
+  - "steganography"
+  - "wavelet transform"
+  - "cross-band attention"
 date: 2026-05-08
 content_hash: 60cf1ac73a320e3c
 ---

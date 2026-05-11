@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Adaptive Discretization for Consistency Models
 description: >-
-  [NeurIPS 2025][Image Restoration][Consistency Model] This paper proposes ADCM, which formalizes the discretization step size of consistency models as a constrained optimization problem balancing local consistency (trainability) and global consistency (stability), derives a closed-form solution via the Gauss-Newton method, and achieves adaptive discretization that surpasses all prior CMs on CIFAR-10 using less than 25% of the training budget.
+  [NeurIPS 2025][Image Restoration][Consistency Model] This paper proposes ADCM, which formalizes the discretization step size of consistency models as a constrained optimization problem balancing local consistency (traina…
 tags:
-  - NeurIPS 2025
-  - Image Restoration
-  - Consistency Model
-  - Adaptive Discretization
-  - Training Efficiency
-  - Single-Step Generation
-  - Lagrange Multiplier Method
+  - "NeurIPS 2025"
+  - "Image Restoration"
+  - "Consistency Model"
+  - "Adaptive Discretization"
+  - "Training Efficiency"
+  - "Single-Step Generation"
+  - "Lagrange Multiplier Method"
 date: 2026-05-08
 content_hash: e0f1679799461ada
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Composition and Alignment of Diffusion Models using Constrained Learning
 description: >-
-  [NeurIPS 2025][Image Generation][Diffusion Models] This paper proposes a unified constrained optimization framework that formalizes reward alignment and multi-model composition of diffusion models as constrained optimization problems. By applying Lagrangian duality, the framework automatically determines optimal weights, eliminating the need for manual hyperparameter search.
+  [NeurIPS 2025][Image Generation][Diffusion Models] This paper proposes a unified constrained optimization framework that formalizes reward alignment and multi-model composition of diffusion models as constrained optimiza…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Diffusion Models
-  - Constrained Optimization
-  - Model Alignment
-  - Model Composition
-  - Lagrangian Duality
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "Constrained Optimization"
+  - "Model Alignment"
+  - "Model Composition"
+  - "Lagrangian Duality"
 date: 2026-05-08
 content_hash: be063061a307f1ea
 ---

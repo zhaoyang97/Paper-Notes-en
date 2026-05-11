@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Text-to-Code Generation for Modular Building Layouts in Building Information Modeling
 description: >-
-  [NeurIPS 2025][Text-to-Code] This paper proposes Text2MBL, a framework that translates natural language descriptions into executable BIM code (rather than coordinate sequences). Through an object-oriented code architecture and LLM fine-tuning, it enables automatic generation of modular building layouts, achieving 10%+ IoU improvement in geometric consistency over coordinate-driven methods.
+  [NeurIPS 2025][Code Intelligence][Text-to-Code] This paper proposes Text2MBL, a framework that translates natural language descriptions into executable BIM code (rather than coordinate sequences). Through an object-orien…
 tags:
-  - NeurIPS 2025
-  - Text-to-Code
-  - BIM
-  - Modular Building Layout
-  - Code Generation
-  - LLM Fine-tuning
+  - "NeurIPS 2025"
+  - "Code Intelligence"
+  - "Text-to-Code"
+  - "BIM"
+  - "Modular Building Layout"
+  - "Code Generation"
+  - "LLM Fine-tuning"
 date: 2026-05-08
 content_hash: d27a2caf4ba96821
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Intrinsic-Aware Monocular 3D Object Detection
 description: >-
-  [CVPR 2026][Object Detection][Monocular 3D Detection] MonoIA proposes converting numerical camera intrinsics into language-guided semantic representations (via LLM-generated intrinsic descriptions encoded by CLIP), and injects them into the detection network through a hierarchical adaptation module. This enables zero-shot generalization to unseen focal lengths and unified cross-dataset training, achieving new state-of-the-art results on KITTI, Waymo, and nuScenes.
+  [CVPR 2026][Object Detection][Monocular 3D Detection] MonoIA proposes converting numerical camera intrinsics into language-guided semantic representations (via LLM-generated intrinsic descriptions encoded by CLIP)…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - Monocular 3D Detection
-  - Camera Intrinsics
-  - Language-Guided Representation
-  - Cross-Dataset Training
-  - Focal Length Generalization
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Monocular 3D Detection"
+  - "Camera Intrinsics"
+  - "Language-Guided Representation"
+  - "Cross-Dataset Training"
+  - "Focal Length Generalization"
 date: 2026-05-08
 content_hash: 63d269e81d980ece
 ---

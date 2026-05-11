@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OpenVision: A Fully-Open, Cost-Effective Family of Advanced Vision Encoders for Multimodal Learning
 description: >-
-  [ICCV 2025][Multimodal VLM][CLIP] This paper introduces OpenVision — a fully open-source (data, training code, and weights) family of vision encoders (5.9M–632.1M parameters) trained on the CLIPS framework with the Recap-DataComp-1B dataset. When integrated into multimodal frameworks such as LLaVA, OpenVision matches or surpasses OpenAI CLIP and Google SigLIP, providing the community with a transparent and flexible alternative visual backbone.
+  [ICCV 2025][Multimodal VLM][CLIP] This paper introduces OpenVision — a fully open-source (data, training code, and weights) family of vision encoders (5.9M–632.1M parameters) trained on the CLIPS framework with the Recap…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - CLIP
-  - Vision Encoder
-  - Open Source
-  - Multimodal Learning
-  - LLaVA
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "CLIP"
+  - "Vision Encoder"
+  - "Open Source"
+  - "Multimodal Learning"
+  - "LLaVA"
 date: 2026-05-08
 content_hash: 60fba58a24f7a158
 ---

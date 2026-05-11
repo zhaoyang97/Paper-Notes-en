@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Improved Regret Bounds for GP-UCB in Bayesian Optimization
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Bayesian optimization] This paper proves that GP-UCB achieves $\widetilde{O}(\sqrt{T})$ high-probability regret under the Bayesian setting (when the Matérn kernel satisfies a smoothness condition) and $O(\sqrt{T \ln^2 T})$ for the SE kernel, closing the gap between existing upper bounds for GP-UCB and the optimal upper bounds.
+  [NeurIPS 2025][Reinforcement Learning][Bayesian optimization] This paper proves that GP-UCB achieves $\widetilde{O}(\sqrt{T})$ high-probability regret under the Bayesian setting (when the Matérn kernel satisfies a smooth…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Bayesian optimization
-  - GP-UCB
-  - regret bound
-  - information gain
-  - Gaussian process
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Bayesian optimization"
+  - "GP-UCB"
+  - "regret bound"
+  - "information gain"
+  - "Gaussian process"
 date: 2026-05-08
 content_hash: c5ca965b4b51f52c
 ---

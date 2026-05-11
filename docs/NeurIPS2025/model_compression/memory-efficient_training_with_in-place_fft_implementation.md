@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Memory-Efficient Training with In-Place FFT Implementation
 description: >-
-  [NeurIPS 2025][Model Compression][FFT] This paper proposes rdFFT—the first truly in-place real-domain Fast Fourier Transform framework—which eliminates intermediate buffers via an implicit complex encoding scheme, achieving zero extra memory overhead for FFT/IFFT computation during training, with memory efficiency improvements exceeding 1500× in extreme cases.
+  [NeurIPS 2025][Model Compression][FFT] This paper proposes rdFFT—the first truly in-place real-domain Fast Fourier Transform framework—which eliminates intermediate buffers via an implicit complex encoding scheme…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - FFT
-  - in-place computation
-  - memory optimization
-  - circulant matrix
-  - parameter-efficient fine-tuning
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "FFT"
+  - "in-place computation"
+  - "memory optimization"
+  - "circulant matrix"
+  - "parameter-efficient fine-tuning"
 date: 2026-05-08
 content_hash: 97ee61de690ca280
 ---

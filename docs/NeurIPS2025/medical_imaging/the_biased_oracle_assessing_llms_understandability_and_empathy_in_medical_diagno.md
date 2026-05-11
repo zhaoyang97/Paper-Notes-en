@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The Biased Oracle: Assessing LLMs' Understandability and Empathy in Medical Diagnoses
 description: >-
-  [NeurIPS 2025][Medical Imaging][Medical Communication] This work systematically evaluates GPT-4o and Claude-3.7 on readability and empathy in medical diagnostic communication. Both models produce reading levels well above recommended standards (grades 9–13 vs. the recommended grades 6–8). Affective empathy varies significantly with diagnosis type and patient education level, and LLM-as-Judge exhibits severe self-serving bias (GPT inflates its own empathy scores by ~0.3 points).
+  [NeurIPS 2025][Medical Imaging][Medical Communication] This work systematically evaluates GPT-4o and Claude-3.7 on readability and empathy in medical diagnostic communication. Both models produce reading levels well abov…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Medical Communication
-  - Readability
-  - Empathy Assessment
-  - Demographic Bias
-  - LLM-as-Judge
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Medical Communication"
+  - "Readability"
+  - "Empathy Assessment"
+  - "Demographic Bias"
+  - "LLM-as-Judge"
 date: 2026-05-08
 content_hash: 5cf6504fcf9e7eda
 ---

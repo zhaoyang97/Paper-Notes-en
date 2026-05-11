@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DcMatch: Unsupervised Multi-Shape Matching with Dual-Level Consistency
 description: >-
-  [AAAI 2026][LLM Evaluation][multi-shape matching] This paper proposes DcMatch, an unsupervised multi-shape matching framework that employs a shape graph attention network to capture the underlying manifold structure of a shape collection for constructing a more expressive shared universe space, while enforcing dual-level cycle consistency constraints in both the spatial and spectral domains, achieving comprehensive state-of-the-art performance across multiple benchmark datasets.
+  [AAAI 2026][LLM Evaluation][multi-shape matching] This paper proposes DcMatch, an unsupervised multi-shape matching framework that employs a shape graph attention network to capture the underlying manifold structure of a…
 tags:
-  - AAAI 2026
-  - LLM Evaluation
-  - multi-shape matching
-  - functional maps
-  - cycle consistency
-  - graph attention network
-  - unsupervised learning
+  - "AAAI 2026"
+  - "LLM Evaluation"
+  - "multi-shape matching"
+  - "functional maps"
+  - "cycle consistency"
+  - "graph attention network"
+  - "unsupervised learning"
 date: 2026-05-08
 content_hash: f91ee06f666916d6
 ---

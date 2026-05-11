@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] On Token's Dilemma: Dynamic MoE with Drift-Aware Token Assignment for Continual Learning of Large Vision Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Continual Learning] This paper identifies the "token's dilemma" in dynamic MoE continual learning — ambiguous and old tokens in new-task data contribute minimally to new knowledge acquisition yet cause routing drift and catastrophic forgetting. The proposed LLaVA-DyMoE mitigates routing drift via Token Assignment Guidance and Routing Score Regularization, achieving over 7% MFN improvement and 12% forgetting reduction on the CoIN benchmark.
+  [CVPR 2026][Multimodal VLM][Continual Learning] This paper identifies the "token's dilemma" in dynamic MoE continual learning — ambiguous and old tokens in new-task data contribute minimally to new knowledge acquisition…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Continual Learning
-  - Mixture of Experts
-  - Routing Drift
-  - Large Vision-Language Models
-  - Token Assignment
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Continual Learning"
+  - "Mixture of Experts"
+  - "Routing Drift"
+  - "Large Vision-Language Models"
+  - "Token Assignment"
 date: 2026-05-08
 content_hash: b30c749b17cad5b8
 ---

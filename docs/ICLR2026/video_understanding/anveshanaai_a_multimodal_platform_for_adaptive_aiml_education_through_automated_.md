@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AnveshanaAI: A Multimodal Platform for Adaptive AI/ML Education through Automated Question Generation and Interactive Assessment
 description: >-
-  [ICLR 2026][Video Understanding][AI education] This paper presents AnveshanaAI, an adaptive AI/ML education platform grounded in Bloom's cognitive taxonomy. The system employs fine-tuned GPT-2 for automated question generation, semantic similarity-based deduplication, explainable AI (XAI) techniques for transparency, and gamification mechanisms (points/badges/leaderboards) to deliver a personalized learning assessment system spanning seven domains from data science to multimodal AI. Experiments demonstrate a significant reduction in perplexity after fine-tuning and a notable improvement in learner engagement.
+  [ICLR 2026][Video Understanding][AI education] This paper presents AnveshanaAI, an adaptive AI/ML education platform grounded in Bloom's cognitive taxonomy. The system employs fine-tuned GPT-2 for automated question gene…
 tags:
-  - ICLR 2026
-  - Video Understanding
-  - AI education
-  - question generation
-  - Bloom's taxonomy
-  - gamification
-  - explainable AI
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "AI education"
+  - "question generation"
+  - "Bloom's taxonomy"
+  - "gamification"
+  - "explainable AI"
 date: 2026-05-08
 content_hash: eaa23b54ee34422d
 ---

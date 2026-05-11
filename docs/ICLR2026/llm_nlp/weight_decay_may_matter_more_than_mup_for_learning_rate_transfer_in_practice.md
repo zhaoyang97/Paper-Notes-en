@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Weight Decay may matter more than μP for Learning Rate Transfer in Practice
 description: >-
-  [ICLR 2026][LLM/NLP][μP] Through large-scale empirical analysis, this paper demonstrates that the core alignment assumption of μP holds only briefly at the start of training. In practice, it is independent weight decay rather than μP that correctly stabilizes feature learning dynamics across widths, and the practical benefits of μP can be reinterpreted as a form of implicit learning rate warmup.
+  [ICLR 2026][LLM/NLP][μP] Through large-scale empirical analysis, this paper demonstrates that the core alignment assumption of μP holds only briefly at the start of training. In practice…
 tags:
-  - ICLR 2026
-  - LLM/NLP
-  - μP
-  - learning rate transfer
-  - weight decay
-  - AdamW
-  - feature learning
+  - "ICLR 2026"
+  - "LLM/NLP"
+  - "μP"
+  - "learning rate transfer"
+  - "weight decay"
+  - "AdamW"
+  - "feature learning"
 date: 2026-05-08
 content_hash: a57f44e92c6db695
 ---

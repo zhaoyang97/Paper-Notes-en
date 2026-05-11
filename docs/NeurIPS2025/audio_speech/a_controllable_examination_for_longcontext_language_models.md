@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Controllable Examination for Long-Context Language Models
 description: >-
-  [NeurIPS 2025][Audio & Speech][long-context evaluation] This paper proposes LongBioBench, which uses synthetically generated fictional biographies as both needles and haystacks to construct a long-context LLM evaluation framework satisfying three core principles: seamless context, controllable settings, and reliable evaluation. Evaluating 18 models, the benchmark reveals that current LCLMs exhibit substantial deficiencies in reasoning and trustworthiness despite adequate retrieval performance.
+  [NeurIPS 2025][Audio & Speech][long-context evaluation] This paper proposes LongBioBench, which uses synthetically generated fictional biographies as both needles and haystacks to construct a long-context LLM evaluation…
 tags:
-  - NeurIPS 2025
+  - "NeurIPS 2025"
   - "Audio & Speech"
-  - long-context evaluation
-  - LongBioBench
-  - synthetic benchmark
-  - controllable experiments
-  - biography generation
+  - "long-context evaluation"
+  - "LongBioBench"
+  - "synthetic benchmark"
+  - "controllable experiments"
+  - "biography generation"
 date: 2026-05-08
 content_hash: 41eb7335989a3ef3
 ---

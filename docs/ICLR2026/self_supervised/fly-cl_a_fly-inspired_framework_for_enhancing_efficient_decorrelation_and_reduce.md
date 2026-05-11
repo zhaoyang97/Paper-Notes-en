@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Fly-CL: A Fly-Inspired Framework for Enhancing Efficient Decorrelation and Reduced Training Time in Pre-trained Model-based Continual Representation Learning
 description: >-
-  [ICLR 2026][Self-Supervised Learning][continual learning] Inspired by the Drosophila olfactory circuit, Fly-CL is proposed as a framework that achieves progressive decorrelation through three stages — sparse random projection, top-$k$ activation, and streaming ridge classification — significantly reducing training time while attaining state-of-the-art performance in pre-trained model-based continual learning.
+  [ICLR 2026][Self-Supervised Learning][continual learning] Inspired by the Drosophila olfactory circuit, Fly-CL is proposed as a framework that achieves progressive decorrelation through three stages — sparse random proje…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
-  - continual learning
-  - fly olfactory circuit
-  - decorrelation
-  - representation learning
-  - prototype
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "continual learning"
+  - "fly olfactory circuit"
+  - "decorrelation"
+  - "representation learning"
+  - "prototype"
 date: 2026-05-08
 content_hash: 7b1fe955076ac7ff
 ---

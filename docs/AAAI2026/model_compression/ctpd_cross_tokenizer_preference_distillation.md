@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CTPD: Cross Tokenizer Preference Distillation
 description: >-
-  [AAAI 2026][Model Compression][Knowledge Distillation] This paper proposes Cross-Tokenizer Preference Distillation (CTPD), the first unified framework supporting preference distillation across heterogeneous tokenizers. Through three key innovations—Aligned Span Projection, cross-tokenizer importance weighting, and Teacher-Anchored Reference—CTPD achieves substantial improvements over existing methods on multiple benchmarks.
+  [AAAI 2026][Model Compression][Knowledge Distillation] This paper proposes Cross-Tokenizer Preference Distillation (CTPD), the first unified framework supporting preference distillation across heterogeneous tokenizers. T…
 tags:
-  - AAAI 2026
-  - Model Compression
-  - Knowledge Distillation
-  - Preference Alignment
-  - Cross-Tokenizer
-  - DPO
-  - Language Models
+  - "AAAI 2026"
+  - "Model Compression"
+  - "Knowledge Distillation"
+  - "Preference Alignment"
+  - "Cross-Tokenizer"
+  - "DPO"
+  - "Language Models"
 date: 2026-05-08
 content_hash: 6612c31b49dfe4a7
 ---

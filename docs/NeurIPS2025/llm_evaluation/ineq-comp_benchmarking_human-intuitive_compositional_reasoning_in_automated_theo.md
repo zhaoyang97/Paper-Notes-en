@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Ineq-Comp: Benchmarking Human-Intuitive Compositional Reasoning in Automated Theorem Proving on Inequalities
 description: >-
-  [NeurIPS 2025][LLM Evaluation][automated theorem proving] This paper introduces the Ineq-Comp benchmark, which applies compositionally transformed variants of simple inequality seed problems—variants that humans can resolve with minimal additional effort—to expose fundamental deficiencies in the compositional reasoning of current LLM-based formal theorem provers. Even DeepSeek-Prover-V2-7B suffers a performance drop exceeding 20%.
+  [NeurIPS 2025][LLM Evaluation][automated theorem proving] This paper introduces the Ineq-Comp benchmark, which applies compositionally transformed variants of simple inequality seed problems—variants that humans can reso…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - automated theorem proving
-  - compositional reasoning
-  - formal verification
-  - Lean 4
-  - mathematical inequalities
-  - benchmark
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "automated theorem proving"
+  - "compositional reasoning"
+  - "formal verification"
+  - "Lean 4"
+  - "mathematical inequalities"
+  - "benchmark"
 date: 2026-05-08
 content_hash: 8808a6030a0303ab
 ---

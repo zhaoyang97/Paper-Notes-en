@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Structured Temporal Causality for Interpretable Multivariate Time Series Anomaly Detection
 description: >-
-  [NeurIPS 2025][Time Series][Multivariate time series] This paper proposes OracleAD, a framework that learns causal embeddings for each variable (via LSTM encoding and attention pooling) and constructs a Stable Latent Structure (SLS) to model inter-variable relationships under normal conditions. A dual scoring mechanism combining prediction error and SLS deviation enables interpretable multivariate time series anomaly detection and root cause localization.
+  [NeurIPS 2025][Time Series][Multivariate time series] This paper proposes OracleAD, a framework that learns causal embeddings for each variable (via LSTM encoding and attention pooling) and constructs a Stable Latent Str…
 tags:
-  - NeurIPS 2025
-  - Time Series
-  - Multivariate time series
-  - anomaly detection
-  - temporal causal modeling
-  - stable latent structure
-  - interpretability
-  - LSTM
-  - self-attention
+  - "NeurIPS 2025"
+  - "Time Series"
+  - "Multivariate time series"
+  - "anomaly detection"
+  - "temporal causal modeling"
+  - "stable latent structure"
+  - "interpretability"
+  - "LSTM"
+  - "self-attention"
 date: 2026-05-08
 content_hash: a157d04ce306ad66
 ---

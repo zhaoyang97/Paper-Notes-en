@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Studying Classifier(-Free) Guidance From A Classifier-Centric Perspective
 description: >-
-  [AAAI 2026][Image Generation][classifier guidance] Through systematic empirical study, this paper reveals the essential mechanism underlying both classifier guidance and classifier-free guidance — both steer denoising trajectories away from the classifier's decision boundary to achieve conditional generation — and proposes a flow matching-based post-processing method that validates this "classifier-centric" perspective on high-dimensional data.
+  [AAAI 2026][Image Generation][classifier guidance] Through systematic empirical study, this paper reveals the essential mechanism underlying both classifier guidance and classifier-free guidance — both steer denoising tr…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - classifier guidance
-  - classifier-free guidance
-  - decision boundary
-  - flow matching post-processing
-  - theoretical analysis of diffusion models
+  - "AAAI 2026"
+  - "Image Generation"
+  - "classifier guidance"
+  - "classifier-free guidance"
+  - "decision boundary"
+  - "flow matching post-processing"
+  - "theoretical analysis of diffusion models"
 date: 2026-05-08
 content_hash: 58d3ce60dbef75c8
 ---

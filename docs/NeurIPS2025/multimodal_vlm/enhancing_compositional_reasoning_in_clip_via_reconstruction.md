@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] READ: Enhancing Compositional Reasoning in CLIP via Reconstruction and Alignment of Text Descriptions
 description: >-
-  [NeurIPS 2025][Multimodal VLM][CLIP] This paper proposes READ, a fine-tuning method that enhances the compositional reasoning capability of CLIP's text encoder via two auxiliary objectives: (1) token-level reconstruction, where a frozen decoder reconstructs alternative descriptions from text embeddings, and (2) sentence-level alignment, which enforces consistency among embeddings of paraphrases. READ achieves state-of-the-art performance on 5 compositional reasoning benchmarks, outperforming NegCLIP by 4.5% and FSC-CLIP by 4.1%.
+  [NeurIPS 2025][Multimodal VLM][CLIP] This paper proposes READ, a fine-tuning method that enhances the compositional reasoning capability of CLIP's text encoder via two auxiliary objectives: (1) token-level reconstruction…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - CLIP
-  - compositional reasoning
-  - text reconstruction
-  - paraphrase alignment
-  - contrastive learning
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "CLIP"
+  - "compositional reasoning"
+  - "text reconstruction"
+  - "paraphrase alignment"
+  - "contrastive learning"
 date: 2026-05-08
 content_hash: 68b7c5f2736f6b31
 ---

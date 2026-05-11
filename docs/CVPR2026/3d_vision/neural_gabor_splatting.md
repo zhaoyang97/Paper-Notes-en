@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Neural Gabor Splatting: Enhanced Gaussian Splatting with Neural Gabor for High-frequency Surface Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][Gaussian Splatting] Neural Gabor Splatting embeds a lightweight MLP (SIREN architecture) into each Gaussian primitive, enabling a single primitive to represent complex spatially-varying color patterns. Combined with a frequency-aware densification strategy, this approach significantly improves high-frequency surface reconstruction quality under the same data budget.
+  [CVPR 2026][3D Vision][Gaussian Splatting] Neural Gabor Splatting embeds a lightweight MLP (SIREN architecture) into each Gaussian primitive…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Gaussian Splatting
-  - High-frequency Surface Reconstruction
-  - Neural Texture
-  - MLP Primitive
-  - Frequency-aware Densification
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Gaussian Splatting"
+  - "High-frequency Surface Reconstruction"
+  - "Neural Texture"
+  - "MLP Primitive"
+  - "Frequency-aware Densification"
 date: 2026-05-08
 content_hash: 76fcf8952bf3cc27
 ---

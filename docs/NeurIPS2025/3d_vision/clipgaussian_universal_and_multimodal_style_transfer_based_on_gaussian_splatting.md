@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CLIPGaussian: Universal and Multimodal Style Transfer Based on Gaussian Splatting
 description: >-
-  [NeurIPS 2025][3D Vision][Gaussian Splatting] CLIPGaussian proposes the first unified style transfer framework based on Gaussian Splatting, supporting text- and image-guided stylization of 2D images, videos, 3D objects, and 4D dynamic scenes. It integrates as a plug-and-play module into existing GS pipelines without requiring large generative models or retraining from scratch, and without altering model size.
+  [NeurIPS 2025][3D Vision][Gaussian Splatting] CLIPGaussian proposes the first unified style transfer framework based on Gaussian Splatting, supporting text- and image-guided stylization of 2D images, videos, 3D objects…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Gaussian Splatting
-  - style transfer
-  - CLIP
-  - multi-modal
-  - 3D/4D
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Gaussian Splatting"
+  - "style transfer"
+  - "CLIP"
+  - "multi-modal"
+  - "3D/4D"
 date: 2026-05-08
 content_hash: 341689bd2a6a5cf8
 ---

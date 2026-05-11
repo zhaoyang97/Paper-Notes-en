@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FedDAP: Domain-Aware Prototype Learning for Federated Learning under Domain Shift
 description: >-
-  [CVPR 2026][AI Safety][Federated Learning] This paper proposes FedDAP, a domain-aware prototype federated learning framework that addresses global model performance degradation caused by client-side domain shift in federated learning. FedDAP constructs domain-specific global prototypes and employs a dual prototype alignment strategy comprising intra-domain alignment and cross-domain contrastive learning.
+  [CVPR 2026][AI Safety][Federated Learning] This paper proposes FedDAP, a domain-aware prototype federated learning framework that addresses global model performance degradation caused by client-side domain shift in feder…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Federated Learning
-  - Domain Shift
-  - Prototype Learning
-  - Contrastive Learning
-  - Domain-Aware
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Federated Learning"
+  - "Domain Shift"
+  - "Prototype Learning"
+  - "Contrastive Learning"
+  - "Domain-Aware"
 date: 2026-05-08
 content_hash: 03e5b542694bab20
 ---

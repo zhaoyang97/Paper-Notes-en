@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SceneScribe-1M: A Large-Scale Video Dataset with Comprehensive Geometric and Semantic Annotations
 description: >-
-  [CVPR 2026][3D Vision][Video Dataset] This paper presents SceneScribe-1M — a large-scale multimodal video dataset comprising one million in-the-wild videos spanning over 4,000 hours, with comprehensive annotations including structured text descriptions, accurate camera parameters, temporally consistent depth maps, and 3D point trajectories. The dataset serves as a unified resource for 3D geometric perception and video generation tasks.
+  [CVPR 2026][3D Vision][Video Dataset] This paper presents SceneScribe-1M — a large-scale multimodal video dataset comprising one million in-the-wild videos spanning over 4,000 hours…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Video Dataset
-  - Geometric Annotation
-  - Semantic Annotation
-  - World Foundation Model
-  - Depth Estimation
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Video Dataset"
+  - "Geometric Annotation"
+  - "Semantic Annotation"
+  - "World Foundation Model"
+  - "Depth Estimation"
 date: 2026-05-08
 content_hash: b77e65e2ef48b796
 ---

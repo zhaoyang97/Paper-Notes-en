@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Vision-Zero: Scalable VLM Self-Improvement via Strategic Gamified Self-Play
 description: >-
-  [Multimodal VLM] This paper proposes Vision-Zero, the first annotation-free gamified self-play framework for VLMs. By casting visual reasoning as a "Who is the Spy?"-style game and combining it with the Iterative-SPO training algorithm, Vision-Zero achieves scalable self-improvement and surpasses SOTA methods trained on human-annotated data across reasoning, chart understanding, and vision-centric tasks.
+  [Multimodal VLM] This paper proposes Vision-Zero, the first annotation-free gamified self-play framework for VLMs. By casting visual reasoning as a "Who is the Spy?"-style game and combining it with the Iterative-SPO tra…
 tags:
-  - Multimodal VLM
+  - "Multimodal VLM"
 date: 2026-05-08
 content_hash: 10e21f7932f4c4a3
 ---

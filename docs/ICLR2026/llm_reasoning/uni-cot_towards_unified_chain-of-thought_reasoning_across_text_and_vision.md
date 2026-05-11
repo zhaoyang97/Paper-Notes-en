@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Uni-CoT: Towards Unified Chain-of-Thought Reasoning Across Text and Vision
 description: >-
-  [ICLR2026][LLM Reasoning][Multimodal chain-of-thought] This paper proposes Uni-CoT, a hierarchical macro-micro reasoning framework that decomposes multimodal CoT into macro-level task planning (decomposing complex tasks into sub-goals) and micro-level sub-task execution (MDP-style self-reflective iterative refinement). Through an attention mask design, the complexity is reduced from $O(T^2)$ to $O(T)$. The method surpasses the BAGEL baseline by +0.02 on GenEval, achieving unified reasoning over interleaved text and images.
+  [ICLR2026][LLM Reasoning][Multimodal chain-of-thought] This paper proposes Uni-CoT, a hierarchical macro-micro reasoning framework that decomposes multimodal CoT into macro-level task planning (decomposing complex tasks…
 tags:
-  - ICLR2026
-  - LLM Reasoning
-  - Multimodal chain-of-thought
-  - interleaved text-image reasoning
-  - macro-micro hierarchy
-  - MDP self-reflection
-  - unified generation
+  - "ICLR2026"
+  - "LLM Reasoning"
+  - "Multimodal chain-of-thought"
+  - "interleaved text-image reasoning"
+  - "macro-micro hierarchy"
+  - "MDP self-reflection"
+  - "unified generation"
 date: 2026-05-08
 content_hash: 614b5716ae75c9ea
 ---

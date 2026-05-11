@@ -2,18 +2,18 @@
 title: >-
   [Paper Note] Hard to Be Heard: Phoneme-Level ASR Analysis of Phonologically Complex, Low-Resource Endangered Languages
 description: >-
-  [ACL 2026][Audio & Speech][ASR] This paper presents a phoneme-level ASR analysis of two extremely phonologically complex, low-resource endangered East Caucasian languages (Archi and Rutul), finding that phoneme recognition accuracy follows an S-shaped learning curve with respect to training frequency, and that many errors attributed to phonological complexity are in fact primarily caused by data scarcity.
+  [ACL 2026][Audio & Speech][ASR] This paper presents a phoneme-level ASR analysis of two extremely phonologically complex, low-resource endangered East Caucasian languages (Archi and Rutul)…
 tags:
-  - ACL 2026
+  - "ACL 2026"
   - "Audio & Speech"
-  - ASR
-  - low-resource
-  - endangered languages
-  - phoneme-level analysis
-  - East Caucasian
-  - wav2vec2
-  - Whisper
-  - frequency effect
+  - "ASR"
+  - "low-resource"
+  - "endangered languages"
+  - "phoneme-level analysis"
+  - "East Caucasian"
+  - "wav2vec2"
+  - "Whisper"
+  - "frequency effect"
 date: 2026-05-08
 content_hash: 95265276804fad63
 ---

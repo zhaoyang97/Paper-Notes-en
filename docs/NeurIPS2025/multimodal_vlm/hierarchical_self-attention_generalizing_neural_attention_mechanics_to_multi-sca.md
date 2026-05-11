@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Hierarchical Self-Attention: Generalizing Neural Attention Mechanics to Multi-Scale Problems
 description: >-
-  [NeurIPS 2025][Multimodal VLM][hierarchical attention] This paper derives a Hierarchical Self-Attention (HSA) mechanism from the first principle of entropy minimization, providing a theoretically optimal attention computation method for nested signals (multimodal and multi-scale data). It further proves that HSA is the KL-divergence-optimal solution closest to standard Softmax attention under hierarchical block constraints.
+  [NeurIPS 2025][Multimodal VLM][hierarchical attention] This paper derives a Hierarchical Self-Attention (HSA) mechanism from the first principle of entropy minimization…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - hierarchical attention
-  - nested signals
-  - multimodal Transformer
-  - information entropy minimization
-  - dynamic programming
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "hierarchical attention"
+  - "nested signals"
+  - "multimodal Transformer"
+  - "information entropy minimization"
+  - "dynamic programming"
 date: 2026-05-08
 content_hash: 6a870b6be7265ad3
 ---

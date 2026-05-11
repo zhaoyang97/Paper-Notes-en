@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SimuHome: A Temporal- and Environment-Aware Benchmark for Smart Home Agents
 description: >-
-  [ICLR 2026][LLM Evaluation][smart_home] SimuHome is a high-fidelity smart home simulator built on the Matter protocol and a 600-episode evaluation benchmark supporting dynamic environmental variable updates and time-accelerated scheduling evaluation, revealing that workflow scheduling remains the most persistent challenge for current LLM agents.
+  [ICLR 2026][LLM Evaluation][smart_home] SimuHome is a high-fidelity smart home simulator built on the Matter protocol and a 600-episode evaluation benchmark supporting dynamic environmental variable updates and time-acce…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - smart_home
-  - LLM_agent
-  - benchmark
-  - temporal_reasoning
-  - workflow_scheduling
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "smart_home"
+  - "LLM_agent"
+  - "benchmark"
+  - "temporal_reasoning"
+  - "workflow_scheduling"
 date: 2026-05-08
 content_hash: 566c4e4d7a4abf50
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Social Debiasing for Fair Multi-modal LLMs
 description: >-
-  [ICCV 2025][Causal Inference][Social bias] This paper constructs CMSC, a large-scale counterfactual dataset spanning 18 social concepts, and proposes the Anti-Stereotype Debiasing (ASD) strategy—comprising bias-aware data resampling and a Social Fairness Loss—that effectively reduces social bias across four MLLM architectures with negligible degradation of general multimodal capability.
+  [ICCV 2025][Causal Inference][Social bias] This paper constructs CMSC, a large-scale counterfactual dataset spanning 18 social concepts…
 tags:
-  - ICCV 2025
-  - Causal Inference
-  - Social bias
-  - multimodal large language models
-  - anti-stereotyping
-  - fairness
-  - data debiasing
+  - "ICCV 2025"
+  - "Causal Inference"
+  - "Social bias"
+  - "multimodal large language models"
+  - "anti-stereotyping"
+  - "fairness"
+  - "data debiasing"
 date: 2026-05-08
 content_hash: 7ba827bceabdf959
 ---

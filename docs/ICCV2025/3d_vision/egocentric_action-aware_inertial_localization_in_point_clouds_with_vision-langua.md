@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Egocentric Action-aware Inertial Localization in Point Clouds with Vision-Language Guidance
 description: >-
-  [3D Vision] The EAIL framework leverages egocentric action cues embedded in head-mounted IMU signals and employs hierarchical multimodal alignment (vision-language guidance) to learn associations between actions and environmental structures, enabling accurate inertial localization in 3D point clouds while simultaneously supporting action recognition.
+  [3D Vision] The EAIL framework leverages egocentric action cues embedded in head-mounted IMU signals and employs hierarchical multimodal alignment (vision-language guidance) to learn associations between actions and envi…
 tags:
-  - 3D Vision
+  - "3D Vision"
 date: 2026-05-08
 content_hash: 8f2ef76b92bc3ddd
 ---

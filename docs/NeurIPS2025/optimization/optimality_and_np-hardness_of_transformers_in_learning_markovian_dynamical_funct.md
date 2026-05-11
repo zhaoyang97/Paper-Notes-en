@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Optimality and NP-Hardness of Transformers in Learning Markovian Dynamical Functions
 description: >-
-  [NeurIPS 2025][Optimization][In-context learning] This paper analyzes the ICL capability of Transformers for learning Markovian dynamical functions from an optimization-theoretic perspective. It derives the global optimal solution (in closed form) for single-layer linear self-attention, proves that recovering Transformer parameters from an extended parameter space is NP-hard, and reveals that multi-layer LSA is equivalent to preconditioned multi-objective optimization.
+  [NeurIPS 2025][Optimization][In-context learning] This paper analyzes the ICL capability of Transformers for learning Markovian dynamical functions from an optimization-theoretic perspective. It derives the global optima…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - In-context learning
-  - Markov chains
-  - linear self-attention
-  - NP-hard
-  - multi-objective optimization
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "In-context learning"
+  - "Markov chains"
+  - "linear self-attention"
+  - "NP-hard"
+  - "multi-objective optimization"
 date: 2026-05-08
 content_hash: 93e095aad1f25951
 ---

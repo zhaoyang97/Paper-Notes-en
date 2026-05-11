@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Condition Matters in Full-head 3D GANs
 description: >-
-  [ICLR2026][3D-aware GAN] This paper identifies that view conditioning in full-head 3D GANs introduces severe directional bias—generation quality is substantially higher at the conditioned viewpoint than at others. To address this, the authors propose replacing view conditioning with view-invariant semantic features (frontal CLIP features) and introduce BalanceHead360, a synthetic dataset of 11.2 million 360° full-head images generated via Flux.1 Kontext, achieving for the first time high-fidelity, diverse full-head generation with consistent quality across all viewpoints.
+  [ICLR2026][3D-aware GAN] This paper identifies that view conditioning in full-head 3D GANs introduces severe directional bias—generation quality is substantially higher at the conditioned viewpoint than at others. To add…
 tags:
-  - ICLR2026
-  - 3D-aware GAN
-  - full-head generation
-  - semantic conditioning
-  - view conditioning
-  - synthetic data
+  - "ICLR2026"
+  - "3D-aware GAN"
+  - "full-head generation"
+  - "semantic conditioning"
+  - "view conditioning"
+  - "synthetic data"
 date: 2026-05-08
 content_hash: 98ba8bd36e079aff
 ---

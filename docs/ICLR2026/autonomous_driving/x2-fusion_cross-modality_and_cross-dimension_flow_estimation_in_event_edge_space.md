@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] x²-Fusion: Cross-Modality and Cross-Dimension Flow Estimation in Event Edge Space
 description: >-
-  [ICLR 2026][Autonomous Driving][Optical Flow Estimation] x²-Fusion introduces Event Edge Space — the first edge-based isomorphic latent space — that unifies image, LiDAR, and event camera features into a shared edge-centric representation. Combined with reliability-aware adaptive fusion and cross-dimension contrastive learning, it achieves state-of-the-art joint 2D optical flow and 3D scene flow estimation under both standard and degraded conditions.
+  [ICLR 2026][Autonomous Driving][Optical Flow Estimation] x²-Fusion introduces Event Edge Space — the first edge-based isomorphic latent space — that unifies image, LiDAR…
 tags:
-  - ICLR 2026
-  - Autonomous Driving
-  - Optical Flow Estimation
-  - Scene Flow Estimation
-  - Event Camera
-  - Multimodal Fusion
-  - Edge Space
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "Optical Flow Estimation"
+  - "Scene Flow Estimation"
+  - "Event Camera"
+  - "Multimodal Fusion"
+  - "Edge Space"
 date: 2026-05-08
 content_hash: a917c0d75b82bba5
 ---

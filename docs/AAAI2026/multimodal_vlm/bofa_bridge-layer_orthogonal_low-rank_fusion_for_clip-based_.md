@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BOFA: Bridge-Layer Orthogonal Low-Rank Fusion for CLIP-Based Class-Incremental Learning
 description: >-
-  [AAAI 2026][Multimodal VLM][Class-incremental learning] This paper proposes BOFA, a framework that exclusively fine-tunes the existing cross-modal projection layer (bridge-layer) in CLIP. By constraining parameter updates within a low-rank "safe subspace" orthogonal to old-task features via Orthogonal Low-Rank Fusion, and combining this with cross-modal hybrid prototypes, BOFA achieves state-of-the-art exemplar-free class-incremental learning without introducing any additional parameters or inference overhead.
+  [AAAI 2026][Multimodal VLM][Class-incremental learning] This paper proposes BOFA, a framework that exclusively fine-tunes the existing cross-modal projection layer (bridge-layer) in CLIP. By constraining parameter update…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Class-incremental learning
-  - CLIP
-  - orthogonal low-rank fusion
-  - cross-modal prototypes
-  - catastrophic forgetting
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Class-incremental learning"
+  - "CLIP"
+  - "orthogonal low-rank fusion"
+  - "cross-modal prototypes"
+  - "catastrophic forgetting"
 date: 2026-05-08
 content_hash: 7848c1cf6769c629
 ---

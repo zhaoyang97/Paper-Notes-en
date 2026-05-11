@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Quantum Doubly Stochastic Transformers
 description: >-
-  [NeurIPS 2025][Variational quantum circuits] This paper proposes QDSFormer (Quantum Doubly Stochastic Transformer), replacing softmax with a variational quantum circuit QontOT to generate doubly stochastic attention matrices. Both theoretical analysis and experiments demonstrate that quantum-circuit-generated DSMs are more diverse and better at preserving information, consistently outperforming standard ViT and Sinkformer on multiple small-scale visual recognition tasks.
+  [NeurIPS 2025][Physics][Variational quantum circuits] This paper proposes QDSFormer (Quantum Doubly Stochastic Transformer), replacing softmax with a variational quantum circuit QontOT to generate doubly stochastic atten…
 tags:
-  - NeurIPS 2025
-  - Variational quantum circuits
-  - doubly stochastic matrices
-  - attention mechanism
-  - ViT
-  - Birkhoff polytope
+  - "NeurIPS 2025"
+  - "Physics"
+  - "Variational quantum circuits"
+  - "doubly stochastic matrices"
+  - "attention mechanism"
+  - "ViT"
+  - "Birkhoff polytope"
 date: 2026-05-08
 content_hash: 9325a668bd5e851a
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FactGuard: Event-Centric and Commonsense-Guided Fake News Detection
 description: >-
-  [AAAI2026][Social Computing][fake news detection] This paper proposes FactGuard, a framework that leverages LLMs to extract event-centric content (with style removed) and generate commonsense rationales. A Rationale Usability Evaluator dynamically assesses the reliability of LLM suggestions. Knowledge distillation yields a lightweight variant, FactGuard-D, that operates without LLM inference, achieving both robustness and efficiency in fake news detection.
+  [AAAI2026][Social Computing][fake news detection] This paper proposes FactGuard, a framework that leverages LLMs to extract event-centric content (with style removed) and generate commonsense rationales. A Rationale Usab…
 tags:
-  - AAAI2026
-  - Social Computing
-  - fake news detection
-  - LLM reasoning
-  - knowledge distillation
-  - commonsense reasoning
-  - style debiasing
+  - "AAAI2026"
+  - "Social Computing"
+  - "fake news detection"
+  - "LLM reasoning"
+  - "knowledge distillation"
+  - "commonsense reasoning"
+  - "style debiasing"
 date: 2026-05-08
 content_hash: 83ecace50c62669a
 ---

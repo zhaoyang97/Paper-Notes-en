@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Stitch: Simultaneous Thinking and Talking with Chunked Reasoning for Spoken Language Models
 description: >-
-  [ICLR 2026][Audio & Speech][spoken language models] Stitch enables "thinking while speaking" in spoken language models (SLMs) by interleaving silent reasoning tokens with speech tokens in chunks, exploiting idle compute during audio playback for reasoning. Stitch-S achieves first-chunk latency identical to the no-reasoning baseline while improving math reasoning accuracy by approximately 15 percentage points.
+  [ICLR 2026][Audio & Speech][spoken language models] Stitch enables "thinking while speaking" in spoken language models (SLMs) by interleaving silent reasoning tokens with speech tokens in chunks…
 tags:
-  - ICLR 2026
+  - "ICLR 2026"
   - "Audio & Speech"
-  - spoken language models
-  - chain-of-thought
-  - simultaneous thinking and talking
-  - chunked reasoning
-  - latency optimization
+  - "spoken language models"
+  - "chain-of-thought"
+  - "simultaneous thinking and talking"
+  - "chunked reasoning"
+  - "latency optimization"
 date: 2026-05-08
 content_hash: 1335d066285a9444
 ---

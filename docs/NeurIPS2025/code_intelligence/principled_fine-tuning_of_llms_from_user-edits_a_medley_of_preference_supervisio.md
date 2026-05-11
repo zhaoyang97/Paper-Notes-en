@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Principled Fine-tuning of LLMs from User-Edits: A Medley of Preference, Supervision, and Reward
 description: >-
-  [NeurIPS 2025][user edits] This paper systematically investigates how to fine-tune LLMs using user-edit data, unifying three feedback types—preference, supervision, and cost—and proposes a simple ensembling procedure that achieves robust adaptation across diverse user distributions.
+  [NeurIPS 2025][Code Intelligence][user edits] This paper systematically investigates how to fine-tune LLMs using user-edit data, unifying three feedback types—preference, supervision…
 tags:
-  - NeurIPS 2025
-  - user edits
-  - LLM fine-tuning
-  - preference learning
-  - supervised learning
-  - ensemble learning
+  - "NeurIPS 2025"
+  - "Code Intelligence"
+  - "user edits"
+  - "LLM fine-tuning"
+  - "preference learning"
+  - "supervised learning"
+  - "ensemble learning"
 date: 2026-05-08
 content_hash: 1b1f12d92a98789a
 ---

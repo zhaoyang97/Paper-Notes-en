@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Faster Gradient Methods for Highly-Smooth Stochastic Bilevel Optimization
 description: >-
-  [ICLR2026][Optimization][bilevel optimization] By reinterpreting the F2SA method as a forward-difference approximation to the hyper-gradient, this paper proposes the F2SA-p algorithm family based on higher-order finite differences. Under higher-order smoothness conditions, the SFO complexity for stochastic bilevel optimization is improved from $\tilde{\mathcal{O}}(\epsilon^{-6})$ to $\tilde{\mathcal{O}}(p\epsilon^{-4-2/p})$, and a matching lower bound of $\Omega(\epsilon^{-4})$ is established, showing near-optimality for sufficiently large $p$.
+  [ICLR2026][Optimization][bilevel optimization] By reinterpreting the F2SA method as a forward-difference approximation to the hyper-gradient…
 tags:
-  - ICLR2026
-  - Optimization
-  - bilevel optimization
-  - stochastic optimization
-  - finite difference
-  - hyper-gradient estimation
-  - complexity lower bound
+  - "ICLR2026"
+  - "Optimization"
+  - "bilevel optimization"
+  - "stochastic optimization"
+  - "finite difference"
+  - "hyper-gradient estimation"
+  - "complexity lower bound"
 date: 2026-05-08
 content_hash: 6d6b6716edc4a9b8
 ---

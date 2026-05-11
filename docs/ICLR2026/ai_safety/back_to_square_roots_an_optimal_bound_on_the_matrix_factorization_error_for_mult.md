@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Back to Square Roots: An Optimal Bound on the Matrix Factorization Error for Multi-Epoch Differentially Private SGD
 description: >-
-  [ICLR 2026][AI Safety][differential privacy] This paper proposes the Banded Inverse Square Root (BISR) matrix factorization method, which imposes a banded structure on the inverse correlation matrix (rather than on the correlation matrix itself). This approach achieves, for the first time, an asymptotically optimal factorization error bound for multi-epoch differentially private SGD, and is accompanied by a memory-efficient variant, BandInvMF.
+  [ICLR 2026][AI Safety][differential privacy] This paper proposes the Banded Inverse Square Root (BISR) matrix factorization method, which imposes a banded structure on the inverse correlation matrix (rather than on the c…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - differential privacy
-  - matrix factorization
-  - DP-SGD
-  - multi-epoch participation
-  - banded factorization
-  - optimal error bounds
+  - "ICLR 2026"
+  - "AI Safety"
+  - "differential privacy"
+  - "matrix factorization"
+  - "DP-SGD"
+  - "multi-epoch participation"
+  - "banded factorization"
+  - "optimal error bounds"
 date: 2026-05-08
 content_hash: 3d3b2c5e811e59ca
 ---

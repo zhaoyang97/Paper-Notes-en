@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DriveFlow: Rectified Flow Adaptation for Robust 3D Object Detection in Autonomous Driving
 description: >-
-  [AAAI 2026][Autonomous Driving][3D Object Detection] DriveFlow is a rectified flow adaptation method built upon pretrained T2I Flow models. Through frequency decomposition, it preserves high-frequency foreground content while applying dual-frequency optimization to the background, enabling training-free driving scene image editing for data augmentation and significantly improving the OOD robustness of vision-based 3D detectors.
+  [AAAI 2026][Autonomous Driving][3D Object Detection] DriveFlow is a rectified flow adaptation method built upon pretrained T2I Flow models. Through frequency decomposition…
 tags:
-  - AAAI 2026
-  - Autonomous Driving
-  - 3D Object Detection
-  - Data Augmentation
-  - Rectified Flow
-  - Image Editing
-  - Robustness
+  - "AAAI 2026"
+  - "Autonomous Driving"
+  - "3D Object Detection"
+  - "Data Augmentation"
+  - "Rectified Flow"
+  - "Image Editing"
+  - "Robustness"
 date: 2026-05-08
 content_hash: 1b9485f26e13b51c
 ---

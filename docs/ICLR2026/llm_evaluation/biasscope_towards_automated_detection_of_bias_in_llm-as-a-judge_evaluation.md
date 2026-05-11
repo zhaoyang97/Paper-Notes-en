@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BiasScope: Towards Automated Detection of Bias in LLM-as-a-Judge Evaluation
 description: >-
-  [ICLR 2026][LLM Evaluation][LLM-as-a-Judge] This paper proposes BiasScope, a fully LLM-driven iterative framework that automatically discovers previously unknown biases in LLM-as-a-Judge evaluation at scale. Based on the discovered biases, the authors construct JudgeBench-Pro, a more challenging benchmark on which even powerful LLM judges exceed 50% error rate.
+  [ICLR 2026][LLM Evaluation][LLM-as-a-Judge] This paper proposes BiasScope, a fully LLM-driven iterative framework that automatically discovers previously unknown biases in LLM-as-a-Judge evaluation at scale. Based on the…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - LLM-as-a-Judge
-  - bias discovery
-  - evaluation robustness
-  - automated bias mining
-  - JudgeBench-Pro
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "LLM-as-a-Judge"
+  - "bias discovery"
+  - "evaluation robustness"
+  - "automated bias mining"
+  - "JudgeBench-Pro"
 date: 2026-05-08
 content_hash: dda25c9c9d673905
 ---

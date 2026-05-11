@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Leave My Images Alone: Preventing Multi-Modal Large Language Models from Analyzing Unauthorized Images
 description: >-
-  [ACL 2026][Multimodal VLM][Visual prompt injection] This paper proposes ImageProtector, which embeds nearly imperceptible adversarial perturbations into images as a visual prompt injection attack, causing MLLMs to generate refusal responses when analyzing protected images. This prevents malicious actors from exploiting open-weight MLLMs to extract private information from images at scale.
+  [ACL 2026][Multimodal VLM][Visual prompt injection] This paper proposes ImageProtector, which embeds nearly imperceptible adversarial perturbations into images as a visual prompt injection attack…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Visual prompt injection
-  - image privacy protection
-  - multimodal large language models
-  - adversarial perturbation
-  - refusal response
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Visual prompt injection"
+  - "image privacy protection"
+  - "multimodal large language models"
+  - "adversarial perturbation"
+  - "refusal response"
 date: 2026-05-08
 content_hash: 03e6a59fbd9b4911
 ---

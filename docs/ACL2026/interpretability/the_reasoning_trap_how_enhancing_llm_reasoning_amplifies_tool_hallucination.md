@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] The Reasoning Trap: How Enhancing LLM Reasoning Amplifies Tool Hallucination
 description: >-
-  [ACL 2026][Tool Hallucination] This paper systematically reveals the "reasoning trap" paradox: enhancing LLM reasoning capabilities — whether through RL, distillation, or switchable reasoning modes — systematically amplifies tool hallucination. This effect is associated with reasoning itself rather than RL training, and existing mitigation strategies (prompt engineering, DPO) face an unavoidable reliability-capability trade-off.
+  [ACL 2026][Interpretability][Tool Hallucination] This paper systematically reveals the "reasoning trap" paradox: enhancing LLM reasoning capabilities — whether through RL, distillation…
 tags:
-  - ACL 2026
-  - Tool Hallucination
-  - Reasoning Enhancement
-  - Reinforcement Learning
-  - Reliability-Capability Trade-off
-  - LLM Agents
+  - "ACL 2026"
+  - "Interpretability"
+  - "Tool Hallucination"
+  - "Reasoning Enhancement"
+  - "Reinforcement Learning"
+  - "Reliability-Capability Trade-off"
+  - "LLM Agents"
 date: 2026-05-08
 content_hash: ae20d8abadc5aabc
 ---

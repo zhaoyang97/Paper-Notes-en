@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UniAVGen: Unified Audio and Video Generation with Asymmetric Cross-Modal Interactions
 description: >-
-  [CVPR 2026][Video Generation][joint audio-video generation] UniAVGen proposes a joint audio-video generation framework built on a symmetric dual-branch DiT, achieving precise spatiotemporal synchronization through an **asymmetric cross-modal interaction mechanism** and a **Face-Aware Modulation module**. With only 1.3M training samples, it outperforms competitors trained on 30M data across lip-audio synchronization, timbre consistency, and emotional consistency.
+  [CVPR 2026][Video Generation][joint audio-video generation] UniAVGen proposes a joint audio-video generation framework built on a symmetric dual-branch DiT…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - joint audio-video generation
-  - cross-modal interaction
-  - diffusion models
-  - lip-audio synchronization
-  - face-aware modulation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "joint audio-video generation"
+  - "cross-modal interaction"
+  - "diffusion models"
+  - "lip-audio synchronization"
+  - "face-aware modulation"
 date: 2026-05-08
 content_hash: 5bf4263ad0c21406
 ---

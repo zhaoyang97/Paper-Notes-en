@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SessionIntentBench: A Multi-Task Inter-Session Intention-Shift Modeling Benchmark
 description: >-
-  [ACL 2026][LLM Evaluation][shopping intent] This paper proposes SessionIntentBench, a multi-task benchmark for evaluating the ability of L(V)LMs to understand inter-session intention shifts in e-commerce shopping sessions. It comprises four progressively structured subtasks—intent-purchase likelihood estimation, attribute normalization, intent verification contrast, and intent evolution modeling—constructed from 1.9 million intent entries and 1.13 million intent trajectories. Experiments on 20+ L(V)LMs demonstrate that current models perform poorly at capturing complex session-level user intent.
+  [ACL 2026][LLM Evaluation][shopping intent] This paper proposes SessionIntentBench, a multi-task benchmark for evaluating the ability of L(V)LMs to understand inter-session intention shifts in e-commerce shopping session…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - shopping intent
-  - session modeling
-  - e-commerce recommendation
-  - intent shift
-  - large language model evaluation
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "shopping intent"
+  - "session modeling"
+  - "e-commerce recommendation"
+  - "intent shift"
+  - "large language model evaluation"
 date: 2026-05-08
 content_hash: 3a453704ee6e24ad
 ---

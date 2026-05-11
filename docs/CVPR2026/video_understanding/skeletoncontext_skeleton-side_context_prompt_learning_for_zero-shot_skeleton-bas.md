@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SkeletonContext: Skeleton-side Context Prompt Learning for Zero-Shot Skeleton-based Action Recognition
 description: >-
-  [CVPR 2026][Video Understanding][Zero-shot action recognition] This paper proposes SkeletonContext, a framework that recovers the missing environmental and object context semantics in skeleton data from pretrained language models via a cross-modal context prompt module, and enhances the discriminability of motion-critical joints through a key part decoupling module. The method achieves state-of-the-art performance on NTU-60/120 and PKU-MMD under both zero-shot (ZSL) and generalized zero-shot (GZSL) settings.
+  [CVPR 2026][Video Understanding][Zero-shot action recognition] This paper proposes SkeletonContext, a framework that recovers the missing environmental and object context semantics in skeleton data from pretrained langua…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Zero-shot action recognition
-  - skeleton sequences
-  - context prompt learning
-  - cross-modal alignment
-  - key part decoupling
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Zero-shot action recognition"
+  - "skeleton sequences"
+  - "context prompt learning"
+  - "cross-modal alignment"
+  - "key part decoupling"
 date: 2026-05-08
 content_hash: 68d8c338a5f332ad
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Seeing Sound, Hearing Sight: Uncovering Modality Bias and Conflict of AI Models in Sound Localization
 description: >-
-  [NeurIPS 2025][Audio & Speech][Sound Source Localization] This work systematically reveals that AI SSL models suffer from severe visual bias—degrading to near-random performance under audio-visual conflict—and proposes EchoPin, a neuroscience-inspired model (HRTF filtering + cochleagram + stereo audio) that substantially outperforms prior methods on AudioCOCO and exhibits a human-like horizontal-over-vertical localization accuracy asymmetry.
+  [NeurIPS 2025][Audio & Speech][Sound Source Localization] This work systematically reveals that AI SSL models suffer from severe visual bias—degrading to near-random performance under audio-visual conflict—and proposes E…
 tags:
-  - NeurIPS 2025
+  - "NeurIPS 2025"
   - "Audio & Speech"
-  - Sound Source Localization
-  - Modality Bias
-  - Cross-modal Conflict
-  - Neuroscience-Inspired
-  - HRTF
-  - Cochleagram
+  - "Sound Source Localization"
+  - "Modality Bias"
+  - "Cross-modal Conflict"
+  - "Neuroscience-Inspired"
+  - "HRTF"
+  - "Cochleagram"
 date: 2026-05-08
 content_hash: 74b70e4987c33d32
 ---

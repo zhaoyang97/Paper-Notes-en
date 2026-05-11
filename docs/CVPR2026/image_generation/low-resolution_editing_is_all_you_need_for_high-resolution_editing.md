@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Low-Resolution Editing is All You Need for High-Resolution Editing
 description: >-
-  [CVPR 2026][Image Generation][High-resolution image editing] ScaleEdit is the first work to formally define the high-resolution image editing task. It learns a 1×1 convolutional transfer function in the intermediate feature space of a pretrained generative model to inject fine-grained textural details from the source image, and employs a Blended-Tweedie-based patch synchronization strategy to ensure global consistency. Operating entirely via test-time optimization, the method achieves high-quality editing at resolutions up to 2K and even 8K.
+  [CVPR 2026][Image Generation][High-resolution image editing] ScaleEdit is the first work to formally define the high-resolution image editing task. It learns a 1×1 convolutional transfer function in the intermediate feat…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - High-resolution image editing
-  - test-time optimization
-  - detail transfer function
-  - patch synchronization
-  - diffusion models
+  - "CVPR 2026"
+  - "Image Generation"
+  - "High-resolution image editing"
+  - "test-time optimization"
+  - "detail transfer function"
+  - "patch synchronization"
+  - "diffusion models"
 date: 2026-05-08
 content_hash: 984ebec0c54a0aeb
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] THOR: Tool-Integrated Hierarchical Optimization via RL for Mathematical Reasoning
 description: >-
-  [ICLR 2026][Robotics][tool-integrated reasoning] This paper proposes THOR, a framework that systematically addresses three core challenges in tool-integrated mathematical reasoning for LLMs—data construction, fine-grained optimization, and inference enhancement—through three complementary components: the TIRGen data construction pipeline, hierarchical reinforcement learning (joint episode-level and step-level optimization), and a self-correction inference mechanism. THOR achieves state-of-the-art performance among models of comparable scale on benchmarks including MATH500 and AIME.
+  [ICLR 2026][Robotics][tool-integrated reasoning] This paper proposes THOR, a framework that systematically addresses three core challenges in tool-integrated mathematical reasoning for LLMs—data construction…
 tags:
-  - ICLR 2026
-  - Robotics
-  - tool-integrated reasoning
-  - hierarchical RL
-  - GRPO
-  - code generation
-  - self-correction
-  - mathematical reasoning
+  - "ICLR 2026"
+  - "Robotics"
+  - "tool-integrated reasoning"
+  - "hierarchical RL"
+  - "GRPO"
+  - "code generation"
+  - "self-correction"
+  - "mathematical reasoning"
 date: 2026-05-08
 content_hash: 92442fb7efbd74aa
 ---

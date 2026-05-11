@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multi-Modal Representation Learning via Semi-Supervised Rate Reduction for Generalized Category Discovery
 description: >-
-  [CVPR2026][Multimodal VLM][Generalized Category Discovery] This paper proposes SSR²-GCD, a framework that learns structured representations with uniformly compressed intra-modal distributions via a Semi-Supervised Rate Reduction (SSR²) loss, and introduces a Retrieval-based Text Aggregation (RTA) strategy to enhance cross-modal knowledge transfer. The method surpasses existing multi-modal GCD approaches on 8 benchmarks.
+  [CVPR2026][Multimodal VLM][Generalized Category Discovery] This paper proposes SSR²-GCD, a framework that learns structured representations with uniformly compressed intra-modal distributions via a Semi-Supervised Rate R…
 tags:
-  - CVPR2026
-  - Multimodal VLM
-  - Generalized Category Discovery
-  - Multi-Modal Representation Learning
-  - Semi-Supervised Rate Reduction
-  - Intra-Modal Alignment
-  - CLIP
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "Generalized Category Discovery"
+  - "Multi-Modal Representation Learning"
+  - "Semi-Supervised Rate Reduction"
+  - "Intra-Modal Alignment"
+  - "CLIP"
 date: 2026-05-08
 content_hash: f81ceb990db05a2c
 ---

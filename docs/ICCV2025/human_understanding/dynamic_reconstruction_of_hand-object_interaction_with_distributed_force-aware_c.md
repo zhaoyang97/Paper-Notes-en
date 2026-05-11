@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dynamic Reconstruction of Hand-Object Interaction with Distributed Force-aware Contact Representation
 description: >-
-  [ICCV 2025][Human Understanding][hand-object interaction] This paper proposes ViTaM-D, a vision-tactile fusion framework that achieves dynamic reconstruction of hand-object interaction for both rigid and deformable objects. The framework introduces a novel Distributed Force-aware Contact Representation (DF-Field) and a two-stage pipeline consisting of visual dynamic tracking followed by force-aware optimization. The HOT dataset is also introduced to address the evaluation gap in deformable object hand-object interaction.
+  [ICCV 2025][Human Understanding][hand-object interaction] This paper proposes ViTaM-D, a vision-tactile fusion framework that achieves dynamic reconstruction of hand-object interaction for both rigid and deformable objec…
 tags:
-  - ICCV 2025
-  - Human Understanding
-  - hand-object interaction
-  - tactile perception
-  - contact modeling
-  - deformable objects
-  - SDF reconstruction
+  - "ICCV 2025"
+  - "Human Understanding"
+  - "hand-object interaction"
+  - "tactile perception"
+  - "contact modeling"
+  - "deformable objects"
+  - "SDF reconstruction"
 date: 2026-05-08
 content_hash: 183f6db0bb941cf0
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] DIVA-GRPO: Enhancing Multimodal Reasoning through Difficulty-Adaptive Variant Advantage
 description: >-
-  [ICLR 2026][Multimodal VLM][GRPO] This paper proposes DIVA-GRPO, which addresses reward sparsity and advantage vanishing in GRPO training by dynamically assessing question difficulty, adaptively generating semantically consistent variants of varying difficulty, and incorporating difficulty-weighted local-global advantage estimation. The method achieves state-of-the-art multimodal reasoning performance at the 7B model scale.
+  [ICLR 2026][Multimodal VLM][GRPO] This paper proposes DIVA-GRPO, which addresses reward sparsity and advantage vanishing in GRPO training by dynamically assessing question difficulty…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - GRPO
-  - reinforcement learning
-  - multimodal reasoning
-  - difficulty-adaptive
-  - advantage vanishing
-  - variant augmentation
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "GRPO"
+  - "reinforcement learning"
+  - "multimodal reasoning"
+  - "difficulty-adaptive"
+  - "advantage vanishing"
+  - "variant augmentation"
 date: 2026-05-08
 content_hash: fb8008950e82258c
 ---

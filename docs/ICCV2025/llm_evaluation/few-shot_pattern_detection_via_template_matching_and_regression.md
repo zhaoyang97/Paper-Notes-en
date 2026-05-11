@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Few-Shot Pattern Detection via Template Matching and Regression
 description: >-
-  [ICCV 2025][LLM Evaluation][few-shot detection] This paper proposes TMR, a method that combines classical template matching with support-conditioned bounding box regression to achieve few-shot detection of arbitrary patterns—including non-object-level patterns. The authors also introduce the RPINE dataset to cover a broader range of repetitive patterns. TMR surpasses existing FSCD methods on multiple benchmarks and demonstrates strong cross-dataset generalization.
+  [ICCV 2025][LLM Evaluation][few-shot detection] This paper proposes TMR, a method that combines classical template matching with support-conditioned bounding box regression to achieve few-shot detection of arbitrary patt…
 tags:
-  - ICCV 2025
-  - LLM Evaluation
-  - few-shot detection
-  - template matching
-  - pattern detection
-  - repetitive patterns
-  - anchor-free detection
+  - "ICCV 2025"
+  - "LLM Evaluation"
+  - "few-shot detection"
+  - "template matching"
+  - "pattern detection"
+  - "repetitive patterns"
+  - "anchor-free detection"
 date: 2026-05-08
 content_hash: e6f792755f8b8192
 ---

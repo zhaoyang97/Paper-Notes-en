@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Forest Before Trees: Latent Superposition for Efficient Visual Reasoning
 description: >-
-  [ACL 2026][latent reasoning] This paper proposes Laser, a framework that conducts visual reasoning in latent space via Dynamic Window Alignment Learning (DWAL), enabling the model to maintain a probabilistic "superposition state" over future semantics rather than performing precise per-token prediction. This realizes a "global-before-local" cognitive hierarchy, achieving state-of-the-art performance among latent reasoning methods on 6 benchmarks with only 6 reasoning tokens (a reduction of 97%+), surpassing Monet by an average of 5.03%.
+  [ACL 2026][Interpretability][latent reasoning] This paper proposes Laser, a framework that conducts visual reasoning in latent space via Dynamic Window Alignment Learning (DWAL)…
 tags:
-  - ACL 2026
-  - latent reasoning
-  - dynamic window alignment
-  - semantic superposition
-  - visual reasoning
-  - token efficiency
+  - "ACL 2026"
+  - "Interpretability"
+  - "latent reasoning"
+  - "dynamic window alignment"
+  - "semantic superposition"
+  - "visual reasoning"
+  - "token efficiency"
 date: 2026-05-08
 content_hash: 3456c4936efd86f7
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EVLF: Early Vision-Language Fusion for Generative Dataset Distillation
 description: >-
-  [CVPR 2026][Image Restoration][Dataset Distillation] This paper proposes EVLF, a plug-and-play early vision-language fusion method operating at the encoder-backbone interface, addressing the problem of text dominance and degraded visual fidelity caused by late-stage semantic injection in diffusion-based dataset distillation.
+  [CVPR 2026][Image Restoration][Dataset Distillation] This paper proposes EVLF, a plug-and-play early vision-language fusion method operating at the encoder-backbone interface…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Dataset Distillation
-  - Diffusion Models
-  - Vision-Language Fusion
-  - Early Fusion
-  - Plug-and-Play
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Dataset Distillation"
+  - "Diffusion Models"
+  - "Vision-Language Fusion"
+  - "Early Fusion"
+  - "Plug-and-Play"
 date: 2026-05-08
 content_hash: f4ccf8c709913878
 ---

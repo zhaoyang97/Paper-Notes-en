@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Coresets for Clustering Under Stochastic Noise
 description: >-
-  [NeurIPS 2025][Coreset] This paper presents the first systematic study of $(k,z)$-clustering coreset construction under noisy data. It proposes a novel surrogate error metric $\mathsf{Err}_\alpha$ to replace the traditional $\mathsf{Err}$, achieving a $\text{poly}(k)$-fold reduction in coreset size and a $\text{poly}(k)$-fold tightening of quality guarantees under mild data assumptions, along with a noise-aware cluster-wise sampling algorithm.
+  [NeurIPS 2025][Coreset] This paper presents the first systematic study of $(k,z)$-clustering coreset construction under noisy data. It proposes a novel surrogate error metric $\mathsf{Err}_\alpha$ to replace the traditio…
 tags:
-  - NeurIPS 2025
-  - Coreset
-  - Clustering
-  - Stochastic Noise
-  - k-Means
-  - Surrogate Error Metric
+  - "NeurIPS 2025"
+  - "Coreset"
+  - "Clustering"
+  - "Stochastic Noise"
+  - "k-Means"
+  - "Surrogate Error Metric"
 date: 2026-05-08
 content_hash: 811bfc1115a22cc6
 ---

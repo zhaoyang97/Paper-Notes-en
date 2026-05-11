@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] RetimeGS: Continuous-Time Reconstruction of 4D Gaussian Splatting
 description: >-
-  [CVPR2026][3D Vision][4D Gaussian Splatting] RetimeGS is proposed to address ghosting artifacts and temporal aliasing in 4DGS during inter-frame interpolation, through regularized temporal opacity, Catmull-Rom spline trajectories, bidirectional optical flow supervision, and triple rendering, enabling artifact-free continuous-time 4D reconstruction at arbitrary timestamps.
+  [CVPR2026][3D Vision][4D Gaussian Splatting] RetimeGS is proposed to address ghosting artifacts and temporal aliasing in 4DGS during inter-frame interpolation, through regularized temporal opacity…
 tags:
-  - CVPR2026
-  - 3D Vision
-  - 4D Gaussian Splatting
-  - dynamic scene reconstruction
-  - temporal interpolation
-  - optical flow supervision
-  - Catmull-Rom spline
-  - temporal aliasing
+  - "CVPR2026"
+  - "3D Vision"
+  - "4D Gaussian Splatting"
+  - "dynamic scene reconstruction"
+  - "temporal interpolation"
+  - "optical flow supervision"
+  - "Catmull-Rom spline"
+  - "temporal aliasing"
 date: 2026-05-08
 content_hash: d4f2b511b191e355
 ---

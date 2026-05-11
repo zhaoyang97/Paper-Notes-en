@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Physics Context Builders: A Modular Framework for Physical Reasoning in Vision-Language Models
 description: >-
-  [Multimodal VLM] This paper proposes Physics Context Builders (PCBs), a modular framework that fine-tunes small specialized VLMs on simulation data to generate detailed physical scene descriptions, which serve as physical context to augment the physical reasoning capabilities of large foundation VLMs (e.g., GPT-4o), without modifying the large model itself.
+  [Multimodal VLM] This paper proposes Physics Context Builders (PCBs), a modular framework that fine-tunes small specialized VLMs on simulation data to generate detailed physical scene descriptions…
 tags:
-  - Multimodal VLM
+  - "Multimodal VLM"
 date: 2026-05-08
 content_hash: 343fb2305a768d65
 ---

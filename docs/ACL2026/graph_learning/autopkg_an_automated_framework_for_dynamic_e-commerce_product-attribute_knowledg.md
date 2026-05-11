@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AutoPKG: An Automated Framework for Dynamic E-commerce Product-Attribute Knowledge Graph Construction
 description: >-
-  [ACL 2026][Graph Learning][Knowledge Graph Construction] AutoPKG is a multi-agent LLM framework that automatically constructs Product-Attribute knowledge graphs (PKGs) from multimodal e-commerce content, using Type Induction Agent, Attribute Key Discovery Agent, Attribute Value Extraction Agent, and centralized KGD Decision Agent, achieving 0.953 WKE for types and +7.89% recommendation GMV in online A/B tests on Lazada.
+  [ACL 2026][Graph Learning][Knowledge Graph Construction] AutoPKG is a multi-agent LLM framework that automatically constructs Product-Attribute knowledge graphs (PKGs) from multimodal e-commerce content…
 tags:
-  - ACL 2026
-  - Graph Learning
-  - Knowledge Graph Construction
-  - E-commerce Attribute Extraction
-  - Multi-Agent LLM
-  - Dynamic Ontology
-  - Multimodal
+  - "ACL 2026"
+  - "Graph Learning"
+  - "Knowledge Graph Construction"
+  - "E-commerce Attribute Extraction"
+  - "Multi-Agent LLM"
+  - "Dynamic Ontology"
+  - "Multimodal"
 content_hash: fd4006b3b4cbf5ef
 ---
 

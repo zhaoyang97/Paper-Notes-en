@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] MARS2: Scaling Multi-Agent Tree Search via Reinforcement Learning for Code Generation
 description: >-
-  [ACL 2026][Multi-Agent] MARS2 proposes a multi-agent reinforcement tree search framework that embeds multiple independently optimized policies into a shared search tree for collaborative exploration. Through Thompson sampling for agent–node pair selection, tree-consistent reward shaping, and path-level group advantage estimation, the framework consistently improves single-model Pass@1 by up to 8.0% and system-level Pass@1 (MCTS) by up to 6.5% on code generation benchmarks.
+  [ACL 2026][Code Intelligence][Multi-Agent] MARS2 proposes a multi-agent reinforcement tree search framework that embeds multiple independently optimized policies into a shared search tree for collaborative exploration. T…
 tags:
-  - ACL 2026
-  - Multi-Agent
-  - Tree Search
-  - Reinforcement Learning
-  - Code Generation
-  - GRPO
+  - "ACL 2026"
+  - "Code Intelligence"
+  - "Multi-Agent"
+  - "Tree Search"
+  - "Reinforcement Learning"
+  - "Code Generation"
+  - "GRPO"
 date: 2026-05-08
 content_hash: 34602b97b0a07a78
 ---

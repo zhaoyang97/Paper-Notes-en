@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ACAM-KD: Adaptive and Cooperative Attention Masking for Knowledge Distillation
 description: >-
-  [ICCV 2025][Autonomous Driving][Knowledge distillation] This paper proposes ACAM-KD, an adaptive student-teacher cooperative attention masking framework for knowledge distillation. By employing Student-Teacher Cross-Attention Feature Fusion (STCA-FF) and Adaptive Spatial-Channel Masking (ASCM) to dynamically adjust distillation focus, ACAM-KD surpasses the state of the art by up to 1.4 mAP on COCO detection and improves mIoU by 3.09 on Cityscapes segmentation.
+  [ICCV 2025][Autonomous Driving][Knowledge distillation] This paper proposes ACAM-KD, an adaptive student-teacher cooperative attention masking framework for knowledge distillation. By employing Student-Teacher Cross-Atte…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - Knowledge distillation
-  - attention masking
-  - cross-attention fusion
-  - spatial-channel selection
-  - object detection
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "Knowledge distillation"
+  - "attention masking"
+  - "cross-attention fusion"
+  - "spatial-channel selection"
+  - "object detection"
 date: 2026-05-08
 content_hash: 5bb6b99e7b148aef
 ---

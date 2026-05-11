@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MagShield: Towards Better Robustness in Sparse Inertial Motion Capture Under Magnetic Disturbances
 description: >-
-  [ICCV 2025][Human Understanding][motion capture] MagShield is proposed as the first method addressing magnetic disturbance in sparse inertial motion capture systems. It adopts a two-stage detect-then-correct strategy: detecting magnetic disturbances via joint analysis of multiple IMUs, and correcting orientation errors using a human motion prior network. The approach can be plug-and-played into existing sparse IMU motion capture systems to enhance robustness.
+  [ICCV 2025][Human Understanding][motion capture] MagShield is proposed as the first method addressing magnetic disturbance in sparse inertial motion capture systems. It adopts a two-stage detect-then-correct strategy: de…
 tags:
-  - ICCV 2025
-  - Human Understanding
-  - motion capture
-  - IMU
-  - magnetic disturbance
-  - sensor fusion
-  - human pose estimation
+  - "ICCV 2025"
+  - "Human Understanding"
+  - "motion capture"
+  - "IMU"
+  - "magnetic disturbance"
+  - "sensor fusion"
+  - "human pose estimation"
 date: 2026-05-08
 content_hash: 1deceacf696a0d98
 ---

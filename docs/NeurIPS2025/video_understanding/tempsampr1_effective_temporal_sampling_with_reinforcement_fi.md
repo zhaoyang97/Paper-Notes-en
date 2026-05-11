@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] TempSamp-R1: Effective Temporal Sampling with Reinforcement Fine-Tuning for Video LLMs
 description: >-
-  [NeurIPS 2025][Video Understanding][temporal grounding] TempSamp-R1 is a reinforcement fine-tuning framework that addresses the inefficiency of on-policy sampling in GRPO for video temporal grounding—caused by the vast search space—by introducing ground-truth annotations as off-policy supervision signals, non-linear soft advantage estimation, and a hybrid CoT training paradigm, achieving new state-of-the-art results on Charades-STA, ActivityNet, and QVHighlights.
+  [NeurIPS 2025][Video Understanding][temporal grounding] TempSamp-R1 is a reinforcement fine-tuning framework that addresses the inefficiency of on-policy sampling in GRPO for video temporal grounding—caused by the vast s…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
-  - temporal grounding
-  - GRPO
-  - off-policy
-  - soft advantage
-  - hybrid CoT
-  - video LLM
+  - "NeurIPS 2025"
+  - "Video Understanding"
+  - "temporal grounding"
+  - "GRPO"
+  - "off-policy"
+  - "soft advantage"
+  - "hybrid CoT"
+  - "video LLM"
 date: 2026-05-08
 content_hash: ea3aac6d0c9f6215
 ---

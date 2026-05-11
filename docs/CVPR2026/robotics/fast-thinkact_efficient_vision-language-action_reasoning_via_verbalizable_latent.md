@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Fast-ThinkAct: Efficient Vision-Language-Action Reasoning via Verbalizable Latent Planning
 description: >-
-  [CVPR2026][Robotics][VLA] This paper proposes Fast-ThinkAct, which compresses verbose textual CoT reasoning (~250 tokens) into 6 verbalizable continuous latent tokens, combined with reward-guided preference distillation and visual trajectory alignment, achieving an 89.3% reduction in inference latency (9.3× faster than ThinkAct-7B) while maintaining or surpassing the performance of state-of-the-art reasoning VLAs.
+  [CVPR2026][Robotics][VLA] This paper proposes Fast-ThinkAct, which compresses verbose textual CoT reasoning (~250 tokens) into 6 verbalizable continuous latent tokens…
 tags:
-  - CVPR2026
-  - Robotics
-  - VLA
-  - reasoning
-  - latent CoT
-  - knowledge distillation
-  - preference learning
-  - robot manipulation
+  - "CVPR2026"
+  - "Robotics"
+  - "VLA"
+  - "reasoning"
+  - "latent CoT"
+  - "knowledge distillation"
+  - "preference learning"
+  - "robot manipulation"
 date: 2026-05-08
 content_hash: c7b64c233335aeac
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Train Once, Answer All: Many Pretraining Experiments for the Cost of One
 description: >-
-  [ICLR 2026][LLM Safety][Pretraining Experiments] This paper proposes a methodological framework for running multiple independent experiments simultaneously within a single LLM pretraining run. Training a 2.7B-parameter model on 210B tokens, the framework concurrently executes 10 experiments, successfully replicates the results of 5 prior works, and conducts 3 novel experiments. It further introduces Continual Pretraining Dependence Testing (CPDT) to verify inter-experiment independence.
+  [ICLR 2026][LLM Safety][Pretraining Experiments] This paper proposes a methodological framework for running multiple independent experiments simultaneously within a single LLM pretraining run. Training a 2.7B-parameter m…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Pretraining Experiments
-  - LLM
-  - Experiment Independence
-  - Continual Pretraining
-  - Data Contamination
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Pretraining Experiments"
+  - "LLM"
+  - "Experiment Independence"
+  - "Continual Pretraining"
+  - "Data Contamination"
 date: 2026-05-08
 content_hash: cbb37af3f0f4c691
 ---

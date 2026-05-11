@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Your AI-Generated Image Detector Can Secretly Achieve SOTA Accuracy, If Calibrated
 description: >-
-  [AAAI 2026][Model Compression][AI-generated image detection] A lightweight post-hoc calibration framework grounded in Bayesian decision theory is proposed. By adding a learnable scalar offset α to the output logits of an existing detector, the method significantly improves detection accuracy under distribution shift without any retraining.
+  [AAAI 2026][Model Compression][AI-generated image detection] A lightweight post-hoc calibration framework grounded in Bayesian decision theory is proposed. By adding a learnable scalar offset α to the output logits of an…
 tags:
-  - AAAI 2026
-  - Model Compression
-  - AI-generated image detection
-  - post-hoc calibration
-  - Bayesian decision theory
-  - distribution shift
-  - decision boundary
+  - "AAAI 2026"
+  - "Model Compression"
+  - "AI-generated image detection"
+  - "post-hoc calibration"
+  - "Bayesian decision theory"
+  - "distribution shift"
+  - "decision boundary"
 date: 2026-05-08
 content_hash: e8f64c2db5bb207e
 ---

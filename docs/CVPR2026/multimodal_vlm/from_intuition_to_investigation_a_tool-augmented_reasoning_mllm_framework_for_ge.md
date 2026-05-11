@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From Intuition to Investigation: A Tool-Augmented Reasoning MLLM Framework for Generalizable Face Anti-Spoofing
 description: >-
-  [CVPR 2026][Multimodal VLM][Face Anti-Spoofing] This paper proposes TAR-FAS, a framework that reformulates Face Anti-Spoofing (FAS) as a Chain-of-Thought with Visual Tools (CoT-VT) paradigm for the first time, enabling MLLMs to adaptively invoke external visual tools (LBP/FFT/HOG, etc.) during inference—upgrading from "intuitive judgment" to "fine-grained investigation"—achieving SOTA on the 1-to-11 cross-domain protocol.
+  [CVPR 2026][Multimodal VLM][Face Anti-Spoofing] This paper proposes TAR-FAS, a framework that reformulates Face Anti-Spoofing (FAS) as a Chain-of-Thought with Visual Tools (CoT-VT) paradigm for the first time…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Face Anti-Spoofing
-  - Multimodal Large Language Model
-  - Tool-Augmented Reasoning
-  - Chain-of-Thought
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Face Anti-Spoofing"
+  - "Multimodal Large Language Model"
+  - "Tool-Augmented Reasoning"
+  - "Chain-of-Thought"
+  - "Reinforcement Learning"
 date: 2026-05-08
 content_hash: e30b0b0723d0197a
 ---

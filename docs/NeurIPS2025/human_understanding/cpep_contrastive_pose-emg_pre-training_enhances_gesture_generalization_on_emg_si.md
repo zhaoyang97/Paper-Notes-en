@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] CPEP: Contrastive Pose-EMG Pre-training Enhances Gesture Generalization on EMG Signals
 description: >-
-  [NeurIPS 2025][Human Understanding][EMG signals] This paper proposes the CPEP framework, which employs contrastive learning to align low-quality EMG signal representations with high-quality hand pose representations, endowing the EMG encoder with pose-awareness. CPEP is the first to achieve zero-shot recognition of unseen gestures from EMG signals, yielding a 21% improvement on in-distribution gesture classification and a 72% improvement on unseen gesture classification.
+  [NeurIPS 2025][Human Understanding][EMG signals] This paper proposes the CPEP framework, which employs contrastive learning to align low-quality EMG signal representations with high-quality hand pose representations…
 tags:
-  - NeurIPS 2025
-  - Human Understanding
-  - EMG signals
-  - EMG
-  - gesture recognition
-  - contrastive learning
-  - zero-shot classification
-  - cross-modal alignment
+  - "NeurIPS 2025"
+  - "Human Understanding"
+  - "EMG signals"
+  - "EMG"
+  - "gesture recognition"
+  - "contrastive learning"
+  - "zero-shot classification"
+  - "cross-modal alignment"
 date: 2026-05-08
 content_hash: 491466e959f5eddc
 ---

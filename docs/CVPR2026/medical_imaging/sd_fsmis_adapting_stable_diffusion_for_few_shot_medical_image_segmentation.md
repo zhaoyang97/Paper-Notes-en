@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] SD-FSMIS: Adapting Stable Diffusion for Few-Shot Medical Image Segmentation
 description: >-
-  [CVPR 2026][Medical Imaging][few-shot segmentation] This paper proposes SD-FSMIS, a framework that adapts pretrained Stable Diffusion for few-shot medical image segmentation (FSMIS). Through a Support-Query Interaction module and a Visual-to-Text Conditioning Transformer, the framework achieves efficient adaptation, with particularly strong performance in cross-domain scenarios.
+  [CVPR 2026][Medical Imaging][few-shot segmentation] This paper proposes SD-FSMIS, a framework that adapts pretrained Stable Diffusion for few-shot medical image segmentation (FSMIS). Through a Support-Query Interaction m…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - few-shot segmentation
-  - stable diffusion
-  - cross-domain
-  - foundation model
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "few-shot segmentation"
+  - "stable diffusion"
+  - "cross-domain"
+  - "foundation model"
 date: 2026-05-08
 content_hash: 57bed5e2fca4e9c7
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SSVQ: Unleashing the Potential of Vector Quantization with Sign-Splitting
 description: >-
-  [ICCV 2025][Model Compression][vector quantization] This paper proposes Sign-Splitting Vector Quantization (SSVQ), which decouples the sign bits of weights from the codebook, introduces learnable sign parameters and an enhanced iterative freezing strategy, enabling each quantized weight to update independently along its own gradient direction during VQ fine-tuning. SSVQ significantly outperforms conventional VQ and scalar quantization under extreme compression ratios.
+  [ICCV 2025][Model Compression][vector quantization] This paper proposes Sign-Splitting Vector Quantization (SSVQ), which decouples the sign bits of weights from the codebook…
 tags:
-  - ICCV 2025
-  - Model Compression
-  - vector quantization
-  - sign splitting
-  - learnable sign bits
-  - iterative freezing
-  - hardware acceleration
+  - "ICCV 2025"
+  - "Model Compression"
+  - "vector quantization"
+  - "sign splitting"
+  - "learnable sign bits"
+  - "iterative freezing"
+  - "hardware acceleration"
 date: 2026-05-08
 content_hash: d7ac914cae5c5785
 ---

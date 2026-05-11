@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Developing Foundation Models for Universal Segmentation from 3D Whole-Body Positron Emission Tomography
 description: >-
-  [CVPR2026][Medical Imaging][PET segmentation] This work constructs PETWB-Seg11K, the largest whole-body PET segmentation dataset to date (11,041 3D PET scans + 59,831 masks), and proposes SegAnyPET — the first 3D promptable segmentation foundation model tailored for functional PET imaging — achieving strong zero-shot generalization across multi-center, multi-tracer, and multi-disease scenarios.
+  [CVPR2026][Medical Imaging][PET segmentation] This work constructs PETWB-Seg11K, the largest whole-body PET segmentation dataset to date (11,041 3D PET scans + 59,831 masks)…
 tags:
-  - CVPR2026
-  - Medical Imaging
-  - PET segmentation
-  - foundation model
-  - universal segmentation
-  - interactive segmentation
-  - whole-body PET
-  - SAM
+  - "CVPR2026"
+  - "Medical Imaging"
+  - "PET segmentation"
+  - "foundation model"
+  - "universal segmentation"
+  - "interactive segmentation"
+  - "whole-body PET"
+  - "SAM"
 date: 2026-05-08
 content_hash: a6ab4b236192561a
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Spatial CAPTCHA: Generatively Benchmarking Spatial Reasoning for Human-Machine Differentiation
 description: >-
-  [ICLR 2026][Multimodal VLM][CAPTCHA] This paper proposes Spatial CAPTCHA, a novel human verification framework grounded in 3D spatial reasoning. It exploits fundamental capability gaps between humans and multimodal large language models (MLLMs) across geometric reasoning, perspective-taking, occlusion handling, and mental rotation tasks to distinguish humans from machines. The best-performing MLLM achieves only 31.0% Pass@1 accuracy, far below human performance.
+  [ICLR 2026][Multimodal VLM][CAPTCHA] This paper proposes Spatial CAPTCHA, a novel human verification framework grounded in 3D spatial reasoning. It exploits fundamental capability gaps between humans and multimodal large…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - CAPTCHA
-  - spatial reasoning
-  - multimodal large language models
-  - human-machine differentiation
-  - procedural generation
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "CAPTCHA"
+  - "spatial reasoning"
+  - "multimodal large language models"
+  - "human-machine differentiation"
+  - "procedural generation"
 date: 2026-05-08
 content_hash: 1efd1365a3d87847
 ---

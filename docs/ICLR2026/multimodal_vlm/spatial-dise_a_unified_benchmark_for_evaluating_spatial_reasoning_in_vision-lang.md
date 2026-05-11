@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Spatial-DISE: A Unified Benchmark for Evaluating Spatial Reasoning in Vision-Language Models
 description: >-
-  [ICLR 2026][Multimodal VLM][spatial reasoning] This paper proposes Spatial-DISE, a unified spatial reasoning benchmark grounded in a cognitive-science-based 2×2 taxonomy (Intrinsic/Extrinsic × Static/Dynamic). The benchmark comprises 559 evaluation VQA pairs and 12K+ training instances. Evaluation across 32 state-of-the-art VLMs reveals a substantial gap between model performance and human-level capability, particularly on dynamic spatial reasoning tasks such as mental rotation and folding.
+  [ICLR 2026][Multimodal VLM][spatial reasoning] This paper proposes Spatial-DISE, a unified spatial reasoning benchmark grounded in a cognitive-science-based 2×2 taxonomy (Intrinsic/Extrinsic × Static/Dynamic). The benchm…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - spatial reasoning
-  - VLM benchmark
-  - cognitive taxonomy
-  - DISE framework
-  - mental transformation
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "spatial reasoning"
+  - "VLM benchmark"
+  - "cognitive taxonomy"
+  - "DISE framework"
+  - "mental transformation"
 date: 2026-05-08
 content_hash: a34d763981520a7d
 ---

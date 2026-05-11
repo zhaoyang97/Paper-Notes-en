@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TrackingWorld: World-centric Monocular 3D Tracking of Almost All Pixels
 description: >-
-  [NeurIPS 2025][Video Understanding][3D tracking] This paper presents TrackingWorld, a pipeline for dense 3D tracking of almost all pixels from monocular video. It lifts sparse 2D trajectories to dense ones via a tracking upsampler, iteratively tracks newly appearing objects across all frames, and employs an optimization-based framework to lift 2D trajectories into world-coordinate 3D space with explicit decoupling of camera motion and object motion.
+  [NeurIPS 2025][Video Understanding][3D tracking] This paper presents TrackingWorld, a pipeline for dense 3D tracking of almost all pixels from monocular video. It lifts sparse 2D trajectories to dense ones via a tracking…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
-  - 3D tracking
-  - monocular video
-  - world coordinate system
-  - dense tracking
-  - camera pose estimation
+  - "NeurIPS 2025"
+  - "Video Understanding"
+  - "3D tracking"
+  - "monocular video"
+  - "world coordinate system"
+  - "dense tracking"
+  - "camera pose estimation"
 date: 2026-05-08
 content_hash: 4660758895a84992
 ---

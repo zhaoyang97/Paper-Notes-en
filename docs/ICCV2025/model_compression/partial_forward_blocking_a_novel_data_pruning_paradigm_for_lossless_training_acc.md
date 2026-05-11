@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Partial Forward Blocking: A Novel Data Pruning Paradigm for Lossless Training Acceleration
 description: >-
-  [ICCV 2025][Model Compression][Data Pruning] This paper proposes Partial Forward Blocking (PFB), which computes sample importance at shallow layers during forward propagation and prunes low-importance samples by blocking their subsequent deep-layer forward passes. On ImageNet with 40% pruning, PFB achieves a 0.5% accuracy improvement and a 33% reduction in training time.
+  [ICCV 2025][Model Compression][Data Pruning] This paper proposes Partial Forward Blocking (PFB), which computes sample importance at shallow layers during forward propagation and prunes low-importance samples by blocking…
 tags:
-  - ICCV 2025
-  - Model Compression
-  - Data Pruning
-  - Training Acceleration
-  - Probability Density
-  - Kernel Density Estimation
-  - Forward Blocking
+  - "ICCV 2025"
+  - "Model Compression"
+  - "Data Pruning"
+  - "Training Acceleration"
+  - "Probability Density"
+  - "Kernel Density Estimation"
+  - "Forward Blocking"
 date: 2026-05-08
 content_hash: 82cc57e42d25cfb2
 ---

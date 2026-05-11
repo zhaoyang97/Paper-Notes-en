@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] MVR: Multi-view Video Reward Shaping for Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][visual reward shaping] This paper proposes the MVR framework, which learns a state relevance function from multi-view video via video-text similarity matching. Combined with state-dependent reward shaping that automatically attenuates VLM guidance, MVR outperforms existing VLM-based reward methods across 19 tasks on HumanoidBench and MetaWorld.
+  [ICLR 2026][Reinforcement Learning][visual reward shaping] This paper proposes the MVR framework, which learns a state relevance function from multi-view video via video-text similarity matching. Combined with state-depe…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - visual reward shaping
-  - multi-view video
-  - vision-language models
-  - state relevance learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "visual reward shaping"
+  - "multi-view video"
+  - "vision-language models"
+  - "state relevance learning"
 date: 2026-05-08
 content_hash: 0e00e6dc70bd2be6
 ---

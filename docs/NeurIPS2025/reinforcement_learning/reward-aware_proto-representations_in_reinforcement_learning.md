@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Reward-Aware Proto-Representations in Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Successor Representation] This paper systematically develops the theoretical foundations of the Default Representation (DR)—deriving DP and TD learning algorithms, analyzing the feature space structure, and proposing default features for function approximation—and demonstrates DR's reward-aware advantages over the Successor Representation (SR) across four settings: reward shaping, option discovery, exploration, and transfer learning.
+  [NeurIPS 2025][Reinforcement Learning][Successor Representation] This paper systematically develops the theoretical foundations of the Default Representation (DR)—deriving DP and TD learning algorithms…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Successor Representation
-  - Default Representation
-  - Reward-Aware Representation
-  - Option Discovery
-  - Transfer Learning
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Successor Representation"
+  - "Default Representation"
+  - "Reward-Aware Representation"
+  - "Option Discovery"
+  - "Transfer Learning"
 date: 2026-05-08
 content_hash: 4162ad3ece28c606
 ---

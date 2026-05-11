@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Robust Estimation Under Heterogeneous Corruption Rates
 description: >-
-  [NeurIPS 2025][Optimization][robust estimation] This paper studies robust estimation under heterogeneous corruption rates—where each sample is corrupted with a distinct known probability—and establishes tight minimax rates for mean estimation and linear regression under both bounded and Gaussian distributions. A key finding is that the optimal estimator can simply discard samples whose corruption rates exceed a certain threshold.
+  [NeurIPS 2025][Optimization][robust estimation] This paper studies robust estimation under heterogeneous corruption rates—where each sample is corrupted with a distinct known probability—and establishes tight minimax rat…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - robust estimation
-  - heterogeneous corruption
-  - minimax rates
-  - mean estimation
-  - linear regression
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "robust estimation"
+  - "heterogeneous corruption"
+  - "minimax rates"
+  - "mean estimation"
+  - "linear regression"
 date: 2026-05-08
 content_hash: 784ea98e16e89abf
 ---

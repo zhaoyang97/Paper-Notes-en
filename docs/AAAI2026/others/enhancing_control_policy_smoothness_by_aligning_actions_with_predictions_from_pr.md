@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Enhancing Control Policy Smoothness by Aligning Actions with Predictions from Preceding States
 description: >-
-  [AAAI 2026][Reinforcement Learning] This paper proposes **ASAP (Action Smoothing by Aligning Actions with Predictions from Preceding States)**, a reinforcement learning action smoothing method based on **transition-induced similar state definitions**. ASAP suppresses high-frequency action oscillations via a spatial constraint (aligning actions with predictions from the preceding state) and a temporal constraint (penalizing second-order action differences). It outperforms existing methods on Gymnasium and Isaac-Lab benchmarks.
+  [AAAI 2026][Reinforcement Learning] This paper proposes **ASAP (Action Smoothing by Aligning Actions with Predictions from Preceding States)**…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - Action Smoothing
-  - Lipschitz Constraint
-  - Policy Smoothness
-  - Robot Control
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "Action Smoothing"
+  - "Lipschitz Constraint"
+  - "Policy Smoothness"
+  - "Robot Control"
 date: 2026-05-08
 content_hash: fea471f350353d9d
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VLRMBench: A Comprehensive and Challenging Benchmark for Vision-Language Reward Models
 description: >-
-  [ICCV 2025][Time Series][reward model] This paper proposes VLRMBench, a comprehensive and challenging benchmark for vision-language reward models (VLRMs) comprising 12,634 questions across 12 tasks, covering three dimensions: process understanding, outcome judgment, and criticism generation. Extensive experiments on 26 models reveal significant deficiencies in current VLRMs.
+  [ICCV 2025][Time Series][reward model] This paper proposes VLRMBench, a comprehensive and challenging benchmark for vision-language reward models (VLRMs) comprising 12,634 questions across 12 tasks…
 tags:
-  - ICCV 2025
-  - Time Series
-  - reward model
-  - vision-language understanding
-  - benchmark
-  - process reasoning
-  - multimodal evaluation
+  - "ICCV 2025"
+  - "Time Series"
+  - "reward model"
+  - "vision-language understanding"
+  - "benchmark"
+  - "process reasoning"
+  - "multimodal evaluation"
 date: 2026-05-08
 content_hash: a54cd931b221df05
 ---

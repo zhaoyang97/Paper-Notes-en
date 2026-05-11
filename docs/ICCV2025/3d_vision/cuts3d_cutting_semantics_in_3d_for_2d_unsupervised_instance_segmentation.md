@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] CutS3D: Cutting Semantics in 3D for 2D Unsupervised Instance Segmentation
 description: >-
-  [3D Vision] CutS3D is the first method to introduce 3D information (monocular depth estimation) into unsupervised instance segmentation. By cutting semantic regions in 3D point clouds, it separates overlapping instances in 2D, and introduces a spatial confidence mechanism to improve pseudo-label quality, surpassing CutLER and other SoTA methods on multiple benchmarks.
+  [3D Vision] CutS3D is the first method to introduce 3D information (monocular depth estimation) into unsupervised instance segmentation. By cutting semantic regions in 3D point clouds…
 tags:
-  - 3D Vision
+  - "3D Vision"
 date: 2026-05-08
 content_hash: 69bb1969815f3237
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] DH-FaceVid-1K: A Large-Scale High-Quality Dataset for Face Video Generation
 description: >-
-  [ICCV 2025][Video Generation][face video dataset] This paper introduces DH-FaceVid-1K, a large-scale high-quality face video dataset comprising 1,200+ hours, 270,043 video clips, and 20,000+ unique identities. It specifically addresses the severe underrepresentation of Asian faces in existing datasets and empirically validates scaling laws with respect to data volume and model parameter count through systematic experiments.
+  [ICCV 2025][Video Generation][face video dataset] This paper introduces DH-FaceVid-1K, a large-scale high-quality face video dataset comprising 1,200+ hours, 270,043 video clips, and 20…
 tags:
-  - ICCV 2025
-  - Video Generation
-  - face video dataset
-  - text-to-video
-  - image-to-video
-  - diffusion models
+  - "ICCV 2025"
+  - "Video Generation"
+  - "face video dataset"
+  - "text-to-video"
+  - "image-to-video"
+  - "diffusion models"
 date: 2026-05-08
 content_hash: bec3c27d4f476ec8
 ---

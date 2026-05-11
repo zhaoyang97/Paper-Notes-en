@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ImageNet-trained CNNs are not biased towards texture: Revisiting feature reliance through controlled suppression
 description: >-
-  [NeurIPS 2025][Medical Imaging][texture bias] By proposing a systematic feature suppression framework—rather than cue-conflict experiments—this work re-evaluates the feature reliance of CNNs, finding that CNNs are not inherently texture-biased but instead rely primarily on local shape features; moreover, feature reliance patterns differ substantially across domains (CV/MI/RS).
+  [NeurIPS 2025][Medical Imaging][texture bias] By proposing a systematic feature suppression framework—rather than cue-conflict experiments—this work re-evaluates the feature reliance of CNNs…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - texture bias
-  - feature reliance
-  - CNN
-  - feature suppression
-  - domain-specific analysis
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "texture bias"
+  - "feature reliance"
+  - "CNN"
+  - "feature suppression"
+  - "domain-specific analysis"
 date: 2026-05-08
 content_hash: da5f6a292875ddea
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Text-Attributed Knowledge Graph Enrichment with Large Language Models for Medical Concept Representation
 description: >-
-  [ACL 2026][Medical Imaging][Medical Concept Representation] This paper proposes CoMed, an LLM-empowered graph learning framework that constructs a global medical knowledge graph by combining EHR statistical evidence with type-constrained LLM inference, enriches it into a text-attributed graph via LLM-generated node descriptions and edge rationales, and jointly trains a LoRA-finetuned LLaMA encoder with a heterogeneous GNN to learn unified medical concept embeddings, achieving significant improvements in diagnosis prediction on MIMIC-III/IV.
+  [ACL 2026][Medical Imaging][Medical Concept Representation] This paper proposes CoMed, an LLM-empowered graph learning framework that constructs a global medical knowledge graph by combining EHR statistical evidence with…
 tags:
-  - ACL 2026
-  - Medical Imaging
-  - Medical Concept Representation
-  - Knowledge Graph
-  - LLM-GNN Joint Learning
-  - Electronic Health Records
-  - Text-Attributed Graph
+  - "ACL 2026"
+  - "Medical Imaging"
+  - "Medical Concept Representation"
+  - "Knowledge Graph"
+  - "LLM-GNN Joint Learning"
+  - "Electronic Health Records"
+  - "Text-Attributed Graph"
 date: 2026-05-08
 content_hash: 7ad6b4d493a4a20d
 ---

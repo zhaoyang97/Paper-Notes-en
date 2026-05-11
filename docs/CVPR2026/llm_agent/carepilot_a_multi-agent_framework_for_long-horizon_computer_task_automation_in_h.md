@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CarePilot: A Multi-Agent Framework for Long-Horizon Computer Task Automation in Healthcare
 description: >-
-  [CVPR 2026][LLM Agent][Medical software automation] This paper proposes the CareFlow benchmark (1,050 long-horizon medical software workflow tasks, 8–24 steps, covering four systems: DICOM/3D Slicer/EMR/LIS) and the CarePilot framework (based on the Actor-Critic paradigm, integrating tool grounding and a dual memory mechanism), achieving approximately 15% higher task accuracy than GPT-5 on CareFlow.
+  [CVPR 2026][LLM Agent][Medical software automation] This paper proposes the CareFlow benchmark (1,050 long-horizon medical software workflow tasks, 8–24 steps…
 tags:
-  - CVPR 2026
-  - LLM Agent
-  - Medical software automation
-  - multi-agent framework
-  - Actor-Critic
-  - long-horizon GUI interaction
-  - dual memory mechanism
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "Medical software automation"
+  - "multi-agent framework"
+  - "Actor-Critic"
+  - "long-horizon GUI interaction"
+  - "dual memory mechanism"
 date: 2026-05-08
 content_hash: 58921e14e5e7ac0f
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] What's the Plan? Metrics for Implicit Planning in LLMs and Their Application to Rhyme Generation and Question Answering
 description: >-
-  [ICLR 2026][Robotics][implicit planning] This paper proposes a mean activation difference steering method along with accompanying quantitative metrics, and systematically demonstrates across 23 open-source models (1B–32B) on rhyme generation and question answering: representations of target tokens (rhymes/answers) form at early sequence positions (forward planning) and causally influence intermediate token generation (backward planning). Implicit planning emerges as early as 1B-scale models, indicating it is a universal mechanism rather than a capability exclusive to large models.
+  [ICLR 2026][Robotics][implicit planning] This paper proposes a mean activation difference steering method along with accompanying quantitative metrics…
 tags:
-  - ICLR 2026
-  - Robotics
-  - implicit planning
-  - forward planning
-  - backward planning
-  - activation steering
-  - rhyme generation
+  - "ICLR 2026"
+  - "Robotics"
+  - "implicit planning"
+  - "forward planning"
+  - "backward planning"
+  - "activation steering"
+  - "rhyme generation"
 date: 2026-05-08
 content_hash: 2ef9bbbd9c7e555c
 ---

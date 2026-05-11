@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AvatarPointillist: AutoRegressive 4D Gaussian Avatarization
 description: >-
-  [CVPR 2026][3D Vision][4D Avatar] AvatarPointillist proposes an autoregressive (AR) generative framework for constructing 4D Gaussian avatars: a decoder-only Transformer generates 3DGS point clouds (with binding information) token by token, followed by a Gaussian Decoder that predicts rendering attributes for each point. This approach breaks free from fixed template topology, enables adaptive point density adjustment, and comprehensively outperforms baselines such as LAM and GAGAvatar on NeRSemble.
+  [CVPR 2026][3D Vision][4D Avatar] AvatarPointillist proposes an autoregressive (AR) generative framework for constructing 4D Gaussian avatars: a decoder-only Transformer generates 3DGS point clouds (with binding informat…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 4D Avatar
-  - Autoregressive
-  - 3D Gaussian Splatting
-  - Point Cloud Generation
-  - One-shot
+  - "CVPR 2026"
+  - "3D Vision"
+  - "4D Avatar"
+  - "Autoregressive"
+  - "3D Gaussian Splatting"
+  - "Point Cloud Generation"
+  - "One-shot"
 date: 2026-05-08
 content_hash: 87a7558390686012
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Bid Farewell to Seesaw: Towards Accurate Long-tail Session-based Recommendation via Dual Constraints of Hybrid Intents
 description: >-
-  [AAAI 2026][Recommender Systems][Session-based recommendation] This paper proposes the HID framework, which constructs hybrid intents via attribute-aware spectral clustering to distinguish session-relevant from session-irrelevant tail items, and introduces a dual-constraint loss (ICLoss) targeting both long-tail coverage and recommendation accuracy. The framework achieves a "win-win" between long-tail promotion and accuracy, breaking the traditional seesaw dilemma where improving one metric inevitably harms the other.
+  [AAAI 2026][Recommender Systems][Session-based recommendation] This paper proposes the HID framework, which constructs hybrid intents via attribute-aware spectral clustering to distinguish session-relevant from session-i…
 tags:
-  - AAAI 2026
-  - Recommender Systems
-  - Session-based recommendation
-  - long-tail distribution
-  - hybrid intents
-  - spectral clustering
-  - contrastive learning
+  - "AAAI 2026"
+  - "Recommender Systems"
+  - "Session-based recommendation"
+  - "long-tail distribution"
+  - "hybrid intents"
+  - "spectral clustering"
+  - "contrastive learning"
 date: 2026-05-08
 content_hash: 07581b465d930916
 ---

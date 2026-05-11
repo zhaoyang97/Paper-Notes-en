@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] ShieldedCode: Learning Robust Representations for Virtual Machine Protected Code
 description: >-
-  [ICLR 2026][virtual machine protection] This paper proposes ShieldedCode — the first protection-aware code representation learning framework. By introducing hierarchical dependency modeling (three levels: intra-instruction, preceding-instruction, and inter-instruction) and joint functional-aware and protection-aware contrastive learning, the framework enables LLMs to generate, compare, and reason about VM-protected code. ShieldedCode surpasses existing methods on both VM code generation (Pass@1 26.95% vs. GPT-4o 22.58%) and binary similarity detection.
+  [ICLR 2026][Code Intelligence][virtual machine protection] This paper proposes ShieldedCode — the first protection-aware code representation learning framework. By introducing hierarchical dependency modeling (three leve…
 tags:
-  - ICLR 2026
-  - virtual machine protection
-  - code representation learning
-  - contrastive learning
-  - polymorphic generation
-  - software security
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "virtual machine protection"
+  - "code representation learning"
+  - "contrastive learning"
+  - "polymorphic generation"
+  - "software security"
 date: 2026-05-08
 content_hash: f20144ff801f43ed
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TongUI: Internet-Scale Trajectories from Multimodal Web Tutorials for Generalized GUI Agents
 description: >-
-  [AAAI 2026][LLM Agent][GUI Agent] TongUI proposes a framework that automatically converts multimodal web tutorials (videos and illustrated articles) into GUI operation trajectories, constructing the million-scale GUI-Net-1M dataset for fine-tuning Qwen2.5-VL. The resulting models surpass or approach state-of-the-art methods such as UI-TARS across multiple grounding and navigation benchmarks.
+  [AAAI 2026][LLM Agent][GUI Agent] TongUI proposes a framework that automatically converts multimodal web tutorials (videos and illustrated articles) into GUI operation trajectories…
 tags:
-  - AAAI 2026
-  - LLM Agent
-  - GUI Agent
-  - Trajectory Data
-  - Multimodal Tutorials
-  - VLM Fine-tuning
-  - Cross-platform Generalization
+  - "AAAI 2026"
+  - "LLM Agent"
+  - "GUI Agent"
+  - "Trajectory Data"
+  - "Multimodal Tutorials"
+  - "VLM Fine-tuning"
+  - "Cross-platform Generalization"
 date: 2026-05-08
 content_hash: 9044469f2daad3ab
 ---

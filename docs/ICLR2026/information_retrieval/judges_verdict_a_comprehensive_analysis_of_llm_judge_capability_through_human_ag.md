@@ -2,15 +2,16 @@
 title: >-
   [Paper Note] Judge's Verdict: A Comprehensive Analysis of LLM Judge Capability Through Human Agreement
 description: >-
-  [ICLR 2026][LLM-as-a-Judge] This paper proposes the Judge's Verdict Benchmark—a two-stage evaluation framework based on relevance filtering followed by a Cohen's Kappa human-similarity test—to systematically assess 54 LLM judges. The framework identifies 27 Tier 1 judges (23 human-like and 4 super-consistent). The central finding is that high correlation does not imply high agreement; Kappa combined with z-score is necessary to properly measure LLM judge quality.
+  [ICLR 2026][Information Retrieval & RAG][LLM-as-a-Judge] This paper proposes the Judge's Verdict Benchmark—a two-stage evaluation framework based on relevance filtering followed by a Cohen's Kappa human-similarity test—t…
 tags:
-  - ICLR 2026
-  - LLM-as-a-Judge
-  - Cohen's Kappa
-  - human agreement
-  - benchmark
-  - RAG evaluation
-  - Turing Test for judges
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "LLM-as-a-Judge"
+  - "Cohen's Kappa"
+  - "human agreement"
+  - "benchmark"
+  - "RAG evaluation"
+  - "Turing Test for judges"
 date: 2026-05-08
 content_hash: 7004cf18c20bbbfa
 ---

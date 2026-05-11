@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Waking Up Blind: Cold-Start Optimization of Supervision-Free Agentic Trajectories
 description: >-
-  [ACL 2026][LLM Agent][Small VLM] This paper proposes SPECTRA, a supervision-free framework that enables small vision-language models (SVLMs) to discover effective tool-calling and visual reasoning behaviors through pure environment interaction, leveraging cold-start reinforcement learning (GRPO) and soft structured multi-turn rollout topological constraints. SPECTRA achieves up to 5% improvement in task accuracy and 9% improvement in tool efficiency across 4 multimodal benchmarks, and introduces the Tool Instrumental Utility (TIU) metric to quantify tool effectiveness without supervision.
+  [ACL 2026][LLM Agent][Small VLM] This paper proposes SPECTRA, a supervision-free framework that enables small vision-language models (SVLMs) to discover effective tool-calling and visual reasoning behaviors through pure…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - Small VLM
-  - Tool Calling
-  - Cold-Start Reinforcement Learning
-  - Multi-Objective Reward
-  - Agentic Trajectory Optimization
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Small VLM"
+  - "Tool Calling"
+  - "Cold-Start Reinforcement Learning"
+  - "Multi-Objective Reward"
+  - "Agentic Trajectory Optimization"
 date: 2026-05-08
 content_hash: 7ab52d362efbe3e8
 ---

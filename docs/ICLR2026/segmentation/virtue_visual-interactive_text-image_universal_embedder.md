@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] VIRTUE: Visual-Interactive Text-Image Universal Embedder
 description: >-
-  [ICLR 2026][Segmentation][visual prompt] This paper proposes VIRTUE, a visual-interactive universal embedder that integrates the segmentation model SAM2 with a VLM to support user-specified regions of interest via points, boxes, or masks, producing joint entity-level and global-level embeddings. A million-scale SCaR benchmark is introduced to evaluate visual-interactive retrieval, achieving SOTA on 36 MMEB tasks (+3.1%–8.5%) and 5 SCaR tasks (+15.2%–20.3%).
+  [ICLR 2026][Segmentation][visual prompt] This paper proposes VIRTUE, a visual-interactive universal embedder that integrates the segmentation model SAM2 with a VLM to support user-specified regions of interest via points…
 tags:
-  - ICLR 2026
-  - Segmentation
-  - visual prompt
-  - embedding model
-  - SAM2
-  - VLM
-  - visual-interactive
-  - retrieval
+  - "ICLR 2026"
+  - "Segmentation"
+  - "visual prompt"
+  - "embedding model"
+  - "SAM2"
+  - "VLM"
+  - "visual-interactive"
+  - "retrieval"
 date: 2026-05-08
 content_hash: 1626b25635fbef21
 ---

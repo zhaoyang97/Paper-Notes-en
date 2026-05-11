@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] SFT Doesn't Always Hurt General Capabilities: Revisiting Domain-Specific Fine-Tuning in LLMs
 description: >-
-  [ICLR2026][Model Compression][SFT] This paper systematically revisits the impact of domain-specific SFT on the general capabilities of LLMs, demonstrating that **using a smaller learning rate can substantially mitigate general capability degradation**, and proposes Token-Adaptive Loss Reweighting (TALR), which further optimizes the trade-off between domain adaptation and general capability retention by adaptively down-weighting the loss of low-probability tokens.
+  [ICLR2026][Model Compression][SFT] This paper systematically revisits the impact of domain-specific SFT on the general capabilities of LLMs…
 tags:
-  - ICLR2026
-  - Model Compression
-  - SFT
-  - domain fine-tuning
-  - general capability degradation
-  - learning rate
-  - token-adaptive reweighting
-  - continual learning
-  - LLM
+  - "ICLR2026"
+  - "Model Compression"
+  - "SFT"
+  - "domain fine-tuning"
+  - "general capability degradation"
+  - "learning rate"
+  - "token-adaptive reweighting"
+  - "continual learning"
+  - "LLM"
 date: 2026-05-08
 content_hash: 7f3b288af5b9f6f6
 ---

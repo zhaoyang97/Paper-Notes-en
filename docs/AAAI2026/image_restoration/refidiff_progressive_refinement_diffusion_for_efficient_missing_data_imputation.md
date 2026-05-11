@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RefiDiff: Progressive Refinement Diffusion for Efficient Missing Data Imputation
 description: >-
-  [AAAI 2026][Image Restoration][missing data imputation] RefiDiff proposes a four-stage framework (pre-processing → warm-up → diffusion → polishing) that progressively unifies the predictive and generative imputation paradigms for the first time. Combined with a Mamba-based denoising network, it achieves state-of-the-art performance across 9 datasets while running 4× faster than DIFFPUTER.
+  [AAAI 2026][Image Restoration][missing data imputation] RefiDiff proposes a four-stage framework (pre-processing → warm-up → diffusion → polishing) that progressively unifies the predictive and generative imputation para…
 tags:
-  - AAAI 2026
-  - Image Restoration
-  - missing data imputation
-  - diffusion model
-  - Mamba
-  - tabular data
-  - MNAR
+  - "AAAI 2026"
+  - "Image Restoration"
+  - "missing data imputation"
+  - "diffusion model"
+  - "Mamba"
+  - "tabular data"
+  - "MNAR"
 date: 2026-05-08
 content_hash: 13997c4fd705fa7f
 ---

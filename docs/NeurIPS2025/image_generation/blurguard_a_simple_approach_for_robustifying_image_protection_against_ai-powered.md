@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BlurGuard: A Simple Approach for Robustifying Image Protection Against AI-Powered Edit
 description: >-
-  [NeurIPS 2025][Image Generation][Image protection] This paper proposes BlurGuard—a method that applies mild blurring to an image prior to adversarial perturbation generation, causing the perturbation to couple with low-frequency structures and thereby resist post-processing operations such as JPEG compression and Gaussian noise. This approach more effectively prevents AI editing tools such as Stable Diffusion from tampering with protected images, achieving over 20% improvement in protection success rate compared to the non-blurred baseline.
+  [NeurIPS 2025][Image Generation][Image protection] This paper proposes BlurGuard—a method that applies mild blurring to an image prior to adversarial perturbation generation…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Image protection
-  - adversarial perturbation
-  - AI editing defense
-  - blur preprocessing
-  - diffusion models
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Image protection"
+  - "adversarial perturbation"
+  - "AI editing defense"
+  - "blur preprocessing"
+  - "diffusion models"
 date: 2026-05-08
 content_hash: f0ea57a7e3e673e0
 ---

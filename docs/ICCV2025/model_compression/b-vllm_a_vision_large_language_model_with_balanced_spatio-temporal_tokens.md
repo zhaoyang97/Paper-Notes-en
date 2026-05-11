@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] B-VLLM: A Vision Large Language Model with Balanced Spatio-Temporal Tokens
 description: >-
-  [ICCV 2025][Model Compression][Vision Large Language Model] This paper proposes B-VLLM, a framework that dynamically balances spatio-temporal cues within the context window constraints of VLLMs via three modules: text-conditioned adaptive frame selection, temporal frame token merging, and spatial token sampling. The approach achieves a 10% performance improvement on MVBench.
+  [ICCV 2025][Model Compression][Vision Large Language Model] This paper proposes B-VLLM, a framework that dynamically balances spatio-temporal cues within the context window constraints of VLLMs via three modules: text-co…
 tags:
-  - ICCV 2025
-  - Model Compression
-  - Vision Large Language Model
-  - Video Understanding
-  - Token Balancing
-  - Frame Selection
-  - Token Merging
+  - "ICCV 2025"
+  - "Model Compression"
+  - "Vision Large Language Model"
+  - "Video Understanding"
+  - "Token Balancing"
+  - "Frame Selection"
+  - "Token Merging"
 date: 2026-05-08
 content_hash: 5c54507dcfb1230b
 ---

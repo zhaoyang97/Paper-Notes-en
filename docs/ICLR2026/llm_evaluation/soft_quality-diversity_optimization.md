@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Soft Quality-Diversity Optimization
 description: >-
-  [LLM Evaluation] This paper proposes the Soft QD Score as a novel quality-diversity optimization objective that eliminates the need for behavior space discretization, and derives a differentiable algorithm, SQUAD, which scales more effectively to high-dimensional behavior spaces while achieving competitive performance on standard benchmarks.
+  [LLM Evaluation] This paper proposes the Soft QD Score as a novel quality-diversity optimization objective that eliminates the need for behavior space discretization, and derives a differentiable algorithm, SQUAD…
 tags:
-  - LLM Evaluation
+  - "LLM Evaluation"
 date: 2026-05-08
 content_hash: dbc434b4cee91ef6
 ---

@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] Finding Time Series Anomalies using Granular-ball Vector Data Description
 description: >-
-  [AAAI 2026][Time Series] This paper proposes the Granular-ball One-Class Network (GBOC), which adaptively constructs density-guided Granular-ball Vector Data Descriptions (GVDD) in the latent space. By replacing traditional clustering or single-hypersphere assumptions, GBOC enables flexible modeling of normal time series behavior and robust anomaly detection.
+  [AAAI 2026][Time Series] This paper proposes the Granular-ball One-Class Network (GBOC), which adaptively constructs density-guided Granular-ball Vector Data Descriptions (GVDD) in the latent space. By replacing traditio…
 tags:
-  - AAAI 2026
-  - Time Series
+  - "AAAI 2026"
+  - "Time Series"
 date: 2026-05-08
 content_hash: 8c2bb15b6796925c
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LLM Interpretability with Identifiable Temporal-Instantaneous Representation
 description: >-
-  [NeurIPS 2025][Causal Inference][LLM interpretability] This paper proposes an identifiable temporal causal representation learning framework for the high-dimensional activation spaces of LLMs. By adopting a linearized formulation that jointly models time-lagged and instantaneous causal relationships, it resolves the computational bottleneck that prevents existing CRL methods from scaling to LLM-scale dimensions, while preserving theoretical identifiability guarantees.
+  [NeurIPS 2025][Causal Inference][LLM interpretability] This paper proposes an identifiable temporal causal representation learning framework for the high-dimensional activation spaces of LLMs. By adopting a linearized fo…
 tags:
-  - NeurIPS 2025
-  - Causal Inference
-  - LLM interpretability
-  - causal representation learning
-  - sparse autoencoders
-  - temporal causality
-  - identifiability
+  - "NeurIPS 2025"
+  - "Causal Inference"
+  - "LLM interpretability"
+  - "causal representation learning"
+  - "sparse autoencoders"
+  - "temporal causality"
+  - "identifiability"
 date: 2026-05-08
 content_hash: a592a700cbba03f4
 ---

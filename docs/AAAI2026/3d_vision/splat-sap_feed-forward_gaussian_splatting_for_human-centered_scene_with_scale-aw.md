@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Splat-SAP: Feed-Forward Gaussian Splatting for Human-Centered Scene with Scale-Aware Point Map Reconstruction
 description: >-
-  [AAAI 2026][3D Vision][feed-forward Gaussian splatting] This paper proposes Splat-SAP, a feed-forward method that reconstructs scale-aware point maps from wide-baseline stereo camera inputs and renders free-viewpoint video of human-centered scenes via a Gaussian Plane, requiring neither per-scene optimization nor 3D geometric supervision.
+  [AAAI 2026][3D Vision][feed-forward Gaussian splatting] This paper proposes Splat-SAP, a feed-forward method that reconstructs scale-aware point maps from wide-baseline stereo camera inputs and renders free-viewpoint vid…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - feed-forward Gaussian splatting
-  - human-centered scene
-  - scale-awareness
-  - point map reconstruction
-  - free-viewpoint rendering
+  - "AAAI 2026"
+  - "3D Vision"
+  - "feed-forward Gaussian splatting"
+  - "human-centered scene"
+  - "scale-awareness"
+  - "point map reconstruction"
+  - "free-viewpoint rendering"
 date: 2026-05-08
 content_hash: 0a377141176be20c
 ---

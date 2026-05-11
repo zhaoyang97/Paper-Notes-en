@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LoRA-FAIR: Federated LoRA Fine-Tuning with Aggregation and Initialization Refinement
 description: >-
-  [ICCV 2025][AI Safety][federated learning] This paper proposes LoRA-FAIR, which introduces a server-side residual correction term $\Delta\mathbf{B}$ to simultaneously address two fundamental challenges in federated LoRA fine-tuning — server-side aggregation bias and client-side initialization staleness — consistently outperforming existing federated fine-tuning methods on ViT and MLP-Mixer without incurring additional communication overhead.
+  [ICCV 2025][AI Safety][federated learning] This paper proposes LoRA-FAIR, which introduces a server-side residual correction term $\Delta\mathbf{B}$ to simultaneously address two fundamental challenges in federated LoRA…
 tags:
-  - ICCV 2025
-  - AI Safety
-  - federated learning
-  - LoRA
-  - parameter-efficient fine-tuning
-  - aggregation bias
-  - foundation models
+  - "ICCV 2025"
+  - "AI Safety"
+  - "federated learning"
+  - "LoRA"
+  - "parameter-efficient fine-tuning"
+  - "aggregation bias"
+  - "foundation models"
 date: 2026-05-08
 content_hash: ca571ed75d3aaa1b
 ---

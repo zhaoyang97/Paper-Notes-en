@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Hybrid eTFCE–GRF: Exact Cluster-Size Retrieval with Analytical p-Values for Voxel-Based Morphometry
 description: >-
-  [CVPR 2026][3D Vision][TFCE] This work combines the union-find data structure of eTFCE (for exact cluster-size queries) with the GRF analytical inference of pTFCE, achieving for the first time within a single framework both exact cluster-size extraction and analytical $p$-values without permutation testing. Whole-brain VBM analysis is 4.6–75× faster than R pTFCE and three orders of magnitude faster than permutation-based TFCE.
+  [CVPR 2026][3D Vision][TFCE] This work combines the union-find data structure of eTFCE (for exact cluster-size queries) with the GRF analytical inference of pTFCE…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - TFCE
-  - Gaussian Random Field
-  - Union-Find
-  - Voxel-Based Morphometry
-  - Permutation-Free Inference
+  - "CVPR 2026"
+  - "3D Vision"
+  - "TFCE"
+  - "Gaussian Random Field"
+  - "Union-Find"
+  - "Voxel-Based Morphometry"
+  - "Permutation-Free Inference"
 date: 2026-05-08
 content_hash: 3a3d5a8efa951ce1
 ---

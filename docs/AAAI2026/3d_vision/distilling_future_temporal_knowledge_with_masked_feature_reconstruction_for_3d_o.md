@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Distilling Future Temporal Knowledge with Masked Feature Reconstruction for 3D Object Detection
 description: >-
-  [AAAI 2026][3D Vision][3D Object Detection] This paper proposes FTKD (Future Temporal Knowledge Distillation), a framework comprising two strategies—Future-aware Feature Reconstruction (FFR) and Future-guided Logit Distillation (FLD)—to effectively transfer future frame knowledge from an offline teacher model to an online student model, achieving gains of 1.3 mAP / 1.3 NDS on nuScenes without additional inference overhead.
+  [AAAI 2026][3D Vision][3D Object Detection] This paper proposes FTKD (Future Temporal Knowledge Distillation), a framework comprising two strategies—Future-aware Feature Reconstruction (FFR) and Future-guided Logit Disti…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - 3D Object Detection
-  - Knowledge Distillation
-  - Temporal Modeling
-  - Future Frame Knowledge
-  - Sparse Query
+  - "AAAI 2026"
+  - "3D Vision"
+  - "3D Object Detection"
+  - "Knowledge Distillation"
+  - "Temporal Modeling"
+  - "Future Frame Knowledge"
+  - "Sparse Query"
 date: 2026-05-08
 content_hash: 81c20b33e96dc264
 ---

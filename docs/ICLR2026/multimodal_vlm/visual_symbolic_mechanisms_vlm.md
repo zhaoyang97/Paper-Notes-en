@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Visual Symbolic Mechanisms: Emergent Symbol Processing in Vision Language Models
 description: >-
-  [ICLR 2026 Oral][Multimodal VLM][visual binding] This paper discovers that VLMs internally develop a three-stage symbolic processing mechanism (ID retrieval → ID selection → feature retrieval) that uses content-agnostic spatial position indices (position IDs) to solve the visual binding problem, and demonstrates that binding errors can be directly traced to failures in these mechanisms.
+  [ICLR 2026 Oral][Multimodal VLM][visual binding] This paper discovers that VLMs internally develop a three-stage symbolic processing mechanism (ID retrieval → ID selection → feature retrieval) that uses content-agnostic…
 tags:
-  - ICLR 2026 Oral
-  - Multimodal VLM
-  - visual binding
-  - position IDs
-  - mechanistic interpretability
-  - causal mediation
-  - VLM
+  - "ICLR 2026 Oral"
+  - "Multimodal VLM"
+  - "visual binding"
+  - "position IDs"
+  - "mechanistic interpretability"
+  - "causal mediation"
+  - "VLM"
 date: 2026-05-08
 content_hash: b4f9f9cb92d41afb
 ---

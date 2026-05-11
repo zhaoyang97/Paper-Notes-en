@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SuffixDecoding: Extreme Speculative Decoding for Emerging AI Applications
 description: >-
-  [NeurIPS 2025][LLM Agent][Speculative Decoding] Caches long token sequences via suffix trees and achieves 5.3× speedup through adaptive speculation length, targeting highly predictable repetitive inference tasks in agent scenarios.
+  [NeurIPS 2025][LLM Agent][Speculative Decoding] Caches long token sequences via suffix trees and achieves 5.3× speedup through adaptive speculation length…
 tags:
-  - NeurIPS 2025
-  - LLM Agent
-  - Speculative Decoding
-  - Suffix Tree
-  - Agent Inference
-  - Inference Acceleration
-  - Training-Free
+  - "NeurIPS 2025"
+  - "LLM Agent"
+  - "Speculative Decoding"
+  - "Suffix Tree"
+  - "Agent Inference"
+  - "Inference Acceleration"
+  - "Training-Free"
 date: 2026-05-08
 content_hash: dc0acde719162184
 ---

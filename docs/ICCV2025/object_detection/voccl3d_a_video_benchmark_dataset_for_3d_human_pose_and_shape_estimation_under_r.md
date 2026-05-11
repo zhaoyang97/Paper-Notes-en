@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VOccl3D: A Video Benchmark Dataset for 3D Human Pose and Shape Estimation under Real Occlusions
 description: >-
-  [ICCV 2025][Object Detection][Human Pose Estimation] This paper presents VOccl3D, a large-scale synthetic video dataset (250K frames, 400 video sequences) rendered via 3DGS, targeting 3D human pose and shape (HPS) estimation under realistic occlusion scenarios. Models fine-tuned on VOccl3D demonstrate significant performance improvements in occluded settings.
+  [ICCV 2025][Object Detection][Human Pose Estimation] This paper presents VOccl3D, a large-scale synthetic video dataset (250K frames, 400 video sequences) rendered via 3DGS…
 tags:
-  - ICCV 2025
-  - Object Detection
-  - Human Pose Estimation
-  - Occlusion
-  - Synthetic Dataset
-  - 3D Gaussian Splatting
-  - SMPL-X
+  - "ICCV 2025"
+  - "Object Detection"
+  - "Human Pose Estimation"
+  - "Occlusion"
+  - "Synthetic Dataset"
+  - "3D Gaussian Splatting"
+  - "SMPL-X"
 date: 2026-05-08
 content_hash: 7e33883b4ad89ebc
 ---

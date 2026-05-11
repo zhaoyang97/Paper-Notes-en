@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HiPrune: Hierarchical Attention for Efficient Token Pruning in Vision-Language Models
 description: >-
-  [ACL 2026][Multimodal VLM][visual token pruning] This paper identifies a hierarchical attention pattern in vision encoders—middle layers attend to foreground objects while deep layers capture global information—and proposes HiPrune, a training-free, model-agnostic visual token pruning method. By selecting three categories of tokens (Anchor/Buffer/Register) to preserve information at different semantic levels, HiPrune retains 99.3% of performance using only 1/3 of the tokens while reducing FLOPs by 58.7%.
+  [ACL 2026][Multimodal VLM][visual token pruning] This paper identifies a hierarchical attention pattern in vision encoders—middle layers attend to foreground objects while deep layers capture global information—and propo…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - visual token pruning
-  - hierarchical attention
-  - training-free
-  - model-agnostic
-  - VLM acceleration
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "visual token pruning"
+  - "hierarchical attention"
+  - "training-free"
+  - "model-agnostic"
+  - "VLM acceleration"
 date: 2026-05-08
 content_hash: 3972cec482f43090
 ---

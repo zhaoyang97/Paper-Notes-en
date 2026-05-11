@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CCL-LGS: Contrastive Codebook Learning for 3D Language Gaussian Splatting
 description: >-
-  [ICCV 2025][Autonomous Driving][3D Gaussian Splatting] This paper proposes the CCL-LGS framework, which employs a zero-shot tracker for cross-view mask association and a Contrastive Codebook Learning (CCL) module to distill semantically compact intra-class and discriminative inter-class features. The framework addresses cross-view semantic inconsistency in 2D-prior-based 3D semantic field reconstruction caused by occlusion, blur, and viewpoint variation.
+  [ICCV 2025][Autonomous Driving][3D Gaussian Splatting] This paper proposes the CCL-LGS framework, which employs a zero-shot tracker for cross-view mask association and a Contrastive Codebook Learning (CCL) module to dist…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - 3D Gaussian Splatting
-  - Open-Vocabulary Semantic Segmentation
-  - Contrastive Learning
-  - Codebook Learning
-  - Cross-View Consistency
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "3D Gaussian Splatting"
+  - "Open-Vocabulary Semantic Segmentation"
+  - "Contrastive Learning"
+  - "Codebook Learning"
+  - "Cross-View Consistency"
 date: 2026-05-08
 content_hash: 152a8b9ec9921a37
 ---

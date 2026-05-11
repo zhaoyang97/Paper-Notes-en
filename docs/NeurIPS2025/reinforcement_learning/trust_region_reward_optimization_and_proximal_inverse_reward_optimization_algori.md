@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Trust Region Reward Optimization and Proximal Inverse Reward Optimization Algorithm
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Inverse Reinforcement Learning] This paper proposes the TRRO theoretical framework and the PIRO practical algorithm, which guarantee monotonic improvement of reward function updates in IRL via a Minorization-Maximization procedure, achieving stability guarantees analogous to those of TRPO/PPO in forward RL.
+  [NeurIPS 2025][Reinforcement Learning][Inverse Reinforcement Learning] This paper proposes the TRRO theoretical framework and the PIRO practical algorithm…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Inverse Reinforcement Learning
-  - Trust Region
-  - Reward Learning
-  - Non-Adversarial IRL
-  - Monotonic Improvement
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Inverse Reinforcement Learning"
+  - "Trust Region"
+  - "Reward Learning"
+  - "Non-Adversarial IRL"
+  - "Monotonic Improvement"
 date: 2026-05-08
 content_hash: abef7487900184d6
 ---

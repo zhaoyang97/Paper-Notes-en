@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] C3PO: Cross-View Cross-Modality Correspondence by Pointmap Prediction
 description: >-
-  [NeurIPS 2025][Remote Sensing][cross-view correspondence] This paper introduces the C3 dataset comprising 90K ground photo–floor plan pairs (597 scenes, 153M pixel-level correspondences, and 85K camera poses), exposes the limitations of existing correspondence models under cross-view cross-modality settings (e.g., ground photos vs. floor plans), and demonstrates that training on this dataset reduces the RMSE of the best-performing baseline by 34%.
+  [NeurIPS 2025][Remote Sensing][cross-view correspondence] This paper introduces the C3 dataset comprising 90K ground photo–floor plan pairs (597 scenes, 153M pixel-level correspondences, and 85K camera poses)…
 tags:
-  - NeurIPS 2025
-  - Remote Sensing
-  - cross-view correspondence
-  - cross-modality
-  - floor plan
-  - pointmap
-  - DUSt3R
-  - structure-from-motion
+  - "NeurIPS 2025"
+  - "Remote Sensing"
+  - "cross-view correspondence"
+  - "cross-modality"
+  - "floor plan"
+  - "pointmap"
+  - "DUSt3R"
+  - "structure-from-motion"
 date: 2026-05-08
 content_hash: 16d9bd6ca71be237
 ---

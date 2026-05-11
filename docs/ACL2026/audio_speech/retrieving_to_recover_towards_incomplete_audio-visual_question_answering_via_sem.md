@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Retrieving to Recover: Towards Incomplete Audio-Visual Question Answering via Semantic-consistent Purification
 description: >-
-  [ACL 2026][Audio & Speech][Audio-visual question answering] This paper proposes the R2ScP framework, which shifts the missing-modality paradigm in AVQA from conventional generative completion to retrieval-based recovery. By combining cross-modal retrieval with a context-aware adaptive purification mechanism to eliminate retrieval noise, R2ScP achieves substantial performance gains in modality-incomplete settings.
+  [ACL 2026][Audio & Speech][Audio-visual question answering] This paper proposes the R2ScP framework, which shifts the missing-modality paradigm in AVQA from conventional generative completion to retrieval-based recovery.…
 tags:
-  - ACL 2026
+  - "ACL 2026"
   - "Audio & Speech"
-  - Audio-visual question answering
-  - missing modality
-  - retrieval-based recovery
-  - semantic purification
-  - mixture of experts
+  - "Audio-visual question answering"
+  - "missing modality"
+  - "retrieval-based recovery"
+  - "semantic purification"
+  - "mixture of experts"
 date: 2026-05-08
 content_hash: bd5d31f3e2aa49b3
 ---

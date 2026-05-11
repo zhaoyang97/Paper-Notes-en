@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multimodal 3D Genome Pre-training
 description: >-
-  [NeurIPS 2025][Medical Imaging][3D genome] This paper proposes MIX-HIC — the first multimodal foundation model for 3D genomics — which integrates Hi-C contact maps and epigenomic signals via cross-modal interaction blocks and cross-modal mapping blocks. Pre-trained on over 1.27 million paired samples, MIX-HIC achieves state-of-the-art performance across three downstream tasks: Hi-C prediction, chromatin loop detection, and CAGE-seq expression prediction.
+  [NeurIPS 2025][Medical Imaging][3D genome] This paper proposes MIX-HIC — the first multimodal foundation model for 3D genomics — which integrates Hi-C contact maps and epigenomic signals via cross-modal interaction block…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - 3D genome
-  - Hi-C
-  - epigenomics
-  - multimodal pre-training
-  - foundation model
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "3D genome"
+  - "Hi-C"
+  - "epigenomics"
+  - "multimodal pre-training"
+  - "foundation model"
 date: 2026-05-08
 content_hash: 0e61f08588b54e91
 ---

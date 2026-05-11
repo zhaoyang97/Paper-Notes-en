@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Easy3D: A Simple Yet Effective Method for 3D Interactive Segmentation
 description: >-
-  [3D Vision] This paper proposes Easy3D, a simple yet effective method for 3D interactive instance segmentation. By combining a sparse voxel encoder, a lightweight Transformer decoder, and an implicit click fusion strategy, Easy3D consistently outperforms state-of-the-art methods on both in-domain and out-of-domain datasets. It is also the first work to successfully apply learned negative embeddings to implicit click fusion.
+  [3D Vision] This paper proposes Easy3D, a simple yet effective method for 3D interactive instance segmentation. By combining a sparse voxel encoder, a lightweight Transformer decoder…
 tags:
-  - 3D Vision
+  - "3D Vision"
 date: 2026-05-08
 content_hash: f885872fa57c380d
 ---

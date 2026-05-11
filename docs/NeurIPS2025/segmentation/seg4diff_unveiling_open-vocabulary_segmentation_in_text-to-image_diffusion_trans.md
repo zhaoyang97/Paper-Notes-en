@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Seg4Diff: Unveiling Open-Vocabulary Segmentation in Text-to-Image Diffusion Transformers
 description: >-
-  [NeurIPS 2025][Segmentation][Diffusion Models] Through systematic analysis of the joint attention mechanism in Multimodal Diffusion Transformers (MM-DiT), this paper identifies specific layers ("semantic localization expert layers") that inherently possess high-quality semantic segmentation capability, and proposes a lightweight fine-tuning method, MAGNET, that simultaneously improves both segmentation and generation performance.
+  [NeurIPS 2025][Segmentation][Diffusion Models] Through systematic analysis of the joint attention mechanism in Multimodal Diffusion Transformers (MM-DiT)…
 tags:
-  - NeurIPS 2025
-  - Segmentation
-  - Diffusion Models
-  - Open-Vocabulary Segmentation
-  - MM-DiT
-  - Attention Analysis
-  - Semantic Alignment
+  - "NeurIPS 2025"
+  - "Segmentation"
+  - "Diffusion Models"
+  - "Open-Vocabulary Segmentation"
+  - "MM-DiT"
+  - "Attention Analysis"
+  - "Semantic Alignment"
 date: 2026-05-08
 content_hash: 16db4acfce7580be
 ---

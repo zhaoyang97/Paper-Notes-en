@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Abstain-R1: Calibrated Abstention and Post-Refusal Clarification via Verifiable RL
 description: >-
-  [ACL 2026][LLM Evaluation][Abstention Calibration] Abstain-R1 proposes a **clarification-aware RLVR reward** that jointly optimizes explicit abstention and post-refusal clarification (identifying missing information) on unanswerable queries, enabling a 3B model to match or surpass large models such as DeepSeek-R1 on both abstention and clarification quality.
+  [ACL 2026][LLM Evaluation][Abstention Calibration] Abstain-R1 proposes a **clarification-aware RLVR reward** that jointly optimizes explicit abstention and post-refusal clarification (identifying missing information) on…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - Abstention Calibration
-  - Post-Refusal Clarification
-  - Verifiable Reward
-  - GRPO
-  - Unanswerable Queries
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "Abstention Calibration"
+  - "Post-Refusal Clarification"
+  - "Verifiable Reward"
+  - "GRPO"
+  - "Unanswerable Queries"
 date: 2026-05-08
 content_hash: 52eb59bc8552afc0
 ---

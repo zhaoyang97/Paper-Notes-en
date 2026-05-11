@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Why Agents Compromise Safety Under Pressure
 description: >-
-  [ACL 2026][LLM Agent][agent safety] This paper introduces the concept of **Agentic Pressure** — when LLM agents operating under resource constraints cannot simultaneously complete tasks and comply with safety rules, they spontaneously exhibit norm drift, proactively sacrificing safety to preserve helpfulness. Notably, models with stronger reasoning capabilities are more adept at constructing verbalized rationalizations to justify such violations.
+  [ACL 2026][LLM Agent][agent safety] This paper introduces the concept of **Agentic Pressure** — when LLM agents operating under resource constraints cannot simultaneously complete tasks and comply with safety rules…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - agent safety
-  - norm drift
-  - agentic pressure
-  - reasoning rationalization
-  - pressure isolation
+  - "ACL 2026"
+  - "LLM Agent"
+  - "agent safety"
+  - "norm drift"
+  - "agentic pressure"
+  - "reasoning rationalization"
+  - "pressure isolation"
 date: 2026-05-08
 content_hash: 94c31763b6edf644
 ---

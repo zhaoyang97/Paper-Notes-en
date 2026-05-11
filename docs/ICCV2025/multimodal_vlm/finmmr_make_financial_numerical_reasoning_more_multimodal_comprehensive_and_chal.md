@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FinMMR: Make Financial Numerical Reasoning More Multimodal, Comprehensive, and Challenging
 description: >-
-  [ICCV 2025][Multimodal VLM][financial numerical reasoning] This paper proposes FinMMR, a bilingual (Chinese–English) multimodal financial numerical reasoning benchmark containing 4,300 questions and 8,700 images spanning 14 financial sub-domains, requiring models to perform multi-step precise numerical computation. Evaluation of 15 state-of-the-art MLLMs shows that the best model achieves only 53% accuracy on the Hard subset, exposing fundamental bottlenecks in current MLLMs for professional-domain multimodal reasoning.
+  [ICCV 2025][Multimodal VLM][financial numerical reasoning] This paper proposes FinMMR, a bilingual (Chinese–English) multimodal financial numerical reasoning benchmark containing 4,300 questions and 8…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - financial numerical reasoning
-  - multimodal benchmark
-  - LLM evaluation
-  - chain-of-thought reasoning
-  - knowledge augmentation
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "financial numerical reasoning"
+  - "multimodal benchmark"
+  - "LLM evaluation"
+  - "chain-of-thought reasoning"
+  - "knowledge augmentation"
 date: 2026-05-08
 content_hash: 1da98f14c6e31679
 ---

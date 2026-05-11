@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From Domains to Instances: Dual-Granularity Data Synthesis for LLM Unlearning
 description: >-
-  [ACL 2026][LLM Evaluation][Machine Unlearning] This paper formally defines two granularities of LLM unlearning—domain-level and instance-level—and proposes the BiForget framework. Rather than relying on external strong models, BiForget leverages the target model itself to construct high-quality forget datasets via two stages: seed-guided synthesis and adversarial probing. On the Harry Potter domain, it improves relevance by ~20 and diversity by ~0.05 while halving the data volume.
+  [ACL 2026][LLM Evaluation][Machine Unlearning] This paper formally defines two granularities of LLM unlearning—domain-level and instance-level—and proposes the BiForget framework. Rather than relying on external strong m…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - Machine Unlearning
-  - Forget Set Synthesis
-  - Domain-Level Unlearning
-  - Instance-Level Unlearning
-  - Adversarial Probing
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "Machine Unlearning"
+  - "Forget Set Synthesis"
+  - "Domain-Level Unlearning"
+  - "Instance-Level Unlearning"
+  - "Adversarial Probing"
 date: 2026-05-08
 content_hash: 8f8fdb56c8f14502
 ---

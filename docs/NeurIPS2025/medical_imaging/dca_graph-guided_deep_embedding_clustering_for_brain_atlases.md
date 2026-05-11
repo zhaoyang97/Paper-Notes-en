@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DCA: Graph-Guided Deep Embedding Clustering for Brain Atlases
 description: >-
-  [NeurIPS 2025][Medical Imaging][Brain atlas] DCA (Deep Cluster Atlas) proposes a graph-guided deep embedding clustering framework that combines voxel-level spatiotemporal embeddings from a pretrained Swin-UNETR with KNN graph spatial regularization. By aligning soft assignments with atlas clustering auxiliary labels via KL divergence, the framework generates functionally homogeneous and spatially contiguous individualized brain atlases. On the HCP dataset, DCA achieves 98.8% improvement in homogeneity and 29% improvement in silhouette coefficient, and outperforms existing atlases on downstream tasks including autism diagnosis and cognitive decoding.
+  [NeurIPS 2025][Medical Imaging][Brain atlas] DCA (Deep Cluster Atlas) proposes a graph-guided deep embedding clustering framework that combines voxel-level spatiotemporal embeddings from a pretrained Swin-UNETR with KNN…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Brain atlas
-  - deep clustering
-  - Swin-UNETR
-  - graph regularization
-  - individualized parcellation
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Brain atlas"
+  - "deep clustering"
+  - "Swin-UNETR"
+  - "graph regularization"
+  - "individualized parcellation"
 date: 2026-05-08
 content_hash: 7be466f126b955d9
 ---

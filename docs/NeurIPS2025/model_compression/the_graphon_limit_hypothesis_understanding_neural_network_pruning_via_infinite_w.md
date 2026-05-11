@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] The Graphon Limit Hypothesis: Understanding Neural Network Pruning via Infinite Width Analysis
 description: >-
-  [NeurIPS 2025][Model Compression][Neural Network Pruning] This paper proposes the "Graphon Limit Hypothesis": as network width tends to infinity, the binary mask sequences produced by different pruning methods converge, under the cut distance, to their respective unique graphon limits. Building on this foundation, the paper derives a Graphon NTK to analyze the training dynamics of sparse networks, providing a theoretical explanation for why different pruning methods yield markedly different performance at the same sparsity level.
+  [NeurIPS 2025][Model Compression][Neural Network Pruning] This paper proposes the "Graphon Limit Hypothesis": as network width tends to infinity, the binary mask sequences produced by different pruning methods converge…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Neural Network Pruning
-  - Graphon
-  - Graph Limit Theory
-  - Neural Tangent Kernel
-  - Sparse Networks
-  - Infinite Width
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Neural Network Pruning"
+  - "Graphon"
+  - "Graph Limit Theory"
+  - "Neural Tangent Kernel"
+  - "Sparse Networks"
+  - "Infinite Width"
 date: 2026-05-08
 content_hash: 240e7f8eb4325a26
 ---

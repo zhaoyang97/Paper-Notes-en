@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Theory of Multi-Agent Generative Flow Networks
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][GFlowNet] This paper proposes a theoretical framework for Multi-Agent Generative Flow Networks (MA-GFlowNets) and establishes a "local-global principle" — the joint flow function can be decomposed into a product of individual agents' local flows. Four algorithms are designed (CFN/IFN/JFN/CJFN), among which JFN and CJFN realize Centralized Training with Decentralized Execution (CTDE). The proposed methods outperform RL and MCMC baselines on Hyper-Grid and StarCraft environments.
+  [NeurIPS 2025][Reinforcement Learning][GFlowNet] This paper proposes a theoretical framework for Multi-Agent Generative Flow Networks (MA-GFlowNets) and establishes a "local-global principle" — the joint flow function ca…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - GFlowNet
-  - multi-agent
-  - flow matching
-  - CTDE
-  - cooperative decision-making
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "GFlowNet"
+  - "multi-agent"
+  - "flow matching"
+  - "CTDE"
+  - "cooperative decision-making"
 date: 2026-05-08
 content_hash: 84503cec4bae65d7
 ---

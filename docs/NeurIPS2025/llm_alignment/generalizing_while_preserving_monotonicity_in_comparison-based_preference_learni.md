@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Generalizing while Preserving Monotonicity in Comparison-based Preference Learning Models
 description: >-
-  [NeurIPS 2025][LLM Alignment][preference learning] This paper proposes **Linear GBT with Diffusion Prior**, a class of preference learning models that simultaneously guarantee **monotonicity** (the score of the preferred item never paradoxically decreases after a comparison) and **generalization to uncompared items**, thereby affirmatively answering the central question of whether generalization and monotonicity can coexist.
+  [NeurIPS 2025][LLM Alignment][preference learning] This paper proposes **Linear GBT with Diffusion Prior**, a class of preference learning models that simultaneously guarantee **monotonicity** (the score of the preferred…
 tags:
-  - NeurIPS 2025
-  - LLM Alignment
-  - preference learning
-  - monotonicity
-  - Bradley-Terry
-  - diffusion prior
-  - alignment
+  - "NeurIPS 2025"
+  - "LLM Alignment"
+  - "preference learning"
+  - "monotonicity"
+  - "Bradley-Terry"
+  - "diffusion prior"
+  - "alignment"
 date: 2026-05-08
 content_hash: a330f27df6684c11
 ---

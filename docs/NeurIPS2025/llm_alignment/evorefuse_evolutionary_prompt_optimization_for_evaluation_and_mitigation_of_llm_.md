@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] EvoRefuse: Evolutionary Prompt Optimization for Evaluation and Mitigation of LLM Over-Refusal to Pseudo-Malicious Instructions
 description: >-
-  [NeurIPS 2025][LLM Alignment][over-refusal] This paper proposes EvoRefuse—a framework that employs evolutionary search (mutation/recombination + ELBO fitness function + simulated annealing) to automatically generate semantically benign yet reliably refusal-triggering "pseudo-malicious" instructions. The resulting EvoRefuse-Test benchmark achieves 85.34% higher refusal trigger rate and 34.86% greater lexical diversity than the strongest baseline, while the EvoRefuse-Align dataset reduces over-refusal by 29.85%–45.96% via SFT/DPO fine-tuning without compromising safety.
+  [NeurIPS 2025][LLM Alignment][over-refusal] This paper proposes EvoRefuse—a framework that employs evolutionary search (mutation/recombination + ELBO fitness function + simulated annealing) to automatically generate sema…
 tags:
-  - NeurIPS 2025
-  - LLM Alignment
-  - over-refusal
-  - pseudo-malicious
-  - evolutionary search
-  - ELBO
-  - safety alignment
-  - DPO
+  - "NeurIPS 2025"
+  - "LLM Alignment"
+  - "over-refusal"
+  - "pseudo-malicious"
+  - "evolutionary search"
+  - "ELBO"
+  - "safety alignment"
+  - "DPO"
 date: 2026-05-08
 content_hash: be9b26cb3b676849
 ---

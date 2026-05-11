@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Influence Malleability in Linearized Attention: Dual Implications of Non-Convergent NTK Dynamics
 description: >-
-  [CVPR2026][Robotics][Neural Tangent Kernel] This paper demonstrates that linearized attention does not converge to the infinite-width limit under the NTK framework, and proposes the metric of *influence malleability* to show that the expressive power of attention and its adversarial vulnerability share a common origin—data-dependent kernel structure that deviates from the kernel regime.
+  [CVPR2026][Robotics][Neural Tangent Kernel] This paper demonstrates that linearized attention does not converge to the infinite-width limit under the NTK framework…
 tags:
-  - CVPR2026
-  - Robotics
-  - Neural Tangent Kernel
-  - linearized attention
-  - influence malleability
-  - kernel methods
-  - feature learning
+  - "CVPR2026"
+  - "Robotics"
+  - "Neural Tangent Kernel"
+  - "linearized attention"
+  - "influence malleability"
+  - "kernel methods"
+  - "feature learning"
 date: 2026-05-08
 content_hash: 2d114315bee33420
 ---

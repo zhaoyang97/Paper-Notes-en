@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Conditional Panoramic Image Generation via Masked Autoregressive Modeling
 description: >-
-  [NeurIPS 2025][Image Generation][panoramic image generation] This paper proposes PAR (Panoramic AutoRegressive model), the first framework to unify text-to-panorama (T2P) and panorama outpainting (PO) under masked autoregressive modeling. PAR addresses the boundary discontinuity inherent in ERP panoramas through a circular translation consistency loss and dual-space circular padding, achieving an FID of 37.37 on Matterport3D while demonstrating strong scalability and zero-shot generalization.
+  [NeurIPS 2025][Image Generation][panoramic image generation] This paper proposes PAR (Panoramic AutoRegressive model), the first framework to unify text-to-panorama (T2P) and panorama outpainting (PO) under masked autore…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - panoramic image generation
-  - masked autoregressive modeling (MAR)
-  - equirectangular projection
-  - circular padding
-  - consistency alignment
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "panoramic image generation"
+  - "masked autoregressive modeling (MAR)"
+  - "equirectangular projection"
+  - "circular padding"
+  - "consistency alignment"
 date: 2026-05-08
 content_hash: 9798b3f3b9a020f7
 ---

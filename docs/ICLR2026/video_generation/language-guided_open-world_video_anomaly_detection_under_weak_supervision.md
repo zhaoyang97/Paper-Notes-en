@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Language-guided Open-world Video Anomaly Detection under Weak Supervision
 description: >-
-  [ICLR 2026][Video Generation][Video Anomaly Detection] This paper proposes LaGoVAD, a language-guided open-world video anomaly detection paradigm that models anomaly definitions as random variables provided in natural language. Combined with dynamic video synthesis and contrastive learning regularization, it achieves zero-shot state-of-the-art performance across seven datasets.
+  [ICLR 2026][Video Generation][Video Anomaly Detection] This paper proposes LaGoVAD, a language-guided open-world video anomaly detection paradigm that models anomaly definitions as random variables provided in natural la…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - Video Anomaly Detection
-  - Open-world
-  - Language-guided
-  - Concept Drift
-  - Weak Supervision
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Video Anomaly Detection"
+  - "Open-world"
+  - "Language-guided"
+  - "Concept Drift"
+  - "Weak Supervision"
 date: 2026-05-08
 content_hash: e49d88ffe42fe911
 ---

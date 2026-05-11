@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Anti-adversarial Learning: Desensitizing Prompts for Large Language Models
 description: >-
-  [AAAI 2026][LLM Safety][prompt desensitization] This paper proposes PromptObfus, which adopts an "anti-adversarial learning" paradigm to replace sensitive tokens in user prompts with semantically distinct yet task-preserving alternatives. The approach eliminates explicit privacy leakage entirely and reduces implicit privacy inference attack success rates by 62.70%, without degrading the task performance of remote LLMs.
+  [AAAI 2026][LLM Safety][prompt desensitization] This paper proposes PromptObfus, which adopts an "anti-adversarial learning" paradigm to replace sensitive tokens in user prompts with semantically distinct yet task-preser…
 tags:
-  - AAAI 2026
-  - LLM Safety
-  - prompt desensitization
-  - anti-adversarial learning
-  - privacy protection
-  - masked language model
-  - surrogate model gradients
+  - "AAAI 2026"
+  - "LLM Safety"
+  - "prompt desensitization"
+  - "anti-adversarial learning"
+  - "privacy protection"
+  - "masked language model"
+  - "surrogate model gradients"
 date: 2026-05-08
 content_hash: 3c88345d293bc140
 ---

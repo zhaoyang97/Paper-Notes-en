@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Cyclic Counterfactuals under Shift–Scale Interventions
 description: >-
-  [NeurIPS 2025][Causal Inference] This paper establishes a theoretical framework for counterfactual reasoning under shift–scale soft interventions in cyclic (non-DAG) structural causal models (SCMs). It proves that a global contraction condition guarantees unique solvability of cyclic SCMs and derives sub-Gaussian concentration inequalities for counterfactual distributions.
+  [NeurIPS 2025][Causal Inference][cyclic causal models] This paper establishes a theoretical framework for counterfactual reasoning under shift–scale soft interventions in cyclic (non-DAG) structural causal models (SCMs).…
 tags:
-  - NeurIPS 2025
-  - Causal Inference
-  - cyclic causal models
-  - counterfactual reasoning
-  - soft interventions
-  - contraction mappings
+  - "NeurIPS 2025"
+  - "Causal Inference"
+  - "cyclic causal models"
+  - "counterfactual reasoning"
+  - "soft interventions"
+  - "contraction mappings"
 date: 2026-05-08
 content_hash: 1f0b90f3df697d6e
 ---

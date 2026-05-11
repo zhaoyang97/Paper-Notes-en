@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multimodal Classification of Radiation-Induced Contrast Enhancements and Tumor Recurrence Using Deep Learning
 description: >-
-  [CVPR 2026][Medical Imaging][Brain tumor] This paper proposes RICE-NET, a multimodal 3D ResNet-18 model that integrates longitudinal MRI data with radiotherapy dose distribution maps to automatically distinguish radiation-induced contrast enhancements (RICE) from tumor recurrence following glioblastoma surgery, achieving F1=0.92 on an independent test set.
+  [CVPR 2026][Medical Imaging][Brain tumor] This paper proposes RICE-NET, a multimodal 3D ResNet-18 model that integrates longitudinal MRI data with radiotherapy dose distribution maps to automatically distinguish radiatio…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Brain tumor
-  - radiation-induced contrast enhancement
-  - multimodal classification
-  - longitudinal MRI
-  - radiotherapy dose map
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Brain tumor"
+  - "radiation-induced contrast enhancement"
+  - "multimodal classification"
+  - "longitudinal MRI"
+  - "radiotherapy dose map"
 date: 2026-05-08
 content_hash: 03c98ab4507371de
 ---

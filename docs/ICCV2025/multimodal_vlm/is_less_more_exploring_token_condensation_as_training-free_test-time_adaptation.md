@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Is Less More? Exploring Token Condensation as Training-free Test-time Adaptation
 description: >-
-  [ICCV 2025][Multimodal VLM][Test-time adaptation] This paper proposes Token Condensation as Adaptation (TCA), a training-free test-time adaptation method that leverages a Domain-aware Token Reservoir (DTR) to guide cross-head token pruning/merging and logits self-correction. Without modifying model parameters, TCA improves cross-dataset performance of CLIP/SigLIP variants by up to 21.4% while reducing GFLOPs by 12.2%–48.9%.
+  [ICCV 2025][Multimodal VLM][Test-time adaptation] This paper proposes Token Condensation as Adaptation (TCA), a training-free test-time adaptation method that leverages a Domain-aware Token Reservoir (DTR) to guide cross…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Test-time adaptation
-  - Token pruning and merging
-  - CLIP
-  - Training-free
-  - Vision-language models
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Test-time adaptation"
+  - "Token pruning and merging"
+  - "CLIP"
+  - "Training-free"
+  - "Vision-language models"
 date: 2026-05-08
 content_hash: 03e907eea0ff0df0
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MAC-AMP: A Closed-Loop Multi-Agent Collaboration System for Multi-Objective Antimicrobial Peptide Design
 description: >-
-  [ICLR 2026][Image Generation][antimicrobial peptide design] This paper proposes MAC-AMP, the first closed-loop multi-agent collaboration system that reformulates antimicrobial peptide (AMP) design as a coordinated multi-agent optimization problem, achieving multi-objective optimization through AI-simulated peer review and adaptive reward design.
+  [ICLR 2026][Image Generation][antimicrobial peptide design] This paper proposes MAC-AMP, the first closed-loop multi-agent collaboration system that reformulates antimicrobial peptide (AMP) design as a coordinated multi-…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - antimicrobial peptide design
-  - multi-agent collaboration
-  - closed-loop reinforcement learning
-  - multi-objective optimization
-  - LLM agent
+  - "ICLR 2026"
+  - "Image Generation"
+  - "antimicrobial peptide design"
+  - "multi-agent collaboration"
+  - "closed-loop reinforcement learning"
+  - "multi-objective optimization"
+  - "LLM agent"
 date: 2026-05-08
 content_hash: b23a974dc5c53947
 ---

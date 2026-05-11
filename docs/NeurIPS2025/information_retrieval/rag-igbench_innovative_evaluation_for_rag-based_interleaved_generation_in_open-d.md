@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] RAG-IGBench: Innovative Evaluation for RAG-based Interleaved Generation in Open-domain Question Answering
 description: >-
-  [NeurIPS 2025][interleaved image-text generation] This paper introduces RAG-IGBench, a benchmark specifically designed to evaluate the quality of interleaved image-text content generated via retrieval-augmented generation. It proposes novel automatic evaluation metrics spanning three dimensions—text quality, image quality, and image-text consistency—and demonstrates strong correlation with human evaluation.
+  [NeurIPS 2025][Information Retrieval & RAG][interleaved image-text generation] This paper introduces RAG-IGBench, a benchmark specifically designed to evaluate the quality of interleaved image-text content generated via…
 tags:
-  - NeurIPS 2025
-  - interleaved image-text generation
-  - retrieval-augmented generation
-  - multimodal evaluation
-  - open-domain question answering
-  - benchmark
+  - "NeurIPS 2025"
+  - "Information Retrieval & RAG"
+  - "interleaved image-text generation"
+  - "retrieval-augmented generation"
+  - "multimodal evaluation"
+  - "open-domain question answering"
+  - "benchmark"
 date: 2026-05-08
 content_hash: 24c4d63a8295b307
 ---

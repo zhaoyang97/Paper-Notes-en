@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OmniSpatial: Towards Comprehensive Spatial Reasoning Benchmark for Vision Language Models
 description: >-
-  [ICLR 2026][Multimodal VLM][Spatial Reasoning] Grounded in cognitive psychology, this work introduces OmniSpatial—the first comprehensive spatial reasoning benchmark—systematically covering 4 dimensions (dynamic reasoning, complex spatial logic, spatial interaction, and perspective transformation) across 50 subcategories with 8.4K manually annotated QA pairs. The strongest reasoning model, o3, achieves only 56.33% while humans reach 92.63%, revealing that complex spatial reasoning remains a fundamental bottleneck for VLMs.
+  [ICLR 2026][Multimodal VLM][Spatial Reasoning] Grounded in cognitive psychology, this work introduces OmniSpatial—the first comprehensive spatial reasoning benchmark—systematically covering 4 dimensions (dynamic reasonin…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Spatial Reasoning
-  - VLM Benchmark
-  - Cognitive Psychology
-  - Dynamic Reasoning
-  - Perspective Transformation
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Spatial Reasoning"
+  - "VLM Benchmark"
+  - "Cognitive Psychology"
+  - "Dynamic Reasoning"
+  - "Perspective Transformation"
 date: 2026-05-08
 content_hash: e49ff2a067a38e61
 ---

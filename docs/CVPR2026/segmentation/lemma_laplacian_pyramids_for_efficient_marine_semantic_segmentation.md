@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LEMMA: Laplacian Pyramids for Efficient Marine Semantic Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Lightweight semantic segmentation] This paper proposes LEMMA, a lightweight marine semantic segmentation model based on Laplacian pyramids, which replaces deep feature computation with pyramid-decomposed edge information. LEMMA achieves SOTA-level segmentation accuracy (98.97% mIoU on MaSTr1325) with a 71× reduction in parameter count.
+  [CVPR 2026][Segmentation][Lightweight semantic segmentation] This paper proposes LEMMA, a lightweight marine semantic segmentation model based on Laplacian pyramids…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Lightweight semantic segmentation
-  - Laplacian pyramid
-  - marine semantic segmentation
-  - edge detection
-  - unmanned surface vehicle
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Lightweight semantic segmentation"
+  - "Laplacian pyramid"
+  - "marine semantic segmentation"
+  - "edge detection"
+  - "unmanned surface vehicle"
 date: 2026-05-08
 content_hash: 49b8805dab701395
 ---

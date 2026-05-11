@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Meta-World+: An Improved, Standardized, RL Benchmark
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][multi-task reinforcement learning] This paper systematically exposes how undocumented reward function inconsistencies across versions of the Meta-World benchmark distort algorithm comparisons, and releases a standardized new version, Meta-World+, which explicitly retains both V1 and V2 reward functions, introduces MT25/ML25 task sets, upgrades to the Gymnasium API, and enables fully reproducible evaluation for multi-task and meta-reinforcement learning.
+  [NeurIPS 2025][Reinforcement Learning][multi-task reinforcement learning] This paper systematically exposes how undocumented reward function inconsistencies across versions of the Meta-World benchmark distort algorithm c…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - multi-task reinforcement learning
-  - meta-reinforcement learning
-  - benchmark
-  - reward function
-  - reproducibility
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "multi-task reinforcement learning"
+  - "meta-reinforcement learning"
+  - "benchmark"
+  - "reward function"
+  - "reproducibility"
 date: 2026-05-08
 content_hash: 8346e24e0203192c
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] M-GRPO: Stabilizing Self-Supervised Reinforcement Learning for Large Language Models with Momentum-Anchored Policy Optimization
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][self-supervised reinforcement learning] To address the pervasive "policy collapse" problem in self-supervised reinforcement learning from verifiable rewards (SS-RLVR) during extended training, this paper proposes M-GRPO: a framework that employs a momentum model to provide stable pseudo-label targets alongside IQR-based low-entropy trajectory filtering to prevent entropy collapse. Training Qwen3-4B-Base on unlabeled MATH data, the final checkpoint directly surpasses the manually selected best checkpoint of SRT, achieving +2.92% on AIME24 and +5.05% on GPQA.
+  [NeurIPS 2025][Self-Supervised Learning][self-supervised reinforcement learning] To address the pervasive "policy collapse" problem in self-supervised reinforcement learning from verifiable rewards (SS-RLVR) during exten…
 tags:
-  - NeurIPS 2025
-  - Self-Supervised Learning
-  - self-supervised reinforcement learning
-  - policy collapse
-  - momentum anchoring
-  - GRPO
-  - entropy filtering
-  - pseudo-labels
+  - "NeurIPS 2025"
+  - "Self-Supervised Learning"
+  - "self-supervised reinforcement learning"
+  - "policy collapse"
+  - "momentum anchoring"
+  - "GRPO"
+  - "entropy filtering"
+  - "pseudo-labels"
 date: 2026-05-08
 content_hash: e4e400f6845cd4a7
 ---

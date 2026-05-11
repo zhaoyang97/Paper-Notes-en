@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] I-RAVEN-X: Benchmarking Generalization and Robustness of Analogical and Mathematical Reasoning in Large Language and Reasoning Models
 description: >-
-  [NeurIPS 2025][LLM Reasoning][abstract reasoning] This paper introduces I-RAVEN-X, an enhanced symbolic reasoning benchmark that evaluates the generalization and robustness of analogical and mathematical reasoning in LLMs and LRMs by increasing operand complexity, attribute range, and perceptual uncertainty. Results show that LRMs significantly outperform LLMs under deterministic reasoning, but suffer sharp performance degradation under uncertain reasoning conditions.
+  [NeurIPS 2025][LLM Reasoning][abstract reasoning] This paper introduces I-RAVEN-X, an enhanced symbolic reasoning benchmark that evaluates the generalization and robustness of analogical and mathematical reasoning in LLM…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - abstract reasoning
-  - Raven's Progressive Matrices
-  - LRM
-  - analogical reasoning
-  - robustness
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "abstract reasoning"
+  - "Raven's Progressive Matrices"
+  - "LRM"
+  - "analogical reasoning"
+  - "robustness"
 date: 2026-05-08
 content_hash: da2d5125e35e02dc
 ---

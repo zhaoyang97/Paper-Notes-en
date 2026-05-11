@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] MVAR: Visual Autoregressive Modeling with Scale and Spatial Markovian Conditioning
 description: >-
-  [ICLR 2026][LLM Efficiency][Visual Autoregressive] This paper proposes MVAR (Markovian Visual AutoRegressive), which introduces a scale Markov assumption (conditioning only on the adjacent preceding scale rather than all prior scales) and spatial Markov attention (restricting neighborhood size to $k$), reducing VAR's attention complexity from $\mathcal{O}(N^2)$ to $\mathcal{O}(Nk)$. MVAR achieves comparable or superior performance on ImageNet 256×256 while reducing inference memory by 3.0–4.2×, and requires only 8 RTX 4090 GPUs for training.
+  [ICLR 2026][LLM Efficiency][Visual Autoregressive] This paper proposes MVAR (Markovian Visual AutoRegressive), which introduces a scale Markov assumption (conditioning only on the adjacent preceding scale rather than all…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Visual Autoregressive
-  - Next-Scale Prediction
-  - Markov Assumption
-  - Attention Optimization
-  - Image Generation
-  - Memory Efficiency
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Visual Autoregressive"
+  - "Next-Scale Prediction"
+  - "Markov Assumption"
+  - "Attention Optimization"
+  - "Image Generation"
+  - "Memory Efficiency"
 date: 2026-05-08
 content_hash: e07770256ffad7ed
 ---

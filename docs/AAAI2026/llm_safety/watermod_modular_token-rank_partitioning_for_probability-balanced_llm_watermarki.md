@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] WaterMod: Modular Token-Rank Partitioning for Probability-Balanced LLM Watermarking
 description: >-
-  [AAAI 2026][LLM Safety][LLM watermarking] This paper proposes WaterMod, an LLM text watermarking method based on modular arithmetic ($\text{rank} \bmod k$) that partitions the vocabulary into modular residue classes after sorting tokens by probability. Under both zero-bit ($k=2$) and multi-bit ($k>2$) watermarking settings, WaterMod achieves high detection rates and low quality degradation within a unified framework, requiring no external thesaurus or hashing tricks.
+  [AAAI 2026][LLM Safety][LLM watermarking] This paper proposes WaterMod, an LLM text watermarking method based on modular arithmetic ($\text{rank} \bmod k$) that partitions the vocabulary into modular residue classes afte…
 tags:
-  - AAAI 2026
-  - LLM Safety
-  - LLM watermarking
-  - text watermarking
-  - modular arithmetic
-  - zero-bit/multi-bit watermarking
-  - probability balancing
+  - "AAAI 2026"
+  - "LLM Safety"
+  - "LLM watermarking"
+  - "text watermarking"
+  - "modular arithmetic"
+  - "zero-bit/multi-bit watermarking"
+  - "probability balancing"
 date: 2026-05-08
 content_hash: da977e978b783790
 ---

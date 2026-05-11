@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] EvoEdit: Evolving Null-space Alignment for Robust and Efficient Knowledge Editing
 description: >-
-  [ACL 2026][Knowledge Editing] This paper proposes EvoEdit, which achieves large-scale sequential knowledge editing through dynamically evolving null-space projectors. It efficiently injects new knowledge while preserving existing knowledge, maintaining SOTA performance at the 10K edit scale while being 3.5× faster than AlphaEdit.
+  [ACL 2026][Knowledge Editing][Null-space Projection] This paper proposes EvoEdit, which achieves large-scale sequential knowledge editing through dynamically evolving null-space projectors. It efficiently injects new kno…
 tags:
-  - ACL 2026
-  - Knowledge Editing
-  - Null-space Projection
-  - Sequential Editing
-  - Large Language Model
-  - Catastrophic Forgetting
+  - "ACL 2026"
+  - "Knowledge Editing"
+  - "Null-space Projection"
+  - "Sequential Editing"
+  - "Large Language Model"
+  - "Catastrophic Forgetting"
 date: 2025-04-17
 content_hash: 184266169e48819c
 ---

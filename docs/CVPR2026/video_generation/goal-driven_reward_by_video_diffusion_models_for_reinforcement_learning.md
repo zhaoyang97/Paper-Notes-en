@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Goal-Driven Reward by Video Diffusion Models for Reinforcement Learning
 description: >-
-  [CVPR 2026][Video Generation][Video Diffusion Models] This paper proposes GenReward, a framework that fine-tunes a pre-trained video diffusion model to generate goal-conditioned videos, and derives two-level goal-driven reward signals—video-level and frame-level—to guide reinforcement learning agents without manually designed reward functions, achieving substantial improvements over baselines on Meta-World robotic manipulation tasks.
+  [CVPR 2026][Video Generation][Video Diffusion Models] This paper proposes GenReward, a framework that fine-tunes a pre-trained video diffusion model to generate goal-conditioned videos…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Video Diffusion Models
-  - Goal-Driven Reward
-  - Reinforcement Learning
-  - Forward-Backward Representation
-  - World Knowledge Transfer
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Video Diffusion Models"
+  - "Goal-Driven Reward"
+  - "Reinforcement Learning"
+  - "Forward-Backward Representation"
+  - "World Knowledge Transfer"
 date: 2026-05-08
 content_hash: 2d2c9ee81aef8837
 ---

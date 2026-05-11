@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HumanLLM: Benchmarking and Improving LLM Anthropomorphism via Human Cognitive Patterns
 description: >-
-  [ACL 2026][LLM Efficiency][Anthropomorphism] HumanLLM models 244 psychological patterns (100 personality traits + 144 social cognitive patterns) as interacting causal forces rather than isolated labels, constructs 11,359 multi-pattern interaction scenarios, achieves $r=0.90$ human alignment through dual-layer checklist evaluation, and HumanLLM-8B surpasses Qwen3-32B in multi-pattern dynamics at 4x fewer parameters.
+  [ACL 2026][LLM Efficiency][Anthropomorphism] HumanLLM models 244 psychological patterns (100 personality traits + 144 social cognitive patterns) as interacting causal forces rather than isolated labels, constructs 11…
 tags:
-  - ACL 2026
-  - LLM Efficiency
-  - Anthropomorphism
-  - Cognitive Patterns
-  - Multi-Pattern Dynamics
-  - Role-Playing Agent
-  - Psychological Modeling
+  - "ACL 2026"
+  - "LLM Efficiency"
+  - "Anthropomorphism"
+  - "Cognitive Patterns"
+  - "Multi-Pattern Dynamics"
+  - "Role-Playing Agent"
+  - "Psychological Modeling"
 content_hash: 5718c12227744d16
 ---
 

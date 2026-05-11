@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Scaling Test-Time Compute to Achieve IOI Gold Medal with Open-Weight Models
 description: >-
-  [ACL 2026][LLM Reasoning][Test-time compute] This paper proposes GenCluster, a scalable test-time compute framework that achieves gold-medal performance on IOI 2025 (446.75/600) with the open-weight model gpt-oss-120b, via large-scale parallel generation → behavioral clustering → tournament ranking → round-robin submission.
+  [ACL 2026][LLM Reasoning][Test-time compute] This paper proposes GenCluster, a scalable test-time compute framework that achieves gold-medal performance on IOI 2025 (446.75/600) with the open-weight model gpt-oss-120b…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - Test-time compute
-  - competitive programming
-  - IOI
-  - behavioral clustering
-  - open-weight models
+  - "ACL 2026"
+  - "LLM Reasoning"
+  - "Test-time compute"
+  - "competitive programming"
+  - "IOI"
+  - "behavioral clustering"
+  - "open-weight models"
 date: 2026-05-08
 content_hash: 7b840b794a78c06e
 ---

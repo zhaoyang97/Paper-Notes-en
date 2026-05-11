@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Vision-Language Models Encode Clinical Guidelines for Concept-Based Medical Reasoning
 description: >-
-  [CVPR 2026][Multimodal VLM][Concept Bottleneck Models] This paper proposes MedCBR, a framework that integrates clinical diagnostic guidelines (e.g., BI-RADS) into the training and inference pipeline of concept bottleneck models. By leveraging LVLMs to generate guideline-consistent reports for enhanced concept supervision, combining multi-task CLIP training with a large reasoning model for structured clinical explanation generation, MedCBR achieves AUROCs of 94.2% and 84.0% on ultrasound and mammography cancer detection, respectively.
+  [CVPR 2026][Multimodal VLM][Concept Bottleneck Models] This paper proposes MedCBR, a framework that integrates clinical diagnostic guidelines (e.g.…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Concept Bottleneck Models
-  - Medical Imaging
-  - Explainable AI
-  - Clinical Guidelines
-  - CLIP
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Concept Bottleneck Models"
+  - "Medical Imaging"
+  - "Explainable AI"
+  - "Clinical Guidelines"
+  - "CLIP"
 date: 2026-05-08
 content_hash: 115c2d937a5c54e2
 ---

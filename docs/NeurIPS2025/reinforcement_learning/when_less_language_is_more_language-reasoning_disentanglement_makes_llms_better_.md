@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] When Less Language is More: Language-Reasoning Disentanglement Makes LLMs Better Multilingual Reasoners
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Multilingual Reasoning] Inspired by cognitive neuroscience (the relative independence of reasoning and language processing in the human brain), this work identifies and removes language-specific components in the activation space of LLMs to disentangle language from reasoning, achieving consistent improvements in multilingual reasoning performance without any training.
+  [NeurIPS 2025][Reinforcement Learning][Multilingual Reasoning] Inspired by cognitive neuroscience (the relative independence of reasoning and language processing in the human brain)…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Multilingual Reasoning
-  - Language-Reasoning Disentanglement
-  - Causal Intervention
-  - Activation Space
-  - Training-Free
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Multilingual Reasoning"
+  - "Language-Reasoning Disentanglement"
+  - "Causal Intervention"
+  - "Activation Space"
+  - "Training-Free"
 date: 2026-05-08
 content_hash: 84dad2402a268f5f
 ---

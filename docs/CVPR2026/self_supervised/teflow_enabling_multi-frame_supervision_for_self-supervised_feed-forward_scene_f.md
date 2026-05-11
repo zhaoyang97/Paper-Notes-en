@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] TeFlow: Enabling Multi-frame Supervision for Self-Supervised Feed-forward Scene Flow Estimation
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Scene Flow] This paper proposes TeFlow — the first method to introduce multi-frame supervision into self-supervised feed-forward scene flow estimation. By constructing a motion candidate pool via temporal aggregation and aggregating temporally consistent supervision signals through consensus voting, TeFlow achieves a Three-way EPE of 3.57 cm on Argoverse 2 (on par with the optimization-based method Floxels) while maintaining real-time inference (8 s vs. 24 min), representing a 22.3% improvement over SeFlow++.
+  [CVPR 2026][Self-Supervised Learning][Scene Flow] This paper proposes TeFlow — the first method to introduce multi-frame supervision into self-supervised feed-forward scene flow estimation. By constructing a motion candi…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - Scene Flow
-  - Self-Supervised
-  - Multi-frame Supervision
-  - Temporal Aggregation
-  - Feed-forward Network
-  - Point Cloud
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Scene Flow"
+  - "Self-Supervised"
+  - "Multi-frame Supervision"
+  - "Temporal Aggregation"
+  - "Feed-forward Network"
+  - "Point Cloud"
 date: 2026-05-08
 content_hash: e02b4da0f0def8b9
 ---

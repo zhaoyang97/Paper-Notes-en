@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] PaSE: Prototype-aligned Calibration and Shapley-based Equilibrium for Multimodal Sentiment Analysis
 description: >-
-  [AAAI 2026][Audio & Speech][multimodal sentiment analysis] PaSE is a framework that explicitly addresses modality competition in multimodal sentiment analysis through a two-stage optimization strategy combining prototype-guided calibration alignment (via Entropic Optimal Transport) and Shapley-value-based gradient modulation.
+  [AAAI 2026][Audio & Speech][multimodal sentiment analysis] PaSE is a framework that explicitly addresses modality competition in multimodal sentiment analysis through a two-stage optimization strategy combining prototype…
 tags:
-  - AAAI 2026
+  - "AAAI 2026"
   - "Audio & Speech"
-  - multimodal sentiment analysis
-  - modality competition
-  - prototype alignment
-  - Shapley value
-  - optimal transport
-  - gradient modulation
+  - "multimodal sentiment analysis"
+  - "modality competition"
+  - "prototype alignment"
+  - "Shapley value"
+  - "optimal transport"
+  - "gradient modulation"
 date: 2026-05-08
 content_hash: c16537e57b9a61d7
 ---

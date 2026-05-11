@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CE-GPPO: Coordinating Entropy via Gradient-Preserving Clipping Policy Optimization in Reinforcement Learning
 description: >-
-  [ACL 2026][Reinforcement Learning][Policy Optimization] This paper proposes the CE-GPPO algorithm, which reintroduces gradient signals for low-probability tokens outside the PPO clipping range via stop-gradient operations, enabling fine-grained coordination of policy entropy and achieving a better balance between exploration and exploitation.
+  [ACL 2026][Reinforcement Learning][Policy Optimization] This paper proposes the CE-GPPO algorithm, which reintroduces gradient signals for low-probability tokens outside the PPO clipping range via stop-gradient operation…
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - Policy Optimization
-  - Entropy Dynamic Control
-  - Gradient Preservation
-  - PPO Improvement
-  - Mathematical Reasoning
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "Policy Optimization"
+  - "Entropy Dynamic Control"
+  - "Gradient Preservation"
+  - "PPO Improvement"
+  - "Mathematical Reasoning"
 date: 2026-05-08
 content_hash: 0fa343ad0e641330
 ---

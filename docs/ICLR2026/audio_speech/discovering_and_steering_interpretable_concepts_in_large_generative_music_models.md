@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Discovering and Steering Interpretable Concepts in Large Generative Music Models
 description: >-
-  [ICLR 2026][Audio & Speech][Sparse Autoencoder] This work presents the first application of Sparse Autoencoders (SAEs) to the audio/music domain, extracting interpretable musical concept features from the residual stream of the autoregressive music generation model MusicGen, and leveraging these features for controllable generation (steering).
+  [ICLR 2026][Audio & Speech][Sparse Autoencoder] This work presents the first application of Sparse Autoencoders (SAEs) to the audio/music domain…
 tags:
-  - ICLR 2026
+  - "ICLR 2026"
   - "Audio & Speech"
-  - Sparse Autoencoder
-  - Music Generation
-  - Interpretability
-  - MusicGen
-  - Feature Steering
+  - "Sparse Autoencoder"
+  - "Music Generation"
+  - "Interpretability"
+  - "MusicGen"
+  - "Feature Steering"
 date: 2026-05-08
 content_hash: f12835d20db56574
 ---

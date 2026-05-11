@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Robust Stereo Matching in the Wild with Selective Mixture-of-Experts
 description: >-
-  [ICCV 2025][3D Vision][Stereo Matching] This paper proposes SMoEStereo, which integrates variable-rank MoE-LoRA and variable-kernel MoE-Adapter modules into a frozen Visual Foundation Model (VFM), combined with a lightweight decision network for selective activation of MoE modules, achieving scene-adaptive robust stereo matching with state-of-the-art performance on cross-domain and joint generalization benchmarks.
+  [ICCV 2025][3D Vision][Stereo Matching] This paper proposes SMoEStereo, which integrates variable-rank MoE-LoRA and variable-kernel MoE-Adapter modules into a frozen Visual Foundation Model (VFM)…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Stereo Matching
-  - Visual Foundation Model
-  - Mixture-of-Experts
-  - LoRA
-  - Cross-Domain Generalization
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Stereo Matching"
+  - "Visual Foundation Model"
+  - "Mixture-of-Experts"
+  - "LoRA"
+  - "Cross-Domain Generalization"
 date: 2026-05-08
 content_hash: 3d91c5f390717836
 ---

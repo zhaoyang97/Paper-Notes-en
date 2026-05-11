@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FROSS: Faster-than-Real-Time Online 3D Semantic Scene Graph Generation from RGB-D Images
 description: >-
-  [ICCV 2025][3D Vision][3D Scene Graph] This paper proposes FROSS, a method that lifts 2D scene graphs directly into 3D space and represents objects as Gaussian distributions, achieving faster-than-real-time (144 FPS) online 3D semantic scene graph generation without requiring precise point cloud reconstruction.
+  [ICCV 2025][3D Vision][3D Scene Graph] This paper proposes FROSS, a method that lifts 2D scene graphs directly into 3D space and represents objects as Gaussian distributions…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D Scene Graph
-  - Real-time
-  - Gaussian Distribution
-  - RGB-D
-  - Scene Understanding
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D Scene Graph"
+  - "Real-time"
+  - "Gaussian Distribution"
+  - "RGB-D"
+  - "Scene Understanding"
 date: 2026-05-08
 content_hash: 8272d72273da5000
 ---

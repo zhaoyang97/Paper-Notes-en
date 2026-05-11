@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EgoWorld: Translating Exocentric View to Egocentric View using Rich Exocentric Observations
 description: >-
-  [ICLR 2026][3D Vision][View translation] EgoWorld proposes an end-to-end exocentric-to-egocentric view translation framework that extracts three complementary observations from a single third-person image—3D point clouds, hand poses, and text descriptions—projects the point cloud to obtain a sparse egocentric RGB map, and reconstructs a complete high-fidelity egocentric image via diffusion-based inpainting, achieving state-of-the-art performance across four datasets under diverse unseen settings.
+  [ICLR 2026][3D Vision][View translation] EgoWorld proposes an end-to-end exocentric-to-egocentric view translation framework that extracts three complementary observations from a single third-person image—3D point clouds…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - View translation
-  - third-person to first-person
-  - diffusion models
-  - hand-object interaction
-  - point cloud projection
+  - "ICLR 2026"
+  - "3D Vision"
+  - "View translation"
+  - "third-person to first-person"
+  - "diffusion models"
+  - "hand-object interaction"
+  - "point cloud projection"
 date: 2026-05-08
 content_hash: 9dbbc28406cd961d
 ---

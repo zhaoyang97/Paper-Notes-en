@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PhysHead: Simulation-Ready Gaussian Head Avatars
 description: >-
-  [CVPR 2026][3D Vision][Head Avatar Reconstruction] This paper proposes PhysHead—the first method to integrate physics-driven hair dynamics with animatable 3DGS head avatars. It models expressive faces via FLAME mesh + 3DGS, represents hair appearance via strands + 3DGS, drives hair animation through a physics engine, and enables layered optimization of hair and face through VLM-generated bald images.
+  [CVPR 2026][3D Vision][Head Avatar Reconstruction] This paper proposes PhysHead—the first method to integrate physics-driven hair dynamics with animatable 3DGS head avatars. It models expressive faces via FLAME mesh + 3D…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Head Avatar Reconstruction
-  - 3D Gaussian Splatting
-  - Hair Strand Physics Simulation
-  - Layered Representation
-  - VLM-Assisted
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Head Avatar Reconstruction"
+  - "3D Gaussian Splatting"
+  - "Hair Strand Physics Simulation"
+  - "Layered Representation"
+  - "VLM-Assisted"
 date: 2026-05-08
 content_hash: ca68223a9dedd0e2
 ---

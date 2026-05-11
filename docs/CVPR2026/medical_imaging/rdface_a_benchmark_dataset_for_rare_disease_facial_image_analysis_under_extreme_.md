@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RDFace: A Benchmark Dataset for Rare Disease Facial Image Analysis under Extreme Data Scarcity and Phenotype-Aware Synthetic Generation
 description: >-
-  [CVPR 2026][Medical Imaging][Rare disease facial recognition] This work introduces RDFace, a standardized benchmark comprising 456 pediatric facial images spanning 103 rare genetic diseases, and systematically evaluates phenotype-aware synthetic data augmentation (DreamBooth/FastGAN) for rare disease diagnosis under extremely low-sample regimes. DreamBooth-based augmentation achieves up to 13.7% improvement in diagnostic accuracy in the most data-scarce settings.
+  [CVPR 2026][Medical Imaging][Rare disease facial recognition] This work introduces RDFace, a standardized benchmark comprising 456 pediatric facial images spanning 103 rare genetic diseases…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Rare disease facial recognition
-  - extreme data scarcity
-  - synthetic data augmentation
-  - phenotype alignment
-  - DreamBooth
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Rare disease facial recognition"
+  - "extreme data scarcity"
+  - "synthetic data augmentation"
+  - "phenotype alignment"
+  - "DreamBooth"
 date: 2026-05-08
 content_hash: 621a26f8d15e1a9f
 ---

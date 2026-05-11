@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Omni-MMSI: Toward Identity-Attributed Social Interaction Understanding
 description: >-
-  [CVPR 2026][Audio & Speech][Social Interaction Understanding] This paper introduces the Omni-MMSI task—understanding multi-person social interactions from raw audio-visual inputs (rather than pre-processed oracle social cues)—and proposes Omni-MMSI-R, a reference-guided pipeline that achieves accurate social interaction understanding via tool-generated identity-attributed social cues combined with chain-of-thought reasoning.
+  [CVPR 2026][Audio & Speech][Social Interaction Understanding] This paper introduces the Omni-MMSI task—understanding multi-person social interactions from raw audio-visual inputs (rather than pre-processed oracle social…
 tags:
-  - CVPR 2026
+  - "CVPR 2026"
   - "Audio & Speech"
-  - Social Interaction Understanding
-  - Identity Attribution
-  - Multimodal Reasoning
-  - Chain-of-Thought Reasoning
-  - Reference Guidance
+  - "Social Interaction Understanding"
+  - "Identity Attribution"
+  - "Multimodal Reasoning"
+  - "Chain-of-Thought Reasoning"
+  - "Reference Guidance"
 date: 2026-05-08
 content_hash: f087cc03abfd4631
 ---

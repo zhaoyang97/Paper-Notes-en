@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OpenLex3D: A Tiered Evaluation Benchmark for Open-Vocabulary 3D Scene Representations
 description: >-
-  [NeurIPS 2025][3D Vision][open-vocabulary] This paper proposes OpenLex3D, a tiered evaluation benchmark for open-vocabulary 3D scene representations. Built upon Replica, ScanNet++, and HM3D, it provides language annotations 13× richer than the original labels, supporting evaluation on two tasks: open-set 3D semantic segmentation and object retrieval.
+  [NeurIPS 2025][3D Vision][open-vocabulary] This paper proposes OpenLex3D, a tiered evaluation benchmark for open-vocabulary 3D scene representations. Built upon Replica, ScanNet++, and HM3D…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - open-vocabulary
-  - 3D scene understanding
-  - benchmark
-  - semantic segmentation
-  - object retrieval
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "open-vocabulary"
+  - "3D scene understanding"
+  - "benchmark"
+  - "semantic segmentation"
+  - "object retrieval"
 date: 2026-05-08
 content_hash: 8e0933eabb9de39b
 ---

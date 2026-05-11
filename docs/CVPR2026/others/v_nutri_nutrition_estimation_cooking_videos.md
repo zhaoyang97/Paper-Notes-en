@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] V-Nutri: Dish-Level Nutrition Estimation from Egocentric Cooking Videos
 description: >-
-  [CVPR 2026][Nutrition Estimation] This paper proposes V-Nutri, the first framework to leverage process information from egocentric cooking videos for dish-level nutrition estimation. A VideoMamba-based keyframe selection module identifies ingredient addition moments, which are fused with the final dish image to predict calories and macronutrients.
+  [CVPR 2026][Nutrition Estimation] This paper proposes V-Nutri, the first framework to leverage process information from egocentric cooking videos for dish-level nutrition estimation. A VideoMamba-based keyframe selection…
 tags:
-  - CVPR 2026
-  - Nutrition Estimation
-  - Egocentric Video
-  - Keyframe Selection
-  - Multimodal Fusion
-  - Food Analysis
+  - "CVPR 2026"
+  - "Nutrition Estimation"
+  - "Egocentric Video"
+  - "Keyframe Selection"
+  - "Multimodal Fusion"
+  - "Food Analysis"
 date: 2026-05-08
 content_hash: 98c00b491dff6f27
 ---

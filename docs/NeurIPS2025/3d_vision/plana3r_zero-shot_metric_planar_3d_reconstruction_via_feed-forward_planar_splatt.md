@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Plana3R: Zero-shot Metric Planar 3D Reconstruction via Feed-Forward Planar Splatting
 description: >-
-  [NeurIPS 2025][3D Vision][Planar 3D reconstruction] This paper proposes Plana3R, a feed-forward framework that requires neither camera poses nor planar annotations, predicting sparse 3D planar primitives and metric-scale relative poses from unpaired two-view images for zero-shot metric planar 3D reconstruction of indoor scenes.
+  [NeurIPS 2025][3D Vision][Planar 3D reconstruction] This paper proposes Plana3R, a feed-forward framework that requires neither camera poses nor planar annotations…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Planar 3D reconstruction
-  - metric reconstruction
-  - planar splatting
-  - indoor scenes
-  - feed-forward model
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Planar 3D reconstruction"
+  - "metric reconstruction"
+  - "planar splatting"
+  - "indoor scenes"
+  - "feed-forward model"
 date: 2026-05-08
 content_hash: 8cdb34d9f677d0ec
 ---

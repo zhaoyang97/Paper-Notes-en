@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Improving Black-Box Generative Attacks via Generator Semantic Consistency
 description: >-
-  [ICLR 2026][Audio & Speech][Generative adversarial attacks] By analyzing semantic degradation in intermediate-layer features of perturbation generators, this paper proposes a Mean Teacher-based semantic structure-aware framework that performs self-feature distillation at early generator layers to preserve semantic consistency, thereby enhancing the transferability of adversarial examples across models, domains, and tasks.
+  [ICLR 2026][Audio & Speech][Generative adversarial attacks] By analyzing semantic degradation in intermediate-layer features of perturbation generators…
 tags:
-  - ICLR 2026
+  - "ICLR 2026"
   - "Audio & Speech"
-  - Generative adversarial attacks
-  - black-box transferability
-  - Mean Teacher
-  - semantic consistency
-  - feature distillation
+  - "Generative adversarial attacks"
+  - "black-box transferability"
+  - "Mean Teacher"
+  - "semantic consistency"
+  - "feature distillation"
 date: 2026-05-08
 content_hash: 3ab2f751064550a1
 ---

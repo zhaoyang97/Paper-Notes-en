@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Function Induction and Task Generalization: An Interpretability Study with Off-by-One Addition
 description: >-
-  [ICLR 2026][Causal Inference][mechanistic interpretability] Using off-by-one addition (e.g., 1+1=3, 2+2=5) as a counterfactual task, this paper applies path patching to reveal a **function induction** mechanism within large language models — an attention head circuit that performs inductive reasoning at the function level, transcending token-level pattern matching — and demonstrates that this mechanism is reused across tasks.
+  [ICLR 2026][Causal Inference][mechanistic interpretability] Using off-by-one addition (e.g., 1+1=3, 2+2=5) as a counterfactual task, this paper applies path patching to reveal a **function induction** mechanism within la…
 tags:
-  - ICLR 2026
-  - Causal Inference
-  - mechanistic interpretability
-  - in-context learning
-  - induction heads
-  - function vectors
-  - task generalization
-  - path patching
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "mechanistic interpretability"
+  - "in-context learning"
+  - "induction heads"
+  - "function vectors"
+  - "task generalization"
+  - "path patching"
 date: 2026-05-08
 content_hash: 69400af4439ce914
 ---

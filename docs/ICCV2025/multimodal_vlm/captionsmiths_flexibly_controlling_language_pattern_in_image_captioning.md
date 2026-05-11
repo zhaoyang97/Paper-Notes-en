@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CaptionSmiths: Flexibly Controlling Language Pattern in Image Captioning
 description: >-
-  [ICCV 2025][Multimodal VLM][image captioning] CaptionSmiths is a framework that enables slider-style flexible control over three caption attributes — length, descriptiveness, and lexical uniqueness — via continuous scalar interpolation rather than discrete clustering. Trained jointly on multiple datasets, it achieves more precise attribute control and higher lexical alignment quality than baselines.
+  [ICCV 2025][Multimodal VLM][image captioning] CaptionSmiths is a framework that enables slider-style flexible control over three caption attributes — length, descriptiveness…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - image captioning
-  - controllable generation
-  - continuous conditioning
-  - vision-language models
-  - language pattern control
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "image captioning"
+  - "controllable generation"
+  - "continuous conditioning"
+  - "vision-language models"
+  - "language pattern control"
 date: 2026-05-08
 content_hash: fc96916157c487bd
 ---

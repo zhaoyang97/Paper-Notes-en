@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Length-Adaptive Interest Network for Balancing Long and Short Sequence Modeling in CTR Prediction
 description: >-
-  [AAAI 2026][Recommender Systems][CTR prediction] This paper proposes LAIN, a framework that injects sequence length as an explicit conditional signal into CTR models to mitigate performance imbalance between long- and short-sequence users. LAIN comprises three lightweight, plug-and-play modules: a Spectral Length Encoder, Length-Conditioned Prompting, and Length-Modulated Attention.
+  [AAAI 2026][Recommender Systems][CTR prediction] This paper proposes LAIN, a framework that injects sequence length as an explicit conditional signal into CTR models to mitigate performance imbalance between long- and sh…
 tags:
-  - AAAI 2026
-  - Recommender Systems
-  - CTR prediction
-  - sequence length adaptation
-  - attention polarization
-  - long/short sequence modeling
+  - "AAAI 2026"
+  - "Recommender Systems"
+  - "CTR prediction"
+  - "sequence length adaptation"
+  - "attention polarization"
+  - "long/short sequence modeling"
 date: 2026-05-08
 content_hash: 7363a100f1093d97
 ---

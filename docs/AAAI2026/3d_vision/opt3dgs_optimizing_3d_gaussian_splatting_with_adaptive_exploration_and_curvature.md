@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Opt3DGS: Optimizing 3D Gaussian Splatting with Adaptive Exploration and Curvature-Aware Exploitation
 description: >-
-  [AAAI 2026][3D Vision][3D Gaussian Splatting] This paper proposes Opt3DGS, a framework that divides 3DGS training into two phases — exploration and exploitation. The exploration phase employs adaptively weighted SGLD to escape local optima, while the exploitation phase uses a local quasi-Newton Adam optimizer for precise convergence. The method achieves state-of-the-art rendering quality without modifying the Gaussian representation.
+  [AAAI 2026][3D Vision][3D Gaussian Splatting] This paper proposes Opt3DGS, a framework that divides 3DGS training into two phases — exploration and exploitation. The exploration phase employs adaptively weighted SGLD to…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - Non-convex Optimization
-  - Stochastic Gradient Langevin Dynamics
-  - Quasi-Newton Methods
-  - Novel View Synthesis
+  - "AAAI 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Non-convex Optimization"
+  - "Stochastic Gradient Langevin Dynamics"
+  - "Quasi-Newton Methods"
+  - "Novel View Synthesis"
 date: 2026-05-08
 content_hash: e7f7350d8ee6d612
 ---

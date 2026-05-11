@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Optimism Without Regularization: Constant Regret in Zero-Sum Games
 description: >-
-  [NeurIPS 2025][Fictitious Play] This paper provides the first proof that Optimistic Fictitious Play without regularization achieves $O(1)$ constant regret in $2\times2$ zero-sum games, matching the optimal rate of regularized Optimistic FTRL. It further establishes an $\Omega(\sqrt{T})$ regret lower bound for Alternating Fictitious Play, separating the capabilities of optimism and alternation in the unregularized setting.
+  [NeurIPS 2025][Fictitious Play] This paper provides the first proof that Optimistic Fictitious Play without regularization achieves $O(1)$ constant regret in $2\times2$ zero-sum games…
 tags:
-  - NeurIPS 2025
-  - Fictitious Play
-  - Optimistic Learning
-  - Zero-Sum Games
-  - Regret Bounds
-  - No Regularization
+  - "NeurIPS 2025"
+  - "Fictitious Play"
+  - "Optimistic Learning"
+  - "Zero-Sum Games"
+  - "Regret Bounds"
+  - "No Regularization"
 date: 2026-05-08
 content_hash: d092618b5496449d
 ---

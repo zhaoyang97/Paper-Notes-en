@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] E2EDev: Benchmarking Large Language Models in End-to-End Software Development Task
 description: >-
-  [ACL 2026][LLM Evaluation][end-to-end software development] This paper proposes E2EDev, an end-to-end software development benchmark grounded in Behavior-Driven Development (BDD) principles. It comprises 46 real-world web projects, 244 fine-grained requirements, and 703 executable BDD tests. Evaluation reveals that even the strongest LLMs (Claude series) achieve no more than 60% requirement accuracy, and that the interaction overhead of multi-agent frameworks is disproportionate to their performance gains.
+  [ACL 2026][LLM Evaluation][end-to-end software development] This paper proposes E2EDev, an end-to-end software development benchmark grounded in Behavior-Driven Development (BDD) principles. It comprises 46 real-world we…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - end-to-end software development
-  - behavior-driven development
-  - benchmark
-  - multi-agent coding
-  - requirements verification
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "end-to-end software development"
+  - "behavior-driven development"
+  - "benchmark"
+  - "multi-agent coding"
+  - "requirements verification"
 date: 2026-05-08
 content_hash: 39028b0ad212b16c
 ---

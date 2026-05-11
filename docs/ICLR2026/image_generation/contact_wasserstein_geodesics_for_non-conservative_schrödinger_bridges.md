@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Contact Wasserstein Geodesics for Non-Conservative Schrödinger Bridges
 description: >-
-  [ICLR2026][Image Generation][Schrödinger bridge] This paper proposes the Non-Conservative Generalized Schrödinger Bridge (NCGSB)—built on contact Hamiltonian mechanics to allow time-varying energy—and introduces the Contact Wasserstein Geodesic (CWG), which reformulates the bridge problem as geodesic computation on a finite-dimensional Jacobi metric. A ResNet parameterization achieves near-linear complexity and supports guided generation. CWG substantially outperforms iterative SB solvers on manifold navigation, molecular dynamics, and image generation tasks.
+  [ICLR2026][Image Generation][Schrödinger bridge] This paper proposes the Non-Conservative Generalized Schrödinger Bridge (NCGSB)—built on contact Hamiltonian mechanics to allow time-varying energy—and introduces the Cont…
 tags:
-  - ICLR2026
-  - Image Generation
-  - Schrödinger bridge
-  - contact Hamiltonian
-  - Wasserstein geodesic
-  - non-conservative dynamics
-  - guided generation
+  - "ICLR2026"
+  - "Image Generation"
+  - "Schrödinger bridge"
+  - "contact Hamiltonian"
+  - "Wasserstein geodesic"
+  - "non-conservative dynamics"
+  - "guided generation"
 date: 2026-05-08
 content_hash: 4fcfb1464daab1ac
 ---

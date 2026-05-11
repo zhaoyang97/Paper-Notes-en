@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FregeLogic at SemEval 2026 Task 11: A Hybrid Neuro-Symbolic Architecture for Content-Robust Syllogistic Validity Prediction
 description: >-
-  [ACL 2026][LLM Agent][syllogistic reasoning] FregeLogic is a hybrid neuro-symbolic system that combines a five-member LLM ensemble with a Z3 SMT solver as a tiebreaker, achieving a 16% reduction in belief bias alongside a 0.9% accuracy improvement on syllogistic validity prediction.
+  [ACL 2026][LLM Agent][syllogistic reasoning] FregeLogic is a hybrid neuro-symbolic system that combines a five-member LLM ensemble with a Z3 SMT solver as a tiebreaker…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - syllogistic reasoning
-  - belief bias
-  - neuro-symbolic
-  - LLM ensemble
-  - Z3 solver
+  - "ACL 2026"
+  - "LLM Agent"
+  - "syllogistic reasoning"
+  - "belief bias"
+  - "neuro-symbolic"
+  - "LLM ensemble"
+  - "Z3 solver"
 date: 2026-05-08
 content_hash: 9c8f901ae0fe186f
 ---

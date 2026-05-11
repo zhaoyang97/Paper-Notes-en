@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] STAR: Similarity-guided Teacher-Assisted Refinement for Super-Tiny Function Calling Models
 description: >-
-  [ICLR 2026][Model Compression][Knowledge Distillation] This paper proposes the STAR framework, which combines Constrained Knowledge Distillation (CKD) and Similarity-guided Reinforcement Learning (Sim-RL) to effectively transfer function calling capabilities from large models to super-tiny models at the 0.6B scale, achieving substantial improvements over baselines on BFCL and ACEBench.
+  [ICLR 2026][Model Compression][Knowledge Distillation] This paper proposes the STAR framework, which combines Constrained Knowledge Distillation (CKD) and Similarity-guided Reinforcement Learning (Sim-RL) to effectively…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Knowledge Distillation
-  - Reinforcement Learning
-  - Function Calling
-  - Super-Tiny Models
-  - Similarity Reward
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Knowledge Distillation"
+  - "Reinforcement Learning"
+  - "Function Calling"
+  - "Super-Tiny Models"
+  - "Similarity Reward"
 date: 2026-05-08
 content_hash: 4bb1dbe4de6b8c60
 ---

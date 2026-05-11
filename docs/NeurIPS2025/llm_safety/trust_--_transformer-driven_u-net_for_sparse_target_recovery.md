@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TRUST -- Transformer-Driven U-Net for Sparse Target Recovery
 description: >-
-  [NeurIPS 2025][LLM Safety][Sparse Recovery] This paper proposes the TRUST architecture, which integrates the Transformer attention mechanism with a U-Net decoder to jointly learn the sensing operator and reconstruct sparse signals under unknown sensing matrices, achieving significant improvements over conventional methods in SSIM and PSNR.
+  [NeurIPS 2025][LLM Safety][Sparse Recovery] This paper proposes the TRUST architecture, which integrates the Transformer attention mechanism with a U-Net decoder to jointly learn the sensing operator and reconstruct spar…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - Sparse Recovery
-  - Transformer
-  - U-Net
-  - Inverse Problems
-  - Sensing Matrix Learning
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "Sparse Recovery"
+  - "Transformer"
+  - "U-Net"
+  - "Inverse Problems"
+  - "Sensing Matrix Learning"
 date: 2026-05-08
 content_hash: 1f21e7c94f9ff403
 ---

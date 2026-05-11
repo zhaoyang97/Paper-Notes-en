@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ReMoT: Reinforcement Learning with Motion Contrast Triplets
 description: >-
-  [CVPR 2026][Autonomous Driving][Motion Contrast Triplets] This paper proposes ReMoT, a unified training paradigm that constructs the large-scale ReMoT-16K motion contrast triplet dataset via a rule-driven multi-expert collaborative pipeline, and combines GRPO reinforcement learning with a logical consistency reward and length regularization to systematically address the fundamental deficiencies of VLMs in spatiotemporal consistency reasoning, achieving a 25.1% performance leap on spatiotemporal reasoning tasks.
+  [CVPR 2026][Autonomous Driving][Motion Contrast Triplets] This paper proposes ReMoT, a unified training paradigm that constructs the large-scale ReMoT-16K motion contrast triplet dataset via a rule-driven multi-expert co…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Motion Contrast Triplets
-  - GRPO
-  - Spatiotemporal Reasoning
-  - VLM
-  - Data Construction
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Motion Contrast Triplets"
+  - "GRPO"
+  - "Spatiotemporal Reasoning"
+  - "VLM"
+  - "Data Construction"
 date: 2026-05-08
 content_hash: 79ae269f85e1a3a1
 ---

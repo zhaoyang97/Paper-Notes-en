@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Certifiably Optimal Anisotropic Rotation Averaging
 description: >-
-  [ICCV 2025][Robotics][rotation averaging] This paper proposes a novel SDP relaxation that enforces solutions to lie within the convex hull of SO(3), conv(SO(3)), achieving for the first time certifiably globally optimal rotation averaging under anisotropic cost functions. It resolves the fundamental failure of the conventional O(3) relaxation in anisotropic settings.
+  [ICCV 2025][Robotics][rotation averaging] This paper proposes a novel SDP relaxation that enforces solutions to lie within the convex hull of SO(3), conv(SO(3))…
 tags:
-  - ICCV 2025
-  - Robotics
-  - rotation averaging
-  - anisotropic optimization
-  - semidefinite programming
-  - convex relaxation
-  - structure from motion
+  - "ICCV 2025"
+  - "Robotics"
+  - "rotation averaging"
+  - "anisotropic optimization"
+  - "semidefinite programming"
+  - "convex relaxation"
+  - "structure from motion"
 date: 2026-05-08
 content_hash: a2103ed675279a68
 ---

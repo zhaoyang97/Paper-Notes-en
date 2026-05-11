@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Cognitive Mirrors: Exploring the Diverse Functional Roles of Attention Heads in LLM Reasoning
 description: >-
-  [NeurIPS 2025][Attention heads] This paper proposes the CogQA benchmark dataset and a multi-class probing framework to systematically analyze cognitive functional specialization of attention heads in LLMs. The study reveals that cognitive heads exhibit sparsity, universality, and hierarchical functional organization; ablating cognitive heads significantly degrades reasoning performance, while amplifying them improves accuracy.
+  [NeurIPS 2025][Interpretability][Attention heads] This paper proposes the CogQA benchmark dataset and a multi-class probing framework to systematically analyze cognitive functional specialization of attention heads in LL…
 tags:
-  - NeurIPS 2025
-  - Attention heads
-  - cognitive functions
-  - interpretability
-  - probing
-  - functional specialization
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "Attention heads"
+  - "cognitive functions"
+  - "probing"
+  - "functional specialization"
 date: 2026-05-08
 content_hash: 34d4f79c2d91ec90
 ---

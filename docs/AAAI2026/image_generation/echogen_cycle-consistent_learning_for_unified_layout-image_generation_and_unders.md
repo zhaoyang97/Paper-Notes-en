@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EchoGen: Cycle-Consistent Learning for Unified Layout-Image Generation and Understanding
 description: >-
-  [AAAI 2026][Image Generation][Layout-controlled generation] This paper proposes EchoGen, a unified framework for layout-to-image generation (L2I) and image-to-layout grounding (I2L), trained through a progressive three-stage pipeline — parallel pre-training → dual-task joint optimization → cycle reinforcement learning (CycleRL) — which leverages the layout→image→layout cycle consistency as a self-supervised reward, achieving state-of-the-art results on MS-COCO and LayoutSAM.
+  [AAAI 2026][Image Generation][Layout-controlled generation] This paper proposes EchoGen, a unified framework for layout-to-image generation (L2I) and image-to-layout grounding (I2L)…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Layout-controlled generation
-  - image grounding
-  - unified framework
-  - cycle consistency
-  - reinforcement learning
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Layout-controlled generation"
+  - "image grounding"
+  - "unified framework"
+  - "cycle consistency"
+  - "reinforcement learning"
 date: 2026-05-08
 content_hash: 3270e9baa9a02496
 ---

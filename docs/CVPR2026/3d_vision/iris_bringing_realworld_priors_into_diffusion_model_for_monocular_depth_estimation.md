@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Iris: Bringing Real-World Priors into Diffusion Model for Monocular Depth Estimation
 description: >-
-  [CVPR 2026][3D Vision][Monocular Depth Estimation] Iris proposes a deterministic diffusion framework that injects real-world priors into a diffusion model via a two-stage Prior-to-Geometry Decoupled (PGD) schedule: Stage 1 extracts low-frequency layout priors from a teacher model using Spectral Gated Distillation (SGD) at high timesteps, while Stage 2 refines high-frequency geometric details using synthetic data at low timesteps. A Spectral Gated Consistency (SGC) loss is further introduced to align high-frequency information across stages. The method achieves state-of-the-art zero-shot depth estimation performance under limited data and computational budget.
+  [CVPR 2026][3D Vision][Monocular Depth Estimation] Iris proposes a deterministic diffusion framework that injects real-world priors into a diffusion model via a two-stage Prior-to-Geometry Decoupled (PGD) schedule: Stage…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Monocular Depth Estimation
-  - Diffusion Model
-  - Spectral Gated Distillation
-  - Prior-to-Geometry Framework
-  - Deterministic Diffusion
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Monocular Depth Estimation"
+  - "Diffusion Model"
+  - "Spectral Gated Distillation"
+  - "Prior-to-Geometry Framework"
+  - "Deterministic Diffusion"
 date: 2026-05-08
 content_hash: 97a89a1a4a581474
 ---

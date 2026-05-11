@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Perturb a Model, Not an Image: Towards Robust Privacy Protection via Anti-Personalized Diffusion Models
 description: >-
-  [NeurIPS 2025][Image Generation][anti-personalized diffusion model] This paper proposes the Anti-Personalized Diffusion Model (APDM), which for the first time shifts privacy protection from the data level (image perturbation) to the model level (parameter update). Through a Direct Protective Optimization (DPO) loss and a Learning to Protect (L2P) dual-path optimization strategy, APDM robustly prevents diffusion models from personalizing to specific subjects while preserving the model's generation and personalization capabilities for other subjects.
+  [NeurIPS 2025][Image Generation][anti-personalized diffusion model] This paper proposes the Anti-Personalized Diffusion Model (APDM), which for the first time shifts privacy protection from the data level (image perturba…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - anti-personalized diffusion model
-  - privacy protection
-  - DPO loss
-  - model-level defense
-  - dual-path optimization
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "anti-personalized diffusion model"
+  - "privacy protection"
+  - "DPO loss"
+  - "model-level defense"
+  - "dual-path optimization"
 date: 2026-05-08
 content_hash: ce09cc0b750cee06
 ---

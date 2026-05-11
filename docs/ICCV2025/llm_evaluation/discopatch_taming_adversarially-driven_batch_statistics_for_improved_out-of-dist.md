@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DisCoPatch: Taming Adversarially-driven Batch Statistics for Improved Out-of-Distribution Detection
 description: >-
-  [ICCV 2025][LLM Evaluation][Out-of-Distribution Detection] This paper proposes DisCoPatch, a framework that exploits the inherent bias of BatchNorm toward batch statistics in adversarial VAEs to distinguish ID from OOD samples. At inference time, multiple patches from the same image are composed into a batch to ensure distributional consistency. The method achieves state-of-the-art performance on covariate-shift OOD detection (ImageNet-1K(-C) 95.5% AUROC) and near-OOD detection (95.0% AUROC), with a model size of only 25 MB and latency an order of magnitude lower than competing methods.
+  [ICCV 2025][LLM Evaluation][Out-of-Distribution Detection] This paper proposes DisCoPatch, a framework that exploits the inherent bias of BatchNorm toward batch statistics in adversarial VAEs to distinguish ID from OOD s…
 tags:
-  - ICCV 2025
-  - LLM Evaluation
-  - Out-of-Distribution Detection
-  - Batch Normalization
-  - Adversarial VAE
-  - Covariate Shift
-  - Patch Strategy
+  - "ICCV 2025"
+  - "LLM Evaluation"
+  - "Out-of-Distribution Detection"
+  - "Batch Normalization"
+  - "Adversarial VAE"
+  - "Covariate Shift"
+  - "Patch Strategy"
 date: 2026-05-08
 content_hash: 59a51d098f571c53
 ---

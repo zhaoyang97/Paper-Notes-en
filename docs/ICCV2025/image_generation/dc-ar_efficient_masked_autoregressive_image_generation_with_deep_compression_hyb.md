@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DC-AR: Efficient Masked Autoregressive Image Generation with Deep Compression Hybrid Tokenizer
 description: >-
-  [ICCV 2025][Image Generation][Autoregressive image generation] This paper proposes DC-AR, a masked autoregressive text-to-image generation framework built upon a Deep Compression Hybrid Tokenizer (DC-HT, 32× spatial compression). Through a hybrid pipeline of discrete token generation for structure followed by residual token refinement, DC-AR achieves state-of-the-art gFID of 5.49 on MJHQ-30K while delivering 1.5–7.9× higher throughput than diffusion models.
+  [ICCV 2025][Image Generation][Autoregressive image generation] This paper proposes DC-AR, a masked autoregressive text-to-image generation framework built upon a Deep Compression Hybrid Tokenizer (DC-HT…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Autoregressive image generation
-  - image tokenizer
-  - masked autoregressive
-  - deep compression
-  - text-to-image
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Autoregressive image generation"
+  - "image tokenizer"
+  - "masked autoregressive"
+  - "deep compression"
+  - "text-to-image"
 date: 2026-05-08
 content_hash: 20fa19269dc0f3a4
 ---

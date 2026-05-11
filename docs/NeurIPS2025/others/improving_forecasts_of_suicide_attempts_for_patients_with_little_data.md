@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Improving Forecasts of Suicide Attempts for Patients with Little Data
 description: >-
-  [NeurIPS 2025 (TS4H Workshop)][Gaussian Process] This paper proposes the Latent Similarity Gaussian Process (LSGP), which embeds patients into a continuous latent space to capture heterogeneity, enabling data-scarce patients to "borrow" predictive trends from similar patients, thereby improving suicide attempt prediction based on EMA data.
+  [NeurIPS 2025 (TS4H Workshop)][Gaussian Process] This paper proposes the Latent Similarity Gaussian Process (LSGP), which embeds patients into a continuous latent space to capture heterogeneity…
 tags:
-  - NeurIPS 2025 (TS4H Workshop)
-  - Gaussian Process
-  - Ecological Momentary Assessment
-  - suicide risk prediction
-  - patient heterogeneity
-  - latent variable model
-  - time series for health
+  - "NeurIPS 2025 (TS4H Workshop)"
+  - "Gaussian Process"
+  - "Ecological Momentary Assessment"
+  - "suicide risk prediction"
+  - "patient heterogeneity"
+  - "latent variable model"
+  - "time series for health"
 date: 2026-05-08
 content_hash: af8ee43fedef52c3
 ---

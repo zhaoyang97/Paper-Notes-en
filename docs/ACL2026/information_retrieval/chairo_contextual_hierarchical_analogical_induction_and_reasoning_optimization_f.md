@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] ChAIRO: Contextual Hierarchical Analogical Induction and Reasoning Optimization for LLMs
 description: >-
-  [ACL 2026][Content Moderation] This paper proposes ChAIRO, a Contextual Hierarchical Analogical Induction and Reasoning Optimization framework that employs a three-stage pipeline (analogical case generation → rule induction → rule-injected fine-tuning) to enable LLMs to autonomously generate analogical cases and induce explicit moderation rules for content moderation. ChAIRO achieves a 4.5% F1 improvement over single-instance rule generation and a 2.3% improvement over static RAG.
+  [ACL 2026][Information Retrieval & RAG][Content Moderation] This paper proposes ChAIRO, a Contextual Hierarchical Analogical Induction and Reasoning Optimization framework that employs a three-stage pipeline (analogical…
 tags:
-  - ACL 2026
-  - Content Moderation
-  - Rule Induction
-  - Analogical Reasoning
-  - Hierarchical Reasoning Chain
-  - End-to-End Optimization
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Content Moderation"
+  - "Rule Induction"
+  - "Analogical Reasoning"
+  - "Hierarchical Reasoning Chain"
+  - "End-to-End Optimization"
 date: 2026-05-08
 content_hash: 7f22b72fdf74e42c
 ---

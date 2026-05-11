@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] A Simple yet Mighty Hartley Diffusion Versatilist for Generalizable Dense Vision Tasks
 description: >-
-  [ICCV 2025][3D Vision][Diffusion Models] This paper proposes HarDiff — a frequency-domain learning strategy based on the Discrete Hartley Transform (DHT) — that enhances the cross-domain generalization capability of diffusion models on dense vision tasks through low-frequency training (extracting structural priors from the source domain) and high-frequency sampling (leveraging target-domain detail guidance). HarDiff achieves state-of-the-art results across 12 benchmarks spanning semantic segmentation, depth estimation, and image dehazing.
+  [ICCV 2025][3D Vision][Diffusion Models] This paper proposes HarDiff — a frequency-domain learning strategy based on the Discrete Hartley Transform (DHT) — that enhances the cross-domain generalization capability of diff…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Diffusion Models
-  - Discrete Hartley Transform
-  - Domain Generalization
-  - Semantic Segmentation
-  - Depth Estimation
-  - Dehazing
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Diffusion Models"
+  - "Discrete Hartley Transform"
+  - "Domain Generalization"
+  - "Semantic Segmentation"
+  - "Depth Estimation"
+  - "Dehazing"
 date: 2026-05-08
 content_hash: 08ae39230cf936a0
 ---

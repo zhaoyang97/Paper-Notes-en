@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Neural Graph Navigation for Intelligent Subgraph Matching
 description: >-
-  [AAAI 2026][Robotics][Subgraph Matching] This paper proposes NeuGN (Neural Graph Navigation), the first framework to integrate generative neural navigation into the core enumeration phase of subgraph matching. By combining QSExtractor—which extracts structural signals from query graphs—with GGNavigator—which replaces brute-force enumeration with structure-aware candidate node prioritization—NeuGN reduces First Match Steps by up to 98.2% while guaranteeing completeness.
+  [AAAI 2026][Robotics][Subgraph Matching] This paper proposes NeuGN (Neural Graph Navigation), the first framework to integrate generative neural navigation into the core enumeration phase of subgraph matching. By combini…
 tags:
-  - AAAI 2026
-  - Robotics
-  - Subgraph Matching
-  - Neural Navigation
-  - Graph Generation
-  - Transformer
-  - Plug-and-Play
+  - "AAAI 2026"
+  - "Robotics"
+  - "Subgraph Matching"
+  - "Neural Navigation"
+  - "Graph Generation"
+  - "Transformer"
+  - "Plug-and-Play"
 date: 2026-05-08
 content_hash: da2e9f110bfbdffc
 ---

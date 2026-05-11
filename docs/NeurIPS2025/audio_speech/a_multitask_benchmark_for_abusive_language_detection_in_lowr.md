@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Multi-Task Benchmark for Abusive Language Detection in Low-Resource Settings
 description: >-
-  [NeurIPS 2025][Audio & Speech][abusive language detection] This paper introduces TiALD (Tigrinya Abusive Language Detection), the first large-scale multi-task benchmark dataset for the low-resource Tigrinya language. It comprises 13,717 YouTube comments annotated jointly across three tasks—abusive language detection, sentiment analysis, and topic classification—and demonstrates that a compact fine-tuned model (TiRoBERTa, 125M parameters) consistently outperforms frontier LLMs such as GPT-4o and Claude Sonnet 3.7 across all tasks.
+  [NeurIPS 2025][Audio & Speech][abusive language detection] This paper introduces TiALD (Tigrinya Abusive Language Detection), the first large-scale multi-task benchmark dataset for the low-resource Tigrinya language. It…
 tags:
-  - NeurIPS 2025
+  - "NeurIPS 2025"
   - "Audio & Speech"
-  - abusive language detection
-  - low-resource languages
-  - multi-task learning
-  - Tigrinya
-  - benchmark dataset
+  - "abusive language detection"
+  - "low-resource languages"
+  - "multi-task learning"
+  - "Tigrinya"
+  - "benchmark dataset"
 date: 2026-05-08
 content_hash: a56efe9d3a86517f
 ---

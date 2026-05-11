@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Harnessing Feature Resonance under Arbitrary Target Alignment for Out-of-Distribution Node Detection
 description: >-
-  [NeurIPS 2025][OOD detection] This paper discovers the *Feature Resonance* phenomenon—when optimizing the representations of known in-distribution (ID) nodes, unknown ID nodes undergo significantly larger representational changes than OOD nodes, and this phenomenon is label-agnostic. Based on this observation, the authors propose RSL, a graph OOD node detection framework that requires no multi-class labels, achieving state-of-the-art performance across 13 datasets.
+  [NeurIPS 2025][OOD detection] This paper discovers the *Feature Resonance* phenomenon—when optimizing the representations of known in-distribution (ID) nodes…
 tags:
-  - NeurIPS 2025
-  - OOD detection
-  - graph neural networks
-  - feature resonance
-  - unsupervised
-  - node-level
-  - label-agnostic
+  - "NeurIPS 2025"
+  - "OOD detection"
+  - "graph neural networks"
+  - "feature resonance"
+  - "unsupervised"
+  - "node-level"
+  - "label-agnostic"
 date: 2026-05-08
 content_hash: 60fd73a1c9ddb049
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SCOPE: Scene-Contextualized Incremental Few-Shot 3D Segmentation
 description: >-
-  [CVPR 2026][3D Vision][3D point cloud segmentation] This paper proposes SCOPE, a plug-and-play framework that leverages a class-agnostic segmentation model to mine pseudo-instance prototypes from background regions of base training scenes. By retrieving and fusing these prototypes into sparse few-shot novel-class prototypes via attention, SCOPE improves novel-class IoU by 6.98% on ScanNet without retraining the backbone.
+  [CVPR 2026][3D Vision][3D point cloud segmentation] This paper proposes SCOPE, a plug-and-play framework that leverages a class-agnostic segmentation model to mine pseudo-instance prototypes from background regions of ba…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D point cloud segmentation
-  - incremental few-shot
-  - background mining
-  - prototype enrichment
-  - plug-and-play
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D point cloud segmentation"
+  - "incremental few-shot"
+  - "background mining"
+  - "prototype enrichment"
+  - "plug-and-play"
 date: 2026-05-08
 content_hash: 72ca5fe32ca7efb1
 ---

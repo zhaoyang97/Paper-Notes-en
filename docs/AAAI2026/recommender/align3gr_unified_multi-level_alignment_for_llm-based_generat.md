@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Align³GR: Unified Multi-Level Alignment for LLM-based Generative Recommendation
 description: >-
-  [AAAI 2026 (Oral)][Recommender Systems][Generative Recommendation] This paper proposes Align³GR, a unified three-level alignment framework that systematically bridges the semantic-behavioral gap between LLMs and recommender systems at the token level (dual-side SCID), the behavior modeling level (multi-task SFT), and the preference level (progressive DPO).
+  [AAAI 2026 (Oral)][Recommender Systems][Generative Recommendation] This paper proposes Align³GR, a unified three-level alignment framework that systematically bridges the semantic-behavioral gap between LLMs and recommen…
 tags:
-  - AAAI 2026 (Oral)
-  - Recommender Systems
-  - Generative Recommendation
-  - LLM Alignment
-  - Collaborative Filtering
-  - DPO
-  - Semantic-Collaborative ID
+  - "AAAI 2026 (Oral)"
+  - "Recommender Systems"
+  - "Generative Recommendation"
+  - "LLM Alignment"
+  - "Collaborative Filtering"
+  - "DPO"
+  - "Semantic-Collaborative ID"
 date: 2026-05-08
 content_hash: d02145eb5489ccce
 ---

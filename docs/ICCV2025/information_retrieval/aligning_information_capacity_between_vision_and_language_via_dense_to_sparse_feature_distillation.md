@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Aligning Information Capacity Between Vision and Language via Dense-to-Sparse Feature Distillation for Image-Text Matching
 description: >-
-  [ICCV 2025][image-text matching] This paper proposes D2S-VSE, a two-stage training framework that addresses the information density asymmetry in image-text matching. In the first stage, the model is pre-trained on LLaVA-generated dense captions to enhance information capacity; in the second stage, dense text embeddings are distilled into sparse text embeddings. The method achieves state-of-the-art performance on MS-COCO and Flickr30K.
+  [ICCV 2025][Information Retrieval & RAG][image-text matching] This paper proposes D2S-VSE, a two-stage training framework that addresses the information density asymmetry in image-text matching. In the first stage…
 tags:
-  - ICCV 2025
-  - image-text matching
-  - visual semantic embedding
-  - dense-to-sparse distillation
-  - information capacity
-  - cross-modal retrieval
+  - "ICCV 2025"
+  - "Information Retrieval & RAG"
+  - "image-text matching"
+  - "visual semantic embedding"
+  - "dense-to-sparse distillation"
+  - "information capacity"
+  - "cross-modal retrieval"
 date: 2026-05-08
 content_hash: 4891bdee7bb8e0b4
 ---

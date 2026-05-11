@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Reconfigurable Representations for Multimodal Federated Learning with Missing Data
 description: >-
-  [NeurIPS 2025][Optimization][Federated Learning] This paper proposes PEPSY, a framework that learns client-side embedding controls to encode data-missing patterns, reconfiguring globally aggregated representations into complete-data features adapted to each client's local context, addressing both modality-missing and feature-missing scenarios in multimodal federated learning.
+  [NeurIPS 2025][Optimization][Federated Learning] This paper proposes PEPSY, a framework that learns client-side embedding controls to encode data-missing patterns…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Federated Learning
-  - Multimodal Learning
-  - Missing Data
-  - Reconfigurable Representations
-  - Embedding Controls
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Federated Learning"
+  - "Multimodal Learning"
+  - "Missing Data"
+  - "Reconfigurable Representations"
+  - "Embedding Controls"
 date: 2026-05-08
 content_hash: cd0335e2875b382e
 ---

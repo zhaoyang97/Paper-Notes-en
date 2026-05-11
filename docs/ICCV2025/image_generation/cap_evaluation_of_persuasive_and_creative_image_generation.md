@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CAP: Evaluation of Persuasive and Creative Image Generation
 description: >-
-  [ICCV 2025][Image Generation][advertising image generation] This paper proposes three novel evaluation metrics (creativity, alignment, and persuasiveness) for the task of advertising image generation, and leverages LLMs to expand implicit messages into explicit visual descriptions to improve T2I model performance on advertisement generation, achieving significantly higher agreement with human annotations than baselines such as CLIPScore.
+  [ICCV 2025][Image Generation][advertising image generation] This paper proposes three novel evaluation metrics (creativity, alignment, and persuasiveness) for the task of advertising image generation…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - advertising image generation
-  - creativity evaluation
-  - persuasiveness evaluation
-  - text-image alignment
-  - implicit message
+  - "ICCV 2025"
+  - "Image Generation"
+  - "advertising image generation"
+  - "creativity evaluation"
+  - "persuasiveness evaluation"
+  - "text-image alignment"
+  - "implicit message"
 date: 2026-05-08
 content_hash: a36e7e67bed5cece
 ---

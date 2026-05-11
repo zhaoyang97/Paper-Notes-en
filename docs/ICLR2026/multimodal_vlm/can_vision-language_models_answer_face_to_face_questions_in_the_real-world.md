@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Can Vision-Language Models Answer Face to Face Questions in the Real-World?
 description: >-
-  [ICLR2026][Multimodal VLM][situated understanding] This paper introduces QIVD (Qualcomm Interactive Video Dataset), a face-to-face real-time QA benchmark comprising 2,900 videos with audio and timestamp annotations. It reveals that existing VLMs fall far short of human performance in real-time situated understanding (best model 60% vs. humans 87%), with primary bottlenecks in referential disambiguation, response timing judgment, and situated commonsense. Fine-tuning on this data can substantially close the gap.
+  [ICLR2026][Multimodal VLM][situated understanding] This paper introduces QIVD (Qualcomm Interactive Video Dataset), a face-to-face real-time QA benchmark comprising 2…
 tags:
-  - ICLR2026
-  - Multimodal VLM
-  - situated understanding
-  - real-time interaction
-  - video QA
-  - multimodal benchmark
-  - streaming VLM
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "situated understanding"
+  - "real-time interaction"
+  - "video QA"
+  - "multimodal benchmark"
+  - "streaming VLM"
 date: 2026-05-08
 content_hash: 7ce86302a8f30573
 ---

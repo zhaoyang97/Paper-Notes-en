@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Learning to Condition: A Neural Heuristic for Scalable MPE Inference
 description: >-
-  [NeurIPS 2025][MPE inference] This paper proposes Learning to Condition (L2C), which trains an attention network to learn dual scores — *optimality* and *simplification* — for variable-value pairs from solver search trajectories, guiding conditioning decisions in MPE inference over probabilistic graphical models (PGMs). L2C substantially reduces the search space on high-treewidth models while maintaining or improving solution quality.
+  [NeurIPS 2025][MPE inference] This paper proposes Learning to Condition (L2C), which trains an attention network to learn dual scores — *optimality* and *simplification* — for variable-value pairs from solver search traj…
 tags:
-  - NeurIPS 2025
-  - MPE inference
-  - probabilistic graphical models
-  - neural heuristic
-  - conditioning
-  - branch-and-bound
+  - "NeurIPS 2025"
+  - "MPE inference"
+  - "probabilistic graphical models"
+  - "neural heuristic"
+  - "conditioning"
+  - "branch-and-bound"
 date: 2026-05-08
 content_hash: 9b61c4638a403cc4
 ---

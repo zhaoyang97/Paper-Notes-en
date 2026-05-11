@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MASQuant: Modality-Aware Smoothing Quantization for Multimodal Large Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Post-training quantization] This paper identifies a "smoothing misalignment" problem that arises when channel-wise smooth quantization methods (e.g., SmoothQuant) are directly applied to MLLMs—the large discrepancy in activation magnitudes across modalities causes non-dominant modalities to be over-smoothed. MASQuant is proposed to address this via modality-aware smoothing factors and SVD whitening-based cross-modal low-rank compensation.
+  [CVPR 2026][Multimodal VLM][Post-training quantization] This paper identifies a "smoothing misalignment" problem that arises when channel-wise smooth quantization methods (e.g.…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Post-training quantization
-  - multimodal LLM
-  - smooth quantization
-  - cross-modal compensation
-  - low-rank decomposition
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Post-training quantization"
+  - "multimodal LLM"
+  - "smooth quantization"
+  - "cross-modal compensation"
+  - "low-rank decomposition"
 date: 2026-05-08
 content_hash: ae8a895f6b1101cb
 ---

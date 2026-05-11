@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Radar: Benchmarking Language Models on Imperfect Tabular Data
 description: >-
-  [NeurIPS 2025][tabular reasoning] This paper introduces the Radar benchmark, which systematically evaluates language models' data-aware reasoning on imperfect tabular data by injecting five categories of data artifacts (missing values, bad values, outliers, formatting inconsistencies, and logical inconsistencies) into real-world tables. The benchmark reveals that even frontier models suffer substantial performance degradation upon the introduction of data artifacts.
+  [NeurIPS 2025][tabular reasoning] This paper introduces the Radar benchmark, which systematically evaluates language models' data-aware reasoning on imperfect tabular data by injecting five categories of data artifacts (…
 tags:
-  - NeurIPS 2025
-  - tabular reasoning
-  - data awareness
-  - data artifacts
-  - language model benchmarking
-  - robustness evaluation
+  - "NeurIPS 2025"
+  - "tabular reasoning"
+  - "data awareness"
+  - "data artifacts"
+  - "language model benchmarking"
+  - "robustness evaluation"
 date: 2026-05-08
 content_hash: 4730009a9cd0212e
 ---

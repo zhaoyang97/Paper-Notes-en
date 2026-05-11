@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ReferDINO: Referring Video Object Segmentation with Visual Grounding Foundations
 description: >-
-  [ICCV 2025][Segmentation][Referring Video Object Segmentation] This paper proposes ReferDINO, which end-to-end adapts the GroundingDINO visual grounding foundation model to the Referring Video Object Segmentation (RVOS) task. By introducing a grounding-guided deformable mask decoder, an object-consistent temporal enhancer, and a confidence-based query pruning strategy, ReferDINO significantly surpasses state-of-the-art methods across five benchmarks (e.g., +3.9% $\mathcal{J}\&\mathcal{F}$ on Ref-YouTube-VOS) while achieving real-time inference at 51 FPS.
+  [ICCV 2025][Segmentation][Referring Video Object Segmentation] This paper proposes ReferDINO, which end-to-end adapts the GroundingDINO visual grounding foundation model to the Referring Video Object Segmentation (RVOS)…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - Referring Video Object Segmentation
-  - Visual Grounding
-  - GroundingDINO
-  - Deformable Attention
-  - Query Pruning
+  - "ICCV 2025"
+  - "Segmentation"
+  - "Referring Video Object Segmentation"
+  - "Visual Grounding"
+  - "GroundingDINO"
+  - "Deformable Attention"
+  - "Query Pruning"
 date: 2026-05-08
 content_hash: 322ac2758e5d4898
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Prompt-Driven Lightweight Foundation Model for Instance Segmentation-Based Fault Detection in Freight Trains
 description: >-
-  [CVPR 2026][Segmentation][SAM] This paper proposes SAM FTI-FDet, which introduces a Transformer decoder-based Prompt Generator that enables lightweight TinyViT-SAM to automatically generate task-relevant query prompts, achieving instance-level fault detection of freight train components without manual interaction. The method attains 74.6 AP_box / 74.2 AP_mask on a self-constructed dataset.
+  [CVPR 2026][Segmentation][SAM] This paper proposes SAM FTI-FDet, which introduces a Transformer decoder-based Prompt Generator that enables lightweight TinyViT-SAM to automatically generate task-relevant query prompts…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - SAM
-  - self-prompt generation
-  - lightweight
-  - freight train fault detection
-  - foundation model transfer
+  - "CVPR 2026"
+  - "Segmentation"
+  - "SAM"
+  - "self-prompt generation"
+  - "lightweight"
+  - "freight train fault detection"
+  - "foundation model transfer"
 date: 2026-05-08
 content_hash: 557f4cb47926f8c2
 ---

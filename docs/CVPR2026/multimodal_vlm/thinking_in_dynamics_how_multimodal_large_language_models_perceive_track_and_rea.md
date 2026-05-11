@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Thinking in Dynamics: How Multimodal Large Language Models Perceive, Track, and Reason Dynamics in Physical 4D World
 description: >-
-  [CVPR 2026][Multimodal VLM][4D dynamics] This paper proposes Dyn-Bench — a large-scale benchmark for dynamic understanding of the physical 4D world (1k videos, 7k VQA pairs, 3k dynamic grounding pairs) — that systematically evaluates the spatio-temporal reasoning capabilities of general, spatial-aware, and region-level MLLMs. The study finds that existing models fail to maintain consistency between reasoning and grounding simultaneously, and introduces two structured integration methods, Mask-Guided Fusion and ST-TCM, that significantly improve dynamic perception.
+  [CVPR 2026][Multimodal VLM][4D dynamics] This paper proposes Dyn-Bench — a large-scale benchmark for dynamic understanding of the physical 4D world (1k videos, 7k VQA pairs…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - 4D dynamics
-  - Dyn-Bench benchmark
-  - spatio-temporal reasoning
-  - dynamic grounding
-  - MLLM evaluation
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "4D dynamics"
+  - "Dyn-Bench benchmark"
+  - "spatio-temporal reasoning"
+  - "dynamic grounding"
+  - "MLLM evaluation"
 date: 2026-05-08
 content_hash: 419e17a9cc6c6486
 ---

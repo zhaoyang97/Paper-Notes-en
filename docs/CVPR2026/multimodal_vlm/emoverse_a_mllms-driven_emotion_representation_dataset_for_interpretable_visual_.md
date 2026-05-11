@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EmoVerse: A MLLMs-Driven Emotion Representation Dataset for Interpretable Visual Emotion Analysis
 description: >-
-  [CVPR2026][Multimodal VLM][Visual Emotion Analysis] This paper introduces EmoVerse — the first large-scale interpretable visual emotion dataset (219K+ images) covering both CES (Mikels 8-class discrete emotions) and DES (1024-dimensional continuous emotion space). It proposes a B-A-S (Background-Attribute-Subject) triplet knowledge graph annotation scheme and an Annotation & Verification Pipeline (Gemini/GPT-4o + EmoViT + CoT Critic Agent), and fine-tunes Qwen2.5-VL-3B to perform 1024-dimensional DES projection and emotion attribution explanation.
+  [CVPR2026][Multimodal VLM][Visual Emotion Analysis] This paper introduces EmoVerse — the first large-scale interpretable visual emotion dataset (219K+ images) covering both CES (Mikels 8-class discrete emotions) and DES…
 tags:
-  - CVPR2026
-  - Multimodal VLM
-  - Visual Emotion Analysis
-  - Emotion Representation Dataset
-  - Knowledge Graph
-  - Interpretability
-  - Multimodal Large Language Models
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "Visual Emotion Analysis"
+  - "Emotion Representation Dataset"
+  - "Knowledge Graph"
+  - "Interpretability"
+  - "Multimodal Large Language Models"
 date: 2026-05-08
 content_hash: a28183dd2afa3705
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HollowFlow: Efficient Sample Likelihood Evaluation using Hollow Message Passing
 description: >-
-  [NeurIPS 2025][Image Generation][Continuous Normalizing Flows] This paper proposes HollowFlow, a framework that enforces a block-diagonal structure on the Jacobian of the velocity field via Non-Backtracking Graph Neural Networks (NoBGNN) and Hollow Message Passing, reducing the number of backward passes required for likelihood computation in Continuous Normalizing Flows from $\mathcal{O}(n)$ to a constant $\mathcal{O}(d)$, achieving up to $10^2\times$ sampling speedup.
+  [NeurIPS 2025][Image Generation][Continuous Normalizing Flows] This paper proposes HollowFlow, a framework that enforces a block-diagonal structure on the Jacobian of the velocity field via Non-Backtracking Graph Neural…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Continuous Normalizing Flows
-  - Boltzmann Generators
-  - Message Passing
-  - Non-Backtracking Graph Neural Networks
-  - Likelihood Computation
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Continuous Normalizing Flows"
+  - "Boltzmann Generators"
+  - "Message Passing"
+  - "Non-Backtracking Graph Neural Networks"
+  - "Likelihood Computation"
 date: 2026-05-08
 content_hash: e80e9d423980ff8f
 ---

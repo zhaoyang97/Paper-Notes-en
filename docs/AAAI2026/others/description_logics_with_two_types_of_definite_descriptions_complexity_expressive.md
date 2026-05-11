@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Description Logics with Two Types of Definite Descriptions: Complexity, Expressiveness, and Automated Deduction
 description: >-
-  [AAAI 2026][Description Logics] This paper introduces two extensions of the description logic ALC with definite descriptions — local definite descriptions $\{ι C\}$ and global definite descriptions $ι C.D$ — and proves that the satisfiability problems of all three extended logics are ExpTime-complete. Furthermore, it establishes that global definite descriptions are strictly more expressive than local ones ($\mathcal{ALC}\iota_L < \mathcal{ALC}\iota_G = \mathcal{ALC}\iota$), and provides tableau calculi decision procedures along with experimental evaluation.
+  [AAAI 2026][Description Logics] This paper introduces two extensions of the description logic ALC with definite descriptions — local definite descriptions $\{ι C\}$ and global definite descriptions $ι C.D$ — and proves t…
 tags:
-  - AAAI 2026
-  - Description Logics
-  - Definite Descriptions
-  - Computational Complexity
-  - Expressiveness
-  - Tableau Calculus
+  - "AAAI 2026"
+  - "Description Logics"
+  - "Definite Descriptions"
+  - "Computational Complexity"
+  - "Expressiveness"
+  - "Tableau Calculus"
 date: 2026-05-08
 content_hash: 12d896b81bcbf598
 ---

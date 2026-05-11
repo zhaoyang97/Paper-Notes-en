@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] FQ-PETR: Fully Quantized Position Embedding Transformation for Multi-View 3D Object Detection
 description: >-
-  [AAAI 2026][Autonomous Driving][3D Object Detection] This work presents the first fully INT8-quantized deployment of PETR-series 3D detectors. It introduces three key components: a quantization-friendly LiDAR-ray position encoding (QFPE) to resolve multi-modal feature magnitude mismatch, a dual-lookup table (DULUT) for efficient approximation of nonlinear operators, and quantization after numerical stabilization (QANS) to prevent softmax attention distortion. Across PETR/StreamPETR/PETRv2/MV2D, W8A8 quantization incurs less than 1% mAP loss while reducing latency by 75% (3.9× speedup).
+  [AAAI 2026][Autonomous Driving][3D Object Detection] This work presents the first fully INT8-quantized deployment of PETR-series 3D detectors. It introduces three key components: a quantization-friendly LiDAR-ray positio…
 tags:
-  - AAAI 2026
-  - Autonomous Driving
-  - 3D Object Detection
-  - Quantization
-  - PETR
-  - Position Encoding
+  - "AAAI 2026"
+  - "Autonomous Driving"
+  - "3D Object Detection"
+  - "Quantization"
+  - "PETR"
+  - "Position Encoding"
 date: 2026-05-08
 content_hash: 3839fa8c652bb703
 ---

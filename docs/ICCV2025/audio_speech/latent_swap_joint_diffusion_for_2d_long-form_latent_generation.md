@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Latent Swap Joint Diffusion for 2D Long-Form Latent Generation
 description: >-
-  [ICCV 2025][Audio & Speech][Diffusion Models] This paper proposes SaFa (Swap Forward), a modality-agnostic and efficient method that replaces the averaging operation in conventional joint diffusion with two latent swap operators—Self-Loop Latent Swap and Reference-Guided Latent Swap—to address spectrum aliasing and preserve cross-view consistency, achieving significant improvements over existing methods in both long audio and panoramic image generation.
+  [ICCV 2025][Audio & Speech][Diffusion Models] This paper proposes SaFa (Swap Forward), a modality-agnostic and efficient method that replaces the averaging operation in conventional joint diffusion with two latent swap o…
 tags:
-  - ICCV 2025
+  - "ICCV 2025"
   - "Audio & Speech"
-  - Diffusion Models
-  - Long Audio Generation
-  - Panorama Generation
-  - Joint Diffusion
-  - Latent Swap
+  - "Diffusion Models"
+  - "Long Audio Generation"
+  - "Panorama Generation"
+  - "Joint Diffusion"
+  - "Latent Swap"
 date: 2026-05-08
 content_hash: ff3c867ebc48cd59
 ---

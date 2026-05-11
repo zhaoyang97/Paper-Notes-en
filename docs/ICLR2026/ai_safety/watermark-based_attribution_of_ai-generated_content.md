@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Watermark-based Detection and Attribution of AI-Generated Content
 description: >-
-  [ICLR 2026][AI Safety][watermark] This paper presents the first systematic study on watermark-based user-level detection and attribution of AI-generated content. It provides theoretical analysis (bounds on TDR/FDR/TAR), an efficient watermark selection algorithm (A-BSTA), and cross-modal (image + text) experimental validation, demonstrating that detection and attribution inherit the accuracy and (non-)robustness of the underlying watermarking method.
+  [ICLR 2026][AI Safety][watermark] This paper presents the first systematic study on watermark-based user-level detection and attribution of AI-generated content. It provides theoretical analysis (bounds on TDR/FDR/TAR)…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - watermark
-  - attribution
-  - AI-generated content
-  - detection
-  - digital forensics
+  - "ICLR 2026"
+  - "AI Safety"
+  - "watermark"
+  - "attribution"
+  - "AI-generated content"
+  - "detection"
+  - "digital forensics"
 date: 2026-05-08
 content_hash: 8574adbe14529d04
 ---

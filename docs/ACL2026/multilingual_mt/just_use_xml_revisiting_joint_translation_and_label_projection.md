@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Just Use XML: Revisiting Joint Translation and Label Projection
 description: >-
-  [ACL 2026][Label Projection] This paper proposes LabelPigeon, a joint translation and label projection method based on XML markup. By fine-tuning the NLLB-200 translation model on high-quality XML-annotated parallel corpora, LabelPigeon surpasses all baselines across 11 languages while actively improving translation quality, achieving gains of up to +40.2 F1 on downstream cross-lingual NER tasks.
+  [ACL 2026][Multilingual & Machine Translation][Label Projection] This paper proposes LabelPigeon, a joint translation and label projection method based on XML markup. By fine-tuning the NLLB-200 translation model on high…
 tags:
-  - ACL 2026
-  - Label Projection
-  - XML Markup
-  - Joint Translation
-  - Cross-lingual Transfer
-  - NER
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "Label Projection"
+  - "XML Markup"
+  - "Joint Translation"
+  - "Cross-lingual Transfer"
+  - "NER"
 date: 2026-05-08
 content_hash: e92a47d620b586ba
 ---

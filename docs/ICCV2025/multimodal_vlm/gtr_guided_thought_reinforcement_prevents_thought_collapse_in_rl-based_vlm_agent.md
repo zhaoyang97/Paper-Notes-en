@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GTR: Guided Thought Reinforcement Prevents Thought Collapse in RL-Based VLM Agent
 description: >-
-  [ICCV 2025][Multimodal VLM][Chain-of-Thought Reasoning] This paper identifies that relying solely on outcome rewards during RL training of VLM agents leads to "thought collapse," and proposes the GTR framework, which employs an external VLM corrector to automatically rectify reasoning processes and jointly trains thoughts and actions via PPO + SFT, achieving 3–5× improvement in task success rates on the Game of 24 and ALFWorld benchmarks.
+  [ICCV 2025][Multimodal VLM][Chain-of-Thought Reasoning] This paper identifies that relying solely on outcome rewards during RL training of VLM agents leads to "thought collapse," and proposes the GTR framework…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Chain-of-Thought Reasoning
-  - VLM Agent
-  - Reinforcement Learning
-  - Process Supervision
-  - Thought Collapse
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Chain-of-Thought Reasoning"
+  - "VLM Agent"
+  - "Reinforcement Learning"
+  - "Process Supervision"
+  - "Thought Collapse"
 date: 2026-05-08
 content_hash: 8cb72f0f548be1da
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Concept Bottleneck Models from Mechanistic Explanations
 description: >-
-  [ICLR2026][Graph Learning][Concept Bottleneck Model] This paper proposes Mechanistic CBM (M-CBM), which leverages Sparse Autoencoders to extract concepts from features learned by a black-box model, names and annotates them via a multimodal LLM, and constructs an interpretable Concept Bottleneck Model. Under controlled information leakage, M-CBM substantially outperforms existing CBM approaches.
+  [ICLR2026][Graph Learning][Concept Bottleneck Model] This paper proposes Mechanistic CBM (M-CBM), which leverages Sparse Autoencoders to extract concepts from features learned by a black-box model…
 tags:
-  - ICLR2026
-  - Graph Learning
-  - Concept Bottleneck Model
-  - Sparse Autoencoder
-  - mechanistic interpretability
-  - Explainable AI
-  - Multimodal LLM
+  - "ICLR2026"
+  - "Graph Learning"
+  - "Concept Bottleneck Model"
+  - "Sparse Autoencoder"
+  - "mechanistic interpretability"
+  - "Explainable AI"
+  - "Multimodal LLM"
 date: 2026-05-08
 content_hash: 4d7ada156f20489b
 ---

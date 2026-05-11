@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RS-SSM: Refining Forgotten Specifics in State Space Model for Video Semantic Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Video Semantic Segmentation] RS-SSM is proposed to extract channel-wise specific information distribution features (CwAP) via frequency domain analysis and adaptively invert the forget gate matrix (FGIR) to complementarily refine spatiotemporal details lost during SSM state space compression, achieving state-of-the-art performance on four video semantic segmentation benchmarks while maintaining high efficiency.
+  [CVPR 2026][Segmentation][Video Semantic Segmentation] RS-SSM is proposed to extract channel-wise specific information distribution features (CwAP) via frequency domain analysis and adaptively invert the forget gate matr…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Video Semantic Segmentation
-  - State Space Model
-  - Forget Gate Refinement
-  - Frequency Domain Analysis
-  - Mamba
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Video Semantic Segmentation"
+  - "State Space Model"
+  - "Forget Gate Refinement"
+  - "Frequency Domain Analysis"
+  - "Mamba"
 date: 2026-05-08
 content_hash: 94a3e7ab3a8777d3
 ---

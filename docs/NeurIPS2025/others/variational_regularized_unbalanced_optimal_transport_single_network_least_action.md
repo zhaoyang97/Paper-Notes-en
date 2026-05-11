@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Variational Regularized Unbalanced Optimal Transport: Single Network, Least Action
 description: >-
-  [NeurIPS 2025][Regularized unbalanced optimal transport] This paper proposes Var-RUOT, which incorporates the necessary optimality conditions of the Regularized Unbalanced Optimal Transport (RUOT) problem into the parameterization and loss design, enabling the solution of RUOT by learning a single scalar field. The approach yields solutions with lower action and improves training stability, while also analyzing the effect of growth penalty functions on biological priors.
+  [NeurIPS 2025][Regularized unbalanced optimal transport] This paper proposes Var-RUOT, which incorporates the necessary optimality conditions of the Regularized Unbalanced Optimal Transport (RUOT) problem into the parame…
 tags:
-  - NeurIPS 2025
-  - Regularized unbalanced optimal transport
-  - variational methods
-  - least action principle
-  - single scalar field
-  - single-cell trajectory inference
+  - "NeurIPS 2025"
+  - "Regularized unbalanced optimal transport"
+  - "variational methods"
+  - "least action principle"
+  - "single scalar field"
+  - "single-cell trajectory inference"
 date: 2026-05-08
 content_hash: e21aefe9aa0442c9
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LongLLaDA: Unlocking Long Context Capabilities in Diffusion LLMs
 description: >-
-  [AAAI 2026][Image Generation][Diffusion Language Models] This paper presents the first systematic study of long-context capabilities in diffusion large language models (diffusion LLMs), revealing stable perplexity under direct extrapolation and a "local awareness" phenomenon. It further proposes LongLLaDA, a training-free method that successfully extends the context window by 6× (to 24k tokens) via NTK-based RoPE extrapolation.
+  [AAAI 2026][Image Generation][Diffusion Language Models] This paper presents the first systematic study of long-context capabilities in diffusion large language models (diffusion LLMs)…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Diffusion Language Models
-  - Long-Context Extension
-  - RoPE
-  - NTK Extrapolation
-  - LLaDA
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Diffusion Language Models"
+  - "Long-Context Extension"
+  - "RoPE"
+  - "NTK Extrapolation"
+  - "LLaDA"
 date: 2026-05-08
 content_hash: cf1b19f1c11a23f6
 ---

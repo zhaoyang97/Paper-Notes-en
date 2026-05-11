@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Non-Asymptotic Analysis of Efficiency in Conformalized Regression
 description: >-
-  [ICLR 2026][Optimization][conformal prediction] This work establishes the first non-asymptotic efficiency bounds for Conformalized Quantile Regression (CQR) and Conformalized Median Regression (CMR) trained with SGD, explicitly characterizing the joint dependence of prediction set length bias on training sample size $n$, calibration sample size $m$, and miscoverage level $\alpha$.
+  [ICLR 2026][Optimization][conformal prediction] This work establishes the first non-asymptotic efficiency bounds for Conformalized Quantile Regression (CQR) and Conformalized Median Regression (CMR) trained with SGD…
 tags:
-  - ICLR 2026
-  - Optimization
-  - conformal prediction
-  - quantile regression
-  - non-asymptotic analysis
-  - prediction set efficiency
-  - uncertainty quantification
+  - "ICLR 2026"
+  - "Optimization"
+  - "conformal prediction"
+  - "quantile regression"
+  - "non-asymptotic analysis"
+  - "prediction set efficiency"
+  - "uncertainty quantification"
 date: 2026-05-08
 content_hash: a8d60f295c19b8fc
 ---

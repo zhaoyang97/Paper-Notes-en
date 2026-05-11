@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Implicit Aggregation: Robust Image Representation for Place Recognition in the Transformer Era
 description: >-
-  [NeurIPS 2025][LLM Evaluation][Visual Place Recognition] This paper proposes ImAge (Implicit Aggregation), which inserts learnable aggregation tokens at a specific layer of a Transformer backbone and leverages the intrinsic self-attention mechanism to implicitly aggregate patch features into a global descriptor, completely eliminating the need for an external aggregator. With the smallest descriptor dimensionality (6144) and fastest inference speed, ImAge surpasses SOTA methods such as SALAD and BoQ across multiple VPR benchmarks, and ranks 1st on the MSLS Challenge leaderboard.
+  [NeurIPS 2025][LLM Evaluation][Visual Place Recognition] This paper proposes ImAge (Implicit Aggregation), which inserts learnable aggregation tokens at a specific layer of a Transformer backbone and leverages the intrin…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - Visual Place Recognition
-  - Implicit Aggregation
-  - ViT
-  - Aggregation Token
-  - DINOv2
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "Visual Place Recognition"
+  - "Implicit Aggregation"
+  - "ViT"
+  - "Aggregation Token"
+  - "DINOv2"
 date: 2026-05-08
 content_hash: 92abf2a9511d9ef0
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] MIR-Bench: Can Your LLM Recognize Complicated Patterns via Many-Shot In-Context Reasoning?
 description: >-
-  [NeurIPS 2025][Many-Shot ICL] This paper proposes MIR-Bench, the first large-scale and diverse many-shot in-context reasoning benchmark. By automatically generating input-output pairs from programming problems, it evaluates LLMs' pattern recognition capabilities, revealing a performance saturation phenomenon caused by attention diffusion in many-shot settings, and demonstrating that transductive reasoning consistently outperforms inductive reasoning across models.
+  [NeurIPS 2025][Information Retrieval & RAG][Many-Shot ICL] This paper proposes MIR-Bench, the first large-scale and diverse many-shot in-context reasoning benchmark. By automatically generating input-output pairs from pr…
 tags:
-  - NeurIPS 2025
-  - Many-Shot ICL
-  - Pattern Recognition
-  - Inductive Reasoning
-  - Transductive Reasoning
-  - Long-Context Evaluation
+  - "NeurIPS 2025"
+  - "Information Retrieval & RAG"
+  - "Many-Shot ICL"
+  - "Pattern Recognition"
+  - "Inductive Reasoning"
+  - "Transductive Reasoning"
+  - "Long-Context Evaluation"
 date: 2026-05-08
 content_hash: dea7e512a75d704f
 ---

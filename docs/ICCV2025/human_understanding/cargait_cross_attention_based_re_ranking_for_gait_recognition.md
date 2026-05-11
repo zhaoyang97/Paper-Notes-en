@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CarGait: Cross-Attention based Re-ranking for Gait Recognition
 description: >-
-  [ICCV 2025][Human Understanding][Gait Recognition] This paper proposes CarGait, a cross-attention based re-ranking method for gait recognition. By performing strip-wise cross-attention between probe and candidate sequences, CarGait learns fine-grained gait correspondences and maps global features from pretrained single-stage models into a new discriminative embedding space. The method consistently improves Rank-1/5 accuracy across seven gait models on three major benchmarks: Gait3D, GREW, and OU-MVLP.
+  [ICCV 2025][Human Understanding][Gait Recognition] This paper proposes CarGait, a cross-attention based re-ranking method for gait recognition. By performing strip-wise cross-attention between probe and candidate sequenc…
 tags:
-  - ICCV 2025
-  - Human Understanding
-  - Gait Recognition
-  - Re-ranking
-  - Cross-Attention
-  - Metric Learning
-  - Fine-grained Matching
+  - "ICCV 2025"
+  - "Human Understanding"
+  - "Gait Recognition"
+  - "Re-ranking"
+  - "Cross-Attention"
+  - "Metric Learning"
+  - "Fine-grained Matching"
 date: 2026-05-08
 content_hash: 0c72fbcb1901c7b3
 ---

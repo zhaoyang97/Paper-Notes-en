@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] ComLQ: Benchmarking Complex Logical Queries in Information Retrieval
 description: >-
-  [AAAI 2026][Complex logical queries] This paper introduces ComLQ, the first IR benchmark targeting complex logical queries spanning 14 query types (conjunction, disjunction, negation, and their combinations). It proposes a subgraph-guided LLM data synthesis pipeline and a negation consistency metric LSNC, revealing that existing retrievers suffer severely in logical reasoning—particularly in negation modeling.
+  [AAAI 2026][Information Retrieval & RAG][Complex logical queries] This paper introduces ComLQ, the first IR benchmark targeting complex logical queries spanning 14 query types (conjunction, disjunction, negation…
 tags:
-  - AAAI 2026
-  - Complex logical queries
-  - negation handling
-  - subgraph-guided prompting
-  - IR benchmark
-  - first-order logic
+  - "AAAI 2026"
+  - "Information Retrieval & RAG"
+  - "Complex logical queries"
+  - "negation handling"
+  - "subgraph-guided prompting"
+  - "IR benchmark"
+  - "first-order logic"
 date: 2026-05-08
 content_hash: 5787dc153472d8ee
 ---

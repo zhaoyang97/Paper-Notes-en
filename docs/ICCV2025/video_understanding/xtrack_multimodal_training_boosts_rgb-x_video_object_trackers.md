@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] XTrack: Multimodal Training Boosts RGB-X Video Object Trackers
 description: >-
-  [ICCV 2025][Video Understanding][Multimodal Tracking] This paper proposes XTrack, which employs a Mixture of Modal Experts (MeME) framework and a soft-routing classifier to enable cross-modal knowledge sharing across RGB-D/T/E modalities, allowing inference with a single modality to benefit from multimodal training knowledge, achieving an average precision gain of 3%.
+  [ICCV 2025][Video Understanding][Multimodal Tracking] This paper proposes XTrack, which employs a Mixture of Modal Experts (MeME) framework and a soft-routing classifier to enable cross-modal knowledge sharing across RGB…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - Multimodal Tracking
-  - Mixture of Experts
-  - Cross-modal Knowledge Transfer
-  - Video Object Tracking
-  - RGB-X
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "Multimodal Tracking"
+  - "Mixture of Experts"
+  - "Cross-modal Knowledge Transfer"
+  - "Video Object Tracking"
+  - "RGB-X"
 date: 2026-05-08
 content_hash: cfddb8064c82aa34
 ---

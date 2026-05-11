@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ARCHE: Autoregressive Residual Compression with Hyperprior and Excitation
 description: >-
-  [CVPR 2026][Model Compression][Autoregressive entropy model] A fully convolutional architecture that unifies hierarchical hyperprior, Masked PixelCNN spatial autoregression, channel-conditional modeling, and SE channel excitation — without relying on Transformers or recurrent components. With 95M parameters and a 222ms decoding time, it achieves a 48% BD-Rate reduction over the Ballé baseline and outperforms VVC Intra by 5.6%.
+  [CVPR 2026][Model Compression][Autoregressive entropy model] A fully convolutional architecture that unifies hierarchical hyperprior, Masked PixelCNN spatial autoregression, channel-conditional modeling…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - Autoregressive entropy model
-  - hyperprior
-  - Squeeze-and-Excitation
-  - residual prediction
-  - rate-distortion optimization
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Autoregressive entropy model"
+  - "hyperprior"
+  - "Squeeze-and-Excitation"
+  - "residual prediction"
+  - "rate-distortion optimization"
 date: 2026-05-08
 content_hash: ec1e6247c053db33
 ---

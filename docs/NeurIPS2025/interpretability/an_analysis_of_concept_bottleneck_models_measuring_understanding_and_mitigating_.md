@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] An Analysis of Concept Bottleneck Models: Measuring, Understanding, and Mitigating the Impact of Noisy Annotations
 description: >-
-  [NeurIPS 2025][Concept Bottleneck Models] This paper presents the first systematic study on the impact of annotation noise on Concept Bottleneck Models (CBMs). It identifies approximately 23% of concepts as "susceptible concepts" that drive the majority of performance degradation, and proposes a two-stage mitigation strategy combining SAM at training time and uncertainty-guided intervention at inference time to restore model robustness.
+  [NeurIPS 2025][Interpretability][Concept Bottleneck Models] This paper presents the first systematic study on the impact of annotation noise on Concept Bottleneck Models (CBMs). It identifies approximately 23% of concept…
 tags:
-  - NeurIPS 2025
-  - Concept Bottleneck Models
-  - Noisy Annotations
-  - Interpretability
-  - Sharpness-Aware Minimization
-  - Uncertainty-Guided Intervention
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "Concept Bottleneck Models"
+  - "Noisy Annotations"
+  - "Sharpness-Aware Minimization"
+  - "Uncertainty-Guided Intervention"
 date: 2026-05-08
 content_hash: 2564f4006716ff41
 ---

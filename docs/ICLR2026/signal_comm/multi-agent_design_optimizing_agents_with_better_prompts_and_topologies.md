@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multi-Agent Design: Optimizing Agents with Better Prompts and Topologies
 description: >-
-  [ICLR 2026][Signal & Communication][Multi-agent systems] This paper proposes Multi-Agent System Search (MASS), a framework that automatically discovers high-performance multi-agent system (MAS) designs through a three-stage interleaved strategy of prompt and topology optimization: local prompt optimization → topology search → global prompt optimization.
+  [ICLR 2026][Signal & Communication][Multi-agent systems] This paper proposes Multi-Agent System Search (MASS), a framework that automatically discovers high-performance multi-agent system (MAS) designs through a three-st…
 tags:
-  - ICLR 2026
+  - "ICLR 2026"
   - "Signal & Communication"
-  - Multi-agent systems
-  - prompt optimization
-  - topology search
-  - LLM agent
-  - automated design
+  - "Multi-agent systems"
+  - "prompt optimization"
+  - "topology search"
+  - "LLM agent"
+  - "automated design"
 date: 2026-05-08
 content_hash: 5899ca5f80264b99
 ---

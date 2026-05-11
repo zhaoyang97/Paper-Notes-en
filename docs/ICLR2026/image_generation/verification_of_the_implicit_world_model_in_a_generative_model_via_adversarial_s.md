@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Verification of the Implicit World Model in a Generative Model via Adversarial Sequences
 description: >-
-  [ICLR 2026][Image Generation][Implicit world model] This paper proposes an adversarial sequence generation method to verify the soundness of implicit world models in generative sequence models. Through systematic evaluation in the chess domain using multiple adversarial strategies (IMO/BSO/AD), it finds that all tested models are unsound, while training objectives and dataset choice significantly affect soundness. Furthermore, linear board-state probes exhibit no causal role in most models.
+  [ICLR 2026][Image Generation][Implicit world model] This paper proposes an adversarial sequence generation method to verify the soundness of implicit world models in generative sequence models. Through systematic evaluat…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Implicit world model
-  - adversarial sequence generation
-  - chess
-  - soundness verification
-  - linear probes
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Implicit world model"
+  - "adversarial sequence generation"
+  - "chess"
+  - "soundness verification"
+  - "linear probes"
 date: 2026-05-08
 content_hash: 583cc1b8240d4a45
 ---

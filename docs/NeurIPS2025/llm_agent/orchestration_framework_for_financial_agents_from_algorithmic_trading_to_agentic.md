@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Orchestration Framework for Financial Agents: From Algorithmic Trading to Agentic Trading
 description: >-
-  [NeurIPS 2025][LLM Agent][financial agents] This paper proposes FinAgent, an orchestration framework that maps each component of a traditional algorithmic trading system to a dedicated AI agent (Planner, Orchestrator, Alpha/Risk/Portfolio/Backtest/Execution/Audit/Memory agents), employs the MCP protocol for control communication and the A2A protocol for inter-agent communication, and validates the framework's feasibility on stock and BTC trading tasks.
+  [NeurIPS 2025][LLM Agent][financial agents] This paper proposes FinAgent, an orchestration framework that maps each component of a traditional algorithmic trading system to a dedicated AI agent (Planner, Orchestrator…
 tags:
-  - NeurIPS 2025
-  - LLM Agent
-  - financial agents
-  - algorithmic trading
-  - multi-agent orchestration
-  - MCP protocol
-  - quantitative trading
+  - "NeurIPS 2025"
+  - "LLM Agent"
+  - "financial agents"
+  - "algorithmic trading"
+  - "multi-agent orchestration"
+  - "MCP protocol"
+  - "quantitative trading"
 date: 2026-05-08
 content_hash: 93d98d84023137b5
 ---

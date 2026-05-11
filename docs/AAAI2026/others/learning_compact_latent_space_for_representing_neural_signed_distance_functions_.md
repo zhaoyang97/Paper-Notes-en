@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Learning Compact Latent Space for Representing Neural Signed Distance Functions with High-fidelity Geometry Details
 description: >-
-  [AAAI 2026][Neural Signed Distance Function] This paper proposes a dual-branch architecture (generalization branch + overfitting branch) to learn a compact latent space over multiple neural SDFs. By combining a shared spatial feature grid with a novel bandwidth-based sampling strategy, the method recovers high-fidelity geometric details while maintaining compact latent codes, achieving state-of-the-art performance on Stanford Models, ShapeNet, and D-FAUST.
+  [AAAI 2026][Neural Signed Distance Function] This paper proposes a dual-branch architecture (generalization branch + overfitting branch) to learn a compact latent space over multiple neural SDFs. By combining a shared sp…
 tags:
-  - AAAI 2026
-  - Neural Signed Distance Function
-  - Implicit Representation
-  - Compact Latent Space
-  - Volumetric Grid
-  - Geometric Detail
+  - "AAAI 2026"
+  - "Neural Signed Distance Function"
+  - "Implicit Representation"
+  - "Compact Latent Space"
+  - "Volumetric Grid"
+  - "Geometric Detail"
 date: 2026-05-08
 content_hash: 78abe2bae8a42ab8
 ---

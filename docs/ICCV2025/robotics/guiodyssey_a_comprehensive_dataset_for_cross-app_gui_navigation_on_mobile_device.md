@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GUIOdyssey: A Comprehensive Dataset for Cross-App GUI Navigation on Mobile Devices
 description: >-
-  [ICCV 2025][Robotics][GUI navigation] This paper presents GUIOdyssey, the first comprehensive dataset for cross-app GUI navigation on mobile devices (8,334 episodes, 212 apps, 1,357 app combinations), along with OdysseyAgent—a multimodal navigation agent equipped with a history resampling module that significantly improves cross-app task performance while balancing accuracy and inference efficiency.
+  [ICCV 2025][Robotics][GUI navigation] This paper presents GUIOdyssey, the first comprehensive dataset for cross-app GUI navigation on mobile devices (8,334 episodes, 212 apps, 1,357 app combinations)…
 tags:
-  - ICCV 2025
-  - Robotics
-  - GUI navigation
-  - cross-app
-  - mobile agent
-  - multimodal large language model
-  - history information modeling
+  - "ICCV 2025"
+  - "Robotics"
+  - "GUI navigation"
+  - "cross-app"
+  - "mobile agent"
+  - "multimodal large language model"
+  - "history information modeling"
 date: 2026-05-08
 content_hash: 16e3ddde71952016
 ---

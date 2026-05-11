@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Adaptive Data Analysis for Growing Data
 description: >-
-  [NeurIPS 2025][Adaptive data analysis] This paper establishes the first generalization bounds for adaptive analysis over dynamically growing data, permitting analysts to schedule queries adaptively based on current dataset size, and achieving increasingly tight guarantees as data accumulates via time-varying empirical accuracy bounds and differential privacy mechanisms.
+  [NeurIPS 2025][Adaptive data analysis] This paper establishes the first generalization bounds for adaptive analysis over dynamically growing data…
 tags:
-  - NeurIPS 2025
-  - Adaptive data analysis
-  - differential privacy
-  - generalization bounds
-  - dynamic data
-  - overfitting
+  - "NeurIPS 2025"
+  - "Adaptive data analysis"
+  - "differential privacy"
+  - "generalization bounds"
+  - "dynamic data"
+  - "overfitting"
 date: 2026-05-08
 content_hash: 92396bc3c04c2f87
 ---

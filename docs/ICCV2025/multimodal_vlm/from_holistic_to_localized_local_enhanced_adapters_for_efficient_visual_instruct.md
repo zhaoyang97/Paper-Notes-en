@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From Holistic to Localized: Local Enhanced Adapters for Efficient Visual Instruction Fine-Tuning
 description: >-
-  [ICCV 2025][Multimodal VLM][Dual-LoRA] This paper proposes Dual-LoRA and Visual Cue Enhancement (VCE) modules that adopt a "from holistic to localized" paradigm to address data conflicts in efficient visual instruction fine-tuning, surpassing LoRA-MoE methods with only a 1.16× inference time overhead.
+  [ICCV 2025][Multimodal VLM][Dual-LoRA] This paper proposes Dual-LoRA and Visual Cue Enhancement (VCE) modules that adopt a "from holistic to localized" paradigm to address data conflicts in efficient visual instruction f…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Dual-LoRA
-  - LoRA-MoE
-  - Visual Cue Enhancement
-  - Data Conflict
-  - Efficient Instruction Fine-Tuning
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Dual-LoRA"
+  - "LoRA-MoE"
+  - "Visual Cue Enhancement"
+  - "Data Conflict"
+  - "Efficient Instruction Fine-Tuning"
 date: 2026-05-08
 content_hash: 92f93e9f5ca2bb2b
 ---

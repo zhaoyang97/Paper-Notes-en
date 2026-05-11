@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Semi-supervised Graph Anomaly Detection via Robust Homophily Learning
 description: >-
-  [NeurIPS 2025][graph anomaly detection] This paper proposes RHO (Robust Homophily Learning), which addresses the homophily diversity of normal nodes in semi-supervised graph anomaly detection via an adaptive frequency response filter (AdaFreq) and a Graph Normality Alignment (GNA) module, outperforming existing methods on 8 real-world datasets.
+  [NeurIPS 2025][graph anomaly detection] This paper proposes RHO (Robust Homophily Learning), which addresses the homophily diversity of normal nodes in semi-supervised graph anomaly detection via an adaptive frequency re…
 tags:
-  - NeurIPS 2025
-  - graph anomaly detection
-  - homophily learning
-  - adaptive frequency filter
-  - semi-supervised
-  - contrastive learning
+  - "NeurIPS 2025"
+  - "graph anomaly detection"
+  - "homophily learning"
+  - "adaptive frequency filter"
+  - "semi-supervised"
+  - "contrastive learning"
 date: 2026-05-08
 content_hash: 9b83ad47fcbf1097
 ---

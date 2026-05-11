@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Text-guided Controllable Diffusion for Realistic Camouflage Images Generation
 description: >-
-  [AAAI 2026][Segmentation][Camouflage Image Generation] CT-CIG is proposed as the first text-guided controllable camouflage image generation method. It leverages a VLM-based Camouflage-Revealing Dialogue Mechanism (CRDM) to generate high-quality text prompts, and combines a lightweight control network with a Frequency Interaction Refinement Module (FIRM) built upon the Stable Diffusion framework to produce logically coherent and texturally realistic camouflage images, establishing a new Text-guided CIG paradigm.
+  [AAAI 2026][Segmentation][Camouflage Image Generation] CT-CIG is proposed as the first text-guided controllable camouflage image generation method. It leverages a VLM-based Camouflage-Revealing Dialogue Mechanism (CRDM)…
 tags:
-  - AAAI 2026
-  - Segmentation
-  - Camouflage Image Generation
-  - Diffusion Models
-  - Text-guided
-  - Frequency Interaction
-  - Vision Language Model
+  - "AAAI 2026"
+  - "Segmentation"
+  - "Camouflage Image Generation"
+  - "Diffusion Models"
+  - "Text-guided"
+  - "Frequency Interaction"
+  - "Vision Language Model"
 date: 2026-05-08
 content_hash: ae4090934236a407
 ---

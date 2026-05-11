@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The Devil is in the Spurious Correlations: Boosting Moment Retrieval with Dynamic Learning
 description: >-
-  [ICCV 2025][Object Detection][Moment Retrieval] This paper is the first to identify spurious correlations between text queries and background frames as the fundamental bottleneck in moment retrieval performance. It proposes TD-DETR, a framework that mitigates this issue via two strategies: dynamic context video synthesis and text-dynamics interaction enhancement, achieving state-of-the-art results on QVHighlights and Charades-STA.
+  [ICCV 2025][Object Detection][Moment Retrieval] This paper is the first to identify spurious correlations between text queries and background frames as the fundamental bottleneck in moment retrieval performance. It propo…
 tags:
-  - ICCV 2025
-  - Object Detection
-  - Moment Retrieval
-  - Spurious Correlation
-  - Video Synthesis
-  - Temporal Dynamics
-  - DETR
+  - "ICCV 2025"
+  - "Object Detection"
+  - "Moment Retrieval"
+  - "Spurious Correlation"
+  - "Video Synthesis"
+  - "Temporal Dynamics"
+  - "DETR"
 date: 2026-05-08
 content_hash: 756801b877c985c0
 ---

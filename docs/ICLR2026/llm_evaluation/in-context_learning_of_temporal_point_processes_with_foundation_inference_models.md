@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] In-Context Learning of Temporal Point Processes with Foundation Inference Models
 description: >-
-  [ICLR 2026][LLM Evaluation][Temporal Point Processes] This paper proposes FIM-PP — the first foundation inference model for marked temporal point processes (MTPP). A Transformer is pretrained on 72K synthetic point processes (14.4M events) to perform in-context inference of conditional intensity functions. In zero-shot settings, FIM-PP matches the performance of specialized models trained for hours; after a few minutes of fine-tuning, it achieves state-of-the-art results on multi-event prediction across four real-world datasets.
+  [ICLR 2026][LLM Evaluation][Temporal Point Processes] This paper proposes FIM-PP — the first foundation inference model for marked temporal point processes (MTPP). A Transformer is pretrained on 72K synthetic point proce…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - Temporal Point Processes
-  - Foundation Inference Model
-  - In-Context Learning
-  - Hawkes Process
-  - Conditional Intensity Function
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Temporal Point Processes"
+  - "Foundation Inference Model"
+  - "In-Context Learning"
+  - "Hawkes Process"
+  - "Conditional Intensity Function"
 date: 2026-05-08
 content_hash: 39e11bb02cf1b072
 ---

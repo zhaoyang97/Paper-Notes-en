@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FunREC: Reconstructing Functional 3D Scenes from Egocentric Interaction Videos
 description: >-
-  [CVPR 2026][3D Vision][functional 3D reconstruction] This paper presents FunREC, a training-free optimization-based method that reconstructs functional articulated 3D digital twin scenes directly from egocentric RGB-D interaction videos. It automatically discovers articulated parts, estimates kinematic parameters, tracks 3D motion, and reconstructs both static and dynamic geometry. FunREC substantially outperforms prior methods across all benchmarks (part segmentation mIoU improves by 50+, joint angle error reduced by 5–10×) and supports simulation export and robotic interaction.
+  [CVPR 2026][3D Vision][functional 3D reconstruction] This paper presents FunREC, a training-free optimization-based method that reconstructs functional articulated 3D digital twin scenes directly from egocentric RGB-D in…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - functional 3D reconstruction
-  - egocentric video
-  - articulated object reconstruction
-  - digital twin
-  - motion estimation
+  - "CVPR 2026"
+  - "3D Vision"
+  - "functional 3D reconstruction"
+  - "egocentric video"
+  - "articulated object reconstruction"
+  - "digital twin"
+  - "motion estimation"
 date: 2026-05-08
 content_hash: 29ed9eddfedba838
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Predict Training Data Quality via Its Geometry in Metric Space
 description: >-
-  [NeurIPS 2025][LLM Pretraining][Persistent Homology] This paper proposes a training data diversity metric based on Persistent Homology (PH), demonstrating that geometric and topological structural features of data can effectively predict model performance, outperforming traditional entropy-based metrics such as Vendi Score.
+  [NeurIPS 2025][LLM Pretraining][Persistent Homology] This paper proposes a training data diversity metric based on Persistent Homology (PH)…
 tags:
-  - NeurIPS 2025
-  - LLM Pretraining
-  - Persistent Homology
-  - Data Diversity
-  - Training Data Quality
-  - Hill Numbers
-  - Topological Data Analysis
+  - "NeurIPS 2025"
+  - "LLM Pretraining"
+  - "Persistent Homology"
+  - "Data Diversity"
+  - "Training Data Quality"
+  - "Hill Numbers"
+  - "Topological Data Analysis"
 date: 2026-05-08
 content_hash: da7c01cf12fec447
 ---

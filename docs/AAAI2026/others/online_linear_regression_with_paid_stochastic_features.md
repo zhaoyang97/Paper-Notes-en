@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Online Linear Regression with Paid Stochastic Features
 description: >-
-  [AAAI2026][online linear regression] This paper studies a novel setting in online linear regression where features are corrupted by noise and the learner can **pay to reduce noise intensity**. It establishes that the optimal regret rate is $\widetilde{\mathcal{O}}(\sqrt{T})$ when the noise covariance is known and $\widetilde{\mathcal{O}}(T^{2/3})$ when unknown, with matching lower bounds; all bounds are order-optimal in $T$.
+  [AAAI2026][online linear regression] This paper studies a novel setting in online linear regression where features are corrupted by noise and the learner can **pay to reduce noise intensity**. It establishes that the opt…
 tags:
-  - AAAI2026
-  - online linear regression
-  - noisy features
-  - paid features
-  - regret bounds
-  - covariance estimation
-  - matrix martingale concentration
+  - "AAAI2026"
+  - "online linear regression"
+  - "noisy features"
+  - "paid features"
+  - "regret bounds"
+  - "covariance estimation"
+  - "matrix martingale concentration"
 date: 2026-05-08
 content_hash: e78b8aac67704093
 ---

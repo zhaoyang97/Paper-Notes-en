@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GreenHyperSpectra: A Multi-Source Hyperspectral Dataset for Global Vegetation Trait Prediction
 description: >-
-  [NeurIPS 2025][Remote Sensing][Hyperspectral dataset] GreenHyperSpectra constructs a pretraining dataset of 140,000+ multi-source hyperspectral vegetation samples spanning proximal, airborne, and satellite platforms. Label-efficient regression models trained via semi-supervised and self-supervised methods (MAE, GAN, RTM-AE) comprehensively outperform fully supervised baselines on 7 plant trait prediction tasks, with particularly pronounced advantages under label-scarce and out-of-distribution scenarios.
+  [NeurIPS 2025][Remote Sensing][Hyperspectral dataset] GreenHyperSpectra constructs a pretraining dataset of 140,000+ multi-source hyperspectral vegetation samples spanning proximal, airborne…
 tags:
-  - NeurIPS 2025
-  - Remote Sensing
-  - Hyperspectral dataset
-  - vegetation trait prediction
-  - semi-supervised learning
-  - cross-sensor generalization
-  - masked autoencoder
+  - "NeurIPS 2025"
+  - "Remote Sensing"
+  - "Hyperspectral dataset"
+  - "vegetation trait prediction"
+  - "semi-supervised learning"
+  - "cross-sensor generalization"
+  - "masked autoencoder"
 date: 2026-05-08
 content_hash: 8a614c65630c1689
 ---

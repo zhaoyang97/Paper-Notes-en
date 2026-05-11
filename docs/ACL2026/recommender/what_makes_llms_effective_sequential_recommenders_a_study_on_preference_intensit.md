@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] What Makes LLMs Effective Sequential Recommenders? A Study on Preference Intensity and Temporal Context
 description: >-
-  [ACL 2026][Recommender Systems][Sequential Recommendation] This paper identifies that binary preference modeling in existing LLM-based recommender systems discards two critical signals—preference intensity and temporal context—and proposes RecPO, a framework that incorporates both factors into preference optimization via adaptive reward margins, substantially outperforming S-DPO and other baselines across five datasets.
+  [ACL 2026][Recommender Systems][Sequential Recommendation] This paper identifies that binary preference modeling in existing LLM-based recommender systems discards two critical signals—preference intensity and temporal c…
 tags:
-  - ACL 2026
-  - Recommender Systems
-  - Sequential Recommendation
-  - Preference Alignment
-  - Preference Intensity
-  - Temporal Context
-  - DPO
+  - "ACL 2026"
+  - "Recommender Systems"
+  - "Sequential Recommendation"
+  - "Preference Alignment"
+  - "Preference Intensity"
+  - "Temporal Context"
+  - "DPO"
 date: 2026-05-08
 content_hash: da0fa92ac472b864
 ---

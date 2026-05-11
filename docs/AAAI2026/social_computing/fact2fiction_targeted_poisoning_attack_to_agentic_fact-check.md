@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Fact2Fiction: Targeted Poisoning Attack to Agentic Fact-checking System
 description: >-
-  [AAAI 2026][Social Computing][Poisoning Attack] This paper proposes Fact2Fiction, the first poisoning attack framework targeting agentic fact-checking systems (e.g., DEFAME, InFact). It employs a Planner Agent to simulate claim decomposition and generate sub-questions, reverse-engineers key reasoning points from system justifications to craft targeted malicious evidence, and allocates the poisoning budget according to sub-claim importance. At a poisoning rate of only 1%, Fact2Fiction achieves 8.9%–21.2% higher attack success rate (ASR) than the state-of-the-art PoisonedRAG.
+  [AAAI 2026][Social Computing][Poisoning Attack] This paper proposes Fact2Fiction, the first poisoning attack framework targeting agentic fact-checking systems (e.g., DEFAME…
 tags:
-  - AAAI 2026
-  - Social Computing
-  - Poisoning Attack
-  - Agentic Fact-checking
-  - Claim Decomposition
-  - Adversarial Evidence
-  - Knowledge Base Poisoning
+  - "AAAI 2026"
+  - "Social Computing"
+  - "Poisoning Attack"
+  - "Agentic Fact-checking"
+  - "Claim Decomposition"
+  - "Adversarial Evidence"
+  - "Knowledge Base Poisoning"
 date: 2026-05-08
 content_hash: c542a8972be16a1c
 ---

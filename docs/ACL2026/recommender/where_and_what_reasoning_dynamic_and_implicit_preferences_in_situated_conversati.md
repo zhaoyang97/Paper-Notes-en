@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Where and What: Reasoning Dynamic and Implicit Preferences in Situated Conversational Recommendation
 description: >-
-  [ACL 2026][Recommender Systems][Situated Conversational Recommendation] SiPeR addresses the challenge of dynamically shifting and implicitly expressed user preferences in situated conversational recommendation (SCR) via two mechanisms — Scene Transition Estimation ("Where") and Bayesian Inverse Inference ("What") — achieving improvements of 10.9% and 10.6% on SIMMC 2.1 and SCREEN, respectively.
+  [ACL 2026][Recommender Systems][Situated Conversational Recommendation] SiPeR addresses the challenge of dynamically shifting and implicitly expressed user preferences in situated conversational recommendation (SCR) via…
 tags:
-  - ACL 2026
-  - Recommender Systems
-  - Situated Conversational Recommendation
-  - Scene Transition
-  - Bayesian Inverse Inference
-  - Implicit Preference
-  - Multimodal
+  - "ACL 2026"
+  - "Recommender Systems"
+  - "Situated Conversational Recommendation"
+  - "Scene Transition"
+  - "Bayesian Inverse Inference"
+  - "Implicit Preference"
+  - "Multimodal"
 date: 2026-05-08
 content_hash: 5238eba7ec3af7dd
 ---

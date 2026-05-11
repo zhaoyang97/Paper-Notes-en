@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Emergence of Superposition: Unveiling the Training Dynamics of Chain of Continuous Thought
 description: >-
-  [ICLR 2026][Video Understanding][Continuous CoT] This paper theoretically analyzes the training dynamics of a two-layer Transformer trained with continuous Chain-of-Thought (Coconut) on the directed graph reachability problem, revealing how a "superposition" mechanism naturally emerges: the index-matching logit first grows and then remains bounded, thereby achieving a balance between exploration and exploitation.
+  [ICLR 2026][Video Understanding][Continuous CoT] This paper theoretically analyzes the training dynamics of a two-layer Transformer trained with continuous Chain-of-Thought (Coconut) on the directed graph reachability pr…
 tags:
-  - ICLR 2026
-  - Video Understanding
-  - Continuous CoT
-  - Superposition
-  - Training Dynamics
-  - Transformer Theory
-  - Graph Reachability
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "Continuous CoT"
+  - "Superposition"
+  - "Training Dynamics"
+  - "Transformer Theory"
+  - "Graph Reachability"
 date: 2026-05-08
 content_hash: 3399682b680352d1
 ---

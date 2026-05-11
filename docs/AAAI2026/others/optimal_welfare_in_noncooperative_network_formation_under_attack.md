@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Optimal Welfare in Noncooperative Network Formation under Attack
 description: >-
-  [AAAI 2026][Network formation games] In the noncooperative network formation game model proposed by Goyal et al. (WINE 2016), this paper proves that equilibrium networks created by selfish agents maintain asymptotically optimal social welfare $n^2 - O(n)$ under a broad class of attackers — including maximum disruption — called super-quadratic disruption (SQD) attackers, thereby resolving a long-standing open problem.
+  [AAAI 2026][Network formation games] In the noncooperative network formation game model proposed by Goyal et al. (WINE 2016), this paper proves that equilibrium networks created by selfish agents maintain asymptotically…
 tags:
-  - AAAI 2026
-  - Network formation games
-  - Nash equilibrium
-  - social welfare
-  - attack and immunization
-  - game theory
-  - Price of Anarchy
+  - "AAAI 2026"
+  - "Network formation games"
+  - "Nash equilibrium"
+  - "social welfare"
+  - "attack and immunization"
+  - "game theory"
+  - "Price of Anarchy"
 date: 2026-05-08
 content_hash: 3b13305b11e8862e
 ---

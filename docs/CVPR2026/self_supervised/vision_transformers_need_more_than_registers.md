@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Vision Transformers Need More Than Registers
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Vision Transformer] This paper argues that dense feature artifacts in ViTs trained under label supervision, text supervision, and self-supervision share a common root cause: rather than a simple high-norm token problem, models learn to exploit background patches as global semantic shortcuts, driven by coarse-grained supervision combined with global attention. The authors accordingly propose LaSt-ViT, which replaces standard CLS aggregation with frequency-domain stability-guided selective aggregation, yielding consistent improvements in localization, segmentation, and open-vocabulary tasks across 12 benchmarks.
+  [CVPR 2026][Self-Supervised Learning][Vision Transformer] This paper argues that dense feature artifacts in ViTs trained under label supervision, text supervision…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - Vision Transformer
-  - Lazy Aggregation
-  - Register Token
-  - DINO
-  - Dense Feature Alignment
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Vision Transformer"
+  - "Lazy Aggregation"
+  - "Register Token"
+  - "DINO"
+  - "Dense Feature Alignment"
 date: 2026-05-08
 content_hash: 4f7899f38fe6dca2
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Flow Matching-Based Autonomous Driving Planning with Advanced Interactive Behavior Modeling
 description: >-
-  [NeurIPS 2025][Autonomous Driving][Autonomous Driving Planning] This paper proposes Flow Planner—a system combining three synergistic innovations: fine-grained trajectory tokenization, an interaction-enhanced spatiotemporal fusion architecture, and flow matching with classifier-free guidance. It is the first purely learning-based method to surpass 90 points on nuPlan Val14 (90.43), and outperforms Diffusion Planner by 8.92 points on the interaction-intensive interPlan benchmark.
+  [NeurIPS 2025][Autonomous Driving][Autonomous Driving Planning] This paper proposes Flow Planner—a system combining three synergistic innovations: fine-grained trajectory tokenization…
 tags:
-  - NeurIPS 2025
-  - Autonomous Driving
-  - Autonomous Driving Planning
-  - Flow Matching
-  - Interactive Behavior Modeling
-  - Classifier-Free Guidance
-  - Trajectory Generation
+  - "NeurIPS 2025"
+  - "Autonomous Driving"
+  - "Autonomous Driving Planning"
+  - "Flow Matching"
+  - "Interactive Behavior Modeling"
+  - "Classifier-Free Guidance"
+  - "Trajectory Generation"
 date: 2026-05-08
 content_hash: 4d23bc7403aa1e9d
 ---

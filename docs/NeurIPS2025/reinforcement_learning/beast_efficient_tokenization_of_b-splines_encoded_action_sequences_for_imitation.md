@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BEAST: Efficient Tokenization of B-Splines Encoded Action Sequences for Imitation Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Action Tokenizer] BEAST parameterizes action sequences via B-splines—estimating control points through ridge regression and uniformly quantizing them into fixed-length tokens—achieving 20× token compression (100 steps → 5 tokens), mathematically guaranteed $C^0$ continuity across action chunks, a top-1 success rate on LIBERO-Long (86.4%), and an inference throughput of 617 Hz (2.14× faster than π₀ and 101× faster than OpenVLA).
+  [NeurIPS 2025][Reinforcement Learning][Action Tokenizer] BEAST parameterizes action sequences via B-splines—estimating control points through ridge regression and uniformly quantizing them into fixed-length tokens—achiev…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Action Tokenizer
-  - B-Spline
-  - Parallel Decoding
-  - Smooth Trajectory
-  - Efficient Inference
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Action Tokenizer"
+  - "B-Spline"
+  - "Parallel Decoding"
+  - "Smooth Trajectory"
+  - "Efficient Inference"
 date: 2026-05-08
 content_hash: cced0633b4104d63
 ---

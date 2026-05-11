@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Understanding Dataset Distillation via Spectral Filtering
 description: >-
-  [ICLR 2026][Model Compression][dataset distillation] This paper proposes UniDD, a spectral filtering framework that unifies diverse dataset distillation methods as applying different filter functions on the feature-feature correlation (FFC) matrix to match the frequency information of the feature-label correlation (FLC) matrix. Building on this insight, the paper further introduces Curriculum Frequency Matching (CFM).
+  [ICLR 2026][Model Compression][dataset distillation] This paper proposes UniDD, a spectral filtering framework that unifies diverse dataset distillation methods as applying different filter functions on the feature-featu…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - dataset distillation
-  - spectral filtering
-  - frequency matching
-  - curriculum learning
-  - unified framework
+  - "ICLR 2026"
+  - "Model Compression"
+  - "dataset distillation"
+  - "spectral filtering"
+  - "frequency matching"
+  - "curriculum learning"
+  - "unified framework"
 date: 2026-05-08
 content_hash: 3053d907f0937d92
 ---

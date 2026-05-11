@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AdmTree: Compressing Lengthy Context with Adaptive Semantic Trees
 description: >-
-  [NeurIPS 2025][Model Compression][Context Compression] This paper proposes AdmTree — an adaptive hierarchical context compression framework that constructs leaf gist tokens via information-density-driven dynamic segmentation, then aggregates them bottom-up into a binary semantic tree to achieve multi-granularity semantic preservation. It addresses two fundamental challenges: local detail loss in explicit methods and positional bias in implicit methods, outperforming the SOTA baseline Activation Beacon by over 10% on LongBench.
+  [NeurIPS 2025][Model Compression][Context Compression] This paper proposes AdmTree — an adaptive hierarchical context compression framework that constructs leaf gist tokens via information-density-driven dynamic segmenta…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Context Compression
-  - Semantic Tree
-  - Gist Token
-  - Hierarchical Compression
-  - Long Context
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Context Compression"
+  - "Semantic Tree"
+  - "Gist Token"
+  - "Hierarchical Compression"
+  - "Long Context"
 date: 2026-05-08
 content_hash: 7a738a2057890b41
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Attribution, Citation, and Quotation: A Survey of Evidence-based Text Generation with Large Language Models
 description: >-
-  [ACL 2026][LLM Evaluation][Evidence-based text generation] This paper presents a systematic survey of 134 papers on evidence-based text generation with LLMs, proposing for the first time a unified taxonomy (attribution approach × citation characteristics × task), analyzing 300 evaluation metrics organized into seven dimensions and six method categories, and providing a panoramic reference framework for this fragmented field.
+  [ACL 2026][LLM Evaluation][Evidence-based text generation] This paper presents a systematic survey of 134 papers on evidence-based text generation with LLMs…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - Evidence-based text generation
-  - citation attribution
-  - LLM trustworthiness
-  - evaluation framework
-  - RAG
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "Evidence-based text generation"
+  - "citation attribution"
+  - "LLM trustworthiness"
+  - "evaluation framework"
+  - "RAG"
 date: 2026-05-08
 content_hash: ca9711b5c7f594cc
 ---

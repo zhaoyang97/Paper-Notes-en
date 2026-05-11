@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From Verifiable Dot to Reward Chain: Harnessing Verifiable Reference-based Rewards for RL of Open-ended Generation
 description: >-
-  [ICLR 2026][Reinforcement Learning][RLVR] This paper proposes RLVRR, a framework that extends RLVR (reinforcement learning with verifiable rewards) from mathematical/code reasoning to open-ended text generation. It extracts hierarchical keyword sequences (content rewards) and executable Python checking functions (style rewards) from high-quality reference answers, forming a "reward chain" to replace single-point verification signals. On 10+ benchmarks, RLVRR trained on 10K examples outperforms 100K SFT and advanced reward models.
+  [ICLR 2026][Reinforcement Learning][RLVR] This paper proposes RLVRR, a framework that extends RLVR (reinforcement learning with verifiable rewards) from mathematical/code reasoning to open-ended text generation. It extra…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RLVR
-  - open-ended generation
-  - reward chain
-  - verifiable rewards
-  - GRPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "open-ended generation"
+  - "reward chain"
+  - "verifiable rewards"
+  - "GRPO"
 date: 2026-05-08
 content_hash: 6a505c0c2d3e112d
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Frequency Matters: When Time Series Foundation Models Fail Under Spectral Shift
 description: >-
-  [NeurIPS 2025][Time Series][Time Series Foundation Models] This paper identifies spectral shift—a mismatch between the dominant frequencies of downstream data and those covered by pretraining data—as the key reason for generalization failure of Time Series Foundation Models (TSFMs) in industrial settings. The hypothesis is validated through an industrial-scale mobile game player engagement prediction task and controlled synthetic experiments.
+  [NeurIPS 2025][Time Series][Time Series Foundation Models] This paper identifies spectral shift—a mismatch between the dominant frequencies of downstream data and those covered by pretraining data—as the key reason for g…
 tags:
-  - NeurIPS 2025
-  - Time Series
-  - Time Series Foundation Models
-  - Spectral Shift
-  - Generalization Failure
-  - MOMENT
-  - Player Engagement Prediction
+  - "NeurIPS 2025"
+  - "Time Series"
+  - "Time Series Foundation Models"
+  - "Spectral Shift"
+  - "Generalization Failure"
+  - "MOMENT"
+  - "Player Engagement Prediction"
 date: 2026-05-08
 content_hash: 7cda7f483799533a
 ---

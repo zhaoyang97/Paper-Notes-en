@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Speed3R: Sparse Feed-forward 3D Reconstruction Models
 description: >-
-  [CVPR 2026][3D Vision][3D Reconstruction] Speed3R introduces a trainable dual-branch Global Sparse Attention (GSA) mechanism for feed-forward 3D reconstruction models. A compression branch provides coarse-grained scene summaries while a selection branch focuses fine-grained attention on critical tokens, achieving **12.4× inference speedup** on 1000-view sequences with only marginal accuracy degradation.
+  [CVPR 2026][3D Vision][3D Reconstruction] Speed3R introduces a trainable dual-branch Global Sparse Attention (GSA) mechanism for feed-forward 3D reconstruction models. A compression branch provides coarse-grained scene s…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Reconstruction
-  - Sparse Attention
-  - Feed-forward
-  - Inference Acceleration
-  - Structure-from-Motion
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Reconstruction"
+  - "Sparse Attention"
+  - "Feed-forward"
+  - "Inference Acceleration"
+  - "Structure-from-Motion"
 date: 2026-05-08
 content_hash: 54b65a7bb34430d9
 ---

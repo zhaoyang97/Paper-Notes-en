@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OVG-HQ: Online Video Grounding with Hybrid-modal Queries
 description: >-
-  [ICCV 2025][Video Understanding][Online video grounding] This paper proposes OVG-HQ, a new online video grounding task supporting hybrid-modal queries (text, image, and video clip), and introduces a Parametric Memory Block (PMB) to retain historical context alongside a hybrid distillation strategy to mitigate modality imbalance, enabling real-time moment localization in streaming video.
+  [ICCV 2025][Video Understanding][Online video grounding] This paper proposes OVG-HQ, a new online video grounding task supporting hybrid-modal queries (text, image, and video clip)…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - Online video grounding
-  - hybrid-modal queries
-  - parametric memory block
-  - cross-modal distillation
-  - streaming video
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "Online video grounding"
+  - "hybrid-modal queries"
+  - "parametric memory block"
+  - "cross-modal distillation"
+  - "streaming video"
 date: 2026-05-08
 content_hash: 2db7670fc9ce5df7
 ---

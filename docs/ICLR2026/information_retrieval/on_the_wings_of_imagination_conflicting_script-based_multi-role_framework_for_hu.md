@@ -2,15 +2,16 @@
 title: >-
   [Paper Note] On the Wings of Imagination: Conflicting Script-based Multi-role Framework for Humor Caption Generation
 description: >-
-  [ICLR 2026][humor generation] This paper proposes HOMER, a framework that constructs a three-role LLM collaboration mechanism (conflicting script extractor + hierarchical imaginator + caption generator) grounded in the GTVH theory of verbal humor. By explicitly modeling script opposition, multi-perspective associative chains, and joke database retrieval to build an imagination tree for creative space expansion, HOMER achieves an average improvement of ~7% over baselines on the New Yorker cartoon benchmark using GPT-4o as the backbone, and significantly outperforms all baselines in human evaluation.
+  [ICLR 2026][Information Retrieval & RAG][humor generation] This paper proposes HOMER, a framework that constructs a three-role LLM collaboration mechanism (conflicting script extractor + hierarchical imaginator + caption…
 tags:
-  - ICLR 2026
-  - humor generation
-  - GTVH theory
-  - script opposition
-  - imagination tree
-  - LLM collaboration
-  - multi-role framework
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "humor generation"
+  - "GTVH theory"
+  - "script opposition"
+  - "imagination tree"
+  - "LLM collaboration"
+  - "multi-role framework"
 date: 2026-05-08
 content_hash: 38648a4f61f7db45
 ---

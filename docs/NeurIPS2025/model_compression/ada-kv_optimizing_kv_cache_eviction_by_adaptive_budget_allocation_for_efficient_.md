@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Ada-KV: Optimizing KV Cache Eviction by Adaptive Budget Allocation for Efficient LLM Inference
 description: >-
-  [NeurIPS 2025][Model Compression][KV Cache] Existing KV cache eviction methods uniformly allocate budgets across all attention heads, ignoring the substantial variation in attention concentration across heads. This paper proposes Ada-KV — the first head-wise adaptive budget allocation strategy — which redistributes budget from sparse heads to dispersed heads. It provides a theoretical proof that the approach minimizes an upper bound on eviction loss, and serves as a plug-and-play improvement over existing methods across 29 datasets.
+  [NeurIPS 2025][Model Compression][KV Cache] Existing KV cache eviction methods uniformly allocate budgets across all attention heads…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - KV Cache
-  - Attention Eviction
-  - Adaptive Budget Allocation
-  - Long-Sequence Inference
-  - Efficient Inference
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "KV Cache"
+  - "Attention Eviction"
+  - "Adaptive Budget Allocation"
+  - "Long-Sequence Inference"
+  - "Efficient Inference"
 date: 2026-05-08
 content_hash: d8f6b58821abeb82
 ---

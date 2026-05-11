@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards General Modality Translation with Contrastive and Predictive Latent Diffusion Bridge
 description: >-
-  [NeurIPS 2025][Image Generation][Diffusion Bridge Models] This paper proposes LDDBM (Latent Denoising Diffusion Bridge Model), which extends denoising diffusion bridge models into a shared latent space and incorporates contrastive alignment loss and predictive loss to achieve a general-purpose framework for arbitrary modality translation.
+  [NeurIPS 2025][Image Generation][Diffusion Bridge Models] This paper proposes LDDBM (Latent Denoising Diffusion Bridge Model), which extends denoising diffusion bridge models into a shared latent space and incorporates c…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Diffusion Bridge Models
-  - Modality Translation
-  - Contrastive Learning
-  - Latent Space
-  - Transformer
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Diffusion Bridge Models"
+  - "Modality Translation"
+  - "Contrastive Learning"
+  - "Latent Space"
+  - "Transformer"
 date: 2026-05-08
 content_hash: dbb1d72abfb354da
 ---

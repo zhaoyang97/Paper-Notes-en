@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Same Content, Different Representations: A Controlled Study for Table QA
 description: >-
-  [ICLR 2026][LLM Evaluation][Table QA] The first controlled study that systematically evaluates the robustness of NL2SQL, LLM, and hybrid approaches under varying table size, schema quality, and query complexity by changing only the representation format (structured vs. semi-structured) while holding table content constant, demonstrating that representation format is a first-order factor in Table QA performance.
+  [ICLR 2026][LLM Evaluation][Table QA] The first controlled study that systematically evaluates the robustness of NL2SQL, LLM, and hybrid approaches under varying table size, schema quality…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - Table QA
-  - structured tables
-  - semi-structured tables
-  - representation format
-  - diagnostic benchmark
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Table QA"
+  - "structured tables"
+  - "semi-structured tables"
+  - "representation format"
+  - "diagnostic benchmark"
 date: 2026-05-08
 content_hash: 335d02fd1c9d2f7d
 ---

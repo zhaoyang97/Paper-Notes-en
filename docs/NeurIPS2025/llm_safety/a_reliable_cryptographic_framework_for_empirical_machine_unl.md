@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Reliable Cryptographic Framework for Empirical Machine Unlearning Evaluation
 description: >-
-  [NeurIPS 2025][LLM Safety][machine unlearning] This paper models the machine unlearning evaluation problem as a cryptographic game (the unlearning sample inference game), quantifies unlearning quality via the adversary's "advantage," and addresses multiple shortcomings of traditional MIA accuracy as an evaluation metric—namely, the lack of a retrain-as-zero baseline, sensitivity to data partitioning, and sensitivity to the choice of MIA. A SWAP test is further proposed as an efficient practical approximation.
+  [NeurIPS 2025][LLM Safety][machine unlearning] This paper models the machine unlearning evaluation problem as a cryptographic game (the unlearning sample inference game)…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - machine unlearning
-  - evaluation metric
-  - cryptographic game
-  - membership inference attack
-  - SWAP test
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "machine unlearning"
+  - "evaluation metric"
+  - "cryptographic game"
+  - "membership inference attack"
+  - "SWAP test"
 date: 2026-05-08
 content_hash: dab0960e9923d1c7
 ---

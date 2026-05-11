@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] How Should We Enhance the Safety of Large Reasoning Models: An Empirical Study
 description: >-
-  [ACL 2026][LLM Reasoning][reasoning model safety] This paper systematically investigates how to enhance the safety of large reasoning models (LRMs) via SFT. It identifies five risky reasoning patterns—most notably *weak vacillation*—as the root cause of limited effectiveness in direct safety response distillation, proposes targeted distillation strategies that reduce the PAIR attack success rate from 63% to 13%, and demonstrates that short chain-of-thought and template-based reasoning achieve safety performance comparable to full-length reasoning chains.
+  [ACL 2026][LLM Reasoning][reasoning model safety] This paper systematically investigates how to enhance the safety of large reasoning models (LRMs) via SFT. It identifies five risky reasoning patterns—most notably *weak…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - reasoning model safety
-  - risky reasoning patterns
-  - weak vacillation
-  - safety distillation
-  - short chain-of-thought
+  - "ACL 2026"
+  - "LLM Reasoning"
+  - "reasoning model safety"
+  - "risky reasoning patterns"
+  - "weak vacillation"
+  - "safety distillation"
+  - "short chain-of-thought"
 date: 2026-05-08
 content_hash: c11bd6a5e04691c4
 ---

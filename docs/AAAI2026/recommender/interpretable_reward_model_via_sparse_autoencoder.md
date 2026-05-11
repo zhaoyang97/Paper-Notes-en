@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Interpretable Reward Model via Sparse Autoencoder
 description: >-
-  [AAAI 2026][Recommender Systems][Reward Model] This paper proposes SARM (Sparse Autoencoder-enhanced Reward Model), which integrates a pretrained sparse autoencoder into a reward model to map hidden-layer activations into an interpretable, sparse, monosemantic feature space. This design enables feature-level reward attribution and dynamic preference steering, while achieving the highest overall score among all models on RewardBench 2.
+  [AAAI 2026][Recommender Systems][Reward Model] This paper proposes SARM (Sparse Autoencoder-enhanced Reward Model), which integrates a pretrained sparse autoencoder into a reward model to map hidden-layer activations int…
 tags:
-  - AAAI 2026
-  - Recommender Systems
-  - Reward Model
-  - Sparse Autoencoder
-  - Interpretability
-  - RLHF
-  - Preference Steering
+  - "AAAI 2026"
+  - "Recommender Systems"
+  - "Reward Model"
+  - "Sparse Autoencoder"
+  - "Interpretability"
+  - "RLHF"
+  - "Preference Steering"
 date: 2026-05-08
 content_hash: dce072412f49e6a4
 ---

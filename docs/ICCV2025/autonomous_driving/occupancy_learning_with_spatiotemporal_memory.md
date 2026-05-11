@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Occupancy Learning with Spatiotemporal Memory
 description: >-
-  [ICCV 2025][Autonomous Driving][3D occupancy prediction] This paper proposes ST-Occ, a scene-level spatiotemporal occupancy representation learning framework. Through a Unified Temporal Modeling paradigm, it employs a spatiotemporal memory bank defined in scene coordinates along with an uncertainty- and dynamics-aware memory attention mechanism. ST-Occ outperforms the prior state of the art by 3 mIoU on the Occ3D benchmark while reducing temporal inconsistency by 29%.
+  [ICCV 2025][Autonomous Driving][3D occupancy prediction] This paper proposes ST-Occ, a scene-level spatiotemporal occupancy representation learning framework. Through a Unified Temporal Modeling paradigm…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - 3D occupancy prediction
-  - temporal fusion
-  - spatiotemporal memory
-  - uncertainty awareness
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "3D occupancy prediction"
+  - "temporal fusion"
+  - "spatiotemporal memory"
+  - "uncertainty awareness"
 date: 2026-05-08
 content_hash: 7101dd5569e2ef4f
 ---

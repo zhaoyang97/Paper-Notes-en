@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] NeuroBridge: Bio-Inspired Self-Supervised EEG-to-Image Decoding via Cognitive Priors and Bidirectional Semantic Alignment
 description: >-
-  [AAAI 2026][Self-Supervised Learning][EEG decoding] This paper proposes NeuroBridge, a framework that employs Cognitive Prior Augmentation (CPA, asymmetric augmentation to simulate perceptual variability) and a Shared Semantic Projector (SSP, bidirectional alignment into a unified semantic space). On the THINGS-EEG dataset under a 200-class zero-shot EEG-to-image retrieval task, the method achieves 63.2% Top-1 (+12.3%) and 89.9% Top-5 (+10.2%), substantially surpassing the existing state of the art.
+  [AAAI 2026][Self-Supervised Learning][EEG decoding] This paper proposes NeuroBridge, a framework that employs Cognitive Prior Augmentation (CPA…
 tags:
-  - AAAI 2026
-  - Self-Supervised Learning
-  - EEG decoding
-  - cross-modal contrastive learning
-  - cognitive prior augmentation
-  - shared semantic projection
-  - zero-shot retrieval
-  - brain-computer interface
+  - "AAAI 2026"
+  - "Self-Supervised Learning"
+  - "EEG decoding"
+  - "cross-modal contrastive learning"
+  - "cognitive prior augmentation"
+  - "shared semantic projection"
+  - "zero-shot retrieval"
+  - "brain-computer interface"
 date: 2026-05-08
 content_hash: ab5e147c28687221
 ---

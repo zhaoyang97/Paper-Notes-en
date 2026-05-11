@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Geo-Sign: Hyperbolic Contrastive Regularisation for Geometrically Aware Sign Language Translation
 description: >-
-  [NeurIPS 2025][LLM Safety][Sign language translation] Geo-Sign projects skeleton features into a Poincaré ball model of hyperbolic space and regularizes an mT5 language model via a hyperbolic contrastive loss, enabling the model to perceive the hierarchical structure of sign language motion. Using only skeleton data, the method surpasses RGB-based SOTA on CSL-Daily (BLEU-4 +1.81, ROUGE-L +3.03).
+  [NeurIPS 2025][LLM Safety][Sign language translation] Geo-Sign projects skeleton features into a Poincaré ball model of hyperbolic space and regularizes an mT5 language model via a hyperbolic contrastive loss…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - Sign language translation
-  - hyperbolic geometry
-  - Poincaré ball
-  - contrastive learning
-  - skeleton representation
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "Sign language translation"
+  - "hyperbolic geometry"
+  - "Poincaré ball"
+  - "contrastive learning"
+  - "skeleton representation"
 date: 2026-05-08
 content_hash: 8e2c2ca5fa9250e4
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Near-Optimal Second-Order Guarantees for Model-Based Adversarial Imitation Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Adversarial imitation learning] This paper proposes MB-AIL (Model-Based Adversarial Imitation Learning), establishing horizon-free second-order sample complexity upper bounds under general function approximation. Combined with information-theoretic lower bounds on constructed hard instances, MB-AIL is shown to be minimax optimal (up to logarithmic factors) in terms of online interaction sample complexity.
+  [ICLR 2026][Reinforcement Learning][Adversarial imitation learning] This paper proposes MB-AIL (Model-Based Adversarial Imitation Learning), establishing horizon-free second-order sample complexity upper bounds under gen…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Adversarial imitation learning
-  - model-based methods
-  - second-order bounds
-  - sample complexity
-  - information-theoretic lower bounds
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Adversarial imitation learning"
+  - "model-based methods"
+  - "second-order bounds"
+  - "sample complexity"
+  - "information-theoretic lower bounds"
 date: 2026-05-08
 content_hash: 0e92c7d489aa3134
 ---

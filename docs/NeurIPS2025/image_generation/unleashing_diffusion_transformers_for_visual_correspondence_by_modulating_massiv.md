@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unleashing Diffusion Transformers for Visual Correspondence by Modulating Massive Activations
 description: >-
-  [NeurIPS 2025][Image Generation][Diffusion Transformer] This paper identifies the massive activations phenomenon in Diffusion Transformers (DiTs) that renders features indiscriminable, reveals its intrinsic connection to AdaLN, and proposes a training-free framework DiTF for extracting semantically discriminative features, surpassing DINO and SD models on visual correspondence tasks.
+  [NeurIPS 2025][Image Generation][Diffusion Transformer] This paper identifies the massive activations phenomenon in Diffusion Transformers (DiTs) that renders features indiscriminable…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Diffusion Transformer
-  - Massive Activations
-  - AdaLN
-  - Visual Correspondence
-  - Feature Extraction
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Diffusion Transformer"
+  - "Massive Activations"
+  - "AdaLN"
+  - "Visual Correspondence"
+  - "Feature Extraction"
 date: 2026-05-08
 content_hash: b07b082c03467e7c
 ---

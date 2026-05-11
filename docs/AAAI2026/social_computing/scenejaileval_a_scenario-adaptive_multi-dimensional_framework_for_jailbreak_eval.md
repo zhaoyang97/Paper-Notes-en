@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SceneJailEval: A Scenario-Adaptive Multi-Dimensional Framework for Jailbreak Evaluation
 description: >-
-  [AAAI 2026][Social Computing][Jailbreak Evaluation] This paper proposes SceneJailEval, a scenario-adaptive multi-dimensional jailbreak evaluation framework that defines 14 jailbreak scenarios and 10 evaluation dimensions. Through a pipeline of scenario classification → dynamic dimension selection → multi-dimensional detection → weighted harm scoring, it achieves F1 of 0.917 on a self-constructed dataset (surpassing SOTA by 6%) and 0.995 on JBB (surpassing SOTA by 3%), while supporting harm severity quantification beyond binary classification.
+  [AAAI 2026][Social Computing][Jailbreak Evaluation] This paper proposes SceneJailEval, a scenario-adaptive multi-dimensional jailbreak evaluation framework that defines 14 jailbreak scenarios and 10 evaluation dimensions…
 tags:
-  - AAAI 2026
-  - Social Computing
-  - Jailbreak Evaluation
-  - Scenario-Adaptive
-  - Multi-Dimensional Evaluation
-  - LLM Safety
-  - Harm Quantification
+  - "AAAI 2026"
+  - "Social Computing"
+  - "Jailbreak Evaluation"
+  - "Scenario-Adaptive"
+  - "Multi-Dimensional Evaluation"
+  - "LLM Safety"
+  - "Harm Quantification"
 date: 2026-05-08
 content_hash: b507dc8fc9ec2272
 ---

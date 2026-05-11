@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SophiaVL-R1: Reinforcing MLLMs Reasoning with Thinking Reward
 description: >-
-  [ICLR 2026][Multimodal VLM][Thinking Reward] This paper proposes SophiaVL-R1, which introduces a holistic-level thinking process reward into rule-based RL training of MLLMs. A Thinking Reward Model (TRM) is trained to evaluate reasoning quality along five dimensions (including logical soundness and redundancy). Trust-GRPO is proposed to compute a reliability weight $\gamma$ from the contrast of thinking rewards between correct and incorrect answer groups, mitigating reward hacking. A time-based annealing strategy $e^{-\text{steps}/T}$ gradually reduces the thinking reward contribution so that the model relies more on accurate rule-based rewards in later training. The resulting 7B model comprehensively outperforms LLaVA-OneVision-72B on multiple benchmarks, including MathVista (71.3%) and MMMU (61.3%).
+  [ICLR 2026][Multimodal VLM][Thinking Reward] This paper proposes SophiaVL-R1, which introduces a holistic-level thinking process reward into rule-based RL training of MLLMs. A Thinking Reward Model (TRM) is trained to ev…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Thinking Reward
-  - MLLM Reasoning
-  - Trust-GRPO
-  - Annealing Strategy
-  - Process Supervision
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Thinking Reward"
+  - "MLLM Reasoning"
+  - "Trust-GRPO"
+  - "Annealing Strategy"
+  - "Process Supervision"
 date: 2026-05-08
 content_hash: a04900acb055383a
 ---

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Towards Anomaly-Aware Pre-Training and Fine-Tuning for Graph Anomaly Detection
 description: >-
-  [LLM Evaluation] This paper proposes the APF framework, which addresses the dual challenges of label scarcity and homophily disparity in graph anomaly detection through Rayleigh quotient-guided anomaly-aware pre-training and granularity-adaptive fine-tuning.
+  [LLM Evaluation] This paper proposes the APF framework, which addresses the dual challenges of label scarcity and homophily disparity in graph anomaly detection through Rayleigh quotient-guided anomaly-aware pre-training…
 tags:
-  - LLM Evaluation
+  - "LLM Evaluation"
 date: 2026-05-08
 content_hash: fa243c9de660b7a6
 ---

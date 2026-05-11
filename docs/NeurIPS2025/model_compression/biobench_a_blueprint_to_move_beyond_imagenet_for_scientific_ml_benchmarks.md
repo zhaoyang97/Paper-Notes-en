@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BioBench: A Blueprint to Move Beyond ImageNet for Scientific ML Benchmarks
 description: >-
-  [NeurIPS 2025][Model Compression][Ecological Imagery] BioBench is proposed as a unified benchmark spanning 9 ecological vision tasks, 4 taxonomic kingdoms, 6 image modalities, and 3.1 million images. It demonstrates that ImageNet top-1 accuracy explains only 34% of the variance across ecological tasks, and that approximately 30% of model rankings are incorrect among frontier models exceeding 75% accuracy.
+  [NeurIPS 2025][Model Compression][Ecological Imagery] BioBench is proposed as a unified benchmark spanning 9 ecological vision tasks, 4 taxonomic kingdoms, 6 image modalities…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Ecological Imagery
-  - Visual Benchmark
-  - ImageNet Limitations
-  - Transfer Learning
-  - AI for Science
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Ecological Imagery"
+  - "Visual Benchmark"
+  - "ImageNet Limitations"
+  - "Transfer Learning"
+  - "AI for Science"
 date: 2026-05-08
 content_hash: 5b44600e58f797f8
 ---

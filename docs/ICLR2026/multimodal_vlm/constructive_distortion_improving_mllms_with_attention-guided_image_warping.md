@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Constructive Distortion: Improving MLLMs with Attention-Guided Image Warping
 description: >-
-  [ICLR 2026][Multimodal VLM][MLLM] This paper proposes AttWarp, a plug-and-play test-time image warping method that leverages the MLLM's own cross-modal attention maps to perform rectilinear grid resampling — expanding high-attention regions and compressing low-attention regions — achieving consistent accuracy improvements, enhanced compositional reasoning, and reduced hallucinations across 5 benchmarks and 4 MLLMs.
+  [ICLR 2026][Multimodal VLM][MLLM] This paper proposes AttWarp, a plug-and-play test-time image warping method that leverages the MLLM's own cross-modal attention maps to perform rectilinear grid resampling — expanding hi…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - MLLM
-  - image warping
-  - attention-guided
-  - fine-grained perception
-  - test-time intervention
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "MLLM"
+  - "image warping"
+  - "attention-guided"
+  - "fine-grained perception"
+  - "test-time intervention"
 date: 2026-05-08
 content_hash: 58baab97ad56cc2e
 ---

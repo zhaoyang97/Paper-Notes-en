@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GSNR: Graph Smooth Null-Space Representation for Inverse Problems
 description: >-
-  [CVPR 2026][Image Restoration][Inverse Problems] This paper proposes Graph Smooth Null-Space Representation (GSNR), which employs spectral graph theory to construct a null-space-constrained Laplacian matrix and selects the $p$ smoothest spectral modes as the null-space projection basis. GSNR provides structured null-space constraints for inverse problem solvers including PnP, DIP, and diffusion models, achieving up to 4.3 dB PSNR gains on deblurring, compressed sensing, demosaicing, and super-resolution.
+  [CVPR 2026][Image Restoration][Inverse Problems] This paper proposes Graph Smooth Null-Space Representation (GSNR), which employs spectral graph theory to construct a null-space-constrained Laplacian matrix and selects t…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Inverse Problems
-  - Null-Space Representation
-  - Graph Smoothness
-  - Spectral Graph Theory
-  - Plug-and-Play
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Inverse Problems"
+  - "Null-Space Representation"
+  - "Graph Smoothness"
+  - "Spectral Graph Theory"
+  - "Plug-and-Play"
 date: 2026-05-08
 content_hash: e01dd2773b3afbb6
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Note 8: PolyMath — Evaluating Mathematical Reasoning in a Multilingual Context
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Multilingual benchmark] PolyMath introduces a mathematical reasoning benchmark spanning 18 languages, 4 difficulty levels, and 500 problems, revealing that: (1) reasoning performance varies by up to 10 points across languages; (2) reasoning models exhibit low input–output language consistency, which may affect performance; and (3) thinking length varies substantially across languages — offering new perspectives for multilingual reasoning research.
+  [NeurIPS 2025][LLM Reasoning][Multilingual benchmark] PolyMath introduces a mathematical reasoning benchmark spanning 18 languages, 4 difficulty levels, and 500 problems…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - Multilingual benchmark
-  - difficulty stratification
-  - reasoning transfer
-  - language consistency
-  - thinking length
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "Multilingual benchmark"
+  - "difficulty stratification"
+  - "reasoning transfer"
+  - "language consistency"
+  - "thinking length"
 date: 2026-05-08
 content_hash: a0cf7b8ee0952c8f
 ---

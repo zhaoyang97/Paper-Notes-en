@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Designing to Forget: Deep Semi-parametric Models for Unlearning
 description: >-
-  [CVPR 2026][LLM Safety][machine unlearning] This paper proposes the "Designing to Forget" paradigm and introduces a family of deep semi-parametric models (SPMs) that achieve unlearning at inference time by simply removing training samples—without modifying model parameters. On ImageNet classification, SPMs reduce the prediction gap relative to the retrain baseline by 11% and achieve over 10× faster unlearning.
+  [CVPR 2026][LLM Safety][machine unlearning] This paper proposes the "Designing to Forget" paradigm and introduces a family of deep semi-parametric models (SPMs) that achieve unlearning at inference time by simply removin…
 tags:
-  - CVPR 2026
-  - LLM Safety
-  - machine unlearning
-  - semi-parametric models
-  - test-time deletion
-  - data privacy
-  - diffusion models
+  - "CVPR 2026"
+  - "LLM Safety"
+  - "machine unlearning"
+  - "semi-parametric models"
+  - "test-time deletion"
+  - "data privacy"
+  - "diffusion models"
 date: 2026-05-08
 content_hash: 18dee15fbdb79659
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Any Large Language Model Can Be a Reliable Judge: Debiasing with a Reasoning-based Bias Detector
 description: >-
-  [NeurIPS 2025][Social Computing][LLM-as-judge] This paper proposes the Reasoning-based Bias Detector (RBD), a plug-and-play debiasing module for LLM judges. By externally detecting four types of evaluation bias (verbosity, position, bandwagon, and sentiment), RBD generates structured feedback with reasoning chains to guide judges toward self-correction. RBD-8B achieves an average accuracy improvement of 18.5% and consistency improvement of 10.9% across 8 LLM judges.
+  [NeurIPS 2025][Social Computing][LLM-as-judge] This paper proposes the Reasoning-based Bias Detector (RBD), a plug-and-play debiasing module for LLM judges. By externally detecting four types of evaluation bias (verbosit…
 tags:
-  - NeurIPS 2025
-  - Social Computing
-  - LLM-as-judge
-  - bias detection
-  - reasoning-based debiasing
-  - self-correction
-  - evaluation reliability
+  - "NeurIPS 2025"
+  - "Social Computing"
+  - "LLM-as-judge"
+  - "bias detection"
+  - "reasoning-based debiasing"
+  - "self-correction"
+  - "evaluation reliability"
 date: 2026-05-08
 content_hash: cec13caa0e23298a
 ---

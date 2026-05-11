@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] GeoMMBench and GeoMMAgent: Toward Expert-Level Multimodal Intelligence in Geoscience and Remote Sensing
 description: >-
-  [CVPR 2026][Remote Sensing][Geoscience] This work proposes GeoMMBench (1053 expert-level geoscience multiple-choice questions) and GeoMMAgent (a retrieval-perception-reasoning multi-agent framework), systematically evaluating 36 MLLMs in the remote sensing domain and revealing systematic deficiencies in domain knowledge, perceptual grounding, and reasoning capabilities.
+  [CVPR 2026][Remote Sensing][Geoscience] This work proposes GeoMMBench (1053 expert-level geoscience multiple-choice questions) and GeoMMAgent (a retrieval-perception-reasoning multi-agent framework)…
 tags:
-  - CVPR 2026
-  - Remote Sensing
-  - Geoscience
-  - Benchmark
-  - Multi-Agent
-  - MLLM Evaluation
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Geoscience"
+  - "Benchmark"
+  - "Multi-Agent"
+  - "MLLM Evaluation"
 date: 2026-05-08
 content_hash: 0e5c8b42a299e312
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MoVieDrive: Urban Scene Synthesis with Multi-Modal Multi-View Video Diffusion Transformer
 description: >-
-  [CVPR 2026][Video Generation][Multi-modal multi-view video generation] The first method to simultaneously generate RGB + depth + semantic tri-modal multi-view driving scene videos within a unified DiT framework. Through a decomposed design of modal-shared layers (temporal + multi-view spatiotemporal attention) and modal-specific layers (cross-modal interaction + projection heads), a unified layout encoder, and diverse conditioning, the method achieves FVD 46.8 on nuScenes (22% improvement over CogVideoX+SyntheOcc), depth AbsRel 0.110, and semantic mIoU 37.5, outperforming pipelines based on separate model generation and estimation.
+  [CVPR 2026][Video Generation][Multi-modal multi-view video generation] The first method to simultaneously generate RGB + depth + semantic tri-modal multi-view driving scene videos within a unified DiT framework. Through…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Multi-modal multi-view video generation
-  - Diffusion Transformer
-  - urban scene synthesis
-  - conditional control
-  - CogVideoX
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Multi-modal multi-view video generation"
+  - "Diffusion Transformer"
+  - "urban scene synthesis"
+  - "conditional control"
+  - "CogVideoX"
 date: 2026-05-08
 content_hash: 334ff9e67f397a1f
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Breaking the Limits of Open-Weight CLIP: An Optimization Framework for Self-supervised Fine-tuning of CLIP
 description: >-
-  [ICLR 2026][Multimodal VLM][CLIP] This paper proposes TuneCLIP, a self-supervised fine-tuning (SSFT) framework that improves existing open-weight CLIP models through a two-stage design — first recovering optimizer statistics (OSR) to eliminate cold-start bias, then applying a hinged global contrastive loss (HGCL) with a margin to mitigate over-penalization of false negatives — achieving consistent general-purpose performance gains without any labels, with improvements of up to +2.5% on ImageNet and variants and +1.2% on the DataComp benchmark.
+  [ICLR 2026][Multimodal VLM][CLIP] This paper proposes TuneCLIP, a self-supervised fine-tuning (SSFT) framework that improves existing open-weight CLIP models through a two-stage design — first recovering optimizer statis…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - CLIP
-  - self-supervised fine-tuning
-  - contrastive learning
-  - optimizer statistics recovery
-  - false negatives
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "CLIP"
+  - "self-supervised fine-tuning"
+  - "contrastive learning"
+  - "optimizer statistics recovery"
+  - "false negatives"
 date: 2026-05-08
 content_hash: 5b9a08ad419b1e83
 ---

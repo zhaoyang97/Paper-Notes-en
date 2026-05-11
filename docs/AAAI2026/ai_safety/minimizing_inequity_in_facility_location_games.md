@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Minimizing Inequity in Facility Location Games
 description: >-
-  [AAAI 2026][AI Safety][Facility Location] This paper studies the problem of minimizing the Maximum Group Effect in facility location games on the real line, proposing two strategyproof mechanisms—BALANCED and MAJOR-PHANTOM—that achieve tight approximation ratios in the single-facility setting. The framework unifies classical objectives (utilitarian social cost, egalitarian maximum cost) with group fairness objectives, and extends the endpoint mechanism to the two-facility setting.
+  [AAAI 2026][AI Safety][Facility Location] This paper studies the problem of minimizing the Maximum Group Effect in facility location games on the real line…
 tags:
-  - AAAI 2026
-  - AI Safety
-  - Facility Location
-  - Inter-group Fairness
-  - Strategyproofness
-  - Approximation Ratio
-  - Social Choice
+  - "AAAI 2026"
+  - "AI Safety"
+  - "Facility Location"
+  - "Inter-group Fairness"
+  - "Strategyproofness"
+  - "Approximation Ratio"
+  - "Social Choice"
 date: 2026-05-08
 content_hash: 7342e6485ba31134
 ---

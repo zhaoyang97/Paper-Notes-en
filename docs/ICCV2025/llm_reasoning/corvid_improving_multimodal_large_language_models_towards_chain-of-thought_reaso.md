@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CoRVid: Improving Multimodal Large Language Models Towards Chain-of-Thought Reasoning
 description: >-
-  [ICCV 2025][LLM Reasoning][Multimodal Large Language Models] This paper proposes Corvid, which comprehensively enhances the chain-of-thought reasoning capability of MLLMs through a hybrid visual encoder, a GateMixer connector, a high-quality CoT dataset, and a test-time self-verification strategy, surpassing open-source models of comparable parameter scale on mathematical reasoning and scientific problem solving.
+  [ICCV 2025][LLM Reasoning][Multimodal Large Language Models] This paper proposes Corvid, which comprehensively enhances the chain-of-thought reasoning capability of MLLMs through a hybrid visual encoder…
 tags:
-  - ICCV 2025
-  - LLM Reasoning
-  - Multimodal Large Language Models
-  - Chain-of-Thought Reasoning
-  - Visual Encoder
-  - Test-Time Scaling
-  - CoT
+  - "ICCV 2025"
+  - "LLM Reasoning"
+  - "Multimodal Large Language Models"
+  - "Chain-of-Thought Reasoning"
+  - "Visual Encoder"
+  - "Test-Time Scaling"
+  - "CoT"
 date: 2026-05-08
 content_hash: c84b41263417f541
 ---

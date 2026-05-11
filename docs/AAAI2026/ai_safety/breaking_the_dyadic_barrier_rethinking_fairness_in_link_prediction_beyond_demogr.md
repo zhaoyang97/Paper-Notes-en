@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Breaking the Dyadic Barrier: Rethinking Fairness in Link Prediction Beyond Demographic Parity
 description: >-
-  [AAAI 2026][AI Safety][Link Prediction] This paper identifies three fundamental flaws in dyadic fairness and Demographic Parity (ΔDP) for link prediction—insufficient GNN expressiveness, subgroup bias masking, and ranking insensitivity—and proposes a ranking-aware fairness metric based on NDKL and a post-processing algorithm MORAL, achieving state-of-the-art fairness–utility trade-offs across six datasets.
+  [AAAI 2026][AI Safety][Link Prediction] This paper identifies three fundamental flaws in dyadic fairness and Demographic Parity (ΔDP) for link prediction—insufficient GNN expressiveness, subgroup bias masking…
 tags:
-  - AAAI 2026
-  - AI Safety
-  - Link Prediction
-  - Fairness
-  - Demographic Parity
-  - Ranking Fairness
-  - Graph Neural Networks
-  - NDKL
+  - "AAAI 2026"
+  - "AI Safety"
+  - "Link Prediction"
+  - "Fairness"
+  - "Demographic Parity"
+  - "Ranking Fairness"
+  - "Graph Neural Networks"
+  - "NDKL"
 date: 2026-05-08
 content_hash: c6e9981df8be815c
 ---

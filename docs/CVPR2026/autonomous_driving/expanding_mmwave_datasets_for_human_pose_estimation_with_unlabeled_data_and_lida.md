@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EMDUL: Expanding mmWave Datasets for Human Pose Estimation with Unlabeled Data and LiDAR Datasets
 description: >-
-  [CVPR 2026][Autonomous Driving][mmWave radar] This paper proposes EMDUL, a pipeline that expands mmWave HPE datasets in scale and diversity by (1) annotating unlabeled mmWave data via pseudo-labels with a novel unsupervised temporal consistency loss (UTCL), and (2) converting LiDAR datasets to mmWave point clouds through a closed-form converter with flow-based point filtering (FPF). The approach reduces in-domain error by 15.1% and cross-domain error by 18.9%.
+  [CVPR 2026][Autonomous Driving][mmWave radar] This paper proposes EMDUL, a pipeline that expands mmWave HPE datasets in scale and diversity by (1) annotating unlabeled mmWave data via pseudo-labels with a novel unsupervi…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - mmWave radar
-  - human pose estimation
-  - dataset expansion
-  - LiDAR point cloud conversion
-  - semi-supervised learning
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "mmWave radar"
+  - "human pose estimation"
+  - "dataset expansion"
+  - "LiDAR point cloud conversion"
+  - "semi-supervised learning"
 date: 2026-05-08
 content_hash: 96dec2d629988844
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Pixel-adaptive Multi-layer Perceptrons for Real-time Image Enhancement
 description: >-
-  [ICCV 2025][Image Restoration][Image Enhancement] This paper proposes the BPAM framework, which combines the spatial modeling capability of bilateral grids with the nonlinear mapping power of MLPs by dynamically generating unique micro-MLP parameters for each pixel, enabling high-quality, real-time image enhancement.
+  [ICCV 2025][Image Restoration][Image Enhancement] This paper proposes the BPAM framework, which combines the spatial modeling capability of bilateral grids with the nonlinear mapping power of MLPs by dynamically generati…
 tags:
-  - ICCV 2025
-  - Image Restoration
-  - Image Enhancement
-  - Bilateral Grid
-  - Pixel-adaptive MLP
-  - Real-time Processing
-  - Color Mapping
+  - "ICCV 2025"
+  - "Image Restoration"
+  - "Image Enhancement"
+  - "Bilateral Grid"
+  - "Pixel-adaptive MLP"
+  - "Real-time Processing"
+  - "Color Mapping"
 date: 2026-05-08
 content_hash: cad1e81b4ba85160
 ---

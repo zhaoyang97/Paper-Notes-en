@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Neural Multi-View Self-Calibrated Photometric Stereo without Photometric Stereo Cues
 description: >-
-  [ICCV 2025][LLM Evaluation][multi-view photometric stereo] This paper proposes an end-to-end neural inverse rendering framework that jointly recovers geometry, spatially-varying reflectance, and lighting parameters from multi-view images captured under varying illumination, requiring neither light source calibration nor intermediate photometric stereo cues (e.g., normal maps). The method outperforms existing multi-stage MVPS approaches.
+  [ICCV 2025][LLM Evaluation][multi-view photometric stereo] This paper proposes an end-to-end neural inverse rendering framework that jointly recovers geometry, spatially-varying reflectance…
 tags:
-  - ICCV 2025
-  - LLM Evaluation
-  - multi-view photometric stereo
-  - neural inverse rendering
-  - self-calibration
-  - end-to-end optimization
-  - neural BRDF
-  - shadow-aware volume rendering
+  - "ICCV 2025"
+  - "LLM Evaluation"
+  - "multi-view photometric stereo"
+  - "neural inverse rendering"
+  - "self-calibration"
+  - "end-to-end optimization"
+  - "neural BRDF"
+  - "shadow-aware volume rendering"
 date: 2026-05-08
 content_hash: 78b055ab0f23efa3
 ---

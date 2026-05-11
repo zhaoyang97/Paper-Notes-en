@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Concept-Level Explainability for Auditing & Steering LLM Responses
 description: >-
-  [NeurIPS 2025][Social Computing][Explainability] This paper proposes ConceptX, an LLM explainability method based on concept-level (rather than token-level) Shapley attribution. It measures the influence of input concepts on outputs via semantic similarity rather than token overlap, and can be used to audit bias and steer LLM outputs through prompt editing — reducing attack success rate from 0.463 to 0.242 in jailbreak defense.
+  [NeurIPS 2025][Social Computing][Explainability] This paper proposes ConceptX, an LLM explainability method based on concept-level (rather than token-level) Shapley attribution. It measures the influence of input concept…
 tags:
-  - NeurIPS 2025
-  - Social Computing
-  - Explainability
-  - Concept-Level Attribution
-  - LLM Safety
-  - Shapley Values
-  - Bias Auditing
+  - "NeurIPS 2025"
+  - "Social Computing"
+  - "Explainability"
+  - "Concept-Level Attribution"
+  - "LLM Safety"
+  - "Shapley Values"
+  - "Bias Auditing"
 date: 2026-05-08
 content_hash: 2bc27b54faa399ce
 ---

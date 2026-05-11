@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EvoSpark: Endogenous Interactive Agent Societies for Unified Long-Horizon Narrative Evolution
 description: >-
-  [ACL 2026][LLM/NLP][multi-agent narrative] EvoSpark proposes a multi-agent framework for long-horizon narrative evolution, addressing social memory stacking and narrative–spatial misalignment through three core designs: hierarchical recursive memory (RSB as social cognitive metabolism), generative scene scheduling (GMS for character–location–plot alignment), and an emergent character grounding protocol (ECGP that converts LLM hallucinations into persistent entities).
+  [ACL 2026][LLM/NLP][multi-agent narrative] EvoSpark proposes a multi-agent framework for long-horizon narrative evolution, addressing social memory stacking and narrative–spatial misalignment through three core designs:…
 tags:
-  - ACL 2026
-  - LLM/NLP
-  - multi-agent narrative
-  - long-horizon story evolution
-  - social memory metabolism
-  - spatial alignment
-  - emergent characters
+  - "ACL 2026"
+  - "LLM/NLP"
+  - "multi-agent narrative"
+  - "long-horizon story evolution"
+  - "social memory metabolism"
+  - "spatial alignment"
+  - "emergent characters"
 date: 2026-05-08
 content_hash: 716957567429dca1
 ---

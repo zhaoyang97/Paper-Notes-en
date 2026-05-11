@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SSTAG: Structure-Aware Self-Supervised Learning Method for Text-Attributed Graphs
 description: >-
-  [NeurIPS 2025][Graph Learning][Text-attributed graphs] This paper proposes SSTAG, which jointly distills complementary knowledge from LLMs and GNNs into a structure-aware MLP via dual knowledge distillation, and incorporates a memory bank mechanism to store prototype representations, enabling efficient and scalable cross-domain self-supervised pre-training on text-attributed graphs.
+  [NeurIPS 2025][Graph Learning][Text-attributed graphs] This paper proposes SSTAG, which jointly distills complementary knowledge from LLMs and GNNs into a structure-aware MLP via dual knowledge distillation…
 tags:
-  - NeurIPS 2025
-  - Graph Learning
-  - Text-attributed graphs
-  - self-supervised learning
-  - knowledge distillation
-  - cross-domain transfer
-  - graph foundation models
+  - "NeurIPS 2025"
+  - "Graph Learning"
+  - "Text-attributed graphs"
+  - "self-supervised learning"
+  - "knowledge distillation"
+  - "cross-domain transfer"
+  - "graph foundation models"
 date: 2026-05-08
 content_hash: bfae15b483c1f1c8
 ---

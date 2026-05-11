@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Annotation-Efficient Universal Honesty Alignment
 description: >-
-  [ICLR 2026][LLM Reasoning][honesty alignment] This paper proposes EliCal (Elicit then Calibrate), a two-stage framework that first trains an LLM to express internal confidence using annotation-free self-consistency signals, then calibrates with a minimal number of correctness annotations (only 1K samples, 0.18% of the full set). On HonestyBench (560K training + 70K evaluation), EliCal achieves approximately 98% of the fully-supervised upper bound and generalizes better than calibration-only baselines on unseen MMLU tasks.
+  [ICLR 2026][LLM Reasoning][honesty alignment] This paper proposes EliCal (Elicit then Calibrate), a two-stage framework that first trains an LLM to express internal confidence using annotation-free self-consistency signa…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - honesty alignment
-  - confidence calibration
-  - self-consistency
-  - annotation efficiency
-  - LLM trustworthiness
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "honesty alignment"
+  - "confidence calibration"
+  - "self-consistency"
+  - "annotation efficiency"
+  - "LLM trustworthiness"
 date: 2026-05-08
 content_hash: 424ddb6a390e965b
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RacketVision: A Multiple Racket Sports Benchmark for Unified Ball and Racket Analysis
 description: >-
-  [AAAI 2026][Autonomous Driving][Ball Sports Analysis] This paper presents RacketVision—the first large-scale benchmark covering three racket sports (table tennis, tennis, and badminton)—which introduces racket pose annotations for the first time and defines three interconnected tasks: ball tracking, racket pose estimation, and ball trajectory prediction. The work reveals the critical role of cross-attention fusion in multimodal trajectory prediction.
+  [AAAI 2026][Autonomous Driving][Ball Sports Analysis] This paper presents RacketVision—the first large-scale benchmark covering three racket sports (table tennis, tennis…
 tags:
-  - AAAI 2026
-  - Autonomous Driving
-  - Ball Sports Analysis
-  - Racket Pose Estimation
-  - Trajectory Prediction
-  - Multimodal Fusion
-  - Cross-Sport Learning
+  - "AAAI 2026"
+  - "Autonomous Driving"
+  - "Ball Sports Analysis"
+  - "Racket Pose Estimation"
+  - "Trajectory Prediction"
+  - "Multimodal Fusion"
+  - "Cross-Sport Learning"
 date: 2026-05-08
 content_hash: d755f05dc9a0e3fd
 ---

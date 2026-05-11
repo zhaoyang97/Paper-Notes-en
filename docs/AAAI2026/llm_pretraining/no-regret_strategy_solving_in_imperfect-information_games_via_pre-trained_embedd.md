@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] No-Regret Strategy Solving in Imperfect-Information Games via Pre-Trained Embedding
 description: >-
-  [AAAI 2026][LLM Pretraining][Game Theory] This paper proposes the Embedding CFR algorithm, which maps information sets in imperfect-information games to a continuous low-dimensional embedding space (rather than discrete clusters), achieving faster exploitability convergence and higher-quality strategy solving under the same space budget.
+  [AAAI 2026][LLM Pretraining][Game Theory] This paper proposes the Embedding CFR algorithm, which maps information sets in imperfect-information games to a continuous low-dimensional embedding space (rather than discrete…
 tags:
-  - AAAI 2026
-  - LLM Pretraining
-  - Game Theory
-  - CFR
-  - Information Set Abstraction
-  - Embedding Space
-  - Poker AI
+  - "AAAI 2026"
+  - "LLM Pretraining"
+  - "Game Theory"
+  - "CFR"
+  - "Information Set Abstraction"
+  - "Embedding Space"
+  - "Poker AI"
 date: 2026-05-08
 content_hash: 46bdef9ea641617f
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Sampling-Aware 3D Spatial Analysis in Multiplexed Imaging
 description: >-
-  [CVPR 2026][3D Vision][Spatial proteomics] This paper systematically investigates how sampling geometry (2D single sections vs. 3D serial sections) affects the accuracy of recovering spatial statistics in multiplexed imaging, and proposes a geometry-aware sparse 3D reconstruction module that enables reliable depth-informed spatial analysis under limited imaging budgets.
+  [CVPR 2026][3D Vision][Spatial proteomics] This paper systematically investigates how sampling geometry (2D single sections vs. 3D serial sections) affects the accuracy of recovering spatial statistics in multiplexed ima…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Spatial proteomics
-  - 3D reconstruction
-  - sampling geometry
-  - multiplexed imaging
-  - spatial statistics
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Spatial proteomics"
+  - "3D reconstruction"
+  - "sampling geometry"
+  - "multiplexed imaging"
+  - "spatial statistics"
 date: 2026-05-08
 content_hash: 406f3e235d0b75b6
 ---

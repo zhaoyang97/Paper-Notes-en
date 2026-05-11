@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MUST: Modality-Specific Representation-Aware Transformer for Diffusion-Enhanced Survival Prediction with Missing Modality
 description: >-
-  [CVPR 2026][Medical Imaging][Survival Prediction] This paper proposes MUST, a framework that explicitly decomposes multimodal representations into modality-specific and cross-modal shared components via algebraic constraints, and employs a conditional latent diffusion model to generate modality-specific information under missing-modality scenarios. MUST achieves state-of-the-art performance with a C-index of 0.742 across five TCGA cancer datasets, with degradation of only ~0.4%–3.5% under missing-modality conditions.
+  [CVPR 2026][Medical Imaging][Survival Prediction] This paper proposes MUST, a framework that explicitly decomposes multimodal representations into modality-specific and cross-modal shared components via algebraic constra…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Survival Prediction
-  - Missing Modality
-  - Algebraic Decomposition
-  - Latent Diffusion Model
-  - Multimodal Fusion
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Survival Prediction"
+  - "Missing Modality"
+  - "Algebraic Decomposition"
+  - "Latent Diffusion Model"
+  - "Multimodal Fusion"
 date: 2026-05-08
 content_hash: e9d6db5241026cab
 ---

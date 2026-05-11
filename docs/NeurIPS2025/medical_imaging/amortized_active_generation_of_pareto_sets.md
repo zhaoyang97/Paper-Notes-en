@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Amortized Active Generation of Pareto Sets
 description: >-
-  [NeurIPS 2025][Medical Imaging][Multi-objective optimization] This paper proposes the A-GPS framework, which learns a conditional generative model over the Pareto set to perform online discrete black-box multi-objective optimization. It employs a non-dominance class probability estimator (CPE) as an implicit substitute for explicit hypervolume computation in PHVI, and achieves amortized posterior preference conditioning via preference direction vectors (without retraining). The approach demonstrates superior sample efficiency on synthetic benchmarks and protein design tasks.
+  [NeurIPS 2025][Medical Imaging][Multi-objective optimization] This paper proposes the A-GPS framework, which learns a conditional generative model over the Pareto set to perform online discrete black-box multi-objective…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Multi-objective optimization
-  - Pareto set
-  - generative models
-  - active learning
-  - preference conditioning
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Multi-objective optimization"
+  - "Pareto set"
+  - "generative models"
+  - "active learning"
+  - "preference conditioning"
 date: 2026-05-08
 content_hash: 0a7fda3cca46b9ba
 ---

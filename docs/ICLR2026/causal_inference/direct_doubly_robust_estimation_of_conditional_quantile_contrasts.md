@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Direct Doubly Robust Estimation of Conditional Quantile Contrasts
 description: >-
-  [ICLR 2026][Causal Inference][heterogeneous treatment effect] This paper proposes the first **direct estimation method** for the conditional quantile contrast (CQC) by explicitly parameterizing the CQC and combining it with doubly robust gradient descent. The approach maintains theoretical double robustness while empirically outperforming existing indirect inversion methods across estimation accuracy, interpretability, and computational efficiency.
+  [ICLR 2026][Causal Inference][heterogeneous treatment effect] This paper proposes the first **direct estimation method** for the conditional quantile contrast (CQC) by explicitly parameterizing the CQC and combining it w…
 tags:
-  - ICLR 2026
-  - Causal Inference
-  - heterogeneous treatment effect
-  - conditional quantile comparator
-  - doubly robust estimation
-  - quantile treatment effect
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "heterogeneous treatment effect"
+  - "conditional quantile comparator"
+  - "doubly robust estimation"
+  - "quantile treatment effect"
 date: 2026-05-08
 content_hash: 8e52dfc6d7e3018b
 ---

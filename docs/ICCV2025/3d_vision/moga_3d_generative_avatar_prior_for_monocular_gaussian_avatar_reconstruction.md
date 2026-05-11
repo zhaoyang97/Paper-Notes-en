@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MoGA: 3D Generative Avatar Prior for Monocular Gaussian Avatar Reconstruction
 description: >-
-  [ICCV 2025][3D Vision][Single-view human reconstruction] MoGA is proposed to reconstruct high-fidelity 3D Gaussian avatars from a single image by learning a generative 3D avatar prior and leveraging it as a strong constraint for initialization, regularization, and pose optimization, substantially outperforming existing methods.
+  [ICCV 2025][3D Vision][Single-view human reconstruction] MoGA is proposed to reconstruct high-fidelity 3D Gaussian avatars from a single image by learning a generative 3D avatar prior and leveraging it as a strong constr…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Single-view human reconstruction
-  - 3D Gaussian Avatar
-  - generative prior
-  - model inversion
-  - SMPL-X
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Single-view human reconstruction"
+  - "3D Gaussian Avatar"
+  - "generative prior"
+  - "model inversion"
+  - "SMPL-X"
 date: 2026-05-08
 content_hash: 3f421997dc559f1a
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Theoretical Analysis of Detecting Large Model-Generated Time Series
 description: >-
-  [AAAI 2026][Time Series][time series large model] This work presents the first theoretical framework for detecting time series large model (TSLM)-generated content. By establishing the Contraction Hypothesis, it reveals that TSLM-generated sequences exhibit exponentially decaying uncertainty under recursive forecasting. Based on this insight, the proposed UCE detector achieves an in-distribution AUROC of 0.855 across 32 datasets, substantially outperforming 10 text-detection baselines.
+  [AAAI 2026][Time Series][time series large model] This work presents the first theoretical framework for detecting time series large model (TSLM)-generated content. By establishing the Contraction Hypothesis…
 tags:
-  - AAAI 2026
-  - Time Series
-  - time series large model
-  - generation detection
-  - uncertainty contraction
-  - recursive forecasting
-  - UCE
+  - "AAAI 2026"
+  - "Time Series"
+  - "time series large model"
+  - "generation detection"
+  - "uncertainty contraction"
+  - "recursive forecasting"
+  - "UCE"
 date: 2026-05-08
 content_hash: 9dfb0a8f413417ed
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GUIDE: Guided Updates for In-context Decision Evolution in LLM-Driven Spacecraft Operations
 description: >-
-  [CVPR 2026 (AI4Space Workshop)][LLM/NLP][spacecraft operations] The paper proposes the GUIDE framework, which leverages in-context learning capabilities of LLMs to provide guided decision evolution for autonomous spacecraft operations, enabling progressive improvement of mission planning and fault diagnosis decisions through structured contextual information and feedback mechanisms without fine-tuning.
+  [CVPR 2026 (AI4Space Workshop)][LLM/NLP][spacecraft operations] The paper proposes the GUIDE framework, which leverages in-context learning capabilities of LLMs to provide guided decision evolution for autonomous spacecr…
 tags:
-  - CVPR 2026 (AI4Space Workshop)
-  - LLM/NLP
-  - spacecraft operations
-  - LLM decision making
-  - in-context learning
-  - multi-agent system
-  - autonomous mission planning
+  - "CVPR 2026 (AI4Space Workshop)"
+  - "LLM/NLP"
+  - "spacecraft operations"
+  - "LLM decision making"
+  - "in-context learning"
+  - "multi-agent system"
+  - "autonomous mission planning"
 date: 2026-05-08
 content_hash: d439551bd4eca06a
 ---

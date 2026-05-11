@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] On the Learning Dynamics of Two-Layer Linear Networks with Label Noise SGD
 description: >-
-  [AAAI 2026][Optimization][Label Noise SGD] This paper theoretically analyzes the learning dynamics of label noise SGD on two-layer overparameterized linear networks, revealing a two-phase behavior: in Phase I, weight norms progressively diminish, enabling the model to escape the lazy regime and enter the rich regime; in Phase II, weights align with the ground-truth interpolator and converge. The theory is further extended to the SAM optimizer.
+  [AAAI 2026][Optimization][Label Noise SGD] This paper theoretically analyzes the learning dynamics of label noise SGD on two-layer overparameterized linear networks, revealing a two-phase behavior: in Phase I…
 tags:
-  - AAAI 2026
-  - Optimization
-  - Label Noise SGD
-  - Learning Dynamics
-  - Lazy-to-Rich Transition
-  - Implicit Bias
-  - Sharpness-Aware Minimization
+  - "AAAI 2026"
+  - "Optimization"
+  - "Label Noise SGD"
+  - "Learning Dynamics"
+  - "Lazy-to-Rich Transition"
+  - "Implicit Bias"
+  - "Sharpness-Aware Minimization"
 date: 2026-05-08
 content_hash: 4b85308a07ef3468
 ---

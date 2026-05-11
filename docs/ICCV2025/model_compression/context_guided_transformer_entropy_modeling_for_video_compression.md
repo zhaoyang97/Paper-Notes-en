@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Context Guided Transformer Entropy Modeling for Video Compression
 description: >-
-  [ICCV 2025][Model Compression][Video Compression] This paper proposes the Context Guided Transformer (CGT) conditional entropy model, which reduces entropy modeling time by approximately 65% while achieving an 11% BD-Rate improvement in video compression. This is accomplished via a Temporal Context Resampler that reduces computational overhead and a Dependency-Weighted Spatial Context Assigner that explicitly models spatial dependencies.
+  [ICCV 2025][Model Compression][Video Compression] This paper proposes the Context Guided Transformer (CGT) conditional entropy model, which reduces entropy modeling time by approximately 65% while achieving an 11% BD-Rat…
 tags:
-  - ICCV 2025
-  - Model Compression
-  - Video Compression
-  - Entropy Model
-  - Transformer
-  - Spatiotemporal Context
-  - Conditional Coding
+  - "ICCV 2025"
+  - "Model Compression"
+  - "Video Compression"
+  - "Entropy Model"
+  - "Transformer"
+  - "Spatiotemporal Context"
+  - "Conditional Coding"
 date: 2026-05-08
 content_hash: 13abb50dbb1d65aa
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VPI-Bench: Visual Prompt Injection Attacks for Computer-Use Agents
 description: >-
-  [ICLR 2026][AI Safety][Visual Prompt Injection] This paper introduces VPI-Bench, the first comprehensive visual prompt injection attack benchmark (306 samples), systematically evaluating the security of Computer-Use and Browser-Use Agents across 5 platforms. Results reveal that Browser-Use Agents are critically vulnerable (100% AR on Amazon/Booking), that even Anthropic's CUA exhibits severe vulnerabilities (up to 59% AR), and that system prompt defenses are ineffective.
+  [ICLR 2026][AI Safety][Visual Prompt Injection] This paper introduces VPI-Bench, the first comprehensive visual prompt injection attack benchmark (306 samples)…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - Visual Prompt Injection
-  - Computer-Use Agent
-  - Browser-Use Agent
-  - Security Benchmark
-  - System-Level Threats
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Visual Prompt Injection"
+  - "Computer-Use Agent"
+  - "Browser-Use Agent"
+  - "Security Benchmark"
+  - "System-Level Threats"
 date: 2026-05-08
 content_hash: a2cacd45faa4f33a
 ---

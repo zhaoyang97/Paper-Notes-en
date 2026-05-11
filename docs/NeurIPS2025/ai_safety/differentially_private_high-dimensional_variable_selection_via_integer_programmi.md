@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Differentially Private High-dimensional Variable Selection via Integer Programming
 description: >-
-  [NeurIPS 2025][AI Safety][Differential Privacy] This paper proposes two pure differentially private sparse variable selection methods (top-R and mistakes) that leverage modern mixed integer programming (MIP) techniques to efficiently explore non-convex objective landscapes, achieving state-of-the-art support recovery rates in high-dimensional settings (p up to 10,000) while providing theoretical recovery guarantees.
+  [NeurIPS 2025][AI Safety][Differential Privacy] This paper proposes two pure differentially private sparse variable selection methods (top-R and mistakes) that leverage modern mixed integer programming (MIP) techniques t…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - Differential Privacy
-  - Sparse Variable Selection
-  - Mixed Integer Programming
-  - Exponential Mechanism
-  - Best Subset Selection
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "Differential Privacy"
+  - "Sparse Variable Selection"
+  - "Mixed Integer Programming"
+  - "Exponential Mechanism"
+  - "Best Subset Selection"
 date: 2026-05-08
 content_hash: 914aa018bf77b7e7
 ---

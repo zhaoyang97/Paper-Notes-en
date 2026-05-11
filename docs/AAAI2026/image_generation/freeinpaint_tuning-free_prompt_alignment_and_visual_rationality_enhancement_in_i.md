@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FreeInpaint: Tuning-free Prompt Alignment and Visual Rationality Enhancement in Image Inpainting
 description: >-
-  [AAAI 2026][Image Generation][Image Inpainting] This paper proposes FreeInpaint, a plug-and-play, training-free method that optimizes the initial noise to steer attention toward the inpainting region (PriNo), and during denoising decomposes the conditional distribution into three guidance terms — text alignment, visual rationality, and human preference (DeGu) — simultaneously improving prompt alignment and visual rationality in image inpainting.
+  [AAAI 2026][Image Generation][Image Inpainting] This paper proposes FreeInpaint, a plug-and-play, training-free method that optimizes the initial noise to steer attention toward the inpainting region (PriNo)…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Image Inpainting
-  - Diffusion Models
-  - Training-free Guidance
-  - Initial Noise Optimization
-  - Prompt Alignment
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Image Inpainting"
+  - "Diffusion Models"
+  - "Training-free Guidance"
+  - "Initial Noise Optimization"
+  - "Prompt Alignment"
 date: 2026-05-08
 content_hash: c39a209344c73e22
 ---

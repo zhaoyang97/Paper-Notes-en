@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond Semantic Search: Towards Referential Anchoring in Composed Image Retrieval
 description: >-
-  [CVPR 2026][Object Detection][Composed Image Retrieval] This paper proposes Object-Anchored Composed Image Retrieval (OACIR), a new task formulation, along with a large-scale benchmark OACIRR (160K+ quadruplets) and the AdaFocal framework. AdaFocal employs a context-aware attention modulator to adaptively enhance focus on anchored instance regions, substantially outperforming existing methods in instance-level retrieval fidelity.
+  [CVPR 2026][Object Detection][Composed Image Retrieval] This paper proposes Object-Anchored Composed Image Retrieval (OACIR), a new task formulation…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - Composed Image Retrieval
-  - Instance-Level Consistency
-  - Attention Modulation
-  - Fine-Grained Retrieval
-  - Visual Anchoring
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Composed Image Retrieval"
+  - "Instance-Level Consistency"
+  - "Attention Modulation"
+  - "Fine-Grained Retrieval"
+  - "Visual Anchoring"
 date: 2026-05-08
 content_hash: e82e31f730564dc9
 ---

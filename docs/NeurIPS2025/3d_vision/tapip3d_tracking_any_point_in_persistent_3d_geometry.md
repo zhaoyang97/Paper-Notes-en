@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TAPIP3D: Tracking Any Point in Persistent 3D Geometry
 description: >-
-  [NeurIPS 2025][3D Vision][3D point tracking] This paper proposes TAPIP3D, which represents video as a camera-stabilized spatiotemporal 3D feature point cloud and iteratively refines multi-frame point trajectories in persistent 3D geometric space via a 3D Neighborhood-to-Neighborhood (N2N) attention mechanism, substantially outperforming existing 3D point tracking methods.
+  [NeurIPS 2025][3D Vision][3D point tracking] This paper proposes TAPIP3D, which represents video as a camera-stabilized spatiotemporal 3D feature point cloud and iteratively refines multi-frame point trajectories in pers…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - 3D point tracking
-  - feature point cloud
-  - world coordinate system
-  - neighborhood attention
-  - camera motion elimination
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "3D point tracking"
+  - "feature point cloud"
+  - "world coordinate system"
+  - "neighborhood attention"
+  - "camera motion elimination"
 date: 2026-05-08
 content_hash: 516e6954b9a44070
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] CATSplat: Context-Aware Transformer with Spatial Guidance for Generalizable 3D Gaussian Splatting from A Single-View Image
 description: >-
-  [ICCV 2025][3D Vision][Single-view 3D reconstruction] This paper proposes CATSplat, a generalizable Transformer framework for feed-forward single-view 3DGS reconstruction. It enhances image features via dual cross-attention using VLM text embeddings (contextual prior) and 3D point cloud features (spatial prior), achieving comprehensive improvements over Flash3D in PSNR/SSIM/LPIPS on RE10K and other datasets, with strong cross-dataset generalization.
+  [ICCV 2025][3D Vision][Single-view 3D reconstruction] This paper proposes CATSplat, a generalizable Transformer framework for feed-forward single-view 3DGS reconstruction. It enhances image features via dual cross-attent…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Single-view 3D reconstruction
-  - 3D Gaussian Splatting
-  - vision-language model
-  - text guidance
-  - spatial guidance
-  - point cloud features
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Single-view 3D reconstruction"
+  - "3D Gaussian Splatting"
+  - "vision-language model"
+  - "text guidance"
+  - "spatial guidance"
+  - "point cloud features"
 date: 2026-05-08
 content_hash: 1d13830f94da99f8
 ---

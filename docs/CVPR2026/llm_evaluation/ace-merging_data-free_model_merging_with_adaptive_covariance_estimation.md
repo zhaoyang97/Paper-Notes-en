@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ACE-Merging: Data-Free Model Merging with Adaptive Covariance Estimation
 description: >-
-  [CVPR 2026][LLM Evaluation][Model Merging] This paper theoretically proves that fine-tuning weight deltas encode input covariance information, and proposes ACE-Merging, which achieves data-free closed-form model merging through three steps: adaptive covariance estimation, collective structural prior, and spectral refinement. ACE-Merging achieves an average improvement of 4% over prior methods on GPT-2 and 5% on RoBERTa-Base.
+  [CVPR 2026][LLM Evaluation][Model Merging] This paper theoretically proves that fine-tuning weight deltas encode input covariance information, and proposes ACE-Merging…
 tags:
-  - CVPR 2026
-  - LLM Evaluation
-  - Model Merging
-  - Data-Free
-  - Covariance Estimation
-  - Spectral Refinement
-  - Closed-Form Solution
+  - "CVPR 2026"
+  - "LLM Evaluation"
+  - "Model Merging"
+  - "Data-Free"
+  - "Covariance Estimation"
+  - "Spectral Refinement"
+  - "Closed-Form Solution"
 date: 2026-05-08
 content_hash: 4da0f4fcddf1353b
 ---

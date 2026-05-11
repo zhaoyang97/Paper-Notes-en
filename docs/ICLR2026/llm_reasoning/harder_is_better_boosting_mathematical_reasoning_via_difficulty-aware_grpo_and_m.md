@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Harder Is Better: Boosting Mathematical Reasoning via Difficulty-Aware GRPO and Multi-Aspect Question Reformulation
 description: >-
-  [ICLR 2026][LLM Reasoning][GRPO] This paper identifies that the advantage function in GRPO (std normalization) causes update magnitudes to peak at medium-difficulty problems while implicitly suppressing updates on both hard and easy problems. To address this, the authors propose MathForge — combining DGPO (replacing std with MAD for difficulty-balanced normalization + softmax difficulty weighting) and MQR (question reformulation via three aspects: narrative context, abstract terminology, and nested sub-problems, increasing difficulty while preserving original answers). On Qwen2.5-Math-7B, MathForge outperforms GRPO by an average of +4.56% across six mathematical reasoning benchmarks.
+  [ICLR 2026][LLM Reasoning][GRPO] This paper identifies that the advantage function in GRPO (std normalization) causes update magnitudes to peak at medium-difficulty problems while implicitly suppressing updates on both h…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - GRPO
-  - difficulty-aware
-  - mathematical reasoning
-  - RLVR
-  - data augmentation
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "GRPO"
+  - "difficulty-aware"
+  - "mathematical reasoning"
+  - "RLVR"
+  - "data augmentation"
 date: 2026-05-08
 content_hash: 211bbd9d37bf9969
 ---

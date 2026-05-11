@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Adaptive Debiasing Tsallis Entropy for Test-Time Adaptation
 description: >-
-  [ICLR 2026][Social Computing][Test-Time Adaptation] This paper introduces Tsallis entropy (a generalization of Shannon entropy) into Test-Time Adaptation for vision-language models, and further develops Adaptive Debiasing Tsallis Entropy (ADTE), which customizes a per-class debiasing parameter $q^l$ to select more reliable high-confidence views than Shannon entropy without distribution-specific hyperparameter tuning. ADTE surpasses the state of the art on ImageNet and its 5 variants as well as 10 cross-domain benchmarks.
+  [ICLR 2026][Social Computing][Test-Time Adaptation] This paper introduces Tsallis entropy (a generalization of Shannon entropy) into Test-Time Adaptation for vision-language models…
 tags:
-  - ICLR 2026
-  - Social Computing
-  - Test-Time Adaptation
-  - Tsallis entropy
-  - CLIP
-  - debiasing
-  - uncertainty estimation
+  - "ICLR 2026"
+  - "Social Computing"
+  - "Test-Time Adaptation"
+  - "Tsallis entropy"
+  - "CLIP"
+  - "debiasing"
+  - "uncertainty estimation"
 date: 2026-05-08
 content_hash: ef12944f26118624
 ---

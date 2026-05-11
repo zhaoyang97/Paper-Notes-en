@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The Affine Divergence: Aligning Activation Updates Beyond Normalisation
 description: >-
-  [ICLR 2026][Optimization][Affine divergence] This paper reveals a fundamental misalignment between the steepest descent direction in parameter space and the effective update propagated to activations under gradient descent — the "affine divergence" $\Delta\mathcal{L}/\Delta z_i = (\partial\mathcal{L}/\partial z_i) \cdot (\|\vec{x}\|^2+1)$ — derives normalization as the natural remedy from first principles, and discovers a non-normalizing alternative that empirically surpasses conventional normalization methods.
+  [ICLR 2026][Optimization][Affine divergence] This paper reveals a fundamental misalignment between the steepest descent direction in parameter space and the effective update propagated to activations under gradient desce…
 tags:
-  - ICLR 2026
-  - Optimization
-  - Affine divergence
-  - normalization theory
-  - gradient descent
-  - representation updates
-  - PatchNorm
+  - "ICLR 2026"
+  - "Optimization"
+  - "Affine divergence"
+  - "normalization theory"
+  - "gradient descent"
+  - "representation updates"
+  - "PatchNorm"
 date: 2026-05-08
 content_hash: 107667dfde1935ba
 ---

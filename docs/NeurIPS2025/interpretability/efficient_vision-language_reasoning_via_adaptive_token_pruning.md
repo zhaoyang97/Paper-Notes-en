@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Efficient Vision-Language Reasoning via Adaptive Token Pruning
 description: >-
-  [NeurIPS 2025 (Workshop on VLM4RWD)][visual token pruning] This paper proposes Adaptive Token Pruning (ATP), a training-free plug-and-play module that selects the most informative visual tokens by fusing ViT CLS attention (intra-modal saliency) and CLIP text-image similarity (inter-modal relevance). ATP achieves less than 1% accuracy degradation on VQA/GQA/COCO Captioning in exchange for approximately 40% FLOPs reduction and 1.5× speedup.
+  [NeurIPS 2025 (Workshop on VLM4RWD)][Interpretability][visual token pruning] This paper proposes Adaptive Token Pruning (ATP), a training-free plug-and-play module that selects the most informative visual tokens by fusin…
 tags:
-  - NeurIPS 2025 (Workshop on VLM4RWD)
-  - visual token pruning
-  - inference acceleration
-  - multimodal efficiency
-  - training-free compression
-  - edge deployment
+  - "NeurIPS 2025 (Workshop on VLM4RWD)"
+  - "Interpretability"
+  - "visual token pruning"
+  - "inference acceleration"
+  - "multimodal efficiency"
+  - "training-free compression"
+  - "edge deployment"
 date: 2026-05-08
 content_hash: e422a8a24d3ac377
 ---

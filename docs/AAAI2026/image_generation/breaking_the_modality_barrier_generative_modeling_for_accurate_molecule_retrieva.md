@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Breaking the Modality Barrier: Generative Modeling for Accurate Molecule Retrieval from Mass Spectra
 description: >-
-  [AAAI 2026][Image Generation][Mass spectrometry] This paper proposes GLMR, a two-stage framework (contrastive pre-retrieval + generative language model re-ranking) that transforms cross-modal retrieval into unimodal retrieval by generating molecular structures aligned with input mass spectra, achieving over 40% improvement in Recall@1 on MassSpecGym.
+  [AAAI 2026][Image Generation][Mass spectrometry] This paper proposes GLMR, a two-stage framework (contrastive pre-retrieval + generative language model re-ranking) that transforms cross-modal retrieval into unimodal retr…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Mass spectrometry
-  - molecule retrieval
-  - cross-modal alignment
-  - generative retrieval
-  - contrastive learning
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Mass spectrometry"
+  - "molecule retrieval"
+  - "cross-modal alignment"
+  - "generative retrieval"
+  - "contrastive learning"
 date: 2026-05-08
 content_hash: 6d4a0249ad2cc6bc
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Controlling Multimodal LLMs via Reward-guided Decoding
 description: >-
-  [ICCV 2025][Multimodal VLM][reward-guided decoding] This paper proposes MRGD (Multimodal Reward-Guided Decoding), which trains a PaliGemma-based object hallucination reward model and an OWLv2-based object recall reward model. During MLLM inference, MRGD performs sentence-level beam search by scoring candidates with a linearly weighted combination of the two rewards. On CHAIR, it reduces LLaVA-1.5's CHAIRi from 15.05 to 4.53 (a 70% reduction) while enabling dynamic and controllable precision–recall trade-offs.
+  [ICCV 2025][Multimodal VLM][reward-guided decoding] This paper proposes MRGD (Multimodal Reward-Guided Decoding), which trains a PaliGemma-based object hallucination reward model and an OWLv2-based object recall reward m…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - reward-guided decoding
-  - hallucination mitigation
-  - visual grounding
-  - controllable generation
-  - multimodal reward model
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "reward-guided decoding"
+  - "hallucination mitigation"
+  - "visual grounding"
+  - "controllable generation"
+  - "multimodal reward model"
 date: 2026-05-08
 content_hash: 284657b4f47a6cc4
 ---

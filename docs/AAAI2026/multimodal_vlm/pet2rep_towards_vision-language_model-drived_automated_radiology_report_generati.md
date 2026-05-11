@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PET2Rep: Towards Vision-Language Model-Driven Automated Radiology Report Generation for Positron Emission Tomography
 description: >-
-  [AAAI 2026][Multimodal VLM][PET imaging] This paper presents PET2Rep, the first large-scale benchmark dataset dedicated to positron emission tomography (PET) radiology report generation, comprising 565 whole-body PET/CT image-report pairs. It further introduces PET Clinical Efficacy (CE) evaluation metrics and conducts a systematic assessment of 30 state-of-the-art general-purpose and medical-specialized VLMs, revealing that current SOTA VLMs perform poorly on PET report generation and fail to outperform even simple template baselines.
+  [AAAI 2026][Multimodal VLM][PET imaging] This paper presents PET2Rep, the first large-scale benchmark dataset dedicated to positron emission tomography (PET) radiology report generation…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - PET imaging
-  - radiology report generation
-  - vision-language model
-  - benchmark evaluation
-  - clinical efficacy metrics
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "PET imaging"
+  - "radiology report generation"
+  - "vision-language model"
+  - "benchmark evaluation"
+  - "clinical efficacy metrics"
 date: 2026-05-08
 content_hash: 273bc093e9dc4e78
 ---

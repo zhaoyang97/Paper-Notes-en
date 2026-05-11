@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Understanding Challenges to the Interpretation of Disaggregated Evaluations of AI
 description: >-
-  [NeurIPS 2025][AI Safety][algorithmic fairness] Through causal graphical modeling, this paper demonstrates that performance disparities across subgroups in disaggregated evaluations do not necessarily indicate unfairness, but may instead reflect natural consequences of distributional differences in the data-generating process. The authors recommend supplementing standard disaggregated evaluations with causal assumptions and weighted evaluation methods.
+  [NeurIPS 2025][AI Safety][algorithmic fairness] Through causal graphical modeling, this paper demonstrates that performance disparities across subgroups in disaggregated evaluations do not necessarily indicate unfairness…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - algorithmic fairness
-  - disaggregated evaluation
-  - causal inference
-  - distribution shift
-  - subgroup performance
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "algorithmic fairness"
+  - "disaggregated evaluation"
+  - "causal inference"
+  - "distribution shift"
+  - "subgroup performance"
 date: 2026-05-08
 content_hash: 3fa5ad5ee37442ce
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] BiMotion: B-spline Motion for Text-guided Dynamic 3D Character Generation
 description: >-
-  [CVPR2026][Image Generation][B-spline] BiMotion is proposed to compress variable-length motion sequences into a fixed number of control points using continuously differentiable B-spline curves. Combined with a specialized VAE and a flow-matching diffusion model, it achieves fast, highly expressive, and semantically complete text-guided dynamic 3D character generation, outperforming existing methods in both quality and efficiency.
+  [CVPR2026][Image Generation][B-spline] BiMotion is proposed to compress variable-length motion sequences into a fixed number of control points using continuously differentiable B-spline curves. Combined with a specialize…
 tags:
-  - CVPR2026
-  - Image Generation
-  - B-spline
-  - Motion Generation
-  - Text-guided
-  - 3D Character Animation
-  - VAE-latent diffusion
-  - Control Point Representation
+  - "CVPR2026"
+  - "Image Generation"
+  - "B-spline"
+  - "Motion Generation"
+  - "Text-guided"
+  - "3D Character Animation"
+  - "VAE-latent diffusion"
+  - "Control Point Representation"
 date: 2026-05-08
 content_hash: 38048f009c4d199d
 ---

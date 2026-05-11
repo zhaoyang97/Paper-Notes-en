@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HealSplit: Towards Self-Healing through Adversarial Distillation in Split Federated Learning
 description: >-
-  [AAAI 2026][AI Safety][Split Federated Learning] This paper proposes HealSplit, the first unified defense framework for Split Federated Learning (SFL). It identifies poisoned samples via topology-aware scoring (TAS) on a graph built over smashed data, generates semantically consistent substitute representations using a GAN, and trains a consistency-validated student model through adversarial multi-teacher distillation. This end-to-end detect-and-recover pipeline substantially outperforms ten SOTA defense methods across five categories of poisoning attacks.
+  [AAAI 2026][AI Safety][Split Federated Learning] This paper proposes HealSplit, the first unified defense framework for Split Federated Learning (SFL). It identifies poisoned samples via topology-aware scoring (TAS) on a…
 tags:
-  - AAAI 2026
-  - AI Safety
-  - Split Federated Learning
-  - Data Poisoning Attack
-  - Topology-Aware Detection
-  - Adversarial Distillation
-  - Self-Healing Defense
+  - "AAAI 2026"
+  - "AI Safety"
+  - "Split Federated Learning"
+  - "Data Poisoning Attack"
+  - "Topology-Aware Detection"
+  - "Adversarial Distillation"
+  - "Self-Healing Defense"
 date: 2026-05-08
 content_hash: 33e56f4a4fb3c197
 ---

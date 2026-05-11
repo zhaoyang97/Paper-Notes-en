@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Knowledge-Guided Masked Autoencoder with Linear Spectral Mixing and Spectral-Angle-Aware Reconstruction
 description: >-
-  [AAAI 2026][Scientific Computing][Masked Autoencoder] This paper proposes KARMA, a framework that embeds the Linear Spectral Mixing Model (LSMM) as a physics constraint within the ViT-MAE decoder, combined with a Spectral Angle Mapper (SAM) loss, to improve reconstruction fidelity and downstream transfer performance for hyperspectral remote sensing imagery.
+  [AAAI 2026][Scientific Computing][Masked Autoencoder] This paper proposes KARMA, a framework that embeds the Linear Spectral Mixing Model (LSMM) as a physics constraint within the ViT-MAE decoder…
 tags:
-  - AAAI 2026
-  - Scientific Computing
-  - Masked Autoencoder
-  - hyperspectral
-  - LSMM
-  - SAM loss
-  - physics-informed
-  - knowledge-guided ML
+  - "AAAI 2026"
+  - "Scientific Computing"
+  - "Masked Autoencoder"
+  - "hyperspectral"
+  - "LSMM"
+  - "SAM loss"
+  - "physics-informed"
+  - "knowledge-guided ML"
 date: 2026-05-08
 content_hash: 1b130cdd22433fe8
 ---

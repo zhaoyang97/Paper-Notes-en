@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HeteroCache: A Dynamic Retrieval Approach to Heterogeneous KV Cache Compression for Long-Context LLM Inference
 description: >-
-  [ACL 2026][Model Compression][KV cache compression] This paper proposes HeteroCache, a training-free dynamic KV cache compression framework that exploits two dimensions of attention head characteristics—temporal heterogeneity (stable vs. drifting heads) and intra-layer redundancy (clustering of similar heads)—to implement fine-grained role assignment. Larger cache budgets are allocated to drifting heads, while representative heads sparsely monitor attention drift to trigger asynchronous on-demand retrieval, achieving 3× decoding speedup under 224K context.
+  [ACL 2026][Model Compression][KV cache compression] This paper proposes HeteroCache, a training-free dynamic KV cache compression framework that exploits two dimensions of attention head characteristics—temporal heteroge…
 tags:
-  - ACL 2026
-  - Model Compression
-  - KV cache compression
-  - attention head heterogeneity
-  - dynamic retrieval
-  - intra-layer redundancy
-  - asynchronous prefetching
+  - "ACL 2026"
+  - "Model Compression"
+  - "KV cache compression"
+  - "attention head heterogeneity"
+  - "dynamic retrieval"
+  - "intra-layer redundancy"
+  - "asynchronous prefetching"
 date: 2026-05-08
 content_hash: e21956e42828eb6c
 ---

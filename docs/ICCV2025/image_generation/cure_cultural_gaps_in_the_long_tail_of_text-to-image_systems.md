@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CURE: Cultural Gaps in the Long Tail of Text-to-Image Systems
 description: >-
-  [ICCV 2025][Image Generation][Text-to-image generation] This work introduces the CURE benchmark and scoring suite, which employs **Marginal Information Attribution (MIA)** of attribute specifications as a proxy for human judgment to systematically evaluate the representational capacity of T2I systems across the global cultural long tail.
+  [ICCV 2025][Image Generation][Text-to-image generation] This work introduces the CURE benchmark and scoring suite, which employs **Marginal Information Attribution (MIA)** of attribute specifications as a proxy for human…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Text-to-image generation
-  - cultural representation
-  - benchmark evaluation
-  - marginal information attribution
-  - long-tail bias
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Text-to-image generation"
+  - "cultural representation"
+  - "benchmark evaluation"
+  - "marginal information attribution"
+  - "long-tail bias"
 date: 2026-05-08
 content_hash: b888d71a04f7e14b
 ---

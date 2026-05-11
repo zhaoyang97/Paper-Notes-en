@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EmbodiedOcc: Embodied 3D Occupancy Prediction for Vision-based Online Scene Understanding
 description: >-
-  [ICCV 2025][Autonomous Driving][3D occupancy prediction] This paper proposes EmbodiedOcc, a framework that leverages 3D semantic Gaussians as a global memory to enable online indoor 3D occupancy prediction from monocular visual input through progressive exploration and local updating.
+  [ICCV 2025][Autonomous Driving][3D occupancy prediction] This paper proposes EmbodiedOcc, a framework that leverages 3D semantic Gaussians as a global memory to enable online indoor 3D occupancy prediction from monocular…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - 3D occupancy prediction
-  - embodied perception
-  - 3D Gaussian
-  - online scene understanding
-  - indoor scene
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "3D occupancy prediction"
+  - "embodied perception"
+  - "3D Gaussian"
+  - "online scene understanding"
+  - "indoor scene"
 date: 2026-05-08
 content_hash: a6a3f41f8204f70b
 ---

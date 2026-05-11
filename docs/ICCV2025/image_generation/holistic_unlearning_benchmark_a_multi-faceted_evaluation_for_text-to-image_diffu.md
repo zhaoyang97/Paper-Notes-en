@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Holistic Unlearning Benchmark: A Multi-Faceted Evaluation for Text-to-Image Diffusion Model Unlearning
 description: >-
-  [ICCV 2025][Image Generation][Concept Unlearning] HUB introduces the first comprehensive benchmark for evaluating concept unlearning methods in text-to-image diffusion models, covering 33 target concepts across 6 evaluation dimensions (faithfulness, alignment, pinpoint-ness, multilingual robustness, adversarial robustness, and efficiency), with 16,000 prompts per concept. The benchmark reveals that no single method achieves superiority across all dimensions.
+  [ICCV 2025][Image Generation][Concept Unlearning] HUB introduces the first comprehensive benchmark for evaluating concept unlearning methods in text-to-image diffusion models…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Concept Unlearning
-  - Evaluation Benchmark
-  - Text-to-Image Safety
-  - Multi-Dimensional Evaluation
-  - Diffusion Models
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Concept Unlearning"
+  - "Evaluation Benchmark"
+  - "Text-to-Image Safety"
+  - "Multi-Dimensional Evaluation"
+  - "Diffusion Models"
 date: 2026-05-08
 content_hash: e5cb31f6e1b12bec
 ---

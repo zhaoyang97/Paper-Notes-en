@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PromptStereo: Zero-Shot Stereo Matching via Structure and Motion Prompts
 description: >-
-  [CVPR 2026][3D Vision][Zero-shot stereo matching] This paper proposes the Prompt Recurrent Unit (PRU), which replaces the GRU in iterative refinement with the DPT decoder from a monocular depth foundation model. Structure Prompts and Motion Prompts inject monocular structural and stereo motion cues via residual addition, enabling zero-shot state-of-the-art stereo matching without corrupting the monocular prior (nearly 50% error reduction on Middlebury 2021).
+  [CVPR 2026][3D Vision][Zero-shot stereo matching] This paper proposes the Prompt Recurrent Unit (PRU), which replaces the GRU in iterative refinement with the DPT decoder from a monocular depth foundation model. Structur…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Zero-shot stereo matching
-  - monocular depth prior
-  - prompt-based iterative refinement
-  - DPT decoder
-  - affine-invariant fusion
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Zero-shot stereo matching"
+  - "monocular depth prior"
+  - "prompt-based iterative refinement"
+  - "DPT decoder"
+  - "affine-invariant fusion"
 date: 2026-05-08
 content_hash: 090b2238fa60ee93
 ---

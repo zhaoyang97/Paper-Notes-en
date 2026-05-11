@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] HORT: Monocular Hand-held Objects Reconstruction with Transformers
 description: >-
-  [3D Vision] This paper proposes HORT, a coarse-to-fine Transformer-based framework that efficiently reconstructs dense 3D point clouds of hand-held objects from monocular images. By integrating image features with 3D hand geometry, HORT jointly predicts the object point cloud and its pose relative to the hand, achieving state-of-the-art performance in both reconstruction accuracy and inference speed.
+  [3D Vision] This paper proposes HORT, a coarse-to-fine Transformer-based framework that efficiently reconstructs dense 3D point clouds of hand-held objects from monocular images. By integrating image features with 3D han…
 tags:
-  - 3D Vision
+  - "3D Vision"
 date: 2026-05-08
 content_hash: 3d9ec759ac0da248
 ---

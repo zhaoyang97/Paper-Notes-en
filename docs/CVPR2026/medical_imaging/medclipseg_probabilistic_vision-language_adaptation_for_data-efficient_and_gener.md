@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] MedCLIPSeg: Probabilistic Vision-Language Adaptation for Data-Efficient and Generalizable Medical Image Segmentation
 description: >-
-  [CVPR2026][Medical Imaging][Medical Image Segmentation] Built upon frozen CLIP encoders, MedCLIPSeg introduces a probabilistic cross-modal attention adapter (PVL) that enables bidirectional vision-language interaction and explicit prediction uncertainty modeling, complemented by a soft patch-level contrastive loss. The method achieves strong data efficiency, domain generalization, and interpretability across 16 medical segmentation datasets.
+  [CVPR2026][Medical Imaging][Medical Image Segmentation] Built upon frozen CLIP encoders, MedCLIPSeg introduces a probabilistic cross-modal attention adapter (PVL) that enables bidirectional vision-language interaction an…
 tags:
-  - CVPR2026
-  - Medical Imaging
-  - Medical Image Segmentation
-  - CLIP Adaptation
-  - Probabilistic Attention
-  - Uncertainty Modeling
-  - Cross-Modal Fusion
-  - Data Efficiency
+  - "CVPR2026"
+  - "Medical Imaging"
+  - "Medical Image Segmentation"
+  - "CLIP Adaptation"
+  - "Probabilistic Attention"
+  - "Uncertainty Modeling"
+  - "Cross-Modal Fusion"
+  - "Data Efficiency"
 date: 2026-05-08
 content_hash: 46c4bbdf70a5cce3
 ---

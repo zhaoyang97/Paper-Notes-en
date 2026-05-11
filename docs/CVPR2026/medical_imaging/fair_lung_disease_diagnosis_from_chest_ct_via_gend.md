@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Fair Lung Disease Diagnosis from Chest CT via Gender-Adversarial Attention Multiple Instance Learning
 description: >-
-  [CVPR 2026 (PHAROS-AIF-MIH Workshop)][Medical Imaging][Fair Diagnosis] An attention-based MIL model is built upon a ConvNeXt-Base backbone, employing a gradient reversal layer (GRL) to adversarially eliminate gender information from scan representations. Combined with focal loss ($\gamma=2$) + label smoothing ($\varepsilon=0.1$), subgroup oversampling, and 5-fold ensemble, the proposed method achieves a mean competition score of 0.685±0.030 on a four-class lung disease diagnosis task over 889 chest CT scans. The female macro-F1 (0.691) slightly exceeds the male macro-F1 (0.679), validating that GRL effectively closes the fairness gap.
+  [CVPR 2026 (PHAROS-AIF-MIH Workshop)][Medical Imaging][Fair Diagnosis] An attention-based MIL model is built upon a ConvNeXt-Base backbone, employing a gradient reversal layer (GRL) to adversarially eliminate gender info…
 tags:
-  - CVPR 2026 (PHAROS-AIF-MIH Workshop)
-  - Medical Imaging
-  - Fair Diagnosis
-  - Chest CT
-  - Multiple Instance Learning
-  - Gradient Reversal Layer
-  - Lung Disease Classification
+  - "CVPR 2026 (PHAROS-AIF-MIH Workshop)"
+  - "Medical Imaging"
+  - "Fair Diagnosis"
+  - "Chest CT"
+  - "Multiple Instance Learning"
+  - "Gradient Reversal Layer"
+  - "Lung Disease Classification"
 date: 2026-05-08
 content_hash: af29b6ff11ab758b
 ---

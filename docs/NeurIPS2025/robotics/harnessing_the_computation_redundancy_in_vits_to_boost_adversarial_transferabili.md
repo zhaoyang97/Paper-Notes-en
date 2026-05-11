@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Harnessing the Computation Redundancy in ViTs to Boost Adversarial Transferability
 description: >-
-  [NeurIPS 2025][Robotics][Adversarial transferability] By systematically exploiting data-level and model-level computation redundancy in ViTs, this paper proposes five techniques—attention sparsification, attention head permutation, clean token regularization, Ghost MoE diversification, and robust tokens—combined with an online learning strategy that dynamically selects operations. The method achieves an average fooling rate of 86.9% on ImageNet-1K, substantially outperforming all baselines.
+  [NeurIPS 2025][Robotics][Adversarial transferability] By systematically exploiting data-level and model-level computation redundancy in ViTs, this paper proposes five techniques—attention sparsification…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - Adversarial transferability
-  - ViT computation redundancy
-  - attention sparsification
-  - Ghost MoE
-  - robust tokens
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "Adversarial transferability"
+  - "ViT computation redundancy"
+  - "attention sparsification"
+  - "Ghost MoE"
+  - "robust tokens"
 date: 2026-05-08
 content_hash: a1c4cfca77c6dec5
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DSFlash: Comprehensive Panoptic Scene Graph Generation in Realtime
 description: >-
-  [CVPR 2026][Segmentation][panoptic scene graph generation] DSFlash combines a unified segmentation/relation backbone, a gated bidirectional relation head, and mask-based dynamic patch pruning to deliver SOTA panoptic scene graph generation on PSG at mR@50=30.9 with only 18 ms latency (56 FPS).
+  [CVPR 2026][Segmentation][panoptic scene graph generation] DSFlash combines a unified segmentation/relation backbone, a gated bidirectional relation head…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - panoptic scene graph generation
-  - real-time inference
-  - bidirectional relation prediction
-  - token pruning
-  - EoMT
+  - "CVPR 2026"
+  - "Segmentation"
+  - "panoptic scene graph generation"
+  - "real-time inference"
+  - "bidirectional relation prediction"
+  - "token pruning"
+  - "EoMT"
 date: 2026-05-08
 content_hash: 9d1abbba39752a1a
 ---

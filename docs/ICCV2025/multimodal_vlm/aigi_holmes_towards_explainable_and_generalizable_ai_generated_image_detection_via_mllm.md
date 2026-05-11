@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AIGI-Holmes: Towards Explainable and Generalizable AI-Generated Image Detection via Multimodal Large Language Models
 description: >-
-  [ICCV 2025][Multimodal VLM][AIGC detection] This paper proposes AIGI-Holmes, which achieves explainable and generalizable AI-generated image detection through the construction of Holmes-Set — an annotated dataset with interpretive labels — a three-stage training pipeline (visual expert pre-training → SFT → DPO), and a collaborative decoding strategy. The method attains state-of-the-art detection accuracy on three benchmarks while providing human-verifiable explanations.
+  [ICCV 2025][Multimodal VLM][AIGC detection] This paper proposes AIGI-Holmes, which achieves explainable and generalizable AI-generated image detection through the construction of Holmes-Set — an annotated dataset with in…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - AIGC detection
-  - explainable AI
-  - MLLM
-  - DPO
-  - collaborative decoding
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "AIGC detection"
+  - "explainable AI"
+  - "MLLM"
+  - "DPO"
+  - "collaborative decoding"
 date: 2026-05-08
 content_hash: a40d1fc43181767b
 ---

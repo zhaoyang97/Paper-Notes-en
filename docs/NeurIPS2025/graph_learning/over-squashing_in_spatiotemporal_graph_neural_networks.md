@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Over-squashing in Spatiotemporal Graph Neural Networks
 description: >-
-  [NeurIPS 2025][Graph Learning][Over-squashing] This paper provides the first formal treatment of over-squashing in spatiotemporal graph neural networks (STGNNs), uncovering a counterintuitive "temporal sink" phenomenon in causal convolutions—whereby the earliest timestep exerts the greatest influence on the final representation—and proves that time-and-space (T&S) and time-then-space (TTS) architectures are equivalent in terms of information bottlenecks, offering theoretical justification for the computationally efficient TTS design.
+  [NeurIPS 2025][Graph Learning][Over-squashing] This paper provides the first formal treatment of over-squashing in spatiotemporal graph neural networks (STGNNs)…
 tags:
-  - NeurIPS 2025
-  - Graph Learning
-  - Over-squashing
-  - Spatiotemporal GNN
-  - Causal Convolution
-  - Information Propagation
-  - Graph Rewiring
+  - "NeurIPS 2025"
+  - "Graph Learning"
+  - "Over-squashing"
+  - "Spatiotemporal GNN"
+  - "Causal Convolution"
+  - "Information Propagation"
+  - "Graph Rewiring"
 date: 2026-05-08
 content_hash: bb040f6b99ee7157
 ---

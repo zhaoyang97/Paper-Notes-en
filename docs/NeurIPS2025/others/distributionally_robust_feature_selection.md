@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Distributionally Robust Feature Selection
 description: >-
-  [NeurIPS 2025][Feature Selection] This paper proposes a model-agnostic distributionally robust feature selection method that achieves a continuous relaxation of discrete selection by injecting controlled Gaussian noise into covariates, and optimizes the conditional variance of the Bayes-optimal predictor, so that the selected feature subset enables high-quality downstream models to be trained simultaneously across multiple subpopulations.
+  [NeurIPS 2025][Feature Selection] This paper proposes a model-agnostic distributionally robust feature selection method that achieves a continuous relaxation of discrete selection by injecting controlled Gaussian noise i…
 tags:
-  - NeurIPS 2025
-  - Feature Selection
-  - Distributionally Robust Optimization
-  - Group DRO
-  - Noise Injection
-  - Model-Agnostic
+  - "NeurIPS 2025"
+  - "Feature Selection"
+  - "Distributionally Robust Optimization"
+  - "Group DRO"
+  - "Noise Injection"
+  - "Model-Agnostic"
 date: 2026-05-08
 content_hash: f6fec16b07693c88
 ---

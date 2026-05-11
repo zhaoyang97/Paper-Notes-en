@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Models That Prove Their Own Correctness
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][self-proving models] This paper proposes the Self-Proving Models framework, in which a model proves the correctness of its outputs to a verifier algorithm via an interactive proof system. Two learning algorithms are introduced—Transcript Learning (TL) and Reinforcement Learning from Verifier Feedback (RLVF)—and experiments on the GCD computation task demonstrate that Annotated TL achieves 96% Verifiability.
+  [NeurIPS 2025][Reinforcement Learning][self-proving models] This paper proposes the Self-Proving Models framework, in which a model proves the correctness of its outputs to a verifier algorithm via an interactive proof s…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - self-proving models
-  - interactive proofs
-  - reinforcement learning from verifier feedback
-  - formal verification
-  - LLM reliability
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "self-proving models"
+  - "interactive proofs"
+  - "reinforcement learning from verifier feedback"
+  - "formal verification"
+  - "LLM reliability"
 date: 2026-05-08
 content_hash: 4f2055a5fa214078
 ---

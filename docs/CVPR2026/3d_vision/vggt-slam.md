@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VGGT-SLAM++: Visual SLAM with DEM-Based Covisibility and Local Bundle Adjustment
 description: >-
-  [CVPR 2026][3D Vision][SLAM] VGGT-SLAM++ augments the VGGT feed-forward Transformer odometry with Digital Elevation Maps (DEMs) as a compact, geometry-preserving representation. It leverages DINOv2 embeddings for efficient loop closure detection and covisibility graph construction, and applies high-frequency Sim(3) local bundle adjustment to correct short-term drift, achieving a 45% reduction in ATE on TUM RGB-D (0.079m → 0.036m).
+  [CVPR 2026][3D Vision][SLAM] VGGT-SLAM++ augments the VGGT feed-forward Transformer odometry with Digital Elevation Maps (DEMs) as a compact…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - SLAM
-  - Digital Elevation Map
-  - Transformer Odometry
-  - Loop Closure Detection
-  - Local Bundle Adjustment
+  - "CVPR 2026"
+  - "3D Vision"
+  - "SLAM"
+  - "Digital Elevation Map"
+  - "Transformer Odometry"
+  - "Loop Closure Detection"
+  - "Local Bundle Adjustment"
 date: 2026-05-08
 content_hash: 7143e6a2bc24b768
 ---

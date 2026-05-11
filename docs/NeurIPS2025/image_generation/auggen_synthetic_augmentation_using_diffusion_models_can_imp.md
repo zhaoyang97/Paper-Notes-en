@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AugGen: Synthetic Augmentation using Diffusion Models Can Improve Recognition
 description: >-
-  [NeurIPS 2025][Image Generation][synthetic data augmentation] This paper proposes AugGen, a self-contained synthetic data augmentation method that trains a class-conditional diffusion model on the target dataset, generates new "mixed-class" samples by interpolating class conditioning vectors across different identities, and uses the resulting augmented data to improve discriminative model training. AugGen achieves 1–12% performance gains on face recognition benchmarks without relying on any external data or auxiliary models.
+  [NeurIPS 2025][Image Generation][synthetic data augmentation] This paper proposes AugGen, a self-contained synthetic data augmentation method that trains a class-conditional diffusion model on the target dataset…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - synthetic data augmentation
-  - class-conditional diffusion models
-  - face recognition
-  - class mixing
-  - self-contained framework
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "synthetic data augmentation"
+  - "class-conditional diffusion models"
+  - "face recognition"
+  - "class mixing"
+  - "self-contained framework"
 date: 2026-05-08
 content_hash: 8b17c41c5f1050f8
 ---

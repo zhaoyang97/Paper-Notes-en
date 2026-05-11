@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Convex Dominance in Deep Learning I: A Scaling Law of Loss and Learning Rate
 description: >-
-  [ICLR 2026][Optimization][Scaling laws] Grounded in convex optimization theory, this paper proves that training loss in deep learning converges at a rate of $O(1/\sqrt{T})$ and that the optimal learning rate scales as $1/\sqrt{T}$. The resulting scaling law is validated across models ranging from GPT-2 to 12.5B parameters ($R^2 \geq 0.978$), enabling learning rate extrapolation across an 80× range of training steps.
+  [ICLR 2026][Optimization][Scaling laws] Grounded in convex optimization theory, this paper proves that training loss in deep learning converges at a rate of $O(1/\sqrt{T})$ and that the optimal learning rate scales as $1…
 tags:
-  - ICLR 2026
-  - Optimization
-  - Scaling laws
-  - learning rate schedule
-  - convex optimization
-  - loss convergence
-  - training planning
+  - "ICLR 2026"
+  - "Optimization"
+  - "Scaling laws"
+  - "learning rate schedule"
+  - "convex optimization"
+  - "loss convergence"
+  - "training planning"
 date: 2026-05-08
 content_hash: 53a75150a1ea4023
 ---

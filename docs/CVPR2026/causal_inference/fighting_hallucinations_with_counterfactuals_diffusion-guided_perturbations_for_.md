@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Fighting Hallucinations with Counterfactuals: Diffusion-Guided Perturbations for LVLM Hallucination Suppression
 description: >-
-  [CVPR2026][Causal Inference][Large Vision-Language Models] This paper proposes CIPHER, a training-free test-time hallucination suppression method. In the offline phase, a diffusion model is used to generate counterfactual images, constructing the OHC-25K dataset, from which visual hallucination subspaces are extracted via SVD. During inference, hidden states are projected onto the orthogonal complement of this subspace, significantly reducing visual hallucinations in LVLMs without modifying model parameters or incurring additional inference overhead.
+  [CVPR2026][Causal Inference][Large Vision-Language Models] This paper proposes CIPHER, a training-free test-time hallucination suppression method. In the offline phase…
 tags:
-  - CVPR2026
-  - Causal Inference
-  - Large Vision-Language Models
-  - Hallucination Suppression
-  - Counterfactual Reasoning
-  - Diffusion Models
-  - Feature Projection
-  - Training-Free
+  - "CVPR2026"
+  - "Causal Inference"
+  - "Large Vision-Language Models"
+  - "Hallucination Suppression"
+  - "Counterfactual Reasoning"
+  - "Diffusion Models"
+  - "Feature Projection"
+  - "Training-Free"
 date: 2026-05-08
 content_hash: 3a6c55b05008c358
 ---

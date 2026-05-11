@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The PokeAgent Challenge: Competitive and Long-Context Learning at Scale
 description: >-
-  [NeurIPS 2025][LLM Efficiency][Game AI Benchmark] This paper introduces the PokéAgent Challenge, a large-scale dual-track AI benchmark built on Pokémon competitive battling and RPG speedrunning. Validated through the NeurIPS 2025 competition, it demonstrates that specialist RL methods substantially outperform general-purpose LLM approaches, and reveals that the capabilities measured by Pokémon battling are nearly orthogonal to those assessed by 49 existing LLM benchmarks.
+  [NeurIPS 2025][LLM Efficiency][Game AI Benchmark] This paper introduces the PokéAgent Challenge, a large-scale dual-track AI benchmark built on Pokémon competitive battling and RPG speedrunning. Validated through the Neu…
 tags:
-  - NeurIPS 2025
-  - LLM Efficiency
-  - Game AI Benchmark
-  - Pokémon Battling
-  - Long-Horizon Planning
-  - Reinforcement Learning
-  - LLM Agent
+  - "NeurIPS 2025"
+  - "LLM Efficiency"
+  - "Game AI Benchmark"
+  - "Pokémon Battling"
+  - "Long-Horizon Planning"
+  - "Reinforcement Learning"
+  - "LLM Agent"
 date: 2026-05-08
 content_hash: 16da4e82e33d4092
 ---

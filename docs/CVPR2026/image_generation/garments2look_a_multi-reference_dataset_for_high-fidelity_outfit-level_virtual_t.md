@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Garments2Look: A Multi-Reference Dataset for High-Fidelity Outfit-Level Virtual Try-On with Clothing and Accessories
 description: >-
-  [CVPR 2026][Image Generation][virtual try-on] This paper introduces Garments2Look, the first large-scale multimodal outfit-level virtual try-on dataset (80K pairs, 40 categories, 300+ subcategories). Each sample contains 3–12 reference garment images, a model outfit image, and detailed textual annotations. The dataset exposes significant shortcomings of existing methods in multi-layer outfit composition and accessory consistency.
+  [CVPR 2026][Image Generation][virtual try-on] This paper introduces Garments2Look, the first large-scale multimodal outfit-level virtual try-on dataset (80K pairs, 40 categories…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - virtual try-on
-  - multi-reference images
-  - outfit-level
-  - dataset construction
+  - "CVPR 2026"
+  - "Image Generation"
+  - "virtual try-on"
+  - "multi-reference images"
+  - "outfit-level"
+  - "dataset construction"
 date: 2026-05-08
 content_hash: f7f1d1d389b3d668
 ---

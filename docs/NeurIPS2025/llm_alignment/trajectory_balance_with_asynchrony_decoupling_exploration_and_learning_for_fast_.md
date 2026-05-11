@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Trajectory Balance with Asynchrony: Decoupling Exploration and Learning for Fast, Scalable LLM Post-Training
 description: >-
-  [NeurIPS 2025][LLM Alignment][RL post-training] This paper proposes TBA (Trajectory Balance with Asynchrony), which combines the GFlowNet Trajectory Balance (TB) objective with an asynchronous distributed RL architecture to decouple exploration and learning in LLM post-training, achieving 4–50× speedups without performance degradation across mathematical reasoning, preference fine-tuning, and automated red-teaming tasks.
+  [NeurIPS 2025][LLM Alignment][RL post-training] This paper proposes TBA (Trajectory Balance with Asynchrony), which combines the GFlowNet Trajectory Balance (TB) objective with an asynchronous distributed RL architecture…
 tags:
-  - NeurIPS 2025
-  - LLM Alignment
-  - RL post-training
-  - asynchronous RL
-  - trajectory balance
-  - off-policy learning
-  - GFlowNet
+  - "NeurIPS 2025"
+  - "LLM Alignment"
+  - "RL post-training"
+  - "asynchronous RL"
+  - "trajectory balance"
+  - "off-policy learning"
+  - "GFlowNet"
 date: 2026-05-08
 content_hash: 8ef2ef410e8dc176
 ---

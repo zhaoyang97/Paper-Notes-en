@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Distribution-Based Feature Attribution for Explaining the Predictions of Any Classifier
 description: >-
-  [AAAI 2026 (Oral)][Feature attribution] This paper proposes DFAX, the first distribution-based feature attribution method, which quantifies feature importance by comparing the conditional probability density of a target instance under the target class versus non-target classes. It provides the first formal definition of feature attribution, and demonstrates significant improvements over SHAP/LIME and other baselines across 10 datasets while being orders of magnitude faster.
+  [AAAI 2026 (Oral)][Interpretability][Feature attribution] This paper proposes DFAX, the first distribution-based feature attribution method…
 tags:
-  - AAAI 2026 (Oral)
-  - Feature attribution
-  - explainable AI
-  - kernel density estimation
-  - model-agnostic
-  - distributional methods
+  - "AAAI 2026 (Oral)"
+  - "Interpretability"
+  - "Feature attribution"
+  - "explainable AI"
+  - "kernel density estimation"
+  - "model-agnostic"
+  - "distributional methods"
 date: 2026-05-08
 content_hash: 63cda6626a4e8ab8
 ---

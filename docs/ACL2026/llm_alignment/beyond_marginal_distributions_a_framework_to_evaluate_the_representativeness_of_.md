@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond Marginal Distributions: A Framework to Evaluate the Representativeness of Demographic-Aligned LLMs
 description: >-
-  [ACL 2026][LLM Alignment][demographic alignment] This paper proposes a representativeness evaluation framework for LLMs that goes beyond marginal distributions by jointly examining marginal response distributions and cross-question correlation structures to assess demographic-aligned models. The findings reveal that while fine-tuning and persona prompting improve the approximation of marginal distributions, neither faithfully reproduces the multivariate correlation patterns observed in human values surveys.
+  [ACL 2026][LLM Alignment][demographic alignment] This paper proposes a representativeness evaluation framework for LLMs that goes beyond marginal distributions by jointly examining marginal response distributions and cro…
 tags:
-  - ACL 2026
-  - LLM Alignment
-  - demographic alignment
-  - correlation structure
-  - marginal distributions
-  - values surveys
-  - representativeness evaluation
+  - "ACL 2026"
+  - "LLM Alignment"
+  - "demographic alignment"
+  - "correlation structure"
+  - "marginal distributions"
+  - "values surveys"
+  - "representativeness evaluation"
 date: 2026-05-08
 content_hash: 2bebcac0deb0affa
 ---

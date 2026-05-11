@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Steering When Necessary: Flexible Steering Large Language Models with Backtracking
 description: >-
-  [NeurIPS 2025][Video Understanding][activation steering] This paper proposes FASB (Flexible Activation Steering with Backtracking), a framework that dynamically determines the necessity and intensity of intervention by tracking the internal states of an LLM during generation, and introduces a backtracking mechanism to correct already-deviated tokens. FASB achieves a True\*Info score of 80.56% on TruthfulQA and an average accuracy of 78.8% across six multiple-choice tasks, significantly outperforming all baselines.
+  [NeurIPS 2025][Video Understanding][activation steering] This paper proposes FASB (Flexible Activation Steering with Backtracking), a framework that dynamically determines the necessity and intensity of intervention by t…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
-  - activation steering
-  - representation engineering
-  - backtracking mechanism
-  - truthfulness
-  - dynamic intervention
+  - "NeurIPS 2025"
+  - "Video Understanding"
+  - "activation steering"
+  - "representation engineering"
+  - "backtracking mechanism"
+  - "truthfulness"
+  - "dynamic intervention"
 date: 2026-05-08
 content_hash: 585c39d09fc4b5ab
 ---

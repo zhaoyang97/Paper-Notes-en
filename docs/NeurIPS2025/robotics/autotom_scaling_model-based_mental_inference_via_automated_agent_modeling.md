@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AutoToM: Scaling Model-based Mental Inference via Automated Agent Modeling
 description: >-
-  [NeurIPS 2025][Robotics][Theory of Mind] AutoToM achieves fully automated model-based Theory of Mind inference—without requiring manual agent model specification—by automatically proposing Bayesian network structures and executing Bayesian inverse planning. Through uncertainty-driven iterative model refinement (adding mental variables or extending time steps), it achieves an average accuracy of 82.43% across 5 ToM benchmarks, surpassing SOTA models such as GPT-4o (63.39%) and o3-mini (73.94%).
+  [NeurIPS 2025][Robotics][Theory of Mind] AutoToM achieves fully automated model-based Theory of Mind inference—without requiring manual agent model specification—by automatically proposing Bayesian network structures and…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - Theory of Mind
-  - Bayesian inverse planning
-  - automated agent modeling
-  - mental inference
-  - LLM
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "Theory of Mind"
+  - "Bayesian inverse planning"
+  - "automated agent modeling"
+  - "mental inference"
+  - "LLM"
 date: 2026-05-08
 content_hash: c7fcf1a58221c2f0
 ---

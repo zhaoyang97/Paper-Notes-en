@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Grouped Speculative Decoding for Autoregressive Image Generation
 description: >-
-  [ICCV 2025][Image Generation][autoregressive image generation] This paper proposes Grouped Speculative Decoding (GSD), a training-free acceleration method for autoregressive image generation that performs speculative verification at the level of semantically valid token clusters rather than the single most probable token, achieving an average speedup of 3.7× without degrading image quality.
+  [ICCV 2025][Image Generation][autoregressive image generation] This paper proposes Grouped Speculative Decoding (GSD), a training-free acceleration method for autoregressive image generation that performs speculative ver…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - autoregressive image generation
-  - speculative decoding
-  - inference acceleration
-  - training-free
-  - visual token redundancy
+  - "ICCV 2025"
+  - "Image Generation"
+  - "autoregressive image generation"
+  - "speculative decoding"
+  - "inference acceleration"
+  - "training-free"
+  - "visual token redundancy"
 date: 2026-05-08
 content_hash: 5c8b5f368ca45c8c
 ---

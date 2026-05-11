@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Sparse Additive Model Pruning for Order-Based Causal Structure Learning
 description: >-
-  [AAAI2026][Causal Inference][causal discovery] This paper proposes SARTRE, a framework that employs randomized tree embeddings and group-sparse regression to learn sparse additive models, replacing the hypothesis-testing-based redundant edge pruning in CAM-pruning for order-based causal structure learning. SARTRE achieves significant speedups without sacrificing accuracy.
+  [AAAI2026][Causal Inference][causal discovery] This paper proposes SARTRE, a framework that employs randomized tree embeddings and group-sparse regression to learn sparse additive models…
 tags:
-  - AAAI2026
-  - Causal Inference
-  - causal discovery
-  - sparse additive model
-  - DAG pruning
-  - group lasso
-  - randomized tree embedding
+  - "AAAI2026"
+  - "Causal Inference"
+  - "causal discovery"
+  - "sparse additive model"
+  - "DAG pruning"
+  - "group lasso"
+  - "randomized tree embedding"
 date: 2026-05-08
 content_hash: d0473e9a25d9572a
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SafeSieve: From Heuristics to Experience in Progressive Pruning for LLM-based Multi-Agent Communication
 description: >-
-  [AAAI 2026][Model Compression][Multi-agent systems] SafeSieve is proposed as a progressive adaptive multi-agent communication pruning framework. Through a two-stage edge scoring mechanism combining semantic-heuristic initialization and history-feedback-driven refinement, together with 0-extension clustering, SafeSieve achieves 94.01% average accuracy across 6 benchmarks while reducing token consumption by 12.4%–27.8%, and demonstrates inherent robustness against prompt injection attacks.
+  [AAAI 2026][Model Compression][Multi-agent systems] SafeSieve is proposed as a progressive adaptive multi-agent communication pruning framework. Through a two-stage edge scoring mechanism combining semantic-heuristic ini…
 tags:
-  - AAAI 2026
-  - Model Compression
-  - Multi-agent systems
-  - communication pruning
-  - 0-extension clustering
-  - LLM collaboration
-  - adversarial robustness
+  - "AAAI 2026"
+  - "Model Compression"
+  - "Multi-agent systems"
+  - "communication pruning"
+  - "0-extension clustering"
+  - "LLM collaboration"
+  - "adversarial robustness"
 date: 2026-05-08
 content_hash: 7aecd78857bd161a
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RoboRefer: Towards Spatial Referring with Reasoning in Vision-Language Models for Robotics
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Spatial Referring] This paper proposes **RoboRefer**, a 3D-aware reasoning VLM trained via a two-stage **SFT + RFT** strategy with a metric-sensitive process reward function. It achieves precise single-step spatial understanding and multi-step spatial reasoning on spatial referring tasks, surpassing Gemini-2.5-Pro by 17.4% on RefSpatial-Bench.
+  [NeurIPS 2025][Multimodal VLM][Spatial Referring] This paper proposes **RoboRefer**, a 3D-aware reasoning VLM trained via a two-stage **SFT + RFT** strategy with a metric-sensitive process reward function. It achieves pr…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Spatial Referring
-  - Vision-Language Models
-  - Multi-Step Reasoning
-  - Reinforcement Fine-Tuning
-  - Robot Manipulation
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Spatial Referring"
+  - "Vision-Language Models"
+  - "Multi-Step Reasoning"
+  - "Reinforcement Fine-Tuning"
+  - "Robot Manipulation"
 date: 2026-05-08
 content_hash: 0c8ebcb246f086e9
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Breaking the Frozen Subspace: Importance Sampling for Low-Rank Optimization in LLM Pretraining
 description: >-
-  [NeurIPS 2025][LLM Pretraining][Low-rank optimization] This paper identifies that the dominant subspace in low-rank optimizers such as GaLore "freezes" during pretraining (cosine overlap between consecutive subspaces approaches 1), trapping weight updates within a fixed low-rank subspace. The authors propose SARA (Sampling-based Adaptive Rank Allocation), which constructs subspaces by sampling singular vectors according to singular value weights, provides convergence guarantees, and reduces the performance gap between low-rank optimizers and full-rank Adam by up to 46%.
+  [NeurIPS 2025][LLM Pretraining][Low-rank optimization] This paper identifies that the dominant subspace in low-rank optimizers such as GaLore "freezes" during pretraining (cosine overlap between consecutive subspaces app…
 tags:
-  - NeurIPS 2025
-  - LLM Pretraining
-  - Low-rank optimization
-  - GaLore
-  - importance sampling
-  - memory efficiency
+  - "NeurIPS 2025"
+  - "LLM Pretraining"
+  - "Low-rank optimization"
+  - "GaLore"
+  - "importance sampling"
+  - "memory efficiency"
 date: 2026-05-08
 content_hash: c81b4c7b16418cd8
 ---

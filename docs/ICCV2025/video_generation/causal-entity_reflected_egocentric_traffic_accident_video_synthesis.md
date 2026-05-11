@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Causal-Entity Reflected Egocentric Traffic Accident Video Synthesis
 description: >-
-  [ICCV 2025][Video Generation][Traffic accident video synthesis] This paper proposes Causal-VidSyn, a diffusion model that achieves causal entity localization via an Accident-Reason Answering (ArA) module and a gaze-conditioned visual token selection mechanism. The authors also construct the Drive-Gaze dataset comprising 1.54 million frames of gaze data. The method outperforms state-of-the-art approaches across three tasks: accident video editing, normal-to-accident video diffusion, and text-to-video generation.
+  [ICCV 2025][Video Generation][Traffic accident video synthesis] This paper proposes Causal-VidSyn, a diffusion model that achieves causal entity localization via an Accident-Reason Answering (ArA) module and a gaze-condi…
 tags:
-  - ICCV 2025
-  - Video Generation
-  - Traffic accident video synthesis
-  - causal entity
-  - driver gaze
-  - diffusion model
-  - autonomous driving safety
+  - "ICCV 2025"
+  - "Video Generation"
+  - "Traffic accident video synthesis"
+  - "causal entity"
+  - "driver gaze"
+  - "diffusion model"
+  - "autonomous driving safety"
 date: 2026-05-08
 content_hash: f6303bf8afe511b1
 ---

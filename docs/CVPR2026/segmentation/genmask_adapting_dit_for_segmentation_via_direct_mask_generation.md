@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GenMask: Adapting DiT for Segmentation via Direct Mask Generation
 description: >-
-  [CVPR 2026][Segmentation][Diffusion Transformer] This paper proposes GenMask, which directly trains a DiT to generate binary segmentation masks (sharing the same model as color image generation). By discovering that the VAE latent representations of binary masks are linearly separable, the authors design an extreme heavy-tailed timestep sampling strategy tailored for segmentation, enabling single-step inference to produce segmentation results, achieving state-of-the-art performance on referring and reasoning segmentation benchmarks.
+  [CVPR 2026][Segmentation][Diffusion Transformer] This paper proposes GenMask, which directly trains a DiT to generate binary segmentation masks (sharing the same model as color image generation). By discovering that the…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Diffusion Transformer
-  - segmentation mask generation
-  - timestep sampling strategy
-  - single-step inference
-  - generative segmentation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Diffusion Transformer"
+  - "segmentation mask generation"
+  - "timestep sampling strategy"
+  - "single-step inference"
+  - "generative segmentation"
 date: 2026-05-08
 content_hash: 0701e206b3c0776a
 ---

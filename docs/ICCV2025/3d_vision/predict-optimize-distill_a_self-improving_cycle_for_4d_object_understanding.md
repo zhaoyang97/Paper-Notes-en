@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Predict-Optimize-Distill: A Self-Improving Cycle for 4D Object Understanding
 description: >-
-  [ICCV 2025][3D Vision][4D Reconstruction] This paper proposes Predict-Optimize-Distill (POD), a self-improving framework that recovers 4D part poses of articulated objects from long monocular videos through iterative predict–optimize–distill cycles, with performance that improves consistently with video length and iteration count.
+  [ICCV 2025][3D Vision][4D Reconstruction] This paper proposes Predict-Optimize-Distill (POD), a self-improving framework that recovers 4D part poses of articulated objects from long monocular videos through iterative pre…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 4D Reconstruction
-  - Articulated Objects
-  - Self-Improving Cycle
-  - Inverse Rendering
-  - Monocular Video
+  - "ICCV 2025"
+  - "3D Vision"
+  - "4D Reconstruction"
+  - "Articulated Objects"
+  - "Self-Improving Cycle"
+  - "Inverse Rendering"
+  - "Monocular Video"
 date: 2026-05-08
 content_hash: bb31cdd08b89d76b
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AnyBimanual: Transferring Unimanual Policy for General Bimanual Manipulation
 description: >-
-  [ICCV 2025][Robotics][bimanual manipulation] This paper proposes AnyBimanual, a plug-and-play framework that transfers pretrained unimanual manipulation policies to general bimanual manipulation scenarios via a Skill Manager and a Visual Aligner, achieving significant multi-task generalization with only a small number of bimanual demonstrations.
+  [ICCV 2025][Robotics][bimanual manipulation] This paper proposes AnyBimanual, a plug-and-play framework that transfers pretrained unimanual manipulation policies to general bimanual manipulation scenarios via a Skill Man…
 tags:
-  - ICCV 2025
-  - Robotics
-  - bimanual manipulation
-  - policy transfer
-  - skill primitives
-  - visual alignment
-  - behavior cloning
+  - "ICCV 2025"
+  - "Robotics"
+  - "bimanual manipulation"
+  - "policy transfer"
+  - "skill primitives"
+  - "visual alignment"
+  - "behavior cloning"
 date: 2026-05-08
 content_hash: 9c8bf63b4f13fbe8
 ---

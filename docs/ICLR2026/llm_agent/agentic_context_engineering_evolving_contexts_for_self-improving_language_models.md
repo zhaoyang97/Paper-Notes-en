@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models
 description: >-
-  [ICLR 2026][LLM Agent][context engineering] This paper proposes ACE (Agentic Context Engineering), a framework that treats context as a continuously evolving playbook. Through a Generator–Reflector–Curator role decomposition and incremental delta updates, ACE accumulates and refines strategies over time, addressing brevity bias and context collapse in existing prompt optimization methods. ACE achieves an average improvement of 10.6% on agent benchmarks and 8.6% on financial tasks, while reducing adaptation latency by 86.9%.
+  [ICLR 2026][LLM Agent][context engineering] This paper proposes ACE (Agentic Context Engineering), a framework that treats context as a continuously evolving playbook. Through a Generator–Reflector–Curator role decomposi…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - context engineering
-  - self-improving agent
-  - prompt optimization
-  - evolving memory
-  - playbook
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "context engineering"
+  - "self-improving agent"
+  - "prompt optimization"
+  - "evolving memory"
+  - "playbook"
 date: 2026-05-08
 content_hash: 47c2afc19cb7fc43
 ---

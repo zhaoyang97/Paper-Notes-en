@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Adapt-As-You-Walk Through the Clouds: Training-Free Online Test-Time Adaptation of 3D Vision-Language Foundation Models
 description: >-
-  [AAAI 2026][3D Vision][Test-time adaptation] This paper proposes Uni-Adapter, a training-free online test-time adaptation (TTA) framework for 3D vision-language foundation models (VLFMs). It addresses distribution shifts via clustering-based dynamic prototype caching and graph-regularized label smoothing, achieving state-of-the-art performance on multiple 3D corruption benchmarks.
+  [AAAI 2026][3D Vision][Test-time adaptation] This paper proposes Uni-Adapter, a training-free online test-time adaptation (TTA) framework for 3D vision-language foundation models (VLFMs). It addresses distribution shifts…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - Test-time adaptation
-  - 3D point cloud
-  - vision-language foundation models
-  - dynamic prototype learning
-  - training-free adaptation
-  - online clustering
-  - graph regularization
+  - "AAAI 2026"
+  - "3D Vision"
+  - "Test-time adaptation"
+  - "3D point cloud"
+  - "vision-language foundation models"
+  - "dynamic prototype learning"
+  - "training-free adaptation"
+  - "online clustering"
+  - "graph regularization"
 date: 2026-05-08
 content_hash: b771b88b68d85dfa
 ---

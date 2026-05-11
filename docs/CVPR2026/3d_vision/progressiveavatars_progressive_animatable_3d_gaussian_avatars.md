@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ProgressiveAvatars: Progressive Animatable 3D Gaussian Avatars
 description: >-
-  [CVPR 2026][3D Vision][Progressive 3D representation] This paper proposes ProgressiveAvatars, a progressive avatar representation that constructs hierarchical 3DGS via adaptive implicit subdivision on a template mesh, enabling progressive transmission and rendering under varying bandwidth and compute constraints. With only 5% of the data (2.6 MB), a usable avatar is immediately renderable, and incremental loading smoothly improves quality to a level comparable with state-of-the-art methods.
+  [CVPR 2026][3D Vision][Progressive 3D representation] This paper proposes ProgressiveAvatars, a progressive avatar representation that constructs hierarchical 3DGS via adaptive implicit subdivision on a template mesh…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Progressive 3D representation
-  - animatable head avatars
-  - 3D Gaussian splatting
-  - streaming
-  - adaptive subdivision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Progressive 3D representation"
+  - "animatable head avatars"
+  - "3D Gaussian splatting"
+  - "streaming"
+  - "adaptive subdivision"
 date: 2026-05-08
 content_hash: 043a923721c56f2b
 ---

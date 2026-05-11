@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EquivAnIA: A Spectral Method for Rotation-Equivariant Anisotropic Image Analysis
 description: >-
-  [CVPR 2026][Medical Imaging][anisotropic analysis] This paper proposes EquivAnIA, which employs a family of oriented filters (cake wavelets and ridge filters) to estimate the angular distribution of an image via weighted averaging in the frequency domain, replacing conventional angular binning. The method achieves truly numerically rotation-robust anisotropic analysis, with a dominant orientation estimation error of only 0.03° on synthetic images and a CT registration error of only 0.02°.
+  [CVPR 2026][Medical Imaging][anisotropic analysis] This paper proposes EquivAnIA, which employs a family of oriented filters (cake wavelets and ridge filters) to estimate the angular distribution of an image via weighted…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - anisotropic analysis
-  - rotation equivariance
-  - cake wavelets
-  - ridge filters
-  - angular registration
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "anisotropic analysis"
+  - "rotation equivariance"
+  - "cake wavelets"
+  - "ridge filters"
+  - "angular registration"
 date: 2026-05-08
 content_hash: 80b2dfc396aeaeda
 ---

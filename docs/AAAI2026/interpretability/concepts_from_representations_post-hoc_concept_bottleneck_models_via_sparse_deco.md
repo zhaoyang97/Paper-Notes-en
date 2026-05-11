@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Concepts from Representations: Post-hoc Concept Bottleneck Models via Sparse Decomposition of Visual Representations
 description: >-
-  [AAAI 2026][Concept Bottleneck Models] This paper proposes PCBM-ReD, a post-hoc concept bottleneck model that automatically extracts concepts from pretrained visual encoders via sparse autoencoders, annotates and filters them using MLLMs, and selects a representative subset through reconstruction-guided search. Image representations are then sparsely decomposed into linear combinations of concept embeddings via CLIP's vision-language alignment. The method achieves state-of-the-art accuracy on 11 classification benchmarks while maintaining interpretability.
+  [AAAI 2026][Interpretability][Concept Bottleneck Models] This paper proposes PCBM-ReD, a post-hoc concept bottleneck model that automatically extracts concepts from pretrained visual encoders via sparse autoencoders…
 tags:
-  - AAAI 2026
-  - Concept Bottleneck Models
-  - Interpretability
-  - CLIP
-  - Sparse Decomposition
-  - Representation Learning
+  - "AAAI 2026"
+  - "Interpretability"
+  - "Concept Bottleneck Models"
+  - "CLIP"
+  - "Sparse Decomposition"
+  - "Representation Learning"
 date: 2026-05-08
 content_hash: 9e327d79a52a924f
 ---

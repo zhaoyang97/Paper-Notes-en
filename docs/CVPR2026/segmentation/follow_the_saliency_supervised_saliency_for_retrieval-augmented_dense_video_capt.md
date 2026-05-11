@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Follow the Saliency: Supervised Saliency for Retrieval-augmented Dense Video Captioning
 description: >-
-  [CVPR 2026][Segmentation][Dense Video Captioning] This paper proposes STaRC, a framework that leverages supervised frame-level saliency learning to jointly drive retrieval (saliency-guided segmentation and retrieval) and caption generation (saliency prompt injection into the decoder), achieving substantial improvements in temporal alignment and caption quality for dense video captioning (DVC).
+  [CVPR 2026][Segmentation][Dense Video Captioning] This paper proposes STaRC, a framework that leverages supervised frame-level saliency learning to jointly drive retrieval (saliency-guided segmentation and retrieval) and…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Dense Video Captioning
-  - Saliency Learning
-  - Retrieval Augmentation
-  - Temporal Segmentation
-  - Optimal Transport
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Dense Video Captioning"
+  - "Saliency Learning"
+  - "Retrieval Augmentation"
+  - "Temporal Segmentation"
+  - "Optimal Transport"
 date: 2026-05-08
 content_hash: ffe38dc66bd36646
 ---

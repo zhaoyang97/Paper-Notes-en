@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] 3DTeethSAM: Taming SAM2 for 3D Teeth Segmentation
 description: >-
-  [AAAI 2026][3D Vision][3D teeth segmentation] This work adapts the SAM2 foundation model for 3D teeth segmentation by converting 3D meshes into 2D images via multi-view rendering and designing three lightweight adapters—a Prompt Embedding Generator, a Mask Refiner, and a Mask Classifier—along with a Deformable Global Attention Plugin (DGAP) to address automatic prompting, boundary refinement, and semantic classification. The proposed method achieves a new state-of-the-art T-mIoU of 91.90% on Teeth3DS.
+  [AAAI 2026][3D Vision][3D teeth segmentation] This work adapts the SAM2 foundation model for 3D teeth segmentation by converting 3D meshes into 2D images via multi-view rendering and designing three lightweight adapters—…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - 3D teeth segmentation
-  - SAM2 adaptation
-  - multi-view rendering
-  - deformable attention
-  - foundation model transfer
+  - "AAAI 2026"
+  - "3D Vision"
+  - "3D teeth segmentation"
+  - "SAM2 adaptation"
+  - "multi-view rendering"
+  - "deformable attention"
+  - "foundation model transfer"
 date: 2026-05-08
 content_hash: 4100f16abae870e4
 ---

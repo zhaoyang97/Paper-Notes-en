@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HyRF: Hybrid Radiance Fields for Memory-efficient and High-quality Novel View Synthesis
 description: >-
-  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] This paper proposes Hybrid Radiance Fields (HyRF), which combines compact explicit Gaussians (storing only 8 parameters each) with decoupled grid-based neural fields, achieving 20× model compression while attaining state-of-the-art rendering quality and real-time performance.
+  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] This paper proposes Hybrid Radiance Fields (HyRF), which combines compact explicit Gaussians (storing only 8 parameters each) with decoupled grid-based neural fields…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - Neural Radiance Fields
-  - Hybrid Representation
-  - Model Compression
-  - Real-time Rendering
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Neural Radiance Fields"
+  - "Hybrid Representation"
+  - "Model Compression"
+  - "Real-time Rendering"
 date: 2026-05-08
 content_hash: 30c9a041c4c58ac7
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Heterogeneous Swarms: Jointly Optimizing Model Roles and Weights for Multi-LLM Systems
 description: >-
-  [NeurIPS 2025][Graph Learning][Multi-LLM collaboration] This paper proposes the Heterogeneous Swarms algorithm, which models multi-LLM systems as directed acyclic graphs (DAGs) and employs PSO to alternately execute a role-step (optimizing the topological connectivity structure among LLMs) and a weight-step (quantifying individual contributions via the JFK-score and optimizing model weights), achieving an average improvement of 18.5% over 17 baseline methods across 12 tasks.
+  [NeurIPS 2025][Graph Learning][Multi-LLM collaboration] This paper proposes the Heterogeneous Swarms algorithm, which models multi-LLM systems as directed acyclic graphs (DAGs) and employs PSO to alternately execute a ro…
 tags:
-  - NeurIPS 2025
-  - Graph Learning
-  - Multi-LLM collaboration
-  - particle swarm optimization
-  - DAG structure learning
-  - model role optimization
-  - model weight optimization
+  - "NeurIPS 2025"
+  - "Graph Learning"
+  - "Multi-LLM collaboration"
+  - "particle swarm optimization"
+  - "DAG structure learning"
+  - "model role optimization"
+  - "model weight optimization"
 date: 2026-05-08
 content_hash: f9bbeb7a0df971e9
 ---

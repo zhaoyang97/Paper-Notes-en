@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Bridging Generalization Gap of Heterogeneous Federated Clients Using Generative Models
 description: >-
-  [ICLR 2026][Image Generation][Model-heterogeneous federated learning] FedVTC proposes that, in model-heterogeneous federated learning, each client generates synthetic data via a Variational Transposed Convolution network (VTC) from aggregated feature distribution statistics to fine-tune the local model. Without requiring a public dataset, the method significantly improves generalization while reducing communication and memory overhead.
+  [ICLR 2026][Image Generation][Model-heterogeneous federated learning] FedVTC proposes that, in model-heterogeneous federated learning, each client generates synthetic data via a Variational Transposed Convolution network…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Model-heterogeneous federated learning
-  - variational transposed convolution
-  - synthetic data fine-tuning
-  - feature distribution alignment
-  - communication efficiency
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Model-heterogeneous federated learning"
+  - "variational transposed convolution"
+  - "synthetic data fine-tuning"
+  - "feature distribution alignment"
+  - "communication efficiency"
 date: 2026-05-08
 content_hash: 84258f5dceafdd48
 ---

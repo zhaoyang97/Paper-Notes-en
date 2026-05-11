@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mind the Way You Select Negative Texts: Pursuing the Distance Consistency in OOD Detection with VLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][OOD Detection] This paper identifies that existing VLM-based OOD detection methods select negative texts using intra-modal distances (text-to-text or image-to-image), which are inconsistent with the cross-modal distances optimized by CLIP. The proposed InterNeg framework systematically leverages cross-modal distances from both textual and visual perspectives, achieving a 3.47% FPR95 reduction on ImageNet.
+  [CVPR 2026][Multimodal VLM][OOD Detection] This paper identifies that existing VLM-based OOD detection methods select negative texts using intra-modal distances (text-to-text or image-to-image)…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - OOD Detection
-  - CLIP
-  - Cross-modal Distance
-  - Negative Text Selection
-  - Zero-shot
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "OOD Detection"
+  - "CLIP"
+  - "Cross-modal Distance"
+  - "Negative Text Selection"
+  - "Zero-shot"
 date: 2026-05-08
 content_hash: 72beb88d6f0a6e19
 ---

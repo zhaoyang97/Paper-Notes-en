@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Adaptive Routing of Text-to-Image Generation Requests Between Large Cloud Model and Light-Weight Edge Model
 description: >-
-  [ICCV 2025][Image Generation][text-to-image routing] This paper proposes RouteT2I, a framework that dynamically routes text-to-image generation requests to either a lightweight edge model or a large cloud model via multi-dimensional quality assessment metrics and a dual-gate token-selection MoE routing model, achieving 83.97% of the quality gain attainable by exclusively using the cloud model at a 50% routing rate.
+  [ICCV 2025][Image Generation][text-to-image routing] This paper proposes RouteT2I, a framework that dynamically routes text-to-image generation requests to either a lightweight edge model or a large cloud model via multi…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - text-to-image routing
-  - edge-cloud collaboration
-  - mixture-of-experts
-  - Pareto relative superiority
-  - dual-gate MoE
+  - "ICCV 2025"
+  - "Image Generation"
+  - "text-to-image routing"
+  - "edge-cloud collaboration"
+  - "mixture-of-experts"
+  - "Pareto relative superiority"
+  - "dual-gate MoE"
 date: 2026-05-08
 content_hash: b0ea09ff5e0cbd0e
 ---

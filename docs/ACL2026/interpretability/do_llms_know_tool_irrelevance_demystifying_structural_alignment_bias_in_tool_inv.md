@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Do LLMs Know Tool Irrelevance? Demystifying Structural Alignment Bias in Tool Invocations
 description: >-
-  [ACL 2026][Tool invocation] This paper identifies and formalizes "structural alignment bias" in LLM tool invocations — the tendency of LLMs to invoke a tool when query attributes can be effectively mapped to tool parameters, even when the tool's functionality is irrelevant to the user's goal. The authors construct the SABEval dataset to decouple structural alignment from semantic relevance, apply contrastive attention attribution (CAA) to reveal two competing internal pathways (semantic checking vs. structural matching), and propose a path rebalancing strategy that achieves 80% relative error reduction.
+  [ACL 2026][Interpretability][Tool invocation] This paper identifies and formalizes "structural alignment bias" in LLM tool invocations — the tendency of LLMs to invoke a tool when query attributes can be effectively mapp…
 tags:
-  - ACL 2026
-  - Tool invocation
-  - structural alignment bias
-  - irrelevant tool rejection
-  - interpretability
-  - attention attribution
+  - "ACL 2026"
+  - "Interpretability"
+  - "Tool invocation"
+  - "structural alignment bias"
+  - "irrelevant tool rejection"
+  - "attention attribution"
 date: 2026-05-08
 content_hash: 726b3810650fb432
 ---

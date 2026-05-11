@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] RL-Selector: Reinforcement Learning-Guided Data Selection via Redundancy Assessment
 description: >-
-  [ICCV 2025][Reinforcement Learning][Data Selection] This paper proposes RL-Selector, which introduces the ε-sample cover concept to quantify sample redundancy and formulates data selection as a reinforcement learning problem. A lightweight A2C policy network adaptively optimizes the selection strategy, achieving generalization performance comparable to or surpassing full-data training with significantly fewer samples across multiple benchmark datasets.
+  [ICCV 2025][Reinforcement Learning][Data Selection] This paper proposes RL-Selector, which introduces the ε-sample cover concept to quantify sample redundancy and formulates data selection as a reinforcement learning pro…
 tags:
-  - ICCV 2025
-  - Reinforcement Learning
-  - Data Selection
-  - Data Redundancy
-  - ε-sample cover
-  - Coreset
-  - A2C
-  - Training Efficiency
+  - "ICCV 2025"
+  - "Reinforcement Learning"
+  - "Data Selection"
+  - "Data Redundancy"
+  - "ε-sample cover"
+  - "Coreset"
+  - "A2C"
+  - "Training Efficiency"
 date: 2026-05-08
 content_hash: e3e2f7e5b5b0f0cd
 ---

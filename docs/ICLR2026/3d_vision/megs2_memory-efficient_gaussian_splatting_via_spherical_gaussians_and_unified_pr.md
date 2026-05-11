@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MEGS2: Memory-Efficient Gaussian Splatting via Spherical Gaussians and Unified Pruning
 description: >-
-  [ICLR 2026][3D Vision][3D Gaussian Splatting] This paper proposes MEGS2, a method that compresses 3DGS from the perspective of rendering VRAM: it replaces spherical harmonics (SH) entirely with prunable, arbitrarily oriented spherical Gaussians (SG) to reduce per-primitive parameter count, and formulates the joint pruning of primitive count and lobe count as a single memory-constrained optimization problem via a unified soft pruning framework. The result is an 8× reduction in static VRAM and a 6× reduction in rendering VRAM with preserved rendering quality, enabling real-time 3DGS on mobile devices for the first time.
+  [ICLR 2026][3D Vision][3D Gaussian Splatting] This paper proposes MEGS2, a method that compresses 3DGS from the perspective of rendering VRAM: it replaces spherical harmonics (SH) entirely with prunable…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - memory compression
-  - spherical harmonic replacement
-  - Spherical Gaussians
-  - unified pruning
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "memory compression"
+  - "spherical harmonic replacement"
+  - "Spherical Gaussians"
+  - "unified pruning"
 date: 2026-05-08
 content_hash: 4d4495f451b75362
 ---

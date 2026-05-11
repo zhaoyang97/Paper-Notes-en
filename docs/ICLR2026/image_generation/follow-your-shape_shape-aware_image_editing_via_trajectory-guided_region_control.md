@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Follow-Your-Shape: Shape-Aware Image Editing via Trajectory-Guided Region Control
 description: >-
-  [ICLR 2026][Image Generation][Shape Editing] This paper proposes Follow-Your-Shape, a training-free and mask-free shape-aware editing framework. It constructs a Trajectory Divergence Map (TDM) by computing token-level velocity discrepancies between inversion and editing trajectories to precisely localize editing regions, and employs a staged KV injection strategy to achieve large-scale shape transformations while strictly preserving the background.
+  [ICLR 2026][Image Generation][Shape Editing] This paper proposes Follow-Your-Shape, a training-free and mask-free shape-aware editing framework. It constructs a Trajectory Divergence Map (TDM) by computing token-level ve…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Shape Editing
-  - Trajectory Divergence Map
-  - training-free
-  - Flow Matching
-  - KV Injection
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Shape Editing"
+  - "Trajectory Divergence Map"
+  - "training-free"
+  - "Flow Matching"
+  - "KV Injection"
 date: 2026-05-08
 content_hash: 46ba763f5a93aa12
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Object-Centric World Models for Causality-Aware Reinforcement Learning
 description: >-
-  [AAAI 2026][Reinforcement Learning][Object-centric world models] This paper proposes STICA, a framework that implements the world model, policy network, and value network through a unified object-centric Transformer architecture. The world model decomposes observations into independent per-object latent states for token-level dynamics prediction, while the policy and value networks estimate token-level causal relationships via a causal attention mechanism to enable causality-aware decision-making. STICA significantly outperforms DreamerV3 and other state-of-the-art methods on the Safety Gym and OCVRL benchmarks.
+  [AAAI 2026][Reinforcement Learning][Object-centric world models] This paper proposes STICA, a framework that implements the world model, policy network…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - Object-centric world models
-  - causal attention
-  - model-based reinforcement learning
-  - Slot Attention
-  - Transformer
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "Object-centric world models"
+  - "causal attention"
+  - "model-based reinforcement learning"
+  - "Slot Attention"
+  - "Transformer"
 date: 2026-05-08
 content_hash: e66f649612ddf6de
 ---

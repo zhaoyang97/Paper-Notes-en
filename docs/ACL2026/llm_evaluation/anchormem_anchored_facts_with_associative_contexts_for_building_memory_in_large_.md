@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AnchorMem: Anchored Facts with Associative Contexts for Building Memory in Large Language Models
 description: >-
-  [ACL 2026][LLM Evaluation][LLM Memory] This paper proposes AnchorMem, a memory framework inspired by the Proustian phenomenon in cognitive science. It decouples retrieval units (atomic facts) from generation contexts (original interactions) and connects fragmented memories via an associative event graph, achieving substantial improvements over existing memory systems such as A-Mem and Mem0 on the LoCoMo benchmark.
+  [ACL 2026][LLM Evaluation][LLM Memory] This paper proposes AnchorMem, a memory framework inspired by the Proustian phenomenon in cognitive science. It decouples retrieval units (atomic facts) from generation contexts (or…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - LLM Memory
-  - Atomic Facts
-  - Associative Event Graph
-  - Retrieval Augmentation
-  - Long-term Dialogue
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "LLM Memory"
+  - "Atomic Facts"
+  - "Associative Event Graph"
+  - "Retrieval Augmentation"
+  - "Long-term Dialogue"
 date: 2026-05-08
 content_hash: cf63c856f3468211
 ---

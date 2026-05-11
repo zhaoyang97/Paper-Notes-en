@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] CarO: Chain-of-Analogy Reasoning Optimization for Robust Content Moderation
 description: >-
-  [ACL 2026][Content Moderation] This paper proposes CarO (Chain-of-Analogy Reasoning Optimization), a two-stage training framework that enables LLMs to autonomously generate analogical reference cases during inference for content moderation. The framework combines RAG-guided analogical chain generation, SFT, and customized DPO. On ambiguous moderation benchmarks, CarO achieves an average F1 improvement of 24.9%, substantially outperforming reasoning models (DeepSeek R1) and dedicated moderation models (LLaMA Guard).
+  [ACL 2026][Information Retrieval & RAG][Content Moderation] This paper proposes CarO (Chain-of-Analogy Reasoning Optimization), a two-stage training framework that enables LLMs to autonomously generate analogical referen…
 tags:
-  - ACL 2026
-  - Content Moderation
-  - Analogical Reasoning
-  - Direct Preference Optimization
-  - LLM Reasoning
-  - Decision Shortcuts
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Content Moderation"
+  - "Analogical Reasoning"
+  - "Direct Preference Optimization"
+  - "LLM Reasoning"
+  - "Decision Shortcuts"
 date: 2026-05-08
 content_hash: dfea5e224053b18b
 ---

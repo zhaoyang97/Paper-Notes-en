@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GRASS: Gradient-based Adaptive Layer-wise Importance Sampling for Memory-Efficient LLM Fine-tuning
 description: >-
-  [ACL 2026][LLM/NLP][layer-wise sampling] GRASS is a framework that employs Mean Gradient Norm (MGN) as a task-aware and training-stage-aware layer importance metric. It adaptively samples and updates a subset of model layers during fine-tuning, coupled with a layer-wise optimizer state offloading mechanism, achieving up to 4.38-point improvement in average accuracy while reducing memory usage by up to 19.97%.
+  [ACL 2026][LLM/NLP][layer-wise sampling] GRASS is a framework that employs Mean Gradient Norm (MGN) as a task-aware and training-stage-aware layer importance metric. It adaptively samples and updates a subset of model la…
 tags:
-  - ACL 2026
-  - LLM/NLP
-  - layer-wise sampling
-  - gradient importance
-  - memory-efficient fine-tuning
-  - optimizer state offloading
-  - adaptive training
+  - "ACL 2026"
+  - "LLM/NLP"
+  - "layer-wise sampling"
+  - "gradient importance"
+  - "memory-efficient fine-tuning"
+  - "optimizer state offloading"
+  - "adaptive training"
 date: 2026-05-08
 content_hash: 98813113d5a573fe
 ---

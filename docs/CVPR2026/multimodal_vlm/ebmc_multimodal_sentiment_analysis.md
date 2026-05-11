@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EBMC: Enhance-then-Balance Modality Collaboration for Robust Multimodal Sentiment Analysis
 description: >-
-  [CVPR 2026][Multimodal VLM][Multimodal Sentiment Analysis] This paper proposes EBMC, a two-stage framework that first improves the representation quality of weak modalities via semantic disentanglement and cross-modal enhancement, then achieves balanced multimodal sentiment analysis through energy-guided modality coordination and instance-aware trust distillation, maintaining strong robustness under missing-modality scenarios.
+  [CVPR 2026][Multimodal VLM][Multimodal Sentiment Analysis] This paper proposes EBMC, a two-stage framework that first improves the representation quality of weak modalities via semantic disentanglement and cross-modal en…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Multimodal Sentiment Analysis
-  - Modality Imbalance
-  - Energy-Based Model
-  - Modality Trust Distillation
-  - Robustness
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Multimodal Sentiment Analysis"
+  - "Modality Imbalance"
+  - "Energy-Based Model"
+  - "Modality Trust Distillation"
+  - "Robustness"
 date: 2026-05-08
 content_hash: 6ac4e4634dedc629
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EMPATHIA: Multi-Faceted Human-AI Collaboration for Refugee Integration
 description: >-
-  [NeurIPS 2025][Recommender Systems][refugee integration] This paper proposes EMPATHIA, a multi-agent framework grounded in Kegan's constructive-developmental theory. Three specialized agents—emotional, cultural, and ethical—engage in selector-validator negotiation to evaluate refugee resettlement recommendations. On real-world data from 6,359 refugees, the framework achieves an 87.4% convergence rate and 92.1% cultural expert agreement rate.
+  [NeurIPS 2025][Recommender Systems][refugee integration] This paper proposes EMPATHIA, a multi-agent framework grounded in Kegan's constructive-developmental theory. Three specialized agents—emotional, cultural…
 tags:
-  - NeurIPS 2025
-  - Recommender Systems
-  - refugee integration
-  - multi-agent framework
-  - selector-validator
-  - culturally-aware AI
-  - ethical AI
+  - "NeurIPS 2025"
+  - "Recommender Systems"
+  - "refugee integration"
+  - "multi-agent framework"
+  - "selector-validator"
+  - "culturally-aware AI"
+  - "ethical AI"
 date: 2026-05-08
 content_hash: 9b7a150c870668d1
 ---

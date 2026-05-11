@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PragWorld: A Benchmark Evaluating LLMs' Local World Model under Minimal Linguistic Alterations and Conversational Dynamics
 description: >-
-  [AAAI 2026][Video Understanding][LLM Evaluation] This paper proposes the PragWorld benchmark, which evaluates the plasticity and robustness of LLMs' implicit world models by applying 7 types of minimal linguistic perturbations to dialogues. A dual-perspective interpretability framework is designed to localize harmful/helpful layers, and a layer regularization fine-tuning strategy is proposed to improve robustness.
+  [AAAI 2026][Video Understanding][LLM Evaluation] This paper proposes the PragWorld benchmark, which evaluates the plasticity and robustness of LLMs' implicit world models by applying 7 types of minimal linguistic perturb…
 tags:
-  - AAAI 2026
-  - Video Understanding
-  - LLM Evaluation
-  - World Model
-  - Dialogue Understanding
-  - Robustness
-  - Interpretability
+  - "AAAI 2026"
+  - "Video Understanding"
+  - "LLM Evaluation"
+  - "World Model"
+  - "Dialogue Understanding"
+  - "Robustness"
+  - "Interpretability"
 date: 2026-05-08
 content_hash: 27a25de943300c46
 ---

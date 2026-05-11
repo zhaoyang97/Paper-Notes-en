@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Improved Differentially Private Algorithms for Rank Aggregation
 description: >-
-  [AAAI 2026][differential privacy] This paper presents improved approximation algorithms for rank aggregation under differential privacy. It introduces the first study of differentially private footrule rank aggregation with a near-optimal algorithm (which also yields a 2-approximation for the Kemeny problem), and improves the additive error of the Kemeny PTAS by combining two-way marginal queries with an unbiasedness technique (reducing the exponent of $m$ from 3 to 65/22).
+  [AAAI 2026][differential privacy] This paper presents improved approximation algorithms for rank aggregation under differential privacy. It introduces the first study of differentially private footrule rank aggregation w…
 tags:
-  - AAAI 2026
-  - differential privacy
-  - rank aggregation
-  - Kemeny ranking
-  - footrule distance
-  - approximation algorithms
+  - "AAAI 2026"
+  - "differential privacy"
+  - "rank aggregation"
+  - "Kemeny ranking"
+  - "footrule distance"
+  - "approximation algorithms"
 date: 2026-05-08
 content_hash: 5be801944806212a
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Large-scale Pre-training for Grounded Video Caption Generation
 description: >-
-  [ICCV 2025][Object Detection][grounded video caption generation] This paper proposes the GROVE model along with a large-scale automatic annotation pipeline, constructing the HowToGround1M pre-training dataset (1M videos) and the manually annotated iGround dataset (3,513 videos). GROVE jointly performs video caption generation and multi-object spatio-temporal bounding box localization, achieving state-of-the-art results on iGround, VidSTG, ActivityNet-Entities, and other benchmarks.
+  [ICCV 2025][Object Detection][grounded video caption generation] This paper proposes the GROVE model along with a large-scale automatic annotation pipeline…
 tags:
-  - ICCV 2025
-  - Object Detection
-  - grounded video caption generation
-  - large-scale pre-training
-  - spatio-temporal grounding
-  - automatic annotation
-  - bounding box prediction
+  - "ICCV 2025"
+  - "Object Detection"
+  - "grounded video caption generation"
+  - "large-scale pre-training"
+  - "spatio-temporal grounding"
+  - "automatic annotation"
+  - "bounding box prediction"
 date: 2026-05-08
 content_hash: 13f8946f2db53d6b
 ---

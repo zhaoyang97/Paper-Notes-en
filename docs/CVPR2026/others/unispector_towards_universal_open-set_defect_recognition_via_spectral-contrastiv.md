@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] UniSpector: Towards Universal Open-set Defect Recognition via Spectral-Contrastive Visual Prompting
 description: >-
-  [CVPR 2026][open-set defect detection] This paper proposes UniSpector, an open-set industrial defect detection framework that addresses visual prompt embedding collapse through spectral-spatial dual-domain feature fusion (SSPE) and angular-margin contrastive prompt encoding (CPE). On the newly constructed Inspect Anything benchmark encompassing 360 defect categories, UniSpector surpasses the best baseline by 19.7% in AP50 detection and 15.8% in segmentation.
+  [CVPR 2026][open-set defect detection] This paper proposes UniSpector, an open-set industrial defect detection framework that addresses visual prompt embedding collapse through spectral-spatial dual-domain feature fusion…
 tags:
-  - CVPR 2026
-  - open-set defect detection
-  - frequency-domain features
-  - contrastive prompt encoding
-  - visual prompting
-  - industrial quality inspection
+  - "CVPR 2026"
+  - "open-set defect detection"
+  - "frequency-domain features"
+  - "contrastive prompt encoding"
+  - "visual prompting"
+  - "industrial quality inspection"
 date: 2026-05-08
 content_hash: 08e5e45e594931d4
 ---

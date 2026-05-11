@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Gemstones: A Model Suite for Multi-Faceted Scaling Laws
 description: >-
-  [NeurIPS 2025][LLM Pretraining][scaling laws] This work releases the Gemstones model suite — an open-source collection of over 4,000 checkpoints spanning 50M–2B parameters and diverse width-depth ratios. Through systematic experimentation, the paper demonstrates that scaling laws are highly sensitive to design choices such as model selection, learning rate scheduling, and cooldown strategies, and proposes a convex-hull-based fitting method to improve scaling law stability under sparse sampling.
+  [NeurIPS 2025][LLM Pretraining][scaling laws] This work releases the Gemstones model suite — an open-source collection of over 4,000 checkpoints spanning 50M–2B parameters and diverse width-depth ratios. Through systemat…
 tags:
-  - NeurIPS 2025
-  - LLM Pretraining
-  - scaling laws
-  - width-depth ratio
-  - compute-optimality
-  - model design
-  - convex hull fitting
+  - "NeurIPS 2025"
+  - "LLM Pretraining"
+  - "scaling laws"
+  - "width-depth ratio"
+  - "compute-optimality"
+  - "model design"
+  - "convex hull fitting"
 date: 2026-05-08
 content_hash: 3c256327f39844cc
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TEAR: Temporal-aware Automated Red-teaming for Text-to-Video Models
 description: >-
-  [CVPR 2026][Video Generation][Text-to-video safety] This paper proposes TEAR, the first automated red-teaming framework targeting temporal-dimension vulnerabilities in text-to-video (T2V) models. Through a two-stage optimized temporal-aware test generator and an iterative refinement model, TEAR generates textually benign prompts that exploit temporal dynamics to elicit harmful videos, achieving attack success rates (ASR) exceeding 80% on both open-source and commercial T2V models.
+  [CVPR 2026][Video Generation][Text-to-video safety] This paper proposes TEAR, the first automated red-teaming framework targeting temporal-dimension vulnerabilities in text-to-video (T2V) models. Through a two-stage opti…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Text-to-video safety
-  - automated red-teaming
-  - temporal awareness
-  - adversarial prompt generation
-  - AI safety
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Text-to-video safety"
+  - "automated red-teaming"
+  - "temporal awareness"
+  - "adversarial prompt generation"
+  - "AI safety"
 date: 2026-05-08
 content_hash: 87e0c82f3f5647fc
 ---

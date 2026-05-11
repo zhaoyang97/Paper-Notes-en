@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Adaptive Width Neural Networks
 description: >-
-  [ICLR 2026][Model Compression][adaptive width] This paper proposes the AWN framework, which automatically learns the unbounded width (number of neurons) of each layer during training via variational inference. A monotonically decreasing importance function imposes a soft ordering on neurons, enabling width to adapt to task difficulty and supporting zero-cost post-training truncation for compression.
+  [ICLR 2026][Model Compression][adaptive width] This paper proposes the AWN framework, which automatically learns the unbounded width (number of neurons) of each layer during training via variational inference. A monotoni…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - adaptive width
-  - variational inference
-  - neuron importance ordering
-  - network compression
-  - hyperparameter learning
+  - "ICLR 2026"
+  - "Model Compression"
+  - "adaptive width"
+  - "variational inference"
+  - "neuron importance ordering"
+  - "network compression"
+  - "hyperparameter learning"
 date: 2026-05-08
 content_hash: 5fa7bfe2776aa810
 ---

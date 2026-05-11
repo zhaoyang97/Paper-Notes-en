@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Why Prototypes Collapse: Diagnosing and Preventing Partial Collapse in Prototypical Self-Supervised Learning
 description: >-
-  [ICLR 2026][Self-Supervised Learning][prototype collapse] This paper diagnoses that the root cause of partial prototype collapse in prototypical self-supervised learning is shortcut learning induced by joint optimization of the encoder and prototypes. It proposes a fully decoupled training strategy—estimating prototypes independently via an online GMM—to completely eliminate collapse and improve downstream performance.
+  [ICLR 2026][Self-Supervised Learning][prototype collapse] This paper diagnoses that the root cause of partial prototype collapse in prototypical self-supervised learning is shortcut learning induced by joint optimization…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
-  - prototype collapse
-  - DINO
-  - decoupling
-  - Gaussian mixture
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "prototype collapse"
+  - "DINO"
+  - "decoupling"
+  - "Gaussian mixture"
 date: 2026-05-08
 content_hash: 667819d38525a89a
 ---

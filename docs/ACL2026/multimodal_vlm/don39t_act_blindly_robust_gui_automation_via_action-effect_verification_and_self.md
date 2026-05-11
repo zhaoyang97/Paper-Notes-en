@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Don't Act Blindly: Robust GUI Automation via Action-Effect Verification and Self-Correction
 description: >-
-  [ACL 2026][Multimodal VLM][GUI automation] This paper proposes VeriGUI, a framework that incorporates a Thinking-Verification-Action-Expectation (TVAE) closed-loop reasoning mechanism and a two-stage training pipeline (Robust SFT + GRPO), enabling GUI agents to verify whether each action succeeds and self-correct upon failure. VeriGUI achieves substantial improvements over baselines at both 3B and 7B scales.
+  [ACL 2026][Multimodal VLM][GUI automation] This paper proposes VeriGUI, a framework that incorporates a Thinking-Verification-Action-Expectation (TVAE) closed-loop reasoning mechanism and a two-stage training pipeline (R…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - GUI automation
-  - action verification
-  - self-correction
-  - GRPO reinforcement learning
-  - robustness
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "GUI automation"
+  - "action verification"
+  - "self-correction"
+  - "GRPO reinforcement learning"
+  - "robustness"
 date: 2026-05-08
 content_hash: c31975c9bb4343a5
 ---

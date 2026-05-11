@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Provably Efficient Multi-Objective Bandit Algorithms under Preference-Centric Customization
 description: >-
-  [AAAI 2026][Reinforcement Learning][multi-objective bandits] This paper presents the first theoretical study of preference-aware customization in multi-objective multi-armed bandits (MO-MAB) with explicit user preferences. It proposes the PAMO-MAB framework and designs PRUCB-UP and PRUCB-HP algorithms for the "unknown preference" and "hidden preference" settings, respectively. Through a two-component architecture combining preference estimation and preference-aware optimization, both algorithms achieve near-optimal regret bounds. The paper also proves that preference-free algorithms inevitably incur $\Omega(T)$ linear regret when the Pareto front contains conflicting arms.
+  [AAAI 2026][Reinforcement Learning][multi-objective bandits] This paper presents the first theoretical study of preference-aware customization in multi-objective multi-armed bandits (MO-MAB) with explicit user preference…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - multi-objective bandits
-  - user preference
-  - Pareto optimality
-  - UCB
-  - regret bound
-  - preference estimation
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "multi-objective bandits"
+  - "user preference"
+  - "Pareto optimality"
+  - "UCB"
+  - "regret bound"
+  - "preference estimation"
 date: 2026-05-08
 content_hash: 7685130fc6abcb8f
 ---

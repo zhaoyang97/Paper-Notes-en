@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Continuous Uniqueness and Novelty Metrics for Generative Modeling of Inorganic Crystals
 description: >-
-  [NeurIPS 2025 (AI4Mat Workshop)][Image Generation][crystal generation] This paper identifies four critical flaws in the widely adopted discrete distance function (StructureMatcher) used to evaluate inorganic crystal generative models, and proposes continuous distance functions based on Magpie fingerprints (composition) and AMD vectors (structure) to achieve more reliable uniqueness and novelty metrics.
+  [NeurIPS 2025 (AI4Mat Workshop)][Image Generation][crystal generation] This paper identifies four critical flaws in the widely adopted discrete distance function (StructureMatcher) used to evaluate inorganic crystal gene…
 tags:
-  - NeurIPS 2025 (AI4Mat Workshop)
-  - Image Generation
-  - crystal generation
-  - uniqueness
-  - novelty
-  - distance function
-  - AMD
-  - Magpie
-  - StructureMatcher
+  - "NeurIPS 2025 (AI4Mat Workshop)"
+  - "Image Generation"
+  - "crystal generation"
+  - "uniqueness"
+  - "novelty"
+  - "distance function"
+  - "AMD"
+  - "Magpie"
+  - "StructureMatcher"
 date: 2026-05-08
 content_hash: 0271c37391b93234
 ---

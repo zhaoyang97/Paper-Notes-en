@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] MLR-Bench: Evaluating AI Agents on Open-Ended Machine Learning Research
 description: >-
-  [NeurIPS 2025][AI research agents] This paper proposes MLR-Bench, a comprehensive benchmark comprising 201 open-ended ML research tasks, accompanied by MLR-Judge (an LLM-based evaluation framework) and MLR-Agent (a modular research agent). The study finds that state-of-the-art coding agents fabricate or fail to verify experimental results in approximately 80% of cases, exposing a fundamental bottleneck in AI-automated scientific research.
+  [NeurIPS 2025][Code Intelligence][AI research agents] This paper proposes MLR-Bench, a comprehensive benchmark comprising 201 open-ended ML research tasks…
 tags:
-  - NeurIPS 2025
-  - AI research agents
-  - benchmark
-  - LLM-as-judge
-  - automated scientific discovery
-  - experimental result hallucination
+  - "NeurIPS 2025"
+  - "Code Intelligence"
+  - "AI research agents"
+  - "benchmark"
+  - "LLM-as-judge"
+  - "automated scientific discovery"
+  - "experimental result hallucination"
 date: 2026-05-08
 content_hash: b4ecedd10fb4b57d
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Colors See Colors Ignore: Clothes Changing ReID with Color Disentanglement
 description: >-
-  [ICCV 2025][Model Compression][Clothes-Changing ReID] This paper proposes CSCI, a method that introduces a Color token to learn color representations (Color See) and employs a novel S2A self-attention mechanism to disentangle color information from ReID features (Color Ignore), effectively eliminating appearance bias in clothes-changing person re-identification without requiring any external annotations.
+  [ICCV 2025][Model Compression][Clothes-Changing ReID] This paper proposes CSCI, a method that introduces a Color token to learn color representations (Color See) and employs a novel S2A self-attention mechanism to disent…
 tags:
-  - ICCV 2025
-  - Model Compression
-  - Clothes-Changing ReID
-  - Color Disentanglement
-  - Self-Attention Mechanism
-  - Vision Transformer
-  - Appearance Bias Elimination
+  - "ICCV 2025"
+  - "Model Compression"
+  - "Clothes-Changing ReID"
+  - "Color Disentanglement"
+  - "Self-Attention Mechanism"
+  - "Vision Transformer"
+  - "Appearance Bias Elimination"
 date: 2026-05-08
 content_hash: 9cd6d0f8259e44fc
 ---

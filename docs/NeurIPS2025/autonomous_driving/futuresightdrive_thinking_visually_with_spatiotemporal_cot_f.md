@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FutureSightDrive: Thinking Visually with Spatio-Temporal CoT for Autonomous Driving
 description: >-
-  [NeurIPS 2025][Autonomous Driving][Visual CoT] FSDrive enables VLAs to "think visually" — first acting as a world model to generate a unified visual CoT frame that integrates future lane lines, 3D detection boxes, and scene predictions, then acting as an inverse dynamics model to perform trajectory planning based on current observations and the visual CoT. This approach activates the visual generation capability of MLLMs using only a minimal amount of data (~0.3%).
+  [NeurIPS 2025][Autonomous Driving][Visual CoT] FSDrive enables VLAs to "think visually" — first acting as a world model to generate a unified visual CoT frame that integrates future lane lines, 3D detection boxes…
 tags:
-  - NeurIPS 2025
-  - Autonomous Driving
-  - Visual CoT
-  - Trajectory Planning
-  - World Model
-  - VLA
-  - Future Frame Prediction
+  - "NeurIPS 2025"
+  - "Autonomous Driving"
+  - "Visual CoT"
+  - "Trajectory Planning"
+  - "World Model"
+  - "VLA"
+  - "Future Frame Prediction"
 date: 2026-05-08
 content_hash: 942ab4d39fea4705
 ---

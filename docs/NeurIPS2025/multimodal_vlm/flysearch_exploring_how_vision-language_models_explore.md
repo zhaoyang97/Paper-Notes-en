@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FlySearch: Exploring how vision-language models explore
 description: >-
-  [NeurIPS 2025 (Datasets and Benchmarks Track)][Multimodal VLM][vision-language models] FlySearch introduces a photorealistic 3D outdoor environment built on Unreal Engine 5 to evaluate the exploration capabilities of VLMs. Results reveal that state-of-the-art VLMs fail to reliably complete even simple search tasks, and the performance gap relative to humans widens dramatically as task difficulty increases.
+  [NeurIPS 2025 (Datasets and Benchmarks Track)][Multimodal VLM][vision-language models] FlySearch introduces a photorealistic 3D outdoor environment built on Unreal Engine 5 to evaluate the exploration capabilities of VLM…
 tags:
-  - NeurIPS 2025 (Datasets and Benchmarks Track)
-  - Multimodal VLM
-  - vision-language models
-  - object navigation
-  - exploration capability
-  - 3D environments
-  - UAV
+  - "NeurIPS 2025 (Datasets and Benchmarks Track)"
+  - "Multimodal VLM"
+  - "vision-language models"
+  - "object navigation"
+  - "exploration capability"
+  - "3D environments"
+  - "UAV"
 date: 2026-05-08
 content_hash: 72d6d031a682e067
 ---

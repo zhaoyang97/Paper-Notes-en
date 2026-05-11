@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Jailbreak-Zero: A Path to Pareto Optimal Red Teaming for Large Language Models
 description: >-
-  [NeurIPS 2025][LLM Alignment][Red teaming] This paper proposes a policy-based (rather than example-based) evaluation framework for LLM red teaming, along with the Jailbreak-Zero method. By employing a simple large-scale parallel sampling strategy—requiring no manually crafted jailbreak tactics—the method achieves attack success rates of 99.5% on GPT-4o and 96.0% on Claude 3.5 on HarmBench, while attaining Pareto optimality across three objectives—coverage, diversity, and fidelity—through fine-tuning.
+  [NeurIPS 2025][LLM Alignment][Red teaming] This paper proposes a policy-based (rather than example-based) evaluation framework for LLM red teaming…
 tags:
-  - NeurIPS 2025
-  - LLM Alignment
-  - Red teaming
-  - LLM safety
-  - jailbreak attacks
-  - Pareto optimization
-  - policy-based evaluation
-  - automated red teaming
+  - "NeurIPS 2025"
+  - "LLM Alignment"
+  - "Red teaming"
+  - "LLM safety"
+  - "jailbreak attacks"
+  - "Pareto optimization"
+  - "policy-based evaluation"
+  - "automated red teaming"
 date: 2026-05-08
 content_hash: 40f76f90bf6204c4
 ---

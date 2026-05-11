@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TurboBoA: Faster and Exact Attention-aware Quantization without Backpropagation
 description: >-
-  [ICLR 2026][Model Compression][post-training quantization] TurboBoA proposes a backpropagation-free post-training quantization method for LLMs that achieves over 3× speedup over BoA while retaining its accuracy advantages, through three innovations: joint multi-output-channel quantization, preceding-layer error compensation, and adaptive grid selection.
+  [ICLR 2026][Model Compression][post-training quantization] TurboBoA proposes a backpropagation-free post-training quantization method for LLMs that achieves over 3× speedup over BoA while retaining its accuracy advantage…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - post-training quantization
-  - attention-aware
-  - backpropagation-free
-  - low-bit quantization
-  - LLM compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "post-training quantization"
+  - "attention-aware"
+  - "backpropagation-free"
+  - "low-bit quantization"
+  - "LLM compression"
 date: 2026-05-08
 content_hash: a2a41260f1624659
 ---

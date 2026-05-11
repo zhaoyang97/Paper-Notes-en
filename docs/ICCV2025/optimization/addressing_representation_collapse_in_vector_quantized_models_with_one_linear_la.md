@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Addressing Representation Collapse in Vector Quantized Models with One Linear Layer
 description: >-
-  [ICCV 2025][Optimization][Vector Quantization] This paper proposes SimVQ, a method that reparameterizes codebook vectors via a single learnable linear transformation layer ($\bm{C}\bm{W}$), converting the disjoint optimization of the codebook into a joint spatial optimization, thereby fundamentally resolving representation collapse in VQ models and achieving near-100% codebook utilization.
+  [ICCV 2025][Optimization][Vector Quantization] This paper proposes SimVQ, a method that reparameterizes codebook vectors via a single learnable linear transformation layer ($\bm{C}\bm{W}$)…
 tags:
-  - ICCV 2025
-  - Optimization
-  - Vector Quantization
-  - Representation Collapse
-  - Codebook Utilization
-  - Linear Transformation
-  - Multimodal
+  - "ICCV 2025"
+  - "Optimization"
+  - "Vector Quantization"
+  - "Representation Collapse"
+  - "Codebook Utilization"
+  - "Linear Transformation"
+  - "Multimodal"
 date: 2026-05-08
 content_hash: 39d5e40ff4e9aec1
 ---

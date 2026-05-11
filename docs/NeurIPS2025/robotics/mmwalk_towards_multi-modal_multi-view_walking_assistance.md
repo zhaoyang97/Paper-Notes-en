@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] mmWalk: Towards Multi-modal Multi-view Walking Assistance
 description: >-
-  [NeurIPS 2025][Robotics][blind and low-vision assistance] mmWalk constructs the first multi-modal multi-view dataset for walking assistance targeting blind and low-vision (BLV) individuals (62K frames / 559K panoramic images generated via the CARLA simulator, plus 69K VQA pairs), and benchmarks reveal that state-of-the-art VLMs perform inadequately on safety-critical tasks such as risk assessment and navigation landmark recognition (best accuracy only 55.21%); fine-tuning yields a 16.7% generalization improvement on real-world datasets.
+  [NeurIPS 2025][Robotics][blind and low-vision assistance] mmWalk constructs the first multi-modal multi-view dataset for walking assistance targeting blind and low-vision (BLV) individuals (62K frames / 559K panoramic im…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - blind and low-vision assistance
-  - VQA benchmark
-  - multi-modal
-  - multi-view
-  - CARLA simulation
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "blind and low-vision assistance"
+  - "VQA benchmark"
+  - "multi-modal"
+  - "multi-view"
+  - "CARLA simulation"
 date: 2026-05-08
 content_hash: 1d0d56b95e355b54
 ---

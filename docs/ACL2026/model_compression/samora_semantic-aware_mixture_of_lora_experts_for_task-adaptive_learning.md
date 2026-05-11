@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SAMoRA: Semantic-Aware Mixture of LoRA Experts for Task-Adaptive Learning
 description: >-
-  [ACL 2026][Model Compression][Mixture of Experts] SAMoRA addresses imprecise routing and inflexible weight fusion in existing MoE-LoRA methods through a semantic-aware router and a task-adaptive scaling mechanism, achieving state-of-the-art performance on multi-task benchmarks with only 0.15% trainable parameters.
+  [ACL 2026][Model Compression][Mixture of Experts] SAMoRA addresses imprecise routing and inflexible weight fusion in existing MoE-LoRA methods through a semantic-aware router and a task-adaptive scaling mechanism…
 tags:
-  - ACL 2026
-  - Model Compression
-  - Mixture of Experts
-  - LoRA
-  - Semantic-Aware Routing
-  - Task-Adaptive Learning
-  - Multi-Task Learning
+  - "ACL 2026"
+  - "Model Compression"
+  - "Mixture of Experts"
+  - "LoRA"
+  - "Semantic-Aware Routing"
+  - "Task-Adaptive Learning"
+  - "Multi-Task Learning"
 date: 2026-05-08
 content_hash: 920b27feb3e53a92
 ---

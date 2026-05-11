@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] SLICE: Semantic Latent Injection via Compartmentalized Embedding for Image Watermarking
 description: >-
-  [CVPR 2026][Image Generation][Diffusion model watermarking] SLICE is a semantic watermarking framework that decomposes image semantics into four factors—subject, environment, action, and detail—and binds each factor to a distinct spatial partition of the initial Gaussian noise. This enables a three-state verification mechanism that not only detects watermark presence but also localizes semantic tampering. Against the strongest CSI attack, SLICE achieves an attack success rate (ASR) of only 19%, compared to 81% for SEAL.
+  [CVPR 2026][Image Generation][Diffusion model watermarking] SLICE is a semantic watermarking framework that decomposes image semantics into four factors—subject, environment, action…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion model watermarking
-  - semantic watermarking
-  - tamper localization
-  - image provenance
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion model watermarking"
+  - "semantic watermarking"
+  - "tamper localization"
+  - "image provenance"
   - "privacy & security"
 date: 2026-05-08
 content_hash: 4136452025e54dae

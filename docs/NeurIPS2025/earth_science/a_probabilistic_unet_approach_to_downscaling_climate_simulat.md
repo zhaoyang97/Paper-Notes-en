@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] A Probabilistic U-Net Approach to Downscaling Climate Simulations
 description: >-
-  [NeurIPS 2025][Probabilistic U-Net] This work presents the first application of a probabilistic U-Net to statistical climate downscaling (16× super-resolution). By sampling from a variational latent space, the model generates ensemble forecasts for uncertainty quantification. The paper systematically compares four training objectives — WMSE, MS-SSIM, WMSE-MS-SSIM, and afCRPS — revealing complementary trade-offs between extreme event capture and fine-scale spatial variability preservation.
+  [NeurIPS 2025][Earth Science][Probabilistic U-Net] This work presents the first application of a probabilistic U-Net to statistical climate downscaling (16× super-resolution). By sampling from a variational latent space…
 tags:
-  - NeurIPS 2025
-  - Probabilistic U-Net
-  - climate downscaling
-  - variational inference
-  - extreme events
-  - training objectives
+  - "NeurIPS 2025"
+  - "Earth Science"
+  - "Probabilistic U-Net"
+  - "climate downscaling"
+  - "variational inference"
+  - "extreme events"
+  - "training objectives"
 date: 2026-05-08
 content_hash: 4866229d7f32cfab
 ---

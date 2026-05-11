@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Keep It Real: Challenges in Attacking Compression-Based Adversarial Purification
 description: >-
-  [NeurIPS 2025][AI Safety][adversarial robustness] This paper systematically evaluates compression-based adversarial purification defenses and demonstrates that the *realism* of reconstructed images is the critical factor for robustness—high-realism compression models maintain significant robustness under strong adaptive attacks, and this robustness is not attributable to gradient masking.
+  [NeurIPS 2025][AI Safety][adversarial robustness] This paper systematically evaluates compression-based adversarial purification defenses and demonstrates that the *realism* of reconstructed images is the critical factor…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - adversarial robustness
-  - image compression
-  - adversarial purification
-  - realistic reconstruction
-  - adaptive attacks
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "adversarial robustness"
+  - "image compression"
+  - "adversarial purification"
+  - "realistic reconstruction"
+  - "adaptive attacks"
 date: 2026-05-08
 content_hash: fa67c53850adfb8b
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SaPaVe: Towards Active Perception and Manipulation in Vision-Language-Action Models for Robotics
 description: >-
-  [CVPR 2026][Robotics][Active Perception] SaPaVe proposes an end-to-end active manipulation framework that decouples camera actions from manipulation actions via a bottom-up training strategy: it first learns active perception priors from 200K semantic camera-control pairs, then jointly optimizes for active manipulation, surpassing π₀ and GR00T N1 by up to 31.25% in real-world success rate.
+  [CVPR 2026][Robotics][Active Perception] SaPaVe proposes an end-to-end active manipulation framework that decouples camera actions from manipulation actions via a bottom-up training strategy: it first learns active perce…
 tags:
-  - CVPR 2026
-  - Robotics
-  - Active Perception
-  - VLA Models
-  - Decoupled Action Space
-  - 3D Spatial Injection
-  - Humanoid Robots
+  - "CVPR 2026"
+  - "Robotics"
+  - "Active Perception"
+  - "VLA Models"
+  - "Decoupled Action Space"
+  - "3D Spatial Injection"
+  - "Humanoid Robots"
 date: 2026-05-08
 content_hash: 3f342f94e108ab51
 ---

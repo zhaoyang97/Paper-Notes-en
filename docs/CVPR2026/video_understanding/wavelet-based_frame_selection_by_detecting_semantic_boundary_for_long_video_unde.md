@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Wavelet-based Frame Selection by Detecting Semantic Boundary for Long Video Understanding
 description: >-
-  [CVPR2026][Video Understanding][frame selection] This paper proposes WFS-SB, a training-free frame selection framework that applies wavelet transforms to query-frame similarity signals for semantic boundary detection. The video is segmented into semantically coherent segments, over which frame budgets are adaptively allocated and diversity-aware sampling is performed. WFS-SB substantially surpasses state-of-the-art methods on VideoMME, MLVU, and LongVideoBench.
+  [CVPR2026][Video Understanding][frame selection] This paper proposes WFS-SB, a training-free frame selection framework that applies wavelet transforms to query-frame similarity signals for semantic boundary detection. Th…
 tags:
-  - CVPR2026
-  - Video Understanding
-  - frame selection
-  - long video understanding
-  - wavelet transform
-  - semantic boundary detection
-  - large vision-language models
-  - training-free
+  - "CVPR2026"
+  - "Video Understanding"
+  - "frame selection"
+  - "long video understanding"
+  - "wavelet transform"
+  - "semantic boundary detection"
+  - "large vision-language models"
+  - "training-free"
 date: 2026-05-08
 content_hash: 2067352271e28a9e
 ---

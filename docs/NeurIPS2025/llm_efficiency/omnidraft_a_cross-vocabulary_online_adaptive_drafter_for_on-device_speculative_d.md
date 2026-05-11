@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OmniDraft: A Cross-Vocabulary Online Adaptive Drafter for On-Device Speculative Decoding
 description: >-
-  [NeurIPS 2025][LLM Efficiency][Speculative decoding] This paper proposes the OmniDraft framework, which achieves cross-vocabulary speculative decoding via an online n-gram cache, aligns the draft model with the target model through a hybrid distillation loss, and dynamically adjusts the proposal length with an adaptive drafting head. A single lightweight Llama-68M model thereby provides speculative decoding acceleration (1.5–2×) for diverse target models such as Vicuna-7B, Qwen2-7B, and Llama3-8B.
+  [NeurIPS 2025][LLM Efficiency][Speculative decoding] This paper proposes the OmniDraft framework, which achieves cross-vocabulary speculative decoding via an online n-gram cache…
 tags:
-  - NeurIPS 2025
-  - LLM Efficiency
-  - Speculative decoding
-  - cross-vocabulary
-  - online distillation
-  - adaptive drafting
-  - on-device inference
+  - "NeurIPS 2025"
+  - "LLM Efficiency"
+  - "Speculative decoding"
+  - "cross-vocabulary"
+  - "online distillation"
+  - "adaptive drafting"
+  - "on-device inference"
 date: 2026-05-08
 content_hash: e4c55d97bad6832a
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Semantic Regexes: Auto-Interpreting LLM Features with a Structured Language
 description: >-
-  [ICLR 2026][mechanistic_interpretability] This paper proposes **Semantic Regexes**, a structured language for automatically describing LLM features. By combining primitives (symbol / lexeme / field) with modifiers (context / composition / quantification), it produces feature descriptions that are equally accurate to natural language, yet more concise, consistent, and amenable to programmatic analysis.
+  [ICLR 2026][Interpretability][mechanistic_interpretability] This paper proposes **Semantic Regexes**, a structured language for automatically describing LLM features. By combining primitives (symbol / lexeme / field) wit…
 tags:
-  - ICLR 2026
-  - mechanistic_interpretability
-  - automated_interpretability
-  - sparse_autoencoders
-  - structured_language
-  - feature_description
+  - "ICLR 2026"
+  - "Interpretability"
+  - "mechanistic_interpretability"
+  - "automated_interpretability"
+  - "sparse_autoencoders"
+  - "structured_language"
+  - "feature_description"
 date: 2026-05-08
 content_hash: 87fa2b924f63a5c1
 ---

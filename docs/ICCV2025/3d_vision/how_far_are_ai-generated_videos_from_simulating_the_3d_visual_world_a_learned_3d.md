@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] How Far are AI-generated Videos from Simulating the 3D Visual World: A Learned 3D Evaluation Approach
 description: >-
-  [ICCV 2025][3D Vision][Video Evaluation] This paper proposes Learned 3D Evaluation (L3DE), an objective and quantifiable evaluation framework based on monocular 3D cues (motion, depth, appearance) and contrastive learning, designed to measure the gap between AI-generated videos and real videos in terms of 3D visual consistency, without requiring manual annotation of artifacts or quality labels.
+  [ICCV 2025][3D Vision][Video Evaluation] This paper proposes Learned 3D Evaluation (L3DE), an objective and quantifiable evaluation framework based on monocular 3D cues (motion, depth…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Video Evaluation
-  - 3D Coherence
-  - Monocular 3D Cues
-  - Contrastive Learning
-  - Deepfake Detection
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Video Evaluation"
+  - "3D Coherence"
+  - "Monocular 3D Cues"
+  - "Contrastive Learning"
+  - "Deepfake Detection"
 date: 2026-05-08
 content_hash: dd3da3528768dcde
 ---

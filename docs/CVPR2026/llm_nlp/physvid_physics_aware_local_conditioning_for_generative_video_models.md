@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PhysVid: Physics Aware Local Conditioning for Generative Video Models
 description: >-
-  [CVPR 2026][LLM/NLP][video generation] PhysVid is a physics-aware local conditioning scheme that segments videos into temporal chunks, annotates each chunk with physics phenomenon descriptions via a VLM, and injects them through chunk-level cross-attention. At inference, "negative physics prompts" (counterfactual guidance) steer generation away from physics violations, improving physics commonsense scores by approximately 33% on VideoPhy.
+  [CVPR 2026][LLM/NLP][video generation] PhysVid is a physics-aware local conditioning scheme that segments videos into temporal chunks, annotates each chunk with physics phenomenon descriptions via a VLM…
 tags:
-  - CVPR 2026
-  - LLM/NLP
-  - video generation
-  - physics consistency
-  - local conditioning
-  - cross-attention
-  - counterfactual guidance
+  - "CVPR 2026"
+  - "LLM/NLP"
+  - "video generation"
+  - "physics consistency"
+  - "local conditioning"
+  - "cross-attention"
+  - "counterfactual guidance"
 date: 2026-05-08
 content_hash: 57e9b94522ec2b9d
 ---

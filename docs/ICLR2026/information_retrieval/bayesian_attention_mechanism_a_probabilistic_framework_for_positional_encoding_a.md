@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Bayesian Attention Mechanism: A Probabilistic Framework for Positional Encoding and Context Length Extrapolation
 description: >-
-  [ICLR 2026][Bayesian attention] This paper reformulates positional encoding as prior distributions within a Bayesian attention mechanism, unifying NoPE (uniform prior) and ALiBi (Laplacian prior), and proposes a Generalized Gaussian prior (GGD-BAM) that achieves perfect passkey retrieval at 500× the training length by adding only 384 parameters.
+  [ICLR 2026][Information Retrieval & RAG][Bayesian attention] This paper reformulates positional encoding as prior distributions within a Bayesian attention mechanism…
 tags:
-  - ICLR 2026
-  - Bayesian attention
-  - positional encoding
-  - context extrapolation
-  - generalized Gaussian distribution
-  - long context
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Bayesian attention"
+  - "positional encoding"
+  - "context extrapolation"
+  - "generalized Gaussian distribution"
+  - "long context"
 date: 2026-05-08
 content_hash: 9b0369237c31da23
 ---

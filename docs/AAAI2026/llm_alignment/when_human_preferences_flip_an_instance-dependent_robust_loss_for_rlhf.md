@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] When Human Preferences Flip: An Instance-Dependent Robust Loss for RLHF
 description: >-
-  [AAAI 2026][LLM Alignment][RLHF] To address the pervasive "preference flipping" problem in human preference annotation, this paper proposes FA-DPO (Flipping-Aware DPO), which models the annotation process as a two-stage procedure consisting of "true human intent + instance-dependent flipping probability." By correcting the BT model loss and iteratively optimizing a flipping estimation module, FA-DPO substantially improves alignment robustness under various noise conditions, achieving up to a 16.7% gain over DPO when instance-dependent flipping rates are high.
+  [AAAI 2026][LLM Alignment][RLHF] To address the pervasive "preference flipping" problem in human preference annotation, this paper proposes FA-DPO (Flipping-Aware DPO)…
 tags:
-  - AAAI 2026
-  - LLM Alignment
-  - RLHF
-  - DPO
-  - preference flipping
-  - robust alignment
-  - noisy annotation
+  - "AAAI 2026"
+  - "LLM Alignment"
+  - "RLHF"
+  - "DPO"
+  - "preference flipping"
+  - "robust alignment"
+  - "noisy annotation"
 date: 2026-05-08
 content_hash: 7a2fbe78b81c2578
 ---

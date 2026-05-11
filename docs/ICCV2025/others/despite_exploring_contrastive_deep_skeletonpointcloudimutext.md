@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] DeSPITE: Exploring Contrastive Deep Skeleton-Pointcloud-IMU-Text Embeddings for Advanced Point Cloud Human Activity Understanding
 description: >-
-  [ICCV 2025][multimodal contrastive learning] This paper proposes DeSPITE, a contrastive learning framework that aligns four modalities—LiDAR point clouds, skeletal poses, IMU signals, and text—into a joint embedding space. It is the first to adopt LiDAR (rather than RGB) as the primary visual modality, enabling previously infeasible tasks such as cross-modal matching and retrieval, while also serving as an effective HAR pretraining strategy that achieves state-of-the-art performance on MSR-Action3D and HMPEAR.
+  [ICCV 2025][multimodal contrastive learning] This paper proposes DeSPITE, a contrastive learning framework that aligns four modalities—LiDAR point clouds, skeletal poses, IMU signals…
 tags:
-  - ICCV 2025
-  - multimodal contrastive learning
-  - LiDAR point cloud
-  - human activity recognition
-  - cross-modal retrieval
-  - privacy preservation
+  - "ICCV 2025"
+  - "multimodal contrastive learning"
+  - "LiDAR point cloud"
+  - "human activity recognition"
+  - "cross-modal retrieval"
+  - "privacy preservation"
 date: 2026-05-08
 content_hash: 3aa9a13c281fec3e
 ---

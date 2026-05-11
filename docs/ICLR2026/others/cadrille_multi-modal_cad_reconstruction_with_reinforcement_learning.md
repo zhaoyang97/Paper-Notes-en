@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] cadrille: Multi-modal CAD Reconstruction with Reinforcement Learning
 description: >-
-  [ICLR 2026][CAD reconstruction] cadrille is the first multi-modal CAD reconstruction model capable of handling point cloud, multi-view image, and text inputs simultaneously. Through a three-stage training paradigm of VLM backbone + SFT + RL fine-tuning, it achieves state-of-the-art performance across 10 CAD reconstruction benchmarks, with RL fine-tuning reducing the invalid rate to near 0%.
+  [ICLR 2026][CAD reconstruction] cadrille is the first multi-modal CAD reconstruction model capable of handling point cloud, multi-view image…
 tags:
-  - ICLR 2026
-  - CAD reconstruction
-  - multi-modal
-  - reinforcement learning
-  - VLM
-  - code generation
+  - "ICLR 2026"
+  - "CAD reconstruction"
+  - "multi-modal"
+  - "reinforcement learning"
+  - "VLM"
+  - "code generation"
 date: 2026-05-08
 content_hash: 4fe7acf9a72db3af
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Interpretable Queries for Explainable Image Classification with Information Pursuit
 description: >-
-  [ICCV 2025][Optimization][Explainable classification] This paper parameterizes the query dictionary of Information Pursuit (IP) as learnable vectors in the CLIP semantic embedding space, and learns a task-sufficient interpretable query dictionary via an alternating optimization algorithm, substantially closing the performance gap between interpretable classifiers and black-box classifiers.
+  [ICCV 2025][Optimization][Explainable classification] This paper parameterizes the query dictionary of Information Pursuit (IP) as learnable vectors in the CLIP semantic embedding space…
 tags:
-  - ICCV 2025
-  - Optimization
-  - Explainable classification
-  - Information Pursuit
-  - sparse dictionary learning
-  - CLIP
-  - query dictionary optimization
+  - "ICCV 2025"
+  - "Optimization"
+  - "Explainable classification"
+  - "Information Pursuit"
+  - "sparse dictionary learning"
+  - "CLIP"
+  - "query dictionary optimization"
 date: 2026-05-08
 content_hash: 95dd1406d1366efc
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Topology of Reasoning: Understanding Large Reasoning Models through Reasoning Graph Properties
 description: >-
-  [NeurIPS 2025][LLM Reasoning][reasoning graph] This paper introduces the concept of a *reasoning graph* — a directed graph constructed by clustering the hidden states of LLMs — and analyzes large reasoning models (e.g., the DeepSeek-R1 distillation series) along three graph-theoretic dimensions: cycle density, diameter, and small-world index. Reasoning models are found to exhibit significantly more cycles (~5 per sample), larger diameters, and stronger small-world properties (~6×), all of which grow with task difficulty and model scale.
+  [NeurIPS 2025][LLM Reasoning][reasoning graph] This paper introduces the concept of a *reasoning graph* — a directed graph constructed by clustering the hidden states of LLMs — and analyzes large reasoning models (e.g.…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - reasoning graph
-  - induction heads
-  - small-world
-  - cycle detection
-  - chain-of-thought
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "reasoning graph"
+  - "induction heads"
+  - "small-world"
+  - "cycle detection"
+  - "chain-of-thought"
 date: 2026-05-08
 content_hash: fedd30583ef75415
 ---

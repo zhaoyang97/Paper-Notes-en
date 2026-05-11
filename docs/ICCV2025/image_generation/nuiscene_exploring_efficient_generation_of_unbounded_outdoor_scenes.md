@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] NuiScene: Exploring Efficient Generation of Unbounded Outdoor Scenes
 description: >-
-  [ICCV 2025][Image Generation][unbounded scene generation] NuiScene proposes an efficient vector set encoding scheme for scene chunks, paired with an explicitly trained outpainting diffusion model, to enable fast unbounded outdoor scene generation. The work also curates NuiScene43, a high-quality outdoor scene dataset.
+  [ICCV 2025][Image Generation][unbounded scene generation] NuiScene proposes an efficient vector set encoding scheme for scene chunks, paired with an explicitly trained outpainting diffusion model…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - unbounded scene generation
-  - vector set representation
-  - outpainting
-  - diffusion model
-  - outdoor scenes
-  - 3D generation
+  - "ICCV 2025"
+  - "Image Generation"
+  - "unbounded scene generation"
+  - "vector set representation"
+  - "outpainting"
+  - "diffusion model"
+  - "outdoor scenes"
+  - "3D generation"
 date: 2026-05-08
 content_hash: f3c9320e2561c056
 ---

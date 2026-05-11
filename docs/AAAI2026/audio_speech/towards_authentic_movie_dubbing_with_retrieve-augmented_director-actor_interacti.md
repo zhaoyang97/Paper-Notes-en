@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Authentic Movie Dubbing with Retrieve-Augmented Director-Actor Interaction Learning
 description: >-
-  [AAAI 2026][Audio & Speech][Movie Dubbing] Authentic-Dubber simulates the director-actor interaction workflow in real-world dubbing by constructing a multimodal reference footage library, employing an emotion-similarity-based retrieval-augmented strategy, and adopting a progressive graph-based speech generation approach. The method significantly improves the emotional expressiveness of automatic movie dubbing, achieving state-of-the-art emotion accuracy and MOS scores on the V2C-Animation dataset.
+  [AAAI 2026][Audio & Speech][Movie Dubbing] Authentic-Dubber simulates the director-actor interaction workflow in real-world dubbing by constructing a multimodal reference footage library…
 tags:
-  - AAAI 2026
+  - "AAAI 2026"
   - "Audio & Speech"
-  - Movie Dubbing
-  - Emotional Expression
-  - Retrieval-Augmented Generation
-  - Graph Neural Networks
-  - Multimodal Emotion Modeling
+  - "Movie Dubbing"
+  - "Emotional Expression"
+  - "Retrieval-Augmented Generation"
+  - "Graph Neural Networks"
+  - "Multimodal Emotion Modeling"
 date: 2026-05-08
 content_hash: 3ab79b9062d47694
 ---

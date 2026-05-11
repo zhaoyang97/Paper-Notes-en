@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Vanast: Virtual Try-On with Human Image Animation via Synthetic Triplet Supervision
 description: >-
-  [CVPR 2026][Video Generation][Virtual Try-On] Vanast proposes a unified framework that simultaneously performs garment transfer and human image animation within a single stage via a Dual Module architecture (HAM + GTM) and a three-stage synthetic data construction pipeline. On the Internet dataset, it achieves a PSNR of 17.95 dB (+5.5 dB over the best two-stage baseline) and an LPIPS of 0.237.
+  [CVPR 2026][Video Generation][Virtual Try-On] Vanast proposes a unified framework that simultaneously performs garment transfer and human image animation within a single stage via a Dual Module architecture (HAM + GTM) a…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Virtual Try-On
-  - Human Image Animation
-  - Synthetic Triplet
-  - Dual Module
-  - Video Diffusion
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Virtual Try-On"
+  - "Human Image Animation"
+  - "Synthetic Triplet"
+  - "Dual Module"
+  - "Video Diffusion"
 date: 2026-05-08
 content_hash: 016ed2c33d8c88fe
 ---

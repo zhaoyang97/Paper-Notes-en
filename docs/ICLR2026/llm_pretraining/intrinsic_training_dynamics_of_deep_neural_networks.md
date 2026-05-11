@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Intrinsic Training Dynamics of Deep Neural Networks
 description: >-
-  [ICLR 2026][LLM Pretraining][intrinsic dynamics] This paper investigates when the trajectory in parameter space under gradient flow training of deep neural networks can be "lifted" to a low-dimensional intrinsic space and expressed as an intrinsic Riemannian gradient flow. It proposes an intrinsic recoverability criterion based on conservation laws and extends the results to ReLU networks and linear networks of arbitrary depth.
+  [ICLR 2026][LLM Pretraining][intrinsic dynamics] This paper investigates when the trajectory in parameter space under gradient flow training of deep neural networks can be "lifted" to a low-dimensional intrinsic space an…
 tags:
-  - ICLR 2026
-  - LLM Pretraining
-  - intrinsic dynamics
-  - gradient flow
-  - conservation laws
-  - implicit bias
-  - Riemannian metric
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "intrinsic dynamics"
+  - "gradient flow"
+  - "conservation laws"
+  - "implicit bias"
+  - "Riemannian metric"
 date: 2026-05-08
 content_hash: 8912533a9ffbb042
 ---

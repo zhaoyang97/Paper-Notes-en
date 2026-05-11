@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multimodal Latent Diffusion Model for Complex Sewing Pattern Generation
 description: >-
-  [ICCV 2025][Image Generation][Sewing pattern generation] This paper proposes SewingLDM, a multimodal conditional latent diffusion model that generates complex sewing patterns under text, sketch, and body-shape conditions via an extended sewing pattern representation and a two-stage training strategy, with seamless integration into CG simulation pipelines.
+  [ICCV 2025][Image Generation][Sewing pattern generation] This paper proposes SewingLDM, a multimodal conditional latent diffusion model that generates complex sewing patterns under text, sketch…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Sewing pattern generation
-  - latent diffusion model
-  - multimodal conditioning
-  - body-shape awareness
-  - CG pipeline
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Sewing pattern generation"
+  - "latent diffusion model"
+  - "multimodal conditioning"
+  - "body-shape awareness"
+  - "CG pipeline"
 date: 2026-05-08
 content_hash: 427ac831e751145b
 ---

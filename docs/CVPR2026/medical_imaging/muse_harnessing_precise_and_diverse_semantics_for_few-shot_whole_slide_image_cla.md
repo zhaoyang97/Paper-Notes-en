@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] MUSE: Harnessing Precise and Diverse Semantics for Few-Shot Whole Slide Image Classification
 description: >-
-  [CVPR2026][Medical Imaging][Whole Slide Image Classification] This paper proposes the MUSE framework, which significantly improves generalization in few-shot whole slide image (WSI) classification through MoE-driven sample-wise fine-grained semantic enhancement (SFSE) and LLM knowledge base-based stochastic multi-view model optimization (SMMO).
+  [CVPR2026][Medical Imaging][Whole Slide Image Classification] This paper proposes the MUSE framework, which significantly improves generalization in few-shot whole slide image (WSI) classification through MoE-driven samp…
 tags:
-  - CVPR2026
-  - Medical Imaging
-  - Whole Slide Image Classification
-  - Few-Shot Learning
-  - Multiple Instance Learning
-  - Vision-Language Models
-  - Semantic Enhancement
-  - MoE
-  - Knowledge Base Retrieval
+  - "CVPR2026"
+  - "Medical Imaging"
+  - "Whole Slide Image Classification"
+  - "Few-Shot Learning"
+  - "Multiple Instance Learning"
+  - "Vision-Language Models"
+  - "Semantic Enhancement"
+  - "MoE"
+  - "Knowledge Base Retrieval"
 date: 2026-05-08
 content_hash: 445222225bd39f1d
 ---

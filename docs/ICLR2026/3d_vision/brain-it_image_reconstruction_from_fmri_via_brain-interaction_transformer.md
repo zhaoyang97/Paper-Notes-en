@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Brain-IT: Image Reconstruction from fMRI via Brain-Interaction Transformer
 description: >-
-  [ICLR 2026][3D Vision][fMRI brain decoding] This paper proposes Brain-IT, a framework that employs a brain-inspired Brain Interaction Transformer (BIT) to cluster functionally similar brain voxels into cross-subject shared Brain Tokens, from which localized semantic and structural image features are predicted, enabling high-fidelity reconstruction of images from fMRI signals. With only 1 hour of data, Brain-IT achieves performance comparable to prior methods trained on 40 hours of data.
+  [ICLR 2026][3D Vision][fMRI brain decoding] This paper proposes Brain-IT, a framework that employs a brain-inspired Brain Interaction Transformer (BIT) to cluster functionally similar brain voxels into cross-subject shar…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - fMRI brain decoding
-  - image reconstruction
-  - Brain-Interaction Transformer
-  - cross-subject transfer
-  - diffusion models
-  - Deep Image Prior
+  - "ICLR 2026"
+  - "3D Vision"
+  - "fMRI brain decoding"
+  - "image reconstruction"
+  - "Brain-Interaction Transformer"
+  - "cross-subject transfer"
+  - "diffusion models"
+  - "Deep Image Prior"
 date: 2026-05-08
 content_hash: c4a08f9dbc620626
 ---

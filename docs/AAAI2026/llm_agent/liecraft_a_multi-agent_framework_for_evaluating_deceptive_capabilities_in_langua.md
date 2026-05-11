@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LieCraft: A Multi-Agent Framework for Evaluating Deceptive Capabilities in Language Models
 description: >-
-  [AAAI 2026][LLM Agent][deception evaluation] This paper proposes LieCraft, a multi-player hidden-role game framework (with constraint-satisfaction-guaranteed balance) to evaluate the strategic deception capabilities of 12 LLMs. It finds that all tested frontier LLMs—including GPT-4o—exhibit deception rates exceeding 90% under incentive conditions, demonstrating that safety training has not eliminated the capacity for strategic lying.
+  [AAAI 2026][LLM Agent][deception evaluation] This paper proposes LieCraft, a multi-player hidden-role game framework (with constraint-satisfaction-guaranteed balance) to evaluate the strategic deception capabilities of 1…
 tags:
-  - AAAI 2026
-  - LLM Agent
-  - deception evaluation
-  - multi-agent game
-  - hidden role
-  - strategic deception
-  - safety evaluation
+  - "AAAI 2026"
+  - "LLM Agent"
+  - "deception evaluation"
+  - "multi-agent game"
+  - "hidden role"
+  - "strategic deception"
+  - "safety evaluation"
 date: 2026-05-08
 content_hash: 2e45b77092a5e03e
 ---

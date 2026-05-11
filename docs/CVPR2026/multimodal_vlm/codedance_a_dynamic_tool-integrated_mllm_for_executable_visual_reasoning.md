@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CodeDance: A Dynamic Tool-integrated MLLM for Executable Visual Reasoning
 description: >-
-  [CVPR 2026][Multimodal VLM][Executable visual reasoning] This paper proposes CodeDance, which uses executable code as a general-purpose solver for visual reasoning. The MLLM generates code to define, compose, and execute diverse tools, rendering intermediate visual results (bboxes, lines, charts) to support an auditable reasoning chain. RL training is guided by a tool-calling reward that balances exploration and efficiency. During RL, the model exhibits emergent unseen tool-calling combinations and cross-task transfer, with the 7B model surpassing GPT-4o on counting, visual search, and chart QA.
+  [CVPR 2026][Multimodal VLM][Executable visual reasoning] This paper proposes CodeDance, which uses executable code as a general-purpose solver for visual reasoning. The MLLM generates code to define, compose…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Executable visual reasoning
-  - tool integration
-  - code generation
-  - reinforcement learning
-  - emergent behavior
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Executable visual reasoning"
+  - "tool integration"
+  - "code generation"
+  - "reinforcement learning"
+  - "emergent behavior"
 date: 2026-05-08
 content_hash: dc6358bbcae14701
 ---

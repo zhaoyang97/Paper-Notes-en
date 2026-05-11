@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Maximizing Local Entropy Where It Matters: Prefix-Aware Localized LLM Unlearning
 description: >-
-  [ACL 2026][LLM Safety][LLM unlearning] This paper proposes PALU (Prefix-Aware Localized Unlearning), which achieves localized entropy maximization for unlearning along two dimensions: temporally, unlearning objectives are applied only to sensitive prefix tokens; in the vocabulary dimension, only top-K logits are flattened. This approach enables effective unlearning with minimal parameter perturbation while preserving the model's general capabilities.
+  [ACL 2026][LLM Safety][LLM unlearning] This paper proposes PALU (Prefix-Aware Localized Unlearning), which achieves localized entropy maximization for unlearning along two dimensions: temporally…
 tags:
-  - ACL 2026
-  - LLM Safety
-  - LLM unlearning
-  - localized entropy maximization
-  - prefix-awareness
-  - vocabulary sparsity optimization
-  - privacy protection
+  - "ACL 2026"
+  - "LLM Safety"
+  - "LLM unlearning"
+  - "localized entropy maximization"
+  - "prefix-awareness"
+  - "vocabulary sparsity optimization"
+  - "privacy protection"
 date: 2026-05-08
 content_hash: 3c8059ef4b406361
 ---

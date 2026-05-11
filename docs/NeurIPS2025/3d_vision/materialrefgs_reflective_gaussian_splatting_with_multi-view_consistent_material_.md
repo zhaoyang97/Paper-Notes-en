@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MaterialRefGS: Reflective Gaussian Splatting with Multi-view Consistent Material Inference
 description: >-
-  [NeurIPS 2025][3D Vision][Gaussian splatting] MaterialRefGS is proposed to achieve high-fidelity novel view synthesis and accurate illumination decomposition for reflective surfaces, via multi-view consistent material inference constraints and a 2DGS ray-tracing-based environment modeling strategy.
+  [NeurIPS 2025][3D Vision][Gaussian splatting] MaterialRefGS is proposed to achieve high-fidelity novel view synthesis and accurate illumination decomposition for reflective surfaces…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Gaussian splatting
-  - reflection modeling
-  - multi-view consistency
-  - PBR
-  - illumination decomposition
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Gaussian splatting"
+  - "reflection modeling"
+  - "multi-view consistency"
+  - "PBR"
+  - "illumination decomposition"
 date: 2026-05-08
 content_hash: 37d2463a48dccf6b
 ---

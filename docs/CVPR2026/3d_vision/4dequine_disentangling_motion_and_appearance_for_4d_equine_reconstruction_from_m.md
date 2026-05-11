@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] 4DEquine: Disentangling Motion and Appearance for 4D Equine Reconstruction from Monocular Video
 description: >-
-  [CVPR 2026][3D Vision][4D reconstruction] This paper proposes the 4DEquine framework, which **disentangles** 4D equine reconstruction from monocular video into two subproblems — dynamic motion estimation (AniMoFormer) and static appearance reconstruction (EquineGS) — achieving SOTA on real-world data while training exclusively on synthetic data.
+  [CVPR 2026][3D Vision][4D reconstruction] This paper proposes the 4DEquine framework, which **disentangles** 4D equine reconstruction from monocular video into two subproblems — dynamic motion estimation (AniMoFormer) an…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 4D reconstruction
-  - equine reconstruction
-  - 3D Gaussian Splatting
-  - parametric model
-  - monocular video
-  - feed-forward
+  - "CVPR 2026"
+  - "3D Vision"
+  - "4D reconstruction"
+  - "equine reconstruction"
+  - "3D Gaussian Splatting"
+  - "parametric model"
+  - "monocular video"
+  - "feed-forward"
 date: 2026-05-08
 content_hash: e9af4e1f98f55544
 ---

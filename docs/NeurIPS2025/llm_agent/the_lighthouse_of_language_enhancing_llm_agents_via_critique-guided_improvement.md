@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The Lighthouse of Language: Enhancing LLM Agents via Critique-Guided Improvement
 description: >-
-  [NeurIPS 2025][LLM Agent][Natural language feedback] This paper proposes CGI (Critique-Guided Improvement), a dual-role framework that trains a dedicated Critic model to provide structured natural language feedback (discrimination + correction suggestions) to an Actor Agent, and enables the Actor to learn to leverage such feedback through iterative action refinement. CGI achieves an average score of 74.20% across WebShop, ScienceWorld, and TextCraft, surpassing GPT-4o (45.46%) and Iterative SFT (58.21%).
+  [NeurIPS 2025][LLM Agent][Natural language feedback] This paper proposes CGI (Critique-Guided Improvement), a dual-role framework that trains a dedicated Critic model to provide structured natural language feedback (disc…
 tags:
-  - NeurIPS 2025
-  - LLM Agent
-  - Natural language feedback
-  - Actor-Critic
-  - Iterative refinement
-  - Interactive environments
-  - Agent training
+  - "NeurIPS 2025"
+  - "LLM Agent"
+  - "Natural language feedback"
+  - "Actor-Critic"
+  - "Iterative refinement"
+  - "Interactive environments"
+  - "Agent training"
 date: 2026-05-08
 content_hash: cffa833673e33d7c
 ---

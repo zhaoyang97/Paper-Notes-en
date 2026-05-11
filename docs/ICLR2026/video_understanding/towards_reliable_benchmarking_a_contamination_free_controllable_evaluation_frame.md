@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FuncBenchGen: A Contamination-Free Controllable Evaluation Framework for Reliable Benchmarking
 description: >-
-  [ICLR 2026][Video Understanding][Tool-augmented LLM] This paper proposes FuncBenchGen, a framework that models multi-step function calling as a DAG traversal problem, enabling contamination-free and finely controllable evaluation of LLM tool-use capabilities. The framework further reveals critical failure modes of reasoning models under long call chains and connected irrelevant functions.
+  [ICLR 2026][Video Understanding][Tool-augmented LLM] This paper proposes FuncBenchGen, a framework that models multi-step function calling as a DAG traversal problem…
 tags:
-  - ICLR 2026
-  - Video Understanding
-  - Tool-augmented LLM
-  - multi-step function calling
-  - benchmark
-  - data contamination
-  - DAG traversal
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "Tool-augmented LLM"
+  - "multi-step function calling"
+  - "benchmark"
+  - "data contamination"
+  - "DAG traversal"
 date: 2026-05-08
 content_hash: 9b48a653cc924ed5
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HairCUP: Hair Compositional Universal Prior for 3D Gaussian Avatars
 description: >-
-  [ICCV 2025][3D Vision][3D head modeling] This paper proposes HairCUP, a compositional universal prior model that decomposes head modeling into two independent latent spaces for face and hair. By leveraging a synthetic hairless data creation pipeline for effective disentanglement, the model supports flexible face/hairstyle swapping and few-shot monocular adaptation.
+  [ICCV 2025][3D Vision][3D head modeling] This paper proposes HairCUP, a compositional universal prior model that decomposes head modeling into two independent latent spaces for face and hair. By leveraging a synthetic ha…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D head modeling
-  - hair disentanglement
-  - compositional prior
-  - 3D Gaussian
-  - avatar head
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D head modeling"
+  - "hair disentanglement"
+  - "compositional prior"
+  - "3D Gaussian"
+  - "avatar head"
 date: 2026-05-08
 content_hash: 10562ddd61b52ec6
 ---

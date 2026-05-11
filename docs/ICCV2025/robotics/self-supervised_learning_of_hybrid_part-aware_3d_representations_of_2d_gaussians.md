@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Self-supervised Learning of Hybrid Part-aware 3D Representations of 2D Gaussians and Superquadrics
 description: >-
-  [ICCV 2025][Robotics][Part-aware reconstruction] This paper proposes PartGS, a self-supervised part-aware 3D reconstruction framework that hybridly couples 2D Gaussian Splatting with superquadrics. Through parameter sharing and multiple regularization terms, PartGS achieves simultaneous high-quality geometric decomposition and texture reconstruction, outperforming state-of-the-art methods by 75.9% in reconstruction accuracy and 16.13 dB in PSNR on DTU, ShapeNet, and real-world scenes.
+  [ICCV 2025][Robotics][Part-aware reconstruction] This paper proposes PartGS, a self-supervised part-aware 3D reconstruction framework that hybridly couples 2D Gaussian Splatting with superquadrics. Through parameter shar…
 tags:
-  - ICCV 2025
-  - Robotics
-  - Part-aware reconstruction
-  - 2D Gaussian splatting
-  - superquadrics
-  - self-supervised
-  - shape decomposition
+  - "ICCV 2025"
+  - "Robotics"
+  - "Part-aware reconstruction"
+  - "2D Gaussian splatting"
+  - "superquadrics"
+  - "self-supervised"
+  - "shape decomposition"
 date: 2026-05-08
 content_hash: edb6d08763dfcd0c
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Pan-Crafter: Learning Modality-Consistent Alignment for Pan-Sharpening
 description: >-
-  [ICCV 2025][Remote Sensing][Pan-sharpening] PAN-Crafter proposes a modality-consistent alignment framework that explicitly addresses cross-modal misregistration between PAN and MS images via Modality-Adaptive Reconstruction (MARs) and Cross-Modal Misalignment-aware Multi-scale Attention (CM3A), achieving state-of-the-art performance on multiple remote sensing benchmarks while running **1110×** faster than diffusion-based methods.
+  [ICCV 2025][Remote Sensing][Pan-sharpening] PAN-Crafter proposes a modality-consistent alignment framework that explicitly addresses cross-modal misregistration between PAN and MS images via Modality-Adaptive Reconstruct…
 tags:
-  - ICCV 2025
-  - Remote Sensing
-  - Pan-sharpening
-  - cross-modal alignment
-  - modality-adaptive reconstruction
-  - attention mechanism
-  - remote sensing image fusion
+  - "ICCV 2025"
+  - "Remote Sensing"
+  - "Pan-sharpening"
+  - "cross-modal alignment"
+  - "modality-adaptive reconstruction"
+  - "attention mechanism"
+  - "remote sensing image fusion"
 date: 2026-05-08
 content_hash: dacd677a7c285694
 ---

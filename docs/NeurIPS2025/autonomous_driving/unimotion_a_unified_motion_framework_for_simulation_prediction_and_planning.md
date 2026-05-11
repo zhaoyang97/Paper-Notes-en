@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UniMotion: A Unified Motion Framework for Simulation, Prediction and Planning
 description: >-
-  [NeurIPS 2025][Autonomous Driving][Motion Prediction] UniMotion proposes a unified motion framework built on a decoder-only Transformer, supporting motion simulation, trajectory prediction, and ego-vehicle planning simultaneously through task-aware interaction patterns and training strategies. Joint training facilitates cross-task knowledge sharing, and after task-specific fine-tuning, the model achieves state-of-the-art performance across multiple tasks on the Waymo dataset.
+  [NeurIPS 2025][Autonomous Driving][Motion Prediction] UniMotion proposes a unified motion framework built on a decoder-only Transformer, supporting motion simulation, trajectory prediction…
 tags:
-  - NeurIPS 2025
-  - Autonomous Driving
-  - Motion Prediction
-  - Trajectory Simulation
-  - Autonomous Driving Planning
-  - Unified Framework
-  - GPT-style Model
+  - "NeurIPS 2025"
+  - "Autonomous Driving"
+  - "Motion Prediction"
+  - "Trajectory Simulation"
+  - "Autonomous Driving Planning"
+  - "Unified Framework"
+  - "GPT-style Model"
 date: 2026-05-08
 content_hash: 2e8966c34aaae231
 ---

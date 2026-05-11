@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Are Reasoning LLMs Robust to Interventions on Their Chain-of-Thought?
 description: >-
-  [ICLR 2026][LLM Reasoning][reasoning LLM] This paper systematically evaluates the robustness of reasoning LLMs to various interventions (benign/neutral/adversarial) in their chain-of-thought. Models are generally robust and can recover from interventions; however, paraphrasing suppresses "self-doubt" expressions and degrades accuracy, while the recovery process incurs significant computational overhead (CoT length inflation up to 665%).
+  [ICLR 2026][LLM Reasoning][reasoning LLM] This paper systematically evaluates the robustness of reasoning LLMs to various interventions (benign/neutral/adversarial) in their chain-of-thought. Models are generally robust…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - reasoning LLM
-  - chain-of-thought
-  - robustness
-  - self-correction
-  - doubt mechanism
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "reasoning LLM"
+  - "chain-of-thought"
+  - "robustness"
+  - "self-correction"
+  - "doubt mechanism"
 date: 2026-05-08
 content_hash: 9889fd74ab6e109e
 ---

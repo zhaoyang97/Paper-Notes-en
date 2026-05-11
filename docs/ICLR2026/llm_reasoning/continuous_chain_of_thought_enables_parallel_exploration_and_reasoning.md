@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Continuous Chain of Thought Enables Parallel Exploration and Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][Continuous chain of thought] CoT2 proposes replacing discrete tokens with continuous-valued tokens (convex combinations of vocabulary embeddings) for chain-of-thought reasoning, enabling the model to track multiple reasoning paths in parallel within a single forward pass. The approach is theoretically shown to be equivalent to $K$ rounds of self-consistency/best-of-N sampling, and is further improved via GRPO-based reinforcement learning.
+  [ICLR 2026][LLM Reasoning][Continuous chain of thought] CoT2 proposes replacing discrete tokens with continuous-valued tokens (convex combinations of vocabulary embeddings) for chain-of-thought reasoning…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Continuous chain of thought
-  - parallel reasoning
-  - multi-trajectory tracking
-  - GRPO
-  - information theory
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "Continuous chain of thought"
+  - "parallel reasoning"
+  - "multi-trajectory tracking"
+  - "GRPO"
+  - "information theory"
 date: 2026-05-08
 content_hash: d93dc21f62021c27
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond Greedy Exits: Improved Early Exit Decisions for Risk Control and Reliability
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Early exit mechanism] UAT (Unsupervised Adaptive Thresholding) designs a reliability function for early-exit DNNs to assess the quality of intermediate layer outputs, and employs a multi-armed bandit (MAB) algorithm to dynamically learn optimal exit thresholds at inference time, achieving 1.7–2.1× speedup with less than 2% performance degradation while remaining robust to distribution shift.
+  [NeurIPS 2025][Multimodal VLM][Early exit mechanism] UAT (Unsupervised Adaptive Thresholding) designs a reliability function for early-exit DNNs to assess the quality of intermediate layer outputs…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Early exit mechanism
-  - risk control
-  - multi-armed bandit
-  - reliability function
-  - adaptive thresholding
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Early exit mechanism"
+  - "risk control"
+  - "multi-armed bandit"
+  - "reliability function"
+  - "adaptive thresholding"
 date: 2026-05-08
 content_hash: 661b26e4ac1f263e
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SMGDiff: Soccer Motion Generation using Diffusion Probabilistic Models
 description: >-
-  [ICCV 2025][Image Generation][motion generation] This paper proposes SMGDiff, a two-stage diffusion model framework that generates high-quality, diverse soccer motion animations in real time from user control signals, while refining ball-foot interaction details via a contact guidance module.
+  [ICCV 2025][Image Generation][motion generation] This paper proposes SMGDiff, a two-stage diffusion model framework that generates high-quality, diverse soccer motion animations in real time from user control signals…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - motion generation
-  - diffusion model
-  - soccer animation
-  - human-object interaction
-  - character control
+  - "ICCV 2025"
+  - "Image Generation"
+  - "motion generation"
+  - "diffusion model"
+  - "soccer animation"
+  - "human-object interaction"
+  - "character control"
 date: 2026-05-08
 content_hash: 563f0d7d3ba3b73c
 ---

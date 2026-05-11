@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MoVieS: Motion-Aware 4D Dynamic View Synthesis in One Second
 description: >-
-  [CVPR 2026][3D Vision][dynamic view synthesis] This paper proposes MoVieS, a feed-forward 4D dynamic scene reconstruction framework that unifies appearance, geometry, and motion modeling via **Dynamic Splatter Pixels**, enabling 4D reconstruction from monocular video in approximately one second while supporting novel view synthesis, 3D point tracking, scene flow estimation, and moving object segmentation.
+  [CVPR 2026][3D Vision][dynamic view synthesis] This paper proposes MoVieS, a feed-forward 4D dynamic scene reconstruction framework that unifies appearance, geometry, and motion modeling via **Dynamic Splatter Pixels**…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - dynamic view synthesis
-  - 4D reconstruction
-  - 3D Gaussian splatting
-  - point tracking
-  - feed-forward reconstruction
+  - "CVPR 2026"
+  - "3D Vision"
+  - "dynamic view synthesis"
+  - "4D reconstruction"
+  - "3D Gaussian splatting"
+  - "point tracking"
+  - "feed-forward reconstruction"
 date: 2026-05-08
 content_hash: b236c33c5e3fe014
 ---

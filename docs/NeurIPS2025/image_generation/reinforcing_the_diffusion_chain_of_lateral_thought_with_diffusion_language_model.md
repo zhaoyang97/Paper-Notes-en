@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Reinforcing the Diffusion Chain of Lateral Thought with Diffusion Language Models
 description: >-
-  [NeurIPS 2025][Image Generation][Diffusion Language Models] This paper proposes the Diffusion Chain of Lateral Thought (DCoLT), which treats each intermediate step in the reverse process of a diffusion language model as a latent "thinking" action and optimizes the entire reasoning trajectory via outcome-based reinforcement learning. DCoLT achieves state-of-the-art performance on mathematics and code generation benchmarks with both SEDD and LLaDA diffusion language models.
+  [NeurIPS 2025][Image Generation][Diffusion Language Models] This paper proposes the Diffusion Chain of Lateral Thought (DCoLT), which treats each intermediate step in the reverse process of a diffusion language model as…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Diffusion Language Models
-  - Lateral Thinking
-  - Reinforcement Learning
-  - GRPO
-  - Plackett-Luce
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Diffusion Language Models"
+  - "Lateral Thinking"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "Plackett-Luce"
 date: 2026-05-08
 content_hash: c90d714f52377331
 ---

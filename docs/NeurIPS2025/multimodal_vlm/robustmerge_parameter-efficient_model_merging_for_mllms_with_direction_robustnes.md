@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RobustMerge: Parameter-Efficient Model Merging for MLLMs with Direction Robustness
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Model Merging] From the perspective of low-rank decomposition, this paper identifies "direction robustness" as the key factor in parameter-efficient module merging (as opposed to sign conflicts in full-parameter merging), and proposes RobustMerge, which maintains singular value direction stability via complementary parameter adaptive scaling and cross-task normalization, achieving average improvements of 3.4% (seen tasks) and 4.5% (unseen tasks) on multimodal generation benchmarks.
+  [NeurIPS 2025][Multimodal VLM][Model Merging] From the perspective of low-rank decomposition, this paper identifies "direction robustness" as the key factor in parameter-efficient module merging (as opposed to sign confl…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Model Merging
-  - LoRA
-  - Parameter-Efficient Fine-Tuning
-  - Direction Robustness
-  - Multi-Task Learning
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Model Merging"
+  - "LoRA"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Direction Robustness"
+  - "Multi-Task Learning"
 date: 2026-05-08
 content_hash: 20d95eac343fb251
 ---

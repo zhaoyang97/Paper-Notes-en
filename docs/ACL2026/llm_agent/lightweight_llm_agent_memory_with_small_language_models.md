@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Lightweight LLM Agent Memory with Small Language Models
 description: >-
-  [ACL 2026][LLM Agent][Agent Memory] This paper proposes LightMem, a lightweight LLM agent memory system driven by multiple specialized small language models (SLMs). By modularizing memory operations into a Controller (SLM-1), a Selector (SLM-2), and a Writer (SLM-3), and decoupling online processing from offline consolidation, LightMem achieves an average F1 improvement of approximately 2.5 over A-MEM on the LoCoMo benchmark, while attaining a retrieval latency of 83ms and an end-to-end latency of 581ms.
+  [ACL 2026][LLM Agent][Agent Memory] This paper proposes LightMem, a lightweight LLM agent memory system driven by multiple specialized small language models (SLMs). By modularizing memory operations into a Controller (SL…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - Agent Memory
-  - Small Language Models
-  - Lightweight Retrieval
-  - Online-Offline Decoupling
-  - Long-term Dialogue
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Agent Memory"
+  - "Small Language Models"
+  - "Lightweight Retrieval"
+  - "Online-Offline Decoupling"
+  - "Long-term Dialogue"
 date: 2026-05-08
 content_hash: bcb8de6bc3831c43
 ---

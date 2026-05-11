@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Phantasia: Context-Adaptive Backdoors in Vision Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Backdoor Attack] Phantasia introduces the first context-adaptive backdoor attack against VLMs. Rather than generating fixed malicious text, a poisoned model receiving a triggered image silently answers an attacker-specified target question instead of the user's original query. The generated response is semantically consistent with the input image and linguistically fluent, thereby evading defenses such as STRIP-P and ONION-R. The paper also provides the first empirical demonstration that the stealthiness of existing VLM backdoor attacks has been substantially overestimated.
+  [CVPR 2026][Multimodal VLM][Backdoor Attack] Phantasia introduces the first context-adaptive backdoor attack against VLMs. Rather than generating fixed malicious text…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Backdoor Attack
-  - Vision-Language Models
-  - Context-Adaptive
-  - Knowledge Distillation
-  - Adversarial Security
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Backdoor Attack"
+  - "Vision-Language Models"
+  - "Context-Adaptive"
+  - "Knowledge Distillation"
+  - "Adversarial Security"
 date: 2026-05-08
 content_hash: 192a5763e784f1d6
 ---

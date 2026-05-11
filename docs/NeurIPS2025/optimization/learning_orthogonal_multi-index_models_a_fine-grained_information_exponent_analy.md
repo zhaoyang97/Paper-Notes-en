@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Orthogonal Multi-Index Models: A Fine-Grained Information Exponent Analysis
 description: >-
-  [NeurIPS 2025][Optimization][multi-index models] This paper proves that orthogonal multi-index models $f_*(\mathbf{x}) = \sum_{k=1}^P \phi(\mathbf{v}_k^* \cdot \mathbf{x})$ can be learned via a two-phase online SGD with sample complexity $\tilde{O}(dP^{L-1})$ (where $L$ is the lowest higher-order Hermite degree of the link function), significantly improving upon $\tilde{O}(Pd^{L-1})$ obtained by using only the lowest-order information. The key insight is to first recover the subspace using second-order terms and then recover the directions using $L$-th order terms, jointly exploiting Hermite components of different orders.
+  [NeurIPS 2025][Optimization][multi-index models] This paper proves that orthogonal multi-index models $f_*(\mathbf{x}) = \sum_{k=1}^P \phi(\mathbf{v}_k^* \cdot \mathbf{x})$ can be learned via a two-phase online SGD with…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - multi-index models
-  - information exponent
-  - Hermite expansion
-  - SGD sample complexity
-  - subspace recovery
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "multi-index models"
+  - "information exponent"
+  - "Hermite expansion"
+  - "SGD sample complexity"
+  - "subspace recovery"
 date: 2026-05-08
 content_hash: d7968548c0bdb8b5
 ---

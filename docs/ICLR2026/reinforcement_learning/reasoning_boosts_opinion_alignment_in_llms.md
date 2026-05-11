@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Reasoning Boosts Opinion Alignment in LLMs
 description: >-
-  [ICLR 2026][Reinforcement Learning][opinion alignment] GRPO-based reinforcement learning is applied to train LLMs to align with individual political opinions via structured reasoning. SFT+GRPO consistently outperforms ICL and ORPO baselines across U.S., German, and Swiss datasets, while systematically revealing left–right ideological asymmetry and fundamental difficulty in predicting Neutral stances.
+  [ICLR 2026][Reinforcement Learning][opinion alignment] GRPO-based reinforcement learning is applied to train LLMs to align with individual political opinions via structured reasoning. SFT+GRPO consistently outperforms IC…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - opinion alignment
-  - GRPO
-  - political reasoning
-  - survey data
-  - digital democracy
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "opinion alignment"
+  - "GRPO"
+  - "political reasoning"
+  - "survey data"
+  - "digital democracy"
 date: 2026-05-08
 content_hash: d82089129845a305
 ---

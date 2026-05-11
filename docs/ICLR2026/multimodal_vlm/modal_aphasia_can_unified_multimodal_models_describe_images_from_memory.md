@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Modal Aphasia: Can Unified Multimodal Models Describe Images From Memory?
 description: >-
-  [ICLR 2026][Multimodal VLM][modal aphasia] This paper identifies and systematically defines the phenomenon of **Modal Aphasia** — unified multimodal models can generate visual concepts (e.g., movie poster images) from memory with near-perfect fidelity, yet exhibit error rates more than 7× higher when verbally describing the same concepts, with severe hallucinations occurring almost exclusively in the text modality. Through real-world experiments with frontier models (ChatGPT-5) and controlled synthetic experiments with open-source models (Janus-Pro, Harmon), the paper confirms that modal aphasia is a systemic deficiency of current unified architectures rather than a training artifact, and demonstrates its potential threat to AI safety frameworks.
+  [ICLR 2026][Multimodal VLM][modal aphasia] This paper identifies and systematically defines the phenomenon of **Modal Aphasia** — unified multimodal models can generate visual concepts (e.g.…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - modal aphasia
-  - unified multimodal models
-  - cross-modal knowledge transfer
-  - memorization
-  - AI safety
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "modal aphasia"
+  - "unified multimodal models"
+  - "cross-modal knowledge transfer"
+  - "memorization"
+  - "AI safety"
 date: 2026-05-08
 content_hash: 8b81ed47ae806050
 ---

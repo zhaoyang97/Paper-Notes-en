@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Layer Consistency Matters: Elegant Latent Transition Discrepancy for Generalizable Synthetic Image Detection
 description: >-
-  [CVPR 2026][Image Generation][Synthetic Image Detection] This paper identifies that real images exhibit stable layer-wise transitions in intermediate feature representations within a frozen CLIP ViT, whereas synthetic images exhibit abrupt attention shifts at intermediate layers. Based on this observation, the paper proposes Layer Transition Discrepancy (LTD) to model this difference, achieving mean Acc of 96.90% on UFD, 99.54% on DRCT-2M, and 91.62% on GenImage, surpassing all prior state-of-the-art methods.
+  [CVPR 2026][Image Generation][Synthetic Image Detection] This paper identifies that real images exhibit stable layer-wise transitions in intermediate feature representations within a frozen CLIP ViT…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Synthetic Image Detection
-  - Layer Transition Discrepancy
-  - CLIP-ViT
-  - Cross-Domain Generalization
-  - Dynamic Layer Selection
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Synthetic Image Detection"
+  - "Layer Transition Discrepancy"
+  - "CLIP-ViT"
+  - "Cross-Domain Generalization"
+  - "Dynamic Layer Selection"
 date: 2026-05-08
 content_hash: 834f631bd185a80c
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Know Thyself by Knowing Others: Learning Neuron Identity from Population Context
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][neuron identity] This paper proposes NuCLR, a self-supervised framework that learns neuron-level representations enriched with population context via contrastive learning—pulling together different temporal windows of the same neuron and pushing apart different neurons within a population. NuCLR achieves new state-of-the-art performance on cell type and brain region decoding, and is the first to demonstrate cross-animal zero-shot generalization and data scaling laws in this domain.
+  [NeurIPS 2025][Self-Supervised Learning][neuron identity] This paper proposes NuCLR, a self-supervised framework that learns neuron-level representations enriched with population context via contrastive learning—pulling…
 tags:
-  - NeurIPS 2025
-  - Self-Supervised Learning
-  - neuron identity
-  - contrastive learning
-  - spatiotemporal Transformer
-  - cell type decoding
+  - "NeurIPS 2025"
+  - "Self-Supervised Learning"
+  - "neuron identity"
+  - "contrastive learning"
+  - "spatiotemporal Transformer"
+  - "cell type decoding"
 date: 2026-05-08
 content_hash: f10f757eda27b715
 ---

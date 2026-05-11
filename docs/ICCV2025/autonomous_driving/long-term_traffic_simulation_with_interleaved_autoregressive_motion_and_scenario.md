@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Long-term Traffic Simulation with Interleaved Autoregressive Motion and Scenario Generation
 description: >-
-  [ICCV 2025][Autonomous Driving][Traffic Simulation] This paper proposes InfGen, a unified autoregressive next-token prediction model that interleaves closed-loop motion simulation with scenario generation (dynamic agent insertion and removal), achieving for the first time stable long-term (30-second) traffic simulation. InfGen reaches state-of-the-art performance on short-term benchmarks and significantly outperforms all existing methods on long-term tasks.
+  [ICCV 2025][Autonomous Driving][Traffic Simulation] This paper proposes InfGen, a unified autoregressive next-token prediction model that interleaves closed-loop motion simulation with scenario generation (dynamic agent…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - Traffic Simulation
-  - Long-term Simulation
-  - Autoregressive Generation
-  - Scenario Generation
-  - Next-Token Prediction
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "Traffic Simulation"
+  - "Long-term Simulation"
+  - "Autoregressive Generation"
+  - "Scenario Generation"
+  - "Next-Token Prediction"
 date: 2026-05-08
 content_hash: e45616e4199e2f06
 ---

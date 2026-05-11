@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Find Any Part in 3D
 description: >-
-  [ICCV 2025][3D Vision][3D part segmentation] This paper proposes Find3D, an automated 3D data annotation engine driven by 2D foundation models (SAM + Gemini) that generates 2.1 million part annotations. The resulting model is the first to simultaneously achieve open-world, cross-category, part-level, and feed-forward inference capabilities in 3D segmentation, yielding a 260% zero-shot mIoU improvement and inference speeds 6–300× faster than existing methods.
+  [ICCV 2025][3D Vision][3D part segmentation] This paper proposes Find3D, an automated 3D data annotation engine driven by 2D foundation models (SAM + Gemini) that generates 2.1 million part annotations. The resulting mod…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D part segmentation
-  - open-world
-  - data engine
-  - contrastive learning
-  - zero-shot generalization
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D part segmentation"
+  - "open-world"
+  - "data engine"
+  - "contrastive learning"
+  - "zero-shot generalization"
 date: 2026-05-08
 content_hash: 2bd1d7f18cd1181d
 ---

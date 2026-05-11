@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MagicMirror: ID-Preserved Video Generation in Video Diffusion Transformers
 description: >-
-  [ICCV 2025][Video Generation][Identity-preserving video generation] MagicMirror is the first framework to achieve zero-shot identity-preserving video generation on a Video Diffusion Transformer (CogVideoX). It employs dual-branch facial feature extraction, Conditioned Adaptive Normalization (CAN), and a two-stage training strategy (image pre-training followed by video fine-tuning) to generate high-quality dynamic videos while maintaining consistent facial identity.
+  [ICCV 2025][Video Generation][Identity-preserving video generation] MagicMirror is the first framework to achieve zero-shot identity-preserving video generation on a Video Diffusion Transformer (CogVideoX). It employs du…
 tags:
-  - ICCV 2025
-  - Video Generation
-  - Identity-preserving video generation
-  - Diffusion Transformer
-  - facial feature extraction
-  - adaptive normalization
-  - two-stage training
+  - "ICCV 2025"
+  - "Video Generation"
+  - "Identity-preserving video generation"
+  - "Diffusion Transformer"
+  - "facial feature extraction"
+  - "adaptive normalization"
+  - "two-stage training"
 date: 2026-05-08
 content_hash: f9dac52104b3136e
 ---

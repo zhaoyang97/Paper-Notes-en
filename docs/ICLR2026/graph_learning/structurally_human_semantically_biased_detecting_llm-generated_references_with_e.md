@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Structurally Human, Semantically Biased: Detecting LLM-Generated References with Embeddings and GNNs
 description: >-
-  [ICLR 2026][Graph Learning][LLM reference detection] By constructing paired citation graphs (human vs. GPT-4o-generated vs. random baseline) for 10,000 papers, this work finds that LLM-generated reference lists are nearly indistinguishable from human ones in terms of graph topology (RF accuracy only 60%), yet are effectively detectable via semantic embeddings (RF 83%, GNN 93%). This indicates that LLMs accurately mimic citation topology while leaving detectable semantic fingerprints.
+  [ICLR 2026][Graph Learning][LLM reference detection] By constructing paired citation graphs (human vs. GPT-4o-generated vs. random baseline) for 10,000 papers…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - LLM reference detection
-  - citation graph
-  - graph neural networks
-  - semantic embeddings
-  - academic integrity
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "LLM reference detection"
+  - "citation graph"
+  - "graph neural networks"
+  - "semantic embeddings"
+  - "academic integrity"
 date: 2026-05-08
 content_hash: f2875fd718fcf258
 ---

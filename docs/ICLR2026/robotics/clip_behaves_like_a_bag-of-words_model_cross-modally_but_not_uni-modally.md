@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CLIP Behaves like a Bag-of-Words Model Cross-modally but not Uni-modally
 description: >-
-  [ICLR 2026][Robotics][CLIP] Through linear probing experiments, this paper demonstrates that CLIP's bag-of-words (BoW) behavior does not stem from a lack of binding information in the encoders, but rather from a failure of cross-modal alignment. The paper proposes LABCLIP, which trains a single lightweight linear transformation to substantially recover attribute-object binding capability.
+  [ICLR 2026][Robotics][CLIP] Through linear probing experiments, this paper demonstrates that CLIP's bag-of-words (BoW) behavior does not stem from a lack of binding information in the encoders…
 tags:
-  - ICLR 2026
-  - Robotics
-  - CLIP
-  - compositionality
-  - bag-of-words
-  - attribute-object binding
-  - cross-modal alignment
+  - "ICLR 2026"
+  - "Robotics"
+  - "CLIP"
+  - "compositionality"
+  - "bag-of-words"
+  - "attribute-object binding"
+  - "cross-modal alignment"
 date: 2026-05-08
 content_hash: f7fd968255e3384a
 ---

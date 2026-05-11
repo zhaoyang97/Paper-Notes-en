@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] From Easy to Hard: Progressive Active Learning Framework for Infrared Small Target Detection with Single Point Supervision
 description: >-
-  [ICCV 2025][Infrared small target detection] This paper proposes a Progressive Active Learning (PAL) framework that trains infrared small target detection networks through a three-stage strategy—model pre-start, model enhancement, and model refinement—driving the network to actively identify and learn from hard samples in an easy-to-hard manner. Under single point supervision, PAL substantially narrows the performance gap with fully supervised methods (IoU improvement of 8.53%–29.1%).
+  [ICCV 2025][Infrared small target detection] This paper proposes a Progressive Active Learning (PAL) framework that trains infrared small target detection networks through a three-stage strategy—model pre-start…
 tags:
-  - ICCV 2025
-  - Infrared small target detection
-  - single point supervision
-  - progressive active learning
-  - curriculum learning
-  - pseudo-label evolution
+  - "ICCV 2025"
+  - "Infrared small target detection"
+  - "single point supervision"
+  - "progressive active learning"
+  - "curriculum learning"
+  - "pseudo-label evolution"
 date: 2026-05-08
 content_hash: 09a5ced1dd06a1d1
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VC-Inspector: Advancing Reference-free Evaluation of Video Captions with Factual Analysis
 description: >-
-  [ACL 2026][Video Understanding][Video Caption Evaluation] This paper proposes VC-Inspector, a reference-free video caption evaluation metric based on open-source lightweight multimodal models (Qwen2.5-VL 3B/7B), which generates training data through a controllable factual error synthesis pipeline and achieves $\tau_b$=42.58 human judgment correlation on VATEX-Eval, outperforming GPT-4o-based G-VEval ($\tau_b$=39.40), while reaching 99.6% accuracy on hallucination detection benchmarks.
+  [ACL 2026][Video Understanding][Video Caption Evaluation] This paper proposes VC-Inspector, a reference-free video caption evaluation metric based on open-source lightweight multimodal models (Qwen2.5-VL 3B/7B)…
 tags:
-  - ACL 2026
-  - Video Understanding
-  - Video Caption Evaluation
-  - Reference-free Evaluation
-  - Factual Accuracy
-  - Large Multimodal Models
-  - Hallucination Detection
+  - "ACL 2026"
+  - "Video Understanding"
+  - "Video Caption Evaluation"
+  - "Reference-free Evaluation"
+  - "Factual Accuracy"
+  - "Large Multimodal Models"
+  - "Hallucination Detection"
 date: 2026-05-08
 content_hash: 40df38fb14e77d92
 ---

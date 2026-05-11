@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MS-BART: Unified Modeling of Mass Spectra and Molecules for Structure Elucidation
 description: >-
-  [NeurIPS 2025][Image Restoration][Mass spectrometry] This paper proposes MS-BART, which maps molecular fingerprints and molecular structures (SELFIES) into a shared token space via a unified vocabulary, performs multi-task pretraining on 4 million fingerprint–molecule pairs, and subsequently applies experimental spectra fine-tuning and chemical feedback alignment to enable efficient generation of molecular structures from mass spectra.
+  [NeurIPS 2025][Image Restoration][Mass spectrometry] This paper proposes MS-BART, which maps molecular fingerprints and molecular structures (SELFIES) into a shared token space via a unified vocabulary…
 tags:
-  - NeurIPS 2025
-  - Image Restoration
-  - Mass spectrometry
-  - molecular fingerprints
-  - pretrain-finetune-align
-  - BART
-  - structure elucidation
+  - "NeurIPS 2025"
+  - "Image Restoration"
+  - "Mass spectrometry"
+  - "molecular fingerprints"
+  - "pretrain-finetune-align"
+  - "BART"
+  - "structure elucidation"
 date: 2026-05-08
 content_hash: cdfc64d3e39f506c
 ---

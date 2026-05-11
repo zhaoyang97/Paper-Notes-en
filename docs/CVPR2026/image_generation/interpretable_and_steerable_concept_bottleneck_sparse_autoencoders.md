@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Interpretable and Steerable Concept Bottleneck Sparse Autoencoders
 description: >-
-  [CVPR 2026][Image Generation][Sparse Autoencoders] This paper identifies that the majority of SAE neurons (~81%) suffer from insufficient interpretability or steerability, and proposes the CB-SAE framework — which prunes low-utility SAE neurons and augments them with a concept bottleneck module — achieving +32.1% interpretability and +14.5% steerability improvements on LVLM and image generation tasks, respectively.
+  [CVPR 2026][Image Generation][Sparse Autoencoders] This paper identifies that the majority of SAE neurons (~81%) suffer from insufficient interpretability or steerability…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Sparse Autoencoders
-  - Concept Bottleneck
-  - Interpretability
-  - Steerability
-  - Mechanistic Interpretability
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Sparse Autoencoders"
+  - "Concept Bottleneck"
+  - "Interpretability"
+  - "Steerability"
+  - "Mechanistic Interpretability"
 date: 2026-05-08
 content_hash: 78fb115383610186
 ---

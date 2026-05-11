@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DexVLG: Dexterous Vision-Language-Grasp Model at Scale
 description: >-
-  [ICCV 2025][Robotics][Dexterous grasping] This paper presents DexVLG — the first large-scale vision-language-dexterous-grasp model. It introduces DexGraspNet 3.0, a dataset comprising 174K objects and 170M grasp poses with part-level semantic annotations. By combining a VLM encoder with a Flow Matching pose prediction head, DexVLG achieves over 76% zero-shot execution success in simulation and demonstrates semantically aligned dexterous grasping in the real world.
+  [ICCV 2025][Robotics][Dexterous grasping] This paper presents DexVLG — the first large-scale vision-language-dexterous-grasp model. It introduces DexGraspNet 3.0…
 tags:
-  - ICCV 2025
-  - Robotics
-  - Dexterous grasping
-  - vision-language model
-  - Flow Matching
-  - semantic part grasping
-  - large-scale dataset
+  - "ICCV 2025"
+  - "Robotics"
+  - "Dexterous grasping"
+  - "vision-language model"
+  - "Flow Matching"
+  - "semantic part grasping"
+  - "large-scale dataset"
 date: 2026-05-08
 content_hash: 88637b9d65838028
 ---

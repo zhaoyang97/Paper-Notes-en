@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MetaBox-v2: A Unified Benchmark Platform for Meta-Black-Box Optimization
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Meta-Black-Box Optimization] MetaBox-v2 is a milestone upgrade to the Meta-Black-Box Optimization (MetaBBO) benchmark platform. It provides unified support for four learning paradigms (RL/SL/NE/ICL), reproduces 23 baseline algorithms, integrates 18 test suites (1900+ problem instances), and achieves 10–40× speedup via vectorized environments and distributed evaluation.
+  [NeurIPS 2025][Reinforcement Learning][Meta-Black-Box Optimization] MetaBox-v2 is a milestone upgrade to the Meta-Black-Box Optimization (MetaBBO) benchmark platform. It provides unified support for four learning paradig…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Meta-Black-Box Optimization
-  - benchmark platform
-  - parallelization
-  - RL-based optimization
-  - generalization
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Meta-Black-Box Optimization"
+  - "benchmark platform"
+  - "parallelization"
+  - "RL-based optimization"
+  - "generalization"
 date: 2026-05-08
 content_hash: cabaca6805103bc7
 ---

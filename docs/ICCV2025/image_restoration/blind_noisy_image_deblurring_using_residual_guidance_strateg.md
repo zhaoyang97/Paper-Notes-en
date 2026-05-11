@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Blind Noisy Image Deblurring Using Residual Guidance Strategy
 description: >-
-  [ICCV 2025][Image Restoration][Blind Deblurring] This paper proposes a Residual Guidance Strategy (RGS) for coarse-to-fine blind image deblurring within an image pyramid framework. At each scale transition, the convolution residual from the adjacent coarser scale is denoised via a guided filter and used to correct the blurred input at the current scale. This approach significantly improves kernel estimation accuracy and restoration quality under high noise levels (σ=0.1), surpassing multiple deep learning methods without requiring any training.
+  [ICCV 2025][Image Restoration][Blind Deblurring] This paper proposes a Residual Guidance Strategy (RGS) for coarse-to-fine blind image deblurring within an image pyramid framework. At each scale transition…
 tags:
-  - ICCV 2025
-  - Image Restoration
-  - Blind Deblurring
-  - Noise Robustness
-  - Residual Guidance
-  - Image Pyramid
-  - Blur Kernel Estimation
+  - "ICCV 2025"
+  - "Image Restoration"
+  - "Blind Deblurring"
+  - "Noise Robustness"
+  - "Residual Guidance"
+  - "Image Pyramid"
+  - "Blur Kernel Estimation"
 date: 2026-05-08
 content_hash: 5c23b85deaf182cd
 ---

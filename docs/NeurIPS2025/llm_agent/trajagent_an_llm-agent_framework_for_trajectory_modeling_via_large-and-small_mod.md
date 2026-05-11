@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] TrajAgent: An LLM-Agent Framework for Trajectory Modeling via Large-and-Small Model Collaboration
 description: >-
-  [NeurIPS 2025][LLM Agent][trajectory modeling] This paper proposes TrajAgent — an LLM-agent-based framework for trajectory modeling that achieves automated, cross-task, and cross-dataset trajectory modeling through a unified environment (UniEnv), an automated workflow, and a collaborative learning schema between large and small models, outperforming baseline methods by 2.38%–69.91% across multiple tasks.
+  [NeurIPS 2025][LLM Agent][trajectory modeling] This paper proposes TrajAgent — an LLM-agent-based framework for trajectory modeling that achieves automated, cross-task…
 tags:
-  - NeurIPS 2025
-  - LLM Agent
-  - trajectory modeling
-  - large-and-small model collaboration
-  - automated machine learning
-  - data augmentation
+  - "NeurIPS 2025"
+  - "LLM Agent"
+  - "trajectory modeling"
+  - "large-and-small model collaboration"
+  - "automated machine learning"
+  - "data augmentation"
 date: 2026-05-08
 content_hash: ade540276dc7b2fc
 ---

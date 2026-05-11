@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] GAVEL: Towards Rule-Based Safety through Activation Monitoring
 description: >-
-  [ICLR 2026][Activation Monitoring] Inspired by the Snort/YARA ruleset paradigm from cybersecurity, this paper proposes decomposing LLM internal activations into 23 fine-grained "Cognitive Elements" (CEs), which are then composed via Boolean logic into auditable safety rules. On Mistral-7B, the approach achieves an average AUC of 0.99 and FPR of 0.004 across 9 misuse categories with less than 1% inference overhead, while naturally supporting cross-lingual and cross-model transfer.
+  [ICLR 2026][Interpretability][Activation Monitoring] Inspired by the Snort/YARA ruleset paradigm from cybersecurity, this paper proposes decomposing LLM internal activations into 23 fine-grained "Cognitive Elements" (CEs…
 tags:
-  - ICLR 2026
-  - Activation Monitoring
-  - Cognitive Elements
-  - Rule-Based Safety
-  - Explainable AI Governance
-  - LLM Safety
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Activation Monitoring"
+  - "Cognitive Elements"
+  - "Rule-Based Safety"
+  - "Explainable AI Governance"
+  - "LLM Safety"
 date: 2026-05-08
 content_hash: 7749fd071e3b64e5
 ---

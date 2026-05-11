@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Extremely Simple Multimodal Outlier Synthesis for Out-of-Distribution Detection and Segmentation
 description: >-
-  [NeurIPS 2025][Autonomous Driving][OOD Detection] This paper proposes Feature Mixing — an extremely simple multimodal outlier synthesis method that generates OOD samples by randomly swapping $N$ dimensions across features from two modalities for training regularization. It provides theoretical guarantees that synthesized outliers reside in low-likelihood regions of the ID distribution with bounded deviation, achieves state-of-the-art performance across 8 datasets and 4 modality combinations, and runs 10×–370× faster than NP-Mix.
+  [NeurIPS 2025][Autonomous Driving][OOD Detection] This paper proposes Feature Mixing — an extremely simple multimodal outlier synthesis method that generates OOD samples by randomly swapping $N$ dimensions across feature…
 tags:
-  - NeurIPS 2025
-  - Autonomous Driving
-  - OOD Detection
-  - OOD Segmentation
-  - Multimodal
-  - Outlier Synthesis
-  - Feature Mixing
+  - "NeurIPS 2025"
+  - "Autonomous Driving"
+  - "OOD Detection"
+  - "OOD Segmentation"
+  - "Multimodal"
+  - "Outlier Synthesis"
+  - "Feature Mixing"
 date: 2026-05-08
 content_hash: 980628cb097abcd4
 ---

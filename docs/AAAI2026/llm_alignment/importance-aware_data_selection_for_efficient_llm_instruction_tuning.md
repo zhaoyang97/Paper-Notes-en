@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Importance-Aware Data Selection for Efficient LLM Instruction Tuning
 description: >-
-  [AAAI 2026][LLM Alignment][Data Selection] This paper proposes MIWV (Model Instruction Weakness Value), a metric that measures the importance of each instruction sample for improving model capability by comparing LLM loss with and without a one-shot ICL demonstration. Using only 1% (520 samples) of the Alpaca dataset, the method comprehensively outperforms fine-tuning on the full 52,002 samples.
+  [AAAI 2026][LLM Alignment][Data Selection] This paper proposes MIWV (Model Instruction Weakness Value), a metric that measures the importance of each instruction sample for improving model capability by comparing LLM los…
 tags:
-  - AAAI 2026
-  - LLM Alignment
-  - Data Selection
-  - MIWV
-  - ICL
-  - Data Efficiency
-  - Instruction Tuning
+  - "AAAI 2026"
+  - "LLM Alignment"
+  - "Data Selection"
+  - "MIWV"
+  - "ICL"
+  - "Data Efficiency"
+  - "Instruction Tuning"
 date: 2026-05-08
 content_hash: 2e04cee104fc4c21
 ---

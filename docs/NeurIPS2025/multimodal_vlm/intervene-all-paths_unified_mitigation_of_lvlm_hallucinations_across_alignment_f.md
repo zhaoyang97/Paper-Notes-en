@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Intervene-All-Paths: Unified Mitigation of LVLM Hallucinations across Alignment Formats
 description: >-
-  [NeurIPS 2025][Multimodal VLM][hallucination] This paper proposes AllPath, a multi-path hallucination intervention framework grounded in the Transformer causal architecture. It is the first to demonstrate that hallucinations in LVLMs do not stem from a single causal path but from the interaction of three paths — image-to-input-text, image-to-output-text, and text-to-text — and that models adaptively rely on different paths depending on the question-answer alignment format. By designing lightweight key-head identification methods for each path and performing adaptive intervention, AllPath consistently reduces hallucinations across four benchmarks covering different alignment formats: POPE, MCQ-POPE, CHAIR, and MME.
+  [NeurIPS 2025][Multimodal VLM][hallucination] This paper proposes AllPath, a multi-path hallucination intervention framework grounded in the Transformer causal architecture. It is the first to demonstrate that hallucinat…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - hallucination
-  - attention head intervention
-  - causal path
-  - multi-path framework
-  - training-free
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "hallucination"
+  - "attention head intervention"
+  - "causal path"
+  - "multi-path framework"
+  - "training-free"
 date: 2026-05-08
 content_hash: f9d5ecd1d3b2404a
 ---

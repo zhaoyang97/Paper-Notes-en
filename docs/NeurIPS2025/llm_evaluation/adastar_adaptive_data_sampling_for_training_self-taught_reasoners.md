@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AdaSTaR: Adaptive Data Sampling for Training Self-Taught Reasoners
 description: >-
-  [NeurIPS 2025][LLM Evaluation][self-improvement reasoning] This work identifies that random data sampling in STaR (Self-Taught Reasoner) leads to severely imbalanced observation training frequencies—easy problems are over-trained while hard problems are under-trained—and proposes AdaSTaR, which combines adaptive diversity sampling (prioritizing under-trained samples) with adaptive curriculum sampling (adjusting difficulty based on model strength) to achieve the highest accuracy on all 6 benchmarks while reducing training FLOPs by 58.6%.
+  [NeurIPS 2025][LLM Evaluation][self-improvement reasoning] This work identifies that random data sampling in STaR (Self-Taught Reasoner) leads to severely imbalanced observation training frequencies—easy problems are ove…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - self-improvement reasoning
-  - STaR
-  - adaptive sampling
-  - curriculum learning
-  - data efficiency
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "self-improvement reasoning"
+  - "STaR"
+  - "adaptive sampling"
+  - "curriculum learning"
+  - "data efficiency"
 date: 2026-05-08
 content_hash: f6448f068c0c2434
 ---

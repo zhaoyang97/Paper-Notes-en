@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From Observation to Action: Latent Action-based Primitive Segmentation for VLA Pre-training in Industrial Settings
 description: >-
-  [CVPR 2026][Multimodal VLM][VLA pre-training] This paper proposes LAPS (Latent Action-based Primitive Segmentation), a pipeline that defines a "Latent Action Energy" metric in the latent action space to unsupervisedly discover and segment semantic action primitives from unannotated industrial video streams, providing structured data for VLA model pre-training.
+  [CVPR 2026][Multimodal VLM][VLA pre-training] This paper proposes LAPS (Latent Action-based Primitive Segmentation), a pipeline that defines a "Latent Action Energy" metric in the latent action space to unsupervisedly di…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - VLA pre-training
-  - action segmentation
-  - latent action energy
-  - unsupervised learning
-  - industrial manufacturing
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "VLA pre-training"
+  - "action segmentation"
+  - "latent action energy"
+  - "unsupervised learning"
+  - "industrial manufacturing"
 date: 2026-05-08
 content_hash: 5b38311cd86a957b
 ---

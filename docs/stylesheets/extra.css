@@ -277,6 +277,24 @@
   opacity: 0.85;
 }
 
+/* ── SEO summary strip: first body text for Google snippets + quick human scan ── */
+.md-typeset .paper-seo-summary {
+  margin: 0 0 0.8rem;
+  padding: 0.55rem 0 0.55rem 0.75rem;
+  border-left: 3px solid var(--md-accent-fg-color);
+  color: var(--md-default-fg-color--light);
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+.md-typeset .paper-seo-summary__desc,
+.md-typeset .paper-seo-summary__tags {
+  margin: 0;
+}
+.md-typeset .paper-seo-summary__tags {
+  margin-top: 0.18rem;
+  color: var(--md-default-fg-color--lighter);
+}
+
 /* ── Mobile: hide heading permalink anchors to prevent accidental taps ── */
 @media (max-width: 960px) {
   .headerlink {

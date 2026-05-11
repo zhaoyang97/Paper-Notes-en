@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Empowering Semantic-Sensitive Underwater Image Enhancement with VLM
 description: >-
-  [CVPR 2026][Multimodal VLM][underwater image enhancement] This paper proposes a VLM-driven semantic-sensitive learning strategy that leverages LLaVA to generate object descriptions, BLIP to construct spatial semantic guidance maps, and a dual-guidance mechanism (cross-attention injection + semantic alignment loss) to steer the UIE decoder during reconstruction. The approach yields consistent improvements in both perceptual quality and downstream detection/segmentation performance.
+  [CVPR 2026][Multimodal VLM][underwater image enhancement] This paper proposes a VLM-driven semantic-sensitive learning strategy that leverages LLaVA to generate object descriptions…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - underwater image enhancement
-  - VLM
-  - semantic guidance
-  - cross-attention
-  - downstream tasks
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "underwater image enhancement"
+  - "VLM"
+  - "semantic guidance"
+  - "cross-attention"
+  - "downstream tasks"
 date: 2026-05-08
 content_hash: 5e3a406726ef5da9
 ---

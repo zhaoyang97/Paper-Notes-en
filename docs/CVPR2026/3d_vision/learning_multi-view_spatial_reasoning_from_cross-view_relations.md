@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Multi-View Spatial Reasoning from Cross-View Relations
 description: >-
-  [CVPR 2026][3D Vision][multi-view spatial reasoning] XVR (Cross-View Relations) constructs a large-scale multi-view visual question answering dataset of 100K samples. By explicitly training VLMs on three categories of tasks—correspondence, verification, and viewpoint localization—XVR significantly improves cross-view spatial reasoning, yielding notable gains on both multi-view benchmarks and robotic manipulation tasks.
+  [CVPR 2026][3D Vision][multi-view spatial reasoning] XVR (Cross-View Relations) constructs a large-scale multi-view visual question answering dataset of 100K samples. By explicitly training VLMs on three categories of ta…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - multi-view spatial reasoning
-  - cross-view relations
-  - vision-language models
-  - robotic manipulation
-  - dataset construction
+  - "CVPR 2026"
+  - "3D Vision"
+  - "multi-view spatial reasoning"
+  - "cross-view relations"
+  - "vision-language models"
+  - "robotic manipulation"
+  - "dataset construction"
 date: 2026-05-08
 content_hash: 2816b1d275362013
 ---

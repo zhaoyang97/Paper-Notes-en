@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From Query to Counsel: Structured Reasoning with a Multi-Agent Framework and Dataset for Legal Consultation
 description: >-
-  [ACL 2026][LLM Agent][Legal consultation QA] This paper introduces JurisCQAD—a large-scale dataset of 43,000+ real Chinese legal consultations—and proposes the JurisMA multi-agent framework, which performs structured task decomposition via a legal element graph and dynamic multi-agent collaboration (Manager Agent + Format Check + Law Search), achieving significant improvements over both general-purpose and law-specialized LLMs on LawBench.
+  [ACL 2026][LLM Agent][Legal consultation QA] This paper introduces JurisCQAD—a large-scale dataset of 43,000+ real Chinese legal consultations—and proposes the JurisMA multi-agent framework…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - Legal consultation QA
-  - multi-agent
-  - legal element graph
-  - task decomposition
-  - Chinese law
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Legal consultation QA"
+  - "multi-agent"
+  - "legal element graph"
+  - "task decomposition"
+  - "Chinese law"
 date: 2026-05-08
 content_hash: 8e1fe5d1e6abb7ad
 ---

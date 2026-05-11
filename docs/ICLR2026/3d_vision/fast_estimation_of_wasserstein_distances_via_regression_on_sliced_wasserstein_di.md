@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Fast Estimation of Wasserstein Distances via Regression on Sliced Wasserstein Distances
 description: >-
-  [ICLR 2026][3D Vision][Wasserstein distance] Leveraging the mathematical property that standard Sliced Wasserstein (SW) distances provide lower bounds and lifted SW distances provide upper bounds for the Wasserstein distance, this paper constructs a minimal linear regression model (the RG framework) that estimates Wasserstein distances with high accuracy using only a small number of exact Wasserstein labels as supervision, comprehensively outperforming the Transformer-based method Wasserstein Wormhole in low-data regimes.
+  [ICLR 2026][3D Vision][Wasserstein distance] Leveraging the mathematical property that standard Sliced Wasserstein (SW) distances provide lower bounds and lifted SW distances provide upper bounds for the Wasserstein dist…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Wasserstein distance
-  - Sliced Wasserstein
-  - optimal transport
-  - linear regression
-  - point cloud classification
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Wasserstein distance"
+  - "Sliced Wasserstein"
+  - "optimal transport"
+  - "linear regression"
+  - "point cloud classification"
 date: 2026-05-08
 content_hash: 59156d6c57f0cece
 ---

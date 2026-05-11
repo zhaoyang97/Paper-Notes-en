@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FALCON: Few-step Accurate Likelihoods for Continuous Flows
 description: >-
-  [NeurIPS 2025][Image Generation][Continuous Normalizing Flows] This paper proposes FALCON, which employs a hybrid training objective (flow matching + mean velocity loss + invertibility regularization) to enable continuous normalizing flows to provide sufficiently accurate likelihood estimates under few-step sampling, achieving Boltzmann sampling two orders of magnitude faster than conventional CNFs.
+  [NeurIPS 2025][Image Generation][Continuous Normalizing Flows] This paper proposes FALCON, which employs a hybrid training objective (flow matching + mean velocity loss + invertibility regularization) to enable continuou…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Continuous Normalizing Flows
-  - Boltzmann Generators
-  - Flow Matching
-  - Importance Sampling
-  - Molecular Sampling
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Continuous Normalizing Flows"
+  - "Boltzmann Generators"
+  - "Flow Matching"
+  - "Importance Sampling"
+  - "Molecular Sampling"
 date: 2026-05-08
 content_hash: 017878a37e4ddfdc
 ---

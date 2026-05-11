@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] SparseMM: Head Sparsity Emerges from Visual Concept Responses in MLLMs
 description: >-
-  [ICCV 2025][Multimodal VLM][Visual Head] This paper reveals a "visual head sparsity" phenomenon in Multimodal Large Language Models (MLLMs), where only approximately 5% of attention heads actively participate in visual understanding. It proposes a training-free visual head identification framework based on OCR tasks and introduces SparseMM — an acceleration strategy that asymmetrically allocates KV-Cache budgets across heads according to their visual scores — achieving 1.38× real-time speedup and 52% memory reduction with no performance degradation.
+  [ICCV 2025][Multimodal VLM][Visual Head] This paper reveals a "visual head sparsity" phenomenon in Multimodal Large Language Models (MLLMs)…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Visual Head
-  - MLLM
-  - KV-Cache Compression
-  - Head Sparsity
-  - Attention Analysis
-  - Inference Acceleration
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Visual Head"
+  - "MLLM"
+  - "KV-Cache Compression"
+  - "Head Sparsity"
+  - "Attention Analysis"
+  - "Inference Acceleration"
 date: 2026-05-08
 content_hash: 8d7040187ebe115e
 ---

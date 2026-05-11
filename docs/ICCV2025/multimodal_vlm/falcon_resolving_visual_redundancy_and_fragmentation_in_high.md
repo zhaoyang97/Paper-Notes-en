@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FALCON: Resolving Visual Redundancy and Fragmentation in High-resolution Multimodal Large Language Models via Visual Registers
 description: >-
-  [ICCV 2025][Multimodal VLM][Visual Registers] This paper proposes FALCON, which introduces learnable Visual Registers into the ViT encoder. Through the ReCompact mechanism, visual redundancy is eliminated directly during the encoding stage (achieving 9× token compression), while the ReAtten module resolves visual fragmentation caused by image cropping via inter-register interactions.
+  [ICCV 2025][Multimodal VLM][Visual Registers] This paper proposes FALCON, which introduces learnable Visual Registers into the ViT encoder. Through the ReCompact mechanism…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Visual Registers
-  - Token Compression
-  - Visual Redundancy
-  - Visual Fragmentation
-  - High-resolution MLLM
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Visual Registers"
+  - "Token Compression"
+  - "Visual Redundancy"
+  - "Visual Fragmentation"
+  - "High-resolution MLLM"
 date: 2026-05-08
 content_hash: 1f8a927e0c66b0f1
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Evading Data Provenance in Deep Neural Networks
 description: >-
-  [ICCV 2025][Multimodal VLM][Data Provenance] This paper exposes the false sense of security in existing Dataset Ownership Verification (DOV) methods. Through a unified evasion framework, Escaping DOV, task-relevant but identity-free knowledge is transferred from a teacher model to a surrogate student via OOD data, successfully bypassing all 11 evaluated DOV methods simultaneously.
+  [ICCV 2025][Multimodal VLM][Data Provenance] This paper exposes the false sense of security in existing Dataset Ownership Verification (DOV) methods. Through a unified evasion framework, Escaping DOV…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Data Provenance
-  - Dataset Ownership Verification
-  - Evasion Attack
-  - Knowledge Distillation
-  - Backdoor Watermarking
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Data Provenance"
+  - "Dataset Ownership Verification"
+  - "Evasion Attack"
+  - "Knowledge Distillation"
+  - "Backdoor Watermarking"
 date: 2026-05-08
 content_hash: 50d33aa41d57a420
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unlocking Strong Supervision: A Data-Centric Study of General-Purpose Audio Pre-Training Methods
 description: >-
-  [CVPR 2026][Audio & Speech][audio pre-training] Through systematic data-centric experiments, this paper demonstrates that audio pre-training performance is primarily driven by label/supervision quality rather than model design. It proposes the Unified Tag System (UTS), which unifies speech, music, and environmental sound under a high-granularity vocabulary of 800–3k tags. Models trained with UTS surpass AudioSet baselines on out-of-domain tasks such as speaker verification (VoxCeleb2) and music (MusicCaps) using 5× less data.
+  [CVPR 2026][Audio & Speech][audio pre-training] Through systematic data-centric experiments, this paper demonstrates that audio pre-training performance is primarily driven by label/supervision quality rather than model…
 tags:
-  - CVPR 2026
+  - "CVPR 2026"
   - "Audio & Speech"
-  - audio pre-training
-  - unified tag system
-  - data-centric
-  - label quality
-  - cross-domain generalization
+  - "audio pre-training"
+  - "unified tag system"
+  - "data-centric"
+  - "label quality"
+  - "cross-domain generalization"
 date: 2026-05-08
 content_hash: 08ff1a488094ef00
 ---

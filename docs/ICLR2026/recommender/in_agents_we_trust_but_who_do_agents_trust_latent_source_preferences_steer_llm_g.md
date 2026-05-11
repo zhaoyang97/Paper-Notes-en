@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] In Agents We Trust, but Who Do Agents Trust? Latent Source Preferences Steer LLM Generations
 description: >-
-  [ICLR 2026][Recommender Systems][LLM Agent] Through large-scale controlled experiments across 12 LLMs from 6 providers spanning three domains—news, academia, and e-commerce—this paper reveals that LLMs exhibit systematic **latent source preferences**: when content is semantically identical, merely swapping source labels significantly alters model selection behavior, and this preference cannot be eliminated through prompt engineering.
+  [ICLR 2026][Recommender Systems][LLM Agent] Through large-scale controlled experiments across 12 LLMs from 6 providers spanning three domains—news, academia…
 tags:
-  - ICLR 2026
-  - Recommender Systems
-  - LLM Agent
-  - Source Preference
-  - Trust Bias
-  - Brand Perception
+  - "ICLR 2026"
+  - "Recommender Systems"
+  - "LLM Agent"
+  - "Source Preference"
+  - "Trust Bias"
+  - "Brand Perception"
 date: 2026-05-08
 content_hash: 6f616b12fe32602a
 ---

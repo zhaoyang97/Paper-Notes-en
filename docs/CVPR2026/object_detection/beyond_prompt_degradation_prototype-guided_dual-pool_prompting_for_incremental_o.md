@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond Prompt Degradation: Prototype-Guided Dual-Pool Prompting for Incremental Object Detection
 description: >-
-  [CVPR 2026][Object Detection][Incremental Object Detection] This paper proposes the PDP framework, which addresses prompt degradation in incremental object detection caused by prompt coupling and prompt drift via decoupled dual-pool prompting (shared pool + private pool) and Prototypical Pseudo-Label Generation (PPG), achieving state-of-the-art performance on COCO and VOC.
+  [CVPR 2026][Object Detection][Incremental Object Detection] This paper proposes the PDP framework, which addresses prompt degradation in incremental object detection caused by prompt coupling and prompt drift via decoupl…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - Incremental Object Detection
-  - Prompt Learning
-  - Dual-Pool Paradigm
-  - Prototype Pseudo-Labels
-  - Catastrophic Forgetting
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Incremental Object Detection"
+  - "Prompt Learning"
+  - "Dual-Pool Paradigm"
+  - "Prototype Pseudo-Labels"
+  - "Catastrophic Forgetting"
 date: 2026-05-08
 content_hash: efb75e82c8535735
 ---

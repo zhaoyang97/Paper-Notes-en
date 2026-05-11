@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mixture of Ranks with Degradation-Aware Routing for One-Step Real-World Image Super-Resolution
 description: >-
-  [AAAI 2026][Image Generation][Image Super-Resolution] This paper introduces the sparse Mixture-of-Experts (MoE) paradigm into real-world image super-resolution, proposing a Mixture-of-Ranks (MoR) architecture that treats each LoRA rank as an independent expert. Combined with a CLIP-driven degradation estimation module and a degradation-aware load balancing loss, the method achieves one-step high-fidelity super-resolution reconstruction.
+  [AAAI 2026][Image Generation][Image Super-Resolution] This paper introduces the sparse Mixture-of-Experts (MoE) paradigm into real-world image super-resolution…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Image Super-Resolution
-  - Mixture of Experts
-  - LoRA
-  - Degradation-Aware
-  - One-Step Diffusion
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Image Super-Resolution"
+  - "Mixture of Experts"
+  - "LoRA"
+  - "Degradation-Aware"
+  - "One-Step Diffusion"
 date: 2026-05-08
 content_hash: d0643fd887e9d2bd
 ---

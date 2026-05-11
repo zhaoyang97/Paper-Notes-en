@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OmniPT: Unleashing the Potential of Large Vision Language Models for Pedestrian Tracking and Understanding
 description: >-
-  [AAAI 2026][Multimodal VLM][Pedestrian tracking] This paper proposes OmniPT, a unified pedestrian tracking framework built upon large vision-language models (LVLMs). Through a four-stage RL→Mid Training→SFT→RL training strategy, OmniPT simultaneously supports conventional MOT, language-referred tracking (RMOT/CRMOT), and semantic understanding (SMOT), achieving state-of-the-art results on multiple benchmarks—most notably a HOTA of 75.04 on BenSMOT, surpassing the previous SOTA by 3.06.
+  [AAAI 2026][Multimodal VLM][Pedestrian tracking] This paper proposes OmniPT, a unified pedestrian tracking framework built upon large vision-language models (LVLMs). Through a four-stage RL→Mid Training→SFT→RL training s…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Pedestrian tracking
-  - large vision-language models
-  - multi-object tracking
-  - semantic understanding
-  - reinforcement learning
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Pedestrian tracking"
+  - "large vision-language models"
+  - "multi-object tracking"
+  - "semantic understanding"
+  - "reinforcement learning"
 date: 2026-05-08
 content_hash: e2a4cce56f69b9dd
 ---

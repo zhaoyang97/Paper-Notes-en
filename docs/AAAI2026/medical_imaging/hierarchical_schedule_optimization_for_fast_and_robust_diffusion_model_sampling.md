@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Hierarchical Schedule Optimization for Fast and Robust Diffusion Model Sampling
 description: >-
-  [Medical Imaging] HSO proposes a hierarchical schedule optimizer via a bilevel optimization framework — an upper-level global search for optimal initialization strategies combined with a lower-level local refinement of schedules — achieving training-free SOTA sampling quality under extremely low NFE at a one-time optimization cost of only ~8 seconds.
+  [Medical Imaging] HSO proposes a hierarchical schedule optimizer via a bilevel optimization framework — an upper-level global search for optimal initialization strategies combined with a lower-level local refinement of s…
 tags:
-  - Medical Imaging
+  - "Medical Imaging"
 date: 2026-05-08
 content_hash: a48ae7aebd69b2f6
 ---

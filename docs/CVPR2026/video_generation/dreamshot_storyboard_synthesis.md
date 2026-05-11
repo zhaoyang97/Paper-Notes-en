@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DreamShot: Personalized Storyboard Synthesis with Video Diffusion Prior
 description: >-
-  [CVPR 2026][Video Generation][Storyboard Generation] This paper proposes DreamShot, which leverages the spatiotemporal prior of video diffusion models to generate multi-shot storyboards with consistent characters and coherent scenes. A Role-Attention Consistency Loss (RACL) is introduced to address multi-character confusion, and three unified generation modes are supported: text-to-shot, reference-to-shot, and shot-to-shot.
+  [CVPR 2026][Video Generation][Storyboard Generation] This paper proposes DreamShot, which leverages the spatiotemporal prior of video diffusion models to generate multi-shot storyboards with consistent characters and coh…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Storyboard Generation
-  - Video Diffusion Model
-  - Character Consistency
-  - Multi-Character Reference
-  - Attention Constraint
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Storyboard Generation"
+  - "Video Diffusion Model"
+  - "Character Consistency"
+  - "Multi-Character Reference"
+  - "Attention Constraint"
 date: 2026-05-08
 content_hash: 65bd2e4a63373424
 ---

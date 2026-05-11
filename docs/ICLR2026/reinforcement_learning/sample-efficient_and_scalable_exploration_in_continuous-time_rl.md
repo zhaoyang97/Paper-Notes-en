@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Sample-efficient and Scalable Exploration in Continuous-Time RL
 description: >-
-  [Reinforcement Learning] This paper proposes COMBRL, an algorithm that achieves scalable and sample-efficient exploration in continuous-time model-based RL by maximizing a weighted sum of extrinsic reward and epistemic uncertainty, with theoretical guarantees of sublinear regret.
+  [Reinforcement Learning] This paper proposes COMBRL, an algorithm that achieves scalable and sample-efficient exploration in continuous-time model-based RL by maximizing a weighted sum of extrinsic reward and epistemic u…
 tags:
-  - Reinforcement Learning
+  - "Reinforcement Learning"
 date: 2026-05-08
 content_hash: 456fd1c29466dc58
 ---

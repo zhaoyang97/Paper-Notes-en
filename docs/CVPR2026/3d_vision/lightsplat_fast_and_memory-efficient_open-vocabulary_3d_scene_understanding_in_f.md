@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LightSplat: Fast and Memory-Efficient Open-Vocabulary 3D Scene Understanding in Five Seconds
 description: >-
-  [CVPR 2026][3D Vision][Open-vocabulary 3D scene understanding] LightSplat proposes a training-free framework that is both fast and memory-efficient. By assigning each 3D Gaussian a compact 2-byte semantic index instead of high-dimensional CLIP features, combined with a lightweight index-to-feature lookup and single-pass 3D clustering, it achieves open-vocabulary 3D scene understanding that is 50–400× faster and requires 64× less memory than existing state-of-the-art methods.
+  [CVPR 2026][3D Vision][Open-vocabulary 3D scene understanding] LightSplat proposes a training-free framework that is both fast and memory-efficient. By assigning each 3D Gaussian a compact 2-byte semantic index instead o…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Open-vocabulary 3D scene understanding
-  - 3D Gaussian splatting
-  - semantic index injection
-  - training-free framework
-  - clustering-based inference
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Open-vocabulary 3D scene understanding"
+  - "3D Gaussian splatting"
+  - "semantic index injection"
+  - "training-free framework"
+  - "clustering-based inference"
 date: 2026-05-08
 content_hash: 484cefab5cb16ada
 ---

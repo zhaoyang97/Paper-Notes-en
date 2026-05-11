@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Parameter-Free Fine-tuning via Redundancy Elimination for Vision Foundation Models
 description: >-
-  [AAAI 2026][3D Vision][Vision Foundation Models] This work identifies pervasive redundant channels in vision foundation models (SAM/SAM2/DINOv2) and proposes a parameter-free adaptation method that requires no parameter updates: an output-difference-based channel selection algorithm identifies optimal replacement pairs, substituting redundant channels with effective ones to enhance feature representations for downstream tasks, yielding average mIoU gains of 5–11 points.
+  [AAAI 2026][3D Vision][Vision Foundation Models] This work identifies pervasive redundant channels in vision foundation models (SAM/SAM2/DINOv2) and proposes a parameter-free adaptation method that requires no parameter…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - Vision Foundation Models
-  - Parameter-Free Fine-Tuning
-  - Channel Redundancy
-  - SAM
-  - Feature Selection
+  - "AAAI 2026"
+  - "3D Vision"
+  - "Vision Foundation Models"
+  - "Parameter-Free Fine-Tuning"
+  - "Channel Redundancy"
+  - "SAM"
+  - "Feature Selection"
 date: 2026-05-08
 content_hash: 0cbadcca9a612678
 ---

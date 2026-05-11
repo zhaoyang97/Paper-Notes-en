@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] One Operator to Rule Them All? On Boundary-Indexed Operator Families in Neural PDE Solvers
 description: >-
-  [ICLR 2026][Scientific Computing][Neural Operator] This paper argues that neural PDE solvers, when trained under varying boundary conditions, do not learn a single solution operator but rather a family of operators indexed by boundary conditions. It formalizes the non-identifiability problem induced by boundary distribution shift under ERM from a learning-theoretic perspective.
+  [ICLR 2026][Scientific Computing][Neural Operator] This paper argues that neural PDE solvers, when trained under varying boundary conditions…
 tags:
-  - ICLR 2026
-  - Scientific Computing
-  - Neural Operator
-  - Boundary Conditions
-  - Distribution Shift
-  - Non-Identifiability
-  - Fourier Neural Operator
+  - "ICLR 2026"
+  - "Scientific Computing"
+  - "Neural Operator"
+  - "Boundary Conditions"
+  - "Distribution Shift"
+  - "Non-Identifiability"
+  - "Fourier Neural Operator"
 date: 2026-05-08
 content_hash: b6c96f8047332882
 ---

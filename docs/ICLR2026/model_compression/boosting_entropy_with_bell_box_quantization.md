@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Boosting Entropy with Bell Box Quantization
 description: >-
-  [ICLR 2026][Model Compression][quantization-aware pre-training] This paper proposes Bell Box Quantization (BBQ), the first quantization method that simultaneously satisfies information-theoretic optimality (ITO) and compute-efficiency. The core insight is the domain-agnosticity of learning—the output domain of a quantizer need not coincide with its input domain. BBQ performs ITO quantization in the input domain to maximize entropy, then maps to hardware-acceleratable data types in the output domain, achieving comprehensive improvements over QuEST and LSQ in 1–4 bit QAPT settings.
+  [ICLR 2026][Model Compression][quantization-aware pre-training] This paper proposes Bell Box Quantization (BBQ), the first quantization method that simultaneously satisfies information-theoretic optimality (ITO) and comp…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - quantization-aware pre-training
-  - information-theoretically optimal quantization
-  - compute-efficient data types
-  - entropy maximization
-  - low-precision inference
+  - "ICLR 2026"
+  - "Model Compression"
+  - "quantization-aware pre-training"
+  - "information-theoretically optimal quantization"
+  - "compute-efficient data types"
+  - "entropy maximization"
+  - "low-precision inference"
 date: 2026-05-08
 content_hash: cdd1f00dcc3df72f
 ---

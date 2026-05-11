@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Robust Out-of-Order Retrieval for Grid-Based Storage at Maximum Capacity
 description: >-
-  [AAAI 2026][Robotics][grid-based storage] For the problem of uncertain retrieval order in fully loaded 2D grid-based storage systems, this paper proposes the k-bounded perturbation uncertainty model, proves that $\Theta(k)$ columns is both necessary and sufficient for zero relocation, and presents an efficient robust storage solver and greedy retrieval strategy. The approach nearly eliminates relocations when $k \leq 0.5c$ and still reduces relocations by 50%+ when $k$ reaches $c$.
+  [AAAI 2026][Robotics][grid-based storage] For the problem of uncertain retrieval order in fully loaded 2D grid-based storage systems, this paper proposes the k-bounded perturbation uncertainty model…
 tags:
-  - AAAI 2026
-  - Robotics
-  - grid-based storage
-  - out-of-order retrieval
-  - maximum capacity
-  - k-bounded perturbation
-  - robust storage
-  - relocation minimization
+  - "AAAI 2026"
+  - "Robotics"
+  - "grid-based storage"
+  - "out-of-order retrieval"
+  - "maximum capacity"
+  - "k-bounded perturbation"
+  - "robust storage"
+  - "relocation minimization"
 date: 2026-05-08
 content_hash: 479d3de85a53fdc1
 ---

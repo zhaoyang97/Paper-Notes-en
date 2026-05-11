@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Ctrl&Shift: High-Quality Geometry-Aware Object Manipulation in Visual Generation
 description: >-
-  [ICLR 2026][3D Vision][Object manipulation] This paper proposes Ctrl&Shift, an end-to-end diffusion framework that decomposes object manipulation into object removal and reference-guided inpainting, and injects relative camera pose control, achieving geometry-consistent fine-grained object manipulation for the first time without relying on explicit 3D reconstruction.
+  [ICLR 2026][3D Vision][Object manipulation] This paper proposes Ctrl&Shift, an end-to-end diffusion framework that decomposes object manipulation into object removal and reference-guided inpainting…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Object manipulation
-  - diffusion models
-  - geometric consistency
-  - camera pose control
-  - image editing
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Object manipulation"
+  - "diffusion models"
+  - "geometric consistency"
+  - "camera pose control"
+  - "image editing"
 date: 2026-05-08
 content_hash: a617a1dd6e528467
 ---

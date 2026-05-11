@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Emulating Self-Attention with Convolution for Efficient Image Super-Resolution
 description: >-
-  [ICCV 2025][Image Restoration][Image Super-Resolution] Motivated by the observation that features and attention maps across adjacent self-attention layers exhibit high inter-layer similarity (89%/87%), this paper proposes ConvAttn — a module composed of a shared large-kernel convolution and a dynamic convolution kernel — to replace the majority of self-attention layers. Flash Attention is introduced into lightweight SR for the first time, extending the window size to $32 \times 32$, achieving state-of-the-art performance at minimal latency and memory cost.
+  [ICCV 2025][Image Restoration][Image Super-Resolution] Motivated by the observation that features and attention maps across adjacent self-attention layers exhibit high inter-layer similarity (89%/87%)…
 tags:
-  - ICCV 2025
-  - Image Restoration
-  - Image Super-Resolution
-  - Self-Attention Substitution
-  - Large-Kernel Convolution
-  - Flash Attention
-  - Lightweight Network
+  - "ICCV 2025"
+  - "Image Restoration"
+  - "Image Super-Resolution"
+  - "Self-Attention Substitution"
+  - "Large-Kernel Convolution"
+  - "Flash Attention"
+  - "Lightweight Network"
 date: 2026-05-08
 content_hash: 90c61e848cbda3f1
 ---

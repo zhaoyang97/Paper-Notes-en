@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AirCache: Activating Inter-Modal Relevancy KV Cache Compression for Efficient Large Vision-Language Model Inference
 description: >-
-  [ICCV 2025][Multimodal VLM][KV Cache compression] This paper proposes AirCache, a KV Cache compression method for LVLMs that evaluates visual token importance via an Elite Observation Window, combined with adaptive layer-wise budget allocation based on the intensity and skewness of importance score distributions. At only 10% visual KV Cache retention, performance degradation remains within 1%, while decoding latency is reduced by 29%–66%.
+  [ICCV 2025][Multimodal VLM][KV Cache compression] This paper proposes AirCache, a KV Cache compression method for LVLMs that evaluates visual token importance via an Elite Observation Window…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - KV Cache compression
-  - large vision-language models
-  - cross-modal attention
-  - layer-wise budget allocation
-  - inference acceleration
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "KV Cache compression"
+  - "large vision-language models"
+  - "cross-modal attention"
+  - "layer-wise budget allocation"
+  - "inference acceleration"
 date: 2026-05-08
 content_hash: 800ad5fe2b6995c8
 ---

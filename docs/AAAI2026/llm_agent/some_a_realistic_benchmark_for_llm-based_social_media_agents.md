@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SoMe: A Realistic Benchmark for LLM-based Social Media Agents
 description: >-
-  [AAAI 2026][LLM Agent][social media agent] This paper introduces SoMe, the first comprehensive benchmark for social media agents, comprising 8 tasks, over 9 million real-world posts, and 17,869 annotated queries. It evaluates 13 mainstream LLMs on social media agent capabilities and reveals substantial performance gaps on complex social tasks.
+  [AAAI 2026][LLM Agent][social media agent] This paper introduces SoMe, the first comprehensive benchmark for social media agents, comprising 8 tasks, over 9 million real-world posts, and 17…
 tags:
-  - AAAI 2026
-  - LLM Agent
-  - social media agent
-  - LLM benchmark
-  - tool-use
-  - agent evaluation
-  - social media analysis
+  - "AAAI 2026"
+  - "LLM Agent"
+  - "social media agent"
+  - "LLM benchmark"
+  - "tool-use"
+  - "agent evaluation"
+  - "social media analysis"
 date: 2026-05-08
 content_hash: 94f28599af591587
 ---

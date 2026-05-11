@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PointAlign: Feature-Level Alignment Regularization for 3D Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][3D point cloud understanding] PointAlign is proposed to apply feature-level alignment regularization to point cloud tokens at intermediate LLM layers (aligned with Q-Former outputs) in 3D VLMs. By training only a lightweight alignment projector and LoRA adapters, the method effectively prevents geometric information from degrading during language modeling, achieving a 7.50pp improvement on open-vocabulary classification.
+  [CVPR 2026][Multimodal VLM][3D point cloud understanding] PointAlign is proposed to apply feature-level alignment regularization to point cloud tokens at intermediate LLM layers (aligned with Q-Former outputs) in 3D VLMs…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - 3D point cloud understanding
-  - vision-language models
-  - feature alignment
-  - geometric information preservation
-  - regularization
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "3D point cloud understanding"
+  - "vision-language models"
+  - "feature alignment"
+  - "geometric information preservation"
+  - "regularization"
 date: 2026-05-08
 content_hash: 8b1b0941d327ad6d
 ---

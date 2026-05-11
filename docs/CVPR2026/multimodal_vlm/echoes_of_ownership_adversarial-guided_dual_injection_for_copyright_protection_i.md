@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Echoes of Ownership: Adversarial-Guided Dual Injection for Copyright Protection in MLLMs
 description: >-
-  [CVPR2026][Multimodal VLM][MLLM copyright protection] This paper proposes the AGDI framework for black-box copyright tracking in MLLMs via adversarially optimized trigger images. A dual injection mechanism simultaneously injects copyright information at the response level (CE loss driving an auxiliary model to produce a target answer) and the semantic level (minimizing cosine distance between the trigger image and target text in CLIP space). An adversarial training scheme simulates fine-tuning resistance. AGDI consistently outperforms PLA and RNA baselines on Qwen2-VL and LLaVA-1.5.
+  [CVPR2026][Multimodal VLM][MLLM copyright protection] This paper proposes the AGDI framework for black-box copyright tracking in MLLMs via adversarially optimized trigger images. A dual injection mechanism simultaneously…
 tags:
-  - CVPR2026
-  - Multimodal VLM
-  - MLLM copyright protection
-  - adversarial attack
-  - trigger image
-  - dual injection
-  - CLIP semantic alignment
-  - black-box tracking
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "MLLM copyright protection"
+  - "adversarial attack"
+  - "trigger image"
+  - "dual injection"
+  - "CLIP semantic alignment"
+  - "black-box tracking"
 date: 2026-05-08
 content_hash: a4e5adc3e1c38133
 ---

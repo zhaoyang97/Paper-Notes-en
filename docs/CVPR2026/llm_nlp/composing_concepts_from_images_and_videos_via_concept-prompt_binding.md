@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Composing Concepts from Images and Videos via Concept-prompt Binding
 description: >-
-  [CVPR 2026][LLM/NLP][visual concept composition] Bind & Compose (BiCo) is a one-shot method that binds visual concepts to prompt tokens via hierarchical binders and achieves flexible image-video concept composition through token-level composition, comprehensively outperforming prior work in concept consistency, prompt fidelity, and motion quality.
+  [CVPR 2026][LLM/NLP][visual concept composition] Bind & Compose (BiCo) is a one-shot method that binds visual concepts to prompt tokens via hierarchical binders and achieves flexible image-video concept composition throu…
 tags:
-  - CVPR 2026
-  - LLM/NLP
-  - visual concept composition
-  - diffusion Transformer
-  - video personalization
-  - concept binding
-  - temporal decoupling
+  - "CVPR 2026"
+  - "LLM/NLP"
+  - "visual concept composition"
+  - "diffusion Transformer"
+  - "video personalization"
+  - "concept binding"
+  - "temporal decoupling"
 date: 2026-05-08
 content_hash: 0010ee5a0994a710
 ---

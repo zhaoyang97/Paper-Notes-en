@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OverLayBench: A Benchmark for Layout-to-Image Generation with Dense Overlaps
 description: >-
-  [NeurIPS 2025][Object Detection][Layout-to-Image] OverLayBench introduces the first Layout-to-Image benchmark focused on dense overlap scenarios (4,052 samples + OverLayScore difficulty metric), revealing that SOTA methods suffer severe degradation in mIoU from 71% to 54% under complex overlaps, and proposes Amodal Mask supervision that achieves a 15.9% improvement in overlap IoU.
+  [NeurIPS 2025][Object Detection][Layout-to-Image] OverLayBench introduces the first Layout-to-Image benchmark focused on dense overlap scenarios (4,052 samples + OverLayScore difficulty metric)…
 tags:
-  - NeurIPS 2025
-  - Object Detection
-  - Layout-to-Image
-  - Overlapping Layouts
-  - Amodal Mask
-  - Diffusion Models
-  - Benchmark Evaluation
+  - "NeurIPS 2025"
+  - "Object Detection"
+  - "Layout-to-Image"
+  - "Overlapping Layouts"
+  - "Amodal Mask"
+  - "Diffusion Models"
+  - "Benchmark Evaluation"
 date: 2026-05-08
 content_hash: c488fdde3b5debc4
 ---

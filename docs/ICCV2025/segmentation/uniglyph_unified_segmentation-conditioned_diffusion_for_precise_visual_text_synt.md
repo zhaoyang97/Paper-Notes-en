@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] UniGlyph: Unified Segmentation-Conditioned Diffusion for Precise Visual Text Synthesis
 description: >-
-  [ICCV 2025][Segmentation][Visual text generation] This paper proposes UniGlyph, a visual text generation framework that adopts segmentation masks as a unified conditioning signal. By replacing conventional rendered glyph conditions with Adaptive Glyph Conditioning (AGC) and Glyph Region Loss (GRL), UniGlyph achieves state-of-the-art bilingual (Chinese and English) text image generation under a single ControlNet architecture, with particularly large margins in small-font and complex-layout scenarios.
+  [ICCV 2025][Segmentation][Visual text generation] This paper proposes UniGlyph, a visual text generation framework that adopts segmentation masks as a unified conditioning signal. By replacing conventional rendered glyph…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - Visual text generation
-  - segmentation mask conditioning
-  - diffusion models
-  - bilingual glyph
-  - small-font generation
-  - ControlNet
+  - "ICCV 2025"
+  - "Segmentation"
+  - "Visual text generation"
+  - "segmentation mask conditioning"
+  - "diffusion models"
+  - "bilingual glyph"
+  - "small-font generation"
+  - "ControlNet"
 date: 2026-05-08
 content_hash: 170e234658c3d32d
 ---

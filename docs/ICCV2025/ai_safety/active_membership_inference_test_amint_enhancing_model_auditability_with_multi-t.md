@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Active Membership Inference Test (aMINT): Enhancing Model Auditability with Multi-Task Learning
 description: >-
-  [ICCV 2025][AI Safety][Membership Inference] This paper proposes Active MINT (aMINT), a multi-task learning framework that jointly trains a MINT model alongside the audited model during training, enabling detection of whether specific data was used for training with over 80% accuracy — significantly outperforming existing passive MINT and membership inference attack methods.
+  [ICCV 2025][AI Safety][Membership Inference] This paper proposes Active MINT (aMINT), a multi-task learning framework that jointly trains a MINT model alongside the audited model during training…
 tags:
-  - ICCV 2025
-  - AI Safety
-  - Membership Inference
-  - Data Auditing
-  - Multi-Task Learning
-  - AI Trustworthiness
-  - Model Transparency
+  - "ICCV 2025"
+  - "AI Safety"
+  - "Membership Inference"
+  - "Data Auditing"
+  - "Multi-Task Learning"
+  - "AI Trustworthiness"
+  - "Model Transparency"
 date: 2026-05-08
 content_hash: 4bedba7d8119506b
 ---

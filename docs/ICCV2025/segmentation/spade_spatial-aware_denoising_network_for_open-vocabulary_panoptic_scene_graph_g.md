@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SPADE: Spatial-Aware Denoising Network for Open-vocabulary Panoptic Scene Graph Generation
 description: >-
-  [ICCV 2025][Segmentation][Panoptic Scene Graph Generation] This paper proposes SPADE — a spatial-aware denoising network for open-vocabulary panoptic scene graph generation (PSG). It adapts a pretrained diffusion model into a PSG-specific spatial prior extractor via DDIM inversion-guided calibration, and designs a relational graph Transformer to capture both long-range and local context. SPADE substantially outperforms prior state-of-the-art methods in both closed-set and open-set settings, with particularly strong performance on spatial relation prediction.
+  [ICCV 2025][Segmentation][Panoptic Scene Graph Generation] This paper proposes SPADE — a spatial-aware denoising network for open-vocabulary panoptic scene graph generation (PSG). It adapts a pretrained diffusion model i…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - Panoptic Scene Graph Generation
-  - Open-Vocabulary
-  - Diffusion Models
-  - Spatial Relation Reasoning
-  - Graph Transformer
+  - "ICCV 2025"
+  - "Segmentation"
+  - "Panoptic Scene Graph Generation"
+  - "Open-Vocabulary"
+  - "Diffusion Models"
+  - "Spatial Relation Reasoning"
+  - "Graph Transformer"
 date: 2026-05-08
 content_hash: dd1baefa2c791fdf
 ---

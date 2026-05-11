@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Bootstrap Off-policy with World Model (BOOM)
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Model-based reinforcement learning] This paper proposes the BOOM framework, which tightly couples an online planner (MPPI) with off-policy policy learning via a bootstrap loop: the policy initializes the planner, which in turn guides policy improvement through a likelihood-free alignment loss, supplemented by a soft Q-weighted mechanism to prioritize high-return behaviors, achieving state-of-the-art performance on high-dimensional continuous control tasks.
+  [NeurIPS 2025][Reinforcement Learning][Model-based reinforcement learning] This paper proposes the BOOM framework, which tightly couples an online planner (MPPI) with off-policy policy learning via a bootstrap loop: the…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Model-based reinforcement learning
-  - online planning
-  - off-policy learning
-  - world model
-  - actor divergence
-  - behavior alignment
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Model-based reinforcement learning"
+  - "online planning"
+  - "off-policy learning"
+  - "world model"
+  - "actor divergence"
+  - "behavior alignment"
 date: 2026-05-08
 content_hash: 146dc5dd3ebd5ccd
 ---

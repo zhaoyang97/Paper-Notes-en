@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TalkSketch: Multimodal Generative AI for Real-time Sketch Ideation with Speech
 description: >-
-  [AAAI 2026][Dialogue Systems][multimodal interaction] This paper proposes TalkSketch, a system that integrates hand-drawn sketches with real-time speech input into a multimodal AI chatbot, enabling designers to simultaneously draw and verbalize ideas during early-stage ideation. The system addresses the problem that text-based prompting in existing GenAI tools disrupts the creative workflow.
+  [AAAI 2026][Dialogue Systems][multimodal interaction] This paper proposes TalkSketch, a system that integrates hand-drawn sketches with real-time speech input into a multimodal AI chatbot…
 tags:
-  - AAAI 2026
-  - Dialogue Systems
-  - multimodal interaction
-  - sketch design
-  - speech input
-  - generative AI
-  - creativity support tools
+  - "AAAI 2026"
+  - "Dialogue Systems"
+  - "multimodal interaction"
+  - "sketch design"
+  - "speech input"
+  - "generative AI"
+  - "creativity support tools"
 date: 2026-05-08
 content_hash: 83a376c10bd46ae0
 ---

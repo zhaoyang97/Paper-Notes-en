@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] When Slower Isn't Truer: Inverse Scaling Law of Truthfulness in Multimodal Reasoning
 description: >-
-  [ACL 2026][Multimodal VLM][multimodal reasoning] This paper identifies an "inverse scaling law" in multimodal reasoning models — slow-thinking (reasoning) models are more prone to producing untruthful outputs than fast-thinking (chat) models when faced with misleading visual inputs. To systematically diagnose this phenomenon, the authors construct the TruthfulVQA benchmark (5,000+ samples, 50 annotators, three-tier graded prompts) and the TruthfulJudge evaluation model (88.4% accuracy).
+  [ACL 2026][Multimodal VLM][multimodal reasoning] This paper identifies an "inverse scaling law" in multimodal reasoning models — slow-thinking (reasoning) models are more prone to producing untruthful outputs than fast-t…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - multimodal reasoning
-  - truthfulness evaluation
-  - inverse scaling law
-  - depth-first reasoning
-  - hallucination detection
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "multimodal reasoning"
+  - "truthfulness evaluation"
+  - "inverse scaling law"
+  - "depth-first reasoning"
+  - "hallucination detection"
 date: 2026-05-08
 content_hash: b84d1162d5884c83
 ---

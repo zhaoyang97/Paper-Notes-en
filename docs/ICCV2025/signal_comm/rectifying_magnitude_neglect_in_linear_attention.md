@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Rectifying Magnitude Neglect in Linear Attention
 description: >-
-  [ICCV 2025][Signal & Communication][Linear Attention] This paper identifies that Linear Attention completely discards Query magnitude information, causing a significant deviation of attention score distributions from Softmax Attention. It proposes Magnitude-Aware Linear Attention (MALA), which restores magnitude awareness by introducing a scaling factor $\beta$ and an offset term $\gamma$, achieving comprehensive improvements over existing methods across classification, detection, segmentation, NLP, speech recognition, and image generation tasks.
+  [ICCV 2025][Signal & Communication][Linear Attention] This paper identifies that Linear Attention completely discards Query magnitude information…
 tags:
-  - ICCV 2025
+  - "ICCV 2025"
   - "Signal & Communication"
-  - Linear Attention
-  - Magnitude-Aware
-  - Vision Transformer
-  - Attention Score Distribution
-  - Linear Complexity
+  - "Linear Attention"
+  - "Magnitude-Aware"
+  - "Vision Transformer"
+  - "Attention Score Distribution"
+  - "Linear Complexity"
 date: 2026-05-08
 content_hash: d61b005f53dc4bfa
 ---

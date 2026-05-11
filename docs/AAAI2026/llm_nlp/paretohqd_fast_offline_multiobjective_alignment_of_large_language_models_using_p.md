@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ParetoHqD: Fast Offline Multiobjective Alignment of Large Language Models Using Pareto High-Quality Data
 description: >-
-  [AAAI 2026][LLM/NLP][multi-objective alignment] This paper proposes ParetoHqD, which represents human preferences as preference directions in objective space (rather than linear scalarization), and performs two-stage SFT on high-quality data selected near the Pareto front. Using only 42% of the GPU time, it achieves multi-objective LLM alignment performance superior to five baselines.
+  [AAAI 2026][LLM/NLP][multi-objective alignment] This paper proposes ParetoHqD, which represents human preferences as preference directions in objective space (rather than linear scalarization)…
 tags:
-  - AAAI 2026
-  - LLM/NLP
-  - multi-objective alignment
-  - Pareto optimality
-  - SFT
-  - preference direction
-  - data selection
+  - "AAAI 2026"
+  - "LLM/NLP"
+  - "multi-objective alignment"
+  - "Pareto optimality"
+  - "SFT"
+  - "preference direction"
+  - "data selection"
 date: 2026-05-08
 content_hash: 4d79d6d27f7857fe
 ---

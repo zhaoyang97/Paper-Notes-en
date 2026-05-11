@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Detecting Hallucinations in SpeechLLMs at Inference Time Using Attention Maps
 description: >-
-  [ACL 2026][Medical Imaging][Speech LLM] This work proposes four audio-attention-based metrics (AudioRatio, AudioConsistency, AudioEntropy, TextEntropy) and trains lightweight logistic regression classifiers to detect hallucinations in Speech Large Language Models (SpeechLLMs) at inference time, achieving up to +0.23 PR-AUC improvement on in-domain data.
+  [ACL 2026][Medical Imaging][Speech LLM] This work proposes four audio-attention-based metrics (AudioRatio, AudioConsistency, AudioEntropy…
 tags:
-  - ACL 2026
-  - Medical Imaging
-  - Speech LLM
-  - hallucination detection
-  - attention maps
-  - inference-time detection
-  - lightweight classifier
+  - "ACL 2026"
+  - "Medical Imaging"
+  - "Speech LLM"
+  - "hallucination detection"
+  - "attention maps"
+  - "inference-time detection"
+  - "lightweight classifier"
 date: 2026-05-08
 content_hash: ed18f1894df865ed
 ---

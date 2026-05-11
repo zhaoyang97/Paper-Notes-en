@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Adversarial Locomotion and Motion Imitation for Humanoid Policy Learning
 description: >-
-  [NeurIPS 2025][Video Understanding][Humanoid Robot] ALMI proposes an upper-lower body adversarial training framework: the lower-body policy learns robust locomotion under upper-body motion perturbations, while the upper-body policy learns precise motion imitation under lower-body locomotion perturbations. Through iterative adversarial training converging to a Nash equilibrium, the framework enables stable whole-body coordinated control on the Unitree H1-2 real robot.
+  [NeurIPS 2025][Video Understanding][Humanoid Robot] ALMI proposes an upper-lower body adversarial training framework: the lower-body policy learns robust locomotion under upper-body motion perturbations…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
-  - Humanoid Robot
-  - Adversarial Learning
-  - Motion Imitation
-  - Whole-Body Control
-  - Sim-to-Real
+  - "NeurIPS 2025"
+  - "Video Understanding"
+  - "Humanoid Robot"
+  - "Adversarial Learning"
+  - "Motion Imitation"
+  - "Whole-Body Control"
+  - "Sim-to-Real"
 date: 2026-05-08
 content_hash: 5c932862442cdadf
 ---

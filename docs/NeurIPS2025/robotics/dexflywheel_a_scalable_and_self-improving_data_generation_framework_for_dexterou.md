@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DexFlyWheel: A Scalable Self-Improving Data Generation Framework for Dexterous Manipulation
 description: >-
-  [NeurIPS 2025][Robotics][Dexterous Manipulation] This paper proposes DexFlyWheel, a dexterous manipulation data generation framework that starts from a single human demonstration and progressively scales data diversity through a self-improving loop composed of IL, residual RL, and data augmentation. The framework generates 2,000+ demonstrations across 4 tasks, achieving an average policy success rate of 81.9% and a real-world transfer success rate of 78.3%.
+  [NeurIPS 2025][Robotics][Dexterous Manipulation] This paper proposes DexFlyWheel, a dexterous manipulation data generation framework that starts from a single human demonstration and progressively scales data diversity t…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - Dexterous Manipulation
-  - Data Flywheel
-  - Imitation Learning
-  - Residual Reinforcement Learning
-  - Sim-to-Real
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "Dexterous Manipulation"
+  - "Data Flywheel"
+  - "Imitation Learning"
+  - "Residual Reinforcement Learning"
+  - "Sim-to-Real"
 date: 2026-05-08
 content_hash: 658b18e0c7a2223a
 ---

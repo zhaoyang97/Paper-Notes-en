@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] INSTINCT: Instance-Level Interaction Architecture for Query-Based Collaborative Perception
 description: >-
-  [ICCV 2025][Autonomous Driving][collaborative perception] This paper proposes INSTINCT, a LiDAR-based instance-level collaborative perception framework that achieves state-of-the-art performance across multiple datasets through three core modules — quality-aware filtering, dual-branch detection routing, and cross-agent local instance fusion — while reducing communication bandwidth to approximately 1/264–1/281 of that required by existing methods.
+  [ICCV 2025][Autonomous Driving][collaborative perception] This paper proposes INSTINCT, a LiDAR-based instance-level collaborative perception framework that achieves state-of-the-art performance across multiple datasets…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - collaborative perception
-  - instance-level fusion
-  - V2X
-  - LiDAR
-  - bandwidth efficiency
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "collaborative perception"
+  - "instance-level fusion"
+  - "V2X"
+  - "LiDAR"
+  - "bandwidth efficiency"
 date: 2026-05-08
 content_hash: c32f5dd09543a6b2
 ---

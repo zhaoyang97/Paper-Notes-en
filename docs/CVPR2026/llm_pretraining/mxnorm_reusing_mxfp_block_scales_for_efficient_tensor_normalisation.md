@@ -2,19 +2,19 @@
 title: >-
   [Paper Note] MXNorm: Reusing MXFP Block Scales for Efficient Tensor Normalisation
 description: >-
-  [CVPR 2026][LLM Pretraining][RMSNorm] GPU matrix multiplication throughput has improved 80x (V100 to GB200) while reduction/elementwise operations improved only 5-9x, making RMSNorm a new bottleneck in low-precision training. MXNorm directly reuses the block scales already computed during MXFP8 quantization to estimate RMS, achieving a 32x reduction size decrease. Theorem 1 proves that the generalized $p$-mean of block absmax converges to a constant multiple of RMS. Llama 3 pretraining (125M/1B/8B) validates that MXNorm($p=2$) matches RMSNorm with minimal accuracy difference, with torch.compile benchmarks showing up to 2.4x isolated kernel speedup and +1.3%/+2.6% Llama 3 8B layer acceleration for MXFP8/NVFP4. Drop-in replacement with zero additional hyperparameters.
+  [CVPR 2026][LLM Pretraining][RMSNorm] GPU matrix multiplication throughput has improved 80x (V100 to GB200) while reduction/elementwise operations improved only 5-9x…
 tags:
-  - CVPR 2026
-  - LLM Pretraining
-  - RMSNorm
-  - MXFP8
-  - Block Scales
-  - Normalization
-  - Low-Precision Training
-  - LLM
-  - Llama
-  - Tensor Quantization
-  - Kernel Optimization
+  - "CVPR 2026"
+  - "LLM Pretraining"
+  - "RMSNorm"
+  - "MXFP8"
+  - "Block Scales"
+  - "Normalization"
+  - "Low-Precision Training"
+  - "LLM"
+  - "Llama"
+  - "Tensor Quantization"
+  - "Kernel Optimization"
 date: 2026-05-08
 content_hash: d198f52ff726b0e3
 ---

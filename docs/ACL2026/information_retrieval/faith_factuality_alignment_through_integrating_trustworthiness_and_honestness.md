@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] FAITH: Factuality Alignment through Integrating Trustworthiness and Honestness
 description: >-
-  [ACL 2026][Factuality alignment] This paper proposes FAITH, a framework that maps LLM uncertainty signals (consistency + semantic entropy) to natural-language descriptions of knowledge state quadrants (trustworthiness × honestness), designs uncertainty-aware fine-grained reward functions for PPO training, and applies a RAG module to correct potentially erroneous outputs, systematically improving the factual accuracy of LLMs.
+  [ACL 2026][Information Retrieval & RAG][Factuality alignment] This paper proposes FAITH, a framework that maps LLM uncertainty signals (consistency + semantic entropy) to natural-language descriptions of knowledge state…
 tags:
-  - ACL 2026
-  - Factuality alignment
-  - knowledge state quadrant
-  - uncertainty estimation
-  - PPO
-  - retrieval-augmented generation
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Factuality alignment"
+  - "knowledge state quadrant"
+  - "uncertainty estimation"
+  - "PPO"
+  - "retrieval-augmented generation"
 date: 2026-05-08
 content_hash: ef2c75ac1b520136
 ---

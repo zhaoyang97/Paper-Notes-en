@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Advancing Safe Mechanical Ventilation Using Offline RL With Hybrid Actions and Clinically Aligned Rewards
 description: >-
-  [AAAI 2026][Medical Imaging][Offline reinforcement learning] This paper addresses the problem of optimizing mechanical ventilation (MV) settings in the ICU via offline RL. A hybrid action space approach (HybridIQL/HybridEDAC) is proposed to avoid distributional shift caused by conventional discretization. Clinically aligned reward functions are introduced based on ventilator-free days (VFD) and physiological safety ranges, with multi-objective optimization used to select the optimal reward. The number of optimizable ventilation parameters is scaled from 2–3 to 6, and HybridIQL achieves the best balance between performance and policy coverage.
+  [AAAI 2026][Medical Imaging][Offline reinforcement learning] This paper addresses the problem of optimizing mechanical ventilation (MV) settings in the ICU via offline RL. A hybrid action space approach (HybridIQL/Hybrid…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Offline reinforcement learning
-  - mechanical ventilation
-  - hybrid action space
-  - clinical reward design
-  - ICU decision support
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Offline reinforcement learning"
+  - "mechanical ventilation"
+  - "hybrid action space"
+  - "clinical reward design"
+  - "ICU decision support"
 date: 2026-05-08
 content_hash: cd2c6cb1b02e25b0
 ---

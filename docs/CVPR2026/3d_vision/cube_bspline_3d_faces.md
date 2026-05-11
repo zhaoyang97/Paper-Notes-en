@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CUBE: Representing 3D Faces with Learnable B-Spline Volumes
 description: >-
-  [CVPR 2026][3D Vision][B-spline volumes] This paper proposes CUBE (Control-based Unified B-spline Encoding), a hybrid geometric representation combining B-spline volumes with learnable high-dimensional control features. Through a two-stage decoding pipeline (B-spline basis interpolation followed by a lightweight MLP residual), CUBE enables editable, high-fidelity 3D face reconstruction and scan registration.
+  [CVPR 2026][3D Vision][B-spline volumes] This paper proposes CUBE (Control-based Unified B-spline Encoding), a hybrid geometric representation combining B-spline volumes with learnable high-dimensional control features.…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - B-spline volumes
-  - face representation
-  - scan registration
-  - local control
-  - geometry editing
+  - "CVPR 2026"
+  - "3D Vision"
+  - "B-spline volumes"
+  - "face representation"
+  - "scan registration"
+  - "local control"
+  - "geometry editing"
 date: 2026-05-08
 content_hash: feb6c5823e36bd3c
 ---

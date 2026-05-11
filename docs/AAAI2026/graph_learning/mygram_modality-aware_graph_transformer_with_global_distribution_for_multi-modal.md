@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MyGram: Modality-aware Graph Transformer with Global Distribution for Multi-modal Entity Alignment
 description: >-
-  [AAAI 2026][Graph Learning][Multi-modal Entity Alignment] This paper proposes MyGram, which captures deep structural contextual information within each modality via a Modality-aware Graph Diffusion (MGD) module, and introduces a global distribution alignment loss (Gram Loss) based on the determinant of the Gram matrix to enforce cross-modal semantic consistency in high-dimensional space, achieving more robust multi-modal entity alignment.
+  [AAAI 2026][Graph Learning][Multi-modal Entity Alignment] This paper proposes MyGram, which captures deep structural contextual information within each modality via a Modality-aware Graph Diffusion (MGD) module…
 tags:
-  - AAAI 2026
-  - Graph Learning
-  - Multi-modal Entity Alignment
-  - Knowledge Graph
-  - Gram Matrix
-  - Graph Diffusion Learning
-  - Transformer
+  - "AAAI 2026"
+  - "Graph Learning"
+  - "Multi-modal Entity Alignment"
+  - "Knowledge Graph"
+  - "Gram Matrix"
+  - "Graph Diffusion Learning"
+  - "Transformer"
 date: 2026-05-08
 content_hash: 1f4498c0f635e8d3
 ---

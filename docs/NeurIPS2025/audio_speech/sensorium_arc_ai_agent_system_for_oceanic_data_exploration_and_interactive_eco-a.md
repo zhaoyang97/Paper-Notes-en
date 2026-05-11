@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Sensorium Arc: AI Agent System for Oceanic Data Exploration and Interactive Eco-Art
 description: >-
-  [NeurIPS 2025][Audio & Speech][Ocean data visualization] This paper presents Sensorium Arc, a multimodal interactive AI agent system that personifies the ocean as a poetic "narrator" figure. Leveraging a multi-agent RAG architecture, the system integrates NASA ocean science data with eco-aesthetic texts, enabling users to explore complex marine environmental data through natural conversation while dynamically generating scientific visualizations and artistic audiovisual feedback—realizing a paradigm shift from "passive data observation" to "active ecological dialogue."
+  [NeurIPS 2025][Audio & Speech][Ocean data visualization] This paper presents Sensorium Arc, a multimodal interactive AI agent system that personifies the ocean as a poetic "narrator" figure. Leveraging a multi-agent RAG…
 tags:
-  - NeurIPS 2025
+  - "NeurIPS 2025"
   - "Audio & Speech"
-  - Ocean data visualization
-  - RAG
-  - multi-agent LLM
-  - interactive eco-art
-  - conversational AI
-  - immersive media
+  - "Ocean data visualization"
+  - "RAG"
+  - "multi-agent LLM"
+  - "interactive eco-art"
+  - "conversational AI"
+  - "immersive media"
 date: 2026-05-08
 content_hash: 4459264bf9053c9d
 ---

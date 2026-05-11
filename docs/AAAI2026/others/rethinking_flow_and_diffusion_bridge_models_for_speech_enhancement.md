@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Rethinking Flow and Diffusion Bridge Models for Speech Enhancement
 description: >-
-  [AAAI 2026][Speech Enhancement] This paper proposes a unified theoretical framework that subsumes flow matching, score-based diffusion, and Schrödinger bridge models for speech enhancement as processes that construct different Gaussian probability paths between paired data. It further reveals that each sampling step in such generative models is intrinsically equivalent to predictive speech enhancement, and leverages this insight to improve bridge model performance by adopting high-performance backbone networks, refined loss functions, and fine-tuning strategies from the predictive paradigm.
+  [AAAI 2026][Speech Enhancement] This paper proposes a unified theoretical framework that subsumes flow matching, score-based diffusion…
 tags:
-  - AAAI 2026
-  - Speech Enhancement
-  - Diffusion Bridge Models
-  - Flow Matching
-  - Schrödinger Bridge
-  - Unified Framework
+  - "AAAI 2026"
+  - "Speech Enhancement"
+  - "Diffusion Bridge Models"
+  - "Flow Matching"
+  - "Schrödinger Bridge"
+  - "Unified Framework"
 date: 2026-05-08
 content_hash: c11e9651ca5ab23f
 ---

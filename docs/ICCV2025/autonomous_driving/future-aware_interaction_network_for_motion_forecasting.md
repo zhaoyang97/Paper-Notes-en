@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Future-Aware Interaction Network For Motion Forecasting
 description: >-
-  [ICCV 2025][Autonomous Driving][Motion Forecasting] This paper proposes FINet, which incorporates latent future trajectories into the scene encoding stage for joint optimization, while introducing the Mamba architecture as a replacement for Transformers in spatiotemporal modeling, achieving efficient and accurate motion forecasting.
+  [ICCV 2025][Autonomous Driving][Motion Forecasting] This paper proposes FINet, which incorporates latent future trajectories into the scene encoding stage for joint optimization…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - Motion Forecasting
-  - Mamba
-  - State Space Model
-  - Trajectory Prediction
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "Motion Forecasting"
+  - "Mamba"
+  - "State Space Model"
+  - "Trajectory Prediction"
 date: 2026-05-08
 content_hash: f884dfe56c1a54a7
 ---

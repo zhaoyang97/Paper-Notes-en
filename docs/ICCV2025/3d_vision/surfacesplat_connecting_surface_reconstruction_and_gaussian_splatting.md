@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SurfaceSplat: Connecting Surface Reconstruction and Gaussian Splatting
 description: >-
-  [ICCV 2025][3D Vision][Surface Reconstruction] SurfaceSplat proposes a hybrid framework that establishes bidirectional connections between SDF (Signed Distance Function) and 3D Gaussian Splatting (3DGS): the SDF provides coarse geometry to enhance 3DGS rendering quality, while novel-view images rendered by 3DGS are in turn used to refine SDF surface reconstruction accuracy. The method achieves state-of-the-art performance on both surface reconstruction and novel view synthesis on the DTU and MobileBrick datasets.
+  [ICCV 2025][3D Vision][Surface Reconstruction] SurfaceSplat proposes a hybrid framework that establishes bidirectional connections between SDF (Signed Distance Function) and 3D Gaussian Splatting (3DGS): the SDF provides…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Surface Reconstruction
-  - Gaussian Splatting
-  - SDF
-  - Sparse-View
-  - Novel View Synthesis
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Surface Reconstruction"
+  - "Gaussian Splatting"
+  - "SDF"
+  - "Sparse-View"
+  - "Novel View Synthesis"
 date: 2026-05-08
 content_hash: 0f0e7a4ba6991f89
 ---

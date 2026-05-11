@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From Black Hole to Galaxy: Neural Operator Framework for Accretion and Feedback Dynamics
 description: >-
-  [NeurIPS 2025][Scientific Computing][Neural Operator] A Neural Operator-based "sub-grid black hole" model is proposed to learn the small-scale (GR)MHD time-evolution operator $u_t \to u_{t+\Delta T}$, replacing hand-crafted closure rules embedded in a multi-level direct numerical simulation framework. This work achieves, for the first time, the capture of intrinsic variability in accretion-driven feedback, with a speedup of $\sim 10^5\times$.
+  [NeurIPS 2025][Scientific Computing][Neural Operator] A Neural Operator-based "sub-grid black hole" model is proposed to learn the small-scale (GR)MHD time-evolution operator $u_t \to u_{t+\Delta T}$…
 tags:
-  - NeurIPS 2025
-  - Scientific Computing
-  - Neural Operator
-  - Black Hole Accretion
-  - Multi-scale Simulation
-  - Sub-grid Model
-  - GRMHD
+  - "NeurIPS 2025"
+  - "Scientific Computing"
+  - "Neural Operator"
+  - "Black Hole Accretion"
+  - "Multi-scale Simulation"
+  - "Sub-grid Model"
+  - "GRMHD"
 date: 2026-05-08
 content_hash: 037ae18c39dd1ba7
 ---

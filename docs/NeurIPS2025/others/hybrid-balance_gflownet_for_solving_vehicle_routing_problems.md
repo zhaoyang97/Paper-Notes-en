@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Hybrid-Balance GFlowNet for Solving Vehicle Routing Problems
 description: >-
-  [NeurIPS 2025][GFlowNet] This paper proposes the Hybrid-Balance GFlowNet (HBG) framework, which for the first time introduces Detailed Balance (DB) in the VRP setting and unifies it with Trajectory Balance (TB), along with a depot-guided inference strategy. HBG consistently and significantly improves two existing GFlowNet-based solvers (AGFN and GFACS) on CVRP and TSP benchmarks.
+  [NeurIPS 2025][GFlowNet] This paper proposes the Hybrid-Balance GFlowNet (HBG) framework, which for the first time introduces Detailed Balance (DB) in the VRP setting and unifies it with Trajectory Balance (TB)…
 tags:
-  - NeurIPS 2025
-  - GFlowNet
-  - Vehicle Routing Problem
-  - Trajectory Balance
-  - Detailed Balance
-  - Hybrid Optimization
+  - "NeurIPS 2025"
+  - "GFlowNet"
+  - "Vehicle Routing Problem"
+  - "Trajectory Balance"
+  - "Detailed Balance"
+  - "Hybrid Optimization"
 date: 2026-05-08
 content_hash: 9add2c97dfb443f9
 ---

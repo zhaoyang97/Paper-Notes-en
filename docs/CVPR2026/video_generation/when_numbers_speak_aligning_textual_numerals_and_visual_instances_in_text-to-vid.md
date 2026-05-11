@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] When Numbers Speak: Aligning Textual Numerals and Visual Instances in Text-to-Video Diffusion Models
 description: >-
-  [CVPR 2026][Video Generation][Numeral Alignment] NUMINA proposes an identify-then-guide paradigm that, without retraining the video diffusion model, extracts a countable instance layout from DiT attention maps during inference, detects inconsistencies between numeric tokens and the current layout, applies conservative layout modifications, and uses the revised layout to guide regeneration—substantially improving adherence to quantity constraints such as "two apples" or "eight ducks" in text-to-video models.
+  [CVPR 2026][Video Generation][Numeral Alignment] NUMINA proposes an identify-then-guide paradigm that, without retraining the video diffusion model…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Numeral Alignment
-  - Text-to-Video
-  - Training-Free
-  - Attention Head Selection
-  - Layout-Guided Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Numeral Alignment"
+  - "Text-to-Video"
+  - "Training-Free"
+  - "Attention Head Selection"
+  - "Layout-Guided Generation"
 date: 2026-05-08
 content_hash: 9da1d22d8fcac37d
 ---

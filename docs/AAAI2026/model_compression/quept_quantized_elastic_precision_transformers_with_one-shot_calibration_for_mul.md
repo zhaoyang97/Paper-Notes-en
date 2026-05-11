@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] QuEPT: Quantized Elastic Precision Transformers with One-Shot Calibration for Multi-Bit Switching
 description: >-
-  [AAAI 2026][Model Compression][Elastic Precision Quantization] QuEPT is an elastic precision quantization framework that enables real-time switching among arbitrary predefined bit-widths on ViT/LLM/MLLM after a single calibration pass, via two core modules—Multi-Bit Token Merging and Multi-Bit Cascaded LoRA—achieving performance on par with or exceeding single-bit-width SOTA PTQ methods.
+  [AAAI 2026][Model Compression][Elastic Precision Quantization] QuEPT is an elastic precision quantization framework that enables real-time switching among arbitrary predefined bit-widths on ViT/LLM/MLLM after a single ca…
 tags:
-  - AAAI 2026
-  - Model Compression
-  - Elastic Precision Quantization
-  - Post-Training Quantization
-  - Multi-Bit Switching
-  - Cascaded LoRA
-  - Token Merging
+  - "AAAI 2026"
+  - "Model Compression"
+  - "Elastic Precision Quantization"
+  - "Post-Training Quantization"
+  - "Multi-Bit Switching"
+  - "Cascaded LoRA"
+  - "Token Merging"
 date: 2026-05-08
 content_hash: 077817760f83e077
 ---

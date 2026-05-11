@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PLA: Prompt Learning Attack against Text-to-Image Generative Models
 description: >-
-  [ICCV 2025][Image Generation][Adversarial Attack] This paper proposes PLA (Prompt Learning Attack), a gradient-driven adversarial attack framework targeting black-box T2I models. By leveraging sensitive knowledge encoding and multimodal similarity losses, PLA learns adversarial prompts that bypass both prompt filters and post-hoc safety checkers, achieving an average ASR-4 exceeding 90%, substantially outperforming existing methods.
+  [ICCV 2025][Image Generation][Adversarial Attack] This paper proposes PLA (Prompt Learning Attack), a gradient-driven adversarial attack framework targeting black-box T2I models. By leveraging sensitive knowledge encodin…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Adversarial Attack
-  - T2I Safety
-  - Black-box Attack
-  - Prompt Learning
-  - NSFW Content Detection
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Adversarial Attack"
+  - "T2I Safety"
+  - "Black-box Attack"
+  - "Prompt Learning"
+  - "NSFW Content Detection"
 date: 2026-05-08
 content_hash: 1df208ba1533d738
 ---

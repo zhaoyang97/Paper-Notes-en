@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Robust Tool Use via Fission-GRPO: Learning to Recover from Execution Errors
 description: >-
-  [ACL 2026][LLM Alignment][Tool Calling] This paper proposes Fission-GRPO, which dynamically converts tool execution errors into on-policy corrective training instances within the RL training loop. A learned error simulator generates diagnostic feedback, and recovery trajectories are resampled from the augmented context. The approach improves the error recovery rate of Qwen3-8B by 5.7% and raises overall accuracy from 42.75% to 46.75%.
+  [ACL 2026][LLM Alignment][Tool Calling] This paper proposes Fission-GRPO, which dynamically converts tool execution errors into on-policy corrective training instances within the RL training loop. A learned error simulat…
 tags:
-  - ACL 2026
-  - LLM Alignment
-  - Tool Calling
-  - Error Recovery
-  - Reinforcement Learning
-  - GRPO
-  - Error Simulator
+  - "ACL 2026"
+  - "LLM Alignment"
+  - "Tool Calling"
+  - "Error Recovery"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "Error Simulator"
 date: 2026-05-08
 content_hash: 795f1a20c9270306
 ---

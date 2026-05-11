@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PULSE: Privileged Knowledge Transfer from Rich to Deployable Sensors for Embodied Multi-Sensory Learning
 description: >-
-  [CVPR 2026 Workshop (Sense of Space)][Robotics][Privileged knowledge distillation] This paper proposes PULSE, a framework that performs knowledge distillation from a frozen privileged-sensor (e.g., EDA) teacher to a student model relying solely on cheap, deployable sensors (e.g., ECG, BVP, accelerometer). PULSE introduces shared-private embedding decomposition and a reconstruction-based collapse-prevention mechanism, achieving 0.994 AUROC for stress detection without EDA at inference time—surpassing even models that use all sensors.
+  [CVPR 2026 Workshop (Sense of Space)][Robotics][Privileged knowledge distillation] This paper proposes PULSE, a framework that performs knowledge distillation from a frozen privileged-sensor (e.g.…
 tags:
-  - CVPR 2026 Workshop (Sense of Space)
-  - Robotics
-  - Privileged knowledge distillation
-  - sensor asymmetry
-  - wearable devices
-  - stress detection
-  - multimodal fusion
+  - "CVPR 2026 Workshop (Sense of Space)"
+  - "Robotics"
+  - "Privileged knowledge distillation"
+  - "sensor asymmetry"
+  - "wearable devices"
+  - "stress detection"
+  - "multimodal fusion"
 date: 2026-05-08
 content_hash: 8dea064a011e7f85
 ---

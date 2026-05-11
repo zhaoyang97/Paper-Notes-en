@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MADE: A Living Benchmark for Multi-Label Text Classification with Uncertainty Quantification
 description: >-
-  [ACL 2026][LLM Evaluation][Multi-label classification] This paper introduces MADE—a "living" multi-label text classification benchmark built on FDA medical device adverse event reports, featuring 1,154 hierarchical labels and strict temporal splits. It systematically evaluates 20+ encoder/decoder models across discriminative fine-tuning, generative fine-tuning, and few-shot prompting paradigms, assessing both predictive performance and uncertainty quantification (UQ) capabilities. Key findings reveal critical trade-offs: small discriminatively fine-tuned decoders achieve the best head-to-tail accuracy; generative fine-tuning yields the most reliable UQ; and large reasoning models improve rare-label performance but exhibit surprisingly weak UQ.
+  [ACL 2026][LLM Evaluation][Multi-label classification] This paper introduces MADE—a "living" multi-label text classification benchmark built on FDA medical device adverse event reports, featuring 1…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - Multi-label classification
-  - uncertainty quantification
-  - medical devices
-  - living benchmark
-  - long-tail distribution
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "Multi-label classification"
+  - "uncertainty quantification"
+  - "medical devices"
+  - "living benchmark"
+  - "long-tail distribution"
 date: 2026-05-08
 content_hash: a0099335ce9c08bb
 ---

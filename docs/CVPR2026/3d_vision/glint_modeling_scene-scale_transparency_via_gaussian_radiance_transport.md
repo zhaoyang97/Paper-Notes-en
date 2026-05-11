@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GLINT: Modeling Scene-Scale Transparency via Gaussian Radiance Transport
 description: >-
-  [CVPR 2026][3D Vision][Gaussian splatting] GLINT decomposes Gaussian representations into three components — interface, transmission, and reflection — and couples them with a hybrid rasterization+ray-tracing rendering pipeline, achieving state-of-the-art geometry and appearance reconstruction for scene-scale transparent surfaces such as glass walls and display cases.
+  [CVPR 2026][3D Vision][Gaussian splatting] GLINT decomposes Gaussian representations into three components — interface, transmission…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Gaussian splatting
-  - transparent surface reconstruction
-  - radiance transport decomposition
-  - hybrid rendering
-  - scene reconstruction
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Gaussian splatting"
+  - "transparent surface reconstruction"
+  - "radiance transport decomposition"
+  - "hybrid rendering"
+  - "scene reconstruction"
 date: 2026-05-08
 content_hash: 4e0718430ce1b2c7
 ---

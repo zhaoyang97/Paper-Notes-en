@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Fed-ADE: Adaptive Learning Rate for Federated Post-adaptation under Distribution Shift
 description: >-
-  [CVPR2026][Optimization][federated learning] This paper proposes the Fed-ADE framework, which adaptively adjusts the learning rate for each client at each time step using two lightweight distribution shift signals — uncertainty dynamics estimation and representation dynamics estimation — enabling unsupervised post-deployment adaptation in federated settings.
+  [CVPR2026][Optimization][federated learning] This paper proposes the Fed-ADE framework, which adaptively adjusts the learning rate for each client at each time step using two lightweight distribution shift signals — unce…
 tags:
-  - CVPR2026
-  - Optimization
-  - federated learning
-  - distribution shift
-  - adaptive learning rate
-  - online adaptation
-  - unsupervised adaptation
+  - "CVPR2026"
+  - "Optimization"
+  - "federated learning"
+  - "distribution shift"
+  - "adaptive learning rate"
+  - "online adaptation"
+  - "unsupervised adaptation"
 date: 2026-05-08
 content_hash: f3437d7bb5e7d461
 ---

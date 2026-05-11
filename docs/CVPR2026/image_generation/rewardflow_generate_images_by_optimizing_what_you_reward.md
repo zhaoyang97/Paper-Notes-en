@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RewardFlow: Generate Images by Optimizing What You Reward
 description: >-
-  [CVPR 2026][Image Generation][Reward-guided generation] RewardFlow proposes an inversion-free inference-time framework that fuses multiple differentiable reward signals—including semantic alignment, perceptual fidelity, local grounding, object consistency, and human preference—via multi-reward Langevin dynamics, achieving state-of-the-art editing fidelity and compositional alignment on image editing and compositional generation benchmarks.
+  [CVPR 2026][Image Generation][Reward-guided generation] RewardFlow proposes an inversion-free inference-time framework that fuses multiple differentiable reward signals—including semantic alignment, perceptual fidelity…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Reward-guided generation
-  - diffusion models
-  - Langevin dynamics
-  - image editing
-  - compositional generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Reward-guided generation"
+  - "diffusion models"
+  - "Langevin dynamics"
+  - "image editing"
+  - "compositional generation"
 date: 2026-05-08
 content_hash: c41c8bcf8e2b42da
 ---

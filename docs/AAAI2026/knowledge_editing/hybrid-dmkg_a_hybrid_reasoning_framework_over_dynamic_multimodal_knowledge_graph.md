@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Hybrid-DMKG: A Hybrid Reasoning Framework over Dynamic Multimodal Knowledge Graphs for Multimodal Multihop QA with Knowledge Editing
 description: >-
-  [AAAI2026][Knowledge Editing][Multimodal Knowledge Editing] This paper proposes the MMQAKE benchmark and the Hybrid-DMKG framework, which constructs a dual-channel hybrid reasoning mechanism — combining relation link prediction with RAG-augmented LVLM inference — over a dynamic multimodal knowledge graph, supplemented by a background reflection decision module. The approach significantly outperforms existing methods on 2–5 hop multimodal knowledge editing QA (H-Acc of 29.90% on LLaVA, surpassing IKE by 13.52 percentage points).
+  [AAAI2026][Knowledge Editing][Multimodal Knowledge Editing] This paper proposes the MMQAKE benchmark and the Hybrid-DMKG framework, which constructs a dual-channel hybrid reasoning mechanism — combining relation link pre…
 tags:
-  - AAAI2026
-  - Knowledge Editing
-  - Multimodal Knowledge Editing
-  - Multihop QA
-  - Dynamic Knowledge Graph
-  - Cross-modal Retrieval
-  - RAG
-  - Hybrid Reasoning
+  - "AAAI2026"
+  - "Knowledge Editing"
+  - "Multimodal Knowledge Editing"
+  - "Multihop QA"
+  - "Dynamic Knowledge Graph"
+  - "Cross-modal Retrieval"
+  - "RAG"
+  - "Hybrid Reasoning"
 date: 2026-05-08
 content_hash: 347acb6dab74b868
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Model Collapse Is Not a Bug but a Feature in Machine Unlearning for LLMs
 description: >-
-  [ICLR 2026][Image Generation][machine unlearning] This paper repositions "model collapse"—commonly regarded as a negative phenomenon—as a tool for machine unlearning, proposing the PMC method. By iteratively fine-tuning on retained data and the model's own generated outputs, PMC achieves targeted information removal without directly optimizing over the forget targets, and validates its effectiveness through both theoretical analysis and empirical experiments.
+  [ICLR 2026][Image Generation][machine unlearning] This paper repositions "model collapse"—commonly regarded as a negative phenomenon—as a tool for machine unlearning…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - machine unlearning
-  - model collapse
-  - partial model collapse
-  - LLM privacy
-  - iterative relearning
+  - "ICLR 2026"
+  - "Image Generation"
+  - "machine unlearning"
+  - "model collapse"
+  - "partial model collapse"
+  - "LLM privacy"
+  - "iterative relearning"
 date: 2026-05-08
 content_hash: 121810d0937758fc
 ---

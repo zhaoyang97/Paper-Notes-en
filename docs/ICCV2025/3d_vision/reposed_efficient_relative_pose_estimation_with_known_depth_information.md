@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RePoseD: Efficient Relative Pose Estimation with Known Depth Information
 description: >-
-  [ICCV 2025][3D Vision][Relative pose estimation] This paper proposes a set of efficient minimal solvers for relative pose estimation that jointly estimate the scale and affine parameters of monocular depth estimation (MDE) alongside the relative pose. The proposed solvers outperform state-of-the-art depth-aware solvers across three camera configurations (calibrated / shared focal length / unknown individual focal lengths), and large-scale experiments provide a definitive answer to the question of whether MDE depth actually benefits relative pose estimation.
+  [ICCV 2025][3D Vision][Relative pose estimation] This paper proposes a set of efficient minimal solvers for relative pose estimation that jointly estimate the scale and affine parameters of monocular depth estimation (MD…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Relative pose estimation
-  - monocular depth estimation
-  - minimal solvers
-  - RANSAC
-  - multi-view geometry
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Relative pose estimation"
+  - "monocular depth estimation"
+  - "minimal solvers"
+  - "RANSAC"
+  - "multi-view geometry"
 date: 2026-05-08
 content_hash: cae6b3df32db045c
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Open-World Skill Discovery from Unsegmented Demonstration Videos
 description: >-
-  [ICCV 2025][Segmentation][Skill Discovery] Inspired by the human cognitive Event Segmentation Theory (EST), this paper proposes the Skill Boundary Detection (SBD) algorithm, which leverages **prediction error spikes** from a pretrained unconditional action prediction model to automatically identify skill boundaries in unsegmented demonstration videos, significantly improving the performance of conditional policies and hierarchical agents in Minecraft.
+  [ICCV 2025][Segmentation][Skill Discovery] Inspired by the human cognitive Event Segmentation Theory (EST), this paper proposes the Skill Boundary Detection (SBD) algorithm…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - Skill Discovery
-  - Temporal Video Segmentation
-  - Behavior Cloning
-  - Open-World
-  - Minecraft
+  - "ICCV 2025"
+  - "Segmentation"
+  - "Skill Discovery"
+  - "Temporal Video Segmentation"
+  - "Behavior Cloning"
+  - "Open-World"
+  - "Minecraft"
 date: 2026-05-08
 content_hash: 54c3cabe356257b7
 ---

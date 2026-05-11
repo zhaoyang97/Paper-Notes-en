@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] CMHANet: A Cross-Modal Hybrid Attention Network for Point Cloud Registration
 description: >-
-  [CVPR 2026][3D Vision][Point cloud registration] CMHANet proposes a three-stage hybrid attention mechanism (geometric self-attention → image aggregation attention → source-target cross-attention) to fuse 2D image texture semantics with 3D point cloud geometric information, complemented by a cross-modal contrastive loss. The method achieves state-of-the-art registration recall on 3DMatch/3DLoMatch (92.4%/75.5%) and a zero-shot RMSE of only $0.76\times10^{-2}$ on TUM RGB-D.
+  [CVPR 2026][3D Vision][Point cloud registration] CMHANet proposes a three-stage hybrid attention mechanism (geometric self-attention → image aggregation attention → source-target cross-attention) to fuse 2D image texture…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Point cloud registration
-  - cross-modal fusion
-  - hybrid attention
-  - RGB-D
-  - contrastive learning
-  - KPConv
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Point cloud registration"
+  - "cross-modal fusion"
+  - "hybrid attention"
+  - "RGB-D"
+  - "contrastive learning"
+  - "KPConv"
 date: 2026-05-08
 content_hash: 509c3f84fcf44a34
 ---

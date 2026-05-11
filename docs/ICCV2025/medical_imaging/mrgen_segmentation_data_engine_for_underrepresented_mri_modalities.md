@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MRGen: Segmentation Data Engine for Underrepresented MRI Modalities
 description: >-
-  [ICCV 2025][Medical Imaging][MRI synthesis] To address the lack of segmentation annotations for scarce MRI modalities, this work constructs a large-scale radiological image dataset MRGen-DB (~250K slices, 100+ modalities) and trains a controllable diffusion-based data engine MRGen. Using dual-condition control via text prompts and segmentation masks, MRGen generates high-quality MR images in target modalities for training segmentation models. Across 10 cross-modal segmentation experiments, the average DSC improves from 10%–27% to 43%–45%, enabling "zero-shot" segmentation for annotation-scarce modalities.
+  [ICCV 2025][Medical Imaging][MRI synthesis] To address the lack of segmentation annotations for scarce MRI modalities, this work constructs a large-scale radiological image dataset MRGen-DB (~250K slices…
 tags:
-  - ICCV 2025
-  - Medical Imaging
-  - MRI synthesis
-  - diffusion models
-  - data engine
-  - segmentation
-  - cross-modal generation
+  - "ICCV 2025"
+  - "Medical Imaging"
+  - "MRI synthesis"
+  - "diffusion models"
+  - "data engine"
+  - "segmentation"
+  - "cross-modal generation"
 date: 2026-05-08
 content_hash: 475aeb7ebd64f3fa
 ---

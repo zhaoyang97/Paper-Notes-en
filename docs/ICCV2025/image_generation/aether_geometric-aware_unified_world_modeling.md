@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Aether: Geometric-Aware Unified World Modeling
 description: >-
-  [ICCV 2025][Image Generation][World Model] Aether proposes a geometric-aware unified world modeling framework that jointly trains reconstruction, prediction, and planning capabilities on synthetic 4D data, built upon post-training of CogVideoX to achieve zero-shot generalization to real-world scenes.
+  [ICCV 2025][Image Generation][World Model] Aether proposes a geometric-aware unified world modeling framework that jointly trains reconstruction, prediction, and planning capabilities on synthetic 4D data…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - World Model
-  - 4D Reconstruction
-  - Action-Conditioned Video Prediction
-  - Visual Planning
-  - Diffusion Model
+  - "ICCV 2025"
+  - "Image Generation"
+  - "World Model"
+  - "4D Reconstruction"
+  - "Action-Conditioned Video Prediction"
+  - "Visual Planning"
+  - "Diffusion Model"
 date: 2026-05-08
 content_hash: b8941b4392d233d2
 ---

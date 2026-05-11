@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] CoLMDriver: LLM-based Negotiation Benefits Cooperative Autonomous Driving
 description: >-
-  [ICCV 2025][Autonomous Driving][cooperative driving] The first end-to-end LLM-driven cooperative driving system. Through an Actor-Critic language negotiation module and an intention-guided trajectory generator, it achieves an 11% higher success rate than existing methods across diverse V2V interaction scenarios.
+  [ICCV 2025][Autonomous Driving][cooperative driving] The first end-to-end LLM-driven cooperative driving system. Through an Actor-Critic language negotiation module and an intention-guided trajectory generator…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - cooperative driving
-  - V2V
-  - LLM negotiation
-  - actor-critic
-  - waypoint planning
-  - CARLA
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "cooperative driving"
+  - "V2V"
+  - "LLM negotiation"
+  - "actor-critic"
+  - "waypoint planning"
+  - "CARLA"
 date: 2026-05-08
 content_hash: 160b0ae6f1d64db3
 ---

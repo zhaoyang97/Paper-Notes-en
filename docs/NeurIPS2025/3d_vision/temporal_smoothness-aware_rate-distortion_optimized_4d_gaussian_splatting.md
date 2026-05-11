@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Temporal Smoothness-Aware Rate-Distortion Optimized 4D Gaussian Splatting
 description: >-
-  [NeurIPS 2025][3D Vision][4D Gaussian Splatting] This paper proposes the first end-to-end rate-distortion (RD) optimized compression framework for 4D Gaussian Splatting. By exploiting the temporal smoothness prior of dynamic point trajectories via Haar wavelet transforms, the method achieves up to 91× compression over Ex4DGS (average model size ~1.1% of the original) while maintaining reasonable rendering quality and flexible rate-quality trade-off control.
+  [NeurIPS 2025][3D Vision][4D Gaussian Splatting] This paper proposes the first end-to-end rate-distortion (RD) optimized compression framework for 4D Gaussian Splatting. By exploiting the temporal smoothness prior of dyn…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - 4D Gaussian Splatting
-  - Rate-Distortion Optimization
-  - Wavelet Transform
-  - Temporal Compression
-  - Dynamic Scenes
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "4D Gaussian Splatting"
+  - "Rate-Distortion Optimization"
+  - "Wavelet Transform"
+  - "Temporal Compression"
+  - "Dynamic Scenes"
 date: 2026-05-08
 content_hash: f56700131e071423
 ---

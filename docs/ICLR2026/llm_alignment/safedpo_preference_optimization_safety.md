@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SafeDPO: A Simple Approach to Direct Preference Optimization with Enhanced Safety
 description: >-
-  [ICLR 2026 Oral][LLM Alignment][safety alignment] This work revisits the safety-constrained RLHF objective, proves the existence of a closed-form optimal policy, and derives an equivalent tractable objective, SafeDPO. The method requires only a safety-aware data transformation and a safety margin term (one additional hyperparameter) on top of standard DPO, without reward or cost models. It achieves a 96.87% harmlessness rate on PKU-SafeRLHF-30K while maintaining competitive helpfulness, and trains 25× faster than SafeRLHF.
+  [ICLR 2026 Oral][LLM Alignment][safety alignment] This work revisits the safety-constrained RLHF objective, proves the existence of a closed-form optimal policy, and derives an equivalent tractable objective…
 tags:
-  - ICLR 2026 Oral
-  - LLM Alignment
-  - safety alignment
-  - DPO
-  - constrained optimization
-  - safety margin
-  - PKU-SafeRLHF
+  - "ICLR 2026 Oral"
+  - "LLM Alignment"
+  - "safety alignment"
+  - "DPO"
+  - "constrained optimization"
+  - "safety margin"
+  - "PKU-SafeRLHF"
 date: 2026-05-08
 content_hash: a4b7d46cfae1ad22
 ---

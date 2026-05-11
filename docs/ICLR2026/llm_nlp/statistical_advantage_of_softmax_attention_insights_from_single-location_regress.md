@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Statistical Advantage of Softmax Attention: Insights from Single-Location Regression
 description: >-
-  [ICLR2026][LLM/NLP][softmax attention] By proposing the Single-Location Regression (SLR) theoretical framework and employing the order parameter method from statistical physics, this paper rigorously proves in the high-dimensional limit that softmax attention achieves the Bayes risk at the population level while linear attention fundamentally cannot. Under finite-sample regimes, softmax is shown to consistently outperform linear attention. This work provides the first principled explanation for the superiority of softmax attention in retrieval tasks.
+  [ICLR2026][LLM/NLP][softmax attention] By proposing the Single-Location Regression (SLR) theoretical framework and employing the order parameter method from statistical physics…
 tags:
-  - ICLR2026
-  - LLM/NLP
-  - softmax attention
-  - linear attention
-  - information retrieval
-  - statistical physics
-  - high-dimensional analysis
-  - Bayes-optimal
-  - single-location regression
+  - "ICLR2026"
+  - "LLM/NLP"
+  - "softmax attention"
+  - "linear attention"
+  - "information retrieval"
+  - "statistical physics"
+  - "high-dimensional analysis"
+  - "Bayes-optimal"
+  - "single-location regression"
 date: 2026-05-08
 content_hash: 7d09088d78297e8f
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MixANT: Observation-dependent Memory Propagation for Stochastic Dense Action Anticipation
 description: >-
-  [ICCV 2025][LLM Efficiency][Action Anticipation] This paper proposes MixANT, which introduces input-dependence into the forgetting gate (A matrix) of Mamba via a Mixture-of-Experts approach. A lightweight router dynamically selects context-aware A matrices to control temporal memory propagation, achieving state-of-the-art performance across all three dense action anticipation benchmarks: 50Salads, Breakfast, and Assembly101.
+  [ICCV 2025][LLM Efficiency][Action Anticipation] This paper proposes MixANT, which introduces input-dependence into the forgetting gate (A matrix) of Mamba via a Mixture-of-Experts approach. A lightweight router dynamica…
 tags:
-  - ICCV 2025
-  - LLM Efficiency
-  - Action Anticipation
-  - Mamba
-  - Mixture of Experts
-  - State Space Models
-  - Dense Prediction
+  - "ICCV 2025"
+  - "LLM Efficiency"
+  - "Action Anticipation"
+  - "Mamba"
+  - "Mixture of Experts"
+  - "State Space Models"
+  - "Dense Prediction"
 date: 2026-05-08
 content_hash: 583ff146cb37c7cc
 ---

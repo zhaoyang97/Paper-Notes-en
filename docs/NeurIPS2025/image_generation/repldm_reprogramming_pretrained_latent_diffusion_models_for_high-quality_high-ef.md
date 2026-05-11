@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RepLDM: Reprogramming Pretrained Latent Diffusion Models for High-Quality, High-Efficiency, High-Resolution Image Generation
 description: >-
-  [NeurIPS 2025 (Spotlight)][Image Generation][Latent diffusion models] This paper proposes RepLDM, a reprogramming framework that enables pretrained latent diffusion models to generate high-quality, high-resolution images without retraining, via two stages: an attention guidance stage and a progressive upsampling stage, while substantially improving efficiency.
+  [NeurIPS 2025 (Spotlight)][Image Generation][Latent diffusion models] This paper proposes RepLDM, a reprogramming framework that enables pretrained latent diffusion models to generate high-quality…
 tags:
-  - NeurIPS 2025 (Spotlight)
-  - Image Generation
-  - Latent diffusion models
-  - high-resolution generation
-  - model reprogramming
-  - attention guidance
-  - progressive upsampling
+  - "NeurIPS 2025 (Spotlight)"
+  - "Image Generation"
+  - "Latent diffusion models"
+  - "high-resolution generation"
+  - "model reprogramming"
+  - "attention guidance"
+  - "progressive upsampling"
 date: 2026-05-08
 content_hash: da2978d5c72314d8
 ---

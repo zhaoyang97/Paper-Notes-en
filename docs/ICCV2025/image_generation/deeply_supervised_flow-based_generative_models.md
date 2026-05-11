@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Deeply Supervised Flow-Based Generative Models
 description: >-
-  [ICCV 2025][Image Generation][flow matching] DeepFlow introduces deep supervision and a VeRA (Velocity Refiner with Acceleration) module between Transformer layers of flow-based models, aligning intermediate-layer velocity features via second-order ODE dynamics. Without relying on any external pretrained model, it achieves an 8× training speedup and significant FID improvement.
+  [ICCV 2025][Image Generation][flow matching] DeepFlow introduces deep supervision and a VeRA (Velocity Refiner with Acceleration) module between Transformer layers of flow-based models…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - flow matching
-  - deep supervision
-  - velocity alignment
-  - acceleration learning
-  - training efficiency
+  - "ICCV 2025"
+  - "Image Generation"
+  - "flow matching"
+  - "deep supervision"
+  - "velocity alignment"
+  - "acceleration learning"
+  - "training efficiency"
 date: 2026-05-08
 content_hash: c37131a56b73ce7d
 ---

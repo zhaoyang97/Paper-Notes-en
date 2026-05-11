@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] vCache: Verified Semantic Prompt Caching
 description: >-
-  [ICLR2026][LLM Evaluation][Semantic Caching] This paper proposes vCache — the first semantic caching system with **user-defined error-rate guarantees** — which employs online learning to independently estimate the optimal similarity threshold for each cached embedding. Without any pre-training, vCache achieves up to a 12.5× improvement in cache hit rate and a 26× reduction in error rate while satisfying correctness constraints.
+  [ICLR2026][LLM Evaluation][Semantic Caching] This paper proposes vCache — the first semantic caching system with **user-defined error-rate guarantees** — which employs online learning to independently estimate the optima…
 tags:
-  - ICLR2026
-  - LLM Evaluation
-  - Semantic Caching
-  - LLM Inference Optimization
-  - Error-Rate Guarantee
-  - online learning
-  - Per-Embedding Threshold
+  - "ICLR2026"
+  - "LLM Evaluation"
+  - "Semantic Caching"
+  - "LLM Inference Optimization"
+  - "Error-Rate Guarantee"
+  - "online learning"
+  - "Per-Embedding Threshold"
 date: 2026-05-08
 content_hash: 4d71a736b64db3d4
 ---

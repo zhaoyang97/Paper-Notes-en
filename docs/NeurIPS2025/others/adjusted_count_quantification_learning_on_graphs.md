@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Adjusted Count Quantification Learning on Graphs
 description: >-
-  [NeurIPS 2025][Quantification Learning] This paper extends the classical Adjusted Classify & Count (ACC) quantification method to graph-structured data, proposing two techniques — Structural Importance Sampling (SIS) and Neighborhood-aware ACC (N-ACC) — to address structural covariate shift and non-homophilous edges in graph quantification, respectively.
+  [NeurIPS 2025][Quantification Learning] This paper extends the classical Adjusted Classify & Count (ACC) quantification method to graph-structured data…
 tags:
-  - NeurIPS 2025
-  - Quantification Learning
-  - Graph Data
-  - Covariate Shift
-  - Importance Sampling
-  - Non-Homophily
+  - "NeurIPS 2025"
+  - "Quantification Learning"
+  - "Graph Data"
+  - "Covariate Shift"
+  - "Importance Sampling"
+  - "Non-Homophily"
 date: 2026-05-08
 content_hash: 061936c9a2f8ac58
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DuoGPT: Training-free Dual Sparsity through Activation-aware Pruning in LLMs
 description: >-
-  [NeurIPS 2025][Model Compression][Dual Sparsity] This paper proposes DuoGPT, a dual-sparse framework that reinterprets activation sparsity as dynamic structured weight sparsity and combines it with unstructured weight pruning. By extending the OBC framework with activation-aware calibration and a dense-model output residual correction term, DuoGPT achieves significant speedup and memory savings during the LLM decoding phase without any retraining.
+  [NeurIPS 2025][Model Compression][Dual Sparsity] This paper proposes DuoGPT, a dual-sparse framework that reinterprets activation sparsity as dynamic structured weight sparsity and combines it with unstructured weight pr…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Dual Sparsity
-  - Activation Sparsity
-  - Unstructured Pruning
-  - OBC Framework
-  - LLM Acceleration
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Dual Sparsity"
+  - "Activation Sparsity"
+  - "Unstructured Pruning"
+  - "OBC Framework"
+  - "LLM Acceleration"
 date: 2026-05-08
 content_hash: 7b0ef7a5da2e6720
 ---

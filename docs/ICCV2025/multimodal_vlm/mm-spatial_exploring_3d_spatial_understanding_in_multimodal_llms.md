@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MM-Spatial: Exploring 3D Spatial Understanding in Multimodal LLMs
 description: >-
-  [ICCV 2025][Multimodal VLM][3D spatial understanding] Apple proposes the CA-VQA dataset and MM-Spatial model, leveraging high-quality 3D scene data and open-set annotations to generate training/evaluation data covering spatial relation prediction, metric estimation, and 3D grounding. The resulting general-purpose MLLM achieves SOTA on 3D spatial understanding benchmarks while remaining competitive on other tasks.
+  [ICCV 2025][Multimodal VLM][3D spatial understanding] Apple proposes the CA-VQA dataset and MM-Spatial model, leveraging high-quality 3D scene data and open-set annotations to generate training/evaluation data covering s…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - 3D spatial understanding
-  - multimodal LLM
-  - depth estimation
-  - multi-view
-  - spatial reasoning
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "3D spatial understanding"
+  - "multimodal LLM"
+  - "depth estimation"
+  - "multi-view"
+  - "spatial reasoning"
 date: 2026-05-08
 content_hash: f5e6d5b8a0ec848d
 ---

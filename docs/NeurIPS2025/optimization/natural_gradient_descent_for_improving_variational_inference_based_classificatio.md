@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Natural Gradient Descent for Improving Variational Inference Based Classification of Radio Galaxies
 description: >-
-  [NeurIPS 2025][Optimization][Natural Gradient Descent] This work replaces standard SGD with the natural gradient descent optimizer iVON for optimizing BNN parameters under variational inference, achieving better uncertainty calibration in radio galaxy classification while maintaining predictive performance comparable to HMC and BBB-VI.
+  [NeurIPS 2025][Optimization][Natural Gradient Descent] This work replaces standard SGD with the natural gradient descent optimizer iVON for optimizing BNN parameters under variational inference…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Natural Gradient Descent
-  - Variational Inference
-  - Bayesian Neural Networks
-  - Uncertainty Calibration
-  - Radio Galaxy Classification
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Natural Gradient Descent"
+  - "Variational Inference"
+  - "Bayesian Neural Networks"
+  - "Uncertainty Calibration"
+  - "Radio Galaxy Classification"
 date: 2026-05-08
 content_hash: 2acab7e5b2f0c75a
 ---

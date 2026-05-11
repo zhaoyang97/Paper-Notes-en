@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PACE: Pretrained Audio Continual Learning
 description: >-
-  [ICLR 2026][Audio & Speech][Audio continual learning] This paper presents the first systematic benchmark for audio continual learning (CL), identifies a fundamental upstream–downstream mismatch in pretrained audio models caused by the dominance of low-level spectral features, and proposes PACE—comprising improved first-session adaptation, adaptive subspace-orthogonal PEFT, and boundary-aware perturbation regularization—achieving substantial improvements over SOTA across 6 audio CL benchmarks.
+  [ICLR 2026][Audio & Speech][Audio continual learning] This paper presents the first systematic benchmark for audio continual learning (CL)…
 tags:
-  - ICLR 2026
+  - "ICLR 2026"
   - "Audio & Speech"
-  - Audio continual learning
-  - pretrained models
-  - parameter-efficient fine-tuning
-  - analytic classifier
-  - catastrophic forgetting
+  - "Audio continual learning"
+  - "pretrained models"
+  - "parameter-efficient fine-tuning"
+  - "analytic classifier"
+  - "catastrophic forgetting"
 date: 2026-05-08
 content_hash: ed96af71bc431e0e
 ---

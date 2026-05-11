@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multi-View Encoders for Performance Prediction in LLM-Based Agentic Workflows
 description: >-
-  [ICLR 2026][Model Compression][Performance Prediction] This paper proposes Agentic Predictor, a multi-view workflow encoding framework that jointly models graph structure, code semantics, and prompt information to predict the performance of LLM-based agentic workflows, substantially reducing costly trial-and-error evaluations.
+  [ICLR 2026][Model Compression][Performance Prediction] This paper proposes Agentic Predictor, a multi-view workflow encoding framework that jointly models graph structure, code semantics…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Performance Prediction
-  - Multi-View Encoding
-  - Agentic Workflows
-  - Graph Neural Networks
-  - Unsupervised Pretraining
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Performance Prediction"
+  - "Multi-View Encoding"
+  - "Agentic Workflows"
+  - "Graph Neural Networks"
+  - "Unsupervised Pretraining"
 date: 2026-05-08
 content_hash: 4ada70451430281d
 ---

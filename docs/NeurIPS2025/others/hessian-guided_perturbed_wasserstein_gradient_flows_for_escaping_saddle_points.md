@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Hessian-guided Perturbed Wasserstein Gradient Flows for Escaping Saddle Points
 description: >-
-  [NeurIPS 2025][Wasserstein gradient flow] This paper proposes the Perturbed Wasserstein Gradient Flow (PWGF) algorithm, which injects noise perturbations via Hessian-guided Gaussian processes to enable efficient saddle point escape and second-order optimality in probability measure optimization.
+  [NeurIPS 2025][Wasserstein gradient flow] This paper proposes the Perturbed Wasserstein Gradient Flow (PWGF) algorithm, which injects noise perturbations via Hessian-guided Gaussian processes to enable efficient saddle p…
 tags:
-  - NeurIPS 2025
-  - Wasserstein gradient flow
-  - saddle point escape
-  - second-order optimality
-  - Gaussian process perturbation
-  - non-convex optimization
+  - "NeurIPS 2025"
+  - "Wasserstein gradient flow"
+  - "saddle point escape"
+  - "second-order optimality"
+  - "Gaussian process perturbation"
+  - "non-convex optimization"
 date: 2026-05-08
 content_hash: d28f87d3f92752ee
 ---

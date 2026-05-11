@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] InFOM: Intention-Conditioned Flow Occupancy Models
 description: >-
-  [ICLR 2026][Reinforcement Learning][Occupancy measures] InFOM learns a latent intention encoder via variational inference and models intention-conditioned discounted state occupancy measures using flow matching, enabling efficient pre-training and fine-tuning in RL. It achieves 1.8× median return and 36% higher success rate over baselines across 36 state-based tasks and 4 image-based tasks.
+  [ICLR 2026][Reinforcement Learning][Occupancy measures] InFOM learns a latent intention encoder via variational inference and models intention-conditioned discounted state occupancy measures using flow matching…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Occupancy measures
-  - flow matching
-  - intention inference
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Occupancy measures"
+  - "flow matching"
+  - "intention inference"
   - "pre-training & fine-tuning"
-  - generalized policy improvement
+  - "generalized policy improvement"
 date: 2026-05-08
 content_hash: 2a41e5f9a102e956
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Spatiotemporal-Untrammelled Mixture of Experts for Multi-Person Motion Prediction
 description: >-
-  [AAAI 2026][Human Understanding][Multi-person motion prediction] This paper proposes ST-MoE, the first framework to combine Mixture of Experts (MoE) with bidirectional spatiotemporal Mamba for multi-person motion prediction. Four heterogeneous spatiotemporal experts flexibly capture complex spatiotemporal dependencies, achieving state-of-the-art accuracy while reducing parameter count by 41.38% and accelerating training by 3.6×.
+  [AAAI 2026][Human Understanding][Multi-person motion prediction] This paper proposes ST-MoE, the first framework to combine Mixture of Experts (MoE) with bidirectional spatiotemporal Mamba for multi-person motion predict…
 tags:
-  - AAAI 2026
-  - Human Understanding
-  - Multi-person motion prediction
-  - Mixture of Experts
-  - Mamba
-  - spatiotemporal modeling
-  - efficient inference
+  - "AAAI 2026"
+  - "Human Understanding"
+  - "Multi-person motion prediction"
+  - "Mixture of Experts"
+  - "Mamba"
+  - "spatiotemporal modeling"
+  - "efficient inference"
 date: 2026-05-08
 content_hash: af8f2388a7441489
 ---

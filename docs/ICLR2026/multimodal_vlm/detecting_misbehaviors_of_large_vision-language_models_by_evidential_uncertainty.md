@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Detecting Misbehaviors of Large Vision-Language Models by Evidential Uncertainty Quantification
 description: >-
-  [ICLR2026][Multimodal VLM][LVLM uncertainty] This paper proposes EUQ (Evidential Uncertainty Quantification), which leverages Dempster-Shafer evidence theory to decompose the epistemic uncertainty of LVLMs into **conflict CF** (internal contradictions) and **ignorance IG** (lack of information). EUQ requires no training and only a single forward pass to detect four types of misbehaviors—hallucination, jailbreak, adversarial attacks, and OOD failures—achieving an average AUROC improvement of 10.4%/7.5% over the best baseline.
+  [ICLR2026][Multimodal VLM][LVLM uncertainty] This paper proposes EUQ (Evidential Uncertainty Quantification), which leverages Dempster-Shafer evidence theory to decompose the epistemic uncertainty of LVLMs into **conflic…
 tags:
-  - ICLR2026
-  - Multimodal VLM
-  - LVLM uncertainty
-  - evidential reasoning
-  - Dempster-Shafer
-  - misbehavior detection
-  - hallucination
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "LVLM uncertainty"
+  - "evidential reasoning"
+  - "Dempster-Shafer"
+  - "misbehavior detection"
+  - "hallucination"
 date: 2026-05-08
 content_hash: a8dc8f2fce9262fa
 ---

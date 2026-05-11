@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Video-Only ToM: Enhancing Theory of Mind in Multimodal Large Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Theory of Mind] This paper proposes VisionToM, a lightweight vision-based intervention framework that probes and intervenes on attention heads sensitive to visual input and ToM reasoning within MLLMs. Without fine-tuning the backbone, VisionToM substantially enhances Theory of Mind reasoning in multimodal large language models, achieving significant performance gains on the EgoToM benchmark.
+  [CVPR 2026][Multimodal VLM][Theory of Mind] This paper proposes VisionToM, a lightweight vision-based intervention framework that probes and intervenes on attention heads sensitive to visual input and ToM reasoning withi…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Theory of Mind
-  - Multimodal Large Language Models
-  - Attention Intervention
-  - Visual Reasoning
-  - Hallucination Mitigation
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Theory of Mind"
+  - "Multimodal Large Language Models"
+  - "Attention Intervention"
+  - "Visual Reasoning"
+  - "Hallucination Mitigation"
 date: 2026-05-08
 content_hash: e0f415126553f813
 ---

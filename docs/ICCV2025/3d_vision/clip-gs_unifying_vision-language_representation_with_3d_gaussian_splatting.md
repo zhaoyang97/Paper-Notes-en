@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CLIP-GS: Unifying Vision-Language Representation with 3D Gaussian Splatting
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes CLIP-GS, the first multimodal representation learning framework based on 3D Gaussian Splatting (3DGS). It serializes 3DGS into tokens via a GS Tokenizer and aligns multimodal representations using an Image Voting Loss, achieving comprehensive improvements over point-cloud-based methods on cross-modal retrieval, zero-shot, and few-shot 3D classification tasks.
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes CLIP-GS, the first multimodal representation learning framework based on 3D Gaussian Splatting (3DGS). It serializes 3DGS into tokens via a GS Tokenizer a…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - multimodal representation learning
-  - CLIP
-  - contrastive learning
-  - zero-shot classification
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "multimodal representation learning"
+  - "CLIP"
+  - "contrastive learning"
+  - "zero-shot classification"
 date: 2026-05-08
 content_hash: 3f9618827a48bb6a
 ---

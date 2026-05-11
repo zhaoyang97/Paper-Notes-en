@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SPACE: Noise Contrastive Estimation Stabilizes Self-Play Fine-Tuning for Large Language Models
 description: >-
-  [NeurIPS 2025][LLM/NLP][self-play fine-tuning] This paper proposes SPACE (Self-PlAy via Noise Contrastive Estimation), which incorporates noise contrastive estimation into self-play fine-tuning. By independently optimizing the absolute reward values of real and synthetic samples—rather than their relative margin—SPACE fundamentally resolves the unstable convergence issues of methods such as SPIN, and provides provable convergence guarantees.
+  [NeurIPS 2025][LLM/NLP][self-play fine-tuning] This paper proposes SPACE (Self-PlAy via Noise Contrastive Estimation), which incorporates noise contrastive estimation into self-play fine-tuning. By independently optimizi…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - self-play fine-tuning
-  - noise contrastive estimation
-  - LLM alignment
-  - distribution matching
-  - iterative optimization
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "self-play fine-tuning"
+  - "noise contrastive estimation"
+  - "LLM alignment"
+  - "distribution matching"
+  - "iterative optimization"
 date: 2026-05-08
 content_hash: 70dbf371d6de344b
 ---

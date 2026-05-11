@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DeGauss: Dynamic-Static Decomposition with Gaussian Splatting for Distractor-free 3D Reconstruction
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes DeGauss, a self-supervised framework based on decoupled dynamic-static Gaussian Splatting. By combining foreground dynamic Gaussians and background static Gaussians via a probabilistic composition mask, it achieves distractor-free 3D reconstruction across a broad range of scenarios, from casually captured image collections to highly dynamic egocentric videos.
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes DeGauss, a self-supervised framework based on decoupled dynamic-static Gaussian Splatting. By combining foreground dynamic Gaussians and background static…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - dynamic scene reconstruction
-  - dynamic-static decomposition
-  - distractor-free reconstruction
-  - self-supervised
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "dynamic scene reconstruction"
+  - "dynamic-static decomposition"
+  - "distractor-free reconstruction"
+  - "self-supervised"
 date: 2026-05-08
 content_hash: e5d07d569a70b816
 ---

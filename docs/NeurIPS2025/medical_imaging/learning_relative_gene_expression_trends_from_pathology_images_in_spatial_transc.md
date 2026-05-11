@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Relative Gene Expression Trends from Pathology Images in Spatial Transcriptomics
 description: >-
-  [NeurIPS 2025][Medical Imaging][spatial transcriptomics] This paper proposes STRank, a loss function that reformulates gene expression estimation from pathology images as a ranking score estimation task. By modeling the stochastic noise inherent in expression counts via binomial/multinomial distributions, STRank enables models to learn robust relative expression relationships from spatial transcriptomics data subject to batch effects and random fluctuations.
+  [NeurIPS 2025][Medical Imaging][spatial transcriptomics] This paper proposes STRank, a loss function that reformulates gene expression estimation from pathology images as a ranking score estimation task. By modeling the…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - spatial transcriptomics
-  - gene expression estimation
-  - learning to rank
-  - pathology images
-  - batch effects
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "spatial transcriptomics"
+  - "gene expression estimation"
+  - "learning to rank"
+  - "pathology images"
+  - "batch effects"
 date: 2026-05-08
 content_hash: b9c473b09c3df64d
 ---

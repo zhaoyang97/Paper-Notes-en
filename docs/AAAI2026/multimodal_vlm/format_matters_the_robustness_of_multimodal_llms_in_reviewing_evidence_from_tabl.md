@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Format Matters: The Robustness of Multimodal LLMs in Reviewing Evidence from Tables and Charts
 description: >-
-  [AAAI 2026][Multimodal VLM][Scientific claim verification] This paper systematically investigates the robustness of multimodal LLMs in verifying scientific claims using tables and charts as evidence. By extending SciTabAlign and ChartMimic into a table–chart aligned evaluation benchmark, the authors find that all 12 evaluated multimodal LLMs consistently perform better on table-based evidence than chart-based evidence, while human annotators perform consistently across both formats — revealing a critical weakness in current models' chart comprehension capabilities.
+  [AAAI 2026][Multimodal VLM][Scientific claim verification] This paper systematically investigates the robustness of multimodal LLMs in verifying scientific claims using tables and charts as evidence. By extending SciTabA…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Scientific claim verification
-  - tables vs. charts
-  - multimodal robustness
-  - format sensitivity
-  - evidence format
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Scientific claim verification"
+  - "tables vs. charts"
+  - "multimodal robustness"
+  - "format sensitivity"
+  - "evidence format"
 date: 2026-05-08
 content_hash: 849806f01148e819
 ---

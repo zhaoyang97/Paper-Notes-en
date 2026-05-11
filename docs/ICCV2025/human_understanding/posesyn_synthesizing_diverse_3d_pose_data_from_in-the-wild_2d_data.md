@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PoseSyn: Synthesizing Diverse 3D Pose Data from In-the-Wild 2D Data
 description: >-
-  [ICCV 2025][Human Understanding][3D human pose estimation] This paper proposes the PoseSyn framework, which identifies hard samples for a target pose estimator (TPE) from in-the-wild 2D pose data via an Error Extraction Module (EEM), then expands inaccurate pseudo-labels into diverse motion sequences via a Motion Synthesis Module (MSM). A human animation model subsequently renders these sequences into realistic training images with accurate 3D annotations, improving 3D pose estimation accuracy by up to 14% across multiple real-world benchmarks.
+  [ICCV 2025][Human Understanding][3D human pose estimation] This paper proposes the PoseSyn framework, which identifies hard samples for a target pose estimator (TPE) from in-the-wild 2D pose data via an Error Extraction…
 tags:
-  - ICCV 2025
-  - Human Understanding
-  - 3D human pose estimation
-  - data synthesis
-  - motion generation
-  - hard sample mining
-  - data augmentation
+  - "ICCV 2025"
+  - "Human Understanding"
+  - "3D human pose estimation"
+  - "data synthesis"
+  - "motion generation"
+  - "hard sample mining"
+  - "data augmentation"
 date: 2026-05-08
 content_hash: 81b618bcae0a050a
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning to Generate Unit Test via Adversarial Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Unit Test Generation] This paper proposes UTRL, a framework that iteratively trains a unit test generator and a code generator via adversarial RL — the test generator learns to produce discriminative test cases that distinguish LLM-generated code from correct solutions, while the code generator learns to pass those tests. A Qwen3-4B model trained with UTRL surpasses GPT-4.1 in test generation quality.
+  [ICLR 2026][Reinforcement Learning][Unit Test Generation] This paper proposes UTRL, a framework that iteratively trains a unit test generator and a code generator via adversarial RL — the test generator learns to produce…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Unit Test Generation
-  - Adversarial Training
-  - RLVR
-  - Self-Play
-  - Discrimination Reward
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Unit Test Generation"
+  - "Adversarial Training"
+  - "RLVR"
+  - "Self-Play"
+  - "Discrimination Reward"
 date: 2026-05-08
 content_hash: c16dbea62d52137a
 ---

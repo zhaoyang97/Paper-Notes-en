@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Lifting Unlabeled Internet-level Data for 3D Scene Understanding
 description: >-
-  [CVPR 2026][3D Vision][3D scene understanding] This paper presents SceneVerse++, an automated data engine that generates 3D scene understanding training data from 6,687 unlabeled internet videos. It demonstrates the feasibility of leveraging internet-scale data to advance 3D scene understanding across three tasks: 3D object detection (F1@.25 +20.6), spatial VQA (+14.9%), and vision-language navigation (+14% SR).
+  [CVPR 2026][3D Vision][3D scene understanding] This paper presents SceneVerse++, an automated data engine that generates 3D scene understanding training data from 6…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D scene understanding
-  - internet videos
-  - automated data engine
-  - vision-language navigation
-  - spatial reasoning
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D scene understanding"
+  - "internet videos"
+  - "automated data engine"
+  - "vision-language navigation"
+  - "spatial reasoning"
 date: 2026-05-08
 content_hash: 0a6254254dbdff0d
 ---

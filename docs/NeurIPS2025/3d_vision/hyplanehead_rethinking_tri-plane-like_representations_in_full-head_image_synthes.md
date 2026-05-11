@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HyPlaneHead: Rethinking Tri-plane-like Representations in Full-Head Image Synthesis
 description: >-
-  [NeurIPS 2025][3D Vision][3D-aware GAN] This paper systematically analyzes three fundamental problems of tri-plane-like representations in 3D-aware head synthesis — mirror artifacts, non-uniform mapping, and feature penetration — and proposes a hybrid hy-plane representation (planar + spherical) combined with a unify-split strategy and near-equal-area warping, achieving state-of-the-art performance in full-head image synthesis.
+  [NeurIPS 2025][3D Vision][3D-aware GAN] This paper systematically analyzes three fundamental problems of tri-plane-like representations in 3D-aware head synthesis — mirror artifacts, non-uniform mapping…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - 3D-aware GAN
-  - tri-plane
-  - full-head synthesis
-  - feature entanglement
-  - hybrid representation
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "3D-aware GAN"
+  - "tri-plane"
+  - "full-head synthesis"
+  - "feature entanglement"
+  - "hybrid representation"
 date: 2026-05-08
 content_hash: 62bb5e44915455c1
 ---

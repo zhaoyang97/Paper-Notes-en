@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] One Demo Is All It Takes: Planning Domain Derivation with LLMs from A Single Demonstration
 description: >-
-  [ICLR 2026][Robotics][PDDL] This paper proposes the PDDLLM framework, which derives a complete PDDL planning domain (predicates + actions) automatically from **a single demonstration trajectory**. It generates interpretable symbolic representations through cross-validation between LLM reasoning and physical simulation, and employs a Logical Constraint Adapter (LoCA) to automatically interface with motion planners. The method achieves at least 20% higher success rates than 6 LLM baselines across 1,200+ tasks in 9 environments, and is successfully deployed on 3 physical robot platforms.
+  [ICLR 2026][Robotics][PDDL] This paper proposes the PDDLLM framework, which derives a complete PDDL planning domain (predicates + actions) automatically from **a single demonstration trajectory**. It generates interpreta…
 tags:
-  - ICLR 2026
-  - Robotics
-  - PDDL
-  - Task and Motion Planning
-  - LLM Reasoning
-  - Physical Simulation
-  - Predicate Generation
-  - Motion Planning Interface
+  - "ICLR 2026"
+  - "Robotics"
+  - "PDDL"
+  - "Task and Motion Planning"
+  - "LLM Reasoning"
+  - "Physical Simulation"
+  - "Predicate Generation"
+  - "Motion Planning Interface"
 date: 2026-05-08
 content_hash: 38ec15d39a3193e7
 ---

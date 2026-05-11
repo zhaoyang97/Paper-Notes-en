@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Find your Needle: Small Object Image Retrieval via Multi-Object Attention Optimization
 description: >-
-  [NeurIPS 2025][Model Compression][Small Object Image Retrieval] MaO proposes a novel approach for Small Object Image Retrieval (SoIR) that integrates multi-object pre-training with attention-based feature refinement, aggregating representations of multiple objects into a single global descriptor, achieving substantial improvements over existing retrieval methods across multiple benchmarks.
+  [NeurIPS 2025][Model Compression][Small Object Image Retrieval] MaO proposes a novel approach for Small Object Image Retrieval (SoIR) that integrates multi-object pre-training with attention-based feature refinement…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Small Object Image Retrieval
-  - Multi-Object Attention Optimization
-  - Image Retrieval
-  - Attention Interpretability
-  - Global Descriptor
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Small Object Image Retrieval"
+  - "Multi-Object Attention Optimization"
+  - "Image Retrieval"
+  - "Attention Interpretability"
+  - "Global Descriptor"
 date: 2026-05-08
 content_hash: b25e95e06270e3f3
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Layer by layer, module by module: Choose both for optimal OOD probing of ViT
 description: >-
-  [ICLR 2026 (CAO Workshop)][Vision Transformer] This work systematically investigates the intermediate-layer behavior of pretrained ViTs through large-scale linear probing experiments. It finds that distribution shift is the primary cause of performance degradation in deeper layers, and reveals at the module level that the optimal probing point depends on the degree of shift: probing FFN activations is optimal under significant shift, while probing MHSA post-normalization outputs is optimal under mild shift.
+  [ICLR 2026 (CAO Workshop)][Interpretability][Vision Transformer] This work systematically investigates the intermediate-layer behavior of pretrained ViTs through large-scale linear probing experiments. It finds that dist…
 tags:
-  - ICLR 2026 (CAO Workshop)
-  - Vision Transformer
-  - Linear Probing
-  - Distribution Shift
-  - Intermediate Representations
-  - OOD
+  - "ICLR 2026 (CAO Workshop)"
+  - "Interpretability"
+  - "Vision Transformer"
+  - "Linear Probing"
+  - "Distribution Shift"
+  - "Intermediate Representations"
+  - "OOD"
 date: 2026-05-08
 content_hash: 1468f07f85122410
 ---

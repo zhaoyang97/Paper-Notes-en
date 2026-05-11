@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Deep FlexQP: Accelerated Nonlinear Programming via Deep Unfolding
 description: >-
-  [ICLR2026][LLM Evaluation][Quadratic Programming] This paper proposes FlexQP — an "always feasible" convex quadratic programming (QP) solver based on $\ell_1$ elastic relaxation — and combines it with deep unfolding to learn an LSTM feedback policy that accelerates convergence, yielding Deep FlexQP. When embedded as a submodule within an SQP framework, it solves nonlinear trajectory optimization problems 4–16× faster than OSQP, reduces safety violations in predictive safety filters by over 70%, and improves task completion rates by 43%.
+  [ICLR2026][LLM Evaluation][Quadratic Programming] This paper proposes FlexQP — an "always feasible" convex quadratic programming (QP) solver based on $\ell_1$ elastic relaxation — and combines it with deep unfolding to l…
 tags:
-  - ICLR2026
-  - LLM Evaluation
-  - Quadratic Programming
-  - Deep Unfolding
-  - ADMM
-  - Sequential Quadratic Programming
-  - LSTM Policy
-  - PAC-Bayes
+  - "ICLR2026"
+  - "LLM Evaluation"
+  - "Quadratic Programming"
+  - "Deep Unfolding"
+  - "ADMM"
+  - "Sequential Quadratic Programming"
+  - "LSTM Policy"
+  - "PAC-Bayes"
 date: 2026-05-08
 content_hash: 45141a169ee43ce2
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Active Slice Discovery in Large Language Models
 description: >-
-  [NeurIPS 2025 (Workshop: Reliable ML from Unreliable Data)][Social Computing][slice discovery] This paper proposes the **Active Slice Discovery** problem framework, integrating active learning into LLM error slice discovery. By combining uncertainty sampling with LLM internal representations (raw embeddings or SAE features), the method achieves slice detection accuracy comparable to fully supervised settings using only 2–10% of labeled data.
+  [NeurIPS 2025 (Workshop: Reliable ML from Unreliable Data)][Social Computing][slice discovery] This paper proposes the **Active Slice Discovery** problem framework…
 tags:
   - "NeurIPS 2025 (Workshop: Reliable ML from Unreliable Data)"
-  - Social Computing
-  - slice discovery
-  - active learning
-  - LLM interpretability
-  - toxicity classification
-  - sparse autoencoder
+  - "Social Computing"
+  - "slice discovery"
+  - "active learning"
+  - "LLM interpretability"
+  - "toxicity classification"
+  - "sparse autoencoder"
 date: 2026-05-08
 content_hash: 6f9f338d9836f915
 ---

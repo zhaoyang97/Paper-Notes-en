@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] How Many Tokens Do 3D Point Cloud Transformer Architectures Really Need?
 description: >-
-  [NeurIPS 2025][3D Vision][Point Cloud Transformer] This paper systematically demonstrates that 90–95% of tokens in 3D point cloud Transformers (e.g., PTv3, Sonata) are redundant, and proposes gitmerge3D — a globally informed graph-based token merging method that achieves up to 5.3× FLOPs reduction and 6.4× memory savings with negligible accuracy loss, via an energy-score-driven adaptive merging strategy.
+  [NeurIPS 2025][3D Vision][Point Cloud Transformer] This paper systematically demonstrates that 90–95% of tokens in 3D point cloud Transformers (e.g., PTv3, Sonata) are redundant…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Point Cloud Transformer
-  - Token Redundancy
-  - Token Merging
-  - 3D Semantic Segmentation
-  - Computational Efficiency
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Point Cloud Transformer"
+  - "Token Redundancy"
+  - "Token Merging"
+  - "3D Semantic Segmentation"
+  - "Computational Efficiency"
 date: 2026-05-08
 content_hash: 78d42f2212149378
 ---

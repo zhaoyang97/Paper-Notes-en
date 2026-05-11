@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LoMix: Learnable Weighted Multi-Scale Logits Mixing for Medical Image Segmentation
 description: >-
-  [NeurIPS 2025][Medical Imaging][Multi-scale fusion] LoMix introduces a Combinatorial Mutation Module (CMM) that generates "mutant" logits from multi-scale outputs via four fusion operators (addition / multiplication / concatenation / attention-weighted fusion) across all subset combinations, paired with NAS-style Softplus learnable weights for automatic contribution balancing. On Synapse 8-organ segmentation, Dice improves from 80.9% to 85.1% (+4.2%), and by +9.23% under 5% training data.
+  [NeurIPS 2025][Medical Imaging][Multi-scale fusion] LoMix introduces a Combinatorial Mutation Module (CMM) that generates "mutant" logits from multi-scale outputs via four fusion operators (addition / multiplication / co…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Multi-scale fusion
-  - Logits mixing
-  - Deep supervision
-  - NAS
-  - U-Net
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Multi-scale fusion"
+  - "Logits mixing"
+  - "Deep supervision"
+  - "NAS"
+  - "U-Net"
 date: 2026-05-08
 content_hash: 32b8e9f303681af9
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Asymptotically Stable Quaternionic Hopfield Structured Neural Network with Supervised Projection-based Manifold Learning
 description: >-
-  [NeurIPS 2025][Optimization][quaternion neural network] This paper proposes a Quaternion-valued Supervised Hopfield-structured Neural Network (QSHNN) that employs a periodic projection strategy to maintain the quaternionic structural consistency of the weight matrix. The existence and uniqueness of fixed points and their asymptotic stability are established via Lyapunov theory, while bounded trajectory curvature guarantees path smoothness for robotic path planning.
+  [NeurIPS 2025][Optimization][quaternion neural network] This paper proposes a Quaternion-valued Supervised Hopfield-structured Neural Network (QSHNN) that employs a periodic projection strategy to maintain the quaternion…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - quaternion neural network
-  - Hopfield network
-  - asymptotic stability
-  - manifold learning
-  - robotic path planning
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "quaternion neural network"
+  - "Hopfield network"
+  - "asymptotic stability"
+  - "manifold learning"
+  - "robotic path planning"
 date: 2026-05-08
 content_hash: 0681dfb74a0909a8
 ---

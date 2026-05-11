@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Struct2D: A Perception-Guided Framework for Spatial Reasoning in MLLMs
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Spatial reasoning] This paper proposes Struct2D, a perception-guided prompting framework that converts 3D perception outputs into structured 2D representations (BEV images + object labels + metadata), enabling MLLMs to perform complex spatial reasoning without explicit 3D input. The authors also construct Struct2D-Set, a large-scale instruction tuning dataset containing 200K QA pairs.
+  [NeurIPS 2025][Multimodal VLM][Spatial reasoning] This paper proposes Struct2D, a perception-guided prompting framework that converts 3D perception outputs into structured 2D representations (BEV images + object labels +…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Spatial reasoning
-  - bird's-eye view
-  - multimodal large language models
-  - instruction tuning
-  - 3D scene understanding
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Spatial reasoning"
+  - "bird's-eye view"
+  - "multimodal large language models"
+  - "instruction tuning"
+  - "3D scene understanding"
 date: 2026-05-08
 content_hash: 8abe5ff4f2d73068
 ---

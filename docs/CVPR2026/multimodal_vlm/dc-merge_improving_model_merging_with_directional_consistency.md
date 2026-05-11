@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DC-Merge: Improving Model Merging with Directional Consistency
 description: >-
-  [CVPR 2026 (Main Track)][Multimodal VLM][model merging] DC-Merge identifies that the key to effective model merging lies in maintaining **directional consistency in singular space** between the merged multi-task vector and the original single-task vectors. By combining singular value smoothing with shared orthogonal subspace projection, DC-Merge achieves state-of-the-art merging performance on both Vision and Vision-Language tasks.
+  [CVPR 2026 (Main Track)][Multimodal VLM][model merging] DC-Merge identifies that the key to effective model merging lies in maintaining **directional consistency in singular space** between the merged multi-task vector a…
 tags:
-  - CVPR 2026 (Main Track)
-  - Multimodal VLM
-  - model merging
-  - task vector
-  - singular value decomposition
-  - directional consistency
-  - LoRA
+  - "CVPR 2026 (Main Track)"
+  - "Multimodal VLM"
+  - "model merging"
+  - "task vector"
+  - "singular value decomposition"
+  - "directional consistency"
+  - "LoRA"
 date: 2026-05-08
 content_hash: 2d4cc6dffc4b8516
 ---

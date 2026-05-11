@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CompAgent: An Agentic Framework for Visual Compliance Verification
 description: >-
-  [CVPR 2026][Object Detection][Visual Compliance Verification] This paper proposes CompAgent, the first agentic framework for visual compliance verification. A Planning Agent dynamically selects visual tools (object detection, face analysis, NSFW detection, etc.) based on compliance policies, while a Compliance Verification Agent integrates image content, tool outputs, and policy context for multimodal reasoning. Without any training, CompAgent surpasses the previous SOTA by 10% on UnsafeBench, achieving 76% F1.
+  [CVPR 2026][Object Detection][Visual Compliance Verification] This paper proposes CompAgent, the first agentic framework for visual compliance verification. A Planning Agent dynamically selects visual tools (object detec…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - Visual Compliance Verification
-  - Agentic Framework
-  - Tool-Augmented Reasoning
-  - Content Moderation
-  - MLLM
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Visual Compliance Verification"
+  - "Agentic Framework"
+  - "Tool-Augmented Reasoning"
+  - "Content Moderation"
+  - "MLLM"
 date: 2026-05-08
 content_hash: a3f47dec74271db5
 ---

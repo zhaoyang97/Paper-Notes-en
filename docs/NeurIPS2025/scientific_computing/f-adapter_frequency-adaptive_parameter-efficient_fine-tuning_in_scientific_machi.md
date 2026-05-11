@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] F-Adapter: Frequency-Adaptive Parameter-Efficient Fine-Tuning in Scientific Machine Learning
 description: >-
-  [NeurIPS 2025][Scientific Computing][Parameter-efficient fine-tuning] This paper presents the first systematic study of parameter-efficient fine-tuning (PEFT) for pretrained large operator models (LOMs) in scientific machine learning. It demonstrates that LoRA exhibits a depth-amplified approximation error lower bound in Fourier layers, whereas Adapter preserves universal approximation capacity. Building on this analysis, the paper proposes the Frequency-Adaptive Adapter (F-Adapter), which allocates adapter capacity according to spectral energy distribution. On 3D Navier-Stokes prediction tasks, F-Adapter achieves state-of-the-art performance while tuning fewer than 2% of parameters.
+  [NeurIPS 2025][Scientific Computing][Parameter-efficient fine-tuning] This paper presents the first systematic study of parameter-efficient fine-tuning (PEFT) for pretrained large operator models (LOMs) in scientific mac…
 tags:
-  - NeurIPS 2025
-  - Scientific Computing
-  - Parameter-efficient fine-tuning
-  - Fourier neural operator
-  - frequency-adaptive
-  - scientific machine learning
-  - large operator model
+  - "NeurIPS 2025"
+  - "Scientific Computing"
+  - "Parameter-efficient fine-tuning"
+  - "Fourier neural operator"
+  - "frequency-adaptive"
+  - "scientific machine learning"
+  - "large operator model"
 date: 2026-05-08
 content_hash: ae97a906f70c4011
 ---

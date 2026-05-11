@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Enhancing LLM-based Search Agents via Contribution Weighted Group Relative Policy Optimization
 description: >-
-  [ACL 2026][search agent] CW-GRPO reframes process supervision as "advantage redistribution": a LLM judge evaluates the retrieval utility and reasoning correctness of each search turn, computes a contribution score to rescale outcome-based advantages, and achieves turn-level credit assignment without introducing an unstable value function. The approach outperforms standard GRPO by 5.0% on Qwen3-8B.
+  [ACL 2026][Information Retrieval & RAG][search agent] CW-GRPO reframes process supervision as "advantage redistribution": a LLM judge evaluates the retrieval utility and reasoning correctness of each search turn…
 tags:
-  - ACL 2026
-  - search agent
-  - GRPO
-  - contribution weighting
-  - process supervision
-  - credit assignment
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "search agent"
+  - "GRPO"
+  - "contribution weighting"
+  - "process supervision"
+  - "credit assignment"
 date: 2026-05-08
 content_hash: c238afb4c802f871
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PolyGraph Discrepancy: a classifier-based metric for graph generation
 description: >-
-  [ICLR 2026][Image Generation][Graph generation] This paper proposes PolyGraph Discrepancy (PGD), which approximates a variational lower bound on the Jensen-Shannon distance by training a classifier to distinguish real graphs from generated ones. PGD addresses three fundamental shortcomings of MMD-based metrics: the lack of an absolute scale, incomparability across descriptors, and high bias and variance under small sample sizes.
+  [ICLR 2026][Image Generation][Graph generation] This paper proposes PolyGraph Discrepancy (PGD), which approximates a variational lower bound on the Jensen-Shannon distance by training a classifier to distinguish real gr…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Graph generation
-  - Jensen-Shannon distance
-  - classifier-based evaluation
-  - MMD
-  - TabPFN
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Graph generation"
+  - "Jensen-Shannon distance"
+  - "classifier-based evaluation"
+  - "MMD"
+  - "TabPFN"
 date: 2026-05-08
 content_hash: 21be7192e3016185
 ---

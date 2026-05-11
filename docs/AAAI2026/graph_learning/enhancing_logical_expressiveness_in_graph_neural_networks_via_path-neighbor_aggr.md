@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Enhancing Logical Expressiveness in GNNs via Path-Neighbor Aggregation
 description: >-
-  [AAAI 2026][Graph Learning][Logical Expressiveness] PN-GNN proposes aggregating neighbor node embeddings along reasoning paths on top of conditional message passing, enhancing the logical rule expressiveness of GNNs (strictly beyond C-GNN) in a plug-and-play manner, while avoiding the generalization degradation caused by the labeling trick. The method achieves improvements on both synthetic datasets and real-world knowledge graph reasoning tasks.
+  [AAAI 2026][Graph Learning][Logical Expressiveness] PN-GNN proposes aggregating neighbor node embeddings along reasoning paths on top of conditional message passing…
 tags:
-  - AAAI 2026
-  - Graph Learning
-  - Logical Expressiveness
-  - Knowledge Graph Reasoning
-  - Path-Neighbor Aggregation
-  - Conditional GNN
-  - Labeling Trick
+  - "AAAI 2026"
+  - "Graph Learning"
+  - "Logical Expressiveness"
+  - "Knowledge Graph Reasoning"
+  - "Path-Neighbor Aggregation"
+  - "Conditional GNN"
+  - "Labeling Trick"
 date: 2026-05-08
 content_hash: 8ae1b7fd42b54134
 ---

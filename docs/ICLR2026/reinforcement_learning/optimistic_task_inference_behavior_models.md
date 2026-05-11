@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Optimistic Task Inference for Behavior Foundation Models
 description: >-
-  [ICLR 2026 Oral][Reinforcement Learning][behavior foundation models] This paper proposes OpTI-BFM — a test-time task inference method for Behavior Foundation Models that requires neither a complete reward function nor an annotated dataset, and recovers oracle performance within approximately 5 episodes of environment interaction. The core insight is to exploit the linear structure of successor features to reduce task inference to a linear bandit problem, employing a UCB strategy for optimistic exploration in task embedding space, with formal regret guarantees.
+  [ICLR 2026 Oral][Reinforcement Learning][behavior foundation models] This paper proposes OpTI-BFM — a test-time task inference method for Behavior Foundation Models that requires neither a complete reward function nor an…
 tags:
-  - ICLR 2026 Oral
-  - Reinforcement Learning
-  - behavior foundation models
-  - task inference
-  - zero-shot RL
-  - successor features
-  - UCB
-  - linear bandits
+  - "ICLR 2026 Oral"
+  - "Reinforcement Learning"
+  - "behavior foundation models"
+  - "task inference"
+  - "zero-shot RL"
+  - "successor features"
+  - "UCB"
+  - "linear bandits"
 date: 2026-05-08
 content_hash: 5b78696e0a71f1af
 ---

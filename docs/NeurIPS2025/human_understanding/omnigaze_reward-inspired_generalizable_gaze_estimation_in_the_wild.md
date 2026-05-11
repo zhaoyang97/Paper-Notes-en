@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OmniGaze: Reward-inspired Generalizable Gaze Estimation in the Wild
 description: >-
-  [NeurIPS 2025][Human Understanding][Gaze estimation] This paper proposes OmniGaze, a semi-supervised 3D gaze estimation framework that employs a reward model — fusing visual embeddings, MLLM-generated semantic gaze descriptions, and geometric direction vectors — to assess pseudo-label quality. Trained on 1.4 million unlabeled face images, OmniGaze achieves state-of-the-art performance under both within-domain and cross-domain settings across 5 datasets, and demonstrates zero-shot generalization on 4 unseen datasets.
+  [NeurIPS 2025][Human Understanding][Gaze estimation] This paper proposes OmniGaze, a semi-supervised 3D gaze estimation framework that employs a reward model — fusing visual embeddings…
 tags:
-  - NeurIPS 2025
-  - Human Understanding
-  - Gaze estimation
-  - semi-supervised learning
-  - pseudo-labels
-  - reward model
-  - cross-domain generalization
+  - "NeurIPS 2025"
+  - "Human Understanding"
+  - "Gaze estimation"
+  - "semi-supervised learning"
+  - "pseudo-labels"
+  - "reward model"
+  - "cross-domain generalization"
 date: 2026-05-08
 content_hash: b3f1a4b5eccc6b28
 ---

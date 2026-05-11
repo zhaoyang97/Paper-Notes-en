@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EUGens: Efficient, Unified, and General Dense Layers
 description: >-
-  [NeurIPS 2025][3D Vision][efficient neural network] EUGens introduces a new family of efficient dense layers that leverage Random Features to reduce the inference complexity of fully connected feedforward layers (FFLs) from quadratic to linear. The framework unifies existing efficient FFL extensions and achieves up to 27% inference speedup and 30% parameter compression across LLM pre-training, ViT image classification, and NeRF/iSDF 3D reconstruction tasks, while supporting layer-wise knowledge distillation without backpropagation.
+  [NeurIPS 2025][3D Vision][efficient neural network] EUGens introduces a new family of efficient dense layers that leverage Random Features to reduce the inference complexity of fully connected feedforward layers (FFLs) f…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - efficient neural network
-  - random features
-  - feedforward layer
-  - Transformer
-  - NeRF
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "efficient neural network"
+  - "random features"
+  - "feedforward layer"
+  - "Transformer"
+  - "NeRF"
 date: 2026-05-08
 content_hash: 7eaadd1e292ea809
 ---

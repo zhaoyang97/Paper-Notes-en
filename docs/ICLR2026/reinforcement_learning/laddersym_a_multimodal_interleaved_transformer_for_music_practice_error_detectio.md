@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LadderSym: A Multimodal Interleaved Transformer for Music Practice Error Detection
 description: >-
-  [ICLR 2026][Reinforcement Learning][music error detection] This paper proposes the LadderSym architecture for music practice error detection. It addresses insufficient cross-stream alignment in late-fusion approaches via an interleaved cross-stream alignment module (Ladder), and reduces frequency ambiguity in audio-only score representations by incorporating symbolic score prompts (Sym). On MAESTRO-E, the missed-note F1 score improves from 26.8% to 56.3%.
+  [ICLR 2026][Reinforcement Learning][music error detection] This paper proposes the LadderSym architecture for music practice error detection. It addresses insufficient cross-stream alignment in late-fusion approaches via…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - music error detection
-  - multimodal fusion
-  - cross-attention
-  - symbolic prompting
-  - alignment module
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "music error detection"
+  - "multimodal fusion"
+  - "cross-attention"
+  - "symbolic prompting"
+  - "alignment module"
 date: 2026-05-08
 content_hash: 7ca53e302199e755
 ---

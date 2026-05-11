@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AVATAR: Reinforcement Learning to See, Hear, and Reason Over Video
 description: >-
-  [CVPR 2026][Human Understanding][Audio-Visual Reasoning] This paper proposes AVATAR, a framework that improves GRPO through two core components—an off-policy training architecture (hierarchical replay buffer) and Temporal Advantage Shaping (TAS, which applies U-shaped weighting to emphasize the beginning and end of the reasoning chain)—to address data inefficiency, advantage collapse, and uniform credit assignment, achieving significant gains over the GRPO baseline on audio-visual reasoning benchmarks.
+  [CVPR 2026][Human Understanding][Audio-Visual Reasoning] This paper proposes AVATAR, a framework that improves GRPO through two core components—an off-policy training architecture (hierarchical replay buffer) and Tempora…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Audio-Visual Reasoning
-  - GRPO Improvement
-  - Off-Policy Reinforcement Learning
-  - Temporal Advantage Shaping
-  - Multimodal Large Language Models
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Audio-Visual Reasoning"
+  - "GRPO Improvement"
+  - "Off-Policy Reinforcement Learning"
+  - "Temporal Advantage Shaping"
+  - "Multimodal Large Language Models"
 date: 2026-05-08
 content_hash: 81b69ea5a695a332
 ---

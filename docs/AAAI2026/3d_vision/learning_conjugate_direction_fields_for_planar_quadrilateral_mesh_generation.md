@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Conjugate Direction Fields for Planar Quadrilateral Mesh Generation
 description: >-
-  [AAAI 2026][3D Vision][Planar Quadrilateral Mesh] This paper proposes a data-driven approach based on DGCNN to efficiently generate conjugate direction fields (CDFs), bypassing the high computational cost of traditional nonlinear optimization. The method supports user stroke-guided controllable CDF generation, achieves a 1–2 order-of-magnitude speedup, and is accompanied by a large-scale dataset of 50,000+ free-form surfaces.
+  [AAAI 2026][3D Vision][Planar Quadrilateral Mesh] This paper proposes a data-driven approach based on DGCNN to efficiently generate conjugate direction fields (CDFs)…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - Planar Quadrilateral Mesh
-  - Conjugate Direction Field
-  - Deep Learning
-  - Architectural Design
-  - Controllable Generation
+  - "AAAI 2026"
+  - "3D Vision"
+  - "Planar Quadrilateral Mesh"
+  - "Conjugate Direction Field"
+  - "Deep Learning"
+  - "Architectural Design"
+  - "Controllable Generation"
 date: 2026-05-08
 content_hash: 7e24ee5d1b85110a
 ---

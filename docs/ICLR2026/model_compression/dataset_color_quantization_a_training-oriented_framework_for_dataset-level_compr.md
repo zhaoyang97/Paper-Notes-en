@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dataset Color Quantization: A Training-Oriented Framework for Dataset-Level Compression
 description: >-
-  [ICLR2026][Model Compression][dataset compression] This paper proposes the Dataset Color Quantization (DCQ) framework, which reduces color redundancy at the dataset level through three mechanisms — chromaticity-aware clustering, attention-guided palette allocation, and texture-preserved palette optimization — achieving storage compression while maintaining training performance.
+  [ICLR2026][Model Compression][dataset compression] This paper proposes the Dataset Color Quantization (DCQ) framework, which reduces color redundancy at the dataset level through three mechanisms — chromaticity-aware clu…
 tags:
-  - ICLR2026
-  - Model Compression
-  - dataset compression
-  - color quantization
-  - palette sharing
-  - attention guidance
-  - texture preservation
+  - "ICLR2026"
+  - "Model Compression"
+  - "dataset compression"
+  - "color quantization"
+  - "palette sharing"
+  - "attention guidance"
+  - "texture preservation"
 date: 2026-05-08
 content_hash: 5933de5560c695b0
 ---

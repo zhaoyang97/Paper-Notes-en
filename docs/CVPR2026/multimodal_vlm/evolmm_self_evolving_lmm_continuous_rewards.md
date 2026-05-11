@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EvoLMM: Self-Evolving Large Multimodal Models with Continuous Rewards
 description: >-
-  [CVPR 2026][Multimodal VLM][Self-evolving LMM] This paper proposes EvoLMM, a fully unsupervised self-evolving framework that derives a Proposer (generating image-grounded questions) and a Solver (answering those questions) from a single LMM. A continuous self-consistency reward — replacing discrete majority voting — forms a closed-loop training signal. Using only raw images (no annotations, no external reward models), EvoLMM achieves consistent gains of approximately 2–3% across eight multimodal mathematical reasoning benchmarks.
+  [CVPR 2026][Multimodal VLM][Self-evolving LMM] This paper proposes EvoLMM, a fully unsupervised self-evolving framework that derives a Proposer (generating image-grounded questions) and a Solver (answering those question…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Self-evolving LMM
-  - unsupervised self-improvement
-  - continuous self-consistency reward
-  - Proposer-Solver
-  - visual mathematical reasoning
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Self-evolving LMM"
+  - "unsupervised self-improvement"
+  - "continuous self-consistency reward"
+  - "Proposer-Solver"
+  - "visual mathematical reasoning"
 date: 2026-05-08
 content_hash: b7ab2a6add640fa6
 ---

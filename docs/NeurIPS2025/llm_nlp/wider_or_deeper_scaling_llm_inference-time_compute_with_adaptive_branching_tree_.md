@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Wider or Deeper: Scaling LLM Inference-Time Compute with Adaptive Branching Tree Search
 description: >-
-  [NeurIPS 2025][LLM/NLP][MCTS] AB-MCTS proposes an adaptive-branching Monte Carlo Tree Search framework that dynamically decides at each node whether to go "wider" (generate new candidate answers) or "deeper" (refine existing answers using feedback), balancing exploration and exploitation via Bayesian posterior updates, and outperforms repeated sampling and standard MCTS on programming and engineering tasks.
+  [NeurIPS 2025][LLM/NLP][MCTS] AB-MCTS proposes an adaptive-branching Monte Carlo Tree Search framework that dynamically decides at each node whether to go "wider" (generate new candidate answers) or "deeper" (refine exis…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - MCTS
-  - inference-time compute
-  - adaptive branching
-  - Thompson sampling
-  - code generation
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "MCTS"
+  - "inference-time compute"
+  - "adaptive branching"
+  - "Thompson sampling"
+  - "code generation"
 date: 2026-05-08
 content_hash: 2ee88ec21481d7e6
 ---

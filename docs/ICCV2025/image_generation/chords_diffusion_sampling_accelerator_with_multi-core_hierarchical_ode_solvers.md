@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CHORDS: Diffusion Sampling Accelerator with Multi-Core Hierarchical ODE Solvers
 description: >-
-  [ICCV 2025][Image Generation][Diffusion model acceleration] This paper proposes CHORDS, a diffusion sampling acceleration framework based on multi-core hierarchical ODE solvers. Through a slow-to-fast inter-core rectification mechanism, CHORDS achieves 2.1×–2.9× speedup on 4–8 GPUs without sacrificing generation quality.
+  [ICCV 2025][Image Generation][Diffusion model acceleration] This paper proposes CHORDS, a diffusion sampling acceleration framework based on multi-core hierarchical ODE solvers. Through a slow-to-fast inter-core rectific…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Diffusion model acceleration
-  - multi-core parallelism
-  - ODE solvers
-  - training-free
-  - video generation
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Diffusion model acceleration"
+  - "multi-core parallelism"
+  - "ODE solvers"
+  - "training-free"
+  - "video generation"
 date: 2026-05-08
 content_hash: 95514cb3dd6f1477
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] How to Marginalize in Causal Structure Learning?
 description: >-
-  [AAAI 2026][Bayesian structure learning] This paper employs tractable Probabilistic Circuits (PCs) as a replacement for traditional dynamic programming to perform marginalization in Bayesian structure learning. Through a novel two-stage training strategy—first learning full parent set scores and then progressively fine-tuning for marginal queries—the method eliminates the artificial restriction on the number of candidate parent sets, achieving improved posterior distribution estimation within the TRUST framework.
+  [AAAI 2026][Bayesian structure learning] This paper employs tractable Probabilistic Circuits (PCs) as a replacement for traditional dynamic programming to perform marginalization in Bayesian structure learning. Through a…
 tags:
-  - AAAI 2026
-  - Bayesian structure learning
-  - probabilistic circuits
-  - marginalization
-  - directed acyclic graphs
-  - causal discovery
+  - "AAAI 2026"
+  - "Bayesian structure learning"
+  - "probabilistic circuits"
+  - "marginalization"
+  - "directed acyclic graphs"
+  - "causal discovery"
 date: 2026-05-08
 content_hash: 1eedb4ef736e5564
 ---

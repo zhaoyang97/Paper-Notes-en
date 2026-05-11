@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] A Semi-Supervised Framework for Breast Ultrasound Segmentation with Training-Free Pseudo-Label Generation and Label Refinement
 description: >-
-  [CVPR 2026][Medical Imaging][Semi-supervised segmentation] This paper proposes a semi-supervised framework for breast ultrasound (BUS) image segmentation. It employs GPT-5-generated appearance descriptions combined with Grounding DINO and SAM for training-free pseudo-label generation (APPG), and refines labels via a dual-teacher framework (static + dynamic) using Uncertainty-Entropy Weighted Fusion (UEWF) and Adaptive Uncertainty-guided Reverse Contrastive Learning (AURCL). The method approaches fully supervised performance using only 2.5% labeled data.
+  [CVPR 2026][Medical Imaging][Semi-supervised segmentation] This paper proposes a semi-supervised framework for breast ultrasound (BUS) image segmentation. It employs GPT-5-generated appearance descriptions combined with…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Semi-supervised segmentation
-  - breast ultrasound
-  - pseudo-labels
-  - dual-teacher framework
-  - contrastive learning
-  - SAM
-  - Grounding DINO
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Semi-supervised segmentation"
+  - "breast ultrasound"
+  - "pseudo-labels"
+  - "dual-teacher framework"
+  - "contrastive learning"
+  - "SAM"
+  - "Grounding DINO"
 date: 2026-05-08
 content_hash: 82fc073ad1cbffbb
 ---

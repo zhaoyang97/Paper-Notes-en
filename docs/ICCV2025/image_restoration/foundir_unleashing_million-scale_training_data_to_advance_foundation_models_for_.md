@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FoundIR: Unleashing Million-scale Training Data to Advance Foundation Models for Image Restoration
 description: >-
-  [ICCV 2025][Image Restoration][Foundation Model] This work constructs the first million-scale real-world paired image restoration dataset covering 20 degradation types, and proposes the FoundIR framework, which combines a degradation-agnostic generalist model with degradation-aware expert models to surpass existing performance ceilings across 24 benchmarks.
+  [ICCV 2025][Image Restoration][Foundation Model] This work constructs the first million-scale real-world paired image restoration dataset covering 20 degradation types, and proposes the FoundIR framework…
 tags:
-  - ICCV 2025
-  - Image Restoration
-  - Foundation Model
-  - Universal Image Restoration
-  - Million-scale Dataset
-  - Incremental Learning
-  - Diffusion Model
+  - "ICCV 2025"
+  - "Image Restoration"
+  - "Foundation Model"
+  - "Universal Image Restoration"
+  - "Million-scale Dataset"
+  - "Incremental Learning"
+  - "Diffusion Model"
 date: 2026-05-08
 content_hash: b8e69a5c814a874f
 ---

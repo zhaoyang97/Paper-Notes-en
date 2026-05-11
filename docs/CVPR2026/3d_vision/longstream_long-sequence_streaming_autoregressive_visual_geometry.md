@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LongStream: Long-Sequence Streaming Autoregressive Visual Geometry
 description: >-
-  [CVPR 2026][3D Vision][Streaming 3D reconstruction] LongStream is a gauge-decoupled streaming visual geometry model that achieves stable metric-scale scene reconstruction at 18 FPS over thousand-frame sequences, via keyframe-relative pose prediction, orthogonal scale learning, and cache-consistent training.
+  [CVPR 2026][3D Vision][Streaming 3D reconstruction] LongStream is a gauge-decoupled streaming visual geometry model that achieves stable metric-scale scene reconstruction at 18 FPS over thousand-frame sequences…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Streaming 3D reconstruction
-  - autoregressive model
-  - pose estimation
-  - KV cache
-  - long sequence
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Streaming 3D reconstruction"
+  - "autoregressive model"
+  - "pose estimation"
+  - "KV cache"
+  - "long sequence"
 date: 2026-05-08
 content_hash: c665c553e3e010d8
 ---

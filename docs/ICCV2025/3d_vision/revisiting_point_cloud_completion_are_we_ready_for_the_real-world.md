@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Revisiting Point Cloud Completion: Are We Ready For The Real-World?
 description: >-
-  [ICCV 2025][3D Vision][Point cloud completion] Using algebraic topology and persistent homology ($\mathcal{PH}$) tools, this paper reveals that existing synthetic point cloud datasets lack the rich topological features present in real-world data. It contributes the first real-world industrial point cloud completion dataset RealPC (~40,000 pairs, 21 categories), and proposes BOSHNet, which samples proxy homology skeletons as topological priors to achieve significant improvements on real-world point cloud completion.
+  [ICCV 2025][3D Vision][Point cloud completion] Using algebraic topology and persistent homology ($\mathcal{PH}$) tools, this paper reveals that existing synthetic point cloud datasets lack the rich topological features p…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Point cloud completion
-  - real-world dataset
-  - persistent homology
-  - topological prior
-  - industrial point cloud
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Point cloud completion"
+  - "real-world dataset"
+  - "persistent homology"
+  - "topological prior"
+  - "industrial point cloud"
 date: 2026-05-08
 content_hash: 7e5be38b78a927f2
 ---

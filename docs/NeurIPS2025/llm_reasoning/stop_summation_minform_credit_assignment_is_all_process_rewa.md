@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Stop Summation: Min-Form Credit Assignment Is All Process Reward Model Needs for Reasoning
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Process Reward Model] PURE identifies the root cause of reward hacking induced by PRMs as the standard sum-form credit assignment in RL ($V(s) = \sum \gamma^t r_t$), and proposes a min-form alternative ($V(s) = \min_{t' \geq t} r_{t'}$). By constraining the value function to the minimum of future rewards rather than their cumulative sum, PURE significantly mitigates reward hacking—achieving reasoning performance comparable to rule-based reward methods using only 30% of the training steps.
+  [NeurIPS 2025][LLM Reasoning][Process Reward Model] PURE identifies the root cause of reward hacking induced by PRMs as the standard sum-form credit assignment in RL ($V(s) = \sum \gamma^t r_t$)…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - Process Reward Model
-  - Credit Assignment
-  - Reward Hacking
-  - Min-Form
-  - Reinforcement Learning
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "Process Reward Model"
+  - "Credit Assignment"
+  - "Reward Hacking"
+  - "Min-Form"
+  - "Reinforcement Learning"
 date: 2026-05-08
 content_hash: ff66c3309ba82568
 ---

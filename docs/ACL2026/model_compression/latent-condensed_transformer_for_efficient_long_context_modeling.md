@@ -4,9 +4,9 @@ title: >-
 description: >-
   [ACL 2026][Model Compression][To be supplemented] To be supplemented after thorough reading.
 tags:
-  - ACL 2026
-  - Model Compression
-  - To be supplemented
+  - "ACL 2026"
+  - "Model Compression"
+  - "To be supplemented"
 date: 2026-05-08
 content_hash: 76a941dc8e9bd0d9
 ---

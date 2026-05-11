@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] DR.Experts: Differential Refinement of Distortion-Aware Experts for Blind Image Quality Assessment
 description: >-
-  [AAAI 2026][Blind Image Quality Assessment] This paper proposes the DR.Experts framework, which leverages DA-CLIP to obtain distortion-type priors, employs a Distortion Saliency Differential Module (DSDM) to disentangle distortion attention from semantic attention and thereby purify distortion features, and then applies a Dynamic Distortion Weighting Module (DDWM) to adaptively weight each distortion type's features according to its perceptual impact. The method achieves state-of-the-art performance on five BIQA benchmarks.
+  [AAAI 2026][Interpretability][Blind Image Quality Assessment] This paper proposes the DR.Experts framework, which leverages DA-CLIP to obtain distortion-type priors…
 tags:
-  - AAAI 2026
-  - Blind Image Quality Assessment
-  - Distortion Prior
-  - Mixture of Experts
-  - DA-CLIP
-  - Differential Attention
+  - "AAAI 2026"
+  - "Interpretability"
+  - "Blind Image Quality Assessment"
+  - "Distortion Prior"
+  - "Mixture of Experts"
+  - "DA-CLIP"
+  - "Differential Attention"
 date: 2026-05-08
 content_hash: 62b768c597bc2556
 ---

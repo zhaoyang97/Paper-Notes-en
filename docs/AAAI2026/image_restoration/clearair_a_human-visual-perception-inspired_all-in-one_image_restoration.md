@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ClearAIR: A Human-Visual-Perception-Inspired All-in-One Image Restoration
 description: >-
-  [AAAI 2026][Image Restoration][All-in-One Image Restoration] Inspired by human visual perception (HVP), this paper proposes ClearAIR, a coarse-to-fine unified image restoration framework that progressively recovers image quality through four stages — MLLM-based quality assessment → semantic region perception → degradation type identification → internal clue reuse — achieving state-of-the-art performance across multiple degradation tasks.
+  [AAAI 2026][Image Restoration][All-in-One Image Restoration] Inspired by human visual perception (HVP), this paper proposes ClearAIR, a coarse-to-fine unified image restoration framework that progressively recovers image…
 tags:
-  - AAAI 2026
-  - Image Restoration
-  - All-in-One Image Restoration
-  - Human Visual Perception
-  - MLLM-based IQA
-  - Semantic Guidance
-  - Self-supervised Learning
+  - "AAAI 2026"
+  - "Image Restoration"
+  - "All-in-One Image Restoration"
+  - "Human Visual Perception"
+  - "MLLM-based IQA"
+  - "Semantic Guidance"
+  - "Self-supervised Learning"
 date: 2026-05-08
 content_hash: acc611a7d5926eb2
 ---

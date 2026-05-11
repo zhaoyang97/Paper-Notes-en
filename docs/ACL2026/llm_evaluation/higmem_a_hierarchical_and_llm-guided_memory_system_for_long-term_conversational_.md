@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HiGMem: A Hierarchical and LLM-Guided Memory System for Long-Term Conversational Agents
 description: >-
-  [ACL 2026][LLM Evaluation][long-term conversational memory] This paper proposes HiGMem, a two-level event-turn memory system that enables an LLM to first browse event summaries and then predict which fine-grained conversation turns are worth reading, achieving the best F1 on four out of five question categories on the LoCoMo10 benchmark while retrieving an order of magnitude fewer turns.
+  [ACL 2026][LLM Evaluation][long-term conversational memory] This paper proposes HiGMem, a two-level event-turn memory system that enables an LLM to first browse event summaries and then predict which fine-grained convers…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - long-term conversational memory
-  - hierarchical memory system
-  - LLM-guided retrieval
-  - evidence distillation
-  - event-turn architecture
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "long-term conversational memory"
+  - "hierarchical memory system"
+  - "LLM-guided retrieval"
+  - "evidence distillation"
+  - "event-turn architecture"
 date: 2026-05-08
 content_hash: 44fd1429f3406341
 ---

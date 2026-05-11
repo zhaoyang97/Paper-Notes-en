@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CARE: Towards Clinical Accountability in Multi-Modal Medical Reasoning with an Evidence-Grounded Agentic Framework
 description: >-
-  [ICLR 2026][Medical Imaging][Medical VQA] This paper proposes CARE, a framework that decomposes medical VQA into a three-stage expert pipeline—entity proposal → referring segmentation → evidence-grounded QA—with RLVR fine-tuning applied to each VLM and GPT-5 serving as a dynamic coordinator for tool planning and CoT review. CARE achieves an average accuracy of 77.54% across four medical VQA benchmarks using only 10B parameters, surpassing the 32B end-to-end state-of-the-art (72.29%).
+  [ICLR 2026][Medical Imaging][Medical VQA] This paper proposes CARE, a framework that decomposes medical VQA into a three-stage expert pipeline—entity proposal → referring segmentation → evidence-grounded QA—with RLVR fin…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - Medical VQA
-  - Evidence-Grounded Reasoning
-  - Agentic Framework
-  - Referring Segmentation
-  - Clinical Accountability
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Medical VQA"
+  - "Evidence-Grounded Reasoning"
+  - "Agentic Framework"
+  - "Referring Segmentation"
+  - "Clinical Accountability"
 date: 2026-05-08
 content_hash: 6162fdea4c1fd4ad
 ---

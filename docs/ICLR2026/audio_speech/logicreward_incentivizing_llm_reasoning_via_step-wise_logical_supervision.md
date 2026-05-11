@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LogicReward: Incentivizing LLM Reasoning via Step-Wise Logical Supervision
 description: >-
-  [ICLR2026][Audio & Speech][logical reasoning] This paper proposes LogicReward, a reward function that employs the Isabelle theorem prover for step-wise logical correctness verification. Combined with Autoformalization with Soft Unification to reduce natural language ambiguity, the trained 8B model surpasses GPT-4o by 11.6% and o4-mini by 2% on NLI and logical reasoning tasks.
+  [ICLR2026][Audio & Speech][logical reasoning] This paper proposes LogicReward, a reward function that employs the Isabelle theorem prover for step-wise logical correctness verification. Combined with Autoformalization wi…
 tags:
-  - ICLR2026
+  - "ICLR2026"
   - "Audio & Speech"
-  - logical reasoning
-  - theorem prover
-  - step-wise reward
-  - autoformalization
-  - soft unification
+  - "logical reasoning"
+  - "theorem prover"
+  - "step-wise reward"
+  - "autoformalization"
+  - "soft unification"
 date: 2026-05-08
 content_hash: ae307441f8ae9695
 ---

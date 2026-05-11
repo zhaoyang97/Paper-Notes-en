@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GeoGuide: Hierarchical Geometric Guidance for Open-Vocabulary 3D Semantic Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Open-vocabulary 3D semantic segmentation] This paper proposes GeoGuide, a hierarchical geometric guidance framework for open-vocabulary 3D semantic segmentation. It leverages geometric priors from pretrained 3D models to correct geometric bias in 2D-to-3D knowledge distillation via three complementary modules: uncertainty-based superpoint distillation, instance-level mask reconstruction, and inter-instance relation consistency. GeoGuide achieves state-of-the-art performance of 64.8 mIoU on ScanNet v2.
+  [CVPR 2026][Segmentation][Open-vocabulary 3D semantic segmentation] This paper proposes GeoGuide, a hierarchical geometric guidance framework for open-vocabulary 3D semantic segmentation. It leverages geometric priors fr…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Open-vocabulary 3D semantic segmentation
-  - geometric priors
-  - 2D-to-3D distillation
-  - superpoint aggregation
-  - instance-level consistency
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Open-vocabulary 3D semantic segmentation"
+  - "geometric priors"
+  - "2D-to-3D distillation"
+  - "superpoint aggregation"
+  - "instance-level consistency"
 date: 2026-05-08
 content_hash: d551edecc4182b24
 ---

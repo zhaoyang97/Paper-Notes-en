@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Better Estimation of the Kullback-Leibler Divergence Between Language Models
 description: >-
-  [NeurIPS 2025][KL divergence estimation] This paper proposes a Rao-Blackwellized Monte Carlo estimator for KL divergence—computing the exact KL over the next-token distribution at each position (rather than relying solely on the sampled token). The estimator is theoretically proven to be unbiased with variance strictly no greater than the standard MC estimator, incurs zero additional computational overhead, and yields more stable training in an RLHF sentiment-control task, with models appearing on the Pareto frontier 78% of the time.
+  [NeurIPS 2025][Interpretability][KL divergence estimation] This paper proposes a Rao-Blackwellized Monte Carlo estimator for KL divergence—computing the exact KL over the next-token distribution at each position (rather…
 tags:
-  - NeurIPS 2025
-  - KL divergence estimation
-  - Rao-Blackwellization
-  - RLHF
-  - variance reduction
-  - language models
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "KL divergence estimation"
+  - "Rao-Blackwellization"
+  - "RLHF"
+  - "variance reduction"
+  - "language models"
 date: 2026-05-08
 content_hash: ba2bedbc9e5a5029
 ---

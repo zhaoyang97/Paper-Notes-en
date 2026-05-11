@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Table2LaTeX-RL: High-Fidelity LaTeX Code Generation from Table Images via Reinforced Multimodal Language Models
 description: >-
-  [NeurIPS 2025][Table Recognition] This paper proposes VSGRPO — a dual-reward reinforcement learning strategy based on GRPO — that jointly optimizes a structure-level reward (TEDS-Structure) and a visual fidelity reward (CW-SSIM on rendered images). The fine-tuned MLLM (only 3B parameters) surpasses GPT-4o and models with 72B+ parameters on the table-image-to-LaTeX generation task, with particularly significant gains on complex tables.
+  [NeurIPS 2025][Code Intelligence][Table Recognition] This paper proposes VSGRPO — a dual-reward reinforcement learning strategy based on GRPO — that jointly optimizes a structure-level reward (TEDS-Structure) and a visua…
 tags:
-  - NeurIPS 2025
-  - Table Recognition
-  - LaTeX Generation
-  - GRPO Reinforcement Learning
-  - Dual Reward Mechanism
-  - Multimodal Large Language Models
+  - "NeurIPS 2025"
+  - "Code Intelligence"
+  - "Table Recognition"
+  - "LaTeX Generation"
+  - "GRPO Reinforcement Learning"
+  - "Dual Reward Mechanism"
+  - "Multimodal Large Language Models"
 date: 2026-05-08
 content_hash: dbd947ed343b028e
 ---

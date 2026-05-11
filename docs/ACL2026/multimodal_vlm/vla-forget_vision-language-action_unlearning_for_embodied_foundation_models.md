@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VLA-Forget: Vision-Language-Action Unlearning for Embodied Foundation Models
 description: >-
-  [ACL 2026][Multimodal VLM][Machine Unlearning] This paper proposes VLA-Forget, the first hybrid unlearning framework for vision-language-action (VLA) models. It employs ratio-aware selective editing for perception/cross-modal layers and significance-based selective editing for reasoning/action layers, achieving targeted behavior removal while improving perceptual specificity (+22%) and task success rate (+9%).
+  [ACL 2026][Multimodal VLM][Machine Unlearning] This paper proposes VLA-Forget, the first hybrid unlearning framework for vision-language-action (VLA) models. It employs ratio-aware selective editing for perception/cross-…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Machine Unlearning
-  - VLA Models
-  - Embodied AI
-  - Multimodal Unlearning
-  - Selective Editing
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Machine Unlearning"
+  - "VLA Models"
+  - "Embodied AI"
+  - "Multimodal Unlearning"
+  - "Selective Editing"
 date: 2026-05-08
 content_hash: 6211729dd26ad3db
 ---

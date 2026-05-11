@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Vicinity-Guided Discriminative Latent Diffusion for Privacy-Preserving Domain Adaptation
 description: >-
-  [NeurIPS 2025][Image Generation][Latent diffusion models] This paper proposes Discriminative Vicinity Diffusion (DVD), which for the first time employs latent diffusion models for discriminative knowledge transfer. By training a diffusion model within the vicinity latent space of source-domain features to generate source-style cues, DVD enables domain adaptation without access to source data, surpassing state-of-the-art methods on standard SFDA benchmarks.
+  [NeurIPS 2025][Image Generation][Latent diffusion models] This paper proposes Discriminative Vicinity Diffusion (DVD), which for the first time employs latent diffusion models for discriminative knowledge transfer. By tr…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Latent diffusion models
-  - source-free domain adaptation
-  - privacy preservation
-  - discriminative transfer
-  - vicinity guidance
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Latent diffusion models"
+  - "source-free domain adaptation"
+  - "privacy preservation"
+  - "discriminative transfer"
+  - "vicinity guidance"
 date: 2026-05-08
 content_hash: e02b892a679ad183
 ---

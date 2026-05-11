@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] How Far Can Unsupervised RLVR Scale LLM Training?
 description: >-
-  [ICLR 2026][Reinforcement Learning][unsupervised RLVR] This paper presents a comprehensive analysis of Unsupervised Reinforcement Learning from Verifiable Rewards (URLVR), demonstrating that all intrinsic reward methods fundamentally operate as a "sharpening" mechanism over the model's initial distribution, leading to an inevitable rise-then-fall collapse pattern. It proposes the Model Collapse Step as a prior-based model indicator and identifies external reward methods as the key direction for overcoming scalability bottlenecks.
+  [ICLR 2026][Reinforcement Learning][unsupervised RLVR] This paper presents a comprehensive analysis of Unsupervised Reinforcement Learning from Verifiable Rewards (URLVR)…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - unsupervised RLVR
-  - model collapse
-  - intrinsic rewards
-  - sharpening mechanism
-  - test-time training
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "unsupervised RLVR"
+  - "model collapse"
+  - "intrinsic rewards"
+  - "sharpening mechanism"
+  - "test-time training"
 date: 2026-05-08
 content_hash: 39ccb591dc85f63b
 ---

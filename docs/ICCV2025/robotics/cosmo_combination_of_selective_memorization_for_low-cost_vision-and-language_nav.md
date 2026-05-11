@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] COSMO: Combination of Selective Memorization for Low-cost Vision-and-Language Navigation
 description: >-
-  [ICCV 2025][Robotics][Vision-and-Language Navigation] This paper proposes COSMO, a low-cost VLN architecture combining selective memorization, which replaces the computationally expensive attention mechanisms in Transformers with two customized selective state space modules—Round Selective Scan (RSS, capturing global context in a single scan pass) and Cross-modal Selective State Space Module (CS3, dual-stream cross-modal interaction)—achieving navigation performance surpassing the baseline DUET with only 15.5% of its parameters and 9.3% of its FLOPs.
+  [ICCV 2025][Robotics][Vision-and-Language Navigation] This paper proposes COSMO, a low-cost VLN architecture combining selective memorization…
 tags:
-  - ICCV 2025
-  - Robotics
-  - Vision-and-Language Navigation
-  - State Space Model
-  - Mamba
-  - Hybrid Architecture
-  - Low-cost Navigation
+  - "ICCV 2025"
+  - "Robotics"
+  - "Vision-and-Language Navigation"
+  - "State Space Model"
+  - "Mamba"
+  - "Hybrid Architecture"
+  - "Low-cost Navigation"
 date: 2026-05-08
 content_hash: cc4098ea55cc861d
 ---

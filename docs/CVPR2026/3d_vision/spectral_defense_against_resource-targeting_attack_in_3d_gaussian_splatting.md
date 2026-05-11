@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Spectral Defense Against Resource-Targeting Attack in 3D Gaussian Splatting
 description: >-
-  [CVPR2026][3D Vision][3D Gaussian Splatting] This paper proposes the first frequency-domain defense framework against resource-targeting attacks on 3DGS. By combining a 3D frequency filter that selectively prunes anomalous high-frequency Gaussians with 2D spectral regularization that constrains anisotropic noise in rendered images, the method suppresses Gaussian over-proliferation by up to 5.92×, reduces peak GPU memory by up to 3.66×, and accelerates rendering by up to 4.34× under attack, while maintaining reconstruction quality.
+  [CVPR2026][3D Vision][3D Gaussian Splatting] This paper proposes the first frequency-domain defense framework against resource-targeting attacks on 3DGS. By combining a 3D frequency filter that selectively prunes anomalo…
 tags:
-  - CVPR2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - adversarial defense
-  - resource-targeting attack
-  - frequency-domain analysis
-  - Gaussian pruning
-  - spectral regularization
+  - "CVPR2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "adversarial defense"
+  - "resource-targeting attack"
+  - "frequency-domain analysis"
+  - "Gaussian pruning"
+  - "spectral regularization"
 date: 2026-05-08
 content_hash: ece613d90dc48865
 ---

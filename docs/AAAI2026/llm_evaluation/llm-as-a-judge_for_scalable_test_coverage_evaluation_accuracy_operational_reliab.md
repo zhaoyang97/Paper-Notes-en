@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LLM-as-a-Judge for Scalable Test Coverage Evaluation
 description: >-
-  [AAAI 2026][LLM Evaluation][LLM-as-Judge] This paper applies the LLM-as-Judge paradigm to Gherkin acceptance test coverage evaluation, systematically quantifying accuracy–reliability–cost trade-offs across 20 model configurations × 500 evaluations. It finds that GPT-4o Mini achieves the optimal production balance with a MAAE of 6.07, an ECR@1 of 96.6%, and a cost of \$1.01 per 1K evaluations—approximately 1/78th the cost of GPT-5 at high reasoning effort.
+  [AAAI 2026][LLM Evaluation][LLM-as-Judge] This paper applies the LLM-as-Judge paradigm to Gherkin acceptance test coverage evaluation…
 tags:
-  - AAAI 2026
-  - LLM Evaluation
-  - LLM-as-Judge
-  - Test Coverage
-  - Software Testing
-  - Automated Evaluation
-  - Gherkin
+  - "AAAI 2026"
+  - "LLM Evaluation"
+  - "LLM-as-Judge"
+  - "Test Coverage"
+  - "Software Testing"
+  - "Automated Evaluation"
+  - "Gherkin"
 date: 2026-05-08
 content_hash: 131ddb605dc6be1f
 ---

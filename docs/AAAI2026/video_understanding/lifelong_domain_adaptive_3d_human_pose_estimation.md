@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Lifelong Domain Adaptive 3D Human Pose Estimation
 description: >-
-  [AAAI2026][Video Understanding][3D human pose estimation] This paper introduces a new task of lifelong domain adaptive 3D HPE, and proposes a GAN framework incorporating pose-aware, temporal-aware, and domain-aware encodings. A diffusion sampler is employed to generate domain-aware priors to mitigate catastrophic forgetting, achieving significant improvements over existing methods across multiple cross-scene/cross-dataset adaptation tasks.
+  [AAAI2026][Video Understanding][3D human pose estimation] This paper introduces a new task of lifelong domain adaptive 3D HPE, and proposes a GAN framework incorporating pose-aware, temporal-aware…
 tags:
-  - AAAI2026
-  - Video Understanding
-  - 3D human pose estimation
-  - lifelong domain adaptation
-  - catastrophic forgetting
-  - GAN
-  - diffusion model
+  - "AAAI2026"
+  - "Video Understanding"
+  - "3D human pose estimation"
+  - "lifelong domain adaptation"
+  - "catastrophic forgetting"
+  - "GAN"
+  - "diffusion model"
 date: 2026-05-08
 content_hash: d014110d6b0fd869
 ---

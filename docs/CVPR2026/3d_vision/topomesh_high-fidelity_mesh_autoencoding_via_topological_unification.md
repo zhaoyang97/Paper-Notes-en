@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TopoMesh: High-Fidelity Mesh Autoencoding via Topological Unification
 description: >-
-  [CVPR 2026][3D Vision][3D VAE] This paper proposes TopoMesh, which unifies both ground-truth and predicted meshes under the Dual Marching Cubes (DMC) topology framework, enabling explicit vertex- and face-level correspondence for the first time. This allows direct mesh-level supervision over topology, vertex positions, and face normals. The proposed method improves F1-Sharp by 5.9–7.1% over the current state of the art, with particularly notable advantages in sharp feature preservation.
+  [CVPR 2026][3D Vision][3D VAE] This paper proposes TopoMesh, which unifies both ground-truth and predicted meshes under the Dual Marching Cubes (DMC) topology framework…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D VAE
-  - Mesh Autoencoding
-  - Topological Unification
-  - Dual Marching Cubes
-  - Sharp Feature Preservation
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D VAE"
+  - "Mesh Autoencoding"
+  - "Topological Unification"
+  - "Dual Marching Cubes"
+  - "Sharp Feature Preservation"
 date: 2026-05-08
 content_hash: b4afab44540d8572
 ---

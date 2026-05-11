@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] OpenFS: Multi-Hand-Capable Fingerspelling Recognition with Implicit Signing-Hand Detection and Frame-Wise Letter-Conditioned Synthesis
 description: >-
-  [CVPR2026][Human Understanding][Fingerspelling Recognition] This paper proposes OpenFS, a framework that achieves multi-hand fingerspelling recognition with implicit signing-hand detection via dual-level positional encoding, a signing-hand focusing loss, and a monotonic alignment loss. A frame-wise letter-conditioned diffusion generator is further designed to synthesize OOV training data. OpenFS achieves state-of-the-art performance on three benchmarks (ChicagoFSWild / ChicagoFSWildPlus / FSNeo) with inference speed over 100× faster than PoseNet.
+  [CVPR2026][Human Understanding][Fingerspelling Recognition] This paper proposes OpenFS, a framework that achieves multi-hand fingerspelling recognition with implicit signing-hand detection via dual-level positional encod…
 tags:
-  - CVPR2026
-  - Human Understanding
-  - Fingerspelling Recognition
-  - Sign Language Understanding
-  - Implicit Signing-Hand Detection
-  - Monotonic Alignment Loss
-  - Diffusion-based Generation
-  - OOV Generalization
+  - "CVPR2026"
+  - "Human Understanding"
+  - "Fingerspelling Recognition"
+  - "Sign Language Understanding"
+  - "Implicit Signing-Hand Detection"
+  - "Monotonic Alignment Loss"
+  - "Diffusion-based Generation"
+  - "OOV Generalization"
 date: 2026-05-08
 content_hash: 390b2d97e2ba2db5
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] One-Shot Transfer Learning for Nonlinear PDEs with Perturbative PINNs
 description: >-
-  [NeurIPS 2025][Scientific Computing][PINNs] By combining perturbation theory with PINNs, this work decomposes nonlinear PDEs into a sequence of linear subproblems. After learning the latent space of the linear operator via a Multi-Head PINN, transfer to new PDE instances is achieved through a closed-form solution within 0.2 seconds, attaining errors on the order of $10^{-3}$.
+  [NeurIPS 2025][Scientific Computing][PINNs] By combining perturbation theory with PINNs, this work decomposes nonlinear PDEs into a sequence of linear subproblems. After learning the latent space of the linear operator v…
 tags:
-  - NeurIPS 2025
-  - Scientific Computing
-  - PINNs
-  - perturbation theory
-  - transfer learning
-  - partial differential equations
-  - closed-form solution
+  - "NeurIPS 2025"
+  - "Scientific Computing"
+  - "PINNs"
+  - "perturbation theory"
+  - "transfer learning"
+  - "partial differential equations"
+  - "closed-form solution"
 date: 2026-05-08
 content_hash: 79cc281c661c7bf6
 ---

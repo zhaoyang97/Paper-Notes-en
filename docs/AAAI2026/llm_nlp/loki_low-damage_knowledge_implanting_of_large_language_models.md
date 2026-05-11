@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LoKI: Low-damage Knowledge Implanting of Large Language Models
 description: >-
-  [AAAI 2026][LLM/NLP][Parameter-efficient fine-tuning] This paper proposes LoKI, a parameter-efficient fine-tuning method grounded in the mechanistic understanding of knowledge storage in Transformers. It introduces Knowledge Vector Attribution (KVA) to quantify the contribution of each knowledge vector in FFN layers, and applies a layer-balanced strategy to select low-contribution vectors for targeted knowledge implanting. The approach achieves strong task performance while substantially mitigating catastrophic forgetting.
+  [AAAI 2026][LLM/NLP][Parameter-efficient fine-tuning] This paper proposes LoKI, a parameter-efficient fine-tuning method grounded in the mechanistic understanding of knowledge storage in Transformers. It introduces Knowl…
 tags:
-  - AAAI 2026
-  - LLM/NLP
-  - Parameter-efficient fine-tuning
-  - catastrophic forgetting
-  - knowledge vector attribution
-  - layer-balanced strategy
-  - FFN knowledge storage
+  - "AAAI 2026"
+  - "LLM/NLP"
+  - "Parameter-efficient fine-tuning"
+  - "catastrophic forgetting"
+  - "knowledge vector attribution"
+  - "layer-balanced strategy"
+  - "FFN knowledge storage"
 date: 2026-05-08
 content_hash: ed083791bc1135c8
 ---

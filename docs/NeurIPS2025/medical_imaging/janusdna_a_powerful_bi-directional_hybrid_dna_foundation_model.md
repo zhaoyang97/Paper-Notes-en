@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] JanusDNA: A Powerful Bi-directional Hybrid DNA Foundation Model
 description: >-
-  [NeurIPS 2025][Medical Imaging][DNA foundation model] JanusDNA is proposed as the first bidirectional DNA foundation model, combining a Mamba-Attention-MoE hybrid architecture with the Janus Modeling pretraining paradigm to achieve bidirectional understanding at the training efficiency of autoregressive methods, attaining state-of-the-art performance across multiple genomic benchmarks.
+  [NeurIPS 2025][Medical Imaging][DNA foundation model] JanusDNA is proposed as the first bidirectional DNA foundation model, combining a Mamba-Attention-MoE hybrid architecture with the Janus Modeling pretraining paradigm…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - DNA foundation model
-  - bidirectional modeling
-  - Mamba-Attention
-  - Mixture-of-Experts
-  - genomics
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "DNA foundation model"
+  - "bidirectional modeling"
+  - "Mamba-Attention"
+  - "Mixture-of-Experts"
+  - "genomics"
 date: 2026-05-08
 content_hash: 3044f7e3a92a7056
 ---

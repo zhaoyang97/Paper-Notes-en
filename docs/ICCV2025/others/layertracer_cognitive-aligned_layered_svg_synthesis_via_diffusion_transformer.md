@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] LayerTracer: Cognitive-Aligned Layered SVG Synthesis via Diffusion Transformer
 description: >-
-  [ICCV 2025][SVG generation] LayerTracer presents the first cognitive-aligned layered SVG generation framework built upon a Diffusion Transformer (DiT). It constructs a dataset of 20,000+ designer operation sequences, trains a DiT to generate multi-stage rasterized blueprints that simulate designer workflows, and converts these blueprints into clean, editable layered SVGs via layer-wise vectorization and path deduplication. The framework supports both text-driven generation and image-to-layered-SVG conversion.
+  [ICCV 2025][SVG generation] LayerTracer presents the first cognitive-aligned layered SVG generation framework built upon a Diffusion Transformer (DiT). It constructs a dataset of 20,000+ designer operation sequences…
 tags:
-  - ICCV 2025
-  - SVG generation
-  - layered vector graphics
-  - Diffusion Transformer
-  - cognitive alignment
-  - serialized design process
-  - vectorization
-  - LoRA
+  - "ICCV 2025"
+  - "SVG generation"
+  - "layered vector graphics"
+  - "Diffusion Transformer"
+  - "cognitive alignment"
+  - "serialized design process"
+  - "vectorization"
+  - "LoRA"
 date: 2026-05-08
 content_hash: 48ac31fc7bf33014
 ---

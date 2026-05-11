@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UFVideo: Towards Unified Fine-Grained Video Cooperative Understanding with Large Language Models
 description: >-
-  [CVPR 2026][Video Understanding][Unified video understanding] UFVideo is the first Video LLM to unify global, pixel-level, and temporal-level video understanding within a single model. Through a visual-language guided alignment strategy and the SAM2 mask decoder, it simultaneously supports video question answering, object referring, video segmentation, and temporal grounding, and introduces UFVideo-Bench, a multi-grained cooperative understanding benchmark.
+  [CVPR 2026][Video Understanding][Unified video understanding] UFVideo is the first Video LLM to unify global, pixel-level, and temporal-level video understanding within a single model. Through a visual-language guided al…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Unified video understanding
-  - multi-grained cooperation
-  - pixel-level segmentation
-  - temporal grounding
-  - Video LLM
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Unified video understanding"
+  - "multi-grained cooperation"
+  - "pixel-level segmentation"
+  - "temporal grounding"
+  - "Video LLM"
 date: 2026-05-08
 content_hash: eda9af7d11d3bfef
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MoME: Mixture of Matryoshka Experts for Audio-Visual Speech Recognition
 description: >-
-  [NeurIPS 2025][Audio & Speech][audio-visual speech recognition] MoME integrates sparse MoE into the Matryoshka representation learning framework for LLM-based audio-visual speech recognition. Through a shared router, it enables cross-granularity knowledge transfer, supporting elastic inference at multiple compression rates under a single set of model weights, while achieving state-of-the-art performance on AVSR/ASR/VSR.
+  [NeurIPS 2025][Audio & Speech][audio-visual speech recognition] MoME integrates sparse MoE into the Matryoshka representation learning framework for LLM-based audio-visual speech recognition. Through a shared router…
 tags:
-  - NeurIPS 2025
+  - "NeurIPS 2025"
   - "Audio & Speech"
-  - audio-visual speech recognition
-  - Matryoshka representation learning
-  - Mixture-of-Experts
-  - elastic inference
-  - LLM
+  - "audio-visual speech recognition"
+  - "Matryoshka representation learning"
+  - "Mixture-of-Experts"
+  - "elastic inference"
+  - "LLM"
 date: 2026-05-08
 content_hash: 03a7e9f39a233de2
 ---

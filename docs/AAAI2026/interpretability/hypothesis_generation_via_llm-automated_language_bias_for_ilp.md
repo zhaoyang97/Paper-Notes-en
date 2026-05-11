@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Hypothesis Generation via LLM-Automated Language Bias for ILP
 description: >-
-  [AAAI 2026][Inductive Logic Programming] This paper proposes the first end-to-end framework in which a multi-agent LLM system (Actor/Critic) automatically constructs ILP language bias (predicate system, type declarations, and mode constraints) from raw text. A Translator agent converts text into Prolog facts, and the MAXSYNTH solver then induces a globally optimal rule set based on the MDL principle. The framework achieves 88.3% and 81.3% accuracy on the SHOES and ZENDO tasks, respectively, with variance below 5% across four LLMs.
+  [AAAI 2026][Interpretability][Inductive Logic Programming] This paper proposes the first end-to-end framework in which a multi-agent LLM system (Actor/Critic) automatically constructs ILP language bias (predicate system…
 tags:
-  - AAAI 2026
-  - Inductive Logic Programming
-  - Language Bias
-  - Multi-Agent
-  - Prolog
-  - Interpretability
+  - "AAAI 2026"
+  - "Interpretability"
+  - "Inductive Logic Programming"
+  - "Language Bias"
+  - "Multi-Agent"
+  - "Prolog"
 date: 2026-05-08
 content_hash: 70c6d852f9c1f1a4
 ---

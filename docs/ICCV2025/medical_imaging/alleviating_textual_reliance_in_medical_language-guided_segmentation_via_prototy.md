@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Alleviating Textual Reliance in Medical Language-guided Segmentation via Prototype-driven Semantic Approximation
 description: >-
-  [ICCV 2025][Medical Imaging][Medical image segmentation] This paper proposes ProLearn, a framework that introduces a Prototype-driven Semantic Approximation (PSA) module to fundamentally alleviate textual reliance in medical language-guided segmentation. The prototype space is initialized from a small number of image-text pairs; thereafter, both training and inference require no text input. ProLearn maintains strong performance under 1% text availability (QaTa-COV19 Dice = 0.857), with parameters 1000× fewer than LLM-based solutions and inference speed 100× faster.
+  [ICCV 2025][Medical Imaging][Medical image segmentation] This paper proposes ProLearn, a framework that introduces a Prototype-driven Semantic Approximation (PSA) module to fundamentally alleviate textual reliance in med…
 tags:
-  - ICCV 2025
-  - Medical Imaging
-  - Medical image segmentation
-  - language-guided segmentation
-  - prototype learning
-  - textual reliance
-  - semantic approximation
+  - "ICCV 2025"
+  - "Medical Imaging"
+  - "Medical image segmentation"
+  - "language-guided segmentation"
+  - "prototype learning"
+  - "textual reliance"
+  - "semantic approximation"
 date: 2026-05-08
 content_hash: c35d85c4f126d54c
 ---

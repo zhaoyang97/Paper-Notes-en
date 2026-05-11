@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FastGS: Training 3D Gaussian Splatting in 100 Seconds
 description: >-
-  [CVPR2026][3D Vision][3D Gaussian Splatting] FastGS is a multi-view consistency-based acceleration framework for 3DGS that precisely controls Gaussian count via View-Consistent Densification (VCD) and View-Consistent Pruning (VCP). It achieves scene training in approximately 100 seconds on datasets such as Mip-NeRF 360, delivering over 15× speedup over vanilla 3DGS with comparable rendering quality.
+  [CVPR2026][3D Vision][3D Gaussian Splatting] FastGS is a multi-view consistency-based acceleration framework for 3DGS that precisely controls Gaussian count via View-Consistent Densification (VCD) and View-Consistent Pru…
 tags:
-  - CVPR2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - training acceleration
-  - multi-view consistency
-  - Gaussian density control
-  - pruning strategy
+  - "CVPR2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "training acceleration"
+  - "multi-view consistency"
+  - "Gaussian density control"
+  - "pruning strategy"
 date: 2026-05-08
 content_hash: 88f14530e404b106
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Activation Steering for Masked Diffusion Language Models
 description: >-
-  [ICLR 2026][Image Restoration][activation steering] This work is the first to apply activation steering to Masked Diffusion Language Models (MDLMs), demonstrating that refusal behavior in MDLMs is likewise governed by a single low-dimensional direction. Globally projecting out this direction at every denoising step completely bypasses safety alignment. Unlike autoregressive models, effective directions can be extracted from pre-instruction tokens—reflecting the non-causal, parallel processing nature of diffusion models.
+  [ICLR 2026][Image Restoration][activation steering] This work is the first to apply activation steering to Masked Diffusion Language Models (MDLMs)…
 tags:
-  - ICLR 2026
-  - Image Restoration
-  - activation steering
-  - masked diffusion LM
-  - safety
-  - refusal direction
-  - LLaDA
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "activation steering"
+  - "masked diffusion LM"
+  - "safety"
+  - "refusal direction"
+  - "LLaDA"
 date: 2026-05-08
 content_hash: 1fcfc34c7b6a1d6b
 ---

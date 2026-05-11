@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond Accuracy: A Cognitive Load Framework for Mapping the Capability Boundaries of Tool-use Agents
 description: >-
-  [AAAI 2026][LLM Evaluation][Cognitive Load Theory] Drawing on Cognitive Load Theory (CLT) from psychology, this work decomposes the complexity of tool-use tasks into intrinsic load (structural complexity of the solution path) and extraneous load (ambiguity of problem formulation). It constructs ToolLoad-Bench, a benchmark with parametrically adjustable cognitive load, and employs an exponential decay model $\text{Acc} \approx e^{-(k \cdot CL + b)}$ to precisely characterize the capability boundaries of different agents.
+  [AAAI 2026][LLM Evaluation][Cognitive Load Theory] Drawing on Cognitive Load Theory (CLT) from psychology, this work decomposes the complexity of tool-use tasks into intrinsic load (structural complexity of the solution…
 tags:
-  - AAAI 2026
-  - LLM Evaluation
-  - Cognitive Load Theory
-  - Tool-use Agent
-  - Capability Boundaries
-  - Tool Interaction Graph
-  - Benchmark
+  - "AAAI 2026"
+  - "LLM Evaluation"
+  - "Cognitive Load Theory"
+  - "Tool-use Agent"
+  - "Capability Boundaries"
+  - "Tool Interaction Graph"
+  - "Benchmark"
 date: 2026-05-08
 content_hash: a3e593d370cfdadc
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Composite Flow Matching for Reinforcement Learning with Shifted-Dynamics Data
 description: >-
-  [NeurIPS 2025][Image Generation][Reinforcement Learning] This paper proposes CompFlow, a composite flow matching architecture that builds an online flow on top of the offline flow's output distribution to estimate the dynamics shift (Wasserstein distance) between offline and online environments. Combined with an active exploration strategy targeting high-shift regions, CompFlow achieves an average return 14.2% above the strongest baseline across 27 shifted-dynamics RL tasks.
+  [NeurIPS 2025][Image Generation][Reinforcement Learning] This paper proposes CompFlow, a composite flow matching architecture that builds an online flow on top of the offline flow's output distribution to estimate the dy…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Reinforcement Learning
-  - Flow Matching
-  - Optimal Transport
-  - Shifted Dynamics
-  - Wasserstein Distance
-  - Offline Data
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Reinforcement Learning"
+  - "Flow Matching"
+  - "Optimal Transport"
+  - "Shifted Dynamics"
+  - "Wasserstein Distance"
+  - "Offline Data"
 date: 2026-05-08
 content_hash: 82849957324fe281
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GP-4DGS: Probabilistic 4D Gaussian Splatting from Monocular Video via Variational Gaussian Processes
 description: >-
-  [CVPR 2026][3D Vision][4D Gaussian Splatting] GP-4DGS integrates variational Gaussian Processes (GP) into 4D Gaussian Splatting, enabling probabilistic motion modeling via spatiotemporal composite kernels and variational inference, while endowing 4DGS with three new capabilities: uncertainty quantification, motion extrapolation, and adaptive motion priors.
+  [CVPR 2026][3D Vision][4D Gaussian Splatting] GP-4DGS integrates variational Gaussian Processes (GP) into 4D Gaussian Splatting, enabling probabilistic motion modeling via spatiotemporal composite kernels and variational…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 4D Gaussian Splatting
-  - Gaussian Processes
-  - Uncertainty Quantification
-  - Motion Extrapolation
-  - Dynamic Scene Reconstruction
+  - "CVPR 2026"
+  - "3D Vision"
+  - "4D Gaussian Splatting"
+  - "Gaussian Processes"
+  - "Uncertainty Quantification"
+  - "Motion Extrapolation"
+  - "Dynamic Scene Reconstruction"
 date: 2026-05-08
 content_hash: 871387e1d7e8e060
 ---

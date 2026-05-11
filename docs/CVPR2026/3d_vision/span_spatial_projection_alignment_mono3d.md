@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] SPAN: Spatial-Projection Alignment for Monocular 3D Object Detection
 description: >-
-  [CVPR 2026][3D Vision][monocular 3D detection] This paper proposes SPAN, a plug-and-play geometric co-constraint framework that enforces global geometric consistency across decoupled predictions via two differentiable losses — Spatial Point Alignment (3D corner MGIoU alignment) and 3D-2D Projection Alignment (projected bounding rectangle GIoU alignment) — coupled with a Hierarchical Task Learning strategy to stabilize training. On KITTI, SPAN improves MonoDGP's Car Moderate AP3D by 0.92%, achieving a new state of the art with zero additional inference overhead.
+  [CVPR 2026][3D Vision][monocular 3D detection] This paper proposes SPAN, a plug-and-play geometric co-constraint framework that enforces global geometric consistency across decoupled predictions via two differentiable lo…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - monocular 3D detection
-  - geometric constraint
-  - spatial alignment
-  - projection consistency
-  - hierarchical task learning
-  - MGIoU
+  - "CVPR 2026"
+  - "3D Vision"
+  - "monocular 3D detection"
+  - "geometric constraint"
+  - "spatial alignment"
+  - "projection consistency"
+  - "hierarchical task learning"
+  - "MGIoU"
 date: 2026-05-08
 content_hash: a181d17953fd7267
 ---

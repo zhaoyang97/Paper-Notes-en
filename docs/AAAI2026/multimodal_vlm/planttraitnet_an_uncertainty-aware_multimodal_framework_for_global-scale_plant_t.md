@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PlantTraitNet: An Uncertainty-Aware Multimodal Framework for Global-Scale Plant Trait Inference from Citizen Science Data
 description: >-
-  [AAAI 2026][Multimodal VLM][Plant trait prediction] This paper proposes PlantTraitNet, a multimodal, multi-task, uncertainty-aware deep learning framework that leverages weakly supervised plant photographs from citizen science platforms (iNaturalist, Pl@ntNet) in combination with image features (DINOv2), depth priors (Depth-Anything-V2), and geospatial priors (Climplicit) to simultaneously predict four key plant functional traits (plant height, leaf area, specific leaf area, and leaf nitrogen content). The resulting global trait maps consistently outperform existing global trait products on benchmarks against sPlotOpen vegetation survey data.
+  [AAAI 2026][Multimodal VLM][Plant trait prediction] This paper proposes PlantTraitNet, a multimodal, multi-task, uncertainty-aware deep learning framework that leverages weakly supervised plant photographs from citizen s…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Plant trait prediction
-  - multimodal fusion
-  - uncertainty estimation
-  - citizen science
-  - global-scale mapping
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Plant trait prediction"
+  - "multimodal fusion"
+  - "uncertainty estimation"
+  - "citizen science"
+  - "global-scale mapping"
 date: 2026-05-08
 content_hash: 5896f5d5564536f4
 ---

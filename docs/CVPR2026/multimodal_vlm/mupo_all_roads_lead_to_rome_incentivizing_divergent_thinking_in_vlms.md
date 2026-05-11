@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MUPO: All Roads Lead to Rome - Incentivizing Divergent Thinking in Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Reinforcement Learning] MUPO identifies a reasoning diversity collapse in GRPO training — models prematurely converge to a small number of reasoning strategies while discarding most alternatives. By partitioning responses into groups for localized advantage estimation and introducing a diversity reward, MUPO incentivizes VLMs to maintain divergent thinking, achieving 2–7% improvements across multiple reasoning benchmarks.
+  [CVPR 2026][Multimodal VLM][Reinforcement Learning] MUPO identifies a reasoning diversity collapse in GRPO training — models prematurely converge to a small number of reasoning strategies while discarding most alternativ…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Reinforcement Learning
-  - GRPO
-  - Divergent Thinking
-  - Reasoning Diversity
-  - Vision-Language Models
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "Divergent Thinking"
+  - "Reasoning Diversity"
+  - "Vision-Language Models"
 date: 2026-05-08
 content_hash: e11774cc0a4e2566
 ---

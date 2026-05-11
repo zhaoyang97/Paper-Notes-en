@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Stepper: Stepwise Immersive Scene Generation with Multiview Panoramas
 description: >-
-  [CVPR 2026][3D Vision][Panorama Generation] This paper proposes Stepper, a framework that generates immersive 3D scenes driven by text input by progressively synthesizing multi-view panoramas and feeding them into a feed-forward 3D reconstruction pipeline, achieving an average PSNR improvement of 3.3 dB over existing methods.
+  [CVPR 2026][3D Vision][Panorama Generation] This paper proposes Stepper, a framework that generates immersive 3D scenes driven by text input by progressively synthesizing multi-view panoramas and feeding them into a feed…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Panorama Generation
-  - 3D Scene Synthesis
-  - Diffusion Models
-  - Multi-view Consistency
-  - Immersive Scenes
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Panorama Generation"
+  - "3D Scene Synthesis"
+  - "Diffusion Models"
+  - "Multi-view Consistency"
+  - "Immersive Scenes"
 date: 2026-05-08
 content_hash: e0a0eebe6180864e
 ---

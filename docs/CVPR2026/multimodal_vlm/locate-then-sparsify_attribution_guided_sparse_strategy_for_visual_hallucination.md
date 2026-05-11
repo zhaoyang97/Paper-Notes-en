@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Locate-then-Sparsify: Attribution Guided Sparse Strategy for Visual Hallucination Mitigation
 description: >-
-  [CVPR 2026][Multimodal VLM][Visual Hallucination] This paper proposes LTS-FS (Locate-Then-Sparsify for Feature Steering), a framework that employs causal intervention-based attribution to identify hallucination-relevant layers and applies layer-wise sparse control over feature steering intensity according to attribution scores, effectively mitigating hallucinations in LVLMs while preserving generalization capability.
+  [CVPR 2026][Multimodal VLM][Visual Hallucination] This paper proposes LTS-FS (Locate-Then-Sparsify for Feature Steering), a framework that employs causal intervention-based attribution to identify hallucination-relevant…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Visual Hallucination
-  - Feature Steering
-  - Layer-wise Attribution
-  - Sparse Adjustment
-  - LVLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Visual Hallucination"
+  - "Feature Steering"
+  - "Layer-wise Attribution"
+  - "Sparse Adjustment"
+  - "LVLM"
 date: 2026-05-08
 content_hash: 70a4e8cfb09a8788
 ---

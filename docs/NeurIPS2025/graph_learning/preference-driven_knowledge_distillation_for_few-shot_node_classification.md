@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PKD: Preference-driven Knowledge Distillation for Few-shot Node Classification
 description: >-
-  [NeurIPS 2025][Graph Learning][Few-shot node classification] PKD is a framework that jointly leverages LLMs and multiple GNN teachers for few-shot node classification on text-attributed graphs. A GNN-preference node selector (GNS) uses KL divergence-based uncertainty to identify nodes requiring LLM annotation, while a node-preference GNN selector (NGS) employs RL to match each node with its optimal GNN teacher. PKD achieves consistent state-of-the-art performance across 9 datasets (e.g., Cornell 87% vs. baselines 59–82%).
+  [NeurIPS 2025][Graph Learning][Few-shot node classification] PKD is a framework that jointly leverages LLMs and multiple GNN teachers for few-shot node classification on text-attributed graphs. A GNN-preference node sele…
 tags:
-  - NeurIPS 2025
-  - Graph Learning
-  - Few-shot node classification
-  - LLM-GNN collaboration
-  - knowledge distillation
-  - RL-based teacher selection
-  - text-attributed graphs
+  - "NeurIPS 2025"
+  - "Graph Learning"
+  - "Few-shot node classification"
+  - "LLM-GNN collaboration"
+  - "knowledge distillation"
+  - "RL-based teacher selection"
+  - "text-attributed graphs"
 date: 2026-05-08
 content_hash: e52a43dbe833d91c
 ---

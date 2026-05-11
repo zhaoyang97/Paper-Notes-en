@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LoD-Loc v3: Generalized Aerial Localization in Dense Cities using Instance Silhouette Alignment
 description: >-
-  [CVPR 2026][Segmentation][UAV localization] This paper proposes LoD-Loc v3, which addresses two critical limitations of LoD-based UAV localization — poor cross-scene generalization and pose ambiguity in dense urban areas — by constructing a large-scale synthetic instance segmentation dataset (InsLoD-Loc, 100K images) and upgrading the localization paradigm from semantic to instance silhouette alignment. On the Tokyo-LoDv3 dense scene benchmark, the method achieves a ~2000% improvement in (2m, 2°) accuracy over the previous state of the art.
+  [CVPR 2026][Segmentation][UAV localization] This paper proposes LoD-Loc v3, which addresses two critical limitations of LoD-based UAV localization — poor cross-scene generalization and pose ambiguity in dense urban areas…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - UAV localization
-  - LoD city models
-  - instance segmentation
-  - synthetic data
-  - silhouette alignment
+  - "CVPR 2026"
+  - "Segmentation"
+  - "UAV localization"
+  - "LoD city models"
+  - "instance segmentation"
+  - "synthetic data"
+  - "silhouette alignment"
 date: 2026-05-08
 content_hash: 305185c71b114d86
 ---

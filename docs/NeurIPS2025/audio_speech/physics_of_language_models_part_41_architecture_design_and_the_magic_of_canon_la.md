@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Physics of Language Models: Part 4.1, Architecture Design and the Magic of Canon Layers
 description: >-
-  [NeurIPS 2025][Audio & Speech][Canon layer] This work systematically compares language model architectures via controlled synthetic pretraining tasks, and finds that the Canon layer—a lightweight component performing weighted summation over neighboring tokens—significantly enhances core capabilities including reasoning depth (2–4×), reasoning breadth, and knowledge capacity, enabling NoPE to match RoPE and GLA to rival Mamba2/GDN.
+  [NeurIPS 2025][Audio & Speech][Canon layer] This work systematically compares language model architectures via controlled synthetic pretraining tasks…
 tags:
-  - NeurIPS 2025
+  - "NeurIPS 2025"
   - "Audio & Speech"
-  - Canon layer
-  - horizontal information flow
-  - synthetic pretraining
-  - architecture comparison
-  - linear attention
+  - "Canon layer"
+  - "horizontal information flow"
+  - "synthetic pretraining"
+  - "architecture comparison"
+  - "linear attention"
 date: 2026-05-08
 content_hash: 6c1b25e5496cb8fd
 ---

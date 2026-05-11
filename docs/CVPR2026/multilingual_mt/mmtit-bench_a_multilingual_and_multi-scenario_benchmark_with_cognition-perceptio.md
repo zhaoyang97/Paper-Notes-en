@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] MMTIT-Bench: A Multilingual and Multi-Scenario Benchmark with Cognition-Perception-Reasoning Guided Text-Image Machine Translation
 description: >-
-  [CVPR 2026][Text-image translation] This paper constructs MMTIT-Bench, a multilingual multi-scenario text-image translation benchmark covering 14 non-English non-Chinese languages, and proposes the CPR-Trans data paradigm (Cognition → Perception → Translation Reasoning). The approach significantly improves end-to-end translation quality on 3B and 7B models, with the 7B model achieving performance competitive with a 235B model.
+  [CVPR 2026][Multilingual & Machine Translation][Text-image translation] This paper constructs MMTIT-Bench, a multilingual multi-scenario text-image translation benchmark covering 14 non-English non-Chinese languages…
 tags:
-  - CVPR 2026
-  - Text-image translation
-  - multilingual benchmark
-  - chain-of-thought
-  - cognition-perception-reasoning
-  - VLLM evaluation
+  - "CVPR 2026"
+  - "Multilingual & Machine Translation"
+  - "Text-image translation"
+  - "multilingual benchmark"
+  - "chain-of-thought"
+  - "cognition-perception-reasoning"
+  - "VLLM evaluation"
 date: 2026-05-08
 content_hash: 6f64b68fac95fa8e
 ---

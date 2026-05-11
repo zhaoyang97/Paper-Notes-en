@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dynamics-Aligned Latent Imagination in Contextual World Models for Zero-Shot Generalization
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][contextual MDP] DALI, a self-supervised context encoder, is introduced into the DreamerV3 architecture to infer latent environment parameters (e.g., gravity, friction) from interaction history. It achieves zero-shot generalization on cMDP benchmarks without retraining, outperforming ground-truth context-aware baselines by up to 96.4% on extrapolation tasks.
+  [NeurIPS 2025][Reinforcement Learning][contextual MDP] DALI, a self-supervised context encoder, is introduced into the DreamerV3 architecture to infer latent environment parameters (e.g., gravity…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - contextual MDP
-  - world model
-  - zero-shot generalization
-  - DreamerV3
-  - latent context
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "contextual MDP"
+  - "world model"
+  - "zero-shot generalization"
+  - "DreamerV3"
+  - "latent context"
 date: 2026-05-08
 content_hash: 48bf2a51d7402bc8
 ---

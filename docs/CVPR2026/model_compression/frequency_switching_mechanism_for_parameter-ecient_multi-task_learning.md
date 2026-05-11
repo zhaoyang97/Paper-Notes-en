@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Frequency Switching Mechanism for Parameter-Efficient Multi-Task Learning
 description: >-
-  [CVPR 2026][Model Compression][Parameter-efficient fine-tuning] Free Sinewich proposes a parameter-efficient multi-task learning framework based on frequency switching. By applying task-specific sinusoidal transformations $M_t = \sin(\omega_t \cdot M_{AWB})$ to a shared low-rank base matrix, the method achieves genuine parameter reuse and task specialization at near-zero cost, attaining state-of-the-art performance on dense prediction benchmarks with the fewest trainable parameters.
+  [CVPR 2026][Model Compression][Parameter-efficient fine-tuning] Free Sinewich proposes a parameter-efficient multi-task learning framework based on frequency switching. By applying task-specific sinusoidal transformation…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - Parameter-efficient fine-tuning
-  - multi-task learning
-  - frequency switching
-  - sinusoidal transformation
-  - LoRA
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Parameter-efficient fine-tuning"
+  - "multi-task learning"
+  - "frequency switching"
+  - "sinusoidal transformation"
+  - "LoRA"
 date: 2026-05-08
 content_hash: ae93b541d20331f1
 ---

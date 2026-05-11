@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MOSPA: Human Motion Generation Driven by Spatial Audio
 description: >-
-  [NeurIPS 2025][Human Understanding][Spatial audio] This work introduces the novel task of spatial-audio-driven human motion generation, constructs the SAM dataset comprising 9+ hours, 27 scenes, and 12 subjects with paired binaural audio and motion data, and proposes the MOSPA diffusion model. By fusing audio features including MFCC, tempogram, and RMS with sound source position and motion style conditions, MOSPA achieves an FID of 7.98, substantially outperforming music/dance baselines such as EDGE (14.0) and POPDG (21.0).
+  [NeurIPS 2025][Human Understanding][Spatial audio] This work introduces the novel task of spatial-audio-driven human motion generation, constructs the SAM dataset comprising 9+ hours, 27 scenes…
 tags:
-  - NeurIPS 2025
-  - Human Understanding
-  - Spatial audio
-  - motion generation
-  - diffusion model
-  - SAM dataset
-  - binaural audio
+  - "NeurIPS 2025"
+  - "Human Understanding"
+  - "Spatial audio"
+  - "motion generation"
+  - "diffusion model"
+  - "SAM dataset"
+  - "binaural audio"
 date: 2026-05-08
 content_hash: c4b4fd209ffd54e4
 ---

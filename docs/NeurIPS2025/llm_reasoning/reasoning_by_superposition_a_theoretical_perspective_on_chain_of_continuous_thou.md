@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Reasoning by Superposition: A Theoretical Perspective on Chain of Continuous Thought
 description: >-
-  [NeurIPS 2025][LLM Reasoning][continuous chain of thought] This paper theoretically demonstrates the expressive advantage of continuous chain-of-thought (Coconut) on directed graph reachability: a two-layer Transformer using $D$ continuous thought steps suffices to solve graph reachability with diameter $D$, whereas discrete CoT requires $O(n^2)$ steps. The core mechanism is that continuous thought vectors encode multiple search frontiers simultaneously in a "superposition state," enabling implicit parallel BFS.
+  [NeurIPS 2025][LLM Reasoning][continuous chain of thought] This paper theoretically demonstrates the expressive advantage of continuous chain-of-thought (Coconut) on directed graph reachability: a two-layer Transformer u…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - continuous chain of thought
-  - superposition-state reasoning
-  - graph reachability
-  - Transformer expressiveness
-  - Coconut
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "continuous chain of thought"
+  - "superposition-state reasoning"
+  - "graph reachability"
+  - "Transformer expressiveness"
+  - "Coconut"
 date: 2026-05-08
 content_hash: 6e7592559c651113
 ---

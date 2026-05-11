@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] EvaLearn: Quantifying the Learning Capability and Efficiency of LLMs via Sequential Problem Solving
 description: >-
-  [NeurIPS 2025][LLM Evaluation] This paper proposes EvaLearn, a benchmark that evaluates the learning capability and learning efficiency of LLMs through a **sequential problem-solving** paradigm, revealing that models with stronger static performance do not necessarily possess greater learning potential.
+  [NeurIPS 2025][LLM Evaluation][sequential learning] This paper proposes EvaLearn, a benchmark that evaluates the learning capability and learning efficiency of LLMs through a **sequential problem-solving** paradigm…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - sequential learning
-  - learning capability
-  - benchmark
-  - dynamic evaluation
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "sequential learning"
+  - "learning capability"
+  - "benchmark"
+  - "dynamic evaluation"
 date: 2026-05-08
 content_hash: 848bc3a460696901
 ---

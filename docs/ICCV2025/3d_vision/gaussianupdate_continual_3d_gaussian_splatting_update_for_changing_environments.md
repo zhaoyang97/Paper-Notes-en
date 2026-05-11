@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GaussianUpdate: Continual 3D Gaussian Splatting Update for Changing Environments
 description: >-
-  [ICCV 2025][3D Vision][Continual Learning] This paper presents GaussianUpdate, the first method to integrate 3D Gaussian representations with continual learning. It achieves real-time rendering and change visualization in temporally varying scenes through a three-stage update strategy (appearance update → geometric layout update → joint refinement) and visibility-aware generative replay.
+  [ICCV 2025][3D Vision][Continual Learning] This paper presents GaussianUpdate, the first method to integrate 3D Gaussian representations with continual learning. It achieves real-time rendering and change visualization i…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Continual Learning
-  - 3D Gaussian Splatting
-  - Scene Update
-  - Change Detection
-  - Generative Replay
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Continual Learning"
+  - "3D Gaussian Splatting"
+  - "Scene Update"
+  - "Change Detection"
+  - "Generative Replay"
 date: 2026-05-08
 content_hash: 846bda62da52091e
 ---

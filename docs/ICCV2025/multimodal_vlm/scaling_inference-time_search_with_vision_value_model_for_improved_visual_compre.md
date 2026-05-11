@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Scaling Inference-Time Search with Vision Value Model for Improved Visual Comprehension
 description: >-
-  [ICCV 2025][Multimodal VLM][Vision-language models] This paper proposes the Vision Value Model (VisVM), trained via temporal difference (TD) learning, to guide sentence-level inference-time search in VLMs for generating higher-quality descriptive captions. Compared to greedy decoding and CLIP-PRM, VisVM search significantly reduces hallucination (CHAIRs from 32.4 to 26.2), and data generated through this process, when used for self-training, yields an average improvement of 10.8% across 9 benchmarks.
+  [ICCV 2025][Multimodal VLM][Vision-language models] This paper proposes the Vision Value Model (VisVM), trained via temporal difference (TD) learning…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Vision-language models
-  - inference-time search
-  - vision value model
-  - hallucination mitigation
-  - self-training
-  - temporal difference learning
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Vision-language models"
+  - "inference-time search"
+  - "vision value model"
+  - "hallucination mitigation"
+  - "self-training"
+  - "temporal difference learning"
 date: 2026-05-08
 content_hash: 7a0a5c01fd7ea129
 ---

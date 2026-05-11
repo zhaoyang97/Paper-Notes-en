@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SummDiff: Generative Modeling of Video Summarization with Diffusion
 description: >-
-  [ICCV 2025][Image Generation][Video Summarization] SummDiff is the first work to introduce diffusion models into video summarization, formulating the task as a conditional generation problem. By learning the distribution of "good summaries," the model generates diverse plausible summaries that better reflect the inherent subjectivity of the video summarization task.
+  [ICCV 2025][Image Generation][Video Summarization] SummDiff is the first work to introduce diffusion models into video summarization, formulating the task as a conditional generation problem. By learning the distribution…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Video Summarization
-  - Diffusion Models
-  - Conditional Generation
-  - Subjectivity Modeling
-  - Knapsack Problem
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Video Summarization"
+  - "Diffusion Models"
+  - "Conditional Generation"
+  - "Subjectivity Modeling"
+  - "Knapsack Problem"
 date: 2026-05-08
 content_hash: 2bb9d0dfa08284c3
 ---

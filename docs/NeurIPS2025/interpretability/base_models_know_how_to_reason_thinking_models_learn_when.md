@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Base Models Know How to Reason, Thinking Models Learn When
 description: >-
-  [NeurIPS 2025][Thinking Models] Through unsupervised SAE clustering, this work discovers a taxonomy of reasoning mechanisms in thinking models, then activates the corresponding latent capabilities in base models via steering vectors. The resulting hybrid model recovers up to 91% of the performance gap between thinking and base models—without any weight updates—demonstrating that base models already possess reasoning capabilities, and that thinking models merely learn *when* to deploy them.
+  [NeurIPS 2025][Interpretability][Thinking Models] Through unsupervised SAE clustering, this work discovers a taxonomy of reasoning mechanisms in thinking models…
 tags:
-  - NeurIPS 2025
-  - Thinking Models
-  - Steering Vectors
-  - SAE
-  - Reasoning Mechanisms
-  - Base Models
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "Thinking Models"
+  - "Steering Vectors"
+  - "SAE"
+  - "Reasoning Mechanisms"
+  - "Base Models"
 date: 2026-05-08
 content_hash: 6304f7af75f0f4a6
 ---

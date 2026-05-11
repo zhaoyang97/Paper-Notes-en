@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Expect the Unexpected? Testing the Surprisal of Salient Entities
 description: >-
-  [ACL 2026][LLM/NLP][Uniform Information Density] This paper investigates the relationship between discourse-level salient entities and surprisal. Using 70K+ manually annotated entity mentions and a novel minimal-pair prompting approach, the study finds that globally salient entities are themselves more surprising (higher surprisal), yet systematically reduce the surprisal of surrounding content. This effect varies by genre and is strongest in topically coherent texts.
+  [ACL 2026][LLM/NLP][Uniform Information Density] This paper investigates the relationship between discourse-level salient entities and surprisal. Using 70K+ manually annotated entity mentions and a novel minimal-pair pro…
 tags:
-  - ACL 2026
-  - LLM/NLP
-  - Uniform Information Density
-  - discourse salience
-  - surprisal
-  - entity prominence
-  - discourse structure
+  - "ACL 2026"
+  - "LLM/NLP"
+  - "Uniform Information Density"
+  - "discourse salience"
+  - "surprisal"
+  - "entity prominence"
+  - "discourse structure"
 date: 2026-05-08
 content_hash: 972cdee229e14b93
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A protocol for evaluating robustness to H&E staining variation in computational pathology models
 description: >-
-  [CVPR 2026][Medical Imaging][Computational pathology] A three-step evaluation protocol (select reference staining conditions → characterize test-set staining properties → simulate staining conditions for inference) is proposed to systematically quantify the robustness of 306 MSI classification models to H&E staining variation. The study finds a weak negative correlation between robustness and classification performance ($r = -0.28$), indicating that high performance does not imply high robustness.
+  [CVPR 2026][Medical Imaging][Computational pathology] A three-step evaluation protocol (select reference staining conditions → characterize test-set staining properties → simulate staining conditions for inference) is pr…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Computational pathology
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Computational pathology"
   - "H&E staining"
-  - robustness evaluation
-  - model selection
-  - microsatellite instability (MSI)
+  - "robustness evaluation"
+  - "model selection"
+  - "microsatellite instability (MSI)"
 date: 2026-05-08
 content_hash: ac18bd1cbe9035cb
 ---

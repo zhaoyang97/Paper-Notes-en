@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MatAnyone 2: Scaling Video Matting via a Learned Quality Evaluator
 description: >-
-  [CVPR2026][Segmentation][video matting] This paper proposes a learned Matting Quality Evaluator (MQE) that assesses alpha quality at the pixel level without ground-truth supervision. MQE serves dual roles as an online training guide and an offline data filter, enabling the construction of VMReal — a real-world video matting dataset comprising 28K clips / 2.4M frames. Combined with a reference-frame training strategy, the proposed method significantly outperforms all existing approaches.
+  [CVPR2026][Segmentation][video matting] This paper proposes a learned Matting Quality Evaluator (MQE) that assesses alpha quality at the pixel level without ground-truth supervision. MQE serves dual roles as an online tr…
 tags:
-  - CVPR2026
-  - Segmentation
-  - video matting
-  - quality evaluator
-  - alpha matte
-  - dataset curation
-  - reference-frame strategy
+  - "CVPR2026"
+  - "Segmentation"
+  - "video matting"
+  - "quality evaluator"
+  - "alpha matte"
+  - "dataset curation"
+  - "reference-frame strategy"
 date: 2026-05-08
 content_hash: ff7c0ad4f4947acd
 ---

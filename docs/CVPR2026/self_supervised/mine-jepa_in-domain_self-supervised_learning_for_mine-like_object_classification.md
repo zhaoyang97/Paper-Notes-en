@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] MINE-JEPA: In-Domain Self-Supervised Learning for Mineral Exploration
 description: >-
-  [CVPR 2026][Self-Supervised Learning] This paper proposes Mine-JEPA, the first in-domain self-supervised learning (SSL) pipeline for side-scan sonar (SSS) mine classification. Built upon SIGReg regularization loss, sonar-adapted augmentation strategies, and ImageNet initialization, Mine-JEPA pretrained on only 1,170 unlabeled sonar images surpasses DINOv3—a foundation model pretrained on 1.7 billion images.
+  [CVPR 2026][Self-Supervised Learning][side-scan sonar] This paper proposes Mine-JEPA, the first in-domain self-supervised learning (SSL) pipeline for side-scan sonar (SSS) mine classification. Built upon SIGReg regulariz…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - side-scan sonar
-  - mine classification
-  - in-domain pretraining
-  - SIGReg
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "side-scan sonar"
+  - "mine classification"
+  - "in-domain pretraining"
+  - "SIGReg"
 date: 2026-05-08
 content_hash: 965afcb7c08d9601
 ---

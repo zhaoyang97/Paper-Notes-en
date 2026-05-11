@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Denoising as Path Planning: Training-Free Acceleration of Diffusion Models with DPCache
 description: >-
-  [CVPR 2026][Image Generation][diffusion model acceleration] This paper formalizes diffusion model sampling acceleration as a global path planning problem. By constructing a Path-Aware Cost Tensor (PACT) and applying dynamic programming to select the optimal sequence of key timesteps, the method achieves training-free 4.87× acceleration while surpassing the full-step baseline in generation quality.
+  [CVPR 2026][Image Generation][diffusion model acceleration] This paper formalizes diffusion model sampling acceleration as a global path planning problem. By constructing a Path-Aware Cost Tensor (PACT) and applying dyna…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - diffusion model acceleration
-  - feature caching
-  - dynamic programming
-  - path planning
-  - training-free
+  - "CVPR 2026"
+  - "Image Generation"
+  - "diffusion model acceleration"
+  - "feature caching"
+  - "dynamic programming"
+  - "path planning"
+  - "training-free"
 date: 2026-05-08
 content_hash: a281e04a17808aff
 ---

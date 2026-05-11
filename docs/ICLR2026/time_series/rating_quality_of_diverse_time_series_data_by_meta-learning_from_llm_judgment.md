@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Rating Quality of Diverse Time Series Data by Meta-learning from LLM Judgment
 description: >-
-  [Time Series] This paper proposes TSRating, a framework that leverages LLMs to perform pairwise quality comparisons of time series (TS) data segments across four dimensions—trend, frequency, amplitude, and pattern. Pairwise judgments are converted to scalar quality scores via the Bradley-Terry model. A TSRater model (MOMENT encoder + MLP) is then trained using MAML meta-learning across 9 domains and 22 subsets, enabling efficient and unified cross-domain TS data quality assessment.
+  [Time Series] This paper proposes TSRating, a framework that leverages LLMs to perform pairwise quality comparisons of time series (TS) data segments across four dimensions—trend, frequency, amplitude…
 tags:
-  - Time Series
+  - "Time Series"
 date: 2026-05-08
 content_hash: f24213c3d48fad56
 ---

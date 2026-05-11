@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Janus-Pro-R1: Advancing Collaborative Visual Comprehension and Generation via Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Image Generation][MLLM] This paper proposes Janus-Pro-R1, which achieves synergistic advancement in visual understanding and generation through a two-stage training pipeline (SFT + RL). The approach enables MLLMs to form genuine Chain-of-Thought reasoning and trigger Aha Moments during text-to-image generation, surpassing GPT-4o on GenEval while extending naturally to image editing tasks.
+  [NeurIPS 2025][Image Generation][MLLM] This paper proposes Janus-Pro-R1, which achieves synergistic advancement in visual understanding and generation through a two-stage training pipeline (SFT + RL). The approach enable…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - MLLM
-  - visual generation
-  - reinforcement-learning
-  - Chain-of-Thought
-  - Aha Moment
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "MLLM"
+  - "visual generation"
+  - "reinforcement-learning"
+  - "Chain-of-Thought"
+  - "Aha Moment"
 date: 2026-05-08
 content_hash: b0eaf6823543d5f8
 ---

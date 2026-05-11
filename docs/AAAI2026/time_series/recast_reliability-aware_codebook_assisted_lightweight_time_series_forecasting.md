@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ReCast: Reliability-aware Codebook Assisted Lightweight Time Series Forecasting
 description: >-
-  [AAAI 2026][Time Series][Codebook quantization] This paper proposes ReCast, which encodes time series into discrete embeddings via patch-level vector quantization. It introduces a dual-path architecture consisting of a quantization path (modeling regular structures) and a residual path (capturing irregular fluctuations), along with a reliability-aware codebook update strategy based on distributionally robust optimization (DRO). ReCast achieves state-of-the-art accuracy with a lightweight architecture across 8 datasets.
+  [AAAI 2026][Time Series][Codebook quantization] This paper proposes ReCast, which encodes time series into discrete embeddings via patch-level vector quantization. It introduces a dual-path architecture consisting of a q…
 tags:
-  - AAAI 2026
-  - Time Series
-  - Codebook quantization
-  - lightweight forecasting
-  - dual-path architecture
-  - reliability-aware update
-  - distributionally robust optimization
+  - "AAAI 2026"
+  - "Time Series"
+  - "Codebook quantization"
+  - "lightweight forecasting"
+  - "dual-path architecture"
+  - "reliability-aware update"
+  - "distributionally robust optimization"
 date: 2026-05-08
 content_hash: 7346ae4a855c289b
 ---

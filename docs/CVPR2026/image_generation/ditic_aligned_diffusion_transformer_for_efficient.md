@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] DiT-IC: Aligned Diffusion Transformer for Efficient Image Compression
 description: >-
-  [CVPR 2026][Image Generation][diffusion transformer] This work adapts a pretrained text-to-image DiT (SANA) into an efficient single-step image compression decoder. Three alignment mechanisms are proposed: variance-guided reconstruction flow (pixel-level adaptive denoising intensity), self-distillation alignment (encoder latents as distillation targets), and latent-conditioned guidance (replacing the text encoder). Operating entirely in a deep latent space with 32× downsampling, the method achieves state-of-the-art perceptual quality (BD-rate DISTS −87.88%), decodes 30× faster than prior diffusion-based methods, and can reconstruct 2K images on a 16 GB laptop GPU.
+  [CVPR 2026][Image Generation][diffusion transformer] This work adapts a pretrained text-to-image DiT (SANA) into an efficient single-step image compression decoder. Three alignment mechanisms are proposed: variance-guide…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - diffusion transformer
-  - image compression
-  - one-step diffusion
-  - flow matching
-  - latent alignment
-  - variance-guided
+  - "CVPR 2026"
+  - "Image Generation"
+  - "diffusion transformer"
+  - "image compression"
+  - "one-step diffusion"
+  - "flow matching"
+  - "latent alignment"
+  - "variance-guided"
 date: 2026-05-08
 content_hash: 54e5e3e1811b2651
 ---

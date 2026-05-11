@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Fixed Anchors Are Not Enough: Dynamic Retrieval and Persistent Homology for Dataset Distillation
 description: >-
-  [CVPR 2026][Model Compression][dataset distillation] RETA decouples two failure modes in residual matching for dataset distillation—the fit-complexity gap and the pull-to-anchor effect—by employing Dynamic Retrieval Connection (DRC) to adaptively select real patch anchors and Persistent Topology Alignment (PTA) to preserve intra-class diversity. The method achieves 64.3% (+3.1% vs. FADRM) on ImageNet-1K with ResNet-18 at IPC=50.
+  [CVPR 2026][Model Compression][dataset distillation] RETA decouples two failure modes in residual matching for dataset distillation—the fit-complexity gap and the pull-to-anchor effect—by employing Dynamic Retrieval Conn…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - dataset distillation
-  - residual matching
-  - persistent homology
-  - topology alignment
-  - dynamic retrieval
+  - "CVPR 2026"
+  - "Model Compression"
+  - "dataset distillation"
+  - "residual matching"
+  - "persistent homology"
+  - "topology alignment"
+  - "dynamic retrieval"
 date: 2026-05-08
 content_hash: d1a697726442d4ec
 ---

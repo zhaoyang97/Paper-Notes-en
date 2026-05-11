@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Self Iterative Label Refinement via Robust Unlabeled Learning
 description: >-
-  [NeurIPS 2025][Medical Imaging][self-refinement] This paper proposes an iterative pipeline that leverages a robust unlabeled-unlabeled (UU) learning framework to refine LLM-generated pseudo-labels, surpassing the self-refinement approaches of GPT-4o and DeepSeek-R1 on both classification and generative safety alignment tasks with minimal human annotation.
+  [NeurIPS 2025][Medical Imaging][self-refinement] This paper proposes an iterative pipeline that leverages a robust unlabeled-unlabeled (UU) learning framework to refine LLM-generated pseudo-labels…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - self-refinement
-  - pseudo-labels
-  - UU learning
-  - LLM alignment
-  - weakly supervised classification
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "self-refinement"
+  - "pseudo-labels"
+  - "UU learning"
+  - "LLM alignment"
+  - "weakly supervised classification"
 date: 2026-05-08
 content_hash: fa773208b6b0ebe5
 ---

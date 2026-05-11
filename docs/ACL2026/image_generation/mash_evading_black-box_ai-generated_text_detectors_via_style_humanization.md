@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MASH: Evading Black-Box AI-Generated Text Detectors via Style Humanization
 description: >-
-  [ACL 2026][Image Generation][AI-generated text detection] This paper proposes MASH (Multi-stage Style Humanization), a three-stage pipeline consisting of style-injection SFT → DPO alignment → inference-time refinement, which trains a rewriter with only 0.1B parameters to evade AI-generated text detectors in a black-box setting with an average attack success rate of 92%, while maintaining high linguistic quality.
+  [ACL 2026][Image Generation][AI-generated text detection] This paper proposes MASH (Multi-stage Style Humanization), a three-stage pipeline consisting of style-injection SFT → DPO alignment → inference-time refinement…
 tags:
-  - ACL 2026
-  - Image Generation
-  - AI-generated text detection
-  - black-box adversarial attack
-  - style transfer
-  - text humanization
-  - DPO alignment
+  - "ACL 2026"
+  - "Image Generation"
+  - "AI-generated text detection"
+  - "black-box adversarial attack"
+  - "style transfer"
+  - "text humanization"
+  - "DPO alignment"
 date: 2026-05-08
 content_hash: 47773edbf5b7626f
 ---

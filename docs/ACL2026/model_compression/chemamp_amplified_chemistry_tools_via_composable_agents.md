@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ChemAmp: Amplified Chemistry Tools via Composable Agents
 description: >-
-  [ACL 2026][Model Compression][Tool amplification] This paper proposes a novel "tool amplification" paradigm (distinct from conventional tool orchestration) and introduces the ChemAmp framework, which treats chemistry-specific tools (UniMol2, Chemformer, etc.) as composable building blocks to dynamically construct task-specialized super-agents. ChemAmp surpasses both domain-specific models and general-purpose LLMs on four core chemistry tasks—including molecular design and reaction prediction—while reducing inference token costs by 94%.
+  [ACL 2026][Model Compression][Tool amplification] This paper proposes a novel "tool amplification" paradigm (distinct from conventional tool orchestration) and introduces the ChemAmp framework…
 tags:
-  - ACL 2026
-  - Model Compression
-  - Tool amplification
-  - composable agents
-  - chemistry AI
-  - multi-agent systems
-  - hierarchical composition
+  - "ACL 2026"
+  - "Model Compression"
+  - "Tool amplification"
+  - "composable agents"
+  - "chemistry AI"
+  - "multi-agent systems"
+  - "hierarchical composition"
 date: 2026-05-08
 content_hash: 35feb38f49fde801
 ---

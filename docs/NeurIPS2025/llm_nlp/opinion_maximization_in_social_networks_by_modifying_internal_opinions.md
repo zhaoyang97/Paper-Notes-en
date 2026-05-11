@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Opinion Maximization in Social Networks by Modifying Internal Opinions
 description: >-
-  [NeurIPS 2025][LLM/NLP][opinion dynamics] This paper studies the optimization problem of maximizing the overall opinion in a social network by modifying the internal opinions of $k$ key nodes. Two sampling-based approximation algorithms (random walk and forest sampling) and one exact asynchronous algorithm MIS are proposed. MIS provides theoretical convergence guarantees to the optimal solution and demonstrates superior efficiency and accuracy on real-world networks with tens of millions of nodes.
+  [NeurIPS 2025][LLM/NLP][opinion dynamics] This paper studies the optimization problem of maximizing the overall opinion in a social network by modifying the internal opinions of $k$ key nodes. Two sampling-based approxim…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - opinion dynamics
-  - social networks
-  - opinion maximization
-  - random walk
-  - asynchronous algorithm
-  - structural centrality
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "opinion dynamics"
+  - "social networks"
+  - "opinion maximization"
+  - "random walk"
+  - "asynchronous algorithm"
+  - "structural centrality"
 date: 2026-05-08
 content_hash: d61532a605e7a4b5
 ---

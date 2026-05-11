@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] When Helpers Become Hazards: A Benchmark for Analyzing Multimodal LLM-Powered Safety in Daily Life
 description: >-
-  [ACL 2026][Multimodal VLM][Multimodal safety] This paper introduces SaLAD, a benchmark comprising 2,013 real image-text samples spanning 10 daily-life categories, designed to evaluate the ability of multimodal large language models to identify implicit safety risks and provide safety warnings during everyday assistance. Results reveal that even the strongest model achieves only 57.2% accuracy on unsafe queries.
+  [ACL 2026][Multimodal VLM][Multimodal safety] This paper introduces SaLAD, a benchmark comprising 2,013 real image-text samples spanning 10 daily-life categories…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Multimodal safety
-  - benchmark
-  - daily life safety
-  - safety warning evaluation
-  - MLLM alignment
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Multimodal safety"
+  - "benchmark"
+  - "daily life safety"
+  - "safety warning evaluation"
+  - "MLLM alignment"
 date: 2026-05-08
 content_hash: 0b8a3fc8e564f345
 ---

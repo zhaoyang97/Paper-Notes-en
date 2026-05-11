@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] NOSE: Neural Olfactory-Semantic Embedding with Tri-Modal Orthogonal Contrastive Learning
 description: >-
-  [ACL 2026][olfactory representation learning] This paper proposes NOSE, a tri-modal olfactory representation learning framework that uses molecules as a pivot to align three modalities—molecular structure, receptor sequences, and natural language descriptions—via an orthogonal injection mechanism. Combined with an LLM-driven weak positive augmentation strategy to address description sparsity, NOSE achieves state-of-the-art performance on 11 downstream tasks and demonstrates strong zero-shot generalization.
+  [ACL 2026][Interpretability][olfactory representation learning] This paper proposes NOSE, a tri-modal olfactory representation learning framework that uses molecules as a pivot to align three modalities—molecular structu…
 tags:
-  - ACL 2026
-  - olfactory representation learning
-  - tri-modal alignment
-  - orthogonal disentanglement
-  - contrastive learning
-  - weak positive samples
+  - "ACL 2026"
+  - "Interpretability"
+  - "olfactory representation learning"
+  - "tri-modal alignment"
+  - "orthogonal disentanglement"
+  - "contrastive learning"
+  - "weak positive samples"
 date: 2026-05-08
 content_hash: a61a08142eb10a9e
 ---

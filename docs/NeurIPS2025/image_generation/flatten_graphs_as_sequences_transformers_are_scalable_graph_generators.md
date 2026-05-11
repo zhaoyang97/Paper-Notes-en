@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Flatten Graphs as Sequences: Transformers are Scalable Graph Generators
 description: >-
-  [NeurIPS 2025][Image Generation][graph generation] This paper proposes AutoGraph, which losslessly flattens graphs into token sequences via Segmented Eulerian Neighborhood Trails (SENT), enabling direct modeling with a decoder-only Transformer. AutoGraph achieves graph generation speeds ~100× faster than diffusion models while reaching state-of-the-art performance on both synthetic and molecular benchmarks.
+  [NeurIPS 2025][Image Generation][graph generation] This paper proposes AutoGraph, which losslessly flattens graphs into token sequences via Segmented Eulerian Neighborhood Trails (SENT)…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - graph generation
-  - autoregressive model
-  - Eulerian trail
-  - language model
-  - scalability
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "graph generation"
+  - "autoregressive model"
+  - "Eulerian trail"
+  - "language model"
+  - "scalability"
 date: 2026-05-08
 content_hash: a954763e56bac504
 ---

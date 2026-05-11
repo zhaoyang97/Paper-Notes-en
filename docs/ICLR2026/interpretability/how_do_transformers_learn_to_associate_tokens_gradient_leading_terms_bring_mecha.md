@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] How Do Transformers Learn to Associate Tokens: Gradient Leading Terms Bring Mechanistic Understanding
 description: >-
-  [ICLR 2026][Transformer interpretability] By analyzing the leading terms of training gradients, this paper derives closed-form expressions for each Transformer weight matrix during the early training phase. Each matrix decomposes into a simple combination of three basis functions (bigram, token-interchangeability, and context mapping), revealing how Transformers learn semantic associations such as "bird"↔"flew" from natural language data. The theoretical predictions align closely with the weights learned by real LLMs.
+  [ICLR 2026][Interpretability][Transformer interpretability] By analyzing the leading terms of training gradients, this paper derives closed-form expressions for each Transformer weight matrix during the early training ph…
 tags:
-  - ICLR 2026
-  - Transformer interpretability
-  - training dynamics
-  - gradient leading terms
-  - semantic association
-  - closed-form weight expressions
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Transformer interpretability"
+  - "training dynamics"
+  - "gradient leading terms"
+  - "semantic association"
+  - "closed-form weight expressions"
 date: 2026-05-08
 content_hash: dd47c6fd854815f9
 ---

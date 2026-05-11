@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Geometry Distributions
 description: >-
-  [ICCV 2025][3D Vision][Geometry representation] This paper proposes Geometry Distributions (GeomDist), which models 3D geometry as a probability distribution over surface points and learns it via a diffusion model. Without assuming genus, connectivity, or boundary conditions, the method samples arbitrarily many surface points from Gaussian noise to represent geometry of arbitrary topology.
+  [ICCV 2025][3D Vision][Geometry representation] This paper proposes Geometry Distributions (GeomDist), which models 3D geometry as a probability distribution over surface points and learns it via a diffusion model. Witho…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Geometry representation
-  - diffusion models
-  - surface point distributions
-  - neural compression
-  - non-watertight meshes
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Geometry representation"
+  - "diffusion models"
+  - "surface point distributions"
+  - "neural compression"
+  - "non-watertight meshes"
 date: 2026-05-08
 content_hash: 789727c8c800aefd
 ---

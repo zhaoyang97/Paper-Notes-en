@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SafeFlowMatcher: Safe and Fast Planning using Flow Matching with Control Barrier Functions
 description: >-
-  [ICLR 2026][Image Generation][Flow Matching] This paper proposes SafeFlowMatcher, a safe planning framework that integrates flow matching with Control Barrier Functions (CBF). Through a predictor-corrector (PC) integrator, it decouples trajectory generation from safety certification, providing formal safety guarantees while preserving the efficiency of flow matching.
+  [ICLR 2026][Image Generation][Flow Matching] This paper proposes SafeFlowMatcher, a safe planning framework that integrates flow matching with Control Barrier Functions (CBF). Through a predictor-corrector (PC) integrato…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Flow Matching
-  - Control Barrier Functions (CBF)
-  - Safe Planning
-  - Predictor-Corrector Integrator
-  - Finite-Time Convergence
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Flow Matching"
+  - "Control Barrier Functions (CBF)"
+  - "Safe Planning"
+  - "Predictor-Corrector Integrator"
+  - "Finite-Time Convergence"
 date: 2026-05-08
 content_hash: d877e79377712296
 ---

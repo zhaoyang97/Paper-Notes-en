@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Formal Verification of Diffusion Auctions
 description: >-
-  [AAAI 2026][Reinforcement Learning][Diffusion auctions] This paper presents the first formal logical framework for diffusion auctions, introducing the $n$-seller diffusion incentive logic $\mathcal{L}^n$ and its strategic extension $\mathcal{SL}^n$. The framework supports model-checking verification of auction properties such as Nash equilibria and the existence of seller strategies, with complexity results of P and PSPACE-complete respectively.
+  [AAAI 2026][Reinforcement Learning][Diffusion auctions] This paper presents the first formal logical framework for diffusion auctions, introducing the $n$-seller diffusion incentive logic $\mathcal{L}^n$ and its strategi…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - Diffusion auctions
-  - formal verification
-  - model checking
-  - game theory
-  - strategy logic
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "Diffusion auctions"
+  - "formal verification"
+  - "model checking"
+  - "game theory"
+  - "strategy logic"
 date: 2026-05-08
 content_hash: 9717e7a703910793
 ---

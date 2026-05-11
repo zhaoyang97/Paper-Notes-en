@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Inherited Goal Drift: Contextual Pressure Can Undermine Agentic Goals
 description: >-
-  [ICLR 2026][LLM Agent][goal drift] This paper finds that while modern LLM agents are robust to direct adversarial pressure (goal drift = 0), they can "inherit" goal drift behavior from the context produced by weaker models. More counterintuitively, instruction hierarchy compliance (system vs. user prompt priority) shows no correlation with drift resistance — Gemini fails to follow system prompts yet exhibits non-trivial drift resistance, while Qwen3 follows system prompts but remains susceptible to contextual contagion.
+  [ICLR 2026][LLM Agent][goal drift] This paper finds that while modern LLM agents are robust to direct adversarial pressure (goal drift = 0)…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - goal drift
-  - agentic AI
-  - context conditioning
-  - instruction hierarchy
-  - LLM agents
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "goal drift"
+  - "agentic AI"
+  - "context conditioning"
+  - "instruction hierarchy"
+  - "LLM agents"
 date: 2026-05-08
 content_hash: 1dd533a16aa0a368
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Efficient Learned Data Compression via Dual-Stream Feature Decoupling
 description: >-
-  [ACL 2026][Model Compression][learned data compression] This paper proposes FADE, a framework that employs a Dual-stream Multi-scale Decoupler to separate micro-syntactic and macro-semantic features into parallel shallow streams (replacing deep serial stacking), combined with a Hierarchical Gated Refiner and a Concurrent Stream Parallel Pipeline, achieving state-of-the-art performance in both compression ratio and throughput simultaneously.
+  [ACL 2026][Model Compression][learned data compression] This paper proposes FADE, a framework that employs a Dual-stream Multi-scale Decoupler to separate micro-syntactic and macro-semantic features into parallel shallow…
 tags:
-  - ACL 2026
-  - Model Compression
-  - learned data compression
-  - dual-stream feature decoupling
-  - probability modeling
-  - parallel pipeline
-  - lossless compression
+  - "ACL 2026"
+  - "Model Compression"
+  - "learned data compression"
+  - "dual-stream feature decoupling"
+  - "probability modeling"
+  - "parallel pipeline"
+  - "lossless compression"
 date: 2026-05-08
 content_hash: 5f04a155298c1463
 ---

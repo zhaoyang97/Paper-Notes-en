@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Harnessing Textual Semantic Priors for Knowledge Transfer and Refinement in CLIP-Driven Continual Learning
 description: >-
-  [AAAI 2026][Multimodal VLM][Continual Learning] This paper proposes the SECA framework, which leverages the stable semantic priors of the CLIP text branch to guide semantically-aware historical knowledge transfer in the backbone (SG-AKT module), and refines visual prototypes using inter-class semantic relationships derived from text embeddings to build a hybrid classifier (SE-VPR module), achieving state-of-the-art performance on ImageNet-R/A and CIFAR-100.
+  [AAAI 2026][Multimodal VLM][Continual Learning] This paper proposes the SECA framework, which leverages the stable semantic priors of the CLIP text branch to guide semantically-aware historical knowledge transfer in the…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Continual Learning
-  - CLIP
-  - Textual Semantic Priors
-  - Knowledge Distillation
-  - Modality Gap
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Continual Learning"
+  - "CLIP"
+  - "Textual Semantic Priors"
+  - "Knowledge Distillation"
+  - "Modality Gap"
 date: 2026-05-08
 content_hash: 14d179a8dfeb5a67
 ---

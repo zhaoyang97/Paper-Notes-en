@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Test-Time Instance-Specific Parameter Composition: A New Paradigm for Adaptive Generative Modeling
 description: >-
-  [CVPR 2026][Image Generation][Adaptive Generative Modeling] This paper proposes Composer, a plug-and-play meta-generator framework that dynamically generates low-rank parameter updates from each input condition at inference time and injects them into pretrained model weights, achieving instance-specific adaptive generation with negligible computational overhead (+0.2% time, +3.6% memory). The framework consistently improves performance across class-conditional generation, text-to-image synthesis, post-training quantization, and test-time scaling scenarios.
+  [CVPR 2026][Image Generation][Adaptive Generative Modeling] This paper proposes Composer, a plug-and-play meta-generator framework that dynamically generates low-rank parameter updates from each input condition at infere…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Adaptive Generative Modeling
-  - Test-Time Parameter Composition
-  - Low-Rank Updates
-  - Dynamic Weights
-  - Meta-Generator
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Adaptive Generative Modeling"
+  - "Test-Time Parameter Composition"
+  - "Low-Rank Updates"
+  - "Dynamic Weights"
+  - "Meta-Generator"
 date: 2026-05-08
 content_hash: 4d98e49138559ee9
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] LightRetriever: A LLM-based Text Retrieval Architecture with Extremely Faster Query Inference
 description: >-
-  [ICLR 2026][LLM retrieval] This paper proposes LightRetriever, an extremely asymmetric LLM-based retrieval architecture: the document side retains a full LLM encoder, while the query side eliminates deep modeling entirely — dense retrieval reduces to embedding lookup and averaging, and sparse retrieval reduces to token counting — achieving 1000× query encoding speedup, 10× end-to-end throughput improvement, while retaining 95% of retrieval performance.
+  [ICLR 2026][Information Retrieval & RAG][LLM retrieval] This paper proposes LightRetriever, an extremely asymmetric LLM-based retrieval architecture: the document side retains a full LLM encoder…
 tags:
-  - ICLR 2026
-  - LLM retrieval
-  - asymmetric encoder
-  - ultra-fast query inference
-  - hybrid retrieval
-  - embedding cache
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "LLM retrieval"
+  - "asymmetric encoder"
+  - "ultra-fast query inference"
+  - "hybrid retrieval"
+  - "embedding cache"
 date: 2026-05-08
 content_hash: 80e19703ac9a586c
 ---

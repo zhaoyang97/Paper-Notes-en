@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Breaking the Encoder Barrier for Seamless Video-Language Understanding
 description: >-
-  [ICCV 2025][Video Understanding][encoder-free] This paper proposes ELVA, the first encoder-free Video Large Language Model (Video-LLM), which achieves performance comparable to encoder-based architectures through hierarchical token merging, video guidance supervision, and hybrid resolution inference, using only 7M publicly available video-text pairs while reducing FLOPs by 95% and inference latency by 92%.
+  [ICCV 2025][Video Understanding][encoder-free] This paper proposes ELVA, the first encoder-free Video Large Language Model (Video-LLM)…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - encoder-free
-  - Video-LLM
-  - token merging
-  - video guidance
-  - hybrid resolution
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "encoder-free"
+  - "Video-LLM"
+  - "token merging"
+  - "video guidance"
+  - "hybrid resolution"
 date: 2026-05-08
 content_hash: 8e4b3301c141acf5
 ---

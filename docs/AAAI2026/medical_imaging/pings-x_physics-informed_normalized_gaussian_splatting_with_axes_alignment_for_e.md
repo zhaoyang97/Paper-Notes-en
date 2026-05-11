@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] PINGS-X: Physics-Informed Normalized Gaussian Splatting with Axes Alignment for Efficient Super-Resolution of 4D Flow MRI
 description: >-
-  [AAAI 2026][Medical Imaging][4D Flow MRI] This paper proposes PINGS-X, a framework that transfers the explicit representation paradigm of 3D Gaussian Splatting (3DGS) into the domain of physics-informed super-resolution. Through three key innovations—Normalized Gaussian Splatting (NGS), axes-aligned Gaussians, and a Gaussian merging strategy—PINGS-X achieves training speeds an order of magnitude faster than PINNs while maintaining superior super-resolution accuracy on both synthetic CFD and real 4D Flow MRI datasets.
+  [AAAI 2026][Medical Imaging][4D Flow MRI] This paper proposes PINGS-X, a framework that transfers the explicit representation paradigm of 3D Gaussian Splatting (3DGS) into the domain of physics-informed super-resolution.…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - 4D Flow MRI
-  - Gaussian Splatting
-  - Physics-Informed Learning
-  - Super-Resolution
-  - Navier-Stokes Equations
-  - Normalized Kernel Regression
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "4D Flow MRI"
+  - "Gaussian Splatting"
+  - "Physics-Informed Learning"
+  - "Super-Resolution"
+  - "Navier-Stokes Equations"
+  - "Normalized Kernel Regression"
 date: 2026-05-08
 content_hash: 006ebb5f29fe0427
 ---

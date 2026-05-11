@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mapping Faithful Reasoning in Language Models
 description: >-
-  [NeurIPS 2025][LLM Reasoning][CoT faithfulness] This paper proposes the Concept Walk framework, which tracks the evolution of internal concept representations across reasoning steps by projecting residual stream activations at each step onto concept directions learned from contrastive data, thereby distinguishing whether a CoT chain genuinely participates in computation or merely serves as post-hoc decorative output.
+  [NeurIPS 2025][LLM Reasoning][CoT faithfulness] This paper proposes the Concept Walk framework, which tracks the evolution of internal concept representations across reasoning steps by projecting residual stream activati…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - CoT faithfulness
-  - mechanistic interpretability
-  - reasoning models
-  - safety vectors
-  - activation analysis
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "CoT faithfulness"
+  - "mechanistic interpretability"
+  - "reasoning models"
+  - "safety vectors"
+  - "activation analysis"
 date: 2026-05-08
 content_hash: 95c7a0f34b51c584
 ---

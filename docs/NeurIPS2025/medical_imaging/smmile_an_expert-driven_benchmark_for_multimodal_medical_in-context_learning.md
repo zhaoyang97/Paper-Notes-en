@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SMMILE: An Expert-Driven Benchmark for Multimodal Medical In-Context Learning
 description: >-
-  [NeurIPS 2025][Medical Imaging][Multimodal In-Context Learning] This paper presents SMMILE — the first expert-driven benchmark for multimodal medical in-context learning (ICL), comprising 111 questions (517 image-text QA triplets) spanning 6 medical specialties and 13 imaging modalities, constructed by 11 clinical experts. The benchmark systematically exposes critical deficiencies of current MLLMs in medical multimodal ICL and reveals the pivotal impact of in-context example quality and ordering on model performance.
+  [NeurIPS 2025][Medical Imaging][Multimodal In-Context Learning] This paper presents SMMILE — the first expert-driven benchmark for multimodal medical in-context learning (ICL)…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Multimodal In-Context Learning
-  - Medical Benchmark
-  - Multimodal Large Language Models
-  - In-Context Example Quality
-  - Recency Bias
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Multimodal In-Context Learning"
+  - "Medical Benchmark"
+  - "Multimodal Large Language Models"
+  - "In-Context Example Quality"
+  - "Recency Bias"
 date: 2026-05-08
 content_hash: 591835c9ecf6a3e0
 ---

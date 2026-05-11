@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Influence Functions for Edge Edits in Non-Convex Graph Neural Networks
 description: >-
-  [NeurIPS 2025][AI Safety][Influence Functions] This paper proposes influence functions for edge edits applicable to non-convex GNNs. By leveraging the proximal Bregman response function (PBRF), the method relaxes the convexity assumption and jointly accounts for both parameter shift and message propagation effects, supporting both edge deletion and insertion.
+  [NeurIPS 2025][AI Safety][Influence Functions] This paper proposes influence functions for edge edits applicable to non-convex GNNs. By leveraging the proximal Bregman response function (PBRF)…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - Influence Functions
-  - Graph Neural Networks
-  - Edge Edits
-  - Non-Convex Optimization
-  - Graph Rewiring
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "Influence Functions"
+  - "Graph Neural Networks"
+  - "Edge Edits"
+  - "Non-Convex Optimization"
+  - "Graph Rewiring"
 date: 2026-05-08
 content_hash: b66f7d1a49b54997
 ---

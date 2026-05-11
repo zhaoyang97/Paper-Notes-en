@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Geometry of Decision Making in Language Models
 description: >-
-  [NeurIPS 2025][Model Compression][Intrinsic Dimension] By measuring the **Intrinsic Dimension (ID)** of hidden representations across layers in 28 open-source Transformer models at scale, this paper reveals a consistent "low–high–low" pattern: early layers operate on low-dimensional manifolds, middle layers expand the representational space, and later layers re-compress into low-dimensional representations aligned with decision-making.
+  [NeurIPS 2025][Model Compression][Intrinsic Dimension] By measuring the **Intrinsic Dimension (ID)** of hidden representations across layers in 28 open-source Transformer models at scale…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Intrinsic Dimension
-  - Hidden Representation Geometry
-  - Decision Dynamics
-  - Multiple-Choice QA
-  - Transformer
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Intrinsic Dimension"
+  - "Hidden Representation Geometry"
+  - "Decision Dynamics"
+  - "Multiple-Choice QA"
+  - "Transformer"
 date: 2026-05-08
 content_hash: c6f6995cae9ae609
 ---

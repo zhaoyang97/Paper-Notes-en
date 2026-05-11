@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SeeU: Seeing the Unseen World via 4D Dynamics-aware Generation
 description: >-
-  [CVPR 2026][Video Generation][4D dynamic modeling] SeeU is a 2D→4D→2D learning framework that reconstructs a 4D world representation from sparse monocular 2D frames, learns continuous and physically consistent 4D dynamics on a low-rank representation (B-spline parameterization + physical constraints), and reprojects the 4D world back to 2D, completing unseen regions with a spatiotemporally context-aware video generator—enabling generation of unseen visual content across time and space.
+  [CVPR 2026][Video Generation][4D dynamic modeling] SeeU is a 2D→4D→2D learning framework that reconstructs a 4D world representation from sparse monocular 2D frames…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - 4D dynamic modeling
-  - continuous dynamics
-  - spatiotemporal generation
-  - B-spline
-  - physical consistency
+  - "CVPR 2026"
+  - "Video Generation"
+  - "4D dynamic modeling"
+  - "continuous dynamics"
+  - "spatiotemporal generation"
+  - "B-spline"
+  - "physical consistency"
 date: 2026-05-08
 content_hash: 233c928507903659
 ---

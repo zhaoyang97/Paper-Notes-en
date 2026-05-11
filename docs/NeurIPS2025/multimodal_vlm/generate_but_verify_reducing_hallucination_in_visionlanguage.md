@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Generate, but Verify: Reducing Hallucination in Vision-Language Models with Retrospective Resampling
 description: >-
-  [NeurIPS 2025][Multimodal VLM][VLM] This paper proposes REVERSE, the first framework to unify generation adjustment and post-hoc verification within a single VLM. Through hallucination-aware training on 1.3M semi-synthetic samples combined with inference-time retrospective resampling, REVERSE enables a VLM to automatically detect and correct hallucinations during generation, achieving a 12% reduction on CHAIR-MSCOCO and a 34% improvement on HaloQuest.
+  [NeurIPS 2025][Multimodal VLM][VLM] This paper proposes REVERSE, the first framework to unify generation adjustment and post-hoc verification within a single VLM. Through hallucination-aware training on 1.3M semi-synthet…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - VLM
-  - Visual Hallucination
-  - Self-Correction
-  - Retrospective Resampling
-  - Confidence Token
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "VLM"
+  - "Visual Hallucination"
+  - "Self-Correction"
+  - "Retrospective Resampling"
+  - "Confidence Token"
 date: 2026-05-08
 content_hash: 3db07b13fc5317c4
 ---

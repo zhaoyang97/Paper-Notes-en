@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unsupervised Joint Learning of Optical Flow and Intensity with Event Cameras
 description: >-
-  [ICCV 2025][Video Understanding][event cameras] This paper proposes the first unsupervised learning framework based on a single network for jointly estimating optical flow and image intensity from event camera data. The core contribution is a complementary loss formulation combining a newly derived Event-based Photometric Error (PhE) with Contrast Maximization (CMax).
+  [ICCV 2025][Video Understanding][event cameras] This paper proposes the first unsupervised learning framework based on a single network for jointly estimating optical flow and image intensity from event camera data. The…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - event cameras
-  - optical flow estimation
-  - image intensity reconstruction
-  - unsupervised learning
-  - joint estimation
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "event cameras"
+  - "optical flow estimation"
+  - "image intensity reconstruction"
+  - "unsupervised learning"
+  - "joint estimation"
 date: 2026-05-08
 content_hash: 4fa01af94eff39e8
 ---

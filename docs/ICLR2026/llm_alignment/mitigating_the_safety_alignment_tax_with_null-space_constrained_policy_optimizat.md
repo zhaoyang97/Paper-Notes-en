@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mitigating the Safety Alignment Tax with Null-Space Constrained Policy Optimization
 description: >-
-  [ICLR 2026][LLM Alignment][Safety Alignment] This paper proposes NSPO, which projects safety alignment policy gradients onto the null space of general-task representations, geometrically ensuring that safety optimization does not degrade general capabilities. Using only 40% of the safety training data, NSPO achieves state-of-the-art results across 7 safety benchmarks while incurring virtually no performance loss on mathematics, code generation, and instruction following.
+  [ICLR 2026][LLM Alignment][Safety Alignment] This paper proposes NSPO, which projects safety alignment policy gradients onto the null space of general-task representations…
 tags:
-  - ICLR 2026
-  - LLM Alignment
-  - Safety Alignment
-  - Null Space
-  - Policy Optimization
-  - Alignment Tax
-  - Gradient Projection
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Safety Alignment"
+  - "Null Space"
+  - "Policy Optimization"
+  - "Alignment Tax"
+  - "Gradient Projection"
 date: 2026-05-08
 content_hash: 8990dcfe2d02e1ea
 ---

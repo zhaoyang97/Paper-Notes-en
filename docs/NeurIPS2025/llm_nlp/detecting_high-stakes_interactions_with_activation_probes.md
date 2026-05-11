@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Detecting High-Stakes Interactions with Activation Probes
 description: >-
-  [NeurIPS 2025][LLM/NLP][activation probes] Linear activation probes (lightweight classifiers trained on LLM internal representations) are used to detect "high-stakes interactions" from users. Trained on synthetic data, these probes achieve AUROC of 0.88–0.92 across 6 real-world datasets, matching fine-tuned 8–12B LLMs at a computational cost six orders of magnitude lower. A cascaded architecture (probe pre-filtering + LLM refinement) further surpasses either component used alone.
+  [NeurIPS 2025][LLM/NLP][activation probes] Linear activation probes (lightweight classifiers trained on LLM internal representations) are used to detect "high-stakes interactions" from users. Trained on synthetic data…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - activation probes
-  - high-stakes detection
-  - cascaded monitoring
-  - synthetic data
-  - LLM safety
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "activation probes"
+  - "high-stakes detection"
+  - "cascaded monitoring"
+  - "synthetic data"
+  - "LLM safety"
 date: 2026-05-08
 content_hash: 1a3502c2ee0f2411
 ---

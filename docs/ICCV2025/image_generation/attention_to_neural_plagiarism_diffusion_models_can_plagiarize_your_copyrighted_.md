@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Attention to Neural Plagiarism: Diffusion Models Can Plagiarize Your Copyrighted Images!
 description: >-
-  [ICCV 2025][Image Generation][Neural Plagiarism] This paper exposes the threat of "neural plagiarism"—diffusion models can readily replicate copyright-protected images (including watermarked ones). It proposes a universal attack framework based on "anchors and shims," searching for perturbations in the cross-attention mechanism to achieve coarse-to-fine semantic modification, bypassing copyright protections ranging from visible trademarks to invisible watermarks.
+  [ICCV 2025][Image Generation][Neural Plagiarism] This paper exposes the threat of "neural plagiarism"—diffusion models can readily replicate copyright-protected images (including watermarked ones). It proposes a universa…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Neural Plagiarism
-  - Diffusion Models
-  - Copyright Protection
-  - Watermark Removal
-  - Attention Perturbation
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Neural Plagiarism"
+  - "Diffusion Models"
+  - "Copyright Protection"
+  - "Watermark Removal"
+  - "Attention Perturbation"
 date: 2026-05-08
 content_hash: 6849e398136ced67
 ---

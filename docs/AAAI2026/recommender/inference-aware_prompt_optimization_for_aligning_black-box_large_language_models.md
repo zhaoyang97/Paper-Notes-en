@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Inference-Aware Prompt Optimization for Aligning Black-Box Large Language Models
 description: >-
-  [AAAI 2026][Recommender Systems][Inference-Aware Optimization] This paper reveals a non-trivial interaction between prompt selection and inference strategies (Best-of-N, Majority Voting), proposes the IAPO framework that jointly optimizes prompt design and inference scaling as a contextual best-arm identification problem, and introduces PSST—a fixed-budget training algorithm—achieving up to 50% improvement over inference-agnostic methods across 6 tasks.
+  [AAAI 2026][Recommender Systems][Inference-Aware Optimization] This paper reveals a non-trivial interaction between prompt selection and inference strategies (Best-of-N, Majority Voting)…
 tags:
-  - AAAI 2026
-  - Recommender Systems
-  - Inference-Aware Optimization
-  - Prompt Optimization
-  - Best-of-N Sampling
-  - Contextual Bandits
-  - Black-Box Alignment
+  - "AAAI 2026"
+  - "Recommender Systems"
+  - "Inference-Aware Optimization"
+  - "Prompt Optimization"
+  - "Best-of-N Sampling"
+  - "Contextual Bandits"
+  - "Black-Box Alignment"
 date: 2026-05-08
 content_hash: c67983507e0bcac1
 ---

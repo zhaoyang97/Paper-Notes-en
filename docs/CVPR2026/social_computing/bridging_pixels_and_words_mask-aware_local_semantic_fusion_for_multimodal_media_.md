@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Bridging Pixels and Words: Mask-Aware Local Semantic Fusion for Multimodal Media Verification
 description: >-
-  [CVPR 2026][Social Computing][multimodal misinformation] This paper proposes the MaLSF framework, which employs mask-label pairs as semantic anchors and introduces a Bidirectional Cross-modal Verification (BCV) module and a Hierarchical Semantic Aggregation (HSA) module to enable active local semantic conflict detection, achieving state-of-the-art performance on the DGM4 benchmark and fake news detection tasks.
+  [CVPR 2026][Social Computing][multimodal misinformation] This paper proposes the MaLSF framework, which employs mask-label pairs as semantic anchors and introduces a Bidirectional Cross-modal Verification (BCV) module an…
 tags:
-  - CVPR 2026
-  - Social Computing
-  - multimodal misinformation
-  - bidirectional cross-modal verification
-  - mask-label pairs
-  - hierarchical semantic aggregation
-  - deepfake detection
+  - "CVPR 2026"
+  - "Social Computing"
+  - "multimodal misinformation"
+  - "bidirectional cross-modal verification"
+  - "mask-label pairs"
+  - "hierarchical semantic aggregation"
+  - "deepfake detection"
 date: 2026-05-08
 content_hash: 0bc9d444bb12005e
 ---

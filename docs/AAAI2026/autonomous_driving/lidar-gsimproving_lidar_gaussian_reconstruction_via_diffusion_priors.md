@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LiDAR-GS++: Improving LiDAR Gaussian Reconstruction via Diffusion Priors
 description: >-
-  [AAAI 2026][Autonomous Driving][LiDAR reconstruction] This paper proposes LiDAR-GS++, which introduces a **controllable LiDAR diffusion generative model** as a prior to perform **extended reconstruction** of a neural 2DGS field. The method addresses the severe degradation in reconstruction quality under extrapolated viewpoints (e.g., lane-change scenarios) encountered in single-pass LiDAR scanning, achieving state-of-the-art performance on both interpolated and extrapolated views across multiple public benchmarks.
+  [AAAI 2026][Autonomous Driving][LiDAR reconstruction] This paper proposes LiDAR-GS++, which introduces a **controllable LiDAR diffusion generative model** as a prior to perform **extended reconstruction** of a neural 2DG…
 tags:
-  - AAAI 2026
-  - Autonomous Driving
-  - LiDAR reconstruction
-  - Gaussian splatting
-  - diffusion priors
-  - novel view synthesis
-  - autonomous driving simulation
+  - "AAAI 2026"
+  - "Autonomous Driving"
+  - "LiDAR reconstruction"
+  - "Gaussian splatting"
+  - "diffusion priors"
+  - "novel view synthesis"
+  - "autonomous driving simulation"
 date: 2026-05-08
 content_hash: 0a79c51eeca46004
 ---

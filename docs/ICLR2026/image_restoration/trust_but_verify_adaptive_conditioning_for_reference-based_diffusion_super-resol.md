@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Trust but Verify: Adaptive Conditioning for Reference-Based Diffusion Super-Resolution
 description: >-
-  [ICLR 2026][Image Restoration][Reference-based Super-Resolution] This paper proposes Ada-RefSR, a single-step reference-guided diffusion super-resolution framework based on the "Trust but Verify" principle. It introduces an Adaptive Implicit Correlation Gating (AICG) mechanism that maximally exploits reliable reference information while suppressing erroneous fusion, incurring only 0.13% additional computational overhead.
+  [ICLR 2026][Image Restoration][Reference-based Super-Resolution] This paper proposes Ada-RefSR, a single-step reference-guided diffusion super-resolution framework based on the "Trust but Verify" principle. It introduces…
 tags:
-  - ICLR 2026
-  - Image Restoration
-  - Reference-based Super-Resolution
-  - diffusion model
-  - Adaptive Gating
-  - Implicit Correlation
-  - Single-step Diffusion
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "Reference-based Super-Resolution"
+  - "diffusion model"
+  - "Adaptive Gating"
+  - "Implicit Correlation"
+  - "Single-step Diffusion"
 date: 2026-05-08
 content_hash: e955f489c6adc475
 ---

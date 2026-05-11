@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Routing Channel-Patch Dependencies in Time Series Forecasting with Graph Spectral Decomposition
 description: >-
-  [ICLR 2026][Time Series][Channel dependency] This paper proposes xCPD, a plug-and-play plugin that refines the modeling unit of multivariate time series from "channels" to "channel-patches." It constructs spectral embeddings via a shared graph Fourier basis, groups nodes into low/mid/high frequency bands based on spectral energy responses, and applies dynamic MoE routing to adaptively select frequency-specific filter experts. xCPD can be seamlessly integrated into any existing CI/CD model to consistently improve both long- and short-term forecasting performance, and supports zero-shot transfer.
+  [ICLR 2026][Time Series][Channel dependency] This paper proposes xCPD, a plug-and-play plugin that refines the modeling unit of multivariate time series from "channels" to "channel-patches." It constructs spectral embedd…
 tags:
-  - ICLR 2026
-  - Time Series
-  - Channel dependency
-  - graph spectral decomposition
-  - frequency-aware
-  - MoE routing
-  - plug-and-play
+  - "ICLR 2026"
+  - "Time Series"
+  - "Channel dependency"
+  - "graph spectral decomposition"
+  - "frequency-aware"
+  - "MoE routing"
+  - "plug-and-play"
 date: 2026-05-08
 content_hash: 13ea7f9e60bb6379
 ---

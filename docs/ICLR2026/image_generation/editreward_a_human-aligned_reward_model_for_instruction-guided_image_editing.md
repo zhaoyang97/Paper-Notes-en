@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EditReward: A Human-Aligned Reward Model for Instruction-Guided Image Editing
 description: >-
-  [ICLR 2026][Image Generation][Image Editing] This paper constructs EditReward-Data, a high-quality dataset of 200K expert-annotated preference pairs, and trains the EditReward reward model, which achieves state-of-the-art human alignment across multiple image editing evaluation benchmarks. The model is further validated as a data filter that substantially improves downstream editing model performance.
+  [ICLR 2026][Image Generation][Image Editing] This paper constructs EditReward-Data, a high-quality dataset of 200K expert-annotated preference pairs, and trains the EditReward reward model…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Image Editing
-  - Reward Model
-  - Human Preference
-  - Data Filtering
-  - VLM
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Image Editing"
+  - "Reward Model"
+  - "Human Preference"
+  - "Data Filtering"
+  - "VLM"
 date: 2026-05-08
 content_hash: 57acf41992f81817
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Resisting Contextual Interference in RAG via Parametric-Knowledge Reinforcement
 description: >-
-  [ICLR2026][Causal Inference][RAG] This paper proposes Knowledgeable-R1, a reinforcement learning-based framework that jointly samples trajectories from parametric knowledge (PK) and contextual knowledge (CK), combined with local/global advantage estimation and adaptive asymmetric advantage transformation, enabling LLMs to resist misleading retrieved contexts in RAG scenarios while preserving the ability to leverage reliable context.
+  [ICLR2026][Causal Inference][RAG] This paper proposes Knowledgeable-R1, a reinforcement learning-based framework that jointly samples trajectories from parametric knowledge (PK) and contextual knowledge (CK)…
 tags:
-  - ICLR2026
-  - Causal Inference
-  - RAG
-  - Parametric Knowledge
-  - Reinforcement Learning
-  - Knowledge Conflict
-  - GRPO
+  - "ICLR2026"
+  - "Causal Inference"
+  - "RAG"
+  - "Parametric Knowledge"
+  - "Reinforcement Learning"
+  - "Knowledge Conflict"
+  - "GRPO"
 date: 2026-05-08
 content_hash: ea7fe88d7cf73d9c
 ---

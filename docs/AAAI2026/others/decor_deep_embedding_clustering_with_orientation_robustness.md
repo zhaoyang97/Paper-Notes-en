@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] DECOR: Deep Embedding Clustering with Orientation Robustness
 description: >-
-  [AAAI 2026 (KGML Bridge, non-archival)][deep clustering] This paper proposes DECOR, a framework that achieves orientation-robust clustering of wafer map defect patterns via a rotation-invariant equivariant convolutional autoencoder (RCAE), non-parametric clustering (DeepDPM), and an ensemble anomaly detection mechanism.
+  [AAAI 2026 (KGML Bridge, non-archival)][deep clustering] This paper proposes DECOR, a framework that achieves orientation-robust clustering of wafer map defect patterns via a rotation-invariant equivariant convolutional…
 tags:
-  - AAAI 2026 (KGML Bridge, non-archival)
-  - deep clustering
-  - rotation invariance
-  - wafer defect detection
-  - non-parametric clustering
-  - anomaly detection
+  - "AAAI 2026 (KGML Bridge, non-archival)"
+  - "deep clustering"
+  - "rotation invariance"
+  - "wafer defect detection"
+  - "non-parametric clustering"
+  - "anomaly detection"
 date: 2026-05-08
 content_hash: 4ddcf5e4f4321af0
 ---

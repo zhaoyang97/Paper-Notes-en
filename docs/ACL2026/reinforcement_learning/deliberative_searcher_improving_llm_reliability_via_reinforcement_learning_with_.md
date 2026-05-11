@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Deliberative Searcher: Improving LLM Reliability via Reinforcement Learning with Constraints
 description: >-
-  [ACL 2026][Reinforcement Learning][confidence calibration] This paper proposes Deliberative Searcher, a reasoning-first framework that integrates search operations into chain-of-thought (CoT) generation with explicit confidence calibration. It employs constrained RL with adaptive Lagrangian multipliers to jointly optimize correctness and reliability, reducing the average "false-certain" rate of a 7B model from a baseline of 54% to 2%.
+  [ACL 2026][Reinforcement Learning][confidence calibration] This paper proposes Deliberative Searcher, a reasoning-first framework that integrates search operations into chain-of-thought (CoT) generation with explicit con…
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - confidence calibration
-  - search-augmented LLM
-  - constrained reinforcement learning
-  - reliability
-  - inference efficiency
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "confidence calibration"
+  - "search-augmented LLM"
+  - "constrained reinforcement learning"
+  - "reliability"
+  - "inference efficiency"
 date: 2026-05-08
 content_hash: 53f732f4409e4dfb
 ---

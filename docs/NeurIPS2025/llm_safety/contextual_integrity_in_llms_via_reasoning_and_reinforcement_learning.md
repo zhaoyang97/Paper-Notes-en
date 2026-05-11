@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Contextual Integrity in LLMs via Reasoning and Reinforcement Learning
 description: >-
-  [NeurIPS 2025][LLM Safety][contextual integrity] This paper proposes CI-RL, a framework that combines Chain-of-Thought reasoning prompts with GRPO reinforcement learning to train LLMs to understand contextual integrity (CI) using only ~700 synthetic samples. On the PrivacyLens benchmark, it reduces privacy leakage rates by up to 40%, and smaller models trained with CI-RL can surpass larger baseline models.
+  [NeurIPS 2025][LLM Safety][contextual integrity] This paper proposes CI-RL, a framework that combines Chain-of-Thought reasoning prompts with GRPO reinforcement learning to train LLMs to understand contextual integrity (…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - contextual integrity
-  - privacy
-  - reinforcement-learning
-  - GRPO
-  - chain-of-thought
-  - information disclosure
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "contextual integrity"
+  - "privacy"
+  - "reinforcement-learning"
+  - "GRPO"
+  - "chain-of-thought"
+  - "information disclosure"
 date: 2026-05-08
 content_hash: dd35fb4ffbd9569a
 ---

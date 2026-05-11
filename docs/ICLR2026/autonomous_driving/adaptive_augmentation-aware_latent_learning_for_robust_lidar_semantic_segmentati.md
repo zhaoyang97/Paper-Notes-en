@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Adaptive Augmentation-Aware Latent Learning for Robust LiDAR Semantic Segmentation
 description: >-
-  [ICLR 2026][Autonomous Driving][LiDAR semantic segmentation] This paper proposes A3Point (Adaptive Augmentation-Aware Latent Learning), a training framework that addresses the augmentation dilemma in robust LiDAR segmentation via two core components: Semantic Confusion Prior (SCP) implicit learning and Semantic Shift Region (SSR) localization. By decoupling model-inherent semantic confusion from augmentation-induced semantic shift and adaptively optimizing across varying perturbation intensities, A3Point achieves state-of-the-art performance on multiple adverse-weather LiDAR segmentation generalization benchmarks.
+  [ICLR 2026][Autonomous Driving][LiDAR semantic segmentation] This paper proposes A3Point (Adaptive Augmentation-Aware Latent Learning), a training framework that addresses the augmentation dilemma in robust LiDAR segment…
 tags:
-  - ICLR 2026
-  - Autonomous Driving
-  - LiDAR semantic segmentation
-  - data augmentation
-  - adverse weather robustness
-  - semantic confusion
-  - distribution shift
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "LiDAR semantic segmentation"
+  - "data augmentation"
+  - "adverse weather robustness"
+  - "semantic confusion"
+  - "distribution shift"
 date: 2026-05-08
 content_hash: c9f977b5bb95d2a4
 ---

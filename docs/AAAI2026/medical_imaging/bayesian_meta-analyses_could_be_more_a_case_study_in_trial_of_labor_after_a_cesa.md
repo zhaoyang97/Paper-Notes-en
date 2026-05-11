@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Bayesian Meta-Analyses Could Be More: A Case Study in Trial of Labor After a Cesarean-section Outcomes and Complications
 description: >-
-  [AAAI 2026][Medical Imaging][Bayesian meta-analysis] This paper proposes a hierarchical Bayesian meta-analysis framework that models the unrecorded clinical decision variable (Bishop score) as a truncated latent variable, correcting the biased conclusions arising from omitted confounders in conventional fixed-effect meta-analyses. Applied to the TOLAC (Trial of Labor After Cesarean) setting, the method demonstrates no significant difference between mechanical dilation and Pitocin.
+  [AAAI 2026][Medical Imaging][Bayesian meta-analysis] This paper proposes a hierarchical Bayesian meta-analysis framework that models the unrecorded clinical decision variable (Bishop score) as a truncated latent variable…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Bayesian meta-analysis
-  - hidden confounders
-  - probabilistic programming
-  - TOLAC
-  - Bishop score
-  - hierarchical Bayesian model
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Bayesian meta-analysis"
+  - "hidden confounders"
+  - "probabilistic programming"
+  - "TOLAC"
+  - "Bishop score"
+  - "hierarchical Bayesian model"
 date: 2026-05-08
 content_hash: 091913593bc6e235
 ---

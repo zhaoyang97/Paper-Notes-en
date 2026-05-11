@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Rethinking Circuit Completeness in Language Models: AND, OR, and ADDER Gates
 description: >-
-  [NeurIPS 2025][Image Restoration][circuit discovery] This paper systematically introduces AND, OR, and ADDER gates to decompose language model circuits, reveals that circuit incompleteness primarily stems from the omission of OR gates, and proposes a framework combining noising and denoising interventions to fully recover all three gate types while guaranteeing both faithfulness and completeness.
+  [NeurIPS 2025][Image Restoration][circuit discovery] This paper systematically introduces AND, OR, and ADDER gates to decompose language model circuits…
 tags:
-  - NeurIPS 2025
-  - Image Restoration
-  - circuit discovery
-  - mechanistic interpretability
-  - logic gates
-  - completeness
-  - faithfulness
+  - "NeurIPS 2025"
+  - "Image Restoration"
+  - "circuit discovery"
+  - "mechanistic interpretability"
+  - "logic gates"
+  - "completeness"
+  - "faithfulness"
 date: 2026-05-08
 content_hash: 64d02fbcbbb29800
 ---

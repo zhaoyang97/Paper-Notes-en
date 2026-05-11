@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Zero-Shot Large Language Model Agents for Fully Automated Radiotherapy Treatment Planning
 description: >-
-  [NeurIPS 2025][LLM Agent] This paper proposes a zero-shot LLM Agent-based workflow for automated radiotherapy treatment planning, in which the LLM directly interacts with a commercial treatment planning system (Eclipse TPS). By iteratively extracting dose-volume histogram (DVH) metrics and objective function losses and reasoning about constraint adjustment strategies, the approach achieves dose distribution quality comparable to or better than clinical manual planning on 20 head-and-neck cancer IMRT cases.
+  [NeurIPS 2025][LLM Agent][radiotherapy treatment planning] This paper proposes a zero-shot LLM Agent-based workflow for automated radiotherapy treatment planning…
 tags:
-  - NeurIPS 2025
-  - LLM Agent
-  - radiotherapy treatment planning
-  - zero-shot reasoning
-  - IMRT
-  - inverse optimization
+  - "NeurIPS 2025"
+  - "LLM Agent"
+  - "radiotherapy treatment planning"
+  - "zero-shot reasoning"
+  - "IMRT"
+  - "inverse optimization"
 date: 2026-05-08
 content_hash: 7ab4b5bbe8d85013
 ---

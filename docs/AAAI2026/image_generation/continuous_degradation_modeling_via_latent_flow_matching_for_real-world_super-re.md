@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Continuous Degradation Modeling via Latent Flow Matching for Real-World Super-Resolution
 description: >-
-  [AAAI 2026][Image Generation][Real-world super-resolution] DegFlow is proposed to learn continuous degradation trajectories from discrete-scale real HR-LR pairs via a residual autoencoder and latent space Flow Matching. Given only a single HR image at inference, the model synthesizes realistic LR images at arbitrary continuous scales for training super-resolution models, achieving state-of-the-art performance.
+  [AAAI 2026][Image Generation][Real-world super-resolution] DegFlow is proposed to learn continuous degradation trajectories from discrete-scale real HR-LR pairs via a residual autoencoder and latent space Flow Matching.…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Real-world super-resolution
-  - degradation modeling
-  - Flow Matching
-  - continuous scale
-  - latent space
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Real-world super-resolution"
+  - "degradation modeling"
+  - "Flow Matching"
+  - "continuous scale"
+  - "latent space"
 date: 2026-05-08
 content_hash: b33768135de3c82c
 ---

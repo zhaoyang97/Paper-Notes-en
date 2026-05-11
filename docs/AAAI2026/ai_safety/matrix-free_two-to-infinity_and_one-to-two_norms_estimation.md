@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Matrix-Free Two-to-Infinity and One-to-Two Norms Estimation
 description: >-
-  [AAAI 2026][AI Safety][matrix norm estimation] This paper proposes TwINEst and TwINEst++, two randomized algorithms based on the Hutchinson diagonal estimator, for efficiently estimating $\|A\|_{2\to\infty}$ and $\|A\|_{1\to 2}$ norms in a matrix-free setting. The algorithms come with provable oracle complexity guarantees and demonstrate significant advantages in Jacobian regularization for adversarial robustness in image classification and defense against adversarial attacks in recommender systems.
+  [AAAI 2026][AI Safety][matrix norm estimation] This paper proposes TwINEst and TwINEst++, two randomized algorithms based on the Hutchinson diagonal estimator…
 tags:
-  - AAAI 2026
-  - AI Safety
-  - matrix norm estimation
-  - two-to-infinity norm
-  - Hutchinson estimator
-  - Jacobian regularization
-  - adversarial robustness
+  - "AAAI 2026"
+  - "AI Safety"
+  - "matrix norm estimation"
+  - "two-to-infinity norm"
+  - "Hutchinson estimator"
+  - "Jacobian regularization"
+  - "adversarial robustness"
 date: 2026-05-08
 content_hash: 0f0fa5c1fd77ba2c
 ---

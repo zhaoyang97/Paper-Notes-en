@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Framework for Double-Blind Federated Adaptation of Foundation Models
 description: >-
-  [ICCV 2025][AI Safety][double-blind federated learning] BlindFed proposes a double-blind federated foundation model adaptation framework combining FHE-friendly architectural redesign (polynomial approximation of nonlinear operations), a two-stage split learning protocol (offline knowledge distillation + online encrypted inference), and privacy enhancements (sample permutation + random block sampling), achieving adaptation accuracy close to LoRA under the constraint that the data owner cannot observe the model and the model owner cannot observe the data.
+  [ICCV 2025][AI Safety][double-blind federated learning] BlindFed proposes a double-blind federated foundation model adaptation framework combining FHE-friendly architectural redesign (polynomial approximation of nonlinea…
 tags:
-  - ICCV 2025
-  - AI Safety
-  - double-blind federated learning
-  - fully homomorphic encryption
-  - split learning
-  - foundation model adaptation
-  - privacy preservation
+  - "ICCV 2025"
+  - "AI Safety"
+  - "double-blind federated learning"
+  - "fully homomorphic encryption"
+  - "split learning"
+  - "foundation model adaptation"
+  - "privacy preservation"
 date: 2026-05-08
 content_hash: 96e33a68dd527505
 ---

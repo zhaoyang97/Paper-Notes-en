@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Penalizing Boundary Activation for Object Completeness in Diffusion Models
 description: >-
-  [ICCV 2025][Image Generation][Object Completeness] This paper investigates the root cause of incomplete object generation in diffusion models — the RandomCrop data augmentation used during training — and proposes a training-free boundary activation penalty method. By applying cross-attention and self-attention constraints during early denoising steps, the method suppresses object generation near image boundaries, reducing the object incompleteness rate of SDv2.1 from 45.7% to 17.3%.
+  [ICCV 2025][Image Generation][Object Completeness] This paper investigates the root cause of incomplete object generation in diffusion models — the RandomCrop data augmentation used during training — and proposes a train…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Object Completeness
-  - RandomCrop
-  - Attention Constraint
-  - Training-Free
-  - Boundary Penalty
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Object Completeness"
+  - "RandomCrop"
+  - "Attention Constraint"
+  - "Training-Free"
+  - "Boundary Penalty"
 date: 2026-05-08
 content_hash: 9ce0503545fd5308
 ---

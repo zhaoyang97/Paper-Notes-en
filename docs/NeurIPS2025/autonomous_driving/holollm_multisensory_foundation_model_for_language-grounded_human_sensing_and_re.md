@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] HoloLLM: Multisensory Foundation Model for Language-Grounded Human Sensing and Reasoning
 description: >-
-  [NEURIPS2025][Autonomous Driving][Multimodal LLM] This paper proposes HoloLLM, the first framework to integrate rare sensing modalities — including LiDAR, infrared, mmWave radar, and WiFi — into a multimodal large language model (MLLM). Through a Universal Modality-Injection Projector (UMIP), HoloLLM achieves efficient alignment between sensing modalities and text under data-scarce conditions, improving human action QA and captioning by approximately 30% over existing MLLMs.
+  [NEURIPS2025][Autonomous Driving][Multimodal LLM] This paper proposes HoloLLM, the first framework to integrate rare sensing modalities — including LiDAR, infrared, mmWave radar…
 tags:
-  - NEURIPS2025
-  - Autonomous Driving
-  - Multimodal LLM
-  - Human Sensing
-  - LiDAR
-  - mmWave
-  - WiFi
-  - Modality Alignment
+  - "NEURIPS2025"
+  - "Autonomous Driving"
+  - "Multimodal LLM"
+  - "Human Sensing"
+  - "LiDAR"
+  - "mmWave"
+  - "WiFi"
+  - "Modality Alignment"
 date: 2026-05-08
 content_hash: 3f87079a299d5e8d
 ---

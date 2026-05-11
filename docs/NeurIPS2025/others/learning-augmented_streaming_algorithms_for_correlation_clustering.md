@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Learning-Augmented Streaming Algorithms for Correlation Clustering
 description: >-
-  [NeurIPS 2025][Correlation Clustering] This paper proposes the first learning-augmented streaming algorithms for Correlation Clustering. By leveraging pairwise distance predictions, the proposed methods achieve a better-than-3 approximation ratio on complete graphs ($\tilde{O}(n)$ space) and an $O(\log|E^-|)$ approximation ratio on general graphs ($\tilde{O}(n)$ space), significantly improving the space–approximation tradeoff over existing prediction-free algorithms.
+  [NeurIPS 2025][Correlation Clustering] This paper proposes the first learning-augmented streaming algorithms for Correlation Clustering. By leveraging pairwise distance predictions…
 tags:
-  - NeurIPS 2025
-  - Correlation Clustering
-  - Streaming Algorithms
-  - Learning-Augmented
-  - Space Efficiency
-  - Approximation Algorithms
+  - "NeurIPS 2025"
+  - "Correlation Clustering"
+  - "Streaming Algorithms"
+  - "Learning-Augmented"
+  - "Space Efficiency"
+  - "Approximation Algorithms"
 date: 2026-05-08
 content_hash: 7ec6f21ebb40a11b
 ---

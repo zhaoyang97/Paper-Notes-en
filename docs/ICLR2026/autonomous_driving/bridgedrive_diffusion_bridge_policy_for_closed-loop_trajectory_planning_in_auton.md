@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BridgeDrive: Diffusion Bridge Policy for Closed-Loop Trajectory Planning in Autonomous Driving
 description: >-
-  [ICLR 2026][Autonomous Driving][Diffusion bridge model] BridgeDrive proposes replacing truncated diffusion with a diffusion bridge to achieve anchor-guided trajectory planning for autonomous driving, ensuring theoretical symmetry between the forward and reverse processes. On the Bench2Drive closed-loop benchmark, it achieves success rates of 74.99% (PDM-Lite) and 89.25% (LEAD), surpassing the previous SOTA by 7.72% and 2.45%, respectively.
+  [ICLR 2026][Autonomous Driving][Diffusion bridge model] BridgeDrive proposes replacing truncated diffusion with a diffusion bridge to achieve anchor-guided trajectory planning for autonomous driving…
 tags:
-  - ICLR 2026
-  - Autonomous Driving
-  - Diffusion bridge model
-  - anchor trajectory guidance
-  - closed-loop planning
-  - geometric path waypoints
-  - Bench2Drive
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "Diffusion bridge model"
+  - "anchor trajectory guidance"
+  - "closed-loop planning"
+  - "geometric path waypoints"
+  - "Bench2Drive"
 date: 2026-05-08
 content_hash: 85334c1f5c457750
 ---

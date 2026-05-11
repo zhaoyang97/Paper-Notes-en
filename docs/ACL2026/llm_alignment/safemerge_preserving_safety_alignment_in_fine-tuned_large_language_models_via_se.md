@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SafeMERGE: Preserving Safety Alignment in Fine-Tuned Large Language Models via Selective Layer-Wise Model Merging
 description: >-
-  [ACL 2026][LLM Alignment][Safety Alignment] This paper proposes SafeMERGE, a lightweight post-fine-tuning framework that detects layers deviating from safe behavior via cosine similarity, and selectively merges only those layers with their counterparts from a safety model. Across four LLMs, the method significantly reduces harmful outputs while maintaining or even improving task performance.
+  [ACL 2026][LLM Alignment][Safety Alignment] This paper proposes SafeMERGE, a lightweight post-fine-tuning framework that detects layers deviating from safe behavior via cosine similarity…
 tags:
-  - ACL 2026
-  - LLM Alignment
-  - Safety Alignment
-  - Model Merging
-  - LoRA Fine-Tuning
-  - Post-Fine-Tuning Defense
-  - Layer-Selective Merging
+  - "ACL 2026"
+  - "LLM Alignment"
+  - "Safety Alignment"
+  - "Model Merging"
+  - "LoRA Fine-Tuning"
+  - "Post-Fine-Tuning Defense"
+  - "Layer-Selective Merging"
 date: 2026-05-08
 content_hash: da42fb6acc1d1691
 ---

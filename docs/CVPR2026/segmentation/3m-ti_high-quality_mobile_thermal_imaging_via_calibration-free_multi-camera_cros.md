@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] 3M-TI: High-Quality Mobile Thermal Imaging via Calibration-free Multi-Camera Cross-Modal Diffusion
 description: >-
-  [CVPR 2026][Segmentation][Thermal imaging super-resolution] This paper proposes 3M-TI, a **calibration-free** multi-camera cross-modal diffusion framework that performs implicit alignment and fusion of uncalibrated RGB–thermal infrared image pairs via a Cross-modal Self-attention Module (CSM) in the VAE latent space. Combined with a misalignment augmentation strategy, the method achieves state-of-the-art performance on mobile thermal imaging super-resolution and significantly improves downstream object detection and semantic segmentation.
+  [CVPR 2026][Segmentation][Thermal imaging super-resolution] This paper proposes 3M-TI, a **calibration-free** multi-camera cross-modal diffusion framework that performs implicit alignment and fusion of uncalibrated RGB–t…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Thermal imaging super-resolution
-  - cross-modal diffusion
-  - calibration-free fusion
-  - RGB guidance
-  - mobile thermal imaging
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Thermal imaging super-resolution"
+  - "cross-modal diffusion"
+  - "calibration-free fusion"
+  - "RGB guidance"
+  - "mobile thermal imaging"
 date: 2026-05-08
 content_hash: 5d3743a78d2a42a7
 ---

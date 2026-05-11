@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] FlashKAT: Understanding and Addressing Performance Bottlenecks in the Kolmogorov-Arnold Transformer
 description: >-
-  [AAAI 2026][Kolmogorov-Arnold Network] This paper provides an in-depth analysis of the root cause behind KAT (Kolmogorov-Arnold Transformer) training being 123× slower than ViT. The bottleneck is identified not as FLOPs but as **memory stalls caused by gradient accumulation during backpropagation** (global memory contention from atomic add operations). The proposed FlashKAT restructures GPU kernels to achieve an **86.5× training speedup** and reduces gradient rounding errors by nearly an order of magnitude.
+  [AAAI 2026][Interpretability][Kolmogorov-Arnold Network] This paper provides an in-depth analysis of the root cause behind KAT (Kolmogorov-Arnold Transformer) training being 123× slower than ViT. The bottleneck is identi…
 tags:
-  - AAAI 2026
-  - Kolmogorov-Arnold Network
-  - KAN
-  - Transformer
-  - GPU Optimization
-  - Memory Bottleneck
+  - "AAAI 2026"
+  - "Interpretability"
+  - "Kolmogorov-Arnold Network"
+  - "KAN"
+  - "Transformer"
+  - "GPU Optimization"
+  - "Memory Bottleneck"
 date: 2026-05-08
 content_hash: aeb5b459b0ab0a62
 ---

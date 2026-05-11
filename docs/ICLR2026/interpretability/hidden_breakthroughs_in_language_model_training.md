@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Hidden Breakthroughs in Language Model Training
 description: >-
-  [ICLR 2026][Training Dynamics] This paper proposes POLCA (Projection Oriented Loss Change Allocation)—a method that decomposes per-sample loss changes along any orthogonal basis within a low-rank training subspace—to reveal numerous hidden conceptual breakthroughs from seemingly smooth training loss curves. The approach inverts the paradigm of training interpretability from "define skills first, then observe" to "decompose first, then discover skills automatically."
+  [ICLR 2026][Interpretability][Training Dynamics] This paper proposes POLCA (Projection Oriented Loss Change Allocation)—a method that decomposes per-sample loss changes along any orthogonal basis within a low-rank traini…
 tags:
-  - ICLR 2026
-  - Training Dynamics
-  - Hidden Phase Transitions
-  - Loss Decomposition
-  - Unsupervised Interpretability
-  - Hessian Eigenvectors
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Training Dynamics"
+  - "Hidden Phase Transitions"
+  - "Loss Decomposition"
+  - "Unsupervised Interpretability"
+  - "Hessian Eigenvectors"
 date: 2026-05-08
 content_hash: 73532c3347ec9a3d
 ---

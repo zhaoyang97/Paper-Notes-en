@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Interpretability from the Ground Up
 description: >-
-  [ACL 2026][Interpretable Automated Scoring] Starting from the informational needs of educational assessment stakeholders, this paper proposes four FGTI principles (Faithful, Grounded, Traceable, Interchangeable) and develops the three-stage AnalyticScore framework for interpretable automated scoring, achieving an average QWK on ASAP-SAS only 0.06 below the non-interpretable SOTA.
+  [ACL 2026][Interpretability][Interpretable Automated Scoring] Starting from the informational needs of educational assessment stakeholders, this paper proposes four FGTI principles (Faithful, Grounded, Traceable…
 tags:
-  - ACL 2026
-  - Interpretable Automated Scoring
-  - Educational Assessment
-  - FGTI Principles
-  - Analytic Scoring
-  - Stakeholder-Centered Design
+  - "ACL 2026"
+  - "Interpretability"
+  - "Interpretable Automated Scoring"
+  - "Educational Assessment"
+  - "FGTI Principles"
+  - "Analytic Scoring"
+  - "Stakeholder-Centered Design"
 date: 2026-05-08
 content_hash: ab90af7b394711c2
 ---

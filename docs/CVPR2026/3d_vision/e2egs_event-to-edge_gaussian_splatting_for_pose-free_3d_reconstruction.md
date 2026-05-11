@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] E2EGS: Event-to-Edge Gaussian Splatting for Pose-Free 3D Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][Event camera] This paper proposes E2EGS, a fully pose-free 3D reconstruction framework driven entirely by event streams. It extracts noise-robust edge maps from event streams via patch-based temporal consistency analysis, leverages edge information to guide Gaussian initialization and weighted loss optimization, and achieves high-quality trajectory estimation and 3D reconstruction without any depth model or RGB input.
+  [CVPR 2026][3D Vision][Event camera] This paper proposes E2EGS, a fully pose-free 3D reconstruction framework driven entirely by event streams. It extracts noise-robust edge maps from event streams via patch-based tempor…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Event camera
-  - 3D Gaussian splatting
-  - edge detection
-  - pose-free reconstruction
-  - visual odometry
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Event camera"
+  - "3D Gaussian splatting"
+  - "edge detection"
+  - "pose-free reconstruction"
+  - "visual odometry"
 date: 2026-05-08
 content_hash: c3052b55010b76d6
 ---

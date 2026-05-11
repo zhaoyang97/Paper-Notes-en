@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Understanding Structured Financial Data with LLMs: A Case Study on Fraud Detection
 description: >-
-  [ACL 2026][fraud detection] This paper proposes FinFRE-RAG, a two-stage framework that serializes high-dimensional tabular transaction data into natural language via importance-guided feature reduction, and combines label-aware retrieval-augmented in-context learning to substantially improve F1/MCC of open-source LLMs on financial fraud detection, narrowing the performance gap with specialized tabular classifiers.
+  [ACL 2026][Information Retrieval & RAG][fraud detection] This paper proposes FinFRE-RAG, a two-stage framework that serializes high-dimensional tabular transaction data into natural language via importance-guided feature…
 tags:
-  - ACL 2026
-  - fraud detection
-  - tabular data
-  - retrieval-augmented generation
-  - feature selection
-  - in-context learning
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "fraud detection"
+  - "tabular data"
+  - "retrieval-augmented generation"
+  - "feature selection"
+  - "in-context learning"
 date: 2026-05-08
 content_hash: f503a824e99eeb62
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VGEnt: Graph-Based Retrieval-Reasoning-Augmented Generation for Long Video Understanding
 description: >-
-  [NeurIPS 2025][Video Understanding][long video understanding] This paper proposes VGEnt, a graph-based retrieval-reasoning-augmented generation framework that constructs a video knowledge graph to preserve cross-segment semantic relationships, and introduces structured reasoning steps to filter noise and aggregate information. VGEnt consistently improves open-source LVLMs by 3.0%–5.4% across multiple long video understanding benchmarks and outperforms existing video RAG methods by 8.6%.
+  [NeurIPS 2025][Video Understanding][long video understanding] This paper proposes VGEnt, a graph-based retrieval-reasoning-augmented generation framework that constructs a video knowledge graph to preserve cross-segment…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
-  - long video understanding
-  - graph RAG
-  - structured reasoning
-  - retrieval-augmented generation
-  - video language model
+  - "NeurIPS 2025"
+  - "Video Understanding"
+  - "long video understanding"
+  - "graph RAG"
+  - "structured reasoning"
+  - "retrieval-augmented generation"
+  - "video language model"
 date: 2026-05-08
 content_hash: f7bc185ae19ad681
 ---

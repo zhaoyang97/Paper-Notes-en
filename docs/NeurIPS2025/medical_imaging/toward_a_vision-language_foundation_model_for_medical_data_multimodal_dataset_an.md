@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Toward a Vision-Language Foundation Model for Medical Data: Multimodal Dataset and Benchmarks for Vietnamese PET/CT Report Generation
 description: >-
-  [NeurIPS 2025][Medical Imaging][vision-language model] This work introduces ViMed-PET, the first Vietnamese PET/CT image-report dataset comprising 2,757 whole-body PET/CT volumes paired with complete clinical reports. Through a data augmentation strategy and a three-stage fine-tuning pipeline, the approach substantially improves VLM performance on medical report generation and VQA tasks. Novel evaluation metrics based on clinically critical information are also proposed.
+  [NeurIPS 2025][Medical Imaging][vision-language model] This work introduces ViMed-PET, the first Vietnamese PET/CT image-report dataset comprising 2…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - vision-language model
-  - PET/CT
-  - Vietnamese medical report
-  - dataset
-  - report generation
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "vision-language model"
+  - "PET/CT"
+  - "Vietnamese medical report"
+  - "dataset"
+  - "report generation"
 date: 2026-05-08
 content_hash: 1228fa0d65aca2f3
 ---

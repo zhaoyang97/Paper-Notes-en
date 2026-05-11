@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning from Demonstrations via Capability-Aware Goal Sampling
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Imitation Learning] This paper proposes Cago, a method that dynamically tracks an agent's attainment capability along expert demonstration trajectories and adaptively samples intermediate goals near the capability frontier, constructing an implicit curriculum to guide learning in long-horizon, sparse-reward tasks.
+  [NeurIPS 2025][Reinforcement Learning][Imitation Learning] This paper proposes Cago, a method that dynamically tracks an agent's attainment capability along expert demonstration trajectories and adaptively samples interm…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Imitation Learning
-  - Curriculum Learning
-  - Goal-Conditioned Reinforcement Learning
-  - Capability-Awareness
-  - World Model
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Imitation Learning"
+  - "Curriculum Learning"
+  - "Goal-Conditioned Reinforcement Learning"
+  - "Capability-Awareness"
+  - "World Model"
 date: 2026-05-08
 content_hash: 0a59a6b7293b6282
 ---

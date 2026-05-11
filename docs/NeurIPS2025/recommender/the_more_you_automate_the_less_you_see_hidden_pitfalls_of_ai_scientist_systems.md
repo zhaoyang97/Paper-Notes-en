@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The More You Automate, the Less You See: Hidden Pitfalls of AI Scientist Systems
 description: >-
-  [NeurIPS 2025][Recommender Systems][AI scientist] This paper systematically identifies four methodological pitfalls in current AI scientist systems—inappropriate benchmark selection, data leakage, metric misuse, and post-hoc selection bias—through controlled experiments on Agent Laboratory and The AI Scientist v2 using a carefully designed synthetic task (SPR). Both systems exhibit these issues to varying degrees. The paper further demonstrates that auditing trace logs and code achieves 27 percentage points higher detection accuracy than reviewing final papers alone (82% vs. 55%).
+  [NeurIPS 2025][Recommender Systems][AI scientist] This paper systematically identifies four methodological pitfalls in current AI scientist systems—inappropriate benchmark selection, data leakage, metric misuse…
 tags:
-  - NeurIPS 2025
-  - Recommender Systems
-  - AI scientist
-  - scientific integrity
-  - benchmark selection
-  - data leakage
-  - reward hacking
+  - "NeurIPS 2025"
+  - "Recommender Systems"
+  - "AI scientist"
+  - "scientific integrity"
+  - "benchmark selection"
+  - "data leakage"
+  - "reward hacking"
 date: 2026-05-08
 content_hash: 346b994e453cf2c9
 ---

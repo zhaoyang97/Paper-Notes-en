@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Spikingformer: A Key Foundation Model for Spiking Neural Networks
 description: >-
-  [AAAI 2026][Self-Supervised Learning][Spiking Neural Networks] This paper proposes Spikingformer, which integrates MS Residual with Self-Attention in a spike-driven manner to address the non-spike computation introduced by SEW Residual in Spikformer, while preserving global modeling capability.
+  [AAAI 2026][Self-Supervised Learning][Spiking Neural Networks] This paper proposes Spikingformer, which integrates MS Residual with Self-Attention in a spike-driven manner to address the non-spike computation introduced…
 tags:
-  - AAAI 2026
-  - Self-Supervised Learning
-  - Spiking Neural Networks
-  - Transformer
-  - spike-driven
-  - residual connection
-  - energy-efficient AI
+  - "AAAI 2026"
+  - "Self-Supervised Learning"
+  - "Spiking Neural Networks"
+  - "Transformer"
+  - "spike-driven"
+  - "residual connection"
+  - "energy-efficient AI"
 date: 2026-05-08
 content_hash: 18c977f198b79ce6
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ICL-Router: In-Context Learned Model Representations for LLM Routing
 description: >-
-  [AAAI 2026][LLM/NLP][model routing] This paper proposes ICL-Router, a two-stage training framework (query reconstruction + ICL model routing) that encodes LLM capability profiles as in-context vectors, enabling scalable dynamic model routing. New models can be incorporated without retraining the router, achieving state-of-the-art performance on both in-distribution and out-of-distribution tasks.
+  [AAAI 2026][LLM/NLP][model routing] This paper proposes ICL-Router, a two-stage training framework (query reconstruction + ICL model routing) that encodes LLM capability profiles as in-context vectors…
 tags:
-  - AAAI 2026
-  - LLM/NLP
-  - model routing
-  - in-context vectors
-  - capability profiling
-  - scalability
-  - LLM collaboration
+  - "AAAI 2026"
+  - "LLM/NLP"
+  - "model routing"
+  - "in-context vectors"
+  - "capability profiling"
+  - "scalability"
+  - "LLM collaboration"
 date: 2026-05-08
 content_hash: 490e6b63dd58e4f6
 ---

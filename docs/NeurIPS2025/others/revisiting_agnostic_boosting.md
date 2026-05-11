@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Revisiting Agnostic Boosting
 description: >-
-  [NeurIPS 2025][Boosting] This paper proposes a new agnostic boosting algorithm that substantially improves the sample complexity of prior work under very general assumptions, and establishes nearly matching lower bounds, thereby resolving the sample complexity of agnostic boosting up to logarithmic factors.
+  [NeurIPS 2025][Boosting] This paper proposes a new agnostic boosting algorithm that substantially improves the sample complexity of prior work under very general assumptions, and establishes nearly matching lower bounds…
 tags:
-  - NeurIPS 2025
-  - Boosting
-  - agnostic learning
-  - sample complexity
-  - weak-to-strong learning
-  - lower bounds
+  - "NeurIPS 2025"
+  - "Boosting"
+  - "agnostic learning"
+  - "sample complexity"
+  - "weak-to-strong learning"
+  - "lower bounds"
 date: 2026-05-08
 content_hash: 06e7994b40312308
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GeoFusion-CAD: Structure-Aware Diffusion with Geometric State Space for Parametric 3D Design
 description: >-
-  [CVPR 2026][Model Compression][CAD generation] This paper proposes GeoFusion-CAD, an end-to-end diffusion framework that encodes CAD programs as hierarchical tree structures and introduces a geometry-aware G-Mamba block with linear time complexity to replace quadratic-complexity Transformers, enabling scalable and structure-aware generation of long-sequence parametric CAD programs. The method substantially outperforms Transformer-based approaches on the newly constructed DeepCAD-240 benchmark (up to 240-step commands).
+  [CVPR 2026][Model Compression][CAD generation] This paper proposes GeoFusion-CAD, an end-to-end diffusion framework that encodes CAD programs as hierarchical tree structures and introduces a geometry-aware G-Mamba block…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - CAD generation
-  - diffusion model
-  - state space model
-  - Mamba
-  - hierarchical tree representation
+  - "CVPR 2026"
+  - "Model Compression"
+  - "CAD generation"
+  - "diffusion model"
+  - "state space model"
+  - "Mamba"
+  - "hierarchical tree representation"
 date: 2026-05-08
 content_hash: 5feb4c060126d531
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] AeroDGS: Physically Consistent Dynamic Gaussian Splatting for Single-Sequence Aerial 4D Reconstruction
 description: >-
-  [CVPR2026][3D Vision][4D Reconstruction] This paper proposes AeroDGS, a physics-guided 4D Gaussian Splatting framework for monocular UAV video. It introduces a Monocular Geometry Lifting module to reconstruct reliable static and dynamic geometry, and incorporates differentiable physical priors — ground support, upright stability, and trajectory smoothness — to resolve ambiguous image cues into physically consistent motion estimates, outperforming existing methods on both synthetic and real UAV scenes.
+  [CVPR2026][3D Vision][4D Reconstruction] This paper proposes AeroDGS, a physics-guided 4D Gaussian Splatting framework for monocular UAV video. It introduces a Monocular Geometry Lifting module to reconstruct reliable st…
 tags:
-  - CVPR2026
-  - 3D Vision
-  - 4D Reconstruction
-  - 3D Gaussian Splatting
-  - Physical Priors
-  - UAV Monocular Video
-  - Dynamic Scene
-  - Aerial
+  - "CVPR2026"
+  - "3D Vision"
+  - "4D Reconstruction"
+  - "3D Gaussian Splatting"
+  - "Physical Priors"
+  - "UAV Monocular Video"
+  - "Dynamic Scene"
+  - "Aerial"
 date: 2026-05-08
 content_hash: 5e31d3c4f616d0e9
 ---

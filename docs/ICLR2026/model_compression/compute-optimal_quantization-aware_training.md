@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Compute-Optimal Quantization-Aware Training
 description: >-
-  [ICLR 2026][Model Compression][Quantization-Aware Training] Through 757 QAT experiments spanning 86M–2.2B parameters and 1–6 bits, this paper demonstrates that the optimal QAT training fraction grows with total compute budget—contradicting the previously held belief that 10% is universally optimal—and proposes the tokens-per-parameter-byte statistic along with a new loss scaling law to accurately predict the optimal QAT allocation strategy and final loss across all configurations.
+  [ICLR 2026][Model Compression][Quantization-Aware Training] Through 757 QAT experiments spanning 86M–2.2B parameters and 1–6 bits, this paper demonstrates that the optimal QAT training fraction grows with total compute b…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Quantization-Aware Training
-  - Scaling Law
-  - Compute-Optimal Allocation
-  - tokens-per-parameter-byte
-  - Low-Bit Quantization
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Quantization-Aware Training"
+  - "Scaling Law"
+  - "Compute-Optimal Allocation"
+  - "tokens-per-parameter-byte"
+  - "Low-Bit Quantization"
 date: 2026-05-08
 content_hash: 3e3cfd5fe90183dc
 ---

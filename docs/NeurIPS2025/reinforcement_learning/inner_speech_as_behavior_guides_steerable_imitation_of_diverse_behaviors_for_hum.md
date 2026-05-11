@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Inner Speech as Behavior Guides: Steerable Imitation of Diverse Behaviors for Human-AI Coordination
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Imitation Learning] Inspired by Vygotsky's theory of inner speech, this paper proposes MIMIC, a framework that uses language as an intermediate representation between perception and action. A VLM provides language scaffolding to train a CVAE that generates inner speech, which then conditions a diffusion policy to produce diverse and steerable behaviors.
+  [NeurIPS 2025][Reinforcement Learning][Imitation Learning] Inspired by Vygotsky's theory of inner speech, this paper proposes MIMIC, a framework that uses language as an intermediate representation between perception and…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Imitation Learning
-  - Inner Speech
-  - Behavioral Diversity
-  - Human-AI Coordination
-  - Diffusion Policy
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Imitation Learning"
+  - "Inner Speech"
+  - "Behavioral Diversity"
+  - "Human-AI Coordination"
+  - "Diffusion Policy"
 date: 2026-05-08
 content_hash: 4e3b08229856c67b
 ---

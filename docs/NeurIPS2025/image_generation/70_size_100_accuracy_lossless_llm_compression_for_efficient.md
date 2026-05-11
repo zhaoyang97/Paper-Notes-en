@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] 70% Size, 100% Accuracy: Lossless LLM Compression for Efficient GPU Inference via Dynamic-Length Float (DFloat11)
 description: >-
-  [NeurIPS 2025][Image Generation][Lossless Compression] DFloat11 exploits the low-entropy property of exponent bits in BFloat16 weights to losslessly compress LLMs and diffusion models to approximately 70% of their original size (equivalent to ~11 bits) via Huffman coding. It further introduces hierarchical lookup tables and a two-phase GPU kernel for efficient online decompression, enabling lossless inference of Llama 3.1 405B on a single node with 8×80GB GPUs.
+  [NeurIPS 2025][Image Generation][Lossless Compression] DFloat11 exploits the low-entropy property of exponent bits in BFloat16 weights to losslessly compress LLMs and diffusion models to approximately 70% of their origin…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Lossless Compression
-  - Huffman Coding
-  - BFloat16
-  - GPU Inference
-  - Entropy Coding
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Lossless Compression"
+  - "Huffman Coding"
+  - "BFloat16"
+  - "GPU Inference"
+  - "Entropy Coding"
 date: 2026-05-08
 content_hash: d346c0b3dcf1f3c9
 ---

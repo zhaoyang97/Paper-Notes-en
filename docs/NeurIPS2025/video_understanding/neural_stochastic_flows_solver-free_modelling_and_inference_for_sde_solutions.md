@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Neural Stochastic Flows: Solver-Free Modelling and Inference for SDE Solutions
 description: >-
-  [NeurIPS 2025][Video Understanding][Stochastic Differential Equations] This paper proposes Neural Stochastic Flows (NSF), which directly learns the transition distribution $p(x_t \mid x_s)$ of an SDE via conditional normalising flows. The architecture is constrained to satisfy stochastic flow properties (identity, Markov, Chapman-Kolmogorov), enabling single-step sampling without numerical solvers and achieving up to two orders of magnitude speedup at distant time points.
+  [NeurIPS 2025][Video Understanding][Stochastic Differential Equations] This paper proposes Neural Stochastic Flows (NSF), which directly learns the transition distribution $p(x_t \mid x_s)$ of an SDE via conditional norm…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
-  - Stochastic Differential Equations
-  - Normalising Flow
-  - Solver-Free
-  - Transition Distribution
-  - State-Space Model
+  - "NeurIPS 2025"
+  - "Video Understanding"
+  - "Stochastic Differential Equations"
+  - "Normalising Flow"
+  - "Solver-Free"
+  - "Transition Distribution"
+  - "State-Space Model"
 date: 2026-05-08
 content_hash: d0caa7cb28d7d1d8
 ---

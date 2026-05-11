@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] RoboAgent: Chaining Basic Capabilities for Embodied Task Planning
 description: >-
-  [CVPR 2026][Reinforcement Learning][Embodied Task Planning] This paper proposes RoboAgent, a capability-driven embodied task planning framework that employs a single VLM to simultaneously serve as a scheduler and five basic capabilities (exploration guidance, object grounding, scene description, action decoding, experience summarization). Through three-stage training (SFT + DAgger + expert-guided RL), RoboAgent achieves state-of-the-art performance on EB-ALFRED and ALFWorld.
+  [CVPR 2026][Reinforcement Learning][Embodied Task Planning] This paper proposes RoboAgent, a capability-driven embodied task planning framework that employs a single VLM to simultaneously serve as a scheduler and five ba…
 tags:
-  - CVPR 2026
-  - Reinforcement Learning
-  - Embodied Task Planning
-  - Capability Chaining
-  - Vision-Language Model
-  - Multi-stage Training
+  - "CVPR 2026"
+  - "Reinforcement Learning"
+  - "Embodied Task Planning"
+  - "Capability Chaining"
+  - "Vision-Language Model"
+  - "Multi-stage Training"
 date: 2026-05-08
 content_hash: 3d5f980b7f7ec434
 ---

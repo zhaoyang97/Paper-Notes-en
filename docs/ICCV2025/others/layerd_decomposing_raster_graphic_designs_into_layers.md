@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] LayerD: Decomposing Raster Graphic Designs into Layers
 description: >-
-  [ICCV 2025][Layer decomposition] This paper proposes LayerD, a method that decomposes raster graphic designs into editable layers by iteratively extracting the unoccluded top layer and completing the background. It leverages domain priors of graphic design (texture-flat regions) for refinement, and introduces a DTW-based hierarchical evaluation protocol.
+  [ICCV 2025][Layer decomposition] This paper proposes LayerD, a method that decomposes raster graphic designs into editable layers by iteratively extracting the unoccluded top layer and completing the background. It lever…
 tags:
-  - ICCV 2025
-  - Layer decomposition
-  - graphic design
-  - iterative matting
-  - palette optimization
-  - evaluation protocol
+  - "ICCV 2025"
+  - "Layer decomposition"
+  - "graphic design"
+  - "iterative matting"
+  - "palette optimization"
+  - "evaluation protocol"
 date: 2026-05-08
 content_hash: d5081727975e199e
 ---

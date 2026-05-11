@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TopoReformer: Mitigating Adversarial Attacks Using Topological Purification in OCR Models
 description: >-
-  [AAAI 2026][AI Safety][Adversarial Defense] This paper proposes TopoReformer, a model-agnostic adversarial purification pipeline based on a topological autoencoder. By leveraging persistent homology to enforce topological consistency in the latent space, the method filters adversarial perturbations without adversarial training, effectively protecting OCR systems against classical attacks, adaptive attacks, and OCR-specific watermark attacks.
+  [AAAI 2026][AI Safety][Adversarial Defense] This paper proposes TopoReformer, a model-agnostic adversarial purification pipeline based on a topological autoencoder. By leveraging persistent homology to enforce topologica…
 tags:
-  - AAAI 2026
-  - AI Safety
-  - Adversarial Defense
-  - Topological Autoencoder
-  - OCR Security
-  - Persistent Homology
-  - Manifold Purification
+  - "AAAI 2026"
+  - "AI Safety"
+  - "Adversarial Defense"
+  - "Topological Autoencoder"
+  - "OCR Security"
+  - "Persistent Homology"
+  - "Manifold Purification"
 date: 2026-05-08
 content_hash: 2dce223cc10a57ea
 ---

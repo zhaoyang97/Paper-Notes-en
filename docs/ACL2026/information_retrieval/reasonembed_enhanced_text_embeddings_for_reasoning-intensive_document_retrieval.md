@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] ReasonEmbed: Enhanced Text Embeddings for Reasoning-Intensive Document Retrieval
 description: >-
-  [ACL 2026][Text Embeddings] ReasonEmbed introduces three technical innovations—ReMixer, a non-trivial synthetic data pipeline (82K high-quality samples); Redapter, an adaptive reasoning-intensity-weighted training strategy; and multi-backbone implementation—achieving an nDCG@10 of 38.1 on the BRIGHT benchmark, surpassing all existing text embedding models by approximately 10 points.
+  [ACL 2026][Information Retrieval & RAG][Text Embeddings] ReasonEmbed introduces three technical innovations—ReMixer, a non-trivial synthetic data pipeline (82K high-quality samples); Redapter…
 tags:
-  - ACL 2026
-  - Text Embeddings
-  - Reasoning-Intensive Retrieval
-  - Synthetic Data
-  - Adaptive Training
-  - BRIGHT Benchmark
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Text Embeddings"
+  - "Reasoning-Intensive Retrieval"
+  - "Synthetic Data"
+  - "Adaptive Training"
+  - "BRIGHT Benchmark"
 date: 2026-05-08
 content_hash: a1d68be16ab0bd86
 ---

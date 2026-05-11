@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Nearly-Linear Time Private Hypothesis Selection with the Optimal Approximation Factor
 description: >-
-  [NeurIPS 2025][AI Safety][Hypothesis Selection] This paper presents the first hypothesis selection algorithm under the central differential privacy model that simultaneously achieves nearly-linear time complexity and the optimal approximation factor $\alpha=3$, resolving an open problem posed by Bun et al. (NeurIPS 2019).
+  [NeurIPS 2025][AI Safety][Hypothesis Selection] This paper presents the first hypothesis selection algorithm under the central differential privacy model that simultaneously achieves nearly-linear time complexity and the…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - Hypothesis Selection
-  - Differential Privacy
-  - Nearly-Linear Time
-  - Optimal Approximation Factor
-  - Exponential Mechanism
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "Hypothesis Selection"
+  - "Differential Privacy"
+  - "Nearly-Linear Time"
+  - "Optimal Approximation Factor"
+  - "Exponential Mechanism"
 date: 2026-05-08
 content_hash: 2119be9f9a0c1596
 ---

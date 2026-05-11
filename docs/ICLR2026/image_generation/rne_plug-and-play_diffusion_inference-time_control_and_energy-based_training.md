@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RNE: plug-and-play diffusion inference-time control and energy-based training
 description: >-
-  [ICLR 2026][Image Generation][diffusion models] This paper proposes the Radon-Nikodym Estimator (RNE), which exploits density ratios between path distributions to reveal the fundamental relationship between marginal densities and transition kernels, providing a unified plug-and-play framework that simultaneously enables diffusion density estimation, inference-time control, and energy-based diffusion training.
+  [ICLR 2026][Image Generation][diffusion models] This paper proposes the Radon-Nikodym Estimator (RNE), which exploits density ratios between path distributions to reveal the fundamental relationship between marginal dens…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - diffusion models
-  - density ratio estimation
-  - inference-time control
-  - energy-based model training
-  - Radon-Nikodym derivative
+  - "ICLR 2026"
+  - "Image Generation"
+  - "diffusion models"
+  - "density ratio estimation"
+  - "inference-time control"
+  - "energy-based model training"
+  - "Radon-Nikodym derivative"
 date: 2026-05-08
 content_hash: 2913abfb1cb104cc
 ---

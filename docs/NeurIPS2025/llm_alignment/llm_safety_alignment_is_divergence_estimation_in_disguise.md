@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] LLM Safety Alignment is Divergence Estimation in Disguise
 description: >-
-  [NeurIPS 2025][LLM Alignment][safety alignment] This paper establishes a unified theoretical framework demonstrating that alignment methods such as RLHF, DPO, KTO, and BCO are essentially estimating the divergence between a safe distribution $\mathcal{D}^+$ and an unsafe distribution $\mathcal{D}^-$. This perspective explains the latent-space separation phenomenon observed after alignment. Building on this insight, the paper proposes KLDO, a KL divergence-based alignment method that achieves state-of-the-art robustness across 5 models.
+  [NeurIPS 2025][LLM Alignment][safety alignment] This paper establishes a unified theoretical framework demonstrating that alignment methods such as RLHF, DPO, KTO…
 tags:
-  - NeurIPS 2025
-  - LLM Alignment
-  - safety alignment
-  - divergence estimation
-  - DPO
-  - KTO
-  - KLDO
-  - representation separation
+  - "NeurIPS 2025"
+  - "LLM Alignment"
+  - "safety alignment"
+  - "divergence estimation"
+  - "DPO"
+  - "KTO"
+  - "KLDO"
+  - "representation separation"
 date: 2026-05-08
 content_hash: e58f2295873bb378
 ---

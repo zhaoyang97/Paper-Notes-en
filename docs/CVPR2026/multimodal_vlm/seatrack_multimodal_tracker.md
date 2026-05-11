@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SEATrack: Simple, Efficient, and Adaptive Multimodal Tracker
 description: >-
-  [CVPR 2026][Multimodal VLM][Multimodal tracking] This paper proposes SEATrack, a multimodal tracker that achieves dynamic cross-modal attention map alignment via AMG-LoRA and efficient global relation modeling via HMoE, attaining a state-of-the-art performance–efficiency trade-off on RGB-T/D/E tracking with minimal trainable parameters.
+  [CVPR 2026][Multimodal VLM][Multimodal tracking] This paper proposes SEATrack, a multimodal tracker that achieves dynamic cross-modal attention map alignment via AMG-LoRA and efficient global relation modeling via HMoE…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Multimodal tracking
-  - parameter-efficient fine-tuning
-  - attention alignment
-  - mixture of experts
-  - LoRA
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Multimodal tracking"
+  - "parameter-efficient fine-tuning"
+  - "attention alignment"
+  - "mixture of experts"
+  - "LoRA"
 date: 2026-05-08
 content_hash: 47a00c307eb261d2
 ---

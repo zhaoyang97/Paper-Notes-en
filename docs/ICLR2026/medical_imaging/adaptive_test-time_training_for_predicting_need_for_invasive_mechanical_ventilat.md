@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Adaptive Test-Time Training for Predicting Need for Invasive Mechanical Ventilation in Multi-Center Cohorts
 description: >-
-  [ICLR 2026][Medical Imaging][Test-time training] This paper proposes AdaTTT, a framework that achieves robust test-time adaptation on multi-center ICU EHR data for 24-hour-ahead invasive mechanical ventilation (IMV) prediction, via dynamic feature-aware self-supervised learning (adaptive masking strategy) and prototype-guided partial optimal transport alignment.
+  [ICLR 2026][Medical Imaging][Test-time training] This paper proposes AdaTTT, a framework that achieves robust test-time adaptation on multi-center ICU EHR data for 24-hour-ahead invasive mechanical ventilation (IMV) pred…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - Test-time training
-  - domain shift
-  - invasive mechanical ventilation prediction
-  - dynamic feature masking
-  - partial optimal transport
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Test-time training"
+  - "domain shift"
+  - "invasive mechanical ventilation prediction"
+  - "dynamic feature masking"
+  - "partial optimal transport"
 date: 2026-05-08
 content_hash: ec2b2a70cac67d0e
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] FIA-Edit: Frequency-Interactive Attention for Efficient and High-Fidelity Inversion-Free Text-Guided Image Editing
 description: >-
-  [AAAI 2026][Medical Imaging][Text-guided image editing] This paper proposes FIA-Edit, an inversion-free text-guided image editing framework based on frequency-interactive attention. It introduces a Frequency Representation Interaction (FRI) module that performs frequency-domain fusion of source/target features within self-attention, and a Feature Injection (FIJ) module that explicitly incorporates source image features into cross-attention. The framework achieves precise semantic editing while maintaining high background fidelity, and for the first time applies a general image editing method to clinical surgical bleeding image augmentation.
+  [AAAI 2026][Medical Imaging][Text-guided image editing] This paper proposes FIA-Edit, an inversion-free text-guided image editing framework based on frequency-interactive attention. It introduces a Frequency Representati…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Text-guided image editing
-  - inversion-free editing
-  - frequency-domain interaction
-  - Diffusion Transformer
-  - medical data augmentation
-  - surgical bleeding classification
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Text-guided image editing"
+  - "inversion-free editing"
+  - "frequency-domain interaction"
+  - "Diffusion Transformer"
+  - "medical data augmentation"
+  - "surgical bleeding classification"
 date: 2026-05-08
 content_hash: a3f98cf5ecb6e6ad
 ---

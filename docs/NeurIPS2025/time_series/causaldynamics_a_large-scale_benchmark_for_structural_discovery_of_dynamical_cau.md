@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CausalDynamics: A Large-Scale Benchmark for Structural Discovery of Dynamical Causal Models
 description: >-
-  [NeurIPS 2025][Time Series][causal discovery] This paper introduces CausalDynamics — the largest benchmark to date for causal discovery in dynamical systems (14,000+ graphs, 50M+ samples) — encompassing a three-tier progressively complex hierarchy ranging from 3-dimensional chaotic ODE/SDE systems and hierarchically coupled systems to realistic climate models. The benchmark comprehensively evaluates 10 state-of-the-art causal discovery algorithms, revealing the shortcomings of current deep learning methods on high-dimensional nonlinear dynamical systems.
+  [NeurIPS 2025][Time Series][causal discovery] This paper introduces CausalDynamics — the largest benchmark to date for causal discovery in dynamical systems (14,000+ graphs…
 tags:
-  - NeurIPS 2025
-  - Time Series
-  - causal discovery
-  - dynamical systems
-  - benchmark
-  - ODE/SDE
-  - causal graph
+  - "NeurIPS 2025"
+  - "Time Series"
+  - "causal discovery"
+  - "dynamical systems"
+  - "benchmark"
+  - "ODE/SDE"
+  - "causal graph"
 date: 2026-05-08
 content_hash: 686fadfe77ed0aa5
 ---

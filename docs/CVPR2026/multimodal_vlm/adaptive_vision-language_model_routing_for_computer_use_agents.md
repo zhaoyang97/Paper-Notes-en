@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AVR: Adaptive VLM Routing for Computer Use Agents
 description: >-
-  [CVPR 2026][Multimodal VLM][Computer Use Agent] This paper proposes AVR, an adaptive routing framework for Computer Use Agents that combines a lightweight multimodal embedding model for action difficulty assessment, small-model logprob confidence probing, and warm agent memory injection, enabling a three-tier routing strategy (simple → small model; difficult → large model; high-risk → large model + guardrail). AVR reduces inference cost by 78% with only a 2 pp accuracy loss.
+  [CVPR 2026][Multimodal VLM][Computer Use Agent] This paper proposes AVR, an adaptive routing framework for Computer Use Agents that combines a lightweight multimodal embedding model for action difficulty assessment…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Computer Use Agent
-  - VLM Routing
-  - Adaptive Inference
-  - Cost Optimization
-  - GUI Grounding
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Computer Use Agent"
+  - "VLM Routing"
+  - "Adaptive Inference"
+  - "Cost Optimization"
+  - "GUI Grounding"
 date: 2026-05-08
 content_hash: 5d6b8de55e49ce35
 ---

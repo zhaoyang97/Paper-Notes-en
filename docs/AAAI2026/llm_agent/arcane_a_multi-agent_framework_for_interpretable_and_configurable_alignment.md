@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment
 description: >-
-  [AAAI 2026][LLM Agent][interpretable alignment] This paper proposes ARCANE, a framework that formulates alignment as a multi-agent collaboration problem. A manager agent learns to generate natural-language rubrics (weighted verifiable criterion sets) through dialogue with stakeholders, which serve as interpretable proxy reward functions for a worker agent. Via two-stage SFT+GSPO training, the framework enables test-time configurable alignment, improving mean return from 0.58 to 0.74 (N=8) on the GDPVal benchmark with the GSPO variant.
+  [AAAI 2026][LLM Agent][interpretable alignment] This paper proposes ARCANE, a framework that formulates alignment as a multi-agent collaboration problem. A manager agent learns to generate natural-language rubrics (weigh…
 tags:
-  - AAAI 2026
-  - LLM Agent
-  - interpretable alignment
-  - rubric learning
-  - multi-agent collaboration
-  - GSPO
-  - test-time alignment
+  - "AAAI 2026"
+  - "LLM Agent"
+  - "interpretable alignment"
+  - "rubric learning"
+  - "multi-agent collaboration"
+  - "GSPO"
+  - "test-time alignment"
 date: 2026-05-08
 content_hash: 4ee45fb84b447e80
 ---

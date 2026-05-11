@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Least Squares Variational Inference
 description: >-
-  [NeurIPS 2025][Optimization][variational inference] This paper proposes LSVI (Least Squares Variational Inference), a gradient-free variational inference method based on ordinary least squares regression. Within the exponential family, LSVI iteratively solves for the optimal variational approximation by performing OLS regression on a tempered log-target, admitting efficient $O(d^3)$ (full-covariance) or $O(d)$ (mean-field) implementations for the Gaussian family.
+  [NeurIPS 2025][Optimization][variational inference] This paper proposes LSVI (Least Squares Variational Inference), a gradient-free variational inference method based on ordinary least squares regression. Within the expo…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - variational inference
-  - natural gradient descent
-  - exponential family
-  - least squares
-  - gradient-free
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "variational inference"
+  - "natural gradient descent"
+  - "exponential family"
+  - "least squares"
+  - "gradient-free"
 date: 2026-05-08
 content_hash: 20402dbba876556e
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] iManip: Skill-Incremental Learning for Robotic Manipulation
 description: >-
-  [ICCV 2025][Robotics][Incremental learning] This paper proposes the iManip framework, which enables robots to continually acquire new manipulation skills without retraining through a temporal replay strategy and a scalable PerceiverIO architecture, while mitigating catastrophic forgetting of previously learned skills. iManip achieves an average improvement of 9.4% over conventional incremental learning baselines on RLBench.
+  [ICCV 2025][Robotics][Incremental learning] This paper proposes the iManip framework, which enables robots to continually acquire new manipulation skills without retraining through a temporal replay strategy and a scalab…
 tags:
-  - ICCV 2025
-  - Robotics
-  - Incremental learning
-  - robotic manipulation
-  - catastrophic forgetting
-  - temporal replay
-  - scalable Transformer
+  - "ICCV 2025"
+  - "Robotics"
+  - "Incremental learning"
+  - "robotic manipulation"
+  - "catastrophic forgetting"
+  - "temporal replay"
+  - "scalable Transformer"
 date: 2026-05-08
 content_hash: 32dba3c0540da49a
 ---

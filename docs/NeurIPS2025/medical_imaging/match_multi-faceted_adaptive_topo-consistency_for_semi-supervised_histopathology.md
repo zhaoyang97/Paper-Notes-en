@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MATCH: Multi-faceted Adaptive Topo-Consistency for Semi-Supervised Histopathology Segmentation
 description: >-
-  [NeurIPS 2025][Medical Imaging][Semi-supervised segmentation] This paper proposes the MATCH framework, which tightly couples topological reasoning with the perturbation-robustness principle of semi-supervised learning. By exploiting dual-level topological consistency across random perturbations and temporal training snapshots, MATCH adaptively identifies reliable topological structures without requiring manually defined thresholds, substantially reducing topological errors in histopathology image segmentation.
+  [NeurIPS 2025][Medical Imaging][Semi-supervised segmentation] This paper proposes the MATCH framework, which tightly couples topological reasoning with the perturbation-robustness principle of semi-supervised learning. B…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Semi-supervised segmentation
-  - topological consistency
-  - persistent homology
-  - histopathology
-  - MC dropout
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Semi-supervised segmentation"
+  - "topological consistency"
+  - "persistent homology"
+  - "histopathology"
+  - "MC dropout"
 date: 2026-05-08
 content_hash: c713cc730a643f46
 ---

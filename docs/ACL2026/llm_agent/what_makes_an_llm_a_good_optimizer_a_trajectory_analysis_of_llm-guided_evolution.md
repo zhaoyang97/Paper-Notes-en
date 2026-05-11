@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] What Makes an LLM a Good Optimizer? A Trajectory Analysis of LLM-Guided Evolutionary Search
 description: >-
-  [ACL 2026][LLM Agent][LLM optimizer] Through large-scale experiments (15 LLMs × 8 tasks, 72K candidate solutions), this paper finds that effective LLM optimizers behave as "local refiners"—consistently producing frequent incremental improvements while progressively concentrating search in semantic space—rather than generating high-novelty, leap-style breakthroughs. A key finding is that novelty per se does not predict optimization performance; novelty is only beneficial when the search remains sufficiently localized.
+  [ACL 2026][LLM Agent][LLM optimizer] Through large-scale experiments (15 LLMs × 8 tasks, 72K candidate solutions), this paper finds that effective LLM optimizers behave as "local refiners"—consistently producing frequent…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - LLM optimizer
-  - evolutionary search
-  - trajectory analysis
-  - exploration-exploitation trade-off
-  - semantic geometry
+  - "ACL 2026"
+  - "LLM Agent"
+  - "LLM optimizer"
+  - "evolutionary search"
+  - "trajectory analysis"
+  - "exploration-exploitation trade-off"
+  - "semantic geometry"
 date: 2026-05-08
 content_hash: acc1ee4b3661f979
 ---

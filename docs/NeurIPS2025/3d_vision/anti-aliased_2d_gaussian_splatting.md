@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Anti-Aliased 2D Gaussian Splatting
 description: >-
-  [NeurIPS 2025][3D Vision][2D Gaussian Splatting] This paper proposes AA-2DGS, which addresses severe aliasing artifacts in 2D Gaussian Splatting under varying sampling rates through two complementary mechanisms: a world-space flat smoothing kernel and an object-space Mip filter. The method significantly improves multi-scale rendering quality while preserving the geometric accuracy advantages of 2DGS.
+  [NeurIPS 2025][3D Vision][2D Gaussian Splatting] This paper proposes AA-2DGS, which addresses severe aliasing artifacts in 2D Gaussian Splatting under varying sampling rates through two complementary mechanisms: a world-…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - 2D Gaussian Splatting
-  - Anti-Aliasing
-  - Novel View Synthesis
-  - Surface Reconstruction
-  - Mip Filtering
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "2D Gaussian Splatting"
+  - "Anti-Aliasing"
+  - "Novel View Synthesis"
+  - "Surface Reconstruction"
+  - "Mip Filtering"
 date: 2026-05-08
 content_hash: bf317825e46032f6
 ---

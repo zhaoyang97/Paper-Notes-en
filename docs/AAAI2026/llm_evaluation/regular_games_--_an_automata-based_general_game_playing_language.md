@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Regular Games – an Automata-Based General Game Playing Language
 description: >-
-  [AAAI 2026][LLM Evaluation][General Game Playing] This paper introduces Regular Games (RG), a general game playing system centered on nondeterministic finite automata (NFA) for encoding game rules. RG employs a multi-level language architecture (low-level RG, high-level HRG, and domain-specific frameworks) that covers all finite turn-based games — including those with imperfect information and stochasticity — while generating forward models that consistently outperform the previously fastest GGP system, RBG, and typically run 10–20× faster than Ludii.
+  [AAAI 2026][LLM Evaluation][General Game Playing] This paper introduces Regular Games (RG), a general game playing system centered on nondeterministic finite automata (NFA) for encoding game rules. RG employs a multi-lev…
 tags:
-  - AAAI 2026
-  - LLM Evaluation
-  - General Game Playing
-  - Game Description Language
-  - Finite Automata
-  - Forward Model
-  - Procedural Content Generation
+  - "AAAI 2026"
+  - "LLM Evaluation"
+  - "General Game Playing"
+  - "Game Description Language"
+  - "Finite Automata"
+  - "Forward Model"
+  - "Procedural Content Generation"
 date: 2026-05-08
 content_hash: 251b0af2da8a14c1
 ---

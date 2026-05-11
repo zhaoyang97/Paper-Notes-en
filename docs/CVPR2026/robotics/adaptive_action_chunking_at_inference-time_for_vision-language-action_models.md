@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Adaptive Action Chunking at Inference-time for Vision-Language-Action Models
 description: >-
-  [CVPR 2026][Robotics][Action chunking] This paper proposes Adaptive Action Chunking (AAC), a strategy that leverages action entropy as a signal to dynamically determine the optimal chunk size at inference time, requiring no additional training or architectural modification. AAC consistently improves task success rates of GR00T N1.5 and π0.5 on benchmarks including RoboCasa and LIBERO.
+  [CVPR 2026][Robotics][Action chunking] This paper proposes Adaptive Action Chunking (AAC), a strategy that leverages action entropy as a signal to dynamically determine the optimal chunk size at inference time…
 tags:
-  - CVPR 2026
-  - Robotics
-  - Action chunking
-  - VLA models
-  - adaptive inference
-  - action entropy
-  - robotic manipulation
+  - "CVPR 2026"
+  - "Robotics"
+  - "Action chunking"
+  - "VLA models"
+  - "adaptive inference"
+  - "action entropy"
+  - "robotic manipulation"
 date: 2026-05-08
 content_hash: 5e26267fdf770436
 ---

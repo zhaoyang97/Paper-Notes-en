@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Instant Video Models: Universal Adapters for Stabilizing Image-Based Networks
 description: >-
-  [NeurIPS 2025][3D Vision][Temporal Stability] This paper proposes a class of universal Stabilization Adapters that can be inserted into nearly any image model architecture. By freezing the base network and training only the adapter parameters, combined with a unified accuracy–stability–robustness loss function, the method endows frame-level models with video temporal consistency and corruption robustness.
+  [NeurIPS 2025][3D Vision][Temporal Stability] This paper proposes a class of universal Stabilization Adapters that can be inserted into nearly any image model architecture. By freezing the base network and training only…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Temporal Stability
-  - Stabilization Adapters
-  - Video Consistency
-  - Corruption Robustness
-  - EMA
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Temporal Stability"
+  - "Stabilization Adapters"
+  - "Video Consistency"
+  - "Corruption Robustness"
+  - "EMA"
 date: 2026-05-08
 content_hash: 996535bcfe00a9ab
 ---

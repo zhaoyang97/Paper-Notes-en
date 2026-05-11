@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Novel Approach to Classification of ECG Arrhythmia Types with Latent ODEs
 description: >-
-  [NeurIPS 2025 (Workshop: Learning from Time Series for Health)][Medical Imaging][Latent ODE] This work combines a path-minimized Latent ODE encoder with a gradient-boosted decision tree (GBDT) into a two-stage ECG arrhythmia classification pipeline. On the MIT-BIH dataset, the macro AUC-ROC degrades only marginally from 0.984 at 360 Hz to 0.976 at 45 Hz, demonstrating strong robustness to sampling frequency variation.
+  [NeurIPS 2025 (Workshop: Learning from Time Series for Health)][Medical Imaging][Latent ODE] This work combines a path-minimized Latent ODE encoder with a gradient-boosted decision tree (GBDT) into a two-stage ECG arrhyt…
 tags:
   - "NeurIPS 2025 (Workshop: Learning from Time Series for Health)"
-  - Medical Imaging
-  - Latent ODE
-  - ECG Classification
-  - Arrhythmia
-  - Wearable Devices
-  - Sampling Rate Robustness
+  - "Medical Imaging"
+  - "Latent ODE"
+  - "ECG Classification"
+  - "Arrhythmia"
+  - "Wearable Devices"
+  - "Sampling Rate Robustness"
 date: 2026-05-08
 content_hash: 2c80cbccdb2862b5
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Direct Reward Fine-Tuning on Poses for Single Image to 3D Human in the Wild
 description: >-
-  [ICLR 2026][Image Generation][single-view 3D human reconstruction] This paper proposes DrPose, which applies direct reward fine-tuning to maximize PoseScore—a metric measuring skeletal consistency between multi-view latent images and ground-truth 3D poses—combined with KL regularization to prevent reward hacking. Together with the DrPose15K dataset (15K diverse poses sampled from the Motion-X dataset and animated via the MIMO video generator), DrPose significantly improves 3D human reconstruction quality under challenging poses such as dynamic movements and acrobatics.
+  [ICLR 2026][Image Generation][single-view 3D human reconstruction] This paper proposes DrPose, which applies direct reward fine-tuning to maximize PoseScore—a metric measuring skeletal consistency between multi-view late…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - single-view 3D human reconstruction
-  - multi-view diffusion
-  - direct reward fine-tuning
-  - pose alignment
-  - PoseScore
+  - "ICLR 2026"
+  - "Image Generation"
+  - "single-view 3D human reconstruction"
+  - "multi-view diffusion"
+  - "direct reward fine-tuning"
+  - "pose alignment"
+  - "PoseScore"
 date: 2026-05-08
 content_hash: 42afe862ef185b80
 ---

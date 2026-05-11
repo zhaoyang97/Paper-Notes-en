@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ILLUME: Illuminating Your LLMs to See, Draw, and Self-Enhance
 description: >-
-  [ICCV 2025][Image Generation][Unified multimodal model] This paper proposes ILLUME, a unified MLLM that integrates multimodal understanding and generation capabilities into a single LLM via a unified next-token prediction paradigm. Through a **semantic visual tokenizer** (reducing pretraining data by 4× to 15M) and a **self-enhancement multimodal alignment scheme** (enabling the model to self-evaluate the consistency between its generated images and text), ILLUME achieves competitive or superior performance compared to state-of-the-art unified models across diverse understanding, generation, and editing tasks.
+  [ICCV 2025][Image Generation][Unified multimodal model] This paper proposes ILLUME, a unified MLLM that integrates multimodal understanding and generation capabilities into a single LLM via a unified next-token predictio…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Unified multimodal model
-  - visual understanding and generation
-  - semantic visual tokenizer
-  - self-enhancement alignment
-  - next-token prediction
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Unified multimodal model"
+  - "visual understanding and generation"
+  - "semantic visual tokenizer"
+  - "self-enhancement alignment"
+  - "next-token prediction"
 date: 2026-05-08
 content_hash: a2cf720ea0076a4d
 ---

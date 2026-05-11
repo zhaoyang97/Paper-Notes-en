@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Seeing Clearly, Reasoning Confidently: Plug-and-Play Remedies for Vision Language Model Blindness
 description: >-
-  [CVPR 2026][Multimodal VLM][rare object recognition] This paper proposes an efficient plug-and-play module that learns multimodal class embeddings to enhance VLM recognition and reasoning on rare objects. On the visual side, a cross-attention adapter refines visual tokens; on the textual side, object detection prompts are injected. Without fine-tuning the VLM, the method achieves a significant gain from 72.8 to 75.4 on CODA-LM.
+  [CVPR 2026][Multimodal VLM][rare object recognition] This paper proposes an efficient plug-and-play module that learns multimodal class embeddings to enhance VLM recognition and reasoning on rare objects. On the visual s…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - rare object recognition
-  - visual token enhancement
-  - multimodal class embeddings
-  - plug-and-play
-  - VLM robustness
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "rare object recognition"
+  - "visual token enhancement"
+  - "multimodal class embeddings"
+  - "plug-and-play"
+  - "VLM robustness"
 date: 2026-05-08
 content_hash: a7f4916b551b8aa2
 ---

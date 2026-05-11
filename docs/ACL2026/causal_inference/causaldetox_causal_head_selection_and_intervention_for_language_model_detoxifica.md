@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] CausalDetox: Causal Head Selection and Intervention for Language Model Detoxification
 description: >-
-  [ACL 2026][Causal Inference][Detoxification] CausalDetox uses Probability of Necessity and Sufficiency (PNS) as causal criterion to precisely locate attention heads causally responsible for toxic content, applying local inference-time intervention and PNS-guided fine-tuning for detoxification, achieving up to 5.34% toxicity reduction while preserving language fluency.
+  [ACL 2026][Causal Inference][Detoxification] CausalDetox uses Probability of Necessity and Sufficiency (PNS) as causal criterion to precisely locate attention heads causally responsible for toxic content…
 tags:
-  - ACL 2026
-  - Causal Inference
-  - Detoxification
-  - Attention Head Selection
-  - Inference-Time Intervention
-  - PNS
+  - "ACL 2026"
+  - "Causal Inference"
+  - "Detoxification"
+  - "Attention Head Selection"
+  - "Inference-Time Intervention"
+  - "PNS"
 content_hash: b278ea3aac44667d
 ---
 

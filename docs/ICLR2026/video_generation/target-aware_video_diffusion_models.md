@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Target-Aware Video Diffusion Models
 description: >-
-  [ICLR 2026][Video Generation][Video Diffusion Models] This paper proposes a target-aware video diffusion model that generates videos of an actor interacting with a specified target object, given only a single input image and a segmentation mask of the target. The core innovations are the introduction of a special [TGT] token and a selective cross-attention loss that guides the model to attend to the spatial location of the target, achieving comprehensive improvements over baselines in both target alignment and video quality.
+  [ICLR 2026][Video Generation][Video Diffusion Models] This paper proposes a target-aware video diffusion model that generates videos of an actor interacting with a specified target object…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - Video Diffusion Models
-  - Target-Aware
-  - Cross-Attention Loss
-  - Human Interaction
-  - Action Planning
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Video Diffusion Models"
+  - "Target-Aware"
+  - "Cross-Attention Loss"
+  - "Human Interaction"
+  - "Action Planning"
 date: 2026-05-08
 content_hash: f2c0a5c4d2538e21
 ---

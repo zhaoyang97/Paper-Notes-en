@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Prune4Web: DOM Tree Pruning Programming for Web Agent
 description: >-
-  [AAAI 2026][LLM Agent][DOM tree pruning] This paper proposes Prune4Web, a programmatic DOM pruning approach that achieves 25–50× candidate element reduction via "LLM-generated scoring function parameters + fixed heuristic template execution." The three-stage pipeline (Planner decomposes subtasks → Programmatic Filter generates scoring functions to prune DOM → Grounder executes actions) enables a 3B model to achieve 52.4% Step SR on Multimodal-Mind2Web, surpassing all baselines of the same parameter scale and even some 9.6B/32B models, while improving low-level grounding accuracy from 46.8% to 88.28%.
+  [AAAI 2026][LLM Agent][DOM tree pruning] This paper proposes Prune4Web, a programmatic DOM pruning approach that achieves 25–50× candidate element reduction via "LLM-generated scoring function parameters + fixed heuristi…
 tags:
-  - AAAI 2026
-  - LLM Agent
-  - DOM tree pruning
-  - programmatic filtering
-  - Web Agent
-  - element grounding
-  - scoring function generation
+  - "AAAI 2026"
+  - "LLM Agent"
+  - "DOM tree pruning"
+  - "programmatic filtering"
+  - "Web Agent"
+  - "element grounding"
+  - "scoring function generation"
 date: 2026-05-08
 content_hash: e0ba523d8df4846b
 ---

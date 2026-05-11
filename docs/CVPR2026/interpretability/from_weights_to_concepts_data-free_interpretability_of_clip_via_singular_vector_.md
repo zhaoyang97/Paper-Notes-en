@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] From Weights to Concepts: Data-Free Interpretability of CLIP via Singular Vector Decomposition
 description: >-
-  [CVPR 2026][CLIP interpretability] This paper proposes SITH (Semantic Inspection of Transformer Heads), a fully data-free and training-free interpretability framework for CLIP. SITH applies SVD directly to the Value-Output weight matrices of attention heads, then leverages a novel COMP algorithm to interpret each singular vector as a sparse combination of semantically coherent concepts. This achieves finer-grained intra-head interpretability than existing methods and enables precise weight editing to improve downstream performance.
+  [CVPR 2026][Interpretability][CLIP interpretability] This paper proposes SITH (Semantic Inspection of Transformer Heads), a fully data-free and training-free interpretability framework for CLIP. SITH applies SVD directly…
 tags:
-  - CVPR 2026
-  - CLIP interpretability
-  - singular value decomposition
-  - attention head analysis
-  - weight-space editing
-  - data-free
+  - "CVPR 2026"
+  - "Interpretability"
+  - "CLIP interpretability"
+  - "singular value decomposition"
+  - "attention head analysis"
+  - "weight-space editing"
+  - "data-free"
 date: 2026-05-08
 content_hash: c4ed1d40e09c49e0
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Learning to Instruct for Visual Instruction Tuning
 description: >-
-  [NeurIPS 2025][Multimodal VLM][visual instruction tuning] This paper proposes L2T (Learning to Instruct), which improves visual instruction tuning solely by extending the training loss to cover the instruction sequence (rather than computing loss on responses only). Without additional data and with virtually zero computational overhead, L2T achieves up to 9% relative improvement across 16 multimodal benchmarks, an 18% gain on captioning tasks, and notable hallucination reduction.
+  [NeurIPS 2025][Multimodal VLM][visual instruction tuning] This paper proposes L2T (Learning to Instruct), which improves visual instruction tuning solely by extending the training loss to cover the instruction sequence (…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - visual instruction tuning
-  - L2T
-  - MLLM
-  - loss function
-  - hallucination
-  - captioning
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "visual instruction tuning"
+  - "L2T"
+  - "MLLM"
+  - "loss function"
+  - "hallucination"
+  - "captioning"
 date: 2026-05-08
 content_hash: 7a628e18218fd39a
 ---

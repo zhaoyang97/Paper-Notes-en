@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SpatiaLQA: A Benchmark for Evaluating Spatial Logical Reasoning in Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Spatial logical reasoning] This paper proposes SpatiaLQA, a benchmark comprising 9,605 QA pairs across 241 real-world indoor scenes, systematically evaluates 41 VLMs on spatial logical reasoning, and introduces a recursive scene graph-assisted reasoning method to enhance VLMs' spatial logical reasoning capabilities.
+  [CVPR 2026][Multimodal VLM][Spatial logical reasoning] This paper proposes SpatiaLQA, a benchmark comprising 9,605 QA pairs across 241 real-world indoor scenes…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Spatial logical reasoning
-  - VLM benchmark
-  - scene graph
-  - indoor scene understanding
-  - multi-step reasoning
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Spatial logical reasoning"
+  - "VLM benchmark"
+  - "scene graph"
+  - "indoor scene understanding"
+  - "multi-step reasoning"
 date: 2026-05-08
 content_hash: b21a64b7435cdada
 ---

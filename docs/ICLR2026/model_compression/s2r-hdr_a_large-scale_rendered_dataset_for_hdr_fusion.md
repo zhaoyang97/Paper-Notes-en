@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] S2R-HDR: A Large-Scale Rendered Dataset for HDR Fusion
 description: >-
-  [Model Compression] This paper proposes S2R-HDR, the first large-scale high-quality synthetic HDR fusion dataset (24,000 samples), and introduces S2R-Adapter, a domain adaptation method that bridges the synthetic-to-real gap, achieving state-of-the-art HDR fusion performance on real-world datasets.
+  [Model Compression] This paper proposes S2R-HDR, the first large-scale high-quality synthetic HDR fusion dataset (24,000 samples), and introduces S2R-Adapter…
 tags:
-  - Model Compression
+  - "Model Compression"
 date: 2026-05-08
 content_hash: c24777b94a0f1c5e
 ---

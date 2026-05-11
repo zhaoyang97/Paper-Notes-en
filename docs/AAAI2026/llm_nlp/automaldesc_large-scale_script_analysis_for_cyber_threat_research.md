@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AutoMalDesc: Large-Scale Script Analysis for Cyber Threat Research
 description: >-
-  [AAAI 2026][LLM/NLP][Malware Analysis] This paper proposes AutoMalDesc, an automated static analysis framework that employs an iterative self-paced learning pipeline — starting from 900 expert-annotated seed samples, fine-tuning Llama-3.3-70B via LoRA to generate pseudo-labels, applying multi-stage quality filtering to obtain 101K samples, and training a V2 model — to achieve automated malware classification and behavior description across five scripting languages, improving Batch script detection accuracy from 52.7% to 82.4%.
+  [AAAI 2026][LLM/NLP][Malware Analysis] This paper proposes AutoMalDesc, an automated static analysis framework that employs an iterative self-paced learning pipeline — starting from 900 expert-annotated seed samples…
 tags:
-  - AAAI 2026
-  - LLM/NLP
-  - Malware Analysis
-  - Self-Improving LLM
-  - Self-Paced Learning
-  - Static Analysis
-  - Script Security
+  - "AAAI 2026"
+  - "LLM/NLP"
+  - "Malware Analysis"
+  - "Self-Improving LLM"
+  - "Self-Paced Learning"
+  - "Static Analysis"
+  - "Script Security"
 date: 2026-05-08
 content_hash: 66cd5d4da4440147
 ---

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Revisiting Sharpness-Aware Minimization: A More Faithful and Effective Implementation
 description: >-
-   This paper proposes a new intuitive interpretation of SAM's underlying mechanism — that the gradient at the perturbed point approximates the direction toward the local maximum — and reveals its imprecision as well as the multi-step degradation problem. It then introduces XSAM, which achieves more faithful and effective sharpness-aware minimization by explicitly estimating the direction of the maximum.
+  This paper proposes a new intuitive interpretation of SAM's underlying mechanism — that the gradient at the perturbed point approximates the direction toward the local maximum — and reveals its imprecision as well as th…
 tags:
 
 date: 2026-05-08

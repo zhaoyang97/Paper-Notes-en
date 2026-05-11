@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PBCAT: Patch-Based Composite Adversarial Training against Physically Realizable Attacks on Object Detection
 description: >-
-  [ICCV 2025][Autonomous Driving][Adversarial Training] This paper proposes PBCAT (Patch-Based Composite Adversarial Training), which combines small-area gradient-guided adversarial patches with global imperceptible perturbations for adversarial training, providing unified defense against multiple physically realizable attacks (adversarial patches and adversarial textures). PBCAT achieves a 29.7% AP improvement over the previous SOTA defense on pedestrian detection tasks.
+  [ICCV 2025][Autonomous Driving][Adversarial Training] This paper proposes PBCAT (Patch-Based Composite Adversarial Training), which combines small-area gradient-guided adversarial patches with global imperceptible pertur…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - Adversarial Training
-  - Physically Realizable Attacks
-  - Object Detection
-  - Adversarial Texture
-  - Adversarial Patch
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "Adversarial Training"
+  - "Physically Realizable Attacks"
+  - "Object Detection"
+  - "Adversarial Texture"
+  - "Adversarial Patch"
 date: 2026-05-08
 content_hash: 34dc6f0a466e57b2
 ---

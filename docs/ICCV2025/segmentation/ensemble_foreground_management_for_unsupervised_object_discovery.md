@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Ensemble Foreground Management for Unsupervised Object Discovery
 description: >-
-  [ICCV 2025 (Highlight)][Segmentation][Unsupervised object discovery] This paper proposes UnionCut — a foreground union detection method based on minimum cut and ensemble learning — which provides mathematically guaranteed foreground priors for unsupervised object discovery (UOD). It enables UOD algorithms to reliably determine whether discovered regions are foreground and when to stop exploration. A distilled variant, UnionSeg, is also proposed to substantially improve both efficiency and accuracy.
+  [ICCV 2025 (Highlight)][Segmentation][Unsupervised object discovery] This paper proposes UnionCut — a foreground union detection method based on minimum cut and ensemble learning — which provides mathematically guarantee…
 tags:
-  - ICCV 2025 (Highlight)
-  - Segmentation
-  - Unsupervised object discovery
-  - foreground prior
-  - ensemble methods
-  - minimum cut
-  - knowledge distillation
+  - "ICCV 2025 (Highlight)"
+  - "Segmentation"
+  - "Unsupervised object discovery"
+  - "foreground prior"
+  - "ensemble methods"
+  - "minimum cut"
+  - "knowledge distillation"
 date: 2026-05-08
 content_hash: 5bb86635feef9e4e
 ---

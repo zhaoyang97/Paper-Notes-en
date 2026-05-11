@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Incentives in Federated Learning with Heterogeneous Agents
 description: >-
-  [ICLR 2026][Medical Imaging][Federated Learning] This paper analyzes incentive problems in heterogeneous federated learning from a game-theoretic perspective, proves the existence of pure-strategy Nash equilibria under heterogeneous data distributions and PAC accuracy objectives, and proposes a linear programming-based approximation algorithm to determine optimal contribution levels.
+  [ICLR 2026][Medical Imaging][Federated Learning] This paper analyzes incentive problems in heterogeneous federated learning from a game-theoretic perspective…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - Federated Learning
-  - Incentive Mechanism
-  - Heterogeneity
-  - Game Theory
-  - PAC Learning
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Federated Learning"
+  - "Incentive Mechanism"
+  - "Heterogeneity"
+  - "Game Theory"
+  - "PAC Learning"
 date: 2026-05-08
 content_hash: 3617fa8d2a8140c0
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Ninja Codes: Neurally Generated Fiducial Markers for Stealthy 6-DoF Tracking
 description: >-
-  [CVPR 2026][Video Understanding][Fiducial Markers] Ninja Codes leverages deep steganography to transform arbitrary images into visually inconspicuous fiducial markers via an end-to-end trained encoder. The resulting markers can be printed with standard printers and detected using RGB cameras, enabling stealthy 6-DoF pose tracking.
+  [CVPR 2026][Video Understanding][Fiducial Markers] Ninja Codes leverages deep steganography to transform arbitrary images into visually inconspicuous fiducial markers via an end-to-end trained encoder. The resulting mark…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Fiducial Markers
-  - 6-DoF Tracking
-  - Deep Steganography
-  - Stealthy Markers
-  - Neural Encoding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Fiducial Markers"
+  - "6-DoF Tracking"
+  - "Deep Steganography"
+  - "Stealthy Markers"
+  - "Neural Encoding"
 date: 2026-05-08
 content_hash: af8984d3668fb7a6
 ---

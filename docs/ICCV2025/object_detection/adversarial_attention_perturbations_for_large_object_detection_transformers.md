@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Adversarial Attention Perturbations for Large Object Detection Transformers
 description: >-
-  [ICCV 2025][Object Detection][Adversarial Attack] This paper proposes AFOG (Attention-Focused Offensive Gradient), an architecture-agnostic adversarial attack method that leverages a learnable attention mechanism to concentrate perturbations on vulnerable image regions. With only 10 iterations and visually imperceptible perturbations, AFOG reduces the mAP of 12 detection Transformers by up to 37.8×, while also outperforming existing methods on CNN-based detectors.
+  [ICCV 2025][Object Detection][Adversarial Attack] This paper proposes AFOG (Attention-Focused Offensive Gradient), an architecture-agnostic adversarial attack method that leverages a learnable attention mechanism to conc…
 tags:
-  - ICCV 2025
-  - Object Detection
-  - Adversarial Attack
-  - Detection Transformer
-  - Learnable Attention
-  - Adversarial Robustness
+  - "ICCV 2025"
+  - "Object Detection"
+  - "Adversarial Attack"
+  - "Detection Transformer"
+  - "Learnable Attention"
+  - "Adversarial Robustness"
 date: 2026-05-08
 content_hash: a4a795c12fa13425
 ---

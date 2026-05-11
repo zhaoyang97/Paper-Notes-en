@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Think, Then Verify: A Hypothesis-Verification Multi-Agent Framework for Long Video Understanding
 description: >-
-  [CVPR 2026][LLM Agent][long video understanding] VideoHV-Agent reframes long video QA as a hypothesis-verification process: a Thinker rewrites answer options into testable hypotheses, a Judge extracts discriminative clues, a Verifier localizes evidence in the video, and an Answer agent synthesizes evidence into a final answer. The framework achieves state-of-the-art results on EgoSchema, NextQA, and IntentQA while outperforming existing agent methods in inference efficiency.
+  [CVPR 2026][LLM Agent][long video understanding] VideoHV-Agent reframes long video QA as a hypothesis-verification process: a Thinker rewrites answer options into testable hypotheses…
 tags:
-  - CVPR 2026
-  - LLM Agent
-  - long video understanding
-  - multi-agent
-  - hypothesis verification
-  - VideoQA
-  - evidence reasoning
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "long video understanding"
+  - "multi-agent"
+  - "hypothesis verification"
+  - "VideoQA"
+  - "evidence reasoning"
 date: 2026-05-08
 content_hash: ba88d0f51fa4d23d
 ---

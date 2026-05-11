@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ShowTable: Unlocking Creative Table Visualization with Collaborative Reflection and Refinement
 description: >-
-  [CVPR 2026][Image Generation][Table Visualization] ShowTable introduces a novel task termed *creative table visualization* (generating infographics from structured data tables) and proposes a progressive self-correction pipeline in which an MLLM (for reasoning and reflection) and a diffusion model (for generation and refinement) collaborate iteratively. Through a dedicated fine-tuned rewriting module and an RL-optimized refinement module, the framework consistently and substantially improves visualization quality over all baseline models on the newly constructed TableVisBench benchmark.
+  [CVPR 2026][Image Generation][Table Visualization] ShowTable introduces a novel task termed *creative table visualization* (generating infographics from structured data tables) and proposes a progressive self-correction…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Table Visualization
-  - Self-Correction
-  - MLLM Reasoning
-  - Diffusion Models
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Table Visualization"
+  - "Self-Correction"
+  - "MLLM Reasoning"
+  - "Diffusion Models"
+  - "Reinforcement Learning"
 date: 2026-05-08
 content_hash: be240aca546997f2
 ---

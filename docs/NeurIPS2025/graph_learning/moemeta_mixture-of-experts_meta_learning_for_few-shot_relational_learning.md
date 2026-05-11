@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MoEMeta: Mixture-of-Experts Meta Learning for Few-Shot Relational Learning
 description: >-
-  [NeurIPS 2025][Graph Learning][Knowledge Graphs] This paper proposes MoEMeta, a framework that employs a Mixture-of-Experts model to learn globally shared relational prototypes for cross-task generalization, combined with a task-customized projection adaptation mechanism to capture local context, achieving state-of-the-art performance on three KG benchmarks.
+  [NeurIPS 2025][Graph Learning][Knowledge Graphs] This paper proposes MoEMeta, a framework that employs a Mixture-of-Experts model to learn globally shared relational prototypes for cross-task generalization…
 tags:
-  - NeurIPS 2025
-  - Graph Learning
-  - Knowledge Graphs
-  - Few-Shot Relational Learning
-  - Meta-Learning
-  - Mixture of Experts
-  - Task Adaptation
+  - "NeurIPS 2025"
+  - "Graph Learning"
+  - "Knowledge Graphs"
+  - "Few-Shot Relational Learning"
+  - "Meta-Learning"
+  - "Mixture of Experts"
+  - "Task Adaptation"
 date: 2026-05-08
 content_hash: 73312d89cc20e283
 ---

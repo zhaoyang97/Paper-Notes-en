@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Step to Decouple Optimization in 3DGS
 description: >-
-  [ICLR 2026][3D Vision][3DGS] This paper provides an in-depth analysis of two overlooked coupling issues in 3DGS optimization — update-step coupling (implicit updates and momentum rescaling for invisible viewpoints) and gradient coupling (entanglement of regularization and photometric loss in Adam momentum) — and proposes AdamW-GS by decoupling and recombining these components, simultaneously improving reconstruction quality and reducing redundant primitives without additional pruning operations.
+  [ICLR 2026][3D Vision][3DGS] This paper provides an in-depth analysis of two overlooked coupling issues in 3DGS optimization — update-step coupling (implicit updates and momentum rescaling for invisible viewpoints) and g…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - 3DGS
-  - Optimizer
-  - Adam
-  - Weight Decay
-  - Sparse Optimization
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3DGS"
+  - "Optimizer"
+  - "Adam"
+  - "Weight Decay"
+  - "Sparse Optimization"
 date: 2026-05-08
 content_hash: 4778e96774700e94
 ---

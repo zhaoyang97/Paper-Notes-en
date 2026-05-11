@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Long-Tailed Recognition via Information-Preservable Two-Stage Learning
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][Long-tailed recognition] This paper proposes an information-preservable two-stage learning framework: Stage 1 employs Balanced Negative Sampling (BNS) to learn an effective and separable feature space via mutual information maximization; Stage 2 uses Information-Preservable DPP (IP-DPP) to sample the most informative examples in a mathematically principled manner to correct majority-biased decision boundaries. The method achieves state-of-the-art performance on multiple long-tailed benchmarks.
+  [NeurIPS 2025][Self-Supervised Learning][Long-tailed recognition] This paper proposes an information-preservable two-stage learning framework: Stage 1 employs Balanced Negative Sampling (BNS) to learn an effective and se…
 tags:
-  - NeurIPS 2025
-  - Self-Supervised Learning
-  - Long-tailed recognition
-  - contrastive learning
-  - information theory
-  - determinantal point process
-  - two-stage learning
-  - representation learning
+  - "NeurIPS 2025"
+  - "Self-Supervised Learning"
+  - "Long-tailed recognition"
+  - "contrastive learning"
+  - "information theory"
+  - "determinantal point process"
+  - "two-stage learning"
+  - "representation learning"
 date: 2026-05-08
 content_hash: 2a6ec90450e4bc7a
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] LoViF 2026 Challenge on Human-oriented Semantic Image Quality Assessment
 description: >-
-  [CVPR 2026 (Workshop)][semantic quality assessment] The LoViF 2026 inaugural challenge on human-oriented semantic image quality assessment introduces the SeIQA benchmark dataset (510/80/160 train/validation/test pairs) to measure whether image degradation alters the semantic information that humans care about, rather than traditional perceptual fidelity. The winning solution, RedpanQA Alliance, achieves a final score of 0.8724 using Qwen3-VL multimodal large language model with LoRA fine-tuning and PLCC loss.
+  [CVPR 2026 (Workshop)][semantic quality assessment] The LoViF 2026 inaugural challenge on human-oriented semantic image quality assessment introduces the SeIQA benchmark dataset (510/80/160 train/validation/test pairs) t…
 tags:
-  - CVPR 2026 (Workshop)
-  - semantic quality assessment
-  - human-oriented
-  - image quality assessment
-  - MLLM
-  - benchmark
+  - "CVPR 2026 (Workshop)"
+  - "semantic quality assessment"
+  - "human-oriented"
+  - "image quality assessment"
+  - "MLLM"
+  - "benchmark"
 date: 2026-05-08
 content_hash: f66ef743f5373082
 ---

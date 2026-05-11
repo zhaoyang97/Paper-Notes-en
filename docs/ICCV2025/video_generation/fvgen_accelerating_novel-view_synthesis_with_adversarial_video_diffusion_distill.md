@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FVGen: Accelerating Novel-View Synthesis with Adversarial Video Diffusion Distillation
 description: >-
-  [ICCV 2025][Video Generation][Novel-view synthesis] This paper proposes FVGen, a framework that distills a multi-step video diffusion model (VDM) into a student model requiring only 4 sampling steps. Through GAN-based student initialization and softened reverse KL divergence optimization, FVGen reduces sampling time by over 90% while maintaining or even surpassing the visual quality of the teacher model.
+  [ICCV 2025][Video Generation][Novel-view synthesis] This paper proposes FVGen, a framework that distills a multi-step video diffusion model (VDM) into a student model requiring only 4 sampling steps. Through GAN-based st…
 tags:
-  - ICCV 2025
-  - Video Generation
-  - Novel-view synthesis
-  - video diffusion distillation
-  - adversarial training
-  - softened reverse KL divergence
-  - few-step sampling
+  - "ICCV 2025"
+  - "Video Generation"
+  - "Novel-view synthesis"
+  - "video diffusion distillation"
+  - "adversarial training"
+  - "softened reverse KL divergence"
+  - "few-step sampling"
 date: 2026-05-08
 content_hash: 9c9f0fac5d453436
 ---

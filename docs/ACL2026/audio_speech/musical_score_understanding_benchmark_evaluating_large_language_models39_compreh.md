@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MSU-Bench: Musical Score Understanding Benchmark
 description: >-
-  [ACL 2026][Audio & Speech][musical score understanding] MSU-Bench is the first human-annotated benchmark for complete musical score understanding, comprising 1,800 generative QA pairs from 150 pieces across four difficulty levels. Evaluation reveals severe deficiencies in LLM/VLM localization and hallucination, while text-based ABC notation input substantially mitigates these issues.
+  [ACL 2026][Audio & Speech][musical score understanding] MSU-Bench is the first human-annotated benchmark for complete musical score understanding, comprising 1…
 tags:
-  - ACL 2026
+  - "ACL 2026"
   - "Audio & Speech"
-  - musical score understanding
-  - music information retrieval
-  - ABC notation
-  - multimodal benchmark
-  - hallucination
+  - "musical score understanding"
+  - "music information retrieval"
+  - "ABC notation"
+  - "multimodal benchmark"
+  - "hallucination"
 date: 2026-05-08
 content_hash: bd8bd466a14b8163
 ---

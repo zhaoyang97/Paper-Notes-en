@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GT2-GS: Geometry-aware Texture Transfer for Gaussian Splatting
 description: >-
-  [AAAI 2026][3D Vision][3D Gaussian Splatting] This paper proposes GT2-GS, a framework that achieves high-quality, view-consistent texture transfer for 3DGS via a geometry-aware texture transfer loss (GT2 Loss), an adaptive fine-grained control module (AFCM), and a geometry-preserving branch (GPB), outperforming existing 3D style transfer methods in both texture fidelity and scene content preservation.
+  [AAAI 2026][3D Vision][3D Gaussian Splatting] This paper proposes GT2-GS, a framework that achieves high-quality, view-consistent texture transfer for 3DGS via a geometry-aware texture transfer loss (GT2 Loss)…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - texture transfer
-  - geometry-aware
-  - style transfer
-  - 3DGS appearance editing
+  - "AAAI 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "texture transfer"
+  - "geometry-aware"
+  - "style transfer"
+  - "3DGS appearance editing"
 date: 2026-05-08
 content_hash: 3acc554ae561c8db
 ---

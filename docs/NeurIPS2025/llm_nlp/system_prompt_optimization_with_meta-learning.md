@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] System Prompt Optimization with Meta-Learning
 description: >-
-  [NeurIPS 2025][LLM/NLP][system prompt optimization] This paper formulates system prompt optimization as a bilevel problem and proposes MetaSPO, a meta-learning framework that optimizes system prompts for cross-task generalization in the outer loop while optimizing task-specific user prompts in the inner loop. The resulting system prompts significantly outperform baselines across 14 unseen tasks.
+  [NeurIPS 2025][LLM/NLP][system prompt optimization] This paper formulates system prompt optimization as a bilevel problem and proposes MetaSPO…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - system prompt optimization
-  - meta-learning
-  - bilevel optimization
-  - prompt engineering
-  - cross-task generalization
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "system prompt optimization"
+  - "meta-learning"
+  - "bilevel optimization"
+  - "prompt engineering"
+  - "cross-task generalization"
 date: 2026-05-08
 content_hash: c9e190bc41741b15
 ---

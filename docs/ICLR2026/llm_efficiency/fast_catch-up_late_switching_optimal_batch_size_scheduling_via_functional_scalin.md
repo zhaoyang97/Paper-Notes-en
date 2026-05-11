@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Fast Catch-Up, Late Switching: Optimal Batch Size Scheduling via Functional Scaling Laws
 description: >-
-  [ICLR 2026][LLM Efficiency][batch size scheduling] This paper derives the optimal batch size scheduling (BSS) strategy under a Functional Scaling Law (FSL) framework. For hard tasks, the optimal strategy is to train with small batches for most of the budget and switch to large batches only at the final stage (late switching). The paper further reveals a *fast catch-up* effect—after switching, the loss rapidly converges to the trajectory of full large-batch training—and validates these principles in LLM pretraining at 1.1B parameters and 1T tokens.
+  [ICLR 2026][LLM Efficiency][batch size scheduling] This paper derives the optimal batch size scheduling (BSS) strategy under a Functional Scaling Law (FSL) framework. For hard tasks…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - batch size scheduling
-  - scaling laws
-  - LLM pretraining
-  - fast catch-up
-  - optimization theory
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "batch size scheduling"
+  - "scaling laws"
+  - "LLM pretraining"
+  - "fast catch-up"
+  - "optimization theory"
 date: 2026-05-08
 content_hash: f7458ad7967087a1
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Single-Teacher View Augmentation: Boosting Knowledge Distillation via Angular Diversity
 description: >-
-  [NeurIPS 2025][Model Compression][Knowledge Distillation] This paper proposes Angular-KD, which attaches multiple lightweight linear branches to a single teacher model and introduces two angular diversity losses — a constrained inter-angle diversity loss and an intra-angle diversity loss — to generate diverse supervisory signals from a single teacher. This approach serves as a low-cost alternative to multi-teacher distillation and achieves state-of-the-art performance across multiple KD benchmarks.
+  [NeurIPS 2025][Model Compression][Knowledge Distillation] This paper proposes Angular-KD, which attaches multiple lightweight linear branches to a single teacher model and introduces two angular diversity losses — a cons…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Knowledge Distillation
-  - Knowledge Augmentation
-  - Angular Diversity
-  - Ensemble Learning
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Knowledge Distillation"
+  - "Knowledge Augmentation"
+  - "Angular Diversity"
+  - "Ensemble Learning"
 date: 2026-05-08
 content_hash: ccceea672a0bd3d7
 ---

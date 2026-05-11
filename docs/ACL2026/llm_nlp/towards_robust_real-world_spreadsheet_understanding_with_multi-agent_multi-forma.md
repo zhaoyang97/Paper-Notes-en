@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Robust Real-World Spreadsheet Understanding with Multi-Agent Multi-Format Collaboration
 description: >-
-  [ACL 2026][LLM/NLP][spreadsheet understanding] This paper proposes SpreadsheetAgent, a two-stage multi-agent framework that achieves robust real-world spreadsheet understanding through progressive region-based reading and cross-validation across three formats—code execution, vision, and LaTeX—without exceeding LLM context limits.
+  [ACL 2026][LLM/NLP][spreadsheet understanding] This paper proposes SpreadsheetAgent, a two-stage multi-agent framework that achieves robust real-world spreadsheet understanding through progressive region-based reading an…
 tags:
-  - ACL 2026
-  - LLM/NLP
-  - spreadsheet understanding
-  - multi-agent framework
-  - multi-format reasoning
-  - structured information extraction
-  - progressive reading
+  - "ACL 2026"
+  - "LLM/NLP"
+  - "spreadsheet understanding"
+  - "multi-agent framework"
+  - "multi-format reasoning"
+  - "structured information extraction"
+  - "progressive reading"
 date: 2026-05-08
 content_hash: e0d2857dcfdcd54b
 ---

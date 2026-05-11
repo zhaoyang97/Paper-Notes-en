@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SAT: Selective Aggregation Transformer for Image Super-Resolution
 description: >-
-  [CVPR 2026][Image Restoration][super-resolution] This paper proposes the Selective Aggregation Transformer (SAT), which reduces Key-Value matrix token count by 97% through density-driven token aggregation while preserving full-resolution Queries, enabling efficient global attention modeling. SAT surpasses the state-of-the-art PFT by 0.22 dB while reducing FLOPs by 27%.
+  [CVPR 2026][Image Restoration][super-resolution] This paper proposes the Selective Aggregation Transformer (SAT), which reduces Key-Value matrix token count by 97% through density-driven token aggregation while preservin…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - super-resolution
-  - transformer
-  - token aggregation
-  - efficient attention
-  - global modeling
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "super-resolution"
+  - "transformer"
+  - "token aggregation"
+  - "efficient attention"
+  - "global modeling"
 date: 2026-05-08
 content_hash: c974bc6057aefc9c
 ---

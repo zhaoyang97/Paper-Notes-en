@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] JTPRO: A Joint Tool-Prompt Reflective Optimization Framework for Language Agents
 description: >-
-  [ACL 2026][LLM Reasoning][tool-call optimization] JTPRO proposes a joint optimization framework that requires no model fine-tuning. Through reflection-driven iterative editing, it simultaneously optimizes global instructions and per-tool schema/parameter descriptions, significantly improving end-to-end success rates for tool selection and slot filling in large-scale tool library settings, achieving 5%–20% OSR gains over baselines such as GEPA.
+  [ACL 2026][LLM Reasoning][tool-call optimization] JTPRO proposes a joint optimization framework that requires no model fine-tuning. Through reflection-driven iterative editing…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - tool-call optimization
-  - prompt optimization
-  - reflective learning
-  - large tool libraries
-  - joint optimization
+  - "ACL 2026"
+  - "LLM Reasoning"
+  - "tool-call optimization"
+  - "prompt optimization"
+  - "reflective learning"
+  - "large tool libraries"
+  - "joint optimization"
 date: 2026-05-08
 content_hash: be8acf6a9bde08eb
 ---

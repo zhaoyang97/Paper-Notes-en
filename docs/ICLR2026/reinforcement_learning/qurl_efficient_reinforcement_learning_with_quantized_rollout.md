@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] QuRL: Efficient Reinforcement Learning with Quantized Rollout
 description: >-
-  [ICLR 2026][Reinforcement Learning][quantized inference] This paper proposes QuRL, a method that quantizes the actor model to accelerate the rollout phase in RL training. It introduces Adaptive Clipping Range (ACR) to address training collapse caused by quantization, and Update-Aware Quantization (UAQ) to resolve the scale mismatch between weight updates and quantization error. QuRL achieves 20%–80% inference throughput improvement without performance degradation.
+  [ICLR 2026][Reinforcement Learning][quantized inference] This paper proposes QuRL, a method that quantizes the actor model to accelerate the rollout phase in RL training. It introduces Adaptive Clipping Range (ACR) to ad…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - quantized inference
-  - RL acceleration
-  - PPO
-  - GRPO
-  - importance sampling
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "quantized inference"
+  - "RL acceleration"
+  - "PPO"
+  - "GRPO"
+  - "importance sampling"
 date: 2026-05-08
 content_hash: 6fd74c695acaa7e5
 ---

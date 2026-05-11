@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Manual-PA: Learning 3D Part Assembly from Instruction Diagrams
 description: >-
-  [ICCV 2025][Self-Supervised Learning][3D Part Assembly] This paper proposes Manual-PA, a Transformer-based instruction-guided 3D part assembly framework that infers assembly order by aligning 3D parts with instruction step diagrams via contrastive learning, then uses the learned order as soft guidance through positional encoding for 6DoF pose prediction, significantly outperforming existing methods on PartNet.
+  [ICCV 2025][Self-Supervised Learning][3D Part Assembly] This paper proposes Manual-PA, a Transformer-based instruction-guided 3D part assembly framework that infers assembly order by aligning 3D parts with instruction st…
 tags:
-  - ICCV 2025
-  - Self-Supervised Learning
-  - 3D Part Assembly
-  - Instruction Diagram Assembly
-  - Transformer
-  - Contrastive Learning
-  - Permutation Learning
+  - "ICCV 2025"
+  - "Self-Supervised Learning"
+  - "3D Part Assembly"
+  - "Instruction Diagram Assembly"
+  - "Transformer"
+  - "Contrastive Learning"
+  - "Permutation Learning"
 date: 2026-05-08
 content_hash: a2a4cc9bef141a76
 ---

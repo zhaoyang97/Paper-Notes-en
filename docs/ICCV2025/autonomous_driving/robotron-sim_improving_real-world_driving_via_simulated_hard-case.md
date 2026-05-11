@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RoboTron-Sim: Improving Real-World Driving via Simulated Hard-Case
 description: >-
-  [ICCV2025][Autonomous Driving][End-to-end autonomous driving] This paper proposes RoboTron-Sim, a framework that constructs a hard-case simulation dataset (HASS), introduces Scenario-aware Prompt Engineering (SPE) and an Image-to-Ego encoder (I2E), enabling MLLMs to effectively leverage simulated hard cases to improve real-world driving performance. On nuScenes hard scenarios, it achieves ~48% reduction in L2 distance and ~46% reduction in collision rate, establishing state-of-the-art open-loop planning performance.
+  [ICCV2025][Autonomous Driving][End-to-end autonomous driving] This paper proposes RoboTron-Sim, a framework that constructs a hard-case simulation dataset (HASS)…
 tags:
-  - ICCV2025
-  - Autonomous Driving
-  - End-to-end autonomous driving
-  - Sim2Real transfer
-  - multimodal large language models
-  - simulation data augmentation
-  - hard-case scenarios
+  - "ICCV2025"
+  - "Autonomous Driving"
+  - "End-to-end autonomous driving"
+  - "Sim2Real transfer"
+  - "multimodal large language models"
+  - "simulation data augmentation"
+  - "hard-case scenarios"
 date: 2026-05-08
 content_hash: 1d8be7e4e2cc73ed
 ---

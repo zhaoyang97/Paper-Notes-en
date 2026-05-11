@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ForensicHub: A Unified Benchmark & Codebase for All-Domain Fake Image Detection and Localization
 description: >-
-  [NeurIPS 2025][AI Safety][Image forgery detection] ForensicHub introduces the first unified benchmark platform spanning all domains (Deepfake/IMDL/AIGC/Document Tampering) for fake image detection and localization, encompassing 4 tasks, 23 datasets, 42 models, 6 backbone networks, and 11 GPU-accelerated evaluation metrics. Through a modular architecture and adapter design, it bridges domain silos and conducts 16 cross-domain evaluations to derive 8 key insights.
+  [NeurIPS 2025][AI Safety][Image forgery detection] ForensicHub introduces the first unified benchmark platform spanning all domains (Deepfake/IMDL/AIGC/Document Tampering) for fake image detection and localization…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - Image forgery detection
-  - unified benchmark
-  - Deepfake
-  - AIGC detection
-  - document tampering
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "Image forgery detection"
+  - "unified benchmark"
+  - "Deepfake"
+  - "AIGC detection"
+  - "document tampering"
 date: 2026-05-08
 content_hash: 501fe330adaca1d9
 ---

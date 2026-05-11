@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Video Finetuning Improves Reasoning Between Frames
 description: >-
-  [NeurIPS 2025][Video Understanding][video finetuning] This paper proposes a visual chain-of-thought (vCoT) approach to systematically compare image LLMs and video-finetuned LLMs on inter-frame reasoning. It finds that video finetuning enables models to implicitly learn inter-frame transition reasoning, and that this capability transfers to relational reasoning tasks on static images.
+  [NeurIPS 2025][Video Understanding][video finetuning] This paper proposes a visual chain-of-thought (vCoT) approach to systematically compare image LLMs and video-finetuned LLMs on inter-frame reasoning. It finds that vi…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
-  - video finetuning
-  - multimodal large language models
-  - inter-frame reasoning
-  - visual chain-of-thought
-  - temporal understanding
+  - "NeurIPS 2025"
+  - "Video Understanding"
+  - "video finetuning"
+  - "multimodal large language models"
+  - "inter-frame reasoning"
+  - "visual chain-of-thought"
+  - "temporal understanding"
 date: 2026-05-08
 content_hash: 58a767fb02c8224e
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FlexAC: Towards Flexible Control of Associative Reasoning in Multimodal Large Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][hallucination control] FlexAC identifies that associative reasoning in MLLMs is primarily encoded in intermediate layers. By extracting steering vectors from hallucinated responses and injecting them into intermediate-layer representations at inference time, it enables flexible control over faithfulness and creativity—reducing hallucination rate by 29% (CHAIR) and improving creativity by 5.8× (Creation-MMBench), all without any training.
+  [NeurIPS 2025][Multimodal VLM][hallucination control] FlexAC identifies that associative reasoning in MLLMs is primarily encoded in intermediate layers. By extracting steering vectors from hallucinated responses and inje…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - hallucination control
-  - creativity enhancement
-  - associative reasoning
-  - intermediate-layer intervention
-  - steering vectors
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "hallucination control"
+  - "creativity enhancement"
+  - "associative reasoning"
+  - "intermediate-layer intervention"
+  - "steering vectors"
 date: 2026-05-08
 content_hash: 749f68ddadeb67c5
 ---

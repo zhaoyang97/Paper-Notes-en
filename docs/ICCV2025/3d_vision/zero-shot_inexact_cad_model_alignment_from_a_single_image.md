@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Zero-Shot Inexact CAD Model Alignment from a Single Image
 description: >-
-  [ICCV 2025][3D Vision][CAD alignment] A weakly supervised 9-DoF CAD model alignment method that enhances DINOv2 features with geometry awareness and performs dense alignment optimization in Normalized Object Coordinate (NOC) space, enabling zero-shot 3D alignment without pose annotations that generalizes to unseen categories.
+  [ICCV 2025][3D Vision][CAD alignment] A weakly supervised 9-DoF CAD model alignment method that enhances DINOv2 features with geometry awareness and performs dense alignment optimization in Normalized Object Coordinate (…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - CAD alignment
-  - zero-shot
-  - 9-DoF pose estimation
-  - foundation models
-  - NOC
+  - "ICCV 2025"
+  - "3D Vision"
+  - "CAD alignment"
+  - "zero-shot"
+  - "9-DoF pose estimation"
+  - "foundation models"
+  - "NOC"
 date: 2026-05-08
 content_hash: 0756bbd82bf0d647
 ---

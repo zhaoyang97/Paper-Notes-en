@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Hybrid Latent Reasoning via Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Latent reasoning] HRPO proposes a hybrid latent reasoning policy optimization framework: a learnable gating mechanism progressively blends the hidden state representation from the previous step into the sampled token embeddings, enabling LLMs to leverage both discrete tokens and continuous latent representations during inference. Without requiring CoT annotations, HRPO is trained entirely via RL and outperforms baselines such as PPO and GRPO on both knowledge-intensive and STEM reasoning tasks.
+  [NeurIPS 2025][Reinforcement Learning][Latent reasoning] HRPO proposes a hybrid latent reasoning policy optimization framework: a learnable gating mechanism progressively blends the hidden state representation from the p…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Latent reasoning
-  - hybrid reasoning
-  - gating mechanism
-  - continuous representation
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Latent reasoning"
+  - "hybrid reasoning"
+  - "gating mechanism"
+  - "continuous representation"
 date: 2026-05-08
 content_hash: 09362a1c242b171d
 ---

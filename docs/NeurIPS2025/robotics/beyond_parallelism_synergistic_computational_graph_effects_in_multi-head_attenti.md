@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Beyond Parallelism: Synergistic Computational Graph Effects in Multi-Head Attention
 description: >-
-  [NeurIPS 2025 (Workshop: Symmetry and Geometry in Neural Representations)][Robotics][multi-head attention] This paper reframes multi-head attention as a system of multiple feedforward DAGs sharing a common sink node, and theoretically demonstrates that multiple heads can achieve synergistic effects through cross-head paths—reducing mixing time and amplifying minimax fidelity—with empirical validation on sequential operation tasks.
+  [NeurIPS 2025 (Workshop: Symmetry and Geometry in Neural Representations)][Robotics][multi-head attention] This paper reframes multi-head attention as a system of multiple feedforward DAGs sharing a common sink node…
 tags:
   - "NeurIPS 2025 (Workshop: Symmetry and Geometry in Neural Representations)"
-  - Robotics
-  - multi-head attention
-  - computational graph
-  - DAG
-  - mixing time
-  - minimax fidelity
-  - synergistic effects
+  - "Robotics"
+  - "multi-head attention"
+  - "computational graph"
+  - "DAG"
+  - "mixing time"
+  - "minimax fidelity"
+  - "synergistic effects"
 date: 2026-05-08
 content_hash: 73f89e5c6ca705a8
 ---

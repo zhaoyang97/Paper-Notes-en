@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] iMAD: Intelligent Multi-Agent Debate for Efficient and Accurate LLM Inference
 description: >-
-  [AAAI 2026][Multi-Agent Debate] iMAD proposes a framework for selectively triggering multi-agent debate (MAD): a single agent first generates a structured response with self-critique, from which 41 interpretable linguistic/semantic features are extracted; a lightweight MLP classifier trained with the FocusCal loss then determines whether to trigger MAD. Across 6 QA/VQA benchmarks, iMAD reduces token overhead by up to 92% while improving accuracy by up to 13.5%.
+  [AAAI 2026][Interpretability][Multi-Agent Debate] iMAD proposes a framework for selectively triggering multi-agent debate (MAD): a single agent first generates a structured response with self-critique…
 tags:
-  - AAAI 2026
-  - Multi-Agent Debate
-  - Selective Triggering
-  - Token Efficiency
-  - Confidence Calibration
-  - Self-Critique
+  - "AAAI 2026"
+  - "Interpretability"
+  - "Multi-Agent Debate"
+  - "Selective Triggering"
+  - "Token Efficiency"
+  - "Confidence Calibration"
+  - "Self-Critique"
 date: 2026-05-08
 content_hash: 85bc7f0b28e2ada7
 ---

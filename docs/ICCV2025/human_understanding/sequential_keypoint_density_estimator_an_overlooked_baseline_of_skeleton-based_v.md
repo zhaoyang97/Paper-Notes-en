@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Sequential Keypoint Density Estimator: An Overlooked Baseline of Skeleton-Based Video Anomaly Detection
 description: >-
-  [Human Understanding] > SeeKer proposes to autoregressively factorize the joint density of skeleton sequences at the keypoint level, detecting abnormal human behaviors by predicting conditional Gaussian distributions over subsequent keypoints. It substantially outperforms existing methods on the UBnormal and MSAD-HR benchmarks.
+  [Human Understanding] > SeeKer proposes to autoregressively factorize the joint density of skeleton sequences at the keypoint level…
 tags:
-  - Human Understanding
+  - "Human Understanding"
 date: 2026-05-08
 content_hash: 61c2267d673175ae
 ---

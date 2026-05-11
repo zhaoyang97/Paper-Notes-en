@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Dynamic Causal Discovery in Alzheimer's Disease through Latent Pseudotime Modelling
 description: >-
-  [NEURIPS2025][Medical Imaging][Causal discovery] This paper applies BN-LTE (Bayesian Network with Latent Time Embedding) to real-world ADNI data from AD patients to infer dynamic causal graphs that evolve along a disease pseudotime axis. The learned pseudotime achieves a diagnostic AUC of 0.82, substantially outperforming chronological age (AUC 0.59), and reveals dynamic causal relationships between emerging biomarkers NfL/GFAP and established AD markers.
+  [NEURIPS2025][Medical Imaging][Causal discovery] This paper applies BN-LTE (Bayesian Network with Latent Time Embedding) to real-world ADNI data from AD patients to infer dynamic causal graphs that evolve along a disease…
 tags:
-  - NEURIPS2025
-  - Medical Imaging
-  - Causal discovery
-  - Alzheimer's disease
-  - Bayesian networks
-  - pseudotime
-  - time-varying causal graphs
-  - biomarkers
+  - "NEURIPS2025"
+  - "Medical Imaging"
+  - "Causal discovery"
+  - "Alzheimer's disease"
+  - "Bayesian networks"
+  - "pseudotime"
+  - "time-varying causal graphs"
+  - "biomarkers"
 date: 2026-05-08
 content_hash: fabb66e6e6333608
 ---

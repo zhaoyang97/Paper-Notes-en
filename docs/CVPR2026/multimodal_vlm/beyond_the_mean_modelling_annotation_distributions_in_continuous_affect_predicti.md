@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond the Mean: Modelling Annotation Distributions in Continuous Affect Prediction
 description: >-
-  [CVPR 2026][Multimodal VLM][affect prediction] This paper proposes a Beta distribution-based framework for modelling affective annotation consensus. The model predicts only the mean and standard deviation of the annotation distribution, from which higher-order descriptors—including skewness, kurtosis, and quantiles—are derived in closed form via moment matching. Experiments on SEWA and RECOLA demonstrate that Beta distributions effectively capture the full distributional characteristics of annotator disagreement.
+  [CVPR 2026][Multimodal VLM][affect prediction] This paper proposes a Beta distribution-based framework for modelling affective annotation consensus. The model predicts only the mean and standard deviation of the annotati…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - affect prediction
-  - annotation distribution modelling
-  - Beta distribution
-  - annotator disagreement
-  - uncertainty
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "affect prediction"
+  - "annotation distribution modelling"
+  - "Beta distribution"
+  - "annotator disagreement"
+  - "uncertainty"
 date: 2026-05-08
 content_hash: 5b41f3481eb802cc
 ---

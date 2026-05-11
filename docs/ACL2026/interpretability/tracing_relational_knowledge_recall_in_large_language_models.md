@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Tracing Relational Knowledge Recall in Large Language Models
 description: >-
-  [ACL 2026][Relational Knowledge] This paper systematically investigates the internal mechanisms by which LLMs recall relational knowledge during text generation. It finds that per-head attention contributions to the residual stream ($\Delta_{att,h}$) serve as the strongest features for linear relation classification (91% accuracy), and proposes two probe attribution methods—HeadScore and TokenScore—to decompose predictions to the attention head and source token levels, revealing clear correlations between probe accuracy and relation specificity, entity connectivity, and probe signal concentration.
+  [ACL 2026][Interpretability][Relational Knowledge] This paper systematically investigates the internal mechanisms by which LLMs recall relational knowledge during text generation. It finds that per-head attention contrib…
 tags:
-  - ACL 2026
-  - Relational Knowledge
-  - Attention Head Attribution
-  - Linear Probes
-  - Knowledge Recall Mechanisms
-  - Feature Attribution
+  - "ACL 2026"
+  - "Interpretability"
+  - "Relational Knowledge"
+  - "Attention Head Attribution"
+  - "Linear Probes"
+  - "Knowledge Recall Mechanisms"
+  - "Feature Attribution"
 date: 2026-05-08
 content_hash: e2d38c6c753845c1
 ---

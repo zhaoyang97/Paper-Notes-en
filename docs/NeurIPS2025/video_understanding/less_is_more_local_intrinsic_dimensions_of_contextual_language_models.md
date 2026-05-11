@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Less is More: Local Intrinsic Dimensions of Contextual Language Models
 description: >-
-  [NeurIPS 2025][Video Understanding][intrinsic dimension] This paper proposes using the Local Intrinsic Dimension (LID) of contextual token embeddings as an unsupervised signal for monitoring LLM training dynamics — a decrease in LID indicates improved generalization, while an increase signals overfitting. The utility of this geometric signal is validated on tasks including dialogue state tracking, grokking, and sentiment recognition.
+  [NeurIPS 2025][Video Understanding][intrinsic dimension] This paper proposes using the Local Intrinsic Dimension (LID) of contextual token embeddings as an unsupervised signal for monitoring LLM training dynamics — a dec…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
-  - intrinsic dimension
-  - LLM
-  - fine-tuning
-  - grokking
-  - overfitting detection
-  - embedding geometry
+  - "NeurIPS 2025"
+  - "Video Understanding"
+  - "intrinsic dimension"
+  - "LLM"
+  - "fine-tuning"
+  - "grokking"
+  - "overfitting detection"
+  - "embedding geometry"
 date: 2026-05-08
 content_hash: 02062b30b434fedd
 ---

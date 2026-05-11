@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] ReLaGS: Relational Language Gaussian Splatting
 description: >-
-  [CVPR2026][3D Vision][3D Gaussian Splatting] This paper proposes ReLaGS, the first training-free framework that unifies multi-level language Gaussian fields with open-vocabulary 3D scene graphs. It improves scene representation via Maximum Weight Pruning and Robust Outlier-aware Feature Aggregation, and achieves efficient structured 3D scene understanding through GNN-based relation prediction.
+  [CVPR2026][3D Vision][3D Gaussian Splatting] This paper proposes ReLaGS, the first training-free framework that unifies multi-level language Gaussian fields with open-vocabulary 3D scene graphs. It improves scene represe…
 tags:
-  - CVPR2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - Open-Vocabulary
-  - 3D Scene Graph
-  - Hierarchical Semantics
-  - Relation Reasoning
-  - Training-Free
+  - "CVPR2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Open-Vocabulary"
+  - "3D Scene Graph"
+  - "Hierarchical Semantics"
+  - "Relation Reasoning"
+  - "Training-Free"
 date: 2026-05-08
 content_hash: a1424555b2fa6d2f
 ---

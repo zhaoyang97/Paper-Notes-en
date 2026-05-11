@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] EAMET: Robust Massive Model Editing via Embedding Alignment Optimization
 description: >-
-  [ICLR 2026][Knowledge Editing][Massive model editing] This paper identifies the root cause of large-scale model editing failures as structural inconsistency (embedding misalignment) between key embeddings and residual embeddings, and proposes EAMET, which progressively saves optimized residual embeddings and aligns their neighborhood structure to the key embedding space via a dual KL divergence + MSE loss. EAMET outperforms MEMIT by an average of 14% (CounterFact) and 8% (ZsRE) when simultaneously editing 10k facts across 6 LLMs and 3 datasets, while remaining robust in two challenging scenarios: long-prefix inputs and multi-fact editing under the same subject.
+  [ICLR 2026][Knowledge Editing][Massive model editing] This paper identifies the root cause of large-scale model editing failures as structural inconsistency (embedding misalignment) between key embeddings and residual em…
 tags:
-  - ICLR 2026
-  - Knowledge Editing
-  - Massive model editing
-  - embedding alignment
-  - MEMIT
-  - structural inconsistency
+  - "ICLR 2026"
+  - "Knowledge Editing"
+  - "Massive model editing"
+  - "embedding alignment"
+  - "MEMIT"
+  - "structural inconsistency"
 date: 2026-05-08
 content_hash: 54b56715220d03fb
 ---

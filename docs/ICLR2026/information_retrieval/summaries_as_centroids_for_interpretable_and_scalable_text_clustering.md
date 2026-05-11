@@ -2,15 +2,16 @@
 title: >-
   [Paper Note] Summaries as Centroids for Interpretable and Scalable Text Clustering
 description: >-
-  [ICLR 2026][Text Clustering] This paper proposes k-NLPmeans and k-LLMmeans, which periodically replace numeric centroids with textual summaries (summary-as-centroid) during k-means iterations, achieving interpretable cluster prototypes while preserving the standard k-means objective. The number of LLM calls is independent of dataset size.
+  [ICLR 2026][Information Retrieval & RAG][Text Clustering] This paper proposes k-NLPmeans and k-LLMmeans, which periodically replace numeric centroids with textual summaries (summary-as-centroid) during k-means iterations…
 tags:
-  - ICLR 2026
-  - Text Clustering
-  - k-means
-  - Summary-as-Centroid
-  - Interpretability
-  - Streaming Clustering
-  - LLM-optional
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Text Clustering"
+  - "k-means"
+  - "Summary-as-Centroid"
+  - "Interpretability"
+  - "Streaming Clustering"
+  - "LLM-optional"
 date: 2026-05-08
 content_hash: 614e6428da59611a
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Splat and Distill: Augmenting Teachers with Feed-Forward 3D Reconstruction for 3D-Aware Distillation
 description: >-
-  [ICLR 2026][3D Vision][3D-Aware Distillation] Within a student-teacher distillation framework, this work augments the teacher with a pretrained feed-forward 3D reconstruction model (MVSplat) that lifts 2D features into a 3D Gaussian representation and renders them to novel viewpoints, enabling the student to learn geometrically consistent, 3D-aware 2D features. The proposed method surpasses existing approaches across downstream tasks including depth estimation, surface normal estimation, semantic segmentation, and multi-view correspondence.
+  [ICLR 2026][3D Vision][3D-Aware Distillation] Within a student-teacher distillation framework, this work augments the teacher with a pretrained feed-forward 3D reconstruction model (MVSplat) that lifts 2D features into a…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - 3D-Aware Distillation
-  - 3D Gaussian Splatting
-  - Feed-Forward Reconstruction
-  - Vision Foundation Models
-  - Student-Teacher
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3D-Aware Distillation"
+  - "3D Gaussian Splatting"
+  - "Feed-Forward Reconstruction"
+  - "Vision Foundation Models"
+  - "Student-Teacher"
 date: 2026-05-08
 content_hash: f015b8e12dd13626
 ---

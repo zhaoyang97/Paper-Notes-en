@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Variational Garrote for Sparse Inverse Problems
 description: >-
-  [CVPR 2026][Image Restoration][sparse inverse problem] Under a unified sparse inverse problem framework, this paper systematically compares $\ell_1$ regularization (LASSO) with Variational Garrote (VG, a method that approximates $\ell_0$ sparsity via variational binary gating) across three tasks—signal resampling, denoising, and sparse-view CT reconstruction—demonstrating that VG significantly reduces the minimum generalization error in severely underdetermined settings, with the greatest advantage observed at sampling rates below 20% or with very few projection angles.
+  [CVPR 2026][Image Restoration][sparse inverse problem] Under a unified sparse inverse problem framework, this paper systematically compares $\ell_1$ regularization (LASSO) with Variational Garrote (VG…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - sparse inverse problem
-  - Variational Garrote
-  - LASSO
-  - ℓ₀ sparsity
-  - CT reconstruction
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "sparse inverse problem"
+  - "Variational Garrote"
+  - "LASSO"
+  - "ℓ₀ sparsity"
+  - "CT reconstruction"
 date: 2026-05-08
 content_hash: 1e9d9995fb6963ab
 ---

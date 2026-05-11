@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SeaCache: Spectral-Evolution-Aware Cache for Accelerating Diffusion Models
 description: >-
-  [CVPR2026][Image Generation][diffusion model acceleration] This paper proposes SeaCache, a training-free dynamic caching strategy based on a Spectral-Evolution-Aware (SEA) filter. By separating signal and noise components in the frequency domain to measure inter-timestep redundancy, SeaCache significantly improves the latency–quality trade-off in diffusion model inference.
+  [CVPR2026][Image Generation][diffusion model acceleration] This paper proposes SeaCache, a training-free dynamic caching strategy based on a Spectral-Evolution-Aware (SEA) filter. By separating signal and noise component…
 tags:
-  - CVPR2026
-  - Image Generation
-  - diffusion model acceleration
-  - caching strategy
-  - spectral evolution
-  - frequency-domain filtering
-  - training-free acceleration
+  - "CVPR2026"
+  - "Image Generation"
+  - "diffusion model acceleration"
+  - "caching strategy"
+  - "spectral evolution"
+  - "frequency-domain filtering"
+  - "training-free acceleration"
 date: 2026-05-08
 content_hash: 4b0d39054c7efdc0
 ---

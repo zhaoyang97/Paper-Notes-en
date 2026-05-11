@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] When Semantics Mislead Vision: Mitigating Large Multimodal Models Hallucinations
 description: >-
-  [NeurIPS 2025][Multimodal VLM][semantic hallucination] This paper identifies a "semantic hallucination" problem in Large Multimodal Models (LMMs) for scene text recognition—where non-semantic text is misread as semantically plausible words. Analysis reveals that Transformer layers whose attention is more focused on text regions are less prone to hallucination. Based on this finding, the authors propose a training-free framework, ZoomText + Grounded Layer Correction, achieving approximately 4–5% improvement on TextHalu-Bench and approximately 4% on ST-VQA.
+  [NeurIPS 2025][Multimodal VLM][semantic hallucination] This paper identifies a "semantic hallucination" problem in Large Multimodal Models (LMMs) for scene text recognition—where non-semantic text is misread as semantica…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - semantic hallucination
-  - scene text recognition
-  - large multimodal models
-  - attention correction
-  - training-free
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "semantic hallucination"
+  - "scene text recognition"
+  - "large multimodal models"
+  - "attention correction"
+  - "training-free"
 date: 2026-05-08
 content_hash: 8b7e88ed3617f316
 ---

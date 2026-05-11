@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Evian: Towards Explainable Visual Instruction-tuning Data Auditing
 description: >-
-  [ACL 2026][Data Auditing] This paper proposes a Decomposition-then-Evaluation paradigm and the EVIAN framework, which decomposes responses in visual instruction tuning data into three components—visual description, subjective reasoning, and factual claims—and evaluates them along three orthogonal dimensions: image-text consistency, logical coherence, and factual accuracy. Models trained on the small high-quality subset selected by EVIAN outperform those trained on large-scale datasets.
+  [ACL 2026][Interpretability][Data Auditing] This paper proposes a Decomposition-then-Evaluation paradigm and the EVIAN framework, which decomposes responses in visual instruction tuning data into three components—visual…
 tags:
-  - ACL 2026
-  - Data Auditing
-  - Visual Instruction Tuning
-  - Explainable Evaluation
-  - Data Quality
-  - Multimodal Large Language Models
+  - "ACL 2026"
+  - "Interpretability"
+  - "Data Auditing"
+  - "Visual Instruction Tuning"
+  - "Explainable Evaluation"
+  - "Data Quality"
+  - "Multimodal Large Language Models"
 date: 2026-05-08
 content_hash: 8c73501efdb0d378
 ---

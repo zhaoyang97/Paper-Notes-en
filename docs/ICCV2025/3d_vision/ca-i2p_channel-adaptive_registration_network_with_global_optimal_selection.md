@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CA-I2P: Channel-Adaptive Registration Network with Global Optimal Selection
 description: >-
-  [ICCV 2025][3D Vision][Image-to-point cloud registration] This paper proposes CA-I2P, which introduces a Channel Adaptive Adjustment Module (CAA) to enhance and filter channel-level discrepancies between image and point cloud features, and a Global Optimal Selection (GOS) module that replaces top-k selection with optimal transport to reduce many-to-one matching errors, achieving state-of-the-art image-to-point cloud registration performance on RGB-D Scenes V2 and 7-Scenes.
+  [ICCV 2025][3D Vision][Image-to-point cloud registration] This paper proposes CA-I2P, which introduces a Channel Adaptive Adjustment Module (CAA) to enhance and filter channel-level discrepancies between image and point…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Image-to-point cloud registration
-  - cross-modal feature matching
-  - channel adaptivity
-  - optimal transport
-  - detector-free method
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Image-to-point cloud registration"
+  - "cross-modal feature matching"
+  - "channel adaptivity"
+  - "optimal transport"
+  - "detector-free method"
 date: 2026-05-08
 content_hash: 2d8b7cb7729b35a2
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Backdoor Attacks on Open Vocabulary Object Detectors via Multi-Modal Prompt Tuning
 description: >-
-  [AAAI2026][Autonomous Driving][backdoor attack] This paper presents the first study on backdoor attacks against open-vocabulary object detectors (OVODs), proposing TrAP (Trigger-Aware Prompt tuning), which jointly optimizes learnable prompts in both visual and textual branches alongside a learnable trigger to inject high-success-rate backdoors without modifying any model weights.
+  [AAAI2026][Autonomous Driving][backdoor attack] This paper presents the first study on backdoor attacks against open-vocabulary object detectors (OVODs), proposing TrAP (Trigger-Aware Prompt tuning)…
 tags:
-  - AAAI2026
-  - Autonomous Driving
-  - backdoor attack
-  - open-vocabulary object detection
-  - prompt tuning
-  - Grounding DINO
-  - GLIP
-  - adversarial security
+  - "AAAI2026"
+  - "Autonomous Driving"
+  - "backdoor attack"
+  - "open-vocabulary object detection"
+  - "prompt tuning"
+  - "Grounding DINO"
+  - "GLIP"
+  - "adversarial security"
 date: 2026-05-08
 content_hash: 5500b87f4eee123e
 ---

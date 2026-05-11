@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond Last-Click: An Optimal Mechanism for Ad Attribution
 description: >-
-  [NeurIPS 2025][AI Safety][Last-Click] This paper analyzes the strategic manipulation vulnerabilities of the Last-Click attribution mechanism from a game-theoretic perspective—platforms can obtain unfair attribution credit by falsifying timestamps—and proposes the Peer-Validated Mechanism (PVM), in which each platform's credit depends solely on the reports of other platforms (analogous to peer review). The paper theoretically proves that PVM is dominant strategy incentive compatible (DSIC) and optimal under homogeneous settings, improving attribution accuracy from 34% to 75% in the two-platform case.
+  [NeurIPS 2025][AI Safety][Last-Click] This paper analyzes the strategic manipulation vulnerabilities of the Last-Click attribution mechanism from a game-theoretic perspective—platforms can obtain unfair attribution credi…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - Last-Click
-  - Strategic Manipulation
-  - Dominant Strategy Incentive Compatibility
-  - Peer-Validated
-  - Ad Platforms
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "Last-Click"
+  - "Strategic Manipulation"
+  - "Dominant Strategy Incentive Compatibility"
+  - "Peer-Validated"
+  - "Ad Platforms"
 date: 2026-05-08
 content_hash: 7147ebfe32bdb962
 ---

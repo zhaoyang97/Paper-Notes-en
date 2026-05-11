@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Towards LLM-Empowered Knowledge Tracing via LLM-Student Hierarchical Behavior Alignment in Hyperbolic Space
 description: >-
-  [AAAI 2026][Self-Supervised Learning][Knowledge Tracing] This paper proposes L-HAKT, a framework that for the first time integrates LLM dual-agent design with hyperbolic geometry for knowledge tracing. A Teacher Agent parses exercise semantics and constructs a hierarchical knowledge graph, while a Student Agent simulates individual learning behaviors to generate synthetic interaction data. Hyperbolic contrastive learning is employed to calibrate the distributional gap between synthetic and real data. L-HAKT achieves an AUC of up to 80.29% across four educational datasets, with an AUC improvement of 13.03% over the GKT baseline on EdNet.
+  [AAAI 2026][Self-Supervised Learning][Knowledge Tracing] This paper proposes L-HAKT, a framework that for the first time integrates LLM dual-agent design with hyperbolic geometry for knowledge tracing. A Teacher Agent pa…
 tags:
-  - AAAI 2026
-  - Self-Supervised Learning
-  - Knowledge Tracing
-  - LLM Dual-Agent
-  - Hyperbolic Space
-  - Hierarchical Knowledge Graph
-  - Contrastive Alignment
-  - Learning Behavior Simulation
+  - "AAAI 2026"
+  - "Self-Supervised Learning"
+  - "Knowledge Tracing"
+  - "LLM Dual-Agent"
+  - "Hyperbolic Space"
+  - "Hierarchical Knowledge Graph"
+  - "Contrastive Alignment"
+  - "Learning Behavior Simulation"
 date: 2026-05-08
 content_hash: 00f7f59b775331f6
 ---

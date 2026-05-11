@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FedQS: Optimizing Gradient and Model Aggregation for Semi-Asynchronous Federated Learning
 description: >-
-  [NeurIPS 2025][Optimization][Federated Learning] This paper proposes FedQS, the first framework to simultaneously optimize both gradient aggregation and model aggregation strategies in semi-asynchronous federated learning (SAFL). By partitioning clients into four categories and adaptively adjusting training strategies, FedQS achieves comprehensive improvements over baselines in accuracy, convergence speed, and stability.
+  [NeurIPS 2025][Optimization][Federated Learning] This paper proposes FedQS, the first framework to simultaneously optimize both gradient aggregation and model aggregation strategies in semi-asynchronous federated learnin…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Federated Learning
-  - Semi-Asynchronous
-  - Gradient Aggregation
-  - Model Aggregation
-  - Divide-and-Conquer
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Federated Learning"
+  - "Semi-Asynchronous"
+  - "Gradient Aggregation"
+  - "Model Aggregation"
+  - "Divide-and-Conquer"
 date: 2026-05-08
 content_hash: 7a682d45a4444900
 ---

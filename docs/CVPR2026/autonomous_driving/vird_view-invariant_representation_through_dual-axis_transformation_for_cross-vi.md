@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VIRD: View-Invariant Representation through Dual-Axis Transformation for Cross-View Pose Estimation
 description: >-
-  [CVPR2026][Autonomous Driving][cross-view pose estimation] This paper proposes VIRD, which constructs view-invariant representations via dual-axis transformation (polar transformation + context-enhanced positional attention) to achieve state-of-the-art cross-view pose estimation without orientation priors, reducing position and orientation errors on KITTI by 50.7% and 76.5%, respectively.
+  [CVPR2026][Autonomous Driving][cross-view pose estimation] This paper proposes VIRD, which constructs view-invariant representations via dual-axis transformation (polar transformation + context-enhanced positional attent…
 tags:
-  - CVPR2026
-  - Autonomous Driving
-  - cross-view pose estimation
-  - view-invariant representation
-  - polar transformation
-  - positional attention
-  - autonomous driving localization
+  - "CVPR2026"
+  - "Autonomous Driving"
+  - "cross-view pose estimation"
+  - "view-invariant representation"
+  - "polar transformation"
+  - "positional attention"
+  - "autonomous driving localization"
 date: 2026-05-08
 content_hash: 247211ee5a04a471
 ---

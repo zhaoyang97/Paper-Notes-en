@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Anchoring and Rescaling Attention for Semantically Coherent Inbetweening
 description: >-
-  [CVPR 2026][LLM Evaluation][Generative inbetweening] This paper proposes KAB (Keyframe-Anchored Attention Bias) and ReTRo (Rescaled Temporal RoPE), two training-free inference-time methods built upon the Wan2.1 video diffusion model. These methods address semantic infidelity, frame inconsistency, and temporal rhythm instability in generative inbetweening (GI) with sparse keyframes under large-motion conditions. The paper also introduces TGI-Bench, the first text-conditioned GI evaluation benchmark.
+  [CVPR 2026][LLM Evaluation][Generative inbetweening] This paper proposes KAB (Keyframe-Anchored Attention Bias) and ReTRo (Rescaled Temporal RoPE)…
 tags:
-  - CVPR 2026
-  - LLM Evaluation
-  - Generative inbetweening
-  - attention anchoring
-  - temporal RoPE rescaling
-  - keyframe guidance
-  - video diffusion models
+  - "CVPR 2026"
+  - "LLM Evaluation"
+  - "Generative inbetweening"
+  - "attention anchoring"
+  - "temporal RoPE rescaling"
+  - "keyframe guidance"
+  - "video diffusion models"
 date: 2026-05-08
 content_hash: 52640e8cf7e24530
 ---

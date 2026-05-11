@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Scalable Spatial Intelligence via 2D-to-3D Data Lifting
 description: >-
-  [ICCV 2025][3D Vision][Spatial Intelligence] This paper proposes a scalable data generation pipeline that automatically converts single-view 2D images into metric-scale 3D representations—including point clouds, camera poses, and depth maps—by integrating depth estimation, camera calibration, and scale calibration. The pipeline produces COCO-3D and Objects365-v2-3D datasets comprising approximately 2 million scenes, yielding significant performance gains across multiple 3D tasks.
+  [ICCV 2025][3D Vision][Spatial Intelligence] This paper proposes a scalable data generation pipeline that automatically converts single-view 2D images into metric-scale 3D representations—including point clouds…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Spatial Intelligence
-  - 2D-to-3D
-  - Depth Estimation
-  - Scale Calibration
-  - Point Cloud Dataset
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Spatial Intelligence"
+  - "2D-to-3D"
+  - "Depth Estimation"
+  - "Scale Calibration"
+  - "Point Cloud Dataset"
 date: 2026-05-08
 content_hash: 8031ef75ace747b8
 ---

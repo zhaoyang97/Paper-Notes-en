@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Tiled Flash Linear Attention: More Efficient Linear RNN and xLSTM Kernels
 description: >-
-  [NeurIPS 2025][LLM Efficiency][Tiled Flash Linear Attention] This paper proposes TFLA (Tiled Flash Linear Attention), which achieves efficient linear RNN/mLSTM kernels through two-level sequence parallelism and tiling optimization, delivering significant wall-clock speedups over FlashAttention 3 and Mamba 2 (>2× in training vs. Mamba 2) while maintaining equivalent model accuracy.
+  [NeurIPS 2025][LLM Efficiency][Tiled Flash Linear Attention] This paper proposes TFLA (Tiled Flash Linear Attention), which achieves efficient linear RNN/mLSTM kernels through two-level sequence parallelism and tiling op…
 tags:
-  - NeurIPS 2025
-  - LLM Efficiency
-  - Tiled Flash Linear Attention
-  - mLSTM
-  - xLSTM
-  - Linear RNN
-  - CUDA Kernel
-  - Chunked Parallelism
+  - "NeurIPS 2025"
+  - "LLM Efficiency"
+  - "Tiled Flash Linear Attention"
+  - "mLSTM"
+  - "xLSTM"
+  - "Linear RNN"
+  - "CUDA Kernel"
+  - "Chunked Parallelism"
 date: 2026-05-08
 content_hash: 6070190080794979
 ---

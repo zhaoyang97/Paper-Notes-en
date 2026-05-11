@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CuMoLoS-MAE: A Masked Autoencoder for Remote Sensing Data Reconstruction
 description: >-
-  [NEURIPS2025][Autonomous Driving][Masked Autoencoder] This paper proposes CuMoLoS-MAE, a Masked Autoencoder combining a curriculum masking strategy with Monte Carlo stochastic ensemble inference for high-fidelity reconstruction and pixel-wise uncertainty quantification of remote sensing atmospheric profile data.
+  [NEURIPS2025][Autonomous Driving][Masked Autoencoder] This paper proposes CuMoLoS-MAE, a Masked Autoencoder combining a curriculum masking strategy with Monte Carlo stochastic ensemble inference for high-fidelity reconst…
 tags:
-  - NEURIPS2025
-  - Autonomous Driving
-  - Masked Autoencoder
-  - Remote Sensing Data Reconstruction
-  - Uncertainty Quantification
-  - Curriculum Learning
-  - Monte Carlo Ensemble
+  - "NEURIPS2025"
+  - "Autonomous Driving"
+  - "Masked Autoencoder"
+  - "Remote Sensing Data Reconstruction"
+  - "Uncertainty Quantification"
+  - "Curriculum Learning"
+  - "Monte Carlo Ensemble"
 date: 2026-05-08
 content_hash: 9894df10d5da016f
 ---

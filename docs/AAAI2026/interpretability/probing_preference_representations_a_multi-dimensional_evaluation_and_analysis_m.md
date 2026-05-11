@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Probing Preference Representations: A Multi-Dimensional Evaluation and Analysis Method for Reward Models
 description: >-
-  [AAAI 2026][Reward Model Evaluation] This paper proposes MRMBench, a benchmark that evaluates whether reward models (RMs) effectively capture multi-dimensional preferences via probing tasks across 6 dimensions (harmlessness, helpfulness, correctness, coherence, complexity, and verbosity). Probe performance is shown to strongly correlate with PPO alignment quality (Pearson $r > 0.8$), and an inference-time probing method is proposed that improves AlpacaEval win rate from 57.3% to 62.5%.
+  [AAAI 2026][Interpretability][Reward Model Evaluation] This paper proposes MRMBench, a benchmark that evaluates whether reward models (RMs) effectively capture multi-dimensional preferences via probing tasks across 6 dim…
 tags:
-  - AAAI 2026
-  - Reward Model Evaluation
-  - Preference Probing
-  - MRMBench
-  - Multi-Dimensional Preferences
-  - Inference-Time Probing
+  - "AAAI 2026"
+  - "Interpretability"
+  - "Reward Model Evaluation"
+  - "Preference Probing"
+  - "MRMBench"
+  - "Multi-Dimensional Preferences"
+  - "Inference-Time Probing"
 date: 2026-05-08
 content_hash: 48d4f13c359daecc
 ---

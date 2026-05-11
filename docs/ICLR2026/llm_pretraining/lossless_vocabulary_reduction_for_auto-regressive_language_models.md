@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Lossless Vocabulary Reduction for Auto-Regressive Language Models
 description: >-
-  [ICLR 2026][LLM Pretraining][Vocabulary Reduction] This paper establishes a **lossless vocabulary reduction** theoretical framework that efficiently converts any auto-regressive language model into an equivalent model using an arbitrary smaller vocabulary without accuracy loss, enabling effective collaboration (e.g., model ensembling) between language models with different tokenization schemes.
+  [ICLR 2026][LLM Pretraining][Vocabulary Reduction] This paper establishes a **lossless vocabulary reduction** theoretical framework that efficiently converts any auto-regressive language model into an equivalent model us…
 tags:
-  - ICLR 2026
-  - LLM Pretraining
-  - Vocabulary Reduction
-  - Auto-Regressive Language Models
-  - Tokenization
-  - Model Ensembling
-  - Lossless Conversion
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Vocabulary Reduction"
+  - "Auto-Regressive Language Models"
+  - "Tokenization"
+  - "Model Ensembling"
+  - "Lossless Conversion"
 date: 2026-05-08
 content_hash: 2c6105cbe804d4fc
 ---

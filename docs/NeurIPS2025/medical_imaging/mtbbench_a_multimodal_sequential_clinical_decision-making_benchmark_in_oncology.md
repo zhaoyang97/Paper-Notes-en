@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MTBBench: A Multimodal Sequential Clinical Decision-Making Benchmark in Oncology
 description: >-
-  [NeurIPS 2025][Medical Imaging][Multimodal Benchmark] This paper introduces MTBBench—the first clinical benchmark simultaneously covering three dimensions: multimodality, longitudinal temporal sequencing, and interactive agent workflows. It simulates the decision-making process of Molecular Tumor Boards (MTBs) to evaluate and enhance the multimodal longitudinal reasoning capabilities of AI agents in precision oncology.
+  [NeurIPS 2025][Medical Imaging][Multimodal Benchmark] This paper introduces MTBBench—the first clinical benchmark simultaneously covering three dimensions: multimodality, longitudinal temporal sequencing…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Multimodal Benchmark
-  - Oncology
-  - Molecular Tumor Board
-  - Longitudinal Reasoning
-  - Clinical Decision-Making Agent
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Multimodal Benchmark"
+  - "Oncology"
+  - "Molecular Tumor Board"
+  - "Longitudinal Reasoning"
+  - "Clinical Decision-Making Agent"
 date: 2026-05-08
 content_hash: b867453057093c06
 ---

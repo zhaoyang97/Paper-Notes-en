@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DenoiseRotator: Enhance Pruning Robustness for LLMs via Importance Concentration
 description: >-
-  [NeurIPS 2025][Image Restoration][LLM pruning] This paper proposes DenoiseRotator, a pre-pruning method that applies learnable orthogonal transformations to minimize the information entropy of parameter importance scores, concentrating importance into a small subset of parameters. On LLaMA3-70B under 2:4 semi-structured sparsity, perplexity degradation is reduced by 58% (8.1→3.4). The method is plug-and-play and compatible with Magnitude, Wanda, and SparseGPT.
+  [NeurIPS 2025][Image Restoration][LLM pruning] This paper proposes DenoiseRotator, a pre-pruning method that applies learnable orthogonal transformations to minimize the information entropy of parameter importance scores…
 tags:
-  - NeurIPS 2025
-  - Image Restoration
-  - LLM pruning
-  - orthogonal transformation
-  - entropy minimization
-  - importance concentration
-  - semi-structured sparsity
+  - "NeurIPS 2025"
+  - "Image Restoration"
+  - "LLM pruning"
+  - "orthogonal transformation"
+  - "entropy minimization"
+  - "importance concentration"
+  - "semi-structured sparsity"
 date: 2026-05-08
 content_hash: 1ee5559497f28f3c
 ---

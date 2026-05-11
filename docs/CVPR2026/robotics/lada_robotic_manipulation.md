@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Language-Grounded Decoupled Action Representation for Robotic Manipulation (LaDA)
 description: >-
-  [CVPR 2026][Robotics][action decoupling] LaDA is a framework that uses natural language as a semantic bridge to decouple continuous 7-DoF actions into three interpretable primitives — translation, rotation, and gripper — and employs soft-label contrastive learning to align cross-task action representations in a shared embedding space. With only 0.6B parameters, LaDA achieves a 93.6% success rate on LIBERO, outperforming all baselines with 1.3B–8.5B parameters.
+  [CVPR 2026][Robotics][action decoupling] LaDA is a framework that uses natural language as a semantic bridge to decouple continuous 7-DoF actions into three interpretable primitives — translation, rotation…
 tags:
-  - CVPR 2026
-  - Robotics
-  - action decoupling
-  - language semantic bridge
-  - soft-label contrastive learning
-  - VLA
-  - cross-task generalization
+  - "CVPR 2026"
+  - "Robotics"
+  - "action decoupling"
+  - "language semantic bridge"
+  - "soft-label contrastive learning"
+  - "VLA"
+  - "cross-task generalization"
 date: 2026-05-08
 content_hash: 02bc15844bcf17fd
 ---

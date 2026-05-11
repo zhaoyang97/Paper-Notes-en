@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TRIDENT: Tri-Modal Molecular Representation Learning with Taxonomic Annotations and Structural Relationships
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][Molecular property prediction] TRIDENT is a tri-modal molecular representation learning framework that introduces Hierarchical Taxonomic Annotations (HTA) as a third modality. It combines a volumetric contrastive loss for global tri-modal alignment with a functional group–text local alignment module, dynamically balancing the two objectives via a momentum mechanism. The framework achieves state-of-the-art performance across 18 molecular property prediction tasks.
+  [NeurIPS 2025][Self-Supervised Learning][Molecular property prediction] TRIDENT is a tri-modal molecular representation learning framework that introduces Hierarchical Taxonomic Annotations (HTA) as a third modality. It…
 tags:
-  - NeurIPS 2025
-  - Self-Supervised Learning
-  - Molecular property prediction
-  - tri-modal alignment
-  - hierarchical taxonomic annotation
-  - volumetric contrastive loss
-  - local alignment
+  - "NeurIPS 2025"
+  - "Self-Supervised Learning"
+  - "Molecular property prediction"
+  - "tri-modal alignment"
+  - "hierarchical taxonomic annotation"
+  - "volumetric contrastive loss"
+  - "local alignment"
 date: 2026-05-08
 content_hash: 9d873c6c706ba848
 ---

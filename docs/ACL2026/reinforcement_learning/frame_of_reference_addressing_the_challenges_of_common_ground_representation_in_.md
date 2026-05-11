@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Frame of Reference: Addressing the Challenges of Common Ground Representation in Dialogue
 description: >-
-  [ACL 2026][Reinforcement Learning][Common Ground] This paper introduces the IndiRef benchmark for evaluating dialogue systems' ability to establish and exploit persistent common ground through "relational references" (e.g., "the café next to the park we visited yesterday"). Experiments show that existing LLMs achieve no more than 50% accuracy even under full-context conditions, and a combination of synthetic data generation and GRPO reinforcement learning training yields performance improvements of 15–20%.
+  [ACL 2026][Reinforcement Learning][Common Ground] This paper introduces the IndiRef benchmark for evaluating dialogue systems' ability to establish and exploit persistent common ground through "relational references" (e.…
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - Common Ground
-  - Relational Reference
-  - Situated Dialogue
-  - Dialogue Memory
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "Common Ground"
+  - "Relational Reference"
+  - "Situated Dialogue"
+  - "Dialogue Memory"
 date: 2026-05-08
 content_hash: 18a27691151a2c3b
 ---

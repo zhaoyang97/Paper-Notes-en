@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Diffusion-Driven Two-Stage Active Learning for Low-Budget Semantic Segmentation
 description: >-
-  [NeurIPS 2025][Segmentation][Active Learning] A two-stage active learning pipeline (coverage → uncertainty) is proposed, leveraging multi-scale features from pretrained diffusion models to achieve efficient semantic segmentation under extremely low annotation budgets.
+  [NeurIPS 2025][Segmentation][Active Learning] A two-stage active learning pipeline (coverage → uncertainty) is proposed, leveraging multi-scale features from pretrained diffusion models to achieve efficient semantic segm…
 tags:
-  - NeurIPS 2025
-  - Segmentation
-  - Active Learning
-  - Semantic Segmentation
-  - Diffusion Models
-  - Uncertainty Sampling
-  - Low-Budget Annotation
+  - "NeurIPS 2025"
+  - "Segmentation"
+  - "Active Learning"
+  - "Semantic Segmentation"
+  - "Diffusion Models"
+  - "Uncertainty Sampling"
+  - "Low-Budget Annotation"
 date: 2026-05-08
 content_hash: 4598b1c37910a9a8
 ---

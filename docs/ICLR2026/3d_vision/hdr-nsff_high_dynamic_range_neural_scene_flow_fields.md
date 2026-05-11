@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HDR-NSFF: High Dynamic Range Neural Scene Flow Fields
 description: >-
-  [ICLR 2026][3D Vision][HDR reconstruction] This paper proposes HDR-NSFF, which shifts HDR video reconstruction from the conventional 2D pixel-level fusion paradigm to 4D spatiotemporal modeling. From alternating-exposure monocular videos, it jointly reconstructs HDR radiance fields, 3D scene flow, geometry, and tone-mapping, enabling temporally and spatially consistent dynamic HDR novel view synthesis.
+  [ICLR 2026][3D Vision][HDR reconstruction] This paper proposes HDR-NSFF, which shifts HDR video reconstruction from the conventional 2D pixel-level fusion paradigm to 4D spatiotemporal modeling. From alternating-exposure…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - HDR reconstruction
-  - neural scene flow fields
-  - dynamic scene
-  - tone-mapping
-  - 4D radiance field
+  - "ICLR 2026"
+  - "3D Vision"
+  - "HDR reconstruction"
+  - "neural scene flow fields"
+  - "dynamic scene"
+  - "tone-mapping"
+  - "4D radiance field"
 date: 2026-05-08
 content_hash: 01710eb729ffff9e
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Communicating Plans, Not Percepts: Scalable Multi-Agent Coordination with Embodied World Models
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Multi-Agent Reinforcement Learning] This paper proposes an "intention communication" architecture based on lightweight world models, enabling multi-agent coordination by generating and sharing future trajectory plans. The approach comprehensively outperforms end-to-end emergent communication methods in both scalability and performance.
+  [NeurIPS 2025][Reinforcement Learning][Multi-Agent Reinforcement Learning] This paper proposes an "intention communication" architecture based on lightweight world models…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Multi-Agent Reinforcement Learning
-  - World Models
-  - Communication Protocol
-  - Intention Communication
-  - Dec-POMDP
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Multi-Agent Reinforcement Learning"
+  - "World Models"
+  - "Communication Protocol"
+  - "Intention Communication"
+  - "Dec-POMDP"
 date: 2026-05-08
 content_hash: 4a05f5566dc17722
 ---

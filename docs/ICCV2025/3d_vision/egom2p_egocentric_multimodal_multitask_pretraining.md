@@ -2,18 +2,18 @@
 title: >-
   [Paper Note] EgoM2P: Egocentric Multimodal Multitask Pretraining
 description: >-
-  [ICCV 2025][3D Vision][Egocentric Vision] EgoM2P is the first large-scale multimodal multitask model for egocentric 4D understanding. It unifies four modalities — RGB video, depth, gaze, and camera trajectory — within a temporally-aware masked modeling framework, matching or surpassing task-specific models on multiple downstream tasks while being an order of magnitude faster.
+  [ICCV 2025][3D Vision][Egocentric Vision] EgoM2P is the first large-scale multimodal multitask model for egocentric 4D understanding. It unifies four modalities — RGB video, depth, gaze…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Egocentric Vision
-  - Multimodal Pretraining
-  - Multitask Learning
-  - Masked Modeling
-  - Gaze Prediction
-  - Camera Tracking
-  - Depth Estimation
-  - Video Generation
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Egocentric Vision"
+  - "Multimodal Pretraining"
+  - "Multitask Learning"
+  - "Masked Modeling"
+  - "Gaze Prediction"
+  - "Camera Tracking"
+  - "Depth Estimation"
+  - "Video Generation"
 date: 2026-05-08
 content_hash: 1aa041e09cc0c97b
 ---

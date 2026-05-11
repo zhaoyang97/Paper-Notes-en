@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OVERT: A Benchmark for Over-Refusal Evaluation on Text-to-Image Models
 description: >-
-  [NeurIPS 2025][Image Generation][over-refusal] This paper presents OVERT, the first large-scale benchmark for evaluating over-refusal in text-to-image (T2I) models, comprising 4,600 benign prompts and 1,785 harmful prompts across 9 safety categories. It systematically evaluates over-refusal behavior in 5 mainstream T2I models, revealing a strong correlated trade-off between safety and utility.
+  [NeurIPS 2025][Image Generation][over-refusal] This paper presents OVERT, the first large-scale benchmark for evaluating over-refusal in text-to-image (T2I) models, comprising 4,600 benign prompts and 1…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - over-refusal
-  - text-to-image models
-  - safety alignment
-  - benchmark
-  - safety-utility trade-off
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "over-refusal"
+  - "text-to-image models"
+  - "safety alignment"
+  - "benchmark"
+  - "safety-utility trade-off"
 date: 2026-05-08
 content_hash: ee8405368852e9f0
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Bridging SFT and RL: Dynamic Policy Optimization for Robust Reasoning
 description: >-
-  [ACL 2026][Reinforcement Learning][SFT-RL integration] This paper proposes DYPO (Dynamic Policy Optimization), which dynamically routes samples to different optimization paths based on difficulty grading — Hard samples use multi-teacher distillation to reduce SFT bias, while Mid samples use Group Alignment Loss to reduce RL variance. DYPO achieves an average improvement of 4.8% on mathematical reasoning benchmarks and 13.3% on OOD tasks.
+  [ACL 2026][Reinforcement Learning][SFT-RL integration] This paper proposes DYPO (Dynamic Policy Optimization), which dynamically routes samples to different optimization paths based on difficulty grading — Hard samples u…
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - SFT-RL integration
-  - bias-variance tradeoff
-  - dynamic difficulty grading
-  - multi-teacher distillation
-  - gradient variance reduction
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "SFT-RL integration"
+  - "bias-variance tradeoff"
+  - "dynamic difficulty grading"
+  - "multi-teacher distillation"
+  - "gradient variance reduction"
 date: 2026-05-08
 content_hash: 683c40a5f1f4d788
 ---

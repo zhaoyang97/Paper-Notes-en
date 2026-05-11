@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Hankel Singular Value Regularization for Highly Compressible State Space Models
 description: >-
-  [NeurIPS 2025][Model Compression][SSM compression] By regularizing the **Hankel singular value nuclear norm** of SSM layers during training to encourage rapid decay, the trained model can be compressed to **10%** of its original order via balanced truncation with negligible accuracy loss. A block-diagonal rotation matrix parameterization reduces Gramian computation from $\mathcal{O}(n^3)$ to $\mathcal{O}(n^2)$.
+  [NeurIPS 2025][Model Compression][SSM compression] By regularizing the **Hankel singular value nuclear norm** of SSM layers during training to encourage rapid decay…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - SSM compression
-  - Hankel singular values
-  - balanced truncation
-  - regularization
-  - Long Range Arena
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "SSM compression"
+  - "Hankel singular values"
+  - "balanced truncation"
+  - "regularization"
+  - "Long Range Arena"
 date: 2026-05-08
 content_hash: c5d5f1aca7055d94
 ---

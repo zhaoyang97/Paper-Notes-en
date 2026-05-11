@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ConstStyle: Robust Domain Generalization with Unified Style Transformation
 description: >-
-  [ICCV 2025][LLM Pretraining][domain generalization] This paper proposes ConstStyle, a framework that constructs a theoretically grounded **Unified Domain** to which all training samples are style-aligned during training, while test samples from unseen domains are partially projected toward this unified domain at inference time, effectively reducing the domain gap and improving generalization performance.
+  [ICCV 2025][LLM Pretraining][domain generalization] This paper proposes ConstStyle, a framework that constructs a theoretically grounded **Unified Domain** to which all training samples are style-aligned during training…
 tags:
-  - ICCV 2025
-  - LLM Pretraining
-  - domain generalization
-  - style transformation
-  - unified domain
-  - distribution alignment
-  - robustness
+  - "ICCV 2025"
+  - "LLM Pretraining"
+  - "domain generalization"
+  - "style transformation"
+  - "unified domain"
+  - "distribution alignment"
+  - "robustness"
 date: 2026-05-08
 content_hash: 56730ba87a69603d
 ---

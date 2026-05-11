@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Know Your Attention Maps: Class-specific Token Masking for Weakly Supervised Semantic Segmentation
 description: >-
-  [ICCV 2025][Segmentation][Weakly Supervised Semantic Segmentation] This paper proposes an end-to-end weakly supervised semantic segmentation method that introduces multiple [CLS] tokens (one per class) into a ViT, applies random masking to [CLS] token output embeddings, and prunes redundant attention heads. Class-specific pseudo segmentation masks are generated directly from self-attention maps without any additional CAM module.
+  [ICCV 2025][Segmentation][Weakly Supervised Semantic Segmentation] This paper proposes an end-to-end weakly supervised semantic segmentation method that introduces multiple [CLS] tokens (one per class) into a ViT…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - Weakly Supervised Semantic Segmentation
-  - Vision Transformer
-  - Attention Maps
-  - CLS Token
-  - Attention Head Pruning
+  - "ICCV 2025"
+  - "Segmentation"
+  - "Weakly Supervised Semantic Segmentation"
+  - "Vision Transformer"
+  - "Attention Maps"
+  - "CLS Token"
+  - "Attention Head Pruning"
 date: 2026-05-08
 content_hash: a3f44e7c58d81e49
 ---

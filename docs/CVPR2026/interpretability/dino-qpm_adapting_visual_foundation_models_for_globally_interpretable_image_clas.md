@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] DINO-QPM: Adapting Visual Foundation Models for Globally Interpretable Image Classification
 description: >-
-  [CVPR 2026][Interpretable Classification] This paper proposes DINO-QPM, a lightweight interpretability adapter that transforms the complex, high-dimensional features of a frozen DINOv2 backbone into contrastive, class-agnostic interpretable representations. Through quadratic programming for sparse feature selection and class-level feature assignment, the method simultaneously surpasses DINOv2 linear probing in accuracy and all comparable methods in interpretability on CUB-2011 and Stanford Cars.
+  [CVPR 2026][Interpretability][Interpretable Classification] This paper proposes DINO-QPM, a lightweight interpretability adapter that transforms the complex…
 tags:
-  - CVPR 2026
-  - Interpretable Classification
-  - DINOv2
-  - Quadratic Programming
-  - Visual Foundation Models
-  - Feature Sparsification
+  - "CVPR 2026"
+  - "Interpretability"
+  - "Interpretable Classification"
+  - "DINOv2"
+  - "Quadratic Programming"
+  - "Visual Foundation Models"
+  - "Feature Sparsification"
 date: 2026-05-08
 content_hash: 1d9ec5d76fcbb8b6
 ---

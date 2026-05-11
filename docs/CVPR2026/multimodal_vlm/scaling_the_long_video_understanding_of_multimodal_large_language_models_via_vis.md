@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Scaling the Long Video Understanding of Multimodal Large Language Models via Visual Memory Mechanism
 description: >-
-  [CVPR2026][Multimodal VLM][Long video understanding] This paper proposes FlexMem — a training-free visual memory mechanism that constructs a visual memory bank via iterative dual-pathway KV cache compression, and introduces both encoding-based and fast index-based memory retrieval strategies, enabling MLLMs to process 1000+ frame long videos on a single 3090 GPU while substantially outperforming existing efficient video understanding methods.
+  [CVPR2026][Multimodal VLM][Long video understanding] This paper proposes FlexMem — a training-free visual memory mechanism that constructs a visual memory bank via iterative dual-pathway KV cache compression…
 tags:
-  - CVPR2026
-  - Multimodal VLM
-  - Long video understanding
-  - visual memory
-  - KV cache compression
-  - training-free
-  - streaming video
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "Long video understanding"
+  - "visual memory"
+  - "KV cache compression"
+  - "training-free"
+  - "streaming video"
 date: 2026-05-08
 content_hash: 38ab3408df844d56
 ---

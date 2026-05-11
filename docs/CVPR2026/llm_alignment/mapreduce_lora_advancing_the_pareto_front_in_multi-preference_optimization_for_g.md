@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] MapReduce LoRA: Advancing the Pareto Front in Multi-Preference Optimization for Generative Models
 description: >-
-  [CVPR 2026][LLM Alignment][Multi-Preference Optimization] This paper proposes MapReduce LoRA and RaTE as two complementary methods for advancing the Pareto front in multi-preference optimization: the former uses a "Map (parallel preference expert training) + Reduce (iterative merging)" strategy to progressively advance the Pareto front; the latter learns reward-aware token embeddings for inference-time composable preference control.
+  [CVPR 2026][LLM Alignment][Multi-Preference Optimization] This paper proposes MapReduce LoRA and RaTE as two complementary methods for advancing the Pareto front in multi-preference optimization: the former uses a "Map (…
 tags:
-  - CVPR 2026
-  - LLM Alignment
-  - Multi-Preference Optimization
-  - LoRA Merging
-  - Pareto Front
-  - Alignment Tax
-  - RLHF
-  - Text-to-Image
-  - Text-to-Video
+  - "CVPR 2026"
+  - "LLM Alignment"
+  - "Multi-Preference Optimization"
+  - "LoRA Merging"
+  - "Pareto Front"
+  - "Alignment Tax"
+  - "RLHF"
+  - "Text-to-Image"
+  - "Text-to-Video"
 date: 2026-05-08
 content_hash: 7f34952a98194a9a
 ---

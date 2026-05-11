@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Aha: Predicting What Matters Next — Online Highlight Detection Without Looking Ahead
 description: >-
-  [NeurIPS 2025][Autonomous Driving][Online Highlight Detection] Aha proposes the first autoregressive framework for Online Highlight Detection (OHD), featuring a decoupled multi-objective prediction head (relevance / informativeness / uncertainty) and a novel Dynamic SinkCache memory mechanism. Under strict causal constraints with no access to future frames, Aha surpasses prior offline methods on TVSum and Mr.Hisum benchmarks by +5.9% and +8.3% mAP, respectively.
+  [NeurIPS 2025][Autonomous Driving][Online Highlight Detection] Aha proposes the first autoregressive framework for Online Highlight Detection (OHD)…
 tags:
-  - NeurIPS 2025
-  - Autonomous Driving
-  - Online Highlight Detection
-  - Streaming Video
-  - Autoregressive
-  - Video-Language Model
-  - Uncertainty Modeling
+  - "NeurIPS 2025"
+  - "Autonomous Driving"
+  - "Online Highlight Detection"
+  - "Streaming Video"
+  - "Autoregressive"
+  - "Video-Language Model"
+  - "Uncertainty Modeling"
 date: 2026-05-08
 content_hash: 8d23a954b532e33a
 ---

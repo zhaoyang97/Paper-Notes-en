@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Miburi: Towards Expressive Interactive Gesture Synthesis
 description: >-
-  [CVPR 2026][Human Understanding][Co-speech gesture generation] Miburi is proposed as the first online causal framework for real-time synchronized whole-body gesture and facial expression generation, achieved by directly leveraging the internal token stream of the speech-text large model Moshi and a 2D causal Transformer.
+  [CVPR 2026][Human Understanding][Co-speech gesture generation] Miburi is proposed as the first online causal framework for real-time synchronized whole-body gesture and facial expression generation…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Co-speech gesture generation
-  - embodied dialogue agent
-  - causal autoregression
-  - real-time generation
-  - residual vector quantization
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Co-speech gesture generation"
+  - "embodied dialogue agent"
+  - "causal autoregression"
+  - "real-time generation"
+  - "residual vector quantization"
 date: 2026-05-08
 content_hash: d79624994f65ccc0
 ---

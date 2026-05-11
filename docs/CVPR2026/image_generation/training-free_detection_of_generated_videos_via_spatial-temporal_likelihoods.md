@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Training-free Detection of Generated Videos via Spatial-Temporal Likelihoods
 description: >-
-  [CVPR 2026][Image Generation][Zero-shot detection] This paper proposes STALL, a training-free zero-shot generated video detector that jointly models per-frame spatial likelihoods and inter-frame temporal likelihoods in a whitened embedding space. It requires only real video calibration and achieves robust detection across diverse generative models.
+  [CVPR 2026][Image Generation][Zero-shot detection] This paper proposes STALL, a training-free zero-shot generated video detector that jointly models per-frame spatial likelihoods and inter-frame temporal likelihoods in a…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Zero-shot detection
-  - generated video detection
-  - likelihood estimation
-  - whitening transform
-  - spatial-temporal modeling
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Zero-shot detection"
+  - "generated video detection"
+  - "likelihood estimation"
+  - "whitening transform"
+  - "spatial-temporal modeling"
 date: 2026-05-08
 content_hash: 02f202a6cf8e231f
 ---

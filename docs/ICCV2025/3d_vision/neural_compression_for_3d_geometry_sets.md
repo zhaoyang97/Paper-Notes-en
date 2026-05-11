@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Neural Compression for 3D Geometry Sets
 description: >-
-  [ICCV 2025][3D Vision][3D geometry compression] This paper proposes NeCGS, the first neural compression paradigm capable of compressing geometry sets containing thousands of diverse 3D mesh models at ratios up to 900×, achieving high-fidelity reconstruction via a TSDF-Def implicit representation and a quantization-aware auto-decoder.
+  [ICCV 2025][3D Vision][3D geometry compression] This paper proposes NeCGS, the first neural compression paradigm capable of compressing geometry sets containing thousands of diverse 3D mesh models at ratios up to 900×…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D geometry compression
-  - neural compression
-  - TSDF
-  - auto-decoder
-  - geometry sets
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D geometry compression"
+  - "neural compression"
+  - "TSDF"
+  - "auto-decoder"
+  - "geometry sets"
 date: 2026-05-08
 content_hash: f3634867a0f916a1
 ---

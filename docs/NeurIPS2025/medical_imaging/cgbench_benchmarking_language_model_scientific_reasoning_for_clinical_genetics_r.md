@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CGBench: Benchmarking Language Model Scientific Reasoning for Clinical Genetics Research
 description: >-
-  [NeurIPS 2025][Medical Imaging][clinical genetics] This paper introduces CGBench, a clinical genetics benchmark grounded in ClinGen expert annotations, designed to evaluate the scientific literature reasoning capabilities of LLMs from both variant and gene curation perspectives. The benchmark encompasses three tasks—evidence scoring, evidence verification, and experimental evidence extraction—and finds that reasoning models perform best on fine-grained tasks but underperform non-reasoning models on high-level judgments.
+  [NeurIPS 2025][Medical Imaging][clinical genetics] This paper introduces CGBench, a clinical genetics benchmark grounded in ClinGen expert annotations…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - clinical genetics
-  - language models
-  - scientific reasoning
-  - benchmark
-  - evidence evaluation
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "clinical genetics"
+  - "language models"
+  - "scientific reasoning"
+  - "benchmark"
+  - "evidence evaluation"
 date: 2026-05-08
 content_hash: 32879ecc81d59424
 ---

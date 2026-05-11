@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] MMAIF: Multi-task and Multi-degradation All-in-One for Image Fusion with Language Guidance
 description: >-
-  [ICCV 2025][Image Generation][Image Fusion] MMAIF proposes a unified multi-task, multi-degradation, language-guided image fusion framework that operates in latent space via a realistic degradation pipeline and a modernized DiT architecture. It offers both a regression and a Flow Matching variant, surpassing existing restoration+fusion pipelines across diverse degraded fusion tasks.
+  [ICCV 2025][Image Generation][Image Fusion] MMAIF proposes a unified multi-task, multi-degradation, language-guided image fusion framework that operates in latent space via a realistic degradation pipeline and a moderniz…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Image Fusion
-  - Diffusion Transformer
-  - Multi-task
-  - Multi-degradation
-  - Language Guidance
-  - Flow Matching
-  - MoE
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Image Fusion"
+  - "Diffusion Transformer"
+  - "Multi-task"
+  - "Multi-degradation"
+  - "Language Guidance"
+  - "Flow Matching"
+  - "MoE"
 date: 2026-05-08
 content_hash: c61c2cd3bc134a18
 ---

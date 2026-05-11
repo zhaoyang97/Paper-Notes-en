@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Do It for HER: First-Order Temporal Logic Reward Specification in Reinforcement Learning
 description: >-
-  [AAAI 2026][Reinforcement Learning][LTLfMT] This paper proposes a novel reward specification framework based on Linear Temporal Logic over finite traces modulo theories (LTLfMT), replacing manually coded labeling functions with first-order logic formulas. Combined with CRM and HER to address the inherent sparse reward problem in logic-based specifications, the framework achieves significant improvements on continuous control tasks.
+  [AAAI 2026][Reinforcement Learning][LTLfMT] This paper proposes a novel reward specification framework based on Linear Temporal Logic over finite traces modulo theories (LTLfMT)…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - LTLfMT
-  - temporal logic
-  - reward specification
-  - Hindsight Experience Replay
-  - sparse reward
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "LTLfMT"
+  - "temporal logic"
+  - "reward specification"
+  - "Hindsight Experience Replay"
+  - "sparse reward"
 date: 2026-05-08
 content_hash: 6e46a55045529a8a
 ---

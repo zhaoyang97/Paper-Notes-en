@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] FutureMind: Equipping Small Language Models with Strategic Thinking-Pattern Priors via Adaptive Knowledge Distillation
 description: >-
-  [ICLR 2026][Small Language Models] This paper proposes FutureMind, a training-free framework that distills structured reasoning and retrieval strategies from LLMs into reusable thinking-pattern priors. Through a four-stage pipeline (question analysis → logical reasoning → strategy planning → retrieval guidance) and three retrieval paradigms, FutureMind enables SLMs to achieve state-of-the-art performance on multi-hop QA benchmarks.
+  [ICLR 2026][Information Retrieval & RAG][Small Language Models] This paper proposes FutureMind, a training-free framework that distills structured reasoning and retrieval strategies from LLMs into reusable thinking-patte…
 tags:
-  - ICLR 2026
-  - Small Language Models
-  - Thinking-Pattern Distillation
-  - Retrieval Strategy
-  - Multi-hop QA
-  - Modular Reasoning
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Small Language Models"
+  - "Thinking-Pattern Distillation"
+  - "Retrieval Strategy"
+  - "Multi-hop QA"
+  - "Modular Reasoning"
 date: 2026-05-08
 content_hash: 0719ba0105b5c8f6
 ---

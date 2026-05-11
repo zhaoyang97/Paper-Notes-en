@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Few-Shot Incremental 3D Object Detection in Dynamic Indoor Environments
 description: >-
-  [CVPR 2026][Object Detection][Few-shot incremental learning] This paper proposes FI3Det, the first few-shot incremental 3D object detection framework. During the base training stage, a VLM-guided unknown object learning module enables early awareness of potential novel categories. During the incremental stage, a gated multimodal prototype imprinting module fuses 2D semantic and 3D geometric features for novel class detection. FI3Det achieves an average improvement of 17.37% in novel class mAP on ScanNet V2 and SUN RGB-D.
+  [CVPR 2026][Object Detection][Few-shot incremental learning] This paper proposes FI3Det, the first few-shot incremental 3D object detection framework. During the base training stage…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - Few-shot incremental learning
-  - 3D object detection
-  - vision-language models
-  - multimodal prototypes
-  - indoor scene understanding
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Few-shot incremental learning"
+  - "3D object detection"
+  - "vision-language models"
+  - "multimodal prototypes"
+  - "indoor scene understanding"
 date: 2026-05-08
 content_hash: 95b8dd4385cfbf02
 ---

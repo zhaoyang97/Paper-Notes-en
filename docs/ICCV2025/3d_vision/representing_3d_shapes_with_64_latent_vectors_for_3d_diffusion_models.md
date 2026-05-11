@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Representing 3D Shapes with 64 Latent Vectors for 3D Diffusion Models
 description: >-
-  [ICCV 2025][3D Vision][3D VAE] This paper proposes COD-VAE, a two-stage autoencoder framework—comprising a progressive encoder, a triplane decoder, and uncertainty-guided token pruning—that encodes 3D shapes into only 64 one-dimensional latent vectors, achieving a 16× compression ratio and 20.8× generation speedup while maintaining reconstruction quality.
+  [ICCV 2025][3D Vision][3D VAE] This paper proposes COD-VAE, a two-stage autoencoder framework—comprising a progressive encoder, a triplane decoder…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D VAE
-  - Compact Latent Space
-  - 3D Diffusion Models
-  - Triplane Decoding
-  - Token Pruning
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D VAE"
+  - "Compact Latent Space"
+  - "3D Diffusion Models"
+  - "Triplane Decoding"
+  - "Token Pruning"
 date: 2026-05-08
 content_hash: 4f9d45cd672e4a00
 ---

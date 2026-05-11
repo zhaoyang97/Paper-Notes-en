@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] STRUCTURE: With Limited Data for Multimodal Alignment, Let the Structure Guide You
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Multimodal alignment] This paper proposes STRUCTURE regularization and a representation-similarity-based layer selection strategy that achieves high-quality cross-modal alignment between frozen unimodal foundation models using only tens of thousands of paired samples (less than 1% of conventional data requirements), yielding average improvements of 51.6% and 91.8% across 24 zero-shot classification and retrieval benchmarks.
+  [NeurIPS 2025][Multimodal VLM][Multimodal alignment] This paper proposes STRUCTURE regularization and a representation-similarity-based layer selection strategy that achieves high-quality cross-modal alignment between fr…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Multimodal alignment
-  - low-data learning
-  - structure regularization
-  - frozen-encoder alignment
-  - layer selection
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Multimodal alignment"
+  - "low-data learning"
+  - "structure regularization"
+  - "frozen-encoder alignment"
+  - "layer selection"
 date: 2026-05-08
 content_hash: c3a03ee2392ff650
 ---

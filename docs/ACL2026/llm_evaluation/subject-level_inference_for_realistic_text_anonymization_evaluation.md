@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Subject-level Inference for Realistic Text Anonymization Evaluation
 description: >-
-  [ACL 2026][LLM Evaluation][Text Anonymization] SPIA introduces the first subject-level PII inference evaluation benchmark (675 documents, 1,712 subjects, 7,040 PII instances), revealing that even when 90%+ of PII spans are redacted, the subject-level inference protection rate can be as low as 33%, and that anonymization focused on a single target subject leads to greater exposure of non-target subjects.
+  [ACL 2026][LLM Evaluation][Text Anonymization] SPIA introduces the first subject-level PII inference evaluation benchmark (675 documents, 1,712 subjects, 7,040 PII instances)…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - Text Anonymization
-  - Privacy Evaluation
-  - Subject-level Inference
-  - PII Reasoning
-  - Multi-subject Protection
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "Text Anonymization"
+  - "Privacy Evaluation"
+  - "Subject-level Inference"
+  - "PII Reasoning"
+  - "Multi-subject Protection"
 date: 2026-05-08
 content_hash: 6e4e1f995aa38b02
 ---

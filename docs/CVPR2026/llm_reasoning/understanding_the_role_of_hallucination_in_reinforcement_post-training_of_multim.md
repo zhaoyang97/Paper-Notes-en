@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Understanding the Role of Hallucination in Reinforcement Post-Training of Multimodal Reasoning Models
 description: >-
-  [CVPR 2026][LLM Reasoning][Multimodal Reasoning] This paper proposes the Hallucination-as-Cue analytical framework, systematically investigating the true mechanisms underlying RL post-training of multimodal reasoning models via three modality-specific corruption strategies (blank image, random image, text removal). The study finds that GRPO training with 100% corrupted visual inputs still yields significant improvements in reasoning performance, challenging the prevailing assumption that RL training effectively leverages visual information.
+  [CVPR 2026][LLM Reasoning][Multimodal Reasoning] This paper proposes the Hallucination-as-Cue analytical framework, systematically investigating the true mechanisms underlying RL post-training of multimodal reasoning mod…
 tags:
-  - CVPR 2026
-  - LLM Reasoning
-  - Multimodal Reasoning
-  - Reinforcement Learning Post-Training
-  - Hallucination Analysis
-  - GRPO
-  - Modality Corruption
+  - "CVPR 2026"
+  - "LLM Reasoning"
+  - "Multimodal Reasoning"
+  - "Reinforcement Learning Post-Training"
+  - "Hallucination Analysis"
+  - "GRPO"
+  - "Modality Corruption"
 date: 2026-05-08
 content_hash: 3576da0353d869a4
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] On the Sample Complexity of Differentially Private Policy Optimization
 description: >-
-  [NeurIPS 2025][LLM Safety][Differential Privacy] This paper presents the first systematic study of sample complexity for policy optimization (PO) under differential privacy (DP) constraints. It proposes a unified meta-algorithm framework and analyzes three private policy optimization algorithms—DP-PG, DP-NPG, and DP-REBEL—proving that the privacy cost typically appears only as a lower-order term in the sample complexity.
+  [NeurIPS 2025][LLM Safety][Differential Privacy] This paper presents the first systematic study of sample complexity for policy optimization (PO) under differential privacy (DP) constraints. It proposes a unified meta-al…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - Differential Privacy
-  - Policy Optimization
-  - Sample Complexity
-  - Reinforcement Learning
-  - Privacy Protection
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "Differential Privacy"
+  - "Policy Optimization"
+  - "Sample Complexity"
+  - "Reinforcement Learning"
+  - "Privacy Protection"
 date: 2026-05-08
 content_hash: a655fb36e1b92612
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] ABRA: Teleporting Fine-Tuned Knowledge Across Domains for Open-Vocabulary Object Detection
 description: >-
-  [CVPR 2026][Object Detection][Open-vocabulary object detection] ABRA decouples domain knowledge from category knowledge by constructing class-agnostic domain experts via Objectification, extracting lightweight per-category residuals via SVFT, and aligning weight spaces through Orthogonal Procrustes rotation—enabling detection capability transfer to a target domain even when no data for certain categories exists therein.
+  [CVPR 2026][Object Detection][Open-vocabulary object detection] ABRA decouples domain knowledge from category knowledge by constructing class-agnostic domain experts via Objectification…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - Open-vocabulary object detection
-  - domain adaptation
-  - weight-space transfer
-  - SVD fine-tuning
-  - cross-domain knowledge transfer
-  - Orthogonal Procrustes
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Open-vocabulary object detection"
+  - "domain adaptation"
+  - "weight-space transfer"
+  - "SVD fine-tuning"
+  - "cross-domain knowledge transfer"
+  - "Orthogonal Procrustes"
 date: 2026-05-08
 content_hash: e870a3bcac344119
 ---

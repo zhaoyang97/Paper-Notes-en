@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Fast 3D Surrogate Modeling for Data Center Thermal Management
 description: >-
-  [AAAI 2026][3D Vision][Surrogate modeling] This paper develops a vision-based 3D surrogate modeling framework for data centers. Server workloads, fan speeds, and air-conditioning temperature setpoints are encoded as 3D voxel representations, and architectures including 3D CNN U-Net, 3D Fourier Neural Operator, and 3D Vision Transformer are employed for real-time temperature field prediction. The proposed framework achieves inference speeds up to 20,000× faster than traditional CFD solvers while enabling a 7% reduction in energy consumption.
+  [AAAI 2026][3D Vision][Surrogate modeling] This paper develops a vision-based 3D surrogate modeling framework for data centers. Server workloads, fan speeds…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - Surrogate modeling
-  - data center thermal management
-  - 3D voxelization
-  - Fourier neural operator
-  - temperature prediction
+  - "AAAI 2026"
+  - "3D Vision"
+  - "Surrogate modeling"
+  - "data center thermal management"
+  - "3D voxelization"
+  - "Fourier neural operator"
+  - "temperature prediction"
 date: 2026-05-08
 content_hash: e4696bda26ee888b
 ---

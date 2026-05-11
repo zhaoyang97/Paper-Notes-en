@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RAGTrack: Language-aware RGBT Tracking with Retrieval-Augmented Generation
 description: >-
-  [CVPR2026][Video Understanding][RGBT Tracking] This paper is the first to introduce textual descriptions into RGBT tracking, proposing RAGTrack, a retrieval-augmented generation (RAG)-based framework. Through a Multimodal Transformer Encoder (MTE), Adaptive Token Fusion (ATF), and a Context-aware Reasoning Module (CRM), it achieves state-of-the-art performance on four RGBT benchmarks.
+  [CVPR2026][Video Understanding][RGBT Tracking] This paper is the first to introduce textual descriptions into RGBT tracking, proposing RAGTrack…
 tags:
-  - CVPR2026
-  - Video Understanding
-  - RGBT Tracking
-  - Retrieval-Augmented Generation
-  - Multimodal Fusion
-  - Language-Guided Tracking
-  - Adaptive Token Fusion
+  - "CVPR2026"
+  - "Video Understanding"
+  - "RGBT Tracking"
+  - "Retrieval-Augmented Generation"
+  - "Multimodal Fusion"
+  - "Language-Guided Tracking"
+  - "Adaptive Token Fusion"
 date: 2026-05-08
 content_hash: 97fb1c7da3730e9d
 ---

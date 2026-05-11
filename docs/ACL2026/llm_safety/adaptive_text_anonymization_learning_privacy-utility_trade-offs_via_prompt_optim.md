@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Adaptive Text Anonymization: Learning Privacy-Utility Trade-offs via Prompt Optimization
 description: >-
-  [ACL 2026][LLM Safety][text anonymization] This paper proposes an adaptive text anonymization framework that employs evolutionary prompt optimization to automatically discover task-specific anonymization instructions for LLMs, outperforming manually designed strategies across multiple privacy-utility trade-off scenarios while operating entirely on open-source models.
+  [ACL 2026][LLM Safety][text anonymization] This paper proposes an adaptive text anonymization framework that employs evolutionary prompt optimization to automatically discover task-specific anonymization instructions for…
 tags:
-  - ACL 2026
-  - LLM Safety
-  - text anonymization
-  - privacy protection
-  - prompt optimization
-  - evolutionary algorithms
-  - privacy-utility trade-off
+  - "ACL 2026"
+  - "LLM Safety"
+  - "text anonymization"
+  - "privacy protection"
+  - "prompt optimization"
+  - "evolutionary algorithms"
+  - "privacy-utility trade-off"
 date: 2026-05-08
 content_hash: 283d867b794b054b
 ---

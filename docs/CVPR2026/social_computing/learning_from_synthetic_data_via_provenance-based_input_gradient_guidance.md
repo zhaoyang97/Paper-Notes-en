@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning from Synthetic Data via Provenance-Based Input Gradient Guidance
 description: >-
-  [CVPR 2026][Social Computing][learning from synthetic data] This paper proposes leveraging provenance information—automatically obtained during the synthetic data generation process—as auxiliary supervision signals. By applying input gradient guidance (suppressing input gradients in non-target regions), the method directly encourages models to learn discriminative representations focused on target regions. Effectiveness is validated across multiple tasks and modalities, including weakly supervised localization, spatio-temporal action detection, and image classification.
+  [CVPR 2026][Social Computing][learning from synthetic data] This paper proposes leveraging provenance information—automatically obtained during the synthetic data generation process—as auxiliary supervision signals. By a…
 tags:
-  - CVPR 2026
-  - Social Computing
-  - learning from synthetic data
-  - input gradient guidance
-  - spurious correlation suppression
-  - data augmentation
-  - provenance information
+  - "CVPR 2026"
+  - "Social Computing"
+  - "learning from synthetic data"
+  - "input gradient guidance"
+  - "spurious correlation suppression"
+  - "data augmentation"
+  - "provenance information"
 date: 2026-05-08
 content_hash: bc9b48e81dbdef5e
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Few-Shot Knowledge Distillation of LLMs With Counterfactual Explanations
 description: >-
-  [NeurIPS 2025][Causal Inference][knowledge distillation] This paper proposes CoD (Counterfactual-explanation-infused Distillation), which injects counterfactual explanations into few-shot training sets to precisely map the teacher's decision boundary, achieving significant improvements over standard distillation methods across 6 datasets using only 8–512 samples.
+  [NeurIPS 2025][Causal Inference][knowledge distillation] This paper proposes CoD (Counterfactual-explanation-infused Distillation), which injects counterfactual explanations into few-shot training sets to precisely map t…
 tags:
-  - NeurIPS 2025
-  - Causal Inference
-  - knowledge distillation
-  - Counterfactual Explanation
-  - few-shot learning
-  - LLM Compression
-  - Decision Boundary
+  - "NeurIPS 2025"
+  - "Causal Inference"
+  - "knowledge distillation"
+  - "Counterfactual Explanation"
+  - "few-shot learning"
+  - "LLM Compression"
+  - "Decision Boundary"
 date: 2026-05-08
 content_hash: 76e6c7581d1c52d4
 ---

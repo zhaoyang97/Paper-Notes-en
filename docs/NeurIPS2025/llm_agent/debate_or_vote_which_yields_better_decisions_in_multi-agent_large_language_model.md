@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Debate or Vote: Which Yields Better Decisions in Multi-Agent Large Language Models?
 description: >-
-  [NeurIPS 2025][LLM Agent][Multi-agent debate] This work establishes, both theoretically and empirically, that the performance gains attributed to Multi-Agent Debate (MAD) stem primarily from majority voting (ensembling) rather than the debate process itself. The debate dynamics are shown to constitute a martingale—meaning debate does not systematically improve correctness in expectation—and this theoretical insight motivates a principled improvement to MAD by biasing updates toward correct signals.
+  [NeurIPS 2025][LLM Agent][Multi-agent debate] This work establishes, both theoretically and empirically, that the performance gains attributed to Multi-Agent Debate (MAD) stem primarily from majority voting (ensembling)…
 tags:
-  - NeurIPS 2025
-  - LLM Agent
-  - Multi-agent debate
-  - majority voting
-  - martingale
-  - Bayesian belief update
-  - LLM ensembling
+  - "NeurIPS 2025"
+  - "LLM Agent"
+  - "Multi-agent debate"
+  - "majority voting"
+  - "martingale"
+  - "Bayesian belief update"
+  - "LLM ensembling"
 date: 2026-05-08
 content_hash: 6853da273fb80521
 ---

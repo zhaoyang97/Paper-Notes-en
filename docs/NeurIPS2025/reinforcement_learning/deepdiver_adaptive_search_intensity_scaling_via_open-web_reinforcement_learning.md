@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] DeepDiver: Adaptive Search Intensity Scaling via Open-Web Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][search intensity scaling] DeepDiver is an RL-driven search-reasoning framework that trains LLMs for information-seeking in real open-web environments, giving rise to an emergent behavior termed *Search Intensity Scaling* (SIS)—enabling a 7B model to match DeepSeek-R1 (671B) on knowledge-intensive tasks.
+  [NeurIPS 2025][Reinforcement Learning][search intensity scaling] DeepDiver is an RL-driven search-reasoning framework that trains LLMs for information-seeking in real open-web environments…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - search intensity scaling
-  - information retrieval
-  - large language models
-  - open-web question answering
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "search intensity scaling"
+  - "information retrieval"
+  - "large language models"
+  - "open-web question answering"
 date: 2026-05-08
 content_hash: 0f54d40b17c441ec
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] STK-Adapter: Incorporating Evolving Graph and Event Chain for Temporal Knowledge Graph Extrapolation
 description: >-
-  [ACL 2026][Time Series][Temporal knowledge graph extrapolation] This paper proposes STK-Adapter, which embeds three MoE modules at every layer of an LLM—ST-MoE for capturing spatiotemporal structure, EA-MoE for modeling event chain semantics, and CMA-MoE for deep cross-modal alignment—to address the spatiotemporal information loss and layer-wise dilution caused by shallow alignment between TKG embeddings and LLMs in existing methods, achieving significant improvements over SOTA on four benchmark datasets.
+  [ACL 2026][Time Series][Temporal knowledge graph extrapolation] This paper proposes STK-Adapter, which embeds three MoE modules at every layer of an LLM—ST-MoE for capturing spatiotemporal structure…
 tags:
-  - ACL 2026
-  - Time Series
-  - Temporal knowledge graph extrapolation
-  - MoE adapter
-  - cross-modal alignment
-  - event chain modeling
-  - graph structure evolution
+  - "ACL 2026"
+  - "Time Series"
+  - "Temporal knowledge graph extrapolation"
+  - "MoE adapter"
+  - "cross-modal alignment"
+  - "event chain modeling"
+  - "graph structure evolution"
 date: 2026-05-08
 content_hash: d4973db13257d350
 ---

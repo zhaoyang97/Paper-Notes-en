@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Estimating Hitting Times Locally At Scale
 description: >-
-  [NeurIPS 2025][Recommender Systems][hitting time] Two local (sublinear) algorithms are proposed for estimating hitting times on graphs — Algorithm 1 based on meeting times and Algorithm 3 based on spectral truncation. Both require only short random walks centered at $u$ and $v$ without full graph access, achieving relative error <1.4% on synthetic and real-world graphs. An optimal sample complexity lower bound for walk-based estimation is also established.
+  [NeurIPS 2025][Recommender Systems][hitting time] Two local (sublinear) algorithms are proposed for estimating hitting times on graphs — Algorithm 1 based on meeting times and Algorithm 3 based on spectral truncation. Bo…
 tags:
-  - NeurIPS 2025
-  - Recommender Systems
-  - hitting time
-  - local algorithms
-  - random walks
-  - sublinear complexity
-  - spectral methods
+  - "NeurIPS 2025"
+  - "Recommender Systems"
+  - "hitting time"
+  - "local algorithms"
+  - "random walks"
+  - "sublinear complexity"
+  - "spectral methods"
 date: 2026-05-08
 content_hash: 898874163467209d
 ---

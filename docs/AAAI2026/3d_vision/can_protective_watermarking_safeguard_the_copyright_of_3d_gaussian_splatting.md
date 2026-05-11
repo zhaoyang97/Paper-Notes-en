@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Can Protective Watermarking Safeguard the Copyright of 3D Gaussian Splatting?
 description: >-
-  [AAAI2026][3D Vision][3D Gaussian Splatting] This paper presents the first systematic study exposing the vulnerability of 3DGS watermarking frameworks, and proposes GSPure — a purification framework that leverages view-aware Gaussian weight accumulation and geometric feature clustering to precisely isolate and remove watermark-related Gaussian primitives, reducing watermark PSNR by up to 16.34 dB while incurring less than 1 dB loss in scene fidelity.
+  [AAAI2026][3D Vision][3D Gaussian Splatting] This paper presents the first systematic study exposing the vulnerability of 3DGS watermarking frameworks…
 tags:
-  - AAAI2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - watermark purification
-  - copyright protection
-  - HDBSCAN clustering
+  - "AAAI2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "watermark purification"
+  - "copyright protection"
+  - "HDBSCAN clustering"
 date: 2026-05-08
 content_hash: 6fef089ae99b2715
 ---

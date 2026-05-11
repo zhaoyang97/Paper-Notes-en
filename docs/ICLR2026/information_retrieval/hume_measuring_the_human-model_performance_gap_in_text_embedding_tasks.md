@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] HUME: Measuring the Human-Model Performance Gap in Text Embedding Tasks
 description: >-
-  [ICLR 2026][text embedding] This paper proposes HUME, a human evaluation framework that systematically measures human performance on 16 MTEB datasets spanning reranking, classification, clustering, and STS tasks. Humans rank 4th overall (77.6 vs. the best model score of 80.1). The study reveals that cases where models surpass human performance tend to occur on tasks with the lowest human agreement, and evaluates 9 LLMs as potential annotation proxies.
+  [ICLR 2026][Information Retrieval & RAG][text embedding] This paper proposes HUME, a human evaluation framework that systematically measures human performance on 16 MTEB datasets spanning reranking, classification…
 tags:
-  - ICLR 2026
-  - text embedding
-  - human baseline
-  - MTEB
-  - evaluation framework
-  - multilingual
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "text embedding"
+  - "human baseline"
+  - "MTEB"
+  - "evaluation framework"
+  - "multilingual"
 date: 2026-05-08
 content_hash: 1ff0014a0a451d74
 ---

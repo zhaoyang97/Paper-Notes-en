@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LVFace: Progressive Cluster Optimization for Large Vision Models in Face Recognition
 description: >-
-  [ICCV 2025][Human Understanding][face recognition] This paper proposes LVFace, which addresses training instability of ViT in large-scale face recognition via a Progressive Cluster Optimization (PCO) strategy. The training process is decomposed into three stages — feature alignment, centroid stabilization, and boundary refinement — achieving state-of-the-art results on multiple benchmarks.
+  [ICCV 2025][Human Understanding][face recognition] This paper proposes LVFace, which addresses training instability of ViT in large-scale face recognition via a Progressive Cluster Optimization (PCO) strategy. The traini…
 tags:
-  - ICCV 2025
-  - Human Understanding
-  - face recognition
-  - Vision Transformer
-  - progressive optimization
-  - large vision model
-  - margin-based loss
+  - "ICCV 2025"
+  - "Human Understanding"
+  - "face recognition"
+  - "Vision Transformer"
+  - "progressive optimization"
+  - "large vision model"
+  - "margin-based loss"
 date: 2026-05-08
 content_hash: 0fafb13b405cac96
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EmoTaG: Emotion-Aware Talking Head Synthesis on Gaussian Splatting with Few-Shot Personalization
 description: >-
-  [CVPR 2026][3D Vision][3D Gaussian Splatting] This paper proposes EmoTaG, an emotion-aware 3D talking head synthesis framework built upon FLAME-Gaussian structural priors and a Gated Residual Motion Network (GRMN). It achieves few-shot personalization from as little as 5 seconds of video while jointly addressing emotion expressiveness, lip-audio synchronization, and geometric stability.
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] This paper proposes EmoTaG, an emotion-aware 3D talking head synthesis framework built upon FLAME-Gaussian structural priors and a Gated Residual Motion Network (GRMN). It ac…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - Talking Head
-  - Emotion-Aware
-  - Few-Shot
-  - FLAME
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Talking Head"
+  - "Emotion-Aware"
+  - "Few-Shot"
+  - "FLAME"
 date: 2026-05-08
 content_hash: d41efa7f5d3e4d0b
 ---

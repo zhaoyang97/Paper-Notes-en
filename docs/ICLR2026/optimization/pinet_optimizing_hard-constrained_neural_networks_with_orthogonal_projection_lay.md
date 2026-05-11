@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Πnet: Optimizing Hard-Constrained Neural Networks with Orthogonal Projection Layers
 description: >-
-  [ICLR 2026 (Oral)][Optimization][Hard-constrained neural networks] This paper proposes the Πnet architecture, which appends a Douglas-Rachford operator splitting-based orthogonal projection layer to the output of a neural network to guarantee strict satisfaction of convex constraints, and employs the implicit function theorem for efficient backpropagation. Πnet substantially outperforms existing methods in training time, solution quality, and hyperparameter robustness.
+  [ICLR 2026 (Oral)][Optimization][Hard-constrained neural networks] This paper proposes the Πnet architecture, which appends a Douglas-Rachford operator splitting-based orthogonal projection layer to the output of a neura…
 tags:
-  - ICLR 2026 (Oral)
-  - Optimization
-  - Hard-constrained neural networks
-  - orthogonal projection
-  - operator splitting
-  - implicit function theorem
-  - Douglas-Rachford
+  - "ICLR 2026 (Oral)"
+  - "Optimization"
+  - "Hard-constrained neural networks"
+  - "orthogonal projection"
+  - "operator splitting"
+  - "implicit function theorem"
+  - "Douglas-Rachford"
 date: 2026-05-08
 content_hash: 048d88aca300f48e
 ---

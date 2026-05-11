@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Diffusion Model as a Noise-Aware Latent Reward Model for Step-Level Preference Optimization
 description: >-
-  [NeurIPS 2025][LLM Alignment][diffusion model] This paper proposes the Latent Reward Model (LRM) and Latent Preference Optimization (LPO), which repurpose the pretrained diffusion model itself as a noise-aware latent-space reward model to perform step-level preference optimization directly in the noisy latent space. Compared to Diffusion-DPO, LPO achieves a 10–28× training speedup; compared to SPO, it achieves a 2.5–3.5× speedup.
+  [NeurIPS 2025][LLM Alignment][diffusion model] This paper proposes the Latent Reward Model (LRM) and Latent Preference Optimization (LPO)…
 tags:
-  - NeurIPS 2025
-  - LLM Alignment
-  - diffusion model
-  - preference optimization
-  - reward model
-  - latent space
-  - step-level
-  - noise-aware
-  - DPO
+  - "NeurIPS 2025"
+  - "LLM Alignment"
+  - "diffusion model"
+  - "preference optimization"
+  - "reward model"
+  - "latent space"
+  - "step-level"
+  - "noise-aware"
+  - "DPO"
 date: 2026-05-08
 content_hash: f65870fa03b9e34f
 ---

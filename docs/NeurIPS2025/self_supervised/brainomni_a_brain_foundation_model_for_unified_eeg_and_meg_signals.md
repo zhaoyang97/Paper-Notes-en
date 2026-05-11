@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] BrainOmni: A Brain Foundation Model for Unified EEG and MEG Signals
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][EEG] This paper proposes BrainOmni—the first brain signal foundation model that unifies EEG and MEG—by discretizing heterogeneous brain signals into a unified token space via BrainTokenizer (incorporating a physical Sensor Encoder), followed by self-supervised masked prediction pretraining with a Criss-Cross Transformer. The model achieves an 11.7 percentage-point improvement on Alzheimer's disease detection and demonstrates zero-shot reconstruction generalization to completely unseen devices.
+  [NeurIPS 2025][Self-Supervised Learning][EEG] This paper proposes BrainOmni—the first brain signal foundation model that unifies EEG and MEG—by discretizing heterogeneous brain signals into a unified token space via Brai…
 tags:
-  - NeurIPS 2025
-  - Self-Supervised Learning
-  - EEG
-  - MEG
-  - foundation model
-  - BrainTokenizer
-  - Sensor Encoder
-  - cross-device generalization
-  - RVQ
+  - "NeurIPS 2025"
+  - "Self-Supervised Learning"
+  - "EEG"
+  - "MEG"
+  - "foundation model"
+  - "BrainTokenizer"
+  - "Sensor Encoder"
+  - "cross-device generalization"
+  - "RVQ"
 date: 2026-05-08
 content_hash: a220766087517987
 ---

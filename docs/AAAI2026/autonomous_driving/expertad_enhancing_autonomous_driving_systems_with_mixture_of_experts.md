@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ExpertAD: Enhancing Autonomous Driving Systems with Mixture of Experts
 description: >-
-  [AAAI 2026][Autonomous Driving][End-to-end autonomous driving] ExpertAD introduces a Mixture-of-Experts (MoE) architecture into the perception and prediction modules of end-to-end autonomous driving systems. A Perception Adapter dynamically re-weights BEV features to amplify task-critical semantics, while a Mixture of Sparse Experts employs a router to selectively activate relevant driving task experts and uses sparse attention to reduce computation. The framework reduces inference latency by approximately 25% while maintaining or improving planning performance.
+  [AAAI 2026][Autonomous Driving][End-to-end autonomous driving] ExpertAD introduces a Mixture-of-Experts (MoE) architecture into the perception and prediction modules of end-to-end autonomous driving systems. A Perception…
 tags:
-  - AAAI 2026
-  - Autonomous Driving
-  - End-to-end autonomous driving
-  - mixture of experts
-  - perception adaptation
-  - sparse attention
-  - inference efficiency
+  - "AAAI 2026"
+  - "Autonomous Driving"
+  - "End-to-end autonomous driving"
+  - "mixture of experts"
+  - "perception adaptation"
+  - "sparse attention"
+  - "inference efficiency"
 date: 2026-05-08
 content_hash: 9f59a9a381585cdf
 ---

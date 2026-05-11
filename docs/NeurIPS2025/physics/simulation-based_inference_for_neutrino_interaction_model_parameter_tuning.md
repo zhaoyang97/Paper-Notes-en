@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Simulation-Based Inference for Neutrino Interaction Model Parameter Tuning
 description: >-
-  [NeurIPS 2025][simulation-based inference] This work presents the first application of simulation-based inference (SBI) to neutrino interaction model parameter tuning. Using neural posterior estimation (NPE), the method learns the posterior distribution of 4 physical parameters from 200K GENIE-simulated 58-bin histograms, and accurately recovers the ground-truth parameter values on mock data from the MicroBooNE Tune.
+  [NeurIPS 2025][Physics][simulation-based inference] This work presents the first application of simulation-based inference (SBI) to neutrino interaction model parameter tuning. Using neural posterior estimation (NPE)…
 tags:
-  - NeurIPS 2025
-  - simulation-based inference
-  - neutrino scattering
-  - neural posterior estimation
-  - GENIE
-  - parameter tuning
+  - "NeurIPS 2025"
+  - "Physics"
+  - "simulation-based inference"
+  - "neutrino scattering"
+  - "neural posterior estimation"
+  - "GENIE"
+  - "parameter tuning"
 date: 2026-05-08
 content_hash: cde2c661dbdc01d7
 ---

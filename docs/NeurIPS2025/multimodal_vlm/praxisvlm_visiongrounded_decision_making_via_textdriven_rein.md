@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Praxis-VLM: Vision-Grounded Decision Making via Text-Driven Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Multimodal VLM][VLM decision-making] This paper discovers that the decision-making reasoning capability of VLMs can be decoupled from visual perception—replacing image inputs with textual descriptions yields equal or higher decision accuracy. Building on this insight, Praxis-VLM trains decision-making reasoning on purely textual scenarios via multi-stage GRPO with adaptive rewards, then transfers zero-shot to visual inputs at inference time, achieving comprehensive improvements over SFT baselines on three decision-making benchmarks, with especially notable gains in OOD generalization.
+  [NeurIPS 2025][Multimodal VLM][VLM decision-making] This paper discovers that the decision-making reasoning capability of VLMs can be decoupled from visual perception—replacing image inputs with textual descriptions yiel…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - VLM decision-making
-  - text-driven RL
-  - GRPO
-  - cross-modal transfer
-  - embodied reasoning
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "VLM decision-making"
+  - "text-driven RL"
+  - "GRPO"
+  - "cross-modal transfer"
+  - "embodied reasoning"
 date: 2026-05-08
 content_hash: ae698bb995223bdc
 ---

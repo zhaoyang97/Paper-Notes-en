@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Graph-Theoretic Consistency for Robust and Topology-Aware Semi-Supervised Histopathology Segmentation
 description: >-
-  [AAAI 2026 (Student Abstract)][Medical Imaging][Semi-supervised segmentation] This paper proposes TGC (Topology Graph Consistency), a framework that introduces graph-theoretic topological constraints by aligning the Laplacian spectra, connected component counts, and adjacency statistics between prediction graphs and reference graphs. TGC achieves near-fully-supervised histopathology segmentation performance using only 5–10% of labeled data.
+  [AAAI 2026 (Student Abstract)][Medical Imaging][Semi-supervised segmentation] This paper proposes TGC (Topology Graph Consistency), a framework that introduces graph-theoretic topological constraints by aligning the Lapl…
 tags:
-  - AAAI 2026 (Student Abstract)
-  - Medical Imaging
-  - Semi-supervised segmentation
-  - histopathology images
-  - topological consistency
-  - graph-theoretic constraints
-  - pseudo-labels
+  - "AAAI 2026 (Student Abstract)"
+  - "Medical Imaging"
+  - "Semi-supervised segmentation"
+  - "histopathology images"
+  - "topological consistency"
+  - "graph-theoretic constraints"
+  - "pseudo-labels"
 date: 2026-05-08
 content_hash: 6dc31fb76a9b799c
 ---

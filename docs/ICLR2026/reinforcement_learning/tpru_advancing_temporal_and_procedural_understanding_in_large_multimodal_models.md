@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] TPRU: Advancing Temporal and Procedural Understanding in Large Multimodal Models
 description: >-
-  [ICLR 2026][Reinforcement Learning][Temporal Understanding] TPRU constructs a large-scale multi-image temporal understanding dataset (24,750 QA pairs, 126,000 images) spanning 3 complementary task types (temporal ordering, next-frame prediction, previous-frame review) across 4 embodied scenarios including robotic manipulation and GUI navigation, and demonstrates that RL fine-tuning enables a 7B model to surpass GPT-4o on temporal understanding benchmarks.
+  [ICLR 2026][Reinforcement Learning][Temporal Understanding] TPRU constructs a large-scale multi-image temporal understanding dataset (24,750 QA pairs, 126…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Temporal Understanding
-  - Procedural Reasoning
-  - Multi-Image Understanding
-  - RL Fine-Tuning
-  - MLLM
-  - Embodied AI
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Temporal Understanding"
+  - "Procedural Reasoning"
+  - "Multi-Image Understanding"
+  - "RL Fine-Tuning"
+  - "MLLM"
+  - "Embodied AI"
 date: 2026-05-08
 content_hash: 053d40b9d41b8402
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Language-Coupled Reinforcement Learning for Multilingual Retrieval-Augmented Generation
 description: >-
-  [ACL 2026][Reinforcement Learning][Multilingual RAG] This paper proposes the LcRL framework, which addresses knowledge bias and knowledge conflict in multilingual RAG through language-coupled GRPO policy optimization and anti-alignment penalty rewards, achieving significant improvements on multilingual question answering tasks.
+  [ACL 2026][Reinforcement Learning][Multilingual RAG] This paper proposes the LcRL framework, which addresses knowledge bias and knowledge conflict in multilingual RAG through language-coupled GRPO policy optimization and…
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - Multilingual RAG
-  - GRPO
-  - Knowledge Bias
-  - Knowledge Conflict
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "Multilingual RAG"
+  - "GRPO"
+  - "Knowledge Bias"
+  - "Knowledge Conflict"
 date: 2026-05-08
 content_hash: 6034c56fe8f22e0e
 ---

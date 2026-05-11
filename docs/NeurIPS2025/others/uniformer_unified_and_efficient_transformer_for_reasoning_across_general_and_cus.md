@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] UniFormer: Unified and Efficient Transformer for Reasoning Across General and Custom Computing
 description: >-
-  [NeurIPS 2025][Efficient Attention] This paper proposes UniFormer, a unified and efficient Transformer architecture for cross-platform deployment on both GPUs and FPGAs. Through a dual-branch attention mechanism consisting of global linear attention and local block attention, UniFormer achieves high parallelism and compute-memory fusion.
+  [NeurIPS 2025][Efficient Attention] This paper proposes UniFormer, a unified and efficient Transformer architecture for cross-platform deployment on both GPUs and FPGAs. Through a dual-branch attention mechanism consisti…
 tags:
-  - NeurIPS 2025
-  - Efficient Attention
-  - GPU-FPGA Cross-Platform
-  - Matrix Multiplication
-  - Triton Kernel
-  - Dual-Branch Attention
+  - "NeurIPS 2025"
+  - "Efficient Attention"
+  - "GPU-FPGA Cross-Platform"
+  - "Matrix Multiplication"
+  - "Triton Kernel"
+  - "Dual-Branch Attention"
 date: 2026-05-08
 content_hash: 863ecd8140168406
 ---

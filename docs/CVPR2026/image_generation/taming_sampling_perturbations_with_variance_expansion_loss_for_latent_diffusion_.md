@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Taming Sampling Perturbations with Variance Expansion Loss for Latent Diffusion Models
 description: >-
-  [CVPR 2026][Image Generation][Latent Diffusion Models] This paper identifies that β-VAE tokenizers in latent diffusion models suffer from variance collapse, producing an overly compact latent space that is highly sensitive to diffusion sampling perturbations. The proposed Variance Expansion (VE) Loss achieves adaptive latent variance regulation through an adversarial balance between reconstruction and variance expansion objectives, consistently improving generation quality (FID 1.18) across multiple diffusion architectures.
+  [CVPR 2026][Image Generation][Latent Diffusion Models] This paper identifies that β-VAE tokenizers in latent diffusion models suffer from variance collapse…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Latent Diffusion Models
-  - Variance Expansion Loss
-  - Sampling Robustness
-  - Variance Collapse
-  - VAE Tokenizer
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Latent Diffusion Models"
+  - "Variance Expansion Loss"
+  - "Sampling Robustness"
+  - "Variance Collapse"
+  - "VAE Tokenizer"
 date: 2026-05-08
 content_hash: 8805530752b4a3a6
 ---

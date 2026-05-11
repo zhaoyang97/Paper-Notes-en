@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Exposing DeepFakes via Hyperspectral Domain Mapping
 description: >-
-  [AAAI 2026][Image Generation][Deepfake detection] This paper proposes HSI-Detect, a two-stage deepfake detection framework that first reconstructs RGB images into 31-channel hyperspectral images to amplify spectral artifacts introduced by generative models, then performs detection in the hyperspectral domain, achieving a mean AUC of 68.92% on cross-manipulation generalization benchmarks on FaceForensics++, surpassing RGB-only baselines.
+  [AAAI 2026][Image Generation][Deepfake detection] This paper proposes HSI-Detect, a two-stage deepfake detection framework that first reconstructs RGB images into 31-channel hyperspectral images to amplify spectral artif…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Deepfake detection
-  - hyperspectral imaging
-  - spectral reconstruction
-  - frequency domain analysis
-  - cross-domain generalization
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Deepfake detection"
+  - "hyperspectral imaging"
+  - "spectral reconstruction"
+  - "frequency domain analysis"
+  - "cross-domain generalization"
 date: 2026-05-08
 content_hash: ada6b80d29c25cdc
 ---

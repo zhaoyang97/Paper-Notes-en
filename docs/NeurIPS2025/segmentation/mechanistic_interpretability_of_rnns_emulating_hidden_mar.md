@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Mechanistic Interpretability of RNNs Emulating Hidden Markov Models
 description: >-
-  [NeurIPS 2025][Segmentation][RNN] A vanilla RNN is trained to reproduce the emission statistics of an HMM; reverse engineering then reveals the mechanism by which the RNN implements discrete stochastic state transitions: noise-driven orbital dynamics combined with rapid transitions triggered by "kick neurons." The underlying principle is self-induced stochastic resonance (SISR), and this dynamical motif can be composed and reused to emulate more complex discrete latent structures.
+  [NeurIPS 2025][Segmentation][RNN] A vanilla RNN is trained to reproduce the emission statistics of an HMM; reverse engineering then reveals the mechanism by which the RNN implements discrete stochastic state transitions:…
 tags:
-  - NeurIPS 2025
-  - Segmentation
-  - RNN
-  - HMM
-  - mechanistic interpretability
-  - stochastic resonance
-  - kick neurons
-  - orbital dynamics
+  - "NeurIPS 2025"
+  - "Segmentation"
+  - "RNN"
+  - "HMM"
+  - "mechanistic interpretability"
+  - "stochastic resonance"
+  - "kick neurons"
+  - "orbital dynamics"
 date: 2026-05-08
 content_hash: 7e60949be2ddea2e
 ---

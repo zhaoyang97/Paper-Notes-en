@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Last Iterate Convergence in Monotone Mean Field Games
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][mean field games] This paper proposes a KL-divergence-based proximal point (PP) method that achieves asymptotic last iterate convergence (LIC) in non-strictly monotone mean field games (MFGs), and proves that regularized mirror descent (RMD) converges to regularized equilibria at an exponential rate. The combined approximate proximal point (APP) algorithm reliably converges to non-regularized equilibria on standard benchmarks.
+  [NeurIPS 2025][Reinforcement Learning][mean field games] This paper proposes a KL-divergence-based proximal point (PP) method that achieves asymptotic last iterate convergence (LIC) in non-strictly monotone mean field ga…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - mean field games
-  - last iterate convergence
-  - proximal point
-  - mirror descent
-  - monotone games
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "mean field games"
+  - "last iterate convergence"
+  - "proximal point"
+  - "mirror descent"
+  - "monotone games"
 date: 2026-05-08
 content_hash: b1af6ff24c0e855e
 ---

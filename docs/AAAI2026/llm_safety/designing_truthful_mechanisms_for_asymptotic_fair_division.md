@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Designing Truthful Mechanisms for Asymptotic Fair Division
 description: >-
-  [AAAI 2026][LLM Safety][Fair division] This paper proposes the PRD (Proportional Response with Dummy) mechanism, which for the first time simultaneously achieves expected truthfulness, polynomial-time computability, and high-probability envy-freeness in the asymptotic fair division setting, requiring only $m = \Omega(n \log n)$ items. This resolves an open problem posed by Manurangsi & Suksompong.
+  [AAAI 2026][LLM Safety][Fair division] This paper proposes the PRD (Proportional Response with Dummy) mechanism, which for the first time simultaneously achieves expected truthfulness, polynomial-time computability…
 tags:
-  - AAAI 2026
-  - LLM Safety
-  - Fair division
-  - envy-freeness
-  - strategyproofness
-  - mechanism design
-  - KL divergence
+  - "AAAI 2026"
+  - "LLM Safety"
+  - "Fair division"
+  - "envy-freeness"
+  - "strategyproofness"
+  - "mechanism design"
+  - "KL divergence"
 date: 2026-05-08
 content_hash: 91073247e37349f2
 ---

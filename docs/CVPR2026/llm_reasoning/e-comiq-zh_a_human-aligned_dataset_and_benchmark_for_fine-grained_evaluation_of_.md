@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] E-comIQ-ZH: A Human-Aligned Dataset and Benchmark for Fine-Grained Evaluation of E-commerce Posters with Chain-of-Thought
 description: >-
-  [CVPR 2026][LLM Reasoning][e-commerce poster evaluation] This work constructs E-comIQ-ZH, the first multi-dimensional quality assessment framework for Chinese e-commerce posters, comprising an 18K expert-annotated dataset with CoT reasoning chains, a dedicated evaluation model E-comIQ-M (trained via SFT+GRPO), and a standardized benchmark E-comIQ-Bench.
+  [CVPR 2026][LLM Reasoning][e-commerce poster evaluation] This work constructs E-comIQ-ZH, the first multi-dimensional quality assessment framework for Chinese e-commerce posters…
 tags:
-  - CVPR 2026
-  - LLM Reasoning
-  - e-commerce poster evaluation
-  - image quality assessment
-  - Chain-of-Thought
-  - multi-dimensional scoring
-  - Chinese text quality
+  - "CVPR 2026"
+  - "LLM Reasoning"
+  - "e-commerce poster evaluation"
+  - "image quality assessment"
+  - "Chain-of-Thought"
+  - "multi-dimensional scoring"
+  - "Chinese text quality"
 date: 2026-05-08
 content_hash: c9d36c34ba33cf09
 ---

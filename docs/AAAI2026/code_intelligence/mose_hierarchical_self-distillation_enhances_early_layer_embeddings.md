@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] MoSE: Hierarchical Self-Distillation Enhances Early Layer Embeddings
 description: >-
-  [AAAI 2026][Self-distillation] This paper proposes ModularStarEncoder (MoSE), a 1B-parameter multi-exit encoder that significantly enhances early-layer representations via a novel self-distillation mechanism in which higher layers guide the training of lower layers. MoSE surpasses all open-source models on code understanding tasks such as CodeSearchNet while supporting flexible compute–accuracy tradeoff deployment.
+  [AAAI 2026][Code Intelligence][Self-distillation] This paper proposes ModularStarEncoder (MoSE), a 1B-parameter multi-exit encoder that significantly enhances early-layer representations via a novel self-distillation mec…
 tags:
-  - AAAI 2026
-  - Self-distillation
-  - Multi-exit network
-  - Code retrieval
-  - Early exit
-  - Modular deployment
+  - "AAAI 2026"
+  - "Code Intelligence"
+  - "Self-distillation"
+  - "Multi-exit network"
+  - "Code retrieval"
+  - "Early exit"
+  - "Modular deployment"
 date: 2026-05-08
 content_hash: f6d11574c67e97be
 ---

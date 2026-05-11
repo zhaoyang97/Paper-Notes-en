@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FedDAG: Clustered Federated Learning via Global Data and Gradient Integration for Heterogeneous Environments
 description: >-
-  [ICLR 2026][Optimization][Clustered Federated Learning] FedDAG is a clustered federated learning framework that performs more accurate client clustering via weighted class-wise similarity fusion of data and gradient signals, and enables cross-cluster feature transfer through a dual-encoder architecture, consistently outperforming existing baselines across diverse heterogeneity settings.
+  [ICLR 2026][Optimization][Clustered Federated Learning] FedDAG is a clustered federated learning framework that performs more accurate client clustering via weighted class-wise similarity fusion of data and gradient sign…
 tags:
-  - ICLR 2026
-  - Optimization
-  - Clustered Federated Learning
-  - Data Heterogeneity
-  - Dual-Encoder Architecture
-  - Cross-Cluster Knowledge Sharing
-  - Adaptive Clustering
+  - "ICLR 2026"
+  - "Optimization"
+  - "Clustered Federated Learning"
+  - "Data Heterogeneity"
+  - "Dual-Encoder Architecture"
+  - "Cross-Cluster Knowledge Sharing"
+  - "Adaptive Clustering"
 date: 2026-05-08
 content_hash: caf3c3ed3cdde990
 ---

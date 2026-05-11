@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] What Is Wrong with Synthetic Data for Scene Text Recognition? A Strong Synthetic Engine with Diverse Simulations and Self-Evolution
 description: >-
-  [CVPR2026][Scene Text Recognition] This paper systematically analyzes the deficiencies of existing rendered synthetic data in corpus, font, and layout diversity, and proposes the UnionST synthetic engine together with a Self-Evolution Learning (SEL) framework. Using only synthetic data, the approach substantially outperforms conventional synthetic sets; combined with SEL, only 9% of real labeled data is required to approach fully supervised performance.
+  [CVPR2026][Scene Text Recognition] This paper systematically analyzes the deficiencies of existing rendered synthetic data in corpus, font, and layout diversity…
 tags:
-  - CVPR2026
-  - Scene Text Recognition
-  - Synthetic Data
-  - Data Engine
-  - Self-Evolution Learning
-  - Pseudo Labels
+  - "CVPR2026"
+  - "Scene Text Recognition"
+  - "Synthetic Data"
+  - "Data Engine"
+  - "Self-Evolution Learning"
+  - "Pseudo Labels"
 date: 2026-05-08
 content_hash: a187f08612264ed5
 ---

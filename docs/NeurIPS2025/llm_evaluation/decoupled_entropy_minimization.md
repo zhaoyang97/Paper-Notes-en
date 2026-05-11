@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Decoupled Entropy Minimization
 description: >-
-  [NeurIPS 2025][LLM Evaluation][entropy minimization] This paper decouples classical entropy minimization (EM) into two opposing components — the Cluster Aggregation Driving Factor (CADF, which rewards dominant classes) and the Gradient Mitigation Calibrator (GMC, which penalizes high-confidence classes) — revealing two inherent flaws of classical EM (reward collapse and easy-class bias). The proposed AdaDEM addresses these issues via normalized rewards and marginal entropy calibration, achieving significant improvements across semi-supervised learning, domain adaptation, reinforcement learning, and other tasks.
+  [NeurIPS 2025][LLM Evaluation][entropy minimization] This paper decouples classical entropy minimization (EM) into two opposing components — the Cluster Aggregation Driving Factor (CADF…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - entropy minimization
-  - domain adaptation
-  - test-time adaptation
-  - self-supervised learning
-  - reward collapse
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "entropy minimization"
+  - "domain adaptation"
+  - "test-time adaptation"
+  - "self-supervised learning"
+  - "reward collapse"
 date: 2026-05-08
 content_hash: 531bd0679c721e10
 ---

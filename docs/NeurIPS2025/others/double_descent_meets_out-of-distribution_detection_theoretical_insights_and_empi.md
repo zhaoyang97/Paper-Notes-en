@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Double Descent Meets Out-of-Distribution Detection: Theoretical Insights and Empirical Analysis
 description: >-
-  [NeurIPS 2025][double descent] This paper is the first to reveal a double descent phenomenon in post-hoc OOD detection—OOD detection performance exhibits a valley near the interpolation threshold as model width increases, then recovers—provides a theoretical explanation via random matrix theory, and proposes an NC1 criterion based on Neural Collapse to identify the optimal model complexity regime.
+  [NeurIPS 2025][double descent] This paper is the first to reveal a double descent phenomenon in post-hoc OOD detection—OOD detection performance exhibits a valley near the interpolation threshold as model width increases…
 tags:
-  - NeurIPS 2025
-  - double descent
-  - OOD detection
-  - model complexity
-  - random matrix theory
-  - Neural Collapse
+  - "NeurIPS 2025"
+  - "double descent"
+  - "OOD detection"
+  - "model complexity"
+  - "random matrix theory"
+  - "Neural Collapse"
 date: 2026-05-08
 content_hash: ea9c06bbaa6efe51
 ---

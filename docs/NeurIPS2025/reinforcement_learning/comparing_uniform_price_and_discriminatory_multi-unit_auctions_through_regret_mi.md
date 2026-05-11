@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Comparing Uniform Price and Discriminatory Multi-Unit Auctions through Regret Minimization
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][multi-unit auctions] Under the online learning and regret minimization framework, this paper systematically compares the learning difficulty of uniform-price auctions and discriminatory auctions, proving that the two formats share identical worst-case regret rates, while under specific structural conditions the uniform-price auction admits faster learning rates.
+  [NeurIPS 2025][Reinforcement Learning][multi-unit auctions] Under the online learning and regret minimization framework, this paper systematically compares the learning difficulty of uniform-price auctions and discrimina…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - multi-unit auctions
-  - online learning
-  - regret minimization
-  - uniform-price auction
-  - discriminatory auction
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "multi-unit auctions"
+  - "online learning"
+  - "regret minimization"
+  - "uniform-price auction"
+  - "discriminatory auction"
 date: 2026-05-08
 content_hash: 47ae75bb682e4500
 ---

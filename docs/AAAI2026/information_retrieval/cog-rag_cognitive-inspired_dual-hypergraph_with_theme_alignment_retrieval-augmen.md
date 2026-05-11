@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Cog-RAG: Cognitive-Inspired Dual-Hypergraph with Theme Alignment Retrieval-Augmented Generation
 description: >-
-  [AAAI 2026][Hypergraph] This paper proposes Cog-RAG, which constructs a dual-hypergraph index comprising a theme hypergraph and an entity hypergraph to simulate the human "top-down" cognitive process via a two-stage retrieval strategy (theme first, then details), achieving global-to-local semantic alignment for generation.
+  [AAAI 2026][Information Retrieval & RAG][Hypergraph] This paper proposes Cog-RAG, which constructs a dual-hypergraph index comprising a theme hypergraph and an entity hypergraph to simulate the human "top-down" cognitive…
 tags:
-  - AAAI 2026
-  - Hypergraph
-  - Dual-Hypergraph Indexing
-  - Theme Alignment
-  - Cognitive-Inspired Retrieval
-  - RAG
+  - "AAAI 2026"
+  - "Information Retrieval & RAG"
+  - "Hypergraph"
+  - "Dual-Hypergraph Indexing"
+  - "Theme Alignment"
+  - "Cognitive-Inspired Retrieval"
+  - "RAG"
 date: 2026-05-08
 content_hash: 327540910ce2204c
 ---

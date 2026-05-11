@@ -2,15 +2,16 @@
 title: >-
   [Paper Note] CoRe: Benchmarking LLMs' Code Reasoning Capabilities through Static Analysis Tasks
 description: >-
-  [NeurIPS 2025][code reasoning] This paper introduces CoRe, a high-quality benchmark comprising 12,553 manually validated task instances. Through three categories of fundamental static analysis tasks—data dependency, control dependency, and information flow—CoRe directly evaluates the code semantic reasoning capabilities of LLMs, revealing that current models remain severely deficient on tasks requiring multi-step reasoning, such as trace generation and source enumeration.
+  [NeurIPS 2025][Code Intelligence][code reasoning] This paper introduces CoRe, a high-quality benchmark comprising 12,553 manually validated task instances. Through three categories of fundamental static analysis tasks—da…
 tags:
-  - NeurIPS 2025
-  - code reasoning
-  - static analysis
-  - benchmark
-  - data dependency
-  - control dependency
-  - information flow
+  - "NeurIPS 2025"
+  - "Code Intelligence"
+  - "code reasoning"
+  - "static analysis"
+  - "benchmark"
+  - "data dependency"
+  - "control dependency"
+  - "information flow"
 date: 2026-05-08
 content_hash: e020b57ec4e00970
 ---

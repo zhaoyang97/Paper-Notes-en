@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Backdooring Self-Supervised Contrastive Learning by Noisy Alignment
 description: >-
-  [ICCV 2025][AI Safety][self-supervised learning] This paper proposes Noisy Alignment (NA), a method that enhances backdoor attacks against self-supervised contrastive learning by explicitly suppressing noise components in poisoned images. The attack is formulated as a 2D image layout optimization problem, and theoretically optimal layout parameters are derived. NA achieves up to 45.9% improvement in ASR on ImageNet-100.
+  [ICCV 2025][AI Safety][self-supervised learning] This paper proposes Noisy Alignment (NA), a method that enhances backdoor attacks against self-supervised contrastive learning by explicitly suppressing noise components i…
 tags:
-  - ICCV 2025
-  - AI Safety
-  - self-supervised learning
-  - contrastive learning
-  - backdoor attack
-  - data poisoning
-  - noisy alignment
+  - "ICCV 2025"
+  - "AI Safety"
+  - "self-supervised learning"
+  - "contrastive learning"
+  - "backdoor attack"
+  - "data poisoning"
+  - "noisy alignment"
 date: 2026-05-08
 content_hash: 578b2e2a91dc1fb3
 ---

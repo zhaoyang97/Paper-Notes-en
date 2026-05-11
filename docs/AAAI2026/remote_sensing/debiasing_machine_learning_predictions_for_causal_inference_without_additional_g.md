@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Debiasing Machine Learning Predictions for Causal Inference Without Additional Ground Truth Data
 description: >-
-  [AAAI 2026][Remote Sensing][Prediction debiasing] To address the attenuation of causal treatment effects caused by regression-to-the-mean in ML-based satellite poverty predictions, this paper proposes two post-processing correction methods that require no additional labeled data — Linear Calibration Correction (LCC) and Tweedie local unshrinking — enabling a single prediction map to be reused across multiple downstream causal studies (the "One Map, Many Trials" paradigm). Tweedie correction achieves near-unbiased treatment effect estimation on both simulated and real DHS data.
+  [AAAI 2026][Remote Sensing][Prediction debiasing] To address the attenuation of causal treatment effects caused by regression-to-the-mean in ML-based satellite poverty predictions…
 tags:
-  - AAAI 2026
-  - Remote Sensing
-  - Prediction debiasing
-  - Tweedie correction
-  - causal inference
-  - satellite poverty index
-  - attenuation bias
+  - "AAAI 2026"
+  - "Remote Sensing"
+  - "Prediction debiasing"
+  - "Tweedie correction"
+  - "causal inference"
+  - "satellite poverty index"
+  - "attenuation bias"
 date: 2026-05-08
 content_hash: a10e35e3ab073729
 ---

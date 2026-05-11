@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Automated Detection of Visual Attribute Reliance with a Self-Reflective Agent
 description: >-
-  [NeurIPS 2025][Object Detection][visual attribute reliance] This paper proposes a self-reflective agent framework that automatically detects attribute reliance in visual models through an iterative hypothesis generation–testing–verification–reflection loop (e.g., CLIP recognizing "teacher" via classroom backgrounds, YOLOv8 detecting pedestrians via crosswalks). Evaluated on a benchmark of 130 models with injected known attribute dependencies, self-reflection is shown to significantly improve detection accuracy.
+  [NeurIPS 2025][Object Detection][visual attribute reliance] This paper proposes a self-reflective agent framework that automatically detects attribute reliance in visual models through an iterative hypothesis generation–…
 tags:
-  - NeurIPS 2025
-  - Object Detection
-  - visual attribute reliance
-  - self-reflective agent
-  - interpretability
-  - hypothesis testing
-  - bias detection
+  - "NeurIPS 2025"
+  - "Object Detection"
+  - "visual attribute reliance"
+  - "self-reflective agent"
+  - "interpretability"
+  - "hypothesis testing"
+  - "bias detection"
 date: 2026-05-08
 content_hash: d152242bae310715
 ---

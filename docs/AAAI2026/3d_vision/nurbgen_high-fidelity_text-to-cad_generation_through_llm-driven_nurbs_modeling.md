@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] NURBGen: High-Fidelity Text-to-CAD Generation through LLM-Driven NURBS Modeling
 description: >-
-  [AAAI 2026][3D Vision][Text-to-CAD] NURBGen is the first text-to-CAD generation framework based on NURBS surface representation. By fine-tuning an LLM, it maps natural language descriptions to structured NURBS parameter JSONs. A hybrid representation (untrimmed NURBS + analytic primitives) and a large-scale partABC dataset are introduced, achieving significant improvements over existing methods in geometric fidelity and dimensional accuracy.
+  [AAAI 2026][3D Vision][Text-to-CAD] NURBGen is the first text-to-CAD generation framework based on NURBS surface representation. By fine-tuning an LLM…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - Text-to-CAD
-  - NURBS
-  - LLM
-  - BRep
-  - 3D Generation
+  - "AAAI 2026"
+  - "3D Vision"
+  - "Text-to-CAD"
+  - "NURBS"
+  - "LLM"
+  - "BRep"
+  - "3D Generation"
 date: 2026-05-08
 content_hash: e3326020942e0e24
 ---

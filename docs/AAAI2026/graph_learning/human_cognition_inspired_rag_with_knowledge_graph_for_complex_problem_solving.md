@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Human Cognition Inspired RAG with Knowledge Graph for Complex Problem Solving
 description: >-
-  [AAAI 2026][Graph Learning][RAG] This paper proposes CogGRAG, a human cognition-inspired knowledge graph-based RAG framework that substantially improves LLM accuracy and reliability on complex Knowledge Graph Question Answering (KGQA) tasks through three stages: top-down mind map decomposition, hierarchical structured retrieval, and dual-LLM self-verification reasoning.
+  [AAAI 2026][Graph Learning][RAG] This paper proposes CogGRAG, a human cognition-inspired knowledge graph-based RAG framework that substantially improves LLM accuracy and reliability on complex Knowledge Graph Question An…
 tags:
-  - AAAI 2026
-  - Graph Learning
-  - RAG
-  - Knowledge Graph
-  - Question Answering
-  - Mind Map
-  - Self-Verification
+  - "AAAI 2026"
+  - "Graph Learning"
+  - "RAG"
+  - "Knowledge Graph"
+  - "Question Answering"
+  - "Mind Map"
+  - "Self-Verification"
 date: 2026-05-08
 content_hash: b20284767703fda1
 ---

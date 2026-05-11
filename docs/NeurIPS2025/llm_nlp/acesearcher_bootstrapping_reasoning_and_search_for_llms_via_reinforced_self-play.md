@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AceSearcher: Bootstrapping Reasoning and Search for LLMs via Reinforced Self-Play
 description: >-
-  [NeurIPS 2025][LLM/NLP][Search-augmented LLM] This paper proposes AceSearcher—a collaborative self-play framework in which a single LLM simultaneously plays two roles: a **decomposer** (breaking complex queries into sub-questions to guide retrieval) and a **solver** (integrating retrieved context to generate answers). Through a two-stage training pipeline of SFT followed by iterative DPO, using only final-answer rewards, AceSearcher achieves an average EM improvement of 7.6% across 10 datasets, and the 32B model matches DeepSeek-V3 with fewer than 5% of its parameters.
+  [NeurIPS 2025][LLM/NLP][Search-augmented LLM] This paper proposes AceSearcher—a collaborative self-play framework in which a single LLM simultaneously plays two roles: a **decomposer** (breaking complex queries into sub-…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - Search-augmented LLM
-  - multi-hop reasoning
-  - question decomposition
-  - self-play
-  - iterative DPO
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "Search-augmented LLM"
+  - "multi-hop reasoning"
+  - "question decomposition"
+  - "self-play"
+  - "iterative DPO"
 date: 2026-05-08
 content_hash: 39995c3985b414ef
 ---

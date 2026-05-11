@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UIPro: Unleashing Superior Interaction Capability for GUI Agents
 description: >-
-  [ICCV 2025][LLM Agent][GUI agent] UIPro is proposed to achieve state-of-the-art GUI interaction performance across mobile, web, and desktop platforms by constructing 20.6M GUI understanding samples for pre-training and introducing a unified action space to integrate heterogeneous GUI agent task data.
+  [ICCV 2025][LLM Agent][GUI agent] UIPro is proposed to achieve state-of-the-art GUI interaction performance across mobile, web, and desktop platforms by constructing 20.6M GUI understanding samples for pre-training and i…
 tags:
-  - ICCV 2025
-  - LLM Agent
-  - GUI agent
-  - unified action space
-  - GUI grounding
-  - vision-language model
-  - multi-platform interaction
+  - "ICCV 2025"
+  - "LLM Agent"
+  - "GUI agent"
+  - "unified action space"
+  - "GUI grounding"
+  - "vision-language model"
+  - "multi-platform interaction"
 date: 2026-05-08
 content_hash: d698785a81d73d4d
 ---

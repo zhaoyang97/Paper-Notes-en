@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MUSTAFAR: Promoting Unstructured Sparsity for KV Cache Pruning in LLM Inference
 description: >-
-  [NeurIPS 2025][Model Compression][KV cache compression] This paper proposes MUSTAFAR, a framework that systematically demonstrates the superiority of unstructured sparsity for KV cache pruning—achieving 70% sparsity on both Key and Value caches without accuracy degradation—and introduces a bitmap-based sparse format with a custom attention kernel, yielding up to 2.23× end-to-end inference throughput improvement.
+  [NeurIPS 2025][Model Compression][KV cache compression] This paper proposes MUSTAFAR, a framework that systematically demonstrates the superiority of unstructured sparsity for KV cache pruning—achieving 70% sparsity on b…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - KV cache compression
-  - unstructured sparsity
-  - LLM inference
-  - attention acceleration
-  - sparse format
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "KV cache compression"
+  - "unstructured sparsity"
+  - "LLM inference"
+  - "attention acceleration"
+  - "sparse format"
 date: 2026-05-08
 content_hash: 551ceb7c6e4888aa
 ---

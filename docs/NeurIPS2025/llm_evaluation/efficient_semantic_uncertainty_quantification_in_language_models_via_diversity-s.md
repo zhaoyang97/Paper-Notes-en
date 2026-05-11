@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Efficient Semantic Uncertainty Quantification in Language Models via Diversity-Steered Sampling
 description: >-
-  [NeurIPS 2025][LLM Evaluation][semantic uncertainty] This paper proposes a diversity-steered sampling framework that injects NLI-based semantic similarity penalties during decoding to encourage semantically diverse generation, and corrects distributional bias via importance weighting with control variates to reduce variance. The method accurately estimates semantic entropy (aleatoric uncertainty) and mutual information (epistemic uncertainty) of LLMs using as few as 16 samples.
+  [NeurIPS 2025][LLM Evaluation][semantic uncertainty] This paper proposes a diversity-steered sampling framework that injects NLI-based semantic similarity penalties during decoding to encourage semantically diverse gener…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - semantic uncertainty
-  - diversity sampling
-  - importance weighting
-  - NLI
-  - language models
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "semantic uncertainty"
+  - "diversity sampling"
+  - "importance weighting"
+  - "NLI"
+  - "language models"
 date: 2026-05-08
 content_hash: 9c732a7486a0a6e5
 ---

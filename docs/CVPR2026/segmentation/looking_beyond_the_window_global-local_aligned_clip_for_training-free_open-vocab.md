@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Looking Beyond the Window: Global-Local Aligned CLIP for Training-free Open-Vocabulary Semantic Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Open-vocabulary semantic segmentation] This paper proposes GLA-CLIP to address cross-window semantic inconsistency introduced by sliding-window inference in training-free open-vocabulary semantic segmentation. Three mechanisms—global key-value extension, proxy anchor attention, and dynamic normalization—are introduced to integrate global context across windows, achieving state-of-the-art average mIoU of 44.0% across 8 benchmarks.
+  [CVPR 2026][Segmentation][Open-vocabulary semantic segmentation] This paper proposes GLA-CLIP to address cross-window semantic inconsistency introduced by sliding-window inference in training-free open-vocabulary semanti…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Open-vocabulary semantic segmentation
-  - CLIP
-  - sliding window
-  - training-free
-  - global-local alignment
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Open-vocabulary semantic segmentation"
+  - "CLIP"
+  - "sliding window"
+  - "training-free"
+  - "global-local alignment"
 date: 2026-05-08
 content_hash: db22aaa9e8c2c17a
 ---

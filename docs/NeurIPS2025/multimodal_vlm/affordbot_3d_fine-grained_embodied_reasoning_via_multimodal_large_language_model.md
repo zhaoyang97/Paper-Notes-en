@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AffordBot: 3D Fine-grained Embodied Reasoning via Multimodal Large Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Affordance] This paper introduces a fine-grained 3D embodied reasoning task—jointly predicting the spatial location, motion type, and motion axis of actionable elements—and proposes rendering 3D point clouds into panoramic views with projected affordance candidates, guided by a customized Chain-of-Thought (CoT) reasoning paradigm for MLLMs, achieving state-of-the-art performance with AP25 of 23.3%.
+  [NeurIPS 2025][Multimodal VLM][Affordance] This paper introduces a fine-grained 3D embodied reasoning task—jointly predicting the spatial location, motion type…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Affordance
-  - 3D Reasoning
-  - Chain-of-Thought
-  - MLLM
-  - Motion Estimation
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Affordance"
+  - "3D Reasoning"
+  - "Chain-of-Thought"
+  - "MLLM"
+  - "Motion Estimation"
 date: 2026-05-08
 content_hash: ec9a8426f07e1dbe
 ---

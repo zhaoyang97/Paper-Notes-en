@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] The Boundaries of Fair AI in Medical Image Prognosis: A Causal Perspective
 description: >-
-  [NeurIPS 2025][Medical Imaging][Fairness] FairTTE is the first comprehensive framework to systematically investigate fairness in time-to-event (TTE) prediction for medical imaging. It leverages causal analysis to quantify five sources of bias, and through training over 20,000 models, reveals the limitations of existing fairness methods — particularly the fundamental challenge of maintaining fairness under distribution shift.
+  [NeurIPS 2025][Medical Imaging][Fairness] FairTTE is the first comprehensive framework to systematically investigate fairness in time-to-event (TTE) prediction for medical imaging. It leverages causal analysis to quantif…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Fairness
-  - Time-to-Event Prediction
-  - Causal Analysis
-  - Distribution Shift
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Fairness"
+  - "Time-to-Event Prediction"
+  - "Causal Analysis"
+  - "Distribution Shift"
 date: 2026-05-08
 content_hash: 26a967ac234b178f
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Partially Equivariant Reinforcement Learning in Symmetry-Breaking Environments
 description: >-
-  [ICLR 2026][Reinforcement Learning][Partial equivariance] This paper proposes the Partially Invariant MDP (PI-MDP) framework, which employs a learnable gating function $\lambda(s,a)$ to pointwise switch between equivariant and standard Bellman updates across the state-action space. The paper theoretically proves that local symmetry breaking propagates through discounted backup and amplifies global value function error by a factor of $1/(1-\gamma)$, while PI-MDP provably confines the error strictly within the breaking region. The framework is instantiated as PE-DQN and PE-SAC, achieving comprehensive improvements over strictly equivariant and approximately equivariant baselines on Grid-World, MuJoCo locomotion, and robotic manipulation tasks.
+  [ICLR 2026][Reinforcement Learning][Partial equivariance] This paper proposes the Partially Invariant MDP (PI-MDP) framework, which employs a learnable gating function $\lambda(s…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Partial equivariance
-  - symmetry breaking
-  - group-invariant MDP
-  - gated policy
-  - Bellman error propagation
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Partial equivariance"
+  - "symmetry breaking"
+  - "group-invariant MDP"
+  - "gated policy"
+  - "Bellman error propagation"
 date: 2026-05-08
 content_hash: ffba62141d07f822
 ---

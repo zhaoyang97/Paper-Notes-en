@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ChartCap: Mitigating Hallucination of Dense Chart Captioning
 description: >-
-  [ICCV 2025][LLM Safety][Chart understanding] This work constructs ChartCap, a large-scale dataset of 565K real chart–caption pairs. By adopting type-specific caption schemas that exclude irrelevant information while emphasizing structure and key insights, and by introducing a reference-free Visual Consistency Score (VCS) evaluation metric, the paper effectively mitigates hallucination in VLM-based chart captioning.
+  [ICCV 2025][LLM Safety][Chart understanding] This work constructs ChartCap, a large-scale dataset of 565K real chart–caption pairs. By adopting type-specific caption schemas that exclude irrelevant information while emph…
 tags:
-  - ICCV 2025
-  - LLM Safety
-  - Chart understanding
-  - vision-language models
-  - hallucination mitigation
-  - chart captioning
-  - dataset construction
+  - "ICCV 2025"
+  - "LLM Safety"
+  - "Chart understanding"
+  - "vision-language models"
+  - "hallucination mitigation"
+  - "chart captioning"
+  - "dataset construction"
 date: 2026-05-08
 content_hash: 0e07a7e18c19a7ad
 ---

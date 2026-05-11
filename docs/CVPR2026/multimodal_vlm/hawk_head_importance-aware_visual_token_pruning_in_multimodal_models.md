@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HAWK: Head Importance-Aware Visual Token Pruning in Multimodal Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Visual token pruning] This paper proposes HAWK, a head importance-aware visual token pruning method that offline computes per-head contribution weights to visual understanding and dynamically evaluates each visual token's importance via text-guided attention scores. On Qwen2.5-VL, HAWK retains 96.0% of original performance after pruning 80.2% of visual tokens while reducing inference latency by 26%.
+  [CVPR 2026][Multimodal VLM][Visual token pruning] This paper proposes HAWK, a head importance-aware visual token pruning method that offline computes per-head contribution weights to visual understanding and dynamically…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Visual token pruning
-  - attention head importance
-  - multimodal inference acceleration
-  - training-free
-  - text-guided attention
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Visual token pruning"
+  - "attention head importance"
+  - "multimodal inference acceleration"
+  - "training-free"
+  - "text-guided attention"
 date: 2026-05-08
 content_hash: 8522207fb79832a0
 ---

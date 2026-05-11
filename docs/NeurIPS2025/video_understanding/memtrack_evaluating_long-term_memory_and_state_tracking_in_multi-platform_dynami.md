@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MEMTRACK: Evaluating Long-Term Memory and State Tracking in Multi-Platform Dynamic Agent Environments
 description: >-
-  [NeurIPS 2025 (SEA Workshop)][Video Understanding][long-term memory] This paper proposes the MEMTRACK benchmark to evaluate LLM agents' long-term memory and state tracking capabilities in multi-platform dynamic environments (Slack/Linear/Git), revealing that even the strongest model, GPT-5, achieves only 60% accuracy.
+  [NeurIPS 2025 (SEA Workshop)][Video Understanding][long-term memory] This paper proposes the MEMTRACK benchmark to evaluate LLM agents' long-term memory and state tracking capabilities in multi-platform dynamic environme…
 tags:
-  - NeurIPS 2025 (SEA Workshop)
-  - Video Understanding
-  - long-term memory
-  - state tracking
-  - multi-platform agents
-  - benchmark
-  - memory evaluation
+  - "NeurIPS 2025 (SEA Workshop)"
+  - "Video Understanding"
+  - "long-term memory"
+  - "state tracking"
+  - "multi-platform agents"
+  - "benchmark"
+  - "memory evaluation"
 date: 2026-05-08
 content_hash: 1daacef7dc4672c9
 ---

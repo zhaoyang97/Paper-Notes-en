@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DISTA-Net: Dynamic Closely-Spaced Infrared Small Target Unmixing
 description: >-
-  [ICCV 2025][LLM Evaluation][Infrared small target] DISTA-Net proposes a dynamic deep unfolding network that replaces the static nonlinear transform and threshold parameters in ISTA-based sparse reconstruction with input-adaptive counterparts, constituting the first deep learning method for closely-spaced infrared small target (CSIST) unmixing. The work also establishes the first open-source ecosystem encompassing a dataset, evaluation metrics, and a toolkit.
+  [ICCV 2025][LLM Evaluation][Infrared small target] DISTA-Net proposes a dynamic deep unfolding network that replaces the static nonlinear transform and threshold parameters in ISTA-based sparse reconstruction with input-…
 tags:
-  - ICCV 2025
-  - LLM Evaluation
-  - Infrared small target
-  - closely-spaced target unmixing
-  - deep unfolding network
-  - sparse reconstruction
-  - sub-pixel localization
+  - "ICCV 2025"
+  - "LLM Evaluation"
+  - "Infrared small target"
+  - "closely-spaced target unmixing"
+  - "deep unfolding network"
+  - "sparse reconstruction"
+  - "sub-pixel localization"
 date: 2026-05-08
 content_hash: 2f8e36053393a483
 ---

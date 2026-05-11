@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Reinforcing the Weakest Links: Modernizing SIENA with Targeted Deep Learning Integration
 description: >-
-  [CVPR 2026][Medical Imaging][SIENA] This work selectively replaces the classical skull stripping (BET2) and tissue segmentation (FAST) modules in the SIENA longitudinal brain atrophy pipeline with deep learning alternatives (SynthStrip/SynthSeg). Evaluated on two large-scale longitudinal cohorts—ADNI (N=1006) and PPMI (N=310)—the proposed modifications substantially improve the correlation between PBVC and clinical disease progression (correlation coefficients increase by over 100%), while reducing scan-order error by up to 99.1%.
+  [CVPR 2026][Medical Imaging][SIENA] This work selectively replaces the classical skull stripping (BET2) and tissue segmentation (FAST) modules in the SIENA longitudinal brain atrophy pipeline with deep learning alternati…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - SIENA
-  - brain atrophy
-  - longitudinal MRI
-  - SynthStrip
-  - SynthSeg
-  - modular modernization
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "SIENA"
+  - "brain atrophy"
+  - "longitudinal MRI"
+  - "SynthStrip"
+  - "SynthSeg"
+  - "modular modernization"
 date: 2026-05-08
 content_hash: 5b0e230755a97825
 ---

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Spend Wisely: Maximizing Post-Training Gains in Iterative Synthetic Data Bootstrapping
 description: >-
-  [NeurIPS 2025][Image Restoration][synthetic data] This paper provides the first theoretical analysis of the budget allocation problem in iterative synthetic data bootstrapping, proving that constant strategies fail to converge with high probability, that exponential growth strategies outperform polynomial strategies in the worst case, and validating these findings empirically on image denoising (DPM) and mathematical reasoning (LLM) tasks.
+  [NeurIPS 2025][Image Restoration][synthetic data] This paper provides the first theoretical analysis of the budget allocation problem in iterative synthetic data bootstrapping…
 tags:
-  - NeurIPS 2025
-  - Image Restoration
-  - synthetic data
-  - iterative bootstrapping
-  - budget allocation strategy
-  - exponential growth strategy
-  - diffusion models
-  - large language models
-  - post-training optimization
+  - "NeurIPS 2025"
+  - "Image Restoration"
+  - "synthetic data"
+  - "iterative bootstrapping"
+  - "budget allocation strategy"
+  - "exponential growth strategy"
+  - "diffusion models"
+  - "large language models"
+  - "post-training optimization"
 date: 2026-05-08
 content_hash: c4f21da6cd6b6010
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Visual Instruction Bottleneck Tuning
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Information Bottleneck] This paper is the first to apply the Information Bottleneck (IB) principle to end-to-end instruction tuning of multimodal large language models. It proposes Visual Instruction Bottleneck Tuning (Vittle), which inserts a lightweight bottleneck layer inside the LLM to learn minimally sufficient representations. Vittle consistently improves robustness across 30 distribution shift scenarios without sacrificing performance on standard benchmarks.
+  [NeurIPS 2025][Multimodal VLM][Information Bottleneck] This paper is the first to apply the Information Bottleneck (IB) principle to end-to-end instruction tuning of multimodal large language models. It proposes Visual I…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Information Bottleneck
-  - Multimodal Large Language Models
-  - Distribution Shift Robustness
-  - Instruction Tuning
-  - Representation Learning
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Information Bottleneck"
+  - "Multimodal Large Language Models"
+  - "Distribution Shift Robustness"
+  - "Instruction Tuning"
+  - "Representation Learning"
 date: 2026-05-08
 content_hash: 6b048e661653bcbc
 ---

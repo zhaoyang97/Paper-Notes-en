@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HORIZON: A Benchmark for in-the-wild User Behaviour Modeling
 description: >-
-  [ACL 2026][Recommender Systems][Sequential Recommendation] This paper presents HORIZON, the first fully open-source large-scale cross-domain long-term recommendation benchmark. Built by merging all categories of Amazon Reviews into a unified interaction history covering 54M users and 35M items, HORIZON introduces a four-quadrant evaluation protocol that orthogonally decouples the temporal and user axes. The benchmark reveals that models such as BERT4Rec perform strongly in-distribution but degrade significantly under temporal extrapolation and unseen-user settings, and that LLMs do not consistently outperform dedicated architectures for user behaviour modeling.
+  [ACL 2026][Recommender Systems][Sequential Recommendation] This paper presents HORIZON, the first fully open-source large-scale cross-domain long-term recommendation benchmark. Built by merging all categories of Amazon R…
 tags:
-  - ACL 2026
-  - Recommender Systems
-  - Sequential Recommendation
-  - Cross-Domain User Modeling
-  - Long-Term Behaviour Prediction
-  - Temporal Generalization
-  - LLM-based Recommendation
+  - "ACL 2026"
+  - "Recommender Systems"
+  - "Sequential Recommendation"
+  - "Cross-Domain User Modeling"
+  - "Long-Term Behaviour Prediction"
+  - "Temporal Generalization"
+  - "LLM-based Recommendation"
 date: 2026-05-08
 content_hash: d54d3d2f383c2e43
 ---

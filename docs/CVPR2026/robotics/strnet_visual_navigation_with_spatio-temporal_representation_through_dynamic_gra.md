@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] STRNet: Visual Navigation with Spatio-Temporal Representation through Dynamic Graph Aggregation
 description: >-
-  [CVPR 2026][Robotics][Visual Navigation] STRNet proposes a unified spatio-temporal representation framework for visual navigation. It employs a graph reasoning module to model intra-frame spatial topology, and combines hybrid temporal shifting with multi-resolution differential convolution to capture temporal dynamics, achieving substantial improvements in goal-conditioned navigation success rates (70% gain over NoMaD).
+  [CVPR 2026][Robotics][Visual Navigation] STRNet proposes a unified spatio-temporal representation framework for visual navigation. It employs a graph reasoning module to model intra-frame spatial topology…
 tags:
-  - CVPR 2026
-  - Robotics
-  - Visual Navigation
-  - Spatio-Temporal Representation
-  - Graph Neural Networks
-  - Diffusion Policy
-  - Goal-Conditioned Control
+  - "CVPR 2026"
+  - "Robotics"
+  - "Visual Navigation"
+  - "Spatio-Temporal Representation"
+  - "Graph Neural Networks"
+  - "Diffusion Policy"
+  - "Goal-Conditioned Control"
 date: 2026-05-08
 content_hash: 7380320f5b76cf13
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Curriculum Abductive Learning
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Abductive Learning] This paper proposes Curriculum Abductive Learning (C-ABL), which partitions a knowledge base into sub-knowledge-bases according to its dependency structure and introduces them progressively during training. This substantially reduces the abduction search space in ABL, significantly improving training stability, convergence speed, and final accuracy.
+  [NeurIPS 2025][LLM Reasoning][Abductive Learning] This paper proposes Curriculum Abductive Learning (C-ABL), which partitions a knowledge base into sub-knowledge-bases according to its dependency structure and introduces…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - Abductive Learning
-  - Curriculum Learning
-  - Knowledge Base Partitioning
-  - Neuro-Symbolic Reasoning
-  - Training Stability
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "Abductive Learning"
+  - "Curriculum Learning"
+  - "Knowledge Base Partitioning"
+  - "Neuro-Symbolic Reasoning"
+  - "Training Stability"
 date: 2026-05-08
 content_hash: 50fdcd902aa679e3
 ---

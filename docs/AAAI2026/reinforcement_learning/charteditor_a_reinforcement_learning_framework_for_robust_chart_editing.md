@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ChartEditor: A Reinforcement Learning Framework for Robust Chart Editing
 description: >-
-  [AAAI2026][Reinforcement Learning][chart editing] This paper introduces the ChartEditVista benchmark (7,964 samples, 31 chart types) and the ChartEditor model. By combining a GRPO reinforcement learning framework with a novel rendering reward, ChartEditor surpasses GPT-4o and several 72B-scale models on chart editing tasks using only 3B parameters.
+  [AAAI2026][Reinforcement Learning][chart editing] This paper introduces the ChartEditVista benchmark (7,964 samples, 31 chart types) and the ChartEditor model. By combining a GRPO reinforcement learning framework with a…
 tags:
-  - AAAI2026
-  - Reinforcement Learning
-  - chart editing
-  - reinforcement-learning
-  - GRPO
-  - rendering reward
-  - benchmark
+  - "AAAI2026"
+  - "Reinforcement Learning"
+  - "chart editing"
+  - "reinforcement-learning"
+  - "GRPO"
+  - "rendering reward"
+  - "benchmark"
 date: 2026-05-08
 content_hash: 943fe2b4e0feabaa
 ---

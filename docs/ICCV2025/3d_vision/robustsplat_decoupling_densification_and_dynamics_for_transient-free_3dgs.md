@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RobustSplat: Decoupling Densification and Dynamics for Transient-Free 3DGS
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper identifies Gaussian densification in 3DGS as the key factor responsible for transient-object artifacts, and proposes a delayed Gaussian growth strategy along with a scale-cascaded mask bootstrapping method to decouple densification from dynamic region modeling, achieving state-of-the-art transient-free novel view synthesis across multiple benchmark datasets.
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper identifies Gaussian densification in 3DGS as the key factor responsible for transient-object artifacts…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - Novel View Synthesis
-  - Transient Object Removal
-  - Gaussian Densification
-  - Robust Reconstruction
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Novel View Synthesis"
+  - "Transient Object Removal"
+  - "Gaussian Densification"
+  - "Robust Reconstruction"
 date: 2026-05-08
 content_hash: 2abe2c42c48ac1e3
 ---

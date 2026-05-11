@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Bi-Level Decision-Focused Causal Learning for Large-Scale Marketing Optimization
 description: >-
-  [NeurIPS 2025][Causal Inference][decision-focused learning] This paper proposes Bi-DFCL, a bilevel optimization framework that jointly leverages observational (OBS) data and randomized controlled trial (RCT) data to train marketing resource allocation models. The upper level trains a Bridge Network with unbiased decision loss on RCT data to dynamically correct the bias of the lower level trained on OBS data. The framework further introduces differentiable surrogate decision losses (PPL/PIFD) grounded in the primal problem and an implicit differentiation algorithm, addressing the predict-then-optimize inconsistency and the bias-variance dilemma of conventional two-stage methods. The system has been deployed at scale on Meituan.
+  [NeurIPS 2025][Causal Inference][decision-focused learning] This paper proposes Bi-DFCL, a bilevel optimization framework that jointly leverages observational (OBS) data and randomized controlled trial (RCT) data to trai…
 tags:
-  - NeurIPS 2025
-  - Causal Inference
-  - decision-focused learning
-  - bilevel optimization
-  - marketing
-  - uplift modeling
+  - "NeurIPS 2025"
+  - "Causal Inference"
+  - "decision-focused learning"
+  - "bilevel optimization"
+  - "marketing"
+  - "uplift modeling"
 date: 2026-05-08
 content_hash: 7c38a58b8adefc63
 ---

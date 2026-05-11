@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learned Image Compression with Hierarchical Progressive Context Modeling
 description: >-
-  [ICCV 2025][Model Compression][Learned image compression] This paper proposes a Hierarchical Progressive Context Model (HPCM) that partitions the latent representation into multi-scale sub-representations and encodes them sequentially from coarse to fine, combined with a cross-attention-based progressive context fusion mechanism across coding steps, enabling more efficient long-range dependency modeling and more accurate entropy parameter estimation while achieving a better trade-off between compression performance and computational complexity.
+  [ICCV 2025][Model Compression][Learned image compression] This paper proposes a Hierarchical Progressive Context Model (HPCM) that partitions the latent representation into multi-scale sub-representations and encodes the…
 tags:
-  - ICCV 2025
-  - Model Compression
-  - Learned image compression
-  - context modeling
-  - entropy coding
-  - hierarchical coding
-  - progressive fusion
+  - "ICCV 2025"
+  - "Model Compression"
+  - "Learned image compression"
+  - "context modeling"
+  - "entropy coding"
+  - "hierarchical coding"
+  - "progressive fusion"
 date: 2026-05-08
 content_hash: ca54fb94b03f987e
 ---

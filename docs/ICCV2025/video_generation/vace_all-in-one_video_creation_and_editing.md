@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] VACE: All-in-One Video Creation and Editing
 description: >-
-  [ICCV 2025][Video Generation] This paper proposes VACE, an all-in-one video creation and editing framework built on Diffusion Transformer. Through a unified Video Condition Unit (VCU) interface and a pluggable Context Adapter architecture, a single model covers 12+ video tasks including reference-based generation, video editing, and mask-based editing, achieving performance on par with task-specific models.
+  [ICCV 2025][Video Generation][Video Editing] This paper proposes VACE, an all-in-one video creation and editing framework built on Diffusion Transformer. Through a unified Video Condition Unit (VCU) interface and a plugg…
 tags:
-  - ICCV 2025
-  - Video Generation
-  - Video Editing
-  - Diffusion Transformer
-  - Unified Framework
-  - Video Condition Unit
+  - "ICCV 2025"
+  - "Video Generation"
+  - "Video Editing"
+  - "Diffusion Transformer"
+  - "Unified Framework"
+  - "Video Condition Unit"
 date: 2026-05-08
 content_hash: 3c1566c0da40d532
 ---

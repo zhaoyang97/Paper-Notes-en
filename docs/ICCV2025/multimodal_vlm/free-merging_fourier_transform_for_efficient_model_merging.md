@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FREE-Merging: Fourier Transform for Efficient Model Merging
 description: >-
-  [ICCV 2025][Multimodal VLM][Model Merging] This paper is the first to identify the frequency-domain manifestation of task interference in model merging. It proposes FR-Merging, which removes low-frequency interference via high-pass filtering to construct a high-quality merged backbone, and combines it with lightweight task expert modules (FREE-Merging) to achieve an optimal performance–cost trade-off across vision, language, and multimodal tasks.
+  [ICCV 2025][Multimodal VLM][Model Merging] This paper is the first to identify the frequency-domain manifestation of task interference in model merging. It proposes FR-Merging…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Model Merging
-  - Fourier Transform
-  - Task Interference
-  - Frequency-Domain Analysis
-  - Lightweight Expert
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Model Merging"
+  - "Fourier Transform"
+  - "Task Interference"
+  - "Frequency-Domain Analysis"
+  - "Lightweight Expert"
 date: 2026-05-08
 content_hash: 06872d9526e05d1d
 ---

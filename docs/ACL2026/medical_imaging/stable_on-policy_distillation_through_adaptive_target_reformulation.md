@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Stable On-Policy Distillation through Adaptive Target Reformulation
 description: >-
-  [ACL 2026][Medical Imaging][Knowledge Distillation] This paper proposes Veto, a target-level reformulation method that stabilizes on-policy knowledge distillation by constructing a geometric bridging distribution between teacher and student in logit space. A single parameter $\beta$ simultaneously serves as an adaptive gradient veto in forward KL (suppressing harmful gradients from low-confidence tokens) and a decisiveness knob in reverse KL (balancing reward-driven optimization and output diversity), achieving a 9.2% improvement over SFT on GSM8K.
+  [ACL 2026][Medical Imaging][Knowledge Distillation] This paper proposes Veto, a target-level reformulation method that stabilizes on-policy knowledge distillation by constructing a geometric bridging distribution between…
 tags:
-  - ACL 2026
-  - Medical Imaging
-  - Knowledge Distillation
-  - On-Policy Distillation
-  - Gradient Stability
-  - KL Divergence
-  - Target Reformulation
+  - "ACL 2026"
+  - "Medical Imaging"
+  - "Knowledge Distillation"
+  - "On-Policy Distillation"
+  - "Gradient Stability"
+  - "KL Divergence"
+  - "Target Reformulation"
 date: 2026-05-08
 content_hash: 7fef08fc9deb90fe
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Reliable Decision Making via Calibration Oriented Retrieval Augmented Generation
 description: >-
-  [NeurIPS 2025][RAG] This paper proposes CalibRAG, a framework that trains a temperature-conditioned forecasting function to ensure confidence calibration in RAG-assisted decision-making, achieving improvements in both calibration quality and accuracy.
+  [NeurIPS 2025][Information Retrieval & RAG][RAG] This paper proposes CalibRAG, a framework that trains a temperature-conditioned forecasting function to ensure confidence calibration in RAG-assisted decision-making…
 tags:
-  - NeurIPS 2025
-  - RAG
-  - calibration
-  - decision-making
-  - retrieval augmented generation
-  - confidence estimation
+  - "NeurIPS 2025"
+  - "Information Retrieval & RAG"
+  - "RAG"
+  - "calibration"
+  - "decision-making"
+  - "retrieval augmented generation"
+  - "confidence estimation"
 date: 2026-05-08
 content_hash: d2be05a89b354f9d
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] 3D Gaussian Splatting Driven Multi-View Robust Physical Adversarial Camouflage Generation
 description: >-
-  [ICCV 2025][Autonomous Driving][3D Gaussian Splatting] This paper proposes PGA, the first physical adversarial attack framework based on 3D Gaussian Splatting (3DGS). By addressing mutual occlusion and self-occlusion among Gaussians to ensure cross-viewpoint consistency, and by designing a min-max optimization strategy to filter non-robust adversarial features, PGA substantially outperforms state-of-the-art methods in both the digital and physical domains.
+  [ICCV 2025][Autonomous Driving][3D Gaussian Splatting] This paper proposes PGA, the first physical adversarial attack framework based on 3D Gaussian Splatting (3DGS). By addressing mutual occlusion and self-occlusion amo…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - 3D Gaussian Splatting
-  - Physical Adversarial Attack
-  - Adversarial Camouflage
-  - Multi-View Robustness
-  - Autonomous Driving Security
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "3D Gaussian Splatting"
+  - "Physical Adversarial Attack"
+  - "Adversarial Camouflage"
+  - "Multi-View Robustness"
+  - "Autonomous Driving Security"
 date: 2026-05-08
 content_hash: 8fbe7ff4743df0b3
 ---

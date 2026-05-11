@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Recovery Guarantee for Sparse Neural Networks
 description: >-
-  [ICLR 2026][Model Compression][Sparse neural networks] This paper establishes the first sparse recovery guarantee for ReLU neural networks: for two-layer scalar-output networks with Gaussian random training data, an iterative hard thresholding (IHT) algorithm based on convex reformulation can exactly recover sparse network weights, with memory requirements scaling only linearly in the number of nonzero weights.
+  [ICLR 2026][Model Compression][Sparse neural networks] This paper establishes the first sparse recovery guarantee for ReLU neural networks: for two-layer scalar-output networks with Gaussian random training data…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Sparse neural networks
-  - compressed sensing
-  - iterative hard thresholding
-  - convex reformulation
-  - ReLU networks
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Sparse neural networks"
+  - "compressed sensing"
+  - "iterative hard thresholding"
+  - "convex reformulation"
+  - "ReLU networks"
 date: 2026-05-08
 content_hash: 5bfac60e28f7aa9a
 ---

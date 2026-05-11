@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Relational Visual Similarity
 description: >-
-  [CVPR 2026][Multimodal VLM][Relational Similarity] This paper formally defines the problem of relational visual similarity — the intrinsic relational or functional correspondence between two images, as opposed to surface-level attribute similarity — constructs a 114K anonymous-description dataset, trains the relsim model, and reveals fundamental deficiencies in existing similarity metrics (CLIP, DINO, etc.) for capturing relational similarity.
+  [CVPR 2026][Multimodal VLM][Relational Similarity] This paper formally defines the problem of relational visual similarity — the intrinsic relational or functional correspondence between two images…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Relational Similarity
-  - Visual Analogy
-  - Anonymous Descriptions
-  - Cognitive Science
-  - Image Retrieval
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Relational Similarity"
+  - "Visual Analogy"
+  - "Anonymous Descriptions"
+  - "Cognitive Science"
+  - "Image Retrieval"
 date: 2026-05-08
 content_hash: e6cad573d8ac5e2c
 ---

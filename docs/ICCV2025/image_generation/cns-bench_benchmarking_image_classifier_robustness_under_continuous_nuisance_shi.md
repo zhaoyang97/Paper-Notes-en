@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CNS-Bench: Benchmarking Image Classifier Robustness Under Continuous Nuisance Shifts
 description: >-
-  [ICCV2025][Image Generation][OOD Robustness] This paper proposes CNS-Bench, the first benchmark that leverages LoRA adapters to impose **continuous** and **photorealistic** nuisance shifts on diffusion models for systematically evaluating the OOD robustness of image classifiers, covering 14 shift types, 5 severity levels, and 40+ classifiers.
+  [ICCV2025][Image Generation][OOD Robustness] This paper proposes CNS-Bench, the first benchmark that leverages LoRA adapters to impose **continuous** and **photorealistic** nuisance shifts on diffusion models for systema…
 tags:
-  - ICCV2025
-  - Image Generation
-  - OOD Robustness
-  - Continuous Nuisance Shifts
-  - LoRA Adapters
-  - Diffusion Models
-  - Image Classifier Benchmarking
+  - "ICCV2025"
+  - "Image Generation"
+  - "OOD Robustness"
+  - "Continuous Nuisance Shifts"
+  - "LoRA Adapters"
+  - "Diffusion Models"
+  - "Image Classifier Benchmarking"
 date: 2026-05-08
 content_hash: c564ae168f07364e
 ---

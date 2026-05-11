@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Ultrasound-CLIP: Semantic-Aware Contrastive Pre-training for Ultrasound Image-Text Understanding
 description: >-
-  [CVPR 2026][Medical Imaging][ultrasound image-text pre-training] The core contribution of this paper is not merely an "ultrasound version of CLIP," but rather a redefinition of the image-text alignment objective around ultrasound-specific anatomical hierarchies and diagnostic attributes. The authors first construct the Ultrasonographic Diagnostic Taxonomy (UDT) and the large-scale US-365K dataset, then explicitly inject clinical relationships from text into contrastive learning via semantic soft labels and an attribute heterogeneous graph, yielding visual-language representations that are more genuinely "ultrasound-aware."
+  [CVPR 2026][Medical Imaging][ultrasound image-text pre-training] The core contribution of this paper is not merely an "ultrasound version of CLIP…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - ultrasound image-text pre-training
-  - diagnostic taxonomy
-  - semantic soft labels
-  - heterogeneous graph encoding
-  - cross-modal retrieval
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "ultrasound image-text pre-training"
+  - "diagnostic taxonomy"
+  - "semantic soft labels"
+  - "heterogeneous graph encoding"
+  - "cross-modal retrieval"
 date: 2026-05-08
 content_hash: 244dd8fe202f6bde
 ---

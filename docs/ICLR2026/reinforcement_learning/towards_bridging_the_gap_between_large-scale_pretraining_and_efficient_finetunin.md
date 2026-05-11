@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning for Humanoid Control
 description: >-
-  [ICLR 2026][Reinforcement Learning][humanoid robot control] LIFT proposes a three-stage pretraining-finetuning framework: (i) large-scale parallel SAC pretraining for zero-shot deployment; (ii) offline pretraining of a physics-prior world model based on Lagrangian dynamics; (iii) efficient finetuning via deterministic action execution in the environment combined with stochastic exploration within the world model. The full sim-to-real pipeline is validated on Booster T1 and Unitree G1 humanoid robots.
+  [ICLR 2026][Reinforcement Learning][humanoid robot control] LIFT proposes a three-stage pretraining-finetuning framework: (i) large-scale parallel SAC pretraining for zero-shot deployment…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - humanoid robot control
-  - large-scale pretraining
-  - efficient finetuning
-  - SAC
-  - physics-prior world model
-  - sim-to-real
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "humanoid robot control"
+  - "large-scale pretraining"
+  - "efficient finetuning"
+  - "SAC"
+  - "physics-prior world model"
+  - "sim-to-real"
 date: 2026-05-08
 content_hash: 96325f192a5e3a5a
 ---

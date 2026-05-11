@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] MF-Speech: Achieving Fine-Grained and Compositional Control in Speech Generation via Factor Disentanglement
 description: >-
-  [AAAI 2026][Speech Generation] This paper proposes MF-Speech, a framework that employs multi-objective optimization to disentangle speech signals into three high-purity, independent factor representations—content, timbre, and emotion—and subsequently leverages dynamic fusion and Hierarchical Style Adaptive Normalization (HSAN) to achieve fine-grained, compositional control in speech generation, significantly outperforming existing methods on multi-factor compositional speech generation tasks (WER=4.67%, SECS=0.5685).
+  [AAAI 2026][Speech Generation] This paper proposes MF-Speech, a framework that employs multi-objective optimization to disentangle speech signals into three high-purity, independent factor representations—content, timbre…
 tags:
-  - AAAI 2026
-  - Speech Generation
-  - Factor Disentanglement
-  - Controllable Speech Synthesis
-  - Contrastive Learning
-  - Adaptive Style Injection
+  - "AAAI 2026"
+  - "Speech Generation"
+  - "Factor Disentanglement"
+  - "Controllable Speech Synthesis"
+  - "Contrastive Learning"
+  - "Adaptive Style Injection"
 date: 2026-05-08
 content_hash: b5fc456f9072e716
 ---

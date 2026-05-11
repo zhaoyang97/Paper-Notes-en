@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Wide-Horizon Thinking and Simulation-Based Evaluation for Real-World LLM Planning with Multifaceted Constraints
 description: >-
-  [NeurIPS 2025][Recommender Systems][LLM planning] This paper proposes MAoP (Multiple Aspects of Planning), a framework that endows LLMs with "wide-horizon thinking" by having a strategist perform multi-aspect pre-planning and routing into a coherent blueprint, enabling the planner to conduct in-depth per-aspect analysis in parallel. Coupled with the Travel-Sim causal simulation benchmark, MAoP substantially outperforms CoT and decomposition-based methods on travel planning tasks; a distilled 3B model achieves a PER of 66.9%.
+  [NeurIPS 2025][Recommender Systems][LLM planning] This paper proposes MAoP (Multiple Aspects of Planning), a framework that endows LLMs with "wide-horizon thinking" by having a strategist perform multi-aspect pre-plannin…
 tags:
-  - NeurIPS 2025
-  - Recommender Systems
-  - LLM planning
-  - travel planning
-  - wide-horizon thinking
-  - simulation evaluation
-  - multifaceted constraints
+  - "NeurIPS 2025"
+  - "Recommender Systems"
+  - "LLM planning"
+  - "travel planning"
+  - "wide-horizon thinking"
+  - "simulation evaluation"
+  - "multifaceted constraints"
 date: 2026-05-08
 content_hash: 99f4cb0836d16be5
 ---

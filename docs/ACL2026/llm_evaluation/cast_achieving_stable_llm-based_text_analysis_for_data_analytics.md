@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CAST: Achieving Stable LLM-based Text Analysis for Data Analytics
 description: >-
-  [ACL 2026][LLM Evaluation][Output Stability] This paper proposes the CAST framework, which constrains the latent reasoning trajectories of LLMs through two complementary mechanisms—Algorithmic Prompting and Thinking-before-Speaking—to significantly improve run-to-run stability in text summarization and annotation tasks without sacrificing output quality.
+  [ACL 2026][LLM Evaluation][Output Stability] This paper proposes the CAST framework, which constrains the latent reasoning trajectories of LLMs through two complementary mechanisms—Algorithmic Prompting and Thinking-befo…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - Output Stability
-  - Text Analysis
-  - Tabular Data
-  - Algorithmic Prompting
-  - Intermediate State Commitment
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "Output Stability"
+  - "Text Analysis"
+  - "Tabular Data"
+  - "Algorithmic Prompting"
+  - "Intermediate State Commitment"
 date: 2026-05-08
 content_hash: d234c8c881e2e7c4
 ---

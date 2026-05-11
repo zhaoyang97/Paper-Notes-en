@@ -2,15 +2,16 @@
 title: >-
   [Paper Note] Execution-Grounded Credit Assignment for GRPO in Code Generation
 description: >-
-  [ICLR 2026 Workshop (SPOT)][GRPO] This paper proposes EGCA (Execution-Grounded Credit Assignment), which leverages execution traces to localize the earliest semantic deviation in a program and concentrates GRPO gradients on the causal token span, addressing the coarse-grained credit assignment problem in code generation. EGCA achieves 82.1% pass@1 on HumanEval.
+  [ICLR 2026 Workshop (SPOT)][Code Intelligence][GRPO] This paper proposes EGCA (Execution-Grounded Credit Assignment), which leverages execution traces to localize the earliest semantic deviation in a program and concentr…
 tags:
-  - ICLR 2026 Workshop (SPOT)
-  - GRPO
-  - code generation
-  - credit assignment
-  - reinforcement learning
-  - execution tracing
-  - RLVR
+  - "ICLR 2026 Workshop (SPOT)"
+  - "Code Intelligence"
+  - "GRPO"
+  - "code generation"
+  - "credit assignment"
+  - "reinforcement learning"
+  - "execution tracing"
+  - "RLVR"
 date: 2026-05-08
 content_hash: 942e8d66635779ba
 ---

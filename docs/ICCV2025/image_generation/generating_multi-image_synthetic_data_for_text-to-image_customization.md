@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Generating Multi-Image Synthetic Data for Text-to-Image Customization
 description: >-
-  [ICCV 2025][Image Generation][Text-to-image customization] This paper proposes SynCD (Synthetic Customization Dataset) and its generation pipeline, which synthesizes multi-image consistent object datasets using shared attention and 3D asset priors. The trained encoder model surpasses existing encoder-based methods without requiring test-time optimization.
+  [ICCV 2025][Image Generation][Text-to-image customization] This paper proposes SynCD (Synthetic Customization Dataset) and its generation pipeline…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Text-to-image customization
-  - synthetic dataset
-  - shared attention
-  - encoder-based method
-  - 3D consistency
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Text-to-image customization"
+  - "synthetic dataset"
+  - "shared attention"
+  - "encoder-based method"
+  - "3D consistency"
 date: 2026-05-08
 content_hash: 731c177d0238fc5b
 ---

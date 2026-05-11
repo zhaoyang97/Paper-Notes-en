@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UMoE: Unifying Attention and FFN with Shared Experts
 description: >-
-  [NeurIPS 2025][LLM Efficiency][Unified MoE Architecture] By reformulating the multi-head attention mechanism, this work reveals that attention shares the same "two-layer matrix multiplication" structure as FFN layers. Based on this insight, UMoE is proposed as a unified architecture that employs identically designed experts for both attention and FFN layers with parameter sharing, outperforming existing FFN-MoE and Attention-MoE baselines on both Base (134M) and Large (1.1B) models.
+  [NeurIPS 2025][LLM Efficiency][Unified MoE Architecture] By reformulating the multi-head attention mechanism, this work reveals that attention shares the same "two-layer matrix multiplication" structure as FFN layers. Ba…
 tags:
-  - NeurIPS 2025
-  - LLM Efficiency
-  - Unified MoE Architecture
-  - Pre-Mixing Attention
-  - Expert Sharing
-  - Attention-FFN Fusion
-  - Parameter Efficiency
+  - "NeurIPS 2025"
+  - "LLM Efficiency"
+  - "Unified MoE Architecture"
+  - "Pre-Mixing Attention"
+  - "Expert Sharing"
+  - "Attention-FFN Fusion"
+  - "Parameter Efficiency"
 date: 2026-05-08
 content_hash: 8ba5ead2c6c8f0a7
 ---

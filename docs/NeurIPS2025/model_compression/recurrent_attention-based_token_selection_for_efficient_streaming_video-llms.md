@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Recurrent Attention-based Token Selection for Efficient Streaming Video-LLMs
 description: >-
-  [NeurIPS 2025][Model Compression][Streaming video understanding] This paper proposes rLiVS (Recurrent LLM-informed Visual Selection), a training-free and model-agnostic method for streaming video understanding. It achieves state-of-the-art performance on streaming video benchmarks through three complementary designs: LLM attention-guided visual token selection (retaining only ~6% of tokens), recurrent reuse of historical tokens, and caption-based retrieval for question answering.
+  [NeurIPS 2025][Model Compression][Streaming video understanding] This paper proposes rLiVS (Recurrent LLM-informed Visual Selection), a training-free and model-agnostic method for streaming video understanding. It achiev…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Streaming video understanding
-  - visual token compression
-  - attention-based selection
-  - long video
-  - Video-LLM
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Streaming video understanding"
+  - "visual token compression"
+  - "attention-based selection"
+  - "long video"
+  - "Video-LLM"
 date: 2026-05-08
 content_hash: 40900e79551343dd
 ---

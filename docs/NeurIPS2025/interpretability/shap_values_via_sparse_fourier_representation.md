@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] SHAP Values via Sparse Fourier Representation
 description: >-
-  [NeurIPS 2025][SHAP values] This paper proposes FourierShap, an algorithm that first approximates a black-box predictor as a sparse Fourier representation and then leverages closed-form SHAP value formulas for Fourier basis functions to efficiently compute feature attributions, achieving 10–10,000× speedups over KernelShap while supporting a tunable accuracy–efficiency trade-off.
+  [NeurIPS 2025][Interpretability][SHAP values] This paper proposes FourierShap, an algorithm that first approximates a black-box predictor as a sparse Fourier representation and then leverages closed-form SHAP value formu…
 tags:
-  - NeurIPS 2025
-  - SHAP values
-  - Fourier representation
-  - sparse Walsh-Hadamard transform
-  - feature attribution
-  - accelerated computation
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "SHAP values"
+  - "Fourier representation"
+  - "sparse Walsh-Hadamard transform"
+  - "feature attribution"
+  - "accelerated computation"
 date: 2026-05-08
 content_hash: 7cf2e4fe2c82cbda
 ---

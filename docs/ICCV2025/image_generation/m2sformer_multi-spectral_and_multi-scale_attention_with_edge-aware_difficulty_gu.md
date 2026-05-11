@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] M2SFormer: Multi-Spectral and Multi-Scale Attention with Edge-Aware Difficulty Guidance for Image Forgery Localization
 description: >-
-  [ICCV 2025][Image Generation][Image Forgery Localization] This paper proposes M2SFormer, which unifies multi-spectral (2D DCT frequency-domain) and multi-scale (SIFT-style spatial pyramid) attention mechanisms within encoder-decoder skip connections, and introduces an edge-aware curvature-based difficulty-guided attention decoder. The method achieves state-of-the-art cross-domain generalization in image forgery localization (average unseen-domain DSC 43.0% and mIoU 34.3% under the CASIAv2 training protocol).
+  [ICCV 2025][Image Generation][Image Forgery Localization] This paper proposes M2SFormer, which unifies multi-spectral (2D DCT frequency-domain) and multi-scale (SIFT-style spatial pyramid) attention mechanisms within enc…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Image Forgery Localization
-  - Multi-Spectral Attention
-  - Multi-Scale Attention
-  - Difficulty Guidance
-  - Transformer
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Image Forgery Localization"
+  - "Multi-Spectral Attention"
+  - "Multi-Scale Attention"
+  - "Difficulty Guidance"
+  - "Transformer"
 date: 2026-05-08
 content_hash: 18500a5cdee2d187
 ---

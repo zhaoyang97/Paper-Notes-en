@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Natural Gradient VI: Guarantees for Non-Conjugate Models
 description: >-
-  [NeurIPS 2025][Optimization][natural gradient] Under mean-field parameterization, this paper establishes three key theoretical results for natural gradient variational inference (NGVI) in non-conjugate models: a relative smoothness condition on the variational loss, a global convergence-to-stationary-point guarantee for a modified NGVI with non-Euclidean projections, and, under additional structural assumptions, hidden convexity and fast global convergence guarantees.
+  [NeurIPS 2025][Optimization][natural gradient] Under mean-field parameterization, this paper establishes three key theoretical results for natural gradient variational inference (NGVI) in non-conjugate models: a relative…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - natural gradient
-  - variational inference
-  - non-conjugate models
-  - mirror descent
-  - relative smoothness
-  - convergence guarantees
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "natural gradient"
+  - "variational inference"
+  - "non-conjugate models"
+  - "mirror descent"
+  - "relative smoothness"
+  - "convergence guarantees"
 date: 2026-05-08
 content_hash: be0bbe51e21053a9
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Zero-shot HOI Detection with MLLM-based Detector-agnostic Interaction Recognition
 description: >-
-  [ICLR 2026][Multimodal VLM][HOI detection] This paper proposes DA-HOI, a zero-shot HOI detection framework that fully decouples object detection from interaction recognition. It replaces conventional CLIP-based features with MLLM VQA capabilities for interaction recognition. The core contributions are deterministic generation (achieving 31.50 mAP training-free), spatial-aware pooling (incorporating spatial priors and cross-attention), and one-pass deterministic matching (reducing $M$ forward passes to one). DA-HOI comprehensively surpasses the state of the art across all four zero-shot settings on HICO-DET and supports plug-and-play detector substitution after training.
+  [ICLR 2026][Multimodal VLM][HOI detection] This paper proposes DA-HOI, a zero-shot HOI detection framework that fully decouples object detection from interaction recognition. It replaces conventional CLIP-based features…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - HOI detection
-  - zero-shot
-  - MLLM
-  - interaction recognition
-  - detector-agnostic
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "HOI detection"
+  - "zero-shot"
+  - "MLLM"
+  - "interaction recognition"
+  - "detector-agnostic"
 date: 2026-05-08
 content_hash: 4922acfe10c285b2
 ---

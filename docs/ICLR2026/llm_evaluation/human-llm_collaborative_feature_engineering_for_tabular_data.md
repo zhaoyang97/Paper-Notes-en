@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Human-LLM Collaborative Feature Engineering for Tabular Learning
 description: >-
-  [ICLR 2026][LLM Evaluation][Feature Engineering] This paper proposes a human-LLM collaborative feature engineering framework that decouples the proposal and selection of feature operations. A Bayesian neural network models operation utility and uncertainty to guide selection, with selective human preference feedback incorporated when appropriate. The framework achieves 8.96%–11.23% average error rate reduction across 18 tabular datasets.
+  [ICLR 2026][LLM Evaluation][Feature Engineering] This paper proposes a human-LLM collaborative feature engineering framework that decouples the proposal and selection of feature operations. A Bayesian neural network mode…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - Feature Engineering
-  - Human-AI Collaboration
-  - Bayesian Optimization
-  - LLM
-  - Tabular Data
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Feature Engineering"
+  - "Human-AI Collaboration"
+  - "Bayesian Optimization"
+  - "LLM"
+  - "Tabular Data"
 date: 2026-05-08
 content_hash: 6f2accff329c03fc
 ---

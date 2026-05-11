@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MINERVA-Cultural: A Benchmark for Cultural and Multilingual Long Video Reasoning
 description: >-
-  [CVPR 2026][Video Understanding][Video QA] This paper introduces MINERVA-Cultural, a benchmark comprising 2,400 manually annotated video reasoning questions spanning 18 language/region locales, and reveals severe deficiencies in cultural visual perception among state-of-the-art Video-LLMs through evidence graphs and an iterative error isolation strategy (best model Gemini-2.5-Pro: 45.07% vs. human: 95.22%).
+  [CVPR 2026][Video Understanding][Video QA] This paper introduces MINERVA-Cultural, a benchmark comprising 2,400 manually annotated video reasoning questions spanning 18 language/region locales…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Video QA
-  - cross-cultural understanding
-  - multilingual reasoning
-  - long video
-  - evidence graph error analysis
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Video QA"
+  - "cross-cultural understanding"
+  - "multilingual reasoning"
+  - "long video"
+  - "evidence graph error analysis"
 date: 2026-05-08
 content_hash: 8eca431c3c9fb9ee
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CyclicReflex: Improving Reasoning Models via Cyclical Reflection Token Scheduling
 description: >-
-  [ICLR 2026][LLM Reasoning][large language reasoning models] This paper treats reflection tokens (e.g., "wait", "but") in the reasoning process as schedulable "resources" and, inspired by cyclical learning rate scheduling in optimization, proposes CyclicReflex — a training-free decoding strategy that dynamically modulates the logits of reflection tokens via a triangular waveform. CyclicReflex consistently improves the accuracy of 1.5B–8B models across multiple mathematical reasoning benchmarks (MATH500, AIME2024/2025, AMC2023).
+  [ICLR 2026][LLM Reasoning][large language reasoning models] This paper treats reflection tokens (e.g., "wait", "but") in the reasoning process as schedulable "resources" and…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - large language reasoning models
-  - reflection token scheduling
-  - test-time scaling
-  - cyclical learning rate
-  - decoding strategy
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "large language reasoning models"
+  - "reflection token scheduling"
+  - "test-time scaling"
+  - "cyclical learning rate"
+  - "decoding strategy"
 date: 2026-05-08
 content_hash: 21c88b6102bbb003
 ---

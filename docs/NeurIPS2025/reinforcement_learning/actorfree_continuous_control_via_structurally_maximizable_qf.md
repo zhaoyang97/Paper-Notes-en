@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Actor-Free Continuous Control via Structurally Maximizable Q-Functions
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][actor-free Q-learning] This paper proposes Q3C (Q-learning for Continuous Control with Control-points), which approximates the Q-function via a learned set of control points such that the maximum value is structurally attained at one of those points. Combined with action-conditioned Q-value generation, a control-point diversity loss, and scale normalization, Q3C matches TD3 on standard benchmarks and substantially outperforms all actor-critic methods in constrained action spaces.
+  [NeurIPS 2025][Reinforcement Learning][actor-free Q-learning] This paper proposes Q3C (Q-learning for Continuous Control with Control-points)…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - actor-free Q-learning
-  - continuous control
-  - control points
-  - wire-fitting
-  - structural maximization
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "actor-free Q-learning"
+  - "continuous control"
+  - "control points"
+  - "wire-fitting"
+  - "structural maximization"
 date: 2026-05-08
 content_hash: d77545206908572b
 ---

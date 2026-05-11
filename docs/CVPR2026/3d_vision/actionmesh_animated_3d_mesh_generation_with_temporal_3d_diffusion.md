@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ActionMesh: Animated 3D Mesh Generation with Temporal 3D Diffusion
 description: >-
-  [CVPR 2026][3D Vision][animated 3D mesh generation] ActionMesh minimally extends a pretrained 3D diffusion model with a temporal axis (temporal 3D diffusion), then employs a temporal 3D autoencoder to convert independent shape sequences into topology-consistent animated meshes. The method generates production-quality animated 3D meshes from diverse inputs (video, text, or 3D mesh) in just 2 minutes, achieving state-of-the-art performance in both geometric accuracy and temporal consistency.
+  [CVPR 2026][3D Vision][animated 3D mesh generation] ActionMesh minimally extends a pretrained 3D diffusion model with a temporal axis (temporal 3D diffusion)…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - animated 3D mesh generation
-  - temporal 3D diffusion
-  - topology-consistent
-  - rig-free
-  - feed-forward
+  - "CVPR 2026"
+  - "3D Vision"
+  - "animated 3D mesh generation"
+  - "temporal 3D diffusion"
+  - "topology-consistent"
+  - "rig-free"
+  - "feed-forward"
 date: 2026-05-08
 content_hash: 5711db1ef29c06f3
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OneOcc: Semantic Occupancy Prediction for Legged Robots with a Single Panoramic Camera
 description: >-
-  [CVPR 2026][Autonomous Driving][Semantic Scene Completion] This paper proposes OneOcc, a vision-only panoramic semantic occupancy prediction framework for legged/humanoid robots. Through dual-projection fusion, dual-grid voxelization, gait displacement compensation, and a hierarchical mixture-of-experts decoder, OneOcc achieves 360° semantic scene completion using only a single panoramic camera, surpassing LiDAR baselines on both real quadruped and simulated humanoid datasets.
+  [CVPR 2026][Autonomous Driving][Semantic Scene Completion] This paper proposes OneOcc, a vision-only panoramic semantic occupancy prediction framework for legged/humanoid robots. Through dual-projection fusion…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Semantic Scene Completion
-  - Panoramic Camera
-  - Legged Robots
-  - Voxel Occupancy Prediction
-  - Gait Compensation
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Semantic Scene Completion"
+  - "Panoramic Camera"
+  - "Legged Robots"
+  - "Voxel Occupancy Prediction"
+  - "Gait Compensation"
 date: 2026-05-08
 content_hash: 367460aa065f69a5
 ---

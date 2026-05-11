@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PatientVLM Meets DocVLM: Pre-Consultation Dialogue Between Vision-Language Models for Efficient Diagnosis
 description: >-
-  [AAAI 2026][Multimodal VLM][Medical Diagnosis] This paper proposes PCDF (Pre-Consultation Dialogue Framework), which simulates realistic doctor-patient dialogue through two VLMs in role-play — DocVLM asks questions and PatientVLM answers — to generate image-dialogue-diagnosis triplets for fine-tuning DocVLM. The framework achieves an average F1 improvement of 11.48 percentage points across four medical imaging benchmarks without relying on real clinical dialogue data.
+  [AAAI 2026][Multimodal VLM][Medical Diagnosis] This paper proposes PCDF (Pre-Consultation Dialogue Framework), which simulates realistic doctor-patient dialogue through two VLMs in role-play — DocVLM asks questions and P…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Medical Diagnosis
-  - Vision-Language Models
-  - Doctor-Patient Dialogue Simulation
-  - Multi-turn Dialogue
-  - Data Augmentation
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Medical Diagnosis"
+  - "Vision-Language Models"
+  - "Doctor-Patient Dialogue Simulation"
+  - "Multi-turn Dialogue"
+  - "Data Augmentation"
 date: 2026-05-08
 content_hash: 0634e006db90d991
 ---

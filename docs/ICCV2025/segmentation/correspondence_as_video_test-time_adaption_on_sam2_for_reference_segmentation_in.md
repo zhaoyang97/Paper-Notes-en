@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Correspondence as Video: Test-Time Adaption on SAM2 for Reference Segmentation in the Wild
 description: >-
-  [ICCV 2025][Segmentation][Reference Segmentation] CAV-SAM represents the correspondence between reference–target image pairs as a pseudo-video sequence, bridging semantic gaps via a Diffusion-Based Semantic Transition (DBST) module and aligning geometric variations via a Test-Time Geometric Alignment (TTGA) module. This enables SAM2's video segmentation capability to be adapted to reference segmentation in a training-free manner, surpassing the state of the art by approximately 5% mIoU on cross-domain few-shot segmentation benchmarks.
+  [ICCV 2025][Segmentation][Reference Segmentation] CAV-SAM represents the correspondence between reference–target image pairs as a pseudo-video sequence…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - Reference Segmentation
-  - SAM2
-  - Video Object Segmentation
-  - Diffusion-Based Semantic Transition
-  - Test-Time Adaptation
+  - "ICCV 2025"
+  - "Segmentation"
+  - "Reference Segmentation"
+  - "SAM2"
+  - "Video Object Segmentation"
+  - "Diffusion-Based Semantic Transition"
+  - "Test-Time Adaptation"
 date: 2026-05-08
 content_hash: cf8975f2048128bf
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Efficient Parametric SVD of Koopman Operator for Stochastic Dynamical Systems
 description: >-
-  [NEURIPS2025][Koopman operator] This paper proposes a low-rank approximation (LoRA)-based objective to learn the top-k singular functions of the Koopman operator for stochastic dynamical systems, entirely avoiding the numerically unstable matrix decomposition operations present in VAMPnet/DPNet, with naturally unbiased gradients.
+  [NEURIPS2025][Koopman operator] This paper proposes a low-rank approximation (LoRA)-based objective to learn the top-k singular functions of the Koopman operator for stochastic dynamical systems…
 tags:
-  - NEURIPS2025
-  - Koopman operator
-  - singular value decomposition
-  - dynamical systems
-  - low-rank approximation
-  - deep learning
+  - "NEURIPS2025"
+  - "Koopman operator"
+  - "singular value decomposition"
+  - "dynamical systems"
+  - "low-rank approximation"
+  - "deep learning"
 date: 2026-05-08
 content_hash: e8e052a6a5bba4ca
 ---

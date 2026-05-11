@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Lost in Translation: Do LVLM Judges Generalize Across Languages?
 description: >-
-  [ACL 2026][Multilingual Evaluation] This paper introduces MM-JudgeBench, the first large-scale multilingual multimodal judge benchmark (25 languages, 60K+ preference instances), evaluating 22 LVLMs and revealing significant cross-lingual performance disparities in current LVLM judges. Model size and architecture cannot predict multilingual robustness, and even state-of-the-art judges exhibit inconsistent behavior, underscoring the necessity of multilingual multimodal evaluation benchmarks.
+  [ACL 2026][Multilingual & Machine Translation][Multilingual Evaluation] This paper introduces MM-JudgeBench, the first large-scale multilingual multimodal judge benchmark (25 languages, 60K+ preference instances)…
 tags:
-  - ACL 2026
-  - Multilingual Evaluation
-  - LVLM Judges
-  - Reward Models
-  - Cross-lingual Generalization
-  - Vision-Language Benchmarks
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "Multilingual Evaluation"
+  - "LVLM Judges"
+  - "Reward Models"
+  - "Cross-lingual Generalization"
+  - "Vision-Language Benchmarks"
 date: 2026-05-08
 content_hash: f043baeefa08e06b
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VQToken: Neural Discrete Token Representation Learning for Extreme Token Reduction in Video Large Language Models
 description: >-
-  [NeurIPS 2025][Model Compression][token reduction] VQToken introduces the first vector-quantization-based framework for extreme video token compression. By adaptively discretizing continuous ViT embeddings into a compact codebook and preserving spatiotemporal positional information via a token hash function, it achieves only 0.66% accuracy loss on NextQA-MC using merely 0.07% of the original tokens (approximately 13 tokens).
+  [NeurIPS 2025][Model Compression][token reduction] VQToken introduces the first vector-quantization-based framework for extreme video token compression. By adaptively discretizing continuous ViT embeddings into a compact…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - token reduction
-  - vector quantization
-  - video LLM
-  - discrete representation
-  - token information density
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "token reduction"
+  - "vector quantization"
+  - "video LLM"
+  - "discrete representation"
+  - "token information density"
 date: 2026-05-08
 content_hash: b29980a692c983e2
 ---

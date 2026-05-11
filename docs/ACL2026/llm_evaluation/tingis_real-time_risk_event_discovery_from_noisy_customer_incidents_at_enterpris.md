@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TingIS: Real-time Risk Event Discovery from Noisy Customer Incidents at Enterprise Scale
 description: >-
-  [ACL 2026][LLM Evaluation][risk event discovery] TingIS is an end-to-end risk event discovery system deployed on a fintech platform. It employs a five-module architecture—semantic distillation, cascaded routing, event linking engine, state management, and multi-dimensional denoising—to extract actionable risk events from massive noisy customer complaints in real time, achieving a P90 alert latency of 3.5 minutes and a 95% high-priority event discovery rate.
+  [ACL 2026][LLM Evaluation][risk event discovery] TingIS is an end-to-end risk event discovery system deployed on a fintech platform. It employs a five-module architecture—semantic distillation, cascaded routing…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - risk event discovery
-  - customer complaint mining
-  - incident linking
-  - stream processing
-  - SNR optimization
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "risk event discovery"
+  - "customer complaint mining"
+  - "incident linking"
+  - "stream processing"
+  - "SNR optimization"
 date: 2026-05-08
 content_hash: 9dbc0a0a11343fec
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PEOAT: Personalization-Guided Evolutionary Question Assembly for One-Shot Adaptive Testing
 description: >-
-  [AAAI 2026][Optimization][Adaptive Testing] This paper is the first to propose the One-shot Adaptive Testing (OAT) task, formulating it as a combinatorial optimization problem, and introduces the PEOAT framework—combining personalized initialization, cognitively enhanced evolutionary search, and diversity-preserving selection—to select an optimal question set for each examinee in a single shot without interactive feedback, substantially outperforming conventional CAT methods.
+  [AAAI 2026][Optimization][Adaptive Testing] This paper is the first to propose the One-shot Adaptive Testing (OAT) task, formulating it as a combinatorial optimization problem…
 tags:
-  - AAAI 2026
-  - Optimization
-  - Adaptive Testing
-  - Evolutionary Algorithm
-  - Personalization
-  - Combinatorial Optimization
-  - Intelligent Education
+  - "AAAI 2026"
+  - "Optimization"
+  - "Adaptive Testing"
+  - "Evolutionary Algorithm"
+  - "Personalization"
+  - "Combinatorial Optimization"
+  - "Intelligent Education"
 date: 2026-05-08
 content_hash: 765b1058055c41d4
 ---

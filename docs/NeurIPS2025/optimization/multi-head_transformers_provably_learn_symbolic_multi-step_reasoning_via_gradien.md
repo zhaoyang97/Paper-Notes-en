@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multi-head Transformers Provably Learn Symbolic Multi-step Reasoning via Gradient Descent
 description: >-
-  [NeurIPS 2025][Optimization][Transformer] This work rigorously proves, from the perspective of gradient descent training dynamics, that a single-layer multi-head Transformer can learn both forward and backward reasoning on a tree path-finding task via Chain-of-Thought, and reveals that distinct attention heads spontaneously specialize to collaboratively solve multi-stage subtasks.
+  [NeurIPS 2025][Optimization][Transformer] This work rigorously proves, from the perspective of gradient descent training dynamics, that a single-layer multi-head Transformer can learn both forward and backward reasoning…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Transformer
-  - multi-step reasoning
-  - Chain-of-Thought
-  - gradient descent dynamics
-  - attention head specialization
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Transformer"
+  - "multi-step reasoning"
+  - "Chain-of-Thought"
+  - "gradient descent dynamics"
+  - "attention head specialization"
 date: 2026-05-08
 content_hash: 3dd556f761bdf037
 ---

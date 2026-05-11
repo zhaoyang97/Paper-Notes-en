@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GeodesicNVS: Probability Density Geodesic Flow Matching for Novel View Synthesis
 description: >-
-  [CVPR 2026][3D Vision][Novel View Synthesis] This paper proposes a Probability Density Geodesic Flow Matching (PDG-FM) framework that replaces the noise-to-data diffusion process with a deterministic data-to-data flow matching scheme, and optimizes interpolation paths to traverse high-density regions of the data manifold via probability-density-based geodesics, achieving geometrically consistent novel view synthesis.
+  [CVPR 2026][3D Vision][Novel View Synthesis] This paper proposes a Probability Density Geodesic Flow Matching (PDG-FM) framework that replaces the noise-to-data diffusion process with a deterministic data-to-data flow ma…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Novel View Synthesis
-  - Flow Matching
-  - Geodesic
-  - Probability Density Manifold
-  - Data-to-Data Mapping
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Novel View Synthesis"
+  - "Flow Matching"
+  - "Geodesic"
+  - "Probability Density Manifold"
+  - "Data-to-Data Mapping"
 date: 2026-05-08
 content_hash: 12e33fefa24f0b3e
 ---

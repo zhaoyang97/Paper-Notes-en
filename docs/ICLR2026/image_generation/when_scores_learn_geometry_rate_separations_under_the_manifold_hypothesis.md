@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] When Scores Learn Geometry: Rate Separations under the Manifold Hypothesis
 description: >-
-  [ICLR 2026][Image Generation][Score Learning] Under the manifold hypothesis, this paper reveals a scale separation between geometric and distributional information in score learning — manifold geometry contributes at order $\Theta(\sigma^{-2})$, which dominates distributional information by a factor of $O(\sigma^{-2})$. This establishes that the success of diffusion models stems primarily from learning the data manifold rather than the full distribution, and a one-line code modification suffices to generate the uniform distribution on the manifold.
+  [ICLR 2026][Image Generation][Score Learning] Under the manifold hypothesis, this paper reveals a scale separation between geometric and distributional information in score learning — manifold geometry contributes at ord…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Score Learning
-  - Manifold Hypothesis
-  - Geometry Learning
-  - Distribution Learning
-  - Rate Separation
-  - Uniform Sampling
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Score Learning"
+  - "Manifold Hypothesis"
+  - "Geometry Learning"
+  - "Distribution Learning"
+  - "Rate Separation"
+  - "Uniform Sampling"
 date: 2026-05-08
 content_hash: 93d010770d501ed4
 ---

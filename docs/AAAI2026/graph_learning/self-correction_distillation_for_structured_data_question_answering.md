@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Self-Correction Distillation for Structured Data Question Answering
 description: >-
-  [AAAI 2026][Graph Learning][Knowledge Distillation] This paper proposes Self-Correction Distillation (SCD), which transfers structured data question answering capabilities from large-scale LLMs (GPT-4) to small-scale LLMs (8B) via an Error Prompting Mechanism (EPM) and a two-stage distillation strategy, achieving state-of-the-art distillation performance across five benchmarks.
+  [AAAI 2026][Graph Learning][Knowledge Distillation] This paper proposes Self-Correction Distillation (SCD), which transfers structured data question answering capabilities from large-scale LLMs (GPT-4) to small-scale LLM…
 tags:
-  - AAAI 2026
-  - Graph Learning
-  - Knowledge Distillation
-  - Structured Data QA
-  - CoT Distillation
-  - Error Correction
-  - Small Language Models
+  - "AAAI 2026"
+  - "Graph Learning"
+  - "Knowledge Distillation"
+  - "Structured Data QA"
+  - "CoT Distillation"
+  - "Error Correction"
+  - "Small Language Models"
 date: 2026-05-08
 content_hash: bdef0876180608a9
 ---

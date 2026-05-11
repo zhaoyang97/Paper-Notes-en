@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LLM DNA: Tracing Model Evolution via Functional Representations
 description: >-
-  [ICLR 2026][Model Compression][LLM DNA] Drawing an analogy from biological DNA, this work formally defines LLM DNA as a low-dimensional bi-Lipschitz representation of a model's functional behavior, proves that it satisfies the properties of heritability and genetic determinism, and designs a training-free RepTrace pipeline to extract DNA from 305 LLMs and construct their evolutionary tree.
+  [ICLR 2026][Model Compression][LLM DNA] Drawing an analogy from biological DNA, this work formally defines LLM DNA as a low-dimensional bi-Lipschitz representation of a model's functional behavior…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - LLM DNA
-  - model phylogenetic tree
-  - functional representation
-  - phylogenetic analysis
-  - model provenance tracing
+  - "ICLR 2026"
+  - "Model Compression"
+  - "LLM DNA"
+  - "model phylogenetic tree"
+  - "functional representation"
+  - "phylogenetic analysis"
+  - "model provenance tracing"
 date: 2026-05-08
 content_hash: 4f7f058ae4489a01
 ---

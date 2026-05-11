@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Efficient Onboard Spacecraft Pose Estimation with Event Cameras and Neuromorphic Hardware
 description: >-
-  [CVPR 2026][Human Understanding][event camera] The first end-to-end 6-DoF spacecraft pose estimation system deployed on BrainChip Akida neuromorphic hardware, exploring accuracy–efficiency trade-offs among event camera representations and quantization-aware training for low-power onboard deployment.
+  [CVPR 2026][Human Understanding][event camera] The first end-to-end 6-DoF spacecraft pose estimation system deployed on BrainChip Akida neuromorphic hardware…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - event camera
-  - spacecraft pose estimation
-  - neuromorphic hardware
-  - Akida
-  - SNN
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "event camera"
+  - "spacecraft pose estimation"
+  - "neuromorphic hardware"
+  - "Akida"
+  - "SNN"
 date: 2026-05-08
 content_hash: bf0566309f308b10
 ---

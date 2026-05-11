@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Baking Gaussian Splatting into Diffusion Denoiser for Fast and Scalable Single-stage Image-to-3D Generation and Reconstruction
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes DiffusionGS, which bakes 3D Gaussian point clouds into the denoiser of a diffusion model, enabling single-stage, view-consistent single-view 3D object generation and scene reconstruction. Combined with a scene-object mixed training strategy and RPPC camera conditioning encoding, the method substantially outperforms existing approaches on PSNR/FID metrics while requiring only ~6 seconds for inference.
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes DiffusionGS, which bakes 3D Gaussian point clouds into the denoiser of a diffusion model, enabling single-stage…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - Diffusion Models
-  - Single-view 3D Generation
-  - Scene Reconstruction
-  - Mixed Training
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Diffusion Models"
+  - "Single-view 3D Generation"
+  - "Scene Reconstruction"
+  - "Mixed Training"
 date: 2026-05-08
 content_hash: e4d86181f41e8db9
 ---

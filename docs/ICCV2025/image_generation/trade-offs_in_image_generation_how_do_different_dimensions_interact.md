@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Trade-offs in Image Generation: How Do Different Dimensions Interact?
 description: >-
-  [ICCV 2025][Image Generation][Image generation evaluation] This paper proposes TRIG-Bench, a benchmark comprising 40,200 samples across 10 evaluation dimensions and 132 pairwise dimension subsets, along with a VLM-as-Judge metric termed TRIGScore. It is the first work to systematically reveal and analyze trade-offs among evaluation dimensions (e.g., realism, relation alignment, style) in image generation models, and leverages a Dimension Trade-off Map (DTM) to guide fine-tuning for performance improvement.
+  [ICCV 2025][Image Generation][Image generation evaluation] This paper proposes TRIG-Bench, a benchmark comprising 40,200 samples across 10 evaluation dimensions and 132 pairwise dimension subsets…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Image generation evaluation
-  - trade-off analysis
-  - multi-dimensional benchmark
-  - VLM-as-Judge
-  - text-to-image
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Image generation evaluation"
+  - "trade-off analysis"
+  - "multi-dimensional benchmark"
+  - "VLM-as-Judge"
+  - "text-to-image"
 date: 2026-05-08
 content_hash: 1f20c06f6c1d7fcd
 ---

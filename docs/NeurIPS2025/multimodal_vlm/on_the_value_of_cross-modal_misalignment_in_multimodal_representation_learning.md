@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] On the Value of Cross-Modal Misalignment in Multimodal Representation Learning
 description: >-
-  [NeurIPS 2025][Multimodal VLM][multimodal contrastive learning] This paper proposes a latent variable model that formalizes cross-modal misalignment into two mechanisms—selection bias and perturbation bias—and theoretically proves that MMCL-learned representations precisely capture the invariant semantic subset unaffected by both biases, thereby unifying the opposing views of misalignment as harmful vs. beneficial.
+  [NeurIPS 2025][Multimodal VLM][multimodal contrastive learning] This paper proposes a latent variable model that formalizes cross-modal misalignment into two mechanisms—selection bias and perturbation bias—and theoretica…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - multimodal contrastive learning
-  - cross-modal misalignment
-  - latent variable model
-  - identifiability
-  - invariant representation learning
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "multimodal contrastive learning"
+  - "cross-modal misalignment"
+  - "latent variable model"
+  - "identifiability"
+  - "invariant representation learning"
 date: 2026-05-08
 content_hash: 9d23a652a1d8f3bf
 ---

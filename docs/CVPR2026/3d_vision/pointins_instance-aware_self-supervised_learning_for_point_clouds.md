@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PointINS: Instance-Aware Self-Supervised Learning for Point Clouds
 description: >-
-  [CVPR 2026][3D Vision][Point cloud self-supervised learning] PointINS proposes the first point cloud self-supervised learning framework that explicitly learns semantic consistency and geometric reasoning. By introducing a label-free offset branch with Offset Distribution Regularization (ODR) and Spatial Clustering Regularization (SCR), it achieves an average improvement of +3.5% mAP on indoor instance segmentation and +4.1% PQ on outdoor panoptic segmentation.
+  [CVPR 2026][3D Vision][Point cloud self-supervised learning] PointINS proposes the first point cloud self-supervised learning framework that explicitly learns semantic consistency and geometric reasoning. By introducing…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Point cloud self-supervised learning
-  - instance awareness
-  - geometric reasoning
-  - offset learning
-  - panoptic segmentation
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Point cloud self-supervised learning"
+  - "instance awareness"
+  - "geometric reasoning"
+  - "offset learning"
+  - "panoptic segmentation"
 date: 2026-05-08
 content_hash: 463cfeaa781404e4
 ---

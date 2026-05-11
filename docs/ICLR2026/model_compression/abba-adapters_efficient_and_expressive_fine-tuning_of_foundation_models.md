@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ABBA-Adapters: Efficient and Expressive Fine-Tuning of Foundation Models
 description: >-
-  [ICLR 2026][Model Compression][Parameter-efficient fine-tuning] This paper proposes ABBA adapters, which parameterize weight updates as the Hadamard product of two independently learnable low-rank matrices, $\Delta W = s(B_1A_1) \odot (B_2A_2)$. Under the same parameter budget, ABBA achieves an effective rank of $r_1 \cdot r_2$ compared to LoRA's $r$, representing a quadratic improvement. Through Khatri-Rao reconstruction, ABBA maintains memory efficiency comparable to LoRA, and significantly outperforms existing PEFT methods on arithmetic and commonsense reasoning tasks.
+  [ICLR 2026][Model Compression][Parameter-efficient fine-tuning] This paper proposes ABBA adapters, which parameterize weight updates as the Hadamard product of two independently learnable low-rank matrices…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Parameter-efficient fine-tuning
-  - LoRA
-  - Hadamard product
-  - low-rank adaptation
-  - Khatri-Rao decomposition
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Parameter-efficient fine-tuning"
+  - "LoRA"
+  - "Hadamard product"
+  - "low-rank adaptation"
+  - "Khatri-Rao decomposition"
 date: 2026-05-08
 content_hash: 6b249d1e2a616c2c
 ---

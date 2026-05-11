@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Realism Control One-step Diffusion for Real-World Image Super-Resolution
 description: >-
-  [AAAI 2026][Image Generation][Image Super-Resolution] This paper proposes the RCOD framework, which endows one-step diffusion (OSD) super-resolution methods with the ability to flexibly control the fidelity–realism trade-off at inference time via a latent domain grouping strategy and degradation-aware sampling. A visual prompt injection module is also introduced to replace text prompts, improving restoration accuracy.
+  [AAAI 2026][Image Generation][Image Super-Resolution] This paper proposes the RCOD framework, which endows one-step diffusion (OSD) super-resolution methods with the ability to flexibly control the fidelity–realism trade…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Image Super-Resolution
-  - One-Step Diffusion
-  - Realism Control
-  - Degradation-Aware
-  - Latent Domain Grouping
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Image Super-Resolution"
+  - "One-Step Diffusion"
+  - "Realism Control"
+  - "Degradation-Aware"
+  - "Latent Domain Grouping"
 date: 2026-05-08
 content_hash: 36e0ba592812135c
 ---

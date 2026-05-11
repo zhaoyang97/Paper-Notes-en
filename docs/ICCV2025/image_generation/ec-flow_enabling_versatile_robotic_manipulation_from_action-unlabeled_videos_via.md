@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EC-Flow: Enabling Versatile Robotic Manipulation from Action-Unlabeled Videos via Equivariant Flow Matching
 description: >-
-  [ICCV 2025][Image Generation][robotic manipulation] EC-Flow introduces an "embodiment-centric flow" paradigm that predicts pixel-level motion trajectories of the robot body from action-unlabeled RGB videos, and converts visual predictions into executable actions via URDF kinematic constraints. It substantially outperforms object-centric methods in scenarios involving deformable objects, occlusion, and non-displacement manipulation.
+  [ICCV 2025][Image Generation][robotic manipulation] EC-Flow introduces an "embodiment-centric flow" paradigm that predicts pixel-level motion trajectories of the robot body from action-unlabeled RGB videos…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - robotic manipulation
-  - action-unlabeled video learning
-  - optical flow prediction
-  - URDF kinematics
-  - diffusion models
+  - "ICCV 2025"
+  - "Image Generation"
+  - "robotic manipulation"
+  - "action-unlabeled video learning"
+  - "optical flow prediction"
+  - "URDF kinematics"
+  - "diffusion models"
 date: 2026-05-08
 content_hash: 7e7f6e470abfd51a
 ---

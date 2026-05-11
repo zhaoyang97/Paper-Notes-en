@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OmniVTON: Training-Free Universal Virtual Try-On
 description: >-
-  [ICCV2025][Image Generation][virtual try-on] OmniVTON proposes the first training-free universal virtual try-on framework. By decoupling garment texture and pose conditions, the method employs three core modules—Structured Garment Morphing (SGM), Continuous Boundary Stitching (CBS), and Spectral Pose Injection (SPI)—to achieve high-fidelity try-on in both in-shop and in-the-wild settings, while also supporting multi-person try-on for the first time.
+  [ICCV2025][Image Generation][virtual try-on] OmniVTON proposes the first training-free universal virtual try-on framework. By decoupling garment texture and pose conditions…
 tags:
-  - ICCV2025
-  - Image Generation
-  - virtual try-on
-  - training-free
-  - diffusion model
-  - garment warping
-  - pose alignment
+  - "ICCV2025"
+  - "Image Generation"
+  - "virtual try-on"
+  - "training-free"
+  - "diffusion model"
+  - "garment warping"
+  - "pose alignment"
 date: 2026-05-08
 content_hash: b8aba788ee6b488b
 ---

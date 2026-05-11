@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] On the Robustness of Diffusion-Based Image Compression to Bit-Flip Errors
 description: >-
-  [CVPR 2026][Model Compression][Diffusion Models] This paper presents the first systematic study of bit-flip robustness in diffusion-based image compression. It demonstrates that reverse channel coding (RCC)-based diffusion compression methods are inherently more resilient to bit-flip errors than traditional and learned codecs, and proposes Robust Turbo-DDCM, which independently encodes each atom index to further enhance robustness. At BER $10^{-3}$, the proposed method maintains high reconstruction quality with only a marginal increase in BPP.
+  [CVPR 2026][Model Compression][Diffusion Models] This paper presents the first systematic study of bit-flip robustness in diffusion-based image compression. It demonstrates that reverse channel coding (RCC)-based diffusi…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - Diffusion Models
-  - Image Compression
-  - Bit-Flip Errors
-  - Channel Robustness
-  - Reverse Channel Coding
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Diffusion Models"
+  - "Image Compression"
+  - "Bit-Flip Errors"
+  - "Channel Robustness"
+  - "Reverse Channel Coding"
 date: 2026-05-08
 content_hash: 7c93013d3bb9abe0
 ---

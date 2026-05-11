@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Explanation-Preserving Augmentation for Semi-Supervised Graph Representation Learning
 description: >-
-  [AAAI 2026][Self-Supervised Learning][Graph Contrastive Learning] This paper proposes EPA-GRL (Explanation-Preserving Augmentation for Graph Representation Learning), which employs a GNN explainer trained with a small number of labels to identify semantic subgraphs (explanation subgraphs). During augmentation, only the non-semantic portions (marginal subgraphs) are perturbed, achieving semantics-preserving graph augmentation. EPA-GRL significantly outperforms semantics-agnostic random augmentation methods across 6 benchmarks.
+  [AAAI 2026][Self-Supervised Learning][Graph Contrastive Learning] This paper proposes EPA-GRL (Explanation-Preserving Augmentation for Graph Representation Learning)…
 tags:
-  - AAAI 2026
-  - Self-Supervised Learning
-  - Graph Contrastive Learning
-  - Semantics-Preserving Augmentation
-  - Explainable AI
-  - Semi-Supervised Learning
-  - GNN Explainer
+  - "AAAI 2026"
+  - "Self-Supervised Learning"
+  - "Graph Contrastive Learning"
+  - "Semantics-Preserving Augmentation"
+  - "Explainable AI"
+  - "Semi-Supervised Learning"
+  - "GNN Explainer"
 date: 2026-05-08
 content_hash: 7e0e419682d58886
 ---

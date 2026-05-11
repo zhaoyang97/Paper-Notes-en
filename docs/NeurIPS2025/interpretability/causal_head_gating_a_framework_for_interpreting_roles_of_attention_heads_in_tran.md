@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Causal Head Gating: A Framework for Interpreting Roles of Attention Heads in Transformers
 description: >-
-  [NeurIPS 2025][mechanistic interpretability] This paper proposes Causal Head Gating (CHG), which learns a differentiable gating scalar for each attention head in a Transformer and applies positive/negative regularization to classify heads into three causal roles—facilitating, interfering, and irrelevant—without requiring manual labels or prompt templates. The framework discovers causal sub-circuits at scale and extends to Contrastive CHG for disentangling independent circuits underlying in-context learning (ICL) and instruction following.
+  [NeurIPS 2025][Interpretability][mechanistic interpretability] This paper proposes Causal Head Gating (CHG), which learns a differentiable gating scalar for each attention head in a Transformer and applies positive/negat…
 tags:
-  - NeurIPS 2025
-  - mechanistic interpretability
-  - attention head
-  - causal taxonomy
-  - circuit discovery
-  - Llama
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "mechanistic interpretability"
+  - "attention head"
+  - "causal taxonomy"
+  - "circuit discovery"
+  - "Llama"
 date: 2026-05-08
 content_hash: 1b92cd63ecfe282c
 ---

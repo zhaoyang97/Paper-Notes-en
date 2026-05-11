@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Unified Camera Positional Encoding for Controlled Video Generation
 description: >-
-  [CVPR 2026][Video Generation][Camera Positional Encoding] This paper proposes Unified Camera Positional Encoding (UCPE), which injects complete camera geometric information (6-DoF pose, intrinsics, and lens distortion) into Transformer attention mechanisms via relative ray encoding and absolute orientation encoding. UCPE enables fine-grained video generation control across heterogeneous camera models while introducing less than 1% additional trainable parameters.
+  [CVPR 2026][Video Generation][Camera Positional Encoding] This paper proposes Unified Camera Positional Encoding (UCPE), which injects complete camera geometric information (6-DoF pose, intrinsics…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Camera Positional Encoding
-  - Lens Distortion
-  - Diffusion Transformer
-  - Camera-Controlled Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Camera Positional Encoding"
+  - "Lens Distortion"
+  - "Diffusion Transformer"
+  - "Camera-Controlled Generation"
 date: 2026-05-08
 content_hash: b17fe2c9fb66405d
 ---

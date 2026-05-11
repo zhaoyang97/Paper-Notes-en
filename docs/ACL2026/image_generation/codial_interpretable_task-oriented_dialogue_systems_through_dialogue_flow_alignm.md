@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CoDial: Interpretable Task-Oriented Dialogue Systems Through Dialogue Flow Alignment
 description: >-
-  [ACL 2026][Image Generation][Task-oriented dialogue] This paper proposes CoDial, a framework that converts predefined dialogue flows (task schemas) into structured heterogeneous graphs and automatically generates LLM guardrail code (e.g., Colang), achieving interpretable and controllable task-oriented dialogue policies at inference time. It reaches SOTA on the STAR benchmark without requiring training data.
+  [ACL 2026][Image Generation][Task-oriented dialogue] This paper proposes CoDial, a framework that converts predefined dialogue flows (task schemas) into structured heterogeneous graphs and automatically generates LLM gua…
 tags:
-  - ACL 2026
-  - Image Generation
-  - Task-oriented dialogue
-  - LLM guardrails
-  - Interpretability
-  - Dialogue flow alignment
-  - Zero-shot generalization
+  - "ACL 2026"
+  - "Image Generation"
+  - "Task-oriented dialogue"
+  - "LLM guardrails"
+  - "Interpretability"
+  - "Dialogue flow alignment"
+  - "Zero-shot generalization"
 date: 2026-05-08
 content_hash: 28fac02ec1e4f43c
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] MCP-Flow: Facilitating LLM Agents to Master Real-World, Diverse and Scaling MCP Tools
 description: >-
-  [ACL 2026][LLM Agent][Model Context Protocol] MCP-Flow proposes a Web Agent-based automated pipeline that collects tool information from 1,166 real-world MCP servers and synthesizes 68,733 high-quality training samples, enabling small fine-tuned models (0.6B–8B) to surpass SOTA large models such as GPT-4o on MCP tool use.
+  [ACL 2026][LLM Agent][Model Context Protocol] MCP-Flow proposes a Web Agent-based automated pipeline that collects tool information from 1,166 real-world MCP servers and synthesizes 68,733 high-quality training samples…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - Model Context Protocol
-  - tool use
-  - automated data construction
-  - large-scale benchmark
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Model Context Protocol"
+  - "tool use"
+  - "automated data construction"
+  - "large-scale benchmark"
 date: 2026-05-08
 content_hash: 68c5f85d0f9028b6
 ---

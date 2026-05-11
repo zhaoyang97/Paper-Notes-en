@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FuXi-RTM: A Physics-Guided Prediction Framework with Radiative Transfer Modeling
 description: >-
-  [ICCV 2025][Video Generation][Physics-guided deep learning] This paper proposes FuXi-RTM, the first hybrid physics-guided weather forecasting framework that integrates a deep learning radiative transfer model (DLRTM) as a differentiable physical regularizer, outperforming the unconstrained baseline on 88.51% of variable–lead-time combinations.
+  [ICCV 2025][Video Generation][Physics-guided deep learning] This paper proposes FuXi-RTM, the first hybrid physics-guided weather forecasting framework that integrates a deep learning radiative transfer model (DLRTM) as…
 tags:
-  - ICCV 2025
-  - Video Generation
-  - Physics-guided deep learning
-  - radiative transfer modeling
-  - weather forecasting
-  - spatiotemporal sequence prediction
-  - physical consistency
+  - "ICCV 2025"
+  - "Video Generation"
+  - "Physics-guided deep learning"
+  - "radiative transfer modeling"
+  - "weather forecasting"
+  - "spatiotemporal sequence prediction"
+  - "physical consistency"
 date: 2026-05-08
 content_hash: 85de239dc125209d
 ---

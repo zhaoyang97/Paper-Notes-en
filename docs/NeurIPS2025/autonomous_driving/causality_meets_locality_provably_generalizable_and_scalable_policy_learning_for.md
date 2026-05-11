@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Causality Meets Locality: Provably Generalizable and Scalable Policy Learning for Networked Systems
 description: >-
-  [NeurIPS 2025][Autonomous Driving][Networked MARL] This paper proposes the GSAC framework, which integrates causal representation learning with meta Actor-Critic. By learning sparse causal masks from networked MARL to construct Approximate Compact Representations (ACR), GSAC achieves scalability; by conditioning policies on domain factors, it achieves cross-domain generalization. Finite-sample guarantees are provided for causal recovery, convergence, and adaptation gap.
+  [NeurIPS 2025][Autonomous Driving][Networked MARL] This paper proposes the GSAC framework, which integrates causal representation learning with meta Actor-Critic. By learning sparse causal masks from networked MARL to co…
 tags:
-  - NeurIPS 2025
-  - Autonomous Driving
-  - Networked MARL
-  - Causal Mask
-  - Approximate Compact Representation ACR
-  - Domain Generalization
-  - Meta Actor-Critic
+  - "NeurIPS 2025"
+  - "Autonomous Driving"
+  - "Networked MARL"
+  - "Causal Mask"
+  - "Approximate Compact Representation ACR"
+  - "Domain Generalization"
+  - "Meta Actor-Critic"
 date: 2026-05-08
 content_hash: 3bf4e9340270bf64
 ---

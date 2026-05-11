@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] All-day Multi-scenes Lifelong Vision-and-Language Navigation with Tucker Adaptation
 description: >-
-  [ICLR 2026][Robotics][Lifelong Vision-and-Language Navigation] This paper proposes Tucker Adaptation (TuKA), which represents multi-level navigation knowledge across multiple scenes and environments as a high-order tensor, decomposed via Tucker decomposition into a shared subspace (core tensor + encoder/decoder) and scene/environment expert vectors. Combined with a Decoupled Knowledge Incremental Learning (DKIL) strategy, TuKA enables all-day multi-scene lifelong VLN, achieving superior SR and lower forgetting rates over LoRA variants across 24 navigation scenarios.
+  [ICLR 2026][Robotics][Lifelong Vision-and-Language Navigation] This paper proposes Tucker Adaptation (TuKA), which represents multi-level navigation knowledge across multiple scenes and environments as a high-order tenso…
 tags:
-  - ICLR 2026
-  - Robotics
-  - Lifelong Vision-and-Language Navigation
-  - Tucker Decomposition
-  - Parameter-Efficient Fine-Tuning
-  - Catastrophic Forgetting
-  - Multi-level Knowledge Decoupling
+  - "ICLR 2026"
+  - "Robotics"
+  - "Lifelong Vision-and-Language Navigation"
+  - "Tucker Decomposition"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Catastrophic Forgetting"
+  - "Multi-level Knowledge Decoupling"
 date: 2026-05-08
 content_hash: 939ed915ac398843
 ---

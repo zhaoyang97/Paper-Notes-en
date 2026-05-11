@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Reducing the Scope of Language Models
 description: >-
-  [AAAI 2026][LLM Alignment][Scope Restriction] This paper systematically evaluates LLM "scoping" methods—restricting deployed LLMs to respond only to in-domain queries while rejecting all out-of-domain requests. Five approaches (prompting / SFT / DPO / probing / Circuit Breakers) are compared across 3 model families and multiple tasks. Key findings: SFT performs best under high data diversity, Circuit Breakers (CB) excel under low diversity, and a hierarchical combination (SFT→CB) preserves the strengths of both. A central finding is that the effectiveness of scoping is highly dependent on training data diversity.
+  [AAAI 2026][LLM Alignment][Scope Restriction] This paper systematically evaluates LLM "scoping" methods—restricting deployed LLMs to respond only to in-domain queries while rejecting all out-of-domain requests. Five appr…
 tags:
-  - AAAI 2026
-  - LLM Alignment
-  - Scope Restriction
-  - Out-of-Domain Rejection
-  - SFT
-  - DPO
-  - Circuit Breakers
+  - "AAAI 2026"
+  - "LLM Alignment"
+  - "Scope Restriction"
+  - "Out-of-Domain Rejection"
+  - "SFT"
+  - "DPO"
+  - "Circuit Breakers"
 date: 2026-05-08
 content_hash: f57ba801e35c6979
 ---

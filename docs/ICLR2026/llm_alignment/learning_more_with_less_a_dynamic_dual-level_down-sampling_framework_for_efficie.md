@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Learning More with Less: A Dynamic Dual-Level Down-Sampling Framework for Efficient Policy Optimization
 description: >-
-  [ICLR 2026][LLM Alignment][GRPO] This paper proposes **D3S** (Dynamic Dual-Level Down-Sampling), a framework that maximizes advantage variance at the sample level and prioritizes high-entropy, high-advantage tokens at the token level, combined with a dynamic scheduling strategy. D3S achieves faster convergence and superior performance using fewer than 20% of tokens.
+  [ICLR 2026][LLM Alignment][GRPO] This paper proposes **D3S** (Dynamic Dual-Level Down-Sampling), a framework that maximizes advantage variance at the sample level and prioritizes high-entropy…
 tags:
-  - ICLR 2026
-  - LLM Alignment
-  - GRPO
-  - policy optimization
-  - down-sampling
-  - advantage variance
-  - token selection
-  - curriculum learning
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "GRPO"
+  - "policy optimization"
+  - "down-sampling"
+  - "advantage variance"
+  - "token selection"
+  - "curriculum learning"
 date: 2026-05-08
 content_hash: bb8a8d2ccd6f9fc4
 ---

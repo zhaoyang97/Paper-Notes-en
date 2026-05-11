@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Toward Long-Tailed Online Anomaly Detection through Class-Agnostic Concepts
 description: >-
-  [ICCV 2025][Medical Imaging][long-tailed anomaly detection] This paper proposes a new task and benchmark for Long-Tailed Online Anomaly Detection (LTOAD). The core innovation is replacing class-label dependency with a learnable class-agnostic concept set, combined with a Concept VQ-VAE and a comprehensive prompt learning framework. The proposed method achieves state-of-the-art performance in both offline and online settings without requiring class labels.
+  [ICCV 2025][Medical Imaging][long-tailed anomaly detection] This paper proposes a new task and benchmark for Long-Tailed Online Anomaly Detection (LTOAD). The core innovation is replacing class-label dependency with a le…
 tags:
-  - ICCV 2025
-  - Medical Imaging
-  - long-tailed anomaly detection
-  - online learning
-  - class-agnostic concepts
-  - VQ-VAE
-  - prompt learning
+  - "ICCV 2025"
+  - "Medical Imaging"
+  - "long-tailed anomaly detection"
+  - "online learning"
+  - "class-agnostic concepts"
+  - "VQ-VAE"
+  - "prompt learning"
 date: 2026-05-08
 content_hash: b8a195c0960e18ce
 ---

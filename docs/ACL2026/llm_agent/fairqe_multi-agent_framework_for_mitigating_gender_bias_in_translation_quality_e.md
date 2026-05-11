@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FairQE: Multi-Agent Framework for Mitigating Gender Bias in Translation Quality Estimation
 description: >-
-  [ACL 2026][LLM Agent][Translation Quality Estimation] This paper proposes FairQE, a multi-agent framework that mitigates systematic gender bias in QE models through gender cue detection, gender-flipped variant generation, and dynamic bias-aware score aggregation, without sacrificing translation quality estimation accuracy.
+  [ACL 2026][LLM Agent][Translation Quality Estimation] This paper proposes FairQE, a multi-agent framework that mitigates systematic gender bias in QE models through gender cue detection, gender-flipped variant generation…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - Translation Quality Estimation
-  - Gender Bias
-  - Multi-Agent
-  - Fairness
-  - Bias Mitigation
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Translation Quality Estimation"
+  - "Gender Bias"
+  - "Multi-Agent"
+  - "Fairness"
+  - "Bias Mitigation"
 date: 2026-05-08
 content_hash: 99a7c37a2d2fd7fe
 ---

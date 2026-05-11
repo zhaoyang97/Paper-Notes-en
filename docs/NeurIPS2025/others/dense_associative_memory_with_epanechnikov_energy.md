@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dense Associative Memory with Epanechnikov Energy
 description: >-
-  [NeurIPS 2025][associative memory] This paper proposes a log-sum-ReLU (LSR) energy function based on the Epanechnikov kernel as a replacement for the conventional log-sum-exp (LSE) energy in Dense Associative Memory. For the first time, it achieves the coexistence of exact retrieval of all stored patterns and the emergence of novel creative local minima, while preserving exponential memory capacity.
+  [NeurIPS 2025][associative memory] This paper proposes a log-sum-ReLU (LSR) energy function based on the Epanechnikov kernel as a replacement for the conventional log-sum-exp (LSE) energy in Dense Associative Memory. For…
 tags:
-  - NeurIPS 2025
-  - associative memory
-  - Hopfield network
-  - energy function
-  - Epanechnikov kernel
-  - emergent memory
-  - ReLU
+  - "NeurIPS 2025"
+  - "associative memory"
+  - "Hopfield network"
+  - "energy function"
+  - "Epanechnikov kernel"
+  - "emergent memory"
+  - "ReLU"
 date: 2026-05-08
 content_hash: 41b3c015f3ab471c
 ---

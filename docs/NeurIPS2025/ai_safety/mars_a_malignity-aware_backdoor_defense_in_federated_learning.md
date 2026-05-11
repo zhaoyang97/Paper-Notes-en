@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MARS: A Malignity-Aware Backdoor Defense in Federated Learning
 description: >-
-  [NeurIPS 2025][AI Safety][backdoor attack defense] This paper proposes MARS, a defense method that quantifies the malignity of local models by computing per-neuron Backdoor Energy (BE), and leverages Wasserstein distance-based clustering to effectively identify backdoor models in federated learning.
+  [NeurIPS 2025][AI Safety][backdoor attack defense] This paper proposes MARS, a defense method that quantifies the malignity of local models by computing per-neuron Backdoor Energy (BE)…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - backdoor attack defense
-  - federated learning
-  - Wasserstein distance
-  - backdoor energy
-  - clustering-based detection
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "backdoor attack defense"
+  - "federated learning"
+  - "Wasserstein distance"
+  - "backdoor energy"
+  - "clustering-based detection"
 date: 2026-05-08
 content_hash: 239e29e537d2717b
 ---

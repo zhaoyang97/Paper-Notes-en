@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LinVideo: A Post-Training Framework towards O(n) Attention in Efficient Video Generation
 description: >-
-  [CVPR2026][Video Generation][linear attention] This paper proposes LinVideo, a data-free post-training framework that selectively replaces quadratic attention with linear attention in video diffusion models, achieving 1.43–1.71× speedup. Combined with distillation, the speedup reaches 15.9–20.9× while maintaining generation quality.
+  [CVPR2026][Video Generation][linear attention] This paper proposes LinVideo, a data-free post-training framework that selectively replaces quadratic attention with linear attention in video diffusion models…
 tags:
-  - CVPR2026
-  - Video Generation
-  - linear attention
-  - video diffusion
-  - post-training
-  - efficient inference
-  - distribution matching
+  - "CVPR2026"
+  - "Video Generation"
+  - "linear attention"
+  - "video diffusion"
+  - "post-training"
+  - "efficient inference"
+  - "distribution matching"
 date: 2026-05-08
 content_hash: 3cc00d5dde139a42
 ---

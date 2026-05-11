@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Intermediate N-Gramming: Deterministic and Fast N-Grams For Large N and Large Datasets
 description: >-
-  [AAAI 2026][n-gram computation] This paper proposes Intergrams, a multi-pass scanning algorithm that recursively uses shorter n-grams as prefixes to filter candidates for longer n-grams, fully exploiting the processor cache hierarchy to achieve cache-friendly memory access patterns. On TB-scale datasets, Intergrams achieves 6–33× speedup over the previously fastest hash-gramming method while recovering nearly all top-k n-grams with high accuracy.
+  [AAAI 2026][n-gram computation] This paper proposes Intergrams, a multi-pass scanning algorithm that recursively uses shorter n-grams as prefixes to filter candidates for longer n-grams…
 tags:
-  - AAAI 2026
-  - n-gram computation
-  - hardware-aware algorithms
-  - cache-friendly
-  - Zipf distribution
-  - multi-pass scanning
+  - "AAAI 2026"
+  - "n-gram computation"
+  - "hardware-aware algorithms"
+  - "cache-friendly"
+  - "Zipf distribution"
+  - "multi-pass scanning"
 date: 2026-05-08
 content_hash: b3d99823b3042f73
 ---

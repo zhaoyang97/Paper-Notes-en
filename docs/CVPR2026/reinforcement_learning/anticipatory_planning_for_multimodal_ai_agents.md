@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Anticipatory Planning for Multimodal AI Agents
 description: >-
-  [CVPR 2026][Reinforcement Learning][Multimodal agents] This paper proposes TraceR1, a two-stage RL framework in which the first stage employs trajectory-level reward optimization to train agents to perform multi-step look-ahead planning, while the second stage applies grounded fine-tuning via tool execution feedback to improve single-step precision. The approach achieves open-source state-of-the-art results across 7 GUI and tool-use benchmarks.
+  [CVPR 2026][Reinforcement Learning][Multimodal agents] This paper proposes TraceR1, a two-stage RL framework in which the first stage employs trajectory-level reward optimization to train agents to perform multi-step loo…
 tags:
-  - CVPR 2026
-  - Reinforcement Learning
-  - Multimodal agents
-  - anticipatory planning
-  - trajectory-level reinforcement learning
-  - GUI interaction
-  - tool use
-  - GRPO
+  - "CVPR 2026"
+  - "Reinforcement Learning"
+  - "Multimodal agents"
+  - "anticipatory planning"
+  - "trajectory-level reinforcement learning"
+  - "GUI interaction"
+  - "tool use"
+  - "GRPO"
 date: 2026-05-08
 content_hash: c4e945121ce1a9f2
 ---

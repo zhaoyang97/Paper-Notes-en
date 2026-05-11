@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Crowdsourcing of Real-world Image Annotation via Visual Properties
 description: >-
-  [CVPR 2026][image annotation] This paper proposes an image annotation methodology constrained by visual properties. It constructs an object category hierarchy through knowledge representation and combines an interactive crowdsourcing framework that leverages visual genus and visual differentia to guide the annotation process, thereby reducing annotator subjectivity and the semantic gap problem.
+  [CVPR 2026][image annotation] This paper proposes an image annotation methodology constrained by visual properties. It constructs an object category hierarchy through knowledge representation and combines an interactive…
 tags:
-  - CVPR 2026
-  - image annotation
-  - crowdsourcing
-  - visual properties
-  - semantic gap
-  - object hierarchy
+  - "CVPR 2026"
+  - "image annotation"
+  - "crowdsourcing"
+  - "visual properties"
+  - "semantic gap"
+  - "object hierarchy"
 date: 2026-05-08
 content_hash: 5e007e71c50ec72b
 ---

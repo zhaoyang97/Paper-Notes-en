@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Reasoning Models Hallucinate More: Factuality-Aware Reinforcement Learning for Large Reasoning Models
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Hallucination] This paper reveals that RL-trained reasoning models (e.g., DeepSeek-R1) hallucinate significantly more than non-reasoning models, theoretically identifies three root causes (high-variance gradients, entropy constraints, and spurious local optima), and proposes the FSPO algorithm, which adjusts token-level advantages via step-level factuality verification to reduce hallucination while maintaining or even improving reasoning capability.
+  [NeurIPS 2025][LLM Reasoning][Hallucination] This paper reveals that RL-trained reasoning models (e.g., DeepSeek-R1) hallucinate significantly more than non-reasoning models…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - Hallucination
-  - Reasoning Models
-  - Reinforcement Learning
-  - Factuality Verification
-  - GRPO
-  - Step-level Reward
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "Hallucination"
+  - "Reasoning Models"
+  - "Reinforcement Learning"
+  - "Factuality Verification"
+  - "GRPO"
+  - "Step-level Reward"
 date: 2026-05-08
 content_hash: 749f4e324bc99cd1
 ---

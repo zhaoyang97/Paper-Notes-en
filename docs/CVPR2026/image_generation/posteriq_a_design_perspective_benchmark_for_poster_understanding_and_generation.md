@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] PosterIQ: A Design Perspective Benchmark for Poster Understanding and Generation
 description: >-
-  [CVPR 2026][Image Generation][Poster Design] This paper introduces PosterIQ, a comprehensive benchmark for poster design evaluation, comprising 7,765 understanding annotations and 822 generation prompts across 24 task categories — including OCR, font perception, layout reasoning, design intent understanding, and compositionally-aware generation — to systematically diagnose the gap between current MLLMs and diffusion models in design cognition.
+  [CVPR 2026][Image Generation][Poster Design] This paper introduces PosterIQ, a comprehensive benchmark for poster design evaluation, comprising 7…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Poster Design
-  - Multimodal Benchmark
-  - Visual Understanding
-  - Typographic Design
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Poster Design"
+  - "Multimodal Benchmark"
+  - "Visual Understanding"
+  - "Typographic Design"
 date: 2026-05-08
 content_hash: 2852bdf45b27276b
 ---

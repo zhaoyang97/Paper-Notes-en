@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Intention-Guided Cognitive Reasoning for Egocentric Long-Term Action Anticipation
 description: >-
-  [AAAI 2026][Reinforcement Learning][Long-term action anticipation] This paper proposes INSIGHT, a two-stage unified framework for egocentric long-term action anticipation (LTA). Stage one enhances action representations via hand-object interaction (HOI) region feature extraction and verb-noun co-occurrence matrices; stage two introduces a GRPO-based reinforcement learning cognitive reasoning module that simulates a structured "perceive → reason → answer" cognitive process for intention inference and action prediction.
+  [AAAI 2026][Reinforcement Learning][Long-term action anticipation] This paper proposes INSIGHT, a two-stage unified framework for egocentric long-term action anticipation (LTA). Stage one enhances action representations…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - Long-term action anticipation
-  - egocentric video
-  - hand-object interaction
-  - cognitive reasoning
-  - GRPO
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "Long-term action anticipation"
+  - "egocentric video"
+  - "hand-object interaction"
+  - "cognitive reasoning"
+  - "GRPO"
 date: 2026-05-08
 content_hash: 531cae39c687afcc
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] A Self-Improving Coding Agent
 description: >-
-  [NeurIPS 2025][self-improving agent] This paper proposes SICA (Self-Improving Coding Agent), a coding agent capable of autonomously editing its own codebase to improve performance. By eliminating the distinction between meta-agent and target-agent, SICA achieves iterative self-improvement, advancing from 17% to 53% on a subset of SWE-Bench Verified.
+  [NeurIPS 2025][Code Intelligence][self-improving agent] This paper proposes SICA (Self-Improving Coding Agent), a coding agent capable of autonomously editing its own codebase to improve performance. By eliminating the d…
 tags:
-  - NeurIPS 2025
-  - self-improving agent
-  - meta-agent
-  - coding agent
-  - automated agent design
-  - self-referential
+  - "NeurIPS 2025"
+  - "Code Intelligence"
+  - "self-improving agent"
+  - "meta-agent"
+  - "coding agent"
+  - "automated agent design"
+  - "self-referential"
 date: 2026-05-08
 content_hash: 759cad923a03788a
 ---

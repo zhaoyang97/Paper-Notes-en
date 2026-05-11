@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Trinity: An Evolved LLM Coordinator
 description: >-
-  [ICLR 2026][Reinforcement Learning][LLM coordination] Trinity introduces a lightweight coordinator (0.6B SLM + ~10K trainable parameters in a linear head) optimized via sep-CMA-ES. In multi-turn dialogues, the coordinator routes queries to different LLMs and assigns one of three roles—Thinker, Worker, or Verifier—achieving 86.2% pass@1 SOTA on LiveCodeBench and consistently outperforming all single-model and multi-agent baselines across 4 in-distribution and 4 out-of-distribution tasks.
+  [ICLR 2026][Reinforcement Learning][LLM coordination] Trinity introduces a lightweight coordinator (0.6B SLM + ~10K trainable parameters in a linear head) optimized via sep-CMA-ES. In multi-turn dialogues…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - LLM coordination
-  - model composition
-  - evolutionary strategy
-  - CMA-ES
-  - multi-role collaboration
-  - test-time composition
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "LLM coordination"
+  - "model composition"
+  - "evolutionary strategy"
+  - "CMA-ES"
+  - "multi-role collaboration"
+  - "test-time composition"
 date: 2026-05-08
 content_hash: 9c72a69ba109882c
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DETree: DEtecting Human-AI Collaborative Texts via Tree-Structured Hierarchical Representation Learning
 description: >-
-  [NEURIPS2025][Object Detection][AI text detection] This paper proposes DETree, a framework that constructs a Hierarchical Affinity Tree (HAT) to model the hierarchical relationships among diverse human-AI collaborative text generation processes, and designs a Tree-Structured Contrastive Loss (TSCL) to align the representation space. DETree achieves significant advantages in mixed-text detection and OOD generalization scenarios.
+  [NEURIPS2025][Object Detection][AI text detection] This paper proposes DETree, a framework that constructs a Hierarchical Affinity Tree (HAT) to model the hierarchical relationships among diverse human-AI collaborative t…
 tags:
-  - NEURIPS2025
-  - Object Detection
-  - AI text detection
-  - human-AI collaborative text
-  - hierarchical representation learning
-  - contrastive learning
-  - out-of-distribution generalization
+  - "NEURIPS2025"
+  - "Object Detection"
+  - "AI text detection"
+  - "human-AI collaborative text"
+  - "hierarchical representation learning"
+  - "contrastive learning"
+  - "out-of-distribution generalization"
 date: 2026-05-08
 content_hash: d5918878c2f0ecec
 ---

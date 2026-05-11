@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] CBMAS: Cognitive Behavioral Modeling via Activation Steering
 description: >-
-  [NeurIPS 2025][activation steering] CBMAS proposes a framework that repurposes activation steering as a continuous diagnostic tool. By conducting dense α-sweeps and decoupling injection layers from readout layers, the framework elevates cognitive bias analysis from a binary "biased / unbiased" judgment to a continuous trajectory analysis capable of tracking flip points, propagation paths, and attenuation patterns. Experiments on GPT-2 Small reveal that appeasement behavior is strongly encoded in shallow layers but decays rapidly toward deeper layers.
+  [NeurIPS 2025][Interpretability][activation steering] CBMAS proposes a framework that repurposes activation steering as a continuous diagnostic tool. By conducting dense α-sweeps and decoupling injection layers from read…
 tags:
-  - NeurIPS 2025
-  - activation steering
-  - cognitive bias
-  - bias response curve
-  - logit lens
-  - layer sensitivity analysis
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "activation steering"
+  - "cognitive bias"
+  - "bias response curve"
+  - "logit lens"
+  - "layer sensitivity analysis"
 date: 2026-05-08
 content_hash: 88d269ffd9ea9171
 ---

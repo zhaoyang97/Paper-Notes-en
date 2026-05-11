@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Where Norms and References Collide: Evaluating LLMs on Normative Reasoning
 description: >-
-  [AAAI 2026][LLM Evaluation][Social norm reasoning] This paper proposes SNIC, a diagnostic testbed comprising 9,000 instances across 51 scenarios, designed to evaluate whether LLMs can leverage implicit social norms to resolve ambiguous reference expressions (e.g., "hand me the cup" when multiple cups are present). Results show that LLMs achieve an average accuracy of only 44% given scene descriptions alone; adding Prolog-based formal logic yields negligible improvement (44.2%), whereas explicitly providing a list of norms dramatically raises accuracy to 70.5% (GPT-4.1 reaches 99.6%). This demonstrates that LLMs lack implicit physical norm knowledge yet can effectively exploit explicit norms.
+  [AAAI 2026][LLM Evaluation][Social norm reasoning] This paper proposes SNIC, a diagnostic testbed comprising 9,000 instances across 51 scenarios…
 tags:
-  - AAAI 2026
-  - LLM Evaluation
-  - Social norm reasoning
-  - reference resolution
-  - embodied agents
-  - diagnostic testbed
-  - implicit knowledge
+  - "AAAI 2026"
+  - "LLM Evaluation"
+  - "Social norm reasoning"
+  - "reference resolution"
+  - "embodied agents"
+  - "diagnostic testbed"
+  - "implicit knowledge"
 date: 2026-05-08
 content_hash: 7057a0ba5d4a4b14
 ---

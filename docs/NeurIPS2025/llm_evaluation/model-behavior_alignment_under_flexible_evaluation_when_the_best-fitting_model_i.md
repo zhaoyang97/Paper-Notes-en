@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Model-Behavior Alignment under Flexible Evaluation: When the Best-Fitting Model Isn't the Right One
 description: >-
-  [NeurIPS 2025][LLM Evaluation][Model Recovery] Through large-scale model recovery experiments, this paper demonstrates that even with 4.5 million behavioral data points, flexible evaluation methods based on linear probing achieve model recovery accuracy below 80% across 20 visual models. This reveals a fundamental trade-off between predictive accuracy and model identifiability, challenging the prevailing paradigm that the best-fitting model is the most appropriate one.
+  [NeurIPS 2025][LLM Evaluation][Model Recovery] Through large-scale model recovery experiments, this paper demonstrates that even with 4.5 million behavioral data points…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - Model Recovery
-  - Representational Alignment
-  - Linear Probing
-  - Identifiability
-  - THINGS Dataset
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "Model Recovery"
+  - "Representational Alignment"
+  - "Linear Probing"
+  - "Identifiability"
+  - "THINGS Dataset"
 date: 2026-05-08
 content_hash: b9cae38fe15f8e48
 ---

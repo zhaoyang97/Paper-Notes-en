@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DISC: Dynamic Decomposition Improves LLM Inference Scaling
 description: >-
-  [NeurIPS 2025][LLM Efficiency][Test-time compute] DISC proposes a dynamic decomposition algorithm that automatically and recursively adjusts the granularity of reasoning steps at inference time based on the z-score (normalized maximum of sampled rewards) at each step — decomposing difficult steps more finely while taking larger strides over easy ones. It can be plugged into greedy search, Beam Search, and MCTS, achieving higher pass@k with fewer token budgets on APPS, MATH, and LiveCodeBench.
+  [NeurIPS 2025][LLM Efficiency][Test-time compute] DISC proposes a dynamic decomposition algorithm that automatically and recursively adjusts the granularity of reasoning steps at inference time based on the z-score (norm…
 tags:
-  - NeurIPS 2025
-  - LLM Efficiency
-  - Test-time compute
-  - dynamic decomposition
-  - search algorithms
-  - inference-time scaling
-  - reasoning efficiency
+  - "NeurIPS 2025"
+  - "LLM Efficiency"
+  - "Test-time compute"
+  - "dynamic decomposition"
+  - "search algorithms"
+  - "inference-time scaling"
+  - "reasoning efficiency"
 date: 2026-05-08
 content_hash: b113b2e4d900a217
 ---

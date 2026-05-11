@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AICA-Bench: Holistically Examining the Capabilities of VLMs in Affective Image Content Analysis
 description: >-
-  [ACL 2026][Multimodal VLM][Sentiment Analysis] This paper proposes AICA-Bench, a comprehensive benchmark covering three dimensions — Emotion Understanding (EU), Emotion Reasoning (ER), and Emotion-Guided Content Generation (EGCG) — to evaluate 23 VLMs. The evaluation reveals two systematic deficiencies: intensity calibration failure and shallow description, and introduces a training-free framework, GAT Prompting, to mitigate these issues.
+  [ACL 2026][Multimodal VLM][Sentiment Analysis] This paper proposes AICA-Bench, a comprehensive benchmark covering three dimensions — Emotion Understanding (EU), Emotion Reasoning (ER)…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Sentiment Analysis
-  - Vision-Language Models
-  - Benchmark
-  - Affective Reasoning
-  - Prompt Engineering
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Sentiment Analysis"
+  - "Vision-Language Models"
+  - "Benchmark"
+  - "Affective Reasoning"
+  - "Prompt Engineering"
 date: 2026-05-08
 content_hash: 5a5d31a364525ee8
 ---

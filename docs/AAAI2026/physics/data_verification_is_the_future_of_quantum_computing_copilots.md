@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Data Verification is the Future of Quantum Computing Copilots
 description: >-
-  [AAAI 2026][quantum circuit optimization] This position paper argues that data verification must be elevated from a post-hoc filtering step to a foundational architectural principle in quantum computing AI copilots. Three positions are advanced: (1) verified data is a minimum requirement; (2) prior constraints outperform posterior filtering; (3) scientific domains governed by physical laws require verification-aware architectures. Experiments demonstrate that LLMs trained without verified data achieve at most 79% accuracy on circuit optimization tasks.
+  [AAAI 2026][Physics][quantum circuit optimization] This position paper argues that data verification must be elevated from a post-hoc filtering step to a foundational architectural principle in quantum computing AI copil…
 tags:
-  - AAAI 2026
-  - quantum circuit optimization
-  - LLM hallucination
-  - formal verification
-  - data quality
-  - verification-first architecture
+  - "AAAI 2026"
+  - "Physics"
+  - "quantum circuit optimization"
+  - "LLM hallucination"
+  - "formal verification"
+  - "data quality"
+  - "verification-first architecture"
 date: 2026-05-08
 content_hash: aa88e513c5ec27a5
 ---

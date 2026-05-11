@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Counterfactual Explanations on Robust Perceptual Geodesics
 description: >-
-  [ICLR 2026][Causal Inference][Counterfactual Explanations] This paper proposes PCG (Perceptual Counterfactual Geodesic), a method that generates semantically faithful counterfactual explanations by optimizing geodesics on a robust perceptual manifold. A two-stage optimization ensures that the resulting path is both perceptually natural and reaches the target class. PCG achieves FID=8.3 on AFHQ, substantially outperforming RSGD (FID=12.9).
+  [ICLR 2026][Causal Inference][Counterfactual Explanations] This paper proposes PCG (Perceptual Counterfactual Geodesic), a method that generates semantically faithful counterfactual explanations by optimizing geodesics o…
 tags:
-  - ICLR 2026
-  - Causal Inference
-  - Counterfactual Explanations
-  - Geodesic Optimization
-  - Perceptual Metric
-  - Adversarial Robustness
-  - Interpretability
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "Counterfactual Explanations"
+  - "Geodesic Optimization"
+  - "Perceptual Metric"
+  - "Adversarial Robustness"
+  - "Interpretability"
 date: 2026-05-08
 content_hash: 3a73eefe5307719f
 ---

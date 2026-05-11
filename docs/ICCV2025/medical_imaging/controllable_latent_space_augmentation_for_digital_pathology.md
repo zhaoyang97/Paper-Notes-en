@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Controllable Latent Space Augmentation for Digital Pathology
 description: >-
-  [ICCV 2025][Medical Imaging][Data Augmentation] This paper proposes HistAug — a lightweight Transformer-based latent space augmentation model that simulates realistic image transformations (hue shifts, erosion, etc.) in feature space via conditional cross-attention, providing controllable and computationally efficient data augmentation for pathology MIL training at minimal overhead.
+  [ICCV 2025][Medical Imaging][Data Augmentation] This paper proposes HistAug — a lightweight Transformer-based latent space augmentation model that simulates realistic image transformations (hue shifts, erosion…
 tags:
-  - ICCV 2025
-  - Medical Imaging
-  - Data Augmentation
-  - Latent Space
-  - MIL
-  - Digital Pathology
-  - Foundation Models
+  - "ICCV 2025"
+  - "Medical Imaging"
+  - "Data Augmentation"
+  - "Latent Space"
+  - "MIL"
+  - "Digital Pathology"
+  - "Foundation Models"
 date: 2026-05-08
 content_hash: 0dca07e59e0bf8d0
 ---

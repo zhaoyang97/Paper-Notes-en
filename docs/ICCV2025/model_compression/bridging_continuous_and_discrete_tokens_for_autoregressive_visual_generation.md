@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Bridging Continuous and Discrete Tokens for Autoregressive Visual Generation
 description: >-
-  [ICCV 2025][Model Compression][Autoregressive generation] This paper proposes TokenBridge, which converts continuous tokens into discrete tokens by applying post-training dimension-wise quantization to pre-trained continuous VAE features. The approach preserves the high-fidelity representation capability of continuous tokens while enabling straightforward autoregressive modeling with standard cross-entropy loss, achieving generation quality on ImageNet 256×256 comparable to continuous methods.
+  [ICCV 2025][Model Compression][Autoregressive generation] This paper proposes TokenBridge, which converts continuous tokens into discrete tokens by applying post-training dimension-wise quantization to pre-trained contin…
 tags:
-  - ICCV 2025
-  - Model Compression
-  - Autoregressive generation
-  - visual tokenizer
-  - post-training quantization
-  - discrete-continuous bridging
-  - dimension-wise autoregression
+  - "ICCV 2025"
+  - "Model Compression"
+  - "Autoregressive generation"
+  - "visual tokenizer"
+  - "post-training quantization"
+  - "discrete-continuous bridging"
+  - "dimension-wise autoregression"
 date: 2026-05-08
 content_hash: 59d83c96ae4618c5
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The Model Agreed, But Didn't Learn: Diagnosing Surface Compliance in Large Language Models
 description: >-
-  [ACL 2026][LLM/NLP][Knowledge Editing] This paper proposes the SA-MCQ diagnostic framework to reveal the phenomenon of "surface compliance" in knowledge editing — editors achieve high scores on standard benchmarks without genuinely overwriting internal beliefs, models revert to original parametric memory under discriminative self-assessment, and sequential editing accumulates representational residuals that lead to cognitive instability.
+  [ACL 2026][LLM/NLP][Knowledge Editing] This paper proposes the SA-MCQ diagnostic framework to reveal the phenomenon of "surface compliance" in knowledge editing — editors achieve high scores on standard benchmarks withou…
 tags:
-  - ACL 2026
-  - LLM/NLP
-  - Knowledge Editing
-  - Surface Compliance
-  - Self-Assessment
-  - Parametric Memory
-  - In-Context Learning
+  - "ACL 2026"
+  - "LLM/NLP"
+  - "Knowledge Editing"
+  - "Surface Compliance"
+  - "Self-Assessment"
+  - "Parametric Memory"
+  - "In-Context Learning"
 date: 2026-05-08
 content_hash: a6e3cf7675f07720
 ---

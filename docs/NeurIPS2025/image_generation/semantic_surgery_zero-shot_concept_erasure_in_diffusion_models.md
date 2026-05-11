@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Semantic Surgery: Zero-Shot Concept Erasure in Diffusion Models
 description: >-
-  [NeurIPS 2025][Image Generation][Concept Erasure] This paper proposes Semantic Surgery, a training-free zero-shot inference-time concept erasure framework that calibrates text embeddings via vector subtraction prior to the diffusion process, incorporates Co-Occurrence Encoding for multi-concept erasure, and employs a visual feedback loop to address latent concept persistence (LCP). The method comprehensively outperforms state-of-the-art approaches across object, NSFW, style, and celebrity erasure tasks.
+  [NeurIPS 2025][Image Generation][Concept Erasure] This paper proposes Semantic Surgery, a training-free zero-shot inference-time concept erasure framework that calibrates text embeddings via vector subtraction prior to t…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Concept Erasure
-  - Diffusion Models
-  - Text Embedding Manipulation
-  - Zero-Shot
-  - Inference-Time Method
-  - Safe Generation
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Concept Erasure"
+  - "Diffusion Models"
+  - "Text Embedding Manipulation"
+  - "Zero-Shot"
+  - "Inference-Time Method"
+  - "Safe Generation"
 date: 2026-05-08
 content_hash: f7e341eb8310f6d4
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Boosting Medical Visual Understanding From Multi-Granular Language Learning
 description: >-
-  [ICLR 2026][Medical Imaging][Medical image pre-training] This paper proposes Multi-Granular Language Learning (MGLL), a plug-and-play contrastive learning framework that jointly optimizes a soft CLIP loss, a point-wise loss, and a smooth KL divergence to align medical images with multi-label, multi-granular text descriptions. MGLL consistently surpasses state-of-the-art methods on fundus and X-ray datasets, and when used as a visual encoder for multimodal large language models, improves diagnostic accuracy by up to 34.1%.
+  [ICLR 2026][Medical Imaging][Medical image pre-training] This paper proposes Multi-Granular Language Learning (MGLL), a plug-and-play contrastive learning framework that jointly optimizes a soft CLIP loss…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - Medical image pre-training
-  - multi-label contrastive learning
-  - multi-granular alignment
-  - CLIP improvement
-  - vision-language pre-training
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Medical image pre-training"
+  - "multi-label contrastive learning"
+  - "multi-granular alignment"
+  - "CLIP improvement"
+  - "vision-language pre-training"
 date: 2026-05-08
 content_hash: 310d989aa73d219f
 ---

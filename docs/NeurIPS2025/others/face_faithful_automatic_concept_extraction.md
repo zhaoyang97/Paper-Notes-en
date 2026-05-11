@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FACE: Faithful Automatic Concept Extraction
 description: >-
-  [NeurIPS 2025][concept explanation] This paper proposes FACE, a framework that incorporates a KL divergence regularization term into non-negative matrix factorization (NMF) to constrain reconstructed activations to remain consistent with the original model's predictions, thereby extracting concept explanations that are truly faithful to the model's decision process. FACE comprehensively outperforms CRAFT and ICE on ImageNet, COCO, and CelebA.
+  [NeurIPS 2025][concept explanation] This paper proposes FACE, a framework that incorporates a KL divergence regularization term into non-negative matrix factorization (NMF) to constrain reconstructed activations to remai…
 tags:
-  - NeurIPS 2025
-  - concept explanation
-  - NMF
-  - KL divergence
-  - faithfulness
-  - non-negative matrix factorization
-  - interpretability
+  - "NeurIPS 2025"
+  - "concept explanation"
+  - "NMF"
+  - "KL divergence"
+  - "faithfulness"
+  - "non-negative matrix factorization"
+  - "interpretability"
 date: 2026-05-08
 content_hash: f4a05fe8e66a7c84
 ---

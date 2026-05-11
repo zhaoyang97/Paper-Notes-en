@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Autoregressive Image Generation with Randomized Parallel Decoding
 description: >-
-  [ICLR 2026][Image Generation][autoregressive image generation] This paper proposes ARPG, a visual autoregressive model built upon a "guided decoding" framework that decouples positional guidance (query) from content representation (key-value), enabling fully randomized-order training and generation with efficient parallel decoding. On ImageNet-1K 256×256, ARPG achieves 1.94 FID in 64 steps with over 20× throughput improvement and over 75% memory reduction.
+  [ICLR 2026][Image Generation][autoregressive image generation] This paper proposes ARPG, a visual autoregressive model built upon a "guided decoding" framework that decouples positional guidance (query) from content repr…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - autoregressive image generation
-  - random-order modeling
-  - parallel decoding
-  - KV cache
-  - controllable generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "autoregressive image generation"
+  - "random-order modeling"
+  - "parallel decoding"
+  - "KV cache"
+  - "controllable generation"
 date: 2026-05-08
 content_hash: a9646fd4e368bc71
 ---

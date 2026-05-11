@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Single Pixel Image Classification using an Ultrafast Digital Light Projector
 description: >-
-  [CVPR 2026][Autonomous Driving][single pixel imaging] An ultrafast microLED-on-CMOS digital light projector (330 kfps global shutter) is employed for single-pixel imaging. Twelve-by-twelve Hadamard patterns are projected onto MNIST digits, and a single-pixel photodetector acquires a time series of aggregated light intensities. Image reconstruction is entirely bypassed; an ELM or DNN directly classifies the time series. The system achieves greater than 90% multi-class accuracy and greater than 99% AUC binary classification (anomaly detection) at 1.2 kfps.
+  [CVPR 2026][Autonomous Driving][single pixel imaging] An ultrafast microLED-on-CMOS digital light projector (330 kfps global shutter) is employed for single-pixel imaging. Twelve-by-twelve Hadamard patterns are projected…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - single pixel imaging
-  - Hadamard patterns
-  - microLED-on-CMOS
-  - extreme learning machine
-  - compressed sensing
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "single pixel imaging"
+  - "Hadamard patterns"
+  - "microLED-on-CMOS"
+  - "extreme learning machine"
+  - "compressed sensing"
 date: 2026-05-08
 content_hash: d6f10fa6538d240f
 ---

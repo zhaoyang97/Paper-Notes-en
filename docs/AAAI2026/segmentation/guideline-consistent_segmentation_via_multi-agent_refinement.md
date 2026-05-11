@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Guideline-Consistent Segmentation via Multi-Agent Refinement
 description: >-
-  [AAAI 2026][Segmentation][guideline-consistent segmentation] A training-free multi-agent framework is proposed that achieves guideline-consistent semantic segmentation through an iterative Worker (segmentation execution) and Supervisor (guideline verification) loop coupled with an RL-based adaptive stopping strategy, surpassing prior SOTA by 8.61 and 5.5 gIoU on Waymo and ReasonSeg, respectively.
+  [AAAI 2026][Segmentation][guideline-consistent segmentation] A training-free multi-agent framework is proposed that achieves guideline-consistent semantic segmentation through an iterative Worker (segmentation execution)…
 tags:
-  - AAAI 2026
-  - Segmentation
-  - guideline-consistent segmentation
-  - multi-agent
-  - VLM
-  - reinforcement learning
-  - training-free framework
+  - "AAAI 2026"
+  - "Segmentation"
+  - "guideline-consistent segmentation"
+  - "multi-agent"
+  - "VLM"
+  - "reinforcement learning"
+  - "training-free framework"
 date: 2026-05-08
 content_hash: 59afddbe911de030
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Detecting RAG Extraction Attack via Dual-Path Runtime Integrity Game
 description: >-
-  [ACL 2026][RAG Security] This paper proposes CanaryRAG, a RAG runtime defense mechanism inspired by stack canaries in software security. By injecting non-semantic canary tokens into retrieved chunks and designing a dual-path integrity game — the target path should not leak canary tokens, while the Oracle path should be able to elicit them — CanaryRAG detects knowledge base extraction attacks in real time, achieving state-of-the-art protection without compromising task performance or inference latency.
+  [ACL 2026][Information Retrieval & RAG][RAG Security] This paper proposes CanaryRAG, a RAG runtime defense mechanism inspired by stack canaries in software security. By injecting non-semantic canary tokens into retrieved…
 tags:
-  - ACL 2026
-  - RAG Security
-  - Knowledge Base Extraction
-  - Canary Detection
-  - Runtime Defense
-  - Plug-and-Play
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "RAG Security"
+  - "Knowledge Base Extraction"
+  - "Canary Detection"
+  - "Runtime Defense"
+  - "Plug-and-Play"
 date: 2026-05-08
 content_hash: c6e92ba7132e544f
 ---

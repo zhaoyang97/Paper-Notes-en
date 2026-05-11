@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SEED: Towards More Accurate Semantic Evaluation for Visual Brain Decoding
 description: >-
-   This paper proposes SEED (Semantic Evaluation for Visual Brain Decoding), a composite evaluation metric combining three complementary measures — Object F1, Cap-Sim, and EffNet — which substantially outperforms all existing metrics in alignment with human evaluation.
+  This paper proposes SEED (Semantic Evaluation for Visual Brain Decoding), a composite evaluation metric combining three complementary measures — Object F1, Cap-Sim…
 tags:
 
 date: 2026-05-08

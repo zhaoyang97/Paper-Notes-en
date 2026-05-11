@@ -2,15 +2,16 @@
 title: >-
   [Paper Note] Decomposing Representation Space into Interpretable Subspaces with Unsupervised Learning
 description: >-
-  [ICLR 2026][subspace decomposition] This paper proposes NDM (Neighbor Distance Minimization), an unsupervised method that discovers interpretable, non-basis-aligned subspaces in neural network representation spaces by minimizing intra-subspace neighbor distances. On GPT-2, it achieves an average Gini coefficient of 0.71 (indicating highly concentrated information); on Qwen2.5-1.5B, it identifies separated subspaces for routing parametric knowledge versus in-context knowledge.
+  [ICLR 2026][Interpretability][subspace decomposition] This paper proposes NDM (Neighbor Distance Minimization), an unsupervised method that discovers interpretable…
 tags:
-  - ICLR 2026
-  - subspace decomposition
-  - representation interpretation
-  - neighbor distance minimization
-  - unsupervised decomposition
-  - knowledge localization
-  - mechanistic interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "subspace decomposition"
+  - "representation interpretation"
+  - "neighbor distance minimization"
+  - "unsupervised decomposition"
+  - "knowledge localization"
+  - "mechanistic interpretability"
 date: 2026-05-08
 content_hash: 85964beb76b994a4
 ---

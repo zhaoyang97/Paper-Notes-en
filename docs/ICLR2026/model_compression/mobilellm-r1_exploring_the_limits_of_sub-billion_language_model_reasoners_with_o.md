@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MobileLLM-R1: Exploring the Limits of Sub-Billion Language Model Reasoners with Open Training Recipes
 description: >-
-  [ICLR 2026][Model Compression][small model reasoning] Through careful data selection and an adaptive mixing strategy, MobileLLM-R1-950M is pretrained on only 4.2T tokens (11.7% of Qwen3's token budget) and matches or surpasses Qwen3-0.6B on reasoning benchmarks such as AIME, while fully open-sourcing both data sources and training recipes.
+  [ICLR 2026][Model Compression][small model reasoning] Through careful data selection and an adaptive mixing strategy, MobileLLM-R1-950M is pretrained on only 4.2T tokens (11.7% of Qwen3's token budget) and matches or sur…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - small model reasoning
-  - data selection
-  - influence scores
-  - data mixing
-  - on-device deployment
+  - "ICLR 2026"
+  - "Model Compression"
+  - "small model reasoning"
+  - "data selection"
+  - "influence scores"
+  - "data mixing"
+  - "on-device deployment"
 date: 2026-05-08
 content_hash: a14fe64c49676925
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Task-Optimized Convolutional Recurrent Networks Align with Tactile Processing in the Rodent Brain
 description: >-
-  [NeurIPS 2025][Robotics][Tactile Perception] This paper proposes the Encoder-Attender-Decoder (EAD) framework to systematically explore task-optimized temporal neural networks for tactile processing. It finds that convolutional recurrent networks (ConvRNNs, especially IntersectionRNN) outperform feedforward and state-space models on both tactile object classification and neural alignment with rodent somatosensory cortex. Contrastive self-supervised learning with tactile-specific augmentations achieves neural fitting comparable to supervised learning, providing the first quantitative characterization of the brain's computational mechanisms for touch.
+  [NeurIPS 2025][Robotics][Tactile Perception] This paper proposes the Encoder-Attender-Decoder (EAD) framework to systematically explore task-optimized temporal neural networks for tactile processing. It finds that convol…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - Tactile Perception
-  - Convolutional Recurrent Networks
-  - Somatosensory Cortex
-  - Self-Supervised Learning
-  - NeuroAI
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "Tactile Perception"
+  - "Convolutional Recurrent Networks"
+  - "Somatosensory Cortex"
+  - "Self-Supervised Learning"
+  - "NeuroAI"
 date: 2026-05-08
 content_hash: 9216636d46c2a5ca
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Intractable Multimodal Policies with Reparameterization and Diversity Regularization
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][multimodal policy] This paper proposes the Diversity-regularized Actor Critic (DrAC) algorithm, which unifies intractable multimodal policies (amortized actor and diffusion actor) under a stochastic-mapping formulation, enables direct policy gradient optimization via reparameterization without requiring probability density evaluation, and introduces a distance-based diversity regularization as an alternative to entropy regularization. DrAC demonstrates significant advantages on diversity-critical tasks such as multi-goal navigation and generative RL.
+  [NeurIPS 2025][Reinforcement Learning][multimodal policy] This paper proposes the Diversity-regularized Actor Critic (DrAC) algorithm, which unifies intractable multimodal policies (amortized actor and diffusion actor) u…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - multimodal policy
-  - reparameterization
-  - diversity regularization
-  - diffusion policy
-  - actor-critic
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "multimodal policy"
+  - "reparameterization"
+  - "diversity regularization"
+  - "diffusion policy"
+  - "actor-critic"
 date: 2026-05-08
 content_hash: 94fa6138d4b51274
 ---

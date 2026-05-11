@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SRPO: Enhancing Multimodal LLM Reasoning via Reflection-Aware Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Multimodal Reasoning] This paper proposes SRPO (Self-Reflection enhanced reasoning with Group Relative Policy Optimization), a two-stage reflection-aware RL framework. Stage 1 constructs reflection data via large model distillation for SFT cold-start; Stage 2 designs a reflection-aware reward function within GRPO to reinforce concise and effective self-reflection. SRPO achieves state-of-the-art results at the 7B/32B scale on multimodal reasoning benchmarks including MathVista, MathVision, and MMMU-Pro.
+  [NeurIPS 2025][Multimodal VLM][Multimodal Reasoning] This paper proposes SRPO (Self-Reflection enhanced reasoning with Group Relative Policy Optimization)…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Multimodal Reasoning
-  - Self-Reflection
-  - Reinforcement Learning
-  - GRPO
-  - Reflection-Aware RL
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Multimodal Reasoning"
+  - "Self-Reflection"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "Reflection-Aware RL"
 date: 2026-05-08
 content_hash: 0e3d4496642a3096
 ---

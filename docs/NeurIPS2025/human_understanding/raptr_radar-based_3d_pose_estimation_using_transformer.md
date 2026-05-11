@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RAPTR: Radar-Based 3D Pose Estimation Using Transformer
 description: >-
-  [NeurIPS 2025][Human Understanding][Radar Perception] This paper proposes RAPTR, the first Transformer framework for radar-based 3D human pose estimation using weak supervision (3D bounding boxes + 2D keypoint labels). Through pseudo-3D deformable attention and structured loss functions, RAPTR substantially outperforms baselines on two indoor datasets.
+  [NeurIPS 2025][Human Understanding][Radar Perception] This paper proposes RAPTR, the first Transformer framework for radar-based 3D human pose estimation using weak supervision (3D bounding boxes + 2D keypoint labels). T…
 tags:
-  - NeurIPS 2025
-  - Human Understanding
-  - Radar Perception
-  - 3D Human Pose Estimation
-  - Transformer
-  - Weak Supervision
-  - Deformable Attention
+  - "NeurIPS 2025"
+  - "Human Understanding"
+  - "Radar Perception"
+  - "3D Human Pose Estimation"
+  - "Transformer"
+  - "Weak Supervision"
+  - "Deformable Attention"
 date: 2026-05-08
 content_hash: d9a50af4b1f9c750
 ---

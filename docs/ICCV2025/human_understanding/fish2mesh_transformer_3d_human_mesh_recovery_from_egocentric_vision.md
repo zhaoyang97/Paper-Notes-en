@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Fish2Mesh Transformer: 3D Human Mesh Recovery from Egocentric Vision
 description: >-
-  [ICCV 2025][Human Understanding][Egocentric vision] This paper proposes Fish2Mesh, a fisheye-aware Transformer model that embeds the spherical geometry of fisheye images into a Swin Transformer via an Egocentric Positional Encoding (EPE) based on equirectangular projection, enabling accurate 3D human mesh recovery from a head-mounted fisheye camera in egocentric perspective.
+  [ICCV 2025][Human Understanding][Egocentric vision] This paper proposes Fish2Mesh, a fisheye-aware Transformer model that embeds the spherical geometry of fisheye images into a Swin Transformer via an Egocentric Position…
 tags:
-  - ICCV 2025
-  - Human Understanding
-  - Egocentric vision
-  - fisheye undistortion
-  - human mesh recovery
-  - SMPL
-  - positional encoding
+  - "ICCV 2025"
+  - "Human Understanding"
+  - "Egocentric vision"
+  - "fisheye undistortion"
+  - "human mesh recovery"
+  - "SMPL"
+  - "positional encoding"
 date: 2026-05-08
 content_hash: acde3f58724a0877
 ---

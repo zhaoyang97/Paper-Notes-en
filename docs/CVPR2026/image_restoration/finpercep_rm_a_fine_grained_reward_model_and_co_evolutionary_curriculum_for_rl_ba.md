@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FinPercep-RM: A Fine-grained Reward Model and Co-evolutionary Curriculum for RL-based Real-world Super-Resolution
 description: >-
-  [CVPR 2026][Image Restoration][Image Super-Resolution] This paper proposes FinPercep-RM, a fine-grained perceptual reward model, and a Co-evolutionary Curriculum Learning (CCL) strategy to address reward hacking and training instability when applying RLHF to real-world image super-resolution. The model simultaneously outputs a global quality score and a spatial degradation heatmap, enabling localized artifact awareness.
+  [CVPR 2026][Image Restoration][Image Super-Resolution] This paper proposes FinPercep-RM, a fine-grained perceptual reward model, and a Co-evolutionary Curriculum Learning (CCL) strategy to address reward hacking and trai…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Image Super-Resolution
-  - Reward Model
-  - RLHF
-  - Fine-grained Quality Assessment
-  - Curriculum Learning
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Image Super-Resolution"
+  - "Reward Model"
+  - "RLHF"
+  - "Fine-grained Quality Assessment"
+  - "Curriculum Learning"
 date: 2026-05-08
 content_hash: f091a2812ad95c35
 ---

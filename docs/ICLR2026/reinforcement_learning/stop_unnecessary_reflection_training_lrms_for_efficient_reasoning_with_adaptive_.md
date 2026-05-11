@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Stop Unnecessary Reflection: Training LRMs for Efficient Reasoning with Adaptive Reflection and Length Coordinated Penalty
 description: >-
-  [ICLR 2026][Reinforcement Learning][Large Reasoning Models] This paper proposes ARLCP (Adaptive Reflection and Length Coordinated Penalty), an adaptive reinforcement learning method that dynamically adjusts the weights of reflection and length penalties according to problem complexity, substantially reducing token consumption while maintaining or improving accuracy.
+  [ICLR 2026][Reinforcement Learning][Large Reasoning Models] This paper proposes ARLCP (Adaptive Reflection and Length Coordinated Penalty), an adaptive reinforcement learning method that dynamically adjusts the weights o…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Large Reasoning Models
-  - Over-reflection
-  - Adaptive Penalty
-  - Efficient Reasoning
-  - RLVR
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Large Reasoning Models"
+  - "Over-reflection"
+  - "Adaptive Penalty"
+  - "Efficient Reasoning"
+  - "RLVR"
 date: 2026-05-08
 content_hash: 5581d27d7b07a397
 ---

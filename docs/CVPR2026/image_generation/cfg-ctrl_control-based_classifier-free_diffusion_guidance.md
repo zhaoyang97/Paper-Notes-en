@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CFG-Ctrl: Control-Based Classifier-Free Diffusion Guidance
 description: >-
-  [CVPR 2026][Image Generation][Classifier-Free Guidance] This paper reinterprets Classifier-Free Guidance (CFG) as a feedback control process within flow matching diffusion models, proposes a unified framework termed CFG-Ctrl, and introduces SMC-CFG — a nonlinear feedback guidance mechanism grounded in sliding mode control (SMC) — which substantially improves semantic consistency and generation robustness at large guidance scales.
+  [CVPR 2026][Image Generation][Classifier-Free Guidance] This paper reinterprets Classifier-Free Guidance (CFG) as a feedback control process within flow matching diffusion models…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Classifier-Free Guidance
-  - Control Theory
-  - Sliding Mode Control
-  - Flow Matching
-  - Text-to-Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Classifier-Free Guidance"
+  - "Control Theory"
+  - "Sliding Mode Control"
+  - "Flow Matching"
+  - "Text-to-Image Generation"
 date: 2026-05-08
 content_hash: 91565268762ab60a
 ---

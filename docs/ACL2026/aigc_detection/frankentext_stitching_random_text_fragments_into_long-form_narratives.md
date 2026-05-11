@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Frankentext: Stitching Random Text Fragments into Long-Form Narratives
 description: >-
-  [ACL 2026][AIGC Detection] This paper proposes Frankentext, a paradigm where LLMs stitch random human text fragments into coherent long-form narratives under extreme constraints (90% content verbatim-copied from human writing), revealing severe failures of existing AI text detectors in mixed-authorship scenarios (72% of Frankentext is misclassified as human-written).
+  [ACL 2026][AIGC Detection][mixed authorship attribution] This paper proposes Frankentext, a paradigm where LLMs stitch random human text fragments into coherent long-form narratives under extreme constraints (90% content…
 tags:
-  - ACL 2026
-  - AIGC Detection
-  - mixed authorship attribution
-  - controllable text generation
-  - AI text detector
-  - human-AI collaborative writing
+  - "ACL 2026"
+  - "AIGC Detection"
+  - "mixed authorship attribution"
+  - "controllable text generation"
+  - "AI text detector"
+  - "human-AI collaborative writing"
 date: 2025-05-08
 content_hash: 85c8c2e270f2c192
 ---

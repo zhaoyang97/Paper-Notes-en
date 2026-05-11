@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SparseDiT: Token Sparsification for Efficient Diffusion Transformer
 description: >-
-  [NeurIPS 2025][Image Generation][Diffusion Transformer] This paper proposes SparseDiT, which achieves 55% FLOPs reduction and 175% inference throughput improvement on DiT-XL 512×512 with only 0.09 FID degradation. The method employs a three-stage spatial architecture (bottom Poolingformer + middle Sparse-Dense Token Module + top full-density processing) combined with a dynamic pruning-rate schedule along the temporal dimension, and successfully extends to video generation and text-to-image generation tasks.
+  [NeurIPS 2025][Image Generation][Diffusion Transformer] This paper proposes SparseDiT, which achieves 55% FLOPs reduction and 175% inference throughput improvement on DiT-XL 512×512 with only 0.09 FID degradation. The me…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Diffusion Transformer
-  - token sparsification
-  - inference acceleration
-  - timestep-adaptive
-  - architecture design
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Diffusion Transformer"
+  - "token sparsification"
+  - "inference acceleration"
+  - "timestep-adaptive"
+  - "architecture design"
 date: 2026-05-08
 content_hash: e998c92bdb98de6e
 ---

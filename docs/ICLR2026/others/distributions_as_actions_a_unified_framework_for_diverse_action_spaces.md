@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] DA-AC: Distributions as Actions — A Unified RL Framework for Diverse Action Spaces
 description: >-
-  [ICLR 2026][unified action space] DA-AC proposes treating the parameters of an action distribution (e.g., softmax probabilities or Gaussian mean/variance) as the agent's output "actions," relocating the action sampling process to the environment side. This enables a unified deterministic policy gradient framework for discrete, continuous, and hybrid action spaces. The approach is theoretically proven to achieve strictly lower variance than LR and RP estimators, and attains competitive or state-of-the-art performance across 40+ environments.
+  [ICLR 2026][unified action space] DA-AC proposes treating the parameters of an action distribution (e.g., softmax probabilities or Gaussian mean/variance) as the agent's output "actions…
 tags:
-  - ICLR 2026
-  - unified action space
-  - distribution parameterization
-  - deterministic policy gradient
-  - discrete-continuous hybrid control
-  - variance reduction
+  - "ICLR 2026"
+  - "unified action space"
+  - "distribution parameterization"
+  - "deterministic policy gradient"
+  - "discrete-continuous hybrid control"
+  - "variance reduction"
 date: 2026-05-08
 content_hash: c50efc598650c28e
 ---

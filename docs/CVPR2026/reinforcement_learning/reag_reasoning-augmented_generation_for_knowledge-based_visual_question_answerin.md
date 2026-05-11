@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] ReAG: Reasoning-Augmented Generation for Knowledge-based Visual Question Answering
 description: >-
-  [CVPR 2026][Reinforcement Learning][KB-VQA] This paper proposes ReAG, a reasoning-augmented multimodal RAG framework that combines coarse- and fine-grained retrieval with a Critic filtering model to reduce noise, and trains a generator via GRPO reinforcement learning to perform explicit reasoning, achieving new state-of-the-art performance on knowledge-intensive VQA.
+  [CVPR 2026][Reinforcement Learning][KB-VQA] This paper proposes ReAG, a reasoning-augmented multimodal RAG framework that combines coarse- and fine-grained retrieval with a Critic filtering model to reduce noise…
 tags:
-  - CVPR 2026
-  - Reinforcement Learning
-  - KB-VQA
-  - RAG
-  - Reasoning Augmentation
-  - Multimodal Retrieval
+  - "CVPR 2026"
+  - "Reinforcement Learning"
+  - "KB-VQA"
+  - "RAG"
+  - "Reasoning Augmentation"
+  - "Multimodal Retrieval"
 date: 2026-05-08
 content_hash: 3fcff8c723193eed
 ---

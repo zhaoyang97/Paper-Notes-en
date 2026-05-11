@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Resolving the Identity Crisis in Text-to-Image Generation
 description: >-
-  [CVPR 2026][Image Generation][Identity diversity] This paper identifies the "identity crisis" in text-to-image models for multi-person scene generation — manifesting as duplicated faces and identity merging — and proposes the DisCo framework. By combining a compositional reward function with GRPO-based reinforcement learning fine-tuning of a flow-matching model, DisCo achieves 98.6% unique face accuracy, surpassing closed-source models including GPT-Image-1.
+  [CVPR 2026][Image Generation][Identity diversity] This paper identifies the "identity crisis" in text-to-image models for multi-person scene generation — manifesting as duplicated faces and identity merging — and propose…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Identity diversity
-  - multi-person image generation
-  - reinforcement learning
-  - GRPO
-  - text-to-image
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Identity diversity"
+  - "multi-person image generation"
+  - "reinforcement learning"
+  - "GRPO"
+  - "text-to-image"
 date: 2026-05-08
 content_hash: 4b14b1dff2a904cc
 ---

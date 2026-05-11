@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LLaVA-PruMerge: Adaptive Token Reduction for Efficient Large Multimodal Models
 description: >-
-  [ICCV 2025][Multimodal VLM][visual token compression] By exploiting the sparsity of attention scores between the CLS token and spatial tokens in the visual encoder, this work adaptively prunes and merges visual tokens, maintaining comparable LMM performance while retaining only 5.5% of visual tokens.
+  [ICCV 2025][Multimodal VLM][visual token compression] By exploiting the sparsity of attention scores between the CLS token and spatial tokens in the visual encoder, this work adaptively prunes and merges visual tokens…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - visual token compression
-  - large multimodal models
-  - token pruning and merging
-  - attention sparsity
-  - efficient inference
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "visual token compression"
+  - "large multimodal models"
+  - "token pruning and merging"
+  - "attention sparsity"
+  - "efficient inference"
 date: 2026-05-08
 content_hash: 6d887f649a6fb9cc
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Orientation-anchored Hyper-Gaussian for 4D Reconstruction from Casual Videos
 description: >-
-  [NeurIPS 2025][3D Vision][4D Reconstruction] This paper proposes OriGS (Orientation-anchored Gaussian Splatting), which achieves high-quality 4D dynamic scene reconstruction from casually captured monocular videos via a global orientation field and an orientation-aware hyper-Gaussian representation.
+  [NeurIPS 2025][3D Vision][4D Reconstruction] This paper proposes OriGS (Orientation-anchored Gaussian Splatting), which achieves high-quality 4D dynamic scene reconstruction from casually captured monocular videos via a…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - 4D Reconstruction
-  - 3D Gaussian Splatting
-  - Dynamic Scenes
-  - Orientation Field
-  - Hyper-Gaussian
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "4D Reconstruction"
+  - "3D Gaussian Splatting"
+  - "Dynamic Scenes"
+  - "Orientation Field"
+  - "Hyper-Gaussian"
 date: 2026-05-08
 content_hash: dd04cad2d2cadc0f
 ---

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] SANA-Sprint: One-Step Diffusion with Continuous-Time Consistency Distillation
 description: >-
-  [Image Generation] SANA-Sprint proposes a hybrid distillation framework combining continuous-time consistency models (sCM) and latent adversarial diffusion distillation (LADD). It converts pretrained Flow Matching models to TrigFlow in a lossless manner and jointly trains with sCM+LADD, achieving unified adaptive high-quality text-to-image generation in 1–4 steps, with a single-step latency of only 0.1 seconds on H100.
+  [Image Generation] SANA-Sprint proposes a hybrid distillation framework combining continuous-time consistency models (sCM) and latent adversarial diffusion distillation (LADD). It converts pretrained Flow Matching models…
 tags:
-  - Image Generation
+  - "Image Generation"
 date: 2026-05-08
 content_hash: 99dd1ffbd6017781
 ---

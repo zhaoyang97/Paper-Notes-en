@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Stabilizing Self-Consuming Diffusion Models with Latent Space Filtering
 description: >-
-  [AAAI2026][Image Generation][self-consuming training] This paper proposes Latent Space Filtering (LSF), a method that analyzes the degradation of low-dimensional structure in the latent representations of self-consuming diffusion models and uses confidence scores from a probing classifier to filter low-quality synthetic data. Under a fixed training budget, LSF effectively mitigates model collapse without requiring additional real data or an enlarged training set.
+  [AAAI2026][Image Generation][self-consuming training] This paper proposes Latent Space Filtering (LSF), a method that analyzes the degradation of low-dimensional structure in the latent representations of self-consuming…
 tags:
-  - AAAI2026
-  - Image Generation
-  - self-consuming training
-  - model collapse
-  - diffusion models
-  - latent space filtering
-  - data quality
+  - "AAAI2026"
+  - "Image Generation"
+  - "self-consuming training"
+  - "model collapse"
+  - "diffusion models"
+  - "latent space filtering"
+  - "data quality"
 date: 2026-05-08
 content_hash: 1f46d9c6310132c7
 ---

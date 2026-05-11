@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Do Retrieval Augmented Language Models Know When They Don't Know?
 description: >-
-  [AAAI 2026][RAG] This paper systematically analyzes the refusal calibration problem in RAG models, finding that RALMs exhibit an over-refusal rate exceeding 55% when all retrieved documents are irrelevant (even when the model's internal knowledge suffices to answer), and proposes a mechanism combining uncertainty estimation with refusal-aware fine-tuning to balance refusal behavior and answer quality.
+  [AAAI 2026][Information Retrieval & RAG][RAG] This paper systematically analyzes the refusal calibration problem in RAG models, finding that RALMs exhibit an over-refusal rate exceeding 55% when all retrieved documents a…
 tags:
-  - AAAI 2026
-  - RAG
-  - Calibration
-  - Over-Refusal
-  - Uncertainty Estimation
-  - Retrieval Augmentation
+  - "AAAI 2026"
+  - "Information Retrieval & RAG"
+  - "RAG"
+  - "Calibration"
+  - "Over-Refusal"
+  - "Uncertainty Estimation"
+  - "Retrieval Augmentation"
 date: 2026-05-08
 content_hash: 6475a647c8d9e54a
 ---

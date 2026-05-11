@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DGNet: Discrete Green Networks for Data-Efficient Learning of Spatiotemporal PDEs
 description: >-
-  [ICLR 2026][Scientific Computing][Neural PDE solvers] Grounded in Green's function theory, DGNet embeds the superposition principle into a physics-neural hybrid architecture, achieving state-of-the-art accuracy with only tens of training trajectories and demonstrating robust zero-shot generalization to unseen source terms.
+  [ICLR 2026][Scientific Computing][Neural PDE solvers] Grounded in Green's function theory, DGNet embeds the superposition principle into a physics-neural hybrid architecture…
 tags:
-  - ICLR 2026
-  - Scientific Computing
-  - Neural PDE solvers
-  - Green's function
-  - graph neural networks
-  - data-efficient learning
-  - spatiotemporal PDEs
+  - "ICLR 2026"
+  - "Scientific Computing"
+  - "Neural PDE solvers"
+  - "Green's function"
+  - "graph neural networks"
+  - "data-efficient learning"
+  - "spatiotemporal PDEs"
 date: 2026-05-08
 content_hash: c4e1ffd4c6859db8
 ---

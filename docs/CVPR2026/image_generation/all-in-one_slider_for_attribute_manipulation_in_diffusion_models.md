@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] All-in-One Slider for Attribute Manipulation in Diffusion Models
 description: >-
-  [CVPR 2026][Image Generation][Attribute Manipulation] The proposed All-in-One Slider framework trains a lightweight Attribute Sparse Autoencoder on the intermediate layer embeddings of a text encoder. It decomposes attributes into disentangled directions within a high-dimensional sparse activation space, enabling continuous, fine-grained, and composable control of multiple facial attributes with a single module. It also demonstrates zero-shot continuous manipulation capabilities for unseen attributes (e.g., ethnicity, celebrities).
+  [CVPR 2026][Image Generation][Attribute Manipulation] The proposed All-in-One Slider framework trains a lightweight Attribute Sparse Autoencoder on the intermediate layer embeddings of a text encoder. It decomposes attri…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Attribute Manipulation
-  - Sparse Autoencoder
-  - Text Embedding Space
-  - Disentangled Representation
-  - Zero-shot Generalization
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Attribute Manipulation"
+  - "Sparse Autoencoder"
+  - "Text Embedding Space"
+  - "Disentangled Representation"
+  - "Zero-shot Generalization"
 date: 2026-05-08
 content_hash: d7f9c7e9856cb5cf
 ---

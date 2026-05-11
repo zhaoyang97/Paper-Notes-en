@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] All Languages Matter: Understanding and Mitigating Language Bias in Multilingual RAG
 description: >-
-  [ACL 2026][Multilingual RAG] This paper systematically reveals severe language bias (favoring English and the query language) in the reranking stage of multilingual RAG systems, and proposes the LAURA framework, which aligns the reranker via supervision signals driven by downstream generation quality, effectively mitigating bias and improving generation performance.
+  [ACL 2026][Information Retrieval & RAG][Multilingual RAG] This paper systematically reveals severe language bias (favoring English and the query language) in the reranking stage of multilingual RAG systems…
 tags:
-  - ACL 2026
-  - Multilingual RAG
-  - reranking bias
-  - language fairness
-  - evidence selection
-  - cross-lingual retrieval
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Multilingual RAG"
+  - "reranking bias"
+  - "language fairness"
+  - "evidence selection"
+  - "cross-lingual retrieval"
 date: 2026-05-08
 content_hash: cf2a8615d951e221
 ---

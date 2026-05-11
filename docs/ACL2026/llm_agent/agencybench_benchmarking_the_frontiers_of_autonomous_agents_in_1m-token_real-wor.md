@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AgencyBench: Benchmarking the Frontiers of Autonomous Agents in 1M-Token Real-World Contexts
 description: >-
-  [ACL 2026][LLM Agent][autonomous agents] This paper proposes AgencyBench — a comprehensive benchmark comprising 138 real-world tasks that evaluates six core agent capabilities. Each scenario requires an average of 90 tool calls and 1M tokens. Fully automated evaluation is achieved via a user simulation agent and Docker sandbox.
+  [ACL 2026][LLM Agent][autonomous agents] This paper proposes AgencyBench — a comprehensive benchmark comprising 138 real-world tasks that evaluates six core agent capabilities. Each scenario requires an average of 90 too…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - autonomous agents
-  - long-horizon tasks
-  - real-world benchmark
-  - user simulation
-  - Docker sandbox evaluation
+  - "ACL 2026"
+  - "LLM Agent"
+  - "autonomous agents"
+  - "long-horizon tasks"
+  - "real-world benchmark"
+  - "user simulation"
+  - "Docker sandbox evaluation"
 date: 2026-05-08
 content_hash: 4bfa638925a681e5
 ---

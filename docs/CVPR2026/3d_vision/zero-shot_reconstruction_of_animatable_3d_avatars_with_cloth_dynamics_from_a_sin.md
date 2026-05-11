@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Zero-Shot Reconstruction of Animatable 3D Avatars with Cloth Dynamics from a Single Image
 description: >-
-  [CVPR2026][3D Vision][3D human reconstruction] DynaAvatar presents the first zero-shot framework for reconstructing animatable 3D human avatars with motion-dependent cloth dynamics from a single image. Through a static-to-dynamic knowledge transfer strategy and a optical flow-guided DynaFlow loss, the method achieves realistic garment dynamics under limited dynamic training data, surpassing all existing approaches across the board.
+  [CVPR2026][3D Vision][3D human reconstruction] DynaAvatar presents the first zero-shot framework for reconstructing animatable 3D human avatars with motion-dependent cloth dynamics from a single image. Through a static-t…
 tags:
-  - CVPR2026
-  - 3D Vision
-  - 3D human reconstruction
-  - animatable avatar
-  - cloth dynamics
-  - 3D Gaussian Splatting
-  - single-image reconstruction
+  - "CVPR2026"
+  - "3D Vision"
+  - "3D human reconstruction"
+  - "animatable avatar"
+  - "cloth dynamics"
+  - "3D Gaussian Splatting"
+  - "single-image reconstruction"
 date: 2026-05-08
 content_hash: 1f4e42698214f8d2
 ---

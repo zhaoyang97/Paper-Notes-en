@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SemTalk: Holistic Co-speech Motion Generation with Frame-level Semantic Emphasis
 description: >-
-   > SemTalk decomposes co-speech motion into rhythm-aligned base motions and semantics-aware sparse motions, and adaptively fuses them via learned semantic scores to achieve high-quality holistic co-speech motion generation with frame-level semantic emphasis.
+  > SemTalk decomposes co-speech motion into rhythm-aligned base motions and semantics-aware sparse motions, and adaptively fuses them via learned semantic scores to achieve high-quality holistic co-speech motion generati…
 tags:
 
 date: 2026-05-08

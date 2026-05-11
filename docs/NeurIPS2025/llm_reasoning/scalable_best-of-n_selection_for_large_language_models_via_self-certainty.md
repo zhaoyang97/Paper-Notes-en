@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Scalable Best-of-N Selection for Large Language Models via Self-Certainty
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Best-of-N] This paper proposes Self-Certainty, a metric that quantifies model confidence via the token probability distribution of LLM outputs, enabling scalable Best-of-N selection without any auxiliary reward model. The approach achieves performance comparable to or exceeding reward-model-based methods.
+  [NeurIPS 2025][LLM Reasoning][Best-of-N] This paper proposes Self-Certainty, a metric that quantifies model confidence via the token probability distribution of LLM outputs…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - Best-of-N
-  - self-certainty
-  - distributional quantification
-  - reward-model-free
-  - inference scaling
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "Best-of-N"
+  - "self-certainty"
+  - "distributional quantification"
+  - "reward-model-free"
+  - "inference scaling"
 date: 2026-05-08
 content_hash: 121f4aa01f045611
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond Masked and Unmasked: Discrete Diffusion Models via Partial Masking
 description: >-
-  [NeurIPS 2025][Image Generation][discrete diffusion models] Prime (Partial masking scheme) represents each token as a base-$b$ sub-token sequence and independently masks at the sub-token level, introducing intermediate states into masked diffusion models to enable fine-grained denoising. On OpenWebText, it achieves a perplexity of 15.36, becoming the first MDM to surpass ARM (17.54) without relying on an autoregressive formulation.
+  [NeurIPS 2025][Image Generation][discrete diffusion models] Prime (Partial masking scheme) represents each token as a base-$b$ sub-token sequence and independently masks at the sub-token level…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - discrete diffusion models
-  - masked diffusion
-  - partial masking
-  - sub-tokens
-  - text generation
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "discrete diffusion models"
+  - "masked diffusion"
+  - "partial masking"
+  - "sub-tokens"
+  - "text generation"
 date: 2026-05-08
 content_hash: e5d62ef9881386b5
 ---

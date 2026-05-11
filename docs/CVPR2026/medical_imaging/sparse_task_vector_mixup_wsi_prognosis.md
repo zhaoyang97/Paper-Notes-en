@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] STEPH: Sparse Task Vector Mixup with Hypernetworks for Efficient Knowledge Transfer in WSI Prognosis
 description: >-
-  [CVPR 2026][Medical Imaging][Whole-Slide Image] STEPH proposes a model merging framework based on Task Vector Mixup (TVM) and hypernetwork-driven sparse aggregation, which efficiently transfers knowledge from multiple cancer-type-specific prognosis models into a target cancer model. It achieves a mean C-Index of 0.6949 across 13 TCGA datasets (+5.14% vs. cancer-type-specific learning, +2.01% vs. ROUPKT), while requiring only a single-model forward pass at inference—far more efficient than multi-model representation transfer approaches.
+  [CVPR 2026][Medical Imaging][Whole-Slide Image] STEPH proposes a model merging framework based on Task Vector Mixup (TVM) and hypernetwork-driven sparse aggregation…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Whole-Slide Image
-  - Survival Analysis
-  - Cross-Cancer Knowledge Transfer
-  - Task Vector
-  - Hypernetwork
-  - Model Merging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Whole-Slide Image"
+  - "Survival Analysis"
+  - "Cross-Cancer Knowledge Transfer"
+  - "Task Vector"
+  - "Hypernetwork"
+  - "Model Merging"
 date: 2026-05-08
 content_hash: f26f1577b2dc91e2
 ---

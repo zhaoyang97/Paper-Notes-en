@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SmartSplat: Feature-Smart Gaussians for Scalable Compression of Ultra-High-Resolution Images
 description: >-
-  [AAAI2026][3D Vision][2D Gaussian Splatting] This paper proposes SmartSplat, a feature-aware 2D Gaussian Splatting framework for image compression. By introducing three key strategies—gradient-color-guided variational sampling, repulsion-based uniform sampling, and scale-adaptive color initialization—SmartSplat achieves, for the first time, high-quality reconstruction of 8K/16K ultra-high-resolution (UHR) images at extreme compression ratios (up to 5000×).
+  [AAAI2026][3D Vision][2D Gaussian Splatting] This paper proposes SmartSplat, a feature-aware 2D Gaussian Splatting framework for image compression. By introducing three key strategies—gradient-color-guided variational sa…
 tags:
-  - AAAI2026
-  - 3D Vision
-  - 2D Gaussian Splatting
-  - image compression
-  - ultra-high-resolution
-  - feature-guided sampling
-  - high compression ratio
+  - "AAAI2026"
+  - "3D Vision"
+  - "2D Gaussian Splatting"
+  - "image compression"
+  - "ultra-high-resolution"
+  - "feature-guided sampling"
+  - "high compression ratio"
 date: 2026-05-08
 content_hash: a80cefcb62efa47d
 ---

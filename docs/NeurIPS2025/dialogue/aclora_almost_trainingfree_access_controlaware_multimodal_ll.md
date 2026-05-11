@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AC-LoRA: (Almost) Training-Free Access Control-Aware Multi-Modal LLMs
 description: >-
-  [NeurIPS 2025][Dialogue Systems][Access Control] AC-LoRA is an end-to-end system that trains independent LoRA adapters for datasets with different permission levels. At inference time, it dynamically retrieves and training-freely merges multiple LoRA outputs based on cosine similarity and user permissions, achieving strong information isolation while matching or surpassing SOTA LoRA mixture methods in response quality.
+  [NeurIPS 2025][Dialogue Systems][Access Control] AC-LoRA is an end-to-end system that trains independent LoRA adapters for datasets with different permission levels. At inference time…
 tags:
-  - NeurIPS 2025
-  - Dialogue Systems
-  - Access Control
-  - LoRA Adapter
-  - Information Isolation
-  - Enterprise LLM
-  - Multi-Modal
+  - "NeurIPS 2025"
+  - "Dialogue Systems"
+  - "Access Control"
+  - "LoRA Adapter"
+  - "Information Isolation"
+  - "Enterprise LLM"
+  - "Multi-Modal"
 date: 2026-05-08
 content_hash: 6dd9134abea2e62b
 ---

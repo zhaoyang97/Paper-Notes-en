@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Model Context Protocol for Vision Systems: Audit, Security, and Protocol Extensions
 description: >-
-  [NeurIPS 2025][LLM Evaluation][Model Context Protocol] The first protocol-level audit of MCP deployment in vision systems, analyzing 91 public MCP servers and finding that 78% exhibit schema inconsistencies and 89% lack runtime validation; the paper further proposes protocol extensions including semantic schemas, visual memory, and runtime validators.
+  [NeurIPS 2025][LLM Evaluation][Model Context Protocol] The first protocol-level audit of MCP deployment in vision systems, analyzing 91 public MCP servers and finding that 78% exhibit schema inconsistencies and 89% lack…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - Model Context Protocol
-  - vision system orchestration
-  - protocol security
-  - schema validation
-  - multimodal agents
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "Model Context Protocol"
+  - "vision system orchestration"
+  - "protocol security"
+  - "schema validation"
+  - "multimodal agents"
 date: 2026-05-08
 content_hash: aa136a5b41b36ee2
 ---

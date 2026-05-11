@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Joint Asymmetric Loss for Learning with Noisy Labels
 description: >-
-  [ICCV 2025][learning with noisy labels] This paper extends asymmetric loss functions to the more challenging passive loss setting, proposes Asymmetric Mean Squared Error (AMSE), rigorously establishes the necessary and sufficient conditions for AMSE to satisfy the asymmetric condition, and embeds AMSE into the APL framework to construct the Joint Asymmetric Loss (JAL), achieving comprehensive improvements over existing robust loss methods on CIFAR-10/100 and other datasets.
+  [ICCV 2025][learning with noisy labels] This paper extends asymmetric loss functions to the more challenging passive loss setting, proposes Asymmetric Mean Squared Error (AMSE)…
 tags:
-  - ICCV 2025
-  - learning with noisy labels
-  - asymmetric loss functions
-  - robust loss
-  - APL framework
-  - noise tolerance
+  - "ICCV 2025"
+  - "learning with noisy labels"
+  - "asymmetric loss functions"
+  - "robust loss"
+  - "APL framework"
+  - "noise tolerance"
 date: 2026-05-08
 content_hash: ba78f1d37fcd195f
 ---

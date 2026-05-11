@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SynFER: Towards Boosting Facial Expression Recognition with Synthetic Data
 description: >-
-  [ICCV 2025][Human Understanding][Facial expression recognition] This paper proposes SynFER, a diffusion-model-based facial expression synthesis framework that achieves fine-grained expression generation via dual control signals — text descriptions and Facial Action Units (FAUs) — and introduces a FERAnno label calibrator to ensure annotation reliability. The effectiveness of synthetic data for FER is validated across four learning paradigms: self-supervised, supervised, zero-shot, and few-shot learning.
+  [ICCV 2025][Human Understanding][Facial expression recognition] This paper proposes SynFER, a diffusion-model-based facial expression synthesis framework that achieves fine-grained expression generation via dual control…
 tags:
-  - ICCV 2025
-  - Human Understanding
-  - Facial expression recognition
-  - synthetic data
-  - diffusion models
-  - facial action units
-  - label calibration
+  - "ICCV 2025"
+  - "Human Understanding"
+  - "Facial expression recognition"
+  - "synthetic data"
+  - "diffusion models"
+  - "facial action units"
+  - "label calibration"
 date: 2026-05-08
 content_hash: a9bede8a57029e5f
 ---

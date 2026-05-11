@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Reasoning Gym: Reasoning Environments for Reinforcement Learning with Verifiable Rewards
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][RLVR] This work releases Reasoning Gym, a library of 100+ procedurally generated reasoning tasks spanning algebra, arithmetic, algorithms, logic, geometry, graph theory, games, and more. Each task supports infinite data generation and parameterized difficulty control. Experiments demonstrate that RLVR training achieves significant skill transfer both within and across domains, and improves performance on external benchmarks such as MATH and GSM8K.
+  [NeurIPS 2025][Reinforcement Learning][RLVR] This work releases Reasoning Gym, a library of 100+ procedurally generated reasoning tasks spanning algebra, arithmetic, algorithms, logic, geometry, graph theory, games…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - RLVR
-  - verifiable rewards
-  - procedural generation
-  - curriculum learning
-  - reasoning transfer
-  - difficulty cliff
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "verifiable rewards"
+  - "procedural generation"
+  - "curriculum learning"
+  - "reasoning transfer"
+  - "difficulty cliff"
 date: 2026-05-08
 content_hash: 0114cd689a76e3aa
 ---

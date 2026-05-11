@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Detection and Simulation of Urban Heat Islands Using a Fine-Tuned Geospatial Foundation Model
 description: >-
-  [NeurIPS 2025][Image Generation][Urban Heat Island] This paper proposes a unified three-stage workflow based on a fine-tuned geospatial foundation model (Granite-GFM): first establishing an empirical baseline via green space cooling effects to verify physical plausibility; then extrapolating urban temperatures under future climate scenarios; and finally simulating the cooling impact of greening interventions via inpainting. This elevates the foundation model from an evaluation tool to an interactive simulation platform for urban planning.
+  [NeurIPS 2025][Image Generation][Urban Heat Island] This paper proposes a unified three-stage workflow based on a fine-tuned geospatial foundation model (Granite-GFM): first establishing an empirical baseline via green s…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Urban Heat Island
-  - Geospatial Foundation Model
-  - LST Prediction
-  - Climate Extrapolation
-  - Inpainting Simulation
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Urban Heat Island"
+  - "Geospatial Foundation Model"
+  - "LST Prediction"
+  - "Climate Extrapolation"
+  - "Inpainting Simulation"
 date: 2026-05-08
 content_hash: 2fd5777c8346880b
 ---

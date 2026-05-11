@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GS-Occ3D: Scaling Vision-only Occupancy Reconstruction with Gaussian Splatting
 description: >-
-  [ICCV 2025][Autonomous Driving][occupancy reconstruction] This paper proposes GS-Occ3D, a scalable vision-only occupancy reconstruction framework that achieves full-dataset auto-labeling on Waymo through Octree-based Gaussian Surfel representation and a three-layer decomposed modeling of ground, static background, and dynamic objects. The resulting labels enable downstream occupancy prediction models to achieve zero-shot generalization comparable to or better than LiDAR-based annotations.
+  [ICCV 2025][Autonomous Driving][occupancy reconstruction] This paper proposes GS-Occ3D, a scalable vision-only occupancy reconstruction framework that achieves full-dataset auto-labeling on Waymo through Octree-based Gau…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - occupancy reconstruction
-  - Gaussian splatting
-  - vision-only
-  - auto-labeling
-  - 3D reconstruction
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "occupancy reconstruction"
+  - "Gaussian splatting"
+  - "vision-only"
+  - "auto-labeling"
+  - "3D reconstruction"
 date: 2026-05-08
 content_hash: 0434810ef6a9abd2
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] U-Mind: A Unified Framework for Real-Time Multimodal Interaction with Audiovisual Generation
 description: >-
-  [CVPR 2026][Video Generation][multimodal interaction] This paper proposes U-Mind, the first unified real-time full-stack multimodal interaction system supporting high-level reasoning dialogue and instruction following. Within a single interaction loop, the system jointly generates text, speech, and motion, and renders them into photorealistic video. Rehearsal-driven learning and a text-first decoding strategy are introduced to balance reasoning preservation with cross-modal alignment.
+  [CVPR 2026][Video Generation][multimodal interaction] This paper proposes U-Mind, the first unified real-time full-stack multimodal interaction system supporting high-level reasoning dialogue and instruction following. W…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - multimodal interaction
-  - real-time generation
-  - digital human
-  - speech-motion synchronization
-  - chain-of-thought reasoning
+  - "CVPR 2026"
+  - "Video Generation"
+  - "multimodal interaction"
+  - "real-time generation"
+  - "digital human"
+  - "speech-motion synchronization"
+  - "chain-of-thought reasoning"
 date: 2026-05-08
 content_hash: 75ad9d14abc20309
 ---

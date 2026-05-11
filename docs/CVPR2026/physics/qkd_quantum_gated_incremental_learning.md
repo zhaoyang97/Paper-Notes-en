@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] QKD: Quantum-Gated Task-interaction Knowledge Distillation for Class-Incremental Learning
 description: >-
-  [CVPR 2026][Class-Incremental Learning] QKD introduces quantum gating into class-incremental learning (CIL), modeling sample-task correlations in high-dimensional Hilbert space via parameterized quantum circuits to guide cross-task knowledge distillation during training and adaptive adapter fusion during inference, achieving state-of-the-art performance on 5 benchmarks.
+  [CVPR 2026][Physics][Class-Incremental Learning] QKD introduces quantum gating into class-incremental learning (CIL), modeling sample-task correlations in high-dimensional Hilbert space via parameterized quantum circuits…
 tags:
-  - CVPR 2026
-  - Class-Incremental Learning
-  - Quantum Computing
-  - Knowledge Distillation
-  - Pre-trained Models
-  - Adapters
+  - "CVPR 2026"
+  - "Physics"
+  - "Class-Incremental Learning"
+  - "Quantum Computing"
+  - "Knowledge Distillation"
+  - "Pre-trained Models"
+  - "Adapters"
 date: 2026-05-08
 content_hash: c14a5c4713a8b1f6
 ---

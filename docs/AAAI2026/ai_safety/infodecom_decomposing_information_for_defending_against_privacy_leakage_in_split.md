@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] InfoDecom: Decomposing Information for Defending Against Privacy Leakage in Split Inference
 description: >-
-  [AAAI 2026][AI Safety][Split inference] InfoDecom is proposed to reduce redundant information in smashed data via two-level information decomposition (frequency-domain visual information removal + mutual information suppression), followed by closed-form Gaussian noise injection for theoretical privacy guarantees, achieving a significantly superior utility-privacy trade-off over existing methods under shallow client models.
+  [AAAI 2026][AI Safety][Split inference] InfoDecom is proposed to reduce redundant information in smashed data via two-level information decomposition (frequency-domain visual information removal + mutual information supp…
 tags:
-  - AAAI 2026
-  - AI Safety
-  - Split inference
-  - data reconstruction attack
-  - privacy protection
-  - information decomposition
-  - frequency domain transformation
+  - "AAAI 2026"
+  - "AI Safety"
+  - "Split inference"
+  - "data reconstruction attack"
+  - "privacy protection"
+  - "information decomposition"
+  - "frequency domain transformation"
 date: 2026-05-08
 content_hash: a4daefd5a21ff2f7
 ---

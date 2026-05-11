@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond the Frame: Generating 360° Panoramic Videos from Perspective Videos
 description: >-
-  [ICCV 2025][Video Understanding][360° video generation] This paper introduces Argus, the first model to generate complete 360° panoramic videos from standard perspective videos. Through three geometry- and motion-aware techniques—camera movement simulation, view-based frame alignment, and blended decoding—Argus achieves spatially consistent and temporally coherent panoramic video generation within a diffusion-based framework.
+  [ICCV 2025][Video Understanding][360° video generation] This paper introduces Argus, the first model to generate complete 360° panoramic videos from standard perspective videos. Through three geometry- and motion-aware t…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - 360° video generation
-  - video outpainting
-  - diffusion model
-  - panoramic video
-  - view synthesis
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "360° video generation"
+  - "video outpainting"
+  - "diffusion model"
+  - "panoramic video"
+  - "view synthesis"
 date: 2026-05-08
 content_hash: 0b4d575293516d6b
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] On the Entropy Calibration of Language Models
 description: >-
-  [NeurIPS 2025][LLM Evaluation][entropy calibration] This paper systematically investigates the entropy calibration of language models — whether the entropy of generated text matches the log loss on human text — and finds that due to the power-law nature of data distributions ($\alpha \approx 1$), error accumulation improves extremely slowly with model scale (scaling exponent $\approx -0.05$). The paper further provides a theoretical proof that entropy can be calibrated in polynomial time without sacrificing diversity.
+  [NeurIPS 2025][LLM Evaluation][entropy calibration] This paper systematically investigates the entropy calibration of language models — whether the entropy of generated text matches the log loss on human text — and finds…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - entropy calibration
-  - error accumulation
-  - scaling laws
-  - distribution truncation
-  - diversity-quality tradeoff
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "entropy calibration"
+  - "error accumulation"
+  - "scaling laws"
+  - "distribution truncation"
+  - "diversity-quality tradeoff"
 date: 2026-05-08
 content_hash: caf746c33591f7bc
 ---

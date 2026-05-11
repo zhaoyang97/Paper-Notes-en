@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Free-Lunch Long Video Generation via Layer-Adaptive O.O.D Correction
 description: >-
-  [CVPR 2026][Video Generation][Long video generation] FreeLOC proposes a training-free, layer-adaptive framework that identifies the differential sensitivity of each layer in video DiTs to two out-of-distribution (OOD) problems—frame-level relative position OOD and context length OOD—and selectively applies multi-granularity positional re-encoding (VRPR) and tiered sparse attention (TSA) to sensitive layers, achieving state-of-the-art long video generation quality without any additional training cost.
+  [CVPR 2026][Video Generation][Long video generation] FreeLOC proposes a training-free, layer-adaptive framework that identifies the differential sensitivity of each layer in video DiTs to two out-of-distribution (OOD) pr…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Long video generation
-  - training-free
-  - positional encoding extrapolation
-  - sparse attention
-  - layer-adaptive
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Long video generation"
+  - "training-free"
+  - "positional encoding extrapolation"
+  - "sparse attention"
+  - "layer-adaptive"
 date: 2026-05-08
 content_hash: a61b406d431c5f04
 ---

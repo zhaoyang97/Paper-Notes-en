@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] From Biased Chatbots to Biased Agents: Examining Role Assignment Effects on LLM Agent Robustness
 description: >-
-  [AAAI 2026][LLM Agent] The first systematic case study demonstrating that demographically grounded persona assignment causes up to 26.2% performance degradation in LLM agent task execution across 5 operational domains, establishing that persona-induced bias extends beyond text generation into action decision-making.
+  [AAAI 2026][LLM Agent][implicit bias] The first systematic case study demonstrating that demographically grounded persona assignment causes up to 26.2% performance degradation in LLM agent task execution across 5 operati…
 tags:
-  - AAAI 2026
-  - LLM Agent
-  - implicit bias
-  - persona
-  - demographic bias
-  - robustness
+  - "AAAI 2026"
+  - "LLM Agent"
+  - "implicit bias"
+  - "persona"
+  - "demographic bias"
+  - "robustness"
 date: 2026-05-08
 content_hash: 3880087512442fd0
 ---

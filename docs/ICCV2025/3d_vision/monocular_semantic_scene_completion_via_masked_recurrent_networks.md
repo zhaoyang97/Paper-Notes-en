@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Monocular Semantic Scene Completion via Masked Recurrent Networks
 description: >-
-  [ICCV 2025][3D Vision][Semantic Scene Completion] This paper proposes MonoMRN, a two-stage monocular semantic scene completion framework that first generates coarse-grained predictions, then iteratively refines occluded regions via a Masked Sparse GRU (MS-GRU), while introducing distance attention projection to reduce depth projection errors. The method achieves state-of-the-art performance on both NYUv2 and SemanticKITTI.
+  [ICCV 2025][3D Vision][Semantic Scene Completion] This paper proposes MonoMRN, a two-stage monocular semantic scene completion framework that first generates coarse-grained predictions…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Semantic Scene Completion
-  - Monocular Vision
-  - Recurrent Neural Networks
-  - Sparse Computation
-  - 3D Scene Understanding
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Semantic Scene Completion"
+  - "Monocular Vision"
+  - "Recurrent Neural Networks"
+  - "Sparse Computation"
+  - "3D Scene Understanding"
 date: 2026-05-08
 content_hash: 85e016e3ea186f90
 ---

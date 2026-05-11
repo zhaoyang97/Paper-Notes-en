@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Reparameterized Tensor Ring Functional Decomposition for Multi-Dimensional Data Recovery
 description: >-
-  [CVPR 2026][3D Vision][Tensor Ring Decomposition] This paper proposes RepTRFD, which reparameterizes Tensor Ring factors into the form of "learnable latent tensor × fixed basis" to address the spectral bias problem inherent in INR-parameterized TR factors, achieving state-of-the-art performance across image inpainting, denoising, super-resolution, and point cloud recovery tasks.
+  [CVPR 2026][3D Vision][Tensor Ring Decomposition] This paper proposes RepTRFD, which reparameterizes Tensor Ring factors into the form of "learnable latent tensor × fixed basis" to address the spectral bias problem inher…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Tensor Ring Decomposition
-  - Implicit Neural Representation
-  - Reparameterization
-  - Image Inpainting
-  - Point Cloud Recovery
-  - Frequency Analysis
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Tensor Ring Decomposition"
+  - "Implicit Neural Representation"
+  - "Reparameterization"
+  - "Image Inpainting"
+  - "Point Cloud Recovery"
+  - "Frequency Analysis"
 date: 2026-05-08
 content_hash: b0da0af01aeab336
 ---

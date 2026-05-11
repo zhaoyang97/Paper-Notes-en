@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Copyright Infringement Detection in Text-to-Image Diffusion Models via Differential Privacy
 description: >-
-  [AAAI2026][Image Generation][copyright infringement detection] This paper formalizes copyright infringement from the perspective of Differential Privacy (DP), and proposes the D-Plus-Minus (DPM) framework. By fine-tuning diffusion models in two opposing directions—"learning" and "unlearning"—DPM measures conditional sensitivity differences to perform post-hoc detection of copyright infringement in text-to-image models.
+  [AAAI2026][Image Generation][copyright infringement detection] This paper formalizes copyright infringement from the perspective of Differential Privacy (DP)…
 tags:
-  - AAAI2026
-  - Image Generation
-  - copyright infringement detection
-  - differential privacy
-  - diffusion models
-  - machine unlearning
-  - text-to-image generation
+  - "AAAI2026"
+  - "Image Generation"
+  - "copyright infringement detection"
+  - "differential privacy"
+  - "diffusion models"
+  - "machine unlearning"
+  - "text-to-image generation"
 date: 2026-05-08
 content_hash: a176ff205a746e01
 ---

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] KDR-Agent: A Multi-Agent LLM Framework for Multi-Domain Low-Resource In-Context NER via Knowledge Retrieval
 description: >-
-  [AAAI 2026][LLM Agent][Named Entity Recognition] This paper proposes KDR-Agent, a multi-agent framework in which a central planner coordinates three specialized agents—knowledge retrieval, contextual disambiguation, and reflective error correction—combined with natural language type definitions and entity-level positive/negative contrastive demonstrations. Without any fine-tuning, KDR-Agent comprehensively outperforms zero-shot and few-shot baselines across 10 low-resource NER datasets spanning 5 domains (BC5CDR F1=82.47, WNUT-17 F1=80.78 on GPT-4o).
+  [AAAI 2026][LLM Agent][Named Entity Recognition] This paper proposes KDR-Agent, a multi-agent framework in which a central planner coordinates three specialized agents—knowledge retrieval, contextual disambiguation…
 tags:
-  - AAAI 2026
-  - LLM Agent
-  - Named Entity Recognition
-  - Multi-Agent Collaboration
-  - Knowledge Retrieval
-  - Low-Resource NER
-  - Entity Disambiguation
-  - Contrastive Demonstrations
-  - Reflective Error Correction
+  - "AAAI 2026"
+  - "LLM Agent"
+  - "Named Entity Recognition"
+  - "Multi-Agent Collaboration"
+  - "Knowledge Retrieval"
+  - "Low-Resource NER"
+  - "Entity Disambiguation"
+  - "Contrastive Demonstrations"
+  - "Reflective Error Correction"
 date: 2026-05-08
 content_hash: 2b47571ce79ae715
 ---

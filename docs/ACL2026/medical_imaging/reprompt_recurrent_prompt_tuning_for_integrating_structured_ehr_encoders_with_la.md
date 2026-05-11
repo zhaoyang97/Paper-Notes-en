@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RePrompT: Recurrent Prompt Tuning for Integrating Structured EHR Encoders with Large Language Models
 description: >-
-  [ACL 2026][Medical Imaging][Electronic Health Records] This paper proposes RePrompT, a temporally aware LLM framework that consistently outperforms both EHR and LLM baselines on readmission and mortality prediction tasks on MIMIC-III/IV through two complementary mechanisms: recurrent prompt tuning (propagating the hidden state of the previous visit as a soft prompt for the current visit) and struct-encoded prompt tuning (injecting embeddings from a population-level EHR encoder).
+  [ACL 2026][Medical Imaging][Electronic Health Records] This paper proposes RePrompT, a temporally aware LLM framework that consistently outperforms both EHR and LLM baselines on readmission and mortality prediction tasks…
 tags:
-  - ACL 2026
-  - Medical Imaging
-  - Electronic Health Records
-  - Prompt Tuning
-  - Recurrent State Propagation
-  - Structured Encoder
-  - Clinical Prediction
+  - "ACL 2026"
+  - "Medical Imaging"
+  - "Electronic Health Records"
+  - "Prompt Tuning"
+  - "Recurrent State Propagation"
+  - "Structured Encoder"
+  - "Clinical Prediction"
 date: 2026-05-08
 content_hash: 3083c53648b3548a
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CVFusion: Cross-View Fusion of 4D Radar and Camera for 3D Object Detection
 description: >-
-  [ICCV 2025][Autonomous Driving][4D millimeter-wave radar] This paper proposes CVFusion — the first two-stage 4D radar-camera fusion network for 3D object detection. Stage 1 generates high-recall proposals via a Radar-Guided Iterative (RGIter) BEV fusion module, while Stage 2 refines each proposal by aggregating heterogeneous multi-view features through Point-Guided Fusion (PGF) and Grid-Guided Fusion (GGF). CVFusion achieves mAP improvements of 9.10% and 3.68% on VoD and TJ4DRadSet, respectively.
+  [ICCV 2025][Autonomous Driving][4D millimeter-wave radar] This paper proposes CVFusion — the first two-stage 4D radar-camera fusion network for 3D object detection. Stage 1 generates high-recall proposals via a Radar-Gui…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - 4D millimeter-wave radar
-  - camera fusion
-  - 3D object detection
-  - two-stage detection
-  - BEV fusion
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "4D millimeter-wave radar"
+  - "camera fusion"
+  - "3D object detection"
+  - "two-stage detection"
+  - "BEV fusion"
 date: 2026-05-08
 content_hash: dfe479773938fefc
 ---

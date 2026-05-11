@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Hyperbolic Fine-Tuning for Large Language Models
 description: >-
-  [NeurIPS 2025][LLM Evaluation][hyperbolic geometry] This work identifies that LLM token embeddings follow power-law distributions and exhibit tree-like hyperbolic structure, and proposes HypLoRA — performing low-rank adaptation directly on the Lorentz hyperbolic manifold (bypassing the cancellation effect of tangent space mappings) — achieving significant gains over standard LoRA on arithmetic and commonsense reasoning tasks (e.g., M.AVG +7.5% on Qwen2.5-7B).
+  [NeurIPS 2025][LLM Evaluation][hyperbolic geometry] This work identifies that LLM token embeddings follow power-law distributions and exhibit tree-like hyperbolic structure…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - hyperbolic geometry
-  - LoRA
-  - parameter-efficient fine-tuning
-  - Lorentz model
-  - LLM reasoning
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "hyperbolic geometry"
+  - "LoRA"
+  - "parameter-efficient fine-tuning"
+  - "Lorentz model"
+  - "LLM reasoning"
 date: 2026-05-08
 content_hash: c9ec9d1ffa41fe50
 ---

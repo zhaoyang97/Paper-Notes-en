@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] UniMMAD: Unified Multi-Modal and Multi-Class Anomaly Detection via MoE-Driven Feature Decompression
 description: >-
-  [CVPR2026][Multimodal VLM][Anomaly Detection] This paper proposes UniMMAD, the first unified framework that handles multi-modal and multi-class anomaly detection simultaneously with a single parameter set. The core contribution is an MoE-based feature decompression mechanism that adaptively decomposes general multi-modal encoded features into domain-specific unimodal reconstructions, achieving state-of-the-art performance across 9 datasets spanning 3 domains, 12 modalities, and 66 categories.
+  [CVPR2026][Multimodal VLM][Anomaly Detection] This paper proposes UniMMAD, the first unified framework that handles multi-modal and multi-class anomaly detection simultaneously with a single parameter set. The core contr…
 tags:
-  - CVPR2026
-  - Multimodal VLM
-  - Anomaly Detection
-  - Multi-Modal Fusion
-  - Mixture-of-Experts
-  - Feature Decompression
-  - Unified Framework
-  - Multi-Class Anomaly Detection
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "Anomaly Detection"
+  - "Multi-Modal Fusion"
+  - "Mixture-of-Experts"
+  - "Feature Decompression"
+  - "Unified Framework"
+  - "Multi-Class Anomaly Detection"
 date: 2026-05-08
 content_hash: 0d533e83c9757c6b
 ---

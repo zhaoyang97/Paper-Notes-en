@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The Invisible Gorilla Effect in Out-of-distribution Detection
 description: >-
-  [CVPR 2026][Medical Imaging][OOD detection] This paper reveals a previously unreported bias in OOD detection — the "Invisible Gorilla Effect": detection performance is substantially higher when OOD artifacts are visually similar to the model's region of interest (ROI), and degrades significantly when they are dissimilar, with feature-based OOD methods being most severely affected.
+  [CVPR 2026][Medical Imaging][OOD detection] This paper reveals a previously unreported bias in OOD detection — the "Invisible Gorilla Effect": detection performance is substantially higher when OOD artifacts are visually…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - OOD detection
-  - out-of-distribution detection bias
-  - visual similarity
-  - medical imaging safety
-  - feature space analysis
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "OOD detection"
+  - "out-of-distribution detection bias"
+  - "visual similarity"
+  - "medical imaging safety"
+  - "feature space analysis"
 date: 2026-05-08
 content_hash: d0ee08dd5e5d030a
 ---

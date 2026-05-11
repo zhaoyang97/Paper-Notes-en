@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Diversity over Uniformity: Rethinking Representation in Generated Image Detection
 description: >-
-  [CVPR 2026][Image Generation][Generated image detection] This paper proposes an Anti-Feature-Collapse Learning (AFCL) framework that filters task-irrelevant features via an information bottleneck and suppresses excessive overlap among heterogeneous forgery cues, thereby preserving diversity and complementarity in discriminative representations. The method achieves significant improvements in cross-model generated image detection.
+  [CVPR 2026][Image Generation][Generated image detection] This paper proposes an Anti-Feature-Collapse Learning (AFCL) framework that filters task-irrelevant features via an information bottleneck and suppresses excessive…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Generated image detection
-  - feature collapse
-  - representation diversity
-  - information bottleneck
-  - CLIP
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Generated image detection"
+  - "feature collapse"
+  - "representation diversity"
+  - "information bottleneck"
+  - "CLIP"
 date: 2026-05-08
 content_hash: 1affe9d39cdf7c2f
 ---

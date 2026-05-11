@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Heterogeneous Uncertainty-Guided Composed Image Retrieval with Fine-Grained Probabilistic Learning
 description: >-
-  [AAAI 2026][Multimodal VLM][Composed Image Retrieval] This paper proposes the HUG paradigm, which leverages fine-grained Gaussian probabilistic embeddings and heterogeneous uncertainty estimation—distinguishing query-side multimodal coordination uncertainty from target-side content quality uncertainty—combined with dynamic weighted fusion and uncertainty-guided contrastive learning, achieving state-of-the-art performance on the Fashion-IQ and CIRR benchmarks.
+  [AAAI 2026][Multimodal VLM][Composed Image Retrieval] This paper proposes the HUG paradigm, which leverages fine-grained Gaussian probabilistic embeddings and heterogeneous uncertainty estimation—distinguishing query-sid…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Composed Image Retrieval
-  - Uncertainty Modeling
-  - Probabilistic Embedding
-  - Fine-Grained Matching
-  - Gaussian Representation
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Composed Image Retrieval"
+  - "Uncertainty Modeling"
+  - "Probabilistic Embedding"
+  - "Fine-Grained Matching"
+  - "Gaussian Representation"
 date: 2026-05-08
 content_hash: 15f605ec93805a34
 ---

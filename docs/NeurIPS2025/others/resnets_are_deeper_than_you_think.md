@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] ResNets Are Deeper Than You Think
 description: >-
-  [NeurIPS 2025][Residual networks] This paper proves that residual networks and feedforward networks occupy distinct function spaces (i.e., ResNets are not a simple reparameterization of feedforward networks), and demonstrates through post-training partial linearization experiments that variable-depth architectures (ResNet-like) consistently outperform fixed-depth architectures even after controlling for trainability differences, suggesting that residual connections provide inductive biases beyond optimization.
+  [NeurIPS 2025][Residual networks] This paper proves that residual networks and feedforward networks occupy distinct function spaces (i.e., ResNets are not a simple reparameterization of feedforward networks)…
 tags:
-  - NeurIPS 2025
-  - Residual networks
-  - function space
-  - inductive bias
-  - trainability
-  - variable-depth networks
+  - "NeurIPS 2025"
+  - "Residual networks"
+  - "function space"
+  - "inductive bias"
+  - "trainability"
+  - "variable-depth networks"
 date: 2026-05-08
 content_hash: 17a0cf6c36969906
 ---

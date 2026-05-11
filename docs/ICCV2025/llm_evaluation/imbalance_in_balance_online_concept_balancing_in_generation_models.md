@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Imbalance in Balance: Online Concept Balancing in Generation Models
 description: >-
-  [ICCV 2025][LLM Evaluation][Concept Composition] Through carefully designed causal experiments, this work reveals that data distribution—rather than model scale or data volume—is the decisive factor for concept composition ability in diffusion models. It further proposes IMBA Loss, an online concept-level balancing loss that adaptively reweights token-level losses via the discrepancy between conditional and unconditional distributions (the IMBA distance). With only a few lines of code modification, the method significantly improves multi-concept generation capability.
+  [ICCV 2025][LLM Evaluation][Concept Composition] Through carefully designed causal experiments, this work reveals that data distribution—rather than model scale or data volume—is the decisive factor for concept compositi…
 tags:
-  - ICCV 2025
-  - LLM Evaluation
-  - Concept Composition
-  - Data Imbalance
-  - IMBA Loss
-  - Diffusion Model Training
-  - Long-Tail Distribution
+  - "ICCV 2025"
+  - "LLM Evaluation"
+  - "Concept Composition"
+  - "Data Imbalance"
+  - "IMBA Loss"
+  - "Diffusion Model Training"
+  - "Long-Tail Distribution"
 date: 2026-05-08
 content_hash: 96d3cdad7029665f
 ---

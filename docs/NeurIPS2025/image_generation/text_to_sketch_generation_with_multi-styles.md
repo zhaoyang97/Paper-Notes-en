@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Text to Sketch Generation with Multi-Styles
 description: >-
-  [NeurIPS 2025][Image Generation][Sketch Generation] This paper proposes M3S (Multi-Style Sketch Synthesis), a training-free framework that achieves single- and multi-style sketch generation conditioned on text prompts and reference style sketches, via linearly smoothed K/V feature injection, joint AdaIN style tendency control, and style-content disentangled guidance.
+  [NeurIPS 2025][Image Generation][Sketch Generation] This paper proposes M3S (Multi-Style Sketch Synthesis), a training-free framework that achieves single- and multi-style sketch generation conditioned on text prompts an…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Sketch Generation
-  - Multi-Style Synthesis
-  - Diffusion Models
-  - K/V Injection
-  - AdaIN
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Sketch Generation"
+  - "Multi-Style Synthesis"
+  - "Diffusion Models"
+  - "K/V Injection"
+  - "AdaIN"
 date: 2026-05-08
 content_hash: 0b0112dbe95c39be
 ---

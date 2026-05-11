@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PanSt3R: Multi-view Consistent Panoptic Segmentation
 description: >-
-  [ICCV 2025][3D Vision][Panoptic Segmentation] PanSt3R builds upon MUSt3R to simultaneously perform 3D reconstruction and multi-view panoptic segmentation in a **single forward pass**, requiring neither camera parameters nor test-time optimization, and achieves inference speeds orders of magnitude faster than existing methods.
+  [ICCV 2025][3D Vision][Panoptic Segmentation] PanSt3R builds upon MUSt3R to simultaneously perform 3D reconstruction and multi-view panoptic segmentation in a **single forward pass**…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Panoptic Segmentation
-  - 3D Reconstruction
-  - MUSt3R
-  - Multi-view
-  - Mask Prediction
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Panoptic Segmentation"
+  - "3D Reconstruction"
+  - "MUSt3R"
+  - "Multi-view"
+  - "Mask Prediction"
 date: 2026-05-08
 content_hash: 839d9112e17e5f3b
 ---

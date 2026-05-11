@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Region-R1: Reinforcing Query-Side Region Cropping for Multi-Modal Re-Ranking
 description: >-
-  [ACL 2026][multimodal re-ranking] This paper proposes Region-R1, which formulates query-side region cropping in multimodal re-ranking as a decision-making problem. Via reinforcement learning (r-GRPO), the model learns when and how to crop question-relevant regions from the query image, achieving improvements of 20% and 8% in CondRecall@1 on E-VQA and InfoSeek, respectively.
+  [ACL 2026][Information Retrieval & RAG][multimodal re-ranking] This paper proposes Region-R1, which formulates query-side region cropping in multimodal re-ranking as a decision-making problem. Via reinforcement learning…
 tags:
-  - ACL 2026
-  - multimodal re-ranking
-  - query-side region cropping
-  - reinforcement learning
-  - visual question answering
-  - retrieval-augmented generation
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "multimodal re-ranking"
+  - "query-side region cropping"
+  - "reinforcement learning"
+  - "visual question answering"
+  - "retrieval-augmented generation"
 date: 2026-05-08
 content_hash: 84ae85fe8038662f
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Proactive Scene Decomposition and Reconstruction
 description: >-
-  [ICCV 2025][3D Vision][Dynamic SLAM] This paper proposes an online scene decomposition and reconstruction task grounded in proactive human-object interaction, where interaction behavior observed from an egocentric viewpoint defines the decomposition granularity, enabling progressive object decoupling and high-quality global reconstruction.
+  [ICCV 2025][3D Vision][Dynamic SLAM] This paper proposes an online scene decomposition and reconstruction task grounded in proactive human-object interaction…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Dynamic SLAM
-  - Scene Decomposition
-  - Human-Object Interaction
-  - Gaussian Splatting
-  - Online Reconstruction
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Dynamic SLAM"
+  - "Scene Decomposition"
+  - "Human-Object Interaction"
+  - "Gaussian Splatting"
+  - "Online Reconstruction"
 date: 2026-05-08
 content_hash: ec74a0aba00aa17a
 ---

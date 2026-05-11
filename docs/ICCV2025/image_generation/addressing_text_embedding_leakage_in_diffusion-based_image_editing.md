@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Addressing Text Embedding Leakage in Diffusion-Based Image Editing
 description: >-
-  [ICCV 2025][Image Generation][Image Editing] This work identifies the root cause of attribute leakage in text-driven diffusion-based image editing — semantic entanglement in EOS embeddings of autoregressive text encoders — and proposes the ALE framework (ORE + RGB-CAM + BB) to comprehensively eliminate attribute leakage through embedding disentanglement, attention masking, and background blending.
+  [ICCV 2025][Image Generation][Image Editing] This work identifies the root cause of attribute leakage in text-driven diffusion-based image editing — semantic entanglement in EOS embeddings of autoregressive text encoders…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Image Editing
-  - Attribute Leakage
-  - Diffusion Models
-  - Text Embeddings
-  - Cross-Attention
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Image Editing"
+  - "Attribute Leakage"
+  - "Diffusion Models"
+  - "Text Embeddings"
+  - "Cross-Attention"
 date: 2026-05-08
 content_hash: f196a04d19793690
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Solving Inequality Proofs with Large Language Models
 description: >-
-  [NeurIPS 2025][LLM/NLP][mathematical reasoning] This paper proposes IneqMath, the first large-scale olympiad-level inequality benchmark, formulates inequality proving as two automatically verifiable subtasks (bound estimation and relation prediction), develops a five-module LLM-as-Judge framework, and finds that even o1 achieves an overall accuracy below 10% under step-by-step reasoning scrutiny.
+  [NeurIPS 2025][LLM/NLP][mathematical reasoning] This paper proposes IneqMath, the first large-scale olympiad-level inequality benchmark…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - mathematical reasoning
-  - inequality proving
-  - LLM-as-Judge
-  - benchmark
-  - reasoning evaluation
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "mathematical reasoning"
+  - "inequality proving"
+  - "LLM-as-Judge"
+  - "benchmark"
+  - "reasoning evaluation"
 date: 2026-05-08
 content_hash: 655a9f6808079aff
 ---

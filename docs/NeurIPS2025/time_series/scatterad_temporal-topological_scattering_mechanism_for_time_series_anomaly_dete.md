@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] ScatterAD: Temporal-Topological Scattering Mechanism for Time Series Anomaly Detection
 description: >-
-  [NeurIPS 2025][Time Series][time series anomaly detection] This paper proposes *scattering* as a novel inductive bias for anomaly detection — anomalous samples are more dispersed than normal samples in the high-dimensional representation space. A dual-encoder architecture (temporal + topological) combined with hyperspherical scattering center constraints and contrastive fusion is used to learn joint temporal-topological representations, achieving best performance in 15/24 settings across 6 industrial IoT datasets.
+  [NeurIPS 2025][Time Series][time series anomaly detection] This paper proposes *scattering* as a novel inductive bias for anomaly detection — anomalous samples are more dispersed than normal samples in the high-dimension…
 tags:
-  - NeurIPS 2025
-  - Time Series
-  - time series anomaly detection
-  - scattering mechanism
-  - information bottleneck
-  - temporal-topological fusion
-  - contrastive learning
-  - hypersphere
+  - "NeurIPS 2025"
+  - "Time Series"
+  - "time series anomaly detection"
+  - "scattering mechanism"
+  - "information bottleneck"
+  - "temporal-topological fusion"
+  - "contrastive learning"
+  - "hypersphere"
 date: 2026-05-08
 content_hash: c1d5a829b6f4ac7b
 ---

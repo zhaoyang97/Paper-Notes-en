@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Are Greedy Task Orderings Better Than Random in Continual Linear Regression?
 description: >-
-  [NeurIPS 2025][Continual Learning] This paper systematically analyzes the convergence differences between greedy task orderings (maximizing dissimilarity between consecutive tasks) and random orderings in continual linear regression. It reveals that greedy orderings are competitive with random orderings in the full-rank setting, but single-pass greedy ordering can fail catastrophically in the general-rank setting, whereas greedy ordering with repetition achieves a convergence rate of $\mathcal{O}(1/\sqrt[3]{k})$.
+  [NeurIPS 2025][Interpretability][Continual Learning] This paper systematically analyzes the convergence differences between greedy task orderings (maximizing dissimilarity between consecutive tasks) and random orderings…
 tags:
-  - NeurIPS 2025
-  - Continual Learning
-  - Task Ordering
-  - Linear Regression
-  - Kaczmarz Method
-  - Greedy Strategy
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "Continual Learning"
+  - "Task Ordering"
+  - "Linear Regression"
+  - "Kaczmarz Method"
+  - "Greedy Strategy"
 date: 2026-05-08
 content_hash: 3e82d94364aade98
 ---

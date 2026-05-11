@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AnimeGamer: Infinite Anime Life Simulation with Next Game State Prediction
 description: >-
-  [ICCV 2025][Image Generation][infinite game generation] This paper proposes AnimeGamer, an infinite anime life simulation system built upon a multimodal large language model (MLLM). By predicting the next game state via action-aware multimodal representations — comprising dynamic animation shots and character state updates — the system achieves a continuously consistent interactive anime gaming experience.
+  [ICCV 2025][Image Generation][infinite game generation] This paper proposes AnimeGamer, an infinite anime life simulation system built upon a multimodal large language model (MLLM). By predicting the next game state via…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - infinite game generation
-  - anime life simulation
-  - multimodal large language model
-  - video diffusion model
-  - game state prediction
+  - "ICCV 2025"
+  - "Image Generation"
+  - "infinite game generation"
+  - "anime life simulation"
+  - "multimodal large language model"
+  - "video diffusion model"
+  - "game state prediction"
 date: 2026-05-08
 content_hash: 4fc3141b55cb5e98
 ---

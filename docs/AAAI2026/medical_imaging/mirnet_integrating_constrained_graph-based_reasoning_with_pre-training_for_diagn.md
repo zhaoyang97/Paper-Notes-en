@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MIRNet: Integrating Constrained Graph-Based Reasoning with Pre-training for Diagnostic Medical Imaging
 description: >-
-  [AAAI 2026][Medical Imaging][tongue diagnosis] MIRNet is a framework that integrates self-supervised masked autoencoder (MAE) pre-training with constraint-aware graph attention network (GAT) reasoning for multi-label tongue diagnosis. The paper also introduces TongueAtlas-4K, a benchmark dataset of 4,000 images with 22 labels, achieving a 77.8% improvement in Macro Recall and 33.2% in Macro-F1.
+  [AAAI 2026][Medical Imaging][tongue diagnosis] MIRNet is a framework that integrates self-supervised masked autoencoder (MAE) pre-training with constraint-aware graph attention network (GAT) reasoning for multi-label ton…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - tongue diagnosis
-  - graph attention network
-  - self-supervised pre-training
-  - clinically constrained optimization
-  - multi-label classification
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "tongue diagnosis"
+  - "graph attention network"
+  - "self-supervised pre-training"
+  - "clinically constrained optimization"
+  - "multi-label classification"
 date: 2026-05-08
 content_hash: 4d4314b11098cd8b
 ---

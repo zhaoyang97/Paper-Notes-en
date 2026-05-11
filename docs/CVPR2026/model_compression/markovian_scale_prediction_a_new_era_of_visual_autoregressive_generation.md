@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Markovian Scale Prediction: A New Era of Visual Autoregressive Generation
 description: >-
-  [CVPR 2026][Model Compression][Visual autoregressive generation] This work reformulates the visual autoregressive model (VAR) from a full-context-dependent next-scale prediction paradigm into a Markovian scale prediction process. By introducing a sliding-window history compensation mechanism for non-full-context modeling, the method achieves a 10.5% FID reduction and 83.8% peak memory reduction on ImageNet.
+  [CVPR 2026][Model Compression][Visual autoregressive generation] This work reformulates the visual autoregressive model (VAR) from a full-context-dependent next-scale prediction paradigm into a Markovian scale prediction…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - Visual autoregressive generation
-  - Markov process
-  - multi-scale prediction
-  - memory efficiency
-  - image generation
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Visual autoregressive generation"
+  - "Markov process"
+  - "multi-scale prediction"
+  - "memory efficiency"
+  - "image generation"
 date: 2026-05-08
 content_hash: c1bee5e0115ec0bc
 ---

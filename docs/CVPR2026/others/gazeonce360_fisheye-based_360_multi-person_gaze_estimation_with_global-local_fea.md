@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] GazeOnce360: Fisheye-Based 360° Multi-Person Gaze Estimation with Global-Local Feature Fusion
 description: >-
-  [CVPR 2026][gaze estimation] This paper proposes GazeOnce360, an end-to-end dual-resolution CNN model for 360° multi-person gaze direction estimation using a single upward-facing tabletop fisheye camera. The authors also construct MPSGaze360, the first large-scale synthetic dataset for this setting, achieving substantial improvements over the existing multi-stage method GAM360 in both accuracy and speed.
+  [CVPR 2026][gaze estimation] This paper proposes GazeOnce360, an end-to-end dual-resolution CNN model for 360° multi-person gaze direction estimation using a single upward-facing tabletop fisheye camera. The authors also…
 tags:
-  - CVPR 2026
-  - gaze estimation
-  - fisheye camera
-  - multi-person scene
-  - dual-resolution fusion
-  - synthetic data
+  - "CVPR 2026"
+  - "gaze estimation"
+  - "fisheye camera"
+  - "multi-person scene"
+  - "dual-resolution fusion"
+  - "synthetic data"
 date: 2026-05-08
 content_hash: 758670a80607146e
 ---

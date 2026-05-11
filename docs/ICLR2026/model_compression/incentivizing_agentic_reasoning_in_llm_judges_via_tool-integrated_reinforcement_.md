@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Incentivizing Agentic Reasoning in LLM Judges via Tool-Integrated Reinforcement Learning
 description: >-
-  [ICLR 2026][Model Compression][LLM-as-a-Judge] This paper proposes TIR-Judge, an end-to-end RL framework that trains LLM judge models to interleave reasoning and code execution during evaluation. With only 8B parameters, TIR-Judge surpasses 32B reasoning reward models across 7 public benchmarks; its distillation-free variant, TIR-Judge-Zero, achieves further self-bootstrapped improvement.
+  [ICLR 2026][Model Compression][LLM-as-a-Judge] This paper proposes TIR-Judge, an end-to-end RL framework that trains LLM judge models to interleave reasoning and code execution during evaluation. With only 8B parameters…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - LLM-as-a-Judge
-  - tool-integrated reasoning
-  - reinforcement learning
-  - code execution
-  - evaluation
+  - "ICLR 2026"
+  - "Model Compression"
+  - "LLM-as-a-Judge"
+  - "tool-integrated reasoning"
+  - "reinforcement learning"
+  - "code execution"
+  - "evaluation"
 date: 2026-05-08
 content_hash: 96c74aba2092e269
 ---

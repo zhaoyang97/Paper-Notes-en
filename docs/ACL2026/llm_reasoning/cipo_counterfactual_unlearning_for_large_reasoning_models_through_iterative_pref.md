@@ -4,9 +4,9 @@ title: >-
 description: >-
   [ACL 2026][LLM Reasoning][To be supplemented] To be supplemented after in-depth reading.
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - To be supplemented
+  - "ACL 2026"
+  - "LLM Reasoning"
+  - "To be supplemented"
 date: 2026-05-08
 content_hash: 65d00572a54e03c3
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mitra: Mixed Synthetic Priors for Enhancing Tabular Foundation Models
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][Tabular foundation models] This paper presents the first systematic study of design principles for synthetic priors, identifying diversity, distinctiveness, and real-data alignment as critical attributes. Based on these findings, the authors propose Mitra — a tabular foundation model trained on a carefully selected mixture of synthetic priors — which consistently outperforms TabPFNv2 and TabICL on both classification and regression benchmarks.
+  [NeurIPS 2025][Self-Supervised Learning][Tabular foundation models] This paper presents the first systematic study of design principles for synthetic priors, identifying diversity, distinctiveness…
 tags:
-  - NeurIPS 2025
-  - Self-Supervised Learning
-  - Tabular foundation models
-  - synthetic priors
-  - in-context learning
-  - TabPFN
-  - prior mixture
+  - "NeurIPS 2025"
+  - "Self-Supervised Learning"
+  - "Tabular foundation models"
+  - "synthetic priors"
+  - "in-context learning"
+  - "TabPFN"
+  - "prior mixture"
 date: 2026-05-08
 content_hash: e7aa171c060d0b8c
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SPRINT: Enabling Interleaved Planning and Parallelized Execution in Reasoning Models
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Reasoning Acceleration] By restructuring long chain-of-thought reasoning traces into interleaved planning and parallel execution stages, Sprint reduces sequential token counts by up to 39% on in-distribution tasks (up to 65% on OOD tasks) while maintaining accuracy, enabling dynamic parallelization of the reasoning process.
+  [NeurIPS 2025][LLM Reasoning][Reasoning Acceleration] By restructuring long chain-of-thought reasoning traces into interleaved planning and parallel execution stages…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - Reasoning Acceleration
-  - Parallel Inference
-  - Planning and Execution
-  - Chain-of-Thought
-  - Reasoning Models
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "Reasoning Acceleration"
+  - "Parallel Inference"
+  - "Planning and Execution"
+  - "Chain-of-Thought"
+  - "Reasoning Models"
 date: 2026-05-08
 content_hash: 1c605fa6dd0cdefc
 ---

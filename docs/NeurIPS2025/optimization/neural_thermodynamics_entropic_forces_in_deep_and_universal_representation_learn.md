@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Neural Thermodynamics: Entropic Forces in Deep and Universal Representation Learning
 description: >-
-  [NeurIPS 2025][Optimization][Entropic forces] This paper establishes a "neural thermodynamics" framework, proving that emergent **entropic forces** arising from stochasticity and discrete-time updates in SGD training systematically break continuous parameter symmetries while preserving discrete ones. This leads to a **gradient balance** phenomenon analogous to thermodynamic equipartition, thereby (a) providing the first theoretical proof of the Platonic Representation Hypothesis (that different models learn similar representations), and (b) reconciling the seemingly contradictory observations of sharpness-seeking and flatness-seeking behavior in deep learning optimization.
+  [NeurIPS 2025][Optimization][Entropic forces] This paper establishes a "neural thermodynamics" framework, proving that emergent **entropic forces** arising from stochasticity and discrete-time updates in SGD training sys…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Entropic forces
-  - SGD dynamics
-  - parameter symmetry
-  - Platonic representation hypothesis
-  - gradient balance
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Entropic forces"
+  - "SGD dynamics"
+  - "parameter symmetry"
+  - "Platonic representation hypothesis"
+  - "gradient balance"
 date: 2026-05-08
 content_hash: 5cec3c619286c7de
 ---

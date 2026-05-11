@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CrossNovo: Bidirectional Representations Augmented Autoregressive Biological Sequence Generation
 description: >-
-  [NeurIPS 2025][Medical Imaging][de novo peptide sequencing] CrossNovo integrates autoregressive (AR) and non-autoregressive (NAR) decoders through a shared spectrum encoder, importance annealing, and gradient-blocked knowledge distillation, enabling the bidirectional global understanding of NAR to augment AR sequence generation. On the 9-Species benchmark, it achieves amino acid accuracy of 0.811 (+2.6%) and peptide recall of 0.654 (+5.3%).
+  [NeurIPS 2025][Medical Imaging][de novo peptide sequencing] CrossNovo integrates autoregressive (AR) and non-autoregressive (NAR) decoders through a shared spectrum encoder, importance annealing…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - de novo peptide sequencing
-  - autoregressive
-  - non-autoregressive
-  - CTC
-  - knowledge distillation
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "de novo peptide sequencing"
+  - "autoregressive"
+  - "non-autoregressive"
+  - "CTC"
+  - "knowledge distillation"
 date: 2026-05-08
 content_hash: 78f4276d135acadb
 ---

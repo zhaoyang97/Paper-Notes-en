@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Predictive Feature Caching for Training-free Acceleration of Molecular Geometry Generation
 description: >-
-  [NeurIPS 2025][Image Generation][molecular geometry generation] This paper transfers predictive feature caching strategies from the image generation domain to molecular geometry generation, exploiting the temporal smoothness of hidden states along sampling trajectories to achieve training-free 2–3× inference acceleration, with up to 7× speedup when combined with other optimization techniques.
+  [NeurIPS 2025][Image Generation][molecular geometry generation] This paper transfers predictive feature caching strategies from the image generation domain to molecular geometry generation…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - molecular geometry generation
-  - flow matching
-  - feature caching
-  - training-free acceleration
-  - SE(3) equivariance
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "molecular geometry generation"
+  - "flow matching"
+  - "feature caching"
+  - "training-free acceleration"
+  - "SE(3) equivariance"
 date: 2026-05-08
 content_hash: 23a6603f4b6f9641
 ---

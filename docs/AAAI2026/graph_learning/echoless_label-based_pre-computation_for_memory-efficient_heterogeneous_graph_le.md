@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EchoLess: Label-Based Pre-Computation for Memory-Efficient Heterogeneous Graph Learning
 description: >-
-  [AAAI 2026][Graph Learning][Heterogeneous graph learning] Echoless-LP eliminates training label leakage (the echo effect) caused by multi-hop message passing in label pre-computation via Partition-Focused Echoless Propagation (PFEP). Combined with an Asymmetric Partition Scheme (APS) and a PostAdjust mechanism to address information loss and distribution shift introduced by partitioning, the method remains memory-efficient, is compatible with arbitrary message-passing operators, and achieves state-of-the-art performance on multiple heterogeneous graph benchmarks.
+  [AAAI 2026][Graph Learning][Heterogeneous graph learning] Echoless-LP eliminates training label leakage (the echo effect) caused by multi-hop message passing in label pre-computation via Partition-Focused Echoless Propag…
 tags:
-  - AAAI 2026
-  - Graph Learning
-  - Heterogeneous graph learning
-  - label pre-computation
-  - training label leakage
-  - echo effect
-  - memory efficiency
+  - "AAAI 2026"
+  - "Graph Learning"
+  - "Heterogeneous graph learning"
+  - "label pre-computation"
+  - "training label leakage"
+  - "echo effect"
+  - "memory efficiency"
 date: 2026-05-08
 content_hash: 347d13e6787f04c9
 ---

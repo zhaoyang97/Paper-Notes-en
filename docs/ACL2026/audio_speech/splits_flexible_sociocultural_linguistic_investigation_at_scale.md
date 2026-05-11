@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Splits! Flexible Sociocultural Linguistic Investigation at Scale
 description: >-
-  [ACL 2026][Audio & Speech][sociocultural linguistic phenomena] This paper proposes a methodology for constructing a sociolinguistic "sandbox," building Splits!—a 9.7 million post dataset from Reddit partitioned along two axes (demographic group × discussion topic) across 6 groups and 89 topics—and designing a two-stage filtering pipeline based on lift and triviality to efficiently identify non-trivial, research-worthy sociocultural linguistic phenomena from 23,000 LLM-generated candidate hypotheses.
+  [ACL 2026][Audio & Speech][sociocultural linguistic phenomena] This paper proposes a methodology for constructing a sociolinguistic "sandbox," building Splits!—a 9.7 million post dataset from Reddit partitioned along two…
 tags:
-  - ACL 2026
+  - "ACL 2026"
   - "Audio & Speech"
-  - sociocultural linguistic phenomena
-  - Reddit dataset
-  - hypothesis filtering
-  - lexical analysis
-  - demographics
+  - "sociocultural linguistic phenomena"
+  - "Reddit dataset"
+  - "hypothesis filtering"
+  - "lexical analysis"
+  - "demographics"
 date: 2026-05-08
 content_hash: 318745b029e007da
 ---

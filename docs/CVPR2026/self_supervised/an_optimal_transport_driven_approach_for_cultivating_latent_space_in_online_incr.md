@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] An Optimal Transport-driven Approach for Cultivating Latent Space in Online Incremental Learning
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Online Class-Incremental Learning] This paper proposes MMOT, an online mixture model learning framework driven by optimal transport theory. By maintaining multiple adaptive centroids per class, MMOT more accurately captures the multimodal structure of online data streams. Combined with a dynamic preservation strategy that enhances class discriminability, MMOT effectively alleviates catastrophic forgetting in online class-incremental learning (OCIL).
+  [CVPR 2026][Self-Supervised Learning][Online Class-Incremental Learning] This paper proposes MMOT, an online mixture model learning framework driven by optimal transport theory. By maintaining multiple adaptive centroids…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - Online Class-Incremental Learning
-  - Optimal Transport
-  - Gaussian Mixture Model
-  - Catastrophic Forgetting
-  - Latent Space
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Online Class-Incremental Learning"
+  - "Optimal Transport"
+  - "Gaussian Mixture Model"
+  - "Catastrophic Forgetting"
+  - "Latent Space"
 date: 2026-05-08
 content_hash: 39d899535d6293d4
 ---

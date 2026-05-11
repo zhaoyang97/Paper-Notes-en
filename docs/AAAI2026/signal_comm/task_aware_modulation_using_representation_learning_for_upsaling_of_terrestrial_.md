@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Task Aware Modulation Using Representation Learning for Upscaling of Terrestrial Carbon Fluxes
 description: >-
-  [AAAI 2026][Signal & Communication][carbon flux upscaling] This paper proposes TAM-RL, a framework that formulates terrestrial carbon flux upscaling as a zero-shot regression transfer learning problem. By combining a BiLSTM task encoder with FiLM modulation and a knowledge-guided loss derived from the carbon balance equation, the method achieves a 9.6% reduction in GPP RMSE and a 43.8% improvement in NEE R² over FLUXCOM-X-BASE across 150+ flux tower sites.
+  [AAAI 2026][Signal & Communication][carbon flux upscaling] This paper proposes TAM-RL, a framework that formulates terrestrial carbon flux upscaling as a zero-shot regression transfer learning problem. By combining a BiL…
 tags:
-  - AAAI 2026
+  - "AAAI 2026"
   - "Signal & Communication"
-  - carbon flux upscaling
-  - meta-learning
-  - FiLM modulation
-  - knowledge-guided loss
-  - zero-shot transfer
+  - "carbon flux upscaling"
+  - "meta-learning"
+  - "FiLM modulation"
+  - "knowledge-guided loss"
+  - "zero-shot transfer"
 date: 2026-05-08
 content_hash: 5425f536659a3f26
 ---

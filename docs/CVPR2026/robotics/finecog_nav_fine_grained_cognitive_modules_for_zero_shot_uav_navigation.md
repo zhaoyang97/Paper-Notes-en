@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FineCog-Nav: Integrating Fine-grained Cognitive Modules for Zero-shot Multimodal UAV Navigation
 description: >-
-  [CVPR 2026][Robotics][UAV Navigation] This paper proposes FineCog-Nav, a zero-shot UAV vision-language navigation framework inspired by human cognition. It decomposes navigation into seven fine-grained cognitive modules—language processing, perception, attention, memory, imagination, reasoning, and decision-making—each driven by moderate-scale foundation models, enabling long-range navigation in complex 3D environments without any training.
+  [CVPR 2026][Robotics][UAV Navigation] This paper proposes FineCog-Nav, a zero-shot UAV vision-language navigation framework inspired by human cognition. It decomposes navigation into seven fine-grained cognitive modules—…
 tags:
-  - CVPR 2026
-  - Robotics
-  - UAV Navigation
-  - Vision-Language Navigation
-  - Cognitive Modules
-  - Zero-shot
-  - Hierarchical Memory
+  - "CVPR 2026"
+  - "Robotics"
+  - "UAV Navigation"
+  - "Vision-Language Navigation"
+  - "Cognitive Modules"
+  - "Zero-shot"
+  - "Hierarchical Memory"
 date: 2026-05-08
 content_hash: df6b654813d060dc
 ---

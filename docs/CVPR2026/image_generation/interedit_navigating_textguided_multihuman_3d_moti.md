@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] InterEdit: Navigating Text-Guided Multi-Human 3D Motion Editing
 description: >-
-  [CVPR 2026][Image Generation][Multi-human motion editing] This paper is the first to formally define the Text-guided Multi-human Motion Editing (TMME) task. It constructs the InterEdit3D dataset containing 5,161 source–target–instruction triplets and proposes the InterEdit conditional diffusion model. The model captures high-level editing intent via semantic-aware planning token alignment and models periodic interaction dynamics via interaction-aware frequency-domain token alignment, achieving state-of-the-art performance on instruction following (g2t R@1 30.82%) and source preservation (g2s R@1 17.08%), outperforming all four baselines across the board.
+  [CVPR 2026][Image Generation][Multi-human motion editing] This paper is the first to formally define the Text-guided Multi-human Motion Editing (TMME) task. It constructs the InterEdit3D dataset containing 5…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Multi-human motion editing
-  - text-guided diffusion model
-  - interaction-aware frequency-domain alignment
-  - semantic planning token
-  - TMME
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Multi-human motion editing"
+  - "text-guided diffusion model"
+  - "interaction-aware frequency-domain alignment"
+  - "semantic planning token"
+  - "TMME"
 date: 2026-05-08
 content_hash: 33e7a275f3dcf1e1
 ---

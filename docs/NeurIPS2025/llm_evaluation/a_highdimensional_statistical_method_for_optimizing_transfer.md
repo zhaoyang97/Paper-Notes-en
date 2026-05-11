@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A High-Dimensional Statistical Method for Optimizing Transfer Quantities in Multi-Source Transfer Learning
 description: >-
-  [NeurIPS 2025][LLM Evaluation][Multi-source transfer learning] This paper proposes a theoretical framework based on K-L divergence and high-dimensional statistical analysis to determine the optimal number of samples to transfer from each source task in multi-source transfer learning. The framework avoids the negative transfer caused by naively using all source data, and the resulting algorithm OTQMS surpasses the state of the art by 1.0–1.5% on DomainNet and Office-Home while reducing sample usage by 47.85% and training time by 35.19%.
+  [NeurIPS 2025][LLM Evaluation][Multi-source transfer learning] This paper proposes a theoretical framework based on K-L divergence and high-dimensional statistical analysis to determine the optimal number of samples to t…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - Multi-source transfer learning
-  - optimal transfer quantity
-  - K-L divergence
-  - Fisher information matrix
-  - data efficiency
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "Multi-source transfer learning"
+  - "optimal transfer quantity"
+  - "K-L divergence"
+  - "Fisher information matrix"
+  - "data efficiency"
 date: 2026-05-08
 content_hash: b1e1b3978b61c525
 ---

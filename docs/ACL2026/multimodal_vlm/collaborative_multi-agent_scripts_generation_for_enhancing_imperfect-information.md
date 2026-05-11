@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Collaborative Multi-Agent Scripts Generation for Enhancing Imperfect-Information Reasoning in Murder Mystery Games
 description: >-
-  [ACL 2026][Multimodal VLM][imperfect-information reasoning] This paper proposes a collaborative multi-agent framework for automatically generating high-quality murder mystery game scripts and training data. Through a two-stage training strategy (CoT fine-tuning + GRPO reinforcement learning with ScoreAgent reward shaping), it enhances VLM multi-hop reasoning under imperfect information, achieving significant improvements on WhodunitBench in narrative reasoning, fact extraction, and deception resistance.
+  [ACL 2026][Multimodal VLM][imperfect-information reasoning] This paper proposes a collaborative multi-agent framework for automatically generating high-quality murder mystery game scripts and training data. Through a two…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - imperfect-information reasoning
-  - murder mystery games
-  - multi-agent data generation
-  - vision-language models
-  - reinforcement learning
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "imperfect-information reasoning"
+  - "murder mystery games"
+  - "multi-agent data generation"
+  - "vision-language models"
+  - "reinforcement learning"
 date: 2026-05-08
 content_hash: e8dced13c77d952f
 ---

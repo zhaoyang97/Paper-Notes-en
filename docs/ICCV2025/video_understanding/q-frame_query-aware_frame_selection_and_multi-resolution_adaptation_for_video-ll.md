@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Q-Frame: Query-aware Frame Selection and Multi-Resolution Adaptation for Video-LLMs
 description: >-
-  [ICCV 2025][Video Understanding][Video Frame Selection] This paper proposes Q-Frame, a training-free plug-and-play framework for video frame selection and multi-resolution adaptation. By leveraging CLIP cross-modal matching and the Gumbel-Max trick, Q-Frame achieves query-aware frame selection, enabling Video-LLMs to process more informative frames under the same computational budget. It achieves significant performance gains on three benchmarks: MLVU, LongVideoBench, and Video-MME.
+  [ICCV 2025][Video Understanding][Video Frame Selection] This paper proposes Q-Frame, a training-free plug-and-play framework for video frame selection and multi-resolution adaptation. By leveraging CLIP cross-modal match…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - Video Frame Selection
-  - Multi-Resolution Adaptation
-  - Video-LLM
-  - CLIP
-  - Gumbel-Max Sampling
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "Video Frame Selection"
+  - "Multi-Resolution Adaptation"
+  - "Video-LLM"
+  - "CLIP"
+  - "Gumbel-Max Sampling"
 date: 2026-05-08
 content_hash: 808d1c6dae2ab875
 ---

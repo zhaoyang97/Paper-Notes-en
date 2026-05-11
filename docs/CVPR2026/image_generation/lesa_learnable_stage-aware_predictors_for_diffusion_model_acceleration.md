@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] LESA: Learnable Stage-Aware Predictors for Diffusion Model Acceleration
 description: >-
-  [CVPR 2026][Image Generation][Diffusion model acceleration] This paper proposes LESA, a framework that employs KAN (Kolmogorov-Arnold Network) as learnable temporal predictors, combined with a multi-stage multi-expert architecture and a two-phase training strategy. LESA achieves 5× acceleration on FLUX with only 1.0% quality degradation, 6.25× acceleration on Qwen-Image with 20.2% quality improvement over TaylorSeer, and 5× acceleration on HunyuanVideo with a 24.7% PSNR gain.
+  [CVPR 2026][Image Generation][Diffusion model acceleration] This paper proposes LESA, a framework that employs KAN (Kolmogorov-Arnold Network) as learnable temporal predictors…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion model acceleration
-  - feature caching
-  - KAN
-  - stage-awareness
-  - DiT
-  - text-to-image
-  - text-to-video
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion model acceleration"
+  - "feature caching"
+  - "KAN"
+  - "stage-awareness"
+  - "DiT"
+  - "text-to-image"
+  - "text-to-video"
 date: 2026-05-08
 content_hash: e5b300dba773be32
 ---

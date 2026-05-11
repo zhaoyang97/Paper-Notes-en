@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] GSAP-ERE: Fine-Grained Scholarly Entity and Relation Extraction Focused on Machine Learning
 description: >-
-  [AAAI 2026][Graph Learning][Scholarly Information Extraction] This paper introduces GSAP-ERE — a fine-grained scholarly entity and relation extraction dataset for the machine learning domain, comprising 10 entity types and 18 relation types, with 63K entities and 35K relations annotated across 100 full-text papers. Experiments show that fine-tuned models (NER: 80.6%, RE: 54.0%) substantially outperform LLM prompting approaches (NER: 44.4%, RE: 10.1%).
+  [AAAI 2026][Graph Learning][Scholarly Information Extraction] This paper introduces GSAP-ERE — a fine-grained scholarly entity and relation extraction dataset for the machine learning domain…
 tags:
-  - AAAI 2026
-  - Graph Learning
-  - Scholarly Information Extraction
-  - Named Entity Recognition
-  - Relation Extraction
-  - Knowledge Graph
-  - ML Reproducibility
-  - Fine-Grained Annotation
+  - "AAAI 2026"
+  - "Graph Learning"
+  - "Scholarly Information Extraction"
+  - "Named Entity Recognition"
+  - "Relation Extraction"
+  - "Knowledge Graph"
+  - "ML Reproducibility"
+  - "Fine-Grained Annotation"
 date: 2026-05-08
 content_hash: 09ab13afe0e88c83
 ---

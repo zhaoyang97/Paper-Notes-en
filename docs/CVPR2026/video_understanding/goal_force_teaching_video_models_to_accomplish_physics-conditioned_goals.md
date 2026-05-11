@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GoalForce: Teaching Video Models to Accomplish Physics-Conditioned Goals
 description: >-
-  [CVPR 2026][Video Understanding][Video Generation] This paper proposes the GoalForce framework, which trains video generation models on simple synthetic data using multi-channel physical control signals (goal force, direct force, and mass), enabling the model to learn backward causal planning from desired effects. The approach achieves zero-shot generalization to complex real-world scenarios such as tool use and human–object interaction.
+  [CVPR 2026][Video Understanding][Video Generation] This paper proposes the GoalForce framework, which trains video generation models on simple synthetic data using multi-channel physical control signals (goal force…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Video Generation
-  - Physics-Conditioned Goals
-  - world model
-  - Force Prompting
-  - Causal Reasoning
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Video Generation"
+  - "Physics-Conditioned Goals"
+  - "world model"
+  - "Force Prompting"
+  - "Causal Reasoning"
 date: 2026-05-08
 content_hash: 24175452cfc15e75
 ---

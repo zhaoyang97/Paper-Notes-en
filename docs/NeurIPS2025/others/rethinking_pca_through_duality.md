@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Rethinking PCA Through Duality
 description: >-
-  [NeurIPS 2025][Principal Component Analysis] This paper revisits PCA through the Difference-of-Convex (DC) framework, establishing kernelization and out-of-sample extension capabilities, revealing that simultaneous iteration is a special case of DCA, and proposing a kernelizable dual formulation for robust $\ell_1$-PCA.
+  [NeurIPS 2025][Principal Component Analysis] This paper revisits PCA through the Difference-of-Convex (DC) framework, establishing kernelization and out-of-sample extension capabilities…
 tags:
-  - NeurIPS 2025
-  - Principal Component Analysis
-  - Duality Theory
-  - DC Programming
-  - Kernel PCA
-  - QR Algorithm
+  - "NeurIPS 2025"
+  - "Principal Component Analysis"
+  - "Duality Theory"
+  - "DC Programming"
+  - "Kernel PCA"
+  - "QR Algorithm"
 date: 2026-05-08
 content_hash: ff6846b069552a13
 ---

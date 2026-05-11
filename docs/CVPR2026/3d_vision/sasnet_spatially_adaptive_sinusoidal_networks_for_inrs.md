@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SASNet: Spatially-Adaptive Sinusoidal Networks for INRs
 description: >-
-  [CVPR 2026][3D Vision][Implicit Neural Representation] This paper proposes SASNet, which combines frozen frequency embedding layers with spatially-adaptive masks learned by a lightweight hash-grid MLP to address SIREN's sensitivity to frequency initialization and its high-frequency leakage problem, achieving faster convergence and higher reconstruction quality on image fitting, volumetric data fitting, and SDF reconstruction tasks.
+  [CVPR 2026][3D Vision][Implicit Neural Representation] This paper proposes SASNet, which combines frozen frequency embedding layers with spatially-adaptive masks learned by a lightweight hash-grid MLP to address SIREN's…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Implicit Neural Representation
-  - SIREN
-  - Spatial Adaptivity
-  - Frequency Leakage
-  - Hash Grid
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Implicit Neural Representation"
+  - "SIREN"
+  - "Spatial Adaptivity"
+  - "Frequency Leakage"
+  - "Hash Grid"
 date: 2026-05-08
 content_hash: b93d598e6bd24a6d
 ---

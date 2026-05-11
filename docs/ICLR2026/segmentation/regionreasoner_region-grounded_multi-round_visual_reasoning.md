@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] RegionReasoner: Region-Grounded Multi-Round Visual Reasoning
 description: >-
-  [ICLR 2026][Segmentation][multi-round reasoning] This paper proposes RegionReasoner, a reinforcement learning-based multi-round visual reasoning framework that employs reference annotation rewards and global-local consistency rewards to enforce explicit citation of reference region coordinates in reasoning traces while maintaining semantic coherence. The approach achieves significant improvements in multi-round localization and segmentation accuracy on the newly constructed RegionDial-Bench.
+  [ICLR 2026][Segmentation][multi-round reasoning] This paper proposes RegionReasoner, a reinforcement learning-based multi-round visual reasoning framework that employs reference annotation rewards and global-local consis…
 tags:
-  - ICLR 2026
-  - Segmentation
-  - multi-round reasoning
-  - region grounding
-  - reinforcement-learning
-  - GRPO
-  - VLM
-  - referring segmentation
+  - "ICLR 2026"
+  - "Segmentation"
+  - "multi-round reasoning"
+  - "region grounding"
+  - "reinforcement-learning"
+  - "GRPO"
+  - "VLM"
+  - "referring segmentation"
 date: 2026-05-08
 content_hash: f304892d2bf2f378
 ---

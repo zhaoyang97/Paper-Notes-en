@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GGTalker: Talking Head Synthesis with Generalizable Gaussian Priors and Identity-Specific Adaptation
 description: >-
-  [ICCV 2025][Human Understanding][Talking head synthesis] GGTalker proposes a prior-adaptation two-stage training strategy that learns generalizable audio-to-expression and expression-to-visual priors from large-scale datasets, then rapidly adapts to a specific identity. The method achieves state-of-the-art performance across rendering quality, 3D consistency, lip synchronization, and training efficiency, requiring only 20 minutes of adaptation to generate photorealistic talking-head videos at 120 FPS.
+  [ICCV 2025][Human Understanding][Talking head synthesis] GGTalker proposes a prior-adaptation two-stage training strategy that learns generalizable audio-to-expression and expression-to-visual priors from large-scale dat…
 tags:
-  - ICCV 2025
-  - Human Understanding
-  - Talking head synthesis
-  - 3D Gaussian splatting
-  - prior-adaptation
-  - FLAME
-  - large-scale pretraining
+  - "ICCV 2025"
+  - "Human Understanding"
+  - "Talking head synthesis"
+  - "3D Gaussian splatting"
+  - "prior-adaptation"
+  - "FLAME"
+  - "large-scale pretraining"
 date: 2026-05-08
 content_hash: 4cfb921d9ff57bd3
 ---

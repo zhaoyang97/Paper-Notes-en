@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HACK: Head-Aware KV Cache Compression for Efficient Visual Autoregressive Modeling
 description: >-
-  [AAAI 2026][Image Generation][KV Cache Compression] This paper identifies that attention heads in VAR models naturally fall into two categories — Contextual Heads (semantic consistency, vertical attention patterns) and Structural Heads (spatial coherence, multi-diagonal patterns) — and proposes the HACK framework, which employs asymmetric budget allocation and pattern-specific compression strategies to achieve lossless generation quality at 70% compression, yielding 1.75× memory reduction and 1.57× speedup on Infinity-8B.
+  [AAAI 2026][Image Generation][KV Cache Compression] This paper identifies that attention heads in VAR models naturally fall into two categories — Contextual Heads (semantic consistency…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - KV Cache Compression
-  - Visual Autoregressive Models
-  - VAR
-  - Attention Head Classification
-  - Next-Scale Prediction
+  - "AAAI 2026"
+  - "Image Generation"
+  - "KV Cache Compression"
+  - "Visual Autoregressive Models"
+  - "VAR"
+  - "Attention Head Classification"
+  - "Next-Scale Prediction"
 date: 2026-05-08
 content_hash: f179f04cb2acdf28
 ---

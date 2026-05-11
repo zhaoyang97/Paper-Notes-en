@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] NerfBaselines: Consistent and Reproducible Evaluation of Novel View Synthesis Methods
 description: >-
-  [NeurIPS 2025][3D Vision][novel view synthesis] This paper proposes NerfBaselines, an evaluation framework that addresses unfair comparisons in novel view synthesis (NVS) caused by inconsistent evaluation protocols. By wrapping original method code with a unified API and enforcing environment isolation, the framework ensures that each method's behavior exactly matches its original release. Experiments reveal that seemingly minor protocol differences—such as image resizing strategies and background colors—can significantly alter method rankings.
+  [NeurIPS 2025][3D Vision][novel view synthesis] This paper proposes NerfBaselines, an evaluation framework that addresses unfair comparisons in novel view synthesis (NVS) caused by inconsistent evaluation protocols. By w…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - novel view synthesis
-  - evaluation framework
-  - NeRF
-  - 3D Gaussian Splatting
-  - benchmark
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "novel view synthesis"
+  - "evaluation framework"
+  - "NeRF"
+  - "3D Gaussian Splatting"
+  - "benchmark"
 date: 2026-05-08
 content_hash: 2c390884d3e9f138
 ---

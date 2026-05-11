@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] InstantHDR: Single-forward Gaussian Splatting for High Dynamic Range 3D Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][HDR novel view synthesis] This paper proposes InstantHDR, the first feed-forward HDR novel view synthesis method. It introduces a geometry-guided appearance modeling module to resolve appearance inconsistencies in multi-exposure fusion, and employs a MetaNet to predict scene-specific tone mapping parameters for generalization. The method reconstructs HDR 3D Gaussian scenes in seconds from uncalibrated multi-exposure LDR images, achieving +2.90 dB PSNR over GaussianHDR under sparse 4-view settings at approximately 700× faster speed.
+  [CVPR 2026][3D Vision][HDR novel view synthesis] This paper proposes InstantHDR, the first feed-forward HDR novel view synthesis method. It introduces a geometry-guided appearance modeling module to resolve appearance in…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - HDR novel view synthesis
-  - feed-forward 3D reconstruction
-  - 3D Gaussian splatting
-  - multi-exposure fusion
-  - tone mapping meta-network
+  - "CVPR 2026"
+  - "3D Vision"
+  - "HDR novel view synthesis"
+  - "feed-forward 3D reconstruction"
+  - "3D Gaussian splatting"
+  - "multi-exposure fusion"
+  - "tone mapping meta-network"
 date: 2026-05-08
 content_hash: 81c63af490ab3404
 ---

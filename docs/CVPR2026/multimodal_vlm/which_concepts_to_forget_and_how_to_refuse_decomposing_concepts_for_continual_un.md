@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Which Concepts to Forget and How to Refuse? Decomposing Concepts for Continual Unlearning in Large Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Continual unlearning] This paper proposes CORE (COncept-aware REfuser), a framework for continual unlearning in large vision-language models (LVLMs). It decomposes vision-language deletion targets into fine-grained visual attribute concepts and textual intent concepts, employs a concept modulator to identify concept combinations requiring refusal, and generates concept-aligned refusal responses via a mixture of refusal experts (refusers). CORE achieves state-of-the-art unlearning-retention trade-offs of 90.67% CRR and 88.02% AR across 16 sequential unlearning tasks.
+  [CVPR 2026][Multimodal VLM][Continual unlearning] This paper proposes CORE (COncept-aware REfuser), a framework for continual unlearning in large vision-language models (LVLMs). It decomposes vision-language deletion tar…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Continual unlearning
-  - large vision-language models
-  - concept decomposition
-  - mixture of refusal experts
-  - selective knowledge deletion
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Continual unlearning"
+  - "large vision-language models"
+  - "concept decomposition"
+  - "mixture of refusal experts"
+  - "selective knowledge deletion"
 date: 2026-05-08
 content_hash: 6248890e6725f46c
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] LLaVA-KD: A Framework of Distilling Multimodal Large Language Models
 description: >-
-  [ICCV2025][Multimodal VLM][Knowledge Distillation] This paper proposes the LLaVA-KD framework, which efficiently transfers knowledge from large-scale MLLMs to small-scale MLLMs via two distillation strategies—Multimodal Distillation (MDist) and Relational Distillation (RDist)—combined with a three-stage training scheme (DPT-SFT-DFT), significantly improving small model performance without modifying the model architecture.
+  [ICCV2025][Multimodal VLM][Knowledge Distillation] This paper proposes the LLaVA-KD framework, which efficiently transfers knowledge from large-scale MLLMs to small-scale MLLMs via two distillation strategies—Multimodal…
 tags:
-  - ICCV2025
-  - Multimodal VLM
-  - Knowledge Distillation
-  - Multimodal Large Language Models
-  - Small Model Training
-  - Vision-Language Alignment
+  - "ICCV2025"
+  - "Multimodal VLM"
+  - "Knowledge Distillation"
+  - "Multimodal Large Language Models"
+  - "Small Model Training"
+  - "Vision-Language Alignment"
 date: 2026-05-08
 content_hash: 106803e02ec3cc8f
 ---

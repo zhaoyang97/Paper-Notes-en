@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Perception Programs: Unlocking Visual Tool Reasoning in Language Models
 description: >-
-  [CVPR 2026][LLM/NLP][perception programs] Perception Programs (P2) is a training-free, model-agnostic method that converts raw visual tool outputs (depth, optical flow, correspondences, etc.) into compact language-native structured summaries, enabling MLLMs to directly "read" visual modalities rather than infer from dense pixels, achieving an average 19.66% improvement across 6 BLINK tasks.
+  [CVPR 2026][LLM/NLP][perception programs] Perception Programs (P2) is a training-free, model-agnostic method that converts raw visual tool outputs (depth, optical flow, correspondences…
 tags:
-  - CVPR 2026
-  - LLM/NLP
-  - perception programs
-  - visual tools
-  - language-native representation
-  - training-free
-  - multimodal reasoning
+  - "CVPR 2026"
+  - "LLM/NLP"
+  - "perception programs"
+  - "visual tools"
+  - "language-native representation"
+  - "training-free"
+  - "multimodal reasoning"
 date: 2026-05-08
 content_hash: 3457f242eef0224b
 ---

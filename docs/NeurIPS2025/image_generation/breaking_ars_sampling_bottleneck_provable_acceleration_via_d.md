@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Breaking AR's Sampling Bottleneck: Provable Acceleration via Diffusion Language Models
 description: >-
-  [NeurIPS2025][Image Generation][diffusion language model] This paper establishes a complete convergence theory for masked diffusion language models from an information-theoretic perspective: it proves that the sampling error in KL divergence decays at an $O(1/T)$ rate and scales linearly with inter-token mutual information, provides a matching lower bound to establish tightness, and theoretically demonstrates that diffusion models can generate high-quality samples in $T < L$ steps (where $L$ is the sequence length).
+  [NeurIPS2025][Image Generation][diffusion language model] This paper establishes a complete convergence theory for masked diffusion language models from an information-theoretic perspective: it proves that the sampling e…
 tags:
-  - NeurIPS2025
-  - Image Generation
-  - diffusion language model
-  - convergence guarantee
-  - mutual information
-  - sampling acceleration
-  - KL divergence
+  - "NeurIPS2025"
+  - "Image Generation"
+  - "diffusion language model"
+  - "convergence guarantee"
+  - "mutual information"
+  - "sampling acceleration"
+  - "KL divergence"
 date: 2026-05-08
 content_hash: a0e095518293a0ac
 ---

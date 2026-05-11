@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Approximating Shapley Explanations in Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Shapley values] This paper proposes FastSVERL, a scalable parametric learning framework that separately approximates the two computational bottlenecks of Shapley values in reinforcement learning—the characteristic function and the Shapley summation—while supporting off-policy learning and continuous explanation updates as the policy evolves.
+  [NeurIPS 2025][Reinforcement Learning][Shapley values] This paper proposes FastSVERL, a scalable parametric learning framework that separately approximates the two computational bottlenecks of Shapley values in reinforce…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Shapley values
-  - RL interpretability
-  - feature attribution
-  - parametric approximation
-  - off-policy learning
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Shapley values"
+  - "RL interpretability"
+  - "feature attribution"
+  - "parametric approximation"
+  - "off-policy learning"
 date: 2026-05-08
 content_hash: 03e9100872055f40
 ---

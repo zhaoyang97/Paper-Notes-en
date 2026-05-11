@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Hogwild! Inference: Parallel LLM Generation via Concurrent Attention
 description: >-
-  [NeurIPS 2025][LLM Agent][parallel inference] This paper proposes Hogwild! Inference—a parallel LLM inference protocol that requires no predefined collaboration framework. Multiple LLM instances synchronize in real time through a shared concurrent KV cache, leveraging RoPE positional encoding to avoid recomputation, achieving higher accuracy with fewer serial steps on mathematical reasoning and programming tasks.
+  [NeurIPS 2025][LLM Agent][parallel inference] This paper proposes Hogwild! Inference—a parallel LLM inference protocol that requires no predefined collaboration framework. Multiple LLM instances synchronize in real time…
 tags:
-  - NeurIPS 2025
-  - LLM Agent
-  - parallel inference
-  - shared KV cache
-  - collaborative inference
-  - RoPE positional encoding
-  - LLM acceleration
+  - "NeurIPS 2025"
+  - "LLM Agent"
+  - "parallel inference"
+  - "shared KV cache"
+  - "collaborative inference"
+  - "RoPE positional encoding"
+  - "LLM acceleration"
 date: 2026-05-08
 content_hash: 46f30cbcda10dc06
 ---

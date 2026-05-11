@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Straighten Viscous Rectified Flow via Noise Optimization
 description: >-
-  [ICCV 2025][Image Generation][Rectified Flow] This paper proposes VRFNO (Viscous Rectified Flow via Noise Optimization), which enhances trajectory distinguishability by introducing a historical velocity term and jointly trains an encoder to optimize noise for constructing optimal couplings, effectively straightening the inference trajectories of Rectified Flow. VRFNO achieves state-of-the-art one-step/few-step generation performance on CIFAR-10 and AFHQ (one-step FID of 4.50, without distillation).
+  [ICCV 2025][Image Generation][Rectified Flow] This paper proposes VRFNO (Viscous Rectified Flow via Noise Optimization), which enhances trajectory distinguishability by introducing a historical velocity term and jointly…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Rectified Flow
-  - Noise Optimization
-  - Few-step Generation
-  - Trajectory Straightening
-  - Velocity Field
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Rectified Flow"
+  - "Noise Optimization"
+  - "Few-step Generation"
+  - "Trajectory Straightening"
+  - "Velocity Field"
 date: 2026-05-08
 content_hash: 8a568aabb754dd72
 ---

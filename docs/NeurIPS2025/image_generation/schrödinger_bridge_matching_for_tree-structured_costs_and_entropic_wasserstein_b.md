@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Schrödinger Bridge Matching for Tree-Structured Costs and Entropic Wasserstein Barycentres
 description: >-
-  [NeurIPS 2025][Image Generation][Schrödinger Bridge] This paper extends the Iterative Markovian Fitting (IMF) procedure to the tree-structured Schrödinger Bridge problem, proposing the TreeDSBM algorithm. For Wasserstein barycentre computation, it elegantly merges IMF iterations with fixed-point iterations, requiring only inexpensive bridge-matching steps for efficient solution.
+  [NeurIPS 2025][Image Generation][Schrödinger Bridge] This paper extends the Iterative Markovian Fitting (IMF) procedure to the tree-structured Schrödinger Bridge problem…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Schrödinger Bridge
-  - Iterative Markovian Fitting
-  - Wasserstein Barycentre
-  - Optimal Transport
-  - Tree-Structured Cost
-  - Generative Model
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Schrödinger Bridge"
+  - "Iterative Markovian Fitting"
+  - "Wasserstein Barycentre"
+  - "Optimal Transport"
+  - "Tree-Structured Cost"
+  - "Generative Model"
 date: 2026-05-08
 content_hash: 48adc42c55fca746
 ---

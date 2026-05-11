@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RegFormer: Transferable Relational Grounding for Efficient Weakly-Supervised HOI Detection
 description: >-
-  [CVPR 2026][Human Understanding][Human-Object Interaction Detection] RegFormer proposes a lightweight relational grounding Transformer module that, under weak supervision with only image-level annotations, leverages spatially-grounded HO queries and interactiveness-aware learning to directly transfer image-level reasoning to instance-level HOI detection without additional training, achieving performance close to fully supervised methods.
+  [CVPR 2026][Human Understanding][Human-Object Interaction Detection] RegFormer proposes a lightweight relational grounding Transformer module that, under weak supervision with only image-level annotations…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Human-Object Interaction Detection
-  - Weak Supervision
-  - Relational Grounding
-  - Interactiveness Learning
-  - Zero-Shot Transfer
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Human-Object Interaction Detection"
+  - "Weak Supervision"
+  - "Relational Grounding"
+  - "Interactiveness Learning"
+  - "Zero-Shot Transfer"
 date: 2026-05-08
 content_hash: 7d45d80245f66390
 ---

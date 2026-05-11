@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Variance Computation for Weighted Model Counting with Knowledge Compilation Approach
 description: >-
-  [AAAI 2026][Weighted Model Counting] This paper treats the weights in weighted model counting (WMC) as random variables with associated variances, and proposes a polynomial-time algorithm for computing WMC variance on structured d-DNNF representations. It further proves intractability of this problem on structured DNNF, d-DNNF, and FBDD (unless P=NP), and applies the framework to quantify parameter uncertainty in Bayesian network inference.
+  [AAAI 2026][Weighted Model Counting] This paper treats the weights in weighted model counting (WMC) as random variables with associated variances…
 tags:
-  - AAAI 2026
-  - Weighted Model Counting
-  - Knowledge Compilation
-  - Variance Computation
-  - Bayesian Networks
-  - Structured d-DNNF
+  - "AAAI 2026"
+  - "Weighted Model Counting"
+  - "Knowledge Compilation"
+  - "Variance Computation"
+  - "Bayesian Networks"
+  - "Structured d-DNNF"
 date: 2026-05-08
 content_hash: 179cf015b9ef4bbd
 ---

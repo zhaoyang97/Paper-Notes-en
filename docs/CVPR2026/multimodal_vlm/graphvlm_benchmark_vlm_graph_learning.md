@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GraphVLM: Benchmarking Vision Language Models for Multimodal Graph Learning
 description: >-
-  [CVPR 2026][Multimodal VLM][Multimodal graph learning] This paper proposes GraphVLM, a benchmark that systematically evaluates VLMs in three roles for multimodal graph learning (MMGL): VLM-as-Encoder (enhancing GNN features), VLM-as-Aligner (bridging modalities for LLM-based reasoning), and VLM-as-Predictor (serving directly as the graph learning backbone). Experiments across six datasets demonstrate that VLM-as-Predictor consistently achieves the best performance, revealing the substantial potential of VLMs as a new foundation for MMGL.
+  [CVPR 2026][Multimodal VLM][Multimodal graph learning] This paper proposes GraphVLM, a benchmark that systematically evaluates VLMs in three roles for multimodal graph learning (MMGL): VLM-as-Encoder (enhancing GNN featu…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Multimodal graph learning
-  - VLM role analysis
-  - graph neural networks
-  - benchmark
-  - structure-aware reasoning
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Multimodal graph learning"
+  - "VLM role analysis"
+  - "graph neural networks"
+  - "benchmark"
+  - "structure-aware reasoning"
 date: 2026-05-08
 content_hash: cdee7255801fed28
 ---

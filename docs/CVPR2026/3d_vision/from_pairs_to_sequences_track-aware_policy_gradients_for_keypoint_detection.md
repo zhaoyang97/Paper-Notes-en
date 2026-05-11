@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From Pairs to Sequences: Track-Aware Policy Gradients for Keypoint Detection
 description: >-
-  [CVPR 2026][3D Vision][keypoint detection] This work shifts keypoint detection from an "image-pair matching" paradigm to "sequence-level trackability optimization." The proposed reinforcement learning framework, TraqPoint, directly optimizes long-term keypoint tracking quality over image sequences, achieving state-of-the-art performance on pose estimation, visual localization, visual odometry, and 3D reconstruction tasks.
+  [CVPR 2026][3D Vision][keypoint detection] This work shifts keypoint detection from an "image-pair matching" paradigm to "sequence-level trackability optimization." The proposed reinforcement learning framework…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - keypoint detection
-  - reinforcement learning
-  - long-term trackability
-  - sequential decision-making
-  - feature matching
+  - "CVPR 2026"
+  - "3D Vision"
+  - "keypoint detection"
+  - "reinforcement learning"
+  - "long-term trackability"
+  - "sequential decision-making"
+  - "feature matching"
 date: 2026-05-08
 content_hash: 8225376541c010eb
 ---

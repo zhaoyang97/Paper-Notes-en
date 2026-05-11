@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MARS: Multi-Agent Adaptive Reasoning with Socratic Guidance for Automated Prompt Optimization
 description: >-
-  [AAAI 2026][Reinforcement Learning][Automated Prompt Optimization] This paper proposes MARS, a five-agent framework for automated prompt optimization (APO): a Planner generates task-specific optimization trajectories; a Teacher-Critic-Student triad conducts Socratic dialogue for iterative prompt refinement (simulating pseudo-gradient descent in text space); and a Target agent executes the prompt and provides feedback. The entire process is modeled as a POMDP. MARS outperforms the previous SOTA (PE2) by 6.04% on general tasks and 6.42% on domain-specific tasks across 17 datasets, requiring only 1-shot training data.
+  [AAAI 2026][Reinforcement Learning][Automated Prompt Optimization] This paper proposes MARS, a five-agent framework for automated prompt optimization (APO): a Planner generates task-specific optimization trajectories…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - Automated Prompt Optimization
-  - Socratic Dialogue
-  - POMDP
-  - Teacher-Critic-Student
-  - Pseudo-Gradient
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "Automated Prompt Optimization"
+  - "Socratic Dialogue"
+  - "POMDP"
+  - "Teacher-Critic-Student"
+  - "Pseudo-Gradient"
 date: 2026-05-08
 content_hash: 5e02f92f72821c5e
 ---

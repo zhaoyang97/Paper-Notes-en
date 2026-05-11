@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Target Refocusing via Attention Redistribution for Open-Vocabulary Semantic Segmentation: An Explainability Perspective
 description: >-
-  [AAAI 2026][Segmentation][Open-vocabulary semantic segmentation] This paper systematically investigates CLIP's internal mechanisms from an explainability perspective, revealing a "distraction" phenomenon in which CLIP allocates substantial attention resources to target-irrelevant tokens in deeper layers. The proposed training-free method RF-CLIP performs attention redistribution to refocus dispersed resources onto target regions, achieving state-of-the-art performance across 8 benchmarks while maintaining inference efficiency.
+  [AAAI 2026][Segmentation][Open-vocabulary semantic segmentation] This paper systematically investigates CLIP's internal mechanisms from an explainability perspective…
 tags:
-  - AAAI 2026
-  - Segmentation
-  - Open-vocabulary semantic segmentation
-  - CLIP
-  - attention redistribution
-  - distraction phenomenon
-  - training-free
+  - "AAAI 2026"
+  - "Segmentation"
+  - "Open-vocabulary semantic segmentation"
+  - "CLIP"
+  - "attention redistribution"
+  - "distraction phenomenon"
+  - "training-free"
 date: 2026-05-08
 content_hash: e914d6e76dc97495
 ---

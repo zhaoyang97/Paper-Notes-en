@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] QiMeng-Kernel: Macro-Thinking Micro-Coding Paradigm for LLM-Based High-Performance GPU Kernel Generation
 description: >-
-  [AAAI 2026][Reinforcement Learning][GPU kernel generation] This paper proposes MTMC (Macro Thinking Micro Coding), a hierarchical framework that decouples GPU kernel generation into two stages: a lightweight RL-trained LLM generates high-level optimization actions (Macro Thinking), while a general-purpose LLM incrementally implements each action (Micro Coding). This design separates correctness from performance concerns, achieving near-100% accuracy and a 2.2× speedup over expert-optimized PyTorch Eager kernels on KernelBench.
+  [AAAI 2026][Reinforcement Learning][GPU kernel generation] This paper proposes MTMC (Macro Thinking Micro Coding), a hierarchical framework that decouples GPU kernel generation into two stages: a lightweight RL-trained L…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - GPU kernel generation
-  - LLM code generation
-  - reinforcement learning policy
-  - hierarchical optimization
-  - high-performance computing
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "GPU kernel generation"
+  - "LLM code generation"
+  - "reinforcement learning policy"
+  - "hierarchical optimization"
+  - "high-performance computing"
 date: 2026-05-08
 content_hash: b31976da02bd5ecf
 ---

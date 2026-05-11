@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Weakly Supervised Teacher-Student Framework with Progressive Pseudo-mask Refinement for Gland Segmentation
 description: >-
-  [CVPR 2026][Medical Imaging][Weakly supervised semantic segmentation] This paper proposes a weakly supervised teacher-student framework that leverages sparse pathological annotations and an EMA-stabilized teacher network to generate progressively refined pseudo-masks. Through confidence filtering, adaptive fusion, and curriculum-guided refinement, the framework achieves efficient segmentation of glandular structures in colorectal cancer pathology images.
+  [CVPR 2026][Medical Imaging][Weakly supervised semantic segmentation] This paper proposes a weakly supervised teacher-student framework that leverages sparse pathological annotations and an EMA-stabilized teacher network…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Weakly supervised semantic segmentation
-  - teacher-student framework
-  - pseudo-mask refinement
-  - gland segmentation
-  - colorectal cancer pathology
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Weakly supervised semantic segmentation"
+  - "teacher-student framework"
+  - "pseudo-mask refinement"
+  - "gland segmentation"
+  - "colorectal cancer pathology"
 date: 2026-05-08
 content_hash: 13a7ce58477cbfea
 ---

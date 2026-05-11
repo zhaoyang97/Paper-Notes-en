@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OccAny: Generalized Unconstrained Urban 3D Occupancy
 description: >-
-  [CVPR 2026][Autonomous Driving][3D Occupancy Prediction] OccAny proposes the first generalized unconstrained urban 3D occupancy prediction framework, capable of predicting metric-scale occupancy voxels from monocular, sequential, or surround-view images in calibration-free, out-of-domain scenes. Through two key designs—Segmentation Forcing and Novel View Rendering—it surpasses all visual geometry baselines on KITTI and nuScenes.
+  [CVPR 2026][Autonomous Driving][3D Occupancy Prediction] OccAny proposes the first generalized unconstrained urban 3D occupancy prediction framework, capable of predicting metric-scale occupancy voxels from monocular…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - 3D Occupancy Prediction
-  - Generalization
-  - Unconstrained Scenes
-  - Visual Geometry Foundation Models
-  - Semantic Segmentation
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "3D Occupancy Prediction"
+  - "Generalization"
+  - "Unconstrained Scenes"
+  - "Visual Geometry Foundation Models"
+  - "Semantic Segmentation"
 date: 2026-05-08
 content_hash: 1dc8045262df03ca
 ---

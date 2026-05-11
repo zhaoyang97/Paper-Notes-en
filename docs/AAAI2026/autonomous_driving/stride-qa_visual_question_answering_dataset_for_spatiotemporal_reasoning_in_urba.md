@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] STRIDE-QA: Visual Question Answering Dataset for Spatiotemporal Reasoning in Urban Driving Scenes
 description: >-
-  [AAAI 2026][Autonomous Driving][VQA] This paper constructs STRIDE-QA, the largest spatiotemporal reasoning VQA dataset in autonomous driving (270K frames, 16M QA pairs), defines three categories of spatiotemporal reasoning tasks (object-centric spatial / ego-centric spatial / ego-centric spatiotemporal), and demonstrates that fine-tuning a VLM raises localization success rate from near zero to 55% and temporal localization consistency from 0 to 28.4%.
+  [AAAI 2026][Autonomous Driving][VQA] This paper constructs STRIDE-QA, the largest spatiotemporal reasoning VQA dataset in autonomous driving (270K frames, 16M QA pairs)…
 tags:
-  - AAAI 2026
-  - Autonomous Driving
-  - VQA
-  - spatiotemporal reasoning
-  - ego-centric perspective
-  - 3D annotation
-  - VLM fine-tuning
+  - "AAAI 2026"
+  - "Autonomous Driving"
+  - "VQA"
+  - "spatiotemporal reasoning"
+  - "ego-centric perspective"
+  - "3D annotation"
+  - "VLM fine-tuning"
 date: 2026-05-08
 content_hash: 3420ab979f4124a9
 ---

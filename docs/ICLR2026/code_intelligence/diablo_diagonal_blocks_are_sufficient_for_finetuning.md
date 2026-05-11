@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] DiaBlo: Diagonal Blocks Are Sufficient For Finetuning
 description: >-
-  [ICLR2026][PEFT] This paper proposes DiaBlo—a parameter-efficient fine-tuning method that replaces low-rank decomposition with diagonal block updates. The weight matrix is partitioned into $N \times N$ blocks, and only the diagonal blocks $\mathbf{D}_1, \ldots, \mathbf{D}_N$ are trained. This approach entirely bypasses the non-convex optimization, initialization sensitivity, and gradient instability introduced by the $\mathbf{AB}$ product in LoRA. Zero initialization suffices for convergence, and the method requires only a single `torch.einsum` batched matmul in PyTorch. Theoretical analysis proves that DiaBlo is strictly more expressive than LoRA under the same parameter budget. DiaBlo achieves state-of-the-art results across commonsense reasoning, arithmetic reasoning, code generation, and safety alignment, as well as 4-bit/2-bit quantization settings.
+  [ICLR2026][Code Intelligence][PEFT] This paper proposes DiaBlo—a parameter-efficient fine-tuning method that replaces low-rank decomposition with diagonal block updates. The weight matrix is partitioned into $N \times N$…
 tags:
-  - ICLR2026
-  - PEFT
-  - diagonal blocks
-  - LoRA alternative
-  - LLM fine-tuning
-  - parameter efficiency
+  - "ICLR2026"
+  - "Code Intelligence"
+  - "PEFT"
+  - "diagonal blocks"
+  - "LoRA alternative"
+  - "LLM fine-tuning"
+  - "parameter efficiency"
 date: 2026-05-08
 content_hash: 6f301567ab92225e
 ---

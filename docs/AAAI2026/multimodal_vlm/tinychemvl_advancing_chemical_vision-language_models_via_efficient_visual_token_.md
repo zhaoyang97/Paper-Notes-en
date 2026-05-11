@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TinyChemVL: Advancing Chemical Vision-Language Models via Efficient Visual Token Reduction and Complex Reaction Tasks
 description: >-
-  [AAAI 2026][Multimodal VLM][Chemical VLM] TinyChemVL is a chemistry-domain VLM with only 4B parameters. It compresses visual tokens to 1/16 of the original count via an adaptive token merging and pruning strategy, introduces reaction-level tasks and the ChemRxn-V benchmark, and achieves state-of-the-art performance on both molecular- and reaction-level visual chemistry tasks while significantly improving inference and training speed.
+  [AAAI 2026][Multimodal VLM][Chemical VLM] TinyChemVL is a chemistry-domain VLM with only 4B parameters. It compresses visual tokens to 1/16 of the original count via an adaptive token merging and pruning strategy…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Chemical VLM
-  - visual token compression
-  - molecular recognition
-  - reaction prediction
-  - efficient inference with small models
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Chemical VLM"
+  - "visual token compression"
+  - "molecular recognition"
+  - "reaction prediction"
+  - "efficient inference with small models"
 date: 2026-05-08
 content_hash: 8d4ae52c851f159a
 ---

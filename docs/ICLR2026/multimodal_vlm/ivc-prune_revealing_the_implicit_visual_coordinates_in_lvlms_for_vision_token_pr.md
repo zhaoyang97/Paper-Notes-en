@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] IVC-Prune: Revealing the Implicit Visual Coordinates in LVLMs for Vision Token Pruning
 description: >-
-  [ICLR 2026][Multimodal VLM][vision token pruning] This paper reveals the implicit visual coordinate (IVC) system established by RoPE positional encoding within LVLMs, and proposes a training-free, prompt-aware vision token pruning strategy that preserves IVC tokens and semantic foreground tokens while pruning approximately 50% of visual tokens with ≥99% of original performance retained.
+  [ICLR 2026][Multimodal VLM][vision token pruning] This paper reveals the implicit visual coordinate (IVC) system established by RoPE positional encoding within LVLMs, and proposes a training-free…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - vision token pruning
-  - RoPE positional encoding
-  - implicit visual coordinates
-  - spatial reasoning
-  - training-free
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "vision token pruning"
+  - "RoPE positional encoding"
+  - "implicit visual coordinates"
+  - "spatial reasoning"
+  - "training-free"
 date: 2026-05-08
 content_hash: 348a95850624ecd0
 ---

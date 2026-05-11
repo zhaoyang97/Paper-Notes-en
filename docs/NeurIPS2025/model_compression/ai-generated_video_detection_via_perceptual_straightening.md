@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AI-Generated Video Detection via Perceptual Straightening
 description: >-
-  [NeurIPS 2025][Model Compression][AI-generated video detection] This paper proposes ReStraV, a method grounded in the perceptual straightening hypothesis—which posits that real videos form straighter trajectories in neural representation space—to detect AI-generated videos. Using temporal curvature and step-size statistics extracted from DINOv2 feature space, a lightweight classifier is trained to distinguish real from generated content, achieving 97.17% accuracy and 98.63% AUROC on VidProM with only ~48ms inference time.
+  [NeurIPS 2025][Model Compression][AI-generated video detection] This paper proposes ReStraV, a method grounded in the perceptual straightening hypothesis—which posits that real videos form straighter trajectories in neur…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - AI-generated video detection
-  - perceptual straightening
-  - DINOv2
-  - temporal curvature
-  - representation geometry
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "AI-generated video detection"
+  - "perceptual straightening"
+  - "DINOv2"
+  - "temporal curvature"
+  - "representation geometry"
 date: 2026-05-08
 content_hash: f288eeca16657513
 ---

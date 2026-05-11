@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] KVzip: Query-Agnostic KV Cache Compression with Context Reconstruction
 description: >-
-  [NeurIPS 2025 (Oral)][Model Compression][KV Cache Compression] This paper proposes KVzip, a query-agnostic KV cache eviction method that quantifies the importance of each KV pair by leveraging the LLM itself to reconstruct the original context from the cached KV pairs. KVzip achieves 3–4× KV cache compression and approximately 2× reduction in FlashAttention decoding latency, while significantly outperforming existing query-aware methods in multi-query scenarios.
+  [NeurIPS 2025 (Oral)][Model Compression][KV Cache Compression] This paper proposes KVzip, a query-agnostic KV cache eviction method that quantifies the importance of each KV pair by leveraging the LLM itself to reconstru…
 tags:
-  - NeurIPS 2025 (Oral)
-  - Model Compression
-  - KV Cache Compression
-  - Query-Agnostic
-  - Context Reconstruction
-  - Long-Context Inference
-  - Cache Reuse
+  - "NeurIPS 2025 (Oral)"
+  - "Model Compression"
+  - "KV Cache Compression"
+  - "Query-Agnostic"
+  - "Context Reconstruction"
+  - "Long-Context Inference"
+  - "Cache Reuse"
 date: 2026-05-08
 content_hash: 66f211aeb10d38d4
 ---

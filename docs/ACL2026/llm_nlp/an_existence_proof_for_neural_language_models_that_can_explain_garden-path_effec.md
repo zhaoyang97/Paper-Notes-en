@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] An Existence Proof for Neural Language Models That Can Explain Garden-Path Effects via Surprisal
 description: >-
-  [ACL 2026][LLM/NLP][surprisal theory] By fine-tuning neural language models on garden-path sentences, this paper demonstrates the existence of a neural LM that can simultaneously explain garden-path effects and naturalistic reading times via surprisal, providing an existence proof for surprisal theory.
+  [ACL 2026][LLM/NLP][surprisal theory] By fine-tuning neural language models on garden-path sentences, this paper demonstrates the existence of a neural LM that can simultaneously explain garden-path effects and naturalis…
 tags:
-  - ACL 2026
-  - LLM/NLP
-  - surprisal theory
-  - garden-path effects
-  - human reading times
-  - language model fine-tuning
-  - psycholinguistics
+  - "ACL 2026"
+  - "LLM/NLP"
+  - "surprisal theory"
+  - "garden-path effects"
+  - "human reading times"
+  - "language model fine-tuning"
+  - "psycholinguistics"
 date: 2026-05-08
 content_hash: f7deeabb282a630e
 ---

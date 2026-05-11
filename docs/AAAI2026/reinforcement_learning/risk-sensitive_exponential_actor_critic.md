@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Risk-Sensitive Exponential Actor Critic
 description: >-
-  [AAAI2026][Reinforcement Learning][risk-sensitive RL] To address the high variance and numerical instability of policy gradients under the entropic risk measure, this paper derives a complete set of on/off-policy risk-sensitive policy gradient theorems and proposes the rsEAC algorithm, which achieves stable risk-sensitive continuous control via log-domain critic parameterization and gradient normalization-clipping mechanisms.
+  [AAAI2026][Reinforcement Learning][risk-sensitive RL] To address the high variance and numerical instability of policy gradients under the entropic risk measure…
 tags:
-  - AAAI2026
-  - Reinforcement Learning
-  - risk-sensitive RL
-  - entropic risk measure
-  - policy gradient
-  - actor-critic
-  - numerical stability
+  - "AAAI2026"
+  - "Reinforcement Learning"
+  - "risk-sensitive RL"
+  - "entropic risk measure"
+  - "policy gradient"
+  - "actor-critic"
+  - "numerical stability"
 date: 2026-05-08
 content_hash: 96f93756ffb64a8f
 ---

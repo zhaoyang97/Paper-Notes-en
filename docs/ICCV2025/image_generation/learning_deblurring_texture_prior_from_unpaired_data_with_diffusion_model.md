@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Deblurring Texture Prior from Unpaired Data with Diffusion Model
 description: >-
-  [ICCV 2025][Image Generation][Unsupervised deblurring] TP-Diff is the first work to introduce diffusion models into unpaired image deblurring. It learns spatially varying texture priors via a memory-augmented Texture Prior Encoder (TPE), and designs a Filter-Modulated Multi-head Self-Attention (FM-MSA) to leverage these priors for precise deblurring, achieving a new unsupervised state-of-the-art on multiple benchmarks with only 11.89M parameters.
+  [ICCV 2025][Image Generation][Unsupervised deblurring] TP-Diff is the first work to introduce diffusion models into unpaired image deblurring. It learns spatially varying texture priors via a memory-augmented Texture Pri…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Unsupervised deblurring
-  - diffusion model
-  - texture prior
-  - unpaired training
-  - adaptive filtering
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Unsupervised deblurring"
+  - "diffusion model"
+  - "texture prior"
+  - "unpaired training"
+  - "adaptive filtering"
 date: 2026-05-08
 content_hash: 9fbb2c1cede6d5d3
 ---

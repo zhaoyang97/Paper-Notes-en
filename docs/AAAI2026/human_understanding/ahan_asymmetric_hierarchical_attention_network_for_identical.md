@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AHAN: Asymmetric Hierarchical Attention Network for Identical Twin Face Verification
 description: >-
-  [AAAI 2026][Human Understanding][Identical twin verification] To address the extreme fine-grained recognition challenge of identical twin face verification, this paper proposes AHAN, a multi-stream architecture that performs multi-scale analysis of semantic facial regions via Hierarchical Cross-Attention (HCA), captures left-right facial asymmetry signatures through a Facial Asymmetry Attention Module (FAAM), and incorporates Twin-Aware Pair-Wise Cross-Attention (TA-PWCA) as a training regularizer. On the ND_TWIN dataset, AHAN improves twin verification accuracy from 88.9% to 92.3% (+3.4%).
+  [AAAI 2026][Human Understanding][Identical twin verification] To address the extreme fine-grained recognition challenge of identical twin face verification, this paper proposes AHAN…
 tags:
-  - AAAI 2026
-  - Human Understanding
-  - Identical twin verification
-  - facial asymmetry
-  - hierarchical cross-attention
-  - fine-grained face recognition
-  - Vision Transformer
+  - "AAAI 2026"
+  - "Human Understanding"
+  - "Identical twin verification"
+  - "facial asymmetry"
+  - "hierarchical cross-attention"
+  - "fine-grained face recognition"
+  - "Vision Transformer"
 date: 2026-05-08
 content_hash: fb692302f4ccd063
 ---

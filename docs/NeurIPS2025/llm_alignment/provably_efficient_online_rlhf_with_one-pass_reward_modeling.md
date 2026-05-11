@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Provably Efficient Online RLHF with One-Pass Reward Modeling
 description: >-
-  [NeurIPS 2025][LLM Alignment][online RLHF] This paper proposes a one-pass reward modeling method based on online mirror descent (OMD) that eliminates the computational bottleneck in online RLHF — namely, storing all historical data and re-optimizing from scratch at each iteration — achieving $\mathcal{O}(1)$ time and memory complexity per iteration while also improving upon MLE methods in statistical efficiency.
+  [NeurIPS 2025][LLM Alignment][online RLHF] This paper proposes a one-pass reward modeling method based on online mirror descent (OMD) that eliminates the computational bottleneck in online RLHF — namely…
 tags:
-  - NeurIPS 2025
-  - LLM Alignment
-  - online RLHF
-  - reward modeling
-  - online mirror descent
-  - contextual dueling bandit
-  - computational efficiency
+  - "NeurIPS 2025"
+  - "LLM Alignment"
+  - "online RLHF"
+  - "reward modeling"
+  - "online mirror descent"
+  - "contextual dueling bandit"
+  - "computational efficiency"
 date: 2026-05-08
 content_hash: d608cbd6f5846cd8
 ---

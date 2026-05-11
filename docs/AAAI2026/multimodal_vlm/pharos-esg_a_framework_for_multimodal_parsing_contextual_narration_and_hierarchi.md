@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Pharos-ESG: A Framework for Multimodal Parsing, Contextual Narration, and Hierarchical Labeling of ESG Reports
 description: >-
-  [AAAI 2026][Multimodal VLM][ESG report parsing] This paper proposes Pharos-ESG, a unified framework for structured parsing of ESG reports via four core modules: layout-flow-based reading order modeling, table-of-contents (ToC) anchor-guided hierarchical reconstruction, context-aware multimodal image-to-text conversion, and multi-level financial label prediction. The framework achieves an F1 of 93.59, ROKT of 0.92, and TBTA of 92.46% in comprehensive evaluation, substantially outperforming baselines such as MinerU, GPT-4o, and Gemini 2.5 Pro. The authors also release Aurora-ESG, the first large-scale public ESG report dataset comprising over 24K reports.
+  [AAAI 2026][Multimodal VLM][ESG report parsing] This paper proposes Pharos-ESG, a unified framework for structured parsing of ESG reports via four core modules: layout-flow-based reading order modeling…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - ESG report parsing
-  - document understanding
-  - reading order modeling
-  - hierarchical structure reconstruction
-  - multi-level label prediction
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "ESG report parsing"
+  - "document understanding"
+  - "reading order modeling"
+  - "hierarchical structure reconstruction"
+  - "multi-level label prediction"
 date: 2026-05-08
 content_hash: 261b851412ba2ae6
 ---

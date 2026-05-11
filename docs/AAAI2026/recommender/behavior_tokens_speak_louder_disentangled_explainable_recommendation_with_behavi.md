@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Behavior Tokens Speak Louder: Disentangled Explainable Recommendation with Behavior Vocabulary
 description: >-
-  [AAAI2026][Recommender Systems][Explainable Recommendation] This paper proposes BEAT, a framework that discretizes user/item behavior representations into interpretable behavior tokens via vector-quantized autoencoders, and aligns collaborative filtering signals to the semantic space of a frozen LLM through multi-level semantic supervision, enabling zero-shot explainable recommendation.
+  [AAAI2026][Recommender Systems][Explainable Recommendation] This paper proposes BEAT, a framework that discretizes user/item behavior representations into interpretable behavior tokens via vector-quantized autoencoders…
 tags:
-  - AAAI2026
-  - Recommender Systems
-  - Explainable Recommendation
-  - Behavior Tokenization
-  - VQ-VAE
-  - LLM
-  - Disentangled Representation
+  - "AAAI2026"
+  - "Recommender Systems"
+  - "Explainable Recommendation"
+  - "Behavior Tokenization"
+  - "VQ-VAE"
+  - "LLM"
+  - "Disentangled Representation"
 date: 2026-05-08
 content_hash: 1f0c9ce5f926d6f7
 ---

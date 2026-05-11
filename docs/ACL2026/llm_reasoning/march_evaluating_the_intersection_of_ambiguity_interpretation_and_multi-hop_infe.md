@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MARCH: Evaluating the Intersection of Ambiguity Interpretation and Multi-hop Inference
 description: >-
-  [ACL 2026][LLM Reasoning][multi-hop reasoning] This paper introduces the MARCH benchmark (2,209 multi-hop ambiguous questions) and the CLARION framework, presenting the first systematic study of QA challenges at the intersection of ambiguity interpretation and multi-step reasoning, and revealing severe deficiencies in existing SOTA models on such problems.
+  [ACL 2026][LLM Reasoning][multi-hop reasoning] This paper introduces the MARCH benchmark (2,209 multi-hop ambiguous questions) and the CLARION framework…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - multi-hop reasoning
-  - ambiguity resolution
-  - benchmark construction
-  - layered uncertainty
-  - agent framework
+  - "ACL 2026"
+  - "LLM Reasoning"
+  - "multi-hop reasoning"
+  - "ambiguity resolution"
+  - "benchmark construction"
+  - "layered uncertainty"
+  - "agent framework"
 date: 2026-05-08
 content_hash: 6d3a07e3ce322f29
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DenseGRPO: From Sparse to Dense Reward for Flow Matching Model Alignment
 description: >-
-  [ICLR 2026][Image Generation][GRPO] This paper addresses the sparse reward problem in Flow Matching + GRPO alignment by estimating step-wise reward gains as dense rewards via ODE denoising rollouts of intermediate latents, and adaptively calibrating per-timestep noise injection in the SDE sampler based on dense rewards to regulate exploration. The method outperforms Flow-GRPO on three tasks: human preference alignment, compositional generation, and text rendering.
+  [ICLR 2026][Image Generation][GRPO] This paper addresses the sparse reward problem in Flow Matching + GRPO alignment by estimating step-wise reward gains as dense rewards via ODE denoising rollouts of intermediate latent…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - GRPO
-  - dense reward
-  - flow matching
-  - human preference alignment
-  - exploration calibration
+  - "ICLR 2026"
+  - "Image Generation"
+  - "GRPO"
+  - "dense reward"
+  - "flow matching"
+  - "human preference alignment"
+  - "exploration calibration"
 date: 2026-05-08
 content_hash: 9b6c2957d01518fd
 ---

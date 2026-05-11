@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Quiet Feature Learning in Algorithmic Tasks
 description: >-
-  [AAAI 2026][Phase transition] Across 10 algorithmic tasks (18,544 training runs, $10^9$–$10^{16}$ FLOPs), this work demonstrates that loss plateaus in Transformer training do not indicate stalled learning. During these plateaus, models quietly acquire "quiet features"—intermediate algorithmic subroutines that do not directly reduce output loss yet are causally necessary for final performance (ablating them reduces accuracy by 41–75%). This challenges the common practice of using loss curves to assess training progress.
+  [AAAI 2026][Interpretability][Phase transition] Across 10 algorithmic tasks (18,544 training runs, $10^9$–$10^{16}$ FLOPs), this work demonstrates that loss plateaus in Transformer training do not indicate stalled learni…
 tags:
-  - AAAI 2026
-  - Phase transition
-  - implicit features
-  - algorithmic tasks
-  - loss plateau
-  - Grokking
+  - "AAAI 2026"
+  - "Interpretability"
+  - "Phase transition"
+  - "implicit features"
+  - "algorithmic tasks"
+  - "loss plateau"
+  - "Grokking"
 date: 2026-05-08
 content_hash: dcd14a6eddf55f11
 ---

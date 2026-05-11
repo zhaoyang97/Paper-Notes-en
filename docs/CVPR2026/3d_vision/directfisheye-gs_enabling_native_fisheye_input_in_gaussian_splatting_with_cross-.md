@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DirectFisheye-GS: Enabling Native Fisheye Input in Gaussian Splatting with Cross-View Joint Optimization
 description: >-
-  [CVPR 2026][3D Vision][3D Gaussian Splatting] This paper natively integrates the Kannala-Brandt fisheye projection model into the 3DGS pipeline and proposes a cross-view joint optimization strategy based on feature overlap, eliminating the information loss caused by pre-undistortion and achieving state-of-the-art performance on multiple public benchmarks.
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] This paper natively integrates the Kannala-Brandt fisheye projection model into the 3DGS pipeline and proposes a cross-view joint optimization strategy based on feature overl…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - fisheye camera
-  - cross-view joint optimization
-  - novel view synthesis
-  - Kannala-Brandt model
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "fisheye camera"
+  - "cross-view joint optimization"
+  - "novel view synthesis"
+  - "Kannala-Brandt model"
 date: 2026-05-08
 content_hash: fa7e4f4de1c5cb34
 ---

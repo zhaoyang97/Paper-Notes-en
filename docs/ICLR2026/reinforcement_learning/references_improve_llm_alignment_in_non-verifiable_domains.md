@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] References Improve LLM Alignment in Non-Verifiable Domains
 description: >-
-  [ICLR 2026][Reinforcement Learning][Reference-guided evaluation] This paper proposes RefEval, a reference-guided LLM-as-Judge framework that uses high-quality reference outputs as "soft verifiers," improving LLM-judge accuracy by 6.8%. Building on this, the authors design a two-stage self-improvement pipeline (SFT distillation + reference-guided DPO) that outperforms SFT distillation alone by +19.2/+16.5 on AlpacaEval/Arena-Hard, matching the performance of the fine-tuned reward model ArmoRM — demonstrating that effective LLM alignment in non-verifiable domains is achievable without human preference annotation.
+  [ICLR 2026][Reinforcement Learning][Reference-guided evaluation] This paper proposes RefEval, a reference-guided LLM-as-Judge framework that uses high-quality reference outputs as "soft verifiers…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Reference-guided evaluation
-  - non-verifiable domains
-  - LLM-as-Judge
-  - self-improvement
-  - DPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Reference-guided evaluation"
+  - "non-verifiable domains"
+  - "LLM-as-Judge"
+  - "self-improvement"
+  - "DPO"
 date: 2026-05-08
 content_hash: d42a172fdf3fef28
 ---

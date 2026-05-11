@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VTinker: Guided Flow Upsampling and Texture Mapping for High-Resolution Video Frame Interpolation
 description: >-
-  [AAAI 2026][Video Understanding][Video Frame Interpolation] VTinker is a pipeline that addresses blurry optical flow boundaries via Guided Flow Upsampling (GFU) and eliminates ghosting and discontinuities by replacing conventional per-pixel blending with texture mapping, achieving state-of-the-art performance in high-resolution video frame interpolation.
+  [AAAI 2026][Video Understanding][Video Frame Interpolation] VTinker is a pipeline that addresses blurry optical flow boundaries via Guided Flow Upsampling (GFU) and eliminates ghosting and discontinuities by replacing co…
 tags:
-  - AAAI 2026
-  - Video Understanding
-  - Video Frame Interpolation
-  - Optical Flow Upsampling
-  - Texture Mapping
-  - High-Resolution Video
-  - Motion Estimation
+  - "AAAI 2026"
+  - "Video Understanding"
+  - "Video Frame Interpolation"
+  - "Optical Flow Upsampling"
+  - "Texture Mapping"
+  - "High-Resolution Video"
+  - "Motion Estimation"
 date: 2026-05-08
 content_hash: 704f687f21f62bbf
 ---

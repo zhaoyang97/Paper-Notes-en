@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Bridging Degradation Discrimination and Generation for Universal Image Restoration
 description: >-
-  [ICLR 2026][Image Generation][universal image restoration] BDG performs fine-grained degradation discrimination via multi-angle multi-scale gray-level co-occurrence matrices (MAS-GLCM), and designs a three-stage diffusion training pipeline (generation → bridging → restoration) to seamlessly integrate degradation discrimination with generative priors, achieving significant fidelity improvements on all-in-one restoration and real-world super-resolution tasks.
+  [ICLR 2026][Image Generation][universal image restoration] BDG performs fine-grained degradation discrimination via multi-angle multi-scale gray-level co-occurrence matrices (MAS-GLCM)…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - universal image restoration
-  - GLCM degradation representation
-  - diffusion model
-  - three-stage training
-  - all-in-one restoration
+  - "ICLR 2026"
+  - "Image Generation"
+  - "universal image restoration"
+  - "GLCM degradation representation"
+  - "diffusion model"
+  - "three-stage training"
+  - "all-in-one restoration"
 date: 2026-05-08
 content_hash: 83208fdb2a99ce23
 ---

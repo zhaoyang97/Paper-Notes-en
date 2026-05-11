@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Rectifying Soft-Label Entangled Bias in Long-Tailed Dataset Distillation
 description: >-
-  [NeurIPS 2025][Model Compression][Dataset Distillation] This paper identifies a dual entangled bias in soft labels within long-tailed dataset distillation — originating from both the distillation model and the distilled images — and proposes ADSA, an Adaptive Soft-label Alignment module that eliminates this bias via post-hoc calibration in logit space. As a plug-and-play module, ADSA integrates seamlessly into existing distillation pipelines, achieving up to 11.8% accuracy improvement on tail classes on ImageNet-1k-LT.
+  [NeurIPS 2025][Model Compression][Dataset Distillation] This paper identifies a dual entangled bias in soft labels within long-tailed dataset distillation — originating from both the distillation model and the distilled…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Dataset Distillation
-  - Long-Tailed Distribution
-  - Soft Label Calibration
-  - Generalization Bound
-  - Logit Adjustment
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Dataset Distillation"
+  - "Long-Tailed Distribution"
+  - "Soft Label Calibration"
+  - "Generalization Bound"
+  - "Logit Adjustment"
 date: 2026-05-08
 content_hash: 92741eaadb448542
 ---

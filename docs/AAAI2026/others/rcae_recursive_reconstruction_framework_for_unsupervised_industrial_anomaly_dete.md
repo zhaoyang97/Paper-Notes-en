@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] RcAE: Recursive Reconstruction Framework for Unsupervised Industrial Anomaly Detection
 description: >-
-  [AAAI 2026][anomaly detection] This paper proposes a Recursive Convolutional Autoencoder (RcAE) that progressively suppresses anomalies while preserving normal details through multi-step iterative reconstruction with shared parameters. Combined with a Cross-Recursive Detection module (CRD) that exploits multi-step reconstruction dynamics for robust anomaly localization, the method achieves performance comparable to state-of-the-art approaches using only 10% of the parameters required by diffusion models.
+  [AAAI 2026][anomaly detection] This paper proposes a Recursive Convolutional Autoencoder (RcAE) that progressively suppresses anomalies while preserving normal details through multi-step iterative reconstruction with sha…
 tags:
-  - AAAI 2026
-  - anomaly detection
-  - autoencoder
-  - recursive reconstruction
-  - industrial defect detection
-  - unsupervised learning
+  - "AAAI 2026"
+  - "anomaly detection"
+  - "autoencoder"
+  - "recursive reconstruction"
+  - "industrial defect detection"
+  - "unsupervised learning"
 date: 2026-05-08
 content_hash: 88e39b784a417e67
 ---

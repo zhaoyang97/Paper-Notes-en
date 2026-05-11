@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] 3D Gaussian Splatting with Self-Constrained Priors for High Fidelity Surface Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][3D Gaussian Splatting] This paper proposes Self-Constrained Priors (SCP), which construct a TSDF distance field by fusing depth maps rendered from the current 3D Gaussians. This field serves as a prior to impose geometry-aware constraints on Gaussians (outlier removal, opacity constraint, and surface attraction), enabling high-fidelity surface reconstruction that achieves state-of-the-art performance on NeRF-Synthetic and DTU benchmarks.
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] This paper proposes Self-Constrained Priors (SCP), which construct a TSDF distance field by fusing depth maps rendered from the current 3D Gaussians. This field serves as a p…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - Surface Reconstruction
-  - TSDF
-  - Self-Constrained Prior
-  - Geometric Constraint
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Surface Reconstruction"
+  - "TSDF"
+  - "Self-Constrained Prior"
+  - "Geometric Constraint"
 date: 2026-05-08
 content_hash: a6c4fc2e7141d2e3
 ---

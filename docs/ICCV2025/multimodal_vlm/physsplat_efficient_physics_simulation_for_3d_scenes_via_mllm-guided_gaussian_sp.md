@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PhysSplat: Efficient Physics Simulation for 3D Scenes via MLLM-Guided Gaussian Splatting
 description: >-
-  [ICCV 2025][Multimodal VLM][Physics Simulation] This paper proposes PhysSplat, the first approach to leverage multimodal large language models (MLLMs) for zero-shot estimation of physical properties of objects in 3D scenes. Combined with a physics-geometry adaptive sampling strategy, it achieves realistic physics simulation on a single GPU within 2 minutes.
+  [ICCV 2025][Multimodal VLM][Physics Simulation] This paper proposes PhysSplat, the first approach to leverage multimodal large language models (MLLMs) for zero-shot estimation of physical properties of objects in 3D scen…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Physics Simulation
-  - 3D Gaussian Splatting
-  - MLLM
-  - Physical Property Estimation
-  - MPM
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Physics Simulation"
+  - "3D Gaussian Splatting"
+  - "MLLM"
+  - "Physical Property Estimation"
+  - "MPM"
 date: 2026-05-08
 content_hash: b2738ca9a9d9217d
 ---

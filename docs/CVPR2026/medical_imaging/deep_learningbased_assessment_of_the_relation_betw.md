@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Deep Learning-based Assessment of the Relation Between the Third Molar and Mandibular Canal on Panoramic Radiographs using Local, Centralized, and Federated Learning
 description: >-
-  [CVPR 2026][Medical Imaging][Federated Learning] This work systematically compares three training paradigms—local learning (LL), federated learning (FL), and centralized learning (CL)—on cropped panoramic dental radiographs partitioned by 8 independent annotators, targeting a binary classification task of third molar–mandibular canal overlap. The study establishes a consistent performance ranking of CL > FL > LL (AUC: 0.831, 0.757, and 0.672, respectively), demonstrating that FL substantially outperforms site-independent training while preserving data privacy.
+  [CVPR 2026][Medical Imaging][Federated Learning] This work systematically compares three training paradigms—local learning (LL), federated learning (FL)…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Federated Learning
-  - Panoramic Radiograph
-  - Third Molar
-  - Mandibular Canal
-  - Privacy Preservation
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Federated Learning"
+  - "Panoramic Radiograph"
+  - "Third Molar"
+  - "Mandibular Canal"
+  - "Privacy Preservation"
 date: 2026-05-08
 content_hash: d0a73b091a180e56
 ---

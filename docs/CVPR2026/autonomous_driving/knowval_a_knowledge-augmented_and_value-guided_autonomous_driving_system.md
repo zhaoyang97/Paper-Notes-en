@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] KnowVal: A Knowledge-Augmented and Value-Guided Autonomous Driving System
 description: >-
-  [CVPR 2026][Autonomous Driving][end-to-end driving] KnowVal is an end-to-end autonomous driving system that addresses two fundamental deficiencies—knowledge reasoning and value alignment—through three core components: (1) Retrieval-guided Open-world Perception, which integrates standard 3D detection, VL-SAMv2-based long-tail object recognition, and VLM-based scene understanding; (2) Perception-guided Knowledge Retrieval, which queries a driving knowledge graph covering traffic regulations, defensive driving, and ethical norms; and (3) a World Model for future state prediction combined with a human-preference-trained Value Model for trajectory evaluation. The system achieves the lowest collision rate on nuScenes and state-of-the-art performance on Bench2Drive and NVISIM.
+  [CVPR 2026][Autonomous Driving][end-to-end driving] KnowVal is an end-to-end autonomous driving system that addresses two fundamental deficiencies—knowledge reasoning and value alignment—through three core components: (1…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - end-to-end driving
-  - knowledge graph
-  - value model
-  - world model
-  - open-world perception
-  - VLM
-  - retrieval-augmented planning
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "end-to-end driving"
+  - "knowledge graph"
+  - "value model"
+  - "world model"
+  - "open-world perception"
+  - "VLM"
+  - "retrieval-augmented planning"
 date: 2026-05-08
 content_hash: f0dc260b45c95cce
 ---

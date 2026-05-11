@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SPDMark: Selective Parameter Displacement for Robust Video Watermarking
 description: >-
-  [CVPR 2026][Image Generation][Video watermarking] SPDMark proposes a video diffusion model watermarking framework based on Selective Parameter Displacement (SPD). By learning a low-rank basis shift dictionary in the decoder and selecting combinations according to the watermark key, it achieves per-frame watermark embedding with imperceptibility, high robustness, and low computational overhead, while supporting temporal tampering detection and localization.
+  [CVPR 2026][Image Generation][Video watermarking] SPDMark proposes a video diffusion model watermarking framework based on Selective Parameter Displacement (SPD). By learning a low-rank basis shift dictionary in the deco…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Video watermarking
-  - parameter displacement
-  - LoRA
-  - diffusion models
-  - robustness
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Video watermarking"
+  - "parameter displacement"
+  - "LoRA"
+  - "diffusion models"
+  - "robustness"
 date: 2026-05-08
 content_hash: da941b9a8e9f8b82
 ---

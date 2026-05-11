@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SPAN: Spatial-Projection Alignment for Monocular 3D Object Detection
 description: >-
-  [CVPR 2026][Object Detection][Monocular 3D Detection] This paper proposes Spatial-Projection Alignment (SPAN), which improves the localization accuracy of arbitrary monocular 3D detectors through two geometrically synergistic constraints — 3D corner spatial alignment and 3D-to-2D projection alignment — coupled with a hierarchical task learning strategy, serving as a plug-and-play module.
+  [CVPR 2026][Object Detection][Monocular 3D Detection] This paper proposes Spatial-Projection Alignment (SPAN), which improves the localization accuracy of arbitrary monocular 3D detectors through two geometrically synerg…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - Monocular 3D Detection
-  - Geometric Consistency
-  - Spatial Alignment
-  - Projection Constraints
-  - Plug-and-Play
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Monocular 3D Detection"
+  - "Geometric Consistency"
+  - "Spatial Alignment"
+  - "Projection Constraints"
+  - "Plug-and-Play"
 date: 2026-05-08
 content_hash: 9d0e4a13f3fe99f3
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Rethinking Multimodal Learning from the Perspective of Mitigating Classification Ability Disproportion
 description: >-
-  [NeurIPS 2025][Multimodal VLM][modality imbalance] This paper proposes a **classification ability disproportion** perspective to understand modality imbalance in multimodal learning, and designs a Sustained Boosting algorithm (shared encoder + multiple configurable classifiers, jointly optimizing classification and residual errors) coupled with Adaptive Classifier Assignment (ACA). The paper theoretically proves that the cross-modal gap loss converges at $\mathcal{O}(1/T)$, and achieves substantial improvements over SOTA on six datasets including CREMAD.
+  [NeurIPS 2025][Multimodal VLM][modality imbalance] This paper proposes a **classification ability disproportion** perspective to understand modality imbalance in multimodal learning…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - modality imbalance
-  - classification ability disproportion
-  - sustained boosting
-  - adaptive classifier assignment
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "modality imbalance"
+  - "classification ability disproportion"
+  - "sustained boosting"
+  - "adaptive classifier assignment"
 date: 2026-05-08
 content_hash: 268a1f9663c9c44e
 ---

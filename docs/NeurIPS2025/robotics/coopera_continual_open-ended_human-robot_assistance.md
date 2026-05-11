@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] C-NAV: Towards Self-Evolving Continual Object Navigation in Open World
 description: >-
-  [NeurIPS 2025][Robotics][Continual Learning] This paper proposes C-Nav, a continual object navigation framework that employs a **dual-path anti-forgetting mechanism** (feature distillation + feature replay) and **LOF-based adaptive experience selection** to enable navigation agents to incrementally learn new object categories while effectively mitigating catastrophic forgetting. C-Nav surpasses full data replay baselines across 4 mainstream architectures and 2 datasets.
+  [NeurIPS 2025][Robotics][Continual Learning] This paper proposes C-Nav, a continual object navigation framework that employs a **dual-path anti-forgetting mechanism** (feature distillation + feature replay) and **LOF-bas…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - Continual Learning
-  - Object Navigation
-  - Catastrophic Forgetting
-  - Feature Distillation
-  - Feature Replay
-  - LOF
-  - Embodied Agents
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "Continual Learning"
+  - "Object Navigation"
+  - "Catastrophic Forgetting"
+  - "Feature Distillation"
+  - "Feature Replay"
+  - "LOF"
+  - "Embodied Agents"
 date: 2026-05-08
 content_hash: 3496654f31b3dcd2
 ---

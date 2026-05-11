@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Hierarchical Reinforcement Learning with Augmented Step-Level Transitions for LLM Agents
 description: >-
-  [ACL 2026][LLM Agent][Hierarchical Reinforcement Learning] This paper proposes STEP-HRL, which introduces a local progress module to iteratively compress interaction history within each subtask into compact textual summaries, enabling both high-level and low-level policies to make decisions based solely on single-step transitions rather than full histories. The approach achieves significant performance and generalization gains on ScienceWorld and ALFWorld while reducing token usage.
+  [ACL 2026][LLM Agent][Hierarchical Reinforcement Learning] This paper proposes STEP-HRL, which introduces a local progress module to iteratively compress interaction history within each subtask into compact textual summa…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - Hierarchical Reinforcement Learning
-  - Step-Level Transitions
-  - Local Progress
-  - Token Efficiency
-  - Offline RL
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Hierarchical Reinforcement Learning"
+  - "Step-Level Transitions"
+  - "Local Progress"
+  - "Token Efficiency"
+  - "Offline RL"
 date: 2026-05-08
 content_hash: c5bd44624b4a9c1b
 ---

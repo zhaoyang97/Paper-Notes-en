@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FASA: Frequency-Aware Sparse Attention
 description: >-
-  [ICLR 2026][Signal & Communication][KV cache compression] This paper identifies functional sparsity at the frequency component (FC) level within RoPE—a small subset of "dominant FCs" can effectively predict token importance. Based on this finding, the paper proposes the FASA framework, which achieves training-free KV cache compression via two stages: dominant-FC-based token importance prediction and focused attention computation. On LongBench, retaining only 256 tokens approaches 100% of full-KV performance; on AIME24, FASA achieves a 2.56× speedup using only 18.9% of the KV cache.
+  [ICLR 2026][Signal & Communication][KV cache compression] This paper identifies functional sparsity at the frequency component (FC) level within RoPE—a small subset of "dominant FCs" can effectively predict token importa…
 tags:
-  - ICLR 2026
+  - "ICLR 2026"
   - "Signal & Communication"
-  - KV cache compression
-  - sparse attention
-  - RoPE frequency analysis
-  - token pruning
-  - long-context inference
+  - "KV cache compression"
+  - "sparse attention"
+  - "RoPE frequency analysis"
+  - "token pruning"
+  - "long-context inference"
 date: 2026-05-08
 content_hash: 76580a8edc7c7c0a
 ---

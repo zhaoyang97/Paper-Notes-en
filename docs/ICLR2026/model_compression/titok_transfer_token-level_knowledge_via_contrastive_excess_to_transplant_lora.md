@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TiTok: Transfer Token-level Knowledge via Contrastive Excess to Transplant LoRA
 description: >-
-  [ICLR 2026][Model Compression][LoRA Transfer] This paper proposes TiTok, a framework that enables efficient cross-model transfer of LoRA adapters via token-level contrastive excess scores, without requiring an auxiliary discriminator model. TiTok consistently outperforms TransLoRA and knowledge distillation baselines on reasoning and personalization tasks.
+  [ICLR 2026][Model Compression][LoRA Transfer] This paper proposes TiTok, a framework that enables efficient cross-model transfer of LoRA adapters via token-level contrastive excess scores…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - LoRA Transfer
-  - Knowledge Distillation
-  - Token-level Selection
-  - Parameter-Efficient Fine-Tuning
-  - Contrastive Excess Score
+  - "ICLR 2026"
+  - "Model Compression"
+  - "LoRA Transfer"
+  - "Knowledge Distillation"
+  - "Token-level Selection"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Contrastive Excess Score"
 date: 2026-05-08
 content_hash: 6a4a649f0e584a8e
 ---

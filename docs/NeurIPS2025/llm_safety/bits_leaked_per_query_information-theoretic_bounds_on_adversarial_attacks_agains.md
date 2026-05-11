@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Bits Leaked per Query: Information-Theoretic Bounds on Adversarial Attacks Against LLMs
 description: >-
-  [NeurIPS 2025][LLM Safety][information leakage] This paper models adversarial attacks on LLMs as an information channel problem — defining the "bits leaked per query" $I(Z;T)$ as the mutual information between the attack target attribute $T$ and the observable signal $Z$, and proving that the minimum number of queries required to achieve error $\varepsilon$ is $\log(1/\varepsilon)/I(Z;T)$. Validated across 7 LLMs: exposing only answer tokens requires ~1000 queries; adding logits reduces this to ~100; adding chain-of-thought (CoT) further reduces it to ~tens of queries. This provides the first principled metric for the transparency–security trade-off.
+  [NeurIPS 2025][LLM Safety][information leakage] This paper models adversarial attacks on LLMs as an information channel problem — defining the "bits leaked per query" $I(Z…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - information leakage
-  - adversarial attacks
-  - LLM security
-  - query complexity lower bounds
-  - information channel model
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "information leakage"
+  - "adversarial attacks"
+  - "LLM security"
+  - "query complexity lower bounds"
+  - "information channel model"
 date: 2026-05-08
 content_hash: 203275b260b051f2
 ---

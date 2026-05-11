@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Greedy Algorithm for Structured Bandits: A Sharp Characterization of Asymptotic Success / Failure
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][structured bandits] This paper provides a complete theoretical characterization of the greedy algorithm in structured bandit problems, proposing *self-identifiability* as a necessary and sufficient condition for the greedy algorithm to achieve sublinear regret, and extends the results to contextual bandits and the general interactive decision-making framework DMSO.
+  [NeurIPS 2025][Reinforcement Learning][structured bandits] This paper provides a complete theoretical characterization of the greedy algorithm in structured bandit problems…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - structured bandits
-  - greedy algorithm
-  - regret
-  - self-identifiability
-  - contextual bandits
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "structured bandits"
+  - "greedy algorithm"
+  - "regret"
+  - "self-identifiability"
+  - "contextual bandits"
 date: 2026-05-08
 content_hash: c56880dbe5b79be2
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Look and Tell: A Dataset for Multimodal Grounding Across Egocentric and Exocentric Views
 description: >-
-  [NeurIPS 2025][3D Vision][Multimodal grounding] Look and Tell introduces a multimodal dataset that synchronously captures gaze, speech, and dual-view video from 25 participants in a kitchen environment using Meta Aria smart glasses and a fixed GoPro camera. Combined with 3D scene reconstruction and a multi-level annotation pipeline, it provides the first benchmark for studying referential communication across egocentric and exocentric perspectives.
+  [NeurIPS 2025][3D Vision][Multimodal grounding] Look and Tell introduces a multimodal dataset that synchronously captures gaze, speech…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Multimodal grounding
-  - egocentric/exocentric views
-  - gaze tracking
-  - referential communication
-  - spatial intelligence
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Multimodal grounding"
+  - "egocentric/exocentric views"
+  - "gaze tracking"
+  - "referential communication"
+  - "spatial intelligence"
 date: 2026-05-08
 content_hash: 843eff9871e317e7
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] ReCode: Updating Code API Knowledge with Reinforcement Learning
 description: >-
-  [AAAI 2026][Code Generation] This paper proposes ReCode, a framework that trains LLMs via rule-based reinforcement learning (rather than SFT) to correctly leverage API update documentation provided in the prompt for code version migration, enabling a 7B model to surpass 32B models on CodeUpdateArena.
+  [AAAI 2026][Code Intelligence][Code Generation] This paper proposes ReCode, a framework that trains LLMs via rule-based reinforcement learning (rather than SFT) to correctly leverage API update documentation provided in…
 tags:
-  - AAAI 2026
-  - Code Generation
-  - API Update
-  - Reinforcement Learning
-  - GRPO
-  - Version Migration
+  - "AAAI 2026"
+  - "Code Intelligence"
+  - "Code Generation"
+  - "API Update"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "Version Migration"
 date: 2026-05-08
 content_hash: 76f8608a684fb891
 ---

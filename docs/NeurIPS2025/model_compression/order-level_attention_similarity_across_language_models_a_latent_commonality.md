@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Order-Level Attention Similarity Across Language Models: A Latent Commonality
 description: >-
-  [NeurIPS 2025][Model Compression][Attention Mechanism] This paper proposes Order-Level Attention (OLA)—an order-wise decomposition of Attention Rollout—and discovers that different language models exhibit significant similarity in same-order OLA (OLAS). OLA is shown to implicitly encode syntactic knowledge, and based on this finding, the paper proposes TOA, the first training-free cross-LM adapter transfer method.
+  [NeurIPS 2025][Model Compression][Attention Mechanism] This paper proposes Order-Level Attention (OLA)—an order-wise decomposition of Attention Rollout—and discovers that different language models exhibit significant sim…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Attention Mechanism
-  - Language Model Similarity
-  - Cross-Model Transfer
-  - Syntactic Knowledge
-  - Training-Free Adapter
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Attention Mechanism"
+  - "Language Model Similarity"
+  - "Cross-Model Transfer"
+  - "Syntactic Knowledge"
+  - "Training-Free Adapter"
 date: 2026-05-08
 content_hash: 8239a6249570af74
 ---

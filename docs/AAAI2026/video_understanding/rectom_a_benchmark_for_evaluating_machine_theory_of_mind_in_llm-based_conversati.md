@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RecToM: A Benchmark for Evaluating Machine Theory of Mind in LLM-based Conversational Recommender Systems
 description: >-
-  [AAAI 2026][Video Understanding][Theory of Mind] This paper introduces RecToM, the first human-annotated benchmark for evaluating Theory of Mind (ToM) reasoning capabilities of LLMs in conversational recommender systems (CRS). It covers two dimensions—cognitive inference (desire/intention/belief) and behavioral prediction (strategy prediction/strategy judgment)—comprising 10 question types and 20,524 QA pairs, and exposes systematic deficiencies of current LLMs in fine-grained intention inference and strategy judgment.
+  [AAAI 2026][Video Understanding][Theory of Mind] This paper introduces RecToM, the first human-annotated benchmark for evaluating Theory of Mind (ToM) reasoning capabilities of LLMs in conversational recommender systems…
 tags:
-  - AAAI 2026
-  - Video Understanding
-  - Theory of Mind
-  - Conversational Recommender Systems
-  - LLM Evaluation
-  - Cognitive Reasoning
-  - Behavioral Prediction
+  - "AAAI 2026"
+  - "Video Understanding"
+  - "Theory of Mind"
+  - "Conversational Recommender Systems"
+  - "LLM Evaluation"
+  - "Cognitive Reasoning"
+  - "Behavioral Prediction"
 date: 2026-05-08
 content_hash: 0dbaaac908d19b65
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ASSIST-3D: Adapted Scene Synthesis for Class-Agnostic 3D Instance Segmentation
 description: >-
-  [AAAI 2026][3D Vision][class-agnostic 3D instance segmentation] This paper proposes ASSIST-3D, a synthetic data pipeline that generates high-quality annotated data for class-agnostic 3D instance segmentation through three stages: heterogeneous object selection, LLM-guided scene layout generation, and realistic point cloud construction, significantly improving model generalization.
+  [AAAI 2026][3D Vision][class-agnostic 3D instance segmentation] This paper proposes ASSIST-3D, a synthetic data pipeline that generates high-quality annotated data for class-agnostic 3D instance segmentation through thre…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - class-agnostic 3D instance segmentation
-  - 3D scene synthesis
-  - synthetic data
-  - point cloud
-  - LLM-guided layout
+  - "AAAI 2026"
+  - "3D Vision"
+  - "class-agnostic 3D instance segmentation"
+  - "3D scene synthesis"
+  - "synthetic data"
+  - "point cloud"
+  - "LLM-guided layout"
 date: 2026-05-08
 content_hash: 61cbb0d6b3ee072b
 ---

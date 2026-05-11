@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Why Do Open-Source LLMs Struggle with Data Analysis? A Systematic Empirical Study
 description: >-
-  [AAAI 2026][Data Analysis] This paper systematically investigates the capability bottlenecks of open-source LLMs in data analysis tasks. It decomposes data analysis into three dimensions—data comprehension, code generation, and strategic planning—and identifies **strategic planning as the decisive factor**, rather than coding or data comprehension. A strategy-guided data synthesis approach is proposed, enabling fine-tuned 7B/14B models to achieve performance competitive with GPT-4o.
+  [AAAI 2026][Code Intelligence][Data Analysis] This paper systematically investigates the capability bottlenecks of open-source LLMs in data analysis tasks. It decomposes data analysis into three dimensions—data comprehen…
 tags:
-  - AAAI 2026
-  - Data Analysis
-  - LLM Agent
-  - Strategic Planning
-  - Data Synthesis
-  - Open-Source Models
+  - "AAAI 2026"
+  - "Code Intelligence"
+  - "Data Analysis"
+  - "LLM Agent"
+  - "Strategic Planning"
+  - "Data Synthesis"
+  - "Open-Source Models"
 date: 2026-05-08
 content_hash: 1be31e17d673a33d
 ---

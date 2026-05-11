@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BVINet: Unlocking Blind Video Inpainting with Zero Annotations
 description: >-
-  [ICCV 2025][Image Generation][blind video inpainting] This paper is the first to formally define and address the task of *blind video inpainting*—simultaneously predicting *where* to restore and *how* to restore, end-to-end, without any annotation of corrupted regions. A mask prediction network and a video completion network mutually reinforce each other via a consistency constraint, achieving strong results on both synthetic data and real-world applications (danmaku removal and scratch repair).
+  [ICCV 2025][Image Generation][blind video inpainting] This paper is the first to formally define and address the task of *blind video inpainting*—simultaneously predicting *where* to restore and *how* to restore…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - blind video inpainting
-  - mask prediction
-  - wavelet sparse transformer
-  - video completion
-  - consistency loss
+  - "ICCV 2025"
+  - "Image Generation"
+  - "blind video inpainting"
+  - "mask prediction"
+  - "wavelet sparse transformer"
+  - "video completion"
+  - "consistency loss"
 date: 2026-05-08
 content_hash: 8699eb7a17ce27ea
 ---

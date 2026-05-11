@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] When Trackers Date Fish: A Benchmark and Framework for Underwater Multiple Fish Tracking
 description: >-
-  [AAAI 2026][Object Detection][Underwater Multiple Fish Tracking] This paper proposes MFT25, a large-scale underwater multiple fish tracking dataset (15 sequences, 408K annotations), and SU-T, a tracking framework combining UKF with FishIoU, achieving state-of-the-art performance of 34.1 HOTA and 44.6 IDF1. Statistical analyses further reveal fundamental differences between fish tracking and terrestrial object tracking.
+  [AAAI 2026][Object Detection][Underwater Multiple Fish Tracking] This paper proposes MFT25, a large-scale underwater multiple fish tracking dataset (15 sequences, 408K annotations), and SU-T…
 tags:
-  - AAAI 2026
-  - Object Detection
-  - Underwater Multiple Fish Tracking
-  - MOT Benchmark
-  - Unscented Kalman Filter
-  - FishIoU
-  - Nonlinear Motion Model
+  - "AAAI 2026"
+  - "Object Detection"
+  - "Underwater Multiple Fish Tracking"
+  - "MOT Benchmark"
+  - "Unscented Kalman Filter"
+  - "FishIoU"
+  - "Nonlinear Motion Model"
 date: 2026-05-08
 content_hash: dcb72145e0fa2172
 ---

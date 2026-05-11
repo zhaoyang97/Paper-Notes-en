@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ALE-Bench: A Benchmark for Long-Horizon Objective-Driven Algorithm Engineering
 description: >-
-  [NeurIPS 2025 (Datasets & Benchmarks Track)][Image Generation][Algorithm Engineering Benchmark] This paper introduces ALE-Bench, the first AI benchmark targeting scored algorithm engineering contests (AtCoder Heuristic Contest). It curates 40 NP-hard optimization problems and provides an interactive agent evaluation framework. The strongest model, o3-high, achieves only human-average performance in a one-shot setting, with significant gaps between AI and human experts in cross-problem consistency and long-horizon iterative improvement.
+  [NeurIPS 2025 (Datasets & Benchmarks Track)][Image Generation][Algorithm Engineering Benchmark] This paper introduces ALE-Bench, the first AI benchmark targeting scored algorithm engineering contests (AtCoder Heuristic C…
 tags:
   - "NeurIPS 2025 (Datasets & Benchmarks Track)"
-  - Image Generation
-  - Algorithm Engineering Benchmark
-  - Long-Horizon Reasoning
-  - Scored Programming Contests
-  - Iterative Optimization
-  - LLM Agent
+  - "Image Generation"
+  - "Algorithm Engineering Benchmark"
+  - "Long-Horizon Reasoning"
+  - "Scored Programming Contests"
+  - "Iterative Optimization"
+  - "LLM Agent"
 date: 2026-05-08
 content_hash: 248db1ea0c215c13
 ---

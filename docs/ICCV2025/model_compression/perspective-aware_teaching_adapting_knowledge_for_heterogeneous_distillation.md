@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Perspective-Aware Teaching: Adapting Knowledge for Heterogeneous Distillation
 description: >-
-  [ICCV 2025][Model Compression][Knowledge Distillation] This paper proposes PAT (Perspective-Aware Teaching), a framework that addresses the view mismatch problem across heterogeneous architectures via Region-Aware Attention (RAA) and the teacher unawareness problem via Adaptive Feedback Prompting (AFP), enabling feature-level distillation to comprehensively surpass logit-level methods in heterogeneous knowledge distillation for the first time.
+  [ICCV 2025][Model Compression][Knowledge Distillation] This paper proposes PAT (Perspective-Aware Teaching), a framework that addresses the view mismatch problem across heterogeneous architectures via Region-Aware Attent…
 tags:
-  - ICCV 2025
-  - Model Compression
-  - Knowledge Distillation
-  - Heterogeneous Distillation
-  - Perspective Alignment
-  - Adaptive Teacher
-  - Feature Distillation
+  - "ICCV 2025"
+  - "Model Compression"
+  - "Knowledge Distillation"
+  - "Heterogeneous Distillation"
+  - "Perspective Alignment"
+  - "Adaptive Teacher"
+  - "Feature Distillation"
 date: 2026-05-08
 content_hash: fe75ac1f19303c15
 ---

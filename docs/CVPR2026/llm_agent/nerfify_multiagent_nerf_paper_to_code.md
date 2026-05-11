@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Nerfify: A Multi-Agent Framework for Turning NeRF Papers into Code
 description: >-
-  [CVPR 2026][LLM Agent][NeRF] Nerfify is proposed, a multi-agent framework that automatically converts NeRF papers into trainable Nerfstudio plugin code via context-free grammar constraints, Graph-of-Thought code synthesis, and compositional reference recovery, achieving 100% executability on a 30-paper benchmark with visual quality within ±0.5 dB PSNR of expert implementations.
+  [CVPR 2026][LLM Agent][NeRF] Nerfify is proposed, a multi-agent framework that automatically converts NeRF papers into trainable Nerfstudio plugin code via context-free grammar constraints…
 tags:
-  - CVPR 2026
-  - LLM Agent
-  - NeRF
-  - paper-to-code
-  - multi-agent
-  - code synthesis
-  - context-free grammar
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "NeRF"
+  - "paper-to-code"
+  - "multi-agent"
+  - "code synthesis"
+  - "context-free grammar"
 date: 2026-05-08
 content_hash: d11f3b844cf1000c
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Versatile Transition Generation with Image-to-Video Diffusion
 description: >-
-  [ICCV 2025][Video Generation][video transition generation] This paper proposes VTG, a unified video transition generation framework built upon an image-to-video diffusion model. VTG achieves smooth, high-fidelity transitions across four task categories — object morphing, motion prediction, concept blending, and scene transition — via interpolation-based initialization (noise SLERP + LoRA interpolation + text SLERP), bidirectional motion fine-tuning, and DINOv2 representation alignment regularization.
+  [ICCV 2025][Video Generation][video transition generation] This paper proposes VTG, a unified video transition generation framework built upon an image-to-video diffusion model. VTG achieves smooth…
 tags:
-  - ICCV 2025
-  - Video Generation
-  - video transition generation
-  - image morphing
-  - bidirectional motion prediction
-  - LoRA interpolation
-  - representation alignment regularization
+  - "ICCV 2025"
+  - "Video Generation"
+  - "video transition generation"
+  - "image morphing"
+  - "bidirectional motion prediction"
+  - "LoRA interpolation"
+  - "representation alignment regularization"
 date: 2026-05-08
 content_hash: 4d7fd997528e6fce
 ---

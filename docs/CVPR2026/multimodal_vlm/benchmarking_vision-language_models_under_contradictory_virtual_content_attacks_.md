@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Benchmarking Vision-Language Models under Contradictory Virtual Content Attacks in Augmented Reality
 description: >-
-  [CVPR 2026][Multimodal VLM][Augmented reality security] This paper introduces ContrAR, the first benchmark for contradictory virtual content attacks in AR environments, comprising 312 real videos recorded on Meta Quest 3, validated by 10 annotators with an average Likert score of 4.66/5. It systematically evaluates 11 VLMs (including GPT-5/Gemini-2.5/Grok-4) on semantic contradiction detection, finding that GPT-5 achieves the highest accuracy (88.14%) but incurs a 19s latency, while GPT-4o offers the best accuracy–latency trade-off (84.62% / 7.26s). An OCR-only text baseline reaches only 56%, demonstrating that visual reasoning is indispensable.
+  [CVPR 2026][Multimodal VLM][Augmented reality security] This paper introduces ContrAR, the first benchmark for contradictory virtual content attacks in AR environments, comprising 312 real videos recorded on Meta Quest 3…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Augmented reality security
-  - semantic contradiction detection
-  - VLM robustness
-  - benchmark
-  - AR attacks
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Augmented reality security"
+  - "semantic contradiction detection"
+  - "VLM robustness"
+  - "benchmark"
+  - "AR attacks"
 date: 2026-05-08
 content_hash: 69bcb663095a46e4
 ---

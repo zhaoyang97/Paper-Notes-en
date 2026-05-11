@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RoboTron-Mani: All-in-One Multimodal Large Model for Robotic Manipulation
 description: >-
-  [ICCV 2025][3D Vision][robotic manipulation] This paper proposes RoboTron-Mani, a multimodal large model for robotic manipulation, together with the comprehensive dataset RoboData. By enhancing 3D perception via camera parameters and occupancy supervision, and enabling flexible multimodal fusion through a Modality-Isolation-Mask (MIM), RoboTron-Mani is the first generalist policy to simultaneously surpass specialist models across multiple datasets.
+  [ICCV 2025][3D Vision][robotic manipulation] This paper proposes RoboTron-Mani, a multimodal large model for robotic manipulation, together with the comprehensive dataset RoboData. By enhancing 3D perception via camera p…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - robotic manipulation
-  - multimodal large model
-  - 3D perception
-  - cross-embodiment generalization
-  - data alignment
+  - "ICCV 2025"
+  - "3D Vision"
+  - "robotic manipulation"
+  - "multimodal large model"
+  - "3D perception"
+  - "cross-embodiment generalization"
+  - "data alignment"
 date: 2026-05-08
 content_hash: c33a74a20f2a2121
 ---

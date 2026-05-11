@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Revisiting Semi-Supervised Learning in the Era of Foundation Models
 description: >-
-  [NeurIPS 2025][Model Compression][Semi-Supervised Learning] A systematic study reveals that conventional SSL methods offer limited benefit in the VFM era—PEFT on labeled data alone can match SSL—motivating V-PET: a simple and effective semi-supervised learning approach that ensembles pseudo-labels from multiple PEFT methods and multiple VFMs.
+  [NeurIPS 2025][Model Compression][Semi-Supervised Learning] A systematic study reveals that conventional SSL methods offer limited benefit in the VFM era—PEFT on labeled data alone can match SSL—motivating V-PET: a simpl…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Semi-Supervised Learning
-  - Visual Foundation Models
-  - Parameter-Efficient Fine-Tuning
-  - Pseudo-Label Ensembling
-  - Self-Training
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Semi-Supervised Learning"
+  - "Visual Foundation Models"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Pseudo-Label Ensembling"
+  - "Self-Training"
 date: 2026-05-08
 content_hash: efeb298ba97d3ea1
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RoCo-Sim: Enhancing Roadside Collaborative Perception through Foreground Simulation
 description: >-
-  [ICCV 2025][3D Vision][roadside collaborative perception] RoCo-Sim is proposed as the first simulation framework for roadside collaborative perception. By integrating extrinsic parameter optimization, occlusion-aware 3D asset placement, DepthSAM-based depth modeling, and style-transfer post-processing, it generates multi-view consistent simulation data from single images, achieving over 83% improvement in roadside 3D detection performance.
+  [ICCV 2025][3D Vision][roadside collaborative perception] RoCo-Sim is proposed as the first simulation framework for roadside collaborative perception. By integrating extrinsic parameter optimization…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - roadside collaborative perception
-  - simulation data
-  - foreground editing
-  - 3D detection
-  - multi-view consistency
+  - "ICCV 2025"
+  - "3D Vision"
+  - "roadside collaborative perception"
+  - "simulation data"
+  - "foreground editing"
+  - "3D detection"
+  - "multi-view consistency"
 date: 2026-05-08
 content_hash: 66e1998c42b3c2f8
 ---

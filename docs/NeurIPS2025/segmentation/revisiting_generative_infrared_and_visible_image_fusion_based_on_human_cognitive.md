@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HCLFuse: Revisiting Generative Infrared and Visible Image Fusion Based on Human Cognitive Laws
 description: >-
-  [NeurIPS 2025][Segmentation][Infrared-visible fusion] HCLFuse performs modality alignment via the information bottleneck principle and optimal transport theory, combining a Variational Bottleneck Encoder (VBE) with a physics-guided conditional diffusion model. Three physical constraints—heat conduction, structure preservation, and physical consistency—are injected into the diffusion process. On the MSRS dataset, the gradient metric AG improves by 69.87% and spatial frequency SF improves by 39.41%.
+  [NeurIPS 2025][Segmentation][Infrared-visible fusion] HCLFuse performs modality alignment via the information bottleneck principle and optimal transport theory…
 tags:
-  - NeurIPS 2025
-  - Segmentation
-  - Infrared-visible fusion
-  - variational information bottleneck
-  - optimal transport
-  - physics-guided diffusion
-  - Wasserstein distance
+  - "NeurIPS 2025"
+  - "Segmentation"
+  - "Infrared-visible fusion"
+  - "variational information bottleneck"
+  - "optimal transport"
+  - "physics-guided diffusion"
+  - "Wasserstein distance"
 date: 2026-05-08
 content_hash: d79f9154b3ca5e3d
 ---

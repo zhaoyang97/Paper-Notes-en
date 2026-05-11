@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From Single to Societal: Analyzing Persona-Induced Bias in Multi-Agent Interactions
 description: >-
-  [AAAI 2026][LLM Safety][Multi-Agent System] This paper presents the first systematic study of persona-induced bias in LLM-based multi-agent interactions. Through controlled experiments on collaborative problem solving and persuasion tasks, three key findings are revealed: (1) different personas exhibit significant divergence in trustworthiness and insistence (dominant groups such as males and White individuals are perceived as less trustworthy); (2) agents display pronounced in-group favoritism; and (3) these biases persist and tend to amplify in multi-turn, multi-agent settings.
+  [AAAI 2026][LLM Safety][Multi-Agent System] This paper presents the first systematic study of persona-induced bias in LLM-based multi-agent interactions. Through controlled experiments on collaborative problem solving an…
 tags:
-  - AAAI 2026
-  - LLM Safety
-  - Multi-Agent System
-  - Persona Bias
-  - LLM Bias
-  - In-group Favoritism
-  - Social Identity Theory
+  - "AAAI 2026"
+  - "LLM Safety"
+  - "Multi-Agent System"
+  - "Persona Bias"
+  - "LLM Bias"
+  - "In-group Favoritism"
+  - "Social Identity Theory"
 date: 2026-05-08
 content_hash: 997e637145dbd2d3
 ---

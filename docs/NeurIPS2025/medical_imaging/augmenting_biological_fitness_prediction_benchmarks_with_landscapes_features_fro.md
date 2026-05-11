@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GraphFLA: Augmenting Biological Fitness Prediction Benchmarks with Landscape Features
 description: >-
-  [NeurIPS 2025][Medical Imaging][Fitness landscape] GraphFLA is an efficient fitness landscape analysis framework that computes 20 biologically meaningful landscape features (ruggedness / epistasis / navigability / neutrality) across 5,300+ real-world landscapes (ProteinGym / RNAGym / CIS-BP), revealing that model performance is highly dependent on landscape topology—e.g., VenusREM outperforms ProSST on highly navigable landscapes but underperforms it on highly epistatic ones—while processing one million mutants in just 20 seconds (vs. 5 hours for MAGELLAN).
+  [NeurIPS 2025][Medical Imaging][Fitness landscape] GraphFLA is an efficient fitness landscape analysis framework that computes 20 biologically meaningful landscape features (ruggedness / epistasis / navigability / neutra…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Fitness landscape
-  - protein engineering
-  - landscape features
-  - model diagnostics
-  - combinatorial mutations
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Fitness landscape"
+  - "protein engineering"
+  - "landscape features"
+  - "model diagnostics"
+  - "combinatorial mutations"
 date: 2026-05-08
 content_hash: bcb118143ac5dd85
 ---

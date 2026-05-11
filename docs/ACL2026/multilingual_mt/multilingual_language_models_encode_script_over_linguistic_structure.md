@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Multilingual Language Models Encode Script Over Linguistic Structure
 description: >-
-  [ACL 2026][multilingual representations] This paper systematically analyzes language-associated units in multilingual LMs using the LAPE metric and sparse autoencoders, finding that these units are primarily driven by orthography (writing system) rather than abstract linguistic structure. Romanization activates nearly entirely disjoint sets of neurons; word-order shuffling has minimal effect; typological information becomes accessible only gradually in deeper layers; and causal interventions reveal that functional importance correlates with surface-form invariance.
+  [ACL 2026][Multilingual & Machine Translation][multilingual representations] This paper systematically analyzes language-associated units in multilingual LMs using the LAPE metric and sparse autoencoders…
 tags:
-  - ACL 2026
-  - multilingual representations
-  - writing systems
-  - orthography
-  - language-associated neurons
-  - sparse autoencoders
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "multilingual representations"
+  - "writing systems"
+  - "orthography"
+  - "language-associated neurons"
+  - "sparse autoencoders"
 date: 2026-05-08
 content_hash: ec5ab14f6fb085df
 ---

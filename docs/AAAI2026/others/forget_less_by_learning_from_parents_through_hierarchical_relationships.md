@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Forget Less by Learning from Parents Through Hierarchical Relationships
 description: >-
-  [AAAI 2026][Custom diffusion models] This paper proposes FLLP (Forget Less by Learning from Parents), a framework that mitigates catastrophic forgetting in custom diffusion models (CDMs) by establishing parent-child hierarchical relationships among concepts in hyperbolic space. It leverages the tree-structure modeling capability of the Lorentz manifold to preserve knowledge during new concept learning and enable continual concept integration.
+  [AAAI 2026][Custom diffusion models] This paper proposes FLLP (Forget Less by Learning from Parents), a framework that mitigates catastrophic forgetting in custom diffusion models (CDMs) by establishing parent-child hier…
 tags:
-  - AAAI 2026
-  - Custom diffusion models
-  - catastrophic forgetting
-  - hyperbolic space
-  - hierarchical relationships
-  - concept learning
+  - "AAAI 2026"
+  - "Custom diffusion models"
+  - "catastrophic forgetting"
+  - "hyperbolic space"
+  - "hierarchical relationships"
+  - "concept learning"
 date: 2026-05-08
 content_hash: 5170455f8822e9f0
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond Confidence: The Rhythms of Reasoning in Generative Models
 description: >-
-  [ICLR 2026][Image Generation][Token Constraint Bound] This paper proposes the Token Constraint Bound ($\delta_{\text{TCB}}$) metric, which quantifies the largest perturbation to an LLM's hidden state that preserves the next-token prediction, measuring local prediction robustness and revealing instabilities that traditional perplexity fails to capture.
+  [ICLR 2026][Image Generation][Token Constraint Bound] This paper proposes the Token Constraint Bound ($\delta_{\text{TCB}}$) metric, which quantifies the largest perturbation to an LLM's hidden state that preserves the n…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Token Constraint Bound
-  - prediction robustness
-  - hidden state perturbation
-  - output embedding geometry
-  - prompt engineering
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Token Constraint Bound"
+  - "prediction robustness"
+  - "hidden state perturbation"
+  - "output embedding geometry"
+  - "prompt engineering"
 date: 2026-05-08
 content_hash: 035f8c031b97e05e
 ---

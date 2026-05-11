@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Feedback-driven Recurrent Quantum Neural Network Universality
 description: >-
-  [ICLR2026][quantum reservoir computing] This paper establishes the first quantitative approximation error bounds and universality proofs for feedback-based recurrent quantum neural networks (RQNNs), demonstrating that RQNNs can approximate arbitrary fading memory filters with a linear readout layer while requiring only $\lceil\log_2(\varepsilon^{-1})\rceil$ qubits — growing logarithmically with precision — and are thus free from the curse of dimensionality.
+  [ICLR2026][Physics][quantum reservoir computing] This paper establishes the first quantitative approximation error bounds and universality proofs for feedback-based recurrent quantum neural networks (RQNNs)…
 tags:
-  - ICLR2026
-  - quantum reservoir computing
-  - recurrent quantum neural network
-  - universal approximation
-  - fading memory filter
-  - NISQ
+  - "ICLR2026"
+  - "Physics"
+  - "quantum reservoir computing"
+  - "recurrent quantum neural network"
+  - "universal approximation"
+  - "fading memory filter"
+  - "NISQ"
 date: 2026-05-08
 content_hash: dd81e57b925f7a0e
 ---

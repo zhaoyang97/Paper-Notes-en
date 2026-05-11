@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PARCO: Parallel AutoRegressive Models for Multi-Agent Combinatorial Optimization
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Combinatorial Optimization] PARCO is a framework that solves multi-agent combinatorial optimization problems efficiently via Communication Layers for inter-agent coordination, a Multiple Pointer Mechanism for parallel decoding, and a Priority-based Conflict Handler for conflict resolution.
+  [NeurIPS 2025][Reinforcement Learning][Combinatorial Optimization] PARCO is a framework that solves multi-agent combinatorial optimization problems efficiently via Communication Layers for inter-agent coordination…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Combinatorial Optimization
-  - Autoregressive Models
-  - Multi-Agent
-  - Parallel Decoding
-  - Vehicle Routing
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Combinatorial Optimization"
+  - "Autoregressive Models"
+  - "Multi-Agent"
+  - "Parallel Decoding"
+  - "Vehicle Routing"
 date: 2026-05-08
 content_hash: 740180e8e37a983a
 ---

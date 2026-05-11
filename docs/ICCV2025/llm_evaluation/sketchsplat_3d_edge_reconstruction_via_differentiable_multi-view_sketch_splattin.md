@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SketchSplat: 3D Edge Reconstruction via Differentiable Multi-view Sketch Splatting
 description: >-
-  [ICCV 2025][LLM Evaluation][3D edge reconstruction] This paper proposes SketchSplat, which represents 3D edges as parametric sketches (line segments + Bézier curves) and directly optimizes edge parameters via differentiable rendering by sampling Gaussian points from sketches. Combined with adaptive topology control and an improved 2D edge detector, the method achieves state-of-the-art accuracy, completeness, and compactness on CAD datasets.
+  [ICCV 2025][LLM Evaluation][3D edge reconstruction] This paper proposes SketchSplat, which represents 3D edges as parametric sketches (line segments + Bézier curves) and directly optimizes edge parameters via differentia…
 tags:
-  - ICCV 2025
-  - LLM Evaluation
-  - 3D edge reconstruction
-  - differentiable rendering
-  - Gaussian splatting
-  - parametric curves
-  - CAD modeling
+  - "ICCV 2025"
+  - "LLM Evaluation"
+  - "3D edge reconstruction"
+  - "differentiable rendering"
+  - "Gaussian splatting"
+  - "parametric curves"
+  - "CAD modeling"
 date: 2026-05-08
 content_hash: c074ba4d2dc30202
 ---

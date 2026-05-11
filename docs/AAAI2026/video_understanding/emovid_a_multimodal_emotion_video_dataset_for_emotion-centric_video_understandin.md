@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EmoVid: A Multimodal Emotion Video Dataset for Emotion-Centric Video Understanding and Generation
 description: >-
-  [AAAI 2026][Video Understanding][emotion video dataset] This paper presents EmoVid, the first large-scale multimodal emotion video dataset targeting artistic and non-photorealistic content (22,758 video clips), spanning three content types—animation, film, and emoji stickers—and demonstrates the effectiveness of emotion-conditioned video generation by fine-tuning the Wan2.1 model, achieving significant improvements over baselines on emotion accuracy metrics.
+  [AAAI 2026][Video Understanding][emotion video dataset] This paper presents EmoVid, the first large-scale multimodal emotion video dataset targeting artistic and non-photorealistic content (22,758 video clips)…
 tags:
-  - AAAI 2026
-  - Video Understanding
-  - emotion video dataset
-  - video generation
-  - emotion annotation
-  - text-to-video
-  - affective computing
+  - "AAAI 2026"
+  - "Video Understanding"
+  - "emotion video dataset"
+  - "video generation"
+  - "emotion annotation"
+  - "text-to-video"
+  - "affective computing"
 date: 2026-05-08
 content_hash: 92a2cde836dcae5f
 ---

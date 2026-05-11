@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MV-RoMa: From Pairwise Matching into Multi-View Track Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][Multi-view matching] This paper proposes MV-RoMa, the first multi-view dense matching model that simultaneously estimates dense correspondences from a single source image to multiple target images via a Track-Guided multi-view encoder and a pixel-aligned multi-view refiner, producing geometrically consistent tracks for SfM and achieving state-of-the-art performance on HPatches, ETH3D, IMC, and related benchmarks.
+  [CVPR 2026][3D Vision][Multi-view matching] This paper proposes MV-RoMa, the first multi-view dense matching model that simultaneously estimates dense correspondences from a single source image to multiple target images…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Multi-view matching
-  - dense correspondence
-  - track reconstruction
-  - SfM
-  - feature fusion
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Multi-view matching"
+  - "dense correspondence"
+  - "track reconstruction"
+  - "SfM"
+  - "feature fusion"
 date: 2026-05-08
 content_hash: 9ef27ef5a3b957db
 ---

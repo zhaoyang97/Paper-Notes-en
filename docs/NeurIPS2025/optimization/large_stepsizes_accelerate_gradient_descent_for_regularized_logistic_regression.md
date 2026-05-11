@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Large Stepsizes Accelerate Gradient Descent for Regularized Logistic Regression
 description: >-
-  [NeurIPS 2025][Optimization][gradient descent] This paper proves that applying GD with large stepsizes (entering the Edge of Stability regime) to $\ell_2$-regularized logistic regression on linearly separable data accelerates the step complexity from the classical $\widetilde{O}(\kappa)$ to $\widetilde{O}(\sqrt{\kappa})$, matching the acceleration rate of Nesterov momentum in the small-regularization regime.
+  [NeurIPS 2025][Optimization][gradient descent] This paper proves that applying GD with large stepsizes (entering the Edge of Stability regime) to $\ell_2$-regularized logistic regression on linearly separable data accele…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - gradient descent
-  - large stepsizes
-  - edge of stability
-  - logistic regression
-  - acceleration
-  - condition number
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "gradient descent"
+  - "large stepsizes"
+  - "edge of stability"
+  - "logistic regression"
+  - "acceleration"
+  - "condition number"
 date: 2026-05-08
 content_hash: 0e001113c44a313f
 ---

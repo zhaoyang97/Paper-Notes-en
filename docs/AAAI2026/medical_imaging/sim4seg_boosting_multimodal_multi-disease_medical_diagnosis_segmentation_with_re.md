@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Sim4Seg: Boosting Multimodal Multi-disease Medical Diagnosis Segmentation with Region-Aware Vision-Language Similarity Masks
 description: >-
-  [AAAI 2026][Medical Imaging][Medical Diagnosis Segmentation] This paper introduces the Medical Diagnosis Segmentation (MDS) task along with the M3DS dataset, and proposes the Sim4Seg framework, which leverages **Region-aware Vision-Language Similarity Masks (RVLS2M)** derived from LVLM hidden states to prompt SAM for segmentation while simultaneously generating diagnostic chain-of-thought reasoning. Combined with a test-time scaling strategy, Sim4Seg comprehensively outperforms baselines on both segmentation and diagnosis.
+  [AAAI 2026][Medical Imaging][Medical Diagnosis Segmentation] This paper introduces the Medical Diagnosis Segmentation (MDS) task along with the M3DS dataset, and proposes the Sim4Seg framework…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Medical Diagnosis Segmentation
-  - Vision-Language Similarity
-  - Chain-of-Thought Diagnosis
-  - Multimodal Multi-disease
-  - Test-Time Scaling
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Medical Diagnosis Segmentation"
+  - "Vision-Language Similarity"
+  - "Chain-of-Thought Diagnosis"
+  - "Multimodal Multi-disease"
+  - "Test-Time Scaling"
 date: 2026-05-08
 content_hash: c2d689973a938fbe
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Widget2Code: From Visual Widgets to UI Code via Multimodal LLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][UI Code Generation] This paper is the first to formally define the Widget-to-Code task, constructing the first image-only widget dataset and a multi-dimensional evaluation framework. It proposes a modular baseline built upon a Perceptual Agent and the WidgetFactory infrastructure, achieving high-fidelity widget reconstruction through component decomposition, icon retrieval, reusable visualization templates, and adaptive rendering.
+  [CVPR 2026][Multimodal VLM][UI Code Generation] This paper is the first to formally define the Widget-to-Code task, constructing the first image-only widget dataset and a multi-dimensional evaluation framework. It propos…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - UI Code Generation
-  - Widget Reconstruction
-  - Multimodal Large Language Models
-  - Domain-Specific Language
-  - Visual Perception
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "UI Code Generation"
+  - "Widget Reconstruction"
+  - "Multimodal Large Language Models"
+  - "Domain-Specific Language"
+  - "Visual Perception"
 date: 2026-05-08
 content_hash: 3d262dd080a3f933
 ---

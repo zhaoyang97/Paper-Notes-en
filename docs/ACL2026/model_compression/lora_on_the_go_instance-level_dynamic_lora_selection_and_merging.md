@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LoRA on the Go: Instance-level Dynamic LoRA Selection and Merging
 description: >-
-  [ACL 2026][Model Compression][LoRA dynamic selection] This paper proposes LoGo (LoRA on the Go), a training-free framework that extracts LoRA activation signals (norm or entropy) via a single forward pass to dynamically select and merge the most relevant LoRA adapters at the instance level, enabling cross-task generalization without labeled data or additional training.
+  [ACL 2026][Model Compression][LoRA dynamic selection] This paper proposes LoGo (LoRA on the Go), a training-free framework that extracts LoRA activation signals (norm or entropy) via a single forward pass to dynamically…
 tags:
-  - ACL 2026
-  - Model Compression
-  - LoRA dynamic selection
-  - multi-adapter merging
-  - training-free framework
-  - instance-level adaptation
-  - parameter-efficient fine-tuning
+  - "ACL 2026"
+  - "Model Compression"
+  - "LoRA dynamic selection"
+  - "multi-adapter merging"
+  - "training-free framework"
+  - "instance-level adaptation"
+  - "parameter-efficient fine-tuning"
 date: 2026-05-08
 content_hash: aa94592f8c8ab920
 ---

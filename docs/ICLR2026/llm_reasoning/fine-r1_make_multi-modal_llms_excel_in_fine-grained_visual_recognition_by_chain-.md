@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Fine-R1: Make Multi-modal LLMs Excel in Fine-Grained Visual Recognition by Chain-of-Thought Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][Fine-grained recognition] Fine-R1 combines CoT supervised fine-tuning (structured reasoning chains following "visual analysis → candidate sub-classes → comparison → prediction") with Triplet-Augmented Policy Optimization (TAPO)—intra-class augmentation for robustness and inter-class augmentation for discriminability—achieving superior performance over CLIP and general/reasoning MLLMs on fine-grained visual recognition using only 4-shot training.
+  [ICLR 2026][LLM Reasoning][Fine-grained recognition] Fine-R1 combines CoT supervised fine-tuning (structured reasoning chains following "visual analysis → candidate sub-classes → comparison → prediction") with Triplet-Au…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Fine-grained recognition
-  - CoT reasoning
-  - triplet-augmented policy optimization
-  - few-shot FGVR
-  - DAPO
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "Fine-grained recognition"
+  - "CoT reasoning"
+  - "triplet-augmented policy optimization"
+  - "few-shot FGVR"
+  - "DAPO"
 date: 2026-05-08
 content_hash: de1e510edbb59615
 ---

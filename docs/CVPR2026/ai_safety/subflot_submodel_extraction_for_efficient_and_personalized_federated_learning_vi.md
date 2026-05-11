@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SubFLOT: Submodel Extraction for Efficient and Personalized Federated Learning via Optimal Transport
 description: >-
-  [CVPR 2026][AI Safety][Federated Learning] This paper proposes SubFLOT, a framework that leverages Optimal Transport (OT) on the server side to align the parameter distributions of a global model with clients' historical models, enabling personalized pruning without access to raw data. Combined with an adaptive regularization mechanism to suppress pruning-induced parameter drift, SubFLOT substantially outperforms existing federated pruning methods across multiple datasets.
+  [CVPR 2026][AI Safety][Federated Learning] This paper proposes SubFLOT, a framework that leverages Optimal Transport (OT) on the server side to align the parameter distributions of a global model with clients' historical…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Federated Learning
-  - Network Pruning
-  - Optimal Transport
-  - Personalized Models
-  - Heterogeneous Systems
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Federated Learning"
+  - "Network Pruning"
+  - "Optimal Transport"
+  - "Personalized Models"
+  - "Heterogeneous Systems"
 date: 2026-05-08
 content_hash: 742e7c0c385946ae
 ---

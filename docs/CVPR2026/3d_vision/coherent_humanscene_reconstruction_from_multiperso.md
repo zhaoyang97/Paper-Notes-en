@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Coherent Human-Scene Reconstruction from Multi-Person Multi-View Video in a Single Pass
 description: >-
-  [CVPR 2026][3D Vision][Multi-view human reconstruction] CHROMM is a unified framework that integrates the geometric prior of Pi3X and the human prior of Multi-HMR into a single feed-forward network, enabling joint reconstruction of cameras, scene point clouds, and SMPL-X human meshes from multi-person multi-view video in a single pass—without external modules, preprocessing, or iterative optimization. It achieves a multi-view WA-MPJPE of 53.1 mm on RICH and runs more than 8× faster than HAMSt3R.
+  [CVPR 2026][3D Vision][Multi-view human reconstruction] CHROMM is a unified framework that integrates the geometric prior of Pi3X and the human prior of Multi-HMR into a single feed-forward network…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Multi-view human reconstruction
-  - multi-person scene
-  - SMPL-X
-  - 3D foundation model
-  - scale alignment
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Multi-view human reconstruction"
+  - "multi-person scene"
+  - "SMPL-X"
+  - "3D foundation model"
+  - "scale alignment"
 date: 2026-05-08
 content_hash: 59c35c530825cadf
 ---

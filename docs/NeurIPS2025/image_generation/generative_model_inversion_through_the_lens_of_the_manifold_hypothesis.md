@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Generative Model Inversion Through the Lens of the Manifold Hypothesis
 description: >-
-  [NeurIPS 2025][Image Generation][Model Inversion Attack] This paper reveals, from a manifold-geometric perspective, that the essence of generative model inversion attacks (MIA) is implicit denoising achieved by projecting loss gradients onto the generator's tangent space. It proposes the gradient-manifold alignment hypothesis (higher alignment → greater vulnerability), and designs a training-free method, AlignMI, that consistently and significantly improves upon multiple state-of-the-art attacks.
+  [NeurIPS 2025][Image Generation][Model Inversion Attack] This paper reveals, from a manifold-geometric perspective, that the essence of generative model inversion attacks (MIA) is implicit denoising achieved by projectin…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Model Inversion Attack
-  - Manifold Hypothesis
-  - Gradient-Manifold Alignment
-  - GAN
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Model Inversion Attack"
+  - "Manifold Hypothesis"
+  - "Gradient-Manifold Alignment"
+  - "GAN"
   - "Privacy & Security"
 date: 2026-05-08
 content_hash: ff889257d5d3dfa2

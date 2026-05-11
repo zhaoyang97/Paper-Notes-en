@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] TT-Occ: Test-Time 3D Occupancy Prediction
 description: >-
-  [CVPR2026][Autonomous Driving][3D occupancy prediction] This paper proposes TT-Occ, a training-free test-time 3D occupancy prediction framework that integrates vision foundation models (VFMs) at inference time to incrementally construct, refine, and voxelize temporally-aware 3D Gaussians. TT-Occ surpasses all self-supervised methods requiring extensive training on both Occ3D-nuScenes and nuCraft benchmarks.
+  [CVPR2026][Autonomous Driving][3D occupancy prediction] This paper proposes TT-Occ, a training-free test-time 3D occupancy prediction framework that integrates vision foundation models (VFMs) at inference time to increme…
 tags:
-  - CVPR2026
-  - Autonomous Driving
-  - 3D occupancy prediction
-  - test-time
-  - 3D Gaussian Splatting
-  - vision foundation models
-  - self-supervised
-  - open-vocabulary
+  - "CVPR2026"
+  - "Autonomous Driving"
+  - "3D occupancy prediction"
+  - "test-time"
+  - "3D Gaussian Splatting"
+  - "vision foundation models"
+  - "self-supervised"
+  - "open-vocabulary"
 date: 2026-05-08
 content_hash: 3c5cc8cd4af8487d
 ---

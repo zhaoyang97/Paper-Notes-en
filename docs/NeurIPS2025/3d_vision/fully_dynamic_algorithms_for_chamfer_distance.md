@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Fully Dynamic Algorithms for Chamfer Distance
 description: >-
-  [NeurIPS 2025][3D Vision][Chamfer distance] This paper proposes the first fully dynamic algorithm for maintaining Chamfer distance, reducing the problem to approximate nearest neighbor (ANN) queries to achieve a $(1+\epsilon)$ approximation with update time $\tilde{O}(\epsilon^{-d})$, significantly surpassing the linear-time lower bound of static recomputation. On real-world datasets, the algorithm achieves <10% relative error while running orders of magnitude faster than naive approaches.
+  [NeurIPS 2025][3D Vision][Chamfer distance] This paper proposes the first fully dynamic algorithm for maintaining Chamfer distance, reducing the problem to approximate nearest neighbor (ANN) queries to achieve a $(1+\eps…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Chamfer distance
-  - dynamic algorithms
-  - approximate nearest neighbor
-  - importance sampling
-  - point cloud similarity
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Chamfer distance"
+  - "dynamic algorithms"
+  - "approximate nearest neighbor"
+  - "importance sampling"
+  - "point cloud similarity"
 date: 2026-05-08
 content_hash: 9767f66d1dba02c6
 ---

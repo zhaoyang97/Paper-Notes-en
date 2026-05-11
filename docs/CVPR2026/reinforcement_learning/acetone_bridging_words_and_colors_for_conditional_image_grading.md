@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AceTone: Bridging Words and Colors for Conditional Image Grading
 description: >-
-  [CVPR 2026][Reinforcement Learning][Color grading] AceTone is proposed as the first unified framework for multimodal-conditioned color grading supporting both text and reference image inputs. By compressing 3D-LUTs into 64 discrete tokens via VQ-VAE, a VLM is trained to predict LUT token sequences, followed by GRPO reinforcement learning to align color similarity and aesthetic preference, achieving a 50% improvement in LPIPS on both style transfer and instruction-based grading tasks.
+  [CVPR 2026][Reinforcement Learning][Color grading] AceTone is proposed as the first unified framework for multimodal-conditioned color grading supporting both text and reference image inputs. By compressing 3D-LUTs into…
 tags:
-  - CVPR 2026
-  - Reinforcement Learning
-  - Color grading
-  - 3D-LUT
-  - VQ-VAE tokenizer
-  - VLM
-  - GRPO reinforcement learning
+  - "CVPR 2026"
+  - "Reinforcement Learning"
+  - "Color grading"
+  - "3D-LUT"
+  - "VQ-VAE tokenizer"
+  - "VLM"
+  - "GRPO reinforcement learning"
 date: 2026-05-08
 content_hash: 71ed9ba50ded9fad
 ---

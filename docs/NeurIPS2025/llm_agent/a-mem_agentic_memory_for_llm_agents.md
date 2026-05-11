@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] A-MEM: Agentic Memory for LLM Agents
 description: >-
-  [NeurIPS 2025][LLM Agent][Agentic Memory] This paper proposes A-Mem, a Zettelkasten-inspired agentic memory system for LLM agents. Each memory entry automatically generates a structured note (keywords/tags/contextual description), dynamically establishes inter-memory links, and triggers evolutionary updates to existing memories upon the insertion of new ones. A-Mem substantially outperforms baselines such as MemGPT on the LoCoMo long-conversation QA benchmark.
+  [NeurIPS 2025][LLM Agent][Agentic Memory] This paper proposes A-Mem, a Zettelkasten-inspired agentic memory system for LLM agents. Each memory entry automatically generates a structured note (keywords/tags/contextual des…
 tags:
-  - NeurIPS 2025
-  - LLM Agent
-  - Agentic Memory
-  - Zettelkasten
-  - Long-term Memory
-  - Knowledge Management
+  - "NeurIPS 2025"
+  - "LLM Agent"
+  - "Agentic Memory"
+  - "Zettelkasten"
+  - "Long-term Memory"
+  - "Knowledge Management"
 date: 2026-05-08
 content_hash: 1d5eb5a275b1a928
 ---

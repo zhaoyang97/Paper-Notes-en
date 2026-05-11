@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Landscape of Thoughts: Visualizing the Reasoning Process of Large Language Models
 description: >-
-  [ICLR 2026][Model Compression][LLM reasoning visualization] This paper proposes Landscape of Thoughts (LoT), the first tool to visualize LLM reasoning trajectories as two-dimensional terrain maps. By encoding intermediate states via perplexity-based features and projecting them with t-SNE, LoT reveals reasoning behavior patterns and can be adapted as a lightweight verifier to improve reasoning accuracy and test-time scaling.
+  [ICLR 2026][Model Compression][LLM reasoning visualization] This paper proposes Landscape of Thoughts (LoT), the first tool to visualize LLM reasoning trajectories as two-dimensional terrain maps. By encoding intermediat…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - LLM reasoning visualization
-  - reasoning trajectory analysis
-  - t-SNE
-  - test-time scaling
-  - lightweight verifier
+  - "ICLR 2026"
+  - "Model Compression"
+  - "LLM reasoning visualization"
+  - "reasoning trajectory analysis"
+  - "t-SNE"
+  - "test-time scaling"
+  - "lightweight verifier"
 date: 2026-05-08
 content_hash: 9606f5ff3d2e374b
 ---

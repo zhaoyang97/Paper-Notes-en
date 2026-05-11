@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MaskControl: Spatio-Temporal Control for Masked Motion Synthesis
 description: >-
-  [ICCV 2025][Image Generation][Masked Motion Model] MaskControl is the first work to introduce spatial controllability into generative masked motion models. It manipulates the logits of the token classifier via two core components — Logits Regularizer (implicit alignment during training) and Logits Optimization (explicit optimization during inference) — simultaneously achieving high-quality motion generation (FID reduced by 77%) and high-precision joint control (average error 0.91 cm vs. 1.08 cm).
+  [ICCV 2025][Image Generation][Masked Motion Model] MaskControl is the first work to introduce spatial controllability into generative masked motion models. It manipulates the logits of the token classifier via two core c…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Masked Motion Model
-  - Joint Control
-  - Logits Optimization
-  - Differentiable Sampling
-  - Zero-Shot Goal Control
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Masked Motion Model"
+  - "Joint Control"
+  - "Logits Optimization"
+  - "Differentiable Sampling"
+  - "Zero-Shot Goal Control"
 date: 2026-05-08
 content_hash: 68a57d2021e2663f
 ---

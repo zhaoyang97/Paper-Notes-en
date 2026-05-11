@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Where am I? Cross-View Geo-localization with Natural Language Descriptions
 description: >-
-  [ICCV 2025][Autonomous Driving][Cross-View Geo-localization] This paper introduces a novel task of cross-view geo-localization via natural language descriptions, constructs the CVG-Text multimodal dataset covering 30,000+ coordinates across 3 cities (street-view + satellite + OSM + text), and proposes CrossText2Loc — a method employing Extended Positional Embedding for long-text handling and an Explainable Retrieval Module for localization rationale, achieving over 10% improvement in Top-1 Recall.
+  [ICCV 2025][Autonomous Driving][Cross-View Geo-localization] This paper introduces a novel task of cross-view geo-localization via natural language descriptions, constructs the CVG-Text multimodal dataset covering 30…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - Cross-View Geo-localization
-  - Natural Language
-  - Text-to-Image Retrieval
-  - Satellite
-  - OSM
-  - LMM
-  - Explainable Retrieval
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "Cross-View Geo-localization"
+  - "Natural Language"
+  - "Text-to-Image Retrieval"
+  - "Satellite"
+  - "OSM"
+  - "LMM"
+  - "Explainable Retrieval"
 date: 2026-05-08
 content_hash: bc79bac523cef9ef
 ---

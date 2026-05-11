@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RoadSceneVQA: Benchmarking Visual Question Answering in Roadside Perception Systems for Intelligent Transportation System
 description: >-
-  [AAAI 2026][Autonomous Driving][Visual Question Answering] This paper introduces RoadSceneVQA—the first large-scale visual question answering dataset for roadside perception scenarios (34,736 QA pairs)—and proposes the RoadMind model, which significantly improves lightweight MLLM performance on traffic scene reasoning through CogniAnchor Fusion (CAF) and Assisted Decoupled Chain-of-Thought (AD-CoT), enabling a 0.9B-parameter model to surpass 8B-parameter counterparts.
+  [AAAI 2026][Autonomous Driving][Visual Question Answering] This paper introduces RoadSceneVQA—the first large-scale visual question answering dataset for roadside perception scenarios (34…
 tags:
-  - AAAI 2026
-  - Autonomous Driving
-  - Visual Question Answering
-  - Roadside Perception
-  - Multimodal Large Language Models
-  - Chain-of-Thought Reasoning
-  - Vision-Language Fusion
+  - "AAAI 2026"
+  - "Autonomous Driving"
+  - "Visual Question Answering"
+  - "Roadside Perception"
+  - "Multimodal Large Language Models"
+  - "Chain-of-Thought Reasoning"
+  - "Vision-Language Fusion"
 date: 2026-05-08
 content_hash: 4b0a3be7398f6aec
 ---

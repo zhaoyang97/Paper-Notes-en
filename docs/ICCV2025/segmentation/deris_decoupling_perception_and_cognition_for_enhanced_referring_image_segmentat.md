@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DeRIS: Decoupling Perception and Cognition for Enhanced Referring Image Segmentation through Loopback Synergy
 description: >-
-  [ICCV 2025][Segmentation][referring image segmentation] This paper proposes DeRIS, a framework that decouples referring image segmentation into two branches — perception and cognition — and introduces a Loopback Synergy mechanism to iteratively enhance cross-branch interaction. A non-referent sample conversion augmentation strategy is also introduced. DeRIS achieves state-of-the-art performance on RefCOCO/+/g and gRefCOCO benchmarks.
+  [ICCV 2025][Segmentation][referring image segmentation] This paper proposes DeRIS, a framework that decouples referring image segmentation into two branches — perception and cognition — and introduces a Loopback Synergy…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - referring image segmentation
-  - perception-cognition decoupling
-  - loopback synergy
-  - non-referent
-  - GRES
+  - "ICCV 2025"
+  - "Segmentation"
+  - "referring image segmentation"
+  - "perception-cognition decoupling"
+  - "loopback synergy"
+  - "non-referent"
+  - "GRES"
 date: 2026-05-08
 content_hash: 2fb6aa1c4d8a7417
 ---

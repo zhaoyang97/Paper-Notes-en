@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DND: Boosting Large Language Models with Dynamic Nested Depth
 description: >-
-  [ICLR 2026][LLM Efficiency][Dynamic Depth] DND selects critical tokens at the end of each Transformer layer via a router and routes them back through the same layer for additional processing (nested depth). Combined with a routing control loss and a threshold control scheme for precise and stable token selection, DND achieves average performance gains of 1.88% and 0.87% on Qwen3-1.7B and Qwen3-30B-A3B, respectively, with fewer than 0.1M additional parameters.
+  [ICLR 2026][LLM Efficiency][Dynamic Depth] DND selects critical tokens at the end of each Transformer layer via a router and routes them back through the same layer for additional processing (nested depth). Combined with…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Dynamic Depth
-  - Adaptive Token Selection
-  - Large Language Models
-  - Post-Training Enhancement
-  - MoE
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Dynamic Depth"
+  - "Adaptive Token Selection"
+  - "Large Language Models"
+  - "Post-Training Enhancement"
+  - "MoE"
 date: 2026-05-08
 content_hash: 97e230783e422637
 ---

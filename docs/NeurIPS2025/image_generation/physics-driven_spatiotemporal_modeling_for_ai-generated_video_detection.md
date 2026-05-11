@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Physics-Driven Spatiotemporal Modeling for AI-Generated Video Detection
 description: >-
-  [NeurIPS 2025][Image Generation][AI-generated video detection] A physics conservation law-based paradigm for AI-generated video detection is proposed. A normalized spatiotemporal gradient (NSG) statistic is defined to capture the ratio of spatial probability gradients to temporal density changes. Pre-trained diffusion models are used to estimate NSG, and detection is performed via MMD. The method surpasses the state of the art by 16% in Recall and 10.75% in F1.
+  [NeurIPS 2025][Image Generation][AI-generated video detection] A physics conservation law-based paradigm for AI-generated video detection is proposed. A normalized spatiotemporal gradient (NSG) statistic is defined to ca…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - AI-generated video detection
-  - probability flow conservation
-  - normalized spatiotemporal gradient
-  - diffusion models
-  - MMD
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "AI-generated video detection"
+  - "probability flow conservation"
+  - "normalized spatiotemporal gradient"
+  - "diffusion models"
+  - "MMD"
 date: 2026-05-08
 content_hash: cf98d39cd8654127
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Log Probability Tracking of LLM APIs
 description: >-
-  [ICLR 2026][Video Understanding][LLM API monitoring] This paper proposes Logprob Tracking (LT), a method that detects subtle changes in LLM APIs (e.g., single-step fine-tuning) using only the log probabilities of a single-token input and single-token output. LT achieves sensitivity 2–3 orders of magnitude higher than existing methods at 1000× lower cost.
+  [ICLR 2026][Video Understanding][LLM API monitoring] This paper proposes Logprob Tracking (LT), a method that detects subtle changes in LLM APIs (e.g.…
 tags:
-  - ICLR 2026
-  - Video Understanding
-  - LLM API monitoring
-  - log probability
-  - model change detection
-  - hypothesis testing
-  - non-determinism
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "LLM API monitoring"
+  - "log probability"
+  - "model change detection"
+  - "hypothesis testing"
+  - "non-determinism"
 date: 2026-05-08
 content_hash: c0c9bdffa5a2faf4
 ---

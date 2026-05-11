@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Rhetorical Questions in LLM Representations: A Linear Probing Study
 description: >-
-  [ACL 2026][rhetorical questions] This work applies linear probing to analyze how LLMs internally represent rhetorical questions (RQs), finding that RQs are linearly separable in representation space and that probes transfer across datasets. However, probes trained on different datasets learn inconsistent directions, indicating that RQs are encoded along multiple heterogeneous linear directions rather than a single unified dimension.
+  [ACL 2026][Interpretability][rhetorical questions] This work applies linear probing to analyze how LLMs internally represent rhetorical questions (RQs)…
 tags:
-  - ACL 2026
-  - rhetorical questions
-  - linear probing
-  - LLM representations
-  - cross-dataset transfer
-  - rhetorical analysis
+  - "ACL 2026"
+  - "Interpretability"
+  - "rhetorical questions"
+  - "linear probing"
+  - "LLM representations"
+  - "cross-dataset transfer"
+  - "rhetorical analysis"
 date: 2026-05-08
 content_hash: 1cac2a2a631f8050
 ---

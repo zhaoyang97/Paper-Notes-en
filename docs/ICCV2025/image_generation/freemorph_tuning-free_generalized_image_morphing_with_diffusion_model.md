@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] FreeMorph: Tuning-Free Generalized Image Morphing with Diffusion Model
 description: >-
-  [Image Generation] FreeMorph proposes the first tuning-free generalized image morphing method. Through two key designs—guidance-aware spherical interpolation and step-oriented change trend—it generates smooth transition sequences between image pairs of arbitrary semantics and layouts within 30 seconds, achieving a speed improvement of 10–50× over existing methods.
+  [Image Generation] FreeMorph proposes the first tuning-free generalized image morphing method. Through two key designs—guidance-aware spherical interpolation and step-oriented change trend—it generates smooth transition…
 tags:
-  - Image Generation
+  - "Image Generation"
 date: 2026-05-08
 content_hash: 85ac82ac426919c8
 ---

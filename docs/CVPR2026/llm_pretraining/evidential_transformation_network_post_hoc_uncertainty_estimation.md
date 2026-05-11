@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Evidential Transformation Network: Turning Pretrained Models into Evidential Models for Post-hoc Uncertainty Estimation
 description: >-
-  [CVPR 2026][LLM Pretraining][Uncertainty Estimation] This paper proposes the Evidential Transformation Network (ETN), a lightweight post-hoc module that learns sample-dependent affine transformations in logit space to convert pretrained classifiers or LLMs into evidential models, achieving reliable uncertainty estimation with minimal computational overhead.
+  [CVPR 2026][LLM Pretraining][Uncertainty Estimation] This paper proposes the Evidential Transformation Network (ETN), a lightweight post-hoc module that learns sample-dependent affine transformations in logit space to co…
 tags:
-  - CVPR 2026
-  - LLM Pretraining
-  - Uncertainty Estimation
-  - Evidential Deep Learning
-  - Post-hoc Method
-  - Dirichlet Distribution
-  - Large Language Models
+  - "CVPR 2026"
+  - "LLM Pretraining"
+  - "Uncertainty Estimation"
+  - "Evidential Deep Learning"
+  - "Post-hoc Method"
+  - "Dirichlet Distribution"
+  - "Large Language Models"
 date: 2026-05-08
 content_hash: 3f76353398ea8017
 ---

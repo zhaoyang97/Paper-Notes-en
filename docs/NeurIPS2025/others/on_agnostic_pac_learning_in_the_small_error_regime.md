@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] On Agnostic PAC Learning in the Small Error Regime
 description: >-
-  [NeurIPS 2025][PAC learning] In the small error regime of agnostic PAC learning ($\tau \approx d/m$), this paper constructs a computationally efficient learner based on ERM aggregation that achieves an error upper bound of $c \cdot \tau + O(\sqrt{\tau d/m} + d/m)$ with $c \leq 2.1$, matching known lower bounds and advancing the precise complexity characterization of agnostic learning.
+  [NeurIPS 2025][PAC learning] In the small error regime of agnostic PAC learning ($\tau \approx d/m$), this paper constructs a computationally efficient learner based on ERM aggregation that achieves an error upper bound…
 tags:
-  - NeurIPS 2025
-  - PAC learning
-  - agnostic learning
-  - ERM
-  - sample complexity
-  - VC dimension
+  - "NeurIPS 2025"
+  - "PAC learning"
+  - "agnostic learning"
+  - "ERM"
+  - "sample complexity"
+  - "VC dimension"
 date: 2026-05-08
 content_hash: b404101b75efb1aa
 ---

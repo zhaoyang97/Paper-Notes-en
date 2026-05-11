@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Mitigating Mismatch within Reference-based Preference Optimization
 description: >-
-  [ICLR 2026][LLM Alignment][DPO] This paper identifies the *premature satisfaction* problem in DPO — when the reference policy assigns lower probability to chosen than to rejected responses (~45% of pairs), DPO's gradient is unnecessarily attenuated by the pessimistic reference signal, even when the policy is still incorrect (i.e., $\Delta_\theta < 0$). The paper proposes HyPO (a one-line code change: clipping the reference margin via $\max(0, \Delta_{ref})$), achieving a 41.2% relative improvement over DPO on AlpacaEval 2.0.
+  [ICLR 2026][LLM Alignment][DPO] This paper identifies the *premature satisfaction* problem in DPO — when the reference policy assigns lower probability to chosen than to rejected responses (~45% of pairs)…
 tags:
-  - ICLR 2026
-  - LLM Alignment
-  - DPO
-  - reference policy
-  - pessimistic bias
-  - preference optimization
-  - HyPO
-  - premature satisfaction
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "DPO"
+  - "reference policy"
+  - "pessimistic bias"
+  - "preference optimization"
+  - "HyPO"
+  - "premature satisfaction"
 date: 2026-05-08
 content_hash: 682591a41aedab6c
 ---

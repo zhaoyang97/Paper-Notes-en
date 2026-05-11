@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TaxaDiffusion: Progressively Trained Diffusion Model for Fine-Grained Species Generation
 description: >-
-  [ICCV 2025][Image Generation][Taxonomic guidance] TaxaDiffusion leverages the hierarchical structure of biological taxonomy (Kingdom→Phylum→Class→Order→Family→Genus→Species) to progressively train a diffusion model, gradually refining from high-level shared characteristics to species-level subtle distinctions. This approach achieves high-precision fine-grained animal image generation, reducing FID to 31.87 on the FishNet dataset (vs. 43.91 for LoRA), improving BioCLIP alignment score by 37%, and remaining effective for rare species with very few samples (even as few as 1).
+  [ICCV 2025][Image Generation][Taxonomic guidance] TaxaDiffusion leverages the hierarchical structure of biological taxonomy (Kingdom→Phylum→Class→Order→Family→Genus→Species) to progressively train a diffusion model…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Taxonomic guidance
-  - progressive training
-  - fine-grained species generation
-  - knowledge transfer
-  - few-shot generation
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Taxonomic guidance"
+  - "progressive training"
+  - "fine-grained species generation"
+  - "knowledge transfer"
+  - "few-shot generation"
 date: 2026-05-08
 content_hash: c6a5713c5b95b5c4
 ---

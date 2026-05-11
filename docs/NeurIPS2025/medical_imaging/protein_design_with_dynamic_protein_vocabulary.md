@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Protein Design with Dynamic Protein Vocabulary
 description: >-
-  [NeurIPS 2025][Medical Imaging][protein design] ProDVa introduces natural protein fragments as a "dynamic vocabulary" for generative protein design, employing a three-component architecture consisting of a text encoder, a protein language model, and a fragment encoder. Using less than 0.04% of the training data required by prior work, ProDVa designs functionally aligned and structurally foldable protein sequences, surpassing the SOTA model Pinal by 7.38% on the pLDDT>70 ratio.
+  [NeurIPS 2025][Medical Imaging][protein design] ProDVa introduces natural protein fragments as a "dynamic vocabulary" for generative protein design, employing a three-component architecture consisting of a text encoder…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - protein design
-  - dynamic vocabulary
-  - fragment retrieval
-  - foldability
-  - functional alignment
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "protein design"
+  - "dynamic vocabulary"
+  - "fragment retrieval"
+  - "foldability"
+  - "functional alignment"
 date: 2026-05-08
 content_hash: f8b865d58e6251b3
 ---

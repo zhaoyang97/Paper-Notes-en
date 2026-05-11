@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Structure-Guided Diffusion Models for High-Fidelity Portrait Shadow Removal
 description: >-
-  [ICCV 2025][Image Generation][Portrait Shadow Removal] This paper formulates portrait shadow removal as a diffusion inpainting problem. It trains an illumination-invariant structure extraction network to obtain structure maps free of shadow boundaries, uses these maps to guide an inpainting diffusion model for shadow region restoration, and applies a gradient-guided detail recovery diffusion model to reconstruct fine facial details. The proposed method substantially outperforms existing approaches on benchmark datasets.
+  [ICCV 2025][Image Generation][Portrait Shadow Removal] This paper formulates portrait shadow removal as a diffusion inpainting problem. It trains an illumination-invariant structure extraction network to obtain structure…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Portrait Shadow Removal
-  - Diffusion Inpainting
-  - Structure Map Guidance
-  - Detail Recovery
-  - Relighting Data Synthesis
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Portrait Shadow Removal"
+  - "Diffusion Inpainting"
+  - "Structure Map Guidance"
+  - "Detail Recovery"
+  - "Relighting Data Synthesis"
 date: 2026-05-08
 content_hash: 4b9b0902fe9afe38
 ---

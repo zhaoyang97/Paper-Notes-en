@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PRISM: Video Dataset Condensation with Progressive Refinement and Insertion for Sparse Motion
 description: >-
-  [CVPR 2026][LLM Evaluation][video dataset condensation] This paper proposes PRISM, a holistic video dataset condensation method that begins from only two temporal anchors (first and last frames), adaptively inserts keyframes by detecting gradient direction conflicts, and achieves state-of-the-art storage efficiency while preserving content–motion coupling integrity — reaching 17.9% accuracy with 20 MB on miniUCF 1VPC, a 5× storage reduction over prior methods (94 MB).
+  [CVPR 2026][LLM Evaluation][video dataset condensation] This paper proposes PRISM, a holistic video dataset condensation method that begins from only two temporal anchors (first and last frames)…
 tags:
-  - CVPR 2026
-  - LLM Evaluation
-  - video dataset condensation
-  - keyframe insertion
-  - gradient guidance
-  - spatiotemporal coupling
-  - storage efficiency
+  - "CVPR 2026"
+  - "LLM Evaluation"
+  - "video dataset condensation"
+  - "keyframe insertion"
+  - "gradient guidance"
+  - "spatiotemporal coupling"
+  - "storage efficiency"
 date: 2026-05-08
 content_hash: f9587a19f949211f
 ---

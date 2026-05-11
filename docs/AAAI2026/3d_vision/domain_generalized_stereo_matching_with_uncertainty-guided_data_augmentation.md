@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Domain Generalized Stereo Matching with Uncertainty-guided Data Augmentation
 description: >-
-  [AAAI2026][3D Vision][Stereo Matching] This paper proposes UgDA-Stereo, a plug-and-play training-time module that simulates diverse unseen domain styles by applying Gaussian uncertainty perturbations—derived from batch statistics—to the per-channel mean and standard deviation of RGB images. Combined with a feature consistency constraint, the method substantially improves the cross-domain generalization of stereo matching models.
+  [AAAI2026][3D Vision][Stereo Matching] This paper proposes UgDA-Stereo, a plug-and-play training-time module that simulates diverse unseen domain styles by applying Gaussian uncertainty perturbations—derived from batch s…
 tags:
-  - AAAI2026
-  - 3D Vision
-  - Stereo Matching
-  - Domain Generalization
-  - Data Augmentation
-  - Uncertainty Modeling
-  - Feature Consistency
+  - "AAAI2026"
+  - "3D Vision"
+  - "Stereo Matching"
+  - "Domain Generalization"
+  - "Data Augmentation"
+  - "Uncertainty Modeling"
+  - "Feature Consistency"
 date: 2026-05-08
 content_hash: 886038651a33288b
 ---

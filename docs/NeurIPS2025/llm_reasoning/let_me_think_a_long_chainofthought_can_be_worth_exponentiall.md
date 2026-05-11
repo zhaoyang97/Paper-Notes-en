@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Let Me Think! A Long Chain-of-Thought Can Be Worth Exponentially Many Short Ones
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Test-time scaling] This paper demonstrates theoretically and empirically that there exist reasoning tasks (graph connectivity) for which a single long CoT (sequential scaling) is equivalent in capability to exponentially many short CoTs (parallel scaling)—i.e., reducing CoT length by even a small amount requires an exponential increase in parallel samples to achieve the same accuracy.
+  [NeurIPS 2025][LLM Reasoning][Test-time scaling] This paper demonstrates theoretically and empirically that there exist reasoning tasks (graph connectivity) for which a single long CoT (sequential scaling) is equivalent…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - Test-time scaling
-  - sequential scaling vs. parallel scaling
-  - chain-of-thought
-  - complexity theory
-  - graph connectivity
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "Test-time scaling"
+  - "sequential scaling vs. parallel scaling"
+  - "chain-of-thought"
+  - "complexity theory"
+  - "graph connectivity"
 date: 2026-05-08
 content_hash: c3cc1bdee0d897e3
 ---

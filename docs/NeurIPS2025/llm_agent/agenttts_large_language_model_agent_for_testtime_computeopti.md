@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] AgentTTS: Large Language Model Agent for Test-time Compute-optimal Scaling Strategy in Complex Tasks
 description: >-
-  [NeurIPS 2025][LLM Agent][Test-time Scaling] This paper investigates the problem of compute-optimal test-time scaling in multi-stage complex tasks. Through large-scale pilot experiments, three generalizable scaling insights for LLMs on multi-stage tasks are identified. The authors propose AgentTTS—an LLM agent-based framework that autonomously searches for compute-optimal model selection and budget allocation strategies via iterative feedback-driven search.
+  [NeurIPS 2025][LLM Agent][Test-time Scaling] This paper investigates the problem of compute-optimal test-time scaling in multi-stage complex tasks. Through large-scale pilot experiments…
 tags:
-  - NeurIPS 2025
-  - LLM Agent
-  - Test-time Scaling
-  - Multi-stage Tasks
-  - Compute Budget Allocation
-  - Hyperparameter Optimization
+  - "NeurIPS 2025"
+  - "LLM Agent"
+  - "Test-time Scaling"
+  - "Multi-stage Tasks"
+  - "Compute Budget Allocation"
+  - "Hyperparameter Optimization"
 date: 2026-05-08
 content_hash: 20823dc2bbe06d28
 ---

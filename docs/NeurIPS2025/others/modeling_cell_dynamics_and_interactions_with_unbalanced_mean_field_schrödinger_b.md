@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Modeling Cell Dynamics and Interactions with Unbalanced Mean Field Schrödinger Bridge
 description: >-
-  [NeurIPS 2025][Schrödinger Bridge] This paper proposes the Unbalanced Mean Field Schrödinger Bridge (UMFSB) framework and the CytoBridge deep learning algorithm, which simultaneously model unbalanced stochastic cell dynamics and cell-cell interactions from sparse temporal snapshot data.
+  [NeurIPS 2025][Schrödinger Bridge] This paper proposes the Unbalanced Mean Field Schrödinger Bridge (UMFSB) framework and the CytoBridge deep learning algorithm…
 tags:
-  - NeurIPS 2025
-  - Schrödinger Bridge
-  - cell dynamics
-  - cell-cell interaction
-  - single-cell RNA sequencing
-  - optimal transport
+  - "NeurIPS 2025"
+  - "Schrödinger Bridge"
+  - "cell dynamics"
+  - "cell-cell interaction"
+  - "single-cell RNA sequencing"
+  - "optimal transport"
 date: 2026-05-08
 content_hash: 395692f4611100a8
 ---

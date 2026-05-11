@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DOLLAR: Few-Step Video Generation via Distillation and Latent Reward Optimization
 description: >-
-  [ICCV 2025][Video Generation] DOLLAR combines variational score distillation (VSD) and consistency distillation to achieve few-step video generation, and introduces a latent-space reward model fine-tuning method to further optimize generation quality. The 4-step model generates 10-second videos (128 frames @ 12 FPS) achieving a VBench score of 82.57, surpassing both the teacher model and commercial baselines such as Gen-3 and Kling; 1-step distillation achieves a 278.6× speedup.
+  [ICCV 2025][Video Generation][distillation] DOLLAR combines variational score distillation (VSD) and consistency distillation to achieve few-step video generation…
 tags:
-  - ICCV 2025
-  - Video Generation
-  - distillation
-  - consistency distillation
-  - latent reward
-  - few-step
-  - VBench
+  - "ICCV 2025"
+  - "Video Generation"
+  - "distillation"
+  - "consistency distillation"
+  - "latent reward"
+  - "few-step"
+  - "VBench"
 date: 2026-05-08
 content_hash: f8c2b03812b799cc
 ---

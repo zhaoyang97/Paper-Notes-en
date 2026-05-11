@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dynamics-Predictive Sampling for Active RL Finetuning of Large Reasoning Models
 description: >-
-  [ICLR 2026][LLM Reasoning][RL finetuning] This paper models each prompt's solve progress during RL finetuning as a latent Markov dynamical system, and employs lightweight Bayesian inference to online-predict prompt solve states. By prioritizing "partially solved" prompts for sampling, the method achieves comparable or superior reasoning performance to Dynamic Sampling (DS) using fewer than 30% of DS's rollouts.
+  [ICLR 2026][LLM Reasoning][RL finetuning] This paper models each prompt's solve progress during RL finetuning as a latent Markov dynamical system…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - RL finetuning
-  - prompt sampling
-  - hidden Markov model
-  - large reasoning models
-  - online Bayesian inference
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "RL finetuning"
+  - "prompt sampling"
+  - "hidden Markov model"
+  - "large reasoning models"
+  - "online Bayesian inference"
 date: 2026-05-08
 content_hash: e821e277deb192db
 ---

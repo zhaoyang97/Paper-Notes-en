@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Scaling View Synthesis Transformers (SVSM)
 description: >-
-  [CVPR 2026][3D Vision][Novel View Synthesis] This work establishes, for the first time, scaling laws for geometry-free NVS Transformers. It proposes the effective batch size hypothesis ($B_\text{eff} = B \cdot V_T$) to reveal the root cause of the underestimation of encoder-decoder architectures, designs a unidirectional encoder-decoder architecture called SVSM, and achieves a new state of the art on RealEstate10K (30.01 PSNR) with less than half the training FLOPs. The Pareto frontier shifts 3× to the left relative to LVSM decoder-only.
+  [CVPR 2026][3D Vision][Novel View Synthesis] This work establishes, for the first time, scaling laws for geometry-free NVS Transformers. It proposes the effective batch size hypothesis ($B_\text{eff} = B \cdot V_T$) to r…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Novel View Synthesis
-  - Scaling Laws
-  - Transformer
-  - Encoder-Decoder
-  - Computational Efficiency
-  - PRoPE
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Novel View Synthesis"
+  - "Scaling Laws"
+  - "Transformer"
+  - "Encoder-Decoder"
+  - "Computational Efficiency"
+  - "PRoPE"
 date: 2026-05-08
 content_hash: e56b3628f6b3f076
 ---

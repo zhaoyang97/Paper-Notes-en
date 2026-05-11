@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Demystifying Language Model Forgetting with Low-Rank Example Associations
 description: >-
-  [NeurIPS 2025][LLM Safety][Catastrophic Forgetting] This paper discovers that the association matrix between upstream sample forgetting and newly learned tasks exhibits a low-rank structure (rank-3 achieves $R^2 > 0.69$) after LLM fine-tuning, and leverages matrix completion to predict forgetting induced by unseen tasks, thereby guiding selective replay to mitigate forgetting.
+  [NeurIPS 2025][LLM Safety][Catastrophic Forgetting] This paper discovers that the association matrix between upstream sample forgetting and newly learned tasks exhibits a low-rank structure (rank-3 achieves $R^2 > 0.69$)…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - Catastrophic Forgetting
-  - Low-Rank Association
-  - Matrix Completion
-  - Forgetting Prediction
-  - Selective Replay
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "Catastrophic Forgetting"
+  - "Low-Rank Association"
+  - "Matrix Completion"
+  - "Forgetting Prediction"
+  - "Selective Replay"
 date: 2026-05-08
 content_hash: 50c05459af2a379a
 ---

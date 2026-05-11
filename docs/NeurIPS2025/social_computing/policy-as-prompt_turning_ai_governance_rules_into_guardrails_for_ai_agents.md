@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Policy-as-Prompt: Turning AI Governance Rules into Guardrails for AI Agents
 description: >-
-  [NeurIPS 2025][Social Computing][AI governance] This paper proposes the Policy-as-Prompt framework, a two-stage end-to-end pipeline—POLICY-TREE-GEN and POLICY-AS-PROMPT-GEN—that automatically converts a team's existing unstructured design documents (PRD, TDD, code) into runtime-enforceable policy guardrails, using a lightweight LLM as a compliance "judge," achieving 70–73% input/output classification accuracy in HR and SOC applications.
+  [NeurIPS 2025][Social Computing][AI governance] This paper proposes the Policy-as-Prompt framework, a two-stage end-to-end pipeline—POLICY-TREE-GEN and POLICY-AS-PROMPT-GEN—that automatically converts a team's existing u…
 tags:
-  - NeurIPS 2025
-  - Social Computing
-  - AI governance
-  - guardrail policy
-  - prompt injection defense
-  - least privilege principle
-  - policy-as-code
+  - "NeurIPS 2025"
+  - "Social Computing"
+  - "AI governance"
+  - "guardrail policy"
+  - "prompt injection defense"
+  - "least privilege principle"
+  - "policy-as-code"
 date: 2026-05-08
 content_hash: 5a39265773b5b6cd
 ---

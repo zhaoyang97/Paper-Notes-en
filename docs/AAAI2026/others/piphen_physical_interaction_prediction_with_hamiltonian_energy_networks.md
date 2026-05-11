@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] PIPHEN: Physical Interaction Prediction with Hamiltonian Energy Networks
 description: >-
-  [AAAI 2026][multi-robot collaboration] This paper proposes PIPHEN, a distributed physical cognition-control framework that employs a Physical Interaction Prediction Network (PIPN) for "semantic distillation" to compress high-dimensional perceptual data to less than 5% of the original data volume, while a Hamiltonian energy conservation-based HEN controller generates coordinated actions, thereby addressing the "shared brain dilemma" in multi-robot systems.
+  [AAAI 2026][multi-robot collaboration] This paper proposes PIPHEN, a distributed physical cognition-control framework that employs a Physical Interaction Prediction Network (PIPN) for "semantic distillation" to compress…
 tags:
-  - AAAI 2026
-  - multi-robot collaboration
-  - semantic communication
-  - Hamiltonian energy networks
-  - knowledge distillation
-  - physical interaction prediction
+  - "AAAI 2026"
+  - "multi-robot collaboration"
+  - "semantic communication"
+  - "Hamiltonian energy networks"
+  - "knowledge distillation"
+  - "physical interaction prediction"
 date: 2026-05-08
 content_hash: a4f3f23a5e9d26a5
 ---

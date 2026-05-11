@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Towards Trustworthy Multi-Turn LLM Agents via Behavioral Guidance
 description: >-
-  [AAAI 2026][LLM Agent][multi-turn interaction] This paper proposes a task completion framework in which a Task Profiler, a Reasoning Module, and a Generation Module co-evolve to enable verifiable and reliable behavioral guidance for LLM agents in multi-turn interactive environments.
+  [AAAI 2026][LLM Agent][multi-turn interaction] This paper proposes a task completion framework in which a Task Profiler, a Reasoning Module…
 tags:
-  - AAAI 2026
-  - LLM Agent
-  - multi-turn interaction
-  - behavioral guidance
-  - trustworthy agent
-  - task profiler
-  - reasoning module
-  - generation module
+  - "AAAI 2026"
+  - "LLM Agent"
+  - "multi-turn interaction"
+  - "behavioral guidance"
+  - "trustworthy agent"
+  - "task profiler"
+  - "reasoning module"
+  - "generation module"
 date: 2026-05-08
 content_hash: 371ea5a9449f747a
 ---

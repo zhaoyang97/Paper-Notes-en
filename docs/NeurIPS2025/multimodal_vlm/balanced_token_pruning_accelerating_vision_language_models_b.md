@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Balanced Token Pruning: Accelerating Vision Language Models Beyond Local Optimization
 description: >-
-  [NeurIPS 2025][Multimodal VLM][visual token pruning] This paper proposes Balanced Token Pruning (BTP), which jointly considers the impact of pruning on both the current layer (local) and subsequent layers (global). BTP emphasizes diversity preservation in shallow layers to maintain downstream representation quality, and attention-based selection in deep layers to preserve local output consistency. On multiple LVLMs including LLaVA and Qwen2.5-VL, BTP retains 98% of the original model's performance while keeping only 22% of visual tokens.
+  [NeurIPS 2025][Multimodal VLM][visual token pruning] This paper proposes Balanced Token Pruning (BTP), which jointly considers the impact of pruning on both the current layer (local) and subsequent layers (global). BTP e…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - visual token pruning
-  - local-global optimization
-  - attention pruning
-  - diversity pruning
-  - LVLM inference acceleration
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "visual token pruning"
+  - "local-global optimization"
+  - "attention pruning"
+  - "diversity pruning"
+  - "LVLM inference acceleration"
 date: 2026-05-08
 content_hash: 6f5a56f4b8b5784d
 ---

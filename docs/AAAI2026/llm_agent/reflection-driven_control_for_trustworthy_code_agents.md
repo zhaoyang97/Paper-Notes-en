@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Reflection-Driven Control for Trustworthy Code Agents
 description: >-
-  [AAAI 2026][LLM Agent][reflection-driven control] This paper proposes a Reflection-Driven Control module that elevates "self-reflection" from a post-hoc patch to a first-class control loop within the agent reasoning process. Through three components—a lightweight self-checker, evidence-driven repair, and a reflective memory repository—the approach significantly improves code security rates on secure code generation tasks.
+  [AAAI 2026][LLM Agent][reflection-driven control] This paper proposes a Reflection-Driven Control module that elevates "self-reflection" from a post-hoc patch to a first-class control loop within the agent reasoning proc…
 tags:
-  - AAAI 2026
-  - LLM Agent
-  - reflection-driven control
-  - secure code generation
-  - self-inspection mechanism
-  - dynamic memory repository
-  - trustworthy agent
+  - "AAAI 2026"
+  - "LLM Agent"
+  - "reflection-driven control"
+  - "secure code generation"
+  - "self-inspection mechanism"
+  - "dynamic memory repository"
+  - "trustworthy agent"
 date: 2026-05-08
 content_hash: e9753edac6d4291b
 ---

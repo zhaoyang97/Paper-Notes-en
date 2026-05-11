@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Implicit Counterfactual Learning for Audio-Visual Segmentation
 description: >-
-  [ICCV 2025][Segmentation][audio-visual segmentation] This paper proposes the Implicit Counterfactual Framework (ICF), which employs multi-granularity implicit text as a modality bridge to reduce the audio-visual representation gap, and leverages semantic counterfactuals to generate orthogonal counterfactual samples that mitigate modality preference. Combined with Collaborative Distribution-Aware Contrastive Learning (CDCL), ICF achieves unbiased cross-modal understanding and state-of-the-art performance on three AVS benchmarks.
+  [ICCV 2025][Segmentation][audio-visual segmentation] This paper proposes the Implicit Counterfactual Framework (ICF), which employs multi-granularity implicit text as a modality bridge to reduce the audio-visual represen…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - audio-visual segmentation
-  - counterfactual learning
-  - cross-modal alignment
-  - implicit text bridging
-  - contrastive learning
+  - "ICCV 2025"
+  - "Segmentation"
+  - "audio-visual segmentation"
+  - "counterfactual learning"
+  - "cross-modal alignment"
+  - "implicit text bridging"
+  - "contrastive learning"
 date: 2026-05-08
 content_hash: ccb0103436f6ca41
 ---

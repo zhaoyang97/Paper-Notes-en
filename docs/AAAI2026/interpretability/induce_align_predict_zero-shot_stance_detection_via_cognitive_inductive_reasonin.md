@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Induce, Align, Predict: Zero-Shot Stance Detection via Cognitive Inductive Reasoning
 description: >-
-  [AAAI 2026][zero-shot stance detection] This paper proposes the CIRF framework, which abstracts transferable reasoning patterns from LLM-generated first-order logic via unsupervised schema induction (USI), and performs explainable zero-shot stance reasoning through structural alignment using a schema-enhanced graph kernel model (SEGKM). The method achieves state-of-the-art performance on three benchmarks while requiring only 30% of labeled data.
+  [AAAI 2026][Interpretability][zero-shot stance detection] This paper proposes the CIRF framework, which abstracts transferable reasoning patterns from LLM-generated first-order logic via unsupervised schema induction (US…
 tags:
-  - AAAI 2026
-  - zero-shot stance detection
-  - cognitive schema
-  - first-order logic
-  - graph kernel
-  - low-resource
+  - "AAAI 2026"
+  - "Interpretability"
+  - "zero-shot stance detection"
+  - "cognitive schema"
+  - "first-order logic"
+  - "graph kernel"
+  - "low-resource"
 date: 2026-05-08
 content_hash: 02c31ff5717c3c59
 ---

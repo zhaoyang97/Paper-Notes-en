@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AllTracker: Efficient Dense Point Tracking at High Resolution
 description: >-
-  [ICCV 2025][Video Understanding][dense point tracking] AllTracker reformulates point tracking as a multi-frame long-range optical flow problem, iteratively refining correspondence estimates on low-resolution grids via 2D convolutions and pixel-aligned temporal attention, followed by upsampling. With only 16M parameters, it achieves state-of-the-art accuracy and enables high-resolution (768×1024) dense tracking of all pixels at speeds approaching optical flow methods.
+  [ICCV 2025][Video Understanding][dense point tracking] AllTracker reformulates point tracking as a multi-frame long-range optical flow problem…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - dense point tracking
-  - optical flow
-  - long-range correspondence
-  - high-resolution tracking
-  - recurrent network
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "dense point tracking"
+  - "optical flow"
+  - "long-range correspondence"
+  - "high-resolution tracking"
+  - "recurrent network"
 date: 2026-05-08
 content_hash: 0486218d7e8f7bfd
 ---

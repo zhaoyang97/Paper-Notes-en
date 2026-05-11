@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SkySense V2: A Unified Foundation Model for Multi-Modal Remote Sensing
 description: >-
-  [ICCV 2025][Remote Sensing][Remote sensing foundation model] This paper proposes SkySense V2, which employs a single unified Transformer backbone to process three remote sensing modalities — high-resolution optical, multispectral, and SAR imagery — and introduces Adaptive Patch Merging (APM), modality-specific prompt tokens, and Query-based Semantic Aggregation Contrastive Learning (QSACL) for pre-training. With only 665M parameters (vs. 1.26B in the predecessor SkySense), SkySense V2 achieves an average improvement of 1.8 points across 7 tasks on 16 datasets.
+  [ICCV 2025][Remote Sensing][Remote sensing foundation model] This paper proposes SkySense V2, which employs a single unified Transformer backbone to process three remote sensing modalities — high-resolution optical…
 tags:
-  - ICCV 2025
-  - Remote Sensing
-  - Remote sensing foundation model
-  - multi-modal learning
-  - unified Transformer
-  - self-supervised learning
-  - Mixture of Experts
+  - "ICCV 2025"
+  - "Remote Sensing"
+  - "Remote sensing foundation model"
+  - "multi-modal learning"
+  - "unified Transformer"
+  - "self-supervised learning"
+  - "Mixture of Experts"
 date: 2026-05-08
 content_hash: e2f377905e3e3ebf
 ---

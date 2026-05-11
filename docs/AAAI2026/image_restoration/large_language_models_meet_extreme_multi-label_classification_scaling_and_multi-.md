@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Large Language Models Meet Extreme Multi-label Classification: Scaling and Multi-modal Framework
 description: >-
-  [AAAI 2026][Image Restoration][Extreme Multi-label Classification] This paper investigates the effective utilization of decoder-based LLMs for Extreme Multi-label Classification (XMC), proposing a dual-decoder learning strategy and the ViXML multimodal framework. By employing structured prompt templates to adapt LLM embeddings and efficiently integrating visual metadata, the method substantially outperforms state-of-the-art approaches on four public benchmarks (up to +8.21% P@1 on the largest dataset), demonstrating that "one image outweighs billions of parameters."
+  [AAAI 2026][Image Restoration][Extreme Multi-label Classification] This paper investigates the effective utilization of decoder-based LLMs for Extreme Multi-label Classification (XMC)…
 tags:
-  - AAAI 2026
-  - Image Restoration
-  - Extreme Multi-label Classification
-  - Large Language Models
-  - Visual Metadata
-  - Siamese Learning
-  - Dual-Decoder
+  - "AAAI 2026"
+  - "Image Restoration"
+  - "Extreme Multi-label Classification"
+  - "Large Language Models"
+  - "Visual Metadata"
+  - "Siamese Learning"
+  - "Dual-Decoder"
 date: 2026-05-08
 content_hash: c68a4f68ef276809
 ---

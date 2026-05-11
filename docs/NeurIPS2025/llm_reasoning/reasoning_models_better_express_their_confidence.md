@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Reasoning Models Better Express Their Confidence
 description: >-
-  [NeurIPS 2025][LLM Reasoning][confidence calibration] This paper systematically demonstrates that reasoning models (with extended CoT) exhibit significantly better confidence calibration than non-reasoning models, and identifies "slow-thinking" behaviors—exploring alternatives, backtracking, and verification—as the fundamental source of this calibration improvement.
+  [NeurIPS 2025][LLM Reasoning][confidence calibration] This paper systematically demonstrates that reasoning models (with extended CoT) exhibit significantly better confidence calibration than non-reasoning models…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - confidence calibration
-  - reasoning models
-  - chain-of-thought
-  - slow thinking
-  - verbalized confidence
-  - ECE
-  - Brier Score
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "confidence calibration"
+  - "reasoning models"
+  - "chain-of-thought"
+  - "slow thinking"
+  - "verbalized confidence"
+  - "ECE"
+  - "Brier Score"
 date: 2026-05-08
 content_hash: f999a2305073c461
 ---

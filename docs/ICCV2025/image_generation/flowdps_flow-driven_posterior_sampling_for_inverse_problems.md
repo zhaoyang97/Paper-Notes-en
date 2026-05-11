@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FlowDPS: Flow-Driven Posterior Sampling for Inverse Problems
 description: >-
-  [ICCV 2025][Image Generation][Flow Matching] FlowDPS derives a Tweedie formula for flow models to decompose the Flow ODE into a clean image estimation component and a noise estimation component. Likelihood gradients are injected into the clean image component while stochastic noise is introduced into the noise component, enabling principled posterior sampling for inverse problems under the flow matching framework. FlowDPS surpasses all prior methods on four linear inverse problems using SD3.0.
+  [ICCV 2025][Image Generation][Flow Matching] FlowDPS derives a Tweedie formula for flow models to decompose the Flow ODE into a clean image estimation component and a noise estimation component. Likelihood gradients are…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Flow Matching
-  - Posterior Sampling
-  - Inverse Problems
-  - Tweedie Formula
-  - Stable Diffusion 3.0
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Flow Matching"
+  - "Posterior Sampling"
+  - "Inverse Problems"
+  - "Tweedie Formula"
+  - "Stable Diffusion 3.0"
 date: 2026-05-08
 content_hash: c7b6d99be5fd4224
 ---

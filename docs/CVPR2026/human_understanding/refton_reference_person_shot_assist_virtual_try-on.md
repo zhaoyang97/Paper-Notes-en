@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RefTon: Reference Person Shot Assist Virtual Try-on
 description: >-
-  [CVPR 2026][Human Understanding][virtual try-on] This paper proposes RefTon, a person-to-person virtual try-on framework built on Flux-Kontext. By incorporating an additional reference image — a photo of another person wearing the target garment — RefTon provides richer garment detail information. Combined with a two-stage training strategy and a rescaled position index mechanism, the framework achieves end-to-end try-on without auxiliary conditions (e.g., DensePose, segmentation masks), attaining state-of-the-art performance on VITON-HD and DressCode.
+  [CVPR 2026][Human Understanding][virtual try-on] This paper proposes RefTon, a person-to-person virtual try-on framework built on Flux-Kontext. By incorporating an additional reference image — a photo of another person w…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - virtual try-on
-  - reference image guidance
-  - Flux-Kontext
-  - mask-free try-on
-  - diffusion models
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "virtual try-on"
+  - "reference image guidance"
+  - "Flux-Kontext"
+  - "mask-free try-on"
+  - "diffusion models"
 date: 2026-05-08
 content_hash: 281f1c42a73acc8e
 ---

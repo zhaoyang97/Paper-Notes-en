@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From Evaluation to Defense: Advancing Safety in Video Large Language Models
 description: >-
-  [ICLR2026][Recommender Systems][video LLM safety] This work constructs VideoSafetyEval (11.4k video-query pairs covering 19 risk categories), revealing that the video modality degrades safety performance by 34.2%, and proposes VideoSafety-R1, a three-stage framework (Alarm Token + SFT + Safety-guided GRPO) that improves defense success rate by 71.1% on VSE-HH.
+  [ICLR2026][Recommender Systems][video LLM safety] This work constructs VideoSafetyEval (11.4k video-query pairs covering 19 risk categories), revealing that the video modality degrades safety performance by 34.2%…
 tags:
-  - ICLR2026
-  - Recommender Systems
-  - video LLM safety
-  - benchmark
-  - alarm token
-  - GRPO
-  - safety alignment
+  - "ICLR2026"
+  - "Recommender Systems"
+  - "video LLM safety"
+  - "benchmark"
+  - "alarm token"
+  - "GRPO"
+  - "safety alignment"
 date: 2026-05-08
 content_hash: bd6d3d75e8d2f0f6
 ---

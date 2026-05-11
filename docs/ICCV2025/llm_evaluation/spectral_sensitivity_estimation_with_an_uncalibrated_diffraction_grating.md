@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Spectral Sensitivity Estimation with an Uncalibrated Diffraction Grating
 description: >-
-  [ICCV 2025][LLM Evaluation][spectral sensitivity] A practical method is proposed for estimating camera spectral sensitivity using an uncalibrated diffraction grating film. By jointly estimating spectral sensitivity and grating efficiency, accurate closed-form solutions are obtained from a single capture of a light source with known spectrum. The method significantly outperforms traditional color chart approaches at an equipment cost of under $5 USD.
+  [ICCV 2025][LLM Evaluation][spectral sensitivity] A practical method is proposed for estimating camera spectral sensitivity using an uncalibrated diffraction grating film. By jointly estimating spectral sensitivity and g…
 tags:
-  - ICCV 2025
-  - LLM Evaluation
-  - spectral sensitivity
-  - diffraction grating
-  - camera calibration
-  - closed-form solution
-  - pixel-wavelength mapping
+  - "ICCV 2025"
+  - "LLM Evaluation"
+  - "spectral sensitivity"
+  - "diffraction grating"
+  - "camera calibration"
+  - "closed-form solution"
+  - "pixel-wavelength mapping"
 date: 2026-05-08
 content_hash: fabef97b3cb86e85
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FairImagen: Post-Processing for Bias Mitigation in Text-to-Image Models
 description: >-
-  [NeurIPS 2025][Image Generation][Fairness] This paper proposes FairImagen, a post-processing debiasing framework that applies FairPCA projection in the CLIP prompt embedding space to remove demographic information, combined with empirical noise injection and joint cross-demographic debiasing, achieving significant fairness improvements in text-to-image generation without retraining the model.
+  [NeurIPS 2025][Image Generation][Fairness] This paper proposes FairImagen, a post-processing debiasing framework that applies FairPCA projection in the CLIP prompt embedding space to remove demographic information…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Fairness
-  - Bias Mitigation
-  - Stable Diffusion
-  - FairPCA
-  - Text-to-Image
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Fairness"
+  - "Bias Mitigation"
+  - "Stable Diffusion"
+  - "FairPCA"
+  - "Text-to-Image"
 date: 2026-05-08
 content_hash: bb090292842ac315
 ---

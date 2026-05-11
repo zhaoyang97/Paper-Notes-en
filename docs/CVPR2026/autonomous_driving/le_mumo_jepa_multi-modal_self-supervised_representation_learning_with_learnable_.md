@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Le MuMo JEPA: Multi-Modal Self-Supervised Representation Learning with Learnable Fusion Tokens
 description: >-
-  [CVPR 2026][Autonomous Driving][Multi-modal self-supervision] This work extends the LeJEPA self-supervised framework to a multi-modal setting by introducing learnable fusion tokens as a Perceiver-style latent bottleneck within a shared Transformer, enabling efficient fusion of RGB with companion modalities (LiDAR depth / thermal infrared). A pruning strategy reduces attention overhead by approximately 9×. On Waymo, CenterNet 3D detection mAP XY reaches 23.6 (+4.3 over RGB-only LeJEPA) and Depth MAE improves from 4.704 to 2.860.
+  [CVPR 2026][Autonomous Driving][Multi-modal self-supervision] This work extends the LeJEPA self-supervised framework to a multi-modal setting by introducing learnable fusion tokens as a Perceiver-style latent bottleneck…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Multi-modal self-supervision
-  - JEPA
-  - fusion tokens
-  - latent bottleneck
-  - RGB-LiDAR fusion
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Multi-modal self-supervision"
+  - "JEPA"
+  - "fusion tokens"
+  - "latent bottleneck"
+  - "RGB-LiDAR fusion"
 date: 2026-05-08
 content_hash: 35950d824289b706
 ---

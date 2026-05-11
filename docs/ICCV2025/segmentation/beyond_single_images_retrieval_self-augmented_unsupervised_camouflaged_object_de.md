@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond Single Images: Retrieval Self-Augmented Unsupervised Camouflaged Object Detection
 description: >-
-  [ICCV 2025][Segmentation][camouflaged object detection] This paper proposes RISE — a retrieval self-augmented unsupervised camouflaged object detection paradigm that constructs foreground/background prototype libraries from the training set itself and leverages KNN retrieval to generate pseudo-labels, substantially outperforming existing unsupervised and prompt-based methods without any annotations.
+  [ICCV 2025][Segmentation][camouflaged object detection] This paper proposes RISE — a retrieval self-augmented unsupervised camouflaged object detection paradigm that constructs foreground/background prototype libraries f…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - camouflaged object detection
-  - unsupervised segmentation
-  - retrieval-augmented
-  - KNN
-  - prototype library
+  - "ICCV 2025"
+  - "Segmentation"
+  - "camouflaged object detection"
+  - "unsupervised segmentation"
+  - "retrieval-augmented"
+  - "KNN"
+  - "prototype library"
 date: 2026-05-08
 content_hash: d9690d714199169e
 ---

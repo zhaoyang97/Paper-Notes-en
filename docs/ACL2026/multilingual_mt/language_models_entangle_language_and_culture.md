@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Language Models Entangle Language and Culture
 description: >-
-  [ACL 2026][Multilingual LLM] This paper evaluates multilingual LLMs on culturally neutral, open-ended advice-seeking questions derived from the WildChat dataset. It finds that query language systematically affects both response quality and cultural context — low-resource language queries yield notably lower quality responses than English, and language choice implicitly shifts the cultural framing of responses. A translated version of CulturalBench further validates the entanglement between language and culture in LLMs.
+  [ACL 2026][Multilingual & Machine Translation][Multilingual LLM] This paper evaluates multilingual LLMs on culturally neutral, open-ended advice-seeking questions derived from the WildChat dataset. It finds that query la…
 tags:
-  - ACL 2026
-  - Multilingual LLM
-  - Cultural Bias
-  - Language-Culture Entanglement
-  - LLM Evaluation
-  - Fairness
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "Multilingual LLM"
+  - "Cultural Bias"
+  - "Language-Culture Entanglement"
+  - "LLM Evaluation"
+  - "Fairness"
 date: 2026-05-08
 content_hash: 75768a0f6d330629
 ---

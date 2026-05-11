@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Small Target Detection Based on Mask-Enhanced Attention Fusion of Visible and Infrared Remote Sensing Images
 description: >-
-  [CVPR 2026][Object Detection][Small target detection] This paper proposes ESM-YOLO+, a lightweight visible-infrared fusion network for small target detection. It achieves pixel-level cross-modal adaptive fusion via a Mask-Enhanced Attention Fusion (MEAF) module, and introduces a training-time structural representation enhancement to improve spatial discriminability. The method achieves 84.71% mAP on VEDAI while reducing parameter count by 93.6%.
+  [CVPR 2026][Object Detection][Small target detection] This paper proposes ESM-YOLO+, a lightweight visible-infrared fusion network for small target detection. It achieves pixel-level cross-modal adaptive fusion via a Mas…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - Small target detection
-  - visible-infrared fusion
-  - remote sensing
-  - spatial attention
-  - lightweight network
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Small target detection"
+  - "visible-infrared fusion"
+  - "remote sensing"
+  - "spatial attention"
+  - "lightweight network"
 date: 2026-05-08
 content_hash: 623a7e56901330a0
 ---

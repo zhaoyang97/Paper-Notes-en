@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MPCache: MPC-Friendly KV Cache Eviction for Efficient Private LLM Inference
 description: >-
-  [NeurIPS 2025][LLM Safety][Private inference] This paper proposes MPCache, a KV cache eviction framework designed for secure multi-party computation (MPC), combining one-time static eviction with query-aware dynamic selection. Through hierarchical clustering, linearized similarity approximation, and cross-layer index sharing, MPCache achieves up to 2.01× latency reduction and 8.37× communication volume reduction without sacrificing LLM performance.
+  [NeurIPS 2025][LLM Safety][Private inference] This paper proposes MPCache, a KV cache eviction framework designed for secure multi-party computation (MPC)…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - Private inference
-  - secure multi-party computation
-  - KV cache eviction
-  - LLM efficiency
-  - sparse attention
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "Private inference"
+  - "secure multi-party computation"
+  - "KV cache eviction"
+  - "LLM efficiency"
+  - "sparse attention"
 date: 2026-05-08
 content_hash: 31f34a9ded4dd32c
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VGGSounder: Audio-Visual Evaluations for Foundation Models
 description: >-
-  [ICCV 2025][Audio & Speech][Audio-visual classification] To address the limitations of the VGGSound dataset — including missing multi-labels, category overlap, and modality misalignment — this work constructs VGGSounder, a multi-label audio-visual classification benchmark with modality-level annotations, and proposes a "modality confusion" metric to expose deficiencies in foundation models' multimodal fusion capabilities.
+  [ICCV 2025][Audio & Speech][Audio-visual classification] To address the limitations of the VGGSound dataset — including missing multi-labels, category overlap, and modality misalignment — this work constructs VGGSounder…
 tags:
-  - ICCV 2025
+  - "ICCV 2025"
   - "Audio & Speech"
-  - Audio-visual classification
-  - multi-label benchmark
-  - modality annotation
-  - foundation model evaluation
-  - VGGSound
+  - "Audio-visual classification"
+  - "multi-label benchmark"
+  - "modality annotation"
+  - "foundation model evaluation"
+  - "VGGSound"
 date: 2026-05-08
 content_hash: d00e1587d8b8a8d8
 ---

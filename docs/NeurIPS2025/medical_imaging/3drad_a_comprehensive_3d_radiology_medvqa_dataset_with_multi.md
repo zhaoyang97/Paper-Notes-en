@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] 3D-RAD: A Comprehensive 3D Radiology Med-VQA Dataset with Multi-Temporal Analysis and Diverse Diagnostic Tasks
 description: >-
-  [NeurIPS 2025][Medical Imaging][3D Med-VQA] This paper introduces 3D-RAD — the first large-scale 3D medical VQA benchmark, comprising 170K CT-based question-answer pairs across six clinical task categories (including a novel multi-temporal diagnosis task), accompanied by a 136K training set. The benchmark reveals critical deficiencies of existing VLMs in 3D temporal reasoning.
+  [NeurIPS 2025][Medical Imaging][3D Med-VQA] This paper introduces 3D-RAD — the first large-scale 3D medical VQA benchmark, comprising 170K CT-based question-answer pairs across six clinical task categories (including a n…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - 3D Med-VQA
-  - CT imaging
-  - multi-temporal reasoning
-  - longitudinal diagnosis
-  - benchmark
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "3D Med-VQA"
+  - "CT imaging"
+  - "multi-temporal reasoning"
+  - "longitudinal diagnosis"
+  - "benchmark"
 date: 2026-05-08
 content_hash: 5f4b1470f0419f29
 ---

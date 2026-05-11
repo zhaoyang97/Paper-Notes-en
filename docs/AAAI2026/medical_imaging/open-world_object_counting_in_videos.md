@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CountVid: Open-World Object Counting in Videos
 description: >-
-  [AAAI 2026][Medical Imaging][Open-world counting] This paper proposes CountVid, a model, and the VideoCount benchmark, presenting the first systematic study of open-world video object counting—given a text or image description specifying target objects, the system enumerates all unique instances in a video. By combining an image counting model with a promptable video segmentation and tracking model, CountVid addresses challenges such as occlusion and re-appearance, achieving substantial improvements over strong baselines across diverse scenarios including TAO, MOT20, penguin colonies, and X-ray metal crystallization.
+  [AAAI 2026][Medical Imaging][Open-world counting] This paper proposes CountVid, a model, and the VideoCount benchmark, presenting the first systematic study of open-world video object counting—given a text or image descr…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Open-world counting
-  - video counting
-  - tracking
-  - video segmentation
-  - multimodal query
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Open-world counting"
+  - "video counting"
+  - "tracking"
+  - "video segmentation"
+  - "multimodal query"
 date: 2026-05-08
 content_hash: 82ad101bbc5e3d0a
 ---

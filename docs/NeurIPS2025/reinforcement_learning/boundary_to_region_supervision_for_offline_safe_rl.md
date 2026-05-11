@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Boundary-to-Region Supervision for Offline Safe Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Offline Safe Reinforcement Learning] This paper proposes B2R (Boundary-to-Region), a framework that addresses the symmetric conditioning fallacy of sequence models in offline safe RL by introducing Cost-to-Go (CTG) Realignment. It converts sparse boundary supervision into dense safe-region supervision, satisfying safety constraints on 35 out of 38 safety-critical tasks.
+  [NeurIPS 2025][Reinforcement Learning][Offline Safe Reinforcement Learning] This paper proposes B2R (Boundary-to-Region), a framework that addresses the symmetric conditioning fallacy of sequence models in offline safe R…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Offline Safe Reinforcement Learning
-  - Decision Transformer
-  - Cost Constraints
-  - Asymmetric Conditioning
-  - Safe Region Supervision
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Offline Safe Reinforcement Learning"
+  - "Decision Transformer"
+  - "Cost Constraints"
+  - "Asymmetric Conditioning"
+  - "Safe Region Supervision"
 date: 2026-05-08
 content_hash: 2f564445f63ede62
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mitigating Hallucination Through Theory-Consistent Symmetric Multimodal Preference Optimization
 description: >-
-  [NeurIPS 2025][LLM Alignment][DPO] This paper proposes SymMPO (Symmetric Multimodal Preference Optimization), which addresses two key limitations of existing vision-augmented DPO methods—namely, theoretically unsound objective functions and indirect preference supervision—through symmetric paired preference learning over contrastive images and preference margin consistency regularization. Consistent performance gains are achieved across five hallucination benchmarks.
+  [NeurIPS 2025][LLM Alignment][DPO] This paper proposes SymMPO (Symmetric Multimodal Preference Optimization), which addresses two key limitations of existing vision-augmented DPO methods—namely…
 tags:
-  - NeurIPS 2025
-  - LLM Alignment
-  - DPO
-  - multimodal hallucination
-  - preference optimization
-  - visual understanding
-  - symmetric preference learning
+  - "NeurIPS 2025"
+  - "LLM Alignment"
+  - "DPO"
+  - "multimodal hallucination"
+  - "preference optimization"
+  - "visual understanding"
+  - "symmetric preference learning"
 date: 2026-05-08
 content_hash: 70d1d41105247800
 ---

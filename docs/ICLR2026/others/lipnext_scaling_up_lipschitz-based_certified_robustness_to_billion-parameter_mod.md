@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] LipNeXt: Scaling up Lipschitz-based Certified Robustness to Billion-parameter Models
 description: >-
-  [ICLR 2026][Lipschitz constraints] This paper proposes LipNeXt—the first unconstrained, convolution-free 1-Lipschitz architecture—which learns orthogonal matrices via manifold optimization and achieves spatial mixing through a theoretically motivated Spatial Shift Module derived from Theorem 1. LipNeXt scales to billion-parameter models and establishes new state-of-the-art certified robust accuracy (CRA) on CIFAR-10/100, Tiny-ImageNet, and ImageNet, with a +8% CRA gain on ImageNet at $\varepsilon=1$.
+  [ICLR 2026][Lipschitz constraints] This paper proposes LipNeXt—the first unconstrained, convolution-free 1-Lipschitz architecture—which learns orthogonal matrices via manifold optimization and achieves spatial mixing thr…
 tags:
-  - ICLR 2026
-  - Lipschitz constraints
-  - certified robustness
-  - orthogonal matrices
-  - manifold optimization
-  - spatial shift module
+  - "ICLR 2026"
+  - "Lipschitz constraints"
+  - "certified robustness"
+  - "orthogonal matrices"
+  - "manifold optimization"
+  - "spatial shift module"
 date: 2026-05-08
 content_hash: a92c87ff3be052f9
 ---

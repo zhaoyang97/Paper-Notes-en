@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] COT-FM: Cluster-wise Optimal Transport Flow Matching
 description: >-
-  [CVPR 2026][Image Generation][Flow Matching] This paper proposes COT-FM, a plug-and-play Flow Matching enhancement framework that clusters target samples, inverts a pretrained model to recover cluster-wise source distributions, and approximates optimal transport within each cluster. This significantly straightens transport trajectories, simultaneously accelerating sampling and improving generation quality without modifying the model architecture.
+  [CVPR 2026][Image Generation][Flow Matching] This paper proposes COT-FM, a plug-and-play Flow Matching enhancement framework that clusters target samples…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Flow Matching
-  - Optimal Transport
-  - Clustering
-  - Trajectory Straightening
-  - Accelerated Sampling
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Flow Matching"
+  - "Optimal Transport"
+  - "Clustering"
+  - "Trajectory Straightening"
+  - "Accelerated Sampling"
 date: 2026-05-08
 content_hash: 03993003e26ef5be
 ---

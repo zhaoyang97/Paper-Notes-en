@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] SparseVILA: Decoupling Visual Sparsity for Efficient VLM Inference
 description: >-
-  [ICCV 2025][Multimodal VLM][VLM] This paper proposes SparseVILA—the first VLM inference acceleration framework that decouples visual sparsity between the prefill and decode stages: query-agnostic redundant token pruning during prefill, and query-aware relevant token retrieval during decode. The approach achieves up to 4.0× prefill speedup, 2.5× decode throughput improvement, and 2.6× end-to-end acceleration, while maintaining accuracy in multi-turn conversation settings where existing methods suffer severe degradation due to permanent token deletion.
+  [ICCV 2025][Multimodal VLM][VLM] This paper proposes SparseVILA—the first VLM inference acceleration framework that decouples visual sparsity between the prefill and decode stages: query-agnostic redundant token pruning…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - VLM
-  - Token Pruning
-  - KV-Cache
-  - Decoupled Sparsity
-  - Multi-turn Conversation
-  - Prefill-Decode
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "VLM"
+  - "Token Pruning"
+  - "KV-Cache"
+  - "Decoupled Sparsity"
+  - "Multi-turn Conversation"
+  - "Prefill-Decode"
 date: 2026-05-08
 content_hash: e5df2b0fc1c23cf2
 ---

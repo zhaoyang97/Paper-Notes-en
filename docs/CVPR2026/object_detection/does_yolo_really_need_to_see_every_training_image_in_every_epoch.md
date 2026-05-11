@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Does YOLO Really Need to See Every Training Image in Every Epoch?
 description: >-
-  [CVPR 2026][Object Detection][YOLO] This paper proposes the Anti-Forgetting Sampling Strategy (AFSS), which dynamically determines which training images participate in each epoch based on per-image learning sufficiency measured by $\min(\text{Precision}, \text{Recall})$. AFSS achieves over 1.43× training speedup for YOLO-series detectors while maintaining or even improving detection accuracy.
+  [CVPR 2026][Object Detection][YOLO] This paper proposes the Anti-Forgetting Sampling Strategy (AFSS), which dynamically determines which training images participate in each epoch based on per-image learning sufficiency m…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - YOLO
-  - training acceleration
-  - adaptive sampling
-  - anti-forgetting
-  - data-efficient learning
+  - "CVPR 2026"
+  - "Object Detection"
+  - "YOLO"
+  - "training acceleration"
+  - "adaptive sampling"
+  - "anti-forgetting"
+  - "data-efficient learning"
 date: 2026-05-08
 content_hash: 7f4ba17075a2024f
 ---

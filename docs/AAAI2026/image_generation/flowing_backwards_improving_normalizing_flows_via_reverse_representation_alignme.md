@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Flowing Backwards: Improving Normalizing Flows via Reverse Representation Alignment
 description: >-
-  [AAAI 2026][Image Generation][Normalizing Flows] This paper proposes R-REPA (Reverse Representation Alignment), which creatively exploits the invertibility of Normalizing Flows to align intermediate features with visual foundation models along the generative (reverse) path. It further introduces a training-free classification algorithm, achieving new state-of-the-art results for normalizing flows on ImageNet 64×64 and 256×256 with a 3.3× training speedup.
+  [AAAI 2026][Image Generation][Normalizing Flows] This paper proposes R-REPA (Reverse Representation Alignment), which creatively exploits the invertibility of Normalizing Flows to align intermediate features with visual…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Normalizing Flows
-  - TARFlow
-  - Representation Alignment
-  - Reverse Alignment
-  - ImageNet
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Normalizing Flows"
+  - "TARFlow"
+  - "Representation Alignment"
+  - "Reverse Alignment"
+  - "ImageNet"
 date: 2026-05-08
 content_hash: 8390d7db65ef91eb
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Diorama: Unleashing Zero-shot Single-view 3D Indoor Scene Modeling
 description: >-
-  [ICCV 2025][3D Vision][zero-shot 3D scene modeling] This paper presents Diorama, the first zero-shot open-world system for 3D indoor scene modeling. By modularly composing foundation models (GPT-4o, SAM, DINOv2, Metric3D, etc.), Diorama converts a single RGB image into a complete, compositional 3D indoor scene containing architectural structures and CAD objects, requiring neither end-to-end training nor manual annotation.
+  [ICCV 2025][3D Vision][zero-shot 3D scene modeling] This paper presents Diorama, the first zero-shot open-world system for 3D indoor scene modeling. By modularly composing foundation models (GPT-4o, SAM, DINOv2, Metric3D…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - zero-shot 3D scene modeling
-  - CAD retrieval
-  - scene graph
-  - pose estimation
-  - layout optimization
+  - "ICCV 2025"
+  - "3D Vision"
+  - "zero-shot 3D scene modeling"
+  - "CAD retrieval"
+  - "scene graph"
+  - "pose estimation"
+  - "layout optimization"
 date: 2026-05-08
 content_hash: c8acb305785c52d1
 ---

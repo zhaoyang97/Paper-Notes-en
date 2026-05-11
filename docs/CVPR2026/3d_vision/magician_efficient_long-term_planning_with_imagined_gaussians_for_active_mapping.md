@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MAGICIAN: Efficient Long-Term Planning with Imagined Gaussians for Active Mapping
 description: >-
-  [CVPR 2026][3D Vision][Active Mapping] This paper proposes MAGICIAN, a framework that leverages a pretrained occupancy network to generate "Imagined Gaussians" for efficiently estimating surface coverage gain. Combined with beam search, MAGICIAN enables long-term trajectory planning for active mapping, achieving state-of-the-art performance in both indoor and outdoor scenes with coverage improvements exceeding 10%.
+  [CVPR 2026][3D Vision][Active Mapping] This paper proposes MAGICIAN, a framework that leverages a pretrained occupancy network to generate "Imagined Gaussians" for efficiently estimating surface coverage gain. Combined w…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Active Mapping
-  - Long-Term Planning
-  - 3D Gaussian Splatting
-  - Scene Reconstruction
-  - Viewpoint Selection
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Active Mapping"
+  - "Long-Term Planning"
+  - "3D Gaussian Splatting"
+  - "Scene Reconstruction"
+  - "Viewpoint Selection"
 date: 2026-05-08
 content_hash: ce48e59abcee3d45
 ---

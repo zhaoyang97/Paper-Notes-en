@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TrafficLoc: Localizing Traffic Surveillance Cameras in 3D Scenes
 description: >-
-  [ICCV 2025][Autonomous Driving][Image-to-point cloud registration] This paper proposes TrafficLoc, a coarse-to-fine image-to-point cloud registration method that achieves high-accuracy localization of traffic surveillance cameras in 3D reference maps via Geometry-guided Attention Loss (GAL), Inter- and Intra-modal Contrastive Learning (ICL), and Dense Training Alignment (DTA). On the self-constructed Carla Intersection dataset, it outperforms the previous state of the art by up to 86%.
+  [ICCV 2025][Autonomous Driving][Image-to-point cloud registration] This paper proposes TrafficLoc, a coarse-to-fine image-to-point cloud registration method that achieves high-accuracy localization of traffic surveillanc…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - Image-to-point cloud registration
-  - traffic camera localization
-  - cross-modal feature fusion
-  - contrastive learning
-  - 6-DoF pose estimation
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "Image-to-point cloud registration"
+  - "traffic camera localization"
+  - "cross-modal feature fusion"
+  - "contrastive learning"
+  - "6-DoF pose estimation"
 date: 2026-05-08
 content_hash: 1682b500a1bd6ae7
 ---

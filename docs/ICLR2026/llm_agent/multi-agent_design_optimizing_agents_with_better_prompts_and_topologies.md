@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multi-Agent Design: Optimizing Agents with Better Prompts and Topologies
 description: >-
-  [ICLR 2026][LLM Agent][multi-agent system] This paper provides a systematic analysis of the respective contributions of prompt design and topology design in multi-agent systems (MAS), finding that prompt optimization is the single most critical factor—a single agent with optimized prompts can outperform complex multi-agent topologies. The paper proposes Mass, a three-stage framework (block-level prompt → topology → workflow-level prompt) that achieves state-of-the-art performance across 8 benchmarks.
+  [ICLR 2026][LLM Agent][multi-agent system] This paper provides a systematic analysis of the respective contributions of prompt design and topology design in multi-agent systems (MAS)…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - multi-agent system
-  - prompt optimization
-  - topology search
-  - automated MAS design
-  - workflow optimization
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "multi-agent system"
+  - "prompt optimization"
+  - "topology search"
+  - "automated MAS design"
+  - "workflow optimization"
 date: 2026-05-08
 content_hash: b61c061f6e7a329f
 ---

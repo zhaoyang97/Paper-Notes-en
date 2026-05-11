@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Prototype-Guided Concept Erasure in Diffusion Models
 description: >-
-  [CVPR 2026][Image Generation][Concept Erasure] To address the difficulty of thoroughly erasing broad concepts (e.g., violence, nudity) from diffusion models, this paper proposes a training-free erasure method based on concept prototypes. The method clusters concept-differential directions in the CLIP embedding space to obtain image-space prototypes, optimizes these into a text prototype space via cosine similarity, and at inference time selects the best-matching prototype as a negative guidance signal to suppress target concepts in a classifier-free guidance fashion.
+  [CVPR 2026][Image Generation][Concept Erasure] To address the difficulty of thoroughly erasing broad concepts (e.g., violence, nudity) from diffusion models…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Concept Erasure
-  - Diffusion Model Safety
-  - NSFW Content Filtering
-  - Prototype Learning
-  - Training-Free Inference
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Concept Erasure"
+  - "Diffusion Model Safety"
+  - "NSFW Content Filtering"
+  - "Prototype Learning"
+  - "Training-Free Inference"
 date: 2026-05-08
 content_hash: 0dda5deb63d67ca6
 ---

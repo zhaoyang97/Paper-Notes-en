@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AutoGLM: Autonomous Foundation Agents for GUIs
 description: >-
-  [AAAI 2026][LLM Agent][GUI Agent] AutoGLM builds a GUI foundation agent for web browsers and Android devices on top of ChatGLM. By introducing an intermediate interface design that decouples planning from grounding, and proposing a self-evolving online curriculum reinforcement learning framework, the system achieves a 55.2% success rate on VAB-WebArena-Lite, substantially surpassing GPT-4o's 18.2%.
+  [AAAI 2026][LLM Agent][GUI Agent] AutoGLM builds a GUI foundation agent for web browsers and Android devices on top of ChatGLM. By introducing an intermediate interface design that decouples planning from grounding…
 tags:
-  - AAAI 2026
-  - LLM Agent
-  - GUI Agent
-  - Reinforcement Learning
-  - Intermediate Interface Design
-  - Self-Evolving Curriculum Learning
-  - Foundation Agent
+  - "AAAI 2026"
+  - "LLM Agent"
+  - "GUI Agent"
+  - "Reinforcement Learning"
+  - "Intermediate Interface Design"
+  - "Self-Evolving Curriculum Learning"
+  - "Foundation Agent"
 date: 2026-05-08
 content_hash: e190459c1fbb7911
 ---

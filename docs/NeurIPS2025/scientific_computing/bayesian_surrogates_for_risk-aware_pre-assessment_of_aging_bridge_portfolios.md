@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Bayesian Surrogates for Risk-Aware Pre-Assessment of Aging Bridge Portfolios
 description: >-
-  [NeurIPS 2025][Scientific Computing][Bayesian Neural Networks] A Bayesian neural network (BNN)-based surrogate model is proposed to replace expensive nonlinear finite element analysis (NLFEA), enabling rapid, uncertainty-aware structural safety pre-assessment of aging bridge portfolios. In a real-world railway case study, the approach saves approximately $370,000 per bridge.
+  [NeurIPS 2025][Scientific Computing][Bayesian Neural Networks] A Bayesian neural network (BNN)-based surrogate model is proposed to replace expensive nonlinear finite element analysis (NLFEA), enabling rapid…
 tags:
-  - NeurIPS 2025
-  - Scientific Computing
-  - Bayesian Neural Networks
-  - Structural Engineering
-  - Uncertainty Quantification
-  - Surrogate Models
-  - Infrastructure Assessment
+  - "NeurIPS 2025"
+  - "Scientific Computing"
+  - "Bayesian Neural Networks"
+  - "Structural Engineering"
+  - "Uncertainty Quantification"
+  - "Surrogate Models"
+  - "Infrastructure Assessment"
 date: 2026-05-08
 content_hash: cb207798d61ef686
 ---

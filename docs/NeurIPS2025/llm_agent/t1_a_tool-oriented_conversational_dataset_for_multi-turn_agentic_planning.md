@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] T1: A Tool-Oriented Conversational Dataset for Multi-Turn Agentic Planning
 description: >-
-  [NeurIPS 2025][LLM Agent][tool-use] This paper introduces T1, a dataset of 13.5K multi-turn dialogues spanning 9 domains (4 single-domain + 5 cross-domain) and 14 tools, with a focus on inter-tool dependencies and dynamic replanning. A baseline system, T1-Agent (code generation + caching mechanism), is proposed for systematic evaluation. Experiments show that SFT-tuned Llama 8B achieves 87.17% Tool Call F1, surpassing untuned 70B models, yet still trailing closed-source models such as GPT-5 and o3.
+  [NeurIPS 2025][LLM Agent][tool-use] This paper introduces T1, a dataset of 13.5K multi-turn dialogues spanning 9 domains (4 single-domain + 5 cross-domain) and 14 tools…
 tags:
-  - NeurIPS 2025
-  - LLM Agent
-  - tool-use
-  - multi-turn dialogue
-  - agentic planning
-  - benchmark
-  - inter-tool dependency
+  - "NeurIPS 2025"
+  - "LLM Agent"
+  - "tool-use"
+  - "multi-turn dialogue"
+  - "agentic planning"
+  - "benchmark"
+  - "inter-tool dependency"
 date: 2026-05-08
 content_hash: 0951b19611bdc81f
 ---

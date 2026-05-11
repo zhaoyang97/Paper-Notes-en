@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Uncertainty Quantification in LLM Agents: Foundations, Emerging Challenges, and Opportunities
 description: >-
-  [ACL 2026][LLM Agent][Uncertainty Quantification] This paper proposes the first formal framework for Agent Uncertainty Quantification (Agent UQ), modeling an agent's problem-solving trajectory as a stochastic process over a dynamic Bayesian network: $P(\mathcal{F}_{\leq T}) = P(E_0, O_0) \prod_{i=1}^{T} P_{\pi,\mathcal{T}}(A_i|E_{i-1}, O_{i-1}) P(O_i|A_i, E_i)$. The framework unifies existing UQ paradigms (single-step QA, multi-step reasoning) as special cases and identifies four technical challenges unique to Agent UQ through empirical analysis on $\tau^2$-bench.
+  [ACL 2026][LLM Agent][Uncertainty Quantification] This paper proposes the first formal framework for Agent Uncertainty Quantification (Agent UQ)…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - Uncertainty Quantification
-  - Dynamic Bayesian Network
-  - Trajectory Uncertainty
-  - Interactive Reasoning
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Uncertainty Quantification"
+  - "Dynamic Bayesian Network"
+  - "Trajectory Uncertainty"
+  - "Interactive Reasoning"
 date: 2026-05-08
 content_hash: 559901ddc30ea061
 ---

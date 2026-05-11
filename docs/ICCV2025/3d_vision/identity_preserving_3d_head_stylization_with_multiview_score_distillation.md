@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Identity Preserving 3D Head Stylization with Multiview Score Distillation
 description: >-
-  [3D Vision] This paper proposes a 3D head stylization framework based on Likelihood Distillation (LD), achieving high-quality stylization with identity preservation under 360-degree consistent rendering through multiview grid scoring, mirror gradients, and rank-weighted score tensors.
+  [3D Vision] This paper proposes a 3D head stylization framework based on Likelihood Distillation (LD), achieving high-quality stylization with identity preservation under 360-degree consistent rendering through multiview…
 tags:
-  - 3D Vision
+  - "3D Vision"
 date: 2026-05-08
 content_hash: 764ab1bb67ca7565
 ---

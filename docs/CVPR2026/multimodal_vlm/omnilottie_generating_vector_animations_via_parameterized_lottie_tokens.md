@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OmniLottie: Generating Vector Animations via Parameterized Lottie Tokens
 description: >-
-  [CVPR 2026][Multimodal VLM][Lottie] OmniLottie proposes a Lottie Tokenizer that converts Lottie JSON files into structured command-parameter sequences, enabling pretrained VLMs to generate high-quality vector animations from multimodal cross-modal instructions. The work also introduces the MMLottie-2M large-scale dataset to support training.
+  [CVPR 2026][Multimodal VLM][Lottie] OmniLottie proposes a Lottie Tokenizer that converts Lottie JSON files into structured command-parameter sequences…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Lottie
-  - vector animation
-  - tokenization
-  - multimodal instruction
-  - VLM generation
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Lottie"
+  - "vector animation"
+  - "tokenization"
+  - "multimodal instruction"
+  - "VLM generation"
 date: 2026-05-08
 content_hash: b0fea873d3dafc85
 ---

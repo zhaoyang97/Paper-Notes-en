@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Towards a Rigorous Understanding of the Population Dynamics of the NSGA-III: Tight Runtime Bounds
 description: >-
-  [LLM Evaluation] This paper establishes the first tight runtime bound $\Theta(n^2 \ln n / \mu)$ for NSGA-III on the classical bi-objective OneMinMax benchmark, reveals the population dynamics of NSGA-III, and proves that it outperforms NSGA-II under appropriate population sizes.
+  [LLM Evaluation] This paper establishes the first tight runtime bound $\Theta(n^2 \ln n / \mu)$ for NSGA-III on the classical bi-objective OneMinMax benchmark, reveals the population dynamics of NSGA-III…
 tags:
-  - LLM Evaluation
+  - "LLM Evaluation"
 date: 2026-05-08
 content_hash: b5614c0abd9f10f2
 ---

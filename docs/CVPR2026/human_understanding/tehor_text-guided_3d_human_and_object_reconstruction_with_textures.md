@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] TeHOR: Text-Guided 3D Human and Object Reconstruction with Textures
 description: >-
-  [Human Understanding] TeHOR leverages text descriptions as semantic guidance and jointly optimizes the geometry and texture of 3D humans and objects via Score Distillation Sampling from pretrained diffusion models. This approach eliminates the reliance on contact information required by conventional methods, enabling accurate and semantically consistent 3D reconstruction of both contact and non-contact interactions.
+  [Human Understanding] TeHOR leverages text descriptions as semantic guidance and jointly optimizes the geometry and texture of 3D humans and objects via Score Distillation Sampling from pretrained diffusion models. This…
 tags:
-  - Human Understanding
+  - "Human Understanding"
 date: 2026-05-08
 content_hash: fb57e7715ed823f8
 ---

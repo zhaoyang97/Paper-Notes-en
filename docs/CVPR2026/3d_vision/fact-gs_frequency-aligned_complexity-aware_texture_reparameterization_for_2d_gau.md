@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FACT-GS: Frequency-Aligned Complexity-Aware Texture Reparameterization for 2D Gaussian Splatting
 description: >-
-  [CVPR 2026][3D Vision][2D Gaussian Splatting] FACT-GS reframes texture parameterization as a sampling density allocation problem, employing a learnable deformation field to achieve frequency-adaptive non-uniform texture sampling, substantially improving high-frequency detail recovery under a fixed parameter budget.
+  [CVPR 2026][3D Vision][2D Gaussian Splatting] FACT-GS reframes texture parameterization as a sampling density allocation problem, employing a learnable deformation field to achieve frequency-adaptive non-uniform texture…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 2D Gaussian Splatting
-  - texture parameterization
-  - adaptive sampling
-  - frequency alignment
-  - deformation field
+  - "CVPR 2026"
+  - "3D Vision"
+  - "2D Gaussian Splatting"
+  - "texture parameterization"
+  - "adaptive sampling"
+  - "frequency alignment"
+  - "deformation field"
 date: 2026-05-08
 content_hash: d181f84668195da5
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Non-convex Entropic Mean-Field Optimization via Best Response Flow
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Mean-field optimization] This work extends Best Response Flow from convex functional optimization to the non-convex setting, proving that under sufficiently large entropic regularization the BR operator becomes a contraction in the $L^1$-Wasserstein distance, thereby guaranteeing the existence of a unique global minimizer and exponential convergence for non-convex objectives.
+  [NeurIPS 2025][Reinforcement Learning][Mean-field optimization] This work extends Best Response Flow from convex functional optimization to the non-convex setting…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Mean-field optimization
-  - Best Response Flow
-  - Non-convex optimization
-  - Entropic regularization
-  - Wasserstein distance
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Mean-field optimization"
+  - "Best Response Flow"
+  - "Non-convex optimization"
+  - "Entropic regularization"
+  - "Wasserstein distance"
 date: 2026-05-08
 content_hash: 850170bc231642a6
 ---

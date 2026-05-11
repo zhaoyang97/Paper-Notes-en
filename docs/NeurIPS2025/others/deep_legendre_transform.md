@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Deep Legendre Transform
 description: >-
-  [NeurIPS 2025][Convex conjugate] DLT exploits the implicit Fenchel representation of convex conjugates, $f^*(\nabla f(x)) = \langle x, \nabla f(x) \rangle - f(x)$, to reformulate conjugate computation as a standard regression problem, thereby avoiding max/min-max optimization. The method also admits a posteriori error estimation, and when combined with KAN, yields exact closed-form solutions.
+  [NeurIPS 2025][Convex conjugate] DLT exploits the implicit Fenchel representation of convex conjugates, $f^*(\nabla f(x)) = \langle x, \nabla f(x) \rangle - f(x)$…
 tags:
-  - NeurIPS 2025
-  - Convex conjugate
-  - Legendre transform
-  - ICNN
-  - KAN
-  - a posteriori error estimation
-  - Hamilton-Jacobi equations
+  - "NeurIPS 2025"
+  - "Convex conjugate"
+  - "Legendre transform"
+  - "ICNN"
+  - "KAN"
+  - "a posteriori error estimation"
+  - "Hamilton-Jacobi equations"
 date: 2026-05-08
 content_hash: 0db0c824cfd62540
 ---

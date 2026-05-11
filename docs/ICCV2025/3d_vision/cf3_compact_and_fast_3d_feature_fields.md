@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CF³: Compact and Fast 3D Feature Fields
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes the CF³ pipeline, which constructs a compact and high-speed 3D feature field using only 5% of the original Gaussian count via top-down feature lifting, per-Gaussian autoencoder compression, and adaptive sparsification, achieving 121–245× storage compression with real-time rendering.
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes the CF³ pipeline, which constructs a compact and high-speed 3D feature field using only 5% of the original Gaussian count via top-down feature lifting…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - Feature Field
-  - Sparsification
-  - Feature Compression
-  - Open-Vocabulary Segmentation
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Feature Field"
+  - "Sparsification"
+  - "Feature Compression"
+  - "Open-Vocabulary Segmentation"
 date: 2026-05-08
 content_hash: f80d3e7d7b3dcc7b
 ---

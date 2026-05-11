@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Resonance: Learning to Predict Social-Aware Pedestrian Trajectories as Co-Vibrations
 description: >-
-  [ICCV 2025][Autonomous Driving][pedestrian trajectory prediction] This paper proposes the Resonance (Re) model, which decomposes pedestrian trajectory prediction into a superposition of multiple "vibrations"—a linear base, a self-bias, and a resonance-bias. By leveraging spectral similarity between trajectories to simulate "resonance" phenomena in social interactions, the method is validated on ETH-UCY, SDD, NBA, and nuScenes benchmarks.
+  [ICCV 2025][Autonomous Driving][pedestrian trajectory prediction] This paper proposes the Resonance (Re) model, which decomposes pedestrian trajectory prediction into a superposition of multiple "vibrations"—a linear bas…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - pedestrian trajectory prediction
-  - vibration decomposition
-  - resonance interaction
-  - spectral representation
-  - social behavior modeling
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "pedestrian trajectory prediction"
+  - "vibration decomposition"
+  - "resonance interaction"
+  - "spectral representation"
+  - "social behavior modeling"
 date: 2026-05-08
 content_hash: f00fe76bfc74e369
 ---

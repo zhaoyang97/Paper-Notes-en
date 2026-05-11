@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Decisive: Guiding User Decisions with Optimal Preference Elicitation from Unstructured Documents
 description: >-
-  [ACL 2026][Recommender Systems][Decision Support] This paper proposes DECISIVE, an interactive decision-making framework that extracts an objective option scoring matrix from unstructured documents and combines it with Bayesian preference inference to adaptively select pairwise comparison questions, efficiently learning users' latent preference vectors. The system minimizes user interaction burden while delivering transparent, personalized recommendations, achieving up to 20% higher decision accuracy over strong baselines.
+  [ACL 2026][Recommender Systems][Decision Support] This paper proposes DECISIVE, an interactive decision-making framework that extracts an objective option scoring matrix from unstructured documents and combines it with B…
 tags:
-  - ACL 2026
-  - Recommender Systems
-  - Decision Support
-  - Preference Elicitation
-  - Bayesian Inference
-  - Document Grounding
-  - Interactive Systems
+  - "ACL 2026"
+  - "Recommender Systems"
+  - "Decision Support"
+  - "Preference Elicitation"
+  - "Bayesian Inference"
+  - "Document Grounding"
+  - "Interactive Systems"
 date: 2026-05-08
 content_hash: 9a8e9f2af6429653
 ---

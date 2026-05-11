@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] NeuroPath: Neurobiology-Inspired Path Tracking and Reflection for Semantically Coherent Retrieval
 description: >-
-  [NeurIPS 2025][Video Understanding][RAG] Inspired by the hippocampal place cell navigation and memory consolidation mechanisms in neurobiology, this paper proposes NeuroPath—a RAG framework based on semantic path tracking—that achieves average improvements of 16.3% in recall@2 and 13.5% in recall@5 on multi-hop QA tasks through LLM-driven goal-directed path construction and a post-retrieval completion strategy.
+  [NeurIPS 2025][Video Understanding][RAG] Inspired by the hippocampal place cell navigation and memory consolidation mechanisms in neurobiology…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
-  - RAG
-  - multi-hop QA
-  - knowledge graph
-  - place cells
-  - semantic path tracking
+  - "NeurIPS 2025"
+  - "Video Understanding"
+  - "RAG"
+  - "multi-hop QA"
+  - "knowledge graph"
+  - "place cells"
+  - "semantic path tracking"
 date: 2026-05-08
 content_hash: 908db03fc855d4ff
 ---

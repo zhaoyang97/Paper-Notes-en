@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Improved Runtime Guarantees for the SPEA2 Multi-Objective Optimizer
 description: >-
-  [AAAI 2026][LLM Evaluation][SPEA2] By rigorously analyzing the more complex selection mechanism of SPEA2, this paper demonstrates that its population dynamics are fundamentally different from those of NSGA-II — the σ-criterion induces a uniform distribution of objective values across the population — yielding runtime upper bounds with a substantially weaker dependence on population size, indicating that SPEA2 is more robust to parameter choices.
+  [AAAI 2026][LLM Evaluation][SPEA2] By rigorously analyzing the more complex selection mechanism of SPEA2, this paper demonstrates that its population dynamics are fundamentally different from those of NSGA-II — the σ-cri…
 tags:
-  - AAAI 2026
-  - LLM Evaluation
-  - SPEA2
-  - multi-objective evolutionary algorithms
-  - runtime analysis
-  - population dynamics
-  - Pareto front
+  - "AAAI 2026"
+  - "LLM Evaluation"
+  - "SPEA2"
+  - "multi-objective evolutionary algorithms"
+  - "runtime analysis"
+  - "population dynamics"
+  - "Pareto front"
 date: 2026-05-08
 content_hash: 9f632587b3e72fc6
 ---

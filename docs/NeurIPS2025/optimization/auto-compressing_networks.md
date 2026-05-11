@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Auto-Compressing Networks
 description: >-
-  [NeurIPS 2025][Optimization][Auto-compression] Auto-Compressing Networks (ACN) replace short residual connections with long-range forward connections (aggregating all layer outputs directly into the final output), making the Direct Gradient (DG) component significantly stronger than the Forward Gradient (FG), thereby implicitly compressing information into earlier layers. A ViT with only 6 layers matches standard 12-layer performance; BERT saves 75% of its layers; additional benefits include noise robustness (+6.4%) and reduced catastrophic forgetting in continual learning (−18%).
+  [NeurIPS 2025][Optimization][Auto-compression] Auto-Compressing Networks (ACN) replace short residual connections with long-range forward connections (aggregating all layer outputs directly into the final output)…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Auto-compression
-  - residual connections
-  - layer redundancy
-  - forward connections
-  - continual learning
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Auto-compression"
+  - "residual connections"
+  - "layer redundancy"
+  - "forward connections"
+  - "continual learning"
 date: 2026-05-08
 content_hash: 3041a01907faed1f
 ---

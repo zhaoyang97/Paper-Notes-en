@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Shoe Style-Invariant and Ground-Aware Learning for Dense Foot Contact Estimation
 description: >-
-  [CVPR2026][foot contact estimation] This paper proposes FECO, a framework that achieves robust dense foot contact estimation from a single RGB image via shoe style–content randomization (adversarial training) and ground-aware learning (pixel height maps + ground normals), significantly outperforming existing methods on multiple benchmarks.
+  [CVPR2026][foot contact estimation] This paper proposes FECO, a framework that achieves robust dense foot contact estimation from a single RGB image via shoe style–content randomization (adversarial training) and ground-…
 tags:
-  - CVPR2026
-  - foot contact estimation
-  - shoe style invariance
-  - ground-aware learning
-  - adversarial training
-  - dense contact prediction
+  - "CVPR2026"
+  - "foot contact estimation"
+  - "shoe style invariance"
+  - "ground-aware learning"
+  - "adversarial training"
+  - "dense contact prediction"
 date: 2026-05-08
 content_hash: 62ecc2e04c3aa70f
 ---

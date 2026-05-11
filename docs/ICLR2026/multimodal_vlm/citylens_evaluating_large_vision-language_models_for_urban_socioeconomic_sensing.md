@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CityLens: Evaluating Large Vision-Language Models for Urban Socioeconomic Sensing
 description: >-
-  [ICLR2026][Multimodal VLM][urban computing] CityLens is introduced as the largest urban socioeconomic sensing benchmark to date (17 cities, 6 domains, 11 prediction tasks), evaluating 17 LVLMs across three paradigms—direct metric prediction, normalized metric estimation, and feature-based regression—for inferring socioeconomic indicators from satellite and street-view imagery. Results show that general-purpose LVLMs still fall short of domain-specialized contrastive learning methods on most tasks.
+  [ICLR2026][Multimodal VLM][urban computing] CityLens is introduced as the largest urban socioeconomic sensing benchmark to date (17 cities, 6 domains, 11 prediction tasks)…
 tags:
-  - ICLR2026
-  - Multimodal VLM
-  - urban computing
-  - socioeconomic sensing
-  - benchmark
-  - vision-language model
-  - street view
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "urban computing"
+  - "socioeconomic sensing"
+  - "benchmark"
+  - "vision-language model"
+  - "street view"
 date: 2026-05-08
 content_hash: 42be3b401c662933
 ---

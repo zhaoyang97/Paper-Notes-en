@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] HistLens: Mapping Idea Change across Concepts and Corpora
 description: >-
-  [ACL 2026][conceptual history analysis] This paper proposes HistLens, a framework that leverages sparse autoencoders (SAEs) to decompose concept representations into interpretable semantic basis vectors, enabling the tracking of diachronic evolution trajectories across multiple concepts and corpora within a shared coordinate system. The framework supports implicit concept computation and provides a quantifiable, comparable analytical tool for digital humanities and conceptual history research.
+  [ACL 2026][Interpretability][conceptual history analysis] This paper proposes HistLens, a framework that leverages sparse autoencoders (SAEs) to decompose concept representations into interpretable semantic basis vectors…
 tags:
-  - ACL 2026
-  - conceptual history analysis
-  - sparse autoencoders
-  - diachronic semantic change
-  - cross-corpus comparison
-  - implicit concept computation
+  - "ACL 2026"
+  - "Interpretability"
+  - "conceptual history analysis"
+  - "sparse autoencoders"
+  - "diachronic semantic change"
+  - "cross-corpus comparison"
+  - "implicit concept computation"
 date: 2026-05-08
 content_hash: 3a582dca1a709135
 ---

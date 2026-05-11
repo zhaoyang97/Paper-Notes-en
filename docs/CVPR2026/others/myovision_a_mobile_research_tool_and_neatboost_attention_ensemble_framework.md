@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] MyoVision: A Mobile Research Tool and NEATBoost-Attention Ensemble Framework for Real Time Chicken Breast Myopathy Detection
 description: >-
-  [CVPR 2026][neuroevolution] This paper proposes MyoVision, a smartphone-based transillumination imaging framework, and the NEATBoost-Attention neuroevolution-optimized ensemble model for low-cost, real-time three-class classification of chicken breast myopathies (Wooden Breast and Spaghetti Meat).
+  [CVPR 2026][neuroevolution] This paper proposes MyoVision, a smartphone-based transillumination imaging framework, and the NEATBoost-Attention neuroevolution-optimized ensemble model for low-cost…
 tags:
-  - CVPR 2026
-  - neuroevolution
-  - ensemble learning
-  - mobile imaging
-  - food quality inspection
-  - transillumination
+  - "CVPR 2026"
+  - "neuroevolution"
+  - "ensemble learning"
+  - "mobile imaging"
+  - "food quality inspection"
+  - "transillumination"
 date: 2026-05-08
 content_hash: 4420badb5ad77849
 ---

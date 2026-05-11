@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Reclaiming Lost Text Layers for Source-Free Cross-Domain Few-Shot Learning
 description: >-
-  [CVPR2026][Medical Imaging][CLIP] This paper identifies "Lost Layers" in CLIP's text encoder — intermediate layers whose removal paradoxically improves performance under Source-Free Cross-Domain Few-Shot Learning (SF-CDFSL). The authors demonstrate that these layers are not redundant but rather underutilized due to visual domain shift, and propose the VtT model to reclaim this information at both the layer and encoder levels, achieving state-of-the-art performance.
+  [CVPR2026][Medical Imaging][CLIP] This paper identifies "Lost Layers" in CLIP's text encoder — intermediate layers whose removal paradoxically improves performance under Source-Free Cross-Domain Few-Shot Learning (SF-CDF…
 tags:
-  - CVPR2026
-  - Medical Imaging
-  - CLIP
-  - cross-domain few-shot learning
-  - text encoder layer redundancy
-  - vision-text fusion
-  - state space model
-  - gradient optimization
+  - "CVPR2026"
+  - "Medical Imaging"
+  - "CLIP"
+  - "cross-domain few-shot learning"
+  - "text encoder layer redundancy"
+  - "vision-text fusion"
+  - "state space model"
+  - "gradient optimization"
 date: 2026-05-08
 content_hash: f703a7d814c2e477
 ---

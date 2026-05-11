@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Tortoise and Hare Guidance: Accelerating Diffusion Model Inference with Multirate Integration
 description: >-
-  [NeurIPS 2025][Image Generation][Diffusion model acceleration] This paper proposes Tortoise and Hare Guidance (THG), a training-free acceleration strategy for diffusion sampling that reformulates the classifier-free guidance (CFG) ODE as a multirate ODE system. The noise estimation term is integrated with fine-grained steps (tortoise equation), while the additional guidance term is integrated with coarse-grained steps (hare equation), reducing the number of function evaluations (NFE) by up to 30% with negligible degradation in generation quality.
+  [NeurIPS 2025][Image Generation][Diffusion model acceleration] This paper proposes Tortoise and Hare Guidance (THG), a training-free acceleration strategy for diffusion sampling that reformulates the classifier-free guid…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Diffusion model acceleration
-  - Classifier-Free Guidance
-  - multirate integration
-  - NFE reduction
-  - training-free
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Diffusion model acceleration"
+  - "Classifier-Free Guidance"
+  - "multirate integration"
+  - "NFE reduction"
+  - "training-free"
 date: 2026-05-08
 content_hash: cb2328ef4ccd8ac7
 ---

@@ -2,17 +2,18 @@
 title: >-
   [Paper Note] Dynamic Features Adaptation in Networking: Toward Flexible Training and Explainable Inference
 description: >-
-  [NeurIPS 2025][Adaptive Random Forest] This paper proposes DAFI (Drift-Aware Feature Importance), an algorithm that leverages distribution drift detection to dynamically switch between SHAP and MDI feature importance methods. Combined with Adaptive Random Forest (ARF), DAFI enables flexible training and efficient explainable inference in communication network scenarios where features are dynamically introduced over time.
+  [NeurIPS 2025][Interpretability][Adaptive Random Forest] This paper proposes DAFI (Drift-Aware Feature Importance), an algorithm that leverages distribution drift detection to dynamically switch between SHAP and MDI feat…
 tags:
-  - NeurIPS 2025
-  - Adaptive Random Forest
-  - Feature Importance
-  - Explainable AI
-  - Data Stream
-  - 6G Networks
-  - Drift Detection
-  - SHAP
-  - MDI
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "Adaptive Random Forest"
+  - "Feature Importance"
+  - "Explainable AI"
+  - "Data Stream"
+  - "6G Networks"
+  - "Drift Detection"
+  - "SHAP"
+  - "MDI"
 date: 2026-05-08
 content_hash: 8e50996f41e9fabd
 ---

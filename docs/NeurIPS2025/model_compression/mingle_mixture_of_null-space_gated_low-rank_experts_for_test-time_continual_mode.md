@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Mingle: Mixture of Null-Space Gated Low-Rank Experts for Test-Time Continual Model Merging
 description: >-
-  [NeurIPS 2025][Model Compression][Continual Learning] This paper proposes a new paradigm called Test-Time Continual Model Merging (TTCMM) and the Mingle framework, which employs a low-rank mixture-of-experts architecture with an adaptive null-space constrained gating mechanism to dynamically merge models at test time using a small number of unlabeled samples. Mingle outperforms state-of-the-art methods by 7–9% across multiple benchmarks while reducing forgetting to near zero.
+  [NeurIPS 2025][Model Compression][Continual Learning] This paper proposes a new paradigm called Test-Time Continual Model Merging (TTCMM) and the Mingle framework…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Continual Learning
-  - Model Merging
-  - Test-Time Adaptation
-  - Mixture of Experts
-  - Null-Space Constraint
-  - Low-Rank Decomposition
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Continual Learning"
+  - "Model Merging"
+  - "Test-Time Adaptation"
+  - "Mixture of Experts"
+  - "Null-Space Constraint"
+  - "Low-Rank Decomposition"
 date: 2026-05-08
 content_hash: d3fd627e20fb0a6c
 ---

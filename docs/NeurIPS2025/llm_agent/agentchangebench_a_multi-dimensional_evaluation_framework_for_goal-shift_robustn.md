@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AgentChangeBench: A Multi-Dimensional Evaluation Framework for Goal-Shift Robustness
 description: >-
-  [NeurIPS 2025][LLM Agent][benchmark] AgentChangeBench is the first benchmark that systematically evaluates the adaptability of LLM agents when user goals shift mid-conversation: 315 base tasks × 9 variants = 2,835 sequences, spanning 3 enterprise domains (banking/retail/airline) and 5 user personas. It introduces 4 complementary metrics including GSRT (Goal-Shift Recovery Time), revealing efficiency and robustness gaps masked by high pass@k—e.g., GPT-4o achieves 92.2% airline recovery rate yet 89.1% retail redundancy rate.
+  [NeurIPS 2025][LLM Agent][benchmark] AgentChangeBench is the first benchmark that systematically evaluates the adaptability of LLM agents when user goals shift mid-conversation: 315 base tasks × 9 variants = 2…
 tags:
-  - NeurIPS 2025
-  - LLM Agent
-  - benchmark
-  - goal shift
-  - multi-turn dialogue
-  - agent robustness
-  - tool calling
+  - "NeurIPS 2025"
+  - "LLM Agent"
+  - "benchmark"
+  - "goal shift"
+  - "multi-turn dialogue"
+  - "agent robustness"
+  - "tool calling"
 date: 2026-05-08
 content_hash: ad551498c7a895eb
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TRACE: Your Diffusion Model is Secretly an Instance Edge Detector
 description: >-
-  [ICLR 2026][Segmentation][Diffusion Models] This work identifies an "Instance Emergence Point" (IEP) in the denoising trajectory of text-to-image diffusion models, at which self-attention exhibits sharp divergence changes at object boundaries. TRACE leverages IEP localization, ABDiv edge extraction, and single-step distillation to generate high-quality instance edges with an 81× inference speedup—requiring no instance-level annotations—improving unsupervised instance segmentation by +5.1 AP and surpassing point-supervised panoptic segmentation with tag-level supervision by +1.7 PQ.
+  [ICLR 2026][Segmentation][Diffusion Models] This work identifies an "Instance Emergence Point" (IEP) in the denoising trajectory of text-to-image diffusion models…
 tags:
-  - ICLR 2026
-  - Segmentation
-  - Diffusion Models
-  - Instance Edges
-  - Self-Attention
-  - IEP
-  - Unsupervised Segmentation
+  - "ICLR 2026"
+  - "Segmentation"
+  - "Diffusion Models"
+  - "Instance Edges"
+  - "Self-Attention"
+  - "IEP"
+  - "Unsupervised Segmentation"
 date: 2026-05-08
 content_hash: 5eca387d29e407a1
 ---

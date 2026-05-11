@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Does FLUX Already Know How to Perform Physically Plausible Image Composition?
 description: >-
-  [ICLR2026][Image Generation][image composition] This paper proposes SHINE, a training-free image composition framework that leverages the intrinsic physical priors of pretrained T2I models (e.g., FLUX) via three components — Manifold-Steered Anchor Loss, Degradation-Suppression Guidance, and Adaptive Background Blending — to achieve high-quality object insertion under complex lighting conditions (shadows, water reflections, etc.).
+  [ICLR2026][Image Generation][image composition] This paper proposes SHINE, a training-free image composition framework that leverages the intrinsic physical priors of pretrained T2I models (e.g.…
 tags:
-  - ICLR2026
-  - Image Generation
-  - image composition
-  - training-free
-  - diffusion model
-  - FLUX
-  - physically plausible
+  - "ICLR2026"
+  - "Image Generation"
+  - "image composition"
+  - "training-free"
+  - "diffusion model"
+  - "FLUX"
+  - "physically plausible"
 date: 2026-05-08
 content_hash: 722bbc82c4f80f46
 ---

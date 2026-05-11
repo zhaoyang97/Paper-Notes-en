@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LiREC-Net: A Target-Free and Learning-Based Network for LiDAR, RGB, and Event Calibration
 description: >-
-  [CVPR 2026][Autonomous Driving][multi-sensor calibration] This paper proposes LiREC-Net, the first unified framework for simultaneously performing target-free extrinsic calibration between LiDAR–RGB and LiDAR–Event camera pairs. Through a shared LiDAR representation that fuses 3D point features with projected depth features, and pairwise cost volumes for cross-modal alignment, LiREC-Net achieves calibration accuracies of 1.80 cm/0.11° on KITTI, and 2.51 cm/0.14° (LiDAR–RGB) and 1.18 cm/0.07° (LiDAR–Event) on DSEC.
+  [CVPR 2026][Autonomous Driving][multi-sensor calibration] This paper proposes LiREC-Net, the first unified framework for simultaneously performing target-free extrinsic calibration between LiDAR–RGB and LiDAR–Event camer…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - multi-sensor calibration
-  - target-free calibration
-  - tri-modal fusion
-  - event camera
-  - extrinsic estimation
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "multi-sensor calibration"
+  - "target-free calibration"
+  - "tri-modal fusion"
+  - "event camera"
+  - "extrinsic estimation"
 date: 2026-05-08
 content_hash: b17963e49dbdc527
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Adaptively Coordinating with Novel Partners via Learned Latent Strategies
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][zero-shot coordination] This paper proposes the TALENTS framework, which learns a latent strategy space via a VAE, discovers strategy types through K-Means clustering, and performs online teammate-type inference using the Fixed-Share regret minimization algorithm, enabling zero-shot real-time adaptive coordination with unknown human or agent teammates.
+  [NeurIPS 2025][Reinforcement Learning][zero-shot coordination] This paper proposes the TALENTS framework, which learns a latent strategy space via a VAE, discovers strategy types through K-Means clustering…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - zero-shot coordination
-  - ad hoc teamwork
-  - latent strategy
-  - VAE
-  - regret minimization
-  - human-agent collaboration
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "zero-shot coordination"
+  - "ad hoc teamwork"
+  - "latent strategy"
+  - "VAE"
+  - "regret minimization"
+  - "human-agent collaboration"
 date: 2026-05-08
 content_hash: 4d9d6e740686f595
 ---

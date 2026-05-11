@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Power Lines: Scaling Laws for Weight Decay and Batch Size in LLM Pre-training
 description: >-
-  [NeurIPS 2025][LLM Pretraining][scaling laws] This paper proposes a set of power-law scaling relations for weight decay $\lambda$ and batch size $B$ in LLM pre-training. By introducing the concept of an AdamW timescale $\tau$, it unifies hyperparameter scaling relationships, enabling accurate prediction of optimal hyperparameters prior to large-scale training.
+  [NeurIPS 2025][LLM Pretraining][scaling laws] This paper proposes a set of power-law scaling relations for weight decay $\lambda$ and batch size $B$ in LLM pre-training. By introducing the concept of an AdamW timescale $…
 tags:
-  - NeurIPS 2025
-  - LLM Pretraining
-  - scaling laws
-  - weight decay
-  - batch size
-  - LLM pre-training
-  - AdamW
+  - "NeurIPS 2025"
+  - "LLM Pretraining"
+  - "scaling laws"
+  - "weight decay"
+  - "batch size"
+  - "LLM pre-training"
+  - "AdamW"
 date: 2026-05-08
 content_hash: a93d3c46365352f2
 ---

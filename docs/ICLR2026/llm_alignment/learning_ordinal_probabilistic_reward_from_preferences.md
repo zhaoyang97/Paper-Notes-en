@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Ordinal Probabilistic Reward from Preferences (OPRM)
 description: >-
-  [ICLR 2026][LLM Alignment][Ordinal Reward] This paper proposes the Ordinal Probabilistic Reward Model (OPRM), which discretizes response quality into ordinal grades from 1 to 9 and learns the full probability distribution over these grades. Combined with Region Flooding Tuning (RgFT), it enables data-efficient training. OPRM achieves 89.3% on RewardBench, outperforming existing reward models by 2.9%–7.4%, while also providing uncertainty estimation and annotation disagreement detection.
+  [ICLR 2026][LLM Alignment][Ordinal Reward] This paper proposes the Ordinal Probabilistic Reward Model (OPRM), which discretizes response quality into ordinal grades from 1 to 9 and learns the full probability distributio…
 tags:
-  - ICLR 2026
-  - LLM Alignment
-  - Ordinal Reward
-  - Probability Distribution
-  - Region Flooding Tuning
-  - Reward Model
-  - Uncertainty Estimation
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Ordinal Reward"
+  - "Probability Distribution"
+  - "Region Flooding Tuning"
+  - "Reward Model"
+  - "Uncertainty Estimation"
 date: 2026-05-08
 content_hash: 0c99cc904c67ae01
 ---

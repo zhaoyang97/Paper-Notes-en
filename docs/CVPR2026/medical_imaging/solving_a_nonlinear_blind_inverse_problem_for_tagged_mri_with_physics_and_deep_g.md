@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Solving a Nonlinear Blind Inverse Problem for Tagged MRI with Physics and Deep Generative Priors
 description: >-
-  [CVPR 2026][Medical Imaging][Tagged MRI] This paper proposes InvTag, a framework that, for the first time, integrates a physics-based MR forward model with a pretrained diffusion generative prior to jointly solve three sub-tasks in 3D Tagged MRI—anatomical recovery, Cine synthesis, and motion estimation—without requiring any additional training data.
+  [CVPR 2026][Medical Imaging][Tagged MRI] This paper proposes InvTag, a framework that, for the first time, integrates a physics-based MR forward model with a pretrained diffusion generative prior to jointly solve three s…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Tagged MRI
-  - Inverse Problem
-  - Diffusion Prior
-  - Motion Estimation
-  - Image Super-Resolution
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Tagged MRI"
+  - "Inverse Problem"
+  - "Diffusion Prior"
+  - "Motion Estimation"
+  - "Image Super-Resolution"
 date: 2026-05-08
 content_hash: f70924eb7219a1fb
 ---

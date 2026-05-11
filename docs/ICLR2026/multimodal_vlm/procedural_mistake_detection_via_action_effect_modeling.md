@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Procedural Mistake Detection via Action Effect Modeling
 description: >-
-  [ICLR 2026][Multimodal VLM][procedural mistake detection] This paper proposes a dual-branch multimodal supervision framework for action effect modeling, combining a visual branch (object state and spatial relation features) with a text branch (GPT-4o-generated scene graphs). Learnable effect tokens distill external supervision signals, achieving state-of-the-art mistake detection on egocentric procedural videos.
+  [ICLR 2026][Multimodal VLM][procedural mistake detection] This paper proposes a dual-branch multimodal supervision framework for action effect modeling…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - procedural mistake detection
-  - action effect modeling
-  - egocentric video
-  - scene graph
-  - multimodal supervision
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "procedural mistake detection"
+  - "action effect modeling"
+  - "egocentric video"
+  - "scene graph"
+  - "multimodal supervision"
 date: 2026-05-08
 content_hash: ad93354b2236ae85
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Angular Gradient Sign Method: Uncovering Vulnerabilities in Hyperbolic Networks
 description: >-
-  [AAAI 2026][AI Safety][Adversarial Attack] This paper proposes the Angular Gradient Sign Method (AGSM), which decomposes gradients in hyperbolic space into radial (hierarchical depth) and angular (semantic) components, applying perturbations exclusively along the angular direction to generate adversarial examples. AGSM achieves 5–13% greater accuracy degradation than standard FGSM/PGD on image classification and cross-modal retrieval tasks.
+  [AAAI 2026][AI Safety][Adversarial Attack] This paper proposes the Angular Gradient Sign Method (AGSM), which decomposes gradients in hyperbolic space into radial (hierarchical depth) and angular (semantic) components…
 tags:
-  - AAAI 2026
-  - AI Safety
-  - Adversarial Attack
-  - Hyperbolic Networks
-  - Angular Gradient
-  - Poincaré Ball
-  - Cross-modal Retrieval
+  - "AAAI 2026"
+  - "AI Safety"
+  - "Adversarial Attack"
+  - "Hyperbolic Networks"
+  - "Angular Gradient"
+  - "Poincaré Ball"
+  - "Cross-modal Retrieval"
 date: 2026-05-08
 content_hash: 01e77c1350232580
 ---

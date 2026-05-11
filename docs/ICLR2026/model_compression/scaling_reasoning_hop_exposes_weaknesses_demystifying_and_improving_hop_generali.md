@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Scaling Reasoning Hop Exposes Weaknesses: Demystifying and Improving Hop Generalization in Large Language Models
 description: >-
-  [ICLR 2026][Model Compression][Reasoning hop generalization] This paper systematically uncovers the internal mechanism underlying LLM failures in reasoning hop generalization — namely, attention head competition between correct and erroneous reasoning trajectories — and proposes TCR (Test-time Correction of Reasoning), which dynamically identifies and deactivates erroneous processing heads (ep heads) at inference time to correct reasoning errors, achieving an average accuracy improvement of 5–7%.
+  [ICLR 2026][Model Compression][Reasoning hop generalization] This paper systematically uncovers the internal mechanism underlying LLM failures in reasoning hop generalization — namely…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Reasoning hop generalization
-  - Chain-of-Thought
-  - Attention head competition mechanism
-  - Erroneous processing heads
-  - Test-time intervention
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Reasoning hop generalization"
+  - "Chain-of-Thought"
+  - "Attention head competition mechanism"
+  - "Erroneous processing heads"
+  - "Test-time intervention"
 date: 2026-05-08
 content_hash: fd66ca72c4a28cc1
 ---

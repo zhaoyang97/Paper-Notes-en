@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Hierarchical Direction Perception via Atomic Dot-Product Operators for Rotation-Invariant Point Clouds Learning
 description: >-
-  [AAAI2026][3D Vision][Point Cloud] This paper proposes DiPVNet, which leverages the dual properties of the atomic dot-product operator (directional selectivity + rotation invariance) to construct a local L2DP operator and a global DASFT module, achieving hierarchical direction-aware rotation-invariant point cloud learning.
+  [AAAI2026][3D Vision][Point Cloud] This paper proposes DiPVNet, which leverages the dual properties of the atomic dot-product operator (directional selectivity + rotation invariance) to construct a local L2DP operator an…
 tags:
-  - AAAI2026
-  - 3D Vision
-  - Point Cloud
-  - Rotation Invariance
-  - Dot-Product Operator
-  - Spherical Fourier Transform
-  - Equivariance
+  - "AAAI2026"
+  - "3D Vision"
+  - "Point Cloud"
+  - "Rotation Invariance"
+  - "Dot-Product Operator"
+  - "Spherical Fourier Transform"
+  - "Equivariance"
 date: 2026-05-08
 content_hash: e07be9a5ed3904e5
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Cross-Architecture Distillation Made Simple with Redundancy Suppression
 description: >-
-  [ICCV 2025][Model Compression][knowledge distillation] This paper proposes RSD (Redundancy Suppression Distillation), which extracts architecture-agnostic knowledge via cross-architecture invariance maximization and feature decorrelation. Using a single simple RSD loss and a lightweight MLP decoupling module, RSD substantially outperforms OFA—the pioneering cross-architecture distillation method—on both CIFAR-100 and ImageNet-1k, while incurring only a fraction of OFA's parameter overhead.
+  [ICCV 2025][Model Compression][knowledge distillation] This paper proposes RSD (Redundancy Suppression Distillation), which extracts architecture-agnostic knowledge via cross-architecture invariance maximization and feat…
 tags:
-  - ICCV 2025
-  - Model Compression
-  - knowledge distillation
-  - cross-architecture
-  - redundancy suppression
-  - feature decorrelation
-  - CNN-ViT-MLP
+  - "ICCV 2025"
+  - "Model Compression"
+  - "knowledge distillation"
+  - "cross-architecture"
+  - "redundancy suppression"
+  - "feature decorrelation"
+  - "CNN-ViT-MLP"
 date: 2026-05-08
 content_hash: 10e7a2c67ea52e82
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Any-SSR: How Recursive Least Squares Works in Continual Learning of Large Language Models
 description: >-
-  [ICCV 2025][LLM/NLP][LLM continual learning] This paper proposes the Analytic Subspace Routing (Any-SSR) framework, which eliminates inter-task interference by assigning each task an independent LoRA subspace, and trains a zero-forgetting analytic router via a recursive least squares (RLS) closed-form solution, enabling replay-free continual learning for LLMs.
+  [ICCV 2025][LLM/NLP][LLM continual learning] This paper proposes the Analytic Subspace Routing (Any-SSR) framework, which eliminates inter-task interference by assigning each task an independent LoRA subspace…
 tags:
-  - ICCV 2025
-  - LLM/NLP
-  - LLM continual learning
-  - catastrophic forgetting
-  - recursive least squares
-  - LoRA subspace routing
-  - replay-free learning
+  - "ICCV 2025"
+  - "LLM/NLP"
+  - "LLM continual learning"
+  - "catastrophic forgetting"
+  - "recursive least squares"
+  - "LoRA subspace routing"
+  - "replay-free learning"
 date: 2026-05-08
 content_hash: 568320d958207821
 ---

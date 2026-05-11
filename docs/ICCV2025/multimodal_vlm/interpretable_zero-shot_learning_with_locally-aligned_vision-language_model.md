@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Interpretable Zero-Shot Learning with Locally-Aligned Vision-Language Model
 description: >-
-  [ICCV 2025][Multimodal VLM][Zero-shot learning] This paper proposes LaZSL, which leverages Optimal Transport (OT) to achieve fine-grained alignment between local visual regions and semantic attributes, constructing an interpretable zero-shot classifier without additional training. LaZSL demonstrates strong accuracy, interpretability, and domain generalization across 9 datasets.
+  [ICCV 2025][Multimodal VLM][Zero-shot learning] This paper proposes LaZSL, which leverages Optimal Transport (OT) to achieve fine-grained alignment between local visual regions and semantic attributes…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Zero-shot learning
-  - interpretability
-  - optimal transport
-  - local alignment
-  - CLIP
-  - attributes
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Zero-shot learning"
+  - "interpretability"
+  - "optimal transport"
+  - "local alignment"
+  - "CLIP"
+  - "attributes"
 date: 2026-05-08
 content_hash: 318ee8370347a687
 ---

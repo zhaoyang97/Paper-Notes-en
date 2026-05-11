@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HealthSLM-Bench: Benchmarking Small Language Models for Mobile and Wearable Healthcare Monitoring
 description: >-
-  [NeurIPS 2025][LLM Safety][small language models] The first benchmark systematically evaluating small language models (SLMs, 1–4B parameters) on mobile and wearable health monitoring tasks, covering zero-shot, few-shot, and instruction fine-tuning paradigms, with on-device deployment validated on an iPhone.
+  [NeurIPS 2025][LLM Safety][small language models] The first benchmark systematically evaluating small language models (SLMs, 1–4B parameters) on mobile and wearable health monitoring tasks, covering zero-shot, few-shot…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - small language models
-  - mobile health monitoring
-  - wearable devices
-  - privacy preservation
-  - on-device deployment
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "small language models"
+  - "mobile health monitoring"
+  - "wearable devices"
+  - "privacy preservation"
+  - "on-device deployment"
 date: 2026-05-08
 content_hash: 9f6ace3905f2cbcc
 ---

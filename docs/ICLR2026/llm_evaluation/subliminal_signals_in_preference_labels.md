@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Subliminal Signals in Preference Labels
 description: >-
-  [ICLR 2026][LLM Evaluation][preference learning] This paper demonstrates that preference labels can serve as a covert communication channel: even when a student model generates semantically irrelevant numeric sequences, a biased judge model can transmit subliminal behavioral tendencies to the student model through binary preference labels alone, and this transmission is amplified under iterative alignment.
+  [ICLR 2026][LLM Evaluation][preference learning] This paper demonstrates that preference labels can serve as a covert communication channel: even when a student model generates semantically irrelevant numeric sequences…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - preference learning
-  - subliminal signals
-  - LLM-as-a-judge
-  - alignment safety
-  - covert communication
-  - superalignment
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "preference learning"
+  - "subliminal signals"
+  - "LLM-as-a-judge"
+  - "alignment safety"
+  - "covert communication"
+  - "superalignment"
 date: 2026-05-08
 content_hash: 39c89c99f13a7603
 ---

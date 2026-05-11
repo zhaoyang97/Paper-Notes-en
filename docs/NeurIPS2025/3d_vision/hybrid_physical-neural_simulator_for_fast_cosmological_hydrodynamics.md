@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Hybrid Physical-Neural Simulator for Fast Cosmological Hydrodynamics
 description: >-
-  [NeurIPS 2025][3D Vision][cosmological simulation] This paper proposes a hybrid physical-neural cosmological simulator that handles gravitational dynamics via a differentiable particle-mesh (PM) method and parameterizes the effective gas pressure field using a physics-constrained neural network. The model requires only a single reference simulation for training and outperforms the EGD baseline at both the field level and the statistics level.
+  [NeurIPS 2025][3D Vision][cosmological simulation] This paper proposes a hybrid physical-neural cosmological simulator that handles gravitational dynamics via a differentiable particle-mesh (PM) method and parameterizes…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - cosmological simulation
-  - hybrid physical-neural method
-  - particle-mesh
-  - differentiable simulation
-  - gas dynamics
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "cosmological simulation"
+  - "hybrid physical-neural method"
+  - "particle-mesh"
+  - "differentiable simulation"
+  - "gas dynamics"
 date: 2026-05-08
 content_hash: 6f8ac344dca9df7a
 ---

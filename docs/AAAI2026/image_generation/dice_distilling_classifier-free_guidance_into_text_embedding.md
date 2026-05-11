@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DICE: Distilling Classifier-Free Guidance into Text Embeddings
 description: >-
-  [AAAI 2026 **(Oral)**][Image Generation][Classifier-Free Guidance] This paper proposes DICE, which trains a lightweight sharpener with only 2M parameters to distill the guidance effect of CFG into text embeddings, enabling guidance-free sampling to achieve generation quality on par with CFG while halving inference computation. The method is comprehensively validated across multiple variants of SD1.5, SDXL, and PixArt-α, and is accepted as an AAAI 2026 Oral presentation.
+  [AAAI 2026 **(Oral)**][Image Generation][Classifier-Free Guidance] This paper proposes DICE, which trains a lightweight sharpener with only 2M parameters to distill the guidance effect of CFG into text embeddings…
 tags:
   - "AAAI 2026 **(Oral)**"
-  - Image Generation
-  - Classifier-Free Guidance
-  - text embedding distillation
-  - diffusion model acceleration
-  - CFG-free sampling
-  - text embedding sharpening
+  - "Image Generation"
+  - "Classifier-Free Guidance"
+  - "text embedding distillation"
+  - "diffusion model acceleration"
+  - "CFG-free sampling"
+  - "text embedding sharpening"
 date: 2026-05-08
 content_hash: 9c7d873de5a6302a
 ---

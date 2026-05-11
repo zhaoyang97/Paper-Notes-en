@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ASIDE: Architectural Separation of Instructions and Data in Language Models
 description: >-
-  [ICLR 2026][LLM Evaluation][instruction-data separation] This paper proposes ASIDE, an architectural modification that distinguishes instructions from data at the token embedding level via orthogonal rotation. Requiring only changes to the forward pass and training on standard instruction fine-tuning data, ASIDE significantly improves instruction-data separation and robustness against prompt injection without any dedicated safety training.
+  [ICLR 2026][LLM Evaluation][instruction-data separation] This paper proposes ASIDE, an architectural modification that distinguishes instructions from data at the token embedding level via orthogonal rotation. Requiring…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - instruction-data separation
-  - prompt injection
-  - orthogonal rotation
-  - token embedding
-  - architectural safety
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "instruction-data separation"
+  - "prompt injection"
+  - "orthogonal rotation"
+  - "token embedding"
+  - "architectural safety"
 date: 2026-05-08
 content_hash: 5c883613f2a07eba
 ---

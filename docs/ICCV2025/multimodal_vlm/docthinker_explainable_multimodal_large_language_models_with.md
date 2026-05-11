@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DocThinker: Explainable Multimodal Large Language Models with Rule-based Reinforcement Learning for Document Understanding
 description: >-
-  [ICCV 2025][Multimodal VLM][rule-based RL] This paper proposes DocThinker, the first framework to apply GRPO (Group Relative Policy Optimization) reinforcement learning to document understanding. By training MLLMs with a four-objective rule-based reward (format, answer accuracy, RoI IoU, and question rephrasing quality), DocThinker enables models to autonomously generate interpretable reasoning processes. Using only 4K training samples, it improves Qwen2.5-VL-7B on DocVQA from 0.355 to 0.579 (RL vs. SFT: 0.579 vs. 0.355) and achieves 82.4% precision on visual grounding tasks.
+  [ICCV 2025][Multimodal VLM][rule-based RL] This paper proposes DocThinker, the first framework to apply GRPO (Group Relative Policy Optimization) reinforcement learning to document understanding. By training MLLMs with a…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - rule-based RL
-  - GRPO
-  - document understanding
-  - interpretability
-  - chain-of-thought
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "rule-based RL"
+  - "GRPO"
+  - "document understanding"
+  - "interpretability"
+  - "chain-of-thought"
 date: 2026-05-08
 content_hash: ca50bb0a1d590807
 ---

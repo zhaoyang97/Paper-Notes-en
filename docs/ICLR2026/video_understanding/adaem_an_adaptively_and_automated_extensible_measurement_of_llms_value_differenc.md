@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AdAEM: An Adaptively and Automated Extensible Measurement of LLMs' Value Difference
 description: >-
-  [ICLR 2026 (Oral)][Video Understanding][LLM value assessment] This paper proposes AdAEM, an adaptive and self-extensible evaluation framework for LLM values. By leveraging information-theoretic optimization, AdAEM automatically generates test questions that maximally reveal value differences across LLMs, addressing the "insufficient informativeness" limitation of existing static benchmarks that fail to distinguish models' value orientations.
+  [ICLR 2026 (Oral)][Video Understanding][LLM value assessment] This paper proposes AdAEM, an adaptive and self-extensible evaluation framework for LLM values. By leveraging information-theoretic optimization…
 tags:
-  - ICLR 2026 (Oral)
-  - Video Understanding
-  - LLM value assessment
-  - dynamic benchmark
-  - information-theoretic optimization
-  - Schwartz value theory
-  - cultural differences
+  - "ICLR 2026 (Oral)"
+  - "Video Understanding"
+  - "LLM value assessment"
+  - "dynamic benchmark"
+  - "information-theoretic optimization"
+  - "Schwartz value theory"
+  - "cultural differences"
 date: 2026-05-08
 content_hash: cf0a0f1b7819c037
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Training-free Online Video Step Grounding
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Video step grounding] This paper proposes BaGLM, a training-free online video step grounding method that integrates LLM-estimated step dependencies and LMM-estimated step progress into zero-shot LMM predictions via Bayesian filtering, outperforming existing trained offline methods on three datasets.
+  [NeurIPS 2025][Multimodal VLM][Video step grounding] This paper proposes BaGLM, a training-free online video step grounding method that integrates LLM-estimated step dependencies and LMM-estimated step progress into zero…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Video step grounding
-  - Bayesian filtering
-  - LMM zero-shot
-  - online inference
-  - training-free
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Video step grounding"
+  - "Bayesian filtering"
+  - "LMM zero-shot"
+  - "online inference"
+  - "training-free"
 date: 2026-05-08
 content_hash: 7b5dffed42f894fa
 ---

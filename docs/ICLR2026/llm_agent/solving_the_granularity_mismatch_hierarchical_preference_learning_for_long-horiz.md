@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Solving the Granularity Mismatch: Hierarchical Preference Learning for Long-Horizon LLM Agents
 description: >-
-  [ICLR 2026][LLM Agent][hierarchical DPO] This paper proposes the HPL framework to address the granularity mismatch in preference learning for long-horizon LLM agents. Through three-level DPO (trajectory-level + step-level + action-group-level) and two-dimensional curriculum learning (subtask complexity × sample difficulty), HPL significantly outperforms baselines such as ETO and IPR on ALFWorld/WebShop/InterCode-SQL (average 59.44 vs. 55.43/55.49).
+  [ICLR 2026][LLM Agent][hierarchical DPO] This paper proposes the HPL framework to address the granularity mismatch in preference learning for long-horizon LLM agents. Through three-level DPO (trajectory-level + step-leve…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - hierarchical DPO
-  - preference learning
-  - long-horizon agent
-  - curriculum learning
-  - action group
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "hierarchical DPO"
+  - "preference learning"
+  - "long-horizon agent"
+  - "curriculum learning"
+  - "action group"
 date: 2026-05-08
 content_hash: 9abb4a4b3afcb249
 ---

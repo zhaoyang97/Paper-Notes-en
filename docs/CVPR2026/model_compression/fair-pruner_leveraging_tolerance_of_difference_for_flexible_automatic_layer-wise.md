@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FAIR-Pruner: Leveraging Tolerance of Difference for Flexible Automatic Layer-Wise Neural Network Pruning
 description: >-
-  [CVPR 2026][Model Compression][Structured pruning] FAIR-Pruner is a structured pruning framework that introduces the Tolerance of Differences (ToD) metric to reconcile two complementary perspectives: the Wasserstein Utilization Score (U-Score), which identifies redundant units based on class-conditional separability, and the Taylor-based Reconstruction Score (R-Score), which protects critical units. The framework automatically determines non-uniform per-layer pruning ratios and supports search-free flexible compression ratio adjustment, achieving state-of-the-art results on CIFAR-10, SVHN, and ImageNet.
+  [CVPR 2026][Model Compression][Structured pruning] FAIR-Pruner is a structured pruning framework that introduces the Tolerance of Differences (ToD) metric to reconcile two complementary perspectives: the Wasserstein Util…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - Structured pruning
-  - non-uniform layer-wise pruning
-  - Wasserstein distance
-  - tolerance of differences
-  - automatic sparsity allocation
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Structured pruning"
+  - "non-uniform layer-wise pruning"
+  - "Wasserstein distance"
+  - "tolerance of differences"
+  - "automatic sparsity allocation"
 date: 2026-05-08
 content_hash: 93d1f57d1f539dce
 ---

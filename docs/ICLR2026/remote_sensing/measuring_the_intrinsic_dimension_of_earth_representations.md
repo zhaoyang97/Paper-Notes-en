@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Measuring the Intrinsic Dimension of Earth Representations
 description: >-
-  [ICLR 2026][Remote Sensing][intrinsic dimension] This work presents the first systematic measurement of the intrinsic dimension (ID) of Geographic Implicit Neural Representations (Geographic INR), finding that 256–512-dimensional embeddings have true IDs of only 2–10. Higher ID in frozen embedding spaces correlates positively with downstream performance, while lower ID in supervised task-head activation spaces correlates positively with performance, revealing a dual mechanism of "representativeness vs. task alignment."
+  [ICLR 2026][Remote Sensing][intrinsic dimension] This work presents the first systematic measurement of the intrinsic dimension (ID) of Geographic Implicit Neural Representations (Geographic INR)…
 tags:
-  - ICLR 2026
-  - Remote Sensing
-  - intrinsic dimension
-  - geographic implicit neural representations
-  - Earth observation
-  - representation learning
-  - unsupervised evaluation
+  - "ICLR 2026"
+  - "Remote Sensing"
+  - "intrinsic dimension"
+  - "geographic implicit neural representations"
+  - "Earth observation"
+  - "representation learning"
+  - "unsupervised evaluation"
 date: 2026-05-08
 content_hash: 21faabfde1a26428
 ---

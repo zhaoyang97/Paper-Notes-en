@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] x2-Fusion: Cross-Modality and Cross-Dimension Flow Estimation in Event Edge Space
 description: >-
-  [CVPR 2026][Autonomous Driving][optical flow] This paper proposes x2-Fusion, which constructs a unified Event Edge Space anchored on spatiotemporal edge signals from event cameras. Image, LiDAR, and event features are aligned into this homogeneous edge space, followed by reliability-aware adaptive fusion and cross-dimension contrastive learning to jointly estimate 2D optical flow and 3D scene flow, achieving state-of-the-art performance on both synthetic and real-world datasets.
+  [CVPR 2026][Autonomous Driving][optical flow] This paper proposes x2-Fusion, which constructs a unified Event Edge Space anchored on spatiotemporal edge signals from event cameras. Image, LiDAR…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - optical flow
-  - scene flow
-  - event camera
-  - multimodal fusion
-  - edge space
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "optical flow"
+  - "scene flow"
+  - "event camera"
+  - "multimodal fusion"
+  - "edge space"
 date: 2026-05-08
 content_hash: fbe0ea62e461cd04
 ---

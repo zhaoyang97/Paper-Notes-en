@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MC-Search: Evaluating and Enhancing Multimodal Agentic Search with Structured Long Reasoning Chains
 description: >-
-  [ICLR 2026][LLM Agent][Multimodal RAG] This paper proposes MC-Search, the first benchmark for agentic multimodal RAG, comprising 3,333 high-quality samples (averaging 3.7 hops) across 5 reasoning topology types. The benchmark employs HAVE verification to ensure the necessity of each reasoning step, and introduces the Search-Align process-supervised fine-tuning framework, which substantially improves retrieval planning in open-source models (Qwen2.5-VL-7B F1 +13.7).
+  [ICLR 2026][LLM Agent][Multimodal RAG] This paper proposes MC-Search, the first benchmark for agentic multimodal RAG, comprising 3…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Multimodal RAG
-  - Agentic Search
-  - Multi-hop Reasoning
-  - Process-level Evaluation
-  - Retrieval-Augmented Reasoning
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Multimodal RAG"
+  - "Agentic Search"
+  - "Multi-hop Reasoning"
+  - "Process-level Evaluation"
+  - "Retrieval-Augmented Reasoning"
 date: 2026-05-08
 content_hash: 8cb4c108d08f9300
 ---

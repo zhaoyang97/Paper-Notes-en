@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Cell-Type Prototype-Informed Neural Network for Gene Expression Estimation from Pathology Images
 description: >-
-  [CVPR 2026][Medical Imaging][gene expression estimation] This paper proposes CPNN, which constructs cell-type prototypes from publicly available single-cell RNA-seq data and models slide/patch-level gene expression as a weighted combination of these prototypes, achieving state-of-the-art performance on gene expression estimation while providing interpretability.
+  [CVPR 2026][Medical Imaging][gene expression estimation] This paper proposes CPNN, which constructs cell-type prototypes from publicly available single-cell RNA-seq data and models slide/patch-level gene expression as a…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - gene expression estimation
-  - pathology images
-  - single-cell RNA sequencing
-  - cell-type prototype
-  - multiple instance learning
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "gene expression estimation"
+  - "pathology images"
+  - "single-cell RNA sequencing"
+  - "cell-type prototype"
+  - "multiple instance learning"
 date: 2026-05-08
 content_hash: 233d274167003487
 ---

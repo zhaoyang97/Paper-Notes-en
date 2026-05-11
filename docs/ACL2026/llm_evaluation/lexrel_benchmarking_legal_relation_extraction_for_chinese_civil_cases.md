@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LexRel: Benchmarking Legal Relation Extraction for Chinese Civil Cases
 description: >-
-  [ACL 2026][LLM Evaluation][legal relation extraction] This work introduces the first structured taxonomy of legal relations in Chinese civil law (9 domains, 265 relation types) and presents LexRel, a benchmark comprising 1,140 expert-annotated instances. The benchmark is used to evaluate leading LLMs on legal relation extraction, revealing significant limitations of current models on this task, while also demonstrating that incorporating legal relation information yields consistent gains on downstream legal AI tasks.
+  [ACL 2026][LLM Evaluation][legal relation extraction] This work introduces the first structured taxonomy of legal relations in Chinese civil law (9 domains, 265 relation types) and presents LexRel…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - legal relation extraction
-  - Chinese civil cases
-  - legal knowledge graph
-  - benchmark
-  - relation classification schema
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "legal relation extraction"
+  - "Chinese civil cases"
+  - "legal knowledge graph"
+  - "benchmark"
+  - "relation classification schema"
 date: 2026-05-08
 content_hash: 31fbf9b28083d380
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SHOE: Semantic HOI Open-Vocabulary Evaluation Metric
 description: >-
-  [CVPR 2026][Image Generation][Open-vocabulary HOI detection] This paper proposes SHOE, an evaluation framework that decomposes HOI predictions into verb and object components and computes LLM-driven semantic similarity scores for each independently, replacing the exact-match paradigm of conventional mAP. SHOE achieves 85.73% agreement with human judgments on open-vocabulary HOI detection evaluation, surpassing the average inter-annotator agreement of 78.61%.
+  [CVPR 2026][Image Generation][Open-vocabulary HOI detection] This paper proposes SHOE, an evaluation framework that decomposes HOI predictions into verb and object components and computes LLM-driven semantic similarity s…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Open-vocabulary HOI detection
-  - semantic similarity evaluation
-  - LLM scoring
-  - WordNet
-  - evaluation metric
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Open-vocabulary HOI detection"
+  - "semantic similarity evaluation"
+  - "LLM scoring"
+  - "WordNet"
+  - "evaluation metric"
 date: 2026-05-08
 content_hash: e8fd0a305f2993b5
 ---

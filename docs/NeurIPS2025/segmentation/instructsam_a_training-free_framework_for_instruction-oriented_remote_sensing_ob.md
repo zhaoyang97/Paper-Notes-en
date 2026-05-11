@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] InstructSAM: A Training-Free Framework for Instruction-Oriented Remote Sensing Object Recognition
 description: >-
-  [NeurIPS 2025][Segmentation][Remote sensing] This paper introduces a new task — Instruction-oriented Counting, Detection, and Segmentation (InstructCDS) — along with the EarthInstruct remote sensing benchmark covering three settings (open-vocabulary, open-ended, and open-subcategory). It proposes InstructSAM, a training-free framework that uses an LVLM to parse instructions and predict counts, SAM2 to generate mask proposals, and CLIP to compute similarities. A Binary Integer Programming (BIP) formulation then performs optimal mask-label assignment under counting constraints, achieving near-constant inference time while outperforming task-specific baselines.
+  [NeurIPS 2025][Segmentation][Remote sensing] This paper introduces a new task — Instruction-oriented Counting, Detection, and Segmentation (InstructCDS) — along with the EarthInstruct remote sensing benchmark covering th…
 tags:
-  - NeurIPS 2025
-  - Segmentation
-  - Remote sensing
-  - instruction-oriented
-  - training-free
-  - SAM2
-  - binary integer programming
-  - object counting
-  - open-vocabulary detection/segmentation
+  - "NeurIPS 2025"
+  - "Segmentation"
+  - "Remote sensing"
+  - "instruction-oriented"
+  - "training-free"
+  - "SAM2"
+  - "binary integer programming"
+  - "object counting"
+  - "open-vocabulary detection/segmentation"
 date: 2026-05-08
 content_hash: 49f2ae6e8c20e7df
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Pixel-Perfect Depth with Semantics-Prompted Diffusion Transformers
 description: >-
-  [NeurIPS 2025][3D Vision][Monocular Depth Estimation] This paper proposes Pixel-Perfect Depth, a monocular depth estimation model that performs diffusion generation directly in pixel space (rather than latent space). Through a Semantics-Prompted DiT (SP-DiT) that incorporates high-level semantic representations from visual foundation models and a cascaded DiT design, the model generates flying-pixel-free depth maps, surpassing all published generative models on five benchmarks.
+  [NeurIPS 2025][3D Vision][Monocular Depth Estimation] This paper proposes Pixel-Perfect Depth, a monocular depth estimation model that performs diffusion generation directly in pixel space (rather than latent space). Thr…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Monocular Depth Estimation
-  - Pixel-Space Diffusion
-  - DiT
-  - Semantics Prompting
-  - Flying Pixel Removal
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Monocular Depth Estimation"
+  - "Pixel-Space Diffusion"
+  - "DiT"
+  - "Semantics Prompting"
+  - "Flying Pixel Removal"
 date: 2026-05-08
 content_hash: 9d6d6158f4878046
 ---

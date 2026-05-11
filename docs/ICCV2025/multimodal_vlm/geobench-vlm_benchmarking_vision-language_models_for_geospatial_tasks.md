@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GEOBench-VLM: Benchmarking Vision-Language Models for Geospatial Tasks
 description: >-
-  [ICCV 2025][Multimodal VLM][Vision-Language Models] This paper introduces GEOBench-VLM, a comprehensive benchmark designed to evaluate VLMs on geospatial tasks, encompassing 31 sub-tasks across 8 major categories and over 10,000 manually verified instructions. The benchmark reveals that current state-of-the-art VLMs, including GPT-4o, still perform poorly on geospatial tasks, with the highest accuracy reaching only 41.7%.
+  [ICCV 2025][Multimodal VLM][Vision-Language Models] This paper introduces GEOBench-VLM, a comprehensive benchmark designed to evaluate VLMs on geospatial tasks…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Vision-Language Models
-  - Geospatial
-  - Remote Sensing Benchmark
-  - Multimodal Evaluation
-  - Temporal Analysis
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Vision-Language Models"
+  - "Geospatial"
+  - "Remote Sensing Benchmark"
+  - "Multimodal Evaluation"
+  - "Temporal Analysis"
 date: 2026-05-08
 content_hash: cee42d7d8b271035
 ---

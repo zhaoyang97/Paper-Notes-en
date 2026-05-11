@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EMO-R3: Reflective Reinforcement Learning for Emotional Reasoning in Multimodal Large Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Emotional Reasoning] This paper proposes EMO-R3, which guides MLLMs to perform step-by-step emotional reasoning via Structured Emotional Thinking (SET), and introduces a Reflective Emotional Reward (RER) that prompts the model to re-evaluate the visual-textual consistency and emotional coherence of its reasoning, substantially improving both interpretability and accuracy in multimodal affective understanding.
+  [CVPR 2026][Multimodal VLM][Emotional Reasoning] This paper proposes EMO-R3, which guides MLLMs to perform step-by-step emotional reasoning via Structured Emotional Thinking (SET)…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Emotional Reasoning
-  - GRPO
-  - Structured Thinking
-  - Reflective Reward
-  - Multimodal Affective Understanding
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Emotional Reasoning"
+  - "GRPO"
+  - "Structured Thinking"
+  - "Reflective Reward"
+  - "Multimodal Affective Understanding"
 date: 2026-05-08
 content_hash: 597e6284f488c633
 ---

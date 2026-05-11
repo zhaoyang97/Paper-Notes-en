@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Multiscale Graph-based Protein Learning with Geometric Secondary Structural Motifs
 description: >-
-  [NeurIPS 2025][Medical Imaging][protein representation learning] This paper proposes SSHG (Secondary Structure-based Hierarchical Graph), a framework that constructs two-level hierarchical graph representations from protein secondary structure motifs — an intra-motif residue-level graph and an inter-motif global graph — and employs a two-stage GNN to learn local and global features respectively. Theoretical guarantees of maximal expressiveness are provided, with empirical improvements in both accuracy and computational efficiency on enzyme classification and ligand affinity prediction tasks.
+  [NeurIPS 2025][Medical Imaging][protein representation learning] This paper proposes SSHG (Secondary Structure-based Hierarchical Graph), a framework that constructs two-level hierarchical graph representations from prot…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - protein representation learning
-  - graph neural networks
-  - multiscale
-  - secondary structure
-  - hierarchical graph
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "protein representation learning"
+  - "graph neural networks"
+  - "multiscale"
+  - "secondary structure"
+  - "hierarchical graph"
 date: 2026-05-08
 content_hash: 48415dbb48ad0b13
 ---

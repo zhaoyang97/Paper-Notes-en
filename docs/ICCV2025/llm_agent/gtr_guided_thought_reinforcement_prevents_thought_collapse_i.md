@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GTR: Guided Thought Reinforcement Prevents Thought Collapse in RL-based VLM Agent Training
 description: >-
-  [ICCV 2025][LLM Agent][Thought Collapse] This paper identifies the "thought collapse" phenomenon in RL-based VLM Agent training — where CoT reasoning rapidly degenerates into state-agnostic, templated thoughts that lead to ineffective actions — and proposes the GTR framework, which combines a VLM corrector for automatic thought correction (SFT) with PPO-based action optimization in a dual-objective training scheme, achieving 3–5× success rate improvements on the 24-Point Game and ALFWorld.
+  [ICCV 2025][LLM Agent][Thought Collapse] This paper identifies the "thought collapse" phenomenon in RL-based VLM Agent training — where CoT reasoning rapidly degenerates into state-agnostic…
 tags:
-  - ICCV 2025
-  - LLM Agent
-  - Thought Collapse
-  - CoT Reasoning
-  - Process Guidance
-  - PPO
-  - VLM Agent
+  - "ICCV 2025"
+  - "LLM Agent"
+  - "Thought Collapse"
+  - "CoT Reasoning"
+  - "Process Guidance"
+  - "PPO"
+  - "VLM Agent"
 date: 2026-05-08
 content_hash: 76dc3c2ab8e3a025
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Elucidating the SNR-t Bias of Diffusion Probabilistic Models
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Models] This paper reveals the pervasive SNR-t bias in diffusion models (the mismatch between the Signal-to-Noise Ratio of samples in the reverse process and their timestamps) and proposes Differential Correction in Wavelet domain (DCW). DCW is a training-free, plug-and-play method that enhances the generation quality across various diffusion models.
+  [CVPR 2026][Image Generation][Diffusion Models] This paper reveals the pervasive SNR-t bias in diffusion models (the mismatch between the Signal-to-Noise Ratio of samples in the reverse process and their timestamps) and…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Models
-  - SNR-t Bias
-  - Differential Correction
-  - Wavelet Domain
-  - Training-free
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "SNR-t Bias"
+  - "Differential Correction"
+  - "Wavelet Domain"
+  - "Training-free"
 date: 2026-05-08
 content_hash: 8e24d6ad659ae902
 ---

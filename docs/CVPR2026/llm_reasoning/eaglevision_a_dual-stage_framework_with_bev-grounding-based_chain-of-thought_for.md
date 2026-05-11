@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] EagleVision: A Dual-Stage Framework with BEV-grounding-based Chain-of-Thought for Spatial Intelligence
 description: >-
-  [CVPR 2026][LLM Reasoning][Spatial Reasoning] EagleVision is a dual-stage framework in which the macro-perception stage employs Semantic-Pose Fusion DPP (SPF-DPP) to jointly optimize semantic relevance and viewpoint diversity in SE(3) space for key-frame selection, while the micro-verification stage enables the model to actively query new viewpoint frames on the BEV plane for iterative spatial CoT reasoning (hypothesis → observe → verify loop). The query strategy is trained purely via RL without human annotation, achieving open-source SOTA on VSI-Bench and SQA3D.
+  [CVPR 2026][LLM Reasoning][Spatial Reasoning] EagleVision is a dual-stage framework in which the macro-perception stage employs Semantic-Pose Fusion DPP (SPF-DPP) to jointly optimize semantic relevance and viewpoint dive…
 tags:
-  - CVPR 2026
-  - LLM Reasoning
-  - Spatial Reasoning
-  - BEV
-  - Active Vision
-  - Chain-of-Thought
-  - DPP Frame Selection
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "LLM Reasoning"
+  - "Spatial Reasoning"
+  - "BEV"
+  - "Active Vision"
+  - "Chain-of-Thought"
+  - "DPP Frame Selection"
+  - "Reinforcement Learning"
 date: 2026-05-08
 content_hash: 995c2305832d79d8
 ---

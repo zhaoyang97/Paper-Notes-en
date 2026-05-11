@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Debiasing Diffusion Priors via 3D Attention for Consistent Gaussian Splatting
 description: >-
-  [AAAI 2026][3D Vision][3D Gaussian Splatting] This paper proposes the TD-Attn framework, which addresses multi-view inconsistency (the Janus problem) caused by prior-view bias in T2I diffusion models for 3D generation and editing. The framework comprises two modules—3D-Aware Attention Guidance (3D-AAG) and Hierarchical Attention Modulation (HAM)—and can be integrated as a general-purpose plugin into existing 3DGS pipelines.
+  [AAAI 2026][3D Vision][3D Gaussian Splatting] This paper proposes the TD-Attn framework, which addresses multi-view inconsistency (the Janus problem) caused by prior-view bias in T2I diffusion models for 3D generation an…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - Diffusion Models
-  - Multi-view Consistency
-  - Janus Problem
-  - Attention Modulation
+  - "AAAI 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Diffusion Models"
+  - "Multi-view Consistency"
+  - "Janus Problem"
+  - "Attention Modulation"
 date: 2026-05-08
 content_hash: ddb56e793a502493
 ---

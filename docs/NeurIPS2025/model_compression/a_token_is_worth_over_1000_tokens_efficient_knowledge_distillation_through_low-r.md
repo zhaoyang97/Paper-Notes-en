@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Token is Worth over 1,000 Tokens: Efficient Knowledge Distillation through Low-Rank Clone
 description: >-
-  [NeurIPS 2025][Model Compression][knowledge distillation] This paper proposes Low-Rank Clone (LRC), which compresses teacher weights into student weights via learnable low-rank projection matrices (soft pruning), while aligning intermediate activations of both attention and FFN modules (activation cloning). A 1.7B model trained on only 20B tokens surpasses Qwen3-1.7B trained on 36T tokens (64.98 vs. 63.17), achieving a **1,000× improvement in training efficiency**.
+  [NeurIPS 2025][Model Compression][knowledge distillation] This paper proposes Low-Rank Clone (LRC), which compresses teacher weights into student weights via learnable low-rank projection matrices (soft pruning)…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - knowledge distillation
-  - low-rank projection
-  - small language models
-  - activation cloning
-  - efficient pretraining
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "knowledge distillation"
+  - "low-rank projection"
+  - "small language models"
+  - "activation cloning"
+  - "efficient pretraining"
 date: 2026-05-08
 content_hash: 8dddb0c57ded80d1
 ---

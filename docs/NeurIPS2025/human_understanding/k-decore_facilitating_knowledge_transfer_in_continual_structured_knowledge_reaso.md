@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] K-DeCore: Facilitating Knowledge Transfer in Continual Structured Knowledge Reasoning
 description: >-
-  [NeurIPS 2025][Human Understanding][Continual Learning] This paper proposes K-DeCore, a framework that decouples structured knowledge reasoning into two stages — task-agnostic schema filtering and task-specific query construction — and combines dual-perspective memory construction with structure-guided pseudo-data synthesis to enable effective knowledge transfer across heterogeneous SKR tasks under a fixed parameter budget.
+  [NeurIPS 2025][Human Understanding][Continual Learning] This paper proposes K-DeCore, a framework that decouples structured knowledge reasoning into two stages — task-agnostic schema filtering and task-specific query con…
 tags:
-  - NeurIPS 2025
-  - Human Understanding
-  - Continual Learning
-  - Structured Knowledge Reasoning
-  - Knowledge Decoupling
-  - Memory Replay
-  - Text-to-SQL
+  - "NeurIPS 2025"
+  - "Human Understanding"
+  - "Continual Learning"
+  - "Structured Knowledge Reasoning"
+  - "Knowledge Decoupling"
+  - "Memory Replay"
+  - "Text-to-SQL"
 date: 2026-05-08
 content_hash: c3cd4185557eb731
 ---

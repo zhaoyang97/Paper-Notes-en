@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] M-Net: MRI Brain Tumor Sequential Segmentation Network via Mesh-Cast
 description: >-
-  [ICCV 2025][Medical Imaging][MRI brain tumor segmentation] M-Net reinterprets the spatial continuity between adjacent MRI slices as "quasi-temporal" data, and proposes the Mesh-Cast mechanism to seamlessly integrate arbitrary sequential models (LSTM, Transformer, Mamba SSM, etc.) into both channel and temporal information processing. Combined with a Two-Phase Sequential training strategy (TPS), M-Net achieves state-of-the-art segmentation performance on BraTS2019 and BraTS2023.
+  [ICCV 2025][Medical Imaging][MRI brain tumor segmentation] M-Net reinterprets the spatial continuity between adjacent MRI slices as "quasi-temporal" data…
 tags:
-  - ICCV 2025
-  - Medical Imaging
-  - MRI brain tumor segmentation
-  - sequential modeling
-  - Mesh-Cast mechanism
-  - spatiotemporal correlation
-  - two-phase training
+  - "ICCV 2025"
+  - "Medical Imaging"
+  - "MRI brain tumor segmentation"
+  - "sequential modeling"
+  - "Mesh-Cast mechanism"
+  - "spatiotemporal correlation"
+  - "two-phase training"
 date: 2026-05-08
 content_hash: a0ad46e2996ca90c
 ---

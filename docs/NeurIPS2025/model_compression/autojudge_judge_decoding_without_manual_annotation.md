@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AutoJudge: Judge Decoding Without Manual Annotation
 description: >-
-  [NeurIPS 2025][Model Compression][Speculative Decoding] AutoJudge automates the annotation of "critical tokens" in Judge Decoding — by using a semi-greedy search to replace mismatched tokens and checking whether the final answer changes, it labels token importance, trains a logistic regression classifier to predict importance at inference time, enabling speculative decoding to accept 40+ tokens per round (vs. ~20 in standard methods), achieving 1.5× speedup on GSM8K with less than 1% accuracy loss.
+  [NeurIPS 2025][Model Compression][Speculative Decoding] AutoJudge automates the annotation of "critical tokens" in Judge Decoding — by using a semi-greedy search to replace mismatched tokens and checking whether the fina…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Speculative Decoding
-  - Judge Decoding
-  - Critical Tokens
-  - Automatic Annotation
-  - Inference Acceleration
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Speculative Decoding"
+  - "Judge Decoding"
+  - "Critical Tokens"
+  - "Automatic Annotation"
+  - "Inference Acceleration"
 date: 2026-05-08
 content_hash: dc90f7bfc78ad9a8
 ---

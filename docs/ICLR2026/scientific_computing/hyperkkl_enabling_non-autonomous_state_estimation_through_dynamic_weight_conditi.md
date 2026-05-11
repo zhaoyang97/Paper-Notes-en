@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HyperKKL: Enabling Non-Autonomous State Estimation through Dynamic Weight Conditioning
 description: >-
-  [ICLR 2026][Scientific Computing][KKL observer] This paper proposes HyperKKL, which uses a hypernetwork to encode exogenous input signals and dynamically generate the transformation mapping parameters of a KKL observer, enabling state estimation for non-autonomous nonlinear systems without retraining or online gradient updates. The method is validated on four classical nonlinear systems: Duffing, Van der Pol, Lorenz, and Rössler.
+  [ICLR 2026][Scientific Computing][KKL observer] This paper proposes HyperKKL, which uses a hypernetwork to encode exogenous input signals and dynamically generate the transformation mapping parameters of a KKL observer…
 tags:
-  - ICLR 2026
-  - Scientific Computing
-  - KKL observer
-  - state estimation
-  - hypernetwork
-  - non-autonomous system
-  - dynamical system
+  - "ICLR 2026"
+  - "Scientific Computing"
+  - "KKL observer"
+  - "state estimation"
+  - "hypernetwork"
+  - "non-autonomous system"
+  - "dynamical system"
 date: 2026-05-08
 content_hash: b7501abccf00ff2c
 ---

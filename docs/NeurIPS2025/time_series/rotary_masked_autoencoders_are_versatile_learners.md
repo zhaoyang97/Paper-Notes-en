@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Rotary Masked Autoencoders are Versatile Learners
 description: >-
-  [NeurIPS 2025][Time Series][Masked Autoencoder] This paper proposes RoMAE, which extends Rotary Position Embedding (RoPE) to continuous positions and integrates it with Masked Autoencoders (MAE). Without any time-series-specific architectural modifications, RoMAE matches or surpasses specialized models across diverse modalities including irregular time series, images, and audio.
+  [NeurIPS 2025][Time Series][Masked Autoencoder] This paper proposes RoMAE, which extends Rotary Position Embedding (RoPE) to continuous positions and integrates it with Masked Autoencoders (MAE). Without any time-series-…
 tags:
-  - NeurIPS 2025
-  - Time Series
-  - Masked Autoencoder
-  - RoPE
-  - Irregular Time Series
-  - Multimodality
-  - Self-Supervised Pretraining
+  - "NeurIPS 2025"
+  - "Time Series"
+  - "Masked Autoencoder"
+  - "RoPE"
+  - "Irregular Time Series"
+  - "Multimodality"
+  - "Self-Supervised Pretraining"
 date: 2026-05-08
 content_hash: e6a5c358a87ee65c
 ---

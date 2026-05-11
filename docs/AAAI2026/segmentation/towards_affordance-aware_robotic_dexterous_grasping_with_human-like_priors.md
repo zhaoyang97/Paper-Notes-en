@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Affordance-Aware Robotic Dexterous Grasping with Human-like Priors
 description: >-
-  [AAAI 2026][Segmentation][Dexterous Grasping] This paper proposes AffordDex, a two-stage framework: the first stage pre-trains human hand motion priors (natural motion trajectories) via imitation learning; the second stage refines the policy through reinforcement learning using a residual module and VLM-guided Negative Affordance Annotation (NAA), achieving dexterous robotic grasping that is both human-like in naturalness and functionally correct (e.g., avoiding the blade and grasping the handle of a knife). The method significantly outperforms state-of-the-art approaches across multiple generalization levels.
+  [AAAI 2026][Segmentation][Dexterous Grasping] This paper proposes AffordDex, a two-stage framework: the first stage pre-trains human hand motion priors (natural motion trajectories) via imitation learning…
 tags:
-  - AAAI 2026
-  - Segmentation
-  - Dexterous Grasping
-  - Functional Affordance
-  - Human Motion Priors
-  - Negative Affordance Segmentation
-  - Reinforcement Learning
+  - "AAAI 2026"
+  - "Segmentation"
+  - "Dexterous Grasping"
+  - "Functional Affordance"
+  - "Human Motion Priors"
+  - "Negative Affordance Segmentation"
+  - "Reinforcement Learning"
 date: 2026-05-08
 content_hash: aa6be460be9b7bca
 ---

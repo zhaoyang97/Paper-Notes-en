@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LoST: Level of Semantics Tokenization for 3D Shapes
 description: >-
-  [CVPR 2026][3D Vision][3D generation] This paper proposes Level-of-Semantics Tokenization (LoST), which orders 3D shape tokens by semantic saliency so that short prefixes can already decode into complete and semantically coherent shapes. Combined with the RIDA semantic alignment loss and GPT-style autoregressive generation, LoST achieves significant improvements over existing 3D AR methods that require tens of thousands of tokens, using only 128 tokens.
+  [CVPR 2026][3D Vision][3D generation] This paper proposes Level-of-Semantics Tokenization (LoST), which orders 3D shape tokens by semantic saliency so that short prefixes can already decode into complete and semantically…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D generation
-  - shape tokenization
-  - autoregressive models
-  - semantic hierarchy
-  - diffusion decoding
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D generation"
+  - "shape tokenization"
+  - "autoregressive models"
+  - "semantic hierarchy"
+  - "diffusion decoding"
 date: 2026-05-08
 content_hash: 8aeac813667e846d
 ---

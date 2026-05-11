@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GeCo-SRT: Geometry-aware Continual Adaptation for Robotic Cross-Task Sim-to-Real Transfer
 description: >-
-  [CVPR 2026][Robotics][Sim-to-Real Transfer] GeCo-SRT proposes a continual cross-task Sim-to-Real transfer paradigm that exploits the domain-invariance and task-invariance of local geometric features. Through a geometry-aware MoE module for reusable geometric knowledge extraction and expert-guided prioritized experience replay for forgetting prevention, the method achieves a 52% improvement in average success rate over baselines across four manipulation tasks while requiring only 1/6 of the data.
+  [CVPR 2026][Robotics][Sim-to-Real Transfer] GeCo-SRT proposes a continual cross-task Sim-to-Real transfer paradigm that exploits the domain-invariance and task-invariance of local geometric features. Through a geometry-a…
 tags:
-  - CVPR 2026
-  - Robotics
-  - Sim-to-Real Transfer
-  - Continual Learning
-  - Geometry-aware MoE
-  - Point Cloud Representation
-  - Experience Replay
+  - "CVPR 2026"
+  - "Robotics"
+  - "Sim-to-Real Transfer"
+  - "Continual Learning"
+  - "Geometry-aware MoE"
+  - "Point Cloud Representation"
+  - "Experience Replay"
 date: 2026-05-08
 content_hash: e3a6f1291f399db5
 ---

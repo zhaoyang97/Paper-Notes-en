@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VISion On Request: Enhanced VLLM Efficiency with Sparse, Dynamically Selected, Vision-Language Interactions
 description: >-
-  [CVPR 2026][Multimodal VLM][Large vision-language model efficiency] VISOR proposes a new efficiency paradigm distinct from visual token compression — by sparsifying vision-language interaction layers within the LLM (a small number of cross-attention layers plus dynamically selected self-attention layers), it achieves 8.6–18× FLOPs savings while retaining all high-resolution visual tokens, substantially outperforming token compression methods on challenging tasks that require fine-grained understanding.
+  [CVPR 2026][Multimodal VLM][Large vision-language model efficiency] VISOR proposes a new efficiency paradigm distinct from visual token compression — by sparsifying vision-language interaction layers within the LLM (a sm…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Large vision-language model efficiency
-  - visual token sparsification
-  - dynamic computation allocation
-  - cross-attention
-  - self-attention selection
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Large vision-language model efficiency"
+  - "visual token sparsification"
+  - "dynamic computation allocation"
+  - "cross-attention"
+  - "self-attention selection"
 date: 2026-05-08
 content_hash: 0e1d1ed8a24e4711
 ---

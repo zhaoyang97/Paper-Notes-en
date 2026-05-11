@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PolyJuice Makes It Real: Black-Box, Universal Red Teaming for Synthetic Image Detectors
 description: >-
-  [NeurIPS 2025][LLM Alignment][synthetic image detection] This paper proposes PolyJuice, the first black-box, image-agnostic red teaming method for synthetic image detectors (SIDs). By discovering and exploiting a "realism direction" in the latent space of text-to-image (T2I) models, PolyJuice universally steers generated images to fool detectors, achieving an attack success rate of up to 84%.
+  [NeurIPS 2025][LLM Alignment][synthetic image detection] This paper proposes PolyJuice, the first black-box, image-agnostic red teaming method for synthetic image detectors (SIDs). By discovering and exploiting a "realis…
 tags:
-  - NeurIPS 2025
-  - LLM Alignment
-  - synthetic image detection
-  - red teaming
-  - adversarial attack
-  - text-to-image
-  - black-box attack
+  - "NeurIPS 2025"
+  - "LLM Alignment"
+  - "synthetic image detection"
+  - "red teaming"
+  - "adversarial attack"
+  - "text-to-image"
+  - "black-box attack"
 date: 2026-05-08
 content_hash: f54d8e42e6ee9665
 ---

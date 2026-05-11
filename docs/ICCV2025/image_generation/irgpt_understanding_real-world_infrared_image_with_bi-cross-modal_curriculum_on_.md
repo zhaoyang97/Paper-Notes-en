@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] IRGPT: Understanding Real-world Infrared Image with Bi-cross-modal Curriculum on Large-scale Benchmark
 description: >-
-  [ICCV 2025][Image Generation][Infrared Image] This paper proposes IRGPT, the first multimodal large language model grounded in real-world infrared images. It introduces IR-TD, a large-scale infrared-text dataset containing 260K+ image-text pairs, and designs a Bi-cross-modal Curriculum transfer learning strategy. IRGPT achieves state-of-the-art performance across 9 infrared task benchmarks, with zero-shot psum outperforming the baseline InternVL2-8B by 76.35.
+  [ICCV 2025][Image Generation][Infrared Image] This paper proposes IRGPT, the first multimodal large language model grounded in real-world infrared images. It introduces IR-TD…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Infrared Image
-  - Multimodal Large Language Model
-  - Curriculum Learning
-  - Cross-modal Transfer
-  - Vision-Language Model
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Infrared Image"
+  - "Multimodal Large Language Model"
+  - "Curriculum Learning"
+  - "Cross-modal Transfer"
+  - "Vision-Language Model"
 date: 2026-05-08
 content_hash: 64de6f5e2ae6b6b8
 ---

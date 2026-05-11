@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ReaSon: Reinforced Causal Search with Information Bottleneck for Video Understanding
 description: >-
-  [AAAI 2026][Video Understanding][Key Frame Selection] This paper proposes a Causal Information Bottleneck (CIB) theoretical framework that formalizes keyframe selection as an information-theoretic problem jointly optimizing *predictive sufficiency* and *causal necessity*. Built upon CIB, the ReaSon reinforcement learning framework trains a selection policy using three CIB-aligned rewards (answer reward, cycle-consistency reward, and counterfactual reward), significantly outperforming existing methods under constrained frame budgets.
+  [AAAI 2026][Video Understanding][Key Frame Selection] This paper proposes a Causal Information Bottleneck (CIB) theoretical framework that formalizes keyframe selection as an information-theoretic problem jointly optimiz…
 tags:
-  - AAAI 2026
-  - Video Understanding
-  - Key Frame Selection
-  - Causal Information Bottleneck
-  - Reinforcement Learning
-  - Counterfactual Reasoning
-  - Video Question Answering
+  - "AAAI 2026"
+  - "Video Understanding"
+  - "Key Frame Selection"
+  - "Causal Information Bottleneck"
+  - "Reinforcement Learning"
+  - "Counterfactual Reasoning"
+  - "Video Question Answering"
 date: 2026-05-08
 content_hash: cf6a9b7cf21bf694
 ---

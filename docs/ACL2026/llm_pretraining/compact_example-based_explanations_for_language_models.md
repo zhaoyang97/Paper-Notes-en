@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Compact Example-Based Explanations for Language Models
 description: >-
-  [ACL 2026][LLM Pretraining][Training data influence] This paper proposes the Selection Relevance Score, a retraining-free metric for evaluating the quality of training sample subsets as example-based explanations. It demonstrates that the commonly used "select top-k by influence" strategy frequently underperforms random selection, and introduces a new strategy that balances influence and representativeness.
+  [ACL 2026][LLM Pretraining][Training data influence] This paper proposes the Selection Relevance Score, a retraining-free metric for evaluating the quality of training sample subsets as example-based explanations. It dem…
 tags:
-  - ACL 2026
-  - LLM Pretraining
-  - Training data influence
-  - example-based explanations
-  - selection relevance
-  - gradient reconstruction
-  - redundancy elimination
+  - "ACL 2026"
+  - "LLM Pretraining"
+  - "Training data influence"
+  - "example-based explanations"
+  - "selection relevance"
+  - "gradient reconstruction"
+  - "redundancy elimination"
 date: 2026-05-08
 content_hash: bcb126d69dff3b95
 ---

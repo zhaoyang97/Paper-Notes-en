@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BriMA: Bridged Modality Adaptation for Multi-Modal Continual Action Quality Assessment
 description: >-
-  [CVPR2026][Multimodal VLM][Action Quality Assessment] BriMA is proposed to address the non-stationary modality imbalance problem in multi-modal continual action quality assessment (AQA) via memory-guided bridging imputation and modality-aware replay optimization, achieving an average improvement of 6–8% in correlation coefficient and a 12–15% reduction in error across three benchmarks.
+  [CVPR2026][Multimodal VLM][Action Quality Assessment] BriMA is proposed to address the non-stationary modality imbalance problem in multi-modal continual action quality assessment (AQA) via memory-guided bridging imputat…
 tags:
-  - CVPR2026
-  - Multimodal VLM
-  - Action Quality Assessment
-  - Continual Learning
-  - Missing Modality
-  - Multi-Modal Fusion
-  - Memory Replay
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "Action Quality Assessment"
+  - "Continual Learning"
+  - "Missing Modality"
+  - "Multi-Modal Fusion"
+  - "Memory Replay"
 date: 2026-05-08
 content_hash: 55432a237d1371af
 ---

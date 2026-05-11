@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MC-Bench: A Benchmark for Multi-Context Visual Grounding in the Era of MLLMs
 description: >-
-  [ICCV 2025][Multimodal VLM][Multi-context visual grounding] This paper introduces Multi-Context Visual Grounding as a novel task and the MC-Bench benchmark—comprising 2,000 manually annotated samples, 3 text description styles, and 20 practical skills—to evaluate 20+ MLLMs and foundation models. It reveals a substantial performance gap between current models and humans (human AP50=41.3% vs. best end-to-end model AP50=30.7%), and provides an agentic baseline combining GPT-4o and G-DINO (AP50=36.2%).
+  [ICCV 2025][Multimodal VLM][Multi-context visual grounding] This paper introduces Multi-Context Visual Grounding as a novel task and the MC-Bench benchmark—comprising 2,000 manually annotated samples…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Multi-context visual grounding
-  - multi-image reasoning
-  - instance-level evaluation
-  - MLLM benchmark
-  - cross-image understanding
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Multi-context visual grounding"
+  - "multi-image reasoning"
+  - "instance-level evaluation"
+  - "MLLM benchmark"
+  - "cross-image understanding"
 date: 2026-05-08
 content_hash: de2544c171e09fa1
 ---

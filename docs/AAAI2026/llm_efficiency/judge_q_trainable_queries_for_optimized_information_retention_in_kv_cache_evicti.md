@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Judge Q: Trainable Queries for Optimized Information Retention in KV Cache Eviction
 description: >-
-  [AAAI 2026][LLM Efficiency][KV Cache Pruning] This paper proposes Judge Q, which introduces trainable soft tokens into the model vocabulary and trains their attention patterns to align with those of actual decoding tokens, enabling them to replace local-window queries for evaluating KV cache importance during the prefill stage. This approach better preserves global information, achieving ~1-point improvement on LongBench and 3+ points on RULER.
+  [AAAI 2026][LLM Efficiency][KV Cache Pruning] This paper proposes Judge Q, which introduces trainable soft tokens into the model vocabulary and trains their attention patterns to align with those of actual decoding token…
 tags:
-  - AAAI 2026
-  - LLM Efficiency
-  - KV Cache Pruning
-  - Trainable Soft Tokens
-  - Attention Distillation
-  - Long-context Inference
-  - Global Information Retention
+  - "AAAI 2026"
+  - "LLM Efficiency"
+  - "KV Cache Pruning"
+  - "Trainable Soft Tokens"
+  - "Attention Distillation"
+  - "Long-context Inference"
+  - "Global Information Retention"
 date: 2026-05-08
 content_hash: fae13b71972e4a50
 ---

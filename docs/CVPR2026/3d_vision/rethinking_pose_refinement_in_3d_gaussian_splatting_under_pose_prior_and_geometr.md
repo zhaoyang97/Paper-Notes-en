@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Rethinking Pose Refinement in 3D Gaussian Splatting under Pose Prior and Geometric Uncertainty
 description: >-
-  [CVPR2026][3D Vision][3D Gaussian Splatting] This paper proposes UGS-Loc, a framework that jointly models pose prior uncertainty and geometric uncertainty via Monte Carlo pose sampling and Fisher information-guided PnP optimization, achieving significantly improved robustness in camera pose refinement within 3DGS scenes without requiring retraining.
+  [CVPR2026][3D Vision][3D Gaussian Splatting] This paper proposes UGS-Loc, a framework that jointly models pose prior uncertainty and geometric uncertainty via Monte Carlo pose sampling and Fisher information-guided PnP o…
 tags:
-  - CVPR2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - visual localization
-  - pose refinement
-  - Monte Carlo sampling
-  - Fisher information
-  - uncertainty modeling
+  - "CVPR2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "visual localization"
+  - "pose refinement"
+  - "Monte Carlo sampling"
+  - "Fisher information"
+  - "uncertainty modeling"
 date: 2026-05-08
 content_hash: 3a55c1d931c4de4a
 ---

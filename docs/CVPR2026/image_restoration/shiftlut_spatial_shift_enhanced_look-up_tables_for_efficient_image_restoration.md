@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ShiftLUT: Spatial Shift Enhanced Look-Up Tables for Efficient Image Restoration
 description: >-
-  [CVPR 2026][Image Restoration][Look-Up Table] ShiftLUT is proposed to achieve the largest receptive field among LUT-based methods (65×65) via a Learnable Spatial Shift module (LSS), combined with an asymmetric dual-branch architecture and Error-bounded Adaptive Sampling (EAS). Under a storage budget of 104 KB and inference latency of 84 ms, ShiftLUT surpasses all existing LUT-based methods.
+  [CVPR 2026][Image Restoration][Look-Up Table] ShiftLUT is proposed to achieve the largest receptive field among LUT-based methods (65×65) via a Learnable Spatial Shift module (LSS)…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Look-Up Table
-  - Efficient Super-Resolution
-  - Spatial Shift
-  - Asymmetric Architecture
-  - Adaptive Sampling
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Look-Up Table"
+  - "Efficient Super-Resolution"
+  - "Spatial Shift"
+  - "Asymmetric Architecture"
+  - "Adaptive Sampling"
 date: 2026-05-08
 content_hash: c454e034fffc3b2f
 ---

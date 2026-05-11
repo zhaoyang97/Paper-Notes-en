@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Randomization Boosts KV Caching, Learning Balances Query Load: A Joint Perspective
 description: >-
-  [ICLR 2026][LLM Efficiency][KV cache eviction policy] This paper proposes the first unified mathematical model for KV cache-aware load balancing, introducing a randomized leaf-node eviction algorithm RLT (with $O(\log n)$ competitive ratio) and a learning-based greedy router LBGR, achieving up to 11.96× latency reduction and 14.06× TTFT reduction in multi-LLM serving scenarios.
+  [ICLR 2026][LLM Efficiency][KV cache eviction policy] This paper proposes the first unified mathematical model for KV cache-aware load balancing…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - KV cache eviction policy
-  - randomized algorithms
-  - load-balanced routing
-  - multi-LLM serving
-  - competitive ratio analysis
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "KV cache eviction policy"
+  - "randomized algorithms"
+  - "load-balanced routing"
+  - "multi-LLM serving"
+  - "competitive ratio analysis"
 date: 2026-05-08
 content_hash: a1ead00f439af961
 ---

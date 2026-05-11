@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] AFRO: Bootstrap Dynamic-Aware 3D Visual Representation for Scalable Robot Learning
 description: >-
-  [CVPR 2026][Segmentation][3D representation learning] This paper proposes AFRO, a self-supervised 3D visual pretraining framework that infers latent actions via an Inverse Dynamics Model (IDM), predicts future features via a Diffusion Transformer Forward Dynamics Model (FDM), and enforces temporal symmetry through an inverse consistency constraint. Pretrained on the large-scale RH20T dataset, AFRO achieves an average success rate of 76.0% across 14 MetaWorld tasks (vs. DynaMo-3D 64.9%, PointMAE 63.9%) and attains state-of-the-art performance on 4 real-world tasks.
+  [CVPR 2026][Segmentation][3D representation learning] This paper proposes AFRO, a self-supervised 3D visual pretraining framework that infers latent actions via an Inverse Dynamics Model (IDM)…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - 3D representation learning
-  - dynamic awareness
-  - inverse dynamics model
-  - forward dynamics model
-  - diffusion Transformer
-  - robotic manipulation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "3D representation learning"
+  - "dynamic awareness"
+  - "inverse dynamics model"
+  - "forward dynamics model"
+  - "diffusion Transformer"
+  - "robotic manipulation"
 date: 2026-05-08
 content_hash: d45ae44b5d21b2c8
 ---

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] RayPose: Ray Bundling Diffusion for Template Views in Unseen 6D Object Pose Estimation
 description: >-
-  [Human Understanding] This work reformulates unseen 6D object pose estimation as a ray alignment problem, proposes an object-centric ray parameterization scheme, and employs a diffusion transformer to infer the 6D pose of a query image from multiple template images with known poses.
+  [Human Understanding] This work reformulates unseen 6D object pose estimation as a ray alignment problem, proposes an object-centric ray parameterization scheme…
 tags:
-  - Human Understanding
+  - "Human Understanding"
 date: 2026-05-08
 content_hash: 16d4fd29e2a9b03c
 ---

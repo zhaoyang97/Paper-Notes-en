@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Align Your Rhythm: Generating Highly Aligned Dance Poses with Gating-Enhanced Rhythm-Aware Feature Representation
 description: >-
-  [ICCV 2025][Audio & Speech][music-driven dance generation] This paper proposes Danceba, a framework comprising three core modules — Phase-based Rhythm Extraction (PRE), Temporal Gated Causal Attention (TGCA), and Parallel Mamba Motion Modeling (PMMM) — to achieve music-driven dance generation with high rhythm alignment and diversity, attaining a 48.68% improvement in FIDk and a 12% improvement in BAS on the AIST++ dataset.
+  [ICCV 2025][Audio & Speech][music-driven dance generation] This paper proposes Danceba, a framework comprising three core modules — Phase-based Rhythm Extraction (PRE), Temporal Gated Causal Attention (TGCA)…
 tags:
-  - ICCV 2025
+  - "ICCV 2025"
   - "Audio & Speech"
-  - music-driven dance generation
-  - rhythm alignment
-  - gated attention
-  - Mamba
-  - human motion generation
+  - "music-driven dance generation"
+  - "rhythm alignment"
+  - "gated attention"
+  - "Mamba"
+  - "human motion generation"
 date: 2026-05-08
 content_hash: 29a48c0d865c5244
 ---

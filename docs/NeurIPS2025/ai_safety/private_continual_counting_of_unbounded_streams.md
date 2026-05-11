@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Private Continual Counting of Unbounded Streams
 description: >-
-  [NeurIPS 2025][AI Safety][Differential Privacy] This paper proposes a novel matrix factorization method based on logarithmic perturbation, achieving for the first time a differentially private continual counting algorithm that simultaneously satisfies the three properties of "unbounded streams," "smooth error," and "near-optimal asymptotic error," with variance $O(\log^{2+2\alpha}(t))$ at time step $t$ for any $\alpha > 0$.
+  [NeurIPS 2025][AI Safety][Differential Privacy] This paper proposes a novel matrix factorization method based on logarithmic perturbation…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - Differential Privacy
-  - Continual Observation
-  - Matrix Factorization
-  - Streaming Computation
-  - Unbounded Input
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "Differential Privacy"
+  - "Continual Observation"
+  - "Matrix Factorization"
+  - "Streaming Computation"
+  - "Unbounded Input"
 date: 2026-05-08
 content_hash: 12d0117f1ed2e6d8
 ---

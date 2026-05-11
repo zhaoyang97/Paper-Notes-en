@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Partially Shared Concept Bottleneck Models
 description: >-
-  [AAAI 2026][Concept Bottleneck Models] This paper proposes PS-CBM, a framework that integrates multimodal concept generation (combining LLM semantics with visual cues from exemplar images), a partially shared concept strategy (merging concepts based on activation patterns), and a Concept-Efficient Accuracy (CEA) evaluation metric. PS-CBM achieves higher classification accuracy and interpretability with fewer concepts across 11 datasets.
+  [AAAI 2026][Interpretability][Concept Bottleneck Models] This paper proposes PS-CBM, a framework that integrates multimodal concept generation (combining LLM semantics with visual cues from exemplar images)…
 tags:
-  - AAAI 2026
-  - Concept Bottleneck Models
-  - Interpretability
-  - Vision-Language Models
-  - Concept Efficiency
-  - Image Classification
+  - "AAAI 2026"
+  - "Interpretability"
+  - "Concept Bottleneck Models"
+  - "Vision-Language Models"
+  - "Concept Efficiency"
+  - "Image Classification"
 date: 2026-05-08
 content_hash: b8cb558911833a0d
 ---

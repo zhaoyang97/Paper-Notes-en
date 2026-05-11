@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Harnessing Vision-Language Models for Time Series Anomaly Detection
 description: >-
-  [AAAI2026][Multimodal VLM][time series anomaly detection] A two-stage zero-shot time series anomaly detection framework is proposed: ViT4TS employs a lightweight ViT to perform multi-scale cross-patch matching on line-chart renderings of time series for candidate anomaly interval localization, while VLM4TS leverages GPT-4o with global temporal context to validate and refine detection results. The framework achieves F1-max surpassing the best baseline by 24.6% across 11 benchmarks, with token consumption only 1/36 of existing LLM-based methods.
+  [AAAI2026][Multimodal VLM][time series anomaly detection] A two-stage zero-shot time series anomaly detection framework is proposed: ViT4TS employs a lightweight ViT to perform multi-scale cross-patch matching on line-ch…
 tags:
-  - AAAI2026
-  - Multimodal VLM
-  - time series anomaly detection
-  - VLM
-  - vision transformer
-  - zero-shot
-  - ViT4TS
+  - "AAAI2026"
+  - "Multimodal VLM"
+  - "time series anomaly detection"
+  - "VLM"
+  - "vision transformer"
+  - "zero-shot"
+  - "ViT4TS"
 date: 2026-05-08
 content_hash: 7480f5535d5efa16
 ---

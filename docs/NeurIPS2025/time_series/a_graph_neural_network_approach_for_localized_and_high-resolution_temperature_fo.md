@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Graph Neural Network Approach for Localized and High-Resolution Temperature Forecasting
 description: >-
-  [NeurIPS 2025][Time Series][GNN] This paper proposes a GCN-GRU hybrid framework for community-scale (2.5 km) high-resolution temperature forecasting (1–48 hours), validated across three regions in southwestern Ontario, Canada. The largest region achieves an average MAE of 1.93°C and a 48-hour MAE of 2.93°C. The work explores ClimateBERT language model embeddings as a standardized input scheme, and provides a transferable lightweight forecasting framework targeting data-scarce regions in the Global South.
+  [NeurIPS 2025][Time Series][GNN] This paper proposes a GCN-GRU hybrid framework for community-scale (2.5 km) high-resolution temperature forecasting (1–48 hours), validated across three regions in southwestern Ontario…
 tags:
-  - NeurIPS 2025
-  - Time Series
-  - GNN
-  - temperature forecasting
-  - high resolution
-  - heat wave warning
-  - climate equity
+  - "NeurIPS 2025"
+  - "Time Series"
+  - "GNN"
+  - "temperature forecasting"
+  - "high resolution"
+  - "heat wave warning"
+  - "climate equity"
 date: 2026-05-08
 content_hash: b363e83ccd7fe7d6
 ---

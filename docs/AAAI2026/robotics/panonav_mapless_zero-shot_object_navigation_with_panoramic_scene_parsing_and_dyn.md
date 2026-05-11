@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PanoNav: Mapless Zero-Shot Object Navigation with Panoramic Scene Parsing and Dynamic Memory
 description: >-
-  [AAAI 2026][Robotics][Zero-shot object navigation] This paper proposes PanoNav, a mapless zero-shot object navigation framework that uses only RGB images. It unlocks the spatial reasoning capability of MLLMs through Panoramic Scene Parsing and introduces a Dynamic Bounded Memory Queue to prevent local deadlock.
+  [AAAI 2026][Robotics][Zero-shot object navigation] This paper proposes PanoNav, a mapless zero-shot object navigation framework that uses only RGB images. It unlocks the spatial reasoning capability of MLLMs through Pano…
 tags:
-  - AAAI 2026
-  - Robotics
-  - Zero-shot object navigation
-  - panoramic scene parsing
-  - dynamic memory
-  - mapless navigation
-  - MLLM
+  - "AAAI 2026"
+  - "Robotics"
+  - "Zero-shot object navigation"
+  - "panoramic scene parsing"
+  - "dynamic memory"
+  - "mapless navigation"
+  - "MLLM"
 date: 2026-05-08
 content_hash: a48fe511648efadc
 ---

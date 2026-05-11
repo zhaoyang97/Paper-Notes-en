@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Shrinking the Teacher: An Adaptive Teaching Paradigm for Asymmetric EEG-Vision Alignment
 description: >-
-  [AAAI 2026][knowledge distillation] This paper proposes an Adaptive Teaching Paradigm (ATS) in which a residual-free bottleneck module, ShrinkAdapter, enables the visual "teacher" to actively shrink and restructure its knowledge to match the learning capacity of the EEG "student," achieving 60.2% Top-1 accuracy on zero-shot brain-image retrieval and surpassing the previous SOTA by 9.8 percentage points.
+  [AAAI 2026][knowledge distillation] This paper proposes an Adaptive Teaching Paradigm (ATS) in which a residual-free bottleneck module, ShrinkAdapter…
 tags:
-  - AAAI 2026
-  - knowledge distillation
-  - EEG decoding
-  - cross-modal alignment
-  - information bottleneck
-  - brain-computer interface
+  - "AAAI 2026"
+  - "knowledge distillation"
+  - "EEG decoding"
+  - "cross-modal alignment"
+  - "information bottleneck"
+  - "brain-computer interface"
 date: 2026-05-08
 content_hash: 45e19b005b8bb67d
 ---

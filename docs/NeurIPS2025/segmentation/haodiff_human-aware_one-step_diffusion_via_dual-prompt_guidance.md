@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HAODiff: Human-Aware One-Step Diffusion via Dual-Prompt Guidance
 description: >-
-  [NeurIPS 2025][Segmentation][Human image restoration] This paper proposes HAODiff, a human-aware one-step diffusion model that generates adaptive positive–negative prompt pairs via a three-branch Dual-Prompt Guidance (DPG) module. Combined with an explicit Human Motion Blur (HMB) degradation pipeline and Classifier-Free Guidance (CFG), HAODiff substantially outperforms existing state-of-the-art methods on human image restoration tasks.
+  [NeurIPS 2025][Segmentation][Human image restoration] This paper proposes HAODiff, a human-aware one-step diffusion model that generates adaptive positive–negative prompt pairs via a three-branch Dual-Prompt Guidance (DP…
 tags:
-  - NeurIPS 2025
-  - Segmentation
-  - Human image restoration
-  - motion blur
-  - one-step diffusion
-  - dual-prompt guidance
-  - classifier-free guidance
+  - "NeurIPS 2025"
+  - "Segmentation"
+  - "Human image restoration"
+  - "motion blur"
+  - "one-step diffusion"
+  - "dual-prompt guidance"
+  - "classifier-free guidance"
 date: 2026-05-08
 content_hash: 4e1847437361235b
 ---

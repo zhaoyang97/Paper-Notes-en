@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Exact and Linear Convergence for Federated Learning under Arbitrary Client Participation is Attainable
 description: >-
-  [NeurIPS 2025][Optimization][Federated Learning] This paper introduces stochastic matrices and time-varying graphs as modeling tools to unify client participation and local update processes in federated learning into a matrix multiplication formulation. It proposes the FOCUS algorithm (based on a push-pull strategy), which achieves, for the first time, **exact convergence and linear convergence rates** under **arbitrary client participation** and data heterogeneity.
+  [NeurIPS 2025][Optimization][Federated Learning] This paper introduces stochastic matrices and time-varying graphs as modeling tools to unify client participation and local update processes in federated learning into a m…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Federated Learning
-  - Arbitrary Client Participation
-  - Exact Convergence
-  - Push-Pull Strategy
-  - Stochastic Matrices
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Federated Learning"
+  - "Arbitrary Client Participation"
+  - "Exact Convergence"
+  - "Push-Pull Strategy"
+  - "Stochastic Matrices"
 date: 2026-05-08
 content_hash: cc801a7019594cb4
 ---

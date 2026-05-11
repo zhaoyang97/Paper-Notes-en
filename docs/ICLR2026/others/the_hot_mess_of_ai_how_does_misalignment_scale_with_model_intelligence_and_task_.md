@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] The Hot Mess of AI: How Does Misalignment Scale With Model Intelligence and Task Complexity?
 description: >-
-  [ICLR 2026][bias-variance decomposition] This paper decomposes AI model errors into bias (systematic misalignment) and variance (incoherent behavior), finding that longer reasoning leads to greater incoherence, and that larger models become more incoherent on difficult tasks. This suggests that future superintelligent AI is more likely to exhibit unpredictable, "industrial accident"-style failures than to coherently pursue wrong objectives.
+  [ICLR 2026][bias-variance decomposition] This paper decomposes AI model errors into bias (systematic misalignment) and variance (incoherent behavior), finding that longer reasoning leads to greater incoherence…
 tags:
-  - ICLR 2026
-  - bias-variance decomposition
-  - AI incoherence
-  - reasoning length
-  - model scale
-  - AI alignment
+  - "ICLR 2026"
+  - "bias-variance decomposition"
+  - "AI incoherence"
+  - "reasoning length"
+  - "model scale"
+  - "AI alignment"
 date: 2026-05-08
 content_hash: 6f805942d9d02bb5
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Factor(U,T): Controlling Untrusted AI by Monitoring their Plans
 description: >-
-  [AAAI 2026][Audio & Speech][AI control] This paper investigates the security of the Factor(U,T) protocol, in which an untrusted AI performs task decomposition and a trusted AI handles execution. The study finds that monitoring decomposed plans yields an AUROC of only 0.52 (near random), whereas monitoring concrete code implementations achieves 0.96—malicious intent is difficult to detect at the abstract planning level but becomes exposed in concrete implementations. The key conclusion is that "structural prevention (trusted decomposer) is superior to post-hoc monitoring."
+  [AAAI 2026][Audio & Speech][AI control] This paper investigates the security of the Factor(U,T) protocol, in which an untrusted AI performs task decomposition and a trusted AI handles execution. The study finds that moni…
 tags:
-  - AAAI 2026
+  - "AAAI 2026"
   - "Audio & Speech"
-  - AI control
-  - factored cognition
-  - trusted monitoring
-  - plan monitoring
-  - backdoor detection
+  - "AI control"
+  - "factored cognition"
+  - "trusted monitoring"
+  - "plan monitoring"
+  - "backdoor detection"
 date: 2026-05-08
 content_hash: 21ecbfceaf67e8b5
 ---

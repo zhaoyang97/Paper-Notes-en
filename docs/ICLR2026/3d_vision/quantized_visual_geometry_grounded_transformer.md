@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Quantized Visual Geometry Grounded Transformer
 description: >-
-  [ICLR 2026][3D Vision][VGGT] To address the deployment demands of the billion-scale 3D reconstruction model VGGT, this paper proposes QuantVGGT, the first dedicated PTQ framework for VGGT. It resolves heavy-tailed activation distributions caused by special tokens via dual-smoothed fine-grained quantization (Hadamard rotation + channel-wise smoothing), and addresses calibration instability via noise-filtered diverse sampling. At 4-bit quantization, the method achieves 3.7× memory compression and 2.5× inference speedup while retaining 98%+ accuracy.
+  [ICLR 2026][3D Vision][VGGT] To address the deployment demands of the billion-scale 3D reconstruction model VGGT, this paper proposes QuantVGGT…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - VGGT
-  - post-training quantization
-  - 3D reconstruction
-  - Hadamard rotation
-  - calibration
+  - "ICLR 2026"
+  - "3D Vision"
+  - "VGGT"
+  - "post-training quantization"
+  - "3D reconstruction"
+  - "Hadamard rotation"
+  - "calibration"
 date: 2026-05-08
 content_hash: 160addc047d863a8
 ---

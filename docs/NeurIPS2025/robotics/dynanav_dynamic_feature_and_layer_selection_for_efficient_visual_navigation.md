@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DynaNav: Dynamic Feature and Layer Selection for Efficient Visual Navigation
 description: >-
-  [NeurIPS 2025][Robotics][visual navigation] DynaNav is proposed to dynamically adjust feature and layer usage according to scene complexity via a trainable hard feature selector and a Bayesian optimization-based early-exit mechanism, achieving a 2.26× FLOPs reduction and 42.3% inference time decrease in visual navigation while maintaining or improving navigation performance.
+  [NeurIPS 2025][Robotics][visual navigation] DynaNav is proposed to dynamically adjust feature and layer usage according to scene complexity via a trainable hard feature selector and a Bayesian optimization-based early-ex…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - visual navigation
-  - dynamic inference
-  - early exit
-  - feature selection
-  - efficient deployment
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "visual navigation"
+  - "dynamic inference"
+  - "early exit"
+  - "feature selection"
+  - "efficient deployment"
 date: 2026-05-08
 content_hash: d09c59a50d0651c5
 ---

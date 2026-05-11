@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BCE3S: Binary Cross-Entropy Based Tripartite Synergistic Learning for Long-tailed Recognition
 description: >-
-  [AAAI 2026][Self-Supervised Learning][Long-tailed recognition] BCE3S is proposed, a binary cross-entropy (BCE)-based tripartite synergistic learning framework that integrates BCE-based joint learning, BCE-based contrastive learning, and BCE-based classifier uniformity learning. By decoupling per-class logits via Sigmoid, it suppresses the imbalance effects inherent to long-tailed distributions, achieving state-of-the-art performance on CIFAR10/100-LT, ImageNet-LT, and iNaturalist2018.
+  [AAAI 2026][Self-Supervised Learning][Long-tailed recognition] BCE3S is proposed, a binary cross-entropy (BCE)-based tripartite synergistic learning framework that integrates BCE-based joint learning…
 tags:
-  - AAAI 2026
-  - Self-Supervised Learning
-  - Long-tailed recognition
-  - binary cross-entropy
-  - contrastive learning
-  - classifier uniformity
-  - neural collapse
+  - "AAAI 2026"
+  - "Self-Supervised Learning"
+  - "Long-tailed recognition"
+  - "binary cross-entropy"
+  - "contrastive learning"
+  - "classifier uniformity"
+  - "neural collapse"
 date: 2026-05-08
 content_hash: eb2834969d04027e
 ---

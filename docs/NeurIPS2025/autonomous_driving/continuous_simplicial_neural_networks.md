@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Continuous Simplicial Neural Networks
 description: >-
-  [NEURIPS2025][Autonomous Driving][Simplicial Neural Networks] This paper proposes COSIMO, the first continuous simplicial neural network based on partial differential equations (PDEs), which realizes continuous information flow by defining heat diffusion dynamics on the Hodge Laplacian. COSIMO demonstrates superior stability and over-smoothing control compared to discrete SNNs.
+  [NEURIPS2025][Autonomous Driving][Simplicial Neural Networks] This paper proposes COSIMO, the first continuous simplicial neural network based on partial differential equations (PDEs)…
 tags:
-  - NEURIPS2025
-  - Autonomous Driving
-  - Simplicial Neural Networks
-  - PDE
-  - Over-smoothing
-  - Hodge Laplacian
-  - Topological Deep Learning
+  - "NEURIPS2025"
+  - "Autonomous Driving"
+  - "Simplicial Neural Networks"
+  - "PDE"
+  - "Over-smoothing"
+  - "Hodge Laplacian"
+  - "Topological Deep Learning"
 date: 2026-05-08
 content_hash: fa2a16d672e25872
 ---

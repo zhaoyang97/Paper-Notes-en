@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Savoir: Learning Social Savoir-Faire via Shapley-based Reward Attribution
 description: >-
-  [ACL 2026][Reinforcement Learning][Social Intelligence] This paper proposes Savoir, a cooperative game-theoretic social RL framework that combines expected utility (prospective evaluation of the strategic potential of utterances) and Shapley values (axiomatic fair credit assignment) to address the credit assignment problem in multi-turn dialogue. Savoir achieves state-of-the-art performance on the SOTOPIA benchmark with a 7B model (Goal 7.18 in the Hard setting), matching or surpassing GPT-4o and Claude-3.5-Sonnet, while large reasoning models (o1, DeepSeek-R1) systematically underperform on social tasks.
+  [ACL 2026][Reinforcement Learning][Social Intelligence] This paper proposes Savoir, a cooperative game-theoretic social RL framework that combines expected utility (prospective evaluation of the strategic potential of ut…
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - Social Intelligence
-  - Shapley Values
-  - Credit Assignment
-  - Cooperative Game Theory
-  - Expected Utility
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "Social Intelligence"
+  - "Shapley Values"
+  - "Credit Assignment"
+  - "Cooperative Game Theory"
+  - "Expected Utility"
 date: 2026-05-08
 content_hash: 5c60098dbe4be245
 ---

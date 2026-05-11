@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Energy Matching: Unifying Flow Matching and Energy-Based Models for Generative Modeling
 description: >-
-  [NeurIPS 2025][Medical Imaging][Energy-Based Models] This paper proposes Energy Matching, which unifies flow matching and energy-based models via a single time-independent scalar potential field: far from the data manifold, the model performs efficient transport along optimal transport paths; near the manifold, it transitions to a Boltzmann equilibrium distribution for likelihood modeling. The method achieves FID 3.34 on CIFAR-10, substantially outperforming existing EBMs by more than 50%.
+  [NeurIPS 2025][Medical Imaging][Energy-Based Models] This paper proposes Energy Matching, which unifies flow matching and energy-based models via a single time-independent scalar potential field: far from the data manifo…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Energy-Based Models
-  - Flow Matching
-  - Optimal Transport
-  - Boltzmann Distribution
-  - Inverse Problems
-  - Local Intrinsic Dimensionality
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Energy-Based Models"
+  - "Flow Matching"
+  - "Optimal Transport"
+  - "Boltzmann Distribution"
+  - "Inverse Problems"
+  - "Local Intrinsic Dimensionality"
 date: 2026-05-08
 content_hash: a228dfd509fbc450
 ---

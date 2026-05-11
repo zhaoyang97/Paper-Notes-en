@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Recovering Parametric Scenes from Very Few Time-of-Flight Pixels
 description: >-
-  [ICCV 2025][Time-of-Flight sensor] This paper investigates the feasibility of recovering 3D parametric scene geometry using an extremely small number (as few as 15 pixels) of low-cost wide-field-of-view ToF sensors. An analysis-by-synthesis framework combining feedforward prediction and differentiable rendering is proposed, demonstrating surprisingly strong performance on tasks such as 6D object pose estimation.
+  [ICCV 2025][Time-of-Flight sensor] This paper investigates the feasibility of recovering 3D parametric scene geometry using an extremely small number (as few as 15 pixels) of low-cost wide-field-of-view ToF sensors. An a…
 tags:
-  - ICCV 2025
-  - Time-of-Flight sensor
-  - 6D pose estimation
-  - differentiable rendering
-  - SPAD
-  - parametric scene recovery
+  - "ICCV 2025"
+  - "Time-of-Flight sensor"
+  - "6D pose estimation"
+  - "differentiable rendering"
+  - "SPAD"
+  - "parametric scene recovery"
 date: 2026-05-08
 content_hash: 79081d489d4133b3
 ---

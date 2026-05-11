@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Epona: Autoregressive Diffusion World Model for Autonomous Driving
 description: >-
-  [ICCV 2025][Autonomous Driving][world model] This paper proposes Epona, an autoregressive diffusion world model that achieves a unified framework for high-resolution long-horizon driving video generation and real-time trajectory planning through decoupled spatiotemporal modeling and asynchronous multimodal generation.
+  [ICCV 2025][Autonomous Driving][world model] This paper proposes Epona, an autoregressive diffusion world model that achieves a unified framework for high-resolution long-horizon driving video generation and real-time tr…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - world model
-  - autoregressive diffusion
-  - trajectory planning
-  - video generation
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "world model"
+  - "autoregressive diffusion"
+  - "trajectory planning"
+  - "video generation"
 date: 2026-05-08
 content_hash: 306789190f609c8f
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TRoVe: Discovering Error-Inducing Static Feature Biases in Temporal Vision-Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Temporal VLM] TRoVe proposes an automated method for discovering static feature biases that induce systematic prediction errors in temporal VLMs. Through a dual-scoring mechanism combining an Error Contribution Score (ECS) and a Static Bias Score (SBS), TRoVe outperforms baselines by 28.6% on 101 synthetic models and successfully identifies novel biases in 7 real-world VLMs.
+  [NeurIPS 2025][Multimodal VLM][Temporal VLM] TRoVe proposes an automated method for discovering static feature biases that induce systematic prediction errors in temporal VLMs. Through a dual-scoring mechanism combining…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Temporal VLM
-  - Static Feature Bias
-  - Model Robustness
-  - Bias Discovery
-  - Video Understanding
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Temporal VLM"
+  - "Static Feature Bias"
+  - "Model Robustness"
+  - "Bias Discovery"
+  - "Video Understanding"
 date: 2026-05-08
 content_hash: 23744a8221c9c8e7
 ---

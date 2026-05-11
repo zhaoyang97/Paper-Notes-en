@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HiERO: Understanding the Hierarchy of Human Behavior Enhances Reasoning on Egocentric Videos
 description: >-
-  [ICCV 2025][LLM Evaluation][Egocentric video understanding] This paper proposes HiERO, a weakly supervised hierarchical graph architecture that learns the hierarchy of functional activity cues by aligning video segments with narration text. The resulting segment features encode multi-scale behavioral dependencies. HiERO substantially outperforms fully supervised methods in zero-shot evaluation on procedure learning tasks (F1 +12.5% on EgoProceL) and achieves state-of-the-art performance on video–text alignment benchmarks.
+  [ICCV 2025][LLM Evaluation][Egocentric video understanding] This paper proposes HiERO, a weakly supervised hierarchical graph architecture that learns the hierarchy of functional activity cues by aligning video segments…
 tags:
-  - ICCV 2025
-  - LLM Evaluation
-  - Egocentric video understanding
-  - hierarchical behavior modeling
-  - graph neural networks
-  - procedure learning
-  - zero-shot reasoning
+  - "ICCV 2025"
+  - "LLM Evaluation"
+  - "Egocentric video understanding"
+  - "hierarchical behavior modeling"
+  - "graph neural networks"
+  - "procedure learning"
+  - "zero-shot reasoning"
 date: 2026-05-08
 content_hash: bc508a13d36bd2f4
 ---

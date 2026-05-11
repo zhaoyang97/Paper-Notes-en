@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Empowering Small VLMs to Think with Dynamic Memorization and Exploration
 description: >-
-  [ICLR 2026][Multimodal VLM][Small-scale vision-language models] This paper proposes DyME (Dynamic Memorize-Explore), which progressively and dynamically alternates between an SFT memorization mode and a GRPO exploration mode, enabling—for the first time—reasoning capabilities in small-scale vision-language models (SVLMs, <1B parameters) on domain-specific tasks.
+  [ICLR 2026][Multimodal VLM][Small-scale vision-language models] This paper proposes DyME (Dynamic Memorize-Explore), which progressively and dynamically alternates between an SFT memorization mode and a GRPO exploration…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Small-scale vision-language models
-  - reasoning capability
-  - dynamic switching
-  - SFT and RLVR integration
-  - visual supervision
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Small-scale vision-language models"
+  - "reasoning capability"
+  - "dynamic switching"
+  - "SFT and RLVR integration"
+  - "visual supervision"
 date: 2026-05-08
 content_hash: 3f3f401b5a659390
 ---

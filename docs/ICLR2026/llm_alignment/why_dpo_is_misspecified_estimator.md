@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Why DPO is a Misspecified Estimator and How to Fix It
 description: >-
-  [ICLR 2026 Oral][LLM Alignment][DPO] This paper proves from an information-geometric perspective that DPO is fundamentally a misspecified statistical estimator under parameterized (non-tabular) policy classes—DPO projects the true reward function onto the implicit reward manifold via KL projection, leading to preference reversal and reward degradation when the reward is unrealizable—and proposes AuxDPO, which introduces null-space auxiliary variables to remedy this misspecification.
+  [ICLR 2026 Oral][LLM Alignment][DPO] This paper proves from an information-geometric perspective that DPO is fundamentally a misspecified statistical estimator under parameterized (non-tabular) policy classes—DPO project…
 tags:
-  - ICLR 2026 Oral
-  - LLM Alignment
-  - DPO
-  - RLHF
-  - misspecification
-  - reward alignment
-  - AuxDPO
+  - "ICLR 2026 Oral"
+  - "LLM Alignment"
+  - "DPO"
+  - "RLHF"
+  - "misspecification"
+  - "reward alignment"
+  - "AuxDPO"
 date: 2026-05-08
 content_hash: 831696c19f29e382
 ---

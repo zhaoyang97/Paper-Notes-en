@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Simple Linear Patch Revives Layer-Pruned Large Language Models
 description: >-
-  [NeurIPS 2025][Model Compression][Layer Pruning] LinearPatch inserts a lightweight symmetric matrix — fusing a Hadamard transform with channel scaling — at the pruning interface to repair activation magnitude mismatches caused by layer pruning. On LLaMA-3-8B, it retains 94.15% of the original performance without any training, and reaches 95.16% after 30 minutes of distillation.
+  [NeurIPS 2025][Model Compression][Layer Pruning] LinearPatch inserts a lightweight symmetric matrix — fusing a Hadamard transform with channel scaling — at the pruning interface to repair activation magnitude mismatches…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Layer Pruning
-  - Activation Magnitude Alignment
-  - Hadamard Transform
-  - Channel Scaling
-  - Knowledge Distillation
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Layer Pruning"
+  - "Activation Magnitude Alignment"
+  - "Hadamard Transform"
+  - "Channel Scaling"
+  - "Knowledge Distillation"
 date: 2026-05-08
 content_hash: 141c461f93caaece
 ---

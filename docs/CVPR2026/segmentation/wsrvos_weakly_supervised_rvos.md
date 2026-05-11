@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Weakly-Supervised Referring Video Object Segmentation through Text Supervision
 description: >-
-  [CVPR 2026][Segmentation][Weakly supervised] This paper proposes WSRVOS, the first weakly supervised referring video object segmentation framework that uses only text expressions as supervision signals. It achieves significant reduction in reliance on pixel-level annotations through MLLM-driven contrastive expression augmentation, bidirectional visual-language feature selection, instance-aware expression classification, and temporal segment ranking constraints.
+  [CVPR 2026][Segmentation][Weakly supervised] This paper proposes WSRVOS, the first weakly supervised referring video object segmentation framework that uses only text expressions as supervision signals. It achieves signi…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Weakly supervised
-  - video object segmentation
-  - referring expression
-  - text supervision
-  - multimodal alignment
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Weakly supervised"
+  - "video object segmentation"
+  - "referring expression"
+  - "text supervision"
+  - "multimodal alignment"
 date: 2026-05-08
 content_hash: 3ea14689f94df048
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HiFusion: Hierarchical Intra-Spot Alignment and Regional Context Fusion for Spatial Gene Expression Prediction from Histopathology
 description: >-
-  [AAAI 2026][Medical Imaging][Spatial Transcriptomics] This paper proposes HiFusion, a framework comprising two complementary modules — Hierarchical Intra-Spot Modeling (HISM) and Context-Aware Cross-Scale Fusion (CCF) — to accurately predict spatial gene expression from H&E-stained whole-slide images, achieving state-of-the-art performance on two benchmark datasets under both 2D cross-validation and 3D sample-specific evaluation settings.
+  [AAAI 2026][Medical Imaging][Spatial Transcriptomics] This paper proposes HiFusion, a framework comprising two complementary modules — Hierarchical Intra-Spot Modeling (HISM) and Context-Aware Cross-Scale Fusion (CCF) —…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Spatial Transcriptomics
-  - Gene Expression Prediction
-  - Multi-Scale Feature Fusion
-  - Histopathology
-  - Cross-Attention
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Spatial Transcriptomics"
+  - "Gene Expression Prediction"
+  - "Multi-Scale Feature Fusion"
+  - "Histopathology"
+  - "Cross-Attention"
 date: 2026-05-08
 content_hash: 59f8d24b160bbaab
 ---

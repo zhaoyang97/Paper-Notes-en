@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Revisiting Model Stitching in the Foundation Model Era
 description: >-
-  [CVPR 2026][Multimodal VLM][Model Stitching] This paper systematically investigates the feasibility of stitching heterogeneous Vision Foundation Models (VFMs), finds that conventional methods fail in this setting, and proposes a two-stage training strategy — **Final Feature Matching + Task Loss Training** — that enables reliable stitching across heterogeneous VFMs. The resulting stitched models can even surpass both constituent VFMs individually. Building on this, the paper introduces the **VFM Stitch Tree (VST)** architecture, which provides a controllable accuracy–efficiency trade-off for multi-VFM systems.
+  [CVPR 2026][Multimodal VLM][Model Stitching] This paper systematically investigates the feasibility of stitching heterogeneous Vision Foundation Models (VFMs), finds that conventional methods fail in this setting…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Model Stitching
-  - Vision Foundation Models
-  - Representation Compatibility
-  - VFM Stitch Tree
-  - Multimodal LLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Model Stitching"
+  - "Vision Foundation Models"
+  - "Representation Compatibility"
+  - "VFM Stitch Tree"
+  - "Multimodal LLM"
 date: 2026-05-08
 content_hash: 118a6d1296204c29
 ---

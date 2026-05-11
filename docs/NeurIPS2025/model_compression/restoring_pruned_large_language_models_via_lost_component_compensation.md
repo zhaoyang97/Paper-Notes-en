@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Restoring Pruned Large Language Models via Lost Component Compensation
 description: >-
-  [NeurIPS 2025][Model Compression][LLM pruning] RestoreLCC proposes a targeted recovery strategy for pruned LLMs: it uses contrastive probing to identify critical attention heads, applies SVD decomposition to extract activation components lost during pruning, and injects them back into the pruned model as learnable bias vectors — significantly restoring performance without compromising sparsity or inference speed.
+  [NeurIPS 2025][Model Compression][LLM pruning] RestoreLCC proposes a targeted recovery strategy for pruned LLMs: it uses contrastive probing to identify critical attention heads…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - LLM pruning
-  - performance restoration
-  - attention activation
-  - component compensation
-  - PEFT
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "LLM pruning"
+  - "performance restoration"
+  - "attention activation"
+  - "component compensation"
+  - "PEFT"
 date: 2026-05-08
 content_hash: 0ac34bb38577fbe6
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] UPRE: Zero-Shot Domain Adaptation for Object Detection via Unified Prompt and Representation Enhancement
 description: >-
-  [ICCV 2025][Object Detection][Zero-shot domain adaptation] This paper proposes the UPRE framework, which jointly optimizes Multi-view Domain Prompts (MDP) and Unified Representation Enhancement (URE) to simultaneously alleviate detection bias and domain bias in zero-shot domain adaptive object detection, achieving state-of-the-art performance across nine datasets spanning three scenario types: adverse weather, cross-city, and virtual-to-real.
+  [ICCV 2025][Object Detection][Zero-shot domain adaptation] This paper proposes the UPRE framework, which jointly optimizes Multi-view Domain Prompts (MDP) and Unified Representation Enhancement (URE) to simultaneously al…
 tags:
-  - ICCV 2025
-  - Object Detection
-  - Zero-shot domain adaptation
-  - prompt learning
-  - vision-language models
-  - domain shift
+  - "ICCV 2025"
+  - "Object Detection"
+  - "Zero-shot domain adaptation"
+  - "prompt learning"
+  - "vision-language models"
+  - "domain shift"
 date: 2026-05-08
 content_hash: 9c743e32e78d255b
 ---

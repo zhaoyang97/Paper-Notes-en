@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] QiMeng-PRepair: Precise Code Repair via Edit-Aware Reward Optimization
 description: >-
-  [ACL 2026][precise code repair] This paper identifies the "over-editing" problem in LLM-based code repair—where models tend to rewrite large portions of code rather than precisely localizing and fixing bugs—and proposes the PRepair framework. Through Self-Breaking (diversified bug injection) and Self-Repairing (edit-aware GRPO training), PRepair significantly improves repair precision while maintaining correctness and accelerating speculative decoding inference.
+  [ACL 2026][Code Intelligence][precise code repair] This paper identifies the "over-editing" problem in LLM-based code repair—where models tend to rewrite large portions of code rather than precisely localizing and fixing…
 tags:
-  - ACL 2026
-  - precise code repair
-  - over-editing
-  - edit-aware reward
-  - GRPO
-  - speculative editing
+  - "ACL 2026"
+  - "Code Intelligence"
+  - "precise code repair"
+  - "over-editing"
+  - "edit-aware reward"
+  - "GRPO"
+  - "speculative editing"
 date: 2026-05-08
 content_hash: a11e03a922680338
 ---

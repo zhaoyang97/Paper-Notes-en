@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Principled Fast and Meta Knowledge Learners for Continual Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][continual RL] Inspired by the hippocampus–neocortex interaction in the human brain, this paper proposes FAME, a dual-learner framework for continual reinforcement learning that employs a fast learner for knowledge transfer and a meta learner for knowledge consolidation, achieving efficient continual RL while principally minimizing catastrophic forgetting.
+  [ICLR 2026][Reinforcement Learning][continual RL] Inspired by the hippocampus–neocortex interaction in the human brain, this paper proposes FAME…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - continual RL
-  - catastrophic forgetting
-  - knowledge transfer
-  - dual-learner
-  - meta learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "continual RL"
+  - "catastrophic forgetting"
+  - "knowledge transfer"
+  - "dual-learner"
+  - "meta learning"
 date: 2026-05-08
 content_hash: be625c2cb4dd37f9
 ---

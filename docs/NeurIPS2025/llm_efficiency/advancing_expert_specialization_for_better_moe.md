@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Advancing Expert Specialization for Better MoE
 description: >-
-  [NeurIPS 2025][LLM Efficiency][Mixture-of-Experts] By jointly optimizing an orthogonality loss (reducing projection overlap among experts) and a variance loss (increasing routing score diversity), the proposed method reduces expert overlap by 45% and improves routing variance by 150% without modifying the MoE architecture, achieving an average gain of 23.79% across 11 benchmarks while fully preserving load balance.
+  [NeurIPS 2025][LLM Efficiency][Mixture-of-Experts] By jointly optimizing an orthogonality loss (reducing projection overlap among experts) and a variance loss (increasing routing score diversity)…
 tags:
-  - NeurIPS 2025
-  - LLM Efficiency
-  - Mixture-of-Experts
-  - expert specialization
-  - orthogonality loss
-  - routing variance
-  - load balancing
+  - "NeurIPS 2025"
+  - "LLM Efficiency"
+  - "Mixture-of-Experts"
+  - "expert specialization"
+  - "orthogonality loss"
+  - "routing variance"
+  - "load balancing"
 date: 2026-05-08
 content_hash: 9968c74b2870f1d1
 ---

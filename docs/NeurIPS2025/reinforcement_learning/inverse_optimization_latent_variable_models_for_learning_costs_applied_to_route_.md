@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Inverse Optimization Latent Variable Models for Learning Costs Applied to Route Problems
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][inverse optimization] This paper proposes IO-LVM (Inverse Optimization Latent Variable Model), which employs a VAE-style encoder to map observed COP solutions into a latent cost space. A Fenchel-Young loss combined with black-box solvers (Dijkstra/TSP solver) ensures feasibility at the decoding stage. The model learns the distribution of cost functions from route data without agent labels, and successfully separates navigation preferences of different agents in an unsupervised manner.
+  [NeurIPS 2025][Reinforcement Learning][inverse optimization] This paper proposes IO-LVM (Inverse Optimization Latent Variable Model), which employs a VAE-style encoder to map observed COP solutions into a latent cost spa…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - inverse optimization
-  - latent variable model
-  - Fenchel-Young loss
-  - route planning
-  - TSP
-  - VAE
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "inverse optimization"
+  - "latent variable model"
+  - "Fenchel-Young loss"
+  - "route planning"
+  - "TSP"
+  - "VAE"
 date: 2026-05-08
 content_hash: e083ad36c8d725ad
 ---

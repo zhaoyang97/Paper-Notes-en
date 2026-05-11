@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] STMI: Segmentation-Guided Token Modulation with Cross-Modal Hypergraph Interaction for Multi-Modal Object Re-Identification
 description: >-
-  [AAAI 2026][3D Vision][Multi-Modal ReID] STMI proposes a three-component multi-modal object re-identification framework that suppresses background noise via SAM segmentation-guided feature modulation (SFM), extracts compact representations through semantic token reallocation (STR), and captures high-order semantic relationships via cross-modal hypergraph interaction (CHI), achieving significant improvements on benchmarks such as RGBNT201.
+  [AAAI 2026][3D Vision][Multi-Modal ReID] STMI proposes a three-component multi-modal object re-identification framework that suppresses background noise via SAM segmentation-guided feature modulation (SFM)…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - Multi-Modal ReID
-  - Cross-Modal Fusion
-  - Hypergraph Interaction
-  - Segmentation Guidance
-  - Token Modulation
+  - "AAAI 2026"
+  - "3D Vision"
+  - "Multi-Modal ReID"
+  - "Cross-Modal Fusion"
+  - "Hypergraph Interaction"
+  - "Segmentation Guidance"
+  - "Token Modulation"
 date: 2026-05-08
 content_hash: 507342f3349ff978
 ---

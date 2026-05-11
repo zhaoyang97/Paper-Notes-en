@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Adversarial Paraphrasing: A Universal Attack for Humanizing AI-Generated Text
 description: >-
-  [NeurIPS 2025][LLM Safety][AI text detection] This paper proposes Adversarial Paraphrasing — a training-free universal attack framework that selects the most "human-like" token at each decoding step by leveraging feedback signals from AI text detectors during token-by-token paraphrasing. The approach achieves an average T@1%F reduction of 87.88% across 8 detectors and exhibits strong cross-detector transferability.
+  [NeurIPS 2025][LLM Safety][AI text detection] This paper proposes Adversarial Paraphrasing — a training-free universal attack framework that selects the most "human-like" token at each decoding step by leveraging feedbac…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - AI text detection
-  - adversarial attack
-  - paraphrasing
-  - watermark evasion
-  - controllable text generation
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "AI text detection"
+  - "adversarial attack"
+  - "paraphrasing"
+  - "watermark evasion"
+  - "controllable text generation"
 date: 2026-05-08
 content_hash: 5ebcc4559c54dd36
 ---

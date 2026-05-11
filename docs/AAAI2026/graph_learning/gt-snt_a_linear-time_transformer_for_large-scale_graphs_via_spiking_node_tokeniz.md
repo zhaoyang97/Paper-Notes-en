@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GT-SNT: A Linear-Time Transformer for Large-Scale Graphs via Spiking Node Tokenization
 description: >-
-  [AAAI 2026][Graph Learning][Graph Transformer] GT-SNT is proposed to leverage spiking neural networks (SNNs) as a graph node tokenizer. By aggregating multi-step propagated features into compact spike-count embeddings as node tokens, and employing Codebook-Guided Self-Attention (CGSA) to capture global context in linear time, GT-SNT achieves competitive performance on 9 node classification benchmarks while delivering up to 130× inference speedup.
+  [AAAI 2026][Graph Learning][Graph Transformer] GT-SNT is proposed to leverage spiking neural networks (SNNs) as a graph node tokenizer. By aggregating multi-step propagated features into compact spike-count embeddings as…
 tags:
-  - AAAI 2026
-  - Graph Learning
-  - Graph Transformer
-  - Spiking Neural Networks
-  - Node Tokenization
-  - Linear Complexity
-  - Large-Scale Graphs
+  - "AAAI 2026"
+  - "Graph Learning"
+  - "Graph Transformer"
+  - "Spiking Neural Networks"
+  - "Node Tokenization"
+  - "Linear Complexity"
+  - "Large-Scale Graphs"
 date: 2026-05-08
 content_hash: bbfa345a56a83483
 ---

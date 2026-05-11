@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Financial Instruction Following Evaluation (FIFE)
 description: >-
-  [NeurIPS 2025 (GenAI Finance Workshop)][Reinforcement Learning][Instruction Following] FIFE is a challenging instruction-following benchmark for financial analysis tasks, comprising 88 manually authored complex prompts and 40+ chainable, domain-specific verifiable constraints. It evaluates 53 models under both strict and loose modes, revealing that even the strongest open-weight model (76.1% strict) fails to perfectly follow complex financial instruction requirements.
+  [NeurIPS 2025 (GenAI Finance Workshop)][Reinforcement Learning][Instruction Following] FIFE is a challenging instruction-following benchmark for financial analysis tasks…
 tags:
-  - NeurIPS 2025 (GenAI Finance Workshop)
-  - Reinforcement Learning
-  - Instruction Following
-  - Finance Domain
-  - Benchmark
-  - Chainable Constraints
-  - LLM Evaluation
+  - "NeurIPS 2025 (GenAI Finance Workshop)"
+  - "Reinforcement Learning"
+  - "Instruction Following"
+  - "Finance Domain"
+  - "Benchmark"
+  - "Chainable Constraints"
+  - "LLM Evaluation"
 date: 2026-05-08
 content_hash: 139e48b19f7820cb
 ---

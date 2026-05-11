@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HandX: Scaling Bimanual Motion and Interaction Generation
 description: >-
-  [CVPR 2026][Human Understanding][Bimanual Motion Generation] This work introduces HandX—a unified bimanual motion generation infrastructure comprising 54.2 hours of motion data and 485K fine-grained text annotations. It proposes a decoupled automatic annotation strategy (kinematic feature extraction + LLM-based description generation) and benchmarks two generation paradigms—diffusion and autoregressive—demonstrating clear data and model scaling trends.
+  [CVPR 2026][Human Understanding][Bimanual Motion Generation] This work introduces HandX—a unified bimanual motion generation infrastructure comprising 54.2 hours of motion data and 485K fine-grained text annotations. It…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Bimanual Motion Generation
-  - Dexterous Hand Interaction
-  - Motion Capture Dataset
-  - Text-to-Motion
-  - Scaling Law
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Bimanual Motion Generation"
+  - "Dexterous Hand Interaction"
+  - "Motion Capture Dataset"
+  - "Text-to-Motion"
+  - "Scaling Law"
 date: 2026-05-08
 content_hash: 153e8888fe3836a4
 ---

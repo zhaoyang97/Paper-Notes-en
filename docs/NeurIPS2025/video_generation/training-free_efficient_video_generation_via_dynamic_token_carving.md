@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Training-Free Efficient Video Generation via Dynamic Token Carving
 description: >-
-  [NeurIPS 2025][Video Generation][Training-free acceleration] This paper proposes Jenga, a training-free inference acceleration framework for video DiTs that achieves 8.83× speedup on HunyuanVideo with only a 0.01% drop in VBench score. The framework combines dynamic block attention carving (sparse KV block selection after token reordering via 3D space-filling curves) and a progressive resolution strategy (coarse-to-fine denoising), which operate orthogonally.
+  [NeurIPS 2025][Video Generation][Training-free acceleration] This paper proposes Jenga, a training-free inference acceleration framework for video DiTs that achieves 8.83× speedup on HunyuanVideo with only a 0.01% drop i…
 tags:
-  - NeurIPS 2025
-  - Video Generation
-  - Training-free acceleration
-  - sparse attention
-  - 3D space-filling curves
-  - progressive resolution
-  - video diffusion Transformer
+  - "NeurIPS 2025"
+  - "Video Generation"
+  - "Training-free acceleration"
+  - "sparse attention"
+  - "3D space-filling curves"
+  - "progressive resolution"
+  - "video diffusion Transformer"
 date: 2026-05-08
 content_hash: 1c199b064272e7c2
 ---

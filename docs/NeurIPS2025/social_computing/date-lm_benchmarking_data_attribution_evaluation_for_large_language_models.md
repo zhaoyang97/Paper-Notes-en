@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DATE-LM: Benchmarking Data Attribution Evaluation for Large Language Models
 description: >-
-  [NeurIPS 2025][Social Computing][data attribution] DATE-LM introduces the first unified benchmark for evaluating data attribution methods in LLMs. Through three application-driven tasks—training data selection, toxicity filtering, and factual attribution—it systematically compares multiple attribution approaches, finding that no single method dominates across all tasks and that simple baselines can match attribution methods in certain settings.
+  [NeurIPS 2025][Social Computing][data attribution] DATE-LM introduces the first unified benchmark for evaluating data attribution methods in LLMs. Through three application-driven tasks—training data selection…
 tags:
-  - NeurIPS 2025
-  - Social Computing
-  - data attribution
-  - benchmark
-  - LLM
-  - data selection
-  - factual provenance
+  - "NeurIPS 2025"
+  - "Social Computing"
+  - "data attribution"
+  - "benchmark"
+  - "LLM"
+  - "data selection"
+  - "factual provenance"
 date: 2026-05-08
 content_hash: 233990f04fa09f77
 ---

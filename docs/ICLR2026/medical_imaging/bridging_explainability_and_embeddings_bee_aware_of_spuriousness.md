@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Bridging Explainability and Embeddings: BEE Aware of Spuriousness
 description: >-
-  [ICLR 2026][Medical Imaging][Spurious correlation detection] This paper proposes the BEE framework, which identifies and names spurious correlations (SCs) directly from learned classifier weights by analyzing how fine-tuning perturbs the weight-space geometry of pre-trained representations. The method requires no counterfactual samples and can discover hidden dataset biases. On ImageNet-1k, BEE uncovers spurious associations that reduce accuracy by up to 95%.
+  [ICLR 2026][Medical Imaging][Spurious correlation detection] This paper proposes the BEE framework, which identifies and names spurious correlations (SCs) directly from learned classifier weights by analyzing how fine-tu…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - Spurious correlation detection
-  - weight space analysis
-  - embedding geometry
-  - linear probing
-  - foundation models
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Spurious correlation detection"
+  - "weight space analysis"
+  - "embedding geometry"
+  - "linear probing"
+  - "foundation models"
 date: 2026-05-08
 content_hash: 75885aa334579338
 ---

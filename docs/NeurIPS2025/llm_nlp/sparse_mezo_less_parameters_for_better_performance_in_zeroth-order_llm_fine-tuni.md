@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Sparse MeZO: Less Parameters for Better Performance in Zeroth-Order LLM Fine-Tuning
 description: >-
-  [NeurIPS 2025][LLM/NLP][zeroth-order optimization] This paper proposes Sparse MeZO (S-MeZO), motivated by the observation that zeroth-order gradient noise disproportionately affects parameters with large magnitudes. S-MeZO selectively applies zeroth-order perturbation and updates only to small-magnitude parameters, achieving significant performance gains (+9% on RTE) and convergence acceleration (3.5×) without any additional memory overhead.
+  [NeurIPS 2025][LLM/NLP][zeroth-order optimization] This paper proposes Sparse MeZO (S-MeZO), motivated by the observation that zeroth-order gradient noise disproportionately affects parameters with large magnitudes. S-Me…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - zeroth-order optimization
-  - sparse fine-tuning
-  - memory efficiency
-  - LLM fine-tuning
-  - gradient noise
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "zeroth-order optimization"
+  - "sparse fine-tuning"
+  - "memory efficiency"
+  - "LLM fine-tuning"
+  - "gradient noise"
 date: 2026-05-08
 content_hash: 194a79dfd6dab8df
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unified Privacy Guarantees for Decentralized Learning via Matrix Factorization
 description: >-
-  [ICLR 2026][AI Safety][decentralized learning] This paper unifies diverse algorithms and trust models in decentralized learning (DL) under a matrix factorization (MF) mechanism framework, extends privacy guarantees to more general matrix types, and proposes the MAFALDA-SGD algorithm that significantly outperforms existing methods on both synthetic and real-world graph topologies by optimizing noise correlation.
+  [ICLR 2026][AI Safety][decentralized learning] This paper unifies diverse algorithms and trust models in decentralized learning (DL) under a matrix factorization (MF) mechanism framework…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - decentralized learning
-  - matrix factorization
-  - differential privacy
-  - correlated noise
-  - gossip protocol
+  - "ICLR 2026"
+  - "AI Safety"
+  - "decentralized learning"
+  - "matrix factorization"
+  - "differential privacy"
+  - "correlated noise"
+  - "gossip protocol"
 date: 2026-05-08
 content_hash: 9010ca2d4fb87477
 ---

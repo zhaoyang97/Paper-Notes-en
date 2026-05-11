@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SAND-Math: Using LLMs to Generate Novel, Difficult and Useful Mathematics Questions and Answers
 description: >-
-  [NeurIPS 2025][Audio & Speech][Mathematical Reasoning] This paper proposes SAND-Math, a fully automated synthetic mathematics question generation pipeline that requires no seed dataset. By employing Difficulty Hiking to systematically increase problem difficulty, augmenting the LIMO baseline with as few as 500 problems yields a 4.39pp improvement on AIME25.
+  [NeurIPS 2025][Audio & Speech][Mathematical Reasoning] This paper proposes SAND-Math, a fully automated synthetic mathematics question generation pipeline that requires no seed dataset. By employing Difficulty Hiking to…
 tags:
-  - NeurIPS 2025
+  - "NeurIPS 2025"
   - "Audio & Speech"
-  - Mathematical Reasoning
-  - Synthetic Data
-  - Difficulty Hiking
-  - Data Quality
-  - Post-Training
+  - "Mathematical Reasoning"
+  - "Synthetic Data"
+  - "Difficulty Hiking"
+  - "Data Quality"
+  - "Post-Training"
 date: 2026-05-08
 content_hash: 0d1a5babbc92f270
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Unpacking Human Preference for LLMs: Demographically Aware Evaluation with the HUMAINE Framework
 description: >-
-  [ICLR2026][LLM Evaluation][human evaluation] This paper proposes the HUMAINE framework, which conducts multi-dimensional (5-axis), multi-turn human preference evaluations of 28 SOTA models using 23,404 demographically stratified participants. A hierarchical Bayesian BTD model reveals that age is the largest driver of preference heterogeneity (mean rank shift ±2.8), demonstrating that a single aggregated leaderboard is insufficient to reflect the true preferences of diverse populations.
+  [ICLR2026][LLM Evaluation][human evaluation] This paper proposes the HUMAINE framework, which conducts multi-dimensional (5-axis), multi-turn human preference evaluations of 28 SOTA models using 23…
 tags:
-  - ICLR2026
-  - LLM Evaluation
-  - human evaluation
-  - preference heterogeneity
-  - demographic bias
-  - Bradley-Terry-Davidson
-  - LLM leaderboard
-  - psychometrics
+  - "ICLR2026"
+  - "LLM Evaluation"
+  - "human evaluation"
+  - "preference heterogeneity"
+  - "demographic bias"
+  - "Bradley-Terry-Davidson"
+  - "LLM leaderboard"
+  - "psychometrics"
 date: 2026-05-08
 content_hash: 4530e646253c44e8
 ---

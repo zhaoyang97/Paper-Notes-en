@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] DAViD: Data-efficient and Accurate Vision Models from Synthetic Data
 description: >-
-  [ICCV 2025][3D Vision][synthetic data] This work demonstrates that high-fidelity **procedural synthetic data** suffices to train human-centric dense prediction models that match the accuracy of foundation models such as Sapiens-2B, requiring only **300K synthetic images**, **0.3B parameters**, and less than 1/16 the training cost of comparable approaches, while achieving state-of-the-art or near-SOTA performance on depth estimation, surface normal estimation, and soft foreground segmentation.
+  [ICCV 2025][3D Vision][synthetic data] This work demonstrates that high-fidelity **procedural synthetic data** suffices to train human-centric dense prediction models that match the accuracy of foundation models such as…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - synthetic data
-  - depth estimation
-  - surface normal estimation
-  - foreground segmentation
-  - DPT
-  - high-fidelity annotation
+  - "ICCV 2025"
+  - "3D Vision"
+  - "synthetic data"
+  - "depth estimation"
+  - "surface normal estimation"
+  - "foreground segmentation"
+  - "DPT"
+  - "high-fidelity annotation"
 date: 2026-05-08
 content_hash: 871217221c03d575
 ---

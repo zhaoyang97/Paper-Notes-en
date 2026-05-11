@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FINER: MLLMs Hallucinate under Fine-grained Negative Queries
 description: >-
-  [CVPR 2026][Multimodal VLM][MLLM hallucination] This paper identifies that MLLMs suffer a dramatic increase in hallucination rates under fine-grained negative queries (queries involving multiple objects/attributes/relations with only one subtle error), proposes the FINER benchmark and FINER-Tuning (based on DPO), achieving up to 24.2% improvement on InternVL3.5-14B.
+  [CVPR 2026][Multimodal VLM][MLLM hallucination] This paper identifies that MLLMs suffer a dramatic increase in hallucination rates under fine-grained negative queries (queries involving multiple objects/attributes/relati…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - MLLM hallucination
-  - fine-grained negative queries
-  - DPO
-  - scene graph
-  - hallucination benchmark
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "MLLM hallucination"
+  - "fine-grained negative queries"
+  - "DPO"
+  - "scene graph"
+  - "hallucination benchmark"
 date: 2026-05-08
 content_hash: 80f3d21d7b7a9c05
 ---

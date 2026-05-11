@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Two Causally Related Needles in a Video Haystack
 description: >-
-  [NeurIPS 2025][Video Understanding][Long video understanding] This paper proposes Causal2Needles, a benchmark of 4,100 QA pairs that binds the understanding of two causally related events via a "bridging entity," forcing VLMs to jointly retrieve and reason over two needles scattered across a long video. It reveals severe deficiencies in state-of-the-art models on the causal dual-needle task (ChatGPT-4o achieves only 13.4% Both accuracy on the dual-needle setting).
+  [NeurIPS 2025][Video Understanding][Long video understanding] This paper proposes Causal2Needles, a benchmark of 4,100 QA pairs that binds the understanding of two causally related events via a "bridging entity…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
-  - Long video understanding
-  - causal reasoning
-  - needle-in-a-haystack
-  - video-language models
-  - benchmark
+  - "NeurIPS 2025"
+  - "Video Understanding"
+  - "Long video understanding"
+  - "causal reasoning"
+  - "needle-in-a-haystack"
+  - "video-language models"
+  - "benchmark"
 date: 2026-05-08
 content_hash: 5c90aea33b93dc59
 ---

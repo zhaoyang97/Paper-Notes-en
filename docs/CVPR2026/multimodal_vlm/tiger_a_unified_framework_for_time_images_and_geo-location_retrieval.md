@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TIGeR: A Unified Framework for Time, Images and Geo-location Retrieval
 description: >-
-  [CVPR2026][Multimodal VLM][Geo-temporal retrieval] This paper proposes TIGeR, a multimodal Transformer framework that jointly learns a unified geo-temporal embedding space over images, locations, and timestamps, enabling three tasks—geolocalization, capture time prediction, and geo-temporally aware image retrieval—within a single model. A high-quality benchmark dataset of 4.5M images is also introduced.
+  [CVPR2026][Multimodal VLM][Geo-temporal retrieval] This paper proposes TIGeR, a multimodal Transformer framework that jointly learns a unified geo-temporal embedding space over images, locations, and timestamps…
 tags:
-  - CVPR2026
-  - Multimodal VLM
-  - Geo-temporal retrieval
-  - multimodal Transformer
-  - geolocalization
-  - temporal prediction
-  - camera data cleaning
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "Geo-temporal retrieval"
+  - "multimodal Transformer"
+  - "geolocalization"
+  - "temporal prediction"
+  - "camera data cleaning"
 date: 2026-05-08
 content_hash: 15d7a82331165bc8
 ---

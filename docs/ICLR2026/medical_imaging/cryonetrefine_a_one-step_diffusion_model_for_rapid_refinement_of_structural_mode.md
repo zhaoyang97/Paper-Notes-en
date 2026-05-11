@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] CryoNet.Refine: A One-step Diffusion Model for Rapid Refinement of Structural Models with Cryo-EM Density Map Restraints
 description: >-
-  [ICLR 2026][Medical Imaging][cryo-EM] CryoNet.Refine is proposed as the first AI-based framework for cryo-EM atomic model refinement. It integrates a one-step diffusion model initialized from Boltz-2 weights, a novel differentiable density generator that physically simulates synthetic density maps, and the first use of density map correlation (cosine similarity) as a differentiable loss function, jointly optimized with geometric constraint losses including Ramachandran, rotamer, and bond angle terms. A test-time optimization strategy enables per-case customization. The method comprehensively outperforms Phenix.real_space_refine on 120 protein and DNA/RNA complex benchmarks (CC_mask: 0.59 vs. 0.54; Ramachandran favored: 98.92%).
+  [ICLR 2026][Medical Imaging][cryo-EM] CryoNet.Refine is proposed as the first AI-based framework for cryo-EM atomic model refinement. It integrates a one-step diffusion model initialized from Boltz-2 weights…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - cryo-EM
-  - atomic model refinement
-  - one-step diffusion
-  - density loss
-  - geometric constraints
-  - protein structure
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "cryo-EM"
+  - "atomic model refinement"
+  - "one-step diffusion"
+  - "density loss"
+  - "geometric constraints"
+  - "protein structure"
 date: 2026-05-08
 content_hash: c7e5d58829eeb5d3
 ---

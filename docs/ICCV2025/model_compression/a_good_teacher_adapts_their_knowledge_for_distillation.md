@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Good Teacher Adapts Their Knowledge for Distillation
 description: >-
-  [ICCV 2025][Model Compression][Knowledge distillation] This paper identifies the root cause of the teacher–student capacity gap in knowledge distillation as **intra-class distribution mismatch in the output distributions**, and proposes AID (Adapted Intra-class Distribution), a method that fine-tunes the teacher model prior to distillation to align its intra-class distribution with the student's learning capacity, achieving state-of-the-art performance across diverse architecture combinations.
+  [ICCV 2025][Model Compression][Knowledge distillation] This paper identifies the root cause of the teacher–student capacity gap in knowledge distillation as **intra-class distribution mismatch in the output distributions…
 tags:
-  - ICCV 2025
-  - Model Compression
-  - Knowledge distillation
-  - capacity gap
-  - intra-class distribution
-  - teacher adaptation
-  - distribution alignment
+  - "ICCV 2025"
+  - "Model Compression"
+  - "Knowledge distillation"
+  - "capacity gap"
+  - "intra-class distribution"
+  - "teacher adaptation"
+  - "distribution alignment"
 date: 2026-05-08
 content_hash: d0cf8280c804e94c
 ---

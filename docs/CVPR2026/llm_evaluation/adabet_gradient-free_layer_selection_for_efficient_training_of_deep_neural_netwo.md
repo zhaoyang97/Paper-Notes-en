@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] AdaBet: Gradient-free Layer Selection for Efficient Training of Deep Neural Networks
 description: >-
-  [CVPR2026][LLM Evaluation][Layer Selection] This paper proposes AdaBet, a gradient-free layer selection method grounded in algebraic topology, which uses the first Betti number $b_1$ to quantify the topological complexity of each layer's activation space via a single forward pass—requiring no labels, gradients, or backpropagation. By fine-tuning only 10% of layers on ResNet50/VGG16/MobileNetV2/ViT-B16, AdaBet surpasses full fine-tuning in accuracy while reducing peak memory by approximately 40%.
+  [CVPR2026][LLM Evaluation][Layer Selection] This paper proposes AdaBet, a gradient-free layer selection method grounded in algebraic topology…
 tags:
-  - CVPR2026
-  - LLM Evaluation
-  - Layer Selection
-  - Betti Number
-  - Topological Data Analysis
-  - Gradient-free Fine-tuning
-  - Edge Devices
-  - Transfer Learning
+  - "CVPR2026"
+  - "LLM Evaluation"
+  - "Layer Selection"
+  - "Betti Number"
+  - "Topological Data Analysis"
+  - "Gradient-free Fine-tuning"
+  - "Edge Devices"
+  - "Transfer Learning"
 date: 2026-05-08
 content_hash: 6d37856fbb0c3308
 ---

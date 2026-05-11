@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] MRI Contrast Enhancement Kinetics World Model
 description: >-
-  [CVPR2026][Medical Imaging][MRI contrast enhancement] This paper presents the first MRI Contrast Enhancement Kinetics World Model (MRI CEKWorld), which leverages spatiotemporal consistency learning (STCL) on sparsely sampled data to generate continuous, high-fidelity contrast-enhanced sequences from non-contrast MRI, addressing the dual challenges of content distortion and temporal discontinuity.
+  [CVPR2026][Medical Imaging][MRI contrast enhancement] This paper presents the first MRI Contrast Enhancement Kinetics World Model (MRI CEKWorld)…
 tags:
-  - CVPR2026
-  - Medical Imaging
-  - MRI contrast enhancement
-  - world model
-  - spatiotemporal consistency learning
-  - latent space alignment
-  - diffusion model
-  - DCE-MRI
+  - "CVPR2026"
+  - "Medical Imaging"
+  - "MRI contrast enhancement"
+  - "world model"
+  - "spatiotemporal consistency learning"
+  - "latent space alignment"
+  - "diffusion model"
+  - "DCE-MRI"
 date: 2026-05-08
 content_hash: 1cdb49f831463116
 ---

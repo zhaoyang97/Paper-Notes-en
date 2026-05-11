@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Plug-and-Play Physical Motion Restoration Approach for In-the-Wild High-Difficulty Motions
 description: >-
-  [ICCV 2025][Segmentation][physical motion restoration] A plug-and-play two-stage physical motion restoration method is proposed: defective frames in video motion capture are first corrected by a mask-conditioned diffusion model (MCM), then the corrected motion is transferred into a physically plausible form via a pretrained RL controller with test-time adaptation (PTM). This work achieves, for the first time, physically plausible enhancement of in-the-wild high-difficulty actions (gymnastics/martial arts/dance).
+  [ICCV 2025][Segmentation][physical motion restoration] A plug-and-play two-stage physical motion restoration method is proposed: defective frames in video motion capture are first corrected by a mask-conditioned diffusio…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - physical motion restoration
-  - motion imitation
-  - diffusion-based motion completion
-  - test-time adaptation
-  - high-difficulty motions
+  - "ICCV 2025"
+  - "Segmentation"
+  - "physical motion restoration"
+  - "motion imitation"
+  - "diffusion-based motion completion"
+  - "test-time adaptation"
+  - "high-difficulty motions"
 date: 2026-05-08
 content_hash: b5dd2b3fff7e8137
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Closer Look at Cross-Domain Few-Shot Object Detection: Fine-Tuning Matters and Parallel Decoder Helps
 description: >-
-  [CVPR 2026][Object Detection][Few-shot object detection] This paper proposes a Hybrid Ensemble Decoder (HED) and a progressive fine-tuning strategy for cross-domain few-shot object detection (CD-FSOD). By parallelizing a subset of decoder layers and randomly initializing denoising queries to introduce prediction diversity, the method achieves state-of-the-art performance on three benchmarks — CD-FSOD, ODinW-13, and RF100-VL — without introducing any additional parameters.
+  [CVPR 2026][Object Detection][Few-shot object detection] This paper proposes a Hybrid Ensemble Decoder (HED) and a progressive fine-tuning strategy for cross-domain few-shot object detection (CD-FSOD). By parallelizing a…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - Few-shot object detection
-  - cross-domain transfer
-  - hybrid ensemble decoder
-  - progressive fine-tuning
-  - OOD robustness
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Few-shot object detection"
+  - "cross-domain transfer"
+  - "hybrid ensemble decoder"
+  - "progressive fine-tuning"
+  - "OOD robustness"
 date: 2026-05-08
 content_hash: 0482750f3bed0c44
 ---

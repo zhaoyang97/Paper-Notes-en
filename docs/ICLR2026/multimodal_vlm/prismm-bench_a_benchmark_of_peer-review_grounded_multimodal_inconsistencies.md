@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PRISMM-Bench: A Benchmark of Peer-Review Grounded Multimodal Inconsistencies
 description: >-
-  [ICLR 2026][Multimodal VLM][Multimodal Inconsistency] This work introduces PRISMM-Bench, the first benchmark grounded in genuine reviewer-annotated multimodal inconsistencies in scientific papers. Mining 18,009 ICLR open reviews yields 384 cross-modal inconsistencies, evaluated across three tasks—identification, remediation, and paired matching—with a JSON-structured debiasing scheme for answer representation. Among 21 state-of-the-art LMMs, the best achieves only 53.9%, systematically exposing severe deficiencies in cross-modal reasoning over scientific documents.
+  [ICLR 2026][Multimodal VLM][Multimodal Inconsistency] This work introduces PRISMM-Bench, the first benchmark grounded in genuine reviewer-annotated multimodal inconsistencies in scientific papers. Mining 18…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Multimodal Inconsistency
-  - Peer Review
-  - Scientific Papers
-  - LMM Benchmark
-  - JSON Debiasing
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Multimodal Inconsistency"
+  - "Peer Review"
+  - "Scientific Papers"
+  - "LMM Benchmark"
+  - "JSON Debiasing"
 date: 2026-05-08
 content_hash: b0a8cb6b97cf226c
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Predicting the Future by Retrieving the Past
 description: >-
-  [AAAI 2026][Time Series][Retrieval-Augmented Forecasting] This paper proposes PFRP (Predicting the Future by Retrieving the Past), which constructs a Global Memory Bank (GMB) to store historical patterns, trains an encoder via Predictive Contrastive Learning (PCL) for efficient retrieval, and dynamically integrates retrieved global predictions with any local forecasting model. PFRP achieves an average improvement of 8.4% in forecasting performance across 7 datasets.
+  [AAAI 2026][Time Series][Retrieval-Augmented Forecasting] This paper proposes PFRP (Predicting the Future by Retrieving the Past), which constructs a Global Memory Bank (GMB) to store historical patterns…
 tags:
-  - AAAI 2026
-  - Time Series
-  - Retrieval-Augmented Forecasting
-  - Global Memory Bank
-  - Contrastive Learning
-  - Univariate Time Series
-  - Plug-and-Play
+  - "AAAI 2026"
+  - "Time Series"
+  - "Retrieval-Augmented Forecasting"
+  - "Global Memory Bank"
+  - "Contrastive Learning"
+  - "Univariate Time Series"
+  - "Plug-and-Play"
 date: 2026-05-08
 content_hash: ac25d776a2e70202
 ---

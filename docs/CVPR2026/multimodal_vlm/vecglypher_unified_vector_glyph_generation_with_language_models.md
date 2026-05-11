@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VecGlypher: Unified Vector Glyph Generation with Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Font Generation] VecGlypher is proposed as the first unified language model for text- and image-guided vector glyph generation. Through a two-stage training pipeline (large-scale SVG syntax learning followed by expert-annotated alignment), it autoregressively generates editable SVG paths directly, without rasterization intermediate steps or vectorization post-processing.
+  [CVPR 2026][Multimodal VLM][Font Generation] VecGlypher is proposed as the first unified language model for text- and image-guided vector glyph generation. Through a two-stage training pipeline (large-scale SVG syntax le…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Font Generation
-  - Vector Graphics
-  - SVG
-  - Multimodal Language Models
-  - Typography
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Font Generation"
+  - "Vector Graphics"
+  - "SVG"
+  - "Multimodal Language Models"
+  - "Typography"
 date: 2026-05-08
 content_hash: 7b87e5328b601212
 ---

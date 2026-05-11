@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] StoryTailor: A Zero-Shot Pipeline for Action-Rich Multi-Subject Visual Narratives
 description: >-
-  [CVPR 2026][LLM Efficiency][Visual Storytelling] Proposes StoryTailor, a zero-shot visual narrative generation pipeline that uses Gaussian-Centered Attention (GCA) to mitigate subject overlap and background leakage, Action-Boost SVR (AB-SVR) to amplify action semantics, and Selective Forgetting Cache (SFC) to maintain cross-frame background continuity, achieving multi-subject, action-rich visual narrative generation on a single RTX 4090 with 10–15% CLIP-T improvement over baselines.
+  [CVPR 2026][LLM Efficiency][Visual Storytelling] Proposes StoryTailor, a zero-shot visual narrative generation pipeline that uses Gaussian-Centered Attention (GCA) to mitigate subject overlap and background leakage…
 tags:
-  - CVPR 2026
-  - LLM Efficiency
-  - Visual Storytelling
-  - Zero-Shot
-  - Multi-Subject
-  - Diffusion Model
-  - Attention Mechanism
+  - "CVPR 2026"
+  - "LLM Efficiency"
+  - "Visual Storytelling"
+  - "Zero-Shot"
+  - "Multi-Subject"
+  - "Diffusion Model"
+  - "Attention Mechanism"
 date: 2026-05-08
 content_hash: a72be5accdc015d2
 ---

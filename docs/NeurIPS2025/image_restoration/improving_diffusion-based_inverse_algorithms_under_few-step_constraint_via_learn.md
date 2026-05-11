@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Improving Diffusion-based Inverse Algorithms under Few-Step Constraint via Learnable Linear Extrapolation
 description: >-
-  [NeurIPS 2025][Image Restoration][Diffusion inverse problems] This paper proposes Learnable Linear Extrapolation (LLE), which combines current and historical clean data estimates via learnable linear coefficients to enhance any diffusion inverse problem algorithm conforming to the Sampler-Corrector-Noiser paradigm under few-step (3–5 steps) constraints. The method requires only 50 training samples and a few minutes of training, yielding consistent improvements across 9+ algorithms × 5 tasks.
+  [NeurIPS 2025][Image Restoration][Diffusion inverse problems] This paper proposes Learnable Linear Extrapolation (LLE), which combines current and historical clean data estimates via learnable linear coefficients to enha…
 tags:
-  - NeurIPS 2025
-  - Image Restoration
-  - Diffusion inverse problems
-  - few-step acceleration
-  - linear extrapolation
-  - learnable coefficients
-  - plug-and-play
+  - "NeurIPS 2025"
+  - "Image Restoration"
+  - "Diffusion inverse problems"
+  - "few-step acceleration"
+  - "linear extrapolation"
+  - "learnable coefficients"
+  - "plug-and-play"
 date: 2026-05-08
 content_hash: 90ae36ac54dd1e96
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Generalization Below the Edge of Stability: The Role of Data Geometry
 description: >-
-  [ICLR 2026][Optimization][Generalization Theory] This paper introduces the principle of *data shatterability* to provide a unified explanation of how data geometry governs the strength of implicit regularization induced by gradient descent near the Edge of Stability (EoS). For the Beta(α) radial distribution family, the authors derive a spectrum of generalization upper and lower bounds that depend on α. For mixture distributions supported on low-dimensional subspaces, they prove that the generalization rate adapts to the intrinsic dimension $m$ rather than the ambient dimension $d$.
+  [ICLR 2026][Optimization][Generalization Theory] This paper introduces the principle of *data shatterability* to provide a unified explanation of how data geometry governs the strength of implicit regularization induced…
 tags:
-  - ICLR 2026
-  - Optimization
-  - Generalization Theory
-  - Edge of Stability
-  - Data Geometry
-  - ReLU Networks
-  - Implicit Regularization
+  - "ICLR 2026"
+  - "Optimization"
+  - "Generalization Theory"
+  - "Edge of Stability"
+  - "Data Geometry"
+  - "ReLU Networks"
+  - "Implicit Regularization"
 date: 2026-05-08
 content_hash: d8debac154847572
 ---

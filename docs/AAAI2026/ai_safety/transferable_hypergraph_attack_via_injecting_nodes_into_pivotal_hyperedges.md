@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Transferable Hypergraph Attack via Injecting Nodes into Pivotal Hyperedges
 description: >-
-  [AAAI 2026][AI Safety][Hypergraph Neural Networks] This paper proposes TH-Attack, a transferable node injection attack framework targeting Hypergraph Neural Networks (HGNNs). By identifying pivotal hyperedges in information aggregation pathways and injecting semantically inverted malicious nodes, TH-Attack effectively attacks diverse HGNN architectures in a black-box setting, reducing accuracy from 80%+ to below 30%.
+  [AAAI 2026][AI Safety][Hypergraph Neural Networks] This paper proposes TH-Attack, a transferable node injection attack framework targeting Hypergraph Neural Networks (HGNNs). By identifying pivotal hyperedges in informat…
 tags:
-  - AAAI 2026
-  - AI Safety
-  - Hypergraph Neural Networks
-  - Adversarial Attack
-  - Node Injection
-  - Hyperedge Pivotality
-  - Transferable Attack
+  - "AAAI 2026"
+  - "AI Safety"
+  - "Hypergraph Neural Networks"
+  - "Adversarial Attack"
+  - "Node Injection"
+  - "Hyperedge Pivotality"
+  - "Transferable Attack"
 date: 2026-05-08
 content_hash: 3da4439fd0b62af7
 ---

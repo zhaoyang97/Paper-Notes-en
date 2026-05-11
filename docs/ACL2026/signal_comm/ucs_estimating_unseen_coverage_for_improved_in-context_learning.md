@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UCS: Estimating Unseen Coverage for Improved In-Context Learning
 description: >-
-  [ACL 2026][Signal & Communication][In-Context Learning] This paper proposes UCS (Unseen Coverage Selection), a training-free subset-level coverage prior based on the Smoothed Good-Turing estimator that regularizes existing ICL example selection methods by estimating the number of unobserved latent clusters in candidate example sets, improving accuracy by 2-6% on intent classification and reasoning tasks.
+  [ACL 2026][Signal & Communication][In-Context Learning] This paper proposes UCS (Unseen Coverage Selection), a training-free subset-level coverage prior based on the Smoothed Good-Turing estimator that regularizes existi…
 tags:
-  - ACL 2026
+  - "ACL 2026"
   - "Signal & Communication"
-  - In-Context Learning
-  - Example Selection
-  - Coverage Estimation
-  - Good-Turing Estimator
-  - Clustering
+  - "In-Context Learning"
+  - "Example Selection"
+  - "Coverage Estimation"
+  - "Good-Turing Estimator"
+  - "Clustering"
 date: 2025-04-17
 content_hash: 43a1ccd08136c173
 ---

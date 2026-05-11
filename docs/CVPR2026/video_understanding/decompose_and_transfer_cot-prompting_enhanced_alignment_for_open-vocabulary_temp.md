@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Decompose and Transfer: CoT-Prompting Enhanced Alignment for Open-Vocabulary Temporal Action Detection
 description: >-
-  [CVPR 2026][Video Understanding][open-vocabulary temporal action detection] This paper proposes the Phase-wise Decomposition and Alignment (PDA) framework, which leverages the CoT reasoning capability of LLMs to decompose action labels into start–middle–end phase descriptions. Through text-guided foreground filtering and adaptive phase-wise alignment, PDA achieves fine-grained action pattern transfer, attaining an Avg mAP of 46.9 on THUMOS14 OV-TAD, surpassing the previous SOTA Ti-FAD (41.2).
+  [CVPR 2026][Video Understanding][open-vocabulary temporal action detection] This paper proposes the Phase-wise Decomposition and Alignment (PDA) framework…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - open-vocabulary temporal action detection
-  - chain-of-thought prompting
-  - action phase decomposition
-  - cross-modal alignment
-  - knowledge transfer
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "open-vocabulary temporal action detection"
+  - "chain-of-thought prompting"
+  - "action phase decomposition"
+  - "cross-modal alignment"
+  - "knowledge transfer"
 date: 2026-05-08
 content_hash: b6f8289f22012787
 ---

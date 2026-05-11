@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FinMMDocR: Benchmarking Financial Multimodal Reasoning with Scenario Awareness, Document Understanding, and Multi-Step Computation
 description: >-
-  [AAAI 2026][Multimodal VLM][Financial Reasoning] This paper introduces FinMMDocR, a bilingual multimodal reasoning benchmark targeting real-world financial scenarios. It comprises 1,200 expert-annotated numerical reasoning questions spanning 12 implicit financial scenario types, 9 categories of long documents (averaging 50.8 pages), and reasoning chains averaging 11 steps. The strongest MLLM (o4-mini-high) achieves only 58% accuracy, exposing critical deficiencies of existing models in complex financial reasoning.
+  [AAAI 2026][Multimodal VLM][Financial Reasoning] This paper introduces FinMMDocR, a bilingual multimodal reasoning benchmark targeting real-world financial scenarios. It comprises 1…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Financial Reasoning
-  - Multimodal Benchmark
-  - Document Understanding
-  - Multi-Step Computation
-  - RAG
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Financial Reasoning"
+  - "Multimodal Benchmark"
+  - "Document Understanding"
+  - "Multi-Step Computation"
+  - "RAG"
 date: 2026-05-08
 content_hash: ac12a151c237702a
 ---

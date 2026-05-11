@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Think Outside the Policy: In-Context Steered Policy Optimization
 description: >-
-  [ACL 2026][LLM Reasoning][Reinforcement Learning] This paper proposes ICPO (In-Context Steered Policy Optimization), which leverages the in-context learning (ICL) capability of large language models as implicit expert guidance to expand the policy exploration space during RLVR training, without relying on reasoning trajectories from external, stronger models.
+  [ACL 2026][LLM Reasoning][Reinforcement Learning] This paper proposes ICPO (In-Context Steered Policy Optimization), which leverages the in-context learning (ICL) capability of large language models as implicit expert gu…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - Reinforcement Learning
-  - In-Context Learning Steering
-  - Policy Optimization
-  - Exploration Enhancement
-  - Mathematical Reasoning
+  - "ACL 2026"
+  - "LLM Reasoning"
+  - "Reinforcement Learning"
+  - "In-Context Learning Steering"
+  - "Policy Optimization"
+  - "Exploration Enhancement"
+  - "Mathematical Reasoning"
 date: 2026-05-08
 content_hash: e089fc4a09509aa7
 ---

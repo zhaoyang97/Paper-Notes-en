@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Forget What Matters, Keep the Rest: Selective Unlearning of Informative Tokens
 description: >-
-  [ACL 2026][LLM Safety][machine unlearning] This paper proposes Entropy-guided Token Weighting (ETW), which uses the entropy of the predictive distribution as a proxy for token informativeness. ETW selectively imposes stronger unlearning penalties on informative tokens, enabling effective removal of target knowledge while better preserving general model utility.
+  [ACL 2026][LLM Safety][machine unlearning] This paper proposes Entropy-guided Token Weighting (ETW), which uses the entropy of the predictive distribution as a proxy for token informativeness. ETW selectively imposes str…
 tags:
-  - ACL 2026
-  - LLM Safety
-  - machine unlearning
-  - informative tokens
-  - entropy guidance
-  - token weighting
-  - selective unlearning
+  - "ACL 2026"
+  - "LLM Safety"
+  - "machine unlearning"
+  - "informative tokens"
+  - "entropy guidance"
+  - "token weighting"
+  - "selective unlearning"
 date: 2026-05-08
 content_hash: 6f09395c86383170
 ---

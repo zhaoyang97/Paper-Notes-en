@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] VLM-Guided Group Preference Alignment for Diffusion-based Human Mesh Recovery
 description: >-
-  [CVPR 2026][Multimodal VLM][Human Mesh Recovery] This paper proposes a VLM-guided dual-memory self-reflective Critique Agent that generates group-level preference signals for diffusion-based human mesh recovery (HMR), followed by Group Preference Alignment fine-tuning of the diffusion model. The approach substantially improves in-the-wild HMR accuracy without requiring any 3D annotations.
+  [CVPR 2026][Multimodal VLM][Human Mesh Recovery] This paper proposes a VLM-guided dual-memory self-reflective Critique Agent that generates group-level preference signals for diffusion-based human mesh recovery (HMR)…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Human Mesh Recovery
-  - diffusion model
-  - VLM
-  - GRPO
-  - Preference Alignment
-  - Critique Agent
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Human Mesh Recovery"
+  - "diffusion model"
+  - "VLM"
+  - "GRPO"
+  - "Preference Alignment"
+  - "Critique Agent"
 date: 2026-05-08
 content_hash: 2ffaf60727ee91a4
 ---

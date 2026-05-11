@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Vanish into Thin Air: Cross-prompt Universal Adversarial Attacks for SAM2
 description: >-
-  [NeurIPS 2025][Segmentation][Adversarial Attack] This paper proposes UAP-SAM2—the first cross-prompt universal adversarial attack against SAM2—which employs a dual semantic shift framework (intra-frame semantic confusion + inter-frame semantic inconsistency) to generate a single universal perturbation that causes segmentation targets to "vanish" across different videos, frames, and prompts.
+  [NeurIPS 2025][Segmentation][Adversarial Attack] This paper proposes UAP-SAM2—the first cross-prompt universal adversarial attack against SAM2—which employs a dual semantic shift framework (intra-frame semantic confusion…
 tags:
-  - NeurIPS 2025
-  - Segmentation
-  - Adversarial Attack
-  - SAM2
-  - Universal Adversarial Perturbation
-  - Video Segmentation
-  - Semantic Shift
+  - "NeurIPS 2025"
+  - "Segmentation"
+  - "Adversarial Attack"
+  - "SAM2"
+  - "Universal Adversarial Perturbation"
+  - "Video Segmentation"
+  - "Semantic Shift"
 date: 2026-05-08
 content_hash: 7c1066435d745167
 ---

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Oversmoothing, Oversquashing, Heterophily, Long-Range, and More: Demystifying Common Beliefs in Graph Machine Learning
 description: >-
-   This paper systematically examines nine common beliefs in graph machine learning concerning oversmoothing, oversquashing, homophily/heterophily, and long-range dependencies. Through concise counterexamples, each belief is refuted. Notably, "oversquashing" is decomposed into two independent concepts—**computational bottleneck** and **topological bottleneck**—thereby clarifying widespread conceptual confusion in the field.
+  This paper systematically examines nine common beliefs in graph machine learning concerning oversmoothing, oversquashing, homophily/heterophily, and long-range dependencies. Through concise counterexamples…
 tags:
 
 date: 2026-05-08

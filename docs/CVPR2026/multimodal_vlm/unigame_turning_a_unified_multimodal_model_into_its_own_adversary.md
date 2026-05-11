@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UniGame: Turning a Unified Multimodal Model Into Its Own Adversary
 description: >-
-  [CVPR 2026][Multimodal VLM][unified multimodal model] UniGame proposes the first self-adversarial post-training framework for unified multimodal models (UMMs). By attaching a lightweight perturber at the shared visual token interface, the generation branch actively constructs semantically consistent adversarial samples to challenge the understanding branch, forming a minimax self-play game that substantially improves consistency (+4.6%), understanding (+3.6%), generation, and robustness.
+  [CVPR 2026][Multimodal VLM][unified multimodal model] UniGame proposes the first self-adversarial post-training framework for unified multimodal models (UMMs). By attaching a lightweight perturber at the shared visual to…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - unified multimodal model
-  - self-adversarial training
-  - consistency
-  - post-training
-  - minimax optimization
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "unified multimodal model"
+  - "self-adversarial training"
+  - "consistency"
+  - "post-training"
+  - "minimax optimization"
 date: 2026-05-08
 content_hash: 1295ab55a6c6d3c3
 ---

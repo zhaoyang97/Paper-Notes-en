@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Chain-of-Models Pre-Training: Rethinking Training Acceleration of Vision Foundation Models
 description: >-
-  [CVPR 2026][Self-Supervised Learning][model chain] This paper proposes Chain-of-Models Pre-Training (CoM-PT), which arranges vision foundation models in a size-ordered "model chain" and progressively accelerates training via inverse knowledge transfer (weight initialization + feature distillation) from smaller to larger models, achieving lossless training acceleration whose efficiency improves as the model family grows.
+  [CVPR 2026][Self-Supervised Learning][model chain] This paper proposes Chain-of-Models Pre-Training (CoM-PT), which arranges vision foundation models in a size-ordered "model chain" and progressively accelerates training…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - model chain
-  - pre-training acceleration
-  - inverse knowledge transfer
-  - CLIP
-  - vision foundation models
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "model chain"
+  - "pre-training acceleration"
+  - "inverse knowledge transfer"
+  - "CLIP"
+  - "vision foundation models"
 date: 2026-05-08
 content_hash: 73701941f067130c
 ---

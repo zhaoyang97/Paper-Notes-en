@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unveiling the Spatial-Temporal Effective Receptive Fields of Spiking Neural Networks
 description: >-
-  [NeurIPS 2025][Segmentation][spiking neural networks] This paper proposes a Spatial-Temporal Effective Receptive Field (ST-ERF) analysis framework to diagnose the bottleneck of Transformer-based SNNs in visual long-sequence modeling—namely, the lack of a global receptive field—and accordingly designs two channel mixers, MLPixer and SRB, to enhance the global modeling capability of SNNs.
+  [NeurIPS 2025][Segmentation][spiking neural networks] This paper proposes a Spatial-Temporal Effective Receptive Field (ST-ERF) analysis framework to diagnose the bottleneck of Transformer-based SNNs in visual long-seque…
 tags:
-  - NeurIPS 2025
-  - Segmentation
-  - spiking neural networks
-  - effective receptive field
-  - Transformer
-  - channel mixer
-  - visual long-sequence modeling
+  - "NeurIPS 2025"
+  - "Segmentation"
+  - "spiking neural networks"
+  - "effective receptive field"
+  - "Transformer"
+  - "channel mixer"
+  - "visual long-sequence modeling"
 date: 2026-05-08
 content_hash: 3de298fd6550d705
 ---

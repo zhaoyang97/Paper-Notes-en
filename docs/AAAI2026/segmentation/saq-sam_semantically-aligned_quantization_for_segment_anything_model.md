@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SAQ-SAM: Semantically-Aligned Quantization for Segment Anything Model
 description: >-
-  [AAAI 2026][Segmentation][SAM] This paper proposes SAQ-SAM, which improves post-training quantization (PTQ) of SAM from a semantic alignment perspective. It introduces Perceptual Consistency Clipping (PCC) to handle extreme outliers in the mask decoder, and Prompt-Aware Reconstruction (PAR) to preserve semantic alignment between image and prompt interactions.
+  [AAAI 2026][Segmentation][SAM] This paper proposes SAQ-SAM, which improves post-training quantization (PTQ) of SAM from a semantic alignment perspective. It introduces Perceptual Consistency Clipping (PCC) to handle extr…
 tags:
-  - AAAI 2026
-  - Segmentation
-  - SAM
-  - post-training quantization
-  - semantic alignment
-  - attention-aware
-  - model compression
+  - "AAAI 2026"
+  - "Segmentation"
+  - "SAM"
+  - "post-training quantization"
+  - "semantic alignment"
+  - "attention-aware"
+  - "model compression"
 date: 2026-05-08
 content_hash: 375ef791504a6b61
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] FedVG: Gradient-Guided Aggregation for Enhanced Federated Learning
 description: >-
-  [CVPR2026][Medical Imaging][Federated Learning] FedVG proposes to score each client using layer-wise gradient norms computed on a global validation set, assigning higher aggregation weights to clients whose gradients are flatter (i.e., smaller in norm), thereby substantially improving generalization performance of federated learning under high data heterogeneity.
+  [CVPR2026][Medical Imaging][Federated Learning] FedVG proposes to score each client using layer-wise gradient norms computed on a global validation set…
 tags:
-  - CVPR2026
-  - Medical Imaging
-  - Federated Learning
-  - Gradient Aggregation
-  - Data Heterogeneity
-  - Validation Gradient
-  - Fisher Information Matrix
-  - Medical Image Classification
+  - "CVPR2026"
+  - "Medical Imaging"
+  - "Federated Learning"
+  - "Gradient Aggregation"
+  - "Data Heterogeneity"
+  - "Validation Gradient"
+  - "Fisher Information Matrix"
+  - "Medical Image Classification"
 date: 2026-05-08
 content_hash: 48f893dac89203ed
 ---

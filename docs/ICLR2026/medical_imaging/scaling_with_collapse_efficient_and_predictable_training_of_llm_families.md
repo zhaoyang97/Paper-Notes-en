@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Scaling with Collapse: Efficient and Predictable Training of LLM Families
 description: >-
-  [ICLR 2026][Medical Imaging][training loss curve collapse] This paper demonstrates that the training loss curves (TLCs) of LLM families "collapse" onto a single universal curve when optimization hyperparameters are matched to the data budget, and leverages this phenomenon for two practical applications: (1) deviation from collapse as an early diagnostic signal for training pathologies, and (2) the predictability of the collapse curve enabling early stopping for large-scale hyperparameter tuning.
+  [ICLR 2026][Medical Imaging][training loss curve collapse] This paper demonstrates that the training loss curves (TLCs) of LLM families "collapse" onto a single universal curve when optimization hyperparameters are match…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - training loss curve collapse
-  - hyperparameter scaling
-  - training diagnostics
-  - early stopping
-  - Cerebras
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "training loss curve collapse"
+  - "hyperparameter scaling"
+  - "training diagnostics"
+  - "early stopping"
+  - "Cerebras"
 date: 2026-05-08
 content_hash: 9c8f371aab2c2d82
 ---

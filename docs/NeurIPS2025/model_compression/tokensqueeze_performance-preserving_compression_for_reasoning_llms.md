@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TokenSqueeze: Performance-Preserving Compression for Reasoning LLMs
 description: >-
-  [NeurIPS 2025][Model Compression][Reasoning Compression] TokenSqueeze proposes a three-stage pipeline — adaptive reasoning depth selection, intra-step linguistic refinement (with KL divergence constraints), and length-aware preference optimization — achieving 50% token compression of reasoning chains without accuracy degradation, using only self-generated data.
+  [NeurIPS 2025][Model Compression][Reasoning Compression] TokenSqueeze proposes a three-stage pipeline — adaptive reasoning depth selection, intra-step linguistic refinement (with KL divergence constraints)…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Reasoning Compression
-  - Chain-of-Thought
-  - Preference Learning
-  - Long2Short
-  - Large Language Models
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Reasoning Compression"
+  - "Chain-of-Thought"
+  - "Preference Learning"
+  - "Long2Short"
+  - "Large Language Models"
 date: 2026-05-08
 content_hash: 28d15b6a98b8e47e
 ---

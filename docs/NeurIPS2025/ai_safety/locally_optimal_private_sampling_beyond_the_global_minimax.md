@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Locally Optimal Private Sampling: Beyond the Global Minimax
 description: >-
-  [NeurIPS 2025][AI Safety][Local Differential Privacy] Under local differential privacy (LDP), this paper proposes a **local minimax** framework that leverages neighborhood constraints defined by a public distribution $P_0$ to derive closed-form optimal samplers, achieving **consistent and significant improvements over the global minimax sampler** both theoretically and empirically.
+  [NeurIPS 2025][AI Safety][Local Differential Privacy] Under local differential privacy (LDP), this paper proposes a **local minimax** framework that leverages neighborhood constraints defined by a public distribution $P_…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - Local Differential Privacy
-  - Private Sampling
-  - Minimax Optimality
-  - $f$-Divergence
-  - Public Data
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "Local Differential Privacy"
+  - "Private Sampling"
+  - "Minimax Optimality"
+  - "$f$-Divergence"
+  - "Public Data"
 date: 2026-05-08
 content_hash: 3de63e373cb3c793
 ---

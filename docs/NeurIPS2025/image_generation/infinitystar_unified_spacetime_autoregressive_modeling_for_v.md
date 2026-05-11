@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] InfinityStar: Unified Spacetime AutoRegressive Modeling for Visual Generation
 description: >-
-  [Image Generation] This paper proposes InfinityStar, the first purely discrete autoregressive model capable of generating industrial-grade 720p video. Through spacetime pyramid modeling, it unifies T2I/T2V/I2V/interactive long video generation, achieving a VBench score of 83.74 that surpasses HunyuanVideo, with inference speeds 10–32× faster than diffusion models.
+  [Image Generation] This paper proposes InfinityStar, the first purely discrete autoregressive model capable of generating industrial-grade 720p video. Through spacetime pyramid modeling…
 tags:
-  - Image Generation
+  - "Image Generation"
 date: 2026-05-08
 content_hash: 6841b67546af92ff
 ---

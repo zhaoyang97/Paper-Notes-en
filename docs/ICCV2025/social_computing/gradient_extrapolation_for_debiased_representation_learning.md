@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Gradient Extrapolation for Debiased Representation Learning
 description: >-
-  [ICCV 2025][Social Computing][debiasing] This paper proposes GERNE, a method that constructs two batches with different degrees of spurious correlation and performs linear extrapolation on their gradients to guide the model toward learning debiased representations, outperforming state-of-the-art methods under both known and unknown attribute settings.
+  [ICCV 2025][Social Computing][debiasing] This paper proposes GERNE, a method that constructs two batches with different degrees of spurious correlation and performs linear extrapolation on their gradients to guide the mo…
 tags:
-  - ICCV 2025
-  - Social Computing
-  - debiasing
-  - spurious correlations
-  - gradient extrapolation
-  - robustness
-  - representation learning
+  - "ICCV 2025"
+  - "Social Computing"
+  - "debiasing"
+  - "spurious correlations"
+  - "gradient extrapolation"
+  - "robustness"
+  - "representation learning"
 date: 2026-05-08
 content_hash: 2ce86bc3d4388539
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MPD-SGR: Robust Spiking Neural Networks with Membrane Potential Distribution-Driven Surrogate Gradient Regularization
 description: >-
-  [AAAI 2026][AI Safety][Spiking Neural Networks] This work theoretically establishes a connection between SNN robustness error and surrogate gradient (SG) magnitude, demonstrating that reducing the overlap between the membrane potential distribution (MPD) and the effective region of the SG function can effectively decrease sensitivity to adversarial perturbations. Based on this insight, the paper proposes the MPD-SGR regularization method, which substantially outperforms existing SNN defense methods under both vanilla training and adversarial training settings.
+  [AAAI 2026][AI Safety][Spiking Neural Networks] This work theoretically establishes a connection between SNN robustness error and surrogate gradient (SG) magnitude…
 tags:
-  - AAAI 2026
-  - AI Safety
-  - Spiking Neural Networks
-  - Adversarial Robustness
-  - Surrogate Gradient
-  - Membrane Potential Distribution
-  - Regularization
+  - "AAAI 2026"
+  - "AI Safety"
+  - "Spiking Neural Networks"
+  - "Adversarial Robustness"
+  - "Surrogate Gradient"
+  - "Membrane Potential Distribution"
+  - "Regularization"
 date: 2026-05-08
 content_hash: 2b13eaf89ad54d3b
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Better Tokens for Better 3D: Advancing Vision-Language Modeling in 3D Medical Imaging
 description: >-
-  [NeurIPS 2025][Multimodal VLM][3D medical VLM] This paper proposes BTB3D, a 3D CT tokenizer based on causal convolutional codec, 3D Haar wavelet compression, and a three-stage progressive training strategy. It achieves substantial state-of-the-art improvements on two downstream tasks—radiology report generation and text-conditioned CT synthesis—demonstrating that "better tokens matter more than larger language models."
+  [NeurIPS 2025][Multimodal VLM][3D medical VLM] This paper proposes BTB3D, a 3D CT tokenizer based on causal convolutional codec, 3D Haar wavelet compression…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - 3D medical VLM
-  - CT tokenization
-  - causal convolution
-  - wavelet transform
-  - report generation
-  - text-to-CT synthesis
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "3D medical VLM"
+  - "CT tokenization"
+  - "causal convolution"
+  - "wavelet transform"
+  - "report generation"
+  - "text-to-CT synthesis"
 date: 2026-05-08
 content_hash: a73e797ca849d6b6
 ---

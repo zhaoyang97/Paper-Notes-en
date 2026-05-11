@@ -2,13 +2,13 @@
 title: >-
   [Paper Note] Axis-Aligned Document Dewarping
 description: >-
-  [AAAI 2026][LLM Evaluation][document dewarping] This paper proposes to exploit the inherent axis-aligned geometric property of planar documents, systematically incorporating axis-alignment constraints across training, inference, and evaluation stages, achieving state-of-the-art document rectification performance and introducing a new evaluation metric, AAD.
+  [AAAI 2026][LLM Evaluation][document dewarping] This paper proposes to exploit the inherent axis-aligned geometric property of planar documents, systematically incorporating axis-alignment constraints across training…
 tags:
-  - AAAI 2026
-  - LLM Evaluation
-  - document dewarping
-  - geometric constraint
-  - image rectification
+  - "AAAI 2026"
+  - "LLM Evaluation"
+  - "document dewarping"
+  - "geometric constraint"
+  - "image rectification"
 date: 2026-05-08
 content_hash: e5a6015c2fbf4836
 ---

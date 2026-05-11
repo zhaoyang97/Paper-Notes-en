@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] From Cradle to Cane: A Two-Pass Framework for High-Fidelity Lifespan Face Aging
 description: >-
-  [NeurIPS 2025][Image Generation][Face aging] This paper proposes Cradle2Cane, a two-pass face aging framework: the first pass achieves precise age control via Adaptive Noise Injection (AdaNI), and the second pass reinforces identity consistency through dual identity embeddings (IDEmb) comprising SVR-ArcFace and Rotate-CLIP. The framework achieves an optimal balance between age accuracy and identity preservation across the full lifespan (0–80 years).
+  [NeurIPS 2025][Image Generation][Face aging] This paper proposes Cradle2Cane, a two-pass face aging framework: the first pass achieves precise age control via Adaptive Noise Injection (AdaNI)…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Face aging
-  - diffusion models
-  - identity preservation
-  - adaptive noise injection
-  - SDXL-Turbo
-  - age-identity trade-off
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Face aging"
+  - "diffusion models"
+  - "identity preservation"
+  - "adaptive noise injection"
+  - "SDXL-Turbo"
+  - "age-identity trade-off"
 date: 2026-05-08
 content_hash: b13c8419a6b03bcd
 ---

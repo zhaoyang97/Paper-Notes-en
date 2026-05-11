@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] When One Moment Isn't Enough: Multi-Moment Retrieval with Cross-Moment Interactions
 description: >-
-  [NeurIPS 2025][Video Understanding][Multi-Moment Retrieval] This paper proposes the QV-M2 dataset (the first fully human-annotated multi-moment retrieval benchmark) and the FlashMMR framework (incorporating a Post-Verification Module), extending video moment retrieval from single-moment to multi-moment scenarios and establishing a standardized evaluation protocol for multi-moment retrieval.
+  [NeurIPS 2025][Video Understanding][Multi-Moment Retrieval] This paper proposes the QV-M2 dataset (the first fully human-annotated multi-moment retrieval benchmark) and the FlashMMR framework (incorporating a Post-Verifi…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
-  - Multi-Moment Retrieval
-  - Video Temporal Grounding
-  - Dataset
-  - Post-Verification Module
-  - Moment Retrieval
+  - "NeurIPS 2025"
+  - "Video Understanding"
+  - "Multi-Moment Retrieval"
+  - "Video Temporal Grounding"
+  - "Dataset"
+  - "Post-Verification Module"
+  - "Moment Retrieval"
 date: 2026-05-08
 content_hash: a6ca3b5076890df6
 ---

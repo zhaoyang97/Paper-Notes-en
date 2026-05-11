@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Understanding and Mitigating Spurious Signal Amplification in Test-Time Reinforcement Learning for Math Reasoning
 description: >-
-  [ACL 2026][Image Restoration][Test-Time Reinforcement Learning] This paper systematically analyzes sources and amplification mechanisms of spurious signals in test-time RL (TTRL) — mid-frequency answers constitute the ambiguous zone as the primary noise source, while GRPO's within-group normalization amplifies these spurious signals — and proposes DDRL with balanced sampling, fixed advantage values, and consensus offline refinement, achieving 15.3% relative improvement on Qwen2.5-Math-1.5B.
+  [ACL 2026][Image Restoration][Test-Time Reinforcement Learning] This paper systematically analyzes sources and amplification mechanisms of spurious signals in test-time RL (TTRL) — mid-frequency answers constitute the am…
 tags:
-  - ACL 2026
-  - Image Restoration
-  - Test-Time Reinforcement Learning
-  - Pseudo-Label Noise
-  - GRPO Bias
-  - Denoising Debiasing
-  - Math Reasoning
+  - "ACL 2026"
+  - "Image Restoration"
+  - "Test-Time Reinforcement Learning"
+  - "Pseudo-Label Noise"
+  - "GRPO Bias"
+  - "Denoising Debiasing"
+  - "Math Reasoning"
 content_hash: 8dd256707db895b9
 ---
 

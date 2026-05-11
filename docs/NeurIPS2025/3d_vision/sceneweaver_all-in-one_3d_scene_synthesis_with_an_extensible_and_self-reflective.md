@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SceneWeaver: All-in-One 3D Scene Synthesis with an Extensible and Self-Reflective Agent
 description: >-
-  [NeurIPS 2025][3D Vision][3D scene synthesis] This paper proposes SceneWeaver, the first reflective agent framework for 3D scene synthesis, which unifies multiple scene generation paradigms through a standardized and extensible tool interface. By employing a reason-act-reflect closed-loop for iterative refinement, it comprehensively outperforms existing methods in physical plausibility, visual realism, and semantic alignment.
+  [NeurIPS 2025][3D Vision][3D scene synthesis] This paper proposes SceneWeaver, the first reflective agent framework for 3D scene synthesis…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - 3D scene synthesis
-  - LLM agent
-  - self-reflection
-  - tool calling
-  - embodied AI
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "3D scene synthesis"
+  - "LLM agent"
+  - "self-reflection"
+  - "tool calling"
+  - "embodied AI"
 date: 2026-05-08
 content_hash: 919141a9f697d955
 ---

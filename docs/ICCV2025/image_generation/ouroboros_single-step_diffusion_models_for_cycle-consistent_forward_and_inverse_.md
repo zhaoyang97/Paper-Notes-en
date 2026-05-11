@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Ouroboros: Single-step Diffusion Models for Cycle-consistent Forward and Inverse Rendering
 description: >-
-  [ICCV 2025][Image Generation][Inverse Rendering] This paper presents Ouroboros, a unified framework comprising two single-step diffusion models (for inverse rendering RGB→X and forward rendering X→RGB respectively) that are jointly trained with cycle-consistency to enforce bidirectional rendering coherence. The method achieves state-of-the-art performance across multiple datasets while running 50× faster than multi-step diffusion baselines, and can be applied to video decomposition in a training-free manner.
+  [ICCV 2025][Image Generation][Inverse Rendering] This paper presents Ouroboros, a unified framework comprising two single-step diffusion models (for inverse rendering RGB→X and forward rendering X→RGB respectively) that…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Inverse Rendering
-  - Forward Rendering
-  - Cycle Consistency
-  - Single-step Diffusion
-  - Intrinsic Image Decomposition
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Inverse Rendering"
+  - "Forward Rendering"
+  - "Cycle Consistency"
+  - "Single-step Diffusion"
+  - "Intrinsic Image Decomposition"
 date: 2026-05-08
 content_hash: 1cb9b0d4e9c0d198
 ---

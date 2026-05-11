@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Explicit Continuous Motion Representation for Dynamic Gaussian Splatting from Monocular Videos
 description: >-
-  [CVPR 2026][3D Vision][Dynamic Gaussian Splatting] This paper proposes to explicitly model the continuous positional and rotational deformation trajectories of dynamic Gaussians via adaptive SE(3) B-spline motion bases, combined with a soft segment reconstruction strategy and multi-view diffusion model priors, achieving high-quality novel view synthesis of dynamic scenes from monocular video. The method surpasses existing approaches on both the iPhone and NVIDIA datasets.
+  [CVPR 2026][3D Vision][Dynamic Gaussian Splatting] This paper proposes to explicitly model the continuous positional and rotational deformation trajectories of dynamic Gaussians via adaptive SE(3) B-spline motion bases…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Dynamic Gaussian Splatting
-  - Monocular Video
-  - SE(3) B-Spline
-  - Motion Representation
-  - Novel View Synthesis
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Dynamic Gaussian Splatting"
+  - "Monocular Video"
+  - "SE(3) B-Spline"
+  - "Motion Representation"
+  - "Novel View Synthesis"
 date: 2026-05-08
 content_hash: 1770996c8695b14b
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Stackelberg Coupling of Online Representation Learning and Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Stackelberg Game] This paper proposes SCORER, a framework that models representation learning and value function learning in Deep Q-Learning as a Stackelberg game. Through two-timescale updates—where the Q-network acts as the slow-updating leader and the encoder as the fast-updating follower—SCORER achieves stable co-adaptation without modifying the network architecture.
+  [ICLR 2026][Reinforcement Learning][Stackelberg Game] This paper proposes SCORER, a framework that models representation learning and value function learning in Deep Q-Learning as a Stackelberg game. Through two-timescal…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Stackelberg Game
-  - Representation Learning
-  - Deep Q-Learning
-  - Two-Timescale
-  - Variance Minimization
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Stackelberg Game"
+  - "Representation Learning"
+  - "Deep Q-Learning"
+  - "Two-Timescale"
+  - "Variance Minimization"
 date: 2026-05-08
 content_hash: c6df223b48514a2f
 ---

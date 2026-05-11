@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Thermodynamics of Reinforcement Learning Curricula
 description: >-
-  [ICLR 2026][Reinforcement Learning][Curriculum Learning] This paper formalizes curriculum learning in RL as a geodesic optimization problem over task space using a framework of excess work minimization drawn from non-equilibrium thermodynamics, and derives the MEW temperature annealing algorithm based on a friction tensor, outperforming standard SAC temperature scheduling on the MuJoCo Humanoid task.
+  [ICLR 2026][Reinforcement Learning][Curriculum Learning] This paper formalizes curriculum learning in RL as a geodesic optimization problem over task space using a framework of excess work minimization drawn from non-equ…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Curriculum Learning
-  - Non-equilibrium Thermodynamics
-  - Maximum Entropy RL
-  - Temperature Annealing
-  - Riemannian Geometry
-  - Geodesics
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Curriculum Learning"
+  - "Non-equilibrium Thermodynamics"
+  - "Maximum Entropy RL"
+  - "Temperature Annealing"
+  - "Riemannian Geometry"
+  - "Geodesics"
 date: 2026-05-08
 content_hash: 0d37dc2fa6d7a1fd
 ---

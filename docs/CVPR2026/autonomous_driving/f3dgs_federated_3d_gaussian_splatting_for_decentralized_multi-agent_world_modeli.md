@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] F3DGS: Federated 3D Gaussian Splatting for Decentralized Multi-Agent World Modeling
 description: >-
-  [CVPR 2026][Autonomous Driving][Federated Learning] This paper proposes F3DGS, the first method to apply a federated learning framework to 3DGS, enabling decentralized multi-agent 3D reconstruction through frozen geometry and visibility-aware aggregation without sharing raw data.
+  [CVPR 2026][Autonomous Driving][Federated Learning] This paper proposes F3DGS, the first method to apply a federated learning framework to 3DGS…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Federated Learning
-  - 3D Gaussian Splatting
-  - Multi-Agent
-  - Distributed Reconstruction
-  - Visibility-Weighted Aggregation
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Federated Learning"
+  - "3D Gaussian Splatting"
+  - "Multi-Agent"
+  - "Distributed Reconstruction"
+  - "Visibility-Weighted Aggregation"
 date: 2026-05-08
 content_hash: 69712a22147fd28d
 ---

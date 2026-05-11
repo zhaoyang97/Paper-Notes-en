@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] GaussRender: Learning 3D Occupancy with Gaussian Rendering
 description: >-
-  [ICCV 2025][Autonomous Driving][3D Occupancy Prediction] This paper proposes GaussRender, a plug-and-play differentiable Gaussian rendering module that projects predicted and ground-truth 3D occupancy onto 2D views and enforces semantic and depth consistency constraints, thereby eliminating visual artifacts such as floating voxels. The approach achieves significant improvements in geometric fidelity across multiple benchmarks, with particularly pronounced gains on surface-sensitive metrics such as RayIoU.
+  [ICCV 2025][Autonomous Driving][3D Occupancy Prediction] This paper proposes GaussRender, a plug-and-play differentiable Gaussian rendering module that projects predicted and ground-truth 3D occupancy onto 2D views and e…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - 3D Occupancy Prediction
-  - Gaussian Splatting
-  - Differentiable Rendering
-  - Projective Consistency
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "3D Occupancy Prediction"
+  - "Gaussian Splatting"
+  - "Differentiable Rendering"
+  - "Projective Consistency"
 date: 2026-05-08
 content_hash: 1d2dd7d25acf7310
 ---

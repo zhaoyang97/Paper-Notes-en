@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Online Reasoning Video Segmentation with Just-in-Time Digital Twins
 description: >-
-  [ICCV 2025][Segmentation][Reasoning Segmentation] This paper proposes a multi-agent framework based on the concept of "Just-in-Time Digital Twins" that decouples perception from reasoning. Without any LLM fine-tuning, the framework enables online video reasoning segmentation and comprehensively outperforms existing methods across semantic, spatial, and temporal reasoning tasks.
+  [ICCV 2025][Segmentation][Reasoning Segmentation] This paper proposes a multi-agent framework based on the concept of "Just-in-Time Digital Twins" that decouples perception from reasoning. Without any LLM fine-tuning…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - Reasoning Segmentation
-  - Digital Twin
-  - Video Understanding
-  - Multi-Agent Framework
-  - Online Processing
+  - "ICCV 2025"
+  - "Segmentation"
+  - "Reasoning Segmentation"
+  - "Digital Twin"
+  - "Video Understanding"
+  - "Multi-Agent Framework"
+  - "Online Processing"
 date: 2026-05-08
 content_hash: eca4e214e4e4a60c
 ---

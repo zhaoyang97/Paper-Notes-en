@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] xLSTM Scaling Laws: Competitive Performance with Linear Time-Complexity
 description: >-
-  [ICLR2026][LLM Efficiency][scaling laws] This paper systematically compares the scaling laws of xLSTM and Transformer, demonstrating that xLSTM strictly dominates Transformer of the same scale on the training loss–compute Pareto frontier, in the overtrained regime, and in inference speed, with the advantage growing as context length increases.
+  [ICLR2026][LLM Efficiency][scaling laws] This paper systematically compares the scaling laws of xLSTM and Transformer, demonstrating that xLSTM strictly dominates Transformer of the same scale on the training loss–comput…
 tags:
-  - ICLR2026
-  - LLM Efficiency
-  - scaling laws
-  - xLSTM
-  - linear complexity
-  - Transformer comparison
-  - inference efficiency
+  - "ICLR2026"
+  - "LLM Efficiency"
+  - "scaling laws"
+  - "xLSTM"
+  - "linear complexity"
+  - "Transformer comparison"
+  - "inference efficiency"
 date: 2026-05-08
 content_hash: a0184355aab2b9b1
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mask2IV: Interaction-Centric Video Generation via Mask Trajectories
 description: >-
-  [AAAI 2026][Video Generation][Interaction video generation] This paper proposes Mask2IV, a two-stage decoupled framework that first predicts mask motion trajectories of the interactor and object, then generates video conditioned on these trajectories. The approach enables controllable, interaction-centric video generation without dense mask annotations, supporting both human-object interaction and robot manipulation scenarios.
+  [AAAI 2026][Video Generation][Interaction video generation] This paper proposes Mask2IV, a two-stage decoupled framework that first predicts mask motion trajectories of the interactor and object…
 tags:
-  - AAAI 2026
-  - Video Generation
-  - Interaction video generation
-  - mask trajectories
-  - human-object interaction
-  - robot manipulation
-  - two-stage diffusion
+  - "AAAI 2026"
+  - "Video Generation"
+  - "Interaction video generation"
+  - "mask trajectories"
+  - "human-object interaction"
+  - "robot manipulation"
+  - "two-stage diffusion"
 date: 2026-05-08
 content_hash: dc5de1fba40385e6
 ---

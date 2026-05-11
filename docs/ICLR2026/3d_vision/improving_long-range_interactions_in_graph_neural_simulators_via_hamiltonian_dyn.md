@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Improving Long-Range Interactions in Graph Neural Simulators via Hamiltonian Dynamics
 description: >-
-  [ICLR 2026][3D Vision][Graph Neural Simulators] This paper proposes Information-preserving Graph Neural Simulators (IGNS), which leverage port-Hamiltonian dynamical structure to prevent information dissipation on graphs. Combined with warmup initialization, geometric encoding, and multi-step training objectives, IGNS consistently outperforms existing graph neural simulators across 6 physics simulation benchmarks.
+  [ICLR 2026][3D Vision][Graph Neural Simulators] This paper proposes Information-preserving Graph Neural Simulators (IGNS), which leverage port-Hamiltonian dynamical structure to prevent information dissipation on graphs.…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Graph Neural Simulators
-  - Hamiltonian Dynamics
-  - Long-Range Interactions
-  - Port-Hamiltonian
-  - Multi-Step Training
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Graph Neural Simulators"
+  - "Hamiltonian Dynamics"
+  - "Long-Range Interactions"
+  - "Port-Hamiltonian"
+  - "Multi-Step Training"
 date: 2026-05-08
 content_hash: 34dc827d9307a8c1
 ---

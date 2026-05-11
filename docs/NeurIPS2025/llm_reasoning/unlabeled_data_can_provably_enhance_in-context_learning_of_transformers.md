@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Unlabeled Data Can Provably Enhance In-Context Learning of Transformers
 description: >-
-  [NeurIPS 2025][LLM Reasoning][in-context learning] This paper proposes an augmented ICL framework in which the prompt contains both a small set of labeled examples and a large collection of unlabeled examples. It theoretically proves that a multi-layer Transformer, via chain-of-thought (CoT) reasoning, can simulate the EM algorithm to extract information from unlabeled data, improving the classification excess risk from $\mathcal{O}(1/\sqrt{N})$ to $\mathcal{O}(1/\sqrt{N + \text{poly}(M)})$.
+  [NeurIPS 2025][LLM Reasoning][in-context learning] This paper proposes an augmented ICL framework in which the prompt contains both a small set of labeled examples and a large collection of unlabeled examples. It theoret…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - in-context learning
-  - unlabeled data
-  - semi-supervised learning
-  - EM algorithm
-  - chain-of-thought
-  - transformer theory
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "in-context learning"
+  - "unlabeled data"
+  - "semi-supervised learning"
+  - "EM algorithm"
+  - "chain-of-thought"
+  - "transformer theory"
 date: 2026-05-08
 content_hash: b8001dcf4c599f49
 ---

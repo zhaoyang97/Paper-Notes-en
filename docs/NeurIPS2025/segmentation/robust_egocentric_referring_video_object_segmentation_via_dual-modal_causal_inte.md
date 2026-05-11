@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Robust Egocentric Referring Video Object Segmentation via Dual-Modal Causal Intervention
 description: >-
-  [NeurIPS 2025][Segmentation][Egocentric video segmentation] This paper proposes CERES, a framework that addresses language bias and visual confusion in egocentric referring video object segmentation (Ego-RVOS) via dual-modal causal intervention — language backdoor adjustment to eliminate dataset statistical bias, and depth-guided visual frontdoor adjustment to construct causal mediators — achieving SOTA on VISOR/VOST/VSCOS.
+  [NeurIPS 2025][Segmentation][Egocentric video segmentation] This paper proposes CERES, a framework that addresses language bias and visual confusion in egocentric referring video object segmentation (Ego-RVOS) via dual-m…
 tags:
-  - NeurIPS 2025
-  - Segmentation
-  - Egocentric video segmentation
-  - causal inference
-  - backdoor adjustment
-  - frontdoor adjustment
-  - depth guidance
+  - "NeurIPS 2025"
+  - "Segmentation"
+  - "Egocentric video segmentation"
+  - "causal inference"
+  - "backdoor adjustment"
+  - "frontdoor adjustment"
+  - "depth guidance"
 date: 2026-05-08
 content_hash: fbdeebec933a7c2f
 ---

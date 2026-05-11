@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Spatio-Temporal Directed Graph Learning for Account Takeover Fraud Detection
 description: >-
-  [NeurIPS 2025 (Workshop on New Perspective in Graph Machine Learning)][Graph Learning][GraphSAGE] This paper proposes ATLAS, a framework that reformulates account takeover (ATO) fraud detection as a node classification problem on spatio-temporal directed graphs. By constructing causal directed graphs via temporal windows and nearest-neighbor constraints, and combining lag-aware label propagation with a GraphSAGE encoder, ATLAS achieves a +6.38% AUC improvement and over 50% reduction in user friction on a production graph at Capital One with 100M nodes and 1B edges.
+  [NeurIPS 2025 (Workshop on New Perspective in Graph Machine Learning)][Graph Learning][GraphSAGE] This paper proposes ATLAS, a framework that reformulates account takeover (ATO) fraud detection as a node classification p…
 tags:
-  - NeurIPS 2025 (Workshop on New Perspective in Graph Machine Learning)
-  - Graph Learning
-  - GraphSAGE
-  - spatio-temporal directed graph
-  - fraud detection
-  - label propagation
-  - causal inference
+  - "NeurIPS 2025 (Workshop on New Perspective in Graph Machine Learning)"
+  - "Graph Learning"
+  - "GraphSAGE"
+  - "spatio-temporal directed graph"
+  - "fraud detection"
+  - "label propagation"
+  - "causal inference"
 date: 2026-05-08
 content_hash: d36ce0e445e67d67
 ---

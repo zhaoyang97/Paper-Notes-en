@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Copresheaf Topological Neural Networks: A Generalized Deep Learning Framework
 description: >-
-  [NeurIPS 2025][3D Vision][Topological Neural Networks] This paper proposes Copresheaf Topological Neural Networks (CTNNs), which leverage the algebraic-topological notion of copresheaves to define directional, heterogeneous message passing on combinatorial complexes. The framework unifies CNNs, GNNs, Transformers, Sheaf Neural Networks, and Topological Neural Networks as special cases, and surpasses conventional baselines on physics simulation, graph classification, and higher-order complex classification tasks.
+  [NeurIPS 2025][3D Vision][Topological Neural Networks] This paper proposes Copresheaf Topological Neural Networks (CTNNs), which leverage the algebraic-topological notion of copresheaves to define directional…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Topological Neural Networks
-  - Copresheaf
-  - Combinatorial Complex
-  - Message Passing
-  - Anisotropic Representation Learning
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Topological Neural Networks"
+  - "Copresheaf"
+  - "Combinatorial Complex"
+  - "Message Passing"
+  - "Anisotropic Representation Learning"
 date: 2026-05-08
 content_hash: fafe389d02948055
 ---

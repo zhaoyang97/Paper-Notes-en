@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Windsock is Dancing: Adaptive Multimodal Retrieval-Augmented Generation
 description: >-
-  [NeurIPS 2025][Multimodal RAG] This paper proposes a dual-component framework (Windsock + DANCE) to address three core challenges in multimodal RAG: the Windsock module adaptively determines **when to retrieve** and **which modality to retrieve** (text/image/none) based on the query; the DANCE instruction fine-tuning strategy improves **how to utilize** retrieved information by dynamically selecting the model's weakest modality for noise-robust training. The overall framework achieves a 17.07% performance improvement while reducing retrieval calls by 8.95%.
+  [NeurIPS 2025][Information Retrieval & RAG][Multimodal RAG] This paper proposes a dual-component framework (Windsock + DANCE) to address three core challenges in multimodal RAG: the Windsock module adaptively determines…
 tags:
-  - NeurIPS 2025
-  - Multimodal RAG
-  - Adaptive Retrieval
-  - Modality Selection
-  - Noise-Robust Training
-  - Retrieval-Augmented Generation
+  - "NeurIPS 2025"
+  - "Information Retrieval & RAG"
+  - "Multimodal RAG"
+  - "Adaptive Retrieval"
+  - "Modality Selection"
+  - "Noise-Robust Training"
+  - "Retrieval-Augmented Generation"
 date: 2026-05-08
 content_hash: 5a849115fd9e8bd0
 ---

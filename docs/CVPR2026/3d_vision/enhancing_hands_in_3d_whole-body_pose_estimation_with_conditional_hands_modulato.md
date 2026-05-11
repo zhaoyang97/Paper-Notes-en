@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Enhancing Hands in 3D Whole-Body Pose Estimation with Conditional Hands Modulator
 description: >-
-  [CVPR 2026][3D Vision][whole-body pose estimation] This paper proposes Hand4Whole++, a modular framework that injects features from a pretrained hand estimator into a frozen whole-body pose estimator via a lightweight CHAM module, enabling accurate wrist orientation prediction and transferring fine-grained finger joints and hand shape from a hand model via differentiable rigid alignment.
+  [CVPR 2026][3D Vision][whole-body pose estimation] This paper proposes Hand4Whole++, a modular framework that injects features from a pretrained hand estimator into a frozen whole-body pose estimator via a lightweight CH…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - whole-body pose estimation
-  - hand pose
-  - SMPL-X
-  - feature modulation
-  - modular framework
+  - "CVPR 2026"
+  - "3D Vision"
+  - "whole-body pose estimation"
+  - "hand pose"
+  - "SMPL-X"
+  - "feature modulation"
+  - "modular framework"
 date: 2026-05-08
 content_hash: d0b8b159edc60112
 ---

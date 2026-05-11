@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Optimized Learned Count-Min Sketch
 description: >-
-  [NeurIPS 2025 (Workshop: ML for Systems)][Count-Min Sketch] This paper proposes OptLCMS, which partitions the score space and analytically solves CMS parameters via KKT conditions while optimizing thresholds through dynamic programming, substantially accelerating the construction process and providing theoretical guarantees on the probability of intolerable error.
+  [NeurIPS 2025 (Workshop: ML for Systems)][Count-Min Sketch] This paper proposes OptLCMS, which partitions the score space and analytically solves CMS parameters via KKT conditions while optimizing thresholds through dyna…
 tags:
   - "NeurIPS 2025 (Workshop: ML for Systems)"
-  - Count-Min Sketch
-  - frequency estimation
-  - learned data structures
-  - dynamic programming
-  - KKT conditions
+  - "Count-Min Sketch"
+  - "frequency estimation"
+  - "learned data structures"
+  - "dynamic programming"
+  - "KKT conditions"
 date: 2026-05-08
 content_hash: 1470a9ec85cf0f52
 ---

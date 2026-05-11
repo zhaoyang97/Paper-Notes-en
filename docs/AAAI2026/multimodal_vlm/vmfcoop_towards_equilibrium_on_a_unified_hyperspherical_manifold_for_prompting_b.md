@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] vMFCoOp: Towards Equilibrium on a Unified Hyperspherical Manifold for Prompting Biomedical VLMs
 description: >-
-  [AAAI 2026][Multimodal VLM][Prompt learning] This paper proposes the vMFCoOp framework, which aligns the semantic discrepancy between LLMs and CLIP on a unified hyperspherical manifold via inverse estimation of von Mises-Fisher distributions, enabling robust few-shot prompt learning for biomedical VLMs.
+  [AAAI 2026][Multimodal VLM][Prompt learning] This paper proposes the vMFCoOp framework, which aligns the semantic discrepancy between LLMs and CLIP on a unified hyperspherical manifold via inverse estimation of von Mises…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Prompt learning
-  - biomedical VLM
-  - von Mises-Fisher distribution
-  - hyperspherical manifold
-  - few-shot learning
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Prompt learning"
+  - "biomedical VLM"
+  - "von Mises-Fisher distribution"
+  - "hyperspherical manifold"
+  - "few-shot learning"
 date: 2026-05-08
 content_hash: 155466ecb23eeab8
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AdaBlock-dLLM: Semantic-Aware Diffusion LLM Inference via Adaptive Block Size
 description: >-
-  [ICLR 2026][Image Restoration][diffusion language model] Through statistical analysis of token confidence dynamics during the denoising process of diffusion language models (dLLMs), this work identifies a "Volatility Band" (VB) region that encodes local semantic structure in text. Building on this observation, it proposes AdaBlock-dLLM—a training-free, plug-and-play adaptive block size scheduler that aligns block boundaries in semi-autoregressive decoding with natural semantic steps, achieving up to 5.3% accuracy improvement at the same throughput.
+  [ICLR 2026][Image Restoration][diffusion language model] Through statistical analysis of token confidence dynamics during the denoising process of diffusion language models (dLLMs)…
 tags:
-  - ICLR 2026
-  - Image Restoration
-  - diffusion language model
-  - semi-autoregressive decoding
-  - adaptive block size
-  - semantic-aware scheduling
-  - inference acceleration
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "diffusion language model"
+  - "semi-autoregressive decoding"
+  - "adaptive block size"
+  - "semantic-aware scheduling"
+  - "inference acceleration"
 date: 2026-05-08
 content_hash: aea997a8baa9885a
 ---

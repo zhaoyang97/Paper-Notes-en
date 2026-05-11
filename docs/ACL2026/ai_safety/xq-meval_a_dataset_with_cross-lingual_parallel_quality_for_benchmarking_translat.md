@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] XQ-MEval: A Dataset with Cross-lingual Parallel Quality for Benchmarking Translation Metrics
 description: >-
-  [ACL 2026][AI Safety][Translation Evaluation Metrics] This paper constructs XQ-MEval, the first translation evaluation benchmark with cross-lingual parallel quality, using semi-automated MQM error injection to generate pseudo-translations with controllable quality, empirically revealing cross-lingual scoring bias in automatic evaluation metrics for the first time, and proposing an LGN normalization strategy that effectively calibrates multilingual metric evaluation.
+  [ACL 2026][AI Safety][Translation Evaluation Metrics] This paper constructs XQ-MEval, the first translation evaluation benchmark with cross-lingual parallel quality…
 tags:
-  - ACL 2026
-  - AI Safety
-  - Translation Evaluation Metrics
-  - Cross-Lingual Scoring Bias
-  - MQM Error Injection
-  - Multilingual Benchmark
-  - Metric Calibration
+  - "ACL 2026"
+  - "AI Safety"
+  - "Translation Evaluation Metrics"
+  - "Cross-Lingual Scoring Bias"
+  - "MQM Error Injection"
+  - "Multilingual Benchmark"
+  - "Metric Calibration"
 date: 2025-05-08
 content_hash: cf465b2a4ec3e6ad
 ---

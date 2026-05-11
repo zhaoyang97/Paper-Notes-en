@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Exploring Surround-View Fisheye Camera 3D Object Detection
 description: >-
-  [AAAI 2026][Autonomous Driving][fisheye camera] This paper systematically investigates 3D object detection with surround-view fisheye cameras. It constructs the Fisheye3DOD benchmark dataset containing both pinhole and fisheye camera data, and proposes two frameworks—FisheyeBEVDet and FisheyePETR—that embed fisheye geometric modeling into mainstream detection paradigms via spherical feature representations, achieving up to 6.2 FDS improvement over rectification-based baselines.
+  [AAAI 2026][Autonomous Driving][fisheye camera] This paper systematically investigates 3D object detection with surround-view fisheye cameras. It constructs the Fisheye3DOD benchmark dataset containing both pinhole and f…
 tags:
-  - AAAI 2026
-  - Autonomous Driving
-  - fisheye camera
-  - 3D object detection
-  - BEV perception
-  - spherical representation
-  - surround-view perception
+  - "AAAI 2026"
+  - "Autonomous Driving"
+  - "fisheye camera"
+  - "3D object detection"
+  - "BEV perception"
+  - "spherical representation"
+  - "surround-view perception"
 date: 2026-05-08
 content_hash: ac7601fb360361d7
 ---

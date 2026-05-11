@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Who Gets Which Message? Auditing Demographic Bias in LLM-Generated Targeted Text
 description: >-
-  [ACL 2026][LLM Safety][demographic bias] This paper presents the first systematic analysis of demographic bias in LLM-generated targeted messages, proposes the Persuasion Bias Index (PBI), and finds that GPT-4o, Llama, and Mistral consistently employ stronger persuasive strategies toward male and younger audiences in climate communication, with contextual prompting systematically amplifying these disparities.
+  [ACL 2026][LLM Safety][demographic bias] This paper presents the first systematic analysis of demographic bias in LLM-generated targeted messages, proposes the Persuasion Bias Index (PBI), and finds that GPT-4o, Llama…
 tags:
-  - ACL 2026
-  - LLM Safety
-  - demographic bias
-  - persuasion bias
-  - microtargeting
-  - LLM-generated text
-  - fairness auditing
+  - "ACL 2026"
+  - "LLM Safety"
+  - "demographic bias"
+  - "persuasion bias"
+  - "microtargeting"
+  - "LLM-generated text"
+  - "fairness auditing"
 date: 2026-05-08
 content_hash: 8809b99209aa44dd
 ---

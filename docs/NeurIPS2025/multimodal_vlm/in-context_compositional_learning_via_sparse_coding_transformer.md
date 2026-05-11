@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] In-Context Compositional Learning via Sparse Coding Transformer
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Sparse Coding] Inspired by sparse coding, this work reinterprets the Transformer attention mechanism as projection onto encoding and decoding dictionaries, explicitly represents compositional rules via sparse coefficients, and transfers compositional rules from in-context tasks to target tasks using a lifting scheme.
+  [NeurIPS 2025][Multimodal VLM][Sparse Coding] Inspired by sparse coding, this work reinterprets the Transformer attention mechanism as projection onto encoding and decoding dictionaries…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Sparse Coding
-  - Attention Mechanism
-  - Compositional Learning
-  - In-Context Learning
-  - Transformer
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Sparse Coding"
+  - "Attention Mechanism"
+  - "Compositional Learning"
+  - "In-Context Learning"
+  - "Transformer"
 date: 2026-05-08
 content_hash: 1bfa780d8ef87b6e
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Amodal3R: Amodal 3D Reconstruction from Occluded 2D Images
 description: >-
-  [ICCV 2025][3D Vision][Amodal 3D Reconstruction] This paper proposes Amodal3R, an end-to-end occlusion-aware 3D reconstruction model that introduces mask-weighted cross-attention and an occlusion-aware attention layer on top of TRELLIS, enabling direct reconstruction of complete 3D object geometry and appearance from partially occluded 2D images in the 3D latent space, substantially outperforming prior two-stage "2D completion → 3D reconstruction" pipelines.
+  [ICCV 2025][3D Vision][Amodal 3D Reconstruction] This paper proposes Amodal3R, an end-to-end occlusion-aware 3D reconstruction model that introduces mask-weighted cross-attention and an occlusion-aware attention layer on…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Amodal 3D Reconstruction
-  - Occlusion-aware
-  - diffusion model
-  - Cross-Attention
-  - TRELLIS
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Amodal 3D Reconstruction"
+  - "Occlusion-aware"
+  - "diffusion model"
+  - "Cross-Attention"
+  - "TRELLIS"
 date: 2026-05-08
 content_hash: d314aae4f41c0323
 ---

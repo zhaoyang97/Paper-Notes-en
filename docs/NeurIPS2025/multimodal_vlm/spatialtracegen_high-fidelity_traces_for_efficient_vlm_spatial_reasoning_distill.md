@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SpatialTraceGen: High-Fidelity Traces for Efficient VLM Spatial Reasoning Distillation
 description: >-
-  [NeurIPS 2025 (Workshop on Efficient Reasoning)][Multimodal VLM][VLM] This paper proposes SpatialTraceGen, a framework that distills high-quality multi-step tool-use reasoning traces from large teacher models via automated verification, enabling efficient fine-tuning of small VLMs for spatial reasoning.
+  [NeurIPS 2025 (Workshop on Efficient Reasoning)][Multimodal VLM][VLM] This paper proposes SpatialTraceGen, a framework that distills high-quality multi-step tool-use reasoning traces from large teacher models via automat…
 tags:
-  - NeurIPS 2025 (Workshop on Efficient Reasoning)
-  - Multimodal VLM
-  - VLM
-  - spatial reasoning
-  - knowledge distillation
-  - reasoning traces
-  - data generation
+  - "NeurIPS 2025 (Workshop on Efficient Reasoning)"
+  - "Multimodal VLM"
+  - "VLM"
+  - "spatial reasoning"
+  - "knowledge distillation"
+  - "reasoning traces"
+  - "data generation"
 date: 2026-05-08
 content_hash: 7987968e1cc6b205
 ---

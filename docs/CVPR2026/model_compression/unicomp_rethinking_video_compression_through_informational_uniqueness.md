@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UniComp: Rethinking Video Compression Through Informational Uniqueness
 description: >-
-  [CVPR 2026][Model Compression][visual token compression] This paper proposes UniComp, a video token compression framework grounded in informational uniqueness rather than attention scores. Through three modules—Frame Group Fusion, Token Allocation, and Spatial Dynamic Compression—UniComp maximally preserves unique information across temporal, spatial, and global dimensions, surpassing the uncompressed baseline even when retaining only 10% of tokens.
+  [CVPR 2026][Model Compression][visual token compression] This paper proposes UniComp, a video token compression framework grounded in informational uniqueness rather than attention scores. Through three modules—Frame Gro…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - visual token compression
-  - informational uniqueness
-  - video understanding
-  - MLLM efficiency
-  - plug-and-play
+  - "CVPR 2026"
+  - "Model Compression"
+  - "visual token compression"
+  - "informational uniqueness"
+  - "video understanding"
+  - "MLLM efficiency"
+  - "plug-and-play"
 date: 2026-05-08
 content_hash: b66936232e66de1a
 ---

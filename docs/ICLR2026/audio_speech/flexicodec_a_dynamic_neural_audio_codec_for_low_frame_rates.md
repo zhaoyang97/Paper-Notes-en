@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FlexiCodec: A Dynamic Neural Audio Codec for Low Frame Rates
 description: >-
-  [ICLR 2026][Audio & Speech][Neural Audio Codec] FlexiCodec is proposed as a dynamic frame rate merging strategy guided by ASR features, achieving high-quality speech codec at ultra-low frame rates of 3–12.5 Hz while maintaining superior semantic information retention.
+  [ICLR 2026][Audio & Speech][Neural Audio Codec] FlexiCodec is proposed as a dynamic frame rate merging strategy guided by ASR features…
 tags:
-  - ICLR 2026
+  - "ICLR 2026"
   - "Audio & Speech"
-  - Neural Audio Codec
-  - Dynamic Frame Rate
-  - Low Frame Rate
-  - Speech Tokenization
-  - TTS
+  - "Neural Audio Codec"
+  - "Dynamic Frame Rate"
+  - "Low Frame Rate"
+  - "Speech Tokenization"
+  - "TTS"
 date: 2026-05-08
 content_hash: d30d4aca3a828154
 ---

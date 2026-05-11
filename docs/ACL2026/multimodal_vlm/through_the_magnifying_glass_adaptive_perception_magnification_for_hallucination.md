@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Through the Magnifying Glass: Adaptive Perception Magnification for Hallucination-Free VLM Decoding
 description: >-
-  [ACL 2026][Multimodal VLM][Visual hallucination mitigation] This paper proposes the Perception Magnifier (PM), a visual decoding method that, at each autoregressive decoding step, iteratively identifies critical visual regions based on multi-layer attention and adaptively magnifies them. By increasing the effective resolution of key regions, PM mitigates visual hallucinations in VLMs while preserving spatial structure and reasoning capability.
+  [ACL 2026][Multimodal VLM][Visual hallucination mitigation] This paper proposes the Perception Magnifier (PM), a visual decoding method that, at each autoregressive decoding step…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Visual hallucination mitigation
-  - perception magnification
-  - attention-guided decoding
-  - iterative refinement
-  - vision-language models
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Visual hallucination mitigation"
+  - "perception magnification"
+  - "attention-guided decoding"
+  - "iterative refinement"
+  - "vision-language models"
 date: 2026-05-08
 content_hash: bac9ecc0ba638ac9
 ---

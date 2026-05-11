@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SpecMER: Fast Protein Generation with K-mer Guided Speculative Decoding
 description: >-
-  [NeurIPS 2025][Medical Imaging][Speculative Decoding] SpecMER introduces speculative decoding into protein sequence generation, employing a K-mer-guided batch selection strategy to choose the candidate most consistent with evolutionary conservation from multiple draft model outputs for target model verification. It achieves 24–32% speedup while preserving distributional consistency, and the generated sequences demonstrate significantly improved NLL and pLDDT structural confidence scores compared to unguided baselines.
+  [NeurIPS 2025][Medical Imaging][Speculative Decoding] SpecMER introduces speculative decoding into protein sequence generation, employing a K-mer-guided batch selection strategy to choose the candidate most consistent wi…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Speculative Decoding
-  - K-mer Guidance
-  - Protein Language Models
-  - MSA
-  - Batch Selection
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Speculative Decoding"
+  - "K-mer Guidance"
+  - "Protein Language Models"
+  - "MSA"
+  - "Batch Selection"
 date: 2026-05-08
 content_hash: 7f8cc9a1fa398ca4
 ---

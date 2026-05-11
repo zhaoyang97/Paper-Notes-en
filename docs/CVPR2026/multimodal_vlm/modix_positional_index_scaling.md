@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MODIX: Training-Free Multimodal Information-Driven Positional Index Scaling for VLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][Positional Encoding] This paper proposes MODIX, a training-free framework that dynamically adjusts the positional encoding step sizes of visual and textual tokens in VLMs via information-theoretic analysis (covariance entropy + cross-modal alignment), allocating finer positional granularity to information-dense modalities to enhance multimodal reasoning.
+  [CVPR 2026][Multimodal VLM][Positional Encoding] This paper proposes MODIX, a training-free framework that dynamically adjusts the positional encoding step sizes of visual and textual tokens in VLMs via information-theor…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Positional Encoding
-  - RoPE
-  - Information Density
-  - Training-Free
-  - Vision-Language Models
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Positional Encoding"
+  - "RoPE"
+  - "Information Density"
+  - "Training-Free"
+  - "Vision-Language Models"
 date: 2026-05-08
 content_hash: 2c37adf44d39d009
 ---

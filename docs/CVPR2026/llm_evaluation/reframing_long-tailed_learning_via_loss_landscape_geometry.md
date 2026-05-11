@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Reframing Long-Tailed Learning via Loss Landscape Geometry
 description: >-
-  [CVPR 2026][LLM Evaluation][Long-tailed learning] This paper reframes the head-tail seesaw dilemma in long-tailed learning through the lens of loss landscape geometry. It identifies that tail class degradation stems from optimization converging to sharp minima that are far from tail-class optima. A dual-module framework comprising GKP (Grouped Knowledge Preservation) and GSA (Grouped Sharpness Aware) is proposed based on continual learning principles, achieving state-of-the-art results on four benchmarks (CIFAR-LT / ImageNet-LT / iNat2018) without requiring additional data.
+  [CVPR 2026][LLM Evaluation][Long-tailed learning] This paper reframes the head-tail seesaw dilemma in long-tailed learning through the lens of loss landscape geometry. It identifies that tail class degradation stems from…
 tags:
-  - CVPR 2026
-  - LLM Evaluation
-  - Long-tailed learning
-  - loss landscape
-  - tail class degradation
-  - continual learning
-  - sharpness-aware minimization
+  - "CVPR 2026"
+  - "LLM Evaluation"
+  - "Long-tailed learning"
+  - "loss landscape"
+  - "tail class degradation"
+  - "continual learning"
+  - "sharpness-aware minimization"
 date: 2026-05-08
 content_hash: c06b35825d8b2aa9
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HumanOLAT: A Large-Scale Dataset for Full-Body Human Relighting and Novel-View Synthesis
 description: >-
-  [ICCV 2025][3D Vision][Human Relighting] This paper introduces HumanOLAT — the first publicly available large-scale full-body multi-view OLAT (One-Light-at-a-Time) dataset, comprising 21 subjects × 3 poses × 40 viewpoints × 344 lighting conditions ≈ 850K frames, providing a high-quality benchmark for human relighting and novel-view synthesis.
+  [ICCV 2025][3D Vision][Human Relighting] This paper introduces HumanOLAT — the first publicly available large-scale full-body multi-view OLAT (One-Light-at-a-Time) dataset…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Human Relighting
-  - OLAT Dataset
-  - Light Stage
-  - Novel-View Synthesis
-  - Full-Body Capture
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Human Relighting"
+  - "OLAT Dataset"
+  - "Light Stage"
+  - "Novel-View Synthesis"
+  - "Full-Body Capture"
 date: 2026-05-08
 content_hash: 999d6839b705ee81
 ---

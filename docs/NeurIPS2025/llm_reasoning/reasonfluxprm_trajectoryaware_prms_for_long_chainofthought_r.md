@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ReasonFlux-PRM: Trajectory-Aware PRMs for Long Chain-of-Thought Reasoning in LLMs
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Process Reward Model] ReasonFlux-PRM identifies that existing PRMs fail to effectively evaluate the intermediate thinking trajectories of reasoning models, and proposes a trajectory-aware PRM that fuses step-level alignment, quality, and coherence scores with a trajectory-level template-guided reward. The approach consistently outperforms strong baselines including Qwen2.5-Math-PRM-72B across three settings: offline data selection (SFT +12.1%), online RL reward (+4.5%), and test-time Best-of-N scaling (+6.3%).
+  [NeurIPS 2025][LLM Reasoning][Process Reward Model] ReasonFlux-PRM identifies that existing PRMs fail to effectively evaluate the intermediate thinking trajectories of reasoning models…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - Process Reward Model
-  - Trajectory-Aware
-  - Data Selection
-  - Reinforcement Learning
-  - Test-Time Scaling
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "Process Reward Model"
+  - "Trajectory-Aware"
+  - "Data Selection"
+  - "Reinforcement Learning"
+  - "Test-Time Scaling"
 date: 2026-05-08
 content_hash: 7a7ce8a3646abec5
 ---

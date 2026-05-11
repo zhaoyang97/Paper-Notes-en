@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Synergy between the Strong and the Weak: Spiking Neural Networks Are Inherently Superior in Temporal Processing
 description: >-
-  [NeurIPS 2025][Model Compression][Spiking Neural Networks] This paper identifies that SNNs can be naturally decomposed into multiple sub-models along the temporal dimension. By comparing output confidence across timestep sub-models to identify "strong" and "weak" instances, the paper proposes two self-distillation schemes — Strong2Weak and Weak2Strong — that significantly improve SNN performance without any external teacher model, achieving gains of up to 5.36% on neuromorphic datasets.
+  [NeurIPS 2025][Model Compression][Spiking Neural Networks] This paper identifies that SNNs can be naturally decomposed into multiple sub-models along the temporal dimension. By comparing output confidence across timestep…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Spiking Neural Networks
-  - Self-Distillation
-  - Knowledge Distillation
-  - Temporal Dimension
-  - Strong2Weak
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Spiking Neural Networks"
+  - "Self-Distillation"
+  - "Knowledge Distillation"
+  - "Temporal Dimension"
+  - "Strong2Weak"
 date: 2026-05-08
 content_hash: 4f094195234fe38f
 ---

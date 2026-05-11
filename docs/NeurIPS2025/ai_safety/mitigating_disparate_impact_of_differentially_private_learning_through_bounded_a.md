@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mitigating Disparate Impact of Differentially Private Learning through Bounded Adaptive Clipping
 description: >-
-  [NeurIPS 2025][AI Safety][Differential Privacy] By introducing a tunable lower bound into adaptive gradient clipping (bounded adaptive clipping), this work prevents the clipping bound from shrinking excessively during training, thereby improving accuracy for minority groups and mitigating algorithmic unfairness under DP constraints.
+  [NeurIPS 2025][AI Safety][Differential Privacy] By introducing a tunable lower bound into adaptive gradient clipping (bounded adaptive clipping)…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - Differential Privacy
-  - Fairness
-  - Gradient Clipping
-  - DP-SGD
-  - Disparate Impact
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "Differential Privacy"
+  - "Fairness"
+  - "Gradient Clipping"
+  - "DP-SGD"
+  - "Disparate Impact"
 date: 2026-05-08
 content_hash: c0d8c86528b8c4da
 ---

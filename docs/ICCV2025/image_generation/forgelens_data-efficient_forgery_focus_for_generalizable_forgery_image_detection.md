@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ForgeLens: Data-Efficient Forgery Focus for Generalizable Forgery Image Detection
 description: >-
-  [ICCV 2025][Image Generation][Forgery image detection] This paper proposes ForgeLens, a feature-guided framework built upon a frozen CLIP-ViT backbone. Through a lightweight Weight-Shared Guidance Module (WSGM) and a Forgery-Aware Feature Integrator (FAFormer), it steers the frozen pretrained network to focus on forgery-relevant features, achieving state-of-the-art generalization performance with only 1% of training data.
+  [ICCV 2025][Image Generation][Forgery image detection] This paper proposes ForgeLens, a feature-guided framework built upon a frozen CLIP-ViT backbone. Through a lightweight Weight-Shared Guidance Module (WSGM) and a For…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Forgery image detection
-  - CLIP-ViT
-  - data efficiency
-  - feature guidance
-  - generalization
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Forgery image detection"
+  - "CLIP-ViT"
+  - "data efficiency"
+  - "feature guidance"
+  - "generalization"
 date: 2026-05-08
 content_hash: 385debd9b33c1eb2
 ---

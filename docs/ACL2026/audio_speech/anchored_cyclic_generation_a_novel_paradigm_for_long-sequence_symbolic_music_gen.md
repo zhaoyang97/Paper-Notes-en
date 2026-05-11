@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Anchored Cyclic Generation: A Novel Paradigm for Long-Sequence Symbolic Music Generation
 description: >-
-  [ACL 2026][Audio & Speech][symbolic music generation] This paper proposes the Anchored Cyclic Generation (ACG) paradigm, which calibrates the generation direction by using confirmed musical content as anchors during autoregressive decoding, effectively mitigating error accumulation in long-sequence symbolic music generation. A hierarchical framework, Hi-ACG, is further constructed to realize global-to-local music generation.
+  [ACL 2026][Audio & Speech][symbolic music generation] This paper proposes the Anchored Cyclic Generation (ACG) paradigm, which calibrates the generation direction by using confirmed musical content as anchors during auto…
 tags:
-  - ACL 2026
+  - "ACL 2026"
   - "Audio & Speech"
-  - symbolic music generation
-  - error accumulation
-  - anchored cyclic generation
-  - hierarchical framework
-  - Piano Token
+  - "symbolic music generation"
+  - "error accumulation"
+  - "anchored cyclic generation"
+  - "hierarchical framework"
+  - "Piano Token"
 date: 2026-05-08
 content_hash: 202b92a31a5b129e
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Evaluating the Evaluators: Metrics for Compositional Text-to-Image Generation
 description: >-
-  [NeurIPS 2025][Image Generation][evaluation metrics] This paper systematically evaluates 12 text-image compositional alignment metrics against human judgments, finding that no single metric consistently outperforms all others across compositional categories, that VQA metrics are not always superior, and that embedding-based metrics (ImageReward, HPS) are stronger on certain categories.
+  [NeurIPS 2025][Image Generation][evaluation metrics] This paper systematically evaluates 12 text-image compositional alignment metrics against human judgments…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - evaluation metrics
-  - compositional alignment
-  - text-to-image
-  - VQA metrics
-  - human judgment
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "evaluation metrics"
+  - "compositional alignment"
+  - "text-to-image"
+  - "VQA metrics"
+  - "human judgment"
 date: 2026-05-08
 content_hash: 15851519c4e16b7c
 ---

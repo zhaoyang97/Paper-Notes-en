@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Sparsity-Aware Voxel Attention and Foreground Modulation for 3D Semantic Scene Completion
 description: >-
-  [CVPR 2026][Autonomous Driving][Semantic Scene Completion] This paper proposes VoxSAMNet, a monocular semantic scene completion (SSC) framework that explicitly models voxel sparsity and semantic imbalance. It employs a Dummy Shortcut to bypass empty voxels, and Foreground Dropout combined with a Text-Guided Image Filter (TGIF) to mitigate long-tail overfitting. VoxSAMNet achieves a state-of-the-art 18.19% mIoU on SemanticKITTI, surpassing existing monocular and stereo methods.
+  [CVPR 2026][Autonomous Driving][Semantic Scene Completion] This paper proposes VoxSAMNet, a monocular semantic scene completion (SSC) framework that explicitly models voxel sparsity and semantic imbalance. It employs a D…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Semantic Scene Completion
-  - Voxel Sparsity
-  - Foreground Modulation
-  - Deformable Attention
-  - Long-Tail Distribution
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Semantic Scene Completion"
+  - "Voxel Sparsity"
+  - "Foreground Modulation"
+  - "Deformable Attention"
+  - "Long-Tail Distribution"
 date: 2026-05-08
 content_hash: 4b3dd26a534b957f
 ---

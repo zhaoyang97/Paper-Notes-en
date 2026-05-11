@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Dynamic Representations and Policies from Multimodal Clinical Time-Series with Informative Missingness
 description: >-
-  [ACL 2026][Medical Imaging][Multimodal clinical time-series] This work proposes OPL-MT-MNAR, a framework that learns dynamic patient representations from ICU data by leveraging the information embedded in missingness patterns of structured observations and clinical text. It combines an MNAR-aware multimodal encoder, Bayesian filtering for latent belief states, and offline policy learning to derive sepsis treatment policies that outperform clinician behavior (FQE 0.679 vs. 0.528).
+  [ACL 2026][Medical Imaging][Multimodal clinical time-series] This work proposes OPL-MT-MNAR, a framework that learns dynamic patient representations from ICU data by leveraging the information embedded in missingness pat…
 tags:
-  - ACL 2026
-  - Medical Imaging
-  - Multimodal clinical time-series
-  - informative missingness
-  - offline reinforcement learning
-  - Bayesian filtering
-  - ICU treatment policy
+  - "ACL 2026"
+  - "Medical Imaging"
+  - "Multimodal clinical time-series"
+  - "informative missingness"
+  - "offline reinforcement learning"
+  - "Bayesian filtering"
+  - "ICU treatment policy"
 date: 2026-05-08
 content_hash: 65645f0ad654e21a
 ---

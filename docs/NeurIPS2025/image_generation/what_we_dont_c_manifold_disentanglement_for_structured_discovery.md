@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] What We Don't C: Manifold Disentanglement for Structured Discovery
 description: >-
-  [NeurIPS 2025][Image Generation][Manifold Disentanglement] This paper proposes WWDC (What We Don't C), a method that employs conditionally guided latent flow matching to remove known information from existing VAE representations, enabling unknown features to be more readily discovered and accessed in the residual manifold, thus facilitating iterative scientific discovery.
+  [NeurIPS 2025][Image Generation][Manifold Disentanglement] This paper proposes WWDC (What We Don't C), a method that employs conditionally guided latent flow matching to remove known information from existing VAE represe…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Manifold Disentanglement
-  - Flow Matching
-  - VAE
-  - Classifier-Free Guidance
-  - Structured Discovery
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Manifold Disentanglement"
+  - "Flow Matching"
+  - "VAE"
+  - "Classifier-Free Guidance"
+  - "Structured Discovery"
 date: 2026-05-08
 content_hash: 951a1f5bce57d8e2
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] RSONet: Region-guided Selective Optimization Network for RGB-T Salient Object Detection
 description: >-
-  [CVPR 2026][Segmentation][RGB-T salient object detection] This paper proposes RSONet, a two-stage RGB-T salient object detection network. In the region guidance stage, similarity scores between RGB/thermal guidance maps and a joint guidance map are computed to select the more reliable modality. In the saliency generation stage, a selective optimization (SO) module fuses dual-modality features based on the selection result, while Dense Detail Enhancement (DDE) and Mutual Interaction Semantic (MIS) modules extract detail and positional information, respectively, to produce high-quality saliency maps. RSONet achieves state-of-the-art performance on three RGB-T benchmarks.
+  [CVPR 2026][Segmentation][RGB-T salient object detection] This paper proposes RSONet, a two-stage RGB-T salient object detection network. In the region guidance stage…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - RGB-T salient object detection
-  - region guidance
-  - selective optimization
-  - multimodal fusion
-  - Swin Transformer
-  - visual state space model
+  - "CVPR 2026"
+  - "Segmentation"
+  - "RGB-T salient object detection"
+  - "region guidance"
+  - "selective optimization"
+  - "multimodal fusion"
+  - "Swin Transformer"
+  - "visual state space model"
 date: 2026-05-08
 content_hash: 1f83404cf123302a
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DuetGraph: Coarse-to-Fine Knowledge Graph Reasoning with Dual-Pathway Global-Local Fusion
 description: >-
-  [NeurIPS 2025][Graph Learning][Knowledge Graph Reasoning] DuetGraph proposes a dual-pathway (message passing + global attention) parallel fusion model and a coarse-to-fine reasoning optimization strategy. By separating rather than stacking local/global information processing, it mitigates score over-smoothing in KG reasoning, achieving SOTA on both inductive and transductive tasks with up to 8.7% MRR improvement and 1.8× training speedup.
+  [NeurIPS 2025][Graph Learning][Knowledge Graph Reasoning] DuetGraph proposes a dual-pathway (message passing + global attention) parallel fusion model and a coarse-to-fine reasoning optimization strategy. By separating r…
 tags:
-  - NeurIPS 2025
-  - Graph Learning
-  - Knowledge Graph Reasoning
-  - Dual-Pathway Fusion
-  - Coarse-to-Fine Optimization
-  - Over-Smoothing
-  - Graph Neural Networks
+  - "NeurIPS 2025"
+  - "Graph Learning"
+  - "Knowledge Graph Reasoning"
+  - "Dual-Pathway Fusion"
+  - "Coarse-to-Fine Optimization"
+  - "Over-Smoothing"
+  - "Graph Neural Networks"
 date: 2026-05-08
 content_hash: 80c1656d19af6807
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EvoEmpirBench: Dynamic Spatial Reasoning with Agent-ExpVer
 description: >-
-  [AAAI 2026][Robotics][Dynamic Spatial Reasoning] This paper proposes EvoEmpirBench (EEB), comprising two dynamic interactive benchmarks (partially observable maze navigation + Match-2), and the Agent-ExpVer three-agent online learning framework (GeoLink for interaction + InsightForce for experience abstraction + TruthWeaver for knowledge management). Through a cognitive cycle of "experience → verification → truth induction," the framework achieves continuous strategy evolution without parameter updates, improving GPT-4.1 success rate by 5.6% and Qwen-32B by 29%.
+  [AAAI 2026][Robotics][Dynamic Spatial Reasoning] This paper proposes EvoEmpirBench (EEB), comprising two dynamic interactive benchmarks (partially observable maze navigation + Match-2)…
 tags:
-  - AAAI 2026
-  - Robotics
-  - Dynamic Spatial Reasoning
-  - Partial Observability
-  - Online Learning
-  - Experience Verification
-  - Maze Navigation
+  - "AAAI 2026"
+  - "Robotics"
+  - "Dynamic Spatial Reasoning"
+  - "Partial Observability"
+  - "Online Learning"
+  - "Experience Verification"
+  - "Maze Navigation"
 date: 2026-05-08
 content_hash: 4c3e2cbf047521b3
 ---

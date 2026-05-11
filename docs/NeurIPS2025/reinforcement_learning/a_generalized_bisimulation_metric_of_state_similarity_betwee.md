@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Generalized Bisimulation Metric of State Similarity between Markov Decision Processes: From Theoretical Propositions to Applications
 description: >-
-  [NeurIPS 2025 (Poster)][Reinforcement Learning][bisimulation metric] This paper extends the classical bisimulation metric (BSM), which is limited to measuring state similarity within a single MDP, to cross-MDP settings by proposing a Generalized Bisimulation Metric (GBSM). The authors rigorously prove three fundamental metric properties — symmetry, cross-MDP triangle inequality, and an upper bound on same-state distances — and derive tighter error bounds and closed-form sample complexities than standard BSM in three applications: policy transfer, state aggregation, and sampling-based estimation.
+  [NeurIPS 2025 (Poster)][Reinforcement Learning][bisimulation metric] This paper extends the classical bisimulation metric (BSM), which is limited to measuring state similarity within a single MDP…
 tags:
-  - NeurIPS 2025 (Poster)
-  - Reinforcement Learning
-  - bisimulation metric
-  - MDP state similarity
-  - policy transfer
-  - state aggregation
-  - Wasserstein distance
+  - "NeurIPS 2025 (Poster)"
+  - "Reinforcement Learning"
+  - "bisimulation metric"
+  - "MDP state similarity"
+  - "policy transfer"
+  - "state aggregation"
+  - "Wasserstein distance"
 date: 2026-05-08
 content_hash: bea747ddfaabfeb1
 ---

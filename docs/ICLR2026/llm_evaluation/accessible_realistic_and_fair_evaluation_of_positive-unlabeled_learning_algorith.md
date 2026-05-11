@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Accessible, Realistic, and Fair Evaluation of Positive-Unlabeled Learning Algorithms
 description: >-
-  [ICLR 2026][LLM Evaluation][positive-unlabeled learning] This paper proposes the first unified benchmark for PU learning and systematically addresses two critical issues: (1) enabling model selection without negative samples via proxy accuracy and proxy AUC; (2) identifying and resolving intra-dataset label shift in the one-sample setting through a simple calibration strategy that merges positive samples into the unlabeled set, enabling fair comparison of two-sample algorithms under one-sample evaluation.
+  [ICLR 2026][LLM Evaluation][positive-unlabeled learning] This paper proposes the first unified benchmark for PU learning and systematically addresses two critical issues: (1) enabling model selection without negative sam…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - positive-unlabeled learning
-  - benchmark
-  - model selection
-  - label shift
-  - fair evaluation
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "positive-unlabeled learning"
+  - "benchmark"
+  - "model selection"
+  - "label shift"
+  - "fair evaluation"
 date: 2026-05-08
 content_hash: 9cf9b9c2929d26c4
 ---

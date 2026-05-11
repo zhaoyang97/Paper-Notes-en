@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Short-length Adversarial Training Helps LLMs Defend Long-length Jailbreak Attacks
 description: >-
-  [NeurIPS 2025][LLM Alignment][jailbreak defense] This paper theoretically proves and empirically validates that defending against suffix jailbreak attacks of length $\Theta(M)$ requires adversarial training on suffixes of only length $\Theta(\sqrt{M})$—i.e., "short adversarial training defends against long jailbreaks." Across five mainstream LLMs, adversarial training with 20-token suffixes reduces the attack success rate (ASR) of 120-token jailbreak attacks by at least 30%.
+  [NeurIPS 2025][LLM Alignment][jailbreak defense] This paper theoretically proves and empirically validates that defending against suffix jailbreak attacks of length $\Theta(M)$ requires adversarial training on suffixes o…
 tags:
-  - NeurIPS 2025
-  - LLM Alignment
-  - jailbreak defense
-  - adversarial training
-  - length scaling
-  - ICL theory
-  - safety alignment
+  - "NeurIPS 2025"
+  - "LLM Alignment"
+  - "jailbreak defense"
+  - "adversarial training"
+  - "length scaling"
+  - "ICL theory"
+  - "safety alignment"
 date: 2026-05-08
 content_hash: ee2dbf5f186be6cc
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] FlexEvent: Towards Flexible Event-Frame Object Detection at Varying Operational Frequencies
 description: >-
-  [NeurIPS 2025][Object Detection][event camera] This paper proposes FlexEvent, a framework that achieves flexible object detection with event cameras across varying operational frequencies through an adaptive event-frame fusion module (FlexFuse) and a frequency-adaptive fine-tuning mechanism (FlexTune). The framework maintains robust performance in the range of 20Hz to 180Hz, significantly outperforming existing methods.
+  [NeurIPS 2025][Object Detection][event camera] This paper proposes FlexEvent, a framework that achieves flexible object detection with event cameras across varying operational frequencies through an adaptive event-frame…
 tags:
-  - NeurIPS 2025
-  - Object Detection
-  - event camera
-  - event-frame fusion
-  - frequency adaptation
-  - self-training
+  - "NeurIPS 2025"
+  - "Object Detection"
+  - "event camera"
+  - "event-frame fusion"
+  - "frequency adaptation"
+  - "self-training"
 date: 2026-05-08
 content_hash: 5ddb704bd1ed127e
 ---

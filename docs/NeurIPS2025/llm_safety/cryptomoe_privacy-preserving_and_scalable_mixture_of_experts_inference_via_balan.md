@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CryptoMoE: Privacy-Preserving and Scalable Mixture of Experts Inference via Balanced Expert Routing
 description: >-
-  [NeurIPS 2025][LLM Safety][Privacy-preserving inference] CryptoMoE is the first framework supporting privacy-preserving inference for MoE-based LLMs. By combining balanced expert routing to conceal routing information, a confidence-aware dispatch protocol, and a batch ciphertext matrix multiplication protocol, it achieves 2.8–3.5× latency reduction and 2.9–4.3× communication reduction compared to a dense baseline, with only 0.8% accuracy loss.
+  [NeurIPS 2025][LLM Safety][Privacy-preserving inference] CryptoMoE is the first framework supporting privacy-preserving inference for MoE-based LLMs. By combining balanced expert routing to conceal routing information…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - Privacy-preserving inference
-  - MoE
-  - Homomorphic Encryption
-  - Secure Multi-Party Computation
-  - Expert Routing
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "Privacy-preserving inference"
+  - "MoE"
+  - "Homomorphic Encryption"
+  - "Secure Multi-Party Computation"
+  - "Expert Routing"
 date: 2026-05-08
 content_hash: 449ad53fccefcf2a
 ---

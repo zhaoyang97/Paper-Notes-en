@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Condition Errors Refinement in Autoregressive Image Generation with Diffusion Loss
 description: >-
-  [ICLR 2026][Image Generation][autoregressive generation] This paper theoretically analyzes the advantage of autoregressive diffusion loss models over conditional diffusion models in correcting condition errors (exponential decay of gradient norms), and proposes a condition refinement method based on optimal transport (Wasserstein Gradient Flow) to address the "condition inconsistency" problem in autoregressive generation, achieving FID 1.31 on ImageNet (based on MAR).
+  [ICLR 2026][Image Generation][autoregressive generation] This paper theoretically analyzes the advantage of autoregressive diffusion loss models over conditional diffusion models in correcting condition errors (exponenti…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - autoregressive generation
-  - diffusion loss
-  - condition refinement
-  - optimal transport
-  - Wasserstein gradient flow
+  - "ICLR 2026"
+  - "Image Generation"
+  - "autoregressive generation"
+  - "diffusion loss"
+  - "condition refinement"
+  - "optimal transport"
+  - "Wasserstein gradient flow"
 date: 2026-05-08
 content_hash: 5f3d48922739e325
 ---

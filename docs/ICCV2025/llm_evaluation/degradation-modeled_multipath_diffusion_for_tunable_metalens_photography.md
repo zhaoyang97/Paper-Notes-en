@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Degradation-Modeled Multipath Diffusion for Tunable Metalens Photography
 description: >-
-  [ICCV 2025][LLM Evaluation][metalens] This paper proposes DMDiff, a framework that leverages the natural image priors of pretrained diffusion models. Through a positive/neutral/negative tripath multi-prompt diffusion strategy and a Spatially-Varying Degradation-Aware (SVDA) attention module, DMDiff achieves high-fidelity tunable image reconstruction for millimeter-scale metalens cameras, surpassing existing methods across multiple metrics.
+  [ICCV 2025][LLM Evaluation][metalens] This paper proposes DMDiff, a framework that leverages the natural image priors of pretrained diffusion models. Through a positive/neutral/negative tripath multi-prompt diffusion str…
 tags:
-  - ICCV 2025
-  - LLM Evaluation
-  - metalens
-  - diffusion model
-  - image restoration
-  - computational imaging
-  - LoRA
+  - "ICCV 2025"
+  - "LLM Evaluation"
+  - "metalens"
+  - "diffusion model"
+  - "image restoration"
+  - "computational imaging"
+  - "LoRA"
 date: 2026-05-08
 content_hash: df111ebd67bf8315
 ---

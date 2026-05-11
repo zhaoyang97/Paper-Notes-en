@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] HEEGNet: Hyperbolic Embeddings for EEG
 description: >-
-  [ICLR 2026][EEG] This work presents the first systematic empirical validation that EEG data exhibits hyperbolicity (hierarchical structure), and proposes HEEGNet, a hybrid hyperbolic network architecture. The model combines a Euclidean encoder for spatiotemporal-spectral feature extraction with a hyperbolic encoder for capturing hierarchical relationships, augmented by a novel coarse-to-fine domain adaptation strategy (DSMDBN). HEEGNet achieves state-of-the-art performance across multiple cross-domain tasks spanning visual evoked potentials, emotion recognition, and intracranial EEG.
+  [ICLR 2026][EEG] This work presents the first systematic empirical validation that EEG data exhibits hyperbolicity (hierarchical structure), and proposes HEEGNet…
 tags:
-  - ICLR 2026
-  - EEG
-  - hyperbolic space
-  - domain adaptation
-  - hierarchy
-  - brain-computer interface
+  - "ICLR 2026"
+  - "EEG"
+  - "hyperbolic space"
+  - "domain adaptation"
+  - "hierarchy"
+  - "brain-computer interface"
 date: 2026-05-08
 content_hash: f8e0fafda71dfd15
 ---

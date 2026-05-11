@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CloDS: Visual-Only Unsupervised Cloth Dynamics Learning in Unknown Conditions
 description: >-
-  [ICLR 2026][3D Vision][cloth dynamics] CloDS proposes the first framework for unsupervised cloth dynamics learning from multi-view videos. By introducing Spatial Mapping Gaussian Splatting (SMGS) to establish a differentiable mapping between 2D images and 3D meshes, combined with dual-position opacity modulation to address self-occlusion, the method enables a GNN to learn cloth dynamics approaching fully supervised performance without any physical parameter supervision.
+  [ICLR 2026][3D Vision][cloth dynamics] CloDS proposes the first framework for unsupervised cloth dynamics learning from multi-view videos. By introducing Spatial Mapping Gaussian Splatting (SMGS) to establish a different…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - cloth dynamics
-  - unsupervised learning
-  - Gaussian splatting
-  - differentiable rendering
-  - intuitive physics
+  - "ICLR 2026"
+  - "3D Vision"
+  - "cloth dynamics"
+  - "unsupervised learning"
+  - "Gaussian splatting"
+  - "differentiable rendering"
+  - "intuitive physics"
 date: 2026-05-08
 content_hash: 77cb04ef463df4e5
 ---

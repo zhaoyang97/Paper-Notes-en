@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ReFlex: Text-Guided Editing of Real Images in Rectified Flow via Mid-Step Feature Extraction and Attention Adaptation
 description: >-
-  [ICCV 2025][Image Generation][Image Editing] To address the challenge of real image editing in Rectified Flow (ReFlow) models, this paper systematically analyzes intermediate representations in MM-DiT, identifies three key features (I2I-SA, I2T-CA, and residual features), and proposes mid-step feature extraction along with two attention adaptation techniques. The resulting training-free, user-mask-free method achieves high-quality real image editing on the FLUX model, attaining a 68.2% human preference rate that substantially outperforms competing approaches.
+  [ICCV 2025][Image Generation][Image Editing] To address the challenge of real image editing in Rectified Flow (ReFlow) models, this paper systematically analyzes intermediate representations in MM-DiT…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Image Editing
-  - Rectified Flow
-  - FLUX
-  - Feature Injection
-  - Attention Adaptation
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Image Editing"
+  - "Rectified Flow"
+  - "FLUX"
+  - "Feature Injection"
+  - "Attention Adaptation"
 date: 2026-05-08
 content_hash: a380285e03cefd49
 ---

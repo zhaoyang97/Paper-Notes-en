@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RTGaze: Real-Time 3D-Aware Gaze Redirection from a Single Image
 description: >-
-  [AAAI 2026][3D Vision][Gaze redirection] This paper proposes RTGaze, a real-time 3D-aware gaze redirection method that achieves high-quality gaze redirection from a single image at 61 ms/frame via a hybrid-frequency feature encoder, a gaze injection module, and 3D facial geometry prior distillation — approximately 800× faster than the previous state-of-the-art 3D method, GazeNeRF.
+  [AAAI 2026][3D Vision][Gaze redirection] This paper proposes RTGaze, a real-time 3D-aware gaze redirection method that achieves high-quality gaze redirection from a single image at 61 ms/frame via a hybrid-frequency feat…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - Gaze redirection
-  - 3D-aware
-  - NeRF
-  - knowledge distillation
-  - real-time inference
+  - "AAAI 2026"
+  - "3D Vision"
+  - "Gaze redirection"
+  - "3D-aware"
+  - "NeRF"
+  - "knowledge distillation"
+  - "real-time inference"
 date: 2026-05-08
 content_hash: 8caf2c88c887a5f5
 ---

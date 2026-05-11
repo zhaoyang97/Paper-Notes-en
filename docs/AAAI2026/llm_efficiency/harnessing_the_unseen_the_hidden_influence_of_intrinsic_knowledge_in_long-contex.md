@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Harnessing the Unseen: The Hidden Influence of Intrinsic Knowledge in Long-Context Language Models
 description: >-
-  [AAAI 2026][LLM Efficiency][Long-context language models] This paper presents the first systematic study of how parametric knowledge influences generation in long-context language models (LCLMs), finding that such influence grows with context length and that methods designed to improve extrinsic retrieval suppress parametric recall. Based on these findings, the paper proposes the Hybrid Needle-in-a-Haystack (Hybrid NIAH) benchmark to jointly evaluate both capabilities.
+  [AAAI 2026][LLM Efficiency][Long-context language models] This paper presents the first systematic study of how parametric knowledge influences generation in long-context language models (LCLMs)…
 tags:
-  - AAAI 2026
-  - LLM Efficiency
-  - Long-context language models
-  - parametric knowledge
-  - extrinsic retrieval ability
-  - Needle-in-a-Haystack
-  - knowledge conflict
+  - "AAAI 2026"
+  - "LLM Efficiency"
+  - "Long-context language models"
+  - "parametric knowledge"
+  - "extrinsic retrieval ability"
+  - "Needle-in-a-Haystack"
+  - "knowledge conflict"
 date: 2026-05-08
 content_hash: 7b4b7341980265ee
 ---

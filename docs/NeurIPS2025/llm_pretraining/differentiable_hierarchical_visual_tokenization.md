@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Differentiable Hierarchical Visual Tokenization
 description: >-
-  [NeurIPS 2025 (Spotlight)][LLM Pretraining][Visual Tokenizer] This paper proposes an end-to-end differentiable hierarchical visual tokenizer that adaptively partitions images into tokens at pixel-level granularity. It leverages information criteria for hierarchical model selection, serves as a drop-in replacement for the fixed patch tokenization in ViT, and additionally supports raster-to-vector conversion.
+  [NeurIPS 2025 (Spotlight)][LLM Pretraining][Visual Tokenizer] This paper proposes an end-to-end differentiable hierarchical visual tokenizer that adaptively partitions images into tokens at pixel-level granularity. It le…
 tags:
-  - NeurIPS 2025 (Spotlight)
-  - LLM Pretraining
-  - Visual Tokenizer
-  - Hierarchical Tokenization
-  - Differentiable
-  - Superpixel
-  - Information Criterion
+  - "NeurIPS 2025 (Spotlight)"
+  - "LLM Pretraining"
+  - "Visual Tokenizer"
+  - "Hierarchical Tokenization"
+  - "Differentiable"
+  - "Superpixel"
+  - "Information Criterion"
 date: 2026-05-08
 content_hash: 3142072aa39a7ff7
 ---

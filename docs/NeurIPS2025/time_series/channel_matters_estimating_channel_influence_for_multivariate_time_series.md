@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Channel Matters: Estimating Channel Influence for Multivariate Time Series
 description: >-
-  [NeurIPS 2025][Time Series][Channel influence function] This paper proposes Channel-wise Influence (ChInf)—the first influence function method capable of quantifying the effect of individual channels on model performance in multivariate time series (MTS). By decomposing TracIn from the holistic sample level to the channel level, ChInf enables two downstream applications: channel-level anomaly detection and channel pruning, achieving state-of-the-art performance on 5 anomaly detection benchmarks.
+  [NeurIPS 2025][Time Series][Channel influence function] This paper proposes Channel-wise Influence (ChInf)—the first influence function method capable of quantifying the effect of individual channels on model performance…
 tags:
-  - NeurIPS 2025
-  - Time Series
-  - Channel influence function
-  - multivariate time series
-  - anomaly detection
-  - data pruning
-  - TracIn
+  - "NeurIPS 2025"
+  - "Time Series"
+  - "Channel influence function"
+  - "multivariate time series"
+  - "anomaly detection"
+  - "data pruning"
+  - "TracIn"
 date: 2026-05-08
 content_hash: 4e59020f5717ff27
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Reliable Evaluation Protocol for Low-Precision Retrieval
 description: >-
-  [ACL 2026][low-precision retrieval] This paper identifies that low-precision retrieval systems (e.g., binarized or quantized embeddings) suffer from a large number of spurious ties due to reduced score granularity, leading to highly unstable evaluation results. Two complementary strategies are proposed—High-Precision Scoring (HPS) and Tie-aware Retrieval Metrics (TRM)—to enable more reliable and consistent evaluation of low-precision retrieval systems.
+  [ACL 2026][low-precision retrieval] This paper identifies that low-precision retrieval systems (e.g., binarized or quantized embeddings) suffer from a large number of spurious ties due to reduced score granularity…
 tags:
-  - ACL 2026
-  - low-precision retrieval
-  - spurious ties
-  - evaluation protocol
-  - high-precision scoring
-  - tie-aware metrics
+  - "ACL 2026"
+  - "low-precision retrieval"
+  - "spurious ties"
+  - "evaluation protocol"
+  - "high-precision scoring"
+  - "tie-aware metrics"
 date: 2026-05-08
 content_hash: f7d8364e9542aef5
 ---

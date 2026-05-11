@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] No One Fits All: From Fixed Prompting to Learned Routing in Multilingual LLMs
 description: >-
-  [ACL 2026][Multilingual LLM] This paper demonstrates that no single prompting strategy is universally optimal across all languages and tasks. It proposes to model strategy selection as a learned decision problem, using a lightweight classifier to predict the optimal strategy for each instance, achieving significant improvements over fixed strategies on four benchmarks.
+  [ACL 2026][Multilingual & Machine Translation][Multilingual LLM] This paper demonstrates that no single prompting strategy is universally optimal across all languages and tasks. It proposes to model strategy selection as…
 tags:
-  - ACL 2026
-  - Multilingual LLM
-  - prompting strategy selection
-  - translation routing
-  - low-resource languages
-  - learned classifier
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "Multilingual LLM"
+  - "prompting strategy selection"
+  - "translation routing"
+  - "low-resource languages"
+  - "learned classifier"
 date: 2026-05-08
 content_hash: 83fab188537683df
 ---

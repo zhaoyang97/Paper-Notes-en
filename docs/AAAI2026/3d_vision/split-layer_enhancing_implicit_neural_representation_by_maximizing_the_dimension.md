@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Split-Layer: Enhancing Implicit Neural Representation by Maximizing the Dimensionality of Feature Space
 description: >-
-  [AAAI 2026][3D Vision][Implicit Neural Representation] This paper proposes Split-Layer, which decomposes fully connected layers in MLPs into multiple parallel branches and integrates their outputs via the Hadamard product. Without increasing parameter count or computational cost, this approach exponentially expands the feature space dimensionality from $C$ to $\binom{C/\sqrt{N}+N-1}{N}$, significantly enhancing the representational capacity of implicit neural representations (INRs).
+  [AAAI 2026][3D Vision][Implicit Neural Representation] This paper proposes Split-Layer, which decomposes fully connected layers in MLPs into multiple parallel branches and integrates their outputs via the Hadamard produc…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - Implicit Neural Representation
-  - Feature Space
-  - MLP Restructuring
-  - Hadamard Product
-  - Multi-task
+  - "AAAI 2026"
+  - "3D Vision"
+  - "Implicit Neural Representation"
+  - "Feature Space"
+  - "MLP Restructuring"
+  - "Hadamard Product"
+  - "Multi-task"
 date: 2026-05-08
 content_hash: 345e9be521ddec87
 ---

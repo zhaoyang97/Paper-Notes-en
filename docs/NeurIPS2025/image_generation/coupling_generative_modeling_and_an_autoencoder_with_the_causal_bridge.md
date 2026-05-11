@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Coupling Generative Modeling and an Autoencoder with the Causal Bridge
 description: >-
-  [NeurIPS 2025][Image Generation][causal bridge] In the presence of unobserved confounders, this paper proposes coupling a generative model with an autoencoder to improve estimation of the causal bridge function—sharing statistical strength across treatment, control, and outcome variables via a shared encoder—and extends the framework to survival analysis.
+  [NeurIPS 2025][Image Generation][causal bridge] In the presence of unobserved confounders, this paper proposes coupling a generative model with an autoencoder to improve estimation of the causal bridge function—sharing s…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - causal bridge
-  - proxy variable
-  - unobserved confounder
-  - autoencoder
-  - treatment effect
-  - survival analysis
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "causal bridge"
+  - "proxy variable"
+  - "unobserved confounder"
+  - "autoencoder"
+  - "treatment effect"
+  - "survival analysis"
 date: 2026-05-08
 content_hash: 43327e379d0ac2c0
 ---

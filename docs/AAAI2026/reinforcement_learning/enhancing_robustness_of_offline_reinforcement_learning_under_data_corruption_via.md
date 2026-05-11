@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Enhancing Robustness of Offline RL Under Data Corruption via SAM
 description: >-
-  [AAAI 2026 (Student Abstract, Oral)][Reinforcement Learning][Offline RL] This paper is the first to apply Sharpness-Aware Minimization (SAM) as a plug-and-play optimizer for offline RL. It hypothesizes that data corruption induces sharp minima in the loss landscape, leading to poor generalization, and demonstrates that SAM improves robustness by seeking flat minima. On the D4RL benchmark, IQL+SAM improves average score from 34.47 to 44.40.
+  [AAAI 2026 (Student Abstract, Oral)][Reinforcement Learning][Offline RL] This paper is the first to apply Sharpness-Aware Minimization (SAM) as a plug-and-play optimizer for offline RL. It hypothesizes that data corrupti…
 tags:
-  - AAAI 2026 (Student Abstract, Oral)
-  - Reinforcement Learning
-  - Offline RL
-  - Data Corruption
-  - SAM Optimizer
-  - Flat Minima
-  - Robustness
+  - "AAAI 2026 (Student Abstract, Oral)"
+  - "Reinforcement Learning"
+  - "Offline RL"
+  - "Data Corruption"
+  - "SAM Optimizer"
+  - "Flat Minima"
+  - "Robustness"
 date: 2026-05-08
 content_hash: dd9ea7652ce09ffb
 ---

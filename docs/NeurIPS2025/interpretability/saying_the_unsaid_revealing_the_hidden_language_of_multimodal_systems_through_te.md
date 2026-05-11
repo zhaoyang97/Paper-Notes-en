@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Saying the Unsaid: Revealing the Hidden Language of Multimodal Systems Through Telephone Games
 description: >-
-  [NeurIPS 2025][Hidden language] By running multi-round "telephone games" (image→text→image loops), this paper exploits the preference biases of multimodal systems to quantify the connection strength between concepts in the system's implicit space (i.e., the "hidden language"). It contributes the Telescope dataset (10,000+ concept pairs) and establishes a scalable test-time "world map" of multimodal systems.
+  [NeurIPS 2025][Interpretability][Hidden language] By running multi-round "telephone games" (image→text→image loops), this paper exploits the preference biases of multimodal systems to quantify the connection strength bet…
 tags:
-  - NeurIPS 2025
-  - Hidden language
-  - telephone game
-  - concept association
-  - multimodal interpretability
-  - test-time probing
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "Hidden language"
+  - "telephone game"
+  - "concept association"
+  - "multimodal interpretability"
+  - "test-time probing"
 date: 2026-05-08
 content_hash: ed42e71551caae9a
 ---

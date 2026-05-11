@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VLM-Pruner: Buffering for Spatial Sparsity in an Efficient VLM Centrifugal Token Pruning Paradigm
 description: >-
-  [CVPR 2026][Multimodal VLM][visual token pruning] This paper proposes VLM-Pruner, a training-free centrifugal token pruning method that balances redundancy elimination and local detail preservation through a Buffering for Spatial Sparsity (BSS) criterion. At an 88.9% pruning rate, it consistently outperforms existing methods across 5 VLMs while achieving end-to-end inference acceleration.
+  [CVPR 2026][Multimodal VLM][visual token pruning] This paper proposes VLM-Pruner, a training-free centrifugal token pruning method that balances redundancy elimination and local detail preservation through a Buffering fo…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - visual token pruning
-  - inference acceleration
-  - spatial sparsity
-  - training-free
-  - VLM efficiency
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "visual token pruning"
+  - "inference acceleration"
+  - "spatial sparsity"
+  - "training-free"
+  - "VLM efficiency"
 date: 2026-05-08
 content_hash: 08e0b9c33b076a28
 ---

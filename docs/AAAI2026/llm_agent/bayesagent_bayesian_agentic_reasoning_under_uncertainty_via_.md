@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] BayesAgent: Bayesian Agentic Reasoning Under Uncertainty via Verbalized Probabilistic Graphical Modeling
 description: >-
-  [AAAI 2026][LLM Agent][Bayesian Inference] This paper proposes the vPGM framework, which guides LLM agents via natural language to simulate Bayesian reasoning over probabilistic graphical models (PGMs)—discovering latent variables and inferring posterior distributions—and further applies numerical Bayesian calibration with a Dirichlet prior (BayesVPGM), achieving simultaneous improvements in accuracy and confidence calibration across multiple reasoning tasks.
+  [AAAI 2026][LLM Agent][Bayesian Inference] This paper proposes the vPGM framework, which guides LLM agents via natural language to simulate Bayesian reasoning over probabilistic graphical models (PGMs)—discovering latent…
 tags:
-  - AAAI 2026
-  - LLM Agent
-  - Bayesian Inference
-  - Probabilistic Graphical Models
-  - Uncertainty Calibration
-  - Confidence Estimation
+  - "AAAI 2026"
+  - "LLM Agent"
+  - "Bayesian Inference"
+  - "Probabilistic Graphical Models"
+  - "Uncertainty Calibration"
+  - "Confidence Estimation"
 date: 2026-05-08
 content_hash: e98b8d541409f4de
 ---

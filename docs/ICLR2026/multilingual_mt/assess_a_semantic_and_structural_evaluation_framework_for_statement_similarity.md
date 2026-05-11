@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] ASSESS: A Semantic and Structural Evaluation Framework for Statement Similarity
 description: >-
-  [ICLR 2026][autoformalization] This paper proposes the ASSESS framework, whose core contribution is the TransTED Similarity metric. By parsing formal mathematical statements into Operator Trees (OPTs) and augmenting standard Tree Edit Distance (TED) with semantic transformations driven by Lean proof tactics, ASSESS achieves state-of-the-art performance of 70.16% accuracy and a Kappa score of 0.35 on the EPLA benchmark, while requiring only CPU resources for reproduction.
+  [ICLR 2026][Multilingual & Machine Translation][autoformalization] This paper proposes the ASSESS framework, whose core contribution is the TransTED Similarity metric. By parsing formal mathematical statements into Opera…
 tags:
-  - ICLR 2026
-  - autoformalization
-  - evaluation metrics
-  - tree edit distance
-  - Lean
-  - formal mathematics
+  - "ICLR 2026"
+  - "Multilingual & Machine Translation"
+  - "autoformalization"
+  - "evaluation metrics"
+  - "tree edit distance"
+  - "Lean"
+  - "formal mathematics"
 date: 2026-05-08
 content_hash: bd284c9792126b6b
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Neural Emulator Superiority: When Machine Learning for PDEs Surpasses its Training Data
 description: >-
-  [NeurIPS 2025][Scientific Computing][PDE emulator] This work challenges the prevailing assumption that the accuracy of neural PDE emulators is bounded by that of their training data (i.e., the numerical solver). It discovers and rigorously defines the phenomenon of **emulator superiority**—neural networks trained solely on low-accuracy solver data can, when evaluated against high-accuracy reference solutions, outperform the very solver that generated their training data.
+  [NeurIPS 2025][Scientific Computing][PDE emulator] This work challenges the prevailing assumption that the accuracy of neural PDE emulators is bounded by that of their training data (i.e.…
 tags:
-  - NeurIPS 2025
-  - Scientific Computing
-  - PDE emulator
-  - numerical solver
-  - emulator superiority
-  - Fourier analysis
-  - autoregressive rollout
-  - inductive bias
+  - "NeurIPS 2025"
+  - "Scientific Computing"
+  - "PDE emulator"
+  - "numerical solver"
+  - "emulator superiority"
+  - "Fourier analysis"
+  - "autoregressive rollout"
+  - "inductive bias"
 date: 2026-05-08
 content_hash: 5143fdb0ed52ac9f
 ---

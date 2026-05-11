@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Flattery, Fluff, and Fog: Diagnosing and Mitigating Idiosyncratic Biases in Preference Models
 description: >-
-  [ICLR 2026][Causal Inference][preference model] This paper systematically investigates the over-reliance of preference models on five surface-level features (verbosity, structure, jargon, sycophancy, and vagueness). By constructing causal counterfactual pairs, it quantifies how biases originate from distributional imbalances in training data, and proposes a post-training method based on **Counterfactual Data Augmentation (CDA)** that reduces the average miscalibration rate relative to human judgments from 39.4% to 32.5%.
+  [ICLR 2026][Causal Inference][preference model] This paper systematically investigates the over-reliance of preference models on five surface-level features (verbosity, structure, jargon, sycophancy…
 tags:
-  - ICLR 2026
-  - Causal Inference
-  - preference model
-  - reward model bias
-  - RLHF
-  - counterfactual data augmentation
-  - LLM alignment
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "preference model"
+  - "reward model bias"
+  - "RLHF"
+  - "counterfactual data augmentation"
+  - "LLM alignment"
 date: 2026-05-08
 content_hash: 8d18dace281b1ce5
 ---

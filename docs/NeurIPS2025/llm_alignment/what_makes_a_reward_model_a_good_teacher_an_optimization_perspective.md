@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] What Makes a Reward Model a Good Teacher? An Optimization Perspective
 description: >-
-  [NeurIPS 2025][LLM Alignment][Reward Model] From an optimization-theoretic perspective, this paper proves that reward model accuracy alone is insufficient to measure its quality as an RLHF "teacher." Even a perfectly accurate reward model can lead to a flat RLHF objective landscape and extremely slow policy gradient optimization if the induced reward variance is too low. Moreover, different language models require different reward models.
+  [NeurIPS 2025][LLM Alignment][Reward Model] From an optimization-theoretic perspective, this paper proves that reward model accuracy alone is insufficient to measure its quality as an RLHF "teacher." Even a perfectly acc…
 tags:
-  - NeurIPS 2025
-  - LLM Alignment
-  - Reward Model
-  - RLHF
-  - Reward Variance
-  - Optimization Landscape
-  - Policy Gradient
+  - "NeurIPS 2025"
+  - "LLM Alignment"
+  - "Reward Model"
+  - "RLHF"
+  - "Reward Variance"
+  - "Optimization Landscape"
+  - "Policy Gradient"
 date: 2026-05-08
 content_hash: dd755fd103fbfb17
 ---

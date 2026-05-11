@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Safe-Sora: Safe Text-to-Video Generation via Graphical Watermarking
 description: >-
-  [NeurIPS 2025][Video Generation][Graphical Watermarking] Safe-Sora is the first method to embed **graphical watermarks** (e.g., logo images) directly into the video generation pipeline. It employs a coarse-to-fine adaptive matching strategy to assign watermark patches to visually similar frames and regions, and designs a 3D wavelet transform-enhanced Mamba architecture for spatiotemporal fusion. The method substantially outperforms all baselines in both video quality (FVD 3.77 vs. the second-best 154.35) and watermark fidelity.
+  [NeurIPS 2025][Video Generation][Graphical Watermarking] Safe-Sora is the first method to embed **graphical watermarks** (e.g., logo images) directly into the video generation pipeline. It employs a coarse-to-fine adapti…
 tags:
-  - NeurIPS 2025
-  - Video Generation
-  - Graphical Watermarking
-  - Mamba
-  - 3D Wavelet Transform
-  - Adaptive Matching
+  - "NeurIPS 2025"
+  - "Video Generation"
+  - "Graphical Watermarking"
+  - "Mamba"
+  - "3D Wavelet Transform"
+  - "Adaptive Matching"
 date: 2026-05-08
 content_hash: 5ac3d56da7a20604
 ---

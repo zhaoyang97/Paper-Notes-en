@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Fewer Denoising Steps or Cheaper Per-Step Inference: Towards Compute-Optimal Diffusion Model Deployment
 description: >-
-  [ICCV 2025][Image Generation][diffusion model acceleration] This paper proposes PostDiff — a training-free diffusion model acceleration framework that reduces redundancy at two levels: at the input level via a mixed-resolution denoising strategy (low resolution in early steps → high resolution in later steps), and at the module level via a hybrid caching strategy (DeepCache + cross-attention caching). The work systematically addresses the key question of whether reducing the number of denoising steps or reducing the per-step computation cost is more effective — concluding that the latter is superior across most efficiency regimes.
+  [ICCV 2025][Image Generation][diffusion model acceleration] This paper proposes PostDiff — a training-free diffusion model acceleration framework that reduces redundancy at two levels: at the input level via a mixed-reso…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - diffusion model acceleration
-  - mixed-resolution denoising
-  - module caching
-  - training-free compression
-  - compute-optimal deployment
+  - "ICCV 2025"
+  - "Image Generation"
+  - "diffusion model acceleration"
+  - "mixed-resolution denoising"
+  - "module caching"
+  - "training-free compression"
+  - "compute-optimal deployment"
 date: 2026-05-08
 content_hash: fdd562dc80075756
 ---

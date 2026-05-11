@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SafeMIL: Learning Offline Safe Imitation Policy from Non-Preferred Trajectories
 description: >-
-  [AAAI 2026][Reinforcement Learning][Offline safe imitation learning] This paper proposes SafeMIL, which formulates cost function learning as a Multiple Instance Learning (MIL) problem to learn a safe imitation policy from a limited set of non-preferred trajectories and a large collection of unlabeled trajectories—without requiring step-level reward or cost annotations—achieving constraint satisfaction performance 3.7× better than the strongest baseline.
+  [AAAI 2026][Reinforcement Learning][Offline safe imitation learning] This paper proposes SafeMIL, which formulates cost function learning as a Multiple Instance Learning (MIL) problem to learn a safe imitation policy fro…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - Offline safe imitation learning
-  - multiple instance learning
-  - constrained MDP
-  - behavioral cloning
-  - cost function learning
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "Offline safe imitation learning"
+  - "multiple instance learning"
+  - "constrained MDP"
+  - "behavioral cloning"
+  - "cost function learning"
 date: 2026-05-08
 content_hash: 3b8b1e5f5e9187cb
 ---

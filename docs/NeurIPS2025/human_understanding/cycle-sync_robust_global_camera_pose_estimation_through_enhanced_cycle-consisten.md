@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Cycle-Sync: Robust Global Camera Pose Estimation through Enhanced Cycle-Consistent Synchronization
 description: >-
-  [NeurIPS 2025][Human Understanding][Structure-from-Motion] Cycle-Sync is a global camera pose estimation framework that extends Message Passing Least Squares (MPLS) to camera position estimation, introduces a Welsch-type robust loss and cycle-consistency weighting, and surpasses all baselines—including complete SfM pipelines with bundle adjustment (BA)—without requiring BA.
+  [NeurIPS 2025][Human Understanding][Structure-from-Motion] Cycle-Sync is a global camera pose estimation framework that extends Message Passing Least Squares (MPLS) to camera position estimation…
 tags:
-  - NeurIPS 2025
-  - Human Understanding
-  - Structure-from-Motion
-  - camera position estimation
-  - cycle consistency
-  - robust optimization
-  - message passing
+  - "NeurIPS 2025"
+  - "Human Understanding"
+  - "Structure-from-Motion"
+  - "camera position estimation"
+  - "cycle consistency"
+  - "robust optimization"
+  - "message passing"
 date: 2026-05-08
 content_hash: cce75acd5529a376
 ---

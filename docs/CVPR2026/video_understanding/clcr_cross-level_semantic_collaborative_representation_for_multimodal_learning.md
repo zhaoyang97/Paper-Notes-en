@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CLCR: Cross-Level Semantic Collaborative Representation for Multimodal Learning
 description: >-
-  [CVPR 2026][Video Understanding][Cross-level semantic alignment] This paper proposes the CLCR framework, which organizes each modality's features into three semantic hierarchy levels (shallow/middle/deep). An intra-level Controlled Exchange Domain (IntraCED) restricts cross-modal interaction to the shared subspace only, while an inter-level Collaborative Aggregation Domain (InterCAD) enables adaptive cross-level fusion, addressing the cross-level semantic asynchrony problem in multimodal learning.
+  [CVPR 2026][Video Understanding][Cross-level semantic alignment] This paper proposes the CLCR framework, which organizes each modality's features into three semantic hierarchy levels (shallow/middle/deep). An intra-level…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Cross-level semantic alignment
-  - shared-private disentanglement
-  - multimodal fusion
-  - sentiment analysis
-  - event localization
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Cross-level semantic alignment"
+  - "shared-private disentanglement"
+  - "multimodal fusion"
+  - "sentiment analysis"
+  - "event localization"
 date: 2026-05-08
 content_hash: e0d965dc97f2b282
 ---

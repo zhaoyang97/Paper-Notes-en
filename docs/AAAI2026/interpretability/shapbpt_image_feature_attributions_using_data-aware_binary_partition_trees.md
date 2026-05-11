@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] ShapBPT: Image Feature Attributions Using Data-Aware Binary Partition Trees
 description: >-
-  [AAAI 2026][Shapley values] This paper proposes ShapBPT, which combines **data-aware Binary Partition Trees (BPT)** as hierarchical coalition structures with Owen-approximated Shapley values to achieve feature attributions aligned with image morphology. ShapBPT converges faster and yields more accurate shape recognition than existing Shapley-based methods, with a 20-participant user study confirming that its explanations are preferred by human evaluators.
+  [AAAI 2026][Interpretability][Shapley values] This paper proposes ShapBPT, which combines **data-aware Binary Partition Trees (BPT)** as hierarchical coalition structures with Owen-approximated Shapley values to achieve…
 tags:
-  - AAAI 2026
-  - Shapley values
-  - Binary Partition Tree
-  - Interpretability
-  - Feature Attribution
-  - Image Classification
+  - "AAAI 2026"
+  - "Interpretability"
+  - "Shapley values"
+  - "Binary Partition Tree"
+  - "Feature Attribution"
+  - "Image Classification"
 date: 2026-05-08
 content_hash: d80b5c156c711ae1
 ---

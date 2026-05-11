@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] BRIDGE: Multimodal-to-Text Retrieval via Reinforcement-Learned Query Alignment
 description: >-
-  [CVPR 2026][Reinforcement Learning][Multimodal Retrieval] This paper proposes BRIDGE, a system that distills noisy multimodal queries into retrieval-optimized pure-text queries via FORGE (an RL-trained query alignment model), paired with LENS, a reasoning-enhanced retriever. BRIDGE achieves 29.7 nDCG@10 on MM-BRIGHT, and as a plug-in further improves Nomic-Vision to 33.3, surpassing the best text-only retriever.
+  [CVPR 2026][Reinforcement Learning][Multimodal Retrieval] This paper proposes BRIDGE, a system that distills noisy multimodal queries into retrieval-optimized pure-text queries via FORGE (an RL-trained query alignment mo…
 tags:
-  - CVPR 2026
-  - Reinforcement Learning
-  - Multimodal Retrieval
-  - Query Alignment
-  - Dense Retrieval
-  - Query Rewriting
+  - "CVPR 2026"
+  - "Reinforcement Learning"
+  - "Multimodal Retrieval"
+  - "Query Alignment"
+  - "Dense Retrieval"
+  - "Query Rewriting"
 date: 2026-05-08
 content_hash: 08b6ba441d6d2bf5
 ---

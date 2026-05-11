@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Comparative Evaluation of Traditional Methods and Deep Learning for Brain Glioma Imaging
 description: >-
-  [CVPR 2026][Segmentation][brain glioma] A systematic review paper that comprehensively compares traditional methods (thresholding, region growing, fuzzy clustering, etc.) and deep learning methods (CNN, U-Net, SegNet, etc.) for brain glioma MRI segmentation and classification, concluding that CNN-based architectures consistently outperform traditional techniques in both accuracy and degree of automation.
+  [CVPR 2026][Segmentation][brain glioma] A systematic review paper that comprehensively compares traditional methods (thresholding, region growing, fuzzy clustering, etc.) and deep learning methods (CNN, U-Net, SegNet…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - brain glioma
-  - MRI segmentation
-  - classification
-  - deep learning
-  - CNN
-  - traditional methods
-  - medical imaging
+  - "CVPR 2026"
+  - "Segmentation"
+  - "brain glioma"
+  - "MRI segmentation"
+  - "classification"
+  - "deep learning"
+  - "CNN"
+  - "traditional methods"
+  - "medical imaging"
 date: 2026-05-08
 content_hash: f5dec10bbf20b019
 ---

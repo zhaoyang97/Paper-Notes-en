@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] IGL-Nav: Incremental 3D Gaussian Localization for Image-goal Navigation
 description: >-
-  [ICCV 2025][Autonomous Driving][image-goal navigation] This paper proposes IGL-Nav, a system that builds a renderable scene memory via incremental 3D Gaussian representations and efficiently solves the image-goal navigation problem through a coarse-to-fine localization strategy, while supporting a free-view setting with arbitrary camera viewpoints.
+  [ICCV 2025][Autonomous Driving][image-goal navigation] This paper proposes IGL-Nav, a system that builds a renderable scene memory via incremental 3D Gaussian representations and efficiently solves the image-goal navigat…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - image-goal navigation
-  - 3D Gaussian Splatting
-  - visual navigation
-  - coarse-to-fine localization
-  - embodied AI
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "image-goal navigation"
+  - "3D Gaussian Splatting"
+  - "visual navigation"
+  - "coarse-to-fine localization"
+  - "embodied AI"
 date: 2026-05-08
 content_hash: 8e1627b17ca0ba55
 ---

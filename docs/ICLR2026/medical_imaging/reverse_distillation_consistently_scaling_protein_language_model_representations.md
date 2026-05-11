@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Reverse Distillation: Consistently Scaling Protein Language Model Representations
 description: >-
-  [ICLR 2026][Medical Imaging][Reverse Distillation] To address the anomalous scaling phenomenon in protein language models (PLMs) where larger models do not necessarily yield better performance, this paper proposes a reverse distillation framework. It uses the representations of a smaller model as a base, extracts orthogonal residual information from a larger model via SVD, and constructs Matryoshka nested embeddings—ensuring that larger reverse-distilled models consistently outperform smaller ones. ESM-2 15B, after reverse distillation, becomes for the first time the strongest model in its family.
+  [ICLR 2026][Medical Imaging][Reverse Distillation] To address the anomalous scaling phenomenon in protein language models (PLMs) where larger models do not necessarily yield better performance…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - Reverse Distillation
-  - Protein Language Model
-  - Scaling Behavior
-  - Matryoshka Nested Representations
-  - ESM-2
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Reverse Distillation"
+  - "Protein Language Model"
+  - "Scaling Behavior"
+  - "Matryoshka Nested Representations"
+  - "ESM-2"
 date: 2026-05-08
 content_hash: e47c580a9501a55a
 ---

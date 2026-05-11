@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Foundation Cures Personalization: Improving Personalized Models' Prompt Consistency via Hidden Foundation Knowledge
 description: >-
-  [NeurIPS 2025][Human Understanding][Face Personalization] FreeCure reveals that identity embeddings in face personalization models suppress but do not destroy the prompt control capability of the foundation model. Based on this insight, the paper proposes a training-free framework that injects attribute information from the foundation model into the personalized generation process via Foundation-Aware Self-Attention (FASA). The method substantially improves prompt consistency while preserving identity fidelity, and can be seamlessly integrated into mainstream architectures including SD, SDXL, and FLUX.
+  [NeurIPS 2025][Human Understanding][Face Personalization] FreeCure reveals that identity embeddings in face personalization models suppress but do not destroy the prompt control capability of the foundation model. Based…
 tags:
-  - NeurIPS 2025
-  - Human Understanding
-  - Face Personalization
-  - Diffusion Models
-  - Prompt Consistency
-  - Training-Free
-  - Self-Attention
+  - "NeurIPS 2025"
+  - "Human Understanding"
+  - "Face Personalization"
+  - "Diffusion Models"
+  - "Prompt Consistency"
+  - "Training-Free"
+  - "Self-Attention"
 date: 2026-05-08
 content_hash: c9de68b66fc816a6
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Outdoor Monocular SLAM with Global Scale-Consistent 3D Gaussian Pointmaps
 description: >-
-  [ICCV 2025][3D Vision][3DGS SLAM] This paper proposes S3PO-GS, a monocular RGB-only outdoor SLAM system that anchors pose estimation to 3DGS-rendered pointmaps for scale self-consistency, and employs a patch-based dynamic mapping mechanism, achieving high-accuracy localization without cumulative scale drift and high-fidelity novel view synthesis.
+  [ICCV 2025][3D Vision][3DGS SLAM] This paper proposes S3PO-GS, a monocular RGB-only outdoor SLAM system that anchors pose estimation to 3DGS-rendered pointmaps for scale self-consistency…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3DGS SLAM
-  - Monocular Vision
-  - Scale Consistency
-  - Pointmap
-  - Outdoor Scenes
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3DGS SLAM"
+  - "Monocular Vision"
+  - "Scale Consistency"
+  - "Pointmap"
+  - "Outdoor Scenes"
 date: 2026-05-08
 content_hash: e50d0ccb3fca43ae
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] S3E: Self-Supervised State Estimation for Radar-Inertial System
 description: >-
-  [ICCV 2025][3D Vision][millimeter-wave radar] S3E is proposed as the first method to achieve complementary self-supervised state estimation from radar signal spectra and inertial data, leveraging a rotation-based cross-fusion technique to enhance spatial structural information under limited angular resolution.
+  [ICCV 2025][3D Vision][millimeter-wave radar] S3E is proposed as the first method to achieve complementary self-supervised state estimation from radar signal spectra and inertial data…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - millimeter-wave radar
-  - IMU fusion
-  - self-supervised learning
-  - state estimation
-  - radar spectrum
+  - "ICCV 2025"
+  - "3D Vision"
+  - "millimeter-wave radar"
+  - "IMU fusion"
+  - "self-supervised learning"
+  - "state estimation"
+  - "radar spectrum"
 date: 2026-05-08
 content_hash: 6f373660a1bcb66f
 ---

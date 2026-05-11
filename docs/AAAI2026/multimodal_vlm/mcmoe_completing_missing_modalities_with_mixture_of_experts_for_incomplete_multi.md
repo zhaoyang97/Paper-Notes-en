@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MCMoE: Completing Missing Modalities with Mixture of Experts for Incomplete Multimodal Action Quality Assessment
 description: >-
-  [AAAI 2026][Multimodal VLM][Incomplete multimodal learning] This paper presents the first exploration of incomplete multimodal action quality assessment (AQA), proposing the MCMoE framework. An Adaptive Gated Modality Generator (AGMG) completes missing modalities, while a Mixture of Experts (MoE) module with soft routing dynamically fuses unimodal and cross-modal joint representations within a unified single-stage training paradigm. MCMoE achieves state-of-the-art performance under both complete and incomplete modality settings across three public AQA benchmarks, with only 4.90M parameters.
+  [AAAI 2026][Multimodal VLM][Incomplete multimodal learning] This paper presents the first exploration of incomplete multimodal action quality assessment (AQA)…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Incomplete multimodal learning
-  - action quality assessment
-  - mixture of experts
-  - modality completion
-  - cross-modal fusion
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Incomplete multimodal learning"
+  - "action quality assessment"
+  - "mixture of experts"
+  - "modality completion"
+  - "cross-modal fusion"
 date: 2026-05-08
 content_hash: 1603538f3cbc120a
 ---

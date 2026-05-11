@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FiffDepth: Feed-forward Transformation of Diffusion-Based Generators for Detailed Depth Estimation
 description: >-
-  [ICCV 2025][3D Vision][Monocular depth estimation] This paper proposes FiffDepth, which transforms a pretrained diffusion model into a deterministic feed-forward architecture for monocular depth estimation. By preserving the diffusion trajectory to maintain detail generation capability and introducing a learnable filter to distill DINOv2's robust generalization ability into the diffusion backbone, FiffDepth simultaneously surpasses existing methods in efficiency, accuracy, and detail richness.
+  [ICCV 2025][3D Vision][Monocular depth estimation] This paper proposes FiffDepth, which transforms a pretrained diffusion model into a deterministic feed-forward architecture for monocular depth estimation. By preserving…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Monocular depth estimation
-  - diffusion models
-  - feed-forward architecture
-  - DINOv2 distillation
-  - detail preservation
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Monocular depth estimation"
+  - "diffusion models"
+  - "feed-forward architecture"
+  - "DINOv2 distillation"
+  - "detail preservation"
 date: 2026-05-08
 content_hash: 6bc6b757a0139c5f
 ---

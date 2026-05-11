@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] 3D Gaussian Map with Open-Set Semantic Grouping for Vision-Language Navigation
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes a 3D Gaussian Map based on 3D Gaussian Splatting for scene representation, combined with an open-set semantic grouping mechanism, to construct a 3D environmental representation that captures both geometric structure and rich semantic information for Vision-Language Navigation (VLN). A Multi-Level Action Prediction strategy is further designed to integrate multi-granularity spatial-semantic cues for navigation decision-making.
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes a 3D Gaussian Map based on 3D Gaussian Splatting for scene representation, combined with an open-set semantic grouping mechanism…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - Vision-Language Navigation
-  - Open-Vocabulary Semantic Grouping
-  - Multi-Level Action Prediction
-  - Scene Representation
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Vision-Language Navigation"
+  - "Open-Vocabulary Semantic Grouping"
+  - "Multi-Level Action Prediction"
+  - "Scene Representation"
 date: 2026-05-08
 content_hash: a7b4482094daa4ff
 ---

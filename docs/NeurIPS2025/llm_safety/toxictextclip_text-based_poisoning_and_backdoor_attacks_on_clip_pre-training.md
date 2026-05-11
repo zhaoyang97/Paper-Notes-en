@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ToxicTextCLIP: Text-Based Poisoning and Backdoor Attacks on CLIP Pre-training
 description: >-
-  [NeurIPS 2025][LLM Safety][CLIP security] This paper proposes ToxicTextCLIP, a framework that generates high-quality adversarial texts during CLIP pre-training via two modules—Background-aware Target Text Selector and Background-driven Poisoned Text Augmenter—achieving up to 95.83% attack success rate and 98.68% backdoor Hit@1, while successfully bypassing three defenses: RoCLIP, CleanCLIP, and SafeCLIP.
+  [NeurIPS 2025][LLM Safety][CLIP security] This paper proposes ToxicTextCLIP, a framework that generates high-quality adversarial texts during CLIP pre-training via two modules—Background-aware Target Text Selector and Ba…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - CLIP security
-  - data poisoning
-  - backdoor attack
-  - textual adversarial attack
-  - multimodal security
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "CLIP security"
+  - "data poisoning"
+  - "backdoor attack"
+  - "textual adversarial attack"
+  - "multimodal security"
 date: 2026-05-08
 content_hash: a4f088f10482fa48
 ---

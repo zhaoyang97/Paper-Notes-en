@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Auto-Search and Refinement: An Automated Framework for Gender Bias Mitigation in LLMs
 description: >-
-  [NeurIPS 2025][Social Computing][gender bias mitigation] This paper proposes FaIRMaker, a framework that adopts an "auto-search + refinement" paradigm: it first employs gradient-based optimization to identify debiasing trigger tokens (Fairwords), then trains a seq2seq model to transform them into human-readable instructions, effectively mitigating gender bias on both open-source and closed-source LLMs while preserving or even improving task performance.
+  [NeurIPS 2025][Social Computing][gender bias mitigation] This paper proposes FaIRMaker, a framework that adopts an "auto-search + refinement" paradigm: it first employs gradient-based optimization to identify debiasing t…
 tags:
-  - NeurIPS 2025
-  - Social Computing
-  - gender bias mitigation
-  - automated prompt search
-  - Fairwords
-  - debiasing
-  - LLM fairness
+  - "NeurIPS 2025"
+  - "Social Computing"
+  - "gender bias mitigation"
+  - "automated prompt search"
+  - "Fairwords"
+  - "debiasing"
+  - "LLM fairness"
 date: 2026-05-08
 content_hash: a1e02abe60e1d145
 ---

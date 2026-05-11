@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Exoplanet Formation Inference Using Conditional Invertible Neural Networks
 description: >-
-  [NeurIPS 2025][exoplanets] A conditional invertible neural network (cINN) trained on 15,777 synthetic planets infers planet formation parameters (disk mass, turbulent $\alpha$, dust-to-gas ratio) from observables (planet mass, orbital distance), achieving probabilistic parameter retrieval ~10⁶× faster than physical simulations. Multi-planet system data is shown to yield more robust inference than single-planet data.
+  [NeurIPS 2025][Physics][exoplanets] A conditional invertible neural network (cINN) trained on 15,777 synthetic planets infers planet formation parameters (disk mass, turbulent $\alpha$…
 tags:
-  - NeurIPS 2025
-  - exoplanets
-  - conditional invertible neural networks
-  - Bayesian inference
-  - planet formation
-  - surrogate model
+  - "NeurIPS 2025"
+  - "Physics"
+  - "exoplanets"
+  - "conditional invertible neural networks"
+  - "Bayesian inference"
+  - "planet formation"
+  - "surrogate model"
 date: 2026-05-08
 content_hash: fddddaf30f270639
 ---

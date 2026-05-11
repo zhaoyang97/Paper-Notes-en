@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Residual Decoding: Mitigating Hallucinations in Large Vision-Language Models via History-Aware Residual Guidance
 description: >-
-  [CVPR2026][Multimodal VLM][Hallucination Mitigation] This paper proposes Residual Decoding (ResDec), a training-free plug-and-play decoding strategy that identifies the semantic anchoring phase by analyzing U-shaped JSD patterns in historical token logit distributions, aggregates logits from this phase as residual guidance to steer current decoding, and effectively suppresses language-prior hallucinations in LVLMs at near-zero additional inference overhead.
+  [CVPR2026][Multimodal VLM][Hallucination Mitigation] This paper proposes Residual Decoding (ResDec), a training-free plug-and-play decoding strategy that identifies the semantic anchoring phase by analyzing U-shaped JSD…
 tags:
-  - CVPR2026
-  - Multimodal VLM
-  - Hallucination Mitigation
-  - Decoding Strategy
-  - Vision-Language Models
-  - Residual Guidance
-  - Training-Free
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "Hallucination Mitigation"
+  - "Decoding Strategy"
+  - "Vision-Language Models"
+  - "Residual Guidance"
+  - "Training-Free"
 date: 2026-05-08
 content_hash: 42a4f69e264fb23c
 ---

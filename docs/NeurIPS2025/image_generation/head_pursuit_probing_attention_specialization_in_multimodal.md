@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Head Pursuit: Probing Attention Specialization in Multimodal Transformers
 description: >-
-  [NeurIPS2025][Image Generation][attention head specialization] This paper reinterprets the classical sparse signal recovery algorithm (SOMP) as a multi-sample interpretability tool, revealing fine-grained semantic specialization of attention heads in LLMs and VLMs. By flipping approximately 1% of heads, specific concepts (e.g., country names, toxic content, colors) can be reliably suppressed or amplified during generation.
+  [NeurIPS2025][Image Generation][attention head specialization] This paper reinterprets the classical sparse signal recovery algorithm (SOMP) as a multi-sample interpretability tool…
 tags:
-  - NeurIPS2025
-  - Image Generation
-  - attention head specialization
-  - Matching Pursuit
-  - Logit Lens
-  - model editing
-  - vision-language model
+  - "NeurIPS2025"
+  - "Image Generation"
+  - "attention head specialization"
+  - "Matching Pursuit"
+  - "Logit Lens"
+  - "model editing"
+  - "vision-language model"
 date: 2026-05-08
 content_hash: fcc156bad6aa7515
 ---

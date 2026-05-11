@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Cross-Scale Pansharpening via ScaleFormer and the PanScale Benchmark
 description: >-
-  [CVPR 2026][LLM Evaluation][Remote sensing image fusion] This paper proposes PanScale, the first cross-scale pansharpening dataset, along with the PanScale-Bench evaluation benchmark, and the ScaleFormer framework — which reinterprets resolution variation as sequence length variation, achieving cross-scale generalization via Scale-Aware Patchify bucketed sampling, decoupled spatial-sequence modeling, and RoPE.
+  [CVPR 2026][LLM Evaluation][Remote sensing image fusion] This paper proposes PanScale, the first cross-scale pansharpening dataset, along with the PanScale-Bench evaluation benchmark…
 tags:
-  - CVPR 2026
-  - LLM Evaluation
-  - Remote sensing image fusion
-  - cross-scale generalization
-  - Transformer
-  - rotary position encoding
-  - pansharpening
+  - "CVPR 2026"
+  - "LLM Evaluation"
+  - "Remote sensing image fusion"
+  - "cross-scale generalization"
+  - "Transformer"
+  - "rotary position encoding"
+  - "pansharpening"
 date: 2026-05-08
 content_hash: 329015a8241aad6e
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Bidirectional Multimodal Prompt Learning with Scale-Aware Training for Few-Shot Multi-Class Anomaly Detection
 description: >-
-  [CVPR 2026][Medical Imaging][Few-shot anomaly detection] This paper proposes AnoPLe — a lightweight multimodal bidirectional prompt learning framework that requires neither manually crafted anomaly descriptions nor external auxiliary modules. Through text–visual prompt bidirectional interaction and scale-aware prefixes, AnoPLe achieves few-shot multi-class anomaly detection, delivering strong competitive results on MVTec-AD/VisA/Real-IAD while maintaining efficient inference (~28 FPS).
+  [CVPR 2026][Medical Imaging][Few-shot anomaly detection] This paper proposes AnoPLe — a lightweight multimodal bidirectional prompt learning framework that requires neither manually crafted anomaly descriptions nor exter…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Few-shot anomaly detection
-  - multi-class unified model
-  - bidirectional prompt learning
-  - scale-aware training
-  - CLIP
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Few-shot anomaly detection"
+  - "multi-class unified model"
+  - "bidirectional prompt learning"
+  - "scale-aware training"
+  - "CLIP"
 date: 2026-05-08
 content_hash: 15ce552860ebc09c
 ---

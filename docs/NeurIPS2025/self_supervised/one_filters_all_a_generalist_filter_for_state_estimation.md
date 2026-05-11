@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] One Filters All: A Generalist Filter for State Estimation
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][LLM reprogramming] This paper proposes LLM-Filter, which reprograms a large language model (LLM) as a generalist state estimator. Through a System-as-Prompt (SaP) mechanism, the frozen LLM achieves zero-shot generalization to unseen dynamical systems, surpassing state-of-the-art learning-based filters.
+  [NeurIPS 2025][Self-Supervised Learning][LLM reprogramming] This paper proposes LLM-Filter, which reprograms a large language model (LLM) as a generalist state estimator. Through a System-as-Prompt (SaP) mechanism…
 tags:
-  - NeurIPS 2025
-  - Self-Supervised Learning
-  - LLM reprogramming
-  - state estimation
-  - Bayesian filtering
-  - System-as-Prompt
-  - generalist filter
+  - "NeurIPS 2025"
+  - "Self-Supervised Learning"
+  - "LLM reprogramming"
+  - "state estimation"
+  - "Bayesian filtering"
+  - "System-as-Prompt"
+  - "generalist filter"
 date: 2026-05-08
 content_hash: c472a5e7c57ea76c
 ---

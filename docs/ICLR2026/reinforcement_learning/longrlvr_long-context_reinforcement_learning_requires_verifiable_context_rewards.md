@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] LongRLVR: Long-Context Reinforcement Learning Requires Verifiable Context Rewards
 description: >-
-  [ICLR 2026][Reinforcement Learning][RLVR] This paper proposes LongRLVR, which introduces verifiable context rewards into RLVR training to address the gradient vanishing problem of contextual grounding caused by relying solely on final-answer rewards in long-context settings, significantly improving LLM long-context reasoning capabilities.
+  [ICLR 2026][Reinforcement Learning][RLVR] This paper proposes LongRLVR, which introduces verifiable context rewards into RLVR training to address the gradient vanishing problem of contextual grounding caused by relying s…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RLVR
-  - long-context reasoning
-  - contextual grounding
-  - verifiable rewards
-  - gradient vanishing
-  - GRPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "long-context reasoning"
+  - "contextual grounding"
+  - "verifiable rewards"
+  - "gradient vanishing"
+  - "GRPO"
 date: 2026-05-08
 content_hash: 800e964adbeba6e7
 ---

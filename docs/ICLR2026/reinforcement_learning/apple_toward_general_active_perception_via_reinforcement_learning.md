@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] APPLE: Toward General Active Perception via Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][active perception] This paper proposes APPLE, a general active perception framework that combines reinforcement learning with supervised learning. Active perception is formulated as a POMDP, with the reward defined as the RL reward minus the prediction loss. The gradient naturally decomposes into a policy gradient term and a prediction loss gradient term. Built upon off-policy algorithms (SAC/CrossQ) and a shared ViViT backbone, the framework is validated across 5 diverse task benchmarks. The CrossQ variant requires no per-task hyperparameter tuning and achieves a 53% improvement in training efficiency.
+  [ICLR 2026][Reinforcement Learning][active perception] This paper proposes APPLE, a general active perception framework that combines reinforcement learning with supervised learning. Active perception is formulated as a…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - active perception
-  - reinforcement-learning
-  - POMDP
-  - supervised learning
-  - off-policy
-  - ViViT
-  - CrossQ
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "active perception"
+  - "reinforcement-learning"
+  - "POMDP"
+  - "supervised learning"
+  - "off-policy"
+  - "ViViT"
+  - "CrossQ"
 date: 2026-05-08
 content_hash: 52522e34b5ba2055
 ---

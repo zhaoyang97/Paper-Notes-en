@@ -2,13 +2,14 @@
 title: >-
   [Paper Note] Deep Modularity Networks with Diversity-Preserving Regularization
 description: >-
-  [NEURIPS2025][graph clustering] This work augments Deep Modularity Networks (DMoN) with three diversity-preserving regularization terms—distance-based, variance-based, and entropy-based—to explicitly promote inter-cluster separation and assignment diversity in feature space, achieving significant clustering quality improvements on feature-rich graph datasets.
+  [NEURIPS2025][Interpretability][graph clustering] This work augments Deep Modularity Networks (DMoN) with three diversity-preserving regularization terms—distance-based, variance-based…
 tags:
-  - NEURIPS2025
-  - graph clustering
-  - modularity maximization
-  - diversity regularization
-  - GNN pooling
+  - "NEURIPS2025"
+  - "Interpretability"
+  - "graph clustering"
+  - "modularity maximization"
+  - "diversity regularization"
+  - "GNN pooling"
 date: 2026-05-08
 content_hash: 74c102e81140fdcf
 ---

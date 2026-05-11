@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Generalized Tensor-based Parameter-Efficient Fine-Tuning via Lie Group Transformations
 description: >-
-  [ICCV 2025][Model Compression][PEFT] This paper proposes LieRA, which leverages Lie group theory to generalize matrix-level PEFT methods (e.g., LoRA) to high-dimensional parameter spaces (e.g., convolutional kernels). By representing perturbations in the Lie algebra and mapping them back to the Lie group via the exponential map, LieRA achieves efficient fine-tuning while preserving the structural properties of the parameter space.
+  [ICCV 2025][Model Compression][PEFT] This paper proposes LieRA, which leverages Lie group theory to generalize matrix-level PEFT methods (e.g., LoRA) to high-dimensional parameter spaces (e.g.…
 tags:
-  - ICCV 2025
-  - Model Compression
-  - PEFT
-  - LoRA
-  - Lie Group
-  - High-Dimensional Parameter Space
-  - Convolutional Kernel Fine-Tuning
+  - "ICCV 2025"
+  - "Model Compression"
+  - "PEFT"
+  - "LoRA"
+  - "Lie Group"
+  - "High-Dimensional Parameter Space"
+  - "Convolutional Kernel Fine-Tuning"
 date: 2026-05-08
 content_hash: ebc37777e2a6d307
 ---

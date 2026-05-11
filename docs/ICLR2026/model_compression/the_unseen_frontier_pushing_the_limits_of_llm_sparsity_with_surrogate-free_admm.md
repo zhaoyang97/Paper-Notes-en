@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The Unseen Frontier: Pushing the Limits of LLM Sparsity with Surrogate-Free ADMM
 description: >-
-  [ICLR 2026][Model Compression][LLM Pruning] This paper proposes Elsa, a method that directly solves sparsity-constrained optimization via surrogate-free ADMM, breaking the 50–60% "sparsity wall" bottleneck in LLM pruning and maintaining high model fidelity even at 90% sparsity.
+  [ICLR 2026][Model Compression][LLM Pruning] This paper proposes Elsa, a method that directly solves sparsity-constrained optimization via surrogate-free ADMM…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - LLM Pruning
-  - Extreme Sparsity
-  - ADMM
-  - Surrogate-Free Objective
-  - Network Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "LLM Pruning"
+  - "Extreme Sparsity"
+  - "ADMM"
+  - "Surrogate-Free Objective"
+  - "Network Compression"
 date: 2026-05-08
 content_hash: b91741b6f1905966
 ---

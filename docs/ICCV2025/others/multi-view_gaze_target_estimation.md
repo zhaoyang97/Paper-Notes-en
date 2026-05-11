@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Multi-view Gaze Target Estimation
 description: >-
-  [ICCV 2025][Gaze Target Estimation] This paper is the first to extend Gaze Target Estimation (GTE) from single-view to multi-view settings. By integrating three modules — Head Information Aggregation (HIA), Uncertainty-based Gaze Selection (UGS), and Epipolar-based Scene Attention (ESA) — the method fuses information across multiple cameras. It significantly outperforms single-view state-of-the-art methods on the newly introduced MVGT dataset and enables cross-view estimation that single-view methods cannot handle.
+  [ICCV 2025][Gaze Target Estimation] This paper is the first to extend Gaze Target Estimation (GTE) from single-view to multi-view settings. By integrating three modules — Head Information Aggregation (HIA)…
 tags:
-  - ICCV 2025
-  - Gaze Target Estimation
-  - Multi-view
-  - Cross-view
-  - Epipolar Attention
-  - Uncertainty
+  - "ICCV 2025"
+  - "Gaze Target Estimation"
+  - "Multi-view"
+  - "Cross-view"
+  - "Epipolar Attention"
+  - "Uncertainty"
 date: 2026-05-08
 content_hash: 3dd601c3330e594c
 ---

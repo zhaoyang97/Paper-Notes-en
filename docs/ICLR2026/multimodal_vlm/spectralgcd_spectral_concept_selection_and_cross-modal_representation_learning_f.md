@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] SpectralGCD: Spectral Concept Selection and Cross-modal Representation Learning for Generalized Category Discovery
 description: >-
-  [ICLR 2026][Multimodal VLM][Generalized Category Discovery] This paper proposes SpectralGCD, which represents images as semantic mixtures over a CLIP concept dictionary (i.e., cross-modal similarity vectors), employs spectral filtering to automatically select task-relevant concepts, and incorporates forward-reverse knowledge distillation to preserve semantic quality. The method achieves multimodal state-of-the-art across six benchmarks at a computational cost comparable to unimodal approaches.
+  [ICLR 2026][Multimodal VLM][Generalized Category Discovery] This paper proposes SpectralGCD, which represents images as semantic mixtures over a CLIP concept dictionary (i.e., cross-modal similarity vectors)…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Generalized Category Discovery
-  - CLIP
-  - Cross-modal Representation
-  - Spectral Filtering
-  - Concept Dictionary
-  - Knowledge Distillation
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Generalized Category Discovery"
+  - "CLIP"
+  - "Cross-modal Representation"
+  - "Spectral Filtering"
+  - "Concept Dictionary"
+  - "Knowledge Distillation"
 date: 2026-05-08
 content_hash: f33c9aa0b83cd029
 ---

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] SeeThrough3D: Occlusion Aware 3D Control in Text-to-Image Generation
 description: >-
-  [CVPR2026][3D Vision][3D layout control] This paper proposes SeeThrough3D, which conditions the FLUX model on an Occlusion-aware Scene Control Representation (OSCR) rendered from semi-transparent 3D bounding boxes, enabling precise 3D layout control and occlusion-consistent text-to-image generation.
+  [CVPR2026][3D Vision][3D layout control] This paper proposes SeeThrough3D, which conditions the FLUX model on an Occlusion-aware Scene Control Representation (OSCR) rendered from semi-transparent 3D bounding boxes…
 tags:
-  - CVPR2026
-  - 3D Vision
-  - 3D layout control
-  - occlusion awareness
-  - text-to-image generation
-  - DiT
-  - FLUX
-  - attention mask
-  - LoRA
+  - "CVPR2026"
+  - "3D Vision"
+  - "3D layout control"
+  - "occlusion awareness"
+  - "text-to-image generation"
+  - "DiT"
+  - "FLUX"
+  - "attention mask"
+  - "LoRA"
 date: 2026-05-08
 content_hash: 4e690cf8f87e6d3e
 ---

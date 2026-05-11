@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PI-Light: Physics-Inspired Diffusion for Full-Image Relighting
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Models] This paper proposes π-Light (PI-Light), a two-stage full-image relighting framework. Stage 1 performs intrinsic property decomposition (albedo, normals, roughness, etc.) via a physics-guided diffusion model; Stage 2 synthesizes the relit image under target illumination via a physics-guided neural rendering module. Batch-aware attention and physics-inspired losses are introduced to achieve strong generalization to real-world scenes.
+  [ICLR 2026][Image Generation][Diffusion Models] This paper proposes π-Light (PI-Light), a two-stage full-image relighting framework. Stage 1 performs intrinsic property decomposition (albedo, normals, roughness…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Models
-  - Image Relighting
-  - Inverse Rendering
-  - Physics-Guided
-  - Intrinsic Decomposition
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "Image Relighting"
+  - "Inverse Rendering"
+  - "Physics-Guided"
+  - "Intrinsic Decomposition"
 date: 2026-05-08
 content_hash: 46f2fb0bd928da89
 ---

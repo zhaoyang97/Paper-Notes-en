@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Partial Information Decomposition via Normalizing Flows in Latent Gaussian Distributions
 description: >-
-  [NeurIPS 2025][Partial Information Decomposition] Two complementary tools are proposed: Thin-PID is an efficient Gaussian PID algorithm (10× faster than existing methods), and Flow-PID applies normalizing flows to map arbitrary input distributions to Gaussian space before computing PID, addressing the infeasibility of PID on continuous high-dimensional data. The paper also resolves an open problem regarding whether the joint Gaussian solution is optimal.
+  [NeurIPS 2025][Interpretability][Partial Information Decomposition] Two complementary tools are proposed: Thin-PID is an efficient Gaussian PID algorithm (10× faster than existing methods)…
 tags:
-  - NeurIPS 2025
-  - Partial Information Decomposition
-  - normalizing flow
-  - Gaussian distribution
-  - multimodal learning
-  - mutual information
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "Partial Information Decomposition"
+  - "normalizing flow"
+  - "Gaussian distribution"
+  - "multimodal learning"
+  - "mutual information"
 date: 2026-05-08
 content_hash: 1f514dc9937353c1
 ---

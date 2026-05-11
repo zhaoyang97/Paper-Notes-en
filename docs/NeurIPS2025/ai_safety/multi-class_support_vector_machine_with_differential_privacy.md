@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multi-Class Support Vector Machine with Differential Privacy
 description: >-
-  [NeurIPS 2025][AI Safety][Differential Privacy] This paper proposes the PMSVM framework, which exploits the single-pass data access property of all-in-one multi-class SVMs. By combining weight perturbation and gradient perturbation, PMSVM substantially reduces the privacy budget consumption of multi-class SVMs under differential privacy, achieving a superior privacy–utility trade-off.
+  [NeurIPS 2025][AI Safety][Differential Privacy] This paper proposes the PMSVM framework, which exploits the single-pass data access property of all-in-one multi-class SVMs. By combining weight perturbation and gradient p…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - Differential Privacy
-  - Multi-Class Classification
-  - Support Vector Machine
-  - Privacy-Preserving Machine Learning
-  - Gradient Perturbation
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "Differential Privacy"
+  - "Multi-Class Classification"
+  - "Support Vector Machine"
+  - "Privacy-Preserving Machine Learning"
+  - "Gradient Perturbation"
 date: 2026-05-08
 content_hash: 3a2e1a936198deff
 ---

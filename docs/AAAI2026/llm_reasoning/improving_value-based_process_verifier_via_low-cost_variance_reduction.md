@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Improving Value-based Process Verifier via Low-Cost Variance Reduction
 description: >-
-  [AAAI 2026][LLM Reasoning][Process verifier] To address the high-variance issue in value-based process reward model (PRM) training caused by limited Monte Carlo (MC) samples, this paper proposes Compound Monte Carlo Sampling (ComMCS), which constructs an unbiased low-variance estimator by linearly combining MC estimates from the current step and subsequent steps. The method introduces no additional LLM inference overhead and achieves a 2.2-point improvement on MATH-500 under Best-of-32 evaluation.
+  [AAAI 2026][LLM Reasoning][Process verifier] To address the high-variance issue in value-based process reward model (PRM) training caused by limited Monte Carlo (MC) samples…
 tags:
-  - AAAI 2026
-  - LLM Reasoning
-  - Process verifier
-  - variance reduction
-  - Monte Carlo sampling
-  - mathematical reasoning
-  - test-time scaling
+  - "AAAI 2026"
+  - "LLM Reasoning"
+  - "Process verifier"
+  - "variance reduction"
+  - "Monte Carlo sampling"
+  - "mathematical reasoning"
+  - "test-time scaling"
 date: 2026-05-08
 content_hash: 27faa95b0aa3e9a1
 ---

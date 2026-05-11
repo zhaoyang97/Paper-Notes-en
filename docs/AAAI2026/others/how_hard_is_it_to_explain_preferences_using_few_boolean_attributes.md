@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] How Hard is it to Explain Preferences Using Few Boolean Attributes?
 description: >-
-  [AAAI 2026][Boolean Attribute Model] This paper systematically investigates the computational complexity of explaining preference data using the Boolean Attribute Model (BAM). It proves that the problem is NP-complete for $k \geq 3$ attributes and solvable in linear time for $k \leq 2$; further, it provides a complete parameterized complexity landscape with respect to the number of voters $n$, candidates $m$, and attributes $k$, and analyzes how problem hardness changes when partial information (cares/has) is known.
+  [AAAI 2026][Boolean Attribute Model] This paper systematically investigates the computational complexity of explaining preference data using the Boolean Attribute Model (BAM). It proves that the problem is NP-complete fo…
 tags:
-  - AAAI 2026
-  - Boolean Attribute Model
-  - Computational Complexity
-  - Parameterized Complexity
-  - Preference Explanation
-  - NP-Complete
+  - "AAAI 2026"
+  - "Boolean Attribute Model"
+  - "Computational Complexity"
+  - "Parameterized Complexity"
+  - "Preference Explanation"
+  - "NP-Complete"
 date: 2026-05-08
 content_hash: 6bd8860c75a6ea40
 ---

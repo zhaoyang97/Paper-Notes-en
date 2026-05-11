@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Clean First, Align Later: Benchmarking Preference Data Cleaning for Reliable LLM Alignment
 description: >-
-  [NeurIPS 2025 (D&B Track)][Optimization][preference data cleaning] This paper introduces PrefCleanBench, the first comprehensive benchmark for systematically evaluating 13 preference data cleaning methods in the context of LLM alignment. It covers diverse datasets, model architectures, and optimization algorithms, revealing the underappreciated yet critical role of data preprocessing in responsible AI development.
+  [NeurIPS 2025 (D&B Track)][Optimization][preference data cleaning] This paper introduces PrefCleanBench, the first comprehensive benchmark for systematically evaluating 13 preference data cleaning methods in the context…
 tags:
   - "NeurIPS 2025 (D&B Track)"
-  - Optimization
-  - preference data cleaning
-  - LLM alignment
-  - RLHF
-  - DPO
-  - benchmark
+  - "Optimization"
+  - "preference data cleaning"
+  - "LLM alignment"
+  - "RLHF"
+  - "DPO"
+  - "benchmark"
 date: 2026-05-08
 content_hash: 3cc4fd30366fa0ca
 ---

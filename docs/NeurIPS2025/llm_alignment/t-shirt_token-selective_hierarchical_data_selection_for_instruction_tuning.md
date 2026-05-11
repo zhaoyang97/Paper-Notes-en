@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] T-SHIRT: Token-Selective Hierarchical Data Selection for Instruction Tuning
 description: >-
-  [NeurIPS 2025][LLM Alignment][Instruction Tuning] This paper proposes T-SHIRT, a data selection framework that introduces Selective IFD (considering only informative tokens) and a hierarchical selection strategy (preferring samples with high neighborhood consistency). Fine-tuning on only 5% of data selected by T-SHIRT surpasses training on the full dataset, while the selection process requires only GPT-2 and 40 minutes on a single GPU.
+  [NeurIPS 2025][LLM Alignment][Instruction Tuning] This paper proposes T-SHIRT, a data selection framework that introduces Selective IFD (considering only informative tokens) and a hierarchical selection strategy (preferr…
 tags:
-  - NeurIPS 2025
-  - LLM Alignment
-  - Instruction Tuning
-  - Data Selection
-  - Token-Level Informativeness
-  - Robustness
-  - IFD Score
+  - "NeurIPS 2025"
+  - "LLM Alignment"
+  - "Instruction Tuning"
+  - "Data Selection"
+  - "Token-Level Informativeness"
+  - "Robustness"
+  - "IFD Score"
 date: 2026-05-08
 content_hash: cd588d080fb989f1
 ---

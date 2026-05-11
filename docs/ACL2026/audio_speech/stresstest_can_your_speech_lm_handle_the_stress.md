@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] StressTest: Can YOUR Speech LM Handle the Stress?
 description: >-
-  [ACL 2026][Audio & Speech][Sentence Stress] This paper proposes StressTest, a benchmark for evaluating the ability of speech language models (SLMs) to understand the meaning conveyed by sentence stress. Evaluations reveal that existing models are nearly incapable of inferring speaker intent from stress patterns. A synthetic data pipeline, Stress-17k, is introduced, and the resulting fine-tuned model, StresSLM, substantially outperforms state-of-the-art models on both stress detection and stress reasoning tasks.
+  [ACL 2026][Audio & Speech][Sentence Stress] This paper proposes StressTest, a benchmark for evaluating the ability of speech language models (SLMs) to understand the meaning conveyed by sentence stress. Evaluations revea…
 tags:
-  - ACL 2026
+  - "ACL 2026"
   - "Audio & Speech"
-  - Sentence Stress
-  - Speech Language Models
-  - Prosody Understanding
-  - Benchmark
-  - Synthetic Data
+  - "Sentence Stress"
+  - "Speech Language Models"
+  - "Prosody Understanding"
+  - "Benchmark"
+  - "Synthetic Data"
 date: 2026-05-08
 content_hash: ce64355ec7fc63de
 ---

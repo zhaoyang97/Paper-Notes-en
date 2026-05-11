@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Memory-Enhanced Improvement Heuristics for Flexible Job Shop Scheduling
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][flexible job shop scheduling] This paper proposes MIStar—the first deep reinforcement learning (DRL)-based improvement heuristic framework for the Flexible Job Shop Scheduling Problem (FJSP). Key innovations include a directed heterogeneous disjunctive graph representation, a Memory-enhanced Heterogeneous Graph Neural Network (MHGNN), and a parallel greedy search strategy. MIStar consistently outperforms handcrafted improvement heuristics and state-of-the-art constructive DRL methods on both synthetic datasets and public benchmarks.
+  [NeurIPS 2025][Reinforcement Learning][flexible job shop scheduling] This paper proposes MIStar—the first deep reinforcement learning (DRL)-based improvement heuristic framework for the Flexible Job Shop Scheduling Probl…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - flexible job shop scheduling
-  - improvement heuristics
-  - memory-enhanced GNN
-  - heterogeneous disjunctive graph
-  - parallel greedy search
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "flexible job shop scheduling"
+  - "improvement heuristics"
+  - "memory-enhanced GNN"
+  - "heterogeneous disjunctive graph"
+  - "parallel greedy search"
 date: 2026-05-08
 content_hash: 91c004f5032bb0f3
 ---

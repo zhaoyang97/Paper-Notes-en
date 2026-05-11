@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Scene-Aware Urban Design: A Human-AI Recommendation Framework Using Co-Occurrence Embeddings and Vision-Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Urban Design] This paper proposes a human-AI collaborative computer vision framework that employs Grounding DINO for urban object detection, constructs co-occurrence embeddings from the ADE20K dataset to capture real-world spatial configurations, leverages a VLM for scene-aware third-object recommendation, and generates 3D models for AR preview — all aimed at enabling residents to participate in micro-scale urban design.
+  [NeurIPS 2025][Multimodal VLM][Urban Design] This paper proposes a human-AI collaborative computer vision framework that employs Grounding DINO for urban object detection…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Urban Design
-  - Human-AI Collaboration
-  - Co-Occurrence Embeddings
-  - VLM Recommendation
-  - AR Interaction
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Urban Design"
+  - "Human-AI Collaboration"
+  - "Co-Occurrence Embeddings"
+  - "VLM Recommendation"
+  - "AR Interaction"
 date: 2026-05-08
 content_hash: 33e15d1a9d83c742
 ---

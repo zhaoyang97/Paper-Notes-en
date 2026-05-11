@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Act Like a Pathologist: Tissue-Aware Whole Slide Image Reasoning
 description: >-
-  [CVPR 2026][Medical Imaging][Whole Slide Image] This paper proposes HistoSelect, a framework that emulates the coarse-to-fine reasoning process of pathologists through a three-stage filtering mechanism — tissue segmentation → Group Sampler → Patch Selector — grounded in Information Bottleneck (IB) theory. By compressing task-irrelevant visual tokens, the method achieves state-of-the-art performance across three datasets while reducing computational cost by approximately 70%.
+  [CVPR 2026][Medical Imaging][Whole Slide Image] This paper proposes HistoSelect, a framework that emulates the coarse-to-fine reasoning process of pathologists through a three-stage filtering mechanism — tissue segmentat…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Whole Slide Image
-  - Visual Question Answering
-  - Information Bottleneck
-  - Patch Selection
-  - Tissue-Aware Reasoning
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Whole Slide Image"
+  - "Visual Question Answering"
+  - "Information Bottleneck"
+  - "Patch Selection"
+  - "Tissue-Aware Reasoning"
 date: 2026-05-08
 content_hash: da64ac122053a6de
 ---

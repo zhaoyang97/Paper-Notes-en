@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Conjecture and Inquiry: Quantifying Software Performance Requirements via Interactive Retrieval-Augmented Preference Elicitation
 description: >-
-  [ACL 2026][requirement quantification] This paper proposes IRAP (Interactive Retrieval-Augmented Preference Elicitation), a method that quantifies natural-language software performance requirements into mathematical functions. Evaluated on 4 real-world datasets against 10 state-of-the-art baselines, IRAP achieves up to 40× performance improvement using only 5 interaction rounds.
+  [ACL 2026][Information Retrieval & RAG][requirement quantification] This paper proposes IRAP (Interactive Retrieval-Augmented Preference Elicitation)…
 tags:
-  - ACL 2026
-  - requirement quantification
-  - preference elicitation
-  - retrieval-augmented generation
-  - interactive systems
-  - software performance requirements
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "requirement quantification"
+  - "preference elicitation"
+  - "retrieval-augmented generation"
+  - "interactive systems"
+  - "software performance requirements"
 date: 2026-05-08
 content_hash: b862d1552cd87802
 ---

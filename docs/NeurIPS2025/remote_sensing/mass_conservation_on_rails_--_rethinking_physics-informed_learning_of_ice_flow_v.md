@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mass Conservation on Rails – Rethinking Physics-Informed Learning of Ice Flow Vector Fields
 description: >-
-  [NeurIPS 2025][Remote Sensing][Divergence-free neural networks] This paper proposes a divergence-free neural network (dfNN) that architecturally enforces exact mass conservation (divergence identically zero) via the symplectic gradient of a stream function, and combines it with a directional guidance learning strategy. The approach significantly outperforms soft-constraint PINNs and unconstrained NNs on ice flux interpolation over Antarctica's Byrd Glacier.
+  [NeurIPS 2025][Remote Sensing][Divergence-free neural networks] This paper proposes a divergence-free neural network (dfNN) that architecturally enforces exact mass conservation (divergence identically zero) via the symp…
 tags:
-  - NeurIPS 2025
-  - Remote Sensing
-  - Divergence-free neural networks
-  - physics-informed neural networks
-  - ice flow modeling
-  - mass conservation
-  - vector field interpolation
+  - "NeurIPS 2025"
+  - "Remote Sensing"
+  - "Divergence-free neural networks"
+  - "physics-informed neural networks"
+  - "ice flow modeling"
+  - "mass conservation"
+  - "vector field interpolation"
 date: 2026-05-08
 content_hash: 2eff8388bccc6e2a
 ---

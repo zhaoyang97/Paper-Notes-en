@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Contribution of Task-Irrelevant Stimuli to Drift of Neural Representations
 description: >-
-  [NeurIPS 2025][Optimization][representational drift] This work theoretically demonstrates that the statistical properties (variance and dimensionality) of task-irrelevant stimuli are key drivers of representational drift in online learning. Across Oja's rule, Similarity Matching, autoencoders, and supervised two-layer networks, a drift rate of $D \propto \lambda_\perp^2 (n-m)$ is consistently observed. Furthermore, learning-noise-induced drift exhibits anisotropic geometric structure, qualitatively distinct from the isotropic drift induced by Gaussian synaptic noise.
+  [NeurIPS 2025][Optimization][representational drift] This work theoretically demonstrates that the statistical properties (variance and dimensionality) of task-irrelevant stimuli are key drivers of representational drift…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - representational drift
-  - task-irrelevant noise
-  - online learning
-  - Hebbian learning
-  - SGD noise
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "representational drift"
+  - "task-irrelevant noise"
+  - "online learning"
+  - "Hebbian learning"
+  - "SGD noise"
 date: 2026-05-08
 content_hash: f0a172d7270787d9
 ---

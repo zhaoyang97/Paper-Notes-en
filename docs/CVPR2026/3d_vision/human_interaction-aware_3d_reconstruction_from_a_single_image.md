@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Human Interaction-Aware 3D Reconstruction from a Single Image
 description: >-
-  [CVPR 2026][3D Vision][Multi-person 3D reconstruction] This paper proposes HUG3D, a framework that achieves high-fidelity textured 3D reconstruction of interacting multiple persons from a single image via perspective-to-orthographic view transformation, a group-instance multi-view diffusion model, and physics-aware geometry reconstruction, outperforming existing methods across CD/P2S/NC and other metrics.
+  [CVPR 2026][3D Vision][Multi-person 3D reconstruction] This paper proposes HUG3D, a framework that achieves high-fidelity textured 3D reconstruction of interacting multiple persons from a single image via perspective-to-…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Multi-person 3D reconstruction
-  - human interaction
-  - multi-view diffusion
-  - physical constraints
-  - occlusion completion
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Multi-person 3D reconstruction"
+  - "human interaction"
+  - "multi-view diffusion"
+  - "physical constraints"
+  - "occlusion completion"
 date: 2026-05-08
 content_hash: 2cbf97fdc927d141
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Memory-Efficient Transfer Learning with Fading Side Networks via Masked Dual Path Distillation
 description: >-
-  [CVPR 2026][Model Compression][memory-efficient transfer learning] MDPD proposes an efficient fine-tuning framework based on bidirectional knowledge distillation between a frozen backbone and a lightweight side network. Upon training completion, the side network is discarded, achieving both parameter- and memory-efficient training as well as inference-time acceleration.
+  [CVPR 2026][Model Compression][memory-efficient transfer learning] MDPD proposes an efficient fine-tuning framework based on bidirectional knowledge distillation between a frozen backbone and a lightweight side network.…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - memory-efficient transfer learning
-  - knowledge distillation
-  - side networks
-  - inference acceleration
-  - dual-path distillation
+  - "CVPR 2026"
+  - "Model Compression"
+  - "memory-efficient transfer learning"
+  - "knowledge distillation"
+  - "side networks"
+  - "inference acceleration"
+  - "dual-path distillation"
 date: 2026-05-08
 content_hash: 81c823c1e57c06be
 ---

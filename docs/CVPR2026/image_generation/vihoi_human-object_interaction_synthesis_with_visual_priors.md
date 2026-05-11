@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ViHOI: Human-Object Interaction Synthesis with Visual Priors
 description: >-
-  [CVPR 2026][Image Generation][Human-Object Interaction Generation] This paper proposes ViHOI, a plug-and-play framework that leverages a VLM to extract decoupled visual and textual priors from 2D reference images, compresses them into compact condition tokens via Q-Former, and injects them into a diffusion model to enhance HOI motion generation quality. At inference time, a text-to-image model synthesizes reference images to enable strong generalization to unseen objects.
+  [CVPR 2026][Image Generation][Human-Object Interaction Generation] This paper proposes ViHOI, a plug-and-play framework that leverages a VLM to extract decoupled visual and textual priors from 2D reference images…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Human-Object Interaction Generation
-  - Visual Priors
-  - Diffusion Models
-  - VLM
-  - Q-Former
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Human-Object Interaction Generation"
+  - "Visual Priors"
+  - "Diffusion Models"
+  - "VLM"
+  - "Q-Former"
 date: 2026-05-08
 content_hash: 7670e8ff49a05b61
 ---

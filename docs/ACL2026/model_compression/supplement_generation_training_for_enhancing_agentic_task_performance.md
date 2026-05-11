@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Supplement Generation Training for Enhancing Agentic Task Performance
 description: >-
-  [ACL 2026][Model Compression][Supplement Generation Training] SGT (Supplement Generation Training) trains a small LLM (1.7B) to generate instance-specific supplement text (reasoning cues, summaries, error reminders, etc.) that is appended to the input, enabling a frozen large Actor model to solve tasks more effectively. SGT achieves an average improvement of 21% across 5 benchmarks without modifying the Actor's parameters.
+  [ACL 2026][Model Compression][Supplement Generation Training] SGT (Supplement Generation Training) trains a small LLM (1.7B) to generate instance-specific supplement text (reasoning cues, summaries, error reminders…
 tags:
-  - ACL 2026
-  - Model Compression
-  - Supplement Generation Training
-  - Prompt Optimization
-  - Small Model Assisting Large Model
-  - DPO
-  - Agentic Tasks
+  - "ACL 2026"
+  - "Model Compression"
+  - "Supplement Generation Training"
+  - "Prompt Optimization"
+  - "Small Model Assisting Large Model"
+  - "DPO"
+  - "Agentic Tasks"
 date: 2026-05-08
 content_hash: 2471767de8c9b17e
 ---

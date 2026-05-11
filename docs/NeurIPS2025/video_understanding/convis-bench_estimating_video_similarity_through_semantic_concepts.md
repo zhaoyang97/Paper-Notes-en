@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ConViS-Bench: Estimating Video Similarity Through Semantic Concepts
 description: >-
-  [NeurIPS 2025][Video Understanding][video similarity] This paper introduces ConViS, a concept-based video similarity estimation task, along with its accompanying benchmark ConViS-Bench (610 video pairs, 16 domains, 5 concepts). It systematically evaluates 10+ mainstream models on concept-conditioned video comparison, revealing significant deficiencies in current models' understanding of temporal structure and spatial context.
+  [NeurIPS 2025][Video Understanding][video similarity] This paper introduces ConViS, a concept-based video similarity estimation task, along with its accompanying benchmark ConViS-Bench (610 video pairs, 16 domains…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
-  - video similarity
-  - benchmark
-  - semantic concepts
-  - Large Multimodal Models
-  - video retrieval
+  - "NeurIPS 2025"
+  - "Video Understanding"
+  - "video similarity"
+  - "benchmark"
+  - "semantic concepts"
+  - "Large Multimodal Models"
+  - "video retrieval"
 date: 2026-05-08
 content_hash: cda0c24551916480
 ---

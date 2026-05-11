@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Connecting the Dots: A Machine Learning Ready Dataset for Ionospheric Forecasting Models
 description: >-
-  [NeurIPS 2025 (Workshop on ML for Physical Sciences)][Remote Sensing][Ionospheric forecasting] As a product of the 2025 NASA Frontier Development Lab (FDL) Heliolab program, this paper presents the first comprehensive ML-ready dataset for ionospheric forecasting. It unifies seven categories of heterogeneous data sources — Solar Dynamics Observatory (SDO) extreme ultraviolet (EUV) irradiance embeddings, solar wind parameters, interplanetary magnetic field (IMF), geomagnetic activity indices, JPL dense TEC global ionospheric maps (GIMs), Madrigal sparse TEC, solar flux indices, and orbital mechanics parameters — into a consistent temporal-spatial structure. Building on this dataset, multiple spatiotemporal forecasting architectures are trained, including LSTM, Spherical Fourier Neural Operator (SFNO), and GraphCast, achieving autoregressive prediction of global vertical total electron content (vTEC) up to 12 hours ahead under both quiet and geomagnetically active conditions, surpassing the persistence baseline.
+  [NeurIPS 2025 (Workshop on ML for Physical Sciences)][Remote Sensing][Ionospheric forecasting] As a product of the 2025 NASA Frontier Development Lab (FDL) Heliolab program…
 tags:
-  - NeurIPS 2025 (Workshop on ML for Physical Sciences)
-  - Remote Sensing
-  - Ionospheric forecasting
-  - global TEC prediction
-  - multi-source heterogeneous data alignment
-  - space weather ML dataset
-  - spatiotemporal forecasting
+  - "NeurIPS 2025 (Workshop on ML for Physical Sciences)"
+  - "Remote Sensing"
+  - "Ionospheric forecasting"
+  - "global TEC prediction"
+  - "multi-source heterogeneous data alignment"
+  - "space weather ML dataset"
+  - "spatiotemporal forecasting"
 date: 2026-05-08
 content_hash: 7e698c26807425ec
 ---

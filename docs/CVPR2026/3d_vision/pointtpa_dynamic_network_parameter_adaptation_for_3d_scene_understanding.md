@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PointTPA: Dynamic Network Parameter Adaptation for 3D Scene Understanding
 description: >-
-  [CVPR 2026][3D Vision][Point cloud semantic segmentation] PointTPA is a framework that generates input-customized network parameters at inference time via two lightweight modules—Serialization-based Neighborhood Grouping (SNG) and Dynamic Parameter Projector (DPP)—achieving 78.4% mIoU on ScanNet with fewer than 2% additional parameters, surpassing existing parameter-efficient fine-tuning (PEFT) methods.
+  [CVPR 2026][3D Vision][Point cloud semantic segmentation] PointTPA is a framework that generates input-customized network parameters at inference time via two lightweight modules—Serialization-based Neighborhood Grouping…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Point cloud semantic segmentation
-  - test-time parameter adaptation
-  - dynamic networks
-  - parameter-efficient fine-tuning
-  - scene-level understanding
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Point cloud semantic segmentation"
+  - "test-time parameter adaptation"
+  - "dynamic networks"
+  - "parameter-efficient fine-tuning"
+  - "scene-level understanding"
 date: 2026-05-08
 content_hash: 0e9401966945d3f8
 ---

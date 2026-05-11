@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Extending One-Step Image Generation from Class Labels to Text via Discriminative Text Representation
 description: >-
-  [CVPR 2026][Image Generation][MeanFlow] This work is the first to extend the MeanFlow framework from class-label conditioning to text-conditioned image generation. It identifies the semantic discriminability and disentanglement of text representations as the key bottlenecks under limited inference steps, and achieves high-quality few-step/one-step T2I generation based on the BLIP3o-NEXT text encoder.
+  [CVPR 2026][Image Generation][MeanFlow] This work is the first to extend the MeanFlow framework from class-label conditioning to text-conditioned image generation. It identifies the semantic discriminability and disentan…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - MeanFlow
-  - One-Step Generation
-  - Text-to-Image
-  - Text Encoder
-  - Semantic Discriminability
+  - "CVPR 2026"
+  - "Image Generation"
+  - "MeanFlow"
+  - "One-Step Generation"
+  - "Text-to-Image"
+  - "Text Encoder"
+  - "Semantic Discriminability"
 date: 2026-05-08
 content_hash: 4a23c3869d0cf75d
 ---

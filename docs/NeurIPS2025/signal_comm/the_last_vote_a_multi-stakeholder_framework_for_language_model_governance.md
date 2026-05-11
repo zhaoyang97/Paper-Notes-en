@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The Last Vote: A Multi-Stakeholder Framework for Language Model Governance
 description: >-
-  [NeurIPS 2025][Signal & Communication][AI governance] This paper proposes a comprehensive framework for language model governance comprising a seven-category democratic risk taxonomy, a stakeholder-adaptive Incident Severity Score (ISS), and a phased six-year implementation roadmap, with the goal of embedding democratic values into the institutional design of AI regulation.
+  [NeurIPS 2025][Signal & Communication][AI governance] This paper proposes a comprehensive framework for language model governance comprising a seven-category democratic risk taxonomy…
 tags:
-  - NeurIPS 2025
+  - "NeurIPS 2025"
   - "Signal & Communication"
-  - AI governance
-  - democratic risk
-  - multi-stakeholder
-  - incident severity scoring
-  - language model regulation
+  - "AI governance"
+  - "democratic risk"
+  - "multi-stakeholder"
+  - "incident severity scoring"
+  - "language model regulation"
 date: 2026-05-08
 content_hash: 52373fc38306e0cf
 ---

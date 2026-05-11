@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Retrieval-Augmented Generation for Reliable Interpretation of Radio Regulations
 description: >-
-  [NeurIPS 2025][RAG] This paper presents a dedicated RAG pipeline for radio regulations—a legally sensitive, high-stakes domain—and introduces the first ITU radio regulation multiple-choice evaluation benchmark. The proposed system achieves 97% retrieval accuracy and an +11.9% QA accuracy gain over GPT-4o, substantially outperforming naive full-document insertion into the prompt.
+  [NeurIPS 2025][Information Retrieval & RAG][RAG] This paper presents a dedicated RAG pipeline for radio regulations—a legally sensitive…
 tags:
-  - NeurIPS 2025
-  - RAG
-  - Radio Regulations
-  - Domain QA
-  - Retrieval-Augmented Generation
-  - ITU
+  - "NeurIPS 2025"
+  - "Information Retrieval & RAG"
+  - "RAG"
+  - "Radio Regulations"
+  - "Domain QA"
+  - "Retrieval-Augmented Generation"
+  - "ITU"
 date: 2026-05-08
 content_hash: f4df4abf7bdb3254
 ---

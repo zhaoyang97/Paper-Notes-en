@@ -2,18 +2,18 @@
 title: >-
   [Paper Note] On the Expressive Power of Mixture-of-Experts for Structured Complex Tasks
 description: >-
-  [NeurIPS 2025][LLM Efficiency][Mixture-of-Experts] This paper presents the first systematic analysis of MoE expressive power on structured complex tasks. It proves that shallow MoE can overcome the curse of dimensionality on low-dimensional manifolds (approximation rate governed by intrinsic dimension $d$ rather than ambient dimension $D$), and that deep MoE with $E$ experts × $L$ layers can efficiently approximate piecewise functions with $E^L$ pieces through hierarchical composition—far exceeding the naive upper bound of $LE$.
+  [NeurIPS 2025][LLM Efficiency][Mixture-of-Experts] This paper presents the first systematic analysis of MoE expressive power on structured complex tasks. It proves that shallow MoE can overcome the curse of dimensionalit…
 tags:
-  - NeurIPS 2025
-  - LLM Efficiency
-  - Mixture-of-Experts
-  - expressive power
-  - approximation theory
-  - compositional sparsity
-  - curse of dimensionality
-  - manifold
-  - piecewise function
-  - gating mechanism
+  - "NeurIPS 2025"
+  - "LLM Efficiency"
+  - "Mixture-of-Experts"
+  - "expressive power"
+  - "approximation theory"
+  - "compositional sparsity"
+  - "curse of dimensionality"
+  - "manifold"
+  - "piecewise function"
+  - "gating mechanism"
 date: 2026-05-08
 content_hash: ba13d90cad2cec2b
 ---

@@ -2,15 +2,16 @@
 title: >-
   [Paper Note] Beyond Accuracy: Dissecting Mathematical Reasoning for LLMs Under Reinforcement Learning
 description: >-
-  [NeurIPS 2025][SPARKLE] This paper proposes SPARKLE, a three-axis analytical framework (plan following, knowledge integration, subproblem decomposition) for fine-grained dissection of how RL shapes LLM reasoning behavior. The analysis reveals that RL primarily enhances knowledge integration and planning flexibility rather than plan execution. The paper further introduces SparkleRL-PSS, a multi-stage RL training pipeline that effectively exploits hard problem data via partial step scaffolding.
+  [NeurIPS 2025][Interpretability][SPARKLE] This paper proposes SPARKLE, a three-axis analytical framework (plan following, knowledge integration…
 tags:
-  - NeurIPS 2025
-  - SPARKLE
-  - GRPO
-  - plan following
-  - knowledge integration
-  - subproblem decomposition
-  - multi-stage RL
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "SPARKLE"
+  - "GRPO"
+  - "plan following"
+  - "knowledge integration"
+  - "subproblem decomposition"
+  - "multi-stage RL"
 date: 2026-05-08
 content_hash: e07b9f732b77ae89
 ---

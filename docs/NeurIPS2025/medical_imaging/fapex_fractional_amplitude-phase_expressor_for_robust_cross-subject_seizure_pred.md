@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FAPEX: Fractional Amplitude-Phase Expressor for Robust Cross-Subject Seizure Prediction
 description: >-
-  [NEURIPS2025][Medical Imaging][seizure prediction] This paper proposes FAPEX, a framework that achieves adaptive time-frequency decomposition via a learnable Fractional Neural Frame Operator (FrNFO), combined with Amplitude-Phase Cross-Encoding (APCE) and Spatial Correlation Aggregation (SCA). FAPEX comprehensively outperforms 33 baseline methods across 12 cross-species, cross-modality seizure prediction benchmarks.
+  [NEURIPS2025][Medical Imaging][seizure prediction] This paper proposes FAPEX, a framework that achieves adaptive time-frequency decomposition via a learnable Fractional Neural Frame Operator (FrNFO)…
 tags:
-  - NEURIPS2025
-  - Medical Imaging
-  - seizure prediction
-  - EEG
-  - fractional Fourier transform
-  - state-space model
-  - phase-amplitude coupling
+  - "NEURIPS2025"
+  - "Medical Imaging"
+  - "seizure prediction"
+  - "EEG"
+  - "fractional Fourier transform"
+  - "state-space model"
+  - "phase-amplitude coupling"
 date: 2026-05-08
 content_hash: e2ecc9f5a751fcd5
 ---

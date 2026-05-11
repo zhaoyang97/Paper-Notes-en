@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Diverse Text-to-Image Generation via Contrastive Noise Optimization
 description: >-
-  [ICLR 2026][Image Generation][Diffusion models] This paper proposes Contrastive Noise Optimization (CNO), which applies an InfoNCE contrastive loss over the Tweedie denoised prediction space to optimize initial noise vectors as a preprocessing step, improving the generation diversity of diffusion models while maintaining fidelity, without modifying the sampling process or model parameters.
+  [ICLR 2026][Image Generation][Diffusion models] This paper proposes Contrastive Noise Optimization (CNO), which applies an InfoNCE contrastive loss over the Tweedie denoised prediction space to optimize initial noise vec…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion models
-  - text-to-image generation
-  - diversity
-  - contrastive learning
-  - noise optimization
-  - InfoNCE
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Diffusion models"
+  - "text-to-image generation"
+  - "diversity"
+  - "contrastive learning"
+  - "noise optimization"
+  - "InfoNCE"
 date: 2026-05-08
 content_hash: 05608806266563c6
 ---

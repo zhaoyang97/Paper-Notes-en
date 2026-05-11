@@ -4,9 +4,9 @@ title: >-
 description: >-
   [ACL 2026][LLM Agent][To be supplemented] To be supplemented after a thorough reading of the paper.
 tags:
-  - ACL 2026
-  - LLM Agent
-  - To be supplemented
+  - "ACL 2026"
+  - "LLM Agent"
+  - "To be supplemented"
 date: 2026-05-08
 content_hash: a5c3760eb0df761a
 ---

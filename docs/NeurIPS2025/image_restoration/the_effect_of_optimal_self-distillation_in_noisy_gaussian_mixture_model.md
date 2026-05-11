@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] The Effect of Optimal Self-Distillation in Noisy Gaussian Mixture Model
 description: >-
-  [NeurIPS 2025][Image Restoration][Self-distillation] This paper presents a rigorous theoretical analysis of hyperparameter-optimized multi-stage self-distillation on noisy Gaussian mixture data using the replica method from statistical physics. It reveals that the denoising effect of hard pseudo-labels is the primary driver of performance gains in self-distillation, that moderate-sized datasets benefit the most, and proposes two practical improvement strategies—early stopping (limiting the number of distillation stages) and bias parameter fixing. Theoretical predictions are validated through experiments on CIFAR-10 with ResNet.
+  [NeurIPS 2025][Image Restoration][Self-distillation] This paper presents a rigorous theoretical analysis of hyperparameter-optimized multi-stage self-distillation on noisy Gaussian mixture data using the replica method f…
 tags:
-  - NeurIPS 2025
-  - Image Restoration
-  - Self-distillation
-  - noisy data
-  - Gaussian mixture model
-  - replica method
-  - pseudo-labels
-  - denoising
+  - "NeurIPS 2025"
+  - "Image Restoration"
+  - "Self-distillation"
+  - "noisy data"
+  - "Gaussian mixture model"
+  - "replica method"
+  - "pseudo-labels"
+  - "denoising"
 date: 2026-05-08
 content_hash: 712197eac1d9c674
 ---

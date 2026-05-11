@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Stroke3D: Lifting 2D Strokes into Rigged 3D Model via Latent Diffusion Models
 description: >-
-  [ICLR 2026][3D Vision][3D Generation] Stroke3D is the first method to generate rigged 3D mesh models directly from user-drawn 2D strokes and text prompts. It employs a skeleton-first two-stage pipeline: a graph VAE and graph DiT are used to generate controllable 3D skeletons, followed by TextuRig dataset augmentation and SKA-DPO optimization to synthesize high-quality meshes.
+  [ICLR 2026][3D Vision][3D Generation] Stroke3D is the first method to generate rigged 3D mesh models directly from user-drawn 2D strokes and text prompts. It employs a skeleton-first two-stage pipeline: a graph VAE and g…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - 3D Generation
-  - Skeleton Generation
-  - Graph Diffusion
-  - Rigging
-  - DPO
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3D Generation"
+  - "Skeleton Generation"
+  - "Graph Diffusion"
+  - "Rigging"
+  - "DPO"
 date: 2026-05-08
 content_hash: 2a6a8e92e6c977e1
 ---

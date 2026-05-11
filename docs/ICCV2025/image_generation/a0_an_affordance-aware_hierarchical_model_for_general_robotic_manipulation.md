@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A0: An Affordance-Aware Hierarchical Model for General Robotic Manipulation
 description: >-
-  [ICCV 2025][Image Generation][robotic manipulation] This paper proposes A0, a hierarchical affordance-aware diffusion model that decomposes manipulation tasks into high-level spatial understanding and low-level action execution by predicting object-centric contact points and post-contact trajectories via an Embodiment-Agnostic Affordance Representation. Pre-trained on 1 million contact-point annotations, A0 generalizes across four robot platforms: Franka, Kinova, Realman, and Dobot.
+  [ICCV 2025][Image Generation][robotic manipulation] This paper proposes A0, a hierarchical affordance-aware diffusion model that decomposes manipulation tasks into high-level spatial understanding and low-level action ex…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - robotic manipulation
-  - spatial affordance
-  - hierarchical model
-  - diffusion model
-  - cross-platform generalization
+  - "ICCV 2025"
+  - "Image Generation"
+  - "robotic manipulation"
+  - "spatial affordance"
+  - "hierarchical model"
+  - "diffusion model"
+  - "cross-platform generalization"
 date: 2026-05-08
 content_hash: 831f9801318a0d4f
 ---

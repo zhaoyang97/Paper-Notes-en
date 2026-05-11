@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] What If: Understanding Motion Through Sparse Interactions
 description: >-
-  [ICCV 2025][Segmentation][motion understanding] This paper proposes the Flow Poke Transformer (FPT), which directly predicts **multimodal probability distributions** over object motion in a scene (rather than a single deterministic outcome), conditioned on sparse "poke" interactions, enabling interpretable motion understanding and moving part segmentation.
+  [ICCV 2025][Segmentation][motion understanding] This paper proposes the Flow Poke Transformer (FPT), which directly predicts **multimodal probability distributions** over object motion in a scene (rather than a single de…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - motion understanding
-  - optical flow distribution prediction
-  - sparse interaction
-  - moving part segmentation
-  - Transformer
+  - "ICCV 2025"
+  - "Segmentation"
+  - "motion understanding"
+  - "optical flow distribution prediction"
+  - "sparse interaction"
+  - "moving part segmentation"
+  - "Transformer"
 date: 2026-05-08
 content_hash: 49ab3f4b81ddd5a0
 ---

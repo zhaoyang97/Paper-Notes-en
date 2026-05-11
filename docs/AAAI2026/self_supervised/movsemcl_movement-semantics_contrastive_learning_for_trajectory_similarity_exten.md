@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MovSemCL: Movement-Semantics Contrastive Learning for Trajectory Similarity (Extension)
 description: >-
-  [AAAI 2026][Self-Supervised Learning][trajectory similarity] This paper proposes MovSemCL, a framework that transforms GPS trajectories into movement-semantic features (displacement vectors + heading angles + Node2Vec spatial graph embeddings), achieves hierarchical encoding via patch-level two-stage attention (reducing complexity from $O(L^2)$ to near-linear), and designs Curvature-Guided Augmentation (CGA) to preserve behaviorally critical segments such as turns and intersections. The framework achieves a mean rank approaching the ideal value of 1 on trajectory retrieval tasks while reducing inference latency by 43.4%.
+  [AAAI 2026][Self-Supervised Learning][trajectory similarity] This paper proposes MovSemCL, a framework that transforms GPS trajectories into movement-semantic features (displacement vectors + heading angles + Node2Vec sp…
 tags:
-  - AAAI 2026
-  - Self-Supervised Learning
-  - trajectory similarity
-  - contrastive learning
-  - movement semantics
-  - hierarchical encoding
-  - curvature-guided augmentation
+  - "AAAI 2026"
+  - "Self-Supervised Learning"
+  - "trajectory similarity"
+  - "contrastive learning"
+  - "movement semantics"
+  - "hierarchical encoding"
+  - "curvature-guided augmentation"
 date: 2026-05-08
 content_hash: bfe31c657a60ad18
 ---

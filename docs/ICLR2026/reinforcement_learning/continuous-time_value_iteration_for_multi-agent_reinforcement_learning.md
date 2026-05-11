@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Continuous-Time Value Iteration for Multi-Agent Reinforcement Learning
 description: >-
-  [ICLR 2026  \n][Reinforcement Learning][continuous-time RL] This paper proposes VIP (Value Iteration via PINN), the first framework to apply Physics-Informed Neural Networks (PINNs) for solving HJB PDEs in continuous-time multi-agent reinforcement learning. A Value Gradient Iteration (VGI) module is introduced to iteratively refine value gradients. VIP consistently outperforms both discrete-time and continuous-time baselines on continuous-time MPE and MuJoCo multi-agent tasks.
+  [ICLR 2026  \n][Reinforcement Learning][continuous-time RL] This paper proposes VIP (Value Iteration via PINN), the first framework to apply Physics-Informed Neural Networks (PINNs) for solving HJB PDEs in continuous-tim…
 tags:
-  - ICLR 2026  \n
-  - Reinforcement Learning
-  - continuous-time RL
-  - MARL
-  - HJB equation
-  - PINN
-  - value gradient iteration
+  - "ICLR 2026  \\n"
+  - "Reinforcement Learning"
+  - "continuous-time RL"
+  - "MARL"
+  - "HJB equation"
+  - "PINN"
+  - "value gradient iteration"
 date: 2026-05-08
 content_hash: 80dbe7a7ee5d394a
 ---

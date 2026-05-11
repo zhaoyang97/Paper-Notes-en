@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SelfHVD: Self-Supervised Handheld Video Deblurring
 description: >-
-  [CVPR 2026][Image Restoration][Video Deblurring] SelfHVD exploits naturally occurring sharp frames in handheld videos as supervisory signals. Through Self-Enhanced Video Deblurring (SEVD), it constructs high-quality training pairs that surpass the quality ceiling of sharp frames, while Self-Constrained Spatial Consistency Maintenance (SCSCM) prevents spatial displacement drift, enabling handheld video deblurring without paired training data.
+  [CVPR 2026][Image Restoration][Video Deblurring] SelfHVD exploits naturally occurring sharp frames in handheld videos as supervisory signals. Through Self-Enhanced Video Deblurring (SEVD)…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Video Deblurring
-  - Self-Supervised Learning
-  - Handheld Devices
-  - Optical Image Stabilization
-  - Self-Enhancement Training
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Video Deblurring"
+  - "Self-Supervised Learning"
+  - "Handheld Devices"
+  - "Optical Image Stabilization"
+  - "Self-Enhancement Training"
 date: 2026-05-08
 content_hash: 956f2105445f2bc7
 ---

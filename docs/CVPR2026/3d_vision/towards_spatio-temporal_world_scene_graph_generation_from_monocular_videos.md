@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Spatio-Temporal World Scene Graph Generation from Monocular Videos
 description: >-
-  [CVPR 2026][3D Vision][Scene Graph Generation] This paper introduces the World Scene Graph Generation (WSGG) task, which constructs spatio-temporally persistent, world-coordinate-anchored scene graphs from monocular videos, covering all objects including occluded and out-of-frame ones. The paper also presents the ActionGenome4D dataset and three complementary methods (PWG/MWAE/4DST).
+  [CVPR 2026][3D Vision][Scene Graph Generation] This paper introduces the World Scene Graph Generation (WSGG) task, which constructs spatio-temporally persistent…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Scene Graph Generation
-  - Object Permanence
-  - 3D Scene Understanding
-  - Spatio-Temporal Reasoning
-  - Vision-Language Models
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Scene Graph Generation"
+  - "Object Permanence"
+  - "3D Scene Understanding"
+  - "Spatio-Temporal Reasoning"
+  - "Vision-Language Models"
 date: 2026-05-08
 content_hash: 4cd6a9ca1896c48e
 ---

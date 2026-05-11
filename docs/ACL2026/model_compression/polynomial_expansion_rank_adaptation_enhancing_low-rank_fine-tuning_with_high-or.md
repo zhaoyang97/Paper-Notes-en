@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Polynomial Expansion Rank Adaptation: Enhancing Low-Rank Fine-Tuning with High-Order Interactions
 description: >-
-  [ACL 2026][Model Compression][Low-rank adaptation] This paper proposes PERA (Polynomial Expansion Rank Adaptation), which introduces structured polynomial expansions (square and cross terms) into the parameter space of low-rank factors, extending LoRA's linear adaptation space into a polynomial manifold. Without increasing rank or inference overhead, PERA significantly enhances the expressiveness of weight updates and consistently outperforms LoRA, DoRA, and HiRA on commonsense reasoning and NLU tasks.
+  [ACL 2026][Model Compression][Low-rank adaptation] This paper proposes PERA (Polynomial Expansion Rank Adaptation), which introduces structured polynomial expansions (square and cross terms) into the parameter space of l…
 tags:
-  - ACL 2026
-  - Model Compression
-  - Low-rank adaptation
-  - polynomial expansion
-  - high-order feature interaction
-  - parameter-efficient fine-tuning
-  - LoRA improvement
+  - "ACL 2026"
+  - "Model Compression"
+  - "Low-rank adaptation"
+  - "polynomial expansion"
+  - "high-order feature interaction"
+  - "parameter-efficient fine-tuning"
+  - "LoRA improvement"
 date: 2026-05-08
 content_hash: ac6ea0460b3269e7
 ---

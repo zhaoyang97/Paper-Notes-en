@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond Chemical QA: Evaluating LLM's Chemical Reasoning with Modular Chemical Operations
 description: >-
-  [NeurIPS 2025][LLM Reasoning][chemical reasoning] This paper introduces ChemCoTBench, the first CoT-based benchmark for evaluating chemical reasoning in LLMs. It decomposes complex chemical problems into modular chemical operations (adding/deleting/substituting functional groups), and is accompanied by ChemCoTDataset — a large-scale dataset of 22,000 expert-annotated CoT samples — enabling systematic evaluation of both reasoning and non-reasoning LLMs across molecular understanding, editing, optimization, and reaction prediction.
+  [NeurIPS 2025][LLM Reasoning][chemical reasoning] This paper introduces ChemCoTBench, the first CoT-based benchmark for evaluating chemical reasoning in LLMs. It decomposes complex chemical problems into modular chemical…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - chemical reasoning
-  - Chain-of-Thought
-  - benchmark
-  - molecular operations
-  - SMILES
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "chemical reasoning"
+  - "Chain-of-Thought"
+  - "benchmark"
+  - "molecular operations"
+  - "SMILES"
 date: 2026-05-08
 content_hash: 32dffb18b06d5034
 ---

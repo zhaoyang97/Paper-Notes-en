@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Infrequent Exploration in Linear Bandits
 description: >-
-  [NeurIPS 2025][linear bandits] This paper proposes the INFEX framework, which executes a baseline algorithm (e.g., LinUCB/LinTS) at designated exploration steps according to a given schedule and selects arms greedily at all other time steps. It is proven that as long as the number of exploration steps exceeds $\omega(\log T)$, INFEX achieves the same poly-logarithmic regret as full-time exploration while substantially reducing computational overhead (80%–99% of time steps are greedy).
+  [NeurIPS 2025][linear bandits] This paper proposes the INFEX framework, which executes a baseline algorithm (e.g., LinUCB/LinTS) at designated exploration steps according to a given schedule and selects arms greedily at…
 tags:
-  - NeurIPS 2025
-  - linear bandits
-  - infrequent exploration
-  - greedy policy
-  - regret bound
-  - exploration-exploitation
+  - "NeurIPS 2025"
+  - "linear bandits"
+  - "infrequent exploration"
+  - "greedy policy"
+  - "regret bound"
+  - "exploration-exploitation"
 date: 2026-05-08
 content_hash: 4080149117547e3d
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Efficient Fairness-Performance Pareto Front Computation
 description: >-
-  [NeurIPS 2025][AI Safety][fairness] This paper proposes MIFPO, a method that efficiently computes the fairness-performance Pareto front without training complex fair representation models, by theoretically reducing the problem to a compact discrete concave optimization problem.
+  [NeurIPS 2025][AI Safety][fairness] This paper proposes MIFPO, a method that efficiently computes the fairness-performance Pareto front without training complex fair representation models…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - fairness
-  - Pareto front
-  - fair representation
-  - concave optimization
-  - MIFPO
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "fairness"
+  - "Pareto front"
+  - "fair representation"
+  - "concave optimization"
+  - "MIFPO"
 date: 2026-05-08
 content_hash: a99bcbc5dff685ff
 ---

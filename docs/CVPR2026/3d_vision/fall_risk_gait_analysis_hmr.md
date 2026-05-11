@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Fall Risk and Gait Analysis using World-Spaced 3D Human Mesh Recovery
 description: >-
-  [CVPR 2026][3D Vision][gait analysis] This paper proposes a gait analysis pipeline based on GVHMR (world-grounded 3D human mesh recovery) that extracts spatiotemporal gait parameters from monocular video of older adults performing the Timed Up and Go (TUG) test, validating the correlation between video-derived metrics and wearable sensor measurements as well as their association with fall risk.
+  [CVPR 2026][3D Vision][gait analysis] This paper proposes a gait analysis pipeline based on GVHMR (world-grounded 3D human mesh recovery) that extracts spatiotemporal gait parameters from monocular video of older adults…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - gait analysis
-  - fall risk
-  - human mesh recovery
-  - older adults
-  - monocular video
+  - "CVPR 2026"
+  - "3D Vision"
+  - "gait analysis"
+  - "fall risk"
+  - "human mesh recovery"
+  - "older adults"
+  - "monocular video"
 date: 2026-05-08
 content_hash: e4e50ae454859f0c
 ---

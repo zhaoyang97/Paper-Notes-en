@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Automatic Combination of Sample Selection Strategies for Few-Shot Learning
 description: >-
-  [ACL 2026][LLM/NLP][few-shot learning] This paper proposes ACSESS, a method that automatically identifies complementary sample selection strategies and combines them via weighted aggregation, using three mechanisms: forward selection, backward selection, and Datamodels. Experiments across 23 strategies, 5 ICL models, 3 gradient-based few-shot learning methods, 6 text datasets, and 8 image datasets demonstrate that combined strategies consistently outperform individual strategies and ICL-specific baselines.
+  [ACL 2026][LLM/NLP][few-shot learning] This paper proposes ACSESS, a method that automatically identifies complementary sample selection strategies and combines them via weighted aggregation…
 tags:
-  - ACL 2026
-  - LLM/NLP
-  - few-shot learning
-  - sample selection
-  - strategy combination
-  - in-context learning
-  - meta-learning
+  - "ACL 2026"
+  - "LLM/NLP"
+  - "few-shot learning"
+  - "sample selection"
+  - "strategy combination"
+  - "in-context learning"
+  - "meta-learning"
 date: 2026-05-08
 content_hash: 82b5c89bc354d49d
 ---

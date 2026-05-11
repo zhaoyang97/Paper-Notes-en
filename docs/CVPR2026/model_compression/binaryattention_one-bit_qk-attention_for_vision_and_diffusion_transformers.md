@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] BinaryAttention: One-Bit QK-Attention for Vision and Diffusion Transformers
 description: >-
-  [CVPR 2026][Model Compression][attention quantization] This paper proposes BinaryAttention, which quantizes Query and Key in Transformer attention to 1-bit binary representations and replaces floating-point dot products with XNOR + popcount bitwise operations, achieving over 2× speedup over FlashAttention2 on A100 GPUs while matching or surpassing full-precision attention across vision classification, detection, segmentation, and diffusion generation tasks.
+  [CVPR 2026][Model Compression][attention quantization] This paper proposes BinaryAttention, which quantizes Query and Key in Transformer attention to 1-bit binary representations and replaces floating-point dot products…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - attention quantization
-  - binary quantization
-  - vision transformer
-  - diffusion transformer
-  - 1-bit attention
-  - FlashAttention
+  - "CVPR 2026"
+  - "Model Compression"
+  - "attention quantization"
+  - "binary quantization"
+  - "vision transformer"
+  - "diffusion transformer"
+  - "1-bit attention"
+  - "FlashAttention"
 date: 2026-05-08
 content_hash: 5124c6430ab8e038
 ---

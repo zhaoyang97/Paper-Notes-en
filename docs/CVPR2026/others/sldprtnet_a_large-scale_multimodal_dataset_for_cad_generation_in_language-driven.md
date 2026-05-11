@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] SldprtNet: A Large-Scale Multimodal Dataset for CAD Generation in Language-Driven 3D Design
 description: >-
-  [CVPR2026][CAD dataset] This paper presents SldprtNet, a large-scale multimodal CAD dataset comprising 242,000+ industrial parts, where each sample contains four fully aligned modalities: .sldprt/.step 3D models, seven-view composite images, parametric modeling scripts, and natural language descriptions. The authors develop a lossless encoder/decoder toolchain supporting 13 CAD commands, and baseline experiments demonstrate the significant advantage of multimodal input over text-only input for CAD generation tasks.
+  [CVPR2026][CAD dataset] This paper presents SldprtNet, a large-scale multimodal CAD dataset comprising 242,000+ industrial parts, where each sample contains four fully aligned modalities: .sldprt/.step 3D models…
 tags:
-  - CVPR2026
-  - CAD dataset
-  - language-driven 3D design
-  - multimodal alignment
-  - parametric modeling
-  - text-to-CAD
-  - encoder-decoder
-  - SolidWorks
+  - "CVPR2026"
+  - "CAD dataset"
+  - "language-driven 3D design"
+  - "multimodal alignment"
+  - "parametric modeling"
+  - "text-to-CAD"
+  - "encoder-decoder"
+  - "SolidWorks"
 date: 2026-05-08
 content_hash: ba9489b778fbfad3
 ---

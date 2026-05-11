@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Tokenizing Single-Channel EEG with Time-Frequency Motif Learning
 description: >-
-  [ICLR 2026][EEG signal analysis] This paper proposes TFM-Tokenizer, the first framework that learns a time-frequency motif vocabulary from single-channel EEG and encodes it into discrete tokens. It consistently improves performance on tasks such as event classification and seizure detection, and can serve as a plug-and-play component to enhance existing EEG foundation models.
+  [ICLR 2026][Interpretability][EEG signal analysis] This paper proposes TFM-Tokenizer, the first framework that learns a time-frequency motif vocabulary from single-channel EEG and encodes it into discrete tokens. It cons…
 tags:
-  - ICLR 2026
-  - EEG signal analysis
-  - discrete tokenization
-  - time-frequency motif
-  - vector quantization
-  - foundation models
+  - "ICLR 2026"
+  - "Interpretability"
+  - "EEG signal analysis"
+  - "discrete tokenization"
+  - "time-frequency motif"
+  - "vector quantization"
+  - "foundation models"
 date: 2026-05-08
 content_hash: 6bff4484138b420b
 ---

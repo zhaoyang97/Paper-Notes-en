@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] What Makes Good Synthetic Training Data for Zero-Shot Stereo Matching?
 description: >-
-  [CVPR 2026][3D Vision][stereo matching] This paper systematically ablates the design space of synthetic stereo matching training data—covering floating objects, backgrounds, materials, baselines, and more—and finds that "realistic indoor scenes + dense floating objects + wide baseline" is the optimal combination. The resulting WMGStereo-150k dataset, trained on a single source, outperforms the mixture of four classical datasets.
+  [CVPR 2026][3D Vision][stereo matching] This paper systematically ablates the design space of synthetic stereo matching training data—covering floating objects, backgrounds, materials, baselines…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - stereo matching
-  - synthetic data
-  - procedural generation
-  - zero-shot generalization
-  - dataset design
-  - Infinigen
+  - "CVPR 2026"
+  - "3D Vision"
+  - "stereo matching"
+  - "synthetic data"
+  - "procedural generation"
+  - "zero-shot generalization"
+  - "dataset design"
+  - "Infinigen"
 date: 2026-05-08
 content_hash: 7b3549509c2aad60
 ---

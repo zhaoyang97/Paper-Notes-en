@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LumiCtrl: Learning Illuminant Prompts for Lighting Control in Personalized Text-to-Image Models
 description: >-
-  [CVPR 2026][Image Generation][Lighting Control] This paper identifies a semantic gap in T2I model text encoders that prevents understanding of standard lighting terminology (e.g., tungsten, 6500K), and proposes LumiCtrl, which learns illumination prompts via three components — physics-based lighting augmentation, edge-guided prompt disentanglement, and masked reconstruction loss — enabling precise text-guided lighting control while preserving subject identity.
+  [CVPR 2026][Image Generation][Lighting Control] This paper identifies a semantic gap in T2I model text encoders that prevents understanding of standard lighting terminology (e.g., tungsten, 6500K), and proposes LumiCtrl…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Lighting Control
-  - Text-to-Image
-  - Personalized Generation
-  - Illumination Prompt Learning
-  - ControlNet
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Lighting Control"
+  - "Text-to-Image"
+  - "Personalized Generation"
+  - "Illumination Prompt Learning"
+  - "ControlNet"
 date: 2026-05-08
 content_hash: d30256da2d5deef5
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TV-Rec: Time-Variant Convolutional Filter for Sequential Recommendation
 description: >-
-  [NeurIPS 2025][Recommender Systems][Sequential recommendation] This paper proposes TV-Rec, a time-variant convolutional filter grounded in graph signal processing that replaces conventional fixed convolutions and self-attention mechanisms, achieving higher expressiveness for sequential recommendation with an average improvement of 7.49% across 6 benchmark datasets.
+  [NeurIPS 2025][Recommender Systems][Sequential recommendation] This paper proposes TV-Rec, a time-variant convolutional filter grounded in graph signal processing that replaces conventional fixed convolutions and self-at…
 tags:
-  - NeurIPS 2025
-  - Recommender Systems
-  - Sequential recommendation
-  - time-variant convolutional filter
-  - graph signal processing
-  - attention replacement
-  - user behavior modeling
+  - "NeurIPS 2025"
+  - "Recommender Systems"
+  - "Sequential recommendation"
+  - "time-variant convolutional filter"
+  - "graph signal processing"
+  - "attention replacement"
+  - "user behavior modeling"
 date: 2026-05-08
 content_hash: d8579138623e5346
 ---

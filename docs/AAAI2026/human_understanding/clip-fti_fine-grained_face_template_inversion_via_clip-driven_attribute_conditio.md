@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CLIP-FTI: Fine-Grained Face Template Inversion via CLIP-Driven Attribute Conditioning
 description: >-
-  [AAAI 2026][Human Understanding][Face Template Inversion] This paper presents the first approach to leverage CLIP-extracted fine-grained facial semantic attribute embeddings for Face Template Inversion (FTI). A cross-modal feature interaction network fuses leaked templates with attribute embeddings and projects them into the StyleGAN latent space, synthesizing identity-consistent face images with richer attribute details. The method surpasses state-of-the-art in recognition accuracy, attribute similarity, and cross-model attack transferability.
+  [AAAI 2026][Human Understanding][Face Template Inversion] This paper presents the first approach to leverage CLIP-extracted fine-grained facial semantic attribute embeddings for Face Template Inversion (FTI). A cross-mod…
 tags:
-  - AAAI 2026
-  - Human Understanding
-  - Face Template Inversion
-  - CLIP
-  - StyleGAN
-  - Adversarial Attack
-  - Cross-Model Transferability
+  - "AAAI 2026"
+  - "Human Understanding"
+  - "Face Template Inversion"
+  - "CLIP"
+  - "StyleGAN"
+  - "Adversarial Attack"
+  - "Cross-Model Transferability"
 date: 2026-05-08
 content_hash: bfac3480db57cc40
 ---

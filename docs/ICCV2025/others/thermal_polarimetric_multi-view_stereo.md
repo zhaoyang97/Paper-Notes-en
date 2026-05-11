@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Thermal Polarimetric Multi-view Stereo
 description: >-
-  [ICCV2025][thermal imaging] This paper proposes a method for high-fidelity 3D shape reconstruction using thermal polarimetric (long-wave infrared polarimetric) cues. It theoretically demonstrates that LWIR polarimetric observations are unaffected by illumination conditions and material optical properties, enabling accurate 3D reconstruction of transparent, translucent, and heterogeneous objects—significantly outperforming visible-light polarimetric methods.
+  [ICCV2025][thermal imaging] This paper proposes a method for high-fidelity 3D shape reconstruction using thermal polarimetric (long-wave infrared polarimetric) cues. It theoretically demonstrates that LWIR polarimetric o…
 tags:
-  - ICCV2025
-  - thermal imaging
-  - polarimetric imaging
-  - LWIR
-  - multi-view stereo
-  - SDF
-  - shape from polarization
+  - "ICCV2025"
+  - "thermal imaging"
+  - "polarimetric imaging"
+  - "LWIR"
+  - "multi-view stereo"
+  - "SDF"
+  - "shape from polarization"
 date: 2026-05-08
 content_hash: 5efecad01d9c25da
 ---

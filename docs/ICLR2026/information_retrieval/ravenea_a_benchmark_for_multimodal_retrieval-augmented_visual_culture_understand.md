@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] RAVENEA: A Benchmark for Multimodal Retrieval-Augmented Visual Culture Understanding
 description: >-
-  [ICLR 2026][Retrieval-Augmented Generation] This paper introduces Ravenea, the first benchmark for evaluating multimodal retrieval-augmented cultural understanding. It comprises 1,868 instances and 11,396 human-ranked Wikipedia documents, spanning 11 categories across 8 countries. The benchmark evaluates 7 multimodal retrievers and 17 VLMs, finding that culture-aware RAG yields average improvements of 6% on cVQA and 11% on cIC.
+  [ICLR 2026][Information Retrieval & RAG][Retrieval-Augmented Generation] This paper introduces Ravenea, the first benchmark for evaluating multimodal retrieval-augmented cultural understanding. It comprises 1…
 tags:
-  - ICLR 2026
-  - Retrieval-Augmented Generation
-  - Cultural Understanding
-  - Multimodal Benchmark
-  - Visual Question Answering
-  - Image Captioning
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Retrieval-Augmented Generation"
+  - "Cultural Understanding"
+  - "Multimodal Benchmark"
+  - "Visual Question Answering"
+  - "Image Captioning"
 date: 2026-05-08
 content_hash: bba518e2c4aa271a
 ---

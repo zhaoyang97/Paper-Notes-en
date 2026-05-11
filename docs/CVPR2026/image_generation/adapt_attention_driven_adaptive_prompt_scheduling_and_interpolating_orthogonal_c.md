@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ADAPT: Attention Driven Adaptive Prompt Scheduling and InTerpolating Orthogonal Complements for Rare Concepts Generation
 description: >-
-  [CVPR 2026][Image Generation][Rare concept generation] This paper proposes the ADAPT framework, which employs three training-free modules — Attention-driven adaptive Prompt Scheduling (APS), Pooling Embedding Manipulation (PEM), and Latent Space Manipulation (LSM) — to deterministically and semantically control the generation transition from common to rare concepts, significantly outperforming the R2F baseline on RareBench.
+  [CVPR 2026][Image Generation][Rare concept generation] This paper proposes the ADAPT framework, which employs three training-free modules — Attention-driven adaptive Prompt Scheduling (APS)…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Rare concept generation
-  - prompt scheduling
-  - orthogonal projection
-  - attention mechanism
-  - text-image alignment
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Rare concept generation"
+  - "prompt scheduling"
+  - "orthogonal projection"
+  - "attention mechanism"
+  - "text-image alignment"
 date: 2026-05-08
 content_hash: cc04f03d979a8023
 ---

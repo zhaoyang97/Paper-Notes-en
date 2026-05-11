@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Effective and Efficient Context-aware Nucleus Detection in Histopathology Whole Slide Images
 description: >-
-  [AAAI 2026][Medical Imaging][Nucleus Detection] This paper proposes an efficient context-aware nucleus detection method that aggregates off-the-shelf features from historically visited sliding windows—rather than additionally cropping large low-field-of-view patches—to provide tissue context, while employing a cross-annotation strategy to mine surrounding unannotated nucleus samples for enhanced contextual adaptability.
+  [AAAI 2026][Medical Imaging][Nucleus Detection] This paper proposes an efficient context-aware nucleus detection method that aggregates off-the-shelf features from historically visited sliding windows—rather than additio…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Nucleus Detection
-  - Context-aware
-  - Whole Slide Image
-  - Pathology Image Analysis
-  - Pseudo Labels
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Nucleus Detection"
+  - "Context-aware"
+  - "Whole Slide Image"
+  - "Pathology Image Analysis"
+  - "Pseudo Labels"
 date: 2026-05-08
 content_hash: 49d5d5866838ba36
 ---

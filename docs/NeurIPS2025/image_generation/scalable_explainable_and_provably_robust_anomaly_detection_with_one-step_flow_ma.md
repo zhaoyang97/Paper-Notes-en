@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Scalable, Explainable and Provably Robust Anomaly Detection with One-Step Flow Matching
 description: >-
-  [NeurIPS 2025][Image Generation][anomaly detection] This paper proposes TCCM (Time-Conditioned Contraction Matching), a flow matching-inspired semi-supervised anomaly detection method for tabular data. By learning a time-conditioned velocity field that contracts normal data toward the origin, TCCM computes anomaly scores in a single forward pass, achieving top AUROC and AUPRC rankings across 47 ADBench datasets while running 1573× faster than DTE.
+  [NeurIPS 2025][Image Generation][anomaly detection] This paper proposes TCCM (Time-Conditioned Contraction Matching), a flow matching-inspired semi-supervised anomaly detection method for tabular data. By learning a time…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - anomaly detection
-  - flow matching
-  - tabular data
-  - explainability
-  - Lipschitz robustness
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "anomaly detection"
+  - "flow matching"
+  - "tabular data"
+  - "explainability"
+  - "Lipschitz robustness"
 date: 2026-05-08
 content_hash: 557b5c07af12d01e
 ---

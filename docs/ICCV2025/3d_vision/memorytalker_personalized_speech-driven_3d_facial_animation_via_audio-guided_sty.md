@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] MemoryTalker: Personalized Speech-Driven 3D Facial Animation via Audio-Guided Stylization
 description: >-
-  [3D Vision] This paper proposes MemoryTalker, a two-stage training framework (Memorizing + Animating) that employs a key-value memory network to store generic facial motions and generates personalized 3D facial animations driven solely by audio via audio-guided stylized memory retrieval, requiring no additional prior information at inference time.
+  [3D Vision] This paper proposes MemoryTalker, a two-stage training framework (Memorizing + Animating) that employs a key-value memory network to store generic facial motions and generates personalized 3D facial animation…
 tags:
-  - 3D Vision
+  - "3D Vision"
 date: 2026-05-08
 content_hash: a5706a39d705891a
 ---

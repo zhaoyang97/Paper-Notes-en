@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Routing, Cascades, and User Choice for LLMs
 description: >-
-  [ICLR 2026][Reinforcement Learning][LLM routing] This paper models LLM routing as a provider-user Stackelberg game, proves that the optimal routing policy is almost always a static, cascade-free threshold rule, reveals user-provider misalignment when quality/cost rankings are inconsistent, and shows that under low churn penalties providers are incentivized to inflate latency via throttling to reduce cost at the expense of user utility.
+  [ICLR 2026][Reinforcement Learning][LLM routing] This paper models LLM routing as a provider-user Stackelberg game, proves that the optimal routing policy is almost always a static, cascade-free threshold rule…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - LLM routing
-  - cascading
-  - Stackelberg game
-  - user-provider misalignment
-  - throttling
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "LLM routing"
+  - "cascading"
+  - "Stackelberg game"
+  - "user-provider misalignment"
+  - "throttling"
 date: 2026-05-08
 content_hash: 96c6a724b2a2367b
 ---

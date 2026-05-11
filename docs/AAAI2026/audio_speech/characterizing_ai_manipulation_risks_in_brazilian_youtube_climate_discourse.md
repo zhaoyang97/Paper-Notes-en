@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Characterizing AI Manipulation Risks in Brazilian YouTube Climate Discourse
 description: >-
-  [AAAI2026][Audio & Speech][Climate Discourse] Through a psycholinguistic framework, this work analyzes 226,775 Brazilian YouTube climate change videos and 2,756,165 comments, revealing that emotional and moral rhetoric significantly drives user engagement. It further demonstrates that fine-tuned LLMs can automatically generate high-engagement climate denial comments, warning of the potential risks of generative AI in public opinion manipulation.
+  [AAAI2026][Audio & Speech][Climate Discourse] Through a psycholinguistic framework, this work analyzes 226,775 Brazilian YouTube climate change videos and 2,756,165 comments…
 tags:
-  - AAAI2026
+  - "AAAI2026"
   - "Audio & Speech"
-  - Climate Discourse
-  - Persuasion
-  - Theory of Mind
-  - YouTube
-  - LLM-generated Manipulation
-  - Social Media Analysis
+  - "Climate Discourse"
+  - "Persuasion"
+  - "Theory of Mind"
+  - "YouTube"
+  - "LLM-generated Manipulation"
+  - "Social Media Analysis"
 date: 2026-05-08
 content_hash: 2987a7a2ac97a2e8
 ---

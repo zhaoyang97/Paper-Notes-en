@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Compositional Diffusion with Guided Search for Long-Horizon Planning
 description: >-
-  [ICLR 2026][compositional diffusion] This paper proposes CDGS (Compositional Diffusion with Guided Search), which embeds a population-based search mechanism—iterative resampling combined with likelihood-based pruning—into the diffusion denoising process to address the mode averaging problem arising from the composition of multimodal local distributions. CDGS enables sampling of globally consistent long-horizon plans from short-horizon models without long-horizon training data.
+  [ICLR 2026][compositional diffusion] This paper proposes CDGS (Compositional Diffusion with Guided Search), which embeds a population-based search mechanism—iterative resampling combined with likelihood-based pruning—int…
 tags:
-  - ICLR 2026
-  - compositional diffusion
-  - long-horizon planning
-  - mode averaging
-  - guided search
-  - inference-time compute
+  - "ICLR 2026"
+  - "compositional diffusion"
+  - "long-horizon planning"
+  - "mode averaging"
+  - "guided search"
+  - "inference-time compute"
 date: 2026-05-08
 content_hash: 13342ae37d9c7d8e
 ---

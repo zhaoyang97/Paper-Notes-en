@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DASH: Detection and Assessment of Systematic Hallucinations of VLMs
 description: >-
-  [ICCV 2025][Multimodal VLM][Vision-language models] This paper proposes DASH, a fully automated pipeline that systematically discovers false-positive object hallucination clusters in VLMs via two complementary strategies: LLM-based text query generation (DASH-LLM) and diffusion model optimization-based image query generation (DASH-OPT). Applied to ReLAION-5B, DASH uncovers 19k+ clusters and 950k+ images, and constructs the more challenging DASH-B benchmark.
+  [ICCV 2025][Multimodal VLM][Vision-language models] This paper proposes DASH, a fully automated pipeline that systematically discovers false-positive object hallucination clusters in VLMs via two complementary strategies…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Vision-language models
-  - object hallucination
-  - systematic error detection
-  - diffusion model optimization
-  - large-scale benchmark
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Vision-language models"
+  - "object hallucination"
+  - "systematic error detection"
+  - "diffusion model optimization"
+  - "large-scale benchmark"
 date: 2026-05-08
 content_hash: 11d415706668c2ab
 ---

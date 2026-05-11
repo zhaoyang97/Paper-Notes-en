@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Spatial-Aware Decision-Making with Ring Attractors in Reinforcement Learning Systems
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Ring Attractors] This paper integrates ring attractor models from neuroscience into action selection in deep reinforcement learning (DRL). By mapping actions to spatial positions on a ring and injecting Gaussian signals encoding Q-values and uncertainty, the proposed approach achieves a 53% improvement over baseline on Atari 100K.
+  [NeurIPS 2025][Reinforcement Learning][Ring Attractors] This paper integrates ring attractor models from neuroscience into action selection in deep reinforcement learning (DRL). By mapping actions to spatial positions on…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Ring Attractors
-  - Biologically Inspired RL
-  - Spatial Awareness
-  - Action Space Encoding
-  - Uncertainty Quantification
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Ring Attractors"
+  - "Biologically Inspired RL"
+  - "Spatial Awareness"
+  - "Action Space Encoding"
+  - "Uncertainty Quantification"
 date: 2026-05-08
 content_hash: 2d2bd189a8be5b8e
 ---

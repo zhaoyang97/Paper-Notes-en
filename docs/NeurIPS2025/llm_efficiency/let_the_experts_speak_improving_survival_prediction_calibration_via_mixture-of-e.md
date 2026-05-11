@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Let the Experts Speak: Improving Survival Prediction & Calibration via Mixture-of-Experts Heads
 description: >-
-  [NeurIPS 2025][LLM Efficiency][Survival Analysis] Three discrete-time deep Mixture-of-Experts (MoE) survival analysis architectures are proposed, among which Personalized MoE achieves superior clustering, calibration, and predictive accuracy simultaneously by allowing each expert to generate a patient-specific event distribution.
+  [NeurIPS 2025][LLM Efficiency][Survival Analysis] Three discrete-time deep Mixture-of-Experts (MoE) survival analysis architectures are proposed, among which Personalized MoE achieves superior clustering, calibration…
 tags:
-  - NeurIPS 2025
-  - LLM Efficiency
-  - Survival Analysis
-  - Mixture of Experts
-  - Calibration
-  - Clustering
-  - Discrete-Time Models
+  - "NeurIPS 2025"
+  - "LLM Efficiency"
+  - "Survival Analysis"
+  - "Mixture of Experts"
+  - "Calibration"
+  - "Clustering"
+  - "Discrete-Time Models"
 date: 2026-05-08
 content_hash: bddbb12ebc4ce161
 ---

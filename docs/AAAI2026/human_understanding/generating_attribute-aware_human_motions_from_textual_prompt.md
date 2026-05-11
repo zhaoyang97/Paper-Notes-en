@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Generating Attribute-Aware Human Motions from Textual Prompt
 description: >-
-  [AAAI 2026][Human Understanding][Human motion generation] This paper proposes AttrMoGen, a framework that decouples action semantics from human attributes (age, gender, etc.) via a Structural Causal Model (SCM)-based Causal Information Bottleneck, enabling attribute-aware human motion generation from text prompts. The authors also introduce HumanAttr, the first large-scale text-motion dataset with extensive attribute annotations.
+  [AAAI 2026][Human Understanding][Human motion generation] This paper proposes AttrMoGen, a framework that decouples action semantics from human attributes (age, gender…
 tags:
-  - AAAI 2026
-  - Human Understanding
-  - Human motion generation
-  - attribute-awareness
-  - causal decoupling
-  - VQVAE
-  - text-driven
+  - "AAAI 2026"
+  - "Human Understanding"
+  - "Human motion generation"
+  - "attribute-awareness"
+  - "causal decoupling"
+  - "VQVAE"
+  - "text-driven"
 date: 2026-05-08
 content_hash: ada7807d97e57037
 ---

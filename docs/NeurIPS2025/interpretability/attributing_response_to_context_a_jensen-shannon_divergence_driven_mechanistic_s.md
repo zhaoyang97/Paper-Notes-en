@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] ARC-JSD: Attributing Response to Context via Jensen-Shannon Divergence Driven Mechanistic Study
 description: >-
-  [NeurIPS 2025][Context Attribution] ARC-JSD proposes a RAG context attribution method based on Jensen-Shannon Divergence — by comparing the JSD between model output distributions with and without specific context sentences, it localizes the context that a response depends on without fine-tuning or gradient computation. The method achieves 3× faster computation than baselines, improves Top-1 attribution accuracy by 10.7% on average, and reveals via Logit Lens that attribution-relevant attention heads are concentrated in higher layers.
+  [NeurIPS 2025][Interpretability][Context Attribution] ARC-JSD proposes a RAG context attribution method based on Jensen-Shannon Divergence — by comparing the JSD between model output distributions with and without specif…
 tags:
-  - NeurIPS 2025
-  - Context Attribution
-  - Jensen-Shannon Divergence
-  - Mechanistic Interpretability
-  - RAG Hallucination
-  - Logit Lens
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "Context Attribution"
+  - "Jensen-Shannon Divergence"
+  - "Mechanistic Interpretability"
+  - "RAG Hallucination"
+  - "Logit Lens"
 date: 2026-05-08
 content_hash: 2e8236759afb32b0
 ---

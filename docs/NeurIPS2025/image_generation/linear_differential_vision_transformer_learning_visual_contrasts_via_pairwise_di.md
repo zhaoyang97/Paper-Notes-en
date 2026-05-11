@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Linear Differential Vision Transformer: Learning Visual Contrasts via Pairwise Differentials
 description: >-
-  [NeurIPS 2025][Image Generation][Vision Transformer] This paper proposes Visual-Contrast Attention (VCA), which generates compact positive/negative visual-contrast tokens via spatial pooling and performs differential interaction, reducing self-attention complexity from $O(N^2C)$ to $O(NnC)$ ($n \ll N$), while achieving consistent improvements on both image classification and generation tasks.
+  [NeurIPS 2025][Image Generation][Vision Transformer] This paper proposes Visual-Contrast Attention (VCA), which generates compact positive/negative visual-contrast tokens via spatial pooling and performs differential int…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Vision Transformer
-  - Linear Attention
-  - Differential Attention
-  - Image Classification
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Vision Transformer"
+  - "Linear Attention"
+  - "Differential Attention"
+  - "Image Classification"
 date: 2026-05-08
 content_hash: 14a6db84a5995f20
 ---

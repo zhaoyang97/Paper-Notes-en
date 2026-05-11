@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mind the Gap: Aligning Knowledge Bases with User Needs to Enhance Mental Health Retrieval
 description: >-
-  [NeurIPS 2025][Medical Imaging][RAG] This paper proposes a knowledge base augmentation framework grounded in "demand gap" analysis. By overlaying real user data (forum posts) onto existing mental health resource repositories to identify content voids, the framework applies targeted augmentation strategies to achieve near-full-corpus RAG retrieval quality with minimal document additions.
+  [NeurIPS 2025][Medical Imaging][RAG] This paper proposes a knowledge base augmentation framework grounded in "demand gap" analysis. By overlaying real user data (forum posts) onto existing mental health resource reposito…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - RAG
-  - knowledge base augmentation
-  - mental health
-  - gap analysis
-  - corpus expansion
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "RAG"
+  - "knowledge base augmentation"
+  - "mental health"
+  - "gap analysis"
+  - "corpus expansion"
 date: 2026-05-08
 content_hash: 442a1cc4755930c5
 ---

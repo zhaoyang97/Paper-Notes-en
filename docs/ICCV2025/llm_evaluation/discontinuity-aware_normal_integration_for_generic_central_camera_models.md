@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Discontinuity-aware Normal Integration for Generic Central Camera Models
 description: >-
-  [ICCV 2025 (Highlight)][LLM Evaluation][Normal Integration] This paper proposes a novel normal integration method that supports explicit discontinuity modeling and generic central camera models. By establishing constraints between surface normals and ray directions under a local planarity assumption, the method achieves state-of-the-art performance on standard normal integration benchmarks and, for the first time, directly handles generic central cameras such as fisheye and panoramic cameras.
+  [ICCV 2025 (Highlight)][LLM Evaluation][Normal Integration] This paper proposes a novel normal integration method that supports explicit discontinuity modeling and generic central camera models. By establishing constrain…
 tags:
-  - ICCV 2025 (Highlight)
-  - LLM Evaluation
-  - Normal Integration
-  - Depth Discontinuity
-  - Central Camera Model
-  - Surface Reconstruction
-  - Photometric Stereo
+  - "ICCV 2025 (Highlight)"
+  - "LLM Evaluation"
+  - "Normal Integration"
+  - "Depth Discontinuity"
+  - "Central Camera Model"
+  - "Surface Reconstruction"
+  - "Photometric Stereo"
 date: 2026-05-08
 content_hash: af9f438d2983eb7c
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] REA-RL: Reflection-Aware Online Reinforcement Learning for Efficient Reasoning
 description: >-
-  [ICLR 2026][Reinforcement Learning][overthinking in reasoning] REA-RL is a framework that employs a distilled small reflection model to online detect and truncate overthinking tokens, generating revised reasoning paths, while incorporating a reflection reward to prevent model degradation into non-reflective vanilla CoT during RL training. On DeepSeek-R1-Distill-Qwen-7B, it achieves a 36% reduction in reasoning token consumption with zero accuracy loss.
+  [ICLR 2026][Reinforcement Learning][overthinking in reasoning] REA-RL is a framework that employs a distilled small reflection model to online detect and truncate overthinking tokens, generating revised reasoning paths…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - overthinking in reasoning
-  - reflection-awareness
-  - online RL
-  - GRPO
-  - reasoning efficiency
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "overthinking in reasoning"
+  - "reflection-awareness"
+  - "online RL"
+  - "GRPO"
+  - "reasoning efficiency"
 date: 2026-05-08
 content_hash: 15a315f58211c177
 ---

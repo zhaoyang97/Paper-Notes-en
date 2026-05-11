@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Reasoning Compiler: LLM-Guided Optimizations for Efficient Model Serving
 description: >-
-  [NeurIPS 2025][AIGC Detection][LLM-guided compilation] This paper proposes Reasoning Compiler, which models compiler optimization as a sequential decision-making process, employing an LLM as a context-aware proposal engine combined with MCTS to balance exploration and exploitation. The approach achieves an average 5.0× speedup across 5 representative benchmarks and 5 hardware platforms, with 10.8× better sampling efficiency than TVM's evolutionary search.
+  [NeurIPS 2025][AIGC Detection][LLM-guided compilation] This paper proposes Reasoning Compiler, which models compiler optimization as a sequential decision-making process…
 tags:
-  - NeurIPS 2025
-  - AIGC Detection
-  - LLM-guided compilation
-  - MCTS
-  - program optimization
-  - neural compiler
-  - sampling efficiency
+  - "NeurIPS 2025"
+  - "AIGC Detection"
+  - "LLM-guided compilation"
+  - "MCTS"
+  - "program optimization"
+  - "neural compiler"
+  - "sampling efficiency"
 date: 2026-05-08
 content_hash: 0b44a763e148d107
 ---

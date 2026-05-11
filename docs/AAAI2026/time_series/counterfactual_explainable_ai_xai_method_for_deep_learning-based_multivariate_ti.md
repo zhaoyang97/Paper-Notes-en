@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Counterfactual Explainable AI (XAI) Method for Deep Learning-Based Multivariate Time Series Classification
 description: >-
-  [AAAI 2026][Time Series][Counterfactual Explanation] This paper proposes CONFETTI, a multi-objective counterfactual explanation method for multivariate time series (MTS) classification. By combining Class Activation Map (CAM)-guided subsequence extraction with NSGA-III multi-objective optimization, CONFETTI achieves an optimal balance among prediction confidence, sparsity, and proximity, outperforming existing methods across 7 UEA benchmark datasets.
+  [AAAI 2026][Time Series][Counterfactual Explanation] This paper proposes CONFETTI, a multi-objective counterfactual explanation method for multivariate time series (MTS) classification. By combining Class Activation Map…
 tags:
-  - AAAI 2026
-  - Time Series
-  - Counterfactual Explanation
-  - Multivariate Time Series
-  - Multi-Objective Optimization
-  - Explainable AI
-  - NSGA-III
+  - "AAAI 2026"
+  - "Time Series"
+  - "Counterfactual Explanation"
+  - "Multivariate Time Series"
+  - "Multi-Objective Optimization"
+  - "Explainable AI"
+  - "NSGA-III"
 date: 2026-05-08
 content_hash: 7c6d4d30ac03c819
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EAG3R: Event-Augmented 3D Geometry Estimation for Dynamic and Extreme-Lighting Scenes
 description: >-
-  [NeurIPS 2025][3D Vision][Event camera] EAG3R integrates asynchronous event streams from event cameras into the MonST3R point map reconstruction framework. Through a Retinex enhancement module, an SNR-aware fusion mechanism, and an event photometric consistency loss, it achieves robust depth estimation, pose tracking, and 4D reconstruction in extreme low-light dynamic scenes, significantly outperforming RGB-only methods via zero-shot transfer to nighttime scenarios.
+  [NeurIPS 2025][3D Vision][Event camera] EAG3R integrates asynchronous event streams from event cameras into the MonST3R point map reconstruction framework. Through a Retinex enhancement module…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Event camera
-  - 3D geometry estimation
-  - low-light
-  - point map reconstruction
-  - dynamic scene reconstruction
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Event camera"
+  - "3D geometry estimation"
+  - "low-light"
+  - "point map reconstruction"
+  - "dynamic scene reconstruction"
 date: 2026-05-08
 content_hash: db7b8ae584675015
 ---

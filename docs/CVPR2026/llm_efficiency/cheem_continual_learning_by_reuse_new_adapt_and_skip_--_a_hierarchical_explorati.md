@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CHEEM: Continual Learning by Reuse, New, Adapt and Skip -- A Hierarchical Exploration-Exploitation Approach
 description: >-
-  [CVPR 2026][LLM Efficiency][Continual Learning] Proposes the CHEEM framework that leverages hierarchical exploration-exploitation (HEE) NAS to automatically learn task-aware dynamic ViT backbones—selecting Reuse/New/Adapt/Skip operations at each layer—significantly outperforming prompt-based methods on MTIL and VDD continual learning benchmarks, approaching the full fine-tuning upper bound.
+  [CVPR 2026][LLM Efficiency][Continual Learning] Proposes the CHEEM framework that leverages hierarchical exploration-exploitation (HEE) NAS to automatically learn task-aware dynamic ViT backbones—selecting Reuse/New/Adap…
 tags:
-  - CVPR 2026
-  - LLM Efficiency
-  - Continual Learning
-  - Exemplar-Free Class-Incremental Learning
-  - Neural Architecture Search
-  - Layer Operations
-  - Vision Transformer
+  - "CVPR 2026"
+  - "LLM Efficiency"
+  - "Continual Learning"
+  - "Exemplar-Free Class-Incremental Learning"
+  - "Neural Architecture Search"
+  - "Layer Operations"
+  - "Vision Transformer"
 date: 2026-05-08
 content_hash: 6d8d48d19b044f75
 ---

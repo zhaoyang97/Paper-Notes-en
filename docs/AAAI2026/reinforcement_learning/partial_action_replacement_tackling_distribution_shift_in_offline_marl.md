@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Partial Action Replacement: Tackling Distribution Shift in Offline MARL
 description: >-
-  [AAAI 2026][Reinforcement Learning][Offline Multi-Agent Reinforcement Learning] This paper proposes the Partial Action Replacement (PAR) principle, theoretically proving that under a factorized behavior policy, distribution shift grows linearly with the number of deviating agents (rather than exponentially in the joint action space). Building on this, the SPaCQL algorithm is developed to dynamically weight different PAR operators via Q-ensemble uncertainty, achieving substantial improvements over all baselines on Random and Medium-Replay datasets.
+  [AAAI 2026][Reinforcement Learning][Offline Multi-Agent Reinforcement Learning] This paper proposes the Partial Action Replacement (PAR) principle, theoretically proving that under a factorized behavior policy…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - Offline Multi-Agent Reinforcement Learning
-  - Distribution Shift
-  - Partial Action Replacement
-  - Conservative Q-Learning
-  - Uncertainty Estimation
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "Offline Multi-Agent Reinforcement Learning"
+  - "Distribution Shift"
+  - "Partial Action Replacement"
+  - "Conservative Q-Learning"
+  - "Uncertainty Estimation"
 date: 2026-05-08
 content_hash: 670557d88ccae6f3
 ---

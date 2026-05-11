@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Token Distillation: Attention-Aware Input Embeddings for New Tokens
 description: >-
-  [ICLR 2026][Model Compression][Vocabulary Expansion] This paper proposes Token Distillation, a method that distills multi-subword interaction information encoded across all Transformer layers into a single token embedding, enabling high-quality initialization of new token embeddings without requiring a pretrained hypernetwork and outperforming existing approaches.
+  [ICLR 2026][Model Compression][Vocabulary Expansion] This paper proposes Token Distillation, a method that distills multi-subword interaction information encoded across all Transformer layers into a single token embeddin…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Vocabulary Expansion
-  - Token Embedding Initialization
-  - Knowledge Distillation
-  - Domain Adaptation
-  - Language Adaptation
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Vocabulary Expansion"
+  - "Token Embedding Initialization"
+  - "Knowledge Distillation"
+  - "Domain Adaptation"
+  - "Language Adaptation"
 date: 2026-05-08
 content_hash: e1e7d81cbe62469c
 ---

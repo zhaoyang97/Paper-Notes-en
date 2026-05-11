@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Loopholing Discrete Diffusion: Deterministic Bypass of the Sampling Wall
 description: >-
-  [ICLR 2026][Image Generation][discrete diffusion] This paper identifies the "sampling wall" in discrete diffusion models—whereby rich categorical distribution information collapses into one-hot vectors after sampling—and proposes a Loopholing mechanism that introduces a deterministic latent pathway to propagate distribution information across steps. The approach reduces generation perplexity by up to 61%, substantially closing the gap with autoregressive models.
+  [ICLR 2026][Image Generation][discrete diffusion] This paper identifies the "sampling wall" in discrete diffusion models—whereby rich categorical distribution information collapses into one-hot vectors after sampling—and…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - discrete diffusion
-  - sampling wall
-  - deterministic bypass
-  - self-conditioning
-  - non-autoregressive text generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "discrete diffusion"
+  - "sampling wall"
+  - "deterministic bypass"
+  - "self-conditioning"
+  - "non-autoregressive text generation"
 date: 2026-05-08
 content_hash: e25c379fd8045ebc
 ---

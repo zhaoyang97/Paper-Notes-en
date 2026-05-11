@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Attention Retention for Continual Learning with Vision Transformers
 description: >-
-  [AAAI 2026][LLM Safety][Continual Learning] This paper proposes ARCL-ViT, a framework that prevents attention drift in Vision Transformers during continual learning via a two-step strategy of attention mask generation and gradient masking. It achieves state-of-the-art results on ImageNet-R and CIFAR-100, demonstrating that preserving attention patterns is key to mitigating catastrophic forgetting.
+  [AAAI 2026][LLM Safety][Continual Learning] This paper proposes ARCL-ViT, a framework that prevents attention drift in Vision Transformers during continual learning via a two-step strategy of attention mask generation an…
 tags:
-  - AAAI 2026
-  - LLM Safety
-  - Continual Learning
-  - Vision Transformer
-  - Attention Retention
-  - Catastrophic Forgetting
-  - Gradient Masking
+  - "AAAI 2026"
+  - "LLM Safety"
+  - "Continual Learning"
+  - "Vision Transformer"
+  - "Attention Retention"
+  - "Catastrophic Forgetting"
+  - "Gradient Masking"
 date: 2026-05-08
 content_hash: 8645a9f99f80083d
 ---

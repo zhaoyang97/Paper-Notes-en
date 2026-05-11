@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Label-Free Cross-Task LoRA Merging with Null-Space Compression
 description: >-
-  [CVPR 2026][Multimodal VLM][Model Merging] Motivated by the observation that the null-space ratio of the down-projection matrix $\mathbf{A}$ decreases during LoRA fine-tuning and is strongly correlated with task performance, this paper proposes NSC Merging — a label-free, task-agnostic LoRA merging method that achieves state-of-the-art results across 20 heterogeneous vision tasks, 6 NLI tasks, and VLM benchmarks.
+  [CVPR 2026][Multimodal VLM][Model Merging] Motivated by the observation that the null-space ratio of the down-projection matrix $\mathbf{A}$ decreases during LoRA fine-tuning and is strongly correlated with task performa…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Model Merging
-  - LoRA
-  - Null-Space Compression
-  - Label-Free
-  - Cross-Task
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Model Merging"
+  - "LoRA"
+  - "Null-Space Compression"
+  - "Label-Free"
+  - "Cross-Task"
 date: 2026-05-08
 content_hash: 002c0ee4f3f8e60f
 ---

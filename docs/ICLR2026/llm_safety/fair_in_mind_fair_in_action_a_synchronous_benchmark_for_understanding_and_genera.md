@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Fair in Mind, Fair in Action? A Synchronous Benchmark for Understanding and Generation in UMLLMs
 description: >-
-  [ICLR 2026][LLM Safety][Fairness Benchmark] This paper introduces the IRIS Benchmark, the first benchmark to synchronously evaluate fairness in both understanding and generation tasks for Unified Multimodal Large Language Models (UMLLMs). Through a three-dimensional evaluation framework, 60 fine-grained metrics, and a high-dimensional fairness space, IRIS reveals key phenomena such as cross-task "personality splitting" and systematic "generation gaps."
+  [ICLR 2026][LLM Safety][Fairness Benchmark] This paper introduces the IRIS Benchmark, the first benchmark to synchronously evaluate fairness in both understanding and generation tasks for Unified Multimodal Large Languag…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Fairness Benchmark
-  - Unified Multimodal LLM
-  - Bias Evaluation
-  - Demographic Fairness
-  - Generation-Understanding Gap
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Fairness Benchmark"
+  - "Unified Multimodal LLM"
+  - "Bias Evaluation"
+  - "Demographic Fairness"
+  - "Generation-Understanding Gap"
 date: 2026-05-08
 content_hash: a5a779eccb796c33
 ---

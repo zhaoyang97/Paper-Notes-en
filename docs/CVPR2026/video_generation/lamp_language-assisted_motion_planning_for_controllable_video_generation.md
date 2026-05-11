@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] LAMP: Language-Assisted Motion Planning for Controllable Video Generation
 description: >-
-  [CVPR 2026][Video Generation] LAMP frames motion control as a language-to-program synthesis problem: it designs a cinematography-inspired motion DSL, fine-tunes an LLM to translate natural language descriptions into structured motion programs, and deterministically maps these programs to 3D object and camera trajectories that condition a video diffusion model — achieving, for the first time, simultaneous natural-language control over both object and camera motion.
+  [CVPR 2026][Video Generation][motion control] LAMP frames motion control as a language-to-program synthesis problem: it designs a cinematography-inspired motion DSL…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - motion control
-  - LLM planning
-  - domain-specific language
-  - cinematography
+  - "CVPR 2026"
+  - "Video Generation"
+  - "motion control"
+  - "LLM planning"
+  - "domain-specific language"
+  - "cinematography"
 date: 2026-05-08
 content_hash: cb732a1afca31ea5
 ---

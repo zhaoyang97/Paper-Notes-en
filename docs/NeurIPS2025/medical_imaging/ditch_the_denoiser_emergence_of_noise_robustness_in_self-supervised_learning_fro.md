@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Ditch the Denoiser: Emergence of Noise Robustness in Self-Supervised Learning from Data Curriculum
 description: >-
-  [NeurIPS 2025][Medical Imaging][Self-Supervised Learning] A fully self-supervised noise-robust representation learning framework is proposed, leveraging a "denoised→noisy" data curriculum strategy combined with denoised-teacher regularization. This enables SSL models such as DINOv2 to directly process noisy inputs at inference time without any denoiser, achieving a 4.8% improvement in linear probing accuracy under extreme Gaussian noise on ImageNet-1k.
+  [NeurIPS 2025][Medical Imaging][Self-Supervised Learning] A fully self-supervised noise-robust representation learning framework is proposed…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Self-Supervised Learning
-  - Noise Robustness
-  - Curriculum Learning
-  - DINOv2
-  - Denoiser-Free
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Self-Supervised Learning"
+  - "Noise Robustness"
+  - "Curriculum Learning"
+  - "DINOv2"
+  - "Denoiser-Free"
 date: 2026-05-08
 content_hash: 324d7c24945dbd8a
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Unlocking the Edge: Multi-LoRA On-Device Deployment and Acceleration
 description: >-
-  [ACL 2026][On-device LLM deployment] This paper presents an on-device LLM deployment framework for Samsung Galaxy S24/S25, achieving dynamic task switching by treating LoRA weights as runtime inputs, reducing style-variant generation latency by 6× via multi-stream concurrent token generation, and accelerating decoding by 2.3× through draft-model-free Dynamic Self-Speculative Decoding—yielding an overall 4–6× optimization across 9 languages and 8 tasks.
+  [ACL 2026][Multilingual & Machine Translation][On-device LLM deployment] This paper presents an on-device LLM deployment framework for Samsung Galaxy S24/S25…
 tags:
-  - ACL 2026
-  - On-device LLM deployment
-  - Multi-LoRA
-  - speculative decoding
-  - concurrent token generation
-  - INT4 quantization
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "On-device LLM deployment"
+  - "Multi-LoRA"
+  - "speculative decoding"
+  - "concurrent token generation"
+  - "INT4 quantization"
 date: 2026-05-08
 content_hash: 0c8cba620180301a
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Video Thinking Test: A Holistic Benchmark for Advanced Video Reasoning and Understanding
 description: >-
-  [ICCV 2025][Video Understanding][Video Understanding Benchmark] This paper introduces Video Thinking Test (Video-TT), a benchmark for evaluating both the correctness and robustness of video large language models (Video LLMs). It comprises 1,000 YouTube Shorts videos and 5,000 questions, designed around visual/narrative complexity factors and natural adversarial question variants. The benchmark reveals a substantial gap between the best-performing model (GPT-4o, 36.6%) and humans (84.3%).
+  [ICCV 2025][Video Understanding][Video Understanding Benchmark] This paper introduces Video Thinking Test (Video-TT), a benchmark for evaluating both the correctness and robustness of video large language models (Video L…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - Video Understanding Benchmark
-  - Video LLM
-  - Adversarial Robustness
-  - Visual Complexity
-  - Narrative Complexity
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "Video Understanding Benchmark"
+  - "Video LLM"
+  - "Adversarial Robustness"
+  - "Visual Complexity"
+  - "Narrative Complexity"
 date: 2026-05-08
 content_hash: e74a6f50d9b290d0
 ---

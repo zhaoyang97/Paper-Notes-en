@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CMT: A Cascade MAR with Topology Predictor for Multimodal Conditional CAD Generation
 description: >-
-  [ICCV 2025][3D Vision][CAD generation] This paper proposes CMT, the first multimodal CAD generation framework based on B-Rep representation. By employing a cascade MAR (edges first, then faces) and a topology predictor, CMT achieves accurate topology and geometry generation. The authors also construct mmABC, a multimodal CAD dataset of over 1.3 million models.
+  [ICCV 2025][3D Vision][CAD generation] This paper proposes CMT, the first multimodal CAD generation framework based on B-Rep representation. By employing a cascade MAR (edges first, then faces) and a topology predictor…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - CAD generation
-  - B-Rep
-  - cascade autoregression
-  - topology prediction
-  - multimodal conditional generation
+  - "ICCV 2025"
+  - "3D Vision"
+  - "CAD generation"
+  - "B-Rep"
+  - "cascade autoregression"
+  - "topology prediction"
+  - "multimodal conditional generation"
 date: 2026-05-08
 content_hash: f6952cc2a0058c42
 ---

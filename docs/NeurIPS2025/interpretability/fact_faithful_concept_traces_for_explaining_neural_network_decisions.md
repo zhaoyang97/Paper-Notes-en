@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] FaCT: Faithful Concept Traces for Explaining Neural Network Decisions
 description: >-
-  [NeurIPS 2025][concept explanation] This paper proposes FaCT, an inherently interpretable model combining B-cos transformations and sparse autoencoders (SAE) that **faithfully** decomposes model predictions into concept contributions (Logit = $\sum$ concept contributions) and faithfully visualizes each concept down to the input pixel level (concept activation = $\sum$ pixel contributions). A DINOv2-based C²-score is also introduced to evaluate concept consistency.
+  [NeurIPS 2025][Interpretability][concept explanation] This paper proposes FaCT, an inherently interpretable model combining B-cos transformations and sparse autoencoders (SAE) that **faithfully** decomposes model predict…
 tags:
-  - NeurIPS 2025
-  - concept explanation
-  - faithful attribution
-  - B-cos networks
-  - sparse autoencoders
-  - interpretable models
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "concept explanation"
+  - "faithful attribution"
+  - "B-cos networks"
+  - "sparse autoencoders"
+  - "interpretable models"
 date: 2026-05-08
 content_hash: fa22e8ac809d7927
 ---

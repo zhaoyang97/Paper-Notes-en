@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Toward Safer Diffusion Language Models: Discovery and Mitigation of Priming Vulnerabilities
 description: >-
-  [ICLR 2026][LLM/NLP][diffusion language models] This paper identifies a *priming vulnerability* in masked diffusion language models (MDLMs)—injecting affirmative tokens at intermediate denoising steps can bypass safety guardrails—and proposes Recovery Alignment (RA), a training method that teaches models to recover safe responses from corrupted intermediate states.
+  [ICLR 2026][LLM/NLP][diffusion language models] This paper identifies a *priming vulnerability* in masked diffusion language models (MDLMs)—injecting affirmative tokens at intermediate denoising steps can bypass safety g…
 tags:
-  - ICLR 2026
-  - LLM/NLP
-  - diffusion language models
-  - jailbreak attacks
-  - priming vulnerability
-  - safety alignment
-  - masked diffusion
+  - "ICLR 2026"
+  - "LLM/NLP"
+  - "diffusion language models"
+  - "jailbreak attacks"
+  - "priming vulnerability"
+  - "safety alignment"
+  - "masked diffusion"
 date: 2026-05-08
 content_hash: 7d42a49b90488f8c
 ---

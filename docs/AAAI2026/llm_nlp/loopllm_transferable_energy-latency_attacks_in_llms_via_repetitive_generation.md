@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LoopLLM: Transferable Energy-Latency Attacks in LLMs via Repetitive Generation
 description: >-
-  [AAAI 2026][LLM/NLP][energy-latency attack] This paper proposes LoopLLM, a framework that launches energy-latency attacks by inducing LLMs into repetitive generation modes. Through repetition-inducing prompt optimization and token-aligned ensemble optimization, LoopLLM achieves over 90% of maximum output length across 12 open-source and 2 commercial LLMs, with approximately 40% improvement in cross-model transferability.
+  [AAAI 2026][LLM/NLP][energy-latency attack] This paper proposes LoopLLM, a framework that launches energy-latency attacks by inducing LLMs into repetitive generation modes. Through repetition-inducing prompt optimization…
 tags:
-  - AAAI 2026
-  - LLM/NLP
-  - energy-latency attack
-  - repetitive generation
-  - adversarial suffix
-  - low-entropy loop
-  - cross-model transferability
+  - "AAAI 2026"
+  - "LLM/NLP"
+  - "energy-latency attack"
+  - "repetitive generation"
+  - "adversarial suffix"
+  - "low-entropy loop"
+  - "cross-model transferability"
 date: 2026-05-08
 content_hash: 0d27b77b659f2cfb
 ---

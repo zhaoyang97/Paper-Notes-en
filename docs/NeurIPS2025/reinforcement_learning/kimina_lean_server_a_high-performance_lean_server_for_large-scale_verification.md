@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Kimina Lean Server: A High-Performance Lean Server for Large-Scale Verification
 description: >-
-  [NeurIPS 2025 (MATH-AI Workshop)][Reinforcement Learning][Lean 4] This paper presents Kimina Lean Server — a high-performance Lean 4 verification server designed for large-scale reinforcement learning training. By leveraging server-side parallelization and an LRU caching mechanism, it achieves 1.5–2× speedups over existing tools and has been used to train the state-of-the-art theorem proving model Kimina-Prover.
+  [NeurIPS 2025 (MATH-AI Workshop)][Reinforcement Learning][Lean 4] This paper presents Kimina Lean Server — a high-performance Lean 4 verification server designed for large-scale reinforcement learning training. By levera…
 tags:
-  - NeurIPS 2025 (MATH-AI Workshop)
-  - Reinforcement Learning
-  - Lean 4
-  - theorem proving
-  - formal verification
-  - high-performance server
+  - "NeurIPS 2025 (MATH-AI Workshop)"
+  - "Reinforcement Learning"
+  - "Lean 4"
+  - "theorem proving"
+  - "formal verification"
+  - "high-performance server"
 date: 2026-05-08
 content_hash: bf0ad3ce1420b9ec
 ---

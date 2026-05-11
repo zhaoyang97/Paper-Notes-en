@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FedRW: Efficient Privacy-Preserving Data Reweighting for Enhancing Federated Learning of Language Models
 description: >-
-  [NeurIPS 2025][LLM Safety][Federated Learning] FedRW proposes the first privacy-preserving soft deduplication framework for federated learning that requires no trusted third party. By leveraging secure multi-party computation to obtain global sample frequencies and performing frequency-aware sample reweighting, it achieves up to 28.78× preprocessing speedup and approximately 11.42% improvement in perplexity over prior methods.
+  [NeurIPS 2025][LLM Safety][Federated Learning] FedRW proposes the first privacy-preserving soft deduplication framework for federated learning that requires no trusted third party. By leveraging secure multi-party comput…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - Federated Learning
-  - Privacy Preservation
-  - Data Deduplication
-  - Sample Weighting
-  - Secure Multi-Party Computation
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "Federated Learning"
+  - "Privacy Preservation"
+  - "Data Deduplication"
+  - "Sample Weighting"
+  - "Secure Multi-Party Computation"
 date: 2026-05-08
 content_hash: dd2c8fcff5f83152
 ---

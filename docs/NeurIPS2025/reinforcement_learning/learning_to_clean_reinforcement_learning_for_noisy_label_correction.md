@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning to Clean: Reinforcement Learning for Noisy Label Correction
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Noisy Labels] This paper formulates noisy label correction as a Markov Decision Process under the reinforcement learning framework, proposing RLNLC. A policy function built upon a k-nearest-neighbor embedding space determines which labels should be corrected, guided by a label consistency reward and a cross-subset alignment reward. RLNLC achieves state-of-the-art performance across multiple benchmark datasets under both instance-dependent and symmetric noise settings.
+  [NeurIPS 2025][Reinforcement Learning][Noisy Labels] This paper formulates noisy label correction as a Markov Decision Process under the reinforcement learning framework…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Noisy Labels
-  - Label Correction
-  - Policy Gradient
-  - Actor-Critic
-  - k-Nearest Neighbors
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Noisy Labels"
+  - "Label Correction"
+  - "Policy Gradient"
+  - "Actor-Critic"
+  - "k-Nearest Neighbors"
 date: 2026-05-08
 content_hash: 02a8a5e4cb82c8b0
 ---

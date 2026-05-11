@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Bigram Subnetworks: Mapping to Next Tokens in Transformer Language Models
 description: >-
-  [NeurIPS 2025][Bigram Subnetworks] Using continuous sparsification, the authors identify bigram subnetworks containing only ~10M parameters within Transformer language models. These subnetworks are concentrated in the first MLP layer, suffice to reproduce bigram predictions ($r>0.95$), and cause dramatic performance degradation when ablated — demonstrating that they constitute minimal next-token prediction circuits that are both necessary and sufficient in language models.
+  [NeurIPS 2025][Interpretability][Bigram Subnetworks] Using continuous sparsification, the authors identify bigram subnetworks containing only ~10M parameters within Transformer language models. These subnetworks are conc…
 tags:
-  - NeurIPS 2025
-  - Bigram Subnetworks
-  - Mechanistic Interpretability
-  - Continuous Sparsification
-  - Residual Stream
-  - Minimal Circuit
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "Bigram Subnetworks"
+  - "Mechanistic Interpretability"
+  - "Continuous Sparsification"
+  - "Residual Stream"
+  - "Minimal Circuit"
 date: 2026-05-08
 content_hash: 719cfa13e33fb486
 ---

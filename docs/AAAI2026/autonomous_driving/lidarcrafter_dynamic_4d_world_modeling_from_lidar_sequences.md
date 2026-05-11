@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] LiDARCrafter: Dynamic 4D World Modeling from LiDAR Sequences
 description: >-
-  [AAAI 2026][Autonomous Driving][LiDAR generation] This paper proposes LiDARCrafter, the first 4D generative world model targeting LiDAR, which achieves controllable 4D LiDAR sequence generation and editing through a pipeline of text → scene graph → three-branch diffusion layout → range-image diffusion generation → autoregressive temporal extension, comprehensively surpassing existing methods on nuScenes.
+  [AAAI 2026][Autonomous Driving][LiDAR generation] This paper proposes LiDARCrafter, the first 4D generative world model targeting LiDAR…
 tags:
-  - AAAI 2026
-  - Autonomous Driving
-  - LiDAR generation
-  - 4D world model
-  - diffusion model
-  - scene graph
+  - "AAAI 2026"
+  - "Autonomous Driving"
+  - "LiDAR generation"
+  - "4D world model"
+  - "diffusion model"
+  - "scene graph"
 date: 2026-05-08
 content_hash: eeec5dc31cb3431a
 ---

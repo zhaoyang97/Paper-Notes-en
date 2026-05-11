@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Gaussian Variation Field Diffusion for High-fidelity Video-to-4D Synthesis
 description: >-
-  [ICCV 2025][3D Vision][4D generation] This paper proposes a video-to-4D generation framework that encodes animation data directly into a compact Gaussian variation field latent space via a Direct 4DMesh-to-GS Variation Field VAE, and trains a temporally-aware diffusion model to generate dynamic 3D content. The framework achieves high-fidelity 4D synthesis in 4.5 seconds and demonstrates strong generalization to real-world video inputs.
+  [ICCV 2025][3D Vision][4D generation] This paper proposes a video-to-4D generation framework that encodes animation data directly into a compact Gaussian variation field latent space via a Direct 4DMesh-to-GS Variation F…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 4D generation
-  - video-to-4D
-  - Gaussian variation field
-  - diffusion model
-  - 3D Gaussian Splatting
+  - "ICCV 2025"
+  - "3D Vision"
+  - "4D generation"
+  - "video-to-4D"
+  - "Gaussian variation field"
+  - "diffusion model"
+  - "3D Gaussian Splatting"
 date: 2026-05-08
 content_hash: 63c6d517f41ae74c
 ---

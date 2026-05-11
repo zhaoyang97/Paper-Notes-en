@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] VT-FSL: Bridging Vision and Text with LLMs for Few-Shot Learning
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Few-shot learning] This paper proposes VT-FSL, a framework that leverages Cross-modal Iterative Prompting (CIP) to jointly exploit class names and support images for driving LLMs to generate accurate, visually grounded textual descriptions and zero-shot synthesize semantically consistent images. Combined with Kernelized Volume Contrastive Learning (CGA) for global nonlinear cross-modal alignment, VT-FSL achieves an average classification accuracy improvement of 4.2% across 10 few-shot learning benchmarks.
+  [NeurIPS 2025][Multimodal VLM][Few-shot learning] This paper proposes VT-FSL, a framework that leverages Cross-modal Iterative Prompting (CIP) to jointly exploit class names and support images for driving LLMs to generat…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Few-shot learning
-  - large language models
-  - cross-modal alignment
-  - text prompting
-  - visual synthesis
-  - contrastive learning
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Few-shot learning"
+  - "large language models"
+  - "cross-modal alignment"
+  - "text prompting"
+  - "visual synthesis"
+  - "contrastive learning"
 date: 2026-05-08
 content_hash: 50a62319d73a0edd
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] CrossCheck-Bench: Diagnosing Compositional Failures in Multimodal Conflict Resolution
 description: >-
-  [AAAI2026][multimodal conflict detection] CrossCheck-Bench is a three-level hierarchical benchmark comprising 15k adversarial QA samples. It diagnoses compositional reasoning failures of VLMs in multimodal conflict resolution via 7 atomic capabilities and 15 tasks, revealing systematic performance degradation from perception (L1) to reasoning (L3) and exposing the limitations of conventional prompting strategies.
+  [AAAI2026][Interpretability][multimodal conflict detection] CrossCheck-Bench is a three-level hierarchical benchmark comprising 15k adversarial QA samples. It diagnoses compositional reasoning failures of VLMs in multimo…
 tags:
-  - AAAI2026
-  - multimodal conflict detection
-  - compositional reasoning
-  - diagnostic evaluation
-  - vision-language models
-  - hierarchical benchmark
+  - "AAAI2026"
+  - "Interpretability"
+  - "multimodal conflict detection"
+  - "compositional reasoning"
+  - "diagnostic evaluation"
+  - "vision-language models"
+  - "hierarchical benchmark"
 date: 2026-05-08
 content_hash: afb73ff5201b22cc
 ---

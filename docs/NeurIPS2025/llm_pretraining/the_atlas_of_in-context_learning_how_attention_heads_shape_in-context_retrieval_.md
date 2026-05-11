@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The Atlas of In-Context Learning: How Attention Heads Shape In-Context Retrieval Augmentation
 description: >-
-  [NeurIPS 2025][LLM Pretraining][In-Context Learning] This paper systematically dissects the internal mechanisms of LLMs in in-context retrieval augmented QA using the AttnLRP attribution method. Three functionally specialized attention head types are identified — Task heads (middle layers, parsing instructions/questions), Retrieval heads (later layers, verbatim copying of contextual answers), and Parametric heads (encoding parametric knowledge) — and their functions are validated via Function Vector injection and source-tracking probes, achieving ROC AUC ≥94% on Llama-3.1/Mistral/Gemma.
+  [NeurIPS 2025][LLM Pretraining][In-Context Learning] This paper systematically dissects the internal mechanisms of LLMs in in-context retrieval augmented QA using the AttnLRP attribution method. Three functionally specia…
 tags:
-  - NeurIPS 2025
-  - LLM Pretraining
-  - In-Context Learning
-  - Attention Head Analysis
-  - Retrieval Augmentation
-  - AttnLRP
-  - Knowledge Attribution
+  - "NeurIPS 2025"
+  - "LLM Pretraining"
+  - "In-Context Learning"
+  - "Attention Head Analysis"
+  - "Retrieval Augmentation"
+  - "AttnLRP"
+  - "Knowledge Attribution"
 date: 2026-05-08
 content_hash: 3f9c0c2cd0dabe25
 ---

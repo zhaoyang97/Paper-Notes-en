@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning to Translate Noise for Robust Image Denoising
 description: >-
-  [CVPR 2026][Image Restoration][image denoising] This paper proposes a noise translation framework that converts unknown real-world noise into Gaussian noise via a lightweight noise translation network (NTN), which is then processed by a pre-trained Gaussian denoising network. The approach achieves an average PSNR gain of over 1.5 dB on OOD real-noise benchmarks, while the translation network contains only 0.29M parameters and is transferable across different denoisers.
+  [CVPR 2026][Image Restoration][image denoising] This paper proposes a noise translation framework that converts unknown real-world noise into Gaussian noise via a lightweight noise translation network (NTN)…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - image denoising
-  - noise translation
-  - Gaussian noise
-  - out-of-distribution generalization
-  - Wasserstein distance
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "image denoising"
+  - "noise translation"
+  - "Gaussian noise"
+  - "out-of-distribution generalization"
+  - "Wasserstein distance"
 date: 2026-05-08
 content_hash: 59ab6f9748b05c57
 ---

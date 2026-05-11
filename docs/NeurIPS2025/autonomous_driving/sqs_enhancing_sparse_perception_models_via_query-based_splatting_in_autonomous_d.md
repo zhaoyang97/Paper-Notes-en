@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] SQS: Enhancing Sparse Perception Models via Query-based Splatting in Autonomous Driving
 description: >-
-  [NeurIPS 2025][Autonomous Driving][sparse perception model] SQS presents the first query-based 3D Gaussian splatting pre-training framework for sparse perception models (SPMs). By self-supervisedly reconstructing RGB images and depth maps, the method learns fine-grained 3D representations, and introduces a query interaction module to fuse pre-trained Gaussian queries with task-specific queries. SQS achieves significant improvements over existing pre-training methods on occupancy prediction (+1.3 mIoU) and 3D object detection (+1.0 NDS).
+  [NeurIPS 2025][Autonomous Driving][sparse perception model] SQS presents the first query-based 3D Gaussian splatting pre-training framework for sparse perception models (SPMs). By self-supervisedly reconstructing RGB ima…
 tags:
-  - NeurIPS 2025
-  - Autonomous Driving
-  - sparse perception model
-  - 3D Gaussian splatting
-  - pre-training
-  - query interaction
+  - "NeurIPS 2025"
+  - "Autonomous Driving"
+  - "sparse perception model"
+  - "3D Gaussian splatting"
+  - "pre-training"
+  - "query interaction"
 date: 2026-05-08
 content_hash: 491c3b289ce5a6fd
 ---

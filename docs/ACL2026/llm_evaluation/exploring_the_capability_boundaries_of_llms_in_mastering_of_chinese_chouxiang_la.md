@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Exploring the Capability Boundaries of LLMs in Mastering of Chinese Chouxiang Language
 description: >-
-  [ACL 2026][LLM Evaluation][Chouxiang language] This paper introduces Chinese internet subculture language "Chouxiang" (抽象话) to the NLP community, constructs the first evaluation benchmark Mouse — comprising six tasks: translation (TR), representation classification (RC), intent recognition (IR), toxicity detection (TD), meaning selection (MS), and cloze completion (CC) — and finds that state-of-the-art LLMs perform reasonably well on contextual semantic understanding but exhibit significant limitations across other tasks.
+  [ACL 2026][LLM Evaluation][Chouxiang language] This paper introduces Chinese internet subculture language "Chouxiang" (抽象话) to the NLP community…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - Chouxiang language
-  - internet subculture language
-  - LLM benchmarking
-  - Chinese internet slang
-  - cross-cultural understanding
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "Chouxiang language"
+  - "internet subculture language"
+  - "LLM benchmarking"
+  - "Chinese internet slang"
+  - "cross-cultural understanding"
 date: 2026-05-08
 content_hash: f6870b4410ab34e7
 ---

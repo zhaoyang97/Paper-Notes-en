@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] JailNewsBench: Multi-Lingual and Regional Benchmark for Fake News Generation under Jailbreak Attacks
 description: >-
-  [ICLR 2026][LLM Alignment][Fake News Generation] This paper introduces JailNewsBench, the first multilingual and multi-regional benchmark for evaluating LLM robustness against fake news generation under jailbreak attacks. Covering 34 regions, 22 languages, and approximately 300,000 instances, the benchmark reveals attack success rates as high as 86.3% and exposes a systematic safety imbalance in which English- and U.S.-topic defenses are significantly weaker than those for other regions.
+  [ICLR 2026][LLM Alignment][Fake News Generation] This paper introduces JailNewsBench, the first multilingual and multi-regional benchmark for evaluating LLM robustness against fake news generation under jailbreak attacks…
 tags:
-  - ICLR 2026
-  - LLM Alignment
-  - Fake News Generation
-  - Jailbreak Attacks
-  - Multilingual Safety
-  - LLM Safety Evaluation
-  - Regional Safety Imbalance
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Fake News Generation"
+  - "Jailbreak Attacks"
+  - "Multilingual Safety"
+  - "LLM Safety Evaluation"
+  - "Regional Safety Imbalance"
 date: 2026-05-08
 content_hash: a7feec390a78c242
 ---

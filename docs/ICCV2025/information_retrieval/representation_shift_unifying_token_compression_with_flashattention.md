@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Representation Shift: Unifying Token Compression with FlashAttention
 description: >-
-  [ICCV 2025][Token Pruning] This paper proposes Representation Shift, a training-free and model-agnostic token importance metric that measures the magnitude of representational change before and after a network layer, enabling — for the first time — compatibility between token compression and FlashAttention, achieving up to 5.5× speedup on video understanding and image classification tasks.
+  [ICCV 2025][Information Retrieval & RAG][Token Pruning] This paper proposes Representation Shift, a training-free and model-agnostic token importance metric that measures the magnitude of representational change before a…
 tags:
-  - ICCV 2025
-  - Token Pruning
-  - FlashAttention
-  - Representation Shift
-  - Vision Transformer
-  - Model Acceleration
+  - "ICCV 2025"
+  - "Information Retrieval & RAG"
+  - "Token Pruning"
+  - "FlashAttention"
+  - "Representation Shift"
+  - "Vision Transformer"
+  - "Model Acceleration"
 date: 2026-05-08
 content_hash: ebdaf9c0417ed599
 ---

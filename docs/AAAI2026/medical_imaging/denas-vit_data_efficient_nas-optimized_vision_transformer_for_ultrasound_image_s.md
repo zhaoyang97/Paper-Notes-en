@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DeNAS-ViT: Data Efficient NAS-Optimized Vision Transformer for Ultrasound Image Segmentation
 description: >-
-  [AAAI 2026][Medical Imaging][Neural Architecture Search] DeNAS-ViT is proposed as the first method to apply NAS at the token level within ViT for optimizing multi-scale feature extraction in ultrasound image segmentation. A NAS-constrained semi-supervised learning framework is designed incorporating network independence loss, hierarchical contrastive loss, and staged optimization, achieving state-of-the-art performance under limited annotation.
+  [AAAI 2026][Medical Imaging][Neural Architecture Search] DeNAS-ViT is proposed as the first method to apply NAS at the token level within ViT for optimizing multi-scale feature extraction in ultrasound image segmentation…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Neural Architecture Search
-  - Vision Transformer
-  - Ultrasound Segmentation
-  - Semi-Supervised Learning
-  - Token-Level Search
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Neural Architecture Search"
+  - "Vision Transformer"
+  - "Ultrasound Segmentation"
+  - "Semi-Supervised Learning"
+  - "Token-Level Search"
 date: 2026-05-08
 content_hash: 6746cc8b6ab7b581
 ---

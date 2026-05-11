@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Safe Reasoning in Large Reasoning Models via Corrective Intervention
 description: >-
-  [ICLR 2026][LLM Reasoning][Reasoning safety] This paper identifies a critical yet overlooked problem in large reasoning models (LRMs): their chain-of-thought reasoning frequently contains harmful content even when the final response appears safe. The authors propose Intervened Preference Optimization (IPO), which corrects unsafe reasoning trajectories by replacing compliance cues with safety triggers, constructing preference pairs for alignment training. Across 3 LRMs, IPO reduces reasoning harmfulness by over 30% without compromising reasoning capability.
+  [ICLR 2026][LLM Reasoning][Reasoning safety] This paper identifies a critical yet overlooked problem in large reasoning models (LRMs): their chain-of-thought reasoning frequently contains harmful content even when the fi…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Reasoning safety
-  - large reasoning models
-  - preference optimization
-  - safety triggers
-  - compliance cues
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "Reasoning safety"
+  - "large reasoning models"
+  - "preference optimization"
+  - "safety triggers"
+  - "compliance cues"
 date: 2026-05-08
 content_hash: 1a19905f9f9d7a84
 ---

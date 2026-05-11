@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SketchDeco: Training-Free Latent Composition for Precise Sketch Colourisation
 description: >-
-  [CVPR 2026][LLM/NLP][sketch colourisation] SketchDeco is a training-free line-art colorization method that uses a global-local two-stage strategy with region masks and color palettes as precise control signals, leveraging diffusion model inversion and self-attention injection in latent space for region-accurate coloring with harmonious global transitions, completing in 15–20 steps on consumer GPUs.
+  [CVPR 2026][LLM/NLP][sketch colourisation] SketchDeco is a training-free line-art colorization method that uses a global-local two-stage strategy with region masks and color palettes as precise control signals…
 tags:
-  - CVPR 2026
-  - LLM/NLP
-  - sketch colourisation
-  - diffusion models
-  - training-free
-  - latent composition
-  - self-attention injection
+  - "CVPR 2026"
+  - "LLM/NLP"
+  - "sketch colourisation"
+  - "diffusion models"
+  - "training-free"
+  - "latent composition"
+  - "self-attention injection"
 date: 2026-05-08
 content_hash: 37a8d411c8d57278
 ---

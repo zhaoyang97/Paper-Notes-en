@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Paper2Code: Automating Code Generation from Scientific Papers in Machine Learning
 description: >-
-  [ICLR 2026][paper-to-code] This work proposes PaperCoder — a multi-agent LLM framework that automatically converts machine learning papers into executable code repositories via a three-stage pipeline: Planning, Analysis, and Coding. 88% of the generated repositories are rated as best by the original paper authors, and the framework substantially outperforms baselines on the PaperBench benchmark.
+  [ICLR 2026][Code Intelligence][paper-to-code] This work proposes PaperCoder — a multi-agent LLM framework that automatically converts machine learning papers into executable code repositories via a three-stage pipeline:…
 tags:
-  - ICLR 2026
-  - paper-to-code
-  - multi-agent framework
-  - repository-level code generation
-  - scientific reproducibility
-  - LLM
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "paper-to-code"
+  - "multi-agent framework"
+  - "repository-level code generation"
+  - "scientific reproducibility"
+  - "LLM"
 date: 2026-05-08
 content_hash: 150097f14c85dfa7
 ---

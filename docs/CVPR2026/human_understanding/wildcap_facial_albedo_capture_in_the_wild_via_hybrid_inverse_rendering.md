@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] WildCap: Facial Albedo Capture in the Wild via Hybrid Inverse Rendering
 description: >-
-  [CVPR 2026][Human Understanding][facial albedo capture] This paper proposes WildCap, a hybrid inverse rendering framework that reconstructs high-quality 4K facial diffuse albedo maps from casual in-the-wild smartphone videos. The approach combines data-driven relighting (SwitchLight), model-based texel grid lighting optimization, and diffusion prior sampling, substantially closing the quality gap between in-the-wild capture and controlled-illumination methods.
+  [CVPR 2026][Human Understanding][facial albedo capture] This paper proposes WildCap, a hybrid inverse rendering framework that reconstructs high-quality 4K facial diffuse albedo maps from casual in-the-wild smartphone vi…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - facial albedo capture
-  - inverse rendering
-  - diffusion prior
-  - texel grid lighting
-  - in-the-wild
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "facial albedo capture"
+  - "inverse rendering"
+  - "diffusion prior"
+  - "texel grid lighting"
+  - "in-the-wild"
 date: 2026-05-08
 content_hash: 67b31bcc5f6b9a9b
 ---

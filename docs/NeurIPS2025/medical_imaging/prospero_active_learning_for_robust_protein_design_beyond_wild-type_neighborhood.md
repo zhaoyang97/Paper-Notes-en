@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PROSPERO: Active Learning for Robust Protein Design Beyond Wild-Type Neighborhood
 description: >-
-  [NeurIPS 2025][Medical Imaging][protein design] This paper proposes ProSpero, an active learning framework that discovers high-fitness and novel protein sequences even under surrogate model mismatch, via inference-time sampling of a frozen pretrained generative model (EvoDiff) guided by a surrogate, a targeted masking strategy, and biologically-constrained SMC sampling.
+  [NeurIPS 2025][Medical Imaging][protein design] This paper proposes ProSpero, an active learning framework that discovers high-fitness and novel protein sequences even under surrogate model mismatch…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - protein design
-  - active learning
-  - sequential Monte Carlo
-  - pretrained generative model guidance
-  - surrogate model robustness
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "protein design"
+  - "active learning"
+  - "sequential Monte Carlo"
+  - "pretrained generative model guidance"
+  - "surrogate model robustness"
 date: 2026-05-08
 content_hash: 78a68b6b2e05bc69
 ---

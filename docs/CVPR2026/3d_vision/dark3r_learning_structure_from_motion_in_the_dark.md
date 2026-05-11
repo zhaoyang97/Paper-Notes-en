@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Dark3R: Learning Structure from Motion in the Dark
 description: >-
-  [CVPR 2026][3D Vision][Low-light 3D reconstruction] Dark3R is a teacher-student distillation framework that transfers the 3D priors of MASt3R to extremely low-light (SNR < −4 dB) raw images, enabling Structure from Motion (SfM) and novel view synthesis in dark environments where traditional methods fail entirely.
+  [CVPR 2026][3D Vision][Low-light 3D reconstruction] Dark3R is a teacher-student distillation framework that transfers the 3D priors of MASt3R to extremely low-light (SNR < −4 dB) raw images…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Low-light 3D reconstruction
-  - Structure from Motion
-  - knowledge distillation
-  - feature matching
-  - novel view synthesis
-  - NeRF
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Low-light 3D reconstruction"
+  - "Structure from Motion"
+  - "knowledge distillation"
+  - "feature matching"
+  - "novel view synthesis"
+  - "NeRF"
 date: 2026-05-08
 content_hash: e6989a6018c7cad0
 ---

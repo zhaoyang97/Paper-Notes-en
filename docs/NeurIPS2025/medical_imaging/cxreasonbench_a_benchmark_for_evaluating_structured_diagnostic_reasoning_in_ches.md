@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CXReasonBench: A Benchmark for Evaluating Structured Diagnostic Reasoning in Chest X-rays
 description: >-
-  [NeurIPS 2025][Medical Imaging][chest X-ray] This paper proposes CheXStruct and CXReasonBench — a structured diagnostic reasoning evaluation framework for chest X-rays that employs multi-path, multi-stage assessment to reveal critical deficiencies in existing LVLMs at intermediate reasoning steps.
+  [NeurIPS 2025][Medical Imaging][chest X-ray] This paper proposes CheXStruct and CXReasonBench — a structured diagnostic reasoning evaluation framework for chest X-rays that employs multi-path…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - chest X-ray
-  - diagnostic reasoning
-  - vision-language models
-  - benchmark
-  - structured evaluation
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "chest X-ray"
+  - "diagnostic reasoning"
+  - "vision-language models"
+  - "benchmark"
+  - "structured evaluation"
 date: 2026-05-08
 content_hash: 63260f53fda1bb57
 ---

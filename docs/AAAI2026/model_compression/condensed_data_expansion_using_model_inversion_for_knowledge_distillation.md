@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Condensed Data Expansion Using Model Inversion for Knowledge Distillation
 description: >-
-  [AAAI 2026][Model Compression][Knowledge Distillation] This paper proposes using condensed datasets as prototypes to guide the model inversion (MI) process. A feature-alignment discriminator enforces distributional consistency between synthesized data and condensed samples, thereby expanding the condensed dataset for knowledge distillation. The method achieves up to 11.4% improvement over standard MI-based distillation on CIFAR/ImageNet.
+  [AAAI 2026][Model Compression][Knowledge Distillation] This paper proposes using condensed datasets as prototypes to guide the model inversion (MI) process. A feature-alignment discriminator enforces distributional consi…
 tags:
-  - AAAI 2026
-  - Model Compression
-  - Knowledge Distillation
-  - Dataset Condensation
-  - Model Inversion
-  - Feature Alignment
-  - Data-Free Distillation
+  - "AAAI 2026"
+  - "Model Compression"
+  - "Knowledge Distillation"
+  - "Dataset Condensation"
+  - "Model Inversion"
+  - "Feature Alignment"
+  - "Data-Free Distillation"
 date: 2026-05-08
 content_hash: f46e5824cab7303e
 ---

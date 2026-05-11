@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Normalization in Attention Dynamics
 description: >-
-  [NeurIPS 2025][Layer Normalization] This paper unifies various normalization schemes (Post-LN, Pre-LN, Mix-LN, Peri-LN, nGPT, sqrt-scaling) under a single framework of velocity modulation in an interacting particle system on the sphere. It theoretically characterizes how each scheme affects token clustering dynamics and representation collapse, identifying Peri-LN as the theoretically optimal choice.
+  [NeurIPS 2025][Layer Normalization] This paper unifies various normalization schemes (Post-LN, Pre-LN, Mix-LN, Peri-LN, nGPT, sqrt-scaling) under a single framework of velocity modulation in an interacting particle syste…
 tags:
-  - NeurIPS 2025
-  - Layer Normalization
-  - Attention Dynamics
-  - Representation Collapse
-  - Interacting Particle Systems
-  - Velocity Modulation
+  - "NeurIPS 2025"
+  - "Layer Normalization"
+  - "Attention Dynamics"
+  - "Representation Collapse"
+  - "Interacting Particle Systems"
+  - "Velocity Modulation"
 date: 2026-05-08
 content_hash: 8a4cb9434ff16690
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Quantifying and Narrowing the Unknown: Interactive Text-to-Video Retrieval via Uncertainty Minimization
 description: >-
-  [ICCV 2025][Video Generation][Text-to-video retrieval] This paper proposes UMIVR, a framework that explicitly quantifies three types of uncertainty in text-to-video retrieval—textual ambiguity (semantic entropy), mapping uncertainty (JS divergence), and frame uncertainty (temporal quality frame sampling)—and adaptively generates clarification questions based on the quantified uncertainty to iteratively refine queries, achieving 69.2% R@1 on MSR-VTT-1k after 10 interaction rounds.
+  [ICCV 2025][Video Generation][Text-to-video retrieval] This paper proposes UMIVR, a framework that explicitly quantifies three types of uncertainty in text-to-video retrieval—textual ambiguity (semantic entropy)…
 tags:
-  - ICCV 2025
-  - Video Generation
-  - Text-to-video retrieval
-  - uncertainty quantification
-  - interactive retrieval
-  - semantic entropy
-  - frame quality sampling
+  - "ICCV 2025"
+  - "Video Generation"
+  - "Text-to-video retrieval"
+  - "uncertainty quantification"
+  - "interactive retrieval"
+  - "semantic entropy"
+  - "frame quality sampling"
 date: 2026-05-08
 content_hash: 06432aa3f0633c84
 ---

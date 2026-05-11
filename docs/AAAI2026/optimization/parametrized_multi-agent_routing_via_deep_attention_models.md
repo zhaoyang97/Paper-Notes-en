@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Parametrized Multi-Agent Routing via Deep Attention Models
 description: >-
-  [AAAI2026][Optimization][Combinatorial Optimization] This paper proposes the Deep FLPO framework, which integrates the algebraic structure of the Maximum Entropy Principle (MEP) with a permutation-invariant encoder-decoder neural network (SPN) to address the NP-hard mixed-integer problem of joint facility location and routing optimization. The framework achieves a 100× speedup in policy inference while matching Gurobi's exact solutions at 1500× faster runtime.
+  [AAAI2026][Optimization][Combinatorial Optimization] This paper proposes the Deep FLPO framework, which integrates the algebraic structure of the Maximum Entropy Principle (MEP) with a permutation-invariant encoder-decod…
 tags:
-  - AAAI2026
-  - Optimization
-  - Combinatorial Optimization
-  - Multi-Agent Path Planning
-  - Maximum Entropy Principle
-  - Transformer
-  - Facility Location
+  - "AAAI2026"
+  - "Optimization"
+  - "Combinatorial Optimization"
+  - "Multi-Agent Path Planning"
+  - "Maximum Entropy Principle"
+  - "Transformer"
+  - "Facility Location"
 date: 2026-05-08
 content_hash: 7da45edc25d4a47b
 ---

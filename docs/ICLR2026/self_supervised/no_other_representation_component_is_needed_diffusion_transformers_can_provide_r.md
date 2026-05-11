@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] No Other Representation Component Is Needed: Diffusion Transformers Can Provide Representation Guidance by Themselves
 description: >-
-  [ICLR2026][Self-Supervised Learning][Diffusion Transformer] This paper proposes Self-Representation Alignment (SRA), which identifies that internal representations of diffusion Transformers exhibit a quality gradient along two dimensions—increasing layer depth and decreasing noise level. Based on this observation, SRA aligns early-layer, high-noise representations of a student network to late-layer, low-noise representations of an EMA teacher, **requiring no external representation components (DINOv2/CLIP/MAE)**, and substantially accelerates convergence while improving generation quality on DiT and SiT (SiT-XL/2 achieves FID 1.58 at 800 epochs, comparable to REPA which relies on DINOv2).
+  [ICLR2026][Self-Supervised Learning][Diffusion Transformer] This paper proposes Self-Representation Alignment (SRA), which identifies that internal representations of diffusion Transformers exhibit a quality gradient alo…
 tags:
-  - ICLR2026
-  - Self-Supervised Learning
-  - Diffusion Transformer
-  - Self-Representation Alignment
-  - Self-Distillation
-  - DiT/SiT Accelerated Training
-  - Internal Representation Guidance
+  - "ICLR2026"
+  - "Self-Supervised Learning"
+  - "Diffusion Transformer"
+  - "Self-Representation Alignment"
+  - "Self-Distillation"
+  - "DiT/SiT Accelerated Training"
+  - "Internal Representation Guidance"
 date: 2026-05-08
 content_hash: b1084c1f99391611
 ---

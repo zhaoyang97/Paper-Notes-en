@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MuSLR: Multimodal Symbolic Logical Reasoning
 description: >-
-  [NeurIPS 2025][Medical Imaging][Multimodal symbolic logical reasoning] This paper introduces MuSLR, the first multimodal symbolic logical reasoning task, along with its benchmark MuSLR-Bench (1,093 instances spanning 7 domains, 35 atomic symbolic logic rules, and reasoning depths of 2–9). It further proposes LogiCAM, a modular framework comprising premise selection, reasoning type identification, and symbolic reasoning modules, which improves GPT-4.1's CoT performance by 14.13%.
+  [NeurIPS 2025][Medical Imaging][Multimodal symbolic logical reasoning] This paper introduces MuSLR, the first multimodal symbolic logical reasoning task, along with its benchmark MuSLR-Bench (1…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Multimodal symbolic logical reasoning
-  - VLM benchmark
-  - formal logic
-  - Chain-of-Thought
-  - modular reasoning
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Multimodal symbolic logical reasoning"
+  - "VLM benchmark"
+  - "formal logic"
+  - "Chain-of-Thought"
+  - "modular reasoning"
 date: 2026-05-08
 content_hash: 2159ef4272bbab62
 ---

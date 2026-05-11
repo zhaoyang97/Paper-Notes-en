@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AutoCut: End-to-end Advertisement Video Editing Based on Multimodal Discretization and Controllable Generation
 description: >-
-  [CVPR 2026][Video Generation][video editing] AutoCut proposes an end-to-end advertisement video editing framework that unifies video, audio, and text into a shared discrete token space via Residual Vector Quantization (RQVAE), performs multimodal alignment and supervised fine-tuning on Qwen3-8B, and enables four tasks—clip selection, ordering, script generation, and background music selection—within a single unified model, surpassing GPT-4o baselines across multiple metrics.
+  [CVPR 2026][Video Generation][video editing] AutoCut proposes an end-to-end advertisement video editing framework that unifies video, audio…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - video editing
-  - Multimodal LLM
-  - Residual VQ
-  - Advertisement
-  - Controllable Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "video editing"
+  - "Multimodal LLM"
+  - "Residual VQ"
+  - "Advertisement"
+  - "Controllable Generation"
 date: 2026-05-08
 content_hash: e8521f6102daecfa
 ---

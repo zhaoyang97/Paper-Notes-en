@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LLM2Fx-Tools: Tool Calling for Music Post-Production
 description: >-
-  [ICLR 2026][Image Generation][Fx-chain estimation] This paper proposes LLM2Fx-Tools, the first framework that applies LLM tool calling to audio effect modules. It leverages a multimodal LLM to understand audio inputs, employs CoT reasoning to select effect types, determine processing order, and estimate parameters, enabling interpretable and controllable music post-production.
+  [ICLR 2026][Image Generation][Fx-chain estimation] This paper proposes LLM2Fx-Tools, the first framework that applies LLM tool calling to audio effect modules. It leverages a multimodal LLM to understand audio inputs…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Fx-chain estimation
-  - tool calling
-  - chain-of-thought reasoning
-  - music post-production
-  - multimodal LLM
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Fx-chain estimation"
+  - "tool calling"
+  - "chain-of-thought reasoning"
+  - "music post-production"
+  - "multimodal LLM"
 date: 2026-05-08
 content_hash: dc7a202d975d791a
 ---

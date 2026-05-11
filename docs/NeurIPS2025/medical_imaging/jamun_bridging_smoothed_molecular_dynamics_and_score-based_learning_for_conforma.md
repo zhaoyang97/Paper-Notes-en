@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] JAMUN: Bridging Smoothed Molecular Dynamics and Score-Based Learning for Conformational Ensembles
 description: >-
-  [NeurIPS 2025][Medical Imaging][Conformational ensembles] This paper proposes JAMUN, a conformational ensemble generation method built on the Walk-Jump Sampling (WJS) framework. By performing Langevin dynamics on a noise-smoothed manifold and using an SE(3)-equivariant denoiser to jump back to the original distribution, JAMUN achieves peptide conformational sampling an order of magnitude faster than conventional molecular dynamics while retaining transferability to out-of-training systems.
+  [NeurIPS 2025][Medical Imaging][Conformational ensembles] This paper proposes JAMUN, a conformational ensemble generation method built on the Walk-Jump Sampling (WJS) framework. By performing Langevin dynamics on a noise…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Conformational ensembles
-  - Walk-Jump Sampling
-  - denoising
-  - SE(3) equivariance
-  - protein dynamics
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Conformational ensembles"
+  - "Walk-Jump Sampling"
+  - "denoising"
+  - "SE(3) equivariance"
+  - "protein dynamics"
 date: 2026-05-08
 content_hash: 5599e83a9fcf6d06
 ---

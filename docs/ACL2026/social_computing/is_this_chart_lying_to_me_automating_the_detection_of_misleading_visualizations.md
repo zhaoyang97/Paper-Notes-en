@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Is this chart lying to me? Automating the detection of misleading visualizations
 description: >-
-  [ACL 2026][Social Computing][misleading visualization] Proposes Misviz (2,604 real-world misleading visualizations) and Misviz-synth (57,665 synthetic visualizations) benchmarks covering 12 misleading types, systematically evaluating MLLMs, rule-based checkers, and image classifiers for misleading chart detection, revealing the task remains highly challenging.
+  [ACL 2026][Social Computing][misleading visualization] Proposes Misviz (2,604 real-world misleading visualizations) and Misviz-synth (57,665 synthetic visualizations) benchmarks covering 12 misleading types…
 tags:
-  - ACL 2026
-  - Social Computing
-  - misleading visualization
-  - chart detection
-  - multimodal LLM
-  - data visualization
-  - multi-label classification
+  - "ACL 2026"
+  - "Social Computing"
+  - "misleading visualization"
+  - "chart detection"
+  - "multimodal LLM"
+  - "data visualization"
+  - "multi-label classification"
 date: 2026-05-08
 content_hash: c841e6031d5f4975
 ---

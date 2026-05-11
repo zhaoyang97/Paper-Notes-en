@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FoundationSLAM: Unleashing the Potential of Deep Foundation Models in End-to-End Dense Visual SLAM
 description: >-
-  [AAAI 2026 (Oral)][3D Vision][Monocular SLAM] This work injects geometric priors from depth foundation models into a flow-based SLAM system. Three modules — a hybrid flow network, a bi-consistent BA layer, and reliability-aware refinement — form a closed loop. The resulting system achieves state-of-the-art trajectory accuracy and dense reconstruction quality across TUM/EuRoC/7Scenes/ETH3D benchmarks at 18 FPS in real time.
+  [AAAI 2026 (Oral)][3D Vision][Monocular SLAM] This work injects geometric priors from depth foundation models into a flow-based SLAM system. Three modules — a hybrid flow network, a bi-consistent BA layer…
 tags:
-  - AAAI 2026 (Oral)
-  - 3D Vision
-  - Monocular SLAM
-  - Depth Foundation Models
-  - Optical Flow Estimation
-  - Bundle Adjustment
-  - Geometric Consistency
+  - "AAAI 2026 (Oral)"
+  - "3D Vision"
+  - "Monocular SLAM"
+  - "Depth Foundation Models"
+  - "Optical Flow Estimation"
+  - "Bundle Adjustment"
+  - "Geometric Consistency"
 date: 2026-05-08
 content_hash: c5465f6f5ef6a773
 ---

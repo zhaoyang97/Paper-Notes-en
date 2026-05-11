@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Capabilities and Evaluation Biases of Large Language Models in Classical Chinese Poetry Generation: A Case Study on Tang Poetry
 description: >-
-  [ACL 2026][LLM Evaluation][Classical poetry generation] This paper proposes a three-step evaluation framework (computational feature extraction + LLM-as-Judge + human expert validation) to systematically assess the Tang poetry generation capabilities of six LLMs. A critical "echo chamber" effect is identified: LLMs systematically overrate machine-generated poems that mimic statistical patterns while violating prosodic rules, diverging significantly from human expert judgments.
+  [ACL 2026][LLM Evaluation][Classical poetry generation] This paper proposes a three-step evaluation framework (computational feature extraction + LLM-as-Judge + human expert validation) to systematically assess the Tang…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - Classical poetry generation
-  - Tang poetry
-  - LLM evaluation bias
-  - echo chamber effect
-  - human-machine evaluation
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "Classical poetry generation"
+  - "Tang poetry"
+  - "LLM evaluation bias"
+  - "echo chamber effect"
+  - "human-machine evaluation"
 date: 2026-05-08
 content_hash: 07b783fef21b3acf
 ---

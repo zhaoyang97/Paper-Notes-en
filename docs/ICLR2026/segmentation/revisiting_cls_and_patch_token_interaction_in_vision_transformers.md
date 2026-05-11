@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Revisiting [CLS] and Patch Token Interaction in Vision Transformers
 description: >-
-  [ICLR 2026][Segmentation][Vision Transformer] This paper systematically analyzes the interaction friction between the global [CLS] token and local patch tokens in Vision Transformers. It reveals that normalization layers implicitly differentiate between the two token types, and proposes specialized processing paths in normalization layers and early QKV projections. With only an 8% parameter increase, the method achieves over 2 mIoU improvement in segmentation while preserving classification accuracy.
+  [ICLR 2026][Segmentation][Vision Transformer] This paper systematically analyzes the interaction friction between the global [CLS] token and local patch tokens in Vision Transformers. It reveals that normalization layers…
 tags:
-  - ICLR 2026
-  - Segmentation
-  - Vision Transformer
+  - "ICLR 2026"
+  - "Segmentation"
+  - "Vision Transformer"
   - "CLS] token"
-  - patch token
-  - normalization layer
-  - dense prediction
+  - "patch token"
+  - "normalization layer"
+  - "dense prediction"
 date: 2026-05-08
 content_hash: 706dff0cf48986ff
 ---

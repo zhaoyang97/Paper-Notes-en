@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Metric Convolutions: A Unifying Theory to Adaptive Image Convolutions
 description: >-
-  [ICCV 2025][Image Restoration][Adaptive Convolution] This paper proposes a metric-geometric perspective that unifies existing adaptive convolution variants (standard, dilated, shifted, and deformable), and introduces Metric Convolution based on unit-ball sampling of an explicit Randers metric, achieving superior geometric regularization and generalization with substantially fewer parameters.
+  [ICCV 2025][Image Restoration][Adaptive Convolution] This paper proposes a metric-geometric perspective that unifies existing adaptive convolution variants (standard, dilated, shifted, and deformable)…
 tags:
-  - ICCV 2025
-  - Image Restoration
-  - Adaptive Convolution
-  - Metric Geometry
-  - Finsler Metric
-  - Deformable Convolution
-  - Denoising
+  - "ICCV 2025"
+  - "Image Restoration"
+  - "Adaptive Convolution"
+  - "Metric Geometry"
+  - "Finsler Metric"
+  - "Deformable Convolution"
+  - "Denoising"
 date: 2026-05-08
 content_hash: 1997a8eedcc8719e
 ---

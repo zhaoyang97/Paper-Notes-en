@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GKD: Generalizable Knowledge Distillation from Vision Foundation Models for Semantic Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Knowledge Distillation] This paper proposes the GKD framework, which distills compact student models with cross-domain generalization capability from VFMs via a multi-stage decoupled distillation strategy (generic feature learning → frozen encoder → task head training) combined with a Query-based Soft Distillation (QSD) mechanism. GKD achieves an average mIoU gain of +10.6% under the F2L setting and +1.9% under the F2F setting.
+  [CVPR 2026][Segmentation][Knowledge Distillation] This paper proposes the GKD framework, which distills compact student models with cross-domain generalization capability from VFMs via a multi-stage decoupled distillatio…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Knowledge Distillation
-  - Vision Foundation Models
-  - Domain Generalizable Segmentation
-  - DINOv2
-  - Multi-stage Distillation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Knowledge Distillation"
+  - "Vision Foundation Models"
+  - "Domain Generalizable Segmentation"
+  - "DINOv2"
+  - "Multi-stage Distillation"
 date: 2026-05-08
 content_hash: 46b73f324fe80ad0
 ---

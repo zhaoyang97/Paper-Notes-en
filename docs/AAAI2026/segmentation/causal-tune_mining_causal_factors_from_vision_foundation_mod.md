@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Causal-Tune: Mining Causal Factors from Vision Foundation Models for Domain Generalized Semantic Segmentation
 description: >-
-  [AAAI 2026][Segmentation][Causal Analysis] This paper proposes Causal-Tune, a causality-driven VFM fine-tuning strategy that decomposes VFM features into causal (domain-invariant) and non-causal (domain-specific) components via DCT frequency-domain transformation and Gaussian band-pass filtering. Learnable tokens are applied exclusively to the causal components for refinement, effectively suppressing VFM artifacts and improving generalization in domain generalized semantic segmentation.
+  [AAAI 2026][Segmentation][Causal Analysis] This paper proposes Causal-Tune, a causality-driven VFM fine-tuning strategy that decomposes VFM features into causal (domain-invariant) and non-causal (domain-specific) compone…
 tags:
-  - AAAI 2026
-  - Segmentation
-  - Causal Analysis
-  - VFM Fine-tuning
-  - Frequency Domain Decomposition
-  - Band-pass Filtering
-  - Domain Generalized Segmentation
+  - "AAAI 2026"
+  - "Segmentation"
+  - "Causal Analysis"
+  - "VFM Fine-tuning"
+  - "Frequency Domain Decomposition"
+  - "Band-pass Filtering"
+  - "Domain Generalized Segmentation"
 date: 2026-05-08
 content_hash: 1b046fe6682eb4e7
 ---

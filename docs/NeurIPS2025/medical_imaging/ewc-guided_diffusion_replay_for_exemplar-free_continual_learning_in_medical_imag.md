@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] EWC-Guided Diffusion Replay for Exemplar-Free Continual Learning in Medical Imaging
 description: >-
-  [NeurIPS 2025][Medical Imaging][Continual learning] This paper proposes an exemplar-free continual learning framework that combines class-conditional DDPM diffusion replay with Elastic Weight Consolidation (EWC), achieving an AUROC of 0.851 on MedMNIST v2 (8 tasks across 2D/3D) and CheXpert, reducing forgetting by over 30% compared to DER++, approaching the joint training upper bound (0.869), while requiring no storage of original patient data.
+  [NeurIPS 2025][Medical Imaging][Continual learning] This paper proposes an exemplar-free continual learning framework that combines class-conditional DDPM diffusion replay with Elastic Weight Consolidation (EWC)…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Continual learning
-  - diffusion replay
-  - EWC
-  - exemplar-free
-  - privacy preservation
-  - catastrophic forgetting
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Continual learning"
+  - "diffusion replay"
+  - "EWC"
+  - "exemplar-free"
+  - "privacy preservation"
+  - "catastrophic forgetting"
 date: 2026-05-08
 content_hash: c043352593ea57f8
 ---

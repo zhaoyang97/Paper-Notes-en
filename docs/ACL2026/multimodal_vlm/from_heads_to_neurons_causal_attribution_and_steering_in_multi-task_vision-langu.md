@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From Heads to Neurons: Causal Attribution and Steering in Multi-Task Vision-Language Models
 description: >-
-  [ACL 2026][Multimodal VLM][neuron attribution] This paper proposes HONES, a framework that first localizes task-critical attention heads and then uses them as conditions to guide FFN neuron attribution, achieving unified, gradient-free, neuron-level causal analysis and lightweight task performance improvement across heterogeneous tasks in multi-task VLMs.
+  [ACL 2026][Multimodal VLM][neuron attribution] This paper proposes HONES, a framework that first localizes task-critical attention heads and then uses them as conditions to guide FFN neuron attribution, achieving unified…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - neuron attribution
-  - causal analysis
-  - multi-task VLM
-  - attention heads
-  - model interpretability
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "neuron attribution"
+  - "causal analysis"
+  - "multi-task VLM"
+  - "attention heads"
+  - "model interpretability"
 date: 2026-05-08
 content_hash: 3418e776be7bae4d
 ---

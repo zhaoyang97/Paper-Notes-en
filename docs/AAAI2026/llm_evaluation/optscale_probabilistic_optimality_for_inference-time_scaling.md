@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OptScale: Probabilistic Optimality for Inference-time Scaling
 description: >-
-  [AAAI 2026][LLM Evaluation][Inference-time scaling] This paper proposes OptScale, a probabilistic optimality framework that models the probability distribution of verifier scores to derive a theoretical lower bound on the optimal number of samples, dynamically determining the minimum number of samples required per problem and substantially reducing computational overhead while preserving inference accuracy.
+  [AAAI 2026][LLM Evaluation][Inference-time scaling] This paper proposes OptScale, a probabilistic optimality framework that models the probability distribution of verifier scores to derive a theoretical lower bound on th…
 tags:
-  - AAAI 2026
-  - LLM Evaluation
-  - Inference-time scaling
-  - parallel sampling
-  - probabilistic optimality
-  - Best-of-N
-  - computational efficiency
+  - "AAAI 2026"
+  - "LLM Evaluation"
+  - "Inference-time scaling"
+  - "parallel sampling"
+  - "probabilistic optimality"
+  - "Best-of-N"
+  - "computational efficiency"
 date: 2026-05-08
 content_hash: 3b1cc4feaeb94a7e
 ---

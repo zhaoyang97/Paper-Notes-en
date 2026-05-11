@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Compress, Gather, and Recompute: REFORMing Long-Context Processing in Transformers
 description: >-
-  [NeurIPS 2025][Model Compression][KV cache compression] This paper proposes REFORM, an inference framework that efficiently processes ultra-long contexts (up to millions of tokens) via a compress–gather–recompute three-stage pipeline. REFORM achieves improvements of 52% and 34% over the strongest baselines on RULER and BABILong respectively, while reducing inference time by 30% and peak memory usage by 5%.
+  [NeurIPS 2025][Model Compression][KV cache compression] This paper proposes REFORM, an inference framework that efficiently processes ultra-long contexts (up to millions of tokens) via a compress–gather–recompute three-s…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - KV cache compression
-  - long-context inference
-  - token retrieval
-  - early exit
-  - on-demand recomputation
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "KV cache compression"
+  - "long-context inference"
+  - "token retrieval"
+  - "early exit"
+  - "on-demand recomputation"
 date: 2026-05-08
 content_hash: a8c32a890b83e27a
 ---

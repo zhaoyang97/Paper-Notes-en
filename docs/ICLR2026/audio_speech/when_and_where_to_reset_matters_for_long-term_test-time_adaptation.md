@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] When and Where to Reset Matters for Long-Term Test-Time Adaptation
 description: >-
-  [ICLR 2026][Audio & Speech][test-time adaptation] ASR proposes an adaptive selective reset scheme that uses prediction concentration $\mathcal{C}_t$ to dynamically determine *when* to reset (avoiding the suboptimality of fixed-period resets), and employs a progressive layer selection strategy from output to input layers to determine *where* to reset (preserving valuable adaptation knowledge). Combined with importance-aware regularization for recovering critical knowledge in reset layers and on-the-fly adaptation adjustment, ASR achieves a 44.12% improvement over the prior SOTA on CCC-Hard.
+  [ICLR 2026][Audio & Speech][test-time adaptation] ASR proposes an adaptive selective reset scheme that uses prediction concentration $\mathcal{C}_t$ to dynamically determine *when* to reset (avoiding the suboptimality of…
 tags:
-  - ICLR 2026
+  - "ICLR 2026"
   - "Audio & Speech"
-  - test-time adaptation
-  - model collapse
-  - adaptive reset
-  - selective reset
-  - Fisher information
-  - long-term domain shift
+  - "test-time adaptation"
+  - "model collapse"
+  - "adaptive reset"
+  - "selective reset"
+  - "Fisher information"
+  - "long-term domain shift"
 date: 2026-05-08
 content_hash: 8023b95c5bf8d412
 ---

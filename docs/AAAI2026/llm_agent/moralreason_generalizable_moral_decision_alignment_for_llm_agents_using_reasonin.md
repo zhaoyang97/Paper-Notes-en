@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MoralReason: Generalizable Moral Decision Alignment For LLM Agents Using Reasoning-Level Reinforcement Learning
 description: >-
-  [AAAI 2026][LLM Agent][Moral Alignment] This work employs Group Relative Policy Optimization (GRPO) to train LLMs at the reasoning level for ethical framework alignment, achieving out-of-distribution generalization on the Moral-Reason-QA dataset (680 high-ambiguity scenarios) with utilitarian alignment scores improving from 0.207 to 0.964.
+  [AAAI 2026][LLM Agent][Moral Alignment] This work employs Group Relative Policy Optimization (GRPO) to train LLMs at the reasoning level for ethical framework alignment…
 tags:
-  - AAAI 2026
-  - LLM Agent
-  - Moral Alignment
-  - GRPO
-  - Reasoning-Level Reinforcement Learning
-  - Out-of-Distribution Generalization
-  - Ethical Frameworks
+  - "AAAI 2026"
+  - "LLM Agent"
+  - "Moral Alignment"
+  - "GRPO"
+  - "Reasoning-Level Reinforcement Learning"
+  - "Out-of-Distribution Generalization"
+  - "Ethical Frameworks"
 date: 2026-05-08
 content_hash: b107336a94b297f6
 ---

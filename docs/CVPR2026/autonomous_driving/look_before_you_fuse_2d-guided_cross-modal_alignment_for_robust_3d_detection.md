@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Look Before You Fuse: 2D-Guided Cross-Modal Alignment for Robust 3D Detection
 description: >-
-  [CVPR 2026][Autonomous Driving][3D Object Detection] This work identifies that feature misalignment in LiDAR-Camera fusion is concentrated at **foreground-background depth discontinuity boundaries**, and proposes three synergistic modules — PGDC (2D Prior-Guided Depth Calibration), DAGF (Discontinuity-Aware Geometric Fusion), and SGDM (Structural Guidance Depth Modulator) — to proactively correct misalignment prior to fusion, achieving state-of-the-art mAP of 71.5% and NDS of 73.6% on the nuScenes validation set.
+  [CVPR 2026][Autonomous Driving][3D Object Detection] This work identifies that feature misalignment in LiDAR-Camera fusion is concentrated at **foreground-background depth discontinuity boundaries**…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - 3D Object Detection
-  - LiDAR-Camera Fusion
-  - Cross-Modal Alignment
-  - BEV Perception
-  - Depth Estimation
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "3D Object Detection"
+  - "LiDAR-Camera Fusion"
+  - "Cross-Modal Alignment"
+  - "BEV Perception"
+  - "Depth Estimation"
 date: 2026-05-08
 content_hash: 930a88d6836b6068
 ---

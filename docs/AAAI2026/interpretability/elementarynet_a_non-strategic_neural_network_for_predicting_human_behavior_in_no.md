@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] ElementaryNet: A Non-Strategic Neural Network for Predicting Human Behavior in Normal-Form Games
 description: >-
-  [AAAI 2026][Behavioral game theory] This paper proposes ElementaryNet, a neural network architecture that is **provably incapable of strategic reasoning**, designed to model "level-0" (non-strategic) human behavior in games. It achieves prediction accuracy statistically indistinguishable from GameNet (current SOTA) while offering substantially better interpretability.
+  [AAAI 2026][Interpretability][Behavioral game theory] This paper proposes ElementaryNet, a neural network architecture that is **provably incapable of strategic reasoning**…
 tags:
-  - AAAI 2026
-  - Behavioral game theory
-  - human behavior prediction
-  - non-strategic neural network
-  - iterated reasoning
-  - interpretability
+  - "AAAI 2026"
+  - "Interpretability"
+  - "Behavioral game theory"
+  - "human behavior prediction"
+  - "non-strategic neural network"
+  - "iterated reasoning"
 date: 2026-05-08
 content_hash: c0968c939b73e5b3
 ---

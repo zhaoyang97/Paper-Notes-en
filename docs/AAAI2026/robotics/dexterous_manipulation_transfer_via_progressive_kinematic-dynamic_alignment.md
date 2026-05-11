@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dexterous Manipulation Transfer via Progressive Kinematic-Dynamic Alignment
 description: >-
-  [AAAI2026][Robotics][dexterous manipulation] This paper proposes the PKDA framework, which automatically converts human hand manipulation videos into high-quality manipulation trajectories for multi-fingered dexterous hands via progressive kinematic-dynamic alignment, achieving an average transfer success rate of 73%.
+  [AAAI2026][Robotics][dexterous manipulation] This paper proposes the PKDA framework, which automatically converts human hand manipulation videos into high-quality manipulation trajectories for multi-fingered dexterous ha…
 tags:
-  - AAAI2026
-  - Robotics
-  - dexterous manipulation
-  - motion retargeting
-  - reinforcement-learning
-  - hand-object interaction
-  - sim-to-real transfer
+  - "AAAI2026"
+  - "Robotics"
+  - "dexterous manipulation"
+  - "motion retargeting"
+  - "reinforcement-learning"
+  - "hand-object interaction"
+  - "sim-to-real transfer"
 date: 2026-05-08
 content_hash: b41f92661682c584
 ---

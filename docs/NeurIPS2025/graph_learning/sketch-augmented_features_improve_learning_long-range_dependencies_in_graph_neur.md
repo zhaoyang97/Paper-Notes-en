@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Sketch-Augmented Features Improve Learning Long-Range Dependencies in Graph Neural Networks
 description: >-
-  [NeurIPS 2025][Graph Learning][Graph Neural Networks] This paper proposes Sketched Random Features (SRF), which injects random kernel-space projections of node features into every layer of a standard message-passing GNN, simultaneously alleviating oversquashing, oversmoothing, and limited expressiveness, with rigorous theoretical guarantees and low computational overhead.
+  [NeurIPS 2025][Graph Learning][Graph Neural Networks] This paper proposes Sketched Random Features (SRF), which injects random kernel-space projections of node features into every layer of a standard message-passing GNN…
 tags:
-  - NeurIPS 2025
-  - Graph Learning
-  - Graph Neural Networks
-  - Oversquashing
-  - Oversmoothing
-  - Random Features
-  - Johnson-Lindenstrauss Transform
+  - "NeurIPS 2025"
+  - "Graph Learning"
+  - "Graph Neural Networks"
+  - "Oversquashing"
+  - "Oversmoothing"
+  - "Random Features"
+  - "Johnson-Lindenstrauss Transform"
 date: 2026-05-08
 content_hash: 21b17d1ecd0c09ed
 ---

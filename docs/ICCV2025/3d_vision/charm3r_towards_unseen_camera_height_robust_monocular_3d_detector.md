@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CHARM3R: Towards Unseen Camera Height Robust Monocular 3D Detector
 description: >-
-  [ICCV 2025][3D Vision][Monocular 3D detection] Through mathematical proof that regression-based depth and ground-plane depth exhibit opposite extrapolation trends under camera height variation, CHARM3R proposes a simple in-model average of the two depth estimates to cancel out these trends, achieving robust generalization of Mono3D detectors to unseen camera heights with AP3D improvements exceeding 45%.
+  [ICCV 2025][3D Vision][Monocular 3D detection] Through mathematical proof that regression-based depth and ground-plane depth exhibit opposite extrapolation trends under camera height variation…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Monocular 3D detection
-  - camera height robustness
-  - depth estimation extrapolation
-  - ground-plane depth
-  - autonomous driving
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Monocular 3D detection"
+  - "camera height robustness"
+  - "depth estimation extrapolation"
+  - "ground-plane depth"
+  - "autonomous driving"
 date: 2026-05-08
 content_hash: 967fa01ed3741880
 ---

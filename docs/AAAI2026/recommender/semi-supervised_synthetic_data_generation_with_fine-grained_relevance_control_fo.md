@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Semi-Supervised Synthetic Data Generation with Fine-Grained Relevance Control for Short Video Search Relevance Modeling
 description: >-
-  [AAAI 2026][Recommender Systems][Synthetic Data] This paper proposes SSRA (Semi-Supervised Relevance-Aware synthetic data pipeline), a two-stage framework that generates domain-adaptive short video data with controllable fine-grained relevance labels (4 levels) to enhance the semantic relevance modeling capability of embedding models. Online A/B testing on Douyin's dual-column feed achieves a 1.45% CTR improvement.
+  [AAAI 2026][Recommender Systems][Synthetic Data] This paper proposes SSRA (Semi-Supervised Relevance-Aware synthetic data pipeline), a two-stage framework that generates domain-adaptive short video data with controllable…
 tags:
-  - AAAI 2026
-  - Recommender Systems
-  - Synthetic Data
-  - Fine-Grained Relevance
-  - Short Video Search
-  - Semi-Supervised Learning
-  - Embedding Model
+  - "AAAI 2026"
+  - "Recommender Systems"
+  - "Synthetic Data"
+  - "Fine-Grained Relevance"
+  - "Short Video Search"
+  - "Semi-Supervised Learning"
+  - "Embedding Model"
 date: 2026-05-08
 content_hash: d0e70336d742a62e
 ---

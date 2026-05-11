@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SAOT: An Enhanced Locality-Aware Spectral Transformer for Solving PDEs
 description: >-
-  [AAAI 2026][Scientific Computing][Neural Operator] This paper proposes SAOT (Spectral Attention Operator Transformer), which captures high-frequency local details via linear-complexity Wavelet Attention (WA) and complements it with the global receptive field of Fourier Attention (FA) through a gated fusion mechanism. SAOT achieves state-of-the-art performance on 6 operator learning benchmarks, reducing the relative error on Navier-Stokes by 22.3% compared to Transolver.
+  [AAAI 2026][Scientific Computing][Neural Operator] This paper proposes SAOT (Spectral Attention Operator Transformer), which captures high-frequency local details via linear-complexity Wavelet Attention (WA) and compleme…
 tags:
-  - AAAI 2026
-  - Scientific Computing
-  - Neural Operator
-  - Wavelet Transform
-  - Fourier Attention
-  - Spectral Transformer
-  - PDE Solving
+  - "AAAI 2026"
+  - "Scientific Computing"
+  - "Neural Operator"
+  - "Wavelet Transform"
+  - "Fourier Attention"
+  - "Spectral Transformer"
+  - "PDE Solving"
 date: 2026-05-08
 content_hash: 0d579bc2accb113d
 ---

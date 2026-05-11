@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] NeoVerse: Enhancing 4D World Model with in-the-wild Monocular Videos
 description: >-
-  [CVPR 2026][Video Generation][4D world model] NeoVerse proposes a scalable 4D world model that enables the entire training pipeline to leverage large-scale in-the-wild monocular videos (millions of clips) via feed-forward pose-free 4DGS reconstruction and online monocular degradation simulation, achieving state-of-the-art performance on both 4D reconstruction and novel-trajectory video generation.
+  [CVPR 2026][Video Generation][4D world model] NeoVerse proposes a scalable 4D world model that enables the entire training pipeline to leverage large-scale in-the-wild monocular videos (millions of clips) via feed-forwar…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - 4D world model
-  - Gaussian splatting
-  - monocular video
-  - novel view synthesis
-  - feed-forward reconstruction
+  - "CVPR 2026"
+  - "Video Generation"
+  - "4D world model"
+  - "Gaussian splatting"
+  - "monocular video"
+  - "novel view synthesis"
+  - "feed-forward reconstruction"
 date: 2026-05-08
 content_hash: 6954b88ea7ff77c0
 ---

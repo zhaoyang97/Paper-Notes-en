@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Synergistic Prompting for Robust Visual Recognition with Missing Modalities
 description: >-
-  [ICCV 2025][Multimodal VLM][missing modality] This paper proposes the Synergistic Prompting (SyP) framework, which employs a dynamic adapter to generate input-adaptive scaling factors that modulate a base prompt (dynamic prompt), synergizing with a static prompt that captures shared cross-modal features. SyP achieves robust visual recognition under missing-modality conditions and consistently outperforms SOTA methods such as DCP on MM-IMDb, Food101, and Hateful Memes.
+  [ICCV 2025][Multimodal VLM][missing modality] This paper proposes the Synergistic Prompting (SyP) framework, which employs a dynamic adapter to generate input-adaptive scaling factors that modulate a base prompt (dynamic…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - missing modality
-  - dynamic prompt
-  - synergistic prompting
-  - CLIP
-  - multi-modal learning
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "missing modality"
+  - "dynamic prompt"
+  - "synergistic prompting"
+  - "CLIP"
+  - "multi-modal learning"
 date: 2026-05-08
 content_hash: 8e5c7f5066d37660
 ---

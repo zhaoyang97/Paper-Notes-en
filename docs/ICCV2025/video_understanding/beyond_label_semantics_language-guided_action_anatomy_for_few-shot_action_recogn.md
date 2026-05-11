@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond Label Semantics: Language-Guided Action Anatomy for Few-shot Action Recognition
 description: >-
-  [ICCV 2025][Video Understanding][few-shot action recognition] This paper proposes the Language-Guided Action Anatomy (LGA) framework, which leverages large language models to decompose action labels into atomic-level action descriptions encoded as subject–motion–object triplets. On the video side, a clustering-based segmentation strategy partitions frame sequences into corresponding atomic action stages. Multimodal fusion and matching are then performed at the atomic level, yielding substantial improvements in few-shot action recognition performance.
+  [ICCV 2025][Video Understanding][few-shot action recognition] This paper proposes the Language-Guided Action Anatomy (LGA) framework, which leverages large language models to decompose action labels into atomic-level act…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - few-shot action recognition
-  - LLM
-  - atomic action
-  - multimodal fusion
-  - metric learning
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "few-shot action recognition"
+  - "LLM"
+  - "atomic action"
+  - "multimodal fusion"
+  - "metric learning"
 date: 2026-05-08
 content_hash: d8f408731caa1487
 ---

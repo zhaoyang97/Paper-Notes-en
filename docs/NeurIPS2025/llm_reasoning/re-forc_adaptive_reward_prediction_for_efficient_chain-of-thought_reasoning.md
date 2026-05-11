@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Re-FORC: Adaptive Reward Prediction for Efficient Chain-of-Thought Reasoning
 description: >-
-  [NeurIPS 2025][LLM Reasoning][chain-of-thought] This paper proposes Re-FORC, a lightweight adapter that predicts the future expected reward $\psi(t|x,z,\pi)$ in real time during CoT reasoning. The framework models reasoning compute allocation as a Pandora's box problem, enabling adaptive early stopping (26% compute savings), joint model-and-compute selection (+4% accuracy at equal compute, or −55% compute at equal accuracy), and test-time compute scaling (+11% accuracy). Users can freely adjust the accuracy–efficiency trade-off at inference time via a cost coefficient $\lambda$, without any retraining.
+  [NeurIPS 2025][LLM Reasoning][chain-of-thought] This paper proposes Re-FORC, a lightweight adapter that predicts the future expected reward $\psi(t|x,z…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - chain-of-thought
-  - reasoning efficiency
-  - reward prediction
-  - adaptive computation
-  - test-time compute allocation
-  - Gittins index
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "chain-of-thought"
+  - "reasoning efficiency"
+  - "reward prediction"
+  - "adaptive computation"
+  - "test-time compute allocation"
+  - "Gittins index"
 date: 2026-05-08
 content_hash: 32b9c4068cc7a7e9
 ---

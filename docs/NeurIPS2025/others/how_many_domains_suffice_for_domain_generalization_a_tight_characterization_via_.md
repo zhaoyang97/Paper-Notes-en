@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] How Many Domains Suffice for Domain Generalization? A Tight Characterization via the Domain Shattering Dimension
 description: >-
-  [NeurIPS 2025][Domain Generalization] This paper introduces the *Domain Shattering Dimension* (Gdim), a novel combinatorial measure that tightly characterizes the number of domains required for domain generalization (i.e., the domain sample complexity), and establishes its relationship to the classical VC dimension as $\Theta(d \log(1/\alpha))$.
+  [NeurIPS 2025][Domain Generalization] This paper introduces the *Domain Shattering Dimension* (Gdim), a novel combinatorial measure that tightly characterizes the number of domains required for domain generalization (i.e…
 tags:
-  - NeurIPS 2025
-  - Domain Generalization
-  - Domain Shattering Dimension
-  - Sample Complexity
-  - VC Dimension
-  - Min-Max ERM
+  - "NeurIPS 2025"
+  - "Domain Generalization"
+  - "Domain Shattering Dimension"
+  - "Sample Complexity"
+  - "VC Dimension"
+  - "Min-Max ERM"
 date: 2026-05-08
 content_hash: d9ae29f34c591727
 ---

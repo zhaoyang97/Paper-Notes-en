@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] SuperEdit: Rectifying and Facilitating Supervision for Instruction-Based Image Editing
 description: >-
-  [ICCV 2025][Image Generation][instruction-based editing] SuperEdit addresses the noisy supervision problem in instruction-based image editing by leveraging diffusion generation priors to guide a VLM in rectifying editing instructions, and by constructing contrastive supervision signals (positive/negative instructions + triplet loss), surpassing SmartEdit by 9.19% with less data and a smaller model.
+  [ICCV 2025][Image Generation][instruction-based editing] SuperEdit addresses the noisy supervision problem in instruction-based image editing by leveraging diffusion generation priors to guide a VLM in rectifying editing…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - instruction-based editing
-  - supervision rectification
-  - contrastive learning
-  - diffusion prior
-  - VLM
-  - triplet loss
+  - "ICCV 2025"
+  - "Image Generation"
+  - "instruction-based editing"
+  - "supervision rectification"
+  - "contrastive learning"
+  - "diffusion prior"
+  - "VLM"
+  - "triplet loss"
 date: 2026-05-08
 content_hash: f2d12c252b0179e2
 ---

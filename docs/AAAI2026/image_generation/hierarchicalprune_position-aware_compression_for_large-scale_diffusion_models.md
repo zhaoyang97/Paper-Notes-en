@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HierarchicalPrune: Position-Aware Compression for Large-Scale Diffusion Models
 description: >-
-  [AAAI 2026][Image Generation][Diffusion Model Compression] This paper proposes HierarchicalPrune, which exploits the hierarchical functional differences among blocks in MMDiT-based diffusion models—early blocks establish semantic structure while late blocks refine texture details—and combines three techniques: Hierarchical Position Pruning (HPP), Positional Weight Preservation (PWP), and Sensitivity-Guided Distillation (SGDistill), together with INT4 quantisation. Applied to SD3.5 Large Turbo (8B), the method compresses the model from 15.8 GB to 3.24 GB (79.5% memory reduction) with only a 4.8% degradation in image quality.
+  [AAAI 2026][Image Generation][Diffusion Model Compression] This paper proposes HierarchicalPrune, which exploits the hierarchical functional differences among blocks in MMDiT-based diffusion models—early blocks establish…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Diffusion Model Compression
-  - Pruning
-  - Knowledge Distillation
-  - MMDiT
-  - Quantisation
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Diffusion Model Compression"
+  - "Pruning"
+  - "Knowledge Distillation"
+  - "MMDiT"
+  - "Quantisation"
 date: 2026-05-08
 content_hash: b0043ecf6def3c3e
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Characterizing Human Semantic Navigation in Concept Production as Trajectories in Embedding Space
 description: >-
-  [ICLR2026][Medical Imaging][semantic navigation] This paper proposes modeling the human concept production process as cumulative trajectories in Transformer embedding space, defining 5 kinematic metrics (distance, velocity, acceleration, entropy, and centroid distance). Evaluated on 4 datasets spanning 3 languages and covering neurodegenerative disease, taboo word fluency, and attribute listing tasks, the framework successfully distinguishes clinical groups and concept categories, with highly consistent results across different embedding models.
+  [ICLR2026][Medical Imaging][semantic navigation] This paper proposes modeling the human concept production process as cumulative trajectories in Transformer embedding space, defining 5 kinematic metrics (distance…
 tags:
-  - ICLR2026
-  - Medical Imaging
-  - semantic navigation
-  - embedding trajectory
-  - cognitive modeling
-  - verbal fluency
-  - neurodegenerative disease
+  - "ICLR2026"
+  - "Medical Imaging"
+  - "semantic navigation"
+  - "embedding trajectory"
+  - "cognitive modeling"
+  - "verbal fluency"
+  - "neurodegenerative disease"
 date: 2026-05-08
 content_hash: a35e0b82d37ab2e7
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Toward Efficient Inference Attacks: Shadow Model Sharing via Mixture-of-Experts
 description: >-
-  [NeurIPS 2025][Model Compression][Inference attacks] This paper proposes a Mixture-of-Experts (MoE)-based shadow model sharing framework that reduces the overall training cost of shadow models by sharing feature extraction layers across multiple inference attack tasks while training only lightweight task-specific expert modules, maintaining or improving attack performance.
+  [NeurIPS 2025][Model Compression][Inference attacks] This paper proposes a Mixture-of-Experts (MoE)-based shadow model sharing framework that reduces the overall training cost of shadow models by sharing feature extracti…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Inference attacks
-  - shadow models
-  - mixture-of-experts
-  - membership inference attack
-  - privacy and security
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Inference attacks"
+  - "shadow models"
+  - "mixture-of-experts"
+  - "membership inference attack"
+  - "privacy and security"
 date: 2026-05-08
 content_hash: 551b3cf0db9d0032
 ---

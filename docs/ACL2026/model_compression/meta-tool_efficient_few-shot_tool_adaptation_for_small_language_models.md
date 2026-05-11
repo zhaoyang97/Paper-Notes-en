@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Meta-Tool: Efficient Few-Shot Tool Adaptation for Small Language Models
 description: >-
-  [ACL 2026][Model Compression][small language models] Through systematic comparison of hypernetwork-based LoRA adaptation versus carefully designed few-shot prompting across four benchmarks, this work demonstrates that a 227.8M-parameter hypernetwork yields zero gain—few-shot examples contribute +21.5%, document encoding contributes +5.0%, and the hypernetwork contributes 0%. A 3B model with well-crafted prompts achieves 79.7% of GPT-5's average performance at 10× lower latency.
+  [ACL 2026][Model Compression][small language models] Through systematic comparison of hypernetwork-based LoRA adaptation versus carefully designed few-shot prompting across four benchmarks…
 tags:
-  - ACL 2026
-  - Model Compression
-  - small language models
-  - tool use
-  - few-shot adaptation
-  - hypernetwork
-  - negative results
+  - "ACL 2026"
+  - "Model Compression"
+  - "small language models"
+  - "tool use"
+  - "few-shot adaptation"
+  - "hypernetwork"
+  - "negative results"
 date: 2026-05-08
 content_hash: 889194937e9211cd
 ---

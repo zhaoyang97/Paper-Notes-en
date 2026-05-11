@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Continuous Diffusion Model for Language Modeling
 description: >-
-  [NeurIPS 2025][Image Generation][Riemannian diffusion] This paper proposes RDLM (Riemannian Diffusion Language Model), which constructs a continuous diffusion process on a statistical manifold (hypersphere) to model discrete distributions. It establishes a theoretical connection between discrete diffusion and continuous flows, and leverages radial symmetry to enable simulation-free training and a dimension-splitting technique for handling large vocabularies. RDLM achieves 1.32 BPC on Text8, surpassing all discrete and continuous diffusion models.
+  [NeurIPS 2025][Image Generation][Riemannian diffusion] This paper proposes RDLM (Riemannian Diffusion Language Model), which constructs a continuous diffusion process on a statistical manifold (hypersphere) to model disc…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Riemannian diffusion
-  - statistical manifold
-  - discrete data
-  - sphere
-  - language model
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Riemannian diffusion"
+  - "statistical manifold"
+  - "discrete data"
+  - "sphere"
+  - "language model"
 date: 2026-05-08
 content_hash: e3506cde1ad72ebc
 ---

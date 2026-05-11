@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mouse-Guided Gaze: Semi-Supervised Learning of Intention-Aware Representations for Reading Detection
 description: >-
-  [NeurIPS 2025 (Workshop: Foundation Models for the Brain and Body)][LLM Pretraining][Semi-supervised learning] This paper proposes a semi-supervised framework that uses mouse trajectories as weak supervision signals to pretrain gaze representations, followed by fine-tuning on labeled data to distinguish reading from scanning behavior. At inference time, only gaze signals are used, enabling hands-free assistive reading detection.
+  [NeurIPS 2025 (Workshop: Foundation Models for the Brain and Body)][LLM Pretraining][Semi-supervised learning] This paper proposes a semi-supervised framework that uses mouse trajectories as weak supervision signals to p…
 tags:
   - "NeurIPS 2025 (Workshop: Foundation Models for the Brain and Body)"
-  - LLM Pretraining
-  - Semi-supervised learning
-  - eye tracking
-  - screen magnification
-  - reading behavior classification
-  - accessibility
+  - "LLM Pretraining"
+  - "Semi-supervised learning"
+  - "eye tracking"
+  - "screen magnification"
+  - "reading behavior classification"
+  - "accessibility"
 date: 2026-05-08
 content_hash: 660aeb531f1c383b
 ---

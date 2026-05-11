@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Creating Blank Canvas Against AI-Enabled Image Forgery
 description: >-
-  [AAAI 2026][Image Generation][Image Tampering Localization] This paper proposes a "blank canvas" mechanism that applies adversarial perturbations to make SAM "see nothing" in protected images. When a protected image is tampered with, the tampered regions disrupt the perturbations and become automatically detectable by SAM, enabling proactive tampering localization without requiring any tampered training data.
+  [AAAI 2026][Image Generation][Image Tampering Localization] This paper proposes a "blank canvas" mechanism that applies adversarial perturbations to make SAM "see nothing" in protected images. When a protected image is t…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Image Tampering Localization
-  - Adversarial Perturbation
-  - SAM
-  - Frequency-Aware Optimization
-  - Proactive Protection
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Image Tampering Localization"
+  - "Adversarial Perturbation"
+  - "SAM"
+  - "Frequency-Aware Optimization"
+  - "Proactive Protection"
 date: 2026-05-08
 content_hash: 1f012ce9271827a3
 ---

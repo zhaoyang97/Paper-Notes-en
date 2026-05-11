@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Question-guided Visual Compression with Memory Feedback for Long-Term Video Understanding
 description: >-
-  [CVPR2026][Video Understanding][long video understanding] This paper proposes QViC-MF, a framework that achieves state-of-the-art performance on MLVU, LVBench, and VNBench through question-guided multi-frame visual compression (QMSA) and a contextual memory feedback mechanism, using as few as 16 visual tokens per frame.
+  [CVPR2026][Video Understanding][long video understanding] This paper proposes QViC-MF, a framework that achieves state-of-the-art performance on MLVU, LVBench…
 tags:
-  - CVPR2026
-  - Video Understanding
-  - long video understanding
-  - visual compression
-  - memory feedback
-  - question-guided attention
-  - large multimodal models
+  - "CVPR2026"
+  - "Video Understanding"
+  - "long video understanding"
+  - "visual compression"
+  - "memory feedback"
+  - "question-guided attention"
+  - "large multimodal models"
 date: 2026-05-08
 content_hash: 0d5f9b973a1868bd
 ---

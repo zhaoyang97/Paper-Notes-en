@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Margin-aware Preference Optimization for Aligning Diffusion Models without Reference
 description: >-
-  [AAAI 2026][LLM Alignment][Preference Alignment] This paper proposes MaPO (Margin-aware Preference Optimization), a reference-free preference alignment method that aligns T2I diffusion models by directly optimizing the likelihood margin between preferred and dispreferred outputs under the Bradley-Terry model. MaPO outperforms DPO and task-specific methods across 5 domains, including style adaptation, safety generation, and general preference alignment.
+  [AAAI 2026][LLM Alignment][Preference Alignment] This paper proposes MaPO (Margin-aware Preference Optimization), a reference-free preference alignment method that aligns T2I diffusion models by directly optimizing the l…
 tags:
-  - AAAI 2026
-  - LLM Alignment
-  - Preference Alignment
-  - Diffusion Models
-  - Text-to-Image Generation
-  - Reference-free
-  - DPO
+  - "AAAI 2026"
+  - "LLM Alignment"
+  - "Preference Alignment"
+  - "Diffusion Models"
+  - "Text-to-Image Generation"
+  - "Reference-free"
+  - "DPO"
 date: 2026-05-08
 content_hash: c7b6e96ecff9b06f
 ---

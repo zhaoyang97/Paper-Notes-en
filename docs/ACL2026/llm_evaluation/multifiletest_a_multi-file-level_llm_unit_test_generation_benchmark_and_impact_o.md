@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MultiFileTest: A Multi-File-Level LLM Unit Test Generation Benchmark and Impact of Error Fixing Mechanisms
 description: >-
-  [ACL 2026][LLM Evaluation][unit test generation] This paper introduces MultiFileTest, the first multi-file-level benchmark for LLM-based unit test generation, covering 20 projects each in Python, Java, and JavaScript. It evaluates 11 state-of-the-art LLMs and analyzes the impact of manual and self-repair mechanisms on test quality, revealing that even the strongest models produce substantial basic executability errors.
+  [ACL 2026][LLM Evaluation][unit test generation] This paper introduces MultiFileTest, the first multi-file-level benchmark for LLM-based unit test generation, covering 20 projects each in Python, Java…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - unit test generation
-  - multi-file benchmark
-  - cross-file dependencies
-  - error fixing
-  - code quality
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "unit test generation"
+  - "multi-file benchmark"
+  - "cross-file dependencies"
+  - "error fixing"
+  - "code quality"
 date: 2026-05-08
 content_hash: a264578135851396
 ---

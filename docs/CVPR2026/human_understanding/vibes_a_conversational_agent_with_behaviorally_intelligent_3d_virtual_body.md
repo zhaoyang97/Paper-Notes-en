@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ViBES: A Conversational Agent with Behaviorally-Intelligent 3D Virtual Body
 description: >-
-  [CVPR 2026][Human Understanding][Conversational Virtual Agent] This paper proposes ViBES, a 3D conversational agent that unifies language, speech, and body motion via a Mixture of Modal Experts (MoME) architecture and cross-modal attention mechanisms. ViBES generates temporally aligned facial expressions and whole-body motions while preserving the conversational capabilities of a pretrained speech LLM, surpassing the paradigm that treats behavior as simple "modality translation."
+  [CVPR 2026][Human Understanding][Conversational Virtual Agent] This paper proposes ViBES, a 3D conversational agent that unifies language, speech…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Conversational Virtual Agent
-  - Mixture of Modal Experts
-  - Co-speech Gesture Generation
-  - Speech-Motion Synchronization
-  - 3D Body Animation
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Conversational Virtual Agent"
+  - "Mixture of Modal Experts"
+  - "Co-speech Gesture Generation"
+  - "Speech-Motion Synchronization"
+  - "3D Body Animation"
 date: 2026-05-08
 content_hash: 7f384482111938b3
 ---

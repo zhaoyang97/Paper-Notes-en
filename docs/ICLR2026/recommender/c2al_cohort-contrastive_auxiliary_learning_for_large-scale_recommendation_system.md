@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] C2AL: Cohort-Contrastive Auxiliary Learning for Large-scale Recommendation Systems
 description: >-
-  [ICLR2026][Recommender Systems][recommendation system] This paper proposes C2AL (Cohort-Contrastive Auxiliary Learning), which data-drivenly identifies user cohort pairs with maximal distributional divergence and constructs contrastive auxiliary binary classification tasks to regularize the shared encoder. This transforms FM attention weights from sparse to dense, mitigating representation bias for minority cohorts in large-scale recommendation systems. The approach is validated on 6 Meta production models with billions of data points.
+  [ICLR2026][Recommender Systems][recommendation system] This paper proposes C2AL (Cohort-Contrastive Auxiliary Learning), which data-drivenly identifies user cohort pairs with maximal distributional divergence and constru…
 tags:
-  - ICLR2026
-  - Recommender Systems
-  - recommendation system
-  - auxiliary learning
-  - cohort contrastive
-  - attention mechanism
-  - representation bias
+  - "ICLR2026"
+  - "Recommender Systems"
+  - "recommendation system"
+  - "auxiliary learning"
+  - "cohort contrastive"
+  - "attention mechanism"
+  - "representation bias"
 date: 2026-05-08
 content_hash: dc4c3e380bde0453
 ---

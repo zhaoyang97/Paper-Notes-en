@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Authority Backdoor: A Certifiable Backdoor Mechanism for Authoring DNNs
 description: >-
-  [AAAI 2026][AI Safety][DNN intellectual property protection] This paper proposes Authority Backdoor, which embeds hardware fingerprints as backdoor triggers into DNNs so that models function correctly only on authorized devices, and achieves certifiable robustness against adaptive trigger reverse-engineering attacks via randomized smoothing.
+  [AAAI 2026][AI Safety][DNN intellectual property protection] This paper proposes Authority Backdoor, which embeds hardware fingerprints as backdoor triggers into DNNs so that models function correctly only on authorized…
 tags:
-  - AAAI 2026
-  - AI Safety
-  - DNN intellectual property protection
-  - active defense
-  - backdoor learning
-  - certified robustness
-  - randomized smoothing
-  - hardware fingerprint
+  - "AAAI 2026"
+  - "AI Safety"
+  - "DNN intellectual property protection"
+  - "active defense"
+  - "backdoor learning"
+  - "certified robustness"
+  - "randomized smoothing"
+  - "hardware fingerprint"
 date: 2026-05-08
 content_hash: f9f6a256b84f4939
 ---

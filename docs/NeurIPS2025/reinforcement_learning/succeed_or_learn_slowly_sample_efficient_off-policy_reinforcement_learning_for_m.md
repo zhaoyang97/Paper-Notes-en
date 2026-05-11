@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Succeed or Learn Slowly: Sample Efficient Off-Policy Reinforcement Learning for Mobile App Control
 description: >-
-  [NeurIPS 2025][Reinforcement Learning] This paper proposes the SoLS algorithm, which achieves sample-efficient RL fine-tuning of foundation models for mobile app control through an asymmetric policy update mechanism (aggressive learning on success, conservative regularization on failure) combined with Success Transition Replay (STR), attaining a 51.3% success rate on AndroidWorld.
+  [NeurIPS 2025][Reinforcement Learning][mobile app control] This paper proposes the SoLS algorithm, which achieves sample-efficient RL fine-tuning of foundation models for mobile app control through an asymmetric policy u…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - mobile app control
-  - off-policy learning
-  - foundation model fine-tuning
-  - sample efficiency
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "mobile app control"
+  - "off-policy learning"
+  - "foundation model fine-tuning"
+  - "sample efficiency"
 date: 2026-05-08
 content_hash: f75afa1de0ad6765
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Lost in Transmission: When and Why LLMs Fail to Reason Globally
 description: >-
-  [NeurIPS 2025 (Spotlight)][LLM Reasoning][communication complexity] This paper proposes the Bounded Attention Prefix Oracle (BAPO) computational framework, which models LLM attention heads as finite-bandwidth communication channels. It proves that global reasoning problems such as graph reachability are BAPO-hard (requiring super-constant bandwidth), and shows that Chain-of-Thought (CoT) can transform any BAPO-hard problem into a BAPO-easy one. Theoretical predictions are validated experimentally on GPT-4o, Claude, and Gemini.
+  [NeurIPS 2025 (Spotlight)][LLM Reasoning][communication complexity] This paper proposes the Bounded Attention Prefix Oracle (BAPO) computational framework…
 tags:
-  - NeurIPS 2025 (Spotlight)
-  - LLM Reasoning
-  - communication complexity
-  - bounded attention
-  - chain-of-thought
-  - LLM limitations
-  - computational framework
+  - "NeurIPS 2025 (Spotlight)"
+  - "LLM Reasoning"
+  - "communication complexity"
+  - "bounded attention"
+  - "chain-of-thought"
+  - "LLM limitations"
+  - "computational framework"
 date: 2026-05-08
 content_hash: a47044107b1d7d96
 ---

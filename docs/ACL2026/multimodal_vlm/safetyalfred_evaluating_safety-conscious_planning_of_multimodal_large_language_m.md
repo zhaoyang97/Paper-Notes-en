@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SafetyALFRED: Evaluating Safety-Conscious Planning of Multimodal Large Language Models
 description: >-
-  [ACL 2026][Multimodal VLM][Embodied Safety] This paper proposes the SafetyALFRED benchmark, which introduces six categories of kitchen safety hazards into the ALFRED embodied task setting. It reveals a critical alignment gap: multimodal large language models can identify hazards in static QA (up to 92%) but fail to proactively mitigate them during embodied planning (<60%), advocating a paradigm shift from QA-based to embodied safety evaluation.
+  [ACL 2026][Multimodal VLM][Embodied Safety] This paper proposes the SafetyALFRED benchmark, which introduces six categories of kitchen safety hazards into the ALFRED embodied task setting. It reveals a critical alignment…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Embodied Safety
-  - Hazard Mitigation
-  - Multimodal Evaluation
-  - Safety Planning
-  - ALFRED
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Embodied Safety"
+  - "Hazard Mitigation"
+  - "Multimodal Evaluation"
+  - "Safety Planning"
+  - "ALFRED"
 date: 2026-05-08
 content_hash: c9e105c360238317
 ---

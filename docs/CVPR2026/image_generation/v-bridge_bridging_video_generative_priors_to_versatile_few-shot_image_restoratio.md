@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] V-Bridge: Bridging Video Generative Priors to Versatile Few-shot Image Restoration
 description: >-
-  [CVPR 2026][Image Generation][Video generative priors] This paper reformulates image restoration as a progressive video generation process. By leveraging the rich visual priors of a pretrained video model (Wan2.2-TI2V-5B), the proposed method achieves versatile all-in-one restoration across multiple degradation types using only 1,000 multi-task training samples (less than 2% of existing methods), surpassing specialized architectures trained on million-scale datasets.
+  [CVPR 2026][Image Generation][Video generative priors] This paper reformulates image restoration as a progressive video generation process. By leveraging the rich visual priors of a pretrained video model (Wan2.2-TI2V-5B…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Video generative priors
-  - image restoration
-  - few-shot learning
-  - progressive restoration
-  - drift correction
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Video generative priors"
+  - "image restoration"
+  - "few-shot learning"
+  - "progressive restoration"
+  - "drift correction"
 date: 2026-05-08
 content_hash: 31b5cc497339ea4d
 ---

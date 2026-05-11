@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Similarity-Distance-Magnitude Activations
 description: >-
-  [ACL 2026][Activation functions] This paper proposes SDM (Similarity-Distance-Magnitude) activations as a more robust replacement for softmax. By decoupling and integrating three epistemic dimensions—Similarity (deep matching with correct training predictions), Distance (proximity to the training distribution), and Magnitude (distance to the decision boundary)—into a novel activation $\text{sdm}(\mathbf{z}')_i = (2+q)^{d \cdot z'_i} / \sum_c (2+q)^{d \cdot z'_c}$, the method constructs an SDM estimator for selective classification that is more robust than existing calibration approaches under covariate shift and out-of-distribution inputs.
+  [ACL 2026][Interpretability][Activation functions] This paper proposes SDM (Similarity-Distance-Magnitude) activations as a more robust replacement for softmax. By decoupling and integrating three epistemic dimensions—Si…
 tags:
-  - ACL 2026
-  - Activation functions
-  - softmax alternatives
-  - selective classification
-  - out-of-distribution detection
-  - predictive uncertainty
+  - "ACL 2026"
+  - "Interpretability"
+  - "Activation functions"
+  - "softmax alternatives"
+  - "selective classification"
+  - "out-of-distribution detection"
+  - "predictive uncertainty"
 date: 2026-05-08
 content_hash: 5d561a2fa653b9e6
 ---

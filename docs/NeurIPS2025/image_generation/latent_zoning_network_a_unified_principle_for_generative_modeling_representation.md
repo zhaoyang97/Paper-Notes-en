@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Latent Zoning Network: A Unified Principle for Generative Modeling, Representation Learning, and Classification
 description: >-
-  [NeurIPS 2025][Image Generation][Unified Framework] This paper proposes the Latent Zoning Network (LZN)—a framework that unifies generative modeling, representation learning, and classification within a shared Gaussian latent space. Each data type is equipped with an encoder-decoder pair that maps samples to disjoint latent zones. Only two atomic operations—*latent computation* and *latent alignment*—are required to support diverse ML tasks. LZN reduces unconditional generation FID on CIFAR10 from 2.76 to 2.59 and surpasses SimCLR on ImageNet linear classification.
+  [NeurIPS 2025][Image Generation][Unified Framework] This paper proposes the Latent Zoning Network (LZN)—a framework that unifies generative modeling, representation learning…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Unified Framework
-  - Latent Space Zoning
-  - Flow Matching
-  - Representation Learning
-  - Joint Generation-Classification
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Unified Framework"
+  - "Latent Space Zoning"
+  - "Flow Matching"
+  - "Representation Learning"
+  - "Joint Generation-Classification"
 date: 2026-05-08
 content_hash: 9da7531be4d67b1c
 ---

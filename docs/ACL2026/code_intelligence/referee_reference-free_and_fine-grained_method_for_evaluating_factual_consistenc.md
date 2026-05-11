@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] ReFEree: Reference-Free and Fine-Grained Method for Evaluating Factual Consistency in Real-World Code Summarization
 description: >-
-  [ACL 2026][Factual Consistency] This paper proposes ReFEree, a reference-free and fine-grained factual consistency evaluation method for real-world code summarization. It defines four categories of inconsistency criteria and evaluates at the sentence-segment level. Combined with a dependency information retrieval mechanism, ReFEree achieves 15–18% improvement in human judgment correlation over the previous state of the art on Python and Java.
+  [ACL 2026][Code Intelligence][Factual Consistency] This paper proposes ReFEree, a reference-free and fine-grained factual consistency evaluation method for real-world code summarization. It defines four categories of inc…
 tags:
-  - ACL 2026
-  - Factual Consistency
-  - Code Summarization
-  - Reference-Free Evaluation
-  - Fine-Grained Evaluation
-  - Dependency Analysis
+  - "ACL 2026"
+  - "Code Intelligence"
+  - "Factual Consistency"
+  - "Code Summarization"
+  - "Reference-Free Evaluation"
+  - "Fine-Grained Evaluation"
+  - "Dependency Analysis"
 date: 2026-05-08
 content_hash: f1bad693c266fbde
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AS-Bridge: A Bidirectional Generative Framework Bridging Next-Generation Astronomical Surveys
 description: >-
-  [CVPR 2026][Image Generation][Astronomical Surveys] The authors propose AS-Bridge, a bidirectional generative framework based on the Brownian Bridge diffusion process. It models the probabilistic conditional distribution between ground-based LSST and space-based Euclid astronomical surveys, enabling cross-survey image translation and rare event detection (gravitational lensing), while improving likelihood estimation of the standard Brownian Bridge via an $\epsilon$-prediction training objective.
+  [CVPR 2026][Image Generation][Astronomical Surveys] The authors propose AS-Bridge, a bidirectional generative framework based on the Brownian Bridge diffusion process. It models the probabilistic conditional distribution…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Astronomical Surveys
-  - Brownian Bridge
-  - Cross-modal Translation
-  - Anomaly Detection
-  - Probabilistic Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Astronomical Surveys"
+  - "Brownian Bridge"
+  - "Cross-modal Translation"
+  - "Anomaly Detection"
+  - "Probabilistic Generation"
 date: 2026-05-08
 content_hash: 4618ff8e42669bc0
 ---

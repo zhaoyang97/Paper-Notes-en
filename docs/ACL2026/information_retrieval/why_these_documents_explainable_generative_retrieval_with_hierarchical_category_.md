@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Why These Documents? Explainable Generative Retrieval with Hierarchical Category Paths
 description: >-
-  [ACL 2026][Generative Retrieval] This paper proposes HyPE, a generative retrieval framework that first generates hierarchical category paths (e.g., "Government >> Government by cities") before decoding document identifiers, providing query-relevant explanations for retrieval results while simultaneously improving retrieval accuracy.
+  [ACL 2026][Information Retrieval & RAG][Generative Retrieval] This paper proposes HyPE, a generative retrieval framework that first generates hierarchical category paths (e.g.…
 tags:
-  - ACL 2026
-  - Generative Retrieval
-  - Explainable Retrieval
-  - Hierarchical Category Paths
-  - Document Identifiers
-  - Path-Aware Ranking
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Generative Retrieval"
+  - "Explainable Retrieval"
+  - "Hierarchical Category Paths"
+  - "Document Identifiers"
+  - "Path-Aware Ranking"
 date: 2026-05-08
 content_hash: 041f9f41c911068b
 ---

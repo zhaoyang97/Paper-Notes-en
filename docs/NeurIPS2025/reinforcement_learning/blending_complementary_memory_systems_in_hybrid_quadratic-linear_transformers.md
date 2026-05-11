@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Blending Complementary Memory Systems in Hybrid Quadratic-Linear Transformers
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][hybrid memory] This paper proposes Hybrid Quadratic-Linear Transformers (HQLT), which integrate KV-memory (softmax attention: precise retrieval but quadratic complexity) and FW-memory (DeltaNet/linear attention: linear complexity but coarse retrieval) as complementary memory systems. Three hybrid strategies are compared (Delayed-Streaming, Delayed-Chunk, and Synchronous), and the Synchronous variant is shown to be optimal across language modeling, retrieval, algorithmic reasoning, and RL tasks at 340M and 1.3B parameter scales.
+  [NeurIPS 2025][Reinforcement Learning][hybrid memory] This paper proposes Hybrid Quadratic-Linear Transformers (HQLT), which integrate KV-memory (softmax attention: precise retrieval but quadratic complexity) and FW-memo…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - hybrid memory
-  - softmax attention
-  - fast weight programming
-  - DeltaNet
-  - linear transformer
-  - complementary learning systems
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "hybrid memory"
+  - "softmax attention"
+  - "fast weight programming"
+  - "DeltaNet"
+  - "linear transformer"
+  - "complementary learning systems"
 date: 2026-05-08
 content_hash: 2794aeac66d65250
 ---

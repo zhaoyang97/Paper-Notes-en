@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DistMLIP: A Distributed Inference Platform for Machine Learning Interatomic Potentials
 description: >-
-  [ICLR 2026][Medical Imaging][MLIP] DistMLIP is a distributed inference platform based on a zero-redundancy graph-level parallelization strategy that addresses the lack of multi-GPU support in existing machine learning interatomic potentials (MLIPs). On 8 GPUs, it enables simulations approaching one million atoms, achieving up to 8× speedup over spatial partitioning methods while supporting systems 3.4× larger.
+  [ICLR 2026][Medical Imaging][MLIP] DistMLIP is a distributed inference platform based on a zero-redundancy graph-level parallelization strategy that addresses the lack of multi-GPU support in existing machine learning in…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - MLIP
-  - distributed inference
-  - graph neural networks
-  - molecular dynamics
-  - GPU parallelization
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "MLIP"
+  - "distributed inference"
+  - "graph neural networks"
+  - "molecular dynamics"
+  - "GPU parallelization"
 date: 2026-05-08
 content_hash: 8fd34c3a0d318eaa
 ---

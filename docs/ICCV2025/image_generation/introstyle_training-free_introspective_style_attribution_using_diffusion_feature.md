@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] IntroStyle: Training-Free Introspective Style Attribution using Diffusion Features
 description: >-
-  [ICCV 2025][Image Generation][Style attribution] This paper proposes IntroStyle, a training-free style attribution method that leverages only channel-wise mean and variance statistics from intermediate layers of a diffusion model's own denoising network, measuring inter-image style similarity via the 2-Wasserstein distance. IntroStyle substantially outperforms supervised state-of-the-art methods on WikiArt and DomainNet without any task-specific training.
+  [ICCV 2025][Image Generation][Style attribution] This paper proposes IntroStyle, a training-free style attribution method that leverages only channel-wise mean and variance statistics from intermediate layers of a diffus…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Style attribution
-  - diffusion model features
-  - training-free
-  - Wasserstein distance
-  - copyright protection
-  - style retrieval
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Style attribution"
+  - "diffusion model features"
+  - "training-free"
+  - "Wasserstein distance"
+  - "copyright protection"
+  - "style retrieval"
 date: 2026-05-08
 content_hash: bca500529993f1c4
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Complexity Scaling Laws for Neural Models using Combinatorial Optimization
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][neural scaling laws] Using the Traveling Salesman Problem (TSP) as a case study, this paper investigates predictable scaling relationships between problem complexity (solution space size, representation space dimensionality) and model performance under fixed model capacity, revealing systematic performance trends for RL and SFT in combinatorial optimization.
+  [NeurIPS 2025][Reinforcement Learning][neural scaling laws] Using the Traveling Salesman Problem (TSP) as a case study, this paper investigates predictable scaling relationships between problem complexity (solution space…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - neural scaling laws
-  - combinatorial optimization
-  - TSP
-  - problem complexity
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "neural scaling laws"
+  - "combinatorial optimization"
+  - "TSP"
+  - "problem complexity"
 date: 2026-05-08
 content_hash: 9a7145d7928310fb
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] H-DDx: A Hierarchical Evaluation Framework for Differential Diagnosis
 description: >-
-  [NeurIPS 2025][Medical Imaging][Differential Diagnosis] H-DDx proposes a differential diagnosis evaluation framework grounded in the ICD-10 classification hierarchy. By expanding both predicted and ground-truth diagnoses to their ancestor nodes and computing a Hierarchical Diagnostic F1 (HDF1), the framework rewards "clinically relevant approximate correctness" rather than exact match only. Evaluating 22 LLMs reveals that the domain-specialized model MediPhi rises from 20th to 2nd place under HDF1, an advantage completely obscured by Top-5 metrics.
+  [NeurIPS 2025][Medical Imaging][Differential Diagnosis] H-DDx proposes a differential diagnosis evaluation framework grounded in the ICD-10 classification hierarchy. By expanding both predicted and ground-truth diagnoses…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Differential Diagnosis
-  - ICD-10 Hierarchy
-  - Hierarchical F1
-  - LLM Medical Evaluation
-  - Approximate Correctness
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Differential Diagnosis"
+  - "ICD-10 Hierarchy"
+  - "Hierarchical F1"
+  - "LLM Medical Evaluation"
+  - "Approximate Correctness"
 date: 2026-05-08
 content_hash: 7665ce31fd7f97b0
 ---

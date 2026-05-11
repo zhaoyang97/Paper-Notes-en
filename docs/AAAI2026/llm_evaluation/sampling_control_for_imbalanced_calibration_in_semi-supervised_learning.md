@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Sampling Control for Imbalanced Calibration in Semi-Supervised Learning
 description: >-
-  [AAAI 2026][LLM Evaluation][semi-supervised learning] This paper proposes SC-SSL, a framework that introduces an **expansion classifier** for decoupled sampling control to mitigate feature-level imbalance, and leverages the **bias term** of a linear layer as an optimized bias vector to directly calibrate logits at inference time, achieving state-of-the-art performance across multiple data distribution settings.
+  [AAAI 2026][LLM Evaluation][semi-supervised learning] This paper proposes SC-SSL, a framework that introduces an **expansion classifier** for decoupled sampling control to mitigate feature-level imbalance…
 tags:
-  - AAAI 2026
-  - LLM Evaluation
-  - semi-supervised learning
-  - class imbalance
-  - sampling control
-  - pseudo-labels
-  - calibration
+  - "AAAI 2026"
+  - "LLM Evaluation"
+  - "semi-supervised learning"
+  - "class imbalance"
+  - "sampling control"
+  - "pseudo-labels"
+  - "calibration"
 date: 2026-05-08
 content_hash: 97b60ec2414450fd
 ---

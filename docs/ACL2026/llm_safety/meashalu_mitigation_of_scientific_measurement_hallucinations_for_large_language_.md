@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MeasHalu: Mitigation of Scientific Measurement Hallucinations for LLMs
 description: >-
-  [ACL 2026][LLM Safety][Scientific measurement hallucination] This paper proposes MeasHalu, a framework that mitigates hallucinations in LLM-based scientific measurement extraction through a fine-grained measurement hallucination taxonomy and a two-stage optimization pipeline (reasoning-aware SFT + hallucination-targeted GRPO rewards), achieving significant improvements over baselines on MeasEval.
+  [ACL 2026][LLM Safety][Scientific measurement hallucination] This paper proposes MeasHalu, a framework that mitigates hallucinations in LLM-based scientific measurement extraction through a fine-grained measurement hallu…
 tags:
-  - ACL 2026
-  - LLM Safety
-  - Scientific measurement hallucination
-  - information extraction
-  - reasoning-enhanced fine-tuning
-  - GRPO reinforcement learning
-  - MeasEval
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Scientific measurement hallucination"
+  - "information extraction"
+  - "reasoning-enhanced fine-tuning"
+  - "GRPO reinforcement learning"
+  - "MeasEval"
 date: 2026-05-08
 content_hash: beb053aec6b898b7
 ---

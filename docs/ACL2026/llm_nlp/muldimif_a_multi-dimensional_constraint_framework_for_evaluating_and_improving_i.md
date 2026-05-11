@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MulDimIF: A Multi-Dimensional Constraint Framework for Evaluating and Improving Instruction Following in Large Language Models
 description: >-
-  [ACL 2026][LLM/NLP][Instruction Following] This paper proposes MulDimIF, a multi-dimensional constraint framework that systematically evaluates LLM instruction-following capabilities across three dimensions—constraint patterns (3 types), constraint categories (4 classes, 13 subcategories), and constraint difficulty (4 levels)—and significantly improves model performance via GRPO training, finding that gains primarily stem from parameter updates in the attention modules.
+  [ACL 2026][LLM/NLP][Instruction Following] This paper proposes MulDimIF, a multi-dimensional constraint framework that systematically evaluates LLM instruction-following capabilities across three dimensions—constraint pa…
 tags:
-  - ACL 2026
-  - LLM/NLP
-  - Instruction Following
-  - Multi-Dimensional Constraints
-  - Evaluation Benchmark
-  - GRPO Training
-  - Attention Mechanism Analysis
+  - "ACL 2026"
+  - "LLM/NLP"
+  - "Instruction Following"
+  - "Multi-Dimensional Constraints"
+  - "Evaluation Benchmark"
+  - "GRPO Training"
+  - "Attention Mechanism Analysis"
 date: 2026-05-08
 content_hash: ec7bb57e7c247a98
 ---

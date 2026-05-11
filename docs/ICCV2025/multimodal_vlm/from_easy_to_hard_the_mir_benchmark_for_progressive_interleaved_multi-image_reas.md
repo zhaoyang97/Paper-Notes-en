@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From Easy to Hard: The MIR Benchmark for Progressive Interleaved Multi-Image Reasoning
 description: >-
-  [ICCV 2025][Multimodal VLM][multi-image reasoning] This paper proposes the MIR benchmark, comprising 22,257 multi-image interleaved reasoning QA pairs with five-stage reasoning steps, and introduces a progressive curriculum learning strategy that trains MLLMs from easy to hard samples to improve multi-image interleaved reasoning capability.
+  [ICCV 2025][Multimodal VLM][multi-image reasoning] This paper proposes the MIR benchmark, comprising 22,257 multi-image interleaved reasoning QA pairs with five-stage reasoning steps…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - multi-image reasoning
-  - interleaved data
-  - benchmark
-  - curriculum learning
-  - MLLM
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "multi-image reasoning"
+  - "interleaved data"
+  - "benchmark"
+  - "curriculum learning"
+  - "MLLM"
 date: 2026-05-08
 content_hash: 2a6049b7ecb6fc4d
 ---

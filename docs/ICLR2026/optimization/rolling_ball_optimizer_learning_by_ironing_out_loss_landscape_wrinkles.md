@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Rolling Ball Optimizer: Learning by Ironing Out Loss Landscape Wrinkles
 description: >-
-  [ICLR 2026][Optimization][optimizer] This paper proposes the Rolling Ball Optimizer (RBO), which breaks the spatial locality of conventional optimizers by simulating the rolling motion of a finite-radius rigid sphere over the loss landscape. This induces an ironing property on the loss function and demonstrates superior convergence speed and generalization performance on MNIST and CIFAR-10/100.
+  [ICLR 2026][Optimization][optimizer] This paper proposes the Rolling Ball Optimizer (RBO), which breaks the spatial locality of conventional optimizers by simulating the rolling motion of a finite-radius rigid sphere ove…
 tags:
-  - ICLR 2026
-  - Optimization
-  - optimizer
-  - loss landscape
-  - rolling ball
-  - smoothing effect
-  - generalization
+  - "ICLR 2026"
+  - "Optimization"
+  - "optimizer"
+  - "loss landscape"
+  - "rolling ball"
+  - "smoothing effect"
+  - "generalization"
 date: 2026-05-08
 content_hash: 0610fd7fd6317915
 ---

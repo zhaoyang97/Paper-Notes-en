@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Periodic Skill Discovery
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Unsupervised skill discovery] This paper proposes Periodic Skill Discovery (PSD), a framework that maps states onto a circular latent space to naturally encode periodicity, enabling unsupervised discovery of diverse locomotion skills with varying periods.
+  [NeurIPS 2025][Reinforcement Learning][Unsupervised skill discovery] This paper proposes Periodic Skill Discovery (PSD), a framework that maps states onto a circular latent space to naturally encode periodicity…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Unsupervised skill discovery
-  - periodic behavior
-  - circular latent space
-  - locomotion control
-  - robotics
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Unsupervised skill discovery"
+  - "periodic behavior"
+  - "circular latent space"
+  - "locomotion control"
+  - "robotics"
 date: 2026-05-08
 content_hash: a06934cc9f7894cc
 ---

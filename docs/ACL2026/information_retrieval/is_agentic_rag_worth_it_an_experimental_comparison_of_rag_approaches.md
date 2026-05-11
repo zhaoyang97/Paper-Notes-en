@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Is Agentic RAG Worth It? An Experimental Comparison of RAG Approaches
 description: >-
-  [ACL 2026][Retrieval-Augmented Generation] This paper systematically compares Enhanced RAG and Agentic RAG across four dimensions—user intent handling, query rewriting, document refinement, and underlying LLM selection—on four datasets. The results show that each paradigm has distinct advantages: Agentic RAG is more flexible in intent routing and query rewriting, while Enhanced RAG is more effective in document reranking. Notably, Agentic RAG incurs up to 3.3× higher cost.
+  [ACL 2026][Information Retrieval & RAG][Retrieval-Augmented Generation] This paper systematically compares Enhanced RAG and Agentic RAG across four dimensions—user intent handling, query rewriting, document refinement…
 tags:
-  - ACL 2026
-  - Retrieval-Augmented Generation
-  - Agentic RAG
-  - Enhanced RAG
-  - Query Rewriting
-  - Cost Analysis
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Retrieval-Augmented Generation"
+  - "Agentic RAG"
+  - "Enhanced RAG"
+  - "Query Rewriting"
+  - "Cost Analysis"
 date: 2026-05-08
 content_hash: ccf4572477ad7e99
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Scaling Test-Time Robustness of Vision-Language Models via Self-Critical Inference Framework
 description: >-
-  [CVPR 2026][Multimodal VLM][LVLM robustness] This paper proposes the Self-Critical Inference (SCI) framework, which simultaneously addresses language bias and language sensitivity in LVLMs via multi-round textual and visual counterfactual logit aggregation. A dynamic robustness benchmark, DRBench, is introduced to evaluate robustness in a model-specific manner. Increasing the number of counterfactual inference rounds yields consistent robustness gains, opening a new direction for test-time scaling.
+  [CVPR 2026][Multimodal VLM][LVLM robustness] This paper proposes the Self-Critical Inference (SCI) framework, which simultaneously addresses language bias and language sensitivity in LVLMs via multi-round textual and vis…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - LVLM robustness
-  - counterfactual reasoning
-  - language bias
-  - language sensitivity
-  - test-time scaling
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "LVLM robustness"
+  - "counterfactual reasoning"
+  - "language bias"
+  - "language sensitivity"
+  - "test-time scaling"
 date: 2026-05-08
 content_hash: 68779f41514d103c
 ---

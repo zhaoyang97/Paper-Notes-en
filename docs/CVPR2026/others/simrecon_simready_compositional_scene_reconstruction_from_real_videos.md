@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] SimRecon: SimReady Compositional Scene Reconstruction from Real Videos
 description: >-
-  [CVPR 2026][compositional scene reconstruction] This paper proposes SimRecon, a framework that automatically constructs simulation-ready compositional 3D scenes from real videos via a three-stage "perception → generation → simulation" pipeline. The core innovations are Active Viewpoint Optimization (AVO), which identifies the optimal projection viewpoint for single-object generation, and the Scene Graph Synthesizer (SGS), which guides physically plausible hierarchical assembly.
+  [CVPR 2026][compositional scene reconstruction] This paper proposes SimRecon, a framework that automatically constructs simulation-ready compositional 3D scenes from real videos via a three-stage "perception → generation…
 tags:
-  - CVPR 2026
-  - compositional scene reconstruction
-  - simulation-ready
-  - scene graph
-  - active viewpoint optimization
-  - physical assembly
+  - "CVPR 2026"
+  - "compositional scene reconstruction"
+  - "simulation-ready"
+  - "scene graph"
+  - "active viewpoint optimization"
+  - "physical assembly"
 date: 2026-05-08
 content_hash: 6ccf3be03f87ef55
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HCF: Hierarchical Cascade Framework for Distributed Multi-Stage Image Compression
 description: >-
-  [AAAI 2026][Model Compression][Image Compression] This paper proposes the HCF framework, which performs cross-node transformation directly in the latent space (avoiding pixel-domain recompression) and introduces policy-driven quantization control to achieve up to 12.64% BD-Rate PSNR improvement in distributed multi-stage image compression, while reducing FLOPs by up to 97.8% and GPU memory by up to 96.5%.
+  [AAAI 2026][Model Compression][Image Compression] This paper proposes the HCF framework, which performs cross-node transformation directly in the latent space (avoiding pixel-domain recompression) and introduces policy-d…
 tags:
-  - AAAI 2026
-  - Model Compression
-  - Image Compression
-  - Distributed Multi-Stage Compression
-  - Latent Space Transform
-  - Quantization Strategy
-  - Rate-Distortion Optimization
+  - "AAAI 2026"
+  - "Model Compression"
+  - "Image Compression"
+  - "Distributed Multi-Stage Compression"
+  - "Latent Space Transform"
+  - "Quantization Strategy"
+  - "Rate-Distortion Optimization"
 date: 2026-05-08
 content_hash: 38828c1fb09b03f6
 ---

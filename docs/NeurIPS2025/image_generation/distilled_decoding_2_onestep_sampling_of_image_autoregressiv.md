@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Distilled Decoding 2: One-step Sampling of Image Auto-regressive Models with Conditional Score Distillation
 description: >-
-  [NeurIPS 2025][Image Generation][Auto-regressive model acceleration] This paper proposes Distilled Decoding 2 (DD2), which reinterprets auto-regressive image models as conditional score models and designs a Conditional Score Distillation (CSD) loss to compress multi-step AR sampling into one-step generation. On ImageNet-256, DD2 achieves only a marginal FID degradation from 3.40 to 5.43 while obtaining 8.0× speedup (VAR) and 238× speedup (LlamaGen), closing 67% of the performance gap relative to DD1 and training 12.3× faster.
+  [NeurIPS 2025][Image Generation][Auto-regressive model acceleration] This paper proposes Distilled Decoding 2 (DD2), which reinterprets auto-regressive image models as conditional score models and designs a Conditional S…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Auto-regressive model acceleration
-  - one-step generation
-  - score distillation
-  - conditional score distillation
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Auto-regressive model acceleration"
+  - "one-step generation"
+  - "score distillation"
+  - "conditional score distillation"
 date: 2026-05-08
 content_hash: 1ecb85ce39d04dad
 ---

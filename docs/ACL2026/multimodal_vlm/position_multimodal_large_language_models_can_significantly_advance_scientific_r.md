@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Position: Multimodal Large Language Models Can Significantly Advance Scientific Reasoning
 description: >-
-  [ACL 2026][Multimodal VLM][Multimodal Large Language Models] This position paper argues that Multimodal Large Language Models (MLLMs) can significantly advance cross-disciplinary scientific reasoning. It proposes a four-stage research roadmap (broad knowledge recognition → analogical reasoning & generalization → insightful reasoning → creative hypothesis generation), and systematically surveys the current state of MLLM applications across mathematics, physics, chemistry, and biology, identifying five major challenges and eight future directions.
+  [ACL 2026][Multimodal VLM][Multimodal Large Language Models] This position paper argues that Multimodal Large Language Models (MLLMs) can significantly advance cross-disciplinary scientific reasoning. It proposes a four-…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Multimodal Large Language Models
-  - Scientific Reasoning
-  - Research Roadmap
-  - Mathematics Physics Chemistry Biology
-  - AGI
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Multimodal Large Language Models"
+  - "Scientific Reasoning"
+  - "Research Roadmap"
+  - "Mathematics Physics Chemistry Biology"
+  - "AGI"
 date: 2026-05-08
 content_hash: 745a6a8ac48f1271
 ---

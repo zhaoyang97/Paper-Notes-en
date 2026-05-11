@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ConlangCrafter: Constructing Languages with a Multi-Hop LLM Pipeline
 description: >-
-  [ACL 2026][Self-Supervised Learning][Constructed Language] This paper proposes ConlangCrafter, a multi-hop LLM pipeline that decomposes constructed language (conlang) design into three modular stages — phonology, grammar, and lexicon — ensuring typological diversity through randomness injection and internal consistency through self-refinement loops, along with an automatic evaluation framework incorporating typological diversity analysis and translation consistency assessment.
+  [ACL 2026][Self-Supervised Learning][Constructed Language] This paper proposes ConlangCrafter, a multi-hop LLM pipeline that decomposes constructed language (conlang) design into three modular stages — phonology, grammar…
 tags:
-  - ACL 2026
-  - Self-Supervised Learning
-  - Constructed Language
-  - Multi-Hop Reasoning
-  - Typological Diversity
-  - Self-Refinement
-  - Metalinguistic Reasoning
+  - "ACL 2026"
+  - "Self-Supervised Learning"
+  - "Constructed Language"
+  - "Multi-Hop Reasoning"
+  - "Typological Diversity"
+  - "Self-Refinement"
+  - "Metalinguistic Reasoning"
 date: 2025-05-08
 content_hash: 895caf7ab7c3470c
 ---

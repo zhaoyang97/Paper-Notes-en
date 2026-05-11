@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Human-AI Accessibility Mapping in India: VLM-Guided Annotations and POI-Centric Analysis in Chandigarh
 description: >-
-  [AAAI 2026][Multimodal VLM][Accessibility mapping] This paper adapts the Project Sidewalk accessibility annotation platform to Chandigarh, India, through customized interface labels, VLM-driven task guidance (Gemini 2.5 Flash), and a POI-centric analysis framework. Approximately 40 km of sidewalks are audited across three regions of distinct land use, identifying 1,644 locations where accessibility improvements can be made.
+  [AAAI 2026][Multimodal VLM][Accessibility mapping] This paper adapts the Project Sidewalk accessibility annotation platform to Chandigarh, India, through customized interface labels…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Accessibility mapping
-  - VLM-assisted annotation
-  - sidewalk accessibility
-  - POI analysis
-  - human-AI collaboration
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Accessibility mapping"
+  - "VLM-assisted annotation"
+  - "sidewalk accessibility"
+  - "POI analysis"
+  - "human-AI collaboration"
 date: 2026-05-08
 content_hash: 55d4d6a79d5323bf
 ---

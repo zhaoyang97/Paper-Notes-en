@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] QSVD: Efficient Low-Rank Approximation for Unified Query-Key-Value Weight Compression
 description: >-
-  [NeurIPS 2025][Model Compression][VLM compression] This paper proposes QSVD, which performs SVD on the joint QKV weight matrix and shares a single down-projection matrix across Q, K, and V to reduce KV cache size and computational overhead. Combined with importance-score-based adaptive rank allocation and a quantization scheme compatible with low-rank decomposition, QSVD achieves over 10% accuracy improvement on VLMs at lower hardware cost.
+  [NeurIPS 2025][Model Compression][VLM compression] This paper proposes QSVD, which performs SVD on the joint QKV weight matrix and shares a single down-projection matrix across Q, K…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - VLM compression
-  - SVD
-  - KV cache
-  - quantization
-  - low-rank approximation
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "VLM compression"
+  - "SVD"
+  - "KV cache"
+  - "quantization"
+  - "low-rank approximation"
 date: 2026-05-08
 content_hash: c7a3e1e293eda125
 ---

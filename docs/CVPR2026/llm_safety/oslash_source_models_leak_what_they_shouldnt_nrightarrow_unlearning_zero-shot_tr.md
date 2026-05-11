@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ⊘ Source Models Leak What They Shouldn't ↛: Unlearning Zero-Shot Transfer in Domain Adaptation Through Adversarial Optimization
 description: >-
-  [CVPR 2026][LLM Safety][Machine Unlearning] This work identifies that Source-Free Domain Adaptation (SFDA) methods inadvertently leak knowledge of source-exclusive classes to the target domain (zero-shot transfer phenomenon), and proposes the SCADA-UL framework, which performs category unlearning simultaneously with domain adaptation through adversarial generation of forget samples and a rescaled labeling strategy, achieving unlearning quality approaching that of retraining from scratch.
+  [CVPR 2026][LLM Safety][Machine Unlearning] This work identifies that Source-Free Domain Adaptation (SFDA) methods inadvertently leak knowledge of source-exclusive classes to the target domain (zero-shot transfer phenome…
 tags:
-  - CVPR 2026
-  - LLM Safety
-  - Machine Unlearning
-  - Source Domain Privacy Leakage
-  - Source-Free Domain Adaptation
-  - Adversarial Optimization
-  - Zero-Shot Transfer
+  - "CVPR 2026"
+  - "LLM Safety"
+  - "Machine Unlearning"
+  - "Source Domain Privacy Leakage"
+  - "Source-Free Domain Adaptation"
+  - "Adversarial Optimization"
+  - "Zero-Shot Transfer"
 date: 2026-05-08
 content_hash: 925ce3efafeef799
 ---

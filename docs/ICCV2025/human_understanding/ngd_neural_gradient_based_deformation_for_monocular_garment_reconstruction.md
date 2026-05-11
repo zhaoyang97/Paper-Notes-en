@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] NGD: Neural Gradient Based Deformation for Monocular Garment Reconstruction
 description: >-
-  [ICCV 2025][Human Understanding][garment reconstruction] This paper proposes NGD, a neural gradient-based deformation method that decomposes the Jacobian field into a frame-invariant static component and a frame-dependent dynamic component. Combined with an adaptive remeshing strategy, NGD reconstructs high-fidelity dynamic garment geometry and appearance from monocular video, significantly outperforming existing SOTA methods on challenging scenarios such as loose-fitting garments.
+  [ICCV 2025][Human Understanding][garment reconstruction] This paper proposes NGD, a neural gradient-based deformation method that decomposes the Jacobian field into a frame-invariant static component and a frame-dependen…
 tags:
-  - ICCV 2025
-  - Human Understanding
-  - garment reconstruction
-  - neural Jacobian field
-  - adaptive remeshing
-  - monocular video
-  - differentiable rendering
+  - "ICCV 2025"
+  - "Human Understanding"
+  - "garment reconstruction"
+  - "neural Jacobian field"
+  - "adaptive remeshing"
+  - "monocular video"
+  - "differentiable rendering"
 date: 2026-05-08
 content_hash: b43243d5264d769d
 ---

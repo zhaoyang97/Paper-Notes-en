@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UETrack: A Unified and Efficient Framework for Single Object Tracking
 description: >-
-  [CVPR 2026][Video Understanding][single object tracking] This paper proposes UETrack, a unified and efficient single object tracking framework capable of handling five modalities simultaneously: RGB, Depth, Thermal, Event, and Language. UETrack addresses a critical gap in efficient multi-modal tracking — existing efficient trackers are limited to RGB, while multi-modal trackers are too slow for practical deployment due to complex designs. The core contributions include: (1) Token-Pooling-based Mixture-of-Experts (TP-MoE), which replaces conventional gating mechanisms with similarity-based soft assignment to enable efficient expert collaboration and specialization; and (2) Target-aware Adaptive Distillation (TAD), which adaptively determines whether each sample is suitable for distillation, filtering out unreliable teacher signals. Evaluated across 12 benchmarks on 3 hardware platforms, UETrack achieves an optimal speed-accuracy trade-off — UETrack-B attains 69.2% AUC on LaSOT at 163/56/60 FPS on GPU/CPU/AGX respectively, with only 13M parameters.
+  [CVPR 2026][Video Understanding][single object tracking] This paper proposes UETrack, a unified and efficient single object tracking framework capable of handling five modalities simultaneously: RGB, Depth, Thermal…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - single object tracking
-  - multi-modal tracking
-  - mixture of experts
-  - knowledge distillation
-  - efficient inference
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "single object tracking"
+  - "multi-modal tracking"
+  - "mixture of experts"
+  - "knowledge distillation"
+  - "efficient inference"
 date: 2026-05-08
 content_hash: 0a093d8ea4f84d92
 ---

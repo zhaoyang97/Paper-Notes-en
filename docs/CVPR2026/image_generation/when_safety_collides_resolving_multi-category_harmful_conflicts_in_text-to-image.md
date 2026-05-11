@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] When Safety Collides: Resolving Multi-Category Harmful Conflicts in Text-to-Image Diffusion via Adaptive Safety Guidance
 description: >-
-  [Image Generation] This paper proposes Conflict-aware Adaptive Safety Guidance (CASG), a training-free plug-and-play framework that resolves safety degradation caused by directional conflicts in multi-category aggregation. CASG dynamically identifies the harmful category most aligned with the current generation state and applies safety guidance exclusively along that direction.
+  [Image Generation] This paper proposes Conflict-aware Adaptive Safety Guidance (CASG), a training-free plug-and-play framework that resolves safety degradation caused by directional conflicts in multi-category aggregatio…
 tags:
-  - Image Generation
+  - "Image Generation"
 date: 2026-05-08
 content_hash: 0384582b2676f8ce
 ---

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] EmotiCrafter: Text-to-Emotional-Image Generation based on Valence-Arousal Model
 description: >-
-  [Image Generation] EmotiCrafter is proposed as the first emotional image generation method based on a continuous Valence-Arousal (V-A) model. It integrates V-A values into text features via an emotional embedding mapping network, which is then injected into Stable Diffusion XL to achieve precise dual control over content and emotion. The generated images significantly outperform existing methods in terms of emotional continuity and controllability.
+  [Image Generation] EmotiCrafter is proposed as the first emotional image generation method based on a continuous Valence-Arousal (V-A) model. It integrates V-A values into text features via an emotional embedding mapping…
 tags:
-  - Image Generation
+  - "Image Generation"
 date: 2026-05-08
 content_hash: 1f7b371baf5256f6
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MultiHuman-Testbench: Benchmarking Image Generation for Multiple Humans
 description: >-
-  [NeurIPS 2025][Segmentation][Multi-human image generation] This paper introduces MultiHuman-Testbench, the first systematic benchmark for evaluating multi-human image generation. It comprises 1,800 test samples paired with 5,550 face images, a suite of multi-dimensional evaluation metrics including Hungarian-matching-based identity similarity, and proposes Regional Isolation and Implicit Region Assignment techniques to enhance existing methods without additional training.
+  [NeurIPS 2025][Segmentation][Multi-human image generation] This paper introduces MultiHuman-Testbench, the first systematic benchmark for evaluating multi-human image generation. It comprises 1…
 tags:
-  - NeurIPS 2025
-  - Segmentation
-  - Multi-human image generation
-  - identity preservation
-  - benchmark
-  - diffusion models
-  - regional isolation
+  - "NeurIPS 2025"
+  - "Segmentation"
+  - "Multi-human image generation"
+  - "identity preservation"
+  - "benchmark"
+  - "diffusion models"
+  - "regional isolation"
 date: 2026-05-08
 content_hash: 5b8c289b36c24be7
 ---

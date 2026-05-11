@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ICTPolarReal: A Polarized Reflection and Material Dataset of Real World Objects
 description: >-
-  [CVPR 2026][3D Vision][Polarized imaging] This paper presents ICTPolarReal, the first large-scale real-world polarized reflection and material dataset, capturing 218 everyday objects using an 8-camera, 346-light Light Stage system under cross- and parallel-polarization configurations. The dataset comprises over 1.2 million high-resolution images with ground-truth diffuse–specular reflection separation, and demonstrably improves inverse rendering, forward relighting, and sparse-view 3D reconstruction.
+  [CVPR 2026][3D Vision][Polarized imaging] This paper presents ICTPolarReal, the first large-scale real-world polarized reflection and material dataset, capturing 218 everyday objects using an 8-camera…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Polarized imaging
-  - material dataset
-  - inverse rendering
-  - reflection separation
-  - Light Stage
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Polarized imaging"
+  - "material dataset"
+  - "inverse rendering"
+  - "reflection separation"
+  - "Light Stage"
 date: 2026-05-08
 content_hash: 6cccd16484f37560
 ---

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Format as a Prior: Quantifying and Analyzing Bias in LLMs for Heterogeneous Data
 description: >-
-  [AAAI 2026][Graph Learning][Format Bias] This paper presents the first systematic investigation of format bias in LLMs when processing heterogeneous-format data (text / table / infobox / knowledge graph). Through a three-stage experimental framework, it reveals the existence of such bias, its data-level driving factors, and its internal causes at the attention mechanism level, and validates the effectiveness of attention rebalancing as an intervention.
+  [AAAI 2026][Graph Learning][Format Bias] This paper presents the first systematic investigation of format bias in LLMs when processing heterogeneous-format data (text / table / infobox / knowledge graph). Through a three…
 tags:
-  - AAAI 2026
-  - Graph Learning
-  - Format Bias
-  - LLM
-  - Heterogeneous Data
-  - Knowledge Graph
-  - Attention Mechanism
-  - Information Richness
-  - Structural Quality
+  - "AAAI 2026"
+  - "Graph Learning"
+  - "Format Bias"
+  - "LLM"
+  - "Heterogeneous Data"
+  - "Knowledge Graph"
+  - "Attention Mechanism"
+  - "Information Richness"
+  - "Structural Quality"
 date: 2026-05-08
 content_hash: f4501a50979361fd
 ---

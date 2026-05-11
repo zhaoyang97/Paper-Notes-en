@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] AMS-IO-Bench and AMS-IO-Agent: Benchmarking and Structured Reasoning for Analog and Mixed-Signal Integrated Circuit Input/Output Design
 description: >-
-  [AAAI 2026][LLM Agent] This paper proposes AMS-IO-Agent, a domain-specific LLM-based agent that transforms natural language design intent into production-ready analog and mixed-signal IC I/O ring designs via a structured Intent Graph and a domain knowledge base. It also introduces AMS-IO-Bench, the first benchmark for AMS I/O ring automation. The agent-generated I/O ring is validated in a 28nm CMOS tape-out and demonstrated to be directly applicable to real chip fabrication.
+  [AAAI 2026][LLM Agent] This paper proposes AMS-IO-Agent, a domain-specific LLM-based agent that transforms natural language design intent into production-ready analog and mixed-signal IC I/O ring designs via a structured…
 tags:
-  - AAAI 2026
-  - LLM Agent
-  - AMS IC
-  - I/O Ring
-  - EDA Automation
-  - Structured Reasoning
+  - "AAAI 2026"
+  - "LLM Agent"
+  - "AMS IC"
+  - "I/O Ring"
+  - "EDA Automation"
+  - "Structured Reasoning"
 date: 2026-05-08
 content_hash: 46ab77c34a3b3a56
 ---

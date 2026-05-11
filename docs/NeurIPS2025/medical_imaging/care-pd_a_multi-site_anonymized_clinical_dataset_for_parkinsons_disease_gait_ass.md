@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Care-PD: A Multi-Site Anonymized Clinical Dataset for Parkinson's Disease Gait Assessment
 description: >-
-  [NeurIPS 2025][Medical Imaging][Parkinson's disease] This work introduces Care-PD — the largest multi-site anonymized 3D mesh dataset for Parkinson's disease (PD) gait analysis to date, comprising 9 cohorts, 8 clinical centers, 362 subjects, and 8,477 walking bouts. It provides a systematic benchmark for UPDRS gait scoring and motion pre-training tasks, demonstrating that fine-tuning on Care-PD reduces MPJPE from 60.8 mm to 7.5 mm and improves F1 by 17 percentage points.
+  [NeurIPS 2025][Medical Imaging][Parkinson's disease] This work introduces Care-PD — the largest multi-site anonymized 3D mesh dataset for Parkinson's disease (PD) gait analysis to date, comprising 9 cohorts…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Parkinson's disease
-  - gait analysis
-  - SMPL 3D mesh
-  - multi-site dataset
-  - motion representation learning
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Parkinson's disease"
+  - "gait analysis"
+  - "SMPL 3D mesh"
+  - "multi-site dataset"
+  - "motion representation learning"
 date: 2026-05-08
 content_hash: e7491888dab72c29
 ---

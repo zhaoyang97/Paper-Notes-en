@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] MiCADangelo: Fine-Grained Reconstruction of Constrained CAD Models from 3D Scans
 description: >-
-  [NeurIPS 2025][CAD reverse engineering] MiCADangelo emulates the reverse engineering workflow of human CAD designers: it extracts 2D patterns via multi-plane cross-section analysis, predicts constrained parametric sketches, and optimizes extrusion parameters, achieving for the first time complete parametric model reconstruction with sketch constraints in 3D CAD reverse engineering.
+  [NeurIPS 2025][CAD reverse engineering] MiCADangelo emulates the reverse engineering workflow of human CAD designers: it extracts 2D patterns via multi-plane cross-section analysis…
 tags:
-  - NeurIPS 2025
-  - CAD reverse engineering
-  - sketch constraints
-  - cross-sectional slicing
-  - differentiable extrusion optimization
-  - parametric modeling
+  - "NeurIPS 2025"
+  - "CAD reverse engineering"
+  - "sketch constraints"
+  - "cross-sectional slicing"
+  - "differentiable extrusion optimization"
+  - "parametric modeling"
 date: 2026-05-08
 content_hash: 4a5a7a5a72317bfd
 ---

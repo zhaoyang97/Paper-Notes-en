@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GIQ: Benchmarking 3D Geometric Reasoning of Vision Foundation Models with Simulated and Real Polyhedra
 description: >-
-  [ICLR 2026][3D Vision][geometric reasoning] This work introduces the GIQ benchmark, comprising 224 synthetic and real polyhedra, and systematically evaluates the geometric reasoning capabilities of vision foundation models across four tasks—monocular 3D reconstruction, symmetry detection, mental rotation testing, and zero-shot classification—revealing significant deficiencies in the geometric understanding of current models.
+  [ICLR 2026][3D Vision][geometric reasoning] This work introduces the GIQ benchmark, comprising 224 synthetic and real polyhedra, and systematically evaluates the geometric reasoning capabilities of vision foundation mode…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - geometric reasoning
-  - benchmark
-  - polyhedra
-  - vision foundation models
-  - VLM evaluation
+  - "ICLR 2026"
+  - "3D Vision"
+  - "geometric reasoning"
+  - "benchmark"
+  - "polyhedra"
+  - "vision foundation models"
+  - "VLM evaluation"
 date: 2026-05-08
 content_hash: ded975abded5120d
 ---

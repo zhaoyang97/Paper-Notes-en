@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DreamVideo-Omni: Omni-Motion Controlled Multi-Subject Video Customization with Latent Identity Reinforcement Learning
 description: >-
-  [CVPR 2026][Image Generation][Video customization] DreamVideo-Omni is proposed as a two-stage progressive training paradigm—omni-motion identity supervised fine-tuning followed by latent identity reward feedback learning—that, within a single DiT architecture, for the first time unifies multi-subject customization with full-granularity motion control (global bounding boxes + local trajectories + camera motion).
+  [CVPR 2026][Image Generation][Video customization] DreamVideo-Omni is proposed as a two-stage progressive training paradigm—omni-motion identity supervised fine-tuning followed by latent identity reward feedback learning…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Video customization
-  - multi-subject identity preservation
-  - omni-motion control
-  - latent space reinforcement learning
-  - DiT
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Video customization"
+  - "multi-subject identity preservation"
+  - "omni-motion control"
+  - "latent space reinforcement learning"
+  - "DiT"
 date: 2026-05-08
 content_hash: ca6e6f65306172df
 ---

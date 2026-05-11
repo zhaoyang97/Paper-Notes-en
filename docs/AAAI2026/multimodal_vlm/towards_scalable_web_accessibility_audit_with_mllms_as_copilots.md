@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Scalable Web Accessibility Audit with MLLMs as Copilots
 description: >-
-  [AAAI2026][Multimodal VLM][web accessibility] This paper proposes the AAA framework, which operationalizes the WCAG-EM standard through two key innovations—GRASP (Graph-based multimodal page sampling) and MaC (MLLM as Copilot)—enabling scalable end-to-end web accessibility auditing.
+  [AAAI2026][Multimodal VLM][web accessibility] This paper proposes the AAA framework, which operationalizes the WCAG-EM standard through two key innovations—GRASP (Graph-based multimodal page sampling) and MaC (MLLM as Co…
 tags:
-  - AAAI2026
-  - Multimodal VLM
-  - web accessibility
-  - WCAG-EM
-  - multimodal LLM
-  - graph neural network
-  - page sampling
+  - "AAAI2026"
+  - "Multimodal VLM"
+  - "web accessibility"
+  - "WCAG-EM"
+  - "multimodal LLM"
+  - "graph neural network"
+  - "page sampling"
 date: 2026-05-08
 content_hash: d5d39aefc2cd447c
 ---

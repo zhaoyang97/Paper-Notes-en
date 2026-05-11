@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TraveLLaMA: A Multimodal Travel Assistant with Large-Scale Dataset and Structured Reasoning
 description: >-
-  [AAAI 2026][Recommender Systems][Multimodal Travel Assistant] This paper presents TraveLLaMA, a multimodal language model system for travel assistance. By constructing the TravelQA dataset with 265K QA pairs and the Travel-CoT structured reasoning framework, the system achieves a 10.8% accuracy improvement on travel-related question answering and obtains a SUS usability score of 82.5 in a 500-participant user study.
+  [AAAI 2026][Recommender Systems][Multimodal Travel Assistant] This paper presents TraveLLaMA, a multimodal language model system for travel assistance. By constructing the TravelQA dataset with 265K QA pairs and the Trav…
 tags:
-  - AAAI 2026
-  - Recommender Systems
-  - Multimodal Travel Assistant
-  - Vision-Language Model
-  - Chain-of-Thought Reasoning
-  - Travel Planning
-  - Dataset
+  - "AAAI 2026"
+  - "Recommender Systems"
+  - "Multimodal Travel Assistant"
+  - "Vision-Language Model"
+  - "Chain-of-Thought Reasoning"
+  - "Travel Planning"
+  - "Dataset"
 date: 2026-05-08
 content_hash: 16047a5fb5ea119b
 ---

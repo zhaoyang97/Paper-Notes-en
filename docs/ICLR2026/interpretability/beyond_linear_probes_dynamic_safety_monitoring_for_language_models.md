@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Beyond Linear Probes: Dynamic Safety Monitoring for Language Models
 description: >-
-  [ICLR 2026][Truncated Polynomial Classifier] This paper proposes the Truncated Polynomial Classifier (TPC), which enables dynamic safety monitoring by training a polynomial over LLM activation spaces order-by-order and evaluating via truncation at inference time. Low-order truncations (≈ linear probes) handle easy inputs quickly, while higher-order terms provide stronger protection for difficult inputs. TPC matches or outperforms MLP baselines on WildGuardMix and BeaverTails while offering built-in interpretability.
+  [ICLR 2026][Interpretability][Truncated Polynomial Classifier] This paper proposes the Truncated Polynomial Classifier (TPC), which enables dynamic safety monitoring by training a polynomial over LLM activation spaces or…
 tags:
-  - ICLR 2026
-  - Truncated Polynomial Classifier
-  - Safety Monitoring
-  - Dynamic Inference
-  - Linear Probes
-  - Activation Space
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Truncated Polynomial Classifier"
+  - "Safety Monitoring"
+  - "Dynamic Inference"
+  - "Linear Probes"
+  - "Activation Space"
 date: 2026-05-08
 content_hash: e565eca2dfed4c6e
 ---

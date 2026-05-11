@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AutoQD: Automatic Discovery of Diverse Behaviors with Quality-Diversity Optimization
 description: >-
-  [ICLR 2026][Reinforcement Learning][quality-diversity] AutoQD is proposed to embed policy occupancy measures into a finite-dimensional space via random Fourier features (RFF), followed by weighted PCA for dimensionality reduction to obtain behavior descriptors, enabling QD optimization without manually designed BDs. It comprehensively outperforms hand-crafted BDs and existing unsupervised QD methods across 6 continuous control tasks.
+  [ICLR 2026][Reinforcement Learning][quality-diversity] AutoQD is proposed to embed policy occupancy measures into a finite-dimensional space via random Fourier features (RFF)…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - quality-diversity
-  - occupancy measure
-  - random Fourier features
-  - behavior descriptor
-  - CMA-MAE
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "quality-diversity"
+  - "occupancy measure"
+  - "random Fourier features"
+  - "behavior descriptor"
+  - "CMA-MAE"
 date: 2026-05-08
 content_hash: cf0ad1392256c32c
 ---

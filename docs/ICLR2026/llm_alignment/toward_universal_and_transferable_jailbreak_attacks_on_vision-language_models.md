@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Toward Universal and Transferable Jailbreak Attacks on Vision-Language Models (UltraBreak)
 description: >-
-  [ICLR 2026][LLM Alignment][VLM jailbreak] This paper proposes UltraBreak, which combines a semantic adversarial objective (replacing cross-entropy with cosine similarity to produce a smooth loss landscape) and input-space constraints (random transformations + TV regularization to yield transformation-invariant features) to optimize a single universal adversarial image capable of jailbreaking 6+ VLM architectures and commercial models. The average black-box ASR reaches 71% on SafeBench, substantially outperforming prior methods.
+  [ICLR 2026][LLM Alignment][VLM jailbreak] This paper proposes UltraBreak, which combines a semantic adversarial objective (replacing cross-entropy with cosine similarity to produce a smooth loss landscape) and input-spac…
 tags:
-  - ICLR 2026
-  - LLM Alignment
-  - VLM jailbreak
-  - adversarial attack
-  - universal adversarial image
-  - semantic loss
-  - transferable attack
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "VLM jailbreak"
+  - "adversarial attack"
+  - "universal adversarial image"
+  - "semantic loss"
+  - "transferable attack"
 date: 2026-05-08
 content_hash: e7a58d90c6779fc2
 ---

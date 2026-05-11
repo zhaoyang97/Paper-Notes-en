@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LATTE: Collaborative Test-Time Adaptation of Vision-Language Models in Federated Learning
 description: >-
-  [ICCV 2025][Multimodal VLM][Test-Time Adaptation] This paper proposes Latte, a framework that enables collaborative test-time adaptation of vision-language models (e.g., CLIP) in decentralized federated learning settings. Through a dual-memory mechanism combining local and external memory, Latte achieves cross-client knowledge sharing while preserving client-level personalization.
+  [ICCV 2025][Multimodal VLM][Test-Time Adaptation] This paper proposes Latte, a framework that enables collaborative test-time adaptation of vision-language models (e.g.…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Test-Time Adaptation
-  - Federated Learning
-  - Vision-Language Models
-  - Memory Cache
-  - CLIP
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Test-Time Adaptation"
+  - "Federated Learning"
+  - "Vision-Language Models"
+  - "Memory Cache"
+  - "CLIP"
 date: 2026-05-08
 content_hash: 6a283be124e940b4
 ---

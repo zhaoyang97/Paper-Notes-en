@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Orient Anything V2: Unifying Orientation and Rotation Understanding
 description: >-
-  [NeurIPS 2025][Image Generation][orientation estimation] Orient Anything V2 unifies 3D object orientation and rotation understanding via a scalable synthetic data engine, a symmetry-aware periodic distribution objective, and a multi-frame architecture, achieving zero-shot state-of-the-art performance across three tasks: orientation estimation, 6DoF pose estimation, and symmetry recognition.
+  [NeurIPS 2025][Image Generation][orientation estimation] Orient Anything V2 unifies 3D object orientation and rotation understanding via a scalable synthetic data engine, a symmetry-aware periodic distribution objective…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - orientation estimation
-  - rotational symmetry
-  - 6DoF pose estimation
-  - synthetic data
-  - foundation model
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "orientation estimation"
+  - "rotational symmetry"
+  - "6DoF pose estimation"
+  - "synthetic data"
+  - "foundation model"
 date: 2026-05-08
 content_hash: d3f3a9b5270347fd
 ---

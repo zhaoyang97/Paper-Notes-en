@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TextShield-R1: Reinforced Reasoning for Tampered Text Detection
 description: >-
-  [AAAI 2026][Reinforcement Learning][Tampered Text Detection] This paper proposes TextShield-R1, the first reinforcement learning-based multimodal large language model (MLLM) method for tampered text detection. The approach integrates forensic continual pre-training (a curriculum from natural images to text images), GRPO reinforcement learning (five carefully designed reward functions to reduce annotation dependency), and OCR rectification (leveraging the MLLM's text recognition capability to improve localization accuracy). Together with the newly introduced TFR benchmark (45K+ images, 16 languages, 10 tampering techniques), this work substantially advances the state of the art in interpretable tampered text detection.
+  [AAAI 2026][Reinforcement Learning][Tampered Text Detection] This paper proposes TextShield-R1, the first reinforcement learning-based multimodal large language model (MLLM) method for tampered text detection. The approa…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - Tampered Text Detection
-  - Multimodal Large Language Models
-  - GRPO
-  - Continual Pre-training
-  - Text Forensics
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "Tampered Text Detection"
+  - "Multimodal Large Language Models"
+  - "GRPO"
+  - "Continual Pre-training"
+  - "Text Forensics"
 date: 2026-05-08
 content_hash: 814a3dc6c5bf31d5
 ---

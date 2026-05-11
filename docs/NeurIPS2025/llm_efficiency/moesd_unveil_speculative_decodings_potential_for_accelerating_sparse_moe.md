@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MoESD: Revealing the Potential of Speculative Decoding to Accelerate Sparse MoE
 description: >-
-  [NeurIPS 2025][LLM Efficiency][Speculative Decoding] This work challenges the prevailing belief that speculative decoding (SD) is ineffective for MoE models. Through theoretical analysis and experiments, it demonstrates that MoE models benefit more from SD than dense models at medium batch sizes. The paper introduces *target efficiency* as a system-level metric to quantify acceleration bottlenecks, constructs a reliable performance prediction model, and achieves up to 2.29× speedup on Qwen2-57B-A14B.
+  [NeurIPS 2025][LLM Efficiency][Speculative Decoding] This work challenges the prevailing belief that speculative decoding (SD) is ineffective for MoE models. Through theoretical analysis and experiments…
 tags:
-  - NeurIPS 2025
-  - LLM Efficiency
-  - Speculative Decoding
-  - MoE Inference
-  - Sparsity Analysis
-  - Target Efficiency
-  - Performance Modeling
+  - "NeurIPS 2025"
+  - "LLM Efficiency"
+  - "Speculative Decoding"
+  - "MoE Inference"
+  - "Sparsity Analysis"
+  - "Target Efficiency"
+  - "Performance Modeling"
 date: 2026-05-08
 content_hash: c1aaaa97d91028de
 ---

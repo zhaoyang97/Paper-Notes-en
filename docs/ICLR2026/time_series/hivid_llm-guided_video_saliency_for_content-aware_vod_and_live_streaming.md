@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HiVid: LLM-Guided Video Saliency For Content-Aware VOD And Live Streaming
 description: >-
-  [ICLR 2026][Time Series][video saliency] This paper proposes HiVid, the first framework to leverage LLMs as human proxies for generating content importance weights for video chunks. Through a Perception module (sliding-window scoring), a Ranking module (LLM-guided merge sort to eliminate scoring bias), and a Prediction module (multimodal time series forecasting with adaptive latency), HiVid enables content-aware streaming, achieving an 11.5% improvement in VOD PLCC, a 26% gain in live streaming prediction, and a 14.7% improvement in human MOS correlation.
+  [ICLR 2026][Time Series][video saliency] This paper proposes HiVid, the first framework to leverage LLMs as human proxies for generating content importance weights for video chunks. Through a Perception module (sliding-w…
 tags:
-  - ICLR 2026
-  - Time Series
-  - video saliency
-  - LLM-as-judge
-  - content-aware streaming
-  - time series forecasting
-  - adaptive bitrate
+  - "ICLR 2026"
+  - "Time Series"
+  - "video saliency"
+  - "LLM-as-judge"
+  - "content-aware streaming"
+  - "time series forecasting"
+  - "adaptive bitrate"
 date: 2026-05-08
 content_hash: d41e252074064fde
 ---

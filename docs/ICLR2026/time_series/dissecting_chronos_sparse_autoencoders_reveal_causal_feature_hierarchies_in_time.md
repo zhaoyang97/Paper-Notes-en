@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Dissecting Chronos: Sparse Autoencoders Reveal Causal Feature Hierarchies in Time Series Foundation Models
 description: >-
-  [ICLR 2026][Time Series][Sparse Autoencoder] This work is the first to apply Sparse Autoencoders (SAEs) to a time series foundation model (Chronos-T5-Large), revealing a depth-dependent feature hierarchy through 392 causal ablation experiments: mid-layer encoders concentrate causally critical change-point detection features, whereas the semantically richest final encoder layer exhibits the lowest causal importance.
+  [ICLR 2026][Time Series][Sparse Autoencoder] This work is the first to apply Sparse Autoencoders (SAEs) to a time series foundation model (Chronos-T5-Large)…
 tags:
-  - ICLR 2026
-  - Time Series
-  - Sparse Autoencoder
-  - Time Series Foundation Model
-  - mechanistic interpretability
-  - Chronos-T5
-  - Causal Ablation
-  - Feature Hierarchy
+  - "ICLR 2026"
+  - "Time Series"
+  - "Sparse Autoencoder"
+  - "Time Series Foundation Model"
+  - "mechanistic interpretability"
+  - "Chronos-T5"
+  - "Causal Ablation"
+  - "Feature Hierarchy"
 date: 2026-05-08
 content_hash: b039664ffde1c942
 ---

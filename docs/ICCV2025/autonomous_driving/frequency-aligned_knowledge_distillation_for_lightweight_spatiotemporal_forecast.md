@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SDKD: Frequency-Aligned Knowledge Distillation for Lightweight Spatiotemporal Forecasting
 description: >-
-  [ICCV 2025][Autonomous Driving][Spatiotemporal Forecasting] This paper proposes SDKD (Spectral Decoupled Knowledge Distillation), a framework that leverages a frequency-aware teacher model and a frequency-aligned distillation strategy to transfer multi-scale spectral knowledge from complex spatiotemporal forecasting models to lightweight student networks, achieving up to 81.3% MSE reduction on the Navier-Stokes dataset.
+  [ICCV 2025][Autonomous Driving][Spatiotemporal Forecasting] This paper proposes SDKD (Spectral Decoupled Knowledge Distillation), a framework that leverages a frequency-aware teacher model and a frequency-aligned distill…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - Spatiotemporal Forecasting
-  - Knowledge Distillation
-  - Frequency Decoupling
-  - Lightweight Models
-  - CNN-Transformer Hybrid Architecture
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "Spatiotemporal Forecasting"
+  - "Knowledge Distillation"
+  - "Frequency Decoupling"
+  - "Lightweight Models"
+  - "CNN-Transformer Hybrid Architecture"
 date: 2026-05-08
 content_hash: 1fd1fd4fd9049b4f
 ---

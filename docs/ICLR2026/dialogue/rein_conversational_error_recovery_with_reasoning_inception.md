@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] ReIn: Conversational Error Recovery with Reasoning Inception
 description: >-
-  [ICLR 2026][Dialogue Systems][conversational agents] This paper proposes Reasoning Inception (ReIn), a test-time intervention method that requires no modification to model parameters or system prompts. An external inception module detects conversational errors and injects recovery plans into the task agent's reasoning chain, significantly improving task completion rates across diverse error scenarios while generalizing to unseen error types.
+  [ICLR 2026][Dialogue Systems][conversational agents] This paper proposes Reasoning Inception (ReIn), a test-time intervention method that requires no modification to model parameters or system prompts. An external incept…
 tags:
-  - ICLR 2026
-  - Dialogue Systems
-  - conversational agents
-  - error recovery
-  - test-time intervention
-  - reasoning injection
-  - tool-augmented dialogue
-  - instruction hierarchy
+  - "ICLR 2026"
+  - "Dialogue Systems"
+  - "conversational agents"
+  - "error recovery"
+  - "test-time intervention"
+  - "reasoning injection"
+  - "tool-augmented dialogue"
+  - "instruction hierarchy"
 date: 2026-05-08
 content_hash: f5d5dfa9dc78c5e6
 ---

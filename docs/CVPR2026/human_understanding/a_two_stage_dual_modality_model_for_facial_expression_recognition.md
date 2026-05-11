@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Two-Stage Dual-Modality Model for Facial Expression Recognition
 description: >-
-  [CVPR 2026][Human Understanding][Facial Expression Recognition] A two-stage dual-modality framework for facial expression recognition is proposed: Stage I adapts a DINOv2 encoder on external datasets via padding-aware augmentation and a training-only MoE head; Stage II performs frame-level audio-visual expression classification using multi-scale facial crops, Wav2Vec 2.0 audio features, and a gated fusion module, achieving 0.5368 Macro-F1 in the ABAW 2026 competition.
+  [CVPR 2026][Human Understanding][Facial Expression Recognition] A two-stage dual-modality framework for facial expression recognition is proposed: Stage I adapts a DINOv2 encoder on external datasets via padding-aware au…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Facial Expression Recognition
-  - DINOv2
-  - Audio-Visual Fusion
-  - Mixture of Experts
-  - Data Augmentation
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Facial Expression Recognition"
+  - "DINOv2"
+  - "Audio-Visual Fusion"
+  - "Mixture of Experts"
+  - "Data Augmentation"
 date: 2026-05-08
 content_hash: 1c87c893350a27cc
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Bongard-RWR+: Real-World Representations of Fine-Grained Concepts in Bongard Problems
 description: >-
-  [ICLR 2026][Multimodal VLM][Bongard problems] Bongard-RWR+ is a benchmark comprising 5,400 Bongard problems, constructed via a VLM-based pipeline (Pixtral-12B + Flux.1-dev) that automatically generates photorealistic images to represent abstract concepts. Systematic evaluation reveals that state-of-the-art VLMs struggle to discriminate fine-grained visual concepts such as contour, rotation, and angle, with accuracy dropping as low as 19%.
+  [ICLR 2026][Multimodal VLM][Bongard problems] Bongard-RWR+ is a benchmark comprising 5,400 Bongard problems, constructed via a VLM-based pipeline (Pixtral-12B + Flux.1-dev) that automatically generates photorealistic ima…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Bongard problems
-  - abstract visual reasoning
-  - few-shot learning
-  - VLM benchmark
-  - fine-grained concepts
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Bongard problems"
+  - "abstract visual reasoning"
+  - "few-shot learning"
+  - "VLM benchmark"
+  - "fine-grained concepts"
 date: 2026-05-08
 content_hash: d245022a5c5b705c
 ---

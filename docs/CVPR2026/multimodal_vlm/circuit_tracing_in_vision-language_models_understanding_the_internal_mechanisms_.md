@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Circuit Tracing in Vision-Language Models: Understanding the Internal Mechanisms of Multimodal Thinking
 description: >-
-  [CVPR 2026][Multimodal VLM][Interpretability] This paper proposes the first circuit tracing framework for VLMs, training per-layer transcoders on Gemma-3-4B and constructing attribution graphs to reveal the hierarchical integration mechanisms underlying multimodal reasoning, visual arithmetic circuits, and the internal causes of six-finger hallucinations. The causal controllability of the discovered circuits is validated through feature steering and circuit patching.
+  [CVPR 2026][Multimodal VLM][Interpretability] This paper proposes the first circuit tracing framework for VLMs, training per-layer transcoders on Gemma-3-4B and constructing attribution graphs to reveal the hierarchical…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Interpretability
-  - Circuit Tracing
-  - Transcoder
-  - Attribution Graph
-  - Feature Steering
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Interpretability"
+  - "Circuit Tracing"
+  - "Transcoder"
+  - "Attribution Graph"
+  - "Feature Steering"
 date: 2026-05-08
 content_hash: b0831fe60dc38a8b
 ---

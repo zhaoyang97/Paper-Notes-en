@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] 3-Model Speculative Decoding (PyramidSD)
 description: >-
-  [NeurIPS 2025][LLM Efficiency][speculative decoding] PyramidSD introduces a three-tier pyramid decoding architecture by inserting an intermediate "qualifier" model between the draft model ($M_D$) and target model ($M_T$) in standard speculative decoding. The method exploits the natural entropy gradient across model scales within a model family to hierarchically filter tokens, and employs a fuzzy acceptance criterion to relax the matching threshold, achieving up to 1.91× speedup (reaching 124 tok/s on an RTX 4090).
+  [NeurIPS 2025][LLM Efficiency][speculative decoding] PyramidSD introduces a three-tier pyramid decoding architecture by inserting an intermediate "qualifier" model between the draft model ($M_D$) and target model ($M_T$)…
 tags:
-  - NeurIPS 2025
-  - LLM Efficiency
-  - speculative decoding
-  - multi-model cascade
-  - fuzzy acceptance criterion
-  - LLM inference optimization
+  - "NeurIPS 2025"
+  - "LLM Efficiency"
+  - "speculative decoding"
+  - "multi-model cascade"
+  - "fuzzy acceptance criterion"
+  - "LLM inference optimization"
 date: 2026-05-08
 content_hash: 10fb5331a539063e
 ---

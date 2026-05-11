@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DADM: Dual Alignment of Domain and Modality for Face Anti-Spoofing
 description: >-
-  [ICCV 2025][Multimodal VLM][Face Anti-Spoofing] This paper proposes the DADM framework, which simultaneously addresses intra-domain modality misalignment and inter-domain modality misalignment in multimodal face anti-spoofing via a Mutual Information Mask (MIM) module and a dual domain-modality alignment optimization strategy, achieving state-of-the-art performance across four evaluation protocols.
+  [ICCV 2025][Multimodal VLM][Face Anti-Spoofing] This paper proposes the DADM framework, which simultaneously addresses intra-domain modality misalignment and inter-domain modality misalignment in multimodal face anti-spo…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Face Anti-Spoofing
-  - Multimodal Fusion
-  - Domain Generalization
-  - Mutual Information
-  - Invariant Risk Minimization
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Face Anti-Spoofing"
+  - "Multimodal Fusion"
+  - "Domain Generalization"
+  - "Mutual Information"
+  - "Invariant Risk Minimization"
 date: 2026-05-08
 content_hash: 8407e5b42a9c8e90
 ---

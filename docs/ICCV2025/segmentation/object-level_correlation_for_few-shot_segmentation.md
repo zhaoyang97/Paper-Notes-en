@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Object-level Correlation for Few-Shot Segmentation
 description: >-
-  [ICCV 2025][Segmentation][few-shot segmentation] OCNet is proposed to construct **object-level** (rather than image-level) support-query correlations by emulating biological visual processes. It first mines generic objects in the query image and then identifies the target object among them, effectively suppressing irrelevant object noise in the background.
+  [ICCV 2025][Segmentation][few-shot segmentation] OCNet is proposed to construct **object-level** (rather than image-level) support-query correlations by emulating biological visual processes. It first mines generic objec…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - few-shot segmentation
-  - object-level correlation
-  - prototype learning
-  - optimal transport
-  - hard pixel noise
+  - "ICCV 2025"
+  - "Segmentation"
+  - "few-shot segmentation"
+  - "object-level correlation"
+  - "prototype learning"
+  - "optimal transport"
+  - "hard pixel noise"
 date: 2026-05-08
 content_hash: 18275f0ea372f9d9
 ---

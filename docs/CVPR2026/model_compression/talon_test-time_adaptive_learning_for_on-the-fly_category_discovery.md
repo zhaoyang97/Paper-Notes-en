@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TALON: Test-time Adaptive Learning for On-the-Fly Category Discovery
 description: >-
-  [CVPR2026][Model Compression][On-the-Fly Category Discovery] This paper proposes TALON, the first test-time adaptive framework for On-the-Fly Category Discovery (OCD). By combining semantics-aware prototype updating, stable encoder adaptation, and margin-aware logit calibration, TALON operates directly in continuous feature space without hash encoding, substantially alleviating category explosion and significantly improving novel category discovery accuracy.
+  [CVPR2026][Model Compression][On-the-Fly Category Discovery] This paper proposes TALON, the first test-time adaptive framework for On-the-Fly Category Discovery (OCD). By combining semantics-aware prototype updating…
 tags:
-  - CVPR2026
-  - Model Compression
-  - On-the-Fly Category Discovery
-  - Test-Time Adaptation
-  - Prototype Learning
-  - Category Explosion
-  - Semantic Shift
+  - "CVPR2026"
+  - "Model Compression"
+  - "On-the-Fly Category Discovery"
+  - "Test-Time Adaptation"
+  - "Prototype Learning"
+  - "Category Explosion"
+  - "Semantic Shift"
 date: 2026-05-08
 content_hash: 97883c186feee3a0
 ---

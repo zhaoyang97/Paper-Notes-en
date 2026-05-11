@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OmniSegmentor: A Flexible Multi-Modal Learning Framework for Semantic Segmentation
 description: >-
-  [NeurIPS 2025][Segmentation][Multi-modal pretraining] OmniSegmentor constructs a large-scale ImageNeXt dataset encompassing 5 visual modalities (1.2M samples), proposes an efficient pretraining strategy that randomly selects one supplementary modality to align with RGB per iteration, and establishes the first flexible multi-modal pretrain-finetune pipeline, achieving state-of-the-art results on 6 multi-modal semantic segmentation benchmarks.
+  [NeurIPS 2025][Segmentation][Multi-modal pretraining] OmniSegmentor constructs a large-scale ImageNeXt dataset encompassing 5 visual modalities (1.2M samples)…
 tags:
-  - NeurIPS 2025
-  - Segmentation
-  - Multi-modal pretraining
-  - ImageNeXt
-  - Semantic Segmentation
-  - Modality Alignment
-  - Pretrain-Finetune
+  - "NeurIPS 2025"
+  - "Segmentation"
+  - "Multi-modal pretraining"
+  - "ImageNeXt"
+  - "Semantic Segmentation"
+  - "Modality Alignment"
+  - "Pretrain-Finetune"
 date: 2026-05-08
 content_hash: 406dec88488d00cb
 ---

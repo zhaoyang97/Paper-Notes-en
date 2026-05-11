@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LLaVAShield: Safeguarding Multimodal Multi-Turn Dialogues in Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Multimodal multi-turn dialogue safety] Addressing three core challenges in multimodal multi-turn VLM dialogues—concealed malicious intent, cumulative contextual risk, and cross-modal joint risk—this work constructs the MMDS dataset (4,484 annotated dialogues) and the MCTS-based MMRT red-teaming framework, and proposes the LLaVAShield auditing model, achieving F1 scores of 95.71%/92.24% on the user/assistant sides respectively, substantially outperforming baselines such as GPT-5-mini.
+  [CVPR 2026][Multimodal VLM][Multimodal multi-turn dialogue safety] Addressing three core challenges in multimodal multi-turn VLM dialogues—concealed malicious intent, cumulative contextual risk…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Multimodal multi-turn dialogue safety
-  - content moderation
-  - red-teaming
-  - MCTS
-  - risk taxonomy
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Multimodal multi-turn dialogue safety"
+  - "content moderation"
+  - "red-teaming"
+  - "MCTS"
+  - "risk taxonomy"
 date: 2026-05-08
 content_hash: 6daf61bc34ed677e
 ---

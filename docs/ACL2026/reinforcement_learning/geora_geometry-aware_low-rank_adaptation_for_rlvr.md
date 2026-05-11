@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GeoRA: Geometry-Aware Low-Rank Adaptation for RLVR
 description: >-
-  [ACL 2026][Reinforcement Learning][Low-rank adaptation] This paper proposes GeoRA, a low-rank adaptation method specifically designed for Reinforcement Learning with Verifiable Rewards (RLVR). It constructs a geometry-constrained matrix that fuses spectral and Euclidean priors to extract the principal directions of the RL update subspace for SVD initialization, while freezing a residual matrix as a structural anchor. On Qwen/Llama models ranging from 1.5B to 32B parameters, GeoRA consistently outperforms baselines such as LoRA, PiSSA, and MiLoRA across mathematical, medical, and code RLVR tasks, with stronger out-of-domain generalization and reduced capability forgetting.
+  [ACL 2026][Reinforcement Learning][Low-rank adaptation] This paper proposes GeoRA, a low-rank adaptation method specifically designed for Reinforcement Learning with Verifiable Rewards (RLVR). It constructs a geometry-co…
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - Low-rank adaptation
-  - RLVR
-  - geometry-aware
-  - SVD initialization
-  - parameter-efficient fine-tuning
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "Low-rank adaptation"
+  - "RLVR"
+  - "geometry-aware"
+  - "SVD initialization"
+  - "parameter-efficient fine-tuning"
 date: 2026-05-08
 content_hash: 4c1d3298e872a9b5
 ---

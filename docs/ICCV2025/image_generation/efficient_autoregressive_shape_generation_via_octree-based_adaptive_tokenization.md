@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Efficient Autoregressive Shape Generation via Octree-Based Adaptive Tokenization
 description: >-
-  [ICCV 2025][Image Generation][3D shape generation] OAT proposes an adaptive octree tokenization scheme guided by quadric error metrics (QEM) that dynamically allocates token budgets according to local geometric complexity. It reduces token count by 50% while preserving reconstruction quality, and builds upon this foundation an autoregressive model, OctreeGPT, for high-quality text-to-3D generation.
+  [ICCV 2025][Image Generation][3D shape generation] OAT proposes an adaptive octree tokenization scheme guided by quadric error metrics (QEM) that dynamically allocates token budgets according to local geometric complexit…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - 3D shape generation
-  - octree
-  - adaptive tokenization
-  - autoregressive model
-  - vector quantization
+  - "ICCV 2025"
+  - "Image Generation"
+  - "3D shape generation"
+  - "octree"
+  - "adaptive tokenization"
+  - "autoregressive model"
+  - "vector quantization"
 date: 2026-05-08
 content_hash: 95116ffd77dd5fbe
 ---

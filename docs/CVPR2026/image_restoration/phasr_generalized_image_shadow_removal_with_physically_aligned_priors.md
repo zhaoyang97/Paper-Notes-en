@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PhaSR: Generalized Image Shadow Removal with Physically Aligned Priors
 description: >-
-  [CVPR 2026][Image Restoration][Shadow Removal] PhaSR introduces a dual-level physically aligned prior framework: at the global level, PAN performs parameter-free Retinex decomposition to suppress color bias; at the local level, GSRA employs differential attention to align DepthAnything depth priors with DINO-v2 semantic embeddings. This enables generalized shadow removal spanning from single-source direct illumination to multi-source ambient lighting scenes, achieving state-of-the-art performance on WSRD+ and Ambient6K with the lowest FLOPs.
+  [CVPR 2026][Image Restoration][Shadow Removal] PhaSR introduces a dual-level physically aligned prior framework: at the global level, PAN performs parameter-free Retinex decomposition to suppress color bias…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Shadow Removal
-  - Retinex Decomposition
-  - Differential Attention
-  - Geometry-Semantic Prior Alignment
-  - Ambient Light Normalization
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Shadow Removal"
+  - "Retinex Decomposition"
+  - "Differential Attention"
+  - "Geometry-Semantic Prior Alignment"
+  - "Ambient Light Normalization"
 date: 2026-05-08
 content_hash: abde7e7bad7940c0
 ---

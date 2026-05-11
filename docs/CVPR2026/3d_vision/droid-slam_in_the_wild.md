@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DROID-W: DROID-SLAM in the Wild
 description: >-
-  [CVPR 2026][3D Vision][SLAM] This paper proposes DROID-W, which introduces uncertainty estimation into differentiable Bundle Adjustment (Uncertainty-aware BA), combined with a DINOv2-feature-driven dynamic uncertainty update mechanism and monocular depth regularization, enabling robust camera pose estimation and scene reconstruction for DROID-SLAM in highly dynamic in-the-wild scenarios at approximately 10 FPS in real time.
+  [CVPR 2026][3D Vision][SLAM] This paper proposes DROID-W, which introduces uncertainty estimation into differentiable Bundle Adjustment (Uncertainty-aware BA)…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - SLAM
-  - dynamic scenes
-  - uncertainty estimation
-  - bundle adjustment
-  - DINOv2
+  - "CVPR 2026"
+  - "3D Vision"
+  - "SLAM"
+  - "dynamic scenes"
+  - "uncertainty estimation"
+  - "bundle adjustment"
+  - "DINOv2"
 date: 2026-05-08
 content_hash: 7acf5f16e56ff763
 ---

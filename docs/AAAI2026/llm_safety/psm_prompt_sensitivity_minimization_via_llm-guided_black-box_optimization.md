@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PSM: Prompt Sensitivity Minimization via LLM-Guided Black-Box Optimization
 description: >-
-  [AAAI 2026][LLM Safety][System Prompt Security] This paper proposes PSM, a framework that formalizes system prompt protection as a utility-constrained black-box optimization problem. By leveraging LLM-as-Optimizer, PSM automatically searches for an optimal "shield" suffix that reduces prompt extraction attack success rates to near zero without degrading model functionality.
+  [AAAI 2026][LLM Safety][System Prompt Security] This paper proposes PSM, a framework that formalizes system prompt protection as a utility-constrained black-box optimization problem. By leveraging LLM-as-Optimizer…
 tags:
-  - AAAI 2026
-  - LLM Safety
-  - System Prompt Security
-  - Prompt Extraction Attack
-  - Black-Box Optimization
-  - LLM-as-Optimizer
-  - Defense Shield
+  - "AAAI 2026"
+  - "LLM Safety"
+  - "System Prompt Security"
+  - "Prompt Extraction Attack"
+  - "Black-Box Optimization"
+  - "LLM-as-Optimizer"
+  - "Defense Shield"
 date: 2026-05-08
 content_hash: 603dd52e695e1873
 ---

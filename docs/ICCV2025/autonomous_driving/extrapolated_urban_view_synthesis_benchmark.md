@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Extrapolated Urban View Synthesis Benchmark
 description: >-
-  [ICCV2025][Autonomous Driving][novel view synthesis] This paper presents the first Extrapolated Urban View Synthesis (EUVS) benchmark, which leverages publicly available multi-traversal/multi-vehicle/multi-camera datasets to systematically evaluate the generalization ability of 3DGS and NeRF methods under extrapolation settings, revealing that current methods severely overfit to training viewpoints.
+  [ICCV2025][Autonomous Driving][novel view synthesis] This paper presents the first Extrapolated Urban View Synthesis (EUVS) benchmark, which leverages publicly available multi-traversal/multi-vehicle/multi-camera dataset…
 tags:
-  - ICCV2025
-  - Autonomous Driving
-  - novel view synthesis
-  - 3D Gaussian Splatting
-  - benchmark
-  - extrapolation
+  - "ICCV2025"
+  - "Autonomous Driving"
+  - "novel view synthesis"
+  - "3D Gaussian Splatting"
+  - "benchmark"
+  - "extrapolation"
 date: 2026-05-08
 content_hash: d583281ede7c24cc
 ---

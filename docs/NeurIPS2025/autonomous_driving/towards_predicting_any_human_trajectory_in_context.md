@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Predicting Any Human Trajectory in Context
 description: >-
-  [NeurIPS 2025][Autonomous Driving][pedestrian trajectory prediction] This paper proposes TrajICL, an in-context learning (ICL) framework for pedestrian trajectory prediction that achieves cross-scene adaptive prediction without fine-tuning through spatiotemporal similarity-based example selection and prediction-guided example selection, surpassing even fine-tuned baselines.
+  [NeurIPS 2025][Autonomous Driving][pedestrian trajectory prediction] This paper proposes TrajICL, an in-context learning (ICL) framework for pedestrian trajectory prediction that achieves cross-scene adaptive prediction…
 tags:
-  - NeurIPS 2025
-  - Autonomous Driving
-  - pedestrian trajectory prediction
-  - in-context learning
-  - cross-domain adaptation
-  - synthetic data
-  - example selection
+  - "NeurIPS 2025"
+  - "Autonomous Driving"
+  - "pedestrian trajectory prediction"
+  - "in-context learning"
+  - "cross-domain adaptation"
+  - "synthetic data"
+  - "example selection"
 date: 2026-05-08
 content_hash: 5866521dc8674292
 ---

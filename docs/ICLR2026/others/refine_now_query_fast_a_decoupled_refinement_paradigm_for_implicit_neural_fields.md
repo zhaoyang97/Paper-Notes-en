@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Refine Now, Query Fast: A Decoupled Refinement Paradigm for Implicit Neural Fields
 description: >-
-  [ICLR 2026][Implicit Neural Representation] This paper proposes the Decoupled Representation Refinement (DRR) paradigm, which employs a deep refiner network to offline-refine the embedding structure and cache the results, so that the inference stage requires only fast interpolation and a lightweight decoder. On ensemble simulation surrogate modeling tasks, DRR-Net achieves state-of-the-art reconstruction accuracy at less than 1/27 of the inference cost.
+  [ICLR 2026][Implicit Neural Representation] This paper proposes the Decoupled Representation Refinement (DRR) paradigm, which employs a deep refiner network to offline-refine the embedding structure and cache the results…
 tags:
-  - ICLR 2026
-  - Implicit Neural Representation
-  - Decoupled Refinement
-  - Ensemble Surrogate
-  - Variational Pairs
-  - Feature Grid
+  - "ICLR 2026"
+  - "Implicit Neural Representation"
+  - "Decoupled Refinement"
+  - "Ensemble Surrogate"
+  - "Variational Pairs"
+  - "Feature Grid"
 date: 2026-05-08
 content_hash: 58499d6f37187f2e
 ---

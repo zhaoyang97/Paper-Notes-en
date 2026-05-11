@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MultiverSeg: Scalable Interactive Segmentation of Biomedical Imaging Datasets with In-Context Guidance
 description: >-
-  [ICCV 2025][Medical Imaging][Interactive Segmentation] This paper proposes MultiverSeg, a progressive interactive segmentation system in which each image annotated by the user reduces the number of interactions required for subsequent images. By incorporating previously segmented images as in-context inputs, the system improves with use. On 12 unseen datasets, it reduces click counts by 36% and scribble steps by 25% compared to ScribblePrompt.
+  [ICCV 2025][Medical Imaging][Interactive Segmentation] This paper proposes MultiverSeg, a progressive interactive segmentation system in which each image annotated by the user reduces the number of interactions required…
 tags:
-  - ICCV 2025
-  - Medical Imaging
-  - Interactive Segmentation
-  - In-Context Learning
-  - Biomedical Imaging
-  - Dataset Annotation
-  - Progressive Segmentation
+  - "ICCV 2025"
+  - "Medical Imaging"
+  - "Interactive Segmentation"
+  - "In-Context Learning"
+  - "Biomedical Imaging"
+  - "Dataset Annotation"
+  - "Progressive Segmentation"
 date: 2026-05-08
 content_hash: 3b9e1f0077c3f29a
 ---

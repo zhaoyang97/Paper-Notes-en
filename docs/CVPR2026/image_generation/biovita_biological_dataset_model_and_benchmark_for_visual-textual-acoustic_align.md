@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BioVITA: Biological Dataset, Model, and Benchmark for Visual-Textual-Acoustic Alignment
 description: >-
-  [CVPR 2026][Image Generation][Visual-textual-acoustic alignment] This paper proposes the BioVITA framework, comprising a million-scale tri-modal (image–text–audio) biological dataset, a two-stage alignment model, and a six-direction cross-modal species-level retrieval benchmark, achieving for the first time unified visual-textual-acoustic representation learning in the biological domain.
+  [CVPR 2026][Image Generation][Visual-textual-acoustic alignment] This paper proposes the BioVITA framework, comprising a million-scale tri-modal (image–text–audio) biological dataset, a two-stage alignment model…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Visual-textual-acoustic alignment
-  - cross-modal retrieval
-  - bioacoustics
-  - species recognition
-  - multimodal representation learning
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Visual-textual-acoustic alignment"
+  - "cross-modal retrieval"
+  - "bioacoustics"
+  - "species recognition"
+  - "multimodal representation learning"
 date: 2026-05-08
 content_hash: df7c795bcf7bb58a
 ---

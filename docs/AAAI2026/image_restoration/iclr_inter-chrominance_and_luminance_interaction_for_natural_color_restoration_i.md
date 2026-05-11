@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ICLR: Inter-Chrominance and Luminance Interaction for Natural Color Restoration in Low-Light Image Enhancement
 description: >-
-  [AAAI 2026][Image Restoration][Low-light image enhancement] Targeting two overlooked statistical distribution issues in the HVI color space — large distribution discrepancy between chrominance and luminance branches leading to insufficient complementary feature extraction, and weak inter-chrominance correlation causing gradient conflicts — this paper proposes the ICLR framework. It introduces a Dual-stream Interaction Enhancement Module (DIEM) and a Covariance Correction Loss (CCL) to address these issues from the perspectives of fusion enhancement and statistical distribution optimization, respectively, achieving state-of-the-art performance on the LOL benchmark series.
+  [AAAI 2026][Image Restoration][Low-light image enhancement] Targeting two overlooked statistical distribution issues in the HVI color space — large distribution discrepancy between chrominance and luminance branches lead…
 tags:
-  - AAAI 2026
-  - Image Restoration
-  - Low-light image enhancement
-  - HVI color space
-  - chrominance-luminance interaction
-  - covariance correction loss
-  - attention fusion
+  - "AAAI 2026"
+  - "Image Restoration"
+  - "Low-light image enhancement"
+  - "HVI color space"
+  - "chrominance-luminance interaction"
+  - "covariance correction loss"
+  - "attention fusion"
 date: 2026-05-08
 content_hash: 078b5930fc5631cf
 ---

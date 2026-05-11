@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GuidedSampling: Steering LLMs Towards Diverse Candidate Solutions at Inference-Time
 description: >-
-  [ICLR 2026][LLM Evaluation][inference-time scaling] This paper proposes GuidedSampling, an inference-time algorithm that explicitly decouples the implicit exploration and generation process of repeated sampling (RS) into two stages: iteratively generating diverse problem-solving concepts/theorems, followed by generating candidate solutions conditioned on each concept. The method achieves an average improvement of ~21.6% on pass@50 and ~9.7% on pass@5 after fine-tuning.
+  [ICLR 2026][LLM Evaluation][inference-time scaling] This paper proposes GuidedSampling, an inference-time algorithm that explicitly decouples the implicit exploration and generation process of repeated sampling (RS) into…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - inference-time scaling
-  - repeated sampling
-  - diversity
-  - concept exploration
-  - pass@k
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "inference-time scaling"
+  - "repeated sampling"
+  - "diversity"
+  - "concept exploration"
+  - "pass@k"
 date: 2026-05-08
 content_hash: 8f5392ba18ffd7b2
 ---

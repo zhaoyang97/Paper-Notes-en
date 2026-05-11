@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Event-boosted Deformable 3D Gaussians for Dynamic Scene Reconstruction
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper presents the first integration of event cameras with deformable 3D Gaussian Splatting (3D-GS) for dynamic scene reconstruction. It introduces a GS-Threshold Joint Modeling (GTJM) strategy and a Dynamic-Static Decomposition (DSD) strategy, achieving state-of-the-art rendering quality and speed on a newly constructed event-4D benchmark (average PSNR improvement of 2.73 dB on synthetic data, rendering speed 1.71× faster than 4D-GS).
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper presents the first integration of event cameras with deformable 3D Gaussian Splatting (3D-GS) for dynamic scene reconstruction. It introduces a GS-Threshold Joint…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - event camera
-  - dynamic scene reconstruction
-  - threshold modeling
-  - dynamic-static decomposition
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "event camera"
+  - "dynamic scene reconstruction"
+  - "threshold modeling"
+  - "dynamic-static decomposition"
 date: 2026-05-08
 content_hash: dc0c582d8d269cf1
 ---

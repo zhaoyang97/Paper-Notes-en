@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SAIL: Similarity-Aware Guidance and Inter-Caption Augmentation-based Learning for Weakly-Supervised Dense Video Captioning
 description: >-
-  [CVPR 2026][Video Understanding][Weakly-supervised dense video captioning] This paper proposes SAIL, which achieves state-of-the-art performance on both dense video captioning and event localization on ActivityNet and YouCook2 under a weakly-supervised setting (caption annotations only, no temporal boundaries), via cross-modal similarity-guided semantic-aware mask generation and auxiliary supervision from LLM-synthesized captions.
+  [CVPR 2026][Video Understanding][Weakly-supervised dense video captioning] This paper proposes SAIL, which achieves state-of-the-art performance on both dense video captioning and event localization on ActivityNet and Yo…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Weakly-supervised dense video captioning
-  - cross-modal alignment
-  - LLM data augmentation
-  - Gaussian mask
-  - event localization
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Weakly-supervised dense video captioning"
+  - "cross-modal alignment"
+  - "LLM data augmentation"
+  - "Gaussian mask"
+  - "event localization"
 date: 2026-05-08
 content_hash: 82d41b4520ee9824
 ---

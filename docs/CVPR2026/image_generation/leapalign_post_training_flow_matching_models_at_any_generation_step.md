@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LeapAlign: Post-Training Flow Matching Models at Any Generation Step by Building Two-Step Trajectories
 description: >-
-  [CVPR 2026][Image Generation][flow matching] This paper proposes LeapAlign, which constructs two-step leap trajectories to compress long generation paths into two steps, enabling reward gradients to be directly backpropagated to early generation steps. Combined with trajectory similarity weighting and gradient discounting strategies, LeapAlign achieves efficient post-training alignment of flow matching models.
+  [CVPR 2026][Image Generation][flow matching] This paper proposes LeapAlign, which constructs two-step leap trajectories to compress long generation paths into two steps…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - flow matching
-  - post-training
-  - reward alignment
-  - human preference
-  - diffusion model
+  - "CVPR 2026"
+  - "Image Generation"
+  - "flow matching"
+  - "post-training"
+  - "reward alignment"
+  - "human preference"
+  - "diffusion model"
 date: 2026-05-08
 content_hash: 28d3f9390485913c
 ---

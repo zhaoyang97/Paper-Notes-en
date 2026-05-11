@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Deep Hierarchical Learning with Nested Subspace Networks for Large Language Models
 description: >-
-  [ICLR 2026][Medical Imaging][Nested Subspace] This paper proposes Nested Subspace Networks (NSN), which reparameterize linear layers via low-rank decomposition into a strictly nested subspace hierarchy. Combined with uncertainty-aware multi-rank training, a single model can instantaneously trade off computation against performance at test time (50% FLOPs reduction with only 5% accuracy loss), and can be applied post-hoc to pretrained LLMs.
+  [ICLR 2026][Medical Imaging][Nested Subspace] This paper proposes Nested Subspace Networks (NSN), which reparameterize linear layers via low-rank decomposition into a strictly nested subspace hierarchy. Combined with unc…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - Nested Subspace
-  - Dynamic Inference
-  - Low-Rank Decomposition
-  - Uncertainty-Aware Training
-  - Elastic Computation
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Nested Subspace"
+  - "Dynamic Inference"
+  - "Low-Rank Decomposition"
+  - "Uncertainty-Aware Training"
+  - "Elastic Computation"
 date: 2026-05-08
 content_hash: 8632df27072839ff
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Probing for Reading Times
 description: >-
-  [ACL 2026][Video Understanding][reading time prediction] This paper probes the ability of representations from individual layers of language models to predict reading times, finding that early-layer representations outperform surprisal on early fixation measures, while surprisal performs better on late measures, and that the best predictor varies by language and metric.
+  [ACL 2026][Video Understanding][reading time prediction] This paper probes the ability of representations from individual layers of language models to predict reading times…
 tags:
-  - ACL 2026
-  - Video Understanding
-  - reading time prediction
-  - language model probing
-  - eye-tracking
-  - surprisal theory
-  - cross-lingual analysis
+  - "ACL 2026"
+  - "Video Understanding"
+  - "reading time prediction"
+  - "language model probing"
+  - "eye-tracking"
+  - "surprisal theory"
+  - "cross-lingual analysis"
 date: 2026-05-08
 content_hash: 9c797ea3ab554dcc
 ---

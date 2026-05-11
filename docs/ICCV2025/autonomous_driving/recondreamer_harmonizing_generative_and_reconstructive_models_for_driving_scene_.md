@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ReconDreamer++: Harmonizing Generative and Reconstructive Models for Driving Scene Representation
 description: >-
-  [ICCV 2025][Autonomous Driving][Driving scene reconstruction] Building upon ReconDreamer, ReconDreamer++ introduces a Novel Trajectory Deformation Network (NTDNet) to bridge the domain gap between generated data and real observations, and independently models the ground plane to preserve geometric priors. On Waymo, the method achieves performance on par with Street Gaussians on original trajectories while improving NTA-IoU by 6.1%, FID by 23.0% on novel trajectories.
+  [ICCV 2025][Autonomous Driving][Driving scene reconstruction] Building upon ReconDreamer, ReconDreamer++ introduces a Novel Trajectory Deformation Network (NTDNet) to bridge the domain gap between generated data and real…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - Driving scene reconstruction
-  - 3D Gaussian splatting
-  - novel view synthesis
-  - domain gap bridging
-  - ground modeling
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "Driving scene reconstruction"
+  - "3D Gaussian splatting"
+  - "novel view synthesis"
+  - "domain gap bridging"
+  - "ground modeling"
 date: 2026-05-08
 content_hash: 82c1841922d2d1f2
 ---

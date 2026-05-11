@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Leveraging 2D Priors and SDF Guidance for Dynamic Urban Scene Rendering
 description: >-
-  [ICCV 2025][Autonomous Driving][dynamic scene rendering] This paper proposes UGSDF, a method that jointly learns an SDF network and 3D Gaussian Splatting to model dynamic objects in urban scenes. Using only 2D priors (a depth network and a point tracker), UGSDF achieves state-of-the-art rendering quality without requiring LiDAR data, 3D motion annotations, or human body templates.
+  [ICCV 2025][Autonomous Driving][dynamic scene rendering] This paper proposes UGSDF, a method that jointly learns an SDF network and 3D Gaussian Splatting to model dynamic objects in urban scenes. Using only 2D priors (a…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - dynamic scene rendering
-  - 3D Gaussian Splatting
-  - SDF
-  - 2D priors
-  - novel view synthesis
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "dynamic scene rendering"
+  - "3D Gaussian Splatting"
+  - "SDF"
+  - "2D priors"
+  - "novel view synthesis"
 date: 2026-05-08
 content_hash: 822f620f7c045b98
 ---

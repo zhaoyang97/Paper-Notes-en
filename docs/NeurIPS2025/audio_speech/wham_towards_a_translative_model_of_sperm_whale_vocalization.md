@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] WhAM: Towards A Translative Model of Sperm Whale Vocalization
 description: >-
-  [NeurIPS 2025][Audio & Speech][Sperm whale acoustics] This paper proposes WhAM (Whale Acoustics Model), the first Transformer-based generative model for sperm whale codas, achieving acoustic translation, synthetic generation, and downstream classification through fine-tuning of VampNet.
+  [NeurIPS 2025][Audio & Speech][Sperm whale acoustics] This paper proposes WhAM (Whale Acoustics Model), the first Transformer-based generative model for sperm whale codas, achieving acoustic translation…
 tags:
-  - NeurIPS 2025
+  - "NeurIPS 2025"
   - "Audio & Speech"
-  - Sperm whale acoustics
-  - generative audio model
-  - acoustic translation
-  - Masked Acoustic Token Model
-  - cross-domain style transfer
+  - "Sperm whale acoustics"
+  - "generative audio model"
+  - "acoustic translation"
+  - "Masked Acoustic Token Model"
+  - "cross-domain style transfer"
 date: 2026-05-08
 content_hash: f09ed0373ffb7fa9
 ---

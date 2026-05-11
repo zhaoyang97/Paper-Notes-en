@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Breaking Scale Anchoring: Frequency Representation Learning for Accurate High-Resolution Inference from Low-Resolution Training
 description: >-
-  [ICLR 2026][Image Restoration][scale anchoring] This paper defines the novel problem of "Scale Anchoring" (SA)—wherein training on low-resolution data causes inference errors to remain anchored at training-resolution levels during high-resolution inference—and proposes an architecture-agnostic Frequency Representation Learning (FRL) method. By introducing Nyquist-normalized frequency encodings, FRL enables errors to decrease as resolution increases, with effectiveness validated across 8 mainstream architectures.
+  [ICLR 2026][Image Restoration][scale anchoring] This paper defines the novel problem of "Scale Anchoring" (SA)—wherein training on low-resolution data causes inference errors to remain anchored at training-resolution lev…
 tags:
-  - ICLR 2026
-  - Image Restoration
-  - scale anchoring
-  - frequency representation
-  - zero-shot super-resolution
-  - spatiotemporal forecasting
-  - Nyquist frequency
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "scale anchoring"
+  - "frequency representation"
+  - "zero-shot super-resolution"
+  - "spatiotemporal forecasting"
+  - "Nyquist frequency"
 date: 2026-05-08
 content_hash: 1c246b4654d91d66
 ---

@@ -2,16 +2,17 @@
 title: >-
   [Paper Note] Reflective Translation: Improving Low-Resource Machine Translation via Structured Self-Reflection
 description: >-
-  [NeurIPS 2025][low-resource translation] This paper proposes the Reflective Translation framework, which enables LLMs to perform structured self-critique of their initial translations at inference time—identifying mistranslations, omissions, and semantic distortions—and subsequently generate revised translations based on this critique. The approach requires no fine-tuning or additional annotated data, yet achieves statistically significant improvements in BLEU and COMET on low-resource African languages such as isiZulu and isiXhosa.
+  [NeurIPS 2025][Multilingual & Machine Translation][low-resource translation] This paper proposes the Reflective Translation framework, which enables LLMs to perform structured self-critique of their initial translations…
 tags:
-  - NeurIPS 2025
-  - low-resource translation
-  - self-reflection
-  - structured prompting
-  - LLM translation
-  - isiZulu
-  - isiXhosa
-  - RAKE masking
+  - "NeurIPS 2025"
+  - "Multilingual & Machine Translation"
+  - "low-resource translation"
+  - "self-reflection"
+  - "structured prompting"
+  - "LLM translation"
+  - "isiZulu"
+  - "isiXhosa"
+  - "RAKE masking"
 date: 2026-05-08
 content_hash: bbf82048ae6097ab
 ---

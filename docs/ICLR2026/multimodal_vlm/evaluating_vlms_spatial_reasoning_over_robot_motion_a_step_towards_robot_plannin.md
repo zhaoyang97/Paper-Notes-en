@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Evaluating VLMs' Spatial Reasoning Over Robot Motion: A Step Towards Robot Planning with Motion Preferences
 description: >-
-  [ICLR 2026][Multimodal VLM][VLM spatial reasoning] This paper systematically evaluates VLMs' spatial reasoning capabilities over robot motion trajectories, proposing four image-querying methods that enable VLMs to select optimal motion paths based on user natural language descriptions. Results show that Qwen2.5-VL achieves 71.4% zero-shot accuracy, with smaller models achieving significant gains after fine-tuning.
+  [ICLR 2026][Multimodal VLM][VLM spatial reasoning] This paper systematically evaluates VLMs' spatial reasoning capabilities over robot motion trajectories…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - VLM spatial reasoning
-  - robot motion planning
-  - motion preferences
-  - path selection
-  - vision-language model evaluation
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "VLM spatial reasoning"
+  - "robot motion planning"
+  - "motion preferences"
+  - "path selection"
+  - "vision-language model evaluation"
 date: 2026-05-08
 content_hash: d8d1dd85a424e61b
 ---

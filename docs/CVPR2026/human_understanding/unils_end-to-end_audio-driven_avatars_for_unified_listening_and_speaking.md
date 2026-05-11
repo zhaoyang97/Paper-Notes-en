@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UniLS: End-to-End Audio-Driven Avatars for Unified Listening and Speaking
 description: >-
-  [CVPR 2026][Human Understanding][conversational avatars] This paper proposes UniLS, the first end-to-end framework for unified speaking and listening facial expression generation. Through a two-stage training paradigm—first learning intrinsic motion priors without audio, then fine-tuning with dual-track audio—UniLS generates natural speaking and listening facial motions simultaneously from dual-track audio input alone, achieving up to 44.1% improvement on listening metrics.
+  [CVPR 2026][Human Understanding][conversational avatars] This paper proposes UniLS, the first end-to-end framework for unified speaking and listening facial expression generation. Through a two-stage training paradigm—fi…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - conversational avatars
-  - unified speaking-listening generation
-  - audio-driven
-  - facial animation
-  - two-stage training
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "conversational avatars"
+  - "unified speaking-listening generation"
+  - "audio-driven"
+  - "facial animation"
+  - "two-stage training"
 date: 2026-05-08
 content_hash: 28cd8495073a0067
 ---

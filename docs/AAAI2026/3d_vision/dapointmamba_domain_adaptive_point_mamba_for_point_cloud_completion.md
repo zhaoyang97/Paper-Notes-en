@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DAPointMamba: Domain Adaptive Point Mamba for Point Cloud Completion
 description: >-
-  [AAAI 2026][3D Vision][Point Cloud Completion] This work presents the first integration of Mamba (SSM) into unsupervised domain adaptive point cloud completion (UDA PCC). The proposed DAPointMamba framework achieves high-quality cross-domain point cloud completion through three modules—Cross-Domain Patch-Level Scanning, Spatial SSM Alignment, and Channel SSM Alignment—while maintaining linear complexity and a global receptive field.
+  [AAAI 2026][3D Vision][Point Cloud Completion] This work presents the first integration of Mamba (SSM) into unsupervised domain adaptive point cloud completion (UDA PCC). The proposed DAPointMamba framework achieves high…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - Point Cloud Completion
-  - Domain Adaptation
-  - State Space Model
-  - Mamba
-  - Cross-Domain Alignment
+  - "AAAI 2026"
+  - "3D Vision"
+  - "Point Cloud Completion"
+  - "Domain Adaptation"
+  - "State Space Model"
+  - "Mamba"
+  - "Cross-Domain Alignment"
 date: 2026-05-08
 content_hash: 22b6d7f9c687aaa9
 ---

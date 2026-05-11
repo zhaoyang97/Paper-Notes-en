@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CLoE: Expert Consistency Learning for Missing Modality Segmentation
 description: >-
-  [CVPR 2026][Medical Imaging][missing modality] This work reformulates the robustness problem under missing modalities as decision-level expert consistency control. It proposes a dual-branch consistency learning scheme (global MEC + regional REC) coupled with a lightweight gating network that converts consistency scores into modality reliability weights, achieving an average WT Dice of 88.09% across 15 missing-modality combinations on BraTS 2020, surpassing all prior state-of-the-art methods.
+  [CVPR 2026][Medical Imaging][missing modality] This work reformulates the robustness problem under missing modalities as decision-level expert consistency control. It proposes a dual-branch consistency learning scheme (g…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - missing modality
-  - consistency learning
-  - expert fusion
-  - reliability gating
-  - brain tumor
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "missing modality"
+  - "consistency learning"
+  - "expert fusion"
+  - "reliability gating"
+  - "brain tumor"
 date: 2026-05-08
 content_hash: 73faacbfa785a171
 ---

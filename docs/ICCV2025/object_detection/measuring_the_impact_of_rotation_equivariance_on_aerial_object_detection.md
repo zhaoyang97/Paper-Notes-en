@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Measuring the Impact of Rotation Equivariance on Aerial Object Detection
 description: >-
-  [ICCV 2025][Object Detection][Aerial image detection] This paper proposes MessDet, a rotation-equivariant aerial object detector that achieves strict rotation equivariance through a novel downsampling procedure, and introduces rotation-equivariant channel attention (RE-CA) and a multi-branch detection head, attaining state-of-the-art performance on DOTA and other benchmarks with significantly fewer parameters.
+  [ICCV 2025][Object Detection][Aerial image detection] This paper proposes MessDet, a rotation-equivariant aerial object detector that achieves strict rotation equivariance through a novel downsampling procedure…
 tags:
-  - ICCV 2025
-  - Object Detection
-  - Aerial image detection
-  - rotation equivariance
-  - group equivariant networks
-  - channel attention
-  - multi-branch detection head
+  - "ICCV 2025"
+  - "Object Detection"
+  - "Aerial image detection"
+  - "rotation equivariance"
+  - "group equivariant networks"
+  - "channel attention"
+  - "multi-branch detection head"
 date: 2026-05-08
 content_hash: c18c313f972ce0a0
 ---

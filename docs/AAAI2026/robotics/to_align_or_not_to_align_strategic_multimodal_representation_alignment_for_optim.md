@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] To Align or Not to Align: Strategic Multimodal Representation Alignment for Optimal Performance
 description: >-
-  [AAAI2026][Robotics][multimodal alignment] By introducing a controllable contrastive learning module to systematically regulate alignment strength $\lambda$, and employing the Partial Information Decomposition (PID) framework to quantify the redundancy–uniqueness–synergy structure between modalities, this work reveals that the utility of explicit alignment is highly data-dependent: alignment is beneficial when redundancy dominates, harmful when uniqueness dominates, and an optimal $\lambda^*$ exists in mixed scenarios.
+  [AAAI2026][Robotics][multimodal alignment] By introducing a controllable contrastive learning module to systematically regulate alignment strength $\lambda$…
 tags:
-  - AAAI2026
-  - Robotics
-  - multimodal alignment
-  - contrastive learning
-  - partial information decomposition
-  - redundant information
-  - unimodal encoders
+  - "AAAI2026"
+  - "Robotics"
+  - "multimodal alignment"
+  - "contrastive learning"
+  - "partial information decomposition"
+  - "redundant information"
+  - "unimodal encoders"
 date: 2026-05-08
 content_hash: 6c4f75d58cb3a755
 ---

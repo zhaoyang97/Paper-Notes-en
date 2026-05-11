@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SceneTransporter: Optimal Transport-Guided Compositional Latent Diffusion for Single-Image Structured 3D Scene Generation
 description: >-
-  [ICLR 2026][3D Vision][Structured 3D Scene] SceneTransporter reformulates open-world structured 3D scene generation as a global correspondence assignment problem by introducing an entropic optimal transport (OT) framework into the denoising loop of a compositional 3D latent diffusion model. The OT plan gates cross-attention to enforce exclusive patch-to-part routing (preventing feature entanglement), while edge-regularized assignment costs encourage clean instance separation at image boundaries. The approach achieves state-of-the-art instance-level consistency and geometric fidelity on 74 diverse open-world scene images.
+  [ICLR 2026][3D Vision][Structured 3D Scene] SceneTransporter reformulates open-world structured 3D scene generation as a global correspondence assignment problem by introducing an entropic optimal transport (OT) framewor…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Structured 3D Scene
-  - Optimal Transport
-  - Compositional Diffusion
-  - Instance Disentanglement
-  - Cross-Attention Gating
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Structured 3D Scene"
+  - "Optimal Transport"
+  - "Compositional Diffusion"
+  - "Instance Disentanglement"
+  - "Cross-Attention Gating"
 date: 2026-05-08
 content_hash: f1850f48b5ec93f2
 ---

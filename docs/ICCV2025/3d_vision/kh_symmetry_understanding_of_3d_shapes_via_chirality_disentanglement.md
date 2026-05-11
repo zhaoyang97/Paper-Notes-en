@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] χ: Symmetry Understanding of 3D Shapes via Chirality Disentanglement
 description: >-
-  [ICCV 2025][3D Vision][Chirality features] This paper proposes an unsupervised chirality feature extraction pipeline that distills left-right chirality information from 2D foundation model features to augment 3D shape vertex descriptors, effectively resolving left-right ambiguity in shape analysis.
+  [ICCV 2025][3D Vision][Chirality features] This paper proposes an unsupervised chirality feature extraction pipeline that distills left-right chirality information from 2D foundation model features to augment 3D shape ve…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Chirality features
-  - symmetry
-  - shape matching
-  - left-right disambiguation
-  - 2D foundation model distillation
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Chirality features"
+  - "symmetry"
+  - "shape matching"
+  - "left-right disambiguation"
+  - "2D foundation model distillation"
 date: 2026-05-08
 content_hash: d19b51f3a570f82f
 ---

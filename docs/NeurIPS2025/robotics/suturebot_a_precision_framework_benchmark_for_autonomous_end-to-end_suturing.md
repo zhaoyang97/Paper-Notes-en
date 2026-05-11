@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SutureBot: A Precision Framework & Benchmark for Autonomous End-to-End Suturing
 description: >-
-  [NeurIPS 2025][Robotics][Surgical Robotics] This paper presents SutureBot — the first precision-oriented benchmark and goal-conditioned framework for end-to-end autonomous suturing on the da Vinci surgical robot. It releases a high-fidelity dataset of 1,890 demonstrations, achieves 59%–74% improvements in needle insertion accuracy via point-label goal conditioning, and systematically evaluates state-of-the-art VLA models including π0, GR00T N1, OpenVLA-OFT, and multi-task ACT.
+  [NeurIPS 2025][Robotics][Surgical Robotics] This paper presents SutureBot — the first precision-oriented benchmark and goal-conditioned framework for end-to-end autonomous suturing on the da Vinci surgical robot. It rele…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - Surgical Robotics
-  - Suturing Autonomy
-  - Imitation Learning
-  - Goal-Conditioned Control
-  - VLA Benchmark
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "Surgical Robotics"
+  - "Suturing Autonomy"
+  - "Imitation Learning"
+  - "Goal-Conditioned Control"
+  - "VLA Benchmark"
 date: 2026-05-08
 content_hash: f7f1cfb65164bc28
 ---

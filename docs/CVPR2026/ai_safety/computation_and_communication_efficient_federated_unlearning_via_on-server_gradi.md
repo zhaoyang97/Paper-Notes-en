@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Computation and Communication Efficient Federated Unlearning via On-server Gradient Conflict Mitigation and Expression
 description: >-
-  [CVPR 2026][AI Safety][Federated Unlearning] This paper proposes FOUL, a two-stage framework that decouples causal and non-causal features during training and performs on-server gradient conflict matching during unlearning, achieving efficient federated unlearning with low communication overhead without accessing client data.
+  [CVPR 2026][AI Safety][Federated Unlearning] This paper proposes FOUL, a two-stage framework that decouples causal and non-causal features during training and performs on-server gradient conflict matching during unlearni…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Federated Unlearning
-  - Gradient Conflict
-  - Causal Disentanglement
-  - On-server Aggregation
-  - Privacy
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Federated Unlearning"
+  - "Gradient Conflict"
+  - "Causal Disentanglement"
+  - "On-server Aggregation"
+  - "Privacy"
 date: 2026-05-08
 content_hash: 117757efa6fa707c
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Learning on a Razor's Edge: Identifiability and Singularity of Polynomial Neural Networks
 description: >-
-  [ICLR 2026][Identifiability] Using tools from algebraic geometry, this paper systematically analyzes MLPs and CNNs with polynomial activations: it proves finite identifiability for MLPs and unique identifiability for CNNs, reveals that sparse subnetworks correspond to singular points of the neuromanifold, and provides a geometric explanation of the sparsity bias in MLPs via the notion of "critical exposure"—a property that CNNs do not possess.
+  [ICLR 2026][Identifiability] Using tools from algebraic geometry, this paper systematically analyzes MLPs and CNNs with polynomial activations: it proves finite identifiability for MLPs and unique identifiability for CNN…
 tags:
-  - ICLR 2026
-  - Identifiability
-  - Neuromanifold Singularities
-  - Polynomial Neural Networks
-  - Sparsity Bias
-  - Algebraic Geometry
+  - "ICLR 2026"
+  - "Identifiability"
+  - "Neuromanifold Singularities"
+  - "Polynomial Neural Networks"
+  - "Sparsity Bias"
+  - "Algebraic Geometry"
 date: 2026-05-08
 content_hash: 5e9b86a37f5673d2
 ---

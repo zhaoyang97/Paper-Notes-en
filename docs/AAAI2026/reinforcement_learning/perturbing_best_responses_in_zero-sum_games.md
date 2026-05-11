@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Perturbing Best Responses in Zero-Sum Games
 description: >-
-  [AAAI 2026][Reinforcement Learning][Zero-sum games] This paper investigates the introduction of stochastic perturbations into best-response oracles (BROs) for zero-sum games. It proves that Stochastic Fictitious Play (SFP) achieves an expected iteration count of $O(\frac{\log n}{\varepsilon^2})$ with respect to the number of pure strategies $n$, and proposes the Stochastic Double Oracle (SDO) algorithm, which achieves logarithmic convergence under specific game structures.
+  [AAAI 2026][Reinforcement Learning][Zero-sum games] This paper investigates the introduction of stochastic perturbations into best-response oracles (BROs) for zero-sum games. It proves that Stochastic Fictitious Play (SF…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - Zero-sum games
-  - Nash equilibrium
-  - perturbed best response
-  - fictitious play
-  - double oracle
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "Zero-sum games"
+  - "Nash equilibrium"
+  - "perturbed best response"
+  - "fictitious play"
+  - "double oracle"
 date: 2026-05-08
 content_hash: 45874113d442cf3a
 ---

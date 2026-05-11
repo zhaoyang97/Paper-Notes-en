@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] SOCIA-EVO: Automated Simulator Construction via Dual-Anchored Bi-Level Optimization
 description: >-
-  [ACL 2026][Automated simulator construction] This paper proposes SOCIA-EVO, an LLM agent framework that reformulates automated simulator construction as a dual-anchored evolutionary process. It anchors empirical constraints via a static Blueprint, decouples structural revision and parameter calibration through bi-level optimization, and manages repair hypotheses via a self-curated strategy Playbook with Bayesian-weighted retrieval guided by execution feedback. SOCIA-EVO significantly outperforms baselines such as Reflexion and G-SIM on three simulation tasks: user modeling, mask-wearing diffusion, and personal mobility.
+  [ACL 2026][Code Intelligence][Automated simulator construction] This paper proposes SOCIA-EVO, an LLM agent framework that reformulates automated simulator construction as a dual-anchored evolutionary process. It anchors…
 tags:
-  - ACL 2026
-  - Automated simulator construction
-  - dual-anchored evolutionary framework
-  - bi-level optimization
-  - strategy playbook
-  - distributional fidelity
+  - "ACL 2026"
+  - "Code Intelligence"
+  - "Automated simulator construction"
+  - "dual-anchored evolutionary framework"
+  - "bi-level optimization"
+  - "strategy playbook"
+  - "distributional fidelity"
 date: 2026-05-08
 content_hash: e9046120d769e7dc
 ---

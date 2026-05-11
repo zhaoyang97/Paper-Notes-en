@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Effective Training Data Synthesis for Improving MLLM Chart Understanding
 description: >-
-  [ICCV 2025][Multimodal VLM][chart understanding] This paper proposes a modular five-stage chart data synthesis pipeline that produces a high-quality training set, ECD (Effective Chart Dataset), comprising 10k+ chart images and 300k+ QA pairs, consistently improving chart understanding across multiple open-source MLLMs.
+  [ICCV 2025][Multimodal VLM][chart understanding] This paper proposes a modular five-stage chart data synthesis pipeline that produces a high-quality training set, ECD (Effective Chart Dataset)…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - chart understanding
-  - data synthesis
-  - multimodal large language models
-  - training data
-  - data quality
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "chart understanding"
+  - "data synthesis"
+  - "multimodal large language models"
+  - "training data"
+  - "data quality"
 date: 2026-05-08
 content_hash: 10ee43df5027929b
 ---

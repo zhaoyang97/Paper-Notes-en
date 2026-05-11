@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] MITRA: An AI Assistant for Knowledge Retrieval in Physics Collaborations
 description: >-
-  [NeurIPS 2025][RAG] This paper proposes MITRA, a locally deployed RAG system for large physics experiment collaborations (e.g., CERN CMS), featuring a two-tier vector database architecture (abstract store + full-text store) and a fully on-premise deployment strategy. MITRA substantially outperforms traditional keyword-based search (BM25) on semantic retrieval tasks, improving Precision@1 from 0.13 to 0.75.
+  [NeurIPS 2025][Information Retrieval & RAG][RAG] This paper proposes MITRA, a locally deployed RAG system for large physics experiment collaborations (e.g., CERN CMS)…
 tags:
-  - NeurIPS 2025
-  - RAG
-  - Scientific Collaboration
-  - Local Deployment
-  - Knowledge Retrieval
-  - Physics Experiments
+  - "NeurIPS 2025"
+  - "Information Retrieval & RAG"
+  - "RAG"
+  - "Scientific Collaboration"
+  - "Local Deployment"
+  - "Knowledge Retrieval"
+  - "Physics Experiments"
 date: 2026-05-08
 content_hash: 1396cc2bc68f3ab4
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] LMM-Det: Make Large Multimodal Models Excel in Object Detection
 description: >-
-  [ICCV 2025][Object Detection][Large multimodal models] This paper proposes LMM-Det, which through systematic analysis identifies low recall as the core bottleneck of large multimodal models (LMMs) in object detection. By applying data distribution adjustment (pseudo-label augmentation) and inference optimization (per-category detection), LMM-Det improves COCO AP from 0.2 to 47.5 without any additional specialized detection modules.
+  [ICCV 2025][Object Detection][Large multimodal models] This paper proposes LMM-Det, which through systematic analysis identifies low recall as the core bottleneck of large multimodal models (LMMs) in object detection. By…
 tags:
-  - ICCV 2025
-  - Object Detection
-  - Large multimodal models
-  - recall
-  - data distribution adjustment
-  - inference optimization
+  - "ICCV 2025"
+  - "Object Detection"
+  - "Large multimodal models"
+  - "recall"
+  - "data distribution adjustment"
+  - "inference optimization"
 date: 2026-05-08
 content_hash: c7250443d5303106
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Part-Aware Dense 3D Feature Field for Generalizable Articulated Object Manipulation
 description: >-
-  [ICLR 2026][3D Vision][3D feature field] This paper proposes PA3FF (Part-Aware 3D Feature Field), a natively 3D dense part-aware feature representation. By combining a Sonata pre-trained backbone with geometric and semantic contrastive learning, PA3FF yields zero-shot part-level features. Paired with a Part-Aware Diffusion Policy (PADP), the system achieves few-shot, highly generalizable articulated object manipulation, substantially outperforming baselines such as CLIP, DINOv2, and GenDP in both simulation and real-world settings.
+  [ICLR 2026][3D Vision][3D feature field] This paper proposes PA3FF (Part-Aware 3D Feature Field), a natively 3D dense part-aware feature representation. By combining a Sonata pre-trained backbone with geometric and seman…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - 3D feature field
-  - part-aware
-  - articulated object manipulation
-  - contrastive learning
-  - diffusion policy
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3D feature field"
+  - "part-aware"
+  - "articulated object manipulation"
+  - "contrastive learning"
+  - "diffusion policy"
 date: 2026-05-08
 content_hash: 656c20d64bb03bee
 ---

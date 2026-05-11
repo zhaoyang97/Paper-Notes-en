@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] The Computational Complexity of Counting Linear Regions in ReLU Neural Networks
 description: >-
-  [NeurIPS 2025][ReLU networks] This paper systematically identifies six mutually non-equivalent definitions of "linear regions" in ReLU networks, proves that counting linear regions is #P-hard under all six definitions (even for single-hidden-layer networks), and establishes strong inapproximability results together with polynomial-space upper bounds for deeper networks.
+  [NeurIPS 2025][ReLU networks] This paper systematically identifies six mutually non-equivalent definitions of "linear regions" in ReLU networks…
 tags:
-  - NeurIPS 2025
-  - ReLU networks
-  - linear regions
-  - computational complexity
+  - "NeurIPS 2025"
+  - "ReLU networks"
+  - "linear regions"
+  - "computational complexity"
   - "#P-hard"
-  - NP-hard
+  - "NP-hard"
 date: 2026-05-08
 content_hash: bca6e754a86df116
 ---

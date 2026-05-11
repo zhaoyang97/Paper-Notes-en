@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] CHiQPM: Calibrated Hierarchical Interpretable Image Classification
 description: >-
-  [NeurIPS 2025][Interpretable Machine Learning] CHiQPM proposes a calibrated hierarchical interpretable image classification method that selects and assigns features to classes via quadratic programming, constructs hierarchical explanation paths, and incorporates interpretable Conformal Prediction set prediction, retaining 99% of black-box model accuracy while providing both global and local interpretability.
+  [NeurIPS 2025][Interpretability][Interpretable Machine Learning] CHiQPM proposes a calibrated hierarchical interpretable image classification method that selects and assigns features to classes via quadratic programming…
 tags:
-  - NeurIPS 2025
-  - Interpretable Machine Learning
-  - Hierarchical Explanation
-  - Conformal Prediction
-  - Image Classification
-  - Human-AI Complementarity
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "Interpretable Machine Learning"
+  - "Hierarchical Explanation"
+  - "Conformal Prediction"
+  - "Image Classification"
+  - "Human-AI Complementarity"
 date: 2026-05-08
 content_hash: 5176fcbffa3bb42b
 ---

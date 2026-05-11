@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Incentivizing Time-Aware Fairness in Data Sharing
 description: >-
-  [NeurIPS 2025][AI Safety][Data sharing] This paper proposes a time-aware data sharing framework that introduces new incentive conditions (F6–F8) and two reward schemes—Time-Aware Reward Cumulation and Time-Aware Data Valuation—to ensure that participants who join a collaboration earlier receive higher-value rewards, while simultaneously preserving fairness and individual rationality.
+  [NeurIPS 2025][AI Safety][Data sharing] This paper proposes a time-aware data sharing framework that introduces new incentive conditions (F6–F8) and two reward schemes—Time-Aware Reward Cumulation and Time-Aware Data Val…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - Data sharing
-  - fairness
-  - time-aware incentives
-  - Shapley value
-  - cooperative game theory
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "Data sharing"
+  - "fairness"
+  - "time-aware incentives"
+  - "Shapley value"
+  - "cooperative game theory"
 date: 2026-05-08
 content_hash: fea8ea01d676222c
 ---

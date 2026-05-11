@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Inference-Time Chain-of-Thought Pruning with Latent Informativeness Signals
 description: >-
-  [NeurIPS 2025][LLM Reasoning][inference-time scaling] This paper proposes KAPPA (KL-Adjusted Pruned Path Algorithm), which progressively prunes reasoning branches in Best-of-N sampling using three training-free signals — KL divergence, confidence, and entropy — achieving up to 60% peak memory reduction and 90% token generation reduction while maintaining accuracy.
+  [NeurIPS 2025][LLM Reasoning][inference-time scaling] This paper proposes KAPPA (KL-Adjusted Pruned Path Algorithm), which progressively prunes reasoning branches in Best-of-N sampling using three training-free signals —…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - inference-time scaling
-  - chain-of-thought pruning
-  - KL divergence
-  - Best-of-N
-  - reasoning efficiency
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "inference-time scaling"
+  - "chain-of-thought pruning"
+  - "KL divergence"
+  - "Best-of-N"
+  - "reasoning efficiency"
 date: 2026-05-08
 content_hash: f8b73dc841f9a5fa
 ---

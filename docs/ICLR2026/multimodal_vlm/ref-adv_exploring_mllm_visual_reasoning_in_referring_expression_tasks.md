@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Ref-Adv: Exploring MLLM Visual Reasoning in Referring Expression Tasks
 description: >-
-  [ICLR 2026][Multimodal VLM][Referring Expression Comprehension] This paper introduces the Ref-Adv benchmark, constructed via a pipeline of **hard distractor pairing + LLM-assisted minimally sufficient expression generation + three-annotator unanimous verification**. The benchmark eliminates "grounding shortcuts" present in classical REC datasets. Across 13 contemporary MLLMs — including GPT-4o, Gemini 2.5, and Qwen2.5-VL-72B — accuracy drops dramatically from 90%+ on RefCOCO(+/g) to 50–68% on Ref-Adv, systematically exposing severe deficiencies in complex visual reasoning and precise grounding.
+  [ICLR 2026][Multimodal VLM][Referring Expression Comprehension] This paper introduces the Ref-Adv benchmark, constructed via a pipeline of **hard distractor pairing + LLM-assisted minimally sufficient expression generati…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Referring Expression Comprehension
-  - Visual Grounding
-  - Hard Distractors
-  - Benchmark
-  - Shortcut Suppression
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Referring Expression Comprehension"
+  - "Visual Grounding"
+  - "Hard Distractors"
+  - "Benchmark"
+  - "Shortcut Suppression"
 date: 2026-05-08
 content_hash: 31b46e2c3ce2e922
 ---

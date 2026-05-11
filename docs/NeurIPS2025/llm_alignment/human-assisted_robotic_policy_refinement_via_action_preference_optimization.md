@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Human-assisted Robotic Policy Refinement via Action Preference Optimization
 description: >-
-  [NeurIPS 2025][LLM Alignment][VLA models] This paper proposes Action Preference Optimization (APO), a human-robot collaboration framework that collects interactive trajectories and applies preference alignment to VLA models using binary desirability signals grounded in prospect theory and an adaptive reweighting scheme, enabling the model to learn from failures and improve iteratively.
+  [NeurIPS 2025][LLM Alignment][VLA models] This paper proposes Action Preference Optimization (APO), a human-robot collaboration framework that collects interactive trajectories and applies preference alignment to VLA mod…
 tags:
-  - NeurIPS 2025
-  - LLM Alignment
-  - VLA models
-  - preference alignment
-  - human-robot collaboration
-  - robotic manipulation
-  - adaptive reweighting
+  - "NeurIPS 2025"
+  - "LLM Alignment"
+  - "VLA models"
+  - "preference alignment"
+  - "human-robot collaboration"
+  - "robotic manipulation"
+  - "adaptive reweighting"
 date: 2026-05-08
 content_hash: f060638606b06700
 ---

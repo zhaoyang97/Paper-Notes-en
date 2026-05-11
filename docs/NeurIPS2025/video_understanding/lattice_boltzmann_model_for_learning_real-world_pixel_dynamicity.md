@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Lattice Boltzmann Model for Learning Real-World Pixel Dynamicity
 description: >-
-  [NeurIPS 2025][Video Understanding][point tracking] Inspired by the Lattice Boltzmann Method from fluid dynamics, this work proposes LBM (Lattice Boltzmann Model) for online real-time pixel tracking. It models video pixels as fluid lattices and solves motion states via collision-streaming processes, achieving SOTA online tracking performance with 18M parameters while enabling real-time inference on edge devices.
+  [NeurIPS 2025][Video Understanding][point tracking] Inspired by the Lattice Boltzmann Method from fluid dynamics, this work proposes LBM (Lattice Boltzmann Model) for online real-time pixel tracking. It models video pixe…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
-  - point tracking
-  - online tracking
-  - lattice Boltzmann
-  - real-time
-  - object tracking
+  - "NeurIPS 2025"
+  - "Video Understanding"
+  - "point tracking"
+  - "online tracking"
+  - "lattice Boltzmann"
+  - "real-time"
+  - "object tracking"
 date: 2026-05-08
 content_hash: 3c669cb2a544c2b0
 ---

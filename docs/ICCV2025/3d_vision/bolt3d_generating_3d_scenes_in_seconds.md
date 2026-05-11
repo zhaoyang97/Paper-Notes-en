@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Bolt3D: Generating 3D Scenes in Seconds
 description: >-
-  [ICCV 2025][3D Vision][Latent Diffusion Model] A feed-forward 3D scene generation method based on latent diffusion models that represents 3D scenes as multiple sets of Splatter Images and employs a dedicated geometry VAE, **generating a complete 3D scene on a single GPU in 7 seconds**—reducing inference cost by 300× compared to optimization-based methods (CAT3D).
+  [ICCV 2025][3D Vision][Latent Diffusion Model] A feed-forward 3D scene generation method based on latent diffusion models that represents 3D scenes as multiple sets of Splatter Images and employs a dedicated geometry VAE…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Latent Diffusion Model
-  - 3D Gaussian Representation
-  - Feed-Forward Generation
-  - Geometry VAE
-  - Splatter Image
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Latent Diffusion Model"
+  - "3D Gaussian Representation"
+  - "Feed-Forward Generation"
+  - "Geometry VAE"
+  - "Splatter Image"
 date: 2026-05-08
 content_hash: 08fd85afa04fe44f
 ---

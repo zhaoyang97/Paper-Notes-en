@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DesignX: Human-Competitive Algorithm Designer for Black-Box Optimization
 description: >-
-  [NeurIPS 2025][Medical Imaging][Black-Box Optimization] This paper proposes DesignX, the first automated algorithm design framework that jointly learns two sub-tasks—optimizer workflow generation and dynamic hyperparameter control—through dual Transformer agents pre-trained at scale on 10k synthetic problems. DesignX surpasses human-designed optimizers on both synthetic benchmarks and real-world tasks including protein docking, AutoML, and UAV path planning.
+  [NeurIPS 2025][Medical Imaging][Black-Box Optimization] This paper proposes DesignX, the first automated algorithm design framework that jointly learns two sub-tasks—optimizer workflow generation and dynamic hyperparamet…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Black-Box Optimization
-  - Automated Algorithm Design
-  - Dual-Agent Reinforcement Learning
-  - MetaBBO
-  - Transformer
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Black-Box Optimization"
+  - "Automated Algorithm Design"
+  - "Dual-Agent Reinforcement Learning"
+  - "MetaBBO"
+  - "Transformer"
 date: 2026-05-08
 content_hash: de5adea6c770d4dd
 ---

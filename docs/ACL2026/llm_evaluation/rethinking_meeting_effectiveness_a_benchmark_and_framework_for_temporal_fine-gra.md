@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Rethinking Meeting Effectiveness: A Benchmark and Framework for Temporal Fine-grained Automatic Meeting Effectiveness Evaluation
 description: >-
-  [ACL 2026][LLM Evaluation][meeting effectiveness evaluation] This paper redefines meeting effectiveness evaluation by proposing an objective criterion of "goal achievement / time cost" and a temporal fine-grained evaluation paradigm. It constructs the AMI-ME dataset comprising 2,459 annotated segments from 130 meetings, and develops an LLM-based automatic evaluation framework achieving a Spearman correlation of 0.64.
+  [ACL 2026][LLM Evaluation][meeting effectiveness evaluation] This paper redefines meeting effectiveness evaluation by proposing an objective criterion of "goal achievement / time cost" and a temporal fine-grained evaluat…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - meeting effectiveness evaluation
-  - temporal fine-grained evaluation
-  - LLM-as-Judge
-  - topic segmentation
-  - multi-party dialogue
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "meeting effectiveness evaluation"
+  - "temporal fine-grained evaluation"
+  - "LLM-as-Judge"
+  - "topic segmentation"
+  - "multi-party dialogue"
 date: 2026-05-08
 content_hash: 1c400aaee379c505
 ---

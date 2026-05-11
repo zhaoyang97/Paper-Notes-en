@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Cut Less, Fold More: Model Compression through the Lens of Projection Geometry
 description: >-
-  [ICLR 2026][Model Compression][Model folding] This paper unifies structured pruning and model folding under an orthogonal projection framework—pruning as coordinate-aligned projection and folding as clustering subspace projection—and proves that folding yields strictly smaller parameter reconstruction error under a rank-one difference condition. Validation across 1,000+ checkpoints demonstrates that folding consistently outperforms pruning at medium-to-high compression ratios.
+  [ICLR 2026][Model Compression][Model folding] This paper unifies structured pruning and model folding under an orthogonal projection framework—pruning as coordinate-aligned projection and folding as clustering subspace p…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Model folding
-  - structured pruning
-  - orthogonal projection
-  - calibration-free compression
-  - projection geometry
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Model folding"
+  - "structured pruning"
+  - "orthogonal projection"
+  - "calibration-free compression"
+  - "projection geometry"
 date: 2026-05-08
 content_hash: a6d60a6479bc9446
 ---

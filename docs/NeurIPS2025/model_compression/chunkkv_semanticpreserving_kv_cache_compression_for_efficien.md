@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ChunkKV: Semantic-Preserving KV Cache Compression for Efficient Long-Context LLM Inference
 description: >-
-  [NeurIPS 2025][Model Compression][KV cache compression] ChunkKV elevates the basic unit of KV cache compression from discrete tokens to semantic chunks (groups of contiguous tokens). By aggregating attention scores at the chunk level, it selects semantically intact segments for retention, and leverages the high cross-layer index similarity induced by chunking to enable layer-wise index reuse. At a 10% compression ratio, ChunkKV improves over SnapKV/PyramidKV by up to 8.7% and achieves a 26.5% throughput gain.
+  [NeurIPS 2025][Model Compression][KV cache compression] ChunkKV elevates the basic unit of KV cache compression from discrete tokens to semantic chunks (groups of contiguous tokens). By aggregating attention scores at th…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - KV cache compression
-  - semantic chunk
-  - layer-wise index reuse
-  - long-context inference
-  - memory efficiency
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "KV cache compression"
+  - "semantic chunk"
+  - "layer-wise index reuse"
+  - "long-context inference"
+  - "memory efficiency"
 date: 2026-05-08
 content_hash: 09748806a4d4f34b
 ---

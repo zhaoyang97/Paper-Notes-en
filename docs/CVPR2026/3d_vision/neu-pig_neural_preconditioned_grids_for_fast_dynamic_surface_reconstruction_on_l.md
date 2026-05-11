@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Neu-PiG: Neural Preconditioned Grids for Fast Dynamic Surface Reconstruction on Long Sequences
 description: >-
-  [CVPR 2026][3D Vision][dynamic surface reconstruction] Neu-PiG proposes a fast optimization framework based on preconditioned multi-resolution latent grids, encoding the position and normal directions of a keyframe reference mesh into a unified latent space. A lightweight MLP decodes these features into per-frame 6-DoF deformations, achieving high-fidelity dynamic surface reconstruction more than 60× faster than existing training-free methods, without requiring category-specific priors or explicit correspondences.
+  [CVPR 2026][3D Vision][dynamic surface reconstruction] Neu-PiG proposes a fast optimization framework based on preconditioned multi-resolution latent grids…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - dynamic surface reconstruction
-  - preconditioned latent grids
-  - Sobolev preconditioning
-  - multi-resolution voxels
-  - deformation estimation
+  - "CVPR 2026"
+  - "3D Vision"
+  - "dynamic surface reconstruction"
+  - "preconditioned latent grids"
+  - "Sobolev preconditioning"
+  - "multi-resolution voxels"
+  - "deformation estimation"
 date: 2026-05-08
 content_hash: 49107204198b68d0
 ---

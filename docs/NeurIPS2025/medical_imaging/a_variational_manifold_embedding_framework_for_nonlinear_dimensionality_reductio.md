@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] A Variational Manifold Embedding Framework for Nonlinear Dimensionality Reduction
 description: >-
-  [NeurIPS 2025][Medical Imaging][dimensionality reduction] This paper proposes a variational manifold embedding framework that formalizes dimensionality reduction as an optimization problem over smooth embedding maps (minimizing the KL divergence between a prior distribution and the pullback of the data distribution), theoretically unifying PCA and nonlinear dimensionality reduction methods, and leverages the calculus of variations (Euler-Lagrange equations) and Noether's theorem to derive interpretable constraints on optimal embeddings.
+  [NeurIPS 2025][Medical Imaging][dimensionality reduction] This paper proposes a variational manifold embedding framework that formalizes dimensionality reduction as an optimization problem over smooth embedding maps (min…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - dimensionality reduction
-  - manifold embedding
-  - variational framework
-  - PCA
-  - Euler-Lagrange
-  - Noether's theorem
-  - score vector
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "dimensionality reduction"
+  - "manifold embedding"
+  - "variational framework"
+  - "PCA"
+  - "Euler-Lagrange"
+  - "Noether's theorem"
+  - "score vector"
 date: 2026-05-08
 content_hash: 660f73638eaf898c
 ---

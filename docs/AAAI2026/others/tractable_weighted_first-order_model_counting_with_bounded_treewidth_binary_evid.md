@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Tractable Weighted First-Order Model Counting with Bounded Treewidth Binary Evidence
 description: >-
-  [AAAI 2026][Weighted first-order model counting] A polynomial-time (in domain size) algorithm is proposed for computing weighted first-order model counting (WFOMC) of the $\text{FO}^2$ and $\text{C}^2$ fragments with bounded-treewidth binary evidence, resolving an open problem on counting stable seating arrangements on bounded-treewidth bounded-degree graphs.
+  [AAAI 2026][Weighted first-order model counting] A polynomial-time (in domain size) algorithm is proposed for computing weighted first-order model counting (WFOMC) of the $\text{FO}^2$ and $\text{C}^2$ fragments with bou…
 tags:
-  - AAAI 2026
-  - Weighted first-order model counting
-  - binary evidence
-  - treewidth
-  - lifted inference
-  - combinatorial counting
+  - "AAAI 2026"
+  - "Weighted first-order model counting"
+  - "binary evidence"
+  - "treewidth"
+  - "lifted inference"
+  - "combinatorial counting"
 date: 2026-05-08
 content_hash: 0276c0b75c47b57b
 ---

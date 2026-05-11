@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Cross-modal Identity Mapping: Minimizing Information Loss in Modality Conversion via Reinforcement Learning
 description: >-
-  [CVPR 2026][Reinforcement Learning][Image Captioning] This paper proposes Cross-modal Identity Mapping (CIM), which quantifies information loss in image captioning by analyzing the representational consistency (GRC) of images retrieved via captions and their relevance to the source image (QIR). These metrics serve as RL reward signals to train LVLMs to generate fine-grained and accurate captions without requiring additional annotations.
+  [CVPR 2026][Reinforcement Learning][Image Captioning] This paper proposes Cross-modal Identity Mapping (CIM), which quantifies information loss in image captioning by analyzing the representational consistency (GRC) of i…
 tags:
-  - CVPR 2026
-  - Reinforcement Learning
-  - Image Captioning
-  - Cross-modal Information Loss
-  - Retrieval Reward
-  - GRPO
+  - "CVPR 2026"
+  - "Reinforcement Learning"
+  - "Image Captioning"
+  - "Cross-modal Information Loss"
+  - "Retrieval Reward"
+  - "GRPO"
 date: 2026-05-08
 content_hash: 43f1bbcc62dfdb3d
 ---

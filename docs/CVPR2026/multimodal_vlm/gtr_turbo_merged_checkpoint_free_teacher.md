@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GTR-Turbo: Merged Checkpoint is Secretly a Free Teacher for Agentic VLM Training
 description: >-
-  [CVPR 2026][Multimodal VLM][VLM agent] This paper proposes GTR-Turbo, which generates a "free teacher model" by merging historical checkpoints produced during RL training via TIES, and uses this teacher to guide subsequent training (via SFT or KL distillation). GTR-Turbo matches or surpasses GTR—which relies on external teachers such as GPT-4o—across multiple visual agent benchmarks, while reducing training time by 50% and computational cost by 60%.
+  [CVPR 2026][Multimodal VLM][VLM agent] This paper proposes GTR-Turbo, which generates a "free teacher model" by merging historical checkpoints produced during RL training via TIES…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - VLM agent
-  - multi-turn reinforcement learning
-  - model merging
-  - knowledge distillation
-  - self-evolution
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "VLM agent"
+  - "multi-turn reinforcement learning"
+  - "model merging"
+  - "knowledge distillation"
+  - "self-evolution"
 date: 2026-05-08
 content_hash: 3cb2bd97d6281019
 ---

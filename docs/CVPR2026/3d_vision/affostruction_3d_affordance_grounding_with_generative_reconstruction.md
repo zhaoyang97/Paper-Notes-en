@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Affostruction: 3D Affordance Grounding with Generative Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][3D Affordance Grounding] This paper proposes Affostruction, which completes object geometry (including unobserved regions) via sparse voxel fusion-based generative reconstruction, models the multimodal distribution of affordances using Flow Matching, and performs affordance region localization on complete 3D shapes — achieving a 54.8% improvement in reconstruction IoU and a 40.4% improvement in affordance aIoU.
+  [CVPR 2026][3D Vision][3D Affordance Grounding] This paper proposes Affostruction, which completes object geometry (including unobserved regions) via sparse voxel fusion-based generative reconstruction…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Affordance Grounding
-  - Generative Reconstruction
-  - Sparse Voxel Fusion
-  - Flow Matching
-  - Active View Selection
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Affordance Grounding"
+  - "Generative Reconstruction"
+  - "Sparse Voxel Fusion"
+  - "Flow Matching"
+  - "Active View Selection"
 date: 2026-05-08
 content_hash: c50bba7a3b337feb
 ---

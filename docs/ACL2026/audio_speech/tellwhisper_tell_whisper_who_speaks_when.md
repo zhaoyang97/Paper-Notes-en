@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TellWhisper: Tell Whisper Who Speaks When
 description: >-
-  [ACL 2026][Audio & Speech][Multi-speaker speech recognition] This paper proposes TellWhisper, which jointly encodes speaker identity and temporal information into the speech encoder's self-attention via a time-speaker-aware rotary position encoding (TS-RoPE), coupled with a hyperbolic speaker diarization model (Hyper-SD), to achieve joint modeling of "who speaks what when" and attain state-of-the-art performance on multi-speaker ASR tasks.
+  [ACL 2026][Audio & Speech][Multi-speaker speech recognition] This paper proposes TellWhisper, which jointly encodes speaker identity and temporal information into the speech encoder's self-attention via a time-speaker-aw…
 tags:
-  - ACL 2026
+  - "ACL 2026"
   - "Audio & Speech"
-  - Multi-speaker speech recognition
-  - speaker diarization
-  - rotary position encoding
-  - hyperbolic space classification
-  - Whisper
+  - "Multi-speaker speech recognition"
+  - "speaker diarization"
+  - "rotary position encoding"
+  - "hyperbolic space classification"
+  - "Whisper"
 date: 2026-05-08
 content_hash: f0e1ec8d0aa53a2f
 ---

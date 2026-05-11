@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Large Language Models as Medical Codes Selectors: A Benchmark Using the International Classification of Primary Care
 description: >-
-  [NeurIPS 2025 (GenAI for Health Workshop)][Medical Imaging][Medical coding] This work constructs a medical coding benchmark based on an extract-retrieve-select framework, evaluating ICPC-2 code selection capability across 33 LLMs. Results show that 28 models achieve F1 > 0.8, demonstrating that LLMs can effectively automate primary care coding without fine-tuning.
+  [NeurIPS 2025 (GenAI for Health Workshop)][Medical Imaging][Medical coding] This work constructs a medical coding benchmark based on an extract-retrieve-select framework…
 tags:
-  - NeurIPS 2025 (GenAI for Health Workshop)
-  - Medical Imaging
-  - Medical coding
-  - ICPC-2
-  - LLM benchmark
-  - extreme multi-label classification
-  - semantic retrieval
+  - "NeurIPS 2025 (GenAI for Health Workshop)"
+  - "Medical Imaging"
+  - "Medical coding"
+  - "ICPC-2"
+  - "LLM benchmark"
+  - "extreme multi-label classification"
+  - "semantic retrieval"
 date: 2026-05-08
 content_hash: 55091921e9cc58be
 ---

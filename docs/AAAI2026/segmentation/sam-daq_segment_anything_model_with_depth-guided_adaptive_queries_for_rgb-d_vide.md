@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SAM-DAQ: Segment Anything Model with Depth-guided Adaptive Queries for RGB-D Video Salient Object Detection
 description: >-
-  [AAAI 2026][Segmentation][SAM2] This paper proposes SAM-DAQ, which adapts SAM2 to RGB-D video salient object detection (VSOD) via a Depth-guided Parallel Adapter (DPA) and a Query-driven Temporal Memory (QTM) module, addressing three key challenges: manual prompt dependency, excessive GPU memory consumption, and computational overhead.
+  [AAAI 2026][Segmentation][SAM2] This paper proposes SAM-DAQ, which adapts SAM2 to RGB-D video salient object detection (VSOD) via a Depth-guided Parallel Adapter (DPA) and a Query-driven Temporal Memory (QTM) module…
 tags:
-  - AAAI 2026
-  - Segmentation
-  - SAM2
-  - RGB-D Salient Object Detection
-  - Video Understanding
-  - Depth Guidance
-  - Query-driven Memory
+  - "AAAI 2026"
+  - "Segmentation"
+  - "SAM2"
+  - "RGB-D Salient Object Detection"
+  - "Video Understanding"
+  - "Depth Guidance"
+  - "Query-driven Memory"
 date: 2026-05-08
 content_hash: 5ad8738875c6df58
 ---

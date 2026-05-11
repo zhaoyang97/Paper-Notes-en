@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Long-Context Modeling with Dynamic Hierarchical Sparse Attention for On-Device LLMs
 description: >-
-  [NeurIPS 2025][LLM Efficiency][sparse attention] This paper proposes Dynamic Hierarchical Sparse Attention (DHSA), a hierarchical framework that replaces dense attention with sparse attention via adaptive chunk segmentation, chunk-level similarity prediction, and upsampling to token level — without retraining the base model. On Gemma2/3, DHSA achieves accuracy on par with dense attention while reducing prefill latency by 20–60% and peak memory by 35%.
+  [NeurIPS 2025][LLM Efficiency][sparse attention] This paper proposes Dynamic Hierarchical Sparse Attention (DHSA), a hierarchical framework that replaces dense attention with sparse attention via adaptive chunk segmentat…
 tags:
-  - NeurIPS 2025
-  - LLM Efficiency
-  - sparse attention
-  - dynamic chunking
-  - hierarchical sparsity prediction
-  - on-device LLM
-  - long context
-  - chunk representation
-  - boundary detection
+  - "NeurIPS 2025"
+  - "LLM Efficiency"
+  - "sparse attention"
+  - "dynamic chunking"
+  - "hierarchical sparsity prediction"
+  - "on-device LLM"
+  - "long context"
+  - "chunk representation"
+  - "boundary detection"
 date: 2026-05-08
 content_hash: 5cc149129e72e94d
 ---

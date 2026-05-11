@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Position: Thematic Analysis of Unstructured Clinical Transcripts with Large Language Models
 description: >-
-  [Medical Imaging] This position paper systematically reviews the current state of LLM-assisted thematic analysis (TA) on unstructured clinical transcripts, identifies highly fragmented evaluation practices across the literature, and proposes a standardized evaluation framework centered on three dimensions: Validity, Reliability, and Interpretability.
+  [Medical Imaging] This position paper systematically reviews the current state of LLM-assisted thematic analysis (TA) on unstructured clinical transcripts…
 tags:
-  - Medical Imaging
+  - "Medical Imaging"
 date: 2026-05-08
 content_hash: 7726086b30b67c59
 ---

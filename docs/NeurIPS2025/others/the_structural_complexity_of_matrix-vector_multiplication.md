@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] The Structural Complexity of Matrix-Vector Multiplication
 description: >-
-  [NeurIPS 2025][matrix-vector multiplication] This paper proves that for Boolean matrices $\mathbf{M} \in \{0,1\}^{m \times n}$ with corrupted VC-dimension $d$, matrix-vector multiplication can be performed in $\widetilde{O}(nm^{1-1/d}+m)$ time. This is the first truly sub-quadratic upper bound for structured matrices, refuting the applicability of the OMv conjecture on structured inputs, and yields the first high-accuracy sub-quadratic algorithms for dynamic Laplacian solving, effective resistance, triangle detection, and related problems.
+  [NeurIPS 2025][matrix-vector multiplication] This paper proves that for Boolean matrices $\mathbf{M} \in \{0,1\}^{m \times n}$ with corrupted VC-dimension $d$…
 tags:
-  - NeurIPS 2025
-  - matrix-vector multiplication
-  - VC dimension
-  - structured matrices
-  - dynamic algorithms
-  - minimum spanning tree
+  - "NeurIPS 2025"
+  - "matrix-vector multiplication"
+  - "VC dimension"
+  - "structured matrices"
+  - "dynamic algorithms"
+  - "minimum spanning tree"
 date: 2026-05-08
 content_hash: 9c5caffa6e722e9e
 ---

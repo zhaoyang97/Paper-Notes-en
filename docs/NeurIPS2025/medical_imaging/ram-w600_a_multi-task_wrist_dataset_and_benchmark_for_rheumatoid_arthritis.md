@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RAM-W600: A Multi-Task Wrist Dataset and Benchmark for Rheumatoid Arthritis
 description: >-
-  [NeurIPS 2025][Medical Imaging][Rheumatoid Arthritis] RAM-W600 is the first publicly available multi-task wrist conventional radiograph dataset, comprising 1,048 images and supporting two clinically relevant tasks: carpal bone instance segmentation and SvdH bone erosion (BE) scoring, accompanied by comprehensive benchmarking.
+  [NeurIPS 2025][Medical Imaging][Rheumatoid Arthritis] RAM-W600 is the first publicly available multi-task wrist conventional radiograph dataset, comprising 1…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Rheumatoid Arthritis
-  - Carpal Bone Segmentation
-  - Bone Erosion Scoring
-  - Dataset
-  - Instance Segmentation
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Rheumatoid Arthritis"
+  - "Carpal Bone Segmentation"
+  - "Bone Erosion Scoring"
+  - "Dataset"
+  - "Instance Segmentation"
 date: 2026-05-08
 content_hash: 73c506986b697632
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CMT: Mid-Training for Efficient Learning of Consistency, Mean Flow, and Flow Map Models
 description: >-
-  [ICLR 2026][Image Generation][flow map] This paper proposes Consistency Mid-Training (CMT), which inserts a lightweight intermediate training stage between a pretrained diffusion model and flow map post-training. By training the model to map arbitrary points on ODE trajectories back to clean samples, CMT yields trajectory-aligned initialization, reducing training cost by up to 98% while achieving state-of-the-art two-step generation quality.
+  [ICLR 2026][Image Generation][flow map] This paper proposes Consistency Mid-Training (CMT), which inserts a lightweight intermediate training stage between a pretrained diffusion model and flow map post-training. By trai…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - flow map
-  - consistency model
-  - mid-training
-  - few-step generation
-  - diffusion distillation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "flow map"
+  - "consistency model"
+  - "mid-training"
+  - "few-step generation"
+  - "diffusion distillation"
 date: 2026-05-08
 content_hash: 90583cb3488df71a
 ---

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Tracing Pharmacological Knowledge in Large Language Models
 description: >-
-  [Medical Imaging] The first systematic causal analysis of the encoding mechanisms for drug-group semantics in biomedical LLMs, revealing that drug-group knowledge is stored in early layers, distributed across multiple tokens (not the last token alone), and that linearly separable semantic information is already present at the embedding layer.
+  [Medical Imaging] The first systematic causal analysis of the encoding mechanisms for drug-group semantics in biomedical LLMs, revealing that drug-group knowledge is stored in early layers…
 tags:
-  - Medical Imaging
+  - "Medical Imaging"
 date: 2026-05-08
 content_hash: f6afa10950c437a0
 ---

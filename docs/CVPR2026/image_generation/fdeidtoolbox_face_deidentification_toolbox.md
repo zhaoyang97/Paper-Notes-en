@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] FDeID-Toolbox: Face De-Identification Toolbox
 description: >-
-  [CVPR 2026][Image Generation][face de-identification] This paper releases FDeID-Toolbox, a modular face de-identification research toolbox that unifies data loading, method implementation (from classical to SOTA generative models), inference pipelines, and a three-dimensional evaluation protocol (privacy / utility / quality), addressing long-standing fragmentation and incomparability of experimental results in the field.
+  [CVPR 2026][Image Generation][face de-identification] This paper releases FDeID-Toolbox, a modular face de-identification research toolbox that unifies data loading…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - face de-identification
-  - privacy protection
-  - toolbox
-  - reproducible evaluation
-  - generative models
-  - benchmark
+  - "CVPR 2026"
+  - "Image Generation"
+  - "face de-identification"
+  - "privacy protection"
+  - "toolbox"
+  - "reproducible evaluation"
+  - "generative models"
+  - "benchmark"
 date: 2026-05-08
 content_hash: a56ed9907be4f4aa
 ---

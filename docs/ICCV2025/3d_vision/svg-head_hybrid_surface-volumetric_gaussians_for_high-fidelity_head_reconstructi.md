@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SVG-Head: Hybrid Surface-Volumetric Gaussians for High-Fidelity Head Reconstruction and Real-Time Editing
 description: >-
-  [ICCV 2025][3D Vision][head reconstruction] SVG-Head is proposed as a hybrid representation combining surface Gaussians (with explicit texture maps) and volumetric Gaussians (for supplementary modeling of non-Lambertian regions), achieving, for the first time, real-time appearance editing of high-fidelity Gaussian head avatars.
+  [ICCV 2025][3D Vision][head reconstruction] SVG-Head is proposed as a hybrid representation combining surface Gaussians (with explicit texture maps) and volumetric Gaussians (for supplementary modeling of non-Lambertian…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - head reconstruction
-  - 3D Gaussian
-  - texture editing
-  - FLAME mesh
-  - surface-volumetric hybrid
+  - "ICCV 2025"
+  - "3D Vision"
+  - "head reconstruction"
+  - "3D Gaussian"
+  - "texture editing"
+  - "FLAME mesh"
+  - "surface-volumetric hybrid"
 date: 2026-05-08
 content_hash: cea79300d780c643
 ---

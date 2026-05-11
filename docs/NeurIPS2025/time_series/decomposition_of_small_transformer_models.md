@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Decomposition of Small Transformer Models
 description: >-
-  [NeurIPS 2025 (Workshop: Mechanistic Interpretability)][Time Series][Parameter space decomposition] This paper extends Stochastic Parameter Decomposition (SPD) to Transformers by designing a sequence-aware causal importance function and a novel partial reconstruction loss. On a toy induction head task, the method recovers the expected two-step circuit; on GPT-2-small, it localizes rank-1 parameter subspaces corresponding to interpretable concepts such as "golf" and "basketball."
+  [NeurIPS 2025 (Workshop: Mechanistic Interpretability)][Time Series][Parameter space decomposition] This paper extends Stochastic Parameter Decomposition (SPD) to Transformers by designing a sequence-aware causal importa…
 tags:
   - "NeurIPS 2025 (Workshop: Mechanistic Interpretability)"
-  - Time Series
-  - Parameter space decomposition
-  - Stochastic Parameter Decomposition
-  - Induction Head
-  - GPT-2
-  - Causal importance
+  - "Time Series"
+  - "Parameter space decomposition"
+  - "Stochastic Parameter Decomposition"
+  - "Induction Head"
+  - "GPT-2"
+  - "Causal importance"
 date: 2026-05-08
 content_hash: 9e9afecf5cb35faf
 ---

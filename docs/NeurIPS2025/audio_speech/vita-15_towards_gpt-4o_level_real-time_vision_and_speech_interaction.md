@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VITA-1.5: Towards GPT-4o Level Real-Time Vision and Speech Interaction
 description: >-
-  [NeurIPS 2025][Audio & Speech][multimodal LLM] VITA-1.5 proposes a carefully designed three-stage progressive training strategy that incrementally integrates visual and speech capabilities into an LLM, achieving end-to-end vision-speech real-time interaction without relying on standalone ASR/TTS modules, while attaining state-of-the-art performance among open-source models on image, video, and speech benchmarks.
+  [NeurIPS 2025][Audio & Speech][multimodal LLM] VITA-1.5 proposes a carefully designed three-stage progressive training strategy that incrementally integrates visual and speech capabilities into an LLM…
 tags:
-  - NeurIPS 2025
+  - "NeurIPS 2025"
   - "Audio & Speech"
-  - multimodal LLM
-  - vision-speech interaction
-  - end-to-end speech
-  - three-stage training
-  - omni model
+  - "multimodal LLM"
+  - "vision-speech interaction"
+  - "end-to-end speech"
+  - "three-stage training"
+  - "omni model"
 date: 2026-05-08
 content_hash: 4e4cb5095baac5f4
 ---

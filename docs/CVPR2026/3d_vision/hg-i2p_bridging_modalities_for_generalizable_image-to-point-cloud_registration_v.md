@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Hg-I2P: Bridging Modalities for Generalizable Image-to-Point-Cloud Registration via Heterogeneous Graphs
 description: >-
-  [CVPR 2026][3D Vision][image-to-point-cloud registration] Hg-I2P introduces a Heterogeneous Graph to jointly model relationships between 2D image regions and 3D point cloud regions. Through multi-path adjacency mining for learning cross-modal edges, heterogeneous-edge-guided feature adaptation, and graph-based projection consistency pruning, it achieves state-of-the-art generalization and accuracy across six indoor and outdoor cross-domain benchmarks.
+  [CVPR 2026][3D Vision][image-to-point-cloud registration] Hg-I2P introduces a Heterogeneous Graph to jointly model relationships between 2D image regions and 3D point cloud regions. Through multi-path adjacency mining fo…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - image-to-point-cloud registration
-  - heterogeneous graph
-  - cross-modal feature adaptation
-  - correspondence pruning
-  - cross-domain generalization
+  - "CVPR 2026"
+  - "3D Vision"
+  - "image-to-point-cloud registration"
+  - "heterogeneous graph"
+  - "cross-modal feature adaptation"
+  - "correspondence pruning"
+  - "cross-domain generalization"
 date: 2026-05-08
 content_hash: 72d5ed3abdd93143
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Global Compression Commander: Plug-and-Play Inference Acceleration for High-Resolution Large Vision-Language Models
 description: >-
-  [AAAI 2026][Multimodal VLM][Token Compression] This paper proposes GlobalCom², a **plug-and-play, training-free** token compression framework tailored for high-resolution VLMs with dynamic cropping architectures. It leverages the global thumbnail as a "commander" to guide differentiated compression across local crop regions, achieving >90% of original performance while compressing 90% of visual tokens.
+  [AAAI 2026][Multimodal VLM][Token Compression] This paper proposes GlobalCom², a **plug-and-play, training-free** token compression framework tailored for high-resolution VLMs with dynamic cropping architectures. It leve…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Token Compression
-  - High-Resolution VLM
-  - Dynamic Cropping
-  - Plug-and-Play Acceleration
-  - Global-Local Guidance
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Token Compression"
+  - "High-Resolution VLM"
+  - "Dynamic Cropping"
+  - "Plug-and-Play Acceleration"
+  - "Global-Local Guidance"
 date: 2026-05-08
 content_hash: df7ca19a4dd05e11
 ---

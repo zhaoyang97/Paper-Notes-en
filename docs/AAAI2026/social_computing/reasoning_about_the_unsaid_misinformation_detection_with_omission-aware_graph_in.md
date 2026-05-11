@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Reasoning About the Unsaid: Misinformation Detection with Omission-Aware Graph Inference
 description: >-
-  [AAAI 2026][Social Computing][Misinformation Detection] This paper proposes OmiGraph, the first omission-aware misinformation detection framework. By constructing omission-aware graphs, leveraging LLMs to reason about omission intent, and employing omission-guided message passing and aggregation mechanisms, OmiGraph extracts deception patterns from "what is unsaid," achieving average gains of +5.4% F1 and +5.3% ACC on bilingual datasets.
+  [AAAI 2026][Social Computing][Misinformation Detection] This paper proposes OmiGraph, the first omission-aware misinformation detection framework. By constructing omission-aware graphs…
 tags:
-  - AAAI 2026
-  - Social Computing
-  - Misinformation Detection
-  - Omission-Aware
-  - Graph Neural Networks
-  - Large Language Models
-  - Information Manipulation
+  - "AAAI 2026"
+  - "Social Computing"
+  - "Misinformation Detection"
+  - "Omission-Aware"
+  - "Graph Neural Networks"
+  - "Large Language Models"
+  - "Information Manipulation"
 date: 2026-05-08
 content_hash: 6ecd949579c623c1
 ---

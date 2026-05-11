@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] scPilot: Large Language Model Reasoning Toward Automated Single-Cell Analysis and Discovery
 description: >-
-  [NeurIPS 2025][single-cell RNA-seq] This work proposes the scPilot framework and scBench benchmark, enabling LLMs to perform "omics-native reasoning" (ONR) directly on single-cell RNA-seq data—reading marker genes, forming hypotheses, invoking tools for verification, and iteratively refining conclusions—achieving an 11% improvement in cell-type annotation accuracy and a 30% reduction in trajectory inference graph-edit distance.
+  [NeurIPS 2025][Interpretability][single-cell RNA-seq] This work proposes the scPilot framework and scBench benchmark, enabling LLMs to perform "omics-native reasoning" (ONR) directly on single-cell RNA-seq data—reading m…
 tags:
-  - NeurIPS 2025
-  - single-cell RNA-seq
-  - LLM reasoning
-  - omics-native reasoning
-  - cell-type annotation
-  - trajectory inference
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "single-cell RNA-seq"
+  - "LLM reasoning"
+  - "omics-native reasoning"
+  - "cell-type annotation"
+  - "trajectory inference"
 date: 2026-05-08
 content_hash: fb7930d6219dd422
 ---

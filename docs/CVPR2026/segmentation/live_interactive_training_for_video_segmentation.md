@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Live Interactive Training for Video Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Interactive video segmentation] LIT (Live Interactive Training) proposes a framework enabling interactive visual systems (e.g., SAM2) to learn online from user corrections during inference. Its lightweight implementation, LIT-LoRA, generalizes user feedback to subsequent frames by updating LoRA modules in real time, reducing user corrections by 18–34% on challenging VOS benchmarks with a training overhead of only ~0.5 seconds per correction.
+  [CVPR 2026][Segmentation][Interactive video segmentation] LIT (Live Interactive Training) proposes a framework enabling interactive visual systems (e.g.…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Interactive video segmentation
-  - online learning
-  - LoRA adaptation
-  - SAM2
-  - user feedback-driven
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Interactive video segmentation"
+  - "online learning"
+  - "LoRA adaptation"
+  - "SAM2"
+  - "user feedback-driven"
 date: 2026-05-08
 content_hash: 575e52dc1e30cc61
 ---

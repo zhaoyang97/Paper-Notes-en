@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PandaPose: 3D Human Pose Lifting from a Single Image via Propagating 2D Pose Prior to 3D Anchor Space
 description: >-
-  [NeurIPS 2025][Human Understanding][3D human pose estimation] This paper proposes PandaPose, which propagates 2D pose priors into a 3D anchor space as a unified intermediate representation. By combining joint-wise adaptive 3D anchor setting with joint-wise depth distribution estimation, PandaPose achieves robust single-frame 3D human pose lifting against occlusion and 2D pose errors.
+  [NeurIPS 2025][Human Understanding][3D human pose estimation] This paper proposes PandaPose, which propagates 2D pose priors into a 3D anchor space as a unified intermediate representation. By combining joint-wise adapti…
 tags:
-  - NeurIPS 2025
-  - Human Understanding
-  - 3D human pose estimation
-  - anchor mechanism
-  - depth estimation
-  - self-occlusion
-  - pose lifting
+  - "NeurIPS 2025"
+  - "Human Understanding"
+  - "3D human pose estimation"
+  - "anchor mechanism"
+  - "depth estimation"
+  - "self-occlusion"
+  - "pose lifting"
 date: 2026-05-08
 content_hash: 075488c3a18ad4e9
 ---

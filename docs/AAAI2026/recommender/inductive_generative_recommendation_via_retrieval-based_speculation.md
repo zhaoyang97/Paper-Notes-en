@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Inductive Generative Recommendation via Retrieval-based Speculation
 description: >-
-  [AAAI 2026 (Oral)][Recommender Systems][Generative Recommendation] This paper identifies a critical limitation of Generative Recommendation (GR) models — their inability to recommend items unseen during training — and proposes SpecGR, a plug-and-play framework in which an inductively capable drafter model proposes candidate items (including new ones) while the GR model serves as a verifier to rank and validate candidates. A guided re-drafting mechanism further improves verification efficiency, achieving state-of-the-art overall performance across three datasets.
+  [AAAI 2026 (Oral)][Recommender Systems][Generative Recommendation] This paper identifies a critical limitation of Generative Recommendation (GR) models — their inability to recommend items unseen during training — and pr…
 tags:
-  - AAAI 2026 (Oral)
-  - Recommender Systems
-  - Generative Recommendation
-  - Inductive Recommendation
-  - Speculative Verification
-  - New Item Recommendation
-  - Retrieval Augmentation
+  - "AAAI 2026 (Oral)"
+  - "Recommender Systems"
+  - "Generative Recommendation"
+  - "Inductive Recommendation"
+  - "Speculative Verification"
+  - "New Item Recommendation"
+  - "Retrieval Augmentation"
 date: 2026-05-08
 content_hash: e745505a75c68736
 ---

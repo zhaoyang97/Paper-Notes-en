@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Uncovering Bias Paths with LLM-guided Causal Discovery: An Active Learning and Dynamic Scoring Approach
 description: >-
-  [AAAI2026][LLM Safety][Causal Discovery] This paper proposes a hybrid causal discovery framework that integrates LLM semantic priors with statistical signals. Through an active learning strategy and a dynamic scoring mechanism, the framework prioritizes querying the most informative variable pairs, effectively recovering fairness-critical causal paths (e.g., sex→education→income) under noise and confounding conditions, substantially outperforming classical CD methods and naïve LLM-based approaches.
+  [AAAI2026][LLM Safety][Causal Discovery] This paper proposes a hybrid causal discovery framework that integrates LLM semantic priors with statistical signals. Through an active learning strategy and a dynamic scoring mec…
 tags:
-  - AAAI2026
-  - LLM Safety
-  - Causal Discovery
-  - LLM-guided
-  - Fairness Auditing
-  - Active Learning
-  - Dynamic Scoring
-  - Bias Paths
+  - "AAAI2026"
+  - "LLM Safety"
+  - "Causal Discovery"
+  - "LLM-guided"
+  - "Fairness Auditing"
+  - "Active Learning"
+  - "Dynamic Scoring"
+  - "Bias Paths"
 date: 2026-05-08
 content_hash: 8f226f7c144c6aef
 ---

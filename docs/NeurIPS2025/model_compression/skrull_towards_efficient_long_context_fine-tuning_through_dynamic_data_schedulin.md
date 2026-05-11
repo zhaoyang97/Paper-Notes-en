@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Skrull: Towards Efficient Long Context Fine-tuning through Dynamic Data Scheduling
 description: >-
-  [NeurIPS 2025][Model Compression][long-context fine-tuning] To address the training inefficiency caused by mixing long and short sequences in Long-context Supervised Fine-Tuning (Long-SFT), this paper proposes Skrull, a dynamic data scheduler consisting of two components — Distribution-Aware Context Parallelism (DACP) and Global Data Scheduling (GDS) — achieving an average 3.76× (up to 7.54×) training speedup in realistic Long-SFT scenarios.
+  [NeurIPS 2025][Model Compression][long-context fine-tuning] To address the training inefficiency caused by mixing long and short sequences in Long-context Supervised Fine-Tuning (Long-SFT), this paper proposes Skrull…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - long-context fine-tuning
-  - data scheduling
-  - context parallelism
-  - training efficiency
-  - large language models
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "long-context fine-tuning"
+  - "data scheduling"
+  - "context parallelism"
+  - "training efficiency"
+  - "large language models"
 date: 2026-05-08
 content_hash: 16b176eb5f727753
 ---

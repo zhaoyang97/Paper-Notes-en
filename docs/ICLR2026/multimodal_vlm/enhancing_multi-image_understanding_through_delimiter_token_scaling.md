@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Enhancing Multi-Image Understanding through Delimiter Token Scaling
 description: >-
-  [ICLR 2026][Multimodal VLM][multi-image understanding] By scaling the hidden states of image delimiter tokens in vision-language models, this work enhances inter-image information isolation and achieves performance gains on multi-image understanding benchmarks (Mantis/MuirBench/MIRB/QBench2) and multi-document/multi-table understanding benchmarks (TQABench/MultiNews/WCEP-10) without introducing any additional training or inference cost.
+  [ICLR 2026][Multimodal VLM][multi-image understanding] By scaling the hidden states of image delimiter tokens in vision-language models, this work enhances inter-image information isolation and achieves performance gains…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - multi-image understanding
-  - large vision-language models
-  - delimiter tokens
-  - cross-image information leakage
-  - attention mechanism
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "multi-image understanding"
+  - "large vision-language models"
+  - "delimiter tokens"
+  - "cross-image information leakage"
+  - "attention mechanism"
 date: 2026-05-08
 content_hash: 92c75ba96f4ce31e
 ---

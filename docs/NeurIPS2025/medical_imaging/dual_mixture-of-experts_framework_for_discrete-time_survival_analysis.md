@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dual Mixture-of-Experts Framework for Discrete-Time Survival Analysis
 description: >-
-  [NeurIPS 2025 (TS4H Workshop)][Medical Imaging][Survival Analysis] This paper proposes a Dual Mixture-of-Experts (Dual MoE) framework for discrete-time survival analysis, combining a feature encoder MoE (for modeling patient subgroup heterogeneity) with a hazard network MoE (for capturing temporal dynamics). The framework achieves improvements of up to 0.04 in time-dependent C-index on the METABRIC and GBSG breast cancer datasets.
+  [NeurIPS 2025 (TS4H Workshop)][Medical Imaging][Survival Analysis] This paper proposes a Dual Mixture-of-Experts (Dual MoE) framework for discrete-time survival analysis…
 tags:
-  - NeurIPS 2025 (TS4H Workshop)
-  - Medical Imaging
-  - Survival Analysis
-  - Mixture-of-Experts
-  - Discrete Time
-  - Patient Heterogeneity
-  - Breast Cancer
+  - "NeurIPS 2025 (TS4H Workshop)"
+  - "Medical Imaging"
+  - "Survival Analysis"
+  - "Mixture-of-Experts"
+  - "Discrete Time"
+  - "Patient Heterogeneity"
+  - "Breast Cancer"
 date: 2026-05-08
 content_hash: d1712ecbcdaeb657
 ---

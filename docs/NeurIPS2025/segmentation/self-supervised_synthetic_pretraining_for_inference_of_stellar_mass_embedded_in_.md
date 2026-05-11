@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Self-supervised Synthetic Pretraining for Inference of Stellar Mass Embedded in Dense Gas
 description: >-
-  [NeurIPS 2025 (Workshop: ML and the Physical Sciences)][Segmentation][self-supervised pretraining] This paper proposes a "synthetic data-driven self-supervised pretraining" paradigm: one million synthetic fractal images are first generated via the Flame algorithm to pretrain a ViT-L/16 encoder using the DINOv2 framework; the frozen encoder is then transferred directly to an extremely limited set of magnetohydrodynamic (MHD) star-formation simulation data, achieving stellar mass prediction via kNN regression ($R^2 = 0.81$) and zero-shot unsupervised semantic segmentation via PCA projection—slightly outperforming a fully supervised ResNet-18 baseline trained on the same data.
+  [NeurIPS 2025 (Workshop: ML and the Physical Sciences)][Segmentation][self-supervised pretraining] This paper proposes a "synthetic data-driven self-supervised pretraining" paradigm: one million synthetic fractal images…
 tags:
   - "NeurIPS 2025 (Workshop: ML and the Physical Sciences)"
-  - Segmentation
-  - self-supervised pretraining
-  - synthetic fractal images
-  - DINOv2
-  - ViT
-  - stellar mass inference
-  - MHD simulation
-  - zero-shot semantic segmentation
+  - "Segmentation"
+  - "self-supervised pretraining"
+  - "synthetic fractal images"
+  - "DINOv2"
+  - "ViT"
+  - "stellar mass inference"
+  - "MHD simulation"
+  - "zero-shot semantic segmentation"
 date: 2026-05-08
 content_hash: e86ef25c4c8c9c6b
 ---

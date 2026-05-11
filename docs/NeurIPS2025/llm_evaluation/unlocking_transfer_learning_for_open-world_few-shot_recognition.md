@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unlocking Transfer Learning for Open-World Few-Shot Recognition
 description: >-
-  [NeurIPS 2025 (Workshop)][LLM Evaluation][Few-shot open-set recognition] A two-stage framework is proposed that combines open-set-aware meta-learning with open-set-free transfer learning, achieving the first successful application of the transfer learning paradigm to few-shot open-set recognition (FSOSR) and reaching SOTA on miniImageNet and tieredImageNet.
+  [NeurIPS 2025 (Workshop)][LLM Evaluation][Few-shot open-set recognition] A two-stage framework is proposed that combines open-set-aware meta-learning with open-set-free transfer learning…
 tags:
-  - NeurIPS 2025 (Workshop)
-  - LLM Evaluation
-  - Few-shot open-set recognition
-  - transfer learning
-  - meta-learning
-  - open world
-  - pseudo open-set samples
+  - "NeurIPS 2025 (Workshop)"
+  - "LLM Evaluation"
+  - "Few-shot open-set recognition"
+  - "transfer learning"
+  - "meta-learning"
+  - "open world"
+  - "pseudo open-set samples"
 date: 2026-05-08
 content_hash: c1c10feab5440463
 ---

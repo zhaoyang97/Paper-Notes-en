@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PlanaReLoc: Camera Relocalization in 3D Planar Primitives via Region-Based Structure Matching
 description: >-
-  [CVPR 2026][Model Compression][camera relocalization] PlanaReLoc is the first camera relocalization paradigm centered on planar primitives and 3D planar maps. A deep matcher associates planar regions extracted from query images with map planar primitives in a unified embedding space, achieving lightweight 6-DoF camera relocalization without requiring textured maps, pose priors, or per-scene training.
+  [CVPR 2026][Model Compression][camera relocalization] PlanaReLoc is the first camera relocalization paradigm centered on planar primitives and 3D planar maps. A deep matcher associates planar regions extracted from query…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - camera relocalization
-  - planar primitives
-  - structure matching
-  - 6-DoF pose estimation
-  - lightweight map
+  - "CVPR 2026"
+  - "Model Compression"
+  - "camera relocalization"
+  - "planar primitives"
+  - "structure matching"
+  - "6-DoF pose estimation"
+  - "lightweight map"
 date: 2026-05-08
 content_hash: bfbb447155ed572f
 ---

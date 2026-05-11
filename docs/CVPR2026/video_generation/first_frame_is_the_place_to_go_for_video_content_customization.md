@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] First Frame Is the Place to Go for Video Content Customization
 description: >-
-  [CVPR 2026][Video Generation][Video content customization] This paper identifies an intrinsic capability of video generation models to implicitly use the first frame as a "conceptual memory buffer" for storing and reusing multiple visual entities. Building on this observation, the authors propose FFGo—a lightweight LoRA adaptation method requiring only 20–50 training samples—that activates this capability without any architectural modification, enabling multi-reference video content customization. FFGo is rated best in 81.2% of cases in user studies.
+  [CVPR 2026][Video Generation][Video content customization] This paper identifies an intrinsic capability of video generation models to implicitly use the first frame as a "conceptual memory buffer" for storing and reusin…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Video content customization
-  - first-frame conceptual buffer
-  - multi-reference video generation
-  - LoRA fine-tuning
-  - vision-language model
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Video content customization"
+  - "first-frame conceptual buffer"
+  - "multi-reference video generation"
+  - "LoRA fine-tuning"
+  - "vision-language model"
 date: 2026-05-08
 content_hash: a2529b901294b1a0
 ---

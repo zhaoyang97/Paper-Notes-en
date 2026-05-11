@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FilmWeaver: Weaving Consistent Multi-Shot Videos with Cache-Guided Autoregressive Diffusion
 description: >-
-  [AAAI 2026][Video Generation][Multi-shot video generation] FilmWeaver is proposed as a framework that guides autoregressive diffusion models via a dual-level cache (Shot Cache + Temporal Cache), enabling multi-shot video generation of arbitrary length with cross-shot consistency.
+  [AAAI 2026][Video Generation][Multi-shot video generation] FilmWeaver is proposed as a framework that guides autoregressive diffusion models via a dual-level cache (Shot Cache + Temporal Cache)…
 tags:
-  - AAAI 2026
-  - Video Generation
-  - Multi-shot video generation
-  - autoregressive diffusion
-  - cache mechanism
-  - consistency
-  - long video generation
+  - "AAAI 2026"
+  - "Video Generation"
+  - "Multi-shot video generation"
+  - "autoregressive diffusion"
+  - "cache mechanism"
+  - "consistency"
+  - "long video generation"
 date: 2026-05-08
 content_hash: c9264cb18f0b5462
 ---

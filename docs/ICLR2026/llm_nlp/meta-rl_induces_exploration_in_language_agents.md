@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Meta-RL Induces Exploration in Language Agents
 description: >-
-  [ICLR 2026][LLM/NLP][Meta-RL] This paper proposes LaMer, a framework that introduces Meta-Reinforcement Learning (Meta-RL) into LLM agent training. By optimizing rewards across episodes and enabling context-based policy adaptation via self-reflection, LaMer equips language agents with active exploration capabilities, achieving absolute performance gains of 11%, 14%, and 19% on Sokoban, MineSweeper, and Webshop, respectively.
+  [ICLR 2026][LLM/NLP][Meta-RL] This paper proposes LaMer, a framework that introduces Meta-Reinforcement Learning (Meta-RL) into LLM agent training. By optimizing rewards across episodes and enabling context-based policy…
 tags:
-  - ICLR 2026
-  - LLM/NLP
-  - Meta-RL
-  - LLM Agent
+  - "ICLR 2026"
+  - "LLM/NLP"
+  - "Meta-RL"
+  - "LLM Agent"
   - "Exploration & Exploitation"
-  - Multi-turn Interaction
-  - Cross-episode Training
-  - Self-reflection
+  - "Multi-turn Interaction"
+  - "Cross-episode Training"
+  - "Self-reflection"
 date: 2026-05-08
 content_hash: e787c13fa0f3df7e
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UAVScenes: A Multi-Modal Dataset for UAVs
 description: >-
-  [ICCV 2025][Autonomous Driving][UAV perception] UAVScenes is the first large-scale multi-modal UAV dataset that simultaneously provides per-frame semantic annotations for both images and LiDAR point clouds along with accurate 6-DoF poses. It contains over 120,000 annotated frames and supports six perception tasks including semantic segmentation, depth estimation, localization, scene recognition, and novel view synthesis.
+  [ICCV 2025][Autonomous Driving][UAV perception] UAVScenes is the first large-scale multi-modal UAV dataset that simultaneously provides per-frame semantic annotations for both images and LiDAR point clouds along with acc…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - UAV perception
-  - multi-modal dataset
-  - semantic segmentation
-  - depth estimation
-  - LiDAR point cloud
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "UAV perception"
+  - "multi-modal dataset"
+  - "semantic segmentation"
+  - "depth estimation"
+  - "LiDAR point cloud"
 date: 2026-05-08
 content_hash: 2b8e76298fa32259
 ---

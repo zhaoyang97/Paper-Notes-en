@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Robustness and Radioactivity of Watermarks in Federated Learning May Be at Odds
 description: >-
-  [ICLR 2026][Video Understanding][Federated Learning] This work presents the first study on LLM watermark-based data provenance in federated learning (FL). It demonstrates that watermarks are radioactive (detectable) in FL, yet a malicious server can suppress watermark signals by employing strong robust aggregation algorithms to filter watermarked updates, revealing a fundamental trilemma among radioactivity, robustness, and model utility.
+  [ICLR 2026][Video Understanding][Federated Learning] This work presents the first study on LLM watermark-based data provenance in federated learning (FL). It demonstrates that watermarks are radioactive (detectable) in F…
 tags:
-  - ICLR 2026
-  - Video Understanding
-  - Federated Learning
-  - LLM Watermarking
-  - Data Provenance
-  - Robust Aggregation
-  - Radioactivity Detection
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "Federated Learning"
+  - "LLM Watermarking"
+  - "Data Provenance"
+  - "Robust Aggregation"
+  - "Radioactivity Detection"
 date: 2026-05-08
 content_hash: bad5d08decb24700
 ---

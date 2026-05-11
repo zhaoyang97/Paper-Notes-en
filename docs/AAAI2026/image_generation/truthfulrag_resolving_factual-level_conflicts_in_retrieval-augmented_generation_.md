@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TruthfulRAG: Resolving Factual-level Conflicts in Retrieval-Augmented Generation with Knowledge Graphs
 description: >-
-  [AAAI 2026][Image Generation][knowledge conflict] This paper proposes TruthfulRAG, a framework that, for the first time, leverages knowledge graphs (KGs) to resolve conflicts between retrieved knowledge and LLM parametric knowledge at the factual level in RAG systems. The framework improves generation accuracy and trustworthiness through triple extraction, query-aware graph retrieval, and an entropy-based conflict filtering mechanism.
+  [AAAI 2026][Image Generation][knowledge conflict] This paper proposes TruthfulRAG, a framework that, for the first time, leverages knowledge graphs (KGs) to resolve conflicts between retrieved knowledge and LLM parametri…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - knowledge conflict
-  - retrieval-augmented generation
-  - knowledge graph
-  - factual-level reasoning
-  - entropy filtering
+  - "AAAI 2026"
+  - "Image Generation"
+  - "knowledge conflict"
+  - "retrieval-augmented generation"
+  - "knowledge graph"
+  - "factual-level reasoning"
+  - "entropy filtering"
 date: 2026-05-08
 content_hash: 742ec1c9c167a9d9
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Stratified Knowledge-Density Super-Network for Scalable Vision Transformers
 description: >-
-  [AAAI 2026][Model Compression][Vision Transformer] This paper proposes transforming a pretrained ViT into a "Stratified Knowledge-Density Super-Network" (SKD Super-Network) via two steps—WPAC (Weighted PCA Attention Contraction) and PIAD (Progressive Importance-Aware Dropout)—to hierarchically organize knowledge within the pretrained weights, enabling subnetwork extraction of arbitrary size at O(1) cost without additional fine-tuning, achieving performance on par with or surpassing state-of-the-art compression methods.
+  [AAAI 2026][Model Compression][Vision Transformer] This paper proposes transforming a pretrained ViT into a "Stratified Knowledge-Density Super-Network" (SKD Super-Network) via two steps—WPAC (Weighted PCA Attention Cont…
 tags:
-  - AAAI 2026
-  - Model Compression
-  - Vision Transformer
-  - Super-Network
-  - Stratified Knowledge Density
-  - PCA
-  - Progressive Dropout
+  - "AAAI 2026"
+  - "Model Compression"
+  - "Vision Transformer"
+  - "Super-Network"
+  - "Stratified Knowledge Density"
+  - "PCA"
+  - "Progressive Dropout"
 date: 2026-05-08
 content_hash: 9ee95a2aec94065f
 ---

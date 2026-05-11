@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Robust Watermarking on Gradient Boosting Decision Trees
 description: >-
-  [AI Safety] This paper proposes the first robust watermarking framework for GBDT models. It embeds watermarks via in-place fine-tuning and introduces four embedding strategies—Wrong Prediction Flip, Outlier Flip, Cluster Center Flip, and Confidence Flip—achieving high embedding success rates, minimal accuracy degradation, and strong robustness against fine-tuning attacks.
+  [AI Safety] This paper proposes the first robust watermarking framework for GBDT models. It embeds watermarks via in-place fine-tuning and introduces four embedding strategies—Wrong Prediction Flip, Outlier Flip…
 tags:
-  - AI Safety
+  - "AI Safety"
 date: 2026-05-08
 content_hash: fc858e9dfe30addb
 ---

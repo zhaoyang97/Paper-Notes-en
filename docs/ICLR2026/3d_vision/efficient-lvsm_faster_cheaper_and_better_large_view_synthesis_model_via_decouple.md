@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Efficient-LVSM: Faster, Cheaper, and Better Large View Synthesis Model via Decoupled Co-Refinement Attention
 description: >-
-  [ICLR2026][3D Vision][novel view synthesis] This paper proposes Efficient-LVSM, a dual-stream architecture that decouples input view encoding from target view generation, reducing the complexity of novel view synthesis from $O(N_{in}^2)$ to $O(N_{in})$. On RealEstate10K, the model achieves state-of-the-art performance (29.86 dB PSNR) using only 50% of LVSM's training time, with a 4.4× inference speedup.
+  [ICLR2026][3D Vision][novel view synthesis] This paper proposes Efficient-LVSM, a dual-stream architecture that decouples input view encoding from target view generation…
 tags:
-  - ICLR2026
-  - 3D Vision
-  - novel view synthesis
-  - Transformer
-  - Dual-Stream Architecture
-  - KV-Cache
-  - Attention Decoupling
+  - "ICLR2026"
+  - "3D Vision"
+  - "novel view synthesis"
+  - "Transformer"
+  - "Dual-Stream Architecture"
+  - "KV-Cache"
+  - "Attention Decoupling"
 date: 2026-05-08
 content_hash: 3cd14cfdffc1cc8b
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ICYM2I: The Illusion of Multimodal Informativeness under Missingness
 description: >-
-  [ICLR 2026][Multimodal VLM][multimodal missingness] This paper identifies a largely overlooked problem in multimodal learning: distribution shift induced by modality missingness leads to severely biased modality value estimation. The proposed ICYM2I framework applies dual inverse probability weighting (IPW) to correct bias in both training and evaluation, achieving unbiased estimates of modality predictive utility and information-theoretic value under the MAR assumption.
+  [ICLR 2026][Multimodal VLM][multimodal missingness] This paper identifies a largely overlooked problem in multimodal learning: distribution shift induced by modality missingness leads to severely biased modality value es…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - multimodal missingness
-  - distribution shift
-  - inverse probability weighting
-  - information decomposition
-  - modality value estimation
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "multimodal missingness"
+  - "distribution shift"
+  - "inverse probability weighting"
+  - "information decomposition"
+  - "modality value estimation"
 date: 2026-05-08
 content_hash: 14877910a78f0e84
 ---

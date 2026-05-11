@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] World4Drive: End-to-End Autonomous Driving via Intention-aware Physical Latent World Model
 description: >-
-  [Autonomous Driving] World4Drive constructs an intention-aware latent world model that leverages spatial-semantic priors from visual foundation models to achieve annotation-free end-to-end planning, reducing L2 error by 18.1% and collision rate by 46.7%.
+  [Autonomous Driving] World4Drive constructs an intention-aware latent world model that leverages spatial-semantic priors from visual foundation models to achieve annotation-free end-to-end planning…
 tags:
-  - Autonomous Driving
+  - "Autonomous Driving"
 date: 2026-05-08
 content_hash: 44e5986a2cc2f304
 ---

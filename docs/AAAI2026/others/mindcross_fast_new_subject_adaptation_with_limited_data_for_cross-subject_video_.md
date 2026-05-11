@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] MindCross: Fast New Subject Adaptation with Limited Data for Cross-subject Video Reconstruction from Brain Signals
 description: >-
-  [AAAI 2026][Cross-subject brain decoding] This paper proposes MindCross, a cross-subject brain decoding framework that learns subject-independent information via a shared encoder and subject-specific information via $N$ individual encoders. Combined with a fast calibration stage and a Top-K collaborative decoding module, a single unified model achieves performance comparable to per-subject models on fMRI/EEG-to-video benchmarks, with new subject adaptation requiring only minimal data and time (~1s vs. 5–17s for baselines).
+  [AAAI 2026][Cross-subject brain decoding] This paper proposes MindCross, a cross-subject brain decoding framework that learns subject-independent information via a shared encoder and subject-specific information via $N$…
 tags:
-  - AAAI 2026
-  - Cross-subject brain decoding
-  - video reconstruction
-  - fMRI
-  - EEG
-  - fast adaptation
-  - shared-specific encoder
-  - Top-K collaboration
+  - "AAAI 2026"
+  - "Cross-subject brain decoding"
+  - "video reconstruction"
+  - "fMRI"
+  - "EEG"
+  - "fast adaptation"
+  - "shared-specific encoder"
+  - "Top-K collaboration"
 date: 2026-05-08
 content_hash: 90ceade3771a15f1
 ---

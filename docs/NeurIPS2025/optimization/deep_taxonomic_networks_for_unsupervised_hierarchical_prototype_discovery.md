@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Deep Taxonomic Networks for Unsupervised Hierarchical Prototype Discovery
 description: >-
-  [NeurIPS 2025][Optimization][hierarchical clustering] Deep Taxonomic Networks proposes a deep latent variable model with a complete binary tree Gaussian mixture prior. Through variational inference, the model automatically discovers hierarchical taxonomies and multi-level prototype clusters from unlabeled data without requiring a predefined number of classes, substantially outperforming baselines such as TreeVAE across multiple datasets.
+  [NeurIPS 2025][Optimization][hierarchical clustering] Deep Taxonomic Networks proposes a deep latent variable model with a complete binary tree Gaussian mixture prior. Through variational inference…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - hierarchical clustering
-  - prototype learning
-  - variational inference
-  - binary tree prior
-  - taxonomy discovery
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "hierarchical clustering"
+  - "prototype learning"
+  - "variational inference"
+  - "binary tree prior"
+  - "taxonomy discovery"
 date: 2026-05-08
 content_hash: a0b1d9d74bb72924
 ---

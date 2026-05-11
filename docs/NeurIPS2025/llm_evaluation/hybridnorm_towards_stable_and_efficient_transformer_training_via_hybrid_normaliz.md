@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] HybridNorm: Towards Stable and Efficient Transformer Training via Hybrid Normalization
 description: >-
-  [NeurIPS 2025][LLM Evaluation][Hybrid Normalization] This paper proposes HybridNorm, a hybrid normalization strategy that applies QKV normalization within the attention module to decouple gradients and Post-Norm within the FFN to enhance regularization. Across scales from 550M to 7B parameters, HybridNorm simultaneously achieves the training stability of Pre-Norm and the generalization performance of Post-Norm, yielding an average downstream task improvement of 2.45% at the 7B scale.
+  [NeurIPS 2025][LLM Evaluation][Hybrid Normalization] This paper proposes HybridNorm, a hybrid normalization strategy that applies QKV normalization within the attention module to decouple gradients and Post-Norm within t…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - Hybrid Normalization
-  - QKV Normalization
-  - Pre-Norm
-  - Post-Norm
-  - Gradient Flow
-  - Training Stability
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "Hybrid Normalization"
+  - "QKV Normalization"
+  - "Pre-Norm"
+  - "Post-Norm"
+  - "Gradient Flow"
+  - "Training Stability"
 date: 2026-05-08
 content_hash: 306595ccfdb87c2f
 ---

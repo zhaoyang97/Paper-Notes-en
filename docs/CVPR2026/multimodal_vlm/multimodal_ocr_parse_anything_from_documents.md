@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multimodal OCR: Parse Anything from Documents
 description: >-
-  [CVPR 2026][Multimodal VLM][Document Parsing] This paper proposes the Multimodal OCR (MOCR) paradigm, which unifies the parsing of text and graphics (charts, diagrams, UI components, etc.) in documents into structured textual representations (plain text + SVG code). The trained 3B-parameter dots.mocr model ranks second only to Gemini 3 Pro on OCR Arena, achieves a state-of-the-art score of 83.9 on olmOCR Bench, and surpasses Gemini 3 Pro on the image-to-SVG benchmark.
+  [CVPR 2026][Multimodal VLM][Document Parsing] This paper proposes the Multimodal OCR (MOCR) paradigm, which unifies the parsing of text and graphics (charts, diagrams, UI components…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Document Parsing
-  - Graphics Parsing
-  - SVG Generation
-  - Vision-Language Model
-  - Multimodal OCR
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Document Parsing"
+  - "Graphics Parsing"
+  - "SVG Generation"
+  - "Vision-Language Model"
+  - "Multimodal OCR"
 date: 2026-05-08
 content_hash: 5829abc255adeac3
 ---

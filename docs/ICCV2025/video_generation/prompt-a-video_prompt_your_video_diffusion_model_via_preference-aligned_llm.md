@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Prompt-A-Video: Prompt Your Video Diffusion Model via Preference-Aligned LLM
 description: >-
-  [Video Generation] Prompt-A-Video is proposed, which automatically constructs training data via a reward-guided prompt evolution pipeline and optimizes an LLM through two-stage SFT and DPO training to generate enhanced prompts aligned with the preferences of specific video diffusion models.
+  [Video Generation] Prompt-A-Video is proposed, which automatically constructs training data via a reward-guided prompt evolution pipeline and optimizes an LLM through two-stage SFT and DPO training to generate enhanced p…
 tags:
-  - Video Generation
+  - "Video Generation"
 date: 2026-05-08
 content_hash: 81c13060d3088d4c
 ---

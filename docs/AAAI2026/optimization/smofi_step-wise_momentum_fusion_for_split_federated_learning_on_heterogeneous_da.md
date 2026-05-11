@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SMoFi: Step-wise Momentum Fusion for Split Federated Learning on Heterogeneous Data
 description: >-
-  [AAAI 2026][Optimization][Split Federated Learning] This paper proposes SMoFi, a framework that synchronizes the momentum buffers of surrogate models on the server side at every SGD step within Split FL, effectively mitigating gradient divergence caused by non-IID data. SMoFi achieves up to 7.1% accuracy improvement and up to 10.25× convergence speedup.
+  [AAAI 2026][Optimization][Split Federated Learning] This paper proposes SMoFi, a framework that synchronizes the momentum buffers of surrogate models on the server side at every SGD step within Split FL…
 tags:
-  - AAAI 2026
-  - Optimization
-  - Split Federated Learning
-  - Data Heterogeneity
-  - Momentum Alignment
-  - Non-IID
-  - Convergence Acceleration
+  - "AAAI 2026"
+  - "Optimization"
+  - "Split Federated Learning"
+  - "Data Heterogeneity"
+  - "Momentum Alignment"
+  - "Non-IID"
+  - "Convergence Acceleration"
 date: 2026-05-08
 content_hash: d64408535d51a059
 ---

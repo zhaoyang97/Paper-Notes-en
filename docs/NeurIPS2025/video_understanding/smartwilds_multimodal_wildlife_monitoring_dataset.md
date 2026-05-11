@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] SmartWilds: Multimodal Wildlife Monitoring Dataset
 description: >-
-  [NeurIPS 2025][Video Understanding][Multimodal dataset] This work introduces SmartWilds, the first synchronously collected multimodal wildlife monitoring dataset, integrating three complementary modalities — drone imagery, camera traps, and bioacoustics — comprising 101 GB of data. Cross-modal alignment is achieved via GPS coordinates and timestamps. The dataset establishes a reproducible standard protocol for conservation monitoring, filling the gap in comprehensive multi-sensor fusion benchmarks for ecosystem-scale ecological research.
+  [NeurIPS 2025][Video Understanding][Multimodal dataset] This work introduces SmartWilds, the first synchronously collected multimodal wildlife monitoring dataset…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
-  - Multimodal dataset
-  - sensor fusion
-  - drone imagery
-  - camera traps
-  - bioacoustics
-  - wildlife monitoring
+  - "NeurIPS 2025"
+  - "Video Understanding"
+  - "Multimodal dataset"
+  - "sensor fusion"
+  - "drone imagery"
+  - "camera traps"
+  - "bioacoustics"
+  - "wildlife monitoring"
 date: 2026-05-08
 content_hash: 49361beb338127f5
 ---

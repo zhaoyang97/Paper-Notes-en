@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Stress-Testing Alignment Audits with Prompt-Level Strategic Deception
 description: >-
-  [ICLR 2026][Model Compression][alignment audit] This paper constructs an automated prompt-level red-teaming pipeline (powered by Claude Opus 4.5) to augment situational awareness and strategic reasoning in existing fine-tuned model organisms, and stress-tests four black-box and white-box alignment auditing methods across six experimental settings. The pipeline successfully induces high-confidence incorrect guesses from all auditing methods and provides the first documented instance of prompt-level activation deception without any weight modification.
+  [ICLR 2026][Model Compression][alignment audit] This paper constructs an automated prompt-level red-teaming pipeline (powered by Claude Opus 4.5) to augment situational awareness and strategic reasoning in existing fine-…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - alignment audit
-  - red teaming
-  - strategic deception
-  - model organisms
-  - SAE
+  - "ICLR 2026"
+  - "Model Compression"
+  - "alignment audit"
+  - "red teaming"
+  - "strategic deception"
+  - "model organisms"
+  - "SAE"
 date: 2026-05-08
 content_hash: 3db304a739fc15e2
 ---

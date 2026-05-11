@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] "As Eastern Powers, I Will Veto." : An Investigation of Nation-Level Bias of Large Language Models in International Relations
 description: >-
-  [AAAI 2026][nation-level bias] This paper systematically investigates nation-level bias of LLMs in international relations, designing three bias evaluation paradigms (DirectQA, Association Test, Vote Simulation) grounded in real UN Security Council data. It reveals the multi-dimensional nature of such bias—varying across models and evaluation contexts—and proposes a RAG+Reflexion debiasing framework.
+  [AAAI 2026][Information Retrieval & RAG][nation-level bias] This paper systematically investigates nation-level bias of LLMs in international relations, designing three bias evaluation paradigms (DirectQA…
 tags:
-  - AAAI 2026
-  - nation-level bias
-  - international relations
-  - UN Security Council
-  - explicit bias
-  - implicit bias
+  - "AAAI 2026"
+  - "Information Retrieval & RAG"
+  - "nation-level bias"
+  - "international relations"
+  - "UN Security Council"
+  - "explicit bias"
+  - "implicit bias"
 date: 2026-05-08
 content_hash: 0fc5906be54f2001
 ---

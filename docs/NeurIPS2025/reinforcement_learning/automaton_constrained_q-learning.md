@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Automaton Constrained Q-Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][LTL] This paper proposes ACQL (Automaton Constrained Q-Learning), which translates Linear Temporal Logic (LTL) task specifications into automata and combines goal-conditioned learning with minimal safety constraints. ACQL is the first scalable method to simultaneously support sequential temporal goals and non-stationary safety constraints in continuous control environments.
+  [NeurIPS 2025][Reinforcement Learning][LTL] This paper proposes ACQL (Automaton Constrained Q-Learning), which translates Linear Temporal Logic (LTL) task specifications into automata and combines goal-conditioned learni…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - LTL
-  - Automaton
-  - Safety Constraints
-  - Goal-Conditioned RL
-  - CMDP
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "LTL"
+  - "Automaton"
+  - "Safety Constraints"
+  - "Goal-Conditioned RL"
+  - "CMDP"
 date: 2026-05-08
 content_hash: 2d0834d03a19597b
 ---

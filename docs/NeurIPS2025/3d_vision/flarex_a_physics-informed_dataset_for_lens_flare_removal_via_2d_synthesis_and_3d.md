@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FlareX: A Physics-Informed Dataset for Lens Flare Removal via 2D Synthesis and 3D Rendering
 description: >-
-  [NeurIPS 2025][3D Vision][lens flare removal] This paper proposes the FlareX dataset, generated through three stages—parameterized template creation, illumination-law-guided 2D synthesis, and physics-engine-based 3D rendering—to produce physically realistic lens flare data. Models trained on FlareX significantly outperform those trained on all prior datasets on real-world test sets.
+  [NeurIPS 2025][3D Vision][lens flare removal] This paper proposes the FlareX dataset, generated through three stages—parameterized template creation, illumination-law-guided 2D synthesis…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - lens flare removal
-  - dataset
-  - physics-based simulation
-  - 2D synthesis
-  - 3D rendering
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "lens flare removal"
+  - "dataset"
+  - "physics-based simulation"
+  - "2D synthesis"
+  - "3D rendering"
 date: 2026-05-08
 content_hash: a26b239b79ec0185
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CMMCoT: Enhancing Complex Multi-Image Comprehension via Multi-Modal Chain-of-Thought and Memory Augmentation
 description: >-
-  [AAAI 2026][LLM Reasoning][Multi-image understanding] This paper proposes the CMMCoT framework, which constructs interleaved multimodal multi-step reasoning chains (with visual region token supervision) and a test-time retrieval-based memory augmentation module (RIFREM) to enhance slow-thinking reasoning in multi-image scenarios without increasing model parameters. Built on Qwen2.5-VL-7B, the method achieves an average improvement of 1.4 points on multi-image benchmarks.
+  [AAAI 2026][LLM Reasoning][Multi-image understanding] This paper proposes the CMMCoT framework, which constructs interleaved multimodal multi-step reasoning chains (with visual region token supervision) and a test-time r…
 tags:
-  - AAAI 2026
-  - LLM Reasoning
-  - Multi-image understanding
-  - multimodal chain-of-thought
-  - test-time memory augmentation
-  - visual reasoning
-  - slow thinking
+  - "AAAI 2026"
+  - "LLM Reasoning"
+  - "Multi-image understanding"
+  - "multimodal chain-of-thought"
+  - "test-time memory augmentation"
+  - "visual reasoning"
+  - "slow thinking"
 date: 2026-05-08
 content_hash: 49ed0004fd477956
 ---

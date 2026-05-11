@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Human-in-the-Loop Interactive Report Generation for Chronic Disease Adherence
 description: >-
-  [AAAI 2026][Medical Imaging][Human-in-the-loop] This paper presents a "physician-in-the-loop" interactive interface that restricts AI to the roles of data organization and draft generation. Through a single-page editor, chart–text pairing, and automated urgency stratification, it enables efficient and accountable chronic disease adherence report generation. A pilot study reveals an "accountability paradox": even when AI-generated quality matches the physician manual-authoring baseline, review time cannot be significantly reduced, because clinical responsibility demands complete verification.
+  [AAAI 2026][Medical Imaging][Human-in-the-loop] This paper presents a "physician-in-the-loop" interactive interface that restricts AI to the roles of data organization and draft generation. Through a single-page editor…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Human-in-the-loop
-  - chronic disease management
-  - report generation
-  - medication adherence
-  - clinical AI collaboration
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Human-in-the-loop"
+  - "chronic disease management"
+  - "report generation"
+  - "medication adherence"
+  - "clinical AI collaboration"
 date: 2026-05-08
 content_hash: 539b6f887b581b5e
 ---

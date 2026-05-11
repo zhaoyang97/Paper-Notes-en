@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] High-Resolution Spatiotemporal Modeling with Global-Local State Space Models for Video-Based Human Pose Estimation
 description: >-
-  [ICCV 2025][Human Understanding][Video Human Pose Estimation] This paper proposes GLSMamba, the first pure-Mamba framework for video-based human pose estimation (VHPE). It models global dynamic context via a Global Spatiotemporal Mamba (GSM) module—featuring 6D selective space-time scanning and spatiotemporal-modulated scan merging—and captures local keypoint details via a Local Refinement Mamba (LRM) with windowed spatiotemporal scanning. The method achieves state-of-the-art performance on four benchmarks with linear computational complexity.
+  [ICCV 2025][Human Understanding][Video Human Pose Estimation] This paper proposes GLSMamba, the first pure-Mamba framework for video-based human pose estimation (VHPE). It models global dynamic context via a Global Spati…
 tags:
-  - ICCV 2025
-  - Human Understanding
-  - Video Human Pose Estimation
-  - Mamba
-  - State Space Model
-  - Spatiotemporal Modeling
-  - High-Resolution
+  - "ICCV 2025"
+  - "Human Understanding"
+  - "Video Human Pose Estimation"
+  - "Mamba"
+  - "State Space Model"
+  - "Spatiotemporal Modeling"
+  - "High-Resolution"
 date: 2026-05-08
 content_hash: f8976ca200011175
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] ERMoE: Eigen-Reparameterized Mixture-of-Experts for Stable Routing and Interpretable Specialization
 description: >-
-  [CVPR 2026][Mixture of Experts] ERMoE proposes reparameterizing MoE expert weights within an orthogonal eigenbasis and replacing conventional routing logits with eigenbasis scores (cosine similarity), achieving stable routing and interpretable expert specialization without auxiliary load-balancing losses.
+  [CVPR 2026][Interpretability][Mixture of Experts] ERMoE proposes reparameterizing MoE expert weights within an orthogonal eigenbasis and replacing conventional routing logits with eigenbasis scores (cosine similarity)…
 tags:
-  - CVPR 2026
-  - Mixture of Experts
-  - eigen-reparameterization
-  - routing stability
-  - expert specialization
-  - Vision Transformer
+  - "CVPR 2026"
+  - "Interpretability"
+  - "Mixture of Experts"
+  - "eigen-reparameterization"
+  - "routing stability"
+  - "expert specialization"
+  - "Vision Transformer"
 date: 2026-05-08
 content_hash: f08bc36a12c3f624
 ---

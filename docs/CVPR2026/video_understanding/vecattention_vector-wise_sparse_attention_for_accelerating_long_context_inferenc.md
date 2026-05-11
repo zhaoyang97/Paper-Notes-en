@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] VecAttention: Vector-wise Sparse Attention for Accelerating Long Context Inference
 description: >-
-  [CVPR 2026][Video Understanding][sparse attention] This paper identifies a strong "vertical vector" sparsity pattern in the attention maps of video models and proposes VecAttention, a fine-grained vector-wise sparse attention framework. Through TilingSelect and minS filtering, the method efficiently selects important KV vectors, achieving accuracy on par with full attention at over 78% sparsity while delivering a 2.65× speedup in attention computation.
+  [CVPR 2026][Video Understanding][sparse attention] This paper identifies a strong "vertical vector" sparsity pattern in the attention maps of video models and proposes VecAttention…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - sparse attention
-  - vector-wise sparsity
-  - long-context acceleration
-  - video generation
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "sparse attention"
+  - "vector-wise sparsity"
+  - "long-context acceleration"
+  - "video generation"
 date: 2026-05-08
 content_hash: 988709f7e1c01806
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HumanOrbit: 3D Human Reconstruction as 360° Orbit Generation
 description: >-
-  [CVPR 2026][Human Understanding][3D human reconstruction] This paper reformulates single-image 3D human reconstruction as a 360° orbital video generation problem. A video diffusion model (Wan 2.1) is fine-tuned via LoRA using only 500 3D scans to generate 81-frame orbital videos, from which high-quality textured meshes are reconstructed via VGGT and Mesh Carving. The approach requires no pose annotations and surpasses existing methods in multi-view consistency and identity preservation.
+  [CVPR 2026][Human Understanding][3D human reconstruction] This paper reformulates single-image 3D human reconstruction as a 360° orbital video generation problem. A video diffusion model (Wan 2.1) is fine-tuned via LoRA…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - 3D human reconstruction
-  - video diffusion model
-  - multi-view generation
-  - LoRA fine-tuning
-  - orbit video
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "3D human reconstruction"
+  - "video diffusion model"
+  - "multi-view generation"
+  - "LoRA fine-tuning"
+  - "orbit video"
 date: 2026-05-08
 content_hash: 494f5e63ff9e3a12
 ---

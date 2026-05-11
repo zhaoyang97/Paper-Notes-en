@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Retaining Suboptimal Actions to Follow Shifting Optima in Multi-Agent RL
 description: >-
-  [ICLR 2026][Reinforcement Learning][Multi-Agent RL] This paper proposes S2Q (Successive Sub-value Q-learning), which explicitly retains suboptimal joint actions by successively learning $K$ sub-value functions. Combined with a Softmax behavior policy for prioritized sampling among candidates, S2Q addresses the root cause of suboptimal convergence in cooperative MARL value decomposition methods—namely, that policy optima shift dynamically during training.
+  [ICLR 2026][Reinforcement Learning][Multi-Agent RL] This paper proposes S2Q (Successive Sub-value Q-learning), which explicitly retains suboptimal joint actions by successively learning $K$ sub-value functions. Combined…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Multi-Agent RL
-  - Value Decomposition
-  - Suboptimal Action Retention
-  - Softmax Behavior Policy
-  - S2Q
-  - CTDE
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Multi-Agent RL"
+  - "Value Decomposition"
+  - "Suboptimal Action Retention"
+  - "Softmax Behavior Policy"
+  - "S2Q"
+  - "CTDE"
 date: 2026-05-08
 content_hash: 8b4bcefcf233daca
 ---

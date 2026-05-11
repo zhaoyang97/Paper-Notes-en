@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A*-Thought: Efficient Reasoning via Bidirectional Compression for Low-Resource Settings
 description: >-
-  [NeurIPS 2025][Model Compression][reasoning efficiency] This paper proposes A*-Thought, a CoT compression framework based on the A* search algorithm. It introduces Bidirectional Importance Scoring (BIS) to measure each reasoning step's relevance to both the question and the answer, and combines path-level A* search to efficiently identify the most compact valid reasoning path within an exponentially large search space. Under a 512-token budget, A*-Thought improves QwQ-32B accuracy by 2.39×; under a 4096-token budget, it reduces output tokens by approximately 50% with negligible accuracy loss.
+  [NeurIPS 2025][Model Compression][reasoning efficiency] This paper proposes A*-Thought, a CoT compression framework based on the A* search algorithm. It introduces Bidirectional Importance Scoring (BIS) to measure each r…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - reasoning efficiency
-  - CoT compression
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "reasoning efficiency"
+  - "CoT compression"
   - "A* search"
-  - bidirectional importance
-  - long-to-short
+  - "bidirectional importance"
+  - "long-to-short"
 date: 2026-05-08
 content_hash: 0c30bf6b8938f0d5
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Distillation Robustifies Unlearning
 description: >-
-  [NeurIPS 2025][Model Compression][Robust Unlearning] This paper reveals the core finding that "distillation can robustify unlearning" — distilling an unlearned model into a randomly initialized student network effectively discards latent capabilities. Building on this insight, the paper proposes UNDO (Unlearn-Noise-Distill-on-Outputs), which applies weight perturbation to the unlearned model prior to distillation, establishing a tunable compute–robustness trade-off that approaches the gold standard of retraining from scratch on both synthetic tasks and the WMDP benchmark.
+  [NeurIPS 2025][Model Compression][Robust Unlearning] This paper reveals the core finding that "distillation can robustify unlearning" — distilling an unlearned model into a randomly initialized student network effectivel…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Robust Unlearning
-  - Knowledge Distillation
-  - UNDO
-  - Capability Removal
-  - Relearning Attacks
-  - WMDP
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Robust Unlearning"
+  - "Knowledge Distillation"
+  - "UNDO"
+  - "Capability Removal"
+  - "Relearning Attacks"
+  - "WMDP"
 date: 2026-05-08
 content_hash: 1f49a7d838ce98ce
 ---

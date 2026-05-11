@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Test-time Ego-Exo-centric Adaptation for Action Anticipation via Multi-Label Prototype Growing and Dual-Clue Consistency
 description: >-
-  [CVPR2026][Robotics][test-time adaptation] This paper introduces the Test-time Ego-Exo Adaptation for Action Anticipation (TE2A3) task and proposes the DCPGN network, which leverages multi-label prototype growing and dual-clue (visual + textual) consistency to online-adapt a source-view trained model to the target view at test time for action anticipation, substantially outperforming existing TTA methods.
+  [CVPR2026][Robotics][test-time adaptation] This paper introduces the Test-time Ego-Exo Adaptation for Action Anticipation (TE2A3) task and proposes the DCPGN network…
 tags:
-  - CVPR2026
-  - Robotics
-  - test-time adaptation
-  - Ego-Exo
-  - Action Anticipation
-  - Multi-Label
-  - Prototype Learning
-  - CLIP
-  - dual-clue consistency
+  - "CVPR2026"
+  - "Robotics"
+  - "test-time adaptation"
+  - "Ego-Exo"
+  - "Action Anticipation"
+  - "Multi-Label"
+  - "Prototype Learning"
+  - "CLIP"
+  - "dual-clue consistency"
 date: 2026-05-08
 content_hash: 7228d488c0552858
 ---

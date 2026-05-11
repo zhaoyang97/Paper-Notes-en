@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Vision Transformers with Self-Distilled Registers
 description: >-
-  [NeurIPS 2025][Segmentation][Vision Transformer] This paper proposes PH-Reg (Post Hoc Registers), an efficient self-distillation approach that retrofits register tokens into existing pretrained ViTs without labeled data or full retraining. By combining test-time augmentation-based teacher feature denoising with student self-distillation, PH-Reg effectively eliminates artifact tokens in ViT dense features, improving performance on segmentation and depth estimation.
+  [NeurIPS 2025][Segmentation][Vision Transformer] This paper proposes PH-Reg (Post Hoc Registers), an efficient self-distillation approach that retrofits register tokens into existing pretrained ViTs without labeled data…
 tags:
-  - NeurIPS 2025
-  - Segmentation
-  - Vision Transformer
-  - Register Token
-  - Self-Distillation
-  - Feature Denoising
-  - Open-Vocabulary Segmentation
+  - "NeurIPS 2025"
+  - "Segmentation"
+  - "Vision Transformer"
+  - "Register Token"
+  - "Self-Distillation"
+  - "Feature Denoising"
+  - "Open-Vocabulary Segmentation"
 date: 2026-05-08
 content_hash: a4a2e5f1bec2793e
 ---

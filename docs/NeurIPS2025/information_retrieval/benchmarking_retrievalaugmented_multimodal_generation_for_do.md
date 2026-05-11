@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Benchmarking Retrieval-Augmented Multimodal Generation for Document Question Answering
 description: >-
-  [NeurIPS 2025][DocRAG] This paper introduces the MMDocRAG benchmark (4,055 expert-annotated QA pairs) to systematically evaluate 60 VLMs/LLMs and 14 retrievers on quote selection and interleaved text-image answer generation in multimodal document RAG. Results reveal that the strongest model, GPT-4.1, achieves only 70.2% Quote Selection F1, while fine-tuning yields substantial performance gains.
+  [NeurIPS 2025][Information Retrieval & RAG][DocRAG] This paper introduces the MMDocRAG benchmark (4,055 expert-annotated QA pairs) to systematically evaluate 60 VLMs/LLMs and 14 retrievers on quote selection and interlea…
 tags:
-  - NeurIPS 2025
-  - DocRAG
-  - multimodal QA
-  - quote selection
-  - interleaved text-image generation
-  - benchmark
+  - "NeurIPS 2025"
+  - "Information Retrieval & RAG"
+  - "DocRAG"
+  - "multimodal QA"
+  - "quote selection"
+  - "interleaved text-image generation"
+  - "benchmark"
 date: 2026-05-08
 content_hash: e332765af2f4d4d8
 ---

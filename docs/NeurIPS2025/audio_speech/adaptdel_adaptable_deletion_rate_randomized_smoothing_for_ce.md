@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AdaptDel: Adaptable Deletion Rate Randomized Smoothing for Certified Robustness
 description: >-
-  [NeurIPS 2025][Audio & Speech][certified robustness] AdaptDel extends the fixed deletion rate used in randomized smoothing for discrete sequences to an adaptable deletion rate that varies according to input properties such as sequence length. The paper provides a theoretical soundness proof for certification under variable rates, and experiments on NLP sequence classification tasks demonstrate improvements in certified region cardinality of up to 30 orders of magnitude.
+  [NeurIPS 2025][Audio & Speech][certified robustness] AdaptDel extends the fixed deletion rate used in randomized smoothing for discrete sequences to an adaptable deletion rate that varies according to input properties su…
 tags:
-  - NeurIPS 2025
+  - "NeurIPS 2025"
   - "Audio & Speech"
-  - certified robustness
-  - randomized smoothing
-  - edit distance
-  - adaptable deletion rate
-  - sequence classification
+  - "certified robustness"
+  - "randomized smoothing"
+  - "edit distance"
+  - "adaptable deletion rate"
+  - "sequence classification"
 date: 2026-05-08
 content_hash: 0abb3eddb7f5a831
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Asking like Socrates: Socrates helps VLMs understand remote sensing images
 description: >-
-  [CVPR 2026][Multimodal VLM][Remote sensing image understanding] This paper identifies the "pseudo-reasoning" phenomenon in remote sensing VLMs—where explicit reasoning chains actually degrade performance—attributing it to the "Glance Effect" (insufficient single-pass perception). It proposes RS-EoT (Evidence-of-Thought), an iterative evidence search paradigm. A SocraticAgent self-play mechanism synthesizes reasoning trajectories for SFT cold-start, followed by two-stage progressive RL (grounding → VQA) to enhance and generalize reasoning. RS-EoT-7B achieves state-of-the-art performance across multiple remote sensing VQA and grounding benchmarks.
+  [CVPR 2026][Multimodal VLM][Remote sensing image understanding] This paper identifies the "pseudo-reasoning" phenomenon in remote sensing VLMs—where explicit reasoning chains actually degrade performance—attributing it t…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Remote sensing image understanding
-  - evidence-chain reasoning
-  - pseudo-reasoning
-  - Socratic method
-  - two-stage reinforcement learning
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Remote sensing image understanding"
+  - "evidence-chain reasoning"
+  - "pseudo-reasoning"
+  - "Socratic method"
+  - "two-stage reinforcement learning"
 date: 2026-05-08
 content_hash: d9822168776fd042
 ---

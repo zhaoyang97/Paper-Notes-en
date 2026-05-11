@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] WorldMM: Dynamic Multimodal Memory Agent for Long Video Reasoning
 description: >-
-  [CVPR 2026][LLM Agent][Multimodal Memory] This paper proposes WorldMM, a video reasoning agent based on multimodal memory, which constructs three complementary memory types: episodic memory (multi-temporal-scale textual knowledge graphs), semantic memory (continuously updated relational knowledge graphs), and visual memory (frame-level retrieval stores). An adaptive multi-round retrieval agent dynamically selects the most relevant memory source and temporal granularity, achieving an average improvement of 8.4% over the previous state of the art across five long video QA benchmarks.
+  [CVPR 2026][LLM Agent][Multimodal Memory] This paper proposes WorldMM, a video reasoning agent based on multimodal memory, which constructs three complementary memory types: episodic memory (multi-temporal-scale textual…
 tags:
-  - CVPR 2026
-  - LLM Agent
-  - Multimodal Memory
-  - Long Video Understanding
-  - Adaptive Retrieval
-  - Knowledge Graph
-  - Multi-Temporal Scale
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "Multimodal Memory"
+  - "Long Video Understanding"
+  - "Adaptive Retrieval"
+  - "Knowledge Graph"
+  - "Multi-Temporal Scale"
 date: 2026-05-08
 content_hash: d1c96965319106a6
 ---

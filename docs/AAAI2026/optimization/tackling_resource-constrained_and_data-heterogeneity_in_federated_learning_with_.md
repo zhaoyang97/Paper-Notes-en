@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Tackling Resource-Constrained and Data-Heterogeneity in Federated Learning with Double-Weight Sparse Pack
 description: >-
-  [AAAI 2026][Optimization][Federated Learning] This paper proposes FedCSPACK, a personalized federated learning method based on cosine-similarity-guided sparse parameter packing and double-weight aggregation. By performing parameter selection and sharing at the pack level, FedCSPACK simultaneously addresses data heterogeneity and client resource constraints, achieving 2–5× faster training, up to 96% reduction in communication overhead, and a 3.34% improvement in model accuracy.
+  [AAAI 2026][Optimization][Federated Learning] This paper proposes FedCSPACK, a personalized federated learning method based on cosine-similarity-guided sparse parameter packing and double-weight aggregation. By performin…
 tags:
-  - AAAI 2026
-  - Optimization
-  - Federated Learning
-  - Data Heterogeneity
-  - Resource Constraints
-  - Sparse Communication
-  - Personalized Federated Learning
+  - "AAAI 2026"
+  - "Optimization"
+  - "Federated Learning"
+  - "Data Heterogeneity"
+  - "Resource Constraints"
+  - "Sparse Communication"
+  - "Personalized Federated Learning"
 date: 2026-05-08
 content_hash: 12e422ef4b699dd4
 ---

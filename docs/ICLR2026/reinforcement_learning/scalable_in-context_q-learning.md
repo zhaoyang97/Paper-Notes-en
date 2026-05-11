@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Scalable In-Context Q-Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][In-Context RL] This paper proposes S-ICQL, which introduces dynamic programming (Q-learning) and world models into the supervised ICRL framework. A multi-head Transformer simultaneously predicts the policy and in-context value functions, a pretrained world model constructs lightweight yet accurate prompts, and advantage-weighted regression is used for policy extraction. S-ICQL consistently outperforms all baselines when learning from suboptimal data in both discrete and continuous environments.
+  [ICLR 2026][Reinforcement Learning][In-Context RL] This paper proposes S-ICQL, which introduces dynamic programming (Q-learning) and world models into the supervised ICRL framework. A multi-head Transformer simultaneousl…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - In-Context RL
-  - Q-Learning
-  - World Model
-  - Dynamic Programming
-  - Efficient Prompting
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "In-Context RL"
+  - "Q-Learning"
+  - "World Model"
+  - "Dynamic Programming"
+  - "Efficient Prompting"
 date: 2026-05-08
 content_hash: a00a09afafc98dd8
 ---

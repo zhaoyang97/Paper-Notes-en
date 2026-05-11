@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Seeing Through the Tool: A Controlled Benchmark for Occlusion Robustness in Foundation Segmentation Models
 description: >-
-  [CVPR 2026][Segmentation][Occlusion robustness] This paper proposes OccSAM-Bench, a benchmark that systematically evaluates the occlusion robustness of SAM-family models in endoscopic scenes via synthetically generated surgical instrument occlusions. A three-region evaluation protocol is introduced to reveal two distinct behavioral patterns under occlusion: occlusion-aware and occlusion-agnostic.
+  [CVPR 2026][Segmentation][Occlusion robustness] This paper proposes OccSAM-Bench, a benchmark that systematically evaluates the occlusion robustness of SAM-family models in endoscopic scenes via synthetically generated s…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Occlusion robustness
-  - SAM
-  - endoscopy
-  - benchmark
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Occlusion robustness"
+  - "SAM"
+  - "endoscopy"
+  - "benchmark"
 date: 2026-05-08
 content_hash: 40c4b75780a17e7a
 ---

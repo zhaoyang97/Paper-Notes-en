@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RecoverMark: Robust Watermarking for Localization and Recovery of Manipulated Faces
 description: >-
-  [CVPR 2026][AI Safety][Face tampering detection] This paper proposes RecoverMark, a robust watermarking framework that embeds facial content itself as a watermark into the background region, simultaneously achieving tampering localization, original content recovery, and copyright verification while remaining effective under watermark removal attacks.
+  [CVPR 2026][AI Safety][Face tampering detection] This paper proposes RecoverMark, a robust watermarking framework that embeds facial content itself as a watermark into the background region…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Face tampering detection
-  - robust watermarking
-  - tampering localization
-  - content recovery
-  - copyright verification
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Face tampering detection"
+  - "robust watermarking"
+  - "tampering localization"
+  - "content recovery"
+  - "copyright verification"
 date: 2026-05-08
 content_hash: 3750fbcbb8de3bcf
 ---

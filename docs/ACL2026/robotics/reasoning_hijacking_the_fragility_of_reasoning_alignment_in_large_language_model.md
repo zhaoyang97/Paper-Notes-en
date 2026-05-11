@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Reasoning Hijacking: The Fragility of Reasoning Alignment in Large Language Models
 description: >-
-  [ACL 2026][Robotics][Reasoning Hijacking] This paper introduces "Reasoning Hijacking," a new attack paradigm that manipulates LLM reasoning logic by injecting false decision criteria into the data channel rather than changing task goals, achieving high attack success rates while bypassing intent-detection-based defenses.
+  [ACL 2026][Robotics][Reasoning Hijacking] This paper introduces "Reasoning Hijacking," a new attack paradigm that manipulates LLM reasoning logic by injecting false decision criteria into the data channel rather than cha…
 tags:
-  - ACL 2026
-  - Robotics
-  - Reasoning Hijacking
-  - Indirect Prompt Injection
-  - Criteria Attack
-  - LLM Safety
-  - Alignment Fragility
+  - "ACL 2026"
+  - "Robotics"
+  - "Reasoning Hijacking"
+  - "Indirect Prompt Injection"
+  - "Criteria Attack"
+  - "LLM Safety"
+  - "Alignment Fragility"
 content_hash: 7f362b3e1c109734
 ---
 

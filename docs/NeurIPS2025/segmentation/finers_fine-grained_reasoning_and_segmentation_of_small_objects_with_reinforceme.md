@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] FineRS: Fine-grained Reasoning and Segmentation of Small Objects with Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Segmentation][small object segmentation] FineRS is a two-stage MLLM reinforcement learning framework comprising Global Semantic Exploration (GSE) and Localized Perceptual Refinement (LPR), coupled via a locate-informed retrospective reward. Evaluated on the newly constructed FineRS-4k UAV high-resolution dataset, it achieves reasoning and segmentation of ultra-small objects with a gIoU of 55.1% (surpassing Seg-Zero† by 8.5%) while simultaneously supporting VQA (MVQA 83.3%).
+  [NeurIPS 2025][Segmentation][small object segmentation] FineRS is a two-stage MLLM reinforcement learning framework comprising Global Semantic Exploration (GSE) and Localized Perceptual Refinement (LPR)…
 tags:
-  - NeurIPS 2025
-  - Segmentation
-  - small object segmentation
-  - MLLM
-  - reinforcement-learning
-  - GRPO
-  - coarse-to-fine
-  - high-resolution
-  - UAV
+  - "NeurIPS 2025"
+  - "Segmentation"
+  - "small object segmentation"
+  - "MLLM"
+  - "reinforcement-learning"
+  - "GRPO"
+  - "coarse-to-fine"
+  - "high-resolution"
+  - "UAV"
 date: 2026-05-08
 content_hash: 63cef2c5b5231e6f
 ---

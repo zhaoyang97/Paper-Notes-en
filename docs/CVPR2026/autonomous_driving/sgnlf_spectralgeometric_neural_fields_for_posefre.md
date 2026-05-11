@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SG-NLF: Spectral-Geometric Neural Fields for Pose-Free LiDAR View Synthesis
 description: >-
-  [CVPR 2026][Autonomous Driving][Pose-free LiDAR] SG-NLF proposes a pose-free LiDAR NeRF framework that addresses the geometric hole problem arising from LiDAR sparsity via a spectral-geometric hybrid representation, achieves global pose optimization through a confidence-aware pose graph, and enforces cross-frame consistency via adversarial learning. On nuScenes, it outperforms the previous state of the art by 35.8% in reconstruction quality and 68.8% in pose accuracy.
+  [CVPR 2026][Autonomous Driving][Pose-free LiDAR] SG-NLF proposes a pose-free LiDAR NeRF framework that addresses the geometric hole problem arising from LiDAR sparsity via a spectral-geometric hybrid representation…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Pose-free LiDAR
-  - NeRF
-  - spectral embedding
-  - confidence-aware graph optimization
-  - adversarial cross-frame consistency
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Pose-free LiDAR"
+  - "NeRF"
+  - "spectral embedding"
+  - "confidence-aware graph optimization"
+  - "adversarial cross-frame consistency"
 date: 2026-05-08
 content_hash: 8b0aabe065d71eef
 ---

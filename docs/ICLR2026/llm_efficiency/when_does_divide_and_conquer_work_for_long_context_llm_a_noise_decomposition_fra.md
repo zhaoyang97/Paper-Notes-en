@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] When Does Divide and Conquer Work for Long Context LLM? A Noise Decomposition Framework
 description: >-
-  [ICLR 2026][LLM Efficiency][long context] This paper proposes a theoretical framework that decomposes long-context task failures into three types of noise (task noise / model noise / aggregator noise), proves that weak models with chunked processing can outperform strong models with full-context processing when model noise grows superlinearly, and provides a method to efficiently estimate the optimal chunk size using only 3–5 samples.
+  [ICLR 2026][LLM Efficiency][long context] This paper proposes a theoretical framework that decomposes long-context task failures into three types of noise (task noise / model noise / aggregator noise)…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - long context
-  - divide and conquer
-  - noise decomposition
-  - chunk size
-  - task decomposition
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "long context"
+  - "divide and conquer"
+  - "noise decomposition"
+  - "chunk size"
+  - "task decomposition"
 date: 2026-05-08
 content_hash: 4c1b8d40c5e2dd82
 ---

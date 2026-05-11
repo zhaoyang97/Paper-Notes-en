@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Graph Out-of-Distribution Detection via Test-Time Calibration with Dual Dynamic Dictionaries
 description: >-
-  [AAAI 2026][LLM Evaluation][Graph OOD Detection] This paper proposes the BaCa framework, which generates boundary-aware synthetic graph topologies at test time via graphon estimation and mixup strategies, and adaptively calibrates OOD scores using dual priority-queue-based dynamic dictionaries with an attention mechanism. Without fine-tuning the pretrained model or requiring auxiliary OOD data, BaCa outperforms GOODAT on all 10 datasets with an average AUC improvement of 8.37%.
+  [AAAI 2026][LLM Evaluation][Graph OOD Detection] This paper proposes the BaCa framework, which generates boundary-aware synthetic graph topologies at test time via graphon estimation and mixup strategies…
 tags:
-  - AAAI 2026
-  - LLM Evaluation
-  - Graph OOD Detection
-  - Test-Time Calibration
-  - Graphon Mixup
-  - Dual Dynamic Dictionary
-  - Priority Queue
+  - "AAAI 2026"
+  - "LLM Evaluation"
+  - "Graph OOD Detection"
+  - "Test-Time Calibration"
+  - "Graphon Mixup"
+  - "Dual Dynamic Dictionary"
+  - "Priority Queue"
 date: 2026-05-08
 content_hash: f00c65577c566726
 ---

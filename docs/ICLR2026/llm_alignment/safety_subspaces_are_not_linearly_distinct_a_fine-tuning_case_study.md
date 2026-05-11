@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Safety Subspaces are Not Linearly Distinct: A Fine-Tuning Case Study
 description: >-
-  [ICLR 2026][LLM Alignment][Safety Alignment] Through four systematic experiments (parallel projection, orthogonal projection, subspace overlap, and activation space analysis) conducted across five open-source LLMs, this paper establishes a key finding: safety alignment behavior is highly entangled with general learning in both weight space and activation space, and no linearly separable independent safety subspace exists. Consequently, defense strategies based on subspace projection/filtering face fundamental limitations.
+  [ICLR 2026][LLM Alignment][Safety Alignment] Through four systematic experiments (parallel projection, orthogonal projection, subspace overlap, and activation space analysis) conducted across five open-source LLMs…
 tags:
-  - ICLR 2026
-  - LLM Alignment
-  - Safety Alignment
-  - Subspace
-  - Fine-Tuning Attack
-  - Linear Separability
-  - Weight Space
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Safety Alignment"
+  - "Subspace"
+  - "Fine-Tuning Attack"
+  - "Linear Separability"
+  - "Weight Space"
 date: 2026-05-08
 content_hash: ce128a555c9bd4c0
 ---

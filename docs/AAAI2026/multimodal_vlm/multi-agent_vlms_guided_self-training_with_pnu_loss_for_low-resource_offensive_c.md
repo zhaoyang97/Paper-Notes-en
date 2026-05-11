@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multi-Agent VLMs Guided Self-Training with PNU Loss for Low-Resource Offensive Content Detection
 description: >-
-  [AAAI 2026][Multimodal VLM][Self-training] This paper proposes a multi-agent vision-language model (MA-VLMs) guided self-training framework combined with a novel PNU loss function, achieving high-quality offensive content detection under low-resource settings (as few as 50 labeled samples), with performance approaching that of large-scale models.
+  [AAAI 2026][Multimodal VLM][Self-training] This paper proposes a multi-agent vision-language model (MA-VLMs) guided self-training framework combined with a novel PNU loss function…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Self-training
-  - Multi-agent VLM
-  - Pseudo-labels
-  - PNU loss
-  - Offensive content detection
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Self-training"
+  - "Multi-agent VLM"
+  - "Pseudo-labels"
+  - "PNU loss"
+  - "Offensive content detection"
 date: 2026-05-08
 content_hash: ed019047c872797b
 ---

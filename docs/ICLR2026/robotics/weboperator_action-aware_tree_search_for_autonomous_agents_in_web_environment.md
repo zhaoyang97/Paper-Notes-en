@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] WebOperator: Action-Aware Tree Search for Autonomous Agents in Web Environment
 description: >-
-  [ICLR2026][Robotics][Web Agent] This paper proposes WebOperator, an action-aware tree search framework that enables autonomous web agents to explore safely and efficiently in partially observable, irreversible real-world web environments through speculative backtracking, destructive action detection, action validation, and action merging. WebOperator achieves a 54.6% success rate on WebArena using gpt-4o, establishing a new state of the art.
+  [ICLR2026][Robotics][Web Agent] This paper proposes WebOperator, an action-aware tree search framework that enables autonomous web agents to explore safely and efficiently in partially observable…
 tags:
-  - ICLR2026
-  - Robotics
-  - Web Agent
-  - Tree Search
-  - Backtracking Mechanism
-  - Destructive Action Handling
-  - Best-First Search
-  - Autonomous Agent
+  - "ICLR2026"
+  - "Robotics"
+  - "Web Agent"
+  - "Tree Search"
+  - "Backtracking Mechanism"
+  - "Destructive Action Handling"
+  - "Best-First Search"
+  - "Autonomous Agent"
 date: 2026-05-08
 content_hash: 525e22107c0c8284
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Provable Emergence of In-Context Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][In-Context RL] This paper theoretically proves that the globally optimal parameters of a Transformer pretrained via standard RL objectives can implement in-context temporal difference (TD) learning, providing the first provable theoretical foundation for the in-context RL (ICRL) phenomenon.
+  [NeurIPS 2025][Reinforcement Learning][In-Context RL] This paper theoretically proves that the globally optimal parameters of a Transformer pretrained via standard RL objectives can implement in-context temporal differen…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - In-Context RL
-  - Transformer
-  - Pretraining
-  - Policy Evaluation
-  - Temporal Difference Learning
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "In-Context RL"
+  - "Transformer"
+  - "Pretraining"
+  - "Policy Evaluation"
+  - "Temporal Difference Learning"
 date: 2026-05-08
 content_hash: 74003e88d0caf1e8
 ---

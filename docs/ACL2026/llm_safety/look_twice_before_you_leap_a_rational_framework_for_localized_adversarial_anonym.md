@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Look Twice before You Leap: A Rational Framework for Localized Adversarial Anonymization
 description: >-
-  [ACL 2026][LLM Safety][Text Anonymization] This paper proposes the RLAA framework, which addresses the utility collapse problem when transferring adversarial text anonymization to local small models (LSMs). Through an Attacker-Arbitrator-Anonymizer (A-A-A) architecture and a Marginal Rate of Substitution (MRS) rationality constraint, RLAA achieves a superior privacy-utility balance over API-based solutions on local devices, without any training.
+  [ACL 2026][LLM Safety][Text Anonymization] This paper proposes the RLAA framework, which addresses the utility collapse problem when transferring adversarial text anonymization to local small models (LSMs). Through an At…
 tags:
-  - ACL 2026
-  - LLM Safety
-  - Text Anonymization
-  - Adversarial Game
-  - Privacy Paradox
-  - Local Deployment
-  - Economic Rationality
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Text Anonymization"
+  - "Adversarial Game"
+  - "Privacy Paradox"
+  - "Local Deployment"
+  - "Economic Rationality"
 date: 2026-05-08
 content_hash: bc0af91cd2ae7efd
 ---

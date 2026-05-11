@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Pharmacophore-Guided Generative Design of Novel Drug-Like Molecules
 description: >-
-  [NeurIPS 2025][Medical Imaging][Pharmacophore guidance] This paper proposes a pharmacophore-guided molecular generation framework that simultaneously maximizes pharmacophore similarity and minimizes structural similarity within the reward function of a reinforcement learning model (FREED++), generating candidate drug molecules that retain bioactivity features while exhibiting high structural novelty.
+  [NeurIPS 2025][Medical Imaging][Pharmacophore guidance] This paper proposes a pharmacophore-guided molecular generation framework that simultaneously maximizes pharmacophore similarity and minimizes structural similarity…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Pharmacophore guidance
-  - molecular generation
-  - reinforcement learning
-  - drug design
-  - structural diversity
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Pharmacophore guidance"
+  - "molecular generation"
+  - "reinforcement learning"
+  - "drug design"
+  - "structural diversity"
 date: 2026-05-08
 content_hash: 290ebc6292650437
 ---

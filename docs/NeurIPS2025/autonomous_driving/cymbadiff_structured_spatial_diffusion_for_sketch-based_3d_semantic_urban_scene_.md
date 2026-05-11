@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CymbaDiff: Structured Spatial Diffusion for Sketch-based 3D Semantic Urban Scene Generation
 description: >-
-  [NeurIPS 2025][Autonomous Driving][3D semantic scene generation] This work introduces the first sketch-to-3D outdoor semantic scene generation task along with a benchmark dataset, SketchSem3D, and proposes CymbaDiff (Cylinder Mamba Diffusion), a denoising network that achieves structured spatial modeling via dual-path Mamba blocks combining cylindrical and Cartesian scanning. CymbaDiff reduces FID by 75% over 3D Latent Diffusion and 71% over 3D DiT.
+  [NeurIPS 2025][Autonomous Driving][3D semantic scene generation] This work introduces the first sketch-to-3D outdoor semantic scene generation task along with a benchmark dataset, SketchSem3D…
 tags:
-  - NeurIPS 2025
-  - Autonomous Driving
-  - 3D semantic scene generation
-  - sketch-guided
-  - diffusion model
-  - state space model
-  - cylindrical coordinate Mamba
+  - "NeurIPS 2025"
+  - "Autonomous Driving"
+  - "3D semantic scene generation"
+  - "sketch-guided"
+  - "diffusion model"
+  - "state space model"
+  - "cylindrical coordinate Mamba"
 date: 2026-05-08
 content_hash: 97f73aaf7aa2f1d3
 ---

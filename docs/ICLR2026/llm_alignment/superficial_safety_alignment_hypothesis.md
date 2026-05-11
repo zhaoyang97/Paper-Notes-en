@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Superficial Safety Alignment Hypothesis
 description: >-
-  [ICLR 2026][LLM Alignment][safety alignment] This paper proposes the **Superficial Safety Alignment Hypothesis (SSAH)**: safety alignment is essentially teaching a model to perform an implicit binary classification task (execute vs. refuse), requiring only ~1.3% of neurons to establish safety guardrails. Freezing these safety-critical units during fine-tuning preserves safety, and leveraging redundant units as an "alignment budget" eliminates the alignment tax.
+  [ICLR 2026][LLM Alignment][safety alignment] This paper proposes the **Superficial Safety Alignment Hypothesis (SSAH)**: safety alignment is essentially teaching a model to perform an implicit binary classification task…
 tags:
-  - ICLR 2026
-  - LLM Alignment
-  - safety alignment
-  - alignment fragility
-  - neuron-level analysis
-  - alignment tax
-  - model pruning
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "safety alignment"
+  - "alignment fragility"
+  - "neuron-level analysis"
+  - "alignment tax"
+  - "model pruning"
 date: 2026-05-08
 content_hash: 452354c3b4aef8a4
 ---

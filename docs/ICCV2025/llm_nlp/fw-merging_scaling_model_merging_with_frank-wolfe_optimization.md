@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FW-Merging: Scaling Model Merging with Frank-Wolfe Optimization
 description: >-
-  [ICCV 2025][LLM/NLP][Model merging] This paper formalizes model merging as a constrained optimization problem and introduces FW-Merging, a Frank-Wolfe optimization-inspired method that iteratively selects the most relevant models and performs local merging. The approach achieves scalable and robust merging over large black-box model pools, surpassing the data-aware method AdaMerging by 8.39% when merging 20 ViT models.
+  [ICCV 2025][LLM/NLP][Model merging] This paper formalizes model merging as a constrained optimization problem and introduces FW-Merging…
 tags:
-  - ICCV 2025
-  - LLM/NLP
-  - Model merging
-  - Frank-Wolfe optimization
-  - multi-task learning
-  - scalability
-  - large language models
+  - "ICCV 2025"
+  - "LLM/NLP"
+  - "Model merging"
+  - "Frank-Wolfe optimization"
+  - "multi-task learning"
+  - "scalability"
+  - "large language models"
 date: 2026-05-08
 content_hash: 9bffe286af71f94e
 ---

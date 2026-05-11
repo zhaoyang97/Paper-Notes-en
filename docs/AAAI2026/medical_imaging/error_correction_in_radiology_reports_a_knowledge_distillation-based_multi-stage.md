@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Error Correction in Radiology Reports: A Knowledge Distillation-Based Multi-Stage Framework
 description: >-
-  [AAAI 2026][Medical Imaging][Radiology report proofreading] This paper proposes a **staged inference + dual-knowledge infusion** framework that decomposes radiology report error correction into three phases—detection → localization → correction—and integrates **Medical Knowledge Graph Distillation (MKGD)** with **External Knowledge Retrieval (EXKR)** to achieve up to **31.56% improvement in error detection accuracy** and **37.4% reduction in processing time** across 6 LLM architectures.
+  [AAAI 2026][Medical Imaging][Radiology report proofreading] This paper proposes a **staged inference + dual-knowledge infusion** framework that decomposes radiology report error correction into three phases—detection → l…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Radiology report proofreading
-  - large language models
-  - knowledge graph distillation
-  - staged inference
-  - medical error detection
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Radiology report proofreading"
+  - "large language models"
+  - "knowledge graph distillation"
+  - "staged inference"
+  - "medical error detection"
 date: 2026-05-08
 content_hash: 9b181bc04d86394a
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MUG: Pseudo Labeling Augmented Audio-Visual Mamba Network for Audio-Visual Video Parsing
 description: >-
-  [ICCV 2025][Audio & Speech][Audio-visual video parsing] This paper proposes the MUG framework, which simultaneously improves segment-level and event-level prediction in weakly supervised audio-visual video parsing (AVVP) through a pseudo label-augmented cross-modal random combination data augmentation strategy and an audio-visual Mamba network.
+  [ICCV 2025][Audio & Speech][Audio-visual video parsing] This paper proposes the MUG framework, which simultaneously improves segment-level and event-level prediction in weakly supervised audio-visual video parsing (AVVP)…
 tags:
-  - ICCV 2025
+  - "ICCV 2025"
   - "Audio & Speech"
-  - Audio-visual video parsing
-  - Mamba
-  - pseudo labels
-  - data augmentation
-  - weakly supervised learning
+  - "Audio-visual video parsing"
+  - "Mamba"
+  - "pseudo labels"
+  - "data augmentation"
+  - "weakly supervised learning"
 date: 2026-05-08
 content_hash: ece249ce9ec8a23c
 ---

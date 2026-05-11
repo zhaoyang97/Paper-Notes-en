@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Second-Order Optimization Under Heavy-Tailed Noise: Hessian Clipping and Sample Complexity
 description: >-
-  [NeurIPS 2025][Optimization][second-order optimization] This paper provides the first systematic theoretical treatment of second-order stochastic optimization under heavy-tailed noise. It establishes tight minimax sample complexity lower bounds, proposes a normalized SGD algorithm with gradient and Hessian clipping (Clip NSGDHess), and proves that the proposed algorithm nearly achieves the information-theoretic limit.
+  [NeurIPS 2025][Optimization][second-order optimization] This paper provides the first systematic theoretical treatment of second-order stochastic optimization under heavy-tailed noise. It establishes tight minimax sample…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - second-order optimization
-  - heavy-tailed noise
-  - Hessian clipping
-  - sample complexity
-  - high-probability convergence
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "second-order optimization"
+  - "heavy-tailed noise"
+  - "Hessian clipping"
+  - "sample complexity"
+  - "high-probability convergence"
 date: 2026-05-08
 content_hash: 35b4ea0cec6563e8
 ---

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Explaining Grokking and Information Bottleneck through Neural Collapse Emergence
 description: >-
-  [ICLR2026][LLM Pretraining][Grokking] This work provides a unified explanation of two prominent late-stage training phenomena—Grokking (delayed generalization) and the Information Bottleneck compression phase—through the lens of Neural Collapse. It proves that the contraction of population within-class variance is the common key factor underlying both phenomena, and reveals that training loss convergence and the onset of Neural Collapse operate on distinct timescales governed by weight decay.
+  [ICLR2026][LLM Pretraining][Grokking] This work provides a unified explanation of two prominent late-stage training phenomena—Grokking (delayed generalization) and the Information Bottleneck compression phase—through the…
 tags:
-  - ICLR2026
-  - LLM Pretraining
-  - Grokking
-  - Information Bottleneck
-  - Neural Collapse
-  - Training Dynamics
-  - Within-Class Variance
-  - Generalization Theory
-  - Lyapunov Timescales
+  - "ICLR2026"
+  - "LLM Pretraining"
+  - "Grokking"
+  - "Information Bottleneck"
+  - "Neural Collapse"
+  - "Training Dynamics"
+  - "Within-Class Variance"
+  - "Generalization Theory"
+  - "Lyapunov Timescales"
 date: 2026-05-08
 content_hash: b77ec291b16b6ae8
 ---

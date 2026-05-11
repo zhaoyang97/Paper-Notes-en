@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VK-Det: Visual Knowledge Guided Prototype Learning for Open-Vocabulary Aerial Object Detection
 description: >-
-  [AAAI 2026][Object Detection][Open-vocabulary detection] VK-Det is proposed as a framework that leverages only the visual knowledge of VLMs (without any additional supervision signals) to achieve state-of-the-art performance in open-vocabulary aerial object detection through Adaptive Selection Knowledge Distillation (ASKD), Prototype-Aware Pseudo-Label generation (PAPL), and Synthetic Matching Inference (SMI), even surpassing methods that rely on extra supervision.
+  [AAAI 2026][Object Detection][Open-vocabulary detection] VK-Det is proposed as a framework that leverages only the visual knowledge of VLMs (without any additional supervision signals) to achieve state-of-the-art perform…
 tags:
-  - AAAI 2026
-  - Object Detection
-  - Open-vocabulary detection
-  - aerial remote sensing imagery
-  - prototype learning
-  - knowledge distillation
-  - pseudo-labels
+  - "AAAI 2026"
+  - "Object Detection"
+  - "Open-vocabulary detection"
+  - "aerial remote sensing imagery"
+  - "prototype learning"
+  - "knowledge distillation"
+  - "pseudo-labels"
 date: 2026-05-08
 content_hash: e20755677ee50f1d
 ---

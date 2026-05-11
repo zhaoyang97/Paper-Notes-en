@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Failure Cases Are Better Learned But Boundary Says Sorry: Facilitating Smooth Perception Change for Accuracy-Robustness Trade-Off in Adversarial Training
 description: >-
-  [ICCV 2025][adversarial training] This paper reveals a counterintuitive phenomenon in adversarial training — the model's perceptual change on failure cases is actually smaller than on success cases (i.e., failure cases are "over-learned") — and proposes Robust Perception Adversarial Training (RPAT), which encourages perceptions to change smoothly with perturbations to alleviate the accuracy-robustness trade-off.
+  [ICCV 2025][adversarial training] This paper reveals a counterintuitive phenomenon in adversarial training — the model's perceptual change on failure cases is actually smaller than on success cases (i.e.…
 tags:
-  - ICCV 2025
-  - adversarial training
-  - accuracy-robustness trade-off
-  - perceptual consistency
-  - decision boundary
-  - robust perception
+  - "ICCV 2025"
+  - "adversarial training"
+  - "accuracy-robustness trade-off"
+  - "perceptual consistency"
+  - "decision boundary"
+  - "robust perception"
 date: 2026-05-08
 content_hash: 99e20e40341a5b72
 ---

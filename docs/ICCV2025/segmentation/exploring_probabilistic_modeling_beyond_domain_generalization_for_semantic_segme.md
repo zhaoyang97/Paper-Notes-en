@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Exploring Probabilistic Modeling Beyond Domain Generalization for Semantic Segmentation
 description: >-
-  [ICCV 2025][Segmentation][domain generalization] This paper proposes PDAF (Probabilistic Diffusion Alignment Framework), which explicitly estimates a Latent Domain Prior (LDP) via probabilistic diffusion modeling to provide domain-shift compensation for existing segmentation networks, achieving state-of-the-art cross-domain generalization without requiring paired target-domain samples.
+  [ICCV 2025][Segmentation][domain generalization] This paper proposes PDAF (Probabilistic Diffusion Alignment Framework), which explicitly estimates a Latent Domain Prior (LDP) via probabilistic diffusion modeling to prov…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - domain generalization
-  - semantic segmentation
-  - diffusion models
-  - latent domain prior
-  - probabilistic modeling
+  - "ICCV 2025"
+  - "Segmentation"
+  - "domain generalization"
+  - "semantic segmentation"
+  - "diffusion models"
+  - "latent domain prior"
+  - "probabilistic modeling"
 date: 2026-05-08
 content_hash: 84916a8606dbf230
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BEAT: Visual Backdoor Attacks on VLM-based Embodied Agents via Contrastive Trigger Learning
 description: >-
-  [ICLR 2026][Multimodal VLM][backdoor attack] This paper proposes BEAT, the first visual backdoor attack framework targeting VLM-driven embodied agents. It employs environmental objects (e.g., knives) as triggers and adopts a two-stage training pipeline (SFT + Contrastive Trigger Learning) to achieve precise backdoor activation. BEAT attains an attack success rate of up to 80% while preserving normal task performance, exposing critical security vulnerabilities in VLM-based embodied agents.
+  [ICLR 2026][Multimodal VLM][backdoor attack] This paper proposes BEAT, the first visual backdoor attack framework targeting VLM-driven embodied agents. It employs environmental objects (e.g.…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - backdoor attack
-  - embodied agent
-  - VLM security
-  - contrastive learning
-  - visual trigger
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "backdoor attack"
+  - "embodied agent"
+  - "VLM security"
+  - "contrastive learning"
+  - "visual trigger"
 date: 2026-05-08
 content_hash: f35a437e03bf7fd8
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RayZer: A Self-supervised Large View Synthesis Model
 description: >-
-  [ICCV 2025][3D Vision][Self-supervised Learning] This paper proposes RayZer, a self-supervised multi-view 3D vision model that requires no 3D supervision (no camera poses, no scene geometry annotations). By decoupling images into camera parameters and scene representations, RayZer performs 3D-aware image autoencoding and achieves performance on novel view synthesis that matches or surpasses oracle methods relying on pose annotations.
+  [ICCV 2025][3D Vision][Self-supervised Learning] This paper proposes RayZer, a self-supervised multi-view 3D vision model that requires no 3D supervision (no camera poses…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Self-supervised Learning
-  - Novel View Synthesis
-  - Camera Pose Estimation
-  - Plücker Rays
-  - Transformer
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Self-supervised Learning"
+  - "Novel View Synthesis"
+  - "Camera Pose Estimation"
+  - "Plücker Rays"
+  - "Transformer"
 date: 2026-05-08
 content_hash: db3efddfe7ee50ae
 ---

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] WIR3D: Visually-Informed and Geometry-Aware 3D Shape Abstraction
 description: >-
-  [Self-Supervised Learning] > WIR3D optimizes a set of 3D Bézier curve parameters under the spatial guidance of CLIP intermediate-layer activations to faithfully represent the geometric structure and visually salient features (including texture) of 3D shapes from arbitrary viewpoints, achieving sparse yet semantically rich 3D shape abstraction.
+  [Self-Supervised Learning] > WIR3D optimizes a set of 3D Bézier curve parameters under the spatial guidance of CLIP intermediate-layer activations to faithfully represent the geometric structure and visually salient feat…
 tags:
-  - Self-Supervised Learning
+  - "Self-Supervised Learning"
 date: 2026-05-08
 content_hash: b972b5f414921e7a
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Reasoning with Exploration: An Entropy Perspective
 description: >-
-  [AAAI 2026][Reinforcement Learning][Entropy] This paper analyzes the positive correlation between exploratory reasoning behaviors in LLMs (pivotal tokens, self-reflection, rare behaviors) and high-entropy regions from an entropy perspective. It proposes a minimalist entropy-based advantage shaping method—requiring only a single line of code modification—that significantly enhances the Pass@K reasoning capability ceiling of LLMs.
+  [AAAI 2026][Reinforcement Learning][Entropy] This paper analyzes the positive correlation between exploratory reasoning behaviors in LLMs (pivotal tokens, self-reflection…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - Entropy
-  - Exploratory Reasoning
-  - Advantage Shaping
-  - RLVR
-  - LLM Reasoning
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "Entropy"
+  - "Exploratory Reasoning"
+  - "Advantage Shaping"
+  - "RLVR"
+  - "LLM Reasoning"
 date: 2026-05-08
 content_hash: fb9f132e1cc9efb7
 ---

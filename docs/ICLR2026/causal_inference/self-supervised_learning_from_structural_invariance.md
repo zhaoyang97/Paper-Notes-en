@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Self-Supervised Learning from Structural Invariance
 description: >-
-  [ICLR 2026][Causal Inference][self-supervised learning] This paper proposes AdaSSL, which introduces latent variables to model conditional uncertainty between positive pairs, derives a variational lower bound on mutual information, and enables SSL to handle complex (multimodal, heteroscedastic) conditional distributions in naturally paired data. AdaSSL outperforms baselines on causal representation learning, fine-grained image understanding, and video world models.
+  [ICLR 2026][Causal Inference][self-supervised learning] This paper proposes AdaSSL, which introduces latent variables to model conditional uncertainty between positive pairs…
 tags:
-  - ICLR 2026
-  - Causal Inference
-  - self-supervised learning
-  - latent variable model
-  - structural invariance
-  - heteroscedasticity
-  - causal representation
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "self-supervised learning"
+  - "latent variable model"
+  - "structural invariance"
+  - "heteroscedasticity"
+  - "causal representation"
 date: 2026-05-08
 content_hash: 5ebd45e2d855ee92
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DreamDance: Animating Human Images by Enriching 3D Geometry Cues from 2D Poses
 description: >-
-  [ICCV 2025][Image Generation][Human image animation] DreamDance proposes a human image animation framework that takes only 2D skeleton pose sequences as input. It first generates mutually aligned depth maps and normal maps from 2D poses via a Mutually Aligned Geometry Diffusion Model to enrich 3D geometric guidance, then integrates multi-level guidance signals through an SVD-based Cross-Domain Controlled Video Diffusion Model to synthesize high-quality human animations. The method achieves state-of-the-art performance on the TikTok dataset (FVD 153.07 vs. Champ 170.20).
+  [ICCV 2025][Image Generation][Human image animation] DreamDance proposes a human image animation framework that takes only 2D skeleton pose sequences as input. It first generates mutually aligned depth maps and normal ma…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Human image animation
-  - depth-normal map generation
-  - geometry attention
-  - SVD ControlNet
-  - cross-domain controller
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Human image animation"
+  - "depth-normal map generation"
+  - "geometry attention"
+  - "SVD ControlNet"
+  - "cross-domain controller"
 date: 2026-05-08
 content_hash: 83679905ca70cef4
 ---

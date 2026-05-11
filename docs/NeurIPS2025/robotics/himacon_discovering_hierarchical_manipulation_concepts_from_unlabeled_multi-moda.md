@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HiMaCon: Discovering Hierarchical Manipulation Concepts from Unlabeled Multi-Modal Data
 description: >-
-  [NeurIPS 2025][Robotics][manipulation concepts] This paper proposes a self-supervised framework that learns hierarchical manipulation concepts from unlabeled multi-modal robot demonstrations. It organizes representations via a cross-modal correlation network and a multi-horizon future predictor, enhancing the generalization of imitation learning policies to novel objects, unseen obstacles, and new environments.
+  [NeurIPS 2025][Robotics][manipulation concepts] This paper proposes a self-supervised framework that learns hierarchical manipulation concepts from unlabeled multi-modal robot demonstrations. It organizes representations…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - manipulation concepts
-  - hierarchical representation
-  - cross-modal correlation
-  - multi-timescale subgoals
-  - self-supervised learning
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "manipulation concepts"
+  - "hierarchical representation"
+  - "cross-modal correlation"
+  - "multi-timescale subgoals"
+  - "self-supervised learning"
 date: 2026-05-08
 content_hash: 0181a27a76ed9176
 ---

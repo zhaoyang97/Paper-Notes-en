@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LLaVA-CoT: Let Vision Language Models Reason Step-by-Step
 description: >-
-  [ICCV 2025][Multimodal VLM][Vision-Language Models] LLaVA-CoT proposes a method enabling vision-language models to perform autonomous multi-stage structured reasoning. By constructing the LLaVA-CoT-100k structured reasoning annotation dataset, the model is trained to sequentially execute four stages—Summary, Caption, Reasoning, and Conclusion—and a Stage-Wise Retracing Search (SWIRES) is proposed for test-time scaling, allowing an 11B model to surpass Gemini-1.5-pro and GPT-4o-mini.
+  [ICCV 2025][Multimodal VLM][Vision-Language Models] LLaVA-CoT proposes a method enabling vision-language models to perform autonomous multi-stage structured reasoning. By constructing the LLaVA-CoT-100k structured reason…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Vision-Language Models
-  - Multi-Stage Reasoning
-  - Chain-of-Thought
-  - Test-Time Scaling
-  - Structured Reasoning
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Vision-Language Models"
+  - "Multi-Stage Reasoning"
+  - "Chain-of-Thought"
+  - "Test-Time Scaling"
+  - "Structured Reasoning"
 date: 2026-05-08
 content_hash: e4195bc61b3db750
 ---

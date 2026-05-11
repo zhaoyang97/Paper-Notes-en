@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GGBall: Graph Generative Model on Poincaré Ball
 description: >-
-  [ICLR 2026][Image Generation][Hyperbolic Space] This paper proposes GGBall, the first graph generation framework operating entirely on the Poincaré ball model. By combining a hyperbolic vector-quantized variational autoencoder (HVQVAE) with a Riemannian flow matching prior, GGBall achieves state-of-the-art performance on both hierarchical and molecular graph generation, reducing the average generation error by 18% on hierarchical graph benchmarks.
+  [ICLR 2026][Image Generation][Hyperbolic Space] This paper proposes GGBall, the first graph generation framework operating entirely on the Poincaré ball model. By combining a hyperbolic vector-quantized variational autoe…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Hyperbolic Space
-  - Graph Generation
-  - Poincaré Ball Model
-  - Vector Quantization
-  - Flow Matching
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Hyperbolic Space"
+  - "Graph Generation"
+  - "Poincaré Ball Model"
+  - "Vector Quantization"
+  - "Flow Matching"
 date: 2026-05-08
 content_hash: 00469fe2ac488e2e
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LUMINA: A Multi-Vendor Mammography Benchmark with Energy Harmonization Protocol
 description: >-
-  [CVPR 2026][Medical Imaging][mammography] This paper introduces LUMINA, a multi-vendor full-field digital mammography (FFDM) dataset comprising 468 patients and 1,824 images, accompanied by a foreground-pixel histogram matching protocol for energy harmonization. The benchmark systematically evaluates CNN and Transformer models across three clinical tasks: diagnosis, BI-RADS classification, and breast density prediction.
+  [CVPR 2026][Medical Imaging][mammography] This paper introduces LUMINA, a multi-vendor full-field digital mammography (FFDM) dataset comprising 468 patients and 1,824 images…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - mammography
-  - multi-vendor dataset
-  - energy harmonization
-  - histogram matching
-  - benchmark
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "mammography"
+  - "multi-vendor dataset"
+  - "energy harmonization"
+  - "histogram matching"
+  - "benchmark"
 date: 2026-05-08
 content_hash: 8090fb235833770f
 ---

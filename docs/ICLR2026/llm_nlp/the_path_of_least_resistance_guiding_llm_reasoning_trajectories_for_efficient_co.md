@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The Path of Least Resistance: Guiding LLM Reasoning Trajectories for Efficient Consistency
 description: >-
-  [ICLR 2026][LLM/NLP][self-consistency] This paper proposes PoLR (Path of Least Resistance), the first inference-time method that exploits reasoning prefix consistency. By clustering short prefixes and expanding only the dominant cluster, PoLR serves as an efficient alternative to Self-Consistency, reducing token usage by up to 60% and latency by up to 50%.
+  [ICLR 2026][LLM/NLP][self-consistency] This paper proposes PoLR (Path of Least Resistance), the first inference-time method that exploits reasoning prefix consistency. By clustering short prefixes and expanding only the…
 tags:
-  - ICLR 2026
-  - LLM/NLP
-  - self-consistency
-  - inference efficiency
-  - prefix clustering
-  - reasoning
-  - token reduction
+  - "ICLR 2026"
+  - "LLM/NLP"
+  - "self-consistency"
+  - "inference efficiency"
+  - "prefix clustering"
+  - "reasoning"
+  - "token reduction"
 date: 2026-05-08
 content_hash: fc732d8690de0779
 ---

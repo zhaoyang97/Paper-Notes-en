@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Topic-Based Watermarks for Large Language Models
 description: >-
-  [ACL 2026][LLM Safety][Text Watermarking] This paper proposes TBW, a lightweight topic-based watermarking scheme that clusters the vocabulary into semantically coherent "green lists" via predefined topics (rather than random partitioning), selects the topic list most aligned with the input prompt for logit bias injection, and achieves text quality comparable to unwatermarked outputs while significantly improving robustness against paraphrase and lexical perturbation attacks.
+  [ACL 2026][LLM Safety][Text Watermarking] This paper proposes TBW, a lightweight topic-based watermarking scheme that clusters the vocabulary into semantically coherent "green lists" via predefined topics (rather than ra…
 tags:
-  - ACL 2026
-  - LLM Safety
-  - Text Watermarking
-  - Topic Alignment
-  - Semantic Partitioning
-  - Paraphrase Robustness
-  - Lightweight Detection
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Text Watermarking"
+  - "Topic Alignment"
+  - "Semantic Partitioning"
+  - "Paraphrase Robustness"
+  - "Lightweight Detection"
 date: 2026-05-08
 content_hash: 10438a6ce42b2908
 ---

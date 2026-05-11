@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] EfficientMT: Efficient Temporal Adaptation for Motion Transfer in Text-to-Video Diffusion Models
 description: >-
-  [Video Generation] This paper proposes EfficientMT, an efficient end-to-end video motion transfer framework that reuses a pretrained T2V model backbone to extract temporal motion features, combines a scaler module with a temporal integration mechanism, and achieves zero-shot motion transfer using only a small amount of synthetic paired data. The inference speed is more than 10× faster than optimization-based methods.
+  [Video Generation] This paper proposes EfficientMT, an efficient end-to-end video motion transfer framework that reuses a pretrained T2V model backbone to extract temporal motion features…
 tags:
-  - Video Generation
+  - "Video Generation"
 date: 2026-05-08
 content_hash: 3d832ff8f83097ab
 ---

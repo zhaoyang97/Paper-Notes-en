@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dialectic-Med: Mitigating Diagnostic Hallucinations via Counterfactual Adversarial Multi-Agent Debate
 description: >-
-  [ACL 2026][Causal Inference][Medical Hallucination] Dialectic-Med, inspired by Popperian falsificationism, uses three-agent adversarial dialectical reasoning (proposer for diagnostic hypotheses, opponent with visual falsification module for proactively retrieving contradictory visual evidence, and mediator with weighted consensus graph), achieving SOTA on MIMIC-CXR-VQA, VQA-RAD, and PathVQA with 12.5% explanation faithfulness improvement.
+  [ACL 2026][Causal Inference][Medical Hallucination] Dialectic-Med, inspired by Popperian falsificationism, uses three-agent adversarial dialectical reasoning (proposer for diagnostic hypotheses…
 tags:
-  - ACL 2026
-  - Causal Inference
-  - Medical Hallucination
-  - Multi-Agent Debate
-  - Counterfactual Reasoning
-  - Visual Falsification
-  - Confirmation Bias
+  - "ACL 2026"
+  - "Causal Inference"
+  - "Medical Hallucination"
+  - "Multi-Agent Debate"
+  - "Counterfactual Reasoning"
+  - "Visual Falsification"
+  - "Confirmation Bias"
 content_hash: 7602d2805b194d0b
 ---
 

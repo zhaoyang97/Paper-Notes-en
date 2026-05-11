@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Stepping Out of Similar Semantic Space for Open-Vocabulary Segmentation
 description: >-
-  [ICCV 2025][Segmentation][Open-vocabulary segmentation] This paper exposes an evaluation bias in existing open-vocabulary segmentation (OVS) benchmarks, where test sets exhibit high semantic similarity to training spaces. It proposes a new benchmark, OpenBench, and a method, OVSNet, that integrates heterogeneous features via Gradient-Free Aggregation (GFA) and expands the training semantic space at zero cost through Proxy Calibration (PC), achieving state-of-the-art performance on both existing benchmarks and OpenBench.
+  [ICCV 2025][Segmentation][Open-vocabulary segmentation] This paper exposes an evaluation bias in existing open-vocabulary segmentation (OVS) benchmarks…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - Open-vocabulary segmentation
-  - benchmark evaluation
-  - semantic space
-  - CLIP fine-tuning
-  - gradient-free aggregation
-  - proxy calibration
+  - "ICCV 2025"
+  - "Segmentation"
+  - "Open-vocabulary segmentation"
+  - "benchmark evaluation"
+  - "semantic space"
+  - "CLIP fine-tuning"
+  - "gradient-free aggregation"
+  - "proxy calibration"
 date: 2026-05-08
 content_hash: c94f9fd0ac53e41d
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VA-GPT: Aligning Effective Tokens with Video Anomaly in Large Language Models
 description: >-
-  [ICCV 2025][LLM/NLP][Video anomaly detection] This paper proposes VA-GPT, a multimodal large language model for video anomaly event understanding. Through two modules—Spatial Effective Token Selection (SETS) and Temporal Effective Token Generation (TETG)—VA-GPT enables MLLMs to precisely align anomaly-relevant information in both spatial and temporal dimensions, achieving state-of-the-art performance on both in-domain and cross-domain anomaly detection benchmarks.
+  [ICCV 2025][LLM/NLP][Video anomaly detection] This paper proposes VA-GPT, a multimodal large language model for video anomaly event understanding. Through two modules—Spatial Effective Token Selection (SETS) and Temporal…
 tags:
-  - ICCV 2025
-  - LLM/NLP
-  - Video anomaly detection
-  - multimodal large language models
-  - spatial effective tokens
-  - temporal effective tokens
-  - cross-domain generalization
+  - "ICCV 2025"
+  - "LLM/NLP"
+  - "Video anomaly detection"
+  - "multimodal large language models"
+  - "spatial effective tokens"
+  - "temporal effective tokens"
+  - "cross-domain generalization"
 date: 2026-05-08
 content_hash: 077b9adddd63361e
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Motion Matters: Compact Gaussian Streaming for Free-Viewpoint Video Reconstruction
 description: >-
-  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] This paper proposes ComGS, a framework that exploits the locality and consistency of motion in dynamic scenes to drive the motion of all Gaussians in moving regions using only ~200 keypoints. ComGS achieves 159× storage compression over 3DGStream and 14× over QUEEN while maintaining competitive visual quality and rendering speed.
+  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] This paper proposes ComGS, a framework that exploits the locality and consistency of motion in dynamic scenes to drive the motion of all Gaussians in moving regions using…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - Free-Viewpoint Video
-  - Online Reconstruction
-  - Motion Modeling
-  - Streaming
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Free-Viewpoint Video"
+  - "Online Reconstruction"
+  - "Motion Modeling"
+  - "Streaming"
 date: 2026-05-08
 content_hash: e8396d0fd2e89d12
 ---

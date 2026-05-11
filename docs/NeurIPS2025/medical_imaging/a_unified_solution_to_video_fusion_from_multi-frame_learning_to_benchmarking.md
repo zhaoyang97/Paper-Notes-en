@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Unified Solution to Video Fusion: From Multi-Frame Learning to Benchmarking
 description: >-
-  [NeurIPS 2025][Medical Imaging][video fusion] This paper proposes UniVF, the first unified video fusion framework based on multi-frame learning, optical flow feature warping, and temporal consistency loss, along with VF-Bench, the first video fusion benchmark covering four major fusion tasks (multi-exposure, multi-focus, infrared-visible, and medical), achieving state-of-the-art performance across all sub-tasks.
+  [NeurIPS 2025][Medical Imaging][video fusion] This paper proposes UniVF, the first unified video fusion framework based on multi-frame learning, optical flow feature warping, and temporal consistency loss…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - video fusion
-  - multi-frame learning
-  - optical flow alignment
-  - temporal consistency
-  - benchmark
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "video fusion"
+  - "multi-frame learning"
+  - "optical flow alignment"
+  - "temporal consistency"
+  - "benchmark"
 date: 2026-05-08
 content_hash: d0ea6d152644209e
 ---

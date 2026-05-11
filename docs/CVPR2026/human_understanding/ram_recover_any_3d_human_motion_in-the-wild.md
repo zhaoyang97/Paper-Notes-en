@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RAM: Recover Any 3D Human Motion in-the-Wild
 description: >-
-  [CVPR 2026][Human Understanding][Multi-person 3D motion recovery] RAM proposes a unified multi-person 3D motion recovery framework integrating a motion-aware semantic tracker SegFollow (built on SAM2 with adaptive Kalman filtering), a memory-augmented temporal human mesh recovery module T-HMR, a lightweight motion predictor, and a gated combiner. It achieves state-of-the-art zero-shot tracking stability and 3D accuracy on benchmarks including PoseTrack and 3DPW, while running 2–3× faster than prior methods.
+  [CVPR 2026][Human Understanding][Multi-person 3D motion recovery] RAM proposes a unified multi-person 3D motion recovery framework integrating a motion-aware semantic tracker SegFollow (built on SAM2 with adaptive Kalman…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Multi-person 3D motion recovery
-  - zero-shot tracking
-  - SAM2
-  - temporal human mesh recovery
-  - motion prediction
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Multi-person 3D motion recovery"
+  - "zero-shot tracking"
+  - "SAM2"
+  - "temporal human mesh recovery"
+  - "motion prediction"
 date: 2026-05-08
 content_hash: 70d5a953c0d3bd73
 ---

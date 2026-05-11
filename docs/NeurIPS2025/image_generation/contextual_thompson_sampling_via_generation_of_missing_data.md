@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Contextual Thompson Sampling via Generation of Missing Data
 description: >-
-  [NeurIPS 2025][Image Generation][Thompson sampling] This paper proposes Generative Thompson Sampling (TS-Gen), which reframes uncertainty in contextual bandits as missing data rather than unknown parameters. A generative model autoregressively imputes missing outcomes to implement Thompson sampling, and a regret bound directly tied to offline prediction loss is established.
+  [NeurIPS 2025][Image Generation][Thompson sampling] This paper proposes Generative Thompson Sampling (TS-Gen), which reframes uncertainty in contextual bandits as missing data rather than unknown parameters. A generative…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Thompson sampling
-  - contextual bandit
-  - generative models
-  - missing data imputation
-  - meta-learning
-  - regret bounds
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Thompson sampling"
+  - "contextual bandit"
+  - "generative models"
+  - "missing data imputation"
+  - "meta-learning"
+  - "regret bounds"
 date: 2026-05-08
 content_hash: 8f8f471c7e5c0f2e
 ---

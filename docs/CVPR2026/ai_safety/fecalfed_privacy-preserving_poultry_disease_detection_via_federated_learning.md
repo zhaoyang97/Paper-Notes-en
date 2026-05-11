@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] FecalFed: Privacy-Preserving Poultry Disease Detection via Federated Learning
 description: >-
-  [CVPR 2026][AI Safety][Federated Learning] This paper proposes FecalFed, a privacy-preserving federated learning framework that first removes 46.89% duplicate contamination from public poultry fecal datasets via a dual-hash deduplication pipeline and releases a clean benchmark of 8,770 images (poultry-fecal-fl). Under highly non-IID conditions (Dirichlet α=0.5), FedAdam + Swin-Small recovers accuracy from a collapsed 64.86% (single-farm) to 90.31%, only 4.79% below the centralized upper bound of 95.10%. The edge-optimized Swin-Tiny (28M parameters) still achieves 89.74%, providing an efficient and practical solution for on-farm deployment.
+  [CVPR 2026][AI Safety][Federated Learning] This paper proposes FecalFed, a privacy-preserving federated learning framework that first removes 46.89% duplicate contamination from public poultry fecal datasets via a dual-h…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Federated Learning
-  - Privacy Preservation
-  - Poultry Disease Detection
-  - Data Deduplication
-  - Non-IID
-  - Vision Transformer
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Federated Learning"
+  - "Privacy Preservation"
+  - "Poultry Disease Detection"
+  - "Data Deduplication"
+  - "Non-IID"
+  - "Vision Transformer"
 date: 2026-05-08
 content_hash: 2a4cee5122baf33a
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Ignore All Previous Instructions: Jailbreaking as a de-escalatory peace building practise to resist LLM social media bots
 description: >-
-  [ICLR 2026][Robotics][jailbreaking] This paper proposes reframing the jailbreaking of LLM-driven social media propaganda bots as a user-initiated, nonviolent de-escalatory peace-building practice. By exposing the fabricated identities of automated accounts through prompt injection, ordinary users can resist state-sponsored disinformation campaigns without relying on platform moderation.
+  [ICLR 2026][Robotics][jailbreaking] This paper proposes reframing the jailbreaking of LLM-driven social media propaganda bots as a user-initiated…
 tags:
-  - ICLR 2026
-  - Robotics
-  - jailbreaking
-  - LLM social bots
-  - disinformation
-  - peace building
-  - prompt injection
+  - "ICLR 2026"
+  - "Robotics"
+  - "jailbreaking"
+  - "LLM social bots"
+  - "disinformation"
+  - "peace building"
+  - "prompt injection"
 date: 2026-05-08
 content_hash: f37bd016c232c58b
 ---

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SAVE: Speech-Aware Video Representation Learning for Video-Text Retrieval
 description: >-
-  [Audio & Speech] This paper proposes SAVE, a speech-aware video representation learning method that introduces a dedicated speech branch (Whisper ASR + CLIP text encoder) and a soft-ALBEF visual-audio early alignment strategy, achieving comprehensive state-of-the-art performance across five video-text retrieval benchmarks.
+  [Audio & Speech] This paper proposes SAVE, a speech-aware video representation learning method that introduces a dedicated speech branch (Whisper ASR + CLIP text encoder) and a soft-ALBEF visual-audio early alignment str…
 tags:
   - "Audio & Speech"
 date: 2026-05-08

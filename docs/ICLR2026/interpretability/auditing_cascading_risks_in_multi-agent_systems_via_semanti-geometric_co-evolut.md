@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Auditing Cascading Risks in Multi-Agent Systems via Semantic–Geometric Co-evolution
 description: >-
-  [ICLR 2026 Workshop][multi-agent safety] This paper proposes SCCAL, a framework that models semantic–geometric co-evolution in multi-agent systems (MAS) by coupling semantic flow with the Ollivier–Ricci curvature (ORC) of interaction graphs. The joint prediction residual between the two modalities serves as an early warning signal for cascading risks, enabling anomaly detection several rounds before semantic violations become observable.
+  [ICLR 2026 Workshop][Interpretability][multi-agent safety] This paper proposes SCCAL, a framework that models semantic–geometric co-evolution in multi-agent systems (MAS) by coupling semantic flow with the Ollivier–Ricci…
 tags:
-  - ICLR 2026 Workshop
-  - multi-agent safety
-  - cascading risk
-  - Ollivier-Ricci curvature
-  - graph geometry
-  - proactive auditing
+  - "ICLR 2026 Workshop"
+  - "Interpretability"
+  - "multi-agent safety"
+  - "cascading risk"
+  - "Ollivier-Ricci curvature"
+  - "graph geometry"
+  - "proactive auditing"
 date: 2026-05-08
 content_hash: 05bb07a2260ac25a
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Sketch-HARP: Hierarchical Autoregressive Sketch Generation for Flexible Stroke-Level Drawing Manipulation
 description: >-
-  [AAAI 2026][Robotics][Sketch Generation] This paper proposes Sketch-HARP, a hierarchical autoregressive sketch generation framework that achieves, for the first time, flexible stroke-level manipulation during the drawing process through a three-stage hierarchical pipeline (predicting stroke embeddings → determining canvas positions → generating drawing action sequences). The method significantly outperforms SketchEdit on tasks including stroke replacement, erasure, and extension.
+  [AAAI 2026][Robotics][Sketch Generation] This paper proposes Sketch-HARP, a hierarchical autoregressive sketch generation framework that achieves, for the first time…
 tags:
-  - AAAI 2026
-  - Robotics
-  - Sketch Generation
-  - Hierarchical Autoregressive
-  - Stroke-Level Manipulation
-  - Sketch-HARP
-  - Sketch Editing
+  - "AAAI 2026"
+  - "Robotics"
+  - "Sketch Generation"
+  - "Hierarchical Autoregressive"
+  - "Stroke-Level Manipulation"
+  - "Sketch-HARP"
+  - "Sketch Editing"
 date: 2026-05-08
 content_hash: 82057af744f42fd1
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TALO: Pushing 3D Vision Foundation Models Towards Globally Consistent Online Reconstruction
 description: >-
-  [CVPR 2026][Self-Supervised Learning][3D vision foundation models] This paper proposes TALO, a high-degrees-of-freedom alignment framework based on Thin Plate Spline (TPS), which corrects spatially varying geometric inconsistencies of 3D vision foundation models (3DVFMs) in online reconstruction via globally propagated control points and a point-agnostic submap registration design. TALO is compatible with multiple foundation models and camera configurations, and significantly reduces trajectory error on the Waymo and nuScenes datasets.
+  [CVPR 2026][Self-Supervised Learning][3D vision foundation models] This paper proposes TALO, a high-degrees-of-freedom alignment framework based on Thin Plate Spline (TPS)…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - 3D vision foundation models
-  - online reconstruction
-  - Thin Plate Spline
-  - submap alignment
-  - autonomous driving
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "3D vision foundation models"
+  - "online reconstruction"
+  - "Thin Plate Spline"
+  - "submap alignment"
+  - "autonomous driving"
 date: 2026-05-08
 content_hash: fb45b889bb79e4e9
 ---

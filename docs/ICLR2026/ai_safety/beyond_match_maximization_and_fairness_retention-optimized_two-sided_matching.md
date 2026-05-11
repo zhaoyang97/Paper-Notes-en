@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond Match Maximization and Fairness: Retention-Optimized Two-Sided Matching
 description: >-
-  [ICLR 2026][AI Safety][Two-sided matching] This paper proposes Matching for Retention (MRet), an algorithm that, for the first time, shifts the optimization objective of two-sided matching platforms from "maximizing the number of matches" or "satisfying fairness constraints" to "directly maximizing user retention rate." By learning personalized retention curves and exploiting the concavity of the retention function, the otherwise NP-hard joint retention-gain optimization for both sides is reduced to an $O(N \log N)$ sorting problem. MRet achieves significant retention improvements on both synthetic data and real-world data from a large Japanese dating platform.
+  [ICLR 2026][AI Safety][Two-sided matching] This paper proposes Matching for Retention (MRet), an algorithm that, for the first time…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - Two-sided matching
-  - user retention
-  - dynamic learning-to-rank
-  - online dating platforms
-  - retention optimization
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Two-sided matching"
+  - "user retention"
+  - "dynamic learning-to-rank"
+  - "online dating platforms"
+  - "retention optimization"
 date: 2026-05-08
 content_hash: 0b72c20b955a5223
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PaddleOCR-VL: Boosting Document Parsing Efficiency and Performance with Coarse-to-Fine Visual Processing
 description: >-
-  [CVPR 2026][Multimodal VLM][Document Parsing] PaddleOCR-VL proposes a coarse-to-fine document parsing architecture: the coarse stage employs a lightweight Valid Region Focusing Module (VRFM) to localize effective visual regions and predict reading order, while the fine stage applies a compact 0.9B vision-language model to perform detailed recognition on cropped regions, achieving state-of-the-art document parsing performance with minimal visual tokens and parameters.
+  [CVPR 2026][Multimodal VLM][Document Parsing] PaddleOCR-VL proposes a coarse-to-fine document parsing architecture: the coarse stage employs a lightweight Valid Region Focusing Module (VRFM) to localize effective visual…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Document Parsing
-  - Vision-Language Model
-  - Coarse-to-Fine Processing
-  - Visual Redundancy Elimination
-  - OCR
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Document Parsing"
+  - "Vision-Language Model"
+  - "Coarse-to-Fine Processing"
+  - "Visual Redundancy Elimination"
+  - "OCR"
 date: 2026-05-08
 content_hash: 2416b54f449d5261
 ---

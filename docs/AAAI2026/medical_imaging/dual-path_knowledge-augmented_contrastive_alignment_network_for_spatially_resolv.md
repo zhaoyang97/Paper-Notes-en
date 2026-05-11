@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Dual-Path Knowledge-Augmented Contrastive Alignment Network for Spatially Resolved Transcriptomics
 description: >-
-  [AAAI 2026][Medical Imaging][Spatial Transcriptomics] This paper proposes DKAN, a Dual-path Knowledge-Augmented contrastive Alignment Network that integrates semantic information from external gene databases as a cross-modal coordinator. Combined with a unified one-stage contrastive learning paradigm and an adaptive weighting mechanism, DKAN predicts spatially resolved gene expression from H&E-stained whole slide images (WSI), achieving state-of-the-art performance across three public ST datasets.
+  [AAAI 2026][Medical Imaging][Spatial Transcriptomics] This paper proposes DKAN, a Dual-path Knowledge-Augmented contrastive Alignment Network that integrates semantic information from external gene databases as a cross-m…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Spatial Transcriptomics
-  - Gene Expression Prediction
-  - Contrastive Learning
-  - Multimodal Alignment
-  - Knowledge Augmentation
-  - Pathology Images
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Spatial Transcriptomics"
+  - "Gene Expression Prediction"
+  - "Contrastive Learning"
+  - "Multimodal Alignment"
+  - "Knowledge Augmentation"
+  - "Pathology Images"
 date: 2026-05-08
 content_hash: d7702a12a0b37acc
 ---

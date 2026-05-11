@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Less is More: Unlocking Specialization of Time Series Foundation Models via Structured Pruning
 description: >-
-  [NeurIPS 2025][Time Series][time series foundation models] This paper reveals that pretrained time series foundation models (TSFMs) exhibit inherent task-relevant sparsity, and proposes a *Prune-then-Finetune* paradigm—removing task-irrelevant parameters via structured pruning so that a pruned-then-finetuned smaller model significantly outperforms direct fine-tuning of the full model, and even surpasses strong specialized baselines.
+  [NeurIPS 2025][Time Series][time series foundation models] This paper reveals that pretrained time series foundation models (TSFMs) exhibit inherent task-relevant sparsity…
 tags:
-  - NeurIPS 2025
-  - Time Series
-  - time series foundation models
-  - structured pruning
-  - model specialization
-  - fine-tuning
-  - sparsity
+  - "NeurIPS 2025"
+  - "Time Series"
+  - "time series foundation models"
+  - "structured pruning"
+  - "model specialization"
+  - "fine-tuning"
+  - "sparsity"
 date: 2026-05-08
 content_hash: 00b77a519b6c1597
 ---

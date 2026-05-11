@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HyGen: Efficient LLM Serving via Elastic Online-Offline Request Co-location
 description: >-
-  [NeurIPS 2025][Dialogue Systems][online-offline co-location] This paper proposes HyGen, an interference-aware LLM inference system that achieves elastic co-location of online and offline workloads through an accurate batch latency predictor, an SLO-aware performance profiler, and a prefix-sharing-maximization scheduling strategy, delivering 3.87–5.84× throughput gains while strictly guaranteeing SLO compliance.
+  [NeurIPS 2025][Dialogue Systems][online-offline co-location] This paper proposes HyGen, an interference-aware LLM inference system that achieves elastic co-location of online and offline workloads through an accurate bat…
 tags:
-  - NeurIPS 2025
-  - Dialogue Systems
-  - online-offline co-location
-  - latency prediction
-  - SLO guarantee
-  - prefix sharing
-  - elastic scheduling
+  - "NeurIPS 2025"
+  - "Dialogue Systems"
+  - "online-offline co-location"
+  - "latency prediction"
+  - "SLO guarantee"
+  - "prefix sharing"
+  - "elastic scheduling"
 date: 2026-05-08
 content_hash: 76e7097a655a9e31
 ---

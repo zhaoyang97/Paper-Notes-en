@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] ImpRIF: Stronger Implicit Reasoning Leads to Better Complex Instruction Following
 description: >-
-  [ACL 2026][Reinforcement Learning][Complex instruction following] ImpRIF formalizes the implicit reasoning structure in complex instructions as a verifiable Explicit Reasoning Graph (ERG), constructs large-scale single-turn/multi-turn training data accordingly, and trains models via SFT combined with process-verified RL. Models ranging from 4B to 32B parameters significantly outperform their base counterparts across five instruction-following benchmarks, with the 32B model surpassing several large commercial models.
+  [ACL 2026][Reinforcement Learning][Complex instruction following] ImpRIF formalizes the implicit reasoning structure in complex instructions as a verifiable Explicit Reasoning Graph (ERG)…
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - Complex instruction following
-  - implicit reasoning
-  - reasoning graph
-  - process verification
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "Complex instruction following"
+  - "implicit reasoning"
+  - "reasoning graph"
+  - "process verification"
 date: 2026-05-08
 content_hash: 9ff0767d0e05d629
 ---

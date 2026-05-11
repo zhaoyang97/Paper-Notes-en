@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GUI-Rise: Structured Reasoning and History Summarization for GUI Navigation
 description: >-
-  [NeurIPS 2025][Robotics][GUI Navigation] This paper proposes GUI-Rise, a framework that jointly designs three subtasks—structured reasoning (progress estimation + decision reasoning), action prediction, and history summarization—combined with GRPO reinforcement learning and a history summarization reward, to significantly improve the cross-domain generalization of GUI navigation agents.
+  [NeurIPS 2025][Robotics][GUI Navigation] This paper proposes GUI-Rise, a framework that jointly designs three subtasks—structured reasoning (progress estimation + decision reasoning), action prediction…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - GUI Navigation
-  - Structured Reasoning
-  - History Summarization
-  - GRPO
-  - Chain-of-Thought
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "GUI Navigation"
+  - "Structured Reasoning"
+  - "History Summarization"
+  - "GRPO"
+  - "Chain-of-Thought"
 date: 2026-05-08
 content_hash: a9145f36ab07fe99
 ---

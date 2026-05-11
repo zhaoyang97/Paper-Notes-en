@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MAMA-Memeia! Multi-Aspect Multi-Agent Collaboration for Depressive Symptoms Identification in Memes
 description: >-
-  [AAAI 2026][Medical Imaging][Depression detection] This paper proposes MAMAMemeia, a multi-agent multi-aspect collaborative discussion framework grounded in the Cognitive Analytic Therapy (CAT) competency framework, designed to identify depressive symptoms from social media memes. It additionally introduces the RESTOREx resource (containing both LLM-generated and human-annotated rationales), achieving a 7.55% improvement in macro-F1 over 30+ competing methods.
+  [AAAI 2026][Medical Imaging][Depression detection] This paper proposes MAMAMemeia, a multi-agent multi-aspect collaborative discussion framework grounded in the Cognitive Analytic Therapy (CAT) competency framework…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Depression detection
-  - meme analysis
-  - multi-agent collaboration
-  - Cognitive Analytic Therapy
-  - large language models
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Depression detection"
+  - "meme analysis"
+  - "multi-agent collaboration"
+  - "Cognitive Analytic Therapy"
+  - "large language models"
 date: 2026-05-08
 content_hash: 28c8b5d0c89f937a
 ---

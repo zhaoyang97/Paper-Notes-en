@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Event-based Tiny Object Detection: A Benchmark Dataset and Baseline
 description: >-
-  [ICCV 2025][3D Vision][Event Camera] This paper introduces EV-UAV, the first large-scale event camera benchmark for anti-UAV tiny object detection (147 sequences / 23M+ event-level annotations / average target size only 6.8×5.4 pixels), and proposes EV-SpSegNet — a detection framework based on sparse 3D point cloud segmentation. The method exploits the observation that tiny moving targets form continuous elongated curves in spatiotemporal event point clouds, and incorporates a Spatiotemporal Correlation loss (STC loss) to guide the network in retaining target events. It outperforms 13 state-of-the-art methods across IoU/ACC/detection probability metrics while achieving 10–100× faster inference.
+  [ICCV 2025][3D Vision][Event Camera] This paper introduces EV-UAV, the first large-scale event camera benchmark for anti-UAV tiny object detection (147 sequences / 23M+ event-level annotations / average target size only…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Event Camera
-  - Small Object Detection
-  - Anti-UAV
-  - Sparse Point Cloud
-  - Spatiotemporal Correlation
-  - benchmark
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Event Camera"
+  - "Small Object Detection"
+  - "Anti-UAV"
+  - "Sparse Point Cloud"
+  - "Spatiotemporal Correlation"
+  - "benchmark"
 date: 2026-05-08
 content_hash: 57adc193e851d254
 ---

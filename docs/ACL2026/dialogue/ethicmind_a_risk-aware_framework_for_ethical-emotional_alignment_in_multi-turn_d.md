@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ETHICMIND: A Risk-Aware Framework for Ethical-Emotional Alignment in Multi-Turn Dialogue
 description: >-
-  [ACL 2026][Dialogue Systems][Ethical-Emotional Alignment] ETHICMIND proposes an inference-time risk-aware alignment framework that jointly analyzes ethical risks and user emotions at each turn of multi-turn dialogue, plans high-level response strategies, and generates replies that balance ethical guidance and emotional resonance, achieving more consistent alignment performance in high-risk and morally ambiguous scenarios without requiring additional training.
+  [ACL 2026][Dialogue Systems][Ethical-Emotional Alignment] ETHICMIND proposes an inference-time risk-aware alignment framework that jointly analyzes ethical risks and user emotions at each turn of multi-turn dialogue…
 tags:
-  - ACL 2026
-  - Dialogue Systems
-  - Ethical-Emotional Alignment
-  - Multi-Turn Dialogue
-  - Risk Awareness
-  - Strategy Planning
-  - Inference-Time Alignment
+  - "ACL 2026"
+  - "Dialogue Systems"
+  - "Ethical-Emotional Alignment"
+  - "Multi-Turn Dialogue"
+  - "Risk Awareness"
+  - "Strategy Planning"
+  - "Inference-Time Alignment"
 date: 2026-05-08
 content_hash: ed3c7b0a51669e88
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Open-Insect: Benchmarking Open-Set Recognition of Novel Species in Biodiversity Monitoring
 description: >-
-  [NeurIPS 2025][LLM Evaluation][open-set recognition] This paper introduces Open-Insect — the first large-scale fine-grained open-set recognition benchmark for insect species discovery, spanning three geographic regions and three types of open-set splits. It systematically evaluates 38 OSR algorithms, finding that simple posterior methods (e.g., MSP) remain strong baselines in fine-grained settings, and demonstrates the critical role of domain-relevant auxiliary data in improving OSR performance.
+  [NeurIPS 2025][LLM Evaluation][open-set recognition] This paper introduces Open-Insect — the first large-scale fine-grained open-set recognition benchmark for insect species discovery…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - open-set recognition
-  - fine-grained classification
-  - insect species discovery
-  - OOD detection
-  - biodiversity monitoring
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "open-set recognition"
+  - "fine-grained classification"
+  - "insect species discovery"
+  - "OOD detection"
+  - "biodiversity monitoring"
 date: 2026-05-08
 content_hash: d05d92b27969e64d
 ---

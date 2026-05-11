@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Φ-GAN: Physics-Inspired GAN for Generating SAR Images Under Limited Data
 description: >-
-  [ICCV 2025][SAR image generation] This paper proposes Φ-GAN, which integrates the ideal Point Scattering Center (PSC) electromagnetic scattering physical model into GAN training as a differentiable neural module. Through a dual physics loss (generator physical consistency constraint + discriminator electromagnetic feature distillation), the method significantly improves the quality and stability of SAR image generation under data-scarce conditions.
+  [ICCV 2025][SAR image generation] This paper proposes Φ-GAN, which integrates the ideal Point Scattering Center (PSC) electromagnetic scattering physical model into GAN training as a differentiable neural module. Through…
 tags:
-  - ICCV 2025
-  - SAR image generation
-  - GAN regularization
-  - point scattering center model
-  - physical constraints
-  - few-shot learning
+  - "ICCV 2025"
+  - "SAR image generation"
+  - "GAN regularization"
+  - "point scattering center model"
+  - "physical constraints"
+  - "few-shot learning"
 date: 2026-05-08
 content_hash: 2319c1629cb5eb0e
 ---

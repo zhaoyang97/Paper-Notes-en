@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] A Representer Theorem for Hawkes Processes via Penalized Least Squares Minimization
 description: >-
-  [ICLR 2026][Hawkes process] This paper establishes a novel representer theorem for estimating triggering kernels of linear multivariate Hawkes processes within the RKHS framework, proving that the optimal estimator admits a finite representation as a linear combination of equivalent kernels evaluated at data points, with all dual coefficients analytically equal to 1. This eliminates the need to solve a dual optimization problem, enabling efficient and scalable nonparametric estimation.
+  [ICLR 2026][Hawkes process] This paper establishes a novel representer theorem for estimating triggering kernels of linear multivariate Hawkes processes within the RKHS framework…
 tags:
-  - ICLR 2026
-  - Hawkes process
-  - representer theorem
-  - RKHS
-  - Fredholm integral equation
-  - nonparametric estimation
+  - "ICLR 2026"
+  - "Hawkes process"
+  - "representer theorem"
+  - "RKHS"
+  - "Fredholm integral equation"
+  - "nonparametric estimation"
 date: 2026-05-08
 content_hash: f827f52d8e555ec6
 ---

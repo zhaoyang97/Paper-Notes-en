@@ -2,15 +2,16 @@
 title: >-
   [Paper Note] URLs Help, Topics Guide: Understanding Metadata Utility in LLM Training
 description: >-
-  [NeurIPS 2025][metadata conditioning] This paper systematically evaluates three categories of metadata (URLs, quality scores, and topic/format domain information) as pretraining context. The key finding is that only URLs accelerate training (achieving equivalent downstream performance with 60B tokens instead of 100B), and this effect only holds under long prompts (5-shot); quality scores and topic/format domain information do not accelerate training but can be used for classifier-free guidance to enable controllable generation.
+  [NeurIPS 2025][Interpretability][metadata conditioning] This paper systematically evaluates three categories of metadata (URLs, quality scores…
 tags:
-  - NeurIPS 2025
-  - metadata conditioning
-  - URL context
-  - context-aware pretraining
-  - classifier-free guidance
-  - controllable generation
-  - LLM training efficiency
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "metadata conditioning"
+  - "URL context"
+  - "context-aware pretraining"
+  - "classifier-free guidance"
+  - "controllable generation"
+  - "LLM training efficiency"
 date: 2026-05-08
 content_hash: abad82e33280843c
 ---

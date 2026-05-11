@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OnlinePG: Online Open-Vocabulary Panoptic Mapping with 3D Gaussian Splatting
 description: >-
-  [CVPR 2026][3D Vision][Panoptic Mapping] This paper proposes OnlinePG, the first online open-vocabulary panoptic mapping system built upon 3DGS. It adopts a local-to-global paradigm: within a sliding window, a multi-cue clustering graph (geometric overlap + semantic similarity + view consensus) constructs locally consistent 3D instances, which are then incrementally merged into a global map via bidirectional bipartite matching. OnlinePG achieves state-of-the-art semantic and panoptic segmentation among online methods, surpassing OnlineAnySeg by +17.2 mIoU on ScanNet (48.48), while running at 10–18 FPS.
+  [CVPR 2026][3D Vision][Panoptic Mapping] This paper proposes OnlinePG, the first online open-vocabulary panoptic mapping system built upon 3DGS. It adopts a local-to-global paradigm: within a sliding window…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Panoptic Mapping
-  - Open-Vocabulary
-  - 3D Gaussian Splatting
-  - Online Reconstruction
-  - Instance Segmentation
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Panoptic Mapping"
+  - "Open-Vocabulary"
+  - "3D Gaussian Splatting"
+  - "Online Reconstruction"
+  - "Instance Segmentation"
 date: 2026-05-08
 content_hash: 7bd7906ee4258262
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Embodied Navigation with Auxiliary Task of Action Description Prediction
 description: >-
-  [ICCV 2025][Reinforcement Learning][Embodied Navigation] DescRL introduces action description generation as an auxiliary task for reinforcement learning-based navigation. By distilling knowledge from pretrained vision-language models to train an ADPredictor, the navigation agent simultaneously produces interpretable action descriptions and achieves improved navigation performance, attaining state-of-the-art results on Semantic Audio-Visual Navigation (SAVNav) and several other tasks.
+  [ICCV 2025][Reinforcement Learning][Embodied Navigation] DescRL introduces action description generation as an auxiliary task for reinforcement learning-based navigation. By distilling knowledge from pretrained vision-la…
 tags:
-  - ICCV 2025
-  - Reinforcement Learning
-  - Embodied Navigation
-  - Action Description
-  - Auxiliary Task
-  - Knowledge Distillation
-  - Semantic Audio-Visual Navigation
+  - "ICCV 2025"
+  - "Reinforcement Learning"
+  - "Embodied Navigation"
+  - "Action Description"
+  - "Auxiliary Task"
+  - "Knowledge Distillation"
+  - "Semantic Audio-Visual Navigation"
 date: 2026-05-08
 content_hash: ac8889a07afc8cdc
 ---

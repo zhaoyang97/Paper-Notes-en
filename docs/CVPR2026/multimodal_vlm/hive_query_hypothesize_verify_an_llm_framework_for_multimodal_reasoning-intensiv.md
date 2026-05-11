@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HIVE: Query, Hypothesize, Verify — An LLM Framework for Multimodal Reasoning-Intensive Retrieval
 description: >-
-  [CVPR 2026][Multimodal VLM][Multimodal Retrieval] HIVE is a plug-and-play multimodal retrieval framework that improves nDCG@10 from 27.6 (best multimodal model) to 41.7 (+14.1 absolute points) on reasoning-intensive multimodal retrieval through four stages — initial retrieval → LLM-driven compensatory query synthesis (explicitly expressing visual reasoning gaps) → secondary retrieval → LLM verification reranking — without any additional training.
+  [CVPR 2026][Multimodal VLM][Multimodal Retrieval] HIVE is a plug-and-play multimodal retrieval framework that improves nDCG@10 from 27.6 (best multimodal model) to 41.7 (+14.1 absolute points) on reasoning-intensive mult…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Multimodal Retrieval
-  - Visual Reasoning
-  - Query Reformulation
-  - LLM Reranking
-  - Hypothesis-Driven Retrieval
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Multimodal Retrieval"
+  - "Visual Reasoning"
+  - "Query Reformulation"
+  - "LLM Reranking"
+  - "Hypothesis-Driven Retrieval"
 date: 2026-05-08
 content_hash: ee3d5f16386436de
 ---

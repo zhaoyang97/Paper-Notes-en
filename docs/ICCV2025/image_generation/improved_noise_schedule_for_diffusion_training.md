@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Improved Noise Schedule for Diffusion Training
 description: >-
-  [ICCV 2025][Image Generation][Noise schedule] This paper proposes a unified framework for analyzing and designing noise schedules in diffusion models from a probability distribution perspective. It finds that a Laplace noise schedule—which concentrates sampling probability near $\log\text{SNR}=0$ (the signal–noise transition point)—improves FID by 26.6% over the standard cosine schedule under the same training budget, outperforming all loss-weighting adjustment methods.
+  [ICCV 2025][Image Generation][Noise schedule] This paper proposes a unified framework for analyzing and designing noise schedules in diffusion models from a probability distribution perspective. It finds that a Laplace n…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Noise schedule
-  - diffusion model training
-  - importance sampling
-  - Laplace distribution
-  - logSNR
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Noise schedule"
+  - "diffusion model training"
+  - "importance sampling"
+  - "Laplace distribution"
+  - "logSNR"
 date: 2026-05-08
 content_hash: 54d9203a7044671b
 ---

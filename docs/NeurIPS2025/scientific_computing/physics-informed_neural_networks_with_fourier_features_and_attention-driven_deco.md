@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Physics-Informed Neural Networks with Fourier Features and Attention-Driven Decoding
 description: >-
-  [NeurIPS 2025 (AI for Science Workshop)][Scientific Computing][PINNs] This paper proposes Spectral PINNsformer (S-Pformer), which replaces the encoder of PINNsformer with Fourier feature embeddings and adopts a decoder-only Transformer architecture. S-Pformer achieves superior performance on multiple PDE benchmarks while reducing parameter count by 18.6%, effectively alleviating the spectral bias problem.
+  [NeurIPS 2025 (AI for Science Workshop)][Scientific Computing][PINNs] This paper proposes Spectral PINNsformer (S-Pformer), which replaces the encoder of PINNsformer with Fourier feature embeddings and adopts a decoder-o…
 tags:
-  - NeurIPS 2025 (AI for Science Workshop)
-  - Scientific Computing
-  - PINNs
-  - Transformer
-  - Fourier Features
-  - Spectral Bias
-  - PDE Solving
+  - "NeurIPS 2025 (AI for Science Workshop)"
+  - "Scientific Computing"
+  - "PINNs"
+  - "Transformer"
+  - "Fourier Features"
+  - "Spectral Bias"
+  - "PDE Solving"
 date: 2026-05-08
 content_hash: 7f45067991bba378
 ---

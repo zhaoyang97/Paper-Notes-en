@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] PAC-Bayes Bounds for Multivariate Linear Regression and Linear Autoencoders
 description: >-
-  [NeurIPS 2025][Recommender Systems][PAC-Bayes] This paper extends PAC-Bayes generalization bounds from single-output linear regression to **multivariate linear regression**, and further adapts them to **linear autoencoders (LAEs)** in recommender systems. Through theoretical development, the computational complexity is reduced from O(n⁴) to O(n³), and experiments demonstrate that the bounds are tight and highly correlated with practical metrics such as Recall@K and NDCG@K.
+  [NeurIPS 2025][Recommender Systems][PAC-Bayes] This paper extends PAC-Bayes generalization bounds from single-output linear regression to **multivariate linear regression**…
 tags:
-  - NeurIPS 2025
-  - Recommender Systems
-  - PAC-Bayes
-  - generalization bounds
-  - linear autoencoder
-  - multivariate linear regression
+  - "NeurIPS 2025"
+  - "Recommender Systems"
+  - "PAC-Bayes"
+  - "generalization bounds"
+  - "linear autoencoder"
+  - "multivariate linear regression"
 date: 2026-05-08
 content_hash: 09284f8c926bb805
 ---

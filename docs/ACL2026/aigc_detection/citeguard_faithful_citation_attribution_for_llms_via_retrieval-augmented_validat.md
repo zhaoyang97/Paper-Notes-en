@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CiteGuard: Faithful Citation Attribution for LLMs via Retrieval-Augmented Validation
 description: >-
-  [ACL 2026][AIGC Detection][citation attribution] CiteGuard proposes a retrieval-augmented agent framework with extended retrieval actions (including full-text search and context retrieval) to provide a more faithful basis for scientific citation attribution, achieving 68.1% accuracy on the CiteME benchmark — a 10-point improvement over baselines, approaching human performance (69.2%).
+  [ACL 2026][AIGC Detection][citation attribution] CiteGuard proposes a retrieval-augmented agent framework with extended retrieval actions (including full-text search and context retrieval) to provide a more faithful basi…
 tags:
-  - ACL 2026
-  - AIGC Detection
-  - citation attribution
-  - retrieval-augmented validation
-  - scientific writing
-  - hallucination mitigation
-  - agent
+  - "ACL 2026"
+  - "AIGC Detection"
+  - "citation attribution"
+  - "retrieval-augmented validation"
+  - "scientific writing"
+  - "hallucination mitigation"
+  - "agent"
 date: 2025-05-08
 content_hash: a3be52cdf3a3747e
 ---

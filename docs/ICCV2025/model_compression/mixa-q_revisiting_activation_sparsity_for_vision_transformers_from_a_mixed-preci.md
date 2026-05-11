@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MixA-Q: Revisiting Activation Sparsity for Vision Transformers from a Mixed-Precision Quantization Perspective
 description: >-
-  [ICCV 2025][Model Compression][Mixed-Precision Quantization] This paper proposes MixA-Q, a mixed-precision activation quantization framework that repurposes window-level activation sparsity (originally used for pruning) as a dimension for quantization — assigning lower bit-widths to less important windows rather than skipping their computation entirely. The method achieves lossless 1.35× speedup under PTQ and lossless 1.25× speedup under QAT on COCO object detection, while exhibiting superior out-of-distribution (OOD) robustness.
+  [ICCV 2025][Model Compression][Mixed-Precision Quantization] This paper proposes MixA-Q, a mixed-precision activation quantization framework that repurposes window-level activation sparsity (originally used for pruning)…
 tags:
-  - ICCV 2025
-  - Model Compression
-  - Mixed-Precision Quantization
-  - Activation Sparsity
-  - Vision Transformer
-  - Swin Transformer
-  - Efficient Inference
+  - "ICCV 2025"
+  - "Model Compression"
+  - "Mixed-Precision Quantization"
+  - "Activation Sparsity"
+  - "Vision Transformer"
+  - "Swin Transformer"
+  - "Efficient Inference"
 date: 2026-05-08
 content_hash: 8044fe4658f292b6
 ---

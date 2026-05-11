@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Open-Vocabulary Domain Generalization in Urban-Scene Segmentation
 description: >-
-  [CVPR 2026][Autonomous Driving][Open-vocabulary segmentation] This paper proposes OVDG-SS, a new problem setting that unifies unseen-domain and unseen-category challenges in semantic segmentation, and introduces S2-Corr, a state space model-based module that repairs text-image correlation degradation caused by domain shift, enabling efficient and robust cross-domain open-vocabulary segmentation in autonomous driving scenarios.
+  [CVPR 2026][Autonomous Driving][Open-vocabulary segmentation] This paper proposes OVDG-SS, a new problem setting that unifies unseen-domain and unseen-category challenges in semantic segmentation, and introduces S2-Corr…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Open-vocabulary segmentation
-  - domain generalization
-  - state space models
-  - text-image correlation
-  - urban scene segmentation
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Open-vocabulary segmentation"
+  - "domain generalization"
+  - "state space models"
+  - "text-image correlation"
+  - "urban scene segmentation"
 date: 2026-05-08
 content_hash: 9800010924f21dca
 ---

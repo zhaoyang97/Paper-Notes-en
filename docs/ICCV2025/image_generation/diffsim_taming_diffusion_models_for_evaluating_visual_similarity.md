@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DiffSim: Taming Diffusion Models for Evaluating Visual Similarity
 description: >-
-  [ICCV 2025][Image Generation][Diffusion models] DiffSim is the first work to discover that attention-layer features of pretrained diffusion models (Stable Diffusion) can be used to measure visual similarity. It proposes the Aligned Attention Score (AAS), which aligns features from two images in the self-attention and cross-attention layers of the U-Net and computes cosine similarity, achieving state-of-the-art performance on multiple benchmarks covering human perceptual alignment, style similarity, and instance consistency.
+  [ICCV 2025][Image Generation][Diffusion models] DiffSim is the first work to discover that attention-layer features of pretrained diffusion models (Stable Diffusion) can be used to measure visual similarity. It proposes…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Diffusion models
-  - visual similarity
-  - attention alignment
-  - perceptual metrics
-  - style similarity
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Diffusion models"
+  - "visual similarity"
+  - "attention alignment"
+  - "perceptual metrics"
+  - "style similarity"
 date: 2026-05-08
 content_hash: 7b083fde970ae1a1
 ---

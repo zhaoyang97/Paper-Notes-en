@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TubeRMC: Tube-conditioned Reconstruction with Mutual Constraints for Weakly-supervised Spatio-Temporal Video Grounding
 description: >-
-  [AAAI 2026][Object Detection][Weakly-supervised spatio-temporal video grounding] This paper proposes TubeRMC, a framework that generates text-conditioned candidate tubes and performs tube-conditioned reconstruction along temporal, spatial, and spatio-temporal dimensions, augmented by spatial-temporal mutual constraints to improve weakly-supervised spatio-temporal video grounding.
+  [AAAI 2026][Object Detection][Weakly-supervised spatio-temporal video grounding] This paper proposes TubeRMC, a framework that generates text-conditioned candidate tubes and performs tube-conditioned reconstruction along…
 tags:
-  - AAAI 2026
-  - Object Detection
-  - Weakly-supervised spatio-temporal video grounding
-  - tube reconstruction
-  - vision-language alignment
-  - mutual constraint learning
-  - STVG
+  - "AAAI 2026"
+  - "Object Detection"
+  - "Weakly-supervised spatio-temporal video grounding"
+  - "tube reconstruction"
+  - "vision-language alignment"
+  - "mutual constraint learning"
+  - "STVG"
 date: 2026-05-08
 content_hash: ea0f6c2ea244e7a6
 ---

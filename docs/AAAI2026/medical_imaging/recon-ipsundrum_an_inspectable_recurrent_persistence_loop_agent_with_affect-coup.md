@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ReCoN-Ipsundrum: An Inspectable Recurrent Persistence Loop Agent with Affect-Coupled Cognition
 description: >-
-  [AAAI 2026][Medical Imaging][machine consciousness] This paper implements ReCoN-Ipsundrum — an inspectable agent architecture that extends the ReCoN sensorimotor state machine with Humphrey's ipsundrum recurrent persistence loop and an optional affective proxy layer. Through behavioral tests and causal ablation experiments, the paper demonstrates that recurrence supports post-stimulus persistence, affect coupling supports preference stability, structured scanning, and sustained caution, while emphasizing that behavioral markers alone are insufficient to attribute consciousness.
+  [AAAI 2026][Medical Imaging][machine consciousness] This paper implements ReCoN-Ipsundrum — an inspectable agent architecture that extends the ReCoN sensorimotor state machine with Humphrey's ipsundrum recurrent persiste…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - machine consciousness
-  - sentience loop
-  - affect coupling
-  - causal ablation
-  - consciousness indicators
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "machine consciousness"
+  - "sentience loop"
+  - "affect coupling"
+  - "causal ablation"
+  - "consciousness indicators"
 date: 2026-05-08
 content_hash: 470cabae257451b5
 ---

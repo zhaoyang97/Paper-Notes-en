@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Prune2Drive: A Plug-and-Play Framework for Accelerating Vision-Language Models in Autonomous Driving
 description: >-
-  [CVPR 2026][Multimodal VLM][Multi-view VLM] The first plug-and-play token pruning framework for multi-view autonomous driving VLMs. By leveraging T-FPS (Token-wise Farthest Point Sampling) to preserve semantic and spatial diversity, combined with view-adaptive pruning rate optimization to automatically allocate token budgets per camera, the framework achieves 6.40× prefill acceleration on DriveLM while retaining only 10% of tokens with only a 3% performance drop.
+  [CVPR 2026][Multimodal VLM][Multi-view VLM] The first plug-and-play token pruning framework for multi-view autonomous driving VLMs. By leveraging T-FPS (Token-wise Farthest Point Sampling) to preserve semantic and spatia…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Multi-view VLM
-  - Visual Token Pruning
-  - Farthest Point Sampling
-  - View-Adaptive Pruning
-  - Autonomous Driving Acceleration
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Multi-view VLM"
+  - "Visual Token Pruning"
+  - "Farthest Point Sampling"
+  - "View-Adaptive Pruning"
+  - "Autonomous Driving Acceleration"
 date: 2026-05-08
 content_hash: eabf051ba0b6d78c
 ---

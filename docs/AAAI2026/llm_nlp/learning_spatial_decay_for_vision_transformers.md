@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Spatial Decay for Vision Transformers
 description: >-
-  [AAAI 2026][LLM/NLP][Vision Transformer] This paper proposes the Spatial Decay Transformer (SDT), which for the first time adapts data-dependent spatial decay mechanisms from 1D sequence modeling to 2D vision Transformers. Through a Context-Aware Gating (CAG) module that generates dynamic, content-dependent decay intensities for patch interactions, SDT consistently outperforms strong baselines such as RMT on ImageNet-1K classification and generation tasks.
+  [AAAI 2026][LLM/NLP][Vision Transformer] This paper proposes the Spatial Decay Transformer (SDT), which for the first time adapts data-dependent spatial decay mechanisms from 1D sequence modeling to 2D vision Transformer…
 tags:
-  - AAAI 2026
-  - LLM/NLP
-  - Vision Transformer
-  - spatial decay
-  - attention mechanism
-  - content-aware gating
-  - image classification
+  - "AAAI 2026"
+  - "LLM/NLP"
+  - "Vision Transformer"
+  - "spatial decay"
+  - "attention mechanism"
+  - "content-aware gating"
+  - "image classification"
 date: 2026-05-08
 content_hash: 518f9cba4082a2e2
 ---

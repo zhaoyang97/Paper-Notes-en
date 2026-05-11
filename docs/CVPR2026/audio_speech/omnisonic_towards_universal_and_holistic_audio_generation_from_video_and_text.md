@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OmniSonic: Towards Universal and Holistic Audio Generation from Video and Text
 description: >-
-  [CVPR 2026][Audio & Speech][Video-to-Audio Generation] This paper proposes the Universal Holistic Audio Generation (UniHAGen) task and the OmniSonic framework, which employs a TriAttn-DiT architecture with triple cross-attention and MoE gating to simultaneously generate on-screen environmental sound, off-screen environmental sound, and human speech within a unified audio synthesis pipeline, achieving comprehensive state-of-the-art performance on the newly constructed UniHAGen-Bench.
+  [CVPR 2026][Audio & Speech][Video-to-Audio Generation] This paper proposes the Universal Holistic Audio Generation (UniHAGen) task and the OmniSonic framework…
 tags:
-  - CVPR 2026
+  - "CVPR 2026"
   - "Audio & Speech"
-  - Video-to-Audio Generation
-  - Holistic Audio
-  - Diffusion Models
-  - Speech Synthesis
-  - Mixture of Experts
+  - "Video-to-Audio Generation"
+  - "Holistic Audio"
+  - "Diffusion Models"
+  - "Speech Synthesis"
+  - "Mixture of Experts"
 date: 2026-05-08
 content_hash: fb18aa1ad9821017
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AttentionPredictor: Temporal Patterns Matter for KV Cache Compression
 description: >-
-  [NeurIPS 2025][Time Series][KV cache compression] AttentionPredictor is the first learning-based method that directly predicts attention patterns for KV cache compression and critical token identification. By leveraging a lightweight CNN to capture spatiotemporal patterns in attention scores, it achieves 13× KV cache compression and 5.6× inference speedup, with a unified prediction model of only 21 KB shared across all Transformer layers.
+  [NeurIPS 2025][Time Series][KV cache compression] AttentionPredictor is the first learning-based method that directly predicts attention patterns for KV cache compression and critical token identification. By leveraging…
 tags:
-  - NeurIPS 2025
-  - Time Series
-  - KV cache compression
-  - attention prediction
-  - temporal patterns
-  - LLM inference acceleration
-  - cache prefetching
+  - "NeurIPS 2025"
+  - "Time Series"
+  - "KV cache compression"
+  - "attention prediction"
+  - "temporal patterns"
+  - "LLM inference acceleration"
+  - "cache prefetching"
 date: 2026-05-08
 content_hash: 0705173784ef2ff5
 ---

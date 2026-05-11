@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Catastrophic Forgetting in Kolmogorov-Arnold Networks
 description: >-
-  [AAAI 2026][Knowledge Editing][KAN] The first systematic study of catastrophic forgetting in Kolmogorov-Arnold Networks (KANs): establishes a theoretical framework linking forgetting to activation support overlap and intrinsic data dimensionality, and proposes KAN-LoRA for continual fine-tuning knowledge editing in language models.
+  [AAAI 2026][Knowledge Editing][KAN] The first systematic study of catastrophic forgetting in Kolmogorov-Arnold Networks (KANs): establishes a theoretical framework linking forgetting to activation support overlap and int…
 tags:
-  - AAAI 2026
-  - Knowledge Editing
-  - KAN
-  - Catastrophic Forgetting
-  - Continual Learning
-  - KAN-LoRA
-  - Activation Support Overlap
+  - "AAAI 2026"
+  - "Knowledge Editing"
+  - "KAN"
+  - "Catastrophic Forgetting"
+  - "Continual Learning"
+  - "KAN-LoRA"
+  - "Activation Support Overlap"
 date: 2026-05-08
 content_hash: 31dd1eed872cd1dc
 ---

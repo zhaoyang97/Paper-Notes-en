@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] How Do Answer Tokens Read Reasoning Traces? Self-Reading Patterns in Thinking LLMs
 description: >-
-  [ACL 2026][LLM/NLP][reasoning models] This paper identifies a "benign self-reading" pattern in reasoning LLMs (e.g., DeepSeek-R1) during quantitative reasoning: answer tokens' attention over reasoning traces exhibits forward drift (progressively advancing along the reasoning chain) and semantic anchor concentration (repeatedly revisiting key steps), and this pattern strongly correlates with correctness. Building on this finding, the authors propose a training-free activation steering method driven by Self-Reading Quality (SRQ) scores, achieving accuracy improvements of up to 2.6% across multiple benchmarks.
+  [ACL 2026][LLM/NLP][reasoning models] This paper identifies a "benign self-reading" pattern in reasoning LLMs (e.g., DeepSeek-R1) during quantitative reasoning: answer tokens' attention over reasoning traces exhibits for…
 tags:
-  - ACL 2026
-  - LLM/NLP
-  - reasoning models
-  - self-reading patterns
-  - attention analysis
-  - activation steering
-  - quantitative reasoning
+  - "ACL 2026"
+  - "LLM/NLP"
+  - "reasoning models"
+  - "self-reading patterns"
+  - "attention analysis"
+  - "activation steering"
+  - "quantitative reasoning"
 date: 2026-05-08
 content_hash: 4b1b453f837cb17e
 ---

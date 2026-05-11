@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Parameterized Skills from Demonstrations
 description: >-
-  [NeurIPS 2025][Optimization][Parameterized skills] This paper proposes DEPS, an end-to-end algorithm for discovering parameterized skills from expert demonstrations. Through a three-level hierarchical policy (discrete skill selection → continuous parameter selection → low-level actions) and an information bottleneck design, DEPS learns interpretable and generalizable skill abstractions, achieving significant improvements over baselines on LIBERO and MetaWorld.
+  [NeurIPS 2025][Optimization][Parameterized skills] This paper proposes DEPS, an end-to-end algorithm for discovering parameterized skills from expert demonstrations. Through a three-level hierarchical policy (discrete sk…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Parameterized skills
-  - learning from demonstrations
-  - hierarchical policy
-  - variational inference
-  - robot manipulation
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Parameterized skills"
+  - "learning from demonstrations"
+  - "hierarchical policy"
+  - "variational inference"
+  - "robot manipulation"
 date: 2026-05-08
 content_hash: 6ad3aee40d14b46e
 ---

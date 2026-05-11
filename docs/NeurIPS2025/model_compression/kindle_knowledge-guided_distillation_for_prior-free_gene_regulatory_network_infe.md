@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] KINDLE: Knowledge-Guided Distillation for Prior-Free Gene Regulatory Network Inference
 description: >-
-  [NeurIPS 2025][Model Compression][Gene Regulatory Network] This paper proposes KINDLE, a three-stage framework that transfers gene regulatory knowledge learned by a prior-guided teacher model to a prior-free student model via knowledge distillation, achieving state-of-the-art performance in gene regulatory network (GRN) inference without relying on any external prior knowledge.
+  [NeurIPS 2025][Model Compression][Gene Regulatory Network] This paper proposes KINDLE, a three-stage framework that transfers gene regulatory knowledge learned by a prior-guided teacher model to a prior-free student mode…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Gene Regulatory Network
-  - knowledge distillation
-  - Prior-Free Inference
-  - Temporal Attention
-  - Single-Cell RNA-seq
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Gene Regulatory Network"
+  - "knowledge distillation"
+  - "Prior-Free Inference"
+  - "Temporal Attention"
+  - "Single-Cell RNA-seq"
 date: 2026-05-08
 content_hash: 06176f5d2059590f
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Synthia: Scalable Grounded Persona Generation from Social Media Data
 description: >-
-  [ACL 2026][LLM Safety][Persona generation] This paper proposes Synthia, a framework that generates grounded LLM persona narratives from real social media posts (Bluesky), achieving up to 11.6% improvement over the state of the art on social survey alignment while using smaller models, and preserving social network topology to support network-aware analysis.
+  [ACL 2026][LLM Safety][Persona generation] This paper proposes Synthia, a framework that generates grounded LLM persona narratives from real social media posts (Bluesky)…
 tags:
-  - ACL 2026
-  - LLM Safety
-  - Persona generation
-  - synthetic population
-  - social media
-  - social survey simulation
-  - fairness analysis
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Persona generation"
+  - "synthetic population"
+  - "social media"
+  - "social survey simulation"
+  - "fairness analysis"
 date: 2026-05-08
 content_hash: 63b33076634217f4
 ---

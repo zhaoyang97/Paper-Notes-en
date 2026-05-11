@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] TROLL: Trust Regions improve Reinforcement Learning for Large Language Models
 description: >-
-  [ICLR 2026][Reinforcement Learning][Trust Region] This paper proposes TROLL (Trust Region Optimization for Large Language models), which replaces the clipping mechanism in PPO with a differentiable discrete trust-region projection, enabling token-level policy updates under principled KL constraints. TROLL consistently outperforms PPO-clip on mathematical reasoning and code generation tasks.
+  [ICLR 2026][Reinforcement Learning][Trust Region] This paper proposes TROLL (Trust Region Optimization for Large Language models), which replaces the clipping mechanism in PPO with a differentiable discrete trust-region…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Trust Region
-  - PPO
-  - Policy Clipping
-  - KL Constraint
-  - LLM Reinforcement Learning
-  - Token-level Optimization
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Trust Region"
+  - "PPO"
+  - "Policy Clipping"
+  - "KL Constraint"
+  - "LLM Reinforcement Learning"
+  - "Token-level Optimization"
 date: 2026-05-08
 content_hash: 8a3e82e1ce5bf96f
 ---

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Breaking the Adversarial Robustness-Performance Trade-off in Text Classification via Manifold Purification
 description: >-
-  [AAAI 2026][AI Safety][Adversarial Defense] This paper proposes the Manifold-Correcting Causal Flow (MC²F) framework, which employs a Stratified Riemannian Continuous Normalizing Flow (SR-CNF) to learn the manifold density of clean data embeddings for adversarial example detection, and subsequently applies a Geodesic Purification Solver to project detected adversarial embeddings back onto the clean manifold along geodesic paths. MC²F comprehensively surpasses state-of-the-art methods in adversarial robustness across SST-2, AGNews, and YELP benchmarks, while incurring no loss—and even achieving marginal gains—in clean accuracy.
+  [AAAI 2026][AI Safety][Adversarial Defense] This paper proposes the Manifold-Correcting Causal Flow (MC²F) framework, which employs a Stratified Riemannian Continuous Normalizing Flow (SR-CNF) to learn the manifold densi…
 tags:
-  - AAAI 2026
-  - AI Safety
-  - Adversarial Defense
-  - Text Classification
-  - Manifold Correction
-  - Normalizing Flow
-  - Riemannian Geometry
-  - OOD Detection
-  - Geodesic Purification
+  - "AAAI 2026"
+  - "AI Safety"
+  - "Adversarial Defense"
+  - "Text Classification"
+  - "Manifold Correction"
+  - "Normalizing Flow"
+  - "Riemannian Geometry"
+  - "OOD Detection"
+  - "Geodesic Purification"
 date: 2026-05-08
 content_hash: 4d7d7dd9d8981f0a
 ---

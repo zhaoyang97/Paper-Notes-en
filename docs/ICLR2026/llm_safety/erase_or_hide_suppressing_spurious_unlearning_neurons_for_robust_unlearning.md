@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Erase or Hide? Suppressing Spurious Unlearning Neurons for Robust Unlearning
 description: >-
-  [ICLR 2026][LLM Safety][machine unlearning] This paper exposes the "shallow alignment" problem in mainstream LLM unlearning methods — rather than truly erasing target knowledge, these methods generate "spurious unlearning neurons" that suppress its expression, allowing the knowledge to be readily recovered via subsequent fine-tuning. The proposed method, Ssiuu, employs attribution-guided regularization to prevent the growth of negative influence, achieving robust unlearning.
+  [ICLR 2026][LLM Safety][machine unlearning] This paper exposes the "shallow alignment" problem in mainstream LLM unlearning methods — rather than truly erasing target knowledge…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - machine unlearning
-  - spurious neurons
-  - shallow alignment
-  - attribution
-  - privacy
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "machine unlearning"
+  - "spurious neurons"
+  - "shallow alignment"
+  - "attribution"
+  - "privacy"
 date: 2026-05-08
 content_hash: 6787deef981e0138
 ---

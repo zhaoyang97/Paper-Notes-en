@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GAICo: A Deployed and Extensible Framework for Evaluating Diverse and Multimodal Generative AI Outputs
 description: >-
-  [AAAI 2026][Time Series][Generative AI evaluation] This paper presents GAICo (Generative AI Comparator), a deployed, extensible, open-source Python library that provides a unified reference-based evaluation framework for text, structured data (planning sequences, time series), and multimedia (images, audio), supporting multi-model comparison, visualization, and report generation.
+  [AAAI 2026][Time Series][Generative AI evaluation] This paper presents GAICo (Generative AI Comparator), a deployed, extensible, open-source Python library that provides a unified reference-based evaluation framework for…
 tags:
-  - AAAI 2026
-  - Time Series
-  - Generative AI evaluation
-  - multimodal comparison
-  - evaluation framework
-  - reproducibility
-  - compound AI systems
+  - "AAAI 2026"
+  - "Time Series"
+  - "Generative AI evaluation"
+  - "multimodal comparison"
+  - "evaluation framework"
+  - "reproducibility"
+  - "compound AI systems"
 date: 2026-05-08
 content_hash: 8f1a9dd78ce60aa0
 ---

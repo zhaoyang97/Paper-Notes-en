@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Match-and-Fuse: Consistent Generation from Unstructured Image Sets
 description: >-
-  [CVPR 2026][Image Generation][Set-to-set generation] Match-and-Fuse is proposed as the first training-free consistent generation method for unstructured image sets. Images are treated as nodes and image pairs as edges to construct a pairwise consistency graph. Multi-view Feature Fusion (MFF) and feature guidance are employed to manipulate internal features during diffusion inference, achieving set-level cross-image consistency with a DINO-MatchSim of 0.80, substantially outperforming all baselines.
+  [CVPR 2026][Image Generation][Set-to-set generation] Match-and-Fuse is proposed as the first training-free consistent generation method for unstructured image sets. Images are treated as nodes and image pairs as edges to…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Set-to-set generation
-  - cross-image consistency
-  - diffusion models
-  - feature fusion
-  - correspondences
-  - training-free
-  - zero-shot
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Set-to-set generation"
+  - "cross-image consistency"
+  - "diffusion models"
+  - "feature fusion"
+  - "correspondences"
+  - "training-free"
+  - "zero-shot"
 date: 2026-05-08
 content_hash: e1fc733b75bd4138
 ---

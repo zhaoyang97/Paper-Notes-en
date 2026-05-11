@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ATTS: Asynchronous Test-Time Scaling via Conformal Prediction
 description: >-
-  [ICLR 2026][LLM Reasoning][test-time scaling] This paper proposes ATTS, an asynchronous test-time scaling framework based on conformal prediction that eliminates synchronization overhead by reformulating rejection sampling as a hypothesis testing procedure. On mathematical reasoning benchmarks such as MATH and AIME, ATTS achieves up to 56.7× speedup and 4.14× throughput improvement without accuracy loss. A 1.5B/70B draft/target model combination reaches the AIME performance level of o3-mini (high).
+  [ICLR 2026][LLM Reasoning][test-time scaling] This paper proposes ATTS, an asynchronous test-time scaling framework based on conformal prediction that eliminates synchronization overhead by reformulating rejection sampli…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - test-time scaling
-  - speculative decoding
-  - conformal prediction
-  - asynchronous inference
-  - rejection sampling
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "test-time scaling"
+  - "speculative decoding"
+  - "conformal prediction"
+  - "asynchronous inference"
+  - "rejection sampling"
 date: 2026-05-08
 content_hash: 9535c18d7a604cca
 ---

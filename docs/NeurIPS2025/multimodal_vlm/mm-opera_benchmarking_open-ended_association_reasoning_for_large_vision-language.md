@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] MM-OPERA: Benchmarking Open-ended Association Reasoning for Large Vision-Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][association reasoning] This paper proposes MM-OPERA, an open-ended association reasoning benchmark comprising 11,497 instances. It evaluates the association reasoning capabilities of LVLMs through two tasks — Remote-Item Association (RIA) and In-Context Association (ICA) — and introduces an LLM-as-a-Judge scoring strategy alongside a process reward evaluation method. The benchmark reveals that even the strongest current LVLMs remain significantly behind humans.
+  [NeurIPS 2025][Multimodal VLM][association reasoning] This paper proposes MM-OPERA, an open-ended association reasoning benchmark comprising 11…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - association reasoning
-  - open-ended evaluation
-  - LLM-as-a-Judge
-  - process reward
-  - divergent thinking
-  - convergent thinking
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "association reasoning"
+  - "open-ended evaluation"
+  - "LLM-as-a-Judge"
+  - "process reward"
+  - "divergent thinking"
+  - "convergent thinking"
 date: 2026-05-08
 content_hash: 268d4cf2d14b54b5
 ---

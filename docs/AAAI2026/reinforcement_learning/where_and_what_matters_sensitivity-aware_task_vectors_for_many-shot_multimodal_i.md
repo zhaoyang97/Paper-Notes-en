@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Where and What Matters: Sensitivity-Aware Task Vectors for Many-Shot Multimodal In-Context Learning
 description: >-
-  [AAAI 2026][Reinforcement Learning][Multimodal In-Context Learning] This paper proposes the STV framework, which identifies attention head positions sensitive to in-context information via activation deltas, and leverages reinforcement learning to select optimal task vectors from a pre-clustered activation bank for insertion—enabling efficient many-shot multimodal in-context learning without increasing input length.
+  [AAAI 2026][Reinforcement Learning][Multimodal In-Context Learning] This paper proposes the STV framework, which identifies attention head positions sensitive to in-context information via activation deltas…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - Multimodal In-Context Learning
-  - Task Vectors
-  - Attention Head Sensitivity
-  - Activation Space Modulation
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "Multimodal In-Context Learning"
+  - "Task Vectors"
+  - "Attention Head Sensitivity"
+  - "Activation Space Modulation"
 date: 2026-05-08
 content_hash: 45e6997dd3cbe541
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Zatom-1: A Multimodal Flow Foundation Model for 3D Molecules and Materials
 description: >-
-  [ICLR 2026][Image Generation][Foundation model] Zatom-1 is the first end-to-end fully open-source foundation model that unifies generative modeling and property prediction for 3D molecules and materials via multimodal flow matching. Using a standard Transformer architecture, it directly models discrete atom types and continuous 3D geometry in Euclidean space, achieving positive transfer learning across chemical domains.
+  [ICLR 2026][Image Generation][Foundation model] Zatom-1 is the first end-to-end fully open-source foundation model that unifies generative modeling and property prediction for 3D molecules and materials via multimodal fl…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Foundation model
-  - flow matching
-  - 3D molecules
-  - 3D materials
-  - multimodal generation
-  - property prediction
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Foundation model"
+  - "flow matching"
+  - "3D molecules"
+  - "3D materials"
+  - "multimodal generation"
+  - "property prediction"
 date: 2026-05-08
 content_hash: 0d1af8861d89b9bc
 ---

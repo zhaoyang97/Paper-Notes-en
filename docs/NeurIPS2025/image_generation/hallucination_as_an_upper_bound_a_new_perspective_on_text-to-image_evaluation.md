@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Hallucination as an Upper Bound: A New Perspective on Text-to-Image Evaluation
 description: >-
-  [NeurIPS 2025 (Workshop: Generative and Protective AI for Content Creation)][Image Generation][Hallucination] This paper proposes a definition of hallucination in text-to-image (T2I) models as **bias-driven deviation**, establishes a taxonomy of three hallucination categories—attribute, relation, and object—and argues that hallucination evaluation serves as an "upper bound" for prompt alignment evaluation, thereby revealing hidden model biases.
+  [NeurIPS 2025 (Workshop: Generative and Protective AI for Content Creation)][Image Generation][Hallucination] This paper proposes a definition of hallucination in text-to-image (T2I) models as **bias-driven deviation**…
 tags:
   - "NeurIPS 2025 (Workshop: Generative and Protective AI for Content Creation)"
-  - Image Generation
-  - Hallucination
-  - T2I Evaluation
-  - Alignment Upper Bound
-  - Bias Detection
-  - Taxonomy
+  - "Image Generation"
+  - "Hallucination"
+  - "T2I Evaluation"
+  - "Alignment Upper Bound"
+  - "Bias Detection"
+  - "Taxonomy"
 date: 2026-05-08
 content_hash: e5876081d001cd3d
 ---

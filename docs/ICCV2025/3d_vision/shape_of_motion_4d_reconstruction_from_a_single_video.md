@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Shape of Motion: 4D Reconstruction from a Single Video
 description: >-
-  [ICCV 2025][3D Vision][4D reconstruction] This paper proposes a dynamic 3D Gaussian representation based on $\mathbb{SE}(3)$ motion bases, recovering globally consistent 3D motion trajectories from monocular video while simultaneously enabling real-time novel view synthesis and long-range 3D tracking, outperforming prior methods comprehensively on the iPhone and Kubric datasets.
+  [ICCV 2025][3D Vision][4D reconstruction] This paper proposes a dynamic 3D Gaussian representation based on $\mathbb{SE}(3)$ motion bases…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 4D reconstruction
-  - dynamic scenes
-  - 3D Gaussian splatting
-  - SE(3) motion basis
-  - monocular video
+  - "ICCV 2025"
+  - "3D Vision"
+  - "4D reconstruction"
+  - "dynamic scenes"
+  - "3D Gaussian splatting"
+  - "SE(3) motion basis"
+  - "monocular video"
 date: 2026-05-08
 content_hash: 0a88a64809ebee64
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Predict and Resist: Long-Term Accident Anticipation under Sensor Noise
 description: >-
-  [AAAI 2026][accident anticipation] A unified framework is proposed that integrates a diffusion-based dual-level denoising module with a temporally-aware Actor-Critic reinforcement learning model to enable robust long-term traffic accident anticipation under sensor noise, achieving state-of-the-art performance on three benchmark datasets in terms of both average precision (AP) and mean time-to-accident (mTTA).
+  [AAAI 2026][accident anticipation] A unified framework is proposed that integrates a diffusion-based dual-level denoising module with a temporally-aware Actor-Critic reinforcement learning model to enable robust long-ter…
 tags:
-  - AAAI 2026
-  - accident anticipation
-  - diffusion denoising
-  - Actor-Critic reinforcement learning
-  - sensor noise
-  - long-term temporal reasoning
+  - "AAAI 2026"
+  - "accident anticipation"
+  - "diffusion denoising"
+  - "Actor-Critic reinforcement learning"
+  - "sensor noise"
+  - "long-term temporal reasoning"
 date: 2026-05-08
 content_hash: 9f7be8debddf618f
 ---

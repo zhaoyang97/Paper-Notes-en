@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] GraLoRA: Granular Low-Rank Adaptation for Parameter-Efficient Fine-Tuning
 description: >-
-  [NEURIPS2025][Image Generation][LoRA] This paper proposes GraLoRA, which partitions the LoRA weight update matrix into $k^2$ independent sub-blocks, each equipped with its own low-rank adapter pair. Without increasing parameter count or computational cost, GraLoRA elevates the effective rank from $r$ to $kr$, addressing the performance degradation caused by gradient entanglement in high-rank LoRA. On code generation, Pass@1 improves by up to +8.5%.
+  [NEURIPS2025][Image Generation][LoRA] This paper proposes GraLoRA, which partitions the LoRA weight update matrix into $k^2$ independent sub-blocks…
 tags:
-  - NEURIPS2025
-  - Image Generation
-  - LoRA
-  - low-rank adaptation
-  - parameter-efficient fine-tuning
-  - gradient entanglement
-  - block decomposition
-  - high-rank expressiveness
+  - "NEURIPS2025"
+  - "Image Generation"
+  - "LoRA"
+  - "low-rank adaptation"
+  - "parameter-efficient fine-tuning"
+  - "gradient entanglement"
+  - "block decomposition"
+  - "high-rank expressiveness"
 date: 2026-05-08
 content_hash: ed3e8e6caffcc890
 ---

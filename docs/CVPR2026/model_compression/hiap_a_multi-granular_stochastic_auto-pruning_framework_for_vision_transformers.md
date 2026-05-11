@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HiAP: A Multi-Granular Stochastic Auto-Pruning Framework for Vision Transformers
 description: >-
-  [CVPR 2026][Model Compression][Vision Transformer pruning] HiAP formulates ViT pruning as an end-to-end budget-aware learning problem, applying stochastic differentiable gating simultaneously at two granularities—entire heads/blocks (macro) and intra-head value dimensions/FFN neurons (micro)—to automatically discover a compact dense subnetwork satisfying a compute budget within a single training run, eliminating the need for importance ranking, threshold search, and separate fine-tuning.
+  [CVPR 2026][Model Compression][Vision Transformer pruning] HiAP formulates ViT pruning as an end-to-end budget-aware learning problem, applying stochastic differentiable gating simultaneously at two granularities—entire…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - Vision Transformer pruning
-  - multi-granular structured pruning
-  - Gumbel-Sigmoid gating
-  - budget-aware optimization
-  - single-stage compression
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Vision Transformer pruning"
+  - "multi-granular structured pruning"
+  - "Gumbel-Sigmoid gating"
+  - "budget-aware optimization"
+  - "single-stage compression"
 date: 2026-05-08
 content_hash: 40667d3f651be89c
 ---

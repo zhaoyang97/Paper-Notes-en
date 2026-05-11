@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The Triangle of Similarity: A Multi-Faceted Framework for Comparing Neural Network Representations
 description: >-
-  [AAAI 2026][Multimodal VLM][neural network representation comparison] This paper proposes the *Triangle of Similarity* framework, which integrates three complementary perspectives — static representational similarity (CKA/Procrustes), functional similarity (linear mode connectivity/predictive distribution similarity), and sparsity similarity (pruning robustness) — to comprehensively compare neural networks. Key findings include that architectural family is the primary determinant of representational similarity, and that a model's representational structure is more robust to pruning than its task accuracy.
+  [AAAI 2026][Multimodal VLM][neural network representation comparison] This paper proposes the *Triangle of Similarity* framework, which integrates three complementary perspectives — static representational similarity (CK…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - neural network representation comparison
-  - CKA
-  - linear mode connectivity
-  - network pruning
-  - model similarity
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "neural network representation comparison"
+  - "CKA"
+  - "linear mode connectivity"
+  - "network pruning"
+  - "model similarity"
 date: 2026-05-08
 content_hash: 6208ed94d48a6e99
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] S'MoRE: Structural Mixture of Residual Experts for Parameter-Efficient LLM Fine-tuning
 description: >-
-  [NeurIPS 2025][Graph Learning][Parameter-Efficient Fine-Tuning] This paper proposes S'MoRE, a framework that organizes low-rank residual experts into a multi-layer tree structure and constructs token-specific "residual trees" via hierarchical routing, achieving exponentially growing structural flexibility with parameter counts comparable to LoRA, thereby substantially improving LLM fine-tuning performance.
+  [NeurIPS 2025][Graph Learning][Parameter-Efficient Fine-Tuning] This paper proposes S'MoRE, a framework that organizes low-rank residual experts into a multi-layer tree structure and constructs token-specific "residual t…
 tags:
-  - NeurIPS 2025
-  - Graph Learning
-  - Parameter-Efficient Fine-Tuning
-  - Mixture of Experts
-  - LoRA
-  - Graph Neural Networks
-  - Structural Flexibility
+  - "NeurIPS 2025"
+  - "Graph Learning"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Mixture of Experts"
+  - "LoRA"
+  - "Graph Neural Networks"
+  - "Structural Flexibility"
 date: 2026-05-08
 content_hash: 92bddce77965742e
 ---

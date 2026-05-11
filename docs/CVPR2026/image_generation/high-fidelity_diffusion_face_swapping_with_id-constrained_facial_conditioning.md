@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] High-Fidelity Diffusion Face Swapping with ID-Constrained Facial Conditioning
 description: >-
-  [CVPR 2026][Image Generation][Face Swapping] This paper proposes an identity-constrained attribute tuning framework for diffusion-based face swapping: the method first constrains the identity solution space, then injects attribute conditions, and finally performs end-to-end refinement with identity and adversarial losses. Combined with a decoupled condition injection design, it achieves state-of-the-art FID (3.61) and identity retrieval accuracy (97.9% Top-1) on FFHQ.
+  [CVPR 2026][Image Generation][Face Swapping] This paper proposes an identity-constrained attribute tuning framework for diffusion-based face swapping: the method first constrains the identity solution space…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Face Swapping
-  - Diffusion Models
-  - Identity Constraint
-  - Condition Decoupling
-  - Multi-Stage Training
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Face Swapping"
+  - "Diffusion Models"
+  - "Identity Constraint"
+  - "Condition Decoupling"
+  - "Multi-Stage Training"
 date: 2026-05-08
 content_hash: 276af68495117090
 ---

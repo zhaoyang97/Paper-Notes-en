@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A TRIANGLE Enables Multimodal Alignment Beyond Cosine Similarity
 description: >-
-  [NeurIPS 2025][Audio & Speech][Tri-modal alignment] TRIANGLE proposes using the area of the triangle formed by three modal embedding vectors in high-dimensional space as a similarity measure, replacing traditional pairwise cosine similarity to achieve joint alignment of video, audio, and text modalities. The method surpasses state-of-the-art by up to 9 Recall@1 points on video-text retrieval and related tasks.
+  [NeurIPS 2025][Audio & Speech][Tri-modal alignment] TRIANGLE proposes using the area of the triangle formed by three modal embedding vectors in high-dimensional space as a similarity measure…
 tags:
-  - NeurIPS 2025
+  - "NeurIPS 2025"
   - "Audio & Speech"
-  - Tri-modal alignment
-  - cosine similarity alternative
-  - triangle area similarity
-  - contrastive learning
-  - video-text retrieval
+  - "Tri-modal alignment"
+  - "cosine similarity alternative"
+  - "triangle area similarity"
+  - "contrastive learning"
+  - "video-text retrieval"
 date: 2026-05-08
 content_hash: 05829216014d047a
 ---

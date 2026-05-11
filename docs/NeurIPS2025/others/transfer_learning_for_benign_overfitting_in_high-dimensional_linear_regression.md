@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Transfer Learning for Benign Overfitting in High-Dimensional Linear Regression
 description: >-
-  [NeurIPS 2025][transfer learning] This paper proposes a two-step Transfer MNI (TM) method that enhances generalization of benign overfitting in overparameterized high-dimensional linear regression via a "preserve target signal + transfer source knowledge in the null space" mechanism. Non-asymptotic excess risk bounds are derived under both model shift and covariate shift, and a "free lunch" covariate shift regime is identified.
+  [NeurIPS 2025][transfer learning] This paper proposes a two-step Transfer MNI (TM) method that enhances generalization of benign overfitting in overparameterized high-dimensional linear regression via a "preserve target…
 tags:
-  - NeurIPS 2025
-  - transfer learning
-  - benign overfitting
-  - high-dimensional linear regression
-  - minimum-norm interpolation
-  - covariate shift
-  - model shift
+  - "NeurIPS 2025"
+  - "transfer learning"
+  - "benign overfitting"
+  - "high-dimensional linear regression"
+  - "minimum-norm interpolation"
+  - "covariate shift"
+  - "model shift"
 date: 2026-05-08
 content_hash: 69a21161e152a93a
 ---

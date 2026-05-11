@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Locality-aware Parallel Decoding for Efficient Autoregressive Image Generation
 description: >-
-  [ICLR 2026][Image Generation][parallel decoding] This paper proposes Locality-aware Parallel Decoding (LPD), which reduces the number of generation steps for 256×256 images from 256 to 20 by flexibly parallelizing autoregressive modeling architectures and employing a locality-aware generation order schedule, achieving at least 3.4× latency reduction.
+  [ICLR 2026][Image Generation][parallel decoding] This paper proposes Locality-aware Parallel Decoding (LPD), which reduces the number of generation steps for 256×256 images from 256 to 20 by flexibly parallelizing autore…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - parallel decoding
-  - autoregressive modeling
-  - spatial locality
-  - positional query
-  - efficient inference
+  - "ICLR 2026"
+  - "Image Generation"
+  - "parallel decoding"
+  - "autoregressive modeling"
+  - "spatial locality"
+  - "positional query"
+  - "efficient inference"
 date: 2026-05-08
 content_hash: 4d34168c1b03309f
 ---

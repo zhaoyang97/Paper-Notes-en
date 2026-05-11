@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] One-Shot Knowledge Transfer for Scalable Person Re-Identification
 description: >-
-  [ICCV 2025][Human Understanding][Knowledge Transfer] This paper proposes OSKT (One-Shot Knowledge Transfer), which distills teacher model knowledge into a compact intermediate representation termed a "weight chain," enabling the generation of student models of arbitrary sizes for person re-identification with a single round of computation.
+  [ICCV 2025][Human Understanding][Knowledge Transfer] This paper proposes OSKT (One-Shot Knowledge Transfer), which distills teacher model knowledge into a compact intermediate representation termed a "weight chain…
 tags:
-  - ICCV 2025
-  - Human Understanding
-  - Knowledge Transfer
-  - Weight Chain
-  - Person Re-Identification
-  - Model Compression
-  - One-Shot Computation
+  - "ICCV 2025"
+  - "Human Understanding"
+  - "Knowledge Transfer"
+  - "Weight Chain"
+  - "Person Re-Identification"
+  - "Model Compression"
+  - "One-Shot Computation"
 date: 2026-05-08
 content_hash: a59a96f12afbf931
 ---

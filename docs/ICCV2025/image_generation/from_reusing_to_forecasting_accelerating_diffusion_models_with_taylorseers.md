@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] From Reusing to Forecasting: Accelerating Diffusion Models with TaylorSeers
 description: >-
-  [ICCV 2025][Image Generation][Diffusion model acceleration] This paper proposes TaylorSeer, which upgrades the feature caching paradigm for diffusion models from "cache-and-reuse" to "cache-and-forecast" — leveraging Taylor series expansion with high-order finite differences over historical features to predict intermediate features at future timesteps. TaylorSeer achieves near-lossless 4.99× acceleration on FLUX and 5.00× on HunyuanVideo, entirely without additional training.
+  [ICCV 2025][Image Generation][Diffusion model acceleration] This paper proposes TaylorSeer, which upgrades the feature caching paradigm for diffusion models from "cache-and-reuse" to "cache-and-forecast" — leveraging Tay…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Diffusion model acceleration
-  - feature caching
-  - Taylor expansion
-  - training-free acceleration
-  - DiT
-  - FLUX
-  - HunyuanVideo
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Diffusion model acceleration"
+  - "feature caching"
+  - "Taylor expansion"
+  - "training-free acceleration"
+  - "DiT"
+  - "FLUX"
+  - "HunyuanVideo"
 date: 2026-05-08
 content_hash: f6ea46a956f00efa
 ---

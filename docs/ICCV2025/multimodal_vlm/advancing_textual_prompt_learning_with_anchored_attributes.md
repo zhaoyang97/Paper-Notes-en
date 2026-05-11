@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Advancing Textual Prompt Learning with Anchored Attributes
 description: >-
-  [ICCV 2025][Multimodal VLM][Prompt Learning] This paper proposes ATPrompt, which embeds general-purpose attribute tokens (e.g., color, shape) into textual prompts, extending the learning space of soft prompts from a one-dimensional class level to a multi-dimensional attribute level. ATPrompt serves as a plug-and-play module that integrates seamlessly into existing textual prompt learning methods, consistently improving baseline performance across 11 datasets.
+  [ICCV 2025][Multimodal VLM][Prompt Learning] This paper proposes ATPrompt, which embeds general-purpose attribute tokens (e.g., color, shape) into textual prompts…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Prompt Learning
-  - CLIP
-  - Attribute Anchoring
-  - Zero-Shot Generalization
-  - Differentiable Attribute Search
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Prompt Learning"
+  - "CLIP"
+  - "Attribute Anchoring"
+  - "Zero-Shot Generalization"
+  - "Differentiable Attribute Search"
 date: 2026-05-08
 content_hash: 9c028e30fec89611
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Quantifying Task-Relevant Representational Similarity Using Decision Variable Correlation
 description: >-
-  [NeurIPS 2025][LLM Pretraining][Decision Variable Correlation] This paper proposes Decision Variable Correlation (DVC), a novel metric for quantifying trial-by-trial consistency between two neural representations on classification tasks. The authors find that higher ImageNet accuracy in deep networks is associated with *lower* DVC relative to monkey V4/IT, and that neither adversarial training nor large-scale dataset pretraining closes this gap.
+  [NeurIPS 2025][LLM Pretraining][Decision Variable Correlation] This paper proposes Decision Variable Correlation (DVC), a novel metric for quantifying trial-by-trial consistency between two neural representations on clas…
 tags:
-  - NeurIPS 2025
-  - LLM Pretraining
-  - Decision Variable Correlation
-  - Brain-Model Alignment
-  - Representational Similarity
-  - Signal Detection Theory
-  - Visual Cortex
+  - "NeurIPS 2025"
+  - "LLM Pretraining"
+  - "Decision Variable Correlation"
+  - "Brain-Model Alignment"
+  - "Representational Similarity"
+  - "Signal Detection Theory"
+  - "Visual Cortex"
 date: 2026-05-08
 content_hash: 90dfa37c9cd60619
 ---

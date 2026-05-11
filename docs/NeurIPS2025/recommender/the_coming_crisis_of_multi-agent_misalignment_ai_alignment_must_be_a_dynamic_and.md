@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The Coming Crisis of Multi-Agent Misalignment: AI Alignment Must Be a Dynamic and Social Process
 description: >-
-  [NeurIPS 2025 (Position Paper)][Recommender Systems][Multi-agent systems] A position paper arguing that AI alignment in multi-agent systems (MAS) should be treated as a dynamic, interaction-dependent social process rather than an isolated problem. Drawing on social science theories, the paper analyzes how social structures can undermine collective and individual values, and calls on the AI community to develop dedicated simulation environments, benchmarks, and evaluation frameworks to address this challenge.
+  [NeurIPS 2025 (Position Paper)][Recommender Systems][Multi-agent systems] A position paper arguing that AI alignment in multi-agent systems (MAS) should be treated as a dynamic…
 tags:
-  - NeurIPS 2025 (Position Paper)
-  - Recommender Systems
-  - Multi-agent systems
-  - AI alignment
-  - social dynamics
-  - value alignment
-  - agent interaction
+  - "NeurIPS 2025 (Position Paper)"
+  - "Recommender Systems"
+  - "Multi-agent systems"
+  - "AI alignment"
+  - "social dynamics"
+  - "value alignment"
+  - "agent interaction"
 date: 2026-05-08
 content_hash: 0fbbdb779d5fcf5b
 ---

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Multi-Faceted Attack: Exposing Cross-Model Vulnerabilities in Defense-Equipped Vision-Language Models
 description: >-
-  [Multimodal VLM] This paper proposes MFA, a Multi-Faceted Attack framework that systematically exposes security vulnerabilities in VLMs equipped with multi-layered defenses (including commercial models such as GPT-4o and Gemini) through three complementary dimensions: Attention Transfer Attack (ATA) to bypass alignment, adversarial signatures to evade content moderation, and visual encoder attack to overwrite system prompts. The overall attack success rate reaches 58.5%.
+  [Multimodal VLM] This paper proposes MFA, a Multi-Faceted Attack framework that systematically exposes security vulnerabilities in VLMs equipped with multi-layered defenses (including commercial models such as GPT-4o and…
 tags:
-  - Multimodal VLM
+  - "Multimodal VLM"
 date: 2026-05-08
 content_hash: 84df4a49baee214c
 ---

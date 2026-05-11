@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UniTalking: A Unified Audio-Video Framework for Talking Portrait Generation
 description: >-
-  [CVPR 2026][Video Generation][Talking portrait generation] UniTalking is proposed as an end-to-end talking portrait generation framework built upon MM-DiT. Through a joint attention mechanism within a dual-stream symmetric architecture, it explicitly models fine-grained temporal correspondences between audio and video tokens, achieving state-of-the-art lip-audio synchronization accuracy while supporting personalized voice cloning.
+  [CVPR 2026][Video Generation][Talking portrait generation] UniTalking is proposed as an end-to-end talking portrait generation framework built upon MM-DiT. Through a joint attention mechanism within a dual-stream symmetr…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Talking portrait generation
-  - joint audio-video generation
-  - diffusion transformer
-  - lip-audio synchronization
-  - voice cloning
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Talking portrait generation"
+  - "joint audio-video generation"
+  - "diffusion transformer"
+  - "lip-audio synchronization"
+  - "voice cloning"
 date: 2026-05-08
 content_hash: ae3f8b50ba367aef
 ---

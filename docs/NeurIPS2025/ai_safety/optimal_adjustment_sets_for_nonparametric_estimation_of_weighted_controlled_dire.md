@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Optimal Adjustment Sets for Nonparametric Estimation of Weighted Controlled Direct Effect
 description: >-
-  [NeurIPS 2025][AI Safety][weighted controlled direct effect] This paper establishes three foundational theoretical results for the weighted controlled direct effect (WCDE): necessary and sufficient conditions for unique identifiability, derivation of the influence function for nonparametric estimation, and characterization of the optimal covariate adjustment set that minimizes asymptotic variance.
+  [NeurIPS 2025][AI Safety][weighted controlled direct effect] This paper establishes three foundational theoretical results for the weighted controlled direct effect (WCDE): necessary and sufficient conditions for unique…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - weighted controlled direct effect
-  - causal inference
-  - mediation analysis
-  - optimal adjustment
-  - fairness
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "weighted controlled direct effect"
+  - "causal inference"
+  - "mediation analysis"
+  - "optimal adjustment"
+  - "fairness"
 date: 2026-05-08
 content_hash: 45345e6b7a5374b2
 ---

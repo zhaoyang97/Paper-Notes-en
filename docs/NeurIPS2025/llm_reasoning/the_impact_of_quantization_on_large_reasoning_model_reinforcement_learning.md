@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The Impact of Quantization on Large Reasoning Model Reinforcement Learning
 description: >-
-  [NeurIPS 2025 (Workshop: Efficient Reasoning)][LLM Reasoning][Quantization] This paper presents a systematic empirical study showing that quantization-aware fine-tuning (QAFT/STE) during RL training of large reasoning models (LRMs) degrades reasoning capability, whereas post-training quantization (PTQ) and QLoRA preserve reasoning performance well even at 4-bit precision. The authors recommend a practical pipeline of full-precision RL training followed by PTQ quantization.
+  [NeurIPS 2025 (Workshop: Efficient Reasoning)][LLM Reasoning][Quantization] This paper presents a systematic empirical study showing that quantization-aware fine-tuning (QAFT/STE) during RL training of large reasoning mo…
 tags:
   - "NeurIPS 2025 (Workshop: Efficient Reasoning)"
-  - LLM Reasoning
-  - Quantization
-  - Reasoning Models
-  - Reinforcement Learning
-  - GRPO
-  - QLoRA
+  - "LLM Reasoning"
+  - "Quantization"
+  - "Reasoning Models"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "QLoRA"
 date: 2026-05-08
 content_hash: d915624dcb9badc8
 ---

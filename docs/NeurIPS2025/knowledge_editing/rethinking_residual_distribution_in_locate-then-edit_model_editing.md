@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Rethinking Residual Distribution in Locate-then-Edit Model Editing
 description: >-
-  [NeurIPS 2025][Knowledge Editing][model editing] This paper reveals that the residual distribution mechanism in locate-then-edit model editing introduces weight deviation errors that grow with distribution distance, batch size, and sequential edit length. It proposes BLUE (Boundary Layer UpdatE), a strategy that updates only the first and last critical layers, achieving an average improvement of 35.59%.
+  [NeurIPS 2025][Knowledge Editing][model editing] This paper reveals that the residual distribution mechanism in locate-then-edit model editing introduces weight deviation errors that grow with distribution distance…
 tags:
-  - NeurIPS 2025
-  - Knowledge Editing
-  - model editing
-  - locate-then-edit
-  - residual distribution
-  - MEMIT
+  - "NeurIPS 2025"
+  - "Knowledge Editing"
+  - "model editing"
+  - "locate-then-edit"
+  - "residual distribution"
+  - "MEMIT"
 date: 2026-05-08
 content_hash: 76078f0123fe7638
 ---

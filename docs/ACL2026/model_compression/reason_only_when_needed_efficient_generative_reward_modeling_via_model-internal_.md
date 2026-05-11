@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Reason Only When Needed: Efficient Generative Reward Modeling via Model-Internal Uncertainty
 description: >-
-  [ACL 2026][Model Compression][Generative reward model] This paper proposes E-GRM, a framework that estimates uncertainty from the convergence behavior of parallel decoding, triggers CoT reasoning only when necessary, and employs a discriminative scorer trained with a hybrid loss to evaluate reasoning path quality. E-GRM achieves state-of-the-art performance across multiple reward modeling benchmarks while reducing inference latency by 62%.
+  [ACL 2026][Model Compression][Generative reward model] This paper proposes E-GRM, a framework that estimates uncertainty from the convergence behavior of parallel decoding, triggers CoT reasoning only when necessary…
 tags:
-  - ACL 2026
-  - Model Compression
-  - Generative reward model
-  - dynamic CoT triggering
-  - model-internal uncertainty
-  - discriminative scoring
-  - inference efficiency
+  - "ACL 2026"
+  - "Model Compression"
+  - "Generative reward model"
+  - "dynamic CoT triggering"
+  - "model-internal uncertainty"
+  - "discriminative scoring"
+  - "inference efficiency"
 date: 2026-05-08
 content_hash: db358f7fa143c9d5
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Cluster-Wise Spatio-Temporal Masking for Efficient Video-Language Pretraining
 description: >-
-  [CVPR 2026][Video Understanding][Video-language pretraining] This paper proposes ClusterSTM, which leverages intra-frame semantic clustering and a cluster-wise spatio-temporal masking strategy to retain semantically complete visual tokens under high masking ratios. A video-text relevance reconstruction objective is further introduced to enable efficient video-language pretraining at minimal computational cost, achieving a new state of the art among efficient models on retrieval, VQA, and captioning tasks.
+  [CVPR 2026][Video Understanding][Video-language pretraining] This paper proposes ClusterSTM, which leverages intra-frame semantic clustering and a cluster-wise spatio-temporal masking strategy to retain semantically comp…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Video-language pretraining
-  - masked visual modeling
-  - spatio-temporal clustering
-  - efficient pretraining
-  - video-text alignment
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Video-language pretraining"
+  - "masked visual modeling"
+  - "spatio-temporal clustering"
+  - "efficient pretraining"
+  - "video-text alignment"
 date: 2026-05-08
 content_hash: 3c5c6545af809efd
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SCRAPL: Scattering Transform with Random Paths for Machine Learning
 description: >-
-  [ICLR 2026][Optimization][scattering transform] To address the prohibitive computational cost of using the multivariate scattering transform (ST) as a differentiable loss function due to its large number of paths $P$, this paper proposes SCRAPL—a framework that samples a single random path per training step and stabilizes gradient updates via three variance-reduction techniques: P-Adam (path-adaptive momentum), P-SAGA (path stochastic average gradient), and $\theta$-importance sampling. On unsupervised sound matching tasks, SCRAPL achieves Pareto optimality by attaining accuracy close to the full-path ST at computational costs comparable to multi-scale spectral (MSS) loss.
+  [ICLR 2026][Optimization][scattering transform] To address the prohibitive computational cost of using the multivariate scattering transform (ST) as a differentiable loss function due to its large number of paths $P$…
 tags:
-  - ICLR 2026
-  - Optimization
-  - scattering transform
-  - random path sampling
-  - DDSP
-  - importance sampling
-  - variance reduction
+  - "ICLR 2026"
+  - "Optimization"
+  - "scattering transform"
+  - "random path sampling"
+  - "DDSP"
+  - "importance sampling"
+  - "variance reduction"
 date: 2026-05-08
 content_hash: 6d00665fd7f925d5
 ---

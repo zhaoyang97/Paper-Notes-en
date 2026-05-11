@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] One-Step Diffusion-Based Image Compression with Semantic Distillation
 description: >-
-  [NeurIPS 2025][Model Compression][Image Compression] This paper proposes OneDC—the first one-step diffusion-based generative image codec—which replaces text with the hyperprior as the semantic conditioning signal for the diffusion model and enhances its representational capacity via semantic distillation, achieving state-of-the-art perceptual quality with 39% bitrate savings and 20× decoding speedup over multi-step diffusion codecs.
+  [NeurIPS 2025][Model Compression][Image Compression] This paper proposes OneDC—the first one-step diffusion-based generative image codec—which replaces text with the hyperprior as the semantic conditioning signal for the…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Image Compression
-  - One-Step Diffusion Model
-  - Semantic Distillation
-  - Hyperprior
-  - Generative Codec
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Image Compression"
+  - "One-Step Diffusion Model"
+  - "Semantic Distillation"
+  - "Hyperprior"
+  - "Generative Codec"
 date: 2026-05-08
 content_hash: 8825f15cc6de840c
 ---

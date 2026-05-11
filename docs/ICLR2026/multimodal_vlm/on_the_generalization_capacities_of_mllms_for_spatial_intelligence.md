@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] On the Generalization Capacities of MLLMs for Spatial Intelligence
 description: >-
-  [ICLR 2026][Multimodal VLM][Camera Awareness] This paper identifies a fundamental flaw in RGB-only spatial reasoning MLLMs—the focal-length–depth ambiguity arising from the neglect of camera intrinsics—and proposes the Camera-Aware MLLM (CA-MLLM) framework. Through dense camera ray embedding, camera-aware data augmentation, and geometric prior distillation, it improves F1 from 39.1% to 52.1% on cross-camera generalization benchmarks for spatial localization.
+  [ICLR 2026][Multimodal VLM][Camera Awareness] This paper identifies a fundamental flaw in RGB-only spatial reasoning MLLMs—the focal-length–depth ambiguity arising from the neglect of camera intrinsics—and proposes the C…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Camera Awareness
-  - Spatial Intelligence
-  - Cross-Camera Generalization
-  - 3D Localization
-  - Geometric Priors
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Camera Awareness"
+  - "Spatial Intelligence"
+  - "Cross-Camera Generalization"
+  - "3D Localization"
+  - "Geometric Priors"
 date: 2026-05-08
 content_hash: 5fb4c3e2e1422e5f
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Searching Latent Program Spaces
 description: >-
-  [NeurIPS 2025][Latent Program Network] This paper proposes the Latent Program Network (LPN), which uses an encoder to map input–output examples into a latent program representation, then performs gradient-based search in the latent space at test time to adapt to new tasks. LPN substantially outperforms in-context learning and test-time training methods on the ARC-AGI benchmark.
+  [NeurIPS 2025][Code Intelligence][Latent Program Network] This paper proposes the Latent Program Network (LPN), which uses an encoder to map input–output examples into a latent program representation…
 tags:
-  - NeurIPS 2025
-  - Latent Program Network
-  - Program Synthesis
-  - Test-Time Search
-  - ARC-AGI
-  - Variational Inference
+  - "NeurIPS 2025"
+  - "Code Intelligence"
+  - "Latent Program Network"
+  - "Program Synthesis"
+  - "Test-Time Search"
+  - "ARC-AGI"
+  - "Variational Inference"
 date: 2026-05-08
 content_hash: 1800a6be6c1286b2
 ---

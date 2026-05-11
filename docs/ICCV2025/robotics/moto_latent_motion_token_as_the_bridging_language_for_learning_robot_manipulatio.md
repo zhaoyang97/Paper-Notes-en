@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Moto: Latent Motion Token as the Bridging Language for Learning Robot Manipulation from Videos
 description: >-
-  [ICCV 2025][Robotics][Video Pre-training] This paper proposes Moto, a framework that encodes inter-frame visual motion from video into discrete sequences via unsupervised Latent Motion Tokens. A GPT-style autoregressive pre-training scheme is employed to learn motion priors, which are then transferred to real robot manipulation through a co-fine-tuning strategy. Moto achieves performance competitive with 55B-parameter models on the SIMPLER and CALVIN benchmarks using only 98M parameters.
+  [ICCV 2025][Robotics][Video Pre-training] This paper proposes Moto, a framework that encodes inter-frame visual motion from video into discrete sequences via unsupervised Latent Motion Tokens. A GPT-style autoregressive…
 tags:
-  - ICCV 2025
-  - Robotics
-  - Video Pre-training
-  - Motion Token
-  - Autoregressive
-  - Robot Manipulation
-  - Cross-Embodiment Transfer
+  - "ICCV 2025"
+  - "Robotics"
+  - "Video Pre-training"
+  - "Motion Token"
+  - "Autoregressive"
+  - "Robot Manipulation"
+  - "Cross-Embodiment Transfer"
 date: 2026-05-08
 content_hash: bab1da7d4ba82f46
 ---

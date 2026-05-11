@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Conditional Distribution Compression via the Kernel Conditional Mean Embedding
 description: >-
-  [NeurIPS 2025][distribution compression] This work presents the first compression algorithm targeting **conditional distributions** (rather than joint distributions), introducing a novel metric AMCMD based on the kernel conditional mean embedding (KCME) and a linear-time algorithm ACKIP for constructing compressed datasets that preserve the statistical properties of conditional distributions.
+  [NeurIPS 2025][Interpretability][distribution compression] This work presents the first compression algorithm targeting **conditional distributions** (rather than joint distributions)…
 tags:
-  - NeurIPS 2025
-  - distribution compression
-  - kernel methods
-  - conditional mean embedding
-  - RKHS
-  - data compression
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "distribution compression"
+  - "kernel methods"
+  - "conditional mean embedding"
+  - "RKHS"
+  - "data compression"
 date: 2026-05-08
 content_hash: c6173fe831895216
 ---

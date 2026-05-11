@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DreamRelation: Relation-Centric Video Customization
 description: >-
-  [ICCV 2025][Video Generation][Relation video customization] DreamRelation is proposed as the first relation-centric video customization method. Through a Relation LoRA Triplet combined with Hybrid Mask Training, it achieves disentanglement between relation and appearance, and enhances relational dynamics learning via a spatiotemporal relational contrastive loss, enabling animals to imitate human interactions.
+  [ICCV 2025][Video Generation][Relation video customization] DreamRelation is proposed as the first relation-centric video customization method. Through a Relation LoRA Triplet combined with Hybrid Mask Training…
 tags:
-  - ICCV 2025
-  - Video Generation
-  - Relation video customization
-  - MM-DiT
-  - LoRA
-  - contrastive learning
-  - disentangled learning
+  - "ICCV 2025"
+  - "Video Generation"
+  - "Relation video customization"
+  - "MM-DiT"
+  - "LoRA"
+  - "contrastive learning"
+  - "disentangled learning"
 date: 2026-05-08
 content_hash: 660e2a024241bed0
 ---

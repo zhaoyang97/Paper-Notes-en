@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PocketLLM: Ultimate Compression of Large Language Models via Meta Networks
 description: >-
-  [AAAI2026][Model Compression][LLM compression] PocketLLM proposes compressing LLM weight vectors in a latent space via meta networks (encoder–codebook–decoder), replacing the original weight matrices with a small decoder, a compact codebook, and index arrays. The method achieves 10× compression on Llama 2-7B with negligible accuracy degradation, breaking the accuracy bottleneck of traditional quantization and pruning approaches under extreme compression ratios.
+  [AAAI2026][Model Compression][LLM compression] PocketLLM proposes compressing LLM weight vectors in a latent space via meta networks (encoder–codebook–decoder), replacing the original weight matrices with a small decoder…
 tags:
-  - AAAI2026
-  - Model Compression
-  - LLM compression
-  - meta networks
-  - codebook quantization
-  - latent space encoding
-  - extreme compression
+  - "AAAI2026"
+  - "Model Compression"
+  - "LLM compression"
+  - "meta networks"
+  - "codebook quantization"
+  - "latent space encoding"
+  - "extreme compression"
 date: 2026-05-08
 content_hash: 257b851790f59bb4
 ---

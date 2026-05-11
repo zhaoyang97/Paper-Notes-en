@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ProFocus: Proactive Perception and Focused Reasoning in Vision-and-Language Navigation
 description: >-
-  [CVPR 2026][Robotics][VLN] ProFocus is a training-free progressive framework that achieves state-of-the-art zero-shot VLN performance on R2R and REVERIE benchmarks through two mechanisms: proactive perception (converting panoramic observations into semantic maps and having an LLM generate targeted visual queries) and focused reasoning (BD-MCTS filtering top-k high-value waypoints from large navigation histories).
+  [CVPR 2026][Robotics][VLN] ProFocus is a training-free progressive framework that achieves state-of-the-art zero-shot VLN performance on R2R and REVERIE benchmarks through two mechanisms: proactive perception (converting…
 tags:
-  - CVPR 2026
-  - Robotics
-  - VLN
-  - proactive perception
-  - MCTS
-  - zero-shot navigation
-  - LLM agent
+  - "CVPR 2026"
+  - "Robotics"
+  - "VLN"
+  - "proactive perception"
+  - "MCTS"
+  - "zero-shot navigation"
+  - "LLM agent"
 date: 2026-05-08
 content_hash: 007a00111146e9d1
 ---

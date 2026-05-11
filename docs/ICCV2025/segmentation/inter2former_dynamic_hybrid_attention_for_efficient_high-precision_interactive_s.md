@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Inter2Former: Dynamic Hybrid Attention for Efficient High-Precision Interactive Segmentation
 description: >-
-  [ICCV 2025][Segmentation][interactive segmentation] This paper proposes Inter2Former, which employs Dynamic Hybrid Attention (DHA) to route boundary tokens to full attention and non-boundary tokens to linear-complexity BSQ attention. Combined with Dynamic Prompt Embedding (DPE), Hybrid Mixture of Experts (HMoE), and Dynamic Local Upsampling (DLU), the method achieves state-of-the-art performance and efficient inference for high-precision interactive segmentation on CPU devices.
+  [ICCV 2025][Segmentation][interactive segmentation] This paper proposes Inter2Former, which employs Dynamic Hybrid Attention (DHA) to route boundary tokens to full attention and non-boundary tokens to linear-complexity B…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - interactive segmentation
-  - high-precision segmentation
-  - hybrid attention
-  - BSQ attention
-  - dynamic computation allocation
+  - "ICCV 2025"
+  - "Segmentation"
+  - "interactive segmentation"
+  - "high-precision segmentation"
+  - "hybrid attention"
+  - "BSQ attention"
+  - "dynamic computation allocation"
 date: 2026-05-08
 content_hash: c4a63157c3d11a96
 ---

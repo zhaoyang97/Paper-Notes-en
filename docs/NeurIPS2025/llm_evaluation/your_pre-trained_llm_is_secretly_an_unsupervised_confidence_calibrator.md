@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Your Pre-trained LLM is Secretly an Unsupervised Confidence Calibrator
 description: >-
-  [NeurIPS 2025][LLM Evaluation][confidence calibration] This paper identifies that post-training (SFT/RLHF/DPO) degrades the confidence calibration of pre-trained language models, and proposes DACA, a method that exploits the well-calibrated nature of pre-trained models by aligning confidence distributions exclusively on prediction-consistent samples, achieving label-free calibration of post-trained models with up to 15.08% ECE improvement.
+  [NeurIPS 2025][LLM Evaluation][confidence calibration] This paper identifies that post-training (SFT/RLHF/DPO) degrades the confidence calibration of pre-trained language models, and proposes DACA…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - confidence calibration
-  - temperature scaling
-  - pre-trained LM
-  - post-trained LM
-  - unsupervised calibration
-  - DACA
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "confidence calibration"
+  - "temperature scaling"
+  - "pre-trained LM"
+  - "post-trained LM"
+  - "unsupervised calibration"
+  - "DACA"
 date: 2026-05-08
 content_hash: ec64a0e29c495bac
 ---

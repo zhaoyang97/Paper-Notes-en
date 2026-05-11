@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VISTA: Verification In Sequential Turn-based Assessment
 description: >-
-  [ACL 2026][Video Understanding][Hallucination Detection] VISTA proposes a multi-turn dialogue factuality assessment framework based on claim-level decomposition and sequential consistency tracking, subdividing unverifiable content into four categories: subjective, contradicted, lacking evidence, and abstention. It significantly outperforms FActScore and LLM-as-Judge baselines across four dialogue benchmarks and eight LLMs.
+  [ACL 2026][Video Understanding][Hallucination Detection] VISTA proposes a multi-turn dialogue factuality assessment framework based on claim-level decomposition and sequential consistency tracking…
 tags:
-  - ACL 2026
-  - Video Understanding
-  - Hallucination Detection
-  - Dialogue Factuality
-  - Claim-level Verification
-  - Sequential Consistency Tracking
-  - Multi-turn Dialogue
+  - "ACL 2026"
+  - "Video Understanding"
+  - "Hallucination Detection"
+  - "Dialogue Factuality"
+  - "Claim-level Verification"
+  - "Sequential Consistency Tracking"
+  - "Multi-turn Dialogue"
 date: 2026-05-08
 content_hash: c2286ee5700398d8
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] To See or To Read: User Behavior Reasoning in Multimodal LLMs
 description: >-
-  [NeurIPS 2025][Multimodal VLM][User behavior reasoning] This paper proposes BehaviorLens, a benchmarking framework that systematically compares three representations of user behavior history — text sequences, scatter plots, and flowcharts — for next-purchase prediction with MLLMs. Visual representations are shown to improve prediction accuracy by up to 87.5% over equivalent text representations without incurring additional computational overhead.
+  [NeurIPS 2025][Multimodal VLM][User behavior reasoning] This paper proposes BehaviorLens, a benchmarking framework that systematically compares three representations of user behavior history — text sequences…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - User behavior reasoning
-  - modality trade-off
-  - sequential recommendation
-  - visual representation
-  - BehaviorLens
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "User behavior reasoning"
+  - "modality trade-off"
+  - "sequential recommendation"
+  - "visual representation"
+  - "BehaviorLens"
 date: 2026-05-08
 content_hash: 30f00d61cfac44da
 ---

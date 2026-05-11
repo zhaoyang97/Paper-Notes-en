@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] RACER: Retrieval-Augmented Contextual Rapid Speculative Decoding
 description: >-
-  [ACL 2026][Speculative Decoding] RACER proposes a training-free speculative decoding method that unifies retrieval-based exact pattern matching with logits-based future prediction. It constructs a Logits Tree via a copy-logit strategy and a Retrieval Tree via an LRU-eviction Aho-Corasick automaton, achieving over 2× inference speedup across multiple benchmarks.
+  [ACL 2026][Information Retrieval & RAG][Speculative Decoding] RACER proposes a training-free speculative decoding method that unifies retrieval-based exact pattern matching with logits-based future prediction. It constru…
 tags:
-  - ACL 2026
-  - Speculative Decoding
-  - Retrieval Augmentation
-  - Training-Free
-  - Aho-Corasick Automaton
-  - Inference Acceleration
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Speculative Decoding"
+  - "Retrieval Augmentation"
+  - "Training-Free"
+  - "Aho-Corasick Automaton"
+  - "Inference Acceleration"
 date: 2026-05-08
 content_hash: b975fdc125c063cf
 ---

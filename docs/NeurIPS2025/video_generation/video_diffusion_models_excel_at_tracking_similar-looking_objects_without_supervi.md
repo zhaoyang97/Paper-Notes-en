@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Video Diffusion Models Excel at Tracking Similar-Looking Objects Without Supervision
 description: >-
-  [NeurIPS 2025][Video Generation][video diffusion models] This paper reveals that pretrained video diffusion models naturally learn motion representations suitable for tracking during high-noise denoising stages, and proposes the TED framework that fuses motion and appearance features, achieving up to 10 percentage points improvement over existing self-supervised methods on tracking similar-looking objects.
+  [NeurIPS 2025][Video Generation][video diffusion models] This paper reveals that pretrained video diffusion models naturally learn motion representations suitable for tracking during high-noise denoising stages…
 tags:
-  - NeurIPS 2025
-  - Video Generation
-  - video diffusion models
-  - self-supervised tracking
-  - motion representation
-  - similar-looking objects
-  - label propagation
+  - "NeurIPS 2025"
+  - "Video Generation"
+  - "video diffusion models"
+  - "self-supervised tracking"
+  - "motion representation"
+  - "similar-looking objects"
+  - "label propagation"
 date: 2026-05-08
 content_hash: 52d70abe228af40c
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Finite-Sample Analysis of Policy Evaluation for Robust Average Reward Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Robust Reinforcement Learning] This work provides the first finite-sample complexity analysis for policy evaluation in robust average reward MDPs. By constructing a carefully designed semi-norm, it proves that the robust Bellman operator is a contraction, and combines this with a truncated Multi-Level Monte Carlo (MLMC) estimator to achieve finite expected sample complexity, ultimately attaining an order-optimal sample complexity of $\tilde{\mathcal{O}}(\epsilon^{-2})$.
+  [NeurIPS 2025][Reinforcement Learning][Robust Reinforcement Learning] This work provides the first finite-sample complexity analysis for policy evaluation in robust average reward MDPs. By constructing a carefully design…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Robust Reinforcement Learning
-  - Average Reward MDP
-  - Policy Evaluation
-  - Finite-Sample Analysis
-  - Semi-norm Contraction
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Robust Reinforcement Learning"
+  - "Average Reward MDP"
+  - "Policy Evaluation"
+  - "Finite-Sample Analysis"
+  - "Semi-norm Contraction"
 date: 2026-05-08
 content_hash: 3860bc305b9ec013
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] G-MIXER: Geodesic Mixup-based Implicit Semantic Expansion and Explicit Semantic Re-ranking for Zero-Shot Composed Image Retrieval
 description: >-
-  [CVPR 2026][Multimodal VLM][composed image retrieval] This paper proposes G-MIXER, a training-free zero-shot composed image retrieval method that achieves state-of-the-art performance via geodesic mixup-based implicit semantic expansion (expanding the retrieval scope along multiple interpolation ratios on the hypersphere) and explicit semantic re-ranking (filtering noisy candidates using MLLM-generated attributes).
+  [CVPR 2026][Multimodal VLM][composed image retrieval] This paper proposes G-MIXER, a training-free zero-shot composed image retrieval method that achieves state-of-the-art performance via geodesic mixup-based implicit se…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - composed image retrieval
-  - zero-shot
-  - geodesic mixup
-  - semantic expansion
-  - re-ranking
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "composed image retrieval"
+  - "zero-shot"
+  - "geodesic mixup"
+  - "semantic expansion"
+  - "re-ranking"
 date: 2026-05-08
 content_hash: aa0b163a07498da3
 ---

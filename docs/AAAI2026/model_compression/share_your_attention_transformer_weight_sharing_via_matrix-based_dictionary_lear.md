@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Share Your Attention: Transformer Weight Sharing via Matrix-Based Dictionary Learning
 description: >-
-  [AAAI 2026][Model Compression][weight sharing] Inspired by dictionary learning, this paper proposes the MASA framework, which decomposes the attention projection matrices (Q/K/V/O) across Transformer layers into linear combinations of shared matrix atoms, achieving performance on par with or superior to the original Transformer at a 66.7% attention parameter compression ratio.
+  [AAAI 2026][Model Compression][weight sharing] Inspired by dictionary learning, this paper proposes the MASA framework, which decomposes the attention projection matrices (Q/K/V/O) across Transformer layers into linear c…
 tags:
-  - AAAI 2026
-  - Model Compression
-  - weight sharing
-  - dictionary learning
-  - transformer compression
-  - attention compression
-  - parameter efficiency
+  - "AAAI 2026"
+  - "Model Compression"
+  - "weight sharing"
+  - "dictionary learning"
+  - "transformer compression"
+  - "attention compression"
+  - "parameter efficiency"
 date: 2026-05-08
 content_hash: d46212b66ebe6911
 ---

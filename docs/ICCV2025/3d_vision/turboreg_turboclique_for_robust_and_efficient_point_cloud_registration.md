@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TurboReg: TurboClique for Robust and Efficient Point Cloud Registration
 description: >-
-  [ICCV 2025][3D Vision][Point cloud registration] TurboReg is proposed, a framework that replaces traditional maximum clique enumeration with lightweight 3-cliques (TurboCliques) and introduces a highly parallelizable Pivot-Guided Search (PGS) algorithm, achieving state-of-the-art registration accuracy while delivering over 208× speedup.
+  [ICCV 2025][3D Vision][Point cloud registration] TurboReg is proposed, a framework that replaces traditional maximum clique enumeration with lightweight 3-cliques (TurboCliques) and introduces a highly parallelizable Piv…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Point cloud registration
-  - graph matching
-  - maximum clique search
-  - spatial consistency
-  - robust estimation
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Point cloud registration"
+  - "graph matching"
+  - "maximum clique search"
+  - "spatial consistency"
+  - "robust estimation"
 date: 2026-05-08
 content_hash: d40aaa0134423064
 ---

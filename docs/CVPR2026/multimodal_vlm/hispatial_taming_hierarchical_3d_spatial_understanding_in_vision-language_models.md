@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HiSpatial: Taming Hierarchical 3D Spatial Understanding in Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][3D spatial understanding] HiSpatial decomposes 3D spatial intelligence into four cognitive levels (geometric perception → object attributes → inter-object relations → abstract reasoning), constructs an automated data pipeline processing ~5M images, 45M objects, and 2B QA pairs, and designs an RGB-D VLM that takes metric-scale point cloud maps as auxiliary input. With only 3B parameters, it surpasses GPT-5 and Gemini-2.5-Pro on multiple spatial reasoning benchmarks.
+  [CVPR 2026][Multimodal VLM][3D spatial understanding] HiSpatial decomposes 3D spatial intelligence into four cognitive levels (geometric perception → object attributes → inter-object relations → abstract reasoning)…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - 3D spatial understanding
-  - vision-language models
-  - hierarchical task design
-  - point cloud maps
-  - spatial reasoning
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "3D spatial understanding"
+  - "vision-language models"
+  - "hierarchical task design"
+  - "point cloud maps"
+  - "spatial reasoning"
 date: 2026-05-08
 content_hash: e6b3540b612a4101
 ---

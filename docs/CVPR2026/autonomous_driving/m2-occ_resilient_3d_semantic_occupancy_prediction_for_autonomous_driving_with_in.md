@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] M²-Occ: Resilient 3D Semantic Occupancy Prediction for Autonomous Driving with Incomplete Camera Inputs
 description: >-
-  [CVPR 2026][Autonomous Driving][Semantic occupancy prediction] M²-Occ addresses real-world scenarios where camera failures cause missing views by proposing MMR (reconstructing missing view representations in feature space using adjacent camera FoV overlaps) and FMM (refining ambiguous voxel features via a learnable semantic prototype memory bank). On the SurroundOcc baseline, it achieves +4.93% IoU when the rear camera is missing, maintains 18.36% IoU under five missing cameras (versus a baseline collapse to 13.35%), and does not compromise performance under complete-view inputs.
+  [CVPR 2026][Autonomous Driving][Semantic occupancy prediction] M²-Occ addresses real-world scenarios where camera failures cause missing views by proposing MMR (reconstructing missing view representations in feature spac…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Semantic occupancy prediction
-  - sensor failure
-  - missing view reconstruction
-  - semantic prototypes
-  - robust perception
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Semantic occupancy prediction"
+  - "sensor failure"
+  - "missing view reconstruction"
+  - "semantic prototypes"
+  - "robust perception"
 date: 2026-05-08
 content_hash: 84358337080c955d
 ---

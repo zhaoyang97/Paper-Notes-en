@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CosmoBench: A Multiscale, Multiview, Multitask Cosmology Benchmark for Geometric Deep Learning
 description: >-
-  [NeurIPS 2025][3D Vision][geometric deep learning] This paper introduces CosmoBench—the largest cosmological geometric deep learning benchmark to date—comprising 34,752 point clouds and 24,996 directed trees across multiple scales, viewpoints, and tasks. A key finding is that simple linear models sometimes outperform large GNNs.
+  [NeurIPS 2025][3D Vision][geometric deep learning] This paper introduces CosmoBench—the largest cosmological geometric deep learning benchmark to date—comprising 34,752 point clouds and 24…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - geometric deep learning
-  - cosmology benchmark
-  - point cloud
-  - graph neural network
-  - merger tree
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "geometric deep learning"
+  - "cosmology benchmark"
+  - "point cloud"
+  - "graph neural network"
+  - "merger tree"
 date: 2026-05-08
 content_hash: 5d77dd7f40ffe5e4
 ---

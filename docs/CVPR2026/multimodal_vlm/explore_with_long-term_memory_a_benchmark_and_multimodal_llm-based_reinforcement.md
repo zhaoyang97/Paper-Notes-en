@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Explore with Long-term Memory: A Benchmark and Multimodal LLM-based Reinforcement Learning Framework for Embodied Exploration
 description: >-
-  [CVPR 2026][Multimodal VLM][Embodied Exploration] This paper proposes the LMEE benchmark and the MemoryExplorer framework, which jointly evaluate the process and outcome of embodied exploration by unifying multi-object navigation with memory-based question answering. By fine-tuning an MLLM via reinforcement learning to actively invoke memory retrieval tools, the method achieves an SR of 23.53% on LMEE-Bench (surpassing 3D-Mem's 16.91%) and an SR of 46.40% on GOAT-Bench.
+  [CVPR 2026][Multimodal VLM][Embodied Exploration] This paper proposes the LMEE benchmark and the MemoryExplorer framework, which jointly evaluate the process and outcome of embodied exploration by unifying multi-object n…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Embodied Exploration
-  - Long-term Memory
-  - Multi-object Navigation
-  - Reinforcement Learning Fine-tuning
-  - Memory Retrieval
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Embodied Exploration"
+  - "Long-term Memory"
+  - "Multi-object Navigation"
+  - "Reinforcement Learning Fine-tuning"
+  - "Memory Retrieval"
 date: 2026-05-08
 content_hash: 25c316cc50dc0a3b
 ---

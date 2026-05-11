@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] StreamReady: Learning What to Answer and When in Long Streaming Videos
 description: >-
-  [CVPR 2026][Video Understanding][Streaming video understanding] This paper introduces a readiness-aware paradigm for streaming video understanding. By incorporating a learnable `<RDY>` token and proposing the Answer Readiness Score (ARS) metric, the model is trained not only to produce correct answers but also to respond at the appropriate moment when sufficient evidence has appeared. The approach achieves state-of-the-art results on 9 streaming and offline video benchmarks.
+  [CVPR 2026][Video Understanding][Streaming video understanding] This paper introduces a readiness-aware paradigm for streaming video understanding. By incorporating a learnable `&lt;RDY>` token and proposing the Answer Read…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Streaming video understanding
-  - answer readiness
-  - temporal reasoning
-  - multimodal large language models
-  - proactive question answering
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Streaming video understanding"
+  - "answer readiness"
+  - "temporal reasoning"
+  - "multimodal large language models"
+  - "proactive question answering"
 date: 2026-05-08
 content_hash: b7b987cca445dea8
 ---

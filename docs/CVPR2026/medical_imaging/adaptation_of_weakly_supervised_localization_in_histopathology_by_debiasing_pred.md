@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Adaptation of Weakly Supervised Localization in Histopathology by Debiasing Predictions
 description: >-
-  [CVPR 2026][Medical Imaging][WSOL] This paper proposes SFDA-DeP, a method inspired by machine unlearning that reformulates SFDA as an iterative process of "identifying and correcting prediction bias." It applies a forgetting operation to high-entropy uncertain samples from the dominant class to force the model to abandon biased predictions, maintains self-training on reliable samples, and anchors localization capacity via a pixel-level classifier. The method consistently outperforms existing SFDA approaches on cross-organ and cross-center histopathology benchmarks.
+  [CVPR 2026][Medical Imaging][WSOL] This paper proposes SFDA-DeP, a method inspired by machine unlearning that reformulates SFDA as an iterative process of "identifying and correcting prediction bias." It applies a forget…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - WSOL
-  - Source-Free Domain Adaptation
-  - Prediction Debiasing
-  - Machine Unlearning
-  - Histopathology
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "WSOL"
+  - "Source-Free Domain Adaptation"
+  - "Prediction Debiasing"
+  - "Machine Unlearning"
+  - "Histopathology"
 date: 2026-05-08
 content_hash: 9f4f66d7347fed8c
 ---

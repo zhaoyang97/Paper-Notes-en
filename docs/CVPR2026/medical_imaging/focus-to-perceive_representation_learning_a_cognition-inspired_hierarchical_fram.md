@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Focus-to-Perceive Representation Learning: A Cognition-Inspired Hierarchical Framework for Endoscopic Video Analysis
 description: >-
-  [CVPR 2026][Medical Imaging][Self-supervised learning] FPRL is proposed as a clinically-inspired hierarchical self-supervised framework that mitigates motion bias by first "focusing" on intra-frame lesion-centric static semantics and then "perceiving" inter-frame contextual evolution, achieving state-of-the-art performance across 11 endoscopic datasets.
+  [CVPR 2026][Medical Imaging][Self-supervised learning] FPRL is proposed as a clinically-inspired hierarchical self-supervised framework that mitigates motion bias by first "focusing" on intra-frame lesion-centric static…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Self-supervised learning
-  - endoscopic video
-  - hierarchical semantic modeling
-  - masked reconstruction
-  - Mamba
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Self-supervised learning"
+  - "endoscopic video"
+  - "hierarchical semantic modeling"
+  - "masked reconstruction"
+  - "Mamba"
 date: 2026-05-08
 content_hash: 191d5eda3638db68
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ScaleDiff: Higher-Resolution Image Synthesis via Efficient and Model-Agnostic Diffusion
 description: >-
-  [NeurIPS 2025][Image Generation][High-resolution generation] ScaleDiff is a framework that eliminates redundant overlap computation in conventional patch-based methods via Neighborhood Patch Attention (NPA). Combined with Latent Frequency Mixing (LFM) and Structure Guidance (SG), it extends pretrained diffusion models to high resolutions (e.g., 4096²) without any additional training, achieving state-of-the-art quality among training-free methods and significant inference acceleration (8.9× faster than DemoFusion) on both U-Net and DiT architectures.
+  [NeurIPS 2025][Image Generation][High-resolution generation] ScaleDiff is a framework that eliminates redundant overlap computation in conventional patch-based methods via Neighborhood Patch Attention (NPA). Combined wit…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - High-resolution generation
-  - Training-free
-  - Patch attention
-  - Frequency mixing
-  - Structure guidance
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "High-resolution generation"
+  - "Training-free"
+  - "Patch attention"
+  - "Frequency mixing"
+  - "Structure guidance"
 date: 2026-05-08
 content_hash: 2c7e47fa171d131e
 ---

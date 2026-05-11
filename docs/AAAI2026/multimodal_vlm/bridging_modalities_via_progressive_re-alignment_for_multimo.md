@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Bridging Modalities via Progressive Re-alignment for Multimodal Test-Time Adaptation (BriMPR)
 description: >-
-  [AAAI 2026][Multimodal VLM][Multimodal test-time adaptation] This paper proposes BriMPR, a framework that decomposes multimodal test-time adaptation (MMTTA) into multiple unimodal feature alignment subproblems via a divide-and-conquer strategy. It first calibrates the global feature distribution of each modality through prompt tuning to achieve initial cross-modal semantic alignment, then refines the alignment via cross-modal masked embedding recombination and instance-level contrastive learning.
+  [AAAI 2026][Multimodal VLM][Multimodal test-time adaptation] This paper proposes BriMPR, a framework that decomposes multimodal test-time adaptation (MMTTA) into multiple unimodal feature alignment subproblems via a divi…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Multimodal test-time adaptation
-  - cross-modal alignment
-  - prompt tuning
-  - contrastive learning
-  - distribution calibration
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Multimodal test-time adaptation"
+  - "cross-modal alignment"
+  - "prompt tuning"
+  - "contrastive learning"
+  - "distribution calibration"
 date: 2026-05-08
 content_hash: 6318370c15a7b5dc
 ---

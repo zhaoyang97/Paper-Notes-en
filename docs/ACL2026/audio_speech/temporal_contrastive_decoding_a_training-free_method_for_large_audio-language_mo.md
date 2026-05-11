@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Temporal Contrastive Decoding: A Training-Free Method for Large Audio-Language Models
 description: >-
-  [ACL 2026][Audio & Speech][audio-language models] This paper proposes TCD, a training-free inference-time decoding method that contrasts logits from the original audio path against a temporally blurred slow path, combined with stability-guided blur window selection and uncertainty-based gating, to help unified audio-language models better exploit transient acoustic cues. Consistent improvements are demonstrated on MMAU and AIR-Bench.
+  [ACL 2026][Audio & Speech][audio-language models] This paper proposes TCD, a training-free inference-time decoding method that contrasts logits from the original audio path against a temporally blurred slow path…
 tags:
-  - ACL 2026
+  - "ACL 2026"
   - "Audio & Speech"
-  - audio-language models
-  - contrastive decoding
-  - temporal smoothing bias
-  - training-free inference
-  - gated update
+  - "audio-language models"
+  - "contrastive decoding"
+  - "temporal smoothing bias"
+  - "training-free inference"
+  - "gated update"
 date: 2026-05-08
 content_hash: 92cc4efb48833aeb
 ---

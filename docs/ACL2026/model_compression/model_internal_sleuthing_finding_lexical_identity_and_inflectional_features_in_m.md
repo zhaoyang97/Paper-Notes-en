@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Model Internal Sleuthing: Finding Lexical Identity and Inflectional Features in Modern Language Models
 description: >-
-  [ACL 2026][Model Compression][linguistic probing] This paper systematically probes 25 Transformer language models (ranging from BERT Base to Qwen2.5-7B) and finds that lexical identity (lexeme) is linearly decodable in early layers but decays with depth, while inflectional features remain stably readable across all layers and occupy compact, controllable subspaces.
+  [ACL 2026][Model Compression][linguistic probing] This paper systematically probes 25 Transformer language models (ranging from BERT Base to Qwen2.5-7B) and finds that lexical identity (lexeme) is linearly decodable in e…
 tags:
-  - ACL 2026
-  - Model Compression
-  - linguistic probing
-  - lexical identity
-  - inflectional features
-  - representational geometry
-  - cross-lingual analysis
+  - "ACL 2026"
+  - "Model Compression"
+  - "linguistic probing"
+  - "lexical identity"
+  - "inflectional features"
+  - "representational geometry"
+  - "cross-lingual analysis"
 date: 2026-05-08
 content_hash: b5527b71a1a1e7bc
 ---

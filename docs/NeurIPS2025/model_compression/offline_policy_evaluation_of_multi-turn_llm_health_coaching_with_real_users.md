@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Offline Policy Evaluation of Multi-Turn LLM Health Coaching with Real Users
 description: >-
-  [NeurIPS 2025 Workshop (Multi-Turn Interactions in Large Language Models)][Model Compression][Offline Policy Evaluation] This paper conducts offline policy evaluation (OPE) on a deployed LLM health coaching system with real users. It finds that a uniformly high tool-use policy improves average reward but harms specific user subgroups. Through simulator experiments, the paper further validates that early information-gain exploration (curiosity reward) accelerates user profile identification and improves task success rates.
+  [NeurIPS 2025 Workshop (Multi-Turn Interactions in Large Language Models)][Model Compression][Offline Policy Evaluation] This paper conducts offline policy evaluation (OPE) on a deployed LLM health coaching system with r…
 tags:
-  - NeurIPS 2025 Workshop (Multi-Turn Interactions in Large Language Models)
-  - Model Compression
-  - Offline Policy Evaluation
-  - LLM Health Coaching
-  - Multi-Turn Dialogue
-  - Personalization
-  - POMDP
+  - "NeurIPS 2025 Workshop (Multi-Turn Interactions in Large Language Models)"
+  - "Model Compression"
+  - "Offline Policy Evaluation"
+  - "LLM Health Coaching"
+  - "Multi-Turn Dialogue"
+  - "Personalization"
+  - "POMDP"
 date: 2026-05-08
 content_hash: 597b2255d00cefda
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] 3DID: Direct 3D Inverse Design for Aerodynamics with Physics-Aware Optimization
 description: >-
-  [NeurIPS 2025][3D inverse design] This paper proposes the 3DID framework, which learns a unified physics-geometry triplane latent representation, performs objective-gradient-guided diffusion sampling, and applies a two-stage topology-preserving refinement strategy to conduct inverse design directly in the full 3D space starting from random noise. On vehicle aerodynamic shape optimization, 3DID reduces simulated drag (Sim-Drag) by 13.6% compared to the best baseline.
+  [NeurIPS 2025][3D inverse design] This paper proposes the 3DID framework, which learns a unified physics-geometry triplane latent representation, performs objective-gradient-guided diffusion sampling…
 tags:
-  - NeurIPS 2025
-  - 3D inverse design
-  - diffusion model
-  - aerodynamic optimization
-  - physics-geometry representation
-  - topology-preserving refinement
+  - "NeurIPS 2025"
+  - "3D inverse design"
+  - "diffusion model"
+  - "aerodynamic optimization"
+  - "physics-geometry representation"
+  - "topology-preserving refinement"
 date: 2026-05-08
 content_hash: 57312d8141f90e91
 ---

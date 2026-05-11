@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] tttLRM: Test-Time Training for Long Context and Autoregressive 3D Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][3D Reconstruction] tttLRM is the first work to introduce Test-Time Training (TTT) into large-scale 3D reconstruction models. It leverages LaCT layers to achieve long-context and autoregressive 3D Gaussian reconstruction at linear complexity. Multi-view observations are compressed into TTT fast weights to form an implicit 3D representation, which is then decoded into explicit formats such as 3DGS, achieving state-of-the-art performance on both object-level and scene-level benchmarks.
+  [CVPR 2026][3D Vision][3D Reconstruction] tttLRM is the first work to introduce Test-Time Training (TTT) into large-scale 3D reconstruction models. It leverages LaCT layers to achieve long-context and autoregressive 3D G…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Reconstruction
-  - Test-Time Training
-  - Large Reconstruction Model
-  - Gaussian Splatting
-  - Autoregressive Reconstruction
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Reconstruction"
+  - "Test-Time Training"
+  - "Large Reconstruction Model"
+  - "Gaussian Splatting"
+  - "Autoregressive Reconstruction"
 date: 2026-05-08
 content_hash: c2fc95046bf8f046
 ---

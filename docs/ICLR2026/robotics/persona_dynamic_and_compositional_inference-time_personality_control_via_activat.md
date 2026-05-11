@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PERSONA: Dynamic and Compositional Inference-Time Personality Control via Activation Vector Algebra
 description: >-
-  [ICLR 2026][Robotics][personality control] This paper proposes the PERSONA framework, which extracts approximately orthogonal personality vectors from activation space and applies vector algebra operations (scaling, addition, subtraction) to achieve training-free dynamic and compositional personality control. PERSONA attains a score of 9.60 on PersonalityBench, nearly matching the SFT upper bound of 9.61.
+  [ICLR 2026][Robotics][personality control] This paper proposes the PERSONA framework, which extracts approximately orthogonal personality vectors from activation space and applies vector algebra operations (scaling…
 tags:
-  - ICLR 2026
-  - Robotics
-  - personality control
-  - activation steering
-  - vector algebra
-  - inference-time
-  - Big Five
+  - "ICLR 2026"
+  - "Robotics"
+  - "personality control"
+  - "activation steering"
+  - "vector algebra"
+  - "inference-time"
+  - "Big Five"
 date: 2026-05-08
 content_hash: 163a80ddc380637b
 ---

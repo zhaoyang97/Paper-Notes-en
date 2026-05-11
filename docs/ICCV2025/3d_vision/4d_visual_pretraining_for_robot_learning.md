@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] 4D Visual Pre-training for Robot Learning
 description: >-
-  [ICCV 2025][3D Vision][Point cloud pre-training] FVP formulates 3D visual pre-training as a *next-point-cloud-prediction* problem, training a conditional diffusion model to predict the current-frame point cloud from historical-frame point clouds. This approach achieves a 28% average success rate improvement over DP3 across 12 real-world manipulation tasks, establishing a new state of the art.
+  [ICCV 2025][3D Vision][Point cloud pre-training] FVP formulates 3D visual pre-training as a *next-point-cloud-prediction* problem, training a conditional diffusion model to predict the current-frame point cloud from hist…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Point cloud pre-training
-  - diffusion models
-  - imitation learning
-  - 3D representation learning
-  - robot manipulation
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Point cloud pre-training"
+  - "diffusion models"
+  - "imitation learning"
+  - "3D representation learning"
+  - "robot manipulation"
 date: 2026-05-08
 content_hash: 40a499f276c05691
 ---

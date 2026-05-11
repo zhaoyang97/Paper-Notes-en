@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Specialization after Generalization: Towards Understanding Test-Time Training in Foundation Models
 description: >-
-  [ICLR 2026][Model Compression][Test-Time Training] Grounded in the Linear Representation Hypothesis (LRH), this paper proposes a theoretical framework termed *specialization after generalization*, providing the first systematic explanation of why TTT is effective under in-distribution settings. Foundation models suffer from concept superposition due to global underparameterization; TTT temporarily forgets irrelevant concepts to free model capacity, locally specializing to the small set of concepts relevant to the test task. The theory guarantees generalization even when the feature space is exponentially smaller than the concept space.
+  [ICLR 2026][Model Compression][Test-Time Training] Grounded in the Linear Representation Hypothesis (LRH), this paper proposes a theoretical framework termed *specialization after generalization*…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Test-Time Training
-  - Linear Representation Hypothesis
-  - Sparse Autoencoders
-  - Specialization after Generalization
-  - Foundation Models
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Test-Time Training"
+  - "Linear Representation Hypothesis"
+  - "Sparse Autoencoders"
+  - "Specialization after Generalization"
+  - "Foundation Models"
 date: 2026-05-08
 content_hash: a7ab91bb9e4d859d
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Text2VDM: Text to Vector Displacement Maps for Expressive and Interactive 3D Sculpting
 description: >-
-  [ICCV 2025][3D Vision][VDM brush generation] Text2VDM is proposed as the first framework for generating VDM sculpting brushes from text. It addresses the semantic entanglement problem in sub-object structure generation via Sobolev-preconditioned mesh deformation and a semantically enhanced SDS loss.
+  [ICCV 2025][3D Vision][VDM brush generation] Text2VDM is proposed as the first framework for generating VDM sculpting brushes from text. It addresses the semantic entanglement problem in sub-object structure generation v…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - VDM brush generation
-  - Score Distillation
-  - semantic enhancement
-  - mesh deformation
-  - 3D modeling
+  - "ICCV 2025"
+  - "3D Vision"
+  - "VDM brush generation"
+  - "Score Distillation"
+  - "semantic enhancement"
+  - "mesh deformation"
+  - "3D modeling"
 date: 2026-05-08
 content_hash: 81291bc95b68b90d
 ---

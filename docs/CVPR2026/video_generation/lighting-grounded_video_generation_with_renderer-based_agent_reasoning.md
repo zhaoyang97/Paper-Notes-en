@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Lighting-grounded Video Generation with Renderer-based Agent Reasoning
 description: >-
-  [CVPR 2026][Video Generation][Lighting-controllable video generation] LiVER proposes a lighting-driven video generation framework that employs a renderer-based agent to translate textual descriptions into explicit 3D scene proxies (encompassing layout, lighting, and camera trajectories). Physical rendering is then used to produce diffuse/glossy/rough GGX scene proxies, which are injected into a video diffusion model to achieve physically accurate lighting effects and precise scene control.
+  [CVPR 2026][Video Generation][Lighting-controllable video generation] LiVER proposes a lighting-driven video generation framework that employs a renderer-based agent to translate textual descriptions into explicit 3D sce…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Lighting-controllable video generation
-  - 3D scene agent
-  - physical rendering
-  - diffusion model
-  - scene agent
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Lighting-controllable video generation"
+  - "3D scene agent"
+  - "physical rendering"
+  - "diffusion model"
+  - "scene agent"
 date: 2026-05-08
 content_hash: 1e2b314127377e50
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Think, Speak, Decide: Language-Augmented Multi-Agent Reinforcement Learning for Economic Decision-Making
 description: >-
-  [AAAI 2026][Reinforcement Learning][Multi-Agent Reinforcement Learning] This paper proposes the LAMP framework, which integrates LLM-driven language reasoning with MARL policy optimization through a Think–Speak–Decide three-stage pipeline. The framework enables economic decision-making agents to understand and leverage natural language information (e.g., news, dialogues), achieving cumulative returns exceeding pure MARL baselines by 63.5% and LLM-only baselines by 34.0% in economic simulation environments.
+  [AAAI 2026][Reinforcement Learning][Multi-Agent Reinforcement Learning] This paper proposes the LAMP framework, which integrates LLM-driven language reasoning with MARL policy optimization through a Think–Speak–Decide th…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - Multi-Agent Reinforcement Learning
-  - Large Language Models
-  - Economic Decision-Making
-  - Language-Augmented Policy
-  - Communication
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "Multi-Agent Reinforcement Learning"
+  - "Large Language Models"
+  - "Economic Decision-Making"
+  - "Language-Augmented Policy"
+  - "Communication"
 date: 2026-05-08
 content_hash: 57d7c701b7d632bf
 ---

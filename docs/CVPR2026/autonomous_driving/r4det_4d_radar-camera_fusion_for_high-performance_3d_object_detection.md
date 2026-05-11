@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] R4Det: 4D Radar-Camera Fusion for High-Performance 3D Object Detection
 description: >-
-  [CVPR 2026][Autonomous Driving][4D millimeter-wave radar] This paper proposes R4Det, which systematically addresses three core challenges in 4D radar-camera fusion—inaccurate depth estimation, pose-free temporal fusion, and small object detection—through three plug-and-play BEV modules: Panoramic Depth Fusion (PDF), Deformable Gated Temporal Fusion (DGTF), and Instance-Guided Dynamic Refinement (IGDR). R4Det achieves 47.29% 3D mAP (+5.47%) on TJ4DRadSet and 66.69% mAP on VoD.
+  [CVPR 2026][Autonomous Driving][4D millimeter-wave radar] This paper proposes R4Det, which systematically addresses three core challenges in 4D radar-camera fusion—inaccurate depth estimation, pose-free temporal fusion…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - 4D millimeter-wave radar
-  - radar-camera fusion
-  - 3D object detection
-  - depth estimation
-  - temporal fusion
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "4D millimeter-wave radar"
+  - "radar-camera fusion"
+  - "3D object detection"
+  - "depth estimation"
+  - "temporal fusion"
 date: 2026-05-08
 content_hash: 28618b93a95da57a
 ---

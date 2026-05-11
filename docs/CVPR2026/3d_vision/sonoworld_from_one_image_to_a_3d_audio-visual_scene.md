@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SonoWorld: From One Image to a 3D Audio-Visual Scene
 description: >-
-  [CVPR 2026][3D Vision][3D audio-visual scene] SonoWorld is proposed as a training-free framework that generates an explorable 3D audio-visual scene from a single image. The pipeline expands the input image into a 360° panorama and reconstructs it as a 3D Gaussian scene, places sound-source anchors via VLM-driven semantic grounding, and renders spatial audio through Ambisonics encoding, achieving geometric and semantic alignment between the visual and auditory modalities.
+  [CVPR 2026][3D Vision][3D audio-visual scene] SonoWorld is proposed as a training-free framework that generates an explorable 3D audio-visual scene from a single image. The pipeline expands the input image into a 360° pa…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D audio-visual scene
-  - spatial audio generation
-  - panorama reconstruction
-  - Ambisonics encoding
-  - single-image generation
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D audio-visual scene"
+  - "spatial audio generation"
+  - "panorama reconstruction"
+  - "Ambisonics encoding"
+  - "single-image generation"
 date: 2026-05-08
 content_hash: 446093f8b6288c98
 ---

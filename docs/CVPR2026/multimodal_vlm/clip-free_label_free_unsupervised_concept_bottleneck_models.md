@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] CLIP-Free, Label-Free, Unsupervised Concept Bottleneck Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Concept Bottleneck Model] This paper proposes TextUnlock, a method that aligns the output distribution of an arbitrary frozen visual classifier to a vision-language correspondence space, enabling the construction of a fully unsupervised Concept Bottleneck Model (U-F²-CBM) that requires no CLIP, no labels, and no trained linear probes. U-F²-CBM surpasses supervised CLIP-based CBMs across 40+ models.
+  [CVPR 2026][Multimodal VLM][Concept Bottleneck Model] This paper proposes TextUnlock, a method that aligns the output distribution of an arbitrary frozen visual classifier to a vision-language correspondence space…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Concept Bottleneck Model
-  - Interpretability
-  - Knowledge Distillation
-  - Unsupervised Classification
-  - Vision-Language Alignment
-  - Zero-Shot Image Captioning
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Concept Bottleneck Model"
+  - "Interpretability"
+  - "Knowledge Distillation"
+  - "Unsupervised Classification"
+  - "Vision-Language Alignment"
+  - "Zero-Shot Image Captioning"
 date: 2026-05-08
 content_hash: c623425ea363985c
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SemanticVLA: Semantic-Aligned Sparsification and Enhancement for Efficient Robotic Manipulation
 description: >-
-  [AAAI 2026][Robotics][VLA models] This paper proposes the SemanticVLA framework, which integrates three modules — a Semantic-guided Dual-encoder Pruner (SD-Pruner), a Semantic-complementary Hierarchical Fuser (SH-Fuser), and a Semantic-conditioned Action Coupler (SA-Coupler) — to substantially reduce visual redundancy while enhancing instruction–vision–action alignment. On the LIBERO benchmark, SemanticVLA achieves a 97.7% success rate, surpassing OpenVLA by 21.1%, while reducing training cost and inference latency by 3.0× and 2.7×, respectively.
+  [AAAI 2026][Robotics][VLA models] This paper proposes the SemanticVLA framework, which integrates three modules — a Semantic-guided Dual-encoder Pruner (SD-Pruner), a Semantic-complementary Hierarchical Fuser (SH-Fuser)…
 tags:
-  - AAAI 2026
-  - Robotics
-  - VLA models
-  - visual sparsification
-  - robotic manipulation
-  - semantic alignment
-  - efficient inference
+  - "AAAI 2026"
+  - "Robotics"
+  - "VLA models"
+  - "visual sparsification"
+  - "robotic manipulation"
+  - "semantic alignment"
+  - "efficient inference"
 date: 2026-05-08
 content_hash: c8d75db1d42e52c8
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] When Agents "Misremember" Collectively: Exploring the Mandela Effect in LLM-based Multi-Agent Systems
 description: >-
-  [ICLR 2026][Social Computing][Mandela effect] This paper presents the first systematic study of the Mandela effect (collective false memory) in LLM-based multi-agent systems. It introduces the ManBench benchmark (4,838 questions, 5 interaction protocols), demonstrates that all 13 evaluated LLMs are susceptible to this effect, and proposes prompt-level and model-level mitigation strategies that reduce false memory by 74.40% on average.
+  [ICLR 2026][Social Computing][Mandela effect] This paper presents the first systematic study of the Mandela effect (collective false memory) in LLM-based multi-agent systems. It introduces the ManBench benchmark (4…
 tags:
-  - ICLR 2026
-  - Social Computing
-  - Mandela effect
-  - multi-agent systems
-  - collective false memory
-  - cognitive bias
-  - misinformation
+  - "ICLR 2026"
+  - "Social Computing"
+  - "Mandela effect"
+  - "multi-agent systems"
+  - "collective false memory"
+  - "cognitive bias"
+  - "misinformation"
 date: 2026-05-08
 content_hash: f72da46349b9a08f
 ---

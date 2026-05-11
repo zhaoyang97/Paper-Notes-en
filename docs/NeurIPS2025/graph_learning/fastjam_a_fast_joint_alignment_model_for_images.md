@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FastJAM: a Fast Joint Alignment Model for Images
 description: >-
-  [NeurIPS 2025][Graph Learning][Joint image alignment] FastJAM is a graph-based fast joint image alignment method that computes pairwise keypoint correspondences using off-the-shelf image matchers, constructs a keypoint graph via fast non-parametric clustering, employs a GNN to propagate and aggregate information for predicting per-image homography parameters, and adopts an inverse-compositional loss to eliminate the need for regularization hyperparameters. It reduces joint alignment time from hours/minutes to approximately 49 seconds while achieving alignment quality superior to or on par with existing methods.
+  [NeurIPS 2025][Graph Learning][Joint image alignment] FastJAM is a graph-based fast joint image alignment method that computes pairwise keypoint correspondences using off-the-shelf image matchers…
 tags:
-  - NeurIPS 2025
-  - Graph Learning
-  - Joint image alignment
-  - graph neural networks
-  - homography estimation
-  - non-parametric clustering
-  - inverse-compositional loss
+  - "NeurIPS 2025"
+  - "Graph Learning"
+  - "Joint image alignment"
+  - "graph neural networks"
+  - "homography estimation"
+  - "non-parametric clustering"
+  - "inverse-compositional loss"
 date: 2026-05-08
 content_hash: 77779b47710baabb
 ---

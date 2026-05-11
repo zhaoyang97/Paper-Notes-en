@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unveiling Chain of Step Reasoning for Vision-Language Models with Fine-grained Rewards
 description: >-
-  [NeurIPS 2025][Multimodal VLM][chain-of-step] This paper proposes the Chain-of-Step (CoS) reasoning framework, which decomposes VLM reasoning chains into structured steps consisting of Name, Thought, and Reflection components. A step-level Process Reward Model (PRM) is trained to provide fine-grained reward signals. Combined with iterative DPO and step-level beam search, the framework systematically improves VLM reasoning—achieving an average of 73.4% (+4.0%) across 6 benchmarks on InternVL-2.5-MPO-8B and 64.2% (+12.1%) on LLaVA-NeXT-8B—while revealing the counterintuitive finding that quality matters far more than length in VLM reasoning, contrary to trends observed in LLM research.
+  [NeurIPS 2025][Multimodal VLM][chain-of-step] This paper proposes the Chain-of-Step (CoS) reasoning framework, which decomposes VLM reasoning chains into structured steps consisting of Name, Thought…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - chain-of-step
-  - process reward model
-  - step-level reasoning
-  - iterative DPO
-  - inference-time scaling
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "chain-of-step"
+  - "process reward model"
+  - "step-level reasoning"
+  - "iterative DPO"
+  - "inference-time scaling"
 date: 2026-05-08
 content_hash: c3de1035cd23e821
 ---

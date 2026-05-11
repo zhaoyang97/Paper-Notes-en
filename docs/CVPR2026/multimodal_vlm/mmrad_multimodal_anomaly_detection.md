@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MMR-AD: A Large-Scale Multimodal Dataset for Benchmarking General Anomaly Detection with MLLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][Anomaly Detection] MMR-AD constructs the largest multimodal reasoning-oriented industrial anomaly detection dataset to date (127K images, 188 product categories, 395 anomaly types) and proposes Anomaly-R1, a GRPO reinforcement learning-based baseline model that significantly outperforms general-purpose MLLMs.
+  [CVPR 2026][Multimodal VLM][Anomaly Detection] MMR-AD constructs the largest multimodal reasoning-oriented industrial anomaly detection dataset to date (127K images, 188 product categories…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Anomaly Detection
-  - Multimodal Large Language Models
-  - Reasoning Dataset
-  - Reinforcement Learning
-  - General Anomaly Detection
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Anomaly Detection"
+  - "Multimodal Large Language Models"
+  - "Reasoning Dataset"
+  - "Reinforcement Learning"
+  - "General Anomaly Detection"
 date: 2026-05-08
 content_hash: cd8d120c5d84bbce
 ---

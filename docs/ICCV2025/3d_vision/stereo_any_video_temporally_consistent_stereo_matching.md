@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Stereo Any Video: Temporally Consistent Stereo Matching
 description: >-
-  [ICCV2025][3D Vision][Video stereo matching] This paper proposes Stereo Any Video, a framework that achieves spatially accurate and temporally consistent video stereo matching without relying on camera poses or optical flow. It integrates three core modules — monocular video depth foundation model priors (Video Depth Anything), all-to-all-pair correlation, and temporal convex upsampling — attaining state-of-the-art performance under zero-shot settings across multiple benchmarks.
+  [ICCV2025][3D Vision][Video stereo matching] This paper proposes Stereo Any Video, a framework that achieves spatially accurate and temporally consistent video stereo matching without relying on camera poses or optical f…
 tags:
-  - ICCV2025
-  - 3D Vision
-  - Video stereo matching
-  - temporal consistency
-  - monocular depth prior
-  - cost volume
-  - disparity estimation
+  - "ICCV2025"
+  - "3D Vision"
+  - "Video stereo matching"
+  - "temporal consistency"
+  - "monocular depth prior"
+  - "cost volume"
+  - "disparity estimation"
 date: 2026-05-08
 content_hash: b90e47c9e5da3863
 ---

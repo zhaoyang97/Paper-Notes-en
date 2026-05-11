@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Embodied Representation Alignment with Mirror Neurons
 description: >-
-  [ICCV 2025][Robotics][mirror neurons] Inspired by mirror neurons, this paper aligns the intermediate representations of action understanding (observing others' behavior) and embodied execution (autonomously performing actions) into a shared latent space via contrastive learning. The work reveals a spontaneous alignment phenomenon between the two model families that correlates with task success rate, and demonstrates that explicit alignment yields improvements on action recognition (+3.3%) and robot manipulation (+3.5%).
+  [ICCV 2025][Robotics][mirror neurons] Inspired by mirror neurons, this paper aligns the intermediate representations of action understanding (observing others' behavior) and embodied execution (autonomously performing ac…
 tags:
-  - ICCV 2025
-  - Robotics
-  - mirror neurons
-  - representation alignment
-  - embodied execution
-  - action understanding
-  - contrastive learning
+  - "ICCV 2025"
+  - "Robotics"
+  - "mirror neurons"
+  - "representation alignment"
+  - "embodied execution"
+  - "action understanding"
+  - "contrastive learning"
 date: 2026-05-08
 content_hash: 96f49414d86cb0f5
 ---

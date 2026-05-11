@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Reducing Class-Wise Performance Disparity via Margin Regularization
 description: >-
-  [LLM Pretraining] This paper proposes MR2 (Margin Regularization for performance disparity Reduction), which dynamically adjusts class-dependent margins in both the logit and representation spaces. Grounded in theoretically derived generalization bounds, MR2 reduces class-wise performance disparity while simultaneously improving overall accuracy.
+  [LLM Pretraining] This paper proposes MR2 (Margin Regularization for performance disparity Reduction), which dynamically adjusts class-dependent margins in both the logit and representation spaces. Grounded in theoretica…
 tags:
-  - LLM Pretraining
+  - "LLM Pretraining"
 date: 2026-05-08
 content_hash: 0000ff3fbfe5b94c
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Can Natural Image Autoencoders Compactly Tokenize fMRI Volumes for Long-Range Dynamics Modeling?
 description: >-
-  [CVPR 2026][3D Vision][fMRI analysis] This paper proposes TABLeT, which leverages a pretrained 2D natural image autoencoder (DCAE) to compress 3D fMRI volumes into as few as 27 continuous tokens per frame. Paired with a standard Transformer encoder, this enables unprecedented long-range temporal modeling (256 frames), surpassing SOTA voxel-based methods on multiple tasks across UKB, HCP, and ADHD-200, while significantly improving computational efficiency.
+  [CVPR 2026][3D Vision][fMRI analysis] This paper proposes TABLeT, which leverages a pretrained 2D natural image autoencoder (DCAE) to compress 3D fMRI volumes into as few as 27 continuous tokens per frame. Paired with a…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - fMRI analysis
-  - autoencoder transfer
-  - long-sequence modeling
-  - Transformer
-  - masked token modeling
+  - "CVPR 2026"
+  - "3D Vision"
+  - "fMRI analysis"
+  - "autoencoder transfer"
+  - "long-sequence modeling"
+  - "Transformer"
+  - "masked token modeling"
 date: 2026-05-08
 content_hash: ca037e1a3b753cd0
 ---

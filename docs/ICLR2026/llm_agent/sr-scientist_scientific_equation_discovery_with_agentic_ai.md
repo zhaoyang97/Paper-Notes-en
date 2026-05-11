@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SR-Scientist: Scientific Equation Discovery With Agentic AI
 description: >-
-  [ICLR 2026][LLM Agent][symbolic regression] This paper proposes the SR-Scientist framework, which elevates LLMs from simple equation proposers to autonomous AI scientists. By leveraging a code interpreter tool for data analysis and equation evaluation, the framework autonomously discovers scientific equations through long-horizon interactions, with reinforcement learning further enhancing its capabilities.
+  [ICLR 2026][LLM Agent][symbolic regression] This paper proposes the SR-Scientist framework, which elevates LLMs from simple equation proposers to autonomous AI scientists. By leveraging a code interpreter tool for data a…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - symbolic regression
-  - agentic AI
-  - equation discovery
-  - reinforcement-learning
-  - scientific discovery
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "symbolic regression"
+  - "agentic AI"
+  - "equation discovery"
+  - "reinforcement-learning"
+  - "scientific discovery"
 date: 2026-05-08
 content_hash: 8b6498f776eda8c3
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Flow3r: Factored Flow Prediction for Scalable Visual Geometry Learning
 description: >-
-  [CVPR2026][LLM Evaluation][visual geometry] This paper proposes a **Factored Flow Prediction** module that predicts optical flow from the geometric latent of a source view and the pose latent of a target view, enabling unlabeled videos to serve as supervisory signals for 3D geometry learning. The method achieves state-of-the-art performance across 8 benchmarks covering both static and dynamic scenes.
+  [CVPR2026][LLM Evaluation][visual geometry] This paper proposes a **Factored Flow Prediction** module that predicts optical flow from the geometric latent of a source view and the pose latent of a target view…
 tags:
-  - CVPR2026
-  - LLM Evaluation
-  - visual geometry
-  - factored flow
-  - 3D reconstruction
-  - unlabeled video
-  - correspondence learning
-  - dynamic scenes
+  - "CVPR2026"
+  - "LLM Evaluation"
+  - "visual geometry"
+  - "factored flow"
+  - "3D reconstruction"
+  - "unlabeled video"
+  - "correspondence learning"
+  - "dynamic scenes"
 date: 2026-05-08
 content_hash: 0ae3f16fb4a2c89b
 ---

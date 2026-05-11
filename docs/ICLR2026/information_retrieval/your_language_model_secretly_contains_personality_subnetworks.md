@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Your Language Model Secretly Contains Personality Subnetworks
 description: >-
-   This paper proposes extracting persona-specific subnetworks from pretrained LLMs via activation-guided pruning, enabling efficient persona switching without any training, and introduces a contrastive pruning strategy to enhance parameter separation between opposing personas.
+  [Information Retrieval & RAG] This paper proposes extracting persona-specific subnetworks from pretrained LLMs via activation-guided pruning, enabling efficient persona switching without any training…
 tags:
-
+  - "Information Retrieval & RAG"
 date: 2026-05-08
 content_hash: c4198f06fc3f38b0
 ---

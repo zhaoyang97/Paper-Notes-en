@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Noise-Aware Few-Shot Learning through Bi-directional Multi-View Prompt Alignment
 description: >-
-  [CVPR 2026][Multimodal VLM][noisy labels] This paper proposes NA-MVP, a framework that employs bi-directional (clean + noise-aware) multi-view prompt design combined with Unbalanced Optimal Transport (UOT) for fine-grained patch-to-prompt alignment, and applies classical OT for selective label correction on identified noisy samples, consistently outperforming state-of-the-art methods in noisy few-shot learning scenarios.
+  [CVPR 2026][Multimodal VLM][noisy labels] This paper proposes NA-MVP, a framework that employs bi-directional (clean + noise-aware) multi-view prompt design combined with Unbalanced Optimal Transport (UOT) for fine-grain…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - noisy labels
-  - prompt learning
-  - optimal transport
-  - CLIP
-  - few-shot learning
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "noisy labels"
+  - "prompt learning"
+  - "optimal transport"
+  - "CLIP"
+  - "few-shot learning"
 date: 2026-05-08
 content_hash: 8276a0b70decc015
 ---

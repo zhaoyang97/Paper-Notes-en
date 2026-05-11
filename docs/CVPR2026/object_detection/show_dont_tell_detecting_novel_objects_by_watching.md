@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Show, Don't Tell: Detecting Novel Objects by Watching Human Videos
 description: >-
-  [CVPR 2026][Object Detection][novel object detection] This paper proposes the "Show, Don't Tell" paradigm — automatically creating training datasets and training bespoke object detectors by watching human demonstration videos, entirely bypassing language descriptions and prompt engineering. The approach significantly outperforms state-of-the-art open-set/closed-set detectors on novel object recognition in real-world robotic scenarios.
+  [CVPR 2026][Object Detection][novel object detection] This paper proposes the "Show, Don't Tell" paradigm — automatically creating training datasets and training bespoke object detectors by watching human demonstration v…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - novel object detection
-  - self-supervised
-  - human demonstration
-  - bespoke detector
-  - robot manipulation
+  - "CVPR 2026"
+  - "Object Detection"
+  - "novel object detection"
+  - "self-supervised"
+  - "human demonstration"
+  - "bespoke detector"
+  - "robot manipulation"
 date: 2026-05-08
 content_hash: f5fb1eac578b6d07
 ---

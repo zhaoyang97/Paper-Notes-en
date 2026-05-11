@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MoLingo: Motion-Language Alignment for Text-to-Human Motion Generation
 description: >-
-  [CVPR 2026][Human Understanding][text-driven motion generation] MoLingo achieves comprehensive state-of-the-art performance on text-to-human motion generation—across FID, R-Precision, and user studies—by combining a Semantic Alignment Encoder (SAE) with multi-token cross-attention text conditioning, performing masked autoregressive rectified flow in a continuous latent space.
+  [CVPR 2026][Human Understanding][text-driven motion generation] MoLingo achieves comprehensive state-of-the-art performance on text-to-human motion generation—across FID, R-Precision…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - text-driven motion generation
-  - semantically aligned latent space
-  - cross-attention conditioning
-  - autoregressive diffusion
-  - continuous latent space
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "text-driven motion generation"
+  - "semantically aligned latent space"
+  - "cross-attention conditioning"
+  - "autoregressive diffusion"
+  - "continuous latent space"
 date: 2026-05-08
 content_hash: f596b7c921693721
 ---

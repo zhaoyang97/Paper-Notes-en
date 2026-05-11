@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] AirDDE: Multifactor Neural Delay Differential Equations for Air Quality Forecasting
 description: >-
-  [AAAI2026][Time Series][air quality forecasting] The first framework to introduce Neural Delay Differential Equations (NDDE) into air quality forecasting. By incorporating a memory-augmented attention module and a physics-guided delay evolution function, it models delay effects in the continuous-time propagation of pollutants, achieving an average MAE reduction of 8.79% across three datasets.
+  [AAAI2026][Time Series][air quality forecasting] The first framework to introduce Neural Delay Differential Equations (NDDE) into air quality forecasting. By incorporating a memory-augmented attention module and a physic…
 tags:
-  - AAAI2026
-  - Time Series
-  - air quality forecasting
-  - neural delay differential equations
-  - physics-guided
-  - spatiotemporal graph
+  - "AAAI2026"
+  - "Time Series"
+  - "air quality forecasting"
+  - "neural delay differential equations"
+  - "physics-guided"
+  - "spatiotemporal graph"
 date: 2026-05-08
 content_hash: 5f6ed315c09ef7e4
 ---

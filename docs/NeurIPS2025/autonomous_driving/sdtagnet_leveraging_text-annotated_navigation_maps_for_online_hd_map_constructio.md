@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SDTagNet: Leveraging Text-Annotated Navigation Maps for Online HD Map Construction
 description: >-
-  [NeurIPS 2025][Autonomous Driving][HD map] This paper proposes SDTagNet, the first method to encode OpenStreetMap text annotations (road names, lane counts, one-way indicators, etc.) via BERT and to unify all SD map elements (points, polylines, and relations) through a point-level graph Transformer. On long-range HD map construction, SDTagNet achieves +5.9 mAP (+45%) over prior-free baselines and +3.2 mAP (+20%) over existing SD map prior methods.
+  [NeurIPS 2025][Autonomous Driving][HD map] This paper proposes SDTagNet, the first method to encode OpenStreetMap text annotations (road names, lane counts, one-way indicators…
 tags:
-  - NeurIPS 2025
-  - Autonomous Driving
-  - HD map
-  - OpenStreetMap
-  - NLP tag embedding
-  - graph transformer
-  - SD map prior
+  - "NeurIPS 2025"
+  - "Autonomous Driving"
+  - "HD map"
+  - "OpenStreetMap"
+  - "NLP tag embedding"
+  - "graph transformer"
+  - "SD map prior"
 date: 2026-05-08
 content_hash: 5307c1a145c34b9f
 ---

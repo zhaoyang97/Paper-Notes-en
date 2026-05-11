@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] BAMAS: Structuring Budget-Aware Multi-Agent Systems
 description: >-
-  [AAAI 2026][Reinforcement Learning][Budget-Aware] This paper proposes the BAMAS framework, which employs Integer Linear Programming (ILP) to select the optimal LLM combination under budget constraints, and uses a reinforcement learning policy to choose the best collaboration topology (Linear/Star/Feedback/Planner-Driven). BAMAS achieves accuracy comparable to state-of-the-art multi-agent systems on GSM8K, MBPP, and MATH, while reducing costs by up to 86%.
+  [AAAI 2026][Reinforcement Learning][Budget-Aware] This paper proposes the BAMAS framework, which employs Integer Linear Programming (ILP) to select the optimal LLM combination under budget constraints…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - Budget-Aware
-  - Multi-Agent Collaboration
-  - Integer Linear Programming
-  - Topology Selection
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "Budget-Aware"
+  - "Multi-Agent Collaboration"
+  - "Integer Linear Programming"
+  - "Topology Selection"
 date: 2026-05-08
 content_hash: 56bb7e763cec67fb
 ---

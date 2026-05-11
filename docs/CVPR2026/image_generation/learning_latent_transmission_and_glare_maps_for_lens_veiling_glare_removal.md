@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Latent Transmission and Glare Maps for Lens Veiling Glare Removal
 description: >-
-  [CVPR 2026][Image Generation][veiling glare removal] This paper proposes the VeilGen + DeVeiler framework, which employs a physics-guided Stable Diffusion generative model to learn latent transmission and glare maps for synthesizing realistic compound-degradation training data. A restoration network trained under invertible constraints jointly removes aberrations and veiling glare in simplified optical systems.
+  [CVPR 2026][Image Generation][veiling glare removal] This paper proposes the VeilGen + DeVeiler framework, which employs a physics-guided Stable Diffusion generative model to learn latent transmission and glare maps for…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - veiling glare removal
-  - simplified optical systems
-  - Stable Diffusion
-  - physics-guided generation
-  - invertible restoration
+  - "CVPR 2026"
+  - "Image Generation"
+  - "veiling glare removal"
+  - "simplified optical systems"
+  - "Stable Diffusion"
+  - "physics-guided generation"
+  - "invertible restoration"
 date: 2026-05-08
 content_hash: 19a6f6b43903b440
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ManiLong-Shot: Interaction-Aware One-Shot Imitation Learning for Long-Horizon Manipulation
 description: >-
-  [AAAI 2026][Reinforcement Learning][One-shot imitation learning] This paper proposes ManiLong-Shot, a framework comprising three modules—interaction-aware task decomposition, invariant region prediction, and region matching—that generalizes to 20 unseen long-horizon manipulation tasks after training on only 10 short-horizon tasks, achieving a one-shot imitation success rate of 30.2%, a relative improvement of 22.8% over the prior state of the art.
+  [AAAI 2026][Reinforcement Learning][One-shot imitation learning] This paper proposes ManiLong-Shot, a framework comprising three modules—interaction-aware task decomposition, invariant region prediction…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - One-shot imitation learning
-  - long-horizon manipulation
-  - interaction-awareness
-  - invariant regions
-  - task decomposition
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "One-shot imitation learning"
+  - "long-horizon manipulation"
+  - "interaction-awareness"
+  - "invariant regions"
+  - "task decomposition"
 date: 2026-05-08
 content_hash: 775da845e0f738d2
 ---

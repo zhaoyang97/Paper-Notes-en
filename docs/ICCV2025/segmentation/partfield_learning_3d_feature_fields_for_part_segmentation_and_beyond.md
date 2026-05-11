@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PartField: Learning 3D Feature Fields for Part Segmentation and Beyond
 description: >-
-  [ICCV 2025][Segmentation][3D part segmentation] PartField learns a continuous 3D feature field via a feed-forward model, distilling knowledge from mixed 2D/3D part proposals through contrastive learning. It outperforms existing methods by 20%+ on category-agnostic 3D part segmentation while achieving inference speeds orders of magnitude faster.
+  [ICCV 2025][Segmentation][3D part segmentation] PartField learns a continuous 3D feature field via a feed-forward model, distilling knowledge from mixed 2D/3D part proposals through contrastive learning. It outperforms e…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - 3D part segmentation
-  - feature field
-  - contrastive learning
-  - feed-forward model
-  - hierarchical decomposition
+  - "ICCV 2025"
+  - "Segmentation"
+  - "3D part segmentation"
+  - "feature field"
+  - "contrastive learning"
+  - "feed-forward model"
+  - "hierarchical decomposition"
 date: 2026-05-08
 content_hash: 429fcd17ab870d66
 ---

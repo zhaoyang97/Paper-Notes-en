@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BlinkTrack: Feature Tracking over 80 FPS via Events and Images
 description: >-
-  [ICCV 2025][Video Understanding][Event Camera] BlinkTrack introduces a differentiable Kalman filter into a learning framework to address the challenges of asynchronous data association and uncertainty-aware fusion between event cameras and conventional cameras, achieving feature tracking at over 80 FPS with significantly superior performance in occlusion scenarios compared to existing methods.
+  [ICCV 2025][Video Understanding][Event Camera] BlinkTrack introduces a differentiable Kalman filter into a learning framework to address the challenges of asynchronous data association and uncertainty-aware fusion betwee…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - Event Camera
-  - Feature Tracking
-  - Kalman Filter
-  - Multimodal Fusion
-  - High Frame Rate Tracking
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "Event Camera"
+  - "Feature Tracking"
+  - "Kalman Filter"
+  - "Multimodal Fusion"
+  - "High Frame Rate Tracking"
 date: 2026-05-08
 content_hash: 9a6dfe90672b4190
 ---

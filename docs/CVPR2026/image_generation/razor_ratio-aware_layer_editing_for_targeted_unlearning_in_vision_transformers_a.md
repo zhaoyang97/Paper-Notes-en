@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] RAZOR: Ratio-Aware Layer Editing for Targeted Unlearning in Vision Transformers and Diffusion Models
 description: >-
-  [CVPR2026][Image Generation][machine unlearning] This paper proposes RAZOR, a ratio-aware multi-layer/multi-head selective editing framework that enables efficient and precise targeted unlearning in Transformer-based vision models such as CLIP, Stable Diffusion, and VLMs, while preserving overall model performance and quantization robustness.
+  [CVPR2026][Image Generation][machine unlearning] This paper proposes RAZOR, a ratio-aware multi-layer/multi-head selective editing framework that enables efficient and precise targeted unlearning in Transformer-based vis…
 tags:
-  - CVPR2026
-  - Image Generation
-  - machine unlearning
-  - vision transformer
-  - diffusion model
-  - CLIP
-  - model editing
-  - ratio-aware saliency
+  - "CVPR2026"
+  - "Image Generation"
+  - "machine unlearning"
+  - "vision transformer"
+  - "diffusion model"
+  - "CLIP"
+  - "model editing"
+  - "ratio-aware saliency"
 date: 2026-05-08
 content_hash: c6da2a3987448e5b
 ---

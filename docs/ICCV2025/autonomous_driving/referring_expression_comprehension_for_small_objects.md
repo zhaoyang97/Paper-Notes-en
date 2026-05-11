@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Referring Expression Comprehension for Small Objects
 description: >-
-  [ICCV 2025][Autonomous Driving][Referring Expression Comprehension] This work proposes the SOREC dataset (100K referring expression–bounding box pairs for small objects) and the PIZA adapter module (Progressive-Iterative Zooming Adapter), enabling pretrained models such as GroundingDINO to autoregressively zoom in on extremely small targets, achieving substantial accuracy gains for small-object REC in autonomous driving scenarios.
+  [ICCV 2025][Autonomous Driving][Referring Expression Comprehension] This work proposes the SOREC dataset (100K referring expression–bounding box pairs for small objects) and the PIZA adapter module (Progressive-Iterative…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - Referring Expression Comprehension
-  - Small Object Detection
-  - Parameter-Efficient Fine-Tuning
-  - Progressive Zooming
-  - GroundingDINO
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "Referring Expression Comprehension"
+  - "Small Object Detection"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Progressive Zooming"
+  - "GroundingDINO"
 date: 2026-05-08
 content_hash: aee92c06ba21d564
 ---

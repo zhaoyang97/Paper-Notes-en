@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GECKO: Gigapixel Vision-Concept Contrastive Pretraining in Histopathology
 description: >-
-  [ICCV 2025][Medical Imaging][WSI pretraining] GECKO is proposed as a WSI-level MIL aggregator pretraining method that requires no additional clinical data modalities. By automatically extracting interpretable concept priors from H&E WSIs and aligning them with deep features via contrastive learning, GECKO surpasses existing unimodal and multimodal pretraining methods on five classification tasks while providing pathologist-interpretable WSI-level descriptions.
+  [ICCV 2025][Medical Imaging][WSI pretraining] GECKO is proposed as a WSI-level MIL aggregator pretraining method that requires no additional clinical data modalities. By automatically extracting interpretable concept pri…
 tags:
-  - ICCV 2025
-  - Medical Imaging
-  - WSI pretraining
-  - concept prior
-  - contrastive learning
-  - multiple instance learning
-  - interpretability
+  - "ICCV 2025"
+  - "Medical Imaging"
+  - "WSI pretraining"
+  - "concept prior"
+  - "contrastive learning"
+  - "multiple instance learning"
+  - "interpretability"
 date: 2026-05-08
 content_hash: 2f0b12aa9198ab6e
 ---

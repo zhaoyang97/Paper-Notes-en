@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Learning Framework For Cooperative Collision Avoidance of UAV Swarms Leveraging Domain Knowledge
 description: >-
-  [AAAI 2026][Reinforcement Learning][UAV swarm] This paper proposes reMARL, a framework that leverages domain knowledge from image processing (active contour model) to design reward functions for multi-agent reinforcement learning, enabling cooperative collision avoidance in UAV swarms. Compared to traditional metaheuristic methods, reMARL reduces reaction time by 98.75% and energy consumption by 85.37%.
+  [AAAI 2026][Reinforcement Learning][UAV swarm] This paper proposes reMARL, a framework that leverages domain knowledge from image processing (active contour model) to design reward functions for multi-agent reinforcement…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - UAV swarm
-  - collision avoidance
-  - MARL
-  - domain knowledge
-  - active contour model
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "UAV swarm"
+  - "collision avoidance"
+  - "MARL"
+  - "domain knowledge"
+  - "active contour model"
 date: 2026-05-08
 content_hash: 0774e874d739b6aa
 ---

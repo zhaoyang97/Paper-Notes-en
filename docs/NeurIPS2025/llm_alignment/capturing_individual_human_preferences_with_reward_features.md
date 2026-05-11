@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Capturing Individual Human Preferences with Reward Features
 description: >-
-  [NeurIPS 2025][LLM Alignment][Reward modeling] This paper proposes the Reward Feature Model (RFM), which learns shared reward features $\phi_\theta(x,y)$ such that each user obtains a personalized reward $r_h = \langle \phi_\theta, \mathbf{w}_h \rangle$ via a linear weight vector $\mathbf{w}_h$. The work provides the first PAC generalization bound for multi-annotator preference learning, proving that increasing the number of annotators $m$ is more effective than increasing per-annotator sample count $n$, and that as few as 30 samples suffice for fast adaptation to new users.
+  [NeurIPS 2025][LLM Alignment][Reward modeling] This paper proposes the Reward Feature Model (RFM), which learns shared reward features $\phi_\theta(x…
 tags:
-  - NeurIPS 2025
-  - LLM Alignment
-  - Reward modeling
-  - personalized preferences
-  - feature decomposition
-  - multi-annotator learning
-  - fast adaptation
+  - "NeurIPS 2025"
+  - "LLM Alignment"
+  - "Reward modeling"
+  - "personalized preferences"
+  - "feature decomposition"
+  - "multi-annotator learning"
+  - "fast adaptation"
 date: 2026-05-08
 content_hash: 6d57b8ed9d9d08c8
 ---

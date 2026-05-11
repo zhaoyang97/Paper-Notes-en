@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Trapped by simplicity: When Transformers fail to learn from noisy features
 description: >-
-  [ICLR 2026][LLM/NLP][noise-robust learning] This paper demonstrates that Transformers fail to learn Boolean functions from feature-noisy data. Their simplicity bias—a tendency to learn low-sensitivity functions—causes models to become trapped at optimal noisy predictors that are simpler than the target function, preventing recovery of the true noiseless target.
+  [ICLR 2026][LLM/NLP][noise-robust learning] This paper demonstrates that Transformers fail to learn Boolean functions from feature-noisy data. Their simplicity bias—a tendency to learn low-sensitivity functions—causes mo…
 tags:
-  - ICLR 2026
-  - LLM/NLP
-  - noise-robust learning
-  - simplicity bias
-  - Boolean functions
-  - Transformer
-  - sensitivity
+  - "ICLR 2026"
+  - "LLM/NLP"
+  - "noise-robust learning"
+  - "simplicity bias"
+  - "Boolean functions"
+  - "Transformer"
+  - "sensitivity"
 date: 2026-05-08
 content_hash: ed88dab9b30b15c3
 ---

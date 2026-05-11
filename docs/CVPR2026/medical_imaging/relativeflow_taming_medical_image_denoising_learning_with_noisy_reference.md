@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RelativeFlow: Taming Medical Image Denoising Learning with Noisy Reference
 description: >-
-  [CVPR 2026][Medical Imaging][medical image denoising] This paper proposes RelativeFlow, a flow matching-based framework that decomposes the absolute noise-to-clean mapping into relative noisier-to-noisy mappings. By incorporating a consistent transport constraint and a simulation-based velocity field, RelativeFlow learns a unified denoising flow from heterogeneous noisy references, overcoming the reference bias limitation.
+  [CVPR 2026][Medical Imaging][medical image denoising] This paper proposes RelativeFlow, a flow matching-based framework that decomposes the absolute noise-to-clean mapping into relative noisier-to-noisy mappings. By inco…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - medical image denoising
-  - flow matching
-  - noisy reference
-  - CT denoising
-  - MR denoising
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "medical image denoising"
+  - "flow matching"
+  - "noisy reference"
+  - "CT denoising"
+  - "MR denoising"
 date: 2026-05-08
 content_hash: 7ce49b954a1b365c
 ---

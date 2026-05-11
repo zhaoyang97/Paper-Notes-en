@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Attractive Metadata Attack: Inducing LLM Agents to Invoke Malicious Tools
 description: >-
-  [NeurIPS 2025][LLM Agent][Tool invocation attack] AMA (Attractive Metadata Attack) demonstrates that by carefully crafting malicious tool metadata (name, description, parameter schema) alone — without prompt injection or internal model access — an attacker can induce LLM agents to invoke malicious tools and leak private data at a success rate of 81–95%, while barely affecting original task completion (98%+), with existing defenses (auditors, prompt rewriting) proving largely ineffective.
+  [NeurIPS 2025][LLM Agent][Tool invocation attack] AMA (Attractive Metadata Attack) demonstrates that by carefully crafting malicious tool metadata (name, description…
 tags:
-  - NeurIPS 2025
-  - LLM Agent
-  - Tool invocation attack
-  - metadata manipulation
-  - privacy leakage
-  - LLM agent security
-  - MCP
+  - "NeurIPS 2025"
+  - "LLM Agent"
+  - "Tool invocation attack"
+  - "metadata manipulation"
+  - "privacy leakage"
+  - "LLM agent security"
+  - "MCP"
 date: 2026-05-08
 content_hash: c0f5df06944628c8
 ---

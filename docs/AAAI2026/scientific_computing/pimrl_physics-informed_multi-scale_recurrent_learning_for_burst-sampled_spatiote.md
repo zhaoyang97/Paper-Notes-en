@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PIMRL: Physics-Informed Multi-Scale Recurrent Learning for Burst-Sampled Spatiotemporal Dynamics
 description: >-
-  [AAAI 2026][Scientific Computing][physics-informed learning] This paper proposes PIMRL, a framework for learning from burst-sampled (short high-frequency bursts followed by long intervals) sparse spatiotemporal data. It features a dual-module architecture combining macro-scale latent-space reasoning and micro-scale physics correction, integrated via cross-scale message passing, achieving up to 80% error reduction across 5 PDE benchmarks.
+  [AAAI 2026][Scientific Computing][physics-informed learning] This paper proposes PIMRL, a framework for learning from burst-sampled (short high-frequency bursts followed by long intervals) sparse spatiotemporal data. It…
 tags:
-  - AAAI 2026
-  - Scientific Computing
-  - physics-informed learning
-  - multi-scale spatiotemporal dynamics
-  - burst sampling
-  - PDE solving
-  - recurrent networks
+  - "AAAI 2026"
+  - "Scientific Computing"
+  - "physics-informed learning"
+  - "multi-scale spatiotemporal dynamics"
+  - "burst sampling"
+  - "PDE solving"
+  - "recurrent networks"
 date: 2026-05-08
 content_hash: 4da1521851a1b7e7
 ---

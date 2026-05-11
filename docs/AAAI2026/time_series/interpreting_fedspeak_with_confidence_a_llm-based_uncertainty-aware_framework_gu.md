@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Interpreting Fedspeak with Confidence: A LLM-Based Uncertainty-Aware Framework Guided by Monetary Policy Transmission Paths
 description: >-
-  [AAAI2026][Time Series][Fedspeak] This paper proposes an LLM-based uncertainty-aware framework for interpreting Fedspeak (Federal Reserve language). The framework enhances inputs through domain reasoning along monetary policy transmission paths, and introduces a dynamic uncertainty decoding module to quantify prediction confidence (Perceptual Uncertainty = Environmental Ambiguity × Cognitive Risk), achieving SOTA performance on FOMC monetary policy stance analysis.
+  [AAAI2026][Time Series][Fedspeak] This paper proposes an LLM-based uncertainty-aware framework for interpreting Fedspeak (Federal Reserve language). The framework enhances inputs through domain reasoning along monetary p…
 tags:
-  - AAAI2026
-  - Time Series
-  - Fedspeak
-  - monetary policy stance
-  - LLM
-  - uncertainty quantification
-  - financial sentiment analysis
+  - "AAAI2026"
+  - "Time Series"
+  - "Fedspeak"
+  - "monetary policy stance"
+  - "LLM"
+  - "uncertainty quantification"
+  - "financial sentiment analysis"
 date: 2026-05-08
 content_hash: fd7116b758d97dd3
 ---

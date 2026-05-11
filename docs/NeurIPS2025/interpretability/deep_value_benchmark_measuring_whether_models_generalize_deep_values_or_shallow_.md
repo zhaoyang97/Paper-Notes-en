@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Deep Value Benchmark: Measuring Whether Models Generalize Deep Values or Shallow Preferences
 description: >-
-  [NeurIPS 2025][AI alignment] This paper proposes the Deep Value Benchmark (DVB), which employs a confound-then-deconfound experimental design to measure whether LLMs learn deep human values or merely memorize shallow preference patterns. Results show that the Deep Value Generalization Rate (DVGR) of all evaluated models averages only 0.30, far below chance level.
+  [NeurIPS 2025][Interpretability][AI alignment] This paper proposes the Deep Value Benchmark (DVB), which employs a confound-then-deconfound experimental design to measure whether LLMs learn deep human values or merely me…
 tags:
-  - NeurIPS 2025
-  - AI alignment
-  - deep values
-  - shallow preferences
-  - benchmark
-  - value generalization
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "AI alignment"
+  - "deep values"
+  - "shallow preferences"
+  - "benchmark"
+  - "value generalization"
 date: 2026-05-08
 content_hash: c127249104916fa2
 ---

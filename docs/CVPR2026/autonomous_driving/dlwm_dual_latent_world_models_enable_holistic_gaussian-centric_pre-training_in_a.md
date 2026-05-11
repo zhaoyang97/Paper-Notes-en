@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DLWM: Dual Latent World Models enable Holistic Gaussian-centric Pre-training in Autonomous Driving
 description: >-
-  [CVPR 2026][Autonomous Driving][World Models] This paper proposes DLWM, a holistic Gaussian-centric pre-training paradigm based on dual latent world models for autonomous driving. Stage 1 learns 3D Gaussian scene representations via self-supervised rendering of multi-view semantic and depth maps. Stage 2 trains two latent world models: a Gaussian-flow-guided model for downstream occupancy perception/prediction (+1.02/+2.68 mIoU), and an ego-trajectory-guided model for motion planning (−16% L2 error). The framework resolves the permutation equivariance challenge that prevents direct cross-frame supervision of Gaussian queries.
+  [CVPR 2026][Autonomous Driving][World Models] This paper proposes DLWM, a holistic Gaussian-centric pre-training paradigm based on dual latent world models for autonomous driving. Stage 1 learns 3D Gaussian scene represe…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - World Models
-  - 3D Gaussians
-  - Self-supervised Pre-training
-  - Occupancy Prediction
-  - Motion Planning
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "World Models"
+  - "3D Gaussians"
+  - "Self-supervised Pre-training"
+  - "Occupancy Prediction"
+  - "Motion Planning"
 date: 2026-05-08
 content_hash: 16ee20fdf93b27b8
 ---

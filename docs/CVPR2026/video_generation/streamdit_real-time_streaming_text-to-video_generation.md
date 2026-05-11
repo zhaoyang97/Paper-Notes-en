@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] StreamDiT: Real-Time Streaming Text-to-Video Generation
 description: >-
-  [CVPR 2026][Video Generation][Streaming video generation] StreamDiT presents a complete streaming video generation pipeline—covering training, modeling, and distillation—that introduces a sliding buffer with progressive denoising under Flow Matching, a mixed partitioning training strategy, a time-varying DiT architecture with windowed attention, and a customized multi-step distillation method. The resulting 4B-parameter model achieves real-time streaming video generation at 512p@16FPS on a single GPU.
+  [CVPR 2026][Video Generation][Streaming video generation] StreamDiT presents a complete streaming video generation pipeline—covering training, modeling…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Streaming video generation
-  - Diffusion Transformer
-  - real-time inference
-  - sampling distillation
-  - Flow Matching
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Streaming video generation"
+  - "Diffusion Transformer"
+  - "real-time inference"
+  - "sampling distillation"
+  - "Flow Matching"
 date: 2026-05-08
 content_hash: 598551f92c39ad80
 ---

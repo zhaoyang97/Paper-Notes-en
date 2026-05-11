@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Multi-Agent Perception-Action Alliance for Efficient Long Video Reasoning
 description: >-
-  [CVPR2026][Video Understanding][long video reasoning] This paper proposes A4VL, a training-free multi-agent perception-action alliance framework that achieves state-of-the-art performance across five VideoQA benchmarks—surpassing 28 baseline methods—while significantly reducing inference latency, through event-driven video segmentation, clue-guided keyframe selection, and a multi-round agent negotiation-and-pruning mechanism.
+  [CVPR2026][Video Understanding][long video reasoning] This paper proposes A4VL, a training-free multi-agent perception-action alliance framework that achieves state-of-the-art performance across five VideoQA benchmarks—s…
 tags:
-  - CVPR2026
-  - Video Understanding
-  - long video reasoning
-  - multi-agent collaboration
-  - video question answering
-  - perception-action exploration
-  - training-free framework
+  - "CVPR2026"
+  - "Video Understanding"
+  - "long video reasoning"
+  - "multi-agent collaboration"
+  - "video question answering"
+  - "perception-action exploration"
+  - "training-free framework"
 date: 2026-05-08
 content_hash: 6d98cbd31c7203e8
 ---

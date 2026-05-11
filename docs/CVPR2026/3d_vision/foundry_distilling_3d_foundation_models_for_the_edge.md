@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Foundry: Distilling 3D Foundation Models for the Edge
 description: >-
-  [CVPR 2026][3D Vision][Foundation model distillation] This paper proposes the Foundation Model Distillation (FMD) paradigm and the Foundry framework. Through a compress-and-reconstruct objective, the student model learns a set of learnable SuperTokens to compress the basis vectors of the teacher's latent space. The resulting single distilled model retains generality across classification, segmentation, and few-shot tasks, while reducing FLOPs from 478G to as low as 137G.
+  [CVPR 2026][3D Vision][Foundation model distillation] This paper proposes the Foundation Model Distillation (FMD) paradigm and the Foundry framework. Through a compress-and-reconstruct objective…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Foundation model distillation
-  - 3D point cloud
-  - SuperToken
-  - representation space compression
-  - edge deployment
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Foundation model distillation"
+  - "3D point cloud"
+  - "SuperToken"
+  - "representation space compression"
+  - "edge deployment"
 date: 2026-05-08
 content_hash: d0214ed343cff074
 ---

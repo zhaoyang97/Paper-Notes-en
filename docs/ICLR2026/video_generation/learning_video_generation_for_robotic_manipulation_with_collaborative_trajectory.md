@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Learning Video Generation for Robotic Manipulation with Collaborative Trajectory Control
 description: >-
-  [ICLR 2026][Video Generation] This paper proposes RoboMaster, a framework that decomposes the robot–object interaction process into three temporal stages—pre-interaction, in-interaction, and post-interaction—via a collaborative trajectory representation, combined with appearance- and shape-aware object embeddings, to achieve high-quality video generation for robotic manipulation.
+  [ICLR 2026][Video Generation][robotic manipulation] This paper proposes RoboMaster, a framework that decomposes the robot–object interaction process into three temporal stages—pre-interaction, in-interaction…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - robotic manipulation
-  - collaborative trajectory
-  - diffusion model
-  - interaction modeling
+  - "ICLR 2026"
+  - "Video Generation"
+  - "robotic manipulation"
+  - "collaborative trajectory"
+  - "diffusion model"
+  - "interaction modeling"
 date: 2026-05-08
 content_hash: 23c0c451184ebac2
 ---

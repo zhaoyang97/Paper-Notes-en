@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AutoReproduce: Automatic AI Experiment Reproduction with Paper Lineage
 description: >-
-  [ACL 2026][LLM Evaluation][paper reproduction] AutoReproduce proposes a multi-agent framework that mines implicit domain knowledge from cited references via a "Paper Lineage" algorithm, enabling end-to-end automatic reproduction of paper experiments. On the self-constructed benchmark ReproduceBench, it achieves a code execution rate of 94.87% with a performance gap of only 19.72%.
+  [ACL 2026][LLM Evaluation][paper reproduction] AutoReproduce proposes a multi-agent framework that mines implicit domain knowledge from cited references via a "Paper Lineage" algorithm…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - paper reproduction
-  - paper lineage
-  - multi-agent
-  - code generation
-  - research automation
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "paper reproduction"
+  - "paper lineage"
+  - "multi-agent"
+  - "code generation"
+  - "research automation"
 date: 2026-05-08
 content_hash: a34796fa74cd2407
 ---

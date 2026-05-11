@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] E-RayZer: Self-supervised 3D Reconstruction as Spatial Visual Pre-training
 description: >-
-  [CVPR 2026][3D Vision][Self-supervised pre-training] E-RayZer is the first truly self-supervised feed-forward 3D Gaussian reconstruction model. It replaces RayZer's implicit latent scene representation with explicit 3D Gaussians, and incorporates a visual-overlap-based curriculum learning strategy. Under zero 3D annotation conditions, it learns geometrically grounded 3D-aware representations, drastically outperforming RayZer on pose estimation (RPA@5° from ≈0 to 90.8%). On downstream 3D tasks under frozen-backbone probing, it significantly surpasses mainstream pre-trained models such as DINOv3 and CroCo v2, and even rivals the supervised VGGT.
+  [CVPR 2026][3D Vision][Self-supervised pre-training] E-RayZer is the first truly self-supervised feed-forward 3D Gaussian reconstruction model. It replaces RayZer's implicit latent scene representation with explicit 3D G…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Self-supervised pre-training
-  - 3D Gaussian splatting
-  - multi-view reconstruction
-  - pose estimation
-  - visual representation learning
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Self-supervised pre-training"
+  - "3D Gaussian splatting"
+  - "multi-view reconstruction"
+  - "pose estimation"
+  - "visual representation learning"
 date: 2026-05-08
 content_hash: e953bb4f4e2ec14b
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MRO: Enhancing Reasoning in Diffusion Language Models via Multi-Reward Optimization
 description: >-
-  [NeurIPS 2025][Image Restoration][Diffusion language models] This work presents the first systematic analysis of the root cause behind the reasoning gap in diffusion language models (DLMs)—namely, the independent generation of tokens during denoising, which disrupts both intra- and inter-sequence correlations. A multi-reward optimization framework, MRO, is proposed and consistently improves reasoning performance of LLaDA-8B across test-time scaling, reject sampling, and RL paradigms, raising MATH500 accuracy from 34.4% to 37.4%.
+  [NeurIPS 2025][Image Restoration][Diffusion language models] This work presents the first systematic analysis of the root cause behind the reasoning gap in diffusion language models (DLMs)—namely…
 tags:
-  - NeurIPS 2025
-  - Image Restoration
-  - Diffusion language models
-  - multi-reward optimization
-  - token correlation
-  - reinforcement learning
-  - SGRO
+  - "NeurIPS 2025"
+  - "Image Restoration"
+  - "Diffusion language models"
+  - "multi-reward optimization"
+  - "token correlation"
+  - "reinforcement learning"
+  - "SGRO"
 date: 2026-05-08
 content_hash: 52993b4eb57dcb6d
 ---

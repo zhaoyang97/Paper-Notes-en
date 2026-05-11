@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MGE-LDM: Joint Latent Diffusion for Simultaneous Music Generation and Source Extraction
 description: >-
-  [NeurIPS 2025][Image Generation][music generation] This paper proposes MGE-LDM, the first model to simultaneously achieve music mixture generation, partial generation (source completion), and text-driven arbitrary source extraction within a unified latent diffusion framework. It jointly models mixture–submixture–source triplets and leverages diffusion inpainting to handle each task.
+  [NeurIPS 2025][Image Generation][music generation] This paper proposes MGE-LDM, the first model to simultaneously achieve music mixture generation, partial generation (source completion)…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - music generation
-  - source separation
-  - latent diffusion model
-  - multi-track modeling
-  - CLAP
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "music generation"
+  - "source separation"
+  - "latent diffusion model"
+  - "multi-track modeling"
+  - "CLAP"
 date: 2026-05-08
 content_hash: 92c00fe18f1ff533
 ---

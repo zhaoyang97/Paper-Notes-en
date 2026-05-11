@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] QuaMo: Quaternion Motions for Vision-based 3D Human Kinematics Capture
 description: >-
-  [ICLR 2026][Human Understanding][Quaternion kinematics] QuaMo proposes a 3D human kinematics capture method based on quaternion differential equations (QDE). By solving kinematic equations under the unit quaternion sphere constraint $\mathcal{S}^3$ and introducing a second-order acceleration-augmented meta-PD controller, the method achieves discontinuity-free, low-jitter online real-time human motion estimation, surpassing state-of-the-art methods on Human3.6M and several other benchmarks.
+  [ICLR 2026][Human Understanding][Quaternion kinematics] QuaMo proposes a 3D human kinematics capture method based on quaternion differential equations (QDE). By solving kinematic equations under the unit quaternion spher…
 tags:
-  - ICLR 2026
-  - Human Understanding
-  - Quaternion kinematics
-  - 3D human motion capture
-  - state space model
-  - PD controller
-  - acceleration augmentation
+  - "ICLR 2026"
+  - "Human Understanding"
+  - "Quaternion kinematics"
+  - "3D human motion capture"
+  - "state space model"
+  - "PD controller"
+  - "acceleration augmentation"
 date: 2026-05-08
 content_hash: 2888cfa811138e35
 ---

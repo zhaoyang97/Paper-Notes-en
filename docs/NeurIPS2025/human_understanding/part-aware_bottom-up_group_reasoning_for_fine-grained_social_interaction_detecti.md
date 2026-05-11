@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Part-Aware Bottom-Up Group Reasoning for Fine-Grained Social Interaction Detection
 description: >-
-  [NeurIPS 2025][Human Understanding][Social Interaction Detection] This paper proposes a part-aware bottom-up group reasoning framework that enhances individual embeddings with pose-guided body part features and infers social groups via similarity-based association, achieving new state-of-the-art results on the NVI and Café datasets.
+  [NeurIPS 2025][Human Understanding][Social Interaction Detection] This paper proposes a part-aware bottom-up group reasoning framework that enhances individual embeddings with pose-guided body part features and infers so…
 tags:
-  - NeurIPS 2025
-  - Human Understanding
-  - Social Interaction Detection
-  - Body Part Awareness
-  - Bottom-Up Reasoning
-  - Nonverbal Interaction
-  - Pose Guidance
+  - "NeurIPS 2025"
+  - "Human Understanding"
+  - "Social Interaction Detection"
+  - "Body Part Awareness"
+  - "Bottom-Up Reasoning"
+  - "Nonverbal Interaction"
+  - "Pose Guidance"
 date: 2026-05-08
 content_hash: af25ec3c7cc8799f
 ---

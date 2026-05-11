@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Inference-time Alignment in Continuous Space
 description: >-
-  [NeurIPS 2025][LLM Alignment][inference-time alignment] This paper proposes Simple Energy Adaptation (SEA), which shifts the inference-time alignment paradigm from discrete-space search to continuous-space optimization. By performing gradient-based Langevin sampling over the continuous logit space, SEA approximates the optimal RLHF policy, achieving a 77.51% relative improvement over the strongest baseline on AdvBench and a 16.36% improvement on MATH.
+  [NeurIPS 2025][LLM Alignment][inference-time alignment] This paper proposes Simple Energy Adaptation (SEA), which shifts the inference-time alignment paradigm from discrete-space search to continuous-space optimization.…
 tags:
-  - NeurIPS 2025
-  - LLM Alignment
-  - inference-time alignment
-  - energy-based model
-  - Langevin dynamics
-  - RLHF
-  - continuous optimization
-  - reward model
+  - "NeurIPS 2025"
+  - "LLM Alignment"
+  - "inference-time alignment"
+  - "energy-based model"
+  - "Langevin dynamics"
+  - "RLHF"
+  - "continuous optimization"
+  - "reward model"
 date: 2026-05-08
 content_hash: 2ee97db8cb83c8e5
 ---

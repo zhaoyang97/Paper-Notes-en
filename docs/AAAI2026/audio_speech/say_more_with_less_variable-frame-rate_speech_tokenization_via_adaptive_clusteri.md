@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Say More with Less: Variable-Frame-Rate Speech Tokenization via Adaptive Clustering and Implicit Duration Coding
 description: >-
-  [AAAI 2026][Audio & Speech][speech tokenization] This paper proposes VARSTok, the first fully dynamic variable-frame-rate speech tokenizer, which achieves adaptive token allocation via temporal-aware density peak clustering and implicit duration coding, surpassing fixed-frame-rate baselines while using fewer tokens.
+  [AAAI 2026][Audio & Speech][speech tokenization] This paper proposes VARSTok, the first fully dynamic variable-frame-rate speech tokenizer…
 tags:
-  - AAAI 2026
+  - "AAAI 2026"
   - "Audio & Speech"
-  - speech tokenization
-  - variable frame rate
-  - density peak clustering
-  - implicit duration coding
-  - speech language model
+  - "speech tokenization"
+  - "variable frame rate"
+  - "density peak clustering"
+  - "implicit duration coding"
+  - "speech language model"
 date: 2026-05-08
 content_hash: be24a19d702133f8
 ---

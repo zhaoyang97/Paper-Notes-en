@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Reasoning on Time-Series for Financial Technical Analysis
 description: >-
-  [ICLR2026][Time Series][Time series reasoning] This paper proposes the Verbal Technical Analysis (VTA) framework, which combines the linguistic reasoning capabilities of LLMs with the pattern-capturing capacity of time-series models. Time-GRPO reinforcement learning is employed to optimize reasoning chains, and inferred attributes are used to condition time-series forecasting, achieving financial time-series prediction that is both accurate and interpretable.
+  [ICLR2026][Time Series][Time series reasoning] This paper proposes the Verbal Technical Analysis (VTA) framework, which combines the linguistic reasoning capabilities of LLMs with the pattern-capturing capacity of time-s…
 tags:
-  - ICLR2026
-  - Time Series
-  - Time series reasoning
-  - financial technical analysis
-  - reinforcement learning
-  - LLM fine-tuning
-  - interpretable forecasting
+  - "ICLR2026"
+  - "Time Series"
+  - "Time series reasoning"
+  - "financial technical analysis"
+  - "reinforcement learning"
+  - "LLM fine-tuning"
+  - "interpretable forecasting"
 date: 2026-05-08
 content_hash: 8f58b8cc468a3c75
 ---

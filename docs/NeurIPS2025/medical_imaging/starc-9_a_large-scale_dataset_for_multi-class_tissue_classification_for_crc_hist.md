@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] STARC-9: A Large-scale Dataset for Multi-Class Tissue Classification for CRC Histopathology
 description: >-
-  [NeurIPS 2025][Medical Imaging][Colorectal Cancer] This paper introduces STARC-9, a large-scale colorectal cancer (CRC) tissue classification dataset comprising 630K patches across 9 tissue classes, along with its construction framework DeepCluster++. The framework combines domain-specific autoencoder feature extraction, K-means clustering, and equal-frequency binning sampling to ensure morphological diversity. Models trained on STARC-9 significantly outperform those trained on NCT and HMU.
+  [NeurIPS 2025][Medical Imaging][Colorectal Cancer] This paper introduces STARC-9, a large-scale colorectal cancer (CRC) tissue classification dataset comprising 630K patches across 9 tissue classes…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Colorectal Cancer
-  - Tissue Classification
-  - Dataset
-  - Histopathology
-  - Deep Clustering
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Colorectal Cancer"
+  - "Tissue Classification"
+  - "Dataset"
+  - "Histopathology"
+  - "Deep Clustering"
 date: 2026-05-08
 content_hash: 85c5f4c9b9883a52
 ---

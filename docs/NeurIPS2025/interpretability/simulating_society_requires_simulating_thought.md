@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Simulating Society Requires Simulating Thought
 description: >-
-  [NeurIPS 2025][social simulation] This paper proposes a paradigm shift from "behaviorism" to "cognitive modeling" in LLM-based social simulation. The GenMinds framework models the internal reasoning processes of LLM agents via causal belief graphs, and the RECAP benchmark evaluates reasoning fidelity along three dimensions: traceability, demographic sensitivity, and intervention consistency.
+  [NeurIPS 2025][Interpretability][social simulation] This paper proposes a paradigm shift from "behaviorism" to "cognitive modeling" in LLM-based social simulation. The GenMinds framework models the internal reasoning pro…
 tags:
-  - NeurIPS 2025
-  - social simulation
-  - cognitive modeling
-  - causal reasoning
-  - belief graphs
-  - reasoning fidelity
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "social simulation"
+  - "cognitive modeling"
+  - "causal reasoning"
+  - "belief graphs"
+  - "reasoning fidelity"
 date: 2026-05-08
 content_hash: 3ef3e7efbc284cf8
 ---

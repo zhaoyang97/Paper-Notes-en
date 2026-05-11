@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From Adaptation to Generalization: Adaptive Visual Prompting for Medical Image Segmentation
 description: >-
-  [CVPR 2026][Medical Imaging][Visual Prompting] This paper proposes APEX (Adaptive Prompt EXtraction), which adaptively retrieves input-specific visual prompts from a learnable prompt memory bank—rather than assigning a fixed prompt per domain—and incorporates low-frequency contrastive learning (LFC) to enhance inter-domain discriminability, achieving significant improvements in medical image segmentation on both seen and unseen domains.
+  [CVPR 2026][Medical Imaging][Visual Prompting] This paper proposes APEX (Adaptive Prompt EXtraction), which adaptively retrieves input-specific visual prompts from a learnable prompt memory bank—rather than assigning a f…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Visual Prompting
-  - Domain Adaptation
-  - Domain Generalization
-  - Medical Image Segmentation
-  - Low-Frequency Contrastive Learning
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Visual Prompting"
+  - "Domain Adaptation"
+  - "Domain Generalization"
+  - "Medical Image Segmentation"
+  - "Low-Frequency Contrastive Learning"
 date: 2026-05-08
 content_hash: 9ba027ab3329c46b
 ---

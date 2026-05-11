@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UniABG: Unified Adversarial View Bridging and Graph Correspondence for Unsupervised Cross-View Geo-Localization
 description: >-
-  [AAAI 2026][Remote Sensing][cross-view geo-localization] This paper proposes UniABG, a two-stage unsupervised cross-view geo-localization framework that employs View-Aware Adversarial Bridging (VAAB) to eliminate the domain gap between UAV and satellite views, followed by Heterogeneous Graph Filtering Calibration (HGFC) to purify cross-view correspondences. UniABG achieves 93.29% Satellite→Drone AP on University-1652, surpassing most supervised methods.
+  [AAAI 2026][Remote Sensing][cross-view geo-localization] This paper proposes UniABG, a two-stage unsupervised cross-view geo-localization framework that employs View-Aware Adversarial Bridging (VAAB) to eliminate the dom…
 tags:
-  - AAAI 2026
-  - Remote Sensing
-  - cross-view geo-localization
-  - unsupervised
-  - adversarial learning
-  - graph filtering
-  - pseudo-label
+  - "AAAI 2026"
+  - "Remote Sensing"
+  - "cross-view geo-localization"
+  - "unsupervised"
+  - "adversarial learning"
+  - "graph filtering"
+  - "pseudo-label"
 date: 2026-05-08
 content_hash: 81cb45649f86ea88
 ---

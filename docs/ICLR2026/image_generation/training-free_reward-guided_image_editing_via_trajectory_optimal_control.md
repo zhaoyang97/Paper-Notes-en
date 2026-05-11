@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Training-Free Reward-Guided Image Editing via Trajectory Optimal Control
 description: >-
-  [ICLR 2026][Image Generation][Optimal Control] This paper reformulates reward-guided image editing as a trajectory optimal control problem, treating the reverse process of diffusion/flow models as a controllable trajectory. By iteratively optimizing the entire trajectory via Pontryagin's Maximum Principle (PMP) with adjoint state methods, it achieves effective reward-guided editing without training and without reward hacking.
+  [ICLR 2026][Image Generation][Optimal Control] This paper reformulates reward-guided image editing as a trajectory optimal control problem…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Optimal Control
-  - Reward-Guided
-  - training-free
-  - Adjoint State
-  - Pontryagin's Maximum Principle
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Optimal Control"
+  - "Reward-Guided"
+  - "training-free"
+  - "Adjoint State"
+  - "Pontryagin's Maximum Principle"
 date: 2026-05-08
 content_hash: c97d0424ffad101b
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Force Prompting: Video Generation Models Can Learn and Generalize Physics-based Control Signals
 description: >-
-  [NeurIPS 2025][Video Generation][force prompting] This paper proposes Force Prompting, which uses physical forces (local point forces and global wind forces) as control signals for video generation models. Using only ~15K synthetic training videos (Blender flags and rolling balls) and a single day of training on 4×A100 GPUs, the method achieves remarkable generalization across diverse real-world scenes with varying objects, materials, and geometries, including preliminary mass understanding capabilities.
+  [NeurIPS 2025][Video Generation][force prompting] This paper proposes Force Prompting, which uses physical forces (local point forces and global wind forces) as control signals for video generation models. Using only ~15…
 tags:
-  - NeurIPS 2025
-  - Video Generation
-  - force prompting
-  - physics control
-  - sim2real
-  - CogVideoX
+  - "NeurIPS 2025"
+  - "Video Generation"
+  - "force prompting"
+  - "physics control"
+  - "sim2real"
+  - "CogVideoX"
 date: 2026-05-08
 content_hash: 31bd5893809edae2
 ---

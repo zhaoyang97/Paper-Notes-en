@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Task-free Adaptive Meta Black-box Optimization
 description: >-
-  [ICLR 2026][Remote Sensing][Black-box optimization] This paper proposes ABOM—a task-free adaptive meta black-box optimizer that eliminates the need for predefined training task distributions. By parameterizing evolutionary operators (selection, crossover, mutation) as differentiable attention modules and leveraging self-generated data for online parameter updates during optimization, ABOM achieves competitive zero-shot performance on synthetic benchmarks and UAV path planning tasks.
+  [ICLR 2026][Remote Sensing][Black-box optimization] This paper proposes ABOM—a task-free adaptive meta black-box optimizer that eliminates the need for predefined training task distributions. By parameterizing evolutiona…
 tags:
-  - ICLR 2026
-  - Remote Sensing
-  - Black-box optimization
-  - meta-learning
-  - evolutionary algorithms
-  - adaptive parameter learning
-  - zero-shot optimization
+  - "ICLR 2026"
+  - "Remote Sensing"
+  - "Black-box optimization"
+  - "meta-learning"
+  - "evolutionary algorithms"
+  - "adaptive parameter learning"
+  - "zero-shot optimization"
 date: 2026-05-08
 content_hash: ef379ae94d5612af
 ---

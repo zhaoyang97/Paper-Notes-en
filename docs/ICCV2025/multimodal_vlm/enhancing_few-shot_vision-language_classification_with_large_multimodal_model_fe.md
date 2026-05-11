@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Enhancing Few-Shot Vision-Language Classification with Large Multimodal Model Features
 description: >-
-  [ICCV 2025][Multimodal VLM][Sparse attention vectors] This paper proposes Sparse Attention Vectors (SAVs) — a training-free method that extracts fewer than 5% of attention heads from frozen generative Large Multimodal Models (LMMs) as strong feature representations. With only approximately 20 labeled samples per class, SAVs achieve state-of-the-art performance on vision-language classification tasks, outperforming LoRA fine-tuning by an average of 7% on challenging benchmarks including BLINK, VLGuard, and NaturalBench.
+  [ICCV 2025][Multimodal VLM][Sparse attention vectors] This paper proposes Sparse Attention Vectors (SAVs) — a training-free method that extracts fewer than 5% of attention heads from frozen generative Large Multimodal Mo…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Sparse attention vectors
-  - few-shot classification
-  - feature extraction
-  - training-free
-  - vision-language classification
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Sparse attention vectors"
+  - "few-shot classification"
+  - "feature extraction"
+  - "training-free"
+  - "vision-language classification"
 date: 2026-05-08
 content_hash: f5849c63f2b6f0ae
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] ParaRevSNN: A Parallel Reversible Spiking Neural Network for Efficient Training and Inference
 description: >-
-  [AAAI 2026][spiking neural networks] This paper proposes ParaRevSNN, a parallel reversible spiking neural network architecture that decouples sequential computation constraints by redesigning the data dependencies between reversible blocks, achieving inter-block parallelism while preserving reversibility (memory efficiency). Training time is reduced by up to 35.2% and inference time to 18.15%.
+  [AAAI 2026][spiking neural networks] This paper proposes ParaRevSNN, a parallel reversible spiking neural network architecture that decouples sequential computation constraints by redesigning the data dependencies betwee…
 tags:
-  - AAAI 2026
-  - spiking neural networks
-  - reversible computation
-  - parallel training
-  - memory efficiency
-  - edge deployment
+  - "AAAI 2026"
+  - "spiking neural networks"
+  - "reversible computation"
+  - "parallel training"
+  - "memory efficiency"
+  - "edge deployment"
 date: 2026-05-08
 content_hash: f52d85cc61a8645e
 ---

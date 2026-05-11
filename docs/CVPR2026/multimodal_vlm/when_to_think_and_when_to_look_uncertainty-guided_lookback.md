@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] When to Think and When to Look: Uncertainty-Guided Lookback
 description: >-
-  [CVPR 2026][Multimodal VLM][Visual reasoning] This paper presents the first systematic analysis of the effect of test-time thinking on visual reasoning in LVLMs. It reveals that "looking more is better than thinking more"—long reasoning chains frequently neglect the image, producing "long-wrong" trajectories. Based on this finding, the authors propose an uncertainty-guided lookback decoding strategy that injects visual re-inspection prompts when reasoning chains drift, achieving 2–6 point improvements on MMMU and five other benchmarks without modifying the model.
+  [CVPR 2026][Multimodal VLM][Visual reasoning] This paper presents the first systematic analysis of the effect of test-time thinking on visual reasoning in LVLMs. It reveals that "looking more is better than thinking more…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Visual reasoning
-  - chain-of-thought
-  - large vision-language models
-  - adaptive decoding
-  - uncertainty guidance
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Visual reasoning"
+  - "chain-of-thought"
+  - "large vision-language models"
+  - "adaptive decoding"
+  - "uncertainty guidance"
 date: 2026-05-08
 content_hash: f318f264f05fd036
 ---

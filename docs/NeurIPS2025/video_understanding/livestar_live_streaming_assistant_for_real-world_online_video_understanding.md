@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LiveStar: Live Streaming Assistant for Real-World Online Video Understanding
 description: >-
-  [NeurIPS 2025][Video Understanding][online video understanding] This paper proposes LiveStar, an always-on live streaming video understanding assistant that achieves adaptive response timing via a Streaming Causal Attention Masks (SCAM) training strategy and a Streaming Verification Decoding (SVeD) inference framework, improving semantic correctness by 19.5% and reducing temporal deviation by 18.1% on the OmniStar benchmark.
+  [NeurIPS 2025][Video Understanding][online video understanding] This paper proposes LiveStar, an always-on live streaming video understanding assistant that achieves adaptive response timing via a Streaming Causal Attent…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
-  - online video understanding
-  - streaming decoding
-  - video-language alignment
-  - live streaming
-  - response timing
+  - "NeurIPS 2025"
+  - "Video Understanding"
+  - "online video understanding"
+  - "streaming decoding"
+  - "video-language alignment"
+  - "live streaming"
+  - "response timing"
 date: 2026-05-08
 content_hash: f43ad32290a6823f
 ---

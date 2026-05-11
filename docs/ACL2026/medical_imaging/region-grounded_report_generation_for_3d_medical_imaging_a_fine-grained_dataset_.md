@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Region-Grounded Report Generation for 3D Medical Imaging: A Fine-Grained Dataset and Graph-Enhanced Framework
 description: >-
-  [ACL 2026][Medical Imaging][PET/CT report generation] This paper presents VietPET-RoI, the first 3D PET/CT dataset with fine-grained ROI annotations (in Vietnamese), along with HiRRA, a hierarchical report generation framework that emulates the diagnostic workflow of radiologists. By modeling spatial-morphological inter-ROI relationships via GATv2 graph neural networks, HiRRA achieves a 19.7% improvement in BLEU-4 and a 45.8% improvement in the clinical metric RoIQ.
+  [ACL 2026][Medical Imaging][PET/CT report generation] This paper presents VietPET-RoI, the first 3D PET/CT dataset with fine-grained ROI annotations (in Vietnamese), along with HiRRA…
 tags:
-  - ACL 2026
-  - Medical Imaging
-  - PET/CT report generation
-  - ROI annotation
-  - graph neural networks
-  - 3D medical imaging
-  - low-resource languages
+  - "ACL 2026"
+  - "Medical Imaging"
+  - "PET/CT report generation"
+  - "ROI annotation"
+  - "graph neural networks"
+  - "3D medical imaging"
+  - "low-resource languages"
 date: 2026-05-08
 content_hash: d89ca4d17e407afa
 ---

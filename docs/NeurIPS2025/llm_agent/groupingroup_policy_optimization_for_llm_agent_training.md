@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Group-in-Group Policy Optimization for LLM Agent Training
 description: >-
-  [NeurIPS 2025][LLM Agent][GiGPO] GiGPO introduces step-level grouping nested within the episode-level grouping of GRPO by leveraging recurring environment states across trajectories as anchor states, enabling fine-grained credit assignment without additional rollouts or a critic model. It outperforms GRPO by >12% on ALFWorld and >9% on WebShop.
+  [NeurIPS 2025][LLM Agent][GiGPO] GiGPO introduces step-level grouping nested within the episode-level grouping of GRPO by leveraging recurring environment states across trajectories as anchor states…
 tags:
-  - NeurIPS 2025
-  - LLM Agent
-  - GiGPO
-  - credit assignment
-  - anchor state grouping
-  - multi-turn agent
-  - GRPO
+  - "NeurIPS 2025"
+  - "LLM Agent"
+  - "GiGPO"
+  - "credit assignment"
+  - "anchor state grouping"
+  - "multi-turn agent"
+  - "GRPO"
 date: 2026-05-08
 content_hash: 1b56078abc4c4fac
 ---

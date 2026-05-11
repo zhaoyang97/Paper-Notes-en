@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] A2Z-10M+: Geometric Deep Learning with A-to-Z BRep Annotations for AI-Assisted CAD Modeling and Reverse Engineering
 description: >-
-  [CVPR2026][3D Vision][BRep learning] This work constructs A2Z, a large-scale multimodal CAD dataset comprising 1M+ complex models with 10M+ annotations (high-resolution 3D scans, hand-drawn 3D sketches, text descriptions, and BRep topology labels), providing an unprecedented data foundation for Scan-to-BRep reverse engineering and multimodal BRep learning. Foundation models trained on A2Z substantially outperform existing methods on edge and junction detection.
+  [CVPR2026][3D Vision][BRep learning] This work constructs A2Z, a large-scale multimodal CAD dataset comprising 1M+ complex models with 10M+ annotations (high-resolution 3D scans, hand-drawn 3D sketches, text descriptions…
 tags:
-  - CVPR2026
-  - 3D Vision
-  - BRep learning
-  - CAD reverse engineering
-  - multimodal annotation
-  - 3D scanning
-  - geometric deep learning
-  - foundation model
+  - "CVPR2026"
+  - "3D Vision"
+  - "BRep learning"
+  - "CAD reverse engineering"
+  - "multimodal annotation"
+  - "3D scanning"
+  - "geometric deep learning"
+  - "foundation model"
 date: 2026-05-08
 content_hash: 310cd3bc6763cab8
 ---

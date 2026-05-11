@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MCTS-SQL: Light-Weight LLMs can Master the Text-to-SQL through Monte Carlo Tree Search
 description: >-
-  [AAAI 2026][LLM Evaluation][Text-to-SQL] This paper proposes MCTS-SQL, enabling lightweight LLMs (e.g., Qwen-1.5B) to achieve strong Text-to-SQL performance via Monte Carlo Tree Search — a three-component architecture (Selector for schema pruning + Direct Generator for initial SQL generation + MCTS-Refiner for iterative refinement), combined with a prefix caching mechanism that reduces inference time by 53%. Qwen-1.5B achieves 40.69% execution accuracy on BIRD, surpassing ChatGPT-3.5.
+  [AAAI 2026][LLM Evaluation][Text-to-SQL] This paper proposes MCTS-SQL, enabling lightweight LLMs (e.g., Qwen-1.5B) to achieve strong Text-to-SQL performance via Monte Carlo Tree Search — a three-component architecture (S…
 tags:
-  - AAAI 2026
-  - LLM Evaluation
-  - Text-to-SQL
-  - Monte Carlo Tree Search
-  - Lightweight Models
-  - Prefix Caching
-  - Schema Pruning
+  - "AAAI 2026"
+  - "LLM Evaluation"
+  - "Text-to-SQL"
+  - "Monte Carlo Tree Search"
+  - "Lightweight Models"
+  - "Prefix Caching"
+  - "Schema Pruning"
 date: 2026-05-08
 content_hash: 83811ac10c53f329
 ---

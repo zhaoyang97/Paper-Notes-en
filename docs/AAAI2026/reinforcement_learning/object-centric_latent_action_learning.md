@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Object-Centric Latent Action Learning
 description: >-
-  [AAAI 2026][Reinforcement Learning][object-centric representation] This paper proposes an object-centric latent action learning framework that leverages self-supervised object decomposition (VideoSAUR) to disentangle task-relevant entities from visual distractions (e.g., dynamic backgrounds), reducing the performance degradation of LAPO on distracted videos by approximately 50%. A linear action probe is used to automatically select control-relevant slots.
+  [AAAI 2026][Reinforcement Learning][object-centric representation] This paper proposes an object-centric latent action learning framework that leverages self-supervised object decomposition (VideoSAUR) to disentangle tas…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - object-centric representation
-  - latent action learning
-  - visual distractions
-  - imitation learning
-  - self-supervised learning
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "object-centric representation"
+  - "latent action learning"
+  - "visual distractions"
+  - "imitation learning"
+  - "self-supervised learning"
 date: 2026-05-08
 content_hash: 678f95f2e745b541
 ---

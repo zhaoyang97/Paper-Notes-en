@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UniSplat: Learning 3D Representations for Spatial Intelligence from Unposed Multi-View Images
 description: >-
-  [CVPR 2026][3D Vision][3D representation learning] UniSplat learns unified geometry-appearance-semantic 3D representations from unposed multi-view images via three components — dual masking, coarse-to-fine Gaussian splatting, and pose-conditioned recalibration — laying a perceptual foundation for spatial intelligence.
+  [CVPR 2026][3D Vision][3D representation learning] UniSplat learns unified geometry-appearance-semantic 3D representations from unposed multi-view images via three components — dual masking…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D representation learning
-  - spatial intelligence
-  - Gaussian splatting
-  - self-supervised learning
-  - unposed multi-view
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D representation learning"
+  - "spatial intelligence"
+  - "Gaussian splatting"
+  - "self-supervised learning"
+  - "unposed multi-view"
 date: 2026-05-08
 content_hash: 18a5ebbbf8a5f592
 ---

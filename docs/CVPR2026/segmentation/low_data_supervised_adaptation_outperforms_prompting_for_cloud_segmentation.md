@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Low-Data Supervised Adaptation Outperforms Prompting for Cloud Segmentation Under Domain Shift
 description: >-
-  [CVPR 2026][Segmentation][Domain Shift] This paper systematically demonstrates that prompt engineering completely fails to bridge the domain gap of vision-language models in satellite remote sensing cloud segmentation, and that fine-tuning with as little as 0.1% of labeled data (~8 images) suffices to surpass all zero-shot prompting strategies.
+  [CVPR 2026][Segmentation][Domain Shift] This paper systematically demonstrates that prompt engineering completely fails to bridge the domain gap of vision-language models in satellite remote sensing cloud segmentation…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Domain Shift
-  - Cloud Segmentation
-  - Prompt Engineering
-  - Low-Data Fine-Tuning
-  - Vision-Language Models
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Domain Shift"
+  - "Cloud Segmentation"
+  - "Prompt Engineering"
+  - "Low-Data Fine-Tuning"
+  - "Vision-Language Models"
 date: 2026-05-08
 content_hash: 79b8aacdbe8de3e6
 ---

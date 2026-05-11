@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Scalable Signature Kernel Computations for Long Time Series via Local Neumann Series Expansions
 description: >-
-  [NeurIPS 2025][Time Series][Signature Kernel] This paper proposes PowerSig, which efficiently computes signature kernels via locally adaptive truncated Neumann series expansions, reducing memory from $O(\ell^2)$ to $O(\ell P)$ and enabling signature kernel computation on time series of length exceeding one million on a single GPU.
+  [NeurIPS 2025][Time Series][Signature Kernel] This paper proposes PowerSig, which efficiently computes signature kernels via locally adaptive truncated Neumann series expansions…
 tags:
-  - NeurIPS 2025
-  - Time Series
-  - Signature Kernel
-  - Neumann Series
-  - Long Time Series
-  - Goursat PDE
-  - Kernel Methods
+  - "NeurIPS 2025"
+  - "Time Series"
+  - "Signature Kernel"
+  - "Neumann Series"
+  - "Long Time Series"
+  - "Goursat PDE"
+  - "Kernel Methods"
 date: 2026-05-08
 content_hash: d5ca818463272cb6
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Scaling Image Geo-Localization to Continent Level
 description: >-
-  [NeurIPS 2025][Remote Sensing][geo-localization] A hybrid approach combining classification-learned prototypes with aerial image embeddings achieves 68%+ recall@1 within 200 m and 59.2% within 100 m across 433,000 km² of Western Europe — the first system to attain such precision at continental scale.
+  [NeurIPS 2025][Remote Sensing][geo-localization] A hybrid approach combining classification-learned prototypes with aerial image embeddings achieves 68%+ recall@1 within 200 m and 59.2% within 100 m across 433…
 tags:
-  - NeurIPS 2025
-  - Remote Sensing
-  - geo-localization
-  - cross-view retrieval
-  - classification prototypes
-  - aerial-ground matching
-  - large-scale
+  - "NeurIPS 2025"
+  - "Remote Sensing"
+  - "geo-localization"
+  - "cross-view retrieval"
+  - "classification prototypes"
+  - "aerial-ground matching"
+  - "large-scale"
 date: 2026-05-08
 content_hash: ebdcd50fa21519a7
 ---

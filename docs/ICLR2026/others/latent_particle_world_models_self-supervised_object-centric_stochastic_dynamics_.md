@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LPWM: Latent Particle World Models for Object-Centric Stochastic Dynamics
 description: >-
-  [ICLR 2026][Object-centric] LPWM is the first self-supervised object-centric world model that scales to real-world multi-object datasets. Its core innovation is learning independent per-particle latent action distributions ($z_c^m$) for each particle, encoding all frames in parallel via a causal spatiotemporal Transformer, supporting diverse conditioning signals (actions, language, image goals, multi-view), achieving state-of-the-art video prediction, and demonstrating imitation learning capability (89% success rate on OGBench task3).
+  [ICLR 2026][Object-centric] LPWM is the first self-supervised object-centric world model that scales to real-world multi-object datasets. Its core innovation is learning independent per-particle latent action distributio…
 tags:
-  - ICLR 2026
-  - Object-centric
-  - Latent particles
-  - Self-supervised
-  - World models
-  - Stochastic dynamics
-  - Latent actions
+  - "ICLR 2026"
+  - "Object-centric"
+  - "Latent particles"
+  - "Self-supervised"
+  - "World models"
+  - "Stochastic dynamics"
+  - "Latent actions"
 date: 2026-05-08
 content_hash: ba26e10f44c99eac
 ---

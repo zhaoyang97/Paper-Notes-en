@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GnnXemplar: Exemplars to Explanations -- Natural Language Rules for Global GNN Interpretability
 description: >-
-  [NeurIPS 2025][Graph Learning][graph neural network interpretability] This paper proposes GnnXemplar, a framework grounded in the cognitive-science Exemplar Theory. It selects representative nodes (exemplars) in the GNN embedding space and employs an LLM with iterative self-refinement to generate natural-language Boolean rules, achieving global interpretability for node-classification GNNs on large-scale graphs.
+  [NeurIPS 2025][Graph Learning][graph neural network interpretability] This paper proposes GnnXemplar, a framework grounded in the cognitive-science Exemplar Theory. It selects representative nodes (exemplars) in the GNN…
 tags:
-  - NeurIPS 2025
-  - Graph Learning
-  - graph neural network interpretability
-  - global explanation
-  - exemplar theory
-  - natural language rules
-  - coverage maximization
+  - "NeurIPS 2025"
+  - "Graph Learning"
+  - "graph neural network interpretability"
+  - "global explanation"
+  - "exemplar theory"
+  - "natural language rules"
+  - "coverage maximization"
 date: 2026-05-08
 content_hash: da9e43a5543fb599
 ---

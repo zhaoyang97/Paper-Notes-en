@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Probabilistic Hash Embeddings for Online Learning of Categorical Features
 description: >-
-  [AAAI 2026][Recommender Systems][hash embedding] This paper proposes Probabilistic Hash Embeddings (PHE), which models hash embedding tables as random variables and performs posterior inference via Bayesian online learning. PHE addresses the catastrophic forgetting problem caused by parameter sharing in deterministic hash embeddings under streaming data settings. It significantly outperforms deterministic baselines across classification, sequential modeling, and recommender system tasks, while requiring only 2%–4% of the memory needed by collision-free embedding tables.
+  [AAAI 2026][Recommender Systems][hash embedding] This paper proposes Probabilistic Hash Embeddings (PHE), which models hash embedding tables as random variables and performs posterior inference via Bayesian online learni…
 tags:
-  - AAAI 2026
-  - Recommender Systems
-  - hash embedding
-  - Bayesian online learning
-  - categorical features
-  - continual learning
-  - variational inference
+  - "AAAI 2026"
+  - "Recommender Systems"
+  - "hash embedding"
+  - "Bayesian online learning"
+  - "categorical features"
+  - "continual learning"
+  - "variational inference"
 date: 2026-05-08
 content_hash: c3a5396d9b723a7c
 ---

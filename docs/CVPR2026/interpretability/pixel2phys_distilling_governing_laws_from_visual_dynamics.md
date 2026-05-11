@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Pixel2Phys: Distilling Governing Laws from Visual Dynamics
 description: >-
-  [CVPR 2026][Physical law discovery] Pixel2Phys is proposed as a multi-agent collaborative framework built upon MLLMs, employing four agents — Plan, Variable, Equation, and Experiment — in an iterative hypothesize-verify-refine loop to automatically discover interpretable governing equations from raw videos, achieving a 45.35% improvement in extrapolation accuracy over baselines.
+  [CVPR 2026][Interpretability][Physical law discovery] Pixel2Phys is proposed as a multi-agent collaborative framework built upon MLLMs, employing four agents — Plan, Variable, Equation…
 tags:
-  - CVPR 2026
-  - Physical law discovery
-  - multi-agent framework
-  - symbolic regression
-  - video understanding
-  - AI for Science
+  - "CVPR 2026"
+  - "Interpretability"
+  - "Physical law discovery"
+  - "multi-agent framework"
+  - "symbolic regression"
+  - "video understanding"
+  - "AI for Science"
 date: 2026-05-08
 content_hash: 79560e4f259bd029
 ---

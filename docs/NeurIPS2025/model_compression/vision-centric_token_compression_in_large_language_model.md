@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Vision-centric Token Compression in Large Language Model
 description: >-
-  [NeurIPS 2025][Model Compression][token compression] Vist proposes a vision-centric slow-fast dual-path token compression framework that renders distant long-context text as images and compresses them with a lightweight vision encoder, coupled with a Probability-guided Visual Enhancement (PVE) training objective. Across 11 ICL benchmarks, it achieves comparable accuracy with 2.3× fewer tokens, reducing FLOPs by 16% and memory by 50%.
+  [NeurIPS 2025][Model Compression][token compression] Vist proposes a vision-centric slow-fast dual-path token compression framework that renders distant long-context text as images and compresses them with a lightweight…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - token compression
-  - vision encoder
-  - long context
-  - in-context learning
-  - frequency-based masking
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "token compression"
+  - "vision encoder"
+  - "long context"
+  - "in-context learning"
+  - "frequency-based masking"
 date: 2026-05-08
 content_hash: f52ca6d5f78c45d0
 ---

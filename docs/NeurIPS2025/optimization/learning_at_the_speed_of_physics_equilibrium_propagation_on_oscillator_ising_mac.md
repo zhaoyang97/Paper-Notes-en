@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning at the Speed of Physics: Equilibrium Propagation on Oscillator Ising Machines
 description: >-
-  [NeurIPS 2025][Optimization][equilibrium propagation] This work presents the first complete mapping of Equilibrium Propagation (EP) onto Oscillator Ising Machine (OIM) hardware, leveraging GHz-scale physical dynamics to enable backpropagation-free local learning. The approach achieves 97.2%/88.0% accuracy on MNIST/Fashion-MNIST and demonstrates robustness under parameter quantization and noise.
+  [NeurIPS 2025][Optimization][equilibrium propagation] This work presents the first complete mapping of Equilibrium Propagation (EP) onto Oscillator Ising Machine (OIM) hardware…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - equilibrium propagation
-  - oscillator Ising machine
-  - neuromorphic computing
-  - energy-based model
-  - local learning rule
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "equilibrium propagation"
+  - "oscillator Ising machine"
+  - "neuromorphic computing"
+  - "energy-based model"
+  - "local learning rule"
 date: 2026-05-08
 content_hash: dc0d58282e63a362
 ---

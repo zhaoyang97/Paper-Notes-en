@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Kernel Conditional Tests from Learning-Theoretic Bounds
 description: >-
-  [NeurIPS 2025][conditional hypothesis testing] A unified framework is proposed for converting confidence bounds of learning algorithms into conditional hypothesis tests. Built upon kernel ridge regression, the framework yields conditional two-sample tests with finite-sample guarantees and, for the first time, supports non-i.i.d. data and online sampling scenarios.
+  [NeurIPS 2025][conditional hypothesis testing] A unified framework is proposed for converting confidence bounds of learning algorithms into conditional hypothesis tests. Built upon kernel ridge regression…
 tags:
-  - NeurIPS 2025
-  - conditional hypothesis testing
-  - kernel ridge regression
-  - confidence bounds
-  - conditional distribution functionals
-  - bootstrapping
+  - "NeurIPS 2025"
+  - "conditional hypothesis testing"
+  - "kernel ridge regression"
+  - "confidence bounds"
+  - "conditional distribution functionals"
+  - "bootstrapping"
 date: 2026-05-08
 content_hash: 09b35c582f99877d
 ---

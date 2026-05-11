@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MikuDance: Animating Character Art with Mixed Motion Dynamics
 description: >-
-  [ICCV 2025][Video Understanding][Character Animation] This paper proposes MikuDance, a diffusion-based character art animation system that achieves high-dynamic animation of complex character artwork through two core contributions: Mixed Motion Modeling, which unifies character motion and 3D camera motion into a pixel-space representation, and Mixed-Control Diffusion, which implicitly aligns character shape/scale with motion guidance within the Reference UNet.
+  [ICCV 2025][Video Understanding][Character Animation] This paper proposes MikuDance, a diffusion-based character art animation system that achieves high-dynamic animation of complex character artwork through two core con…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - Character Animation
-  - diffusion model
-  - Camera Control
-  - Mixed Motion
-  - Image-to-Video
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "Character Animation"
+  - "diffusion model"
+  - "Camera Control"
+  - "Mixed Motion"
+  - "Image-to-Video"
 date: 2026-05-08
 content_hash: cf8bfc1caf55e1a8
 ---

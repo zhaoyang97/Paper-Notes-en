@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Spec-o3: A Tool-Augmented Vision-Language Agent for Rare Celestial Object Candidate Identification
 description: >-
-  [ACL 2026][LLM Agent][Tool-augmented agent] This paper proposes Spec-o3, a tool-augmented vision-language agent that simulates the spectral inspection workflow of professional astronomers via Interleaved Multimodal Chain-of-Thought (iMCoT). Through a two-stage training pipeline of cold-start SFT followed by outcome-based RL, Spec-o3 improves macro-F1 from 28.3% to 76.5% on rare celestial object identification, achieving ~50× speedup over manual inspection.
+  [ACL 2026][LLM Agent][Tool-augmented agent] This paper proposes Spec-o3, a tool-augmented vision-language agent that simulates the spectral inspection workflow of professional astronomers via Interleaved Multimodal Chain…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - Tool-augmented agent
-  - interleaved multimodal chain-of-thought
-  - spectral inspection
-  - reinforcement learning
-  - domain VLM
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Tool-augmented agent"
+  - "interleaved multimodal chain-of-thought"
+  - "spectral inspection"
+  - "reinforcement learning"
+  - "domain VLM"
 date: 2026-05-08
 content_hash: f54e26b4b8cfd09e
 ---

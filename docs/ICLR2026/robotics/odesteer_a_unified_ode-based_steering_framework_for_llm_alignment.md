@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ODESteer: A Unified ODE-Based Steering Framework for LLM Alignment
 description: >-
-  [ICLR 2026][Robotics][Activation Steering] This paper proposes a unified theoretical framework for activation steering based on ordinary differential equations (ODEs), interpreting conventional activation addition as the Euler discretization of an ODE and showing that steering direction identification is equivalent to defining a barrier function. Building on this insight, the authors design ODESteer, which achieves fine-grained steering by numerically solving the ODE with multi-step adaptive integration, yielding gains of 5.7% on TruthfulQA, 2.5% on UltraFeedback, and 2.4% on RealToxicityPrompts.
+  [ICLR 2026][Robotics][Activation Steering] This paper proposes a unified theoretical framework for activation steering based on ordinary differential equations (ODEs)…
 tags:
-  - ICLR 2026
-  - Robotics
-  - Activation Steering
-  - ODE
-  - Barrier Function
-  - Control Theory
-  - Inference-Time Alignment
+  - "ICLR 2026"
+  - "Robotics"
+  - "Activation Steering"
+  - "ODE"
+  - "Barrier Function"
+  - "Control Theory"
+  - "Inference-Time Alignment"
 date: 2026-05-08
 content_hash: f84e76fd8cffbd8f
 ---

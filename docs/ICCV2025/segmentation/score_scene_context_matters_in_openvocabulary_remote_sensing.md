@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SCORE: Scene Context Matters in Open-Vocabulary Remote Sensing Instance Segmentation
 description: >-
-  [ICCV 2025][Segmentation][Open-vocabulary instance segmentation] This paper proposes SCORE, a framework that injects multi-granularity scene knowledge from a remote sensing-specific CLIP into an open-vocabulary instance segmentation pipeline via two modules — Region-Aware Integration (RAI) and Global Context Adaptation (GCA) — achieving an average mAP improvement of 5.53% over the previous state of the art in cross-dataset evaluation across multiple remote sensing benchmarks.
+  [ICCV 2025][Segmentation][Open-vocabulary instance segmentation] This paper proposes SCORE, a framework that injects multi-granularity scene knowledge from a remote sensing-specific CLIP into an open-vocabulary instance…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - Open-vocabulary instance segmentation
-  - remote sensing
-  - scene context
-  - vision-language models
-  - cross-dataset generalization
+  - "ICCV 2025"
+  - "Segmentation"
+  - "Open-vocabulary instance segmentation"
+  - "remote sensing"
+  - "scene context"
+  - "vision-language models"
+  - "cross-dataset generalization"
 date: 2026-05-08
 content_hash: 4f03c4027c85a4d7
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] RepoShapley: Shapley-Enhanced Context Filtering for Repository-Level Code Completion
 description: >-
-  [ACL 2026][Shapley value] This paper proposes RepoShapley, a coalition-aware context filtering framework based on Shapley values, which estimates the interactive contribution of retrieved code snippets in combination to determine whether each snippet should be retained or discarded, thereby significantly improving repository-level code completion quality.
+  [ACL 2026][Information Retrieval & RAG][Shapley value] This paper proposes RepoShapley, a coalition-aware context filtering framework based on Shapley values…
 tags:
-  - ACL 2026
-  - Shapley value
-  - context filtering
-  - repository-level code completion
-  - retrieval-augmented generation
-  - coalitional game
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Shapley value"
+  - "context filtering"
+  - "repository-level code completion"
+  - "retrieval-augmented generation"
+  - "coalitional game"
 date: 2026-05-08
 content_hash: 141f2d1805ba1595
 ---

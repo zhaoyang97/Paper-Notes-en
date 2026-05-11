@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LabelAny3D: Label Any Object 3D in the Wild
 description: >-
-  [NeurIPS 2025][Autonomous Driving][3D annotation] This paper proposes LabelAny3D, an analysis-by-synthesis automatic 3D annotation pipeline that reconstructs complete 3D scenes from monocular images to obtain high-quality 3D bounding box annotations. Based on this pipeline, the authors construct the COCO3D benchmark covering 80 categories of everyday objects, achieving significant improvements in open-vocabulary monocular 3D detection.
+  [NeurIPS 2025][Autonomous Driving][3D annotation] This paper proposes LabelAny3D, an analysis-by-synthesis automatic 3D annotation pipeline that reconstructs complete 3D scenes from monocular images to obtain high-qualit…
 tags:
-  - NeurIPS 2025
-  - Autonomous Driving
-  - 3D annotation
-  - monocular 3D detection
-  - open-vocabulary
-  - automatic annotation
-  - foundation models
+  - "NeurIPS 2025"
+  - "Autonomous Driving"
+  - "3D annotation"
+  - "monocular 3D detection"
+  - "open-vocabulary"
+  - "automatic annotation"
+  - "foundation models"
 date: 2026-05-08
 content_hash: 969fbff3680e3933
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Reason-SVG: Enhancing Structured Reasoning for Vector Graphics Generation with Reinforcement Learning
 description: >-
-  [CVPR2026][Multimodal VLM][SVG generation] This paper proposes the Reason-SVG framework, which introduces a "Drawing-with-Thought" (DwT) paradigm that enables LLMs to perform explicit multi-stage design reasoning prior to SVG generation. Combined with SFT and GRPO reinforcement learning with a hybrid reward function, Reason-SVG consistently outperforms existing methods in semantic alignment, structural validity, and visual quality.
+  [CVPR2026][Multimodal VLM][SVG generation] This paper proposes the Reason-SVG framework, which introduces a "Drawing-with-Thought" (DwT) paradigm that enables LLMs to perform explicit multi-stage design reasoning prior t…
 tags:
-  - CVPR2026
-  - Multimodal VLM
-  - SVG generation
-  - structured reasoning
-  - reinforcement learning
-  - GRPO
-  - Drawing-with-Thought
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "SVG generation"
+  - "structured reasoning"
+  - "reinforcement learning"
+  - "GRPO"
+  - "Drawing-with-Thought"
 date: 2026-05-08
 content_hash: a363f5d6e5f763ee
 ---

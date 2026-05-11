@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Thicker and Quicker: A Jumbo Token for Fast Plain Vision Transformers
 description: >-
-  [ICLR 2026][Segmentation][Vision Transformer] This paper proposes Jumbo: a method that expands the ViT CLS token to $J$ times its original width, splits it into $J$ patch-width tokens before attention, and reassembles them after attention for processing by a dedicated wide FFN. With negligible computational overhead, Jumbo substantially increases global modeling capacity, enabling plain ViT to surpass dedicated efficient architectures (EfficientViT, SHViT, MobileNetV4) in high-throughput inference regimes while preserving all architectural advantages of the plain ViT.
+  [ICLR 2026][Segmentation][Vision Transformer] This paper proposes Jumbo: a method that expands the ViT CLS token to $J$ times its original width, splits it into $J$ patch-width tokens before attention…
 tags:
-  - ICLR 2026
-  - Segmentation
-  - Vision Transformer
-  - CLS Token
-  - Efficient Architecture
-  - Registers
-  - Time Series
-  - ImageNet
+  - "ICLR 2026"
+  - "Segmentation"
+  - "Vision Transformer"
+  - "CLS Token"
+  - "Efficient Architecture"
+  - "Registers"
+  - "Time Series"
+  - "ImageNet"
 date: 2026-05-08
 content_hash: 2e28faa0acd1dd7d
 ---

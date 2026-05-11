@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Non-Stationary Time Series Forecasting with Temporal Stabilization and Frequency Differencing
 description: >-
-  [AAAI 2026][Time Series][Non-stationary time series] This paper proposes DTAF, a dual-branch framework that extracts and removes heterogeneous non-stationary patterns via a non-stationary MoE filter in the temporal domain, tracks frequency drift via spectral differencing in the frequency domain, and fuses complementary information from both domains through dual-branch attention for robust non-stationary time series forecasting.
+  [AAAI 2026][Time Series][Non-stationary time series] This paper proposes DTAF, a dual-branch framework that extracts and removes heterogeneous non-stationary patterns via a non-stationary MoE filter in the temporal domai…
 tags:
-  - AAAI 2026
-  - Time Series
-  - Non-stationary time series
-  - mixture of experts
-  - frequency differencing
-  - dual-branch modeling
-  - time series forecasting
+  - "AAAI 2026"
+  - "Time Series"
+  - "Non-stationary time series"
+  - "mixture of experts"
+  - "frequency differencing"
+  - "dual-branch modeling"
+  - "time series forecasting"
 date: 2026-05-08
 content_hash: 2327115f82aa2bc3
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Toward Complete Merger Identification at Cosmic Noon with Deep Learning
 description: >-
-  [NeurIPS 2025 (ML4PS Workshop)][Galaxy merger identification] A ResNet18 is trained on simulated HST CANDELS images generated from IllustrisTNG50, demonstrating for the first time that deep learning can successfully identify galaxy mergers at high redshift $1<z<1.5$, including minor mergers ($\mu \geq 1/10$) and low-mass galaxies ($M_\star > 10^8 M_\odot$), achieving an overall accuracy of ~73%. Model behavior is further analyzed through Grad-CAM and UMAP.
+  [NeurIPS 2025 (ML4PS Workshop)][Physics][Galaxy merger identification] A ResNet18 is trained on simulated HST CANDELS images generated from IllustrisTNG50…
 tags:
-  - NeurIPS 2025 (ML4PS Workshop)
-  - Galaxy merger identification
-  - ResNet18
-  - Cosmic noon
-  - IllustrisTNG
-  - Grad-CAM
+  - "NeurIPS 2025 (ML4PS Workshop)"
+  - "Physics"
+  - "Galaxy merger identification"
+  - "ResNet18"
+  - "Cosmic noon"
+  - "IllustrisTNG"
+  - "Grad-CAM"
 date: 2026-05-08
 content_hash: 44361e6e154784d8
 ---

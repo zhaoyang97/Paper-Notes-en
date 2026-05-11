@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond Monotonicity: Revisiting Factorization Principles in Multi-Agent Q-Learning
 description: >-
-  [AAAI 2026 (Oral)][Reinforcement Learning][Multi-agent reinforcement learning] Through dynamical systems analysis, this paper proves that under approximate greedy exploration policies, all zero-loss solutions violating IGM consistency in non-monotonic value factorization Q-learning are unstable saddle points, while IGM-consistent solutions are stable attractors — enabling reliable convergence to optimal solutions without monotonicity constraints.
+  [AAAI 2026 (Oral)][Reinforcement Learning][Multi-agent reinforcement learning] Through dynamical systems analysis, this paper proves that under approximate greedy exploration policies…
 tags:
-  - AAAI 2026 (Oral)
-  - Reinforcement Learning
-  - Multi-agent reinforcement learning
-  - value function factorization
-  - IGM consistency
-  - non-monotonic mixing network
-  - dynamical systems analysis
+  - "AAAI 2026 (Oral)"
+  - "Reinforcement Learning"
+  - "Multi-agent reinforcement learning"
+  - "value function factorization"
+  - "IGM consistency"
+  - "non-monotonic mixing network"
+  - "dynamical systems analysis"
 date: 2026-05-08
 content_hash: 10017f5b47e8b85c
 ---

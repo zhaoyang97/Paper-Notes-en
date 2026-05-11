@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards High-Quality Image Segmentation: Improving Topology Accuracy by Penalizing Neighbor Pixels
 description: >-
-  [CVPR2026][Segmentation][Topology-preserving segmentation] This paper proposes Same Class Neighbor Penalization (SCNP), which replaces each pixel's logit with the worst prediction among its same-class neighbors during training, thereby forcing the model to prioritize correcting weakly classified pixels within local neighborhoods. This approach achieves significant improvements in topological accuracy at negligible cost (only 3 lines of code and a few milliseconds per iteration).
+  [CVPR2026][Segmentation][Topology-preserving segmentation] This paper proposes Same Class Neighbor Penalization (SCNP), which replaces each pixel's logit with the worst prediction among its same-class neighbors during tr…
 tags:
-  - CVPR2026
-  - Segmentation
-  - Topology-preserving segmentation
-  - neighbor penalization
-  - SCNP
-  - loss function
-  - connected components
+  - "CVPR2026"
+  - "Segmentation"
+  - "Topology-preserving segmentation"
+  - "neighbor penalization"
+  - "SCNP"
+  - "loss function"
+  - "connected components"
 date: 2026-05-08
 content_hash: f1ce0e86c48ee775
 ---

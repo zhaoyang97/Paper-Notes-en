@@ -2,15 +2,16 @@
 title: >-
   [Paper Note] Program Synthesis via Test-Time Transduction
 description: >-
-  [NeurIPS 2025][program synthesis] This paper proposes SYNTRA, a framework that reframes program synthesis as transductive learning — at test time, it leverages visible test inputs and LLM judgment to iteratively eliminate inconsistent candidate program hypotheses. A greedy maximin algorithm minimizes the number of LLM queries, achieving accuracy improvements of up to 196% across 4 benchmarks.
+  [NeurIPS 2025][Code Intelligence][program synthesis] This paper proposes SYNTRA, a framework that reframes program synthesis as transductive learning — at test time…
 tags:
-  - NeurIPS 2025
-  - program synthesis
-  - transductive inference
-  - active learning
-  - hypothesis elimination
-  - LLM
-  - edge cases
+  - "NeurIPS 2025"
+  - "Code Intelligence"
+  - "program synthesis"
+  - "transductive inference"
+  - "active learning"
+  - "hypothesis elimination"
+  - "LLM"
+  - "edge cases"
 date: 2026-05-08
 content_hash: 848f204843fa9ad2
 ---

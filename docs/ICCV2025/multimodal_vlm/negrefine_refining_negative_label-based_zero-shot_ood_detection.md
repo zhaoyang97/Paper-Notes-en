@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] NegRefine: Refining Negative Label-Based Zero-Shot OOD Detection
 description: >-
-  [ICCV 2025][Multimodal VLM][OOD Detection] This paper proposes NegRefine, which leverages an LLM to filter proper nouns and subcategory labels from the negative label set, and designs a multi-label matching scoring function to handle cases where an image simultaneously matches both in-distribution and negative labels. On the ImageNet-1K benchmark, NegRefine achieves an average AUROC improvement of 1.82% and FPR95 reduction of 4.35%, establishing a new state of the art in zero-shot OOD detection.
+  [ICCV 2025][Multimodal VLM][OOD Detection] This paper proposes NegRefine, which leverages an LLM to filter proper nouns and subcategory labels from the negative label set…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - OOD Detection
-  - Zero-Shot
-  - CLIP
-  - Negative Labels
-  - Multi-Label Matching
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "OOD Detection"
+  - "Zero-Shot"
+  - "CLIP"
+  - "Negative Labels"
+  - "Multi-Label Matching"
 date: 2026-05-08
 content_hash: f8689a44e0264fc9
 ---

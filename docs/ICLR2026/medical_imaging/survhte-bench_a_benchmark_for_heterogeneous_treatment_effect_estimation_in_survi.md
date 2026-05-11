@@ -2,18 +2,18 @@
 title: >-
   [Paper Note] SurvHTE-Bench: A Benchmark for Heterogeneous Treatment Effect Estimation in Survival Analysis
 description: >-
-  [ICLR2026][Medical Imaging][heterogeneous treatment effects] This paper introduces SurvHTE-Bench, the first comprehensive benchmark for heterogeneous treatment effect (HTE) estimation on right-censored survival data, encompassing 40 synthetic datasets, 10 semi-synthetic datasets, and 2 real-world datasets. It systematically evaluates 53 estimation methods under varying causal assumption violations and censoring levels, finding that no single method dominates, and that survival meta-learners—particularly S-Learner-Survival and Matching-Survival—are most robust under high censoring and assumption violations.
+  [ICLR2026][Medical Imaging][heterogeneous treatment effects] This paper introduces SurvHTE-Bench, the first comprehensive benchmark for heterogeneous treatment effect (HTE) estimation on right-censored survival data…
 tags:
-  - ICLR2026
-  - Medical Imaging
-  - heterogeneous treatment effects
-  - survival analysis
-  - right-censored data
-  - causal inference
-  - benchmark
-  - CATE
-  - meta-learners
-  - precision medicine
+  - "ICLR2026"
+  - "Medical Imaging"
+  - "heterogeneous treatment effects"
+  - "survival analysis"
+  - "right-censored data"
+  - "causal inference"
+  - "benchmark"
+  - "CATE"
+  - "meta-learners"
+  - "precision medicine"
 date: 2026-05-08
 content_hash: f95ec76a011e18c5
 ---

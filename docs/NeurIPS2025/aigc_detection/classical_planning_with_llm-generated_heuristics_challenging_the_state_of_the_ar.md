@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Classical Planning with LLM-Generated Heuristics: Challenging the State of the Art with Python Code
 description: >-
-  [NeurIPS 2025][AIGC Detection][Classical Planning] This paper proposes having LLMs **generate Python code for domain-dependent heuristic functions** (rather than directly generating plans). Candidate heuristics are obtained via $n$ samples and the best is selected on a training set, then injected into the Python planner Pyperplan for use with GBFS. The approach surpasses all C++ Fast Downward traditional heuristics on 8 IPC 2023 benchmark domains using pure Python, matches the SOTA learned planner $h^{\mathrm{WLF}}_{\mathrm{GPR}}$, and guarantees 100% correctness for all plans found.
+  [NeurIPS 2025][AIGC Detection][Classical Planning] This paper proposes having LLMs **generate Python code for domain-dependent heuristic functions** (rather than directly generating plans). Candidate heuristics are obtai…
 tags:
-  - NeurIPS 2025
-  - AIGC Detection
-  - Classical Planning
-  - LLM Code Generation
-  - Heuristic Function
-  - PDDL
-  - Greedy Best-First Search
-  - Domain-Dependent Planning
+  - "NeurIPS 2025"
+  - "AIGC Detection"
+  - "Classical Planning"
+  - "LLM Code Generation"
+  - "Heuristic Function"
+  - "PDDL"
+  - "Greedy Best-First Search"
+  - "Domain-Dependent Planning"
 date: 2026-05-08
 content_hash: 8ca2bec8c4ac07ca
 ---

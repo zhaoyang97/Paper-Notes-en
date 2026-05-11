@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EvoPrompt: Evolving Prompt Adaptation for Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][prompt learning] EvoPrompt addresses catastrophic forgetting and modality bias in VLM prompt learning via a trajectory-aware prompt evolution strategy — comprising unified embedding projection, direction–magnitude decoupled training, and feature geometric regularization — achieving state-of-the-art performance across few-shot, cross-dataset, and domain generalization benchmarks while preserving zero-shot capability.
+  [CVPR 2026][Multimodal VLM][prompt learning] EvoPrompt addresses catastrophic forgetting and modality bias in VLM prompt learning via a trajectory-aware prompt evolution strategy — comprising unified embedding projection…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - prompt learning
-  - catastrophic forgetting
-  - low-rank decomposition
-  - feature decorrelation
-  - VLM adaptation
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "prompt learning"
+  - "catastrophic forgetting"
+  - "low-rank decomposition"
+  - "feature decorrelation"
+  - "VLM adaptation"
 date: 2026-05-08
 content_hash: baf15434e7545f97
 ---

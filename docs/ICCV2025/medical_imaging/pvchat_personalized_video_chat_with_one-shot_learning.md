@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PVChat: Personalized Video Chat with One-Shot Learning
 description: >-
-  [ICCV 2025][Medical Imaging][personalized video LLM] This paper proposes PVChat, the first video large language model supporting personalized subject learning from a single reference video. Through a ReLU-routed Mixture-of-Heads (ReMoH) attention mechanism, a systematic data augmentation pipeline, and a progressive image-to-video training strategy, PVChat achieves identity-aware video question answering and surpasses existing state-of-the-art ViLLMs across diverse scenarios including medical, TV drama, and anime settings.
+  [ICCV 2025][Medical Imaging][personalized video LLM] This paper proposes PVChat, the first video large language model supporting personalized subject learning from a single reference video. Through a ReLU-routed Mixture-…
 tags:
-  - ICCV 2025
-  - Medical Imaging
-  - personalized video LLM
-  - one-shot learning
-  - mixture-of-heads
-  - video question answering
-  - identity-aware
+  - "ICCV 2025"
+  - "Medical Imaging"
+  - "personalized video LLM"
+  - "one-shot learning"
+  - "mixture-of-heads"
+  - "video question answering"
+  - "identity-aware"
 date: 2026-05-08
 content_hash: 33d898047103adc4
 ---

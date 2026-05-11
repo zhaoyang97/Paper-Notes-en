@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] OraPO: Oracle-educated Reinforcement Learning for Data-efficient and Factual Radiology Report Generation
 description: >-
-  [CVPR2026][Medical Imaging][Radiology report generation] OraPO (Oracle-educated GRPO) injects lightweight DPO supervision when GRPO exploration fails, converting zero-reward rollouts into preference pairs. Combined with a FactScore reward, the method achieves SOTA radiology report generation on CheXpert Plus and MIMIC-CXR (F1=0.341/0.357) using only 1K training samples and a 3B model—reducing training data by 2–3 orders of magnitude compared to prior best methods.
+  [CVPR2026][Medical Imaging][Radiology report generation] OraPO (Oracle-educated GRPO) injects lightweight DPO supervision when GRPO exploration fails…
 tags:
-  - CVPR2026
-  - Medical Imaging
-  - Radiology report generation
-  - GRPO
-  - DPO
-  - reinforcement learning
-  - data efficiency
-  - clinical factuality scoring
+  - "CVPR2026"
+  - "Medical Imaging"
+  - "Radiology report generation"
+  - "GRPO"
+  - "DPO"
+  - "reinforcement learning"
+  - "data efficiency"
+  - "clinical factuality scoring"
 date: 2026-05-08
 content_hash: 764b6b075d069071
 ---

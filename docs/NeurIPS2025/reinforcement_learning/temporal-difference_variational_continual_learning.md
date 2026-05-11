@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Temporal-Difference Variational Continual Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Continual Learning] This paper proposes the TD-VCL objective, which reformulates the learning target in Variational Continual Learning (VCL) as a weighted combination of multiple past posterior estimates. This reformulation reveals a deep connection to temporal-difference (TD) methods in reinforcement learning, and effectively mitigates the progressive accumulation of approximation errors by "spreading" regularization pressure across multiple historical posteriors.
+  [NeurIPS 2025][Reinforcement Learning][Continual Learning] This paper proposes the TD-VCL objective, which reformulates the learning target in Variational Continual Learning (VCL) as a weighted combination of multiple pa…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Continual Learning
-  - Variational Inference
-  - Temporal Difference
-  - Catastrophic Forgetting
-  - Bayesian Learning
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Continual Learning"
+  - "Variational Inference"
+  - "Temporal Difference"
+  - "Catastrophic Forgetting"
+  - "Bayesian Learning"
 date: 2026-05-08
 content_hash: 6aa8a625d93e0328
 ---

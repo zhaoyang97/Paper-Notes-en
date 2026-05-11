@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] KLASS: KL-Guided Fast Inference in Masked Diffusion Models
 description: >-
-  [NeurIPS 2025][Image Generation][Masked Diffusion Models] This paper proposes KLASS (KL-Adaptive Stability Sampling), a training-free sampling method that leverages token-level KL divergence and confidence scores to identify stable tokens for parallel decoding, achieving up to 2.78× speedup on masked diffusion models without sacrificing—and in many cases improving—generation quality.
+  [NeurIPS 2025][Image Generation][Masked Diffusion Models] This paper proposes KLASS (KL-Adaptive Stability Sampling), a training-free sampling method that leverages token-level KL divergence and confidence scores to iden…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Masked Diffusion Models
-  - KL Divergence
-  - Accelerated Sampling
-  - Token Stability
-  - Parallel Decoding
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Masked Diffusion Models"
+  - "KL Divergence"
+  - "Accelerated Sampling"
+  - "Token Stability"
+  - "Parallel Decoding"
 date: 2026-05-08
 content_hash: 7c0b4270df323404
 ---

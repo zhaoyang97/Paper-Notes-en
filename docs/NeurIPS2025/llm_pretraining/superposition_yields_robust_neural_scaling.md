@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Superposition Yields Robust Neural Scaling
 description: >-
-  [NeurIPS 2025][LLM Pretraining][Neural scaling laws] This paper identifies representational superposition as the core driver of neural scaling laws: in the strong-superposition regime, loss **universally** scales inversely with model dimension ($L \propto 1/m$), independent of the specific form of the data frequency distribution—consistent with empirical scaling behavior in real LLMs.
+  [NeurIPS 2025][LLM Pretraining][Neural scaling laws] This paper identifies representational superposition as the core driver of neural scaling laws: in the strong-superposition regime…
 tags:
-  - NeurIPS 2025
-  - LLM Pretraining
-  - Neural scaling laws
-  - superposition
-  - representation learning
-  - LLM theory
-  - weight decay
+  - "NeurIPS 2025"
+  - "LLM Pretraining"
+  - "Neural scaling laws"
+  - "superposition"
+  - "representation learning"
+  - "LLM theory"
+  - "weight decay"
 date: 2026-05-08
 content_hash: b58f8c8971027b95
 ---

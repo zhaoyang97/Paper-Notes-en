@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] StoryCoder: Narrative Reformulation for Structured Reasoning in LLM Code Generation
 description: >-
-  [ACL 2026][Narrative reformulation] This paper proposes StoryCoder, a prompting framework that reformulates code generation problems into coherent natural language narratives. By guiding LLMs through three narrative components—task overview, constraints, and examples—the framework achieves an average zero-shot pass@10 improvement of 18.7% across 11 models.
+  [ACL 2026][Code Intelligence][Narrative reformulation] This paper proposes StoryCoder, a prompting framework that reformulates code generation problems into coherent natural language narratives. By guiding LLMs through t…
 tags:
-  - ACL 2026
-  - Narrative reformulation
-  - code generation
-  - prompt engineering
-  - structured reasoning
-  - algorithm selection
+  - "ACL 2026"
+  - "Code Intelligence"
+  - "Narrative reformulation"
+  - "code generation"
+  - "prompt engineering"
+  - "structured reasoning"
+  - "algorithm selection"
 date: 2026-05-08
 content_hash: 14fde6262f7fb06d
 ---

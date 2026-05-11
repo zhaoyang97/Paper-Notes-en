@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Easi3R: Estimating Disentangled Motion from DUSt3R Without Training
 description: >-
-  [ICCV 2025][3D Vision][4D Reconstruction] This paper proposes Easi3R, a training-free plug-and-play method that analyzes and manipulates the implicit motion information encoded in DUSt3R's cross-attention layers to achieve dynamic object segmentation, camera pose estimation, and 4D dense point cloud reconstruction.
+  [ICCV 2025][3D Vision][4D Reconstruction] This paper proposes Easi3R, a training-free plug-and-play method that analyzes and manipulates the implicit motion information encoded in DUSt3R's cross-attention layers to achie…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 4D Reconstruction
-  - DUSt3R
-  - Attention Disentanglement
-  - Dynamic Segmentation
-  - Training-Free
+  - "ICCV 2025"
+  - "3D Vision"
+  - "4D Reconstruction"
+  - "DUSt3R"
+  - "Attention Disentanglement"
+  - "Dynamic Segmentation"
+  - "Training-Free"
 date: 2026-05-08
 content_hash: c2b87dede1a8236f
 ---

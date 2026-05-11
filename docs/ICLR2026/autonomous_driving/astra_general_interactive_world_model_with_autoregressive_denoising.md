@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Astra: General Interactive World Model with Autoregressive Denoising
 description: >-
-  [ICLR 2026][Autonomous Driving][world model] This paper proposes Astra, a general interactive world model that enables action-conditioned long-horizon video prediction on top of a pretrained video diffusion model via an autoregressive denoising framework. Three key contributions are introduced: ACT-Adapter (action injection), noise-augmented history memory (to mitigate visual inertia), and Mixture of Action Experts (to unify heterogeneous action modalities). Astra achieves state-of-the-art fidelity and action-following capability across autonomous driving, robotic manipulation, and scene exploration scenarios.
+  [ICLR 2026][Autonomous Driving][world model] This paper proposes Astra, a general interactive world model that enables action-conditioned long-horizon video prediction on top of a pretrained video diffusion model via an…
 tags:
-  - ICLR 2026
-  - Autonomous Driving
-  - world model
-  - autoregressive denoising
-  - action control
-  - interactive video
-  - mixture of experts
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "world model"
+  - "autoregressive denoising"
+  - "action control"
+  - "interactive video"
+  - "mixture of experts"
 date: 2026-05-08
 content_hash: 7bf67e23499f828d
 ---

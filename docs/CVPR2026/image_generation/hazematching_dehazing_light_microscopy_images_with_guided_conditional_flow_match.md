@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HazeMatching: Dehazing Light Microscopy Images with Guided Conditional Flow Matching
 description: >-
-  [CVPR 2026][Image Generation][Fluorescence microscopy dehazing] This paper proposes HazeMatching, a guided conditional flow matching (Guided CFM) framework for microscopy image dehazing. By incorporating degraded observations as conditioning signals in the velocity field, the method achieves high data fidelity and high perceptual quality simultaneously without requiring an explicit degradation operator, while also providing well-calibrated uncertainty estimates.
+  [CVPR 2026][Image Generation][Fluorescence microscopy dehazing] This paper proposes HazeMatching, a guided conditional flow matching (Guided CFM) framework for microscopy image dehazing. By incorporating degraded observa…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Fluorescence microscopy dehazing
-  - conditional flow matching
-  - perception-distortion trade-off
-  - posterior sampling
-  - calibration analysis
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Fluorescence microscopy dehazing"
+  - "conditional flow matching"
+  - "perception-distortion trade-off"
+  - "posterior sampling"
+  - "calibration analysis"
 date: 2026-05-08
 content_hash: 01bcc65a6a8be163
 ---

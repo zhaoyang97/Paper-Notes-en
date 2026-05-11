@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Context-Aware Image Anonymization with Multi-Agent Reasoning
 description: >-
-  [CVPR 2026][Segmentation][Image Anonymization] This paper proposes CAIAMAR, a multi-agent framework that combines high-confidence direct PII processing (pedestrians, license plates) using dedicated models with context-aware reasoning via large vision-language models (LVLMs). Through a PDCA iterative refinement loop, it detects indirect privacy identifiers and applies appearance-decorrelated inpainting via diffusion models. On CUHK03-NP, it reduces re-identification risk by 73% while maintaining high image quality (FID 9.1) on CityScapes.
+  [CVPR 2026][Segmentation][Image Anonymization] This paper proposes CAIAMAR, a multi-agent framework that combines high-confidence direct PII processing (pedestrians…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Image Anonymization
-  - Multi-Agent Reasoning
-  - Diffusion-Based Inpainting
-  - Privacy Protection
-  - GDPR Compliance
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Image Anonymization"
+  - "Multi-Agent Reasoning"
+  - "Diffusion-Based Inpainting"
+  - "Privacy Protection"
+  - "GDPR Compliance"
 date: 2026-05-08
 content_hash: 2c62f39a5ae5f3aa
 ---

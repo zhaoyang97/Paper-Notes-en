@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] ToolVQA: A Dataset for Multi-step Reasoning VQA with External Tools
 description: >-
-  [ICCV 2025][Multimodal VLM][Visual Question Answering] This paper proposes ToolVQA — a large-scale multimodal tool-augmented VQA dataset containing 23K samples. It is automatically constructed via the ToolEngine pipeline, which combines image-guided DFS with LCS-based example matching, to generate multi-step reasoning data in realistic scenarios. LLaVA-7B fine-tuned on this dataset surpasses GPT-3.5-Turbo on 5 OOD benchmarks.
+  [ICCV 2025][Multimodal VLM][Visual Question Answering] This paper proposes ToolVQA — a large-scale multimodal tool-augmented VQA dataset containing 23K samples. It is automatically constructed via the ToolEngine pipeline…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Visual Question Answering
-  - Tool Use
-  - Multi-step Reasoning
-  - Dataset
-  - Large Models
-  - Tool Agent
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Visual Question Answering"
+  - "Tool Use"
+  - "Multi-step Reasoning"
+  - "Dataset"
+  - "Large Models"
+  - "Tool Agent"
 date: 2026-05-08
 content_hash: 8a717193bd5301fd
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HAMMER: Harnessing MLLM via Cross-Modal Integration for Intention-Driven 3D Affordance Grounding
 description: >-
-  [CVPR 2026][Multimodal VLM][3D Affordance] This paper proposes the HAMMER framework, which extracts contact-aware intention embeddings from an MLLM, enhances point cloud features via hierarchical cross-modal fusion, and injects 3D spatial information into the intention embeddings through a multi-granular geometry lifting module. The framework achieves interaction-image-based 3D affordance grounding and comprehensively outperforms existing methods on the PIAD benchmark.
+  [CVPR 2026][Multimodal VLM][3D Affordance] This paper proposes the HAMMER framework, which extracts contact-aware intention embeddings from an MLLM, enhances point cloud features via hierarchical cross-modal fusion…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - 3D Affordance
-  - MLLM
-  - Cross-Modal Fusion
-  - Point Cloud
-  - Intention Understanding
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "3D Affordance"
+  - "MLLM"
+  - "Cross-Modal Fusion"
+  - "Point Cloud"
+  - "Intention Understanding"
 date: 2026-05-08
 content_hash: 9a13f2ca95007e7d
 ---

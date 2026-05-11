@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Knowledge Fusion of Large Language Models Via Modular Skillpacks
 description: >-
-  [ICLR 2026][Model Compression][knowledge grafting] This paper proposes GraftLLM, a framework that extracts capabilities from heterogeneous source models into compact, transferable "SkillPacks" (modular skill packages). Through a module-aware adaptive compression strategy that stores parameter deltas, GraftLLM supports knowledge transfer, heterogeneous model fusion, and continual learning without forgetting, significantly outperforming existing PEFT and parameter merging methods across multiple settings.
+  [ICLR 2026][Model Compression][knowledge grafting] This paper proposes GraftLLM, a framework that extracts capabilities from heterogeneous source models into compact…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - knowledge grafting
-  - SkillPack
-  - heterogeneous model fusion
-  - continual learning
-  - delta compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "knowledge grafting"
+  - "SkillPack"
+  - "heterogeneous model fusion"
+  - "continual learning"
+  - "delta compression"
 date: 2026-05-08
 content_hash: b412aed03291301a
 ---

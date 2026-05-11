@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] wd1: Weighted Policy Optimization for Reasoning in Diffusion Language Models
 description: >-
-  [ICLR 2026][Image Restoration][Diffusion Language Models] This paper proposes wd1, a ratio-free weighted log-likelihood policy optimization method for RL fine-tuning of diffusion language models (dLLMs). By combining positive-sample weighting with negative-sample penalization, wd1 avoids the bias and high variance introduced by policy ratio estimation in GRPO, achieving state-of-the-art performance of +59% on Sudoku and 84.5% on GSM8K over LLaDA-8B.
+  [ICLR 2026][Image Restoration][Diffusion Language Models] This paper proposes wd1, a ratio-free weighted log-likelihood policy optimization method for RL fine-tuning of diffusion language models (dLLMs). By combining pos…
 tags:
-  - ICLR 2026
-  - Image Restoration
-  - Diffusion Language Models
-  - Reinforcement Learning
-  - Policy Optimization
-  - Reasoning
-  - dLLM
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "Diffusion Language Models"
+  - "Reinforcement Learning"
+  - "Policy Optimization"
+  - "Reasoning"
+  - "dLLM"
 date: 2026-05-08
 content_hash: b7eeb46eb4315eb3
 ---

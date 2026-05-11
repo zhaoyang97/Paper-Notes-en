@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Characterizing the Expressivity of Fixed-Precision Transformer Language Models
 description: >-
-  [NeurIPS 2025][LLM/NLP][transformer expressivity] This work precisely characterizes the expressive power of fixed-precision, strictly causal, soft-attention, NoPE Transformers — showing it is exactly equivalent to linear temporal logic restricted to past operators, LTL[P] — and unifies this characterization with partially ordered deterministic finite automata (PODFA) and $\mathcal{R}$-trivial monoids.
+  [NeurIPS 2025][LLM/NLP][transformer expressivity] This work precisely characterizes the expressive power of fixed-precision, strictly causal, soft-attention…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - transformer expressivity
-  - formal language theory
-  - linear temporal logic
-  - fixed precision
-  - length generalization
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "transformer expressivity"
+  - "formal language theory"
+  - "linear temporal logic"
+  - "fixed precision"
+  - "length generalization"
 date: 2026-05-08
 content_hash: 1519bcb312444675
 ---

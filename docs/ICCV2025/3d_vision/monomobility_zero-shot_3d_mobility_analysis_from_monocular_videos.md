@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MonoMobility: Zero-Shot 3D Mobility Analysis from Monocular Videos
 description: >-
-  [ICCV 2025][3D Vision][Articulated object analysis] MonoMobility presents the first framework for zero-shot analysis of moving parts and motion attributes (motion axis and motion type) of articulated objects from monocular video. It combines off-the-shelf tools—depth estimation, optical flow, and segmentation—for coarse initialization, and then refines the results via self-supervised optimization of a dynamic scene represented with 2D Gaussian splatting together with a specially designed articulated-object dynamic scene optimization algorithm. The method requires no annotated data and handles rotational, translational, and compound motion.
+  [ICCV 2025][3D Vision][Articulated object analysis] MonoMobility presents the first framework for zero-shot analysis of moving parts and motion attributes (motion axis and motion type) of articulated objects from monocul…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Articulated object analysis
-  - monocular video
-  - zero-shot
-  - motion attribute estimation
-  - 2D Gaussian splatting
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Articulated object analysis"
+  - "monocular video"
+  - "zero-shot"
+  - "motion attribute estimation"
+  - "2D Gaussian splatting"
 date: 2026-05-08
 content_hash: 2cac39b9973da50e
 ---

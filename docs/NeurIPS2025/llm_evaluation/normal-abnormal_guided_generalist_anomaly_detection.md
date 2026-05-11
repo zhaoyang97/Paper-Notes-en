@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Normal-Abnormal Guided Generalist Anomaly Detection
 description: >-
-  [NeurIPS 2025][LLM Evaluation][generalist anomaly detection] NAGL is the first framework to incorporate mixed normal-and-abnormal reference samples into Generalist Anomaly Detection (GAD). Through two attention modules—Residual Mining (RM) and Anomaly Feature Learning (AFL)—it learns transferable anomaly patterns in residual space, substantially outperforming normal-reference-only methods in cross-domain scenarios with as few as 1 anomaly reference sample.
+  [NeurIPS 2025][LLM Evaluation][generalist anomaly detection] NAGL is the first framework to incorporate mixed normal-and-abnormal reference samples into Generalist Anomaly Detection (GAD). Through two attention modules—R…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - generalist anomaly detection
-  - cross-domain transfer
-  - residual learning
-  - normal-abnormal reference
-  - meta-learning
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "generalist anomaly detection"
+  - "cross-domain transfer"
+  - "residual learning"
+  - "normal-abnormal reference"
+  - "meta-learning"
 date: 2026-05-08
 content_hash: df3bff52d3532981
 ---

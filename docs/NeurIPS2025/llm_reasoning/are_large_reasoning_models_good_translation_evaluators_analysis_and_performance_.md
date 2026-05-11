@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Are Large Reasoning Models Good Translation Evaluators? Analysis and Performance Boost
 description: >-
-  [NeurIPS 2025][LLM Reasoning][LRM-as-a-judge] This paper presents the first systematic analysis of large reasoning models (LRMs) in MQM-based machine translation evaluation, identifying failure modes including overthinking, score overestimation, and scale-dependent sensitivity to input materials. The authors propose ThinMQM, a method that calibrates LRM reasoning by fine-tuning on synthetic human MQM annotation trajectories, reducing the thinking budget by approximately 35× while improving evaluation performance (achieving +8.7 correlation score for the 7B model).
+  [NeurIPS 2025][LLM Reasoning][LRM-as-a-judge] This paper presents the first systematic analysis of large reasoning models (LRMs) in MQM-based machine translation evaluation…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - LRM-as-a-judge
-  - machine translation evaluation
-  - MQM
-  - thinking budget calibration
-  - ThinMQM
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "LRM-as-a-judge"
+  - "machine translation evaluation"
+  - "MQM"
+  - "thinking budget calibration"
+  - "ThinMQM"
 date: 2026-05-08
 content_hash: 53311dfba320a3c8
 ---

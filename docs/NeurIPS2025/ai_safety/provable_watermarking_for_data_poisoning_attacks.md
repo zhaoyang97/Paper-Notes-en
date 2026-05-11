@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Provable Watermarking for Data Poisoning Attacks
 description: >-
-  [NeurIPS 2025][AI Safety][watermarking] This paper proposes two provable watermarking schemes—post-poisoning watermarking and poisoning-concurrent watermarking—that provide transparency declaration mechanisms for data poisoning attacks. The theoretical analysis demonstrates that, under specific watermark length conditions, both watermark detectability and poisoning effectiveness can be simultaneously guaranteed.
+  [NeurIPS 2025][AI Safety][watermarking] This paper proposes two provable watermarking schemes—post-poisoning watermarking and poisoning-concurrent watermarking—that provide transparency declaration mechanisms for data po…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - watermarking
-  - data poisoning
-  - backdoor attack
-  - availability attack
-  - provable guarantee
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "watermarking"
+  - "data poisoning"
+  - "backdoor attack"
+  - "availability attack"
+  - "provable guarantee"
 date: 2026-05-08
 content_hash: b7f4b0437af321e7
 ---

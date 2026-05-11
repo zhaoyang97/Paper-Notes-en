@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Cost-Minimized Label-Flipping Poisoning Attack to LLM Alignment
 description: >-
-  [AAAI 2026][Optimization][Data poisoning attack] This work provides the first theoretical analysis of the minimum cost required to steer an LLM policy toward an attacker's target by flipping preference labels during RLHF/DPO alignment. The problem is formalized as a convex optimization problem, upper and lower bounds on the cost are derived, and a post-processing method called PCM (Poisoning Cost Minimization) is proposed to substantially reduce the number of label flips while preserving the poisoning effect.
+  [AAAI 2026][Optimization][Data poisoning attack] This work provides the first theoretical analysis of the minimum cost required to steer an LLM policy toward an attacker's target by flipping preference labels during RLHF…
 tags:
-  - AAAI 2026
-  - Optimization
-  - Data poisoning attack
-  - RLHF/DPO
-  - label flipping
-  - convex optimization
-  - LLM alignment security
+  - "AAAI 2026"
+  - "Optimization"
+  - "Data poisoning attack"
+  - "RLHF/DPO"
+  - "label flipping"
+  - "convex optimization"
+  - "LLM alignment security"
 date: 2026-05-08
 content_hash: 447aaf46afbd93e3
 ---

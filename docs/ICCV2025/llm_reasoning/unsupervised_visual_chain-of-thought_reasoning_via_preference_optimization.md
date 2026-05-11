@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unsupervised Visual Chain-of-Thought Reasoning via Preference Optimization
 description: >-
-  [ICCV 2025][LLM Reasoning][Visual CoT] This paper proposes UV-CoT, a framework that enables image-level chain-of-thought (Visual CoT) reasoning without any manual bounding box annotations, by automatically constructing preference data and introducing an improved Score-DPO loss. UV-CoT surpasses the supervised Visual-CoT method on 6 benchmarks.
+  [ICCV 2025][LLM Reasoning][Visual CoT] This paper proposes UV-CoT, a framework that enables image-level chain-of-thought (Visual CoT) reasoning without any manual bounding box annotations…
 tags:
-  - ICCV 2025
-  - LLM Reasoning
-  - Visual CoT
-  - Preference Optimization
-  - Unsupervised Learning
-  - Multimodal Reasoning
-  - Bounding Box
+  - "ICCV 2025"
+  - "LLM Reasoning"
+  - "Visual CoT"
+  - "Preference Optimization"
+  - "Unsupervised Learning"
+  - "Multimodal Reasoning"
+  - "Bounding Box"
 date: 2026-05-08
 content_hash: 65305fef1660f09c
 ---

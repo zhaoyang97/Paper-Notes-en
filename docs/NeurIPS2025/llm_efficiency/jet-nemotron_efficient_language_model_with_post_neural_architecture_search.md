@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Jet-Nemotron: Efficient Language Model with Post Neural Architecture Search
 description: >-
-  [NeurIPS 2025][LLM Efficiency][hybrid attention] NVIDIA proposes the PostNAS pipeline — starting from a pretrained full-attention model, freezing MLP weights, and applying a four-step search (full-attention layer placement → linear attention block selection → novel JetBlock design → hardware-aware hyperparameter search) to yield the hybrid Jet-Nemotron architecture. The 2B model surpasses Qwen3-1.7B on MMLU-Pro while achieving 47× higher generation throughput.
+  [NeurIPS 2025][LLM Efficiency][hybrid attention] NVIDIA proposes the PostNAS pipeline — starting from a pretrained full-attention model, freezing MLP weights…
 tags:
-  - NeurIPS 2025
-  - LLM Efficiency
-  - hybrid attention
-  - linear attention
-  - neural architecture search
-  - efficient LLM
-  - KV cache
+  - "NeurIPS 2025"
+  - "LLM Efficiency"
+  - "hybrid attention"
+  - "linear attention"
+  - "neural architecture search"
+  - "efficient LLM"
+  - "KV cache"
 date: 2026-05-08
 content_hash: 3136ad1c4df4271c
 ---

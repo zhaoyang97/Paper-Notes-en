@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Logical Characterizations of GNNs with Mean Aggregation
 description: >-
-  [AAAI 2026][Graph Learning][GNN expressiveness] This paper provides a systematic logical characterization of GNNs using mean aggregation: under the non-uniform setting, mean-GNNs are equivalent to Ratio Modal Logic (RML); under the uniform setting (relative to MSO), they are equivalent to Modal Logic (ML); when the combination function is additionally required to be continuous and the classification function is a threshold, the expressiveness drops significantly to Alternation-Free Modal Logic (AFML).
+  [AAAI 2026][Graph Learning][GNN expressiveness] This paper provides a systematic logical characterization of GNNs using mean aggregation: under the non-uniform setting, mean-GNNs are equivalent to Ratio Modal Logic (RML)…
 tags:
-  - AAAI 2026
-  - Graph Learning
-  - GNN expressiveness
-  - mean aggregation
-  - modal logic
-  - ratio modal logic
-  - alternation-free modal logic
-  - non-uniform/uniform setting
+  - "AAAI 2026"
+  - "Graph Learning"
+  - "GNN expressiveness"
+  - "mean aggregation"
+  - "modal logic"
+  - "ratio modal logic"
+  - "alternation-free modal logic"
+  - "non-uniform/uniform setting"
 date: 2026-05-08
 content_hash: 8ddd82766fafcdea
 ---

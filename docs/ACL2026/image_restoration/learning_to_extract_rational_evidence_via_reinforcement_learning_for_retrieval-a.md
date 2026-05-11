@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning to Extract Rational Evidence via Reinforcement Learning for Retrieval-Augmented Generation
 description: >-
-  [ACL 2026][Image Restoration][Retrieval-Augmented Generation] EviOmni learns to extract rational evidence from retrieved documents through a "reason-then-extract" paradigm: integrating evidence reasoning and extraction into a unified trajectory, using knowledge token masking to prevent information leakage, and optimizing via GRPO with verifiable rewards, achieving accuracy surpassing full-text retrieval at ~38x compression across 5 benchmarks.
+  [ACL 2026][Image Restoration][Retrieval-Augmented Generation] EviOmni learns to extract rational evidence from retrieved documents through a "reason-then-extract" paradigm: integrating evidence reasoning and extraction i…
 tags:
-  - ACL 2026
-  - Image Restoration
-  - Retrieval-Augmented Generation
-  - Evidence Extraction
-  - Reinforcement Learning
-  - Reason-Guided Extraction
-  - GRPO
+  - "ACL 2026"
+  - "Image Restoration"
+  - "Retrieval-Augmented Generation"
+  - "Evidence Extraction"
+  - "Reinforcement Learning"
+  - "Reason-Guided Extraction"
+  - "GRPO"
 content_hash: 9f16aa415f52dbad
 ---
 

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] To Label or Not to Label: PALM – A Predictive Model for Evaluating Sample Efficiency in Active Learning Models
 description: >-
-  [ICCV 2025][Self-Supervised Learning][Active Learning] This paper proposes PALM — a unified mathematical model that characterizes active learning trajectories using four interpretable parameters (maximum accuracy $A_{\max}$, coverage efficiency $\delta$, initial learning offset $\alpha$, and scalability $\beta$). The model predicts complete learning curves from limited labeled data, enabling quantitative and fair comparison of active learning strategies.
+  [ICCV 2025][Self-Supervised Learning][Active Learning] This paper proposes PALM — a unified mathematical model that characterizes active learning trajectories using four interpretable parameters (maximum accuracy $A_{\ma…
 tags:
-  - ICCV 2025
-  - Self-Supervised Learning
-  - Active Learning
-  - Sample Efficiency
-  - Learning Curve Prediction
-  - Coverage Efficiency
-  - Self-Supervised Representations
+  - "ICCV 2025"
+  - "Self-Supervised Learning"
+  - "Active Learning"
+  - "Sample Efficiency"
+  - "Learning Curve Prediction"
+  - "Coverage Efficiency"
+  - "Self-Supervised Representations"
 date: 2026-05-08
 content_hash: e48b633c30c2c240
 ---

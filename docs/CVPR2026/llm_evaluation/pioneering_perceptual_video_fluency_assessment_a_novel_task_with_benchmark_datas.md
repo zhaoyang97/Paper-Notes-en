@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Pioneering Perceptual Video Fluency Assessment: A Novel Task with Benchmark Dataset and Baseline
 description: >-
-  [CVPR 2026][LLM Evaluation][Video Fluency Assessment] This paper formally separates Video Fluency Assessment (VFA) from conventional Video Quality Assessment (VQA) for the first time, introduces FluVid — the first fluency-oriented benchmark dataset (4,606 videos) — and proposes a baseline model FluNet that leverages Temporal Permuted Self-Attention (T-PSA) for efficient inter-frame interaction, achieving SRCC/PLCC of 0.816/0.821.
+  [CVPR 2026][LLM Evaluation][Video Fluency Assessment] This paper formally separates Video Fluency Assessment (VFA) from conventional Video Quality Assessment (VQA) for the first time…
 tags:
-  - CVPR 2026
-  - LLM Evaluation
-  - Video Fluency Assessment
-  - Temporal Quality
-  - Benchmark Dataset
-  - Self-Attention
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "LLM Evaluation"
+  - "Video Fluency Assessment"
+  - "Temporal Quality"
+  - "Benchmark Dataset"
+  - "Self-Attention"
+  - "Self-Supervised Learning"
 date: 2026-05-08
 content_hash: 4d743c130073accb
 ---

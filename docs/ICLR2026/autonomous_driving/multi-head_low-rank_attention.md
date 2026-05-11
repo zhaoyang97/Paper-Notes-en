@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multi-Head Low-Rank Attention (MLRA)
 description: >-
-  [ICLR 2026][Autonomous Driving][KV Cache] This paper proposes Multi-Head Low-Rank Attention (MLRA), which decomposes the single latent head in MLA into multiple independently shardable latent heads and sums the attention outputs across branches, enabling native 4-way tensor parallelism. The method achieves 2.8× decoding speedup while maintaining state-of-the-art performance.
+  [ICLR 2026][Autonomous Driving][KV Cache] This paper proposes Multi-Head Low-Rank Attention (MLRA), which decomposes the single latent head in MLA into multiple independently shardable latent heads and sums the attention…
 tags:
-  - ICLR 2026
-  - Autonomous Driving
-  - KV Cache
-  - Tensor Parallelism
-  - Low-Rank Attention
-  - Decoding Efficiency
-  - Multi-Head Latent Attention
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "KV Cache"
+  - "Tensor Parallelism"
+  - "Low-Rank Attention"
+  - "Decoding Efficiency"
+  - "Multi-Head Latent Attention"
 date: 2026-05-08
 content_hash: 41fd1a5c06b2f9e8
 ---

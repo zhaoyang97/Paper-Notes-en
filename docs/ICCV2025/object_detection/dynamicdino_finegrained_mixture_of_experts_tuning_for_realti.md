@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dynamic-DINO: Fine-Grained Mixture of Experts Tuning for Real-time Open-Vocabulary Object Detection
 description: >-
-  [ICCV 2025][Object Detection][Mixture of Experts] This work is the first to introduce Mixture of Experts into real-time open-vocabulary object detectors. Through MoE-Tuning, it extends Grounding DINO 1.5 Edge from a dense model into a dynamic inference framework, proposing fine-grained expert decomposition and a pretrained weight allocation strategy. Using only 1.56M open-source data, the resulting model surpasses the original version trained on 20M private data.
+  [ICCV 2025][Object Detection][Mixture of Experts] This work is the first to introduce Mixture of Experts into real-time open-vocabulary object detectors. Through MoE-Tuning…
 tags:
-  - ICCV 2025
-  - Object Detection
-  - Mixture of Experts
-  - open-vocabulary detection
-  - Grounding DINO
-  - fine-grained expert decomposition
-  - dynamic inference
+  - "ICCV 2025"
+  - "Object Detection"
+  - "Mixture of Experts"
+  - "open-vocabulary detection"
+  - "Grounding DINO"
+  - "fine-grained expert decomposition"
+  - "dynamic inference"
 date: 2026-05-08
 content_hash: d8fa80519b30da29
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EU-Agent-Bench: Measuring Illegal Behavior of LLM Agents Under EU Law
 description: >-
-  [NeurIPS 2025][LLM Agent][LLM agent safety] This paper introduces EU-Agent-Bench, the first verifiable agent benchmark grounded in the EU legal framework. Using 600 benign user requests, it evaluates whether LLM agents' tool calls violate EU regulations. Results show that even the best-performing model (Gemini 2.5 Flash) achieves a legality rate of only ~55%, revealing a substantial gap between current alignment techniques and legal reliability.
+  [NeurIPS 2025][LLM Agent][LLM agent safety] This paper introduces EU-Agent-Bench, the first verifiable agent benchmark grounded in the EU legal framework. Using 600 benign user requests…
 tags:
-  - NeurIPS 2025
-  - LLM Agent
-  - LLM agent safety
-  - EU law compliance
-  - benchmark
-  - function calling
-  - legal AI
+  - "NeurIPS 2025"
+  - "LLM Agent"
+  - "LLM agent safety"
+  - "EU law compliance"
+  - "benchmark"
+  - "function calling"
+  - "legal AI"
 date: 2026-05-08
 content_hash: 99c35a2262c52fef
 ---

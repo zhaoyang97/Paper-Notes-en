@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] InfoCom: Kilobyte-Scale Communication-Efficient Collaborative Perception with Information-Aware Feature Compression
 description: >-
-  [AAAI 2026][Model Compression][Collaborative Perception] This paper proposes InfoCom, a framework that applies an extended information bottleneck (IB) principle to compress the communication payload of collaborative perception from the MB scale to the KB scale—a 440× reduction compared to Where2comm—while maintaining near-lossless perception performance. The framework consists of three core modules: information-aware encoding, sparse mask generation, and multi-scale decoding.
+  [AAAI 2026][Model Compression][Collaborative Perception] This paper proposes InfoCom, a framework that applies an extended information bottleneck (IB) principle to compress the communication payload of collaborative perc…
 tags:
-  - AAAI 2026
-  - Model Compression
-  - Collaborative Perception
-  - Communication Efficiency
-  - Information Bottleneck
-  - Feature Compression
-  - 3D Object Detection
+  - "AAAI 2026"
+  - "Model Compression"
+  - "Collaborative Perception"
+  - "Communication Efficiency"
+  - "Information Bottleneck"
+  - "Feature Compression"
+  - "3D Object Detection"
 date: 2026-05-08
 content_hash: 5810cdf48de9a264
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] D$^2$USt3R: Enhancing 3D Reconstruction for Dynamic Scenes
 description: >-
-  [NEURIPS2025][3D Vision][dynamic 3D reconstruction] This paper proposes the Static-Dynamic Aligned Pointmap (SDAP) representation, which unifies 3D alignment of static and dynamic regions into a single framework, enabling DUSt3R-based methods to achieve accurate dense 3D reconstruction and correspondence estimation in dynamic scenes.
+  [NEURIPS2025][3D Vision][dynamic 3D reconstruction] This paper proposes the Static-Dynamic Aligned Pointmap (SDAP) representation, which unifies 3D alignment of static and dynamic regions into a single framework…
 tags:
-  - NEURIPS2025
-  - 3D Vision
-  - dynamic 3D reconstruction
-  - pointmap regression
-  - dense correspondence
-  - optical flow
-  - DUSt3R
+  - "NEURIPS2025"
+  - "3D Vision"
+  - "dynamic 3D reconstruction"
+  - "pointmap regression"
+  - "dense correspondence"
+  - "optical flow"
+  - "DUSt3R"
 date: 2026-05-08
 content_hash: c31fabd756367901
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Locality-Attending Vision Transformer
 description: >-
-  [ICLR 2026][Segmentation][Vision Transformer] This paper proposes LocAt, a modular plug-in comprising GAug and PRR, which biases attention toward local neighborhoods via learnable Gaussian kernels and refines patch representations. Without modifying the training objective, it improves ViT segmentation performance on ADE20K by over 6% while simultaneously boosting classification accuracy.
+  [ICLR 2026][Segmentation][Vision Transformer] This paper proposes LocAt, a modular plug-in comprising GAug and PRR, which biases attention toward local neighborhoods via learnable Gaussian kernels and refines patch repre…
 tags:
-  - ICLR 2026
-  - Segmentation
-  - Vision Transformer
-  - Local Attention
-  - Gaussian Kernel
-  - Patch Representation Refinement
-  - Dense Prediction
-  - Segmentation Improvement
+  - "ICLR 2026"
+  - "Segmentation"
+  - "Vision Transformer"
+  - "Local Attention"
+  - "Gaussian Kernel"
+  - "Patch Representation Refinement"
+  - "Dense Prediction"
+  - "Segmentation Improvement"
 date: 2026-05-08
 content_hash: 693215af781ade26
 ---

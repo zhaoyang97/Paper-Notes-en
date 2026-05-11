@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Test-time Diverse Reasoning by Riemannian Activation Steering
 description: >-
-  [AAAI 2026][LLM Evaluation][Activation Steering] This paper proposes SPREAD, an unsupervised test-time activation steering framework that maximizes the total volume spanned by hidden activations across multiple reasoning paths by solving a Riemannian optimization problem on a product of spherical manifolds. SPREAD improves reasoning diversity and accuracy in Best-of-N sampling, outperforming temperature sampling baselines on mathematical reasoning benchmarks.
+  [AAAI 2026][LLM Evaluation][Activation Steering] This paper proposes SPREAD, an unsupervised test-time activation steering framework that maximizes the total volume spanned by hidden activations across multiple reasoning…
 tags:
-  - AAAI 2026
-  - LLM Evaluation
-  - Activation Steering
-  - Reasoning Diversity
-  - Riemannian Optimization
-  - Best-of-N Sampling
-  - Language Model Reasoning
-  - Manifold Optimization
-  - Mathematical Reasoning
+  - "AAAI 2026"
+  - "LLM Evaluation"
+  - "Activation Steering"
+  - "Reasoning Diversity"
+  - "Riemannian Optimization"
+  - "Best-of-N Sampling"
+  - "Language Model Reasoning"
+  - "Manifold Optimization"
+  - "Mathematical Reasoning"
 date: 2026-05-08
 content_hash: a1a175885740a34f
 ---

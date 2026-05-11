@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Distilling Cross-Modal Knowledge via Feature Disentanglement
 description: >-
-  [AAAI 2026][Model Compression][Cross-modal distillation] This paper proposes Frequency-Decoupled Cross-Modal Knowledge Distillation (FD-CMKD), which decomposes teacher and student features into low-frequency (modality-shared semantics) and high-frequency (modality-specific details) components via Fourier transform, applies strong-consistency MSE and weak-consistency logMSE losses respectively, and introduces scale normalization along with shared classifier alignment to bridge the feature space. FD-CMKD consistently outperforms existing distillation methods across multiple cross-modal scenarios including audio–visual, image–text, and semantic segmentation.
+  [AAAI 2026][Model Compression][Cross-modal distillation] This paper proposes Frequency-Decoupled Cross-Modal Knowledge Distillation (FD-CMKD)…
 tags:
-  - AAAI 2026
-  - Model Compression
-  - Cross-modal distillation
-  - frequency-domain feature disentanglement
-  - knowledge transfer
-  - scale consistency
-  - shared classifier alignment
+  - "AAAI 2026"
+  - "Model Compression"
+  - "Cross-modal distillation"
+  - "frequency-domain feature disentanglement"
+  - "knowledge transfer"
+  - "scale consistency"
+  - "shared classifier alignment"
 date: 2026-05-08
 content_hash: 54c8057a9b33ed26
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] OTPrune: Distribution-Aligned Visual Token Pruning via Optimal Transport
 description: >-
-  [CVPR 2026][Optimization][visual token pruning] This work formulates visual token pruning as a distribution alignment problem under optimal transport (OT), minimizing the 2-Wasserstein distance between the full and pruned token sets. It achieves training-free, $O(mk^2)$-complexity pruning via Gaussian surrogates, a log-det submodular objective, and greedy Cholesky selection, attaining state-of-the-art accuracy–efficiency trade-offs across 11 multimodal benchmarks.
+  [CVPR 2026][Optimization][visual token pruning] This work formulates visual token pruning as a distribution alignment problem under optimal transport (OT)…
 tags:
-  - CVPR 2026
-  - Optimization
-  - visual token pruning
-  - optimal transport
-  - Wasserstein distance
-  - submodular optimization
-  - training-free
-  - MLLM efficiency
+  - "CVPR 2026"
+  - "Optimization"
+  - "visual token pruning"
+  - "optimal transport"
+  - "Wasserstein distance"
+  - "submodular optimization"
+  - "training-free"
+  - "MLLM efficiency"
 date: 2026-05-08
 content_hash: 4bef1f3fb7343966
 ---

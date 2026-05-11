@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] FALCON: False-Negative Aware Learning of Contrastive Negatives in Vision-Language Alignment
 description: >-
-  [CVPR 2026][Multimodal VLM][False negatives] This paper proposes FALCON, a **learning-based mini-batch construction strategy** that employs a negative mining scheduler to adaptively balance the trade-off between hard negatives and false negatives, substantially improving cross-modal alignment quality in vision-language pretraining (VLP).
+  [CVPR 2026][Multimodal VLM][False negatives] This paper proposes FALCON, a **learning-based mini-batch construction strategy** that employs a negative mining scheduler to adaptively balance the trade-off between hard neg…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - False negatives
-  - contrastive learning
-  - vision-language pretraining
-  - negative mining
-  - mini-batch construction
-  - scheduler
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "False negatives"
+  - "contrastive learning"
+  - "vision-language pretraining"
+  - "negative mining"
+  - "mini-batch construction"
+  - "scheduler"
 date: 2026-05-08
 content_hash: 238921b3a8830c2c
 ---

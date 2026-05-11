@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dense SAE Latents Are Features, Not Bugs
 description: >-
-  [NeurIPS 2025][Video Understanding][SAE] This paper systematically investigates frequently activating "dense latents" in sparse autoencoders (SAEs), demonstrating that they are not training artifacts but rather reflections of intrinsically dense subspaces in language model residual streams. The authors propose a six-category taxonomy of dense latents encompassing position tracking, context binding, null space, alphabetic, part-of-speech, and PCA latents.
+  [NeurIPS 2025][Video Understanding][SAE] This paper systematically investigates frequently activating "dense latents" in sparse autoencoders (SAEs)…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
-  - SAE
-  - dense latents
-  - antipodal pairs
-  - mechanistic interpretability
-  - Gemma 2
+  - "NeurIPS 2025"
+  - "Video Understanding"
+  - "SAE"
+  - "dense latents"
+  - "antipodal pairs"
+  - "mechanistic interpretability"
+  - "Gemma 2"
 date: 2026-05-08
 content_hash: 1bddccf729561427
 ---

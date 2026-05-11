@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Stronger Normalization-Free Transformers
 description: >-
-  [CVPR 2026][Normalization-free Transformer] By systematically analyzing four key properties required for pointwise functions to replace normalization layers (zero-centeredness, boundedness, center-sensitivity, and monotonicity), this work identifies $\text{Derf}(x) = \text{erf}(\alpha x + s)$ as the optimal normalization-layer substitute through large-scale search. Derf consistently outperforms LayerNorm and DyT across vision recognition, image generation, speech representation, and DNA sequence modeling, with performance gains primarily attributable to stronger generalization rather than fitting capacity.
+  [CVPR 2026][Normalization-free Transformer] By systematically analyzing four key properties required for pointwise functions to replace normalization layers (zero-centeredness, boundedness, center-sensitivity…
 tags:
-  - CVPR 2026
-  - Normalization-free Transformer
-  - pointwise function
-  - Derf
-  - normalization layer replacement
-  - generalization
+  - "CVPR 2026"
+  - "Normalization-free Transformer"
+  - "pointwise function"
+  - "Derf"
+  - "normalization layer replacement"
+  - "generalization"
 date: 2026-05-08
 content_hash: c22e3bcef30c094a
 ---

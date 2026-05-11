@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Cross-modal Fuzzy Alignment Network for Text-Aerial Person Retrieval and A Large-scale Benchmark
 description: >-
-  [CVPR 2026][Remote Sensing][Text-Aerial Person Retrieval] A cross-modal fuzzy alignment network (CFAN) that leverages fuzzy logic to quantify token-level reliability for fine-grained alignment and introduces ground-view bridging to alleviate the semantic gap between aerial images and text descriptions, along with a large-scale text-aerial person retrieval benchmark AERI-PEDES.
+  [CVPR 2026][Remote Sensing][Text-Aerial Person Retrieval] A cross-modal fuzzy alignment network (CFAN) that leverages fuzzy logic to quantify token-level reliability for fine-grained alignment and introduces ground-view…
 tags:
-  - CVPR 2026
-  - Remote Sensing
-  - Text-Aerial Person Retrieval
-  - Fuzzy Logic
-  - Cross-Modal Alignment
-  - UAV
-  - Chain-of-Thought Annotation
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Text-Aerial Person Retrieval"
+  - "Fuzzy Logic"
+  - "Cross-Modal Alignment"
+  - "UAV"
+  - "Chain-of-Thought Annotation"
 date: 2026-05-08
 content_hash: ffc578fab97245d4
 ---

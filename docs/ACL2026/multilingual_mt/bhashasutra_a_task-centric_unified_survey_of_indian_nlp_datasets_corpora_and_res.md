@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] BhashaSutra: A Task-Centric Unified Survey of Indian NLP Datasets, Corpora, and Resources
 description: >-
-  [ACL 2026][Indian Language NLP] This is the first unified survey dedicated to Indian language NLP resources, covering 200+ datasets, 50+ benchmarks, and 100+ models/tools. Resources are organized under 17 task categories spanning core linguistic processing to sociocultural tasks. The survey systematically analyzes persistent challenges including uneven language coverage, annotation fragmentation, and evaluation inconsistency.
+  [ACL 2026][Multilingual & Machine Translation][Indian Language NLP] This is the first unified survey dedicated to Indian language NLP resources, covering 200+ datasets, 50+ benchmarks…
 tags:
-  - ACL 2026
-  - Indian Language NLP
-  - Dataset Survey
-  - Multilingual Resources
-  - Low-Resource Languages
-  - Cultural NLP
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "Indian Language NLP"
+  - "Dataset Survey"
+  - "Multilingual Resources"
+  - "Low-Resource Languages"
+  - "Cultural NLP"
 date: 2026-05-08
 content_hash: a579fed55adefd80
 ---

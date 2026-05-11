@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HybriDLA: Hybrid Generation for Document Layout Analysis
 description: >-
-  [AAAI 2026][LLM Evaluation][Document layout analysis] HybriDLA is the first approach to unify diffusion-based bounding box refinement and autoregressive query expansion within a single decoding layer, simulating a human coarse-to-fine reading strategy for document layout analysis. It achieves 83.5% mAP on DocLayNet with a vision-only model, approaching multimodal systems.
+  [AAAI 2026][LLM Evaluation][Document layout analysis] HybriDLA is the first approach to unify diffusion-based bounding box refinement and autoregressive query expansion within a single decoding layer…
 tags:
-  - AAAI 2026
-  - LLM Evaluation
-  - Document layout analysis
-  - diffusion models
-  - autoregressive generation
-  - hybrid decoding
-  - multi-scale feature fusion
+  - "AAAI 2026"
+  - "LLM Evaluation"
+  - "Document layout analysis"
+  - "diffusion models"
+  - "autoregressive generation"
+  - "hybrid decoding"
+  - "multi-scale feature fusion"
 date: 2026-05-08
 content_hash: 4bafa26a1d7984e9
 ---

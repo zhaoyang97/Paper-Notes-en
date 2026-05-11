@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VisualAD: Language-Free Zero-Shot Anomaly Detection via Vision Transformer
 description: >-
-  [CVPR 2026][Medical Imaging][Zero-shot anomaly detection] This paper revisits the necessity of the text branch in zero-shot anomaly detection (ZSAD) and proposes VisualAD, a purely vision-based framework. Two learnable tokens (anomaly/normal) are inserted into a frozen ViT, enhanced by Spatial-Aware Cross-Attention (SCA) and a Self-Alignment Function (SAF). Without a text encoder, VisualAD achieves state-of-the-art performance across 13 industrial and medical benchmarks.
+  [CVPR 2026][Medical Imaging][Zero-shot anomaly detection] This paper revisits the necessity of the text branch in zero-shot anomaly detection (ZSAD) and proposes VisualAD…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Zero-shot anomaly detection
-  - Vision Transformer
-  - language-free
-  - learnable token
-  - industrial + medical
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Zero-shot anomaly detection"
+  - "Vision Transformer"
+  - "language-free"
+  - "learnable token"
+  - "industrial + medical"
 date: 2026-05-08
 content_hash: 98da7a041014bf07
 ---

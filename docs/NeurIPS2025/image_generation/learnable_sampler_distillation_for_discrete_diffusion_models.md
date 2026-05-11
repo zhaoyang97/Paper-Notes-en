@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learnable Sampler Distillation for Discrete Diffusion Models
 description: >-
-  [NeurIPS 2025][Image Generation][discrete diffusion models] This paper proposes LSD and LSD+, which distill the intermediate score trajectory knowledge of a high-fidelity teacher sampler into a few-step student sampler via learnable sampling coefficients and non-uniform time scheduling, enabling efficient and high-quality sampling for discrete diffusion models.
+  [NeurIPS 2025][Image Generation][discrete diffusion models] This paper proposes LSD and LSD+, which distill the intermediate score trajectory knowledge of a high-fidelity teacher sampler into a few-step student sampler v…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - discrete diffusion models
-  - sampling acceleration
-  - distillation
-  - learnable coefficients
-  - time scheduling
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "discrete diffusion models"
+  - "sampling acceleration"
+  - "distillation"
+  - "learnable coefficients"
+  - "time scheduling"
 date: 2026-05-08
 content_hash: f9d046406b48b357
 ---

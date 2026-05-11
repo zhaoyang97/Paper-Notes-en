@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RCCDA: Adaptive Model Updates in the Presence of Concept Drift under a Constrained Resource Budget
 description: >-
-  [NeurIPS 2025][Model Compression][concept drift] This paper proposes RCCDA, a lightweight model update policy based on the Lyapunov drift-plus-penalty framework. Under concept drift scenarios where the data distribution shifts over time, RCCDA greedily determines when to retrain the model using only historical inference loss and a tunable threshold, while provably satisfying strict resource budget constraints.
+  [NeurIPS 2025][Model Compression][concept drift] This paper proposes RCCDA, a lightweight model update policy based on the Lyapunov drift-plus-penalty framework. Under concept drift scenarios where the data distribution…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - concept drift
-  - resource-constrained
-  - model update policy
-  - Lyapunov optimization
-  - online learning
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "concept drift"
+  - "resource-constrained"
+  - "model update policy"
+  - "Lyapunov optimization"
+  - "online learning"
 date: 2026-05-08
 content_hash: 68669d5c4271017f
 ---

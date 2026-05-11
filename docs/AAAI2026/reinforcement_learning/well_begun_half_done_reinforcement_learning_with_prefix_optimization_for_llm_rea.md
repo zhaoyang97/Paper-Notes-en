@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Well Begun, Half Done: Reinforcement Learning with Prefix Optimization for LLM Reasoning
 description: >-
-  [AAAI 2026][Reinforcement Learning][LLM Reasoning] This paper identifies the **Beginning Lock-in Effect (BLE)** in LLM reasoning — the initial reasoning steps significantly determine subsequent trajectories and final outcomes. Based on this finding, the paper proposes PPPO, a method that optimizes only prefix tokens (approximately 26% of all tokens), achieving accuracy improvements of up to 18.02% while reducing output token counts by up to 18.35%.
+  [AAAI 2026][Reinforcement Learning][LLM Reasoning] This paper identifies the **Beginning Lock-in Effect (BLE)** in LLM reasoning — the initial reasoning steps significantly determine subsequent trajectories and final out…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - LLM Reasoning
-  - RLVR
-  - Prefix Optimization
-  - Path Dependence
-  - GRPO
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "LLM Reasoning"
+  - "RLVR"
+  - "Prefix Optimization"
+  - "Path Dependence"
+  - "GRPO"
 date: 2026-05-08
 content_hash: bcb330e004a31f99
 ---

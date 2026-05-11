@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Transferable Backdoor Attacks for Code Models via Sharpness-Aware Adversarial Perturbation
 description: >-
-  [AAAI 2026][AI Safety][backdoor attack] This paper proposes STAB (Sharpness-aware Transferable Adversarial Backdoor), which trains a surrogate model via SAM to converge to flat regions of the loss landscape and employs Gumbel-Softmax optimization to generate context-aware adversarial triggers. STAB is the first approach to simultaneously achieve cross-dataset transferability and stealthiness in backdoor attacks against code models.
+  [AAAI 2026][AI Safety][backdoor attack] This paper proposes STAB (Sharpness-aware Transferable Adversarial Backdoor), which trains a surrogate model via SAM to converge to flat regions of the loss landscape and employs G…
 tags:
-  - AAAI 2026
-  - AI Safety
-  - backdoor attack
-  - code models
-  - transferability
-  - Sharpness-Aware Minimization
-  - adversarial perturbation
+  - "AAAI 2026"
+  - "AI Safety"
+  - "backdoor attack"
+  - "code models"
+  - "transferability"
+  - "Sharpness-Aware Minimization"
+  - "adversarial perturbation"
 date: 2026-05-08
 content_hash: dcb32036474d284a
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Target Speaker Extraction Through Comparing Noisy Positive and Negative Audio Enrollments
 description: >-
-  [NeurIPS 2025][Audio & Speech][Target speaker extraction] This paper proposes a novel enrollment strategy that encodes target speaker characteristics by contrasting noisy positive enrollments (segments where the target speaker is active) against negative enrollments (segments where the target speaker is silent), achieving state-of-the-art performance on monaural noisy-enrollment target speaker extraction with SI-SNRi exceeding the previous best method by over 2.1 dB.
+  [NeurIPS 2025][Audio & Speech][Target speaker extraction] This paper proposes a novel enrollment strategy that encodes target speaker characteristics by contrasting noisy positive enrollments (segments where the target s…
 tags:
-  - NeurIPS 2025
+  - "NeurIPS 2025"
   - "Audio & Speech"
-  - Target speaker extraction
-  - noisy enrollment
-  - positive-negative contrastive
-  - TF-GridNet
-  - two-stage training
+  - "Target speaker extraction"
+  - "noisy enrollment"
+  - "positive-negative contrastive"
+  - "TF-GridNet"
+  - "two-stage training"
 date: 2026-05-08
 content_hash: 81f5bfd0fd12987d
 ---

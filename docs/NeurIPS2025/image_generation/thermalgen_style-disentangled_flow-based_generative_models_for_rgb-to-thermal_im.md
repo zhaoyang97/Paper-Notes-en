@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ThermalGen: Style-Disentangled Flow-Based Generative Models for RGB-to-Thermal Image Translation
 description: >-
-  [NeurIPS 2025][Image Generation][RGB-to-Thermal Translation] This paper proposes ThermalGen, an adaptive flow-based generative model that achieves, for the first time, high-fidelity RGB-to-Thermal image translation across diverse viewpoints, sensors, and environmental conditions via an RGB-conditioned architecture and a style disentanglement mechanism. Three new large-scale satellite–aerial RGB-T paired datasets are also released.
+  [NeurIPS 2025][Image Generation][RGB-to-Thermal Translation] This paper proposes ThermalGen, an adaptive flow-based generative model that achieves, for the first time…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - RGB-to-Thermal Translation
-  - Flow-Based Generative Models
-  - Style Disentanglement
-  - Multi-Dataset Joint Training
-  - Thermal Imaging
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "RGB-to-Thermal Translation"
+  - "Flow-Based Generative Models"
+  - "Style Disentanglement"
+  - "Multi-Dataset Joint Training"
+  - "Thermal Imaging"
 date: 2026-05-08
 content_hash: fec1e66d183093bc
 ---

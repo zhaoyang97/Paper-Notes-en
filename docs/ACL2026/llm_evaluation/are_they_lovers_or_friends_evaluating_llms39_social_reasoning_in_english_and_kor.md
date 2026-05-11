@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Are They Lovers or Friends? Evaluating LLMs' Social Reasoning in English and Korean Dialogues
 description: >-
-  [ACL 2026][LLM Evaluation][Social Relationship Reasoning] This paper introduces SCRIPTS, a benchmark comprising 1.1K English and Korean movie dialogues, evaluating the social relationship reasoning capabilities of 9 LLMs via a three-tier probabilistic labeling scheme (HIGHLY LIKELY / LESS LIKELY / UNLIKELY). Results show that models achieve only 75–80% accuracy on English and 58–69% on Korean, with Chain-of-Thought prompting and reasoning models providing little to no benefit for social reasoning.
+  [ACL 2026][LLM Evaluation][Social Relationship Reasoning] This paper introduces SCRIPTS, a benchmark comprising 1.1K English and Korean movie dialogues…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - Social Relationship Reasoning
-  - Cross-lingual Analysis
-  - Movie Dialogues
-  - Cultural Dependency
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "Social Relationship Reasoning"
+  - "Cross-lingual Analysis"
+  - "Movie Dialogues"
+  - "Cultural Dependency"
 date: 2026-05-08
 content_hash: bb4dab13b4325840
 ---

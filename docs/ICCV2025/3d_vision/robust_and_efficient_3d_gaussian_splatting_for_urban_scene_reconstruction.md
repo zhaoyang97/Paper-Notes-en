@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Robust and Efficient 3D Gaussian Splatting for Urban Scene Reconstruction
 description: >-
-  [ICCV 2025][3D Vision][3DGS] This paper proposes a robust and efficient 3DGS reconstruction framework for city-scale scenes. Through a visibility-based partitioning strategy, controllable LOD generation, a fine-grained appearance transformation module, and multiple regularization techniques, the framework achieves high-quality reconstruction and real-time rendering on urban data with large appearance variations and transient objects.
+  [ICCV 2025][3D Vision][3DGS] This paper proposes a robust and efficient 3DGS reconstruction framework for city-scale scenes. Through a visibility-based partitioning strategy, controllable LOD generation…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3DGS
-  - urban scene reconstruction
-  - LOD strategy
-  - appearance transformation
-  - partitioned training
-  - real-time rendering
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3DGS"
+  - "urban scene reconstruction"
+  - "LOD strategy"
+  - "appearance transformation"
+  - "partitioned training"
+  - "real-time rendering"
 date: 2026-05-08
 content_hash: d6f68787c60c57c2
 ---

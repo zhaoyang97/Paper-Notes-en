@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DGH: Dynamic Gaussian Hair
 description: >-
-  [NeurIPS 2025][3D Vision][Dynamic hair modeling] This paper proposes Dynamic Gaussian Hair (DGH), a data-driven coarse-to-fine framework that learns hair dynamics via a volumetric implicit deformation model, and achieves photorealistic novel-view rendering of dynamic hair by combining cylindrical Gaussian representations with a curvature blending strategy.
+  [NeurIPS 2025][3D Vision][Dynamic hair modeling] This paper proposes Dynamic Gaussian Hair (DGH), a data-driven coarse-to-fine framework that learns hair dynamics via a volumetric implicit deformation model…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Dynamic hair modeling
-  - 3D Gaussian Splatting
-  - hair dynamics
-  - novel view synthesis
-  - digital avatars
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Dynamic hair modeling"
+  - "3D Gaussian Splatting"
+  - "hair dynamics"
+  - "novel view synthesis"
+  - "digital avatars"
 date: 2026-05-08
 content_hash: 0edc42cc53f9cd0d
 ---

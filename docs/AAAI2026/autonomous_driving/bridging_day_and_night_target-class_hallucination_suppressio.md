@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Bridging Day and Night: Target-Class Hallucination Suppression in Unpaired Image Translation
 description: >-
-  [AAAI 2026 (Oral)][Autonomous Driving][Day-to-night translation] This paper is the first to systematically address the "target-class hallucination" problem in unpaired day-to-night image translation. By combining a dual-head discriminator (style head + SAM2 pseudo-label segmentation head) for hallucination detection and class-prototype contrastive learning for suppression, the method improves mAP from 15.08 to 17.40 (+15.5%) on BDD100K day-to-night domain adaptation detection, with traffic light AP improving by 31.7%.
+  [AAAI 2026 (Oral)][Autonomous Driving][Day-to-night translation] This paper is the first to systematically address the "target-class hallucination" problem in unpaired day-to-night image translation. By combining a dual-…
 tags:
-  - AAAI 2026 (Oral)
-  - Autonomous Driving
-  - Day-to-night translation
-  - hallucination suppression
-  - Schrödinger Bridge
-  - SAM2 pseudo-labels
-  - prototype contrastive learning
+  - "AAAI 2026 (Oral)"
+  - "Autonomous Driving"
+  - "Day-to-night translation"
+  - "hallucination suppression"
+  - "Schrödinger Bridge"
+  - "SAM2 pseudo-labels"
+  - "prototype contrastive learning"
 date: 2026-05-08
 content_hash: c50138884625cb73
 ---

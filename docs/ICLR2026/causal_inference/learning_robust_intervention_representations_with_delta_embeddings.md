@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Robust Intervention Representations with Delta Embeddings
 description: >-
-  [ICLR 2026][Causal Inference][Causal Representation Learning] This paper proposes the Causal Delta Embedding (CDE) framework, which represents interventions/actions as vector differences between pre- and post-intervention states in the latent space. Three constraints—independence, sparsity, and invariance—are imposed on the delta vectors to learn robust intervention representations. The framework significantly surpasses baselines on the Causal Triplet benchmark in OOD generalization, and autonomously discovers anti-parallel semantic structures for antonymous actions.
+  [ICLR 2026][Causal Inference][Causal Representation Learning] This paper proposes the Causal Delta Embedding (CDE) framework, which represents interventions/actions as vector differences between pre- and post-interventio…
 tags:
-  - ICLR 2026
-  - Causal Inference
-  - Causal Representation Learning
-  - Delta Embeddings
-  - out-of-distribution
-  - Intervention
-  - Contrastive Learning
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "Causal Representation Learning"
+  - "Delta Embeddings"
+  - "out-of-distribution"
+  - "Intervention"
+  - "Contrastive Learning"
 date: 2026-05-08
 content_hash: 01a6f4f74fda8733
 ---

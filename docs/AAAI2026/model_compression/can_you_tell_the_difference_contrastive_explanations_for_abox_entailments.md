@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Can You Tell the Difference? Contrastive Explanations for ABox Entailments
 description: >-
-  [AAAI 2026][Model Compression][Contrastive Explanation] This paper proposes a formal framework for Contrastive ABox Explanations (CE) to answer questions of the form "Why is $a$ an instance of $C$ but $b$ is not?", simultaneously accounting for positive entailments and missing entailments within Description Logic knowledge bases, and analyzes the computational complexity under different description logics and optimization criteria.
+  [AAAI 2026][Model Compression][Contrastive Explanation] This paper proposes a formal framework for Contrastive ABox Explanations (CE) to answer questions of the form "Why is $a$ an instance of $C$ but $b$ is not?"…
 tags:
-  - AAAI 2026
-  - Model Compression
-  - Contrastive Explanation
-  - Description Logic
-  - ABox Reasoning
-  - Knowledge Representation
-  - Explainability
+  - "AAAI 2026"
+  - "Model Compression"
+  - "Contrastive Explanation"
+  - "Description Logic"
+  - "ABox Reasoning"
+  - "Knowledge Representation"
+  - "Explainability"
 date: 2026-05-08
 content_hash: 7aa04cb407170df8
 ---

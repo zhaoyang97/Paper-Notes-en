@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ViRC: Enhancing Visual Interleaved Mathematical CoT with Reason Chunking
 description: >-
-  [CVPR 2026 (Main Track)][Multimodal VLM][Visual Mathematical Reasoning] ViRC proposes a Reason Chunking mechanism that structures multimodal mathematical CoT into sequential Critical Reasoning Units (CRUs), simulating the process by which human experts repeatedly consult visual information and incrementally verify intermediate propositions. Through the CRUX dataset and a progressive training strategy (Instructional SFT → Practice SFT → Strategic RL), ViRC-7B achieves an average improvement of 18.8% across mathematical benchmarks.
+  [CVPR 2026 (Main Track)][Multimodal VLM][Visual Mathematical Reasoning] ViRC proposes a Reason Chunking mechanism that structures multimodal mathematical CoT into sequential Critical Reasoning Units (CRUs)…
 tags:
-  - CVPR 2026 (Main Track)
-  - Multimodal VLM
-  - Visual Mathematical Reasoning
-  - Reason Chunking
-  - Critical Reasoning Unit
-  - Multimodal CoT
-  - Progressive Training
+  - "CVPR 2026 (Main Track)"
+  - "Multimodal VLM"
+  - "Visual Mathematical Reasoning"
+  - "Reason Chunking"
+  - "Critical Reasoning Unit"
+  - "Multimodal CoT"
+  - "Progressive Training"
 date: 2026-05-08
 content_hash: e62b967b1e95f0de
 ---

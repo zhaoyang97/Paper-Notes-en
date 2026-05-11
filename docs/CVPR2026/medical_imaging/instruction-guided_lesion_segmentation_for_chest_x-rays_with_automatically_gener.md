@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Instruction-Guided Lesion Segmentation for Chest X-rays with Automatically Generated Large-Scale Dataset
 description: >-
-  [CVPR 2026][Medical Imaging][Chest X-ray] This paper introduces instruction-guided lesion segmentation (ILS) for chest X-rays, constructs the first large-scale automatically generated instruction-answer dataset MIMIC-ILS (1.1M samples, 192K images, 91K masks), and trains the ROSALIA model to achieve gIoU of 71.2% and null-target accuracy of 91.8%, substantially outperforming existing general-purpose and medical segmentation models.
+  [CVPR 2026][Medical Imaging][Chest X-ray] This paper introduces instruction-guided lesion segmentation (ILS) for chest X-rays, constructs the first large-scale automatically generated instruction-answer dataset MIMIC-ILS…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Chest X-ray
-  - lesion segmentation
-  - instruction-guided
-  - automatic dataset construction
-  - vision-language model
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Chest X-ray"
+  - "lesion segmentation"
+  - "instruction-guided"
+  - "automatic dataset construction"
+  - "vision-language model"
 date: 2026-05-08
 content_hash: 1585925cba88a52c
 ---

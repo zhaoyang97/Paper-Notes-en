@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Long Context Tuning for Video Generation
 description: >-
-  [ICCV 2025][Video Generation][Scene-level video generation] This paper proposes Long Context Tuning (LCT), which extends the context window of pretrained single-shot video diffusion models to the scene level. By introducing interleaved 3D positional embeddings and an asynchronous noise strategy, LCT achieves cross-shot visual and temporal consistency without additional parameters, supporting both joint and autoregressive multi-shot generation, and exhibits emergent capabilities such as compositional generation.
+  [ICCV 2025][Video Generation][Scene-level video generation] This paper proposes Long Context Tuning (LCT), which extends the context window of pretrained single-shot video diffusion models to the scene level. By introduc…
 tags:
-  - ICCV 2025
-  - Video Generation
-  - Scene-level video generation
-  - multi-shot consistency
-  - long context tuning
-  - asynchronous timestep
-  - causal attention
+  - "ICCV 2025"
+  - "Video Generation"
+  - "Scene-level video generation"
+  - "multi-shot consistency"
+  - "long context tuning"
+  - "asynchronous timestep"
+  - "causal attention"
 date: 2026-05-08
 content_hash: 5d15598cc07dae47
 ---

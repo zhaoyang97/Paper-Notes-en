@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Sampling-Efficient Test-Time Scaling: Self-Estimating the Best-of-N Sampling in Early Decoding
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Best-of-N] This paper proposes Self-Truncation Best-of-N (ST-BoN), a decoding method that leverages a theoretical guarantee showing early hidden-state consistency predicts final consistency, enabling identification and truncation of suboptimal samples at early decoding steps. ST-BoN reduces memory usage by over 80% and latency by ~50% while preserving standard BoN performance.
+  [NeurIPS 2025][LLM Reasoning][Best-of-N] This paper proposes Self-Truncation Best-of-N (ST-BoN), a decoding method that leverages a theoretical guarantee showing early hidden-state consistency predicts final consistency…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - Best-of-N
-  - test-time scaling
-  - early truncation
-  - latent consistency
-  - token efficiency
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "Best-of-N"
+  - "test-time scaling"
+  - "early truncation"
+  - "latent consistency"
+  - "token efficiency"
 date: 2026-05-08
 content_hash: a623f43062284611
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Exact Expressive Power of Transformers with Padding
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Transformer expressive power] This paper provides an exact characterization of the expressive power of Transformers with padding: fixed depth combined with polynomial padding is precisely equivalent to $\mathsf{FO}$-uniform $\mathsf{TC}^0$; further combined with $O(\log^d n)$ looping, this is precisely equivalent to $\mathsf{FO}$-uniform $\mathsf{TC}^d$; and polylog looping converges to $\mathsf{NC}$. These results establish a complete theoretical foundation for padding and looping as parallel inference-time computation mechanisms.
+  [NeurIPS 2025][LLM Reasoning][Transformer expressive power] This paper provides an exact characterization of the expressive power of Transformers with padding: fixed depth combined with polynomial padding is precisely eq…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - Transformer expressive power
-  - padding
-  - looping
-  - circuit complexity
-  - TC0
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "Transformer expressive power"
+  - "padding"
+  - "looping"
+  - "circuit complexity"
+  - "TC0"
 date: 2026-05-08
 content_hash: 445b8970ab8bd09f
 ---

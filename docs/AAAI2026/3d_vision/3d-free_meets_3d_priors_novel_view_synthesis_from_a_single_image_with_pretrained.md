@@ -2,18 +2,18 @@
 title: >-
   [Paper Note] 3D-Free Meets 3D Priors: Novel View Synthesis from a Single Image with Pretrained Diffusion Guidance
 description: >-
-  [AAAI 2026][3D Vision][Novel view synthesis] This paper proposes a framework that combines 3D-free methods (HawkI-style test-time optimization) with 3D-based priors (weak guidance images from Zero123++) to synthesize camera-controlled views at specified elevation/azimuth angles from a single image, requiring neither additional 3D data nor training. The approach comprehensively outperforms Zero123++, HawkI, and Stable Zero123 on LPIPS, CLIP-Score, and other metrics in complex scenes.
+  [AAAI 2026][3D Vision][Novel view synthesis] This paper proposes a framework that combines 3D-free methods (HawkI-style test-time optimization) with 3D-based priors (weak guidance images from Zero123++) to synthesize cam…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - Novel view synthesis
-  - single-image generation
-  - Stable Diffusion
-  - CLIP
-  - Zero123++
-  - 3D-free
-  - camera control
-  - LoRA
+  - "AAAI 2026"
+  - "3D Vision"
+  - "Novel view synthesis"
+  - "single-image generation"
+  - "Stable Diffusion"
+  - "CLIP"
+  - "Zero123++"
+  - "3D-free"
+  - "camera control"
+  - "LoRA"
 date: 2026-05-08
 content_hash: c8b81f21dd4770d6
 ---

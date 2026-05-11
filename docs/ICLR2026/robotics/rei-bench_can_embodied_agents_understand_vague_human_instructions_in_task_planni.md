@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] REI-Bench: Can Embodied Agents Understand Vague Human Instructions in Task Planning?
 description: >-
-  [ICLR 2026][Robotics][Referring Expressions] This work presents the first systematic study on how referring expressions (REs) in vague human instructions affect LLM-based robot task planning. REI-Bench is introduced to model 9 levels of coreference ambiguity (3 RE difficulty levels × 3 context types). Implicit REs are found to reduce the success rate of existing planners by up to 36.9%. The proposed Task-Oriented Context Cognition (TOCC) method decouples task understanding from planning decision-making, achieving an average improvement of 6.5% in success rate.
+  [ICLR 2026][Robotics][Referring Expressions] This work presents the first systematic study on how referring expressions (REs) in vague human instructions affect LLM-based robot task planning. REI-Bench is introduced to m…
 tags:
-  - ICLR 2026
-  - Robotics
-  - Referring Expressions
-  - Vague Instructions
-  - LLM Planning
-  - Coreference Resolution
-  - Robustness
+  - "ICLR 2026"
+  - "Robotics"
+  - "Referring Expressions"
+  - "Vague Instructions"
+  - "LLM Planning"
+  - "Coreference Resolution"
+  - "Robustness"
 date: 2026-05-08
 content_hash: ef625132fa93e333
 ---

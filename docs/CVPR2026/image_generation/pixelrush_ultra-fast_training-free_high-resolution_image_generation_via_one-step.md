@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PixelRush: Ultra-Fast, Training-Free High-Resolution Image Generation via One-step Diffusion
 description: >-
-  [CVPR 2026][Image Generation][high-resolution image generation] This paper proposes PixelRush, a training-free high-resolution image generation framework that combines four components — partial inversion, few-step diffusion models, Gaussian filter blending, and noise injection — to compress 4K image generation time from several minutes to approximately 20 seconds (10×–35× speedup), while surpassing existing SOTA methods on FID/IS metrics.
+  [CVPR 2026][Image Generation][high-resolution image generation] This paper proposes PixelRush, a training-free high-resolution image generation framework that combines four components — partial inversion…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - high-resolution image generation
-  - training-free
-  - diffusion models
-  - few-step diffusion
-  - patch-based inference
+  - "CVPR 2026"
+  - "Image Generation"
+  - "high-resolution image generation"
+  - "training-free"
+  - "diffusion models"
+  - "few-step diffusion"
+  - "patch-based inference"
 date: 2026-05-08
 content_hash: c7cb6e4960214efc
 ---

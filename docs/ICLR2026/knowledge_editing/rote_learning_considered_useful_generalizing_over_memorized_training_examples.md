@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Rote Learning Considered Useful: Generalizing over Memorized Training Examples
 description: >-
-  [ICLR 2026][Knowledge Editing][memorization] This paper proposes a two-stage "memorize-then-generalize" framework, demonstrating that LLMs can generalize effectively after rote-memorizing synthetic key tokens, requiring only minimal semantic fine-tuning — thereby challenging the conventional view that memorization impedes generalization.
+  [ICLR 2026][Knowledge Editing][memorization] This paper proposes a two-stage "memorize-then-generalize" framework, demonstrating that LLMs can generalize effectively after rote-memorizing synthetic key tokens…
 tags:
-  - ICLR 2026
-  - Knowledge Editing
-  - memorization
-  - generalization
-  - knowledge_injection
-  - LLM_learning_dynamics
+  - "ICLR 2026"
+  - "Knowledge Editing"
+  - "memorization"
+  - "generalization"
+  - "knowledge_injection"
+  - "LLM_learning_dynamics"
 date: 2026-05-08
 content_hash: 61bc767ce645d48f
 ---

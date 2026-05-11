@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dynamic Group Detection using VLM-augmented Temporal Groupness Graph
 description: >-
-  [ICCV 2025][Multimodal VLM][group detection] This paper proposes a VLM-augmented temporal groupness graph for detecting dynamically changing groups in video. The core innovation lies in using CLIP to extract groupness-augmented features from bounding boxes containing person pairs and background context to estimate grouping probability, followed by Louvain clustering over a full-sequence temporal graph to enable dynamic group detection.
+  [ICCV 2025][Multimodal VLM][group detection] This paper proposes a VLM-augmented temporal groupness graph for detecting dynamically changing groups in video. The core innovation lies in using CLIP to extract groupness-au…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - group detection
-  - CLIP
-  - temporal graph clustering
-  - social behavior analysis
-  - Louvain algorithm
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "group detection"
+  - "CLIP"
+  - "temporal graph clustering"
+  - "social behavior analysis"
+  - "Louvain algorithm"
 date: 2026-05-08
 content_hash: a98903aff2198456
 ---

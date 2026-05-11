@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Holistic Tokenizer for Autoregressive Image Generation
 description: >-
-  [ICCV 2025][Image Generation][Image Tokenizer] This paper proposes Hita, a holistic-to-local image tokenizer that captures global attributes such as texture, material, and shape via learnable global queries, and integrates dual codebooks with a causal-attention fusion module. Without modifying the AR model architecture, Hita reduces ImageNet 256×256 generation FID to 2.59, accelerates training convergence by 2.1×, and supports zero-shot style transfer and image completion.
+  [ICCV 2025][Image Generation][Image Tokenizer] This paper proposes Hita, a holistic-to-local image tokenizer that captures global attributes such as texture, material, and shape via learnable global queries…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Image Tokenizer
-  - Autoregressive Generation
-  - Holistic Tokens
-  - VQGAN
-  - LlamaGen
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Image Tokenizer"
+  - "Autoregressive Generation"
+  - "Holistic Tokens"
+  - "VQGAN"
+  - "LlamaGen"
 date: 2026-05-08
 content_hash: c54497f32e8026d4
 ---

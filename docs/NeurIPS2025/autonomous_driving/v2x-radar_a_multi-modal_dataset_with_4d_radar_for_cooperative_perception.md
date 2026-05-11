@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] V2X-Radar: A Multi-Modal Dataset with 4D Radar for Cooperative Perception
 description: >-
-  [NeurIPS 2025][Autonomous Driving][cooperative perception] This paper presents V2X-Radar, the first large-scale real-world multi-modal vehicle-to-everything (V2X) cooperative perception dataset incorporating 4D radar, LiDAR, and multi-view camera data. The dataset covers diverse weather and lighting conditions, providing 20K LiDAR frames, 40K camera images, 20K 4D radar scans, and 350K annotated bounding boxes, along with comprehensive benchmarks across three sub-datasets.
+  [NeurIPS 2025][Autonomous Driving][cooperative perception] This paper presents V2X-Radar, the first large-scale real-world multi-modal vehicle-to-everything (V2X) cooperative perception dataset incorporating 4D radar…
 tags:
-  - NeurIPS 2025
-  - Autonomous Driving
-  - cooperative perception
-  - 4D radar
-  - V2X
-  - multi-modal dataset
-  - 3D object detection
+  - "NeurIPS 2025"
+  - "Autonomous Driving"
+  - "cooperative perception"
+  - "4D radar"
+  - "V2X"
+  - "multi-modal dataset"
+  - "3D object detection"
 date: 2026-05-08
 content_hash: 4713b7ae97bda12a
 ---

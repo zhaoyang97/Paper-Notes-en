@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Envisioning the Future, One Step at a Time
 description: >-
-  [CVPR 2026][Video Understanding][Open-set motion prediction] This paper formulates open-set future scene dynamics prediction as stepwise reasoning over sparse point trajectories, enabling rapid generation of thousands of diverse future hypotheses from a single image via an autoregressive diffusion model — orders of magnitude faster than dense prediction models.
+  [CVPR 2026][Video Understanding][Open-set motion prediction] This paper formulates open-set future scene dynamics prediction as stepwise reasoning over sparse point trajectories…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Open-set motion prediction
-  - sparse trajectories
-  - autoregressive diffusion model
-  - future prediction
-  - world model
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Open-set motion prediction"
+  - "sparse trajectories"
+  - "autoregressive diffusion model"
+  - "future prediction"
+  - "world model"
 date: 2026-05-08
 content_hash: 83679085eab2e636
 ---

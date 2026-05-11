@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FCL-COD: Weakly Supervised Camouflaged Object Detection with Frequency-aware and Contrastive Learning
 description: >-
-  [CVPR 2026][Segmentation][Camouflaged Object Detection] This paper proposes FCL-COD, a framework that injects camouflaged scene knowledge into SAM via Frequency-aware Low-Rank Adaptation (FoRA), enhances foreground-background feature separation through Gradient-aware Contrastive Learning (GCL), and refines boundary-sensitive features with Multi-Scale Frequency Attention (MSFA). Under a weakly supervised setting using only bounding box annotations, FCL-COD surpasses fully supervised state-of-the-art methods.
+  [CVPR 2026][Segmentation][Camouflaged Object Detection] This paper proposes FCL-COD, a framework that injects camouflaged scene knowledge into SAM via Frequency-aware Low-Rank Adaptation (FoRA)…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Camouflaged Object Detection
-  - Weakly Supervised
-  - SAM
-  - Frequency-aware LoRA
-  - Contrastive Learning
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Camouflaged Object Detection"
+  - "Weakly Supervised"
+  - "SAM"
+  - "Frequency-aware LoRA"
+  - "Contrastive Learning"
 date: 2026-05-08
 content_hash: 1c6b53885bf15e50
 ---

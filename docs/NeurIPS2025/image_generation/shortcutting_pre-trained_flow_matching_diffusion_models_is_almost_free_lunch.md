@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Shortcutting Pre-trained Flow Matching Diffusion Models is Almost Free Lunch
 description: >-
-  [NeurIPS 2025][Image Generation][flow matching] This paper proposes SCFM (ShortCutting Flow Matching), an highly efficient post-training distillation method that compresses pre-trained flow matching models (e.g., Flux with 12B parameters) into 3-step samplers via velocity field self-distillation, requiring less than 1 A100-Day, without step-size embeddings or adversarial distillation.
+  [NeurIPS 2025][Image Generation][flow matching] This paper proposes SCFM (ShortCutting Flow Matching), an highly efficient post-training distillation method that compresses pre-trained flow matching models (e.g.…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - flow matching
-  - distillation
-  - few-step sampling
-  - velocity field consistency
-  - LoRA
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "flow matching"
+  - "distillation"
+  - "few-step sampling"
+  - "velocity field consistency"
+  - "LoRA"
 date: 2026-05-08
 content_hash: f03b131d0f048f00
 ---

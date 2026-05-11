@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Feather the Throttle: Revisiting Visual Token Pruning for Vision-Language Model Acceleration
 description: >-
-  [ICCV 2025][Multimodal VLM][VLM acceleration] This paper identifies a systematic positional bias in early visual token pruning for VLMs—caused by RoPE, which tends to retain tokens from the bottom of the image—and proposes FEATHER, which addresses this issue via RoPE-free attention, uniform sampling, and multi-stage pruning, achieving over 5× performance improvement on visual grounding tasks.
+  [ICCV 2025][Multimodal VLM][VLM acceleration] This paper identifies a systematic positional bias in early visual token pruning for VLMs—caused by RoPE…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - VLM acceleration
-  - Visual Token Pruning
-  - RoPE positional bias
-  - visual grounding
-  - FEATHER
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "VLM acceleration"
+  - "Visual Token Pruning"
+  - "RoPE positional bias"
+  - "visual grounding"
+  - "FEATHER"
 date: 2026-05-08
 content_hash: ee94e71649246e6c
 ---

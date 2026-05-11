@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CL-Splats: Continual Learning of Gaussian Splatting with Local Optimization
 description: >-
-  [ICCV 2025][3D Vision][Gaussian Splatting] This paper proposes CL-Splats, a continual learning framework built on 3D Gaussian Splatting that incrementally updates scene reconstructions from sparse novel views via DINOv2-based change detection, 2D-to-3D mask lifting, and sphere-constrained local optimization. CL-Splats substantially outperforms CL-NeRF and related methods on both synthetic and real scenes (PSNR: 40.1 vs. 30.1 dB) while supporting applications such as historical state recovery and concurrent updates.
+  [ICCV 2025][3D Vision][Gaussian Splatting] This paper proposes CL-Splats, a continual learning framework built on 3D Gaussian Splatting that incrementally updates scene reconstructions from sparse novel views via DINOv2-…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Gaussian Splatting
-  - continual learning
-  - local optimization
-  - scene update
-  - change detection
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Gaussian Splatting"
+  - "continual learning"
+  - "local optimization"
+  - "scene update"
+  - "change detection"
 date: 2026-05-08
 content_hash: 2893112999d3b101
 ---

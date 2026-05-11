@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Text-to-3D by Stitching a Multi-view Reconstruction Network to a Video Generator
 description: >-
-  [ICLR 2026][Video Generation][Text-to-3D] This paper proposes VIST3A, a framework that seamlessly connects the latent space of a pretrained video generator to a feed-forward 3D reconstruction model (e.g., AnySplat/MVDUSt3R/VGGT) via model stitching, and employs direct reward finetuning to align the generative model with the stitched 3D decoder. The approach enables high-quality end-to-end text-to-3DGS and text-to-pointmap generation, achieving state-of-the-art results on T3Bench, SceneBench, and DPG-Bench.
+  [ICLR 2026][Video Generation][Text-to-3D] This paper proposes VIST3A, a framework that seamlessly connects the latent space of a pretrained video generator to a feed-forward 3D reconstruction model (e.g.…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - Text-to-3D
-  - Model Stitching
-  - Video Generator
-  - 3D Reconstruction
-  - 3DGS
-  - Direct Reward Finetuning
-  - Point Map
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Text-to-3D"
+  - "Model Stitching"
+  - "Video Generator"
+  - "3D Reconstruction"
+  - "3DGS"
+  - "Direct Reward Finetuning"
+  - "Point Map"
 date: 2026-05-08
 content_hash: fa0708762269e876
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GeoGramBench: Benchmarking the Geometric Program Reasoning in Modern LLMs
 description: >-
-  [ICLR 2026][LLM Reasoning][Geometric Reasoning] This paper formalizes the Program-to-Geometry task and proposes GeoGramBench (500 problems), evaluating 19 frontier LLMs on their ability to construct geometric representations from procedural drawing code and reason over them using a three-level geometric complexity taxonomy. Even GPT-5 achieves only 39.26% accuracy at the highest abstraction level, revealing fundamental limitations in LLM spatial abstraction.
+  [ICLR 2026][LLM Reasoning][Geometric Reasoning] This paper formalizes the Program-to-Geometry task and proposes GeoGramBench (500 problems)…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Geometric Reasoning
-  - Program-to-Geometry
-  - Benchmark
-  - Spatial Reasoning
-  - Asymptote Code
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "Geometric Reasoning"
+  - "Program-to-Geometry"
+  - "Benchmark"
+  - "Spatial Reasoning"
+  - "Asymptote Code"
 date: 2026-05-08
 content_hash: 31382a635e9f3b2b
 ---

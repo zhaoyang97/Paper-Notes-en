@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] CoMind: Towards Community-Driven Agents for Machine Learning Engineering
 description: >-
-  [ICLR 2026][LLM Agent] This paper proposes MLE-Live — the first real-time evaluation framework simulating a Kaggle research community — and CoMind, a multi-agent ML engineering system that systematically leverages collective community knowledge. CoMind achieves a 36% medal rate across 75 historical Kaggle competitions and outperforms an average of 79.2% of human participants on 4 active competitions (reaching 92.6% in an updated version).
+  [ICLR 2026][LLM Agent][Machine Learning Engineering] This paper proposes MLE-Live — the first real-time evaluation framework simulating a Kaggle research community — and CoMind…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Machine Learning Engineering
-  - Kaggle Competition
-  - Community Knowledge
-  - Multi-Agent Collaboration
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Machine Learning Engineering"
+  - "Kaggle Competition"
+  - "Community Knowledge"
+  - "Multi-Agent Collaboration"
 date: 2026-05-08
 content_hash: 9db82b8ef60696c9
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Fair Generation without Unfair Distortions: Debiasing Text-to-Image Generation with Entanglement-Free Attention
 description: >-
-  [ICCV 2025][Image Generation][Debiasing] This paper proposes Entanglement-Free Attention (EFA), a training-free inference-time debiasing method that injects target attributes (e.g., gender, race) into person regions by modifying the cross-attention mechanism, while preserving non-target attributes (e.g., background, objects). EFA eliminates generative bias without introducing new unfair associations.
+  [ICCV 2025][Image Generation][Debiasing] This paper proposes Entanglement-Free Attention (EFA), a training-free inference-time debiasing method that injects target attributes (e.g., gender…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Debiasing
-  - Attribute Disentanglement
-  - Cross-Attention
-  - Diffusion Models
-  - Fairness
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Debiasing"
+  - "Attribute Disentanglement"
+  - "Cross-Attention"
+  - "Diffusion Models"
+  - "Fairness"
 date: 2026-05-08
 content_hash: 722e0bb4140563dd
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SafePath: Preventing Harmful Reasoning in Chain-of-Thought via Early Alignment
 description: >-
-  [NeurIPS 2025][LLM Reasoning][LRM safety] SafePath proposes fine-tuning only an 8-token "Safety Primer" ("Let's think about safety first") at the very beginning of the reasoning chain, effectively steering Large Reasoning Models (LRMs) toward safe reasoning paths. On DeepSeek-R1-Distill, it reduces harmful outputs by 90% while requiring only 1/296 of the training compute of Direct Refusal.
+  [NeurIPS 2025][LLM Reasoning][LRM safety] SafePath proposes fine-tuning only an 8-token "Safety Primer" ("Let's think about safety first") at the very beginning of the reasoning chain…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - LRM safety
-  - chain-of-thought
-  - safety alignment
-  - jailbreak defense
-  - safety primer
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "LRM safety"
+  - "chain-of-thought"
+  - "safety alignment"
+  - "jailbreak defense"
+  - "safety primer"
 date: 2026-05-08
 content_hash: e857ff693a7d8567
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DM4CT: Benchmarking Diffusion Models for Computed Tomography Reconstruction
 description: >-
-  [ICLR 2026][Medical Imaging][CT reconstruction] DM4CT is proposed as the first systematic benchmark for diffusion-based CT reconstruction, encompassing ten diffusion methods and seven baselines evaluated comprehensively across medical, industrial, and synchrotron radiation datasets, revealing both the strengths and limitations of diffusion models in CT reconstruction.
+  [ICLR 2026][Medical Imaging][CT reconstruction] DM4CT is proposed as the first systematic benchmark for diffusion-based CT reconstruction…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - CT reconstruction
-  - diffusion models
-  - benchmark
-  - inverse problems
-  - sparse-view reconstruction
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "CT reconstruction"
+  - "diffusion models"
+  - "benchmark"
+  - "inverse problems"
+  - "sparse-view reconstruction"
 date: 2026-05-08
 content_hash: 4c5ce25da36e8820
 ---

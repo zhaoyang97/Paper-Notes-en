@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Reliably Detecting Model Failures in Deployment Without Labels
 description: >-
-  [NeurIPS 2025][LLM Evaluation][Post-deployment degradation monitoring] This paper proposes D3M (Disagreement-Driven Deterioration Monitoring), a three-stage model monitoring algorithm based on variational Bayesian posterior sampling, which reliably detects model performance degradation in label-free, training-data-free deployment settings while maintaining low false positive rates under non-degrading distribution shifts.
+  [NeurIPS 2025][LLM Evaluation][Post-deployment degradation monitoring] This paper proposes D3M (Disagreement-Driven Deterioration Monitoring), a three-stage model monitoring algorithm based on variational Bayesian poster…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - Post-deployment degradation monitoring
-  - model disagreement
-  - variational Bayes
-  - label-free detection
-  - clinical AI
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "Post-deployment degradation monitoring"
+  - "model disagreement"
+  - "variational Bayes"
+  - "label-free detection"
+  - "clinical AI"
 date: 2026-05-08
 content_hash: d20693d6e9596a0e
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Guided Diffusion Sampling on Function Spaces with Applications to PDEs
 description: >-
-  [NeurIPS 2025][Image Generation][function-space diffusion models] This paper proposes **FunDPS (Function-space Diffusion Posterior Sampling)**, which trains an unconditional diffusion model in function space and performs plug-and-play posterior sampling for PDE inverse problems via gradient guidance at inference time. Theoretically, it extends the Tweedie formula to infinite-dimensional Banach spaces. Empirically, across 5 PDE tasks with only 3% observations, FunDPS achieves 32% higher accuracy on average than DiffusionPDE while reducing the number of sampling steps by 4×.
+  [NeurIPS 2025][Image Generation][function-space diffusion models] This paper proposes **FunDPS (Function-space Diffusion Posterior Sampling)**, which trains an unconditional diffusion model in function space and performs…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - function-space diffusion models
-  - PDE inverse problems
-  - posterior sampling
-  - Tweedie formula
-  - neural operators
-  - resolution invariance
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "function-space diffusion models"
+  - "PDE inverse problems"
+  - "posterior sampling"
+  - "Tweedie formula"
+  - "neural operators"
+  - "resolution invariance"
 date: 2026-05-08
 content_hash: 5ca96608985b6b6d
 ---

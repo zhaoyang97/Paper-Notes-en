@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DMAP: A Distribution Map for Text
 description: >-
-  [ICLR 2026][AIGC Detection][distribution map for text] This paper proposes DMAP (Distribution Map), a mathematical framework that maps text to i.i.d. samples on $[0,1]$ via next-token probability rankings from a language model. A formal theorem proves that purely sampled text yields a uniform distribution, enabling $\chi^2$-based verification of generation parameters, exposing the root cause of the complete failure of probability-curvature detectors under pure sampling, and visualizing statistical fingerprints left by post-training (SFT/RLHF) in downstream models.
+  [ICLR 2026][AIGC Detection][distribution map for text] This paper proposes DMAP (Distribution Map), a mathematical framework that maps text to i.i.d. samples on $[0…
 tags:
-  - ICLR 2026
-  - AIGC Detection
-  - distribution map for text
-  - machine-generated text detection
-  - statistical testing
-  - token probability
-  - language model analysis
+  - "ICLR 2026"
+  - "AIGC Detection"
+  - "distribution map for text"
+  - "machine-generated text detection"
+  - "statistical testing"
+  - "token probability"
+  - "language model analysis"
 date: 2026-05-08
 content_hash: b45480733aa2aed6
 ---

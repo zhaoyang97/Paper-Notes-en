@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PixARMesh: Autoregressive Mesh-Native Single-View Scene Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][Single-view scene reconstruction] This paper proposes PixARMesh, the first autoregressive framework for single-view scene reconstruction that operates natively in mesh space (rather than SDF space). By enhancing a point cloud encoder with pixel-aligned image features and global scene context, the method jointly predicts object poses and meshes within a unified token sequence. PixARMesh achieves scene-level state-of-the-art on 3D-FRONT while producing compact, editable, artist-ready meshes.
+  [CVPR 2026][3D Vision][Single-view scene reconstruction] This paper proposes PixARMesh, the first autoregressive framework for single-view scene reconstruction that operates natively in mesh space (rather than SDF space)…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Single-view scene reconstruction
-  - autoregressive mesh generation
-  - native mesh
-  - artist-ready
-  - compositional 3D
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Single-view scene reconstruction"
+  - "autoregressive mesh generation"
+  - "native mesh"
+  - "artist-ready"
+  - "compositional 3D"
 date: 2026-05-08
 content_hash: 94c51a91cc777cd1
 ---

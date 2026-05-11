@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SynthAgent: Adapting Web Agents with Synthetic Supervision
 description: >-
-  [ACL 2026][LLM Agent][Synthetic Data] This paper proposes SynthAgent, a web agent adaptation framework built entirely on synthetic supervision. It employs categorized exploration to systematically cover functional regions of webpages for diverse task synthesis, followed by a dual refinement strategy—task refinement (conflict-triggered correction of hallucinations) and trajectory refinement (global-context denoising)—to improve synthetic data quality. SynthAgent significantly outperforms existing synthetic methods on WebArena and Online-Mind2Web.
+  [ACL 2026][LLM Agent][Synthetic Data] This paper proposes SynthAgent, a web agent adaptation framework built entirely on synthetic supervision. It employs categorized exploration to systematically cover functional region…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - Synthetic Data
-  - Web Agent
-  - Dual Refinement
-  - Categorized Exploration
-  - Trajectory Quality
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Synthetic Data"
+  - "Web Agent"
+  - "Dual Refinement"
+  - "Categorized Exploration"
+  - "Trajectory Quality"
 date: 2026-05-08
 content_hash: e97f268297df2f5c
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Principles2Plan: LLM-Guided System for Operationalising Ethical Principles into Plans
 description: >-
-  [AAAI 2026][LLM Safety][Ethical Planning] This paper presents Principles2Plan, an interactive prototype system that enables collaborative human–LLM operationalisation of high-level ethical principles (e.g., beneficence, privacy) into context-sensitive ethical rules, which are then embedded into a PDDL planner to generate ethically compliant action plans.
+  [AAAI 2026][LLM Safety][Ethical Planning] This paper presents Principles2Plan, an interactive prototype system that enables collaborative human–LLM operationalisation of high-level ethical principles (e.g., beneficence…
 tags:
-  - AAAI 2026
-  - LLM Safety
-  - Ethical Planning
-  - LLM
-  - Automated Planning
-  - PDDL
-  - Human-AI Collaboration
+  - "AAAI 2026"
+  - "LLM Safety"
+  - "Ethical Planning"
+  - "LLM"
+  - "Automated Planning"
+  - "PDDL"
+  - "Human-AI Collaboration"
 date: 2026-05-08
 content_hash: 1209a2afc5440da6
 ---

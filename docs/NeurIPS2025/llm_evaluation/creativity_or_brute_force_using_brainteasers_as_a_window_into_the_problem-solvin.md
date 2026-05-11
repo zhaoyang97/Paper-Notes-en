@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Creativity or Brute Force? Using Brainteasers as a Window into the Problem-Solving Abilities of Large Language Models
 description: >-
-  [NeurIPS 2025][LLM Evaluation][brainteasers] This work constructs the Braingle Brainteaser benchmark (242 math + 236 logic puzzles) and systematically evaluates LLM reasoning strategies on brainteasers. The findings reveal that models occasionally produce creative, insight-driven solutions, but frequently fall back on brute-force enumeration even when elegant solutions exist; self-correction ability is limited; and translating narrative formats into mathematical formats yields modest performance gains.
+  [NeurIPS 2025][LLM Evaluation][brainteasers] This work constructs the Braingle Brainteaser benchmark (242 math + 236 logic puzzles) and systematically evaluates LLM reasoning strategies on brainteasers. The findings reve…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - brainteasers
-  - creative reasoning
-  - brute-force search
-  - reasoning strategy analysis
-  - benchmark
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "brainteasers"
+  - "creative reasoning"
+  - "brute-force search"
+  - "reasoning strategy analysis"
+  - "benchmark"
 date: 2026-05-08
 content_hash: 3e68cc7a6ecd9f04
 ---

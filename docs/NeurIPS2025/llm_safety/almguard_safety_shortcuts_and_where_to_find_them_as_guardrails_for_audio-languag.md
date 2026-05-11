@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ALMGuard: Safety Shortcuts and Where to Find Them as Guardrails for Audio-Language Models
 description: >-
-  [NeurIPS 2025][LLM Safety][Audio jailbreak] The first defense framework against jailbreak attacks on audio-language models (ALMs). The work discovers that aligned ALMs possess latent safety shortcuts that can be activated, and proposes a Mel Gradient Sparse Mask (M-GSM) to identify critical frequency bins. By applying Shortcut Activation Perturbations (SAP) to these bins, the average attack success rate is reduced from 41.6% to 4.6% with negligible degradation of normal task performance.
+  [NeurIPS 2025][LLM Safety][Audio jailbreak] The first defense framework against jailbreak attacks on audio-language models (ALMs). The work discovers that aligned ALMs possess latent safety shortcuts that can be activate…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - Audio jailbreak
-  - safety shortcuts
-  - Mel gradient sparse mask
-  - acoustic perturbation
-  - ALM defense
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "Audio jailbreak"
+  - "safety shortcuts"
+  - "Mel gradient sparse mask"
+  - "acoustic perturbation"
+  - "ALM defense"
 date: 2026-05-08
 content_hash: 7176a5a35d3b1a1b
 ---

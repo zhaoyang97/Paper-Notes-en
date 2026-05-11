@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] A Multilingual Dataset and Empirical Validation for the Mutual Reinforcement Effect in Information Extraction
 description: >-
-  [ACL 2026][Mutual Reinforcement Effect] This work constructs the first multilingual MRE Mix dataset (MMM, 21 subsets covering English, Chinese, and Japanese) and systematically validates through large-scale ablation experiments that the Mutual Reinforcement Effect (MRE) between word-level and text-level information extraction tasks exists universally across languages.
+  [ACL 2026][Multilingual & Machine Translation][Mutual Reinforcement Effect] This work constructs the first multilingual MRE Mix dataset (MMM, 21 subsets covering English, Chinese…
 tags:
-  - ACL 2026
-  - Mutual Reinforcement Effect
-  - multilingual information extraction
-  - word-level–text-level joint modeling
-  - dataset construction
-  - LLM-assisted translation
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "Mutual Reinforcement Effect"
+  - "multilingual information extraction"
+  - "word-level–text-level joint modeling"
+  - "dataset construction"
+  - "LLM-assisted translation"
 date: 2026-05-08
 content_hash: d8c3a54b2c9aa1fc
 ---

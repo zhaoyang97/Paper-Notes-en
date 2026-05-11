@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MVGGT: Multimodal Visual Geometry Grounded Transformer for Multiview 3D Referring Expression Segmentation
 description: >-
-  [CVPR 2026][3D Vision][3D referring segmentation] This paper introduces the MV-3DRES task (language-guided 3D segmentation directly from sparse multiview RGB images) and the MVGGT framework (a dual-branch design combining a frozen geometry branch with a trainable multimodal branch). A PVSO optimization strategy is proposed to address the foreground gradient dilution (FGD) problem, achieving 39.9 mIoU on the newly constructed MVRefer benchmark, substantially outperforming baselines.
+  [CVPR 2026][3D Vision][3D referring segmentation] This paper introduces the MV-3DRES task (language-guided 3D segmentation directly from sparse multiview RGB images) and the MVGGT framework (a dual-branch design combinin…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D referring segmentation
-  - multiview
-  - sparse-view reconstruction
-  - foreground gradient dilution
-  - language guidance
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D referring segmentation"
+  - "multiview"
+  - "sparse-view reconstruction"
+  - "foreground gradient dilution"
+  - "language guidance"
 date: 2026-05-08
 content_hash: 14ecbf3f85cfd5b1
 ---

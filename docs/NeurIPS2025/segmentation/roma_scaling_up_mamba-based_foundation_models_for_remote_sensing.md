@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RoMA: Scaling up Mamba-based Foundation Models for Remote Sensing
 description: >-
-  [NeurIPS 2025][Segmentation][Remote sensing foundation models] This paper proposes RoMA — the first self-supervised autoregressive pre-training framework based on the Mamba architecture for remote sensing. By introducing an adaptive rotation encoding strategy and a multi-scale token prediction mechanism, RoMA addresses the challenges of orientation diversity and extreme scale variation inherent in remote sensing imagery, while empirically validating that Mamba follows data and parameter scaling laws in the remote sensing domain.
+  [NeurIPS 2025][Segmentation][Remote sensing foundation models] This paper proposes RoMA — the first self-supervised autoregressive pre-training framework based on the Mamba architecture for remote sensing. By introducing…
 tags:
-  - NeurIPS 2025
-  - Segmentation
-  - Remote sensing foundation models
-  - Mamba
-  - autoregressive pre-training
-  - rotation invariance
-  - multi-scale prediction
+  - "NeurIPS 2025"
+  - "Segmentation"
+  - "Remote sensing foundation models"
+  - "Mamba"
+  - "autoregressive pre-training"
+  - "rotation invariance"
+  - "multi-scale prediction"
 date: 2026-05-08
 content_hash: 79dfdc58aa9e394b
 ---

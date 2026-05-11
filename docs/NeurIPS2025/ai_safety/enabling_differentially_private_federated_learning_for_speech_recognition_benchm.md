@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Enabling Differentially Private Federated Learning for Speech Recognition: Benchmarks, Adaptive Optimizers and Gradient Clipping
 description: >-
-  [NeurIPS 2025][AI Safety][Differential Privacy] This work establishes the first practical benchmark for FL+DP in end-to-end ASR, achieving only 1.3%–4.6% absolute WER degradation under strong privacy guarantees by combining **per-layer clipping** with the layer-wise gradient normalization of the **LAMB optimizer**.
+  [NeurIPS 2025][AI Safety][Differential Privacy] This work establishes the first practical benchmark for FL+DP in end-to-end ASR, achieving only 1.3%–4.6% absolute WER degradation under strong privacy guarantees by combin…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - Differential Privacy
-  - Federated Learning
-  - Speech Recognition
-  - Per-Layer Clipping
-  - Adaptive Optimizer
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "Differential Privacy"
+  - "Federated Learning"
+  - "Speech Recognition"
+  - "Per-Layer Clipping"
+  - "Adaptive Optimizer"
 date: 2026-05-08
 content_hash: e8723dbde1f46f91
 ---

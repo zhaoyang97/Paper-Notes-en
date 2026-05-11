@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MMGait: Towards Multi-Modal Gait Recognition
 description: >-
-  [CVPR 2026][Human Understanding][Gait Recognition] MMGait constructs the most comprehensive multi-modal gait recognition benchmark to date (5 sensors, 12 modalities, 725 subjects, 334K sequences), introduces the novel omni-modal gait recognition task, and proposes a unified baseline model, OmniGait.
+  [CVPR 2026][Human Understanding][Gait Recognition] MMGait constructs the most comprehensive multi-modal gait recognition benchmark to date (5 sensors, 12 modalities, 725 subjects, 334K sequences)…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Gait Recognition
-  - Multi-Modal Benchmark
-  - Multi-Sensor Fusion
-  - Cross-Modal Retrieval
-  - Omni-Modal Recognition
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Gait Recognition"
+  - "Multi-Modal Benchmark"
+  - "Multi-Sensor Fusion"
+  - "Cross-Modal Retrieval"
+  - "Omni-Modal Recognition"
 date: 2026-05-08
 content_hash: 5b8cbd2fe0db2692
 ---

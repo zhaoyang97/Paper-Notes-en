@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] ForceVLA2: Unleashing Hybrid Force-Position Control with Force Awareness for Contact-Rich Manipulation
 description: >-
-  [CVPR 2026][Robotics][VLA] This paper proposes ForceVLA2, the first end-to-end model that unifies force awareness and hybrid force-position control within a VLA framework. Force-based Prompts injected into a VLM expert construct cross-phase force-aware task concepts, while a Cross-Scale MoE adaptively fuses task semantics with real-time interaction forces to achieve closed-loop force-position regulation. The model achieves an average success rate of 66% across 5 contact-rich tasks, surpassing π₀ and π₀.5 by 48.0% and 35.0%, respectively.
+  [CVPR 2026][Robotics][VLA] This paper proposes ForceVLA2, the first end-to-end model that unifies force awareness and hybrid force-position control within a VLA framework. Force-based Prompts injected into a VLM expert c…
 tags:
-  - CVPR 2026
-  - Robotics
-  - VLA
-  - Force Control
-  - Hybrid Force-Position Control
-  - MoE
-  - Contact-Rich Manipulation
-  - Force Awareness
+  - "CVPR 2026"
+  - "Robotics"
+  - "VLA"
+  - "Force Control"
+  - "Hybrid Force-Position Control"
+  - "MoE"
+  - "Contact-Rich Manipulation"
+  - "Force Awareness"
 date: 2026-05-08
 content_hash: 2aeb558c8528edfa
 ---

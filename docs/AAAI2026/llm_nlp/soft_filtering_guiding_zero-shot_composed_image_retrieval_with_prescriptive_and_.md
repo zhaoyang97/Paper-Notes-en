@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Soft Filtering: Guiding Zero-Shot Composed Image Retrieval with Prescriptive and Proscriptive Prompts
 description: >-
-  [LLM/NLP] This paper proposes SoFT, a training-free plug-and-play reranking module that leverages a multimodal LLM to extract dual textual constraints — "must include" (prescriptive) and "must avoid" (proscriptive) — from a reference image and modification text, and applies soft-filtering reranking over candidate results in zero-shot composed image retrieval. A multi-target triplet dataset construction pipeline is also introduced to improve evaluation.
+  [LLM/NLP] This paper proposes SoFT, a training-free plug-and-play reranking module that leverages a multimodal LLM to extract dual textual constraints — "must include" (prescriptive) and "must avoid" (proscriptive) — fro…
 tags:
-  - LLM/NLP
+  - "LLM/NLP"
 date: 2026-05-08
 content_hash: fb78fe6d23715b4a
 ---

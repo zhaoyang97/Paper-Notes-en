@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] SAD Neural Networks: Divergent Gradient Flows and Asymptotic Optimality via o-minimal Structures
 description: >-
-  [NeurIPS 2025][gradient flow] Using mathematical tools from o-minimal structures, this paper establishes a dichotomy for gradient flows in fully connected networks with common smooth activation functions (sigmoid, tanh, softplus, GELU, etc.): the flow either converges to a critical point or diverges to infinity with the loss converging to an asymptotic critical value. In particular, for polynomial target functions, the paper proves that the loss cannot be exactly zero but can be made arbitrarily close to zero, which necessarily causes parameter divergence.
+  [NeurIPS 2025][gradient flow] Using mathematical tools from o-minimal structures, this paper establishes a dichotomy for gradient flows in fully connected networks with common smooth activation functions (sigmoid, tanh…
 tags:
-  - NeurIPS 2025
-  - gradient flow
-  - o-minimal structures
-  - divergence phenomenon
-  - SAD activation functions
-  - asymptotic optimality
+  - "NeurIPS 2025"
+  - "gradient flow"
+  - "o-minimal structures"
+  - "divergence phenomenon"
+  - "SAD activation functions"
+  - "asymptotic optimality"
 date: 2026-05-08
 content_hash: 42d22d7bcd69cf6a
 ---

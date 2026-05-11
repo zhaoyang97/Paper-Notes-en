@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Approximately Aligned Decoding
 description: >-
-  [NeurIPS 2025][LLM Efficiency][constrained decoding] This paper proposes Approximately Aligned Decoding (AprAD), a method for constrained generation in LLMs that leverages the prefix-selection algorithm from speculative decoding. Upon encountering a constraint violation, AprAD neither reverts only one token (as in constrained generation, which causes extreme probability amplification) nor resamples entirely from scratch (as in ASAp, which incurs prohibitive computational cost). Instead, it intelligently selects a rollback position via speculative sampling, achieving a favorable trade-off between output distribution distortion and computational efficiency.
+  [NeurIPS 2025][LLM Efficiency][constrained decoding] This paper proposes Approximately Aligned Decoding (AprAD), a method for constrained generation in LLMs that leverages the prefix-selection algorithm from speculative…
 tags:
-  - NeurIPS 2025
-  - LLM Efficiency
-  - constrained decoding
-  - error avoidance
-  - speculative sampling
-  - probability amplification
-  - lipogram
+  - "NeurIPS 2025"
+  - "LLM Efficiency"
+  - "constrained decoding"
+  - "error avoidance"
+  - "speculative sampling"
+  - "probability amplification"
+  - "lipogram"
 date: 2026-05-08
 content_hash: 9215d663da1e7a1f
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Decoding with Structured Awareness: Integrating Directional, Frequency-Spatial, and Structural Attention for Medical Image Segmentation
 description: >-
-  [AAAI 2026][Medical Imaging][Medical image segmentation] This paper proposes a novel decoder framework for medical image segmentation comprising three modules: Adaptive Cross-Fusion Attention (ACFA) for directional awareness, Triple Feature Fusion Attention (TFFA) for spatial-frequency-wavelet fusion, and Structural-aware Multi-scale Masking Module (SMMM), achieving state-of-the-art performance across multiple benchmark datasets.
+  [AAAI 2026][Medical Imaging][Medical image segmentation] This paper proposes a novel decoder framework for medical image segmentation comprising three modules: Adaptive Cross-Fusion Attention (ACFA) for directional aware…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Medical image segmentation
-  - decoder design
-  - frequency-spatial fusion
-  - directional-aware attention
-  - multi-scale feature fusion
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Medical image segmentation"
+  - "decoder design"
+  - "frequency-spatial fusion"
+  - "directional-aware attention"
+  - "multi-scale feature fusion"
 date: 2026-05-08
 content_hash: c5d854d9355637e3
 ---

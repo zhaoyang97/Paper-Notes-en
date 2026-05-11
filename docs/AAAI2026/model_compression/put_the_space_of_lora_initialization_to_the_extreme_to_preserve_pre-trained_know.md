@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Put the Space of LoRA Initialization to the Extreme to Preserve Pre-trained Knowledge
 description: >-
-  [AAAI2026][Model Compression][LoRA] This paper proposes LoRA-Null, which initializes LoRA within the null space of pre-trained input activations (rather than the null space of weights). From an information-theoretic perspective, the effective rank of activations is much lower than that of weights, meaning their null space encodes less pre-trained knowledge, thereby substantially mitigating catastrophic forgetting during fine-tuning.
+  [AAAI2026][Model Compression][LoRA] This paper proposes LoRA-Null, which initializes LoRA within the null space of pre-trained input activations (rather than the null space of weights). From an information-theoretic pers…
 tags:
-  - AAAI2026
-  - Model Compression
-  - LoRA
-  - catastrophic forgetting
-  - knowledge preservation
-  - null space
-  - activation-aware initialization
+  - "AAAI2026"
+  - "Model Compression"
+  - "LoRA"
+  - "catastrophic forgetting"
+  - "knowledge preservation"
+  - "null space"
+  - "activation-aware initialization"
 date: 2026-05-08
 content_hash: cd2a1f8452a8b8ae
 ---

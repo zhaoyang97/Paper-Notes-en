@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Self-Improving Embodied Foundation Models
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Embodied foundation models] This paper proposes a two-stage post-training framework for embodied foundation models: Stage 1 performs supervised fine-tuning via behavior cloning and steps-to-go prediction; Stage 2 leverages the resulting self-reward function and success detector for online RL self-improvement. Using only 1–3% additional data, the method achieves over 1.5× improvement in success rate and, for the first time, demonstrates a robot autonomously acquiring novel skills beyond the distribution of imitation data.
+  [NeurIPS 2025][Reinforcement Learning][Embodied foundation models] This paper proposes a two-stage post-training framework for embodied foundation models: Stage 1 performs supervised fine-tuning via behavior cloning and…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Embodied foundation models
-  - self-improvement
-  - RL post-training
-  - steps-to-go prediction
-  - robot manipulation
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Embodied foundation models"
+  - "self-improvement"
+  - "RL post-training"
+  - "steps-to-go prediction"
+  - "robot manipulation"
 date: 2026-05-08
 content_hash: 8019b99f80928bb6
 ---

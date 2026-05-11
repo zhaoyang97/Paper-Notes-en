@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Scalable Policy-Based RL Algorithms for POMDPs
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][POMDP] This paper proposes approximating POMDPs as finite-state Superstate MDPs (where states are truncated histories), derives a tighter upper bound on the optimal value function gap (decaying exponentially with history length), and provides the first finite-time convergence guarantees for standard TD learning combined with policy optimization under non-Markovian sampling.
+  [NeurIPS 2025][Reinforcement Learning][POMDP] This paper proposes approximating POMDPs as finite-state Superstate MDPs (where states are truncated histories)…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - POMDP
-  - Policy Optimization
-  - TD Learning
-  - Superstate MDP
-  - Linear Function Approximation
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "POMDP"
+  - "Policy Optimization"
+  - "TD Learning"
+  - "Superstate MDP"
+  - "Linear Function Approximation"
 date: 2026-05-08
 content_hash: 78ad95da6f9c3797
 ---

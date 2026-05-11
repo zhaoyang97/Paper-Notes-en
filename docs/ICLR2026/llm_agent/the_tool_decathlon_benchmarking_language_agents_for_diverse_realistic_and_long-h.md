@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] The Tool Decathlon: Benchmarking Language Agents for Diverse, Realistic, and Long-Horizon Task Execution
 description: >-
-  [ICLR 2026][LLM Agent][language agent] This paper introduces Toolathlon, a language agent benchmark covering 32 software applications, 604 tools, and 108 tasks, emphasizing realistic and diverse environment states alongside long-horizon multi-step interactions (averaging ~20 tool calls per task). The strongest evaluated model, Claude-4.5-Sonnet, achieves only 38.6% task success rate.
+  [ICLR 2026][LLM Agent][language agent] This paper introduces Toolathlon, a language agent benchmark covering 32 software applications, 604 tools, and 108 tasks…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - language agent
-  - benchmark
-  - MCP
-  - tool calling
-  - long-horizon
-  - multi-application interaction
-  - execution-based evaluation
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "language agent"
+  - "benchmark"
+  - "MCP"
+  - "tool calling"
+  - "long-horizon"
+  - "multi-application interaction"
+  - "execution-based evaluation"
 date: 2026-05-08
 content_hash: 8f79275558b68d33
 ---

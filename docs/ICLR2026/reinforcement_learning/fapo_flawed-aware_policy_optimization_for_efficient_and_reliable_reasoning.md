@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] FAPO: Flawed-Aware Policy Optimization for Efficient and Reliable Reasoning
 description: >-
-  [ICLR2026][Reinforcement Learning][RLVR] To address the problem of flawed-positive rollouts in RLVR training—where the model reaches a correct answer through unreliable reasoning—this paper proposes the FAPO algorithm. FAPO employs a GenRM to detect flawed reasoning and applies a parameter-free reward penalty mechanism that realizes a natural "exploit-then-suppress" learning trajectory, simultaneously improving outcome correctness, process reliability, and training stability.
+  [ICLR2026][Reinforcement Learning][RLVR] To address the problem of flawed-positive rollouts in RLVR training—where the model reaches a correct answer through unreliable reasoning—this paper proposes the FAPO algorithm. F…
 tags:
-  - ICLR2026
-  - Reinforcement Learning
-  - RLVR
-  - flawed positives
-  - reward shaping
-  - generative reward model
-  - process reward
-  - GRPO
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "flawed positives"
+  - "reward shaping"
+  - "generative reward model"
+  - "process reward"
+  - "GRPO"
 date: 2026-05-08
 content_hash: 9b58a3ba9b73a0bf
 ---

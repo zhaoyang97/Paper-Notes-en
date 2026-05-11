@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Reference Recommendation based Membership Inference Attack against Hybrid-based Recommender Systems
 description: >-
-  [AAAI 2026][AI Safety][Membership Inference Attack] This paper proposes a Reference Recommendation-based Membership Inference Attack (MIA), designing a relative membership metric $\rho(u) = d(v_t, v_h) / d(v_t, v_r)$ that exploits the personalization capability of hybrid-based recommender systems to obtain reference recommendations. It is the first method to effectively attack hybrid-based recommender systems, achieving an attack success rate of up to 93.4% with a computational cost of only 10 seconds.
+  [AAAI 2026][AI Safety][Membership Inference Attack] This paper proposes a Reference Recommendation-based Membership Inference Attack (MIA), designing a relative membership metric $\rho(u) = d(v_t, v_h) / d(v_t…
 tags:
-  - AAAI 2026
-  - AI Safety
-  - Membership Inference Attack
-  - Hybrid-based Recommender Systems
-  - Reference Recommendation
-  - Relative Membership Metric
-  - Privacy Attack
+  - "AAAI 2026"
+  - "AI Safety"
+  - "Membership Inference Attack"
+  - "Hybrid-based Recommender Systems"
+  - "Reference Recommendation"
+  - "Relative Membership Metric"
+  - "Privacy Attack"
 date: 2026-05-08
 content_hash: 2a7777ae305151c1
 ---

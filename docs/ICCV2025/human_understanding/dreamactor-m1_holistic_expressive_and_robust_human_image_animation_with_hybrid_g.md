@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DreamActor-M1: Holistic, Expressive and Robust Human Image Animation with Hybrid Guidance
 description: >-
-  [ICCV 2025][Human Understanding][Human Animation] DreamActor-M1 proposes a human image animation framework based on the DiT architecture, achieving fine-grained facial and body control through hybrid control signals comprising implicit facial representations, 3D head spheres, and 3D body skeletons. Combined with complementary appearance guidance and a progressive training strategy, the framework supports multi-scale generation ranging from portrait to full-body.
+  [ICCV 2025][Human Understanding][Human Animation] DreamActor-M1 proposes a human image animation framework based on the DiT architecture…
 tags:
-  - ICCV 2025
-  - Human Understanding
-  - Human Animation
-  - Diffusion Transformer
-  - Hybrid Control Signals
-  - Multi-scale Adaptation
-  - Long-term Consistency
+  - "ICCV 2025"
+  - "Human Understanding"
+  - "Human Animation"
+  - "Diffusion Transformer"
+  - "Hybrid Control Signals"
+  - "Multi-scale Adaptation"
+  - "Long-term Consistency"
 date: 2026-05-08
 content_hash: 9e20a025fc46d067
 ---

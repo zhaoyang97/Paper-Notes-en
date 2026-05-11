@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] USE: A Unified Model for Universal Sound Separation and Extraction
 description: >-
-  [AAAI2026][Audio & Speech][Universal sound separation] The paper proposes USE, a unified framework that employs an EDA network to infer the number of sound sources and generate acoustic cues for sound separation (SS), and a multimodal fusion network to interpret user-provided text/video/label cues for target sound extraction (TSE). Joint training with cross-task alignment enables mutual reinforcement between the two tasks, achieving +1.4 dB SDR on SS and 86% matching accuracy on TSE.
+  [AAAI2026][Audio & Speech][Universal sound separation] The paper proposes USE, a unified framework that employs an EDA network to infer the number of sound sources and generate acoustic cues for sound separation (SS)…
 tags:
-  - AAAI2026
+  - "AAAI2026"
   - "Audio & Speech"
-  - Universal sound separation
-  - target sound extraction
-  - multimodal fusion
-  - EDA network
-  - cross-task alignment
+  - "Universal sound separation"
+  - "target sound extraction"
+  - "multimodal fusion"
+  - "EDA network"
+  - "cross-task alignment"
 date: 2026-05-08
 content_hash: a6e10246f9ab3e10
 ---

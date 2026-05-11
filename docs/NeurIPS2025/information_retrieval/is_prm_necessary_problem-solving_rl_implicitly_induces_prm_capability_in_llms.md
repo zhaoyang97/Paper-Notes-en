@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Is PRM Necessary? Problem-Solving RL Implicitly Induces PRM Capability in LLMs
 description: >-
-  [NeurIPS 2025][Process Reward Model] This study systematically demonstrates that pure RL training (without explicit PRM supervision) implicitly induces strong process judgment capability; existing PRMs are even less effective than simple majority voting on strong reasoning models such as DeepSeek-R1 and QwQ-32B. The paper proposes Self-PRM, which allows a model to rerank its outputs using its own internal reward signal, consistently outperforming external PRMs.
+  [NeurIPS 2025][Information Retrieval & RAG][Process Reward Model] This study systematically demonstrates that pure RL training (without explicit PRM supervision) implicitly induces strong process judgment capability…
 tags:
-  - NeurIPS 2025
-  - Process Reward Model
-  - Reinforcement Learning
-  - Self-PRM
-  - Reasoning Verification
-  - Introspective Evaluation
+  - "NeurIPS 2025"
+  - "Information Retrieval & RAG"
+  - "Process Reward Model"
+  - "Reinforcement Learning"
+  - "Self-PRM"
+  - "Reasoning Verification"
+  - "Introspective Evaluation"
 date: 2026-05-08
 content_hash: 1ab27a126bc8ac83
 ---

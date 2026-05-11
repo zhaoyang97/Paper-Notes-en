@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Towards Adversarial Robustness via Debiased High-Confidence Logit Alignment
 description: >-
-  [ICCV 2025][AI Safety][adversarial training] This paper reveals that inverse adversarial attacks in adversarial training introduce spurious correlations by shifting model attention toward background features. The proposed DHAT method addresses this bias through two components—Debiased High-confidence Logit Regularization (DHLR) and Foreground Logit Orthogonal Enhancement (FLOE)—achieving state-of-the-art adversarial robustness on CIFAR-10/100 and ImageNet-1K.
+  [ICCV 2025][AI Safety][adversarial training] This paper reveals that inverse adversarial attacks in adversarial training introduce spurious correlations by shifting model attention toward background features. The propose…
 tags:
-  - ICCV 2025
-  - AI Safety
-  - adversarial training
-  - adversarial robustness
-  - inverse adversarial attack
-  - spurious correlations
-  - logit alignment
-  - debiasing
-  - attention shift
+  - "ICCV 2025"
+  - "AI Safety"
+  - "adversarial training"
+  - "adversarial robustness"
+  - "inverse adversarial attack"
+  - "spurious correlations"
+  - "logit alignment"
+  - "debiasing"
+  - "attention shift"
 date: 2026-05-08
 content_hash: fad1205cbd9bdf8f
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HyMoERec: Hybrid Mixture-of-Experts for Sequential Recommendation
 description: >-
-  [AAAI 2026 (Student Abstract)][Recommender Systems][Sequential Recommendation] This paper proposes HyMoERec, a hybrid mixture-of-experts architecture combining shared and specialized expert branches. By replacing the conventional feed-forward network in sequential recommendation models with an adaptive expert fusion mechanism, the model captures heterogeneous user behavior patterns and diverse item complexities, consistently outperforming state-of-the-art methods on the MovieLens-1M and Beauty datasets.
+  [AAAI 2026 (Student Abstract)][Recommender Systems][Sequential Recommendation] This paper proposes HyMoERec, a hybrid mixture-of-experts architecture combining shared and specialized expert branches. By replacing the con…
 tags:
-  - AAAI 2026 (Student Abstract)
-  - Recommender Systems
-  - Sequential Recommendation
-  - Mixture-of-Experts
-  - User Behavior Modeling
-  - Feed-Forward Network
-  - Adaptive Fusion
+  - "AAAI 2026 (Student Abstract)"
+  - "Recommender Systems"
+  - "Sequential Recommendation"
+  - "Mixture-of-Experts"
+  - "User Behavior Modeling"
+  - "Feed-Forward Network"
+  - "Adaptive Fusion"
 date: 2026-05-08
 content_hash: 65863cc3701839d2
 ---

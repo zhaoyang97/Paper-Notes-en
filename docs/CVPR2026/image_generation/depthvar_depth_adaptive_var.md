@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Depth Adaptive Efficient Visual Autoregressive Modeling
 description: >-
-  [CVPR 2026][Image Generation][Visual Autoregressive] Reveals the fundamental limitations of the frequency-driven hard pruning paradigm in VAR models and proposes DepthVAR, a training-free inference acceleration framework. By adaptively allocating the Transformer computation depth for each token (rather than binary keep/prune), it achieves $2.3\times$-$3.1\times$ speedup with minimal quality loss.
+  [CVPR 2026][Image Generation][Visual Autoregressive] Reveals the fundamental limitations of the frequency-driven hard pruning paradigm in VAR models and proposes DepthVAR…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Visual Autoregressive
-  - Inference Acceleration
-  - Dynamic Depth
-  - Training-free
-  - Token-level Computation Allocation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Visual Autoregressive"
+  - "Inference Acceleration"
+  - "Dynamic Depth"
+  - "Training-free"
+  - "Token-level Computation Allocation"
 date: 2026-05-08
 content_hash: af9ad1970d296a39
 ---

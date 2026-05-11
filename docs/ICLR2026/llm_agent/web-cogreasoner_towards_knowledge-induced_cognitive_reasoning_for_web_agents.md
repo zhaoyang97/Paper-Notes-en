@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Web-CogReasoner: Towards Knowledge-Induced Cognitive Reasoning for Web Agents
 description: >-
-  [ICLR 2026][LLM Agent][Web Agent] Inspired by Bloom's educational taxonomy, this paper proposes the Web-CogKnowledge Framework, which decomposes Web Agent capabilities into a progressive three-tier knowledge hierarchy—Factual→Conceptual→Procedural—and trains Web-CogReasoner using a Knowledge-driven CoT (KCoT) reasoning framework. The resulting model achieves 84.4% on Web-CogBench, surpassing Claude Sonnet 4 (76.8%) and Gemini 2.5 Pro (80.4%).
+  [ICLR 2026][LLM Agent][Web Agent] Inspired by Bloom's educational taxonomy, this paper proposes the Web-CogKnowledge Framework, which decomposes Web Agent capabilities into a progressive three-tier knowledge hierarchy—Fa…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Web Agent
-  - Cognitive Reasoning
-  - Bloom's Taxonomy
-  - Chain-of-Thought
-  - Knowledge-Driven
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Web Agent"
+  - "Cognitive Reasoning"
+  - "Bloom's Taxonomy"
+  - "Chain-of-Thought"
+  - "Knowledge-Driven"
 date: 2026-05-08
 content_hash: 965f09236adedb78
 ---

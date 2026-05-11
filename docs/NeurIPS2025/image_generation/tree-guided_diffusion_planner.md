@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Tree-Guided Diffusion Planner
 description: >-
-  [NeurIPS 2025][Image Generation][Diffusion planning] This paper proposes the Tree-guided Diffusion Planner (TDP), which formalizes test-time diffusion planning as a tree search problem. Through bi-level sampling—particle-guided generation of diverse parent trajectories for exploration, combined with fast conditional denoising to generate child trajectories for exploitation—TDP achieves a strong exploration–exploitation balance and substantially outperforms existing methods under non-convex objectives and non-differentiable constraints.
+  [NeurIPS 2025][Image Generation][Diffusion planning] This paper proposes the Tree-guided Diffusion Planner (TDP), which formalizes test-time diffusion planning as a tree search problem. Through bi-level sampling—particle…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Diffusion planning
-  - tree search
-  - test-time guidance
-  - zero-shot planning
-  - trajectory generation
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Diffusion planning"
+  - "tree search"
+  - "test-time guidance"
+  - "zero-shot planning"
+  - "trajectory generation"
 date: 2026-05-08
 content_hash: 0606e2ec7504bbac
 ---

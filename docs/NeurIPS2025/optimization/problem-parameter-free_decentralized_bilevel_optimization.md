@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Problem-Parameter-Free Decentralized Bilevel Optimization
 description: >-
-  [NeurIPS 2025][Optimization][Decentralized optimization] This paper proposes AdaSDBO, a fully parameter-free decentralized bilevel optimization algorithm that requires no prior knowledge of problem parameters. By employing adaptive step sizes based on cumulative gradient norms, it achieves a convergence rate of $\tilde{O}(1/\sqrt{T})$.
+  [NeurIPS 2025][Optimization][Decentralized optimization] This paper proposes AdaSDBO, a fully parameter-free decentralized bilevel optimization algorithm that requires no prior knowledge of problem parameters. By employi…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Decentralized optimization
-  - bilevel optimization
-  - parameter-free
-  - adaptive step size
-  - single-loop
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Decentralized optimization"
+  - "bilevel optimization"
+  - "parameter-free"
+  - "adaptive step size"
+  - "single-loop"
 date: 2026-05-08
 content_hash: 583cb735c9c45a9a
 ---

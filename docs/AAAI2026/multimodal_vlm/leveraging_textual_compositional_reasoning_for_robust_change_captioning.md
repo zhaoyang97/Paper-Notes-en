@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Leveraging Textual Compositional Reasoning for Robust Change Captioning
 description: >-
-  [AAAI 2026][Multimodal VLM][Change Captioning] This paper proposes CORTEX, a framework that introduces VLM-generated compositional reasoning text as explicit cues, combined with an Image-Text Dual Alignment (ITDA) module, to enhance purely visual change captioning methods in understanding structured semantics such as object relationships and spatial configurations.
+  [AAAI 2026][Multimodal VLM][Change Captioning] This paper proposes CORTEX, a framework that introduces VLM-generated compositional reasoning text as explicit cues, combined with an Image-Text Dual Alignment (ITDA) module…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Change Captioning
-  - Compositional Reasoning
-  - Vision-Language Models
-  - Image-Text Alignment
-  - Scene Change Description
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Change Captioning"
+  - "Compositional Reasoning"
+  - "Vision-Language Models"
+  - "Image-Text Alignment"
+  - "Scene Change Description"
 date: 2026-05-08
 content_hash: 3a68e1d43cf06422
 ---

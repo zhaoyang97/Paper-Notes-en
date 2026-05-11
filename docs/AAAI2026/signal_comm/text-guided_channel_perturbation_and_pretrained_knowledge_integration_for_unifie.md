@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Text-Guided Channel Perturbation and Pretrained Knowledge Integration for Unified Multi-Modality Image Fusion
 description: >-
-  [AAAI2026][Signal & Communication][Multi-modality image fusion] This paper proposes UP-Fusion, a unified multi-modality image fusion framework comprising three modules — Semantic-aware Channel Pruning Module (SCPM), Geometric Affine Modulation (GAM), and CLIP Text-guided Channel Perturbation Module (TCPM) — that employs a single set of weights (trained solely on infrared-visible data) to simultaneously handle both IVIF and medical image fusion tasks, achieving state-of-the-art performance on both.
+  [AAAI2026][Signal & Communication][Multi-modality image fusion] This paper proposes UP-Fusion, a unified multi-modality image fusion framework comprising three modules — Semantic-aware Channel Pruning Module (SCPM)…
 tags:
-  - AAAI2026
+  - "AAAI2026"
   - "Signal & Communication"
-  - Multi-modality image fusion
-  - unified model
-  - channel perturbation
-  - CLIP text guidance
-  - pretrained knowledge
+  - "Multi-modality image fusion"
+  - "unified model"
+  - "channel perturbation"
+  - "CLIP text guidance"
+  - "pretrained knowledge"
 date: 2026-05-08
 content_hash: e0d2935b2ae466d5
 ---

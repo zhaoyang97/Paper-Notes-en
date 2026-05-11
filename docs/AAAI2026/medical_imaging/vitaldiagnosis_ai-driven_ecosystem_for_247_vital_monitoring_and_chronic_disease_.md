@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VitalDiagnosis: AI-Driven Ecosystem for 24/7 Vital Monitoring and Chronic Disease Management
 description: >-
-  [AAAI 2026][Medical Imaging][LLM-based medical systems] This paper proposes VitalDiagnosis, an LLM-driven chronic disease management ecosystem that integrates continuous wearable data with multi-scale LLM reasoning, establishing a dual-track framework comprising interactive anomaly triage and routine adherence monitoring, thereby enabling a paradigm shift from passive surveillance to active engagement within a collaborative patient–clinician workflow.
+  [AAAI 2026][Medical Imaging][LLM-based medical systems] This paper proposes VitalDiagnosis, an LLM-driven chronic disease management ecosystem that integrates continuous wearable data with multi-scale LLM reasoning…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - LLM-based medical systems
-  - wearable devices
-  - chronic disease management
-  - dual-track framework
-  - personalized medicine
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "LLM-based medical systems"
+  - "wearable devices"
+  - "chronic disease management"
+  - "dual-track framework"
+  - "personalized medicine"
 date: 2026-05-08
 content_hash: 5d03a521739c0b6f
 ---

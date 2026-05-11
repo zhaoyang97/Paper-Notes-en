@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] NG-GS: NeRF-Guided 3D Gaussian Splatting Segmentation
 description: >-
-  [CVPR 2026][3D Vision][3D Gaussian Splatting] This paper proposes the NG-GS framework, which leverages the continuous modeling capability of NeRF to address the boundary discretization problem in 3DGS segmentation. It constructs a continuous feature field via RBF interpolation, combined with multi-resolution hash encoding and joint NeRF-GS optimization, to achieve high-quality object segmentation.
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] This paper proposes the NG-GS framework, which leverages the continuous modeling capability of NeRF to address the boundary discretization problem in 3DGS segmentation. It co…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - segmentation
-  - NeRF
-  - boundary refinement
-  - hash encoding
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "segmentation"
+  - "NeRF"
+  - "boundary refinement"
+  - "hash encoding"
 date: 2026-05-08
 content_hash: 65352c49b6c8f82f
 ---

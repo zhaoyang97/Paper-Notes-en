@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VT-Intrinsic: Physics-Based Decomposition of Reflectance and Shading using a Single Visible-Thermal Image Pair
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Intrinsic image decomposition] VT-Intrinsic exploits the physical complementarity between visible and thermal infrared images—unreflected light is absorbed as heat—to derive ordinal relationships between visible-thermal intensities that directly correspond to ordinal relationships in reflectance and shading. These ordinal relations serve as dense self-supervised signals to drive neural network optimization, achieving high-quality intrinsic image decomposition without any pre-training data.
+  [CVPR 2026][Self-Supervised Learning][Intrinsic image decomposition] VT-Intrinsic exploits the physical complementarity between visible and thermal infrared images—unreflected light is absorbed as heat—to derive ordinal…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - Intrinsic image decomposition
-  - visible-thermal imaging
-  - reflectance estimation
-  - illumination decomposition
-  - ordinal constraints
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Intrinsic image decomposition"
+  - "visible-thermal imaging"
+  - "reflectance estimation"
+  - "illumination decomposition"
+  - "ordinal constraints"
 date: 2026-05-08
 content_hash: 0951435155a4b35c
 ---

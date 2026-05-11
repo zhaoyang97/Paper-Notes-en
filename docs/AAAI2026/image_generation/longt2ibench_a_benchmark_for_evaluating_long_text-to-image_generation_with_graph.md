@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LongT2IBench: A Benchmark for Evaluating Long Text-to-Image Generation with Graph-structured Annotations
 description: >-
-  [AAAI 2026][Image Generation][Text-to-Image] This paper proposes LongT2IBench, the first evaluation benchmark targeting long-text-to-image (T2I) alignment, comprising 14K long-text–image pairs with graph-structured human annotations. It further introduces LongT2IExpert, an evaluator built by fine-tuning an MLLM via Hierarchical Alignment Chain-of-Thought (HA-CoT) instruction tuning, which jointly produces alignment scores and structured explanations.
+  [AAAI 2026][Image Generation][Text-to-Image] This paper proposes LongT2IBench, the first evaluation benchmark targeting long-text-to-image (T2I) alignment…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Text-to-Image
-  - Long Text Alignment
-  - Graph-structured Annotation
-  - Evaluation Benchmark
-  - Multimodal Large Language Models
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Text-to-Image"
+  - "Long Text Alignment"
+  - "Graph-structured Annotation"
+  - "Evaluation Benchmark"
+  - "Multimodal Large Language Models"
 date: 2026-05-08
 content_hash: 29b7e178d55e71d0
 ---

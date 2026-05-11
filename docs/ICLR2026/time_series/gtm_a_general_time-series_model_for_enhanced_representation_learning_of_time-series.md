@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GTM: A General Time-series Model for Enhanced Representation Learning
 description: >-
-  [ICLR 2026][Time Series][Time series foundation model] GTM is a general time-series foundation model that captures temporal granularity-aware features via a Fourier attention mechanism and unifies reconstruction and autoregressive pre-training objectives through hybrid masking, achieving state-of-the-art performance across forecasting, imputation, anomaly detection, and classification tasks.
+  [ICLR 2026][Time Series][Time series foundation model] GTM is a general time-series foundation model that captures temporal granularity-aware features via a Fourier attention mechanism and unifies reconstruction and auto…
 tags:
-  - ICLR 2026
-  - Time Series
-  - Time series foundation model
-  - frequency-domain attention
-  - hybrid mask pre-training
-  - multi-task
-  - temporal granularity awareness
+  - "ICLR 2026"
+  - "Time Series"
+  - "Time series foundation model"
+  - "frequency-domain attention"
+  - "hybrid mask pre-training"
+  - "multi-task"
+  - "temporal granularity awareness"
 date: 2026-05-08
 content_hash: 7aced6b83910bd1d
 ---

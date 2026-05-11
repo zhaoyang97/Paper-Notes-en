@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Riemannian Consistency Model
 description: >-
-  [NeurIPS 2025][Image Generation][Consistency Model] This work is the first to extend Consistency Models (CM) to Riemannian manifolds. By leveraging exponential map parameterization and covariant derivatives, it derives both discrete- and continuous-time RCM objectives, enabling high-quality few-step generation on non-Euclidean geometries such as spheres, flat tori, and SO(3).
+  [NeurIPS 2025][Image Generation][Consistency Model] This work is the first to extend Consistency Models (CM) to Riemannian manifolds. By leveraging exponential map parameterization and covariant derivatives…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Consistency Model
-  - Riemannian Manifold
-  - Flow Matching
-  - Few-Step Generation
-  - Covariant Derivative
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Consistency Model"
+  - "Riemannian Manifold"
+  - "Flow Matching"
+  - "Few-Step Generation"
+  - "Covariant Derivative"
 date: 2026-05-08
 content_hash: b0f8c486c333b898
 ---

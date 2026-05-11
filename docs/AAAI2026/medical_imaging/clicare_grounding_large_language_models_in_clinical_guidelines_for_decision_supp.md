@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CliCARE: Grounding Large Language Models in Clinical Guidelines for Decision Support over Longitudinal Cancer Electronic Health Records
 description: >-
-  [AAAI 2026][Medical Imaging][LLM clinical decision support] This paper proposes CliCARE, a framework that transforms unstructured longitudinal cancer EHRs into temporal knowledge graphs (TKGs), aligns them with clinical practice guideline (CPG) knowledge graphs, and provides evidence-grounded clinical decision support for LLMs. An LLM-as-a-Judge evaluation protocol highly correlated with expert assessments is also introduced.
+  [AAAI 2026][Medical Imaging][LLM clinical decision support] This paper proposes CliCARE, a framework that transforms unstructured longitudinal cancer EHRs into temporal knowledge graphs (TKGs)…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - LLM clinical decision support
-  - electronic health records
-  - temporal knowledge graph
-  - clinical guideline alignment
-  - RAG
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "LLM clinical decision support"
+  - "electronic health records"
+  - "temporal knowledge graph"
+  - "clinical guideline alignment"
+  - "RAG"
 date: 2026-05-08
 content_hash: 65dc1c231b3d83b6
 ---

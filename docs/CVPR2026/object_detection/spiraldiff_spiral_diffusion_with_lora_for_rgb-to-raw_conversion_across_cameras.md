@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SpiralDiff: Spiral Diffusion with LoRA for RGB-to-RAW Conversion Across Cameras
 description: >-
-  [CVPR2026][Object Detection][RGB-to-RAW] This paper proposes SpiralDiff, a diffusion framework for RGB-to-RAW conversion that employs a signal-dependent noise weighting strategy to accommodate varying reconstruction difficulty across pixel intensity regions, and introduces a CamLoRA module for lightweight cross-camera adaptation within a single unified model.
+  [CVPR2026][Object Detection][RGB-to-RAW] This paper proposes SpiralDiff, a diffusion framework for RGB-to-RAW conversion that employs a signal-dependent noise weighting strategy to accommodate varying reconstruction diff…
 tags:
-  - CVPR2026
-  - Object Detection
-  - RGB-to-RAW
-  - diffusion model
-  - signal-dependent noise
-  - LoRA
-  - cross-camera adaptation
+  - "CVPR2026"
+  - "Object Detection"
+  - "RGB-to-RAW"
+  - "diffusion model"
+  - "signal-dependent noise"
+  - "LoRA"
+  - "cross-camera adaptation"
 date: 2026-05-08
 content_hash: edf28b77d6d415e3
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Exploring the Translation Mechanism of Large Language Models
 description: >-
-  [NeurIPS 2025][translation mechanism] This paper proposes a subspace-intervened path patching method for fine-grained causal analysis of the translation mechanism in LLMs. The study finds that translation is driven by a sparse set of attention heads comprising fewer than 5% of all heads, categorized into three functional roles: source heads, indicator heads, and positional heads. MLP layers integrate these features into an English-centric intermediate representation, and fine-tuning only 64 critical heads achieves performance comparable to full-parameter fine-tuning.
+  [NeurIPS 2025][Multilingual & Machine Translation][translation mechanism] This paper proposes a subspace-intervened path patching method for fine-grained causal analysis of the translation mechanism in LLMs. The study fi…
 tags:
-  - NeurIPS 2025
-  - translation mechanism
-  - mechanistic interpretability
-  - attention head
-  - path patching
-  - subspace intervention
+  - "NeurIPS 2025"
+  - "Multilingual & Machine Translation"
+  - "translation mechanism"
+  - "mechanistic interpretability"
+  - "attention head"
+  - "path patching"
+  - "subspace intervention"
 date: 2026-05-08
 content_hash: b36067dc32257541
 ---

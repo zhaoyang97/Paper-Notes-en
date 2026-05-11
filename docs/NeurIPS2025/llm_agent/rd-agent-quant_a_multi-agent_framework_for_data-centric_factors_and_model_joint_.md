@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] R&D-Agent-Quant: A Multi-Agent Framework for Data-Centric Factors and Model Joint Optimization
 description: >-
-  [NeurIPS 2025][LLM Agent][multi-agent framework] This paper proposes R&D-Agent(Q), a data-driven multi-agent framework that automates the joint optimization of factor mining and model innovation for quantitative strategies through five collaborative modules (Specification, Synthesis, Implementation, Validation, and Analysis), achieving approximately 2× the annualized return of traditional factor libraries in real stock markets at a cost of under $10.
+  [NeurIPS 2025][LLM Agent][multi-agent framework] This paper proposes R&D-Agent(Q), a data-driven multi-agent framework that automates the joint optimization of factor mining and model innovation for quantitative strategi…
 tags:
-  - NeurIPS 2025
-  - LLM Agent
-  - multi-agent framework
-  - quantitative factor mining
-  - model optimization
-  - data-driven
+  - "NeurIPS 2025"
+  - "LLM Agent"
+  - "multi-agent framework"
+  - "quantitative factor mining"
+  - "model optimization"
+  - "data-driven"
   - "automated R&D"
 date: 2026-05-08
 content_hash: bb93639e181303f6

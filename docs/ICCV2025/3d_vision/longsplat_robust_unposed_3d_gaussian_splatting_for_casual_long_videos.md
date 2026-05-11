@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] LongSplat: Robust Unposed 3D Gaussian Splatting for Casual Long Videos
 description: >-
-  [3D Vision] LongSplat targets casually captured long videos without known camera poses. It proposes an incremental joint optimization framework that simultaneously optimizes camera poses and 3DGS, introduces a robust pose estimation module based on MASt3R priors, and designs an adaptive octree anchor formation mechanism, collectively addressing pose drift, inaccurate geometry initialization, and memory constraints.
+  [3D Vision] LongSplat targets casually captured long videos without known camera poses. It proposes an incremental joint optimization framework that simultaneously optimizes camera poses and 3DGS…
 tags:
-  - 3D Vision
+  - "3D Vision"
 date: 2026-05-08
 content_hash: f3215b0c3e5418ce
 ---

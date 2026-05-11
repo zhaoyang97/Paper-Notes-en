@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MUSE-VL: Modeling Unified VLM through Semantic Discrete Encoding
 description: >-
-  [ICCV 2025][Multimodal VLM][unified VLM] This paper proposes a Semantic Discrete Encoding (SDE) visual tokenizer that augments VQGAN with SigLIP semantic feature constraints, enabling discrete visual tokens to align semantically with language tokens. Built upon SDE, a unified autoregressive VLM (MUSE-VL) is constructed that, using only 24M training samples, outperforms Emu3 by 4.8% on understanding benchmarks, surpasses the specialist model LLaVA-NeXT 34B by 3.7%, and simultaneously supports image generation.
+  [ICCV 2025][Multimodal VLM][unified VLM] This paper proposes a Semantic Discrete Encoding (SDE) visual tokenizer that augments VQGAN with SigLIP semantic feature constraints…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - unified VLM
-  - visual tokenizer
-  - semantic discrete encoding
-  - autoregressive
-  - image generation
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "unified VLM"
+  - "visual tokenizer"
+  - "semantic discrete encoding"
+  - "autoregressive"
+  - "image generation"
 date: 2026-05-08
 content_hash: 3fad1b402a799387
 ---

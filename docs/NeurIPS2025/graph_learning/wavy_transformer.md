@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Wavy Transformer
 description: >-
-  [NeurIPS 2025][Graph Learning][Transformer] This paper establishes a formal equivalence between Transformer attention layers and graph neural diffusion on complete graphs, and proposes the Wavy Transformer based on second-order wave equations. By exploiting energy conservation properties, the method mitigates over-smoothing in deep Transformers and achieves consistent improvements across NLP, CV, and sparse graph tasks.
+  [NeurIPS 2025][Graph Learning][Transformer] This paper establishes a formal equivalence between Transformer attention layers and graph neural diffusion on complete graphs…
 tags:
-  - NeurIPS 2025
-  - Graph Learning
-  - Transformer
-  - over-smoothing
-  - wave equation
-  - graph neural diffusion
-  - attention mechanism
-  - physics-inspired
+  - "NeurIPS 2025"
+  - "Graph Learning"
+  - "Transformer"
+  - "over-smoothing"
+  - "wave equation"
+  - "graph neural diffusion"
+  - "attention mechanism"
+  - "physics-inspired"
 date: 2026-05-08
 content_hash: ad8b365a6e56d10b
 ---

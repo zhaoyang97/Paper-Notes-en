@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DMQ: Dissecting Outliers of Diffusion Models for Post-Training Quantization
 description: >-
-  [ICCV 2025][Image Generation][Post-training quantization] DMQ is a framework that combines Learned Equivalent Scaling (LES) and channel-wise Power-of-Two Scaling (PTS) to address outlier problems in diffusion model quantization, achieving, for the first time, stable high-quality image generation under the W4A6 low-bit setting.
+  [ICCV 2025][Image Generation][Post-training quantization] DMQ is a framework that combines Learned Equivalent Scaling (LES) and channel-wise Power-of-Two Scaling (PTS) to address outlier problems in diffusion model quant…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Post-training quantization
-  - diffusion model quantization
-  - outlier handling
-  - equivalent scaling
-  - Power-of-Two scaling
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Post-training quantization"
+  - "diffusion model quantization"
+  - "outlier handling"
+  - "equivalent scaling"
+  - "Power-of-Two scaling"
 date: 2026-05-08
 content_hash: 7da2558abc87e765
 ---

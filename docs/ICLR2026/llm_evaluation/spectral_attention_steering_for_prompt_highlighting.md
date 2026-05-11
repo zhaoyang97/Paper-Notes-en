@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Spectral Attention Steering for Prompt Highlighting
 description: >-
-  [ICLR 2026][LLM Evaluation][attention steering] This paper proposes SEKA/AdaSEKA, which learns a "relevance subspace" via spectral decomposition of key embeddings and directly edits key vectors prior to attention computation to achieve prompt highlighting. The approach requires no storage of the full attention matrix, is fully compatible with FlashAttention, and incurs negligible overhead (+0.03s/sample).
+  [ICLR 2026][LLM Evaluation][attention steering] This paper proposes SEKA/AdaSEKA, which learns a "relevance subspace" via spectral decomposition of key embeddings and directly edits key vectors prior to attention computa…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - attention steering
-  - prompt highlighting
-  - spectral decomposition
-  - FlashAttention
-  - key embedding editing
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "attention steering"
+  - "prompt highlighting"
+  - "spectral decomposition"
+  - "FlashAttention"
+  - "key embedding editing"
 date: 2026-05-08
 content_hash: 3701c105c56f2782
 ---

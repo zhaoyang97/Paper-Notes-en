@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TriLite: Efficient WSOL with Universal Visual Features and Tri-Region Disentanglement
 description: >-
-  [CVPR 2026][Human Understanding][Weakly Supervised Object Localization] TriLite employs a frozen DINOv2 ViT backbone with a lightweight TriHead module containing fewer than 800K trainable parameters. By disentangling patch features into foreground, background, and ambiguous regions, and introducing an adversarial background loss, the method achieves state-of-the-art WSOL performance with minimal parameter overhead.
+  [CVPR 2026][Human Understanding][Weakly Supervised Object Localization] TriLite employs a frozen DINOv2 ViT backbone with a lightweight TriHead module containing fewer than 800K trainable parameters. By disentangling pat…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Weakly Supervised Object Localization
-  - ViT
-  - DINOv2
-  - Tri-Region Disentanglement
-  - Parameter Efficiency
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Weakly Supervised Object Localization"
+  - "ViT"
+  - "DINOv2"
+  - "Tri-Region Disentanglement"
+  - "Parameter Efficiency"
 date: 2026-05-08
 content_hash: 2f49458bcb6f258f
 ---

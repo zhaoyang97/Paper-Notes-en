@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] NeuroGaze-Distill: Brain-informed Distillation and Depression-Inspired Geometric Priors for Robust Facial Emotion Recognition
 description: >-
-  [ICLR 2026][Human Understanding][facial emotion recognition] This paper proposes NeuroGaze-Distill, a cross-modal distillation framework that extracts static Valence-Arousal prototypes from an EEG-trained teacher model and injects them into a purely visual student model via Proto-KD and depression-inspired geometric priors (D-Geo), improving cross-dataset robustness for facial expression recognition without requiring paired EEG-face data.
+  [ICLR 2026][Human Understanding][facial emotion recognition] This paper proposes NeuroGaze-Distill, a cross-modal distillation framework that extracts static Valence-Arousal prototypes from an EEG-trained teacher model a…
 tags:
-  - ICLR 2026
-  - Human Understanding
-  - facial emotion recognition
-  - knowledge distillation
-  - EEG prototypes
-  - depression-inspired prior
-  - cross-dataset robustness
+  - "ICLR 2026"
+  - "Human Understanding"
+  - "facial emotion recognition"
+  - "knowledge distillation"
+  - "EEG prototypes"
+  - "depression-inspired prior"
+  - "cross-dataset robustness"
 date: 2026-05-08
 content_hash: 3b0e405a20b6046a
 ---

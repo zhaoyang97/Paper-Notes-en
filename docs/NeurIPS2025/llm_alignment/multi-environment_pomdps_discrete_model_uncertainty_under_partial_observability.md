@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Multi-Environment POMDPs: Discrete Model Uncertainty Under Partial Observability
 description: >-
-  [NeurIPS 2025][LLM Alignment][POMDP] This paper systematically studies Multi-Environment POMDPs (ME-POMDPs)—a class of POMDP ensembles sharing state, action, and observation spaces but with arbitrarily different transition, observation, and reward functions—with the goal of finding a robust policy that maximizes reward under the worst-case environment. By introducing the Adversarial Belief POMDP (AB-POMDP) as a unified model and establishing its equivalence to one-sided partially observable stochastic games (POSGs), the paper proposes both exact (value iteration + LP) and approximate (AB-HSVI) algorithms.
+  [NeurIPS 2025][LLM Alignment][POMDP] This paper systematically studies Multi-Environment POMDPs (ME-POMDPs)—a class of POMDP ensembles sharing state, action…
 tags:
-  - NeurIPS 2025
-  - LLM Alignment
-  - POMDP
-  - robust planning
-  - model uncertainty
-  - multi-environment
-  - adversarial belief
-  - value iteration
-  - linear programming
+  - "NeurIPS 2025"
+  - "LLM Alignment"
+  - "POMDP"
+  - "robust planning"
+  - "model uncertainty"
+  - "multi-environment"
+  - "adversarial belief"
+  - "value iteration"
+  - "linear programming"
 date: 2026-05-08
 content_hash: 1838b1e84a21b5f4
 ---

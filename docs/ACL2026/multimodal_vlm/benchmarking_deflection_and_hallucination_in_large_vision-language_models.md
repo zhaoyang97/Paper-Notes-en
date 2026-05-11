@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Benchmarking Deflection and Hallucination in Large Vision-Language Models
 description: >-
-  [ACL 2026][Multimodal VLM][Vision-language models] This paper proposes VLM-DeflectionBench, a multimodal benchmark comprising 2,775 samples that systematically evaluates the deflection vs. hallucination behavior of large vision-language models (LVLMs) under insufficient or misleading evidence, through four evaluation scenarios (Parametric / Oracle / Realistic / Adversarial). Experiments covering 20 state-of-the-art LVLMs reveal that virtually no model can reliably deflect under noisy evidence.
+  [ACL 2026][Multimodal VLM][Vision-language models] This paper proposes VLM-DeflectionBench, a multimodal benchmark comprising 2,775 samples that systematically evaluates the deflection vs. hallucination behavior of large…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Vision-language models
-  - hallucination detection
-  - deflection evaluation
-  - knowledge-based VQA
-  - retrieval-augmented generation
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Vision-language models"
+  - "hallucination detection"
+  - "deflection evaluation"
+  - "knowledge-based VQA"
+  - "retrieval-augmented generation"
 date: 2026-05-08
 content_hash: b28dc90cea5542a9
 ---

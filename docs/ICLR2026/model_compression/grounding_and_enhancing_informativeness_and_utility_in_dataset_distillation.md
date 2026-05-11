@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Grounding and Enhancing Informativeness and Utility in Dataset Distillation
 description: >-
-  [ICLR 2026][Model Compression][Dataset Distillation] This paper proposes InfoUtil, a framework that maximizes sample informativeness via game-theoretic Shapley Values (to identify the most critical patches) and maximizes sample utility via gradient norms (to select the most training-valuable samples), achieving a 6.1% improvement over the previous SOTA on ImageNet-1K.
+  [ICLR 2026][Model Compression][Dataset Distillation] This paper proposes InfoUtil, a framework that maximizes sample informativeness via game-theoretic Shapley Values (to identify the most critical patches) and maximizes…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Dataset Distillation
-  - Shapley Value
-  - Gradient Norm
-  - Informativeness
-  - Utility
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Dataset Distillation"
+  - "Shapley Value"
+  - "Gradient Norm"
+  - "Informativeness"
+  - "Utility"
 date: 2026-05-08
 content_hash: 20e6995c5441723b
 ---

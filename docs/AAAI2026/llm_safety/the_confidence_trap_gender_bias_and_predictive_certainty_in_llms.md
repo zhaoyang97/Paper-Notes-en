@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] The Confidence Trap: Gender Bias and Predictive Certainty in LLMs
 description: >-
-  [AAAI2026][LLM Safety][LLM Fairness] This paper proposes Gender-ECE, a metric for systematically evaluating the confidence calibration and alignment with human bias judgments of six open-source LLMs on gendered pronoun prediction tasks. The authors find that Gemma-2 exhibits the worst calibration and an extreme disparity between male and female pronoun calibration, whereas GPT-J-6B — trained on less filtered data — achieves the best calibration overall.
+  [AAAI2026][LLM Safety][LLM Fairness] This paper proposes Gender-ECE, a metric for systematically evaluating the confidence calibration and alignment with human bias judgments of six open-source LLMs on gendered pronoun p…
 tags:
-  - AAAI2026
-  - LLM Safety
-  - LLM Fairness
-  - Gender Bias
-  - Confidence Calibration
-  - Expected Calibration Error
-  - Coreference Resolution
-  - Gender-ECE
+  - "AAAI2026"
+  - "LLM Safety"
+  - "LLM Fairness"
+  - "Gender Bias"
+  - "Confidence Calibration"
+  - "Expected Calibration Error"
+  - "Coreference Resolution"
+  - "Gender-ECE"
 date: 2026-05-08
 content_hash: d543ef5f80296992
 ---

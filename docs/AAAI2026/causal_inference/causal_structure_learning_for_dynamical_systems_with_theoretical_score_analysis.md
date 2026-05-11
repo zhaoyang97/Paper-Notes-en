@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CaDyT: Causal Structure Learning for Dynamical Systems with Theoretical Score Analysis
 description: >-
-  [AAAI 2026][Causal Inference][Causal Discovery] This paper proposes CaDyT, which combines Gaussian process-based continuous-time dynamics modeling (via Adams-Bashforth integrators for exact inference) with the Minimum Description Length (MDL) principle for structure search. The method simultaneously addresses irregular sampling and causal structure identification, substantially outperforming all baselines on double-mass spring, diamond graph, and Rössler oscillator benchmarks (AUPRC 0.79 vs. runner-up 0.39).
+  [AAAI 2026][Causal Inference][Causal Discovery] This paper proposes CaDyT, which combines Gaussian process-based continuous-time dynamics modeling (via Adams-Bashforth integrators for exact inference) with the Minimum De…
 tags:
-  - AAAI 2026
-  - Causal Inference
-  - Causal Discovery
-  - Gaussian Processes
-  - MDL Principle
-  - Dynamical Systems
-  - Irregular Sampling
+  - "AAAI 2026"
+  - "Causal Inference"
+  - "Causal Discovery"
+  - "Gaussian Processes"
+  - "MDL Principle"
+  - "Dynamical Systems"
+  - "Irregular Sampling"
 date: 2026-05-08
 content_hash: ba12dcd513698137
 ---

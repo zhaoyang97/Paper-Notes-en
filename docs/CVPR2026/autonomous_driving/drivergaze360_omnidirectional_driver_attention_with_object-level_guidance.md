@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] DriverGaze360: OmniDirectional Driver Attention with Object-Level Guidance
 description: >-
-  [CVPR2026][Autonomous Driving][Driver Attention] This paper introduces the first 360° panoramic driver attention dataset (~1M frames / 19 drivers) and proposes DriverGaze360-Net, which jointly learns attention maps and attended objects via an auxiliary semantic segmentation head, achieving state-of-the-art attention prediction performance on panoramic driving images.
+  [CVPR2026][Autonomous Driving][Driver Attention] This paper introduces the first 360° panoramic driver attention dataset (~1M frames / 19 drivers) and proposes DriverGaze360-Net…
 tags:
-  - CVPR2026
-  - Autonomous Driving
-  - Driver Attention
-  - Omnidirectional View
-  - Gaze Prediction
-  - Semantic Segmentation
-  - 360° Field of View
-  - Video Swin Transformer
+  - "CVPR2026"
+  - "Autonomous Driving"
+  - "Driver Attention"
+  - "Omnidirectional View"
+  - "Gaze Prediction"
+  - "Semantic Segmentation"
+  - "360° Field of View"
+  - "Video Swin Transformer"
 date: 2026-05-08
 content_hash: 1529f5c254352816
 ---

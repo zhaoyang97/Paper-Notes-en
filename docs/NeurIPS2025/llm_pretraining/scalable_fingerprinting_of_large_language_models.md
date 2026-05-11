@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Scalable Fingerprinting of Large Language Models
 description: >-
-  [NeurIPS 2025][LLM Pretraining][model fingerprinting] This paper proposes Perinucleus sampling to generate scalable LLM fingerprints, enabling the embedding of 24,576 fingerprints in Llama-3.1-8B—two orders of magnitude more than existing methods—without degrading model capability. Theoretical and empirical analyses demonstrate that large-scale fingerprinting is essential for defending against collusion attacks.
+  [NeurIPS 2025][LLM Pretraining][model fingerprinting] This paper proposes Perinucleus sampling to generate scalable LLM fingerprints, enabling the embedding of 24…
 tags:
-  - NeurIPS 2025
-  - LLM Pretraining
-  - model fingerprinting
-  - LLM ownership
-  - Perinucleus sampling
-  - collusion attack
-  - model security
+  - "NeurIPS 2025"
+  - "LLM Pretraining"
+  - "model fingerprinting"
+  - "LLM ownership"
+  - "Perinucleus sampling"
+  - "collusion attack"
+  - "model security"
 date: 2026-05-08
 content_hash: 52c019ee04502179
 ---

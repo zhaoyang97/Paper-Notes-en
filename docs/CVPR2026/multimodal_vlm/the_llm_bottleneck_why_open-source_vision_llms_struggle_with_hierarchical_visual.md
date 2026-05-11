@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The LLM Bottleneck: Why Open-Source Vision LLMs Struggle with Hierarchical Visual Recognition
 description: >-
-  [CVPR2026][Multimodal VLM][Hierarchical Visual Recognition] This paper reveals that open-source LLMs lack hierarchical taxonomic knowledge about the visual world (often failing to recognize even basic biological classification systems), making the LLM the bottleneck for hierarchical visual recognition in Vision LLMs.
+  [CVPR2026][Multimodal VLM][Hierarchical Visual Recognition] This paper reveals that open-source LLMs lack hierarchical taxonomic knowledge about the visual world (often failing to recognize even basic biological classifi…
 tags:
-  - CVPR2026
-  - Multimodal VLM
-  - Hierarchical Visual Recognition
-  - Classification Consistency
-  - LLM Bottleneck
-  - Taxonomy Knowledge
-  - Visual Question Answering
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "Hierarchical Visual Recognition"
+  - "Classification Consistency"
+  - "LLM Bottleneck"
+  - "Taxonomy Knowledge"
+  - "Visual Question Answering"
 date: 2026-05-08
 content_hash: 984df3d4e7dc94c1
 ---

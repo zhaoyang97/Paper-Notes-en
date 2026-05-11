@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Private Zeroth-Order Optimization with Public Data
 description: >-
-  [NeurIPS 2025][AI Safety][Differential Privacy] This paper proposes the PAZO framework, which leverages public data to guide gradient approximation in private zeroth-order optimization. PAZO achieves a superior privacy-utility tradeoff compared to DP-SGD on both vision and text tasks, while delivering up to a 16× speedup.
+  [NeurIPS 2025][AI Safety][Differential Privacy] This paper proposes the PAZO framework, which leverages public data to guide gradient approximation in private zeroth-order optimization. PAZO achieves a superior privacy-u…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - Differential Privacy
-  - Zeroth-Order Optimization
-  - Public Data
-  - DP-SGD
-  - Privacy-Utility Tradeoff
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "Differential Privacy"
+  - "Zeroth-Order Optimization"
+  - "Public Data"
+  - "DP-SGD"
+  - "Privacy-Utility Tradeoff"
 date: 2026-05-08
 content_hash: f342de936f84b4ed
 ---

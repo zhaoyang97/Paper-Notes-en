@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] When Eyes and Ears Disagree: Can MLLMs Discern Audio-Visual Confusion?
 description: >-
-  [AAAI 2026][Multimodal VLM][Multimodal Large Language Models] This paper identifies a critical phenomenon termed "audio-visual confusion" in MLLMs, wherein models are heavily dominated by visual information and fail to recognize missing audio when audio-visual inputs are asymmetric. The authors propose the AV-ConfuseBench benchmark and the RL-CoMM method — combining a stepwise reasoning reward that incorporates an external audio model as reference with answer-centered confidence optimization — achieving 10–30% accuracy improvements over baselines using only approximately 20% of the training data.
+  [AAAI 2026][Multimodal VLM][Multimodal Large Language Models] This paper identifies a critical phenomenon termed "audio-visual confusion" in MLLMs…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Multimodal Large Language Models
-  - Audio-Visual Confusion
-  - Hallucination
-  - Reinforcement Learning
-  - Collaborative Multi-Model
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Multimodal Large Language Models"
+  - "Audio-Visual Confusion"
+  - "Hallucination"
+  - "Reinforcement Learning"
+  - "Collaborative Multi-Model"
 date: 2026-05-08
 content_hash: 3382559cf83c557c
 ---

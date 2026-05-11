@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] The Publication Choice Problem
 description: >-
-  [AAAI 2026][publication game] This paper proposes the "publication choice problem," a game-theoretic framework that models the bidirectional interaction between researchers' publication strategies and venue influence. It proves the existence and uniqueness of pure-strategy equilibria and analyzes the effects of Spotlight paper labels on the academic ecosystem.
+  [AAAI 2026][publication game] This paper proposes the "publication choice problem," a game-theoretic framework that models the bidirectional interaction between researchers' publication strategies and venue influence. It…
 tags:
-  - AAAI 2026
-  - publication game
-  - game-theoretic equilibrium
-  - academic venue influence
-  - Spotlight label
-  - researcher strategy
+  - "AAAI 2026"
+  - "publication game"
+  - "game-theoretic equilibrium"
+  - "academic venue influence"
+  - "Spotlight label"
+  - "researcher strategy"
 date: 2026-05-08
 content_hash: 1d30ece24f8691bb
 ---

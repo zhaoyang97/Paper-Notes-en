@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Vista: Scene-Aware Optimization for Streaming Video Question Answering Under Post-Hoc Queries
 description: >-
-  [AAAI 2026][Segmentation][Streaming video question answering] Vista proposes a scene-aware streaming video question answering framework that dynamically segments streaming video into semantically coherent scene units, applies spatiotemporal compression to each scene and offloads it to CPU memory, and selectively recalls the most relevant scenes upon user queries, achieving high-accuracy video QA under strict GPU memory and latency constraints.
+  [AAAI 2026][Segmentation][Streaming video question answering] Vista proposes a scene-aware streaming video question answering framework that dynamically segments streaming video into semantically coherent scene units…
 tags:
-  - AAAI 2026
-  - Segmentation
-  - Streaming video question answering
-  - scene-aware compression
-  - multimodal large language models
-  - video memory retrieval
-  - real-time inference
+  - "AAAI 2026"
+  - "Segmentation"
+  - "Streaming video question answering"
+  - "scene-aware compression"
+  - "multimodal large language models"
+  - "video memory retrieval"
+  - "real-time inference"
 date: 2026-05-08
 content_hash: 13d76560e5bd4f35
 ---

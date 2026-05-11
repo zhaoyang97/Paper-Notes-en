@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MICON-Bench: Benchmarking and Enhancing Multi-Image Context Image Generation in Unified Multimodal Models
 description: >-
-  [CVPR 2026][Image Generation][Multi-image context generation] This paper proposes MICON-Bench, a multi-image context generation benchmark covering 6 tasks (1,043 cases), paired with an MLLM-driven Evaluation-by-Checkpoint automated assessment framework. It further introduces DAR (Dynamic Attention Rebalancing), a training-free mechanism that improves generation consistency and quality in unified multimodal models (UMMs) by dynamically adjusting attention weights at inference time.
+  [CVPR 2026][Image Generation][Multi-image context generation] This paper proposes MICON-Bench, a multi-image context generation benchmark covering 6 tasks (1,043 cases)…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Multi-image context generation
-  - unified multimodal models
-  - benchmark
-  - dynamic attention rebalancing
-  - checkpoint evaluation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Multi-image context generation"
+  - "unified multimodal models"
+  - "benchmark"
+  - "dynamic attention rebalancing"
+  - "checkpoint evaluation"
 date: 2026-05-08
 content_hash: 3cf248573ec9567a
 ---

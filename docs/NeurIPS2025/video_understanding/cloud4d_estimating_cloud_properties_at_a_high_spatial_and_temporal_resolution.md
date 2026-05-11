@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Cloud4D: Estimating Cloud Properties at a High Spatial and Temporal Resolution
 description: >-
-  [NeurIPS 2025][Video Understanding][cloud physical property estimation] The first learning framework based on ground-level multi-view cameras that reconstructs four-dimensional (3D spatial + temporal) cloud liquid water content distributions via a homography-guided 2D-to-3D Transformer. The method achieves less than 10% error relative to radar at 25 m spatial and 5 s temporal resolution, improving spatiotemporal resolution by an order of magnitude over satellite observations.
+  [NeurIPS 2025][Video Understanding][cloud physical property estimation] The first learning framework based on ground-level multi-view cameras that reconstructs four-dimensional (3D spatial + temporal) cloud liquid water…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
-  - cloud physical property estimation
-  - multi-view 3D reconstruction
-  - homography-guided Transformer
-  - liquid water content
-  - meteorological observation
+  - "NeurIPS 2025"
+  - "Video Understanding"
+  - "cloud physical property estimation"
+  - "multi-view 3D reconstruction"
+  - "homography-guided Transformer"
+  - "liquid water content"
+  - "meteorological observation"
 date: 2026-05-08
 content_hash: a859d5eeeeec186e
 ---

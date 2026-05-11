@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multi-View Attention Multiple-Instance Learning Enhanced by LLM Reasoning for Cognitive Distortion Detection
 description: >-
-  [ACL 2026][Medical Imaging][Cognitive Distortion Detection] This paper proposes decomposing utterances into Emotion–Logic–Behavior (ELB) components and leveraging LLM reasoning to generate multiple cognitive distortion instances, which are subsequently aggregated via a multi-view gated attention MIL framework for bag-level classification. The approach outperforms direct LLM inference baselines on both the Korean (KoACD) and English (Therapist QA) datasets.
+  [ACL 2026][Medical Imaging][Cognitive Distortion Detection] This paper proposes decomposing utterances into Emotion–Logic–Behavior (ELB) components and leveraging LLM reasoning to generate multiple cognitive distortion i…
 tags:
-  - ACL 2026
-  - Medical Imaging
-  - Cognitive Distortion Detection
-  - Multiple Instance Learning
-  - LLM Reasoning
-  - Psychological Decomposition
-  - Gated Attention
+  - "ACL 2026"
+  - "Medical Imaging"
+  - "Cognitive Distortion Detection"
+  - "Multiple Instance Learning"
+  - "LLM Reasoning"
+  - "Psychological Decomposition"
+  - "Gated Attention"
 date: 2026-05-08
 content_hash: d316dfb63dc9129e
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From Spatial to Actions: Grounding Vision-Language-Action Model in Spatial Foundation Priors
 description: >-
-  [ICLR 2026][Robotics][VLA models] This paper proposes FALCON (From Spatial to Action), which injects rich 3D spatial tokens from a spatial foundation model into the Action Head rather than the VLM backbone, achieving strong 3D spatial awareness in VLA models while maintaining flexible modality switching between RGB-only and RGB-D inputs. FALCON achieves state-of-the-art performance on both simulation and real-world tasks.
+  [ICLR 2026][Robotics][VLA models] This paper proposes FALCON (From Spatial to Action), which injects rich 3D spatial tokens from a spatial foundation model into the Action Head rather than the VLM backbone…
 tags:
-  - ICLR 2026
-  - Robotics
-  - VLA models
-  - 3D spatial understanding
-  - spatial foundation models
-  - modality transferability
-  - robotic manipulation
+  - "ICLR 2026"
+  - "Robotics"
+  - "VLA models"
+  - "3D spatial understanding"
+  - "spatial foundation models"
+  - "modality transferability"
+  - "robotic manipulation"
 date: 2026-05-08
 content_hash: 8e5ec73f972c9905
 ---

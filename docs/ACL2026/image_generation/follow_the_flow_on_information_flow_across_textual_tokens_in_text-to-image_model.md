@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Follow the Flow: On Information Flow Across Textual Tokens in Text-to-Image Models
 description: >-
-  [ACL 2026][Image Generation][Text-to-Image] This paper systematically investigates token-level information distribution in text encoder outputs of text-to-image models through a causal intervention framework, discovering that lexical item semantics are typically concentrated in 1-2 representative tokens, and that cross-item information flow leads to semantic leakage and image misinterpretation in 11% of cases. The paper proposes simple yet effective token-level intervention methods to improve alignment.
+  [ACL 2026][Image Generation][Text-to-Image] This paper systematically investigates token-level information distribution in text encoder outputs of text-to-image models through a causal intervention framework…
 tags:
-  - ACL 2026
-  - Image Generation
-  - Text-to-Image
-  - Information Flow
-  - Token Representation
-  - Semantic Leakage
-  - Text Encoder
+  - "ACL 2026"
+  - "Image Generation"
+  - "Text-to-Image"
+  - "Information Flow"
+  - "Token Representation"
+  - "Semantic Leakage"
+  - "Text Encoder"
 date: 2026-05-08
 content_hash: 30723f88cb9414ea
 ---

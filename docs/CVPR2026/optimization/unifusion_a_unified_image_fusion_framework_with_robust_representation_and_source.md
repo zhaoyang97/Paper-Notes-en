@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UniFusion: A Unified Image Fusion Framework with Robust Representation and Source-Aware Preservation
 description: >-
-  [CVPR2026][Optimization][unified image fusion] This paper proposes UniFusion, a unified image fusion framework that leverages the self-supervised semantic priors of DINOv3 to construct a cross-modal shared feature space, preserves source image information via a reconstruction alignment mechanism, and decouples reconstruction and fusion objectives through a bilevel optimization strategy. The framework achieves state-of-the-art performance across multiple tasks, including infrared-visible, multi-exposure, multi-focus, and medical image fusion.
+  [CVPR2026][Optimization][unified image fusion] This paper proposes UniFusion, a unified image fusion framework that leverages the self-supervised semantic priors of DINOv3 to construct a cross-modal shared feature space…
 tags:
-  - CVPR2026
-  - Optimization
-  - unified image fusion
-  - DINOv3
-  - bilevel optimization
-  - reconstruction alignment
-  - cross-task generalization
+  - "CVPR2026"
+  - "Optimization"
+  - "unified image fusion"
+  - "DINOv3"
+  - "bilevel optimization"
+  - "reconstruction alignment"
+  - "cross-task generalization"
 date: 2026-05-08
 content_hash: 4cd3a8cff381c307
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unifying Formal Explanations: A Complexity-Theoretic Perspective
 description: >-
-  [ICLR 2026][Optimization][Explainable AI] This paper proposes a unified framework that reduces sufficient reasons and contrastive reasons (local/global, probabilistic/non-probabilistic) to the problem of minimizing a unified probabilistic value function. It reveals that global value functions possess key combinatorial optimization properties—monotonicity, submodularity/supermodularity—and proves that global explanations are computable in polynomial time, even when their local counterparts are NP-hard.
+  [ICLR 2026][Optimization][Explainable AI] This paper proposes a unified framework that reduces sufficient reasons and contrastive reasons (local/global…
 tags:
-  - ICLR 2026
-  - Optimization
-  - Explainable AI
-  - Computational Complexity
-  - Sufficient Reasons
-  - Contrastive Reasons
-  - Submodular/Supermodular Functions
+  - "ICLR 2026"
+  - "Optimization"
+  - "Explainable AI"
+  - "Computational Complexity"
+  - "Sufficient Reasons"
+  - "Contrastive Reasons"
+  - "Submodular/Supermodular Functions"
 date: 2026-05-08
 content_hash: eee097af87f9f6d5
 ---

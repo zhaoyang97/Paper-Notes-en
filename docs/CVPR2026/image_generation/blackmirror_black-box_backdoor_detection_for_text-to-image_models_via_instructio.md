@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BlackMirror: Black-Box Backdoor Detection for Text-to-Image Models via Instruction-Response Deviation
 description: >-
-  [CVPR2026][Image Generation][backdoor detection] This paper proposes BlackMirror, a two-stage framework that achieves generalizable black-box backdoor detection against T2I models through fine-grained instruction-response semantic deviation detection (MirrorMatch) and cross-prompt stability verification (MirrorVerify). The framework achieves an average F1 of 89.46%, substantially outperforming the existing black-box method UFID.
+  [CVPR2026][Image Generation][backdoor detection] This paper proposes BlackMirror, a two-stage framework that achieves generalizable black-box backdoor detection against T2I models through fine-grained instruction-respons…
 tags:
-  - CVPR2026
-  - Image Generation
-  - backdoor detection
-  - text-to-image models
-  - black-box detection
-  - vision-language models
-  - model security
+  - "CVPR2026"
+  - "Image Generation"
+  - "backdoor detection"
+  - "text-to-image models"
+  - "black-box detection"
+  - "vision-language models"
+  - "model security"
 date: 2026-05-08
 content_hash: e75243f67d2cf811
 ---

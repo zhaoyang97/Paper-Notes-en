@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] IM360: Large-scale Indoor Mapping with 360 Cameras
 description: >-
-  [ICCV 2025][3D Vision][indoor 3D mapping] This paper presents IM360, a 3D mapping pipeline for large-scale indoor environments captured under sparse scanning conditions. By deeply integrating a spherical camera model into every stage of SfM—combined with dense feature matching and differentiable rendering-based texture optimization—IM360 achieves substantially superior camera localization accuracy and rendering quality on Matterport3D and Stanford2D3D compared to existing methods (PSNR gain of 3.5).
+  [ICCV 2025][3D Vision][indoor 3D mapping] This paper presents IM360, a 3D mapping pipeline for large-scale indoor environments captured under sparse scanning conditions. By deeply integrating a spherical camera model int…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - indoor 3D mapping
-  - 360° panoramic cameras
-  - spherical SfM
-  - texture optimization
-  - large-scale indoor scenes
+  - "ICCV 2025"
+  - "3D Vision"
+  - "indoor 3D mapping"
+  - "360° panoramic cameras"
+  - "spherical SfM"
+  - "texture optimization"
+  - "large-scale indoor scenes"
 date: 2026-05-08
 content_hash: 0963ed78ceaad507
 ---

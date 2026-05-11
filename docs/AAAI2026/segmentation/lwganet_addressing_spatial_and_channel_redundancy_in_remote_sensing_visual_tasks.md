@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LWGANet: Addressing Spatial and Channel Redundancy in Remote Sensing Visual Tasks with Light-Weight Grouped Attention
 description: >-
-  [AAAI 2026][Segmentation][lightweight backbone] To address spatial redundancy (large homogeneous backgrounds) and channel redundancy (inefficient single feature space under extreme scale variation) in remote sensing imagery, LWGANet is proposed as a lightweight backbone that achieves efficient multi-scale feature representation via Top-K sparse global feature interaction (TGFI) and heterogeneous grouped attention (LWGA) modules, achieving SOTA across 4 remote sensing task categories on 12 datasets.
+  [AAAI 2026][Segmentation][lightweight backbone] To address spatial redundancy (large homogeneous backgrounds) and channel redundancy (inefficient single feature space under extreme scale variation) in remote sensing imag…
 tags:
-  - AAAI 2026
-  - Segmentation
-  - lightweight backbone
-  - remote sensing
-  - grouped attention
-  - spatial redundancy
-  - channel redundancy
+  - "AAAI 2026"
+  - "Segmentation"
+  - "lightweight backbone"
+  - "remote sensing"
+  - "grouped attention"
+  - "spatial redundancy"
+  - "channel redundancy"
 date: 2026-05-08
 content_hash: 122d4f2ba936b924
 ---

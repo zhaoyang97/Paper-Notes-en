@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] ImageSentinel: Protecting Visual Datasets from Unauthorized Retrieval-Augmented Image Generation
 description: >-
-  [NeurIPS 2025][Image Generation][Retrieval-Augmented Image Generation] This paper proposes the ImageSentinel framework, which synthesizes sentinel images that are visually consistent with a private dataset and binds them to randomly generated character retrieval keys, enabling reliable detection of unauthorized use of private datasets by retrieval-augmented image generation (RAIG) systems—achieving near-100% AUC with only 3–10 queries.
+  [NeurIPS 2025][Image Generation][Retrieval-Augmented Image Generation] This paper proposes the ImageSentinel framework, which synthesizes sentinel images that are visually consistent with a private dataset and binds them…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Retrieval-Augmented Image Generation
-  - Dataset Protection
-  - Sentinel Images
-  - Watermarking
-  - Copyright Detection
-  - RAIG
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Retrieval-Augmented Image Generation"
+  - "Dataset Protection"
+  - "Sentinel Images"
+  - "Watermarking"
+  - "Copyright Detection"
+  - "RAIG"
 date: 2026-05-08
 content_hash: a081904ab186f75b
 ---

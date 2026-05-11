@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Identity-Preserving Image-to-Video Generation via Reward-Guided Optimization
 description: >-
-  [CVPR 2026][Video Generation][image-to-video] This paper proposes IPRO, which directly optimizes a video diffusion model via reinforcement learning and a differentiable facial identity scorer, significantly improving face identity consistency in image-to-video generation without modifying the model architecture, achieving 20%–45% FaceSim gains on Wan 2.2.
+  [CVPR 2026][Video Generation][image-to-video] This paper proposes IPRO, which directly optimizes a video diffusion model via reinforcement learning and a differentiable facial identity scorer…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - image-to-video
-  - identity preservation
-  - reinforcement learning
-  - face reward
-  - diffusion model fine-tuning
+  - "CVPR 2026"
+  - "Video Generation"
+  - "image-to-video"
+  - "identity preservation"
+  - "reinforcement learning"
+  - "face reward"
+  - "diffusion model fine-tuning"
 date: 2026-05-08
 content_hash: 7f9cbc309cebc92a
 ---

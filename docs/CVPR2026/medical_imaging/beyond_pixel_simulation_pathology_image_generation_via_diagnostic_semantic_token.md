@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Beyond Pixel Simulation: Pathology Image Generation via Diagnostic Semantic Tokens and Prototype Control
 description: >-
-  [CVPR2026][Medical Imaging][pathology image generation] UniPath proposes a semantics-driven pathology image generation framework that achieves diagnostic-level controllable generation through multi-stream control (raw text + diagnostic semantic tokens distilled from a frozen pathology MLLM + prototype bank morphology control), attaining a Patho-FID of 80.9 and outperforming the second-best method by 51%.
+  [CVPR2026][Medical Imaging][pathology image generation] UniPath proposes a semantics-driven pathology image generation framework that achieves diagnostic-level controllable generation through multi-stream control (raw te…
 tags:
-  - CVPR2026
-  - Medical Imaging
-  - pathology image generation
-  - semantic control
-  - diagnostic semantic tokens
-  - prototype control
-  - multi-stream condition injection
-  - MLLM distillation
+  - "CVPR2026"
+  - "Medical Imaging"
+  - "pathology image generation"
+  - "semantic control"
+  - "diagnostic semantic tokens"
+  - "prototype control"
+  - "multi-stream condition injection"
+  - "MLLM distillation"
 date: 2026-05-08
 content_hash: ae81dc110fcb31f8
 ---

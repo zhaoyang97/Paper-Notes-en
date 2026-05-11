@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Hyperparameter Transfer Enables Consistent Gains of Matrix-Preconditioned Optimizers Across Scales
 description: >-
-  [NEURIPS2025][LLM/NLP][optimizer scaling] This paper investigates the hyperparameter scaling rules for matrix-preconditioned optimizers (Shampoo/SOAP/Muon) with respect to model width and depth under the μP framework, and demonstrates that correct hyperparameter scaling is the key to achieving consistent speedups. Using μP with $1/\text{width}$ weight decay, all three optimizers consistently achieve approximately $1.4\times$ speedup on Llama models ranging from 190M to 1.4B parameters.
+  [NEURIPS2025][LLM/NLP][optimizer scaling] This paper investigates the hyperparameter scaling rules for matrix-preconditioned optimizers (Shampoo/SOAP/Muon) with respect to model width and depth under the μP framework…
 tags:
-  - NEURIPS2025
-  - LLM/NLP
-  - optimizer scaling
-  - μP
-  - Shampoo
-  - SOAP
-  - Muon
-  - hyperparameter transfer
-  - matrix preconditioning
+  - "NEURIPS2025"
+  - "LLM/NLP"
+  - "optimizer scaling"
+  - "μP"
+  - "Shampoo"
+  - "SOAP"
+  - "Muon"
+  - "hyperparameter transfer"
+  - "matrix preconditioning"
 date: 2026-05-08
 content_hash: f07bd395793ebeb6
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] SpinMeRound: Consistent Multi-View Identity Generation Using Diffusion Models
 description: >-
-  [ICCV2025][3D Vision][multi-view generation] This paper presents SpinMeRound, an identity-conditioned multi-view diffusion model that generates 360° full-head portraits with consistent identity and corresponding normal maps from a single or few face images, surpassing existing multi-view diffusion methods on face novel view synthesis benchmarks.
+  [ICCV2025][3D Vision][multi-view generation] This paper presents SpinMeRound, an identity-conditioned multi-view diffusion model that generates 360° full-head portraits with consistent identity and corresponding normal m…
 tags:
-  - ICCV2025
-  - 3D Vision
-  - multi-view generation
-  - diffusion models
-  - face novel view synthesis
-  - identity preservation
-  - normal estimation
-  - 3D Gaussian Splatting
+  - "ICCV2025"
+  - "3D Vision"
+  - "multi-view generation"
+  - "diffusion models"
+  - "face novel view synthesis"
+  - "identity preservation"
+  - "normal estimation"
+  - "3D Gaussian Splatting"
 date: 2026-05-08
 content_hash: 5e859199b7266967
 ---

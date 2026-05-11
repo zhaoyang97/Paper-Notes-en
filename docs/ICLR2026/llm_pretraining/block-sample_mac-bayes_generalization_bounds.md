@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Block-Sample MAC-Bayes Generalization Bounds
 description: >-
-  [ICLR2026][LLM Pretraining][PAC-Bayes] This paper proposes block-sample MAC-Bayes generalization bounds (mean approximately correct) that partition the training data into $J$ blocks and replace the monolithic KL divergence with a sum of per-block conditional KL divergences. The resulting bounds remain finite and meaningful even in settings where the original PAC-Bayes bounds are vacuous (e.g., deterministic learning algorithms such as mean estimation). The paper further establishes that a high-probability (PAC) version of these bounds is generally unattainable.
+  [ICLR2026][LLM Pretraining][PAC-Bayes] This paper proposes block-sample MAC-Bayes generalization bounds (mean approximately correct) that partition the training data into $J$ blocks and replace the monolithic KL divergen…
 tags:
-  - ICLR2026
-  - LLM Pretraining
-  - PAC-Bayes
-  - MAC-Bayes
-  - generalization bounds
-  - information theory
-  - block samples
+  - "ICLR2026"
+  - "LLM Pretraining"
+  - "PAC-Bayes"
+  - "MAC-Bayes"
+  - "generalization bounds"
+  - "information theory"
+  - "block samples"
 date: 2026-05-08
 content_hash: ac7de94a3bed985e
 ---

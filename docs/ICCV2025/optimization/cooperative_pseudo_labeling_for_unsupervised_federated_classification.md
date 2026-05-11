@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Cooperative Pseudo Labeling for Unsupervised Federated Classification
 description: >-
-  [ICCV 2025][Optimization][Unsupervised Federated Learning] FedCoPL is the first work to extend unsupervised federated learning (UFL) to classification tasks. It addresses CLIP's inherent bias and label shift challenges via a cooperative pseudo labeling strategy (global assignment ensuring class balance) and a partial prompt aggregation protocol (aggregating only visual prompts while keeping text prompts local).
+  [ICCV 2025][Optimization][Unsupervised Federated Learning] FedCoPL is the first work to extend unsupervised federated learning (UFL) to classification tasks. It addresses CLIP's inherent bias and label shift challenges v…
 tags:
-  - ICCV 2025
-  - Optimization
-  - Unsupervised Federated Learning
-  - Pseudo Labeling
-  - CLIP
-  - Prompt Tuning
-  - Label Shift
+  - "ICCV 2025"
+  - "Optimization"
+  - "Unsupervised Federated Learning"
+  - "Pseudo Labeling"
+  - "CLIP"
+  - "Prompt Tuning"
+  - "Label Shift"
 date: 2026-05-08
 content_hash: d6457a4a4bc03407
 ---

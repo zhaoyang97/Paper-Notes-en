@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Toward Faithful Retrieval-Augmented Generation with Sparse Autoencoders
 description: >-
-  [ICLR 2026][Retrieval-Augmented Generation] This paper proposes RAGLens, which leverages sparse autoencoders (SAEs) to disentangle RAG-hallucination-specific features from LLM internal activations, and constructs a lightweight, interpretable hallucination detector via mutual information-based feature selection combined with a Generalized Additive Model (GAM). RAGLens surpasses existing methods across multiple benchmarks and supports token-level interpretable feedback and hallucination mitigation.
+  [ICLR 2026][Information Retrieval & RAG][Retrieval-Augmented Generation] This paper proposes RAGLens, which leverages sparse autoencoders (SAEs) to disentangle RAG-hallucination-specific features from LLM internal activa…
 tags:
-  - ICLR 2026
-  - Retrieval-Augmented Generation
-  - Sparse Autoencoders
-  - Hallucination Detection
-  - Interpretability
-  - Faithfulness
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Retrieval-Augmented Generation"
+  - "Sparse Autoencoders"
+  - "Hallucination Detection"
+  - "Interpretability"
+  - "Faithfulness"
 date: 2026-05-08
 content_hash: b64ab8b915a0f4d9
 ---

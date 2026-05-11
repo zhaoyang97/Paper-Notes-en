@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] KVmix: Gradient-Based Layer Importance-Aware Mixed-Precision Quantization for KV Cache
 description: >-
-  [AAAI 2026][Model Compression][KV Cache Quantization] This paper proposes KVmix, which evaluates the importance of each layer's KV Cache by computing the $L_2$ norm of gradients with respect to Key/Value projection weights, enabling layer-wise mixed-precision quantization (Key avg. 2.19-bit, Value avg. 2.38-bit). Combined with a dynamic Recent Pivotal Context (RPC) selection strategy, KVmix achieves near-lossless inference, 4.9× memory compression, and 5.3× throughput acceleration on models such as Llama and Mistral.
+  [AAAI 2026][Model Compression][KV Cache Quantization] This paper proposes KVmix, which evaluates the importance of each layer's KV Cache by computing the $L_2$ norm of gradients with respect to Key/Value projection weigh…
 tags:
-  - AAAI 2026
-  - Model Compression
-  - KV Cache Quantization
-  - Mixed-Precision
-  - Layer Importance
-  - Gradient Analysis
-  - Dynamic Context Selection
-  - CUDA Optimization
+  - "AAAI 2026"
+  - "Model Compression"
+  - "KV Cache Quantization"
+  - "Mixed-Precision"
+  - "Layer Importance"
+  - "Gradient Analysis"
+  - "Dynamic Context Selection"
+  - "CUDA Optimization"
 date: 2026-05-08
 content_hash: d9040de0515a2e27
 ---

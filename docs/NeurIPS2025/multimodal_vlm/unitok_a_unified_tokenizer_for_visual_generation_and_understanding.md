@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UniTok: A Unified Tokenizer for Visual Generation and Understanding
 description: >-
-  [NeurIPS 2025][Multimodal VLM][unified tokenizer] This paper proposes UniTok, a unified tokenizer for visual generation and understanding that overcomes the representation capacity bottleneck of discrete tokens via Multi-Codebook Quantization (MCQ). UniTok achieves simultaneous state-of-the-art records of 0.38 rFID and 78.6% zero-shot accuracy on ImageNet, and can be seamlessly integrated into MLLMs to enable both generation and understanding.
+  [NeurIPS 2025][Multimodal VLM][unified tokenizer] This paper proposes UniTok, a unified tokenizer for visual generation and understanding that overcomes the representation capacity bottleneck of discrete tokens via Multi…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - unified tokenizer
-  - VQVAE
-  - CLIP
-  - multi-codebook quantization
-  - visual generation and understanding
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "unified tokenizer"
+  - "VQVAE"
+  - "CLIP"
+  - "multi-codebook quantization"
+  - "visual generation and understanding"
 date: 2026-05-08
 content_hash: 8ad381c958e818e2
 ---

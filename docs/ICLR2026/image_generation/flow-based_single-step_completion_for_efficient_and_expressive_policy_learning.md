@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] SSCP: Flow-Based Single-Step Completion for Efficient and Expressive Policy Learning
 description: >-
-  [ICLR 2026][Image Generation][offline RL] This paper proposes the Single-Step Completion Policy (SSCP), which compresses multi-step generative policies into single-step inference by predicting a "completion vector" (the normalized direction from any intermediate state to the target action) within a flow matching framework. On D4RL, SSCP matches multi-step diffusion/flow policies while achieving 64× faster training and 4.7× faster inference, and extends to GCRL to flatten hierarchical policies.
+  [ICLR 2026][Image Generation][offline RL] This paper proposes the Single-Step Completion Policy (SSCP), which compresses multi-step generative policies into single-step inference by predicting a "completion vector" (the…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - offline RL
-  - flow matching
-  - single-step generation
-  - completion vector
-  - policy learning
-  - D4RL
+  - "ICLR 2026"
+  - "Image Generation"
+  - "offline RL"
+  - "flow matching"
+  - "single-step generation"
+  - "completion vector"
+  - "policy learning"
+  - "D4RL"
 date: 2026-05-08
 content_hash: 822a50f2ea124317
 ---

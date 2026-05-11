@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Gaussian Process Upper Confidence Bound Achieves Nearly-Optimal Regret in Noise-Free Gaussian Process Bandits
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Gaussian Process Bandits] This paper proves that GP-UCB achieves nearly-optimal regret in the noise-free GP bandit problem, establishing for the first time $O(1)$ constant cumulative regret under the SE kernel and $O(1)$ cumulative regret under the Matérn kernel (when $d < \nu$), thereby closing a long-standing gap between the theory and practice of GP-UCB.
+  [NeurIPS 2025][Reinforcement Learning][Gaussian Process Bandits] This paper proves that GP-UCB achieves nearly-optimal regret in the noise-free GP bandit problem…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Gaussian Process Bandits
-  - GP-UCB
-  - Regret Bounds
-  - Noise-Free Optimization
-  - RKHS
-  - Bayesian Optimization
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Gaussian Process Bandits"
+  - "GP-UCB"
+  - "Regret Bounds"
+  - "Noise-Free Optimization"
+  - "RKHS"
+  - "Bayesian Optimization"
 date: 2026-05-08
 content_hash: e483ec9d867fb8b1
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] InEx: Hallucination Mitigation via Introspection and Cross-Modal Multi-Agent Collaboration
 description: >-
-  [AAAI 2026][Multimodal VLM][Multimodal hallucination] This paper proposes InEx, a framework that iteratively verifies and corrects MLLM outputs via internal introspective reasoning (TVER-driven uncertainty-aware visual augmentation) and external cross-modal multi-agent collaboration (textual self-reflection + image editing verification + visual self-reflection), achieving an 8.9% improvement on POPE and consistently outperforming OPERA/VCD/ICD across multiple hallucination and general benchmarks.
+  [AAAI 2026][Multimodal VLM][Multimodal hallucination] This paper proposes InEx, a framework that iteratively verifies and corrects MLLM outputs via internal introspective reasoning (TVER-driven uncertainty-aware visual a…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Multimodal hallucination
-  - uncertainty estimation
-  - cross-modal verification
-  - multi-agent collaboration
-  - training-free
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Multimodal hallucination"
+  - "uncertainty estimation"
+  - "cross-modal verification"
+  - "multi-agent collaboration"
+  - "training-free"
 date: 2026-05-08
 content_hash: 39a89b4f3bad9c9c
 ---

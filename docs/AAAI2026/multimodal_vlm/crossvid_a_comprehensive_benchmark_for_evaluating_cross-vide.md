@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CrossVid: A Comprehensive Benchmark for Evaluating Cross-Video Reasoning in Multimodal Large Language Models
 description: >-
-  [AAAI 2026][Multimodal VLM][Cross-video reasoning] This paper introduces CrossVid, the first comprehensive benchmark for systematically evaluating the Cross-Video Reasoning (CVR) capabilities of multimodal large language models (MLLMs). CrossVid encompasses 10 tasks across 4 dimensions, 5,331 videos, and 9,015 QA pairs. Experiments reveal that the current best-performing model, Gemini-2.5-Pro, achieves only 50.4% accuracy, far below the human performance of 89.2%.
+  [AAAI 2026][Multimodal VLM][Cross-video reasoning] This paper introduces CrossVid, the first comprehensive benchmark for systematically evaluating the Cross-Video Reasoning (CVR) capabilities of multimodal large language…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Cross-video reasoning
-  - video QA benchmark
-  - multi-video understanding
-  - multimodal large language model evaluation
-  - spatiotemporal reasoning
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Cross-video reasoning"
+  - "video QA benchmark"
+  - "multi-video understanding"
+  - "multimodal large language model evaluation"
+  - "spatiotemporal reasoning"
 date: 2026-05-08
 content_hash: 0680cbe786f6d0e2
 ---

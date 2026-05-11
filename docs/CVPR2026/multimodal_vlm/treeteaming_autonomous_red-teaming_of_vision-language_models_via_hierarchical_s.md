@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TreeTeaming: Autonomous Red-Teaming of Vision-Language Models via Hierarchical Strategy Exploration
 description: >-
-  [CVPR 2026][Multimodal VLM][red-teaming] TreeTeaming proposes an automated red-teaming framework based on a hierarchical strategy tree, in which an LLM-driven Orchestrator dynamically explores and evolves attack strategies. The framework achieves state-of-the-art attack success rates (ASR) across 12 mainstream VLMs (87.60% on GPT-4o) and discovers diverse novel attack strategies that go beyond all known strategy sets.
+  [CVPR 2026][Multimodal VLM][red-teaming] TreeTeaming proposes an automated red-teaming framework based on a hierarchical strategy tree…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - red-teaming
-  - vision-language model safety
-  - automated attack
-  - strategy tree
-  - jailbreak attack
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "red-teaming"
+  - "vision-language model safety"
+  - "automated attack"
+  - "strategy tree"
+  - "jailbreak attack"
 date: 2026-05-08
 content_hash: f52d8b8cc74aa389
 ---

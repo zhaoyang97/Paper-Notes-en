@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Are Large Language Models Sensitive to the Motives Behind Communication?
 description: >-
-  [NeurIPS 2025][LLM Agent][motivational vigilance] Three progressive experiments systematically evaluate whether LLMs possess "motivational vigilance"—the ability to recognize the intentions and incentives of information sources and adjust trust accordingly. In controlled experiments, frontier non-reasoning LLMs perform close to the rational model (Pearson's $r > 0.9$) and resemble humans more than the rational model does; however, vigilance drops sharply in real-world YouTube sponsored content ($r < 0.2$), and simple prompt steering partially restores it (raising $r$ to 0.31).
+  [NeurIPS 2025][LLM Agent][motivational vigilance] Three progressive experiments systematically evaluate whether LLMs possess "motivational vigilance"—the ability to recognize the intentions and incentives of information…
 tags:
-  - NeurIPS 2025
-  - LLM Agent
-  - motivational vigilance
-  - strategic communication
-  - information credibility
-  - rational model
+  - "NeurIPS 2025"
+  - "LLM Agent"
+  - "motivational vigilance"
+  - "strategic communication"
+  - "information credibility"
+  - "rational model"
 date: 2026-05-08
 content_hash: fd3bbe09a9097d16
 ---

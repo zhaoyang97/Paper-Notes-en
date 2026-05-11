@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Feedback-Driven Tool-Use Improvements in Large Language Models via Automated Build Environments
 description: >-
-  [ACL 2026][Reinforcement Learning][Tool Calling] This paper proposes FTRL, a framework that constructs stable and controllable tool-use training environments through a five-stage automated pipeline, and designs a verifiable reward mechanism balancing tool-call precision and task completion in an F1-inspired manner. Combined with preference-optimization RL algorithms, FTRL achieves an average performance improvement of over 10% on tool-use benchmarks for 7B–14B models, surpassing even the strongest closed-source models.
+  [ACL 2026][Reinforcement Learning][Tool Calling] This paper proposes FTRL, a framework that constructs stable and controllable tool-use training environments through a five-stage automated pipeline…
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - Tool Calling
-  - Automated Environment Construction
-  - Verifiable Reward
-  - LLM Training
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "Tool Calling"
+  - "Automated Environment Construction"
+  - "Verifiable Reward"
+  - "LLM Training"
 date: 2026-05-08
 content_hash: 234e2a8e7933fdf7
 ---

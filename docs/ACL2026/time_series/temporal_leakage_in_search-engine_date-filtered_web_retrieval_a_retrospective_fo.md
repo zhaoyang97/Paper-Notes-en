@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Temporal Leakage in Search-Engine Date-Filtered Web Retrieval: A Retrospective Forecasting Case Study
 description: >-
-  [ACL 2026][Time Series][temporal leakage] This paper presents a systematic audit of date filters in Google and DuckDuckGo, revealing that search engine date filtering critically fails in retrospective forecasting evaluation — 71% (Google) and 81% (DuckDuckGo) of questions have at least one page containing significant post-cutoff information leakage, causing the prediction Brier score to drop artificially from 0.24 to 0.10.
+  [ACL 2026][Time Series][temporal leakage] This paper presents a systematic audit of date filters in Google and DuckDuckGo, revealing that search engine date filtering critically fails in retrospective forecasting evaluat…
 tags:
-  - ACL 2026
-  - Time Series
-  - temporal leakage
-  - date filtering
-  - retrospective forecasting
-  - search engine audit
-  - evaluation reliability
+  - "ACL 2026"
+  - "Time Series"
+  - "temporal leakage"
+  - "date filtering"
+  - "retrospective forecasting"
+  - "search engine audit"
+  - "evaluation reliability"
 date: 2026-05-08
 content_hash: ab0c54428f69efb5
 ---

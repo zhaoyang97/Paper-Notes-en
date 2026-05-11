@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Region-based Cluster Discrimination for Visual Representation Learning
 description: >-
-  [ICCV 2025][Segmentation][Region representation learning] This paper proposes RICE (Region-Aware Cluster Discrimination), which constructs a billion-scale region dataset, designs a Region Transformer layer, and introduces a unified region cluster discrimination loss to jointly optimize object-aware and OCR capabilities, significantly improving visual encoder performance across segmentation, detection, and MLLM multi-task benchmarks.
+  [ICCV 2025][Segmentation][Region representation learning] This paper proposes RICE (Region-Aware Cluster Discrimination), which constructs a billion-scale region dataset, designs a Region Transformer layer…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - Region representation learning
-  - cluster discrimination
-  - OCR-awareness
-  - visual encoder
-  - multimodal large language models
+  - "ICCV 2025"
+  - "Segmentation"
+  - "Region representation learning"
+  - "cluster discrimination"
+  - "OCR-awareness"
+  - "visual encoder"
+  - "multimodal large language models"
 date: 2026-05-08
 content_hash: a0649822d15c6cfe
 ---

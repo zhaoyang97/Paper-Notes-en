@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Rethinking Progression of Memory State in Robotic Manipulation: An Object-Centric Perspective
 description: >-
-  [AAAI 2026][Video Understanding][Non-Markovian Decision Making] This paper proposes LIBERO-Mem, a benchmark comprising 10 non-Markovian robotic manipulation tasks, and Embodied-SlotSSM, an object-centric memory VLA framework combining Slot Attention with state space models, to address the failure of visuomotor policies in long-horizon tasks that require object-level historical reasoning under partial observability.
+  [AAAI 2026][Video Understanding][Non-Markovian Decision Making] This paper proposes LIBERO-Mem, a benchmark comprising 10 non-Markovian robotic manipulation tasks, and Embodied-SlotSSM…
 tags:
-  - AAAI 2026
-  - Video Understanding
-  - Non-Markovian Decision Making
-  - Object-Centric Memory
-  - State Space Models
-  - VLA
-  - Robotics Benchmark
+  - "AAAI 2026"
+  - "Video Understanding"
+  - "Non-Markovian Decision Making"
+  - "Object-Centric Memory"
+  - "State Space Models"
+  - "VLA"
+  - "Robotics Benchmark"
 date: 2026-05-08
 content_hash: 657afde530b5a803
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Token-level Text Image Foundation Model for Document Understanding (TokenFD/TokenVL)
 description: >-
-  [ICCV 2025][Self-Supervised Learning][token-level alignment] This paper proposes TokenFD, the first token-level text image foundation model, pre-trained on 20 million images and 1.8 billion BPE token-mask pairs via token-level vision-language alignment to achieve image-as-text semantic understanding. Built upon TokenFD, TokenVL is introduced as a document understanding MLLM, achieving a score of 860 on OCRBench (highest among 8B-class models) and an average improvement of 8.8% across ten VQA benchmarks including DocVQA.
+  [ICCV 2025][Self-Supervised Learning][token-level alignment] This paper proposes TokenFD, the first token-level text image foundation model, pre-trained on 20 million images and 1.8 billion BPE token-mask pairs via token…
 tags:
-  - ICCV 2025
-  - Self-Supervised Learning
-  - token-level alignment
-  - visual foundation model
-  - document understanding
-  - OCR-free
-  - multimodal large language model
+  - "ICCV 2025"
+  - "Self-Supervised Learning"
+  - "token-level alignment"
+  - "visual foundation model"
+  - "document understanding"
+  - "OCR-free"
+  - "multimodal large language model"
 date: 2026-05-08
 content_hash: 99478d7589868884
 ---

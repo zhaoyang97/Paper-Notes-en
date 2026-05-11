@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Radiation-Preserving Selective Imaging for Pediatric Hip Dysplasia: A Cross-Modal Approach
 description: >-
-  [AAAI 2026][Medical Imaging][Developmental dysplasia of the hip] This paper proposes an "ultrasound-first, radiation-preserving" cross-modal selective imaging strategy. By combining a self-supervised pretrained frozen encoder, a measurement-faithful lightweight head network, and a conformal-prediction-calibrated one-sided lower bound, the framework provides principled decisions on when ultrasound alone suffices and when additional X-ray imaging is warranted for diagnosing developmental dysplasia of the hip (DDH).
+  [AAAI 2026][Medical Imaging][Developmental dysplasia of the hip] This paper proposes an "ultrasound-first, radiation-preserving" cross-modal selective imaging strategy. By combining a self-supervised pretrained frozen en…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Developmental dysplasia of the hip
-  - ultrasound–X-ray cross-modal learning
-  - conformal prediction
-  - selective imaging
-  - self-supervised learning
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Developmental dysplasia of the hip"
+  - "ultrasound–X-ray cross-modal learning"
+  - "conformal prediction"
+  - "selective imaging"
+  - "self-supervised learning"
 date: 2026-05-08
 content_hash: 141ae69d3c93bcc2
 ---

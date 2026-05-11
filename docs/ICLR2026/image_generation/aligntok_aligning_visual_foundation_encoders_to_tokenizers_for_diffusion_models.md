@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] AlignTok: Aligning Visual Foundation Encoders to Tokenizers for Diffusion Models
 description: >-
-  [ICLR 2026][Image Generation][visual tokenizer] This paper proposes AlignTok, which aligns pretrained visual foundation encoders (e.g., DINOv2) into continuous tokenizers for diffusion models. Through a three-stage alignment strategy—semantic latent space establishment → perceptual detail supplementation → decoder refinement—AlignTok constructs a semantically rich latent space, achieving gFID 1.90 on ImageNet 256×256 in only 64 epochs, converging faster and yielding better generation quality than VAEs trained from scratch.
+  [ICLR 2026][Image Generation][visual tokenizer] This paper proposes AlignTok, which aligns pretrained visual foundation encoders (e.g.…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - visual tokenizer
-  - latent diffusion
-  - DINOv2
-  - semantic alignment
+  - "ICLR 2026"
+  - "Image Generation"
+  - "visual tokenizer"
+  - "latent diffusion"
+  - "DINOv2"
+  - "semantic alignment"
 date: 2026-05-08
 content_hash: c4fe0274c48368d0
 ---

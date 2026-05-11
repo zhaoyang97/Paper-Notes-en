@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EgoFlow: Gradient-Guided Flow Matching for Egocentric 6DoF Object Motion Generation
 description: >-
-  [CVPR 2026][Image Generation][First-person video] EgoFlow proposes a generative framework based on Flow Matching that integrates multimodal scene conditions through a Mamba-Transformer-Perceiver hybrid architecture. During inference, it applies differentiable physical constraints (collision avoidance, motion smoothness) via gradient-guided sampling to generate physically plausible 6DoF object motion trajectories from first-person videos, reducing collision rates by up to 79%.
+  [CVPR 2026][Image Generation][First-person video] EgoFlow proposes a generative framework based on Flow Matching that integrates multimodal scene conditions through a Mamba-Transformer-Perceiver hybrid architecture. Duri…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - First-person video
-  - 6DoF trajectory generation
-  - Flow Matching
-  - Gradient-guided sampling
-  - Mamba-Transformer hybrid architecture
+  - "CVPR 2026"
+  - "Image Generation"
+  - "First-person video"
+  - "6DoF trajectory generation"
+  - "Flow Matching"
+  - "Gradient-guided sampling"
+  - "Mamba-Transformer hybrid architecture"
 date: 2026-05-08
 content_hash: 14a60ef0b1b62595
 ---

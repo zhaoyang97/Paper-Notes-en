@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Doxing via the Lens: Revealing Location-related Privacy Leakage on Multi-modal Large Reasoning Models
 description: >-
-  [ICLR 2026][LLM Reasoning][Privacy Leakage] This paper systematically reveals the privacy leakage risks of multi-modal large reasoning models (MLRMs) in inferring sensitive geographic location information from images. It proposes a three-tier privacy risk framework, the DoxBench benchmark, an information-theoretic metric Glare, and a collaborative attack framework GeoMiner.
+  [ICLR 2026][LLM Reasoning][Privacy Leakage] This paper systematically reveals the privacy leakage risks of multi-modal large reasoning models (MLRMs) in inferring sensitive geographic location information from images. It…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Privacy Leakage
-  - Geolocation
-  - Multi-modal Reasoning Models
-  - MLRM
-  - Visual Clue Reasoning
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "Privacy Leakage"
+  - "Geolocation"
+  - "Multi-modal Reasoning Models"
+  - "MLRM"
+  - "Visual Clue Reasoning"
 date: 2026-05-08
 content_hash: 92c5c5bdf339811c
 ---

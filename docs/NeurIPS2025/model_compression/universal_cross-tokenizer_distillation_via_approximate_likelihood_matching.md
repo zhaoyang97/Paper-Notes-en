@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Universal Cross-Tokenizer Distillation via Approximate Likelihood Matching
 description: >-
-  [NeurIPS 2025][Model Compression][cross-tokenizer distillation] This paper proposes Approximate Likelihood Matching (ALM), a principled cross-tokenizer distillation method based on binarized f-divergence, which for the first time enables effective distillation and pure distillation across fundamentally different tokenizers (e.g., subword → byte-level).
+  [NeurIPS 2025][Model Compression][cross-tokenizer distillation] This paper proposes Approximate Likelihood Matching (ALM), a principled cross-tokenizer distillation method based on binarized f-divergence…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - cross-tokenizer distillation
-  - approximate likelihood matching
-  - tokenizer transfer
-  - f-divergence
-  - LLM distillation
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "cross-tokenizer distillation"
+  - "approximate likelihood matching"
+  - "tokenizer transfer"
+  - "f-divergence"
+  - "LLM distillation"
 date: 2026-05-08
 content_hash: 3d95cc0bb40be63b
 ---

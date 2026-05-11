@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] FLOSS: Free Lunch in Open-vocabulary Semantic Segmentation
 description: >-
-  [ICCV 2025][Segmentation][open-vocabulary segmentation] This paper challenges the default practice of averaging 80 templates in open-vocabulary semantic segmentation (OVSS), revealing that each class has specific "class-expert" templates that significantly outperform the averaged classifier. It proposes FLOSS, a method that uses prediction entropy to unsupervisedly select expert templates and fuse their predictions, consistently improving existing OVSS methods without any labels or training.
+  [ICCV 2025][Segmentation][open-vocabulary segmentation] This paper challenges the default practice of averaging 80 templates in open-vocabulary semantic segmentation (OVSS)…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - open-vocabulary segmentation
-  - template selection
-  - class-expert
-  - entropy
-  - plug-and-play
-  - training-free
+  - "ICCV 2025"
+  - "Segmentation"
+  - "open-vocabulary segmentation"
+  - "template selection"
+  - "class-expert"
+  - "entropy"
+  - "plug-and-play"
+  - "training-free"
 date: 2026-05-08
 content_hash: 86235135581dc867
 ---

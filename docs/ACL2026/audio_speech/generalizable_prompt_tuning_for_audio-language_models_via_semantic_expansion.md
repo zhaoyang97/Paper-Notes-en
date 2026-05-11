@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SEPT: Semantically Expanded Prompt Tuning for Audio-Language Models
 description: >-
-  [ACL 2026][Audio & Speech][Prompt Tuning] SEPT leverages LLMs to generate semantic neighbors for each category and introduces a margin-constrained semantic expansion loss to regularize the prompt embedding space, substantially alleviating the Base-New Tradeoff (BNT) in prompt tuning for audio-language models (ALMs). It also establishes the first systematic evaluation benchmark for prompt generalization in ALMs.
+  [ACL 2026][Audio & Speech][Prompt Tuning] SEPT leverages LLMs to generate semantic neighbors for each category and introduces a margin-constrained semantic expansion loss to regularize the prompt embedding space…
 tags:
-  - ACL 2026
+  - "ACL 2026"
   - "Audio & Speech"
-  - Prompt Tuning
-  - Audio-Language Models
-  - Semantic Expansion
-  - Base-New Tradeoff
-  - Generalization
+  - "Prompt Tuning"
+  - "Audio-Language Models"
+  - "Semantic Expansion"
+  - "Base-New Tradeoff"
+  - "Generalization"
 date: 2026-05-08
 content_hash: c26d231263875c02
 ---

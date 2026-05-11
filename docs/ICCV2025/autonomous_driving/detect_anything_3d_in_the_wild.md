@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Detect Anything 3D in the Wild
 description: >-
-  [ICCV 2025][Autonomous Driving][3D detection foundation model] DetAny3D is a promptable 3D detection foundation model that transfers prior knowledge from two 2D foundation models—SAM and depth-pretrained DINO—via a proposed 2D Aggregator and Zero-Embedding Mapping (ZEM) mechanism, enabling stable 2D-to-3D knowledge transfer. Using only monocular images, it achieves zero-shot 3D object detection across arbitrary scenes and camera configurations, surpassing baselines by up to 21% AP3D on novel categories.
+  [ICCV 2025][Autonomous Driving][3D detection foundation model] DetAny3D is a promptable 3D detection foundation model that transfers prior knowledge from two 2D foundation models—SAM and depth-pretrained DINO—via a propo…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - 3D detection foundation model
-  - zero-shot generalization
-  - monocular 3D detection
-  - 2D-to-3D knowledge transfer
-  - open-world detection
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "3D detection foundation model"
+  - "zero-shot generalization"
+  - "monocular 3D detection"
+  - "2D-to-3D knowledge transfer"
+  - "open-world detection"
 date: 2026-05-08
 content_hash: 2eb6b239852f598f
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond Fact Retrieval: Episodic Memory for RAG with Generative Semantic Workspaces
 description: >-
-  [AAAI 2026][Video Understanding][Episodic Memory] This paper proposes the Generative Semantic Workspace (GSW), a neuroscience-inspired generative memory framework that constructs structured episodic memory representations for LLMs, achieving an F1 of 0.85 on EpBench while reducing query-time context tokens by 51%.
+  [AAAI 2026][Video Understanding][Episodic Memory] This paper proposes the Generative Semantic Workspace (GSW), a neuroscience-inspired generative memory framework that constructs structured episodic memory representation…
 tags:
-  - AAAI 2026
-  - Video Understanding
-  - Episodic Memory
-  - RAG
-  - Long-context Reasoning
-  - Structured Representation
-  - World Model
+  - "AAAI 2026"
+  - "Video Understanding"
+  - "Episodic Memory"
+  - "RAG"
+  - "Long-context Reasoning"
+  - "Structured Representation"
+  - "World Model"
 date: 2026-05-08
 content_hash: cb66122756acf6ee
 ---

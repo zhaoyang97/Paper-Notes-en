@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LATINO-PRO: LAtent consisTency INverse sOlver with PRompt Optimization
 description: >-
-  [ICCV 2025][Image Generation][Inverse problem solving] LATINO-PRO is the first work to embed Latent Consistency Models (LCMs) as generative priors within a zero-shot inverse problem solving framework, achieving state-of-the-art reconstruction quality with only 8 neural function evaluations (NFEs), and further improving performance via empirical Bayes-based automatic text prompt calibration.
+  [ICCV 2025][Image Generation][Inverse problem solving] LATINO-PRO is the first work to embed Latent Consistency Models (LCMs) as generative priors within a zero-shot inverse problem solving framework…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Inverse problem solving
-  - latent consistency models
-  - plug-and-play
-  - prompt optimization
-  - image reconstruction
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Inverse problem solving"
+  - "latent consistency models"
+  - "plug-and-play"
+  - "prompt optimization"
+  - "image reconstruction"
 date: 2026-05-08
 content_hash: ebd973d3a4af4aba
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Specificity-aware Reinforcement Learning for Fine-grained Open-world Classification
 description: >-
-  [CVPR2026][Reinforcement Learning][open-world classification] This paper proposes SpeciaRL—a specificity-aware reinforcement learning framework that guides reasoning-capable large multimodal models to simultaneously improve prediction specificity and correctness in open-world fine-grained image classification, via a dynamic reward signal derived from the best prediction among online rollouts.
+  [CVPR2026][Reinforcement Learning][open-world classification] This paper proposes SpeciaRL—a specificity-aware reinforcement learning framework that guides reasoning-capable large multimodal models to simultaneously impr…
 tags:
-  - CVPR2026
-  - Reinforcement Learning
-  - open-world classification
-  - fine-grained recognition
-  - large multimodal models
-  - GRPO
-  - specificity-aware reward
+  - "CVPR2026"
+  - "Reinforcement Learning"
+  - "open-world classification"
+  - "fine-grained recognition"
+  - "large multimodal models"
+  - "GRPO"
+  - "specificity-aware reward"
 date: 2026-05-08
 content_hash: c69d5ab34a11fe88
 ---

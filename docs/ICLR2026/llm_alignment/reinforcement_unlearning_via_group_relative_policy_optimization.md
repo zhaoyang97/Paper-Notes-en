@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PURGE: Reinforcement Unlearning via Group Relative Policy Optimization
 description: >-
-  [ICLR 2026][LLM Alignment][Machine Unlearning] PURGE reformulates LLM unlearning as a verifiable RL task, employing the GRPO framework with intrinsic reward signals (penalizing mentions of forbidden concepts) to achieve safe and consistent knowledge removal. It consumes 46× fewer tokens than the SOTA while improving fluency by +5.48% and adversarial robustness by +12.02%.
+  [ICLR 2026][LLM Alignment][Machine Unlearning] PURGE reformulates LLM unlearning as a verifiable RL task, employing the GRPO framework with intrinsic reward signals (penalizing mentions of forbidden concepts) to achieve…
 tags:
-  - ICLR 2026
-  - LLM Alignment
-  - Machine Unlearning
-  - GRPO
-  - Verifiable Rewards
-  - LLM Compliance
-  - Privacy Protection
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Machine Unlearning"
+  - "GRPO"
+  - "Verifiable Rewards"
+  - "LLM Compliance"
+  - "Privacy Protection"
 date: 2026-05-08
 content_hash: 4dbe8d2547d75402
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Planning without Search: Refining Frontier LLMs with Offline Goal-Conditioned RL
 description: >-
-  [NeurIPS 2025][LLM/NLP][Offline Reinforcement Learning] This paper proposes PNLC, a method that trains a lightweight goal-conditioned value function as a "natural language critic" to guide LLM agents in multi-turn planning and self-refinement at the thought-step level. Without direct fine-tuning or inference-time search, PNLC significantly outperforms existing methods on complex interactive tasks such as web navigation, social reasoning, and persuasion, while achieving 8–10× faster inference.
+  [NeurIPS 2025][LLM/NLP][Offline Reinforcement Learning] This paper proposes PNLC, a method that trains a lightweight goal-conditioned value function as a "natural language critic" to guide LLM agents in multi-turn planni…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - Offline Reinforcement Learning
-  - Goal-Conditioned Value Function
-  - LLM Agent Planning
-  - Natural Language Critic
-  - Multi-Turn Interactive Tasks
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "Offline Reinforcement Learning"
+  - "Goal-Conditioned Value Function"
+  - "LLM Agent Planning"
+  - "Natural Language Critic"
+  - "Multi-Turn Interactive Tasks"
 date: 2026-05-08
 content_hash: 59826b567732f3d4
 ---

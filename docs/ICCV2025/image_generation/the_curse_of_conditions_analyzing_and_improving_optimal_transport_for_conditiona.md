@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The Curse of Conditions: Analyzing and Improving Optimal Transport for Conditional Flow-Based Generation
 description: >-
-  [ICCV 2025][Image Generation][Optimal Transport] This paper identifies the "curse of conditions" in conditional flow matching — a training-test mismatch caused by standard optimal transport (OT) ignoring conditioning information, which induces a conditionally skewed prior during training while an unbiased prior is used at test time. The authors propose C²OT (Conditional Optimal Transport), which resolves this issue by incorporating a condition-weighted term into the OT cost matrix.
+  [ICCV 2025][Image Generation][Optimal Transport] This paper identifies the "curse of conditions" in conditional flow matching — a training-test mismatch caused by standard optimal transport (OT) ignoring conditioning inf…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Optimal Transport
-  - Conditional Generation
-  - Flow Matching
-  - Conditionally Skewed Prior
-  - ODE Solving
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Optimal Transport"
+  - "Conditional Generation"
+  - "Flow Matching"
+  - "Conditionally Skewed Prior"
+  - "ODE Solving"
 date: 2026-05-08
 content_hash: 6015e10ff41fdc5d
 ---

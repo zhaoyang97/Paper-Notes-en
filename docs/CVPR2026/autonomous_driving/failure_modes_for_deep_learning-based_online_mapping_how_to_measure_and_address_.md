@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Failure Modes for Deep Learning-Based Online Mapping: How to Measure and Address Them
 description: >-
-  [CVPR 2026][Autonomous Driving][Online mapping] This paper systematically defines and quantifies two failure modes of deep learning-based online mapping models — localization overfitting and map geometry overfitting — proposes a Fréchet distance-based performance metric and a minimum spanning tree (MST)-based training set sparsification strategy, and validates on nuScenes and Argoverse 2 that geometrically diverse and balanced training sets improve model generalization.
+  [CVPR 2026][Autonomous Driving][Online mapping] This paper systematically defines and quantifies two failure modes of deep learning-based online mapping models — localization overfitting and map geometry overfitting — pr…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Online mapping
-  - overfitting analysis
-  - generalization evaluation
-  - dataset bias
-  - map geometric diversity
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Online mapping"
+  - "overfitting analysis"
+  - "generalization evaluation"
+  - "dataset bias"
+  - "map geometric diversity"
 date: 2026-05-08
 content_hash: cd3f0bf425abad6a
 ---

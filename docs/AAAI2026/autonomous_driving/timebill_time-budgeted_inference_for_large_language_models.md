@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TimeBill: Time-Budgeted Inference for Large Language Models
 description: >-
-  [AAAI 2026][Autonomous Driving][Time-budgeted inference] This paper proposes TimeBill, a framework that adaptively adjusts the KV cache eviction ratio under a given time budget via a fine-grained Response Length Predictor (RLP) and a workload-guided Execution Time Estimator (ETE), simultaneously maximizing LLM response quality while guaranteeing inference completion rate.
+  [AAAI 2026][Autonomous Driving][Time-budgeted inference] This paper proposes TimeBill, a framework that adaptively adjusts the KV cache eviction ratio under a given time budget via a fine-grained Response Length Predicto…
 tags:
-  - AAAI 2026
-  - Autonomous Driving
-  - Time-budgeted inference
-  - KV cache eviction
-  - response length prediction
-  - execution time estimation
-  - real-time systems
+  - "AAAI 2026"
+  - "Autonomous Driving"
+  - "Time-budgeted inference"
+  - "KV cache eviction"
+  - "response length prediction"
+  - "execution time estimation"
+  - "real-time systems"
 date: 2026-05-08
 content_hash: d915dfa4d364d4c1
 ---

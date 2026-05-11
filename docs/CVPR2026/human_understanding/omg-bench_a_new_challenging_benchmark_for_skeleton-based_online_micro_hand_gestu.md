@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OMG-Bench: A New Challenging Benchmark for Skeleton-based Online Micro Hand Gesture Recognition
 description: >-
-  [CVPR 2026][Human Understanding][Micro gesture recognition] This paper introduces OMG-Bench, the first large-scale public benchmark for skeleton-based online micro hand gesture recognition (40 classes, 13,948 instances), and proposes the HMATr framework, which unifies detection and classification end-to-end via a hierarchical memory bank and position-aware queries, achieving a 7.6% improvement in detection rate over the previous state of the art.
+  [CVPR 2026][Human Understanding][Micro gesture recognition] This paper introduces OMG-Bench, the first large-scale public benchmark for skeleton-based online micro hand gesture recognition (40 classes, 13,948 instances)…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Micro gesture recognition
-  - online gesture recognition
-  - skeleton data
-  - hierarchical memory
-  - VR/AR interaction
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Micro gesture recognition"
+  - "online gesture recognition"
+  - "skeleton data"
+  - "hierarchical memory"
+  - "VR/AR interaction"
 date: 2026-05-08
 content_hash: 04f5e7180c8201a5
 ---

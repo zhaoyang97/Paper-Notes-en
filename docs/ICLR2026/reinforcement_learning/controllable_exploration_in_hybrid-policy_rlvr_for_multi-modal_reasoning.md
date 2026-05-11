@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Controllable Exploration in Hybrid-Policy RLVR for Multi-Modal Reasoning
 description: >-
-  [ICLR 2026][Reinforcement Learning][RLVR] CalibRL reframes expert data as a distribution calibration baseline (rather than a strict imitation target), and achieves fine-grained control over the exploration–exploitation trade-off in MLLM reasoning training via asymmetric LeakyReLU activation combined with advantage weighting. This addresses entropy collapse in RLVR and substantially outperforms GRPO/DAPO on tasks such as geometric reasoning.
+  [ICLR 2026][Reinforcement Learning][RLVR] CalibRL reframes expert data as a distribution calibration baseline (rather than a strict imitation target)…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RLVR
-  - hybrid-policy optimization
-  - multimodal reasoning
-  - entropy collapse
-  - controllable exploration
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "hybrid-policy optimization"
+  - "multimodal reasoning"
+  - "entropy collapse"
+  - "controllable exploration"
 date: 2026-05-08
 content_hash: b7a841bc9bce4748
 ---

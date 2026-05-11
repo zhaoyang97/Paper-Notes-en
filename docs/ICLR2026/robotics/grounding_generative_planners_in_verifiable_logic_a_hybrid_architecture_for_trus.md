@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Grounding Generative Planners in Verifiable Logic: A Hybrid Architecture for Trustworthy Embodied AI
 description: >-
-  [ICLR 2026][Robotics][embodied AI] This paper proposes VIRF (Verifiable Iterative Refinement Framework), a neuro-symbolic hybrid architecture that couples a deterministic Logic Tutor with an LLM planner, using a verifiable formal ontology as a safety anchor. VIRF achieves 0% Hazardous Action Rate (HAR) and 77.3% Goal Completion Rate (GCR) on SafeAgentBench, demonstrating that strict safety guarantees need not compromise agent utility.
+  [ICLR 2026][Robotics][embodied AI] This paper proposes VIRF (Verifiable Iterative Refinement Framework), a neuro-symbolic hybrid architecture that couples a deterministic Logic Tutor with an LLM planner…
 tags:
-  - ICLR 2026
-  - Robotics
-  - embodied AI
-  - neuro-symbolic
-  - safe planning
-  - LLM agent
-  - formal verification
+  - "ICLR 2026"
+  - "Robotics"
+  - "embodied AI"
+  - "neuro-symbolic"
+  - "safe planning"
+  - "LLM agent"
+  - "formal verification"
 date: 2026-05-08
 content_hash: e698e832edaacb94
 ---

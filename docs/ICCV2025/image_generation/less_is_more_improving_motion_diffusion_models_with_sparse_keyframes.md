@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Less is More: Improving Motion Diffusion Models with Sparse Keyframes
 description: >-
-  [Image Generation] This paper proposes sMDM, a motion diffusion framework centered on sparse keyframes. By introducing a masking-interpolation strategy and the Visvalingam-Whyatt keyframe selection algorithm, sMDM reduces redundant frame processing and consistently outperforms dense-frame baselines in text alignment and motion quality.
+  [Image Generation] This paper proposes sMDM, a motion diffusion framework centered on sparse keyframes. By introducing a masking-interpolation strategy and the Visvalingam-Whyatt keyframe selection algorithm…
 tags:
-  - Image Generation
+  - "Image Generation"
 date: 2026-05-08
 content_hash: 56dd70296a107f98
 ---

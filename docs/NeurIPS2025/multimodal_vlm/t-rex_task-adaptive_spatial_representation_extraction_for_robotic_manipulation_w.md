@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] T-Rex: Task-Adaptive Spatial Representation Extraction for Robotic Manipulation with VLMs
 description: >-
-  [NeurIPS 2025][Multimodal VLM][VLM] This paper proposes the T-Rex framework, which dynamically selects the optimal spatial representation extraction scheme (point / vector / 6D pose) according to task complexity, and introduces Chain of Grounding (CoG) to guide VLMs through step-by-step reasoning, enabling training-free open-vocabulary robotic manipulation.
+  [NeurIPS 2025][Multimodal VLM][VLM] This paper proposes the T-Rex framework, which dynamically selects the optimal spatial representation extraction scheme (point / vector / 6D pose) according to task complexity…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - VLM
-  - robotic manipulation
-  - spatial representation
-  - task-adaptive
-  - Chain of Grounding
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "VLM"
+  - "robotic manipulation"
+  - "spatial representation"
+  - "task-adaptive"
+  - "Chain of Grounding"
 date: 2026-05-08
 content_hash: 5d955c8d9b8cf687
 ---

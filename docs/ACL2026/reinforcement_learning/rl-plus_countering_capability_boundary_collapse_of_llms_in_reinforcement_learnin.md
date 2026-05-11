@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RL-PLUS: Countering Capability Boundary Collapse of LLMs in Reinforcement Learning with Hybrid-policy Optimization
 description: >-
-  [ACL 2026][Reinforcement Learning][Capability Boundary Collapse] RL-PLUS proposes a hybrid-policy optimization approach that addresses external data distribution mismatch via Multiple Importance Sampling (MIS) and guides models to learn low-probability but correct reasoning paths via an Exploration-Based Advantage Function (EAF), successfully overcoming the capability boundary collapse induced by RLVR and achieving SOTA on six mathematical reasoning benchmarks (average 53.4), with consistent cross-model improvements of up to 69.2%.
+  [ACL 2026][Reinforcement Learning][Capability Boundary Collapse] RL-PLUS proposes a hybrid-policy optimization approach that addresses external data distribution mismatch via Multiple Importance Sampling (MIS) and guides…
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - Capability Boundary Collapse
-  - Hybrid-Policy Optimization
-  - Multiple Importance Sampling
-  - Exploration-Based Advantage Function
-  - RLVR
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "Capability Boundary Collapse"
+  - "Hybrid-Policy Optimization"
+  - "Multiple Importance Sampling"
+  - "Exploration-Based Advantage Function"
+  - "RLVR"
 date: 2026-05-08
 content_hash: f227cc456bd2379d
 ---

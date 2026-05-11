@@ -2,19 +2,19 @@
 title: >-
   [Paper Note] AudioTrust: Benchmarking the Multifaceted Trustworthiness of Audio Large Language Models
 description: >-
-  [ICLR 2026][LLM Safety][Audio LLM] This paper proposes AudioTrust, the first multidimensional trustworthiness evaluation benchmark for audio large language models (ALLMs), encompassing six dimensions—fairness, hallucination, safety, privacy, robustness, and authentication—with 26 sub-tasks and 4,420+ audio samples. It systematically evaluates the trustworthiness boundaries of 14 state-of-the-art open- and closed-source ALLMs in high-stakes audio scenarios.
+  [ICLR 2026][LLM Safety][Audio LLM] This paper proposes AudioTrust, the first multidimensional trustworthiness evaluation benchmark for audio large language models (ALLMs), encompassing six dimensions—fairness…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Audio LLM
-  - trustworthiness
-  - benchmark
-  - fairness
-  - hallucination
-  - safety
-  - privacy
-  - robustness
-  - authentication
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Audio LLM"
+  - "trustworthiness"
+  - "benchmark"
+  - "fairness"
+  - "hallucination"
+  - "safety"
+  - "privacy"
+  - "robustness"
+  - "authentication"
 date: 2026-05-08
 content_hash: e6c5d40bd479ad17
 ---

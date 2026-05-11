@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From Conversation to Query Execution: Benchmarking User and Tool Interactions for EHR Database Agents
 description: >-
-  [ICLR 2026][Medical Imaging][EHR] This paper proposes EHR-ChatQA, the first benchmark to evaluate the end-to-end interactive workflow of database agents in electronic health record (EHR) settings — covering ambiguity clarification, terminology mismatch resolution, SQL generation, and answer return. Evaluation reveals that the strongest model (o4-mini) achieves Pass@5 above 90% but suffers a substantial drop in Pass∧5 (all-success rate), with a gap of up to 60%, exposing critical robustness deficiencies in safety-sensitive clinical domains.
+  [ICLR 2026][Medical Imaging][EHR] This paper proposes EHR-ChatQA, the first benchmark to evaluate the end-to-end interactive workflow of database agents in electronic health record (EHR) settings — covering ambiguity cla…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - EHR
-  - Database Agent
-  - Interactive QA
-  - Query Ambiguity
-  - Value Mismatch
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "EHR"
+  - "Database Agent"
+  - "Interactive QA"
+  - "Query Ambiguity"
+  - "Value Mismatch"
 date: 2026-05-08
 content_hash: 7c00b1fcf835ed47
 ---

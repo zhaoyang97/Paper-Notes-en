@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PhysGen: Physically Grounded 3D Shape Generation for Industrial Design
 description: >-
-  [CVPR 2026][Image Generation][Physics-guided generation] This paper proposes PhysGen, a unified framework that integrates physical constraints (aerodynamic efficiency) into 3D shape generation. It jointly encodes geometric and physical information into a unified latent space via a Shape-and-Physics VAE (SP-VAE), and employs a Flow Matching model with alternating updates between velocity steps and physics refinement to generate 3D shapes that are both visually plausible and physically efficient (e.g., automobiles with low drag coefficients).
+  [CVPR 2026][Image Generation][Physics-guided generation] This paper proposes PhysGen, a unified framework that integrates physical constraints (aerodynamic efficiency) into 3D shape generation. It jointly encodes geometr…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Physics-guided generation
-  - 3D shape generation
-  - Flow Matching
-  - aerodynamic optimization
-  - industrial design
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Physics-guided generation"
+  - "3D shape generation"
+  - "Flow Matching"
+  - "aerodynamic optimization"
+  - "industrial design"
 date: 2026-05-08
 content_hash: 4f291ee4dba0b185
 ---

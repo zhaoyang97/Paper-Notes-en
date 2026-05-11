@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Understand Before You Generate: Self-Guided Training for Autoregressive Image Generation
 description: >-
-  [NeurIPS 2025][Image Generation][Autoregressive models] By systematically analyzing three key properties that hinder visual semantic learning in autoregressive image generation — local conditional dependency, inter-step semantic inconsistency, and the absence of spatial invariance — this paper proposes ST-AR, a training framework that incorporates masked image modeling and contrastive learning into the next-token prediction objective. Without relying on any pretrained representation model, ST-AR improves the FID of LlamaGen-XL by approximately 49% (from 19.42 to 9.81), achieving performance comparable to a 3B-parameter model trained for 300 epochs within only 50 epochs.
+  [NeurIPS 2025][Image Generation][Autoregressive models] By systematically analyzing three key properties that hinder visual semantic learning in autoregressive image generation — local conditional dependency…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Autoregressive models
-  - visual understanding
-  - contrastive learning
-  - masked image modeling
-  - LlamaGen
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Autoregressive models"
+  - "visual understanding"
+  - "contrastive learning"
+  - "masked image modeling"
+  - "LlamaGen"
 date: 2026-05-08
 content_hash: 158361c075c1f6dc
 ---

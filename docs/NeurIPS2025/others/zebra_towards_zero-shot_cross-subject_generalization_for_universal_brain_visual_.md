@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Zebra: Towards Zero-Shot Cross-Subject Generalization for Universal Brain Visual Decoding
 description: >-
-  [NeurIPS 2025][fMRI decoding] This paper proposes Zebra, the first zero-shot brain visual decoding framework, which disentangles fMRI representations into subject-invariant and semantic-specific components via adversarial training and residual decomposition, enabling cross-subject visual reconstruction generalization without fine-tuning on new subjects.
+  [NeurIPS 2025][fMRI decoding] This paper proposes Zebra, the first zero-shot brain visual decoding framework, which disentangles fMRI representations into subject-invariant and semantic-specific components via adversaria…
 tags:
-  - NeurIPS 2025
-  - fMRI decoding
-  - zero-shot generalization
-  - adversarial training
-  - representation disentanglement
-  - brain visual decoding
+  - "NeurIPS 2025"
+  - "fMRI decoding"
+  - "zero-shot generalization"
+  - "adversarial training"
+  - "representation disentanglement"
+  - "brain visual decoding"
 date: 2026-05-08
 content_hash: dee73772328f6ae7
 ---

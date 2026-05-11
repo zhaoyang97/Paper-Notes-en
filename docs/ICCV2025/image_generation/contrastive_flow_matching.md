@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Contrastive Flow Matching (ΔFM)
 description: >-
-  [ICCV 2025][Image Generation][Flow Matching] A contrastive regularization term is introduced into the Flow Matching training objective to enforce separation between velocity fields of different conditions, achieving 9× training acceleration, 5× fewer sampling steps, and up to 8.9 FID reduction with zero additional inference overhead.
+  [ICCV 2025][Image Generation][Flow Matching] A contrastive regularization term is introduced into the Flow Matching training objective to enforce separation between velocity fields of different conditions…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Flow Matching
-  - Contrastive Learning
-  - Conditional Generation
-  - Training Acceleration
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Flow Matching"
+  - "Contrastive Learning"
+  - "Conditional Generation"
+  - "Training Acceleration"
 date: 2026-05-08
 content_hash: 4d23afaf73f332ba
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FaceCam: Portrait Video Camera Control via Scale-Aware Conditioning
 description: >-
-  [CVPR 2026][3D Vision][Camera control] This paper proposes FaceCam, a system that addresses camera control in monocular portrait videos by using facial landmarks as a scale-aware camera representation, thereby avoiding the scale ambiguity inherent in conventional extrinsic camera representations. Two data augmentation strategies—synthetic camera motion and multi-clip stitching—are further designed to support continuous camera trajectory inference.
+  [CVPR 2026][3D Vision][Camera control] This paper proposes FaceCam, a system that addresses camera control in monocular portrait videos by using facial landmarks as a scale-aware camera representation…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Camera control
-  - portrait video generation
-  - scale-awareness
-  - facial landmarks
-  - video diffusion models
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Camera control"
+  - "portrait video generation"
+  - "scale-awareness"
+  - "facial landmarks"
+  - "video diffusion models"
 date: 2026-05-08
 content_hash: 31140fc4f60779e7
 ---

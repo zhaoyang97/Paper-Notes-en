@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mitigating Memorization in Text-to-Image Diffusion via Region-Aware Prompt Augmentation and Multimodal Copy Detection
 description: >-
-  [CVPR 2026][Object Detection][diffusion model memorization] This paper proposes two complementary modules — Region-Aware Prompt Augmentation at Training time (RAPTA) and Attention-Driven Multimodal Copy Detection (ADMCD) — to address training data memorization in diffusion models. RAPTA generates semantically grounded prompt variants via object detector proposals to mitigate memorization during training, while ADMCD fuses patch-level, CLIP, and texture features through a zero-training detection pipeline to classify copy behavior at inference time. On LAION-10k, the copy rate is reduced from 7.4 to 2.6.
+  [CVPR 2026][Object Detection][diffusion model memorization] This paper proposes two complementary modules — Region-Aware Prompt Augmentation at Training time (RAPTA) and Attention-Driven Multimodal Copy Detection (ADMCD)…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - diffusion model memorization
-  - training-time prompt augmentation
-  - multimodal copy detection
-  - copyright protection
-  - attention fusion
+  - "CVPR 2026"
+  - "Object Detection"
+  - "diffusion model memorization"
+  - "training-time prompt augmentation"
+  - "multimodal copy detection"
+  - "copyright protection"
+  - "attention fusion"
 date: 2026-05-08
 content_hash: 4403d3ad2977d93d
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Points-to-3D: Structure-Aware 3D Generation with Point Cloud Priors
 description: >-
-  [CVPR 2026][Autonomous Driving][Point Cloud Priors] This paper proposes Points-to-3D, which encodes visible-region point clouds into TRELLIS's sparse structure latent (SS latent) and completes unobserved regions via a mask-aware inpainting network. Combined with a two-stage sampling strategy of structure completion followed by boundary refinement, the method achieves geometry-controllable, high-fidelity 3D asset/scene generation, attaining an F-Score of 0.964 on Toys4K (0.998 for visible regions).
+  [CVPR 2026][Autonomous Driving][Point Cloud Priors] This paper proposes Points-to-3D, which encodes visible-region point clouds into TRELLIS's sparse structure latent (SS latent) and completes unobserved regions via a ma…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Point Cloud Priors
-  - 3D Generation
-  - Diffusion Models
-  - Structure Completion
-  - Geometry-Controllable
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Point Cloud Priors"
+  - "3D Generation"
+  - "Diffusion Models"
+  - "Structure Completion"
+  - "Geometry-Controllable"
 date: 2026-05-08
 content_hash: 0d5965db7dfc71a6
 ---

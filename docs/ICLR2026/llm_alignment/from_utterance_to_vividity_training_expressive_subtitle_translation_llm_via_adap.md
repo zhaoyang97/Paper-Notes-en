@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From Utterance to Vividity: Training Expressive Subtitle Translation LLM via Adaptive Local Preference Optimization
 description: >-
-  [ICLR 2026][LLM Alignment][subtitle translation] This paper proposes ALPO (Adaptive Local Preference Optimization) for training expressive subtitle translation LLMs. Three empirical findings motivate the design: (1) subtitle translation exhibits the lowest back-translation consistency, indicating the highest degree of paraphrase; (2) reasoning-type LLMs (R1/GPT-5 Thinking) produce more expressive paraphrases than chat-type LLMs (GPT-4o/Qwen-Max); (3) a 14B model used as a translation evaluator achieves Spearman correlation $\geq 0.82$ with human judgments, qualifying it as a low-cost reward model. Building on these findings, the paper proposes a fine-grained, process-supervised preference alignment method operating at the sentence-segment level (with adaptive weighting, dynamic beta, and prefix mixing). A 14B model trained with ALPO surpasses GPT-4o and DeepSeek-R1 in vividness across multiple subtitle translation directions.
+  [ICLR 2026][LLM Alignment][subtitle translation] This paper proposes ALPO (Adaptive Local Preference Optimization) for training expressive subtitle translation LLMs. Three empirical findings motivate the design: (1) subt…
 tags:
-  - ICLR 2026
-  - LLM Alignment
-  - subtitle translation
-  - preference optimization
-  - LLM-as-Judge
-  - paraphrastic translation
-  - process supervision
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "subtitle translation"
+  - "preference optimization"
+  - "LLM-as-Judge"
+  - "paraphrastic translation"
+  - "process supervision"
 date: 2026-05-08
 content_hash: 1835e566172a95a1
 ---

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Unleashing Vecset Diffusion Model for Fast Shape Generation (FlashVDM)
 description: >-
-  [3D Vision] FlashVDM proposes a systematic framework to accelerate both DiT sampling and VAE decoding in Vecset Diffusion Models (VDM): progressive flow distillation reduces diffusion steps to 5, while adaptive KV selection, hierarchical volume decoding, and an efficient decoder yield a 45× VAE decoding speedup, achieving an overall 32× acceleration that enables high-quality 3D shape generation in under one second.
+  [3D Vision] FlashVDM proposes a systematic framework to accelerate both DiT sampling and VAE decoding in Vecset Diffusion Models (VDM): progressive flow distillation reduces diffusion steps to 5…
 tags:
-  - 3D Vision
+  - "3D Vision"
 date: 2026-05-08
 content_hash: fec5fcf75e6dfcd2
 ---

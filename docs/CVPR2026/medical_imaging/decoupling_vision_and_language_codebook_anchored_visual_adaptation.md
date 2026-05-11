@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Decoupling Vision and Language: Codebook Anchored Visual Adaptation
 description: >-
-  [CVPR2026][Medical Imaging][Discrete visual tokens] CRAFT is proposed to decouple the visual encoder from the language model via a discrete codebook, enabling domain adaptation by fine-tuning only the visual encoder. The adapted encoder can be seamlessly reused across different LLM architectures, achieving an average improvement of 13.51% across 10 domain benchmarks.
+  [CVPR2026][Medical Imaging][Discrete visual tokens] CRAFT is proposed to decouple the visual encoder from the language model via a discrete codebook…
 tags:
-  - CVPR2026
-  - Medical Imaging
-  - Discrete visual tokens
-  - codebook
-  - visual encoder adaptation
-  - domain transfer
-  - token pruning
-  - LVLM
+  - "CVPR2026"
+  - "Medical Imaging"
+  - "Discrete visual tokens"
+  - "codebook"
+  - "visual encoder adaptation"
+  - "domain transfer"
+  - "token pruning"
+  - "LVLM"
 date: 2026-05-08
 content_hash: 69822eca8fbdf3eb
 ---

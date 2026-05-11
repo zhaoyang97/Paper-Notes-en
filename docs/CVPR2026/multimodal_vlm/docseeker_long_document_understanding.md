@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DocSeeker: Structured Visual Reasoning with Evidence Grounding for Long Document Understanding
 description: >-
-  [CVPR 2026][Multimodal VLM][Long document understanding] DocSeeker is proposed to achieve structured reasoning and evidence grounding in long document understanding via an ALR (Analyze–Locate–Reason) visual reasoning paradigm combined with two-stage training (SFT + EviGRPO). The model is trained exclusively on short documents yet generalizes robustly to documents of extreme length.
+  [CVPR 2026][Multimodal VLM][Long document understanding] DocSeeker is proposed to achieve structured reasoning and evidence grounding in long document understanding via an ALR (Analyze–Locate–Reason) visual reasoning par…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Long document understanding
-  - evidence grounding
-  - structured reasoning
-  - reinforcement learning
-  - visual RAG
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Long document understanding"
+  - "evidence grounding"
+  - "structured reasoning"
+  - "reinforcement learning"
+  - "visual RAG"
 date: 2026-05-08
 content_hash: 4332bc0b12c3dd45
 ---

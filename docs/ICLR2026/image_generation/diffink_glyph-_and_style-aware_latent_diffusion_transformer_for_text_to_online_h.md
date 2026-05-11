@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DiffInk: Glyph- and Style-Aware Latent Diffusion Transformer for Text to Online Handwriting Generation
 description: >-
-  [ICLR 2026][Image Generation][online handwriting generation] This paper proposes DiffInk, the first latent diffusion Transformer framework for full-line handwriting generation, comprising InkVAE (which learns a structured latent space via dual regularization from OCR and style classification) and InkDiT (which performs conditional denoising generation in the latent space). DiffInk substantially outperforms the state of the art on Chinese handwriting generation (AR 94.38% vs. 91.48%) while achieving an 800× speedup.
+  [ICLR 2026][Image Generation][online handwriting generation] This paper proposes DiffInk, the first latent diffusion Transformer framework for full-line handwriting generation…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - online handwriting generation
-  - latent diffusion transformer
-  - VAE regularization
-  - glyph-style disentanglement
-  - Chinese handwriting
+  - "ICLR 2026"
+  - "Image Generation"
+  - "online handwriting generation"
+  - "latent diffusion transformer"
+  - "VAE regularization"
+  - "glyph-style disentanglement"
+  - "Chinese handwriting"
 date: 2026-05-08
 content_hash: b679cc9a2d73ca50
 ---

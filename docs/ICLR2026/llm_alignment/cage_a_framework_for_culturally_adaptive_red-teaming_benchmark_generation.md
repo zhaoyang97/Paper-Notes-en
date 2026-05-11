@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CAGE: A Framework for Culturally Adaptive Red-Teaming Benchmark Generation
 description: >-
-  [ICLR 2026][LLM Alignment][red teaming] This paper proposes the CAGE framework, which decouples the adversarial structure of red-teaming prompts from their cultural content via a construct termed the Semantic Mold. CAGE systematically adapts English red-teaming benchmarks to diverse cultural contexts, yielding culturally grounded prompts that achieve substantially higher attack success rates (ASR) than direct translation.
+  [ICLR 2026][LLM Alignment][red teaming] This paper proposes the CAGE framework, which decouples the adversarial structure of red-teaming prompts from their cultural content via a construct termed the Semantic Mold. CAGE…
 tags:
-  - ICLR 2026
-  - LLM Alignment
-  - red teaming
-  - cultural adaptation
-  - semantic mold
-  - multilingual safety
-  - benchmark generation
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "red teaming"
+  - "cultural adaptation"
+  - "semantic mold"
+  - "multilingual safety"
+  - "benchmark generation"
 date: 2026-05-08
 content_hash: 9c97bd94db047312
 ---

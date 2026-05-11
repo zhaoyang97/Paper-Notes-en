@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MOTIF: Multi-strategy Optimization via Turn-based Interactive Framework
 description: >-
-  [AAAI 2026][Optimization][Automatic Heuristic Design] This paper proposes MOTIF, a framework that models solver design as a multi-strategy optimization problem. Through a turn-based competitive mechanism involving two LLM agents guided by Monte Carlo Tree Search (MCTS), MOTIF jointly optimizes multiple interdependent algorithmic components within combinatorial optimization solvers, consistently outperforming existing methods across TSP, CVRP, BPP, and other combinatorial optimization domains.
+  [AAAI 2026][Optimization][Automatic Heuristic Design] This paper proposes MOTIF, a framework that models solver design as a multi-strategy optimization problem. Through a turn-based competitive mechanism involving two LL…
 tags:
-  - AAAI 2026
-  - Optimization
-  - Automatic Heuristic Design
-  - LLM
-  - Combinatorial Optimization
-  - Monte Carlo Tree Search
-  - Multi-strategy Optimization
+  - "AAAI 2026"
+  - "Optimization"
+  - "Automatic Heuristic Design"
+  - "LLM"
+  - "Combinatorial Optimization"
+  - "Monte Carlo Tree Search"
+  - "Multi-strategy Optimization"
 date: 2026-05-08
 content_hash: 08a60d4da846f480
 ---

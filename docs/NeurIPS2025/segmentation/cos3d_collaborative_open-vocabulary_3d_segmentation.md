@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] COS3D: Collaborative Open-Vocabulary 3D Segmentation
 description: >-
-  [NeurIPS 2025][Segmentation][Open-vocabulary 3D segmentation] This paper proposes COS3D — a collaborative prompt-segmentation framework that constructs a collaborative field comprising an instance field and a language field. During training, the language field is built via instance-to-language feature mapping; during inference, language-to-instance adaptive prompt refinement generates precise segmentation results. COS3D substantially outperforms existing methods on two mainstream benchmarks.
+  [NeurIPS 2025][Segmentation][Open-vocabulary 3D segmentation] This paper proposes COS3D — a collaborative prompt-segmentation framework that constructs a collaborative field comprising an instance field and a language fi…
 tags:
-  - NeurIPS 2025
-  - Segmentation
-  - Open-vocabulary 3D segmentation
-  - 3D Gaussian
-  - collaborative segmentation
-  - instance-language mapping
-  - prompt segmentation
+  - "NeurIPS 2025"
+  - "Segmentation"
+  - "Open-vocabulary 3D segmentation"
+  - "3D Gaussian"
+  - "collaborative segmentation"
+  - "instance-language mapping"
+  - "prompt segmentation"
 date: 2026-05-08
 content_hash: 689759aff7cd1f37
 ---

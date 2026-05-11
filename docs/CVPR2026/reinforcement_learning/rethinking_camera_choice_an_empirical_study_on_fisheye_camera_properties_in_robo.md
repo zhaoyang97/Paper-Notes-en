@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Rethinking Camera Choice: An Empirical Study on Fisheye Camera Properties in Robotic Manipulation
 description: >-
-  [CVPR 2026][Reinforcement Learning][fisheye camera] This paper presents the first systematic empirical study on the properties of wrist-mounted fisheye cameras in imitation learning for robotic manipulation. Centered on three core research questions—spatial localization, scene generalization, and hardware generalization—it reveals both the advantages and limitations of wide field-of-view (FoV) imaging, and proposes Random Scale Augmentation (RSA) to address scale overfitting in cross-camera transfer.
+  [CVPR 2026][Reinforcement Learning][fisheye camera] This paper presents the first systematic empirical study on the properties of wrist-mounted fisheye cameras in imitation learning for robotic manipulation. Centered on…
 tags:
-  - CVPR 2026
-  - Reinforcement Learning
-  - fisheye camera
-  - robotic manipulation
-  - imitation learning
-  - field of view
-  - generalization
+  - "CVPR 2026"
+  - "Reinforcement Learning"
+  - "fisheye camera"
+  - "robotic manipulation"
+  - "imitation learning"
+  - "field of view"
+  - "generalization"
 date: 2026-05-08
 content_hash: 19c42f34db8dfc00
 ---

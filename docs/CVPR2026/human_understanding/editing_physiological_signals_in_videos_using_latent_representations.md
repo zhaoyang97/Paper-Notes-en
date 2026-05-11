@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Editing Physiological Signals in Videos Using Latent Representations
 description: >-
-  [CVPR 2026][Human Understanding][Heart rate editing] This paper proposes PhysioLatent, a framework that encodes input facial videos into the latent space of a 3D VAE, fuses the resulting representation with target heart rate CLIP text embeddings, captures rPPG temporal coherence via AdaLN-enhanced spatiotemporal fusion layers, and employs a FiLM-modulated decoder with a fine-tuned output layer to achieve precise heart rate modification. The method attains a heart rate modulation MAE of 10 bpm while preserving visual quality at PSNR 38.96 dB / SSIM 0.98.
+  [CVPR 2026][Human Understanding][Heart rate editing] This paper proposes PhysioLatent, a framework that encodes input facial videos into the latent space of a 3D VAE…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Heart rate editing
-  - rPPG privacy
-  - video physiological signals
-  - 3D VAE
-  - biometric anonymization
-  - FiLM
-  - AdaLN
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Heart rate editing"
+  - "rPPG privacy"
+  - "video physiological signals"
+  - "3D VAE"
+  - "biometric anonymization"
+  - "FiLM"
+  - "AdaLN"
 date: 2026-05-08
 content_hash: 2a8a95e8b8fd170d
 ---

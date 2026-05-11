@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] S5: Scalable Semi-Supervised Semantic Segmentation in Remote Sensing
 description: >-
-  [AAAI 2026][Segmentation][semi-supervised learning] This paper proposes the S5 framework, which for the first time extends semi-supervised semantic segmentation into a pre-training paradigm for remote sensing foundation models (RSFMs). By constructing the million-scale RS4P-1M dataset and introducing a MoE-based multi-dataset fine-tuning strategy, S5 achieves state-of-the-art performance across multiple remote sensing segmentation and detection benchmarks.
+  [AAAI 2026][Segmentation][semi-supervised learning] This paper proposes the S5 framework, which for the first time extends semi-supervised semantic segmentation into a pre-training paradigm for remote sensing foundation…
 tags:
-  - AAAI 2026
-  - Segmentation
-  - semi-supervised learning
-  - remote sensing
-  - foundation model
-  - semantic segmentation
-  - mixture of experts
+  - "AAAI 2026"
+  - "Segmentation"
+  - "semi-supervised learning"
+  - "remote sensing"
+  - "foundation model"
+  - "semantic segmentation"
+  - "mixture of experts"
 date: 2026-05-08
 content_hash: c2fbee3ea4ce7ed1
 ---

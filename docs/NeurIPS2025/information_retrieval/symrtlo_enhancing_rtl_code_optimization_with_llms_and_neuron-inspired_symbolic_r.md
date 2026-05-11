@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] SymRTLO: Enhancing RTL Code Optimization with LLMs and Neuron-Inspired Symbolic Reasoning
 description: >-
-  [NeurIPS 2025][RTL code optimization] This paper proposes SymRTLO, the first neurosymbolic framework integrating LLMs with symbolic reasoning for RTL code optimization. By combining retrieval-augmented optimization rules, AST template-guided code generation, and an FSM symbolic system, SymRTLO achieves improvements of up to 43.9%, 62.5%, and 51.1% in power, performance, and area (PPA), respectively.
+  [NeurIPS 2025][Information Retrieval & RAG][RTL code optimization] This paper proposes SymRTLO, the first neurosymbolic framework integrating LLMs with symbolic reasoning for RTL code optimization. By combining retrieval…
 tags:
-  - NeurIPS 2025
-  - RTL code optimization
-  - neurosymbolic reasoning
-  - LLM
-  - finite state machine
-  - hardware design automation
+  - "NeurIPS 2025"
+  - "Information Retrieval & RAG"
+  - "RTL code optimization"
+  - "neurosymbolic reasoning"
+  - "LLM"
+  - "finite state machine"
+  - "hardware design automation"
 date: 2026-05-08
 content_hash: e4527b514c68942d
 ---

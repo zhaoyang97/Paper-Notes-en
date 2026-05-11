@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Enhancing Infrared Vision: Progressive Prompt Fusion Network and Benchmark
 description: >-
-  [NeurIPS 2025][Image Restoration][Thermal Infrared Image Enhancement] To address the challenge of coupled degradations (low contrast, blur, and noise) in thermal infrared (TIR) images, this paper proposes PPFN, a progressive prompt fusion network with a dual-prompt design, along with the Selective Progressive Training (SPT) strategy. The authors also construct HM-TIR, the first large-scale multi-scene TIR benchmark dataset. The proposed method achieves an 8.76% PSNR improvement in composite degradation scenarios.
+  [NeurIPS 2025][Image Restoration][Thermal Infrared Image Enhancement] To address the challenge of coupled degradations (low contrast, blur, and noise) in thermal infrared (TIR) images, this paper proposes PPFN…
 tags:
-  - NeurIPS 2025
-  - Image Restoration
-  - Thermal Infrared Image Enhancement
-  - Prompt Learning
-  - All-in-One Restoration
-  - Progressive Training
-  - TIR Benchmark
+  - "NeurIPS 2025"
+  - "Image Restoration"
+  - "Thermal Infrared Image Enhancement"
+  - "Prompt Learning"
+  - "All-in-One Restoration"
+  - "Progressive Training"
+  - "TIR Benchmark"
 date: 2026-05-08
 content_hash: 1b41e317cdbd27f9
 ---

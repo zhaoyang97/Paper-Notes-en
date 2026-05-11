@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Discounted Cuts: A Stackelberg Approach to Network Disruption
 description: >-
-  [AAAI 2026][Reinforcement Learning][Stackelberg Games] This paper introduces the Discounted Cuts mathematical framework, modeling the classical Most Vital Links problem as a Stackelberg game. It systematically establishes a computational complexity classification for eight variants of discounted cuts and proves that all variants are solvable in polynomial time on bounded-genus graphs.
+  [AAAI 2026][Reinforcement Learning][Stackelberg Games] This paper introduces the Discounted Cuts mathematical framework, modeling the classical Most Vital Links problem as a Stackelberg game. It systematically establishe…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - Stackelberg Games
-  - Network Cuts
-  - Discounted Cost
-  - Bounded-Genus Graphs
-  - Most Vital Links
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "Stackelberg Games"
+  - "Network Cuts"
+  - "Discounted Cost"
+  - "Bounded-Genus Graphs"
+  - "Most Vital Links"
 date: 2026-05-08
 content_hash: 49709752cd546aee
 ---

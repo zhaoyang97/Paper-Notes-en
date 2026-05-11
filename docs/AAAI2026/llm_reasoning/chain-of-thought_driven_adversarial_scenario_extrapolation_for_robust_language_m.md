@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Chain-of-Thought Driven Adversarial Scenario Extrapolation for Robust Language Models
 description: >-
-  [AAAI 2026][LLM Reasoning][adversarial defense] This paper proposes ASE (Adversarial Scenario Extrapolation), an inference-time CoT defense framework that enables LLMs to autonomously simulate adversarial scenarios and formulate defensive strategies prior to responding. ASE achieves near-zero attack success rates across four categories of safety threats (jailbreak, toxicity, hallucination, and bias), while reducing direct refusal rates to ≤4%, effectively balancing robustness and user experience.
+  [AAAI 2026][LLM Reasoning][adversarial defense] This paper proposes ASE (Adversarial Scenario Extrapolation), an inference-time CoT defense framework that enables LLMs to autonomously simulate adversarial scenarios and f…
 tags:
-  - AAAI 2026
-  - LLM Reasoning
-  - adversarial defense
-  - chain-of-thought
-  - jailbreak
-  - seamless response
-  - inference-time defense
+  - "AAAI 2026"
+  - "LLM Reasoning"
+  - "adversarial defense"
+  - "chain-of-thought"
+  - "jailbreak"
+  - "seamless response"
+  - "inference-time defense"
 date: 2026-05-08
 content_hash: 62bdd59f88dc31c5
 ---

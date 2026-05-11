@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Memory-Efficient 4-bit Preconditioned Stochastic Optimization
 description: >-
-  [ICCV 2025][Optimization][Shampoo] This paper proposes a 4-bit quantization scheme based on Cholesky decomposition and error feedback, compressing the preconditioner matrices of the Shampoo optimizer to 4-bit precision. The approach substantially reduces GPU memory consumption while preserving training performance close to 32-bit Shampoo, with convergence guarantees provided for both smooth and non-smooth settings.
+  [ICCV 2025][Optimization][Shampoo] This paper proposes a 4-bit quantization scheme based on Cholesky decomposition and error feedback…
 tags:
-  - ICCV 2025
-  - Optimization
-  - Shampoo
-  - quantization
-  - Cholesky decomposition
-  - error feedback
-  - low-precision optimizer
-  - memory-efficient training
+  - "ICCV 2025"
+  - "Optimization"
+  - "Shampoo"
+  - "quantization"
+  - "Cholesky decomposition"
+  - "error feedback"
+  - "low-precision optimizer"
+  - "memory-efficient training"
 date: 2026-05-08
 content_hash: b64a4197aa22ca2e
 ---

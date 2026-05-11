@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Decouple to Reconstruct: High Quality UHD Restoration via Active Feature Disentanglement and Reversible Fusion
 description: >-
-  [ICCV 2025][Image Restoration][UHD image restoration] This paper proposes D²R-UHDNet, a framework that employs a Controlled Differential Disentangled VAE (CD²-VAE) to actively decompose degraded images into a degradation-dominant latent space and background-dominant features, and processes the background features via a complex-domain invertible multi-scale fusion network. The method achieves state-of-the-art performance across six UHD restoration tasks with only 1M parameters.
+  [ICCV 2025][Image Restoration][UHD image restoration] This paper proposes D²R-UHDNet, a framework that employs a Controlled Differential Disentangled VAE (CD²-VAE) to actively decompose degraded images into a degradation…
 tags:
-  - ICCV 2025
-  - Image Restoration
-  - UHD image restoration
-  - VAE
-  - feature disentanglement
-  - invertible networks
-  - complex-domain fusion
+  - "ICCV 2025"
+  - "Image Restoration"
+  - "UHD image restoration"
+  - "VAE"
+  - "feature disentanglement"
+  - "invertible networks"
+  - "complex-domain fusion"
 date: 2026-05-08
 content_hash: b51de23cb87d3668
 ---

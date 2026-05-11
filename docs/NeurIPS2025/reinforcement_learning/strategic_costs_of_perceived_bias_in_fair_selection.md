@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Strategic Costs of Perceived Bias in Fair Selection
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][fair selection] This paper employs a game-theoretic model to reveal a "perception-driven bias" mechanism: in purely merit-based selection systems, inter-group differences in perceived post-selection value lead to rational effort disparities, thereby systematically propagating inequality within ostensibly fair processes.
+  [NeurIPS 2025][Reinforcement Learning][fair selection] This paper employs a game-theoretic model to reveal a "perception-driven bias" mechanism: in purely merit-based selection systems…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - fair selection
-  - game theory
-  - Nash equilibrium
-  - perceived bias
-  - social welfare
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "fair selection"
+  - "game theory"
+  - "Nash equilibrium"
+  - "perceived bias"
+  - "social welfare"
 date: 2026-05-08
 content_hash: 7f39c612154d7c5f
 ---

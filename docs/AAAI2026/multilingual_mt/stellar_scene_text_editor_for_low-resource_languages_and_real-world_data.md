@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] STELLAR: Scene Text Editor for Low-Resource Languages and Real-World Data
 description: >-
-  [AAAI 2026][Scene Text Editing] This paper proposes STELLAR, a framework for scene text editing (STE) in low-resource languages such as Korean, Arabic, and Japanese. STELLAR introduces a language-adaptive glyph encoder and a two-stage training strategy (synthetic pretraining followed by real-data fine-tuning). A reference-free TAS metric is proposed to evaluate font, color, and background style preservation without requiring ground-truth images. Korean recognition accuracy improves from a baseline maximum of 22.1% to 80.4%.
+  [AAAI 2026][Multilingual & Machine Translation][Scene Text Editing] This paper proposes STELLAR, a framework for scene text editing (STE) in low-resource languages such as Korean, Arabic…
 tags:
-  - AAAI 2026
-  - Scene Text Editing
-  - Low-Resource Languages
-  - Diffusion Models
-  - Domain Adaptation
-  - Text Appearance Similarity
+  - "AAAI 2026"
+  - "Multilingual & Machine Translation"
+  - "Scene Text Editing"
+  - "Low-Resource Languages"
+  - "Diffusion Models"
+  - "Domain Adaptation"
+  - "Text Appearance Similarity"
 date: 2026-05-08
 content_hash: 3eed7f5ef28863f2
 ---

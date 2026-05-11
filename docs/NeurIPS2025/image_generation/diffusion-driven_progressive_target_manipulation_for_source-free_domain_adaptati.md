@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Diffusion-Driven Progressive Target Manipulation for Source-Free Domain Adaptation
 description: >-
-  [NeurIPS 2025][Image Generation][Source-Free Domain Adaptation] This paper proposes the DPTM framework, which leverages a latent diffusion model to perform semantic transformation on unreliable target samples, generating a pseudo-target domain and iteratively narrowing the gap with the real target domain via a progressive reconstruction mechanism. DPTM achieves up to 18.6% improvement over existing SFDA state-of-the-art methods under large domain shift scenarios.
+  [NeurIPS 2025][Image Generation][Source-Free Domain Adaptation] This paper proposes the DPTM framework, which leverages a latent diffusion model to perform semantic transformation on unreliable target samples…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Source-Free Domain Adaptation
-  - Diffusion Models
-  - Pseudo-Target Domain Generation
-  - Progressive Optimization
-  - Semantic Transformation
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Source-Free Domain Adaptation"
+  - "Diffusion Models"
+  - "Pseudo-Target Domain Generation"
+  - "Progressive Optimization"
+  - "Semantic Transformation"
 date: 2026-05-08
 content_hash: 6b5c9e7b276f18fd
 ---

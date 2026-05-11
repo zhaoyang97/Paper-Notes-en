@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AI Should Sense Better, Not Just Scale Bigger: Adaptive Sensing as a Paradigm Shift
 description: >-
-  [NeurIPS 2025][AI Safety][Adaptive Sensing] Inspired by biological sensory systems, this position paper argues that AI research must shift from simply scaling models to optimizing inputs—by dynamically adjusting sensor-level parameters (exposure, gain, multimodal configuration, etc.) to produce inputs most favorable to the model. Under ideal sensor adaptation, a small model (EfficientNet-B0, 5M parameters) can outperform a large model (OpenCLIP-H, 632M parameters), and the paper proposes a progressive formalization framework ranging from single-shot perception to closed-loop perception–action coupling.
+  [NeurIPS 2025][AI Safety][Adaptive Sensing] Inspired by biological sensory systems, this position paper argues that AI research must shift from simply scaling models to optimizing inputs—by dynamically adjusting sensor-l…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - Adaptive Sensing
-  - Paradigm Shift
-  - Sensor Optimization
-  - Closed-Loop Perception
-  - Embodied AI
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "Adaptive Sensing"
+  - "Paradigm Shift"
+  - "Sensor Optimization"
+  - "Closed-Loop Perception"
+  - "Embodied AI"
 date: 2026-05-08
 content_hash: 65163a8dfa17c360
 ---

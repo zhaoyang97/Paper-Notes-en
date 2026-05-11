@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Spotlight and Shadow: Attention-Guided Dual-Anchor Introspective Decoding for MLLM Hallucination Mitigation
 description: >-
-  [ACL 2026][Multimodal VLM][Multimodal hallucination] This paper proposes DaID (Dual-Anchor Introspective Decoding), which mitigates hallucinations within a single forward pass by exploiting layer-wise differences in visual perception within MLLMs — Spotlight layers amplify visual signals while Shadow layers suppress language priors.
+  [ACL 2026][Multimodal VLM][Multimodal hallucination] This paper proposes DaID (Dual-Anchor Introspective Decoding), which mitigates hallucinations within a single forward pass by exploiting layer-wise differences in visu…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Multimodal hallucination
-  - contrastive decoding
-  - layer-wise analysis
-  - visual attention
-  - training-free
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Multimodal hallucination"
+  - "contrastive decoding"
+  - "layer-wise analysis"
+  - "visual attention"
+  - "training-free"
 date: 2026-05-08
 content_hash: 9d3a33158ed41e4b
 ---

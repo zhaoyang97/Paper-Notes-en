@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] TAPA: Training-Free Adaptation of Programmatic Agents via LLM-Guided Program Synthesis in Dynamic Environments
 description: >-
-  [AAAI 2026][Programmatic Agent] TAPA positions LLMs as "intelligent modulators" of the symbolic action space rather than direct decision-makers. Through LLM-guided program synthesis, it dynamically adapts the symbolic actions of programmatic agents without retraining, achieving strong performance in cybersecurity DDoS defense (77.7% network uptime) and swarm intelligence formation control.
+  [AAAI 2026][Code Intelligence][Programmatic Agent] TAPA positions LLMs as "intelligent modulators" of the symbolic action space rather than direct decision-makers. Through LLM-guided program synthesis…
 tags:
-  - AAAI 2026
-  - Programmatic Agent
-  - LLM-guided program synthesis
-  - dynamic environment adaptation
-  - logical primitives
-  - symbolic action space
+  - "AAAI 2026"
+  - "Code Intelligence"
+  - "Programmatic Agent"
+  - "LLM-guided program synthesis"
+  - "dynamic environment adaptation"
+  - "logical primitives"
+  - "symbolic action space"
 date: 2026-05-08
 content_hash: f42435bb1a58a910
 ---

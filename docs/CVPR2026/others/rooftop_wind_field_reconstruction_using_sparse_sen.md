@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Rooftop Wind Field Reconstruction Using Sparse Sensors: From Deterministic to Generative Learning Methods
 description: >-
-  [CVPR 2026][wind field reconstruction] This work establishes a learning-observation framework based on PIV wind tunnel experimental data, systematically comparing Kriging interpolation with three deep learning models (UNet/ViTAE/CWGAN) for rooftop wind field reconstruction under 5–30 sparse sensors. It demonstrates that under multi-direction training (MDT), deep learning consistently outperforms Kriging (SSIM improvement of 18–34%), and sensor placement robustness is enhanced by up to 27.8% via QR decomposition-based sensor layout optimization.
+  [CVPR 2026][wind field reconstruction] This work establishes a learning-observation framework based on PIV wind tunnel experimental data…
 tags:
-  - CVPR 2026
-  - wind field reconstruction
-  - sparse sensors
-  - UNet
-  - ViTAE
-  - CWGAN
-  - PIV experimental data
-  - sensor optimization
+  - "CVPR 2026"
+  - "wind field reconstruction"
+  - "sparse sensors"
+  - "UNet"
+  - "ViTAE"
+  - "CWGAN"
+  - "PIV experimental data"
+  - "sensor optimization"
 date: 2026-05-08
 content_hash: bc66afa5a3ed122c
 ---

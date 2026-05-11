@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MixerCSeg: An Efficient Mixer Architecture for Crack Segmentation via Decoupled Mamba Attention
 description: >-
-  [CVPR 2026][Segmentation][crack segmentation] MixerCSeg is proposed to decouple channels into global/local branches by analyzing the implicit attention mechanism of Mamba, enhanced respectively by Self-Attention and CNN, combined with Direction-guided Edge Gated Convolution, achieving state-of-the-art crack segmentation performance at only 2.05 GFLOPs and 2.54M parameters.
+  [CVPR 2026][Segmentation][crack segmentation] MixerCSeg is proposed to decouple channels into global/local branches by analyzing the implicit attention mechanism of Mamba, enhanced respectively by Self-Attention and CNN…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - crack segmentation
-  - hybrid architecture
-  - Mamba attention decoupling
-  - direction-guided edge convolution
-  - lightweight and efficient
+  - "CVPR 2026"
+  - "Segmentation"
+  - "crack segmentation"
+  - "hybrid architecture"
+  - "Mamba attention decoupling"
+  - "direction-guided edge convolution"
+  - "lightweight and efficient"
 date: 2026-05-08
 content_hash: 77186ae5a2e8f751
 ---

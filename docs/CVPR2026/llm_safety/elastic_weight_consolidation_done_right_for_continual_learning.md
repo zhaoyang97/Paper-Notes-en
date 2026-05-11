@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Elastic Weight Consolidation Done Right for Continual Learning
 description: >-
-  [CVPR 2026][LLM Safety][Continual Learning] This paper systematically analyzes the fundamental flaws in EWC and its variants regarding weight importance estimation from a gradient perspective—specifically, gradient vanishing in EWC and redundant protection in MAS—and proposes an extremely simple Logits Reversal operation to correct the Fisher Information Matrix computation, achieving substantial improvements over vanilla EWC and all its variants on exemplar-free class-incremental learning and multimodal continual instruction tuning tasks.
+  [CVPR 2026][LLM Safety][Continual Learning] This paper systematically analyzes the fundamental flaws in EWC and its variants regarding weight importance estimation from a gradient perspective—specifically…
 tags:
-  - CVPR 2026
-  - LLM Safety
-  - Continual Learning
-  - Catastrophic Forgetting
-  - Elastic Weight Consolidation
-  - Fisher Information Matrix
-  - Weight Regularization
+  - "CVPR 2026"
+  - "LLM Safety"
+  - "Continual Learning"
+  - "Catastrophic Forgetting"
+  - "Elastic Weight Consolidation"
+  - "Fisher Information Matrix"
+  - "Weight Regularization"
 date: 2026-05-08
 content_hash: 813e0a6f0fc2c59f
 ---

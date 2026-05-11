@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HiF-VLA: Hindsight, Insight and Foresight through Motion Representation for Vision-Language-Action Models
 description: >-
-  [CVPR 2026][Multimodal VLM][VLA models] This paper proposes HiF-VLA, a framework that uses Motion Vectors (MV) as compact temporal primitives to unify three temporal reasoning capabilities—Hindsight, Insight, and Foresight—enabling bidirectional temporal extension of VLA models. HiF-VLA substantially outperforms baselines on long-horizon manipulation tasks with minimal computational overhead.
+  [CVPR 2026][Multimodal VLM][VLA models] This paper proposes HiF-VLA, a framework that uses Motion Vectors (MV) as compact temporal primitives to unify three temporal reasoning capabilities—Hindsight, Insight…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - VLA models
-  - motion representation
-  - temporal reasoning
-  - long-horizon manipulation
-  - world models
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "VLA models"
+  - "motion representation"
+  - "temporal reasoning"
+  - "long-horizon manipulation"
+  - "world models"
 date: 2026-05-08
 content_hash: daa1d12c65836b55
 ---

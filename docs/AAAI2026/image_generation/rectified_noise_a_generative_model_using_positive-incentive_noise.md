@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Rectified Noise: A Generative Model Using Positive-incentive Noise
 description: >-
-  [AAAI 2026][Image Generation][Rectified Flow] This paper proposes Rectified Noise (ΔRN), which leverages the positive-incentive noise (π-noise) framework to learn a set of beneficial noise signals and inject them into the velocity field of a pretrained Rectified Flow model, achieving a reduction in FID from 10.16 to 9.05 on ImageNet-1k with only 0.39% additional parameters.
+  [AAAI 2026][Image Generation][Rectified Flow] This paper proposes Rectified Noise (ΔRN), which leverages the positive-incentive noise (π-noise) framework to learn a set of beneficial noise signals and inject them into th…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Rectified Flow
-  - Positive-incentive Noise
-  - Flow Matching
-  - SiT
-  - Generative Models
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Rectified Flow"
+  - "Positive-incentive Noise"
+  - "Flow Matching"
+  - "SiT"
+  - "Generative Models"
 date: 2026-05-08
 content_hash: 2629c9ba48d5a05d
 ---

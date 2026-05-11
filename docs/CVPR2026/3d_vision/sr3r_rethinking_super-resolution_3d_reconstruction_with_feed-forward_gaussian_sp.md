@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SR3R: Rethinking Super-Resolution 3D Reconstruction With Feed-Forward Gaussian Splatting
 description: >-
-  [CVPR2026][3D Vision][3D super-resolution] SR3R reformulates 3D super-resolution (3DSR) as a **feed-forward mapping** from sparse low-resolution views to high-resolution 3DGS, achieving high-fidelity HR 3DGS reconstruction via Gaussian offset learning and feature refinement, without per-scene optimization, while enabling strong zero-shot generalization.
+  [CVPR2026][3D Vision][3D super-resolution] SR3R reformulates 3D super-resolution (3DSR) as a **feed-forward mapping** from sparse low-resolution views to high-resolution 3DGS…
 tags:
-  - CVPR2026
-  - 3D Vision
-  - 3D super-resolution
-  - 3D Gaussian splatting
-  - feed-forward reconstruction
-  - Gaussian offset learning
-  - sparse-view reconstruction
+  - "CVPR2026"
+  - "3D Vision"
+  - "3D super-resolution"
+  - "3D Gaussian splatting"
+  - "feed-forward reconstruction"
+  - "Gaussian offset learning"
+  - "sparse-view reconstruction"
 date: 2026-05-08
 content_hash: d1b3575bfe0f81cc
 ---

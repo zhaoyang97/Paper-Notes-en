@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Global Motion Corresponder for 3D Point-Based Scene Interpolation under Large Motion
 description: >-
-  [ICCV 2025][3D Vision][Scene interpolation] This paper proposes the Global Motion Corresponder (GMC), which learns unary potential fields that map 3D Gaussians from two time steps into a shared canonical space, enabling robust scene interpolation and extrapolation under large motion.
+  [ICCV 2025][3D Vision][Scene interpolation] This paper proposes the Global Motion Corresponder (GMC), which learns unary potential fields that map 3D Gaussians from two time steps into a shared canonical space…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Scene interpolation
-  - large motion
-  - 3D Gaussian Splatting
-  - SE(3) transformation
-  - semantic correspondence
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Scene interpolation"
+  - "large motion"
+  - "3D Gaussian Splatting"
+  - "SE(3) transformation"
+  - "semantic correspondence"
 date: 2026-05-08
 content_hash: 34a603f34770bbd0
 ---

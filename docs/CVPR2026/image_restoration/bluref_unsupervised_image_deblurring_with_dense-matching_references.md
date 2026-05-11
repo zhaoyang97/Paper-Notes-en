@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BluRef: Unsupervised Image Deblurring with Dense-Matching References
 description: >-
-  [CVPR 2026][Image Restoration][Unsupervised Deblurring] BluRef is proposed as the first unsupervised framework that leverages unpaired reference sharp images to generate pseudo ground truth via dense matching for training a deblurring network, achieving performance comparable to or even surpassing supervised methods.
+  [CVPR 2026][Image Restoration][Unsupervised Deblurring] BluRef is proposed as the first unsupervised framework that leverages unpaired reference sharp images to generate pseudo ground truth via dense matching for trainin…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Unsupervised Deblurring
-  - Dense Matching
-  - Pseudo Ground Truth Generation
-  - Reference Images
-  - Iterative Optimization
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Unsupervised Deblurring"
+  - "Dense Matching"
+  - "Pseudo Ground Truth Generation"
+  - "Reference Images"
+  - "Iterative Optimization"
 date: 2026-05-08
 content_hash: 5ef0b8d4b8c1e58a
 ---

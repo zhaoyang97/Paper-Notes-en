@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ProtoCycle: Reflective Tool-Augmented Planning for Text-Guided Protein Design
 description: >-
-  [ACL 2026 (Findings)][Medical Imaging][protein design] ProtoCycle proposes a **reflective agent framework** that positions an LLM as a planner coupled with a lightweight tool environment for text-guided protein sequence design. Through a multi-round feedback-driven decision loop and online reinforcement learning training, the framework achieves strong language alignment while maintaining competitive foldability.
+  [ACL 2026 (Findings)][Medical Imaging][protein design] ProtoCycle proposes a **reflective agent framework** that positions an LLM as a planner coupled with a lightweight tool environment for text-guided protein sequence…
 tags:
-  - ACL 2026 (Findings)
-  - Medical Imaging
-  - protein design
-  - text-guided
-  - reflective planning
-  - tool augmentation
-  - reinforcement learning
+  - "ACL 2026 (Findings)"
+  - "Medical Imaging"
+  - "protein design"
+  - "text-guided"
+  - "reflective planning"
+  - "tool augmentation"
+  - "reinforcement learning"
 date: 2026-05-08
 content_hash: 45d3d98a1bf8cb2b
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] REDUCIO! Generating 1K Video within 16 Seconds using Extremely Compressed Motion Latents
 description: >-
-  [ICCV 2025][Image Generation][Video Generation] This paper proposes Reducio-VAE, a content-frame-conditioned 3D video autoencoder that compresses video into a motion latent space 64× smaller than a standard 2D VAE. Paired with Reducio-DiT, it generates 16-frame 1024×1024 videos in 15.5 seconds on a single A100 GPU, with training requiring only 3,200 A100 GPU hours.
+  [ICCV 2025][Image Generation][Video Generation] This paper proposes Reducio-VAE, a content-frame-conditioned 3D video autoencoder that compresses video into a motion latent space 64× smaller than a standard 2D VAE. Paire…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Video Generation
-  - Motion Latents
-  - Video VAE
-  - Extreme Compression
-  - DiT
-  - Efficient Inference
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Video Generation"
+  - "Motion Latents"
+  - "Video VAE"
+  - "Extreme Compression"
+  - "DiT"
+  - "Efficient Inference"
 date: 2026-05-08
 content_hash: 0f6c4b01defac921
 ---

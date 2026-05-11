@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Prompt and Parameter Co-Optimization for Large Language Models
 description: >-
-  [ICLR 2026][LLM Evaluation][prompt optimization] This paper proposes MetaTuner, a framework that simultaneously generates prompts and LoRA parameters via a shared meta encoder, unifying discrete prompt optimization and continuous parameter fine-tuning into an end-to-end jointly optimizable framework, achieving substantial improvements over independently optimized methods on mathematical reasoning and question answering tasks.
+  [ICLR 2026][LLM Evaluation][prompt optimization] This paper proposes MetaTuner, a framework that simultaneously generates prompts and LoRA parameters via a shared meta encoder…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - prompt optimization
-  - fine-tuning
-  - joint optimization
-  - LoRA
-  - discrete-continuous optimization
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "prompt optimization"
+  - "fine-tuning"
+  - "joint optimization"
+  - "LoRA"
+  - "discrete-continuous optimization"
 date: 2026-05-08
 content_hash: 3edc01c01d0b3e0d
 ---

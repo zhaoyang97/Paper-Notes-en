@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Processing and Acquisition Traces in Visual Encoders: What Does CLIP Know About Your Camera?
 description: >-
-  [ICCV 2025 (Highlight)][CLIP] This paper reveals that visual encoders such as CLIP systematically encode image acquisition and processing parameters (e.g., camera model, ISO, JPEG quality, and other perceptually invisible attributes) within their learned representations, and that these latent signals significantly influence semantic prediction accuracy—both positively and negatively—through statistical correlations with semantic labels.
+  [ICCV 2025 (Highlight)][CLIP] This paper reveals that visual encoders such as CLIP systematically encode image acquisition and processing parameters (e.g., camera model, ISO, JPEG quality…
 tags:
-  - ICCV 2025 (Highlight)
-  - CLIP
-  - image acquisition parameters
-  - visual representation analysis
-  - distribution shift
-  - semantic prediction bias
+  - "ICCV 2025 (Highlight)"
+  - "CLIP"
+  - "image acquisition parameters"
+  - "visual representation analysis"
+  - "distribution shift"
+  - "semantic prediction bias"
 date: 2026-05-08
 content_hash: fa84651b26f40e27
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unified Reinforcement and Imitation Learning for Vision-Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][VLM distillation] This paper proposes RIL (Unified Reinforcement and Imitation Learning), a training framework that combines GRPO-based reinforcement learning with GAIL-style adversarial imitation learning to substantially improve the performance of small VLMs (7B) by learning the text generation style of large VLMs (72B), without incurring additional inference latency or requiring an explicit "thinking" process.
+  [NeurIPS 2025][Multimodal VLM][VLM distillation] This paper proposes RIL (Unified Reinforcement and Imitation Learning), a training framework that combines GRPO-based reinforcement learning with GAIL-style adversarial im…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - VLM distillation
-  - reinforcement learning
-  - imitation learning
-  - GRPO
-  - GAIL
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "VLM distillation"
+  - "reinforcement learning"
+  - "imitation learning"
+  - "GRPO"
+  - "GAIL"
 date: 2026-05-08
 content_hash: 048917b283bb6e43
 ---

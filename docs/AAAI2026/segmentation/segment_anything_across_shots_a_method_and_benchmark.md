@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Segment Anything Across Shots: A Method and Benchmark
 description: >-
-  [AAAI 2026][Segmentation][multi-shot video segmentation] This paper proposes SAAS, a method for Multi-shot Video Object Segmentation (MVOS), along with the Cut-VOS benchmark. SAAS achieves robust cross-shot segmentation via transition-simulating data augmentation (TMA), shot transition detection and understanding modules (TDM+TCH), and a local memory bank.
+  [AAAI 2026][Segmentation][multi-shot video segmentation] This paper proposes SAAS, a method for Multi-shot Video Object Segmentation (MVOS)…
 tags:
-  - AAAI 2026
-  - Segmentation
-  - multi-shot video segmentation
-  - SAM2
-  - data augmentation
-  - shot transition detection
-  - benchmark
+  - "AAAI 2026"
+  - "Segmentation"
+  - "multi-shot video segmentation"
+  - "SAM2"
+  - "data augmentation"
+  - "shot transition detection"
+  - "benchmark"
 date: 2026-05-08
 content_hash: 7f9d7fc6b05b5882
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning to Play Multi-Follower Bayesian Stackelberg Games
 description: >-
-  [ICLR 2026][Reinforcement Learning][Stackelberg Games] This paper provides the first systematic study of online learning in multi-follower Bayesian Stackelberg Games (BSGs). By geometrically partitioning the leader's strategy space into best-response regions, it achieves a regret bound of $\tilde{O}(\sqrt{\min\{L, nK\} \cdot T})$ under type feedback — a bound that does not grow polynomially in the number of followers $n$ — and establishes a nearly matching lower bound of $\Omega(\sqrt{\min\{L, nK\}T})$.
+  [ICLR 2026][Reinforcement Learning][Stackelberg Games] This paper provides the first systematic study of online learning in multi-follower Bayesian Stackelberg Games (BSGs). By geometrically partitioning the leader's str…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Stackelberg Games
-  - Bayesian Games
-  - Online Learning
-  - Best-Response Regions
-  - Regret Bounds
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Stackelberg Games"
+  - "Bayesian Games"
+  - "Online Learning"
+  - "Best-Response Regions"
+  - "Regret Bounds"
 date: 2026-05-08
 content_hash: 2d6a981b2613356e
 ---

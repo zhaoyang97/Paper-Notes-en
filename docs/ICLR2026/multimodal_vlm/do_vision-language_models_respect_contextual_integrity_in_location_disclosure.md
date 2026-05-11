@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Do Vision-Language Models Respect Contextual Integrity in Location Disclosure?
 description: >-
-  [ICLR 2026][Multimodal VLM][Vision-Language Models] This paper introduces the VLM-GEOPRIVACY benchmark grounded in Nissenbaum's Contextual Integrity (CI) theory. Through seven progressively structured context-aware questions and a three-tier location disclosure granularity (refusal / city-level / precise location), it systematically evaluates whether 14 mainstream VLMs can determine appropriate location disclosure levels based on social-norm cues present in images. Results show that all models exhibit severe over-disclosure bias (Over-Disclosure rates of 46–52%), and malicious prompting can push the Abstention Violation rate to 100%.
+  [ICLR 2026][Multimodal VLM][Vision-Language Models] This paper introduces the VLM-GEOPRIVACY benchmark grounded in Nissenbaum's Contextual Integrity (CI) theory. Through seven progressively structured context-aware quest…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Vision-Language Models
-  - Contextual Integrity
-  - Geographic Privacy
-  - Location Disclosure
-  - VLM Safety
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Vision-Language Models"
+  - "Contextual Integrity"
+  - "Geographic Privacy"
+  - "Location Disclosure"
+  - "VLM Safety"
 date: 2026-05-08
 content_hash: 84854ba4c51e4ace
 ---

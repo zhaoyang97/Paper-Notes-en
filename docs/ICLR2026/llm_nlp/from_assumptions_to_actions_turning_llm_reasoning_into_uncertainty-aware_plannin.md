@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From Assumptions to Actions: Turning LLM Reasoning into Uncertainty-Aware Planning
 description: >-
-  [ICLR 2026][LLM/NLP][uncertainty-aware planning] This paper proposes PCE (Planner-Composer-Evaluator), a framework that explicitly extracts and organizes implicit environmental assumptions from LLM reasoning chains into decision trees, enabling uncertainty-aware action selection via a likelihood-gain-cost scoring function, thereby substantially reducing communication overhead in multi-agent collaboration.
+  [ICLR 2026][LLM/NLP][uncertainty-aware planning] This paper proposes PCE (Planner-Composer-Evaluator), a framework that explicitly extracts and organizes implicit environmental assumptions from LLM reasoning chains into…
 tags:
-  - ICLR 2026
-  - LLM/NLP
-  - uncertainty-aware planning
-  - LLM multi-agent collaboration
-  - decision tree
-  - partially observable environments
-  - communication optimization
+  - "ICLR 2026"
+  - "LLM/NLP"
+  - "uncertainty-aware planning"
+  - "LLM multi-agent collaboration"
+  - "decision tree"
+  - "partially observable environments"
+  - "communication optimization"
 date: 2026-05-08
 content_hash: 78bacf944272195a
 ---

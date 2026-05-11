@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Robust Multi-Objective Controlled Decoding of Large Language Models
 description: >-
-  [ICLR 2026][Reinforcement Learning][multi-objective alignment] This paper proposes RMOD (Robust Multi-Objective Decoding), an inference-time algorithm that dynamically computes worst-case objective weights by solving for the Nash equilibrium of a minimax game, achieving robust multi-objective alignment of LLMs without requiring any prior knowledge of objective weights.
+  [ICLR 2026][Reinforcement Learning][multi-objective alignment] This paper proposes RMOD (Robust Multi-Objective Decoding), an inference-time algorithm that dynamically computes worst-case objective weights by solving for…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - multi-objective alignment
-  - inference-time alignment
-  - controlled decoding
-  - robust optimization
-  - minimax game
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "multi-objective alignment"
+  - "inference-time alignment"
+  - "controlled decoding"
+  - "robust optimization"
+  - "minimax game"
 date: 2026-05-08
 content_hash: 202fd0d775106b79
 ---

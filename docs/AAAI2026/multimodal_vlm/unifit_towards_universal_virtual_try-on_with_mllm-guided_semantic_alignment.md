@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UniFit: Towards Universal Virtual Try-on with MLLM-Guided Semantic Alignment
 description: >-
-  [AAAI 2026][Multimodal VLM][Virtual try-on] This paper proposes UniFit, a universal virtual try-on framework driven by a multimodal large language model (MLLM). An MLLM-Guided Semantic Alignment (MGSA) module bridges the semantic gap between textual instructions and reference images. A two-stage progressive training strategy combined with a self-synthesis pipeline overcomes data scarcity in complex scenarios. UniFit is the first single framework to support all 6 VTON tasks.
+  [AAAI 2026][Multimodal VLM][Virtual try-on] This paper proposes UniFit, a universal virtual try-on framework driven by a multimodal large language model (MLLM). An MLLM-Guided Semantic Alignment (MGSA) module bridges the…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Virtual try-on
-  - MLLM
-  - semantic alignment
-  - Diffusion Transformer
-  - self-synthesis training
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Virtual try-on"
+  - "MLLM"
+  - "semantic alignment"
+  - "Diffusion Transformer"
+  - "self-synthesis training"
 date: 2026-05-08
 content_hash: 3cd619a215ca03eb
 ---

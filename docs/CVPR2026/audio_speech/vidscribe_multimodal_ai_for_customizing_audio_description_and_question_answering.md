@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ViDscribe: Multimodal AI for Customizing Audio Description and Question Answering in Online Videos
 description: >-
-  [CVPR 2026][Audio & Speech][Audio Description] ViDscribe is a web-based platform that leverages a multimodal large language model (Gemini 3 Pro) to provide customizable AI-generated audio descriptions (AD) and interactive visual question answering (VQA) for blind and low-vision (BLV) users. Supporting arbitrary YouTube videos, the system is validated through a one-week longitudinal user study, which demonstrates that customized AD outperforms default AD in terms of effectiveness, enjoyment, and immersion.
+  [CVPR 2026][Audio & Speech][Audio Description] ViDscribe is a web-based platform that leverages a multimodal large language model (Gemini 3 Pro) to provide customizable AI-generated audio descriptions (AD) and interactiv…
 tags:
-  - CVPR 2026
+  - "CVPR 2026"
   - "Audio & Speech"
-  - Audio Description
-  - Video Accessibility
-  - Multimodal Large Language Models
-  - User Customization
-  - Visual Question Answering
+  - "Audio Description"
+  - "Video Accessibility"
+  - "Multimodal Large Language Models"
+  - "User Customization"
+  - "Visual Question Answering"
 date: 2026-05-08
 content_hash: 80494d1088232614
 ---

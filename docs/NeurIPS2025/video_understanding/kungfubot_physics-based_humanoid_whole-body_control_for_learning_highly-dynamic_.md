@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] KungfuBot: Physics-Based Humanoid Whole-Body Control for Learning Highly-Dynamic Skills
 description: >-
-  [NeurIPS 2025][Video Understanding][humanoid control] This paper proposes the PBHC framework, which enables a humanoid robot (Unitree G1) to learn highly dynamic whole-body skills such as kung fu and dance through a physics-aware motion processing pipeline and a bi-level optimization scheme for adaptive tracking factors. The approach achieves substantially lower tracking errors than existing methods and is successfully deployed on real hardware.
+  [NeurIPS 2025][Video Understanding][humanoid control] This paper proposes the PBHC framework, which enables a humanoid robot (Unitree G1) to learn highly dynamic whole-body skills such as kung fu and dance through a phys…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
-  - humanoid control
-  - motion imitation
-  - reinforcement-learning
-  - adaptive tracking
-  - sim-to-real
+  - "NeurIPS 2025"
+  - "Video Understanding"
+  - "humanoid control"
+  - "motion imitation"
+  - "reinforcement-learning"
+  - "adaptive tracking"
+  - "sim-to-real"
 date: 2026-05-08
 content_hash: d8ad4fe1f04ae4df
 ---

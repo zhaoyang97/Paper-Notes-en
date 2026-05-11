@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BATCLIP: Bimodal Online Test-Time Adaptation for CLIP
 description: >-
-  [ICCV 2025][LLM Evaluation][CLIP] This paper proposes BATCLIP, a bimodal online test-time adaptation (TTA) method for CLIP that simultaneously adapts the LayerNorm parameters of both the visual and text encoders. By introducing a projection matching loss and an inter-class separability loss to enhance vision-text feature alignment and class discriminability, BATCLIP achieves state-of-the-art performance on CIFAR-10C, CIFAR-100C, and ImageNet-C.
+  [ICCV 2025][LLM Evaluation][CLIP] This paper proposes BATCLIP, a bimodal online test-time adaptation (TTA) method for CLIP that simultaneously adapts the LayerNorm parameters of both the visual and text encoders. By intr…
 tags:
-  - ICCV 2025
-  - LLM Evaluation
-  - CLIP
-  - test-time adaptation
-  - bimodal adaptation
-  - robustness to image corruption
-  - vision-language models
+  - "ICCV 2025"
+  - "LLM Evaluation"
+  - "CLIP"
+  - "test-time adaptation"
+  - "bimodal adaptation"
+  - "robustness to image corruption"
+  - "vision-language models"
 date: 2026-05-08
 content_hash: e101ee58b8639ec9
 ---

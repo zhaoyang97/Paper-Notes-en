@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Generalizable Non-Line-of-Sight Imaging with Learnable Physical Priors
 description: >-
-  [ICCV 2025][Signal & Communication][non-line-of-sight imaging] This paper proposes two modules — Learnable Path Compensation (LPC) and Adaptive Phasor Field (APF) — to address material-dependent radiance intensity falloff and frequency-domain denoising under varying SNR conditions in NLOS imaging, respectively. Trained solely on synthetic data, the method achieves state-of-the-art generalization across multiple real-world datasets.
+  [ICCV 2025][Signal & Communication][non-line-of-sight imaging] This paper proposes two modules — Learnable Path Compensation (LPC) and Adaptive Phasor Field (APF) — to address material-dependent radiance intensity fallof…
 tags:
-  - ICCV 2025
+  - "ICCV 2025"
   - "Signal & Communication"
-  - non-line-of-sight imaging
-  - learnable physical priors
-  - path compensation
-  - adaptive phasor field
-  - SPAD
+  - "non-line-of-sight imaging"
+  - "learnable physical priors"
+  - "path compensation"
+  - "adaptive phasor field"
+  - "SPAD"
 date: 2026-05-08
 content_hash: 602a4c42e604f9c2
 ---

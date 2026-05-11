@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multimodal Bandits: Regret Lower Bounds and Optimal Algorithms
 description: >-
-  [NeurIPS 2025][Multimodal VLM][multimodal bandits] For the multimodal multi-armed bandit problem where the reward function has at most $m$ modes, this paper proposes the first computationally feasible algorithm for solving the Graves-Lai optimization problem, achieves an asymptotically optimal regret bound, and proves that local search strategies are suboptimal.
+  [NeurIPS 2025][Multimodal VLM][multimodal bandits] For the multimodal multi-armed bandit problem where the reward function has at most $m$ modes…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - multimodal bandits
-  - Graves-Lai bound
-  - dynamic programming
-  - asymptotic optimality
-  - multi-armed bandit
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "multimodal bandits"
+  - "Graves-Lai bound"
+  - "dynamic programming"
+  - "asymptotic optimality"
+  - "multi-armed bandit"
 date: 2026-05-08
 content_hash: cd968130146a8d2e
 ---

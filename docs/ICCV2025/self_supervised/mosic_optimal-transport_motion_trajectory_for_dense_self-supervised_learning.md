@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MoSiC: Optimal-Transport Motion Trajectory for Dense Self-Supervised Learning
 description: >-
-  [ICCV 2025][Self-Supervised Learning][Dense self-supervised learning] MoSiC extracts long-range motion trajectories via an offline point tracker and propagates cluster assignments along the temporal dimension through an Optimal Transport (Sinkhorn-Knopp)-based clustering mechanism. This enables learning spatially and temporally consistent dense representations from video data, improving DINOv2 by 1%–6% across multiple image and video benchmarks using only video for training.
+  [ICCV 2025][Self-Supervised Learning][Dense self-supervised learning] MoSiC extracts long-range motion trajectories via an offline point tracker and propagates cluster assignments along the temporal dimension through an…
 tags:
-  - ICCV 2025
-  - Self-Supervised Learning
-  - Dense self-supervised learning
-  - optimal transport
-  - motion trajectories
-  - spatiotemporal consistency
-  - video segmentation
+  - "ICCV 2025"
+  - "Self-Supervised Learning"
+  - "Dense self-supervised learning"
+  - "optimal transport"
+  - "motion trajectories"
+  - "spatiotemporal consistency"
+  - "video segmentation"
 date: 2026-05-08
 content_hash: b71f6ebfbd93fe82
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Tracking and Understanding Object Transformations
 description: >-
-  [NeurIPS 2025][Video Understanding][object tracking] This paper introduces the Track Any State task and the TubeletGraph zero-shot framework, which tracks objects undergoing drastic appearance changes in video (e.g., an apple being cut, a butterfly emerging from a chrysalis) while simultaneously detecting and describing these transformations.
+  [NeurIPS 2025][Video Understanding][object tracking] This paper introduces the Track Any State task and the TubeletGraph zero-shot framework, which tracks objects undergoing drastic appearance changes in video (e.g.…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
-  - object tracking
-  - state change
-  - zero-shot
-  - spatiotemporal segmentation
+  - "NeurIPS 2025"
+  - "Video Understanding"
+  - "object tracking"
+  - "state change"
+  - "zero-shot"
+  - "spatiotemporal segmentation"
 date: 2026-05-08
 content_hash: 777ea96e61a6ebd7
 ---

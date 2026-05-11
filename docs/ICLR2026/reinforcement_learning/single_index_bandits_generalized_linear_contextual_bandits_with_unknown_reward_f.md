@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Single Index Bandits: Generalized Linear Contextual Bandits with Unknown Reward Functions
 description: >-
-  [ICLR 2026][Reinforcement Learning][Contextual multi-armed bandits] This paper introduces the Single Index Bandit (SIB) problem — extending generalized linear bandits to the setting where the reward function is unknown — and proposes a family of efficient algorithms (STOR/ESTOR/GSTOR) based on Stein's method, achieving near-optimal regret $\tilde{O}(\sqrt{T})$ under monotone increasing reward functions.
+  [ICLR 2026][Reinforcement Learning][Contextual multi-armed bandits] This paper introduces the Single Index Bandit (SIB) problem — extending generalized linear bandits to the setting where the reward function is unknown —…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Contextual multi-armed bandits
-  - generalized linear models
-  - single index models
-  - Stein's method
-  - regret bounds
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Contextual multi-armed bandits"
+  - "generalized linear models"
+  - "single index models"
+  - "Stein's method"
+  - "regret bounds"
 date: 2026-05-08
 content_hash: 4722f9da54366b75
 ---

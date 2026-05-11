@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Predictive Preference Learning from Human Interventions
 description: >-
-  [NeurIPS 2025][Autonomous Driving][Interactive Imitation Learning] PPL leverages a trajectory prediction model to anticipate the agent's future states and "bootstraps" each human intervention signal across the predicted future horizon to construct contrastive preference data. Combined with a dual-loss training strategy of behavior cloning and preference optimization, PPL substantially reduces the number of required human interventions and demonstration data.
+  [NeurIPS 2025][Autonomous Driving][Interactive Imitation Learning] PPL leverages a trajectory prediction model to anticipate the agent's future states and "bootstraps" each human intervention signal across the predicted…
 tags:
-  - NeurIPS 2025
-  - Autonomous Driving
-  - Interactive Imitation Learning
-  - Preference Learning
-  - Human Interventions
-  - Trajectory Prediction
-  - DPO
+  - "NeurIPS 2025"
+  - "Autonomous Driving"
+  - "Interactive Imitation Learning"
+  - "Preference Learning"
+  - "Human Interventions"
+  - "Trajectory Prediction"
+  - "DPO"
 date: 2026-05-08
 content_hash: eecda7ee91ddb47e
 ---

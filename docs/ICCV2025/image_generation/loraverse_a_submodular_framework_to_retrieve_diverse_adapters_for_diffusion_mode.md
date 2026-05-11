@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] LoRAverse: A Submodular Framework to Retrieve Diverse Adapters for Diffusion Models
 description: >-
-  [Image Generation] This paper formulates the retrieval of relevant and diverse LoRA combinations from a library of 100K+ adapters as a combinatorial optimization problem. It proposes LoRAverse, a framework based on submodular function maximization, which achieves relevance- and diversity-aware LoRA selection through concept extraction followed by submodular retrieval.
+  [Image Generation] This paper formulates the retrieval of relevant and diverse LoRA combinations from a library of 100K+ adapters as a combinatorial optimization problem. It proposes LoRAverse…
 tags:
-  - Image Generation
+  - "Image Generation"
 date: 2026-05-08
 content_hash: 5c6196d31ec7fcdf
 ---

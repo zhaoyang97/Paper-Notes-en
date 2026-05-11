@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Co-Reinforcement Learning for Unified Multimodal Understanding and Generation
 description: >-
-  [NeurIPS 2025][Image Generation][Unified Multimodal Models] This paper proposes CoRL (Co-Reinforcement Learning), a two-stage framework — Unified RL followed by Refined RL — that simultaneously optimizes both understanding and generation capabilities of Unified Multimodal Language Models (ULMs) via reinforcement learning, achieving synergistic co-evolution of dual capabilities: +7% on generation and +23% on understanding at 1.5B parameters.
+  [NeurIPS 2025][Image Generation][Unified Multimodal Models] This paper proposes CoRL (Co-Reinforcement Learning), a two-stage framework — Unified RL followed by Refined RL — that simultaneously optimizes both understandi…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Unified Multimodal Models
-  - Reinforcement Learning
-  - GRPO
-  - Text-to-Image Generation
-  - Multimodal Understanding
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Unified Multimodal Models"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "Text-to-Image Generation"
+  - "Multimodal Understanding"
 date: 2026-05-08
 content_hash: 6dcf2f41db8114dc
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning-Augmented Facility Location Mechanisms for Envy Ratio
 description: >-
-  [NeurIPS 2025][AI Safety][facility location] For the **envy ratio** objective in one-dimensional facility location, this paper designs both deterministic and randomized learning-augmented mechanisms: the deterministic $\alpha$-BIM achieves an optimal consistency–robustness tradeoff, while the randomized BAM further improves the guarantees. The paper also resolves an open problem posed by Ding et al., improving the approximation ratio of prediction-free randomized mechanisms from 2 to approximately 1.8944.
+  [NeurIPS 2025][AI Safety][facility location] For the **envy ratio** objective in one-dimensional facility location, this paper designs both deterministic and randomized learning-augmented mechanisms: the deterministic $\…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - facility location
-  - learning-augmented algorithms
-  - envy ratio
-  - fairness
-  - mechanism design
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "facility location"
+  - "learning-augmented algorithms"
+  - "envy ratio"
+  - "fairness"
+  - "mechanism design"
 date: 2026-05-08
 content_hash: 567818b604603d4c
 ---

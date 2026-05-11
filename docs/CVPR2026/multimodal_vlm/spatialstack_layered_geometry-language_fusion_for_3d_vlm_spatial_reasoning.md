@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SpatialStack: Layered Geometry-Language Fusion for 3D VLM Spatial Reasoning
 description: >-
-  [CVPR2026][Multimodal VLM][3D spatial reasoning] This paper proposes SpatialStack, a framework that injects multi-level geometric features from a multi-view geometry encoder (VGGT) into different layers of an LLM decoder (rather than fusing only the final layer), achieving open-source SOTA on multiple 3D spatial reasoning benchmarks through hierarchical alignment where shallow layers handle fine-grained spatial perception and deep layers support high-level semantic reasoning.
+  [CVPR2026][Multimodal VLM][3D spatial reasoning] This paper proposes SpatialStack, a framework that injects multi-level geometric features from a multi-view geometry encoder (VGGT) into different layers of an LLM decoder…
 tags:
-  - CVPR2026
-  - Multimodal VLM
-  - 3D spatial reasoning
-  - geometry-language fusion
-  - hierarchical feature fusion
-  - VLM
-  - VGGT
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "3D spatial reasoning"
+  - "geometry-language fusion"
+  - "hierarchical feature fusion"
+  - "VLM"
+  - "VGGT"
 date: 2026-05-08
 content_hash: 53730a6cd3f278ba
 ---

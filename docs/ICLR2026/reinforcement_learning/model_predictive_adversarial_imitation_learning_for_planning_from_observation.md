@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Model Predictive Adversarial Imitation Learning for Planning from Observation
 description: >-
-  [ICLR 2026][Reinforcement Learning][Adversarial Imitation Learning] This paper proposes MPAIL (Model Predictive Adversarial Imitation Learning), which embeds an MPPI planner natively into the adversarial imitation learning loop, achieving the first end-to-end Planning-from-Observation (PfO) framework. MPAIL comprehensively outperforms policy-based AIL methods in generalization, robustness, interpretability, and sample efficiency, and is successfully deployed on a real-world robot navigation task from a single observed demonstration.
+  [ICLR 2026][Reinforcement Learning][Adversarial Imitation Learning] This paper proposes MPAIL (Model Predictive Adversarial Imitation Learning), which embeds an MPPI planner natively into the adversarial imitation learni…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Adversarial Imitation Learning
-  - Model Predictive Control
-  - Inverse Reinforcement Learning
-  - Learning from Observation
-  - MPPI
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Adversarial Imitation Learning"
+  - "Model Predictive Control"
+  - "Inverse Reinforcement Learning"
+  - "Learning from Observation"
+  - "MPPI"
 date: 2026-05-08
 content_hash: 07dcbf26e610013e
 ---

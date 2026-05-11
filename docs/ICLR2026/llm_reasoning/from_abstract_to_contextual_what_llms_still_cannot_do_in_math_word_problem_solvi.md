@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] From Abstract to Contextual: What LLMs Still Cannot Do in Mathematics
 description: >-
-  [ICLR 2026][LLM Reasoning][Mathematical Reasoning] This paper introduces ContextMATH, a benchmark that transforms abstract AIME/MATH-500 problems into two variants — Scenario Grounding (SG) and Complexity Scaling (CS) — and reveals that even top-tier models such as GPT-5 and DeepSeek-R1 suffer accuracy drops of 13–34% on contextual mathematical reasoning, with errors attributable primarily to problem formulation rather than computational reasoning.
+  [ICLR 2026][LLM Reasoning][Mathematical Reasoning] This paper introduces ContextMATH, a benchmark that transforms abstract AIME/MATH-500 problems into two variants — Scenario Grounding (SG) and Complexity Scaling (CS) —…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Mathematical Reasoning
-  - Contextual Reasoning
-  - Problem Formulation
-  - Benchmark
-  - LLM Evaluation
-  - AIME
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "Mathematical Reasoning"
+  - "Contextual Reasoning"
+  - "Problem Formulation"
+  - "Benchmark"
+  - "LLM Evaluation"
+  - "AIME"
 date: 2026-05-08
 content_hash: f4163e4390dd22e5
 ---

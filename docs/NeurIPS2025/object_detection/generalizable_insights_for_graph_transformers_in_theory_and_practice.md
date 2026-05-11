@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Generalizable Insights for Graph Transformers in Theory and Practice
 description: >-
-  [NeurIPS 2025][Object Detection][Graph Transformer] This paper proposes the Generalized-Distance Transformer (GDT), a graph Transformer architecture based on standard attention (requiring no modifications to the attention mechanism). It theoretically proves that GDT's expressiveness is equivalent to the GD-WL algorithm, and through large-scale experiments covering 8 million graphs and 270 million tokens, establishes for the first time a fine-grained empirical hierarchy of positional encoding (PE) expressiveness. Under a few-shot transfer setting, GDT surpasses state-of-the-art methods without any fine-tuning.
+  [NeurIPS 2025][Object Detection][Graph Transformer] This paper proposes the Generalized-Distance Transformer (GDT), a graph Transformer architecture based on standard attention (requiring no modifications to the attentio…
 tags:
-  - NeurIPS 2025
-  - Object Detection
-  - Graph Transformer
-  - GD-WL
-  - positional encoding expressiveness
-  - few-shot transfer
-  - large-scale evaluation
+  - "NeurIPS 2025"
+  - "Object Detection"
+  - "Graph Transformer"
+  - "GD-WL"
+  - "positional encoding expressiveness"
+  - "few-shot transfer"
+  - "large-scale evaluation"
 date: 2026-05-08
 content_hash: f68717277a5aff86
 ---

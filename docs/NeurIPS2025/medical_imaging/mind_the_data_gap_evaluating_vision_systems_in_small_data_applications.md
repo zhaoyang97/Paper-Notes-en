@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mind the (Data) Gap: Evaluating Vision Systems in Small Data Applications
 description: >-
-  [NeurIPS 2025][Medical Imaging][small data evaluation] This paper systematically compares MLLMs (e.g., Gemini, Qwen2.5-VL) and vision encoder + SVM pipelines on the NeWT ecological classification benchmark across the "small data regime" (10–1000 labeled samples). MLLMs plateau after 10–30 samples, whereas vision-based methods exhibit near-logarithmic growth throughout, calling on the community to prioritize small-data evaluation.
+  [NeurIPS 2025][Medical Imaging][small data evaluation] This paper systematically compares MLLMs (e.g., Gemini, Qwen2.5-VL) and vision encoder + SVM pipelines on the NeWT ecological classification benchmark across the "sm…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - small data evaluation
-  - multimodal large language models
-  - vision encoders
-  - SVM
-  - pretraining strategies
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "small data evaluation"
+  - "multimodal large language models"
+  - "vision encoders"
+  - "SVM"
+  - "pretraining strategies"
 date: 2026-05-08
 content_hash: 485593713dbd6646
 ---

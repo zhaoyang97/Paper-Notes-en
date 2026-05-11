@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] When One Modality Rules Them All: Backdoor Modality Collapse in Multimodal Diffusion Models
 description: >-
-  [ICLR 2026][Image Generation][backdoor attack] This paper is the first to reveal and systematically study "backdoor modality collapse" in multimodal diffusion models — a phenomenon where the backdoor effect degenerates to rely on a single modality (typically text) during multimodal backdoor attacks. Two novel Shapley-value-based metrics, TMA and CTI, are proposed to quantify modality contribution and cross-modal interaction, uncovering a "winner-takes-all" dynamic and negative interaction.
+  [ICLR 2026][Image Generation][backdoor attack] This paper is the first to reveal and systematically study "backdoor modality collapse" in multimodal diffusion models — a phenomenon where the backdoor effect degenerates t…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - backdoor attack
-  - modality collapse
-  - multimodal diffusion
-  - Shapley value
-  - trigger interaction
+  - "ICLR 2026"
+  - "Image Generation"
+  - "backdoor attack"
+  - "modality collapse"
+  - "multimodal diffusion"
+  - "Shapley value"
+  - "trigger interaction"
 date: 2026-05-08
 content_hash: 1cd8cc87ff25994e
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Emergence and Scaling Laws in SGD Learning of Shallow Neural Networks
 description: >-
-  [NeurIPS 2025][Optimization][scaling laws] This paper provides a precise analysis of online SGD learning of additive models (sums of single-index functions) in shallow neural networks, proving that the learning of each teacher neuron exhibits a sharp phase transition (emergence), and that the superposition of many such transition curves across different timescales naturally produces a smooth power-law scaling law.
+  [NeurIPS 2025][Optimization][scaling laws] This paper provides a precise analysis of online SGD learning of additive models (sums of single-index functions) in shallow neural networks…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - scaling laws
-  - emergence
-  - SGD
-  - shallow neural networks
-  - multi-index model
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "scaling laws"
+  - "emergence"
+  - "SGD"
+  - "shallow neural networks"
+  - "multi-index model"
 date: 2026-05-08
 content_hash: e9ae5be87931b9f9
 ---

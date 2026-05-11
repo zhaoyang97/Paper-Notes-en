@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ProPL: Universal Semi-Supervised Ultrasound Image Segmentation via Prompt-Guided Pseudo-Labeling
 description: >-
-  [AAAI 2026][Medical Imaging][universal segmentation] ProPL is proposed as a framework that, for the first time, achieves universal semi-supervised ultrasound image segmentation via a shared visual encoder, prompt-guided dual decoders, and uncertainty-driven pseudo-label calibration. With only 1/16 labeled data across 5 organs and 8 tasks, it surpasses fully supervised methods by 5.18% mDice.
+  [AAAI 2026][Medical Imaging][universal segmentation] ProPL is proposed as a framework that, for the first time, achieves universal semi-supervised ultrasound image segmentation via a shared visual encoder…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - universal segmentation
-  - semi-supervised learning
-  - pseudo-labeling
-  - prompt guidance
-  - ultrasound imaging
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "universal segmentation"
+  - "semi-supervised learning"
+  - "pseudo-labeling"
+  - "prompt guidance"
+  - "ultrasound imaging"
 date: 2026-05-08
 content_hash: 0acafa795bfe3f95
 ---

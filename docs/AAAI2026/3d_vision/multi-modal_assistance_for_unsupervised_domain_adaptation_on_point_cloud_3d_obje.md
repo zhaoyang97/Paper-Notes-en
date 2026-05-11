@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multi-Modal Assistance for Unsupervised Domain Adaptation on Point Cloud 3D Object Detection
 description: >-
-  [AAAI 2026][3D Vision][Unsupervised Domain Adaptation] This paper proposes MMAssist, which leverages image and text features as "bridges" to align 3D features between the source and target domains, while incorporating 2D detection results to enhance pseudo-label quality, achieving significant improvements in LiDAR-based 3D unsupervised domain adaptation object detection.
+  [AAAI 2026][3D Vision][Unsupervised Domain Adaptation] This paper proposes MMAssist, which leverages image and text features as "bridges" to align 3D features between the source and target domains…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - Unsupervised Domain Adaptation
-  - 3D Object Detection
-  - Multi-Modal Fusion
-  - Point Cloud
-  - Pseudo Labels
+  - "AAAI 2026"
+  - "3D Vision"
+  - "Unsupervised Domain Adaptation"
+  - "3D Object Detection"
+  - "Multi-Modal Fusion"
+  - "Point Cloud"
+  - "Pseudo Labels"
 date: 2026-05-08
 content_hash: 2cb51b830279f756
 ---

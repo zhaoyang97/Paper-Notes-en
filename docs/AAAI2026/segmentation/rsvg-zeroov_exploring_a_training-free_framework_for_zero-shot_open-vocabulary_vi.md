@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RSVG-ZeroOV: Exploring a Training-Free Framework for Zero-Shot Open-Vocabulary Visual Grounding in Remote Sensing Images
 description: >-
-  [AAAI 2026][Segmentation][Remote sensing visual grounding] This paper proposes RSVG-ZeroOV, a training-free framework that integrates cross-attention maps from a VLM and self-attention maps from a diffusion model via an "Overview-Focus-Evolve" three-stage strategy, enabling zero-shot open-vocabulary visual grounding in remote sensing images.
+  [AAAI 2026][Segmentation][Remote sensing visual grounding] This paper proposes RSVG-ZeroOV, a training-free framework that integrates cross-attention maps from a VLM and self-attention maps from a diffusion model via an…
 tags:
-  - AAAI 2026
-  - Segmentation
-  - Remote sensing visual grounding
-  - zero-shot
-  - open-vocabulary
-  - diffusion model
-  - training-free
+  - "AAAI 2026"
+  - "Segmentation"
+  - "Remote sensing visual grounding"
+  - "zero-shot"
+  - "open-vocabulary"
+  - "diffusion model"
+  - "training-free"
 date: 2026-05-08
 content_hash: 1aab191448490e09
 ---

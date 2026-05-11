@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] ReFeed: Retrieval Feedback-Guided Dataset Construction for Style-Aware Query Rewriting
 description: >-
-  [AAAI 2026][query rewriting] This paper proposes a retrieval feedback-driven dataset construction framework that automatically builds high-quality style-aware query rewriting datasets through a closed-loop pipeline of three steps: identifying retrieval failure cases, LLM-based stylistic rewriting, and re-retrieval verification. The resulting dataset provides a data foundation for training retrieval-aligned rewriting models.
+  [AAAI 2026][Information Retrieval & RAG][query rewriting] This paper proposes a retrieval feedback-driven dataset construction framework that automatically builds high-quality style-aware query rewriting datasets through…
 tags:
-  - AAAI 2026
-  - query rewriting
-  - retrieval feedback
-  - style-aware
-  - data-centric IR
-  - RAG
+  - "AAAI 2026"
+  - "Information Retrieval & RAG"
+  - "query rewriting"
+  - "retrieval feedback"
+  - "style-aware"
+  - "data-centric IR"
+  - "RAG"
 date: 2026-05-08
 content_hash: 012b1725395e6367
 ---

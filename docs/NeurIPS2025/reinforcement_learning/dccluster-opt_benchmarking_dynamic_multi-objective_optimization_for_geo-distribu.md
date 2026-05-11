@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] DCcluster-Opt: Benchmarking Dynamic Multi-Objective Optimization for Geo-Distributed Data Center Workloads
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Data Center Optimization] This paper proposes DCcluster-Opt, an open-source high-fidelity simulation benchmark platform for geo-distributed data centers. It integrates real-world datasets (carbon intensity, electricity prices, weather, etc.) and physics-based models to support reinforcement learning research on dynamic multi-objective workload scheduling.
+  [NeurIPS 2025][Reinforcement Learning][Data Center Optimization] This paper proposes DCcluster-Opt, an open-source high-fidelity simulation benchmark platform for geo-distributed data centers. It integrates real-world da…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Data Center Optimization
-  - Multi-Objective Optimization
-  - Carbon Emissions
-  - Workload Scheduling
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Data Center Optimization"
+  - "Multi-Objective Optimization"
+  - "Carbon Emissions"
+  - "Workload Scheduling"
 date: 2026-05-08
 content_hash: bcc50df54d329903
 ---

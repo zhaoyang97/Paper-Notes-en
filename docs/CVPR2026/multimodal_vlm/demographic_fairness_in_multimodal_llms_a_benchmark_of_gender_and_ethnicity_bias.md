@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Demographic Fairness in Multimodal LLMs: A Benchmark of Gender and Ethnicity Bias in Face Verification
 description: >-
-  [CVPR 2026][Multimodal VLM][multimodal large language models] This paper presents the first systematic evaluation of demographic fairness in face verification across 9 open-source MLLMs, measuring gender and ethnicity bias on the IJB-C and RFW benchmarks using 4 FMR-based fairness metrics, and finds that bias patterns in MLLMs differ substantially from those in traditional face recognition systems.
+  [CVPR 2026][Multimodal VLM][multimodal large language models] This paper presents the first systematic evaluation of demographic fairness in face verification across 9 open-source MLLMs…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - multimodal large language models
-  - face verification
-  - demographic fairness
-  - bias benchmark
-  - ethnicity and gender bias
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "multimodal large language models"
+  - "face verification"
+  - "demographic fairness"
+  - "bias benchmark"
+  - "ethnicity and gender bias"
 date: 2026-05-08
 content_hash: f5903b43394d42e8
 ---

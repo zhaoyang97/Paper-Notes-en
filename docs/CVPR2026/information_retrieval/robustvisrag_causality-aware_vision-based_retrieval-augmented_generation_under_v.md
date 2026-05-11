@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] RobustVisRAG: Causality-Aware Vision-Based Retrieval-Augmented Generation under Visual Degradations
 description: >-
-  [CVPR 2026][VisRAG] This paper proposes RobustVisRAG, a causality-guided dual-path framework that decouples semantic–degradation entanglement in VisRAG by capturing degradation signals via a non-causal path and learning clean semantics via a causal path. Under real-world degradation conditions, the framework achieves improvements of 7.35%, 6.35%, and 12.40% in retrieval, generation, and end-to-end performance, respectively, while preserving performance on clean data.
+  [CVPR 2026][Information Retrieval & RAG][VisRAG] This paper proposes RobustVisRAG, a causality-guided dual-path framework that decouples semantic–degradation entanglement in VisRAG by capturing degradation signals via a…
 tags:
-  - CVPR 2026
-  - VisRAG
-  - Robustness
-  - Causal Inference
-  - Visual Degradation
-  - Dual-Path Encoding
+  - "CVPR 2026"
+  - "Information Retrieval & RAG"
+  - "VisRAG"
+  - "Robustness"
+  - "Causal Inference"
+  - "Visual Degradation"
+  - "Dual-Path Encoding"
 date: 2026-05-08
 content_hash: faa1ff23b9993e68
 ---

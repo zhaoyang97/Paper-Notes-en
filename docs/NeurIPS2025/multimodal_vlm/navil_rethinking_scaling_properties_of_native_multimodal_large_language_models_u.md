@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] NaViL: Rethinking Scaling Properties of Native Multimodal Large Language Models under Data Constraints
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Native MLLM] This paper systematically investigates the design space and scaling properties of native multimodal large language models (Native MLLMs) under data constraints. It identifies a positive log-linear optimal scaling relationship between the visual encoder and the LLM, and based on this finding proposes NaViL, which achieves competitive performance with state-of-the-art MLLMs using only approximately 600 million pre-training image-text pairs.
+  [NeurIPS 2025][Multimodal VLM][Native MLLM] This paper systematically investigates the design space and scaling properties of native multimodal large language models (Native MLLMs) under data constraints. It identifies a…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Native MLLM
-  - Scaling Law
-  - Visual Encoder
-  - Mixture-of-Experts
-  - End-to-End Training
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Native MLLM"
+  - "Scaling Law"
+  - "Visual Encoder"
+  - "Mixture-of-Experts"
+  - "End-to-End Training"
 date: 2026-05-08
 content_hash: 57636cbd0f4f0138
 ---

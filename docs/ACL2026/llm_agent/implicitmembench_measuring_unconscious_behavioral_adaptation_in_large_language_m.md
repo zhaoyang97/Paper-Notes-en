@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ImplicitMemBench: Measuring Unconscious Behavioral Adaptation in Large Language Models
 description: >-
-  [ACL 2026][LLM Agent][implicit memory] This paper introduces ImplicitMemBench, the first benchmark for systematically evaluating implicit memory in LLMs. It comprises 300 test items across three cognitive paradigms—procedural memory, priming effects, and classical conditioning—and reveals severe limitations across 17 models: the best-performing model achieves only 66% overall accuracy, far below the human baseline.
+  [ACL 2026][LLM Agent][implicit memory] This paper introduces ImplicitMemBench, the first benchmark for systematically evaluating implicit memory in LLMs. It comprises 300 test items across three cognitive paradigms—proce…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - implicit memory
-  - behavioral adaptation
-  - procedural memory
-  - priming effect
-  - classical conditioning
+  - "ACL 2026"
+  - "LLM Agent"
+  - "implicit memory"
+  - "behavioral adaptation"
+  - "procedural memory"
+  - "priming effect"
+  - "classical conditioning"
 date: 2026-05-08
 content_hash: 746a12dd351f2215
 ---

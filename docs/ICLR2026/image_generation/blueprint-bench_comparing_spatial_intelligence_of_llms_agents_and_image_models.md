@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Blueprint-Bench: Comparing Spatial Intelligence of LLMs, Agents and Image Models
 description: >-
-  [ICLR 2026][Image Generation][Spatial Intelligence] Blueprint-Bench evaluates AI spatial reasoning through the task of "generating 2D floorplans from apartment interior photographs": the inputs (photos) are fully within the training distribution, while the task (spatial reconstruction) is out-of-distribution. The benchmark evaluates LLMs including GPT-5, Claude 4 Opus, Gemini 2.5 Pro, and Grok-4; image generation models including GPT-Image and NanoBanana; and agent systems including Codex CLI and Claude Code. Results show that the vast majority of models perform at or below a random baseline, revealing a systematic blind spot in current AI spatial intelligence.
+  [ICLR 2026][Image Generation][Spatial Intelligence] Blueprint-Bench evaluates AI spatial reasoning through the task of "generating 2D floorplans from apartment interior photographs": the inputs (photos) are fully within…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Spatial Intelligence
-  - Floorplan Generation
-  - Benchmark
-  - LLM Evaluation
-  - Image Generation Model Evaluation
-  - AI Safety
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Spatial Intelligence"
+  - "Floorplan Generation"
+  - "Benchmark"
+  - "LLM Evaluation"
+  - "Image Generation Model Evaluation"
+  - "AI Safety"
 date: 2026-05-08
 content_hash: 664526763e5fbbad
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Leveraging Depth and Language for Open-Vocabulary Domain-Generalized Semantic Segmentation
 description: >-
-  [NeurIPS 2025][Autonomous Driving][open-vocabulary segmentation] This paper proposes Vireo, the first single-stage framework that unifies open-vocabulary semantic segmentation (OVSS) and domain-generalized semantic segmentation (DGSS). By introducing GeoText Query to fuse depth-geometric features with linguistic cues, Vireo achieves state-of-the-art performance under both extreme environmental conditions and on unseen categories.
+  [NeurIPS 2025][Autonomous Driving][open-vocabulary segmentation] This paper proposes Vireo, the first single-stage framework that unifies open-vocabulary semantic segmentation (OVSS) and domain-generalized semantic segme…
 tags:
-  - NeurIPS 2025
-  - Autonomous Driving
-  - open-vocabulary segmentation
-  - domain generalization
-  - depth estimation
-  - visual foundation models
-  - semantic segmentation
+  - "NeurIPS 2025"
+  - "Autonomous Driving"
+  - "open-vocabulary segmentation"
+  - "domain generalization"
+  - "depth estimation"
+  - "visual foundation models"
+  - "semantic segmentation"
 date: 2026-05-08
 content_hash: 96417e6056feea9f
 ---

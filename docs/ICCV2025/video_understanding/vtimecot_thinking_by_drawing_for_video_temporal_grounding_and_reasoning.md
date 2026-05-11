@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VTimeCoT: Thinking by Drawing for Video Temporal Grounding and Reasoning
 description: >-
-  [ICCV 2025][Video Understanding][video temporal grounding] > This paper proposes VTimeCoT, a training-free visual-temporal chain-of-thought framework that overlays a synchronized progress bar and highlights key segments at the bottom of video frames, enabling multimodal large language models (MLLMs) to accurately perceive timestamps. The approach substantially outperforms GPT-4o and Qwen2VL-7B baselines on temporal grounding and reasoning QA tasks.
+  [ICCV 2025][Video Understanding][video temporal grounding] > This paper proposes VTimeCoT, a training-free visual-temporal chain-of-thought framework that overlays a synchronized progress bar and highlights key segments…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - video temporal grounding
-  - chain-of-thought
-  - progress bar
-  - visual prompt
-  - training-free
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "video temporal grounding"
+  - "chain-of-thought"
+  - "progress bar"
+  - "visual prompt"
+  - "training-free"
 date: 2026-05-08
 content_hash: d93d335b97f072fd
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mean-Field Sampling for Cooperative Multi-Agent Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][MARL] This paper proposes the SUBSAMPLE-MFQ algorithm, which randomly samples $k$ agents from $n$ to perform mean-field Q-learning, reducing the sample complexity of multi-agent reinforcement learning from $\text{poly}(n)$ to $\text{poly}(k)$. The resulting optimality gap is only $\tilde{O}(1/\sqrt{k})$ (independent of $n$), achieving exponential speedup over standard mean-field MARL when $k = O(\log n)$.
+  [NeurIPS 2025][Reinforcement Learning][MARL] This paper proposes the SUBSAMPLE-MFQ algorithm, which randomly samples $k$ agents from $n$ to perform mean-field Q-learning…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - MARL
-  - mean-field
-  - subsampling
-  - Q-learning
-  - cooperative
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "MARL"
+  - "mean-field"
+  - "subsampling"
+  - "Q-learning"
+  - "cooperative"
 date: 2026-05-08
 content_hash: b65e74e9dfbe0118
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DualSpeechLM: Towards Unified Speech Understanding and Generation via Dual Speech Token Modeling
 description: >-
-  [AAAI 2026][Audio & Speech][speech large language model] This paper proposes DualSpeechLM, a framework that extracts high-level semantic tokens via an understanding-driven speech tokenizer (USTokenizer) as LLM input and uses acoustic tokens as output, jointly optimizing speech understanding and generation within a single end-to-end framework.
+  [AAAI 2026][Audio & Speech][speech large language model] This paper proposes DualSpeechLM, a framework that extracts high-level semantic tokens via an understanding-driven speech tokenizer (USTokenizer) as LLM input and…
 tags:
-  - AAAI 2026
+  - "AAAI 2026"
   - "Audio & Speech"
-  - speech large language model
-  - dual token modeling
-  - speech understanding and generation
-  - speech tokenizer
-  - unified framework
+  - "speech large language model"
+  - "dual token modeling"
+  - "speech understanding and generation"
+  - "speech tokenizer"
+  - "unified framework"
 date: 2026-05-08
 content_hash: bf1a8e2a45d4273e
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ViSpec: Accelerating Vision-Language Models with Vision-Aware Speculative Decoding
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Speculative decoding] To address the difficulty of draft models in handling redundant visual tokens during VLM speculative decoding, this paper proposes ViSpec, a framework that achieves significant acceleration (up to 3.22×) in VLM speculative decoding for the first time, via a visual adapter for image token compression, global visual feature injection, and synthetic training data generation.
+  [NeurIPS 2025][Multimodal VLM][Speculative decoding] To address the difficulty of draft models in handling redundant visual tokens during VLM speculative decoding, this paper proposes ViSpec…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Speculative decoding
-  - VLM acceleration
-  - image token compression
-  - draft model
-  - inference acceleration
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Speculative decoding"
+  - "VLM acceleration"
+  - "image token compression"
+  - "draft model"
+  - "inference acceleration"
 date: 2026-05-08
 content_hash: 60d3c3acde6f5777
 ---

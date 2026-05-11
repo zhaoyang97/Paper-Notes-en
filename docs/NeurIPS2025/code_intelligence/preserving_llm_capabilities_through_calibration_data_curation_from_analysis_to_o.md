@@ -2,15 +2,16 @@
 title: >-
   [Paper Note] Preserving LLM Capabilities through Calibration Data Curation: From Analysis to Optimization
 description: >-
-  [NeurIPS 2025][LLM compression] This paper systematically investigates how compositional properties of calibration data (sequence length, sample size, source, format) and domain correspondence affect capability preservation after LLM compression. It finds that representativeness and diversity in the activation space are the fundamental determinants of calibration data quality, and proposes a three-stage calibration data curation framework, COLA.
+  [NeurIPS 2025][Code Intelligence][LLM compression] This paper systematically investigates how compositional properties of calibration data (sequence length, sample size, source…
 tags:
-  - NeurIPS 2025
-  - LLM compression
-  - calibration data
-  - post-training quantization
-  - post-training pruning
-  - capability preservation
-  - activation space
+  - "NeurIPS 2025"
+  - "Code Intelligence"
+  - "LLM compression"
+  - "calibration data"
+  - "post-training quantization"
+  - "post-training pruning"
+  - "capability preservation"
+  - "activation space"
 date: 2026-05-08
 content_hash: 9ed626c90a272cf0
 ---

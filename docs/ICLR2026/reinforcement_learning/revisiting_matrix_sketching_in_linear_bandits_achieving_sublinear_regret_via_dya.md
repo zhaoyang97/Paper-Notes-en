@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Revisiting Matrix Sketching in Linear Bandits: Achieving Sublinear Regret via Dyadic Block Sketching
 description: >-
-  [ICLR 2026][Reinforcement Learning][Linear Bandits] This paper identifies a fundamental flaw in existing sketch-based linear bandit methods: when the spectrum of the streaming matrix has a heavy tail, these methods degenerate to linear regret. To address this, the paper proposes the Dyadic Block Sketching (DBS) framework, which dynamically doubles the sketch size to control the global approximation error within a user-specified parameter $\epsilon$. The resulting algorithm guarantees sublinear regret without requiring prior knowledge of the spectral structure of the streaming matrix, and adaptively recovers the computational efficiency of single-scale methods when the spectrum is favorable.
+  [ICLR 2026][Reinforcement Learning][Linear Bandits] This paper identifies a fundamental flaw in existing sketch-based linear bandit methods: when the spectrum of the streaming matrix has a heavy tail…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Linear Bandits
-  - Matrix Sketching
-  - Frequent Directions
-  - Multi-Scale Sketching
-  - Sublinear Regret
-  - Dyadic Block Sketching
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Linear Bandits"
+  - "Matrix Sketching"
+  - "Frequent Directions"
+  - "Multi-Scale Sketching"
+  - "Sublinear Regret"
+  - "Dyadic Block Sketching"
 date: 2026-05-08
 content_hash: 1470d84ac607f6fb
 ---

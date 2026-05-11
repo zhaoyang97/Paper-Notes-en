@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Alignment of Large Language Models with Constrained Learning
 description: >-
-  [NeurIPS 2025][LLM Alignment][Constrained Alignment] This paper proposes CAID (Constrained Alignment via Iterative Dualization), an iterative dualization method that alternately updates the LLM policy and dual variables. It theoretically establishes that the dual approach can identify the optimal constrained LLM policy (up to a parametrization gap), and empirically demonstrates significant improvements in constraint satisfaction and the helpfulness–safety trade-off on the PKU-SafeRLHF dataset.
+  [NeurIPS 2025][LLM Alignment][Constrained Alignment] This paper proposes CAID (Constrained Alignment via Iterative Dualization), an iterative dualization method that alternately updates the LLM policy and dual variables.…
 tags:
-  - NeurIPS 2025
-  - LLM Alignment
-  - Constrained Alignment
-  - Lagrangian Duality
-  - Multi-objective Optimization
-  - Safe RLHF
-  - DPO
+  - "NeurIPS 2025"
+  - "LLM Alignment"
+  - "Constrained Alignment"
+  - "Lagrangian Duality"
+  - "Multi-objective Optimization"
+  - "Safe RLHF"
+  - "DPO"
 date: 2026-05-08
 content_hash: 41ebcb5bc9b36453
 ---

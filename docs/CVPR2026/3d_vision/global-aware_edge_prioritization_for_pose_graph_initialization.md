@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Global-Aware Edge Prioritization for Pose Graph Initialization
 description: >-
-  [CVPR 2026][3D Vision][Structure-from-Motion] This paper proposes a GNN-based global edge prioritization method that upgrades pose graph initialization from independent pairwise image retrieval to globally structure-aware edge ranking combined with multi-minimum-spanning-tree construction, achieving significant improvements in SfM reconstruction accuracy under extremely sparse settings.
+  [CVPR 2026][3D Vision][Structure-from-Motion] This paper proposes a GNN-based global edge prioritization method that upgrades pose graph initialization from independent pairwise image retrieval to globally structure-awar…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Structure-from-Motion
-  - Pose Graph Initialization
-  - Graph Neural Network
-  - Minimum Spanning Tree
-  - Edge Ranking
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Structure-from-Motion"
+  - "Pose Graph Initialization"
+  - "Graph Neural Network"
+  - "Minimum Spanning Tree"
+  - "Edge Ranking"
 date: 2026-05-08
 content_hash: 549d2157aa05574e
 ---

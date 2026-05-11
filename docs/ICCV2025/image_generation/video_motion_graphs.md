@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Video Motion Graphs
 description: >-
-  [ICCV 2025][Image Generation][Video Motion Graphs] Video Motion Graphs proposes a retrieval-augmented generation system for human motion video synthesis. It constructs a motion graph from reference videos and performs conditioned path search to obtain keyframes, then employs HMInterp—a dual-branch diffusion-based frame interpolation model combining skeleton guidance from a Motion Diffusion Model and progressive condition training—to seamlessly connect discontinuous frames. The system supports multiple conditioning signals (music, speech, action labels) and significantly outperforms both generative and retrieval-based baselines in human motion video quality.
+  [ICCV 2025][Image Generation][Video Motion Graphs] Video Motion Graphs proposes a retrieval-augmented generation system for human motion video synthesis. It constructs a motion graph from reference videos and performs co…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Video Motion Graphs
-  - Video Frame Interpolation
-  - Motion Diffusion Model
-  - Retrieval-based Video Generation
-  - Human Motion Video
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Video Motion Graphs"
+  - "Video Frame Interpolation"
+  - "Motion Diffusion Model"
+  - "Retrieval-based Video Generation"
+  - "Human Motion Video"
 date: 2026-05-08
 content_hash: 5f7b914c0df6916c
 ---

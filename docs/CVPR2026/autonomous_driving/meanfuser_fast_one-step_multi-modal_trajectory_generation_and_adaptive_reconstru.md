@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MeanFuser: Fast One-Step Multi-Modal Trajectory Generation and Adaptive Reconstruction via MeanFlow for End-to-End Autonomous Driving
 description: >-
-  [CVPR 2026][Autonomous Driving][End-to-end planning] MeanFuser is an end-to-end autonomous driving framework that replaces discrete trajectory vocabulary with Gaussian mixture noise for continuous multi-modal trajectory modeling, leverages the MeanFlow Identity for error-free one-step sampling, and introduces an Adaptive Reconstruction Module (ARM) that implicitly decides between selecting an existing proposal and reconstructing a new trajectory. On NAVSIM, using only RGB input with a ResNet-34 backbone, it achieves 89.0 PDMS at 59 FPS.
+  [CVPR 2026][Autonomous Driving][End-to-end planning] MeanFuser is an end-to-end autonomous driving framework that replaces discrete trajectory vocabulary with Gaussian mixture noise for continuous multi-modal trajectory…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - End-to-end planning
-  - MeanFlow
-  - Gaussian mixture noise
-  - one-step sampling
-  - adaptive trajectory reconstruction
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "End-to-end planning"
+  - "MeanFlow"
+  - "Gaussian mixture noise"
+  - "one-step sampling"
+  - "adaptive trajectory reconstruction"
 date: 2026-05-08
 content_hash: 139bb20bfda06143
 ---

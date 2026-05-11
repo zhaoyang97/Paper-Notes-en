@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Image as an IMU: Estimating Camera Motion from a Single Motion-Blurred Image
 description: >-
-  [ICCV 2025][3D Vision][motion blur] This paper reframes motion blur from an "unwanted artifact" into a "valuable motion cue." By predicting a dense optical flow field and a monocular depth map from a single blurred image, and subsequently recovering the camera's 6DoF instantaneous velocity via a differentiable least-squares solver, the method achieves motion estimation accuracy comparable to or surpassing that of an IMU, with real-time performance at 30 FPS.
+  [ICCV 2025][3D Vision][motion blur] This paper reframes motion blur from an "unwanted artifact" into a "valuable motion cue." By predicting a dense optical flow field and a monocular depth map from a single blurred image…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - motion blur
-  - camera motion estimation
-  - 6DoF velocity estimation
-  - single-image motion estimation
-  - IMU alternative
+  - "ICCV 2025"
+  - "3D Vision"
+  - "motion blur"
+  - "camera motion estimation"
+  - "6DoF velocity estimation"
+  - "single-image motion estimation"
+  - "IMU alternative"
 date: 2026-05-08
 content_hash: 35af3db7c115b480
 ---

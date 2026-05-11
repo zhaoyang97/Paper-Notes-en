@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] StyleKeeper: Prevent Content Leakage using Negative Visual Query Guidance
 description: >-
-  [ICCV 2025][Image Generation][visual style prompt] This paper proposes **Negative Visual Query Guidance (NVQG)**, a training-free method that suppresses content leakage by injecting the reference image's queries as a negative guidance signal in self-attention layers. The approach achieves high-quality visual style prompting and outperforms existing methods in both style similarity and text alignment.
+  [ICCV 2025][Image Generation][visual style prompt] This paper proposes **Negative Visual Query Guidance (NVQG)**, a training-free method that suppresses content leakage by injecting the reference image's queries as a neg…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - visual style prompt
-  - content leakage
-  - Classifier-Free Guidance
-  - self-attention feature swapping
-  - negative visual query guidance
-  - training-free style transfer
-  - diffusion models
+  - "ICCV 2025"
+  - "Image Generation"
+  - "visual style prompt"
+  - "content leakage"
+  - "Classifier-Free Guidance"
+  - "self-attention feature swapping"
+  - "negative visual query guidance"
+  - "training-free style transfer"
+  - "diffusion models"
 date: 2026-05-08
 content_hash: 242c74305f857379
 ---

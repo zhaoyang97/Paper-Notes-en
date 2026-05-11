@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SimpleVQA: Multimodal Factuality Evaluation for Multimodal Large Language Models
 description: >-
-  [ICCV 2025][Multimodal VLM][factuality evaluation] SimpleVQA is the first VQA benchmark designed for comprehensive multimodal factuality evaluation of MLLMs. It spans 9 task types and 9 thematic domains, and employs a short-answer design with deterministic references alongside an LLM-as-a-judge scoring protocol to systematically assess the factual capabilities of 18 MLLMs and 8 text-only LLMs.
+  [ICCV 2025][Multimodal VLM][factuality evaluation] SimpleVQA is the first VQA benchmark designed for comprehensive multimodal factuality evaluation of MLLMs. It spans 9 task types and 9 thematic domains…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - factuality evaluation
-  - multimodal benchmark
-  - visual question answering
-  - large language models
-  - hallucination detection
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "factuality evaluation"
+  - "multimodal benchmark"
+  - "visual question answering"
+  - "large language models"
+  - "hallucination detection"
 date: 2026-05-08
 content_hash: b3e84e7b868a5739
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PulseMind: A Multi-Modal Medical Model for Real-World Clinical Diagnosis
 description: >-
-  [AAAI 2026][Medical Imaging][Medical multimodal model] This paper proposes PulseMind, a multimodal medical diagnostic model comprising three core contributions: MediScope, a large-scale multi-turn diagnostic dialogue dataset; PulseMind Benchmark, a multi-dimensional clinical dialogue evaluation benchmark; and CRPO, a comparison-based reinforcement policy optimization method. The system achieves superior performance in real-world clinical diagnostic dialogue scenarios.
+  [AAAI 2026][Medical Imaging][Medical multimodal model] This paper proposes PulseMind, a multimodal medical diagnostic model comprising three core contributions: MediScope…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Medical multimodal model
-  - multi-turn diagnostic dialogue
-  - reinforcement learning
-  - comparative reward
-  - clinical evaluation benchmark
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Medical multimodal model"
+  - "multi-turn diagnostic dialogue"
+  - "reinforcement learning"
+  - "comparative reward"
+  - "clinical evaluation benchmark"
 date: 2026-05-08
 content_hash: e03c9fb4d9d59ebc
 ---

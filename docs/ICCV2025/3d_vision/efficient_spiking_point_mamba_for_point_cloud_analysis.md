@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Efficient Spiking Point Mamba for Point Cloud Analysis
 description: >-
-  [3D Vision] SPM (Spiking Point Mamba) proposes the first Mamba-based 3D spiking neural network framework. Through Hierarchical Dynamic Encoding (HDE) and a Spiking Mamba Block (SMB), it achieves over 3.5× energy reduction while improving accuracy by 6–7% over the previous state-of-the-art SNN method on ScanObjectNN.
+  [3D Vision] SPM (Spiking Point Mamba) proposes the first Mamba-based 3D spiking neural network framework. Through Hierarchical Dynamic Encoding (HDE) and a Spiking Mamba Block (SMB)…
 tags:
-  - 3D Vision
+  - "3D Vision"
 date: 2026-05-08
 content_hash: bdb4aebf97d55380
 ---

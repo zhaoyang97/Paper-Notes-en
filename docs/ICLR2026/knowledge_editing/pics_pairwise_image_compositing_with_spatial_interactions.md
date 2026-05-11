@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PICS: Pairwise Image Compositing with Spatial Interactions
 description: >-
-  [ICLR 2026][Knowledge Editing][image compositing] This paper proposes PICS—a parallel pairwise image compositing method that simultaneously composes two objects in a single inference pass via mask-guided MoE and adaptive α-blending within an Interaction Transformer, explicitly modeling spatial interactions such as occlusion and contact, and consistently outperforming existing sequential compositing methods.
+  [ICLR 2026][Knowledge Editing][image compositing] This paper proposes PICS—a parallel pairwise image compositing method that simultaneously composes two objects in a single inference pass via mask-guided MoE and adaptive…
 tags:
-  - ICLR 2026
-  - Knowledge Editing
-  - image compositing
-  - diffusion model
-  - Mixture-of-Experts
-  - spatial interaction
-  - α-blending
+  - "ICLR 2026"
+  - "Knowledge Editing"
+  - "image compositing"
+  - "diffusion model"
+  - "Mixture-of-Experts"
+  - "spatial interaction"
+  - "α-blending"
 date: 2026-05-08
 content_hash: 04dfd3951b413699
 ---

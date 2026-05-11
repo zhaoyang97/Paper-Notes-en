@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Practical Guide for Incorporating Symmetry in Diffusion Policy
 description: >-
-  [NeurIPS 2025][LLM Pretraining][Diffusion Policy] This paper presents a practical guide for incorporating symmetry into diffusion policies. Through three simple and composable methods — invariant representations (relative trajectory actions + eye-in-hand perception), equivariant visual encoders, and Frame Averaging — the proposed approach achieves performance on par with or exceeding fully equivariant diffusion policies across 12 MimicGen tasks, while substantially reducing implementation complexity.
+  [NeurIPS 2025][LLM Pretraining][Diffusion Policy] This paper presents a practical guide for incorporating symmetry into diffusion policies. Through three simple and composable methods — invariant representations (relativ…
 tags:
-  - NeurIPS 2025
-  - LLM Pretraining
-  - Diffusion Policy
-  - Equivariance
-  - SE(3) Invariance
-  - Frame Averaging
-  - Robot Manipulation
+  - "NeurIPS 2025"
+  - "LLM Pretraining"
+  - "Diffusion Policy"
+  - "Equivariance"
+  - "SE(3) Invariance"
+  - "Frame Averaging"
+  - "Robot Manipulation"
 date: 2026-05-08
 content_hash: 8021a2e417c3b3d7
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Transformer Key-Value Memories Are Nearly as Interpretable as Sparse Autoencoders
 description: >-
-  [NeurIPS 2025][Sparse Autoencoders] This paper systematically compares the interpretability of features derived from Transformer feed-forward (FF) layer key-value memories with those learned by sparse autoencoders (SAEs), finding the two approaches perform comparably on existing evaluation metrics—with FF-KV outperforming SAEs on certain dimensions—thereby questioning the necessity of SAEs as a feature discovery tool.
+  [NeurIPS 2025][Interpretability][Sparse Autoencoders] This paper systematically compares the interpretability of features derived from Transformer feed-forward (FF) layer key-value memories with those learned by sparse a…
 tags:
-  - NeurIPS 2025
-  - Sparse Autoencoders
-  - Feed-Forward Layers
-  - Key-Value Memories
-  - Interpretability
-  - Feature Discovery
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "Sparse Autoencoders"
+  - "Feed-Forward Layers"
+  - "Key-Value Memories"
+  - "Feature Discovery"
 date: 2026-05-08
 content_hash: 0299c78830e19d91
 ---

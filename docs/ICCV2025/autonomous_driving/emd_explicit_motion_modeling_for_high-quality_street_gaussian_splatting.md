@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EMD: Explicit Motion Modeling for High-Quality Street Gaussian Splatting
 description: >-
-  [ICCV 2025][Autonomous Driving][3D Gaussian Splatting] This paper proposes the Explicit Motion Decomposition (EMD) module, which models the motion characteristics of each Gaussian primitive via learnable motion embeddings and a dual-scale deformation framework. As a plug-and-play module, EMD integrates seamlessly into both self-supervised and supervised street-view Gaussian splatting methods, achieving state-of-the-art performance under the self-supervised setting on the Waymo and KITTI datasets.
+  [ICCV 2025][Autonomous Driving][3D Gaussian Splatting] This paper proposes the Explicit Motion Decomposition (EMD) module, which models the motion characteristics of each Gaussian primitive via learnable motion embedding…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - 3D Gaussian Splatting
-  - Dynamic Scene Reconstruction
-  - Motion Modeling
-  - Self-Supervised Learning
-  - Street View Simulation
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "3D Gaussian Splatting"
+  - "Dynamic Scene Reconstruction"
+  - "Motion Modeling"
+  - "Self-Supervised Learning"
+  - "Street View Simulation"
 date: 2026-05-08
 content_hash: d3a575e80e8867ef
 ---

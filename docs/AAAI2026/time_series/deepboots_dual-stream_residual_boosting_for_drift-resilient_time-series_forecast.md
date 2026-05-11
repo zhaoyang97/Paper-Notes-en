@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DeepBooTS: Dual-Stream Residual Boosting for Drift-Resilient Time-Series Forecasting
 description: >-
-  [AAAI 2026][Time Series][time series forecasting] This paper proposes DeepBooTS, which leverages bias-variance decomposition theory to demonstrate that weighted ensembling reduces variance and thereby mitigates concept drift. The method introduces a dual-stream residual-decreasing boosting architecture in which each block corrects the residual of the preceding block, achieving an average improvement of 15.8% across multiple datasets.
+  [AAAI 2026][Time Series][time series forecasting] This paper proposes DeepBooTS, which leverages bias-variance decomposition theory to demonstrate that weighted ensembling reduces variance and thereby mitigates concept d…
 tags:
-  - AAAI 2026
-  - Time Series
-  - time series forecasting
-  - concept drift
-  - ensemble learning
-  - residual boosting
-  - bias-variance decomposition
+  - "AAAI 2026"
+  - "Time Series"
+  - "time series forecasting"
+  - "concept drift"
+  - "ensemble learning"
+  - "residual boosting"
+  - "bias-variance decomposition"
 date: 2026-05-08
 content_hash: e96a3233c073fe30
 ---

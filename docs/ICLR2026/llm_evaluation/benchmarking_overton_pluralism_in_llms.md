@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Benchmarking Overton Pluralism in LLMs
 description: >-
-  [ICLR 2026][LLM Evaluation][Overton pluralism] This paper proposes the OvertonBench framework, which formalizes Overton pluralism as a set-coverage metric called OvertonScore through a large-scale human study (1,208 demographically representative U.S. participants, 60 subjective questions, 8 LLMs). All evaluated models score only 0.35–0.41 (theoretical maximum: 1.0), and an automated evaluation tool achieving high correlation with human judgments (ρ=0.88) is constructed.
+  [ICLR 2026][LLM Evaluation][Overton pluralism] This paper proposes the OvertonBench framework, which formalizes Overton pluralism as a set-coverage metric called OvertonScore through a large-scale human study (1…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - Overton pluralism
-  - LLM bias
-  - benchmark
-  - viewpoint coverage
-  - automated evaluation
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Overton pluralism"
+  - "LLM bias"
+  - "benchmark"
+  - "viewpoint coverage"
+  - "automated evaluation"
 date: 2026-05-08
 content_hash: ea95dbc22350ed2b
 ---

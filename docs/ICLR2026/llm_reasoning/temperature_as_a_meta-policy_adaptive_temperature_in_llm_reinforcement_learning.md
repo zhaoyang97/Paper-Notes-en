@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Temperature as a Meta-Policy: Adaptive Temperature in LLM Reinforcement Learning
 description: >-
-  [ICLR 2026][LLM Reasoning][Temperature Scheduling] This paper proposes TAMPO (Temperature Adaptive Meta Policy Optimization), which reframes the sampling temperature as a learnable meta-policy. Through a bilevel loop — an inner loop for LLM policy optimization and an outer loop for adaptively updating the temperature distribution based on trajectory advantage signals — TAMPO requires no additional rollouts and consistently outperforms fixed-temperature baselines on mathematical reasoning benchmarks.
+  [ICLR 2026][LLM Reasoning][Temperature Scheduling] This paper proposes TAMPO (Temperature Adaptive Meta Policy Optimization), which reframes the sampling temperature as a learnable meta-policy. Through a bilevel loop — a…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Temperature Scheduling
-  - Meta-Policy
-  - GRPO
-  - Adaptive Exploration
-  - Mathematical Reasoning
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "Temperature Scheduling"
+  - "Meta-Policy"
+  - "GRPO"
+  - "Adaptive Exploration"
+  - "Mathematical Reasoning"
 date: 2026-05-08
 content_hash: d41841c1e560d0e9
 ---

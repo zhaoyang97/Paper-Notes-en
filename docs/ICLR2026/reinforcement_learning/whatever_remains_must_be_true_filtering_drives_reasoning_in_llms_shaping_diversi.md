@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Whatever Remains Must Be True: Filtering Drives Reasoning in LLMs, Shaping Diversity
 description: >-
-  [ICLR 2026][Reinforcement Learning][α-divergence] This paper proposes the DMVR framework and the α-DPG algorithm. By explicitly defining a target distribution that "filters out incorrect answers" and approximating it via the α-divergence family, the work unifies RLVR (Reverse KL) and rejection sampling fine-tuning (Forward KL), achieving Pareto-optimal performance on the accuracy–coverage frontier for Lean theorem proving.
+  [ICLR 2026][Reinforcement Learning][α-divergence] This paper proposes the DMVR framework and the α-DPG algorithm. By explicitly defining a target distribution that "filters out incorrect answers" and approximating it via…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - α-divergence
-  - distributional matching
-  - RLVR
-  - diversity preservation
-  - theorem proving
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "α-divergence"
+  - "distributional matching"
+  - "RLVR"
+  - "diversity preservation"
+  - "theorem proving"
 date: 2026-05-08
 content_hash: 94b7d0c30df58b35
 ---

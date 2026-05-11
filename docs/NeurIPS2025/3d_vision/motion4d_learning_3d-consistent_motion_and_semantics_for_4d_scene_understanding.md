@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Motion4D: Learning 3D-Consistent Motion and Semantics for 4D Scene Understanding
 description: >-
-  [NeurIPS 2025][3D Vision][4D scene understanding] Motion4D proposes a unified 4D Gaussian splatting framework that incorporates priors from 2D foundation models (semantic masks, point tracking, depth) into 3D representations via an iterative refinement strategy, achieving spatiotemporally consistent motion and semantic modeling. The method significantly outperforms existing approaches on video object segmentation, point tracking, and novel view synthesis tasks.
+  [NeurIPS 2025][3D Vision][4D scene understanding] Motion4D proposes a unified 4D Gaussian splatting framework that incorporates priors from 2D foundation models (semantic masks, point tracking…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - 4D scene understanding
-  - 3D Gaussian splatting
-  - motion estimation
-  - semantic segmentation
-  - video object segmentation
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "4D scene understanding"
+  - "3D Gaussian splatting"
+  - "motion estimation"
+  - "semantic segmentation"
+  - "video object segmentation"
 date: 2026-05-08
 content_hash: 7b3d79d6ea4320df
 ---

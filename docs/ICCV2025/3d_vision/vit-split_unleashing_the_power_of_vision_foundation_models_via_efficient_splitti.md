@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ViT-Split: Unleashing the Power of Vision Foundation Models via Efficient Splitting Heads
 description: >-
-  [ICCV 2025][3D Vision][Vision Foundation Models] Grounded in the key observation that VFM layers can be partitioned into low-level feature extractors and high-level task adapters, this paper proposes ViT-Split, which freezes the VFM backbone and introduces a task head (replicating the last $K_t$ layers) and a prior head (a lightweight CNN aggregating multi-scale prior features). On ADE20K, ViT-Split achieves 58.2 mIoU (DINOv2-L) with only a linear head, offers 4× faster training, and requires only 1/4–1/5 of the trainable parameters compared to conventional adapters.
+  [ICCV 2025][3D Vision][Vision Foundation Models] Grounded in the key observation that VFM layers can be partitioned into low-level feature extractors and high-level task adapters, this paper proposes ViT-Split…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Vision Foundation Models
-  - Efficient Adapters
-  - DINOv2
-  - Hierarchical Features
-  - Semantic Segmentation
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Vision Foundation Models"
+  - "Efficient Adapters"
+  - "DINOv2"
+  - "Hierarchical Features"
+  - "Semantic Segmentation"
 date: 2026-05-08
 content_hash: a3586c83737b9449
 ---

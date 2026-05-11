@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] V-Attack: Targeting Disentangled Value Features for Controllable Adversarial Attacks on LVLMs
 description: >-
-  [CVPR 2026][LLM Safety][adversarial attack] This work discovers that Value features in ViT exhibit more disentangled local semantic representations compared to Patch features, and proposes V-Attack, which achieves precise and controllable local semantic attacks on LVLMs via self-enhanced Value features and text-guided semantic manipulation, improving average ASR by 36%.
+  [CVPR 2026][LLM Safety][adversarial attack] This work discovers that Value features in ViT exhibit more disentangled local semantic representations compared to Patch features, and proposes V-Attack…
 tags:
-  - CVPR 2026
-  - LLM Safety
-  - adversarial attack
-  - vision-language models
-  - Value features
-  - semantic manipulation
-  - controllable attack
+  - "CVPR 2026"
+  - "LLM Safety"
+  - "adversarial attack"
+  - "vision-language models"
+  - "Value features"
+  - "semantic manipulation"
+  - "controllable attack"
 date: 2026-05-08
 content_hash: 60cb7d3326450c29
 ---

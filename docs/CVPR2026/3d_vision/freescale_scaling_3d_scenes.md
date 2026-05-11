@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FreeScale: Scaling 3D Scenes via Certainty-Aware Free-View Generation
 description: >-
-  [CVPR 2026][3D Vision][Novel View Synthesis] FreeScale scales limited real-world data into large-scale training sets by sampling high-quality free-view images from existing scene reconstructions guided by certainty estimation, achieving a 2.7 dB PSNR improvement on feed-forward novel view synthesis models.
+  [CVPR 2026][3D Vision][Novel View Synthesis] FreeScale scales limited real-world data into large-scale training sets by sampling high-quality free-view images from existing scene reconstructions guided by certainty estim…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Novel View Synthesis
-  - Data Augmentation
-  - 3D Gaussian Splatting
-  - Feed-Forward Reconstruction
-  - Certainty-Aware Sampling
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Novel View Synthesis"
+  - "Data Augmentation"
+  - "3D Gaussian Splatting"
+  - "Feed-Forward Reconstruction"
+  - "Certainty-Aware Sampling"
 date: 2026-05-08
 content_hash: 1686a28f9d6255c9
 ---

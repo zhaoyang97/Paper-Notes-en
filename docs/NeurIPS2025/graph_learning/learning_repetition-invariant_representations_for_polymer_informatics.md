@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Repetition-Invariant Representations for Polymer Informatics
 description: >-
-  [NeurIPS 2025][Graph Learning][Polymer Informatics] This paper proposes GRIN (Graph Repetition-Invariant Network), which achieves invariance to the number of repeated monomer units in polymer representations via Max aggregation and a specialized graph construction strategy, addressing a fundamental symmetry problem in polymer representation learning.
+  [NeurIPS 2025][Graph Learning][Polymer Informatics] This paper proposes GRIN (Graph Repetition-Invariant Network), which achieves invariance to the number of repeated monomer units in polymer representations via Max aggr…
 tags:
-  - NeurIPS 2025
-  - Graph Learning
-  - Polymer Informatics
-  - Repetition Invariance
-  - Graph Neural Networks
-  - Max Aggregation
-  - Molecular Representation
+  - "NeurIPS 2025"
+  - "Graph Learning"
+  - "Polymer Informatics"
+  - "Repetition Invariance"
+  - "Graph Neural Networks"
+  - "Max Aggregation"
+  - "Molecular Representation"
 date: 2026-05-08
 content_hash: 5a3ea91c903148f5
 ---

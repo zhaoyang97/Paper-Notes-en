@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Diff4Splat: Repurposing Video Diffusion Models for Dynamic Scene Generation
 description: >-
-  [CVPR 2026][Video Generation][4D Generation] This paper proposes Diff4Splat, a feed-forward framework that unifies video diffusion models with deformable 3D Gaussian fields into an end-to-end trainable model, enabling direct generation of dynamic 4D scene representations from a single image in approximately 30 seconds — roughly 60× faster than optimization-based methods.
+  [CVPR 2026][Video Generation][4D Generation] This paper proposes Diff4Splat, a feed-forward framework that unifies video diffusion models with deformable 3D Gaussian fields into an end-to-end trainable model…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - 4D Generation
-  - 3D Gaussian Splatting
-  - Video Diffusion Models
-  - Deformable Gaussian Fields
-  - Feed-Forward Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "4D Generation"
+  - "3D Gaussian Splatting"
+  - "Video Diffusion Models"
+  - "Deformable Gaussian Fields"
+  - "Feed-Forward Generation"
 date: 2026-05-08
 content_hash: 0e6b780267f247d0
 ---

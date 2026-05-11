@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Describe, Don't Dictate: Semantic Image Editing with Natural Language Intent
 description: >-
-  [ICCV 2025][Image Generation][semantic image editing] This paper proposes DescriptiveEdit, which reframes "instruction-based image editing" as "text-to-image generation conditioned on a reference image." A Cross-Attentive UNet introduces attention bridge layers to inject reference image features into the generation process. With only 75M trainable parameters, the method achieves high-fidelity descriptive editing and is seamlessly compatible with community tools such as ControlNet and IP-Adapter.
+  [ICCV 2025][Image Generation][semantic image editing] This paper proposes DescriptiveEdit, which reframes "instruction-based image editing" as "text-to-image generation conditioned on a reference image." A Cross-Attentiv…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - semantic image editing
-  - descriptive editing
-  - Cross-Attentive UNet
-  - LoRA
-  - diffusion models
+  - "ICCV 2025"
+  - "Image Generation"
+  - "semantic image editing"
+  - "descriptive editing"
+  - "Cross-Attentive UNet"
+  - "LoRA"
+  - "diffusion models"
 date: 2026-05-08
 content_hash: da30ff6ea31e5dc4
 ---

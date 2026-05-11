@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Bridging the Skills Gap: A Course Model for Modern Generative AI Education
 description: >-
-  [AAAI 2026 (EAAI Symposium)][Generative AI Education] This paper proposes a generative AI application course model for undergraduate and graduate computer science students. A mixed-methods survey demonstrates that the course is effective in bridging the generative AI skills gap between industry and academia, with students broadly rating it as valuable and impactful.
+  [AAAI 2026 (EAAI Symposium)][Generative AI Education] This paper proposes a generative AI application course model for undergraduate and graduate computer science students. A mixed-methods survey demonstrates that the co…
 tags:
-  - AAAI 2026 (EAAI Symposium)
-  - Generative AI Education
-  - Curriculum Design
-  - Skills Gap
-  - Computer Science Education
-  - Software Development
+  - "AAAI 2026 (EAAI Symposium)"
+  - "Generative AI Education"
+  - "Curriculum Design"
+  - "Skills Gap"
+  - "Computer Science Education"
+  - "Software Development"
 date: 2026-05-08
 content_hash: 5dd3fe8c80496d18
 ---

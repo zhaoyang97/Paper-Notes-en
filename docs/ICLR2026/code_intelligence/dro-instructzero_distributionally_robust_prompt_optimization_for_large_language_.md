@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] DRO-InstructZero: Distributionally Robust Prompt Optimization for Large Language Models
 description: >-
-  [ICLR 2026][prompt optimization] This work integrates distributionally robust optimization (DRO) into the Bayesian optimization (BO) framework of InstructZero. By maximizing the worst-case expected utility over an ambiguity set defined by an f-divergence ball, the automatically searched prompts maintain reliable performance under distribution shift.
+  [ICLR 2026][Code Intelligence][prompt optimization] This work integrates distributionally robust optimization (DRO) into the Bayesian optimization (BO) framework of InstructZero. By maximizing the worst-case expected uti…
 tags:
-  - ICLR 2026
-  - prompt optimization
-  - distributionally robust optimization
-  - Bayesian optimization
-  - instruction tuning
-  - zero-shot learning
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "prompt optimization"
+  - "distributionally robust optimization"
+  - "Bayesian optimization"
+  - "instruction tuning"
+  - "zero-shot learning"
 date: 2026-05-08
 content_hash: 51c3634a99bb33cb
 ---

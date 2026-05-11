@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SpatiaLab: Can Vision-Language Models Perform Spatial Reasoning in the Wild?
 description: >-
-  [ICLR 2026][Multimodal VLM][Spatial Reasoning] This paper introduces SpatiaLab, a real-world spatial reasoning benchmark comprising 1,400 visual QA pairs spanning 30 subcategories across 6 major spatial task categories. Supporting both MCQ and open-ended evaluation formats, SpatiaLab reveals a substantial gap between the strongest current VLMs (InternVL3.5-72B: 54.93% MCQ) and humans (87.57%), with the gap widening further under open-ended settings.
+  [ICLR 2026][Multimodal VLM][Spatial Reasoning] This paper introduces SpatiaLab, a real-world spatial reasoning benchmark comprising 1…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Spatial Reasoning
-  - VLM Benchmark
-  - MCQ Evaluation
-  - Open-ended Evaluation
-  - Real-world Scenarios
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Spatial Reasoning"
+  - "VLM Benchmark"
+  - "MCQ Evaluation"
+  - "Open-ended Evaluation"
+  - "Real-world Scenarios"
 date: 2026-05-08
 content_hash: e86f277a9b0db7a3
 ---

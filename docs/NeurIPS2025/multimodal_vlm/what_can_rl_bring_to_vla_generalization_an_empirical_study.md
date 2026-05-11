@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] What Can RL Bring to VLA Generalization? An Empirical Study
 description: >-
-  [NeurIPS 2025][Multimodal VLM][VLA models] This paper systematically investigates the effect of RL fine-tuning on the generalization capabilities of Vision-Language-Action (VLA) models. The study finds that PPO is the most effective RL algorithm, significantly outperforming DPO and GRPO; RL yields substantially greater OOD generalization than SFT in semantic understanding and execution robustness, while achieving comparable visual robustness.
+  [NeurIPS 2025][Multimodal VLM][VLA models] This paper systematically investigates the effect of RL fine-tuning on the generalization capabilities of Vision-Language-Action (VLA) models. The study finds that PPO is the mo…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - VLA models
-  - reinforcement learning
-  - PPO
-  - generalization
-  - robot manipulation
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "VLA models"
+  - "reinforcement learning"
+  - "PPO"
+  - "generalization"
+  - "robot manipulation"
 date: 2026-05-08
 content_hash: 2ae569179ddedc11
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Revisiting Entropy in Reinforcement Learning for Large Reasoning Models
 description: >-
-  [ACL 2026][LLM Reasoning][entropy collapse] This paper systematically investigates entropy dynamics in RLVR training of LLMs, identifies positive-advantage tokens as the primary driver of entropy collapse, and proposes Positive-Advantage Reweighting, which dynamically adjusts the loss weights of positive-advantage tokens to effectively regulate model entropy.
+  [ACL 2026][LLM Reasoning][entropy collapse] This paper systematically investigates entropy dynamics in RLVR training of LLMs, identifies positive-advantage tokens as the primary driver of entropy collapse…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - entropy collapse
-  - RLVR
-  - GRPO
-  - positive-advantage reweighting
-  - reasoning models
+  - "ACL 2026"
+  - "LLM Reasoning"
+  - "entropy collapse"
+  - "RLVR"
+  - "GRPO"
+  - "positive-advantage reweighting"
+  - "reasoning models"
 date: 2026-05-08
 content_hash: 4e754a6d235f813c
 ---

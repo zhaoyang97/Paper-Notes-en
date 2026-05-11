@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HRScene: How Far Are VLMs from Effective High-Resolution Image Understanding?
 description: >-
-  [ICCV 2025][Multimodal VLM][High-Resolution Image Understanding] This paper introduces HRScene, a benchmark covering 25 real-world scenarios and 2 diagnostic datasets (resolution 1K–35K). Evaluating 28 VLMs reveals that current state-of-the-art models achieve an average accuracy of only ~50% on real high-resolution tasks, with significant regional performance divergence and a pronounced lost-in-middle problem.
+  [ICCV 2025][Multimodal VLM][High-Resolution Image Understanding] This paper introduces HRScene, a benchmark covering 25 real-world scenarios and 2 diagnostic datasets (resolution 1K–35K). Evaluating 28 VLMs reveals that…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - High-Resolution Image Understanding
-  - VLM Benchmark
-  - Vision-Language Models
-  - Multimodal Evaluation
-  - Needle-in-a-Haystack
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "High-Resolution Image Understanding"
+  - "VLM Benchmark"
+  - "Vision-Language Models"
+  - "Multimodal Evaluation"
+  - "Needle-in-a-Haystack"
 date: 2026-05-08
 content_hash: f2a86cfedc5e5331
 ---

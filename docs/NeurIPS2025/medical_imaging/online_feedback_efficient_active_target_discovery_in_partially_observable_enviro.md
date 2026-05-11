@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Online Feedback Efficient Active Target Discovery in Partially Observable Environments
 description: >-
-  [NeurIPS 2025][Medical Imaging][Active Target Discovery] This paper proposes DiffATD, which leverages the reverse process of diffusion models to construct a belief distribution for balancing exploration and exploitation, enabling efficient target region discovery in partially observable environments without any supervised training. The framework is applicable across multiple domains including medical imaging, species discovery, and remote sensing.
+  [NeurIPS 2025][Medical Imaging][Active Target Discovery] This paper proposes DiffATD, which leverages the reverse process of diffusion models to construct a belief distribution for balancing exploration and exploitation…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Active Target Discovery
-  - Diffusion Models
-  - Partially Observable Environments
-  - Exploration-Exploitation Trade-off
-  - Bayesian Experimental Design
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Active Target Discovery"
+  - "Diffusion Models"
+  - "Partially Observable Environments"
+  - "Exploration-Exploitation Trade-off"
+  - "Bayesian Experimental Design"
 date: 2026-05-08
 content_hash: 6678741bf73d5003
 ---

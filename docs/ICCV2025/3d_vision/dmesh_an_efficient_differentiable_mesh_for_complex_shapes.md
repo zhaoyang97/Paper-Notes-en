@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DMesh++: An Efficient Differentiable Mesh for Complex Shapes
 description: >-
-  [ICCV 2025][3D Vision][Differentiable mesh] This paper proposes DMesh++, which replaces weighted Delaunay triangulation (WDT) with a Minimum-Ball algorithm as the tessellation function for differentiable meshes, reducing computational complexity from $O(N)$ to $O(\log N)$. The method achieves up to 32× speedup on complex shapes while preserving desirable properties such as no self-intersections and few degenerate triangles.
+  [ICCV 2025][3D Vision][Differentiable mesh] This paper proposes DMesh++, which replaces weighted Delaunay triangulation (WDT) with a Minimum-Ball algorithm as the tessellation function for differentiable meshes…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Differentiable mesh
-  - triangulation
-  - point cloud reconstruction
-  - multi-view reconstruction
-  - Minimum-Ball algorithm
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Differentiable mesh"
+  - "triangulation"
+  - "point cloud reconstruction"
+  - "multi-view reconstruction"
+  - "Minimum-Ball algorithm"
 date: 2026-05-08
 content_hash: f27cd077bf6cf171
 ---

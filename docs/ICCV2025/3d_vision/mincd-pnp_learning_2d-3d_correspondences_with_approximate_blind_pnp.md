@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MinCD-PnP: Learning 2D-3D Correspondences with Approximate Blind PnP
 description: >-
-  [ICCV 2025][3D Vision][Image-to-point cloud registration] This paper proposes MinCD-PnP, which reduces the computationally expensive Blind PnP to a problem of minimizing the Chamfer distance between 2D-3D keypoints via a triple approximation strategy. A lightweight multi-task learning module, MinCD-Net, is designed and integrated into existing I2P registration frameworks, achieving significant improvements in inlier ratio and registration recall under cross-scene and cross-dataset settings.
+  [ICCV 2025][3D Vision][Image-to-point cloud registration] This paper proposes MinCD-PnP, which reduces the computationally expensive Blind PnP to a problem of minimizing the Chamfer distance between 2D-3D keypoints via a…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Image-to-point cloud registration
-  - 2D-3D correspondences
-  - PnP
-  - Chamfer distance
-  - multi-task learning
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Image-to-point cloud registration"
+  - "2D-3D correspondences"
+  - "PnP"
+  - "Chamfer distance"
+  - "multi-task learning"
 date: 2026-05-08
 content_hash: ccc2303bb4263206
 ---

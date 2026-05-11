@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Closing the Curvature Gap: Full Transformer Hessians and Their Implications for Scaling Laws
 description: >-
-  [ICLR 2026][Transformer Hessian] This paper presents the first explicit Hessian expressions and spectral norm upper bounds for a complete Transformer block (including LayerNorm and FFN), and establishes a theoretical framework showing that the loss landscape converges at an $O(1/k)$ rate as data volume increases, providing a mathematical foundation for scaling laws and curvature-aware training.
+  [ICLR 2026][Interpretability][Transformer Hessian] This paper presents the first explicit Hessian expressions and spectral norm upper bounds for a complete Transformer block (including LayerNorm and FFN)…
 tags:
-  - ICLR 2026
-  - Transformer Hessian
-  - LayerNorm
-  - scaling laws
-  - loss landscape
-  - optimization theory
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Transformer Hessian"
+  - "LayerNorm"
+  - "scaling laws"
+  - "loss landscape"
+  - "optimization theory"
 date: 2026-05-08
 content_hash: 9b349a7411f55a14
 ---

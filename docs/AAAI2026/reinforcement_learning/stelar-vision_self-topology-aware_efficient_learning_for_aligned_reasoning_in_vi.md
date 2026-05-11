@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] STELAR-Vision: Self-Topology-Aware Efficient Learning for Aligned Reasoning in Vision
 description: >-
-  [AAAI 2026][Reinforcement Learning][Topology-aware reasoning] This paper proposes STELAR-Vision, a topology-aware training framework for visual language reasoning. Via the TopoAug data generation pipeline, it introduces diverse reasoning topologies—Chain, Tree, and Graph—and combines SFT with RL (SimPO) post-training. The framework achieves +9.7% accuracy on in-distribution data and up to +28.4% on out-of-distribution benchmarks, while reducing output length by 18.1% through Frugal Learning.
+  [AAAI 2026][Reinforcement Learning][Topology-aware reasoning] This paper proposes STELAR-Vision, a topology-aware training framework for visual language reasoning. Via the TopoAug data generation pipeline…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - Topology-aware reasoning
-  - vision-language models
-  - chain/tree/graph of thought
-  - efficient inference
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "Topology-aware reasoning"
+  - "vision-language models"
+  - "chain/tree/graph of thought"
+  - "efficient inference"
 date: 2026-05-08
 content_hash: ffc3d28c5cafc04d
 ---

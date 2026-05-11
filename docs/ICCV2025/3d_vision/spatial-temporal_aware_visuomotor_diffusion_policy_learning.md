@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Spatial-Temporal Aware Visuomotor Diffusion Policy Learning
 description: >-
-  [ICCV 2025][3D Vision][Visual Imitation Learning] This paper proposes the 4D Diffusion Policy (DP4), which injects 3D spatial and 4D spatial-temporal awareness into a diffusion policy via a dynamic Gaussian world model, achieving substantial improvements over baselines across 17 simulation tasks and 3 real-robot tasks (Adroit +16.4%, DexArt +14%, RLBench +6.45%, real tasks +8.6%).
+  [ICCV 2025][3D Vision][Visual Imitation Learning] This paper proposes the 4D Diffusion Policy (DP4), which injects 3D spatial and 4D spatial-temporal awareness into a diffusion policy via a dynamic Gaussian world model…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Visual Imitation Learning
-  - Diffusion Policy
-  - 3D Gaussian Splatting
-  - 4D Spatial-Temporal Awareness
-  - World Model
-  - Dexterous Manipulation
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Visual Imitation Learning"
+  - "Diffusion Policy"
+  - "3D Gaussian Splatting"
+  - "4D Spatial-Temporal Awareness"
+  - "World Model"
+  - "Dexterous Manipulation"
 date: 2026-05-08
 content_hash: 46ee1d9511bbac17
 ---

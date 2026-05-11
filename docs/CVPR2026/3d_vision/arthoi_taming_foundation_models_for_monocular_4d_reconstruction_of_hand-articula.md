@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ArtHOI: Taming Foundation Models for Monocular 4D Reconstruction of Hand-Articulated-Object Interactions
 description: >-
-  [CVPR 2026][3D Vision][Hand-Object Interaction] ArtHOI presents the first complete pipeline for reconstructing 4D interactions between hands and articulated objects (e.g., scissors, glasses, laptops) from monocular RGB video. Through Adaptive Sampling Refinement (ASR) for metric scale and pose estimation, and an MLLM-guided hand-object alignment strategy, the method outperforms the baseline RSRD—which requires pre-scanned object geometry—across multiple datasets.
+  [CVPR 2026][3D Vision][Hand-Object Interaction] ArtHOI presents the first complete pipeline for reconstructing 4D interactions between hands and articulated objects (e.g., scissors, glasses…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Hand-Object Interaction
-  - Articulated Object
-  - 4D Reconstruction
-  - Foundation Models
-  - MLLM
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Hand-Object Interaction"
+  - "Articulated Object"
+  - "4D Reconstruction"
+  - "Foundation Models"
+  - "MLLM"
 date: 2026-05-08
 content_hash: ebd891d95f0a4b1a
 ---

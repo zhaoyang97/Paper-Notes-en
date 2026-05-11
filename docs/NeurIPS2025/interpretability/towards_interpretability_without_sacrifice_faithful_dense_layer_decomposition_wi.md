@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Towards Interpretability Without Sacrifice: Faithful Dense Layer Decomposition with Mixture of Decoders
 description: >-
-  [NeurIPS 2025][mechanistic interpretability] This paper proposes Mixture of Decoders (MxD), which decomposes the MLP layers of LLMs into tens of thousands of sparsely activated expert sub-layers (layer-level sparsity). Each expert implements a full-rank linear transformation via Hadamard product tensor factorization. MxD significantly outperforms Transcoders on the sparsity–accuracy trade-off while maintaining interpretability.
+  [NeurIPS 2025][Interpretability][mechanistic interpretability] This paper proposes Mixture of Decoders (MxD), which decomposes the MLP layers of LLMs into tens of thousands of sparsely activated expert sub-layers (layer-…
 tags:
-  - NeurIPS 2025
-  - mechanistic interpretability
-  - sparse approximation
-  - mixture of experts
-  - tensor factorization
-  - MLP decomposition
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "mechanistic interpretability"
+  - "sparse approximation"
+  - "mixture of experts"
+  - "tensor factorization"
+  - "MLP decomposition"
 date: 2026-05-08
 content_hash: a3e125833a1e552d
 ---

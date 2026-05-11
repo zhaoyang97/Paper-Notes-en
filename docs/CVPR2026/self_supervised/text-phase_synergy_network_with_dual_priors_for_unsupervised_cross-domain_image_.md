@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Text-Phase Synergy Network with Dual Priors for Unsupervised Cross-Domain Image Retrieval
 description: >-
-  [CVPR 2026][Self-Supervised Learning][UCDIR] This paper proposes TPSNet, which leverages CLIP-learned domain prompts as text priors to provide fine-grained semantic supervision, while introducing phase spectrum features as phase priors to bridge domain distribution gaps and preserve semantic integrity. Significant improvements in unsupervised cross-domain image retrieval (UCDIR) are achieved through the synergistic combination of text-phase dual priors.
+  [CVPR 2026][Self-Supervised Learning][UCDIR] This paper proposes TPSNet, which leverages CLIP-learned domain prompts as text priors to provide fine-grained semantic supervision…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - UCDIR
-  - domain prompt
-  - phase spectrum
-  - text-phase dual priors
-  - cross-domain alignment
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "UCDIR"
+  - "domain prompt"
+  - "phase spectrum"
+  - "text-phase dual priors"
+  - "cross-domain alignment"
 date: 2026-05-08
 content_hash: d705ffcaf1b8bb87
 ---

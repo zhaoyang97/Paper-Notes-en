@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] A Closer Look at Knowledge Distillation in Spiking Neural Network Training
 description: >-
-  [AAAI 2026][Knowledge Distillation] To address the overlooked distribution mismatch between teacher ANN continuous features/logits and student SNN discrete sparse spike features/logits in ANN→SNN knowledge distillation, this paper proposes the CKDSNN framework based on Saliency-scaled Activation Map Distillation (SAMD) and Noise-smoothed Logits Distillation (NLD), achieving new state-of-the-art SNN training performance on CIFAR-10/100, ImageNet-1K, and CIFAR10-DVS.
+  [AAAI 2026][Interpretability][Knowledge Distillation] To address the overlooked distribution mismatch between teacher ANN continuous features/logits and student SNN discrete sparse spike features/logits in ANN→SNN knowle…
 tags:
-  - AAAI 2026
-  - Knowledge Distillation
-  - Spiking Neural Networks
-  - Activation Map Alignment
-  - Noise Smoothing
-  - Energy-Efficient Training
+  - "AAAI 2026"
+  - "Interpretability"
+  - "Knowledge Distillation"
+  - "Spiking Neural Networks"
+  - "Activation Map Alignment"
+  - "Noise Smoothing"
+  - "Energy-Efficient Training"
 date: 2026-05-08
 content_hash: 657556c450ce4dfb
 ---

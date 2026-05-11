@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Realistic Face Reconstruction from Facial Embeddings via Diffusion Models
 description: >-
-  [AAAI 2026][Image Generation][Face Reconstruction] This paper proposes the FEM (Face Embedding Mapping) framework, which employs a KAN-based network to map embeddings from arbitrary face recognition (FR) or privacy-preserving face recognition (PPFR) systems into the embedding space of a pretrained identity-preserving (ID-Preserving) diffusion model, enabling high-resolution realistic face reconstruction for evaluating privacy leakage risks in FR systems.
+  [AAAI 2026][Image Generation][Face Reconstruction] This paper proposes the FEM (Face Embedding Mapping) framework, which employs a KAN-based network to map embeddings from arbitrary face recognition (FR) or privacy-prese…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Face Reconstruction
-  - Facial Embeddings
-  - Privacy Attack
-  - Kolmogorov-Arnold Network
-  - Diffusion Models
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Face Reconstruction"
+  - "Facial Embeddings"
+  - "Privacy Attack"
+  - "Kolmogorov-Arnold Network"
+  - "Diffusion Models"
 date: 2026-05-08
 content_hash: b1fcfee6822e2ead
 ---

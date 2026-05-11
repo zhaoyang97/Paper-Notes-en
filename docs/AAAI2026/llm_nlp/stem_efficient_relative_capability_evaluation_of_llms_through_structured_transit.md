@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] STEM: Efficient Relative Capability Evaluation of LLMs through Structured Transitive Evaluation Model
 description: >-
-  [LLM/NLP] This paper proposes STEM, a framework that identifies "Significant Transition Samples" (STS) across models of the same architecture but varying scales to construct a lightweight evaluation subset, enabling efficient relative capability localization of unknown LLMs. STEM achieves 100% localization accuracy with only 100 samples, substantially outperforming random sampling and Bayesian methods.
+  [LLM/NLP] This paper proposes STEM, a framework that identifies "Significant Transition Samples" (STS) across models of the same architecture but varying scales to construct a lightweight evaluation subset…
 tags:
-  - LLM/NLP
+  - "LLM/NLP"
 date: 2026-05-08
 content_hash: 56c69a5ae72909fc
 ---

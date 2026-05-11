@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unifying Vision-Language Latents for Zero-Label Image Caption Enhancement
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Zero-label learning] This paper proposes the ViZer framework, which improves the image captioning capability of VLMs through a unified vision-language latent space alignment training paradigm—requiring no text annotations whatsoever. Using only raw image data, the model learns to generate more grounded and descriptive captions.
+  [NeurIPS 2025][Multimodal VLM][Zero-label learning] This paper proposes the ViZer framework, which improves the image captioning capability of VLMs through a unified vision-language latent space alignment training paradi…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Zero-label learning
-  - image captioning
-  - vision-language alignment
-  - joint embedding
-  - self-supervised
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Zero-label learning"
+  - "image captioning"
+  - "vision-language alignment"
+  - "joint embedding"
+  - "self-supervised"
 date: 2026-05-08
 content_hash: 74d3a8218d3ff12b
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Scaling-Aware Data Selection for End-to-End Autonomous Driving Systems
 description: >-
-  [CVPR 2026][Autonomous Driving][Data Selection] This paper proposes MOSAIC, a framework that clusters training data into domains, fits per-domain scaling laws over evaluation metrics, and greedily selects samples with the highest marginal gain, enabling efficient data selection for end-to-end autonomous driving models that matches or surpasses baseline performance with 80% less data.
+  [CVPR 2026][Autonomous Driving][Data Selection] This paper proposes MOSAIC, a framework that clusters training data into domains, fits per-domain scaling laws over evaluation metrics…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Data Selection
-  - Neural Scaling Laws
-  - Data Mixture Optimization
-  - End-to-End Autonomous Driving
-  - EPDMS
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Data Selection"
+  - "Neural Scaling Laws"
+  - "Data Mixture Optimization"
+  - "End-to-End Autonomous Driving"
+  - "EPDMS"
 date: 2026-05-08
 content_hash: a8bb82c3196135a0
 ---

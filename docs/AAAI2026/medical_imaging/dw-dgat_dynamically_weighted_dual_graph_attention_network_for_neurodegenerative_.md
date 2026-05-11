@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DW-DGAT: Dynamically Weighted Dual Graph Attention Network for Neurodegenerative Disease Diagnosis
 description: >-
-  [AAAI 2026][Medical Imaging][Graph Attention Network] To address three core challenges in early diagnosis of neurodegenerative diseases (PD/AD)—multi-indicator data fusion, heterogeneous information extraction, and class imbalance—this paper proposes DW-DGAT, a dynamically weighted dual graph attention network. By introducing a universal data fusion strategy, micro-macro dual-level graph feature learning, and a dynamic class weight generation mechanism, DW-DGAT substantially outperforms 14 baseline methods on the PPMI and ADNI3 datasets.
+  [AAAI 2026][Medical Imaging][Graph Attention Network] To address three core challenges in early diagnosis of neurodegenerative diseases (PD/AD)—multi-indicator data fusion, heterogeneous information extraction…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Graph Attention Network
-  - Neurodegenerative Disease
-  - Multimodal Fusion
-  - Class Imbalance
-  - Parkinson's/Alzheimer's
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Graph Attention Network"
+  - "Neurodegenerative Disease"
+  - "Multimodal Fusion"
+  - "Class Imbalance"
+  - "Parkinson's/Alzheimer's"
 date: 2026-05-08
 content_hash: ced295cacb01eec4
 ---

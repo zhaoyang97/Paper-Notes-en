@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Long-Context State-Space Video World Models
 description: >-
-  [ICCV 2025][Image Generation][World Models] This paper proposes integrating State Space Models (SSM/Mamba) into video world models. Through a block-wise SSM scan scheme that balances spatial consistency and temporal memory, combined with local frame attention, the method achieves persistent long-term spatial memory under linear training complexity and constant inference overhead, substantially outperforming finite-context Transformer baselines on Memory Maze and Minecraft datasets.
+  [ICCV 2025][Image Generation][World Models] This paper proposes integrating State Space Models (SSM/Mamba) into video world models. Through a block-wise SSM scan scheme that balances spatial consistency and temporal memo…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - World Models
-  - SSM
-  - Mamba
-  - Long-Term Memory
-  - Video Diffusion Models
-  - Autoregressive Generation
+  - "ICCV 2025"
+  - "Image Generation"
+  - "World Models"
+  - "SSM"
+  - "Mamba"
+  - "Long-Term Memory"
+  - "Video Diffusion Models"
+  - "Autoregressive Generation"
 date: 2026-05-08
 content_hash: bfd0bc02bd6fe1ac
 ---

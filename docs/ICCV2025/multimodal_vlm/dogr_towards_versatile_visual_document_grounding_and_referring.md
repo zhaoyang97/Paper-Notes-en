@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DOGR: Towards Versatile Visual Document Grounding and Referring
 description: >-
-  [ICCV 2025][Multimodal VLM][Document Understanding] This paper proposes DOGR-Engine, a data engine for document grounding and referring, constructs DOGR-Bench — the first comprehensive benchmark evaluating document grounding and referring capabilities across 7 task types × 3 document types — and develops DOGR, the first document understanding MLLM that integrates precise text localization with interactive grounding and referring capabilities.
+  [ICCV 2025][Multimodal VLM][Document Understanding] This paper proposes DOGR-Engine, a data engine for document grounding and referring, constructs DOGR-Bench — the first comprehensive benchmark evaluating document groun…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Document Understanding
-  - Visual Grounding
-  - Multimodal Large Language Models
-  - Data Engine
-  - OCR
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Document Understanding"
+  - "Visual Grounding"
+  - "Multimodal Large Language Models"
+  - "Data Engine"
+  - "OCR"
 date: 2026-05-08
 content_hash: 43496fcadd97c133
 ---

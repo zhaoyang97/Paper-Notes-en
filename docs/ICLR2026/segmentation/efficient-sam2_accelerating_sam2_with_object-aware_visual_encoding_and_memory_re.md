@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Efficient-SAM2: Accelerating SAM2 with Object-Aware Visual Encoding and Memory Retrieval
 description: >-
-  [ICLR 2026][Segmentation][SAM2] This paper identifies sparse perception patterns in SAM2 analogous to biological vision — the decoder focuses on foreground while the encoder computes broadly, and only a small subset of tokens in memory frames are active with temporally consistent saliency. Based on these observations, Efficient-SAM2 is proposed, which eliminates redundant computation via object-aware Sparse Window Routing (SWR) and Sparse Memory Retrieval (SMR), achieving 1.68× end-to-end speedup on SAM2.1-L with only 1% accuracy loss.
+  [ICLR 2026][Segmentation][SAM2] This paper identifies sparse perception patterns in SAM2 analogous to biological vision — the decoder focuses on foreground while the encoder computes broadly…
 tags:
-  - ICLR 2026
-  - Segmentation
-  - SAM2
-  - video object segmentation
-  - post-training acceleration
-  - sparse window routing
-  - memory compression
+  - "ICLR 2026"
+  - "Segmentation"
+  - "SAM2"
+  - "video object segmentation"
+  - "post-training acceleration"
+  - "sparse window routing"
+  - "memory compression"
 date: 2026-05-08
 content_hash: 5b55e09642c27078
 ---

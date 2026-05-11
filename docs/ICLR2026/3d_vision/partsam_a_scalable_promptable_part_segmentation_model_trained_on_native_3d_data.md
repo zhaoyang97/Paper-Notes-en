@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PartSAM: A Scalable Promptable Part Segmentation Model Trained on Native 3D Data
 description: >-
-  [ICLR 2026][3D Vision][3D part segmentation] This paper proposes PartSAM, the first promptable part segmentation model trained on large-scale native 3D data. It employs a triplane dual-branch encoder (frozen SAM priors + learnable 3D branch) and a SAM-style decoder. A model-in-the-loop annotation pipeline is used to construct 5M+ shape–part pairs. Under open-world settings, a single click from PartSAM outperforms Point-SAM by over 90% in IoU@1.
+  [ICLR 2026][3D Vision][3D part segmentation] This paper proposes PartSAM, the first promptable part segmentation model trained on large-scale native 3D data. It employs a triplane dual-branch encoder (frozen SAM priors +…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - 3D part segmentation
-  - SAM
-  - prompt-based
-  - native 3D data
-  - open-world
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3D part segmentation"
+  - "SAM"
+  - "prompt-based"
+  - "native 3D data"
+  - "open-world"
 date: 2026-05-08
 content_hash: 09469d8e7364090a
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LayerAnimate: Layer-level Control for Animation
 description: >-
-  [ICCV 2025][Segmentation][Animation Video Generation] This paper proposes LayerAnimate, a framework that integrates the layer-separation paradigm of traditional animation production with video diffusion models to enable fine-grained layer-level control (motion scores, trajectories, sketches). An automated data curation pipeline is designed to address the scarcity of layered animation data. The framework comprehensively outperforms existing methods across six video generation tasks.
+  [ICCV 2025][Segmentation][Animation Video Generation] This paper proposes LayerAnimate, a framework that integrates the layer-separation paradigm of traditional animation production with video diffusion models to enable…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - Animation Video Generation
-  - Layer Control
-  - Video Diffusion Models
-  - Data Curation
-  - ControlNet
+  - "ICCV 2025"
+  - "Segmentation"
+  - "Animation Video Generation"
+  - "Layer Control"
+  - "Video Diffusion Models"
+  - "Data Curation"
+  - "ControlNet"
 date: 2026-05-08
 content_hash: df8b76c92159f48d
 ---

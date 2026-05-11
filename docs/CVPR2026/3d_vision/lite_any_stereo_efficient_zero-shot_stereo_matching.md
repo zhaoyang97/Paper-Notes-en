@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Lite Any Stereo: Efficient Zero-Shot Stereo Matching
 description: >-
-  [CVPR 2026][3D Vision][Stereo matching] This paper proposes Lite Any Stereo, which achieves first-place rankings on four real-world benchmarks using less than 1% of the computation (33G MACs) of state-of-the-art accurate methods. This is accomplished via a hybrid 2D-3D cost aggregation module and a three-stage million-scale training strategy (supervised → self-distillation → real-data knowledge distillation), demonstrating for the first time that ultra-lightweight models can exhibit strong zero-shot generalization.
+  [CVPR 2026][3D Vision][Stereo matching] This paper proposes Lite Any Stereo, which achieves first-place rankings on four real-world benchmarks using less than 1% of the computation (33G MACs) of state-of-the-art accurate…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Stereo matching
-  - zero-shot generalization
-  - efficient inference
-  - hybrid cost aggregation
-  - knowledge distillation
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Stereo matching"
+  - "zero-shot generalization"
+  - "efficient inference"
+  - "hybrid cost aggregation"
+  - "knowledge distillation"
 date: 2026-05-08
 content_hash: c16044617cb61907
 ---

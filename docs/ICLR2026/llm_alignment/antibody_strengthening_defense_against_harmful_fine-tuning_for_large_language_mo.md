@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Antibody: Strengthening Defense Against Harmful Fine-Tuning for Large Language Models via Attenuating Harmful Gradient Influence
 description: >-
-  [ICLR 2026][LLM Alignment][Harmful fine-tuning attack] This paper proposes Antibody, a two-stage defense framework that (1) during alignment, applies flatness regularization to place the model in a flat region of the harmful loss landscape (small gradients → harder to attack), and (2) during fine-tuning, suppresses learning from harmful samples via a likelihood-ratio-based sample weighting scheme (contrasting the likelihood of task completion vs. refusal). The average Harmful Score is reduced from 15.29% to 7.04%.
+  [ICLR 2026][LLM Alignment][Harmful fine-tuning attack] This paper proposes Antibody, a two-stage defense framework that (1) during alignment…
 tags:
-  - ICLR 2026
-  - LLM Alignment
-  - Harmful fine-tuning attack
-  - safety alignment
-  - loss flatness
-  - sample weighting
-  - FTaaS safety
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Harmful fine-tuning attack"
+  - "safety alignment"
+  - "loss flatness"
+  - "sample weighting"
+  - "FTaaS safety"
 date: 2026-05-08
 content_hash: c6c76a8c81a70ce5
 ---

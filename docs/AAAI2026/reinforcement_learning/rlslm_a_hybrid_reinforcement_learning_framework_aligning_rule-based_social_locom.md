@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] RLSLM: A Hybrid Reinforcement Learning Framework Aligning Rule-Based Social Locomotion Model with Human Social Norms
 description: >-
-  [AAAI 2026][Reinforcement Learning][Social Navigation] This paper proposes RLSLM, a hybrid framework that embeds a psychology-experiment-driven rule-based Social Locomotion Model (SLM) into the reward function of reinforcement learning, enabling agents to efficiently learn navigation policies aligned with human social norms in crowd environments. VR experiments demonstrate that RLSLM achieves significantly higher comfort ratings than existing rule-based baselines.
+  [AAAI 2026][Reinforcement Learning][Social Navigation] This paper proposes RLSLM, a hybrid framework that embeds a psychology-experiment-driven rule-based Social Locomotion Model (SLM) into the reward function of reinfor…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - Social Navigation
-  - Social Locomotion Model
-  - VR Experiment
-  - Human-Robot Interaction
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "Social Navigation"
+  - "Social Locomotion Model"
+  - "VR Experiment"
+  - "Human-Robot Interaction"
 date: 2026-05-08
 content_hash: 9790c688ec327ebd
 ---

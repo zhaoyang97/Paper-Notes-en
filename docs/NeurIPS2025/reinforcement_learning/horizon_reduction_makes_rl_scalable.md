@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Horizon Reduction Makes RL Scalable
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][offline RL] Through large-scale experiments involving up to one billion transitions, this paper identifies the curse of horizon—excessively long decision horizons—as the primary scalability bottleneck in offline RL, and demonstrates that horizon reduction techniques such as n-step returns and hierarchical policies substantially improve scalability. Building on this analysis, the paper proposes SHARSA, a simple yet effective method.
+  [NeurIPS 2025][Reinforcement Learning][offline RL] Through large-scale experiments involving up to one billion transitions, this paper identifies the curse of horizon—excessively long decision horizons—as the primary sca…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - offline RL
-  - scalability
-  - horizon reduction
-  - hierarchical RL
-  - goal-conditioned RL
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "offline RL"
+  - "scalability"
+  - "horizon reduction"
+  - "hierarchical RL"
+  - "goal-conditioned RL"
 date: 2026-05-08
 content_hash: d27d0df3831e471a
 ---

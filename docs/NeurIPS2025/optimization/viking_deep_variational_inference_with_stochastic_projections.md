@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VIKING: Deep Variational Inference with Stochastic Projections
 description: >-
-  [NeurIPS 2025][Optimization][Variational Inference] VIKING proposes a variational approximate posterior family based on the kernel- and image-space decomposition of the Fisher-Rao metric, and achieves scalable full-covariance Bayesian training via a stochastic alternating projections algorithm, surpassing existing Bayesian deep learning methods on multiple benchmarks.
+  [NeurIPS 2025][Optimization][Variational Inference] VIKING proposes a variational approximate posterior family based on the kernel- and image-space decomposition of the Fisher-Rao metric…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Variational Inference
-  - Bayesian Deep Learning
-  - Overparameterization
-  - Fisher-Rao Metric
-  - Stochastic Alternating Projections
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Variational Inference"
+  - "Bayesian Deep Learning"
+  - "Overparameterization"
+  - "Fisher-Rao Metric"
+  - "Stochastic Alternating Projections"
 date: 2026-05-08
 content_hash: 1bca2cc96c89d26b
 ---

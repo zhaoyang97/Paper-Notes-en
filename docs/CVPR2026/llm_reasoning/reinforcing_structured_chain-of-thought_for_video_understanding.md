@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Reinforcing Structured Chain-of-Thought for Video Understanding
 description: >-
-  [CVPR 2026][LLM Reasoning][VideoQA] This paper proposes SDRL (Summary-Driven Reinforcement Learning), a single-stage RL framework that requires no SFT. By introducing a structured CoT (Summarize→Think→Answer) and two self-supervised mechanisms (CVK and DVR), SDRL enhances temporal reasoning in video understanding and achieves state-of-the-art results on 7 VideoQA benchmarks.
+  [CVPR 2026][LLM Reasoning][VideoQA] This paper proposes SDRL (Summary-Driven Reinforcement Learning), a single-stage RL framework that requires no SFT. By introducing a structured CoT (Summarize→Think→Answer) and two sel…
 tags:
-  - CVPR 2026
-  - LLM Reasoning
-  - VideoQA
-  - Reinforcement Learning
-  - Structured CoT
-  - GRPO
-  - Temporal Reasoning
+  - "CVPR 2026"
+  - "LLM Reasoning"
+  - "VideoQA"
+  - "Reinforcement Learning"
+  - "Structured CoT"
+  - "GRPO"
+  - "Temporal Reasoning"
 date: 2026-05-08
 content_hash: 8d48b239a78bdbc9
 ---

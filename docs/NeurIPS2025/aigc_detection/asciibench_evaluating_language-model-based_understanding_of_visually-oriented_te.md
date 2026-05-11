@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ASCIIBench: Evaluating Language-Model-Based Understanding of Visually-Oriented Text
 description: >-
-  [NeurIPS 2025][AIGC Detection][ASCII art] This paper introduces ASCIIBench, the first publicly available benchmark for ASCII art understanding and generation (5,315 images, 752 categories). Systematic evaluation reveals that the visual modality substantially outperforms the text modality, multimodal fusion yields no benefit, and CLIP exhibits a fundamental bottleneck in representing ASCII structure—only categories with high intra-class consistency can be effectively distinguished.
+  [NeurIPS 2025][AIGC Detection][ASCII art] This paper introduces ASCIIBench, the first publicly available benchmark for ASCII art understanding and generation (5,315 images…
 tags:
-  - NeurIPS 2025
-  - AIGC Detection
-  - ASCII art
-  - LLM evaluation
-  - spatial reasoning
-  - CLIP
-  - multimodal fusion
+  - "NeurIPS 2025"
+  - "AIGC Detection"
+  - "ASCII art"
+  - "LLM evaluation"
+  - "spatial reasoning"
+  - "CLIP"
+  - "multimodal fusion"
 date: 2026-05-08
 content_hash: bf3fdabd4dcacb48
 ---

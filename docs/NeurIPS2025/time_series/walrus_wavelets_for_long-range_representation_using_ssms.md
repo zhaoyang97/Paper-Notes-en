@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] WaLRUS: Wavelets for Long-range Representation Using SSMs
 description: >-
-  [NeurIPS 2025][Time Series][State Space Models] This paper proposes WaLRUS, a state space model (SSM) built upon Daubechies wavelets as a novel instantiation of the SaFARi framework, expanding the diversity of the SSM family and demonstrating unique advantages in long-range dependency modeling.
+  [NeurIPS 2025][Time Series][State Space Models] This paper proposes WaLRUS, a state space model (SSM) built upon Daubechies wavelets as a novel instantiation of the SaFARi framework…
 tags:
-  - NeurIPS 2025
-  - Time Series
-  - State Space Models
-  - Daubechies Wavelets
-  - Long-range Dependencies
-  - HiPPO
-  - SaFARi
+  - "NeurIPS 2025"
+  - "Time Series"
+  - "State Space Models"
+  - "Daubechies Wavelets"
+  - "Long-range Dependencies"
+  - "HiPPO"
+  - "SaFARi"
 date: 2026-05-08
 content_hash: 0972e1b5e8705273
 ---

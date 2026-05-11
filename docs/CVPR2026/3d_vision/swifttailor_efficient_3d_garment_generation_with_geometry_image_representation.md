@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SwiftTailor: Efficient 3D Garment Generation with Geometry Image Representation
 description: >-
-  [CVPR 2026][3D Vision][3D garment generation] SwiftTailor is a lightweight two-stage framework that combines PatternMaker for sewing pattern prediction with GarmentSewer for converting patterns into a Garment Geometry Image (GGI) in a unified UV space. Via inverse mapping and dynamic stitching, the framework directly assembles 3D garment meshes, achieving SOTA quality while running orders of magnitude faster than existing methods.
+  [CVPR 2026][3D Vision][3D garment generation] SwiftTailor is a lightweight two-stage framework that combines PatternMaker for sewing pattern prediction with GarmentSewer for converting patterns into a Garment Geometry Im…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D garment generation
-  - geometry image
-  - sewing patterns
-  - VLM
-  - Dense Prediction Transformer
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D garment generation"
+  - "geometry image"
+  - "sewing patterns"
+  - "VLM"
+  - "Dense Prediction Transformer"
 date: 2026-05-08
 content_hash: 892f8aa4fb6aab2f
 ---

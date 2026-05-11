@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ZPressor: Bottleneck-Aware Compression for Scalable Feed-Forward 3DGS
 description: >-
-  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] Grounded in the Information Bottleneck (IB) principle, this paper analyzes the capacity bottleneck of feed-forward 3DGS and proposes ZPressor, a lightweight, architecture-agnostic module that compresses multi-view inputs into a compact anchor-view representation, enabling existing models to scale to 100+ input views (480P, 80GB GPU) with consistent performance gains on DL3DV-10K and RealEstate10K.
+  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] Grounded in the Information Bottleneck (IB) principle, this paper analyzes the capacity bottleneck of feed-forward 3DGS and proposes ZPressor, a lightweight…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - Feed-Forward 3DGS
-  - Information Bottleneck
-  - Multi-View Compression
-  - Novel View Synthesis
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Feed-Forward 3DGS"
+  - "Information Bottleneck"
+  - "Multi-View Compression"
+  - "Novel View Synthesis"
 date: 2026-05-08
 content_hash: 20cff4a6ac6cab8f
 ---

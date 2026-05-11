@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] SteerX: Creating Any Camera-Free 3D and 4D Scenes with Geometric Steering
 description: >-
-  [ICCV 2025][Video Generation][3D scene generation] SteerX proposes a zero-shot inference-time guidance method that integrates scene reconstruction into the video generation process. By designing geometric reward functions using camera-free feed-forward reconstruction models, SteerX steers the generation distribution toward geometrically consistent samples, enabling high-quality camera-free 3D/4D scene generation.
+  [ICCV 2025][Video Generation][3D scene generation] SteerX proposes a zero-shot inference-time guidance method that integrates scene reconstruction into the video generation process. By designing geometric reward function…
 tags:
-  - ICCV 2025
-  - Video Generation
-  - 3D scene generation
-  - 4D scene generation
-  - geometric steering
-  - inference-time guidance
+  - "ICCV 2025"
+  - "Video Generation"
+  - "3D scene generation"
+  - "4D scene generation"
+  - "geometric steering"
+  - "inference-time guidance"
 date: 2026-05-08
 content_hash: cc4ee3ddeac6119f
 ---

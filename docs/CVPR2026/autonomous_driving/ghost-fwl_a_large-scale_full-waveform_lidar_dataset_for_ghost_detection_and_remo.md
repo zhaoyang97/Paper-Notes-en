@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Ghost-FWL: A Large-Scale Full-Waveform LiDAR Dataset for Ghost Detection and Removal
 description: >-
-  [CVPR 2026][Autonomous Driving][Full-Waveform LiDAR] Ghost-FWL introduces the first large-scale mobile full-waveform LiDAR dataset (24K frames, 7.5 billion peak-level annotations) and proposes FWL-MAE, a self-supervised pretraining framework for ghost detection and removal, reducing SLAM trajectory error by over 66% and cutting 3D detection false positive rates by 50×.
+  [CVPR 2026][Autonomous Driving][Full-Waveform LiDAR] Ghost-FWL introduces the first large-scale mobile full-waveform LiDAR dataset (24K frames, 7.5 billion peak-level annotations) and proposes FWL-MAE…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Full-Waveform LiDAR
-  - Ghost Detection
-  - Dataset
-  - Self-Supervised Learning
-  - Masked Autoencoder
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Full-Waveform LiDAR"
+  - "Ghost Detection"
+  - "Dataset"
+  - "Self-Supervised Learning"
+  - "Masked Autoencoder"
 date: 2026-05-08
 content_hash: 8dda7fa2aaa6a9b2
 ---

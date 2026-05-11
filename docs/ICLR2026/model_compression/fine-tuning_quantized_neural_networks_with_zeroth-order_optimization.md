@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Fine-tuning Quantized Neural Networks with Zeroth-order Optimization
 description: >-
-  [ICLR 2026][Model Compression][Zeroth-order optimization] This paper proposes QZO, a method that estimates gradients via zeroth-order perturbations applied to quantization scaling factors (rather than discrete weights), and stabilizes training with directional derivative clipping (DDC). QZO enables memory-efficient fine-tuning of 4-bit/2-bit LLMs with over 18× total memory reduction.
+  [ICLR 2026][Model Compression][Zeroth-order optimization] This paper proposes QZO, a method that estimates gradients via zeroth-order perturbations applied to quantization scaling factors (rather than discrete weights)…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Zeroth-order optimization
-  - quantized model fine-tuning
-  - memory-efficient training
-  - quantization scaling factors
-  - gradient variance
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Zeroth-order optimization"
+  - "quantized model fine-tuning"
+  - "memory-efficient training"
+  - "quantization scaling factors"
+  - "gradient variance"
 date: 2026-05-08
 content_hash: daa54e36dd377bb0
 ---

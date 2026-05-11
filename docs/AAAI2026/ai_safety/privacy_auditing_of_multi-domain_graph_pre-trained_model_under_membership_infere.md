@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Privacy Auditing of Multi-Domain Graph Pre-Trained Model under Membership Inference Attack
 description: >-
-  [AI Safety] This paper proposes MGP-MIA, the first framework targeting membership inference attacks (MIA) against multi-domain graph pre-trained models. It amplifies membership signals via machine unlearning, constructs shadow models through incremental learning, and employs a similarity-based inference mechanism to effectively expose privacy leakage risks in multi-domain graph pre-training.
+  [AI Safety] This paper proposes MGP-MIA, the first framework targeting membership inference attacks (MIA) against multi-domain graph pre-trained models. It amplifies membership signals via machine unlearning…
 tags:
-  - AI Safety
+  - "AI Safety"
 date: 2026-05-08
 content_hash: 1e2da63dc120e3e0
 ---

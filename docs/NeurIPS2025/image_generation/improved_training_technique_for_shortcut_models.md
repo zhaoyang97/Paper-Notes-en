@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Improved Training Technique for Shortcut Models (iSM)
 description: >-
-  [NeurIPS 2025][Image Generation][Shortcut Models] Targeting five key performance bottlenecks of Shortcut Models (compounding guidance, fixed guidance, frequency bias, self-consistency deviation, and curved trajectories), this paper proposes iSM, a unified training framework that incorporates intrinsic guidance, multi-level wavelet loss, scaling optimal transport, and twin EMA strategy, achieving substantial improvements on ImageNet 256×256 with one-step FID 5.27 and four-step FID 2.05.
+  [NeurIPS 2025][Image Generation][Shortcut Models] Targeting five key performance bottlenecks of Shortcut Models (compounding guidance, fixed guidance, frequency bias, self-consistency deviation, and curved trajectories)…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Shortcut Models
-  - Flow Matching
-  - Few-step Generation
-  - CFG Guidance
-  - Wavelet Loss
-  - Optimal Transport
-  - EMA Strategy
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Shortcut Models"
+  - "Flow Matching"
+  - "Few-step Generation"
+  - "CFG Guidance"
+  - "Wavelet Loss"
+  - "Optimal Transport"
+  - "EMA Strategy"
 date: 2026-05-08
 content_hash: 33c5701e0c9cfbae
 ---

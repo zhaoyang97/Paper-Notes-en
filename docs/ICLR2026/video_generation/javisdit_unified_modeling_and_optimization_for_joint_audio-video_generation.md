@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] JavisDiT++: Unified Modeling and Optimization for Joint Audio-Video Generation
 description: >-
-  [ICLR 2026][Video Generation][Joint Audio-Video Generation] This paper proposes JavisDiT++, a clean and unified framework for joint audio-video generation (JAVG). It improves generation quality via modality-specific MoE, achieves frame-level synchronization through temporally aligned RoPE, and aligns outputs with human preferences via audio-video DPO. Built on Wan2.1-1.3B with only ~1M public data, it achieves state-of-the-art performance.
+  [ICLR 2026][Video Generation][Joint Audio-Video Generation] This paper proposes JavisDiT++, a clean and unified framework for joint audio-video generation (JAVG). It improves generation quality via modality-specific MoE…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - Joint Audio-Video Generation
-  - DiT
-  - Mixture-of-Experts
-  - RoPE
-  - DPO
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Joint Audio-Video Generation"
+  - "DiT"
+  - "Mixture-of-Experts"
+  - "RoPE"
+  - "DPO"
 date: 2026-05-08
 content_hash: b9854a042f6fd587
 ---

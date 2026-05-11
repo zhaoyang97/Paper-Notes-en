@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Training Language Models to Reason Efficiently
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Efficient Reasoning] By incorporating a length penalty term into the RL reward—multiplying the correctness reward by $(1 - \alpha \cdot \sigma(\text{norm\_len}))$—and using a single hyperparameter $\alpha$ to control the token–accuracy trade-off curve, this work achieves a 50% reduction in token usage with less than 5% accuracy degradation on 7B reasoning models after only 100 RL training steps.
+  [NeurIPS 2025][Reinforcement Learning][Efficient Reasoning] By incorporating a length penalty term into the RL reward—multiplying the correctness reward by $(1 - \alpha \cdot \sigma(\text{norm\_len}))$—and using a single…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Efficient Reasoning
-  - CoT Compression
-  - Length Penalty
-  - Test-Time Compute
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Efficient Reasoning"
+  - "CoT Compression"
+  - "Length Penalty"
+  - "Test-Time Compute"
 date: 2026-05-08
 content_hash: fd4c8a454c87ddaa
 ---

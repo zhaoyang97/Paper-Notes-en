@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Improving Large Vision and Language Models by Learning from a Panel of Peers
 description: >-
-  [ICCV2025][Self-Supervised Learning][Self-improvement] This paper proposes the Panel-of-Peers (PoP) learning framework, in which multiple LVLMs of comparable capability mutually generate candidate responses and score each other to construct preference data. Combined with iterative self-improvement via SimPO, PoP raises the average score across 15 benchmarks from 48% to 57% without any human-annotated data.
+  [ICCV2025][Self-Supervised Learning][Self-improvement] This paper proposes the Panel-of-Peers (PoP) learning framework, in which multiple LVLMs of comparable capability mutually generate candidate responses and score eac…
 tags:
-  - ICCV2025
-  - Self-Supervised Learning
-  - Self-improvement
-  - Preference Alignment
-  - Peer Learning
-  - LVLM
-  - Reward Modeling
+  - "ICCV2025"
+  - "Self-Supervised Learning"
+  - "Self-improvement"
+  - "Preference Alignment"
+  - "Peer Learning"
+  - "LVLM"
+  - "Reward Modeling"
 date: 2026-05-08
 content_hash: 356fc99e37827c92
 ---

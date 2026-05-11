@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MeCeFO: Enhancing LLM Training Robustness via Fault-Tolerant Optimization
 description: >-
-  [NeurIPS 2025][Optimization][fault-tolerant training] MeCeFO proposes a fault-tolerant optimization algorithm for LLM training that minimizes overhead during node failures through three techniques—skip-connections, selective activation recomputation, and low-rank gradient approximation—achieving only a 4.18% throughput drop under high-frequency failure conditions.
+  [NeurIPS 2025][Optimization][fault-tolerant training] MeCeFO proposes a fault-tolerant optimization algorithm for LLM training that minimizes overhead during node failures through three techniques—skip-connections…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - fault-tolerant training
-  - distributed optimization
-  - LLM pre-training
-  - low-rank gradient approximation
-  - activation recomputation
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "fault-tolerant training"
+  - "distributed optimization"
+  - "LLM pre-training"
+  - "low-rank gradient approximation"
+  - "activation recomputation"
 date: 2026-05-08
 content_hash: 7941bcd96092ad22
 ---

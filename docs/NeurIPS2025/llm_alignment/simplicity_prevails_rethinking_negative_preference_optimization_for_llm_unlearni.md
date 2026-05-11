@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Simplicity Prevails: Rethinking Negative Preference Optimization for LLM Unlearning
 description: >-
-  [NeurIPS 2025][LLM Alignment][LLM unlearning] This paper identifies that reference model bias in NPO (Negative Preference Optimization) leads to uneven optimization power allocation across forget data and early-stage gradient weight smoothing failure. The proposed SimNPO eliminates reference model dependency and adopts length-normalized rewards, improving FQ from 0.79 to 0.99 on TOFU and consistently outperforming NPO across all benchmarks.
+  [NeurIPS 2025][LLM Alignment][LLM unlearning] This paper identifies that reference model bias in NPO (Negative Preference Optimization) leads to uneven optimization power allocation across forget data and early-stage gra…
 tags:
-  - NeurIPS 2025
-  - LLM Alignment
-  - LLM unlearning
-  - negative preference optimization
-  - SimNPO
-  - reference model bias
-  - length normalization
+  - "NeurIPS 2025"
+  - "LLM Alignment"
+  - "LLM unlearning"
+  - "negative preference optimization"
+  - "SimNPO"
+  - "reference model bias"
+  - "length normalization"
 date: 2026-05-08
 content_hash: 3fe1e95a0e9f3fd8
 ---

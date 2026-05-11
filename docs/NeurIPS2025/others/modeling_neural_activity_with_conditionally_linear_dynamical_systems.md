@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Modeling Neural Activity with Conditionally Linear Dynamical Systems
 description: >-
-  [NeurIPS 2025][Linear Dynamical Systems] This paper proposes Conditionally Linear Dynamical Systems (CLDS), where Gaussian process priors allow the parameters of a linear dynamical system to vary nonlinearly as a function of observed experimental covariates, preserving the interpretability and efficient inference of linear models while capturing the nonlinear dynamics prevalent in neural circuits.
+  [NeurIPS 2025][Linear Dynamical Systems] This paper proposes Conditionally Linear Dynamical Systems (CLDS), where Gaussian process priors allow the parameters of a linear dynamical system to vary nonlinearly as a functio…
 tags:
-  - NeurIPS 2025
-  - Linear Dynamical Systems
-  - Gaussian Processes
-  - Neural Activity Modeling
-  - Bayesian Inference
-  - Ring Attractor
+  - "NeurIPS 2025"
+  - "Linear Dynamical Systems"
+  - "Gaussian Processes"
+  - "Neural Activity Modeling"
+  - "Bayesian Inference"
+  - "Ring Attractor"
 date: 2026-05-08
 content_hash: 2d4143b5c94c9082
 ---

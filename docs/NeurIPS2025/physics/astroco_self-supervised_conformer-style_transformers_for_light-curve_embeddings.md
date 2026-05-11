@@ -2,15 +2,16 @@
 title: >-
   [Paper Note] AstroCo: Self-Supervised Conformer-Style Transformers for Light-Curve Embeddings
 description: >-
-  [NeurIPS 2025 (ML4PS Workshop)][Self-supervised learning] This paper proposes AstroCo, a self-supervised encoder that introduces the Conformer architecture (attention + depthwise separable convolution + gating) for irregular astronomical light curves. On the MACHO dataset, AstroCo reduces reconstruction error by 61–70% compared to Astromer v1/v2 and improves few-shot classification macro-F1 by approximately 7%.
+  [NeurIPS 2025 (ML4PS Workshop)][Physics][Self-supervised learning] This paper proposes AstroCo, a self-supervised encoder that introduces the Conformer architecture (attention + depthwise separable convolution + gating)…
 tags:
-  - NeurIPS 2025 (ML4PS Workshop)
-  - Self-supervised learning
-  - Conformer
-  - light curves
-  - astronomical time series
-  - masked reconstruction
-  - few-shot classification
+  - "NeurIPS 2025 (ML4PS Workshop)"
+  - "Physics"
+  - "Self-supervised learning"
+  - "Conformer"
+  - "light curves"
+  - "astronomical time series"
+  - "masked reconstruction"
+  - "few-shot classification"
 date: 2026-05-08
 content_hash: a7a7ec98fae2b3f8
 ---

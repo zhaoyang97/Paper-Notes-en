@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From Parameter to Representation: A Closed-Form Approach for Controllable Model Merging
 description: >-
-  [AAAI 2026][Recommender Systems][model merging] This paper proposes ReACT, which shifts controllable model merging from parameter-space optimization to representation-space correction. By deriving a closed-form solution, ReACT enables instant generation of Pareto-optimal models under arbitrary user preferences, achieving 36–208× speedup over existing methods while delivering superior performance.
+  [AAAI 2026][Recommender Systems][model merging] This paper proposes ReACT, which shifts controllable model merging from parameter-space optimization to representation-space correction. By deriving a closed-form solution…
 tags:
-  - AAAI 2026
-  - Recommender Systems
-  - model merging
-  - controllable merging
-  - Pareto front
-  - representation correction
-  - multi-objective optimization
+  - "AAAI 2026"
+  - "Recommender Systems"
+  - "model merging"
+  - "controllable merging"
+  - "Pareto front"
+  - "representation correction"
+  - "multi-objective optimization"
 date: 2026-05-08
 content_hash: 2c2a8d23a1ea67d1
 ---

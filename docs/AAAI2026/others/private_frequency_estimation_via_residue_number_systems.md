@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Private Frequency Estimation via Residue Number Systems
 description: >-
-  [AAAI 2026][Local Differential Privacy] This paper proposes ModularSubsetSelection (MSS), a local differential privacy frequency estimation protocol based on the Residue Number System (RNS). MSS achieves estimation accuracy comparable to SubsetSelection and PGR while significantly reducing communication overhead (up to 50% less than SS), substantially accelerating server-side decoding (11–448× faster than PGR), and attaining the lowest data reconstruction attack success rate.
+  [AAAI 2026][Local Differential Privacy] This paper proposes ModularSubsetSelection (MSS), a local differential privacy frequency estimation protocol based on the Residue Number System (RNS). MSS achieves estimation accur…
 tags:
-  - AAAI 2026
-  - Local Differential Privacy
-  - Frequency Estimation
-  - Residue Number Systems
-  - Communication Efficiency
-  - Data Reconstruction Attack
+  - "AAAI 2026"
+  - "Local Differential Privacy"
+  - "Frequency Estimation"
+  - "Residue Number Systems"
+  - "Communication Efficiency"
+  - "Data Reconstruction Attack"
 date: 2026-05-08
 content_hash: 5d5b086217bf78cc
 ---

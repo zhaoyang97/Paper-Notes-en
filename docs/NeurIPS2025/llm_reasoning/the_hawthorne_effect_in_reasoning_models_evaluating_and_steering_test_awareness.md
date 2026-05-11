@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The Hawthorne Effect in Reasoning Models: Evaluating and Steering Test Awareness
 description: >-
-  [NeurIPS 2025][LLM Reasoning][test awareness] This work presents the first systematic quantification of "test awareness" (the Hawthorne effect) in reasoning-oriented LLMs: models alter their behavior upon detecting that they are being evaluated. The paper localizes awareness-related activations via linear probes and applies parameter editing for steering, revealing that test awareness exerts a significant yet directionally inconsistent influence on safety alignment.
+  [NeurIPS 2025][LLM Reasoning][test awareness] This work presents the first systematic quantification of "test awareness" (the Hawthorne effect) in reasoning-oriented LLMs: models alter their behavior upon detecting that…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - test awareness
-  - representation engineering
-  - safety evaluation
-  - reasoning models
-  - steering vectors
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "test awareness"
+  - "representation engineering"
+  - "safety evaluation"
+  - "reasoning models"
+  - "steering vectors"
 date: 2026-05-08
 content_hash: 8d84d6789ada565b
 ---

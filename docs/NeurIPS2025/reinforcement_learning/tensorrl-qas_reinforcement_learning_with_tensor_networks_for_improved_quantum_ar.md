@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] TensorRL-QAS: Reinforcement Learning with Tensor Networks for Improved Quantum Architecture Search
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Quantum Architecture Search] This work proposes TensorRL-QAS, a framework that warm-starts reinforcement learning-based quantum architecture search (RL-QAS) using tensor networks (MPS/DMRG), achieving up to 10× reduction in circuit depth and CNOT gate count, and up to 98% acceleration in training time, thereby effectively addressing the scalability bottleneck of RL-QAS on large-scale quantum systems.
+  [NeurIPS 2025][Reinforcement Learning][Quantum Architecture Search] This work proposes TensorRL-QAS, a framework that warm-starts reinforcement learning-based quantum architecture search (RL-QAS) using tensor networks (M…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Quantum Architecture Search
-  - Tensor Networks
-  - DMRG
-  - Variational Quantum Algorithms
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Quantum Architecture Search"
+  - "Tensor Networks"
+  - "DMRG"
+  - "Variational Quantum Algorithms"
 date: 2026-05-08
 content_hash: 3ec1578d8000b3ac
 ---

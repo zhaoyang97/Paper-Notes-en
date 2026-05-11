@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Toward Complex-Valued Neural Networks for Waveform Generation
 description: >-
-  [ICLR 2026][Audio & Speech][Complex-valued neural networks] This paper proposes ComVo, the first iSTFT vocoder to employ complex-valued neural networks (CVNNs) in both the generator and discriminator. It stabilizes training via a phase quantization layer and introduces a block-matrix computation scheme that reduces training time by 25%, achieving synthesis quality superior to real-valued baselines such as Vocos on LibriTTS.
+  [ICLR 2026][Audio & Speech][Complex-valued neural networks] This paper proposes ComVo, the first iSTFT vocoder to employ complex-valued neural networks (CVNNs) in both the generator and discriminator. It stabilizes train…
 tags:
-  - ICLR 2026
+  - "ICLR 2026"
   - "Audio & Speech"
-  - Complex-valued neural networks
-  - iSTFT vocoder
-  - phase quantization
-  - GAN
-  - waveform generation
+  - "Complex-valued neural networks"
+  - "iSTFT vocoder"
+  - "phase quantization"
+  - "GAN"
+  - "waveform generation"
 date: 2026-05-08
 content_hash: 97e3f0932bb7d2f5
 ---

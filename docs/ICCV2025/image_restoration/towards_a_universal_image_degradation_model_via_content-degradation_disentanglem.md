@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards a Universal Image Degradation Model via Content-Degradation Disentanglement
 description: >-
-  [ICCV 2025][Image Restoration][Image degradation modeling] This paper proposes the first universal image degradation model. Through a *disentangle-by-compression* approach, it separates degradation information from image content, introduces IDEN and IDA layers to handle inhomogeneous degradation, and enables cross-degradation encoding, synthesis, and transfer. The model can serve as a plug-in module to convert non-blind image restoration methods into blind ones.
+  [ICCV 2025][Image Restoration][Image degradation modeling] This paper proposes the first universal image degradation model. Through a *disentangle-by-compression* approach…
 tags:
-  - ICCV 2025
-  - Image Restoration
-  - Image degradation modeling
-  - degradation disentanglement
-  - inhomogeneous degradation
-  - blind image restoration
-  - film grain simulation
+  - "ICCV 2025"
+  - "Image Restoration"
+  - "Image degradation modeling"
+  - "degradation disentanglement"
+  - "inhomogeneous degradation"
+  - "blind image restoration"
+  - "film grain simulation"
 date: 2026-05-08
 content_hash: ddabf4ea69ec0e9d
 ---

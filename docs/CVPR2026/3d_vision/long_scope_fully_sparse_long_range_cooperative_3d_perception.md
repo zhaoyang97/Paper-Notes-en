@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Long-SCOPE: Fully Sparse Long-Range Cooperative 3D Perception
 description: >-
-  [CVPR 2026][3D Vision][Cooperative Perception] Long-SCOPE proposes a fully sparse long-range cooperative 3D perception framework that achieves state-of-the-art performance in 100–150 m long-range scenarios through geometry-guided query generation and a context-aware association module, while maintaining efficient computation and communication costs.
+  [CVPR 2026][3D Vision][Cooperative Perception] Long-SCOPE proposes a fully sparse long-range cooperative 3D perception framework that achieves state-of-the-art performance in 100–150 m long-range scenarios through geomet…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Cooperative Perception
-  - Sparse Architecture
-  - Long-Range 3D Detection
-  - Query Association
-  - V2X
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Cooperative Perception"
+  - "Sparse Architecture"
+  - "Long-Range 3D Detection"
+  - "Query Association"
+  - "V2X"
 date: 2026-05-08
 content_hash: b7e7375311b9a373
 ---

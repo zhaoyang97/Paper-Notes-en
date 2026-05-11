@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Enhancing Multilingual RAG Systems with Debiased Language Preference-Guided Query Fusion
 description: >-
-  [ACL 2026][Multilingual RAG] This paper demonstrates that the apparent "English preference" in multilingual RAG systems is primarily an artifact of structural priors embedded in evaluation benchmarks (i.e., gold evidence concentrated in English and cultural priors) rather than an intrinsic model bias. The authors propose a debiased language preference metric, DeLP, which reveals that retrievers actually prefer monolingual alignment. Building on this insight, they design the DELTA query augmentation framework, which consistently outperforms English-pivot strategies on multilingual RAG benchmarks.
+  [ACL 2026][Information Retrieval & RAG][Multilingual RAG] This paper demonstrates that the apparent "English preference" in multilingual RAG systems is primarily an artifact of structural priors embedded in evaluation be…
 tags:
-  - ACL 2026
-  - Multilingual RAG
-  - English-centric bias
-  - language preference
-  - query fusion
-  - debiased calibration
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Multilingual RAG"
+  - "English-centric bias"
+  - "language preference"
+  - "query fusion"
+  - "debiased calibration"
 date: 2026-05-08
 content_hash: c11e61f895e361d2
 ---

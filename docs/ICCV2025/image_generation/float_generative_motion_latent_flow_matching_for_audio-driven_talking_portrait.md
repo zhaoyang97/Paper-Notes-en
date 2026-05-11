@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FLOAT: Generative Motion Latent Flow Matching for Audio-driven Talking Portrait
 description: >-
-  [ICCV 2025][Image Generation][Flow Matching] This paper proposes FLOAT, an audio-driven talking portrait generation method based on Flow Matching, which employs a Transformer architecture to predict vector fields in an orthogonal motion latent space. The approach enables efficient (~10-step sampling), temporally consistent, high-quality talking video generation, with additional support for speech-driven emotion enhancement and test-time head pose editing.
+  [ICCV 2025][Image Generation][Flow Matching] This paper proposes FLOAT, an audio-driven talking portrait generation method based on Flow Matching…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Flow Matching
-  - Talking Portrait Generation
-  - Motion Latent Space
-  - Orthogonal Basis
-  - Speech Emotion Enhancement
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Flow Matching"
+  - "Talking Portrait Generation"
+  - "Motion Latent Space"
+  - "Orthogonal Basis"
+  - "Speech Emotion Enhancement"
 date: 2026-05-08
 content_hash: 329f6c59932b8e7f
 ---

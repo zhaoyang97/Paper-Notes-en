@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Structural Information-based Hierarchical Diffusion for Offline Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Offline Reinforcement Learning] This paper proposes SIHD, a framework that leverages structural information (structural entropy) extracted from historical trajectories to adaptively construct multi-scale diffusion hierarchies, replaces local reward prediction with structural information gain as the conditional guidance signal, and introduces structural entropy regularization to encourage exploration of sparse states in offline data. SIHD achieves up to 12.6% improvement in decision-making performance on the D4RL benchmark.
+  [NeurIPS 2025][Reinforcement Learning][Offline Reinforcement Learning] This paper proposes SIHD, a framework that leverages structural information (structural entropy) extracted from historical trajectories to adaptively…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Offline Reinforcement Learning
-  - Diffusion Models
-  - Hierarchical Planning
-  - Structural Entropy
-  - Long-Horizon Decision Making
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Offline Reinforcement Learning"
+  - "Diffusion Models"
+  - "Hierarchical Planning"
+  - "Structural Entropy"
+  - "Long-Horizon Decision Making"
 date: 2026-05-08
 content_hash: 1d9f993795215735
 ---

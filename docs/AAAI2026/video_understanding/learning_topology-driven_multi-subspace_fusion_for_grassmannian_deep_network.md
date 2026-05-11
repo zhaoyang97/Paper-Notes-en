@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Topology-Driven Multi-Subspace Fusion for Grassmannian Deep Networks
 description: >-
-  [AAAI 2026][Video Understanding][Grassmannian] This paper proposes GMSF-Net, a topology-driven multi-subspace fusion network on the Grassmann manifold. By introducing adaptive multi-subspace construction and a Fréchet mean-based subspace interaction mechanism, it successfully transfers the multi-channel interaction paradigm from Euclidean space to non-Euclidean geometry, achieving state-of-the-art performance on 3D action recognition, EEG classification, and graph tasks.
+  [AAAI 2026][Video Understanding][Grassmannian] This paper proposes GMSF-Net, a topology-driven multi-subspace fusion network on the Grassmann manifold. By introducing adaptive multi-subspace construction and a Fréchet me…
 tags:
-  - AAAI 2026
-  - Video Understanding
-  - Grassmannian
-  - manifold learning
-  - subspace fusion
-  - 3D action recognition
-  - Riemannian neural networks
+  - "AAAI 2026"
+  - "Video Understanding"
+  - "Grassmannian"
+  - "manifold learning"
+  - "subspace fusion"
+  - "3D action recognition"
+  - "Riemannian neural networks"
 date: 2026-05-08
 content_hash: 43872567c34e00d7
 ---

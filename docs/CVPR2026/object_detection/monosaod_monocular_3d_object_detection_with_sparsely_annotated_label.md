@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MonoSAOD: Monocular 3D Object Detection with Sparsely Annotated Label
 description: >-
-  [CVPR 2026][Object Detection][Monocular 3D Detection] This work is the first to formally define and address the problem of sparsely annotated monocular 3D object detection. It proposes two modules—Road-Aware Patch Augmentation (RAPA) and Prototype-Based Filtering (PBF)—achieving substantial improvements over existing 2D SAOD methods under the KITTI 30% annotation setting (AP3D Easy: 21.28 vs. 17.14).
+  [CVPR 2026][Object Detection][Monocular 3D Detection] This work is the first to formally define and address the problem of sparsely annotated monocular 3D object detection. It proposes two modules—Road-Aware Patch Augmen…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - Monocular 3D Detection
-  - Sparse Annotation
-  - Data Augmentation
-  - Pseudo Labels
-  - Prototype Filtering
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Monocular 3D Detection"
+  - "Sparse Annotation"
+  - "Data Augmentation"
+  - "Pseudo Labels"
+  - "Prototype Filtering"
 date: 2026-05-08
 content_hash: bad1260eecbdc84a
 ---

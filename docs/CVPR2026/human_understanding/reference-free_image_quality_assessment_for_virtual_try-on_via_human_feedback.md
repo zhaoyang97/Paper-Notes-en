@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Reference-Free Image Quality Assessment for Virtual Try-On via Human Feedback
 description: >-
-  [CVPR2026][Human Understanding][Virtual try-on] This paper presents VTON-IQA, a reference-free image quality assessment framework for virtual try-on. It introduces VTON-QBench, a large-scale benchmark comprising 62,688 try-on images annotated with 431,800 human judgments, and proposes an Interleaved Cross-Attention (ICA) module to model interactions among garment, person, and try-on images, achieving image-level quality predictions that are closely aligned with human perception.
+  [CVPR2026][Human Understanding][Virtual try-on] This paper presents VTON-IQA, a reference-free image quality assessment framework for virtual try-on. It introduces VTON-QBench, a large-scale benchmark comprising 62…
 tags:
-  - CVPR2026
-  - Human Understanding
-  - Virtual try-on
-  - image quality assessment
-  - reference-free evaluation
-  - human feedback alignment
-  - cross-attention
-  - large-scale annotation benchmark
+  - "CVPR2026"
+  - "Human Understanding"
+  - "Virtual try-on"
+  - "image quality assessment"
+  - "reference-free evaluation"
+  - "human feedback alignment"
+  - "cross-attention"
+  - "large-scale annotation benchmark"
 date: 2026-05-08
 content_hash: 97f697c44dcd5db4
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Griffin: Aerial-Ground Cooperative Detection and Tracking Dataset and Benchmark
 description: >-
-  [AAAI 2026][3D Vision][aerial-ground cooperative perception] This paper presents Griffin, the first aerial-ground cooperative (AGC) 3D perception dataset and benchmark framework, comprising 250+ dynamic scenes (37K+ frames) generated via CARLA-AirSim joint simulation. Griffin features realistic UAV dynamics, variable cruise altitudes (20–60 m), occlusion-aware annotations, and a systematic robustness evaluation protocol.
+  [AAAI 2026][3D Vision][aerial-ground cooperative perception] This paper presents Griffin, the first aerial-ground cooperative (AGC) 3D perception dataset and benchmark framework…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - aerial-ground cooperative perception
-  - UAV-vehicle collaboration
-  - 3D object detection
-  - multi-object tracking
-  - collaborative perception dataset
+  - "AAAI 2026"
+  - "3D Vision"
+  - "aerial-ground cooperative perception"
+  - "UAV-vehicle collaboration"
+  - "3D object detection"
+  - "multi-object tracking"
+  - "collaborative perception dataset"
 date: 2026-05-08
 content_hash: 37f9a437b6ab0a0d
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Downscaling Intelligence: Exploring Perception and Reasoning Bottlenecks in Small VLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][multimodal model scaling] This paper systematically investigates the effect of LLM scaling on multimodal capabilities, finding that vision-dependent tasks—rather than LLM-intrinsic tasks—suffer the most, and that perception degradation is as severe as reasoning degradation. The proposed Extract+Think method (visual extraction tuning + step-by-step reasoning) uses a 0.6B perception module and a 1.7B reasoning module to outperform PrismCaptioner and LLaVA-OneVision-0.5B, which are up to 12× larger.
+  [CVPR 2026][Multimodal VLM][multimodal model scaling] This paper systematically investigates the effect of LLM scaling on multimodal capabilities…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - multimodal model scaling
-  - perception bottleneck
-  - reasoning bottleneck
-  - visual extraction tuning
-  - small models
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "multimodal model scaling"
+  - "perception bottleneck"
+  - "reasoning bottleneck"
+  - "visual extraction tuning"
+  - "small models"
 date: 2026-05-08
 content_hash: 1fcc4ab2dce8018b
 ---

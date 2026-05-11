@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Bilevel MCTS for Amortized O(1) Node Selection in Classical Planning
 description: >-
-  [AAAI 2026][MCTS] This paper proposes Bilevel MCTS, which launches a depth-proportional budgeted best-first search at the leaf node selected by MCTS, reducing the amortized node-selection complexity from $O(\log N)$ to $O(1)$. Complemented by Tree Collapsing to reduce the number of action-selection steps, these components are integrated into the Nεbula planner, which solves 192.2/230.6 problems on IPC2018/2023 benchmarks (5min/30min), outperforming all prior SOTA planners including LAMA, DecStar, NOLAN, and SM-Type-LAMA.
+  [AAAI 2026][MCTS] This paper proposes Bilevel MCTS, which launches a depth-proportional budgeted best-first search at the leaf node selected by MCTS…
 tags:
-  - AAAI 2026
-  - MCTS
-  - Classical Planning
-  - O(1) Node Selection
-  - Tree Collapsing
-  - UCB1-Normal2
-  - IPC Benchmark
-  - Agile Planning
+  - "AAAI 2026"
+  - "MCTS"
+  - "Classical Planning"
+  - "O(1) Node Selection"
+  - "Tree Collapsing"
+  - "UCB1-Normal2"
+  - "IPC Benchmark"
+  - "Agile Planning"
 date: 2026-05-08
 content_hash: e5c86b450c1cbb15
 ---

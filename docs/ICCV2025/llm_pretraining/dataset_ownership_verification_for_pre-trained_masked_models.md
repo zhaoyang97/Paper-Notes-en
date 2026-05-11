@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dataset Ownership Verification for Pre-trained Masked Models
 description: >-
-  [ICCV 2025][LLM Pretraining][dataset ownership verification] DOV4MM proposes the first dataset ownership verification method tailored for masked pre-trained models. By comparing the embedding reconstruction difficulty of seen versus unseen samples, and applying a paired t-test, the method determines whether a black-box model was pre-trained on a specific dataset. It achieves p-values well below 0.05 across 10 masked image models and 4 masked language models.
+  [ICCV 2025][LLM Pretraining][dataset ownership verification] DOV4MM proposes the first dataset ownership verification method tailored for masked pre-trained models. By comparing the embedding reconstruction difficulty of…
 tags:
-  - ICCV 2025
-  - LLM Pretraining
-  - dataset ownership verification
-  - masked modeling
-  - embedding reconstruction difficulty
-  - hypothesis testing
-  - self-supervised learning
+  - "ICCV 2025"
+  - "LLM Pretraining"
+  - "dataset ownership verification"
+  - "masked modeling"
+  - "embedding reconstruction difficulty"
+  - "hypothesis testing"
+  - "self-supervised learning"
 date: 2026-05-08
 content_hash: 4bcdf063be537907
 ---

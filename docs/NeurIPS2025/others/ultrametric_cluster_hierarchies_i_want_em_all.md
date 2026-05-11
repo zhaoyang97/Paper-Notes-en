@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Ultrametric Cluster Hierarchies: I Want 'em All!
 description: >-
-  [NeurIPS 2025][hierarchical clustering] This paper proves that for any reasonable cluster hierarchy tree, one can efficiently find the optimal solution to any center-based clustering objective (e.g., k-means), and that these solutions are themselves hierarchical — thereby unlocking a large family of equally meaningful hierarchical structures from a single tree.
+  [NeurIPS 2025][hierarchical clustering] This paper proves that for any reasonable cluster hierarchy tree, one can efficiently find the optimal solution to any center-based clustering objective (e.g., k-means)…
 tags:
-  - NeurIPS 2025
-  - hierarchical clustering
-  - ultrametric
-  - k-means
-  - optimal partition
-  - dendrogram
+  - "NeurIPS 2025"
+  - "hierarchical clustering"
+  - "ultrametric"
+  - "k-means"
+  - "optimal partition"
+  - "dendrogram"
 date: 2026-05-08
 content_hash: 7d8a2a5c7d064bdc
 ---

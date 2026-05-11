@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Efficient Adaptive Experimentation with Noncompliance
 description: >-
-  [NeurIPS 2025][Optimization][adaptive experimentation] This paper proposes AMRIV — the first semiparametrically efficient, multiply robust ATE estimator for adaptive experiments with noncompliance — combined with a variance-optimal instrumental variable allocation strategy and sequential inference guarantees.
+  [NeurIPS 2025][Optimization][adaptive experimentation] This paper proposes AMRIV — the first semiparametrically efficient, multiply robust ATE estimator for adaptive experiments with noncompliance — combined with a varia…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - adaptive experimentation
-  - instrumental variables
-  - noncompliance
-  - semiparametric efficiency
-  - causal inference
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "adaptive experimentation"
+  - "instrumental variables"
+  - "noncompliance"
+  - "semiparametric efficiency"
+  - "causal inference"
 date: 2026-05-08
 content_hash: 21f4ef89a8687a1e
 ---

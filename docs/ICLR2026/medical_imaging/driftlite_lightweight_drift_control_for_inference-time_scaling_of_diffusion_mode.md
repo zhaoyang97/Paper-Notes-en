@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DriftLite: Lightweight Drift Control for Inference-Time Scaling of Diffusion Models
 description: >-
-  [ICLR 2026][Medical Imaging][Diffusion model inference adaptation] DriftLite exploits the inherent degrees of freedom between the drift and potential function in the Fokker-Planck equation to actively stabilize particle weights by solving a lightweight linear system for the optimal control drift at each step. This approach addresses weight degeneracy in Sequential Monte Carlo (SMC) at minimal computational cost, substantially outperforming Guidance-SMC baselines on Gaussian mixture, molecular system, and protein–ligand co-folding tasks.
+  [ICLR 2026][Medical Imaging][Diffusion model inference adaptation] DriftLite exploits the inherent degrees of freedom between the drift and potential function in the Fokker-Planck equation to actively stabilize particle…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - Diffusion model inference adaptation
-  - particle methods
-  - drift control
-  - Fokker-Planck equation
-  - variance reduction
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Diffusion model inference adaptation"
+  - "particle methods"
+  - "drift control"
+  - "Fokker-Planck equation"
+  - "variance reduction"
 date: 2026-05-08
 content_hash: 89efc25fb835e73f
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] MathSmith: Towards Extremely Hard Mathematical Reasoning by Forging Synthetic Problems with a Reinforced Policy
 description: >-
-  [AAAI 2026][Reinforcement Learning][Mathematical Reasoning] This paper proposes MathSmith, a framework that generates hard mathematical problems by randomly sampling concept pairs from PlanetMath, applying 9 predefined difficulty strategies, and jointly optimizing structural validity, reasoning complexity, and answer consistency via GRPO-based reinforcement learning. The resulting high-difficulty synthetic problems significantly improve LLM mathematical reasoning on AIME and OlympiadBench.
+  [AAAI 2026][Reinforcement Learning][Mathematical Reasoning] This paper proposes MathSmith, a framework that generates hard mathematical problems by randomly sampling concept pairs from PlanetMath…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - Mathematical Reasoning
-  - Synthetic Data
-  - Large Language Models
-  - Difficulty Control
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "Mathematical Reasoning"
+  - "Synthetic Data"
+  - "Large Language Models"
+  - "Difficulty Control"
 date: 2026-05-08
 content_hash: 73a83bbf29802780
 ---

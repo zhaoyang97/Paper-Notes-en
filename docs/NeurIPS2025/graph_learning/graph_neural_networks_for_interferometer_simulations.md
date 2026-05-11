@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Graph Neural Networks for Interferometer Simulations
 description: >-
-  [NeurIPS 2025 (AI for Science Workshop)][Graph Learning][GNN] This work presents the first application of graph neural networks to optical interferometer simulation, employing a GATv2 + KAN architecture to predict electromagnetic field power and spatial intensity distributions within LIGO interferometers. The approach achieves inference speeds up to 815× faster than the standard simulation software (FINESSE) while maintaining satisfactory physical accuracy.
+  [NeurIPS 2025 (AI for Science Workshop)][Graph Learning][GNN] This work presents the first application of graph neural networks to optical interferometer simulation…
 tags:
-  - NeurIPS 2025 (AI for Science Workshop)
-  - Graph Learning
-  - GNN
-  - interferometer simulation
-  - LIGO
-  - gravitational waves
-  - optical simulation
+  - "NeurIPS 2025 (AI for Science Workshop)"
+  - "Graph Learning"
+  - "GNN"
+  - "interferometer simulation"
+  - "LIGO"
+  - "gravitational waves"
+  - "optical simulation"
 date: 2026-05-08
 content_hash: 9bed7f4eda7c0ed1
 ---

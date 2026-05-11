@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PersonalVideo: High ID-Fidelity Video Customization without Dynamic and Semantic Degradation
 description: >-
-  [ICCV 2025][Image Generation][Video customization] This paper proposes PersonalVideo, a framework that applies hybrid reward supervision—comprising an Identity Consistency Reward (ICR) and a Semantic Consistency Reward (SCR)—directly to generated videos. This approach eliminates the distribution gap between T2I fine-tuning and T2V inference inherent in conventional methods, achieving high identity fidelity while preventing degradation of motion dynamics and semantic alignment.
+  [ICCV 2025][Image Generation][Video customization] This paper proposes PersonalVideo, a framework that applies hybrid reward supervision—comprising an Identity Consistency Reward (ICR) and a Semantic Consistency Reward (…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Video customization
-  - identity preservation
-  - reward supervision
-  - T2V generation
-  - semantic consistency
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Video customization"
+  - "identity preservation"
+  - "reward supervision"
+  - "T2V generation"
+  - "semantic consistency"
 date: 2026-05-08
 content_hash: 1517ee819e1ddfe4
 ---

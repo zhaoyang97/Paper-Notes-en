@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] 2HandedAfforder: Learning Precise Actionable Bimanual Affordances from Human Videos
 description: >-
-  [ICCV 2025][Segmentation][bimanual affordance] This paper proposes an automated pipeline to extract precise bimanual affordance annotations from human activity videos, yielding the 2HANDS dataset, and trains a VLM-based 2HandedAfforder model that predicts precise object region segmentation masks for left and right hand grasps conditioned on text prompts. The approach significantly outperforms existing methods on the newly introduced ActAffordance benchmark.
+  [ICCV 2025][Segmentation][bimanual affordance] This paper proposes an automated pipeline to extract precise bimanual affordance annotations from human activity videos, yielding the 2HANDS dataset…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - bimanual affordance
-  - affordance segmentation
-  - VLM
-  - hand-object interaction
-  - egocentric video
+  - "ICCV 2025"
+  - "Segmentation"
+  - "bimanual affordance"
+  - "affordance segmentation"
+  - "VLM"
+  - "hand-object interaction"
+  - "egocentric video"
 date: 2026-05-08
 content_hash: 40c01dc90658bfd2
 ---

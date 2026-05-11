@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] MAVFlow: Preserving Paralinguistic Elements with Conditional Flow Matching for Zero-Shot AV2AV Multilingual Translation
 description: >-
-  [Image Generation] This paper proposes MAVFlow, a zero-shot audio-visual renderer based on conditional flow matching (CFM), which leverages dual-modal guidance from audio speaker embeddings and visual emotion embeddings to preserve speaker consistency in multilingual AV2AV translation.
+  [Image Generation] This paper proposes MAVFlow, a zero-shot audio-visual renderer based on conditional flow matching (CFM)…
 tags:
-  - Image Generation
+  - "Image Generation"
 date: 2026-05-08
 content_hash: 6feb0208dd884d80
 ---

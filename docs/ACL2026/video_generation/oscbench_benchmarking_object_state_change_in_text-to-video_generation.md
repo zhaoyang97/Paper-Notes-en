@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OSCBench: Benchmarking Object State Change in Text-to-Video Generation
 description: >-
-  [ACL 2026][Video Generation][Text-to-Video] This paper proposes OSCBench — the first benchmark dedicated to evaluating object state change (OSC) capabilities in text-to-video (T2V) models. Built on cooking scenarios with 1,120 prompts covering conventional/novel/compositional scenarios, it reveals that even the strongest T2V model achieves only 0.786 OSC accuracy.
+  [ACL 2026][Video Generation][Text-to-Video] This paper proposes OSCBench — the first benchmark dedicated to evaluating object state change (OSC) capabilities in text-to-video (T2V) models. Built on cooking scenarios with…
 tags:
-  - ACL 2026
-  - Video Generation
-  - Text-to-Video
-  - Object State Change
-  - Evaluation Benchmark
-  - Cooking Scenarios
-  - Multimodal Evaluation
+  - "ACL 2026"
+  - "Video Generation"
+  - "Text-to-Video"
+  - "Object State Change"
+  - "Evaluation Benchmark"
+  - "Cooking Scenarios"
+  - "Multimodal Evaluation"
 date: 2025-04-17
 content_hash: 84568bb045a1a874
 ---

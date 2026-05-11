@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] RTMap: Real-Time Recursive Mapping with Change Detection and Localization
 description: >-
-  [ICCV 2025][Autonomous Driving][HD Map] RTMap is proposed as the first end-to-end framework that simultaneously addresses three core challenges in multi-traversal online HD map construction: prior-map-based localization, road structure change detection, and probabilistic crowdsourced map fusion. It achieves improvements in both map quality and localization accuracy on TbV and nuScenes.
+  [ICCV 2025][Autonomous Driving][HD Map] RTMap is proposed as the first end-to-end framework that simultaneously addresses three core challenges in multi-traversal online HD map construction: prior-map-based localization…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - HD Map
-  - Crowdsourced Mapping
-  - Change Detection
-  - Map Localization
-  - Uncertainty Modeling
-  - Multi-Traversal Fusion
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "HD Map"
+  - "Crowdsourced Mapping"
+  - "Change Detection"
+  - "Map Localization"
+  - "Uncertainty Modeling"
+  - "Multi-Traversal Fusion"
 date: 2026-05-08
 content_hash: e74ababecbdfe386
 ---

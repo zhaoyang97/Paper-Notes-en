@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mitigating Catastrophic Forgetting in Target Language Adaptation of LLMs via Source-Shielded Updates
 description: >-
-  [ACL 2026][LLM Evaluation][Catastrophic Forgetting] This paper proposes Source-Shielded Updates (SSU), a column-wise freezing strategy driven by source-data parameter importance scoring. During continual pre-training (CPT) using only unlabeled target-language data, SSU reduces source-language performance degradation from 20.3% (full fine-tuning) to 3.4%, while maintaining target-language performance on par with or superior to full fine-tuning.
+  [ACL 2026][LLM Evaluation][Catastrophic Forgetting] This paper proposes Source-Shielded Updates (SSU), a column-wise freezing strategy driven by source-data parameter importance scoring. During continual pre-training (CP…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - Catastrophic Forgetting
-  - Language Adaptation
-  - Selective Parameter Update
-  - Column-wise Freezing
-  - Source Knowledge Preservation
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "Catastrophic Forgetting"
+  - "Language Adaptation"
+  - "Selective Parameter Update"
+  - "Column-wise Freezing"
+  - "Source Knowledge Preservation"
 date: 2026-05-08
 content_hash: 20611042ab174029
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] World-Env: Leveraging World Model as a Virtual Environment for VLA Post-Training
 description: >-
-  [CVPR2026][Multimodal VLM][VLA] This paper proposes the World-Env framework, which leverages a physically consistent world model as a virtual environment in place of real-world interaction to perform RL post-training on VLA models. With only 5 demonstrations per task, the framework achieves significant improvements in manipulation success rates.
+  [CVPR2026][Multimodal VLM][VLA] This paper proposes the World-Env framework, which leverages a physically consistent world model as a virtual environment in place of real-world interaction to perform RL post-training on…
 tags:
-  - CVPR2026
-  - Multimodal VLM
-  - VLA
-  - World Model
-  - Reinforcement Learning
-  - Post-Training
-  - Robot Manipulation
-  - Few-Shot
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "VLA"
+  - "World Model"
+  - "Reinforcement Learning"
+  - "Post-Training"
+  - "Robot Manipulation"
+  - "Few-Shot"
 date: 2026-05-08
 content_hash: 5ab90c97550c83fd
 ---

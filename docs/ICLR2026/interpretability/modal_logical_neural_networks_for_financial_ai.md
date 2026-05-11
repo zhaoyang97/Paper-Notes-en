@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Modal Logical Neural Networks for Financial AI
 description: >-
-  [ICLR 2026][modal logic] This paper proposes Modal Logical Neural Networks (MLNN), which integrate Kripke semantics (necessity/possibility modal operators) into neural networks, achieving auditable logical reasoning combined with deep learning performance for financial contract safety review, wash-sale compliance, and market collusion detection.
+  [ICLR 2026][Interpretability][modal logic] This paper proposes Modal Logical Neural Networks (MLNN), which integrate Kripke semantics (necessity/possibility modal operators) into neural networks…
 tags:
-  - ICLR 2026
-  - modal logic
-  - neural networks
-  - Kripke semantics
-  - financial compliance
-  - interpretable AI
+  - "ICLR 2026"
+  - "Interpretability"
+  - "modal logic"
+  - "neural networks"
+  - "Kripke semantics"
+  - "financial compliance"
+  - "interpretable AI"
 date: 2026-05-08
 content_hash: 325f4ac55ea61f7f
 ---

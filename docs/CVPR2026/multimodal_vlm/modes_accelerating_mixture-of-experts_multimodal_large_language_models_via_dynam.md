@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MoDES: Accelerating Mixture-of-Experts Multimodal Large Language Models via Dynamic Expert Skipping
 description: >-
-  [CVPR2026][Multimodal VLM][MoE acceleration] This paper proposes MoDES, the first training-free expert skipping framework for MoE multimodal large language models. By leveraging Globally Modulated Local Gating (GMLG) and Dual-Modal Thresholding (DMT), MoDES adaptively skips redundant experts, retaining over 97% of original performance while skipping 88% of experts, and achieving 2.16× prefill speedup.
+  [CVPR2026][Multimodal VLM][MoE acceleration] This paper proposes MoDES, the first training-free expert skipping framework for MoE multimodal large language models. By leveraging Globally Modulated Local Gating (GMLG) and…
 tags:
-  - CVPR2026
-  - Multimodal VLM
-  - MoE acceleration
-  - expert skipping
-  - multimodal large language models
-  - training-free
-  - inference efficiency
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "MoE acceleration"
+  - "expert skipping"
+  - "multimodal large language models"
+  - "training-free"
+  - "inference efficiency"
 date: 2026-05-08
 content_hash: ddaaab8ee1fbc9f2
 ---

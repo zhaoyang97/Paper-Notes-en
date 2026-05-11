@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UniConvNet: Expanding Effective Receptive Field while Maintaining Asymptotically Gaussian Distribution for ConvNets of Any Scale
 description: >-
-  [ICCV 2025][Model Compression][Convolutional Neural Networks] This paper proposes UniConvNet, which employs a three-layer Receptive Field Aggregator (RFA) composed of moderately sized convolution kernels (7×7, 9×9, 11×11) to expand the Effective Receptive Field (ERF) while preserving its Asymptotically Gaussian Distribution (AGD), achieving consistent improvements over existing CNNs and ViTs across lightweight to large-scale model regimes.
+  [ICCV 2025][Model Compression][Convolutional Neural Networks] This paper proposes UniConvNet, which employs a three-layer Receptive Field Aggregator (RFA) composed of moderately sized convolution kernels (7×7, 9×9…
 tags:
-  - ICCV 2025
-  - Model Compression
-  - Convolutional Neural Networks
-  - Effective Receptive Field
-  - Asymptotically Gaussian Distribution
-  - Lightweight Networks
-  - Large-Kernel Convolution
+  - "ICCV 2025"
+  - "Model Compression"
+  - "Convolutional Neural Networks"
+  - "Effective Receptive Field"
+  - "Asymptotically Gaussian Distribution"
+  - "Lightweight Networks"
+  - "Large-Kernel Convolution"
 date: 2026-05-08
 content_hash: 156f5808df386e75
 ---

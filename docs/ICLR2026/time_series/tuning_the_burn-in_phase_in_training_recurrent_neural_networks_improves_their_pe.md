@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Tuning the Burn-in Phase in RNN Training Improves Performance
 description: >-
-  [ICLR 2026][Time Series][Recurrent Neural Networks] This paper provides a theoretical analysis of the critical role played by the burn-in length $m$ in Truncated Backpropagation Through Time (TBPTT) training of RNNs. It establishes upper bounds on training regret and validates through system identification and time series forecasting experiments that appropriately tuning the burn-in phase can reduce prediction error by more than 60%.
+  [ICLR 2026][Time Series][Recurrent Neural Networks] This paper provides a theoretical analysis of the critical role played by the burn-in length $m$ in Truncated Backpropagation Through Time (TBPTT) training of RNNs. It…
 tags:
-  - ICLR 2026
-  - Time Series
-  - Recurrent Neural Networks
-  - Truncated Backpropagation Through Time
-  - Burn-in Phase
-  - Time Series Forecasting
-  - System Identification
+  - "ICLR 2026"
+  - "Time Series"
+  - "Recurrent Neural Networks"
+  - "Truncated Backpropagation Through Time"
+  - "Burn-in Phase"
+  - "Time Series Forecasting"
+  - "System Identification"
 date: 2026-05-08
 content_hash: 0d29d1f4a4f84d9b
 ---

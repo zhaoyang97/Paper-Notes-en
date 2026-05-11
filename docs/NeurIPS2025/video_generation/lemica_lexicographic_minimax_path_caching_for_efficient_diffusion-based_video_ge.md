@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] LeMiCa: Lexicographic Minimax Path Caching for Efficient Diffusion-Based Video Generation
 description: >-
-  [NeurIPS 2025][Video Generation][diffusion acceleration] This paper proposes LeMiCa, a training-free acceleration framework for diffusion-based video generation that formulates cache scheduling as a lexicographic minimax path optimization problem on a directed acyclic graph (DAG), achieving simultaneous gains in speed and quality (2.9× speedup on Latte; LPIPS as low as 0.05 on Open-Sora) via global error control.
+  [NeurIPS 2025][Video Generation][diffusion acceleration] This paper proposes LeMiCa, a training-free acceleration framework for diffusion-based video generation that formulates cache scheduling as a lexicographic minimax…
 tags:
-  - NeurIPS 2025
-  - Video Generation
-  - diffusion acceleration
-  - caching
-  - DAG optimization
-  - lexicographic minimax
+  - "NeurIPS 2025"
+  - "Video Generation"
+  - "diffusion acceleration"
+  - "caching"
+  - "DAG optimization"
+  - "lexicographic minimax"
 date: 2026-05-08
 content_hash: e1854e1307aa4302
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Taming Momentum: Rethinking Optimizer States Through Low-Rank Approximation
 description: >-
-  [ICLR 2026][Model Compression][Low-rank optimizer] This work reveals that EMA-based momentum updates are equivalent to gradient descent on an online linear regression objective, and builds upon this insight to propose LoRA-Pre — a method that compresses optimizer momentum via low-rank factorization for memory-efficient LLM pretraining and fine-tuning. LoRA-Pre achieves state-of-the-art performance across all model scales using only 1/8 the rank required by baseline methods.
+  [ICLR 2026][Model Compression][Low-rank optimizer] This work reveals that EMA-based momentum updates are equivalent to gradient descent on an online linear regression objective…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Low-rank optimizer
-  - momentum compression
-  - pretraining efficiency
-  - LoRA
-  - Adam
-  - Muon
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Low-rank optimizer"
+  - "momentum compression"
+  - "pretraining efficiency"
+  - "LoRA"
+  - "Adam"
+  - "Muon"
 date: 2026-05-08
 content_hash: e90c0726c24ef223
 ---

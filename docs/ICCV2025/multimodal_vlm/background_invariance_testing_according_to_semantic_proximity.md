@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Background Invariance Testing According to Semantic Proximity
 description: >-
-  [ICCV 2025][Multimodal VLM][background invariance testing] This paper proposes a background invariance testing method based on semantic proximity. It constructs a keyword ontology via association analysis to systematically sample background scenes, achieving an optimal balance between test diversity (recall) and consistency with human judgment (precision). The work further demonstrates that visualization-based testing frameworks are more informative than global statistical metrics.
+  [ICCV 2025][Multimodal VLM][background invariance testing] This paper proposes a background invariance testing method based on semantic proximity. It constructs a keyword ontology via association analysis to systematical…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - background invariance testing
-  - association ontology
-  - semantic distance
-  - visualization-based testing
-  - neuron coverage
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "background invariance testing"
+  - "association ontology"
+  - "semantic distance"
+  - "visualization-based testing"
+  - "neuron coverage"
 date: 2026-05-08
 content_hash: 9e68b8105b694661
 ---

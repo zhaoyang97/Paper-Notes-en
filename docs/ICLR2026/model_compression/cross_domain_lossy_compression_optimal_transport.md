@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Cross-Domain Lossy Compression via Rate- and Classification-Constrained Optimal Transport
 description: >-
-  [ICLR 2026 (Oral)][Model Compression][optimal transport] This paper formalizes cross-domain lossy compression — where the encoder observes a degraded source and the decoder reconstructs samples from a different target distribution — as an optimal transport problem subject to dual constraints on rate and classification loss. Closed-form DRC/RDC and DRPC tradeoff functions are derived for Bernoulli sources (Hamming distortion) and Gaussian sources (MSE). The theoretical predictions are validated against the empirical behavior of deep end-to-end compression models on super-resolution, denoising, and inpainting tasks.
+  [ICLR 2026 (Oral)][Model Compression][optimal transport] This paper formalizes cross-domain lossy compression — where the encoder observes a degraded source and the decoder reconstructs samples from a different target di…
 tags:
-  - ICLR 2026 (Oral)
-  - Model Compression
-  - optimal transport
-  - rate-distortion theory
-  - lossy compression
-  - cross-domain
-  - DRC tradeoff
-  - DRPC
+  - "ICLR 2026 (Oral)"
+  - "Model Compression"
+  - "optimal transport"
+  - "rate-distortion theory"
+  - "lossy compression"
+  - "cross-domain"
+  - "DRC tradeoff"
+  - "DRPC"
 date: 2026-05-08
 content_hash: 50d9ed96e87bbbb7
 ---

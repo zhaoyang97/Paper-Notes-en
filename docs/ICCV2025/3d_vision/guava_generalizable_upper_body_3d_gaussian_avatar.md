@@ -2,18 +2,18 @@
 title: >-
   [Paper Note] GUAVA: Generalizable Upper Body 3D Gaussian Avatar
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian] This paper presents GUAVA, the first framework for feed-forward reconstruction of animatable upper-body 3D Gaussian avatars from a single image. By combining template Gaussians and UV Gaussians in a canonical space representation, GUAVA supports rich facial expression and gesture driving, completing reconstruction in approximately 0.1 s with real-time rendering capability.
+  [ICCV 2025][3D Vision][3D Gaussian] This paper presents GUAVA, the first framework for feed-forward reconstruction of animatable upper-body 3D Gaussian avatars from a single image. By combining template Gaussians and UV…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D Gaussian
-  - upper-body avatar
-  - generalizable reconstruction
-  - single-image reconstruction
-  - expression driving
-  - real-time rendering
-  - SMPLX
-  - FLAME
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D Gaussian"
+  - "upper-body avatar"
+  - "generalizable reconstruction"
+  - "single-image reconstruction"
+  - "expression driving"
+  - "real-time rendering"
+  - "SMPLX"
+  - "FLAME"
 date: 2026-05-08
 content_hash: 19bb0d694bc8990a
 ---

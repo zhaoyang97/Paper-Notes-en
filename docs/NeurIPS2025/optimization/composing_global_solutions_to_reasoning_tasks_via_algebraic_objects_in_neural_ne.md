@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Composing Global Solutions to Reasoning Tasks via Algebraic Objects in Neural Nets
 description: >-
-  [NeurIPS 2025][Optimization][Algebraic structure] This paper proposes the CoGS framework, demonstrating that the weight space of two-layer quadratic-activation networks on Abelian group multiplication reasoning tasks admits a semiring algebraic structure. The Sum Potentials in the loss function are ring homomorphisms, enabling global optimal solutions to be algebraically composed from partial solutions—each satisfying only a subset of loss constraints—via ring addition and multiplication. Approximately 95% of gradient descent solutions match the theoretical constructions exactly.
+  [NeurIPS 2025][Optimization][Algebraic structure] This paper proposes the CoGS framework, demonstrating that the weight space of two-layer quadratic-activation networks on Abelian group multiplication reasoning tasks adm…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Algebraic structure
-  - modular arithmetic reasoning
-  - two-layer networks
-  - grokking
-  - weight-space semiring
-  - global optimal solution construction
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Algebraic structure"
+  - "modular arithmetic reasoning"
+  - "two-layer networks"
+  - "grokking"
+  - "weight-space semiring"
+  - "global optimal solution construction"
 date: 2026-05-08
 content_hash: adbb8292590bca1d
 ---

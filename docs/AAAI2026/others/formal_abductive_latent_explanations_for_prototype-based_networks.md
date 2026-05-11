@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Formal Abductive Latent Explanations for Prototype-Based Networks
 description: >-
-  [AAAI 2026][Prototype Networks] This paper addresses the problem of misleading explanations in prototype-based networks (e.g., ProtoPNet) by proposing Abductive Latent Explanations (ALE), which construct formally guaranteed sufficient-condition explanations directly in latent space—without invoking external solvers—and scale to standard and fine-grained classification tasks across multiple datasets.
+  [AAAI 2026][Prototype Networks] This paper addresses the problem of misleading explanations in prototype-based networks (e.g., ProtoPNet) by proposing Abductive Latent Explanations (ALE)…
 tags:
-  - AAAI 2026
-  - Prototype Networks
-  - Abductive Explanation
-  - Formal XAI
-  - Latent Space
-  - Case-Based Reasoning
+  - "AAAI 2026"
+  - "Prototype Networks"
+  - "Abductive Explanation"
+  - "Formal XAI"
+  - "Latent Space"
+  - "Case-Based Reasoning"
 date: 2026-05-08
 content_hash: 53272ed9b34ab846
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond the Individual: Virtualizing Multi-Disciplinary Reasoning for Clinical Intake via Collaborative Agents
 description: >-
-  [ACL 2026][Medical Imaging][multidisciplinary team consultation] This paper proposes Aegle, a graph-structured multi-agent framework that virtualizes multidisciplinary team (MDT) consultation for clinical intake. By introducing decoupled parallel reasoning and dynamic topology into the outpatient interview workflow, Aegle surpasses state-of-the-art models across 53 metrics spanning 24 clinical departments.
+  [ACL 2026][Medical Imaging][multidisciplinary team consultation] This paper proposes Aegle, a graph-structured multi-agent framework that virtualizes multidisciplinary team (MDT) consultation for clinical intake. By intr…
 tags:
-  - ACL 2026
-  - Medical Imaging
-  - multidisciplinary team consultation
-  - multi-agent systems
-  - clinical intake
-  - SOAP notes
-  - dynamic topology
+  - "ACL 2026"
+  - "Medical Imaging"
+  - "multidisciplinary team consultation"
+  - "multi-agent systems"
+  - "clinical intake"
+  - "SOAP notes"
+  - "dynamic topology"
 date: 2026-05-08
 content_hash: 021817995443e615
 ---

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] 10 Open Challenges Steering the Future of Vision-Language-Action Models
 description: >-
-  [AAAI 2026][Robotics][VLA models] This paper systematically surveys 10 open challenges facing VLA models — multimodal perception, robust reasoning, high-quality training data, evaluation, cross-robot action generalization, resource efficiency, whole-body coordination, safety assurance, agent frameworks, and human-robot collaboration — and discusses four emerging trends: spatial understanding, world dynamics modeling, post-training, and data synthesis.
+  [AAAI 2026][Robotics][VLA models] This paper systematically surveys 10 open challenges facing VLA models — multimodal perception, robust reasoning, high-quality training data, evaluation…
 tags:
-  - AAAI 2026
-  - Robotics
-  - VLA models
-  - robot manipulation
-  - imitation learning
-  - multimodal perception
-  - cross-robot generalization
-  - world models
-  - post-training
+  - "AAAI 2026"
+  - "Robotics"
+  - "VLA models"
+  - "robot manipulation"
+  - "imitation learning"
+  - "multimodal perception"
+  - "cross-robot generalization"
+  - "world models"
+  - "post-training"
 date: 2026-05-08
 content_hash: 907a826bf0e3dd52
 ---

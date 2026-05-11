@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Deep Learning for Subspace Regression
 description: >-
-  [ICLR2026][Scientific Computing][subspace regression] This paper formalizes the subspace prediction problem in Reduced Order Modeling (ROM) as a regression task on the Grassmann manifold. It proposes dedicated loss functions and a subspace embedding technique—predicting a higher-dimensional subspace containing the target—to reduce mapping complexity. The approach achieves significant improvements across eigenvalue problems, parametric PDEs, and iterative solver acceleration.
+  [ICLR2026][Scientific Computing][subspace regression] This paper formalizes the subspace prediction problem in Reduced Order Modeling (ROM) as a regression task on the Grassmann manifold. It proposes dedicated loss funct…
 tags:
-  - ICLR2026
-  - Scientific Computing
-  - subspace regression
-  - Grassmann manifold
-  - reduced order modeling
-  - neural operator
-  - eigenspace
+  - "ICLR2026"
+  - "Scientific Computing"
+  - "subspace regression"
+  - "Grassmann manifold"
+  - "reduced order modeling"
+  - "neural operator"
+  - "eigenspace"
 date: 2026-05-08
 content_hash: 3dd2c8e0fdb3d008
 ---

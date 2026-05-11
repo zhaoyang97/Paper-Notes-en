@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering
 description: >-
-  [AAAI2026][Audio & Speech][Spoken Question Answering] This paper proposes CLSR, an end-to-end contrastive language-speech retriever that converts acoustic representations into text-like representations before aligning them with text, enabling efficient extraction of question-relevant segments from long-form audio to support RAG-based spoken question answering for downstream LALMs.
+  [AAAI2026][Audio & Speech][Spoken Question Answering] This paper proposes CLSR, an end-to-end contrastive language-speech retriever that converts acoustic representations into text-like representations before aligning th…
 tags:
-  - AAAI2026
+  - "AAAI2026"
   - "Audio & Speech"
-  - Spoken Question Answering
-  - Contrastive Learning
-  - Retrieval-Augmented Generation
-  - Speech-Text Alignment
-  - CIF
+  - "Spoken Question Answering"
+  - "Contrastive Learning"
+  - "Retrieval-Augmented Generation"
+  - "Speech-Text Alignment"
+  - "CIF"
 date: 2026-05-08
 content_hash: 5d3eaea6b081a580
 ---

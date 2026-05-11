@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Transitive RL: Value Learning via Divide and Conquer
 description: >-
-  [ICLR 2026][Reinforcement Learning][Divide and Conquer] This paper proposes Transitive Reinforcement Learning (TRL), a novel value function learning algorithm based on the divide-and-conquer paradigm. By exploiting the triangle inequality structure inherent in goal-conditioned RL, TRL recursively decomposes value function updates into subproblems, achieving superior performance over TD learning and Monte Carlo methods on long-horizon tasks.
+  [ICLR 2026][Reinforcement Learning][Divide and Conquer] This paper proposes Transitive Reinforcement Learning (TRL), a novel value function learning algorithm based on the divide-and-conquer paradigm. By exploiting the t…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Divide and Conquer
-  - Value Function Learning
-  - Offline RL
-  - Goal-Conditioned Reinforcement Learning
-  - Triangle Inequality
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Divide and Conquer"
+  - "Value Function Learning"
+  - "Offline RL"
+  - "Goal-Conditioned Reinforcement Learning"
+  - "Triangle Inequality"
 date: 2026-05-08
 content_hash: aad3f3bae2e02eee
 ---

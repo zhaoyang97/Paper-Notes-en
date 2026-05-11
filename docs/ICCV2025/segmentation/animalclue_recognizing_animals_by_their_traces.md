@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AnimalClue: Recognizing Animals by their Traces
 description: >-
-  [ICCV 2025][Segmentation][animal trace recognition] This paper introduces AnimalClue, the first large-scale dataset for animal trace recognition, containing 159,605 bounding boxes spanning 968 species across five categories of indirect clues (footprints, feces, eggs, bones, and feathers), and establishes four benchmarks covering classification, detection, instance segmentation, and attribute prediction.
+  [ICCV 2025][Segmentation][animal trace recognition] This paper introduces AnimalClue, the first large-scale dataset for animal trace recognition, containing 159…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - animal trace recognition
-  - wildlife conservation
-  - indirect evidence
-  - dataset
-  - instance segmentation
+  - "ICCV 2025"
+  - "Segmentation"
+  - "animal trace recognition"
+  - "wildlife conservation"
+  - "indirect evidence"
+  - "dataset"
+  - "instance segmentation"
 date: 2026-05-08
 content_hash: 36b35f5b981f56ac
 ---

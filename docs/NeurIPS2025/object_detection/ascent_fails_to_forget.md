@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Ascent Fails to Forget
 description: >-
-  [NeurIPS 2025][Object Detection][machine unlearning] Starting from the statistical dependence between the forget set and the retain set, this paper theoretically and empirically demonstrates that the widely adopted gradient ascent / Descent-Ascent (DA) family of machine unlearning methods fails systematically in the presence of data correlations. In logistic regression, the DA solution is provably farther from the oracle than the original model, and in non-convex settings DA traps the model in inferior local minima.
+  [NeurIPS 2025][Object Detection][machine unlearning] Starting from the statistical dependence between the forget set and the retain set, this paper theoretically and empirically demonstrates that the widely adopted gradi…
 tags:
-  - NeurIPS 2025
-  - Object Detection
-  - machine unlearning
-  - gradient ascent
-  - statistical dependence
-  - descent-ascent
-  - logistic regression
+  - "NeurIPS 2025"
+  - "Object Detection"
+  - "machine unlearning"
+  - "gradient ascent"
+  - "statistical dependence"
+  - "descent-ascent"
+  - "logistic regression"
 date: 2026-05-08
 content_hash: a7c87175a44b9b98
 ---

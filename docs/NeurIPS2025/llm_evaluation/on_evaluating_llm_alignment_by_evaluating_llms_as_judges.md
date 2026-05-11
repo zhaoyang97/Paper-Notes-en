@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] On Evaluating LLM Alignment by Evaluating LLMs as Judges
 description: >-
-  [NeurIPS 2025][LLM Evaluation][LLM alignment] This paper systematically investigates the consistency between LLMs' generation capability and evaluation capability (GE-consistency), finding a strong correlation between the two rankings under a strong preference oracle (Spearman $\rho = 0.96$). Based on this finding, the authors propose the AlignEval benchmark, which measures LLM alignment by assessing LLMs' ability as judges—without directly invoking LLM-as-Judge to evaluate model outputs—achieving performance comparable to or better than AlpacaEval and Arena-Hard.
+  [NeurIPS 2025][LLM Evaluation][LLM alignment] This paper systematically investigates the consistency between LLMs' generation capability and evaluation capability (GE-consistency)…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - LLM alignment
-  - LLM-as-Judge
-  - evaluation benchmark
-  - generation-evaluation consistency
-  - preference oracle
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "LLM alignment"
+  - "LLM-as-Judge"
+  - "evaluation benchmark"
+  - "generation-evaluation consistency"
+  - "preference oracle"
 date: 2026-05-08
 content_hash: 172557375e3c076b
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] SiM3D: Single-Instance Multiview Multimodal and Multisetup 3D Anomaly Detection Benchmark
 description: >-
-  [ICCV 2025][3D Vision][3D anomaly detection] This paper introduces SiM3D, the first benchmark for multiview multimodal 3D anomaly detection and segmentation targeting single-instance industrial scenarios. It employs industrial-grade sensors to acquire high-resolution data, replaces 2D anomaly maps with voxelized Anomaly Volumes, and is the first benchmark to support cross-domain synthetic-to-real evaluation.
+  [ICCV 2025][3D Vision][3D anomaly detection] This paper introduces SiM3D, the first benchmark for multiview multimodal 3D anomaly detection and segmentation targeting single-instance industrial scenarios. It employs indu…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D anomaly detection
-  - multiview
-  - multimodal
-  - single-instance
-  - anomaly volume
-  - synthetic-to-real
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D anomaly detection"
+  - "multiview"
+  - "multimodal"
+  - "single-instance"
+  - "anomaly volume"
+  - "synthetic-to-real"
 date: 2026-05-08
 content_hash: 620c070318a09172
 ---

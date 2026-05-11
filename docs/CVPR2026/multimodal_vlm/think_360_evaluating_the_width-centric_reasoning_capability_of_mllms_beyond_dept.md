@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Think360: Evaluating the Width-centric Reasoning Capability of MLLMs Beyond Depth
 description: >-
-  [CVPR 2026][Multimodal VLM][Multimodal reasoning] This paper presents Think360, a multimodal benchmark focused on *reasoning width*—i.e., a model's capability for multi-path search, multi-constraint pruning, backtracking, and trial-and-error exploration. The benchmark comprises 1,200+ high-quality samples and introduces a fine-grained Tree-of-Thought evaluation protocol, revealing significant deficiencies in current MLLMs along the width dimension of reasoning.
+  [CVPR 2026][Multimodal VLM][Multimodal reasoning] This paper presents Think360, a multimodal benchmark focused on *reasoning width*—i.e., a model's capability for multi-path search, multi-constraint pruning, backtracking…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Multimodal reasoning
-  - reasoning width
-  - Tree-of-Thought evaluation
-  - benchmark
-  - large language models
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Multimodal reasoning"
+  - "reasoning width"
+  - "Tree-of-Thought evaluation"
+  - "benchmark"
+  - "large language models"
 date: 2026-05-08
 content_hash: a41bed4dfffeecd4
 ---

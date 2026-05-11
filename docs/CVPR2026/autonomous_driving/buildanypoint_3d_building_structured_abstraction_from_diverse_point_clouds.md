@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BuildAnyPoint: 3D Building Structured Abstraction from Diverse Point Clouds
 description: >-
-  [CVPR 2026][Autonomous Driving][Building abstraction reconstruction] This paper proposes BuildAnyPoint, which employs a **loosely-coupled cascaded diffusion Transformer (Loca-DiT)** to achieve unified reconstruction from diverse point cloud distributions (airborne LiDAR, SfM, sparse noisy point clouds) to structured 3D building meshes — first recovering the underlying point cloud distribution via hierarchical latent diffusion, then generating compact polygonal meshes via an autoregressive Transformer.
+  [CVPR 2026][Autonomous Driving][Building abstraction reconstruction] This paper proposes BuildAnyPoint, which employs a **loosely-coupled cascaded diffusion Transformer (Loca-DiT)** to achieve unified reconstruction from…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Building abstraction reconstruction
-  - point cloud completion
-  - latent diffusion
-  - autoregressive mesh generation
-  - cascaded generation framework
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Building abstraction reconstruction"
+  - "point cloud completion"
+  - "latent diffusion"
+  - "autoregressive mesh generation"
+  - "cascaded generation framework"
 date: 2026-05-08
 content_hash: 8e075f000e9a1819
 ---

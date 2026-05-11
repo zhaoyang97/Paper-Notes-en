@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] AdaDrive: Self-Adaptive Slow-Fast System for Language-Grounded Autonomous Driving
 description: >-
-  [ICCV 2025][Autonomous Driving][Large Language Models] AdaDrive presents the first LLM-augmented autonomous driving framework with an adaptive slow-fast architecture. Two adaptive connectors dynamically determine *when to activate the LLM* (Connector-W) and *how much the LLM contributes* (Connector-H), achieving SOTA performance on language-grounded driving benchmarks (driving score 80.9%) while reducing inference latency to 189ms and GPU memory to 6.79GB.
+  [ICCV 2025][Autonomous Driving][Large Language Models] AdaDrive presents the first LLM-augmented autonomous driving framework with an adaptive slow-fast architecture. Two adaptive connectors dynamically determine *when t…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - Large Language Models
-  - Adaptive Slow-Fast System
-  - Language-Grounded Driving
-  - Efficient Inference
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "Large Language Models"
+  - "Adaptive Slow-Fast System"
+  - "Language-Grounded Driving"
+  - "Efficient Inference"
 date: 2026-05-08
 content_hash: 125e45ef7bfcb5dd
 ---

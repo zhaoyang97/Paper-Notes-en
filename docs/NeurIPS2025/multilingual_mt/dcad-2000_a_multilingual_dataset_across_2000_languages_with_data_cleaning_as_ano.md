@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] DCAD-2000: A Multilingual Dataset across 2000+ Languages with Data Cleaning as Anomaly Detection
 description: >-
-  [NeurIPS 2025][multilingual dataset] This work constructs DCAD-2000, a multilingual dataset covering 2,282 languages and 46.72 TB of text, and proposes a language-agnostic data cleaning framework that reformulates cleaning as anomaly detection. The framework extracts 8-dimensional statistical features per document and applies Isolation Forest for dynamic noise filtering. Effectiveness is validated on multiple multilingual benchmarks, with particularly notable gains on low-resource languages.
+  [NeurIPS 2025][Multilingual & Machine Translation][multilingual dataset] This work constructs DCAD-2000, a multilingual dataset covering 2,282 languages and 46.72 TB of text…
 tags:
-  - NeurIPS 2025
-  - multilingual dataset
-  - data cleaning
-  - anomaly detection
-  - Common Crawl
-  - low-resource languages
+  - "NeurIPS 2025"
+  - "Multilingual & Machine Translation"
+  - "multilingual dataset"
+  - "data cleaning"
+  - "anomaly detection"
+  - "Common Crawl"
+  - "low-resource languages"
 date: 2026-05-08
 content_hash: 4de3967d2e63c73a
 ---

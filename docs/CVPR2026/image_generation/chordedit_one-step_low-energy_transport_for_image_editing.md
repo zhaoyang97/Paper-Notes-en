@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ChordEdit: One-Step Low-Energy Transport for Image Editing
 description: >-
-  [CVPR 2026][Image Generation][Image Editing] Based on dynamic optimal transport theory, a low-energy Chord control field is derived to smooth unstable naive editing fields, achieving the first training-free, inversion-free, and high-fidelity real-time image editing for distilled one-step T2I models.
+  [CVPR 2026][Image Generation][Image Editing] Based on dynamic optimal transport theory, a low-energy Chord control field is derived to smooth unstable naive editing fields, achieving the first training-free…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Image Editing
-  - Optimal Transport
-  - One-step Inference
-  - Diffusion Distillation Models
-  - Training-free Editing
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Image Editing"
+  - "Optimal Transport"
+  - "One-step Inference"
+  - "Diffusion Distillation Models"
+  - "Training-free Editing"
 date: 2026-05-08
 content_hash: 9de356a373e4843f
 ---

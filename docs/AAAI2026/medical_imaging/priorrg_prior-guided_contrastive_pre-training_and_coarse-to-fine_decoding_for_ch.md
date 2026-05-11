@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PriorRG: Prior-Guided Contrastive Pre-training and Coarse-to-Fine Decoding for Chest X-ray Report Generation
 description: >-
-  [AAAI 2026][Medical Imaging][Chest X-ray report generation] PriorRG proposes a two-stage chest X-ray report generation framework that aligns clinical context with spatiotemporal visual features via prior-guided contrastive pre-training, then progressively integrates clinical context, disease progression, and multi-level visual cues through prior-aware coarse-to-fine decoding, achieving a 3.6% improvement in BLEU-4 and a 3.8% improvement in F1 on MIMIC-CXR.
+  [AAAI 2026][Medical Imaging][Chest X-ray report generation] PriorRG proposes a two-stage chest X-ray report generation framework that aligns clinical context with spatiotemporal visual features via prior-guided contrasti…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Chest X-ray report generation
-  - prior knowledge
-  - contrastive pre-training
-  - coarse-to-fine decoding
-  - spatiotemporal fusion
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Chest X-ray report generation"
+  - "prior knowledge"
+  - "contrastive pre-training"
+  - "coarse-to-fine decoding"
+  - "spatiotemporal fusion"
 date: 2026-05-08
 content_hash: ba91f1473f0d913d
 ---

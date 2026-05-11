@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Consistency-based Abductive Reasoning over Perceptual Errors of Multiple Pre-trained Models in Novel Environments
 description: >-
-  [AAAI 2026][Remote Sensing][Abductive Reasoning] This paper models conflicting predictions from multiple pre-trained perception models in novel environments as a consistency-based abductive reasoning problem. Error detection rules and domain constraints for each model are encoded as logic programs, and an optimal hypothesis is sought that maximizes prediction coverage while keeping the inconsistency rate below a threshold. The approach achieves an average F1 improvement of 13.6% across 15 aerial test sets.
+  [AAAI 2026][Remote Sensing][Abductive Reasoning] This paper models conflicting predictions from multiple pre-trained perception models in novel environments as a consistency-based abductive reasoning problem. Error detec…
 tags:
-  - AAAI 2026
-  - Remote Sensing
-  - Abductive Reasoning
-  - Metacognitive AI
-  - Distribution Shift
-  - Multi-Model Ensemble
-  - Logic Programming
+  - "AAAI 2026"
+  - "Remote Sensing"
+  - "Abductive Reasoning"
+  - "Metacognitive AI"
+  - "Distribution Shift"
+  - "Multi-Model Ensemble"
+  - "Logic Programming"
 date: 2026-05-08
 content_hash: 061b734194818de7
 ---

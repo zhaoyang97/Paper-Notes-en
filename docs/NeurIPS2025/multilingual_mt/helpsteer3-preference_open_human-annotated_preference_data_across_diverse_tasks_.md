@@ -2,16 +2,17 @@
 title: >-
   [Paper Note] HelpSteer3-Preference: Open Human-Annotated Preference Data across Diverse Tasks and Languages
 description: >-
-  [NeurIPS 2025][Preference Dataset] NVIDIA releases a 40K+ open-source human-annotated preference dataset covering general, STEM, code, and multilingual (13 languages) tasks. The reward model trained on this dataset achieves 82.4% (+10%) on RM-Bench, with a commercially friendly CC-BY-4.0 license.
+  [NeurIPS 2025][Multilingual & Machine Translation][Preference Dataset] NVIDIA releases a 40K+ open-source human-annotated preference dataset covering general, STEM, code…
 tags:
-  - NeurIPS 2025
-  - Preference Dataset
-  - Human Annotation
-  - STEM
-  - Code
-  - Multilingual
-  - Reward Models
-  - CC-BY-4.0
+  - "NeurIPS 2025"
+  - "Multilingual & Machine Translation"
+  - "Preference Dataset"
+  - "Human Annotation"
+  - "STEM"
+  - "Code"
+  - "Multilingual"
+  - "Reward Models"
+  - "CC-BY-4.0"
 date: 2026-05-08
 content_hash: d1c7feba3668dcac
 ---

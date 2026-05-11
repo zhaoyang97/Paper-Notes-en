@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Bridging Kolmogorov Complexity and Deep Learning: Asymptotically Optimal Description Length Objectives for Transformers
 description: >-
-  [ICLR 2026][Model Compression][Minimum Description Length] Starting from Kolmogorov complexity theory, this paper proposes a theoretical framework of "asymptotically optimal description length objectives," proves the existence of such objectives for Transformers via a novel proof of their computational universality, and empirically validates the framework through a differentiable variational objective based on an adaptive Gaussian mixture prior, revealing significant optimization challenges.
+  [ICLR 2026][Model Compression][Minimum Description Length] Starting from Kolmogorov complexity theory, this paper proposes a theoretical framework of "asymptotically optimal description length objectives…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Minimum Description Length
-  - Kolmogorov Complexity
-  - Transformer
-  - Computational Universality
-  - Variational Objective
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Minimum Description Length"
+  - "Kolmogorov Complexity"
+  - "Transformer"
+  - "Computational Universality"
+  - "Variational Objective"
 date: 2026-05-08
 content_hash: d74e1b2e95f76606
 ---

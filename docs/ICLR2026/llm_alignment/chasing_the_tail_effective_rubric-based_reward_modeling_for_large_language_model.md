@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Chasing the Tail: Effective Rubric-based Reward Modeling for Large Language Model Post-Training
 description: >-
-  [ICLR 2026][LLM Alignment][reward over-optimization] This paper theoretically establishes that reward over-optimization stems primarily from misspecification in the high-reward tail region, and proposes a rubric-based reward modeling approach: leveraging off-policy data (high-quality responses from stronger models) to construct scoring rubrics, which are progressively refined by distinguishing "good vs. better" responses, effectively mitigating reward over-optimization.
+  [ICLR 2026][LLM Alignment][reward over-optimization] This paper theoretically establishes that reward over-optimization stems primarily from misspecification in the high-reward tail region…
 tags:
-  - ICLR 2026
-  - LLM Alignment
-  - reward over-optimization
-  - rubric-based reward
-  - reinforcement fine-tuning
-  - high-reward tail
-  - off-policy data
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "reward over-optimization"
+  - "rubric-based reward"
+  - "reinforcement fine-tuning"
+  - "high-reward tail"
+  - "off-policy data"
 date: 2026-05-08
 content_hash: d7e87dcb4dad8d04
 ---

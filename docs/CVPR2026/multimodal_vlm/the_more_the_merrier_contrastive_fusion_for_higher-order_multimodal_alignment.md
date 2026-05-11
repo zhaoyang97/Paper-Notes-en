@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The More, the Merrier: Contrastive Fusion for Higher-Order Multimodal Alignment
 description: >-
-  [CVPR2026][Multimodal VLM][Multimodal Alignment] This paper proposes Contrastive Fusion (ConFu), a framework that extends CLIP-style bimodal contrastive learning to tri-modal higher-order alignment, jointly learning paired and fused representations within a unified objective to support both 1→1 and 2→1 retrieval.
+  [CVPR2026][Multimodal VLM][Multimodal Alignment] This paper proposes Contrastive Fusion (ConFu), a framework that extends CLIP-style bimodal contrastive learning to tri-modal higher-order alignment…
 tags:
-  - CVPR2026
-  - Multimodal VLM
-  - Multimodal Alignment
-  - Higher-Order Dependencies
-  - Contrastive Learning
-  - Total Correlation
-  - Tri-modal Fusion
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "Multimodal Alignment"
+  - "Higher-Order Dependencies"
+  - "Contrastive Learning"
+  - "Total Correlation"
+  - "Tri-modal Fusion"
 date: 2026-05-08
 content_hash: bc5353c69e1b7f40
 ---

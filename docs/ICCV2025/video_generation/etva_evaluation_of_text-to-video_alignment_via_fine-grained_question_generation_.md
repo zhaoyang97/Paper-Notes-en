@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ETVA: Evaluation of Text-to-Video Alignment via Fine-Grained Question Generation and Answering
 description: >-
-  [ICCV 2025][Video Generation][Text-video alignment evaluation] This paper proposes ETVA, a text-to-video alignment evaluation method based on fine-grained question generation and answering. It employs a multi-agent scene graph traversal to generate atomic questions and a knowledge-augmented multi-stage reasoning pipeline to answer them. ETVA substantially outperforms existing metrics in correlation with human judgments (Spearman's ρ 58.47 vs. 31.0) and introduces an evaluation benchmark containing 2k prompts and 12k questions.
+  [ICCV 2025][Video Generation][Text-video alignment evaluation] This paper proposes ETVA, a text-to-video alignment evaluation method based on fine-grained question generation and answering. It employs a multi-agent scene…
 tags:
-  - ICCV 2025
-  - Video Generation
-  - Text-video alignment evaluation
-  - question-answering framework
-  - scene graph
-  - multi-agent
-  - knowledge-augmented reasoning
+  - "ICCV 2025"
+  - "Video Generation"
+  - "Text-video alignment evaluation"
+  - "question-answering framework"
+  - "scene graph"
+  - "multi-agent"
+  - "knowledge-augmented reasoning"
 date: 2026-05-08
 content_hash: 789f815f6fc0db08
 ---

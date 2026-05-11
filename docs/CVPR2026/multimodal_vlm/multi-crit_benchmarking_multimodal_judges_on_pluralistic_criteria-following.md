@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multi-Crit: Benchmarking Multimodal Judges on Pluralistic Criteria-Following
 description: >-
-  [CVPR 2026][Multimodal VLM][LMM-as-Judge] This paper introduces Multi-Crit, the first benchmark for evaluating the pluralistic criteria-following capability of multimodal judge models. It features criterion-level human annotations and preference-conflicting samples, along with three new metrics—PAcc, TOS, and CMR—to comprehensively evaluate 25 LMMs, revealing that even the strongest closed-source model achieves only 32.78% multi-criteria consistency on open-ended generation tasks.
+  [CVPR 2026][Multimodal VLM][LMM-as-Judge] This paper introduces Multi-Crit, the first benchmark for evaluating the pluralistic criteria-following capability of multimodal judge models. It features criterion-level human a…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - LMM-as-Judge
-  - multi-criteria evaluation
-  - benchmark
-  - preference conflict
-  - evaluation reliability
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "LMM-as-Judge"
+  - "multi-criteria evaluation"
+  - "benchmark"
+  - "preference conflict"
+  - "evaluation reliability"
 date: 2026-05-08
 content_hash: 2aaa5cce7a0caa4d
 ---

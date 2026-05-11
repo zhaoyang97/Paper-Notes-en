@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] CREPE: Controlling Diffusion with Replica Exchange
 description: >-
-  [ICLR 2026][Image Generation][replica exchange] This paper proposes CREPE, an inference-time control method for diffusion models based on Replica Exchange (Parallel Tempering), serving as the computational dual of SMC — it operates in parallel across denoising steps while generating samples serially. CREPE offers high sample diversity, supports online refinement, and handles a variety of tasks including temperature annealing, reward tilting, model composition, and CFG debiasing.
+  [ICLR 2026][Image Generation][replica exchange] This paper proposes CREPE, an inference-time control method for diffusion models based on Replica Exchange (Parallel Tempering)…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - replica exchange
-  - parallel tempering
-  - inference-time control
-  - SMC alternative
-  - reward tilting
-  - CFG debiasing
+  - "ICLR 2026"
+  - "Image Generation"
+  - "replica exchange"
+  - "parallel tempering"
+  - "inference-time control"
+  - "SMC alternative"
+  - "reward tilting"
+  - "CFG debiasing"
 date: 2026-05-08
 content_hash: eb1fce11f9608b87
 ---

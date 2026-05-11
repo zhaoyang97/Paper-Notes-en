@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FALQON: Accelerating LoRA Fine-tuning with Low-Bit Floating-Point Arithmetic
 description: >-
-  [NeurIPS 2025][Model Compression][LoRA acceleration] FALQON eliminates the small-matrix quantization overhead introduced by standalone LoRA paths by directly melding LoRA adapters into FP8-quantized backbone weights. Combined with efficient gradient computation and a row-wise proxy update mechanism, it achieves approximately 3× training speedup over existing quantized LoRA methods.
+  [NeurIPS 2025][Model Compression][LoRA acceleration] FALQON eliminates the small-matrix quantization overhead introduced by standalone LoRA paths by directly melding LoRA adapters into FP8-quantized backbone weights. Com…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - LoRA acceleration
-  - FP8 quantization
-  - low-precision training
-  - LLM fine-tuning
-  - quantization overhead
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "LoRA acceleration"
+  - "FP8 quantization"
+  - "low-precision training"
+  - "LLM fine-tuning"
+  - "quantization overhead"
 date: 2026-05-08
 content_hash: e8129f896b65e314
 ---

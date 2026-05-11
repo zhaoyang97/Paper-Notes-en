@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PonderLM: Pretraining Language Models to Ponder in Continuous Space
 description: >-
-  [ICLR2026][Self-Supervised Learning][pondering] This paper proposes PonderLM, which introduces a "pondering" mechanism at pretraining time — computing a weighted sum of the predicted probability distribution over token embeddings to form a continuous pondering embedding, then performing repeated forward passes. Without labeled data or reinforcement learning, a 2.8B model trained with this approach surpasses a 6.9B baseline on 9 downstream tasks.
+  [ICLR2026][Self-Supervised Learning][pondering] This paper proposes PonderLM, which introduces a "pondering" mechanism at pretraining time — computing a weighted sum of the predicted probability distribution over token e…
 tags:
-  - ICLR2026
-  - Self-Supervised Learning
-  - pondering
-  - language model
-  - continuous space
-  - test-time compute
-  - pretraining
+  - "ICLR2026"
+  - "Self-Supervised Learning"
+  - "pondering"
+  - "language model"
+  - "continuous space"
+  - "test-time compute"
+  - "pretraining"
 date: 2026-05-08
 content_hash: 522774d8466849b3
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TimeLens: Rethinking Video Temporal Grounding with Multimodal LLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][video temporal grounding] This paper systematically investigates the key factors for building video temporal grounding (VTG) capabilities in MLLMs from two dimensions — data quality and algorithm design. It releases the high-quality benchmark TimeLens-Bench and training set TimeLens-100K, and constructs the TimeLens model series via interleaved textual timestamp encoding combined with a thinking-free RLVR training paradigm, achieving state-of-the-art performance among open-source models and surpassing GPT-5 and Gemini-2.5-Flash.
+  [CVPR 2026][Multimodal VLM][video temporal grounding] This paper systematically investigates the key factors for building video temporal grounding (VTG) capabilities in MLLMs from two dimensions — data quality and algori…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - video temporal grounding
-  - data quality
-  - RLVR
-  - timestamp encoding
-  - benchmark refinement
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "video temporal grounding"
+  - "data quality"
+  - "RLVR"
+  - "timestamp encoding"
+  - "benchmark refinement"
 date: 2026-05-08
 content_hash: 6a06384d90df8733
 ---

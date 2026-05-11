@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] SPACE: SPike-Aware Consistency Enhancement for Test-Time Adaptation in Spiking Neural Networks
 description: >-
-  [NeurIPS 2025][SNN] This paper proposes SPACE, the first source-free single-sample test-time adaptation (TTA) method specifically designed for spiking neural networks (SNNs). By maximizing the consistency of spike-based feature maps across augmented views of a test sample, SPACE achieves robust adaptation across multiple datasets and architectures.
+  [NeurIPS 2025][SNN] This paper proposes SPACE, the first source-free single-sample test-time adaptation (TTA) method specifically designed for spiking neural networks (SNNs). By maximizing the consistency of spike-based…
 tags:
-  - NeurIPS 2025
-  - SNN
-  - test-time adaptation
-  - spike consistency
-  - distribution shift
-  - single-sample adaptation
+  - "NeurIPS 2025"
+  - "SNN"
+  - "test-time adaptation"
+  - "spike consistency"
+  - "distribution shift"
+  - "single-sample adaptation"
 date: 2026-05-08
 content_hash: 0c653ad9be7b2513
 ---

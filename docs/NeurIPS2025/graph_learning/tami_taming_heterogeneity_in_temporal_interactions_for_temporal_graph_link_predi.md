@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TAMI: Taming Heterogeneity in Temporal Interactions for Temporal Graph Link Prediction
 description: >-
-  [NeurIPS 2025][Graph Learning][Temporal graphs] This paper is the first to systematically identify the heterogeneity problem in temporal graph interactions (interaction intervals follow a power-law distribution), and proposes the TAMI framework comprising two modules—Log Time Encoding (LTE) and Link History Aggregation (LHA)—that can be seamlessly integrated into existing TGNNs, consistently improving link prediction performance across 16 datasets with gains of up to 87.05%.
+  [NeurIPS 2025][Graph Learning][Temporal graphs] This paper is the first to systematically identify the heterogeneity problem in temporal graph interactions (interaction intervals follow a power-law distribution)…
 tags:
-  - NeurIPS 2025
-  - Graph Learning
-  - Temporal graphs
-  - link prediction
-  - time encoding
-  - heterogeneity
-  - interaction frequency
+  - "NeurIPS 2025"
+  - "Graph Learning"
+  - "Temporal graphs"
+  - "link prediction"
+  - "time encoding"
+  - "heterogeneity"
+  - "interaction frequency"
 date: 2026-05-08
 content_hash: a8b7ba0afa2fc553
 ---

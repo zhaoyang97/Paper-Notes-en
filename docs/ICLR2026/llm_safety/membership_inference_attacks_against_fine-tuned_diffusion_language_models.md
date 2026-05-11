@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Membership Inference Attacks Against Fine-tuned Diffusion Language Models (SAMA)
 description: >-
-  [ICLR 2026][LLM Safety][Membership Inference Attack] This paper presents the first systematic study of membership inference attack (MIA) vulnerabilities in diffusion language models (DLMs), proposing SAMA: a method that exploits DLMs' bidirectional masking structure to generate exponentially many probing opportunities, and handles sparse, heavy-tailed membership signals via progressive masking, sign voting, and adaptive weighting. SAMA achieves AUC of 0.81 across 9 datasets, outperforming the best baseline by 30%.
+  [ICLR 2026][LLM Safety][Membership Inference Attack] This paper presents the first systematic study of membership inference attack (MIA) vulnerabilities in diffusion language models (DLMs)…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Membership Inference Attack
-  - Diffusion Language Model
-  - Privacy Leakage
-  - Robust Subset Aggregation
-  - Progressive Masking
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Membership Inference Attack"
+  - "Diffusion Language Model"
+  - "Privacy Leakage"
+  - "Robust Subset Aggregation"
+  - "Progressive Masking"
 date: 2026-05-08
 content_hash: 4bf10626bb5e5d9c
 ---

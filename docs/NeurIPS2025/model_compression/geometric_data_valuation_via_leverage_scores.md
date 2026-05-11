@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Geometric Data Valuation via Leverage Scores
 description: >-
-  [NeurIPS 2025][Model Compression][Data Valuation] This paper proposes a geometric data valuation method based on **statistical leverage scores** as an efficient proxy for Data Shapley values. The proposed method satisfies the axioms of symmetry, efficiency, and dummy player, and extends to ridge leverage scores to address the dimensionality saturation problem, providing theoretical guarantees of $O(\varepsilon)$-approximate optimality.
+  [NeurIPS 2025][Model Compression][Data Valuation] This paper proposes a geometric data valuation method based on **statistical leverage scores** as an efficient proxy for Data Shapley values. The proposed method satisfie…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Data Valuation
-  - Shapley Values
-  - Leverage Scores
-  - Active Learning
-  - Experimental Design
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Data Valuation"
+  - "Shapley Values"
+  - "Leverage Scores"
+  - "Active Learning"
+  - "Experimental Design"
 date: 2026-05-08
 content_hash: aa599e93a0db825d
 ---

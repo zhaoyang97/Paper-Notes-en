@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Distillation of Large Language Models via Concrete Score Matching
 description: >-
-  [ICLR 2026][Model Compression][knowledge distillation] This paper proposes Concrete Score Distillation (CSD), a knowledge distillation loss for LLMs grounded in discrete score matching. By matching the relative logit differences between all vocabulary token pairs across the student and teacher, CSD simultaneously overcomes the softmax-smoothing problem and the solution-space restriction inherent in direct logit distillation.
+  [ICLR 2026][Model Compression][knowledge distillation] This paper proposes Concrete Score Distillation (CSD), a knowledge distillation loss for LLMs grounded in discrete score matching. By matching the relative logit dif…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - knowledge distillation
-  - LLM compression
-  - score matching
-  - logit distillation
-  - discrete score matching
+  - "ICLR 2026"
+  - "Model Compression"
+  - "knowledge distillation"
+  - "LLM compression"
+  - "score matching"
+  - "logit distillation"
+  - "discrete score matching"
 date: 2026-05-08
 content_hash: 4dc1ba2625191522
 ---

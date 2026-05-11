@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FAAR: Efficient Frequency-Aware Multi-Task Fine-Tuning via Automatic Rank Selection
 description: >-
-  [CVPR 2026][Model Compression][LoRA] This paper proposes FAAR, a frequency-aware parameter-efficient fine-tuning method for multi-task learning. It introduces Performance-Driven Rank Shrinking (PDRS) to dynamically select the optimal rank for each task and layer, and designs a Task-Spectral Pyramidal Decoder (TS-PD) that leverages FFT frequency information to enhance spatial awareness and cross-task consistency. FAAR achieves superior performance using only 1/9 the parameters of full fine-tuning.
+  [CVPR 2026][Model Compression][LoRA] This paper proposes FAAR, a frequency-aware parameter-efficient fine-tuning method for multi-task learning. It introduces Performance-Driven Rank Shrinking (PDRS) to dynamically selec…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - LoRA
-  - automatic rank selection
-  - FFT
-  - multi-task learning
-  - PEFT
+  - "CVPR 2026"
+  - "Model Compression"
+  - "LoRA"
+  - "automatic rank selection"
+  - "FFT"
+  - "multi-task learning"
+  - "PEFT"
 date: 2026-05-08
 content_hash: 4813ca3c26bcf52b
 ---

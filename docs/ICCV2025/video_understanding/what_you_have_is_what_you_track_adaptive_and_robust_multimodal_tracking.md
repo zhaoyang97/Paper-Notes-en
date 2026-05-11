@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] What You Have is What You Track: Adaptive and Robust Multimodal Tracking
 description: >-
-  [ICCV 2025][Video Understanding][Multimodal tracking] This paper proposes FlexTrack—the first framework to systematically study tracking under **temporally incomplete multimodal data**—achieving adaptive computational complexity via a Heterogeneous Mixture-of-Experts fusion module (HMoE) combined with a video-level masking training strategy. FlexTrack achieves state-of-the-art performance on 9 benchmarks, with gains of 2.6% under complete modalities and 10.2% under missing-modality scenarios.
+  [ICCV 2025][Video Understanding][Multimodal tracking] This paper proposes FlexTrack—the first framework to systematically study tracking under **temporally incomplete multimodal data**—achieving adaptive computational co…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - Multimodal tracking
-  - missing modality
-  - Mixture-of-Experts
-  - video-level masking
-  - adaptive complexity
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "Multimodal tracking"
+  - "missing modality"
+  - "Mixture-of-Experts"
+  - "video-level masking"
+  - "adaptive complexity"
 date: 2026-05-08
 content_hash: e9133a28dce461b5
 ---

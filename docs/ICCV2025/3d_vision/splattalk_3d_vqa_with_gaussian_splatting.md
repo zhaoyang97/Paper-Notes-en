@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] SplatTalk: 3D VQA with Gaussian Splatting
 description: >-
-  [3D Vision] This paper proposes SplatTalk, a framework that leverages generalizable 3D Gaussian Splatting to generate LLM-compatible 3D tokens from multi-view RGB images alone, enabling zero-shot 3D visual question answering that surpasses 2D LMM baselines and approaches 3D LMM performance.
+  [3D Vision] This paper proposes SplatTalk, a framework that leverages generalizable 3D Gaussian Splatting to generate LLM-compatible 3D tokens from multi-view RGB images alone…
 tags:
-  - 3D Vision
+  - "3D Vision"
 date: 2026-05-08
 content_hash: 262e48034788a5fd
 ---

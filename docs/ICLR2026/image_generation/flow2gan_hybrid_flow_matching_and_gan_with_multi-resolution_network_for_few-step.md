@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Flow2GAN: Hybrid Flow Matching and GAN with Multi-Resolution Network for Few-step High-Fidelity Audio Generation
 description: >-
-  [ICLR 2026][Image Generation][Flow Matching] This paper proposes Flow2GAN, a two-stage training framework that first employs an improved Flow Matching objective to learn generative capabilities, then fine-tunes with a GAN to achieve few-step (1/2/4 steps) high-fidelity audio generation, combined with a multi-resolution network architecture that processes Fourier coefficients at different time-frequency resolutions.
+  [ICLR 2026][Image Generation][Flow Matching] This paper proposes Flow2GAN, a two-stage training framework that first employs an improved Flow Matching objective to learn generative capabilities…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Flow Matching
-  - GAN
-  - Audio Generation
-  - Multi-Resolution
-  - Few-step Inference
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Flow Matching"
+  - "GAN"
+  - "Audio Generation"
+  - "Multi-Resolution"
+  - "Few-step Inference"
 date: 2026-05-08
 content_hash: 2808901cd675a3a3
 ---

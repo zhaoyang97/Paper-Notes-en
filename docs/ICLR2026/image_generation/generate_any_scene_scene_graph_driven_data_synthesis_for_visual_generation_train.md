@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Generate Any Scene: Scene Graph Driven Data Synthesis for Visual Generation Training
 description: >-
-  [ICLR 2026][Image Generation][Scene Graph] This paper proposes the Generate Any Scene data engine, which systematically enumerates scene graphs from a visual element taxonomy comprising 28K objects × 1.5K attributes × 10K relations, and converts them into caption–VQA pairs. The engine supports four applications: self-improvement (SD1.5 +4%), targeted distillation (<800 samples, TIFA +10%), a scene-graph reward model (DPG-Bench +5% vs. CLIP), and content moderation enhancement.
+  [ICLR 2026][Image Generation][Scene Graph] This paper proposes the Generate Any Scene data engine, which systematically enumerates scene graphs from a visual element taxonomy comprising 28K objects × 1.5K attributes × 10…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Scene Graph
-  - Compositional Generation
-  - Data Engine
-  - Self-Improvement
-  - Targeted Distillation
-  - Reward Model
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Scene Graph"
+  - "Compositional Generation"
+  - "Data Engine"
+  - "Self-Improvement"
+  - "Targeted Distillation"
+  - "Reward Model"
 date: 2026-05-08
 content_hash: 8a7504a8ca89ff26
 ---

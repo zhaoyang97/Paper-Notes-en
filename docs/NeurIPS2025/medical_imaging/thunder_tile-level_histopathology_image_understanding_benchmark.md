@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] THUNDER: Tile-level Histopathology image UNDERstanding benchmark
 description: >-
-  [NeurIPS 2025 Datasets and Benchmarks Track (Spotlight)][Medical Imaging][digital pathology] This paper presents THUNDER, a comprehensive tile-level benchmark for digital pathology foundation models, enabling efficient comparison of 23 foundation models across 16 datasets, covering downstream task performance, feature space analysis, robustness, and uncertainty estimation.
+  [NeurIPS 2025 Datasets and Benchmarks Track (Spotlight)][Medical Imaging][digital pathology] This paper presents THUNDER, a comprehensive tile-level benchmark for digital pathology foundation models…
 tags:
-  - NeurIPS 2025 Datasets and Benchmarks Track (Spotlight)
-  - Medical Imaging
-  - digital pathology
-  - benchmark
-  - foundation models
-  - robustness
-  - uncertainty
-  - tile-level analysis
+  - "NeurIPS 2025 Datasets and Benchmarks Track (Spotlight)"
+  - "Medical Imaging"
+  - "digital pathology"
+  - "benchmark"
+  - "foundation models"
+  - "robustness"
+  - "uncertainty"
+  - "tile-level analysis"
 date: 2026-05-08
 content_hash: 74b5e143a85fff31
 ---

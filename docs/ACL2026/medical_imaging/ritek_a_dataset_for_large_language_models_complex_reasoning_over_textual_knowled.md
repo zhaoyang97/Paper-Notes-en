@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RiTeK: A Dataset for Large Language Models Complex Reasoning over Textual Knowledge Graphs in Medicine
 description: >-
-  [ACL 2026][Medical Imaging][Textual Knowledge Graph] RiTeK constructs two large-scale medical textual knowledge graphs (TKGs) and corresponding complex reasoning QA datasets, covering 6 topological structures with rich textual descriptions. It evaluates 11 retrieval methods and reveals critical deficiencies in existing LLM-driven retrieval systems for medical TKG reasoning.
+  [ACL 2026][Medical Imaging][Textual Knowledge Graph] RiTeK constructs two large-scale medical textual knowledge graphs (TKGs) and corresponding complex reasoning QA datasets…
 tags:
-  - ACL 2026
-  - Medical Imaging
-  - Textual Knowledge Graph
-  - Medical QA
-  - Complex Reasoning
-  - Retrieval System
-  - Topological Structure
+  - "ACL 2026"
+  - "Medical Imaging"
+  - "Textual Knowledge Graph"
+  - "Medical QA"
+  - "Complex Reasoning"
+  - "Retrieval System"
+  - "Topological Structure"
 date: 2026-05-08
 content_hash: 0024d46366fd5bf5
 ---

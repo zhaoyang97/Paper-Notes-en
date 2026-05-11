@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Bridging Diffusion Models and 3D Representations: A 3D Consistent Super-Resolution Framework
 description: >-
-  [ICCV 2025][3D Vision][3D super-resolution] This paper proposes 3DSR, a framework that integrates 2D diffusion-based super-resolution with 3D Gaussian Splatting (3DGS) representations. At each diffusion denoising step, multi-view 3D consistency is enforced via 3DGS rendering, enabling high-fidelity and spatially consistent 3D scene super-resolution.
+  [ICCV 2025][3D Vision][3D super-resolution] This paper proposes 3DSR, a framework that integrates 2D diffusion-based super-resolution with 3D Gaussian Splatting (3DGS) representations. At each diffusion denoising step…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D super-resolution
-  - diffusion models
-  - 3D Gaussian splatting
-  - multi-view consistency
-  - novel view synthesis
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D super-resolution"
+  - "diffusion models"
+  - "3D Gaussian splatting"
+  - "multi-view consistency"
+  - "novel view synthesis"
 date: 2026-05-08
 content_hash: d906e2fd0f43bf42
 ---

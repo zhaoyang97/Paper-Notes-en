@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PANDA: Patch and Distribution-Aware Augmentation for Long-Tailed Exemplar-Free Continual Learning
 description: >-
-  [AAAI 2026][LLM Safety][Exemplar-Free Continual Learning] This paper proposes PANDA, a framework that achieves intra-task class balancing via CLIP-guided semantic patch grafting and alleviates inter-task distribution shift through a learnable distribution smoothening mechanism. PANDA operates as a plug-and-play module to improve pretrained model-based exemplar-free continual learning under long-tailed scenarios.
+  [AAAI 2026][LLM Safety][Exemplar-Free Continual Learning] This paper proposes PANDA, a framework that achieves intra-task class balancing via CLIP-guided semantic patch grafting and alleviates inter-task distribution shi…
 tags:
-  - AAAI 2026
-  - LLM Safety
-  - Exemplar-Free Continual Learning
-  - Long-Tailed Distribution
-  - CLIP-guided Augmentation
-  - Dual-Level Imbalance
-  - Distribution Smoothening
+  - "AAAI 2026"
+  - "LLM Safety"
+  - "Exemplar-Free Continual Learning"
+  - "Long-Tailed Distribution"
+  - "CLIP-guided Augmentation"
+  - "Dual-Level Imbalance"
+  - "Distribution Smoothening"
 date: 2026-05-08
 content_hash: 22121dfb4a35892b
 ---

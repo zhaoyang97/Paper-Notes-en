@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Distributive Fairness in Large Language Models: Evaluating Alignment with Human Values
 description: >-
-  [NeurIPS 2025][LLM Safety][distributive fairness] This paper systematically evaluates the distributive fairness preferences of several SOTA LLMs (GPT-4o, Claude-3.5S, Llama3-70b, Gemini-1.5P) on non-strategic resource allocation tasks. The results reveal significant divergence between LLMs and humans: LLMs favor efficiency and envy-freeness (EF) while neglecting equality (EQ), which humans prioritize. However, in multiple-choice settings, GPT-4o and Claude can correctly identify the fairest allocation.
+  [NeurIPS 2025][LLM Safety][distributive fairness] This paper systematically evaluates the distributive fairness preferences of several SOTA LLMs (GPT-4o, Claude-3.5S, Llama3-70b…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - distributive fairness
-  - LLM alignment
-  - human values
-  - fair allocation
-  - resource distribution
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "distributive fairness"
+  - "LLM alignment"
+  - "human values"
+  - "fair allocation"
+  - "resource distribution"
 date: 2026-05-08
 content_hash: 51b8c1292d604df3
 ---

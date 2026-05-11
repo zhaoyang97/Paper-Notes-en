@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Cost-Free Neutrality for the River Method
 description: >-
-  [AAAI 2026][River voting method] For the Parallel Universes Tiebreaking (PUT) problem applied to the River voting method, this paper proves that the winner set can be computed in polynomial time (in contrast to the NP-completeness of Ranked Pairs), and proposes the Fused-Universe (FUN) algorithm, which simulates all possible tiebreaking orders in a single pass and provides a constructive certificate for each winner.
+  [AAAI 2026][River voting method] For the Parallel Universes Tiebreaking (PUT) problem applied to the River voting method, this paper proves that the winner set can be computed in polynomial time (in contrast to the NP-co…
 tags:
-  - AAAI 2026
-  - River voting method
-  - parallel universes tiebreaking
-  - neutrality
-  - polynomial-time algorithm
-  - social choice function
+  - "AAAI 2026"
+  - "River voting method"
+  - "parallel universes tiebreaking"
+  - "neutrality"
+  - "polynomial-time algorithm"
+  - "social choice function"
 date: 2026-05-08
 content_hash: ff96c2d21da57c09
 ---

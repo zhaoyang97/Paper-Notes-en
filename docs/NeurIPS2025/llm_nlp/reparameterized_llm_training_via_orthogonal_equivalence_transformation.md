@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Reparameterized LLM Training via Orthogonal Equivalence Transformation
 description: >-
-  [NeurIPS 2025][LLM/NLP][reparameterized training] This paper proposes POET, a training framework that reparameterizes weight matrices as the product of two learnable orthogonal matrices and a fixed random weight matrix, thereby preserving spectral properties throughout training to achieve more stable optimization and improved generalization with fewer trainable parameters than AdamW.
+  [NeurIPS 2025][LLM/NLP][reparameterized training] This paper proposes POET, a training framework that reparameterizes weight matrices as the product of two learnable orthogonal matrices and a fixed random weight matrix…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - reparameterized training
-  - orthogonal transformation
-  - spectrum preservation
-  - LLM pretraining
-  - efficient training
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "reparameterized training"
+  - "orthogonal transformation"
+  - "spectrum preservation"
+  - "LLM pretraining"
+  - "efficient training"
 date: 2026-05-08
 content_hash: a708e5c8fa51133c
 ---

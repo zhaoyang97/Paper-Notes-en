@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Generalizable Shape Completion with SIM(3) Equivariance
 description: >-
-  [NeurIPS 2025][LLM Evaluation][shape completion] This paper proposes SIMECO, the first SIM(3)-equivariant shape completion network. Through a three-stage modular design — feature canonicalization → similarity-invariant geometric reasoning → transformation recovery — SIMECO outperforms all augmentation-based and equivariant baselines under an unbiased evaluation protocol, achieving a 17% MMD reduction on KITTI and a 14% CD-$\ell_1$ reduction on OmniObject3D. Notably, SIMECO under the stricter protocol still surpasses competing methods evaluated under their own biased settings.
+  [NeurIPS 2025][LLM Evaluation][shape completion] This paper proposes SIMECO, the first SIM(3)-equivariant shape completion network. Through a three-stage modular design — feature canonicalization → similarity-invariant g…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - shape completion
-  - SIM(3) equivariance
-  - vector neurons
-  - point cloud
-  - cross-domain generalization
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "shape completion"
+  - "SIM(3) equivariance"
+  - "vector neurons"
+  - "point cloud"
+  - "cross-domain generalization"
 date: 2026-05-08
 content_hash: 9b31b49c2e8f5829
 ---

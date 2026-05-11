@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CaMiT: A Time-Aware Car Model Dataset for Classification and Generation
 description: >-
-  [NeurIPS 2025][Image Generation][temporal dataset] This paper introduces the CaMiT dataset (787K labeled + 5.1M unlabeled car images, 2005–2023) to systematically study temporal drift in fine-grained visual categories, providing benchmarks across four settings: static pre-training, time-incremental pre-training, time-incremental classifier learning, and time-aware image generation.
+  [NeurIPS 2025][Image Generation][temporal dataset] This paper introduces the CaMiT dataset (787K labeled + 5.1M unlabeled car images, 2005–2023) to systematically study temporal drift in fine-grained visual categories…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - temporal dataset
-  - fine-grained classification
-  - continual learning
-  - time-aware generation
-  - car model recognition
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "temporal dataset"
+  - "fine-grained classification"
+  - "continual learning"
+  - "time-aware generation"
+  - "car model recognition"
 date: 2026-05-08
 content_hash: 2fefafb116ad19bb
 ---

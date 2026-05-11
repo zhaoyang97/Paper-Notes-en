@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] LoftUp: Learning a Coordinate-Based Feature Upsampler for Vision Foundation Models
 description: >-
-  [ICCV 2025][Self-Supervised Learning][feature upsampling] LoftUp is proposed to map low-resolution VFM features to arbitrary high resolutions via a coordinate-cross-attention architecture, with class-agnostic mask refinement and self-distillation to construct full-resolution pseudo-GT for training, achieving average improvements of 10–20% across 6 downstream tasks and nearly 50% on video object segmentation.
+  [ICCV 2025][Self-Supervised Learning][feature upsampling] LoftUp is proposed to map low-resolution VFM features to arbitrary high resolutions via a coordinate-cross-attention architecture…
 tags:
-  - ICCV 2025
-  - Self-Supervised Learning
-  - feature upsampling
-  - vision foundation models
-  - coordinate-based
-  - self-distillation
-  - DINOv2
-  - dense prediction
+  - "ICCV 2025"
+  - "Self-Supervised Learning"
+  - "feature upsampling"
+  - "vision foundation models"
+  - "coordinate-based"
+  - "self-distillation"
+  - "DINOv2"
+  - "dense prediction"
 date: 2026-05-08
 content_hash: 2958934f2a73a8c6
 ---

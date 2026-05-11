@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Shared Representations from Unpaired Data
 description: >-
-  [NeurIPS 2025][Multimodal VLM][spectral embedding] This paper proposes SUE (Spectral Universal Embedding), which is the first to demonstrate that cross-modal shared representations can be learned with almost entirely unpaired data. Independent spectral embeddings extract modality-invariant "universal" structure from random walks within each modality; a minimal number of paired samples (~100 pairs) then enables CCA-based linear alignment followed by MMD-based nonlinear fine-tuning. SUE outperforms contrastive learning using the same number of pairs by more than 250% on retrieval benchmarks.
+  [NeurIPS 2025][Multimodal VLM][spectral embedding] This paper proposes SUE (Spectral Universal Embedding), which is the first to demonstrate that cross-modal shared representations can be learned with almost entirely unp…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - spectral embedding
-  - universal embedding
-  - unpaired multimodal learning
-  - MMD
-  - CCA
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "spectral embedding"
+  - "universal embedding"
+  - "unpaired multimodal learning"
+  - "MMD"
+  - "CCA"
 date: 2026-05-08
 content_hash: a0b45b851c098408
 ---

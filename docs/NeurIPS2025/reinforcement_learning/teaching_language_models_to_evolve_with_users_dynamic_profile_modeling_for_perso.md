@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Teaching Language Models to Evolve with Users: Dynamic Profile Modeling for Personalized Alignment
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Personalized Alignment] This paper formulates personalized dialogue alignment as a multi-turn Markov Decision Process and proposes the RLPA framework, enabling LLMs to dynamically infer and maintain user profiles through online interaction with simulated users, and to generate personalized responses accordingly.
+  [NeurIPS 2025][Reinforcement Learning][Personalized Alignment] This paper formulates personalized dialogue alignment as a multi-turn Markov Decision Process and proposes the RLPA framework…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Personalized Alignment
-  - User Profile Modeling
-  - Multi-turn Dialogue
-  - Cold Start
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Personalized Alignment"
+  - "User Profile Modeling"
+  - "Multi-turn Dialogue"
+  - "Cold Start"
 date: 2026-05-08
 content_hash: f26d31c2e01c1e6b
 ---

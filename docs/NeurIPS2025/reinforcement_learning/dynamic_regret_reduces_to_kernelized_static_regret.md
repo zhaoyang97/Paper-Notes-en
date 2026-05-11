@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dynamic Regret Reduces to Kernelized Static Regret
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][dynamic regret] This paper reformulates dynamic regret minimization as a static regret problem in a reproducing kernel Hilbert space (RKHS), achieving the optimal path-length-dependent bound $\widetilde{\mathcal{O}}(\sqrt{MP_TT})$ via carefully designed shift-invariant kernels, without requiring prior knowledge of the time horizon.
+  [NeurIPS 2025][Reinforcement Learning][dynamic regret] This paper reformulates dynamic regret minimization as a static regret problem in a reproducing kernel Hilbert space (RKHS)…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - dynamic regret
-  - online convex optimization
-  - RKHS
-  - kernel methods
-  - path-length
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "dynamic regret"
+  - "online convex optimization"
+  - "RKHS"
+  - "kernel methods"
+  - "path-length"
 date: 2026-05-08
 content_hash: a8a168ec07320dcb
 ---

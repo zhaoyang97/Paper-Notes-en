@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] EgoNight: Towards Egocentric Vision Understanding at Night with a Challenging Benchmark
 description: >-
-  [ICLR 2026][3D Vision] This paper introduces EgoNight, the first systematic nighttime egocentric vision benchmark, comprising day-night aligned videos and 3,658 manually verified QA pairs. It reveals that MLLMs suffer up to 32.8% performance degradation under low-light conditions.
+  [ICLR 2026][3D Vision] This paper introduces EgoNight, the first systematic nighttime egocentric vision benchmark, comprising day-night aligned videos and 3…
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
 date: 2026-05-08
 content_hash: 0f60842c0a6f6ae2
 ---

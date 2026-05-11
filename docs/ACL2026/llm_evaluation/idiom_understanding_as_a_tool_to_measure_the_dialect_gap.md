@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Idiom Understanding as a Tool to Measure the Dialect Gap
 description: >-
-  [ACL 2026][LLM Evaluation][dialect gap] Three new French idiom understanding benchmark datasets are proposed — QFrCoRE and QFrCoRT for Quebec French, and MFrCoE for standard French. Evaluation across 111 LLMs reveals that 65.77% of models perform significantly worse on dialectal idioms than on standard French idioms, quantifying the dialect gap phenomenon.
+  [ACL 2026][LLM Evaluation][dialect gap] Three new French idiom understanding benchmark datasets are proposed — QFrCoRE and QFrCoRT for Quebec French…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - dialect gap
-  - idiom understanding
-  - Quebec French
-  - benchmark dataset
-  - multilingual evaluation
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "dialect gap"
+  - "idiom understanding"
+  - "Quebec French"
+  - "benchmark dataset"
+  - "multilingual evaluation"
 date: 2026-05-08
 content_hash: 3607c1b0e2639f81
 ---

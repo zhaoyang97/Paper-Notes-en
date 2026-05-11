@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mamba-VMR: Multimodal Query Augmentation via Generated Videos for Precise Temporal Grounding
 description: >-
-  [CVPR 2026][Video Understanding][Video Moment Retrieval] A two-stage video moment retrieval framework is proposed: the first stage employs LLM-guided caption matching and generates auxiliary short videos as temporal priors; the second stage uses a multimodal-controlled Mamba network to efficiently fuse generated priors with long sequences, achieving state-of-the-art performance on TVR (R@1/IoU=0.5: 45.20%) while reducing computational overhead.
+  [CVPR 2026][Video Understanding][Video Moment Retrieval] A two-stage video moment retrieval framework is proposed: the first stage employs LLM-guided caption matching and generates auxiliary short videos as temporal prio…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Video Moment Retrieval
-  - Multimodal Query Augmentation
-  - Generated Video Prior
-  - Mamba
-  - Temporal Grounding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Video Moment Retrieval"
+  - "Multimodal Query Augmentation"
+  - "Generated Video Prior"
+  - "Mamba"
+  - "Temporal Grounding"
 date: 2026-05-08
 content_hash: 2e4380b90430fc3b
 ---

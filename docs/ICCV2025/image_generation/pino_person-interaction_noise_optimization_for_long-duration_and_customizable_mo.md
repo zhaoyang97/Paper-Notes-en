@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PINO: Person-Interaction Noise Optimization for Long-Duration and Customizable Motion Generation of Arbitrary-Sized Groups
 description: >-
-  [ICCV 2025][Image Generation][multi-person interaction generation] This paper proposes Person-Interaction Noise Optimization (PINO), a training-free framework that decomposes complex multi-person group interactions into semantically well-defined dyadic interaction pairs. By leveraging a pretrained two-person interaction diffusion model with noise optimization and physical penalty terms, PINO sequentially synthesizes group interaction motions of arbitrary scale, supporting fine-grained user control and long-duration motion generation.
+  [ICCV 2025][Image Generation][multi-person interaction generation] This paper proposes Person-Interaction Noise Optimization (PINO), a training-free framework that decomposes complex multi-person group interactions into…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - multi-person interaction generation
-  - noise optimization
-  - training-free
-  - motion diffusion model
-  - physical constraints
+  - "ICCV 2025"
+  - "Image Generation"
+  - "multi-person interaction generation"
+  - "noise optimization"
+  - "training-free"
+  - "motion diffusion model"
+  - "physical constraints"
 date: 2026-05-08
 content_hash: 5f94488a043739e1
 ---

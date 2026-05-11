@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Bridging Vision and Language for Robust Context-Aware Surgical Point Tracking: The VL-SurgPT Dataset and Benchmark
 description: >-
-  [AAAI 2026][Medical Imaging][Surgical point tracking] This paper presents VL-SurgPT, the first large-scale multimodal surgical point tracking dataset combining visual coordinates with textual state descriptions, and proposes TG-SurgPT, a text-guided tracking method that leverages semantic information to significantly improve tracking accuracy and robustness in complex surgical scenes.
+  [AAAI 2026][Medical Imaging][Surgical point tracking] This paper presents VL-SurgPT, the first large-scale multimodal surgical point tracking dataset combining visual coordinates with textual state descriptions…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Surgical point tracking
-  - vision-language multimodal
-  - dataset
-  - text-guided
-  - surgical video analysis
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Surgical point tracking"
+  - "vision-language multimodal"
+  - "dataset"
+  - "text-guided"
+  - "surgical video analysis"
 date: 2026-05-08
 content_hash: e50c5e0a4e22d292
 ---

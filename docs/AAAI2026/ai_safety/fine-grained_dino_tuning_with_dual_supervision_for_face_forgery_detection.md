@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Fine-Grained DINO Tuning with Dual Supervision for Face Forgery Detection
 description: >-
-  [AAAI 2026][AI Safety][Deepfake Detection] This paper proposes DFF-Adapter (DeepFake Fine-Grained Adapter), a lightweight fine-tuning scheme for deepfake detection built upon DINOv2. A three-branch adapter (authenticity detection head, forgery type classification head, and shared head) is injected into each Transformer block. A Forgery-Aware Multi-Head Router enables subspace-level dynamic routing among LoRA experts. The auxiliary forgery type classification task enhances artifact sensitivity for the primary task. With only 3.5M trainable parameters, the method achieves state-of-the-art performance across multiple cross-dataset evaluations.
+  [AAAI 2026][AI Safety][Deepfake Detection] This paper proposes DFF-Adapter (DeepFake Fine-Grained Adapter), a lightweight fine-tuning scheme for deepfake detection built upon DINOv2. A three-branch adapter (authenticity…
 tags:
-  - AAAI 2026
-  - AI Safety
-  - Deepfake Detection
-  - DINOv2
-  - Parameter-Efficient Fine-Tuning
-  - Fine-Grained Classification
-  - LoRA
+  - "AAAI 2026"
+  - "AI Safety"
+  - "Deepfake Detection"
+  - "DINOv2"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Fine-Grained Classification"
+  - "LoRA"
 date: 2026-05-08
 content_hash: 3607ae82d3bd15d5
 ---

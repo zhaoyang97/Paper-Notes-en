@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Perspective from a Broader Context: Can Room Style Knowledge Help Visual Floorplan Localization?
 description: >-
-  [AAAI2026][LLM Evaluation][Visual Floorplan Localization] This paper proposes leveraging room style knowledge — obtained via unsupervised clustering pretraining in the form of a room discriminator — to resolve ambiguities caused by repetitive structures in visual floorplan localization (FLoc), achieving state-of-the-art performance on two standard benchmarks: Gibson and Structured3D.
+  [AAAI2026][LLM Evaluation][Visual Floorplan Localization] This paper proposes leveraging room style knowledge — obtained via unsupervised clustering pretraining in the form of a room discriminator — to resolve ambiguitie…
 tags:
-  - AAAI2026
-  - LLM Evaluation
-  - Visual Floorplan Localization
-  - Room Style Knowledge
-  - Unsupervised Learning
-  - Clustering Constraints
-  - Bayesian Filtering
+  - "AAAI2026"
+  - "LLM Evaluation"
+  - "Visual Floorplan Localization"
+  - "Room Style Knowledge"
+  - "Unsupervised Learning"
+  - "Clustering Constraints"
+  - "Bayesian Filtering"
 date: 2026-05-08
 content_hash: 56b82e1177e97477
 ---

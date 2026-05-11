@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HyperGaussians: High-Dimensional Gaussian Splatting for High-Fidelity Animatable Face Avatars
 description: >-
-  [CVPR 2026][3D Vision][Gaussian splatting] This paper proposes HyperGaussians, which extends 3DGS to high-dimensional multivariate Gaussians. Expression-dependent attribute variations are modeled via conditional distributions, and an inverse covariance trick enables efficient conditioning. Integrated as a plug-and-play module into FlashAvatar and GaussianHeadAvatar, the method significantly improves high-frequency detail quality.
+  [CVPR 2026][3D Vision][Gaussian splatting] This paper proposes HyperGaussians, which extends 3DGS to high-dimensional multivariate Gaussians. Expression-dependent attribute variations are modeled via conditional distribu…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Gaussian splatting
-  - face avatars
-  - high-dimensional Gaussians
-  - facial animation
-  - conditional distribution
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Gaussian splatting"
+  - "face avatars"
+  - "high-dimensional Gaussians"
+  - "facial animation"
+  - "conditional distribution"
 date: 2026-05-08
 content_hash: 6c313b6af36d5111
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] ARECHO: Autoregressive Evaluation via Chain-Based Hypothesis Optimization for Speech Multi-Metric Estimation
 description: >-
-  [NeurIPS 2025][Speech multi-metric evaluation] ARECHO frames speech multi-metric evaluation as a chain-based autoregressive token prediction task. It designs a unified speech information tokenization pipeline to handle 87 heterogeneous metrics (numerical/categorical/bounded/unbounded), explicitly captures inter-metric dependencies (e.g., intelligibility–naturalness correlation) via dynamic classification chains, and employs two-step confidence-guided decoding to reduce error propagation. ARECHO comprehensively outperforms the UniVERSA baseline across enhancement, synthesis, and noisy speech evaluation (Avg Test MSE 23.26 vs. 96.99, −76%).
+  [NeurIPS 2025][Interpretability][Speech multi-metric evaluation] ARECHO frames speech multi-metric evaluation as a chain-based autoregressive token prediction task. It designs a unified speech information tokenization pi…
 tags:
-  - NeurIPS 2025
-  - Speech multi-metric evaluation
-  - autoregressive classification chain
-  - tokenization
-  - confidence-guided decoding
-  - dependency modeling
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "Speech multi-metric evaluation"
+  - "autoregressive classification chain"
+  - "tokenization"
+  - "confidence-guided decoding"
+  - "dependency modeling"
 date: 2026-05-08
 content_hash: 596ba3813ac21a6b
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HeurekaBench: A Benchmarking Framework for AI Co-scientist
 description: >-
-  [ICLR 2026][LLM Reasoning][AI co-scientist] This paper proposes HeurekaBench, a framework for constructing evaluation benchmarks grounded in real scientific workflows. It employs a multi-LLM pipeline to extract verifiable scientific insights from papers and generate open-ended research questions, enabling end-to-end assessment of AI co-scientists in data-driven scientific discovery.
+  [ICLR 2026][LLM Reasoning][AI co-scientist] This paper proposes HeurekaBench, a framework for constructing evaluation benchmarks grounded in real scientific workflows. It employs a multi-LLM pipeline to extract verifiabl…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - AI co-scientist
-  - benchmark
-  - scientific agents
-  - single-cell biology
-  - open-ended evaluation
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "AI co-scientist"
+  - "benchmark"
+  - "scientific agents"
+  - "single-cell biology"
+  - "open-ended evaluation"
 date: 2026-05-08
 content_hash: 588550410881c0c1
 ---

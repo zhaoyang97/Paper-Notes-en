@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] With Great Capabilities Come Great Responsibilities: Introducing the Agentic Risk & Capability Framework for Governing Agentic AI Systems
 description: >-
-  [AAAI 2026][LLM Agent][agent governance] This paper proposes the Agentic Risk & Capability (ARC) framework, which systematically identifies, assesses, and mitigates safety and security risks in agentic AI systems from a **capability** perspective, providing organizations with an actionable and structured methodology for governance.
+  [AAAI 2026][LLM Agent][agent governance] This paper proposes the Agentic Risk & Capability (ARC) framework, which systematically identifies, assesses…
 tags:
-  - AAAI 2026
-  - LLM Agent
-  - agent governance
-  - risk assessment framework
-  - capability analysis
-  - technical controls
-  - AI safety
+  - "AAAI 2026"
+  - "LLM Agent"
+  - "agent governance"
+  - "risk assessment framework"
+  - "capability analysis"
+  - "technical controls"
+  - "AI safety"
 date: 2026-05-08
 content_hash: 9fecd0f0052e38cf
 ---

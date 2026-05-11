@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Denoising Weak Lensing Mass Maps with Diffusion Model and Generative Adversarial Network
 description: >-
-  [Image Generation] This work applies diffusion models (DM) to the task of weak gravitational lensing mass map denoising and conducts a systematic comparison with GAN (pix2pix) under identical experimental settings, demonstrating that DM comprehensively outperforms GAN in terms of training stability, robustness under multi-sample averaging, and reconstruction accuracy across multiple statistical estimators.
+  [Image Generation] This work applies diffusion models (DM) to the task of weak gravitational lensing mass map denoising and conducts a systematic comparison with GAN (pix2pix) under identical experimental settings…
 tags:
-  - Image Generation
+  - "Image Generation"
 date: 2026-05-08
 content_hash: fcb3346494a044c6
 ---

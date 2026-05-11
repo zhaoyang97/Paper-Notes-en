@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Proof-of-Perception: Certified Tool-Using Multimodal Reasoning with Compositional Conformal Guarantees
 description: >-
-  [CVPR 2026][Multimodal VLM][Conformal Prediction] This paper proposes Proof-of-Perception (PoP), which models multimodal reasoning as an executable directed acyclic graph (DAG) where each perception/logic node outputs set-valued predictions with conformal certificates providing step-wise reliability guarantees. A lightweight controller adaptively allocates computation within a budget based on these certificates. PoP outperforms CoT, ReAct, and PoT baselines on document, chart, and multi-image QA benchmarks.
+  [CVPR 2026][Multimodal VLM][Conformal Prediction] This paper proposes Proof-of-Perception (PoP), which models multimodal reasoning as an executable directed acyclic graph (DAG) where each perception/logic node outputs se…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Conformal Prediction
-  - Tool Use
-  - Multimodal Reasoning
-  - Uncertainty Quantification
-  - Adaptive Computation
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Conformal Prediction"
+  - "Tool Use"
+  - "Multimodal Reasoning"
+  - "Uncertainty Quantification"
+  - "Adaptive Computation"
 date: 2026-05-08
 content_hash: c598792367abe0a3
 ---

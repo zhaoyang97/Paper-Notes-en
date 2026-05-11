@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Semi-infinite Nonconvex Constrained Min-Max Optimization
 description: >-
-  [NeurIPS 2025][Semi-infinite programming] For nonconvex min-max optimization problems with infinitely many nonconvex constraints, this paper proposes the iDB-PD (Inexact Dynamic Barrier Primal-Dual) algorithm. Under the Łojasiewicz regularity condition, it establishes the first global non-asymptotic convergence guarantees: stationarity $\mathcal{O}(\epsilon^{-3})$, feasibility $\mathcal{O}(\epsilon^{-6\theta})$, and complementary slackness $\mathcal{O}(\epsilon^{-3\theta/(1-\theta)})$.
+  [NeurIPS 2025][Semi-infinite programming] For nonconvex min-max optimization problems with infinitely many nonconvex constraints, this paper proposes the iDB-PD (Inexact Dynamic Barrier Primal-Dual) algorithm. Under the…
 tags:
-  - NeurIPS 2025
-  - Semi-infinite programming
-  - nonconvex constraints
-  - min-max optimization
-  - dynamic barrier method
-  - convergence complexity
+  - "NeurIPS 2025"
+  - "Semi-infinite programming"
+  - "nonconvex constraints"
+  - "min-max optimization"
+  - "dynamic barrier method"
+  - "convergence complexity"
 date: 2026-05-08
 content_hash: eb5ed38fe1606264
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SALMUBench: A Benchmark for Sensitive Association-Level Multimodal Unlearning
 description: >-
-  [CVPR2026][Multimodal VLM][machine unlearning] This paper proposes SALMUBench—the first association-level machine unlearning benchmark for CLIP-style models—comprising a 60K synthetic person–sensitive-attribute paired dataset, from-scratch-trained Compromised/Clean model pairs, and a structured holdout evaluation protocol. It is the first work to systematically reveal three failure modes of existing unlearning methods: catastrophic destruction, over-generalized unlearning, and ineffective unlearning.
+  [CVPR2026][Multimodal VLM][machine unlearning] This paper proposes SALMUBench—the first association-level machine unlearning benchmark for CLIP-style models—comprising a 60K synthetic person–sensitive-attribute paired da…
 tags:
-  - CVPR2026
-  - Multimodal VLM
-  - machine unlearning
-  - CLIP
-  - privacy protection
-  - association-level unlearning
-  - benchmark
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "machine unlearning"
+  - "CLIP"
+  - "privacy protection"
+  - "association-level unlearning"
+  - "benchmark"
 date: 2026-05-08
 content_hash: 03168ef1f85a4dfa
 ---

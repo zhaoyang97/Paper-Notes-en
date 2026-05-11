@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Attention Smoothing Is All You Need For Unlearning
 description: >-
-  [ICLR 2026][LLM Safety][LLM unlearning] This paper proposes Attention Smoothing Unlearning (ASU), which constructs a forget-teacher by raising the softmax temperature in self-attention, reformulating the unlearning problem as self-distillation. By smoothing the attention distribution to weaken both lexical- and semantic-level associations, ASU erases memorized knowledge while preserving output coherence, surpassing existing unlearning methods on multiple benchmarks including TOFU, MUSE, and WMDP.
+  [ICLR 2026][LLM Safety][LLM unlearning] This paper proposes Attention Smoothing Unlearning (ASU), which constructs a forget-teacher by raising the softmax temperature in self-attention…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - LLM unlearning
-  - attention smoothing
-  - self-distillation
-  - privacy protection
-  - knowledge forgetting
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "LLM unlearning"
+  - "attention smoothing"
+  - "self-distillation"
+  - "privacy protection"
+  - "knowledge forgetting"
 date: 2026-05-08
 content_hash: 71821afd1df6a70f
 ---

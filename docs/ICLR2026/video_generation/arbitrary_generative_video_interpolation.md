@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Arbitrary Generative Video Interpolation
 description: >-
-  [ICLR 2026][Video Generation][Video Frame Interpolation] ArbInterp proposes a generative video frame interpolation framework supporting arbitrary timestamps and arbitrary sequence lengths. It achieves precise temporal control via Timestamp-aware Rotary Position Embedding (TaRoPE) and enables seamless long-sequence stitching through an appearance-motion decoupled conditioning strategy.
+  [ICLR 2026][Video Generation][Video Frame Interpolation] ArbInterp proposes a generative video frame interpolation framework supporting arbitrary timestamps and arbitrary sequence lengths. It achieves precise temporal co…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - Video Frame Interpolation
-  - Generative VFI
-  - RoPE
-  - Temporal Conditioning
-  - Any-length Generation
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Video Frame Interpolation"
+  - "Generative VFI"
+  - "RoPE"
+  - "Temporal Conditioning"
+  - "Any-length Generation"
 date: 2026-05-08
 content_hash: 65dd9aee84cc9fc9
 ---

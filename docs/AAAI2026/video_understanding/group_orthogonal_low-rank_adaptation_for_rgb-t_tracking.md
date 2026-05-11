@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Group Orthogonal Low-Rank Adaptation for RGB-T Tracking
 description: >-
-  [AAAI 2026][Video Understanding][RGB-T Tracking] This paper proposes the GOLA framework, which quantifies LoRA rank importance via SVD decomposition, freezes critical ranks to preserve pre-trained priors, clusters redundant ranks into groups, and imposes inter-group orthogonal constraints to enable more efficient RGB-T tracking adaptation.
+  [AAAI 2026][Video Understanding][RGB-T Tracking] This paper proposes the GOLA framework, which quantifies LoRA rank importance via SVD decomposition, freezes critical ranks to preserve pre-trained priors…
 tags:
-  - AAAI 2026
-  - Video Understanding
-  - RGB-T Tracking
-  - LoRA
-  - Low-Rank Adaptation
-  - Orthogonal Constraint
-  - Parameter-Efficient Fine-Tuning
+  - "AAAI 2026"
+  - "Video Understanding"
+  - "RGB-T Tracking"
+  - "LoRA"
+  - "Low-Rank Adaptation"
+  - "Orthogonal Constraint"
+  - "Parameter-Efficient Fine-Tuning"
 date: 2026-05-08
 content_hash: c3ef27f0a1eb9e52
 ---

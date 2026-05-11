@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] ReCon: Region-Controllable Data Augmentation with Rectification and Alignment for Object Detection
 description: >-
-  [NeurIPS 2025][Object Detection][Data Augmentation] ReCon proposes a training-free, region-controllable data augmentation framework that enhances the detection data quality of existing structure-controllable generative models through Region-Guided Rectification (RGR) and Region-Aligned Cross-Attention (RACA), achieving 35.5 mAP on COCO—surpassing GeoDiffusion, which requires fine-tuning.
+  [NeurIPS 2025][Object Detection][Data Augmentation] ReCon proposes a training-free, region-controllable data augmentation framework that enhances the detection data quality of existing structure-controllable generative m…
 tags:
-  - NeurIPS 2025
-  - Object Detection
-  - Data Augmentation
-  - Diffusion Models
-  - Region Control
-  - ControlNet
+  - "NeurIPS 2025"
+  - "Object Detection"
+  - "Data Augmentation"
+  - "Diffusion Models"
+  - "Region Control"
+  - "ControlNet"
 date: 2026-05-08
 content_hash: f52253490b8d6921
 ---

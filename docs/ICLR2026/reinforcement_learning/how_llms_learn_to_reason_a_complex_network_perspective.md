@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] How LLMs Learn to Reason: A Complex Network Perspective
 description: >-
-  [ICLR 2026][Reinforcement Learning][RLVR] This paper proposes a "sparse concept network" theory from a complex network perspective to provide a unified explanation of four puzzling phenomena in RLVR training (V-shaped response length, two-stage learning curve, catastrophic forgetting, and policy collapse). It reveals that all four phenomena originate from the topological self-organization of sparse reasoning graphs with average degree approximately 2, and derives the Annealed-RLVR algorithm, which surpasses standard RLVR on mathematical reasoning benchmarks.
+  [ICLR 2026][Reinforcement Learning][RLVR] This paper proposes a "sparse concept network" theory from a complex network perspective to provide a unified explanation of four puzzling phenomena in RLVR training (V-shaped re…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RLVR
-  - concept network
-  - sparse graph
-  - catastrophic forgetting
-  - annealing algorithm
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "concept network"
+  - "sparse graph"
+  - "catastrophic forgetting"
+  - "annealing algorithm"
 date: 2026-05-08
 content_hash: 9809b0a189b81cf8
 ---

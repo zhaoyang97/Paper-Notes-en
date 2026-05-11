@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Stochastic Regret Guarantees for Online Zeroth- and First-Order Bilevel Optimization
 description: >-
-  [NeurIPS 2025][AI Safety][Bilevel Optimization] This paper proposes a novel search direction and proves that first-order and zeroth-order online bilevel optimization algorithms built upon it achieve sublinear stochastic bilevel regret guarantees without requiring window smoothing, while improving efficiency through reduced oracle dependence, parallel updates, and zeroth-order Hessian/Jacobian estimation.
+  [NeurIPS 2025][AI Safety][Bilevel Optimization] This paper proposes a novel search direction and proves that first-order and zeroth-order online bilevel optimization algorithms built upon it achieve sublinear stochastic…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - Bilevel Optimization
-  - Online Learning
-  - Zeroth-Order Optimization
-  - Stochastic Regret
-  - Hypergradient Estimation
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "Bilevel Optimization"
+  - "Online Learning"
+  - "Zeroth-Order Optimization"
+  - "Stochastic Regret"
+  - "Hypergradient Estimation"
 date: 2026-05-08
 content_hash: 7053696707f0555f
 ---

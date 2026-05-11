@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] RFEval: Benchmarking Reasoning Faithfulness under Counterfactual Perturbations
 description: >-
-  [ICLR 2026][Causal Inference][reasoning_faithfulness] This paper proposes a formal framework for reasoning faithfulness (stance consistency + causal influence) and the RFEval benchmark (7,186 instances × 7 tasks). By applying output-level counterfactual interventions to evaluate 12 open-source LRMs, it finds that 49.7% of outputs are unfaithful and that accuracy is not a reliable proxy for faithfulness.
+  [ICLR 2026][Causal Inference][reasoning_faithfulness] This paper proposes a formal framework for reasoning faithfulness (stance consistency + causal influence) and the RFEval benchmark (7…
 tags:
-  - ICLR 2026
-  - Causal Inference
-  - reasoning_faithfulness
-  - LRM_evaluation
-  - counterfactual_intervention
-  - benchmark
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "reasoning_faithfulness"
+  - "LRM_evaluation"
+  - "counterfactual_intervention"
+  - "benchmark"
 date: 2026-05-08
 content_hash: 65f2cb19cf662f02
 ---

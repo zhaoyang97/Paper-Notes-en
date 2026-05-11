@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Finite-Time Analysis of Stochastic Nonconvex Nonsmooth Optimization on the Riemannian Manifolds
 description: >-
-  [NeurIPS 2025][Riemannian optimization] This paper proposes the Riemannian Online to NonConvex (RO2NC) algorithm and its zeroth-order variant ZO-RO2NC, establishing for the first time a finite-time sample complexity guarantee of $O(\delta^{-1}\epsilon^{-3})$ for fully nonsmooth nonconvex stochastic optimization on Riemannian manifolds, matching the optimal result in Euclidean space.
+  [NeurIPS 2025][Riemannian optimization] This paper proposes the Riemannian Online to NonConvex (RO2NC) algorithm and its zeroth-order variant ZO-RO2NC…
 tags:
-  - NeurIPS 2025
-  - Riemannian optimization
-  - nonsmooth nonconvex
-  - Goldstein stationarity
-  - zeroth-order optimization
-  - finite-time analysis
+  - "NeurIPS 2025"
+  - "Riemannian optimization"
+  - "nonsmooth nonconvex"
+  - "Goldstein stationarity"
+  - "zeroth-order optimization"
+  - "finite-time analysis"
 date: 2026-05-08
 content_hash: 48c6833b0ccb325e
 ---

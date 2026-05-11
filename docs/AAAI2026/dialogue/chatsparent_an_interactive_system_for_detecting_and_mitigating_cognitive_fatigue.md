@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Chatsparent: An Interactive System for Detecting and Mitigating Cognitive Fatigue in LLMs
 description: >-
-  [AAAI 2026][Dialogue Systems][cognitive fatigue] This paper presents Chatsparent, an interactive system that monitors three token-level fatigue signals during LLM inference in real time—attention decay, embedding drift, and entropy collapse—aggregates them into a unified fatigue index, and automatically applies lightweight interventions (prompt re-injection, attention reset, entropy-regularized decoding, self-reflection checkpoints) when fatigue thresholds are triggered, transforming passive chat interaction into an active diagnostic experience.
+  [AAAI 2026][Dialogue Systems][cognitive fatigue] This paper presents Chatsparent, an interactive system that monitors three token-level fatigue signals during LLM inference in real time—attention decay, embedding drift…
 tags:
-  - AAAI 2026
-  - Dialogue Systems
-  - cognitive fatigue
-  - large language models
-  - attention decay
-  - entropy collapse
-  - interpretability
+  - "AAAI 2026"
+  - "Dialogue Systems"
+  - "cognitive fatigue"
+  - "large language models"
+  - "attention decay"
+  - "entropy collapse"
+  - "interpretability"
 date: 2026-05-08
 content_hash: ed4c901854acc167
 ---

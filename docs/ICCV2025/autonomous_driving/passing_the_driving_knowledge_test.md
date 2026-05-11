@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Passing the Driving Knowledge Test
 description: >-
-  [ICCV 2025][Autonomous Driving][Driving Knowledge Test] This paper introduces DriveQA — the first large-scale text-and-visual dual-modality driving knowledge test benchmark (26K text QA + 448K image QA) — to systematically evaluate LLMs/MLLMs on driving knowledge including traffic regulations, sign recognition, and right-of-way judgment. The benchmark reveals significant deficiencies in numerical reasoning and complex right-of-way scenarios, and demonstrates that DriveQA pretraining yields generalization gains on downstream driving tasks.
+  [ICCV 2025][Autonomous Driving][Driving Knowledge Test] This paper introduces DriveQA — the first large-scale text-and-visual dual-modality driving knowledge test benchmark (26K text QA + 448K image QA) — to systematical…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - Driving Knowledge Test
-  - LLM
-  - MLLM
-  - VQA
-  - Traffic Rules
-  - benchmark
-  - Fine-tuning
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "Driving Knowledge Test"
+  - "LLM"
+  - "MLLM"
+  - "VQA"
+  - "Traffic Rules"
+  - "benchmark"
+  - "Fine-tuning"
 date: 2026-05-08
 content_hash: 821b7d263eac46fa
 ---

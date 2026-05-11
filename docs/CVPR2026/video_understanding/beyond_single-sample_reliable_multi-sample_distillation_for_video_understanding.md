@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Beyond Single-Sample: Reliable Multi-Sample Distillation for Video Understanding
 description: >-
-  [CVPR2026][Video Understanding][Knowledge Distillation] This paper identifies severe unreliability in single-sample teacher responses under black-box distillation for video LVLMs—manifested as cross-question variance ($\sigma=0.22$), intra-sampling variance ($\sigma=0.07$–$0.15$), and format violation rates (1%–10%)—and proposes R-MSD, a framework that addresses these issues through a multi-sample teacher pool, task-adaptive matching, and two-stage SFT→RL adversarial distillation. The resulting 4B student model comprehensively outperforms the same-scale Qwen3-VL-4B on VideoMME, Video-MMMU, and WorldSense.
+  [CVPR2026][Video Understanding][Knowledge Distillation] This paper identifies severe unreliability in single-sample teacher responses under black-box distillation for video LVLMs—manifested as cross-question variance ($\…
 tags:
-  - CVPR2026
-  - Video Understanding
-  - Knowledge Distillation
-  - Black-Box Distillation
-  - Video LVLM
-  - Multi-Sample Sampling
-  - Adversarial RL Distillation
-  - Teacher Reliability
+  - "CVPR2026"
+  - "Video Understanding"
+  - "Knowledge Distillation"
+  - "Black-Box Distillation"
+  - "Video LVLM"
+  - "Multi-Sample Sampling"
+  - "Adversarial RL Distillation"
+  - "Teacher Reliability"
 date: 2026-05-08
 content_hash: 1c5ed299d44b335b
 ---

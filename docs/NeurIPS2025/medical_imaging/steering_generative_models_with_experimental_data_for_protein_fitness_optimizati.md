@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Steering Generative Models with Experimental Data for Protein Fitness Optimization
 description: >-
-  [NeurIPS 2025][Medical Imaging][protein fitness optimization] This work systematically evaluates strategies for steering protein generative models (discrete diffusion models and language models) toward fitness optimization, finding that plug-and-play guidance methods using small labeled datasets (~200 samples)—particularly DAPS—outperform RL-based fine-tuning, and proposes a Thompson sampling strategy incorporating predictive uncertainty for adaptive optimization.
+  [NeurIPS 2025][Medical Imaging][protein fitness optimization] This work systematically evaluates strategies for steering protein generative models (discrete diffusion models and language models) toward fitness optimizati…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - protein fitness optimization
-  - generative model steering
-  - discrete diffusion models
-  - protein language models
-  - Bayesian optimization
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "protein fitness optimization"
+  - "generative model steering"
+  - "discrete diffusion models"
+  - "protein language models"
+  - "Bayesian optimization"
 date: 2026-05-08
 content_hash: 710d737ce7e8e6d6
 ---

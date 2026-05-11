@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MGAudio: Model-Guided Dual-Role Alignment for High-Fidelity Open-Domain Video-to-Audio Generation
 description: >-
-  [NeurIPS 2025][Image Generation][Video-to-Audio] This paper proposes MGAudio, the first video-to-audio generation framework that replaces classifier-free guidance (CFG) with model-guided (MG) training, combined with a dual-role audio-video encoder (DRAVE) for simultaneous condition injection and feature alignment. With only 131M parameters, MGAudio achieves state-of-the-art performance on VGGSound (FAD=0.40) and surpasses most competing methods using only 10% of the training data.
+  [NeurIPS 2025][Image Generation][Video-to-Audio] This paper proposes MGAudio, the first video-to-audio generation framework that replaces classifier-free guidance (CFG) with model-guided (MG) training…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Video-to-Audio
-  - Model Guidance
-  - Flow Matching
-  - Dual-Role Alignment
-  - CFG Alternative
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Video-to-Audio"
+  - "Model Guidance"
+  - "Flow Matching"
+  - "Dual-Role Alignment"
+  - "CFG Alternative"
 date: 2026-05-08
 content_hash: 1f08f98b173a76f4
 ---

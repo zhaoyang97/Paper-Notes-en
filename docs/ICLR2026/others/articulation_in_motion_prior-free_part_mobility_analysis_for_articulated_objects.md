@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Articulation in Motion: Prior-Free Part Mobility Analysis for Articulated Objects
 description: >-
-  [ICLR 2026][articulated objects] This paper proposes AiM (Articulation in Motion), a framework that reconstructs articulated objects from interaction videos and initial-state scans without requiring prior knowledge of the number of parts. It achieves dynamic-static decoupling via a dual-Gaussian representation (Static GS + Deformable GS), combines sequential RANSAC for prior-free part segmentation and joint estimation, and incorporates an SDMD module to handle newly exposed static regions. On complex 6-part objects (Storage), AiM achieves 79.34% mean IoU, substantially outperforming the prior-dependent ArtGS (52.23%).
+  [ICLR 2026][articulated objects] This paper proposes AiM (Articulation in Motion), a framework that reconstructs articulated objects from interaction videos and initial-state scans without requiring prior knowledge of th…
 tags:
-  - ICLR 2026
-  - articulated objects
-  - Gaussian splatting
-  - part segmentation
-  - joint estimation
-  - sequential RANSAC
-  - prior-free
-  - interaction video
+  - "ICLR 2026"
+  - "articulated objects"
+  - "Gaussian splatting"
+  - "part segmentation"
+  - "joint estimation"
+  - "sequential RANSAC"
+  - "prior-free"
+  - "interaction video"
 date: 2026-05-08
 content_hash: 631cf6dc101ca885
 ---

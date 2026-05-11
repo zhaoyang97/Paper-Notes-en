@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Alignment Data Map for Efficient Preference Data Selection and Diagnosis
 description: >-
-  [ACL 2026][LLM Alignment][Preference learning] This paper proposes the Alignment Data Map, an analytical tool that visualizes, selects, and diagnoses preference data by jointly considering response quality and variability. Using only 33% of the data, it achieves alignment performance comparable to full-data training.
+  [ACL 2026][LLM Alignment][Preference learning] This paper proposes the Alignment Data Map, an analytical tool that visualizes, selects…
 tags:
-  - ACL 2026
-  - LLM Alignment
-  - Preference learning
-  - data selection
-  - alignment data map
-  - annotation quality diagnosis
-  - DPO
+  - "ACL 2026"
+  - "LLM Alignment"
+  - "Preference learning"
+  - "data selection"
+  - "alignment data map"
+  - "annotation quality diagnosis"
+  - "DPO"
 date: 2026-05-08
 content_hash: 74fa050e70b03e0d
 ---

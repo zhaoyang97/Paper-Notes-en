@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Gen-n-Val: Agentic Image Data Generation and Validation
 description: >-
-  [CVPR 2026][LLM Agent][Data Augmentation] This paper proposes Gen-n-Val, an agentic synthetic data generation and validation framework that leverages an LLM to optimize Layer Diffusion prompts for generating high-quality single-object transparent images, and employs a VLLM to filter low-quality samples. The framework reduces invalid synthetic data from 50% to 7%, achieving a 7.6% mAP improvement on LVIS rare-category instance segmentation.
+  [CVPR 2026][LLM Agent][Data Augmentation] This paper proposes Gen-n-Val, an agentic synthetic data generation and validation framework that leverages an LLM to optimize Layer Diffusion prompts for generating high-quality…
 tags:
-  - CVPR 2026
-  - LLM Agent
-  - Data Augmentation
-  - Synthetic Data
-  - Agentic Data Generation
-  - Long-Tail Distribution
-  - Instance Segmentation
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "Data Augmentation"
+  - "Synthetic Data"
+  - "Agentic Data Generation"
+  - "Long-Tail Distribution"
+  - "Instance Segmentation"
 date: 2026-05-08
 content_hash: 110cc651fd05c964
 ---

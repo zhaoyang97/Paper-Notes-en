@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Remember Me: Bridging the Long-Range Gap in LVLMs with Three-Step Inference-Only Decay Resilience Strategies
 description: >-
-  [AAAI 2026][Multimodal VLM][Large Vision-Language Models] This paper proposes T-DRS (Three-step Decay Resilience Strategies), a training-free inference-time framework that mitigates RoPE-induced long-range attention decay through three cooperative stages: semantics-driven enhancement, distance-aware control, and remote-distance re-reinforcement, achieving consistent performance gains across multiple LVLMs on VQA benchmarks.
+  [AAAI 2026][Multimodal VLM][Large Vision-Language Models] This paper proposes T-DRS (Three-step Decay Resilience Strategies), a training-free inference-time framework that mitigates RoPE-induced long-range attention deca…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Large Vision-Language Models
-  - Positional Encoding
-  - RoPE
-  - Long-Range Attention Decay
-  - Inference-Time Optimization
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Large Vision-Language Models"
+  - "Positional Encoding"
+  - "RoPE"
+  - "Long-Range Attention Decay"
+  - "Inference-Time Optimization"
 date: 2026-05-08
 content_hash: 46e061adbf765e1c
 ---

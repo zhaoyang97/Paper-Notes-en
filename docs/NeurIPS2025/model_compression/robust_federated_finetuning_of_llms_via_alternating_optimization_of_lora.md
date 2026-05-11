@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Robust Federated Finetuning of LLMs via Alternating Optimization of LoRA
 description: >-
-  [NeurIPS 2025][Model Compression][federated learning] This paper proposes RoLoRA, which alternately optimizes the down-projection ($\mathbf{A}$) and up-projection ($\mathbf{B}$) matrices of LoRA to address imprecise aggregation and limited expressiveness in federated learning. RoLoRA significantly outperforms FedAVG of LoRA and FFA-LoRA on RoBERTa-Large and Llama-2-7B.
+  [NeurIPS 2025][Model Compression][federated learning] This paper proposes RoLoRA, which alternately optimizes the down-projection ($\mathbf{A}$) and up-projection ($\mathbf{B}$) matrices of LoRA to address imprecise aggr…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - federated learning
-  - LoRA
-  - parameter-efficient fine-tuning
-  - alternating optimization
-  - LLM
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "federated learning"
+  - "LoRA"
+  - "parameter-efficient fine-tuning"
+  - "alternating optimization"
+  - "LLM"
 date: 2026-05-08
 content_hash: 8a01701d0767a2b2
 ---

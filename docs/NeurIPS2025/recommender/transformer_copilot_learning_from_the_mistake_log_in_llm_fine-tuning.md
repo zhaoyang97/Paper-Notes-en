@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Transformer Copilot: Learning from The Mistake Log in LLM Fine-tuning
 description: >-
-  [NeurIPS 2025][Recommender Systems][Mistake Log] This paper proposes the Transformer Copilot framework, which systematically records a "Mistake Log" during LLM fine-tuning, trains an auxiliary Copilot model to learn the Pilot's error patterns, and rectifies logits at inference time to improve generation quality, achieving up to 34.5% improvement across 12 benchmarks.
+  [NeurIPS 2025][Recommender Systems][Mistake Log] This paper proposes the Transformer Copilot framework, which systematically records a "Mistake Log" during LLM fine-tuning…
 tags:
-  - NeurIPS 2025
-  - Recommender Systems
-  - Mistake Log
-  - Pilot-Copilot
-  - logits rectification
-  - fine-tuning
-  - error-aware
+  - "NeurIPS 2025"
+  - "Recommender Systems"
+  - "Mistake Log"
+  - "Pilot-Copilot"
+  - "logits rectification"
+  - "fine-tuning"
+  - "error-aware"
 date: 2026-05-08
 content_hash: 865d0f036510b0c3
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] StructXLIP: Enhancing Vision-Language Models with Multimodal Structural Cues
 description: >-
-  [CVPR 2026][Multimodal VLM][CLIP] StructXLIP adopts edge maps as proxy representations of visual structure and introduces three structure-centric losses during CLIP fine-tuning — edge-structure text alignment, local region-text chunk matching, and edge-color image connection. By maximizing the mutual information of multimodal structural representations, the model is guided toward more robust and semantically stable optima, surpassing existing competitors on cross-modal retrieval tasks.
+  [CVPR 2026][Multimodal VLM][CLIP] StructXLIP adopts edge maps as proxy representations of visual structure and introduces three structure-centric losses during CLIP fine-tuning — edge-structure text alignment…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - CLIP
-  - edge map
-  - structural alignment
-  - cross-modal retrieval
-  - mutual information maximization
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "CLIP"
+  - "edge map"
+  - "structural alignment"
+  - "cross-modal retrieval"
+  - "mutual information maximization"
 date: 2026-05-08
 content_hash: 6b72e1d7ebc2be22
 ---

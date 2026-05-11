@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Asynchronous Denoising Diffusion Models for Aligning Text-to-Image Generation
 description: >-
-  [ICLR 2026][Image Generation][Asynchronous Denoising] AsynDM assigns different timestep schedules to different pixels—denoising prompt-relevant regions more slowly—so that these regions can leverage cleaner contextual references, thereby significantly improving semantic alignment in text-to-image generation without requiring any fine-tuning.
+  [ICLR 2026][Image Generation][Asynchronous Denoising] AsynDM assigns different timestep schedules to different pixels—denoising prompt-relevant regions more slowly—so that these regions can leverage cleaner contextual re…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Asynchronous Denoising
-  - Pixel-Level Timestep
-  - Text-Image Alignment
-  - Cross-Attention Mask
-  - Plug-and-Play
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Asynchronous Denoising"
+  - "Pixel-Level Timestep"
+  - "Text-Image Alignment"
+  - "Cross-Attention Mask"
+  - "Plug-and-Play"
 date: 2026-05-08
 content_hash: 1ae556f06353b27a
 ---

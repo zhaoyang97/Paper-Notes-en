@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Born a Transformer – Always a Transformer? On the Effect of Pretraining on Architectural Abilities
 description: >-
-  [NeurIPS 2025][LLM Pretraining][Length Generalization] Through systematic study of a family of retrieval and copying tasks, this paper reveals that large-scale pretraining introduces a directional bias into Transformers (rightward/forward over leftward/backward), while failing to overcome fundamental architectural limitations on non-unique tasks. Fine-tuning can eliminate the directional bias but cannot surpass the boundaries of architectural expressiveness.
+  [NeurIPS 2025][LLM Pretraining][Length Generalization] Through systematic study of a family of retrieval and copying tasks, this paper reveals that large-scale pretraining introduces a directional bias into Transformers…
 tags:
-  - NeurIPS 2025
-  - LLM Pretraining
-  - Length Generalization
-  - Transformer Architectural Limitations
-  - Induction Heads
-  - Pretraining Bias
-  - Reliability
+  - "NeurIPS 2025"
+  - "LLM Pretraining"
+  - "Length Generalization"
+  - "Transformer Architectural Limitations"
+  - "Induction Heads"
+  - "Pretraining Bias"
+  - "Reliability"
 date: 2026-05-08
 content_hash: c74a7a16d1c525d6
 ---

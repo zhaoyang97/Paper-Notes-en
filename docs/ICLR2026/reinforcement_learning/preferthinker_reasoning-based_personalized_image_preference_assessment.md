@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] PreferThinker: Reasoning-based Personalized Image Preference Assessment
 description: >-
-  [ICLR2026][Reinforcement Learning][personalized preference assessment] This paper proposes PreferThinker, which introduces a universal visual preference profile to bridge across different users and adopts a predict-then-assess CoT reasoning paradigm for interpretable personalized image preference assessment. Combined with cold-start SFT and GRPO reinforcement learning along with a similarity-aware prediction reward, the 7B model outperforms GPT-4o (+5.2%) and Claude 3.7 (+5.1%).
+  [ICLR2026][Reinforcement Learning][personalized preference assessment] This paper proposes PreferThinker, which introduces a universal visual preference profile to bridge across different users and adopts a predict-then-…
 tags:
-  - ICLR2026
-  - Reinforcement Learning
-  - personalized preference assessment
-  - reasoning
-  - GRPO
-  - predict-then-assess
-  - visual preference profile
-  - CoT
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "personalized preference assessment"
+  - "reasoning"
+  - "GRPO"
+  - "predict-then-assess"
+  - "visual preference profile"
+  - "CoT"
 date: 2026-05-08
 content_hash: bab01aa9c3800224
 ---

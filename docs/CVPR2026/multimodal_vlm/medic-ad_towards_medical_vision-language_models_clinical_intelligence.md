@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Medic-AD: Towards Medical Vision-Language Model's Clinical Intelligence
 description: >-
-  [CVPR 2026][Multimodal VLM][Medical VLM] Medic-AD upgrades a general-purpose medical VLM into a clinically intelligent model through a three-stage progressive training framework—anomaly detection (`<Ano>` token), longitudinal difference reasoning (`<Diff>` token), and visual explanation (heatmaps)—achieving state-of-the-art performance on multiple medical tasks with capabilities spanning lesion detection, symptom tracking, and visual interpretability.
+  [CVPR 2026][Multimodal VLM][Medical VLM] Medic-AD upgrades a general-purpose medical VLM into a clinically intelligent model through a three-stage progressive training framework—anomaly detection (`<Ano>` token)…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Medical VLM
-  - Anomaly Detection
-  - Longitudinal Tracking
-  - Interpretability
-  - Heatmap
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Medical VLM"
+  - "Anomaly Detection"
+  - "Longitudinal Tracking"
+  - "Interpretability"
+  - "Heatmap"
 date: 2026-05-08
 content_hash: c0a083e5dc302651
 ---

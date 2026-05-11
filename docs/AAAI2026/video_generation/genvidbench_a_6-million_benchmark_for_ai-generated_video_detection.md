@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GenVidBench: A 6-Million Benchmark for AI-Generated Video Detection
 description: >-
-  [AAAI 2026][Video Generation][AI-generated video detection] This paper introduces GenVidBench—the first large-scale AI-generated video detection dataset with 6.78 million videos, featuring cross-source and cross-generator properties, covering 11 state-of-the-art video generators, and providing rich semantic annotations.
+  [AAAI 2026][Video Generation][AI-generated video detection] This paper introduces GenVidBench—the first large-scale AI-generated video detection dataset with 6.78 million videos…
 tags:
-  - AAAI 2026
-  - Video Generation
-  - AI-generated video detection
-  - benchmark dataset
-  - cross-source cross-generator
-  - video forensics
-  - deepfake detection
+  - "AAAI 2026"
+  - "Video Generation"
+  - "AI-generated video detection"
+  - "benchmark dataset"
+  - "cross-source cross-generator"
+  - "video forensics"
+  - "deepfake detection"
 date: 2026-05-08
 content_hash: 1a8f809a50d4d759
 ---

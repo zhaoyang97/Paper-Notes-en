@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] A Generalized Label Shift Perspective for Cross-Domain Gaze Estimation
 description: >-
-  [NeurIPS 2025][cross-domain gaze estimation] This paper formulates cross-domain gaze estimation (CDGE) as a generalized label shift (GLS) problem, demonstrating that existing domain-invariant representation learning methods are theoretically insufficient under label shift. It proposes continuous importance reweighting based on truncated Gaussian distributions and a Probability-aware Conditional Operator Discrepancy (PCOD) to jointly correct label shift and conditional shift, achieving an average error reduction of 12%–27% across multiple backbones.
+  [NeurIPS 2025][cross-domain gaze estimation] This paper formulates cross-domain gaze estimation (CDGE) as a generalized label shift (GLS) problem…
 tags:
-  - NeurIPS 2025
-  - cross-domain gaze estimation
-  - generalized label shift
-  - importance reweighting
-  - conditional distribution alignment
-  - kernel embedding
+  - "NeurIPS 2025"
+  - "cross-domain gaze estimation"
+  - "generalized label shift"
+  - "importance reweighting"
+  - "conditional distribution alignment"
+  - "kernel embedding"
 date: 2026-05-08
 content_hash: 41b248fdc65ec7b1
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Effective Policy Learning for Multi-Agent Online Coordination Beyond Submodular Objectives
 description: >-
-  [NeurIPS 2025][Optimization][multi-agent coordination] This paper proposes two multi-agent online coordination algorithms, MA-SPL and MA-MPL, which leverage a *policy-based continuous extension* technique to surpass the limitations of submodularity. For the first time, both algorithms achieve the optimal $(1 - c/e)$ approximation ratio under submodular and weakly submodular objectives, while supporting time-varying objectives and the practical constraint of local-only feedback.
+  [NeurIPS 2025][Optimization][multi-agent coordination] This paper proposes two multi-agent online coordination algorithms, MA-SPL and MA-MPL…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - multi-agent coordination
-  - submodular
-  - weakly submodular
-  - online optimization
-  - policy learning
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "multi-agent coordination"
+  - "submodular"
+  - "weakly submodular"
+  - "online optimization"
+  - "policy learning"
 date: 2026-05-08
 content_hash: 29b00708ad379787
 ---

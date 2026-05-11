@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DBLoss: Decomposition-based Loss Function for Time Series Forecasting
 description: >-
-  [NeurIPS 2025][Autonomous Driving][Time Series Forecasting] This paper proposes DBLoss—a general-purpose loss function based on exponential moving average (EMA) decomposition. During loss computation, both predictions and ground-truth values are decomposed into seasonal and trend components within the forecasting horizon, and losses are computed separately for each component. DBLoss serves as a plug-and-play replacement for MSE and consistently improves any deep learning forecasting model, with effectiveness validated across 8 benchmark datasets × 8 SOTA models.
+  [NeurIPS 2025][Autonomous Driving][Time Series Forecasting] This paper proposes DBLoss—a general-purpose loss function based on exponential moving average (EMA) decomposition. During loss computation…
 tags:
-  - NeurIPS 2025
-  - Autonomous Driving
-  - Time Series Forecasting
-  - Loss Function
-  - Seasonality-Trend Decomposition
-  - EMA
-  - General-Purpose Loss
+  - "NeurIPS 2025"
+  - "Autonomous Driving"
+  - "Time Series Forecasting"
+  - "Loss Function"
+  - "Seasonality-Trend Decomposition"
+  - "EMA"
+  - "General-Purpose Loss"
 date: 2026-05-08
 content_hash: df9b634397ef14fe
 ---

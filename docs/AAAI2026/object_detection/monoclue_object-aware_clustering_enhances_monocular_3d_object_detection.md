@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MonoCLUE: Object-Aware Clustering Enhances Monocular 3D Object Detection
 description: >-
-  [AAAI 2026][Object Detection][Monocular 3D Object Detection] This paper proposes MonoCLUE, which leverages **local clustering** to extract object-level visual patterns (e.g., hood, roof) and **generalized scene memory** to aggregate consistent appearance features across images, enhancing detection of occluded and truncated objects in monocular 3D detection. MonoCLUE achieves state-of-the-art performance on the KITTI benchmark without relying on additional depth or LiDAR information.
+  [AAAI 2026][Object Detection][Monocular 3D Object Detection] This paper proposes MonoCLUE, which leverages **local clustering** to extract object-level visual patterns (e.g., hood…
 tags:
-  - AAAI 2026
-  - Object Detection
-  - Monocular 3D Object Detection
-  - K-means Clustering
-  - Scene Memory
-  - Visual Cues
-  - DETR
+  - "AAAI 2026"
+  - "Object Detection"
+  - "Monocular 3D Object Detection"
+  - "K-means Clustering"
+  - "Scene Memory"
+  - "Visual Cues"
+  - "DETR"
 date: 2026-05-08
 content_hash: 4862281b329e0e46
 ---

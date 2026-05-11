@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Temporally Consistent Long-Term Memory for 3D Single Object Tracking
 description: >-
-  [CVPR 2026][Video Understanding][3D single object tracking] This paper proposes ChronoTrack, a robust long-term 3D single object tracking framework built upon compact learnable memory tokens and two complementary objectives — a temporal consistency loss and a memory cycle-consistency loss — achieving state-of-the-art performance on multiple benchmarks while running in real time at 42 FPS.
+  [CVPR 2026][Video Understanding][3D single object tracking] This paper proposes ChronoTrack, a robust long-term 3D single object tracking framework built upon compact learnable memory tokens and two complementary objecti…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - 3D single object tracking
-  - long-term memory
-  - temporal consistency
-  - point cloud
-  - memory tokens
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "3D single object tracking"
+  - "long-term memory"
+  - "temporal consistency"
+  - "point cloud"
+  - "memory tokens"
 date: 2026-05-08
 content_hash: 6b5c47c388c62b4f
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TopoMaskV3: 3D Mask Head with Dense Offset and Height Predictions for Road Topology Understanding
 description: >-
-  [CVPR 2026][Autonomous Driving][Road Topology Understanding] This paper proposes TopoMaskV3, which upgrades the mask-based road topology understanding paradigm from a 2D auxiliary module to a standalone 3D centerline predictor by introducing dense offset fields and dense height maps as additional prediction heads. The work also introduces, for the first time in road topology evaluation, a geographically non-overlapping split and a long-range benchmark, exposing performance inflation caused by geographic overlap in existing benchmarks. TopoMaskV3 achieves state-of-the-art 28.5 OLS on the geographically non-overlapping benchmark.
+  [CVPR 2026][Autonomous Driving][Road Topology Understanding] This paper proposes TopoMaskV3, which upgrades the mask-based road topology understanding paradigm from a 2D auxiliary module to a standalone 3D centerline pre…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Road Topology Understanding
-  - Mask Paradigm
-  - Offset Correction
-  - Height Prediction
-  - Geographic Data Leakage
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Road Topology Understanding"
+  - "Mask Paradigm"
+  - "Offset Correction"
+  - "Height Prediction"
+  - "Geographic Data Leakage"
 date: 2026-05-08
 content_hash: 2e7f0c9aad1bce97
 ---

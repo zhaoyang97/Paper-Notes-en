@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unsafe2Safe: Controllable Image Anonymization for Downstream Utility
 description: >-
-  [CVPR 2026][LLM Safety][Image Anonymization] This paper proposes Unsafe2Safe, a fully automatic privacy-preserving pipeline that realizes controllable image anonymization through a four-stage approach—VLM privacy inspection → dual captioning (private/public) → LLM editing instructions → text-guided diffusion editing. The method achieves substantial improvements on the VLMScore privacy metric while surpassing the original images in downstream accuracy on Caltech-101 classification and OK-VQA.
+  [CVPR 2026][LLM Safety][Image Anonymization] This paper proposes Unsafe2Safe, a fully automatic privacy-preserving pipeline that realizes controllable image anonymization through a four-stage approach—VLM privacy inspect…
 tags:
-  - CVPR 2026
-  - LLM Safety
-  - Image Anonymization
-  - Privacy Protection
-  - Diffusion Editing
-  - VLM Inspection
-  - Downstream Task Preservation
+  - "CVPR 2026"
+  - "LLM Safety"
+  - "Image Anonymization"
+  - "Privacy Protection"
+  - "Diffusion Editing"
+  - "VLM Inspection"
+  - "Downstream Task Preservation"
 date: 2026-05-08
 content_hash: 0f7f20d724da6181
 ---

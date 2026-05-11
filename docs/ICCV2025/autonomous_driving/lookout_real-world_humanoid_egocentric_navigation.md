@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LookOut: Real-World Humanoid Egocentric Navigation
 description: >-
-  [ICCV 2025][Autonomous Driving][Egocentric Navigation] LookOut proposes predicting future 6D head pose sequences (translation + rotation) over a 4.5-second horizon from first-person video with known poses. It backprojects DINOv2 features into 3D space and compresses them into a BEV representation to capture scene geometry and semantics. Trained on a self-collected 4-hour real-world dynamic scene dataset, the model learns human-like navigation behaviors including waiting, detour, and looking left and right before crossing the street.
+  [ICCV 2025][Autonomous Driving][Egocentric Navigation] LookOut proposes predicting future 6D head pose sequences (translation + rotation) over a 4.5-second horizon from first-person video with known poses. It backproject…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - Egocentric Navigation
-  - 6D Head Pose Prediction
-  - BEV Features
-  - DINO Unprojection
-  - Humanoid Robot
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "Egocentric Navigation"
+  - "6D Head Pose Prediction"
+  - "BEV Features"
+  - "DINO Unprojection"
+  - "Humanoid Robot"
 date: 2026-05-08
 content_hash: 226638a5a838c49b
 ---

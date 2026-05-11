@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Stopping Computation for Converged Tokens in Masked Diffusion-LM Decoding
 description: >-
-  [ICLR 2026][LLM/NLP][Masked Diffusion LM] This paper proposes SureLock, which permanently locks token positions in Masked Diffusion LMs once their posterior distributions stabilize after unmasking—skipping Q projection and FFN while caching KV—thereby reducing per-step attention computation from $O(N^2d)$ to $O(MNd)$. SureLock achieves 30–50% FLOPs reduction on LLaDA-8B without degrading generation quality.
+  [ICLR 2026][LLM/NLP][Masked Diffusion LM] This paper proposes SureLock, which permanently locks token positions in Masked Diffusion LMs once their posterior distributions stabilize after unmasking—skipping Q projection a…
 tags:
-  - ICLR 2026
-  - LLM/NLP
-  - Masked Diffusion LM
-  - Inference Acceleration
-  - Token Locking
-  - KL Divergence
-  - KV Cache
+  - "ICLR 2026"
+  - "LLM/NLP"
+  - "Masked Diffusion LM"
+  - "Inference Acceleration"
+  - "Token Locking"
+  - "KL Divergence"
+  - "KV Cache"
 date: 2026-05-08
 content_hash: 6276867bb4ab9ac9
 ---

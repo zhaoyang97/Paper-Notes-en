@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beta Distribution Learning for Reliable Roadway Crash Risk Assessment
 description: >-
-  [AAAI 2026][Autonomous Driving][Beta Distribution] A geospatial deep learning framework based on Beta distribution learning is proposed, which leverages multi-scale satellite imagery to predict the full probability distribution of fatal crash risk (rather than point estimates), achieving 17–23% improvement in Recall while naturally expressing uncertainty through distribution shape.
+  [AAAI 2026][Autonomous Driving][Beta Distribution] A geospatial deep learning framework based on Beta distribution learning is proposed…
 tags:
-  - AAAI 2026
-  - Autonomous Driving
-  - Beta Distribution
-  - Crash Risk Assessment
-  - Satellite Imagery
-  - Uncertainty Quantification
-  - Calibration
+  - "AAAI 2026"
+  - "Autonomous Driving"
+  - "Beta Distribution"
+  - "Crash Risk Assessment"
+  - "Satellite Imagery"
+  - "Uncertainty Quantification"
+  - "Calibration"
 date: 2026-05-08
 content_hash: f750cb02b42fa378
 ---

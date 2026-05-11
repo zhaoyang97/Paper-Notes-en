@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Editing Away the Evidence: Diffusion-Based Image Manipulation and the Failure Modes of Robust Watermarking
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Model Image Editing] This paper provides a unified theoretical and experimental analysis of how non-adversarial diffusion editing inadvertently destroys robust invisible watermarks, deriving bounds for watermark SNR and mutual information decay, and validating systemic failures of watermark recovery across scenarios such as instruction-based editing, drag-based editing, and training-free synthesis.
+  [CVPR 2026][Image Generation][Diffusion Model Image Editing] This paper provides a unified theoretical and experimental analysis of how non-adversarial diffusion editing inadvertently destroys robust invisible watermarks…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Model Image Editing
-  - Robust Watermarking
-  - Watermark Degradation
-  - Information-Theoretic Analysis
-  - Digital Watermarking Security
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Model Image Editing"
+  - "Robust Watermarking"
+  - "Watermark Degradation"
+  - "Information-Theoretic Analysis"
+  - "Digital Watermarking Security"
 date: 2026-05-08
 content_hash: d8a0ec5761eddcb7
 ---

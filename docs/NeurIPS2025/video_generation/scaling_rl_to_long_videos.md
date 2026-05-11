@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Scaling RL to Long Videos
 description: >-
-  [NeurIPS 2025][Video Generation][Long video reasoning] This paper proposes LongVILA-R1, a full-stack framework that extends VLM reasoning to long videos (up to 8192 frames) via a 104K long-video reasoning dataset, a two-stage CoT-SFT + RL training pipeline, and the MR-SP multimodal reinforcement sequence parallelism system, achieving 65.1%/71.1% on VideoMME.
+  [NeurIPS 2025][Video Generation][Long video reasoning] This paper proposes LongVILA-R1, a full-stack framework that extends VLM reasoning to long videos (up to 8192 frames) via a 104K long-video reasoning dataset…
 tags:
-  - NeurIPS 2025
-  - Video Generation
-  - Long video reasoning
-  - reinforcement learning
-  - vision-language models
-  - sequence parallelism
-  - chain-of-thought
+  - "NeurIPS 2025"
+  - "Video Generation"
+  - "Long video reasoning"
+  - "reinforcement learning"
+  - "vision-language models"
+  - "sequence parallelism"
+  - "chain-of-thought"
 date: 2026-05-08
 content_hash: 5a56363445987bfa
 ---

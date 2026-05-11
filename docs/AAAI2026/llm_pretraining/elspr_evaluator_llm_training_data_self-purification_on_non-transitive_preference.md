@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ELSPR: Evaluator LLM Training Data Self-Purification on Non-Transitive Preferences
 description: >-
-  [AAAI 2026][LLM Pretraining][LLM Evaluation] ELSPR models pairwise preferences of LLM evaluators as tournament graphs, identifies non-transitive preferences via strongly connected components (SCCs), proposes a normalized directed graph structural entropy metric, and filters problematic training data through graph reconstruction — resulting in a 13.8% reduction in non-transitivity and a 0.088 decrease in structural entropy, while the discarded data achieves only 34.4% human agreement (vs. 52.6% for retained data).
+  [AAAI 2026][LLM Pretraining][LLM Evaluation] ELSPR models pairwise preferences of LLM evaluators as tournament graphs, identifies non-transitive preferences via strongly connected components (SCCs)…
 tags:
-  - AAAI 2026
-  - LLM Pretraining
-  - LLM Evaluation
-  - Non-Transitive Preferences
-  - Tournament Graph
-  - Data Cleaning
-  - Structural Entropy
+  - "AAAI 2026"
+  - "LLM Pretraining"
+  - "LLM Evaluation"
+  - "Non-Transitive Preferences"
+  - "Tournament Graph"
+  - "Data Cleaning"
+  - "Structural Entropy"
 date: 2026-05-08
 content_hash: 3f1ac580ded10edc
 ---

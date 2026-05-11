@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DRIFT: Dynamic Rule-Based Defense with Injection Isolation for Securing LLM Agents
 description: >-
-  [NeurIPS 2025][LLM Agent][prompt injection] DRIFT is a system-level agent security framework featuring three layers of defense: Secure Planner (pre-planned function trajectories and parameter checklists), Dynamic Validator (dynamic policy updates based on Read/Write/Execute permissions), and Injection Isolator (detection and masking of injected instructions from the memory stream). On AgentDojo, DRIFT reduces ASR from 30.7% to 1.3% while achieving 20.1% higher utility than CaMeL.
+  [NeurIPS 2025][LLM Agent][prompt injection] DRIFT is a system-level agent security framework featuring three layers of defense: Secure Planner (pre-planned function trajectories and parameter checklists)…
 tags:
-  - NeurIPS 2025
-  - LLM Agent
-  - prompt injection
-  - agent security
-  - dynamic policy
-  - injection isolation
-  - system-level defense
+  - "NeurIPS 2025"
+  - "LLM Agent"
+  - "prompt injection"
+  - "agent security"
+  - "dynamic policy"
+  - "injection isolation"
+  - "system-level defense"
 date: 2026-05-08
 content_hash: 0e26c2ba7d5e7622
 ---

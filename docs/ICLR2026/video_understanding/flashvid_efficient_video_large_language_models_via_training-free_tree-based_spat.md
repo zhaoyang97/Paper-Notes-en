@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FlashVID: Efficient Video Large Language Models via Training-free Tree-Based Spatiotemporal Token Merging
 description: >-
-  [ICLR 2026][Video Understanding][visual token compression] This paper proposes FlashVID, a training-free inference acceleration framework for video large language models (VLLMs) that jointly models spatial and temporal redundancy via Tree-based Spatiotemporal Token Merging (TSTM). Retaining only 10% of visual tokens, FlashVID preserves 99.1% of LLaVA-OneVision's performance and enables a 10× increase in input frames for Qwen2.5-VL.
+  [ICLR 2026][Video Understanding][visual token compression] This paper proposes FlashVID, a training-free inference acceleration framework for video large language models (VLLMs) that jointly models spatial and temporal r…
 tags:
-  - ICLR 2026
-  - Video Understanding
-  - visual token compression
-  - spatiotemporal redundancy
-  - token merging
-  - video large language models
-  - training-free acceleration
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "visual token compression"
+  - "spatiotemporal redundancy"
+  - "token merging"
+  - "video large language models"
+  - "training-free acceleration"
 date: 2026-05-08
 content_hash: d3247dbeef3880c7
 ---

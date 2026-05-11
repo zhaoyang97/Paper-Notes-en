@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Prediction-as-Perception Framework for 3D Object Detection
 description: >-
-  [CVPR 2026][Autonomous Driving][3D Perception] Inspired by the brain's predictive perception mechanism, this paper proposes the PAP framework, which injects trajectory prediction outputs from previous frames as queries into the current frame's perception module, achieving a 10% improvement in tracking accuracy and a 15% speedup in inference on UniAD.
+  [CVPR 2026][Autonomous Driving][3D Perception] Inspired by the brain's predictive perception mechanism, this paper proposes the PAP framework…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - 3D Perception
-  - Object Detection
-  - Prediction-as-Perception
-  - nuScenes
-  - End-to-End
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "3D Perception"
+  - "Object Detection"
+  - "Prediction-as-Perception"
+  - "nuScenes"
+  - "End-to-End"
 date: 2026-05-08
 content_hash: a095023eb82b42fe
 ---

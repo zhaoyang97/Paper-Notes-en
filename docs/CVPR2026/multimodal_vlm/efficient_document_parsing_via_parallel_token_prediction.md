@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Efficient Document Parsing via Parallel Token Prediction
 description: >-
-  [CVPR 2026][Multimodal VLM][Document Parsing] This paper proposes PTP (Parallel Token Prediction), a model-agnostic plug-and-play acceleration method that enables parallel multi-token prediction by inserting learnable register tokens into training sequences, achieving 1.6×–2.2× throughput gains on OmniDocBench without accuracy loss.
+  [CVPR 2026][Multimodal VLM][Document Parsing] This paper proposes PTP (Parallel Token Prediction), a model-agnostic plug-and-play acceleration method that enables parallel multi-token prediction by inserting learnable re…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Document Parsing
-  - Parallel Token Prediction
-  - Register Token
-  - VLM Acceleration
-  - OCR
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Document Parsing"
+  - "Parallel Token Prediction"
+  - "Register Token"
+  - "VLM Acceleration"
+  - "OCR"
 date: 2026-05-08
 content_hash: e665319a03338b02
 ---

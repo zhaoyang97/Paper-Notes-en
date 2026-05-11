@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DualFocus: Depth from Focus with Spatio-Focal Dual Variational Constraints
 description: >-
-  [NeurIPS 2025][3D Vision][Depth from Focus] This paper proposes DualFocus, which achieves robust and accurate depth estimation from focal stacks via two complementary constraints: a spatial variational constraint (exploiting focus-dependent gradient patterns to distinguish depth edges from texture artifacts) and a focal variational constraint (enforcing a unimodal and monotonic focus probability distribution along the focal axis).
+  [NeurIPS 2025][3D Vision][Depth from Focus] This paper proposes DualFocus, which achieves robust and accurate depth estimation from focal stacks via two complementary constraints: a spatial variational constraint (exploi…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Depth from Focus
-  - Variational Constraints
-  - Focal Stack
-  - Depth Estimation
-  - Spatio-Focal Dual Constraints
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Depth from Focus"
+  - "Variational Constraints"
+  - "Focal Stack"
+  - "Depth Estimation"
+  - "Spatio-Focal Dual Constraints"
 date: 2026-05-08
 content_hash: 2827fd9dc402fa43
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FS-DFM: Fast and Accurate Long Text Generation with Few-Step Diffusion Language Model
 description: >-
-  [ICLR 2026][LLM/NLP][discrete diffusion models] This paper proposes FS-DFM (Few-Step Discrete Flow-Matching), which reduces the sampling steps of discrete flow-matching language models from 1024 to 8 through step-aware training and a cumulative scalar update rule, achieving a 128× speedup while maintaining comparable perplexity and generation quality.
+  [ICLR 2026][LLM/NLP][discrete diffusion models] This paper proposes FS-DFM (Few-Step Discrete Flow-Matching), which reduces the sampling steps of discrete flow-matching language models from 1024 to 8 through step-aware t…
 tags:
-  - ICLR 2026
-  - LLM/NLP
-  - discrete diffusion models
-  - few-step sampling
-  - flow matching
-  - cumulative scalar
-  - text generation
+  - "ICLR 2026"
+  - "LLM/NLP"
+  - "discrete diffusion models"
+  - "few-step sampling"
+  - "flow matching"
+  - "cumulative scalar"
+  - "text generation"
 date: 2026-05-08
 content_hash: 2f9cdcfb8e2bf183
 ---

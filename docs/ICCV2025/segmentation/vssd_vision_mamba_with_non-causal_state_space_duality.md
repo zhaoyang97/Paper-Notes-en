@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VSSD: Vision Mamba with Non-Causal State Space Duality
 description: >-
-  [ICCV 2025][Segmentation][State Space Models] This paper proposes Non-Causal State Space Duality (NC-SSD), which transforms the SSD formulation of Mamba2 into a non-causal form by retaining the relative weights of token contributions in lieu of the cumulative decay of hidden states. Built upon NC-SSD, the VSSD visual backbone surpasses existing SSM-based models across classification, detection, and segmentation benchmarks while achieving 20%–50% faster training speed.
+  [ICCV 2025][Segmentation][State Space Models] This paper proposes Non-Causal State Space Duality (NC-SSD), which transforms the SSD formulation of Mamba2 into a non-causal form by retaining the relative weights of token…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - State Space Models
-  - Mamba2
-  - Non-Causal SSD
-  - Visual Backbone
-  - Linear Complexity
+  - "ICCV 2025"
+  - "Segmentation"
+  - "State Space Models"
+  - "Mamba2"
+  - "Non-Causal SSD"
+  - "Visual Backbone"
+  - "Linear Complexity"
 date: 2026-05-08
 content_hash: ff50f1391ce3e3e8
 ---

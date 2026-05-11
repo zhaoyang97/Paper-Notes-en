@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Competitive Distillation: A Simple Learning Strategy for Improving Visual Classification
 description: >-
-  [ICCV 2025][Model Compression][Competitive Distillation] This paper proposes a competitive distillation strategy in which, during multi-network joint training, the best-performing network is dynamically selected as the teacher at each iteration. Combined with a stochastic perturbation mechanism that introduces mutation operations analogous to genetic algorithms, the approach achieves significant improvements in visual classification performance.
+  [ICCV 2025][Model Compression][Competitive Distillation] This paper proposes a competitive distillation strategy in which, during multi-network joint training…
 tags:
-  - ICCV 2025
-  - Model Compression
-  - Competitive Distillation
-  - Knowledge Distillation
-  - Mutual Learning
-  - Stochastic Perturbation
-  - Collective Intelligence
+  - "ICCV 2025"
+  - "Model Compression"
+  - "Competitive Distillation"
+  - "Knowledge Distillation"
+  - "Mutual Learning"
+  - "Stochastic Perturbation"
+  - "Collective Intelligence"
 date: 2026-05-08
 content_hash: e2c8a379d878b156
 ---

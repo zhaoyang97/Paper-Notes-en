@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] SCAN: Bootstrapping Contrastive Pre-training for Data Efficiency
 description: >-
-  [Multimodal VLM] This paper proposes SCAN, a dynamic bootstrapping dataset pruning method that iteratively identifies pruning candidates and applies dataset mutation operations, achieving an average performance drop of less than 1% at a 30–35% pruning rate in CLIP and MoCo contrastive pre-training.
+  [Multimodal VLM] This paper proposes SCAN, a dynamic bootstrapping dataset pruning method that iteratively identifies pruning candidates and applies dataset mutation operations…
 tags:
-  - Multimodal VLM
+  - "Multimodal VLM"
 date: 2026-05-08
 content_hash: 79b651e8da25f154
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mind the Cost of Scaffold! Benign Clients May Even Become Accomplices of Backdoor Attack
 description: >-
-  [ICCV 2025][AI Safety][federated learning] This paper proposes BadSFL, the first backdoor attack tailored to the Scaffold federated learning algorithm. By manipulating control variates, BadSFL turns benign clients into unwitting accomplices. Combined with GAN-based data augmentation and an optimization strategy that predicts the global model's future convergence direction, BadSFL achieves backdoor persistence lasting 60+ rounds after the attack ceases in non-IID settings—three times longer than baseline methods.
+  [ICCV 2025][AI Safety][federated learning] This paper proposes BadSFL, the first backdoor attack tailored to the Scaffold federated learning algorithm. By manipulating control variates…
 tags:
-  - ICCV 2025
-  - AI Safety
-  - federated learning
-  - backdoor attack
-  - Scaffold
-  - control variate
-  - Non-IID
+  - "ICCV 2025"
+  - "AI Safety"
+  - "federated learning"
+  - "backdoor attack"
+  - "Scaffold"
+  - "control variate"
+  - "Non-IID"
 date: 2026-05-08
 content_hash: 34326b03633f333f
 ---

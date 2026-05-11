@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AnomalyVFM -- Transforming Vision Foundation Models into Zero-Shot Anomaly Detectors
 description: >-
-  [CVPR 2026][Multimodal VLM][Zero-shot anomaly detection] AnomalyVFM proposes a general framework that transforms arbitrary Vision Foundation Models (VFMs) into strong zero-shot anomaly detectors via a three-stage synthetic data generation pipeline and parameter-efficient LoRA adaptation, achieving 94.1% image-level AUROC across 9 industrial datasets with RADIO as the backbone, surpassing the previous SOTA by 3.3 percentage points.
+  [CVPR 2026][Multimodal VLM][Zero-shot anomaly detection] AnomalyVFM proposes a general framework that transforms arbitrary Vision Foundation Models (VFMs) into strong zero-shot anomaly detectors via a three-stage synthet…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Zero-shot anomaly detection
-  - vision foundation models
-  - synthetic data
-  - parameter-efficient fine-tuning
-  - LoRA
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Zero-shot anomaly detection"
+  - "vision foundation models"
+  - "synthetic data"
+  - "parameter-efficient fine-tuning"
+  - "LoRA"
 date: 2026-05-08
 content_hash: e67f0e9fed7799ae
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Stealthy Yet Effective: Distribution-Preserving Backdoor Attacks on Graph Classification
 description: >-
-  [NeurIPS 2025][AI Safety][backdoor attack] This paper proposes DPSBA, a clean-label backdoor attack framework for graph classification that generates in-distribution trigger subgraphs via adversarial training while suppressing both structural and semantic anomalies, achieving high attack success rates with significantly improved stealthiness.
+  [NeurIPS 2025][AI Safety][backdoor attack] This paper proposes DPSBA, a clean-label backdoor attack framework for graph classification that generates in-distribution trigger subgraphs via adversarial training while suppr…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - backdoor attack
-  - graph classification
-  - distribution preservation
-  - adversarial training
-  - GNN security
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "backdoor attack"
+  - "graph classification"
+  - "distribution preservation"
+  - "adversarial training"
+  - "GNN security"
 date: 2026-05-08
 content_hash: 70f68c3432f06547
 ---

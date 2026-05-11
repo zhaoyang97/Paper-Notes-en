@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Semantic Class Distribution Learning for Debiasing Semi-Supervised Medical Image Segmentation
 description: >-
-  [CVPR 2026][Medical Imaging][Semi-supervised segmentation] This paper proposes SCDL (Semantic Class Distribution Learning), a plug-and-play module that learns structured class-conditional feature distributions and aligns them bidirectionally with learnable class proxies via Class Distribution Bidirectional Alignment (CDBA). Combined with Semantic Anchor Constraints (SAC), which leverage annotated data to guide proxies toward correct semantics, SCDL mitigates both supervision bias and feature representation bias in semi-supervised medical image segmentation (SSMIS), achieving notable improvements on tail-class organs.
+  [CVPR 2026][Medical Imaging][Semi-supervised segmentation] This paper proposes SCDL (Semantic Class Distribution Learning), a plug-and-play module that learns structured class-conditional feature distributions and aligns…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Semi-supervised segmentation
-  - class imbalance
-  - distribution learning
-  - proxy distribution
-  - semantic anchors
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Semi-supervised segmentation"
+  - "class imbalance"
+  - "distribution learning"
+  - "proxy distribution"
+  - "semantic anchors"
 date: 2026-05-08
 content_hash: 75207e468d388d43
 ---

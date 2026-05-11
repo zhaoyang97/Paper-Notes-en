@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MIDAS: Misalignment-based Data Augmentation Strategy for Imbalanced Multimodal Learning
 description: >-
-  [NeurIPS 2025][Multimodal VLM][modality imbalance] This work is the first to propose using cross-modal misaligned samples as supervised training signals—rather than treating them as noise or interference—to alleviate modality imbalance in multimodal learning. The proposed MIDAS data augmentation framework combines three complementary mechanisms: confidence-based labeling of misaligned samples, weak-modality weighting, and hard-sample weighting. MIDAS substantially outperforms existing methods across four multimodal classification benchmarks.
+  [NeurIPS 2025][Multimodal VLM][modality imbalance] This work is the first to propose using cross-modal misaligned samples as supervised training signals—rather than treating them as noise or interference—to alleviate mod…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - modality imbalance
-  - data augmentation
-  - misaligned samples
-  - weak-modality weighting
-  - hard-sample weighting
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "modality imbalance"
+  - "data augmentation"
+  - "misaligned samples"
+  - "weak-modality weighting"
+  - "hard-sample weighting"
 date: 2026-05-08
 content_hash: e2716c1d942342eb
 ---

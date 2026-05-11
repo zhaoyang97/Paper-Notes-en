@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Large-Scale Training Data Attribution for Music Generative Models via Unlearning
 description: >-
-  [NeurIPS 2025][Image Generation][Training Data Attribution] This paper applies machine unlearning-based training data attribution (TDA) to a large-scale text-to-music diffusion model (115K tracks), identifying optimal hyperparameter configurations via grid search and comparing against non-counterfactual methods, thereby demonstrating the feasibility of unlearning-based TDA in the music generation domain.
+  [NeurIPS 2025][Image Generation][Training Data Attribution] This paper applies machine unlearning-based training data attribution (TDA) to a large-scale text-to-music diffusion model (115K tracks)…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Training Data Attribution
-  - Machine Unlearning
-  - Music Generation
-  - Diffusion Models
-  - Copyright Attribution
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Training Data Attribution"
+  - "Machine Unlearning"
+  - "Music Generation"
+  - "Diffusion Models"
+  - "Copyright Attribution"
 date: 2026-05-08
 content_hash: 6541efd5d74a8986
 ---

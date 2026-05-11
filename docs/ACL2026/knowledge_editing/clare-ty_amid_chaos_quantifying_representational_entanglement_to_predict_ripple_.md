@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CLaRE-ty Amid Chaos: Quantifying Representational Entanglement to Predict Ripple Effects in LLM Editing
 description: >-
-  [ACL 2026][Knowledge Editing][Model Editing] CLARE proposes a lightweight representation-level method that quantifies the entanglement between facts through forward activations of a single intermediate layer to predict ripple effects of model editing, achieving a 62.2% average Spearman correlation improvement over gradient methods while being 2.74× faster and requiring 2.85× less memory.
+  [ACL 2026][Knowledge Editing][Model Editing] CLARE proposes a lightweight representation-level method that quantifies the entanglement between facts through forward activations of a single intermediate layer to predict r…
 tags:
-  - ACL 2026
-  - Knowledge Editing
-  - Model Editing
-  - Ripple Effects
-  - Representational Entanglement
-  - Forward Activations
-  - Entanglement Graph
+  - "ACL 2026"
+  - "Knowledge Editing"
+  - "Model Editing"
+  - "Ripple Effects"
+  - "Representational Entanglement"
+  - "Forward Activations"
+  - "Entanglement Graph"
 date: 2025-04-17
 content_hash: aeae489cc93342fe
 ---

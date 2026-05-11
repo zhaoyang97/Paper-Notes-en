@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] IE-SRGS: An Internal-External Knowledge Fusion Framework for High-Fidelity 3D Gaussian Splatting Super-Resolution
 description: >-
-  [AAAI 2026][3D Vision][3D Gaussian Splatting] This paper proposes IE-SRGS, a framework that fuses external knowledge (high-frequency texture priors from a pretrained 2D super-resolution model) with internal knowledge (cross-view consistent depth and texture features from a multi-scale 3DGS model), coordinated via a mask-guided fusion strategy, to achieve high-fidelity 3DGS super-resolution reconstruction from low-resolution inputs, attaining state-of-the-art performance on both synthetic and real-world scenes.
+  [AAAI 2026][3D Vision][3D Gaussian Splatting] This paper proposes IE-SRGS, a framework that fuses external knowledge (high-frequency texture priors from a pretrained 2D super-resolution model) with internal knowledge (cr…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - Super-Resolution
-  - Internal-External Knowledge Fusion
-  - Mip-Splatting
-  - Depth Estimation
+  - "AAAI 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Super-Resolution"
+  - "Internal-External Knowledge Fusion"
+  - "Mip-Splatting"
+  - "Depth Estimation"
 date: 2026-05-08
 content_hash: 9eb9de3bb49013aa
 ---

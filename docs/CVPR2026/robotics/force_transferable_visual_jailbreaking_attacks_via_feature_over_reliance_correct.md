@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] FORCE: Transferable Visual Jailbreaking Attacks via Feature Over-Reliance CorrEction
 description: >-
-  [CVPR 2026][Robotics][visual jailbreaking] This work identifies the root cause of poor transferability in visual jailbreak attacks as their residence in high-sharpness loss regions — arising from shallow-layer over-reliance on model-specific representations and excessive influence of high-frequency information. FORCE is proposed to address this via layer-aware regularization that broadens the shallow-layer feasible region, and spectral rescaling that suppresses high-frequency non-semantic components, guiding attacks into flatter loss landscapes and substantially improving cross-model transferability.
+  [CVPR 2026][Robotics][visual jailbreaking] This work identifies the root cause of poor transferability in visual jailbreak attacks as their residence in high-sharpness loss regions — arising from shallow-layer over-relia…
 tags:
-  - CVPR 2026
-  - Robotics
-  - visual jailbreaking
-  - adversarial attacks
-  - transferability
-  - loss landscape
-  - MLLM safety
-  - red-teaming
+  - "CVPR 2026"
+  - "Robotics"
+  - "visual jailbreaking"
+  - "adversarial attacks"
+  - "transferability"
+  - "loss landscape"
+  - "MLLM safety"
+  - "red-teaming"
 date: 2026-05-08
 content_hash: 7ee119449d9ade60
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Preserving Task-Relevant Information Under Linear Concept Removal
 description: >-
-  [NeurIPS 2025][AI Safety][concept erasure] SPLINCE constructs an oblique projection that simultaneously guarantees linear guardedness (i.e., sensitive attributes cannot be predicted by any linear classifier) and exactly preserves the covariance between representations and task labels, thereby resolving the problem of existing concept erasure methods inadvertently removing task-relevant information alongside sensitive concepts.
+  [NeurIPS 2025][AI Safety][concept erasure] SPLINCE constructs an oblique projection that simultaneously guarantees linear guardedness (i.e.…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - concept erasure
-  - fair representation learning
-  - oblique projection
-  - linear guardedness
-  - bias removal
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "concept erasure"
+  - "fair representation learning"
+  - "oblique projection"
+  - "linear guardedness"
+  - "bias removal"
 date: 2026-05-08
 content_hash: d242f301b9a2535b
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] ADPretrain: Advancing Industrial Anomaly Detection via Anomaly Representation Pretraining
 description: >-
-  [NeurIPS 2025][anomaly representation pretraining] This work presents ADPretrain, the first dedicated representation pretraining framework for industrial anomaly detection. By learning residual feature representations via angle-oriented and norm-oriented contrastive losses on the large-scale RealIAD dataset, the pretrained features consistently improve five mainstream embedding-based AD methods across five datasets and five backbone networks when substituted for the original features.
+  [NeurIPS 2025][anomaly representation pretraining] This work presents ADPretrain, the first dedicated representation pretraining framework for industrial anomaly detection. By learning residual feature representations vi…
 tags:
-  - NeurIPS 2025
-  - anomaly representation pretraining
-  - contrastive learning
-  - residual features
-  - industrial anomaly detection
-  - feature pretraining
+  - "NeurIPS 2025"
+  - "anomaly representation pretraining"
+  - "contrastive learning"
+  - "residual features"
+  - "industrial anomaly detection"
+  - "feature pretraining"
 date: 2026-05-08
 content_hash: bddd210ba24f4a99
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Layer-wise Analysis of Supervised Fine-Tuning
 description: >-
-  [ACL 2026][Model Compression][Supervised Fine-Tuning] This paper conducts a systematic layer-wise analysis of SFT across 1B–32B models from three perspectives—information-theoretic, geometric, and optimization-based—revealing that instruction-following capability is concentrated in the middle layers (20%–80%) rather than uniformly distributed. Based on this finding, the paper proposes a Mid-Block Efficient Tuning strategy that selectively updates middle layers, achieving up to 10.2% improvement over standard LoRA on GSM8K.
+  [ACL 2026][Model Compression][Supervised Fine-Tuning] This paper conducts a systematic layer-wise analysis of SFT across 1B–32B models from three perspectives—information-theoretic, geometric…
 tags:
-  - ACL 2026
-  - Model Compression
-  - Supervised Fine-Tuning
-  - Layer-wise Analysis
-  - Parameter-Efficient Fine-Tuning
-  - Catastrophic Forgetting
-  - LoRA
+  - "ACL 2026"
+  - "Model Compression"
+  - "Supervised Fine-Tuning"
+  - "Layer-wise Analysis"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Catastrophic Forgetting"
+  - "LoRA"
 date: 2026-05-08
 content_hash: 9855f155215fcac3
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Calibrating Prompt Tuning of Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][prompt tuning] To address the "dual miscalibration" problem in prompt-tuned CLIP (underconfidence on base classes and overconfidence on novel classes), this paper proposes two complementary regularizers — mean-variance margin regularization and text moment-matching loss — as plug-and-play modules that consistently reduce ECE across 7 prompt tuning methods and 11 datasets.
+  [CVPR 2026][Multimodal VLM][prompt tuning] To address the "dual miscalibration" problem in prompt-tuned CLIP (underconfidence on base classes and overconfidence on novel classes)…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - prompt tuning
-  - calibration
-  - CLIP
-  - confidence estimation
-  - pretrained semantic preservation
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "prompt tuning"
+  - "calibration"
+  - "CLIP"
+  - "confidence estimation"
+  - "pretrained semantic preservation"
 date: 2026-05-08
 content_hash: 747a34344f31f4c1
 ---

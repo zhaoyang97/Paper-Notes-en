@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Information Theoretic Learning for Diffusion Models with Warm Start
 description: >-
-  [NeurIPS 2025][Image Generation][Diffusion Models] This paper proposes a likelihood estimation framework that generalizes the classical KL divergence–Fisher information relationship to arbitrary isotropic noise perturbations, combined with warm-start noise injection and importance sampling to eliminate the train-test gap and achieve tighter likelihood upper bounds, attaining state-of-the-art NLL on ImageNet at multiple resolutions.
+  [NeurIPS 2025][Image Generation][Diffusion Models] This paper proposes a likelihood estimation framework that generalizes the classical KL divergence–Fisher information relationship to arbitrary isotropic noise perturbat…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Diffusion Models
-  - Likelihood Estimation
-  - information theory
-  - Fisher Divergence
-  - Warm Start
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "Likelihood Estimation"
+  - "information theory"
+  - "Fisher Divergence"
+  - "Warm Start"
 date: 2026-05-08
 content_hash: ebc562cfe2cf1845
 ---

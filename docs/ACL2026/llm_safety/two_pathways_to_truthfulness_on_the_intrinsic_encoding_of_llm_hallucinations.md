@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Two Pathways to Truthfulness: On the Intrinsic Encoding of LLM Hallucinations
 description: >-
-  [ACL 2026][LLM Safety][Hallucination Detection] This paper identifies two distinct information pathways through which LLMs internally encode truthfulness signals: Question-Anchored (relying on information flow from question to answer) and Answer-Anchored (extracting self-contained evidence from the generated answer itself). Both pathways are closely associated with knowledge boundaries. Building on this finding, the paper proposes two pathway-aware hallucination detection methods—Mixture-of-Probes and Pathway Reweighting—achieving AUC improvements of up to 10%.
+  [ACL 2026][LLM Safety][Hallucination Detection] This paper identifies two distinct information pathways through which LLMs internally encode truthfulness signals: Question-Anchored (relying on information flow from quest…
 tags:
-  - ACL 2026
-  - LLM Safety
-  - Hallucination Detection
-  - Truthfulness Encoding
-  - Attention Mechanism
-  - Information Pathways
-  - Knowledge Boundary
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Hallucination Detection"
+  - "Truthfulness Encoding"
+  - "Attention Mechanism"
+  - "Information Pathways"
+  - "Knowledge Boundary"
 date: 2026-05-08
 content_hash: 607775f3595d14de
 ---

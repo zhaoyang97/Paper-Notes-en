@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VidTAG: Temporally Aligned Video to GPS Geolocalization
 description: >-
-  [CVPR 2026][Video Understanding][Video geolocalization] This paper proposes VidTAG, a dual-encoder (CLIP+DINOv2) frame-to-GPS retrieval framework that achieves temporally consistent per-frame video geolocalization at global scale, via a TempGeo module for inter-frame temporal alignment and a GeoRefiner encoder-decoder module for GPS prediction refinement.
+  [CVPR 2026][Video Understanding][Video geolocalization] This paper proposes VidTAG, a dual-encoder (CLIP+DINOv2) frame-to-GPS retrieval framework that achieves temporally consistent per-frame video geolocalization at glo…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Video geolocalization
-  - frame-to-GPS retrieval
-  - temporal consistency
-  - trajectory prediction
-  - denoising
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Video geolocalization"
+  - "frame-to-GPS retrieval"
+  - "temporal consistency"
+  - "trajectory prediction"
+  - "denoising"
 date: 2026-05-08
 content_hash: 8977b81b32a3596f
 ---

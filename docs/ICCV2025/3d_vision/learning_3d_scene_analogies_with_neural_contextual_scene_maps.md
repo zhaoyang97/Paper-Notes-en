@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning 3D Scene Analogies with Neural Contextual Scene Maps
 description: >-
-  [ICCV 2025][3D Vision][3D scene analogy] This paper introduces the 3D scene analogy task and proposes neural contextual scene maps to establish dense 3D mappings between scene regions sharing similar semantic context, enabling downstream applications such as trajectory transfer and object placement transfer.
+  [ICCV 2025][3D Vision][3D scene analogy] This paper introduces the 3D scene analogy task and proposes neural contextual scene maps to establish dense 3D mappings between scene regions sharing similar semantic context…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D scene analogy
-  - scene mapping
-  - descriptor field
-  - contrastive learning
-  - coarse-to-fine
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D scene analogy"
+  - "scene mapping"
+  - "descriptor field"
+  - "contrastive learning"
+  - "coarse-to-fine"
 date: 2026-05-08
 content_hash: d25a3ba6ea08d094
 ---

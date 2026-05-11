@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HCPO: Hierarchical Conductor-Based Policy Optimization in Multi-Agent Reinforcement Learning
 description: >-
-  [AAAI2026][Reinforcement Learning][multi-agent RL] This paper proposes HCPO, an algorithm that enhances the expressiveness and exploration efficiency of multi-agent joint policies by introducing a conductor mechanism, constructing a Gaussian mixture model-like joint policy framework, and providing monotonic improvement guarantees for two-level policy updates.
+  [AAAI2026][Reinforcement Learning][multi-agent RL] This paper proposes HCPO, an algorithm that enhances the expressiveness and exploration efficiency of multi-agent joint policies by introducing a conductor mechanism…
 tags:
-  - AAAI2026
-  - Reinforcement Learning
-  - multi-agent RL
-  - cooperative MARL
-  - joint policy optimization
-  - hierarchical framework
-  - trust region
+  - "AAAI2026"
+  - "Reinforcement Learning"
+  - "multi-agent RL"
+  - "cooperative MARL"
+  - "joint policy optimization"
+  - "hierarchical framework"
+  - "trust region"
 date: 2026-05-08
 content_hash: ffa9031face53f9d
 ---

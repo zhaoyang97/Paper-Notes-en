@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DisMo: Disentangled Motion Representations for Open-World Motion Transfer
 description: >-
-  [NeurIPS 2025][Video Generation][motion disentanglement] DisMo learns abstract motion representations that are agnostic to appearance, pose, and category from raw videos via a dual-stream architecture (motion extractor + frame generator) and an image-space reconstruction objective. It enables open-world motion transfer across categories and viewpoints, and significantly outperforms video representation models such as V-JEPA on zero-shot action classification.
+  [NeurIPS 2025][Video Generation][motion disentanglement] DisMo learns abstract motion representations that are agnostic to appearance, pose…
 tags:
-  - NeurIPS 2025
-  - Video Generation
-  - motion disentanglement
-  - open-world motion transfer
-  - flow matching
-  - abstract motion representation
-  - action classification
+  - "NeurIPS 2025"
+  - "Video Generation"
+  - "motion disentanglement"
+  - "open-world motion transfer"
+  - "flow matching"
+  - "abstract motion representation"
+  - "action classification"
 date: 2026-05-08
 content_hash: 8a01b4c70eb316f3
 ---

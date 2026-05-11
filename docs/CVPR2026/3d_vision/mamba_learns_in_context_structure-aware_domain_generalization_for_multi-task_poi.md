@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mamba Learns in Context: Structure-Aware Domain Generalization for Multi-Task Point Cloud Understanding
 description: >-
-  [CVPR 2026][3D Vision][Point Cloud Understanding] This paper proposes SADG, the first framework to introduce Mamba into in-context learning for multi-task point cloud domain generalization. Through three modules — structure-aware serialization (Centroid Distance Spectrum + Geodesic Curvature Spectrum), Hierarchical Domain-Aware Modeling, and Spectral Graph Alignment — SADG comprehensively surpasses the state of the art on reconstruction, denoising, and registration tasks.
+  [CVPR 2026][3D Vision][Point Cloud Understanding] This paper proposes SADG, the first framework to introduce Mamba into in-context learning for multi-task point cloud domain generalization. Through three modules — struct…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Point Cloud Understanding
-  - Domain Generalization
-  - Mamba
-  - In-Context Learning
-  - Structure-Aware Serialization
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Point Cloud Understanding"
+  - "Domain Generalization"
+  - "Mamba"
+  - "In-Context Learning"
+  - "Structure-Aware Serialization"
 date: 2026-05-08
 content_hash: 3f3ce503635435c0
 ---

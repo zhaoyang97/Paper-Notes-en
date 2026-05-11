@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LaRender: Training-Free Occlusion Control in Image Generation via Latent Rendering
 description: >-
-  [ICCV 2025][Image Generation][Occlusion Control] This paper proposes LaRender, a training-free image generation method grounded in volume rendering principles. It precisely controls inter-object occlusion relationships by "rendering" object features in latent space. The method replaces only the cross-attention layers of a pretrained diffusion model without introducing any learnable parameters, significantly outperforming existing SOTA methods in occlusion accuracy while enabling rich effects such as semantic transparency control.
+  [ICCV 2025][Image Generation][Occlusion Control] This paper proposes LaRender, a training-free image generation method grounded in volume rendering principles. It precisely controls inter-object occlusion relationships b…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Occlusion Control
-  - Volume Rendering
-  - Latent Rendering
-  - Training-Free
-  - Diffusion Models
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Occlusion Control"
+  - "Volume Rendering"
+  - "Latent Rendering"
+  - "Training-Free"
+  - "Diffusion Models"
 date: 2026-05-08
 content_hash: 92fc8ae17a7868c1
 ---

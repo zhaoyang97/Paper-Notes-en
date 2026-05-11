@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Benchmarking Agentic Systems in Automated Scientific Information Extraction with ChemX
 description: >-
-  [NeurIPS 2025][LLM Agent][Chemical Information Extraction] This paper constructs ChemX — a suite of 10 multimodal chemical data extraction benchmark datasets manually annotated and validated by domain experts, spanning nanomaterials and small molecules. It systematically evaluates state-of-the-art agentic systems including ChatGPT Agent, SLM-Matrix, FutureHouse, and nanoMINER, as well as frontier LLMs such as GPT-5 and GPT-5 Thinking. The proposed single-agent method achieves F1=0.61 on the nanozyme dataset through structured document preprocessing (marker-pdf → Markdown → LLM extraction), surpassing all general-purpose multi-agent systems, while revealing systemic challenges in chemical information extraction such as SMILES parsing failures and terminology ambiguity.
+  [NeurIPS 2025][LLM Agent][Chemical Information Extraction] This paper constructs ChemX — a suite of 10 multimodal chemical data extraction benchmark datasets manually annotated and validated by domain experts…
 tags:
-  - NeurIPS 2025
-  - LLM Agent
-  - Chemical Information Extraction
-  - Multimodal Benchmark
-  - Agent Evaluation
-  - Nanomaterials
-  - Small Molecules
+  - "NeurIPS 2025"
+  - "LLM Agent"
+  - "Chemical Information Extraction"
+  - "Multimodal Benchmark"
+  - "Agent Evaluation"
+  - "Nanomaterials"
+  - "Small Molecules"
 date: 2026-05-08
 content_hash: 059569eaf1ec3cac
 ---

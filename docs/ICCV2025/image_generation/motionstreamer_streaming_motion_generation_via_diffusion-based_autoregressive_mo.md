@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] MotionStreamer: Streaming Motion Generation via Diffusion-based Autoregressive Model in Causal Latent Space
 description: >-
-  [Image Generation] This paper proposes MotionStreamer, which integrates a continuous causal latent space with a diffusion head into an autoregressive framework for text-conditioned streaming human motion generation, supporting online multi-turn generation and dynamic motion composition.
+  [Image Generation] This paper proposes MotionStreamer, which integrates a continuous causal latent space with a diffusion head into an autoregressive framework for text-conditioned streaming human motion generation…
 tags:
-  - Image Generation
+  - "Image Generation"
 date: 2026-05-08
 content_hash: 2a909cfec6ccac1b
 ---

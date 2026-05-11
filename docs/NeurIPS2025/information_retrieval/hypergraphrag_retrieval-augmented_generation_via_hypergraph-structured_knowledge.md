@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] HyperGraphRAG: Retrieval-Augmented Generation via Hypergraph-Structured Knowledge Representation
 description: >-
-  [NeurIPS 2025][Retrieval-Augmented Generation] This paper proposes HyperGraphRAG, the first RAG method based on hypergraph structure, which models n-ary relations ($n \geq 2$) via hyperedges. It overcomes the binary-relation bottleneck of existing graph-based RAG methods, achieving comprehensive improvements over StandardRAG and the GraphRAG family on question-answering tasks across medical, agricultural, computer science, and legal domains.
+  [NeurIPS 2025][Information Retrieval & RAG][Retrieval-Augmented Generation] This paper proposes HyperGraphRAG, the first RAG method based on hypergraph structure…
 tags:
-  - NeurIPS 2025
-  - Retrieval-Augmented Generation
-  - Hypergraph
-  - Knowledge Representation
-  - N-ary Relations
-  - Graph Retrieval
+  - "NeurIPS 2025"
+  - "Information Retrieval & RAG"
+  - "Retrieval-Augmented Generation"
+  - "Hypergraph"
+  - "Knowledge Representation"
+  - "N-ary Relations"
+  - "Graph Retrieval"
 date: 2026-05-08
 content_hash: 0731b682865b8a6b
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] History-Aware Reasoning for GUI Agents
 description: >-
-  [AAAI 2026][LLM Agent][GUI Agent] This paper proposes the HAR framework, which transforms the reasoning paradigm of GUI agents from "history-unaware" to "history-aware" by constructing reflective learning scenarios, synthesizing error-correction guidelines, and designing a hybrid RL reward function incorporating a Memory-Augmented Reward (MAR). A 3B model trained under this framework surpasses larger models on multiple benchmarks including AITW, Mind2Web, and GUI-Odyssey.
+  [AAAI 2026][LLM Agent][GUI Agent] This paper proposes the HAR framework, which transforms the reasoning paradigm of GUI agents from "history-unaware" to "history-aware" by constructing reflective learning scenarios…
 tags:
-  - AAAI 2026
-  - LLM Agent
-  - GUI Agent
-  - Short-term Memory
-  - Reinforcement Learning
-  - Reflective Learning
-  - History-Aware Reasoning
+  - "AAAI 2026"
+  - "LLM Agent"
+  - "GUI Agent"
+  - "Short-term Memory"
+  - "Reinforcement Learning"
+  - "Reflective Learning"
+  - "History-Aware Reasoning"
 date: 2026-05-08
 content_hash: e78e90807b72035c
 ---

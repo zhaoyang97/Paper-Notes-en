@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Preference is More Than Comparisons: Rethinking Dueling Bandits with Augmented Human Feedback
 description: >-
-  [AAAI 2026][Recommender Systems][Dueling Bandits] This paper proposes IPEA-HF, a model-free Dueling Bandit framework based on augmented human feedback. It integrates contextual similarity and dependency relations through Augmented Confidence Bounds to calibrate uncertainty, achieving superior performance across multiple benchmarks including recommendation, multi-objective optimization, and LLM response optimization.
+  [AAAI 2026][Recommender Systems][Dueling Bandits] This paper proposes IPEA-HF, a model-free Dueling Bandit framework based on augmented human feedback. It integrates contextual similarity and dependency relations through…
 tags:
-  - AAAI 2026
-  - Recommender Systems
-  - Dueling Bandits
-  - Preference Elicitation
-  - Augmented Human Feedback
-  - Confidence Bounds
-  - Multi-Objective Optimization
+  - "AAAI 2026"
+  - "Recommender Systems"
+  - "Dueling Bandits"
+  - "Preference Elicitation"
+  - "Augmented Human Feedback"
+  - "Confidence Bounds"
+  - "Multi-Objective Optimization"
 date: 2026-05-08
 content_hash: 936a2745abc52332
 ---

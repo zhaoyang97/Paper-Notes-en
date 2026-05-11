@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LiTo: Surface Light Field Tokenization
 description: >-
-  [ICLR 2026][3D Vision][surface light field] LiTo encodes surface light fields into compact sets of latent vectors to jointly model 3D geometry and view-dependent appearance: random subsampling of light field observations from RGB-D multi-view images → Perceiver IO encoder (3D local attention supporting 1M token input) + flow-matching geometry decoder + higher-order spherical harmonic Gaussian decoder → achieves reconstruction and single-image-to-3D generation surpassing TRELLIS, and for the first time models view-dependent effects such as specular highlights and Fresnel reflectance within a latent 3D representation.
+  [ICLR 2026][3D Vision][surface light field] LiTo encodes surface light fields into compact sets of latent vectors to jointly model 3D geometry and view-dependent appearance: random subsampling of light field observations…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - surface light field
-  - 3D latent representation
-  - view-dependent appearance
-  - Gaussian Splatting
-  - flow matching
+  - "ICLR 2026"
+  - "3D Vision"
+  - "surface light field"
+  - "3D latent representation"
+  - "view-dependent appearance"
+  - "Gaussian Splatting"
+  - "flow matching"
 date: 2026-05-08
 content_hash: 23b2a909d29a60a9
 ---

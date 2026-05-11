@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond Fixed Depth: Adaptive Graph Neural Networks for Node Classification Under Varying Homophily
 description: >-
-  [AAAI2026][Graph Learning][GNN] This paper proposes AD-GNN, which theoretically analyzes node-level homophily/heterophily characteristics and adaptively assigns different aggregation depths to individual nodes, enabling unified handling of node classification on both homophilic and heterophilic graphs within a single framework.
+  [AAAI2026][Graph Learning][GNN] This paper proposes AD-GNN, which theoretically analyzes node-level homophily/heterophily characteristics and adaptively assigns different aggregation depths to individual nodes…
 tags:
-  - AAAI2026
-  - Graph Learning
-  - GNN
-  - adaptive depth
-  - heterophily
-  - node classification
-  - homophily
+  - "AAAI2026"
+  - "Graph Learning"
+  - "GNN"
+  - "adaptive depth"
+  - "heterophily"
+  - "node classification"
+  - "homophily"
 date: 2026-05-08
 content_hash: 7343abd2ce537719
 ---

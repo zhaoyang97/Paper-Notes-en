@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Verify Claimed Text-to-Image Models via Boundary-Aware Prompt Optimization
 description: >-
-  [CVPR 2026][Image Generation][Model verification] BPO proposes a reference-free white-box T2I model verification method that employs a three-stage pipeline (adversarial anchor identification → binary search boundary exploration → target optimization) to locate model-specific semantic boundary regions. The generated verification prompts achieve an average accuracy of 96% and F1 of 0.93 across 5 T2I models, while being 2× faster than the TVN baseline.
+  [CVPR 2026][Image Generation][Model verification] BPO proposes a reference-free white-box T2I model verification method that employs a three-stage pipeline (adversarial anchor identification → binary search boundary expl…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Model verification
-  - semantic boundary
-  - adversarial prompt optimization
-  - T2I model fingerprinting
-  - intellectual property
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Model verification"
+  - "semantic boundary"
+  - "adversarial prompt optimization"
+  - "T2I model fingerprinting"
+  - "intellectual property"
 date: 2026-05-08
 content_hash: e851c85cfc8ab150
 ---

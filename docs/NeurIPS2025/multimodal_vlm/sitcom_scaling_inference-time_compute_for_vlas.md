@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SITCOM: Scaling Inference-Time COMpute for VLAs
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Inference-time compute scaling] SITCOM proposes an inference-time compute scaling framework inspired by Model Predictive Control (MPC). It performs multi-step rollout simulation of a pretrained VLA using a learned dynamics model and selects optimal trajectories via a reward model, transforming a single-step VLA into a robust long-horizon planner. On the SIMPLER benchmark, it improves task success rate from 48% to 72%.
+  [NeurIPS 2025][Multimodal VLM][Inference-time compute scaling] SITCOM proposes an inference-time compute scaling framework inspired by Model Predictive Control (MPC). It performs multi-step rollout simulation of a pretra…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Inference-time compute scaling
-  - VLA
-  - world model
-  - model predictive control
-  - robotic manipulation
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Inference-time compute scaling"
+  - "VLA"
+  - "world model"
+  - "model predictive control"
+  - "robotic manipulation"
 date: 2026-05-08
 content_hash: 7f2a480a18c1126a
 ---

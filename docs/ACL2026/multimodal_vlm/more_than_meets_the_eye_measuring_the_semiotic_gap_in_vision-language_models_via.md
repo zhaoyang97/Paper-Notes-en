@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] More Than Meets the Eye: Measuring the Semiotic Gap in Vision-Language Models via Semantic Anchorage
 description: >-
-  [ACL 2026][Multimodal VLM][Vision-Language Models] This paper exposes the "literal superiority bias" in VLMs from a cognitive-semiotic perspective—models tend toward literal rather than metaphorical/idiomatic interpretations of high-fidelity images. By introducing the DIVA benchmark (iconographically abstracted images) and the Semantic Alignment Gap metric, the paper demonstrates that reducing visual fidelity significantly narrows the gap between literal and idiomatic interpretations.
+  [ACL 2026][Multimodal VLM][Vision-Language Models] This paper exposes the "literal superiority bias" in VLMs from a cognitive-semiotic perspective—models tend toward literal rather than metaphorical/idiomatic interpretat…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Vision-Language Models
-  - Semiotic Gap
-  - Literal Bias
-  - Iconographic Abstraction
-  - Noun Compounds
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Vision-Language Models"
+  - "Semiotic Gap"
+  - "Literal Bias"
+  - "Iconographic Abstraction"
+  - "Noun Compounds"
 date: 2026-05-08
 content_hash: 7438ac8a607c87b9
 ---

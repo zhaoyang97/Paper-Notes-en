@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] V-CECE: Visual Counterfactual Explanations via Conceptual Edits
 description: >-
-  [NeurIPS 2025][Image Generation][Counterfactual explanation] V-CECE proposes the first black-box visual counterfactual explanation framework that systematically reveals the *explanatory gap* between human and neural network semantic understanding. It guarantees edit-set optimality via WordNet knowledge graphs and the Hungarian algorithm, and executes concept-level edits using Stable Diffusion. The key finding is that CNN classifiers are severely misaligned with human semantic reasoning (requiring 5+ edit steps), whereas LVLMs (Claude 3.5 Sonnet) are highly aligned with humans (requiring only 2–3 steps).
+  [NeurIPS 2025][Image Generation][Counterfactual explanation] V-CECE proposes the first black-box visual counterfactual explanation framework that systematically reveals the *explanatory gap* between human and neural netw…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Counterfactual explanation
-  - concept editing
-  - black-box
-  - knowledge graph
-  - diffusion models
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Counterfactual explanation"
+  - "concept editing"
+  - "black-box"
+  - "knowledge graph"
+  - "diffusion models"
 date: 2026-05-08
 content_hash: fb76ce0781b35999
 ---

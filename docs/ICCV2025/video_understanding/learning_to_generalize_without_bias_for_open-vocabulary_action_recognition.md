@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning to Generalize Without Bias for Open-Vocabulary Action Recognition
 description: >-
-  [ICCV 2025][Video Understanding][Open-vocabulary action recognition] This paper proposes Open-MeDe, a meta-learning-based framework for open-vocabulary action recognition (OVAR). By simulating "known-to-open" generalization tasks via cross-batch meta-optimization and stabilizing training with a Gaussian weight averaging strategy, the framework improves generalization in both in-context and out-of-context settings without relying on CLIP regularization.
+  [ICCV 2025][Video Understanding][Open-vocabulary action recognition] This paper proposes Open-MeDe, a meta-learning-based framework for open-vocabulary action recognition (OVAR). By simulating "known-to-open" generalizat…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - Open-vocabulary action recognition
-  - meta-learning
-  - static bias elimination
-  - CLIP adaptation
-  - self-ensemble
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "Open-vocabulary action recognition"
+  - "meta-learning"
+  - "static bias elimination"
+  - "CLIP adaptation"
+  - "self-ensemble"
 date: 2026-05-08
 content_hash: 7ad365990323ca2c
 ---

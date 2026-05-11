@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] MaxSup: Overcoming Representation Collapse in Label Smoothing
 description: >-
-  [NeurIPS 2025][Label Smoothing] By decomposing the loss function of Label Smoothing (LS), this paper identifies an "error amplification term" that exacerbates misclassification, leading to intra-class feature collapse. The proposed Max Suppression (MaxSup) method redirects the penalty target from the ground-truth logit to the top-1 logit, eliminating the error amplification effect while preserving beneficial regularization.
+  [NeurIPS 2025][Label Smoothing] By decomposing the loss function of Label Smoothing (LS), this paper identifies an "error amplification term" that exacerbates misclassification…
 tags:
-  - NeurIPS 2025
-  - Label Smoothing
-  - Regularization
-  - Representation Collapse
-  - Logit Penalty
-  - Overconfidence
+  - "NeurIPS 2025"
+  - "Label Smoothing"
+  - "Regularization"
+  - "Representation Collapse"
+  - "Logit Penalty"
+  - "Overconfidence"
 date: 2026-05-08
 content_hash: 661e41ae725826e8
 ---

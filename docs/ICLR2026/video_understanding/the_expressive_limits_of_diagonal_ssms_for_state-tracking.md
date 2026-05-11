@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] The Expressive Limits of Diagonal SSMs for State-Tracking
 description: >-
-  [ICLR 2026][Video Understanding][State Space Models] This paper provides a complete characterization of the expressive power of input-dependent complex diagonal (DCD) SSMs on group state-tracking tasks: a single layer cannot track any non-abelian group, and $k$ layers can track group $G$ if and only if $G$ admits a subnormal series of length $k$ with abelian factors — precisely defining the strict expressiveness gains conferred by depth. Experiments further reveal a significant gap between expressive capacity and learnability.
+  [ICLR 2026][Video Understanding][State Space Models] This paper provides a complete characterization of the expressive power of input-dependent complex diagonal (DCD) SSMs on group state-tracking tasks: a single layer ca…
 tags:
-  - ICLR 2026
-  - Video Understanding
-  - State Space Models
-  - Expressive Power
-  - Group State Tracking
-  - Diagonal SSM
-  - Solvable Groups
-  - Mamba
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "State Space Models"
+  - "Expressive Power"
+  - "Group State Tracking"
+  - "Diagonal SSM"
+  - "Solvable Groups"
+  - "Mamba"
 date: 2026-05-08
 content_hash: 96a1afc2eaab8dbb
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CARI4D: Category Agnostic 4D Reconstruction of Human-Object Interaction
 description: >-
-  [CVPR 2026][3D Vision][human-object interaction reconstruction] CARI4D is proposed as the first category-agnostic method for reconstructing metric-scale 4D human-object interactions from monocular RGB video—encompassing object shape reconstruction, pose tracking, hand contact reasoning, and physics-constrained optimization—with zero-shot generalization to unseen categories.
+  [CVPR 2026][3D Vision][human-object interaction reconstruction] CARI4D is proposed as the first category-agnostic method for reconstructing metric-scale 4D human-object interactions from monocular RGB video—encompassing…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - human-object interaction reconstruction
-  - category-agnostic
-  - monocular video
-  - 4D tracking
-  - contact reasoning
+  - "CVPR 2026"
+  - "3D Vision"
+  - "human-object interaction reconstruction"
+  - "category-agnostic"
+  - "monocular video"
+  - "4D tracking"
+  - "contact reasoning"
 date: 2026-05-08
 content_hash: 20a6e2ffd9c18ffd
 ---

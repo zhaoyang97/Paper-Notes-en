@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] 3DSRBench: A Comprehensive 3D Spatial Reasoning Benchmark
 description: >-
-  [ICCV 2025][LLM Evaluation][3D Spatial Reasoning] This paper introduces 3DSRBench, the first comprehensive 3D spatial reasoning benchmark comprising 2,772 manually annotated VQA pairs across 12 question types. Through balanced data distribution and a novel FlipEval strategy, the benchmark enables robust evaluation. Results reveal that state-of-the-art LMMs—including GPT-4o and Gemini—fall far short of human performance on 3D spatial reasoning (≈52% vs. 95.7%), with substantial performance degradation under uncommon camera viewpoints.
+  [ICCV 2025][LLM Evaluation][3D Spatial Reasoning] This paper introduces 3DSRBench, the first comprehensive 3D spatial reasoning benchmark comprising 2…
 tags:
-  - ICCV 2025
-  - LLM Evaluation
-  - 3D Spatial Reasoning
-  - benchmark
-  - Large Multimodal Models
-  - visual question answering
-  - Camera Viewpoint Robustness
+  - "ICCV 2025"
+  - "LLM Evaluation"
+  - "3D Spatial Reasoning"
+  - "benchmark"
+  - "Large Multimodal Models"
+  - "visual question answering"
+  - "Camera Viewpoint Robustness"
 date: 2026-05-08
 content_hash: ea4617b6b10832cc
 ---

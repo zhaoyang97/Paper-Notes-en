@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Active Measurement: Efficient Estimation at Scale
 description: >-
-  [NeurIPS 2025][Active Measurement] This paper proposes the Active Measurement framework, which uses AI model predictions as an importance sampling proposal distribution and achieves unbiased estimation of scientific aggregate quantities through iterative human annotation and model updates, complemented by a novel combination weighting scheme and a conditional variance estimator for constructing reliable confidence intervals.
+  [NeurIPS 2025][Active Measurement] This paper proposes the Active Measurement framework, which uses AI model predictions as an importance sampling proposal distribution and achieves unbiased estimation of scientific aggr…
 tags:
-  - NeurIPS 2025
-  - Active Measurement
-  - Adaptive Importance Sampling
-  - Unbiased Estimation
-  - Confidence Intervals
-  - Human-AI Collaboration
+  - "NeurIPS 2025"
+  - "Active Measurement"
+  - "Adaptive Importance Sampling"
+  - "Unbiased Estimation"
+  - "Confidence Intervals"
+  - "Human-AI Collaboration"
 date: 2026-05-08
 content_hash: df15c9d15fd7a762
 ---

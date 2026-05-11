@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Counterfactual Identifiability via Dynamic Optimal Transport
 description: >-
-  [NeurIPS 2025][Image Generation][counterfactual identification] This paper leverages dynamic optimal transport (dynamic OT) theory to resolve—for the first time—the counterfactual identifiability problem in high-dimensional multivariate Markovian SCMs. It proves that the OT flow mechanism yields a unique monotone order-preserving counterfactual transport map, and extends the results to non-Markovian settings (IV/BC/FC criteria).
+  [NeurIPS 2025][Image Generation][counterfactual identification] This paper leverages dynamic optimal transport (dynamic OT) theory to resolve—for the first time—the counterfactual identifiability problem in high-dimensio…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - counterfactual identification
-  - optimal transport
-  - flow matching
-  - structural causal model
-  - monotone transport map
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "counterfactual identification"
+  - "optimal transport"
+  - "flow matching"
+  - "structural causal model"
+  - "monotone transport map"
 date: 2026-05-08
 content_hash: 8eac62108fe3dea9
 ---

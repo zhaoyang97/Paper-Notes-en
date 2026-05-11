@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Torch-Uncertainty: A Deep Learning Framework for Uncertainty Quantification
 description: >-
-  [NeurIPS 2025][Segmentation][Uncertainty Quantification] Torch-Uncertainty is the first unified, scalable, domain-agnostic, and evaluation-centric PyTorch/Lightning framework for uncertainty quantification (UQ), integrating 6 major UQ method families, 26 evaluation metrics, and 27 plug-and-play datasets across classification, segmentation, and regression tasks, along with comprehensive benchmark results.
+  [NeurIPS 2025][Segmentation][Uncertainty Quantification] Torch-Uncertainty is the first unified, scalable, domain-agnostic, and evaluation-centric PyTorch/Lightning framework for uncertainty quantification (UQ)…
 tags:
-  - NeurIPS 2025
-  - Segmentation
-  - Uncertainty Quantification
-  - PyTorch Framework
-  - Deep Ensembles
-  - Semantic Segmentation
-  - Calibration
+  - "NeurIPS 2025"
+  - "Segmentation"
+  - "Uncertainty Quantification"
+  - "PyTorch Framework"
+  - "Deep Ensembles"
+  - "Semantic Segmentation"
+  - "Calibration"
 date: 2026-05-08
 content_hash: eb065444064151d4
 ---

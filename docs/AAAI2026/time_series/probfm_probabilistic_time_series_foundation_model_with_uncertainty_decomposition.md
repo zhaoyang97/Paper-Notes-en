@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] ProbFM: Probabilistic Time Series Foundation Model with Uncertainty Decomposition
 description: >-
-  [AAAI2026][Time Series] This work is the first to introduce Deep Evidential Regression (DER) with a Normal-Inverse-Gamma prior into a time series foundation model architecture, enabling epistemic-aleatoric uncertainty decomposition in a single forward pass. The practical value of uncertainty-aware trading strategies is validated on cryptocurrency forecasting.
+  [AAAI2026][Time Series][foundation model] This work is the first to introduce Deep Evidential Regression (DER) with a Normal-Inverse-Gamma prior into a time series foundation model architecture…
 tags:
-  - AAAI2026
-  - Time Series
-  - foundation model
-  - uncertainty quantification
-  - deep evidential regression
-  - financial forecasting
+  - "AAAI2026"
+  - "Time Series"
+  - "foundation model"
+  - "uncertainty quantification"
+  - "deep evidential regression"
+  - "financial forecasting"
 date: 2026-05-08
 content_hash: ecb029db8d1fc5e7
 ---

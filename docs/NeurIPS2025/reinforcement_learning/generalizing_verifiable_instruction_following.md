@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Generalizing Verifiable Instruction Following
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Instruction Following] This paper introduces IFBench, a benchmark for evaluating generalization in precise instruction following, demonstrating that current SOTA models severely overfit to the 25 constraint templates of IFEval. It further proposes IF-RLVR, a training method based on GRPO with verifiable rewards, which significantly improves both in-domain and out-of-domain instruction following performance.
+  [NeurIPS 2025][Reinforcement Learning][Instruction Following] This paper introduces IFBench, a benchmark for evaluating generalization in precise instruction following…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Instruction Following
-  - Verifiable Constraints
-  - RLVR
-  - GRPO
-  - Generalization
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Instruction Following"
+  - "Verifiable Constraints"
+  - "RLVR"
+  - "GRPO"
+  - "Generalization"
 date: 2026-05-08
 content_hash: 535ae99550681650
 ---

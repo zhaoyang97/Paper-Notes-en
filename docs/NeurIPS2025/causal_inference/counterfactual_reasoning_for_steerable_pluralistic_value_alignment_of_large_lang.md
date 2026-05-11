@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Counterfactual Reasoning for Steerable Pluralistic Value Alignment of Large Language Models
 description: >-
-  [NEURIPS2025][Causal Inference][Value alignment] This paper proposes the COUPLE framework, which constructs a Structural Causal Model (SCM) to model the dependencies and priorities among multi-dimensional values, and leverages counterfactual reasoning to achieve steerable alignment of LLMs toward arbitrary fine-grained pluralistic value objectives.
+  [NEURIPS2025][Causal Inference][Value alignment] This paper proposes the COUPLE framework, which constructs a Structural Causal Model (SCM) to model the dependencies and priorities among multi-dimensional values…
 tags:
-  - NEURIPS2025
-  - Causal Inference
-  - Value alignment
-  - counterfactual reasoning
-  - structural causal model
-  - pluralistic values
-  - LLM alignment
+  - "NEURIPS2025"
+  - "Causal Inference"
+  - "Value alignment"
+  - "counterfactual reasoning"
+  - "structural causal model"
+  - "pluralistic values"
+  - "LLM alignment"
 date: 2026-05-08
 content_hash: b4b200078148908b
 ---

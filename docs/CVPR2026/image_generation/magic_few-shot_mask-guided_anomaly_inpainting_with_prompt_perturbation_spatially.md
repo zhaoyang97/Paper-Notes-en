@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] MAGIC: Few-Shot Mask-Guided Anomaly Inpainting with Prompt Perturbation, Spatially Adaptive Guidance, and Context Awareness
 description: >-
-  [CVPR2026 Findings][Image Generation][Few-shot anomaly generation] This paper proposes the MAGIC framework, which fine-tunes an inpainting diffusion model and incorporates three complementary modules—Gaussian prompt perturbation, mask-guided spatial noise injection, and context-aware mask alignment—to generate high-fidelity, diverse, and spatially plausible industrial anomaly images under few-shot conditions, achieving state-of-the-art performance on downstream tasks using MVTec-AD.
+  [CVPR2026 Findings][Image Generation][Few-shot anomaly generation] This paper proposes the MAGIC framework, which fine-tunes an inpainting diffusion model and incorporates three complementary modules—Gaussian prompt pert…
 tags:
-  - CVPR2026 Findings
-  - Image Generation
-  - Few-shot anomaly generation
-  - diffusion models
-  - inpainting
-  - industrial inspection
-  - prompt perturbation
-  - spatially adaptive guidance
-  - mask alignment
+  - "CVPR2026 Findings"
+  - "Image Generation"
+  - "Few-shot anomaly generation"
+  - "diffusion models"
+  - "inpainting"
+  - "industrial inspection"
+  - "prompt perturbation"
+  - "spatially adaptive guidance"
+  - "mask alignment"
 date: 2026-05-08
 content_hash: a4eea24074bc0031
 ---

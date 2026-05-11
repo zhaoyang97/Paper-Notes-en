@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SceneMI: Motion In-betweening for Modeling Human-Scene Interactions
 description: >-
-  [ICCV 2025][3D Vision][Human-scene interaction] This work formally introduces the scene-aware motion in-betweening problem and proposes the SceneMI framework, which comprehensively encodes scene context via a dual-layer scene descriptor (global voxels + local BPS). By leveraging the denoising capability of diffusion models to handle noisy keyframes, SceneMI reduces the collision frame rate by 56.9% on TRUMANS, and reduces foot skating by 37.5% and jitter by 56.5% on the real-world GIMO dataset.
+  [ICCV 2025][3D Vision][Human-scene interaction] This work formally introduces the scene-aware motion in-betweening problem and proposes the SceneMI framework…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Human-scene interaction
-  - motion in-betweening
-  - diffusion models
-  - scene encoding
-  - keyframe animation
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Human-scene interaction"
+  - "motion in-betweening"
+  - "diffusion models"
+  - "scene encoding"
+  - "keyframe animation"
 date: 2026-05-08
 content_hash: 3e5f1c856ab0ed6b
 ---

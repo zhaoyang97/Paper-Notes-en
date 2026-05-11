@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Constrained Best Arm Identification with Tests for Feasibility
 description: >-
-  [AAAI 2026][Medical Imaging][Best Arm Identification] This paper proposes a new framework for best arm identification (BAI) with feasibility constraints, allowing the decision-maker to test arm performance and feasibility constraints separately. An asymptotically optimal algorithm is designed that adaptively eliminates suboptimal arms via whichever criterion—performance or feasibility—is easier to satisfy.
+  [AAAI 2026][Medical Imaging][Best Arm Identification] This paper proposes a new framework for best arm identification (BAI) with feasibility constraints…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Best Arm Identification
-  - feasibility constraints
-  - fixed confidence
-  - sample complexity
-  - asymptotic optimality
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Best Arm Identification"
+  - "feasibility constraints"
+  - "fixed confidence"
+  - "sample complexity"
+  - "asymptotic optimality"
 date: 2026-05-08
 content_hash: b90f800d044c29c3
 ---

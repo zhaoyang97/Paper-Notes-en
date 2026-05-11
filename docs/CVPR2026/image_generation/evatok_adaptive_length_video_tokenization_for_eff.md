@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EVATok: Adaptive Length Video Tokenization for Efficient Visual Autoregressive Generation
 description: >-
-  [CVPR 2026][Image Generation][video tokenizer] This paper proposes EVATok, a four-stage framework that first uses a proxy tokenizer to estimate the optimal token allocation for each video, then trains a lightweight router to predict these allocations in a single forward pass, and finally trains an adaptive tokenizer that flexibly assigns token counts according to content complexity. On UCF-101, EVATok achieves state-of-the-art generation quality with a 24.4% reduction in token count.
+  [CVPR 2026][Image Generation][video tokenizer] This paper proposes EVATok, a four-stage framework that first uses a proxy tokenizer to estimate the optimal token allocation for each video…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - video tokenizer
-  - adaptive tokenization
-  - autoregressive generation
-  - proxy reward
-  - Q-Former
+  - "CVPR 2026"
+  - "Image Generation"
+  - "video tokenizer"
+  - "adaptive tokenization"
+  - "autoregressive generation"
+  - "proxy reward"
+  - "Q-Former"
 date: 2026-05-08
 content_hash: 137560709bbdaa79
 ---

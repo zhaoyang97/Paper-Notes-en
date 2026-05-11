@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FreeCus: Free Lunch Subject-driven Customization in Diffusion Transformers
 description: >-
-  [ICCV 2025][Image Generation][Subject-driven customization] This paper proposes FreeCus, a completely training-free subject-driven customization framework that activates the intrinsic zero-shot subject customization capability of Diffusion Transformers (DiT) through three innovations: pivotal attention sharing, an upgraded dynamic shifting mechanism for fine-grained feature extraction, and multimodal large language model (MLLM) semantic enhancement. FreeCus achieves results comparable to or better than methods that require additional training.
+  [ICCV 2025][Image Generation][Subject-driven customization] This paper proposes FreeCus, a completely training-free subject-driven customization framework that activates the intrinsic zero-shot subject customization capa…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Subject-driven customization
-  - Diffusion Transformer
-  - Training-free
-  - Attention sharing
-  - Zero-shot generation
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Subject-driven customization"
+  - "Diffusion Transformer"
+  - "Training-free"
+  - "Attention sharing"
+  - "Zero-shot generation"
 date: 2026-05-08
 content_hash: 2d9c81b29c718c42
 ---

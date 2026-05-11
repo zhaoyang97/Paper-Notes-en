@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Discrete Diffusion Trajectory Alignment via Stepwise Decomposition
 description: >-
-  [ICLR2026][Medical Imaging][discrete diffusion] This paper proposes SDPO (Stepwise Decomposition Preference Optimization), which decomposes the trajectory alignment problem of discrete diffusion models into stepwise posterior alignment subproblems, avoiding the difficulty of backpropagating gradients through the entire denoising chain. SDPO achieves significant improvements over existing methods across three tasks: DNA sequence design, protein inverse folding, and language modeling.
+  [ICLR2026][Medical Imaging][discrete diffusion] This paper proposes SDPO (Stepwise Decomposition Preference Optimization), which decomposes the trajectory alignment problem of discrete diffusion models into stepwise post…
 tags:
-  - ICLR2026
-  - Medical Imaging
-  - discrete diffusion
-  - preference optimization
-  - RLHF
-  - trajectory alignment
-  - stepwise decomposition
+  - "ICLR2026"
+  - "Medical Imaging"
+  - "discrete diffusion"
+  - "preference optimization"
+  - "RLHF"
+  - "trajectory alignment"
+  - "stepwise decomposition"
 date: 2026-05-08
 content_hash: f7f258901ce902b1
 ---

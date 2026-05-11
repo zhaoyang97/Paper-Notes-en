@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RAD: Towards Trustworthy Retrieval-Augmented Multi-modal Clinical Diagnosis
 description: >-
-  [NeurIPS 2025][Medical Imaging][Retrieval-augmented diagnosis] This paper proposes RAD, a retrieval-augmented diagnostic framework that retrieves disease guidelines from multi-source medical corpora and injects them throughout the full pipeline of a multimodal model — from feature extraction to cross-modal fusion. A dual-axis explainability evaluation protocol is also introduced. RAD achieves state-of-the-art performance on four datasets spanning distinct anatomical regions.
+  [NeurIPS 2025][Medical Imaging][Retrieval-augmented diagnosis] This paper proposes RAD, a retrieval-augmented diagnostic framework that retrieves disease guidelines from multi-source medical corpora and injects them thro…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Retrieval-augmented diagnosis
-  - multimodal fusion
-  - knowledge injection
-  - explainability
-  - clinical guidelines
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Retrieval-augmented diagnosis"
+  - "multimodal fusion"
+  - "knowledge injection"
+  - "explainability"
+  - "clinical guidelines"
 date: 2026-05-08
 content_hash: 3148f0176141961f
 ---

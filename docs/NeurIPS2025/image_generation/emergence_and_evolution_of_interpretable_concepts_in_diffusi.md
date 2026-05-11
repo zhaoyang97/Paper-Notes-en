@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Emergence and Evolution of Interpretable Concepts in Diffusion Models
 description: >-
-  [Image Generation] This work is the first to systematically apply Sparse Autoencoders (SAEs) to multi-step diffusion models (Stable Diffusion v1.4), revealing that image composition emerges as early as the first reverse diffusion step while stylistic concepts form during intermediate stages. Based on these findings, the paper proposes temporally adaptive causal intervention techniques.
+  [Image Generation] This work is the first to systematically apply Sparse Autoencoders (SAEs) to multi-step diffusion models (Stable Diffusion v1.4)…
 tags:
-  - Image Generation
+  - "Image Generation"
 date: 2026-05-08
 content_hash: effe0d7302c93aa0
 ---

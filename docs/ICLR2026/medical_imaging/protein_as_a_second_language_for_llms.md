@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Protein as a Second Language for LLMs
 description: >-
-  [Medical Imaging] This work treats amino acid sequences as a "second language" for LLMs. By constructing a protein–natural language bilingual dataset and an adaptive context construction mechanism, the proposed framework enables general-purpose LLMs to achieve an average ROUGE-L improvement of 7%—up to 17.2%—on protein question-answering tasks without any training, even surpassing domain-specific fine-tuned models.
+  [Medical Imaging] This work treats amino acid sequences as a "second language" for LLMs. By constructing a protein–natural language bilingual dataset and an adaptive context construction mechanism…
 tags:
-  - Medical Imaging
+  - "Medical Imaging"
 date: 2026-05-08
 content_hash: f47144f80f20e27c
 ---

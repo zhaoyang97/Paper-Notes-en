@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Sample-Efficient Evidence Estimation of Score-Based Priors for Model Selection
 description: >-
-  [ICLR 2026][Image Generation][Model Evidence] This paper proposes DiME, a model evidence estimator that integrates along the temporal marginals of the diffusion posterior. DiME requires neither prior scores nor density evaluations, and accurately estimates model evidence under diffusion model priors using as few as 20 posterior samples, enabling prior selection and model validation.
+  [ICLR 2026][Image Generation][Model Evidence] This paper proposes DiME, a model evidence estimator that integrates along the temporal marginals of the diffusion posterior. DiME requires neither prior scores nor density e…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Model Evidence
-  - Diffusion Priors
-  - Posterior Sampling
-  - Model Selection
-  - Black Hole Imaging
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Model Evidence"
+  - "Diffusion Priors"
+  - "Posterior Sampling"
+  - "Model Selection"
+  - "Black Hole Imaging"
 date: 2026-05-08
 content_hash: 5e22248997106a3d
 ---

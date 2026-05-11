@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] DiffMM: Efficient Method for Accurate Noisy and Sparse Trajectory Map Matching via One Step Diffusion
 description: >-
-  [AAAI 2026][Map Matching] This paper proposes DiffMM, the first approach to introduce diffusion models into map matching. By combining a road-segment-aware trajectory encoder with a one-step Shortcut diffusion process, DiffMM achieves simultaneous improvements in accuracy and efficiency on sparse trajectories and complex road networks, with inference speed approximately 17× faster than the second-best method.
+  [AAAI 2026][Map Matching] This paper proposes DiffMM, the first approach to introduce diffusion models into map matching. By combining a road-segment-aware trajectory encoder with a one-step Shortcut diffusion process…
 tags:
-  - AAAI 2026
-  - Map Matching
-  - Diffusion Model
-  - Sparse Trajectory
-  - Shortcut Model
-  - Segment-Aware Encoder
+  - "AAAI 2026"
+  - "Map Matching"
+  - "Diffusion Model"
+  - "Sparse Trajectory"
+  - "Shortcut Model"
+  - "Segment-Aware Encoder"
 date: 2026-05-08
 content_hash: 7eb0b17d997583c6
 ---

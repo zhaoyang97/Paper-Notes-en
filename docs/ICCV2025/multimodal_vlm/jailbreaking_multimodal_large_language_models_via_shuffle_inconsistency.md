@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Jailbreaking Multimodal Large Language Models via Shuffle Inconsistency
 description: >-
-  [ICCV 2025][Multimodal VLM][Multimodal large language model safety] This paper identifies a **Shuffle Inconsistency** between the comprehension capability and the safety capability of multimodal large language models (MLLMs)—models can understand shuffled harmful instructions, yet their safety mechanisms fail to defend against them. Building on this finding, the authors propose SI-Attack, a query-based black-box jailbreak method that achieves substantially higher attack success rates on both open-source and closed-source commercial models.
+  [ICCV 2025][Multimodal VLM][Multimodal large language model safety] This paper identifies a **Shuffle Inconsistency** between the comprehension capability and the safety capability of multimodal large language models (ML…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Multimodal large language model safety
-  - jailbreak attack
-  - Shuffle Inconsistency
-  - black-box optimization
-  - safety alignment
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Multimodal large language model safety"
+  - "jailbreak attack"
+  - "Shuffle Inconsistency"
+  - "black-box optimization"
+  - "safety alignment"
 date: 2026-05-08
 content_hash: 69f30345b8ba0db6
 ---

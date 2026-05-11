@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] On Extending Direct Preference Optimization to Accommodate Ties
 description: >-
-  [NeurIPS 2025][LLM Alignment][DPO] This paper replaces the Bradley-Terry preference model in DPO with the Rao-Kupper and Davidson extensions, enabling preference optimization to explicitly model "tie" data. This avoids discarding ambiguous preference pairs and yields improved regularization and performance on translation and mathematical reasoning tasks.
+  [NeurIPS 2025][LLM Alignment][DPO] This paper replaces the Bradley-Terry preference model in DPO with the Rao-Kupper and Davidson extensions…
 tags:
-  - NeurIPS 2025
-  - LLM Alignment
-  - DPO
-  - preference optimization
-  - ties
-  - Bradley-Terry
-  - Rao-Kupper
-  - Davidson model
+  - "NeurIPS 2025"
+  - "LLM Alignment"
+  - "DPO"
+  - "preference optimization"
+  - "ties"
+  - "Bradley-Terry"
+  - "Rao-Kupper"
+  - "Davidson model"
 date: 2026-05-08
 content_hash: 0a7aa3d33a1a0d11
 ---

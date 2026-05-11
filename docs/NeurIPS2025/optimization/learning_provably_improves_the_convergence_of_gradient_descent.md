@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Provably Improves the Convergence of Gradient Descent
 description: >-
-  [NeurIPS 2025][Optimization][Learn to Optimize] This paper presents the first rigorous proof of training convergence for an unrolling-based Learn to Optimize (L2O) framework (Math-L2O). By leveraging NTK theory, it establishes a linear convergence rate and proposes a deterministic initialization strategy that provably ensures L2O improves upon the convergence performance of gradient descent. Experiments demonstrate over 50% improvement in optimality compared to standard GD.
+  [NeurIPS 2025][Optimization][Learn to Optimize] This paper presents the first rigorous proof of training convergence for an unrolling-based Learn to Optimize (L2O) framework (Math-L2O). By leveraging NTK theory…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Learn to Optimize
-  - Gradient Descent
-  - Neural Tangent Kernel
-  - Convergence Proof
-  - Initialization Strategy
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Learn to Optimize"
+  - "Gradient Descent"
+  - "Neural Tangent Kernel"
+  - "Convergence Proof"
+  - "Initialization Strategy"
 date: 2026-05-08
 content_hash: ec9d889b396ea28c
 ---

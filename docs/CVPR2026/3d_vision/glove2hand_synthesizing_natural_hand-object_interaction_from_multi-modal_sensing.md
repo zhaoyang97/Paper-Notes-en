@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Glove2Hand: Synthesizing Natural Hand-Object Interaction from Multi-Modal Sensing Gloves
 description: >-
-  [CVPR 2026][3D Vision][hand-object interaction] This paper proposes the Glove2Hand framework, which translates egocentric videos of instrumented sensing gloves into photorealistic bare-hand videos while preserving tactile and IMU signals. It also introduces HandSense, the first multi-modal hand-object interaction dataset, and demonstrates significant improvements on downstream bare-hand contact estimation and occluded hand tracking.
+  [CVPR 2026][3D Vision][hand-object interaction] This paper proposes the Glove2Hand framework, which translates egocentric videos of instrumented sensing gloves into photorealistic bare-hand videos while preserving tactil…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - hand-object interaction
-  - sensing gloves
-  - video translation
-  - 3D Gaussian hand model
-  - diffusion model
+  - "CVPR 2026"
+  - "3D Vision"
+  - "hand-object interaction"
+  - "sensing gloves"
+  - "video translation"
+  - "3D Gaussian hand model"
+  - "diffusion model"
 date: 2026-05-08
 content_hash: acacf4193b26ed70
 ---

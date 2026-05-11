@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Skip to the Good Part: Representation Structure & Inference-Time Layer Skipping in Diffusion vs. Autoregressive LLMs
 description: >-
-  [ICLR 2026][Image Restoration][Diffusion Language Models] This work presents the first systematic comparison of layer-wise representation structure between diffusion large language models (dLLMs) and autoregressive (AR) LLMs. It finds that natively trained dLLMs exhibit stronger hierarchical abstraction and greater early-layer redundancy. Based on this finding, a static, task-agnostic inference-time layer skipping strategy is proposed, achieving 90%+ performance retention on LLaDA while skipping 6 layers (18.75% FLOPs reduction).
+  [ICLR 2026][Image Restoration][Diffusion Language Models] This work presents the first systematic comparison of layer-wise representation structure between diffusion large language models (dLLMs) and autoregressive (AR)…
 tags:
-  - ICLR 2026
-  - Image Restoration
-  - Diffusion Language Models
-  - Layer Skipping
-  - Representation Redundancy
-  - Inference Acceleration
-  - LLaDA
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "Diffusion Language Models"
+  - "Layer Skipping"
+  - "Representation Redundancy"
+  - "Inference Acceleration"
+  - "LLaDA"
 date: 2026-05-08
 content_hash: 6ab55d4356f102af
 ---

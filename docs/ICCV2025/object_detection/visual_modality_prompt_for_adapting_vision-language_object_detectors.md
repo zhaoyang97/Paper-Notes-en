@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Visual Modality Prompt for Adapting Vision-Language Object Detectors
 description: >-
-  [ICCV 2025][Object Detection][Visual Prompt] This paper proposes ModPrompt, an encoder-decoder-based visual prompting strategy that adapts vision-language object detectors (e.g., YOLO-World, Grounding DINO) to new modalities such as infrared and depth, while preserving zero-shot detection capability.
+  [ICCV 2025][Object Detection][Visual Prompt] This paper proposes ModPrompt, an encoder-decoder-based visual prompting strategy that adapts vision-language object detectors (e.g., YOLO-World…
 tags:
-  - ICCV 2025
-  - Object Detection
-  - Visual Prompt
-  - Modality Adaptation
-  - Vision-Language Detectors
-  - Zero-Shot Detection
-  - Cross-Modal Transfer
+  - "ICCV 2025"
+  - "Object Detection"
+  - "Visual Prompt"
+  - "Modality Adaptation"
+  - "Vision-Language Detectors"
+  - "Zero-Shot Detection"
+  - "Cross-Modal Transfer"
 date: 2026-05-08
 content_hash: 7b79b530575f1174
 ---

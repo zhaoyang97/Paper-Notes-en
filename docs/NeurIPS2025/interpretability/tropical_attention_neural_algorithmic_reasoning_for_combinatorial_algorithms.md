@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Tropical Attention: Neural Algorithmic Reasoning for Combinatorial Algorithms
 description: >-
-  [NeurIPS 2025][Tropical geometry] Tropical Attention replaces softmax dot-product attention with tropical algebraic geometry, performing piecewise-linear reasoning in tropical projective space to align with the polyhedral decision structures of combinatorial algorithms. It is the first approach to extend neural algorithmic reasoning to NP-hard problems, comprehensively outperforming softmax baselines across three OOD generalization axes: length, magnitude, and noise.
+  [NeurIPS 2025][Interpretability][Tropical geometry] Tropical Attention replaces softmax dot-product attention with tropical algebraic geometry…
 tags:
-  - NeurIPS 2025
-  - Tropical geometry
-  - attention mechanism
-  - combinatorial optimization
-  - out-of-distribution generalization
-  - neural algorithmic reasoning
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "Tropical geometry"
+  - "attention mechanism"
+  - "combinatorial optimization"
+  - "out-of-distribution generalization"
+  - "neural algorithmic reasoning"
 date: 2026-05-08
 content_hash: f200d1a379605736
 ---

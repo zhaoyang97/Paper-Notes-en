@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MVGD-Net: A Novel Motion-aware Video Glass Surface Detection Network
 description: >-
-  [AAAI 2026][Human Understanding][Glass surface detection] Grounded in the physical observation that objects in reflection/transmission layers move at different velocities than those in non-glass regions, this paper proposes MVGD-Net, which leverages optical flow motion cues to guide glass surface detection in videos. The framework comprises four core modules: Cross-scale Multimodal Fusion Module (CMFM), History-Guided Attention Module (HGAM), Temporal Cross-Attention Module (TCAM), and Temporal-Spatial Decoder (TSD). A large-scale dataset, MVGD-D, containing 312 videos and 19,268 frames is also introduced.
+  [AAAI 2026][Human Understanding][Glass surface detection] Grounded in the physical observation that objects in reflection/transmission layers move at different velocities than those in non-glass regions…
 tags:
-  - AAAI 2026
-  - Human Understanding
-  - Glass surface detection
-  - video segmentation
-  - optical flow motion cues
-  - cross-modal fusion
-  - temporal attention
+  - "AAAI 2026"
+  - "Human Understanding"
+  - "Glass surface detection"
+  - "video segmentation"
+  - "optical flow motion cues"
+  - "cross-modal fusion"
+  - "temporal attention"
 date: 2026-05-08
 content_hash: 265a5535ca590e36
 ---

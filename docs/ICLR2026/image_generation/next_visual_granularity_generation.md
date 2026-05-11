@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Next Visual Granularity Generation
 description: >-
-  [ICLR 2026][Image Generation][Visual Granularity] This paper proposes the Next Visual Granularity (NVG) generation framework, which decomposes images into structured sequences at different granularity levels and generates from global layout to fine-grained details progressively, achieving consistent FID improvements over the VAR family.
+  [ICLR 2026][Image Generation][Visual Granularity] This paper proposes the Next Visual Granularity (NVG) generation framework, which decomposes images into structured sequences at different granularity levels and generate…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Visual Granularity
-  - Autoregressive Generation
-  - Structured Sequence
-  - Coarse-to-Fine Generation
-  - ImageNet
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Visual Granularity"
+  - "Autoregressive Generation"
+  - "Structured Sequence"
+  - "Coarse-to-Fine Generation"
+  - "ImageNet"
 date: 2026-05-08
 content_hash: 34b1ced4bcc3bb1b
 ---

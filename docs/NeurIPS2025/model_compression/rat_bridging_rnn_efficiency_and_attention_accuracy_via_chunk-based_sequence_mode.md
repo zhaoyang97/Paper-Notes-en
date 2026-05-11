@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RAT: Bridging RNN Efficiency and Attention Accuracy via Chunk-based Sequence Modeling
 description: >-
-  [NeurIPS 2025][Model Compression][Efficient Sequence Modeling] This paper proposes RAT (Recurrence And aTtention), a chunk-based intermediate architecture that models local dependencies within chunks via linear RNNs and enables global access across chunks via softmax attention. At $L=16$, RAT achieves a 9× single-layer decoding speedup and 10× maximum throughput improvement over standard attention with comparable performance; a hybrid variant alternating with sliding window attention achieves state-of-the-art results on nearly all benchmarks.
+  [NeurIPS 2025][Model Compression][Efficient Sequence Modeling] This paper proposes RAT (Recurrence And aTtention), a chunk-based intermediate architecture that models local dependencies within chunks via linear RNNs and…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Efficient Sequence Modeling
-  - Chunk-based Architecture
-  - RNN-Attention Hybrid
-  - Long Context
-  - Linear Complexity
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Efficient Sequence Modeling"
+  - "Chunk-based Architecture"
+  - "RNN-Attention Hybrid"
+  - "Long Context"
+  - "Linear Complexity"
 date: 2026-05-08
 content_hash: e747bbb5af1d9cb9
 ---

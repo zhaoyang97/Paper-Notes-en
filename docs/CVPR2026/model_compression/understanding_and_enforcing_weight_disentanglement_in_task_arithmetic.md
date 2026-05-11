@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Understanding and Enforcing Weight Disentanglement in Task Arithmetic
 description: >-
-  [CVPR 2026][Model Compression][Task Arithmetic] This paper proposes Task Feature Specialization (TFS) as a sufficient condition for weight disentanglement, reveals that its geometric consequence is weight vector orthogonality, and introduces OrthoReg — a regularization method that enforces column-wise orthogonality of weight update matrices during fine-tuning to promote task vector disentanglement, substantially improving the performance of various task arithmetic methods.
+  [CVPR 2026][Model Compression][Task Arithmetic] This paper proposes Task Feature Specialization (TFS) as a sufficient condition for weight disentanglement…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - Task Arithmetic
-  - Model Merging
-  - Weight Disentanglement
-  - Orthogonal Regularization
-  - Task Vectors
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Task Arithmetic"
+  - "Model Merging"
+  - "Weight Disentanglement"
+  - "Orthogonal Regularization"
+  - "Task Vectors"
 date: 2026-05-08
 content_hash: e23e83a28738934e
 ---

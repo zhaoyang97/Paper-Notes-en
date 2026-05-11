@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] On the Complexity-Faithfulness Trade-off of Gradient-Based Explanations
 description: >-
-  [ICCV 2025][Explainability] This paper proposes a unified spectral framework to systematically analyze and quantify the trade-off between the smoothness (complexity) and faithfulness of gradient-based explanations. It introduces Expected Frequency (EF) to measure a network's reliance on high-frequency information, controls explanation complexity by convolving ReLU with a Gaussian function, and defines an "explanation gap" to quantify the faithfulness loss induced by surrogate models.
+  [ICCV 2025][Explainability] This paper proposes a unified spectral framework to systematically analyze and quantify the trade-off between the smoothness (complexity) and faithfulness of gradient-based explanations. It in…
 tags:
-  - ICCV 2025
-  - Explainability
-  - Gradient-Based Explanations
-  - Spectral Analysis
-  - Faithfulness-Complexity Trade-off
-  - ReLU Networks
+  - "ICCV 2025"
+  - "Explainability"
+  - "Gradient-Based Explanations"
+  - "Spectral Analysis"
+  - "Faithfulness-Complexity Trade-off"
+  - "ReLU Networks"
 date: 2026-05-08
 content_hash: 2a411c6d4a6e3395
 ---

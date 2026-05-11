@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CIGPose: Causal Intervention Graph Neural Network for Whole-Body Pose Estimation
 description: >-
-  [CVPR2026][Human Understanding][whole-body pose estimation] This paper proposes CIGPose, a causal intervention graph-based pose estimation framework that employs a structural causal model (SCM) to identify visual-context confounders, leverages prediction uncertainty to localize confounded keypoints and replaces their embeddings with learned context-free canonical representations, and subsequently models skeletal anatomical constraints via a hierarchical graph neural network. CIGPose achieves a new state of the art of 67.0% AP on COCO-WholeBody.
+  [CVPR2026][Human Understanding][whole-body pose estimation] This paper proposes CIGPose, a causal intervention graph-based pose estimation framework that employs a structural causal model (SCM) to identify visual-context…
 tags:
-  - CVPR2026
-  - Human Understanding
-  - whole-body pose estimation
-  - causal inference
-  - graph neural network
-  - structural causal model
-  - counterfactual intervention
+  - "CVPR2026"
+  - "Human Understanding"
+  - "whole-body pose estimation"
+  - "causal inference"
+  - "graph neural network"
+  - "structural causal model"
+  - "counterfactual intervention"
 date: 2026-05-08
 content_hash: 2a38b32d68a98007
 ---

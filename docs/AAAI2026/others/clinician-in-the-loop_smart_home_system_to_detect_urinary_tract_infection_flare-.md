@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Clinician-in-the-Loop Smart Home System to Detect Urinary Tract Infection Flare-Ups via Uncertainty-Aware Decision Support
 description: >-
-  [AAAI 2026][Smart home] This paper proposes a clinician-in-the-loop smart home system that extracts behavioral markers from ambient sensor data and introduces a novel Conformal Calibrated Interval (CCI) method to quantify predictive uncertainty, enabling reliable detection of urinary tract infection (UTI) flare-ups in older adults and supporting an "abstain when uncertain" decision paradigm.
+  [AAAI 2026][Smart home] This paper proposes a clinician-in-the-loop smart home system that extracts behavioral markers from ambient sensor data and introduces a novel Conformal Calibrated Interval (CCI) method to quantif…
 tags:
-  - AAAI 2026
-  - Smart home
-  - urinary tract infection detection
-  - uncertainty quantification
-  - conformal prediction
-  - clinical decision support
+  - "AAAI 2026"
+  - "Smart home"
+  - "urinary tract infection detection"
+  - "uncertainty quantification"
+  - "conformal prediction"
+  - "clinical decision support"
 date: 2026-05-08
 content_hash: ed5a254f7d93f428
 ---

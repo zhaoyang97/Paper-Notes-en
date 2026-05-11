@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Frame is Worth One Token: Efficient Generative World Modeling with Delta Tokens
 description: >-
-  [CVPR 2026][Time Series][World Models] This paper proposes DeltaTok, which compresses inter-frame VFM feature differences into a single delta token. Combined with Best-of-Many training, DeltaWorld efficiently generates diverse future predictions in a single forward pass. The model uses only 1/35 the parameters of Cosmos and 1/2000 the FLOPs, yet achieves superior performance on dense prediction tasks.
+  [CVPR 2026][Time Series][World Models] This paper proposes DeltaTok, which compresses inter-frame VFM feature differences into a single delta token. Combined with Best-of-Many training…
 tags:
-  - CVPR 2026
-  - Time Series
-  - World Models
-  - Delta Token
-  - Video Prediction
-  - Frame-Difference Compression
-  - Best-of-Many Training
+  - "CVPR 2026"
+  - "Time Series"
+  - "World Models"
+  - "Delta Token"
+  - "Video Prediction"
+  - "Frame-Difference Compression"
+  - "Best-of-Many Training"
 date: 2026-05-08
 content_hash: 15be9ddb0c9f20a7
 ---

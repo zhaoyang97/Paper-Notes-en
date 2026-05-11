@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Procedural-aware Video Representations through State-Grounded Hierarchy Unfolding
 description: >-
-  [AAAI 2026][LLM Pretraining][Procedural video understanding] This paper proposes a Task-Step-State (TSS) three-level semantic framework that introduces "state" as a visual grounding layer within the conventional task-step hierarchy, and designs a progressive pretraining strategy following a U-shaped path (Task→Step→State→Step→Task) to unfold the TSS hierarchy stage by stage. The approach achieves comprehensive state-of-the-art performance on task recognition, step recognition, and step forecasting tasks on the COIN and CrossTask datasets.
+  [AAAI 2026][LLM Pretraining][Procedural video understanding] This paper proposes a Task-Step-State (TSS) three-level semantic framework that introduces "state" as a visual grounding layer within the conventional task-ste…
 tags:
-  - AAAI 2026
-  - LLM Pretraining
-  - Procedural video understanding
-  - state grounding
-  - hierarchical learning
-  - progressive pretraining
-  - video representation
+  - "AAAI 2026"
+  - "LLM Pretraining"
+  - "Procedural video understanding"
+  - "state grounding"
+  - "hierarchical learning"
+  - "progressive pretraining"
+  - "video representation"
 date: 2026-05-08
 content_hash: ffabcd54bf74fe03
 ---

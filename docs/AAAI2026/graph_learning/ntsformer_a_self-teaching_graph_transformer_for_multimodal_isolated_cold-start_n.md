@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] NTSFormer: A Self-Teaching Graph Transformer for Multimodal Isolated Cold-Start Node Classification
 description: >-
-  [AAAI 2026][Graph Learning][Cold-start node classification] This paper proposes NTSFormer (Neighbor-to-Self Graph Transformer), a unified Graph Transformer framework that implements a **self-teaching paradigm** via a cold-start attention mask. Within the same model, a "student" prediction is derived solely from the node's own features while a "teacher" prediction leverages neighbor information, enabling end-to-end self-teaching without degrading to an MLP. The framework handles missing modalities in multimodal graphs through MoE input projection and multimodal graph pre-computation.
+  [AAAI 2026][Graph Learning][Cold-start node classification] This paper proposes NTSFormer (Neighbor-to-Self Graph Transformer), a unified Graph Transformer framework that implements a **self-teaching paradigm** via a col…
 tags:
-  - AAAI 2026
-  - Graph Learning
-  - Cold-start node classification
-  - Graph Transformer
-  - self-teaching
-  - missing modalities
-  - mixture of experts
+  - "AAAI 2026"
+  - "Graph Learning"
+  - "Cold-start node classification"
+  - "Graph Transformer"
+  - "self-teaching"
+  - "missing modalities"
+  - "mixture of experts"
 date: 2026-05-08
 content_hash: 343f71b549463949
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Enhancing Hallucination Detection via Future Context
 description: >-
-  [ACL 2026][LLM Safety][hallucination detection] This paper proposes leveraging sampled "future context" (subsequent sentences) to enhance hallucination detection in black-box settings. By exploiting the "snowball effect"—whereby hallucinations tend to propagate once introduced—the method consistently improves detection performance across multiple sampling-based approaches, including SelfCheckGPT and SC.
+  [ACL 2026][LLM Safety][hallucination detection] This paper proposes leveraging sampled "future context" (subsequent sentences) to enhance hallucination detection in black-box settings. By exploiting the "snowball effect"…
 tags:
-  - ACL 2026
-  - LLM Safety
-  - hallucination detection
-  - future context
-  - black-box generator
-  - sampling methods
-  - snowball effect
+  - "ACL 2026"
+  - "LLM Safety"
+  - "hallucination detection"
+  - "future context"
+  - "black-box generator"
+  - "sampling methods"
+  - "snowball effect"
 date: 2026-05-08
 content_hash: 58f01fda8584a312
 ---

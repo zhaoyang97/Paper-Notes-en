@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Foresight Optimization for Strategic Reasoning in Large Language Models
 description: >-
-  [ACL 2026][LLM/NLP][Strategic Reasoning] This paper proposes Foresight Policy Optimization (FoPO), which introduces a foresight correction term based on opponent modeling into the policy optimization process, enabling LLMs to explicitly anticipate opponent behavior and adjust their strategies accordingly. FoPO achieves significant improvements in strategic reasoning on both cooperative (Cooperative RSA) and competitive (Competitive Taboo) game tasks, with consistent gains on the cross-domain γ-Bench benchmark.
+  [ACL 2026][LLM/NLP][Strategic Reasoning] This paper proposes Foresight Policy Optimization (FoPO), which introduces a foresight correction term based on opponent modeling into the policy optimization process…
 tags:
-  - ACL 2026
-  - LLM/NLP
-  - Strategic Reasoning
-  - Foresight Optimization
-  - Opponent Modeling
-  - Self-Play
-  - Multi-Agent
+  - "ACL 2026"
+  - "LLM/NLP"
+  - "Strategic Reasoning"
+  - "Foresight Optimization"
+  - "Opponent Modeling"
+  - "Self-Play"
+  - "Multi-Agent"
 date: 2026-05-08
 content_hash: e016ff792c992b1c
 ---

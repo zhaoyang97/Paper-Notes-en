@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ForgeDreamer: Industrial Text-to-3D Generation with Multi-Expert LoRA and Cross-View Hypergraph
 description: >-
-  [CVPR 2026][3D Vision][Text-to-3D] This paper proposes ForgeDreamer, a framework that addresses domain semantic adaptation in industrial settings via multi-expert LoRA teacher-student distillation, and achieves high-order geometric consistency constraints through cross-view hypergraph geometric enhancement, outperforming existing methods on industrial text-to-3D generation tasks.
+  [CVPR 2026][3D Vision][Text-to-3D] This paper proposes ForgeDreamer, a framework that addresses domain semantic adaptation in industrial settings via multi-expert LoRA teacher-student distillation…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Text-to-3D
-  - Industrial 3D Generation
-  - LoRA Distillation
-  - Hypergraph Geometric Consistency
-  - 3D Gaussian Splatting
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Text-to-3D"
+  - "Industrial 3D Generation"
+  - "LoRA Distillation"
+  - "Hypergraph Geometric Consistency"
+  - "3D Gaussian Splatting"
 date: 2026-05-08
 content_hash: 5b91e8ce2688fd06
 ---

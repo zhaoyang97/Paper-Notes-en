@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Is In-Context Learning Learning?
 description: >-
-  [ICLR 2026][LLM Reasoning][in-context learning] This paper systematically investigates whether ICL constitutes genuine "learning" through large-scale controlled experiments. It demonstrates that ICL satisfies the formal mathematical definition of learning, yet empirical evidence reveals its generalization capacity to be limited — models primarily exploit structural regularities within the prompt via deduction rather than acquiring new capabilities from the provided demonstrations.
+  [ICLR 2026][LLM Reasoning][in-context learning] This paper systematically investigates whether ICL constitutes genuine "learning" through large-scale controlled experiments. It demonstrates that ICL satisfies the formal…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - in-context learning
-  - ICL
-  - memorisation
-  - distributional shift
-  - generalization
-  - autoregressive models
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "in-context learning"
+  - "ICL"
+  - "memorisation"
+  - "distributional shift"
+  - "generalization"
+  - "autoregressive models"
 date: 2026-05-08
 content_hash: af10d9e8362bd48b
 ---

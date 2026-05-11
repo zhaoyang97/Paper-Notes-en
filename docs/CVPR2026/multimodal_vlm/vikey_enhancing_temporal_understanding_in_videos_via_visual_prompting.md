@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ViKey: Enhancing Temporal Understanding in Videos via Visual Prompting
 description: >-
-  [CVPR 2026][Multimodal VLM][Visual Prompting] ViKey overlays frame-index visual prompts (VPs) onto video frames and incorporates a lightweight Keyword-Frame Mapping (KFM) module to significantly improve temporal reasoning in VideoLLMs without any training, achieving near-dense-frame performance with as few as 20% of frames.
+  [CVPR 2026][Multimodal VLM][Visual Prompting] ViKey overlays frame-index visual prompts (VPs) onto video frames and incorporates a lightweight Keyword-Frame Mapping (KFM) module to significantly improve temporal reasonin…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Visual Prompting
-  - Video Large Language Models
-  - Temporal Understanding
-  - Frame Index
-  - Training-Free
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Visual Prompting"
+  - "Video Large Language Models"
+  - "Temporal Understanding"
+  - "Frame Index"
+  - "Training-Free"
 date: 2026-05-08
 content_hash: c8717d2d005673f3
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MAESTRO: Meta-learning Adaptive Estimation of Scalarization Trade-offs for Reward Optimization
 description: >-
-  [ACL 2026][Model Compression][Open-domain Alignment] This paper proposes MAESTRO, which reformulates reward scalarization in GRPO as a contextual bandit problem. A lightweight Conductor network leverages the final-layer hidden states of the policy model to adaptively select reward weights for each prompt–response pair, consistently outperforming static-reward and single-reward baselines across seven open-domain benchmarks.
+  [ACL 2026][Model Compression][Open-domain Alignment] This paper proposes MAESTRO, which reformulates reward scalarization in GRPO as a contextual bandit problem. A lightweight Conductor network leverages the final-layer…
 tags:
-  - ACL 2026
-  - Model Compression
-  - Open-domain Alignment
-  - Multi-objective Optimization
-  - Reward Orchestration
-  - Meta-learning
-  - GRPO
+  - "ACL 2026"
+  - "Model Compression"
+  - "Open-domain Alignment"
+  - "Multi-objective Optimization"
+  - "Reward Orchestration"
+  - "Meta-learning"
+  - "GRPO"
 date: 2026-05-08
 content_hash: 93e38438d521c91c
 ---

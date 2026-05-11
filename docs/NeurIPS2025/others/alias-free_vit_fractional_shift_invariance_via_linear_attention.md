@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Alias-Free ViT: Fractional Shift Invariance via Linear Attention
 description: >-
-  [NeurIPS 2025][shift invariance] This paper proposes the Alias-Free Vision Transformer (AFT), which combines anti-aliasing signal processing techniques with shift-equivariant linear cross-covariance attention, achieving near-perfect consistency (~99%) under fractional (sub-pixel) shifts for the first time, with negligible degradation in ImageNet classification accuracy.
+  [NeurIPS 2025][shift invariance] This paper proposes the Alias-Free Vision Transformer (AFT), which combines anti-aliasing signal processing techniques with shift-equivariant linear cross-covariance attention…
 tags:
-  - NeurIPS 2025
-  - shift invariance
-  - anti-aliasing
-  - linear attention
-  - sub-pixel shift
-  - shift equivariance
+  - "NeurIPS 2025"
+  - "shift invariance"
+  - "anti-aliasing"
+  - "linear attention"
+  - "sub-pixel shift"
+  - "shift equivariance"
 date: 2026-05-08
 content_hash: 17e87b6e2585fba3
 ---

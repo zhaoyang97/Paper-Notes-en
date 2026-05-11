@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Traceable Evidence Enhanced Visual Grounded Reasoning: Evaluation and Method
 description: >-
-  [ICLR 2026][Object Detection][Visual grounded reasoning] This paper proposes TreeBench (the first traceable visual reasoning benchmark comprising 405 highly challenging VQA pairs, on which OpenAI-o3 achieves only 54.87%) and TreeVGR (a training paradigm that jointly supervises grounding and reasoning via dual IoU reward-based reinforcement learning). A 7B model achieves gains of +16.8 on V\*Bench, +12.6 on MME-RealWorld, and +13.4 on TreeBench, demonstrating that traceability is a key driver of visual reasoning advancement.
+  [ICLR 2026][Object Detection][Visual grounded reasoning] This paper proposes TreeBench (the first traceable visual reasoning benchmark comprising 405 highly challenging VQA pairs…
 tags:
-  - ICLR 2026
-  - Object Detection
-  - Visual grounded reasoning
-  - traceable evidence
-  - second-order reasoning
-  - TreeBench
-  - reinforcement learning
-  - Dual IoU
+  - "ICLR 2026"
+  - "Object Detection"
+  - "Visual grounded reasoning"
+  - "traceable evidence"
+  - "second-order reasoning"
+  - "TreeBench"
+  - "reinforcement learning"
+  - "Dual IoU"
 date: 2026-05-08
 content_hash: 4c69ee55d12df062
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Distributed Asynchronous Generalized Momentum Algorithm Without Delay Bounds
 description: >-
-  [AAAI 2026][Optimization][Distributed Optimization] This paper proposes a totally asynchronous Generalized Momentum (GM) distributed optimization algorithm that guarantees linear convergence without assuming any upper bound on communication or computation delays. On a Fashion-MNIST classification task, the proposed method requires 71% fewer iterations than gradient descent, 41% fewer than Heavy Ball, and 19% fewer than Nesterov accelerated gradient.
+  [AAAI 2026][Optimization][Distributed Optimization] This paper proposes a totally asynchronous Generalized Momentum (GM) distributed optimization algorithm that guarantees linear convergence without assuming any upper bo…
 tags:
-  - AAAI 2026
-  - Optimization
-  - Distributed Optimization
-  - Total Asynchrony
-  - Generalized Momentum
-  - No Delay Bound
-  - Linear Convergence
+  - "AAAI 2026"
+  - "Optimization"
+  - "Distributed Optimization"
+  - "Total Asynchrony"
+  - "Generalized Momentum"
+  - "No Delay Bound"
+  - "Linear Convergence"
 date: 2026-05-08
 content_hash: 44d5c3a5769d41f8
 ---

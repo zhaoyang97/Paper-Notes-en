@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] External Knowledge Injection for CLIP-Based Class-Incremental Learning
 description: >-
-  [ICCV 2025][Class-Incremental Learning] This paper proposes Engine (ExterNal knowledGe INjEction), a framework that employs dual-branch injection tuning (visual branch via data augmentation; text branch via GPT-4-generated discriminative descriptions) and post-tuning knowledge injection at inference (pairwise discriminative feature re-ranking), achieving 3–10% improvements over all CLIP-based class-incremental learning methods across 9 benchmark datasets without storing any historical samples.
+  [ICCV 2025][Information Retrieval & RAG][Class-Incremental Learning] This paper proposes Engine (ExterNal knowledGe INjEction), a framework that employs dual-branch injection tuning (visual branch via data augmentation…
 tags:
-  - ICCV 2025
-  - Class-Incremental Learning
-  - CLIP
-  - External Knowledge Injection
-  - GPT-4
-  - Vision-Language Models
+  - "ICCV 2025"
+  - "Information Retrieval & RAG"
+  - "Class-Incremental Learning"
+  - "CLIP"
+  - "External Knowledge Injection"
+  - "GPT-4"
+  - "Vision-Language Models"
 date: 2026-05-08
 content_hash: eef6274fae6872ff
 ---

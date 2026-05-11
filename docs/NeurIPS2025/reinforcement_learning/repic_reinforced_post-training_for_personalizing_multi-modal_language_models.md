@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] RePIC: Reinforced Post-Training for Personalizing Multi-Modal Language Models
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Multimodal Large Language Models] This paper proposes RePIC, the first reinforcement learning-based post-training framework for multimodal large language models targeting personalized image captioning, which significantly outperforms SFT-based methods in multi-concept scenarios.
+  [NeurIPS 2025][Reinforcement Learning][Multimodal Large Language Models] This paper proposes RePIC, the first reinforcement learning-based post-training framework for multimodal large language models targeting personaliz…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Multimodal Large Language Models
-  - Personalization
-  - Image Captioning
-  - Post-Training
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Multimodal Large Language Models"
+  - "Personalization"
+  - "Image Captioning"
+  - "Post-Training"
 date: 2026-05-08
 content_hash: 9cc2319ef7cda840
 ---

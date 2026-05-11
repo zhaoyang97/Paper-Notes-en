@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Omni-Mol: Multitask Molecular Model for Any-to-Any Modalities
 description: >-
-  [NeurIPS2025][Multimodal VLM][Molecular large language model] This paper proposes Omni-Mol, a unified molecular understanding and generation framework built upon a multimodal LLM. Through a 1.42M-sample instruction tuning dataset, Gradient Adaptive LoRA (GAL), and a Mixture-of-GAL-Experts (MoGE) architecture, Omni-Mol is the first single model to jointly learn 16 molecular tasks (Mol2Mol / Mol2Text / Mol2Num / Text2Mol), achieving SOTA on 13 tasks with only 2.2B parameters.
+  [NeurIPS2025][Multimodal VLM][Molecular large language model] This paper proposes Omni-Mol, a unified molecular understanding and generation framework built upon a multimodal LLM. Through a 1.42M-sample instruction tunin…
 tags:
-  - NeurIPS2025
-  - Multimodal VLM
-  - Molecular large language model
-  - multitask learning
-  - mixture of experts
-  - adaptive LoRA
-  - unified instruction tuning
+  - "NeurIPS2025"
+  - "Multimodal VLM"
+  - "Molecular large language model"
+  - "multitask learning"
+  - "mixture of experts"
+  - "adaptive LoRA"
+  - "unified instruction tuning"
 date: 2026-05-08
 content_hash: bf012bb35c1d9322
 ---

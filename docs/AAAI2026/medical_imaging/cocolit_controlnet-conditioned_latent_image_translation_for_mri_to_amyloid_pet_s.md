@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CoCoLIT: ControlNet-Conditioned Latent Image Translation for MRI to Amyloid PET Synthesis
 description: >-
-  [AAAI 2026][Medical Imaging][MRI-to-PET synthesis] This paper proposes CoCoLIT, a ControlNet-conditioned latent diffusion framework for synthesizing amyloid PET images from structural MRI. Through a Weighted Image Space Loss (WISL) and Latent Averaging Stabilization (LAS), CoCoLIT substantially outperforms existing methods.
+  [AAAI 2026][Medical Imaging][MRI-to-PET synthesis] This paper proposes CoCoLIT, a ControlNet-conditioned latent diffusion framework for synthesizing amyloid PET images from structural MRI. Through a Weighted Image Space…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - MRI-to-PET synthesis
-  - latent diffusion model
-  - ControlNet
-  - Alzheimer's disease
-  - amyloid
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "MRI-to-PET synthesis"
+  - "latent diffusion model"
+  - "ControlNet"
+  - "Alzheimer's disease"
+  - "amyloid"
 date: 2026-05-08
 content_hash: 04e5733cbd58cc9a
 ---

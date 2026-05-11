@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DisTime: Distribution-based Time Representation for Video Large Language Models
 description: >-
-  [ICCV 2025][Video Understanding][Video-LLM] This paper proposes DisTime, a framework that enables continuous time representation in Video-LLMs via a single learnable time token and a distribution-based time decoder. Complemented by the large-scale automatically annotated dataset InternVid-TG (1.25M events), DisTime achieves state-of-the-art performance on three categories of time-sensitive tasks: moment retrieval, dense video captioning, and grounded VQA.
+  [ICCV 2025][Video Understanding][Video-LLM] This paper proposes DisTime, a framework that enables continuous time representation in Video-LLMs via a single learnable time token and a distribution-based time decoder. Comp…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - Video-LLM
-  - time representation
-  - distribution-based decoding
-  - temporal grounding
-  - time-sensitive datasets
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "Video-LLM"
+  - "time representation"
+  - "distribution-based decoding"
+  - "temporal grounding"
+  - "time-sensitive datasets"
 date: 2026-05-08
 content_hash: 582d2f7db396732c
 ---

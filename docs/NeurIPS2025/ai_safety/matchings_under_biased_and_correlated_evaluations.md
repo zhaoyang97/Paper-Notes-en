@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Matchings Under Biased and Correlated Evaluations
 description: >-
-  [NeurIPS 2025][AI Safety][stable matching] This paper introduces a correlation parameter $\gamma$ (the degree of alignment between institutional evaluations) into a two-institution stable matching model, and analyzes how bias $\beta$ and correlation $\gamma$ jointly affect the representation ratio of disadvantaged groups. It proves that even a slight loss of correlation can cause a sharp drop in representation, and characterizes the Pareto frontier of fairness interventions.
+  [NeurIPS 2025][AI Safety][stable matching] This paper introduces a correlation parameter $\gamma$ (the degree of alignment between institutional evaluations) into a two-institution stable matching model…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - stable matching
-  - bias
-  - correlation
-  - fairness
-  - representation ratio
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "stable matching"
+  - "bias"
+  - "correlation"
+  - "fairness"
+  - "representation ratio"
 date: 2026-05-08
 content_hash: 8eeb51154f777976
 ---

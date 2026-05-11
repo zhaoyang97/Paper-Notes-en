@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] cryoSENSE: Compressive Sensing Enables High-throughput Microscopy with Sparse and Generative Priors on the Protein Cryo-EM Image Manifold
 description: >-
-  [CVPR 2026][Medical Imaging][Cryo-EM] This paper proposes cryoSENSE, the first computational framework for compressed cryo-EM imaging, demonstrating that protein cryo-EM images can be faithfully reconstructed from undersampled measurements under both sparse priors (DCT/Wavelet/TV) and generative priors (diffusion models), achieving up to 2.5× throughput gain while preserving 3D reconstruction resolution.
+  [CVPR 2026][Medical Imaging][Cryo-EM] This paper proposes cryoSENSE, the first computational framework for compressed cryo-EM imaging…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Cryo-EM
-  - Compressive Sensing
-  - Diffusion Models
-  - Sparse Priors
-  - High-throughput Microscopy
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Cryo-EM"
+  - "Compressive Sensing"
+  - "Diffusion Models"
+  - "Sparse Priors"
+  - "High-throughput Microscopy"
 date: 2026-05-08
 content_hash: 0861e38a4b62e0be
 ---

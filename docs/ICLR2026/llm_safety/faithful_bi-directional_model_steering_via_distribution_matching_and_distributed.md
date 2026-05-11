@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Faithful Bi-Directional Model Steering via Distribution Matching and Distributed Interchange Interventions
 description: >-
-  [ICLR 2026][LLM Safety][model steering] This paper proposes Concept DAS (CDAS), which achieves faithful bi-directional model steering through a Jensen-Shannon divergence distribution matching objective and distributed interchange interventions (DII). The method enables systematic behavioral control in safety-critical scenarios—bypassing refusal behaviors and eliminating backdoors—while preserving general model capabilities.
+  [ICLR 2026][LLM Safety][model steering] This paper proposes Concept DAS (CDAS), which achieves faithful bi-directional model steering through a Jensen-Shannon divergence distribution matching objective and distributed in…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - model steering
-  - distribution matching
-  - interchange intervention
-  - mechanistic interpretability
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "model steering"
+  - "distribution matching"
+  - "interchange intervention"
+  - "mechanistic interpretability"
 date: 2026-05-08
 content_hash: ebefdeeea2b1cc4b
 ---

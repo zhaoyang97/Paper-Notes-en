@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Enhancing Demand-Oriented Regionalization with Agentic AI and Local Heterogeneous Data for Adaptation Planning
 description: >-
-  [NeurIPS 2025 (UrbanAI Workshop)][LLM Agent][Agentic AI] This paper proposes a planning support system based on Agentic AI, in which an LLM agent guides non-technical users through data-driven demand-oriented regionalization. The core algorithm is RepSC-SOM (spatially constrained self-organizing map with representative initialization), supporting iterative human-AI collaborative refinement of regional delineations for disaster risk management and climate adaptation planning.
+  [NeurIPS 2025 (UrbanAI Workshop)][LLM Agent][Agentic AI] This paper proposes a planning support system based on Agentic AI, in which an LLM agent guides non-technical users through data-driven demand-oriented regionaliza…
 tags:
-  - NeurIPS 2025 (UrbanAI Workshop)
-  - LLM Agent
-  - Agentic AI
-  - regionalization
-  - urban planning
-  - SOM
-  - human-AI collaboration
-  - disaster adaptation planning
+  - "NeurIPS 2025 (UrbanAI Workshop)"
+  - "LLM Agent"
+  - "Agentic AI"
+  - "regionalization"
+  - "urban planning"
+  - "SOM"
+  - "human-AI collaboration"
+  - "disaster adaptation planning"
 date: 2026-05-08
 content_hash: 816991b3896f0ad5
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AnchorSeg: Language Grounded Query Banks for Reasoning Segmentation
 description: >-
-  [ACL 2026][Segmentation][Reasoning Segmentation] This paper proposes AnchorSeg, which reformulates reasoning segmentation as a structured conditional generation process based on language-grounded query banks. By explicitly decoupling spatial localization and semantic reasoning through anchor queries, paired with a Token-Mask Cyclic Consistency training objective, it achieves SOTA on ReasonSeg (67.7% gIoU, 68.1% cIoU).
+  [ACL 2026][Segmentation][Reasoning Segmentation] This paper proposes AnchorSeg, which reformulates reasoning segmentation as a structured conditional generation process based on language-grounded query banks. By explicit…
 tags:
-  - ACL 2026
-  - Segmentation
-  - Reasoning Segmentation
-  - Language-Grounded Query Banks
-  - Spatial Prior
-  - Token-Mask Consistency
-  - SAM
+  - "ACL 2026"
+  - "Segmentation"
+  - "Reasoning Segmentation"
+  - "Language-Grounded Query Banks"
+  - "Spatial Prior"
+  - "Token-Mask Consistency"
+  - "SAM"
 date: 2025-04-17
 content_hash: b8da03f9e2f8e920
 ---

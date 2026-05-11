@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Into the Gray Zone: Domain Contexts Can Blur LLM Safety Boundaries
 description: >-
-  [ACL 2026][LLM Alignment][Jailbreak Attack] This paper demonstrates that domain-specific contexts (e.g., chemistry papers) selectively relax LLM safeguards on related harmful knowledge (vertical unlocking), while security research contexts trigger broad relaxation across all harmful categories (general unlocking). Based on these findings, the authors propose the Jargon attack framework, achieving over 93% attack success rate (ASR) on seven frontier models including GPT-5.2 and Claude-4.5.
+  [ACL 2026][LLM Alignment][Jailbreak Attack] This paper demonstrates that domain-specific contexts (e.g., chemistry papers) selectively relax LLM safeguards on related harmful knowledge (vertical unlocking)…
 tags:
-  - ACL 2026
-  - LLM Alignment
-  - Jailbreak Attack
-  - Safety Boundaries
-  - Domain Context
-  - Gray Zone
-  - Multi-turn Adversarial
+  - "ACL 2026"
+  - "LLM Alignment"
+  - "Jailbreak Attack"
+  - "Safety Boundaries"
+  - "Domain Context"
+  - "Gray Zone"
+  - "Multi-turn Adversarial"
 date: 2026-05-08
 content_hash: 2f1d8eede08d6eee
 ---

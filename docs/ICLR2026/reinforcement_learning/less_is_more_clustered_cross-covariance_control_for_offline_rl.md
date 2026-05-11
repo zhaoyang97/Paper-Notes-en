@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Less is More: Clustered Cross-Covariance Control for Offline RL
 description: >-
-  [ICLR 2026][Reinforcement Learning][Offline reinforcement learning] This paper identifies that the standard squared-error TD objective introduces harmful cross-covariance in offline RL, and proposes C⁴ (Clustered Cross-Covariance Control for TD), which mitigates this effect via partitioned buffer sampling and an explicit gradient-based corrective penalty, achieving up to 30% return improvement in small-dataset and OOD-dominated settings.
+  [ICLR 2026][Reinforcement Learning][Offline reinforcement learning] This paper identifies that the standard squared-error TD objective introduces harmful cross-covariance in offline RL…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Offline reinforcement learning
-  - distributional shift
-  - TD cross-covariance
-  - buffer partitioning
-  - conservatism control
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Offline reinforcement learning"
+  - "distributional shift"
+  - "TD cross-covariance"
+  - "buffer partitioning"
+  - "conservatism control"
 date: 2026-05-08
 content_hash: b89ad46ad1e2fef0
 ---

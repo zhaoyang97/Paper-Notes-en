@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] ConFu: Contemplate the Future for Better Speculative Sampling
 description: >-
-  [ICLR 2026][Model Compression][speculative decoding] ConFu introduces contemplate tokens into the draft model of speculative decoding, enabling it to anticipate the target model's future generation direction. Combined with a MoE dynamic mechanism and anchor-point sampling training, ConFu achieves 8–11% improvements in acceptance rate and generation speed over EAGLE-3.
+  [ICLR 2026][Model Compression][speculative decoding] ConFu introduces contemplate tokens into the draft model of speculative decoding, enabling it to anticipate the target model's future generation direction. Combined wi…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - speculative decoding
-  - contemplate tokens
-  - future prediction
-  - MoE
-  - draft model
-  - EAGLE
+  - "ICLR 2026"
+  - "Model Compression"
+  - "speculative decoding"
+  - "contemplate tokens"
+  - "future prediction"
+  - "MoE"
+  - "draft model"
+  - "EAGLE"
 date: 2026-05-08
 content_hash: 57cd160166c7f2e4
 ---

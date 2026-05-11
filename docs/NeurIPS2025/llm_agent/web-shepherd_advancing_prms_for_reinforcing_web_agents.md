@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Web-Shepherd: Advancing PRMs for Reinforcing Web Agents
 description: >-
-  [NeurIPS 2025][LLM Agent][process reward model] This paper proposes Web-Shepherd, the first process reward model (PRM) specifically designed for web navigation. By decomposing task objectives into evaluable sub-goals via checklists, 3B/8B models achieve trajectory accuracy far surpassing GPT-4o (85% vs. 10%) at only 1/10 of the cost, making reinforcement learning and inference-time search for web agents practically feasible.
+  [NeurIPS 2025][LLM Agent][process reward model] This paper proposes Web-Shepherd, the first process reward model (PRM) specifically designed for web navigation. By decomposing task objectives into evaluable sub-goals via…
 tags:
-  - NeurIPS 2025
-  - LLM Agent
-  - process reward model
-  - Web Agent
-  - Checklist-based Evaluation
-  - Step-level Reward
-  - web navigation
+  - "NeurIPS 2025"
+  - "LLM Agent"
+  - "process reward model"
+  - "Web Agent"
+  - "Checklist-based Evaluation"
+  - "Step-level Reward"
+  - "web navigation"
 date: 2026-05-08
 content_hash: 47d488a39f4fffe1
 ---

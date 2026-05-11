@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Cubic Discrete Diffusion: Discrete Visual Generation on High-Dimensional Representation Tokens
 description: >-
-  [CVPR 2026][Multimodal VLM][discrete diffusion model] This paper proposes CubiD, the first model to perform discrete diffusion generation over high-dimensional representation tokens (768-dim). By conducting fine-grained mask prediction over an $h \times w \times d$ cubic tensor, CubiD achieves high-quality image generation while preserving visual understanding capability.
+  [CVPR 2026][Multimodal VLM][discrete diffusion model] This paper proposes CubiD, the first model to perform discrete diffusion generation over high-dimensional representation tokens (768-dim). By conducting fine-grained…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - discrete diffusion model
-  - high-dimensional representation token
-  - visual generation
-  - dimension-wise quantization
-  - unified multimodal
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "discrete diffusion model"
+  - "high-dimensional representation token"
+  - "visual generation"
+  - "dimension-wise quantization"
+  - "unified multimodal"
 date: 2026-05-08
 content_hash: 54f111f5b9b392fc
 ---

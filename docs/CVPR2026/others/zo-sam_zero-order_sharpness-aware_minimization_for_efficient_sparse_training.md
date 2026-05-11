@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] ZO-SAM: Zero-Order Sharpness-Aware Minimization for Efficient Sparse Training
 description: >-
-  [CVPR 2026][sparse training] This paper proposes ZO-SAM, which replaces the backpropagation in SAM's perturbation step with zeroth-order gradient estimation, reducing SAM's computational overhead from two backward passes to one. This makes SAM practical for sparse training for the first time, achieving consistent improvements of 0.38%–2.54% over all mainstream sparse training methods on CIFAR-10/100 and ImageNet-1K.
+  [CVPR 2026][sparse training] This paper proposes ZO-SAM, which replaces the backpropagation in SAM's perturbation step with zeroth-order gradient estimation…
 tags:
-  - CVPR 2026
-  - sparse training
-  - SAM
-  - zeroth-order optimization
-  - gradient variance
-  - flat minima
+  - "CVPR 2026"
+  - "sparse training"
+  - "SAM"
+  - "zeroth-order optimization"
+  - "gradient variance"
+  - "flat minima"
 date: 2026-05-08
 content_hash: 8c2224d0db423094
 ---

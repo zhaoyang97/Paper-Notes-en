@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] How Reliable is Language Model Micro-Benchmarking?
 description: >-
-  [ICLR2026][LLM Evaluation][micro-benchmarking] This paper proposes Minimum Detectable Ability Difference (MDAD) as a meta-evaluation metric, systematically demonstrating that micro-benchmarks at extremely small scales cannot reliably distinguish model pairs with small performance gaps, and that random sampling becomes competitive with carefully designed micro-benchmark methods once the sample size reaches ~250.
+  [ICLR2026][LLM Evaluation][micro-benchmarking] This paper proposes Minimum Detectable Ability Difference (MDAD) as a meta-evaluation metric…
 tags:
-  - ICLR2026
-  - LLM Evaluation
-  - micro-benchmarking
-  - evaluation reliability
-  - MDAD
-  - pairwise ranking
-  - random sampling
-  - MMLU-Pro
-  - BIG-bench Hard
+  - "ICLR2026"
+  - "LLM Evaluation"
+  - "micro-benchmarking"
+  - "evaluation reliability"
+  - "MDAD"
+  - "pairwise ranking"
+  - "random sampling"
+  - "MMLU-Pro"
+  - "BIG-bench Hard"
 date: 2026-05-08
 content_hash: 5e32720a979f6c5a
 ---

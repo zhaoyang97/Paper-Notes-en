@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Taming Preference Mode Collapse via Directional Decoupling Alignment in Diffusion Reinforcement Learning
 description: >-
-  [CVPR 2026][Image Generation][preference mode collapse] This paper proposes D2-Align, a framework that learns a directional correction vector in the reward model's embedding space to debias reward signals, addressing preference mode collapse (PMC) in RLHF-aligned diffusion models — a phenomenon where over-optimization of rewards leads to severe degradation in generation diversity. DivGenBench is also introduced as a benchmark for quantitative diversity evaluation.
+  [CVPR 2026][Image Generation][preference mode collapse] This paper proposes D2-Align, a framework that learns a directional correction vector in the reward model's embedding space to debias reward signals…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - preference mode collapse
-  - RLHF alignment
-  - diffusion models
-  - reward correction
-  - generation diversity
+  - "CVPR 2026"
+  - "Image Generation"
+  - "preference mode collapse"
+  - "RLHF alignment"
+  - "diffusion models"
+  - "reward correction"
+  - "generation diversity"
 date: 2026-05-08
 content_hash: 6208a32e276f35ca
 ---

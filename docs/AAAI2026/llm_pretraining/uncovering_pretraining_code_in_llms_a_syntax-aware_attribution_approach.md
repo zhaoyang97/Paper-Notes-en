@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Uncovering Pretraining Code in LLMs: A Syntax-Aware Attribution Approach
 description: >-
-  [AAAI 2026][LLM Pretraining][Membership Inference Attack] This paper proposes SynPrune — the first syntax-aware membership inference attack (MIA) method for code. By identifying 47 Python syntactic conventions and pruning syntactically determined tokens (retaining only tokens that reflect authorial style) when computing MIA scores, SynPrune achieves an average AUROC improvement of 15.4%, enabling effective detection of pretraining data attribution in code LLMs.
+  [AAAI 2026][LLM Pretraining][Membership Inference Attack] This paper proposes SynPrune — the first syntax-aware membership inference attack (MIA) method for code. By identifying 47 Python syntactic conventions and prunin…
 tags:
-  - AAAI 2026
-  - LLM Pretraining
-  - Membership Inference Attack
-  - Code Copyright
-  - Syntax-Aware
-  - Pretraining Data Detection
-  - Python
+  - "AAAI 2026"
+  - "LLM Pretraining"
+  - "Membership Inference Attack"
+  - "Code Copyright"
+  - "Syntax-Aware"
+  - "Pretraining Data Detection"
+  - "Python"
 date: 2026-05-08
 content_hash: bf611405c5af38c1
 ---

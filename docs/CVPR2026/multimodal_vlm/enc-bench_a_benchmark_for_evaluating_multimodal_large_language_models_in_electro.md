@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ENC-Bench: A Benchmark for Evaluating MLLMs in Electronic Navigational Chart Understanding
 description: >-
-  [CVPR 2026][Multimodal VLM][chart understanding] This paper introduces ENC-Bench, the first professional-grade benchmark for Electronic Navigational Chart (ENC) understanding, comprising 20,490 samples organized under a three-level hierarchical evaluation framework (Perception → Spatial Reasoning → Maritime Decision-Making). Systematic evaluation of 10 MLLMs reveals that the best-performing model achieves only 47.88% accuracy, exposing a critical capability gap of general-purpose models in safety-critical specialized domains.
+  [CVPR 2026][Multimodal VLM][chart understanding] This paper introduces ENC-Bench, the first professional-grade benchmark for Electronic Navigational Chart (ENC) understanding, comprising 20…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - chart understanding
-  - multimodal benchmark
-  - spatial reasoning
-  - safety-critical AI
-  - symbol grounding
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "chart understanding"
+  - "multimodal benchmark"
+  - "spatial reasoning"
+  - "safety-critical AI"
+  - "symbol grounding"
 date: 2026-05-08
 content_hash: 1e05176703329485
 ---

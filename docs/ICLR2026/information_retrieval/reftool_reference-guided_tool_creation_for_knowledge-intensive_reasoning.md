@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] RefTool: Reference-Guided Tool Creation for Knowledge-Intensive Reasoning
 description: >-
-  [ICLR 2026][tool creation] This paper proposes RefTool, a framework that automatically creates executable Python tools from external reference materials (e.g., textbooks, knowledge snippets), addressing the failure of existing tool creation methods that rely on LLMs' intrinsic knowledge in specialized domains. RefTool achieves an average improvement of 12.3% over prior methods on causal reasoning, physics, and chemistry tasks.
+  [ICLR 2026][Information Retrieval & RAG][tool creation] This paper proposes RefTool, a framework that automatically creates executable Python tools from external reference materials (e.g., textbooks, knowledge snippets)…
 tags:
-  - ICLR 2026
-  - tool creation
-  - reference-guided
-  - knowledge-intensive reasoning
-  - executable tools
-  - hierarchical toolbox
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "tool creation"
+  - "reference-guided"
+  - "knowledge-intensive reasoning"
+  - "executable tools"
+  - "hierarchical toolbox"
 date: 2026-05-08
 content_hash: e556f702c2425ee2
 ---

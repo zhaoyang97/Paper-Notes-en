@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Think before Recommendation: Autonomous Reasoning-enhanced Recommender
 description: >-
-  [NeurIPS 2025][Recommender Systems][LLM] This paper proposes RecZero (a pure RL paradigm) and RecOne (a hybrid SFT+RL paradigm), abandoning conventional teacher-student distillation. Both approaches leverage GRPO-based reinforcement learning to train a single LLM to autonomously develop reasoning capabilities for rating prediction. A structured "Think-before-Recommendation" template guides step-by-step reasoning (user analysis → item analysis → matching → rating), achieving significant improvements over existing baselines across four datasets.
+  [NeurIPS 2025][Recommender Systems][LLM] This paper proposes RecZero (a pure RL paradigm) and RecOne (a hybrid SFT+RL paradigm), abandoning conventional teacher-student distillation. Both approaches leverage GRPO-based r…
 tags:
-  - NeurIPS 2025
-  - Recommender Systems
-  - LLM
-  - Recommender System
-  - Reinforcement Learning
-  - GRPO
-  - Rating Prediction
-  - Chain-of-Thought
+  - "NeurIPS 2025"
+  - "Recommender Systems"
+  - "LLM"
+  - "Recommender System"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "Rating Prediction"
+  - "Chain-of-Thought"
 date: 2026-05-08
 content_hash: cf9657eae0cc85a8
 ---

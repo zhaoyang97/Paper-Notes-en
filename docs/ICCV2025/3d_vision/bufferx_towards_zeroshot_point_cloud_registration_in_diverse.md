@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BUFFER-X: Towards Zero-Shot Point Cloud Registration in Diverse Scenes
 description: >-
-  [ICCV 2025 (Highlight)][3D Vision][point cloud registration] BUFFER-X is a registration pipeline that determines voxel size and search radii via geometry-adaptive bootstrapping, replaces learned keypoint detectors with FPS, and applies patch-level coordinate normalization. Without any manual parameter tuning, it achieves zero-shot point cloud registration across 11 cross-domain datasets, attaining the best average-rank success rate across indoor/outdoor, multi-sensor, and multi-scene settings.
+  [ICCV 2025 (Highlight)][3D Vision][point cloud registration] BUFFER-X is a registration pipeline that determines voxel size and search radii via geometry-adaptive bootstrapping…
 tags:
-  - ICCV 2025 (Highlight)
-  - 3D Vision
-  - point cloud registration
-  - zero-shot generalization
-  - multi-scale descriptors
-  - adaptive parameters
-  - cross-domain robustness
+  - "ICCV 2025 (Highlight)"
+  - "3D Vision"
+  - "point cloud registration"
+  - "zero-shot generalization"
+  - "multi-scale descriptors"
+  - "adaptive parameters"
+  - "cross-domain robustness"
 date: 2026-05-08
 content_hash: f15ce4000ed59656
 ---

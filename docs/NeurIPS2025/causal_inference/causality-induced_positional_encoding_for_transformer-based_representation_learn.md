@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Causality-Induced Positional Encoding for Transformer-Based Representation Learning of Non-Sequential Features
 description: >-
-  [NeurIPS 2025][Causal Inference][positional encoding] CAPE learns the causal DAG structure among features from tabular data, embeds it into hyperbolic space to generate causality-aware rotary positional encodings (RoPE), enabling Transformers to process non-sequential yet causally structured feature data, with significant performance gains on downstream multi-omics tasks.
+  [NeurIPS 2025][Causal Inference][positional encoding] CAPE learns the causal DAG structure among features from tabular data, embeds it into hyperbolic space to generate causality-aware rotary positional encodings (RoPE)…
 tags:
-  - NeurIPS 2025
-  - Causal Inference
-  - positional encoding
-  - causal structure learning
-  - hyperbolic embedding
-  - rotary position encoding
-  - multi-omics
+  - "NeurIPS 2025"
+  - "Causal Inference"
+  - "positional encoding"
+  - "causal structure learning"
+  - "hyperbolic embedding"
+  - "rotary position encoding"
+  - "multi-omics"
 date: 2026-05-08
 content_hash: daad3f6930a6ae64
 ---

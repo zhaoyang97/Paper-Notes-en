@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] DINO-Foresight: Looking into the Future with DINO
 description: >-
-  [NeurIPS 2025][Autonomous Driving][Future Prediction] This paper proposes DINO-Foresight, which forecasts future-frame feature evolution within the semantic feature space of a Vision Foundation Model (VFM). A self-supervised Masked Feature Transformer predicts PCA-compressed representations of multi-layer DINOv2 features. Paired with plug-and-play task-specific heads, a single model simultaneously handles semantic segmentation, instance segmentation, depth estimation, and surface normal prediction, substantially outperforming the VISTA world model while achieving 100× faster inference.
+  [NeurIPS 2025][Autonomous Driving][Future Prediction] This paper proposes DINO-Foresight, which forecasts future-frame feature evolution within the semantic feature space of a Vision Foundation Model (VFM). A self-superv…
 tags:
-  - NeurIPS 2025
-  - Autonomous Driving
-  - Future Prediction
-  - VFM Feature Forecasting
-  - DINOv2
-  - Multi-Task Dense Prediction
-  - Masked Feature Transformer
-  - Self-Supervised Learning
+  - "NeurIPS 2025"
+  - "Autonomous Driving"
+  - "Future Prediction"
+  - "VFM Feature Forecasting"
+  - "DINOv2"
+  - "Multi-Task Dense Prediction"
+  - "Masked Feature Transformer"
+  - "Self-Supervised Learning"
 date: 2026-05-08
 content_hash: 02fd99afbb687060
 ---

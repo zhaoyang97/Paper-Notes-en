@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DICE: Staleness-Centric Optimizations for Parallel Diffusion MoE Inference
 description: >-
-  [ICCV 2025][Image Generation][MoE] DICE is a framework targeting the *staleness* problem in parallel inference of MoE-based diffusion models. Through three levels of optimization — step-level interweaved parallelism, layer-level selective synchronization, and token-level conditional communication — DICE achieves a 1.26× speedup on DiT-MoE with negligible quality degradation.
+  [ICCV 2025][Image Generation][MoE] DICE is a framework targeting the *staleness* problem in parallel inference of MoE-based diffusion models. Through three levels of optimization — step-level interweaved parallelism…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - MoE
-  - Diffusion Models
-  - Expert Parallelism
-  - Staleness Optimization
-  - Communication Optimization
+  - "ICCV 2025"
+  - "Image Generation"
+  - "MoE"
+  - "Diffusion Models"
+  - "Expert Parallelism"
+  - "Staleness Optimization"
+  - "Communication Optimization"
 date: 2026-05-08
 content_hash: 35c318a40cf26f95
 ---

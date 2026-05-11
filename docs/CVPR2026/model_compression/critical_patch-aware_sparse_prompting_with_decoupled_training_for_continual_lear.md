@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Critical Patch-Aware Sparse Prompting with Decoupled Training for Continual Learning on the Edge
 description: >-
-  [CVPR 2026][Model Compression][Continual Learning] This paper proposes CPS-Prompt, a framework that combines task-aware critical patch sampling (CPS) and decoupled prompt-classifier training (DPCT) to achieve approximately 1.6× reduction in training-time memory and computation for prompt-based continual learning on edge devices, with only ~2% accuracy degradation.
+  [CVPR 2026][Model Compression][Continual Learning] This paper proposes CPS-Prompt, a framework that combines task-aware critical patch sampling (CPS) and decoupled prompt-classifier training (DPCT) to achieve approximate…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - Continual Learning
-  - Edge Devices
-  - Prompt-based CL
-  - Token Reduction
-  - Training Efficiency
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Continual Learning"
+  - "Edge Devices"
+  - "Prompt-based CL"
+  - "Token Reduction"
+  - "Training Efficiency"
 date: 2026-05-08
 content_hash: 23486ddfe60c6625
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UniPhys: Unified Planner and Controller with Diffusion for Flexible Physics-Based Character Control
 description: >-
-  [ICCV 2025][Image Restoration][Physics-based character control] This paper proposes UniPhys, a behavior cloning framework based on diffusion models that unifies motion planning and physics-based control within a single model. By adopting the Diffusion Forcing training paradigm to address compounding prediction errors, UniPhys enables flexible multi-task physics-based character motion generation, including text-driven control, velocity control, goal reaching, and dynamic obstacle avoidance.
+  [ICCV 2025][Image Restoration][Physics-based character control] This paper proposes UniPhys, a behavior cloning framework based on diffusion models that unifies motion planning and physics-based control within a single m…
 tags:
-  - ICCV 2025
-  - Image Restoration
-  - Physics-based character control
-  - diffusion model
-  - behavior cloning
-  - Diffusion Forcing
-  - text-driven control
+  - "ICCV 2025"
+  - "Image Restoration"
+  - "Physics-based character control"
+  - "diffusion model"
+  - "behavior cloning"
+  - "Diffusion Forcing"
+  - "text-driven control"
 date: 2026-05-08
 content_hash: e1f53ff2950b05ab
 ---

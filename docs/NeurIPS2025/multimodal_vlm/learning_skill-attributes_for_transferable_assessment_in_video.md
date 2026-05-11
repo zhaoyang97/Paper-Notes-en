@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Skill-Attributes for Transferable Assessment in Video
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Skill assessment] This paper proposes CrossTrainer, a method that discovers sport-agnostic skill attributes (e.g., balance, control, hand positioning) as intermediate representations to train a multimodal language model for generating actionable feedback and proficiency assessments from video. CrossTrainer achieves up to 60% relative improvement over the state of the art in zero-shot cross-sport transfer.
+  [NeurIPS 2025][Multimodal VLM][Skill assessment] This paper proposes CrossTrainer, a method that discovers sport-agnostic skill attributes (e.g., balance, control…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Skill assessment
-  - cross-sport transfer
-  - video understanding
-  - multimodal LLM
-  - actionable feedback
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Skill assessment"
+  - "cross-sport transfer"
+  - "video understanding"
+  - "multimodal LLM"
+  - "actionable feedback"
 date: 2026-05-08
 content_hash: e807fa2855353f75
 ---

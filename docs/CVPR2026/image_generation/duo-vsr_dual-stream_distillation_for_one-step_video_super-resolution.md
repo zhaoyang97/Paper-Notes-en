@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DUO-VSR: Dual-Stream Distillation for One-Step Video Super-Resolution
 description: >-
-  [CVPR 2026][Image Generation][Video Super-Resolution] The paper proposes DUO-VSR, a three-stage distillation framework that compresses multi-step video super-resolution models into a one-step generator through progressive guided distillation initialization, dual-stream distillation (joint optimization of DMD and RFS-GAN), and preference-guided refinement. It achieves approximately 50× acceleration while surpassing the visual quality of previous one-step VSR methods.
+  [CVPR 2026][Image Generation][Video Super-Resolution] The paper proposes DUO-VSR, a three-stage distillation framework that compresses multi-step video super-resolution models into a one-step generator through progressiv…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Video Super-Resolution
-  - Diffusion Distillation
-  - One-Step Generation
-  - GAN
-  - Distribution Matching Distillation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Video Super-Resolution"
+  - "Diffusion Distillation"
+  - "One-Step Generation"
+  - "GAN"
+  - "Distribution Matching Distillation"
 date: 2026-05-08
 content_hash: 5148d3f12dd4bcd8
 ---

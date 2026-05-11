@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Finch: Benchmarking Finance & Accounting across Spreadsheet-Centric Enterprise Workflows
 description: >-
-  [ACL 2026][LLM Evaluation][Finance & Accounting] This paper introduces Finch (FinWorkBench), a finance and accounting workflow benchmark constructed from real enterprise environments (e.g., the Enron dataset), comprising 172 composite workflows and 1,710 spreadsheets (27 million cells). Even the strongest model, GPT 5.1 Pro, spending an average of 16.8 minutes per workflow, passes only 38.4% of the workflows, revealing critical gaps in frontier AI agents under realistic enterprise conditions.
+  [ACL 2026][LLM Evaluation][Finance & Accounting] This paper introduces Finch (FinWorkBench), a finance and accounting workflow benchmark constructed from real enterprise environments (e.g., the Enron dataset)…
 tags:
-  - ACL 2026
-  - LLM Evaluation
+  - "ACL 2026"
+  - "LLM Evaluation"
   - "Finance & Accounting"
-  - Spreadsheets
-  - Enterprise Workflows
-  - Agent Evaluation
-  - Long-Horizon Tasks
+  - "Spreadsheets"
+  - "Enterprise Workflows"
+  - "Agent Evaluation"
+  - "Long-Horizon Tasks"
 date: 2026-05-08
 content_hash: a1b84d70a300d251
 ---

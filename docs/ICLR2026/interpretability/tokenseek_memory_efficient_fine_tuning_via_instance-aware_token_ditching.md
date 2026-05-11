@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] TokenSeek: Memory Efficient Fine Tuning via Instance-Aware Token Ditching
 description: >-
-  [ICLR 2026][Memory-efficient fine-tuning] This paper proposes TokenSeek, a general-purpose memory optimization plugin for Transformer fine-tuning. By combining contextual attention information with gradient information for instance-level token importance estimation, TokenSeek retains only the top 10% high-value tokens for gradient updates, achieving up to 65.7% memory savings while matching or surpassing full-token fine-tuning performance.
+  [ICLR 2026][Interpretability][Memory-efficient fine-tuning] This paper proposes TokenSeek, a general-purpose memory optimization plugin for Transformer fine-tuning. By combining contextual attention information with grad…
 tags:
-  - ICLR 2026
-  - Memory-efficient fine-tuning
-  - Token pruning
-  - Instance-aware
-  - Activation memory optimization
-  - PEFT compatibility
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Memory-efficient fine-tuning"
+  - "Token pruning"
+  - "Instance-aware"
+  - "Activation memory optimization"
+  - "PEFT compatibility"
 date: 2026-05-08
 content_hash: 591c30c5725cf106
 ---

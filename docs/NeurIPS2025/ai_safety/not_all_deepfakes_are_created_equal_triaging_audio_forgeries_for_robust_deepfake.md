@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Not All Deepfakes Are Created Equal: Triaging Audio Forgeries for Robust Deepfake Singer Identification
 description: >-
-  [NeurIPS 2025 Workshop (Generative and Protective AI for Content Creation)][AI Safety][deepfake detection] This paper proposes a two-stage pipeline grounded in the premise that the most harmful deepfakes are those of the highest quality. A discriminator first filters out low-quality forgeries to reduce noise; a singer identification model trained exclusively on genuine recordings then performs voiceprint matching. The pipeline consistently outperforms baselines across multiple datasets.
+  [NeurIPS 2025 Workshop (Generative and Protective AI for Content Creation)][AI Safety][deepfake detection] This paper proposes a two-stage pipeline grounded in the premise that the most harmful deepfakes are those of the…
 tags:
-  - NeurIPS 2025 Workshop (Generative and Protective AI for Content Creation)
-  - AI Safety
-  - deepfake detection
-  - singer identification
-  - voice forgery
-  - two-stage pipeline
-  - audio forensics
+  - "NeurIPS 2025 Workshop (Generative and Protective AI for Content Creation)"
+  - "AI Safety"
+  - "deepfake detection"
+  - "singer identification"
+  - "voice forgery"
+  - "two-stage pipeline"
+  - "audio forensics"
 date: 2026-05-08
 content_hash: 3120c5ee7bd1e2de
 ---

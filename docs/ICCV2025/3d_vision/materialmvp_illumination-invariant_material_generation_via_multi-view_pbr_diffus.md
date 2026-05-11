@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MaterialMVP: Illumination-Invariant Material Generation via Multi-view PBR Diffusion
 description: >-
-  [ICCV 2025][3D Vision][PBR texture] MaterialMVP is an end-to-end multi-view PBR texture generation model that decouples illumination via consistency-regularized training and employs a dual-channel material generation framework (MCAA + Learnable Material Embeddings) to align albedo and metallic-roughness maps, enabling single-pass generation of high-quality, illumination-invariant, multi-view-consistent PBR materials from a 3D mesh and an image prompt.
+  [ICCV 2025][3D Vision][PBR texture] MaterialMVP is an end-to-end multi-view PBR texture generation model that decouples illumination via consistency-regularized training and employs a dual-channel material generation fra…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - PBR texture
-  - multi-view diffusion
-  - illumination invariance
-  - material generation
-  - dual-channel
+  - "ICCV 2025"
+  - "3D Vision"
+  - "PBR texture"
+  - "multi-view diffusion"
+  - "illumination invariance"
+  - "material generation"
+  - "dual-channel"
 date: 2026-05-08
 content_hash: 1c3e07c5d8b15673
 ---

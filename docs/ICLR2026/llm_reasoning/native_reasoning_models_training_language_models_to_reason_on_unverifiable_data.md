@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Native Reasoning Models: Training Language Models to Reason on Unverifiable Data
 description: >-
-  [ICLR2026][LLM Reasoning][Reasoning training] This paper proposes NRT (Native Reasoning Training), a framework that treats reasoning chains as latent variables and uses the model's own predictive confidence over reference answers as an intrinsic reward signal to train LLM reasoning—without external verifiers or expert reasoning demonstrations. On Llama-3.1-8B, NRT achieves an average improvement of 10.2 points across 9 benchmarks (46.0→56.2), surpassing the verifier-dependent RLPR by +5.4 points.
+  [ICLR2026][LLM Reasoning][Reasoning training] This paper proposes NRT (Native Reasoning Training), a framework that treats reasoning chains as latent variables and uses the model's own predictive confidence over referenc…
 tags:
-  - ICLR2026
-  - LLM Reasoning
-  - Reasoning training
-  - verifier-free RL
-  - latent variable reasoning
-  - GRPO
-  - reward design
+  - "ICLR2026"
+  - "LLM Reasoning"
+  - "Reasoning training"
+  - "verifier-free RL"
+  - "latent variable reasoning"
+  - "GRPO"
+  - "reward design"
 date: 2026-05-08
 content_hash: 16b8bab2c61ba4fc
 ---

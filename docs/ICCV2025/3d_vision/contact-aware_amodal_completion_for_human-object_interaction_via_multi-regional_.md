@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Contact-Aware Amodal Completion for Human-Object Interaction via Multi-Regional Inpainting
 description: >-
-  [ICCV 2025][3D Vision][Amodal completion] This paper proposes the first amodal completion framework tailored for human-object interaction (HOI) scenes. It leverages human body topology and contact information to identify occluded regions via convex hull operations, and employs a multi-regional inpainting strategy on a pretrained diffusion model to achieve high-quality occluded object completion without any additional training.
+  [ICCV 2025][3D Vision][Amodal completion] This paper proposes the first amodal completion framework tailored for human-object interaction (HOI) scenes. It leverages human body topology and contact information to identify…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Amodal completion
-  - human-object interaction
-  - multi-regional inpainting
-  - diffusion models
-  - contact estimation
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Amodal completion"
+  - "human-object interaction"
+  - "multi-regional inpainting"
+  - "diffusion models"
+  - "contact estimation"
 date: 2026-05-08
 content_hash: 33e90e614089f07b
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Measuring What Matters: Construct Validity in Large Language Model Benchmarks
 description: >-
-  [NeurIPS 2025][Recommender Systems][LLM evaluation] This paper presents a systematic review of 445 LLM benchmark papers conducted by 29 experts, examining existing LLM evaluation benchmarks through the lens of construct validity across four dimensions — phenomenon definition, task design, scoring metrics, and conclusion claims — and proposes 8 actionable recommendations for improvement.
+  [NeurIPS 2025][Recommender Systems][LLM evaluation] This paper presents a systematic review of 445 LLM benchmark papers conducted by 29 experts…
 tags:
-  - NeurIPS 2025
-  - Recommender Systems
-  - LLM evaluation
-  - benchmark
-  - construct validity
-  - systematic review
-  - evaluation methodology
+  - "NeurIPS 2025"
+  - "Recommender Systems"
+  - "LLM evaluation"
+  - "benchmark"
+  - "construct validity"
+  - "systematic review"
+  - "evaluation methodology"
 date: 2026-05-08
 content_hash: f7ff57a48d875342
 ---

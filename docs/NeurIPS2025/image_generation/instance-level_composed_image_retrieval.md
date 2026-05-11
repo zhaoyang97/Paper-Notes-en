@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Instance-Level Composed Image Retrieval
 description: >-
-  [NeurIPS 2025][Image Generation][Composed Image Retrieval] This paper proposes the instance-level composed image retrieval (i-CIR) benchmark and a training-free method, BASIC, which independently estimates image and text query similarities and fuses them via multiplicative combination, achieving state-of-the-art performance on both i-CIR and existing CIR datasets without any training.
+  [NeurIPS 2025][Image Generation][Composed Image Retrieval] This paper proposes the instance-level composed image retrieval (i-CIR) benchmark and a training-free method, BASIC…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Composed Image Retrieval
-  - Instance-Level Retrieval
-  - VLM
-  - Training-Free
-  - Feature Fusion
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Composed Image Retrieval"
+  - "Instance-Level Retrieval"
+  - "VLM"
+  - "Training-Free"
+  - "Feature Fusion"
 date: 2026-05-08
 content_hash: 769e81f2ef8fefb1
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Test-Time Attention Purification for Backdoored Large Vision Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][backdoor attack defense] This work identifies that the essence of backdoor behavior in LVLMs is cross-modal attention stealing (trigger visual tokens hijack the attention weights of text tokens), and proposes CleanSight — the first training-free test-time backdoor defense framework — which eliminates backdoor effects by detecting and pruning high-attention trigger tokens.
+  [CVPR 2026][Multimodal VLM][backdoor attack defense] This work identifies that the essence of backdoor behavior in LVLMs is cross-modal attention stealing (trigger visual tokens hijack the attention weights of text token…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - backdoor attack defense
-  - attention purification
-  - LVLM security
-  - test-time defense
-  - visual token pruning
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "backdoor attack defense"
+  - "attention purification"
+  - "LVLM security"
+  - "test-time defense"
+  - "visual token pruning"
 date: 2026-05-08
 content_hash: bb1f4aa17cddc56e
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GLEAM: A Multimodal Imaging Dataset and HAMM for Glaucoma Classification
 description: >-
-  [CVPR 2026][Medical Imaging][Glaucoma classification] This paper presents GLEAM, the first publicly available trimodal glaucoma dataset (SLO fundus photography + peripapillary OCT + visual field deviation maps, 1,200 cases, four-stage annotation), along with HAMM, a CNN-based hierarchical attention masked modeling framework. HAMM achieves cross-modal fusion via clinically inspired multi-head modality gating and relational graph attention, attaining a four-class classification accuracy of 81.08%.
+  [CVPR 2026][Medical Imaging][Glaucoma classification] This paper presents GLEAM, the first publicly available trimodal glaucoma dataset (SLO fundus photography + peripapillary OCT + visual field deviation maps, 1…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Glaucoma classification
-  - multimodal fusion
-  - masked autoencoder
-  - trimodal dataset
-  - graph attention
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Glaucoma classification"
+  - "multimodal fusion"
+  - "masked autoencoder"
+  - "trimodal dataset"
+  - "graph attention"
 date: 2026-05-08
 content_hash: a9d597d5d94febf7
 ---

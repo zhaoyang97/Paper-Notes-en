@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Learning Single-Index Models via Harmonic Decomposition
 description: >-
-  [NeurIPS 2025][Optimization][single-index models] This paper proposes spherical harmonics as a natural basis for single-index models (SIMs) in place of Hermite polynomials, leveraging rotational symmetry to characterize sample and computational complexity for learning SIMs under arbitrary spherically symmetric input distributions. Two families of optimal estimators are constructed (tensor unfolding + online SGD), and a sample–runtime tradeoff is revealed that does not arise in the Gaussian setting.
+  [NeurIPS 2025][Optimization][single-index models] This paper proposes spherical harmonics as a natural basis for single-index models (SIMs) in place of Hermite polynomials…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - single-index models
-  - spherical harmonics
-  - harmonic decomposition
-  - sample complexity
-  - computational complexity
-  - tensor unfolding
-  - online SGD
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "single-index models"
+  - "spherical harmonics"
+  - "harmonic decomposition"
+  - "sample complexity"
+  - "computational complexity"
+  - "tensor unfolding"
+  - "online SGD"
 date: 2026-05-08
 content_hash: a4b7c0b89e489ace
 ---

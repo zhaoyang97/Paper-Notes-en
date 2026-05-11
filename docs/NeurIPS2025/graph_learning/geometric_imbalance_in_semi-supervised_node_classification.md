@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Geometric Imbalance in Semi-Supervised Node Classification
 description: >-
-  [NeurIPS 2025][Graph Learning][geometric imbalance] This work formally introduces the concept of "geometric imbalance" in semi-supervised node classification for the first time—showing that message passing on class-imbalanced graphs causes minority-class nodes to exhibit geometric ambiguity in Riemannian manifold embedding spaces—and proposes the UNREAL framework to systematically address this issue via three modules: dual-path pseudo-label alignment, node reordering, and geometric imbalance sample discarding.
+  [NeurIPS 2025][Graph Learning][geometric imbalance] This work formally introduces the concept of "geometric imbalance" in semi-supervised node classification for the first time—showing that message passing on class-imbal…
 tags:
-  - NeurIPS 2025
-  - Graph Learning
-  - geometric imbalance
-  - semi-supervised node classification
-  - self-training
-  - pseudo-label
-  - GNN
-  - Riemannian manifold
+  - "NeurIPS 2025"
+  - "Graph Learning"
+  - "geometric imbalance"
+  - "semi-supervised node classification"
+  - "self-training"
+  - "pseudo-label"
+  - "GNN"
+  - "Riemannian manifold"
 date: 2026-05-08
 content_hash: 906fa23e39cb51a6
 ---

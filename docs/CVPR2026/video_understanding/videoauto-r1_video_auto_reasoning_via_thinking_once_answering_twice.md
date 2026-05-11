@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VideoAuto-R1: Video Auto Reasoning via Thinking Once, Answering Twice
 description: >-
-  [CVPR 2026][Video Understanding][Video Reasoning] This paper proposes VideoAuto-R1, an on-demand reasoning framework for video understanding. During training, it adopts a "think once, answer twice" (answer→think→answer) paradigm; during inference, it uses the confidence of the first answer to determine whether to invoke CoT reasoning. The approach maintains SOTA accuracy while reducing average response length from 149 to 44 tokens (approximately 3.3× compression).
+  [CVPR 2026][Video Understanding][Video Reasoning] This paper proposes VideoAuto-R1, an on-demand reasoning framework for video understanding. During training, it adopts a "think once…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Video Reasoning
-  - Adaptive Thinking
-  - Chain-of-Thought
-  - Reinforcement Learning
-  - Inference Efficiency
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Video Reasoning"
+  - "Adaptive Thinking"
+  - "Chain-of-Thought"
+  - "Reinforcement Learning"
+  - "Inference Efficiency"
 date: 2026-05-08
 content_hash: c16e3303241fde77
 ---

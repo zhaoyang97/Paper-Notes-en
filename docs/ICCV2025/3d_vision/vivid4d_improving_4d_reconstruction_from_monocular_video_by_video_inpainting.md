@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Vivid4D: Improving 4D Reconstruction from Monocular Video by Video Inpainting
 description: >-
-  [ICCV 2025][3D Vision][4D reconstruction] This paper proposes Vivid4D, which reformulates multi-view augmentation from monocular video as a video inpainting problem — warping the video to novel viewpoints using monocular depth priors, then employing a video diffusion model to inpaint occluded regions. Through an iterative view expansion strategy and a robust reconstruction loss, Vivid4D significantly improves 4D dynamic scene reconstruction quality from monocular video.
+  [ICCV 2025][3D Vision][4D reconstruction] This paper proposes Vivid4D, which reformulates multi-view augmentation from monocular video as a video inpainting problem — warping the video to novel viewpoints using monocular…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 4D reconstruction
-  - monocular video
-  - video inpainting
-  - diffusion models
-  - view augmentation
+  - "ICCV 2025"
+  - "3D Vision"
+  - "4D reconstruction"
+  - "monocular video"
+  - "video inpainting"
+  - "diffusion models"
+  - "view augmentation"
 date: 2026-05-08
 content_hash: be91632be8a21add
 ---

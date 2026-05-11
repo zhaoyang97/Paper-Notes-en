@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Seeing the Arrow of Time in Large Multimodal Models
 description: >-
-  [NeurIPS 2025][Video Understanding][Arrow of Time] This paper reveals that current large multimodal models (LMMs) are surprisingly insensitive to the temporal directionality of video (i.e., the Arrow of Time)—producing nearly identical answers for forward and reversed playback. The authors propose ArrowRL, a GRPO-based training strategy that introduces a reverse video reward to elicit temporal direction awareness, and construct AoTBench for evaluation. The approach achieves significant gains across multiple VQA benchmarks, including a 65.9% relative improvement on Vinoground.
+  [NeurIPS 2025][Video Understanding][Arrow of Time] This paper reveals that current large multimodal models (LMMs) are surprisingly insensitive to the temporal directionality of video (i.e.…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
-  - Arrow of Time
-  - Temporal Awareness in LMMs
-  - Reinforcement Learning Fine-tuning
-  - Video Understanding Benchmark
-  - GRPO
+  - "NeurIPS 2025"
+  - "Video Understanding"
+  - "Arrow of Time"
+  - "Temporal Awareness in LMMs"
+  - "Reinforcement Learning Fine-tuning"
+  - "Video Understanding Benchmark"
+  - "GRPO"
 date: 2026-05-08
 content_hash: 59e3911071bd3104
 ---

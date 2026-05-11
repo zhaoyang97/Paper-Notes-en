@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RankLLM: Weighted Ranking of LLMs by Quantifying Question Difficulty
 description: >-
-  [ICLR 2026][LLM Evaluation] This paper proposes RankLLM, a non-parametric framework based on bidirectional score propagation over a directed bipartite graph, which jointly estimates question difficulty and model competency to achieve difficulty-aware LLM ranking, reaching 90% agreement with human judgments.
+  [ICLR 2026][LLM Evaluation][question difficulty] This paper proposes RankLLM, a non-parametric framework based on bidirectional score propagation over a directed bipartite graph…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - question difficulty
-  - model competency
-  - bipartite graph
-  - score propagation
-  - benchmark
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "question difficulty"
+  - "model competency"
+  - "bipartite graph"
+  - "score propagation"
+  - "benchmark"
 date: 2026-05-08
 content_hash: 2f088fce638a4db9
 ---

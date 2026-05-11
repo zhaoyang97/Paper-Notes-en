@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DenseDPO: Fine-Grained Temporal Preference Optimization for Video Diffusion Models
 description: >-
-  [NeurIPS 2025 (Spotlight)][LLM Alignment][video diffusion] This paper identifies and addresses the motion bias problem in video DPO — by constructing structurally aligned video pairs via noising and denoising GT videos to fix the motion dimension, annotating dense preferences at the temporal segment level for more precise learning signals, and leveraging off-the-shelf VLMs for automatic annotation to reduce cost. Using only 1/3 of the annotation data, the method substantially improves motion generation quality while matching visual quality and text alignment.
+  [NeurIPS 2025 (Spotlight)][LLM Alignment][video diffusion] This paper identifies and addresses the motion bias problem in video DPO — by constructing structurally aligned video pairs via noising and denoising GT videos t…
 tags:
-  - NeurIPS 2025 (Spotlight)
-  - LLM Alignment
-  - video diffusion
-  - DPO
-  - motion bias
-  - segment-level preference
-  - guided generation
+  - "NeurIPS 2025 (Spotlight)"
+  - "LLM Alignment"
+  - "video diffusion"
+  - "DPO"
+  - "motion bias"
+  - "segment-level preference"
+  - "guided generation"
 date: 2026-05-08
 content_hash: b9b16fbcc665e7b5
 ---

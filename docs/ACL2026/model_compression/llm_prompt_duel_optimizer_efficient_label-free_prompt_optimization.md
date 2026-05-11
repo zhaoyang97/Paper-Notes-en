@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LLM Prompt Duel Optimizer: Efficient Label-Free Prompt Optimization
 description: >-
-  [ACL 2026][Model Compression][Automatic prompt optimization] This work formalizes label-free prompt optimization as a dueling bandit problem and proposes the Prompt Duel Optimizer (PDO), which employs Double Thompson Sampling to efficiently select the most informative prompt pairs for comparison. Combined with a top-performer mutation strategy to expand the search space, PDO identifies stronger prompts on BBH and MS MARCO with fewer judge calls than existing baselines.
+  [ACL 2026][Model Compression][Automatic prompt optimization] This work formalizes label-free prompt optimization as a dueling bandit problem and proposes the Prompt Duel Optimizer (PDO)…
 tags:
-  - ACL 2026
-  - Model Compression
-  - Automatic prompt optimization
-  - label-free optimization
-  - dueling bandit
-  - LLM-as-judge
-  - Thompson sampling
+  - "ACL 2026"
+  - "Model Compression"
+  - "Automatic prompt optimization"
+  - "label-free optimization"
+  - "dueling bandit"
+  - "LLM-as-judge"
+  - "Thompson sampling"
 date: 2026-05-08
 content_hash: a0a491670d9d79bf
 ---

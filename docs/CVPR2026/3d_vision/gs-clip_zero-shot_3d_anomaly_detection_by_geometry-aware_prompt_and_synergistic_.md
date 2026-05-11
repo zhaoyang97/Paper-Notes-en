@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GS-CLIP: Zero-shot 3D Anomaly Detection by Geometry-Aware Prompt and Synergistic View Representation Learning
 description: >-
-  [CVPR 2026][3D Vision][Zero-shot 3D anomaly detection] This paper proposes GS-CLIP, a two-stage framework that injects global shape context and local defect information from 3D point clouds into text prompts via a Geometry Defect Distillation Module (GDDM), and employs a dual-stream LoRA architecture to synergistically fuse rendered images and depth maps, achieving state-of-the-art zero-shot 3D anomaly detection on four large-scale benchmarks.
+  [CVPR 2026][3D Vision][Zero-shot 3D anomaly detection] This paper proposes GS-CLIP, a two-stage framework that injects global shape context and local defect information from 3D point clouds into text prompts via a Geomet…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Zero-shot 3D anomaly detection
-  - CLIP
-  - geometry-aware prompt
-  - multi-view fusion
-  - point cloud
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Zero-shot 3D anomaly detection"
+  - "CLIP"
+  - "geometry-aware prompt"
+  - "multi-view fusion"
+  - "point cloud"
 date: 2026-05-08
 content_hash: 5bda863634628529
 ---

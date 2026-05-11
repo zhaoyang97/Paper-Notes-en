@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FastKV: Decoupling of Context Reduction and KV Cache Compression for Prefill-Decoding Acceleration
 description: >-
-  [ACL 2026][Model Compression][KV cache compression] This paper proposes FastKV, which decouples context reduction (Token-Selective Propagation during the prefill phase) from KV cache compression (layer-wise KV retention during the decoding phase), achieving 1.82× prefill speedup and 2.87× decoding speedup on LLaMA-3.1-8B-Instruct while limiting accuracy degradation to within 1% on LongBench.
+  [ACL 2026][Model Compression][KV cache compression] This paper proposes FastKV, which decouples context reduction (Token-Selective Propagation during the prefill phase) from KV cache compression (layer-wise KV retention…
 tags:
-  - ACL 2026
-  - Model Compression
-  - KV cache compression
-  - prefill acceleration
-  - token-selective propagation
-  - inter-layer context dynamics
-  - decoding acceleration
+  - "ACL 2026"
+  - "Model Compression"
+  - "KV cache compression"
+  - "prefill acceleration"
+  - "token-selective propagation"
+  - "inter-layer context dynamics"
+  - "decoding acceleration"
 date: 2026-05-08
 content_hash: 5d723aababcb70b7
 ---

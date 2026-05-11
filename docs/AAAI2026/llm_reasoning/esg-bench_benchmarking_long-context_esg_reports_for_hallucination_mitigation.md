@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ESG-Bench: Benchmarking Long-Context ESG Reports for Hallucination Mitigation
 description: >-
-  [AAAI 2026][LLM Reasoning][ESG Reports] This paper constructs ESG-Bench — 270 manually annotated QA pairs from 94 real ESG reports (2020–2024) — and proposes a three-stage hallucination mitigation pipeline: SFT (with grounded answers + "Not Provided" abstention labels) → CoT Prompting (2/4-step prompt templates) → CoT Fine-tuning (with human-annotated reasoning chains). The 4-step CoT fine-tuned Llama-3 achieves 92.52% with-answer (WA) accuracy and 99.37% without-answer (WoA) accuracy (balanced 96%), with generalization gains on HaluEval and BioASQ.
+  [AAAI 2026][LLM Reasoning][ESG Reports] This paper constructs ESG-Bench — 270 manually annotated QA pairs from 94 real ESG reports (2020–2024) — and proposes a three-stage hallucination mitigation pipeline: SFT (with gro…
 tags:
-  - AAAI 2026
-  - LLM Reasoning
-  - ESG Reports
-  - Long-Context
-  - Hallucination Detection
-  - CoT Fine-tuning
-  - Compliance
+  - "AAAI 2026"
+  - "LLM Reasoning"
+  - "ESG Reports"
+  - "Long-Context"
+  - "Hallucination Detection"
+  - "CoT Fine-tuning"
+  - "Compliance"
 date: 2026-05-08
 content_hash: 3d63221087cd1e2e
 ---

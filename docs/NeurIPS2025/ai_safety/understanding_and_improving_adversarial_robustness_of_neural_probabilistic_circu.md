@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Understanding and Improving Adversarial Robustness of Neural Probabilistic Circuits
 description: >-
-  [NeurIPS 2025][AI Safety][Concept Bottleneck Models] This paper theoretically establishes that the adversarial robustness of Neural Probabilistic Circuits (NPC) depends solely on the attribute recognition model and is independent of the probabilistic circuit. Building on this finding, it proposes RNPC, which achieves provably improved robustness via class-wise inference aggregation, significantly enhancing adversarial robustness while maintaining benign accuracy.
+  [NeurIPS 2025][AI Safety][Concept Bottleneck Models] This paper theoretically establishes that the adversarial robustness of Neural Probabilistic Circuits (NPC) depends solely on the attribute recognition model and is in…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - Concept Bottleneck Models
-  - Probabilistic Circuits
-  - Adversarial Robustness
-  - Class-wise Reasoning
-  - Interpretability
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "Concept Bottleneck Models"
+  - "Probabilistic Circuits"
+  - "Adversarial Robustness"
+  - "Class-wise Reasoning"
+  - "Interpretability"
 date: 2026-05-08
 content_hash: 3f1902128127041f
 ---

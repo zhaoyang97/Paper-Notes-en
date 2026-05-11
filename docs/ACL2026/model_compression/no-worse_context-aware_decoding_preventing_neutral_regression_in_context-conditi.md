@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] No-Worse Context-Aware Decoding: Preventing Neutral Regression in Context-Conditioned Generation
 description: >-
-  [ACL 2026][Model Compression][context-aware decoding] This paper proposes NWCAD, a decoding-time adapter that employs a two-stage gating mechanism to precisely fall back to context-free decoding when the context is uninformative (preventing neutral regression), and to leverage context for correction when it is helpful — simultaneously satisfying the objectives of "do no harm" and "be effective."
+  [ACL 2026][Model Compression][context-aware decoding] This paper proposes NWCAD, a decoding-time adapter that employs a two-stage gating mechanism to precisely fall back to context-free decoding when the context is uninf…
 tags:
-  - ACL 2026
-  - Model Compression
-  - context-aware decoding
-  - neutral regression
-  - retrieval-augmented generation
-  - two-stage gating
-  - decoding-time adapter
+  - "ACL 2026"
+  - "Model Compression"
+  - "context-aware decoding"
+  - "neutral regression"
+  - "retrieval-augmented generation"
+  - "two-stage gating"
+  - "decoding-time adapter"
 date: 2026-05-08
 content_hash: 9afa5776bf391135
 ---

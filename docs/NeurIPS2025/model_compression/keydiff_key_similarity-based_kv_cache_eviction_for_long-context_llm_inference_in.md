@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] KeyDiff: Key Similarity-Based KV Cache Eviction for Long-Context LLM Inference in Resource-Constrained Environments
 description: >-
-  [NeurIPS 2025][Model Compression][KV cache eviction] This paper proposes KeyDiff — an attention-score-free KV cache eviction strategy that maintains the cache by retaining keys with the lowest average cosine similarity to other keys (i.e., geometrically most unique). Under strict memory constraints in block-wise inference settings, KeyDiff achieves ≤0.04% accuracy loss on LongBench with an 8K cache budget, while reducing end-to-end inference latency by up to 30%.
+  [NeurIPS 2025][Model Compression][KV cache eviction] This paper proposes KeyDiff — an attention-score-free KV cache eviction strategy that maintains the cache by retaining keys with the lowest average cosine similarity t…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - KV cache eviction
-  - key similarity
-  - long-context inference
-  - attention-free
-  - block prompt processing
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "KV cache eviction"
+  - "key similarity"
+  - "long-context inference"
+  - "attention-free"
+  - "block prompt processing"
 date: 2026-05-08
 content_hash: fa3ca1a0af5e26e9
 ---

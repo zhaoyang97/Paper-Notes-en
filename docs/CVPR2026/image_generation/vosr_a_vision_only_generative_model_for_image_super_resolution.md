@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VOSR: A Vision-Only Generative Model for Image Super-Resolution
 description: >-
-  [CVPR 2026][Image Generation][super-resolution] This paper proposes VOSR, the first work to demonstrate that a purely vision-trained generative super-resolution model can match or even surpass T2I pretrained-based methods. By leveraging visual semantic conditioning and a restoration-oriented guidance strategy, VOSR achieves high-quality SR at approximately 1/10 the training cost of T2I-based approaches.
+  [CVPR 2026][Image Generation][super-resolution] This paper proposes VOSR, the first work to demonstrate that a purely vision-trained generative super-resolution model can match or even surpass T2I pretrained-based method…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - super-resolution
-  - vision-only
-  - diffusion model
-  - classifier-free guidance
-  - one-step distillation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "super-resolution"
+  - "vision-only"
+  - "diffusion model"
+  - "classifier-free guidance"
+  - "one-step distillation"
 date: 2026-05-08
 content_hash: 2346a97656936e99
 ---

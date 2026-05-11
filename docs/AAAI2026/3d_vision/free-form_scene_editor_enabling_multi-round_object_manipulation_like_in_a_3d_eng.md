@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Free-Form Scene Editor: Enabling Multi-Round Object Manipulation like in a 3D Engine
 description: >-
-  [AAAI 2026][3D Vision][3D-aware image editing] This paper proposes FFSE — an autoregressive 3D-aware image editing framework built on a video diffusion model — paired with a hybrid dataset 3DObjectEditor (real + synthetic). FFSE enables multi-round object translation, scaling, and rotation on real images in the manner of a 3D engine, while generating physically plausible background effects such as shadows, reflections, and occlusions, and maintaining cross-round consistency. It substantially outperforms existing methods in both single-round and multi-round editing.
+  [AAAI 2026][3D Vision][3D-aware image editing] This paper proposes FFSE — an autoregressive 3D-aware image editing framework built on a video diffusion model — paired with a hybrid dataset 3DObjectEditor (real + syntheti…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - 3D-aware image editing
-  - multi-round editing
-  - autoregressive generation
-  - diffusion models
-  - object manipulation
+  - "AAAI 2026"
+  - "3D Vision"
+  - "3D-aware image editing"
+  - "multi-round editing"
+  - "autoregressive generation"
+  - "diffusion models"
+  - "object manipulation"
 date: 2026-05-08
 content_hash: a3bfeedbf56b7bfa
 ---

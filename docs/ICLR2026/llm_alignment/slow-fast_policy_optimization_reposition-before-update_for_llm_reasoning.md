@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Slow-Fast Policy Optimization: Reposition-Before-Update for LLM Reasoning
 description: >-
-  [ICLR 2026][LLM Alignment][Reinforcement Learning] This paper proposes SFPO (Slow-Fast Policy Optimization), which decomposes each training step into a three-stage structure of "fast trajectory — reposition — slow correction." Without modifying the objective function or rollout procedure, SFPO serves as a plug-and-play enhancement to GRPO, achieving up to 2.80-point average improvement on mathematical reasoning benchmarks and up to 4.93× reduction in rollouts.
+  [ICLR 2026][LLM Alignment][Reinforcement Learning] This paper proposes SFPO (Slow-Fast Policy Optimization), which decomposes each training step into a three-stage structure of "fast trajectory — reposition — slow correc…
 tags:
-  - ICLR 2026
-  - LLM Alignment
-  - Reinforcement Learning
-  - GRPO
-  - Policy Optimization
-  - Mathematical Reasoning
-  - Sample Efficiency
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "Policy Optimization"
+  - "Mathematical Reasoning"
+  - "Sample Efficiency"
 date: 2026-05-08
 content_hash: 594ca1b8cdd3ec3b
 ---

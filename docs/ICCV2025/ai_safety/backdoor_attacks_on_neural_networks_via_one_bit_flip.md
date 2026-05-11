@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Backdoor Attacks on Neural Networks via One-Bit Flip
 description: >-
-  [ICCV 2025][AI Safety][backdoor attack] This paper proposes SOLEFLIP, the first inference-time backdoor attack on quantized models that requires flipping only a single bit. Through an efficient algorithm for identifying exploitable weights and bit positions, along with a corresponding trigger generation procedure, SOLEFLIP achieves an average attack success rate of 98.9% with zero degradation in clean accuracy across CIFAR-10, SVHN, and ImageNet.
+  [ICCV 2025][AI Safety][backdoor attack] This paper proposes SOLEFLIP, the first inference-time backdoor attack on quantized models that requires flipping only a single bit. Through an efficient algorithm for identifying…
 tags:
-  - ICCV 2025
-  - AI Safety
-  - backdoor attack
-  - bit-flip attack
-  - Rowhammer
-  - quantized model
-  - one-bit flip
+  - "ICCV 2025"
+  - "AI Safety"
+  - "backdoor attack"
+  - "bit-flip attack"
+  - "Rowhammer"
+  - "quantized model"
+  - "one-bit flip"
 date: 2026-05-08
 content_hash: cea926ca1b33e5b7
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Structure-Aware Encodings of Argumentation Properties for Clique-width
 description: >-
-  [AAAI 2026][Abstract Argumentation] This paper designs directed decomposition-guided (DDG) reductions from abstract argumentation problems to (Q)SAT that linearly preserve clique-width, establishing tractability upper bounds parameterized by clique-width for all standard argumentation semantics (stable, admissible, complete, preferred, semi-stable, stage) across extension existence, argument acceptance, and counting problems. Under the ETH, it further proves that the overhead of these reductions cannot be significantly improved.
+  [AAAI 2026][Abstract Argumentation] This paper designs directed decomposition-guided (DDG) reductions from abstract argumentation problems to (Q)SAT that linearly preserve clique-width…
 tags:
-  - AAAI 2026
-  - Abstract Argumentation
-  - Clique-width
-  - Parameterized Complexity
-  - SAT Encoding
-  - QBF
-  - $k$-expressions
-  - Decomposition-Guided Reductions
+  - "AAAI 2026"
+  - "Abstract Argumentation"
+  - "Clique-width"
+  - "Parameterized Complexity"
+  - "SAT Encoding"
+  - "QBF"
+  - "$k$-expressions"
+  - "Decomposition-Guided Reductions"
 date: 2026-05-08
 content_hash: b2fe7ad88776d237
 ---

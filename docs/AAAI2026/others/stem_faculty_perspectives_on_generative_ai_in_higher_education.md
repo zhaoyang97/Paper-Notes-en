@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] STEM Faculty Perspectives on Generative AI in Higher Education
 description: >-
-  [AAAI 2026][Generative AI] Through focus group research with 29 STEM faculty at a large public university in the United States, this study reveals how instructors integrate GenAI into teaching, the observed benefits and challenges for student learning, and the institutional support required. A key finding is that GenAI shifts faculty labor from content creation to expert review and may obscure students' underlying competency gaps.
+  [AAAI 2026][Generative AI] Through focus group research with 29 STEM faculty at a large public university in the United States, this study reveals how instructors integrate GenAI into teaching…
 tags:
-  - AAAI 2026
-  - Generative AI
-  - Higher Education
-  - STEM Pedagogy
-  - Focus Groups
-  - Teaching Strategies
+  - "AAAI 2026"
+  - "Generative AI"
+  - "Higher Education"
+  - "STEM Pedagogy"
+  - "Focus Groups"
+  - "Teaching Strategies"
 date: 2026-05-08
 content_hash: c869a83213d79a94
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TIP-I2V: A Million-Scale Real Text and Image Prompt Dataset for Image-to-Video Generation
 description: >-
-  [ICCV 2025][Video Generation][Image-to-video] This paper constructs TIP-I2V, the first million-scale real-user text and image prompt dataset for image-to-video (I2V) generation (1,701,935 unique prompt pairs), accompanied by generated videos from five state-of-the-art I2V models. Built upon this dataset, the paper introduces TIP-Eval, a large-scale evaluation benchmark, alongside studies on user preference analysis and AI-generated video detection.
+  [ICCV 2025][Video Generation][Image-to-video] This paper constructs TIP-I2V, the first million-scale real-user text and image prompt dataset for image-to-video (I2V) generation (1,701,935 unique prompt pairs)…
 tags:
-  - ICCV 2025
-  - Video Generation
-  - Image-to-video
-  - prompt dataset
-  - user preference analysis
-  - video generation evaluation
-  - deepfake video detection
+  - "ICCV 2025"
+  - "Video Generation"
+  - "Image-to-video"
+  - "prompt dataset"
+  - "user preference analysis"
+  - "video generation evaluation"
+  - "deepfake video detection"
 date: 2026-05-08
 content_hash: 603edc50992a2468
 ---

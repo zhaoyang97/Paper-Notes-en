@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Omnimodal Expressions and Reasoning in Referring Audio-Visual Segmentation
 description: >-
-  [ICCV 2025][Segmentation][Audio-visual segmentation] This paper proposes the OmniAVS dataset and OISA model, extending referring audio-visual segmentation (RAVS) beyond simple acoustic attribute perception to **omnimodal expressions (arbitrary combinations of text/speech/sound/image)** and **deep reasoning (understanding sound content + world knowledge)**, achieving SOTA on the new benchmark and multiple related tasks.
+  [ICCV 2025][Segmentation][Audio-visual segmentation] This paper proposes the OmniAVS dataset and OISA model, extending referring audio-visual segmentation (RAVS) beyond simple acoustic attribute perception to **omnimodal…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - Audio-visual segmentation
-  - omnimodal referring
-  - reasoning segmentation
-  - multimodal large language models
-  - query propagation
+  - "ICCV 2025"
+  - "Segmentation"
+  - "Audio-visual segmentation"
+  - "omnimodal referring"
+  - "reasoning segmentation"
+  - "multimodal large language models"
+  - "query propagation"
 date: 2026-05-08
 content_hash: 069358894e6f0077
 ---

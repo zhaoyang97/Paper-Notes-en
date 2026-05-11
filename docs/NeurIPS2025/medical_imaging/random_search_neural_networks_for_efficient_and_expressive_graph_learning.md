@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Random Search Neural Networks for Efficient and Expressive Graph Learning
 description: >-
-  [NeurIPS 2025][Medical Imaging][Graph Neural Networks] This paper proposes Random Search Neural Networks (RSNN), which replace random walks with randomized depth-first search (DFS) for graph structure sampling. On sparse graphs, RSNN achieves complete edge coverage with only $O(\log|V|)$ searches. Paired with a universal sequence model, RSNN attains universal approximation capability, and consistently outperforms RWNN on molecular and protein benchmarks using up to 16× fewer samples.
+  [NeurIPS 2025][Medical Imaging][Graph Neural Networks] This paper proposes Random Search Neural Networks (RSNN), which replace random walks with randomized depth-first search (DFS) for graph structure sampling. On sparse…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Graph Neural Networks
-  - Random Walks
-  - Depth-First Search
-  - Graph Representation Learning
-  - Universal Approximation
-  - Isomorphism Invariance
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Graph Neural Networks"
+  - "Random Walks"
+  - "Depth-First Search"
+  - "Graph Representation Learning"
+  - "Universal Approximation"
+  - "Isomorphism Invariance"
 date: 2026-05-08
 content_hash: 8aac53c872573730
 ---

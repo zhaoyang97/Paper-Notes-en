@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SMoLoRA: Exploring and Defying Dual Catastrophic Forgetting in Continual Visual Instruction Tuning
 description: >-
-  [ICCV 2025][Multimodal VLM][Continual Learning] This paper identifies a phenomenon termed "dual catastrophic forgetting" in continual visual instruction tuning (CVIT) of multimodal large models, wherein both visual understanding capability and instruction-following capability degrade simultaneously. To address this, SMoLoRA is proposed, employing a separable-routing mixture of LoRA experts to effectively mitigate both forms of forgetting.
+  [ICCV 2025][Multimodal VLM][Continual Learning] This paper identifies a phenomenon termed "dual catastrophic forgetting" in continual visual instruction tuning (CVIT) of multimodal large models…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Continual Learning
-  - Visual Instruction Tuning
-  - Catastrophic Forgetting
-  - Mixture of LoRA Experts
-  - Separable Routing
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Continual Learning"
+  - "Visual Instruction Tuning"
+  - "Catastrophic Forgetting"
+  - "Mixture of LoRA Experts"
+  - "Separable Routing"
 date: 2026-05-08
 content_hash: f49b73b43e8f07df
 ---

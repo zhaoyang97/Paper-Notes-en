@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Class-Partitioned VQ-VAE and Latent Flow Matching for Point Cloud Scene Generation
 description: >-
-  [AAAI2026][3D Vision][point cloud generation] This paper proposes a Class-Partitioned VQ-VAE (CPVQ-VAE) and a Latent Flow Matching Model (LFMM), achieving the first purely generative point cloud scene generation method that requires no external database retrieval, reducing Chamfer Distance by 70.4% on complex living room scenes.
+  [AAAI2026][3D Vision][point cloud generation] This paper proposes a Class-Partitioned VQ-VAE (CPVQ-VAE) and a Latent Flow Matching Model (LFMM)…
 tags:
-  - AAAI2026
-  - 3D Vision
-  - point cloud generation
-  - scene generation
-  - VQ-VAE
-  - flow matching
-  - codebook partitioning
+  - "AAAI2026"
+  - "3D Vision"
+  - "point cloud generation"
+  - "scene generation"
+  - "VQ-VAE"
+  - "flow matching"
+  - "codebook partitioning"
 date: 2026-05-08
 content_hash: 33bf60e5e38e0106
 ---

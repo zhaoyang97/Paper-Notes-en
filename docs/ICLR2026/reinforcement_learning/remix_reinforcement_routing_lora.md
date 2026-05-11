@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ReMix: Reinforcement Routing for Mixtures of LoRAs in LLM Finetuning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Mixture-of-LoRAs] ReMix identifies a severe routing weight collapse problem in existing Mixture-of-LoRAs models (even when $k>1$ LoRAs are activated, the effective LoRA count rapidly degenerates to 1), proposes non-learnable constant routing weights to ensure equal contribution from all activated LoRAs, and trains the router using the RLOO reinforcement learning gradient estimator, significantly outperforming state-of-the-art PEFT methods.
+  [ICLR 2026][Reinforcement Learning][Mixture-of-LoRAs] ReMix identifies a severe routing weight collapse problem in existing Mixture-of-LoRAs models (even when $k>1$ LoRAs are activated…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Mixture-of-LoRAs
-  - routing weight collapse
-  - reinforcement learning routing
-  - RLOO
-  - parameter-efficient fine-tuning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Mixture-of-LoRAs"
+  - "routing weight collapse"
+  - "reinforcement learning routing"
+  - "RLOO"
+  - "parameter-efficient fine-tuning"
 date: 2026-05-08
 content_hash: 3db7145a5725193d
 ---

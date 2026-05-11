@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Canoe: Teaching LLMs to Maintain Contextual Faithfulness via Synthetic Tasks and RL
 description: >-
-  [AAAI 2026][Dialogue Systems][Contextual faithfulness] This paper proposes the Canoe framework, which synthesizes four types of verifiable short-form QA data from Wikidata triples and applies Dual-GRPO (incorporating accuracy reward, long-form proxy reward, and format reward) to jointly optimize faithfulness in both short- and long-form generation. The approach improves Llama-3-8B by an average of 22.6% across 11 downstream tasks, surpassing GPT-4o.
+  [AAAI 2026][Dialogue Systems][Contextual faithfulness] This paper proposes the Canoe framework, which synthesizes four types of verifiable short-form QA data from Wikidata triples and applies Dual-GRPO (incorporating acc…
 tags:
-  - AAAI 2026
-  - Dialogue Systems
-  - Contextual faithfulness
-  - reinforcement learning
-  - synthetic data
-  - GRPO
-  - hallucination suppression
+  - "AAAI 2026"
+  - "Dialogue Systems"
+  - "Contextual faithfulness"
+  - "reinforcement learning"
+  - "synthetic data"
+  - "GRPO"
+  - "hallucination suppression"
 date: 2026-05-08
 content_hash: f48c76fe9709f3c6
 ---

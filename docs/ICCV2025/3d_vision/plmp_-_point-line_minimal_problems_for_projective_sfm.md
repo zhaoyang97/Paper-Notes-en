@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PLMP -- Point-Line Minimal Problems for Projective SfM
 description: >-
-  [ICCV 2025][3D Vision][Minimal problems] This paper provides a complete classification of all point-line minimal problems in projective SfM, identifying 291 minimal problems (73 of which admit unique solutions solvable by linear methods), and develops a systematic framework for problem decomposition and non-minimality proofs via stabilizer subgroup analysis.
+  [ICCV 2025][3D Vision][Minimal problems] This paper provides a complete classification of all point-line minimal problems in projective SfM…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Minimal problems
-  - SfM
-  - point-line configurations
-  - projective reconstruction
-  - algebraic geometry
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Minimal problems"
+  - "SfM"
+  - "point-line configurations"
+  - "projective reconstruction"
+  - "algebraic geometry"
 date: 2026-05-08
 content_hash: 73f43078a469d69a
 ---

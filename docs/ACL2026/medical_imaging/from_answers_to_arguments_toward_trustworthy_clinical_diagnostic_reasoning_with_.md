@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From Answers to Arguments: Toward Trustworthy Clinical Diagnostic Reasoning with Toulmin-Guided Curriculum Goal-Conditioned Learning
 description: >-
-  [ACL 2026][Medical Imaging][Clinical Reasoning] This paper adapts the Toulmin argument model to clinical diagnosis and proposes CGCL, a three-stage curriculum training framework (fact collection → hypothesis testing → synthesis), paired with T-Eval for quantifying reasoning structural completeness. The approach achieves diagnostic reasoning quality comparable to RL-based methods without requiring reinforcement learning.
+  [ACL 2026][Medical Imaging][Clinical Reasoning] This paper adapts the Toulmin argument model to clinical diagnosis and proposes CGCL, a three-stage curriculum training framework (fact collection → hypothesis testing → sy…
 tags:
-  - ACL 2026
-  - Medical Imaging
-  - Clinical Reasoning
-  - Toulmin Argument Model
-  - Curriculum Learning
-  - Goal-Conditioned Learning
-  - Trustworthy Diagnosis
+  - "ACL 2026"
+  - "Medical Imaging"
+  - "Clinical Reasoning"
+  - "Toulmin Argument Model"
+  - "Curriculum Learning"
+  - "Goal-Conditioned Learning"
+  - "Trustworthy Diagnosis"
 date: 2026-05-08
 content_hash: f478ef76e540e8b1
 ---

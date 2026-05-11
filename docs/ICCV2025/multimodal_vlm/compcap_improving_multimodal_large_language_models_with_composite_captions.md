@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CompCap: Improving Multimodal Large Language Models with Composite Captions
 description: >-
-  [ICCV 2025][Multimodal VLM][composite images] This paper proposes CompCap, an automated framework for synthesizing six categories of composite images (collages, image-text mixtures, charts, tables, code, and diagrams) along with high-quality captions. The resulting CompCap-118K dataset, when incorporated into the SFT stage, significantly improves MLLM comprehension of composite images.
+  [ICCV 2025][Multimodal VLM][composite images] This paper proposes CompCap, an automated framework for synthesizing six categories of composite images (collages, image-text mixtures, charts, tables, code…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - composite images
-  - image captioning
-  - multimodal large language models
-  - data synthesis
-  - vision-language alignment
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "composite images"
+  - "image captioning"
+  - "multimodal large language models"
+  - "data synthesis"
+  - "vision-language alignment"
 date: 2026-05-08
 content_hash: d765a0522105e966
 ---

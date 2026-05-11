@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ∇-Reasoner: LLM Reasoning via Test-Time Gradient Descent in Latent Space
 description: >-
-  [ICLR 2026][Optimization][test-time scaling] This paper proposes ∇-Reasoner, which upgrades inference-time search from zeroth-order (sampling + evaluation) to first-order (gradient descent). By applying Differentiable Textual Optimization (DTO) in the token logits space—jointly leveraging reward gradients and LLM likelihood—the framework iteratively refines the decoding strategy, achieving 10–40% accuracy gains on mathematical reasoning tasks while reducing model calls by 10–40%.
+  [ICLR 2026][Optimization][test-time scaling] This paper proposes ∇-Reasoner, which upgrades inference-time search from zeroth-order (sampling + evaluation) to first-order (gradient descent). By applying Differentiable Te…
 tags:
-  - ICLR 2026
-  - Optimization
-  - test-time scaling
-  - gradient-based optimization
-  - differentiable optimization
-  - reward model
-  - inference-time reasoning
+  - "ICLR 2026"
+  - "Optimization"
+  - "test-time scaling"
+  - "gradient-based optimization"
+  - "differentiable optimization"
+  - "reward model"
+  - "inference-time reasoning"
 date: 2026-05-08
 content_hash: c34ce170bb394aef
 ---

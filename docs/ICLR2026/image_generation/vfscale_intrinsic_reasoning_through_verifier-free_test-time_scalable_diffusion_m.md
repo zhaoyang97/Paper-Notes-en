@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VFScale: Intrinsic Reasoning through Verifier-Free Test-time Scalable Diffusion Model
 description: >-
-  [ICLR 2026][Image Generation][Test-time scaling] VFScale proposes a test-time scalable diffusion model that requires no external verifier. By introducing an MRNCL loss and KL regularization to improve the energy landscape, the model's intrinsic energy function serves as a verifier. Combined with hybrid MCTS denoising for efficient search, a model trained on 6×6 mazes achieves 88% success on 15×15 mazes, where standard diffusion models fail entirely.
+  [ICLR 2026][Image Generation][Test-time scaling] VFScale proposes a test-time scalable diffusion model that requires no external verifier. By introducing an MRNCL loss and KL regularization to improve the energy landscap…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Test-time scaling
-  - verifier-free
-  - energy function
-  - Monte Carlo tree search
-  - diffusion model reasoning
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Test-time scaling"
+  - "verifier-free"
+  - "energy function"
+  - "Monte Carlo tree search"
+  - "diffusion model reasoning"
 date: 2026-05-08
 content_hash: ace4f1a42c694dbb
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SurfSplat: Conquering Feedforward 2D Gaussian Splatting with Surface Continuity Priors
 description: >-
-  [ICLR 2026][3D Vision][2D Gaussian Splatting] SurfSplat proposes a feedforward 3D reconstruction framework based on 2DGS that binds Gaussian rotation and scale to local neighborhood positions via surface continuity priors, resolves color bias through a forced alpha blending strategy, and introduces the HRRC metric to reveal reconstruction quality discrepancies at high resolutions.
+  [ICLR 2026][3D Vision][2D Gaussian Splatting] SurfSplat proposes a feedforward 3D reconstruction framework based on 2DGS that binds Gaussian rotation and scale to local neighborhood positions via surface continuity prior…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - 2D Gaussian Splatting
-  - feedforward 3D reconstruction
-  - surface continuity
-  - high-resolution rendering consistency
-  - sparse-view
+  - "ICLR 2026"
+  - "3D Vision"
+  - "2D Gaussian Splatting"
+  - "feedforward 3D reconstruction"
+  - "surface continuity"
+  - "high-resolution rendering consistency"
+  - "sparse-view"
 date: 2026-05-08
 content_hash: ea3df5512a5f3077
 ---

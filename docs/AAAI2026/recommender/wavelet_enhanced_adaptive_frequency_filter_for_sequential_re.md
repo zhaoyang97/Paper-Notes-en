@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Wavelet Enhanced Adaptive Frequency Filter for Sequential Recommendation
 description: >-
-  [AAAI2026][Recommender Systems][sequential recommendation] This paper proposes WEARec, a model that employs Dynamic Frequency Filtering (DFF) to adaptively generate personalized frequency-domain filters conditioned on user context for capturing global preferences, and Wavelet Feature Enhancement (WFE) to compensate for the inability of global DFT to resolve short-term fluctuations. WEARec outperforms all 9 baselines on four datasets, achieving up to 11.4% improvement on long-sequence scenarios with 39–45% faster training speed.
+  [AAAI2026][Recommender Systems][sequential recommendation] This paper proposes WEARec, a model that employs Dynamic Frequency Filtering (DFF) to adaptively generate personalized frequency-domain filters conditioned on us…
 tags:
-  - AAAI2026
-  - Recommender Systems
-  - sequential recommendation
-  - frequency-domain filtering
-  - wavelet transform
-  - dynamic filter
-  - personalized recommendation
+  - "AAAI2026"
+  - "Recommender Systems"
+  - "sequential recommendation"
+  - "frequency-domain filtering"
+  - "wavelet transform"
+  - "dynamic filter"
+  - "personalized recommendation"
 date: 2026-05-08
 content_hash: 3d62fc2b52dfdc59
 ---

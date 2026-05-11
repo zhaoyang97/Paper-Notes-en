@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MambaSeg: Harnessing Mamba for Accurate and Efficient Image-Event Semantic Segmentation
 description: >-
-  [AAAI 2026][Autonomous Driving][Event Camera] MambaSeg is proposed, employing a dual-branch parallel Mamba encoder to process RGB images and event streams respectively, with a Dual-Dimension Interaction Module (DDIM) for fine-grained cross-modal fusion along both spatial and temporal dimensions. It achieves state-of-the-art performance of 77.56%/75.10% mIoU on DDD17 and DSEC with only 25.44M parameters, offering substantially better efficiency than Transformer-based approaches.
+  [AAAI 2026][Autonomous Driving][Event Camera] MambaSeg is proposed, employing a dual-branch parallel Mamba encoder to process RGB images and event streams respectively…
 tags:
-  - AAAI 2026
-  - Autonomous Driving
-  - Event Camera
-  - Multimodal Fusion
-  - Mamba/SSM
-  - Semantic Segmentation
-  - Spatiotemporal Interaction
+  - "AAAI 2026"
+  - "Autonomous Driving"
+  - "Event Camera"
+  - "Multimodal Fusion"
+  - "Mamba/SSM"
+  - "Semantic Segmentation"
+  - "Spatiotemporal Interaction"
 date: 2026-05-08
 content_hash: 5aff73593f2ca0dd
 ---

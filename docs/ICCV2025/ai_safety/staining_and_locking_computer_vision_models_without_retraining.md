@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Staining and Locking Computer Vision Models without Retraining
 description: >-
-  [ICCV 2025][AI Safety][model watermarking] This paper proposes novel algorithms for *staining* (watermark embedding) and *locking* (usage protection) of pretrained vision models without any retraining or fine-tuning. The approach directly modifies a small number of weights to implant highly selective detector neurons, provides theoretically computable false positive rate guarantees, and is validated on image classification and object detection models.
+  [ICCV 2025][AI Safety][model watermarking] This paper proposes novel algorithms for *staining* (watermark embedding) and *locking* (usage protection) of pretrained vision models without any retraining or fine-tuning. The…
 tags:
-  - ICCV 2025
-  - AI Safety
-  - model watermarking
-  - model locking
-  - intellectual property protection
-  - training-free
-  - computer vision
+  - "ICCV 2025"
+  - "AI Safety"
+  - "model watermarking"
+  - "model locking"
+  - "intellectual property protection"
+  - "training-free"
+  - "computer vision"
 date: 2026-05-08
 content_hash: ccc1ff22136d5798
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Vision-Language Reasoning for Geolocalization: A Reinforcement Learning Approach
 description: >-
-  [AAAI 2026][Reinforcement Learning][Image Geolocalization] This paper proposes Geo-R, a retrieval-free, reasoning-driven image geolocalization framework. By introducing the Chain-of-Region (CoR) hierarchical reasoning paradigm and a reinforcement learning strategy based on Haversine distance coordinate-alignment rewards, Geo-R achieves 18.10% street-level (1 km) accuracy on IM2GPS3K, surpassing all retrieval-free methods and approaching retrieval-based ones.
+  [AAAI 2026][Reinforcement Learning][Image Geolocalization] This paper proposes Geo-R, a retrieval-free, reasoning-driven image geolocalization framework. By introducing the Chain-of-Region (CoR) hierarchical reasoning pa…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - Image Geolocalization
-  - Vision-Language Reasoning
-  - Chain-of-Region
-  - GRPO
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "Image Geolocalization"
+  - "Vision-Language Reasoning"
+  - "Chain-of-Region"
+  - "GRPO"
 date: 2026-05-08
 content_hash: bac546fc221fc21b
 ---

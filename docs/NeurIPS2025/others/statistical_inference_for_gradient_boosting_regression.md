@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Statistical Inference for Gradient Boosting Regression
 description: >-
-  [NeurIPS 2025][Gradient Boosting] This paper proposes a unified statistical inference framework for gradient boosting regression. By integrating dropout and parallel training into the Boulevard regularization scheme, the authors establish corresponding central limit theorems, enabling built-in confidence intervals, prediction intervals, and hypothesis tests for variable importance. A key finding is that increasing the dropout rate and the number of parallel trees substantially improves signal recovery—by up to $2\times$ and $4\times$, respectively.
+  [NeurIPS 2025][Gradient Boosting] This paper proposes a unified statistical inference framework for gradient boosting regression. By integrating dropout and parallel training into the Boulevard regularization scheme…
 tags:
-  - NeurIPS 2025
-  - Gradient Boosting
-  - Central Limit Theorem
-  - Confidence Intervals
-  - Hypothesis Testing
-  - Random Forests
+  - "NeurIPS 2025"
+  - "Gradient Boosting"
+  - "Central Limit Theorem"
+  - "Confidence Intervals"
+  - "Hypothesis Testing"
+  - "Random Forests"
 date: 2026-05-08
 content_hash: 93d7f753eedeb61a
 ---

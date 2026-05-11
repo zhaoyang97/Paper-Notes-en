@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] When Are Concepts Erased From Diffusion Models?
 description: >-
-  [NeurIPS 2025][Image Generation][Concept Erasure] This paper proposes two mechanistic models of concept erasure (guidance-based avoidance vs. destruction-based removal) and designs a suite of five independent probing methods—spanning optimization search, in-context probing, noise trajectory probing, classifier-guided probing, and dynamic concept tracing—to systematically demonstrate that most existing erasure methods merely "circumvent" concepts rather than genuinely eliminating the underlying knowledge.
+  [NeurIPS 2025][Image Generation][Concept Erasure] This paper proposes two mechanistic models of concept erasure (guidance-based avoidance vs. destruction-based removal) and designs a suite of five independent probing met…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Concept Erasure
-  - Diffusion Models
-  - Knowledge Residual
-  - Guidance-Based Avoidance
-  - Destruction-Based Removal
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Concept Erasure"
+  - "Diffusion Models"
+  - "Knowledge Residual"
+  - "Guidance-Based Avoidance"
+  - "Destruction-Based Removal"
 date: 2026-05-08
 content_hash: 14c2c560a0ce3125
 ---

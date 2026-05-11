@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AutoDebias: An Automated Framework for Detecting and Mitigating Backdoor Biases in Text-to-Image Models
 description: >-
-  [CVPR 2026][Image Generation][Backdoor Biases] Proposes AutoDebias—the first unified framework to simultaneously detect and mitigate malicious backdoor biases in T2I models. It leverages VLM open-set detection to discover trigger-bias associations and construct look-up tables, then eliminates backdoor associations through CLIP-guided distribution alignment training. It reduces the attack success rate from 90% to nearly 0 across 17 backdoor scenarios while maintaining image quality.
+  [CVPR 2026][Image Generation][Backdoor Biases] Proposes AutoDebias—the first unified framework to simultaneously detect and mitigate malicious backdoor biases in T2I models. It leverages VLM open-set detection to discove…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Backdoor Biases
-  - Text-to-Image
-  - Bias Detection and Mitigation
-  - CLIP-guided Alignment
-  - VLM Detection
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Backdoor Biases"
+  - "Text-to-Image"
+  - "Bias Detection and Mitigation"
+  - "CLIP-guided Alignment"
+  - "VLM Detection"
 date: 2026-05-08
 content_hash: 9424f851ccf2775b
 ---

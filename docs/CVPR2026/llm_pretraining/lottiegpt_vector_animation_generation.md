@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LottieGPT: Tokenizing Vector Animation for Autoregressive Generation
 description: >-
-  [CVPR 2026][LLM Pretraining][Vector Animation] LottieGPT is the first autoregressive vector animation generation framework, designing a Lottie tokenizer to encode hierarchical geometry, transforms, and keyframe motion into compact token sequences. It builds a 660K animation dataset and fine-tunes Qwen-VL to generate editable vector animations directly from text/image inputs.
+  [CVPR 2026][LLM Pretraining][Vector Animation] LottieGPT is the first autoregressive vector animation generation framework, designing a Lottie tokenizer to encode hierarchical geometry, transforms…
 tags:
-  - CVPR 2026
-  - LLM Pretraining
-  - Vector Animation
-  - Lottie
-  - Autoregressive Generation
-  - Tokenizer
-  - Multimodal
+  - "CVPR 2026"
+  - "LLM Pretraining"
+  - "Vector Animation"
+  - "Lottie"
+  - "Autoregressive Generation"
+  - "Tokenizer"
+  - "Multimodal"
 date: 2026-05-08
 content_hash: 2ff27874a88662ca
 ---

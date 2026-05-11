@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DynamicVL: Benchmarking MLLMs for Dynamic City Understanding
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Remote sensing imagery] This paper proposes DVL-Suite, a framework comprising the DVL-Bench evaluation benchmark and the DVL-Instruct instruction-tuning dataset, covering 42 U.S. cities and 14,871 high-resolution multi-temporal remote sensing images. It systematically evaluates 18 MLLMs on long-term urban dynamic understanding and introduces DVLChat as a baseline model.
+  [NeurIPS 2025][Multimodal VLM][Remote sensing imagery] This paper proposes DVL-Suite, a framework comprising the DVL-Bench evaluation benchmark and the DVL-Instruct instruction-tuning dataset…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Remote sensing imagery
-  - urban dynamic understanding
-  - multi-temporal analysis
-  - vision-language benchmark
-  - change detection
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Remote sensing imagery"
+  - "urban dynamic understanding"
+  - "multi-temporal analysis"
+  - "vision-language benchmark"
+  - "change detection"
 date: 2026-05-08
 content_hash: c0e5432f6374989d
 ---

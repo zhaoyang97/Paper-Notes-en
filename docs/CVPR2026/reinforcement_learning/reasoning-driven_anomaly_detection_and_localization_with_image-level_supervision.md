@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Reasoning-Driven Anomaly Detection and Localization with Image-Level Supervision
 description: >-
-  [CVPR 2026][Reinforcement Learning][Anomaly Detection and Localization] This paper proposes two modules, ReAL and CGRO, which extract anomaly-relevant tokens from the autoregressive reasoning process of an MLLM and aggregate their visual attention maps to generate pixel-level anomaly maps. A consistency-guided reinforcement learning scheme then aligns reasoning tokens with visual evidence, enabling end-to-end anomaly detection, localization, and interpretable reasoning under image-level supervision only.
+  [CVPR 2026][Reinforcement Learning][Anomaly Detection and Localization] This paper proposes two modules, ReAL and CGRO, which extract anomaly-relevant tokens from the autoregressive reasoning process of an MLLM and aggre…
 tags:
-  - CVPR 2026
-  - Reinforcement Learning
-  - Anomaly Detection and Localization
-  - Reasoning-Driven
-  - Image-Level Supervision
-  - MLLM Attention
+  - "CVPR 2026"
+  - "Reinforcement Learning"
+  - "Anomaly Detection and Localization"
+  - "Reasoning-Driven"
+  - "Image-Level Supervision"
+  - "MLLM Attention"
 date: 2026-05-08
 content_hash: 5453a137065d95d1
 ---

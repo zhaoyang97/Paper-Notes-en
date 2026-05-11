@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Find a Scapegoat: Poisoning Membership Inference Attack and Defense to Federated Learning
 description: >-
-  [ICCV 2025][AI Safety][Federated Learning] This paper proposes FedPoisonMIA, a poisoning-based membership inference attack for federated learning that maximizes angular deviation, along with a defense mechanism called Angular Trimmed-mean (ATM) that filters malicious gradients via angular distance.
+  [ICCV 2025][AI Safety][Federated Learning] This paper proposes FedPoisonMIA, a poisoning-based membership inference attack for federated learning that maximizes angular deviation…
 tags:
-  - ICCV 2025
-  - AI Safety
-  - Federated Learning
-  - Membership Inference Attack
-  - Poisoning Attack
-  - Byzantine-Robust Aggregation
-  - Privacy Preservation
+  - "ICCV 2025"
+  - "AI Safety"
+  - "Federated Learning"
+  - "Membership Inference Attack"
+  - "Poisoning Attack"
+  - "Byzantine-Robust Aggregation"
+  - "Privacy Preservation"
 date: 2026-05-08
 content_hash: b850e0801536c4f9
 ---

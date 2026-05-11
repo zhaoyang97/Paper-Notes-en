@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Galactification: Painting Galaxies onto Dark Matter Only Simulations Using a Transformer-Based Model
 description: >-
-  [NeurIPS 2025][3D Vision][cosmological simulation] This paper proposes a multimodal Transformer encoder–decoder framework that takes density and velocity fields from inexpensive dark matter N-body simulations as input and autoregressively generates galaxy catalogs (positions + physical properties). The model faithfully reproduces hydrodynamical simulation results across multiple statistical metrics while achieving approximately 100× computational speedup.
+  [NeurIPS 2025][3D Vision][cosmological simulation] This paper proposes a multimodal Transformer encoder–decoder framework that takes density and velocity fields from inexpensive dark matter N-body simulations as input an…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - cosmological simulation
-  - Transformer
-  - dark matter
-  - galaxy generation
-  - conditional generative model
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "cosmological simulation"
+  - "Transformer"
+  - "dark matter"
+  - "galaxy generation"
+  - "conditional generative model"
 date: 2026-05-08
 content_hash: c1e4e612b6a3b535
 ---

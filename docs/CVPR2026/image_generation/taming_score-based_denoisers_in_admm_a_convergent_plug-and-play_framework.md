@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Taming Score-Based Denoisers in ADMM: A Convergent Plug-and-Play Framework
 description: >-
-  [CVPR 2026][Image Generation][Plug-and-Play] This paper proposes AC-DC, a three-stage denoiser (Auto-Correction + Directional Correction + Score Denoising) that addresses the manifold mismatch between ADMM iterations and the score training manifold. It provides the first convergence guarantee for ADMM-PnP combined with score-based denoisers, achieving state-of-the-art performance across multiple inverse problems.
+  [CVPR 2026][Image Generation][Plug-and-Play] This paper proposes AC-DC, a three-stage denoiser (Auto-Correction + Directional Correction + Score Denoising) that addresses the manifold mismatch between ADMM iterations and…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Plug-and-Play
-  - ADMM
-  - Diffusion Models
-  - Score-based Denoiser
-  - Inverse Problem Solving
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Plug-and-Play"
+  - "ADMM"
+  - "Diffusion Models"
+  - "Score-based Denoiser"
+  - "Inverse Problem Solving"
 date: 2026-05-08
 content_hash: 5fffa1e29faf7065
 ---

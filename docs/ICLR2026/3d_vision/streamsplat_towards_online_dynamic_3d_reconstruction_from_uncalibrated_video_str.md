@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] StreamSplat: Towards Online Dynamic 3D Reconstruction from Uncalibrated Video Streams
 description: >-
-  [ICLR 2026][3D Vision][Dynamic 3D Reconstruction] StreamSplat proposes a fully feed-forward online dynamic 3D reconstruction framework that enables instant generation of dynamic 3DGS representations from uncalibrated video streams, achieving 1200× speedup over optimization-based methods through three key innovations: probabilistic position sampling, bidirectional deformation fields, and adaptive Gaussian fusion.
+  [ICLR 2026][3D Vision][Dynamic 3D Reconstruction] StreamSplat proposes a fully feed-forward online dynamic 3D reconstruction framework that enables instant generation of dynamic 3DGS representations from uncalibrated vid…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Dynamic 3D Reconstruction
-  - 3D Gaussian Splatting
-  - Online Reconstruction
-  - Feed-Forward Model
-  - Video Streams
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Dynamic 3D Reconstruction"
+  - "3D Gaussian Splatting"
+  - "Online Reconstruction"
+  - "Feed-Forward Model"
+  - "Video Streams"
 date: 2026-05-08
 content_hash: 7f0a7ec0a6e0ac45
 ---

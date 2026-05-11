@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TimeFormer: Capturing Temporal Relationships of Deformable 3D Gaussians for Robust Reconstruction
 description: >-
-  [ICCV 2025][3D Vision][Dynamic scene reconstruction] This paper proposes the TimeFormer module, which implicitly learns temporal relationships among deformable 3D Gaussians via a cross-time Transformer encoder, and introduces a dual-stream optimization strategy that transfers motion knowledge during training with no additional overhead at inference.
+  [ICCV 2025][3D Vision][Dynamic scene reconstruction] This paper proposes the TimeFormer module, which implicitly learns temporal relationships among deformable 3D Gaussians via a cross-time Transformer encoder…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Dynamic scene reconstruction
-  - 3D Gaussian Splatting
-  - Transformer
-  - temporal relationship modeling
-  - plug-and-play
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Dynamic scene reconstruction"
+  - "3D Gaussian Splatting"
+  - "Transformer"
+  - "temporal relationship modeling"
+  - "plug-and-play"
 date: 2026-05-08
 content_hash: 95bba0286fd9414d
 ---

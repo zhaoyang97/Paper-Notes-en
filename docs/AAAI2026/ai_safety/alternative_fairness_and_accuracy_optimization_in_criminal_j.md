@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Alternative Fairness and Accuracy Optimization in Criminal Justice
 description: >-
-  [AAAI 2026][AI Safety][algorithmic fairness] This paper provides a systematic review of three dimensions of algorithmic fairness (group fairness, individual fairness, and procedural fairness), proposes an improved group fairness optimization formulation based on tolerance constraints, and constructs a "Three Pillars of Fairness" deployment framework for public decision-making systems.
+  [AAAI 2026][AI Safety][algorithmic fairness] This paper provides a systematic review of three dimensions of algorithmic fairness (group fairness, individual fairness, and procedural fairness)…
 tags:
-  - AAAI 2026
-  - AI Safety
-  - algorithmic fairness
-  - criminal justice
-  - risk assessment
-  - group fairness
-  - individual fairness
+  - "AAAI 2026"
+  - "AI Safety"
+  - "algorithmic fairness"
+  - "criminal justice"
+  - "risk assessment"
+  - "group fairness"
+  - "individual fairness"
 date: 2026-05-08
 content_hash: e07648a5843eaf74
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Human Behavior Atlas: Benchmarking Unified Psychological and Social Behavior Understanding
 description: >-
-  [ICLR 2026][Medical Imaging][behavior understanding benchmark] This work introduces Human Behavior Atlas—the first large-scale multimodal unified benchmark for behavior understanding spanning four dimensions (affective, cognitive, pathological, and social processes) with 101K+ samples—and trains three OmniSapiens-7B model variants to validate its effectiveness in multi-task training and transfer learning.
+  [ICLR 2026][Medical Imaging][behavior understanding benchmark] This work introduces Human Behavior Atlas—the first large-scale multimodal unified benchmark for behavior understanding spanning four dimensions (affective…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - behavior understanding benchmark
-  - psychological and social behavior
-  - multimodal learning
-  - unified model
-  - affective computing
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "behavior understanding benchmark"
+  - "psychological and social behavior"
+  - "multimodal learning"
+  - "unified model"
+  - "affective computing"
 date: 2026-05-08
 content_hash: 94b0e7164adc8213
 ---

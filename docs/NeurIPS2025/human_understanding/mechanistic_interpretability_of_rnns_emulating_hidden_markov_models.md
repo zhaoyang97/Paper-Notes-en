@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mechanistic Interpretability of RNNs Emulating Hidden Markov Models
 description: >-
-  [NeurIPS 2025][Human Understanding][RNN Interpretability] A vanilla RNN is trained to reproduce the emission statistics of a Hidden Markov Model (HMM), and its internal mechanisms are reverse-engineered to reveal that the network implements discrete stochastic state transitions via noise-sustained orbital dynamics, "kick neuron" circuits, and self-induced stochastic resonance.
+  [NeurIPS 2025][Human Understanding][RNN Interpretability] A vanilla RNN is trained to reproduce the emission statistics of a Hidden Markov Model (HMM)…
 tags:
-  - NeurIPS 2025
-  - Human Understanding
-  - RNN Interpretability
-  - Hidden Markov Models
-  - Noise-Driven Dynamics
-  - Stochastic Resonance
-  - Compositional Dynamical Primitives
+  - "NeurIPS 2025"
+  - "Human Understanding"
+  - "RNN Interpretability"
+  - "Hidden Markov Models"
+  - "Noise-Driven Dynamics"
+  - "Stochastic Resonance"
+  - "Compositional Dynamical Primitives"
 date: 2026-05-08
 content_hash: e8fdc7f22869cafa
 ---

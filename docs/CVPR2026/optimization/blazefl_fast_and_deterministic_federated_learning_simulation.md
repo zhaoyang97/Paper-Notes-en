@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BlazeFL: Fast and Deterministic Federated Learning Simulation
 description: >-
-  [CVPR 2026 (Workshop: FedVision)][Optimization][Federated learning simulation] BlazeFL is a lightweight single-machine federated learning simulation framework built on Python free-threading. By combining shared-memory execution with per-client isolated RNG streams, it achieves up to 3.1× speedup and bit-level reproducibility.
+  [CVPR 2026 (Workshop: FedVision)][Optimization][Federated learning simulation] BlazeFL is a lightweight single-machine federated learning simulation framework built on Python free-threading. By combining shared-memory ex…
 tags:
   - "CVPR 2026 (Workshop: FedVision)"
-  - Optimization
-  - Federated learning simulation
-  - deterministic reproducibility
-  - free-threading
-  - shared memory
-  - FedAvg
+  - "Optimization"
+  - "Federated learning simulation"
+  - "deterministic reproducibility"
+  - "free-threading"
+  - "shared memory"
+  - "FedAvg"
 date: 2026-05-08
 content_hash: b80110817b94308e
 ---

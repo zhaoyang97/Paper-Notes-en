@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Zeroth-Order Fine-Tuning of LLMs in Random Subspaces
 description: >-
-  [ICCV 2025][Optimization][Zeroth-order optimization] This paper proposes SubZero (random **Sub**space **Zero**th-order), which estimates gradients in random subspaces via per-layer low-rank perturbations, significantly reducing gradient variance and angular error in zeroth-order optimization, enabling memory-efficient LLM fine-tuning at a cost close to inference.
+  [ICCV 2025][Optimization][Zeroth-order optimization] This paper proposes SubZero (random **Sub**space **Zero**th-order), which estimates gradients in random subspaces via per-layer low-rank perturbations…
 tags:
-  - ICCV 2025
-  - Optimization
-  - Zeroth-order optimization
-  - LLM fine-tuning
-  - random subspace
-  - low-rank perturbation
-  - memory-efficient
+  - "ICCV 2025"
+  - "Optimization"
+  - "Zeroth-order optimization"
+  - "LLM fine-tuning"
+  - "random subspace"
+  - "low-rank perturbation"
+  - "memory-efficient"
 date: 2026-05-08
 content_hash: 2db0942de733b570
 ---

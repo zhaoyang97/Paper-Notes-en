@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Disrupting Model Merging: A Parameter-Level Defense Without Sacrificing Accuracy
 description: >-
-  [ICCV 2025][Image Generation][model merging defense] This paper proposes PaRaMS (Parameter Rearrangement & Random Multi-head Scaling), a parameter-level proactive defense method that displaces a protected model away from the shared loss basin via functionally equivalent parameter transformations, causing severe performance degradation upon merging while preserving original performance when the model is used standalone.
+  [ICCV 2025][Image Generation][model merging defense] This paper proposes PaRaMS (Parameter Rearrangement & Random Multi-head Scaling), a parameter-level proactive defense method that displaces a protected model away from…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - model merging defense
-  - intellectual property protection
-  - parameter rearrangement
-  - attention head scaling
-  - functionally equivalent transformation
+  - "ICCV 2025"
+  - "Image Generation"
+  - "model merging defense"
+  - "intellectual property protection"
+  - "parameter rearrangement"
+  - "attention head scaling"
+  - "functionally equivalent transformation"
 date: 2026-05-08
 content_hash: 2155d130d7effddd
 ---

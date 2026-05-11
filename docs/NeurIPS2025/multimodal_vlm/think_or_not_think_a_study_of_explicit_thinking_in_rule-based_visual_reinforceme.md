@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] To Think or Not To Think: A Study of Explicit Thinking in Rule-Based Visual Reinforcement Fine-Tuning
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Reinforcement Fine-Tuning] This paper systematically investigates whether explicit thinking is necessary in rule-based reinforcement fine-tuning (RFT). It finds that on visual perception tasks, No-Thinking-RFT consistently outperforms the conventional think-then-answer paradigm, and proposes an Adaptive-Thinking approach that allows models to autonomously determine whether to reason based on their own capability and task complexity.
+  [NeurIPS 2025][Multimodal VLM][Reinforcement Fine-Tuning] This paper systematically investigates whether explicit thinking is necessary in rule-based reinforcement fine-tuning (RFT). It finds that on visual perception ta…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Reinforcement Fine-Tuning
-  - Chain-of-Thought
-  - Multimodal Large Language Models
-  - GRPO
-  - Visual Reasoning
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Reinforcement Fine-Tuning"
+  - "Chain-of-Thought"
+  - "Multimodal Large Language Models"
+  - "GRPO"
+  - "Visual Reasoning"
 date: 2026-05-08
 content_hash: 6ddf79ad229a3604
 ---

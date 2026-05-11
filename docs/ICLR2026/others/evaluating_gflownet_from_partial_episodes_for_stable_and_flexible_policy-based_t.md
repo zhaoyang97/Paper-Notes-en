@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Evaluating GFlowNet from Partial Episodes for Stable and Flexible Policy-Based Training
 description: >-
-  [ICLR 2026][GFlowNet] This paper establishes a theoretical connection between state flow functions and policy value functions in GFlowNet, proposes the Subtrajectory Evaluation Balance (Sub-EB) objective for reliable value function learning, and enhances the stability and flexibility of policy-based GFlowNet training.
+  [ICLR 2026][GFlowNet] This paper establishes a theoretical connection between state flow functions and policy value functions in GFlowNet…
 tags:
-  - ICLR 2026
-  - GFlowNet
-  - policy gradient
-  - value function
-  - flow balance
-  - combinatorial optimization
+  - "ICLR 2026"
+  - "GFlowNet"
+  - "policy gradient"
+  - "value function"
+  - "flow balance"
+  - "combinatorial optimization"
 date: 2026-05-08
 content_hash: 31e42d4f09175579
 ---

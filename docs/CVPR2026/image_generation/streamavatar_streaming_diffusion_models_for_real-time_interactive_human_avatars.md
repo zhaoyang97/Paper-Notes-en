@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] StreamAvatar: Streaming Diffusion Models for Real-Time Interactive Human Avatars
 description: >-
-  [CVPR 2026][Image Generation][real-time digital human] This paper proposes a two-stage autoregressive adaptation framework (autoregressive distillation + adversarial refinement) that converts a bidirectional human video diffusion model into a real-time streaming generator. Reference Sink, RAPR positional re-encoding, and a consistency-aware discriminator are introduced to ensure long-video stability, realizing the first full-body real-time digital human that supports both speaking and listening interactions.
+  [CVPR 2026][Image Generation][real-time digital human] This paper proposes a two-stage autoregressive adaptation framework (autoregressive distillation + adversarial refinement) that converts a bidirectional human video…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - real-time digital human
-  - streaming video generation
-  - autoregressive distillation
-  - speaking-listening interaction
-  - diffusion models
+  - "CVPR 2026"
+  - "Image Generation"
+  - "real-time digital human"
+  - "streaming video generation"
+  - "autoregressive distillation"
+  - "speaking-listening interaction"
+  - "diffusion models"
 date: 2026-05-08
 content_hash: e2c2046eac651976
 ---

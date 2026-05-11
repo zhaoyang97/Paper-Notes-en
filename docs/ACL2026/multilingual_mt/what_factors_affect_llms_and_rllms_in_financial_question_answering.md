@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] What Factors Affect LLMs and RLLMs in Financial Question Answering?
 description: >-
-  [ACL 2026][Financial QA] This paper systematically investigates how prompting methods, agent frameworks, and multilingual alignment approaches affect LLMs and RLLMs (Reasoning Large Language Models) on financial question answering tasks. The key finding is that existing methods essentially improve LLM performance by simulating Long CoT, but offer limited gains for RLLMs that already possess native Long CoT capabilities.
+  [ACL 2026][Multilingual & Machine Translation][Financial QA] This paper systematically investigates how prompting methods, agent frameworks, and multilingual alignment approaches affect LLMs and RLLMs (Reasoning Large La…
 tags:
-  - ACL 2026
-  - Financial QA
-  - Reasoning LLMs
-  - Long CoT
-  - Prompting Methods
-  - Multilingual Alignment
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "Financial QA"
+  - "Reasoning LLMs"
+  - "Long CoT"
+  - "Prompting Methods"
+  - "Multilingual Alignment"
 date: 2026-05-08
 content_hash: f44c192575a777ab
 ---

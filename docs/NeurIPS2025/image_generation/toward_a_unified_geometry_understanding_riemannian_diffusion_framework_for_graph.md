@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Toward a Unified Geometry Understanding: Riemannian Diffusion Framework for Graph Generation and Prediction
 description: >-
-  [NeurIPS 2025][Image Generation][Graph Diffusion Models] This paper proposes GeoMancer, a framework that replaces numerically unstable exponential maps with a Riemannian GyroKernel autoencoder to disentangle multi-level graph features onto task-specific product manifolds. By further introducing manifold-constrained diffusion and a self-guidance generation strategy, GeoMancer achieves unified modeling and state-of-the-art performance across molecular generation, node classification, and graph regression tasks.
+  [NeurIPS 2025][Image Generation][Graph Diffusion Models] This paper proposes GeoMancer, a framework that replaces numerically unstable exponential maps with a Riemannian GyroKernel autoencoder to disentangle multi-level…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Graph Diffusion Models
-  - Riemannian Manifolds
-  - Product Manifolds
-  - Molecular Generation
-  - Geometric Autoencoder
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Graph Diffusion Models"
+  - "Riemannian Manifolds"
+  - "Product Manifolds"
+  - "Molecular Generation"
+  - "Geometric Autoencoder"
 date: 2026-05-08
 content_hash: 75efdcda830793b1
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HeadHunt-VAD: Hunting Robust Anomaly-Sensitive Heads in MLLM for Tuning-Free Video Anomaly Detection
 description: >-
-  [AAAI 2026][Multimodal VLM][Video Anomaly Detection] This paper proposes HeadHunt-VAD, which systematically identifies a sparse set of anomaly-sensitive and stable attention heads within a frozen MLLM, bypassing the information loss inherent in text-based outputs. Using a lightweight classifier, it achieves efficient tuning-free video anomaly detection, establishing state-of-the-art performance among tuning-free methods on UCF-Crime and XD-Violence.
+  [AAAI 2026][Multimodal VLM][Video Anomaly Detection] This paper proposes HeadHunt-VAD, which systematically identifies a sparse set of anomaly-sensitive and stable attention heads within a frozen MLLM…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Video Anomaly Detection
-  - Multimodal Large Language Model
-  - Attention Head Selection
-  - Tuning-Free
-  - Internal Representation Probing
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Video Anomaly Detection"
+  - "Multimodal Large Language Model"
+  - "Attention Head Selection"
+  - "Tuning-Free"
+  - "Internal Representation Probing"
 date: 2026-05-08
 content_hash: adfdb83fff3e9054
 ---

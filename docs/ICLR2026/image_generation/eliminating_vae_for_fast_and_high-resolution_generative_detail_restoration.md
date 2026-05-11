@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Eliminating VAE for Fast and High-Resolution Generative Detail Restoration
 description: >-
-  [ICLR 2026][Image Generation][VAE elimination] By replacing the VAE encoder and decoder with ×8 pixel-(un)shuffle operations, this work converts latent-space diffusion super-resolution (GenDR) into pixel-space super-resolution (GenDR-Pix). Combined with multi-stage adversarial distillation and a PadCFG inference strategy, the method achieves 2.8× speedup and 60% memory reduction with negligible visual degradation, enabling 4K image restoration within 1 second using only 6 GB of VRAM for the first time.
+  [ICLR 2026][Image Generation][VAE elimination] By replacing the VAE encoder and decoder with ×8 pixel-(un)shuffle operations, this work converts latent-space diffusion super-resolution (GenDR) into pixel-space super-reso…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - VAE elimination
-  - super-resolution
-  - pixel-space diffusion
-  - adversarial distillation
-  - pixel-shuffle
+  - "ICLR 2026"
+  - "Image Generation"
+  - "VAE elimination"
+  - "super-resolution"
+  - "pixel-space diffusion"
+  - "adversarial distillation"
+  - "pixel-shuffle"
 date: 2026-05-08
 content_hash: fe13f894ac921cff
 ---

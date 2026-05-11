@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] WildSAT: Learning Satellite Image Representations from Wildlife Observations
 description: >-
-  [ICCV 2025][Remote Sensing][remote sensing representation learning] This paper proposes WildSAT, which leverages millions of geotagged wildlife observations from citizen science platforms to align satellite images, species locations, and textual descriptions via contrastive learning, substantially improving remote sensing representation quality and enabling zero-shot text-based retrieval.
+  [ICCV 2025][Remote Sensing][remote sensing representation learning] This paper proposes WildSAT, which leverages millions of geotagged wildlife observations from citizen science platforms to align satellite images…
 tags:
-  - ICCV 2025
-  - Remote Sensing
-  - remote sensing representation learning
-  - contrastive learning
-  - wildlife observations
-  - cross-modal
-  - satellite imagery
+  - "ICCV 2025"
+  - "Remote Sensing"
+  - "remote sensing representation learning"
+  - "contrastive learning"
+  - "wildlife observations"
+  - "cross-modal"
+  - "satellite imagery"
 date: 2026-05-08
 content_hash: c5cd7f27fe550266
 ---

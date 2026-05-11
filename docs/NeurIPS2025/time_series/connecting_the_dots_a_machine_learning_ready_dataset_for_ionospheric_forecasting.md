@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Connecting the Dots: A Machine Learning Dataset for Ionospheric Prediction
 description: >-
-  [NeurIPS 2025][Time Series][Ionospheric prediction] This paper constructs an open, ML-ready ionospheric prediction dataset that integrates 8 heterogeneous data sources (solar observations, geomagnetic indices, TEC maps, etc.) spanning approximately 14 years (2010–2024). Three spatiotemporal baseline models—LSTM, SFNO, and GraphCast—are trained on this dataset, achieving TEC forecasts with lead times up to 12 hours.
+  [NeurIPS 2025][Time Series][Ionospheric prediction] This paper constructs an open, ML-ready ionospheric prediction dataset that integrates 8 heterogeneous data sources (solar observations, geomagnetic indices, TEC maps…
 tags:
-  - NeurIPS 2025
-  - Time Series
-  - Ionospheric prediction
-  - dataset
-  - solar activity
-  - time series forecasting
-  - space weather
+  - "NeurIPS 2025"
+  - "Time Series"
+  - "Ionospheric prediction"
+  - "dataset"
+  - "solar activity"
+  - "time series forecasting"
+  - "space weather"
 date: 2026-05-08
 content_hash: 336f34ee81662c88
 ---

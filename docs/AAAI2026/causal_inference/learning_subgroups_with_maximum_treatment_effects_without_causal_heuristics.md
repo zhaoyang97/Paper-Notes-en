@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Learning Subgroups with Maximum Treatment Effects without Causal Heuristics
 description: >-
-  [AAAI 2026][Causal Inference][Treatment Effects] Under the SCM framework, the paper proves that the subgroup with maximum treatment effect must exhibit homogeneous pointwise effects (Theorem 1); under the partition model assumption, it proves that optimal subgroup discovery reduces to standard supervised learning (Theorem 2), achievable via CART with the Gini index. On 77 ACIC-2016 semi-synthetic datasets, the proposed method achieves a mean treatment effect of 10.54 (vs. 7.84 for the runner-up), ranking first on 51.9% of datasets.
+  [AAAI 2026][Causal Inference][Treatment Effects] Under the SCM framework, the paper proves that the subgroup with maximum treatment effect must exhibit homogeneous pointwise effects (Theorem 1)…
 tags:
-  - AAAI 2026
-  - Causal Inference
-  - Treatment Effects
-  - Subgroup Discovery
-  - CART
-  - Partition Model
+  - "AAAI 2026"
+  - "Causal Inference"
+  - "Treatment Effects"
+  - "Subgroup Discovery"
+  - "CART"
+  - "Partition Model"
 date: 2026-05-08
 content_hash: 3619c225c7dc7643
 ---

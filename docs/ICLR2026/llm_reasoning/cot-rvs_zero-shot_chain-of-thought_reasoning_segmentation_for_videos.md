@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CoT-RVS: Zero-Shot Chain-of-Thought Reasoning Segmentation for Videos
 description: >-
-  [ICLR 2026][LLM Reasoning][Reasoning Video Segmentation] This paper proposes CoT-RVS, a fully training-free multi-agent framework that leverages the zero-shot CoT reasoning capabilities of pretrained MLLMs for temporal-semantic correlation analysis and keyframe selection, achieving substantial improvements over fine-tuned methods on reasoning video segmentation tasks (Refer-DAVIS J&F 79.1 vs. 71.2; ReasonVOS J&F 65.5 vs. 49.9).
+  [ICLR 2026][LLM Reasoning][Reasoning Video Segmentation] This paper proposes CoT-RVS, a fully training-free multi-agent framework that leverages the zero-shot CoT reasoning capabilities of pretrained MLLMs for temporal-s…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Reasoning Video Segmentation
-  - Chain-of-Thought
-  - Zero-Shot
-  - Keyframe Selection
-  - Multimodal Large Language Models
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "Reasoning Video Segmentation"
+  - "Chain-of-Thought"
+  - "Zero-Shot"
+  - "Keyframe Selection"
+  - "Multimodal Large Language Models"
 date: 2026-05-08
 content_hash: 4bc7555a0eaa3cc1
 ---

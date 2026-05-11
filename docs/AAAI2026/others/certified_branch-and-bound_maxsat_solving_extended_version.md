@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Certified Branch-and-Bound MaxSAT Solving (Extended Version)
 description: >-
-  [AAAI 2026][MaxSAT] This paper introduces VeriPB-based certification for Branch-and-Bound MaxSAT solvers, covering two core techniques: look-ahead bounding methods and multi-valued decision diagram (MDD) encodings. Experiments on the MaxCDCL solver demonstrate a median proof logging overhead of only 19%, filling the last remaining gap in certified MaxSAT solving paradigms.
+  [AAAI 2026][MaxSAT] This paper introduces VeriPB-based certification for Branch-and-Bound MaxSAT solvers, covering two core techniques: look-ahead bounding methods and multi-valued decision diagram (MDD) encodings. Exper…
 tags:
-  - AAAI 2026
-  - MaxSAT
-  - Proof Logging
-  - Branch-and-Bound
-  - VeriPB
-  - Multi-valued Decision Diagrams
+  - "AAAI 2026"
+  - "MaxSAT"
+  - "Proof Logging"
+  - "Branch-and-Bound"
+  - "VeriPB"
+  - "Multi-valued Decision Diagrams"
 date: 2026-05-08
 content_hash: f2f79f2def51350d
 ---

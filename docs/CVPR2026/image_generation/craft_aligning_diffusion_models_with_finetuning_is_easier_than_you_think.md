@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CRAFT: Aligning Diffusion Models with Fine-Tuning Is Easier Than You Think
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Model Alignment] CRAFT proposes an ultra-lightweight alignment method for diffusion models: it automatically constructs high-quality training sets through a Compositional Reward Filtering (CRF) strategy and then performs an enhanced version of SFT. Theoretically, CRAFT optimizes the lower bound of Group Relative Policy Optimization (GRPO). It outperforms SOTA methods requiring thousands of preference pairs using only 100 samples, with training speeds 11-220 times faster.
+  [CVPR 2026][Image Generation][Diffusion Model Alignment] CRAFT proposes an ultra-lightweight alignment method for diffusion models: it automatically constructs high-quality training sets through a Compositional Reward Fi…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Model Alignment
-  - Human Preference
-  - Compositional Reward Filtering
-  - Supervised Fine-Tuning
-  - Data Efficiency
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Model Alignment"
+  - "Human Preference"
+  - "Compositional Reward Filtering"
+  - "Supervised Fine-Tuning"
+  - "Data Efficiency"
 date: 2026-05-08
 content_hash: 555657b44102fb1b
 ---

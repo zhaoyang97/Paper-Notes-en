@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] NeuSymEA: Neuro-symbolic Entity Alignment via Variational Inference
 description: >-
-  [NeurIPS 2025][Optimization][Entity Alignment] This paper proposes NeuSymEA, a neuro-symbolic reasoning framework based on a variational EM algorithm that unifies symbolic rule reasoning and neural network embeddings within a Markov Random Field for entity alignment, achieving significant performance gains and low-resource robustness on DBP15K.
+  [NeurIPS 2025][Optimization][Entity Alignment] This paper proposes NeuSymEA, a neuro-symbolic reasoning framework based on a variational EM algorithm that unifies symbolic rule reasoning and neural network embeddings wit…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Entity Alignment
-  - Neuro-symbolic Reasoning
-  - Variational Inference
-  - Knowledge Graph
-  - Markov Random Field
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Entity Alignment"
+  - "Neuro-symbolic Reasoning"
+  - "Variational Inference"
+  - "Knowledge Graph"
+  - "Markov Random Field"
 date: 2026-05-08
 content_hash: f1f094977a1b19d3
 ---

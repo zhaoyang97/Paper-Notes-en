@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] When to Ensemble: Identifying Token-Level Points for Stable and Fast LLM Ensembling
 description: >-
-  [ICLR 2026][LLM Evaluation][LLM ensembling] This paper proposes SAFE (Stable And Fast LLM Ensembling), which selectively ensembles multiple heterogeneous-tokenizer LLMs at the token level via a Generate-Verify-Ensemble loop. SAFE addresses OOV-like contamination caused by tokenization mismatch in long-sequence generation, achieving performance gains by ensembling on fewer than 1% of tokens—improving UniTE from 59.6% to 77.4% on MATH500.
+  [ICLR 2026][LLM Evaluation][LLM ensembling] This paper proposes SAFE (Stable And Fast LLM Ensembling), which selectively ensembles multiple heterogeneous-tokenizer LLMs at the token level via a Generate-Verify-Ensemble l…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - LLM ensembling
-  - tokenization mismatch
-  - OOV-like token
-  - speculative ensembling
-  - probability distribution alignment
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "LLM ensembling"
+  - "tokenization mismatch"
+  - "OOV-like token"
+  - "speculative ensembling"
+  - "probability distribution alignment"
 date: 2026-05-08
 content_hash: 9280b605b11a251a
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mitigating Object Hallucinations via Sentence-Level Early Intervention
 description: >-
-  [ICCV 2025][Multimodal VLM][MLLM hallucination] This paper proposes SENTINEL, a framework grounded in the key observation that hallucinations emerge early in generation and propagate forward. By combining in-domain candidate bootstrapping with dual-detector cross-validation to construct sentence-level preference data, and employing Context-aware DPO (C-DPO) for early intervention, SENTINEL reduces hallucinations on Object HalBench by 92% while preserving general capabilities.
+  [ICCV 2025][Multimodal VLM][MLLM hallucination] This paper proposes SENTINEL, a framework grounded in the key observation that hallucinations emerge early in generation and propagate forward. By combining in-domain candi…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - MLLM hallucination
-  - preference learning
-  - early intervention
-  - DPO
-  - object detection verification
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "MLLM hallucination"
+  - "preference learning"
+  - "early intervention"
+  - "DPO"
+  - "object detection verification"
 date: 2026-05-08
 content_hash: 7095e5e66ee0a60a
 ---

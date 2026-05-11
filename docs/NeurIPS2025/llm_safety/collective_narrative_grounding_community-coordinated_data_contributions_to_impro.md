@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Collective Narrative Grounding: Community-Coordinated Data Contributions to Improve Local AI Systems
 description: >-
-  [NeurIPS 2025][LLM Safety][local knowledge] This paper proposes the Collective Narrative Grounding protocol, which collects community narratives through participatory workshops and structures them into "narrative units." A RAG pipeline then injects this local knowledge into LLM-based QA systems. Experiments on LocalBench reveal that 76.7% of errors can be directly remediated by local narratives, and GPT-5 achieves only 21% accuracy on the participatory QA set, highlighting the severity of the local knowledge gap.
+  [NeurIPS 2025][LLM Safety][local knowledge] This paper proposes the Collective Narrative Grounding protocol, which collects community narratives through participatory workshops and structures them into "narrative units."…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - local knowledge
-  - LLM grounding
-  - participatory design
-  - narrative unit
-  - community governance
-  - RAG
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "local knowledge"
+  - "LLM grounding"
+  - "participatory design"
+  - "narrative unit"
+  - "community governance"
+  - "RAG"
 date: 2026-05-08
 content_hash: 5aa24e3948b7b237
 ---

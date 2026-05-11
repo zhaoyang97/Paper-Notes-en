@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EndoBench: A Comprehensive Evaluation of Multi-Modal Large Language Models for Endoscopy Analysis
 description: >-
-  [NeurIPS 2025][Medical Imaging][Endoscopy] This paper introduces EndoBench, the first comprehensive MLLM evaluation benchmark covering 4 endoscopic scenarios, 12 clinical tasks, and 5 levels of visual prompt granularity, comprising 6,832 clinically validated VQA pairs. Evaluation of 23 MLLMs reveals that commercial models generally outperform open-source and medical-specific counterparts, yet all remain below human expert performance.
+  [NeurIPS 2025][Medical Imaging][Endoscopy] This paper introduces EndoBench, the first comprehensive MLLM evaluation benchmark covering 4 endoscopic scenarios, 12 clinical tasks, and 5 levels of visual prompt granularity…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Endoscopy
-  - MLLM Evaluation
-  - Benchmark
-  - VQA
-  - Clinical Workflow
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Endoscopy"
+  - "MLLM Evaluation"
+  - "Benchmark"
+  - "VQA"
+  - "Clinical Workflow"
 date: 2026-05-08
 content_hash: 0582ac2aaa67ef19
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Saliency-Aware Quantized Imitation Learning for Efficient Robotic Control
 description: >-
-  [ICCV 2025][Autonomous Driving][Model Quantization] This paper proposes SQIL (Saliency-Aware Quantized Imitation Learning), which identifies task-critical states via saliency scoring and applies weighted distillation during quantization-aware training. SQIL recovers full-precision performance for 4-bit quantized VLA policy models in robotic manipulation and autonomous driving, while achieving 2.5–3.7× inference speedup.
+  [ICCV 2025][Autonomous Driving][Model Quantization] This paper proposes SQIL (Saliency-Aware Quantized Imitation Learning), which identifies task-critical states via saliency scoring and applies weighted distillation dur…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - Model Quantization
-  - Imitation Learning
-  - Saliency-Awareness
-  - Vision-Language-Action Models
-  - Edge Deployment
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "Model Quantization"
+  - "Imitation Learning"
+  - "Saliency-Awareness"
+  - "Vision-Language-Action Models"
+  - "Edge Deployment"
 date: 2026-05-08
 content_hash: c0d2cebb3a307620
 ---

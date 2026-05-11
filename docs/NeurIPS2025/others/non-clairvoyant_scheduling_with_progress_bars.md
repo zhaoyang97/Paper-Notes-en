@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Non-Clairvoyant Scheduling with Progress Bars
 description: >-
-  [NeurIPS 2025][Non-clairvoyant scheduling] This paper introduces a "progress bar" information model as an interpolation framework between clairvoyant and non-clairvoyant scheduling. It designs scheduling algorithms with optimal consistency–robustness tradeoffs for both adversarial and stochastic progress bars, while advancing the theoretical frontier of learning-augmented scheduling.
+  [NeurIPS 2025][Non-clairvoyant scheduling] This paper introduces a "progress bar" information model as an interpolation framework between clairvoyant and non-clairvoyant scheduling. It designs scheduling algorithms with…
 tags:
-  - NeurIPS 2025
-  - Non-clairvoyant scheduling
-  - progress bars
-  - competitive ratio
-  - learning-augmented algorithms
-  - exploration-exploitation tradeoff
+  - "NeurIPS 2025"
+  - "Non-clairvoyant scheduling"
+  - "progress bars"
+  - "competitive ratio"
+  - "learning-augmented algorithms"
+  - "exploration-exploitation tradeoff"
 date: 2026-05-08
 content_hash: e2a2c9aa42cfc6a5
 ---

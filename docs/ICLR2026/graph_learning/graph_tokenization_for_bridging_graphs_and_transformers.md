@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Graph Tokenization for Bridging Graphs and Transformers
 description: >-
-  [ICLR 2026][Graph Learning][graph tokenization] This paper proposes GraphTokenizer, a framework that converts graphs into symbol sequences via invertible frequency-guided serialization, then applies BPE to learn a substructure vocabulary, enabling standard Transformers (e.g., BERT/GTE) to process graph data directly without any architectural modification, achieving state-of-the-art results on 14 benchmarks.
+  [ICLR 2026][Graph Learning][graph tokenization] This paper proposes GraphTokenizer, a framework that converts graphs into symbol sequences via invertible frequency-guided serialization…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - graph tokenization
-  - BPE
-  - graph serialization
-  - Transformer
-  - graph classification
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "graph tokenization"
+  - "BPE"
+  - "graph serialization"
+  - "Transformer"
+  - "graph classification"
 date: 2026-05-08
 content_hash: 72ba8292f0837a78
 ---

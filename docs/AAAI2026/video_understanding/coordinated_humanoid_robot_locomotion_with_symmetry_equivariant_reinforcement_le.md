@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Coordinated Humanoid Robot Locomotion with Symmetry Equivariant Reinforcement Learning Policy
 description: >-
-  [AAAI 2026][Video Understanding][Humanoid Robot] This paper proposes SE-Policy, which directly embeds strict symmetry equivariance (actor) and symmetry invariance (critic) into the neural network architecture without additional hyperparameters, enabling humanoid robots to produce spatiotemporally coordinated natural locomotion. The velocity tracking error is reduced by 40% compared to DreamWaQ, and the policy is successfully deployed on a physical Unitree G1 robot.
+  [AAAI 2026][Video Understanding][Humanoid Robot] This paper proposes SE-Policy, which directly embeds strict symmetry equivariance (actor) and symmetry invariance (critic) into the neural network architecture without add…
 tags:
-  - AAAI 2026
-  - Video Understanding
-  - Humanoid Robot
-  - Symmetry Equivariance
-  - Deep Reinforcement Learning
-  - Motion Coordination
-  - PPO
-  - Sim-to-Real
+  - "AAAI 2026"
+  - "Video Understanding"
+  - "Humanoid Robot"
+  - "Symmetry Equivariance"
+  - "Deep Reinforcement Learning"
+  - "Motion Coordination"
+  - "PPO"
+  - "Sim-to-Real"
 date: 2026-05-08
 content_hash: dfd2b8462fb6b251
 ---

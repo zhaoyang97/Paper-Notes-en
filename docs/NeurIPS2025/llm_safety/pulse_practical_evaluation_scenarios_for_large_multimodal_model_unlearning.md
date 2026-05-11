@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PULSE: Practical Evaluation Scenarios for Large Multimodal Model Unlearning
 description: >-
-  [NeurIPS 2025][LLM Safety][Machine Unlearning] This paper proposes the PULSE evaluation protocol, which assesses existing unlearning methods for large multimodal models (LMMs) along two practically motivated dimensions: the forgetting of pretrained knowledge and the sustainability of repeated sequential unlearning. The findings reveal severe deficiencies in current methods—forgetting pretrained knowledge causes over 90% loss of general capability, and after five sequential unlearning operations, model generalization nearly collapses entirely.
+  [NeurIPS 2025][LLM Safety][Machine Unlearning] This paper proposes the PULSE evaluation protocol, which assesses existing unlearning methods for large multimodal models (LMMs) along two practically motivated dimensions:…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - Machine Unlearning
-  - Large Multimodal Models
-  - Pretrained Knowledge
-  - Sustainability
-  - Evaluation Benchmark
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "Machine Unlearning"
+  - "Large Multimodal Models"
+  - "Pretrained Knowledge"
+  - "Sustainability"
+  - "Evaluation Benchmark"
 date: 2026-05-08
 content_hash: a310ef55bc9ba7ff
 ---

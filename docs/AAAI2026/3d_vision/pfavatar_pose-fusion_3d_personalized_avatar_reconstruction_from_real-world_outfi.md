@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PFAvatar: Pose-Fusion 3D Personalized Avatar Reconstruction from Real-World Outfit-of-the-Day Photos
 description: >-
-  [AAAI 2026][3D Vision][3D avatar reconstruction] PFAvatar is proposed as a two-stage pipeline—comprising pose-aware diffusion model fine-tuning (ControlBooth) and NeRF distillation (BoothAvatar)—that reconstructs high-quality 3D personalized avatars from real-world Outfit-of-the-Day (OOTD) photos, completing personalization within 5 minutes and achieving a 48× speedup over prior methods.
+  [AAAI 2026][3D Vision][3D avatar reconstruction] PFAvatar is proposed as a two-stage pipeline—comprising pose-aware diffusion model fine-tuning (ControlBooth) and NeRF distillation (BoothAvatar)—that reconstructs high-qu…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - 3D avatar reconstruction
-  - OOTD photos
-  - diffusion models
-  - NeRF
-  - Score Distillation Sampling
+  - "AAAI 2026"
+  - "3D Vision"
+  - "3D avatar reconstruction"
+  - "OOTD photos"
+  - "diffusion models"
+  - "NeRF"
+  - "Score Distillation Sampling"
 date: 2026-05-08
 content_hash: a3b1cefc8e21cd8d
 ---

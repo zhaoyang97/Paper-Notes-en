@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MixRI: Mixing Features of Reference Images for Novel Object Pose Estimation
 description: >-
-  [ICCV 2025][Human Understanding][Novel Object Pose Estimation] This paper proposes MixRI, a lightweight network with only 12 reference images and 5.3M parameters, which establishes 2D–3D correspondences between multiple reference images and a query image via a multi-view feature fusion strategy. MixRI achieves pose estimation performance comparable to methods requiring hundreds of reference images across 7 core BOP challenge datasets.
+  [ICCV 2025][Human Understanding][Novel Object Pose Estimation] This paper proposes MixRI, a lightweight network with only 12 reference images and 5.3M parameters…
 tags:
-  - ICCV 2025
-  - Human Understanding
-  - Novel Object Pose Estimation
-  - Feature Matching
-  - Multi-View Fusion
-  - Lightweight Network
-  - Edge AI
+  - "ICCV 2025"
+  - "Human Understanding"
+  - "Novel Object Pose Estimation"
+  - "Feature Matching"
+  - "Multi-View Fusion"
+  - "Lightweight Network"
+  - "Edge AI"
 date: 2026-05-08
 content_hash: a881a98642d940c0
 ---

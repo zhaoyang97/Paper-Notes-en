@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ReHARK: Refined Hybrid Adaptive RBF Kernels for Robust One-Shot Vision-Language Adaptation
 description: >-
-  [CVPR 2026][Multimodal VLM][Vision-Language Models] ReHARK is a four-stage refinement pipeline that constructs hybrid semantic-visual priors, augments the support set, applies adaptive distribution rectification, and integrates multi-scale RBF kernels, achieving 65.83% one-shot adaptation accuracy across 11 benchmarks and substantially outperforming Tip-Adapter and ProKeR.
+  [CVPR 2026][Multimodal VLM][Vision-Language Models] ReHARK is a four-stage refinement pipeline that constructs hybrid semantic-visual priors, augments the support set, applies adaptive distribution rectification…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Vision-Language Models
-  - One-Shot Adaptation
-  - Kernel Ridge Regression
-  - CLIP
-  - GPT-3 Semantics
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Vision-Language Models"
+  - "One-Shot Adaptation"
+  - "Kernel Ridge Regression"
+  - "CLIP"
+  - "GPT-3 Semantics"
 date: 2026-05-08
 content_hash: e0eff3ec2b5337cb
 ---

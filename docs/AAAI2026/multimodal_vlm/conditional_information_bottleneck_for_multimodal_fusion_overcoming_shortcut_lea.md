@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Conditional Information Bottleneck for Multimodal Fusion: Overcoming Shortcut Learning in Sarcasm Detection
 description: >-
-  [AAAI 2026][Multimodal VLM][Multimodal Fusion] This paper identifies three types of shortcut learning in multimodal sarcasm detection (character label bias, canned laughter label leakage, and sentiment inconsistency shortcuts), reconstructs a shortcut-free benchmark MUStARD++R, and proposes MCIB, a multimodal fusion framework based on the Conditional Information Bottleneck. MCIB achieves effective fusion by compressing redundancy in the primary modality while preserving complementary information from auxiliary modalities.
+  [AAAI 2026][Multimodal VLM][Multimodal Fusion] This paper identifies three types of shortcut learning in multimodal sarcasm detection (character label bias, canned laughter label leakage…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Multimodal Fusion
-  - Information Bottleneck
-  - Sarcasm Detection
-  - Shortcut Learning
-  - Mutual Information
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Multimodal Fusion"
+  - "Information Bottleneck"
+  - "Sarcasm Detection"
+  - "Shortcut Learning"
+  - "Mutual Information"
 date: 2026-05-08
 content_hash: 98156143097a114d
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Convex Clustering Redefined: Robust Learning with the Median of Means Estimator
 description: >-
-  [AAAI 2026][Optimization][Convex Clustering] This paper integrates the Median of Means (MoM) estimator into the convex clustering framework, proposing the COMET algorithm. By combining random binning with median aggregation, COMET achieves robustness to noise and outliers without requiring prior knowledge of the number of clusters $k$. Weak consistency is established theoretically, and experiments on multiple real-world datasets demonstrate substantial improvements over six baselines, including k-means, MoM k-means, and convex clustering.
+  [AAAI 2026][Optimization][Convex Clustering] This paper integrates the Median of Means (MoM) estimator into the convex clustering framework…
 tags:
-  - AAAI 2026
-  - Optimization
-  - Convex Clustering
-  - Median of Means
-  - Robust Clustering
-  - Outlier Detection
-  - Adam Optimization
+  - "AAAI 2026"
+  - "Optimization"
+  - "Convex Clustering"
+  - "Median of Means"
+  - "Robust Clustering"
+  - "Outlier Detection"
+  - "Adam Optimization"
 date: 2026-05-08
 content_hash: 140da55be4ca1140
 ---

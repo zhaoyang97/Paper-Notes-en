@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TAUE: Training-free Noise Transplant and Cultivation Diffusion Model
 description: >-
-  [CVPR2026][Image Generation][Layered image generation] TAUE proposes a **training-free** layered image generation framework that "transplants" intermediate denoising latents into the initial noise of a new generation process, combined with cross-layer attention sharing, to achieve consistent three-layer generation of foreground, background, and composite images — matching or surpassing fine-tuning-based methods.
+  [CVPR2026][Image Generation][Layered image generation] TAUE proposes a **training-free** layered image generation framework that "transplants" intermediate denoising latents into the initial noise of a new generation pro…
 tags:
-  - CVPR2026
-  - Image Generation
-  - Layered image generation
-  - diffusion models
-  - training-free
-  - latent space transplantation
-  - cross-layer attention
+  - "CVPR2026"
+  - "Image Generation"
+  - "Layered image generation"
+  - "diffusion models"
+  - "training-free"
+  - "latent space transplantation"
+  - "cross-layer attention"
 date: 2026-05-08
 content_hash: 70b92ebc8cd38fbf
 ---

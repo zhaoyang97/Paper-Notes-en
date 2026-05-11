@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GRIM: Task-Oriented Grasping with Conditioning on Generative Examples
 description: >-
-  [AAAI 2026][Robotics][Task-oriented grasping] This paper proposes GRIM (Grasp Re-alignment via Iterative Matching), a **training-free** task-oriented grasping (TOG) framework that employs a **retrieve–align–transfer** pipeline combining video generation models with a multi-source memory bank. By leveraging DINO-feature-based semantic 3D alignment, GRIM achieves functional grasp transfer across objects, surpassing GraspMolmo—trained on 379K samples—using only 210 memory instances.
+  [AAAI 2026][Robotics][Task-oriented grasping] This paper proposes GRIM (Grasp Re-alignment via Iterative Matching), a **training-free** task-oriented grasping (TOG) framework that employs a **retrieve–align–transfer** pi…
 tags:
-  - AAAI 2026
-  - Robotics
-  - Task-oriented grasping
-  - training-free
-  - video generation model
-  - semantic alignment
-  - grasp transfer
+  - "AAAI 2026"
+  - "Robotics"
+  - "Task-oriented grasping"
+  - "training-free"
+  - "video generation model"
+  - "semantic alignment"
+  - "grasp transfer"
 date: 2026-05-08
 content_hash: 02014bba3bd86021
 ---

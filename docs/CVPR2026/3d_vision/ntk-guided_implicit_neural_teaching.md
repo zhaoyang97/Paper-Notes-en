@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] NTK-Guided Implicit Neural Teaching
 description: >-
-  [CVPR 2026][3D Vision][Implicit Neural Representations] This paper proposes NINT, which leverages row vectors of the Neural Tangent Kernel (NTK) to measure each coordinate's influence on the global function update, enabling dynamic selection of coordinates with both high fitting error and high global influence for training. This approach reduces INR training time by nearly half without sacrificing reconstruction quality.
+  [CVPR 2026][3D Vision][Implicit Neural Representations] This paper proposes NINT, which leverages row vectors of the Neural Tangent Kernel (NTK) to measure each coordinate's influence on the global function update…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Implicit Neural Representations
-  - Neural Tangent Kernel
-  - Training Acceleration
-  - Coordinate Sampling
-  - INR
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Implicit Neural Representations"
+  - "Neural Tangent Kernel"
+  - "Training Acceleration"
+  - "Coordinate Sampling"
+  - "INR"
 date: 2026-05-08
 content_hash: be6fb72f20a11f83
 ---

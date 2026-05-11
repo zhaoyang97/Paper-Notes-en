@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] It's Hard to Be Normal: The Impact of Noise on Structure-agnostic Estimation
 description: >-
-  [NeurIPS 2025][Causal Inference][DML] This paper proves that Double Machine Learning (DML) is minimax optimal under Gaussian treatment noise ($O(\epsilon^2 + n^{-1/2})$), but becomes suboptimal under non-Gaussian noise. It proposes Agnostic Cumulant-based Estimation (ACE), which exploits higher-order cumulants to achieve $r$-th order insensitivity $O(\epsilon^r + n^{-1/2})$.
+  [NeurIPS 2025][Causal Inference][DML] This paper proves that Double Machine Learning (DML) is minimax optimal under Gaussian treatment noise ($O(\epsilon^2 + n^{-1/2})$)…
 tags:
-  - NeurIPS 2025
-  - Causal Inference
-  - DML
-  - minimax optimality
-  - Gaussian barrier
-  - cumulant estimator
-  - ACE
-  - partially linear model
+  - "NeurIPS 2025"
+  - "Causal Inference"
+  - "DML"
+  - "minimax optimality"
+  - "Gaussian barrier"
+  - "cumulant estimator"
+  - "ACE"
+  - "partially linear model"
 date: 2026-05-08
 content_hash: 6f8577b48262c1fe
 ---

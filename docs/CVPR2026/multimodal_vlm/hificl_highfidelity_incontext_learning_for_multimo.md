@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HiFICL: High-Fidelity In-Context Learning for Multimodal Tasks
 description: >-
-  [CVPR 2026][Multimodal VLM][In-context learning] HiFICL reframes the ICL approximation problem through rigorous attention formula derivation — shifting from "fitting a shift vector" to "directly parameterizing the source of ICL" — by injecting learnable low-rank virtual key-value pairs into attention heads. Trained end-to-end, this yields a dynamic, context-aware parameter-efficient fine-tuning method that surpasses existing ICL approximation methods and LoRA on multiple multimodal benchmarks with significantly fewer parameters.
+  [CVPR 2026][Multimodal VLM][In-context learning] HiFICL reframes the ICL approximation problem through rigorous attention formula derivation — shifting from "fitting a shift vector" to "directly parameterizing the source…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - In-context learning
-  - parameter-efficient fine-tuning
-  - large multimodal models
-  - virtual key-value pairs
-  - low-rank decomposition
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "In-context learning"
+  - "parameter-efficient fine-tuning"
+  - "large multimodal models"
+  - "virtual key-value pairs"
+  - "low-rank decomposition"
 date: 2026-05-08
 content_hash: f7a6fa556de1cd9b
 ---

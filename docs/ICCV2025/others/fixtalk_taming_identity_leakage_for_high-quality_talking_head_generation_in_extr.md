@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] FixTalk: Taming Identity Leakage for High-Quality Talking Head Generation in Extreme Cases
 description: >-
-  [ICCV 2025][talking head generation] FixTalk is proposed as a framework that addresses identity leakage in GAN-based talking head generation through two lightweight plug-and-play modules — the Enhanced Motion Indicator (EMI) and the Enhanced Detail Indicator (EDI). EMI eliminates identity information from motion features to suppress identity leakage, while EDI repurposes the leaked identity information to compensate for missing details under extreme poses, thereby removing rendering artifacts.
+  [ICCV 2025][talking head generation] FixTalk is proposed as a framework that addresses identity leakage in GAN-based talking head generation through two lightweight plug-and-play modules — the Enhanced Motion Indicator (…
 tags:
-  - ICCV 2025
-  - talking head generation
-  - identity leakage
-  - rendering artifacts
-  - GAN
-  - motion decoupling
+  - "ICCV 2025"
+  - "talking head generation"
+  - "identity leakage"
+  - "rendering artifacts"
+  - "GAN"
+  - "motion decoupling"
 date: 2026-05-08
 content_hash: 60f703001510d0be
 ---

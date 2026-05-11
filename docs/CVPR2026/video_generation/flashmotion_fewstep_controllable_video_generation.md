@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FlashMotion: Few-Step Controllable Video Generation with Trajectory Guidance
 description: >-
-  [CVPR 2026][Video Generation][Trajectory-controllable video generation] FlashMotion is proposed as the first three-stage training framework for few-step (4-step) trajectory-controllable video generation. By sequentially training a trajectory adapter, distilling a fast generator, and fine-tuning the adapter via a hybrid adversarial and diffusion loss, the method surpasses existing multi-step approaches in both visual quality and trajectory accuracy under 4-step inference, achieving a 47× speedup.
+  [CVPR 2026][Video Generation][Trajectory-controllable video generation] FlashMotion is proposed as the first three-stage training framework for few-step (4-step) trajectory-controllable video generation. By sequentially…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Trajectory-controllable video generation
-  - few-step distillation
-  - adversarial training
-  - diffusion discriminator
-  - video acceleration
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Trajectory-controllable video generation"
+  - "few-step distillation"
+  - "adversarial training"
+  - "diffusion discriminator"
+  - "video acceleration"
 date: 2026-05-08
 content_hash: 079dee125f734cf1
 ---

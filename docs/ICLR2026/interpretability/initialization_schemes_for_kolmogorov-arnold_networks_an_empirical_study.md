@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Initialization Schemes for Kolmogorov-Arnold Networks: An Empirical Study
 description: >-
-  [ICLR 2026][KAN] This work presents the first systematic study of initialization strategies for spline-based KANs. It proposes variance-preserving schemes inspired by LeCun/Glorot and a tunable power-law initialization family. Large-scale experiments spanning 126K+ model instances demonstrate that power-law initialization consistently outperforms baselines on function fitting and PDE solving, while the Glorot scheme yields significant gains for larger models. NTK eigenspectrum analysis further reveals the underlying optimization dynamics.
+  [ICLR 2026][Interpretability][KAN] This work presents the first systematic study of initialization strategies for spline-based KANs. It proposes variance-preserving schemes inspired by LeCun/Glorot and a tunable power-la…
 tags:
-  - ICLR 2026
-  - KAN
-  - initialization schemes
-  - variance preservation
-  - power-law initialization
-  - neural tangent kernel
+  - "ICLR 2026"
+  - "Interpretability"
+  - "KAN"
+  - "initialization schemes"
+  - "variance preservation"
+  - "power-law initialization"
+  - "neural tangent kernel"
 date: 2026-05-08
 content_hash: 1d160a392e9bffe2
 ---

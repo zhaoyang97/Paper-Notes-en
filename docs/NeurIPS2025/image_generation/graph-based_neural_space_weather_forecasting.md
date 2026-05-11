@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Graph-based Neural Space Weather Forecasting
 description: >-
-  [NEURIPS2025][Image Generation][space weather] This paper proposes a graph neural network-based neural emulator for space weather, trained on Vlasiator hybrid-Vlasov simulation data, enabling both deterministic and probabilistic autoregressive forecasting of near-Earth space conditions. The emulator achieves over 100× speedup relative to the original simulator and quantifies forecast uncertainty through latent-variable ensemble generation.
+  [NEURIPS2025][Image Generation][space weather] This paper proposes a graph neural network-based neural emulator for space weather, trained on Vlasiator hybrid-Vlasov simulation data…
 tags:
-  - NEURIPS2025
-  - Image Generation
-  - space weather
-  - graph neural network
-  - probabilistic forecasting
-  - hybrid-Vlasov
-  - ensemble forecasting
+  - "NEURIPS2025"
+  - "Image Generation"
+  - "space weather"
+  - "graph neural network"
+  - "probabilistic forecasting"
+  - "hybrid-Vlasov"
+  - "ensemble forecasting"
 date: 2026-05-08
 content_hash: 2c59550013e89384
 ---

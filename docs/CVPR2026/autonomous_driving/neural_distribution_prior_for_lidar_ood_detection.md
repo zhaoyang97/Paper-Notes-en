@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Neural Distribution Prior for LiDAR Out-of-Distribution Detection
 description: >-
-  [CVPR 2026][Autonomous Driving][OOD Detection] NDP introduces a learnable neural distribution prior module to model the distributional structure of network predictions. Combined with Perlin-noise-based pseudo-OOD sample generation and a soft anomaly exposure strategy, NDP achieves 61.31% AP on the STU benchmark, surpassing the previous best result by more than 10×.
+  [CVPR 2026][Autonomous Driving][OOD Detection] NDP introduces a learnable neural distribution prior module to model the distributional structure of network predictions. Combined with Perlin-noise-based pseudo-OOD sample…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - OOD Detection
-  - LiDAR Perception
-  - Class Imbalance
-  - Perlin Noise
-  - Distribution Prior
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "OOD Detection"
+  - "LiDAR Perception"
+  - "Class Imbalance"
+  - "Perlin Noise"
+  - "Distribution Prior"
 date: 2026-05-08
 content_hash: 5a2602f6a7d37e12
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Model-Based Policy Adaptation for Closed-Loop End-to-End Autonomous Driving
 description: >-
-  [NeurIPS 2025][Autonomous Driving][end-to-end autonomous driving] This paper proposes MPA, a framework that generates counterfactual trajectory data via 3DGS simulation, trains a diffusion policy adapter and a multi-principle Q-value model, and uses them at inference time to guide a pretrained E2E driving model toward improved safety and generalization in closed-loop scenarios.
+  [NeurIPS 2025][Autonomous Driving][end-to-end autonomous driving] This paper proposes MPA, a framework that generates counterfactual trajectory data via 3DGS simulation…
 tags:
-  - NeurIPS 2025
-  - Autonomous Driving
-  - end-to-end autonomous driving
-  - closed-loop evaluation
-  - counterfactual data
-  - diffusion policy
-  - Q-value guidance
+  - "NeurIPS 2025"
+  - "Autonomous Driving"
+  - "end-to-end autonomous driving"
+  - "closed-loop evaluation"
+  - "counterfactual data"
+  - "diffusion policy"
+  - "Q-value guidance"
 date: 2026-05-08
 content_hash: 643b8abcffb72181
 ---

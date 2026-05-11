@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CreBench: Human-Aligned Creativity Evaluation from Idea to Process to Product
 description: >-
-  [AAAI 2026][Multimodal VLM][creativity evaluation] This paper constructs the CreBench creativity evaluation benchmark and the CreMIT multimodal instruction tuning dataset (2.2K samples, 79.2K human feedback annotations, 4.7M instructions), evaluating MLLM creativity alignment across three dimensions—creative idea → process → product—with 12 metrics. The resulting fine-tuned model, CreExpert, substantially outperforms GPT-4V.
+  [AAAI 2026][Multimodal VLM][creativity evaluation] This paper constructs the CreBench creativity evaluation benchmark and the CreMIT multimodal instruction tuning dataset (2.2K samples, 79.2K human feedback annotations…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - creativity evaluation
-  - multimodal large language models
-  - human alignment
-  - instruction tuning
-  - benchmark
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "creativity evaluation"
+  - "multimodal large language models"
+  - "human alignment"
+  - "instruction tuning"
+  - "benchmark"
 date: 2026-05-08
 content_hash: 45e65e560bbcdf3d
 ---

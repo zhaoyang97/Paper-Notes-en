@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] SM3Det: A Unified Model for Multi-Modal Remote Sensing Object Detection
 description: >-
-  [AAAI2026][Object Detection][Multi-modal remote sensing] SM3Det introduces the M2Det task for remote sensing (multi-modal datasets + multi-task object detection), employing a grid-level sparse MoE backbone and a Dynamic Sub-module Optimization (DSO) mechanism to handle SAR/optical/infrared modalities with both horizontal and oriented bounding box detection in a single unified model, substantially outperforming three independently trained modality-specific models combined.
+  [AAAI2026][Object Detection][Multi-modal remote sensing] SM3Det introduces the M2Det task for remote sensing (multi-modal datasets + multi-task object detection)…
 tags:
-  - AAAI2026
-  - Object Detection
-  - Multi-modal remote sensing
-  - sparse MoE
-  - dynamic learning rate optimization
-  - unified model
+  - "AAAI2026"
+  - "Object Detection"
+  - "Multi-modal remote sensing"
+  - "sparse MoE"
+  - "dynamic learning rate optimization"
+  - "unified model"
 date: 2026-05-08
 content_hash: 6bf9d8efa2aba38a
 ---

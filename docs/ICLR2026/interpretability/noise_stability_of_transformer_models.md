@@ -2,16 +2,17 @@
 title: >-
   [Paper Note] Noise Stability of Transformer Models
 description: >-
-  [ICLR 2026][noise stability] This paper proposes **noise stability** as a superior alternative to average sensitivity for measuring simplicity bias in Transformers, and designs a regularization method based on this metric that accelerates training by approximately 35% on synthetic tasks and 75% on language modeling.
+  [ICLR 2026][Interpretability][noise stability] This paper proposes **noise stability** as a superior alternative to average sensitivity for measuring simplicity bias in Transformers…
 tags:
-  - ICLR 2026
-  - noise stability
-  - simplicity bias
-  - Transformer
-  - grokking
-  - Fourier analysis
-  - regularization
-  - Boolean function analysis
+  - "ICLR 2026"
+  - "Interpretability"
+  - "noise stability"
+  - "simplicity bias"
+  - "Transformer"
+  - "grokking"
+  - "Fourier analysis"
+  - "regularization"
+  - "Boolean function analysis"
 date: 2026-05-08
 content_hash: 394275603a0cce94
 ---

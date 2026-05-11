@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Improving Sustainability of Adversarial Examples in Class-Incremental Learning
 description: >-
-  [AAAI 2026][LLM/NLP][Adversarial examples] This paper proposes the SAE framework to address the degradation of adversarial examples (AEs) caused by domain drift in class-incremental learning (CIL). Through a semantic correction module (jointly guided by CLIP and the CIL model) and a filtering-and-augmentation module (removing semantically confusing samples), SAE maintains attack effectiveness even after a 9× increase in the number of classes, achieving an average attack success rate improvement of 31.28%.
+  [AAAI 2026][LLM/NLP][Adversarial examples] This paper proposes the SAE framework to address the degradation of adversarial examples (AEs) caused by domain drift in class-incremental learning (CIL). Through a semantic cor…
 tags:
-  - AAAI 2026
-  - LLM/NLP
-  - Adversarial examples
-  - incremental learning
-  - continual learning
-  - robustness preservation
-  - CLIP semantics
+  - "AAAI 2026"
+  - "LLM/NLP"
+  - "Adversarial examples"
+  - "incremental learning"
+  - "continual learning"
+  - "robustness preservation"
+  - "CLIP semantics"
 date: 2026-05-08
 content_hash: d87cd6d46377a2b5
 ---

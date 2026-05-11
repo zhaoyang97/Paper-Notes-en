@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Efficient Speech Language Modeling via Energy Distance in Continuous Latent Space
 description: >-
-  [NeurIPS 2025][Audio & Speech][speech language model] This paper proposes SLED, which encodes speech waveforms into sequences of continuous latent representations and performs autoregressive modeling in the continuous space via an energy distance objective. This avoids the information loss from discretization and the complex hierarchical architectures required by RVQ, while enabling efficient zero-shot and streaming speech synthesis.
+  [NeurIPS 2025][Audio & Speech][speech language model] This paper proposes SLED, which encodes speech waveforms into sequences of continuous latent representations and performs autoregressive modeling in the continuous sp…
 tags:
-  - NeurIPS 2025
+  - "NeurIPS 2025"
   - "Audio & Speech"
-  - speech language model
-  - continuous latent space
-  - energy distance
-  - zero-shot TTS
-  - streaming synthesis
+  - "speech language model"
+  - "continuous latent space"
+  - "energy distance"
+  - "zero-shot TTS"
+  - "streaming synthesis"
 date: 2026-05-08
 content_hash: d8792e434af1bd73
 ---

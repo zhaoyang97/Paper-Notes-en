@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Stochastic Self-Guidance for Training-Free Enhancement of Diffusion Models
 description: >-
-  [ICLR2026][Image Generation][Diffusion Models] This paper proposes S²-Guidance, which constructs a weak model by **randomly dropping transformer block activations** during denoising to perform self-guidance, correcting the suboptimal predictions of CFG without additional training. The method consistently outperforms CFG and other advanced guidance strategies on text-to-image and text-to-video tasks.
+  [ICLR2026][Image Generation][Diffusion Models] This paper proposes S²-Guidance, which constructs a weak model by **randomly dropping transformer block activations** during denoising to perform self-guidance…
 tags:
-  - ICLR2026
-  - Image Generation
-  - Diffusion Models
-  - Classifier-Free Guidance
-  - Subnetwork
-  - Stochastic Block-Dropping
-  - Self-Guidance
-  - Text-to-Image
-  - Text-to-Video
+  - "ICLR2026"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "Classifier-Free Guidance"
+  - "Subnetwork"
+  - "Stochastic Block-Dropping"
+  - "Self-Guidance"
+  - "Text-to-Image"
+  - "Text-to-Video"
 date: 2026-05-08
 content_hash: df3669f5c10b2fec
 ---

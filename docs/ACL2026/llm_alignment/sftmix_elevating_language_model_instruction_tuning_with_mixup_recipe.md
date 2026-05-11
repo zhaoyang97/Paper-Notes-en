@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SFTMix: Elevating Language Model Instruction Tuning with Mixup Recipe
 description: >-
-  [ACL 2026][LLM Alignment][Instruction Tuning] This paper proposes SFTMix, a Mixup-based instruction tuning method that partitions SFT data into high-confidence and low-confidence subsets via training dynamics, applies linear interpolation between the two subsets in the hidden representation space with Mixup regularization, and consistently improves instruction-following ability across LLM families and dataset scales without relying on high-quality curated datasets.
+  [ACL 2026][LLM Alignment][Instruction Tuning] This paper proposes SFTMix, a Mixup-based instruction tuning method that partitions SFT data into high-confidence and low-confidence subsets via training dynamics…
 tags:
-  - ACL 2026
-  - LLM Alignment
-  - Instruction Tuning
-  - Mixup Regularization
-  - Training Dynamics
-  - Confidence Partitioning
-  - Data Utilization Efficiency
+  - "ACL 2026"
+  - "LLM Alignment"
+  - "Instruction Tuning"
+  - "Mixup Regularization"
+  - "Training Dynamics"
+  - "Confidence Partitioning"
+  - "Data Utilization Efficiency"
 date: 2026-05-08
 content_hash: 5b791890a77d6788
 ---

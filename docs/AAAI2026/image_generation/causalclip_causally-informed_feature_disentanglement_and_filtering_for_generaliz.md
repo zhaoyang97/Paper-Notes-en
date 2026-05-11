@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CausalCLIP: Causally-Informed Feature Disentanglement and Filtering for Generalizable Detection of Generated Images
 description: >-
-  [AAAI 2026][Image Generation][Generated image detection] CausalCLIP is proposed to disentangle CLIP features into causal and non-causal subspaces via Gumbel-Softmax masking and HSIC constraints, combined with adversarial masking and counterfactual intervention to preserve stable forensic cues, achieving a 6.83% accuracy improvement in cross-generator generalization.
+  [AAAI 2026][Image Generation][Generated image detection] CausalCLIP is proposed to disentangle CLIP features into causal and non-causal subspaces via Gumbel-Softmax masking and HSIC constraints…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Generated image detection
-  - causal reasoning
-  - CLIP
-  - feature disentanglement
-  - adversarial training
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Generated image detection"
+  - "causal reasoning"
+  - "CLIP"
+  - "feature disentanglement"
+  - "adversarial training"
 date: 2026-05-08
 content_hash: adb273bc2cb37cba
 ---

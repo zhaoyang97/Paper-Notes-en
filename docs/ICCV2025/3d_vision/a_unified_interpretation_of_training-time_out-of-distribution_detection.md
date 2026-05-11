@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Unified Interpretation of Training-Time Out-of-Distribution Detection
 description: >-
-  [ICCV 2025][3D Vision][OOD detection] This paper proposes a novel perspective based on inter-variable "interactions" to provide a unified explanation for why different training-time OOD detection methods are effective — they all encourage the model to encode more high-order interactions. The paper further validates the dominant role of high-order interactions in OOD detection and explains, through interaction distribution analysis, why near-OOD samples are harder to detect.
+  [ICCV 2025][3D Vision][OOD detection] This paper proposes a novel perspective based on inter-variable "interactions" to provide a unified explanation for why different training-time OOD detection methods are effective —…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - OOD detection
-  - interaction complexity
-  - training-time methods
-  - high-order interactions
-  - interpretability
+  - "ICCV 2025"
+  - "3D Vision"
+  - "OOD detection"
+  - "interaction complexity"
+  - "training-time methods"
+  - "high-order interactions"
+  - "interpretability"
 date: 2026-05-08
 content_hash: de3b6d414526b6cc
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Diffusion Generative Modeling on Lie Group Representations
 description: >-
-  [NeurIPS 2025][Image Generation][Lie group representations] This paper proposes a novel theoretical framework for constructing diffusion processes on the **representation space** of Lie groups (rather than on the Lie groups themselves). By mapping the curved dynamics of non-Abelian Lie groups into Euclidean space via generalized score matching, the framework enables simulation-free training of Lie group diffusion models, and demonstrates that standard score matching is a special case corresponding to the translation group.
+  [NeurIPS 2025][Image Generation][Lie group representations] This paper proposes a novel theoretical framework for constructing diffusion processes on the **representation space** of Lie groups (rather than on the Lie gro…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Lie group representations
-  - generalized score matching
-  - stochastic differential equations
-  - molecular conformation generation
-  - manifold diffusion
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Lie group representations"
+  - "generalized score matching"
+  - "stochastic differential equations"
+  - "molecular conformation generation"
+  - "manifold diffusion"
 date: 2026-05-08
 content_hash: a28b1106b9c8dc29
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Layer-wise Update Aggregation with Recycling for Communication-Efficient Federated Learning
 description: >-
-  [NeurIPS 2025][Optimization][federated learning] This paper proposes FedLUAR, which uses a gradient-to-weight ratio metric to identify low-priority layers and recycles their updates from the previous round (rather than discarding them), achieving accuracy nearly identical to FedAvg with only 17% communication overhead.
+  [NeurIPS 2025][Optimization][federated learning] This paper proposes FedLUAR, which uses a gradient-to-weight ratio metric to identify low-priority layers and recycles their updates from the previous round (rather than d…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - federated learning
-  - communication efficiency
-  - gradient recycling
-  - layer-wise aggregation
-  - non-IID
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "federated learning"
+  - "communication efficiency"
+  - "gradient recycling"
+  - "layer-wise aggregation"
+  - "non-IID"
 date: 2026-05-08
 content_hash: e8f6890fffb7acda
 ---

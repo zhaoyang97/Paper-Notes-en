@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Across Programming Language Silos: A Study on Cross-Lingual Retrieval-Augmented Code Generation
 description: >-
-  [ACL 2026][cross-lingual code generation] This paper presents the first systematic study of cross-programming-language retrieval-augmented code generation (RACG), constructing a 14K-instance dataset spanning 13 programming languages, and reveals the asymmetry of cross-lingual knowledge transfer and its relationship to language family relatedness and pretraining data diversity.
+  [ACL 2026][Code Intelligence][cross-lingual code generation] This paper presents the first systematic study of cross-programming-language retrieval-augmented code generation (RACG)…
 tags:
-  - ACL 2026
-  - cross-lingual code generation
-  - retrieval-augmented generation
-  - knowledge transfer
-  - multilingual programming
-  - code retrieval
+  - "ACL 2026"
+  - "Code Intelligence"
+  - "cross-lingual code generation"
+  - "retrieval-augmented generation"
+  - "knowledge transfer"
+  - "multilingual programming"
+  - "code retrieval"
 date: 2026-05-08
 content_hash: 1af2ddb8a026d47e
 ---

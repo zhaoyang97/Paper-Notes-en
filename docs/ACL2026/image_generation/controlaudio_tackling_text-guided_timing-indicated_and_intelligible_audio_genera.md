@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ControlAudio: Tackling Text-Guided, Timing-Indicated and Intelligible Audio Generation via Progressive Diffusion Modeling
 description: >-
-  [ACL 2026][Image Generation][Text-to-Audio] This paper proposes ControlAudio, a unified progressive diffusion modeling framework that achieves three capabilities—text-guided generation, precise temporal control, and intelligible speech synthesis—within a single diffusion model through three-stage progressive training (TTA pretraining → temporal control fine-tuning → joint temporal+intelligible speech training) and progressive guidance sampling, significantly outperforming existing methods in temporal precision and speech intelligibility.
+  [ACL 2026][Image Generation][Text-to-Audio] This paper proposes ControlAudio, a unified progressive diffusion modeling framework that achieves three capabilities—text-guided generation, precise temporal control…
 tags:
-  - ACL 2026
-  - Image Generation
-  - Text-to-Audio
-  - Temporal Control
-  - Intelligible Speech
-  - Progressive Diffusion
-  - DiT
+  - "ACL 2026"
+  - "Image Generation"
+  - "Text-to-Audio"
+  - "Temporal Control"
+  - "Intelligible Speech"
+  - "Progressive Diffusion"
+  - "DiT"
 date: 2026-05-08
 content_hash: e26a4d1d69917451
 ---

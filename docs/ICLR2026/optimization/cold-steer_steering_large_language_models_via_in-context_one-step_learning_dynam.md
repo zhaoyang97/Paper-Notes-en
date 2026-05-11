@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] COLD-Steer: Steering Large Language Models via In-Context One-step Learning Dynamics
 description: >-
-  [ICLR 2026][Optimization][Activation Steering] COLD-Steer is proposed as a training-free LLM activation steering method that approximates the representational change induced by one step of gradient descent on in-context examples, achieving 95% steering effectiveness with only 1/50 of the samples required by prior methods.
+  [ICLR 2026][Optimization][Activation Steering] COLD-Steer is proposed as a training-free LLM activation steering method that approximates the representational change induced by one step of gradient descent on in-context…
 tags:
-  - ICLR 2026
-  - Optimization
-  - Activation Steering
-  - Learning Dynamics
-  - Training-Free Inference
-  - Sample Efficiency
-  - Pluralistic Alignment
+  - "ICLR 2026"
+  - "Optimization"
+  - "Activation Steering"
+  - "Learning Dynamics"
+  - "Training-Free Inference"
+  - "Sample Efficiency"
+  - "Pluralistic Alignment"
 date: 2026-05-08
 content_hash: 546f4494f798eace
 ---

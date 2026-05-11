@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] UVLM: Benchmarking Video Language Model for Underwater World Understanding
 description: >-
-  [AAAI 2026][Video Understanding][underwater video] This paper constructs the first benchmark for underwater video-language understanding, UVLM, comprising 2,109 video clips, 419 marine species categories, 20 sub-tasks, and approximately 40K video-text pairs. Through a human-AI collaborative annotation pipeline that injects marine domain knowledge, a 7B VidLM fine-tuned on UVLM achieves performance approaching GPT-4o (73.04 vs. 77.95 Overall).
+  [AAAI 2026][Video Understanding][underwater video] This paper constructs the first benchmark for underwater video-language understanding, UVLM, comprising 2,109 video clips, 419 marine species categories, 20 sub-tasks…
 tags:
-  - AAAI 2026
-  - Video Understanding
-  - underwater video
-  - VidLM
-  - benchmark
-  - marine biology
-  - fine-grained recognition
-  - human-AI annotation
+  - "AAAI 2026"
+  - "Video Understanding"
+  - "underwater video"
+  - "VidLM"
+  - "benchmark"
+  - "marine biology"
+  - "fine-grained recognition"
+  - "human-AI annotation"
 date: 2026-05-08
 content_hash: 648770ac782f2df1
 ---

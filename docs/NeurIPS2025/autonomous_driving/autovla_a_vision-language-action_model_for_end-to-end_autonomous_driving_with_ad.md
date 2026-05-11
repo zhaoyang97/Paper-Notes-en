@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AutoVLA: A Vision-Language-Action Model for End-to-End Autonomous Driving with Adaptive Reasoning and Reinforcement Fine-Tuning
 description: >-
-  [NeurIPS 2025][Autonomous Driving][Vision-Language-Action Model] AutoVLA integrates physical action tokens directly into a pretrained VLM (Qwen2.5-VL-3B), equips the model with fast/slow dual-thinking modes via SFT, and applies GRPO reinforcement fine-tuning to enable adaptive reasoning switching and optimize planning performance. The approach achieves competitive end-to-end driving performance across four major autonomous driving benchmarks: nuPlan, Waymo, nuScenes, and CARLA.
+  [NeurIPS 2025][Autonomous Driving][Vision-Language-Action Model] AutoVLA integrates physical action tokens directly into a pretrained VLM (Qwen2.5-VL-3B), equips the model with fast/slow dual-thinking modes via SFT…
 tags:
-  - NeurIPS 2025
-  - Autonomous Driving
-  - Vision-Language-Action Model
-  - End-to-End Autonomous Driving
-  - Action Tokenization
-  - Reinforcement Fine-Tuning
-  - Adaptive Reasoning
+  - "NeurIPS 2025"
+  - "Autonomous Driving"
+  - "Vision-Language-Action Model"
+  - "End-to-End Autonomous Driving"
+  - "Action Tokenization"
+  - "Reinforcement Fine-Tuning"
+  - "Adaptive Reasoning"
 date: 2026-05-08
 content_hash: fed150ca592b61ea
 ---

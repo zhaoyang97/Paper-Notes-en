@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DOVE: Efficient One-Step Diffusion Model for Real-World Video Super-Resolution
 description: >-
-  [NeurIPS 2025][Image Generation][One-step diffusion] This paper presents DOVE, a video super-resolution model built upon the CogVideoX pretrained video generation model. Through a two-stage latent-pixel space training strategy and a curated high-quality HQ-VSR dataset, DOVE achieves single-step inference for video super-resolution, delivering 28× speedup over multi-step diffusion methods while achieving comparable or superior performance.
+  [NeurIPS 2025][Image Generation][One-step diffusion] This paper presents DOVE, a video super-resolution model built upon the CogVideoX pretrained video generation model. Through a two-stage latent-pixel space training st…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - One-step diffusion
-  - video super-resolution
-  - CogVideoX
-  - latent-pixel space training
-  - video data pipeline
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "One-step diffusion"
+  - "video super-resolution"
+  - "CogVideoX"
+  - "latent-pixel space training"
+  - "video data pipeline"
 date: 2026-05-08
 content_hash: aefb9fa2be7476d6
 ---

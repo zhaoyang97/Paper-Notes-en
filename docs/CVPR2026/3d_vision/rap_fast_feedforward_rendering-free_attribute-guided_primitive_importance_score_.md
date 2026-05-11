@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RAP: Fast Feedforward Rendering-Free Attribute-Guided Primitive Importance Score Prediction for Efficient 3D Gaussian Splatting Processing
 description: >-
-  [CVPR 2026][3D Vision][3D Gaussian Splatting] This paper proposes RAP, a rendering-free feedforward method for Gaussian primitive importance scoring. It extracts 15-dimensional features from intrinsic attributes and local neighborhood statistics, employs a lightweight MLP to predict importance scores, and generalizes to unseen scenes after a single training run.
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] This paper proposes RAP, a rendering-free feedforward method for Gaussian primitive importance scoring. It extracts 15-dimensional features from intrinsic attributes and loca…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - importance estimation
-  - rendering-free inference
-  - feedforward prediction
-  - pruning
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "importance estimation"
+  - "rendering-free inference"
+  - "feedforward prediction"
+  - "pruning"
 date: 2026-05-08
 content_hash: 5ed9719dbfebea92
 ---

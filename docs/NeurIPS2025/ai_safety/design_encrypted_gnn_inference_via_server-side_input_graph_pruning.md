@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DESIGN: Encrypted GNN Inference via Server-Side Input Graph Pruning
 description: >-
-  [NeurIPS 2025][AI Safety][Homomorphic Encryption] This paper proposes DESIGN, a framework that accelerates FHE-based GNN inference by approximately $2\times$ over the SEAL baseline through two-stage server-side optimization—input graph pruning and adaptive polynomial activation degree allocation—while maintaining competitive accuracy.
+  [NeurIPS 2025][AI Safety][Homomorphic Encryption] This paper proposes DESIGN, a framework that accelerates FHE-based GNN inference by approximately $2\times$ over the SEAL baseline through two-stage server-side optimizat…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - Homomorphic Encryption
-  - GNN Inference
-  - Graph Pruning
-  - Adaptive Polynomial Activation
-  - Privacy-Preserving Computing
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "Homomorphic Encryption"
+  - "GNN Inference"
+  - "Graph Pruning"
+  - "Adaptive Polynomial Activation"
+  - "Privacy-Preserving Computing"
 date: 2026-05-08
 content_hash: 5e897553adaef71c
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DualFete: Revisiting Teacher-Student Interactions from a Feedback Perspective for Semi-supervised Medical Image Segmentation
 description: >-
-  [AAAI 2026][Medical Imaging][Semi-supervised medical image segmentation] A feedback mechanism is introduced into the teacher-student semi-supervised learning framework, enabling the student to feed back to the teacher information on whether pseudo-label-guided updates are consistent with the direction of supervision from labeled data. This feedback dynamic is further enhanced within a dual-teacher architecture, effectively suppressing error accumulation and confirmation bias in medical image segmentation.
+  [AAAI 2026][Medical Imaging][Semi-supervised medical image segmentation] A feedback mechanism is introduced into the teacher-student semi-supervised learning framework…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Semi-supervised medical image segmentation
-  - teacher-student model
-  - feedback mechanism
-  - confirmation bias
-  - dual-teacher framework
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Semi-supervised medical image segmentation"
+  - "teacher-student model"
+  - "feedback mechanism"
+  - "confirmation bias"
+  - "dual-teacher framework"
 date: 2026-05-08
 content_hash: d79007491dbb4b3a
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] VCWorld: A Biological World Model for Virtual Cell Simulation
 description: >-
-  [ICLR2026][Virtual Cell] This paper proposes VCWorld, a cell-level white-box simulator that integrates structured biological knowledge graphs with the iterative reasoning capabilities of large language models (LLMs) to simulate drug perturbation-induced signaling cascades in a data-efficient manner. The framework generates interpretable step-by-step predictions and explicit mechanistic hypotheses, achieving state-of-the-art performance on drug perturbation benchmarks.
+  [ICLR2026][Interpretability][Virtual Cell] This paper proposes VCWorld, a cell-level white-box simulator that integrates structured biological knowledge graphs with the iterative reasoning capabilities of large language…
 tags:
-  - ICLR2026
-  - Virtual Cell
-  - world model
-  - LLM Reasoning
-  - Signaling Cascade
-  - Drug Perturbation
+  - "ICLR2026"
+  - "Interpretability"
+  - "Virtual Cell"
+  - "world model"
+  - "LLM Reasoning"
+  - "Signaling Cascade"
+  - "Drug Perturbation"
 date: 2026-05-08
 content_hash: d766378765a3dc17
 ---

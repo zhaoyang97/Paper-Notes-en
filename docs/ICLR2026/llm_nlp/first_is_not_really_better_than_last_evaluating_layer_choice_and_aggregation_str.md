@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] First is Not Really Better Than Last: Evaluating Layer Choice and Aggregation Strategies in Language Model Data Influence Estimation
 description: >-
-  [ICLR 2026][LLM/NLP][Influence Functions] Through theoretical analysis and empirical experiments, this paper demonstrates that the widely accepted claim that "the first layer (embedding) is best suited for influence estimation" is unreliable. The work finds that intermediate attention layers are more effective, proposes two novel cross-layer aggregation strategies—Rank and Vote—along with a Noise Detection Rate (NDR) proxy metric, and achieves significant improvements in detecting harmful training samples in LLMs.
+  [ICLR 2026][LLM/NLP][Influence Functions] Through theoretical analysis and empirical experiments, this paper demonstrates that the widely accepted claim that "the first layer (embedding) is best suited for influence esti…
 tags:
-  - ICLR 2026
-  - LLM/NLP
-  - Influence Functions
-  - Data Attribution
-  - Layer Analysis
-  - LLM Interpretability
-  - Training Data Quality
+  - "ICLR 2026"
+  - "LLM/NLP"
+  - "Influence Functions"
+  - "Data Attribution"
+  - "Layer Analysis"
+  - "LLM Interpretability"
+  - "Training Data Quality"
 date: 2026-05-08
 content_hash: ea8a424163d6ea0e
 ---

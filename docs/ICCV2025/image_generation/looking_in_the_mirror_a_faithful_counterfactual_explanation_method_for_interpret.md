@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Looking in the Mirror: A Faithful Counterfactual Explanation Method for Interpreting Deep Image Classification Models
 description: >-
-  [ICCV 2025][Image Generation][counterfactual explanation] This paper treats a classifier's decision boundary as a "mirror" and generates counterfactual explanations (CFEs) by reflecting feature representations to the other side of the mirror. A triangulation loss is designed to preserve distance relationships between the latent space and image space, yielding faithful, controllable, and animatable counterfactual explanations.
+  [ICCV 2025][Image Generation][counterfactual explanation] This paper treats a classifier's decision boundary as a "mirror" and generates counterfactual explanations (CFEs) by reflecting feature representations to the oth…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - counterfactual explanation
-  - decision boundary
-  - faithful explanation
-  - classifier interpretability
-  - animated transition
+  - "ICCV 2025"
+  - "Image Generation"
+  - "counterfactual explanation"
+  - "decision boundary"
+  - "faithful explanation"
+  - "classifier interpretability"
+  - "animated transition"
 date: 2026-05-08
 content_hash: 999a058d679e6e8e
 ---

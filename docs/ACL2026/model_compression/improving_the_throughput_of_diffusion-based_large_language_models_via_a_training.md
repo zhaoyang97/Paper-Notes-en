@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CadLLM: Improving the Throughput of Diffusion-based LLMs via Training-Free Confidence-Aware Calibration
 description: >-
-  [ACL 2026][Model Compression][Diffusion language models] This paper proposes CadLLM, a training-free adaptive inference acceleration method that leverages token decoding confidence signals in diffusion large language models (dLLMs) to dynamically adjust four dimensions—block size, number of steps, vocabulary sampling range, and commitment threshold—achieving 1.1–2.28× throughput improvements on LLaDA and DREAM while maintaining competitive accuracy.
+  [ACL 2026][Model Compression][Diffusion language models] This paper proposes CadLLM, a training-free adaptive inference acceleration method that leverages token decoding confidence signals in diffusion large language mod…
 tags:
-  - ACL 2026
-  - Model Compression
-  - Diffusion language models
-  - inference acceleration
-  - adaptive decoding
-  - confidence calibration
-  - training-free methods
+  - "ACL 2026"
+  - "Model Compression"
+  - "Diffusion language models"
+  - "inference acceleration"
+  - "adaptive decoding"
+  - "confidence calibration"
+  - "training-free methods"
 date: 2026-05-08
 content_hash: a0610ffbc3f3d71b
 ---

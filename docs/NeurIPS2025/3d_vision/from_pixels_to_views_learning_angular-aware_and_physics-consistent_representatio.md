@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] From Pixels to Views: Learning Angular-Aware and Physics-Consistent Representations for Light Field Microscopy
 description: >-
-  [NeurIPS 2025][3D Vision][Light Field Microscopy] This paper proposes XLFM-Former, which learns angular–spatial priors of XLFM through **view-level Masked View Modeling (MVM-LF)** self-supervised pretraining, and introduces an **Optical Rendering Consistency Loss (ORC Loss)** based on PSF differentiable rendering to constrain the physical plausibility of the reconstructed volume. On the first standardized XLFM-Zebrafish benchmark constructed by the authors, the method achieves an average PSNR of 54.04 dB, surpassing the best baseline ConvNeXt (50.16 dB) by **7.7%**.
+  [NeurIPS 2025][3D Vision][Light Field Microscopy] This paper proposes XLFM-Former, which learns angular–spatial priors of XLFM through **view-level Masked View Modeling (MVM-LF)** self-supervised pretraining…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Light Field Microscopy
-  - XLFM
-  - Masked View Modeling
-  - ORC Loss
-  - PSF
-  - Self-supervised Pretraining
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Light Field Microscopy"
+  - "XLFM"
+  - "Masked View Modeling"
+  - "ORC Loss"
+  - "PSF"
+  - "Self-supervised Pretraining"
 date: 2026-05-08
 content_hash: ac01ba341b41bf9b
 ---

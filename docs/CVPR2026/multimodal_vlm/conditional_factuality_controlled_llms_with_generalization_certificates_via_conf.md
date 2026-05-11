@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Conditional Factuality Controlled LLMs with Generalization Certificates via Conformal Sampling
 description: >-
-  [CVPR 2026][Multimodal VLM][Conformal prediction] This paper proposes CFC (Conditional Factuality Control), a post-hoc conformal framework that learns feature-conditional acceptance thresholds via augmented quantile regression, providing conditional coverage guarantees for LLM/VLM sampled outputs while maintaining compact prediction sets and significantly improving reliability on hard-prompt subgroups.
+  [CVPR 2026][Multimodal VLM][Conformal prediction] This paper proposes CFC (Conditional Factuality Control), a post-hoc conformal framework that learns feature-conditional acceptance thresholds via augmented quantile regr…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Conformal prediction
-  - conditional coverage
-  - LLM hallucination control
-  - set-valued prediction
-  - PAC guarantees
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Conformal prediction"
+  - "conditional coverage"
+  - "LLM hallucination control"
+  - "set-valued prediction"
+  - "PAC guarantees"
 date: 2026-05-08
 content_hash: aca9ac09fb94b01d
 ---

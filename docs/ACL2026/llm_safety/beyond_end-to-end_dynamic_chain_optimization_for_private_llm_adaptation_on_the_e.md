@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond End-to-End: Dynamic Chain Optimization for Private LLM Adaptation on the Edge
 description: >-
-  [ACL 2026][LLM Safety][Federated Fine-tuning] This paper proposes ChainFed, a chain-based federated fine-tuning paradigm that breaks through the memory wall by sequentially training and freezing adapters layer by layer, enabling resource-constrained edge devices to participate in LLM fine-tuning. Combined with three techniques—Dynamic Layer Coordination, Global-aware Parameter Optimization, and Function-Oriented Adaptive Tuning—ChainFed achieves up to 46.46% average accuracy improvement.
+  [ACL 2026][LLM Safety][Federated Fine-tuning] This paper proposes ChainFed, a chain-based federated fine-tuning paradigm that breaks through the memory wall by sequentially training and freezing adapters layer by layer…
 tags:
-  - ACL 2026
-  - LLM Safety
-  - Federated Fine-tuning
-  - Edge Devices
-  - Memory Wall
-  - Chain Optimization
-  - Adapter
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Federated Fine-tuning"
+  - "Edge Devices"
+  - "Memory Wall"
+  - "Chain Optimization"
+  - "Adapter"
 date: 2026-05-08
 content_hash: 9bf2c2b3a9f673c9
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MEMO: Human-like Crisp Edge Detection Using Masked Edge Prediction
 description: >-
-  [CVPR 2026][Model Compression][edge detection] This paper proposes MEMO, a framework that generates crisp single-pixel edge maps using only cross-entropy loss, achieved through masked edge training and a confidence-ordered progressive inference strategy. MEMO substantially outperforms prior methods on crispness-aware evaluation (CEval ODS on BSDS improves from 0.749 to 0.836).
+  [CVPR 2026][Model Compression][edge detection] This paper proposes MEMO, a framework that generates crisp single-pixel edge maps using only cross-entropy loss…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - edge detection
-  - masked prediction
-  - confidence-ordered inference
-  - multi-granularity prediction
-  - synthetic data pre-training
+  - "CVPR 2026"
+  - "Model Compression"
+  - "edge detection"
+  - "masked prediction"
+  - "confidence-ordered inference"
+  - "multi-granularity prediction"
+  - "synthetic data pre-training"
 date: 2026-05-08
 content_hash: 047e6ef0e0ee32af
 ---

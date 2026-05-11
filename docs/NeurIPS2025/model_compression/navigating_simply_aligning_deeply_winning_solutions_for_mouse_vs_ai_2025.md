@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Navigating Simply, Aligning Deeply: Winning Solutions for Mouse vs. AI 2025
 description: >-
-  [NeurIPS 2025][Model Compression][Visual Robustness] In the NeurIPS 2025 Mouse vs. AI competition, this paper presents the counterintuitive finding that a lightweight two-layer CNN substantially outperforms deep networks on visual robustness tasks, while demonstrating that a deeper ResNet architecture is more advantageous for neural alignment, revealing a fundamental tension between behavioral robustness and biological plausibility.
+  [NeurIPS 2025][Model Compression][Visual Robustness] In the NeurIPS 2025 Mouse vs. AI competition, this paper presents the counterintuitive finding that a lightweight two-layer CNN substantially outperforms deep networks…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Visual Robustness
-  - Neural Alignment
-  - Lightweight CNN
-  - Gated Linear Units
-  - Reinforcement Learning
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Visual Robustness"
+  - "Neural Alignment"
+  - "Lightweight CNN"
+  - "Gated Linear Units"
+  - "Reinforcement Learning"
 date: 2026-05-08
 content_hash: dffbb95d487fb6fd
 ---

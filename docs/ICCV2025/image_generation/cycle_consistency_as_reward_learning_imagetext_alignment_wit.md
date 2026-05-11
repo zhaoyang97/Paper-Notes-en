@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Cycle Consistency as Reward: Learning Image-Text Alignment without Human Preferences
 description: >-
-  [ICCV 2025][Image Generation][cycle consistency] This paper proposes CycleReward, which leverages cycle consistency as a self-supervised signal to replace human preference annotations — captions are reconstructed into images via a T2I model and ranked by visual similarity, yielding the 866K preference-pair dataset CyclePrefDB. The trained reward model outperforms HPSv2/PickScore/ImageReward by 6%+ on detailed captioning, and DPO training with it improves VLM performance across multiple vision-language tasks, all without any human annotation.
+  [ICCV 2025][Image Generation][cycle consistency] This paper proposes CycleReward, which leverages cycle consistency as a self-supervised signal to replace human preference annotations — captions are reconstructed into im…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - cycle consistency
-  - reward model
-  - image-text alignment
-  - preference learning
-  - DPO
-  - self-supervised
+  - "ICCV 2025"
+  - "Image Generation"
+  - "cycle consistency"
+  - "reward model"
+  - "image-text alignment"
+  - "preference learning"
+  - "DPO"
+  - "self-supervised"
 date: 2026-05-08
 content_hash: d992af2d4a499615
 ---

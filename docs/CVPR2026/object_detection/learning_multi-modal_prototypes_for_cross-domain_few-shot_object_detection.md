@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Multi-Modal Prototypes for Cross-Domain Few-Shot Object Detection
 description: >-
-  [CVPR 2026][Object Detection][Cross-domain few-shot detection] This paper proposes LMP, a dual-branch framework built upon GroundingDINO that introduces a visual prototype branch (comprising positive class prototypes and hard negative prototypes) jointly trained and integrated with the text branch at inference, achieving state-of-the-art performance on cross-domain few-shot object detection.
+  [CVPR 2026][Object Detection][Cross-domain few-shot detection] This paper proposes LMP, a dual-branch framework built upon GroundingDINO that introduces a visual prototype branch (comprising positive class prototypes and…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - Cross-domain few-shot detection
-  - visual prototypes
-  - multi-modal
-  - GroundingDINO
-  - hard negatives
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Cross-domain few-shot detection"
+  - "visual prototypes"
+  - "multi-modal"
+  - "GroundingDINO"
+  - "hard negatives"
 date: 2026-05-08
 content_hash: 1e03078e92f8101c
 ---

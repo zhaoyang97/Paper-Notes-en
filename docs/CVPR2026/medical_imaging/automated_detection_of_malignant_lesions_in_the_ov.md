@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Automated Detection of Malignant Lesions in the Ovary Using Deep Learning Models and XAI
 description: >-
-  [CVPR 2026][Medical Imaging][Ovarian Cancer Detection] This work systematically compares 15 CNN variants (LeNet/ResNet/VGG/Inception) on five-class classification of ovarian cancer histopathology images. InceptionV3-A (ReLU) is selected as the final model, achieving 94% across comprehensive metrics, with comparative explainability analysis conducted using three XAI methods: LIME, SHAP, and Integrated Gradients.
+  [CVPR 2026][Medical Imaging][Ovarian Cancer Detection] This work systematically compares 15 CNN variants (LeNet/ResNet/VGG/Inception) on five-class classification of ovarian cancer histopathology images. InceptionV3-A (R…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Ovarian Cancer Detection
-  - CNN Comparison
-  - Explainable AI
-  - Histopathology
-  - InceptionV3
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Ovarian Cancer Detection"
+  - "CNN Comparison"
+  - "Explainable AI"
+  - "Histopathology"
+  - "InceptionV3"
 date: 2026-05-08
 content_hash: bba9e8c1467a642d
 ---

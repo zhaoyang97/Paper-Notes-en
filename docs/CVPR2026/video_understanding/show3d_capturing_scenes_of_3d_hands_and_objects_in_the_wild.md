@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SHOW3D: Capturing Scenes of 3D Hands and Objects in the Wild
 description: >-
-  [CVPR 2026][Video Understanding][hand-object interaction dataset] This paper introduces SHOW3D, the first hand-object interaction dataset with accurate 3D annotations captured in truly in-the-wild environments. Through a lightweight wearable multi-camera backpack system and an ego-exo fusion annotation pipeline, the dataset comprises 4.3 million frames of multi-view data, achieving sub-centimeter annotation accuracy for both hands and objects. Cross-dataset experiments validate the generalization advantage of models trained on SHOW3D.
+  [CVPR 2026][Video Understanding][hand-object interaction dataset] This paper introduces SHOW3D, the first hand-object interaction dataset with accurate 3D annotations captured in truly in-the-wild environments. Through a…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - hand-object interaction dataset
-  - in-the-wild 3D annotation
-  - multi-camera capture
-  - egocentric vision
-  - hand pose estimation
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "hand-object interaction dataset"
+  - "in-the-wild 3D annotation"
+  - "multi-camera capture"
+  - "egocentric vision"
+  - "hand pose estimation"
 date: 2026-05-08
 content_hash: 06f17953698eb3f7
 ---

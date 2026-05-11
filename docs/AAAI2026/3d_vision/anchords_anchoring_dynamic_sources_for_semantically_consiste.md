@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] AnchorDS: Anchoring Dynamic Sources for Semantically Consistent Text-to-3D Generation
 description: >-
-  [AAAI 2026][3D Vision][Text-to-3D] This paper identifies a critical yet overlooked issue in SDS: the source distribution is dynamically evolving rather than static. AnchorDS is proposed to anchor the source distribution by feeding the current rendered image as an image condition into a dual-conditioned diffusion model, thereby resolving semantic over-smoothing and multi-view inconsistency in SDS. The method comprehensively outperforms SDS, VSD, and SDS-Bridge on T3Bench.
+  [AAAI 2026][3D Vision][Text-to-3D] This paper identifies a critical yet overlooked issue in SDS: the source distribution is dynamically evolving rather than static. AnchorDS is proposed to anchor the source distribution…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - Text-to-3D
-  - Score Distillation Sampling
-  - Diffusion Models
-  - 3DGS
-  - Dynamic Source Distribution
-  - Semantic Consistency
+  - "AAAI 2026"
+  - "3D Vision"
+  - "Text-to-3D"
+  - "Score Distillation Sampling"
+  - "Diffusion Models"
+  - "3DGS"
+  - "Dynamic Source Distribution"
+  - "Semantic Consistency"
 date: 2026-05-08
 content_hash: 2c57753713ec1167
 ---

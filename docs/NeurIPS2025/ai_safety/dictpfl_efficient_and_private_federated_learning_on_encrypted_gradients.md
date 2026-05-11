@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DictPFL: Efficient and Private Federated Learning on Encrypted Gradients
 description: >-
-  [NeurIPS 2025][AI Safety][federated learning] This paper proposes DictPFL, a framework that decomposes model weights into a static dictionary and a trainable lookup table, and combines this decomposition with encryption-aware pruning. DictPFL achieves full gradient protection via homomorphic encryption in federated learning while reducing communication overhead by 402–748× and training time by 28–65×, keeping total runtime within 2× of plaintext FL.
+  [NeurIPS 2025][AI Safety][federated learning] This paper proposes DictPFL, a framework that decomposes model weights into a static dictionary and a trainable lookup table…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - federated learning
-  - Homomorphic Encryption
-  - Privacy-Preserving
-  - Gradient Pruning
-  - Dictionary Decomposition
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "federated learning"
+  - "Homomorphic Encryption"
+  - "Privacy-Preserving"
+  - "Gradient Pruning"
+  - "Dictionary Decomposition"
 date: 2026-05-08
 content_hash: 6bec89e9d057d7bd
 ---

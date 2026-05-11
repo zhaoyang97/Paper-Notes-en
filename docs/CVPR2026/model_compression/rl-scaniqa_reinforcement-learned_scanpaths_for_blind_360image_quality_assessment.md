@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] RL-ScanIQA: Reinforcement-Learned Scanpaths for Blind 360° Image Quality Assessment
 description: >-
-  [CVPR 2026][Model Compression][360 image quality] This paper proposes RL-ScanIQA, the first end-to-end reinforcement learning-based blind 360° image quality assessment (BIQA) framework. The core idea is to formulate scanpath generation as a sequential decision-making process, using a PPO policy to learn task-driven viewing strategies directly from quality assessment feedback, rather than relying on imitation learning from human gaze data. The framework consists of two jointly optimized modules—a scanpath generator and a quality assessor—augmented with multi-level rewards (step-level exploration, set-level diversity, and task-aligned perception) and distortion-space data augmentation. The method achieves state-of-the-art performance and strong cross-dataset generalization on three benchmarks: CVIQD, OIQA, and JUFE.
+  [CVPR 2026][Model Compression][360 image quality] This paper proposes RL-ScanIQA, the first end-to-end reinforcement learning-based blind 360° image quality assessment (BIQA) framework. The core idea is to formulate scan…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - 360 image quality
-  - reinforcement-learning
-  - scanpath
-  - blind IQA
-  - PPO
-  - active perception
+  - "CVPR 2026"
+  - "Model Compression"
+  - "360 image quality"
+  - "reinforcement-learning"
+  - "scanpath"
+  - "blind IQA"
+  - "PPO"
+  - "active perception"
 date: 2026-05-08
 content_hash: f3a0c03dc9dca247
 ---

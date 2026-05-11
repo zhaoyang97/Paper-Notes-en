@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Exploring Interpretability for Visual Prompt Tuning with Cross-layer Concepts
 description: >-
-  [ICLR 2026][Visual Prompt Tuning] This paper proposes IVPT (Interpretable Visual Prompt Tuning), which associates abstract visual prompts with human-understandable semantic regions via cross-layer class-agnostic concept prototypes. IVPT is the first method to achieve interpretability for visual prompts while preserving the advantages of parameter-efficient fine-tuning, simultaneously improving explanation consistency (+8.4%) and classification accuracy on fine-grained benchmarks such as CUB-200.
+  [ICLR 2026][Interpretability][Visual Prompt Tuning] This paper proposes IVPT (Interpretable Visual Prompt Tuning), which associates abstract visual prompts with human-understandable semantic regions via cross-layer class…
 tags:
-  - ICLR 2026
-  - Visual Prompt Tuning
-  - Interpretability
-  - Concept Prototypes
-  - Cross-layer Fusion
-  - Fine-grained Classification
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Visual Prompt Tuning"
+  - "Concept Prototypes"
+  - "Cross-layer Fusion"
+  - "Fine-grained Classification"
 date: 2026-05-08
 content_hash: 47386aff1dc0f3c9
 ---

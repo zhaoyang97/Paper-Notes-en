@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] GardenDesigner: Encoding Aesthetic Principles into Jiangnan Garden Construction via a Chain of Agents
 description: >-
-  [CVPR 2026][Jiangnan garden] This paper proposes GardenDesigner, a framework that encodes the aesthetic principles of Jiangnan gardens into computable constraints through a chain of agents (terrain distribution → road generation → asset selection → layout optimization). Combined with the expert-annotated GardenVerse dataset, the framework enables non-expert users to automatically construct aesthetically compliant Jiangnan gardens from text input within one minute.
+  [CVPR 2026][Jiangnan garden] This paper proposes GardenDesigner, a framework that encodes the aesthetic principles of Jiangnan gardens into computable constraints through a chain of agents (terrain distribution → road ge…
 tags:
-  - CVPR 2026
-  - Jiangnan garden
-  - chain of agents
-  - procedural modeling
-  - aesthetic constraints
-  - layout optimization
+  - "CVPR 2026"
+  - "Jiangnan garden"
+  - "chain of agents"
+  - "procedural modeling"
+  - "aesthetic constraints"
+  - "layout optimization"
 date: 2026-05-08
 content_hash: a59164f009aac8d0
 ---

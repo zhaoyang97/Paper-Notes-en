@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] IROTE: Human-like Traits Elicitation of Large Language Model via In-Context Self-Reflective Optimization
 description: >-
-  [AAAI 2026][LLM/NLP][LLM personality simulation] This paper proposes IROTE, an in-context self-reflective optimization method grounded in information bottleneck theory. By iteratively generating and refining compact yet evocative textual "self-reflections," IROTE stably elicits target human traits (values, morality, personality) from LLMs across diverse downstream tasks without any fine-tuning, consistently outperforming existing baselines in trait consistency.
+  [AAAI 2026][LLM/NLP][LLM personality simulation] This paper proposes IROTE, an in-context self-reflective optimization method grounded in information bottleneck theory. By iteratively generating and refining compact yet…
 tags:
-  - AAAI 2026
-  - LLM/NLP
-  - LLM personality simulation
-  - trait elicitation
-  - information bottleneck
-  - in-context learning
-  - self-reflection
+  - "AAAI 2026"
+  - "LLM/NLP"
+  - "LLM personality simulation"
+  - "trait elicitation"
+  - "information bottleneck"
+  - "in-context learning"
+  - "self-reflection"
 date: 2026-05-08
 content_hash: 415fe080e84d93fa
 ---

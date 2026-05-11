@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Yes FLoReNce, I Will Do Better Next Time! Agentic Feedback Reasoning for Humorous Meme Detection
 description: >-
-  [AAAI 2026][Multimodal VLM][humorous meme detection] This paper proposes FLoReNce, a framework that models humorous meme understanding as a closed-loop control system. Through a feedback loop consisting of a Judge agent, a PID controller, and a non-parametric knowledge base, the system retrieves similar past experiences at inference time to modulate prompts, enabling a frozen VLM to perform adaptive reasoning without fine-tuning, substantially improving both prediction accuracy and explanation quality.
+  [AAAI 2026][Multimodal VLM][humorous meme detection] This paper proposes FLoReNce, a framework that models humorous meme understanding as a closed-loop control system. Through a feedback loop consisting of a Judge agent…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - humorous meme detection
-  - feedback-loop reasoning
-  - non-parametric knowledge base
-  - PID controller
-  - vision-language model
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "humorous meme detection"
+  - "feedback-loop reasoning"
+  - "non-parametric knowledge base"
+  - "PID controller"
+  - "vision-language model"
 date: 2026-05-08
 content_hash: 7b05c8614a858e0e
 ---

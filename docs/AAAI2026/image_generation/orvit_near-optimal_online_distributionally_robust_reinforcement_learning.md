@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ORVIT: Near-Optimal Online Distributionally Robust Reinforcement Learning
 description: >-
-  [AAAI 2026][Image Generation][Distributionally Robust RL] This paper studies online distributionally robust reinforcement learning and proposes the RVI-$f$ algorithm based on $f$-divergence uncertainty sets. It achieves near minimax-optimal regret bounds under both $\chi^2$ and KL divergences without relying on any structural assumptions.
+  [AAAI 2026][Image Generation][Distributionally Robust RL] This paper studies online distributionally robust reinforcement learning and proposes the RVI-$f$ algorithm based on $f$-divergence uncertainty sets. It achieves…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Distributionally Robust RL
-  - online learning
-  - f-divergence
-  - Minimax Optimal
-  - Sample Complexity
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Distributionally Robust RL"
+  - "online learning"
+  - "f-divergence"
+  - "Minimax Optimal"
+  - "Sample Complexity"
 date: 2026-05-08
 content_hash: 134668bfb8b00168
 ---

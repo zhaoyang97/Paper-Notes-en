@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GPO: Learning from Critical Steps to Improve LLM Reasoning
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Critical step identification] GPO estimates the advantage function for each step in a reasoning trajectory via Monte Carlo simulation to identify "critical steps" (the turning points where the model makes errors), then resets from those critical steps and resamples new trajectories for training. This plug-and-play approach consistently improves multiple optimization algorithms—including PPO, DPO, KTO, SimPO, and ORPO—on reasoning tasks.
+  [NeurIPS 2025][LLM Reasoning][Critical step identification] GPO estimates the advantage function for each step in a reasoning trajectory via Monte Carlo simulation to identify "critical steps" (the turning points where t…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - Critical step identification
-  - reinforcement learning
-  - reasoning optimization
-  - advantage function
-  - process-level optimization
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "Critical step identification"
+  - "reinforcement learning"
+  - "reasoning optimization"
+  - "advantage function"
+  - "process-level optimization"
 date: 2026-05-08
 content_hash: fce8ad1f926dbffe
 ---

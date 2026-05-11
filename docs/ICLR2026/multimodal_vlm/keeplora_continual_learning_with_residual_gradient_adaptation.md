@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] KeepLoRA: Continual Learning with Residual Gradient Adaptation
 description: >-
-  [ICLR 2026][Multimodal VLM][Continual Learning] By analyzing the SVD decomposition of pretrained model weights, this paper identifies that general knowledge is encoded in the principal subspace while domain-specific knowledge resides in the residual subspace. KeepLoRA is proposed to constrain LoRA updates for new tasks within the residual subspace, while using gradient information for initialization to preserve plasticity, achieving an optimal balance among forward stability, backward stability, and plasticity in continual learning.
+  [ICLR 2026][Multimodal VLM][Continual Learning] By analyzing the SVD decomposition of pretrained model weights, this paper identifies that general knowledge is encoded in the principal subspace while domain-specific know…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Continual Learning
-  - LoRA
-  - Gradient Projection
-  - Subspace Constraint
-  - Vision-Language Models
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Continual Learning"
+  - "LoRA"
+  - "Gradient Projection"
+  - "Subspace Constraint"
+  - "Vision-Language Models"
 date: 2026-05-08
 content_hash: a681fe82ed516550
 ---

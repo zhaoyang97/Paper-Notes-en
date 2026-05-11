@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Deliberation on Priors: Trustworthy Reasoning of Large Language Models on Knowledge Graphs
 description: >-
-  [NeurIPS 2025][Graph Learning][Knowledge Graph Question Answering] This paper proposes DP (Deliberation on Priors), a framework that leverages structural priors from knowledge graphs via progressive knowledge distillation to generate faithful relational paths, and validates reasoning reliability through a reasoning introspection strategy based on constraint priors, achieving new state-of-the-art performance on KGQA benchmarks.
+  [NeurIPS 2025][Graph Learning][Knowledge Graph Question Answering] This paper proposes DP (Deliberation on Priors), a framework that leverages structural priors from knowledge graphs via progressive knowledge distillatio…
 tags:
-  - NeurIPS 2025
-  - Graph Learning
-  - Knowledge Graph Question Answering
-  - Trustworthy Reasoning
-  - Structural Priors
-  - Constrained Reasoning
-  - Knowledge Distillation
+  - "NeurIPS 2025"
+  - "Graph Learning"
+  - "Knowledge Graph Question Answering"
+  - "Trustworthy Reasoning"
+  - "Structural Priors"
+  - "Constrained Reasoning"
+  - "Knowledge Distillation"
 date: 2026-05-08
 content_hash: 05bdaab3fba8ed94
 ---

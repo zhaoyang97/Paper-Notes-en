@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CoLC: Communication-Efficient Collaborative Perception with LiDAR Completion
 description: >-
-  [CVPR 2026][Autonomous Driving][Collaborative Perception] CoLC proposes a communication-efficient early fusion framework for collaborative perception. It reduces transmission volume via Foreground-Aware Point Sampling (FAPS), reconstructs dense pillar representations on the ego side through VQ-based LiDAR completion (CEEF), and ensures semantic and geometric consistency via Dense-Guided Dual Alignment (DGDA). The framework achieves detection performance on par with or superior to full early fusion while significantly reducing communication bandwidth.
+  [CVPR 2026][Autonomous Driving][Collaborative Perception] CoLC proposes a communication-efficient early fusion framework for collaborative perception. It reduces transmission volume via Foreground-Aware Point Sampling (F…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Collaborative Perception
-  - Communication Efficiency
-  - Point Cloud Completion
-  - Early Fusion
-  - Vector Quantization
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Collaborative Perception"
+  - "Communication Efficiency"
+  - "Point Cloud Completion"
+  - "Early Fusion"
+  - "Vector Quantization"
 date: 2026-05-08
 content_hash: 6dc2d289926b61e0
 ---

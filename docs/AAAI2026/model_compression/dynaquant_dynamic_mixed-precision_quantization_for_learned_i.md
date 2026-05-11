@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DynaQuant: Dynamic Mixed-Precision Quantization for Learned Image Compression
 description: >-
-  [AAAI 2026][Model Compression][Image compression quantization] To address the deployment inefficiency of learned image compression (LIC) models, this paper proposes DynaQuant, a framework that achieves content-adaptive quantization at the parameter level via learnable scale/zero-point combined with a Distance-Aware Gradient Modulator, and dynamically assigns optimal bit-widths per layer at the architecture level via a lightweight Bit-Width Selector. Across three baselines (Cheng2020, ELIC, Ballé), the framework achieves near-FP32 R-D performance while delivering up to 5.17× speedup and reducing model size to approximately 1/4 of the original.
+  [AAAI 2026][Model Compression][Image compression quantization] To address the deployment inefficiency of learned image compression (LIC) models, this paper proposes DynaQuant…
 tags:
-  - AAAI 2026
-  - Model Compression
-  - Image compression quantization
-  - mixed-precision
-  - dynamic bit-width allocation
-  - quantization-aware training
-  - learned image compression
+  - "AAAI 2026"
+  - "Model Compression"
+  - "Image compression quantization"
+  - "mixed-precision"
+  - "dynamic bit-width allocation"
+  - "quantization-aware training"
+  - "learned image compression"
 date: 2026-05-08
 content_hash: 27aa7884e7ca2fc6
 ---

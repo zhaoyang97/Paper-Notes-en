@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ARGOS: Who, Where, and When in Agentic Multi-Camera Person Search
 description: >-
-  [CVPR 2026][LLM Agent][multi-camera search] This paper proposes ARGOS, the first benchmark and framework that redefines multi-camera person search as an interactive reasoning problem. An agent conducts multi-turn dialogue with witnesses, invokes spatiotemporal tools, and eliminates candidates under information asymmetry. The benchmark comprises 2,691 tasks across 3 progressive tracks.
+  [CVPR 2026][LLM Agent][multi-camera search] This paper proposes ARGOS, the first benchmark and framework that redefines multi-camera person search as an interactive reasoning problem. An agent conducts multi-turn dialogu…
 tags:
-  - CVPR 2026
-  - LLM Agent
-  - multi-camera search
-  - agentic reasoning
-  - spatiotemporal topology graph
-  - interactive dialogue
-  - person search
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "multi-camera search"
+  - "agentic reasoning"
+  - "spatiotemporal topology graph"
+  - "interactive dialogue"
+  - "person search"
 date: 2026-05-08
 content_hash: 2d15060532b38eb6
 ---

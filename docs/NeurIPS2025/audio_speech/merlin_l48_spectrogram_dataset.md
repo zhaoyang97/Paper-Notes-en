@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Merlin L48 Spectrogram Dataset
 description: >-
-  [NeurIPS 2025][Audio & Speech][Single Positive Multi-Label Learning (SPML)] This paper introduces the L48 dataset — a fine-grained spectrogram multi-label classification benchmark derived from real-world bird recordings that naturally exhibits the Single Positive Multi-Label (SPML) setting. The dataset exposes critical shortcomings of existing SPML methods under realistic conditions, and proposes an intra-recording consistency regularization scheme to improve performance.
+  [NeurIPS 2025][Audio & Speech][Single Positive Multi-Label Learning (SPML)] This paper introduces the L48 dataset — a fine-grained spectrogram multi-label classification benchmark derived from real-world bird recordings…
 tags:
-  - NeurIPS 2025
+  - "NeurIPS 2025"
   - "Audio & Speech"
-  - Single Positive Multi-Label Learning (SPML)
-  - Bird Sounds
-  - Spectrogram
-  - Fine-Grained Classification
-  - Ecological Priors
+  - "Single Positive Multi-Label Learning (SPML)"
+  - "Bird Sounds"
+  - "Spectrogram"
+  - "Fine-Grained Classification"
+  - "Ecological Priors"
 date: 2026-05-08
 content_hash: 533c3c17e5971522
 ---

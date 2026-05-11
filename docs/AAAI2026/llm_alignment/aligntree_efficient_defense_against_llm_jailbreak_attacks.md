@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AlignTree: Efficient Defense Against LLM Jailbreak Attacks
 description: >-
-  [AAAI 2026][LLM Alignment][LLM Safety] AlignTree leverages internal LLM activation features — combining linear refusal directions with nonlinear SVM signals — to train a lightweight random forest classifier that efficiently detects jailbreak attacks with negligible computational overhead, achieving state-of-the-art reductions in attack success rate (ASR).
+  [AAAI 2026][LLM Alignment][LLM Safety] AlignTree leverages internal LLM activation features — combining linear refusal directions with nonlinear SVM signals — to train a lightweight random forest classifier that efficien…
 tags:
-  - AAAI 2026
-  - LLM Alignment
-  - LLM Safety
-  - Jailbreak Attack Defense
-  - Random Forest Classifier
-  - Refusal Direction
-  - SVM
+  - "AAAI 2026"
+  - "LLM Alignment"
+  - "LLM Safety"
+  - "Jailbreak Attack Defense"
+  - "Random Forest Classifier"
+  - "Refusal Direction"
+  - "SVM"
 date: 2026-05-08
 content_hash: 4627e7b4ad227e8f
 ---

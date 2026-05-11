@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] ViLU: Learning Vision-Language Uncertainties for Failure Prediction
 description: >-
-  [ICCV2025][Uncertainty Quantification] This paper proposes ViLU, a post-hoc uncertainty quantification framework for VLM zero-shot prediction. By fusing visual embeddings, predicted text embeddings, and image-conditioned text representations via cross-attention, ViLU constructs uncertainty-aware multimodal representations that significantly outperform existing failure prediction methods across 13 classification datasets and large-scale image-text datasets.
+  [ICCV2025][Information Retrieval & RAG][Uncertainty Quantification] This paper proposes ViLU, a post-hoc uncertainty quantification framework for VLM zero-shot prediction. By fusing visual embeddings…
 tags:
-  - ICCV2025
-  - Uncertainty Quantification
-  - Failure Prediction
-  - VLM
-  - Cross-Attention
-  - Post-Hoc Estimation
+  - "ICCV2025"
+  - "Information Retrieval & RAG"
+  - "Uncertainty Quantification"
+  - "Failure Prediction"
+  - "VLM"
+  - "Cross-Attention"
+  - "Post-Hoc Estimation"
 date: 2026-05-08
 content_hash: 82364fe62c36842a
 ---

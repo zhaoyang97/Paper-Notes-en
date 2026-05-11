@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Spatio-Semantic Expert Routing Architecture with Mixture-of-Experts for Referring Image Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Referring Image Segmentation] This paper proposes the SERA framework, which introduces a two-stage lightweight MoE expert refinement mechanism — SERA-Adapter at the backbone level and SERA-Fusion at the fusion level — into a frozen vision-language backbone. Through expression-guided adaptive routing, SERA improves spatial consistency and boundary precision in referring image segmentation while updating fewer than 1% of backbone parameters.
+  [CVPR 2026][Segmentation][Referring Image Segmentation] This paper proposes the SERA framework, which introduces a two-stage lightweight MoE expert refinement mechanism — SERA-Adapter at the backbone level and SERA-Fusio…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Referring Image Segmentation
-  - Mixture-of-Experts
-  - Parameter-Efficient Tuning
-  - Vision-Language Models
-  - Expert Routing
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Referring Image Segmentation"
+  - "Mixture-of-Experts"
+  - "Parameter-Efficient Tuning"
+  - "Vision-Language Models"
+  - "Expert Routing"
 date: 2026-05-08
 content_hash: f4f261dcfdc408a2
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] AgentGL: Towards Agentic Graph Learning with LLMs via Reinforcement Learning
 description: >-
-  [ACL 2026][Graph Learning] AgentGL is the first RL-based agentic graph learning (AGL) framework that enables LLM agents to autonomously navigate text-attributed graphs (TAGs) via graph-native search tools, achieving up to 17.5% and 28.4% absolute accuracy gains on node classification and link prediction respectively.
+  [ACL 2026][Graph Learning][Reinforcement Learning] AgentGL is the first RL-based agentic graph learning (AGL) framework that enables LLM agents to autonomously navigate text-attributed graphs (TAGs) via graph-native sear…
 tags:
-  - ACL 2026
-  - Graph Learning
-  - Reinforcement Learning
-  - Agent Navigation
-  - Text-Attributed Graph
-  - Tool Use
+  - "ACL 2026"
+  - "Graph Learning"
+  - "Reinforcement Learning"
+  - "Agent Navigation"
+  - "Text-Attributed Graph"
+  - "Tool Use"
 content_hash: c48d7eded3dbe745
 ---
 

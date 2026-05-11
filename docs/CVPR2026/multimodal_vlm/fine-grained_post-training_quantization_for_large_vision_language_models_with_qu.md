@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Fine-Grained Post-Training Quantization for Large Vision Language Models with Quantization-Aware Integrated Gradients
 description: >-
-  [CVPR 2026][Multimodal VLM][post-training quantization] This paper proposes Quantization-aware Integrated Gradients (QIG), advancing sensitivity analysis for LVLM quantization from the modality level to the token level. By leveraging axiomatic attribution principles, QIG precisely quantifies each token's contribution to quantization error, achieving significant accuracy improvements under W4A8 and W3A16 settings with negligible additional computational overhead.
+  [CVPR 2026][Multimodal VLM][post-training quantization] This paper proposes Quantization-aware Integrated Gradients (QIG), advancing sensitivity analysis for LVLM quantization from the modality level to the token level.…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - post-training quantization
-  - LVLM compression
-  - token-level sensitivity
-  - integrated gradients
-  - model acceleration
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "post-training quantization"
+  - "LVLM compression"
+  - "token-level sensitivity"
+  - "integrated gradients"
+  - "model acceleration"
 date: 2026-05-08
 content_hash: e853abcdfaa2bf5b
 ---

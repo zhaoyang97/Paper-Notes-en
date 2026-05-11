@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Controlling Thinking Speed in Reasoning Models
 description: >-
-  [NeurIPS 2025][LLM Reasoning][thinking speed] By applying Representation Engineering (RepE) to extract steering vectors that control fast/slow thinking transitions from the hidden space of Large Reasoning Models (LRMs), and combining these with a real-time reasoning difficulty estimator based on inter-layer logit divergence, the method achieves training-free adaptive reasoning speed control — yielding an average of +1.3% accuracy improvement and −8.6% token reduction across 4 LRMs.
+  [NeurIPS 2025][LLM Reasoning][thinking speed] By applying Representation Engineering (RepE) to extract steering vectors that control fast/slow thinking transitions from the hidden space of Large Reasoning Models (LRMs)…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - thinking speed
-  - representation engineering
-  - System 1/2
-  - test-time scaling
-  - steering vector
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "thinking speed"
+  - "representation engineering"
+  - "System 1/2"
+  - "test-time scaling"
+  - "steering vector"
 date: 2026-05-08
 content_hash: 037945c92cf9e158
 ---

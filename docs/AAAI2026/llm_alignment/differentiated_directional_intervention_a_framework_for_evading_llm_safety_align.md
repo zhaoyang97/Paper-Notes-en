@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Differentiated Directional Intervention: A Framework for Evading LLM Safety Alignment
 description: >-
-  [AAAI 2026][LLM Alignment][LLM safety] This work deconstructs the internal representations of LLM safety alignment from the conventional "single refusal direction" into two functionally independent directions — a **harm detection direction** and a **refusal execution direction** — and proposes the DBDI framework, which applies adaptive projection elimination and direct steering to intervene on each direction separately, achieving a 97.88% attack success rate (ASR) on Llama-2.
+  [AAAI 2026][LLM Alignment][LLM safety] This work deconstructs the internal representations of LLM safety alignment from the conventional "single refusal direction" into two functionally independent directions — a **harm…
 tags:
-  - AAAI 2026
-  - LLM Alignment
-  - LLM safety
-  - jailbreak attacks
-  - activation manipulation
-  - safety alignment
-  - interpretability
+  - "AAAI 2026"
+  - "LLM Alignment"
+  - "LLM safety"
+  - "jailbreak attacks"
+  - "activation manipulation"
+  - "safety alignment"
+  - "interpretability"
 date: 2026-05-08
 content_hash: 0f1465008e92f03c
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Brain-like Variational Inference
 description: >-
-  [NeurIPS 2025][Optimization][variational inference] This paper proposes the FOND framework (Free energy Online Natural-gradient Dynamics), which derives spiking neural network inference dynamics from first principles via free energy minimization, and implements iPVAE (iterative Poisson VAE). iPVAE outperforms standard VAEs and predictive coding models in reconstruction–sparsity trade-off, biological plausibility, and OOD generalization.
+  [NeurIPS 2025][Optimization][variational inference] This paper proposes the FOND framework (Free energy Online Natural-gradient Dynamics)…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - variational inference
-  - spiking neural network
-  - predictive coding
-  - free energy
-  - Poisson VAE
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "variational inference"
+  - "spiking neural network"
+  - "predictive coding"
+  - "free energy"
+  - "Poisson VAE"
 date: 2026-05-08
 content_hash: 5865e6ccb072ec6a
 ---

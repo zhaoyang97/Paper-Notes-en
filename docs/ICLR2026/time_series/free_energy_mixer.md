@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Free Energy Mixer
 description: >-
-  [ICLR 2026][Time Series][Attention mechanism] This paper proposes Free Energy Mixer (FEM), which reframes attention value retrieval as a free energy (log-sum-exp) optimization problem, enabling value-aware posterior selection at the per-channel level. FEM addresses the inherent bottleneck of standard attention—lossless storage but lossy reading—and serves as a plug-and-play replacement for softmax/linear attention/RNN/SSM, yielding consistent improvements across NLP, vision, and time series tasks.
+  [ICLR 2026][Time Series][Attention mechanism] This paper proposes Free Energy Mixer (FEM), which reframes attention value retrieval as a free energy (log-sum-exp) optimization problem…
 tags:
-  - ICLR 2026
-  - Time Series
-  - Attention mechanism
-  - free energy
-  - channel-wise selection
-  - log-sum-exp
-  - plug-and-play
+  - "ICLR 2026"
+  - "Time Series"
+  - "Attention mechanism"
+  - "free energy"
+  - "channel-wise selection"
+  - "log-sum-exp"
+  - "plug-and-play"
 date: 2026-05-08
 content_hash: 8eaa99acd3aaef59
 ---

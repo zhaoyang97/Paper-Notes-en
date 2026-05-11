@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Don't Just Chase "Highlighted Tokens" in MLLMs: Revisiting Visual Holistic Context Retention
 description: >-
-  [NeurIPS 2025][Multimodal VLM][visual token pruning] This paper proposes HoloV, a plug-and-play visual token pruning framework that adaptively allocates pruning budgets across different spatial crop regions to preserve global visual context rather than retaining only attention-highlighted tokens. On LLaVA-1.5, HoloV retains 95.8% of original performance after pruning 88.9% of visual tokens.
+  [NeurIPS 2025][Multimodal VLM][visual token pruning] This paper proposes HoloV, a plug-and-play visual token pruning framework that adaptively allocates pruning budgets across different spatial crop regions to preserve g…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - visual token pruning
-  - inference acceleration
-  - holistic context
-  - adaptive allocation
-  - MLLM efficiency
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "visual token pruning"
+  - "inference acceleration"
+  - "holistic context"
+  - "adaptive allocation"
+  - "MLLM efficiency"
 date: 2026-05-08
 content_hash: d13d7abb580605b3
 ---

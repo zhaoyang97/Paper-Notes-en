@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] DIVE: Taming DINO for Subject-Driven Video Editing
 description: >-
-  [Video Generation] This paper proposes DIVE, a framework that leverages semantic features from the pretrained DINOv2 model as implicit correspondences to guide subject-driven video editing. DINO features are used for temporal motion modeling and target subject identity registration, enabling high-quality subject replacement while preserving motion consistency.
+  [Video Generation] This paper proposes DIVE, a framework that leverages semantic features from the pretrained DINOv2 model as implicit correspondences to guide subject-driven video editing. DINO features are used for tem…
 tags:
-  - Video Generation
+  - "Video Generation"
 date: 2026-05-08
 content_hash: 5458511c2646b614
 ---

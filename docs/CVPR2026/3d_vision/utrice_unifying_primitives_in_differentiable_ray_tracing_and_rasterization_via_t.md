@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UTrice: Unifying Primitives in Differentiable Ray Tracing and Rasterization via Triangles for Particle-Based 3D Scenes
 description: >-
-  [CVPR 2026][3D Vision][Differentiable Ray Tracing] UTrice proposes replacing Gaussian ellipsoids with triangles as unified primitives for differentiable ray tracing, enabling direct triangle traversal within an OptiX BVH without any proxy geometry. The method significantly outperforms 3DGRT in rendering quality while maintaining real-time performance, and is natively compatible with triangles optimized by the rasterization-based Triangle Splatting, thereby achieving primitive unification across rasterization and ray tracing pipelines.
+  [CVPR 2026][3D Vision][Differentiable Ray Tracing] UTrice proposes replacing Gaussian ellipsoids with triangles as unified primitives for differentiable ray tracing…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Differentiable Ray Tracing
-  - Triangle Primitives
-  - 3D Gaussian Splatting
-  - Novel View Synthesis
-  - BVH Acceleration
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Differentiable Ray Tracing"
+  - "Triangle Primitives"
+  - "3D Gaussian Splatting"
+  - "Novel View Synthesis"
+  - "BVH Acceleration"
 date: 2026-05-08
 content_hash: 78251adb82333bbf
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ToxReason: A Benchmark for Mechanistic Chemical Toxicity Reasoning via Adverse Outcome Pathway
 description: >-
-  [ACL 2026][Social Computing][Toxicity Reasoning] ToxReason proposes an AOP-based chemical toxicity mechanistic reasoning benchmark that integrates drug-target experimental data with toxicity labels, requiring models to reason from molecular initiating events to organ-level adverse outcomes; a 4B model trained with GRPO reinforcement learning surpasses GPT-5 and other large models in both toxicity prediction (F1 71.4%) and reasoning quality.
+  [ACL 2026][Social Computing][Toxicity Reasoning] ToxReason proposes an AOP-based chemical toxicity mechanistic reasoning benchmark that integrates drug-target experimental data with toxicity labels…
 tags:
-  - ACL 2026
-  - Social Computing
-  - Toxicity Reasoning
-  - Adverse Outcome Pathway
-  - Benchmark
-  - Reinforcement Learning
-  - LLM Evaluation
+  - "ACL 2026"
+  - "Social Computing"
+  - "Toxicity Reasoning"
+  - "Adverse Outcome Pathway"
+  - "Benchmark"
+  - "Reinforcement Learning"
+  - "LLM Evaluation"
 date: 2025-05-08
 content_hash: 9c2156795130ed06
 ---

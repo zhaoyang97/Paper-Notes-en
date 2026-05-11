@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Conformal Risk Training: End-to-End Optimization of Conformal Risk Control
 description: >-
-  [NeurIPS 2025][LLM Pretraining][conformal prediction] This paper extends Conformal Risk Control (CRC) from expected loss to the generalized Optimized Certainty-Equivalent (OCE) risk measure (encompassing tail risks such as CVaR), and proposes *conformal risk training*—an end-to-end approach that differentiates through the conformal risk control procedure during training, achieving provable risk guarantees while significantly improving average-case performance.
+  [NeurIPS 2025][LLM Pretraining][conformal prediction] This paper extends Conformal Risk Control (CRC) from expected loss to the generalized Optimized Certainty-Equivalent (OCE) risk measure (encompassing tail risks such…
 tags:
-  - NeurIPS 2025
-  - LLM Pretraining
-  - conformal prediction
-  - risk control
-  - CVaR
-  - OCE risk
-  - end-to-end training
+  - "NeurIPS 2025"
+  - "LLM Pretraining"
+  - "conformal prediction"
+  - "risk control"
+  - "CVaR"
+  - "OCE risk"
+  - "end-to-end training"
 date: 2026-05-08
 content_hash: b66c7a2a144ad373
 ---

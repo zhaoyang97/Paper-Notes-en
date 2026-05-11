@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Fantastic Features and Where to Find Them: A Probing Method to Combine Features from Multiple Foundation Models
 description: >-
-  [NeurIPS 2025][foundation model] This paper proposes ComBo, a lightweight probing-based adapter that compresses multi-layer activations from multiple frozen foundation models via affine projection, then fuses them with a small transformer—without backpropagation through any backbone. ComBo efficiently integrates complementary representations across models, surpassing prior probing methods and matching distillation-based methods on VTAB-1k.
+  [NeurIPS 2025][Interpretability][foundation model] This paper proposes ComBo, a lightweight probing-based adapter that compresses multi-layer activations from multiple frozen foundation models via affine projection…
 tags:
-  - NeurIPS 2025
-  - foundation model
-  - probing
-  - multi-backbone
-  - feature combination
-  - model selection
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "foundation model"
+  - "probing"
+  - "multi-backbone"
+  - "feature combination"
+  - "model selection"
 date: 2026-05-08
 content_hash: ac93c9195acaa44c
 ---

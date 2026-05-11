@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Symbolic Planning and Multi-Agent Path Finding in Extremely Dense Environments with Unassigned Agents
 description: >-
-  [AAAI 2026][Block Rearrangement] This paper introduces the Block Rearrangement Problem (BRaP) as a formal problem definition and proposes five solving algorithms based on configuration space search, PDDL symbolic planning, and MAPF. Among them, BR-LaCAM achieves a 92% success rate with millisecond-level solving speed on grids up to 80×80 under extreme density conditions.
+  [AAAI 2026][Block Rearrangement] This paper introduces the Block Rearrangement Problem (BRaP) as a formal problem definition and proposes five solving algorithms based on configuration space search…
 tags:
-  - AAAI 2026
-  - Block Rearrangement
-  - MAPF
-  - Symbolic Planning
-  - PDDL
-  - LaCAM
-  - Dense Environments
-  - Warehouse Robotics
+  - "AAAI 2026"
+  - "Block Rearrangement"
+  - "MAPF"
+  - "Symbolic Planning"
+  - "PDDL"
+  - "LaCAM"
+  - "Dense Environments"
+  - "Warehouse Robotics"
 date: 2026-05-08
 content_hash: 6fb68475126f5b6e
 ---

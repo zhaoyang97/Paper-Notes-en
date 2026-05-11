@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MDiff4STR: Mask Diffusion Model for Scene Text Recognition
 description: >-
-  [AAAI 2026][Image Generation][Scene Text Recognition] This work is the first to introduce Mask Diffusion Models (MDM) into Scene Text Recognition (STR), proposing MDiff4STR. It addresses the training-inference noising gap via six training mask strategies and resolves overconfident predictions through a Token Replacement Noise mechanism. With only 3 denoising steps, MDiff4STR surpasses state-of-the-art autoregressive models in accuracy while achieving 3× inference speedup.
+  [AAAI 2026][Image Generation][Scene Text Recognition] This work is the first to introduce Mask Diffusion Models (MDM) into Scene Text Recognition (STR)…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Scene Text Recognition
-  - Mask Diffusion Model
-  - Denoising Strategy
-  - Token Replacement Noise
-  - Omnidirectional Language Modeling
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Scene Text Recognition"
+  - "Mask Diffusion Model"
+  - "Denoising Strategy"
+  - "Token Replacement Noise"
+  - "Omnidirectional Language Modeling"
 date: 2026-05-08
 content_hash: ce95e6071f26433c
 ---

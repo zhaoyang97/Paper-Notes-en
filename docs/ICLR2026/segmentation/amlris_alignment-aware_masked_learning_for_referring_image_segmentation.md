@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] AMLRIS: Alignment-aware Masked Learning for Referring Image Segmentation
 description: >-
-  [ICLR 2026][Segmentation][referring image segmentation] This paper proposes an Alignment-aware Masked Learning (AML) strategy that quantifies vision-language patch-level alignment and filters low-alignment pixels, enabling RIS models to focus on reliable regions during training. Without any architectural modifications, AML achieves state-of-the-art performance across all 8 splits of RefCOCO benchmarks.
+  [ICLR 2026][Segmentation][referring image segmentation] This paper proposes an Alignment-aware Masked Learning (AML) strategy that quantifies vision-language patch-level alignment and filters low-alignment pixels…
 tags:
-  - ICLR 2026
-  - Segmentation
-  - referring image segmentation
-  - vision-language alignment
-  - masked learning
-  - cross-modal similarity
+  - "ICLR 2026"
+  - "Segmentation"
+  - "referring image segmentation"
+  - "vision-language alignment"
+  - "masked learning"
+  - "cross-modal similarity"
 date: 2026-05-08
 content_hash: e10eac8222f7f9dd
 ---

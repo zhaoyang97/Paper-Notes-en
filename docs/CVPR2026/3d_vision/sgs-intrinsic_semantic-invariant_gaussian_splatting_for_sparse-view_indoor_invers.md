@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SGS-Intrinsic: Semantic-Invariant Gaussian Splatting for Sparse-View Indoor Inverse Rendering
 description: >-
-  [CVPR 2026][3D Vision][inverse rendering] SGS-Intrinsic proposes a two-stage indoor inverse rendering framework. Stage I constructs a geometrically consistent dense Gaussian field guided by semantic and geometric priors. Stage II performs material–illumination decomposition via a hybrid lighting model and material priors, with a dedicated de-shadowing module to prevent shadow baking into albedo.
+  [CVPR 2026][3D Vision][inverse rendering] SGS-Intrinsic proposes a two-stage indoor inverse rendering framework. Stage I constructs a geometrically consistent dense Gaussian field guided by semantic and geometric priors.…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - inverse rendering
-  - sparse-view
-  - Gaussian splatting
-  - material decomposition
-  - indoor scenes
+  - "CVPR 2026"
+  - "3D Vision"
+  - "inverse rendering"
+  - "sparse-view"
+  - "Gaussian splatting"
+  - "material decomposition"
+  - "indoor scenes"
 date: 2026-05-08
 content_hash: cee93ad76b1b943f
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GEWDiff: Geometric Enhanced Wavelet-based Diffusion Model for Hyperspectral Image Super-resolution
 description: >-
-  [AAAI 2026][Image Generation][Hyperspectral Image Super-resolution] This paper proposes GEWDiff, a geometric enhanced wavelet-based diffusion model that efficiently compresses hyperspectral data into a latent space via a wavelet encoder-decoder, introduces edge-aware noise scheduling and mask-conditional control to preserve geometric integrity, and designs a multi-level loss function to facilitate stable convergence, achieving state-of-the-art performance on 4× hyperspectral image super-resolution.
+  [AAAI 2026][Image Generation][Hyperspectral Image Super-resolution] This paper proposes GEWDiff, a geometric enhanced wavelet-based diffusion model that efficiently compresses hyperspectral data into a latent space via a…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Hyperspectral Image Super-resolution
-  - Diffusion Model
-  - Wavelet Transform
-  - Geometric Enhancement
-  - Remote Sensing
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Hyperspectral Image Super-resolution"
+  - "Diffusion Model"
+  - "Wavelet Transform"
+  - "Geometric Enhancement"
+  - "Remote Sensing"
 date: 2026-05-08
 content_hash: b2a14e1f14bafaae
 ---

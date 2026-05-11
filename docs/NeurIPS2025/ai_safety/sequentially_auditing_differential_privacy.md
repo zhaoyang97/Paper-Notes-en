@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Sequentially Auditing Differential Privacy
 description: >-
-  [NeurIPS 2025][AI Safety][differential privacy] This paper proposes a differential privacy auditing framework based on sequential hypothesis testing and kernel MMD statistics, enabling valid detection of privacy violations at any point during streaming mechanism outputs. The approach reduces the required sample count from 50K (as needed by existing methods) to just a few hundred, and can identify DP-SGD privacy violations within less than one full training run.
+  [NeurIPS 2025][AI Safety][differential privacy] This paper proposes a differential privacy auditing framework based on sequential hypothesis testing and kernel MMD statistics…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - differential privacy
-  - Sequential Testing
-  - MMD
-  - E-values
-  - DP-SGD Auditing
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "differential privacy"
+  - "Sequential Testing"
+  - "MMD"
+  - "E-values"
+  - "DP-SGD Auditing"
 date: 2026-05-08
 content_hash: c0156d29ab7ce3eb
 ---

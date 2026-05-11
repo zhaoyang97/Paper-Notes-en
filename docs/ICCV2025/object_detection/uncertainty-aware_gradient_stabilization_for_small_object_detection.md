@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Uncertainty-Aware Gradient Stabilization for Small Object Detection
 description: >-
-  [ICCV 2025][Object Detection][Small object detection] This paper identifies gradient instability caused by steep loss curvature in traditional localization methods when applied to small objects, and proposes UGS (Uncertainty-aware Gradient Stabilization), a framework comprising three components — classification-based localization, uncertainty minimization, and uncertainty-guided refinement — to stabilize gradients and significantly improve small object detection performance.
+  [ICCV 2025][Object Detection][Small object detection] This paper identifies gradient instability caused by steep loss curvature in traditional localization methods when applied to small objects…
 tags:
-  - ICCV 2025
-  - Object Detection
-  - Small object detection
-  - gradient stability
-  - uncertainty-aware
-  - classification-based localization
-  - adversarial perturbation
+  - "ICCV 2025"
+  - "Object Detection"
+  - "Small object detection"
+  - "gradient stability"
+  - "uncertainty-aware"
+  - "classification-based localization"
+  - "adversarial perturbation"
 date: 2026-05-08
 content_hash: b4e63b1995616fd0
 ---

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] SPELL: Self-Play Reinforcement Learning for Evolving Long-Context Language Models
 description: >-
-  [Reinforcement Learning] This paper proposes the SPELL framework, in which a single LLM simultaneously assumes three roles—question generator, responder, and verifier—engaging in self-play reinforcement learning without human annotation to continuously improve long-context reasoning, achieving consistent performance gains across 6 long-context benchmarks.
+  [Reinforcement Learning] This paper proposes the SPELL framework, in which a single LLM simultaneously assumes three roles—question generator, responder…
 tags:
-  - Reinforcement Learning
+  - "Reinforcement Learning"
 date: 2026-05-08
 content_hash: 0c13a3ba97c62c5e
 ---

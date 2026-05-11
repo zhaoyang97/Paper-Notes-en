@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Opinion: Towards Unified Expressive Policy Optimization for Robust Robot Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Offline-to-Online RL] This paper proposes UEPO, a framework comprising three core components—multi-seed dynamics-aware diffusion policies, dynamic divergence regularization, and diffusion-based data augmentation—to address insufficient multimodal behavioral coverage and distribution shift in offline-to-online reinforcement learning, surpassing Uni-O4 on the D4RL benchmark.
+  [NeurIPS 2025][Reinforcement Learning][Offline-to-Online RL] This paper proposes UEPO, a framework comprising three core components—multi-seed dynamics-aware diffusion policies, dynamic divergence regularization…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Offline-to-Online RL
-  - Diffusion Policy
-  - Policy Diversity
-  - Dynamics Modeling
-  - D4RL
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Offline-to-Online RL"
+  - "Diffusion Policy"
+  - "Policy Diversity"
+  - "Dynamics Modeling"
+  - "D4RL"
 date: 2026-05-08
 content_hash: 8cd2f68f61178620
 ---

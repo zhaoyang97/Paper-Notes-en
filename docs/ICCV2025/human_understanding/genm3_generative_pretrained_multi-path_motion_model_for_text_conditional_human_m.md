@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GenM3: Generative Pretrained Multi-path Motion Model for Text Conditional Human Motion Generation
 description: >-
-  [ICCV 2025][Human Understanding][human motion generation] This paper proposes GenM3, a framework that learns unified discrete motion representations via a Multi-Expert VQ-VAE (MEVQ-VAE) and employs a Multi-path Motion Transformer (MMT) to handle intra-modal variation and cross-modal alignment. By integrating 11 motion datasets (~220 hours), GenM3 achieves state-of-the-art FID of 0.035 on HumanML3D.
+  [ICCV 2025][Human Understanding][human motion generation] This paper proposes GenM3, a framework that learns unified discrete motion representations via a Multi-Expert VQ-VAE (MEVQ-VAE) and employs a Multi-path Motion Tr…
 tags:
-  - ICCV 2025
-  - Human Understanding
-  - human motion generation
-  - VQ-VAE
-  - multi-path Transformer
-  - large-scale dataset
-  - text-conditional generation
+  - "ICCV 2025"
+  - "Human Understanding"
+  - "human motion generation"
+  - "VQ-VAE"
+  - "multi-path Transformer"
+  - "large-scale dataset"
+  - "text-conditional generation"
 date: 2026-05-08
 content_hash: f6a31b67084b7d6f
 ---

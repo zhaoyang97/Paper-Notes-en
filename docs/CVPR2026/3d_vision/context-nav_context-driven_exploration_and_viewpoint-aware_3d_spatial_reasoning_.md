@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Context-Nav: Context-Driven Exploration and Viewpoint-Aware 3D Spatial Reasoning for Instance Navigation
 description: >-
-  [CVPR 2026][3D Vision][Instance Navigation] Context-Nav elevates the contextual information embedded in long-form textual descriptions from a posterior verification signal to a proactive exploration prior. By constructing a context-driven value map to guide frontier selection and performing viewpoint-aware 3D spatial relation verification at candidate target locations, Context-Nav achieves state-of-the-art performance on InstanceNav and CoIN-Bench without any task-specific training.
+  [CVPR 2026][3D Vision][Instance Navigation] Context-Nav elevates the contextual information embedded in long-form textual descriptions from a posterior verification signal to a proactive exploration prior. By constructin…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Instance Navigation
-  - Spatial Reasoning
-  - Value Map
-  - Viewpoint-Aware
-  - Zero-Shot
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Instance Navigation"
+  - "Spatial Reasoning"
+  - "Value Map"
+  - "Viewpoint-Aware"
+  - "Zero-Shot"
 date: 2026-05-08
 content_hash: 3ebec9ec81e4f729
 ---

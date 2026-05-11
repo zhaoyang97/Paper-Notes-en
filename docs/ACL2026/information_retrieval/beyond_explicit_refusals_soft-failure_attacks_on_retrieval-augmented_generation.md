@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Beyond Explicit Refusals: Soft-Failure Attacks on Retrieval-Augmented Generation
 description: >-
-  [ACL 2026][RAG attacks] This paper formally defines the "soft-failure" threat in RAG systems (generating fluent but uninformative responses), proposes DEJA, a black-box evolutionary attack framework that injects adversarial documents to exploit safety alignment mechanisms and induce ambiguous responses, achieving a Soft Attack Success Rate (SASR) exceeding 79% with high stealthiness.
+  [ACL 2026][Information Retrieval & RAG][RAG attacks] This paper formally defines the "soft-failure" threat in RAG systems (generating fluent but uninformative responses), proposes DEJA…
 tags:
-  - ACL 2026
-  - RAG attacks
-  - soft failure
-  - adversarial documents
-  - evolutionary optimization
-  - availability attacks
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "RAG attacks"
+  - "soft failure"
+  - "adversarial documents"
+  - "evolutionary optimization"
+  - "availability attacks"
 date: 2026-05-08
 content_hash: d8d7fab4d8512e17
 ---

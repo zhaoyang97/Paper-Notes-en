@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] ConvMix: A Mixed-Criteria Data Augmentation Framework for Conversational Dense Retrieval
 description: >-
-  [AAAI 2026][Conversational Retrieval] This paper proposes ConvMix, a mixed-criteria data augmentation framework that leverages LLMs to perform scalable relevance annotation augmentation from both query and document directions, combined with clustering-based diversity selection and Fisher information-based in-distribution supervision, to systematically improve conversational dense retrieval performance.
+  [AAAI 2026][Information Retrieval & RAG][Conversational Retrieval] This paper proposes ConvMix, a mixed-criteria data augmentation framework that leverages LLMs to perform scalable relevance annotation augmentation from…
 tags:
-  - AAAI 2026
-  - Conversational Retrieval
-  - Data Augmentation
-  - LLM Generation
-  - In-Distribution Supervision
-  - Fisher Information
+  - "AAAI 2026"
+  - "Information Retrieval & RAG"
+  - "Conversational Retrieval"
+  - "Data Augmentation"
+  - "LLM Generation"
+  - "In-Distribution Supervision"
+  - "Fisher Information"
 date: 2026-05-08
 content_hash: 50c486fe596a947e
 ---

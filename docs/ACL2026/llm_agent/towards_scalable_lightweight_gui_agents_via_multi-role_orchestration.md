@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Scalable Lightweight GUI Agents via Multi-role Orchestration
 description: >-
-  [ACL 2026][LLM Agent][GUI Agent] This paper proposes LAMO, a framework that trains a lightweight 3B MLLM into a flexibly orchestrated multi-role GUI Agent through role-oriented data synthesis and two-stage training (SFT with Perplexity-Weighted Cross-Entropy + multi-task RL). The agent operates in three modes—monolithic inference, multi-agent collaboration, and plug-and-play policy executor—and achieves a 77.6% success rate on AndroidWorld when paired with a GPT-5 planner, surpassing dedicated GUI agents with 72B parameters.
+  [ACL 2026][LLM Agent][GUI Agent] This paper proposes LAMO, a framework that trains a lightweight 3B MLLM into a flexibly orchestrated multi-role GUI Agent through role-oriented data synthesis and two-stage training (SFT…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - GUI Agent
-  - Lightweight Model
-  - Multi-role Orchestration
-  - Policy Executor
-  - Reinforcement Learning
+  - "ACL 2026"
+  - "LLM Agent"
+  - "GUI Agent"
+  - "Lightweight Model"
+  - "Multi-role Orchestration"
+  - "Policy Executor"
+  - "Reinforcement Learning"
 date: 2026-05-08
 content_hash: 801956d14b57ffe3
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SciTS: Scientific Time Series Understanding and Generation with LLMs
 description: >-
-  [ICLR 2026][Time Series][scientific time series] This paper proposes SciTS—a scientific time series benchmark spanning 12 scientific domains, 43 tasks, and 54K+ samples—and introduces the TimeOmni framework, which unifies understanding and generation tasks via multi-patch expert routing and an LLM backbone, achieving the best overall performance across the full benchmark.
+  [ICLR 2026][Time Series][scientific time series] This paper proposes SciTS—a scientific time series benchmark spanning 12 scientific domains, 43 tasks, and 54K+ samples—and introduces the TimeOmni framework…
 tags:
-  - ICLR 2026
-  - Time Series
-  - scientific time series
-  - LLM
-  - benchmark
-  - unified multi-task model
-  - patch expert
+  - "ICLR 2026"
+  - "Time Series"
+  - "scientific time series"
+  - "LLM"
+  - "benchmark"
+  - "unified multi-task model"
+  - "patch expert"
 date: 2026-05-08
 content_hash: 59bd24bd550d7a42
 ---

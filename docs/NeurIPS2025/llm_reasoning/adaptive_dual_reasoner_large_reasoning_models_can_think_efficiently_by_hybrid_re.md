@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Adaptive Dual Reasoner: Large Reasoning Models Can Think Efficiently by Hybrid Reasoning
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Reasoning Efficiency] This paper proposes the Adaptive Dual Reasoner (ADR), which enables reasoning models to dynamically switch between fast thinking (compressing simple reasoning steps) and slow thinking (preserving depth for complex steps). Through SFT cold-start combined with EHPO (Entropy-guided Hybrid Policy Optimization), ADR achieves up to 6.1% accuracy improvement on mathematical reasoning benchmarks while reducing reasoning tokens by 49.5%–59.3%.
+  [NeurIPS 2025][LLM Reasoning][Reasoning Efficiency] This paper proposes the Adaptive Dual Reasoner (ADR), which enables reasoning models to dynamically switch between fast thinking (compressing simple reasoning steps) an…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - Reasoning Efficiency
-  - Hybrid Reasoning
-  - Fast-and-Slow Thinking
-  - Entropy Guidance
-  - Reinforcement Learning
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "Reasoning Efficiency"
+  - "Hybrid Reasoning"
+  - "Fast-and-Slow Thinking"
+  - "Entropy Guidance"
+  - "Reinforcement Learning"
 date: 2026-05-08
 content_hash: 837a51b2d711abab
 ---

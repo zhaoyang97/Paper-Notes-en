@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] On the Role of Hidden States of Modern Hopfield Network in Transformer
 description: >-
-  [NeurIPS 2025][LLM/NLP][Modern Hopfield Network] This paper moves beyond the adiabatic approximation underlying the established correspondence between Modern Hopfield Networks (MHN) and Transformers. By retaining the hidden-state dynamics of MHN, it derives a novel attention mechanism—Modern Hopfield Attention (MHA)—that introduces a cross-layer propagation mechanism for attention scores within self-attention layers. MHA improves the performance of ViT and GPT-2 systematically without adding any trainable parameters, and both theoretically and empirically demonstrates that it effectively alleviates the rank collapse problem in deep Transformers.
+  [NeurIPS 2025][LLM/NLP][Modern Hopfield Network] This paper moves beyond the adiabatic approximation underlying the established correspondence between Modern Hopfield Networks (MHN) and Transformers. By retaining the hid…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - Modern Hopfield Network
-  - self-attention
-  - rank collapse
-  - token uniformity
-  - hidden state
-  - Vision Transformer
-  - GPT-2
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "Modern Hopfield Network"
+  - "self-attention"
+  - "rank collapse"
+  - "token uniformity"
+  - "hidden state"
+  - "Vision Transformer"
+  - "GPT-2"
 date: 2026-05-08
 content_hash: 3c6e5e2e0c1944d3
 ---

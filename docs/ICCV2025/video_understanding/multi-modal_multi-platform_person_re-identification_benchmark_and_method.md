@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multi-modal Multi-platform Person Re-Identification: Benchmark and Method
 description: >-
-  [ICCV 2025][Video Understanding][Person Re-Identification] This paper presents MP-ReID, the first multi-modal multi-platform person re-identification benchmark encompassing three modalities (RGB, infrared, thermal) and two platforms (ground and UAV), along with a unified prompt learning framework, Uni-Prompt ReID, which leverages modality-aware, platform-aware, and visual-enhanced prompts to substantially improve ReID performance under complex real-world conditions.
+  [ICCV 2025][Video Understanding][Person Re-Identification] This paper presents MP-ReID, the first multi-modal multi-platform person re-identification benchmark encompassing three modalities (RGB, infrared…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - Person Re-Identification
-  - Multi-modal
-  - Multi-platform
-  - Prompt Learning
-  - CLIP
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "Person Re-Identification"
+  - "Multi-modal"
+  - "Multi-platform"
+  - "Prompt Learning"
+  - "CLIP"
 date: 2026-05-08
 content_hash: 08ae92bc2801f593
 ---

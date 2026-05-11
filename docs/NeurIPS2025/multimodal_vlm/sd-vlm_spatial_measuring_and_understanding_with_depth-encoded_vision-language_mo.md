@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SD-VLM: Spatial Measuring and Understanding with Depth-Encoded Vision-Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Spatial reasoning] This paper proposes MSMU, a large-scale quantitative spatial reasoning dataset (700K QA pairs, 2.5M numerical annotations), and Depth Positional Encoding (DPE), enabling VLMs to achieve strong quantitative spatial measurement and understanding without relying on 3D point clouds. SD-VLM outperforms GPT-4o by 26.91% on MSMU-Bench.
+  [NeurIPS 2025][Multimodal VLM][Spatial reasoning] This paper proposes MSMU, a large-scale quantitative spatial reasoning dataset (700K QA pairs, 2.5M numerical annotations), and Depth Positional Encoding (DPE)…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Spatial reasoning
-  - depth encoding
-  - VLM
-  - quantitative spatial understanding
-  - 3D perception
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Spatial reasoning"
+  - "depth encoding"
+  - "VLM"
+  - "quantitative spatial understanding"
+  - "3D perception"
 date: 2026-05-08
 content_hash: 6fb33176b6dec331
 ---

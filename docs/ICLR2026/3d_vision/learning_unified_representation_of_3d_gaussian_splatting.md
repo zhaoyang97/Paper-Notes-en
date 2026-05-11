@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Unified Representation of 3D Gaussian Splatting
 description: >-
-  [ICLR 2026][3D Vision][3D Gaussian Splatting] The native 3DGS parameters $\boldsymbol{\theta}=\{\mu,\mathbf{q},\mathbf{s},\mathbf{c},o\}$ suffer from non-uniqueness and numerical heterogeneity, making them unsuitable as a learning space for neural networks. This paper proposes the **Submanifold Field (SF)** representation: each Gaussian primitive is mapped to a continuous color field defined on its iso-probability ellipsoidal surface. The paper proves this mapping is injective, fundamentally eliminating parameter ambiguity. Combined with a VAE trained using an optimal-transport-based Manifold Distance (M-Dist), the approach comprehensively outperforms parameter-based baselines in reconstruction fidelity, cross-domain generalization, and latent space stability.
+  [ICLR 2026][3D Vision][3D Gaussian Splatting] The native 3DGS parameters $\boldsymbol{\theta}=\{\mu,\mathbf{q},\mathbf{s},\mathbf{c},o\}$ suffer from non-uniqueness and numerical heterogeneity…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - Submanifold Field Representation
-  - Representation Uniqueness
-  - VAE
-  - Optimal Transport
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Submanifold Field Representation"
+  - "Representation Uniqueness"
+  - "VAE"
+  - "Optimal Transport"
 date: 2026-05-08
 content_hash: 33a5911ccf62462c
 ---

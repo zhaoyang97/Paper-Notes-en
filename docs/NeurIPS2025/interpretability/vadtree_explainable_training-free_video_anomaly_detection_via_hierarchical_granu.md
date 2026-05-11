@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] VADTree: Explainable Training-Free Video Anomaly Detection via Hierarchical Granularity
 description: >-
-  [NeurIPS 2025][Video Anomaly Detection] This paper proposes VADTree, a training-free video anomaly detection framework that leverages a pretrained Generic Event Boundary Detection (GEBD) model to construct a Hierarchical Granularity-aware Tree (HGTree), enabling adaptive sampling and multi-granularity reasoning for anomalous events of varying temporal spans. VADTree achieves state-of-the-art performance among training-free methods on three benchmarks—UCF-Crime, XD-Violence, and MSAD—and even surpasses certain weakly supervised approaches.
+  [NeurIPS 2025][Interpretability][Video Anomaly Detection] This paper proposes VADTree, a training-free video anomaly detection framework that leverages a pretrained Generic Event Boundary Detection (GEBD) model to constr…
 tags:
-  - NeurIPS 2025
-  - Video Anomaly Detection
-  - Training-Free
-  - Hierarchical Granularity Tree
-  - Generic Event Boundary Detection
-  - Multi-Granularity Reasoning
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "Video Anomaly Detection"
+  - "Training-Free"
+  - "Hierarchical Granularity Tree"
+  - "Generic Event Boundary Detection"
+  - "Multi-Granularity Reasoning"
 date: 2026-05-08
 content_hash: c1e2c2e51ee6c3a4
 ---

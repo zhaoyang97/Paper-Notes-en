@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] On a Geometry of Interbrain Networks
 description: >-
-  [NeurIPS 2025 (Symmetry and Geometry in Neural Representations Workshop)][Discrete curvature] This opinion piece proposes introducing discrete graph curvature (Forman-Ricci and Ollivier-Ricci curvature) into interbrain network analysis within hyperscanning research. It leverages the entropy of curvature distributions to detect network phase transitions and uses curvature values to infer interbrain information routing strategies, moving beyond the descriptive limitations of conventional correlation-based metrics.
+  [NeurIPS 2025 (Symmetry and Geometry in Neural Representations Workshop)][Discrete curvature] This opinion piece proposes introducing discrete graph curvature (Forman-Ricci and Ollivier-Ricci curvature) into interbrain n…
 tags:
-  - NeurIPS 2025 (Symmetry and Geometry in Neural Representations Workshop)
-  - Discrete curvature
-  - Forman-Ricci curvature
-  - Ollivier-Ricci curvature
-  - hyperscanning
-  - interbrain synchrony
+  - "NeurIPS 2025 (Symmetry and Geometry in Neural Representations Workshop)"
+  - "Discrete curvature"
+  - "Forman-Ricci curvature"
+  - "Ollivier-Ricci curvature"
+  - "hyperscanning"
+  - "interbrain synchrony"
 date: 2026-05-08
 content_hash: d6e721d4503a757c
 ---

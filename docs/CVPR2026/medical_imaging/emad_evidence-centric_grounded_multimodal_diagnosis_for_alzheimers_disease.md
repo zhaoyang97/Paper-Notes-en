@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EMAD: Evidence-Centric Grounded Multimodal Diagnosis for Alzheimer's Disease
 description: >-
-  [CVPR 2026][Medical Imaging][Alzheimer's disease diagnosis] This paper proposes EMAD, an end-to-end multimodal vision-language framework for AD diagnosis that generates structured reports. Through hierarchical Sentence–Evidence–Anatomy (SEA) Grounding, each diagnostic statement is explicitly linked to clinical evidence and 3D brain anatomy. Executable rule-driven GRPO reinforcement fine-tuning is applied to ensure clinical consistency.
+  [CVPR 2026][Medical Imaging][Alzheimer's disease diagnosis] This paper proposes EMAD, an end-to-end multimodal vision-language framework for AD diagnosis that generates structured reports. Through hierarchical Sentence–E…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Alzheimer's disease diagnosis
-  - multimodal vision-language models
-  - evidence alignment
-  - reinforcement fine-tuning
-  - 3D brain segmentation
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Alzheimer's disease diagnosis"
+  - "multimodal vision-language models"
+  - "evidence alignment"
+  - "reinforcement fine-tuning"
+  - "3D brain segmentation"
 date: 2026-05-08
 content_hash: db1d74df25de8f84
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VQ-Seg: Vector-Quantized Token Perturbation for Semi-Supervised Medical Image Segmentation
 description: >-
-  [NeurIPS 2025][Medical Imaging][Semi-supervised segmentation] VQ-Seg is proposed as the first method to introduce vector quantization into semi-supervised medical image segmentation. A Quantization Perturbation Module (QPM) replaces conventional dropout to achieve more controllable feature perturbation, complemented by a dual-branch architecture and foundation-model-guided alignment to compensate for quantization information loss.
+  [NeurIPS 2025][Medical Imaging][Semi-supervised segmentation] VQ-Seg is proposed as the first method to introduce vector quantization into semi-supervised medical image segmentation. A Quantization Perturbation Module (Q…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Semi-supervised segmentation
-  - vector quantization
-  - feature perturbation
-  - consistency learning
-  - medical image segmentation
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Semi-supervised segmentation"
+  - "vector quantization"
+  - "feature perturbation"
+  - "consistency learning"
+  - "medical image segmentation"
 date: 2026-05-08
 content_hash: f411ad4f9205e894
 ---

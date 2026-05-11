@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Asymmetric Duos: Sidekicks Improve Uncertainty
 description: >-
-  [NeurIPS 2025][LLM Evaluation][Uncertainty Quantification] Asymmetric Duos (AD) pairs a large model with a small "sidekick"—combining their predictions via temperature-weighted logit averaging—achieving near-5× deep ensemble uncertainty estimation quality at only 10–20% additional FLOPs. RN50 AD (5% FLOPs overhead) approaches an $m=5$ deep ensemble (400% FLOPs overhead) on AUROC/AURC/SAC@98.
+  [NeurIPS 2025][LLM Evaluation][Uncertainty Quantification] Asymmetric Duos (AD) pairs a large model with a small "sidekick"—combining their predictions via temperature-weighted logit averaging—achieving near-5× deep ense…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - Uncertainty Quantification
-  - Deep Ensembles
-  - Asymmetric Pairing
-  - Temperature Scaling
-  - FLOPs Efficiency
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "Uncertainty Quantification"
+  - "Deep Ensembles"
+  - "Asymmetric Pairing"
+  - "Temperature Scaling"
+  - "FLOPs Efficiency"
 date: 2026-05-08
 content_hash: fe149c3f902d6ec0
 ---

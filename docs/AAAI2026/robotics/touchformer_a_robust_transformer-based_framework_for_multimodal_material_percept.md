@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TouchFormer: A Robust Transformer-based Framework for Multimodal Material Perception
 description: >-
-  [AAAI 2026][Robotics][Multimodal fusion] This paper proposes TouchFormer, a robust multimodal fusion framework that achieves reliable material perception under vision-impaired conditions through three complementary modules: Modality-Adaptive Gating (MAG), intra- and inter-modal attention mechanisms, and Cross-Instance Embedding Regularization (CER). The approach is validated in a robotic sorting experiment under simulated fire scenarios.
+  [AAAI 2026][Robotics][Multimodal fusion] This paper proposes TouchFormer, a robust multimodal fusion framework that achieves reliable material perception under vision-impaired conditions through three complementary modul…
 tags:
-  - AAAI 2026
-  - Robotics
-  - Multimodal fusion
-  - material perception
-  - tactile sensing
-  - adaptive gating
-  - Transformer
+  - "AAAI 2026"
+  - "Robotics"
+  - "Multimodal fusion"
+  - "material perception"
+  - "tactile sensing"
+  - "adaptive gating"
+  - "Transformer"
 date: 2026-05-08
 content_hash: 7b4326abe5551c11
 ---

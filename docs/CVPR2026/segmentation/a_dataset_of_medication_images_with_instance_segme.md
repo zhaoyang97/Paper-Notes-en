@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MEDISEG: A Medication Image Instance Segmentation Dataset for Preventing Adverse Drug Events
 description: >-
-  [CVPR 2026][Segmentation][Medication recognition] This work introduces MEDISEG, a medication image instance segmentation dataset (8,262 images, 32 pill classes, with real-world occlusion/overlap scenarios). YOLOv8/v9 achieve 99.5% mAP@0.5 on the 3-class subset and 80.1% on the 32-class subset. FsDet few-shot experiments demonstrate that MEDISEG pretraining significantly outperforms CURE in occluded scenarios (1-shot: 0.406 vs. 0.131).
+  [CVPR 2026][Segmentation][Medication recognition] This work introduces MEDISEG, a medication image instance segmentation dataset (8,262 images, 32 pill classes…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Medication recognition
-  - instance segmentation
-  - few-shot detection
-  - dataset
-  - medication safety
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Medication recognition"
+  - "instance segmentation"
+  - "few-shot detection"
+  - "dataset"
+  - "medication safety"
 date: 2026-05-08
 content_hash: 953be241b6a12f5e
 ---

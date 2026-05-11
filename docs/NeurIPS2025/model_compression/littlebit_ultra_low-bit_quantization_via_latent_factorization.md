@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LittleBit: Ultra Low-Bit Quantization via Latent Factorization
 description: >-
-  [NeurIPS 2025][Model Compression][Ultra low-bit quantization] This paper proposes LittleBit, a framework that achieves extreme LLM compression down to 0.1 BPW (bits per weight) via low-rank latent-space matrix factorization, binarization, and a multi-scale compensation mechanism. It compresses Llama2-13B to under 0.9 GB and substantially outperforms STBLLM in the sub-1-bit regime.
+  [NeurIPS 2025][Model Compression][Ultra low-bit quantization] This paper proposes LittleBit, a framework that achieves extreme LLM compression down to 0.1 BPW (bits per weight) via low-rank latent-space matrix factorizat…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Ultra low-bit quantization
-  - low-rank factorization
-  - binarization
-  - sub-1-bit
-  - LLM compression
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Ultra low-bit quantization"
+  - "low-rank factorization"
+  - "binarization"
+  - "sub-1-bit"
+  - "LLM compression"
 date: 2026-05-08
 content_hash: 54dcdc87c0f9cdfe
 ---

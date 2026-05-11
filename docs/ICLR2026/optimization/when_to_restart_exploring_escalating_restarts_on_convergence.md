@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] When to Restart? Exploring Escalating Restarts on Convergence
 description: >-
-  [ICLR 2026][Optimization][learning rate scheduling] This paper proposes SGD-ER (SGD with Escalating Restarts), a convergence-aware learning rate scheduling strategy that triggers restarts with linearly escalating learning rates upon detecting training stagnation, enabling the optimizer to escape sharp local minima and explore flatter loss landscape regions. SGD-ER achieves 0.5–4.5% test accuracy improvements on CIFAR-10/100 and TinyImageNet.
+  [ICLR 2026][Optimization][learning rate scheduling] This paper proposes SGD-ER (SGD with Escalating Restarts), a convergence-aware learning rate scheduling strategy that triggers restarts with linearly escalating learnin…
 tags:
-  - ICLR 2026
-  - Optimization
-  - learning rate scheduling
-  - adaptive restarts
-  - convergence-aware training
-  - SGD optimization
-  - deep learning training
+  - "ICLR 2026"
+  - "Optimization"
+  - "learning rate scheduling"
+  - "adaptive restarts"
+  - "convergence-aware training"
+  - "SGD optimization"
+  - "deep learning training"
 date: 2026-05-08
 content_hash: ae09fc1dac20ad9e
 ---

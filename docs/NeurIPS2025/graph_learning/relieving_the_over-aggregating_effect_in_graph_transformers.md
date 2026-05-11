@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Relieving the Over-Aggregating Effect in Graph Transformers
 description: >-
-  [NeurIPS 2025][Graph Learning][Over-Aggregating] This paper identifies the *over-aggregating* phenomenon in Graph Transformers—wherein a large number of nodes are aggregated with near-uniform attention scores, diluting critical information—and proposes Wideformer, which alleviates this issue via divided aggregation and guided attention. As a plug-and-play module, Wideformer consistently improves backbone model performance across 13 datasets.
+  [NeurIPS 2025][Graph Learning][Over-Aggregating] This paper identifies the *over-aggregating* phenomenon in Graph Transformers—wherein a large number of nodes are aggregated with near-uniform attention scores…
 tags:
-  - NeurIPS 2025
-  - Graph Learning
-  - Over-Aggregating
-  - Graph Transformer
-  - Attention Entropy
-  - Wideformer
-  - Linear Attention
+  - "NeurIPS 2025"
+  - "Graph Learning"
+  - "Over-Aggregating"
+  - "Graph Transformer"
+  - "Attention Entropy"
+  - "Wideformer"
+  - "Linear Attention"
 date: 2026-05-08
 content_hash: 66cc6ca81d5ef53d
 ---

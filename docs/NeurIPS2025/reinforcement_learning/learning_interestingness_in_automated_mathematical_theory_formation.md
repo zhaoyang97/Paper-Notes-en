@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Learning Interestingness in Automated Mathematical Theory Formation
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][automated theory formation] This paper proposes Fermat—a reinforcement learning environment that models mathematical theory formation as an MDP—and EvoAbstract, an LLM-driven evolutionary algorithm with abstraction learning, for automatically synthesizing interestingness metrics for mathematical objects. The approach substantially outperforms hard-coded baselines in elementary number theory and finite fields.
+  [NeurIPS 2025][Reinforcement Learning][automated theory formation] This paper proposes Fermat—a reinforcement learning environment that models mathematical theory formation as an MDP—and EvoAbstract…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - automated theory formation
-  - interestingness learning
-  - evolutionary program synthesis
-  - LLM-driven search
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "automated theory formation"
+  - "interestingness learning"
+  - "evolutionary program synthesis"
+  - "LLM-driven search"
 date: 2026-05-08
 content_hash: 13cdff3607b49172
 ---

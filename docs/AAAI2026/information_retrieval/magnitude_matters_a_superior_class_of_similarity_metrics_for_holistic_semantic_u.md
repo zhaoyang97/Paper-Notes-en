@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Magnitude Matters: A Superior Class of Similarity Metrics for Holistic Semantic Understanding
 description: >-
-  [AAAI 2026][Similarity Metrics] This paper proposes two parameter-free, magnitude-aware vector similarity metrics—Overlap Similarity (OS) and Hyperbolic Tangent Similarity (HTS)—that achieve significantly lower MSE than Cosine Similarity and Dot Product on classification tasks (paraphrase detection, natural language inference) across 4 sentence embedding models and 8 NLP benchmarks, without any additional training overhead.
+  [AAAI 2026][Information Retrieval & RAG][Similarity Metrics] This paper proposes two parameter-free, magnitude-aware vector similarity metrics—Overlap Similarity (OS) and Hyperbolic Tangent Similarity (HTS)—that achieve…
 tags:
-  - AAAI 2026
-  - Similarity Metrics
-  - Sentence Embeddings
-  - Anisotropy
-  - Overlap Similarity
-  - Hyperbolic Tangent Similarity
+  - "AAAI 2026"
+  - "Information Retrieval & RAG"
+  - "Similarity Metrics"
+  - "Sentence Embeddings"
+  - "Anisotropy"
+  - "Overlap Similarity"
+  - "Hyperbolic Tangent Similarity"
 date: 2026-05-08
 content_hash: 76e664213954c1a2
 ---

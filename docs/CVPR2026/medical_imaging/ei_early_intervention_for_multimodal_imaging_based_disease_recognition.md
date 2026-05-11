@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] EI: Early Intervention for Multimodal Imaging based Disease Recognition
 description: >-
-  [CVPR 2026][Medical Imaging][Multimodal medical imaging] EI proposes injecting cross-modal semantic guidance (the [INT] token) **before** unimodal embedding (UIE), emulating the clinical workflow in which a clinician first examines one modality to form a preliminary judgment and then uses that judgment to guide interpretation of another modality. Simultaneously, EI introduces MoR (multi-rank LoRA with a relaxed bypass router) for parameter-efficient VFM adaptation to the medical domain. With fewer than 9M trainable parameters, EI surpasses all full fine-tuning and prompt-learning baselines on three datasets covering retinal, dermatological, and knee-joint imaging.
+  [CVPR 2026][Medical Imaging][Multimodal medical imaging] EI proposes injecting cross-modal semantic guidance (the [INT] token) **before** unimodal embedding (UIE)…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Multimodal medical imaging
-  - early intervention
-  - LoRA
-  - MoE
-  - VFM adaptation
-  - disease recognition
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Multimodal medical imaging"
+  - "early intervention"
+  - "LoRA"
+  - "MoE"
+  - "VFM adaptation"
+  - "disease recognition"
 date: 2026-05-08
 content_hash: b71ff3d737a6fcc5
 ---

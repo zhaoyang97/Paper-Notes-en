@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Parallelised Differentiable Straightest Geodesics for 3D Meshes
 description: >-
-  [CVPR 2026][3D Vision][geodesics] This paper proposes a parallel GPU implementation of straightest geodesics along with two differentiable schemes — an extrinsic proxy function method and a geodesic finite differences method — enabling efficient parallel and differentiable exponential map computation on triangular meshes. Three downstream applications are built upon this framework: a geodesic convolutional layer, a flow matching method on meshes, and a second-order optimizer.
+  [CVPR 2026][3D Vision][geodesics] This paper proposes a parallel GPU implementation of straightest geodesics along with two differentiable schemes — an extrinsic proxy function method and a geodesic finite differences me…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - geodesics
-  - differentiable
-  - exponential map
-  - mesh learning
-  - parallelization
-  - flow matching
-  - geodesic convolution
+  - "CVPR 2026"
+  - "3D Vision"
+  - "geodesics"
+  - "differentiable"
+  - "exponential map"
+  - "mesh learning"
+  - "parallelization"
+  - "flow matching"
+  - "geodesic convolution"
 date: 2026-05-08
 content_hash: ac0cfa99cf52b9ca
 ---

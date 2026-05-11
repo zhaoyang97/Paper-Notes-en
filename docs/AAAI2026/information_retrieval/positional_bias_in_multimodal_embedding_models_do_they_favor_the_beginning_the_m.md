@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Positional Bias in Multimodal Embedding Models: Do They Favor the Beginning, the Middle, or the End?
 description: >-
-  [AAAI 2026][Positional Bias] This paper presents the first systematic study of positional bias in multimodal representation models, finding that text encoders tend to favor the beginning of the input while image encoders exhibit preference for both the beginning and the end. Through extensive controlled experiments, the study reveals that this bias arises from the joint influence of positional encoding schemes, training objectives, context importance, and image-text pair training.
+  [AAAI 2026][Information Retrieval & RAG][Positional Bias] This paper presents the first systematic study of positional bias in multimodal representation models…
 tags:
-  - AAAI 2026
-  - Positional Bias
-  - CLIP
-  - Multimodal Representation Learning
-  - Image-Text Retrieval
-  - Attention Mechanism
+  - "AAAI 2026"
+  - "Information Retrieval & RAG"
+  - "Positional Bias"
+  - "CLIP"
+  - "Multimodal Representation Learning"
+  - "Image-Text Retrieval"
+  - "Attention Mechanism"
 date: 2026-05-08
 content_hash: d5067148d9609142
 ---

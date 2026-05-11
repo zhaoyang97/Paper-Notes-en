@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From Judgment to Interference: Early Stopping LLM Harmful Outputs via Streaming Content Monitoring
 description: >-
-  [NeurIPS 2025][LLM Alignment][streaming moderation] This paper proposes the Streaming Content Monitor (SCM)—the first harmful content monitor natively designed for partial detection. Built upon the FineHarm dataset (29K samples with token-level annotations) and hierarchical consistency-aware learning, SCM achieves a macro F1 of 0.95+ after observing on average only 18% of response tokens, enabling real-time early stopping of harmful LLM outputs.
+  [NeurIPS 2025][LLM Alignment][streaming moderation] This paper proposes the Streaming Content Monitor (SCM)—the first harmful content monitor natively designed for partial detection. Built upon the FineHarm dataset (29K…
 tags:
-  - NeurIPS 2025
-  - LLM Alignment
-  - streaming moderation
-  - harmful content detection
-  - early stopping
-  - token-level annotation
-  - partial detection
+  - "NeurIPS 2025"
+  - "LLM Alignment"
+  - "streaming moderation"
+  - "harmful content detection"
+  - "early stopping"
+  - "token-level annotation"
+  - "partial detection"
 date: 2026-05-08
 content_hash: 3dfcde6260c30ffe
 ---

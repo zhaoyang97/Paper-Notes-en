@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AerialMind: Towards Referring Multi-Object Tracking in UAV Scenarios
 description: >-
-  [AAAI 2026][Object Detection][RMOT] This paper introduces AerialMind, the first large-scale Referring Multi-Object Tracking (RMOT) benchmark dataset for UAV scenarios, and proposes HawkEyeTrack (HETrack), a method that achieves language-guided multi-object tracking in aerial UAV scenes via a co-evolutionary fusion encoder and a scale-adaptive contextual refinement module.
+  [AAAI 2026][Object Detection][RMOT] This paper introduces AerialMind, the first large-scale Referring Multi-Object Tracking (RMOT) benchmark dataset for UAV scenarios, and proposes HawkEyeTrack (HETrack)…
 tags:
-  - AAAI 2026
-  - Object Detection
-  - RMOT
-  - UAV
-  - vision-language fusion
-  - multi-object tracking
-  - benchmark dataset
+  - "AAAI 2026"
+  - "Object Detection"
+  - "RMOT"
+  - "UAV"
+  - "vision-language fusion"
+  - "multi-object tracking"
+  - "benchmark dataset"
 date: 2026-05-08
 content_hash: a4e9f403cc425f24
 ---

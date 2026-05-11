@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Thinker: Training LLMs in Hierarchical Thinking for Deep Search via Multi-Turn Interaction
 description: >-
-  [AAAI2026][Reinforcement Learning][deep search] This paper proposes the Thinker framework, which achieves structured deep search reasoning through hierarchical thinking (breadth decomposition + depth solving) and dual representation (natural language + logical functions). Combined with knowledge boundary determination to reduce unnecessary retrieval, the model is trained via SFT and significantly outperforms RL-based deep search methods across multiple QA benchmarks.
+  [AAAI2026][Reinforcement Learning][deep search] This paper proposes the Thinker framework, which achieves structured deep search reasoning through hierarchical thinking (breadth decomposition + depth solving) and dual re…
 tags:
-  - AAAI2026
-  - Reinforcement Learning
-  - deep search
-  - hierarchical thinking
-  - RAG
-  - multi-turn interaction
-  - knowledge boundary
+  - "AAAI2026"
+  - "Reinforcement Learning"
+  - "deep search"
+  - "hierarchical thinking"
+  - "RAG"
+  - "multi-turn interaction"
+  - "knowledge boundary"
 date: 2026-05-08
 content_hash: b7b6e4e61f13c86b
 ---

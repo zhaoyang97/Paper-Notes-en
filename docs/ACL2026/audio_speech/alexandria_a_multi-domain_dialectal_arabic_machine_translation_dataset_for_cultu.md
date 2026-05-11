@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Alexandria: A Multi-Domain Dialectal Arabic Machine Translation Dataset for Culturally Inclusive and Linguistically Diverse LLMs
 description: >-
-  [ACL 2026][Audio & Speech][Dialectal Arabic] Alexandria constructs a parallel English-Dialectal Arabic multi-round dialogue dataset covering 13 Arabic countries, 11 social impact domains, and 107K turns. Through a community-driven manual translation and revision process, it provides unprecedented fine-grained training and evaluation resources for dialectal Arabic machine translation, accompanied by a systematic benchmark assessment across 24 LLMs.
+  [ACL 2026][Audio & Speech][Dialectal Arabic] Alexandria constructs a parallel English-Dialectal Arabic multi-round dialogue dataset covering 13 Arabic countries, 11 social impact domains…
 tags:
-  - ACL 2026
+  - "ACL 2026"
   - "Audio & Speech"
-  - Dialectal Arabic
-  - Machine Translation
-  - Multi-domain Dataset
-  - Cultural Inclusion
-  - LLM Evaluation
+  - "Dialectal Arabic"
+  - "Machine Translation"
+  - "Multi-domain Dataset"
+  - "Cultural Inclusion"
+  - "LLM Evaluation"
 date: 2026-05-08
 content_hash: 581912fec071cedb
 ---

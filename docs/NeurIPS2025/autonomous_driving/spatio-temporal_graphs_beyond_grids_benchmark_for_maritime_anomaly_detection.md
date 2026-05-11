@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Spatio-Temporal Graphs Beyond Grids: Benchmark for Maritime Anomaly Detection
 description: >-
-  [NeurIPS 2025 (Workshop: AI for Science)][Autonomous Driving][maritime anomaly detection] This paper proposes the first graph anomaly detection benchmark for non-grid spatio-temporal systems in the maritime domain. It extends the OMTAD dataset to support node/edge/graph-level anomaly detection, and plans to employ LLM agents for trajectory synthesis and anomaly injection.
+  [NeurIPS 2025 (Workshop: AI for Science)][Autonomous Driving][maritime anomaly detection] This paper proposes the first graph anomaly detection benchmark for non-grid spatio-temporal systems in the maritime domain. It ex…
 tags:
   - "NeurIPS 2025 (Workshop: AI for Science)"
-  - Autonomous Driving
-  - maritime anomaly detection
-  - spatio-temporal graphs
-  - non-grid environments
-  - LLM agents
-  - AIS data
+  - "Autonomous Driving"
+  - "maritime anomaly detection"
+  - "spatio-temporal graphs"
+  - "non-grid environments"
+  - "LLM agents"
+  - "AIS data"
 date: 2026-05-08
 content_hash: e6d4162cd4b00af4
 ---

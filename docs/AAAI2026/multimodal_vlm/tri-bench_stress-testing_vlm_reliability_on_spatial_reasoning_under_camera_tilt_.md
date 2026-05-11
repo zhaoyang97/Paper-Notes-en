@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Tri-Bench: Stress-Testing VLM Reliability on Spatial Reasoning under Camera Tilt and Object Interference
 description: >-
-  [AAAI 2026][Multimodal VLM][Spatial reasoning benchmark] Tri-Bench is a compact benchmark comprising 400 real-world photographs of triangles. By systematically controlling two factors — camera pose (planar vs. tilted) and object interference — it evaluates the spatial geometric reasoning capabilities of four leading VLMs. The results reveal that models default to 2D image-plane cues rather than genuine 3D geometry, even when explicit reference-frame guardrails are provided in the prompt, with accuracy on minority-class shapes dropping to near 0%.
+  [AAAI 2026][Multimodal VLM][Spatial reasoning benchmark] Tri-Bench is a compact benchmark comprising 400 real-world photographs of triangles. By systematically controlling two factors — camera pose (planar vs. tilted) an…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Spatial reasoning benchmark
-  - geometric reasoning
-  - camera pose robustness
-  - majority-class bias
-  - VLM reliability
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Spatial reasoning benchmark"
+  - "geometric reasoning"
+  - "camera pose robustness"
+  - "majority-class bias"
+  - "VLM reliability"
 date: 2026-05-08
 content_hash: 95cb1a5581c0e386
 ---

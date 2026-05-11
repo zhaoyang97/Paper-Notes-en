@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Point-SRA: Self-Representation Alignment for 3D Representation Learning
 description: >-
-  [AAAI 2026][3D Vision][3D representation learning] Point-SRA is proposed to enhance 3D point cloud representation learning via Dual Self-Representation Alignment (MAE-SRA + MFT-SRA) and MeanFlow probabilistic modeling, exploiting the complementarity of representations under different mask ratios. The method surpasses Point-MAE by 5.59% on ScanObjectNN.
+  [AAAI 2026][3D Vision][3D representation learning] Point-SRA is proposed to enhance 3D point cloud representation learning via Dual Self-Representation Alignment (MAE-SRA + MFT-SRA) and MeanFlow probabilistic modeling…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - 3D representation learning
-  - masked autoencoder
-  - self-distillation
-  - MeanFlow
-  - point cloud
+  - "AAAI 2026"
+  - "3D Vision"
+  - "3D representation learning"
+  - "masked autoencoder"
+  - "self-distillation"
+  - "MeanFlow"
+  - "point cloud"
 date: 2026-05-08
 content_hash: 3ac78598058fedcc
 ---

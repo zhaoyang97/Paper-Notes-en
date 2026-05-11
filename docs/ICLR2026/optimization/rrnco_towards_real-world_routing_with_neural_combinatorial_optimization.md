@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RRNCO: Towards Real-World Routing with Neural Combinatorial Optimization
 description: >-
-  [ICLR 2026][Optimization][Neural Combinatorial Optimization] This paper proposes the RRNCO architecture, which introduces two key innovations — Adaptive Node Embedding (ANE) and Neural Adaptive Bias (NAB) — to jointly model asymmetric distances, travel durations, and bearing angles within a deep routing framework for the first time. It also constructs a VRP benchmark dataset based on 100 real-world cities, significantly narrowing the sim-to-real gap for NCO methods.
+  [ICLR 2026][Optimization][Neural Combinatorial Optimization] This paper proposes the RRNCO architecture, which introduces two key innovations — Adaptive Node Embedding (ANE) and Neural Adaptive Bias (NAB) — to jointly mo…
 tags:
-  - ICLR 2026
-  - Optimization
-  - Neural Combinatorial Optimization
-  - Vehicle Routing Problem
-  - Asymmetric Routing
-  - Sim-to-Real Gap
-  - Attention-Free Module
+  - "ICLR 2026"
+  - "Optimization"
+  - "Neural Combinatorial Optimization"
+  - "Vehicle Routing Problem"
+  - "Asymmetric Routing"
+  - "Sim-to-Real Gap"
+  - "Attention-Free Module"
 date: 2026-05-08
 content_hash: 7c81a0c2212c34c1
 ---

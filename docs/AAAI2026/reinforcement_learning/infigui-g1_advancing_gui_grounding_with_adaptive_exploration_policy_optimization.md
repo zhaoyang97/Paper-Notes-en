@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] InfiGUI-G1: Advancing GUI Grounding with Adaptive Exploration Policy Optimization
 description: >-
-  [AAAI 2026][Reinforcement Learning][GUI Grounding] To address the exploration bottleneck in semantic alignment for GUI grounding, this paper proposes the Adaptive Exploration Policy Optimization (AEPO) framework. AEPO enforces broad exploration via a multi-answer generation strategy, dynamically guides learning through an adaptive exploration reward function, and ensures exploration quality via a collinearity penalty mechanism, significantly improving multimodal large language model performance on complex GUI grounding tasks.
+  [AAAI 2026][Reinforcement Learning][GUI Grounding] To address the exploration bottleneck in semantic alignment for GUI grounding, this paper proposes the Adaptive Exploration Policy Optimization (AEPO) framework. AEPO en…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - GUI Grounding
-  - Multimodal Large Language Models
-  - Adaptive Exploration
-  - Policy Optimization
-  - Multi-Answer Generation
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "GUI Grounding"
+  - "Multimodal Large Language Models"
+  - "Adaptive Exploration"
+  - "Policy Optimization"
+  - "Multi-Answer Generation"
 date: 2026-05-08
 content_hash: 2b9540356becf94b
 ---

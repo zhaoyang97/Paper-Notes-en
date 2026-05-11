@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] SimROD: A Simple Baseline for Raw Object Detection with Global and Local Enhancements
 description: >-
-  [AAAI 2026][Object Detection][RAW image] This paper proposes SimROD, an extremely lightweight (only 0.003M parameters) RAW image object detection method that surpasses complex state-of-the-art approaches on multiple RAW detection benchmarks through global Gamma enhancement (4 learnable parameters) and green channel-guided local enhancement.
+  [AAAI 2026][Object Detection][RAW image] This paper proposes SimROD, an extremely lightweight (only 0.003M parameters) RAW image object detection method that surpasses complex state-of-the-art approaches on multiple RAW…
 tags:
-  - AAAI 2026
-  - Object Detection
-  - RAW image
-  - Gamma enhancement
-  - green channel
-  - lightweight
+  - "AAAI 2026"
+  - "Object Detection"
+  - "RAW image"
+  - "Gamma enhancement"
+  - "green channel"
+  - "lightweight"
 date: 2026-05-08
 content_hash: 4ed078cf7d5932d9
 ---

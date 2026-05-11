@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DynFaceRestore: Balancing Fidelity and Quality in Diffusion-Guided Blind Face Restoration
 description: >-
-  [ICCV 2025][Human Understanding][Blind face restoration] This paper proposes DynFaceRestore, which reformulates blind degradation as a Gaussian deblurring problem via Dynamic Blur Level Mapping (DBLM), and achieves an optimal fidelity-quality trade-off during diffusion model sampling through a Dynamic Starting Step lookup table (DSST) and a Dynamic Guidance Scaling Adjuster (DGSA).
+  [ICCV 2025][Human Understanding][Blind face restoration] This paper proposes DynFaceRestore, which reformulates blind degradation as a Gaussian deblurring problem via Dynamic Blur Level Mapping (DBLM)…
 tags:
-  - ICCV 2025
-  - Human Understanding
-  - Blind face restoration
-  - diffusion model guidance
-  - dynamic blur mapping
-  - fidelity-quality balance
-  - region-adaptive guidance
+  - "ICCV 2025"
+  - "Human Understanding"
+  - "Blind face restoration"
+  - "diffusion model guidance"
+  - "dynamic blur mapping"
+  - "fidelity-quality balance"
+  - "region-adaptive guidance"
 date: 2026-05-08
 content_hash: b963b0f276c207ca
 ---

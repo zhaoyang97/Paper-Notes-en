@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DanmakuTPPBench: A Multi-modal Benchmark for Temporal Point Process Modeling and Understanding
 description: >-
-  [NeurIPS 2025][Multimodal VLM][temporal point process] This paper introduces DanmakuTPPBench, the first multimodal temporal point process benchmark. DanmakuTPP-Events provides 7,250 sequences comprising 10.8 million Danmaku events with natural three-modal alignment (time–text–video). DanmakuTPP-QA automatically generates 10 categories of reasoning question–answer pairs via a multi-agent pipeline. The benchmark systematically reveals significant deficiencies of both classical TPP models and MLLMs in understanding multimodal event dynamics.
+  [NeurIPS 2025][Multimodal VLM][temporal point process] This paper introduces DanmakuTPPBench, the first multimodal temporal point process benchmark. DanmakuTPP-Events provides 7…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - temporal point process
-  - multimodal benchmark
-  - Danmaku
-  - LLM evaluation
-  - multi-agent pipeline
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "temporal point process"
+  - "multimodal benchmark"
+  - "Danmaku"
+  - "LLM evaluation"
+  - "multi-agent pipeline"
 date: 2026-05-08
 content_hash: da8703f2de7c1f23
 ---

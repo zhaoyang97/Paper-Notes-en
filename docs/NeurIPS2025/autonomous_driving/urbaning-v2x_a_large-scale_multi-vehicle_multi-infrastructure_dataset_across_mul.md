@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UrbanIng-V2X: A Large-Scale Multi-Vehicle Multi-Infrastructure Dataset Across Multiple Intersections for Cooperative Perception
 description: >-
-  [NeurIPS 2025][Autonomous Driving][Vehicle-to-Everything] UrbanIng-V2X is the first real-world cooperative perception dataset spanning multiple vehicles, multiple infrastructure sensors, and multiple urban intersections. It provides 712K annotated instances across 13 categories in 34 scenes, and through a cross-intersection evaluation strategy (SIS) quantitatively reveals a substantial generalization gap of 14 mAP exhibited by existing cooperative perception methods on unseen intersections.
+  [NeurIPS 2025][Autonomous Driving][Vehicle-to-Everything] UrbanIng-V2X is the first real-world cooperative perception dataset spanning multiple vehicles, multiple infrastructure sensors…
 tags:
-  - NeurIPS 2025
-  - Autonomous Driving
-  - Vehicle-to-Everything
-  - V2X Dataset
-  - Cooperative Perception
-  - Multiple Intersections
-  - 3D Object Detection
+  - "NeurIPS 2025"
+  - "Autonomous Driving"
+  - "Vehicle-to-Everything"
+  - "V2X Dataset"
+  - "Cooperative Perception"
+  - "Multiple Intersections"
+  - "3D Object Detection"
 date: 2026-05-08
 content_hash: c9c8cd9d62a80886
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Time-Evolving Dynamical System for Learning Latent Representations of Mouse Visual Cortex
 description: >-
-  [NeurIPS 2025][latent variable models] This paper proposes TE-ViDS, a sequential latent variable model that decomposes visual neural activity into an external representation linked to visual stimuli and an internal representation reflecting internal states. By incorporating a time-evolving structure and contrastive learning, TE-ViDS achieves state-of-the-art decoding performance on natural scenes and videos.
+  [NeurIPS 2025][Interpretability][latent variable models] This paper proposes TE-ViDS, a sequential latent variable model that decomposes visual neural activity into an external representation linked to visual stimuli and…
 tags:
-  - NeurIPS 2025
-  - latent variable models
-  - visual neural activity
-  - time-evolving dynamical systems
-  - contrastive learning
-  - mouse visual cortex
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "latent variable models"
+  - "visual neural activity"
+  - "time-evolving dynamical systems"
+  - "contrastive learning"
+  - "mouse visual cortex"
 date: 2026-05-08
 content_hash: 6a4264d89e43e3d0
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Annealed Relaxation of Speculative Decoding for Faster Autoregressive Image Generation
 description: >-
-  [AAAI 2026][Image Generation][speculative decoding] This paper proposes Cool-SD, a theoretically grounded annealed relaxation framework for speculative decoding. By deriving a tight upper bound on the TV distance, it obtains the optimal resampling distribution and proves that a decreasing acceptance probability schedule yields smaller distributional shift than a uniform schedule. Cool-SD achieves a superior speed–quality trade-off over LANTERN++ on LlamaGen and Lumina-mGPT.
+  [AAAI 2026][Image Generation][speculative decoding] This paper proposes Cool-SD, a theoretically grounded annealed relaxation framework for speculative decoding. By deriving a tight upper bound on the TV distance…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - speculative decoding
-  - autoregressive image generation
-  - annealed relaxation
-  - total variation distance
-  - inference acceleration
+  - "AAAI 2026"
+  - "Image Generation"
+  - "speculative decoding"
+  - "autoregressive image generation"
+  - "annealed relaxation"
+  - "total variation distance"
+  - "inference acceleration"
 date: 2026-05-08
 content_hash: 0e9944bca88c854f
 ---

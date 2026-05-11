@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Surf2CT: Cascaded 3D Flow Matching Models for Torso 3D CT Synthesis from Skin Surface
 description: >-
-  [NeurIPS 2025][Medical Imaging][Flow Matching] This paper proposes Surf2CT, a cascaded 3D Flow Matching framework that, for the first time, synthesizes complete high-resolution 3D CT volumes solely from external body surface scans and demographic data (age, sex, height, weight), without requiring any internal imaging input.
+  [NeurIPS 2025][Medical Imaging][Flow Matching] This paper proposes Surf2CT, a cascaded 3D Flow Matching framework that, for the first time…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Flow Matching
-  - CT Synthesis
-  - Body Surface Scan
-  - 3D Generation
-  - Non-Invasive Imaging
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Flow Matching"
+  - "CT Synthesis"
+  - "Body Surface Scan"
+  - "3D Generation"
+  - "Non-Invasive Imaging"
 date: 2026-05-08
 content_hash: cc5fd0e03edd15ad
 ---

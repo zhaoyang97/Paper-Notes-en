@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Bridging Symmetry and Robustness: On the Role of Equivariance in Enhancing Adversarial Robustness
 description: >-
-  [NeurIPS 2025][AI Safety][adversarial robustness] By embedding rotation-equivariant (P4 group) and scale-equivariant convolutional layers into CNNs, this work proposes two symmetry-aware architectures — Parallel and Cascaded — that significantly improve adversarial robustness without adversarial training. Grounded in the CLEVER framework, it theoretically demonstrates that equivariant architectures compress the hypothesis space, regularize gradients, and tighten certified robustness bounds.
+  [NeurIPS 2025][AI Safety][adversarial robustness] By embedding rotation-equivariant (P4 group) and scale-equivariant convolutional layers into CNNs…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - adversarial robustness
-  - equivariance
-  - group-equivariant CNN
-  - CLEVER bound
-  - rotation equivariance
-  - scale equivariance
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "adversarial robustness"
+  - "equivariance"
+  - "group-equivariant CNN"
+  - "CLEVER bound"
+  - "rotation equivariance"
+  - "scale equivariance"
 date: 2026-05-08
 content_hash: 087ad1e7228e440a
 ---

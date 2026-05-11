@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DeDelayed: Deleting Remote Inference Delay via On-Device Correction
 description: >-
-  [CVPR 2026][Segmentation][Collaborative inference] DeDelayed is an edge-cloud collaborative inference framework that combines a lightweight on-device image model with a latency-aware cloud-side temporal prediction video model. By training the network with temporally predictive objectives to compensate for communication delay, DeDelayed achieves gains of 6.4 mIoU over local-only inference and 9.8 mIoU over remote-only inference under 100 ms latency.
+  [CVPR 2026][Segmentation][Collaborative inference] DeDelayed is an edge-cloud collaborative inference framework that combines a lightweight on-device image model with a latency-aware cloud-side temporal prediction video…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Collaborative inference
-  - real-time video segmentation
-  - latency compensation
-  - temporal prediction
-  - edge-cloud collaboration
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Collaborative inference"
+  - "real-time video segmentation"
+  - "latency compensation"
+  - "temporal prediction"
+  - "edge-cloud collaboration"
 date: 2026-05-08
 content_hash: 0d64ea7878037cb0
 ---

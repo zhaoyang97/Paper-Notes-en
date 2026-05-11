@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FlowComposer: Composable Flows for Compositional Zero-Shot Learning
 description: >-
-  [CVPR 2026][Multimodal VLM][Compositional Zero-Shot Learning] FlowComposer is the first work to introduce Flow Matching into Compositional Zero-Shot Learning (CZSL). It learns two primitive flows—an attribute flow and an object flow—to transport visual features into their corresponding text embedding spaces, and employs a learnable Composer to explicitly combine velocity fields into a compositional flow. A leakage-guided augmentation strategy further converts imperfect feature disentanglement into auxiliary supervision signals. As a plug-and-play module, FlowComposer consistently improves CZSL performance across three benchmarks.
+  [CVPR 2026][Multimodal VLM][Compositional Zero-Shot Learning] FlowComposer is the first work to introduce Flow Matching into Compositional Zero-Shot Learning (CZSL). It learns two primitive flows—an attribute flow and an…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Compositional Zero-Shot Learning
-  - Flow Matching
-  - CLIP
-  - Velocity Field Composition
-  - Leakage-Guided Augmentation
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Compositional Zero-Shot Learning"
+  - "Flow Matching"
+  - "CLIP"
+  - "Velocity Field Composition"
+  - "Leakage-Guided Augmentation"
 date: 2026-05-08
 content_hash: 0b4e701533077668
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Sonnet: Spectral Operator Neural Network for Multivariable Time Series Forecasting
 description: >-
-  [AAAI 2026 (Oral)][Time Series][Multivariate time series] This paper proposes Sonnet, which maps inputs to the time-frequency domain via learnable wavelet transforms, introduces multivariate coherence-based attention (MVCA) to model inter-variable dependencies, and employs a Koopman operator for stable temporal evolution forecasting. Sonnet achieves state-of-the-art performance on 34 out of 47 forecasting tasks, reducing average MAE by 2.2%.
+  [AAAI 2026 (Oral)][Time Series][Multivariate time series] This paper proposes Sonnet, which maps inputs to the time-frequency domain via learnable wavelet transforms…
 tags:
-  - AAAI 2026 (Oral)
-  - Time Series
-  - Multivariate time series
-  - spectral analysis
-  - wavelet transform
-  - Koopman operator
-  - spectral coherence attention
-  - exogenous variables
+  - "AAAI 2026 (Oral)"
+  - "Time Series"
+  - "Multivariate time series"
+  - "spectral analysis"
+  - "wavelet transform"
+  - "Koopman operator"
+  - "spectral coherence attention"
+  - "exogenous variables"
 date: 2026-05-08
 content_hash: 92743da824260a92
 ---

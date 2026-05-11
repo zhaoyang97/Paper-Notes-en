@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Understanding or Memorizing? A Case Study of German Definite Articles in Language Models
 description: >-
-  [ACL 2026][grammatical encoding] This paper employs the Gradiend gradient-based interpretability method to investigate whether language models predict German definite articles (der/die/das/den/dem/des) by leveraging abstract grammatical rules or surface-level memorization, finding that models rely at least partially on memorized associations rather than strict rule-based encoding.
+  [ACL 2026][Interpretability][grammatical encoding] This paper employs the Gradiend gradient-based interpretability method to investigate whether language models predict German definite articles (der/die/das/den/dem/des)…
 tags:
-  - ACL 2026
-  - grammatical encoding
-  - memorization vs. generalization
-  - German articles
-  - gradient-based interpretability
-  - Gradiend
+  - "ACL 2026"
+  - "Interpretability"
+  - "grammatical encoding"
+  - "memorization vs. generalization"
+  - "German articles"
+  - "gradient-based interpretability"
+  - "Gradiend"
 date: 2026-05-08
 content_hash: ab593475a2b61816
 ---

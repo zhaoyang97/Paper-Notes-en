@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EditScore: Unlocking Online RL for Image Editing via High-Fidelity Reward Modeling
 description: >-
-  [ICLR 2026][Image Generation][reward model] This paper proposes the first systematic "benchmark evaluation → reward modeling → reinforcement learning training" pipeline for image editing: constructing the EditReward-Bench benchmark, training the EditScore reward model series (7B–72B, surpassing GPT-5), and successfully applying it to Online RL training to significantly improve editing model performance.
+  [ICLR 2026][Image Generation][reward model] This paper proposes the first systematic "benchmark evaluation → reward modeling → reinforcement learning training" pipeline for image editing: constructing the EditReward-Benc…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - reward model
-  - Reinforcement Learning
-  - image editing
-  - Online RL
-  - Flow-GRPO
+  - "ICLR 2026"
+  - "Image Generation"
+  - "reward model"
+  - "Reinforcement Learning"
+  - "image editing"
+  - "Online RL"
+  - "Flow-GRPO"
 date: 2026-05-08
 content_hash: aacffbfb68dc4e66
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Chain of World: World Model Thinking in Latent Motion (CoWVLA)
 description: >-
-  [CVPR 2026][Robotics][VLA] CoWVLA unifies the strengths of world-model VLAs and latent-action VLAs: a Latent Motion Extractor decomposes video into structural and motion latent variables, enabling the VLA to perform world-model prediction in the latent motion space rather than reconstructing redundant pixels. Combined with Co-Fine-tuning that alternately generates keyframe and action tokens, CoWVLA achieves 95.2% on LIBERO-Long (surpassing π₀ at 85.2%) and an average score of 0.560 on SimplerEnv-WidowX (surpassing π₀ at 0.425).
+  [CVPR 2026][Robotics][VLA] CoWVLA unifies the strengths of world-model VLAs and latent-action VLAs: a Latent Motion Extractor decomposes video into structural and motion latent variables…
 tags:
-  - CVPR 2026
-  - Robotics
-  - VLA
-  - World Model
-  - Latent Motion Modeling
-  - Video VAE
-  - Keyframe Prediction
-  - Action Quantization
+  - "CVPR 2026"
+  - "Robotics"
+  - "VLA"
+  - "World Model"
+  - "Latent Motion Modeling"
+  - "Video VAE"
+  - "Keyframe Prediction"
+  - "Action Quantization"
 date: 2026-05-08
 content_hash: b398b6a72e657dae
 ---

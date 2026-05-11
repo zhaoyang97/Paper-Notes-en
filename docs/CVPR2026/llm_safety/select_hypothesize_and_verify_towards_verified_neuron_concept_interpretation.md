@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Select, Hypothesize and Verify: Towards Verified Neuron Concept Interpretation
 description: >-
-  [CVPR 2026][LLM Safety][Neuron interpretation] This paper proposes SIEVE (Select–Hypothesize–Verify), a closed-loop framework that interprets neuron functionality by selecting highly activated samples, generating concept hypotheses, and verifying them via text-to-image generation. The probability that generated concepts activate the corresponding neuron is approximately 1.5× that of existing SOTA methods.
+  [CVPR 2026][LLM Safety][Neuron interpretation] This paper proposes SIEVE (Select–Hypothesize–Verify), a closed-loop framework that interprets neuron functionality by selecting highly activated samples…
 tags:
-  - CVPR 2026
-  - LLM Safety
-  - Neuron interpretation
-  - concept verification
-  - explainable AI
-  - neuron function analysis
-  - closed-loop verification
+  - "CVPR 2026"
+  - "LLM Safety"
+  - "Neuron interpretation"
+  - "concept verification"
+  - "explainable AI"
+  - "neuron function analysis"
+  - "closed-loop verification"
 date: 2026-05-08
 content_hash: 667bfe25a20bd91b
 ---

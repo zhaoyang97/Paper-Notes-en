@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Early Timestep Zero-Shot Candidate Selection for Instruction-Guided Image Editing
 description: >-
-  [ICCV 2025][Image Generation][Image Editing] This paper proposes ELECT (Early-timestep Latent Evaluation for Candidate selecTion), a zero-shot framework that selects the optimal seed by estimating background inconsistency at early denoising timesteps, reducing computational overhead by 41% (up to 61%) while improving background consistency and instruction-following quality, without requiring external supervision or additional training.
+  [ICCV 2025][Image Generation][Image Editing] This paper proposes ELECT (Early-timestep Latent Evaluation for Candidate selecTion), a zero-shot framework that selects the optimal seed by estimating background inconsistenc…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Image Editing
-  - Seed Selection
-  - Diffusion Models
-  - Background Consistency
-  - Zero-Shot
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Image Editing"
+  - "Seed Selection"
+  - "Diffusion Models"
+  - "Background Consistency"
+  - "Zero-Shot"
 date: 2026-05-08
 content_hash: abf6d03d214f1100
 ---

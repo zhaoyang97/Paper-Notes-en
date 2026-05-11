@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CURA: Clinical Uncertainty Risk Alignment for Language Model-Based Risk Prediction
 description: >-
-  [ACL 2026][Medical Imaging][Clinical Risk Prediction] CURA proposes a dual-level uncertainty calibration framework: at the individual level, it aligns predictive uncertainty with error probability; at the cohort level, it regularizes predictions using neighborhood event rates in the embedding space. The framework consistently improves calibration metrics across five clinical risk prediction tasks on MIMIC-IV without sacrificing discriminative performance.
+  [ACL 2026][Medical Imaging][Clinical Risk Prediction] CURA proposes a dual-level uncertainty calibration framework: at the individual level, it aligns predictive uncertainty with error probability; at the cohort level…
 tags:
-  - ACL 2026
-  - Medical Imaging
-  - Clinical Risk Prediction
-  - Uncertainty Calibration
-  - Dual-Level Alignment
-  - Cohort-Aware
-  - Clinical Language Model
+  - "ACL 2026"
+  - "Medical Imaging"
+  - "Clinical Risk Prediction"
+  - "Uncertainty Calibration"
+  - "Dual-Level Alignment"
+  - "Cohort-Aware"
+  - "Clinical Language Model"
 date: 2026-05-08
 content_hash: bfd0cbdf2b1e8ce5
 ---

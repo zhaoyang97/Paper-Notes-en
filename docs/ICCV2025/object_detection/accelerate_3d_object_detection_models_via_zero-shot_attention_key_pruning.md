@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Accelerate 3D Object Detection Models via Zero-Shot Attention Key Pruning
 description: >-
-  [ICCV 2025][Object Detection][3D Object Detection] This paper proposes tgGBC (trim keys gradually Guided By Classification scores), a zero-shot runtime pruning method that computes key importance by element-wise multiplication of classification scores and attention maps, progressively pruning unimportant keys across layers. It achieves nearly 2× acceleration of the Transformer decoder on multiple 3D detectors with less than 1% performance degradation.
+  [ICCV 2025][Object Detection][3D Object Detection] This paper proposes tgGBC (trim keys gradually Guided By Classification scores), a zero-shot runtime pruning method that computes key importance by element-wise multipli…
 tags:
-  - ICCV 2025
-  - Object Detection
-  - 3D Object Detection
-  - Transformer Pruning
-  - Attention Key Pruning
-  - Zero-Shot Acceleration
-  - Autonomous Driving
+  - "ICCV 2025"
+  - "Object Detection"
+  - "3D Object Detection"
+  - "Transformer Pruning"
+  - "Attention Key Pruning"
+  - "Zero-Shot Acceleration"
+  - "Autonomous Driving"
 date: 2026-05-08
 content_hash: ca9df180d12bc9f2
 ---

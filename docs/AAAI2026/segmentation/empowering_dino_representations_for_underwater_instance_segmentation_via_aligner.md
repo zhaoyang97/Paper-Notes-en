@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Empowering DINO Representations for Underwater Instance Segmentation via Aligner and Prompter
 description: >-
-  [AAAI2026][Segmentation][underwater instance segmentation] This paper is the first to introduce DINOv2 into underwater instance segmentation. Through two adaptation modules—AquaStyle Aligner (Fourier frequency-domain style injection) and ObjectPrior Prompter (binary mask prior prompting)—the proposed DiveSeg achieves efficient domain adaptation and substantially outperforms SAM-based methods on the UIIS and USIS10K benchmarks with fewer parameters.
+  [AAAI2026][Segmentation][underwater instance segmentation] This paper is the first to introduce DINOv2 into underwater instance segmentation. Through two adaptation modules—AquaStyle Aligner (Fourier frequency-domain sty…
 tags:
-  - AAAI2026
-  - Segmentation
-  - underwater instance segmentation
-  - DINOv2
-  - domain adaptation
-  - Fourier style transfer
-  - foundation model fine-tuning
+  - "AAAI2026"
+  - "Segmentation"
+  - "underwater instance segmentation"
+  - "DINOv2"
+  - "domain adaptation"
+  - "Fourier style transfer"
+  - "foundation model fine-tuning"
 date: 2026-05-08
 content_hash: 60e076d109f5cc9e
 ---

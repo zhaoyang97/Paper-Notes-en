@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PASE: Leveraging the Phonological Prior of WavLM for Low-Hallucination Generative Speech Enhancement
 description: >-
-  [AAAI 2026][Image Generation][Speech Enhancement] This paper proposes PASE, a framework that leverages robust phonological priors embedded in pretrained WavLM via Denoising Representation Distillation (DRD) to suppress linguistic hallucinations, while employing a dual-stream representation (high-level phonetic + low-level acoustic) to eliminate acoustic hallucinations, simultaneously achieving state-of-the-art performance in both perceptual quality and content fidelity.
+  [AAAI 2026][Image Generation][Speech Enhancement] This paper proposes PASE, a framework that leverages robust phonological priors embedded in pretrained WavLM via Denoising Representation Distillation (DRD) to suppress l…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Speech Enhancement
-  - Hallucination Suppression
-  - WavLM
-  - Phonological Prior
-  - Representation Distillation
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Speech Enhancement"
+  - "Hallucination Suppression"
+  - "WavLM"
+  - "Phonological Prior"
+  - "Representation Distillation"
 date: 2026-05-08
 content_hash: 0cce568060c71af6
 ---

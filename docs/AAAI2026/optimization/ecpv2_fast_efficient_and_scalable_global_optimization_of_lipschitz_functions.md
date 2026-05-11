@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ECPv2: Fast, Efficient, and Scalable Global Optimization of Lipschitz Functions
 description: >-
-  [AAAI2026][Optimization][Global optimization] This paper proposes ECPv2, which introduces three innovations—adaptive lower bound, Worst-$m$ memory, and fixed random projection—to reduce the per-run complexity of Lipschitz global optimization from $\Omega(n^2 d)$ to $\Omega(n(m+d)\log n)$, while maintaining an $O(n^{-1/d})$ regret convergence rate that matches the minimax lower bound.
+  [AAAI2026][Optimization][Global optimization] This paper proposes ECPv2, which introduces three innovations—adaptive lower bound, Worst-$m$ memory…
 tags:
-  - AAAI2026
-  - Optimization
-  - Global optimization
-  - Lipschitz functions
-  - black-box optimization
-  - random projection
-  - no-regret
+  - "AAAI2026"
+  - "Optimization"
+  - "Global optimization"
+  - "Lipschitz functions"
+  - "black-box optimization"
+  - "random projection"
+  - "no-regret"
 date: 2026-05-08
 content_hash: e8df895a802be242
 ---

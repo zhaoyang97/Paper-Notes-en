@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Faithfulness vs. Safety: Evaluating LLM Behavior Under Counterfactual Medical Evidence
 description: >-
-  [ACL 2026][Medical Imaging][Faithfulness-safety conflict] This paper introduces the MedCounterFact dataset—constructed by systematically replacing interventions in clinical trials with nonsense words, medical terminology, non-medical objects, and toxic substances—and finds that state-of-the-art LLMs almost unconditionally defer to context when presented with counterfactual medical evidence, confidently providing answers even when the "evidence" attributes therapeutic efficacy to heroin or mustard gas. The findings expose a critical lack of a well-defined boundary between faithfulness and safety.
+  [ACL 2026][Medical Imaging][Faithfulness-safety conflict] This paper introduces the MedCounterFact dataset—constructed by systematically replacing interventions in clinical trials with nonsense words, medical terminology…
 tags:
-  - ACL 2026
-  - Medical Imaging
-  - Faithfulness-safety conflict
-  - counterfactual evidence
-  - medical QA
-  - safety guardrails
-  - RAG
+  - "ACL 2026"
+  - "Medical Imaging"
+  - "Faithfulness-safety conflict"
+  - "counterfactual evidence"
+  - "medical QA"
+  - "safety guardrails"
+  - "RAG"
 date: 2026-05-08
 content_hash: 7cc671cc89dfcc30
 ---

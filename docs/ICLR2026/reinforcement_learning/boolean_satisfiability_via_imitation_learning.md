@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Boolean Satisfiability via Imitation Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][SAT] This paper proposes ImitSAT, the first imitation learning-based branching heuristic for CDCL solvers. By compressing solver runs into conflict-free KeyTrace expert sequences and framing branching decisions as an autoregressive prediction task conditioned on the decision prefix, ImitSAT significantly reduces propagation counts and solving time under a small query budget, and demonstrates strong generalization to structured SAT benchmarks.
+  [ICLR 2026][Reinforcement Learning][SAT] This paper proposes ImitSAT, the first imitation learning-based branching heuristic for CDCL solvers. By compressing solver runs into conflict-free KeyTrace expert sequences and f…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - SAT
-  - imitation learning
-  - CDCL
-  - branching heuristic
-  - autoregressive
-  - Transformer
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "SAT"
+  - "imitation learning"
+  - "CDCL"
+  - "branching heuristic"
+  - "autoregressive"
+  - "Transformer"
 date: 2026-05-08
 content_hash: 1790be0b4d89f764
 ---

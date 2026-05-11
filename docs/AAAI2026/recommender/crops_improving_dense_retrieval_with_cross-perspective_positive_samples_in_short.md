@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] CroPS: Improving Dense Retrieval with Cross-Perspective Positive Samples in Short-Video Search
 description: >-
-  [Recommender Systems] This paper proposes CroPS, a data engine that enriches positive sample sets from three complementary perspectives—query reformulation behavior, recommender system interactions, and LLM world knowledge—combined with Hierarchical Label Assignment (HLA) and the H-InfoNCE loss function, to break the filter bubble effect in industrial-scale dense retrieval systems. CroPS has been fully deployed in Kuaishou Search.
+  [Recommender Systems] This paper proposes CroPS, a data engine that enriches positive sample sets from three complementary perspectives—query reformulation behavior, recommender system interactions…
 tags:
-  - Recommender Systems
+  - "Recommender Systems"
 date: 2026-05-08
 content_hash: 7a69d5e8551abf2a
 ---

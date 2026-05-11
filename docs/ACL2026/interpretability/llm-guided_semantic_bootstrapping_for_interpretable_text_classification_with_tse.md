@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] LLM-Guided Semantic Bootstrapping for Interpretable Text Classification with Tsetlin Machines
 description: >-
-  [ACL 2026][Tsetlin Machine] This paper proposes an LLM-guided semantic bootstrapping framework that leverages LLMs to generate sub-intents and trains a Non-Negated Tsetlin Machine (NTM) via three-stage curriculum synthetic data generation. High-confidence symbolic features extracted by the NTM are injected into real data representations, enabling a standard TM to approach BERT-level classification performance while maintaining full interpretability.
+  [ACL 2026][Interpretability][Tsetlin Machine] This paper proposes an LLM-guided semantic bootstrapping framework that leverages LLMs to generate sub-intents and trains a Non-Negated Tsetlin Machine (NTM) via three-stage…
 tags:
-  - ACL 2026
-  - Tsetlin Machine
-  - semantic guidance
-  - symbolic learning
-  - sub-intent discovery
-  - interpretable classification
+  - "ACL 2026"
+  - "Interpretability"
+  - "Tsetlin Machine"
+  - "semantic guidance"
+  - "symbolic learning"
+  - "sub-intent discovery"
+  - "interpretable classification"
 date: 2026-05-08
 content_hash: b383e7f7a13b0547
 ---

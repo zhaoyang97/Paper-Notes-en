@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Association and Consolidation: Evolutionary Memory-Enhanced Incremental Multi-View Clustering
 description: >-
-  [CVPR2026][LLM Safety][incremental multi-view clustering] This paper proposes EMIMC, a framework inspired by the hippocampus–prefrontal cortex collaborative memory mechanism in the brain. Three coordinated modules — a Rapid Associative Module (orthogonal mapping to ensure plasticity), a Cognitive Forgetting Module (power-law decay to simulate the forgetting curve), and a Knowledge Consolidation Module (temporal tensor low-rank decomposition to distill long-term memory) — jointly address the stability-plasticity dilemma in incremental multi-view clustering.
+  [CVPR2026][LLM Safety][incremental multi-view clustering] This paper proposes EMIMC, a framework inspired by the hippocampus–prefrontal cortex collaborative memory mechanism in the brain. Three coordinated modules — a Ra…
 tags:
-  - CVPR2026
-  - LLM Safety
-  - incremental multi-view clustering
-  - stability-plasticity dilemma
-  - memory consolidation
-  - orthogonal association
-  - tensor decomposition
-  - ADMM
+  - "CVPR2026"
+  - "LLM Safety"
+  - "incremental multi-view clustering"
+  - "stability-plasticity dilemma"
+  - "memory consolidation"
+  - "orthogonal association"
+  - "tensor decomposition"
+  - "ADMM"
 date: 2026-05-08
 content_hash: 9e1e7b5b1f7b3bec
 ---

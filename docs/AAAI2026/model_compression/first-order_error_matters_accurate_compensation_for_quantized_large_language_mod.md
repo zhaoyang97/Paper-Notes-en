@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] First-Order Error Matters: Accurate Compensation for Quantized Large Language Models
 description: >-
-  [AAAI 2026][Model Compression][Post-training quantization] This paper identifies a critical yet overlooked issue in LLM post-training quantization: the column-wise compensation process renders first-order gradient terms non-negligible. The proposed FOEM method incorporates first-order terms into the error compensation formula, reducing the perplexity of Llama3-8B under 3-bit quantization by 17.3% with virtually no additional computational overhead.
+  [AAAI 2026][Model Compression][Post-training quantization] This paper identifies a critical yet overlooked issue in LLM post-training quantization: the column-wise compensation process renders first-order gradient terms…
 tags:
-  - AAAI 2026
-  - Model Compression
-  - Post-training quantization
-  - large language models
-  - first-order error compensation
-  - GPTQ
-  - weight quantization
+  - "AAAI 2026"
+  - "Model Compression"
+  - "Post-training quantization"
+  - "large language models"
+  - "first-order error compensation"
+  - "GPTQ"
+  - "weight quantization"
 date: 2026-05-08
 content_hash: 69d383b331ea4bbc
 ---

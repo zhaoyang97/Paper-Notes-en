@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mitigating Spurious Correlation via Distributionally Robust Learning with Hierarchical Ambiguity Sets
 description: >-
-  [ICLR 2026][LLM Evaluation][Spurious correlation] A hierarchical DRO framework is proposed to simultaneously capture inter-group (group proportion shifts) and intra-group (intra-group distributional shifts) uncertainty. By defining intra-group ambiguity sets in the semantic space via the $W_\infty$ distance, the method achieves state-of-the-art performance on standard benchmarks and maintains strong robustness under a newly designed minority group distributional shift setting where all competing methods fail.
+  [ICLR 2026][LLM Evaluation][Spurious correlation] A hierarchical DRO framework is proposed to simultaneously capture inter-group (group proportion shifts) and intra-group (intra-group distributional shifts) uncertainty.…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - Spurious correlation
-  - distributionally robust optimization
-  - hierarchical ambiguity sets
-  - Wasserstein distance
-  - minority group shift
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Spurious correlation"
+  - "distributionally robust optimization"
+  - "hierarchical ambiguity sets"
+  - "Wasserstein distance"
+  - "minority group shift"
 date: 2026-05-08
 content_hash: 693f8dc051e9b51c
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] On the Variability of Concept Activation Vectors
 description: >-
-  [AAAI 2026][Concept Activation Vectors] This paper presents the first theoretical analysis of the variability of Concept Activation Vectors (CAVs) in the TCAV framework. It proves that the variance of CAVs decays at a rate of $O(1/N)$ (where $N$ is the number of random samples), while the variance of TCAV scores remains $O(1)$ due to "boundary points," and can only be reduced to $O(1/s)$ by averaging over multiple runs.
+  [AAAI 2026][Concept Activation Vectors] This paper presents the first theoretical analysis of the variability of Concept Activation Vectors (CAVs) in the TCAV framework. It proves that the variance of CAVs decays at a ra…
 tags:
-  - AAAI 2026
-  - Concept Activation Vectors
-  - TCAV
-  - variance analysis
-  - asymptotic normality
-  - interpretable AI stability
+  - "AAAI 2026"
+  - "Concept Activation Vectors"
+  - "TCAV"
+  - "variance analysis"
+  - "asymptotic normality"
+  - "interpretable AI stability"
 date: 2026-05-08
 content_hash: 32ace1aa6b85457c
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] SIMU: Selective Influence Machine Unlearning
 description: >-
-  [NeurIPS 2025][LLM Safety][Machine Unlearning] SIMU proposes a two-stage framework: it first identifies critical MLP neurons encoding forget-set information via gradient aggregation, then applies second-order (Sophia) optimization exclusively to those neurons, achieving effective unlearning while substantially preserving the model's original capabilities.
+  [NeurIPS 2025][LLM Safety][Machine Unlearning] SIMU proposes a two-stage framework: it first identifies critical MLP neurons encoding forget-set information via gradient aggregation…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - Machine Unlearning
-  - Second-Order Optimization
-  - Neuron Localization
-  - Influence Functions
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "Machine Unlearning"
+  - "Second-Order Optimization"
+  - "Neuron Localization"
+  - "Influence Functions"
 date: 2026-05-08
 content_hash: b3ae477711487eb0
 ---

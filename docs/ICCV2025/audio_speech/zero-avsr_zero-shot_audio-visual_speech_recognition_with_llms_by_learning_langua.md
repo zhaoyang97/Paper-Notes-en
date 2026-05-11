@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Zero-AVSR: Zero-Shot Audio-Visual Speech Recognition with LLMs by Learning Language-Agnostic Speech Representations
 description: >-
-  [ICCV 2025][Audio & Speech][zero-shot speech recognition] This paper proposes Zero-AVSR, a framework that transcribes speech into language-agnostic romanized text (Roman text) and then leverages an LLM to convert the Roman text into target-language graphemes, enabling zero-shot audio-visual speech recognition without any target-language speech data. The authors also construct the MARC dataset, covering 82 languages and 2,916 hours of audio-visual data.
+  [ICCV 2025][Audio & Speech][zero-shot speech recognition] This paper proposes Zero-AVSR, a framework that transcribes speech into language-agnostic romanized text (Roman text) and then leverages an LLM to convert the Rom…
 tags:
-  - ICCV 2025
+  - "ICCV 2025"
   - "Audio & Speech"
-  - zero-shot speech recognition
-  - audio-visual speech recognition
-  - romanization
-  - large language models
-  - multilingual
+  - "zero-shot speech recognition"
+  - "audio-visual speech recognition"
+  - "romanization"
+  - "large language models"
+  - "multilingual"
 date: 2026-05-08
 content_hash: 6c1e24a681107b60
 ---

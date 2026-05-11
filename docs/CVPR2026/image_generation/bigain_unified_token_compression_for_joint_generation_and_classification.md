@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BiGain: Unified Token Compression for Joint Generation and Classification
 description: >-
-  [CVPR2026][Image Generation][Diffusion model acceleration] BiGain proposes a frequency-aware token compression framework comprising two training-free operators: Laplacian-Gated Token Merging and Interpolation-Extrapolation KV Downsampling. It is the first to maintain generation quality while significantly improving discriminative classification performance in diffusion model acceleration.
+  [CVPR2026][Image Generation][Diffusion model acceleration] BiGain proposes a frequency-aware token compression framework comprising two training-free operators: Laplacian-Gated Token Merging and Interpolation-Extrapolati…
 tags:
-  - CVPR2026
-  - Image Generation
-  - Diffusion model acceleration
-  - token compression
-  - frequency-aware
-  - joint generation-classification optimization
-  - training-free
+  - "CVPR2026"
+  - "Image Generation"
+  - "Diffusion model acceleration"
+  - "token compression"
+  - "frequency-aware"
+  - "joint generation-classification optimization"
+  - "training-free"
 date: 2026-05-08
 content_hash: 2464824226efd47c
 ---

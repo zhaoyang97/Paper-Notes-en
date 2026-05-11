@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GVPO: Group Variance Policy Optimization for Large Language Model Post-Training
 description: >-
-  [NeurIPS 2025][LLM Alignment][GRPO] GVPO is a more stable LLM post-training method than GRPO, derived by embedding the analytical solution of KL-constrained reward maximization into gradient weights (zero-sum weights eliminate the partition function). It achieves 20.72% on AIME (vs. GRPO's 14.79%) and is proven to possess a unique global optimum.
+  [NeurIPS 2025][LLM Alignment][GRPO] GVPO is a more stable LLM post-training method than GRPO, derived by embedding the analytical solution of KL-constrained reward maximization into gradient weights (zero-sum weights eli…
 tags:
-  - NeurIPS 2025
-  - LLM Alignment
-  - GRPO
-  - Policy Optimization
-  - KL Constraint
-  - Training Stability
-  - Post-Training
+  - "NeurIPS 2025"
+  - "LLM Alignment"
+  - "GRPO"
+  - "Policy Optimization"
+  - "KL Constraint"
+  - "Training Stability"
+  - "Post-Training"
 date: 2026-05-08
 content_hash: 8e63b26fac0c4c18
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Distributionally Robust Cooperative Multi-Agent Reinforcement Learning via Robust Value Factorization
 description: >-
-  [ICLR 2026][Reinforcement Learning][Distributionally Robust Optimization] This paper proposes the Distributionally Robust IGM (DrIGM) principle, integrating distributionally robust optimization into the value factorization framework of cooperative multi-agent RL, enabling classical methods such as VDN, QMIX, and QTRAN to maintain robust decentralized execution performance under distribution shift between training and deployment environments.
+  [ICLR 2026][Reinforcement Learning][Distributionally Robust Optimization] This paper proposes the Distributionally Robust IGM (DrIGM) principle, integrating distributionally robust optimization into the value factorizati…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Distributionally Robust Optimization
-  - Multi-Agent Reinforcement Learning
-  - Value Factorization
-  - CTDE
-  - Environmental Uncertainty
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Distributionally Robust Optimization"
+  - "Multi-Agent Reinforcement Learning"
+  - "Value Factorization"
+  - "CTDE"
+  - "Environmental Uncertainty"
 date: 2026-05-08
 content_hash: 400081e52f4ee82b
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HAIF-GS: Hierarchical and Induced Flow-Guided Gaussian Splatting for Dynamic Scene
 description: >-
-  [NeurIPS 2025][3D Vision][Dynamic scene reconstruction] HAIF-GS proposes a dynamic 3DGS framework built upon sparse motion anchors, achieving state-of-the-art rendering quality on the NeRF-DS and D-NeRF benchmarks via three key mechanisms: an anchor filter that separates dynamic and static regions, a self-supervised induced scene flow that guides temporally consistent deformation, and hierarchical anchor densification that captures fine-grained non-rigid motion.
+  [NeurIPS 2025][3D Vision][Dynamic scene reconstruction] HAIF-GS proposes a dynamic 3DGS framework built upon sparse motion anchors, achieving state-of-the-art rendering quality on the NeRF-DS and D-NeRF benchmarks via th…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Dynamic scene reconstruction
-  - 3D Gaussian splatting
-  - motion anchors
-  - scene flow
-  - hierarchical deformation
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Dynamic scene reconstruction"
+  - "3D Gaussian splatting"
+  - "motion anchors"
+  - "scene flow"
+  - "hierarchical deformation"
 date: 2026-05-08
 content_hash: 83991dfd28729815
 ---

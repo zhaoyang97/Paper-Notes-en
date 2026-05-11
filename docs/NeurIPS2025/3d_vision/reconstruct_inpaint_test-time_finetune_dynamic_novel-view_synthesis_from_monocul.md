@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Reconstruct, Inpaint, Test-Time Finetune: Dynamic Novel-View Synthesis from Monocular Videos
 description: >-
-  [NeurIPS 2025][3D Vision][dynamic novel-view synthesis] This paper proposes CogNVS, which decomposes dynamic scene novel-view synthesis into a three-stage pipeline — 3D reconstruction (recovering visible pixels) → video diffusion inpainting (generating occluded regions) → test-time finetuning (adapting to the target video distribution) — training the inpainting model with purely 2D video self-supervision to achieve zero-shot generalization to new test videos.
+  [NeurIPS 2025][3D Vision][dynamic novel-view synthesis] This paper proposes CogNVS, which decomposes dynamic scene novel-view synthesis into a three-stage pipeline — 3D reconstruction (recovering visible pixels) → video…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - dynamic novel-view synthesis
-  - monocular video
-  - video inpainting
-  - test-time finetuning
-  - diffusion models
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "dynamic novel-view synthesis"
+  - "monocular video"
+  - "video inpainting"
+  - "test-time finetuning"
+  - "diffusion models"
 date: 2026-05-08
 content_hash: b00d3b471aec0d42
 ---

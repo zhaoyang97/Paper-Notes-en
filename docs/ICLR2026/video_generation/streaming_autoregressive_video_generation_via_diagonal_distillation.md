@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Streaming Autoregressive Video Generation via Diagonal Distillation
 description: >-
-  [ICLR 2026][Video Generation] This paper proposes Diagonal Distillation (DiagDistill), which achieves 277.3× acceleration and 31 FPS real-time streaming autoregressive video generation via a diagonal denoising strategy (more steps for early chunks, fewer for later chunks) and a flow distribution matching loss.
+  [ICLR 2026][Video Generation][autoregressive generation] This paper proposes Diagonal Distillation (DiagDistill), which achieves 277.3× acceleration and 31 FPS real-time streaming autoregressive video generation via a di…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - autoregressive generation
-  - distillation
-  - streaming generation
-  - real-time video
+  - "ICLR 2026"
+  - "Video Generation"
+  - "autoregressive generation"
+  - "distillation"
+  - "streaming generation"
+  - "real-time video"
 date: 2026-05-08
 content_hash: 278c633c5cfaf054
 ---

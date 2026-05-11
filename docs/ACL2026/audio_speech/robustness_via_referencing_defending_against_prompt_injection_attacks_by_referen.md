@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Robustness via Referencing: Defending against Prompt Injection Attacks by Referencing the Executed Instruction
 description: >-
-  [ACL 2026][Audio & Speech][Prompt injection attack] This paper proposes an instruction-referencing-based defense against prompt injection attacks. Rather than suppressing the LLM's instruction-following capability, the method instructs the model to reference the executed instruction within its response, and then removes responses unrelated to the original instruction via label filtering, reducing the attack success rate to near 0% in several settings.
+  [ACL 2026][Audio & Speech][Prompt injection attack] This paper proposes an instruction-referencing-based defense against prompt injection attacks. Rather than suppressing the LLM's instruction-following capability…
 tags:
-  - ACL 2026
+  - "ACL 2026"
   - "Audio & Speech"
-  - Prompt injection attack
-  - instruction referencing
-  - defense method
-  - black-box defense
-  - LLM safety
+  - "Prompt injection attack"
+  - "instruction referencing"
+  - "defense method"
+  - "black-box defense"
+  - "LLM safety"
 date: 2026-05-08
 content_hash: 44bb1b43308f5103
 ---

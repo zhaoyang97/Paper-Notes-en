@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CLewR: Curriculum Learning with Restarts for Machine Translation Preference Learning
 description: >-
-  [ACL 2026][Optimization][Curriculum Learning] The paper proposes CLewR (Curriculum Learning with Restarts), a strategy that sorts data from easy to hard and restarts the curriculum at each epoch during preference optimization training, effectively mitigating catastrophic forgetting and consistently improving machine translation performance across multiple model families (Gemma2, Qwen2.5, Llama3.1) and preference optimization algorithms (DPO, CPO, ARPO).
+  [ACL 2026][Optimization][Curriculum Learning] The paper proposes CLewR (Curriculum Learning with Restarts), a strategy that sorts data from easy to hard and restarts the curriculum at each epoch during preference optimiz…
 tags:
-  - ACL 2026
-  - Optimization
-  - Curriculum Learning
-  - Preference Optimization
-  - Machine Translation
-  - Catastrophic Forgetting
-  - DPO
+  - "ACL 2026"
+  - "Optimization"
+  - "Curriculum Learning"
+  - "Preference Optimization"
+  - "Machine Translation"
+  - "Catastrophic Forgetting"
+  - "DPO"
 date: 2025-05-08
 content_hash: 0efaa1b46be7004d
 ---

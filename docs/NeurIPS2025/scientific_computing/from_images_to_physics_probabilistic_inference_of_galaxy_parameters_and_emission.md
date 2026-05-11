@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From Images to Physics: Probabilistic Inference of Galaxy Parameters and Emission Lines via VAE & Normalizing Flows
 description: >-
-  [NEURIPS2025][Scientific Computing][VAE] This work proposes a VAE–Normalizing Flow hybrid framework that jointly infers galaxy physical parameters (stellar mass, SFR, redshift, gas-phase metallicity, central black hole mass) and emission line fluxes (Hα, Hβ, [N II], [O III]) in a probabilistic manner from SDSS gri images and photometric data, achieving over 100× speedup relative to SED fitting while providing well-calibrated posterior distributions.
+  [NEURIPS2025][Scientific Computing][VAE] This work proposes a VAE–Normalizing Flow hybrid framework that jointly infers galaxy physical parameters (stellar mass, SFR, redshift, gas-phase metallicity…
 tags:
-  - NEURIPS2025
-  - Scientific Computing
-  - VAE
-  - Normalizing Flows
-  - galaxy parameter inference
-  - emission line prediction
-  - probabilistic inference
+  - "NEURIPS2025"
+  - "Scientific Computing"
+  - "VAE"
+  - "Normalizing Flows"
+  - "galaxy parameter inference"
+  - "emission line prediction"
+  - "probabilistic inference"
 date: 2026-05-08
 content_hash: 098ff98a5cf6228f
 ---

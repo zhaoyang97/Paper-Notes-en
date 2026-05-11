@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DISCO: Densely-overlapping Cell Instance Segmentation via Adjacency-aware Collaborative Coloring
 description: >-
-  [ICLR 2026][Medical Imaging][cell instance segmentation] This paper formulates densely-overlapping cell instance segmentation as a graph coloring problem and proposes Disco, a divide-and-conquer framework combining explicit conflict node marking with implicit adjacency-constrained disambiguation. By decomposing cell adjacency graphs via BFS and introducing five collaborative loss functions, Disco achieves a 7.08% PQ improvement on the high-density pathology dataset GBC-FS 2025 while attaining state-of-the-art performance across four heterogeneous datasets.
+  [ICLR 2026][Medical Imaging][cell instance segmentation] This paper formulates densely-overlapping cell instance segmentation as a graph coloring problem and proposes Disco…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - cell instance segmentation
-  - graph coloring
-  - dense overlap
-  - adjacency constraints
-  - pathology images
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "cell instance segmentation"
+  - "graph coloring"
+  - "dense overlap"
+  - "adjacency constraints"
+  - "pathology images"
 date: 2026-05-08
 content_hash: 21597ffedfc21f0c
 ---

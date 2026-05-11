@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Rethinking Losses for Diffusion Bridge Samplers
 description: >-
-  [NeurIPS 2025][LLM Evaluation][diffusion bridge samplers] This paper identifies theoretical flaws in the widely used Log Variance (LV) loss for diffusion bridge samplers—namely, that it violates the data processing inequality and its gradients are not equivalent to those of the reverse KL (rKL)—and proposes computing rKL gradients via the log-derivative trick (rKL-LD). The proposed approach consistently outperforms LV loss across multiple benchmarks while exhibiting more stable training and reduced sensitivity to hyperparameters.
+  [NeurIPS 2025][LLM Evaluation][diffusion bridge samplers] This paper identifies theoretical flaws in the widely used Log Variance (LV) loss for diffusion bridge samplers—namely…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - diffusion bridge samplers
-  - loss functions
-  - reverse KL divergence
-  - Log Variance loss
-  - learnable diffusion coefficients
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "diffusion bridge samplers"
+  - "loss functions"
+  - "reverse KL divergence"
+  - "Log Variance loss"
+  - "learnable diffusion coefficients"
 date: 2026-05-08
 content_hash: 1842a6de83edf087
 ---

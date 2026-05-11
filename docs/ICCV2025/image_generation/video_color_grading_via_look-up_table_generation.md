@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Video Color Grading via Look-Up Table Generation
 description: >-
-  [ICCV 2025][Image Generation][video color grading] This paper proposes a video color grading framework that explicitly generates Look-Up Tables (LUTs) via a diffusion model. A GS-Extractor captures high-level style features from a reference scene, and an L-Diffuser generates a color LUT that can be applied losslessly to all video frames in a single forward pass. Text prompts are further supported for fine-grained adjustments such as brightness and contrast.
+  [ICCV 2025][Image Generation][video color grading] This paper proposes a video color grading framework that explicitly generates Look-Up Tables (LUTs) via a diffusion model. A GS-Extractor captures high-level style featu…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - video color grading
-  - LUT generation
-  - diffusion model
-  - color grading
-  - reference image
-  - style transfer
+  - "ICCV 2025"
+  - "Image Generation"
+  - "video color grading"
+  - "LUT generation"
+  - "diffusion model"
+  - "color grading"
+  - "reference image"
+  - "style transfer"
 date: 2026-05-08
 content_hash: d86f02d6bb4ead1a
 ---

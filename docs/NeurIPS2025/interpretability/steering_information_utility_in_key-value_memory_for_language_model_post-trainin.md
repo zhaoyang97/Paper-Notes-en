@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Steering Information Utility in Key-Value Memory for Language Model Post-Training
 description: >-
-  [NeurIPS 2025][post-training optimization] This paper proposes InfoSteer, a lightweight method that treats the FFN layers of Transformers as associative key-value memories, promoting more complete utilization of pretrained knowledge during post-training via forward-pass intervention (boosting key coefficients of low-activation memory vectors) and backward-pass regularization (maximizing the entropy of key distributions). Across 6 models from 3 model families (Qwen/LLaMA/Gemma) and 15 in-distribution and out-of-distribution tasks, consistent improvements are observed, and steered language models exhibit adaptive information allocation behavior.
+  [NeurIPS 2025][Interpretability][post-training optimization] This paper proposes InfoSteer, a lightweight method that treats the FFN layers of Transformers as associative key-value memories…
 tags:
-  - NeurIPS 2025
-  - post-training optimization
-  - FFN key-value memory
-  - information steering
-  - memory vector activation
-  - SFT enhancement
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "post-training optimization"
+  - "FFN key-value memory"
+  - "information steering"
+  - "memory vector activation"
+  - "SFT enhancement"
 date: 2026-05-08
 content_hash: 0ae6a0762f276cf3
 ---

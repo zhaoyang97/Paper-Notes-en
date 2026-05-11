@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CD-DPE: Dual-Prompt Expert Network Based on Convolutional Dictionary Feature Decoupling for Multi-Contrast MRI Super-Resolution
 description: >-
-  [AAAI 2026][Medical Imaging][Multi-contrast MRI super-resolution] This paper proposes CD-DPE, a network that employs an iterative Convolutional Dictionary Feature Decoupling Module (CD-FDM) to disentangle multi-contrast MRI features into cross-contrast shared and modality-specific components, followed by a Dual-Prompt Feature Fusion Expert Module (DP-FFEM) for adaptive fusion and reconstruction. CD-DPE surpasses existing state-of-the-art methods on multiple public benchmarks.
+  [AAAI 2026][Medical Imaging][Multi-contrast MRI super-resolution] This paper proposes CD-DPE, a network that employs an iterative Convolutional Dictionary Feature Decoupling Module (CD-FDM) to disentangle multi-contrast…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Multi-contrast MRI super-resolution
-  - convolutional dictionary
-  - feature decoupling
-  - dual-prompt
-  - expert network
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Multi-contrast MRI super-resolution"
+  - "convolutional dictionary"
+  - "feature decoupling"
+  - "dual-prompt"
+  - "expert network"
 date: 2026-05-08
 content_hash: 42c54971b21c5bb1
 ---

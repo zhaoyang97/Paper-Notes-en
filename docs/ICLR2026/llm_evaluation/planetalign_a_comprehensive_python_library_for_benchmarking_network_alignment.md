@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PlanetAlign: A Comprehensive Python Library for Benchmarking Network Alignment
 description: >-
-  [ICLR 2026][LLM Evaluation][Network Alignment] This paper presents PlanetAlign, a PyTorch-based network alignment benchmark library integrating 18 datasets across 6 domains, 14 methods spanning three categories (consistency-based, embedding-based, and optimal transport-based), and a standardized evaluation pipeline. Through large-scale systematic experiments, PlanetAlign reveals that OT-based methods (PARROT/JOENA) achieve comprehensive superiority in effectiveness, while different method categories exhibit distinct trade-offs in scalability and robustness.
+  [ICLR 2026][LLM Evaluation][Network Alignment] This paper presents PlanetAlign, a PyTorch-based network alignment benchmark library integrating 18 datasets across 6 domains…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - Network Alignment
-  - Benchmark Library
-  - Graph Matching
-  - Optimal Transport
-  - Evaluation Framework
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Network Alignment"
+  - "Benchmark Library"
+  - "Graph Matching"
+  - "Optimal Transport"
+  - "Evaluation Framework"
 date: 2026-05-08
 content_hash: 1ff6302fd9fe075f
 ---

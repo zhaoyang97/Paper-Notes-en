@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VAGEN: Reinforcing World Model Reasoning for Multi-Turn VLM Agents
 description: >-
-  [NeurIPS 2025][Multimodal VLM][VLM Agent] VAGEN is a framework that structures the reasoning process of VLM agents into StateEstimation and TransitionModeling to build an internal world model, and combines WorldModeling Reward with Bi-Level GAE for efficient multi-turn RL training. A 3B model trained under this framework (0.82) surpasses GPT-5 (0.75) and Gemini 2.5 Pro (0.67).
+  [NeurIPS 2025][Multimodal VLM][VLM Agent] VAGEN is a framework that structures the reasoning process of VLM agents into StateEstimation and TransitionModeling to build an internal world model…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - VLM Agent
-  - World Model
-  - Reinforcement Learning
-  - POMDP
-  - Multi-Turn Interaction
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "VLM Agent"
+  - "World Model"
+  - "Reinforcement Learning"
+  - "POMDP"
+  - "Multi-Turn Interaction"
 date: 2026-05-08
 content_hash: f9b744057f1aa736
 ---

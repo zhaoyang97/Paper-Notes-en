@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Rethinking Concept Bottleneck Models: From Pitfalls to Solutions
 description: >-
-  [CVPR 2026][Concept Bottleneck Models] This paper proposes CBM-Suite, a methodological framework that systematically addresses four fundamental pitfalls of Concept Bottleneck Models—the absence of a pre-training concept relevance metric, the linearity problem that allows the concept bottleneck to be bypassed, the accuracy gap relative to black-box models, and the unexplored interaction effects of different visual backbones and VLMs—through entropy-based metrics, nonlinear layers, and distillation losses, significantly improving both accuracy and interpretability of CBMs.
+  [CVPR 2026][Interpretability][Concept Bottleneck Models] This paper proposes CBM-Suite, a methodological framework that systematically addresses four fundamental pitfalls of Concept Bottleneck Models—the absence of a pre…
 tags:
-  - CVPR 2026
-  - Concept Bottleneck Models
-  - interpretability
-  - concept relevance
-  - distillation
-  - vision-language models
+  - "CVPR 2026"
+  - "Interpretability"
+  - "Concept Bottleneck Models"
+  - "concept relevance"
+  - "distillation"
+  - "vision-language models"
 date: 2026-05-08
 content_hash: 143fa22f54e5197a
 ---

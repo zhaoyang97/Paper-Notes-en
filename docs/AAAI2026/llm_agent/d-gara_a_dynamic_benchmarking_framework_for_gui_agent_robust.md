@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] D-GARA: A Dynamic Benchmarking Framework for GUI Agent Robustness in Real-World Anomalies
 description: >-
-  [AAAI 2026][LLM Agent][GUI Agent] This paper proposes D-GARA, a dynamic robustness evaluation framework for Android GUI Agents. By injecting real-world anomalies—such as permission dialogs, low-battery warnings, and app crashes—during live interactions, D-GARA reveals that existing SOTA agents (including UI-TARS-72B and GPT-4o) suffer an average success rate drop of over 17.5%, with a maximum degradation of 33%, under interruption scenarios.
+  [AAAI 2026][LLM Agent][GUI Agent] This paper proposes D-GARA, a dynamic robustness evaluation framework for Android GUI Agents. By injecting real-world anomalies—such as permission dialogs, low-battery warnings…
 tags:
-  - AAAI 2026
-  - LLM Agent
-  - GUI Agent
-  - robustness evaluation
-  - dynamic benchmark
-  - anomaly injection
-  - Android
-  - interruption handling
+  - "AAAI 2026"
+  - "LLM Agent"
+  - "GUI Agent"
+  - "robustness evaluation"
+  - "dynamic benchmark"
+  - "anomaly injection"
+  - "Android"
+  - "interruption handling"
 date: 2026-05-08
 content_hash: 56cc6601f47020e3
 ---

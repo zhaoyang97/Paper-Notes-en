@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Diffusion Fine-Tuning via Reparameterized Policy Gradient of the Soft Q-Function
 description: >-
-  [ICLR 2026][Image Generation][Diffusion model fine-tuning] This paper proposes SQDF (Soft Q-based Diffusion Finetuning), which fine-tunes diffusion models under a KL-regularized RL framework via a training-free differentiable soft Q-function approximation and reparameterized policy gradients. Three complementary components—a discount factor, a consistency model, and an off-policy replay buffer—collectively optimize the target reward while effectively mitigating reward over-optimization, preserving sample naturalness and diversity.
+  [ICLR 2026][Image Generation][Diffusion model fine-tuning] This paper proposes SQDF (Soft Q-based Diffusion Finetuning), which fine-tunes diffusion models under a KL-regularized RL framework via a training-free different…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion model fine-tuning
-  - KL-regularized reinforcement learning
-  - soft Q-function
-  - reward over-optimization
-  - text-to-image alignment
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Diffusion model fine-tuning"
+  - "KL-regularized reinforcement learning"
+  - "soft Q-function"
+  - "reward over-optimization"
+  - "text-to-image alignment"
 date: 2026-05-08
 content_hash: 8b30e6093452bc8f
 ---

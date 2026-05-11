@@ -2,16 +2,17 @@
 title: >-
   [Paper Note] FAIR Universe HiggsML Uncertainty Dataset and Competition
 description: >-
-  [NeurIPS 2025][Higgs boson] This work provides a standardized dataset of 280 million simulated LHC collision events and a competition platform featuring six parameterized systematic biases (detector calibration + background composition) alongside an asymmetric coverage penalty metric. Participants are required to construct robust 68.27% confidence intervals for the Higgs signal strength $\mu$. The winning solutions, based on profile-free surrogate modeling, achieve confidence intervals approximately 20% narrower than conventional binned methods.
+  [NeurIPS 2025][Physics][Higgs boson] This work provides a standardized dataset of 280 million simulated LHC collision events and a competition platform featuring six parameterized systematic biases (detector calibration…
 tags:
-  - NeurIPS 2025
-  - Higgs boson
-  - systematic uncertainties
-  - confidence intervals
-  - competition dataset
-  - bias parameterization
-  - nuisance parameters
-  - profile likelihood
+  - "NeurIPS 2025"
+  - "Physics"
+  - "Higgs boson"
+  - "systematic uncertainties"
+  - "confidence intervals"
+  - "competition dataset"
+  - "bias parameterization"
+  - "nuisance parameters"
+  - "profile likelihood"
 date: 2026-05-08
 content_hash: 42a2a8ae66de726b
 ---

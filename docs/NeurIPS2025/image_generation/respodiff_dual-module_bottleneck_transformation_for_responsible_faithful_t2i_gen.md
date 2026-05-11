@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RespoDiff: Dual-Module Bottleneck Transformation for Responsible & Faithful T2I Generation
 description: >-
-  [NeurIPS 2025][Image Generation][Responsible Generation] This paper proposes RespoDiff, a framework that introduces two learnable transformation modules at the bottleneck layer of a diffusion model UNet — a Responsibility Alignment Module (RAM) and a Semantic Alignment Module (SAM) — trained via score matching objectives to achieve fair and safe text-to-image generation while preserving image quality and semantic fidelity.
+  [NeurIPS 2025][Image Generation][Responsible Generation] This paper proposes RespoDiff, a framework that introduces two learnable transformation modules at the bottleneck layer of a diffusion model UNet — a Responsibilit…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Responsible Generation
-  - Fairness
-  - Safety
-  - Bottleneck Transformation
-  - Score Matching
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Responsible Generation"
+  - "Fairness"
+  - "Safety"
+  - "Bottleneck Transformation"
+  - "Score Matching"
 date: 2026-05-08
 content_hash: 35eb8a877b44e22e
 ---

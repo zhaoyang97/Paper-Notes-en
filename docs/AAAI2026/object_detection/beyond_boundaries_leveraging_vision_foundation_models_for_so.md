@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond Boundaries: Leveraging Vision Foundation Models for Source-Free Object Detection
 description: >-
-  [AAAI 2026][Object Detection][Source-Free Object Detection] This paper proposes a framework leveraging VFMs (DINOv2 + Grounding DINO) to enhance Source-Free Object Detection (SFOD) via three modules: Patch-weighted Global Feature Alignment (PGFA), Prototype-based Instance Feature Alignment (PIFA), and Dual-source Enhanced Pseudo-label Fusion (DEPF). The method achieves state-of-the-art results on 6 cross-domain detection benchmarks, e.g., 47.1% mAP on Cityscapes→Foggy Cityscapes (+3.5% over DRU) and 67.4% AP on Sim10k→Cityscapes (+8.7% over DRU).
+  [AAAI 2026][Object Detection][Source-Free Object Detection] This paper proposes a framework leveraging VFMs (DINOv2 + Grounding DINO) to enhance Source-Free Object Detection (SFOD) via three modules: Patch-weighted Globa…
 tags:
-  - AAAI 2026
-  - Object Detection
-  - Source-Free Object Detection
-  - Vision Foundation Models
-  - DINOv2
-  - Grounding DINO
-  - Pseudo-label Fusion
+  - "AAAI 2026"
+  - "Object Detection"
+  - "Source-Free Object Detection"
+  - "Vision Foundation Models"
+  - "DINOv2"
+  - "Grounding DINO"
+  - "Pseudo-label Fusion"
 date: 2026-05-08
 content_hash: a4b65c417beb2b64
 ---

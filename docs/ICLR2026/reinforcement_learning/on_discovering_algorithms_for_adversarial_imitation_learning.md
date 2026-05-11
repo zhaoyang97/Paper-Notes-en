@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] On Discovering Algorithms for Adversarial Imitation Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][adversarial imitation learning] This paper proposes DAIL — the first meta-learned adversarial imitation learning algorithm. It decomposes AIL into two stages (density ratio estimation and reward assignment), and employs LLM-guided evolutionary search to automatically discover an optimal reward assignment (RA) function $r_{\text{disc}}$, achieving generalization to unseen environments and policy optimizers while surpassing all manually designed baselines.
+  [ICLR 2026][Reinforcement Learning][adversarial imitation learning] This paper proposes DAIL — the first meta-learned adversarial imitation learning algorithm. It decomposes AIL into two stages (density ratio estimation…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - adversarial imitation learning
-  - reward assignment function
-  - LLM-guided evolution
-  - meta-learning
-  - training stability
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "adversarial imitation learning"
+  - "reward assignment function"
+  - "LLM-guided evolution"
+  - "meta-learning"
+  - "training stability"
 date: 2026-05-08
 content_hash: e25d0cf8c2db4bdc
 ---

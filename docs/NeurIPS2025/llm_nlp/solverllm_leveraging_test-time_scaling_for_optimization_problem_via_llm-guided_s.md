@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SolverLLM: Solving Optimization Problems via Test-Time Scaling with LLM-Guided Search
 description: >-
-  [NeurIPS 2025][LLM/NLP][Test-time scaling] This paper proposes SolverLLM, a training-free framework that treats the mathematical modeling of optimization problems as a search problem. It employs an enhanced MCTS to explore optimal formulations within a six-element representation space, incorporating dynamic expansion, prompt backpropagation, and uncertainty backpropagation. SolverLLM surpasses both prompting-based and fine-tuning-based methods on 6 benchmarks without any training.
+  [NeurIPS 2025][LLM/NLP][Test-time scaling] This paper proposes SolverLLM, a training-free framework that treats the mathematical modeling of optimization problems as a search problem. It employs an enhanced MCTS to explo…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - Test-time scaling
-  - Monte Carlo Tree Search
-  - optimization problems
-  - dynamic expansion
-  - uncertainty propagation
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "Test-time scaling"
+  - "Monte Carlo Tree Search"
+  - "optimization problems"
+  - "dynamic expansion"
+  - "uncertainty propagation"
 date: 2026-05-08
 content_hash: 07ad7da530e0c61d
 ---

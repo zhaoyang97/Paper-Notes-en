@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Diffusion Transformers as Open-World Spatiotemporal Foundation Models
 description: >-
-  [NeurIPS 2025][Time Series][Diffusion Transformer] This paper proposes UrbanDiT, the first open-world urban spatiotemporal foundation model based on Diffusion Transformers. It integrates heterogeneous data types (grid/graph) and diverse tasks (prediction, interpolation, extrapolation, imputation) through a unified prompt learning framework, achieving state-of-the-art performance across multiple cities and scenarios while demonstrating strong zero-shot generalization.
+  [NeurIPS 2025][Time Series][Diffusion Transformer] This paper proposes UrbanDiT, the first open-world urban spatiotemporal foundation model based on Diffusion Transformers. It integrates heterogeneous data types (grid/gr…
 tags:
-  - NeurIPS 2025
-  - Time Series
-  - Diffusion Transformer
-  - Spatiotemporal Foundation Model
-  - Urban Computing
-  - Prompt Learning
-  - Zero-shot
+  - "NeurIPS 2025"
+  - "Time Series"
+  - "Diffusion Transformer"
+  - "Spatiotemporal Foundation Model"
+  - "Urban Computing"
+  - "Prompt Learning"
+  - "Zero-shot"
 date: 2026-05-08
 content_hash: dea2851f52c63cc5
 ---

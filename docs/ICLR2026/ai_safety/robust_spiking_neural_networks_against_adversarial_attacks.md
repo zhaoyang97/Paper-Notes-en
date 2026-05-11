@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Robust Spiking Neural Networks Against Adversarial Attacks
 description: >-
-  [ICLR 2026][AI Safety][Spiking Neural Networks] This paper theoretically demonstrates that threshold-proximal spiking neurons are the key robustness bottleneck in directly trained SNNs — they simultaneously set the theoretical upper bound on adversarial attack strength and are most susceptible to state flipping. The proposed Threshold Guarding Optimization (TGO) method addresses this through a dual strategy of membrane potential constraint and noisy LIF neurons, achieving state-of-the-art robustness across multiple adversarial attack scenarios with zero additional inference overhead.
+  [ICLR 2026][AI Safety][Spiking Neural Networks] This paper theoretically demonstrates that threshold-proximal spiking neurons are the key robustness bottleneck in directly trained SNNs — they simultaneously set the theor…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - Spiking Neural Networks
-  - Adversarial Robustness
-  - Membrane Potential Optimization
-  - Threshold-Proximal Neurons
-  - Noisy LIF Model
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Spiking Neural Networks"
+  - "Adversarial Robustness"
+  - "Membrane Potential Optimization"
+  - "Threshold-Proximal Neurons"
+  - "Noisy LIF Model"
 date: 2026-05-08
 content_hash: 2a8d65bac668c133
 ---

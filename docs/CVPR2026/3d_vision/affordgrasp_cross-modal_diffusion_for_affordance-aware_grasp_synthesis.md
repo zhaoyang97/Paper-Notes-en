@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AffordGrasp: Cross-Modal Diffusion for Affordance-Aware Grasp Synthesis
 description: >-
-  [CVPR 2026][3D Vision][grasp generation] AffordGrasp proposes a diffusion-based cross-modal framework that generates physically plausible and semantically consistent hand grasp poses from text instructions and object point clouds, via affordance-guided latent diffusion and a Distribution Adjustment Module (DAM), significantly outperforming existing methods on four benchmarks.
+  [CVPR 2026][3D Vision][grasp generation] AffordGrasp proposes a diffusion-based cross-modal framework that generates physically plausible and semantically consistent hand grasp poses from text instructions and object poi…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - grasp generation
-  - affordance
-  - cross-modal diffusion
-  - hand-object interaction
-  - semantic instruction
+  - "CVPR 2026"
+  - "3D Vision"
+  - "grasp generation"
+  - "affordance"
+  - "cross-modal diffusion"
+  - "hand-object interaction"
+  - "semantic instruction"
 date: 2026-05-08
 content_hash: 03e66842bacb8bdf
 ---

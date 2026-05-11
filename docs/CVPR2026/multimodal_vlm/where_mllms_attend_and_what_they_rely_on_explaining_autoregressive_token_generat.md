@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Where MLLMs Attend and What They Rely On: Explaining Autoregressive Token Generation
 description: >-
-  [CVPR 2026][Multimodal VLM][MLLM interpretability] This paper proposes Eagle, a lightweight black-box attribution framework that performs spatial attribution for autoregressive token generation in MLLMs via a unified objective combining insight score (sufficiency) and necessity score (indispensability), and quantifies whether each generated token relies on language priors or perceptual evidence. Eagle comprehensively outperforms existing methods in faithfulness, localization, and hallucination diagnosis while substantially reducing GPU memory requirements.
+  [CVPR 2026][Multimodal VLM][MLLM interpretability] This paper proposes Eagle, a lightweight black-box attribution framework that performs spatial attribution for autoregressive token generation in MLLMs via a unified obj…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - MLLM interpretability
-  - attribution analysis
-  - hallucination diagnosis
-  - language prior vs. perceptual evidence
-  - black-box methods
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "MLLM interpretability"
+  - "attribution analysis"
+  - "hallucination diagnosis"
+  - "language prior vs. perceptual evidence"
+  - "black-box methods"
 date: 2026-05-08
 content_hash: ef7c3318c4f38615
 ---

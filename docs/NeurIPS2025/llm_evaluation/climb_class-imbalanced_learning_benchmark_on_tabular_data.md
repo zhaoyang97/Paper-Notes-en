@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CLIMB: Class-Imbalanced Learning Benchmark on Tabular Data
 description: >-
-  [NeurIPS 2025][LLM Evaluation][class imbalance] This paper presents CLIMB — the most comprehensive benchmark to date for class-imbalanced learning on tabular data — encompassing 73 real-world datasets and 29 CIL algorithms. Large-scale experiments reveal several practical insights: naive rebalancing is often ineffective, ensemble methods are critical, and data quality impacts performance more than the degree of imbalance itself.
+  [NeurIPS 2025][LLM Evaluation][class imbalance] This paper presents CLIMB — the most comprehensive benchmark to date for class-imbalanced learning on tabular data — encompassing 73 real-world datasets and 29 CIL algorith…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - class imbalance
-  - tabular data
-  - benchmark
-  - ensemble learning
-  - resampling
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "class imbalance"
+  - "tabular data"
+  - "benchmark"
+  - "ensemble learning"
+  - "resampling"
 date: 2026-05-08
 content_hash: ea877c634185ced8
 ---

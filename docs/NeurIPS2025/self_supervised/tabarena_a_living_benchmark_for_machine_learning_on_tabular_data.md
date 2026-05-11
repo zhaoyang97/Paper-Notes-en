@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TabArena: A Living Benchmark for Machine Learning on Tabular Data
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][tabular data benchmark] This paper introduces TabArena, the first continuously maintained "living" benchmark for tabular machine learning. From 1,053 candidate datasets, 51 are curated and 16 models are evaluated through large-scale experiments (~25 million model training runs). Key findings: under post-hoc ensembling, deep learning models match or surpass GBDTs; tabular foundation models excel on small datasets; and cross-model ensembles further advance the state of the art.
+  [NeurIPS 2025][Self-Supervised Learning][tabular data benchmark] This paper introduces TabArena, the first continuously maintained "living" benchmark for tabular machine learning. From 1,053 candidate datasets…
 tags:
-  - NeurIPS 2025
-  - Self-Supervised Learning
-  - tabular data benchmark
-  - living benchmark
-  - gradient boosted trees
-  - deep learning
-  - tabular foundation models
+  - "NeurIPS 2025"
+  - "Self-Supervised Learning"
+  - "tabular data benchmark"
+  - "living benchmark"
+  - "gradient boosted trees"
+  - "deep learning"
+  - "tabular foundation models"
 date: 2026-05-08
 content_hash: b295e132c2e822eb
 ---

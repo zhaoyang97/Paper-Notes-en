@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Supercharging Floorplan Localization with Semantic Rays
 description: >-
-  [ICCV 2025][LLM Evaluation][Indoor Localization] A semantics-aware floorplan localization framework is proposed that fuses predicted semantic rays with depth rays into a structural-semantic probability volume. Combined with a coarse-to-fine refinement strategy, the method achieves 2–3× performance improvements on two standard benchmarks.
+  [ICCV 2025][LLM Evaluation][Indoor Localization] A semantics-aware floorplan localization framework is proposed that fuses predicted semantic rays with depth rays into a structural-semantic probability volume. Combined w…
 tags:
-  - ICCV 2025
-  - LLM Evaluation
-  - Indoor Localization
-  - Floorplan Localization
-  - Semantic Rays
-  - Probability Volume
-  - Coarse-to-Fine
+  - "ICCV 2025"
+  - "LLM Evaluation"
+  - "Indoor Localization"
+  - "Floorplan Localization"
+  - "Semantic Rays"
+  - "Probability Volume"
+  - "Coarse-to-Fine"
 date: 2026-05-08
 content_hash: e0eedc094dd98d35
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Spiking Brain Compression: Post-Training Second-Order Compression for Spiking Neural Networks
 description: >-
-  [NeurIPS 2025][Model Compression][Spiking Neural Networks] This paper proposes Spiking Brain Compression (SBC), a second-order post-training one-shot compression framework based on the Van Rossum Distance, designed specifically for spiking neural networks (SNNs). By introducing a Surrogate Membrane Potential (SMP) Hessian, SBC enables efficient module-wise pruning and quantization, and for the first time compresses SEW-ResNet152 and Spike-Driven Transformer at the ImageNet scale.
+  [NeurIPS 2025][Model Compression][Spiking Neural Networks] This paper proposes Spiking Brain Compression (SBC), a second-order post-training one-shot compression framework based on the Van Rossum Distance…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Spiking Neural Networks
-  - Post-Training Compression
-  - Hessian Matrix
-  - Unstructured Pruning
-  - Quantization
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Spiking Neural Networks"
+  - "Post-Training Compression"
+  - "Hessian Matrix"
+  - "Unstructured Pruning"
+  - "Quantization"
 date: 2026-05-08
 content_hash: 0c159763311a813f
 ---

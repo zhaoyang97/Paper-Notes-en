@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] In Search of Adam's Secret Sauce
 description: >-
-  [NeurIPS 2025][Optimization][Adam] Through large-scale experiments training 1500+ language models, this paper establishes: (1) Signum closes 96% of the SGD–Adam gap yet remains 25% slower than Adam; (2) setting $\beta_1 = \beta_2$ is a near-optimal simplification of Adam; (3) under $\beta_1 = \beta_2 = \beta$, Adam can be reinterpreted as a signal-to-noise ratio–adaptive Signum that estimates the gradient mean and variance via online Gaussian variational inference.
+  [NeurIPS 2025][Optimization][Adam] Through large-scale experiments training 1500+ language models, this paper establishes: (1) Signum closes 96% of the SGD–Adam gap yet remains 25% slower than Adam…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Adam
-  - Signum
-  - implicit bias
-  - variational inference
-  - signal-to-noise ratio
-  - language modeling
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Adam"
+  - "Signum"
+  - "implicit bias"
+  - "variational inference"
+  - "signal-to-noise ratio"
+  - "language modeling"
 date: 2026-05-08
 content_hash: cc6f83f9120f8c7c
 ---

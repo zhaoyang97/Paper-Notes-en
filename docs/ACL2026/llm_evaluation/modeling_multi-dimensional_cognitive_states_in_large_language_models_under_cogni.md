@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Modeling Multi-Dimensional Cognitive States in Large Language Models under Cognitive Crowding
 description: >-
-  [ACL 2026][LLM Evaluation][cognitive state modeling] This paper identifies that LLMs suffer a dramatic accuracy drop to 5.7% when jointly predicting four cognitive dimensions—sentiment, thinking style, stance, and intent—a phenomenon termed "cognitive crowding." Through Gromov $\delta$-hyperbolicity analysis, the paper demonstrates that cognitive states exhibit hierarchical structure, and proposes HyCoLLM, a framework that models cognitive states in hyperbolic space. An 8B model trained under this framework surpasses GPT-4o.
+  [ACL 2026][LLM Evaluation][cognitive state modeling] This paper identifies that LLMs suffer a dramatic accuracy drop to 5.7% when jointly predicting four cognitive dimensions—sentiment, thinking style, stance…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - cognitive state modeling
-  - cognitive crowding
-  - hyperbolic space
-  - multi-dimensional joint prediction
-  - CognitiveBench
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "cognitive state modeling"
+  - "cognitive crowding"
+  - "hyperbolic space"
+  - "multi-dimensional joint prediction"
+  - "CognitiveBench"
 date: 2026-05-08
 content_hash: b4f5f0311f5c4f1b
 ---

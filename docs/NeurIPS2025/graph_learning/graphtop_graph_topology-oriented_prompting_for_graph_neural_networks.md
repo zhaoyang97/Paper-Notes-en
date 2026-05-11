@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GraphTOP: Graph Topology-Oriented Prompting for Graph Neural Networks
 description: >-
-  [NeurIPS 2025][Graph Learning][Graph Prompting] This paper proposes GraphTOP, the first graph topology-oriented prompting framework, which formulates topology-oriented prompting as an edge rewiring problem and relaxes it into a continuous space via Gumbel-Softmax. GraphTOP outperforms six baseline methods across five datasets and four pre-training strategies.
+  [NeurIPS 2025][Graph Learning][Graph Prompting] This paper proposes GraphTOP, the first graph topology-oriented prompting framework, which formulates topology-oriented prompting as an edge rewiring problem and relaxes it…
 tags:
-  - NeurIPS 2025
-  - Graph Learning
-  - Graph Prompting
-  - Topology
-  - Edge Rewiring
-  - Pre-training
-  - Gumbel-Softmax
+  - "NeurIPS 2025"
+  - "Graph Learning"
+  - "Graph Prompting"
+  - "Topology"
+  - "Edge Rewiring"
+  - "Pre-training"
+  - "Gumbel-Softmax"
 date: 2026-05-08
 content_hash: a8ab4640ff10ed8a
 ---

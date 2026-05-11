@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RADAR: Closed-Loop Robotic Data Generation via Semantic Planning and Autonomous Causal Environment Reset
 description: >-
-  [CVPR 2026][Reinforcement Learning][autonomous data collection] This paper presents RADAR — a fully autonomous closed-loop robotic manipulation data generation engine comprising four modules: VLM-based semantic planning, GNN policy execution, VQA-based success evaluation, and FSM-orchestrated LIFO causal reverse environment reset. Requiring only 2–5 human demonstrations, the system continuously generates high-fidelity manipulation data, achieving 90% success rate on complex long-horizon tasks in simulation.
+  [CVPR 2026][Reinforcement Learning][autonomous data collection] This paper presents RADAR — a fully autonomous closed-loop robotic manipulation data generation engine comprising four modules: VLM-based semantic planning…
 tags:
-  - CVPR 2026
-  - Reinforcement Learning
-  - autonomous data collection
-  - closed-loop robotic manipulation
-  - automatic environment reset
-  - in-context imitation learning
-  - VLM task planning
+  - "CVPR 2026"
+  - "Reinforcement Learning"
+  - "autonomous data collection"
+  - "closed-loop robotic manipulation"
+  - "automatic environment reset"
+  - "in-context imitation learning"
+  - "VLM task planning"
 date: 2026-05-08
 content_hash: 221db2d3ec6a5e47
 ---

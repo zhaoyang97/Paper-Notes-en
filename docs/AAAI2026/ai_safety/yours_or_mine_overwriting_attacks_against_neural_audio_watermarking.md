@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Yours or Mine? Overwriting Attacks Against Neural Audio Watermarking
 description: >-
-  [AAAI 2026][AI Safety][Audio watermarking] This paper presents the first systematic study of overwriting attacks against neural audio watermarking, proposing white-box, gray-box, and black-box attack schemes that achieve near-100% attack success rates against three SOTA methods—AudioSeal, Timbre, and WavMark—exposing critical security vulnerabilities in existing audio watermarking systems.
+  [AAAI 2026][AI Safety][Audio watermarking] This paper presents the first systematic study of overwriting attacks against neural audio watermarking, proposing white-box, gray-box…
 tags:
-  - AAAI 2026
-  - AI Safety
-  - Audio watermarking
-  - overwriting attack
-  - copyright protection
-  - adversarial security
-  - deep watermarking
+  - "AAAI 2026"
+  - "AI Safety"
+  - "Audio watermarking"
+  - "overwriting attack"
+  - "copyright protection"
+  - "adversarial security"
+  - "deep watermarking"
 date: 2026-05-08
 content_hash: 7af220dcced932ef
 ---

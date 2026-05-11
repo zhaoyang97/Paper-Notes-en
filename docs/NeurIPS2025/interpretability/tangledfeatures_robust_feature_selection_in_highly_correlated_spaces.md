@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] TangledFeatures: Robust Feature Selection in Highly Correlated Spaces
 description: >-
-  [NeurIPS 2025][feature selection] This paper proposes TangledFeatures, a selection framework centered on **feature stability**, implementing a three-stage pipeline of correlation-graph clustering → ensemble representative selection → random forest refinement. The framework achieves highly reproducible, domain-knowledge-consistent feature subsets across resampling in highly correlated feature spaces, validated on alanine dipeptide backbone torsion angle prediction.
+  [NeurIPS 2025][Interpretability][feature selection] This paper proposes TangledFeatures, a selection framework centered on **feature stability**…
 tags:
-  - NeurIPS 2025
-  - feature selection
-  - stability
-  - correlation redundancy
-  - random forests
-  - structural biology
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "feature selection"
+  - "stability"
+  - "correlation redundancy"
+  - "random forests"
+  - "structural biology"
 date: 2026-05-08
 content_hash: d8b6019343136a38
 ---

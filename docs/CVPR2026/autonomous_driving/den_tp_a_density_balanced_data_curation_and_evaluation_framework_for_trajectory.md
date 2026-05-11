@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Den-TP: A Density-Balanced Data Curation and Evaluation Framework for Trajectory Prediction
 description: >-
-  [CVPR 2026][Autonomous Driving][trajectory prediction] Den-TP is a data-centric framework that addresses the long-tail density imbalance in trajectory prediction datasets through density-aware data curation and evaluation protocols. Using only 50% of the training data, it maintains overall performance while significantly improving robustness in high-density scenarios.
+  [CVPR 2026][Autonomous Driving][trajectory prediction] Den-TP is a data-centric framework that addresses the long-tail density imbalance in trajectory prediction datasets through density-aware data curation and evaluatio…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - trajectory prediction
-  - data-centric
-  - density balancing
-  - submodular optimization
-  - long-tail distribution
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "trajectory prediction"
+  - "data-centric"
+  - "density balancing"
+  - "submodular optimization"
+  - "long-tail distribution"
 date: 2026-05-08
 content_hash: 338bb28a547c8bbb
 ---

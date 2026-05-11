@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Reading Recognition in the Wild
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Reading recognition] This paper introduces a novel reading recognition task and the first large-scale multimodal "reading-in-the-wild" dataset (100 hours). A lightweight Transformer model fusing three complementary modalities—RGB, gaze, and IMU—enables real-time reading detection on smart glasses.
+  [NeurIPS 2025][Multimodal VLM][Reading recognition] This paper introduces a novel reading recognition task and the first large-scale multimodal "reading-in-the-wild" dataset (100 hours). A lightweight Transformer model f…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Reading recognition
-  - wearable devices
-  - multimodal fusion
-  - eye tracking
-  - egocentric vision
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Reading recognition"
+  - "wearable devices"
+  - "multimodal fusion"
+  - "eye tracking"
+  - "egocentric vision"
 date: 2026-05-08
 content_hash: e12cfb704d9eac31
 ---

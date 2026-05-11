@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Text Embedding Knows How to Quantize Text-Guided Diffusion Models
 description: >-
-  [ICCV 2025][Image Generation][diffusion model quantization] This paper is the first to leverage text prompts to guide dynamic bit-width allocation for diffusion model quantization — by predicting the quality of images generated from a given text prompt, it adaptively selects high/medium/low bit precision for different layers and timesteps, reducing computational complexity while maintaining or even improving generation quality.
+  [ICCV 2025][Image Generation][diffusion model quantization] This paper is the first to leverage text prompts to guide dynamic bit-width allocation for diffusion model quantization — by predicting the quality of images ge…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - diffusion model quantization
-  - text-guided
-  - dynamic bit-width
-  - mixed precision
-  - post-training quantization
+  - "ICCV 2025"
+  - "Image Generation"
+  - "diffusion model quantization"
+  - "text-guided"
+  - "dynamic bit-width"
+  - "mixed precision"
+  - "post-training quantization"
 date: 2026-05-08
 content_hash: 0368e6e4d0d0b754
 ---

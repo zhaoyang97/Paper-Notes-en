@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Spectral Bellman Method: Unifying Representation and Exploration in RL
 description: >-
-  [ICLR 2026][Reinforcement Learning][Representation Learning] This paper proposes the Spectral Bellman Method (SBM), which derives a spectral relationship between the Bellman operator and feature covariance structure from the zero Intrinsic Bellman Error (IBE) condition, leading to a novel representation learning objective that naturally unifies representation learning and Thompson Sampling–based exploration.
+  [ICLR 2026][Reinforcement Learning][Representation Learning] This paper proposes the Spectral Bellman Method (SBM), which derives a spectral relationship between the Bellman operator and feature covariance structure from…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Representation Learning
-  - Exploration
-  - Bellman Error
-  - Spectral Decomposition
-  - Thompson Sampling
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Representation Learning"
+  - "Exploration"
+  - "Bellman Error"
+  - "Spectral Decomposition"
+  - "Thompson Sampling"
 date: 2026-05-08
 content_hash: 3c44e23f44fd8a60
 ---

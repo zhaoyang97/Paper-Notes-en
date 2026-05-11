@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multi-Metric Preference Alignment for Generative Speech Restoration
 description: >-
-  [AAAI 2026][Image Generation][Preference alignment] This paper proposes a Multi-Metric Preference Alignment strategy that constructs a preference dataset, GenSR-Pref (80K pairs), requiring unanimous agreement across multiple complementary metrics. DPO is applied to post-training alignment of three generative speech restoration paradigms (AR, MGM, FM), achieving substantial quality improvements while effectively mitigating reward hacking.
+  [AAAI 2026][Image Generation][Preference alignment] This paper proposes a Multi-Metric Preference Alignment strategy that constructs a preference dataset, GenSR-Pref (80K pairs)…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Preference alignment
-  - DPO
-  - speech restoration
-  - multi-metric
-  - generative models
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Preference alignment"
+  - "DPO"
+  - "speech restoration"
+  - "multi-metric"
+  - "generative models"
 date: 2026-05-08
 content_hash: bda140a8216ae154
 ---

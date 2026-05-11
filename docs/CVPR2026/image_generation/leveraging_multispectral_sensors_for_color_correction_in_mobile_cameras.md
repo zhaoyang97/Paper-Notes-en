@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Leveraging Multispectral Sensors for Color Correction in Mobile Cameras
 description: >-
-  [CVPR 2026][Image Generation][Multispectral sensors] This paper proposes a unified end-to-end color correction framework that jointly fuses data from a high-resolution RGB sensor and an auxiliary low-resolution multispectral (MS) sensor, integrating illuminant estimation, illuminant compensation, and color space conversion into a single model. The proposed approach reduces color error ($\Delta E_{00}$) by up to 50% compared to RGB-only and MS-only baselines.
+  [CVPR 2026][Image Generation][Multispectral sensors] This paper proposes a unified end-to-end color correction framework that jointly fuses data from a high-resolution RGB sensor and an auxiliary low-resolution multispec…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Multispectral sensors
-  - color correction
-  - automatic white balance
-  - sensor fusion
-  - mobile cameras
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Multispectral sensors"
+  - "color correction"
+  - "automatic white balance"
+  - "sensor fusion"
+  - "mobile cameras"
 date: 2026-05-08
 content_hash: 7bdc3ac8381ec9f5
 ---

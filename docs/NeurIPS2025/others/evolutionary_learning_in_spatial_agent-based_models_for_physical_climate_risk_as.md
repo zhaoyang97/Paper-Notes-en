@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Evolutionary Learning in Spatial Agent-Based Models for Physical Climate Risk Assessment
 description: >-
-  [NeurIPS 2025][geospatial ABM] This paper proposes an Agent-Based Model (ABM) that integrates geospatial climate hazard data with evolutionary learning mechanisms. Using a simplified economic network comprising a three-tier commodity–manufacturing–retail supply chain, the model simulates economic responses from 2025 to 2100 under RCP8.5 flood projections. Results demonstrate that evolutionary adaptation enables firms to maintain significantly higher levels of production, capital, liquidity, and employment under climate stress, while revealing supply chain systemic risks that traditional asset-level assessments fail to capture.
+  [NeurIPS 2025][geospatial ABM] This paper proposes an Agent-Based Model (ABM) that integrates geospatial climate hazard data with evolutionary learning mechanisms. Using a simplified economic network comprising a three-t…
 tags:
-  - NeurIPS 2025
-  - geospatial ABM
-  - evolutionary learning
-  - physical climate risk
-  - supply chain systemic risk
-  - RCP8.5
-  - flood damage functions
+  - "NeurIPS 2025"
+  - "geospatial ABM"
+  - "evolutionary learning"
+  - "physical climate risk"
+  - "supply chain systemic risk"
+  - "RCP8.5"
+  - "flood damage functions"
 date: 2026-05-08
 content_hash: c1a1918ada30f1cb
 ---

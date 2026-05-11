@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TOGA: Temporally Grounded Open-Ended Video QA with Weak Supervision
 description: >-
-  [ICCV 2025][Video Understanding][Video QA] This paper proposes TOGA — a weakly supervised vision-language model that generates pseudo temporal labels via a multi-scale visual-language connector and consistency constraints, enabling joint generation of open-ended answers and temporal grounding **without any temporal annotations**, achieving SOTA on NExT-GQA, MSVD-QA, and ActivityNet-QA.
+  [ICCV 2025][Video Understanding][Video QA] This paper proposes TOGA — a weakly supervised vision-language model that generates pseudo temporal labels via a multi-scale visual-language connector and consistency constraint…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - Video QA
-  - temporal grounding
-  - weak supervision
-  - vision-language models
-  - multi-scale temporal modeling
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "Video QA"
+  - "temporal grounding"
+  - "weak supervision"
+  - "vision-language models"
+  - "multi-scale temporal modeling"
 date: 2026-05-08
 content_hash: a04691db1c4cdeed
 ---

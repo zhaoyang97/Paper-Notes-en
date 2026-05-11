@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Learning Vision-Language-Action World Models for Autonomous Driving
 description: >-
-  [CVPR 2026][Autonomous Driving][VLA model] VLA-World unifies the predictive imagination of world models with the reflective reasoning of VLA models in a single framework. By generating future frames and reasoning over them, the method improves trajectory planning, achieving state-of-the-art collision rates and FID scores.
+  [CVPR 2026][Autonomous Driving][VLA model] VLA-World unifies the predictive imagination of world models with the reflective reasoning of VLA models in a single framework. By generating future frames and reasoning over th…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - VLA model
-  - world model
-  - reflective reasoning
-  - reinforcement learning
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "VLA model"
+  - "world model"
+  - "reflective reasoning"
+  - "reinforcement learning"
 date: 2026-05-08
 content_hash: 0053a1e2cd5bbd6f
 ---

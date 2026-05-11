@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Error as Signal: Stiffness-Aware Diffusion Sampling via Embedded Runge-Kutta Guidance
 description: >-
-  [ICLR2026][Image Generation][diffusion sampling] This paper proposes ERK-Guid, which leverages the order-difference error of embedded Runge-Kutta solvers as a guidance signal to adaptively correct local truncation error (LTE) in stiff regions, improving diffusion model sampling quality without additional network evaluations.
+  [ICLR2026][Image Generation][diffusion sampling] This paper proposes ERK-Guid, which leverages the order-difference error of embedded Runge-Kutta solvers as a guidance signal to adaptively correct local truncation error…
 tags:
-  - ICLR2026
-  - Image Generation
-  - diffusion sampling
-  - stiffness
-  - local truncation error
-  - embedded Runge-Kutta
-  - guidance
+  - "ICLR2026"
+  - "Image Generation"
+  - "diffusion sampling"
+  - "stiffness"
+  - "local truncation error"
+  - "embedded Runge-Kutta"
+  - "guidance"
 date: 2026-05-08
 content_hash: 5efa02ab1d8b8b0a
 ---

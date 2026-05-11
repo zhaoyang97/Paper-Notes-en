@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Vascular Anatomy-aware Self-supervised Pre-training for X-ray Angiogram Analysis
 description: >-
-  [AAAI 2026][Medical Imaging][X-ray angiography] This paper proposes VasoMIM, a domain-specific self-supervised pre-training framework for X-ray angiograms. It introduces an anatomy-guided masking strategy that prioritizes vessel regions, an anatomical consistency loss to preserve vascular topology in reconstructed images, and a newly constructed XA-170K pre-training dataset — the largest of its kind. VasoMIM comprehensively outperforms both general-purpose and medical SSL methods (including DINOv3 pre-trained on 1.69 billion images) across 4 downstream tasks and 6 datasets.
+  [AAAI 2026][Medical Imaging][X-ray angiography] This paper proposes VasoMIM, a domain-specific self-supervised pre-training framework for X-ray angiograms. It introduces an anatomy-guided masking strategy that prioritize…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - X-ray angiography
-  - self-supervised learning
-  - masked image modeling
-  - vascular anatomy awareness
-  - foundation model
-  - vessel segmentation
-  - stenosis detection
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "X-ray angiography"
+  - "self-supervised learning"
+  - "masked image modeling"
+  - "vascular anatomy awareness"
+  - "foundation model"
+  - "vessel segmentation"
+  - "stenosis detection"
 date: 2026-05-08
 content_hash: f3973de9ad39c64b
 ---

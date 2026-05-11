@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FastLSQ: Solving PDEs in One Shot via Fourier Features with Exact Analytical Derivatives
 description: >-
-  [ICLR2026][PDE solving] By exploiting the cyclic closed-form derivative structure of sinusoidal basis functions, this work presents a one-shot PDE solver that requires neither automatic differentiation nor iterative training. It achieves $10^{-7}$ accuracy in 0.07s for linear PDEs and $10^{-8}$–$10^{-9}$ accuracy in under 9s for nonlinear PDEs, outperforming PINNs by thousands of times in speed and several orders of magnitude in accuracy.
+  [ICLR2026][PDE solving] By exploiting the cyclic closed-form derivative structure of sinusoidal basis functions, this work presents a one-shot PDE solver that requires neither automatic differentiation nor iterative trai…
 tags:
-  - ICLR2026
-  - PDE solving
-  - random Fourier features
-  - physics-informed computing
-  - one-shot solver
-  - Newton-Raphson
-  - inverse problems
+  - "ICLR2026"
+  - "PDE solving"
+  - "random Fourier features"
+  - "physics-informed computing"
+  - "one-shot solver"
+  - "Newton-Raphson"
+  - "inverse problems"
 date: 2026-05-08
 content_hash: 21dfed65c68a6020
 ---

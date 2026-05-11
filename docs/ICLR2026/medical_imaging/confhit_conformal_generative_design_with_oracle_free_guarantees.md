@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ConfHit: Conformal Generative Design with Oracle Free Guarantees
 description: >-
-  [ICLR 2026][Medical Imaging][conformal prediction] This paper proposes ConfHit, a framework that employs density-ratio-weighted conformal permutation p-values to perform **certification** (determining whether a generated batch contains a hit) and **design** (pruning the candidate set while preserving statistical guarantees). Without requiring an experimental oracle and under distributional shift, ConfHit provides finite-sample $1-\alpha$ coverage guarantees for generative molecular design.
+  [ICLR 2026][Medical Imaging][conformal prediction] This paper proposes ConfHit, a framework that employs density-ratio-weighted conformal permutation p-values to perform **certification** (determining whether a generated…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - conformal prediction
-  - generative design
-  - drug discovery
-  - density ratio
-  - statistical guarantee
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "conformal prediction"
+  - "generative design"
+  - "drug discovery"
+  - "density ratio"
+  - "statistical guarantee"
 date: 2026-05-08
 content_hash: 80d56357f7858738
 ---

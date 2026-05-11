@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] What's Making That Sound Right Now? Video-centric Audio-Visual Localization
 description: >-
-  [Human Understanding] This paper proposes AVATAR, a video-level audio-visual localization benchmark, and TAVLO, a temporally-aware model that addresses the neglect of temporal dynamics in conventional AVL methods through high-resolution temporal modeling.
+  [Human Understanding] This paper proposes AVATAR, a video-level audio-visual localization benchmark, and TAVLO, a temporally-aware model that addresses the neglect of temporal dynamics in conventional AVL methods through…
 tags:
-  - Human Understanding
+  - "Human Understanding"
 date: 2026-05-08
 content_hash: 550e1edfcc5884e4
 ---

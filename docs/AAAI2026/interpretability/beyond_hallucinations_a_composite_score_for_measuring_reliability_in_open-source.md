@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Beyond Hallucinations: A Composite Score for Measuring Reliability in Open-Source Large Language Models
 description: >-
-  [AAAI 2026][LLM reliability] This paper proposes the Composite Reliability Score (CRS), which unifies calibration, robustness, and uncertainty quantification into a single interpretable metric. A systematic evaluation of 10 open-source LLMs across 5 QA datasets reveals that Mistral-8x22B achieves the highest overall reliability (CRS=0.81), and that model size does not directly determine reliability.
+  [AAAI 2026][Interpretability][LLM reliability] This paper proposes the Composite Reliability Score (CRS), which unifies calibration, robustness…
 tags:
-  - AAAI 2026
-  - LLM reliability
-  - calibration
-  - robustness
-  - uncertainty quantification
-  - composite metric
+  - "AAAI 2026"
+  - "Interpretability"
+  - "LLM reliability"
+  - "calibration"
+  - "robustness"
+  - "uncertainty quantification"
+  - "composite metric"
 date: 2026-05-08
 content_hash: 204d40c472a856dd
 ---

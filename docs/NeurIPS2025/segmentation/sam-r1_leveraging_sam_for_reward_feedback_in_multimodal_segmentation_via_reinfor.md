@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SAM-R1: Leveraging SAM for Reward Feedback in Multimodal Segmentation via Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Segmentation][Reasoning Segmentation] SAM-R1 proposes an end-to-end reasoning segmentation framework that, for the first time, incorporates SAM as a reward provider within the reinforcement learning training loop. Combined with a tiered IoU accuracy reward, asymmetric clipping, and token-level loss normalization in an improved GRPO algorithm, the method achieves a gIoU of 60.2% on the ReasonSeg zero-shot benchmark—surpassing Seg-Zero and other approaches—using only 3K training samples.
+  [NeurIPS 2025][Segmentation][Reasoning Segmentation] SAM-R1 proposes an end-to-end reasoning segmentation framework that, for the first time…
 tags:
-  - NeurIPS 2025
-  - Segmentation
-  - Reasoning Segmentation
-  - Reinforcement Learning
-  - SAM
-  - Multimodal Large Language Models
-  - GRPO
+  - "NeurIPS 2025"
+  - "Segmentation"
+  - "Reasoning Segmentation"
+  - "Reinforcement Learning"
+  - "SAM"
+  - "Multimodal Large Language Models"
+  - "GRPO"
 date: 2026-05-08
 content_hash: 08d7b9b863e92b14
 ---

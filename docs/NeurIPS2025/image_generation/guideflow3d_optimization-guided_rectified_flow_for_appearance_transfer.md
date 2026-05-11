@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GuideFlow3D: Optimization-Guided Rectified Flow For Appearance Transfer
 description: >-
-  [NeurIPS 2025][Image Generation][3D appearance transfer] This paper proposes GuideFlow3D, a training-free 3D appearance transfer framework that alternately injects differentiable guidance losses (part-aware appearance loss + self-similarity loss) into the sampling process of a pretrained rectified flow model, enabling robust texture and geometric detail transfer between objects with significant geometric discrepancies.
+  [NeurIPS 2025][Image Generation][3D appearance transfer] This paper proposes GuideFlow3D, a training-free 3D appearance transfer framework that alternately injects differentiable guidance losses (part-aware appearance lo…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - 3D appearance transfer
-  - rectified flow
-  - universal guidance
-  - structured latent
-  - part-aware loss
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "3D appearance transfer"
+  - "rectified flow"
+  - "universal guidance"
+  - "structured latent"
+  - "part-aware loss"
 date: 2026-05-08
 content_hash: c122010dd2e1cc66
 ---

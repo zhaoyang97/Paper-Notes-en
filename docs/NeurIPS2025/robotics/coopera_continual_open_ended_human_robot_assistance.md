@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] COOPERA: Continual Open-Ended Human-Robot Assistance
 description: >-
-  [NeurIPS 2025][Robotics][human-robot collaboration] This paper proposes the COOPERA framework, the first to enable continual, open-ended human-robot collaboration research. LLM-driven simulated humans with psychological traits and long-term intentions interact with robots over multiple days in a 3D environment. The robot progressively improves its personalized assistance by learning human characteristics and contextual intentions.
+  [NeurIPS 2025][Robotics][human-robot collaboration] This paper proposes the COOPERA framework, the first to enable continual, open-ended human-robot collaboration research. LLM-driven simulated humans with psychological…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - human-robot collaboration
-  - continual learning
-  - open-ended tasks
-  - LLM-driven human simulation
-  - personalized robot assistant
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "human-robot collaboration"
+  - "continual learning"
+  - "open-ended tasks"
+  - "LLM-driven human simulation"
+  - "personalized robot assistant"
 date: 2026-05-08
 content_hash: 4fff3661755e81d6
 ---

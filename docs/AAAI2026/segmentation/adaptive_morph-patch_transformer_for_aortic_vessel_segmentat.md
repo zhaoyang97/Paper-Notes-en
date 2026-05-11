@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Adaptive Morph-Patch Transformer for Aortic Vessel Segmentation
 description: >-
-  [AAAI 2026][Segmentation][Aortic segmentation] This paper proposes the Morph-Patch Transformer (MPT), which generates morphology-aware patches via a velocity-field-based adaptive patch partitioning strategy to preserve vascular topological integrity, and introduces Semantic Clustering Attention (SCA) to dynamically aggregate features from semantically similar patches. The method achieves state-of-the-art performance on three aortic segmentation benchmarks: AVT, AortaSeg24, and TBAD.
+  [AAAI 2026][Segmentation][Aortic segmentation] This paper proposes the Morph-Patch Transformer (MPT), which generates morphology-aware patches via a velocity-field-based adaptive patch partitioning strategy to preserve v…
 tags:
-  - AAAI 2026
-  - Segmentation
-  - Aortic segmentation
-  - morphology-aware patch
-  - semantic clustering attention
-  - diffeomorphic deformation
-  - velocity field
+  - "AAAI 2026"
+  - "Segmentation"
+  - "Aortic segmentation"
+  - "morphology-aware patch"
+  - "semantic clustering attention"
+  - "diffeomorphic deformation"
+  - "velocity field"
 date: 2026-05-08
 content_hash: 89688e52a51be7c8
 ---

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] UniFlow: A Unified Pixel Flow Tokenizer for Visual Understanding and Generation
 description: >-
-  [Model Compression] This paper proposes UniFlow, a universal unified tokenizer that preserves semantic understanding via hierarchical adaptive self-distillation and achieves high-fidelity reconstruction via a lightweight patch-wise pixel flow decoder. UniFlow achieves state-of-the-art performance on both understanding and generation across 13 benchmarks. The 7B UniFlow-XL surpasses the 14B TokenFlow-XL by 6.05% on average understanding benchmarks while using 40% less training data.
+  [Model Compression] This paper proposes UniFlow, a universal unified tokenizer that preserves semantic understanding via hierarchical adaptive self-distillation and achieves high-fidelity reconstruction via a lightweight…
 tags:
-  - Model Compression
+  - "Model Compression"
 date: 2026-05-08
 content_hash: 2a29d0fadd2ca1cf
 ---

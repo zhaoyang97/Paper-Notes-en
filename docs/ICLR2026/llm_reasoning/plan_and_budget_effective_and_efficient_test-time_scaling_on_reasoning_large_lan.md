@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Plan and Budget: Effective and Efficient Test-Time Scaling on Reasoning LLMs
 description: >-
-  [ICLR 2026][LLM Reasoning][Test-time scaling] This paper proposes the Plan-and-Budget framework, which decomposes complex queries into sub-problems and adaptively allocates token budgets based on estimated complexity, achieving efficient test-time scaling for reasoning LLMs — with up to 70% accuracy improvement, 39% token reduction, and 193.8% gain on the E3 metric.
+  [ICLR 2026][LLM Reasoning][Test-time scaling] This paper proposes the Plan-and-Budget framework, which decomposes complex queries into sub-problems and adaptively allocates token budgets based on estimated complexity…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Test-time scaling
-  - reasoning efficiency
-  - overthinking
-  - token budget allocation
-  - reasoning LLM
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "Test-time scaling"
+  - "reasoning efficiency"
+  - "overthinking"
+  - "token budget allocation"
+  - "reasoning LLM"
 date: 2026-05-08
 content_hash: 3cd04c1e62b871bc
 ---

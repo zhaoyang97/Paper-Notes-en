@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ReFORM: Reflected Flows for On-support Offline RL via Noise Manipulation
 description: >-
-  [ICLR 2026][Reinforcement Learning][Offline RL] ReFORM is proposed to manipulate the source distribution of a behavior cloning (BC) flow policy by learning a reflected flow noise generator, achieving support constraints in a **constructive manner** that avoids OOD issues while preserving policy expressiveness, without requiring hyperparameter tuning.
+  [ICLR 2026][Reinforcement Learning][Offline RL] ReFORM is proposed to manipulate the source distribution of a behavior cloning (BC) flow policy by learning a reflected flow noise generator…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Offline RL
-  - Flow Matching
-  - Support Constraint
-  - Reflected Flows
-  - OOD Problem
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Offline RL"
+  - "Flow Matching"
+  - "Support Constraint"
+  - "Reflected Flows"
+  - "OOD Problem"
 date: 2026-05-08
 content_hash: 7536dd252d950efa
 ---

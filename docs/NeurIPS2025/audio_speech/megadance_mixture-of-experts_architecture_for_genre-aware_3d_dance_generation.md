@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MEGADance: Mixture-of-Experts Architecture for Genre-Aware 3D Dance Generation
 description: >-
-  [NeurIPS 2025][Audio & Speech][Music-driven dance generation] This paper proposes MEGADance, the first music-driven 3D dance generation method based on a Mixture-of-Experts (MoE) architecture. It decouples choreographic consistency into "dance universality" (Universal Expert) and "style specificity" (Specialized Expert), combined with FSQ quantization and a Mamba-Transformer hybrid backbone, achieving state-of-the-art dance quality and strong style controllability.
+  [NeurIPS 2025][Audio & Speech][Music-driven dance generation] This paper proposes MEGADance, the first music-driven 3D dance generation method based on a Mixture-of-Experts (MoE) architecture. It decouples choreographic…
 tags:
-  - NeurIPS 2025
+  - "NeurIPS 2025"
   - "Audio & Speech"
-  - Music-driven dance generation
-  - Mixture-of-Experts (MoE)
-  - Mamba-Transformer
-  - Finite Scalar Quantization (FSQ)
-  - style-controllable
+  - "Music-driven dance generation"
+  - "Mixture-of-Experts (MoE)"
+  - "Mamba-Transformer"
+  - "Finite Scalar Quantization (FSQ)"
+  - "style-controllable"
 date: 2026-05-08
 content_hash: c8f02702fdeaa92e
 ---

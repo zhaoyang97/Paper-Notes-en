@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EA-ViT: Efficient Adaptation for Elastic Vision Transformer
 description: >-
-  [ICCV 2025][Model Compression][Vision Transformer] This paper proposes the first ViT framework that introduces elastic structure at the adaptation stage. Through a multi-dimensional elastic architecture, curriculum learning, and a lightweight router, a single adaptation run yields sub-models covering $10^{26}$ configurations, consistently outperforming existing elastic methods across multiple downstream tasks.
+  [ICCV 2025][Model Compression][Vision Transformer] This paper proposes the first ViT framework that introduces elastic structure at the adaptation stage. Through a multi-dimensional elastic architecture…
 tags:
-  - ICCV 2025
-  - Model Compression
-  - Vision Transformer
-  - Elastic Architecture
-  - Sub-model Selection
-  - Curriculum Learning
-  - Pareto Optimization
+  - "ICCV 2025"
+  - "Model Compression"
+  - "Vision Transformer"
+  - "Elastic Architecture"
+  - "Sub-model Selection"
+  - "Curriculum Learning"
+  - "Pareto Optimization"
 date: 2026-05-08
 content_hash: e07bd0455c691234
 ---

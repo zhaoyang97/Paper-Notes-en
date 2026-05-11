@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Highlighting What Matters: Promptable Embeddings for Attribute-Focused Image Retrieval
 description: >-
-  [NeurIPS 2025][Image Generation][attribute-focused retrieval] This paper proposes Promptable Embeddings, a method that highlights target visual attributes at retrieval time to improve attribute-focused text-to-image retrieval, and introduces the COCO-Facet benchmark dataset.
+  [NeurIPS 2025][Image Generation][attribute-focused retrieval] This paper proposes Promptable Embeddings, a method that highlights target visual attributes at retrieval time to improve attribute-focused text-to-image retr…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - attribute-focused retrieval
-  - promptable image embeddings
-  - CLIP
-  - multimodal large language models
-  - text-to-image retrieval
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "attribute-focused retrieval"
+  - "promptable image embeddings"
+  - "CLIP"
+  - "multimodal large language models"
+  - "text-to-image retrieval"
 date: 2026-05-08
 content_hash: 3877eee8d00c8b66
 ---

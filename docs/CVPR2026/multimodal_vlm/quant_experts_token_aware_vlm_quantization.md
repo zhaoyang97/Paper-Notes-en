@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Quant Experts: Token-aware Adaptive Error Reconstruction with Mixture of Experts for Large Vision-Language Models Quantization
 description: >-
-  [CVPR 2026][Multimodal VLM][post-training quantization] This paper proposes Quant Experts (QE), a token-aware adaptive quantization error reconstruction framework based on Mixture-of-Experts. It partitions important channels into token-independent (high-frequency, globally consistent) and token-dependent (low-frequency, locally dynamic) groups, compensating global and local quantization errors via low-rank adapters in shared and routed experts, respectively. QE consistently improves VLM performance across diverse quantization settings ranging from W4A6 to W3A16.
+  [CVPR 2026][Multimodal VLM][post-training quantization] This paper proposes Quant Experts (QE), a token-aware adaptive quantization error reconstruction framework based on Mixture-of-Experts. It partitions important chan…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - post-training quantization
-  - VLM
-  - MoE
-  - token-aware
-  - low-rank adapter
-  - channel importance
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "post-training quantization"
+  - "VLM"
+  - "MoE"
+  - "token-aware"
+  - "low-rank adapter"
+  - "channel importance"
 date: 2026-05-08
 content_hash: 360da294c993b4b0
 ---

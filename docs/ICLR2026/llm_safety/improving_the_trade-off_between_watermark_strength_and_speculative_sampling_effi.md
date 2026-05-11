@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Improving the Trade-off Between Watermark Strength and Speculative Sampling Efficiency for Language Models
 description: >-
-  [ICLR 2026][LLM Safety][LLM watermarking] This paper proposes a quantitative measure of watermark strength (expected KL divergence) and fully characterizes the Pareto trade-off curve between watermark strength and speculative sampling efficiency. By pseudo-randomizing the acceptance decision, the method simultaneously achieves maximum watermark strength and optimal sampling efficiency.
+  [ICLR 2026][LLM Safety][LLM watermarking] This paper proposes a quantitative measure of watermark strength (expected KL divergence) and fully characterizes the Pareto trade-off curve between watermark strength and specul…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - LLM watermarking
-  - speculative sampling
-  - watermark strength
-  - sampling efficiency
-  - Pareto frontier
-  - pseudo-random acceptance
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "LLM watermarking"
+  - "speculative sampling"
+  - "watermark strength"
+  - "sampling efficiency"
+  - "Pareto frontier"
+  - "pseudo-random acceptance"
 date: 2026-05-08
 content_hash: 44e3fbd4cd975c1e
 ---

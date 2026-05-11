@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Your LLM Agents are Temporally Blind: The Misalignment Between Tool Use Decisions and Human Time Perception
 description: >-
-  [ACL 2026][LLM Agent][temporal blindness] This paper reveals a "Temporal Blindness" phenomenon in LLM Agents during multi-turn interactions — the inability to adjust tool-calling decisions based on the real elapsed time between messages — and constructs the TicToc benchmark to evaluate this problem.
+  [ACL 2026][LLM Agent][temporal blindness] This paper reveals a "Temporal Blindness" phenomenon in LLM Agents during multi-turn interactions — the inability to adjust tool-calling decisions based on the real elapsed time…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - temporal blindness
-  - tool use decision
-  - human preference alignment
-  - multi-turn dialogue
-  - time sensitivity
+  - "ACL 2026"
+  - "LLM Agent"
+  - "temporal blindness"
+  - "tool use decision"
+  - "human preference alignment"
+  - "multi-turn dialogue"
+  - "time sensitivity"
 date: 2026-05-08
 content_hash: 1c0877d28ea24cf8
 ---

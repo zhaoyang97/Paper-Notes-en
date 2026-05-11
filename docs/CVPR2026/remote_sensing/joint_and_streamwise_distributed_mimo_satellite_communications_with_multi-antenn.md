@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Joint and Streamwise Distributed MIMO Satellite Communications with Multi-Antenna Ground Users
 description: >-
-  [CVPR 2026][Remote Sensing][Distributed MIMO] Two downlink transmission schemes (joint transmission & streamwise transmission) are proposed for distributed LEO satellite systems serving multi-antenna ground users. Through WMMSE precoding design based on statistical CSI and a stream-satellite association strategy based on the Hungarian algorithm, the proposed framework achieves a flexible trade-off between high spectral efficiency and low fronthaul overhead without requiring inter-satellite phase synchronization.
+  [CVPR 2026][Remote Sensing][Distributed MIMO] Two downlink transmission schemes (joint transmission & streamwise transmission) are proposed for distributed LEO satellite systems serving multi-antenna ground users. Throug…
 tags:
-  - CVPR 2026
-  - Remote Sensing
-  - Distributed MIMO
-  - LEO satellite communications
-  - multi-antenna users
-  - non-coherent joint transmission
-  - fronthaul overhead optimization
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Distributed MIMO"
+  - "LEO satellite communications"
+  - "multi-antenna users"
+  - "non-coherent joint transmission"
+  - "fronthaul overhead optimization"
 date: 2026-05-08
 content_hash: 2d788b9352a79e41
 ---

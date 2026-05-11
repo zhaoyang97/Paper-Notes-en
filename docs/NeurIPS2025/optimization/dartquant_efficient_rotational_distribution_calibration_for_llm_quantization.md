@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DartQuant: Efficient Rotational Distribution Calibration for LLM Quantization
 description: >-
-  [NeurIPS 2025][Optimization][LLM quantization] DartQuant proposes a distribution-calibration-based rotation matrix optimization method that drives activation distributions toward uniformity via a Whip loss to reduce quantization error, and replaces expensive manifold optimizers with QR-Orth, achieving 47× speedup and 10× memory reduction on 70B models — enabling large-model rotation calibration on a single RTX 3090 for the first time.
+  [NeurIPS 2025][Optimization][LLM quantization] DartQuant proposes a distribution-calibration-based rotation matrix optimization method that drives activation distributions toward uniformity via a Whip loss to reduce quan…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - LLM quantization
-  - rotation matrix
-  - distribution calibration
-  - orthogonal optimization
-  - post-training quantization
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "LLM quantization"
+  - "rotation matrix"
+  - "distribution calibration"
+  - "orthogonal optimization"
+  - "post-training quantization"
 date: 2026-05-08
 content_hash: 91a46df1ed736904
 ---

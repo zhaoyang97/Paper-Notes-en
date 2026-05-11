@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CTFS: Collaborative Teacher Framework for Forward-Looking Sonar Image Semantic Segmentation with Extremely Limited Labels
 description: >-
-  [CVPR 2026][Segmentation][Sonar image segmentation] This paper proposes CTFS, the first semi-supervised semantic segmentation framework specifically designed for forward-looking sonar (FLS) images. It introduces a multi-teacher collaboration mechanism (one general teacher + two sonar-specific teachers simulating acoustic shadow and energy attenuation, respectively), combined with multi-view pseudo-label reliability assessment (intra-teacher stability × inter-teacher consistency). With only 2% labeled data, CTFS achieves 62.32% mIoU, surpassing the state of the art by 5.08 percentage points.
+  [CVPR 2026][Segmentation][Sonar image segmentation] This paper proposes CTFS, the first semi-supervised semantic segmentation framework specifically designed for forward-looking sonar (FLS) images. It introduces a multi-…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Sonar image segmentation
-  - semi-supervised learning
-  - multi-teacher collaboration
-  - pseudo-label reliability
-  - extremely limited annotations
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Sonar image segmentation"
+  - "semi-supervised learning"
+  - "multi-teacher collaboration"
+  - "pseudo-label reliability"
+  - "extremely limited annotations"
 date: 2026-05-08
 content_hash: b1e16ad4b10f3743
 ---

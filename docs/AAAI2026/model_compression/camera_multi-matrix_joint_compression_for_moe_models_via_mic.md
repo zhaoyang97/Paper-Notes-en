@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CAMERA: Multi-Matrix Joint Compression for MoE Models via Micro-Expert Redundancy Analysis
 description: >-
-  [AAAI 2026][Model Compression][MoE compression] This paper introduces the concept of "micro-expert" to decompose MoE layer outputs as cross-matrix (up/gate/down_proj) linear combinations, enabling structured pruning (Camera-P) and mixed-precision quantization (Camera-Q) based on energy ranking. On Deepseek-MoE-16B, Qwen2-57B, and Qwen3-30B at 20%–60% sparsity, the method comprehensively outperforms NAEE and D²-MoE; analysis of Qwen2-57B requires less than 5 minutes on a single A100 GPU.
+  [AAAI 2026][Model Compression][MoE compression] This paper introduces the concept of "micro-expert" to decompose MoE layer outputs as cross-matrix (up/gate/down_proj) linear combinations…
 tags:
-  - AAAI 2026
-  - Model Compression
-  - MoE compression
-  - micro-expert
-  - structured pruning
-  - mixed-precision quantization
-  - training-free
+  - "AAAI 2026"
+  - "Model Compression"
+  - "MoE compression"
+  - "micro-expert"
+  - "structured pruning"
+  - "mixed-precision quantization"
+  - "training-free"
 date: 2026-05-08
 content_hash: fa1982542236cbac
 ---

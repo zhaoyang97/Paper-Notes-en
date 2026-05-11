@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] GLASS Flows: Efficient Inference for Reward Alignment of Flow and Diffusion Models
 description: >-
-  [ICLR 2026 Oral][Image Generation][flow matching] This paper proposes GLASS (Gaussian Latent Sufficient Statistic) Flows — a novel "flow within a flow" sampling paradigm that recasts the stochastic Markov transition $p_{t'|t}(x_{t'} | x_t)$ as an internal ODE problem via Gaussian sufficient statistic reparameterization, reusing the pretrained denoiser without retraining. This enables Feynman-Kac Steering without sacrificing ODE efficiency or SDE stochasticity, consistently surpassing the Best-of-N ODE baseline on the FLUX text-to-image model and achieving a new state of the art in inference-time reward alignment.
+  [ICLR 2026 Oral][Image Generation][flow matching] This paper proposes GLASS (Gaussian Latent Sufficient Statistic) Flows — a novel "flow within a flow" sampling paradigm that recasts the stochastic Markov transition $p_{…
 tags:
-  - ICLR 2026 Oral
-  - Image Generation
-  - flow matching
-  - diffusion models
-  - reward alignment
-  - Feynman-Kac steering
-  - GLASS
-  - stochastic transitions
-  - inference-time scaling
+  - "ICLR 2026 Oral"
+  - "Image Generation"
+  - "flow matching"
+  - "diffusion models"
+  - "reward alignment"
+  - "Feynman-Kac steering"
+  - "GLASS"
+  - "stochastic transitions"
+  - "inference-time scaling"
 date: 2026-05-08
 content_hash: c601510c9137f8b2
 ---

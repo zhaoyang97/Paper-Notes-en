@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HeROD: Heuristic-inspired Reasoning Priors Facilitate Data-Efficient Referring Object Detection
 description: >-
-  [CVPR 2026][Object Detection][Referring Object Detection] HeROD proposes a lightweight, model-agnostic framework that injects heuristic-inspired spatial and semantic reasoning priors into three stages of a DETR-style detection pipeline (candidate ranking, prediction fusion, and Hungarian matching), significantly improving data efficiency and convergence for referring object detection (ROD) under annotation-scarce conditions.
+  [CVPR 2026][Object Detection][Referring Object Detection] HeROD proposes a lightweight, model-agnostic framework that injects heuristic-inspired spatial and semantic reasoning priors into three stages of a DETR-style det…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - Referring Object Detection
-  - Data-Efficient Learning
-  - Reasoning Priors
-  - DETR
-  - Few-Shot Detection
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Referring Object Detection"
+  - "Data-Efficient Learning"
+  - "Reasoning Priors"
+  - "DETR"
+  - "Few-Shot Detection"
 date: 2026-05-08
 content_hash: 4cc6bf0a0bdc7758
 ---

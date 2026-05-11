@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EgoXtreme: A Dataset for Robust Object Pose Estimation in Egocentric Views under Extreme Conditions
 description: >-
-  [CVPR 2026][Video Understanding][egocentric view] This paper introduces EgoXtreme, the first large-scale benchmark for 6D object pose estimation in egocentric views under extreme conditions, encompassing three real-world challenges — severe motion blur, dynamic illumination, and smoke occlusion — and reveals critical failures of current state-of-the-art pose estimators under these conditions.
+  [CVPR 2026][Video Understanding][egocentric view] This paper introduces EgoXtreme, the first large-scale benchmark for 6D object pose estimation in egocentric views under extreme conditions…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - egocentric view
-  - 6D pose estimation
-  - extreme conditions
-  - smart glasses
-  - benchmark dataset
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "egocentric view"
+  - "6D pose estimation"
+  - "extreme conditions"
+  - "smart glasses"
+  - "benchmark dataset"
 date: 2026-05-08
 content_hash: d04a5035cb3ccbee
 ---

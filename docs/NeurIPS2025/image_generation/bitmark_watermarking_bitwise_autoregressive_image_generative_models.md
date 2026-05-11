@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BitMark: Watermarking Bitwise Autoregressive Image Generative Models
 description: >-
-  [NeurIPS 2025][Image Generation][Bit-level watermarking] This paper proposes BitMark—the first watermarking scheme for bitwise autoregressive image generative models (Infinity, Instella). During generation, it steers bit sequences toward a "green list" by adding logit biases, enabling reliable detection (z-test), high image fidelity (negligible FID change), robustness against diverse attacks, and radioactivity (downstream models trained on watermarked images also carry the watermark), providing a critical tool for preventing model collapse.
+  [NeurIPS 2025][Image Generation][Bit-level watermarking] This paper proposes BitMark—the first watermarking scheme for bitwise autoregressive image generative models (Infinity, Instella). During generation…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Bit-level watermarking
-  - autoregressive image generation
-  - model collapse prevention
-  - radioactive watermarking
-  - Infinity
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Bit-level watermarking"
+  - "autoregressive image generation"
+  - "model collapse prevention"
+  - "radioactive watermarking"
+  - "Infinity"
 date: 2026-05-08
 content_hash: c1eab051824b9221
 ---

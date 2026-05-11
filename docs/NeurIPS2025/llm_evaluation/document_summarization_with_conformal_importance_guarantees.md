@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Document Summarization with Conformal Importance Guarantees
 description: >-
-  [NeurIPS 2025][LLM Evaluation][Document Summarization] This work presents the first application of Conformal Prediction to document summarization. By calibrating a threshold on sentence importance scores, it provides rigorous statistical guarantees on user-controllable coverage ($1-\alpha$) and recall ($\beta$) for extractive summaries. The method is model-agnostic and requires only a small calibration set.
+  [NeurIPS 2025][LLM Evaluation][Document Summarization] This work presents the first application of Conformal Prediction to document summarization. By calibrating a threshold on sentence importance scores…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - Document Summarization
-  - Conformal Prediction
-  - Importance Coverage Guarantee
-  - Extractive Summarization
-  - Distribution-Free
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "Document Summarization"
+  - "Conformal Prediction"
+  - "Importance Coverage Guarantee"
+  - "Extractive Summarization"
+  - "Distribution-Free"
 date: 2026-05-08
 content_hash: b7930cf24d68c4c8
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multivariate Gaussian Representation Learning for Medical Action Evaluation
 description: >-
-  [AAAI 2026][Medical Imaging][CPR Assessment] This paper proposes GaussMedAct, a framework that models joint motion trajectories as multivariate Gaussian mixture distributions combined with a Cartesian-vector dual-stream encoding scheme. It achieves 92.1% Top-1 accuracy on the newly constructed CPREval-6k dataset while requiring only 10% of the computational cost of ST-GCN.
+  [AAAI 2026][Medical Imaging][CPR Assessment] This paper proposes GaussMedAct, a framework that models joint motion trajectories as multivariate Gaussian mixture distributions combined with a Cartesian-vector dual-stream…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - CPR Assessment
-  - Gaussian Mixture Model
-  - Skeleton-based Action Recognition
-  - Spatiotemporal Representation
-  - Medical Dataset
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "CPR Assessment"
+  - "Gaussian Mixture Model"
+  - "Skeleton-based Action Recognition"
+  - "Spatiotemporal Representation"
+  - "Medical Dataset"
 date: 2026-05-08
 content_hash: c41a4119c30b9043
 ---

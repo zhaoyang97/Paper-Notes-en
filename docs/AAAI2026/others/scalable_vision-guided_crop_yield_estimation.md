@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Scalable Vision-Guided Crop Yield Estimation
 description: >-
-  [AAAI 2026][crop yield estimation] This paper proposes a crop yield estimation method based on **Prediction-Powered Inference (PPI++)**, which leverages vision models trained on field photographs to supplement costly ground-truth crop cut measurements. The approach guarantees asymptotic unbiasedness while increasing effective sample size by up to 73%, enabling more accurate and cost-efficient regional yield estimation for agricultural insurance.
+  [AAAI 2026][crop yield estimation] This paper proposes a crop yield estimation method based on **Prediction-Powered Inference (PPI++)**…
 tags:
-  - AAAI 2026
-  - crop yield estimation
-  - prediction-powered inference
-  - computer vision
-  - uncertainty quantification
-  - agricultural insurance
+  - "AAAI 2026"
+  - "crop yield estimation"
+  - "prediction-powered inference"
+  - "computer vision"
+  - "uncertainty quantification"
+  - "agricultural insurance"
 date: 2026-05-08
 content_hash: fac4e5aa8b9d2b60
 ---

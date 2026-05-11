@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Rethinking Direct Preference Optimization in Diffusion Models
 description: >-
-  [AAAI 2026 (Oral)][LLM Alignment][DPO] Two orthogonal and plug-and-play improvement strategies are proposed to enhance preference optimization in diffusion models: stable reference model updating (relaxing the frozen constraint with a regularization anchor) and timestep-aware training (adaptive weighting to balance reward scales across timesteps). Both strategies can be embedded into various preference optimization algorithms such as DPO and IPO, achieving state-of-the-art performance on human preference evaluation benchmarks.
+  [AAAI 2026 (Oral)][LLM Alignment][DPO] Two orthogonal and plug-and-play improvement strategies are proposed to enhance preference optimization in diffusion models: stable reference model updating (relaxing the frozen con…
 tags:
-  - AAAI 2026 (Oral)
-  - LLM Alignment
-  - DPO
-  - diffusion models
-  - reference model update
-  - timestep-awareness
-  - T2I preference alignment
+  - "AAAI 2026 (Oral)"
+  - "LLM Alignment"
+  - "DPO"
+  - "diffusion models"
+  - "reference model update"
+  - "timestep-awareness"
+  - "T2I preference alignment"
 date: 2026-05-08
 content_hash: 43c5b7dd957fa0a8
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Erasure or Erosion? Evaluating Compositional Degradation in Unlearned Text-To-Image Diffusion Models
 description: >-
-  [CVPR 2026][Image Generation][Concept Erasure] This paper systematically evaluates the trade-off between safety (erasure success rate) and compositional generation capability across 16 text-to-image diffusion model unlearning methods. It reveals that aggressive erasure strategies, while removing undesirable content, severely damage attribute binding, spatial reasoning, and counting abilities, emphasizing that safety interventions should not come at the expense of the model's semantic logic.
+  [CVPR 2026][Image Generation][Concept Erasure] This paper systematically evaluates the trade-off between safety (erasure success rate) and compositional generation capability across 16 text-to-image diffusion model unlea…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Concept Erasure
-  - Compositional Generation
-  - Text-to-Image
-  - Diffusion Models
-  - Unlearning
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Concept Erasure"
+  - "Compositional Generation"
+  - "Text-to-Image"
+  - "Diffusion Models"
+  - "Unlearning"
 date: 2026-05-08
 content_hash: edc10e815ba370d8
 ---

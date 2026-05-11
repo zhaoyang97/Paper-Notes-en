@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TrajGuard: Streaming Hidden-state Trajectory Detection for Decoding-time Jailbreak Defense
 description: >-
-  [ACL 2026][LLM Alignment][Jailbreak Defense] This paper proposes TrajGuard, a training-free decoding-time jailbreak defense framework that quantifies risk in real time by aggregating hidden-state trajectories from key layers within a sliding window, and triggers a lightweight semantic judge only when risk persistently exceeds a threshold. TrajGuard achieves an average defense rate of 95% across 12 jailbreak attacks, with a detection latency of only 5.2 ms/token and a false positive rate below 1.5%.
+  [ACL 2026][LLM Alignment][Jailbreak Defense] This paper proposes TrajGuard, a training-free decoding-time jailbreak defense framework that quantifies risk in real time by aggregating hidden-state trajectories from key la…
 tags:
-  - ACL 2026
-  - LLM Alignment
-  - Jailbreak Defense
-  - Hidden-state Trajectory
-  - Decoding-time Detection
-  - Real-time Safety
-  - Training-free Defense
+  - "ACL 2026"
+  - "LLM Alignment"
+  - "Jailbreak Defense"
+  - "Hidden-state Trajectory"
+  - "Decoding-time Detection"
+  - "Real-time Safety"
+  - "Training-free Defense"
 date: 2026-05-08
 content_hash: 7bd1a53fd17be977
 ---

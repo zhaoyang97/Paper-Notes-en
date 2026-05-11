@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Embodied Image Captioning: Self-supervised Learning Agents for Spatially Coherent Image Descriptions
 description: >-
-  [ICCV 2025][LLM Agent][Embodied Perception] A three-stage self-supervised framework is proposed that significantly improves cross-view description consistency and accuracy for the same object in indoor environments, achieved through agent-driven multi-view observation collection, LLM consensus-based pseudo-label generation, and contrastive fine-tuning of the captioner.
+  [ICCV 2025][LLM Agent][Embodied Perception] A three-stage self-supervised framework is proposed that significantly improves cross-view description consistency and accuracy for the same object in indoor environments…
 tags:
-  - ICCV 2025
-  - LLM Agent
-  - Embodied Perception
-  - Image Captioning
-  - Self-supervised Learning
-  - Pseudo-labeling
-  - Contrastive Learning
+  - "ICCV 2025"
+  - "LLM Agent"
+  - "Embodied Perception"
+  - "Image Captioning"
+  - "Self-supervised Learning"
+  - "Pseudo-labeling"
+  - "Contrastive Learning"
 date: 2026-05-08
 content_hash: 3e5791ce43417b89
 ---

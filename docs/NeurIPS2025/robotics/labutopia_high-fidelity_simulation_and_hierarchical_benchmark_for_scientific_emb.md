@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LabUtopia: High-Fidelity Simulation and Hierarchical Benchmark for Scientific Embodied Agents
 description: >-
-  [NeurIPS 2025][Robotics][embodied agent] This paper proposes LabUtopia — a high-fidelity simulation and hierarchical benchmark suite for scientific laboratory environments. It comprises the LabSim simulator with chemical reaction modeling, LabScene for procedural laboratory scene generation, and LabBench, a five-level benchmark spanning atomic operations to long-horizon mobile manipulation. The suite reveals significant bottlenecks in existing imitation learning methods with respect to long-horizon experimental workflows and object generalization.
+  [NeurIPS 2025][Robotics][embodied agent] This paper proposes LabUtopia — a high-fidelity simulation and hierarchical benchmark suite for scientific laboratory environments. It comprises the LabSim simulator with chemical…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - embodied agent
-  - laboratory simulation
-  - chemical reaction
-  - hierarchical benchmark
-  - imitation learning
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "embodied agent"
+  - "laboratory simulation"
+  - "chemical reaction"
+  - "hierarchical benchmark"
+  - "imitation learning"
 date: 2026-05-08
 content_hash: 716cd617987ecd70
 ---

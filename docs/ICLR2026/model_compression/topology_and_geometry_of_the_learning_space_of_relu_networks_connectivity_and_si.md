@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Topology and Geometry of the Learning Space of ReLU Networks: Connectivity and Size
 description: >-
-  [ICLR 2026][Model Compression][ReLU networks] From the perspectives of algebraic geometry and algebraic topology, this paper systematically investigates the connectivity and singularity of the parameter space of feedforward ReLU networks defined on general DAG architectures. It reveals the critical role of bottleneck nodes and balance conditions in determining the topological structure of the parameter space, and establishes a theoretical connection between singularities and differentiable pruning.
+  [ICLR 2026][Model Compression][ReLU networks] From the perspectives of algebraic geometry and algebraic topology, this paper systematically investigates the connectivity and singularity of the parameter space of feedforw…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - ReLU networks
-  - parameter space topology
-  - connectivity
-  - singularity
-  - DAG architecture
-  - differentiable pruning
+  - "ICLR 2026"
+  - "Model Compression"
+  - "ReLU networks"
+  - "parameter space topology"
+  - "connectivity"
+  - "singularity"
+  - "DAG architecture"
+  - "differentiable pruning"
 date: 2026-05-08
 content_hash: 81228b13669b172f
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Lesson in Splats: Teacher-Guided Diffusion for 3D Gaussian Splats Generation with 2D Supervision
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes a novel framework for training 3D diffusion models using only 2D image supervision. By employing a deterministic 3D reconstruction model as a "noisy teacher" to generate 3D noisy samples, and combining a multi-step denoising strategy with cycle-consistency regularization, the proposed method achieves 3D Gaussian Splatting generation quality that surpasses the teacher model (PSNR gain of 0.5–0.85).
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes a novel framework for training 3D diffusion models using only 2D image supervision. By employing a deterministic 3D reconstruction model as a "noisy teach…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - Diffusion Models
-  - 2D Supervision
-  - Teacher Guidance
-  - Novel View Synthesis
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Diffusion Models"
+  - "2D Supervision"
+  - "Teacher Guidance"
+  - "Novel View Synthesis"
 date: 2026-05-08
 content_hash: b0243e10733ac8e4
 ---

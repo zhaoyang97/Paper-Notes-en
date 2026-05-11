@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Divide, Harmonize, Then Conquer It: Shooting Multi-Commodity Flow Problems with Multimodal Language Models
 description: >-
-  [ICLR 2026][Reinforcement Learning][Multi-Commodity Flow] This paper proposes Pram, the first framework to leverage multimodal language models (MLMs) for solving multi-commodity flow (MCF) problems. It decomposes the original problem into subproblems via partitioning and employs multi-agent reinforcement learning (MARL) to coordinate global consistency across subproblems. Theoretical convergence to the optimal solution is proven, and empirical results show that Pram is 1–2 orders of magnitude faster than LP solvers while achieving near-optimal performance.
+  [ICLR 2026][Reinforcement Learning][Multi-Commodity Flow] This paper proposes Pram, the first framework to leverage multimodal language models (MLMs) for solving multi-commodity flow (MCF) problems. It decomposes the ori…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Multi-Commodity Flow
-  - Multimodal Language Models
-  - Multi-Agent Reinforcement Learning
-  - Network Optimization
-  - Partitioned Solving
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Multi-Commodity Flow"
+  - "Multimodal Language Models"
+  - "Multi-Agent Reinforcement Learning"
+  - "Network Optimization"
+  - "Partitioned Solving"
 date: 2026-05-08
 content_hash: b951087c991e3290
 ---

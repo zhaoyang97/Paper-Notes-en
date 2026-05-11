@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] NutriScreener: Retrieval-Augmented Multi-Pose Graph Attention Network for Malnourishment Screening
 description: >-
-  [AAAI 2026][Medical Imaging][Childhood malnutrition detection] This paper proposes NutriScreener, a framework combining a CLIP visual encoder, a multi-pose graph attention network (GAT), and a FAISS-based retrieval-augmented classification/regression module. Through cross-pose attention and category-enhanced retrieval, the system achieves robust childhood malnutrition detection and anthropometric prediction, attaining 0.79 recall and 0.82 AUC on cross-continental datasets including AnthroVision, with clinician ratings of 4.3/5 for accuracy and 4.6/5 for efficiency.
+  [AAAI 2026][Medical Imaging][Childhood malnutrition detection] This paper proposes NutriScreener, a framework combining a CLIP visual encoder, a multi-pose graph attention network (GAT)…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Childhood malnutrition detection
-  - multi-pose imaging
-  - graph attention network
-  - CLIP
-  - retrieval augmentation
-  - anthropometric prediction
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Childhood malnutrition detection"
+  - "multi-pose imaging"
+  - "graph attention network"
+  - "CLIP"
+  - "retrieval augmentation"
+  - "anthropometric prediction"
 date: 2026-05-08
 content_hash: 6c96a92843132790
 ---

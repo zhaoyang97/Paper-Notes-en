@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] AdaptGrad: Adaptive Sampling to Reduce Noise
 description: >-
-  [NeurIPS 2025][Gradient smoothing] AdaptGrad analyzes the theoretical origin of noise in SmoothGrad—out-of-boundary (OOB) sampling behavior—and proposes adaptively adjusting the Gaussian sampling variance for each input dimension to bound the additional noise. The method nearly eliminates gradient noise while revealing richer fine-grained features, requires minimal implementation effort, and is composable with arbitrary gradient-based explanation methods.
+  [NeurIPS 2025][Interpretability][Gradient smoothing] AdaptGrad analyzes the theoretical origin of noise in SmoothGrad—out-of-boundary (OOB) sampling behavior—and proposes adaptively adjusting the Gaussian sampling varian…
 tags:
-  - NeurIPS 2025
-  - Gradient smoothing
-  - saliency maps
-  - interpretability
-  - adaptive sampling
-  - SmoothGrad
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "Gradient smoothing"
+  - "saliency maps"
+  - "adaptive sampling"
+  - "SmoothGrad"
 date: 2026-05-08
 content_hash: 8d388cd1fcd95c1b
 ---

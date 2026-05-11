@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Fixing the Broken Compass: Diagnosing and Improving Inference-Time Reward Modeling
 description: >-
-  [ICLR 2026][LLM Reasoning][Reward Model] This paper systematically diagnoses three failure modes of inference-time reward models (RMs)—performance degradation on easy problems, diminished discriminability as sample size increases, and accuracy loss under high search diversity—and proposes CRISP, an algorithm that mitigates these issues via answer-clustering-based reward aggregation and stepwise prefix guidance, achieving accuracy improvements of up to 5%.
+  [ICLR 2026][LLM Reasoning][Reward Model] This paper systematically diagnoses three failure modes of inference-time reward models (RMs)—performance degradation on easy problems…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Reward Model
-  - inference-time scaling
-  - CRISP
-  - Best-of-N
-  - MCTS
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "Reward Model"
+  - "inference-time scaling"
+  - "CRISP"
+  - "Best-of-N"
+  - "MCTS"
 date: 2026-05-08
 content_hash: eed8f4be17bdee5d
 ---

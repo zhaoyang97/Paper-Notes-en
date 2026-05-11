@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MPA: Multimodal Prototype Augmentation for Few-Shot Learning
 description: >-
-  [AAAI 2026][Medical Imaging][Few-Shot Learning] This paper proposes MPA, a framework that enhances prototype quality through three components: LLM-based Multi-Variant Semantic Enhancement (LMSE) for enriching semantic information, Hierarchical Multi-View Augmentation (HMA) for diversifying visual features, and an Adaptive Uncertain Class Absorber (AUCA) for modeling inter-class uncertainty. MPA achieves significant improvements over existing methods on 4 single-domain and 6 cross-domain few-shot learning benchmarks, surpassing the second-best method by 12.29% and 24.56% under the 5-way 1-shot setting for single-domain and cross-domain scenarios, respectively.
+  [AAAI 2026][Medical Imaging][Few-Shot Learning] This paper proposes MPA, a framework that enhances prototype quality through three components: LLM-based Multi-Variant Semantic Enhancement (LMSE) for enriching semantic in…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Few-Shot Learning
-  - Multimodal Prototype
-  - LLM Semantic Enhancement
-  - Data Augmentation
-  - CLIP
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Few-Shot Learning"
+  - "Multimodal Prototype"
+  - "LLM Semantic Enhancement"
+  - "Data Augmentation"
+  - "CLIP"
 date: 2026-05-08
 content_hash: 870f7db4c8ddd291
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Constrained and Robust Policy Synthesis with Satisfiability-Modulo-Probabilistic-Model-Checking
 description: >-
-  [AAAI 2026][Reinforcement Learning][Markov Decision Processes] This paper proposes the first framework capable of efficiently computing robust policies under arbitrary structural constraints. By tightly integrating a SAT solver with probabilistic model checking algorithms, the framework enables constrained and robust policy synthesis for finite Markov Decision Processes (MDPs), with feasibility and competitiveness validated across hundreds of benchmarks.
+  [AAAI 2026][Reinforcement Learning][Markov Decision Processes] This paper proposes the first framework capable of efficiently computing robust policies under arbitrary structural constraints. By tightly integrating a SAT…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - Markov Decision Processes
-  - Robust Policy
-  - Constraint Satisfaction
-  - Probabilistic Model Checking
-  - SAT Solving
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "Markov Decision Processes"
+  - "Robust Policy"
+  - "Constraint Satisfaction"
+  - "Probabilistic Model Checking"
+  - "SAT Solving"
 date: 2026-05-08
 content_hash: 4e74988a6feef83e
 ---

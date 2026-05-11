@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Maximizing Asynchronicity in Event-based Neural Networks
 description: >-
-  [ICLR 2026][Self-Supervised Learning][event camera] This paper proposes EVA, a framework that treats events as language tokens and employs an RWKV-6-based linear attention asynchronous encoder to update features event-by-event. Combined with a self-supervised learning scheme consisting of Multi-Representation Prediction (MRP) and Next-Representation Prediction (NRP), EVA learns generalizable features and, for the first time, successfully tackles the challenging object detection task within the Asynchronous-to-Synchronous (A2S) paradigm (0.477 mAP on the Gen1 dataset).
+  [ICLR 2026][Self-Supervised Learning][event camera] This paper proposes EVA, a framework that treats events as language tokens and employs an RWKV-6-based linear attention asynchronous encoder to update features event-by…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
-  - event camera
-  - asynchronous processing
-  - linear attention
-  - RWKV-6
-  - A2S
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "event camera"
+  - "asynchronous processing"
+  - "linear attention"
+  - "RWKV-6"
+  - "A2S"
 date: 2026-05-08
 content_hash: d1a3a66497810544
 ---

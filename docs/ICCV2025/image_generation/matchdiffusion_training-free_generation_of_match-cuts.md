@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] MatchDiffusion: Training-free Generation of Match-Cuts
 description: >-
-  [Image Generation] MatchDiffusion is proposed as a training-free two-stage pipeline that exploits the property of diffusion models—whereby early denoising steps establish the macroscopic scene structure and late steps add semantic details—to automatically generate match-cut video pairs via Joint Diffusion and Disjoint Diffusion.
+  [Image Generation] MatchDiffusion is proposed as a training-free two-stage pipeline that exploits the property of diffusion models—whereby early denoising steps establish the macroscopic scene structure and late steps ad…
 tags:
-  - Image Generation
+  - "Image Generation"
 date: 2026-05-08
 content_hash: 1698169621769d5d
 ---

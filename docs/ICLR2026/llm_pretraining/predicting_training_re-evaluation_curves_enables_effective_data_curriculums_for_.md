@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Predicting Training Re-evaluation Curves Enables Effective Data Curriculums
 description: >-
-  [ICLR 2026][LLM Pretraining][training re-evaluation curves] This paper proposes the Training Re-evaluation Curve (TREC) as a diagnostic tool that analyzes the loss of a fully trained model evaluated on training data at each timestep, thereby guiding optimal placement of high-quality data. The paper further demonstrates that the shape of TREC can be predicted via the implicit EMA coefficient of AdamW, enabling curriculum design without any actual training runs.
+  [ICLR 2026][LLM Pretraining][training re-evaluation curves] This paper proposes the Training Re-evaluation Curve (TREC) as a diagnostic tool that analyzes the loss of a fully trained model evaluated on training data at e…
 tags:
-  - ICLR 2026
-  - LLM Pretraining
-  - training re-evaluation curves
-  - data curriculum learning
-  - AdamW timescale
-  - high-quality data placement
-  - continual pretraining
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "training re-evaluation curves"
+  - "data curriculum learning"
+  - "AdamW timescale"
+  - "high-quality data placement"
+  - "continual pretraining"
 date: 2026-05-08
 content_hash: 157aeee74635f648
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] On Stealing Graph Neural Network Models
 description: >-
-  [AAAI2026][Graph Learning][GNN model stealing] This paper demonstrates that under strict query budgets (e.g., only 100 queries), an attacker can efficiently steal a GNN model via a two-stage approach: (1) locally obtaining an encoder (randomly initialized or SSL-trained) without interacting with the victim, and (2) strategically selecting queries via K-means clustering. On the Physics dataset, the proposed method achieves 91% accuracy with only 100 queries, whereas the current state-of-the-art requires approximately 5,000 queries plus additional access to victim embeddings to reach comparable performance.
+  [AAAI2026][Graph Learning][GNN model stealing] This paper demonstrates that under strict query budgets (e.g., only 100 queries), an attacker can efficiently steal a GNN model via a two-stage approach: (1) locally obtaini…
 tags:
-  - AAAI2026
-  - Graph Learning
-  - GNN model stealing
-  - model security
-  - self-supervised learning
-  - query selection
-  - black-box attack
-  - inductive/transductive
+  - "AAAI2026"
+  - "Graph Learning"
+  - "GNN model stealing"
+  - "model security"
+  - "self-supervised learning"
+  - "query selection"
+  - "black-box attack"
+  - "inductive/transductive"
 date: 2026-05-08
 content_hash: 0362e76db9067a23
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Agint: Agentic Graph Compilation for Software Engineering Agents
 description: >-
-  [NeurIPS 2025 (DL4C Workshop)][Graph Learning][agentic graph compiler] This paper proposes Agint, an agentic graph compiler that compiles natural language intent into typed, effect-aware DAGs (directed acyclic graphs) through a six-level type floor (TEXT→TYPED→SPEC→STUB→SHIM→PURE), progressively refining natural language into executable code while supporting executable intermediate representations, a hybrid JIT runtime, and a Unix-style composable toolchain.
+  [NeurIPS 2025 (DL4C Workshop)][Graph Learning][agentic graph compiler] This paper proposes Agint, an agentic graph compiler that compiles natural language intent into typed…
 tags:
-  - NeurIPS 2025 (DL4C Workshop)
-  - Graph Learning
-  - agentic graph compiler
-  - DAG compilation
-  - type system
-  - code generation
-  - workflow orchestration
+  - "NeurIPS 2025 (DL4C Workshop)"
+  - "Graph Learning"
+  - "agentic graph compiler"
+  - "DAG compilation"
+  - "type system"
+  - "code generation"
+  - "workflow orchestration"
 date: 2026-05-08
 content_hash: 443834069ea54a3a
 ---

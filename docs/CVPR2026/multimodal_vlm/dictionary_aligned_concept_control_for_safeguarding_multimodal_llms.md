@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dictionary-Aligned Concept Control for Safeguarding Multimodal LLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][Multimodal safety] This paper proposes DACO, a framework that constructs a multimodal concept dictionary of 15,000 concepts from WordNet and CC-3M, and combines it with sparse autoencoders (SAE) to achieve fine-grained concept control over frozen MLLM activation spaces, significantly improving safety across multiple benchmarks while preserving general capability.
+  [CVPR 2026][Multimodal VLM][Multimodal safety] This paper proposes DACO, a framework that constructs a multimodal concept dictionary of 15,000 concepts from WordNet and CC-3M…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Multimodal safety
-  - activation steering
-  - sparse autoencoders
-  - concept dictionary
-  - jailbreak defense
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Multimodal safety"
+  - "activation steering"
+  - "sparse autoencoders"
+  - "concept dictionary"
+  - "jailbreak defense"
 date: 2026-05-08
 content_hash: 3120e258662ee1b3
 ---

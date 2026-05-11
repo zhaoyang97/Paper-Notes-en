@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Parameter-efficient Prompt Tuning and Hierarchical Textual Guidance for Few-shot Whole Slide Image Classification
 description: >-
-  [CVPR 2026][Medical Imaging][Whole slide image classification] HIPSS introduces two key innovations for few-shot WSI classification: (1) parameter-efficient prompt tuning via Scaling and Shifting Features (SSF) as a replacement for CoOp, substantially reducing the number of trainable parameters; and (2) a soft hierarchical textual guidance strategy that exploits the pretrained knowledge of VLMs and the inherent hierarchical structure of WSIs without hard patch filtering. The method achieves up to 13.8% improvement across three cancer datasets.
+  [CVPR 2026][Medical Imaging][Whole slide image classification] HIPSS introduces two key innovations for few-shot WSI classification: (1) parameter-efficient prompt tuning via Scaling and Shifting Features (SSF) as a repl…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Whole slide image classification
-  - few-shot learning
-  - vision-language models
-  - parameter-efficient fine-tuning
-  - hierarchical textual guidance
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Whole slide image classification"
+  - "few-shot learning"
+  - "vision-language models"
+  - "parameter-efficient fine-tuning"
+  - "hierarchical textual guidance"
 date: 2026-05-08
 content_hash: 61e0f4691f3a9175
 ---

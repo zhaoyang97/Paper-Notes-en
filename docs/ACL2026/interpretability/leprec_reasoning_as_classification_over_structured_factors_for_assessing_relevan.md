@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] LePREC: Reasoning as Classification over Structured Factors for Assessing Relevance of Legal Issues
 description: >-
-  [ACL 2026][Legal issue relevance assessment] This paper proposes LePREC, a neuro-symbolic framework inspired by legal professionals' analytical processes. It uses LLMs to generate reasoning question–answer pairs that convert unstructured legal text into structured features, which are then fed into a sparse linear model for relevance classification. On the LIC dataset constructed from 769 Malaysian contract law cases, LePREC achieves 30–40% improvement over LLM baselines such as GPT-4o.
+  [ACL 2026][Interpretability][Legal issue relevance assessment] This paper proposes LePREC, a neuro-symbolic framework inspired by legal professionals' analytical processes. It uses LLMs to generate reasoning question–ans…
 tags:
-  - ACL 2026
-  - Legal issue relevance assessment
-  - neuro-symbolic reasoning
-  - feature selection
-  - legal AI
-  - structured factor classification
+  - "ACL 2026"
+  - "Interpretability"
+  - "Legal issue relevance assessment"
+  - "neuro-symbolic reasoning"
+  - "feature selection"
+  - "legal AI"
+  - "structured factor classification"
 date: 2026-05-08
 content_hash: ea313a225c864901
 ---

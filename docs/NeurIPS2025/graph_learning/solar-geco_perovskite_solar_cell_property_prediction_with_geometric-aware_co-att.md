@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Solar-GECO: Perovskite Solar Cell Property Prediction with Geometric-Aware Co-Attention
 description: >-
-  [NeurIPS 2025][Graph Learning][Perovskite solar cells] This paper proposes Solar-GECO, a multimodal framework that encodes the 3D crystal structure of the perovskite absorber layer via a geometric GNN and the remaining device layers via LLM text embeddings, fuses them through a co-attention module, and predicts power conversion efficiency (PCE) along with its uncertainty, reducing MAE from 3.066 to 2.936.
+  [NeurIPS 2025][Graph Learning][Perovskite solar cells] This paper proposes Solar-GECO, a multimodal framework that encodes the 3D crystal structure of the perovskite absorber layer via a geometric GNN and the remaining d…
 tags:
-  - NeurIPS 2025
-  - Graph Learning
-  - Perovskite solar cells
-  - geometric graph neural networks
-  - multimodal fusion
-  - co-attention mechanism
-  - uncertainty quantification
+  - "NeurIPS 2025"
+  - "Graph Learning"
+  - "Perovskite solar cells"
+  - "geometric graph neural networks"
+  - "multimodal fusion"
+  - "co-attention mechanism"
+  - "uncertainty quantification"
 date: 2026-05-08
 content_hash: d2f90631eedbc4e8
 ---

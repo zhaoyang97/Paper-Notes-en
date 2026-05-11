@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Faithful Group Shapley Value
 description: >-
-  [NeurIPS 2025][Data Shapley] This paper proposes the Faithful Group Shapley Value (FGSV), the unique group-level data valuation method satisfying five axioms including "faithfulness," which effectively defends against the "shell company attack" (artificially inflating valuation by splitting subgroups), and introduces an efficient approximation algorithm with $O(n \cdot \text{Poly}(\log n))$ complexity.
+  [NeurIPS 2025][Data Shapley] This paper proposes the Faithful Group Shapley Value (FGSV), the unique group-level data valuation method satisfying five axioms including "faithfulness…
 tags:
-  - NeurIPS 2025
-  - Data Shapley
-  - Group-Level Data Valuation
-  - Faithfulness Axiom
-  - Shell Company Attack
-  - Copyright Attribution
-  - Explainable AI
+  - "NeurIPS 2025"
+  - "Data Shapley"
+  - "Group-Level Data Valuation"
+  - "Faithfulness Axiom"
+  - "Shell Company Attack"
+  - "Copyright Attribution"
+  - "Explainable AI"
 date: 2026-05-08
 content_hash: 399590c97137377d
 ---

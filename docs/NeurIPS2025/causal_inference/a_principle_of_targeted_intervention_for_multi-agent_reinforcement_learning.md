@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] A Principle of Targeted Intervention for Multi-Agent Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Causal Inference][Multi-Agent Reinforcement Learning] This paper proposes a **Targeted Intervention paradigm** grounded in Multi-Agent Influence Diagrams (MAIDs), which applies **Pre-Strategy Intervention (PSI)** exclusively to a single target agent to guide the entire multi-agent system toward a preferred Nash equilibrium satisfying additional desired outcomes, without requiring global intervention over all agents.
+  [NeurIPS 2025][Causal Inference][Multi-Agent Reinforcement Learning] This paper proposes a **Targeted Intervention paradigm** grounded in Multi-Agent Influence Diagrams (MAIDs)…
 tags:
-  - NeurIPS 2025
-  - Causal Inference
-  - Multi-Agent Reinforcement Learning
-  - Multi-Agent Influence Diagrams
-  - Targeted Intervention
-  - Nash Equilibrium Selection
+  - "NeurIPS 2025"
+  - "Causal Inference"
+  - "Multi-Agent Reinforcement Learning"
+  - "Multi-Agent Influence Diagrams"
+  - "Targeted Intervention"
+  - "Nash Equilibrium Selection"
 date: 2026-05-08
 content_hash: cfd1b099057cec18
 ---

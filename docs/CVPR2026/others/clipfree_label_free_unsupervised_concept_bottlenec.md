@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] U-F²-CBM: CLIP-Free, Label Free, Unsupervised Concept Bottleneck Models
 description: >-
-  [CVPR 2026][concept bottleneck model] This paper proposes TextUnlock, a method that trains a lightweight MLP to project features from an arbitrary frozen visual classifier into the text embedding space—while preserving the original classifier's output distribution—requiring no CLIP, no annotations, and no linear probe training. Any legacy classifier can thereby be converted into an interpretable concept bottleneck model. Evaluated on 40+ architectures, the approach surpasses even supervised CLIP-based CBMs.
+  [CVPR 2026][concept bottleneck model] This paper proposes TextUnlock, a method that trains a lightweight MLP to project features from an arbitrary frozen visual classifier into the text embedding space—while preserving t…
 tags:
-  - CVPR 2026
-  - concept bottleneck model
-  - CLIP-free
-  - label-free
-  - unsupervised
-  - interpretability
-  - TextUnlock
+  - "CVPR 2026"
+  - "concept bottleneck model"
+  - "CLIP-free"
+  - "label-free"
+  - "unsupervised"
+  - "interpretability"
+  - "TextUnlock"
 date: 2026-05-08
 content_hash: b733098ff17aa222
 ---

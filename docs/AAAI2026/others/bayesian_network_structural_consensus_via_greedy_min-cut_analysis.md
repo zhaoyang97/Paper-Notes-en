@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Bayesian Network Structural Consensus via Greedy Min-Cut Analysis
 description: >-
-  [AAAI 2026][Bayesian network] This paper proposes the MCBNC algorithm, which quantifies the structural support of each edge via min-cut analysis and embeds this scoring into the backward phase of Greedy Equivalence Search (GES) to iteratively prune redundant edges from a fused Bayesian network. The method produces sparser and more accurate consensus structures without accessing any data, making it well-suited for federated learning scenarios.
+  [AAAI 2026][Bayesian network] This paper proposes the MCBNC algorithm, which quantifies the structural support of each edge via min-cut analysis and embeds this scoring into the backward phase of Greedy Equivalence Searc…
 tags:
-  - AAAI 2026
-  - Bayesian network
-  - structural fusion
-  - consensus
-  - min-cut
-  - max-flow
-  - greedy equivalence search
-  - federated learning
-  - treewidth
+  - "AAAI 2026"
+  - "Bayesian network"
+  - "structural fusion"
+  - "consensus"
+  - "min-cut"
+  - "max-flow"
+  - "greedy equivalence search"
+  - "federated learning"
+  - "treewidth"
 date: 2026-05-08
 content_hash: 395b2d317cda2439
 ---

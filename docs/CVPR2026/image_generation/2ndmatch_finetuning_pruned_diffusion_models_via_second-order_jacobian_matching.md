@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] 2ndMatch: Finetuning Pruned Diffusion Models via Second-Order Jacobian Matching
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Model] This paper proposes 2ndMatch, a fine-tuning framework for pruned diffusion models that aligns the second-order Jacobian matrix $J^\top J$ between the pruned and original models—inspired by finite-time Lyapunov exponents (FTLE)—to match their sensitivity to input perturbations over time, thereby significantly closing the generation quality gap.
+  [CVPR 2026][Image Generation][Diffusion Model] This paper proposes 2ndMatch, a fine-tuning framework for pruned diffusion models that aligns the second-order Jacobian matrix $J^\top J$ between the pruned and original mod…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Model
-  - Pruning
-  - Jacobian Matching
-  - Finite-Time Lyapunov Exponent
-  - Knowledge Distillation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Model"
+  - "Pruning"
+  - "Jacobian Matching"
+  - "Finite-Time Lyapunov Exponent"
+  - "Knowledge Distillation"
 date: 2025-06-06
 content_hash: 8082ab6e4ad8eb46
 ---

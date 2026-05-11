@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Adaptive Learned Image Compression with Graph Neural Networks
 description: >-
-  [CVPR 2026][Graph Learning][Image Compression] GLIC reformulates the nonlinear transforms in learned image compression (LIC) from fixed convolutions or window-based attention into content-adaptive graph neural network operations. A dual-scale graph determines *where to connect*, while a complexity-aware mechanism determines *how much to connect*, enabling more effective modeling of both local and long-range redundancies. GLIC consistently outperforms traditional codecs and recent LIC baselines across three standard benchmarks.
+  [CVPR 2026][Graph Learning][Image Compression] GLIC reformulates the nonlinear transforms in learned image compression (LIC) from fixed convolutions or window-based attention into content-adaptive graph neural network op…
 tags:
-  - CVPR 2026
-  - Graph Learning
-  - Image Compression
-  - GNN
-  - Dual-Scale Sampling
-  - RMS Gradient
-  - Content-Adaptive Connectivity
+  - "CVPR 2026"
+  - "Graph Learning"
+  - "Image Compression"
+  - "GNN"
+  - "Dual-Scale Sampling"
+  - "RMS Gradient"
+  - "Content-Adaptive Connectivity"
 date: 2026-05-08
 content_hash: 1c16766c24039e65
 ---

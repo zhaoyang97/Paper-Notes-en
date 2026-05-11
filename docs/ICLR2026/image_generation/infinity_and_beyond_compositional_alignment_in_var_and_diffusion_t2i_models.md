@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Infinity and Beyond: Compositional Alignment in VAR and Diffusion T2I Models
 description: >-
-  [ICLR 2026][Image Generation][Compositional Alignment] This paper presents the first systematic comparison of Visual Autoregressive (VAR) models and diffusion models on compositional text-image alignment. Evaluating 6 T2I models across T2I-CompBench++ and GenEval benchmarks, it finds that Infinity-8B achieves state-of-the-art performance on nearly all compositional dimensions, demonstrating a clear architectural advantage of VAR models in compositional generation.
+  [ICLR 2026][Image Generation][Compositional Alignment] This paper presents the first systematic comparison of Visual Autoregressive (VAR) models and diffusion models on compositional text-image alignment. Evaluating 6 T2…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Compositional Alignment
-  - VAR Autoregression
-  - T2I-CompBench++
-  - GenEval
-  - Benchmark Evaluation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Compositional Alignment"
+  - "VAR Autoregression"
+  - "T2I-CompBench++"
+  - "GenEval"
+  - "Benchmark Evaluation"
 date: 2026-05-08
 content_hash: 1ad5370c4207205b
 ---

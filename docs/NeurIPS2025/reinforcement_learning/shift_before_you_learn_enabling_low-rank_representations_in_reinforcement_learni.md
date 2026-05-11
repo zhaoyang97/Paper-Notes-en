@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Shift Before You Learn: Enabling Low-Rank Representations in Reinforcement Learning
 description: >-
-  [NeurIPS 2025 (Spotlight)][Reinforcement Learning][Low-Rank] This paper reveals that the successor measure in reinforcement learning is not intrinsically approximately low-rank, but a "shifted successor measure"—obtained by skipping the first few transition steps—naturally exhibits low-rank structure. A novel Type II Poincaré inequality is introduced to quantify the required shift, providing finite-sample theoretical guarantees and practical improvements for goal-conditioned RL.
+  [NeurIPS 2025 (Spotlight)][Reinforcement Learning][Low-Rank] This paper reveals that the successor measure in reinforcement learning is not intrinsically approximately low-rank…
 tags:
-  - NeurIPS 2025 (Spotlight)
-  - Reinforcement Learning
-  - Low-Rank
-  - Successor Measure
-  - reinforcement-learning
-  - Spectral Analysis
-  - Goal-Conditioned RL
+  - "NeurIPS 2025 (Spotlight)"
+  - "Reinforcement Learning"
+  - "Low-Rank"
+  - "Successor Measure"
+  - "reinforcement-learning"
+  - "Spectral Analysis"
+  - "Goal-Conditioned RL"
 date: 2026-05-08
 content_hash: 80cb31d0ccf0a03c
 ---

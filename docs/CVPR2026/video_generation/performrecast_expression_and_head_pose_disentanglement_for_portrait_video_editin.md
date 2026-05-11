@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PerformRecast: Expression and Head Pose Disentanglement for Portrait Video Editing
 description: >-
-  [CVPR 2026][Video Generation][Portrait video editing] PerformRecast presents a GAN-based portrait video editing method built upon a corrected 3DMM keypoint transformation formulation. By applying expression deformation before head rotation — consistent with the FLAME model — the method achieves precise disentanglement of expression and head pose. A Boundary Alignment Module (BAM) is further introduced to address stitching misalignment between facial and non-facial regions. The approach substantially outperforms existing methods under both expression replacement and expression enhancement modes.
+  [CVPR 2026][Video Generation][Portrait video editing] PerformRecast presents a GAN-based portrait video editing method built upon a corrected 3DMM keypoint transformation formulation. By applying expression deformation b…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Portrait video editing
-  - expression disentanglement
-  - 3DMM
-  - keypoint transformation
-  - GAN
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Portrait video editing"
+  - "expression disentanglement"
+  - "3DMM"
+  - "keypoint transformation"
+  - "GAN"
 date: 2026-05-08
 content_hash: 48bad9b79a333db7
 ---

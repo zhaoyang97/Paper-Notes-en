@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Exchangeability of GNN Representations with Applications to Graph Retrieval
 description: >-
-  [ICLR 2026 Oral][GNN] This paper identifies that trained GNN node embeddings are exchangeable random variables along the feature dimension (i.e., $p(\mathbf{X}) = p(\mathbf{X}\pi)$ holds for any dimensional permutation $\pi$), and exploits this property to approximate transportation-distance-based (EMD/Wasserstein) graph similarity as Euclidean distance via dimension-wise sorting. A unified locality-sensitive hashing (LSH) framework, GraphHash, is constructed upon this foundation, consistently outperforming baselines including FourierHashNet, DiskANN, IVF, CORGII, and SWWL in AUC on subgraph matching and graph edit distance (GED) retrieval tasks, scaling to corpus sizes of one million graphs.
+  [ICLR 2026 Oral][GNN] This paper identifies that trained GNN node embeddings are exchangeable random variables along the feature dimension (i.e.…
 tags:
-  - ICLR 2026 Oral
-  - GNN
-  - exchangeability
-  - graph retrieval
-  - LSH
-  - GraphHash
-  - transportation distance
-  - Wasserstein distance
+  - "ICLR 2026 Oral"
+  - "GNN"
+  - "exchangeability"
+  - "graph retrieval"
+  - "LSH"
+  - "GraphHash"
+  - "transportation distance"
+  - "Wasserstein distance"
 date: 2026-05-08
 content_hash: 7f42e62e94f41a43
 ---

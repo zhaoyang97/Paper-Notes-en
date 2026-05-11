@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FunKAN: Functional Kolmogorov-Arnold Network for Medical Image Enhancement and Segmentation
 description: >-
-  [AAAI 2026][Medical Imaging][Kolmogorov-Arnold Network] This paper generalizes the Kolmogorov-Arnold representation theorem from finite-dimensional scalar spaces to function spaces (Hilbert spaces), proposing the FunKAN framework. By learning inner functions via Fourier expansion over Hermite basis functions, the framework preserves the spatial structure of image data and outperforms existing KAN variants on MRI enhancement and three medical image segmentation tasks.
+  [AAAI 2026][Medical Imaging][Kolmogorov-Arnold Network] This paper generalizes the Kolmogorov-Arnold representation theorem from finite-dimensional scalar spaces to function spaces (Hilbert spaces)…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Kolmogorov-Arnold Network
-  - Medical Image Enhancement
-  - Medical Image Segmentation
-  - MRI De-artifacting
-  - Hermite Functions
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Kolmogorov-Arnold Network"
+  - "Medical Image Enhancement"
+  - "Medical Image Segmentation"
+  - "MRI De-artifacting"
+  - "Hermite Functions"
 date: 2026-05-08
 content_hash: d733d9194cd2795b
 ---

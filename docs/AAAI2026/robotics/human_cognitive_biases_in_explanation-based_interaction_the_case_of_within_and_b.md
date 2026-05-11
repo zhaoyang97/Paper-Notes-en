@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Human Cognitive Biases in Explanation-based Interaction: The Case of Within and Between Session Order Effect
 description: >-
-  [AAAI 2026][Robotics][Explanatory Interactive Learning] This paper systematically evaluates the impact of **order effects** on Explanatory Interactive Learning (XIL) through two large-scale user studies (713 participants in total). The findings show that order effects have a **limited and inconsistent** influence on user feedback quality, with a statistically significant but weak effect observed only within sessions (not between sessions). The overall conclusion is that order effects do not constitute a major obstacle to the practical deployment of XIL.
+  [AAAI 2026][Robotics][Explanatory Interactive Learning] This paper systematically evaluates the impact of **order effects** on Explanatory Interactive Learning (XIL) through two large-scale user studies (713 participants…
 tags:
-  - AAAI 2026
-  - Robotics
-  - Explanatory Interactive Learning
-  - Cognitive Bias
-  - Order Effect
-  - User Study
-  - XIL
+  - "AAAI 2026"
+  - "Robotics"
+  - "Explanatory Interactive Learning"
+  - "Cognitive Bias"
+  - "Order Effect"
+  - "User Study"
+  - "XIL"
 date: 2026-05-08
 content_hash: 8aa46a46359298a1
 ---

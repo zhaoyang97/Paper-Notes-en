@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LoRA-Edit: Controllable First-Frame-Guided Video Editing via Mask-Aware LoRA Fine-Tuning
 description: >-
-  [ICLR 2026][Video Generation][video editing] This paper proposes LoRA-Edit, which leverages spatiotemporal masks to guide LoRA fine-tuning of a pretrained I2V model, enabling controllable first-frame-guided video editing. The mask simultaneously serves as an instruction for the editing region and a guidance signal for LoRA learning, supporting motion inheritance and appearance control.
+  [ICLR 2026][Video Generation][video editing] This paper proposes LoRA-Edit, which leverages spatiotemporal masks to guide LoRA fine-tuning of a pretrained I2V model…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - video editing
-  - LoRA fine-tuning
-  - first-frame guidance
-  - spatiotemporal mask
-  - appearance control
+  - "ICLR 2026"
+  - "Video Generation"
+  - "video editing"
+  - "LoRA fine-tuning"
+  - "first-frame guidance"
+  - "spatiotemporal mask"
+  - "appearance control"
 date: 2026-05-08
 content_hash: 53dc5324c8f8dd01
 ---

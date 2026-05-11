@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] VideoStir: Understanding Long Videos via Spatio-Temporally Structured and Intent-Aware RAG
 description: >-
-  [ACL 2026][long video understanding] VideoStir proposes a structured and intent-aware RAG framework for long video understanding. By modeling videos as spatio-temporal graphs for multi-hop clip retrieval and training an intent relevance scorer for frame-level filtering, the framework achieves performance comparable to state-of-the-art long video RAG methods without relying on any auxiliary text tools.
+  [ACL 2026][Information Retrieval & RAG][long video understanding] VideoStir proposes a structured and intent-aware RAG framework for long video understanding. By modeling videos as spatio-temporal graphs for multi-hop cl…
 tags:
-  - ACL 2026
-  - long video understanding
-  - retrieval-augmented generation
-  - spatio-temporal graph structure
-  - intent-aware retrieval
-  - multi-hop reasoning
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "long video understanding"
+  - "retrieval-augmented generation"
+  - "spatio-temporal graph structure"
+  - "intent-aware retrieval"
+  - "multi-hop reasoning"
 date: 2026-05-08
 content_hash: 15cecffae76bbe66
 ---

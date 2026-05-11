@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Cross-Slice Knowledge Transfer via Masked Multi-Modal Heterogeneous Graph Contrastive Learning for Spatial Gene Expression Inference
 description: >-
-  [CVPR 2026][Medical Imaging][Spatial transcriptomics] This paper proposes SpaHGC, a multimodal heterogeneous graph framework that constructs three types of subgraphs—intra-target-slice (TS), cross-slice (CS), and intra-reference-slice (RS)—and integrates masked graph contrastive learning with a cross-node dual attention mechanism to predict spatial gene expression from H&E histopathology images, achieving PCC improvements of 7.3%–27.1% across seven datasets.
+  [CVPR 2026][Medical Imaging][Spatial transcriptomics] This paper proposes SpaHGC, a multimodal heterogeneous graph framework that constructs three types of subgraphs—intra-target-slice (TS), cross-slice (CS)…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Spatial transcriptomics
-  - heterogeneous graph learning
-  - cross-slice knowledge transfer
-  - contrastive learning
-  - gene expression prediction
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Spatial transcriptomics"
+  - "heterogeneous graph learning"
+  - "cross-slice knowledge transfer"
+  - "contrastive learning"
+  - "gene expression prediction"
 date: 2026-05-08
 content_hash: 238d68990a0f2901
 ---

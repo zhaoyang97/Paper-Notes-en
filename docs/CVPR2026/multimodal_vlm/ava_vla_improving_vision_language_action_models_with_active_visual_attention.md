@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AVA-VLA: Improving Vision-Language-Action models with Active Visual Attention
 description: >-
-  [CVPR 2026][Multimodal VLM][VLA models] This work revisits visual processing in VLA models from a POMDP perspective and proposes the AVA-VLA framework, which dynamically modulates the importance of visual tokens in the current frame based on historical context via a recurrent state and an active visual attention module, achieving state-of-the-art performance on benchmarks including LIBERO and CALVIN.
+  [CVPR 2026][Multimodal VLM][VLA models] This work revisits visual processing in VLA models from a POMDP perspective and proposes the AVA-VLA framework…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - VLA models
-  - active visual attention
-  - POMDP
-  - recurrent state
-  - visual token modulation
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "VLA models"
+  - "active visual attention"
+  - "POMDP"
+  - "recurrent state"
+  - "visual token modulation"
 date: 2026-05-08
 content_hash: e5e5e61b4e763c4c
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Activation Matters: Test-time Activated Negative Labels for OOD Detection with Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][OOD Detection] This paper proposes TANL (Test-time Activated Negative Labels), which dynamically evaluates the "activation degree" of negative labels on OOD samples at test time to identify the most effective negative labels. Combined with an activation-aware scoring function, TANL reduces FPR95 from 17.5% to 9.8% on the ImageNet benchmark, while remaining entirely training-free and test-time efficient.
+  [CVPR 2026][Multimodal VLM][OOD Detection] This paper proposes TANL (Test-time Activated Negative Labels), which dynamically evaluates the "activation degree" of negative labels on OOD samples at test time to identify th…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - OOD Detection
-  - Vision-Language Models
-  - Negative Labels
-  - Test-Time Adaptation
-  - Activation Metric
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "OOD Detection"
+  - "Vision-Language Models"
+  - "Negative Labels"
+  - "Test-Time Adaptation"
+  - "Activation Metric"
 date: 2026-05-08
 content_hash: ae41d5e8936665d3
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] When Style Breaks Safety: Defending LLMs Against Superficial Style Alignment
 description: >-
-  [ICLR 2026][Audio & Speech][LLM safety] This paper identifies that Attack Success Rates (ASR) in LLM jailbreak benchmarks are artificially inflated by semantically irrelevant style patterns (e.g., "create a list of"), a phenomenon observed in nearly all of 36 evaluated LLMs. Superficial style alignment fine-tuning further exacerbates this risk. The paper proposes SafeStyle — a defense that mitigates this risk via style-augmented safety training data.
+  [ICLR 2026][Audio & Speech][LLM safety] This paper identifies that Attack Success Rates (ASR) in LLM jailbreak benchmarks are artificially inflated by semantically irrelevant style patterns (e.g., "create a list of")…
 tags:
-  - ICLR 2026
+  - "ICLR 2026"
   - "Audio & Speech"
-  - LLM safety
-  - jailbreak attacks
-  - style alignment
-  - ASR inflation
-  - safety defense
+  - "LLM safety"
+  - "jailbreak attacks"
+  - "style alignment"
+  - "ASR inflation"
+  - "safety defense"
 date: 2026-05-08
 content_hash: 614fb67193b75600
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Compressed-Domain-Aware Online Video Super-Resolution
 description: >-
-  [CVPR 2026][Video Generation][Online video super-resolution] CDA-VSR leverages compressed-domain information (motion vectors, residual maps, and frame types) to guide three key stages of online video super-resolution: motion-vector-guided deformable alignment for efficient and accurate registration, residual-map-gated fusion to suppress misalignment artifacts, and frame-type-aware reconstruction to adaptively allocate computation. The method achieves state-of-the-art PSNR on REDS4 at 93 FPS—more than twice the speed of prior SOTA.
+  [CVPR 2026][Video Generation][Online video super-resolution] CDA-VSR leverages compressed-domain information (motion vectors, residual maps, and frame types) to guide three key stages of online video super-resolution: mo…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Online video super-resolution
-  - compressed-domain information
-  - motion vectors
-  - deformable alignment
-  - frame-type-aware processing
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Online video super-resolution"
+  - "compressed-domain information"
+  - "motion vectors"
+  - "deformable alignment"
+  - "frame-type-aware processing"
 date: 2026-05-08
 content_hash: 7eaa8d9f726218b9
 ---

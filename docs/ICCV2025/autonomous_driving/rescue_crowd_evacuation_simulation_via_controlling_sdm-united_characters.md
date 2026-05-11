@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] RESCUE: Crowd Evacuation Simulation via Controlling SDM-United Characters
 description: >-
-  [Autonomous Driving] This paper proposes RESCUE, the first online SDM (Sensing–Decision–Motion) unified 3D evacuation simulation framework, integrating a 3D adaptive social force model and a personalized gait controller to achieve real-time personalized evacuation simulation for hundreds of agents.
+  [Autonomous Driving] This paper proposes RESCUE, the first online SDM (Sensing–Decision–Motion) unified 3D evacuation simulation framework…
 tags:
-  - Autonomous Driving
+  - "Autonomous Driving"
 date: 2026-05-08
 content_hash: 9115a10abfe3aeaa
 ---

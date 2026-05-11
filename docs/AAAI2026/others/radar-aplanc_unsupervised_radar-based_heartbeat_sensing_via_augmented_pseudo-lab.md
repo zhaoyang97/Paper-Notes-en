@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Radar-APLANC: Unsupervised Radar-based Heartbeat Sensing via Augmented Pseudo-Label and Noise Contrast
 description: >-
-  [AAAI 2026][radar heartbeat sensing] This paper proposes Radar-APLANC, the first unsupervised learning framework for radar-based heartbeat sensing. Through a noise contrastive triplet (NCT) loss and an augmented pseudo-label generator, it achieves two-stage unsupervised training without requiring expensive physiological signal annotations, attaining performance approaching supervised methods.
+  [AAAI 2026][radar heartbeat sensing] This paper proposes Radar-APLANC, the first unsupervised learning framework for radar-based heartbeat sensing. Through a noise contrastive triplet (NCT) loss and an augmented pseudo-l…
 tags:
-  - AAAI 2026
-  - radar heartbeat sensing
-  - unsupervised learning
-  - pseudo-label
-  - noise contrastive learning
-  - FMCW radar
+  - "AAAI 2026"
+  - "radar heartbeat sensing"
+  - "unsupervised learning"
+  - "pseudo-label"
+  - "noise contrastive learning"
+  - "FMCW radar"
 date: 2026-05-08
 content_hash: 085fa215b127cdb7
 ---

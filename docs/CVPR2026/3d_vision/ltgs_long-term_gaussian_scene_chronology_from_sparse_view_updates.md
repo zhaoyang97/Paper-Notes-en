@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LTGS: Long-Term Gaussian Scene Chronology From Sparse View Updates
 description: >-
-  [CVPR 2026][3D Vision][3D Gaussian Splatting] This paper proposes the LTGS framework, which constructs reusable object-level Gaussian templates to efficiently update 3DGS scene reconstructions from spatiotemporally sparse observations, enabling temporal modeling of long-term environmental evolution.
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] This paper proposes the LTGS framework, which constructs reusable object-level Gaussian templates to efficiently update 3DGS scene reconstructions from spatiotemporally spars…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - scene updating
-  - sparse-view
-  - temporal reconstruction
-  - object-level tracking
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "scene updating"
+  - "sparse-view"
+  - "temporal reconstruction"
+  - "object-level tracking"
 date: 2026-05-08
 content_hash: d9cfbdfa8f062e86
 ---

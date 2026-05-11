@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TeethGenerator: A Two-Stage Framework for Paired Pre- and Post-Orthodontic 3D Dental Data Generation
 description: >-
-  [ICCV 2025][Medical Imaging][orthodontic data generation] This paper proposes TeethGenerator, a two-stage framework for generating paired pre- and post-orthodontic 3D dental point cloud models. Stage I employs a VQ-VAE combined with a diffusion model to generate post-treatment tooth morphology, while Stage II uses a Transformer conditioned on a style model to generate the corresponding pre-treatment dental arrangement.
+  [ICCV 2025][Medical Imaging][orthodontic data generation] This paper proposes TeethGenerator, a two-stage framework for generating paired pre- and post-orthodontic 3D dental point cloud models. Stage I employs a VQ-VAE c…
 tags:
-  - ICCV 2025
-  - Medical Imaging
-  - orthodontic data generation
-  - 3D dental model
-  - VQ-VAE
-  - diffusion model
-  - paired data synthesis
+  - "ICCV 2025"
+  - "Medical Imaging"
+  - "orthodontic data generation"
+  - "3D dental model"
+  - "VQ-VAE"
+  - "diffusion model"
+  - "paired data synthesis"
 date: 2026-05-08
 content_hash: 8d9ba2bb12441347
 ---

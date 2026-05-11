@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] RL Tango: Reinforcing Generator and Verifier Together for Language Reasoning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][generator-verifier co-training] Tango proposes a framework that alternately trains a generator and a verifier via RL — the verifier is a generative process-level LLM that evaluates reasoning step by step in natural language, trained solely with outcome-level correctness rewards (no step-level annotations), and mutually reinforced through co-evolution with the generator. On 7B/8B-scale models, Tango achieves SOTA, with a 100% relative improvement over vanilla GRPO on AIME 2025.
+  [NeurIPS 2025][Reinforcement Learning][generator-verifier co-training] Tango proposes a framework that alternately trains a generator and a verifier via RL — the verifier is a generative process-level LLM that evaluates…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - generator-verifier co-training
-  - process reward
-  - co-evolution
-  - generative verifier
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "generator-verifier co-training"
+  - "process reward"
+  - "co-evolution"
+  - "generative verifier"
 date: 2026-05-08
 content_hash: 172a3104ae68a0e2
 ---

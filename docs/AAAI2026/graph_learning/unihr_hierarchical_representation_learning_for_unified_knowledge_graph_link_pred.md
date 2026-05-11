@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] UniHR: Hierarchical Representation Learning for Unified Knowledge Graph Link Prediction
 description: >-
-  [AAAI2026][Graph Learning][Knowledge Graph] This paper proposes UniHR, a unified framework that converts hyper-relational, temporal, and nested KGs into a triple-based representation via Hierarchical Data Representation (HiDR), and designs a Hierarchical Structure Learning (HiSL) module for two-stage intra-fact and inter-fact message passing. UniHR achieves state-of-the-art or competitive link prediction results across 9 datasets spanning 5 KG types.
+  [AAAI2026][Graph Learning][Knowledge Graph] This paper proposes UniHR, a unified framework that converts hyper-relational, temporal, and nested KGs into a triple-based representation via Hierarchical Data Representation…
 tags:
-  - AAAI2026
-  - Graph Learning
-  - Knowledge Graph
-  - Link Prediction
-  - Hyper-relational KG
-  - Temporal KG
-  - Nested KG
-  - Unified Representation Learning
-  - Hierarchical Message Passing
+  - "AAAI2026"
+  - "Graph Learning"
+  - "Knowledge Graph"
+  - "Link Prediction"
+  - "Hyper-relational KG"
+  - "Temporal KG"
+  - "Nested KG"
+  - "Unified Representation Learning"
+  - "Hierarchical Message Passing"
 date: 2026-05-08
 content_hash: cd86915dad94ce77
 ---

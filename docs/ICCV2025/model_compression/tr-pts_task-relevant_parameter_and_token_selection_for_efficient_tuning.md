@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TR-PTS: Task-Relevant Parameter and Token Selection for Efficient Tuning
 description: >-
-  [ICCV 2025][Model Compression][PEFT] This paper proposes TR-PTS, a framework that performs task-driven layer-wise parameter selection via the Fisher Information Matrix and dynamically filters/merges tokens using CLS attention scores. By tuning only 0.34%–0.60% of parameters, TR-PTS surpasses full fine-tuning by 3.40% on FGVC and 10.35% on VTAB.
+  [ICCV 2025][Model Compression][PEFT] This paper proposes TR-PTS, a framework that performs task-driven layer-wise parameter selection via the Fisher Information Matrix and dynamically filters/merges tokens using CLS atte…
 tags:
-  - ICCV 2025
-  - Model Compression
-  - PEFT
-  - Vision Transformer
-  - Token Selection
-  - Fisher Information Matrix
-  - Parameter Selection
+  - "ICCV 2025"
+  - "Model Compression"
+  - "PEFT"
+  - "Vision Transformer"
+  - "Token Selection"
+  - "Fisher Information Matrix"
+  - "Parameter Selection"
 date: 2026-05-08
 content_hash: 9b39909c360eb5b8
 ---

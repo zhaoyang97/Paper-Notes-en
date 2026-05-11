@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Purging the Gray Zone: Latent-Geometric Denoising for Precise Knowledge Boundary Awareness
 description: >-
-  [ACL 2026][Image Restoration][Knowledge Boundary Awareness] GeoDe trains linear probes in LLM latent space to construct truth hyperplanes, using sample-to-hyperplane geometric distance as confidence signals to filter high-quality abstention fine-tuning data, effectively eliminating "gray zone" noise near decision boundaries and significantly improving model truthfulness and reliability.
+  [ACL 2026][Image Restoration][Knowledge Boundary Awareness] GeoDe trains linear probes in LLM latent space to construct truth hyperplanes, using sample-to-hyperplane geometric distance as confidence signals to filter hig…
 tags:
-  - ACL 2026
-  - Image Restoration
-  - Knowledge Boundary Awareness
-  - Abstention Fine-Tuning
-  - Latent Space Probe
-  - Geometric Denoising
-  - Hallucination Mitigation
+  - "ACL 2026"
+  - "Image Restoration"
+  - "Knowledge Boundary Awareness"
+  - "Abstention Fine-Tuning"
+  - "Latent Space Probe"
+  - "Geometric Denoising"
+  - "Hallucination Mitigation"
 content_hash: 10b4b3a5eccdc5b6
 ---
 

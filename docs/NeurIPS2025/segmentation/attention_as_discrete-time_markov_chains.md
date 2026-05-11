@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Attention (as Discrete-Time Markov) Chains
 description: >-
-  [NeurIPS 2025][Segmentation][Attention Markov Chains] This work reinterprets the softmax-normalized attention matrix as the transition probability matrix of a Discrete-Time Markov Chain (DTMC), and proposes Multi-Bounce Attention and TokenRank (stationary distribution, analogous to PageRank) to capture indirect attention paths and global token importance. The approach achieves 94.29% mAP on ImageNet segmentation and enhances image generation quality in Self-Attention Guidance.
+  [NeurIPS 2025][Segmentation][Attention Markov Chains] This work reinterprets the softmax-normalized attention matrix as the transition probability matrix of a Discrete-Time Markov Chain (DTMC)…
 tags:
-  - NeurIPS 2025
-  - Segmentation
-  - Attention Markov Chains
-  - TokenRank
-  - PageRank
-  - Multi-Bounce Attention
-  - Image Segmentation
+  - "NeurIPS 2025"
+  - "Segmentation"
+  - "Attention Markov Chains"
+  - "TokenRank"
+  - "PageRank"
+  - "Multi-Bounce Attention"
+  - "Image Segmentation"
 date: 2026-05-08
 content_hash: d06e723810398b7e
 ---

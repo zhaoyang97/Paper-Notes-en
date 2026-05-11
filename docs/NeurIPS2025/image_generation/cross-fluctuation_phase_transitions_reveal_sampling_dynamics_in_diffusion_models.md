@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Cross-fluctuation Phase Transitions Reveal Sampling Dynamics in Diffusion Models
 description: >-
-  [NeurIPS 2025][Image Generation][Diffusion models] Drawing on fluctuation theory from statistical physics, this work proposes a framework for detecting discrete phase transitions in the sampling process of diffusion models via **cross-fluctuations**, enabling accelerated sampling, improved conditional generation, zero-shot classification, and style transfer—all without retraining.
+  [NeurIPS 2025][Image Generation][Diffusion models] Drawing on fluctuation theory from statistical physics, this work proposes a framework for detecting discrete phase transitions in the sampling process of diffusion mode…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Diffusion models
-  - phase transitions
-  - cross-fluctuation
-  - sampling dynamics
-  - conditional generation
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Diffusion models"
+  - "phase transitions"
+  - "cross-fluctuation"
+  - "sampling dynamics"
+  - "conditional generation"
 date: 2026-05-08
 content_hash: 4102443bc13e6002
 ---

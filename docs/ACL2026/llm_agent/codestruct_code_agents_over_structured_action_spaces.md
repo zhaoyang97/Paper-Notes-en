@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CodeStruct: Code Agents over Structured Action Spaces
 description: >-
-  [ACL 2026][LLM Agent][Code Agent] This paper proposes CodeStruct, a framework that redefines code repositories as AST-based structured action spaces, enabling LLM code agents to read and edit code via named program entities rather than raw text fragments. CodeStruct achieves 1.2–5.0% accuracy improvements on SWE-Bench Verified while reducing token consumption by 12–38%.
+  [ACL 2026][LLM Agent][Code Agent] This paper proposes CodeStruct, a framework that redefines code repositories as AST-based structured action spaces…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - Code Agent
-  - AST-based Structured Actions
-  - Code Editing
-  - SWE-Bench
-  - Action Space
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Code Agent"
+  - "AST-based Structured Actions"
+  - "Code Editing"
+  - "SWE-Bench"
+  - "Action Space"
 date: 2026-05-08
 content_hash: 0f4fff05c1e5ea07
 ---

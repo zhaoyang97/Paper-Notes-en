@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Evaluating LLMs for Police Decision-Making: A Framework Based on Police Action Scenarios
 description: >-
-  [AAAI 2026][Recommender Systems][LLM Evaluation] This paper proposes PAS (Police Action Scenarios), an LLM evaluation framework for policing contexts. The framework comprises five stages: scenario definition, reference answer construction, LLM response generation, core metric extraction, and performance interpretation. An evaluation dataset is constructed from 8,000+ official Korean police documents. The study finds that commercial LLMs (GPT-4, Gemini, Claude) perform significantly below reference answers on policing tasks, particularly in factual accuracy and logical correctness.
+  [AAAI 2026][Recommender Systems][LLM Evaluation] This paper proposes PAS (Police Action Scenarios), an LLM evaluation framework for policing contexts. The framework comprises five stages: scenario definition…
 tags:
-  - AAAI 2026
-  - Recommender Systems
-  - LLM Evaluation
-  - Police Decision-Making
-  - Domain-Specific Evaluation
-  - Scenario-Based Evaluation
-  - LLM-as-Judge
+  - "AAAI 2026"
+  - "Recommender Systems"
+  - "LLM Evaluation"
+  - "Police Decision-Making"
+  - "Domain-Specific Evaluation"
+  - "Scenario-Based Evaluation"
+  - "LLM-as-Judge"
 date: 2026-05-08
 content_hash: b9a693a3512eacad
 ---

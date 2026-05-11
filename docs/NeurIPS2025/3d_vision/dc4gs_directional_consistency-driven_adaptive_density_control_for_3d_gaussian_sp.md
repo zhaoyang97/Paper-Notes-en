@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DC4GS: Directional Consistency-Driven Adaptive Density Control for 3D Gaussian Splatting
 description: >-
-  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] This paper proposes DC4GS, an adaptive density control method based on Directional Consistency (DC), which improves primitive splitting decisions and split position selection in 3DGS by exploiting the angular coherence of positional gradients. DC4GS reduces the number of primitives by up to 30% while improving reconstruction quality.
+  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] This paper proposes DC4GS, an adaptive density control method based on Directional Consistency (DC)…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - Adaptive Density Control
-  - Directional Consistency
-  - Primitive Splitting
-  - Scene Reconstruction
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Adaptive Density Control"
+  - "Directional Consistency"
+  - "Primitive Splitting"
+  - "Scene Reconstruction"
 date: 2026-05-08
 content_hash: b9f249346e76789d
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] NRGPT: An Energy-based Alternative for GPT
 description: >-
-  [ICLR 2026][Optimization][Energy-based models] This paper proposes NRGPT (eNeRgy-GPT), which applies minimal modifications to standard GPT to yield an energy-based model: attention and feedforward energy functions are designed such that each forward pass is equivalent to a gradient descent step on the energy landscape. The work proves asymptotic energy decrease and stable convergence properties, and validates performance comparable to standard GPT on ListOps, Shakespeare, and OpenWebText.
+  [ICLR 2026][Optimization][Energy-based models] This paper proposes NRGPT (eNeRgy-GPT), which applies minimal modifications to standard GPT to yield an energy-based model: attention and feedforward energy functions are de…
 tags:
-  - ICLR 2026
-  - Optimization
-  - Energy-based models
-  - GPT
-  - autoregressive
-  - gradient descent inference
-  - asymptotic stability
+  - "ICLR 2026"
+  - "Optimization"
+  - "Energy-based models"
+  - "GPT"
+  - "autoregressive"
+  - "gradient descent inference"
+  - "asymptotic stability"
 date: 2026-05-08
 content_hash: fff714875a1c0f30
 ---

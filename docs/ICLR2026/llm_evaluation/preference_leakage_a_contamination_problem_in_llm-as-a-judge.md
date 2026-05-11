@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Preference Leakage: A Contamination Problem in LLM-as-a-judge
 description: >-
-  [ICLR2026][LLM Evaluation][LLM-as-a-Judge] This paper is the first to formally define and systematically investigate **Preference Leakage** in LLM-as-a-Judge — when the synthetic data generator $M_G$ and the judge $M_J$ are related (same model / inheritance / same family), the judge exhibits systematic preference toward the "associated student model." Under the same-model scenario, PLS reaches 28.7% on Arena-Hard, and this bias is more subtle and harder to detect than egocentric bias.
+  [ICLR2026][LLM Evaluation][LLM-as-a-Judge] This paper is the first to formally define and systematically investigate **Preference Leakage** in LLM-as-a-Judge — when the synthetic data generator $M_G$ and the judge $M_J$…
 tags:
-  - ICLR2026
-  - LLM Evaluation
-  - LLM-as-a-Judge
-  - Preference Leakage
-  - Data Contamination
-  - Evaluation Bias
-  - Synthetic Data
+  - "ICLR2026"
+  - "LLM Evaluation"
+  - "LLM-as-a-Judge"
+  - "Preference Leakage"
+  - "Data Contamination"
+  - "Evaluation Bias"
+  - "Synthetic Data"
 date: 2026-05-08
 content_hash: f10d53fe525020a2
 ---

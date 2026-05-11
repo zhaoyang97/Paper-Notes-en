@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MTL-KD: Multi-Task Learning Via Knowledge Distillation for Generalizable Neural Vehicle Routing Solver
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Vehicle Routing Problem] This paper proposes MTL-KD, a multi-task learning framework based on knowledge distillation. It distills policy knowledge from multiple RL single-task teacher models into a heavy-decoder student model, achieving efficient unified solving across diverse VRP variants with superior generalization on large-scale instances.
+  [NeurIPS 2025][Reinforcement Learning][Vehicle Routing Problem] This paper proposes MTL-KD, a multi-task learning framework based on knowledge distillation. It distills policy knowledge from multiple RL single-task teach…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Vehicle Routing Problem
-  - Multi-Task Learning
-  - Knowledge Distillation
-  - Neural Combinatorial Optimization
-  - Scale Generalization
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Vehicle Routing Problem"
+  - "Multi-Task Learning"
+  - "Knowledge Distillation"
+  - "Neural Combinatorial Optimization"
+  - "Scale Generalization"
 date: 2026-05-08
 content_hash: 3e3cc5cc6787c8c8
 ---

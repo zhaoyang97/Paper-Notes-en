@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Easy3E: Feed-Forward 3D Asset Editing via Rectified Voxel Flow
 description: >-
-  [CVPR 2026][3D Vision][3D editing] This paper proposes a feed-forward 3D asset editing framework built upon the TRELLIS 3D generation backbone. It achieves globally consistent geometric deformation in a sparse voxel latent space via Voxel FlowEdit, and recovers high-frequency details through normal-guided multi-view texture refinement.
+  [CVPR 2026][3D Vision][3D editing] This paper proposes a feed-forward 3D asset editing framework built upon the TRELLIS 3D generation backbone. It achieves globally consistent geometric deformation in a sparse voxel late…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D editing
-  - feed-forward generation
-  - voxel flow
-  - Flow Matching
-  - texture refinement
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D editing"
+  - "feed-forward generation"
+  - "voxel flow"
+  - "Flow Matching"
+  - "texture refinement"
 date: 2026-05-08
 content_hash: 73bcd226ec0736ea
 ---

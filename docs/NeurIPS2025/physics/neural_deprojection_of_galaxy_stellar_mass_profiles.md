@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Neural Deprojection of Galaxy Stellar Mass Profiles
 description: >-
-  [NeurIPS 2025][galaxy mass distribution] A neural network approach is proposed to map Nuker galaxy profile parameters to analytically deprojectable Multi-Gaussian Expansion (MGE) components, enabling stellar mass modeling of galaxies without optical imaging. The method is integrated into the differentiable dynamical modeling pipeline SuperMAGE for Bayesian inference of supermassive black hole (SMBH) masses.
+  [NeurIPS 2025][Physics][galaxy mass distribution] A neural network approach is proposed to map Nuker galaxy profile parameters to analytically deprojectable Multi-Gaussian Expansion (MGE) components…
 tags:
-  - NeurIPS 2025
-  - galaxy mass distribution
-  - deprojection
-  - deep learning
-  - conditional flow matching
-  - astronomical data
+  - "NeurIPS 2025"
+  - "Physics"
+  - "galaxy mass distribution"
+  - "deprojection"
+  - "deep learning"
+  - "conditional flow matching"
+  - "astronomical data"
 date: 2026-05-08
 content_hash: 5edf19aac0a662d1
 ---

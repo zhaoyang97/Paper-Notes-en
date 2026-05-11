@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UtilGen: Utility-Centric Generative Data Augmentation with Dual-Level Task Adaptation
 description: >-
-  [NeurIPS 2025][Image Generation][Data Augmentation] This paper proposes UtilGen, a utility-centric generative data augmentation framework that evaluates the downstream task utility of synthetic data via a meta-learning weight network, and employs a dual-level optimization strategy—model-level DPO and instance-level (prompt + noise) optimization—to adaptively generate high-utility synthetic training data, achieving an average improvement of 3.87% across 8 benchmarks.
+  [NeurIPS 2025][Image Generation][Data Augmentation] This paper proposes UtilGen, a utility-centric generative data augmentation framework that evaluates the downstream task utility of synthetic data via a meta-learning w…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Data Augmentation
-  - Task Utility
-  - Diffusion Models
-  - Bi-level Optimization
-  - DPO
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Data Augmentation"
+  - "Task Utility"
+  - "Diffusion Models"
+  - "Bi-level Optimization"
+  - "DPO"
 date: 2026-05-08
 content_hash: c1745636ab575e3d
 ---

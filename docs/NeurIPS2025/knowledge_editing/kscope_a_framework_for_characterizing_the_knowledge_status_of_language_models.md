@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] KScope: A Framework for Characterizing the Knowledge Status of Language Models
 description: >-
-  [NeurIPS 2025][Knowledge Editing][knowledge status characterization] This paper proposes a five-category taxonomy of LLM knowledge status (Consistent Correct / Conflicting Correct / Missing / Conflicting Incorrect / Consistent Incorrect) and the KScope hierarchical statistical testing framework. By combining repeated sampling with multi-step hypothesis testing, KScope precisely characterizes the modal structure of an LLM's knowledge for a given question, and systematically investigates how context updates each knowledge state. The study finds that constrained context summarization combined with credibility augmentation improves knowledge update success rates by an average of 4.3%.
+  [NeurIPS 2025][Knowledge Editing][knowledge status characterization] This paper proposes a five-category taxonomy of LLM knowledge status (Consistent Correct / Conflicting Correct / Missing / Conflicting Incorrect / Cons…
 tags:
-  - NeurIPS 2025
-  - Knowledge Editing
-  - knowledge status characterization
-  - knowledge conflict
-  - hierarchical statistical testing
-  - RAG knowledge updating
-  - LLM reliability
+  - "NeurIPS 2025"
+  - "Knowledge Editing"
+  - "knowledge status characterization"
+  - "knowledge conflict"
+  - "hierarchical statistical testing"
+  - "RAG knowledge updating"
+  - "LLM reliability"
 date: 2026-05-08
 content_hash: dae4753aa9bf5e07
 ---

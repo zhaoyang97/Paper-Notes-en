@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Modelling the Effects of Hearing Loss on Neural Coding in the Auditory Midbrain with Variational Conditioning
 description: >-
-  [AAAI 2026][Audio & Speech][Auditory midbrain modelling] This paper proposes ψ-ICNet, a variationally conditioned deep neural network that encodes the effects of hearing loss via only 6 learnable conditioning parameters ψ. The model directly learns a low-dimensional representation space of hearing loss from real neural recordings, achieving accuracy comparable to animal-specific models in predicting auditory midbrain responses in both normal-hearing and hearing-impaired animals, and can be rapidly fitted to unseen animals via Bayesian optimization.
+  [AAAI 2026][Audio & Speech][Auditory midbrain modelling] This paper proposes ψ-ICNet, a variationally conditioned deep neural network that encodes the effects of hearing loss via only 6 learnable conditioning parameters…
 tags:
-  - AAAI 2026
+  - "AAAI 2026"
   - "Audio & Speech"
-  - Auditory midbrain modelling
-  - hearing loss
-  - variational conditioning
-  - neural coding
-  - Bayesian optimization
+  - "Auditory midbrain modelling"
+  - "hearing loss"
+  - "variational conditioning"
+  - "neural coding"
+  - "Bayesian optimization"
 date: 2026-05-08
 content_hash: a081486393697b6c
 ---

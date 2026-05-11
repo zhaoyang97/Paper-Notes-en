@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] WikiSeeker: Rethinking the Role of Vision-Language Models in Knowledge-Based Visual Question Answering
 description: >-
-  [ACL 2026][Multimodal VLM][Knowledge-based VQA] This paper proposes WikiSeeker, which redefines the role of VLMs in multimodal RAG—transforming them from mere answer generators into two specialized agents: a Refiner (trained with RL to rewrite queries) and an Inspector (to verify the reliability of retrieved contexts). WikiSeeker achieves state-of-the-art performance on three benchmarks: EVQA, InfoSeek, and M2KR.
+  [ACL 2026][Multimodal VLM][Knowledge-based VQA] This paper proposes WikiSeeker, which redefines the role of VLMs in multimodal RAG—transforming them from mere answer generators into two specialized agents: a Refiner (tra…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Knowledge-based VQA
-  - Multimodal RAG
-  - Query Rewriting
-  - Reinforcement Learning
-  - Retrieval-Augmented Generation
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Knowledge-based VQA"
+  - "Multimodal RAG"
+  - "Query Rewriting"
+  - "Reinforcement Learning"
+  - "Retrieval-Augmented Generation"
 date: 2026-05-08
 content_hash: cb8d816fb8a88f4f
 ---

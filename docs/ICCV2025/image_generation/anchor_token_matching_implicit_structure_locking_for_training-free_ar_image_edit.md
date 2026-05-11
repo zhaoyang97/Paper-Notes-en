@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Anchor Token Matching: Implicit Structure Locking for Training-free AR Image Editing
 description: >-
-  [ICCV 2025][Image Generation][Autoregressive models] This paper proposes ISLock, the first training-free image editing framework for autoregressive (AR) visual generation models. Through Anchor Token Matching (ATM), it implicitly aligns self-attention patterns in the latent space, enabling structure-consistent text-guided image editing.
+  [ICCV 2025][Image Generation][Autoregressive models] This paper proposes ISLock, the first training-free image editing framework for autoregressive (AR) visual generation models. Through Anchor Token Matching (ATM)…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Autoregressive models
-  - image editing
-  - training-free
-  - attention mechanism
-  - structural consistency
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Autoregressive models"
+  - "image editing"
+  - "training-free"
+  - "attention mechanism"
+  - "structural consistency"
 date: 2026-05-08
 content_hash: 3fecb79cab2cec3e
 ---

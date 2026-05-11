@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From Verbatim to Gist: Distilling Pyramidal Multimodal Memory via Semantic Information Bottleneck
 description: >-
-  [ACL 2026][Multimodal VLM][Long Video Understanding] This paper proposes MM-Mem, a pyramidal multimodal memory architecture inspired by Fuzzy Trace Theory (FTT). The memory is organized into three hierarchical layers — a Sensory Buffer (vision-dominant), an Episodic Stream (event-level summaries), and a Symbolic Schema (knowledge graph) — and achieves SOTA performance on 4 long-video benchmarks by compressing redundancy bottom-up via SIB-GRPO (Semantic Information Bottleneck + RL) and retrieving top-down via entropy-driven adaptive depth selection.
+  [ACL 2026][Multimodal VLM][Long Video Understanding] This paper proposes MM-Mem, a pyramidal multimodal memory architecture inspired by Fuzzy Trace Theory (FTT). The memory is organized into three hierarchical layers — a…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Long Video Understanding
-  - Multimodal Memory
-  - Information Bottleneck
-  - Fuzzy Trace Theory
-  - Reinforcement Learning
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Long Video Understanding"
+  - "Multimodal Memory"
+  - "Information Bottleneck"
+  - "Fuzzy Trace Theory"
+  - "Reinforcement Learning"
 date: 2026-05-08
 content_hash: eb8f9decd7684410
 ---

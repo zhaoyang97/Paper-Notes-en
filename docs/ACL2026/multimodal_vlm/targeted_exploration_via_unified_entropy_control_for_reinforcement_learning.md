@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Targeted Exploration via Unified Entropy Control for Reinforcement Learning
 description: >-
-  [ACL 2026 Findings][Multimodal VLM][entropy control] This paper proposes UEC-RL, a unified bidirectional entropy control framework that addresses entropy collapse and training instability in GRPO by performing high-temperature targeted exploration on difficult prompts (entropy increase) and consolidating high-quality trajectories via an experience replay stabilizer (entropy decrease), achieving a 37.9% relative improvement on Geometry3K.
+  [ACL 2026 Findings][Multimodal VLM][entropy control] This paper proposes UEC-RL, a unified bidirectional entropy control framework that addresses entropy collapse and training instability in GRPO by performing high-tempe…
 tags:
-  - ACL 2026 Findings
-  - Multimodal VLM
-  - entropy control
-  - GRPO
-  - exploration strategy
-  - reinforcement learning
-  - reasoning enhancement
+  - "ACL 2026 Findings"
+  - "Multimodal VLM"
+  - "entropy control"
+  - "GRPO"
+  - "exploration strategy"
+  - "reinforcement learning"
+  - "reasoning enhancement"
 date: 2026-05-08
 content_hash: df6c703e10caf544
 ---

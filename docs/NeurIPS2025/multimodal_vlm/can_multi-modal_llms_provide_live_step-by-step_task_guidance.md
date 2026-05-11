@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Can Multi-Modal LLMs Provide Live Step-by-Step Task Guidance?
 description: >-
-  [NeurIPS 2025][Multimodal VLM][streaming video understanding] This paper introduces the Qualcomm Interactive Cooking benchmark and the LiveMamba model, presenting the first systematic evaluation of multimodal LLMs for providing real-time, step-by-step task guidance in streaming video — encompassing instruction delivery, completion detection, and error feedback.
+  [NeurIPS 2025][Multimodal VLM][streaming video understanding] This paper introduces the Qualcomm Interactive Cooking benchmark and the LiveMamba model…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - streaming video understanding
-  - interactive guidance
-  - error detection
-  - Mamba
-  - step-by-step guidance
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "streaming video understanding"
+  - "interactive guidance"
+  - "error detection"
+  - "Mamba"
+  - "step-by-step guidance"
 date: 2026-05-08
 content_hash: 61da81d3c3cf0d41
 ---

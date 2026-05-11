@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Semi-Supervised Regression with Heteroscedastic Pseudo-Labels
 description: >-
-  [NeurIPS 2025][LLM Evaluation][semi-supervised regression] This paper proposes an uncertainty-aware pseudo-label framework based on heteroscedastic modeling, which dynamically calibrates per-sample pseudo-label uncertainty via bilevel optimization to mitigate the negative impact of noisy pseudo-labels on regression models, achieving state-of-the-art performance on multiple SSR benchmarks.
+  [NeurIPS 2025][LLM Evaluation][semi-supervised regression] This paper proposes an uncertainty-aware pseudo-label framework based on heteroscedastic modeling…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - semi-supervised regression
-  - pseudo-labels
-  - heteroscedastic uncertainty
-  - bilevel optimization
-  - uncertainty estimation
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "semi-supervised regression"
+  - "pseudo-labels"
+  - "heteroscedastic uncertainty"
+  - "bilevel optimization"
+  - "uncertainty estimation"
 date: 2026-05-08
 content_hash: 6fe15da46b18bb6c
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PAD-Hand: Physics-Aware Diffusion for Hand Motion Recovery
 description: >-
-  [CVPR 2026][3D Vision][hand motion recovery] PAD-Hand is a physics-aware conditional diffusion framework that models Euler–Lagrange (EL) dynamics residuals as virtual observations integrated into the diffusion process, while estimating per-joint, per-frame dynamic variance via last-layer Laplace approximation. The method achieves physically plausible and uncertainty-aware hand motion recovery, reducing acceleration error by 50.1% on DexYCB.
+  [CVPR 2026][3D Vision][hand motion recovery] PAD-Hand is a physics-aware conditional diffusion framework that models Euler–Lagrange (EL) dynamics residuals as virtual observations integrated into the diffusion process…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - hand motion recovery
-  - physics-aware diffusion model
-  - Euler–Lagrange dynamics
-  - Laplace approximation
-  - uncertainty estimation
+  - "CVPR 2026"
+  - "3D Vision"
+  - "hand motion recovery"
+  - "physics-aware diffusion model"
+  - "Euler–Lagrange dynamics"
+  - "Laplace approximation"
+  - "uncertainty estimation"
 date: 2026-05-08
 content_hash: 6becb7574fcebf9b
 ---

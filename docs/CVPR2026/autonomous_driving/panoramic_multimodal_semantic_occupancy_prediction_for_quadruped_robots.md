@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Panoramic Multimodal Semantic Occupancy Prediction for Quadruped Robots
 description: >-
-  [CVPR2026][Autonomous Driving][Panoramic occupancy prediction] This paper introduces PanoMMOcc, the first panoramic multimodal semantic occupancy prediction dataset for quadruped robots, along with the VoxelHound framework. By incorporating a Vertical Jitter Compensation (VJC) module and a Multimodal Information Prompt Fusion (MIPF) module, VoxelHound achieves 23.34% mIoU under a four-modality setup (panoramic RGB + thermal + polarization + LiDAR), surpassing existing methods by +4.16%.
+  [CVPR2026][Autonomous Driving][Panoramic occupancy prediction] This paper introduces PanoMMOcc, the first panoramic multimodal semantic occupancy prediction dataset for quadruped robots…
 tags:
-  - CVPR2026
-  - Autonomous Driving
-  - Panoramic occupancy prediction
-  - multimodal fusion
-  - quadruped robots
-  - semantic occupancy
-  - BEV perception
+  - "CVPR2026"
+  - "Autonomous Driving"
+  - "Panoramic occupancy prediction"
+  - "multimodal fusion"
+  - "quadruped robots"
+  - "semantic occupancy"
+  - "BEV perception"
 date: 2026-05-08
 content_hash: 18cfef7a638f421b
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Open-Vocabulary Octree-Graph for 3D Scene Understanding
 description: >-
-  [ICCV 2025][3D Vision][Open-vocabulary] This paper proposes Octree-Graph, a novel scene representation combining adaptive octrees with a graph structure. Through Chronological Group-based Segment Merging (CGSM) and Instance Feature Aggregation (IFA), it obtains accurate semantic objects and enables efficient open-vocabulary 3D scene understanding.
+  [ICCV 2025][3D Vision][Open-vocabulary] This paper proposes Octree-Graph, a novel scene representation combining adaptive octrees with a graph structure. Through Chronological Group-based Segment Merging (CGSM) and Insta…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Open-vocabulary
-  - 3D scene understanding
-  - octree
-  - scene graph
-  - semantic segmentation
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Open-vocabulary"
+  - "3D scene understanding"
+  - "octree"
+  - "scene graph"
+  - "semantic segmentation"
 date: 2026-05-08
 content_hash: 92d915d1dca7ab12
 ---

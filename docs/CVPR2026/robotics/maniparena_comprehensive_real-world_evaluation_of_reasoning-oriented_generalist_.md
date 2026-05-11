@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ManipArena: Comprehensive Real-world Evaluation of Reasoning-Oriented Generalist Robot Manipulation
 description: >-
-  [CVPR 2026][Robotics][Robot manipulation evaluation] ManipArena proposes a standardized real-world robot manipulation evaluation framework comprising 20 reasoning-oriented tasks and 10,812 expert trajectories. Through a green-screen controlled environment, systematic diversity design, and hierarchical OOD evaluation, it provides a fair and reproducible benchmark for VLA models and world models.
+  [CVPR 2026][Robotics][Robot manipulation evaluation] ManipArena proposes a standardized real-world robot manipulation evaluation framework comprising 20 reasoning-oriented tasks and 10…
 tags:
-  - CVPR 2026
-  - Robotics
-  - Robot manipulation evaluation
-  - VLA models
-  - real-world benchmark
-  - reasoning-oriented manipulation
-  - Sim-to-Real
+  - "CVPR 2026"
+  - "Robotics"
+  - "Robot manipulation evaluation"
+  - "VLA models"
+  - "real-world benchmark"
+  - "reasoning-oriented manipulation"
+  - "Sim-to-Real"
 date: 2026-05-08
 content_hash: 27ba9f249c3d353d
 ---

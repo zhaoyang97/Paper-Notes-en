@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Color3D: Controllable and Consistent 3D Colorization with Personalized Colorizer
 description: >-
-  [ICLR 2026][3D Vision][3D colorization] Color3D introduces a paradigm of "colorize one key view → fine-tune a personalized colorizer → propagate colors to all views and timesteps," reducing the complex 3D colorization problem to single-image colorization plus color propagation. It achieves rich colorization, cross-view consistency, and user controllability simultaneously on both static and dynamic 3D scenes.
+  [ICLR 2026][3D Vision][3D colorization] Color3D introduces a paradigm of "colorize one key view → fine-tune a personalized colorizer → propagate colors to all views and timesteps…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - 3D colorization
-  - Gaussian splatting
-  - personalized fine-tuning
-  - Lab color space
-  - visual consistency
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3D colorization"
+  - "Gaussian splatting"
+  - "personalized fine-tuning"
+  - "Lab color space"
+  - "visual consistency"
 date: 2026-05-08
 content_hash: 46171f3b81aef6c7
 ---

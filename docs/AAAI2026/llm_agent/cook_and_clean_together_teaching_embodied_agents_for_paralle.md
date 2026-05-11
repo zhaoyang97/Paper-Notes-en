@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Cook and Clean Together: Teaching Embodied Agents for Parallel Task Execution
 description: >-
-  [AAAI 2026 (Oral)][LLM Agent][Operations Research] This paper introduces ORS3D, a novel task that incorporates operations research (OR) knowledge into embodied AI task scheduling. Agents are required to exploit the waiting time of parallelizable sub-tasks to execute other tasks, thereby minimizing total completion time, while simultaneously localizing target objects in 3D scenes. The authors construct a 60K-scale dataset ORS3D-60K and propose the GRANT model, which connects to an external dynamic programming solver via a scheduling token mechanism, achieving a 30.53% improvement in time efficiency over baselines.
+  [AAAI 2026 (Oral)][LLM Agent][Operations Research] This paper introduces ORS3D, a novel task that incorporates operations research (OR) knowledge into embodied AI task scheduling. Agents are required to exploit the waiti…
 tags:
-  - AAAI 2026 (Oral)
-  - LLM Agent
-  - Operations Research
-  - Task Scheduling
-  - 3D Grounding
-  - Embodied Agents
-  - MLLM
+  - "AAAI 2026 (Oral)"
+  - "LLM Agent"
+  - "Operations Research"
+  - "Task Scheduling"
+  - "3D Grounding"
+  - "Embodied Agents"
+  - "MLLM"
 date: 2026-05-08
 content_hash: dde1b3c1ca31bbdd
 ---

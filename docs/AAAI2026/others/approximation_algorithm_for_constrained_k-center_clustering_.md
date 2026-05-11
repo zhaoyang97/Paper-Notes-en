@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Approximation Algorithm for Constrained k-Center Clustering: A Local Search Approach
 description: >-
-  [AAAI 2026][k-center clustering] This paper studies the k-center clustering problem with instance-level cannot-link (CL) and must-link (ML) constraints. It proposes a local search framework based on a dominating matching set (DMS) reduction, and, under the disjoint CL sets condition, is the first to achieve the optimal approximation ratio of 2 via local search—resolving an open problem in the field.
+  [AAAI 2026][k-center clustering] This paper studies the k-center clustering problem with instance-level cannot-link (CL) and must-link (ML) constraints. It proposes a local search framework based on a dominating matching…
 tags:
-  - AAAI 2026
-  - k-center clustering
-  - constrained clustering
-  - local search
-  - approximation ratio
-  - cannot-link
-  - must-link
-  - dominating matching set
+  - "AAAI 2026"
+  - "k-center clustering"
+  - "constrained clustering"
+  - "local search"
+  - "approximation ratio"
+  - "cannot-link"
+  - "must-link"
+  - "dominating matching set"
 date: 2026-05-08
 content_hash: 2fbade5ee784b784
 ---

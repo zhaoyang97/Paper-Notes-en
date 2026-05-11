@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multi-Trajectory Physics-Informed Neural Networks for HJB Equations with Hard-Zero Terminal Inventory: Optimal Execution on Synthetic & SPY Data
 description: >-
-  [NeurIPS 2025 (Workshop on Generative AI in Finance)][Scientific Computing][Physics-Informed Neural Networks] To address the hard-zero terminal inventory constraint ($X_T=0$) in HJB equations arising from optimal trade execution, this paper proposes Multi-Trajectory PINN (MT-PINN). Through a rollout-based terminal loss and a $\lambda$-curriculum training strategy, MT-PINN significantly outperforms vanilla PINN on both synthetic benchmarks and live SPY backtesting, achieving a substantial reduction in terminal inventory violation rates.
+  [NeurIPS 2025 (Workshop on Generative AI in Finance)][Scientific Computing][Physics-Informed Neural Networks] To address the hard-zero terminal inventory constraint ($X_T=0$) in HJB equations arising from optimal trade e…
 tags:
-  - NeurIPS 2025 (Workshop on Generative AI in Finance)
-  - Scientific Computing
-  - Physics-Informed Neural Networks
-  - Hamilton-Jacobi-Bellman
-  - Optimal Execution
-  - Terminal Inventory Constraint
-  - Quantitative Finance
+  - "NeurIPS 2025 (Workshop on Generative AI in Finance)"
+  - "Scientific Computing"
+  - "Physics-Informed Neural Networks"
+  - "Hamilton-Jacobi-Bellman"
+  - "Optimal Execution"
+  - "Terminal Inventory Constraint"
+  - "Quantitative Finance"
 date: 2026-05-08
 content_hash: 9079ea77019484b3
 ---

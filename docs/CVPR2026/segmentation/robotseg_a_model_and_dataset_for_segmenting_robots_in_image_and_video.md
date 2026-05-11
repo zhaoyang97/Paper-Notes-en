@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RobotSeg: A Model and Dataset for Segmenting Robots in Image and Video
 description: >-
-  [CVPR 2026][Segmentation][Robot Segmentation] This paper presents RobotSeg, the first foundation model supporting both image and video robot segmentation. Built upon SAM 2, it introduces a Structure-Enhanced Memory Associator (SEMA), a Robot Prompt Generator (RPG), and a label-efficient training strategy requiring only first-frame annotations. In automatic mode, it achieves 85.1 J&F on Whole Robot segmentation, surpassing the fine-tuned SAM 2.1 by 4.9 points, with only 41.3M parameters — far fewer than existing 638M+ solutions.
+  [CVPR 2026][Segmentation][Robot Segmentation] This paper presents RobotSeg, the first foundation model supporting both image and video robot segmentation. Built upon SAM 2…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Robot Segmentation
-  - SAM2
-  - Structure-Aware
-  - Automatic Segmentation
-  - Label-Efficient Learning
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Robot Segmentation"
+  - "SAM2"
+  - "Structure-Aware"
+  - "Automatic Segmentation"
+  - "Label-Efficient Learning"
 date: 2026-05-08
 content_hash: 3c6d66af9a60681c
 ---

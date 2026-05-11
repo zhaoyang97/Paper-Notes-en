@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Recurrent Memory for Online Interdomain Gaussian Processes
 description: >-
-  [NeurIPS 2025][Image Generation][Gaussian Processes] This paper proposes OHSVGP (Online HiPPO Sparse Variational Gaussian Process), which introduces the HiPPO (High-order Polynomial Projection Operator) framework from deep learning into sparse variational Gaussian processes as interdomain inducing variables. By leveraging time-varying orthogonal polynomial basis functions, the method achieves long-term memory retention in online learning, with kernel matrices updated efficiently via ODE recursion.
+  [NeurIPS 2025][Image Generation][Gaussian Processes] This paper proposes OHSVGP (Online HiPPO Sparse Variational Gaussian Process), which introduces the HiPPO (High-order Polynomial Projection Operator) framework from de…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Gaussian Processes
-  - HiPPO
-  - Online Learning
-  - Long-term Memory
-  - State Space Models
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Gaussian Processes"
+  - "HiPPO"
+  - "Online Learning"
+  - "Long-term Memory"
+  - "State Space Models"
 date: 2026-05-08
 content_hash: cd2444986da0425b
 ---

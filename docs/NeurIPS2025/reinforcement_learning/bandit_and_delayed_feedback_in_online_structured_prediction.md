@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Bandit and Delayed Feedback in Online Structured Prediction
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Online Structured Prediction] This paper is the first to study bandit and delayed feedback settings in online structured prediction. By designing a novel pseudo-inverse matrix gradient estimator, it achieves an $O(T^{2/3})$ surrogate regret bound that does not explicitly depend on the output set size $K$.
+  [NeurIPS 2025][Reinforcement Learning][Online Structured Prediction] This paper is the first to study bandit and delayed feedback settings in online structured prediction. By designing a novel pseudo-inverse matrix gradi…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Online Structured Prediction
-  - Bandit Feedback
-  - Delayed Feedback
-  - Surrogate Regret
-  - Fenchel-Young Loss
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Online Structured Prediction"
+  - "Bandit Feedback"
+  - "Delayed Feedback"
+  - "Surrogate Regret"
+  - "Fenchel-Young Loss"
 date: 2026-05-08
 content_hash: a6dc3e0227ea1eee
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Evolutionary Multimodal Reasoning via Hierarchical Semantic Representation for Intent Recognition
 description: >-
-  [CVPR 2026][Dialogue Systems][Multimodal Intent Recognition] This paper proposes HIER, which combines hierarchical semantic representation (a three-level hierarchy of tokens → concepts → relations) with a self-evolutionary reasoning mechanism driven by MLLM feedback, consistently outperforming SOTA methods and leading MLLMs by 1–3% on three multimodal intent recognition benchmarks.
+  [CVPR 2026][Dialogue Systems][Multimodal Intent Recognition] This paper proposes HIER, which combines hierarchical semantic representation (a three-level hierarchy of tokens → concepts → relations) with a self-evolutiona…
 tags:
-  - CVPR 2026
-  - Dialogue Systems
-  - Multimodal Intent Recognition
-  - Hierarchical Semantic Representation
-  - Self-Evolutionary Reasoning
-  - Concept Clustering
-  - CoT
+  - "CVPR 2026"
+  - "Dialogue Systems"
+  - "Multimodal Intent Recognition"
+  - "Hierarchical Semantic Representation"
+  - "Self-Evolutionary Reasoning"
+  - "Concept Clustering"
+  - "CoT"
 date: 2026-05-08
 content_hash: e0fd2c5e2b7827b1
 ---

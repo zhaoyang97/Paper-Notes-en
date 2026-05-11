@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Scalable Random Wavelet Features: Efficient Non-Stationary Kernel Approximation with Convergence Guarantees
 description: >-
-   This paper proposes Random Wavelet Features (RWF), a scalable non-stationary kernel approximation framework constructed by randomly sampling from a family of wavelets. RWF preserves the linear-time complexity of random feature methods while offering guarantees of positive definiteness, unbiasedness, and uniform convergence.
+  This paper proposes Random Wavelet Features (RWF), a scalable non-stationary kernel approximation framework constructed by randomly sampling from a family of wavelets. RWF preserves the linear-time complexity of random…
 tags:
 
 date: 2026-05-08

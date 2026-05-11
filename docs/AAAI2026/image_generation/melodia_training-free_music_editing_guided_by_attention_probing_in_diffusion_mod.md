@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Melodia: Training-Free Music Editing Guided by Attention Probing in Diffusion Models
 description: >-
-  [AAAI 2026][Image Generation][Music Editing] Through systematic probing analysis of attention maps in diffusion models, this work reveals that self-attention maps are critical for preserving the temporal structure of music. Based on this finding, Melodia is proposed — a training-free music editing method that achieves an optimal balance between attribute modification and structural preservation by selectively manipulating self-attention maps.
+  [AAAI 2026][Image Generation][Music Editing] Through systematic probing analysis of attention maps in diffusion models, this work reveals that self-attention maps are critical for preserving the temporal structure of mus…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Music Editing
-  - Diffusion Models
-  - Attention Mechanism
-  - Training-Free
-  - Self-Attention Manipulation
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Music Editing"
+  - "Diffusion Models"
+  - "Attention Mechanism"
+  - "Training-Free"
+  - "Self-Attention Manipulation"
 date: 2026-05-08
 content_hash: bd332d580c06c9d2
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] NavMorph: A Self-Evolving World Model for Vision-and-Language Navigation in Continuous Environments
 description: >-
-  [ICCV 2025][Robotics][Vision-and-Language Navigation] This paper proposes NavMorph, an RSSM-based **self-evolving world model** that models continuous environment dynamics in latent space via a World-aware Navigator and a Foresight Action Planner, and introduces a Contextual Evolution Memory (CEM) for rapid online test-time adaptation.
+  [ICCV 2025][Robotics][Vision-and-Language Navigation] This paper proposes NavMorph, an RSSM-based **self-evolving world model** that models continuous environment dynamics in latent space via a World-aware Navigator and…
 tags:
-  - ICCV 2025
-  - Robotics
-  - Vision-and-Language Navigation
-  - World Model
-  - Continuous Environments
-  - Self-Evolving
-  - RSSM
+  - "ICCV 2025"
+  - "Robotics"
+  - "Vision-and-Language Navigation"
+  - "World Model"
+  - "Continuous Environments"
+  - "Self-Evolving"
+  - "RSSM"
 date: 2026-05-08
 content_hash: 2a4b0227fef4357f
 ---

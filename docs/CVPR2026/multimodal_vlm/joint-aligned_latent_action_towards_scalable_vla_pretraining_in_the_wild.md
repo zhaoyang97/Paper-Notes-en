@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Joint-Aligned Latent Action: Towards Scalable VLA Pretraining in the Wild
 description: >-
-  [CVPR 2026][Multimodal VLM][VLA pretraining] This paper proposes the JALA framework, which constructs a unified latent action space via joint alignment between predictive embeddings and latent actions inferred by an inverse dynamics model, enabling VLAs to learn simultaneously from labeled data and unlabeled in-the-wild human videos. Combined with the 7.5M-sample UniHand-Mix dataset, JALA significantly improves the generalization of robot manipulation policies.
+  [CVPR 2026][Multimodal VLM][VLA pretraining] This paper proposes the JALA framework, which constructs a unified latent action space via joint alignment between predictive embeddings and latent actions inferred by an inve…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - VLA pretraining
-  - latent action
-  - human video
-  - hand motion
-  - robot manipulation
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "VLA pretraining"
+  - "latent action"
+  - "human video"
+  - "hand motion"
+  - "robot manipulation"
 date: 2026-05-08
 content_hash: 0b19ccdeff5a0eb8
 ---

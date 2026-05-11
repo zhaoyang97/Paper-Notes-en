@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Stochastic Self-Organization in Multi-Agent Systems
 description: >-
-  [ICLR 2026][LLM Pretraining][multi-agent systems] This paper proposes SelfOrg, a framework that dynamically constructs directed acyclic communication graphs (DAGs) based on semantic similarity of agent responses and Shapley value contribution estimates, enabling self-organized collaboration in multi-agent systems. The approach is particularly effective in weak-model settings.
+  [ICLR 2026][LLM Pretraining][multi-agent systems] This paper proposes SelfOrg, a framework that dynamically constructs directed acyclic communication graphs (DAGs) based on semantic similarity of agent responses and Shap…
 tags:
-  - ICLR 2026
-  - LLM Pretraining
-  - multi-agent systems
-  - self-organization
-  - Shapley value
-  - communication graph
-  - DAG
-  - LLM collaboration
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "multi-agent systems"
+  - "self-organization"
+  - "Shapley value"
+  - "communication graph"
+  - "DAG"
+  - "LLM collaboration"
 date: 2026-05-08
 content_hash: 01f5de02cbd8f48f
 ---

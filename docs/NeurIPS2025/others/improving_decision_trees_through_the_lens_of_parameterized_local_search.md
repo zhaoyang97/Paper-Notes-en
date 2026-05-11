@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Improving Decision Trees through the Lens of Parameterized Local Search
 description: >-
-  [NeurIPS 2025][Decision Trees] This paper analyzes local search operations for decision tree optimization through the lens of parameterized complexity, identifies the sources of computational hardness, and proves that the combination of the number of features and domain size yields fixed-parameter tractability (FPT), accompanied by a proof-of-concept implementation.
+  [NeurIPS 2025][Decision Trees] This paper analyzes local search operations for decision tree optimization through the lens of parameterized complexity, identifies the sources of computational hardness…
 tags:
-  - NeurIPS 2025
-  - Decision Trees
-  - Parameterized Complexity
-  - Local Search
-  - NP-Completeness
-  - Fixed-Parameter Tractability
+  - "NeurIPS 2025"
+  - "Decision Trees"
+  - "Parameterized Complexity"
+  - "Local Search"
+  - "NP-Completeness"
+  - "Fixed-Parameter Tractability"
 date: 2026-05-08
 content_hash: cc36fda1cfc21fc4
 ---

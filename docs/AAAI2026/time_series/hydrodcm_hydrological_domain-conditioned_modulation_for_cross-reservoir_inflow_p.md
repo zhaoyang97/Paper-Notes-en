@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HydroDCM: Hydrological Domain-Conditioned Modulation for Cross-Reservoir Inflow Prediction
 description: >-
-  [AAAI 2026][Time Series][Domain Generalization] This paper proposes HydroDCM, the first framework to introduce Domain Generalization (DG) into hydrological forecasting. It constructs pseudo-domain labels from spatial meta-attributes to guide adversarial learning for invariant feature extraction, then employs a FiLM adapter to modulate features conditioned on the target reservoir's geographical information, enabling cross-domain inflow prediction for unseen reservoirs.
+  [AAAI 2026][Time Series][Domain Generalization] This paper proposes HydroDCM, the first framework to introduce Domain Generalization (DG) into hydrological forecasting. It constructs pseudo-domain labels from spatial met…
 tags:
-  - AAAI 2026
-  - Time Series
-  - Domain Generalization
-  - Cross-Reservoir Inflow Prediction
-  - Adversarial Training
-  - FiLM Modulation
-  - Spatial Meta-Attributes
+  - "AAAI 2026"
+  - "Time Series"
+  - "Domain Generalization"
+  - "Cross-Reservoir Inflow Prediction"
+  - "Adversarial Training"
+  - "FiLM Modulation"
+  - "Spatial Meta-Attributes"
 date: 2026-05-08
 content_hash: a8a56491239a5577
 ---

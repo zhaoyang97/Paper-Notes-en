@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Don't Adapt Small Language Models for Tools; Adapt Tool Schemas to the Models
 description: >-
-  [ACL 2026][LLM/NLP][Small Language Models] This paper proposes PA-Tool, a training-free tool schema optimization method that leverages a "peakedness" signal borrowed from data contamination detection to identify naming patterns familiar to a model from pretraining. By renaming tool components to align with the internalized knowledge of small language models (SLMs), PA-Tool achieves up to 17% improvement on MetaTool and RoTBench, with an 80% reduction in schema misalignment errors.
+  [ACL 2026][LLM/NLP][Small Language Models] This paper proposes PA-Tool, a training-free tool schema optimization method that leverages a "peakedness" signal borrowed from data contamination detection to identify naming p…
 tags:
-  - ACL 2026
-  - LLM/NLP
-  - Small Language Models
-  - Tool Calling
-  - Schema Alignment
-  - Pretrained Knowledge
-  - Training-free Optimization
+  - "ACL 2026"
+  - "LLM/NLP"
+  - "Small Language Models"
+  - "Tool Calling"
+  - "Schema Alignment"
+  - "Pretrained Knowledge"
+  - "Training-free Optimization"
 date: 2026-05-08
 content_hash: bca214b13bc5b2aa
 ---

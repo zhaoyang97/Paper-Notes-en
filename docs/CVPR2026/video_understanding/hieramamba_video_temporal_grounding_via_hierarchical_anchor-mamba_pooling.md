@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HieraMamba: Video Temporal Grounding via Hierarchical Anchor-Mamba Pooling
 description: >-
-  [CVPR 2026][Video Understanding][Video Temporal Grounding] HieraMamba proposes a Mamba-based hierarchical architecture for video temporal grounding. Its core contribution is the Anchor-MambaPooling (AMP) module, which employs Mamba's selective scanning to progressively compress video features into multi-scale anchor tokens. Complementary anchor-conditioned and segment-pooled contrastive losses enhance the compactness and discriminability of hierarchical representations, achieving state-of-the-art performance on Ego4D-NLQ, MAD, and TACoS.
+  [CVPR 2026][Video Understanding][Video Temporal Grounding] HieraMamba proposes a Mamba-based hierarchical architecture for video temporal grounding. Its core contribution is the Anchor-MambaPooling (AMP) module…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Video Temporal Grounding
-  - State Space Models
-  - Mamba
-  - Hierarchical Representation
-  - Contrastive Learning
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Video Temporal Grounding"
+  - "State Space Models"
+  - "Mamba"
+  - "Hierarchical Representation"
+  - "Contrastive Learning"
 date: 2026-05-08
 content_hash: 1daeb003e82cc5a8
 ---

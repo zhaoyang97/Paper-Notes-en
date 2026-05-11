@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Associative Syntax and Maximal Repetitions Reveal Context-Dependent Complexity in Fruit Bat Communication
 description: >-
-  [NeurIPS 2025 (Workshop on AI for Non-Human Animal Communication)][Audio & Speech][animal communication] This paper proposes an unsupervised approach for inferring discrete units, grammar types, and temporal structure from fruit bat vocalizations, and introduces Maximal Repetitions (MRs) to animal communication research for the first time, finding that communicative complexity is significantly higher in conflict contexts than in affiliative ones.
+  [NeurIPS 2025 (Workshop on AI for Non-Human Animal Communication)][Audio & Speech][animal communication] This paper proposes an unsupervised approach for inferring discrete units, grammar types…
 tags:
-  - NeurIPS 2025 (Workshop on AI for Non-Human Animal Communication)
+  - "NeurIPS 2025 (Workshop on AI for Non-Human Animal Communication)"
   - "Audio & Speech"
-  - animal communication
-  - fruit bat vocalizations
-  - unsupervised clustering
-  - associative syntax
-  - maximal repetitions
+  - "animal communication"
+  - "fruit bat vocalizations"
+  - "unsupervised clustering"
+  - "associative syntax"
+  - "maximal repetitions"
 date: 2026-05-08
 content_hash: 9746bc17858f4057
 ---

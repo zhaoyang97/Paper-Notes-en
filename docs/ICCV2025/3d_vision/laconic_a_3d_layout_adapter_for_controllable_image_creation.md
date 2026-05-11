@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LACONIC: A 3D Layout Adapter for Controllable Image Creation
 description: >-
-  [ICCV 2025][3D Vision][3D layout guidance] This paper proposes LACONIC, a lightweight adapter based on parameterized 3D semantic bounding boxes that injects explicit 3D geometric information into a pretrained text-to-image diffusion model via a decoupled cross-attention mechanism. It is the first method to simultaneously support camera control, 3D object-level semantic guidance, and full scene context modeling of off-screen objects, achieving a 75.8% reduction in FID compared to SceneCraft.
+  [ICCV 2025][3D Vision][3D layout guidance] This paper proposes LACONIC, a lightweight adapter based on parameterized 3D semantic bounding boxes that injects explicit 3D geometric information into a pretrained text-to-ima…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D layout guidance
-  - image generation
-  - diffusion model adapter
-  - decoupled cross-attention
-  - scene editing
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D layout guidance"
+  - "image generation"
+  - "diffusion model adapter"
+  - "decoupled cross-attention"
+  - "scene editing"
 date: 2026-05-08
 content_hash: e9faaafcf548ab2a
 ---

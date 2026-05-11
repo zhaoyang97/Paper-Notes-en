@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Generative Zoo
 description: >-
-  [ICCV 2025][LLM Evaluation][Synthetic data generation] A scalable pipeline is proposed for synthesizing animal 3D pose and shape training data using conditional image generation models (FLUX + ControlNet), producing the million-scale GenZoo dataset. Training exclusively on synthetic data achieves state-of-the-art performance on real-world benchmarks.
+  [ICCV 2025][LLM Evaluation][Synthetic data generation] A scalable pipeline is proposed for synthesizing animal 3D pose and shape training data using conditional image generation models (FLUX + ControlNet)…
 tags:
-  - ICCV 2025
-  - LLM Evaluation
-  - Synthetic data generation
-  - animal pose estimation
-  - SMAL
-  - conditional image generation
-  - ControlNet
+  - "ICCV 2025"
+  - "LLM Evaluation"
+  - "Synthetic data generation"
+  - "animal pose estimation"
+  - "SMAL"
+  - "conditional image generation"
+  - "ControlNet"
 date: 2026-05-08
 content_hash: 9af5bd76c8564a27
 ---

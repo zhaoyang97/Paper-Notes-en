@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] One Language, Two Scripts: Probing Script-Invariance in LLM Concept Representations
 description: >-
-  [ICLR 2026][Sparse Autoencoders] Using the Serbian digraphic system (Latin/Cyrillic) as a natural controlled experiment, this paper investigates whether features learned by Sparse Autoencoders (SAEs) capture abstract semantics beyond surface-level tokenization. The study finds that identical sentences across scripts activate highly overlapping SAE features (Jaccard ≈ 0.58), that script switching induces smaller representational differences than same-script paraphrasing, and that this invariance strengthens with model scale — demonstrating that SAE features genuinely capture semantic structure beyond orthography.
+  [ICLR 2026][Interpretability][Sparse Autoencoders] Using the Serbian digraphic system (Latin/Cyrillic) as a natural controlled experiment…
 tags:
-  - ICLR 2026
-  - Sparse Autoencoders
-  - script-invariance
-  - Serbian digraphia
-  - semantic representations
-  - interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Sparse Autoencoders"
+  - "script-invariance"
+  - "Serbian digraphia"
+  - "semantic representations"
 date: 2026-05-08
 content_hash: 61c825212201c9d3
 ---

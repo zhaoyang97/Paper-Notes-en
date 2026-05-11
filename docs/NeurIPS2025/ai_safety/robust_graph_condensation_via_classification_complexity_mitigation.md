@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Robust Graph Condensation via Classification Complexity Mitigation
 description: >-
-  [NeurIPS 2025][AI Safety][Graph Condensation] This paper reveals that graph condensation (GC) is fundamentally a process of reducing classification complexity, and that adversarial attacks precisely undermine this property. Based on this insight, the authors propose the MRGC framework, which enhances GC robustness through three manifold-based regularization modules: intrinsic dimensionality regularization, curvature-aware manifold smoothing, and inter-class manifold decoupling. This work represents the first systematic study of GC robustness under simultaneous perturbations of structure, features, and labels.
+  [NeurIPS 2025][AI Safety][Graph Condensation] This paper reveals that graph condensation (GC) is fundamentally a process of reducing classification complexity…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - Graph Condensation
-  - Adversarial Robustness
-  - Classification Complexity
-  - Manifold Learning
-  - Graph Neural Networks
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "Graph Condensation"
+  - "Adversarial Robustness"
+  - "Classification Complexity"
+  - "Manifold Learning"
+  - "Graph Neural Networks"
 date: 2026-05-08
 content_hash: cd1fcf1c3b1f0a82
 ---

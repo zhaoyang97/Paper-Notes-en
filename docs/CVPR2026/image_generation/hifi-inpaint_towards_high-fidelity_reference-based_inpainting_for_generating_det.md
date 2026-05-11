@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HiFi-Inpaint: Towards High-Fidelity Reference-Based Inpainting for Generating Detail-Preserving Human-Product Images
 description: >-
-  [CVPR 2026][Image Generation][Reference-based inpainting] This paper proposes HiFi-Inpaint, a framework that leverages high-frequency information to enhance product detail features via Shared Enhancement Attention (SEA), combined with a Detail-Aware Loss (DAL) for pixel-level high-frequency supervision, achieving state-of-the-art detail fidelity in human-product image generation.
+  [CVPR 2026][Image Generation][Reference-based inpainting] This paper proposes HiFi-Inpaint, a framework that leverages high-frequency information to enhance product detail features via Shared Enhancement Attention (SEA)…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Reference-based inpainting
-  - high-fidelity detail preservation
-  - human-product image generation
-  - high-frequency guidance
-  - DiT
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Reference-based inpainting"
+  - "high-fidelity detail preservation"
+  - "human-product image generation"
+  - "high-frequency guidance"
+  - "DiT"
 date: 2026-05-08
 content_hash: 0db227777ad86899
 ---

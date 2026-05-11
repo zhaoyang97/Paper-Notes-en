@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TrackMAE: Video Representation Learning via Track, Mask, and Predict
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Masked Video Modeling] This paper introduces explicit motion signals into the masked video modeling (MVM) framework. Point trajectories extracted via CoTracker3 serve as auxiliary reconstruction targets, complemented by a motion-aware masking strategy. The model jointly learns spatial reconstruction and motion prediction, achieving substantial gains over existing video self-supervised methods on motion-sensitive benchmarks (SSv2, FineGym).
+  [CVPR 2026][Self-Supervised Learning][Masked Video Modeling] This paper introduces explicit motion signals into the masked video modeling (MVM) framework. Point trajectories extracted via CoTracker3 serve as auxiliary re…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - Masked Video Modeling
-  - Point Tracking
-  - Motion Prediction
-  - Self-Supervised Pretraining
-  - Video Representation
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Masked Video Modeling"
+  - "Point Tracking"
+  - "Motion Prediction"
+  - "Self-Supervised Pretraining"
+  - "Video Representation"
 date: 2026-05-08
 content_hash: 100920ca93bb2da4
 ---

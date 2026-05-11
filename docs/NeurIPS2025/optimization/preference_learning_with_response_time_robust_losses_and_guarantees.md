@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Preference Learning with Response Time: Robust Losses and Guarantees
 description: >-
-  [NeurIPS 2025][Optimization][Preference learning] This paper incorporates response time information from user decision-making into the preference learning framework, reducing the estimation error of reward model learning from exponential to polynomial order via a Neyman orthogonal loss function.
+  [NeurIPS 2025][Optimization][Preference learning] This paper incorporates response time information from user decision-making into the preference learning framework…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Preference learning
-  - response time
-  - reward model
-  - Neyman orthogonality
-  - robust loss
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Preference learning"
+  - "response time"
+  - "reward model"
+  - "Neyman orthogonality"
+  - "robust loss"
 date: 2026-05-08
 content_hash: 10d5fc57309855b0
 ---

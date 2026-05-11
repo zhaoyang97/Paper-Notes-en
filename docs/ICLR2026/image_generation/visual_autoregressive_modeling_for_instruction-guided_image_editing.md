@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Visual Autoregressive Modeling for Instruction-Guided Image Editing
 description: >-
-  [ICLR 2026][Image Generation][Image Editing] This paper proposes VAREdit, which reformulates instruction-guided image editing as a multi-scale prediction problem. By introducing a Scale-Aligned Reference module to address the scale mismatch in finest-scale conditioning, VAREdit significantly outperforms diffusion-based methods in both editing fidelity and inference efficiency.
+  [ICLR 2026][Image Generation][Image Editing] This paper proposes VAREdit, which reformulates instruction-guided image editing as a multi-scale prediction problem. By introducing a Scale-Aligned Reference module to addres…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Image Editing
-  - Visual Autoregressive
-  - Multi-Scale Prediction
-  - Instruction-Guided
-  - Scale Alignment
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Image Editing"
+  - "Visual Autoregressive"
+  - "Multi-Scale Prediction"
+  - "Instruction-Guided"
+  - "Scale Alignment"
 date: 2026-05-08
 content_hash: 1d228708876304c7
 ---

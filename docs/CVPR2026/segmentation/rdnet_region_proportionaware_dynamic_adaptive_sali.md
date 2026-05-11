@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RDNet: Region Proportion-Aware Dynamic Adaptive Salient Object Detection Network in Optical Remote Sensing Images
 description: >-
-  [CVPR 2026][Segmentation][Salient Object Detection] This paper proposes RDNet, which employs a region proportion-aware Proportion Guidance block to estimate the area ratio of salient objects and dynamically selects combinations of 3/4/5 convolutional kernels of varying sizes for detail extraction. Combined with wavelet-domain frequency-matched context enhancement (reducing computation to 1/4) and a cross-attention localization module, RDNet comprehensively outperforms 21 state-of-the-art methods on three optical remote sensing SOD benchmarks: EORSSD, ORSSD, and ORSI-4199.
+  [CVPR 2026][Segmentation][Salient Object Detection] This paper proposes RDNet, which employs a region proportion-aware Proportion Guidance block to estimate the area ratio of salient objects and dynamically selects combi…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Salient Object Detection
-  - Remote Sensing Images
-  - Dynamic Convolutional Kernel Selection
-  - Wavelet Transform
-  - Region Proportion Awareness
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Salient Object Detection"
+  - "Remote Sensing Images"
+  - "Dynamic Convolutional Kernel Selection"
+  - "Wavelet Transform"
+  - "Region Proportion Awareness"
 date: 2026-05-08
 content_hash: 3a00324bfa4a2006
 ---

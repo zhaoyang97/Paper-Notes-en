@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Variation-Aware Vision Token Dropping for Faster Large Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][token compression] This paper proposes V2Drop, the first method to approach token importance from the perspective of token variation. By progressively dropping "lazy" vision tokens with minimal variation inside the LLM, V2Drop achieves training-free, position-bias-free, and efficient-operator-compatible LVLM inference acceleration, retaining 94.0% and 98.6% of original performance on image and video understanding tasks while reducing LLM generation latency by 31.5% and 74.2%, respectively.
+  [CVPR 2026][Multimodal VLM][token compression] This paper proposes V2Drop, the first method to approach token importance from the perspective of token variation. By progressively dropping "lazy" vision tokens with minima…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - token compression
-  - vision token pruning
-  - LVLM acceleration
-  - variation-aware
-  - training-free inference acceleration
-  - FlashAttention compatibility
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "token compression"
+  - "vision token pruning"
+  - "LVLM acceleration"
+  - "variation-aware"
+  - "training-free inference acceleration"
+  - "FlashAttention compatibility"
 date: 2026-05-08
 content_hash: ad7bf68557eb42ae
 ---

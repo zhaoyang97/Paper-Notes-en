@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unlearned but Not Forgotten: Data Extraction after Exact Unlearning in LLM
 description: >-
-  [NeurIPS 2025][Medical Imaging][Data extraction attack] This paper reveals that even exact unlearning (retraining from scratch to remove data influence) is susceptible to privacy leakage. By exploiting the divergence between model checkpoints before and after unlearning, an adversary can apply reversed model guidance with token filtering to substantially improve extraction success rates for deleted data—in some settings doubling the extraction rate.
+  [NeurIPS 2025][Medical Imaging][Data extraction attack] This paper reveals that even exact unlearning (retraining from scratch to remove data influence) is susceptible to privacy leakage. By exploiting the divergence bet…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Data extraction attack
-  - machine unlearning
-  - LLM privacy
-  - reversed model guidance
-  - exact unlearning
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Data extraction attack"
+  - "machine unlearning"
+  - "LLM privacy"
+  - "reversed model guidance"
+  - "exact unlearning"
 date: 2026-05-08
 content_hash: 0adf1a3cfb8f23c4
 ---

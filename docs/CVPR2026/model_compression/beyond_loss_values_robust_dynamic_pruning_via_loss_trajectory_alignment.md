@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond Loss Values: Robust Dynamic Pruning via Loss Trajectory Alignment
 description: >-
-  [CVPR 2026][Model Compression][dynamic data pruning] This paper proposes AlignPrune—a plug-and-play module based on loss trajectory alignment—that replaces conventional loss-value ranking with a Dynamic Alignment Score (DAS), achieving up to 6.3% accuracy improvement over standard dynamic data pruning methods under noisy label settings.
+  [CVPR 2026][Model Compression][dynamic data pruning] This paper proposes AlignPrune—a plug-and-play module based on loss trajectory alignment—that replaces conventional loss-value ranking with a Dynamic Alignment Score (…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - dynamic data pruning
-  - noisy labels
-  - loss trajectory
-  - plug-and-play module
-  - training efficiency
+  - "CVPR 2026"
+  - "Model Compression"
+  - "dynamic data pruning"
+  - "noisy labels"
+  - "loss trajectory"
+  - "plug-and-play module"
+  - "training efficiency"
 date: 2026-05-08
 content_hash: dbcc5504ccd37254
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Pixels Don't Lie (But Your Detector Might): Bootstrapping MLLM-as-a-Judge for Trustworthy Deepfake Detection and Reasoning Supervision
 description: >-
-  [CVPR 2026][Multimodal VLM][Deepfake Detection] This paper proposes the DeepfakeJudge framework, which scales human-annotated reasoning supervision into large-scale structured scoring data via a bootstrapped generator-evaluator pipeline. The framework trains 3B/7B vision-language models as automatic judges for deepfake detection reasoning quality, achieving high human alignment in both pointwise and pairwise evaluation settings.
+  [CVPR 2026][Multimodal VLM][Deepfake Detection] This paper proposes the DeepfakeJudge framework, which scales human-annotated reasoning supervision into large-scale structured scoring data via a bootstrapped generator-ev…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Deepfake Detection
-  - Reasoning Supervision
-  - MLLM-as-a-Judge
-  - Visual Forensics
-  - Bootstrapping
-  - VLM Evaluation
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Deepfake Detection"
+  - "Reasoning Supervision"
+  - "MLLM-as-a-Judge"
+  - "Visual Forensics"
+  - "Bootstrapping"
+  - "VLM Evaluation"
 date: 2026-05-08
 content_hash: 2a4ea0d1eecaac9d
 ---

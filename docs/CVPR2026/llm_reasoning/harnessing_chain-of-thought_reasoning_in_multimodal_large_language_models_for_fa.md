@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Harnessing Chain-of-Thought Reasoning in Multimodal Large Language Models for Face Anti-Spoofing
 description: >-
-  [CVPR 2026][LLM Reasoning][Face Anti-Spoofing] The paper introduces FaceCoT, the first CoT-VQA dataset for face anti-spoofing (FAS) with 1.08 million samples covering 14 attack types, and proposes a two-stage progressive learning strategy CEPL, achieving an average AUC improvement of 4.06% and HTER reduction of 5.00% across 11 FAS benchmarks.
+  [CVPR 2026][LLM Reasoning][Face Anti-Spoofing] The paper introduces FaceCoT, the first CoT-VQA dataset for face anti-spoofing (FAS) with 1.08 million samples covering 14 attack types…
 tags:
-  - CVPR 2026
-  - LLM Reasoning
-  - Face Anti-Spoofing
-  - Chain-of-Thought Reasoning
-  - Multimodal Large Language Models
-  - VQA Dataset
-  - Progressive Learning
+  - "CVPR 2026"
+  - "LLM Reasoning"
+  - "Face Anti-Spoofing"
+  - "Chain-of-Thought Reasoning"
+  - "Multimodal Large Language Models"
+  - "VQA Dataset"
+  - "Progressive Learning"
 date: 2026-05-08
 content_hash: 7607f3e94b69e4bc
 ---

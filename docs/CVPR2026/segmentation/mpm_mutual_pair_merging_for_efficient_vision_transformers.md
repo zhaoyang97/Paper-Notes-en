@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MPM: Mutual Pair Merging for Efficient Vision Transformers
 description: >-
-  [CVPR 2026][Segmentation][Token Merging] This paper proposes Mutual Pair Merging (MPM), a parameter-free, training-free token merging module for ViTs that reduces sequence length via mutual nearest-neighbor pairing and mean fusion. On ADE20K, MPM achieves a 60% latency reduction on Raspberry Pi 5 for ViT-Tiny and a 20% throughput improvement on H100 with FlashAttention-2, while keeping mIoU degradation within 3%.
+  [CVPR 2026][Segmentation][Token Merging] This paper proposes Mutual Pair Merging (MPM), a parameter-free, training-free token merging module for ViTs that reduces sequence length via mutual nearest-neighbor pairing and m…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Token Merging
-  - Semantic Segmentation
-  - Vision Transformer
-  - Inference Acceleration
-  - Training-Free Method
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Token Merging"
+  - "Semantic Segmentation"
+  - "Vision Transformer"
+  - "Inference Acceleration"
+  - "Training-Free Method"
 date: 2026-05-08
 content_hash: eda93c276a22c78c
 ---

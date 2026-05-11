@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] SOM Directions are Better than One: Multi-Directional Refusal Suppression in Language Models
 description: >-
-  [AAAI 2026][Refusal suppression] This paper demonstrates that refusal behavior in LLMs is not encoded by a single direction but rather forms a low-dimensional manifold. It employs self-organizing maps (SOM) to extract multiple refusal directions and applies Bayesian optimization to search for the optimal ablation combination, surpassing single-direction baselines and dedicated jailbreak algorithms across multiple models.
+  [AAAI 2026][Interpretability][Refusal suppression] This paper demonstrates that refusal behavior in LLMs is not encoded by a single direction but rather forms a low-dimensional manifold. It employs self-organizing maps (…
 tags:
-  - AAAI 2026
-  - Refusal suppression
-  - self-organizing map
-  - multi-directional ablation
-  - representation space
-  - jailbreak attack
+  - "AAAI 2026"
+  - "Interpretability"
+  - "Refusal suppression"
+  - "self-organizing map"
+  - "multi-directional ablation"
+  - "representation space"
+  - "jailbreak attack"
 date: 2026-05-08
 content_hash: 3bedb620fa2809a1
 ---

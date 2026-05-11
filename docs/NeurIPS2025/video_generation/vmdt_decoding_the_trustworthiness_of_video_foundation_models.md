@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VMDT: Decoding the Trustworthiness of Video Foundation Models
 description: >-
-  [NeurIPS 2025][Video Generation][Video foundation models] This paper introduces VMDT (Video-Modal DecodingTrust), the first unified benchmark platform for evaluating the trustworthiness of T2V and V2T video foundation models across five dimensions—safety, hallucination, fairness, privacy, and adversarial robustness—covering large-scale assessments of 7 T2V and 19 V2T models, and revealing the complex relationship between model scale and trustworthiness.
+  [NeurIPS 2025][Video Generation][Video foundation models] This paper introduces VMDT (Video-Modal DecodingTrust), the first unified benchmark platform for evaluating the trustworthiness of T2V and V2T video foundation mo…
 tags:
-  - NeurIPS 2025
-  - Video Generation
-  - Video foundation models
-  - trustworthiness evaluation
-  - safety
-  - fairness
-  - adversarial robustness
+  - "NeurIPS 2025"
+  - "Video Generation"
+  - "Video foundation models"
+  - "trustworthiness evaluation"
+  - "safety"
+  - "fairness"
+  - "adversarial robustness"
 date: 2026-05-08
 content_hash: f4d3d5ee83326313
 ---

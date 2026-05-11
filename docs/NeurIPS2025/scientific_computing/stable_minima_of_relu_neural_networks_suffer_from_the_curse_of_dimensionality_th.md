@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Stable Minima of ReLU Neural Networks Suffer from the Curse of Dimensionality: The Neural Shattering Phenomenon
 description: >-
-  [NeurIPS 2025][Scientific Computing][stable minima] This paper investigates the generalization properties of stable minima (flat minima) in two-layer overparameterized ReLU networks. It proves that while flatness does imply generalization, the convergence rate deteriorates exponentially with input dimension (i.e., the curse of dimensionality applies), forming an exponential separation from low-norm solutions (weight decay) that are immune to this curse. The paper further identifies the "neural shattering" phenomenon as the geometric mechanism underlying failure in high dimensions.
+  [NeurIPS 2025][Scientific Computing][stable minima] This paper investigates the generalization properties of stable minima (flat minima) in two-layer overparameterized ReLU networks. It proves that while flatness does im…
 tags:
-  - NeurIPS 2025
-  - Scientific Computing
-  - stable minima
-  - ReLU networks
-  - curse of dimensionality
-  - implicit bias
-  - nonparametric estimation
+  - "NeurIPS 2025"
+  - "Scientific Computing"
+  - "stable minima"
+  - "ReLU networks"
+  - "curse of dimensionality"
+  - "implicit bias"
+  - "nonparametric estimation"
 date: 2026-05-08
 content_hash: 53b44455c1cf6485
 ---

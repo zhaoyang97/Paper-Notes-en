@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Doubly Robust Alignment for Large Language Models
 description: >-
-  [NeurIPS 2025][Optimization][RLHF] DRPO draws on doubly robust estimation from causal inference to propose a preference optimization algorithm that maintains consistency whenever either the preference model or the reference policy is correctly specified, outperforming PPO/DPO and their variants both theoretically and empirically.
+  [NeurIPS 2025][Optimization][RLHF] DRPO draws on doubly robust estimation from causal inference to propose a preference optimization algorithm that maintains consistency whenever either the preference model or the refere…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - RLHF
-  - doubly robust
-  - preference optimization
-  - DPO
-  - model robustness
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "RLHF"
+  - "doubly robust"
+  - "preference optimization"
+  - "DPO"
+  - "model robustness"
 date: 2026-05-08
 content_hash: 159822d7c7b56296
 ---

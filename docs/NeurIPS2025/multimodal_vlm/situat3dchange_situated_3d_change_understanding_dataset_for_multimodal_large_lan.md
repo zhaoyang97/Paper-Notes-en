@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Situat3DChange: Situated 3D Change Understanding Dataset for Multimodal Large Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][3D scene change understanding] This work introduces the Situat3DChange dataset (174K data instances) that unifies dynamic scene change perception and situated awareness understanding under a perception–action paradigm, and proposes SCReasoner—an efficient 3D MLLM for point cloud comparative reasoning.
+  [NeurIPS 2025][Multimodal VLM][3D scene change understanding] This work introduces the Situat3DChange dataset (174K data instances) that unifies dynamic scene change perception and situated awareness understanding under…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - 3D scene change understanding
-  - situation awareness
-  - multimodal large language models
-  - point cloud comparison
-  - dataset
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "3D scene change understanding"
+  - "situation awareness"
+  - "multimodal large language models"
+  - "point cloud comparison"
+  - "dataset"
 date: 2026-05-08
 content_hash: 45451fbe11a22174
 ---

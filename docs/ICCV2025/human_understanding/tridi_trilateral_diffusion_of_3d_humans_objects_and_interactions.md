@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TriDi: Trilateral Diffusion of 3D Humans, Objects, and Interactions
 description: >-
-  [ICCV 2025][Human Understanding][3D human-object interaction] TriDi is proposed as the first unified diffusion model that jointly models the three-variable distribution of humans (H), objects (O), and interactions (I). A single network covers 7 conditional generation modes, outperforming dedicated unidirectional baselines across all settings.
+  [ICCV 2025][Human Understanding][3D human-object interaction] TriDi is proposed as the first unified diffusion model that jointly models the three-variable distribution of humans (H), objects (O)…
 tags:
-  - ICCV 2025
-  - Human Understanding
-  - 3D human-object interaction
-  - joint probability modeling
-  - trilateral diffusion
-  - contact maps
-  - multimodal generation
+  - "ICCV 2025"
+  - "Human Understanding"
+  - "3D human-object interaction"
+  - "joint probability modeling"
+  - "trilateral diffusion"
+  - "contact maps"
+  - "multimodal generation"
 date: 2026-05-08
 content_hash: 3d1b4e273dac88a2
 ---

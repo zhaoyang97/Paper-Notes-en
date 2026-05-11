@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Adversarial Distribution Matching for Diffusion Distillation Towards Efficient Image and Video Synthesis
 description: >-
-  [ICCV 2025][Video Generation][diffusion distillation] This paper proposes an Adversarial Distribution Matching (ADM) framework that replaces the predefined KL divergence in DMD with an implicit, data-driven measure of distributional discrepancy. A diffusion-model-based discriminator aligns the latent predictions of real and fake score estimators along the PF-ODE. Combined with Adversarial Distillation Pre-training (ADP), the resulting DMDX pipeline surpasses DMD2 on one-step SDXL generation and extends naturally to SD3 and CogVideoX video synthesis.
+  [ICCV 2025][Video Generation][diffusion distillation] This paper proposes an Adversarial Distribution Matching (ADM) framework that replaces the predefined KL divergence in DMD with an implicit…
 tags:
-  - ICCV 2025
-  - Video Generation
-  - diffusion distillation
-  - adversarial training
-  - distribution matching
-  - one-step generation
-  - score distillation
+  - "ICCV 2025"
+  - "Video Generation"
+  - "diffusion distillation"
+  - "adversarial training"
+  - "distribution matching"
+  - "one-step generation"
+  - "score distillation"
 date: 2026-05-08
 content_hash: ba00090d3da3df30
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RenderFlow: Single-Step Neural Rendering via Flow Matching
 description: >-
-  [CVPR 2026][Image Generation][Neural rendering] RenderFlow recasts neural rendering as a single-step conditional flow matching problem from albedo to full-illumination images. Using G-buffers as conditions and a pretrained video DiT as the backbone, it achieves deterministic rendering more than 10× faster than diffusion-based methods (~0.19 s/frame). An optional sparse keyframe guidance module further improves physical accuracy, and inverse rendering is supported via a frozen backbone with lightweight adapters.
+  [CVPR 2026][Image Generation][Neural rendering] RenderFlow recasts neural rendering as a single-step conditional flow matching problem from albedo to full-illumination images. Using G-buffers as conditions and a pretrain…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Neural rendering
-  - flow matching
-  - single-step inference
-  - G-buffer
-  - keyframe guidance
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Neural rendering"
+  - "flow matching"
+  - "single-step inference"
+  - "G-buffer"
+  - "keyframe guidance"
 date: 2026-05-08
 content_hash: dea3c03c1c4f0f4c
 ---

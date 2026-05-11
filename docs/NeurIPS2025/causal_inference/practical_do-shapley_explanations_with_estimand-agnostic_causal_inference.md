@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Practical do-Shapley Explanations with Estimand-Agnostic Causal Inference
 description: >-
-  [NeurIPS 2025][Causal Inference][Shapley values] This paper proposes the Estimand-Agnostic (EA) approach and the Frontier-Reducibility Algorithm (FRA) for efficient computation of causal Shapley values (do-SV). By training a single SCM to learn the observational distribution, the framework answers arbitrary identifiable causal queries and reduces the number of coalitions requiring evaluation by approximately 90% via coalition reduction.
+  [NeurIPS 2025][Causal Inference][Shapley values] This paper proposes the Estimand-Agnostic (EA) approach and the Frontier-Reducibility Algorithm (FRA) for efficient computation of causal Shapley values (do-SV). By traini…
 tags:
-  - NeurIPS 2025
-  - Causal Inference
-  - Shapley values
-  - do-SHAP
-  - structural causal models
-  - identifiability
+  - "NeurIPS 2025"
+  - "Causal Inference"
+  - "Shapley values"
+  - "do-SHAP"
+  - "structural causal models"
+  - "identifiability"
 date: 2026-05-08
 content_hash: 1d709790c06357f8
 ---

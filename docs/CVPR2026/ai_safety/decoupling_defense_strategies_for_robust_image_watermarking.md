@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] AdvMark: Decoupling Defense Strategies for Robust Image Watermarking
 description: >-
-  [CVPR2026][AI Safety][Image Watermarking] AdvMark proposes a two-stage decoupled defense framework: Stage 1 Encoder Adversarial Training (EAT) pushes watermarked images into non-attackable regions to resist adversarial attacks; Stage 2 performs direct image optimization to defend against distortion and regeneration attacks while preserving adversarial robustness. Evaluated across 9 watermarking methods × 10 attack types, AdvMark improves distortion/regeneration/adversarial accuracy by 29%/33%/46% respectively, while achieving the best image quality.
+  [CVPR2026][AI Safety][Image Watermarking] AdvMark proposes a two-stage decoupled defense framework: Stage 1 Encoder Adversarial Training (EAT) pushes watermarked images into non-attackable regions to resist adversarial a…
 tags:
-  - CVPR2026
-  - AI Safety
-  - Image Watermarking
-  - Adversarial Robustness
-  - Diffusion Regeneration Attack
-  - Decoupled Training
-  - Adversarial Training
-  - Image Quality
+  - "CVPR2026"
+  - "AI Safety"
+  - "Image Watermarking"
+  - "Adversarial Robustness"
+  - "Diffusion Regeneration Attack"
+  - "Decoupled Training"
+  - "Adversarial Training"
+  - "Image Quality"
 date: 2026-05-08
 content_hash: 9571e0ed0fb38bbc
 ---

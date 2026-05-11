@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Laplacian Multi-scale Flow Matching for Generative Modeling
 description: >-
-  [ICLR 2026][Image Generation][Multi-scale Generation] This paper proposes LapFlow, which decomposes images into Laplacian pyramid residuals and models different scales in parallel via a Mixture-of-Transformers (MoT) architecture with causal attention, reducing computational cost while improving generation quality.
+  [ICLR 2026][Image Generation][Multi-scale Generation] This paper proposes LapFlow, which decomposes images into Laplacian pyramid residuals and models different scales in parallel via a Mixture-of-Transformers (MoT) arch…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Multi-scale Generation
-  - Laplacian Pyramid
-  - Flow Matching
-  - Mixture-of-Transformers
-  - Causal Attention
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Multi-scale Generation"
+  - "Laplacian Pyramid"
+  - "Flow Matching"
+  - "Mixture-of-Transformers"
+  - "Causal Attention"
 date: 2026-05-08
 content_hash: 833e147a145a8ec6
 ---

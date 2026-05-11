@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] MdaIF: Robust One-Stop Multi-Degradation-Aware Image Fusion with Language-Driven Semantics
 description: >-
-  [AAAI 2026][Infrared-Visible Fusion] This paper proposes MdaIF, a framework that leverages a vision-language model (VLM) to extract degradation-aware semantic priors for guiding mixture-of-experts (MoE) routing and channel attention modulation, enabling one-stop infrared-visible image fusion across multiple degradation scenarios without requiring degradation-type annotations.
+  [AAAI 2026][Earth Science][Infrared-Visible Fusion] This paper proposes MdaIF, a framework that leverages a vision-language model (VLM) to extract degradation-aware semantic priors for guiding mixture-of-experts (MoE) ro…
 tags:
-  - AAAI 2026
-  - Infrared-Visible Fusion
-  - Degradation-Aware
-  - Mixture of Experts
-  - Vision-Language Model
-  - Channel Attention
+  - "AAAI 2026"
+  - "Earth Science"
+  - "Infrared-Visible Fusion"
+  - "Degradation-Aware"
+  - "Mixture of Experts"
+  - "Vision-Language Model"
+  - "Channel Attention"
 date: 2026-05-08
 content_hash: ba49c6a3a7d54fa4
 ---

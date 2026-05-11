@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Position: The Complexity of Perfect AI Alignment -- Formalizing the RLHF Trilemma
 description: >-
-  [NeurIPS 2025][LLM Alignment][AI alignment] This paper formalizes the recurring safety–fairness–efficiency tensions in RLHF as an "alignment trilemma": it proves that no RLHF system can simultaneously satisfy $\varepsilon$-representativeness (faithfully reflecting diverse values), polynomial tractability (computational feasibility), and $\delta$-robustness (resistance to adversarial attacks), thereby providing a unified complexity-theoretic explanation for pathological phenomena such as preference collapse and sycophancy observed in current RLHF systems.
+  [NeurIPS 2025][LLM Alignment][AI alignment] This paper formalizes the recurring safety–fairness–efficiency tensions in RLHF as an "alignment trilemma": it proves that no RLHF system can simultaneously satisfy $\varepsilo…
 tags:
-  - NeurIPS 2025
-  - LLM Alignment
-  - AI alignment
-  - RLHF
-  - trilemma
-  - social choice theory
-  - formal analysis
+  - "NeurIPS 2025"
+  - "LLM Alignment"
+  - "AI alignment"
+  - "RLHF"
+  - "trilemma"
+  - "social choice theory"
+  - "formal analysis"
 date: 2026-05-08
 content_hash: 27a3478e43bb6546
 ---

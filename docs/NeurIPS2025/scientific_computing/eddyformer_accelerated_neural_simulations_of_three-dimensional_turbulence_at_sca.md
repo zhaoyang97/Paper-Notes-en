@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EddyFormer: Accelerated Neural Simulations of Three-Dimensional Turbulence at Scale
 description: >-
-  [NeurIPS 2025][Scientific Computing][Turbulence Simulation] EddyFormer is a Transformer architecture based on the Spectral Element Method (SEM) that decomposes the flow field into two parallel streams — LES (large-scale) and SGS (small-scale) — achieving DNS-level accuracy on 3D turbulence at $256^3$ resolution with a 30× speedup, while generalizing well to unseen domains 4× larger.
+  [NeurIPS 2025][Scientific Computing][Turbulence Simulation] EddyFormer is a Transformer architecture based on the Spectral Element Method (SEM) that decomposes the flow field into two parallel streams — LES (large-scale)…
 tags:
-  - NeurIPS 2025
-  - Scientific Computing
-  - Turbulence Simulation
-  - Spectral Element Method
-  - Transformer
-  - LES
-  - Neural PDE Solver
+  - "NeurIPS 2025"
+  - "Scientific Computing"
+  - "Turbulence Simulation"
+  - "Spectral Element Method"
+  - "Transformer"
+  - "LES"
+  - "Neural PDE Solver"
 date: 2026-05-08
 content_hash: 4ada556585ae16a0
 ---

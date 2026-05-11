@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Task-Specific Distance Correlation Matching for Few-Shot Action Recognition
 description: >-
-  [AAAI 2026][Video Understanding][Few-Shot Action Recognition] This paper proposes TS-FSAR, a framework that employs α-distance correlation to capture nonlinear inter-frame dependencies and combines task-specific matching matrices for query-support matching. An adapted frozen CLIP guides the training of a ladder side network, achieving substantial improvements over prior methods on temporally sensitive datasets such as SSv2-Full.
+  [AAAI 2026][Video Understanding][Few-Shot Action Recognition] This paper proposes TS-FSAR, a framework that employs α-distance correlation to capture nonlinear inter-frame dependencies and combines task-specific matching…
 tags:
-  - AAAI 2026
-  - Video Understanding
-  - Few-Shot Action Recognition
-  - Distance Correlation
-  - CLIP Fine-tuning
-  - Task-Specific Matching
-  - Side-Tuning
+  - "AAAI 2026"
+  - "Video Understanding"
+  - "Few-Shot Action Recognition"
+  - "Distance Correlation"
+  - "CLIP Fine-tuning"
+  - "Task-Specific Matching"
+  - "Side-Tuning"
 date: 2026-05-08
 content_hash: 59df263621c18222
 ---

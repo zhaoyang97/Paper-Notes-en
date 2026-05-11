@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SABRE-FL: Selective and Accurate Backdoor Rejection for Federated Prompt Learning
 description: >-
-  [ICLR2026][LLM Safety][federated learning] This paper is the first to investigate backdoor attack threats in the federated prompt learning (FPL) setting, and proposes SABRE-FL — a lightweight server-side defense based on anomaly detection in the embedding space — which effectively filters poisoned prompt updates without accessing clients' raw data.
+  [ICLR2026][LLM Safety][federated learning] This paper is the first to investigate backdoor attack threats in the federated prompt learning (FPL) setting…
 tags:
-  - ICLR2026
-  - LLM Safety
-  - federated learning
-  - Prompt Learning
-  - Backdoor Attack
-  - CLIP
-  - Anomaly Detection
+  - "ICLR2026"
+  - "LLM Safety"
+  - "federated learning"
+  - "Prompt Learning"
+  - "Backdoor Attack"
+  - "CLIP"
+  - "Anomaly Detection"
 date: 2026-05-08
 content_hash: b837e5977396f5f9
 ---

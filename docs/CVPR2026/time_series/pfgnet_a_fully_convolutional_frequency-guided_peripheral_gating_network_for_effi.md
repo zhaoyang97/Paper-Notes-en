@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PFGNet: A Fully Convolutional Frequency-Guided Peripheral Gating Network for Efficient Spatiotemporal Predictive Learning
 description: >-
-  [CVPR 2026][Time Series][spatiotemporal predictive learning] This paper proposes PFGNet, a fully convolutional spatiotemporal prediction framework that dynamically modulates multi-scale large-kernel peripheral responses via pixel-wise frequency-guided gating (PFG) while applying learnable center inhibition, thereby simulating the biological center-surround bandpass filtering mechanism of the visual system. PFGNet achieves state-of-the-art or near state-of-the-art performance on four benchmarks—Moving MNIST, TaxiBJ, KTH, and Human3.6M—with remarkably few parameters and low computational cost.
+  [CVPR 2026][Time Series][spatiotemporal predictive learning] This paper proposes PFGNet, a fully convolutional spatiotemporal prediction framework that dynamically modulates multi-scale large-kernel peripheral responses…
 tags:
-  - CVPR 2026
-  - Time Series
-  - spatiotemporal predictive learning
-  - large-kernel convolution
-  - frequency-guided gating
-  - center-surround inhibition
-  - fully convolutional architecture
+  - "CVPR 2026"
+  - "Time Series"
+  - "spatiotemporal predictive learning"
+  - "large-kernel convolution"
+  - "frequency-guided gating"
+  - "center-surround inhibition"
+  - "fully convolutional architecture"
 date: 2026-05-08
 content_hash: 22a356785711b444
 ---

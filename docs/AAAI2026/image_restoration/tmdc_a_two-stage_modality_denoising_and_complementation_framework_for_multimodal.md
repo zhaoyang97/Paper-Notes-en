@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TMDC: A Two-Stage Modality Denoising and Complementation Framework for Multimodal Sentiment Analysis
 description: >-
-  [AAAI 2026][Image Restoration][multimodal sentiment analysis] This paper proposes TMDC, a two-stage framework in which the first stage learns denoised modality-specific and modality-common representations on complete data, and the second stage leverages denoised representations from available modalities to reconstruct missing ones — marking the first joint treatment of noise and missing modalities in MSA.
+  [AAAI 2026][Image Restoration][multimodal sentiment analysis] This paper proposes TMDC, a two-stage framework in which the first stage learns denoised modality-specific and modality-common representations on complete dat…
 tags:
-  - AAAI 2026
-  - Image Restoration
-  - multimodal sentiment analysis
-  - missing modality
-  - noisy modality
-  - variational information bottleneck
-  - denoising
+  - "AAAI 2026"
+  - "Image Restoration"
+  - "multimodal sentiment analysis"
+  - "missing modality"
+  - "noisy modality"
+  - "variational information bottleneck"
+  - "denoising"
 date: 2026-05-08
 content_hash: 6a039406a233f00e
 ---

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] UFO-4D: Unposed Feedforward 4D Reconstruction from Two Images
 description: >-
-  [3D Vision] This paper proposes UFO-4D, a unified feedforward framework that directly predicts dynamic 3D Gaussian representations from two unposed images, enabling jointly consistent estimation of 3D geometry, 3D motion, and camera pose, achieving up to 3× improvement over existing methods on geometry and motion benchmarks.
+  [3D Vision] This paper proposes UFO-4D, a unified feedforward framework that directly predicts dynamic 3D Gaussian representations from two unposed images, enabling jointly consistent estimation of 3D geometry, 3D motion…
 tags:
-  - 3D Vision
+  - "3D Vision"
 date: 2026-05-08
 content_hash: 601a6ec663a00cd1
 ---

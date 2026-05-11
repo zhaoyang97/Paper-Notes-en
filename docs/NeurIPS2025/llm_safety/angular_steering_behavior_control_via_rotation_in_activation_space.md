@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Angular Steering: Behavior Control via Rotation in Activation Space
 description: >-
-  [NeurIPS 2025][LLM Safety][activation steering] This paper proposes Angular Steering, which unifies LLM activation steering as rotation operations within a fixed 2D subspace. By parameterizing behavior control through rotation angle, it provides a continuous, fine-grained, norm-preserving knob spanning 0°–360°, while unifying activation addition and directional ablation as special cases of rotation. The approach achieves robust behavior control on Llama 3, Qwen 2.5, and Gemma 2 (3B–14B).
+  [NeurIPS 2025][LLM Safety][activation steering] This paper proposes Angular Steering, which unifies LLM activation steering as rotation operations within a fixed 2D subspace. By parameterizing behavior control through ro…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - activation steering
-  - behavior control
-  - rotation transform
-  - refusal steering
-  - norm preservation
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "activation steering"
+  - "behavior control"
+  - "rotation transform"
+  - "refusal steering"
+  - "norm preservation"
 date: 2026-05-08
 content_hash: d4b17846806865ee
 ---

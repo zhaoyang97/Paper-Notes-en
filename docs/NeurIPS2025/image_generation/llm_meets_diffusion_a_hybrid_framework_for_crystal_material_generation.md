@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LLM Meets Diffusion: A Hybrid Framework for Crystal Material Generation
 description: >-
-  [NeurIPS 2025][Image Generation][Crystal Material Generation] This paper proposes CrysLLMGen, a hybrid framework that combines the complementary strengths of LLMs in discrete atom type prediction and diffusion models in continuous coordinate/lattice parameter modeling, achieving high structural validity and compositional validity simultaneously in crystal material generation.
+  [NeurIPS 2025][Image Generation][Crystal Material Generation] This paper proposes CrysLLMGen, a hybrid framework that combines the complementary strengths of LLMs in discrete atom type prediction and diffusion models in…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Crystal Material Generation
-  - LLM
-  - Diffusion Model
-  - Hybrid Framework
-  - Conditional Generation
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Crystal Material Generation"
+  - "LLM"
+  - "Diffusion Model"
+  - "Hybrid Framework"
+  - "Conditional Generation"
 date: 2026-05-08
 content_hash: bdd3b4a7d667b7b2
 ---

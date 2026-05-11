@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FedGRPO: Privately Optimizing Foundation Models with Group-Relative Rewards from Domain Clients
 description: >-
-  [AAAI 2026][Self-Supervised Learning][Federated Learning] This paper proposes FedGRPO, which reformulates foundation model optimization as a reward-based evaluation process. Through competence-aware expert selection and federated group-relative policy optimization (transmitting only scalar reward signals), FedGRPO achieves privacy-preserving, communication-efficient federated foundation model optimization, approaching or surpassing centralized GRPO on mathematical reasoning and question-answering tasks.
+  [AAAI 2026][Self-Supervised Learning][Federated Learning] This paper proposes FedGRPO, which reformulates foundation model optimization as a reward-based evaluation process. Through competence-aware expert selection and…
 tags:
-  - AAAI 2026
-  - Self-Supervised Learning
-  - Federated Learning
-  - Foundation Models
-  - GRPO
-  - Privacy Preservation
-  - Reinforcement Learning
+  - "AAAI 2026"
+  - "Self-Supervised Learning"
+  - "Federated Learning"
+  - "Foundation Models"
+  - "GRPO"
+  - "Privacy Preservation"
+  - "Reinforcement Learning"
 date: 2026-05-08
 content_hash: 9e7b8aa5cf8aa0aa
 ---

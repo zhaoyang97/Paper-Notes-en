@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unintended Misalignment from Agentic Fine-Tuning: Risks and Mitigation
 description: >-
-  [AAAI 2026][Robotics][Agentic Fine-Tuning] This paper demonstrates that fine-tuning LLMs on benign agentic data causes unintended safety misalignment (attack success rate increases by 32–38%), and proposes PING (Prefix Injection Guard)—an iterative generate-and-evaluate approach that automatically discovers natural language prefixes to guide fine-tuned agents toward refusing harmful requests, achieving an average refusal rate improvement of 66% (Web) and 44% (Code) while preserving task performance (degradation of only 1.8%).
+  [AAAI 2026][Robotics][Agentic Fine-Tuning] This paper demonstrates that fine-tuning LLMs on benign agentic data causes unintended safety misalignment (attack success rate increases by 32–38%)…
 tags:
-  - AAAI 2026
-  - Robotics
-  - Agentic Fine-Tuning
-  - Unintended Alignment Shift
-  - Prefix Injection Guard
-  - Agent Safety
-  - Linear Probe Analysis
+  - "AAAI 2026"
+  - "Robotics"
+  - "Agentic Fine-Tuning"
+  - "Unintended Alignment Shift"
+  - "Prefix Injection Guard"
+  - "Agent Safety"
+  - "Linear Probe Analysis"
 date: 2026-05-08
 content_hash: 136392cf4736756e
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] RedSage: A Cybersecurity Generalist LLM
 description: >-
-  [ICLR 2026][LLM Safety][Cybersecurity LLM] This paper introduces RedSage—the first fully open-source cybersecurity generalist LLM—built upon large-scale domain continual pre-training on 11.7B tokens, agentic-augmentation SFT with 266K samples, and RedSage-Bench, the first comprehensive evaluation benchmark covering knowledge, skills, and tools. The resulting 8B-parameter model surpasses same-scale SOTA on cybersecurity benchmarks by +5.4 pp and approaches Qwen3-32B, while simultaneously improving general-purpose performance (+8.4 pp vs. Qwen3-8B).
+  [ICLR 2026][LLM Safety][Cybersecurity LLM] This paper introduces RedSage—the first fully open-source cybersecurity generalist LLM—built upon large-scale domain continual pre-training on 11.7B tokens…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Cybersecurity LLM
-  - Continual Pre-training
-  - Agentic Data Augmentation
-  - Security Evaluation Benchmark
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Cybersecurity LLM"
+  - "Continual Pre-training"
+  - "Agentic Data Augmentation"
+  - "Security Evaluation Benchmark"
 date: 2026-05-08
 content_hash: b968067b18367818
 ---

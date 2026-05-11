@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Learning (Approximately) Equivariant Networks via Constrained Optimization
 description: >-
-  [NeurIPS 2025][equivariance] This paper proposes ACE (Adaptive Constrained Equivariance), a framework that formulates equivariant neural network training as a constrained optimization problem. Via dual methods, ACE automatically and progressively transitions from a flexible non-equivariant model to an equivariant one, adapting to both fully and partially symmetric data without manual hyperparameter tuning.
+  [NeurIPS 2025][equivariance] This paper proposes ACE (Adaptive Constrained Equivariance), a framework that formulates equivariant neural network training as a constrained optimization problem. Via dual methods…
 tags:
-  - NeurIPS 2025
-  - equivariance
-  - constrained optimization
-  - homotopy methods
-  - approximate symmetry
-  - dual methods
+  - "NeurIPS 2025"
+  - "equivariance"
+  - "constrained optimization"
+  - "homotopy methods"
+  - "approximate symmetry"
+  - "dual methods"
 date: 2026-05-08
 content_hash: 2cb40df4e4473032
 ---

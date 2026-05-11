@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PhysInOne: Visual Physics Learning and Reasoning in One Suite
 description: >-
-  [CVPR 2026][Multimodal VLM][physics learning] PhysInOne is a large-scale synthetic dataset comprising 153,810 dynamic 3D scenes and 2 million annotated videos, covering 71 fundamental physical phenomena across mechanics, optics, fluid dynamics, and magnetism, establishing a new benchmark for physically-aware world models.
+  [CVPR 2026][Multimodal VLM][physics learning] PhysInOne is a large-scale synthetic dataset comprising 153,810 dynamic 3D scenes and 2 million annotated videos, covering 71 fundamental physical phenomena across mechanics…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - physics learning
-  - synthetic dataset
-  - world model
-  - video generation
-  - physical reasoning
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "physics learning"
+  - "synthetic dataset"
+  - "world model"
+  - "video generation"
+  - "physical reasoning"
 date: 2026-05-08
 content_hash: 69a88f3e0868b2d5
 ---

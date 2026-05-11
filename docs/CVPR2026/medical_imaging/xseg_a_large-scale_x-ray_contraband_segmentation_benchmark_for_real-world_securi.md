@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] XSeg: A Large-scale X-ray Contraband Segmentation Benchmark for Real-World Security Screening
 description: >-
-  [CVPR 2026][Medical Imaging][X-ray contraband segmentation] This paper introduces XSeg, the largest X-ray contraband segmentation dataset to date (98,644 images, 295,932 instance masks, 30 fine-grained categories), and proposes APSAM, a domain-specialized model that leverages the physical dual-energy properties of X-ray imaging via an Energy-Aware Encoder (EAE) and an Adaptive Point Generator (APG) to intelligently expand user click prompts. APSAM achieves 72.83% mIoU, surpassing SAM fine-tuning by 4.96%.
+  [CVPR 2026][Medical Imaging][X-ray contraband segmentation] This paper introduces XSeg, the largest X-ray contraband segmentation dataset to date (98,644 images, 295,932 instance masks, 30 fine-grained categories)…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - X-ray contraband segmentation
-  - security screening dataset
-  - SAM adaptation
-  - dual-energy encoder
-  - adaptive point prompt
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "X-ray contraband segmentation"
+  - "security screening dataset"
+  - "SAM adaptation"
+  - "dual-energy encoder"
+  - "adaptive point prompt"
 date: 2026-05-08
 content_hash: 37790f0bcf0fece7
 ---

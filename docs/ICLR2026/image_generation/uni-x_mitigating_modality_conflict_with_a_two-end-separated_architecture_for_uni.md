@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Uni-X: Mitigating Modality Conflict with a Two-End-Separated Architecture for Unified Multimodal Models
 description: >-
-  [ICLR 2026][Image Generation][Unified Multimodal Models] Uni-X proposes an X-shaped architecture with separated ends and a shared middle to mitigate gradient conflicts between visual and textual modalities in Unified Multimodal Models (UMMs). By designating shallow and deep layers as modality-specific and sharing intermediate layers, a 3B-parameter model matches or surpasses 7B AR-UMMs on both image generation and multimodal understanding.
+  [ICLR 2026][Image Generation][Unified Multimodal Models] Uni-X proposes an X-shaped architecture with separated ends and a shared middle to mitigate gradient conflicts between visual and textual modalities in Unified Mul…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Unified Multimodal Models
-  - Gradient Conflict
-  - Modality Separation
-  - Autoregressive Generation
-  - Image Generation and Understanding
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Unified Multimodal Models"
+  - "Gradient Conflict"
+  - "Modality Separation"
+  - "Autoregressive Generation"
+  - "Image Generation and Understanding"
 date: 2026-05-08
 content_hash: 7cc74c9f6193adf7
 ---

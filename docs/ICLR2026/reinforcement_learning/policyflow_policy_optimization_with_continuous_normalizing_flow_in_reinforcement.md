@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PolicyFlow: Policy Optimization with Continuous Normalizing Flow in Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Continuous Normalizing Flow] PolicyFlow seamlessly integrates a continuous normalizing flow (CNF) policy into the PPO framework: it approximates the importance ratio via velocity field differences along an interpolated path (avoiding full ODE path backpropagation), and introduces a Brownian motion-inspired implicit entropy regularizer to prevent mode collapse. The method matches or surpasses Gaussian PPO and flow-based baselines (FPO/DPPO) across MultiGoal, PointMaze, IsaacLab, and MuJoCo environments.
+  [ICLR 2026][Reinforcement Learning][Continuous Normalizing Flow] PolicyFlow seamlessly integrates a continuous normalizing flow (CNF) policy into the PPO framework: it approximates the importance ratio via velocity field…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Continuous Normalizing Flow
-  - PPO
-  - Multimodal Policy
-  - Importance Ratio Approximation
-  - Brownian Motion Entropy Regularization
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Continuous Normalizing Flow"
+  - "PPO"
+  - "Multimodal Policy"
+  - "Importance Ratio Approximation"
+  - "Brownian Motion Entropy Regularization"
 date: 2026-05-08
 content_hash: e067888a4484f6cd
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DeepASA: An Object-Oriented Multi-Purpose Network for Auditory Scene Analysis
 description: >-
-  [NeurIPS 2025][Audio & Speech][auditory scene analysis] This paper proposes DeepASA, an object-oriented multi-task unified architecture that simultaneously performs multi-channel source separation (MIMO), dereverberation, sound event detection (SED), audio classification, and direction-of-arrival estimation (DoAE) within a single model via object-oriented processing and a chain-of-inference mechanism, achieving state-of-the-art performance on multiple spatial audio benchmarks.
+  [NeurIPS 2025][Audio & Speech][auditory scene analysis] This paper proposes DeepASA, an object-oriented multi-task unified architecture that simultaneously performs multi-channel source separation (MIMO), dereverberation…
 tags:
-  - NeurIPS 2025
+  - "NeurIPS 2025"
   - "Audio & Speech"
-  - auditory scene analysis
-  - source separation
-  - sound event detection
-  - direction-of-arrival estimation
-  - multi-task learning
+  - "auditory scene analysis"
+  - "source separation"
+  - "sound event detection"
+  - "direction-of-arrival estimation"
+  - "multi-task learning"
 date: 2026-05-08
 content_hash: 98f04de37d2ade5f
 ---

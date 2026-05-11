@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] One Model for All Tasks: Leveraging Efficient World Models in Multi-Task Planning
 description: >-
-  [ICLR 2026][Reinforcement Learning][multitask RL] This paper proposes ScaleZero, which incorporates a Mixture-of-Experts (MoE) architecture into a unified world model to address gradient conflict and plasticity collapse in multi-task learning. Combined with a Dynamic Parameter Scaling (DPS) strategy that adaptively allocates model capacity, a single multi-task model achieves performance comparable to single-task expert models across three benchmarks (Atari/DMC/Jericho) while reducing environment interactions by approximately 28.5%.
+  [ICLR 2026][Reinforcement Learning][multitask RL] This paper proposes ScaleZero, which incorporates a Mixture-of-Experts (MoE) architecture into a unified world model to address gradient conflict and plasticity collapse…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - multitask RL
-  - world model
-  - MoE
-  - MCTS
-  - plasticity collapse
-  - dynamic parameter scaling
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "multitask RL"
+  - "world model"
+  - "MoE"
+  - "MCTS"
+  - "plasticity collapse"
+  - "dynamic parameter scaling"
 date: 2026-05-08
 content_hash: b70318927808b304
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Interpretable Traces, Unexpected Outcomes: Investigating the Disconnect in Trace-Based Knowledge Distillation
 description: >-
-  [ACL 2026][CoT reasoning traces] By constructing a verifiable intermediate reasoning trace dataset via rule-based question decomposition, this paper reveals that the semantic correctness of CoT reasoning traces correlates unreliably with final answer accuracy (correct traces lead to correct answers only 28% of the time), and that the most interpretable traces are not the most performance-enhancing ones—verbose R1 traces achieve the best performance yet are rated the least interpretable by users.
+  [ACL 2026][Interpretability][CoT reasoning traces] By constructing a verifiable intermediate reasoning trace dataset via rule-based question decomposition…
 tags:
-  - ACL 2026
-  - CoT reasoning traces
-  - knowledge distillation
-  - semantic correctness
-  - interpretability
-  - trace faithfulness
+  - "ACL 2026"
+  - "Interpretability"
+  - "CoT reasoning traces"
+  - "knowledge distillation"
+  - "semantic correctness"
+  - "trace faithfulness"
 date: 2026-05-08
 content_hash: 1b4c28ce9027199c
 ---

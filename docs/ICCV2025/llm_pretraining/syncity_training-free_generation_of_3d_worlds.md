@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SynCity: Training-Free Generation of 3D Worlds
 description: >-
-  [ICCV 2025][LLM Pretraining][3D world generation] SynCity proposes a training- and optimization-free method for 3D world generation. Through carefully designed prompt engineering strategies, it combines a pretrained language model, a 2D image generator (Flux), and a 3D generator (TRELLIS) to autoregressively synthesize large-scale, high-quality, freely navigable 3D scenes in a tile-by-tile fashion.
+  [ICCV 2025][LLM Pretraining][3D world generation] SynCity proposes a training- and optimization-free method for 3D world generation. Through carefully designed prompt engineering strategies…
 tags:
-  - ICCV 2025
-  - LLM Pretraining
-  - 3D world generation
-  - training-free
-  - tile-based
-  - 2D/3D generators
-  - prompt engineering
+  - "ICCV 2025"
+  - "LLM Pretraining"
+  - "3D world generation"
+  - "training-free"
+  - "tile-based"
+  - "2D/3D generators"
+  - "prompt engineering"
 date: 2026-05-08
 content_hash: 601c0344c280cce5
 ---

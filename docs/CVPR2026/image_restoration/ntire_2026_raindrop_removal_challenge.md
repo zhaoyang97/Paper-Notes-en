@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] NTIRE 2026 The Second Challenge on Day and Night Raindrop Removal for Dual-Focused Images
 description: >-
-  [CVPR 2026 (Workshop)][Image Restoration][Raindrop removal] This is the summary report of the NTIRE 2026 Second Challenge on Day and Night Raindrop Removal for Dual-Focused Images. Based on the Raindrop Clarity real-world dataset (14,139 training / 407 validation / 593 test images), 168 teams participated and 17 submitted valid solutions. The winning team AIIA-Lab achieved the best score of 35.24 using an MSDT backbone combined with a pseudo-GT refinement pipeline.
+  [CVPR 2026 (Workshop)][Image Restoration][Raindrop removal] This is the summary report of the NTIRE 2026 Second Challenge on Day and Night Raindrop Removal for Dual-Focused Images. Based on the Raindrop Clarity real-worl…
 tags:
-  - CVPR 2026 (Workshop)
-  - Image Restoration
-  - Raindrop removal
-  - dual-focused images
-  - day and night scenes
-  - image restoration competition
-  - NTIRE
+  - "CVPR 2026 (Workshop)"
+  - "Image Restoration"
+  - "Raindrop removal"
+  - "dual-focused images"
+  - "day and night scenes"
+  - "image restoration competition"
+  - "NTIRE"
 date: 2026-05-08
 content_hash: 152617ce5f215425
 ---

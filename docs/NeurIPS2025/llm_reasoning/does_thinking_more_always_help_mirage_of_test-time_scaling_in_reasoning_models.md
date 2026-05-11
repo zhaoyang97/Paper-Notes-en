@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Does Thinking More Always Help? Mirage of Test-Time Scaling in Reasoning Models
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Test-time scaling] Through systematic experiments, this paper reveals that the performance of test-time scaling in LRMs (achieved by repeatedly appending "Wait" prompts to extend reasoning) exhibits a non-monotonic pattern of initial improvement followed by degradation. A probabilistic model is then used to demonstrate that this apparent "gain" is merely a mirage caused by increased output variance rather than genuine reasoning improvement. The proposed parallel thinking strategy achieves accuracy improvements of up to 22% under the same token budget.
+  [NeurIPS 2025][LLM Reasoning][Test-time scaling] Through systematic experiments, this paper reveals that the performance of test-time scaling in LRMs (achieved by repeatedly appending "Wait" prompts to extend reasoning)…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - Test-time scaling
-  - overthinking
-  - parallel thinking
-  - variance analysis
-  - Best-of-N
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "Test-time scaling"
+  - "overthinking"
+  - "parallel thinking"
+  - "variance analysis"
+  - "Best-of-N"
 date: 2026-05-08
 content_hash: 28ffc92ce6fe423b
 ---

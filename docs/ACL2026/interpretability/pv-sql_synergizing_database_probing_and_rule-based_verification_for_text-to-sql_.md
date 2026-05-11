@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] PV-SQL: Synergizing Database Probing and Rule-based Verification for Text-to-SQL Agents
 description: >-
-  [ACL 2026][Text-to-SQL] This paper proposes PV-SQL, an agent-based Text-to-SQL framework that combines two complementary components — Probe (iteratively generating probing queries to discover database value formats, column semantics, and table relationships) and Verify (extracting verifiable constraints via pattern matching and constructing a checklist) — achieving 5% higher execution accuracy and 20.8% higher valid efficiency score over the best baseline on the BIRD benchmark.
+  [ACL 2026][Interpretability][Text-to-SQL] This paper proposes PV-SQL, an agent-based Text-to-SQL framework that combines two complementary components — Probe (iteratively generating probing queries to discover database v…
 tags:
-  - ACL 2026
-  - Text-to-SQL
-  - database probing
-  - rule-based verification
-  - semantic constraints
-  - agent framework
+  - "ACL 2026"
+  - "Interpretability"
+  - "Text-to-SQL"
+  - "database probing"
+  - "rule-based verification"
+  - "semantic constraints"
+  - "agent framework"
 date: 2026-05-08
 content_hash: 0ecb5cd38d806bb7
 ---

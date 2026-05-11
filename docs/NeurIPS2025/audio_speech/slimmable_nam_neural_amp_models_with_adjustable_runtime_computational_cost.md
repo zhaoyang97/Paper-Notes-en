@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Slimmable NAM: Neural Amp Models with Adjustable Runtime Computational Cost
 description: >-
-  [NeurIPS 2025 (AI for Music Workshop)][Audio & Speech][Neural Amp Modeling] This paper applies the Slimmable Networks paradigm to the Neural Amp Modeler (NAM) by randomly pruning WaveNet layer widths during training, enabling dynamic adjustment of network size at inference time without additional training cost, allowing musicians to balance audio fidelity and computational expense in real time.
+  [NeurIPS 2025 (AI for Music Workshop)][Audio & Speech][Neural Amp Modeling] This paper applies the Slimmable Networks paradigm to the Neural Amp Modeler (NAM) by randomly pruning WaveNet layer widths during training…
 tags:
-  - NeurIPS 2025 (AI for Music Workshop)
+  - "NeurIPS 2025 (AI for Music Workshop)"
   - "Audio & Speech"
-  - Neural Amp Modeling
-  - Slimmable Networks
-  - WaveNet
-  - Audio Effects
-  - Real-time Inference
+  - "Neural Amp Modeling"
+  - "Slimmable Networks"
+  - "WaveNet"
+  - "Audio Effects"
+  - "Real-time Inference"
 date: 2026-05-08
 content_hash: 0af4c163d922cefd
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] On The Fragility of Benchmark Contamination Detection in Reasoning Models
 description: >-
-  [ICLR 2026][LLM Reasoning][Benchmark Contamination] This systematic study reveals that benchmark contamination detection in large reasoning models (LRMs) is extremely fragile: contamination introduced during the SFT stage becomes nearly undetectable after GRPO training (with PPO-style importance sampling and clipping identified as the root cause), and direct CoT SFT contamination of advanced LRMs leaves virtually no detectable trace—all 10 evaluated detection methods perform close to random guessing.
+  [ICLR 2026][LLM Reasoning][Benchmark Contamination] This systematic study reveals that benchmark contamination detection in large reasoning models (LRMs) is extremely fragile: contamination introduced during the SFT stag…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Benchmark Contamination
-  - Reasoning Models
-  - GRPO
-  - Detection Fragility
-  - Evaluation Integrity
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "Benchmark Contamination"
+  - "Reasoning Models"
+  - "GRPO"
+  - "Detection Fragility"
+  - "Evaluation Integrity"
 date: 2026-05-08
 content_hash: d444b2848935edf4
 ---

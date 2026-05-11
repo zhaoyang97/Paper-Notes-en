@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ArtLLM: Generating Articulated Assets via 3D LLM
 description: >-
-  [CVPR 2026][3D Vision][Articulated Object] ArtLLM formulates articulated object generation as a language generation problem. A 3D multimodal LLM autoregressively predicts part layouts and kinematic joint parameters (discretized as tokens) from point cloud input, followed by XPart-based high-fidelity part geometry synthesis. The method significantly outperforms existing approaches on PartNet-Mobility (mIoU 0.69) with inference in only 19 seconds.
+  [CVPR 2026][3D Vision][Articulated Object] ArtLLM formulates articulated object generation as a language generation problem. A 3D multimodal LLM autoregressively predicts part layouts and kinematic joint parameters (disc…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Articulated Object
-  - 3D LLM
-  - URDF
-  - Autoregressive
-  - Part-Aware Generation
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Articulated Object"
+  - "3D LLM"
+  - "URDF"
+  - "Autoregressive"
+  - "Part-Aware Generation"
 date: 2026-05-08
 content_hash: e5315073ad906d9f
 ---

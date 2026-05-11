@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] OmniDiagram: Advancing Unified Diagram Code Generation via Visual Interrogation Reward
 description: >-
-  [ACL 2026][diagram code generation] This paper proposes OmniDiagram, a unified diagram code generation framework covering three languages (LaTeX/Mermaid/PlantUML) and three tasks (diagram-to-code, diagram editing, text-to-code). It introduces the Viva (Visual Interrogation Verifies All) reward mechanism based on visual question answering to guide RL training, achieving state-of-the-art performance on multiple benchmarks.
+  [ACL 2026][Code Intelligence][diagram code generation] This paper proposes OmniDiagram, a unified diagram code generation framework covering three languages (LaTeX/Mermaid/PlantUML) and three tasks (diagram-to-code…
 tags:
-  - ACL 2026
-  - diagram code generation
-  - visual question answering reward
-  - reinforcement learning
-  - unified framework
-  - multimodal
+  - "ACL 2026"
+  - "Code Intelligence"
+  - "diagram code generation"
+  - "visual question answering reward"
+  - "reinforcement learning"
+  - "unified framework"
+  - "multimodal"
 date: 2026-05-08
 content_hash: 0ee91fbb0e0129ae
 ---

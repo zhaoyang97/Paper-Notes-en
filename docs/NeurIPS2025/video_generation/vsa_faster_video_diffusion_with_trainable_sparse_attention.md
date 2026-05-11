@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VSA: Faster Video Diffusion with Trainable Sparse Attention
 description: >-
-  [NeurIPS 2025][Video Generation][Sparse Attention] This paper proposes VSA (Video Sparse Attention), an end-to-end trainable, hardware-aligned sparse attention mechanism with a hierarchical coarse-fine design: a coarse-grained stage predicts key token positions via cube pooling, and a fine-grained stage performs token-level attention within the predicted block-sparse regions. VSA accelerates both training and inference of video DiTs simultaneously: pretraining from scratch achieves a 2.53× reduction in training FLOPs without quality loss, while adapting to Wan2.1-1.3B yields a 6× attention speedup and reduces end-to-end inference time from 31s to 18s.
+  [NeurIPS 2025][Video Generation][Sparse Attention] This paper proposes VSA (Video Sparse Attention), an end-to-end trainable, hardware-aligned sparse attention mechanism with a hierarchical coarse-fine design: a coarse-g…
 tags:
-  - NeurIPS 2025
-  - Video Generation
-  - Sparse Attention
-  - Video Diffusion Transformer
-  - End-to-End Training
-  - Key Token Prediction
-  - Hardware Alignment
+  - "NeurIPS 2025"
+  - "Video Generation"
+  - "Sparse Attention"
+  - "Video Diffusion Transformer"
+  - "End-to-End Training"
+  - "Key Token Prediction"
+  - "Hardware Alignment"
 date: 2026-05-08
 content_hash: 98c307bf8b00e063
 ---

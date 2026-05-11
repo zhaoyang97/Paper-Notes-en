@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GraphFaaS: Serverless GNN Inference for Burst-Resilient, Real-Time Intrusion Detection
 description: >-
-  [NeurIPS 2025][Graph Learning][GNN Inference] This paper proposes GraphFaaS, a serverless inference architecture for GNN-based intrusion detection. Through incremental provenance graph construction, feature-length-aware parallel node embedding, and greedy best-fit subgraph partitioning, GraphFaaS reduces mean detection latency from 14.16 seconds to 2.1 seconds (6.7×) and the coefficient of variation from 1.46 to 0.52 (64% reduction), maintaining stable low latency under bursty workloads without sacrificing detection accuracy.
+  [NeurIPS 2025][Graph Learning][GNN Inference] This paper proposes GraphFaaS, a serverless inference architecture for GNN-based intrusion detection. Through incremental provenance graph construction…
 tags:
-  - NeurIPS 2025
-  - Graph Learning
-  - GNN Inference
-  - Serverless
-  - Intrusion Detection
-  - Burst Traffic
-  - Graph Partitioning
+  - "NeurIPS 2025"
+  - "Graph Learning"
+  - "GNN Inference"
+  - "Serverless"
+  - "Intrusion Detection"
+  - "Burst Traffic"
+  - "Graph Partitioning"
 date: 2026-05-08
 content_hash: cca77ab3458e92dd
 ---

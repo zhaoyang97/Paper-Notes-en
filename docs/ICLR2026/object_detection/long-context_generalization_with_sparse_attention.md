@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Long-Context Generalization with Sparse Attention
 description: >-
-  [ICLR 2026][Object Detection][Sparse Attention] This paper proposes ASEntmax (Adaptive-Scalable Entmax), which replaces softmax attention with α-entmax equipped with a learnable temperature. Through both theoretical analysis and empirical evaluation, it demonstrates that sparse attention enables up to 1000× length extrapolation, addressing the attention dispersion problem of softmax under long-context settings.
+  [ICLR 2026][Object Detection][Sparse Attention] This paper proposes ASEntmax (Adaptive-Scalable Entmax), which replaces softmax attention with α-entmax equipped with a learnable temperature. Through both theoretical anal…
 tags:
-  - ICLR 2026
-  - Object Detection
-  - Sparse Attention
-  - Long-Context Generalization
-  - α-entmax
-  - Length Extrapolation
-  - Transformer
+  - "ICLR 2026"
+  - "Object Detection"
+  - "Sparse Attention"
+  - "Long-Context Generalization"
+  - "α-entmax"
+  - "Length Extrapolation"
+  - "Transformer"
 date: 2026-05-08
 content_hash: 4d32cd6652989c2e
 ---

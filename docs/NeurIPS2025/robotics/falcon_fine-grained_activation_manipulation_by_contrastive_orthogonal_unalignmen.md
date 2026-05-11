@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FALCON: Fine-grained Activation Manipulation by Contrastive Orthogonal Unalignment for Large Language Model
 description: >-
-  [NeurIPS 2025][Robotics][machine unlearning] This paper proposes FALCON, a representation-guided LLM unlearning framework that employs mutual information for parameter selection, a contrastive mechanism for fine-grained knowledge separation, and gradient orthogonal projection to resolve forgetting–retention conflicts. FALCON consistently outperforms existing methods on harmful knowledge, copyright, and entity unlearning benchmarks.
+  [NeurIPS 2025][Robotics][machine unlearning] This paper proposes FALCON, a representation-guided LLM unlearning framework that employs mutual information for parameter selection…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - machine unlearning
-  - contrastive learning
-  - gradient orthogonal projection
-  - mutual information
-  - knowledge disentanglement
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "machine unlearning"
+  - "contrastive learning"
+  - "gradient orthogonal projection"
+  - "mutual information"
+  - "knowledge disentanglement"
 date: 2026-05-08
 content_hash: 1809dc331d276fba
 ---

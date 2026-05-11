@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] H-GAR: A Hierarchical Interaction Framework via Goal-Driven Observation-Action Refinement for Robotic Manipulation
 description: >-
-  [AAAI2026][Robotics][robotic manipulation] This paper proposes H-GAR, a hierarchical goal-driven framework that first predicts a goal observation and then synthesizes intermediate observations, while refining coarse-grained actions via a historical action memory bank. This design enables explicit bidirectional interaction between observations and actions, achieving state-of-the-art performance on both simulated and real-robot manipulation tasks.
+  [AAAI2026][Robotics][robotic manipulation] This paper proposes H-GAR, a hierarchical goal-driven framework that first predicts a goal observation and then synthesizes intermediate observations…
 tags:
-  - AAAI2026
-  - Robotics
-  - robotic manipulation
-  - goal-conditioned planning
-  - observation-action interaction
-  - diffusion policy
-  - coarse-to-fine refinement
+  - "AAAI2026"
+  - "Robotics"
+  - "robotic manipulation"
+  - "goal-conditioned planning"
+  - "observation-action interaction"
+  - "diffusion policy"
+  - "coarse-to-fine refinement"
 date: 2026-05-08
 content_hash: 11860b061d3e15cf
 ---

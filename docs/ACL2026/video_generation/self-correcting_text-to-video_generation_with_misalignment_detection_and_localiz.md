@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Self-Correcting Text-to-Video Generation with Misalignment Detection and Localized Refinement
 description: >-
-  [ACL 2026][Video Generation][Text-to-Video Generation] This paper proposes VideoRepair, the first training-free, model-agnostic text-to-video self-correction framework that detects fine-grained text-video misalignment via MLLM, preserves correct regions, and selectively repairs problematic regions, consistently improving alignment quality across four T2V backbone models on EvalCrafter and T2V-CompBench.
+  [ACL 2026][Video Generation][Text-to-Video Generation] This paper proposes VideoRepair, the first training-free, model-agnostic text-to-video self-correction framework that detects fine-grained text-video misalignment vi…
 tags:
-  - ACL 2026
-  - Video Generation
-  - Text-to-Video Generation
-  - Self-Correction
-  - Localized Refinement
-  - Text-Video Alignment
-  - Diffusion Model
+  - "ACL 2026"
+  - "Video Generation"
+  - "Text-to-Video Generation"
+  - "Self-Correction"
+  - "Localized Refinement"
+  - "Text-Video Alignment"
+  - "Diffusion Model"
 date: 2025-04-17
 content_hash: 7f5733bd2d47694e
 ---

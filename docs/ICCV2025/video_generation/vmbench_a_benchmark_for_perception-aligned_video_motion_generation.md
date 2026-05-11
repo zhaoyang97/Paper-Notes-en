@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VMBench: A Benchmark for Perception-Aligned Video Motion Generation
 description: >-
-  [ICCV 2025][Video Generation][Video Motion Evaluation] This paper proposes VMBench — the first comprehensive benchmark for video motion quality evaluation, featuring five-dimensional perception-aligned motion metrics (PMM) and a meta-information-guided motion prompt generation framework (MMPG). VMBench covers 969 motion categories and achieves an average improvement of 35.3% in Spearman correlation over existing methods.
+  [ICCV 2025][Video Generation][Video Motion Evaluation] This paper proposes VMBench — the first comprehensive benchmark for video motion quality evaluation…
 tags:
-  - ICCV 2025
-  - Video Generation
-  - Video Motion Evaluation
-  - Human Perception Alignment
-  - text-to-video
-  - benchmark
-  - Motion Quality
+  - "ICCV 2025"
+  - "Video Generation"
+  - "Video Motion Evaluation"
+  - "Human Perception Alignment"
+  - "text-to-video"
+  - "benchmark"
+  - "Motion Quality"
 date: 2026-05-08
 content_hash: 0142ae4832915d1d
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GeoComplete: Geometry-Aware Diffusion for Reference-Driven Image Completion
 description: >-
-  [NeurIPS 2025][3D Vision][image completion] This paper proposes GeoComplete, which injects projected point clouds as geometric conditions into a dual-branch diffusion model and employs a target-aware masking strategy to achieve geometrically consistent reference-driven image completion, achieving a 17.1% improvement in PSNR.
+  [NeurIPS 2025][3D Vision][image completion] This paper proposes GeoComplete, which injects projected point clouds as geometric conditions into a dual-branch diffusion model and employs a target-aware masking strategy to…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - image completion
-  - diffusion models
-  - geometry guidance
-  - point cloud projection
-  - reference image
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "image completion"
+  - "diffusion models"
+  - "geometry guidance"
+  - "point cloud projection"
+  - "reference image"
 date: 2026-05-08
 content_hash: 2128950d7be7ba1c
 ---

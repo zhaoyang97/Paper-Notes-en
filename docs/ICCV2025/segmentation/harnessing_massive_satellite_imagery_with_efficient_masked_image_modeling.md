@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Harnessing Massive Satellite Imagery with Efficient Masked Image Modeling
 description: >-
-  [ICCV 2025][Segmentation][Remote Sensing Foundation Model] This paper proposes a remote sensing model pre-training pipeline comprising OpticalRS-13M, a dataset of 13 million optical remote sensing images, and SelectiveMAE, an efficient MIM method that selectively encodes and reconstructs patches based on semantic richness. Using only 40% of image patches, SelectiveMAE achieves performance comparable to full-patch training while delivering more than 2× speedup.
+  [ICCV 2025][Segmentation][Remote Sensing Foundation Model] This paper proposes a remote sensing model pre-training pipeline comprising OpticalRS-13M, a dataset of 13 million optical remote sensing images…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - Remote Sensing Foundation Model
-  - Masked Image Modeling
-  - Large-Scale Dataset
-  - Efficient Pre-training
-  - SelectiveMAE
+  - "ICCV 2025"
+  - "Segmentation"
+  - "Remote Sensing Foundation Model"
+  - "Masked Image Modeling"
+  - "Large-Scale Dataset"
+  - "Efficient Pre-training"
+  - "SelectiveMAE"
 date: 2026-05-08
 content_hash: 6b1c602d4841a374
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning to Better Search with Language Models via Guided Reinforced Self-Training
 description: >-
-  [NeurIPS 2025][Model Compression][search strategy learning] This paper proposes Guided-ReST, which progressively incorporates optimal solutions as subgoals into model-generated search trajectories to produce high-quality training data and distill more efficient search strategies. The approach yields substantial improvements in search efficiency and accuracy on Countdown and code self-repair tasks.
+  [NeurIPS 2025][Model Compression][search strategy learning] This paper proposes Guided-ReST, which progressively incorporates optimal solutions as subgoals into model-generated search trajectories to produce high-quality…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - search strategy learning
-  - self-training
-  - reinforcement learning
-  - test-time compute efficiency
-  - language model reasoning
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "search strategy learning"
+  - "self-training"
+  - "reinforcement learning"
+  - "test-time compute efficiency"
+  - "language model reasoning"
 date: 2026-05-08
 content_hash: bab6923d2ae418bf
 ---

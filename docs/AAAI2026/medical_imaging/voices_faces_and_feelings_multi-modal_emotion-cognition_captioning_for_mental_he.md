@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Voices, Faces, and Feelings: Multi-modal Emotion-Cognition Captioning for Mental Health Understanding
 description: >-
-  [AAAI 2026][Medical Imaging][Emotion-cognition captioning] This paper proposes the Emotion-Cognition cooperative Multi-modal Captioning (ECMC) task and framework. A dual-stream BridgeNet extracts emotion and cognition features from video, audio, and text, and a LLaMA decoder generates natural language descriptions. The system provides interpretable emotion-cognition profiles for mental health assessment, substantially improving both diagnostic accuracy and explainability.
+  [AAAI 2026][Medical Imaging][Emotion-cognition captioning] This paper proposes the Emotion-Cognition cooperative Multi-modal Captioning (ECMC) task and framework. A dual-stream BridgeNet extracts emotion and cognition fe…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Emotion-cognition captioning
-  - multimodal
-  - mental health
-  - large language models
-  - depression detection
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Emotion-cognition captioning"
+  - "multimodal"
+  - "mental health"
+  - "large language models"
+  - "depression detection"
 date: 2026-05-08
 content_hash: 0abbe6e7d24a9ca3
 ---

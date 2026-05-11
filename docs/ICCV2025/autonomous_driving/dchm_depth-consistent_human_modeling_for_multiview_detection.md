@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DCHM: Depth-Consistent Human Modeling for Multiview Detection
 description: >-
-  [ICCV 2025][Autonomous Driving][multiview pedestrian detection] This paper proposes DCHM, a depth-consistent human modeling framework that requires no 3D annotations. It generates pseudo depth labels via superpixel-level Gaussian splatting to fine-tune a monocular depth estimation network, and combines multiview label matching to achieve high-accuracy pedestrian detection under sparse-view and heavily occluded scenarios. DCHM achieves 84.2% MODA on Wildtrack and improves MODP by 31.2% over UMPD.
+  [ICCV 2025][Autonomous Driving][multiview pedestrian detection] This paper proposes DCHM, a depth-consistent human modeling framework that requires no 3D annotations. It generates pseudo depth labels via superpixel-level…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - multiview pedestrian detection
-  - depth consistency
-  - Gaussian splatting
-  - monocular depth estimation
-  - label-free method
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "multiview pedestrian detection"
+  - "depth consistency"
+  - "Gaussian splatting"
+  - "monocular depth estimation"
+  - "label-free method"
 date: 2026-05-08
 content_hash: d71407779b2ae5ef
 ---

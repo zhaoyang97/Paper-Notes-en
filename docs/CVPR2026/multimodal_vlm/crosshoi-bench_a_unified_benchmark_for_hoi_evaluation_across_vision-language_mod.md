@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] CrossHOI-Bench: A Unified Benchmark for HOI Evaluation across Vision-Language Models and HOI-Specific Methods
 description: >-
-  [CVPR 2026][Multimodal VLM][HOI Detection] This paper proposes CrossHOI-Bench, the first unified multiple-choice HOI benchmark for evaluating both VLMs and HOI-specific models. Through carefully curated positive and negative examples that eliminate erroneous penalties from incomplete annotations, the benchmark reveals that large VLMs under zero-shot settings surpass state-of-the-art HOI methods by +5.18% in Instance-F1, while still exhibiting systematic weaknesses in multi-action recognition and cross-person action attribution.
+  [CVPR 2026][Multimodal VLM][HOI Detection] This paper proposes CrossHOI-Bench, the first unified multiple-choice HOI benchmark for evaluating both VLMs and HOI-specific models. Through carefully curated positive and nega…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - HOI Detection
-  - VLM Evaluation
-  - Multiple-Choice Benchmark
-  - Cross-Paradigm Comparison
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "HOI Detection"
+  - "VLM Evaluation"
+  - "Multiple-Choice Benchmark"
+  - "Cross-Paradigm Comparison"
 date: 2026-05-08
 content_hash: 0c3d78e37774e655
 ---

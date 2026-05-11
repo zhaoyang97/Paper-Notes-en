@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Finding Structure in Continual Learning
 description: >-
-  [NeurIPS 2025][LLM Safety][Continual Learning] This paper proposes a continual learning optimization framework based on Douglas-Rachford Splitting (DRS), which decouples stability and plasticity into two independent proximal subproblems, and replaces KL divergence with Rényi divergence for more robust prior alignment, thereby effectively alleviating catastrophic forgetting without replay buffers or additional modules.
+  [NeurIPS 2025][LLM Safety][Continual Learning] This paper proposes a continual learning optimization framework based on Douglas-Rachford Splitting (DRS)…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - Continual Learning
-  - Catastrophic Forgetting
-  - Douglas-Rachford Splitting
-  - Rényi Divergence
-  - Bayesian Inference
-  - Proximal Operator
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "Continual Learning"
+  - "Catastrophic Forgetting"
+  - "Douglas-Rachford Splitting"
+  - "Rényi Divergence"
+  - "Bayesian Inference"
+  - "Proximal Operator"
 date: 2026-05-08
 content_hash: 57baf19a1e192488
 ---

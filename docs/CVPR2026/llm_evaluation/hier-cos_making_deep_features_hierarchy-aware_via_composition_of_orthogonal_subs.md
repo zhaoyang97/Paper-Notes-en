@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Hier-COS: Making Deep Features Hierarchy-aware via Composition of Orthogonal Subspaces
 description: >-
-  [CVPR 2026][LLM Evaluation][Hierarchical Classification] This paper proposes Hier-COS, a framework that assigns orthogonal basis vectors to each node in a label hierarchy tree to construct a theoretically guaranteed Hierarchy-Aware Vector Space (HAVS). It is the first to unify "hierarchy-aware fine-grained classification" and "hierarchical multi-level classification" within a single framework, while introducing a new evaluation metric HOPS, achieving comprehensive state-of-the-art performance across four datasets.
+  [CVPR 2026][LLM Evaluation][Hierarchical Classification] This paper proposes Hier-COS, a framework that assigns orthogonal basis vectors to each node in a label hierarchy tree to construct a theoretically guaranteed Hier…
 tags:
-  - CVPR 2026
-  - LLM Evaluation
-  - Hierarchical Classification
-  - Orthogonal Subspaces
-  - Hierarchy-aware Features
-  - Evaluation Metrics
-  - Label Hierarchy
+  - "CVPR 2026"
+  - "LLM Evaluation"
+  - "Hierarchical Classification"
+  - "Orthogonal Subspaces"
+  - "Hierarchy-aware Features"
+  - "Evaluation Metrics"
+  - "Label Hierarchy"
 date: 2026-05-08
 content_hash: 390df58e10f10694
 ---

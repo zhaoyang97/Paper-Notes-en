@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Learnability-Driven Submodular Optimization for Active Roadside 3D Detection
 description: >-
-  [CVPR2026][Autonomous Driving][Active Learning] This paper proposes LH3D, an active learning framework that employs a three-stage hierarchical submodular optimization strategy—depth confidence → semantic balancing → geometric diversity—to suppress the selection of inherently ambiguous samples in roadside monocular 3D detection. With only 20% of the annotation budget, LH3D significantly outperforms conventional uncertainty- and diversity-based AL methods.
+  [CVPR2026][Autonomous Driving][Active Learning] This paper proposes LH3D, an active learning framework that employs a three-stage hierarchical submodular optimization strategy—depth confidence → semantic balancing → geom…
 tags:
-  - CVPR2026
-  - Autonomous Driving
-  - Active Learning
-  - Roadside Perception
-  - Monocular 3D Detection
-  - BEV
-  - Submodular Optimization
-  - Learnability
-  - Data Selection
+  - "CVPR2026"
+  - "Autonomous Driving"
+  - "Active Learning"
+  - "Roadside Perception"
+  - "Monocular 3D Detection"
+  - "BEV"
+  - "Submodular Optimization"
+  - "Learnability"
+  - "Data Selection"
 date: 2026-05-08
 content_hash: 812d6a0820856e33
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Renormalization Group Guided Tensor Network Structure Search
 description: >-
-  [AAAI 2026][Model Compression][Tensor Network] This paper proposes RGTN, a framework that introduces Renormalization Group (RG) theory from statistical physics into tensor network structure search. Through a multi-scale coarse-graining–expansion–compression pipeline and learnable edge gating, RGTN enables continuous topological evolution, achieving state-of-the-art compression ratios on light field compression, high-order tensor decomposition, and video completion tasks, while running 4–600× faster than existing methods.
+  [AAAI 2026][Model Compression][Tensor Network] This paper proposes RGTN, a framework that introduces Renormalization Group (RG) theory from statistical physics into tensor network structure search. Through a multi-scale…
 tags:
-  - AAAI 2026
-  - Model Compression
-  - Tensor Network
-  - Structure Search
-  - Renormalization Group
-  - Multi-Scale Optimization
-  - Tensor Decomposition
+  - "AAAI 2026"
+  - "Model Compression"
+  - "Tensor Network"
+  - "Structure Search"
+  - "Renormalization Group"
+  - "Multi-Scale Optimization"
+  - "Tensor Decomposition"
 date: 2026-05-08
 content_hash: 62e0fa1d8bd1bc31
 ---

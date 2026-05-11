@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] "Are We Done Yet?": A Vision-Based Judge for Autonomous Task Completion of Computer Use Agents
 description: >-
-  [AAAI2026][Multimodal VLM][Computer Use Agent] This paper proposes a VLM-based autonomous task completion evaluation framework that judges whether a Computer Use Agent (CUA) has completed a task using only screenshots and task descriptions. Evaluation feedback is passed back to the agent for self-correction, achieving 73% evaluation accuracy and a 27% relative improvement in task success rate on macOS.
+  [AAAI2026][Multimodal VLM][Computer Use Agent] This paper proposes a VLM-based autonomous task completion evaluation framework that judges whether a Computer Use Agent (CUA) has completed a task using only screenshots an…
 tags:
-  - AAAI2026
-  - Multimodal VLM
-  - Computer Use Agent
-  - Task Completion Evaluation
-  - Vision-Language Model
-  - Autonomous Feedback
+  - "AAAI2026"
+  - "Multimodal VLM"
+  - "Computer Use Agent"
+  - "Task Completion Evaluation"
+  - "Vision-Language Model"
+  - "Autonomous Feedback"
 date: 2026-05-08
 content_hash: 562a44f62833eca4
 ---

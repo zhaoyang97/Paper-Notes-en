@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GeoSVR: Taming Sparse Voxels for Geometrically Accurate Surface Reconstruction
 description: >-
-  [NeurIPS 2025][3D Vision][surface reconstruction] This paper proposes GeoSVR, an explicit surface reconstruction framework based on sparse voxels. By introducing voxel-uncertainty depth constraints and sparse voxel surface regularization, GeoSVR comprehensively outperforms existing 3DGS- and SDF-based methods in geometric accuracy, detail preservation, and reconstruction completeness.
+  [NeurIPS 2025][3D Vision][surface reconstruction] This paper proposes GeoSVR, an explicit surface reconstruction framework based on sparse voxels. By introducing voxel-uncertainty depth constraints and sparse voxel surfa…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - surface reconstruction
-  - sparse voxels
-  - depth constraint
-  - voxel uncertainty
-  - multi-view geometry
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "surface reconstruction"
+  - "sparse voxels"
+  - "depth constraint"
+  - "voxel uncertainty"
+  - "multi-view geometry"
 date: 2026-05-08
 content_hash: 7c9ce4e3e127712f
 ---

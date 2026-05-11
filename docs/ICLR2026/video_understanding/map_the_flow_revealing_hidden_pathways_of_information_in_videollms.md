@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Map the Flow: Revealing Hidden Pathways of Information in VideoLLMs
 description: >-
-  [ICLR 2026][Video Understanding][VideoLLM] This work presents the first systematic reverse-engineering of temporal reasoning in VideoLLMs using mechanistic interpretability tools (Attention Knockout + Logit Lens), uncovering a three-stage information flow blueprint—"early-to-mid-layer cross-frame interaction → mid-layer video-language integration → mid-to-late-layer answer generation"—and demonstrating that retaining only 42% of attention edges preserves VideoQA performance with negligible degradation.
+  [ICLR 2026][Video Understanding][VideoLLM] This work presents the first systematic reverse-engineering of temporal reasoning in VideoLLMs using mechanistic interpretability tools (Attention Knockout + Logit Lens)…
 tags:
-  - ICLR 2026
-  - Video Understanding
-  - VideoLLM
-  - Information Flow Analysis
-  - Mechanistic Interpretability
-  - Attention Pruning
-  - Temporal Reasoning
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "VideoLLM"
+  - "Information Flow Analysis"
+  - "Mechanistic Interpretability"
+  - "Attention Pruning"
+  - "Temporal Reasoning"
 date: 2026-05-08
 content_hash: 12053b33c27a7f40
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Ambiguity-aware Truncated Flow Matching for Ambiguous Medical Image Segmentation
 description: >-
-  [AAAI 2026][Medical Imaging][Ambiguous medical image segmentation] This paper proposes the ATFM framework, which decouples prediction accuracy and diversity into distribution-level and sample-level optimization through a data-hierarchical inference paradigm. By integrating two modules — Gaussian Truncation Representation (GTR) and Segmentation Flow Matching (SFM) — ATFM simultaneously improves prediction accuracy, fidelity, and diversity in ambiguous medical image segmentation.
+  [AAAI 2026][Medical Imaging][Ambiguous medical image segmentation] This paper proposes the ATFM framework, which decouples prediction accuracy and diversity into distribution-level and sample-level optimization through a…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Ambiguous medical image segmentation
-  - truncated diffusion model
-  - Flow Matching
-  - Gaussian truncation representation
-  - semantic consistency
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Ambiguous medical image segmentation"
+  - "truncated diffusion model"
+  - "Flow Matching"
+  - "Gaussian truncation representation"
+  - "semantic consistency"
 date: 2026-05-08
 content_hash: 957d8c51e92bbeed
 ---

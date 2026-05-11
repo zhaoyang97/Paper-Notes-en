@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Rethinking the Simulation vs. Rendering Dichotomy: No Free Lunch in Spatial World Modelling
 description: >-
-  [NeurIPS 2025][Robotics][Spatial world models] From a cognitive neuroscience perspective, this paper challenges the prevailing view that simulation and rendering are separable processes: it argues that spatial reasoning relies on fine-grained perceptual representations rather than coarse abstractions, and concludes that AI spatial world models likewise require rich perceptual detail — there is no free lunch in spatial modelling.
+  [NeurIPS 2025][Robotics][Spatial world models] From a cognitive neuroscience perspective, this paper challenges the prevailing view that simulation and rendering are separable processes: it argues that spatial reasoning…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - Spatial world models
-  - mental rotation
-  - aphantasia
-  - higher-order theory of consciousness
-  - embodied AI
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "Spatial world models"
+  - "mental rotation"
+  - "aphantasia"
+  - "higher-order theory of consciousness"
+  - "embodied AI"
 date: 2026-05-08
 content_hash: c79cc410415efa19
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning What Matters: Prioritized Concept Learning via Relative Error-driven Sample Selection
 description: >-
-  [CVPR 2026][Multimodal VLM][Data-efficient learning] This paper proposes the PROGRESS framework, which dynamically selects the most informative training samples by tracking a VLM's learning progress across automatically discovered multimodal concept clusters. Using only 16–20% of annotated data, PROGRESS achieves 99–100% of full-data performance with shorter total training time.
+  [CVPR 2026][Multimodal VLM][Data-efficient learning] This paper proposes the PROGRESS framework, which dynamically selects the most informative training samples by tracking a VLM's learning progress across automatically…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Data-efficient learning
-  - instruction tuning
-  - curriculum learning
-  - VLM training
-  - sample selection
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Data-efficient learning"
+  - "instruction tuning"
+  - "curriculum learning"
+  - "VLM training"
+  - "sample selection"
 date: 2026-05-08
 content_hash: 2ce5b2680b800caa
 ---

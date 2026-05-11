@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unsupervised Imaging Inverse Problems with Diffusion Distribution Matching
 description: >-
-  [ICCV 2025][Image Generation][Unsupervised Image Restoration] DDM4IP proposes an unsupervised framework that models the degradation distribution via Conditional Flow Matching, while simultaneously learning an unknown forward degradation model through a distribution matching loss. Using only a small number of unpaired images, the method achieves competitive or superior performance on deblurring, spatially-varying PSF calibration, and blind super-resolution tasks.
+  [ICCV 2025][Image Generation][Unsupervised Image Restoration] DDM4IP proposes an unsupervised framework that models the degradation distribution via Conditional Flow Matching…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Unsupervised Image Restoration
-  - Inverse Problems
-  - Conditional Flow Matching
-  - Distribution Matching
-  - Forward Model Learning
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Unsupervised Image Restoration"
+  - "Inverse Problems"
+  - "Conditional Flow Matching"
+  - "Distribution Matching"
+  - "Forward Model Learning"
 date: 2026-05-08
 content_hash: d28efe16278d53fc
 ---

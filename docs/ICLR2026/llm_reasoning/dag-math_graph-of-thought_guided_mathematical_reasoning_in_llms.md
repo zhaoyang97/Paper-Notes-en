@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DAG-Math: Graph-of-Thought Guided Mathematical Reasoning in LLMs
 description: >-
-  [ICLR 2026][LLM Reasoning][mathematical reasoning] This work formalizes LLM chain-of-thought reasoning as a rule-based stochastic process over DAGs, proposes *logical closeness* as a metric to assess whether a model arrives at an answer through search or rigorous logical deduction, constructs a gold-standard DAG-MATH benchmark of 2,894 instances, and demonstrates that models with similar PASS@k scores can differ substantially in reasoning faithfulness.
+  [ICLR 2026][LLM Reasoning][mathematical reasoning] This work formalizes LLM chain-of-thought reasoning as a rule-based stochastic process over DAGs…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - mathematical reasoning
-  - DAG
-  - chain-of-thought
-  - logical closeness
-  - evaluation metric
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "mathematical reasoning"
+  - "DAG"
+  - "chain-of-thought"
+  - "logical closeness"
+  - "evaluation metric"
 date: 2026-05-08
 content_hash: 836b60ca0360139d
 ---

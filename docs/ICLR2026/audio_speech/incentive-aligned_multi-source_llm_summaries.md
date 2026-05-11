@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Incentive-Aligned Multi-Source LLM Summaries
 description: >-
-  [ICLR 2026][Audio & Speech][truthful summarization] This paper introduces the Truthful Text Summarization (TTS) framework, which incorporates a multi-task peer prediction mechanism from game theory into LLM multi-source summarization pipelines. The approach constructs evaluation claim sets via leave-one-out cross-referencing, extracts each source's stance on individual claims, scores source reliability using informative agreement, filters unreliable sources, and regenerates the summary. The framework is theoretically proven to make truthful reporting a utility-maximizing strategy, and empirically demonstrates robustness against prompt injection, misinformation sources, and coordinated attacks.
+  [ICLR 2026][Audio & Speech][truthful summarization] This paper introduces the Truthful Text Summarization (TTS) framework, which incorporates a multi-task peer prediction mechanism from game theory into LLM multi-source…
 tags:
-  - ICLR 2026
+  - "ICLR 2026"
   - "Audio & Speech"
-  - truthful summarization
-  - incentive alignment
-  - peer prediction
-  - prompt injection
-  - source reliability
+  - "truthful summarization"
+  - "incentive alignment"
+  - "peer prediction"
+  - "prompt injection"
+  - "source reliability"
 date: 2026-05-08
 content_hash: 73ca13ead75da418
 ---

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Why Diffusion Models Don't Memorize: The Role of Implicit Dynamical Regularization in Training
 description: >-
-  [NeurIPS 2025][Image Generation][Diffusion models] Through numerical experiments and theoretical analysis, this paper identifies two critical timescales in diffusion model training — a generalization time $\tau_{\text{gen}}$ and a memorization time $\tau_{\text{mem}}$ — where the latter scales linearly with training set size $n$ while the former remains constant. The resulting implicit dynamical regularization enables early stopping to prevent memorization even in heavily overparameterized regimes.
+  [NeurIPS 2025][Image Generation][Diffusion models] Through numerical experiments and theoretical analysis, this paper identifies two critical timescales in diffusion model training — a generalization time $\tau_{\text{ge…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Diffusion models
-  - memorization
-  - generalization
-  - implicit regularization
-  - training dynamics
-  - random features
-  - early stopping
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Diffusion models"
+  - "memorization"
+  - "generalization"
+  - "implicit regularization"
+  - "training dynamics"
+  - "random features"
+  - "early stopping"
 date: 2026-05-08
 content_hash: 5994a2cf54639aa2
 ---

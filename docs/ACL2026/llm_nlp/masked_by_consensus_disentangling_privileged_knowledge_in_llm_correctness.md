@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Masked by Consensus: Disentangling Privileged Knowledge in LLM Correctness
 description: >-
-  [ACL 2026][LLM/NLP][privileged knowledge] By comparing the correctness-prediction performance of self-probes (using a model's own hidden states) against external probes (using hidden states from other models), this paper identifies inter-model agreement as the critical confounding factor that masks privileged knowledge. After controlling for agreement, domain-specific privileged knowledge is revealed: it exists in factual tasks but is absent in mathematical reasoning.
+  [ACL 2026][LLM/NLP][privileged knowledge] By comparing the correctness-prediction performance of self-probes (using a model's own hidden states) against external probes (using hidden states from other models)…
 tags:
-  - ACL 2026
-  - LLM/NLP
-  - privileged knowledge
-  - correctness prediction
-  - hidden-state probing
-  - inter-model agreement
-  - domain specificity
+  - "ACL 2026"
+  - "LLM/NLP"
+  - "privileged knowledge"
+  - "correctness prediction"
+  - "hidden-state probing"
+  - "inter-model agreement"
+  - "domain specificity"
 date: 2026-05-08
 content_hash: 4ea69679a9be4090
 ---

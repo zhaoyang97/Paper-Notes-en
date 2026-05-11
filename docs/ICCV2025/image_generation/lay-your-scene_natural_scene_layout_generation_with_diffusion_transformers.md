@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Lay-Your-Scene: Natural Scene Layout Generation with Diffusion Transformers
 description: >-
-  [Image Generation] This paper proposes LayouSyn, an open-vocabulary text-to-layout generation pipeline that extracts scene elements via a lightweight open-source language model and generates layouts using an aspect-ratio-aware diffusion Transformer, achieving state-of-the-art performance on spatial and quantity reasoning benchmarks.
+  [Image Generation] This paper proposes LayouSyn, an open-vocabulary text-to-layout generation pipeline that extracts scene elements via a lightweight open-source language model and generates layouts using an aspect-ratio…
 tags:
-  - Image Generation
+  - "Image Generation"
 date: 2026-05-08
 content_hash: 17baf619524cf7ac
 ---

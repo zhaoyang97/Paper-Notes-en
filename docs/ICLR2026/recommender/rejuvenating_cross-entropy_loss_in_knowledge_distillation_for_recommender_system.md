@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Rejuvenating Cross-Entropy Loss in Knowledge Distillation for Recommender Systems
 description: >-
-  [ICLR 2026][Recommender Systems][knowledge distillation] This paper theoretically demonstrates that CE loss maximizes a lower bound of NDCG in recommender system KD only when a *closure assumption* is satisfied—the candidate subset must contain the student's top-ranked items. However, the actual KD objective is to distill the ranking of the teacher's top items, and these two requirements conflict, explaining why vanilla CE performs poorly. Accordingly, the paper proposes RCE-KD: the teacher's top-K items are split into two groups based on whether they appear in the student's top-K, handled respectively by exact CE and sampling-approximated closure CE, with an adaptive fusion weight that evolves dynamically throughout training.
+  [ICLR 2026][Recommender Systems][knowledge distillation] This paper theoretically demonstrates that CE loss maximizes a lower bound of NDCG in recommender system KD only when a *closure assumption* is satisfied—the candi…
 tags:
-  - ICLR 2026
-  - Recommender Systems
-  - knowledge distillation
-  - cross-entropy
-  - NDCG
-  - recommender system
-  - ranking
-  - partial NDCG
+  - "ICLR 2026"
+  - "Recommender Systems"
+  - "knowledge distillation"
+  - "cross-entropy"
+  - "NDCG"
+  - "recommender system"
+  - "ranking"
+  - "partial NDCG"
 date: 2026-05-08
 content_hash: 956fbccb0607391b
 ---

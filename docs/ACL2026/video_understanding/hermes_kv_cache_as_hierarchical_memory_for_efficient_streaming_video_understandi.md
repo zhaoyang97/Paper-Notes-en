@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HERMES: KV Cache as Hierarchical Memory for Efficient Streaming Video Understanding
 description: >-
-  [ACL 2026][Video Understanding][Streaming Video] This paper proposes HERMES, a training-free framework for efficient streaming video understanding grounded in a mechanistic analysis of layer-wise attention preferences in MLLMs. KV caches are conceptualized as a hierarchical memory system — shallow layers as sensory memory, middle layers as working memory, and deep layers as long-term memory — enabling real-time streaming video QA with a 68% reduction in video tokens while maintaining or improving accuracy, achieving TTFT latency below 30ms, which is 10× faster than the previous SOTA.
+  [ACL 2026][Video Understanding][Streaming Video] This paper proposes HERMES, a training-free framework for efficient streaming video understanding grounded in a mechanistic analysis of layer-wise attention preferences in…
 tags:
-  - ACL 2026
-  - Video Understanding
-  - Streaming Video
-  - KV Cache Management
-  - Hierarchical Memory
-  - Real-Time Response
-  - Training-Free
+  - "ACL 2026"
+  - "Video Understanding"
+  - "Streaming Video"
+  - "KV Cache Management"
+  - "Hierarchical Memory"
+  - "Real-Time Response"
+  - "Training-Free"
 date: 2026-05-08
 content_hash: 329417ed57b45a97
 ---

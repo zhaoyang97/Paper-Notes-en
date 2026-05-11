@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Explicit Temporal-Semantic Modeling for Dense Video Captioning via Context-Aware Cross-Modal Interaction
 description: >-
-  [AAAI 2026][Video Understanding][Dense Video Captioning] This paper proposes the CACMI framework, which addresses two fundamental limitations in dense video captioning (insufficient temporal modeling and modality gap) through explicit temporal-semantic modeling. It employs Cross-modal Frame Aggregation (CFA) to extract temporally coherent event semantics, and Context-aware Feature Enhancement (CFE) to bridge the visual-textual modality gap, achieving state-of-the-art performance on ActivityNet Captions and YouCook2.
+  [AAAI 2026][Video Understanding][Dense Video Captioning] This paper proposes the CACMI framework, which addresses two fundamental limitations in dense video captioning (insufficient temporal modeling and modality gap) th…
 tags:
-  - AAAI 2026
-  - Video Understanding
-  - Dense Video Captioning
-  - Cross-modal Retrieval
-  - Temporal Clustering
-  - Feature Enhancement
-  - Retrieval-Augmented Generation
+  - "AAAI 2026"
+  - "Video Understanding"
+  - "Dense Video Captioning"
+  - "Cross-modal Retrieval"
+  - "Temporal Clustering"
+  - "Feature Enhancement"
+  - "Retrieval-Augmented Generation"
 date: 2026-05-08
 content_hash: 61f3d093c75f2c03
 ---

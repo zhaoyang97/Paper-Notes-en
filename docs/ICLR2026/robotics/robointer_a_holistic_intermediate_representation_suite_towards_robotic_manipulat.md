@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RoboInter: A Holistic Intermediate Representation Suite Towards Robotic Manipulation
 description: >-
-  [ICLR 2026][Robotics][Intermediate Representation] This paper presents RoboInter, a unified manipulation suite for intermediate representations, comprising: RoboInter-Tool (a semi-automatic annotation GUI), RoboInter-Data (230K episodes × 571 scenes with dense per-frame annotations across 10+ intermediate representation types), RoboInter-VQA (a 29-category embodied VQA benchmark), and RoboInter-VLA (a plan-then-execute framework supporting both modular and end-to-end variants), providing a complete infrastructure for enhancing VLA generalization through intermediate representations.
+  [ICLR 2026][Robotics][Intermediate Representation] This paper presents RoboInter, a unified manipulation suite for intermediate representations, comprising: RoboInter-Tool (a semi-automatic annotation GUI)…
 tags:
-  - ICLR 2026
-  - Robotics
-  - Intermediate Representation
-  - VLA
-  - Manipulation Dataset
-  - Embodied VQA
-  - Plan-then-Execute
+  - "ICLR 2026"
+  - "Robotics"
+  - "Intermediate Representation"
+  - "VLA"
+  - "Manipulation Dataset"
+  - "Embodied VQA"
+  - "Plan-then-Execute"
 date: 2026-05-08
 content_hash: 13b01566fecb2493
 ---

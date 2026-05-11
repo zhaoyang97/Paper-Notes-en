@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] nnterp: A Standardized Interface for Mechanistic Interpretability of Transformers
 description: >-
-  [NeurIPS 2025 (Mechanistic Interpretability Workshop)][Mechanistic Interpretability] nnterp is a lightweight wrapper over NNsight that provides a unified interface for accessing internal activations across 50+ Transformer model variants spanning 21 architecture families, achieved through systematic module renaming and automated validation tests. It ships with built-in interpretability methods including logit lens, patchscope, and activation steering, resolving the fundamental trade-off between the correctness issues of TransformerLens and the lack of standardization in bare NNsight usage.
+  [NeurIPS 2025 (Mechanistic Interpretability Workshop)][Interpretability][Mechanistic Interpretability] nnterp is a lightweight wrapper over NNsight that provides a unified interface for accessing internal activations acr…
 tags:
-  - NeurIPS 2025 (Mechanistic Interpretability Workshop)
-  - Mechanistic Interpretability
-  - Unified Interface
-  - NNsight
-  - Cross-Architecture
-  - Transformer Toolkit
+  - "NeurIPS 2025 (Mechanistic Interpretability Workshop)"
+  - "Interpretability"
+  - "Mechanistic Interpretability"
+  - "Unified Interface"
+  - "NNsight"
+  - "Cross-Architecture"
+  - "Transformer Toolkit"
 date: 2026-05-08
 content_hash: b644d1c8a06b1e27
 ---

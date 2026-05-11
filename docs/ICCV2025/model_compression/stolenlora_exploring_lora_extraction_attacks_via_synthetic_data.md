@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] StolenLoRA: Exploring LoRA Extraction Attacks via Synthetic Data
 description: >-
-  [ICCV 2025][Model Compression][LoRA extraction] StolenLoRA is the first work to formulate model extraction attacks targeting LoRA-adapted models. It leverages LLM-driven Stable Diffusion to synthesize high-quality training data, eliminating the need to search real datasets, and designs a Disagreement-based Semi-supervised Learning (DSL) strategy that maximizes information gain through selective querying. With only 10k queries, StolenLoRA achieves an attack success rate (ASR) of up to 96.60%, exposing critical security vulnerabilities in LoRA-adapted models.
+  [ICCV 2025][Model Compression][LoRA extraction] StolenLoRA is the first work to formulate model extraction attacks targeting LoRA-adapted models. It leverages LLM-driven Stable Diffusion to synthesize high-quality traini…
 tags:
-  - ICCV 2025
-  - Model Compression
-  - LoRA extraction
-  - model extraction attack
-  - PEFT
-  - synthetic data
-  - Stable Diffusion
-  - disagreement-based semi-supervised learning
-  - LLM-driven prompting
+  - "ICCV 2025"
+  - "Model Compression"
+  - "LoRA extraction"
+  - "model extraction attack"
+  - "PEFT"
+  - "synthetic data"
+  - "Stable Diffusion"
+  - "disagreement-based semi-supervised learning"
+  - "LLM-driven prompting"
 date: 2026-05-08
 content_hash: 107fca8b18a21fee
 ---

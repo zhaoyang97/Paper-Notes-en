@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TabStruct: Measuring Structural Fidelity of Tabular Data
 description: >-
-  [ICLR 2026][LLM Evaluation][Tabular data generation] This paper proposes the TabStruct evaluation framework and a global utility metric that measures the structural fidelity of tabular data generators with respect to causal structure, without requiring ground-truth causal graphs. A systematic comparison of 13 generators across 29 datasets reveals that diffusion models significantly outperform other methods in preserving global structure.
+  [ICLR 2026][LLM Evaluation][Tabular data generation] This paper proposes the TabStruct evaluation framework and a global utility metric that measures the structural fidelity of tabular data generators with respect to cau…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - Tabular data generation
-  - structural fidelity
-  - causal structure
-  - global utility
-  - conditional independence
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Tabular data generation"
+  - "structural fidelity"
+  - "causal structure"
+  - "global utility"
+  - "conditional independence"
 date: 2026-05-08
 content_hash: 8c73b33911cc4ed1
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dual-Imbalance Continual Learning for Real-World Food Recognition
 description: >-
-  [CVPR 2026][Signal & Communication][continual learning] This paper proposes DIME, a framework that employs class-count-aware spectral adapter merging and rank-wise threshold modulation to address dual imbalance (intra-step class long-tail distribution and inter-step class-count skew) in continual learning, consistently outperforming baselines by over 3% on four long-tail food recognition benchmarks.
+  [CVPR 2026][Signal & Communication][continual learning] This paper proposes DIME, a framework that employs class-count-aware spectral adapter merging and rank-wise threshold modulation to address dual imbalance (intra-st…
 tags:
-  - CVPR 2026
+  - "CVPR 2026"
   - "Signal & Communication"
-  - continual learning
-  - dual imbalance
-  - adapter merging
-  - long-tail distribution
-  - food recognition
+  - "continual learning"
+  - "dual imbalance"
+  - "adapter merging"
+  - "long-tail distribution"
+  - "food recognition"
 date: 2026-05-08
 content_hash: 8f80503c3dc43558
 ---

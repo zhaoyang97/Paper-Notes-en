@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MMPB: It's Time for Multi-Modal Personalization
 description: >-
-  [NeurIPS 2025][Recommender Systems][VLM] This paper introduces MMPB, the first VLM personalization evaluation benchmark, comprising 111 personalizable concepts, 10k+ image-text QA pairs, and 15 task types. Evaluation of 23 VLMs reveals that even the strongest model, GPT-4o, performs poorly on personalization tasks, exposing critical limitations in preference reasoning, visual cue utilization, and conflicts between safety alignment and personalization.
+  [NeurIPS 2025][Recommender Systems][VLM] This paper introduces MMPB, the first VLM personalization evaluation benchmark, comprising 111 personalizable concepts, 10k+ image-text QA pairs…
 tags:
-  - NeurIPS 2025
-  - Recommender Systems
-  - VLM
-  - Personalization
-  - benchmark
-  - visual question answering
-  - Cold-start
+  - "NeurIPS 2025"
+  - "Recommender Systems"
+  - "VLM"
+  - "Personalization"
+  - "benchmark"
+  - "visual question answering"
+  - "Cold-start"
 date: 2026-05-08
 content_hash: dd9e7c7af97092a5
 ---

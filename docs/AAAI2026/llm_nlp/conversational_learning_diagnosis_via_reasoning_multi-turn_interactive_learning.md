@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Conversational Learning Diagnosis via Reasoning Multi-Turn Interactive Learning
 description: >-
-  [AAAI 2026][LLM/NLP][Conversational Learning Diagnosis] This paper proposes ParLD (Preview-Analyze-Reason framework), which leverages multi-agent collaboration to achieve fine-grained, turn-level diagnosis of students' cognitive states during conversational learning. ParLD outperforms traditional knowledge tracing methods by 10% on performance prediction and substantially improves tutoring outcomes.
+  [AAAI 2026][LLM/NLP][Conversational Learning Diagnosis] This paper proposes ParLD (Preview-Analyze-Reason framework), which leverages multi-agent collaboration to achieve fine-grained…
 tags:
-  - AAAI 2026
-  - LLM/NLP
-  - Conversational Learning Diagnosis
-  - Knowledge Tracing
-  - Multi-Agent Collaboration
-  - Cognitive State
-  - LLM
+  - "AAAI 2026"
+  - "LLM/NLP"
+  - "Conversational Learning Diagnosis"
+  - "Knowledge Tracing"
+  - "Multi-Agent Collaboration"
+  - "Cognitive State"
+  - "LLM"
 date: 2026-05-08
 content_hash: 5e0fa566ef7a3f97
 ---

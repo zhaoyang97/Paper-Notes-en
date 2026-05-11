@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] RuleReasoner: Reinforced Rule-based Reasoning via Domain-aware Dynamic Sampling
 description: >-
-  [Reinforcement Learning] RuleReasoner constructs a diverse rule reasoning dataset, RuleCollection-32K, and proposes a domain-aware dynamic sampling strategy (Dads). Under the RLVR framework, an 8B model trained with this approach outperforms OpenAI-o1 by 4.1% on in-distribution reasoning tasks and by 10.4% on out-of-distribution tasks, while achieving approximately 1.4× training efficiency improvement.
+  [Reinforcement Learning] RuleReasoner constructs a diverse rule reasoning dataset, RuleCollection-32K, and proposes a domain-aware dynamic sampling strategy (Dads). Under the RLVR framework…
 tags:
-  - Reinforcement Learning
+  - "Reinforcement Learning"
 date: 2026-05-08
 content_hash: 2da0d0bb715bd30c
 ---

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Rethinking Target Label Conditioning in Adversarial Attacks: A 2D Tensor-Guided Generative Approach
 description: >-
-  [AI Safety] This paper proposes the TGAF framework, which leverages diffusion models to encode target labels as 2D semantic tensors for guiding adversarial noise generation, and introduces a random masking strategy to preserve complete semantic information, significantly improving the transferability of targeted adversarial attacks.
+  [AI Safety] This paper proposes the TGAF framework, which leverages diffusion models to encode target labels as 2D semantic tensors for guiding adversarial noise generation…
 tags:
-  - AI Safety
+  - "AI Safety"
 date: 2026-05-08
 content_hash: c07a6cd946894c82
 ---

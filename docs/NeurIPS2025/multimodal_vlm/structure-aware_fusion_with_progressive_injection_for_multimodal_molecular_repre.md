@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Structure-Aware Fusion with Progressive Injection for Multimodal Molecular Representation Learning
 description: >-
-  [NeurIPS 2025][Multimodal VLM][multimodal fusion] This paper proposes MuMo, a framework that fuses 2D topological and 3D geometric information into stable structural priors via a Structured Fusion Pipeline (SFP), and asymmetrically integrates these priors into the sequence stream through a Progressive Injection (PI) mechanism, achieving an average improvement of 2.7% over competitive baselines across 29 molecular property prediction benchmarks and ranking first on 22 of them.
+  [NeurIPS 2025][Multimodal VLM][multimodal fusion] This paper proposes MuMo, a framework that fuses 2D topological and 3D geometric information into stable structural priors via a Structured Fusion Pipeline (SFP)…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - multimodal fusion
-  - molecular representation learning
-  - state space models
-  - drug discovery
-  - conformational robustness
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "multimodal fusion"
+  - "molecular representation learning"
+  - "state space models"
+  - "drug discovery"
+  - "conformational robustness"
 date: 2026-05-08
 content_hash: 45396f4af2a4bea3
 ---

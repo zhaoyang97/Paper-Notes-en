@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From Woofs to Words: Towards Intelligent Robotic Guide Dogs with Verbal Communication
 description: >-
-  [AAAI 2026][Robotics][Robotic Guide Dog] This paper proposes a dialogue system for robotic guide dogs that leverages LLMs and a task planner to achieve **Plan Verbalization** and **Scene Verbalization**, supporting multi-turn natural language dialogue to assist visually impaired users in navigation decision-making. The system's effectiveness is validated through a real-user study and simulation experiments.
+  [AAAI 2026][Robotics][Robotic Guide Dog] This paper proposes a dialogue system for robotic guide dogs that leverages LLMs and a task planner to achieve **Plan Verbalization** and **Scene Verbalization**…
 tags:
-  - AAAI 2026
-  - Robotics
-  - Robotic Guide Dog
-  - Dialogue System
-  - LLM
-  - Task Planning
-  - Scene Verbalization
+  - "AAAI 2026"
+  - "Robotics"
+  - "Robotic Guide Dog"
+  - "Dialogue System"
+  - "LLM"
+  - "Task Planning"
+  - "Scene Verbalization"
 date: 2026-05-08
 content_hash: ed975ac31849d1c0
 ---

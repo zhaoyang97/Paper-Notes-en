@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MolLangBench: A Comprehensive Benchmark for Language-Prompted Molecular Structure Recognition, Editing, and Generation
 description: >-
-  [ICLR 2026][Graph Learning][molecular recognition] This paper introduces MolLangBench, a benchmark constructed via automated tools and expert annotation to provide high-quality, unambiguous evaluation datasets for the molecule-language interface. It covers three task types (recognition / editing / generation) and three modalities (SMILES / image / graph), evaluates 16+ commercial LLMs and 5 chemistry-specific models, and reveals that even GPT-5 falls significantly short on basic molecular operations (generation accuracy only 43%).
+  [ICLR 2026][Graph Learning][molecular recognition] This paper introduces MolLangBench, a benchmark constructed via automated tools and expert annotation to provide high-quality…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - molecular recognition
-  - molecule editing
-  - molecule generation
-  - molecule-language alignment
-  - benchmark
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "molecular recognition"
+  - "molecule editing"
+  - "molecule generation"
+  - "molecule-language alignment"
+  - "benchmark"
 date: 2026-05-08
 content_hash: 99ed43011555f317
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond the Final Actor: Modeling the Dual Roles of Creator and Editor for Fine-Grained LLM-Generated Text Detection
 description: >-
-  [ACL 2026][AIGC Detection][LLM-generated text detection] This paper proposes RACE (Rhetorical Analysis for Creator-Editor Modeling), which leverages Rhetorical Structure Theory (RST) to construct logic graphs that model the "creator's" cognitive architecture, while extracting discourse unit-level features to capture the "editor's" linguistic style, achieving fine-grained four-class LLM-generated text detection (human-written/LLM-written/LLM-polished human text/human-rewritten LLM text).
+  [ACL 2026][AIGC Detection][LLM-generated text detection] This paper proposes RACE (Rhetorical Analysis for Creator-Editor Modeling), which leverages Rhetorical Structure Theory (RST) to construct logic graphs that model…
 tags:
-  - ACL 2026
-  - AIGC Detection
-  - LLM-generated text detection
-  - Rhetorical Structure Theory
-  - creator-editor modeling
-  - fine-grained classification
-  - discourse analysis
+  - "ACL 2026"
+  - "AIGC Detection"
+  - "LLM-generated text detection"
+  - "Rhetorical Structure Theory"
+  - "creator-editor modeling"
+  - "fine-grained classification"
+  - "discourse analysis"
 date: 2026-05-08
 content_hash: 6ac118563ca0233a
 ---

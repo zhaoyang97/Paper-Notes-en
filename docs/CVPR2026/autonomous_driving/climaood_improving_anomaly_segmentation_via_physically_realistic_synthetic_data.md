@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] ClimaOoD: Improving Anomaly Segmentation via Physically Realistic Synthetic Data
 description: >-
-  [CVPR 2026][Autonomous Driving][Anomaly Segmentation] This paper proposes ClimaDrive, a data generation framework, and ClimaOoD, a benchmark dataset. By combining semantically guided multi-weather scene generation with perspective-aware anomaly object placement, the framework constructs a 10K+ training set covering 6 weather conditions × 93 anomaly categories. Training on this dataset yields an average AP improvement of 3.25% across four state-of-the-art methods.
+  [CVPR 2026][Autonomous Driving][Anomaly Segmentation] This paper proposes ClimaDrive, a data generation framework, and ClimaOoD, a benchmark dataset. By combining semantically guided multi-weather scene generation with p…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Anomaly Segmentation
-  - OoD Detection
-  - Synthetic Data
-  - Weather Augmentation
-  - Diffusion Models
-  - ControlNet
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Anomaly Segmentation"
+  - "OoD Detection"
+  - "Synthetic Data"
+  - "Weather Augmentation"
+  - "Diffusion Models"
+  - "ControlNet"
 date: 2026-05-08
 content_hash: f1d09e73c5cdfe23
 ---

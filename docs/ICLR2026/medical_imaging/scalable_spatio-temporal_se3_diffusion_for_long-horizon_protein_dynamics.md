@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Scalable Spatio-Temporal SE(3) Diffusion for Long-Horizon Protein Dynamics
 description: >-
-  [ICLR 2026][Medical Imaging][protein conformation generation] This paper proposes STAR-MD, an SE(3)-equivariant causal diffusion Transformer that achieves microsecond-scale protein dynamics trajectory generation via joint spatio-temporal attention and contextual noise perturbation. STAR-MD attains state-of-the-art performance across all metrics on the ATLAS benchmark and stably extrapolates to microsecond timescales unseen during training.
+  [ICLR 2026][Medical Imaging][protein conformation generation] This paper proposes STAR-MD, an SE(3)-equivariant causal diffusion Transformer that achieves microsecond-scale protein dynamics trajectory generation via join…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - protein conformation generation
-  - SE(3) diffusion model
-  - spatio-temporal attention
-  - autoregressive trajectory generation
-  - molecular dynamics acceleration
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "protein conformation generation"
+  - "SE(3) diffusion model"
+  - "spatio-temporal attention"
+  - "autoregressive trajectory generation"
+  - "molecular dynamics acceleration"
 date: 2026-05-08
 content_hash: f7a6db86f05c4f6f
 ---

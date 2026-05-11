@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DisCode: Distribution-Aware Score Decoder for Robust Automatic Evaluation of Image Captioning
 description: >-
-  [AAAI 2026][Multimodal VLM][Image captioning evaluation] This paper proposes DISCODE, a fine-tuning-free test-time adaptive decoder that introduces a Gaussian prior to minimize the ATT loss, enabling LVLM-generated image captioning scores to more robustly align with human judgments. The paper also constructs the MCEval benchmark covering six visual domains.
+  [AAAI 2026][Multimodal VLM][Image captioning evaluation] This paper proposes DISCODE, a fine-tuning-free test-time adaptive decoder that introduces a Gaussian prior to minimize the ATT loss…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Image captioning evaluation
-  - large vision-language models
-  - test-time adaptation
-  - scoring robustness
-  - distribution prior
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Image captioning evaluation"
+  - "large vision-language models"
+  - "test-time adaptation"
+  - "scoring robustness"
+  - "distribution prior"
 date: 2026-05-08
 content_hash: 1296bb7f095dc21c
 ---

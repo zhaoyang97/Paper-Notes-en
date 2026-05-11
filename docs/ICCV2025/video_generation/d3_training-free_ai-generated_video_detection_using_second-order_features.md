@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] D3: Training-Free AI-Generated Video Detection Using Second-Order Features
 description: >-
-  [ICCV 2025][Video Generation][AI-generated video detection] Drawing from second-order control systems in Newtonian mechanics, this paper identifies a fundamental distinction between real and AI-generated videos in their second-order temporal features ("acceleration"): real videos exhibit high fluctuation while generated videos remain flat. Based on this insight, the authors propose D3, a fully training-free AI-generated video detection method that classifies videos solely by computing the standard deviation of second-order differences of inter-frame features, achieving state-of-the-art performance across 40 test subsets.
+  [ICCV 2025][Video Generation][AI-generated video detection] Drawing from second-order control systems in Newtonian mechanics, this paper identifies a fundamental distinction between real and AI-generated videos in their…
 tags:
-  - ICCV 2025
-  - Video Generation
-  - AI-generated video detection
-  - training-free
-  - second-order features
-  - temporal artifacts
-  - Newtonian mechanics
-  - optical flow
+  - "ICCV 2025"
+  - "Video Generation"
+  - "AI-generated video detection"
+  - "training-free"
+  - "second-order features"
+  - "temporal artifacts"
+  - "Newtonian mechanics"
+  - "optical flow"
 date: 2026-05-08
 content_hash: ed06d6fe448e1ded
 ---

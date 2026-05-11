@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Aligning Compound AI Systems via System-level DPO
 description: >-
-  [NeurIPS 2025][Image Generation][compound AI system] This paper models compound AI systems as DAGs and proposes the SysDPO framework, which extends DPO to joint multi-component alignment. By leveraging DAG decomposition, system-level preferences are transformed into an end-to-end optimizable loss function. The authors provide theoretical guarantees of $\beta$-perfect alignment and demonstrate substantial improvements in collaborative quality on both LLM+diffusion model and LLM+LLM systems.
+  [NeurIPS 2025][Image Generation][compound AI system] This paper models compound AI systems as DAGs and proposes the SysDPO framework, which extends DPO to joint multi-component alignment. By leveraging DAG decomposition…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - compound AI system
-  - DPO
-  - system alignment
-  - DAG
-  - multi-component optimization
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "compound AI system"
+  - "DPO"
+  - "system alignment"
+  - "DAG"
+  - "multi-component optimization"
 date: 2026-05-08
 content_hash: fc9e68793b243f27
 ---

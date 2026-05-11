@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UniSite: The First Cross-Structure Dataset and Learning Framework for End-to-End Ligand Binding Site Detection
 description: >-
-  [NeurIPS 2025][Medical Imaging][protein binding site detection] This work introduces UniSite-DS, the first UniProt (unique protein)-centric ligand binding site dataset, and UniSite, the first end-to-end binding site detection framework. UniSite directly predicts multiple potentially overlapping binding sites via set prediction loss and bijective matching, and further proposes IoU-based AP as a more accurate evaluation metric.
+  [NeurIPS 2025][Medical Imaging][protein binding site detection] This work introduces UniSite-DS, the first UniProt (unique protein)-centric ligand binding site dataset, and UniSite…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - protein binding site detection
-  - end-to-end set prediction
-  - UniProt-centric dataset
-  - Hungarian matching
-  - IoU evaluation metric
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "protein binding site detection"
+  - "end-to-end set prediction"
+  - "UniProt-centric dataset"
+  - "Hungarian matching"
+  - "IoU evaluation metric"
 date: 2026-05-08
 content_hash: d501078bbf94ab08
 ---

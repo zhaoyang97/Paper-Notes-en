@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TagSplat: Topology-Aware Gaussian Splatting for Dynamic Mesh Modeling and Tracking
 description: >-
-  [CVPR2026][3D Vision][Gaussian Splatting] TagSplat is a topology-aware Gaussian splatting framework that explicitly encodes spatial connectivity among Gaussian primitives, enabling the generation of topologically consistent mesh sequences in dynamic scene reconstruction while supporting accurate 3D keypoint tracking.
+  [CVPR2026][3D Vision][Gaussian Splatting] TagSplat is a topology-aware Gaussian splatting framework that explicitly encodes spatial connectivity among Gaussian primitives…
 tags:
-  - CVPR2026
-  - 3D Vision
-  - Gaussian Splatting
-  - Topology Consistency
-  - Dynamic Mesh Reconstruction
-  - 3D Keypoint Tracking
-  - Manifold Preservation
+  - "CVPR2026"
+  - "3D Vision"
+  - "Gaussian Splatting"
+  - "Topology Consistency"
+  - "Dynamic Mesh Reconstruction"
+  - "3D Keypoint Tracking"
+  - "Manifold Preservation"
 date: 2026-05-08
 content_hash: 3143593480570fb8
 ---

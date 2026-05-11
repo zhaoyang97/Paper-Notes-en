@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Systematizing LLM Persona Design: A Four-Quadrant Technical Taxonomy for AI Companions
 description: >-
-  [NeurIPS 2025 (LLM Persona Workshop)][LLM/NLP][LLM Persona] This paper proposes a four-quadrant technical taxonomy for LLM persona design, organized along two axes—"virtual vs. embodied" and "emotional companionship vs. functional augmentation"—to systematically analyze the technology stacks, core challenges, and ethical risks across diverse scenarios ranging from virtual companions and game NPCs to caregiving robots.
+  [NeurIPS 2025 (LLM Persona Workshop)][LLM/NLP][LLM Persona] This paper proposes a four-quadrant technical taxonomy for LLM persona design, organized along two axes—"virtual vs. embodied" and "emotional companionship vs.…
 tags:
-  - NeurIPS 2025 (LLM Persona Workshop)
-  - LLM/NLP
-  - LLM Persona
-  - AI Companion
-  - Taxonomy
-  - Virtual Companionship
-  - Embodied Intelligence
+  - "NeurIPS 2025 (LLM Persona Workshop)"
+  - "LLM/NLP"
+  - "LLM Persona"
+  - "AI Companion"
+  - "Taxonomy"
+  - "Virtual Companionship"
+  - "Embodied Intelligence"
 date: 2026-05-08
 content_hash: b97de280c13e9030
 ---

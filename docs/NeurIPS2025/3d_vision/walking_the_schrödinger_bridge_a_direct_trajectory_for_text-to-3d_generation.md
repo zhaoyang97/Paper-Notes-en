@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Walking the Schrödinger Bridge: A Direct Trajectory for Text-to-3D Generation
 description: >-
-  [NeurIPS 2025][3D Vision][Text-to-3D Generation] This paper theoretically establishes SDS as a special case of the Schrödinger Bridge, and builds upon this insight to propose TraCe — a framework that constructs an explicit diffusion bridge between the current rendering and the text-conditioned target, learns the score dynamics along the bridge trajectory via LoRA fine-tuning, and achieves high-quality text-to-3D generation at low CFG values.
+  [NeurIPS 2025][3D Vision][Text-to-3D Generation] This paper theoretically establishes SDS as a special case of the Schrödinger Bridge, and builds upon this insight to propose TraCe — a framework that constructs an explic…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Text-to-3D Generation
-  - Score Distillation Sampling
-  - Schrödinger Bridge
-  - Diffusion Models
-  - 3D Gaussian Splatting
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Text-to-3D Generation"
+  - "Score Distillation Sampling"
+  - "Schrödinger Bridge"
+  - "Diffusion Models"
+  - "3D Gaussian Splatting"
 date: 2026-05-08
 content_hash: b376eedbc9503e1a
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Effective Federated Graph Foundation Model via Mitigating Knowledge Entanglement
 description: >-
-  [NeurIPS 2025][Model Compression][Federated Graph Learning] This work is the first to propose the Federated Graph Foundation Model (FedGFM) paradigm, which integrates the distributed collaborative capability of federated graph learning with the cross-domain generalization capability of graph foundation models. Two modules — AncDAI (Anchor-based Domain-Aware Initialization) and AdaDPP (Adaptive Domain-sensitive Prompt Pool) — are introduced to mitigate knowledge entanglement, achieving state-of-the-art performance on 8 cross-task, cross-domain datasets against 20 baselines.
+  [NeurIPS 2025][Model Compression][Federated Graph Learning] This work is the first to propose the Federated Graph Foundation Model (FedGFM) paradigm…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Federated Graph Learning
-  - Graph Foundation Model
-  - Knowledge Entanglement
-  - Vector Quantization
-  - Prompt Learning
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Federated Graph Learning"
+  - "Graph Foundation Model"
+  - "Knowledge Entanglement"
+  - "Vector Quantization"
+  - "Prompt Learning"
 date: 2026-05-08
 content_hash: 562f51ae3a5f5c41
 ---

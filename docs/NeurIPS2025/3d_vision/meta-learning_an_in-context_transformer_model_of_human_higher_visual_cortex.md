@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Meta-Learning an In-Context Transformer Model of Human Higher Visual Cortex
 description: >-
-  [NeurIPS 2025][3D Vision][fMRI encoding models] This paper proposes BraInCoRL (Brain In-Context Representation Learning), a Transformer-based meta-learning framework that predicts voxel-level neural responses for new subjects directly from a small number of stimulus–response samples via in-context learning (ICL), requiring no fine-tuning to generalize to new subjects or stimuli. With only 100 images as context, it approaches the performance of a reference model fully trained on 9,000 images.
+  [NeurIPS 2025][3D Vision][fMRI encoding models] This paper proposes BraInCoRL (Brain In-Context Representation Learning), a Transformer-based meta-learning framework that predicts voxel-level neural responses for new sub…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - fMRI encoding models
-  - meta-learning
-  - in-context learning
-  - higher visual cortex
-  - hypernetworks
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "fMRI encoding models"
+  - "meta-learning"
+  - "in-context learning"
+  - "higher visual cortex"
+  - "hypernetworks"
 date: 2026-05-08
 content_hash: 79dc3db1e65b6a54
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Oryx: a Scalable Sequence Model for Many-Agent Coordination in Offline MARL
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Offline Multi-Agent Reinforcement Learning] This paper proposes Oryx, a scalable sequence model algorithm for offline cooperative MARL that integrates the Retention-based Sable architecture with an autoregressive formulation of ICQ offline regularization. Through a dual-decoder that jointly outputs policies and Q-values, combined with counterfactual advantage estimation, Oryx achieves state-of-the-art performance on more than 80% of 65 datasets and demonstrates robust scalability to 50-agent scenarios.
+  [NeurIPS 2025][Reinforcement Learning][Offline Multi-Agent Reinforcement Learning] This paper proposes Oryx, a scalable sequence model algorithm for offline cooperative MARL that integrates the Retention-based Sable arch…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Offline Multi-Agent Reinforcement Learning
-  - Sequence Modeling
-  - Autoregressive Policy
-  - Multi-Agent Coordination
-  - Retention Mechanism
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Offline Multi-Agent Reinforcement Learning"
+  - "Sequence Modeling"
+  - "Autoregressive Policy"
+  - "Multi-Agent Coordination"
+  - "Retention Mechanism"
 date: 2026-05-08
 content_hash: cc1a2c52bd2bfa8f
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Enhancing Generalization of Depth Estimation Foundation Model via Weakly-Supervised Adaptation with Regularization
 description: >-
-  [AAAI 2026][3D Vision][Monocular Depth Estimation] This paper proposes WeSTAR, a framework that synergistically combines semantics-aware hierarchical depth normalization self-training, sparse pairwise ordinal weak supervision, and LoRA weight regularization to enhance the generalization of depth estimation foundation models (Depth Anything V2) on unseen domains and corrupted data in a parameter-efficient manner, achieving state-of-the-art results on multiple OOD benchmarks.
+  [AAAI 2026][3D Vision][Monocular Depth Estimation] This paper proposes WeSTAR, a framework that synergistically combines semantics-aware hierarchical depth normalization self-training…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - Monocular Depth Estimation
-  - Domain Adaptation
-  - Weak Supervision
-  - LoRA
-  - Self-Training
+  - "AAAI 2026"
+  - "3D Vision"
+  - "Monocular Depth Estimation"
+  - "Domain Adaptation"
+  - "Weak Supervision"
+  - "LoRA"
+  - "Self-Training"
 date: 2026-05-08
 content_hash: d0002036000c2e19
 ---

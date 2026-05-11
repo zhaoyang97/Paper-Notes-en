@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] 3D Visual Illusion Depth Estimation
 description: >-
-  [NeurIPS 2025][3D Vision][3D visual illusion] This paper reveals that 3D visual illusions (e.g., wall paintings, screen replays, mirror reflections) severely mislead existing state-of-the-art monocular and stereo depth estimation methods. The authors construct a large-scale dataset comprising approximately 3k scenes and 200k images, and propose a VLM-driven monocular-stereo adaptive fusion framework that achieves state-of-the-art performance across diverse illusion scenarios.
+  [NeurIPS 2025][3D Vision][3D visual illusion] This paper reveals that 3D visual illusions (e.g., wall paintings, screen replays, mirror reflections) severely mislead existing state-of-the-art monocular and stereo depth e…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - 3D visual illusion
-  - depth estimation
-  - monocular-stereo fusion
-  - vision-language model
-  - Flow Matching
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "3D visual illusion"
+  - "depth estimation"
+  - "monocular-stereo fusion"
+  - "vision-language model"
+  - "Flow Matching"
 date: 2026-05-08
 content_hash: 22c5b21c71ce92e6
 ---

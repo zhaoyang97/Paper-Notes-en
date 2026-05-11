@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mind the Gap: Aligning Vision Foundation Models to Image Feature Matching
 description: >-
-  [ICCV 2025][Image Generation][Feature Matching] This paper identifies an "alignment gap" in vision foundation models (e.g., DINOv2) for image feature matching: contrastive learning-based models discard instance-level details and lack cross-image interaction mechanisms, causing failures in multi-instance matching scenarios. To address this, the authors propose the IMD framework, which employs diffusion models as feature extractors to preserve instance-level details, and designs a Cross-Image Interaction Prompt Module (CIPM) for bidirectional information exchange. IMD achieves state-of-the-art performance on standard benchmarks and on the newly introduced multi-instance benchmark IMIM, with a 12% improvement in multi-instance scenarios.
+  [ICCV 2025][Image Generation][Feature Matching] This paper identifies an "alignment gap" in vision foundation models (e.g., DINOv2) for image feature matching: contrastive learning-based models discard instance-level det…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Feature Matching
-  - Vision Foundation Models
-  - Diffusion Models
-  - Cross-Image Interaction
-  - Multi-Instance Matching
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Feature Matching"
+  - "Vision Foundation Models"
+  - "Diffusion Models"
+  - "Cross-Image Interaction"
+  - "Multi-Instance Matching"
 date: 2026-05-08
 content_hash: 36cf58715a8a1f29
 ---

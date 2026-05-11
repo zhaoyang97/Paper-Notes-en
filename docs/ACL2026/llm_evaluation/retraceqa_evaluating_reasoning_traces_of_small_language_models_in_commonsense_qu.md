@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ReTraceQA: Evaluating Reasoning Traces of Small Language Models in Commonsense Question Answering
 description: >-
-  [ACL 2026][LLM Evaluation][Reasoning process evaluation] This paper introduces ReTraceQA, the first reasoning process evaluation benchmark for commonsense question answering, comprising 2,421 instances annotated by domain experts with step-level error localization and error categorization. The benchmark reveals that 14–24% of SLMs produce correct answers via flawed reasoning, and that replacing answer-only evaluation with reasoning-aware evaluation reduces SLM performance by up to 25 percentage points.
+  [ACL 2026][LLM Evaluation][Reasoning process evaluation] This paper introduces ReTraceQA, the first reasoning process evaluation benchmark for commonsense question answering, comprising 2…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - Reasoning process evaluation
-  - small language models
-  - commonsense reasoning
-  - process reward models
-  - LLM-as-Judge
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "Reasoning process evaluation"
+  - "small language models"
+  - "commonsense reasoning"
+  - "process reward models"
+  - "LLM-as-Judge"
 date: 2026-05-08
 content_hash: 28d69383b891e1f8
 ---

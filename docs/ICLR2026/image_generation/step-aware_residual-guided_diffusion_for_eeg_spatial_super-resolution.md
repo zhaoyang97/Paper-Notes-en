@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Step-Aware Residual-Guided Diffusion for EEG Spatial Super-Resolution
 description: >-
-  [ICLR 2026][Image Generation][EEG super-resolution] This paper proposes SRGDiff, a step-aware residual-guided diffusion model that reformulates EEG spatial super-resolution as a dynamic conditional generation task, achieving high-fidelity reconstruction via per-step residual direction correction and timestep-dependent affine modulation.
+  [ICLR 2026][Image Generation][EEG super-resolution] This paper proposes SRGDiff, a step-aware residual-guided diffusion model that reformulates EEG spatial super-resolution as a dynamic conditional generation task…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - EEG super-resolution
-  - residual-guided diffusion
-  - step-aware modulation
-  - brain-computer interface
-  - conditional generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "EEG super-resolution"
+  - "residual-guided diffusion"
+  - "step-aware modulation"
+  - "brain-computer interface"
+  - "conditional generation"
 date: 2026-05-08
 content_hash: d9f93e8a3b36b861
 ---

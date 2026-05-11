@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Neural Networks Learn Generic Multi-Index Models Near Information-Theoretic Limit
 description: >-
-  [ICLR 2026][Optimization][Multi-Index Models] This paper proves that, under generic non-degeneracy assumptions, standard two-layer neural networks trained via hierarchical gradient descent can learn generic Gaussian Multi-Index models $f(\bm{x})=g(\bm{U}\bm{x})$ with $\tilde{O}(d)$ samples and $\tilde{O}(d^2)$ time, achieving information-theoretically optimal sample and time complexity. This constitutes the first proof that neural networks can efficiently learn hierarchical functions.
+  [ICLR 2026][Optimization][Multi-Index Models] This paper proves that, under generic non-degeneracy assumptions, standard two-layer neural networks trained via hierarchical gradient descent can learn generic Gaussian Mult…
 tags:
-  - ICLR 2026
-  - Optimization
-  - Multi-Index Models
-  - Information-Theoretic Lower Bounds
-  - Feature Learning
-  - Power Iteration
-  - Two-Layer Neural Networks
+  - "ICLR 2026"
+  - "Optimization"
+  - "Multi-Index Models"
+  - "Information-Theoretic Lower Bounds"
+  - "Feature Learning"
+  - "Power Iteration"
+  - "Two-Layer Neural Networks"
 date: 2026-05-08
 content_hash: 19d4cc6ab401e5ac
 ---

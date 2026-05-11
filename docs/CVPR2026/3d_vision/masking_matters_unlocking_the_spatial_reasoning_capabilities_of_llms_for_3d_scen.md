@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Masking Matters: Unlocking the Spatial Reasoning Capabilities of LLMs for 3D Scene-Language Understanding
 description: >-
-  [CVPR 2026][3D Vision][3D scene understanding] This paper identifies two fundamental conflicts between the causal mask in LLM decoders and 3D scene understanding (order bias and instruction isolation), and proposes the 3D-SLIM masking strategy (Geometry-adaptive Mask + Instruction-aware Mask) to replace the causal mask. It achieves significant improvements across multiple 3D scene-language tasks without any architectural modifications or additional parameters.
+  [CVPR 2026][3D Vision][3D scene understanding] This paper identifies two fundamental conflicts between the causal mask in LLM decoders and 3D scene understanding (order bias and instruction isolation)…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D scene understanding
-  - attention mask
-  - spatial reasoning
-  - LLM decoder
-  - object-centric representation
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D scene understanding"
+  - "attention mask"
+  - "spatial reasoning"
+  - "LLM decoder"
+  - "object-centric representation"
 date: 2026-05-08
 content_hash: a76ed85597babff2
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LLM-CAS: Dynamic Neuron Perturbation for Real-Time Hallucination Correction
 description: >-
-  [AAAI 2026][Multimodal VLM][Dynamic neuron perturbation] LLM-CAS is the first work to formulate real-time LLM hallucination correction as a hierarchical reinforcement learning (HRL) problem. It trains an RL agent to dynamically select optimal neuron perturbation strategies at inference time — the high-level policy selects a functional network category, while the low-level policy selects perturbation type and magnitude. Combined with adaptive masking and causal tracing for precise neuron localization, LLM-CAS achieves a 10.98% improvement on StoryCloze, outperforming static and dynamic baselines such as ITI, CAA, and SADI.
+  [AAAI 2026][Multimodal VLM][Dynamic neuron perturbation] LLM-CAS is the first work to formulate real-time LLM hallucination correction as a hierarchical reinforcement learning (HRL) problem. It trains an RL agent to dyna…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Dynamic neuron perturbation
-  - hierarchical reinforcement learning
-  - inference-time intervention
-  - causal tracing
-  - adaptive masking
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Dynamic neuron perturbation"
+  - "hierarchical reinforcement learning"
+  - "inference-time intervention"
+  - "causal tracing"
+  - "adaptive masking"
 date: 2026-05-08
 content_hash: 9441e57e8b807a2c
 ---

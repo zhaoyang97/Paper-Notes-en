@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VowelPrompt: Hearing Speech Emotions from Text via Vowel-level Prosodic Augmentation
 description: >-
-  [ICLR 2026][Audio & Speech][Speech Emotion Recognition] This paper proposes VowelPrompt, which extracts vowel-level prosodic descriptors (pitch/energy/duration) grounded in phonetic evidence, converts them into natural language to augment LLM emotion recognition prompts, and employs a two-stage SFT+GRPO training pipeline. The method consistently outperforms state-of-the-art approaches under zero-shot, fine-tuning, cross-domain, and cross-lingual conditions, while generating interpretable emotion reasoning.
+  [ICLR 2026][Audio & Speech][Speech Emotion Recognition] This paper proposes VowelPrompt, which extracts vowel-level prosodic descriptors (pitch/energy/duration) grounded in phonetic evidence…
 tags:
-  - ICLR 2026
+  - "ICLR 2026"
   - "Audio & Speech"
-  - Speech Emotion Recognition
-  - Prosodic Features
-  - Vowel-level
-  - LLM Reasoning
-  - GRPO
+  - "Speech Emotion Recognition"
+  - "Prosodic Features"
+  - "Vowel-level"
+  - "LLM Reasoning"
+  - "GRPO"
 date: 2026-05-08
 content_hash: 0fa9e15608af6fbf
 ---

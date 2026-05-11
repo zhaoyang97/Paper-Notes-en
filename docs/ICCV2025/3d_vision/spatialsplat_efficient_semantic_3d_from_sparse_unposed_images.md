@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SpatialSplat: Efficient Semantic 3D from Sparse Unposed Images
 description: >-
-  [ICCV 2025][3D Vision][Semantic 3DGS] SpatialSplat is proposed to generate compact semantic 3D Gaussians from sparse unposed images via feed-forward inference, leveraging a dual-field semantic representation and a selective Gaussian mechanism that reduces representation parameters by 60% while surpassing state-of-the-art methods.
+  [ICCV 2025][3D Vision][Semantic 3DGS] SpatialSplat is proposed to generate compact semantic 3D Gaussians from sparse unposed images via feed-forward inference…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Semantic 3DGS
-  - Feed-forward Reconstruction
-  - Unposed Images
-  - Dual-field Architecture
-  - Gaussian Selection
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Semantic 3DGS"
+  - "Feed-forward Reconstruction"
+  - "Unposed Images"
+  - "Dual-field Architecture"
+  - "Gaussian Selection"
 date: 2026-05-08
 content_hash: 020d5dd08c763ebb
 ---

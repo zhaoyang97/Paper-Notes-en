@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LONG3R: Long Sequence Streaming 3D Reconstruction
 description: >-
-  [ICCV 2025][3D Vision][Streaming 3D reconstruction] This paper proposes LONG3R, a streaming multi-view 3D reconstruction model based on a recurrent memory mechanism. Through three key innovations — memory gating, a dual-source refined decoder, and 3D spatio-temporal memory — LONG3R significantly improves long-sequence reconstruction quality while maintaining real-time inference speed.
+  [ICCV 2025][3D Vision][Streaming 3D reconstruction] This paper proposes LONG3R, a streaming multi-view 3D reconstruction model based on a recurrent memory mechanism. Through three key innovations — memory gating…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Streaming 3D reconstruction
-  - pointmap regression
-  - spatio-temporal memory
-  - long-sequence reconstruction
-  - real-time inference
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Streaming 3D reconstruction"
+  - "pointmap regression"
+  - "spatio-temporal memory"
+  - "long-sequence reconstruction"
+  - "real-time inference"
 date: 2026-05-08
 content_hash: 25654ffc5bbf1c27
 ---

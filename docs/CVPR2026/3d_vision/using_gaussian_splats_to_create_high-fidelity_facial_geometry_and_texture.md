@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Using Gaussian Splats to Create High-Fidelity Facial Geometry and Texture
 description: >-
-  [CVPR2026][3D Vision][Gaussian Splatting] This paper proposes a face reconstruction pipeline based on improved Gaussian Splatting. It tightly couples Gaussians with triangle meshes via soft constraints and semantic segmentation supervision, reconstructing high-fidelity triangular mesh geometry from only 11 uncalibrated images. A PCA prior combined with a relightable Gaussian model is used to disentangle illumination and recover de-lit albedo textures, with outputs fully compatible with standard graphics pipelines (MetaHuman).
+  [CVPR2026][3D Vision][Gaussian Splatting] This paper proposes a face reconstruction pipeline based on improved Gaussian Splatting. It tightly couples Gaussians with triangle meshes via soft constraints and semantic segme…
 tags:
-  - CVPR2026
-  - 3D Vision
-  - Gaussian Splatting
-  - facial geometry reconstruction
-  - de-lit texture
-  - semantic segmentation constraint
-  - neural texture
-  - MetaHuman
+  - "CVPR2026"
+  - "3D Vision"
+  - "Gaussian Splatting"
+  - "facial geometry reconstruction"
+  - "de-lit texture"
+  - "semantic segmentation constraint"
+  - "neural texture"
+  - "MetaHuman"
 date: 2026-05-08
 content_hash: 2b51c18cc60cebd9
 ---

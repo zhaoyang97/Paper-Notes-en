@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SGMA: Semantic-Guided Modality-Aware Segmentation for Remote Sensing with Incomplete Multimodal Data
 description: >-
-  [CVPR 2026][Segmentation][Incomplete multimodal semantic segmentation] This paper proposes the SGMA framework, which constructs global semantic prototypes via a Semantic-Guided Fusion (SGF) module for adaptive cross-modal fusion, and dynamically increases the training frequency of fragile modalities through a Modality-Aware Sampling (MAS) module. The framework addresses three core challenges in incomplete multimodal semantic segmentation for remote sensing: modality imbalance, large intra-class variance, and cross-modal heterogeneity.
+  [CVPR 2026][Segmentation][Incomplete multimodal semantic segmentation] This paper proposes the SGMA framework, which constructs global semantic prototypes via a Semantic-Guided Fusion (SGF) module for adaptive cross-moda…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Incomplete multimodal semantic segmentation
-  - remote sensing
-  - modality imbalance
-  - semantic prototypes
-  - adaptive fusion
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Incomplete multimodal semantic segmentation"
+  - "remote sensing"
+  - "modality imbalance"
+  - "semantic prototypes"
+  - "adaptive fusion"
 date: 2026-05-08
 content_hash: aab09b4faf628c2c
 ---

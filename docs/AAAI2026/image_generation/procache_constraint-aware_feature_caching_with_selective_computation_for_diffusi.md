@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ProCache: Constraint-Aware Feature Caching with Selective Computation for Diffusion Transformer Acceleration
 description: >-
-  [AAAI 2026][Image Generation][Diffusion Transformer Acceleration] This paper proposes ProCache, a training-free dynamic feature caching framework that achieves 2.90× speedup on DiT-XL/2 and 1.96× speedup on PixArt-α with negligible image quality degradation, through constraint-aware non-uniform caching pattern search and selective computation, significantly outperforming existing caching methods.
+  [AAAI 2026][Image Generation][Diffusion Transformer Acceleration] This paper proposes ProCache, a training-free dynamic feature caching framework that achieves 2.90× speedup on DiT-XL/2 and 1.96× speedup on PixArt-α with…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Diffusion Transformer Acceleration
-  - Feature Caching
-  - Training-Free Inference
-  - Dynamic Scheduling
-  - Token Selection
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Diffusion Transformer Acceleration"
+  - "Feature Caching"
+  - "Training-Free Inference"
+  - "Dynamic Scheduling"
+  - "Token Selection"
 date: 2026-05-08
 content_hash: 907037aa3ef11692
 ---

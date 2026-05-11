@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] STaRFormer: Semi-Supervised Task-Informed Representation Learning via Dynamic Attention-Based Regional Masking
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][Time-series classification] STaRFormer is proposed, which employs Dynamic Attention-based Regional Masking (DAReM) to identify task-critical regions and apply masking perturbations, coupled with intra-batch and intra-class semi-supervised contrastive learning to embed task information into latent representations. The method comprehensively outperforms state-of-the-art baselines across 56 datasets spanning non-stationary, irregularly sampled, classification, anomaly detection, and regression settings.
+  [NeurIPS 2025][Self-Supervised Learning][Time-series classification] STaRFormer is proposed, which employs Dynamic Attention-based Regional Masking (DAReM) to identify task-critical regions and apply masking perturbation…
 tags:
-  - NeurIPS 2025
-  - Self-Supervised Learning
-  - Time-series classification
-  - contrastive learning
-  - dynamic masking
-  - non-stationarity
-  - irregular sampling
+  - "NeurIPS 2025"
+  - "Self-Supervised Learning"
+  - "Time-series classification"
+  - "contrastive learning"
+  - "dynamic masking"
+  - "non-stationarity"
+  - "irregular sampling"
 date: 2026-05-08
 content_hash: ff3adf09b9d6a07a
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ProtoTS: Learning Hierarchical Prototypes for Explainable Time Series Forecasting
 description: >-
-  [ICLR 2026][Image Restoration][Explainable forecasting] ProtoTS is proposed to achieve explainable time series forecasting via hierarchical prototype learning: a small number of coarse-grained prototypes provide a global pattern overview, while progressive refinement captures local variations. Heterogeneous exogenous variables are handled through multi-channel embedding and bottleneck fusion. On the LOF dataset, MSE is reduced by 48.3% and MAE by 20.9%. The framework additionally supports expert editing of prototypes to further improve performance.
+  [ICLR 2026][Image Restoration][Explainable forecasting] ProtoTS is proposed to achieve explainable time series forecasting via hierarchical prototype learning: a small number of coarse-grained prototypes provide a global…
 tags:
-  - ICLR 2026
-  - Image Restoration
-  - Explainable forecasting
-  - hierarchical prototypes
-  - exogenous variables
-  - multi-channel embedding
-  - expert-controllable
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "Explainable forecasting"
+  - "hierarchical prototypes"
+  - "exogenous variables"
+  - "multi-channel embedding"
+  - "expert-controllable"
 date: 2026-05-08
 content_hash: f0400a303bcc644b
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] OR-R1: Automating Modeling and Solving of Operations Research Optimization Problems
 description: >-
-  [AAAI 2026][Operations Research] OR-R1 proposes a data-efficient two-stage training framework (SFT + TGRPO) that achieves an average solving accuracy of 67.7% using only 1/10 of the synthetic data required by ORLM, surpassing existing SOTA methods. Additionally, test-time reinforcement learning reduces the performance gap between single-sample generation (Pass@1) and multi-sample generation (Pass@8) from 13% to 7%.
+  [AAAI 2026][Operations Research] OR-R1 proposes a data-efficient two-stage training framework (SFT + TGRPO) that achieves an average solving accuracy of 67.7% using only 1/10 of the synthetic data required by ORLM…
 tags:
-  - AAAI 2026
-  - Operations Research
-  - LLM Fine-tuning
-  - Reinforcement Learning
-  - Test-Time Adaptation
-  - Data Efficiency
+  - "AAAI 2026"
+  - "Operations Research"
+  - "LLM Fine-tuning"
+  - "Reinforcement Learning"
+  - "Test-Time Adaptation"
+  - "Data Efficiency"
 date: 2026-05-08
 content_hash: cdc15a768db8c070
 ---

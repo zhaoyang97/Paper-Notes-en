@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PanoVGGT: Feed-Forward 3D Reconstruction from Panoramic Imagery
 description: >-
-  [CVPR 2026][3D Vision][Panoramic 3D reconstruction] This paper proposes PanoVGGT, a permutation-equivariant Transformer framework that jointly predicts camera poses, depth maps, and globally consistent 3D point clouds from one or more unordered panoramic images in a single feed-forward pass. The paper also contributes PanoCity — a large-scale dataset comprising over 120,000 outdoor panoramic images.
+  [CVPR 2026][3D Vision][Panoramic 3D reconstruction] This paper proposes PanoVGGT, a permutation-equivariant Transformer framework that jointly predicts camera poses, depth maps…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Panoramic 3D reconstruction
-  - feed-forward multi-view reconstruction
-  - spherical position encoding
-  - SO(3) data augmentation
-  - large-scale panoramic dataset
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Panoramic 3D reconstruction"
+  - "feed-forward multi-view reconstruction"
+  - "spherical position encoding"
+  - "SO(3) data augmentation"
+  - "large-scale panoramic dataset"
 date: 2026-05-08
 content_hash: 3795b2b8504dddcb
 ---

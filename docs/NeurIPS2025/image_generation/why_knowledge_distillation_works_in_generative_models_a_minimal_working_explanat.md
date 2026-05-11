@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Why Knowledge Distillation Works in Generative Models: A Minimal Working Explanation
 description: >-
-  [NeurIPS 2025][Image Generation][Knowledge Distillation] Through theoretical analysis on Gaussian mixture models and large-scale experiments on the SmolLM2 family via multi-level distillation, this paper reveals the core mechanism of knowledge distillation in generative models: distillation induces a tradeoff in the student model between precision (generation quality) and recall (distribution coverage), governed by the entropy of the teacher distribution.
+  [NeurIPS 2025][Image Generation][Knowledge Distillation] Through theoretical analysis on Gaussian mixture models and large-scale experiments on the SmolLM2 family via multi-level distillation…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Knowledge Distillation
-  - Precision-Recall Tradeoff
-  - Generative Models
-  - Gaussian Mixture Models
-  - Teacher Entropy
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Knowledge Distillation"
+  - "Precision-Recall Tradeoff"
+  - "Generative Models"
+  - "Gaussian Mixture Models"
+  - "Teacher Entropy"
 date: 2026-05-08
 content_hash: 4686a088e7645aa6
 ---

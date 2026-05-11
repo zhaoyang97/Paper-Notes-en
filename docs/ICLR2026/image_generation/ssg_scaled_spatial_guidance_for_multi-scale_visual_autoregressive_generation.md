@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SSG: Scaled Spatial Guidance for Multi-Scale Visual Autoregressive Generation
 description: >-
-  [ICLR 2026][Image Generation][VAR] This paper proposes Scaled Spatial Guidance (SSG), a training-free inference-time guidance method that enhances the coarse-to-fine hierarchical generation quality of visual autoregressive models through frequency-domain prior construction and semantic residual amplification.
+  [ICLR 2026][Image Generation][VAR] This paper proposes Scaled Spatial Guidance (SSG), a training-free inference-time guidance method that enhances the coarse-to-fine hierarchical generation quality of visual autoregressi…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - VAR
-  - next-scale prediction
-  - information bottleneck
-  - frequency-domain guidance
-  - training-free
+  - "ICLR 2026"
+  - "Image Generation"
+  - "VAR"
+  - "next-scale prediction"
+  - "information bottleneck"
+  - "frequency-domain guidance"
+  - "training-free"
 date: 2026-05-08
 content_hash: 256b406aff81fab6
 ---

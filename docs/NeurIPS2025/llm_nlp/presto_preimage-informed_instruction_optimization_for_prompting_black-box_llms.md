@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PRESTO: Preimage-Informed Instruction Optimization for Prompting Black-Box LLMs
 description: >-
-  [NeurIPS 2025][LLM/NLP][instruction optimization] This paper proposes PRESTO, a framework that exploits the many-to-one mapping (preimage structure) from soft prompts to instructions in white-box LLMs. Through three components — score sharing, preimage-based initialization, and score consistency regularization — PRESTO equivalently obtains 14× labeled data under the same query budget, significantly improving instruction optimization efficiency for black-box LLMs.
+  [NeurIPS 2025][LLM/NLP][instruction optimization] This paper proposes PRESTO, a framework that exploits the many-to-one mapping (preimage structure) from soft prompts to instructions in white-box LLMs. Through three comp…
 tags:
-  - NeurIPS 2025
-  - LLM/NLP
-  - instruction optimization
-  - black-box LLM
-  - soft prompt
-  - preimage
-  - Bayesian optimization
+  - "NeurIPS 2025"
+  - "LLM/NLP"
+  - "instruction optimization"
+  - "black-box LLM"
+  - "soft prompt"
+  - "preimage"
+  - "Bayesian optimization"
 date: 2026-05-08
 content_hash: a8d2dd557d83e507
 ---

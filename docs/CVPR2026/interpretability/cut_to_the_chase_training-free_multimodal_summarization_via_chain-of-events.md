@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Cut to the Chase: Training-free Multimodal Summarization via Chain-of-Events
 description: >-
-  [CVPR 2026][Multimodal summarization] This paper proposes CoE, a training-free multimodal summarization framework that constructs a Hierarchical Event Graph (HEG) to guide chain-of-events reasoning. CoE surpasses state-of-the-art video CoT baselines across 8 datasets, achieving average gains of +3.04 ROUGE, +9.51 CIDEr, and +1.88 BERTScore.
+  [CVPR 2026][Interpretability][Multimodal summarization] This paper proposes CoE, a training-free multimodal summarization framework that constructs a Hierarchical Event Graph (HEG) to guide chain-of-events reasoning. CoE…
 tags:
-  - CVPR 2026
-  - Multimodal summarization
-  - training-free
-  - chain-of-events reasoning
-  - hierarchical event graph
-  - cross-domain generalization
+  - "CVPR 2026"
+  - "Interpretability"
+  - "Multimodal summarization"
+  - "training-free"
+  - "chain-of-events reasoning"
+  - "hierarchical event graph"
+  - "cross-domain generalization"
 date: 2026-05-08
 content_hash: 9a0529d831ecf897
 ---

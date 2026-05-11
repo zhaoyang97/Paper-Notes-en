@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Benchmarking Large Language Models for Zero-Shot and Few-Shot Phishing URL Detection
 description: >-
-  [NeurIPS 2025][LLM Evaluation][phishing URL detection] This paper systematically evaluates three commercial LLMs — GPT-4o, Claude-3.7, and Grok-3-Beta — on phishing URL detection under a unified zero-shot and few-shot prompt framework. Results show that few-shot prompting consistently improves performance across all models, with Grok-3-Beta achieving the best F1 (0.9399) on the balanced dataset, while different models exhibit distinct precision–recall trade-off behaviors.
+  [NeurIPS 2025][LLM Evaluation][phishing URL detection] This paper systematically evaluates three commercial LLMs — GPT-4o, Claude-3.7, and Grok-3-Beta — on phishing URL detection under a unified zero-shot and few-shot pr…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - phishing URL detection
-  - LLM
-  - zero-shot learning
-  - few-shot learning
-  - prompt engineering
-  - cybersecurity benchmark
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "phishing URL detection"
+  - "LLM"
+  - "zero-shot learning"
+  - "few-shot learning"
+  - "prompt engineering"
+  - "cybersecurity benchmark"
 date: 2026-05-08
 content_hash: 9d65f2d37348418f
 ---

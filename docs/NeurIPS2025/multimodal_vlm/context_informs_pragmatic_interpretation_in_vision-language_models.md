@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Context Informs Pragmatic Interpretation in Vision-Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Pragmatic reasoning] This work systematically evaluates the pragmatic reasoning capabilities of VLMs using iterated reference games. Models perform substantially worse than humans in the absence of context, but can rapidly leverage relevant dialogue history to achieve approximately 80% accuracy, revealing a strong dependence on contextual information.
+  [NeurIPS 2025][Multimodal VLM][Pragmatic reasoning] This work systematically evaluates the pragmatic reasoning capabilities of VLMs using iterated reference games. Models perform substantially worse than humans in the ab…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Pragmatic reasoning
-  - reference games
-  - context sensitivity
-  - cognitive evaluation of VLMs
-  - abstract visual reasoning
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Pragmatic reasoning"
+  - "reference games"
+  - "context sensitivity"
+  - "cognitive evaluation of VLMs"
+  - "abstract visual reasoning"
 date: 2026-05-08
 content_hash: ac33065ab88126be
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Uncertainty Matters in Dynamic Gaussian Splatting for Monocular 4D Reconstruction
 description: >-
-  [ICLR2026][3D Vision][Dynamic Gaussian Splatting] This paper proposes USplat4D, an uncertainty-aware dynamic Gaussian splatting framework that estimates per-Gaussian time-varying uncertainty scores and constructs uncertainty-guided spatiotemporal graphs to propagate reliable motion cues, substantially improving monocular 4D reconstruction quality in occluded regions and under extreme novel viewpoints.
+  [ICLR2026][3D Vision][Dynamic Gaussian Splatting] This paper proposes USplat4D, an uncertainty-aware dynamic Gaussian splatting framework that estimates per-Gaussian time-varying uncertainty scores and constructs uncerta…
 tags:
-  - ICLR2026
-  - 3D Vision
-  - Dynamic Gaussian Splatting
-  - uncertainty estimation
-  - 4D Reconstruction
-  - Monocular
-  - novel view synthesis
+  - "ICLR2026"
+  - "3D Vision"
+  - "Dynamic Gaussian Splatting"
+  - "uncertainty estimation"
+  - "4D Reconstruction"
+  - "Monocular"
+  - "novel view synthesis"
 date: 2026-05-08
 content_hash: 9821fb0d0dadaf4c
 ---

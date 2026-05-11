@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ProOOD: Prototype-Guided Out-of-Distribution 3D Occupancy Prediction
 description: >-
-  [CVPR 2026][Autonomous Driving][3D occupancy prediction] This paper proposes ProOOD, a framework that for the first time unifies long-tail recognition and out-of-distribution (OOD) detection in 3D occupancy prediction from a voxel prototype-guided perspective. Through prototype-guided semantic inpainting (PGSI), tail-class enhancement (PGTM), and the training-free EchoOOD scoring mechanism, it achieves +3.57% mIoU (tail classes +24.80%) on SemanticKITTI and +19.34 AuPRCr on VAA-KITTI for OOD detection.
+  [CVPR 2026][Autonomous Driving][3D occupancy prediction] This paper proposes ProOOD, a framework that for the first time unifies long-tail recognition and out-of-distribution (OOD) detection in 3D occupancy prediction fr…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - 3D occupancy prediction
-  - out-of-distribution detection
-  - prototype learning
-  - long-tail distribution
-  - semantic completion
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "3D occupancy prediction"
+  - "out-of-distribution detection"
+  - "prototype learning"
+  - "long-tail distribution"
+  - "semantic completion"
 date: 2026-05-08
 content_hash: 1936b82836828479
 ---

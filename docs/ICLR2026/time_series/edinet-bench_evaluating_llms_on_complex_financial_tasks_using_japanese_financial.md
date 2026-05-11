@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EDINET-Bench: Evaluating LLMs on Complex Financial Tasks using Japanese Financial Statements
 description: >-
-  [ICLR 2026][Time Series][financial benchmark] This paper constructs EDINET-Bench, a financial benchmark derived from ten years of Japanese EDINET annual reports, comprising three expert-level tasks—accounting fraud detection, earnings forecasting, and industry classification—and finds that even state-of-the-art LLMs only marginally outperform logistic regression.
+  [ICLR 2026][Time Series][financial benchmark] This paper constructs EDINET-Bench, a financial benchmark derived from ten years of Japanese EDINET annual reports…
 tags:
-  - ICLR 2026
-  - Time Series
-  - financial benchmark
-  - LLM evaluation
-  - fraud detection
-  - earnings forecasting
-  - Japanese NLP
+  - "ICLR 2026"
+  - "Time Series"
+  - "financial benchmark"
+  - "LLM evaluation"
+  - "fraud detection"
+  - "earnings forecasting"
+  - "Japanese NLP"
 date: 2026-05-08
 content_hash: 09b99074dcfa2743
 ---

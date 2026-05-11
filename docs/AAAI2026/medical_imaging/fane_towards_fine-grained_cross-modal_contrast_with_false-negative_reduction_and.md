@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] FaNe: Towards Fine-Grained Cross-Modal Contrast with False-Negative Reduction and Text-Conditioned Sparse Attention
 description: >-
-  [Medical Imaging] FaNe proposes a semantics-enhanced medical vision-language pre-training framework that addresses the false-negative problem and insufficient coarse-grained alignment in medical VLP through semantics-aware positive mining, text-conditioned sparse attention pooling, and hard-negative-aware contrastive loss.
+  [Medical Imaging] FaNe proposes a semantics-enhanced medical vision-language pre-training framework that addresses the false-negative problem and insufficient coarse-grained alignment in medical VLP through semantics-awa…
 tags:
-  - Medical Imaging
+  - "Medical Imaging"
 date: 2026-05-08
 content_hash: ac73d4ec89b4728e
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dynamic Gaussian Scene Reconstruction from Unsynchronized Videos
 description: >-
-  [AAAI 2026][3D Vision][4D Gaussian Splatting] This paper proposes a coarse-to-fine temporal alignment module that can be plugged into existing 4D Gaussian Splatting frameworks to address reconstruction quality degradation caused by temporal misalignment across multi-view videos. The method achieves consistent improvements in PSNR/SSIM/LPIPS over multiple baselines on the DyNeRF dataset.
+  [AAAI 2026][3D Vision][4D Gaussian Splatting] This paper proposes a coarse-to-fine temporal alignment module that can be plugged into existing 4D Gaussian Splatting frameworks to address reconstruction quality degradatio…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - 4D Gaussian Splatting
-  - temporal alignment
-  - dynamic scene reconstruction
-  - multi-view video
-  - unsynchronized cameras
+  - "AAAI 2026"
+  - "3D Vision"
+  - "4D Gaussian Splatting"
+  - "temporal alignment"
+  - "dynamic scene reconstruction"
+  - "multi-view video"
+  - "unsynchronized cameras"
 date: 2026-05-08
 content_hash: d6e102485fa3c605
 ---

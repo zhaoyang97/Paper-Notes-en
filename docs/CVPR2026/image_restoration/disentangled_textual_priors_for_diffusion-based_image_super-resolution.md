@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Disentangled Textual Priors for Diffusion-based Image Super-Resolution
 description: >-
-  [CVPR 2026][Image Restoration][Diffusion-based SR] This paper proposes DTPSR, which disentangles textual priors along two orthogonal dimensions — spatial hierarchy (global/local) and frequency semantics (low-frequency/high-frequency) — and constructs a disentangled cross-attention injection pipeline along with a multi-branch CFG strategy, achieving superior perceptual quality in diffusion-based image super-resolution.
+  [CVPR 2026][Image Restoration][Diffusion-based SR] This paper proposes DTPSR, which disentangles textual priors along two orthogonal dimensions — spatial hierarchy (global/local) and frequency semantics (low-frequency/hi…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Diffusion-based SR
-  - text guidance
-  - disentangled priors
-  - frequency-awareness
-  - semantic control
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Diffusion-based SR"
+  - "text guidance"
+  - "disentangled priors"
+  - "frequency-awareness"
+  - "semantic control"
 date: 2026-05-08
 content_hash: b6229cb5454da576
 ---

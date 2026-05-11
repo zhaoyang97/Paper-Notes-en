@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] QuantVSR: Low-Bit Post-Training Quantization for Real-World Video Super-Resolution
 description: >-
-  [AAAI 2026][Image Generation][Video Super-Resolution] This paper proposes QuantVSR, the first low-bit (4/6-bit) post-training quantization framework for diffusion-based video super-resolution (VSR). It introduces a Spatiotemporal Complexity-Aware (STCA) mechanism for layer-adaptive rank allocation and a Learnable Bias Alignment (LBA) module to mitigate quantization bias. Under the 4-bit setting, QuantVSR achieves 84.39% parameter compression and 82.56% computation reduction while maintaining performance comparable to the full-precision model.
+  [AAAI 2026][Image Generation][Video Super-Resolution] This paper proposes QuantVSR, the first low-bit (4/6-bit) post-training quantization framework for diffusion-based video super-resolution (VSR). It introduces a Spati…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Video Super-Resolution
-  - Low-Bit Quantization
-  - Post-Training Quantization
-  - Diffusion Model Compression
-  - Spatiotemporal Complexity
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Video Super-Resolution"
+  - "Low-Bit Quantization"
+  - "Post-Training Quantization"
+  - "Diffusion Model Compression"
+  - "Spatiotemporal Complexity"
 date: 2026-05-08
 content_hash: 8870a9c44791dfdd
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] IAP: Invisible Adversarial Patch Attack through Perceptibility-Aware Localization
 description: >-
-  [ICCV 2025][Adversarial patch] This paper proposes the IAP framework, which achieves — for the first time in targeted attack settings — truly invisible adversarial patches via **perceptibility-aware patch localization** and **color-preserving gradient updates**, while simultaneously bypassing multiple SOTA patch defenses.
+  [ICCV 2025][Adversarial patch] This paper proposes the IAP framework, which achieves — for the first time in targeted attack settings — truly invisible adversarial patches via **perceptibility-aware patch localization**…
 tags:
-  - ICCV 2025
-  - Adversarial patch
-  - imperceptible attack
-  - perceptual sensitivity
-  - targeted attack
-  - patch defense
+  - "ICCV 2025"
+  - "Adversarial patch"
+  - "imperceptible attack"
+  - "perceptual sensitivity"
+  - "targeted attack"
+  - "patch defense"
 date: 2026-05-08
 content_hash: 5e60ba64b50e8232
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Parallax to Align Them All: An OmniParallax Attention Mechanism for Distributed Multi-View Image Compression
 description: >-
-  [CVPR 2026][Model Compression][multi-view image compression] This paper proposes the OmniParallax Attention Mechanism (OPAM) for Distributed Multi-view Image Compression (DMIC), which explicitly models inter-view correlations and aligned features between arbitrary view pairs via a two-stage parallax attention mechanism. The resulting ParaHydra framework is the first DMIC method to significantly outperform state-of-the-art MIC encoders while substantially reducing computational overhead.
+  [CVPR 2026][Model Compression][multi-view image compression] This paper proposes the OmniParallax Attention Mechanism (OPAM) for Distributed Multi-view Image Compression (DMIC)…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - multi-view image compression
-  - distributed coding
-  - parallax attention
-  - feature fusion
-  - entropy model
+  - "CVPR 2026"
+  - "Model Compression"
+  - "multi-view image compression"
+  - "distributed coding"
+  - "parallax attention"
+  - "feature fusion"
+  - "entropy model"
 date: 2026-05-08
 content_hash: 2cb815023714f43d
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MathAgent: Adversarial Evolution of Constraint Graphs for Mathematical Reasoning Data Synthesis
 description: >-
-  [ACL 2026][LLM Reasoning][Mathematical Reasoning] This paper proposes MathAgent, a hierarchical data synthesis framework based on adversarial evolution of constraint graphs. It reformulates data synthesis from a text generation task into an unsupervised optimization problem over constraint graphs. A three-agent Legislator system (Proposer-Critic-Moderator) evolves problem skeletons, which are then instantiated into natural language by an Executor. With only 1K synthetic samples, MathAgent surpasses LIMO and s1K across eight mathematical benchmarks.
+  [ACL 2026][LLM Reasoning][Mathematical Reasoning] This paper proposes MathAgent, a hierarchical data synthesis framework based on adversarial evolution of constraint graphs. It reformulates data synthesis from a text gen…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - Mathematical Reasoning
-  - Data Synthesis
-  - Constraint Graph
-  - Adversarial Evolution
-  - Legislator-Executor
+  - "ACL 2026"
+  - "LLM Reasoning"
+  - "Mathematical Reasoning"
+  - "Data Synthesis"
+  - "Constraint Graph"
+  - "Adversarial Evolution"
+  - "Legislator-Executor"
 date: 2026-05-08
 content_hash: 7ae24fbeb1e7eca4
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RLGF: Reinforcement Learning with Geometric Feedback for Autonomous Driving Video Generation
 description: >-
-  [NeurIPS 2025][Video Generation][Geometric Consistency] This paper is the first to systematically quantify geometric distortions in autonomous driving video generation. It proposes the RLGF framework, which leverages hierarchical geometric rewards (vanishing point → lane lines → depth → occupancy) combined with a latent-space sliding window optimization strategy to improve 3D object detection mAP by 12.7 absolute percentage points (25.75→31.42), substantially closing the performance gap between synthetic and real data.
+  [NeurIPS 2025][Video Generation][Geometric Consistency] This paper is the first to systematically quantify geometric distortions in autonomous driving video generation. It proposes the RLGF framework…
 tags:
-  - NeurIPS 2025
-  - Video Generation
-  - Geometric Consistency
-  - Reinforcement Learning
-  - Video Diffusion Models
-  - Autonomous Driving Data Generation
-  - 3D Perception
+  - "NeurIPS 2025"
+  - "Video Generation"
+  - "Geometric Consistency"
+  - "Reinforcement Learning"
+  - "Video Diffusion Models"
+  - "Autonomous Driving Data Generation"
+  - "3D Perception"
 date: 2026-05-08
 content_hash: e6302649e80efc5b
 ---

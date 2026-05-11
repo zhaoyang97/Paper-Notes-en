@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] From Gallery to Wrist: Realistic 3D Bracelet Insertion in Videos
 description: >-
-  [ICCV 2025][3D Vision][video object insertion] This paper proposes a hybrid pipeline for realistically inserting 3D bracelets into videos. It leverages 3D Gaussian Splatting (3DGS) to ensure temporal consistency, employs a 2D diffusion model to enhance photorealistic illumination, and introduces a Shading-Driven pipeline that separately optimizes albedo, shading, and specular residuals. The method achieves an 81.7% realism preference rate in user studies, significantly outperforming existing approaches.
+  [ICCV 2025][3D Vision][video object insertion] This paper proposes a hybrid pipeline for realistically inserting 3D bracelets into videos. It leverages 3D Gaussian Splatting (3DGS) to ensure temporal consistency…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - video object insertion
-  - 3D Gaussian splatting
-  - diffusion models
-  - illumination enhancement
-  - temporal consistency
-  - virtual try-on
+  - "ICCV 2025"
+  - "3D Vision"
+  - "video object insertion"
+  - "3D Gaussian splatting"
+  - "diffusion models"
+  - "illumination enhancement"
+  - "temporal consistency"
+  - "virtual try-on"
 date: 2026-05-08
 content_hash: 5854d5579db2aecd
 ---

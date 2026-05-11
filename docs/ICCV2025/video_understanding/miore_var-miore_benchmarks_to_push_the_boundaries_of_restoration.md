@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MIORe & VAR-MIORe: Benchmarks to Push the Boundaries of Restoration
 description: >-
-  [ICCV 2025][Video Understanding][Motion Deblurring] This paper introduces MIORe and VAR-MIORe, two multi-task motion restoration benchmark datasets captured using a 1000fps industrial-grade camera and a professional lens array. The benchmarks span a full motion magnitude spectrum from near-static to extreme motion, employ an adaptive frame-averaging mechanism to generate consistent motion blur, and provide a unified evaluation platform for deblurring, frame interpolation, and optical flow estimation.
+  [ICCV 2025][Video Understanding][Motion Deblurring] This paper introduces MIORe and VAR-MIORe, two multi-task motion restoration benchmark datasets captured using a 1000fps industrial-grade camera and a professional lens…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - Motion Deblurring
-  - Video Frame Interpolation
-  - Optical Flow Estimation
-  - High Frame Rate Dataset
-  - Multi-Task Benchmark
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "Motion Deblurring"
+  - "Video Frame Interpolation"
+  - "Optical Flow Estimation"
+  - "High Frame Rate Dataset"
+  - "Multi-Task Benchmark"
 date: 2026-05-08
 content_hash: 5b33c91e3fdc0e32
 ---

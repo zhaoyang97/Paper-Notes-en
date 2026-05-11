@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Toward Generalizable Whole Brain Representations with High-Resolution Light-Sheet Data
 description: >-
-  [CVPR 2026][Object Detection][Light-Sheet Fluorescence Microscopy] This paper introduces CANVAS — the first large-scale, subcellular-resolution Light-Sheet Fluorescence Microscopy (LSFM) whole-brain benchmark dataset, encompassing 6 cell markers, approximately 93,000 annotated cells, and a public leaderboard. It reveals critical generalization failures of existing detection models across markers and brain regions, and explores the potential of 3D Masked Autoencoders (MAE) for self-supervised representation learning.
+  [CVPR 2026][Object Detection][Light-Sheet Fluorescence Microscopy] This paper introduces CANVAS — the first large-scale, subcellular-resolution Light-Sheet Fluorescence Microscopy (LSFM) whole-brain benchmark dataset…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - Light-Sheet Fluorescence Microscopy
-  - Whole-Brain Imaging
-  - Cell Detection Benchmark
-  - Self-Supervised Learning
-  - Foundation Models
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Light-Sheet Fluorescence Microscopy"
+  - "Whole-Brain Imaging"
+  - "Cell Detection Benchmark"
+  - "Self-Supervised Learning"
+  - "Foundation Models"
 date: 2026-05-08
 content_hash: a33cb57310d39a28
 ---

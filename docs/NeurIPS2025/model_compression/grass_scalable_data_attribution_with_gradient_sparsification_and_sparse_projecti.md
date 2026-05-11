@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GraSS: Scalable Data Attribution with Gradient Sparsification and Sparse Projection
 description: >-
-  [NeurIPS 2025][Model Compression][Data Attribution] GraSS and FactGraSS are proposed as a two-stage gradient compression algorithm that exploits the inherent sparsity of per-sample gradients to achieve **sublinear** time and space complexity ($O(k')$), outperforming the SOTA baseline LoGra by **165%** in throughput on billion-parameter models while maintaining data attribution quality.
+  [NeurIPS 2025][Model Compression][Data Attribution] GraSS and FactGraSS are proposed as a two-stage gradient compression algorithm that exploits the inherent sparsity of per-sample gradients to achieve **sublinear** time…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Data Attribution
-  - Gradient Compression
-  - Sparse Projection
-  - Influence Functions
-  - Random Projection
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Data Attribution"
+  - "Gradient Compression"
+  - "Sparse Projection"
+  - "Influence Functions"
+  - "Random Projection"
 date: 2026-05-08
 content_hash: 65425eac3f12e11e
 ---

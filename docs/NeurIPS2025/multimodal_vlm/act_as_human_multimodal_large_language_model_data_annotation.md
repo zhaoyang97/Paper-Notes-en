@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ACT as Human: Multimodal Large Language Model Data Annotation with Critical Thinking
 description: >-
-  [NeurIPS 2025][Multimodal VLM][data annotation] This paper proposes ACT (Annotation with Critical Thinking), a data pipeline in which an MLLM annotates all samples in bulk, a second MLLM acting as a critic estimates the error probability of each annotation, and only high-suspicion samples are routed to human reviewers. Combined with a theoretically derived ACT loss function, the approach achieves 70–90% reduction in human annotation cost across six cross-modal datasets while maintaining a downstream performance gap of less than 2%.
+  [NeurIPS 2025][Multimodal VLM][data annotation] This paper proposes ACT (Annotation with Critical Thinking), a data pipeline in which an MLLM annotates all samples in bulk…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - data annotation
-  - critical thinking
-  - MLLM
-  - error estimation
-  - human-in-the-loop
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "data annotation"
+  - "critical thinking"
+  - "MLLM"
+  - "error estimation"
+  - "human-in-the-loop"
 date: 2026-05-08
 content_hash: b91e6a3c3c380f6d
 ---

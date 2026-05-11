@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] InFlux: A Benchmark for Self-Calibration of Dynamic Intrinsics of Video Cameras
 description: >-
-  [NeurIPS 2025][Video Understanding][camera intrinsics] This paper introduces InFlux, the first real-world video benchmark with per-frame ground-truth dynamic camera intrinsics (386 videos, 143K+ annotated frames). Accurate annotations are achieved via a lookup table (LUT) mapping lens metadata to intrinsic parameters. The benchmark reveals that existing intrinsic prediction methods perform poorly under dynamic intrinsic settings.
+  [NeurIPS 2025][Video Understanding][camera intrinsics] This paper introduces InFlux, the first real-world video benchmark with per-frame ground-truth dynamic camera intrinsics (386 videos…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
-  - camera intrinsics
-  - dynamic calibration
-  - benchmark
-  - lookup table
-  - video 3D understanding
+  - "NeurIPS 2025"
+  - "Video Understanding"
+  - "camera intrinsics"
+  - "dynamic calibration"
+  - "benchmark"
+  - "lookup table"
+  - "video 3D understanding"
 date: 2026-05-08
 content_hash: fdce33609e965eb9
 ---

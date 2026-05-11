@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Small but Mighty: Dynamic Wavelet Expert-Guided Fine-Tuning of Large-Scale Models for Optical Remote Sensing Object Segmentation
 description: >-
-  [Medical Imaging] WEFT proposes a lightweight fine-tuning paradigm guided by dynamic wavelet experts, adapting frozen large-scale visual foundation models to optical remote sensing image segmentation with only 4.52% trainable parameters, surpassing 21 state-of-the-art methods on three ORSIs datasets.
+  [Medical Imaging] WEFT proposes a lightweight fine-tuning paradigm guided by dynamic wavelet experts, adapting frozen large-scale visual foundation models to optical remote sensing image segmentation with only 4.52% trai…
 tags:
-  - Medical Imaging
+  - "Medical Imaging"
 date: 2026-05-08
 content_hash: c56fdc0befe06f3f
 ---

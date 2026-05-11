@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ALOcc: Adaptive Lifting-Based 3D Semantic Occupancy and Cost Volume-Based Flow Predictions
 description: >-
-  [ICCV 2025][Autonomous Driving][3D Occupancy Prediction] This paper proposes the ALOcc framework, which achieves state-of-the-art performance on multiple occupancy prediction benchmarks while maintaining high inference speed through three improvements: an occlusion-aware adaptive lifting mechanism, semantic prototype alignment, and BEV cost volume-based flow prediction.
+  [ICCV 2025][Autonomous Driving][3D Occupancy Prediction] This paper proposes the ALOcc framework, which achieves state-of-the-art performance on multiple occupancy prediction benchmarks while maintaining high inference s…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - 3D Occupancy Prediction
-  - 2D-to-3D View Transformation
-  - Occlusion-Aware Lifting
-  - Semantic Prototype
-  - Occupancy Flow
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "3D Occupancy Prediction"
+  - "2D-to-3D View Transformation"
+  - "Occlusion-Aware Lifting"
+  - "Semantic Prototype"
+  - "Occupancy Flow"
 date: 2026-05-08
 content_hash: fdedc0f251e8cac6
 ---

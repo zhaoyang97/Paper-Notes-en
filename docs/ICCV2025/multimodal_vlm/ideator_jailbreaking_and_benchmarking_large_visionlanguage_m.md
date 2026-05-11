@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] IDEATOR: Jailbreaking and Benchmarking Large Vision-Language Models Using Themselves
 description: >-
-  [ICCV 2025][Multimodal VLM][jailbreak attack] This paper proposes IDEATOR, the first black-box jailbreak framework that uses a VLM to red-team other VLMs. A weakly safety-aligned VLM (MiniGPT-4) serves as the attacker, generating semantically rich image–text jailbreak pairs in conjunction with Stable Diffusion. A breadth-depth exploration strategy iteratively refines attacks, achieving a 94% attack success rate (ASR) on MiniGPT-4 with an average of 5.34 queries, and transferring to LLaVA/InstructBLIP/Chameleon at 75–88%. The work also introduces VLJailbreakBench (3,654 samples) to expose safety vulnerabilities across 11 VLMs.
+  [ICCV 2025][Multimodal VLM][jailbreak attack] This paper proposes IDEATOR, the first black-box jailbreak framework that uses a VLM to red-team other VLMs. A weakly safety-aligned VLM (MiniGPT-4) serves as the attacker…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - jailbreak attack
-  - VLM safety
-  - red teaming
-  - multimodal attack
-  - safety benchmark
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "jailbreak attack"
+  - "VLM safety"
+  - "red teaming"
+  - "multimodal attack"
+  - "safety benchmark"
 date: 2026-05-08
 content_hash: 8e18bbcd233d3973
 ---

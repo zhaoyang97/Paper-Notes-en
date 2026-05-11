@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Frequency-Aware Flow Matching for High-Quality Image Generation
 description: >-
-  [CVPR 2026][Image Generation][Flow Matching] FreqFlow explicitly incorporates frequency-domain awareness into the flow matching framework via a dual-branch architecture that processes low-frequency global structures and high-frequency detail information separately, achieving state-of-the-art FID of 1.38 on ImageNet-256.
+  [CVPR 2026][Image Generation][Flow Matching] FreqFlow explicitly incorporates frequency-domain awareness into the flow matching framework via a dual-branch architecture that processes low-frequency global structures and…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Flow Matching
-  - Frequency-Domain Awareness
-  - Dual-Branch Architecture
-  - Adaptive Weighting
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Flow Matching"
+  - "Frequency-Domain Awareness"
+  - "Dual-Branch Architecture"
+  - "Adaptive Weighting"
 date: 2026-05-08
 content_hash: 8ebb078c609dd08b
 ---

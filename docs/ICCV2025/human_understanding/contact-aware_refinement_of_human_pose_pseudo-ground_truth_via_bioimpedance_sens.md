@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Contact-Aware Refinement of Human Pose Pseudo-Ground Truth via Bioimpedance Sensing
 description: >-
-  [ICCV 2025][Human Understanding][self-contact detection] This paper proposes BioTUCH, a framework that detects self-contact events via wrist-to-wrist bioimpedance sensing and performs contact-aware 3D arm pose refinement in conjunction with a visual pose estimator, achieving an average improvement of 11.7% in reconstruction accuracy.
+  [ICCV 2025][Human Understanding][self-contact detection] This paper proposes BioTUCH, a framework that detects self-contact events via wrist-to-wrist bioimpedance sensing and performs contact-aware 3D arm pose refinement…
 tags:
-  - ICCV 2025
-  - Human Understanding
-  - self-contact detection
-  - bioimpedance sensing
-  - 3D human pose
-  - SMPL-X
-  - multimodal fusion
+  - "ICCV 2025"
+  - "Human Understanding"
+  - "self-contact detection"
+  - "bioimpedance sensing"
+  - "3D human pose"
+  - "SMPL-X"
+  - "multimodal fusion"
 date: 2026-05-08
 content_hash: cc4bd5819c00e2d0
 ---

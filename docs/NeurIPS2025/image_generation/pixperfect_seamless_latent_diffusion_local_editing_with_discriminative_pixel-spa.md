@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PixPerfect: Seamless Latent Diffusion Local Editing with Discriminative Pixel-Space Refinement
 description: >-
-  [NeurIPS 2025][Image Generation][Image inpainting] This paper proposes PixPerfect, a general-purpose pixel-level refinement framework that eliminates color discrepancies, texture mismatches, and visible seams in local editing with latent diffusion models (LDMs) through a discriminative pixel-space loss and a comprehensive artifact simulation pipeline, achieving substantial improvements in visual fidelity across inpainting, object removal, and insertion tasks.
+  [NeurIPS 2025][Image Generation][Image inpainting] This paper proposes PixPerfect, a general-purpose pixel-level refinement framework that eliminates color discrepancies, texture mismatches…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Image inpainting
-  - pixel-level refinement
-  - discriminative pixel space
-  - artifact simulation
-  - local editing
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Image inpainting"
+  - "pixel-level refinement"
+  - "discriminative pixel space"
+  - "artifact simulation"
+  - "local editing"
 date: 2026-05-08
 content_hash: 168e5deb705cb38b
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Conditional Probability Framework for Compositional Zero-shot Learning
 description: >-
-  [ICCV 2025][LLM Evaluation][conditional probability decomposition] This paper proposes a Conditional Probability Framework (CPF) that decomposes the compositional recognition probability into an object likelihood $p(o|x)$ and a conditional attribute likelihood $p(a|o,x)$. Two dedicated modules — Text-Enhanced Object learning (TEO) and Object-Guided Attribute learning (OGA) — explicitly model attribute-object dependencies, achieving state-of-the-art performance across three CZSL benchmarks.
+  [ICCV 2025][LLM Evaluation][conditional probability decomposition] This paper proposes a Conditional Probability Framework (CPF) that decomposes the compositional recognition probability into an object likelihood $p(o|x)…
 tags:
-  - ICCV 2025
-  - LLM Evaluation
-  - conditional probability decomposition
-  - compositional zero-shot learning
-  - attribute-object dependency modeling
-  - cross-attention mechanism
-  - text-enhanced features
+  - "ICCV 2025"
+  - "LLM Evaluation"
+  - "conditional probability decomposition"
+  - "compositional zero-shot learning"
+  - "attribute-object dependency modeling"
+  - "cross-attention mechanism"
+  - "text-enhanced features"
 date: 2026-05-08
 content_hash: 383af3c5960aa979
 ---

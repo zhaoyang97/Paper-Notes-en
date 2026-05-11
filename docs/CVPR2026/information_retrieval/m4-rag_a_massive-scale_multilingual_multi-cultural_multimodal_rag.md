@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] M4-RAG: A Massive-Scale Multilingual Multi-Cultural Multimodal RAG
 description: >-
-  [CVPR 2026][Retrieval-Augmented Generation] This paper proposes M4-RAG, the first large-scale multilingual, multicultural, multimodal RAG evaluation framework, covering 42 languages and 189 countries with 80K+ cultural VQA instances. It systematically reveals two key findings: RAG is effective for smaller models but does not scale positively with model size, and cross-lingual retrieval suffers from severe performance degradation.
+  [CVPR 2026][Information Retrieval & RAG][Retrieval-Augmented Generation] This paper proposes M4-RAG, the first large-scale multilingual, multicultural, multimodal RAG evaluation framework…
 tags:
-  - CVPR 2026
-  - Retrieval-Augmented Generation
-  - Multilingual
-  - Multicultural
-  - Visual Question Answering
-  - Multimodal Retrieval
+  - "CVPR 2026"
+  - "Information Retrieval & RAG"
+  - "Retrieval-Augmented Generation"
+  - "Multilingual"
+  - "Multicultural"
+  - "Visual Question Answering"
+  - "Multimodal Retrieval"
 date: 2026-05-08
 content_hash: c0787257ab86d675
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Scaling Diffusion Transformers Efficiently via μP
 description: >-
-  [NeurIPS 2025][Image Generation][Diffusion Transformer] This paper extends Maximal Update Parametrization (μP) from standard Transformers to diffusion Transformers (DiT, PixArt-α, MMDiT, etc.), demonstrating that optimal hyperparameters found on small proxy models transfer stably to large models, significantly reducing the hyperparameter tuning cost for large-scale diffusion models.
+  [NeurIPS 2025][Image Generation][Diffusion Transformer] This paper extends Maximal Update Parametrization (μP) from standard Transformers to diffusion Transformers (DiT, PixArt-α, MMDiT, etc.)…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Diffusion Transformer
-  - μP
-  - hyperparameter transfer
-  - model scaling
-  - efficient training
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Diffusion Transformer"
+  - "μP"
+  - "hyperparameter transfer"
+  - "model scaling"
+  - "efficient training"
 date: 2026-05-08
 content_hash: fcbd841f25555ae1
 ---

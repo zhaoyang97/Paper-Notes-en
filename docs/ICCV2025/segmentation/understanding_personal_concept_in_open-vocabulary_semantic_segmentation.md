@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Personalized OVSS: Understanding Personal Concept in Open-Vocabulary Semantic Segmentation
 description: >-
-  [ICCV 2025][Segmentation][personalized segmentation] This paper introduces the Personalized Open-Vocabulary Semantic Segmentation (Personalized OVSS) task for the first time, and proposes a plug-and-play method based on text prompt tuning. By incorporating negative mask proposals to suppress false positives and injecting visual embeddings to enrich personalized concept representations, the method enables recognition of user-specific object instances from only a few image-mask pairs, while preserving the original OVSS performance.
+  [ICCV 2025][Segmentation][personalized segmentation] This paper introduces the Personalized Open-Vocabulary Semantic Segmentation (Personalized OVSS) task for the first time…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - personalized segmentation
-  - open-vocabulary semantic segmentation
-  - text prompt tuning
-  - negative mask proposal
-  - few-shot learning
+  - "ICCV 2025"
+  - "Segmentation"
+  - "personalized segmentation"
+  - "open-vocabulary semantic segmentation"
+  - "text prompt tuning"
+  - "negative mask proposal"
+  - "few-shot learning"
 date: 2026-05-08
 content_hash: dd89ef7c9b449125
 ---

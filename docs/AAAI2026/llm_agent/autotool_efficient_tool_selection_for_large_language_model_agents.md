@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AutoTool: Efficient Tool Selection for Large Language Model Agents
 description: >-
-  [AAAI 2026][LLM Agent][tool selection] This paper proposes AutoTool, a graph-based tool selection framework that exploits *tool usage inertia* to construct a Tool Inertia Graph (TIG). By leveraging statistical structure, AutoTool bypasses redundant LLM inference for tool selection and parameter filling, reducing inference overhead by up to 30% while maintaining task completion rates.
+  [AAAI 2026][LLM Agent][tool selection] This paper proposes AutoTool, a graph-based tool selection framework that exploits *tool usage inertia* to construct a Tool Inertia Graph (TIG). By leveraging statistical structure…
 tags:
-  - AAAI 2026
-  - LLM Agent
-  - tool selection
-  - LLM agent efficiency
-  - tool usage inertia
-  - graph-based planning
-  - inference cost reduction
+  - "AAAI 2026"
+  - "LLM Agent"
+  - "tool selection"
+  - "LLM agent efficiency"
+  - "tool usage inertia"
+  - "graph-based planning"
+  - "inference cost reduction"
 date: 2026-05-08
 content_hash: d9bbf70cb1edd2d1
 ---

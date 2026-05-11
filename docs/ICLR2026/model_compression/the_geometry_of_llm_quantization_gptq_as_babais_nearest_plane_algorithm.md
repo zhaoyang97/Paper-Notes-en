@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] The Geometry of LLM Quantization: GPTQ as Babai's Nearest Plane Algorithm
 description: >-
-  [ICLR 2026][Model Compression][GPTQ] This paper provides the first proof that GPTQ (executed in reverse order) is mathematically equivalent to Babai's nearest plane algorithm from classical lattice theory, thereby obtaining a geometric interpretation and layer-wise error upper bounds, upon which a clipping-free improved quantization method is designed.
+  [ICLR 2026][Model Compression][GPTQ] This paper provides the first proof that GPTQ (executed in reverse order) is mathematically equivalent to Babai's nearest plane algorithm from classical lattice theory…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - GPTQ
-  - Quantization
-  - Lattice Theory
-  - Closest Vector Problem
-  - Babai's Algorithm
-  - Error Bounds
+  - "ICLR 2026"
+  - "Model Compression"
+  - "GPTQ"
+  - "Quantization"
+  - "Lattice Theory"
+  - "Closest Vector Problem"
+  - "Babai's Algorithm"
+  - "Error Bounds"
 date: 2026-05-08
 content_hash: 44839605a942f590
 ---

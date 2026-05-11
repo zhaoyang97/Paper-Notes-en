@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ConsistRM: Improving Generative Reward Models via Consistency-Aware Self-Training
 description: >-
-  [ACL 2026][LLM Alignment][Generative Reward Model] ConsistRM proposes a consistency-aware self-training framework for generative reward models (GRMs). It introduces two modules — temporal consistency pseudo-labels (integrating online-state and memory-driven preference consistency) and semantic consistency critique rewards (measuring semantic similarity across multiple generated critiques) — achieving an average improvement of 1.5% across five benchmarks without human annotation, while significantly mitigating position bias.
+  [ACL 2026][LLM Alignment][Generative Reward Model] ConsistRM proposes a consistency-aware self-training framework for generative reward models (GRMs). It introduces two modules — temporal consistency pseudo-labels (integ…
 tags:
-  - ACL 2026
-  - LLM Alignment
-  - Generative Reward Model
-  - Self-Training
-  - Consistency-Aware
-  - Pseudo Labels
-  - Position Bias
+  - "ACL 2026"
+  - "LLM Alignment"
+  - "Generative Reward Model"
+  - "Self-Training"
+  - "Consistency-Aware"
+  - "Pseudo Labels"
+  - "Position Bias"
 date: 2026-05-08
 content_hash: b9d49a8d446b98c7
 ---

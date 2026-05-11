@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DeepShield: Fortifying Deepfake Video Detection with Local and Global Forgery Analysis
 description: >-
-  [ICCV 2025][Image Generation][Deepfake Detection] This paper proposes DeepShield, a deepfake video detection framework that combines Local Patch Guidance (LPG) and Global Forgery Diversification (GFD). It provides patch-level supervision via spatiotemporal artifact modeling and synthesizes diverse forgery representations through distribution-level feature augmentation, significantly outperforming state-of-the-art methods in cross-dataset and cross-manipulation evaluations.
+  [ICCV 2025][Image Generation][Deepfake Detection] This paper proposes DeepShield, a deepfake video detection framework that combines Local Patch Guidance (LPG) and Global Forgery Diversification (GFD). It provides patch-…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Deepfake Detection
-  - CLIP-ViT
-  - Patch-Level Supervision
-  - Feature Augmentation
-  - Cross-Domain Generalization
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Deepfake Detection"
+  - "CLIP-ViT"
+  - "Patch-Level Supervision"
+  - "Feature Augmentation"
+  - "Cross-Domain Generalization"
 date: 2026-05-08
 content_hash: 799640e105e48e42
 ---

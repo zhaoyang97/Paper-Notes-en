@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Pedagogically-Inspired Data Synthesis for Language Model Knowledge Distillation
 description: >-
-  [ICLR 2026][Model Compression][Knowledge Distillation] This paper proposes the IOA (Identifier-Organizer-Adapter) framework, which draws on Bloom's mastery learning principles and Vygotsky's Zone of Proximal Development (ZPD) theory to achieve pedagogically-driven LLM knowledge distillation through three stages: diagnosing knowledge deficiencies, designing progressive curricula, and adapting to cognitive capacity.
+  [ICLR 2026][Model Compression][Knowledge Distillation] This paper proposes the IOA (Identifier-Organizer-Adapter) framework, which draws on Bloom's mastery learning principles and Vygotsky's Zone of Proximal Development…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Knowledge Distillation
-  - Synthetic Data
-  - Curriculum Learning
-  - Pedagogy-Inspired
-  - LLM Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Knowledge Distillation"
+  - "Synthetic Data"
+  - "Curriculum Learning"
+  - "Pedagogy-Inspired"
+  - "LLM Compression"
 date: 2026-05-08
 content_hash: 5564f97615317ea5
 ---

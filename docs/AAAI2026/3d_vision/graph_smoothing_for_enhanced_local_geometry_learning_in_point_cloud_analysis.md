@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Graph Smoothing for Enhanced Local Geometry Learning in Point Cloud Analysis
 description: >-
-  [AAAI 2026][3D Vision][Point Cloud Analysis] This paper analyzes the limitations of conventional graph construction methods (ball query), specifically sparse connectivity at boundary points and noisy connectivity at junction regions, and proposes a graph smoothing module (symmetric adjacency optimization + von Neumann kernel) and a local geometry learning module (adaptive shape features + cylindrical coordinate transformation), achieving competitive performance on classification and segmentation tasks.
+  [AAAI 2026][3D Vision][Point Cloud Analysis] This paper analyzes the limitations of conventional graph construction methods (ball query)…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - Point Cloud Analysis
-  - Graph Smoothing
-  - Local Geometry Learning
-  - von Neumann Kernel
-  - Cylindrical Coordinate System
+  - "AAAI 2026"
+  - "3D Vision"
+  - "Point Cloud Analysis"
+  - "Graph Smoothing"
+  - "Local Geometry Learning"
+  - "von Neumann Kernel"
+  - "Cylindrical Coordinate System"
 date: 2026-05-08
 content_hash: 16438dc0e24b2d8d
 ---

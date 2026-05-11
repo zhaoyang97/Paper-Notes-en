@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Universal 3D Shape Matching via Coarse-to-Fine Language Guidance
 description: >-
-  [CVPR 2026][Segmentation][3D Shape Matching] This paper proposes UniMatch, a semantics-aware coarse-to-fine 3D shape matching framework. The coarse stage establishes part-level correspondences via category-agnostic 3D segmentation, MLLM-based part naming, and FG-CLIP language embeddings. The fine stage learns dense correspondences within an extended functional map framework using a Group-wise Ranking Contrastive (RnC) Loss, enabling universal matching across categories and non-isometric shapes.
+  [CVPR 2026][Segmentation][3D Shape Matching] This paper proposes UniMatch, a semantics-aware coarse-to-fine 3D shape matching framework. The coarse stage establishes part-level correspondences via category-agnostic 3D se…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - 3D Shape Matching
-  - Functional Maps
-  - Language Guidance
-  - Contrastive Learning
-  - Cross-Category Correspondence
+  - "CVPR 2026"
+  - "Segmentation"
+  - "3D Shape Matching"
+  - "Functional Maps"
+  - "Language Guidance"
+  - "Contrastive Learning"
+  - "Cross-Category Correspondence"
 date: 2026-05-08
 content_hash: 30a988b0888deae7
 ---

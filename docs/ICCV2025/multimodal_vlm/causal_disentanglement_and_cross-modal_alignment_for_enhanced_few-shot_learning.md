@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Causal Disentanglement and Cross-Modal Alignment for Enhanced Few-Shot Learning
 description: >-
-  [ICCV 2025][Multimodal VLM][Few-shot learning] This paper proposes the Causal CLIP Adapter (CCA), which applies ICA to causally disentangle CLIP visual features, and enhances cross-modal alignment via unidirectional text classifier fine-tuning and bidirectional cross-attention, achieving state-of-the-art few-shot classification performance across 11 benchmark datasets.
+  [ICCV 2025][Multimodal VLM][Few-shot learning] This paper proposes the Causal CLIP Adapter (CCA), which applies ICA to causally disentangle CLIP visual features…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Few-shot learning
-  - CLIP
-  - causal disentanglement
-  - independent component analysis
-  - cross-modal alignment
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Few-shot learning"
+  - "CLIP"
+  - "causal disentanglement"
+  - "independent component analysis"
+  - "cross-modal alignment"
 date: 2026-05-08
 content_hash: 10e50406a85340fe
 ---

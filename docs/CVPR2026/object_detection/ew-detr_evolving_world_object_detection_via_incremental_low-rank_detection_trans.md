@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] EW-DETR: Evolving World Object Detection via Incremental Low-Rank DEtection TRansformer
 description: >-
-  [CVPR2026][Object Detection][Open-world object detection] This paper proposes the Evolving World Object Detection (EWOD) paradigm and the EW-DETR framework, which jointly address class-incremental learning, domain shift adaptation, and unknown object detection under a strict no-replay constraint through three synergistic modules: incremental LoRA adapters, a query-norm objectness adapter, and entropy-aware unknown mixing. The proposed approach achieves a 57.24% improvement on the FOGS metric.
+  [CVPR2026][Object Detection][Open-world object detection] This paper proposes the Evolving World Object Detection (EWOD) paradigm and the EW-DETR framework, which jointly address class-incremental learning…
 tags:
-  - CVPR2026
-  - Object Detection
-  - Open-world object detection
-  - incremental learning
-  - domain adaptation
-  - unknown object detection
-  - LoRA
-  - DETR
+  - "CVPR2026"
+  - "Object Detection"
+  - "Open-world object detection"
+  - "incremental learning"
+  - "domain adaptation"
+  - "unknown object detection"
+  - "LoRA"
+  - "DETR"
 date: 2026-05-08
 content_hash: edafd811c94bdeed
 ---

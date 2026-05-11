@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] G2L: From Giga-Scale to Cancer-Specific Large-Scale Pathology Foundation Models via Efficient Fine-Tuning
 description: >-
-  [AAAI 2026][Medical Imaging][Pathology Foundation Models] This paper proposes G2L (Giga-to-Large), a distillation framework that transfers knowledge from a 1.9B-parameter giga-scale pathology foundation model (H-optimus-0) to a 300M-parameter large-scale model (Hibou-L) using only 1K whole slide images, achieving performance on par with or superior to the teacher model and larger models across multiple cancer-specific downstream tasks.
+  [AAAI 2026][Medical Imaging][Pathology Foundation Models] This paper proposes G2L (Giga-to-Large), a distillation framework that transfers knowledge from a 1.9B-parameter giga-scale pathology foundation model (H-optimus-…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Pathology Foundation Models
-  - Knowledge Distillation
-  - Model Compression
-  - Cancer Specificity
-  - Vision Transformer
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Pathology Foundation Models"
+  - "Knowledge Distillation"
+  - "Model Compression"
+  - "Cancer Specificity"
+  - "Vision Transformer"
 date: 2026-05-08
 content_hash: 715811333045d632
 ---

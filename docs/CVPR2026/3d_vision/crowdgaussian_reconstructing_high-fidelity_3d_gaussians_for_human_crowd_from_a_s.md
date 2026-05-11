@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CrowdGaussian: Reconstructing High-Fidelity 3D Gaussians for Human Crowd from a Single Image
 description: >-
-  [CVPR 2026][3D Vision][Human body reconstruction] CrowdGaussian proposes a unified framework for reconstructing multi-person 3D Gaussian splatting representations from a single image. It recovers complete geometry of occluded regions via a self-supervised-adapted Large Occluded Human Reconstruction Model (LORM), and enhances texture detail quality through a single-step diffusion refiner (CrowdRefiner) trained with Self-Calibrated Learning (SCL).
+  [CVPR 2026][3D Vision][Human body reconstruction] CrowdGaussian proposes a unified framework for reconstructing multi-person 3D Gaussian splatting representations from a single image. It recovers complete geometry of occ…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Human body reconstruction
-  - 3D Gaussian splatting
-  - occlusion recovery
-  - diffusion model refinement
-  - crowd scenes
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Human body reconstruction"
+  - "3D Gaussian splatting"
+  - "occlusion recovery"
+  - "diffusion model refinement"
+  - "crowd scenes"
 date: 2026-05-08
 content_hash: e9473c5ac8f02695
 ---

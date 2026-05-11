@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] InstanceAssemble: Layout-Aware Image Generation via Instance Assembling Attention
 description: >-
-  [NeurIPS 2025][Object Detection][layout-to-image] This paper proposes InstanceAssemble, which injects an "instance assembling attention" mechanism into the Transformer blocks of DiT-based T2I models (SD3 and Flux). By performing independent cross-attention between image tokens within each bounding box region and their corresponding layout hidden states, the method achieves precise instance-level spatial control. A lightweight LoRA adaptation strategy maintains compatibility with existing style LoRAs. The paper also introduces the DenseLayout benchmark (5K images / 90K instances) and a multi-dimensional Layout Grounding Score (LGS) evaluation metric.
+  [NeurIPS 2025][Object Detection][layout-to-image] This paper proposes InstanceAssemble, which injects an "instance assembling attention" mechanism into the Transformer blocks of DiT-based T2I models (SD3 and Flux). By pe…
 tags:
-  - NeurIPS 2025
-  - Object Detection
-  - layout-to-image
-  - instance assembling attention
-  - DiT
-  - LoRA
-  - DenseLayout benchmark
+  - "NeurIPS 2025"
+  - "Object Detection"
+  - "layout-to-image"
+  - "instance assembling attention"
+  - "DiT"
+  - "LoRA"
+  - "DenseLayout benchmark"
 date: 2026-05-08
 content_hash: 3dd1ef16b6678f2e
 ---

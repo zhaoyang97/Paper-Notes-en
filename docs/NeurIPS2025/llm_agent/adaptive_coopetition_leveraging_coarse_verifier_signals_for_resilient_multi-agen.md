@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Adaptive Coopetition: Leveraging Coarse Verifier Signals for Resilient Multi-Agent LLM Reasoning
 description: >-
-  [NeurIPS 2025 (Mathematical Reasoning and AI Workshop)][LLM Agent][multi-agent collaboration] This paper proposes the Adaptive Coopetition (AdCo) framework, which employs a UCB multi-armed bandit strategy with coarse-grained verifier signals to enable multiple LLM agents to adaptively switch between cooperative and competitive modes during inference, achieving a 20% relative improvement on mathematical reasoning benchmarks.
+  [NeurIPS 2025 (Mathematical Reasoning and AI Workshop)][LLM Agent][multi-agent collaboration] This paper proposes the Adaptive Coopetition (AdCo) framework, which employs a UCB multi-armed bandit strategy with coarse-gra…
 tags:
-  - NeurIPS 2025 (Mathematical Reasoning and AI Workshop)
-  - LLM Agent
-  - multi-agent collaboration
-  - reasoning enhancement
-  - UCB
-  - coopetition mechanism
-  - inference-time computation
+  - "NeurIPS 2025 (Mathematical Reasoning and AI Workshop)"
+  - "LLM Agent"
+  - "multi-agent collaboration"
+  - "reasoning enhancement"
+  - "UCB"
+  - "coopetition mechanism"
+  - "inference-time computation"
 date: 2026-05-08
 content_hash: 5b3e474c1763eebf
 ---

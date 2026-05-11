@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] zip2zip: Inference-Time Adaptive Tokenization via Online Compression
 description: >-
-  [NeurIPS 2025][Model Compression][Adaptive Tokenization] This paper proposes zip2zip, which deeply integrates the classical LZW online lossless compression algorithm into the LLM inference pipeline. During decoding, frequently co-occurring tokens are continuously merged into reusable "hypertokens" to dynamically expand the vocabulary. Combined with a dynamic embedding layer and training on compressed-space language modeling, zip2zip enables existing LLMs to acquire inference-time adaptive tokenization capability with only 10 GPU-hours of LoRA fine-tuning, achieving 15–40% reduction in input/output sequence length and up to 40% reduction in end-to-end decoding latency, with negligible downstream task performance degradation.
+  [NeurIPS 2025][Model Compression][Adaptive Tokenization] This paper proposes zip2zip, which deeply integrates the classical LZW online lossless compression algorithm into the LLM inference pipeline. During decoding…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Adaptive Tokenization
-  - LZW Compression
-  - Hypertoken
-  - Inference Acceleration
-  - Vocabulary Expansion
-  - Dynamic Embedding
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Adaptive Tokenization"
+  - "LZW Compression"
+  - "Hypertoken"
+  - "Inference Acceleration"
+  - "Vocabulary Expansion"
+  - "Dynamic Embedding"
 date: 2026-05-08
 content_hash: 47081e564eec2643
 ---

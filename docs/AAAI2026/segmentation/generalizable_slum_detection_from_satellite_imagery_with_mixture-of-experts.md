@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Generalizable Slum Detection from Satellite Imagery with Mixture-of-Experts
 description: >-
-  [AAAI 2026][Segmentation][slum detection] This paper proposes GRAM (Generalized Region-Aware Mixture-of-Experts), a two-stage test-time adaptation framework. In the first stage, a MoE architecture is used to train region-specialized experts on million-scale satellite imagery from 12 cities. In the second stage, reliable pseudo-labels are selected via cross-region prediction consistency for self-training, enabling generalization of slum segmentation to unseen African cities.
+  [AAAI 2026][Segmentation][slum detection] This paper proposes GRAM (Generalized Region-Aware Mixture-of-Experts), a two-stage test-time adaptation framework. In the first stage…
 tags:
-  - AAAI 2026
-  - Segmentation
-  - slum detection
-  - satellite image segmentation
-  - mixture-of-experts
-  - test-time adaptation
-  - domain generalization
+  - "AAAI 2026"
+  - "Segmentation"
+  - "slum detection"
+  - "satellite image segmentation"
+  - "mixture-of-experts"
+  - "test-time adaptation"
+  - "domain generalization"
 date: 2026-05-08
 content_hash: 79b6d0669f84c44b
 ---

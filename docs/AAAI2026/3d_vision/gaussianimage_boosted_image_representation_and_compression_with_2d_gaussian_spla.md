@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GaussianImage++: Boosted Image Representation and Compression with 2D Gaussian Splatting
 description: >-
-  [AAAI 2026][3D Vision][2D Gaussian Splatting] This paper proposes GaussianImage++, which achieves high-quality image representation and compression with a limited number of 2D Gaussian primitives through a distortion-driven densification mechanism and content-aware Gaussian filters, while maintaining real-time decoding speed.
+  [AAAI 2026][3D Vision][2D Gaussian Splatting] This paper proposes GaussianImage++, which achieves high-quality image representation and compression with a limited number of 2D Gaussian primitives through a distortion-dri…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - 2D Gaussian Splatting
-  - Image Compression
-  - Implicit Neural Representation
-  - Densification Mechanism
-  - Quantization-Aware Training
+  - "AAAI 2026"
+  - "3D Vision"
+  - "2D Gaussian Splatting"
+  - "Image Compression"
+  - "Implicit Neural Representation"
+  - "Densification Mechanism"
+  - "Quantization-Aware Training"
 date: 2026-05-08
 content_hash: 42d320ab315b3df1
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BNMusic: Blending Environmental Noises into Personalized Music
 description: >-
-  [NeurIPS 2025][Audio & Speech][noise blending] This paper proposes BNMusic, a two-stage framework that blends environmental noises into personalized generated music. Stage 1 generates rhythm-aligned music via mel-spectrogram outpainting and inpainting; Stage 2 adaptively amplifies the music signal based on auditory masking theory to reduce noise perception. The approach requires no additional training and significantly outperforms baselines on EPIC-SOUNDS and ESC-50.
+  [NeurIPS 2025][Audio & Speech][noise blending] This paper proposes BNMusic, a two-stage framework that blends environmental noises into personalized generated music. Stage 1 generates rhythm-aligned music via mel-spectro…
 tags:
-  - NeurIPS 2025
+  - "NeurIPS 2025"
   - "Audio & Speech"
-  - noise blending
-  - auditory masking
-  - music generation
-  - spectrogram inpainting
-  - psychoacoustics
+  - "noise blending"
+  - "auditory masking"
+  - "music generation"
+  - "spectrogram inpainting"
+  - "psychoacoustics"
 date: 2026-05-08
 content_hash: 07b6facaaacb2401
 ---

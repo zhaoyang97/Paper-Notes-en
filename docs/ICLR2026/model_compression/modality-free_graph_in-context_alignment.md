@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Modality-free Graph In-context Alignment
 description: >-
-  [ICLR 2026][Model Compression][Graph Foundation Models] This paper proposes MF-GIA, the first graph in-context learning framework that simultaneously satisfies three conditions: no post-training, cross-domain alignment, and modality-agnosticism. By capturing domain characteristics via gradient fingerprints, aligning features and labels through FiLM-conditioned transformations, MF-GIA achieves state-of-the-art performance on few-shot tasks across multiple graph domains.
+  [ICLR 2026][Model Compression][Graph Foundation Models] This paper proposes MF-GIA, the first graph in-context learning framework that simultaneously satisfies three conditions: no post-training, cross-domain alignment…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Graph Foundation Models
-  - In-Context Learning
-  - Cross-Domain Alignment
-  - Gradient Fingerprint
-  - Meta-Learning
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Graph Foundation Models"
+  - "In-Context Learning"
+  - "Cross-Domain Alignment"
+  - "Gradient Fingerprint"
+  - "Meta-Learning"
 date: 2026-05-08
 content_hash: c922a541ce0d2876
 ---

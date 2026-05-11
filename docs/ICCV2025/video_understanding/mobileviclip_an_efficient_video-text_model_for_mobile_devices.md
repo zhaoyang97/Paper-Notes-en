@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MobileViCLIP: An Efficient Video-Text Model for Mobile Devices
 description: >-
-  [ICCV 2025][Video Understanding][video-text model] MobileViCLIP introduces spatiotemporal structural re-parameterization into the efficient image-text model MobileCLIP and trains it on large-scale video-text datasets, yielding a mobile-deployable video-text model that achieves performance comparable to much larger models on zero-shot retrieval and action recognition.
+  [ICCV 2025][Video Understanding][video-text model] MobileViCLIP introduces spatiotemporal structural re-parameterization into the efficient image-text model MobileCLIP and trains it on large-scale video-text datasets…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - video-text model
-  - mobile deployment
-  - structural re-parameterization
-  - efficient inference
-  - video retrieval
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "video-text model"
+  - "mobile deployment"
+  - "structural re-parameterization"
+  - "efficient inference"
+  - "video retrieval"
 date: 2026-05-08
 content_hash: 90720abf862bb323
 ---

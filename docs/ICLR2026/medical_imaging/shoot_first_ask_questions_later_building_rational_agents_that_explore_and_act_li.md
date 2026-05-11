@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Shoot First, Ask Questions Later? Building Rational Agents that Explore and Act Like People
 description: >-
-  [ICLR 2026][Medical Imaging][Information-seeking agents] This paper introduces the Collaborative Battleship task to evaluate the information-seeking capabilities of language models, and proposes three Bayesian inference strategies (Bayes-Q/M/D) to enhance LM questioning, action selection, and decision-making. The approach enables a weak model (Llama-4-Scout) to achieve superhuman performance (82% win rate) at approximately 1% the cost of GPT-5.
+  [ICLR 2026][Medical Imaging][Information-seeking agents] This paper introduces the Collaborative Battleship task to evaluate the information-seeking capabilities of language models…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - Information-seeking agents
-  - Bayesian experimental design
-  - language model reasoning
-  - exploration-exploitation trade-off
-  - Monte Carlo inference
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Information-seeking agents"
+  - "Bayesian experimental design"
+  - "language model reasoning"
+  - "exploration-exploitation trade-off"
+  - "Monte Carlo inference"
 date: 2026-05-08
 content_hash: 5c553feb7a841669
 ---

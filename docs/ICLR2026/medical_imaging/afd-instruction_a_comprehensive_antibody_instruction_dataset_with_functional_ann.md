@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AFD-INSTRUCTION: A Comprehensive Antibody Instruction Dataset with Functional Annotations for LLM-Based Understanding and Design
 description: >-
-  [ICLR 2026][Medical Imaging][Antibody language model] This work constructs AFD-Instruction, the first large-scale antibody functional annotation instruction dataset (430K+ entries), aligning antibody sequences with natural-language functional descriptions via a multi-agent literature extraction pipeline. The dataset is used to instruction-tune general-purpose LLMs for antibody understanding and function-guided design, achieving an average accuracy improvement of 20+ points across five classification tasks.
+  [ICLR 2026][Medical Imaging][Antibody language model] This work constructs AFD-Instruction, the first large-scale antibody functional annotation instruction dataset (430K+ entries)…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - Antibody language model
-  - instruction tuning dataset
-  - sequence-function alignment
-  - antibody design
-  - multi-agent data construction
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Antibody language model"
+  - "instruction tuning dataset"
+  - "sequence-function alignment"
+  - "antibody design"
+  - "multi-agent data construction"
 date: 2026-05-08
 content_hash: 5ced80ffe7152db5
 ---

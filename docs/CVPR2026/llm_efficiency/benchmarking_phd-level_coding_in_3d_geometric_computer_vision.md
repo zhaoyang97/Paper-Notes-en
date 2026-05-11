@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GeoCodeBench: Benchmarking PhD-Level Coding in 3D Geometric Computer Vision
 description: >-
-  [CVPR 2026][LLM Efficiency][3D Vision Code Generation] The first PhD-level code generation benchmark for 3D geometric computer vision, GeoCodeBench, comprising 100 function completion tasks curated from top-venue 2025 papers and codebases, with automated diverse unit tests. The strongest model GPT-5 achieves only 36.6% pass rate, revealing a significant gap in LLM scientific-level 3D code implementation.
+  [CVPR 2026][LLM Efficiency][3D Vision Code Generation] The first PhD-level code generation benchmark for 3D geometric computer vision, GeoCodeBench…
 tags:
-  - CVPR 2026
-  - LLM Efficiency
-  - 3D Vision Code Generation
-  - LLM Evaluation
-  - Geometric Algorithm Implementation
-  - PhD-level Benchmark
-  - Unit Testing
+  - "CVPR 2026"
+  - "LLM Efficiency"
+  - "3D Vision Code Generation"
+  - "LLM Evaluation"
+  - "Geometric Algorithm Implementation"
+  - "PhD-level Benchmark"
+  - "Unit Testing"
 date: 2026-05-08
 content_hash: 9efcc652796e42ec
 ---

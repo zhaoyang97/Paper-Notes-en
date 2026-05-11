@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Uncertainty-Aware Concept and Motion Segmentation for Semi-Supervised Angiography Videos
 description: >-
-  [CVPR 2026][Medical Imaging][Semi-supervised segmentation] This paper proposes SMART, a Teacher-Student semi-supervised framework built upon SAM3's concept-prompt segmentation, integrating progressive confidence regularization and a dual-stream temporal consistency strategy to achieve state-of-the-art vessel segmentation in X-ray coronary angiography videos with minimal annotation.
+  [CVPR 2026][Medical Imaging][Semi-supervised segmentation] This paper proposes SMART, a Teacher-Student semi-supervised framework built upon SAM3's concept-prompt segmentation…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Semi-supervised segmentation
-  - coronary angiography
-  - SAM3
-  - temporal consistency
-  - optical flow
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Semi-supervised segmentation"
+  - "coronary angiography"
+  - "SAM3"
+  - "temporal consistency"
+  - "optical flow"
 date: 2026-05-08
 content_hash: ad880b8a94e3465b
 ---

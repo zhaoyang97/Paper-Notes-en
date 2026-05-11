@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RefineVAD: Semantic-Guided Feature Recalibration for Weakly Supervised Video Anomaly Detection
 description: >-
-  [AAAI 2026][LLM Evaluation][Weakly supervised video anomaly detection] This paper proposes RefineVAD, a framework comprising two modules — Motion-aware Temporal Attention Recalibration (MoTAR) and Category-Oriented REfinement (CORE) — that jointly models temporal motion dynamics and anomaly category semantics, achieving precise localization and interpretable detection of anomalous events in weakly supervised video anomaly detection.
+  [AAAI 2026][LLM Evaluation][Weakly supervised video anomaly detection] This paper proposes RefineVAD, a framework comprising two modules — Motion-aware Temporal Attention Recalibration (MoTAR) and Category-Oriented REfin…
 tags:
-  - AAAI 2026
-  - LLM Evaluation
-  - Weakly supervised video anomaly detection
-  - multiple instance learning
-  - semantic guidance
-  - temporal modeling
-  - category prototypes
+  - "AAAI 2026"
+  - "LLM Evaluation"
+  - "Weakly supervised video anomaly detection"
+  - "multiple instance learning"
+  - "semantic guidance"
+  - "temporal modeling"
+  - "category prototypes"
 date: 2026-05-08
 content_hash: 0e9a4193a9491bb6
 ---

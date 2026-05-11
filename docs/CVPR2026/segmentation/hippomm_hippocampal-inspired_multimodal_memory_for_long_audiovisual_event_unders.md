@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HippoMM: Hippocampal-inspired Multimodal Memory for Long Audiovisual Event Understanding
 description: >-
-  [CVPR 2026][Segmentation][Hippocampal cognitive architecture] HippoMM maps three core hippocampal cognitive mechanisms—pattern separation (episodic segmentation), memory consolidation (semantic compression), and pattern completion (hierarchical retrieval)—into a computational architecture for episodic memory formation and cross-modal associative recall in long audiovisual streams. On the authors' proposed benchmark HippoVlog, the system achieves 78.2% accuracy while being 5× faster than retrieval-augmented baselines.
+  [CVPR 2026][Segmentation][Hippocampal cognitive architecture] HippoMM maps three core hippocampal cognitive mechanisms—pattern separation (episodic segmentation), memory consolidation (semantic compression)…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Hippocampal cognitive architecture
-  - multimodal memory
-  - long video understanding
-  - cross-modal association
-  - episodic memory
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Hippocampal cognitive architecture"
+  - "multimodal memory"
+  - "long video understanding"
+  - "cross-modal association"
+  - "episodic memory"
 date: 2026-05-08
 content_hash: 1723f05a29efd592
 ---

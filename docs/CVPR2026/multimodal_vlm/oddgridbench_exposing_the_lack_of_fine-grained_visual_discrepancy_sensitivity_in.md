@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OddGridBench: Exposing the Lack of Fine-Grained Visual Discrepancy Sensitivity in Multimodal Large Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][visual discrepancy perception] This paper proposes OddGridBench to evaluate the fine-grained visual discrepancy sensitivity of MLLMs (i.e., identifying the element in a grid that differs from others in color, size, rotation, or position). All evaluated MLLMs fall far below human performance. To address this gap, the authors propose OddGrid-GRPO, which combines curriculum learning with a distance-aware reward to significantly improve visual discrimination ability.
+  [CVPR 2026][Multimodal VLM][visual discrepancy perception] This paper proposes OddGridBench to evaluate the fine-grained visual discrepancy sensitivity of MLLMs (i.e.…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - visual discrepancy perception
-  - benchmark
-  - GRPO
-  - curriculum learning
-  - fine-grained perception
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "visual discrepancy perception"
+  - "benchmark"
+  - "GRPO"
+  - "curriculum learning"
+  - "fine-grained perception"
 date: 2026-05-08
 content_hash: 151ca3cbe8b0a09d
 ---

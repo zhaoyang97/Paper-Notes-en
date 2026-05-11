@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Where to Start Alignment? Diffusion Large Language Model May Demand a Distinct Position
 description: >-
-  [AAAI 2026 (Oral)][Reinforcement Learning][Diffusion language model] This paper presents the first systematic safety analysis of diffusion large language models (dLLMs), revealing that—unlike autoregressive LLMs—**middle tokens** are more critical to safety in dLLMs, and that attackers are fundamentally constrained by the model's inherent sequential generation tendency from manipulating these positions. Based on this asymmetry, the paper proposes MOSA (Middle-tOken Safety Alignment) as a defense method.
+  [AAAI 2026 (Oral)][Reinforcement Learning][Diffusion language model] This paper presents the first systematic safety analysis of diffusion large language models (dLLMs)…
 tags:
-  - AAAI 2026 (Oral)
-  - Reinforcement Learning
-  - Diffusion language model
-  - safety alignment
-  - middle tokens
-  - jailbreak defense
+  - "AAAI 2026 (Oral)"
+  - "Reinforcement Learning"
+  - "Diffusion language model"
+  - "safety alignment"
+  - "middle tokens"
+  - "jailbreak defense"
 date: 2026-05-08
 content_hash: 6a697fc50f681297
 ---

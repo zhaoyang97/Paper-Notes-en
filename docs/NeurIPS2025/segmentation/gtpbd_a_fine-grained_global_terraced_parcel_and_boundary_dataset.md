@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GTPBD: A Fine-Grained Global Terraced Parcel and Boundary Dataset
 description: >-
-  [NeurIPS 2025][Segmentation][Terraced parcel extraction] This paper introduces GTPBD, the first fine-grained global terraced parcel and boundary dataset, comprising 47,537 high-resolution images (0.5–0.7 m) with over 200,000 manually annotated parcels. It provides three-level labels supporting four tasks—semantic segmentation, edge detection, agricultural parcel extraction, and unsupervised domain adaptation—and presents comprehensive benchmarks across 20 methods.
+  [NeurIPS 2025][Segmentation][Terraced parcel extraction] This paper introduces GTPBD, the first fine-grained global terraced parcel and boundary dataset, comprising 47,537 high-resolution images (0.5–0.7 m) with over 200…
 tags:
-  - NeurIPS 2025
-  - Segmentation
-  - Terraced parcel extraction
-  - fine-grained boundary annotation
-  - semantic segmentation
-  - unsupervised domain adaptation
-  - remote sensing dataset
+  - "NeurIPS 2025"
+  - "Segmentation"
+  - "Terraced parcel extraction"
+  - "fine-grained boundary annotation"
+  - "semantic segmentation"
+  - "unsupervised domain adaptation"
+  - "remote sensing dataset"
 date: 2026-05-08
 content_hash: c7ec9a800d3fccbd
 ---

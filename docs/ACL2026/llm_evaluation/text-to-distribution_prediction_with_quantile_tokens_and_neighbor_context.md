@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Text-to-Distribution Prediction with Quantile Tokens and Neighbor Context
 description: >-
-  [ACL 2026][LLM Evaluation][quantile regression] This paper proposes Quantile Token Regression, a method that inserts dedicated quantile tokens into the input sequence and incorporates retrieved neighbor instances along with their empirical distributions, enabling LLMs to predict full conditional distributions rather than single point estimates. The approach reduces MAPE by approximately 4 points over baselines and narrows prediction intervals by more than 2× on the Airbnb and StackSample datasets.
+  [ACL 2026][LLM Evaluation][quantile regression] This paper proposes Quantile Token Regression, a method that inserts dedicated quantile tokens into the input sequence and incorporates retrieved neighbor instances along w…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - quantile regression
-  - distribution prediction
-  - retrieval augmentation
-  - LLM fine-tuning
-  - uncertainty estimation
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "quantile regression"
+  - "distribution prediction"
+  - "retrieval augmentation"
+  - "LLM fine-tuning"
+  - "uncertainty estimation"
 date: 2026-05-08
 content_hash: 092f09cd233e2029
 ---

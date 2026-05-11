@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SAM4D: Segment Anything in Camera and LiDAR Streams
 description: >-
-  [ICCV 2025][Autonomous Driving][Multimodal Segmentation] This paper presents SAM4D, the first promptable multimodal segmentation foundation model for camera and LiDAR streams. It introduces Unified Multimodal Positional Encoding (UMPE) to enable cross-modal prompting and interaction, Motion-aware Cross-Modal Attention (MCMA) for temporal consistency, and constructs the Waymo-4DSeg dataset containing 300K+ masklets, demonstrating strong capabilities in cross-modal segmentation and data annotation.
+  [ICCV 2025][Autonomous Driving][Multimodal Segmentation] This paper presents SAM4D, the first promptable multimodal segmentation foundation model for camera and LiDAR streams. It introduces Unified Multimodal Positional…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - Multimodal Segmentation
-  - Foundation Model
-  - Camera-LiDAR Fusion
-  - Temporal Segmentation
-  - SAM
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "Multimodal Segmentation"
+  - "Foundation Model"
+  - "Camera-LiDAR Fusion"
+  - "Temporal Segmentation"
+  - "SAM"
 date: 2026-05-08
 content_hash: 75f8927648df110f
 ---

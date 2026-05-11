@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] HopaDIFF: Holistic-Partial Aware Fourier Conditioned Diffusion for Referring Human Action Segmentation in Multi-Person Scenarios
 description: >-
-  [NeurIPS 2025][Segmentation][Referring Human Action Segmentation] This paper introduces the Referring Human Action Segmentation (RHAS) task—localizing a specific individual in multi-person videos via textual descriptions and performing frame-level action segmentation. The authors construct the RHAS133 dataset comprising 133 movies, 137 action categories, and 33 hours of video, and propose HopaDIFF, a holistic-partial aware Fourier-conditioned diffusion framework that substantially outperforms existing baselines across multiple evaluation settings.
+  [NeurIPS 2025][Segmentation][Referring Human Action Segmentation] This paper introduces the Referring Human Action Segmentation (RHAS) task—localizing a specific individual in multi-person videos via textual descriptions…
 tags:
-  - NeurIPS 2025
-  - Segmentation
-  - Referring Human Action Segmentation
-  - Multi-Person Scenarios
-  - Diffusion Models
-  - xLSTM
-  - Fourier Conditioning
-  - RHAS
+  - "NeurIPS 2025"
+  - "Segmentation"
+  - "Referring Human Action Segmentation"
+  - "Multi-Person Scenarios"
+  - "Diffusion Models"
+  - "xLSTM"
+  - "Fourier Conditioning"
+  - "RHAS"
 date: 2026-05-08
 content_hash: 0531897bc79eb466
 ---

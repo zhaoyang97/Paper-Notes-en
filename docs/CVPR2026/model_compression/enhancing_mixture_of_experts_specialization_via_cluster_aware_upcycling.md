@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Enhancing Mixture-of-Experts Specialization via Cluster-Aware Upcycling
 description: >-
-  [CVPR 2026][Model Compression][Mixture-of-Experts] This paper proposes Cluster-aware Upcycling, which extracts semantic structure from a dense model via spherical k-means clustering to initialize expert and router parameters in MoE, thereby breaking expert symmetry and promoting early specialization. Combined with an Expert Ensemble Self-Distillation (EESD) loss, the method consistently outperforms existing upcycling approaches on CLIP ViT benchmarks.
+  [CVPR 2026][Model Compression][Mixture-of-Experts] This paper proposes Cluster-aware Upcycling, which extracts semantic structure from a dense model via spherical k-means clustering to initialize expert and router parame…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - Mixture-of-Experts
-  - sparse upcycling
-  - expert specialization
-  - cluster initialization
-  - self-distillation
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Mixture-of-Experts"
+  - "sparse upcycling"
+  - "expert specialization"
+  - "cluster initialization"
+  - "self-distillation"
 date: 2026-05-08
 content_hash: b25644eeb99343ec
 ---

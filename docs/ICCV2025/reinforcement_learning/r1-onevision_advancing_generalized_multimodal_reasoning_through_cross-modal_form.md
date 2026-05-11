@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] R1-Onevision: Advancing Generalized Multimodal Reasoning through Cross-Modal Formalization
 description: >-
-  [ICCV 2025][Reinforcement Learning][multimodal reasoning] This paper proposes R1-Onevision, a framework that converts images into formalized textual representations via a cross-modal reasoning pipeline, combined with a two-stage post-training strategy of SFT followed by rule-based reinforcement learning (GRPO), to significantly enhance multimodal reasoning in vision-language models, surpassing GPT-4o on multiple mathematical reasoning benchmarks.
+  [ICCV 2025][Reinforcement Learning][multimodal reasoning] This paper proposes R1-Onevision, a framework that converts images into formalized textual representations via a cross-modal reasoning pipeline…
 tags:
-  - ICCV 2025
-  - Reinforcement Learning
-  - multimodal reasoning
-  - cross-modal formalization
-  - vision-language model
-  - reasoning benchmark
+  - "ICCV 2025"
+  - "Reinforcement Learning"
+  - "multimodal reasoning"
+  - "cross-modal formalization"
+  - "vision-language model"
+  - "reasoning benchmark"
 date: 2026-05-08
 content_hash: d6d140b053bbb4de
 ---

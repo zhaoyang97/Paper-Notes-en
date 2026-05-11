@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] PersonaX: Multimodal Datasets with LLM-Inferred Behavior Traits
 description: >-
-  [ICLR2026][Human Understanding][multimodal dataset] This work constructs the PersonaX multimodal dataset (comprising LLM-inferred Big Five behavior traits, facial embeddings, and biographical metadata) and proposes a two-level analysis framework: structured independence testing combined with unstructured causal representation learning (with theoretical identifiability guarantees), revealing cross-modal causal structures.
+  [ICLR2026][Human Understanding][multimodal dataset] This work constructs the PersonaX multimodal dataset (comprising LLM-inferred Big Five behavior traits, facial embeddings…
 tags:
-  - ICLR2026
-  - Human Understanding
-  - multimodal dataset
-  - behavior traits
-  - Big Five
-  - causal representation learning
-  - LLM
-  - identifiability
+  - "ICLR2026"
+  - "Human Understanding"
+  - "multimodal dataset"
+  - "behavior traits"
+  - "Big Five"
+  - "causal representation learning"
+  - "LLM"
+  - "identifiability"
 date: 2026-05-08
 content_hash: 050390a81852b1ab
 ---

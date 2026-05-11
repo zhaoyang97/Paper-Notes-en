@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] DFDT: Dynamic Fast Decision Tree for IoT Data Stream Mining on Edge Devices
 description: >-
-  [AAAI 2026][Decision Tree] This paper proposes DFDT (Dynamic Fast Decision Tree), a memory-constrained data stream mining algorithm for IoT edge devices. Through three coordinated mechanisms — activity-aware pre-pruning, dynamic grace period, and adaptive tie threshold — DFDT achieves an optimal trade-off among accuracy, memory usage, and runtime.
+  [AAAI 2026][Decision Tree] This paper proposes DFDT (Dynamic Fast Decision Tree), a memory-constrained data stream mining algorithm for IoT edge devices. Through three coordinated mechanisms — activity-aware pre-pruning…
 tags:
-  - AAAI 2026
-  - Decision Tree
-  - Data Stream Mining
-  - Edge Devices
-  - Concept Drift
-  - Memory Constraints
+  - "AAAI 2026"
+  - "Decision Tree"
+  - "Data Stream Mining"
+  - "Edge Devices"
+  - "Concept Drift"
+  - "Memory Constraints"
 date: 2026-05-08
 content_hash: 008d392d27fc6e38
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Theoretical and Empirical Analysis of Lehmer Codes to Search Permutation Spaces with Evolutionary Algorithms
 description: >-
-  [AAAI 2026][Lehmer Code] This work presents the first rigorous mathematical runtime analysis of Lehmer codes (inversion tables) for searching permutation spaces with evolutionary algorithms. It proves that Lehmer-code-based EAs achieve expected runtimes of $O(n^2 \log n)$ or $O(n^2)$ on most benchmark functions, matching or improving upon classical representations, and validates practical utility on LOP and QAP instances.
+  [AAAI 2026][Lehmer Code] This work presents the first rigorous mathematical runtime analysis of Lehmer codes (inversion tables) for searching permutation spaces with evolutionary algorithms. It proves that Lehmer-code-ba…
 tags:
-  - AAAI 2026
-  - Lehmer Code
-  - Permutation Space
-  - Evolutionary Algorithms
-  - Runtime Analysis
-  - Combinatorial Optimization
+  - "AAAI 2026"
+  - "Lehmer Code"
+  - "Permutation Space"
+  - "Evolutionary Algorithms"
+  - "Runtime Analysis"
+  - "Combinatorial Optimization"
 date: 2026-05-08
 content_hash: cf5b3efed13ac241
 ---

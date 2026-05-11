@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] TesserAct: Learning 4D Embodied World Models
 description: >-
-  [ICCV 2025][Robotics][4D world model] TesserAct is a 4D embodied world model that trains a video generative model to jointly predict RGB, depth, and normal videos, which are subsequently converted into high-quality 4D scenes, enabling spatiotemporally consistent 3D world dynamics simulation and robot action planning.
+  [ICCV 2025][Robotics][4D world model] TesserAct is a 4D embodied world model that trains a video generative model to jointly predict RGB, depth, and normal videos…
 tags:
-  - ICCV 2025
-  - Robotics
-  - 4D world model
-  - embodied intelligence
-  - video diffusion model
-  - RGB-DN
-  - joint depth-normal prediction
-  - robot planning
+  - "ICCV 2025"
+  - "Robotics"
+  - "4D world model"
+  - "embodied intelligence"
+  - "video diffusion model"
+  - "RGB-DN"
+  - "joint depth-normal prediction"
+  - "robot planning"
 date: 2026-05-08
 content_hash: 025ef84d1ca792ef
 ---

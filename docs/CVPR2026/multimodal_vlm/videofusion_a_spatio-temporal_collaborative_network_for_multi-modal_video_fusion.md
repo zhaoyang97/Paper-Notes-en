@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VideoFusion: A Spatio-Temporal Collaborative Network for Multi-modal Video Fusion
 description: >-
-  [CVPR2026][Multimodal VLM][Multi-modal video fusion] This paper proposes VideoFusion, the first large-scale infrared-visible video fusion framework, which jointly models cross-modal complementarity and temporal dynamics via cross-modal differential reinforcement, complete-modality guided fusion, and bidirectional temporal collaborative attention, generating spatiotemporally consistent high-quality fusion videos. The authors also construct the M3SVD dataset comprising 220 videos and 153,797 frames.
+  [CVPR2026][Multimodal VLM][Multi-modal video fusion] This paper proposes VideoFusion, the first large-scale infrared-visible video fusion framework…
 tags:
-  - CVPR2026
-  - Multimodal VLM
-  - Multi-modal video fusion
-  - infrared-visible fusion
-  - temporal consistency
-  - cross-modal attention
-  - video dataset
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "Multi-modal video fusion"
+  - "infrared-visible fusion"
+  - "temporal consistency"
+  - "cross-modal attention"
+  - "video dataset"
 date: 2026-05-08
 content_hash: a278884b07083dff
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Layer-wise Modality Decomposition for Interpretable Multimodal Sensor Fusion
 description: >-
-  [NeurIPS 2025][Autonomous Driving][interpretability] This paper proposes LMD (Layer-Wise Modality Decomposition), a post-hoc, model-agnostic interpretability method that linearizes neural network operations layer by layer to exactly decompose the predictions of multimodal fusion models into per-sensor modality contributions. LMD is the first method to achieve prediction attribution to individual input modalities in autonomous driving perception models, and its effectiveness is validated across camera-radar, camera-LiDAR, and camera-radar-LiDAR fusion settings.
+  [NeurIPS 2025][Autonomous Driving][interpretability] This paper proposes LMD (Layer-Wise Modality Decomposition), a post-hoc, model-agnostic interpretability method that linearizes neural network operations layer by laye…
 tags:
-  - NeurIPS 2025
-  - Autonomous Driving
-  - interpretability
-  - sensor fusion
-  - modality decomposition
-  - LRP
+  - "NeurIPS 2025"
+  - "Autonomous Driving"
+  - "interpretability"
+  - "sensor fusion"
+  - "modality decomposition"
+  - "LRP"
 date: 2026-05-08
 content_hash: 795e62dd85f723ab
 ---

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] MUNBa: Machine Unlearning via Nash Bargaining
 description: >-
-  [ICCV 2025][Image Generation][Machine Unlearning] This work formulates Machine Unlearning (MU) as a two-player cooperative bargaining game and derives a closed-form solution via Nash bargaining theory to simultaneously address gradient conflict and gradient dominance between the forgetting and retention objectives, achieving an optimal balance between unlearning and preservation across both classification and generation tasks.
+  [ICCV 2025][Image Generation][Machine Unlearning] This work formulates Machine Unlearning (MU) as a two-player cooperative bargaining game and derives a closed-form solution via Nash bargaining theory to simultaneously a…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Machine Unlearning
-  - Nash Bargaining
-  - Gradient Conflict
-  - Pareto Optimality
-  - Diffusion Models
-  - CLIP
-  - Multi-Objective Optimization
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Machine Unlearning"
+  - "Nash Bargaining"
+  - "Gradient Conflict"
+  - "Pareto Optimality"
+  - "Diffusion Models"
+  - "CLIP"
+  - "Multi-Objective Optimization"
 date: 2026-05-08
 content_hash: d3f0569b1dfeb64e
 ---

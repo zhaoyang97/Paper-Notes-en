@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] 4D-Bench: Benchmarking Multi-modal Large Language Models for 4D Object Understanding
 description: >-
-  [ICCV 2025][Video Understanding][4D understanding] This paper introduces 4D-Bench, the first benchmark for evaluating multimodal large language models (MLLMs) on 4D object understanding (i.e., 3D objects with temporal evolution). It comprises two core tasks: 4D Object QA (751 QA pairs) and 4D Object Captioning (580 objects × 5 annotations). Evaluation reveals that even the state-of-the-art GPT-4o achieves only 63% accuracy compared to 91% for humans, exposing a substantial gap in multi-view spatiotemporal understanding among MLLMs.
+  [ICCV 2025][Video Understanding][4D understanding] This paper introduces 4D-Bench, the first benchmark for evaluating multimodal large language models (MLLMs) on 4D object understanding (i.e.…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - 4D understanding
-  - multimodal large language models
-  - benchmark
-  - multi-view temporal understanding
-  - 4D object QA
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "4D understanding"
+  - "multimodal large language models"
+  - "benchmark"
+  - "multi-view temporal understanding"
+  - "4D object QA"
 date: 2026-05-08
 content_hash: 06d3c1f87d2dabde
 ---

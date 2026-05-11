@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Multi-Aspect Cross-modal Quantization for Generative Recommendation
 description: >-
-  [AAAI 2026][Image Generation][Generative Recommendation] This paper proposes MACRec, which introduces multi-aspect cross-modal interaction at both the semantic ID learning stage and the generative model training stage. Through cross-modal quantization (contrastive learning-enhanced residual quantization) and multi-aspect alignment (implicit + explicit), MACRec significantly improves recommendation performance while reducing ID collision rates.
+  [AAAI 2026][Image Generation][Generative Recommendation] This paper proposes MACRec, which introduces multi-aspect cross-modal interaction at both the semantic ID learning stage and the generative model training stage. T…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Generative Recommendation
-  - Cross-modal Quantization
-  - Residual Quantization
-  - Contrastive Learning
-  - Semantic ID
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Generative Recommendation"
+  - "Cross-modal Quantization"
+  - "Residual Quantization"
+  - "Contrastive Learning"
+  - "Semantic ID"
 date: 2026-05-08
 content_hash: 013e765a723b4ad3
 ---

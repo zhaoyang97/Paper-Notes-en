@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AGO: Adaptive Grounding for Open World 3D Occupancy Prediction
 description: >-
-  [ICCV 2025][Autonomous Driving][3D occupancy prediction] This paper proposes the AGO framework, which handles known categories via noise-augmented grounding training and unknown categories via a modality adapter for adaptive alignment. An information entropy-based open-world recognizer dynamically selects the optimal features at inference time. AGO surpasses VEON by 4.09 mIoU on the Occ3D-nuScenes self-supervised benchmark while exhibiting open-world zero-shot/few-shot transfer capability.
+  [ICCV 2025][Autonomous Driving][3D occupancy prediction] This paper proposes the AGO framework, which handles known categories via noise-augmented grounding training and unknown categories via a modality adapter for adap…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - 3D occupancy prediction
-  - open world
-  - VLM knowledge distillation
-  - self-supervised
-  - adaptive alignment
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "3D occupancy prediction"
+  - "open world"
+  - "VLM knowledge distillation"
+  - "self-supervised"
+  - "adaptive alignment"
 date: 2026-05-08
 content_hash: edc909931c0be8c5
 ---

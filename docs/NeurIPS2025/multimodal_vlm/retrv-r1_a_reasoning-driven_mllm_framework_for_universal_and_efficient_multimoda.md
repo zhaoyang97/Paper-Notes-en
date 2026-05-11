@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Retrv-R1: A Reasoning-Driven MLLM Framework for Universal and Efficient Multimodal Retrieval
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Multimodal Retrieval] This paper proposes Retrv-R1, the first R1-style reasoning-based multimodal retrieval framework. It reduces token consumption via an Information Compression Module (ICM), preserves complete information for hard candidates through a Details Inspection Mechanism (DIM), and employs a curriculum-based RL reward to balance effectiveness and efficiency, achieving state-of-the-art performance on universal multimodal retrieval benchmarks.
+  [NeurIPS 2025][Multimodal VLM][Multimodal Retrieval] This paper proposes Retrv-R1, the first R1-style reasoning-based multimodal retrieval framework. It reduces token consumption via an Information Compression Module (IC…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Multimodal Retrieval
-  - Reinforcement Learning
-  - Reasoning MLLM
-  - Information Compression
-  - DeepSeek-R1
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Multimodal Retrieval"
+  - "Reinforcement Learning"
+  - "Reasoning MLLM"
+  - "Information Compression"
+  - "DeepSeek-R1"
 date: 2026-05-08
 content_hash: b061e5da4acc31b5
 ---

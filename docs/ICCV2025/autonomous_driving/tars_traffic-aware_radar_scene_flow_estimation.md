@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TARS: Traffic-Aware Radar Scene Flow Estimation
 description: >-
-  [ICCV2025][Autonomous Driving][Radar scene flow] This paper proposes TARS, a traffic-aware radar scene flow estimation method that constructs a Traffic Vector Field (TVF) via joint object detection, capturing rigid-body motion at the traffic level rather than the instance level. TARS surpasses the state of the art by 15% and 23% on the VOD and a proprietary dataset, respectively.
+  [ICCV2025][Autonomous Driving][Radar scene flow] This paper proposes TARS, a traffic-aware radar scene flow estimation method that constructs a Traffic Vector Field (TVF) via joint object detection…
 tags:
-  - ICCV2025
-  - Autonomous Driving
-  - Radar scene flow
-  - traffic vector field
-  - point cloud motion estimation
-  - multi-task learning
-  - autonomous driving perception
+  - "ICCV2025"
+  - "Autonomous Driving"
+  - "Radar scene flow"
+  - "traffic vector field"
+  - "point cloud motion estimation"
+  - "multi-task learning"
+  - "autonomous driving perception"
 date: 2026-05-08
 content_hash: f8f59bd037023bf1
 ---

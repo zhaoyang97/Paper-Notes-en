@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Universal Multi-Domain Translation via Diffusion Routers
 description: >-
-  [ICLR 2026][Segmentation][Multi-Domain Translation] This paper proposes the Diffusion Router (DR), which employs a single noise prediction network conditioned on source/target domain labels to handle all cross-domain mappings. It supports indirect translation via a center domain and direct non-center-domain translation based on a variational upper-bound objective combined with Tweedie refinement, achieving state-of-the-art performance on three large-scale UMDT benchmarks.
+  [ICLR 2026][Segmentation][Multi-Domain Translation] This paper proposes the Diffusion Router (DR), which employs a single noise prediction network conditioned on source/target domain labels to handle all cross-domain map…
 tags:
-  - ICLR 2026
-  - Segmentation
-  - Multi-Domain Translation
-  - Diffusion Models
-  - Diffusion Router
-  - Tweedie Refinement
-  - Universal Translation
+  - "ICLR 2026"
+  - "Segmentation"
+  - "Multi-Domain Translation"
+  - "Diffusion Models"
+  - "Diffusion Router"
+  - "Tweedie Refinement"
+  - "Universal Translation"
 date: 2026-05-08
 content_hash: 89a880af00e2297c
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AVerImaTeC: A Dataset for Automatic Verification of Image-Text Claims with Evidence from the Web
 description: >-
-  [NeurIPS 2025][Social Computing][image-text verification] AVerImaTeC introduces the first image-text fact-checking dataset with complete evidence annotation — 1,297 real-world image-text claims, a 5-stage annotation pipeline (extraction → QA reasoning → sufficiency check → iterative refinement → second check), and temporally constrained evidence (to prevent temporal leakage). The baseline system achieves 82% accuracy with ground-truth evidence, but drops to 15–25% under automatic evidence retrieval, revealing the substantial challenges of image-text verification.
+  [NeurIPS 2025][Social Computing][image-text verification] AVerImaTeC introduces the first image-text fact-checking dataset with complete evidence annotation — 1,297 real-world image-text claims…
 tags:
-  - NeurIPS 2025
-  - Social Computing
-  - image-text verification
-  - evidence retrieval
-  - QA reasoning
-  - multimodal verification
-  - dataset
+  - "NeurIPS 2025"
+  - "Social Computing"
+  - "image-text verification"
+  - "evidence retrieval"
+  - "QA reasoning"
+  - "multimodal verification"
+  - "dataset"
 date: 2026-05-08
 content_hash: 96cabc5d998fdff5
 ---

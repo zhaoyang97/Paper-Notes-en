@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DragFlow: Unleashing DiT Priors with Region Based Supervision for Drag Editing
 description: >-
-  [ICLR 2026][Image Generation][Drag Editing] The first framework to incorporate the strong generative priors of FLUX (DiT) into drag editing. By replacing conventional point-level supervision with region-level affine supervision, combined with gradient-mask hard constraints and adapter-enhanced inversion, the method substantially improves drag editing quality.
+  [ICLR 2026][Image Generation][Drag Editing] The first framework to incorporate the strong generative priors of FLUX (DiT) into drag editing. By replacing conventional point-level supervision with region-level affine supe…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Drag Editing
-  - DiT
-  - Region-Based Supervision
-  - FLUX
-  - Affine Transformation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Drag Editing"
+  - "DiT"
+  - "Region-Based Supervision"
+  - "FLUX"
+  - "Affine Transformation"
 date: 2026-05-08
 content_hash: 26b572ee98e0c1c8
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Latent Principle Discovery for Language Model Self-Improvement
 description: >-
-  [NeurIPS 2025][Self-improvement] STaPLe proposes a posterior-regularized Monte Carlo EM algorithm that enables small 7–8B models to autonomously discover "principles" (latent principles) guiding self-correction. Through an iterative discover-and-learn loop, the method achieves self-improvement with an 8–10% win-rate gain on AlpacaEval and an average improvement of +0.3 on MT-Bench. The discovered principles can be compressed into an interpretable constitution via clustering.
+  [NeurIPS 2025][Interpretability][Self-improvement] STaPLe proposes a posterior-regularized Monte Carlo EM algorithm that enables small 7–8B models to autonomously discover "principles" (latent principles) guiding self-co…
 tags:
-  - NeurIPS 2025
-  - Self-improvement
-  - Latent principle discovery
-  - EM algorithm
-  - Constitutional AI
-  - Self-correction
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "Self-improvement"
+  - "Latent principle discovery"
+  - "EM algorithm"
+  - "Constitutional AI"
+  - "Self-correction"
 date: 2026-05-08
 content_hash: 96a53fa0a0935c0f
 ---

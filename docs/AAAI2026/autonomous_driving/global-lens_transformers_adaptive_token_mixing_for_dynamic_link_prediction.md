@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Global-Lens Transformers: Adaptive Token Mixing for Dynamic Link Prediction
 description: >-
-  [AAAI 2026][Autonomous Driving][dynamic graph learning] This paper proposes GLFormer, a lightweight attention-free Transformer framework for dynamic graph link prediction. It replaces self-attention with an adaptive token mixer conditioned on interaction order and temporal intervals, and employs a hierarchical aggregation mechanism to enlarge the temporal receptive field. GLFormer achieves performance on par with or superior to Transformer baselines across 6 benchmarks while substantially reducing computational complexity.
+  [AAAI 2026][Autonomous Driving][dynamic graph learning] This paper proposes GLFormer, a lightweight attention-free Transformer framework for dynamic graph link prediction. It replaces self-attention with an adaptive toke…
 tags:
-  - AAAI 2026
-  - Autonomous Driving
-  - dynamic graph learning
-  - link prediction
-  - attention mechanism replacement
-  - adaptive token mixing
-  - hierarchical aggregation
+  - "AAAI 2026"
+  - "Autonomous Driving"
+  - "dynamic graph learning"
+  - "link prediction"
+  - "attention mechanism replacement"
+  - "adaptive token mixing"
+  - "hierarchical aggregation"
 date: 2026-05-08
 content_hash: 064da8f2ab58a5c1
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Prediction-Powered Semi-Supervised Learning with Online Power Tuning
 description: >-
-  [NeurIPS 2025][Semi-supervised learning] This paper extends the Prediction-Powered Inference (PPI) framework to the training phase of semi-supervised learning. It proposes an unbiased gradient estimator and designs an online AdaGrad algorithm to dynamically tune the interpolation parameter $\lambda$ between pseudo-labels and true labels, achieving convergence rates matching the optimal fixed $\lambda$ while maintaining unbiasedness.
+  [NeurIPS 2025][Semi-supervised learning] This paper extends the Prediction-Powered Inference (PPI) framework to the training phase of semi-supervised learning. It proposes an unbiased gradient estimator and designs an on…
 tags:
-  - NeurIPS 2025
-  - Semi-supervised learning
-  - prediction-powered inference
-  - online learning
-  - pseudo-label debiasing
-  - AdaGrad
+  - "NeurIPS 2025"
+  - "Semi-supervised learning"
+  - "prediction-powered inference"
+  - "online learning"
+  - "pseudo-label debiasing"
+  - "AdaGrad"
 date: 2026-05-08
 content_hash: bc6b7eeebfe46197
 ---

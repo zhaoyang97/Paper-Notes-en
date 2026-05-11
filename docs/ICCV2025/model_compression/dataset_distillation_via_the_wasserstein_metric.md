@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dataset Distillation via the Wasserstein Metric
 description: >-
-  [ICCV 2025][Model Compression][Dataset Distillation] This paper proposes WMDD (Wasserstein Metric-based Dataset Distillation), which replaces MMD with Wasserstein barycenters for distribution matching and incorporates per-class BatchNorm regularization, achieving state-of-the-art dataset distillation performance on large-scale benchmarks including ImageNet-1K.
+  [ICCV 2025][Model Compression][Dataset Distillation] This paper proposes WMDD (Wasserstein Metric-based Dataset Distillation), which replaces MMD with Wasserstein barycenters for distribution matching and incorporates pe…
 tags:
-  - ICCV 2025
-  - Model Compression
-  - Dataset Distillation
-  - Wasserstein Distance
-  - Optimal Transport
-  - Distribution Matching
-  - BatchNorm Regularization
+  - "ICCV 2025"
+  - "Model Compression"
+  - "Dataset Distillation"
+  - "Wasserstein Distance"
+  - "Optimal Transport"
+  - "Distribution Matching"
+  - "BatchNorm Regularization"
 date: 2026-05-08
 content_hash: 006081cd7f0ec7e9
 ---

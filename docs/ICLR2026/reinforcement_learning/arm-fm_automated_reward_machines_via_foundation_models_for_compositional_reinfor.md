@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ARM-FM: Automated Reward Machines via Foundation Models for Compositional Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Reward machines] This paper proposes ARM-FM, a framework that leverages foundation models (e.g., GPT-4o) to automatically generate Language-Aligned Reward Machines (LARMs) from natural language task descriptions — encompassing the automaton structure, executable label functions, and per-state natural language descriptions — providing RL agents with compositional dense reward signals. The framework successfully solves sparse-reward long-horizon tasks that standard RL completely fails to learn, across environments including MiniGrid, Craftium (3D Minecraft), and Meta-World, while achieving zero-shot task generalization.
+  [ICLR 2026][Reinforcement Learning][Reward machines] This paper proposes ARM-FM, a framework that leverages foundation models (e.g., GPT-4o) to automatically generate Language-Aligned Reward Machines (LARMs) from natural…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Reward machines
-  - foundation models
-  - compositional RL
-  - language-aligned automata
-  - zero-shot generalization
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Reward machines"
+  - "foundation models"
+  - "compositional RL"
+  - "language-aligned automata"
+  - "zero-shot generalization"
 date: 2026-05-08
 content_hash: db3d5d2332fd5cdb
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Image Super-Resolution with Guarantees via Conformalized Generative Models
 description: >-
-  [NEURIPS2025][Image Generation][Super-Resolution] This work applies Conformal Prediction to construct binary "confidence masks" for generative image super-resolution models, reliably identifying trustworthy regions in generated images with rigorous statistical guarantees.
+  [NEURIPS2025][Image Generation][Super-Resolution] This work applies Conformal Prediction to construct binary "confidence masks" for generative image super-resolution models…
 tags:
-  - NEURIPS2025
-  - Image Generation
-  - Super-Resolution
-  - Uncertainty Quantification
-  - Conformal Prediction
-  - Diffusion Models
-  - Confidence Masks
+  - "NEURIPS2025"
+  - "Image Generation"
+  - "Super-Resolution"
+  - "Uncertainty Quantification"
+  - "Conformal Prediction"
+  - "Diffusion Models"
+  - "Confidence Masks"
 date: 2026-05-08
 content_hash: 92eb5d75bc79aa0e
 ---

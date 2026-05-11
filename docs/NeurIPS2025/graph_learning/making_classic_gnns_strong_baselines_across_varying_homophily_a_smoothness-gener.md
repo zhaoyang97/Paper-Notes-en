@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Making Classic GNNs Strong Baselines Across Varying Homophily: A Smoothness-Generalization Perspective
 description: >-
-  [NeurIPS 2025][Graph Learning][GNN] This paper theoretically reveals the smoothness-generalization dilemma inherent in GNN message passing, and proposes the IGNN framework with three minimal design principles — separative neighborhood transformation, inceptive aggregation, and neighborhood relationship learning — to systematically alleviate this dilemma. IGNN achieves top performance among 30 baselines and demonstrates universality across both homophilic and heterophilic graphs.
+  [NeurIPS 2025][Graph Learning][GNN] This paper theoretically reveals the smoothness-generalization dilemma inherent in GNN message passing…
 tags:
-  - NeurIPS 2025
-  - Graph Learning
-  - GNN
-  - Homophily
-  - Heterophily
-  - Smoothness-Generalization Dilemma
-  - IGNN
+  - "NeurIPS 2025"
+  - "Graph Learning"
+  - "GNN"
+  - "Homophily"
+  - "Heterophily"
+  - "Smoothness-Generalization Dilemma"
+  - "IGNN"
 date: 2026-05-08
 content_hash: 470e24662fb4ae73
 ---

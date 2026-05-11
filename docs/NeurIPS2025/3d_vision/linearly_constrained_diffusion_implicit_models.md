@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Linearly Constrained Diffusion Implicit Models
 description: >-
-  [NeurIPS 2025][3D Vision][diffusion models] This paper proposes CDIM, a DDIM-based algorithm for solving linear inverse problems. By aligning the residual energy with the $\chi^2$ distribution of the forward diffusion process, CDIM adaptively controls the number and step size of projection steps, achieving inference speeds 10–50× faster than DPS while exactly satisfying measurement constraints in the noiseless case.
+  [NeurIPS 2025][3D Vision][diffusion models] This paper proposes CDIM, a DDIM-based algorithm for solving linear inverse problems. By aligning the residual energy with the $\chi^2$ distribution of the forward diffusion pr…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - diffusion models
-  - inverse problems
-  - linear constraints
-  - DDIM
-  - accelerated sampling
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "diffusion models"
+  - "inverse problems"
+  - "linear constraints"
+  - "DDIM"
+  - "accelerated sampling"
 date: 2026-05-08
 content_hash: 5a89dab5f08430c1
 ---

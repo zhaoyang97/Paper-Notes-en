@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TG-Field: Geometry-Aware Radiative Gaussian Fields for Tomographic Reconstruction
 description: >-
-  [AAAI 2026][3D Vision][CT Reconstruction] This paper proposes TG-Field, a geometry-aware Gaussian deformation framework for extremely sparse-view CT reconstruction. It employs a multi-resolution hash encoder to model spatial geometric priors, a spatiotemporal attention module and a motion flow network to handle dynamic CT, achieving state-of-the-art performance on both static and dynamic CT reconstruction.
+  [AAAI 2026][3D Vision][CT Reconstruction] This paper proposes TG-Field, a geometry-aware Gaussian deformation framework for extremely sparse-view CT reconstruction. It employs a multi-resolution hash encoder to model spa…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - CT Reconstruction
-  - 3D Gaussian Splatting
-  - Sparse-View
-  - Dynamic CT
-  - Deformation Field
+  - "AAAI 2026"
+  - "3D Vision"
+  - "CT Reconstruction"
+  - "3D Gaussian Splatting"
+  - "Sparse-View"
+  - "Dynamic CT"
+  - "Deformation Field"
 date: 2026-05-08
 content_hash: 501a813f717637cd
 ---

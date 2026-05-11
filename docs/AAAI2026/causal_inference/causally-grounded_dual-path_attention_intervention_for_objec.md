@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Causally-Grounded Dual-Path Attention Intervention for Object Hallucination Mitigation in LVLMs
 description: >-
-  [AAAI 2026][Causal Inference][Object Hallucination] This paper proposes Owl, a framework that models visual and textual attention as mediating variables within a structural causal model, introduces the VTACR metric to quantify cross-modal attention imbalance, and designs VTACR-guided adaptive attention modulation combined with a dual-path contrastive decoding strategy, achieving state-of-the-art hallucination mitigation on POPE and CHAIR benchmarks.
+  [AAAI 2026][Causal Inference][Object Hallucination] This paper proposes Owl, a framework that models visual and textual attention as mediating variables within a structural causal model…
 tags:
-  - AAAI 2026
-  - Causal Inference
-  - Object Hallucination
-  - Attention Intervention
-  - Contrastive Decoding
-  - Large Vision-Language Models
+  - "AAAI 2026"
+  - "Causal Inference"
+  - "Object Hallucination"
+  - "Attention Intervention"
+  - "Contrastive Decoding"
+  - "Large Vision-Language Models"
 date: 2026-05-08
 content_hash: 393bab6c948ef3ea
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] WMCopier: Forging Invisible Image Watermarks on Arbitrary Images
 description: >-
-  [NeurIPS 2025][Image Generation][Watermark Forging Attack] This paper proposes WMCopier, the first diffusion-model-based no-box watermark forging attack that requires no prior knowledge of the target watermarking algorithm. By training an unconditional diffusion model to learn the watermark distribution, injecting watermark signals via shallow DDIM inversion, and refining results through iterative optimization, WMCopier achieves high forging success rates against both open-source and commercial watermarking systems, including Amazon.
+  [NeurIPS 2025][Image Generation][Watermark Forging Attack] This paper proposes WMCopier, the first diffusion-model-based no-box watermark forging attack that requires no prior knowledge of the target watermarking algorit…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Watermark Forging Attack
-  - Diffusion Models
-  - DDIM Inversion
-  - Invisible Watermark
-  - No-Box Attack
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Watermark Forging Attack"
+  - "Diffusion Models"
+  - "DDIM Inversion"
+  - "Invisible Watermark"
+  - "No-Box Attack"
 date: 2026-05-08
 content_hash: df6af8b7fb46d1a1
 ---

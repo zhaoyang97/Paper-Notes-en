@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Hashed Watermark as a Filter: A Unified Defense Against Forging and Overwriting Attacks in Neural Network Watermarking
 description: >-
-  [AAAI 2026][AI Safety][Neural network watermarking] This paper proposes NeuralMark—a weight-based watermarking method built on a hashed watermark filter. It leverages the SHAKE-256 hash function to derive irreversible binary watermarks from secret key matrices, which serve as private filters for selecting embedding parameters. The avalanche effect blocks gradient-based reverse engineering against forging attacks, while multi-round filtering minimizes parameter overlap to resist overwriting attacks. Effectiveness and robustness are validated across 13 CNN/Transformer architectures on 5 image classification tasks and 1 text generation task.
+  [AAAI 2026][AI Safety][Neural network watermarking] This paper proposes NeuralMark—a weight-based watermarking method built on a hashed watermark filter. It leverages the SHAKE-256 hash function to derive irreversible bi…
 tags:
-  - AAAI 2026
-  - AI Safety
-  - Neural network watermarking
-  - model intellectual property protection
-  - forging attack
-  - overwriting attack
-  - hash function
-  - white-box watermarking
+  - "AAAI 2026"
+  - "AI Safety"
+  - "Neural network watermarking"
+  - "model intellectual property protection"
+  - "forging attack"
+  - "overwriting attack"
+  - "hash function"
+  - "white-box watermarking"
 date: 2026-05-08
 content_hash: 57e81cdf362b823c
 ---

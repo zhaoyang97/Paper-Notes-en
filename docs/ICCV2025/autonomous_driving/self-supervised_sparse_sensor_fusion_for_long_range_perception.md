@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Self-Supervised Sparse Sensor Fusion for Long Range Perception
 description: >-
-  [ICCV 2025][Autonomous Driving][long-range perception] LRS4Fusion proposes a long-range LiDAR-camera fusion framework based on sparse voxel representations, combined with a self-supervised pretraining strategy via sparse occupancy and velocity field reconstruction, achieving state-of-the-art performance within a 250-meter perception range: a 26.6% improvement in object detection mAP and a 30.5% reduction in LiDAR prediction Chamfer Distance.
+  [ICCV 2025][Autonomous Driving][long-range perception] LRS4Fusion proposes a long-range LiDAR-camera fusion framework based on sparse voxel representations…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - long-range perception
-  - sparse voxel fusion
-  - self-supervised pretraining
-  - LiDAR-camera fusion
-  - depth estimation
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "long-range perception"
+  - "sparse voxel fusion"
+  - "self-supervised pretraining"
+  - "LiDAR-camera fusion"
+  - "depth estimation"
 date: 2026-05-08
 content_hash: 332f648cef0b239d
 ---

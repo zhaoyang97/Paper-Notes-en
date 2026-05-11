@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Rethinking Direct Preference Optimization in Diffusion Models
 description: >-
-  [SPIGM@NeurIPS 2025 / AAAI 2026 (Oral)][LLM Alignment][Diffusion Models] To address two core issues in DPO for diffusion models — limited exploration and reward scale imbalance — this paper proposes a stable reference model update strategy and a timestep-aware training strategy, both of which can be integrated into various preference optimization algorithms.
+  [SPIGM@NeurIPS 2025 / AAAI 2026 (Oral)][LLM Alignment][Diffusion Models] To address two core issues in DPO for diffusion models — limited exploration and reward scale imbalance — this paper proposes a stable reference mo…
 tags:
-  - SPIGM@NeurIPS 2025 / AAAI 2026 (Oral)
-  - LLM Alignment
-  - Diffusion Models
-  - DPO
-  - Preference Optimization
-  - Reference Model Update
-  - Timestep-Aware
+  - "SPIGM@NeurIPS 2025 / AAAI 2026 (Oral)"
+  - "LLM Alignment"
+  - "Diffusion Models"
+  - "DPO"
+  - "Preference Optimization"
+  - "Reference Model Update"
+  - "Timestep-Aware"
 date: 2026-05-08
 content_hash: c6dc63a70b2e815e
 ---

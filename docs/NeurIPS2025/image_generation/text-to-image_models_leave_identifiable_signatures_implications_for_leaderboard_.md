@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Text-to-Image Models Leave Identifiable Signatures: Implications for Leaderboard Security
 description: >-
-  [NeurIPS 2025 (Workshop: Lock-LLM)][Image Generation][text-to-image models] This paper demonstrates that text-to-image (T2I) models leave identifiable "signatures" in their generated images due to differences in training data, architecture, and scale. Even without controlling the input prompt, an adversary can de-anonymize models on leaderboards via simple centroid classification in CLIP embedding space, achieving 87% Top-1 accuracy, thereby enabling ranking manipulation attacks.
+  [NeurIPS 2025 (Workshop: Lock-LLM)][Image Generation][text-to-image models] This paper demonstrates that text-to-image (T2I) models leave identifiable "signatures" in their generated images due to differences in training…
 tags:
   - "NeurIPS 2025 (Workshop: Lock-LLM)"
-  - Image Generation
-  - text-to-image models
-  - leaderboard security
-  - model de-anonymization
-  - CLIP embeddings
-  - adversarial manipulation
+  - "Image Generation"
+  - "text-to-image models"
+  - "leaderboard security"
+  - "model de-anonymization"
+  - "CLIP embeddings"
+  - "adversarial manipulation"
 date: 2026-05-08
 content_hash: 05a5bdd6afa8c9c7
 ---

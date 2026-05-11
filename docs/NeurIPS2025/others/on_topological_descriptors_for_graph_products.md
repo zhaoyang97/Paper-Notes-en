@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] On Topological Descriptors for Graph Products
 description: >-
-  [NeurIPS 2025][topological descriptors] This paper systematically investigates the expressive power of topological descriptors — Euler Characteristic (EC) and Persistent Homology (PH) — computed on (box) products of graphs under various filtrations. It proves that PH descriptors on graph products are strictly more expressive than those computed on individual graphs, whereas EC does not enjoy this property, and proposes an efficient algorithm for computing PH on product graphs.
+  [NeurIPS 2025][topological descriptors] This paper systematically investigates the expressive power of topological descriptors — Euler Characteristic (EC) and Persistent Homology (PH) — computed on (box) products of grap…
 tags:
-  - NeurIPS 2025
-  - topological descriptors
-  - graph products
-  - Euler characteristic
-  - persistent homology
-  - graph classification
+  - "NeurIPS 2025"
+  - "topological descriptors"
+  - "graph products"
+  - "Euler characteristic"
+  - "persistent homology"
+  - "graph classification"
 date: 2026-05-08
 content_hash: 56fc0f5db511a748
 ---

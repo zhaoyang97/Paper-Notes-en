@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] When No Paths Lead to Rome: Benchmarking Systematic Neural Relational Reasoning
 description: >-
-  [NeurIPS 2025][Graph Learning][relational reasoning] This paper introduces the NoRA benchmark, which systematically breaks the assumption underlying existing relational reasoning benchmarks that "reasoning can be reduced to path composition." By introducing off-path reasoning, ambiguous facts, and multi-relational settings, it reveals fundamental deficiencies in all existing models—including o3—on off-path reasoning.
+  [NeurIPS 2025][Graph Learning][relational reasoning] This paper introduces the NoRA benchmark, which systematically breaks the assumption underlying existing relational reasoning benchmarks that "reasoning can be reduced…
 tags:
-  - NeurIPS 2025
-  - Graph Learning
-  - relational reasoning
-  - benchmark
-  - off-path reasoning
-  - systematic generalization
-  - graph neural networks
+  - "NeurIPS 2025"
+  - "Graph Learning"
+  - "relational reasoning"
+  - "benchmark"
+  - "off-path reasoning"
+  - "systematic generalization"
+  - "graph neural networks"
 date: 2026-05-08
 content_hash: 59ca117ce07d46b0
 ---

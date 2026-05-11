@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] AtomicVLA: Unlocking the Potential of Atomic Skill Learning in Robots
 description: >-
-  [CVPR 2026][Robotics][VLA] This paper proposes AtomicVLA, a unified planning-execution framework built upon π₀ that adaptively switches between Think and Act modes to generate atomic skill abstractions, and employs a Skill-Guided MoE (SG-MoE) to route actions to specialized experts. The approach improves LIBERO-LONG success rate from 85.2% to 95.2% (+10%), achieves +18.3% on real-world Franka long-horizon tasks, and +21% on continual learning benchmarks.
+  [CVPR 2026][Robotics][VLA] This paper proposes AtomicVLA, a unified planning-execution framework built upon π₀ that adaptively switches between Think and Act modes to generate atomic skill abstractions…
 tags:
-  - CVPR 2026
-  - Robotics
-  - VLA
-  - Atomic Skills
-  - Mixture-of-Experts
-  - Continual Learning
-  - Task Planning
-  - Skill Routing
+  - "CVPR 2026"
+  - "Robotics"
+  - "VLA"
+  - "Atomic Skills"
+  - "Mixture-of-Experts"
+  - "Continual Learning"
+  - "Task Planning"
+  - "Skill Routing"
 date: 2026-05-08
 content_hash: 195973144e6561b1
 ---

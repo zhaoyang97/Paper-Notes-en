@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Scaling Speech Tokenizers with Diffusion Autoencoders
 description: >-
-  [ICLR 2026][Audio & Speech][Speech Tokenizer] This paper proposes SiTok (Speech Diffusion Tokenizer), which employs a diffusion autoencoder to jointly train the encoder–quantizer–decoder in a single stage (rather than two stages), incorporates CTC-based semantic regularization to ensure discrete tokens retain linguistic information, and scales to 1.6B parameters trained on 22 million hours of speech data. SiTok achieves strong performance at an extremely low token rate (12.5 Hz / 200 bps), attaining 3.34% WER (reconstruction) and 4.95 WER (LLM ASR) simultaneously.
+  [ICLR 2026][Audio & Speech][Speech Tokenizer] This paper proposes SiTok (Speech Diffusion Tokenizer), which employs a diffusion autoencoder to jointly train the encoder–quantizer–decoder in a single stage (rather than tw…
 tags:
-  - ICLR 2026
+  - "ICLR 2026"
   - "Audio & Speech"
-  - Speech Tokenizer
-  - Diffusion Autoencoder
-  - Semantic Regularization
-  - Low Bitrate
-  - CTC Loss
+  - "Speech Tokenizer"
+  - "Diffusion Autoencoder"
+  - "Semantic Regularization"
+  - "Low Bitrate"
+  - "CTC Loss"
 date: 2026-05-08
 content_hash: a28a0a94dfa224ef
 ---

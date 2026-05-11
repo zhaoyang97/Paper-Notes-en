@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Fast and Stable Riemannian Metrics on SPD Manifolds via Cholesky Product Geometry
 description: >-
-  [ICLR 2026][SPD manifold] This paper reveals a simple product structure on the Cholesky manifold and, building upon it, proposes two fast and numerically stable SPD metrics (PCM and BWCM) with closed-form expressions for all Riemannian operators, achieving simultaneous improvements in accuracy, efficiency, and numerical stability for SPD deep learning.
+  [ICLR 2026][SPD manifold] This paper reveals a simple product structure on the Cholesky manifold and, building upon it, proposes two fast and numerically stable SPD metrics (PCM and BWCM) with closed-form expressions for…
 tags:
-  - ICLR 2026
-  - SPD manifold
-  - Riemannian metric
-  - Cholesky decomposition
-  - product geometry
-  - SPD neural networks
+  - "ICLR 2026"
+  - "SPD manifold"
+  - "Riemannian metric"
+  - "Cholesky decomposition"
+  - "product geometry"
+  - "SPD neural networks"
 date: 2026-05-08
 content_hash: 697be345485df979
 ---

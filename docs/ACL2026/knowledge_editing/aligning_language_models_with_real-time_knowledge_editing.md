@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Aligning Language Models with Real-time Knowledge Editing
 description: >-
-  [ACL 2026][Knowledge Editing][Real-time Knowledge Editing] This paper introduces CRAFT (a continuously updated Chinese financial knowledge editing dataset) and KEDAS (a knowledge editing alignment paradigm based on diverse edit augmentation and self-adaptive inference), addressing the inability of existing knowledge editing methods to balance edit success rate, locality, and portability in real-time scenarios.
+  [ACL 2026][Knowledge Editing][Real-time Knowledge Editing] This paper introduces CRAFT (a continuously updated Chinese financial knowledge editing dataset) and KEDAS (a knowledge editing alignment paradigm based on diver…
 tags:
-  - ACL 2026
-  - Knowledge Editing
-  - Real-time Knowledge Editing
-  - Knowledge Alignment
-  - Dataset Contamination
-  - Diverse Augmentation
-  - Self-Adaptive Inference
+  - "ACL 2026"
+  - "Knowledge Editing"
+  - "Real-time Knowledge Editing"
+  - "Knowledge Alignment"
+  - "Dataset Contamination"
+  - "Diverse Augmentation"
+  - "Self-Adaptive Inference"
 date: 2025-04-17
 content_hash: f37b76ed1e42eee6
 ---

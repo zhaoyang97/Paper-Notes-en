@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Detecting AI-Generated Forgeries via Iterative Manifold Deviation Amplification
 description: >-
-  [CVPR 2026][Segmentation][AI-generated image detection] This paper proposes IFA-Net, which detects AI-generated forgeries from the perspective of "modeling what is real" rather than "learning what is fake." A frozen MAE reconstructs the input to produce residuals that expose regions deviating from the natural image manifold. A two-stage closed-loop pipeline—coarse detection → task-adaptive prior injection → residual amplification → refinement—iteratively amplifies manifold deviation, achieving state-of-the-art performance on both diffusion inpainting and traditional image tampering detection.
+  [CVPR 2026][Segmentation][AI-generated image detection] This paper proposes IFA-Net, which detects AI-generated forgeries from the perspective of "modeling what is real" rather than "learning what is fake." A frozen MAE…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - AI-generated image detection
-  - manifold deviation
-  - MAE reconstruction
-  - iterative amplification
-  - image forgery localization
+  - "CVPR 2026"
+  - "Segmentation"
+  - "AI-generated image detection"
+  - "manifold deviation"
+  - "MAE reconstruction"
+  - "iterative amplification"
+  - "image forgery localization"
 date: 2026-05-08
 content_hash: 9d8979be65b322d5
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Efficient Training-Free Online Routing for High-Volume Multi-LLM Serving
 description: >-
-  [NeurIPS 2025][LLM Efficiency][LLM routing] This paper proposes PORT, the first training-free online LLM routing algorithm. PORT estimates query features via approximate nearest neighbor search (ANNS) and performs a one-shot optimization of dual variables as routing weights on a small set of initial queries. Under a limited token budget, PORT achieves near-offline-optimal routing performance with a $1-o(1)$ competitive ratio, delivering on average 3.55× performance improvement, 1.85× cost efficiency, and 4.25× throughput over baselines.
+  [NeurIPS 2025][LLM Efficiency][LLM routing] This paper proposes PORT, the first training-free online LLM routing algorithm. PORT estimates query features via approximate nearest neighbor search (ANNS) and performs a one-…
 tags:
-  - NeurIPS 2025
-  - LLM Efficiency
-  - LLM routing
-  - online optimization
-  - approximate nearest neighbor search
-  - dual optimization
-  - multi-model serving
+  - "NeurIPS 2025"
+  - "LLM Efficiency"
+  - "LLM routing"
+  - "online optimization"
+  - "approximate nearest neighbor search"
+  - "dual optimization"
+  - "multi-model serving"
 date: 2026-05-08
 content_hash: c8ea83cdebf8b828
 ---

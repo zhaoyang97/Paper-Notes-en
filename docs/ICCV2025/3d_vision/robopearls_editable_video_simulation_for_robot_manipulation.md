@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RoboPearls: Editable Video Simulation for Robot Manipulation
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper presents RoboPearls, an editable video simulation framework built upon 3D Gaussian Splatting (3DGS) that constructs photorealistic simulation environments from demonstration videos. It supports rich scene editing operations via Incremental Semantic Distillation (ISD) and a 3D-regularized NNFM loss, and employs a multi-LLM agent system to automate the simulation generation pipeline, forming a VLM-in-the-loop robot learning augmentation system.
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper presents RoboPearls, an editable video simulation framework built upon 3D Gaussian Splatting (3DGS) that constructs photorealistic simulation environments from dem…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - Editable Simulation
-  - Robot Manipulation
-  - LLM Agent
-  - Sim-to-Real
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Editable Simulation"
+  - "Robot Manipulation"
+  - "LLM Agent"
+  - "Sim-to-Real"
 date: 2026-05-08
 content_hash: 8a46b20dbba0f207
 ---

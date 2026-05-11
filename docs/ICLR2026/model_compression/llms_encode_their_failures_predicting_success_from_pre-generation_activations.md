@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LLMs Encode Their Failures: Predicting Success from Pre-Generation Activations
 description: >-
-  [ICLR 2026][Model Compression][Difficulty Prediction] This paper demonstrates that LLMs encode model-specific success probability information in their pre-generation internal activations. Training linear probes to extract this signal enables efficient model routing that matches the accuracy of the strongest model while reducing inference cost by 70% on benchmarks such as MATH.
+  [ICLR 2026][Model Compression][Difficulty Prediction] This paper demonstrates that LLMs encode model-specific success probability information in their pre-generation internal activations. Training linear probes to extrac…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Difficulty Prediction
-  - Linear Probe
-  - Model Routing
-  - Inference-Time Compute
-  - Success Prediction
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Difficulty Prediction"
+  - "Linear Probe"
+  - "Model Routing"
+  - "Inference-Time Compute"
+  - "Success Prediction"
 date: 2026-05-08
 content_hash: cccc5250f0cc929a
 ---

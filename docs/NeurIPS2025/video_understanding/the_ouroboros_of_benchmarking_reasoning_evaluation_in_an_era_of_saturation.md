@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The Ouroboros of Benchmarking: Reasoning Evaluation in an Era of Saturation
 description: >-
-  [NeurIPS 2025][Video Understanding][benchmark saturation] Through a systematic analysis of 52 reasoning benchmarks across three major model families—OpenAI, Anthropic, and Google—this paper identifies an "ouroboros" cycle: old benchmarks are rapidly saturated → new benchmarks are created to restore discriminability → new benchmarks are rapidly saturated in turn. This cycle calls into question whether improvements in benchmark scores genuinely reflect generalized reasoning ability or merely overfit to specific evaluation sets.
+  [NeurIPS 2025][Video Understanding][benchmark saturation] Through a systematic analysis of 52 reasoning benchmarks across three major model families—OpenAI, Anthropic…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
-  - benchmark saturation
-  - reasoning evaluation
-  - large language models
-  - leaderboards
-  - ouroboros cycle
+  - "NeurIPS 2025"
+  - "Video Understanding"
+  - "benchmark saturation"
+  - "reasoning evaluation"
+  - "large language models"
+  - "leaderboards"
+  - "ouroboros cycle"
 date: 2026-05-08
 content_hash: 2be9e008ae2d2c2a
 ---

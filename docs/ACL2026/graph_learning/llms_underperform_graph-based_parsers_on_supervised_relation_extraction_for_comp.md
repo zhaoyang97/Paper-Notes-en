@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LLMs Underperform Graph-Based Parsers on Supervised Relation Extraction for Complex Graphs
 description: >-
-  [ACL 2026][Graph Learning][Relation Extraction] Across six RE datasets comparing four LLMs (7B-70B) against a lightweight graph parser (124M parameters), graph parsers consistently and significantly outperform LLMs when average relation graph edges exceed ~18, with F1 gaps reaching 13.2 points on the most complex ERFGC dataset, revealing fundamental LLM limitations in complex linguistic graph structure extraction.
+  [ACL 2026][Graph Learning][Relation Extraction] Across six RE datasets comparing four LLMs (7B-70B) against a lightweight graph parser (124M parameters)…
 tags:
-  - ACL 2026
-  - Graph Learning
-  - Relation Extraction
-  - Graph Parser
-  - LLM Limitations
-  - Graph Complexity
-  - Supervised Learning
+  - "ACL 2026"
+  - "Graph Learning"
+  - "Relation Extraction"
+  - "Graph Parser"
+  - "LLM Limitations"
+  - "Graph Complexity"
+  - "Supervised Learning"
 content_hash: 66bdf9341ee7da35
 ---
 

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] InstaScene: Towards Complete 3D Instance Decomposition and Reconstruction from Cluttered Scenes
 description: >-
-  [3D Vision] InstaScene proposes a unified framework for instance decomposition and complete reconstruction from cluttered scenes. It constructs a spatial contrastive learning scheme via tracked Gaussian rasterization for accurate instance segmentation, and designs an in-situ generation pipeline that leverages available observations and geometric cues to guide a 3D generative model toward complete object reconstruction.
+  [3D Vision] InstaScene proposes a unified framework for instance decomposition and complete reconstruction from cluttered scenes. It constructs a spatial contrastive learning scheme via tracked Gaussian rasterization for…
 tags:
-  - 3D Vision
+  - "3D Vision"
 date: 2026-05-08
 content_hash: 64999fc8f587fb4b
 ---

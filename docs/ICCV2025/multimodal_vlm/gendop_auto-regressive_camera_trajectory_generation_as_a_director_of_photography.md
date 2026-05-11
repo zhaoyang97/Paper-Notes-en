@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GenDoP: Auto-regressive Camera Trajectory Generation as a Director of Photography
 description: >-
-  [ICCV 2025][Multimodal VLM][camera trajectory generation] This paper introduces the DataDoP dataset (29K free-moving camera trajectories with descriptions extracted from real films) and the GenDoP auto-regressive Transformer model, which generates artistic, high-quality camera motion trajectories conditioned on text and/or RGBD input, outperforming existing methods in controllability, motion smoothness, and complexity.
+  [ICCV 2025][Multimodal VLM][camera trajectory generation] This paper introduces the DataDoP dataset (29K free-moving camera trajectories with descriptions extracted from real films) and the GenDoP auto-regressive Transfo…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - camera trajectory generation
-  - auto-regressive model
-  - cinematography
-  - multimodal conditional generation
-  - dataset construction
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "camera trajectory generation"
+  - "auto-regressive model"
+  - "cinematography"
+  - "multimodal conditional generation"
+  - "dataset construction"
 date: 2026-05-08
 content_hash: c9f04895630e05ac
 ---

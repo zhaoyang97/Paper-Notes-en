@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ATLAS: Autoformalizing Theorems through Lifting, Augmentation, and Synthesis of Data
 description: >-
-  [NeurIPS 2025][Model Compression][Autoformalization] ATLAS proposes a data generation framework based on a concept repository, expert iteration with knowledge distillation, and two novel augmentation strategies. It constructs a parallel corpus of 117K theorem statements, and achieves SOTA on all autoformalization benchmarks after fine-tuning Llama3.1-8B-Instruct.
+  [NeurIPS 2025][Model Compression][Autoformalization] ATLAS proposes a data generation framework based on a concept repository, expert iteration with knowledge distillation…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Autoformalization
-  - Lean4
-  - Knowledge Distillation
-  - Expert Iteration
-  - Data Augmentation
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Autoformalization"
+  - "Lean4"
+  - "Knowledge Distillation"
+  - "Expert Iteration"
+  - "Data Augmentation"
 date: 2026-05-08
 content_hash: 8e7b725301be6872
 ---

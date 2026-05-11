@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] APVR: Hour-Level Long Video Understanding with Adaptive Pivot Visual Information Retrieval
 description: >-
-  [AAAI 2026][Video Understanding][long video understanding] This paper proposes APVR, a training-free dual-granularity visual information retrieval framework. At the frame level, it iteratively retrieves keyframes (up to 1024) via query expansion and spatiotemporal semantic confidence scoring; at the token level, it compresses visual tokens through query-aware attention-driven selection. APVR overcomes memory limitations to process hour-long videos, achieving improvements of up to 9.5%, 4.6%, and 9.7% on LongVideoBench, VideoMME, and MLVU, respectively.
+  [AAAI 2026][Video Understanding][long video understanding] This paper proposes APVR, a training-free dual-granularity visual information retrieval framework. At the frame level…
 tags:
-  - AAAI 2026
-  - Video Understanding
-  - long video understanding
-  - training-free
-  - keyframe retrieval
-  - token compression
-  - dual-granularity retrieval
+  - "AAAI 2026"
+  - "Video Understanding"
+  - "long video understanding"
+  - "training-free"
+  - "keyframe retrieval"
+  - "token compression"
+  - "dual-granularity retrieval"
 date: 2026-05-08
 content_hash: a69bc1106365da65
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] FOXES: A Framework For Operational X-ray Emission Synthesis
 description: >-
-  [NeurIPS 2025][Medical Imaging][Vision Transformer] This paper proposes FOXES, a Vision Transformer-based framework that translates multi-channel solar EUV observation images into soft X-ray (SXR) flux, achieving an overall Pearson correlation of 0.982. The framework lays the groundwork for far-side solar flare detection and the construction of more complete flare catalogs.
+  [NeurIPS 2025][Medical Imaging][Vision Transformer] This paper proposes FOXES, a Vision Transformer-based framework that translates multi-channel solar EUV observation images into soft X-ray (SXR) flux…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Vision Transformer
-  - Solar Flares
-  - EUV-SXR Translation
-  - Space Weather
-  - Attention Maps
-  - Flare Classification
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Vision Transformer"
+  - "Solar Flares"
+  - "EUV-SXR Translation"
+  - "Space Weather"
+  - "Attention Maps"
+  - "Flare Classification"
 date: 2026-05-08
 content_hash: 37911120326d9599
 ---

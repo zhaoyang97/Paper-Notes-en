@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Exploring Conditions for Diffusion Models in Robotic Control
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Models] This paper investigates how to leverage the conditioning mechanisms of pretrained text-to-image diffusion models to generate task-adaptive visual representations for robotic control. It identifies that text conditioning fails in control environments due to domain gap, and proposes ORCA, a framework that employs learnable task prompts and per-frame visual prompts as conditioning signals. ORCA achieves state-of-the-art performance across 12 tasks on three benchmarks: DMC, MetaWorld, and Adroit.
+  [CVPR 2026][Image Generation][Diffusion Models] This paper investigates how to leverage the conditioning mechanisms of pretrained text-to-image diffusion models to generate task-adaptive visual representations for roboti…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Models
-  - Robotic Control
-  - Visual Representations
-  - Task Adaptation
-  - Learnable Prompts
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "Robotic Control"
+  - "Visual Representations"
+  - "Task Adaptation"
+  - "Learnable Prompts"
 date: 2026-05-08
 content_hash: cfca8ea5c0e7f432
 ---

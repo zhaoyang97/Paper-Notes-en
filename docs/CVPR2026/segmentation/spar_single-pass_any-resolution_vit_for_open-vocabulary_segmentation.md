@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SPAR: Single-Pass Any-Resolution ViT for Open-Vocabulary Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Open-vocabulary segmentation] This paper proposes SPAR, which distills the spatial reasoning capability of a fine-stride sliding window teacher into a single-pass student of identical architecture, transforming a ViT into a resolution-agnostic dense feature extractor. SPAR achieves +10.5 mIoU over the single-pass baseline in open-vocabulary segmentation while running 52× faster than the teacher.
+  [CVPR 2026][Segmentation][Open-vocabulary segmentation] This paper proposes SPAR, which distills the spatial reasoning capability of a fine-stride sliding window teacher into a single-pass student of identical architectu…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Open-vocabulary segmentation
-  - resolution-agnostic
-  - knowledge distillation
-  - Vision Transformer
-  - sliding window inference
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Open-vocabulary segmentation"
+  - "resolution-agnostic"
+  - "knowledge distillation"
+  - "Vision Transformer"
+  - "sliding window inference"
 date: 2026-05-08
 content_hash: 277ed582dfb6f2bd
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Lifelong Imitation Learning with Multimodal Latent Replay and Incremental Adjustment
 description: >-
-  [CVPR 2026][Reinforcement Learning][lifelong imitation learning] This paper proposes a lifelong imitation learning framework that stores and replays compact representations in the feature space of frozen encoders via Multimodal Latent Replay (MLR), and introduces an Incremental Feature Adjustment (IFA) mechanism that employs angular distance constraints to maintain inter-task separability. The method achieves AUC improvements of 10–17 points and reduces forgetting by up to 65% on the LIBERO benchmark.
+  [CVPR 2026][Reinforcement Learning][lifelong imitation learning] This paper proposes a lifelong imitation learning framework that stores and replays compact representations in the feature space of frozen encoders via Mul…
 tags:
-  - CVPR 2026
-  - Reinforcement Learning
-  - lifelong imitation learning
-  - multimodal latent replay
-  - incremental feature adjustment
-  - catastrophic forgetting
-  - LIBERO
+  - "CVPR 2026"
+  - "Reinforcement Learning"
+  - "lifelong imitation learning"
+  - "multimodal latent replay"
+  - "incremental feature adjustment"
+  - "catastrophic forgetting"
+  - "LIBERO"
 date: 2026-05-08
 content_hash: 36e2f69b5fbc0559
 ---

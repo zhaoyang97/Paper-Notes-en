@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Predicting the Performance of Black-Box LLMs through Follow-Up Queries
 description: >-
-  [NeurIPS 2025][Robotics][Black-box LLM] This paper proposes QueRE, a method that poses approximately 50 follow-up questions to a black-box LLM (e.g., "Are you confident in your answer?") and uses the resulting "Yes" token probabilities as features to train a linear classifier. QueRE achieves strong performance on predicting model correctness, detecting adversarial manipulation, and distinguishing between different LLMs — surpassing even white-box methods that require access to internal model states.
+  [NeurIPS 2025][Robotics][Black-box LLM] This paper proposes QueRE, a method that poses approximately 50 follow-up questions to a black-box LLM (e.g.…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - Black-box LLM
-  - performance prediction
-  - follow-up queries
-  - uncertainty quantification
-  - adversarial detection
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "Black-box LLM"
+  - "performance prediction"
+  - "follow-up queries"
+  - "uncertainty quantification"
+  - "adversarial detection"
 date: 2026-05-08
 content_hash: 082e5ed1e901f16d
 ---

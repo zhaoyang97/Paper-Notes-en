@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Real-Time Robot Execution with Masked Action Chunking
 description: >-
-  [ICLR 2026][Robotics][Real-time execution] This paper proposes REMAC, which systematically addresses two key failure modes of asynchronous inference—intra-chunk inconsistency and inter-chunk discontinuity—through a masked action chunking training strategy and a prefix-preserved sampling pipeline, enabling more reliable real-time robot control without introducing any additional inference latency.
+  [ICLR 2026][Robotics][Real-time execution] This paper proposes REMAC, which systematically addresses two key failure modes of asynchronous inference—intra-chunk inconsistency and inter-chunk discontinuity—through a maske…
 tags:
-  - ICLR 2026
-  - Robotics
-  - Real-time execution
-  - action chunking
-  - asynchronous inference
-  - VLA
-  - flow matching
-  - LoRA
+  - "ICLR 2026"
+  - "Robotics"
+  - "Real-time execution"
+  - "action chunking"
+  - "asynchronous inference"
+  - "VLA"
+  - "flow matching"
+  - "LoRA"
 date: 2026-05-08
 content_hash: cd634f26ed30a486
 ---

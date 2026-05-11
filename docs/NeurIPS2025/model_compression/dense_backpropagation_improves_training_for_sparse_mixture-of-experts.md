@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dense Backpropagation Improves Training for Sparse Mixture-of-Experts
 description: >-
-  [NeurIPS 2025][Model Compression][Mixture-of-Experts] This paper proposes Default MoE, a method that maintains exponential moving averages (EMA) of inactive expert outputs as surrogate signals, enabling dense gradient updates for the MoE router without significant computational overhead, thereby improving sparse MoE training performance.
+  [NeurIPS 2025][Model Compression][Mixture-of-Experts] This paper proposes Default MoE, a method that maintains exponential moving averages (EMA) of inactive expert outputs as surrogate signals…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Mixture-of-Experts
-  - sparse routing
-  - dense gradient
-  - EMA
-  - TopK routing
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Mixture-of-Experts"
+  - "sparse routing"
+  - "dense gradient"
+  - "EMA"
+  - "TopK routing"
 date: 2026-05-08
 content_hash: 808634d91c8ff16c
 ---

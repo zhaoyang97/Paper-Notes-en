@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Rethinking Jailbreak Detection of Large Vision Language Models with Representational Contrastive Scoring
 description: >-
-  [ACL 2026][Multimodal VLM][Jailbreak Detection] This paper proposes the Representational Contrastive Scoring (RCS) framework, which analyzes the geometric structure of intermediate-layer representations within LVLMs. By learning a lightweight projection and applying contrastive scoring, RCS distinguishes malicious intent from benign distributional shift, achieving state-of-the-art jailbreak detection performance under a rigorous cross-attack-type generalization evaluation protocol.
+  [ACL 2026][Multimodal VLM][Jailbreak Detection] This paper proposes the Representational Contrastive Scoring (RCS) framework, which analyzes the geometric structure of intermediate-layer representations within LVLMs. By…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Jailbreak Detection
-  - Representational Contrastive Scoring
-  - Large Vision-Language Models
-  - OOD Detection
-  - Safety Alignment
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Jailbreak Detection"
+  - "Representational Contrastive Scoring"
+  - "Large Vision-Language Models"
+  - "OOD Detection"
+  - "Safety Alignment"
 date: 2026-05-08
 content_hash: 61fc3bf6edeab33e
 ---

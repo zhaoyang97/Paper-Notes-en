@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] FLARE: Task-Agnostic Embedding Model Evaluation via Normalizing Flows
 description: >-
-  [ACL 2026][embedding model evaluation] This paper proposes FLARE, a label-free text embedding model evaluation framework based on normalizing flows. By estimating informational sufficiency directly from log-likelihoods, FLARE avoids the collapse of distance-based density estimation in high-dimensional spaces, achieving a Spearman $\rho$ of 0.90 against supervised baselines across 11 datasets.
+  [ACL 2026][Information Retrieval & RAG][embedding model evaluation] This paper proposes FLARE, a label-free text embedding model evaluation framework based on normalizing flows. By estimating informational sufficiency di…
 tags:
-  - ACL 2026
-  - embedding model evaluation
-  - label-free evaluation
-  - normalizing flows
-  - informational sufficiency
-  - high-dimensional density estimation
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "embedding model evaluation"
+  - "label-free evaluation"
+  - "normalizing flows"
+  - "informational sufficiency"
+  - "high-dimensional density estimation"
 date: 2026-05-08
 content_hash: 442cc0c48aea2a3b
 ---

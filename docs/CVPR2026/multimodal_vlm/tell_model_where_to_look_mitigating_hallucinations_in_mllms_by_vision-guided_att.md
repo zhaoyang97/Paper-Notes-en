@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Tell Model Where to Look: Mitigating Hallucinations in MLLMs by Vision-Guided Attention
 description: >-
-  [CVPR2026][Multimodal VLM][Multimodal hallucination] This paper proposes Vision-Guided Attention (VGA), a training-free method that constructs precise visual grounding from the semantic features of visual tokens to guide model attention toward relevant visual regions, effectively mitigating hallucinations in MLLMs while remaining compatible with FlashAttention.
+  [CVPR2026][Multimodal VLM][Multimodal hallucination] This paper proposes Vision-Guided Attention (VGA), a training-free method that constructs precise visual grounding from the semantic features of visual tokens to guide…
 tags:
-  - CVPR2026
-  - Multimodal VLM
-  - Multimodal hallucination
-  - visual attention
-  - visual semantic confidence
-  - training-free
-  - FlashAttention compatible
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "Multimodal hallucination"
+  - "visual attention"
+  - "visual semantic confidence"
+  - "training-free"
+  - "FlashAttention compatible"
 date: 2026-05-08
 content_hash: 801491bd46a2fc87
 ---

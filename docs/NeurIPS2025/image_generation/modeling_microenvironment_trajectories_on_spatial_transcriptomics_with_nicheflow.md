@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Modeling Microenvironment Trajectories on Spatial Transcriptomics with NicheFlow
 description: >-
-  [NeurIPS 2025][Image Generation][Spatial Transcriptomics] NicheFlow is a Flow Matching-based generative model that represents cellular microenvironments as point clouds and jointly models the temporal evolution of cell states and spatial coordinates via Variational Flow Matching and optimal transport, substantially outperforming single-cell-level trajectory inference methods on embryonic development, brain development, and aging datasets.
+  [NeurIPS 2025][Image Generation][Spatial Transcriptomics] NicheFlow is a Flow Matching-based generative model that represents cellular microenvironments as point clouds and jointly models the temporal evolution of cell s…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Spatial Transcriptomics
-  - Microenvironment Trajectory Inference
-  - Flow Matching
-  - Optimal Transport
-  - Point Cloud Generation
-  - Cell Niche
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Spatial Transcriptomics"
+  - "Microenvironment Trajectory Inference"
+  - "Flow Matching"
+  - "Optimal Transport"
+  - "Point Cloud Generation"
+  - "Cell Niche"
 date: 2026-05-08
 content_hash: cf20a8f5959f0609
 ---

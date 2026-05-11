@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GAS: Generative Avatar Synthesis from a Single Image
 description: >-
-  [ICCV 2025][3D Vision][Human Avatar Generation] GAS is a framework that unifies novel view synthesis and novel pose synthesis into a video generation task by combining dense appearance cues from a generalizable NeRF with a video diffusion model. A modality switcher decouples the two tasks, enabling view-consistent and temporally coherent human avatar generation from a single image.
+  [ICCV 2025][3D Vision][Human Avatar Generation] GAS is a framework that unifies novel view synthesis and novel pose synthesis into a video generation task by combining dense appearance cues from a generalizable NeRF with…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Human Avatar Generation
-  - Single Image
-  - Video Diffusion
-  - NeRF
-  - Multi-view Consistency
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Human Avatar Generation"
+  - "Single Image"
+  - "Video Diffusion"
+  - "NeRF"
+  - "Multi-view Consistency"
 date: 2026-05-08
 content_hash: 787e926ce9ed24e8
 ---

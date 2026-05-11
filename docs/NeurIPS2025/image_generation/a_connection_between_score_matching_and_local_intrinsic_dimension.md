@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Connection Between Score Matching and Local Intrinsic Dimension
 description: >-
-  [NeurIPS 2025][Image Generation][score matching] This paper proves that the lower bound of the denoising score matching (DSM) loss is precisely the local intrinsic dimension (LID) of the data manifold, thereby establishing the DSM loss itself as an efficient LID estimator—requiring neither gradient computation nor multiple forward passes. On Stable Diffusion 3.5, this approach reduces peak memory usage to approximately 60% of FLIPD while yielding more stable estimates under quantization.
+  [NeurIPS 2025][Image Generation][score matching] This paper proves that the lower bound of the denoising score matching (DSM) loss is precisely the local intrinsic dimension (LID) of the data manifold…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - score matching
-  - local intrinsic dimension
-  - diffusion model
-  - LID estimation
-  - denoising loss
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "score matching"
+  - "local intrinsic dimension"
+  - "diffusion model"
+  - "LID estimation"
+  - "denoising loss"
 date: 2026-05-08
 content_hash: e088e2da2c925731
 ---

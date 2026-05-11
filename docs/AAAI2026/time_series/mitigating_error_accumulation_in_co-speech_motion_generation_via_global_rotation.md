@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mitigating Error Accumulation in Co-Speech Motion Generation via Global Rotation Diffusion and Multi-Level Constraints
 description: >-
-  [AAAI 2026][Time Series][co-speech motion generation] This paper proposes GlobalDiff, a framework that, for the first time, performs diffusion-based generation in the global joint rotation space, fundamentally eliminating error accumulation in hierarchical forward kinematics. A three-level joint–bone–motion constraint scheme compensates for the structural priors lost under global representation. GlobalDiff achieves state-of-the-art performance on multi-speaker co-speech motion generation benchmarks, improving FGD by 46% over the previous best method.
+  [AAAI 2026][Time Series][co-speech motion generation] This paper proposes GlobalDiff, a framework that, for the first time, performs diffusion-based generation in the global joint rotation space…
 tags:
-  - AAAI 2026
-  - Time Series
-  - co-speech motion generation
-  - global rotation
-  - diffusion model
-  - error accumulation
-  - skeletal constraints
+  - "AAAI 2026"
+  - "Time Series"
+  - "co-speech motion generation"
+  - "global rotation"
+  - "diffusion model"
+  - "error accumulation"
+  - "skeletal constraints"
 date: 2026-05-08
 content_hash: 3728bdbb66d4c1eb
 ---

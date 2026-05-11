@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Trace3D: Consistent Segmentation Lifting via Gaussian Instance Tracing
 description: >-
-  [ICCV 2025][3D Vision][3D Segmentation] This paper proposes the Gaussian Instance Tracing (GIT) mechanism, which maintains a per-Gaussian instance weight matrix across views via inverse rasterization. GIT jointly addresses two longstanding challenges—multi-view inconsistency in 2D segmentation and boundary Gaussian ambiguity—and yields significant improvements in 3D segmentation quality under both offline contrastive learning and online self-prompting settings.
+  [ICCV 2025][3D Vision][3D Segmentation] This paper proposes the Gaussian Instance Tracing (GIT) mechanism, which maintains a per-Gaussian instance weight matrix across views via inverse rasterization. GIT jointly address…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D Segmentation
-  - Gaussian Splatting
-  - 2D-to-3D Lifting
-  - Multi-view Consistency
-  - Instance Tracing
-  - Density Control
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D Segmentation"
+  - "Gaussian Splatting"
+  - "2D-to-3D Lifting"
+  - "Multi-view Consistency"
+  - "Instance Tracing"
+  - "Density Control"
 date: 2026-05-08
 content_hash: c48b3817b7938a47
 ---

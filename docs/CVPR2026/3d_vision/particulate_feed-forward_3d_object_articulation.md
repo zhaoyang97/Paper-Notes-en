@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Particulate: Feed-Forward 3D Object Articulation
 description: >-
-  [CVPR 2026][3D Vision][Articulated Objects] Particulate proposes a feed-forward model that infers complete articulation structures (part segmentation, kinematic tree, and motion constraints) from a static 3D mesh within seconds. Built upon the Part Articulation Transformer and trained end-to-end on public datasets, it significantly outperforms existing per-object optimization methods and can be combined with 3D generative models to enable single-image-to-articulated-3D-object generation.
+  [CVPR 2026][3D Vision][Articulated Objects] Particulate proposes a feed-forward model that infers complete articulation structures (part segmentation, kinematic tree…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Articulated Objects
-  - 3D Part Segmentation
-  - Motion Constraint Prediction
-  - Feed-Forward Inference
-  - Transformer
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Articulated Objects"
+  - "3D Part Segmentation"
+  - "Motion Constraint Prediction"
+  - "Feed-Forward Inference"
+  - "Transformer"
 date: 2026-05-08
 content_hash: f7b9948a0149fdc6
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Improving Planning and MBRL with Temporally-Extended Actions
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][temporally-extended actions] This paper proposes treating action duration as an additional optimization variable in shooting-based planning and MBRL, combined with a multi-armed bandit (MAB) mechanism for automatic duration range selection. The approach significantly accelerates planning across multiple environments and solves challenging tasks that standard methods fail to handle.
+  [NeurIPS 2025][Reinforcement Learning][temporally-extended actions] This paper proposes treating action duration as an additional optimization variable in shooting-based planning and MBRL…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - temporally-extended actions
-  - model-based RL
-  - planning
-  - action duration
-  - multi-armed bandit
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "temporally-extended actions"
+  - "model-based RL"
+  - "planning"
+  - "action duration"
+  - "multi-armed bandit"
 date: 2026-05-08
 content_hash: 248a1afedfdd2130
 ---

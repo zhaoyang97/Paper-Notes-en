@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Co-rewarding: Stable Self-supervised RL for Eliciting Reasoning in Large Language Models
 description: >-
-  [ICLR 2026][Reinforcement Learning][Self-supervised RL] Co-rewarding proposes a self-supervised RL framework that addresses training collapse in self-rewarding RL through two complementary supervision perspectives: a data-side mechanism (cross-view consistency via contrastive paraphrased questions) and a model-side mechanism (EMA teacher model providing pseudo-labels). Without any human annotations, the framework matches or surpasses RLVR (with ground-truth labels) across multiple mathematical reasoning benchmarks.
+  [ICLR 2026][Reinforcement Learning][Self-supervised RL] Co-rewarding proposes a self-supervised RL framework that addresses training collapse in self-rewarding RL through two complementary supervision perspectives: a dat…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Self-supervised RL
-  - Label-free Reasoning
-  - Training Collapse
-  - GRPO
-  - Contrastive Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Self-supervised RL"
+  - "Label-free Reasoning"
+  - "Training Collapse"
+  - "GRPO"
+  - "Contrastive Learning"
 date: 2026-05-08
 content_hash: c430d59987f21df2
 ---

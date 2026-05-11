@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MedEyes: Learning Dynamic Visual Focus for Medical Progressive Diagnosis
 description: >-
-  [AAAI 2026][Medical Imaging][Medical VQA] MedEyes is a hybrid-policy reinforcement learning framework that introduces a Gaze-guided Reasoning Navigator (GRN) to simulate the "scan-and-drill" visual search pattern of clinical physicians. Combined with a Confidence Value Sampler (CVS) and dual-stream GRPO optimization, the framework enables dynamic visual focus for progressive medical diagnostic reasoning, achieving an average improvement of 8.5 pp across five medical VQA benchmarks.
+  [AAAI 2026][Medical Imaging][Medical VQA] MedEyes is a hybrid-policy reinforcement learning framework that introduces a Gaze-guided Reasoning Navigator (GRN) to simulate the "scan-and-drill" visual search pattern of clin…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Medical VQA
-  - Reinforcement Learning
-  - Visual Chain-of-Thought
-  - Dynamic Attention
-  - GRPO
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Medical VQA"
+  - "Reinforcement Learning"
+  - "Visual Chain-of-Thought"
+  - "Dynamic Attention"
+  - "GRPO"
 date: 2026-05-08
 content_hash: 71c30cf14c424b06
 ---

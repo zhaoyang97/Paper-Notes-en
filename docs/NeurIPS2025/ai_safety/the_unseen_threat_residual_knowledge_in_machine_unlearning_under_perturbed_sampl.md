@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The Unseen Threat: Residual Knowledge in Machine Unlearning under Perturbed Samples
 description: >-
-  [NeurIPS 2025][AI Safety][machine unlearning] This paper identifies a critical security vulnerability in machine unlearning: even when an unlearned model is statistically indistinguishable from a retrained model, applying small adversarial perturbations to forgotten samples causes the unlearned model to correctly classify them while the retrained model fails — revealing a novel privacy risk termed "residual knowledge." The authors propose RURK, a fine-tuning strategy that penalizes correct predictions on perturbed forgotten samples, effectively suppressing residual knowledge across 11 unlearning methods on CIFAR-10 and ImageNet-100.
+  [NeurIPS 2025][AI Safety][machine unlearning] This paper identifies a critical security vulnerability in machine unlearning: even when an unlearned model is statistically indistinguishable from a retrained model…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - machine unlearning
-  - residual knowledge
-  - perturbed samples
-  - adversarial robustness
-  - RURK
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "machine unlearning"
+  - "residual knowledge"
+  - "perturbed samples"
+  - "adversarial robustness"
+  - "RURK"
 date: 2026-05-08
 content_hash: a629aaecf7d91d91
 ---

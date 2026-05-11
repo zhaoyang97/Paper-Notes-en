@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Your Text Encoder Can Be An Object-Level Watermarking Controller
 description: >-
-  [ICCV 2025][Image Generation][Watermark Embedding] By fine-tuning only the pseudo-token embedding $\mathcal{W}_*$ in the text encoder, this work achieves object-level invisible watermark embedding in T2I diffusion model-generated images, attaining 99% bit accuracy (48 bits) with $10^5\times$ fewer parameters.
+  [ICCV 2025][Image Generation][Watermark Embedding] By fine-tuning only the pseudo-token embedding $\mathcal{W}_*$ in the text encoder, this work achieves object-level invisible watermark embedding in T2I diffusion model-…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Watermark Embedding
-  - Text Encoder
-  - Object-Level Watermarking
-  - Textual Inversion
-  - Diffusion Models
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Watermark Embedding"
+  - "Text Encoder"
+  - "Object-Level Watermarking"
+  - "Textual Inversion"
+  - "Diffusion Models"
 date: 2026-05-08
 content_hash: 8d497d1e3e161610
 ---

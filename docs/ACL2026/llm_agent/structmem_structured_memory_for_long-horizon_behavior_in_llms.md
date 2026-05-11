@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] StructMem: Structured Memory for Long-Horizon Behavior in LLMs
 description: >-
-  [ACL 2026][LLM Agent][long-term memory] StructMem proposes a structure-enhanced hierarchical memory framework that achieves state-of-the-art performance on the LoCoMo long-conversation benchmark (76.82%) through dual-perspective event-level extraction and cross-event semantic consolidation, while substantially reducing token consumption (1.94M vs. 35.8M for graph memory) and API call counts.
+  [ACL 2026][LLM Agent][long-term memory] StructMem proposes a structure-enhanced hierarchical memory framework that achieves state-of-the-art performance on the LoCoMo long-conversation benchmark (76.82%) through dual-per…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - long-term memory
-  - event-level binding
-  - cross-event consolidation
-  - hierarchical memory
-  - multi-hop reasoning
+  - "ACL 2026"
+  - "LLM Agent"
+  - "long-term memory"
+  - "event-level binding"
+  - "cross-event consolidation"
+  - "hierarchical memory"
+  - "multi-hop reasoning"
 date: 2026-05-08
 content_hash: 988090ecb0dd3299
 ---

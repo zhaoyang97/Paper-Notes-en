@@ -2,18 +2,18 @@
 title: >-
   [Paper Note] Addressing Data Scarcity in 3D Trauma Detection through Self-Supervised and Semi-Supervised Learning with Vertex Relative Position Encoding
 description: >-
-  [CVPR 2026][Medical Imaging][Self-supervised learning] This paper proposes a two-stage label-efficient framework: a patch-based MIM self-supervised pretraining of a 3D U-Net encoder on 1,206 unlabeled CT volumes, followed by VDETR with 3D vertex relative position encoding for 3D lesion detection, augmented by Mean Teacher semi-supervised consistency regularization over 2,000 additional unlabeled volumes. Using only 144 annotated samples, the framework achieves 56.57% val mAP@0.50, a 115% improvement over fully supervised training.
+  [CVPR 2026][Medical Imaging][Self-supervised learning] This paper proposes a two-stage label-efficient framework: a patch-based MIM self-supervised pretraining of a 3D U-Net encoder on 1,206 unlabeled CT volumes…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Self-supervised learning
-  - semi-supervised learning
-  - Masked Image Modeling
-  - 3D object detection
-  - VDETR
-  - Vertex Relative Position Encoding
-  - abdominal CT
-  - trauma detection
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Self-supervised learning"
+  - "semi-supervised learning"
+  - "Masked Image Modeling"
+  - "3D object detection"
+  - "VDETR"
+  - "Vertex Relative Position Encoding"
+  - "abdominal CT"
+  - "trauma detection"
 date: 2026-05-08
 content_hash: 277e3b134cc3555f
 ---

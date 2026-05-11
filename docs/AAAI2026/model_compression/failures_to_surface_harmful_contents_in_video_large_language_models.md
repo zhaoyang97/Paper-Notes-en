@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Failures to Surface Harmful Contents in Video Large Language Models
 description: >-
-  [AAAI 2026][Model Compression][VideoLLM] This paper presents the first systematic security analysis of VideoLLMs, identifying three structural design flaws — sparse temporal sampling, spatial token downsampling, and modality fusion imbalance — that cause clearly visible harmful content in videos to be omitted from model-generated textual summaries (omission rate exceeding 90%). Three zero-query black-box attacks are designed to empirically validate the severity of these vulnerabilities.
+  [AAAI 2026][Model Compression][VideoLLM] This paper presents the first systematic security analysis of VideoLLMs, identifying three structural design flaws — sparse temporal sampling, spatial token downsampling…
 tags:
-  - AAAI 2026
-  - Model Compression
-  - VideoLLM
-  - Harmful Content Detection
-  - Security Vulnerabilities
-  - Black-box Attack
-  - Multimodal Safety
+  - "AAAI 2026"
+  - "Model Compression"
+  - "VideoLLM"
+  - "Harmful Content Detection"
+  - "Security Vulnerabilities"
+  - "Black-box Attack"
+  - "Multimodal Safety"
 date: 2026-05-08
 content_hash: 539ad7a571b8c6a6
 ---

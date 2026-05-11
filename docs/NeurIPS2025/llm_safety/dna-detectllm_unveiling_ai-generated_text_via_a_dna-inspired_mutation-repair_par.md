@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DNA-DetectLLM: Unveiling AI-Generated Text via a DNA-Inspired Mutation-Repair Paradigm
 description: >-
-  [NeurIPS 2025][LLM Safety][AI-generated text detection] This paper proposes DNA-DetectLLM, a zero-shot AI-generated text detection method inspired by the DNA mutation-repair mechanism. It constructs an ideal AI sequence and quantifies the cumulative difficulty of repairing the input text toward that sequence as the detection signal, achieving state-of-the-art results with a relative AUROC improvement of 5.55% and F1 improvement of 2.08% across multiple benchmark datasets.
+  [NeurIPS 2025][LLM Safety][AI-generated text detection] This paper proposes DNA-DetectLLM, a zero-shot AI-generated text detection method inspired by the DNA mutation-repair mechanism. It constructs an ideal AI sequence…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - AI-generated text detection
-  - zero-shot detection
-  - DNA mutation repair
-  - perplexity
-  - adversarial robustness
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "AI-generated text detection"
+  - "zero-shot detection"
+  - "DNA mutation repair"
+  - "perplexity"
+  - "adversarial robustness"
 date: 2026-05-08
 content_hash: 46a9fab00f8a5806
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DiffOP: Reinforcement Learning of Optimization-Based Control Policies via Implicit Policy Gradients
 description: >-
-  [AAAI2026][Reinforcement Learning][optimization-based control] This paper proposes DiffOP, a framework that treats optimization-based control policies (e.g., MPC) as differentiable modules, derives analytic policy gradients via implicit differentiation to enable end-to-end reinforcement learning training, and provides the first non-asymptotic convergence guarantee for this setting.
+  [AAAI2026][Reinforcement Learning][optimization-based control] This paper proposes DiffOP, a framework that treats optimization-based control policies (e.g., MPC) as differentiable modules…
 tags:
-  - AAAI2026
-  - Reinforcement Learning
-  - optimization-based control
-  - implicit differentiation
-  - policy gradient
-  - model predictive control
-  - bilevel optimization
+  - "AAAI2026"
+  - "Reinforcement Learning"
+  - "optimization-based control"
+  - "implicit differentiation"
+  - "policy gradient"
+  - "model predictive control"
+  - "bilevel optimization"
 date: 2026-05-08
 content_hash: 55d0af649272c84b
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SimLBR: Learning to Detect Fake Images by Learning to Detect Real Images
 description: >-
-  [CVPR 2026][Image Generation][Fake image detection] This paper proposes SimLBR, which regularizes a detector by blending a small amount of fake image information into real image embeddings within the DINOv3 latent space, compelling the model to learn a compact decision boundary around the real image distribution. This design achieves strong generalization to unseen generators, attaining 94.54% average accuracy on GenImage and outperforming AIDE on the challenging Chameleon benchmark by 25% in accuracy and 70% in recall.
+  [CVPR 2026][Image Generation][Fake image detection] This paper proposes SimLBR, which regularizes a detector by blending a small amount of fake image information into real image embeddings within the DINOv3 latent space…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Fake image detection
-  - AI-generated images
-  - latent blending regularization
-  - cross-generator generalization
-  - DINOv3
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Fake image detection"
+  - "AI-generated images"
+  - "latent blending regularization"
+  - "cross-generator generalization"
+  - "DINOv3"
 date: 2026-05-08
 content_hash: 0068469777a2d039
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Efficient Inference for Large Vision-Language Models: Bottlenecks, Techniques, and Prospects
 description: >-
-  [ACL 2026][Multimodal VLM][vision-language models] This paper proposes a systematic taxonomy for efficient inference in large vision-language models (LVLMs), analyzing bottlenecks across an encode–prefill–decode three-stage pipeline. It identifies a systemic efficiency barrier caused by *visual token dominance* and presents a comprehensive map of optimization techniques spanning information density shaping, long-context attention management, and memory bandwidth breakthroughs.
+  [ACL 2026][Multimodal VLM][vision-language models] This paper proposes a systematic taxonomy for efficient inference in large vision-language models (LVLMs)…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - vision-language models
-  - inference efficiency
-  - visual token dominance
-  - KV cache
-  - token compression
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "vision-language models"
+  - "inference efficiency"
+  - "visual token dominance"
+  - "KV cache"
+  - "token compression"
 date: 2026-05-08
 content_hash: 03171b47b03d2504
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SRSR: Enhancing Semantic Accuracy in Real-World Image Super-Resolution with Spatially Re-Focused Text-Conditioning
 description: >-
-  [NeurIPS 2025][Segmentation][Super-Resolution] SRSR proposes a training-free plug-and-play framework that addresses semantic hallucination caused by text guidance in diffusion-based super-resolution methods. It introduces two inference-time modules—Spatially Re-focused Cross-Attention (SRCA) and Spatially Targeted CFG (STCFG)—and comprehensively outperforms 7 SOTA baselines in both fidelity and perceptual quality.
+  [NeurIPS 2025][Segmentation][Super-Resolution] SRSR proposes a training-free plug-and-play framework that addresses semantic hallucination caused by text guidance in diffusion-based super-resolution methods. It introduce…
 tags:
-  - NeurIPS 2025
-  - Segmentation
-  - Super-Resolution
-  - Semantic Accuracy
-  - Cross-Attention
-  - Classifier-Free Guidance
-  - Plug-and-Play
+  - "NeurIPS 2025"
+  - "Segmentation"
+  - "Super-Resolution"
+  - "Semantic Accuracy"
+  - "Cross-Attention"
+  - "Classifier-Free Guidance"
+  - "Plug-and-Play"
 date: 2026-05-08
 content_hash: a56be15901d729ac
 ---

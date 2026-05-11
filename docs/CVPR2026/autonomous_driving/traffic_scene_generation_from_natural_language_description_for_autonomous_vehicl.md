@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Traffic Scene Generation from Natural Language Description for Autonomous Vehicles with Large Language Model
 description: >-
-  [CVPR 2026][Autonomous Driving][Traffic scene generation] This paper proposes TTSG, a training-free modular framework that generates realistic traffic scenes directly from free-form natural language descriptions. It employs LLM-driven prompt analysis, road retrieval, agent planning, and a plan-aware road ranking algorithm, requiring no predefined routes or spawn points, and achieves a minimum average collision rate of 3.5% on SafeBench.
+  [CVPR 2026][Autonomous Driving][Traffic scene generation] This paper proposes TTSG, a training-free modular framework that generates realistic traffic scenes directly from free-form natural language descriptions. It empl…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Traffic scene generation
-  - natural language-driven
-  - large language model
-  - autonomous driving simulation
-  - CARLA
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Traffic scene generation"
+  - "natural language-driven"
+  - "large language model"
+  - "autonomous driving simulation"
+  - "CARLA"
 date: 2026-05-08
 content_hash: 5ca62bda7f3443b9
 ---

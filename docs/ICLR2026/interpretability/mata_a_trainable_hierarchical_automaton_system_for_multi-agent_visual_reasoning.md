@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] MATA: A Trainable Hierarchical Automaton System for Multi-Agent Visual Reasoning
 description: >-
-  [ICLR 2026][Multi-Agent Systems] This paper proposes MATA (Multi-Agent hierarchical Trainable Automaton), which formulates multi-agent visual reasoning as a hierarchical finite-state automaton. The top-level state transitions are learned by a trainable hyper agent (an LLM-based state controller), while each agent internally employs a rule-based sub-automaton. Collaboration and competition are realized through shared memory. MATA achieves state-of-the-art performance on multiple visual reasoning benchmarks.
+  [ICLR 2026][Interpretability][Multi-Agent Systems] This paper proposes MATA (Multi-Agent hierarchical Trainable Automaton), which formulates multi-agent visual reasoning as a hierarchical finite-state automaton. The top-…
 tags:
-  - ICLR 2026
-  - Multi-Agent Systems
-  - Hierarchical Finite-State Automaton
-  - Visual Reasoning
-  - Trainable State Controller
-  - Collaboration and Competition
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Multi-Agent Systems"
+  - "Hierarchical Finite-State Automaton"
+  - "Visual Reasoning"
+  - "Trainable State Controller"
+  - "Collaboration and Competition"
 date: 2026-05-08
 content_hash: 85030ba2d1b80a4e
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Universal Spectral Tokenization via Self-Supervised Panchromatic Representation Learning
 description: >-
-  [NeurIPS 2025][Time Series][Spectral Tokenizer] This paper proposes the first universal spectral tokenizer that jointly trains on heterogeneous astronomical spectra (SDSS/DESI/GALAH/APOGEE) on their native wavelength grids via continuous wavelength embeddings and self-supervised reconstruction objectives, producing aligned, uniform, and physically meaningful representations.
+  [NeurIPS 2025][Time Series][Spectral Tokenizer] This paper proposes the first universal spectral tokenizer that jointly trains on heterogeneous astronomical spectra (SDSS/DESI/GALAH/APOGEE) on their native wavelength gri…
 tags:
-  - NeurIPS 2025
-  - Time Series
-  - Spectral Tokenizer
-  - Heterogeneous Data Unification
-  - Vision Transformer
-  - Self-Supervised Pretraining
-  - Astronomy
+  - "NeurIPS 2025"
+  - "Time Series"
+  - "Spectral Tokenizer"
+  - "Heterogeneous Data Unification"
+  - "Vision Transformer"
+  - "Self-Supervised Pretraining"
+  - "Astronomy"
 date: 2026-05-08
 content_hash: 33e784f2fe45f611
 ---

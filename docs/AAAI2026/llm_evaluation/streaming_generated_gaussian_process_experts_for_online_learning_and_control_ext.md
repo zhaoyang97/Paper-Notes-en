@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Streaming Generated Gaussian Process Experts for Online Learning and Control: Extended Version
 description: >-
-  [AAAI 2026][LLM Evaluation][Gaussian Process] This paper proposes SkyGP (Streaming Kernel-induced Progressively Generated Expert GP), which handles streaming data via **kernel-distance-driven progressive expert generation** and **time-aware configurable aggregation**, inheriting the learning guarantees of exact GP while maintaining bounded computational complexity. SkyGP comprehensively outperforms state-of-the-art methods on both benchmark regression tasks and real-time control experiments.
+  [AAAI 2026][LLM Evaluation][Gaussian Process] This paper proposes SkyGP (Streaming Kernel-induced Progressively Generated Expert GP), which handles streaming data via **kernel-distance-driven progressive expert generatio…
 tags:
-  - AAAI 2026
-  - LLM Evaluation
-  - Gaussian Process
-  - Online Learning
-  - Streaming Data
-  - Mixture of Experts
-  - Robot Control
+  - "AAAI 2026"
+  - "LLM Evaluation"
+  - "Gaussian Process"
+  - "Online Learning"
+  - "Streaming Data"
+  - "Mixture of Experts"
+  - "Robot Control"
 date: 2026-05-08
 content_hash: 5852ef7b2f84c3a4
 ---

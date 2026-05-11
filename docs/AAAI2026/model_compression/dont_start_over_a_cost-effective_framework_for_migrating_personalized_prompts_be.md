@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Don't Start Over: A Cost-Effective Framework for Migrating Personalized Prompts Between LLMs
 description: >-
-  [AAAI 2026][Model Compression][Soft Prompt Transfer] This paper proposes PUMA, a framework that leverages lightweight adapters and a grouped user selection strategy to efficiently migrate personalized soft prompts from a source LLM to a target LLM with a different architecture. PUMA matches or surpasses from-scratch training on three large-scale datasets while reducing computational cost by up to 98%.
+  [AAAI 2026][Model Compression][Soft Prompt Transfer] This paper proposes PUMA, a framework that leverages lightweight adapters and a grouped user selection strategy to efficiently migrate personalized soft prompts from a…
 tags:
-  - AAAI 2026
-  - Model Compression
-  - Soft Prompt Transfer
-  - Personalization
-  - LLM
-  - Parameter-Efficient Adapter
-  - User Selection Strategy
+  - "AAAI 2026"
+  - "Model Compression"
+  - "Soft Prompt Transfer"
+  - "Personalization"
+  - "LLM"
+  - "Parameter-Efficient Adapter"
+  - "User Selection Strategy"
 date: 2026-05-08
 content_hash: fbd91982f32e6960
 ---

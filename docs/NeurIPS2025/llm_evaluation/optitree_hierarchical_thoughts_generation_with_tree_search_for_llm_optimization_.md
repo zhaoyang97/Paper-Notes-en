@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] OptiTree: Hierarchical Thoughts Generation with Tree Search for LLM Optimization Modeling
 description: >-
-  [NeurIPS 2025][LLM Evaluation][Operations Research Modeling] This paper proposes OptiTree, which organizes hierarchical classification and modeling thoughts for operations research (OR) problems by constructing a modeling tree, and employs tree search to adaptively decompose complex problems into sequences of simpler subproblems, achieving significant accuracy gains in optimization modeling tasks for LLMs (exceeding 10% on multiple challenging benchmarks).
+  [NeurIPS 2025][LLM Evaluation][Operations Research Modeling] This paper proposes OptiTree, which organizes hierarchical classification and modeling thoughts for operations research (OR) problems by constructing a modelin…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - Operations Research Modeling
-  - LLM Reasoning
-  - Tree Search
-  - Subproblem Decomposition
-  - Hierarchical Thoughts
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "Operations Research Modeling"
+  - "LLM Reasoning"
+  - "Tree Search"
+  - "Subproblem Decomposition"
+  - "Hierarchical Thoughts"
 date: 2026-05-08
 content_hash: bd1489fc694a0e90
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Temporal Imbalance of Positive and Negative Supervision in Class-Incremental Learning
 description: >-
-  [CVPR 2026][LLM Evaluation][Class-Incremental Learning] This paper identifies temporal imbalance as a previously overlooked source of bias in class-incremental learning (CIL) and proposes the Temporal-Adjusted Loss (TAL), which dynamically downweights negative supervision for old classes via a temporally decaying memory kernel. TAL integrates in a plug-and-play manner and significantly alleviates catastrophic forgetting.
+  [CVPR 2026][LLM Evaluation][Class-Incremental Learning] This paper identifies temporal imbalance as a previously overlooked source of bias in class-incremental learning (CIL) and proposes the Temporal-Adjusted Loss (TAL)…
 tags:
-  - CVPR 2026
-  - LLM Evaluation
-  - Class-Incremental Learning
-  - catastrophic forgetting
-  - Temporal Imbalance
-  - Loss Reweighting
-  - continual learning
+  - "CVPR 2026"
+  - "LLM Evaluation"
+  - "Class-Incremental Learning"
+  - "catastrophic forgetting"
+  - "Temporal Imbalance"
+  - "Loss Reweighting"
+  - "continual learning"
 date: 2026-05-08
 content_hash: b58ba16a0fa982cc
 ---

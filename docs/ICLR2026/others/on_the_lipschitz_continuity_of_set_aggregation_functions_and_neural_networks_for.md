@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] On the Lipschitz Continuity of Set Aggregation Functions and Neural Networks for Sets
 description: >-
-  [ICLR 2026][Lipschitz continuity] This paper systematically investigates the Lipschitz continuity of three commonly used set aggregation functions (sum, mean, max) and attention mechanisms under three multiset distance functions, derives upper bounds on the Lipschitz constants of set neural networks, and connects these results to perturbation stability and generalization under distribution shift.
+  [ICLR 2026][Lipschitz continuity] This paper systematically investigates the Lipschitz continuity of three commonly used set aggregation functions (sum, mean…
 tags:
-  - ICLR 2026
-  - Lipschitz continuity
-  - set aggregation functions
-  - multisets
-  - robustness
-  - generalization
+  - "ICLR 2026"
+  - "Lipschitz continuity"
+  - "set aggregation functions"
+  - "multisets"
+  - "robustness"
+  - "generalization"
 date: 2026-05-08
 content_hash: dbdfa18a2f4d4114
 ---

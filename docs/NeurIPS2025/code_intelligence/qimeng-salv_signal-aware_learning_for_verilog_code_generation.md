@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] QiMeng-SALV: Signal-Aware Learning for Verilog Code Generation
 description: >-
-  [NeurIPS 2025][Verilog code generation] This paper proposes QiMeng-SALV, a signal-aware learning method that extracts functionally correct signal-level code snippets from partially incorrect Verilog modules as reward signals for DPO training, elevating the optimization granularity from module level to signal level and achieving SOTA on VerilogEval and RTLLM.
+  [NeurIPS 2025][Code Intelligence][Verilog code generation] This paper proposes QiMeng-SALV, a signal-aware learning method that extracts functionally correct signal-level code snippets from partially incorrect Verilog mo…
 tags:
-  - NeurIPS 2025
-  - Verilog code generation
-  - signal-level optimization
-  - DPO
-  - AST
-  - reinforcement learning
+  - "NeurIPS 2025"
+  - "Code Intelligence"
+  - "Verilog code generation"
+  - "signal-level optimization"
+  - "DPO"
+  - "AST"
+  - "reinforcement learning"
 date: 2026-05-08
 content_hash: a3be034b39daf8f7
 ---

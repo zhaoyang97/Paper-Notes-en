@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Sherlock: Self-Correcting Reasoning in Vision-Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][self-correction] The first systematic study of self-correction capabilities in reasoning VLMs: existing reasoning VLMs are found to be nearly incapable of self-correction (<10% exhibit an aha moment). The paper proposes Sherlock, a three-stage training framework (SFT cold-start → offline trajectory-level preference learning → online self-iterative improvement) that surpasses LLaVA-CoT/Mulberry/LlamaV-o1 (which use 100K–260K annotations) using only 20K labeled samples.
+  [NeurIPS 2025][Multimodal VLM][self-correction] The first systematic study of self-correction capabilities in reasoning VLMs: existing reasoning VLMs are found to be nearly incapable of self-correction (&lt;10% exhibit an a…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - self-correction
-  - preference learning
-  - trajectory-level
-  - VLM reasoning
-  - self-improvement
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "self-correction"
+  - "preference learning"
+  - "trajectory-level"
+  - "VLM reasoning"
+  - "self-improvement"
 date: 2026-05-08
 content_hash: f475ae54482e1162
 ---

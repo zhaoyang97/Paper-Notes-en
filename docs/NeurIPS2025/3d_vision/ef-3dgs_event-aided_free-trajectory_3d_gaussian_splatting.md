@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EF-3DGS: Event-Aided Free-Trajectory 3D Gaussian Splatting
 description: >-
-  [NeurIPS 2025][3D Vision][Event camera] EF-3DGS is the first work to introduce event cameras into free-trajectory scene reconstruction. It employs an Event Generation Model (EGM) to reconstruct latent inter-frame images for continuous supervision, Contrast Maximization (CMax) combined with a Linear Event Generation Model (LEGM) to extract motion information for pose calibration, and a photometric BA + Fixed-GS strategy to resolve color inconsistency. The method achieves a 3 dB PSNR improvement and a 40% reduction in ATE in high-speed scenarios.
+  [NeurIPS 2025][3D Vision][Event camera] EF-3DGS is the first work to introduce event cameras into free-trajectory scene reconstruction. It employs an Event Generation Model (EGM) to reconstruct latent inter-frame images…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Event camera
-  - 3D Gaussian Splatting
-  - free-trajectory
-  - pose estimation
-  - novel view synthesis
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Event camera"
+  - "3D Gaussian Splatting"
+  - "free-trajectory"
+  - "pose estimation"
+  - "novel view synthesis"
 date: 2026-05-08
 content_hash: ea4dba27297bf7a2
 ---

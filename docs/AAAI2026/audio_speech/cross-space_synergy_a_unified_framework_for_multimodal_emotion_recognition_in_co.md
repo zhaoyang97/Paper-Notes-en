@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Cross-Space Synergy: A Unified Framework for Multimodal Emotion Recognition in Conversation
 description: >-
-  [AAAI 2026][Audio & Speech][multimodal emotion recognition] This paper proposes the Cross-Space Synergy (CSS) framework, which simultaneously addresses two major challenges in multimodal emotion recognition in conversation (MERC)—insufficient fusion expressiveness and multi-objective gradient conflicts—via Synergistic Polynomial Fusion (SPF) in the representation space and a Pareto Gradient Modulator (PGM) in the gradient space.
+  [AAAI 2026][Audio & Speech][multimodal emotion recognition] This paper proposes the Cross-Space Synergy (CSS) framework, which simultaneously addresses two major challenges in multimodal emotion recognition in conversati…
 tags:
-  - AAAI 2026
+  - "AAAI 2026"
   - "Audio & Speech"
-  - multimodal emotion recognition
-  - high-order fusion
-  - gradient conflict
-  - Pareto optimization
-  - conversational emotion
+  - "multimodal emotion recognition"
+  - "high-order fusion"
+  - "gradient conflict"
+  - "Pareto optimization"
+  - "conversational emotion"
 date: 2026-05-08
 content_hash: cf94f56bcf14b9bd
 ---

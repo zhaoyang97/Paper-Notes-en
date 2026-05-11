@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] SHeaP: Self-Supervised Head Geometry Predictor Learned via 2D Gaussians
 description: >-
-  [ICCV 2025][3D Vision][3D head reconstruction] SHeaP replaces traditional differentiable mesh rendering with 2D Gaussian Splatting for self-supervised 3DMM prediction training. By binding Gaussians to the 3DMM mesh for re-animation, and introducing a graph-convolution-based Gaussian regressor together with geometry consistency regularization, SHeaP surpasses all self-supervised methods on the NoW and Nersemble benchmarks.
+  [ICCV 2025][3D Vision][3D head reconstruction] SHeaP replaces traditional differentiable mesh rendering with 2D Gaussian Splatting for self-supervised 3DMM prediction training. By binding Gaussians to the 3DMM mesh for r…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D head reconstruction
-  - 2D Gaussian Splatting
-  - 3DMM
-  - self-supervised
-  - face geometry
-  - rigged avatar
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D head reconstruction"
+  - "2D Gaussian Splatting"
+  - "3DMM"
+  - "self-supervised"
+  - "face geometry"
+  - "rigged avatar"
 date: 2026-05-08
 content_hash: 9bb33e0f1db8717f
 ---

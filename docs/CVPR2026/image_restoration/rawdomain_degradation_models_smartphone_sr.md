@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] RAW-Domain Degradation Models for Realistic Smartphone Super-Resolution
 description: >-
-  [CVPR 2026][Image Restoration][super-resolution] This paper demonstrates that principled, device-specific degradation modeling — obtained via physical calibration of real blur and noise parameters — significantly improves real-world smartphone super-resolution performance. By unprocessing publicly available rendered images into the RAW domain of target devices to generate HR-LR training pairs, the resulting SR models substantially outperform baselines trained with large pools of arbitrary degradation combinations on held-out real device data.
+  [CVPR 2026][Image Restoration][super-resolution] This paper demonstrates that principled, device-specific degradation modeling — obtained via physical calibration of real blur and noise parameters — significantly improve…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - super-resolution
-  - RAW domain
-  - degradation modeling
-  - unprocessing
-  - smartphone camera
-  - device-specific calibration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "super-resolution"
+  - "RAW domain"
+  - "degradation modeling"
+  - "unprocessing"
+  - "smartphone camera"
+  - "device-specific calibration"
 date: 2026-05-08
 content_hash: fa9020b1fd709adc
 ---

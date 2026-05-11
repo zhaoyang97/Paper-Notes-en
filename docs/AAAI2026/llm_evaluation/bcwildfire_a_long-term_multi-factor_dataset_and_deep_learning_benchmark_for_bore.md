@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BCWildfire: A Long-term Multi-factor Dataset and Deep Learning Benchmark for Boreal Wildfire Risk Prediction
 description: >-
-  [AAAI 2026][LLM Evaluation][Wildfire Risk Prediction] This paper introduces BCWildfire, a multimodal wildfire risk prediction dataset covering 240 million hectares of British Columbia, Canada over a 25-year span, encompassing 38 driving factors. It conducts a systematic benchmark evaluation of time series forecasting models across four paradigms—CNN, Linear, Transformer, and Mamba—revealing the performance ceiling of current models and the key influential factors in wildfire prediction.
+  [AAAI 2026][LLM Evaluation][Wildfire Risk Prediction] This paper introduces BCWildfire, a multimodal wildfire risk prediction dataset covering 240 million hectares of British Columbia, Canada over a 25-year span…
 tags:
-  - AAAI 2026
-  - LLM Evaluation
-  - Wildfire Risk Prediction
-  - Time Series Forecasting
-  - Multimodal Dataset
-  - Deep Learning Benchmark
-  - Boreal Forest
+  - "AAAI 2026"
+  - "LLM Evaluation"
+  - "Wildfire Risk Prediction"
+  - "Time Series Forecasting"
+  - "Multimodal Dataset"
+  - "Deep Learning Benchmark"
+  - "Boreal Forest"
 date: 2026-05-08
 content_hash: 20a1909e758984a9
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PE3R: Perception-Efficient 3D Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][3D semantic reconstruction] PE3R proposes a tuning-free, feed-forward 3D semantic reconstruction framework that directly generates semantic 3D point clouds from pose-free 2D images via three modules — pixel embedding disambiguation, semantic point cloud reconstruction, and global view perception — achieving a 9× speedup while establishing new state-of-the-art performance on open-vocabulary segmentation and depth estimation.
+  [CVPR 2026][3D Vision][3D semantic reconstruction] PE3R proposes a tuning-free, feed-forward 3D semantic reconstruction framework that directly generates semantic 3D point clouds from pose-free 2D images via three module…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D semantic reconstruction
-  - open-vocabulary segmentation
-  - tuning-free
-  - feed-forward inference
-  - semantic point cloud
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D semantic reconstruction"
+  - "open-vocabulary segmentation"
+  - "tuning-free"
+  - "feed-forward inference"
+  - "semantic point cloud"
 date: 2026-05-08
 content_hash: 63b66c5fe9685d7a
 ---

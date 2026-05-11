@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Robust Tabular Foundation Models
 description: >-
-  [AAAI 2026][Self-Supervised Learning][tabular foundation model] This paper proposes RTFM — a model-agnostic adversarial training framework that performs min-max optimization over the parameter space of a synthetic data generator, maximizing the "optimality gap" between a tabular foundation model (TFM) and classical tree-based models. Using fewer than 100,000 additional synthetic datasets, RTFM significantly improves TabPFN V2 across multiple tabular benchmarks.
+  [AAAI 2026][Self-Supervised Learning][tabular foundation model] This paper proposes RTFM — a model-agnostic adversarial training framework that performs min-max optimization over the parameter space of a synthetic data g…
 tags:
-  - AAAI 2026
-  - Self-Supervised Learning
-  - tabular foundation model
-  - adversarial training
-  - synthetic data
-  - distributionally robust optimization
+  - "AAAI 2026"
+  - "Self-Supervised Learning"
+  - "tabular foundation model"
+  - "adversarial training"
+  - "synthetic data"
+  - "distributionally robust optimization"
 date: 2026-05-08
 content_hash: de08c5628a8693af
 ---

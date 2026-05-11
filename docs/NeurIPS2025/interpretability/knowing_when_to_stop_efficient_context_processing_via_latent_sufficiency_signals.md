@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Knowing When to Stop: Efficient Context Processing via Latent Sufficiency Signals
 description: >-
-  [NeurIPS 2025][Dynamic context cutoff] This paper proposes dynamic context cutoff, which trains lightweight classifiers to detect "information sufficiency signals" encoded in specific Transformer attention heads, enabling the model to determine when sufficient context has been gathered and terminate processing early. On 6 QA datasets, the method achieves an average accuracy improvement of 3.4% while reducing token consumption by 1.33×.
+  [NeurIPS 2025][Interpretability][Dynamic context cutoff] This paper proposes dynamic context cutoff, which trains lightweight classifiers to detect "information sufficiency signals" encoded in specific Transformer attent…
 tags:
-  - NeurIPS 2025
-  - Dynamic context cutoff
-  - attention head probing
-  - information sufficiency
-  - inference efficiency
-  - KV cache
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "Dynamic context cutoff"
+  - "attention head probing"
+  - "information sufficiency"
+  - "inference efficiency"
+  - "KV cache"
 date: 2026-05-08
 content_hash: 9577fae8684cdd73
 ---

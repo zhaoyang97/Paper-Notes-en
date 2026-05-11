@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ZARA: Training-Free Motion Time-Series Reasoning via Evidence-Grounded LLM Agents
 description: >-
-  [ACL 2026][LLM Agent][Human Activity Recognition] This paper proposes ZARA, a knowledge- and retrieval-augmented multi-agent framework that distills sensor signals into a structured textual knowledge base, combines class-conditional retrieval with hierarchical LLM reasoning, and achieves interpretable human activity recognition in a fully training-free setting, substantially outperforming existing methods across 8 datasets.
+  [ACL 2026][LLM Agent][Human Activity Recognition] This paper proposes ZARA, a knowledge- and retrieval-augmented multi-agent framework that distills sensor signals into a structured textual knowledge base…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - Human Activity Recognition
-  - Time-Series Reasoning
-  - Retrieval-Augmented Generation
-  - Multi-Agent Reasoning
-  - Training-Free
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Human Activity Recognition"
+  - "Time-Series Reasoning"
+  - "Retrieval-Augmented Generation"
+  - "Multi-Agent Reasoning"
+  - "Training-Free"
 date: 2026-05-08
 content_hash: aa2e064b34ab5d83
 ---

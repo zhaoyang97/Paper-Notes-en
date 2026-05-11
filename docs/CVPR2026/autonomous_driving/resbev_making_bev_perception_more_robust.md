@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RESBev: Making BEV Perception More Robust
 description: >-
-  [CVPR 2026][Autonomous Driving][BEV perception] This paper proposes RESBev, a plug-and-play robustness enhancement framework for BEV perception. It employs a latent-space world model to predict clean BEV semantic priors from historical frames, and an anomaly reconstructor that fuses these priors with corrupted current observations via cross-attention. On nuScenes, RESBev achieves an average improvement of 15–20 IoU points across four LSS-based models under 10 types of perturbations (including natural corruptions and adversarial attacks), and generalizes to corruption types unseen during training.
+  [CVPR 2026][Autonomous Driving][BEV perception] This paper proposes RESBev, a plug-and-play robustness enhancement framework for BEV perception. It employs a latent-space world model to predict clean BEV semantic priors…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - BEV perception
-  - robustness
-  - world model
-  - adversarial attack
-  - plug-and-play
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "BEV perception"
+  - "robustness"
+  - "world model"
+  - "adversarial attack"
+  - "plug-and-play"
 date: 2026-05-08
 content_hash: b56aca779a74adf6
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MonoSOWA: Scalable Monocular 3D Object Detector Without Human Annotations
 description: >-
-  [ICCV2025][Autonomous Driving][Monocular 3D Detection] This paper proposes the first monocular 3D object detection method that requires no human annotations of any kind (neither 2D nor 3D). A novel Local Object Motion Model (LOMM) is introduced to disentangle inter-frame motion sources, enabling auto-labeling at a speed ~700× faster than prior work. A Canonical Object Space (COS) is further proposed to enable multi-dataset training across heterogeneous camera configurations.
+  [ICCV2025][Autonomous Driving][Monocular 3D Detection] This paper proposes the first monocular 3D object detection method that requires no human annotations of any kind (neither 2D nor 3D). A novel Local Object Motion Mo…
 tags:
-  - ICCV2025
-  - Autonomous Driving
-  - Monocular 3D Detection
-  - Weak Supervision
-  - Auto-Labeling
-  - Pseudo-LiDAR
-  - Annotation-Free
+  - "ICCV2025"
+  - "Autonomous Driving"
+  - "Monocular 3D Detection"
+  - "Weak Supervision"
+  - "Auto-Labeling"
+  - "Pseudo-LiDAR"
+  - "Annotation-Free"
 date: 2026-05-08
 content_hash: 8512860eab73339e
 ---

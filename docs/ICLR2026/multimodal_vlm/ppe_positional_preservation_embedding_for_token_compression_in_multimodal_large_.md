@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PPE: Positional Preservation Embedding for Token Compression in Multimodal Large Language Models
 description: >-
-  [ICLR 2026][Multimodal VLM][Token Compression] This paper proposes PPE (Positional Preservation Embedding), which exploits the dimensional independence of rotations in RoPE to encode multiple original position IDs from merged tokens into distinct dimension segments, enabling a single compressed token to carry multiple spatial/temporal positional cues. PPE is a zero-parameter, plug-and-play operator that achieves an average performance drop of only 3.6% on image tasks at 55% compression, and maintains comparable performance at 90% compression via cascaded compression.
+  [ICLR 2026][Multimodal VLM][Token Compression] This paper proposes PPE (Positional Preservation Embedding), which exploits the dimensional independence of rotations in RoPE to encode multiple original position IDs from m…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Token Compression
-  - Positional Encoding
-  - RoPE
-  - MLLM Efficiency
-  - Spatiotemporal Preservation
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Token Compression"
+  - "Positional Encoding"
+  - "RoPE"
+  - "MLLM Efficiency"
+  - "Spatiotemporal Preservation"
 date: 2026-05-08
 content_hash: bdd151f2dca5b390
 ---

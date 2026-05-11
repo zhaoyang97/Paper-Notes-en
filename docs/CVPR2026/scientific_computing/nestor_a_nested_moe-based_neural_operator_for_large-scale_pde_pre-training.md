@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] NESTOR: A Nested MOE-based Neural Operator for Large-Scale PDE Pre-Training
 description: >-
-  [CVPR 2026][Scientific Computing][Neural Operator] NESTOR, a nested MoE-based neural operator, is proposed to capture global features across different PDE types via image-level MoE and local spatial correlations within physical fields via token-level Sub-MoE. The model is pre-trained on 12 PDE datasets and effectively transferred to downstream tasks.
+  [CVPR 2026][Scientific Computing][Neural Operator] NESTOR, a nested MoE-based neural operator, is proposed to capture global features across different PDE types via image-level MoE and local spatial correlations within p…
 tags:
-  - CVPR 2026
-  - Scientific Computing
-  - Neural Operator
-  - Mixture of Experts (MoE)
-  - PDE Solving
-  - Large-Scale Pre-Training
-  - Fourier Attention
+  - "CVPR 2026"
+  - "Scientific Computing"
+  - "Neural Operator"
+  - "Mixture of Experts (MoE)"
+  - "PDE Solving"
+  - "Large-Scale Pre-Training"
+  - "Fourier Attention"
 date: 2026-05-08
 content_hash: 7945e90f13805f23
 ---

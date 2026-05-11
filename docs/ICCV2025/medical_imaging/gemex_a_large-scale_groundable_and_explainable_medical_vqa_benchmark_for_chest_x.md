@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GEMeX: A Large-Scale, Groundable, and Explainable Medical VQA Benchmark for Chest X-ray Diagnosis
 description: >-
-  [ICCV 2025][Medical Imaging][Medical Visual Question Answering] This paper presents GEMeX, the largest chest X-ray VQA dataset to date (151K images, 1.6M questions), which for the first time simultaneously provides textual reasoning explanations and visual region grounding across four question types, and systematically evaluates 12 representative large vision-language models.
+  [ICCV 2025][Medical Imaging][Medical Visual Question Answering] This paper presents GEMeX, the largest chest X-ray VQA dataset to date (151K images, 1.6M questions)…
 tags:
-  - ICCV 2025
-  - Medical Imaging
-  - Medical Visual Question Answering
-  - Chest X-ray
-  - Explainability
-  - Visual Grounding
-  - Large-Scale Benchmark
+  - "ICCV 2025"
+  - "Medical Imaging"
+  - "Medical Visual Question Answering"
+  - "Chest X-ray"
+  - "Explainability"
+  - "Visual Grounding"
+  - "Large-Scale Benchmark"
 date: 2026-05-08
 content_hash: 74934baf109508e6
 ---

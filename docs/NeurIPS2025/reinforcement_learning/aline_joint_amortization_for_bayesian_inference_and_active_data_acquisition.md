@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ALINE: Joint Amortization for Bayesian Inference and Active Data Acquisition
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Amortized Inference] ALINE proposes a unified framework for amortized Bayesian inference and active data acquisition. By combining a Transformer architecture with RL-based training, the model simultaneously learns to strategically select the most informative data points and perform instant posterior inference. It further supports flexible data acquisition targeting specific parameter subsets or predictive objectives.
+  [NeurIPS 2025][Reinforcement Learning][Amortized Inference] ALINE proposes a unified framework for amortized Bayesian inference and active data acquisition. By combining a Transformer architecture with RL-based training…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Amortized Inference
-  - Active Learning
-  - Bayesian Experimental Design
-  - Transformer
-  - Information Gain
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Amortized Inference"
+  - "Active Learning"
+  - "Bayesian Experimental Design"
+  - "Transformer"
+  - "Information Gain"
 date: 2026-05-08
 content_hash: 1e751f03a44845f2
 ---

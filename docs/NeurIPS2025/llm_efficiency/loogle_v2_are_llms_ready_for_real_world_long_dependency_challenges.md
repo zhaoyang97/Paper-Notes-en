@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LooGLE v2: Are LLMs Ready for Real World Long Dependency Challenges?
 description: >-
-  [NeurIPS 2025 (Datasets and Benchmarks Track)][LLM Efficiency][long dependency] LooGLE v2 is a long-dependency reasoning benchmark spanning four real-world domains—legal, financial, gaming, and code—with context lengths ranging from 16K to 2M tokens. It comprises 10 domain-specific task types and 1,934 QA instances. Evaluation of 10 LLMs reveals that the strongest model, GPT-4.1, achieves only 59.2%, exposing fundamental deficiencies of current LLMs in real-world long-dependency scenarios.
+  [NeurIPS 2025 (Datasets and Benchmarks Track)][LLM Efficiency][long dependency] LooGLE v2 is a long-dependency reasoning benchmark spanning four real-world domains—legal, financial, gaming…
 tags:
-  - NeurIPS 2025 (Datasets and Benchmarks Track)
-  - LLM Efficiency
-  - long dependency
-  - real-world benchmark
-  - domain-specific tasks
-  - scalable annotation
-  - long-context reasoning
+  - "NeurIPS 2025 (Datasets and Benchmarks Track)"
+  - "LLM Efficiency"
+  - "long dependency"
+  - "real-world benchmark"
+  - "domain-specific tasks"
+  - "scalable annotation"
+  - "long-context reasoning"
 date: 2026-05-08
 content_hash: 77c2030c85dd74c8
 ---

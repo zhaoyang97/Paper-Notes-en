@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ReplaceMe: Network Simplification via Depth Pruning and Transformer Block Linearization
 description: >-
-  [NeurIPS 2025][Model Compression][Depth Pruning] ReplaceMe is a training-free depth pruning method that uses a small calibration dataset to estimate a linear transformation approximating groups of pruned Transformer blocks. This transformation is fused into adjacent layer weights without introducing additional parameters, achieving 25% pruning on LLaMA-2-7B while retaining approximately 90% of original performance.
+  [NeurIPS 2025][Model Compression][Depth Pruning] ReplaceMe is a training-free depth pruning method that uses a small calibration dataset to estimate a linear transformation approximating groups of pruned Transformer bloc…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Depth Pruning
-  - Transformer Linearization
-  - Training-Free Compression
-  - LLM Acceleration
-  - Layer Selection
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Depth Pruning"
+  - "Transformer Linearization"
+  - "Training-Free Compression"
+  - "LLM Acceleration"
+  - "Layer Selection"
 date: 2026-05-08
 content_hash: 9b80f4cf856663bc
 ---

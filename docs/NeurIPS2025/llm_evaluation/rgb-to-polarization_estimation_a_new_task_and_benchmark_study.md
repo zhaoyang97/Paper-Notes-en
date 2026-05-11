@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RGB-to-Polarization Estimation: A New Task and Benchmark Study
 description: >-
-  [NeurIPS 2025][LLM Evaluation][polarization estimation] This paper formally defines the novel task of estimating polarization components (S₁/S₂/S₃) from standard RGB images, establishes the first systematic benchmark encompassing both restoration-based and generative methods, and finds that pretrained MAE achieves the best overall pixel-level accuracy (PSNR 24.74). Restoration-based methods consistently outperform diffusion-based generative methods, with pretrained weight transfer identified as a critical advantage.
+  [NeurIPS 2025][LLM Evaluation][polarization estimation] This paper formally defines the novel task of estimating polarization components (S₁/S₂/S₃) from standard RGB images…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - polarization estimation
-  - Stokes parameters
-  - RGB images
-  - benchmark
-  - diffusion models
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "polarization estimation"
+  - "Stokes parameters"
+  - "RGB images"
+  - "benchmark"
+  - "diffusion models"
 date: 2026-05-08
 content_hash: 3585d367d350bfbe
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dynamics Within Latent Chain-of-Thought: An Empirical Study of Causal Structure
 description: >-
-  [ICLR2026][LLM Reasoning][Latent Chain-of-Thought] This paper models latent CoT as a structural causal model (SCM) and analyzes the Coconut and CODI paradigms via step-wise do-interventions, revealing that latent reasoning steps exhibit heterogeneous causal leverage, non-local jump-based propagation structures, and a persistent gap between early output commitment and late representational commitment.
+  [ICLR2026][LLM Reasoning][Latent Chain-of-Thought] This paper models latent CoT as a structural causal model (SCM) and analyzes the Coconut and CODI paradigms via step-wise do-interventions…
 tags:
-  - ICLR2026
-  - LLM Reasoning
-  - Latent Chain-of-Thought
-  - Causal Analysis
-  - do-Intervention
-  - Structural Causal Model
-  - Interpretability
+  - "ICLR2026"
+  - "LLM Reasoning"
+  - "Latent Chain-of-Thought"
+  - "Causal Analysis"
+  - "do-Intervention"
+  - "Structural Causal Model"
+  - "Interpretability"
 date: 2026-05-08
 content_hash: 68096b6fbe61da33
 ---

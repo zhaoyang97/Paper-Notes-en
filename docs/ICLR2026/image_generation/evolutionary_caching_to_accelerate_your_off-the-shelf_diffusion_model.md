@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Evolutionary Caching to Accelerate Your Off-the-Shelf Diffusion Model
 description: >-
-  [ICLR 2026][Image Generation][Diffusion model acceleration] This paper proposes ECAD (Evolutionary Caching to Accelerate Diffusion models), which employs a genetic algorithm to automatically search for optimal caching schedules along the speed–quality Pareto frontier. Without modifying model parameters and using only 100 calibration prompts, ECAD achieves 2–3× inference speedup while maintaining or even improving generation quality.
+  [ICLR 2026][Image Generation][Diffusion model acceleration] This paper proposes ECAD (Evolutionary Caching to Accelerate Diffusion models), which employs a genetic algorithm to automatically search for optimal caching sc…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion model acceleration
-  - caching schedule
-  - genetic algorithm
-  - Pareto optimization
-  - training-free
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Diffusion model acceleration"
+  - "caching schedule"
+  - "genetic algorithm"
+  - "Pareto optimization"
+  - "training-free"
 date: 2026-05-08
 content_hash: 688cd41e8dfb74e7
 ---

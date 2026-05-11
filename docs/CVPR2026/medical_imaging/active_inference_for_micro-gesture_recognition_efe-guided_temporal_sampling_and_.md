@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Active Inference for Micro-Gesture Recognition: EFE-Guided Temporal Sampling and Adaptive Learning
 description: >-
-  [CVPR 2026][Medical Imaging][Micro-Gesture Recognition] This paper proposes the UAAI framework, which for the first time introduces Active Inference into micro-gesture recognition. By combining EFE-guided temporal frame selection, spatial attention, and UMIX uncertainty-aware augmentation, UAAI achieves 63.47% on the SMG dataset (RGB modality), substantially outperforming conventional RGB-based methods.
+  [CVPR 2026][Medical Imaging][Micro-Gesture Recognition] This paper proposes the UAAI framework, which for the first time introduces Active Inference into micro-gesture recognition. By combining EFE-guided temporal frame…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Micro-Gesture Recognition
-  - Active Inference
-  - Expected Free Energy
-  - POMDP
-  - Uncertainty-Aware Augmentation
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Micro-Gesture Recognition"
+  - "Active Inference"
+  - "Expected Free Energy"
+  - "POMDP"
+  - "Uncertainty-Aware Augmentation"
 date: 2026-05-08
 content_hash: f18cd4295086a4d2
 ---

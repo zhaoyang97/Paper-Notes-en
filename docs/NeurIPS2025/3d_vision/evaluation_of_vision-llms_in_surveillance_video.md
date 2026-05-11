@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Evaluation of Vision-LLMs in Surveillance Video
 description: >-
-  [NeurIPS 2025][3D Vision][Vision-LLM] This paper proposes a training-free two-stage framework that leverages small Vision-LLMs to generate textual descriptions of video content, followed by an NLI classifier for zero-shot scoring. It systematically evaluates the impact of prompting strategies and privacy-preserving filters on anomalous behavior recognition in surveillance videos.
+  [NeurIPS 2025][3D Vision][Vision-LLM] This paper proposes a training-free two-stage framework that leverages small Vision-LLMs to generate textual descriptions of video content…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Vision-LLM
-  - Zero-shot Anomaly Detection
-  - Surveillance Video
-  - Privacy Protection
-  - Natural Language Inference
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Vision-LLM"
+  - "Zero-shot Anomaly Detection"
+  - "Surveillance Video"
+  - "Privacy Protection"
+  - "Natural Language Inference"
 date: 2026-05-08
 content_hash: 498529d159f0e4ea
 ---

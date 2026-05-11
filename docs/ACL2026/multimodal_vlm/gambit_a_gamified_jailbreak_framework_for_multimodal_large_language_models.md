@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GAMBIT: A Gamified Jailbreak Framework for Multimodal Large Language Models
 description: >-
-  [ACL 2026][Multimodal VLM][Multimodal jailbreak] This paper proposes GAMBIT, a gamified multimodal jailbreak framework that decomposes harmful queries into puzzle images with hidden keywords and embeds them within competitive game scenarios. By exploiting the model's reasoning incentives and cognitive load, GAMBIT bypasses safety filters, achieving attack success rates of 92.13% on Gemini 2.5 Flash and 85.87% on GPT-4o, and is effective against both reasoning and non-reasoning models.
+  [ACL 2026][Multimodal VLM][Multimodal jailbreak] This paper proposes GAMBIT, a gamified multimodal jailbreak framework that decomposes harmful queries into puzzle images with hidden keywords and embeds them within compet…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Multimodal jailbreak
-  - gamified attack
-  - cognitive load
-  - reasoning-chain safety
-  - MLLM adversarial
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Multimodal jailbreak"
+  - "gamified attack"
+  - "cognitive load"
+  - "reasoning-chain safety"
+  - "MLLM adversarial"
 date: 2026-05-08
 content_hash: 7fcb32872e01c3b1
 ---

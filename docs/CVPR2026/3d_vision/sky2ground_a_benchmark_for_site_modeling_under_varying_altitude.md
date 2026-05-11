@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Sky2Ground: A Benchmark for Site Modeling under Varying Altitude
 description: >-
-  [CVPR 2026][3D Vision][Cross-view localization] This paper introduces the Sky2Ground dataset (51 scenes, 80k images, covering satellite/aerial/ground views with both synthetic and real imagery) and the SkyNet model (dual-stream encoder + masked satellite attention + progressive view sampling), presenting the first systematic study of joint camera localization across ground, aerial, and satellite viewpoints. SkyNet achieves a 9.6% improvement in RRA@5 and an 18.1% improvement in RTA@5.
+  [CVPR 2026][3D Vision][Cross-view localization] This paper introduces the Sky2Ground dataset (51 scenes, 80k images, covering satellite/aerial/ground views with both synthetic and real imagery) and the SkyNet model (dual…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Cross-view localization
-  - satellite–aerial–ground
-  - multi-altitude 3D reconstruction
-  - Gaussian splatting
-  - curriculum learning
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Cross-view localization"
+  - "satellite–aerial–ground"
+  - "multi-altitude 3D reconstruction"
+  - "Gaussian splatting"
+  - "curriculum learning"
 date: 2026-05-08
 content_hash: 35bd0260b10b7130
 ---

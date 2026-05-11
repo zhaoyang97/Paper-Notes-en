@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Intra-finger Variability of Diffusion-based Latent Fingerprint Generation
 description: >-
-  [CVPR 2026][Image Generation][fingerprint synthesis] This paper systematically evaluates the intra-finger variability of diffusion-model-based fingerprint synthesis. By constructing a latent fingerprint style library spanning 40 surface types and 15 development techniques, it enhances generation diversity and quantifies both local and global identity inconsistencies introduced during the generation process.
+  [CVPR 2026][Image Generation][fingerprint synthesis] This paper systematically evaluates the intra-finger variability of diffusion-model-based fingerprint synthesis. By constructing a latent fingerprint style library spa…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - fingerprint synthesis
-  - diffusion models
-  - latent fingerprints
-  - identity consistency
-  - style diversity
+  - "CVPR 2026"
+  - "Image Generation"
+  - "fingerprint synthesis"
+  - "diffusion models"
+  - "latent fingerprints"
+  - "identity consistency"
+  - "style diversity"
 date: 2026-05-08
 content_hash: 5499f42f2752d7be
 ---

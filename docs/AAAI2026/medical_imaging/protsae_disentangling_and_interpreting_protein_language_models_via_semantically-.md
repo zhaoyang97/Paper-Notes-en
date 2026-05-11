@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] ProtSAE: Disentangling and Interpreting Protein Language Models via Semantically-Guided Sparse Autoencoders
 description: >-
-  [AAAI 2026][Medical Imaging][Protein language models] This paper proposes ProtSAE, which incorporates semantic annotations and domain ontology knowledge as guidance signals during sparse autoencoder training to address the semantic entanglement problem of conventional SAEs. The method aligns latent features of protein language models with biological concepts (molecular function, biological process, ion binding sites, etc.) with high precision, while maintaining high reconstruction fidelity and supporting concept-level generation steering.
+  [AAAI 2026][Medical Imaging][Protein language models] This paper proposes ProtSAE, which incorporates semantic annotations and domain ontology knowledge as guidance signals during sparse autoencoder training to address t…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Protein language models
-  - sparse autoencoders
-  - semantic guidance
-  - interpretability
-  - feature disentanglement
-  - ontology embeddings
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Protein language models"
+  - "sparse autoencoders"
+  - "semantic guidance"
+  - "interpretability"
+  - "feature disentanglement"
+  - "ontology embeddings"
 date: 2026-05-08
 content_hash: fddde8573bf652e5
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SAO-Instruct: Free-form Audio Editing using Natural Language Instructions
 description: >-
-  [NeurIPS 2025][Image Generation][Audio Editing] This paper proposes SAO-Instruct, the first audio editing model supporting fully free-form natural language instructions. Training data consisting of editing triplets is constructed via three pipelines — Prompt-to-Prompt, DDPM inversion, and manual editing — and Stable Audio Open is fine-tuned to achieve context-preserving, targeted audio modification.
+  [NeurIPS 2025][Image Generation][Audio Editing] This paper proposes SAO-Instruct, the first audio editing model supporting fully free-form natural language instructions. Training data consisting of editing triplets is co…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Audio Editing
-  - Natural Language Instructions
-  - Stable Audio Open
-  - Prompt-to-Prompt
-  - Diffusion Models
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Audio Editing"
+  - "Natural Language Instructions"
+  - "Stable Audio Open"
+  - "Prompt-to-Prompt"
+  - "Diffusion Models"
 date: 2026-05-08
 content_hash: 295d602afcb44fdc
 ---

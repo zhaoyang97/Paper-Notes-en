@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EdgeDiT: Hardware-Aware Diffusion Transformers for Efficient On-Device Image Generation
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Transformer] EdgeDiT proposes a hardware-aware optimization framework for Diffusion Transformers that trains lightweight proxy blocks via hierarchical knowledge distillation and searches for Pareto-optimal architectures through multi-objective Bayesian optimization, achieving 20–30% parameter reduction, 36–46% FLOPs reduction, and 1.65× on-device speedup while maintaining or surpassing the generation quality of the original DiT-XL/2.
+  [CVPR 2026][Image Generation][Diffusion Transformer] EdgeDiT proposes a hardware-aware optimization framework for Diffusion Transformers that trains lightweight proxy blocks via hierarchical knowledge distillation and se…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Transformer
-  - on-device deployment
-  - hardware-aware optimization
-  - knowledge distillation
-  - architecture search
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Transformer"
+  - "on-device deployment"
+  - "hardware-aware optimization"
+  - "knowledge distillation"
+  - "architecture search"
 date: 2026-05-08
 content_hash: 62e42e43f4c945cc
 ---

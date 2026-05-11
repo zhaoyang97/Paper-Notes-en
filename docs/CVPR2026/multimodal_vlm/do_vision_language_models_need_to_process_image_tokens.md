@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Do Vision Language Models Need to Process Image Tokens?
 description: >-
-  [CVPR 2026][Multimodal VLM][vision-language models] This paper systematically demonstrates that image token representations in VLMs stabilize in shallow layers and become functionally interchangeable across deeper layers, while text token representations undergo continuous dynamic reconstruction — the necessity of deep image processing is highly dependent on the output task type.
+  [CVPR 2026][Multimodal VLM][vision-language models] This paper systematically demonstrates that image token representations in VLMs stabilize in shallow layers and become functionally interchangeable across deeper layers…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - vision-language models
-  - image tokens
-  - representation analysis
-  - computational efficiency
-  - modality redundancy
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "vision-language models"
+  - "image tokens"
+  - "representation analysis"
+  - "computational efficiency"
+  - "modality redundancy"
 date: 2026-05-08
 content_hash: 654d3e4317d584b5
 ---

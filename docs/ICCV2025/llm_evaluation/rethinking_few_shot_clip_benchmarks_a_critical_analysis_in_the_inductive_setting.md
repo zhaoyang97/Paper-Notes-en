@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Rethinking Few Shot CLIP Benchmarks: A Critical Analysis in the Inductive Setting
 description: >-
-  [ICCV 2025][LLM Evaluation][CLIP] This paper identifies that existing CLIP few-shot classification benchmarks constitute a "partially transductive setting" due to CLIP's exposure to test datasets during pretraining. It proposes an unlearning-based inductive benchmark evaluation framework and introduces a few-shot classification method that achieves stable state-of-the-art performance under the new benchmark.
+  [ICCV 2025][LLM Evaluation][CLIP] This paper identifies that existing CLIP few-shot classification benchmarks constitute a "partially transductive setting" due to CLIP's exposure to test datasets during pretraining. It p…
 tags:
-  - ICCV 2025
-  - LLM Evaluation
-  - CLIP
-  - few-shot learning
-  - inductive setting
-  - machine unlearning
-  - benchmark evaluation
+  - "ICCV 2025"
+  - "LLM Evaluation"
+  - "CLIP"
+  - "few-shot learning"
+  - "inductive setting"
+  - "machine unlearning"
+  - "benchmark evaluation"
 date: 2026-05-08
 content_hash: 3733b4c8a1b4f2b4
 ---

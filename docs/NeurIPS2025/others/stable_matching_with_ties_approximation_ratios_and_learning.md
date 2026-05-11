@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Stable Matching with Ties: Approximation Ratios and Learning
 description: >-
-  [NeurIPS 2025][stable matching] This paper studies two-sided matching markets with tied preferences, introduces the Optimal Stable Share (OSS) ratio to measure fairness, proves that the OSS-ratio under distributions over stable matchings is $\Omega(N)$ while under general matching distributions it is $O(\log N)$ (asymptotically tight), and extends the offline approximation results to a bandit learning setting.
+  [NeurIPS 2025][stable matching] This paper studies two-sided matching markets with tied preferences, introduces the Optimal Stable Share (OSS) ratio to measure fairness…
 tags:
-  - NeurIPS 2025
-  - stable matching
-  - preference ties
-  - approximation ratio
-  - OSS-ratio
-  - multi-armed bandit
+  - "NeurIPS 2025"
+  - "stable matching"
+  - "preference ties"
+  - "approximation ratio"
+  - "OSS-ratio"
+  - "multi-armed bandit"
 date: 2026-05-08
 content_hash: 47b9ecbd362ff552
 ---

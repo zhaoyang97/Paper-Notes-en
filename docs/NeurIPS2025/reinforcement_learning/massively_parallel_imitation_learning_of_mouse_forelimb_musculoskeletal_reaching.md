@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Massively Parallel Imitation Learning of Mouse Forelimb Musculoskeletal Reaching Dynamics
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][musculoskeletal simulation] This work presents MIMIC-MJX, a massively parallel imitation learning pipeline for mouse forelimb musculoskeletal simulation. Leveraging JAX-accelerated PPO at 1.2 million steps/second across thousands of parallel environments, the pipeline trains physically-informed imitation learning policies. The study demonstrates that control cost regularization enables simulated muscle activity to better predict real EMG signals, and employs a Takens-theorem-based nonlinear dynamical systems approach to predict muscle activation from joint kinematics.
+  [NeurIPS 2025][Reinforcement Learning][musculoskeletal simulation] This work presents MIMIC-MJX, a massively parallel imitation learning pipeline for mouse forelimb musculoskeletal simulation. Leveraging JAX-accelerated…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - musculoskeletal simulation
-  - mouse forelimb
-  - PPO
-  - MuJoCo-MJX
-  - EMG prediction
-  - imitation learning
-  - Takens theorem
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "musculoskeletal simulation"
+  - "mouse forelimb"
+  - "PPO"
+  - "MuJoCo-MJX"
+  - "EMG prediction"
+  - "imitation learning"
+  - "Takens theorem"
 date: 2026-05-08
 content_hash: 1835ac85ef394d49
 ---

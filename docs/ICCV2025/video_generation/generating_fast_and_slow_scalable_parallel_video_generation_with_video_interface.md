@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Generating, Fast and Slow: Scalable Parallel Video Generation with Video Interface Networks
 description: >-
-  [ICCV 2025][Video Generation] This paper proposes Video Interface Networks (VINs), an abstraction module analogous to "fast thinking," which encodes long videos into fixed-size global tokens at each diffusion step to guide a DiT in generating multiple video chunks in parallel, enabling efficient and temporally consistent long video generation.
+  [ICCV 2025][Video Generation][diffusion transformer] This paper proposes Video Interface Networks (VINs), an abstraction module analogous to "fast thinking…
 tags:
-  - ICCV 2025
-  - Video Generation
-  - diffusion transformer
-  - parallel inference
-  - temporal consistency
-  - long video
+  - "ICCV 2025"
+  - "Video Generation"
+  - "diffusion transformer"
+  - "parallel inference"
+  - "temporal consistency"
+  - "long video"
 date: 2026-05-08
 content_hash: 0ab937dd07c1add6
 ---

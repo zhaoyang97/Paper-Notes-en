@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] GeoTikzBridge: Advancing Multimodal Code Generation for Geometric Perception and Reasoning
 description: >-
-  [CVPR 2026][Geometric Perception] GeoTikzBridge constructs the largest 2.5M image–TikZ code dataset and the first auxiliary-line instruction dataset, trains a code generation model capable of accurately reconstructing geometric figures, and serves as a plug-and-play module to enhance the geometric reasoning capabilities of arbitrary MLLMs/LLMs.
+  [CVPR 2026][Code Intelligence][Geometric Perception] GeoTikzBridge constructs the largest 2.5M image–TikZ code dataset and the first auxiliary-line instruction dataset…
 tags:
-  - CVPR 2026
-  - Geometric Perception
-  - TikZ Code Generation
-  - Multimodal Reasoning
-  - Auxiliary Line Generation
-  - Image-to-Code
+  - "CVPR 2026"
+  - "Code Intelligence"
+  - "Geometric Perception"
+  - "TikZ Code Generation"
+  - "Multimodal Reasoning"
+  - "Auxiliary Line Generation"
+  - "Image-to-Code"
 date: 2026-05-08
 content_hash: 937af20fbc362f67
 ---

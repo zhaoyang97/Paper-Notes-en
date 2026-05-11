@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] A Fast Heuristic Search Approach for Energy-Optimal Profile Routing for Electric Vehicles
 description: >-
-  [AAAI 2026][Electric vehicle routing] This paper proposes Pr-A*, a label-setting method based on multi-objective A* search for efficiently solving energy-optimal profile routing for electric vehicles (EVs) when the initial state of charge (SoC) is unknown. By using profile dominance pruning, the method avoids the complex profile merge operations required by traditional approaches, achieving performance close to standard A* with known initial SoC on large-scale road networks.
+  [AAAI 2026][Electric vehicle routing] This paper proposes Pr-A*, a label-setting method based on multi-objective A* search for efficiently solving energy-optimal profile routing for electric vehicles (EVs) when the initi…
 tags:
-  - AAAI 2026
-  - Electric vehicle routing
-  - energy-optimal search
+  - "AAAI 2026"
+  - "Electric vehicle routing"
+  - "energy-optimal search"
   - "A* search"
-  - energy profile
-  - multi-objective search
+  - "energy profile"
+  - "multi-objective search"
 date: 2026-05-08
 content_hash: 676b006173c20bb2
 ---

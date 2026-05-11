@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GASP: Guided Asymmetric Self-Play For Coding LLMs
 description: >-
-  [ICLR 2026][LLM/NLP][Asymmetric self-play] GASP introduces "goalposts" (hard target problems) into asymmetric self-play to guide the teacher in generating targeted training problems. Through a lemma (simplified variant) → lift (harder variant) curriculum structure, the framework progressively approaches difficult targets, surpassing unguided self-play by 2.5% on LiveCodeBench and solving hard problems that all baselines fail to solve.
+  [ICLR 2026][LLM/NLP][Asymmetric self-play] GASP introduces "goalposts" (hard target problems) into asymmetric self-play to guide the teacher in generating targeted training problems. Through a lemma (simplified variant)…
 tags:
-  - ICLR 2026
-  - LLM/NLP
-  - Asymmetric self-play
-  - code generation
-  - curriculum learning
-  - RLVR
-  - goal-guided
+  - "ICLR 2026"
+  - "LLM/NLP"
+  - "Asymmetric self-play"
+  - "code generation"
+  - "curriculum learning"
+  - "RLVR"
+  - "goal-guided"
 date: 2026-05-08
 content_hash: faf97c8e1179cba7
 ---

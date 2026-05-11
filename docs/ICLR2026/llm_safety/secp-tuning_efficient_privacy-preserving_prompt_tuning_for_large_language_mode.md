@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SecP-Tuning: Efficient Privacy-Preserving Prompt Tuning for Large Language Models via MPC
 description: >-
-  [ICLR 2026][LLM Safety][Privacy-Preserving] This paper proposes SecP-Tuning, the first privacy-preserving prompt tuning framework based on secure multi-party computation (MPC). It eliminates backpropagation overhead via forward-only tuning and reduces communication complexity by replacing softmax with privacy-preserving random feature attention (RFA), achieving approximately 12–16× speedup and 17–20× reduction in communication volume.
+  [ICLR 2026][LLM Safety][Privacy-Preserving] This paper proposes SecP-Tuning, the first privacy-preserving prompt tuning framework based on secure multi-party computation (MPC). It eliminates backpropagation overhead via…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Privacy-Preserving
-  - Secure Multi-Party Computation
-  - Prompt Tuning
-  - Forward Tuning
-  - Random Feature Attention
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Privacy-Preserving"
+  - "Secure Multi-Party Computation"
+  - "Prompt Tuning"
+  - "Forward Tuning"
+  - "Random Feature Attention"
 date: 2026-05-08
 content_hash: a364f228ca03adbf
 ---

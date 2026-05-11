@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] CompTrack: Information Bottleneck-Guided Low-Rank Dynamic Token Compression for Point Cloud Tracking
 description: >-
-  [AAAI 2026][Autonomous Driving][Point cloud tracking] CompTrack is proposed as the first framework to simultaneously address dual redundancy in LiDAR point clouds: SFP filters background noise via information entropy analysis to resolve spatial redundancy; IB-DTC estimates effective rank via online SVD and adaptively determines compression ratio to compress foreground into low-rank proxy tokens, resolving information redundancy. Achieves state-of-the-art on nuScenes (61.04% Success) at 90 FPS.
+  [AAAI 2026][Autonomous Driving][Point cloud tracking] CompTrack is proposed as the first framework to simultaneously address dual redundancy in LiDAR point clouds: SFP filters background noise via information entropy ana…
 tags:
-  - AAAI 2026
-  - Autonomous Driving
-  - Point cloud tracking
-  - spatial redundancy
-  - information redundancy
-  - information bottleneck
-  - SVD
-  - low-rank approximation
-  - dynamic token compression
+  - "AAAI 2026"
+  - "Autonomous Driving"
+  - "Point cloud tracking"
+  - "spatial redundancy"
+  - "information redundancy"
+  - "information bottleneck"
+  - "SVD"
+  - "low-rank approximation"
+  - "dynamic token compression"
 date: 2026-05-08
 content_hash: d38c33eb5cb942b3
 ---

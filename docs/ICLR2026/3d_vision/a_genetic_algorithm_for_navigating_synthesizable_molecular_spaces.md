@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Genetic Algorithm for Navigating Synthesizable Molecular Spaces
 description: >-
-  [ICLR 2026][3D Vision][genetic algorithm] This paper proposes SynGA, a genetic algorithm that operates directly on synthesis routes (synthesis trees), constraining the search strictly within synthesizable molecular space via custom crossover and mutation operators. Combined with ML-guided building block filtering, SynGA achieves state-of-the-art performance on synthesizable analog search and property optimization.
+  [ICLR 2026][3D Vision][genetic algorithm] This paper proposes SynGA, a genetic algorithm that operates directly on synthesis routes (synthesis trees)…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - genetic algorithm
-  - synthesizable molecular design
-  - synthesis routes
-  - Bayesian optimization
-  - building block filtering
+  - "ICLR 2026"
+  - "3D Vision"
+  - "genetic algorithm"
+  - "synthesizable molecular design"
+  - "synthesis routes"
+  - "Bayesian optimization"
+  - "building block filtering"
 date: 2026-05-08
 content_hash: 4be109bda86127c1
 ---

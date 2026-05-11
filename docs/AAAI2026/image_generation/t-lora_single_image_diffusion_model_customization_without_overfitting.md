@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] T-LoRA: Single Image Diffusion Model Customization Without Overfitting
 description: >-
-  [AAAI 2026][Image Generation][Diffusion model customization] This paper proposes T-LoRA, a timestep-dependent low-rank adaptation framework that addresses overfitting in single-image diffusion model customization. The framework dynamically adjusts the effective LoRA rank across diffusion timesteps (smaller rank at high-noise timesteps, larger rank at low-noise timesteps) and employs orthogonal initialization (Ortho-LoRA) via random matrix SVD to ensure information independence among adaptation components, achieving an optimal balance between concept fidelity and text alignment.
+  [AAAI 2026][Image Generation][Diffusion model customization] This paper proposes T-LoRA, a timestep-dependent low-rank adaptation framework that addresses overfitting in single-image diffusion model customization. The fr…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Diffusion model customization
-  - LoRA
-  - overfitting
-  - timestep dependency
-  - orthogonal initialization
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Diffusion model customization"
+  - "LoRA"
+  - "overfitting"
+  - "timestep dependency"
+  - "orthogonal initialization"
 date: 2026-05-08
 content_hash: 9d7daaf5956a921f
 ---

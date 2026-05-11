@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Augmenting Moment Retrieval: Zero-Dependency Two-Stage Learning
 description: >-
-  [ICCV 2025][Object Detection][Moment Retrieval] This paper proposes the AMR framework, which leverages a Splice-and-Boost data augmentation strategy and a cold-start–distillation two-stage training pipeline to substantially improve boundary awareness and semantic discriminability in video moment retrieval—without relying on any external data or pretrained models—surpassing the previous SOTA by +5% on QVHighlights.
+  [ICCV 2025][Object Detection][Moment Retrieval] This paper proposes the AMR framework, which leverages a Splice-and-Boost data augmentation strategy and a cold-start–distillation two-stage training pipeline to substantia…
 tags:
-  - ICCV 2025
-  - Object Detection
-  - Moment Retrieval
-  - Data Augmentation
-  - Knowledge Distillation
-  - DETR
-  - Video Temporal Grounding
+  - "ICCV 2025"
+  - "Object Detection"
+  - "Moment Retrieval"
+  - "Data Augmentation"
+  - "Knowledge Distillation"
+  - "DETR"
+  - "Video Temporal Grounding"
 date: 2026-05-08
 content_hash: 26f7732787fd7f69
 ---

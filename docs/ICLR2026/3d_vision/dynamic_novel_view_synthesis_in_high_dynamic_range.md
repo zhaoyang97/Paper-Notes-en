@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Dynamic Novel View Synthesis in High Dynamic Range
 description: >-
-  [ICLR 2026][3D Vision][HDR] This paper is the first to formally define the HDR Dynamic Novel View Synthesis (HDR DNVS) problem and proposes the HDR-4DGS framework. Through a dynamic tone mapping module, the framework achieves temporally consistent HDR radiance field reconstruction in time-varying scenes, outperforming existing methods on both synthetic and real-world datasets.
+  [ICLR 2026][3D Vision][HDR] This paper is the first to formally define the HDR Dynamic Novel View Synthesis (HDR DNVS) problem and proposes the HDR-4DGS framework. Through a dynamic tone mapping module…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - HDR
-  - Dynamic Novel View Synthesis
-  - 4D Gaussian Splatting
-  - Tone Mapping
-  - Radiance Field
+  - "ICLR 2026"
+  - "3D Vision"
+  - "HDR"
+  - "Dynamic Novel View Synthesis"
+  - "4D Gaussian Splatting"
+  - "Tone Mapping"
+  - "Radiance Field"
 date: 2026-05-08
 content_hash: 5ba722f9d04604bb
 ---

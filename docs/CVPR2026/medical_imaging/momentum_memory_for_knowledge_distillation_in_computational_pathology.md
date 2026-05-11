@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Momentum Memory for Knowledge Distillation in Computational Pathology
 description: >-
-  [CVPR 2026][Medical Imaging][Knowledge Distillation] This paper proposes MoMKD, which replaces conventional batch-local feature alignment with a momentum-updated class-conditional memory bank to enable cross-modal knowledge distillation from genomics to pathology whole-slide images (WSIs), achieving genomics-level predictive capability at inference using only H&E slides.
+  [CVPR 2026][Medical Imaging][Knowledge Distillation] This paper proposes MoMKD, which replaces conventional batch-local feature alignment with a momentum-updated class-conditional memory bank to enable cross-modal knowle…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Knowledge Distillation
-  - Computational Pathology
-  - Momentum Memory
-  - Cross-modal Alignment
-  - Multiple Instance Learning
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Knowledge Distillation"
+  - "Computational Pathology"
+  - "Momentum Memory"
+  - "Cross-modal Alignment"
+  - "Multiple Instance Learning"
 date: 2026-05-08
 content_hash: 3486982d3b55ffb4
 ---

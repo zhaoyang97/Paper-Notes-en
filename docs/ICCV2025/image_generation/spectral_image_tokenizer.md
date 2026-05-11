@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Spectral Image Tokenizer
 description: >-
-  [ICCV 2025][Image Generation][image tokenizer] This paper proposes the Spectral Image Tokenizer (SIT), which tokenizes images in the frequency domain after converting them via the Discrete Wavelet Transform (DWT). The resulting token sequence is naturally arranged in a coarse-to-fine order, enabling capabilities unavailable to conventional raster-scan tokenizers, including multi-resolution reconstruction, progressive generation, text-guided super-resolution, and image editing.
+  [ICCV 2025][Image Generation][image tokenizer] This paper proposes the Spectral Image Tokenizer (SIT), which tokenizes images in the frequency domain after converting them via the Discrete Wavelet Transform (DWT). The re…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - image tokenizer
-  - discrete wavelet transform
-  - autoregressive generation
-  - coarse-to-fine
-  - multiscale
-  - VQ-VAE
+  - "ICCV 2025"
+  - "Image Generation"
+  - "image tokenizer"
+  - "discrete wavelet transform"
+  - "autoregressive generation"
+  - "coarse-to-fine"
+  - "multiscale"
+  - "VQ-VAE"
 date: 2026-05-08
 content_hash: 14bd64b1c4a4e3f9
 ---

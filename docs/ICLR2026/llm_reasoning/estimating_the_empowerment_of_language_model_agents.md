@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Estimating the Empowerment of Language Model Agents
 description: >-
-  [ICLR 2026][LLM Reasoning][empowerment] This paper proposes EELMA, an algorithm that leverages *empowerment* from information theory — defined as the mutual information between an agent's actions and future states — as a goal-agnostic capability metric for LM agents. EELMA achieves strong correlation with task performance ($r=0.83$–$0.94$) in both language games and real-world web navigation scenarios, and can be applied to open-ended agent monitoring and safety evaluation.
+  [ICLR 2026][LLM Reasoning][empowerment] This paper proposes EELMA, an algorithm that leverages *empowerment* from information theory — defined as the mutual information between an agent's actions and future states — as a…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - empowerment
-  - information theory
-  - mutual information
-  - LM agents
-  - goal-agnostic evaluation
-  - InfoNCE
-  - WebArena
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "empowerment"
+  - "information theory"
+  - "mutual information"
+  - "LM agents"
+  - "goal-agnostic evaluation"
+  - "InfoNCE"
+  - "WebArena"
 date: 2026-05-08
 content_hash: 4076e36f8b693257
 ---

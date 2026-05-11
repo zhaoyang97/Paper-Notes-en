@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] A Stitch in Time: Learning Procedural Workflow via Self-Supervised Plackett-Luce Ranking
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Procedural Activity Understanding] This paper proposes PL-Stitch, a self-supervised framework that leverages the Plackett-Luce probabilistic ranking model to use temporal ordering of video frames as a pretraining signal. The method learns "procedure-aware" video representations and consistently outperforms existing self-supervised approaches on surgical phase recognition and cooking action segmentation.
+  [CVPR 2026][Self-Supervised Learning][Procedural Activity Understanding] This paper proposes PL-Stitch, a self-supervised framework that leverages the Plackett-Luce probabilistic ranking model to use temporal ordering of…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - Procedural Activity Understanding
-  - Temporal Ordering
-  - Plackett-Luce Model
-  - Surgical Video
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Procedural Activity Understanding"
+  - "Temporal Ordering"
+  - "Plackett-Luce Model"
+  - "Surgical Video"
 date: 2026-05-08
 content_hash: ae5202141c5d8f05
 ---

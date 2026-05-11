@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] ChemVLR: Prioritizing Reasoning in Perception for Chemical Vision-Language Understanding
 description: >-
-  [ACL 2026][chemical vision understanding] This paper proposes ChemVLR, the first reasoning-oriented VLM for the chemical domain. It constructs a 760K reasoning dataset via a cross-modal reverse engineering strategy and employs a three-stage training pipeline of continued pre-training → SFT → RL, achieving substantial improvements over proprietary models and domain-specialized VLMs on molecular recognition and reaction prediction tasks.
+  [ACL 2026][Interpretability][chemical vision understanding] This paper proposes ChemVLR, the first reasoning-oriented VLM for the chemical domain. It constructs a 760K reasoning dataset via a cross-modal reverse engineer…
 tags:
-  - ACL 2026
-  - chemical vision understanding
-  - reasoning VLM
-  - cross-modal reverse engineering
-  - three-stage training
-  - molecular recognition
+  - "ACL 2026"
+  - "Interpretability"
+  - "chemical vision understanding"
+  - "reasoning VLM"
+  - "cross-modal reverse engineering"
+  - "three-stage training"
+  - "molecular recognition"
 date: 2026-05-08
 content_hash: 63a41b53d6237776
 ---

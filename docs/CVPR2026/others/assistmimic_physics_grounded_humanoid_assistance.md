@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] AssistMimic: Physics-Grounded Humanoid Assistance via Multi-Agent RL
 description: >-
-  [CVPR 2026][multi-agent reinforcement learning] The first multi-agent RL framework that performs contact-rich human-human assistive motion imitation in physics simulation, enabling MARL in high-contact settings via motion prior initialization, dynamic reference redirection, and contact facilitation rewards.
+  [CVPR 2026][multi-agent reinforcement learning] The first multi-agent RL framework that performs contact-rich human-human assistive motion imitation in physics simulation…
 tags:
-  - CVPR 2026
-  - multi-agent reinforcement learning
-  - physics simulation
-  - assistive behavior
-  - motion imitation
-  - contact-rich interaction
+  - "CVPR 2026"
+  - "multi-agent reinforcement learning"
+  - "physics simulation"
+  - "assistive behavior"
+  - "motion imitation"
+  - "contact-rich interaction"
 date: 2026-05-08
 content_hash: 4b75219f6aa27c9e
 ---

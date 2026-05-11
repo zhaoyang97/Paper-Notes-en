@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Benchmarking ECG FMs: A Reality Check Across Clinical Tasks
 description: >-
-  [ICLR 2026][Medical Imaging][ECG] A comprehensive "reality check" benchmark evaluating 8 ECG foundation models across 12 datasets and 26 clinical tasks reveals that the compact structured state space model (SSM) ECG-CPC outperforms large-scale Transformers in 5 out of 7 task categories, demonstrating that architectural design matters more than model scale.
+  [ICLR 2026][Medical Imaging][ECG] A comprehensive "reality check" benchmark evaluating 8 ECG foundation models across 12 datasets and 26 clinical tasks reveals that the compact structured state space model (SSM) ECG-CPC…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - ECG
-  - Foundation Models
-  - Structured State Space Models
-  - Electrocardiogram
-  - Benchmarking
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "ECG"
+  - "Foundation Models"
+  - "Structured State Space Models"
+  - "Electrocardiogram"
+  - "Benchmarking"
 date: 2026-05-08
 content_hash: 34f7bdfd7e095de9
 ---

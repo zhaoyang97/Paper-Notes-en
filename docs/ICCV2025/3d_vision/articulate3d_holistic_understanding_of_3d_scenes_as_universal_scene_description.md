@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Articulate3D: Holistic Understanding of 3D Scenes as Universal Scene Description
 description: >-
-  [ICCV 2025][3D Vision][3D scene understanding] This paper presents Articulate3D — the first large-scale real-world indoor scene dataset with articulation annotations (280 high-quality scans) — along with USDNet, a unified framework that simultaneously predicts movable/interactive part segmentation and motion parameters from 3D point clouds, providing simulation-ready scene data for embodied AI and physical simulation.
+  [ICCV 2025][3D Vision][3D scene understanding] This paper presents Articulate3D — the first large-scale real-world indoor scene dataset with articulation annotations (280 high-quality scans) — along with USDNet…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D scene understanding
-  - articulated objects
-  - point cloud segmentation
-  - motion parameter prediction
-  - USD format
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D scene understanding"
+  - "articulated objects"
+  - "point cloud segmentation"
+  - "motion parameter prediction"
+  - "USD format"
 date: 2026-05-08
 content_hash: 235b6d2ebdcff8b4
 ---

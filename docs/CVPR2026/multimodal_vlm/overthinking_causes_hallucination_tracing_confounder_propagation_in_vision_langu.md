@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Overthinking Causes Hallucination: Tracing Confounder Propagation in Vision Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][VLM hallucination] This paper reveals a novel mechanism underlying VLM hallucinations — *overthinking*: the model generates an excessive number of competing object hypotheses in intermediate decoding layers, and confounders propagate across layers to corrupt the final prediction. The paper proposes the Overthinking Score to quantify inter-layer hypothesis diversity × uncertainty, achieving F1 of 78.9% on MSCOCO and 71.58% on the OOD benchmark AMBER.
+  [CVPR 2026][Multimodal VLM][VLM hallucination] This paper reveals a novel mechanism underlying VLM hallucinations — *overthinking*: the model generates an excessive number of competing object hypotheses in intermediate d…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - VLM hallucination
-  - Overthinking Score
-  - confounder propagation
-  - LogitLens
-  - inter-layer token dynamics
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "VLM hallucination"
+  - "Overthinking Score"
+  - "confounder propagation"
+  - "LogitLens"
+  - "inter-layer token dynamics"
 date: 2026-05-08
 content_hash: ac7d1794e9a1de07
 ---

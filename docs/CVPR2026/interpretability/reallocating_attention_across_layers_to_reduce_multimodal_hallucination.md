@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Reallocating Attention Across Layers to Reduce Multimodal Hallucination
 description: >-
-  [CVPR 2026][multimodal hallucination] A lightweight, training-free plugin method is proposed to mitigate hallucination in Multimodal Large Reasoning Models (MLRMs) by identifying perceptual and reasoning attention heads and applying Class-Conditioned Rescaling to rebalance cross-layer attention distribution. The method achieves an average improvement of 4.2% across 5 benchmarks with negligible additional inference overhead.
+  [CVPR 2026][Interpretability][multimodal hallucination] A lightweight, training-free plugin method is proposed to mitigate hallucination in Multimodal Large Reasoning Models (MLRMs) by identifying perceptual and reasonin…
 tags:
-  - CVPR 2026
-  - multimodal hallucination
-  - attention heads
-  - perception-reasoning layer stratification
-  - training-free plugin
-  - attention reallocation
+  - "CVPR 2026"
+  - "Interpretability"
+  - "multimodal hallucination"
+  - "attention heads"
+  - "perception-reasoning layer stratification"
+  - "training-free plugin"
+  - "attention reallocation"
 date: 2026-05-08
 content_hash: 6965580fc294f2c0
 ---

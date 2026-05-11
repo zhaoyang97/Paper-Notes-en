@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Context Tokens are Anchors: Understanding the Repetition Curse in dMLLMs from an Information Flow Perspective
 description: >-
-  [ICLR 2026][Multimodal VLM][Diffusion language models] This work investigates the underlying mechanism behind the "Repetition Curse" in diffusion multimodal large language models (dMLLMs) when cache-based acceleration is applied, through an information flow perspective. It reveals that context tokens act as anchors that aggregate semantic information, and that caching disrupts this information flow pattern. The proposed CoTA method reduces repetition rates by up to 92%.
+  [ICLR 2026][Multimodal VLM][Diffusion language models] This work investigates the underlying mechanism behind the "Repetition Curse" in diffusion multimodal large language models (dMLLMs) when cache-based acceleration is…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Diffusion language models
-  - repetitive generation
-  - information flow analysis
-  - cache acceleration
-  - attention mechanism
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Diffusion language models"
+  - "repetitive generation"
+  - "information flow analysis"
+  - "cache acceleration"
+  - "attention mechanism"
 date: 2026-05-08
 content_hash: 913350eddcdf2fc6
 ---

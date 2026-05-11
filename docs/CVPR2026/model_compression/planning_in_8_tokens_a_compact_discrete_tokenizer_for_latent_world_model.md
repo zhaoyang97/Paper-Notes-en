@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Planning in 8 Tokens: A Compact Discrete Tokenizer for Latent World Model
 description: >-
-  [CVPR2026][Model Compression][compact discrete tokenizer] This paper proposes CompACT, which compresses each image into only 8 discrete tokens (~128 bits) by leveraging a frozen pretrained visual encoder to retain planning-critical semantic information, while a generative decoder supplements perceptual details. This achieves approximately 40× speedup in world-model-based planning with no loss in accuracy.
+  [CVPR2026][Model Compression][compact discrete tokenizer] This paper proposes CompACT, which compresses each image into only 8 discrete tokens (~128 bits) by leveraging a frozen pretrained visual encoder to retain planni…
 tags:
-  - CVPR2026
-  - Model Compression
-  - compact discrete tokenizer
-  - world model
-  - latent space planning
-  - extreme compression
-  - semantic encoding
-  - generative decoding
+  - "CVPR2026"
+  - "Model Compression"
+  - "compact discrete tokenizer"
+  - "world model"
+  - "latent space planning"
+  - "extreme compression"
+  - "semantic encoding"
+  - "generative decoding"
 date: 2026-05-08
 content_hash: 060913b14b01e771
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Explaining Similarity in Vision-Language Encoders with Weighted Banzhaf Interactions
 description: >-
-  [NeurIPS 2025][CLIP interpretability] FIxLIP proposes a game-theoretic framework based on weighted Banzhaf interaction indices that unifies the decomposition of similarity predictions in vision-language encoders (e.g., CLIP, SigLIP-2) into first-order token attributions and second-order cross-modal/intra-modal interactions, surpassing existing first-order attribution methods in both efficiency and faithfulness.
+  [NeurIPS 2025][Interpretability][CLIP interpretability] FIxLIP proposes a game-theoretic framework based on weighted Banzhaf interaction indices that unifies the decomposition of similarity predictions in vision-language…
 tags:
-  - NeurIPS 2025
-  - CLIP interpretability
-  - Banzhaf interaction
-  - game theory
-  - cross-modal interaction
-  - saliency map
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "CLIP interpretability"
+  - "Banzhaf interaction"
+  - "game theory"
+  - "cross-modal interaction"
+  - "saliency map"
 date: 2026-05-08
 content_hash: 4c37a6aefc2d0d46
 ---

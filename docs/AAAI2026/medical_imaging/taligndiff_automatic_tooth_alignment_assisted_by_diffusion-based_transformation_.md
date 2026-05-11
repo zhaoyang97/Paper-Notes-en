@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TAlignDiff: Automatic Tooth Alignment assisted by Diffusion-based Transformation Learning
 description: >-
-  [AAAI 2026][Medical Imaging][Tooth alignment] This paper proposes TAlignDiff, a unified framework that integrates a geometry-constrained point cloud regression network (PRN) with a diffusion-based transformation matrix denoising module (DTMD) under a joint training paradigm. Through a bidirectional feedback mechanism, the framework achieves superior automatic tooth alignment on small-scale clinical datasets compared to existing methods.
+  [AAAI 2026][Medical Imaging][Tooth alignment] This paper proposes TAlignDiff, a unified framework that integrates a geometry-constrained point cloud regression network (PRN) with a diffusion-based transformation matrix d…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Tooth alignment
-  - orthodontic treatment
-  - diffusion model
-  - transformation matrix
-  - point cloud regression
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Tooth alignment"
+  - "orthodontic treatment"
+  - "diffusion model"
+  - "transformation matrix"
+  - "point cloud regression"
 date: 2026-05-08
 content_hash: 4a90a43decaaa873
 ---

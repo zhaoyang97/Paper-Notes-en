@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] What Is the Optimal Ranking Score Between Precision and Recall? We Can Always Find It and It Is Rarely F₁
 description: >-
-  [CVPR 2026][F-score] This paper systematically studies the $F_\beta$ score family as a ranking tradeoff between Precision and Recall from a ranking-theoretic perspective. It proves that the rankings induced by $F_\beta$ form a geodesic (shortest path) between the Precision and Recall rankings, derives a closed-form formula for finding the optimal $\beta$, and demonstrates that the commonly used $F_1$ and skew-insensitive $F_1$ are rarely optimal ranking tradeoffs in practice.
+  [CVPR 2026][F-score] This paper systematically studies the $F_\beta$ score family as a ranking tradeoff between Precision and Recall from a ranking-theoretic perspective. It proves that the rankings induced by $F_\beta$…
 tags:
-  - CVPR 2026
-  - F-score
-  - ranking optimization
-  - Kendall distance
-  - precision-recall tradeoff
-  - performance evaluation theory
+  - "CVPR 2026"
+  - "F-score"
+  - "ranking optimization"
+  - "Kendall distance"
+  - "precision-recall tradeoff"
+  - "performance evaluation theory"
 date: 2026-05-08
 content_hash: ca8f2ed7a1b25ed0
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] JPEG Processing Neural Operator for Backward-Compatible Coding
 description: >-
-  [ICCV 2025][Scientific Computing][JPEG] This paper proposes JPNeO, a next-generation codec that is fully backward-compatible with the JPEG format. By introducing neural operators at both the encoding stage (JENO) and decoding stage (JDNO), along with a trainable quantization matrix, JPNeO significantly improves JPEG reconstruction quality—particularly for chroma components—while maintaining low memory footprint and parameter count.
+  [ICCV 2025][Scientific Computing][JPEG] This paper proposes JPNeO, a next-generation codec that is fully backward-compatible with the JPEG format. By introducing neural operators at both the encoding stage (JENO) and dec…
 tags:
-  - ICCV 2025
-  - Scientific Computing
-  - JPEG
-  - Neural Operator
-  - Backward Compatibility
-  - Image Compression
-  - Chroma Preservation
+  - "ICCV 2025"
+  - "Scientific Computing"
+  - "JPEG"
+  - "Neural Operator"
+  - "Backward Compatibility"
+  - "Image Compression"
+  - "Chroma Preservation"
 date: 2026-05-08
 content_hash: c6c647fc70327c8e
 ---

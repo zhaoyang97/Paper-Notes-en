@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Hierarchy-of-Groups Policy Optimization for Long-Horizon Agentic Tasks
 description: >-
-  [ICLR 2026][LLM Alignment][group-relative RL] This paper identifies a "historical context inconsistency" problem in stepwise group-based RL methods (e.g., GRPO/GiGPO)—steps within the same group may have different historical contexts, leading to biased advantage estimation. HGPO is proposed to achieve low-bias, balanced-variance advantage estimation through hierarchical grouping and adaptive weighting, yielding significant improvements on ALFWorld and WebShop with negligible additional overhead (<0.001%).
+  [ICLR 2026][LLM Alignment][group-relative RL] This paper identifies a "historical context inconsistency" problem in stepwise group-based RL methods (e.g.…
 tags:
-  - ICLR 2026
-  - LLM Alignment
-  - group-relative RL
-  - advantage estimation
-  - long-horizon agent
-  - bias-variance tradeoff
-  - context consistency
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "group-relative RL"
+  - "advantage estimation"
+  - "long-horizon agent"
+  - "bias-variance tradeoff"
+  - "context consistency"
 date: 2026-05-08
 content_hash: 8b2bbc68f4c8a3d8
 ---

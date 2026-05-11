@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Infinite-Story: A Training-Free Consistent Text-to-Image Generation
 description: >-
-  [AAAI 2026][Image Generation][consistent text-to-image generation] Built upon a scale-wise autoregressive model (Infinity), this work introduces three training-free techniques—Identity Prompt Replacement (eliminating contextual bias in the text encoder), Adaptive Style Injection (reference image feature injection), and Synchronized Guidance Adaptation (synchronizing both branches of CFG)—to achieve identity- and style-consistent multi-image generation at 6× the speed of diffusion-based methods (1.72 s/image).
+  [AAAI 2026][Image Generation][consistent text-to-image generation] Built upon a scale-wise autoregressive model (Infinity), this work introduces three training-free techniques—Identity Prompt Replacement (eliminating con…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - consistent text-to-image generation
-  - visual storytelling
-  - autoregressive generation
-  - training-free
-  - style consistency
+  - "AAAI 2026"
+  - "Image Generation"
+  - "consistent text-to-image generation"
+  - "visual storytelling"
+  - "autoregressive generation"
+  - "training-free"
+  - "style consistency"
 date: 2026-05-08
 content_hash: 6941faa6a6b4b056
 ---

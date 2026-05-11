@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Forecasting Epileptic Seizures from Contactless Camera via Cross-Species Transfer Learning
 description: >-
-  [CVPR 2026][Medical Imaging][Epileptic seizure forecasting] This paper is the first to systematically define the task of video-based epileptic seizure forecasting (predicting whether a seizure will occur within the next 5 seconds using 3–10-second pre-ictal clips), and proposes a two-stage cross-species transfer learning framework — self-supervised pre-training of VideoMAE on a mixed dataset of rodent and human videos, followed by few-shot fine-tuning on a very limited set of human epilepsy videos. Under 2/3/4-shot settings, the framework achieves an average balanced accuracy (bacc) of 72.30% and ROC-AUC of 75.58%, outperforming all video understanding baselines.
+  [CVPR 2026][Medical Imaging][Epileptic seizure forecasting] This paper is the first to systematically define the task of video-based epileptic seizure forecasting (predicting whether a seizure will occur within the next…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Epileptic seizure forecasting
-  - video analysis
-  - cross-species transfer learning
-  - contactless monitoring
-  - VideoMAE
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Epileptic seizure forecasting"
+  - "video analysis"
+  - "cross-species transfer learning"
+  - "contactless monitoring"
+  - "VideoMAE"
 date: 2026-05-08
 content_hash: dde9ad6caa9b4927
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Simple and Efficient Heterogeneous Temporal Graph Neural Network
 description: >-
-  [NeurIPS 2025][Time Series][Heterogeneous temporal graph] This paper proposes SE-HTGNN, which integrates temporal modeling into spatial learning via a dynamic attention mechanism and initializes attention coefficients using LLM-generated priors, achieving up to 10× speedup over prior methods while maintaining state-of-the-art predictive accuracy on heterogeneous temporal graph tasks.
+  [NeurIPS 2025][Time Series][Heterogeneous temporal graph] This paper proposes SE-HTGNN, which integrates temporal modeling into spatial learning via a dynamic attention mechanism and initializes attention coefficients us…
 tags:
-  - NeurIPS 2025
-  - Time Series
-  - Heterogeneous temporal graph
-  - graph neural network
-  - dynamic attention
-  - LLM augmentation
-  - spatiotemporal modeling
+  - "NeurIPS 2025"
+  - "Time Series"
+  - "Heterogeneous temporal graph"
+  - "graph neural network"
+  - "dynamic attention"
+  - "LLM augmentation"
+  - "spatiotemporal modeling"
 date: 2026-05-08
 content_hash: 01f5cfe92c175fd3
 ---

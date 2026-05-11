@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RGB-Only Supervised Camera Parameter Optimization in Dynamic Scenes
 description: >-
-  [NeurIPS 2025][3D Vision][camera parameter estimation] ROS-Cam proposes a camera parameter (focal length + pose) optimization method for dynamic scenes supervised solely by a single RGB video. It achieves state-of-the-art accuracy and fastest runtime across 5 datasets via three key contributions: a patch-wise tracking filter for sparse, robust correspondences; a Cauchy distribution-based outlier-aware joint optimization that adaptively down-weights moving objects; and a two-stage optimization strategy grounded in Softplus/convex minimax analysis.
+  [NeurIPS 2025][3D Vision][camera parameter estimation] ROS-Cam proposes a camera parameter (focal length + pose) optimization method for dynamic scenes supervised solely by a single RGB video. It achieves state-of-the-ar…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - camera parameter estimation
-  - dynamic scene
-  - RGB-only supervision
-  - outlier-aware optimization
-  - visual odometry
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "camera parameter estimation"
+  - "dynamic scene"
+  - "RGB-only supervision"
+  - "outlier-aware optimization"
+  - "visual odometry"
 date: 2026-05-08
 content_hash: d27e2922c6e87fe6
 ---

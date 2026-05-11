@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LD-RPS: Zero-Shot Unified Image Restoration via Latent Diffusion Recurrent Posterior Sampling
 description: >-
-  [ICCV 2025][Image Generation][Zero-shot image restoration] LD-RPS proposes a zero-shot, dataset-free unified image restoration method that performs recurrent posterior sampling via a pretrained latent diffusion model. It leverages multimodal large language models for semantic priors and a learnable F-PAM module to align the degradation domain, achieving high-quality blind restoration across diverse degradation types.
+  [ICCV 2025][Image Generation][Zero-shot image restoration] LD-RPS proposes a zero-shot, dataset-free unified image restoration method that performs recurrent posterior sampling via a pretrained latent diffusion model. It…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Zero-shot image restoration
-  - posterior sampling
-  - latent diffusion
-  - recurrent refinement
-  - multimodal prior
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Zero-shot image restoration"
+  - "posterior sampling"
+  - "latent diffusion"
+  - "recurrent refinement"
+  - "multimodal prior"
 date: 2026-05-08
 content_hash: ed825afbae2a242c
 ---

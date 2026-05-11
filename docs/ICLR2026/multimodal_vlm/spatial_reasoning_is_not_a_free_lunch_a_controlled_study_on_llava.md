@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Spatial Reasoning is Not a Free Lunch: A Controlled Study on LLaVA
 description: >-
-  [ICLR 2026][Multimodal VLM][spatial reasoning] Through controlled experiments within the LLaVA framework, this paper systematically investigates the effects of image encoder training objectives and 2D positional encoding on the spatial reasoning capabilities of VLMs. The study finds that encoder choice dominates spatial performance, AIMv2 yields the most consistent results, while improvements from 2D-RoPE are unstable—indicating that spatial reasoning failures are rooted in core design choices of current VLM pipelines.
+  [ICLR 2026][Multimodal VLM][spatial reasoning] Through controlled experiments within the LLaVA framework, this paper systematically investigates the effects of image encoder training objectives and 2D positional encoding…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - spatial reasoning
-  - image encoder
-  - 2D-RoPE
-  - LLaVA
-  - vision-language model
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "spatial reasoning"
+  - "image encoder"
+  - "2D-RoPE"
+  - "LLaVA"
+  - "vision-language model"
 date: 2026-05-08
 content_hash: b6e2527cffbe5a3c
 ---

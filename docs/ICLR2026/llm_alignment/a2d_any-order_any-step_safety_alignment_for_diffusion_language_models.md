@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A2D: Any-Order, Any-Step Safety Alignment for Diffusion Language Models
 description: >-
-  [ICLR 2026][LLM Alignment][diffusion language model] A2D is proposed, a token-level safety alignment method for diffusion language models (dLLMs) that trains the model to output [EOS] tokens at masked positions containing harmful content, enabling robust defense across any decoding order and any decoding step. It reduces DIJA template attack success rates from 80%+ to near zero (1.3%/0.0%) while supporting early rejection for a 19.3× speedup.
+  [ICLR 2026][LLM Alignment][diffusion language model] A2D is proposed, a token-level safety alignment method for diffusion language models (dLLMs) that trains the model to output [EOS] tokens at masked positions containin…
 tags:
-  - ICLR 2026
-  - LLM Alignment
-  - diffusion language model
-  - safety alignment
-  - token-level defense
-  - jailbreak
-  - masked diffusion
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "diffusion language model"
+  - "safety alignment"
+  - "token-level defense"
+  - "jailbreak"
+  - "masked diffusion"
 date: 2026-05-08
 content_hash: 3cf3134b463fc2b7
 ---

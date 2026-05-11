@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Detecting Generated Images by Fitting Natural Image Distributions
 description: >-
-  [Image Generation] This paper proposes ConV, a consistency verification framework that exploits the geometric discrepancy between the natural image manifold and generated images. By constructing two gradient-orthogonal functions, ConV achieves training-free generated image detection. An enhanced variant, F-ConV, further amplifies manifold deviation via Normalizing Flows.
+  [Image Generation] This paper proposes ConV, a consistency verification framework that exploits the geometric discrepancy between the natural image manifold and generated images. By constructing two gradient-orthogonal f…
 tags:
-  - Image Generation
+  - "Image Generation"
 date: 2026-05-08
 content_hash: e5137f4bdb8770f1
 ---

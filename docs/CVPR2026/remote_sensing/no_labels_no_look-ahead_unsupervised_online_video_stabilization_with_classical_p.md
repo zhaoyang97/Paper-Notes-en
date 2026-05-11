@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] No Labels, No Look-Ahead: Unsupervised Online Video Stabilization with Classical Priors
 description: >-
-  [CVPR 2026][Remote Sensing][Video stabilization] This paper proposes LightStab, an unsupervised online video stabilization framework built upon the classical three-stage pipeline (motion estimation → motion propagation → motion compensation) augmented with multi-threaded asynchronous buffering. LightStab is the first online method to comprehensively match offline SOTA across 5 benchmark datasets, and introduces UAV-Test, the first multimodal UAV aerial stabilization benchmark covering both visible-light and infrared imagery.
+  [CVPR 2026][Remote Sensing][Video stabilization] This paper proposes LightStab, an unsupervised online video stabilization framework built upon the classical three-stage pipeline (motion estimation → motion propagation →…
 tags:
-  - CVPR 2026
-  - Remote Sensing
-  - Video stabilization
-  - unsupervised
-  - online processing
-  - optical flow estimation
-  - UAV
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Video stabilization"
+  - "unsupervised"
+  - "online processing"
+  - "optical flow estimation"
+  - "UAV"
 date: 2026-05-08
 content_hash: 9afe53c7915799a6
 ---

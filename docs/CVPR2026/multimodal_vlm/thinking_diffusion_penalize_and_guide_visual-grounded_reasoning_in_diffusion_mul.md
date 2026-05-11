@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Thinking Diffusion: Penalize and Guide Visual-Grounded Reasoning in Diffusion Multimodal Language Models
 description: >-
-  [CVPR2026][Multimodal VLM][Diffusion language models] This paper presents the first quantitative analysis of CoT reasoning in diffusion multimodal LLMs (dMLLMs), identifying two critical issues — "early answer generation" and "weak visual grounding" — and proposes two training-free methods, PSP (Position-Step Penalty) and VRG (Visual Reasoning Guidance), achieving up to 7.5% accuracy improvement at over 3× speedup.
+  [CVPR2026][Multimodal VLM][Diffusion language models] This paper presents the first quantitative analysis of CoT reasoning in diffusion multimodal LLMs (dMLLMs)…
 tags:
-  - CVPR2026
-  - Multimodal VLM
-  - Diffusion language models
-  - multimodal reasoning
-  - Chain-of-Thought
-  - visual grounding
-  - remasking strategy
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "Diffusion language models"
+  - "multimodal reasoning"
+  - "Chain-of-Thought"
+  - "visual grounding"
+  - "remasking strategy"
 date: 2026-05-08
 content_hash: 8c7380ef343b3bf1
 ---

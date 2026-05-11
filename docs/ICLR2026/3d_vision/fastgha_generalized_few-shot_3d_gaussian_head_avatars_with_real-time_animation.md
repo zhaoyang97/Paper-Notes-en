@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FastGHA: Generalized Few-Shot 3D Gaussian Head Avatars with Real-Time Animation
 description: >-
-  [ICLR 2026][3D Vision][3D Gaussian Splatting] This paper proposes FastGHA, a feed-forward few-shot 3D Gaussian head avatar generation framework that reconstructs an animatable 3D Gaussian head from 4 arbitrary-expression/viewpoint input images in ~1 second, supporting real-time animation at 62 FPS. On Ava-256, it achieves a PSNR of 22.5 dB, surpassing Avat3r's 20.7 dB while being 7.75× faster.
+  [ICLR 2026][3D Vision][3D Gaussian Splatting] This paper proposes FastGHA, a feed-forward few-shot 3D Gaussian head avatar generation framework that reconstructs an animatable 3D Gaussian head from 4 arbitrary-expression…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - head avatar
-  - few-shot
-  - real-time animation
-  - feed-forward
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "head avatar"
+  - "few-shot"
+  - "real-time animation"
+  - "feed-forward"
 date: 2026-05-08
 content_hash: e97912200920b52a
 ---

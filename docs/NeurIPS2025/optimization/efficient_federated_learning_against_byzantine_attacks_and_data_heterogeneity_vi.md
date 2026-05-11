@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Efficient Federated Learning against Byzantine Attacks and Data Heterogeneity via Aggregating Normalized Gradients
 description: >-
-  [NeurIPS 2025][Optimization][federated learning] This paper proposes Fed-NGA, an algorithm that aggregates client gradients via weighted averaging after $\ell_2$ normalization, achieving Byzantine robustness and resilience to data heterogeneity simultaneously at an extremely low time complexity of $\mathcal{O}(pM)$. Under non-convex loss functions, it is the first to prove zero optimality gap convergence under certain mild conditions.
+  [NeurIPS 2025][Optimization][federated learning] This paper proposes Fed-NGA, an algorithm that aggregates client gradients via weighted averaging after $\ell_2$ normalization…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - federated learning
-  - Byzantine Robustness
-  - Gradient Normalization
-  - Non-IID Data
-  - Non-Convex Optimization
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "federated learning"
+  - "Byzantine Robustness"
+  - "Gradient Normalization"
+  - "Non-IID Data"
+  - "Non-Convex Optimization"
 date: 2026-05-08
 content_hash: 2115beccf94e316c
 ---

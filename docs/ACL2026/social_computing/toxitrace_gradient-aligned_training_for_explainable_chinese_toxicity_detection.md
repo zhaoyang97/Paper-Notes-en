@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ToxiTrace: Gradient-Aligned Training for Explainable Chinese Toxicity Detection
 description: >-
-  [ACL 2026][Social Computing][Chinese Toxicity Detection] ToxiTrace proposes an explainable Chinese toxicity detection method for BERT-class encoders, combining CuSA (LLM-guided weak annotation), GCLoss (gradient-constrained loss), and ARCL (adversarial reasoning contrastive learning) to achieve both high sentence-level classification accuracy and contiguous toxic span extraction while maintaining efficient encoder inference.
+  [ACL 2026][Social Computing][Chinese Toxicity Detection] ToxiTrace proposes an explainable Chinese toxicity detection method for BERT-class encoders, combining CuSA (LLM-guided weak annotation)…
 tags:
-  - ACL 2026
-  - Social Computing
-  - Chinese Toxicity Detection
-  - Explainability
-  - Gradient Constraint
-  - Fine-grained Evidence Extraction
-  - Contrastive Learning
+  - "ACL 2026"
+  - "Social Computing"
+  - "Chinese Toxicity Detection"
+  - "Explainability"
+  - "Gradient Constraint"
+  - "Fine-grained Evidence Extraction"
+  - "Contrastive Learning"
 date: 2025-05-08
 content_hash: c68664a8f379679b
 ---

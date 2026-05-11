@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] COIN: Confidence Score-Guided Distillation for Annotation-Free Cell Segmentation
 description: >-
-  [ICCV 2025][Medical Imaging][Cell Instance Segmentation] This paper proposes COIN, a three-stage framework that addresses the critical "error-free instance absence" problem in annotation-free cell instance segmentation. The framework combines unsupervised semantic segmentation with optimal transport for pixel-level cell propagation, model–SAM consistency for instance-level confidence scoring, and confidence-guided recursive self-distillation, achieving performance on MoNuSeg and TNBC that surpasses semi-supervised and weakly supervised methods.
+  [ICCV 2025][Medical Imaging][Cell Instance Segmentation] This paper proposes COIN, a three-stage framework that addresses the critical "error-free instance absence" problem in annotation-free cell instance segmentation.…
 tags:
-  - ICCV 2025
-  - Medical Imaging
-  - Cell Instance Segmentation
-  - Annotation-Free
-  - Confidence Score
-  - Self-Distillation
-  - Optimal Transport
+  - "ICCV 2025"
+  - "Medical Imaging"
+  - "Cell Instance Segmentation"
+  - "Annotation-Free"
+  - "Confidence Score"
+  - "Self-Distillation"
+  - "Optimal Transport"
 date: 2026-05-08
 content_hash: 068ef150bc35adab
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mitigating Privacy-Utility Trade-off in Decentralized Federated Learning via f-Differential Privacy
 description: >-
-  [NeurIPS 2025][AI Safety][Decentralized Federated Learning] This paper proposes two privacy accounting methods for decentralized federated learning under the f-DP framework—PN-f-DP and Sec-f-LDP—which leverage hypothesis-testing-based privacy measures to consistently yield tighter privacy bounds than Rényi DP, thereby reducing noise injection and improving model utility under equivalent privacy guarantees.
+  [NeurIPS 2025][AI Safety][Decentralized Federated Learning] This paper proposes two privacy accounting methods for decentralized federated learning under the f-DP framework—PN-f-DP and Sec-f-LDP—which leverage hypothesis…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - Decentralized Federated Learning
-  - f-Differential Privacy
-  - Privacy Amplification
-  - Random Walk
-  - Correlated Noise
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "Decentralized Federated Learning"
+  - "f-Differential Privacy"
+  - "Privacy Amplification"
+  - "Random Walk"
+  - "Correlated Noise"
 date: 2026-05-08
 content_hash: be595c7d748a8102
 ---

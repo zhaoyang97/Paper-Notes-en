@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] BD-Net: Has Depth-Wise Convolution Ever Been Applied in Binary Neural Networks?
 description: >-
-  [AAAI 2026][Model Compression][Binary Neural Networks] This paper proposes BD-Net, which for the first time successfully integrates depth-wise convolution (DWConv) into binary neural networks (BNNs) by introducing 1.58-bit convolution and pre-BN residual connections. BD-Net achieves a new state of the art in the BNN domain on ImageNet with an extremely low computational cost of 33M OPs, with accuracy improvements of up to 9.3 percentage points across multiple datasets.
+  [AAAI 2026][Model Compression][Binary Neural Networks] This paper proposes BD-Net, which for the first time successfully integrates depth-wise convolution (DWConv) into binary neural networks (BNNs) by introducing 1.58-b…
 tags:
-  - AAAI 2026
-  - Model Compression
-  - Binary Neural Networks
-  - Depth-wise Separable Convolution
-  - Low-bit Quantization
-  - Lightweight Networks
+  - "AAAI 2026"
+  - "Model Compression"
+  - "Binary Neural Networks"
+  - "Depth-wise Separable Convolution"
+  - "Low-bit Quantization"
+  - "Lightweight Networks"
 date: 2026-05-08
 content_hash: 90001113899c1f0f
 ---

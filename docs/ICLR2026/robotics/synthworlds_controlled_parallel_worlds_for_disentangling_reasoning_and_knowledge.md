@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SynthWorlds: Controlled Parallel Worlds for Disentangling Reasoning and Knowledge in Language Models
 description: >-
-  [ICLR 2026][Robotics][Knowledge Advantage Gap] This paper constructs structurally identical parallel corpora in which entities are mapped to either real or synthetic names, and quantifies the Knowledge Advantage Gap (KA) — the contribution of parametric knowledge — by comparing model performance across the two "parallel worlds." The results show that this gap persists even when models are augmented with RAG and CoT.
+  [ICLR 2026][Robotics][Knowledge Advantage Gap] This paper constructs structurally identical parallel corpora in which entities are mapped to either real or synthetic names…
 tags:
-  - ICLR 2026
-  - Robotics
-  - Knowledge Advantage Gap
-  - Reasoning vs Memorization
-  - Parallel Corpora
-  - Multi-hop QA
-  - RAG Evaluation
+  - "ICLR 2026"
+  - "Robotics"
+  - "Knowledge Advantage Gap"
+  - "Reasoning vs Memorization"
+  - "Parallel Corpora"
+  - "Multi-hop QA"
+  - "RAG Evaluation"
 date: 2026-05-08
 content_hash: 7feb28b32d734802
 ---

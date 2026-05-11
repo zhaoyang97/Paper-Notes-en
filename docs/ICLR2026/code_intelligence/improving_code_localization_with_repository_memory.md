@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Improving Code Localization with Repository Memory
 description: >-
-  [ICLR 2026][code localization] By leveraging a repository's commit history to construct episodic memory (past commits) and semantic memory (summaries of active code functionality), this work enhances the code localization capability of language agents, achieving significant improvements on SWE-bench.
+  [ICLR 2026][Code Intelligence][code localization] By leveraging a repository's commit history to construct episodic memory (past commits) and semantic memory (summaries of active code functionality)…
 tags:
-  - ICLR 2026
-  - code localization
-  - repository memory
-  - commit history
-  - language agent
-  - SWE-bench
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "code localization"
+  - "repository memory"
+  - "commit history"
+  - "language agent"
+  - "SWE-bench"
 date: 2026-05-08
 content_hash: 8ddb4b629505c043
 ---

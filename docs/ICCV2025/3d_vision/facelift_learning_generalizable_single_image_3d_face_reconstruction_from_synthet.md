@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] FaceLift: Learning Generalizable Single Image 3D Face Reconstruction from Synthetic Heads
 description: >-
-  [ICCV 2025][3D Vision][3D face reconstruction] This paper presents FaceLift, a single-image 360° high-quality 3D human head reconstruction method trained exclusively on synthetic data yet generalizing well to real-world images. It generates identity-consistent multi-view images via a multi-view latent diffusion model, then feeds them into a Transformer-based reconstructor to produce pixel-aligned 3D Gaussian representations.
+  [ICCV 2025][3D Vision][3D face reconstruction] This paper presents FaceLift, a single-image 360° high-quality 3D human head reconstruction method trained exclusively on synthetic data yet generalizing well to real-world…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D face reconstruction
-  - 3D Gaussian splatting
-  - synthetic data
-  - multi-view diffusion
-  - single-image reconstruction
-  - identity preservation
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D face reconstruction"
+  - "3D Gaussian splatting"
+  - "synthetic data"
+  - "multi-view diffusion"
+  - "single-image reconstruction"
+  - "identity preservation"
 date: 2026-05-08
 content_hash: 96959ea788791448
 ---

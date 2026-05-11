@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Nano-EmoX: Unifying Multimodal Emotional Intelligence from Perception to Empathy
 description: >-
-  [CVPR 2026][Multimodal VLM][Affective Computing] Nano-EmoX proposes a cognition-inspired three-level emotional task hierarchy (Perception → Understanding → Interaction) and is the first multimodal language model to unify six core affective tasks within a compact 2.2B parameter framework, employing a P2E progressive training paradigm that cultivates capabilities from basic perception to high-level empathy.
+  [CVPR 2026][Multimodal VLM][Affective Computing] Nano-EmoX proposes a cognition-inspired three-level emotional task hierarchy (Perception → Understanding → Interaction) and is the first multimodal language model to unify…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Affective Computing
-  - Multimodal Language Model
-  - Cognitive Hierarchy
-  - Emotion Recognition
-  - Empathetic Interaction
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Affective Computing"
+  - "Multimodal Language Model"
+  - "Cognitive Hierarchy"
+  - "Emotion Recognition"
+  - "Empathetic Interaction"
 date: 2026-05-08
 content_hash: 701d221fe55cdab6
 ---

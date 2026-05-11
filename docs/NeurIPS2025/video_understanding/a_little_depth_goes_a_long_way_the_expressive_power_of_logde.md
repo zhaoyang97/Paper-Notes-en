@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Little Depth Goes a Long Way: The Expressive Power of Log-Depth Transformers
 description: >-
-  [NeurIPS 2025][Video Understanding][log-depth transformer] This paper proves that increasing Transformer depth from a constant to $\Theta(\log n)$ unlocks the ability to recognize regular languages and solve graph connectivity — two problems provably beyond the reach of fixed-depth Transformers — and that depth scaling is strictly more efficient than width scaling (which requires super-polynomial growth) or Chain-of-Thought (CoT) steps (which requires super-logarithmic growth).
+  [NeurIPS 2025][Video Understanding][log-depth transformer] This paper proves that increasing Transformer depth from a constant to $\Theta(\log n)$ unlocks the ability to recognize regular languages and solve graph connec…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
-  - log-depth transformer
-  - expressive power
-  - regular language recognition
-  - graph connectivity
-  - computational complexity
+  - "NeurIPS 2025"
+  - "Video Understanding"
+  - "log-depth transformer"
+  - "expressive power"
+  - "regular language recognition"
+  - "graph connectivity"
+  - "computational complexity"
 date: 2026-05-08
 content_hash: a4f9a485e50a0354
 ---

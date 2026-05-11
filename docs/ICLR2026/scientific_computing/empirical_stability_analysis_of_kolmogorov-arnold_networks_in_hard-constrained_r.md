@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Empirical Stability Analysis of Kolmogorov-Arnold Networks in Hard-Constrained Recurrent Physics-Informed Discovery
 description: >-
-  [ICLR 2026][Scientific Computing][KAN] This paper systematically evaluates vanilla KAN as a drop-in replacement for MLP in the residual branch of Hard-Constrained Recurrent Physics-Informed Neural Networks (HRPINN) — through 3 complementary studies × 100 random seeds, it finds that KAN is competitive on univariate separable residuals (Duffing's $-0.3x^3$), but systematically fails on multiplicatively coupled residuals (Van der Pol's $(1-x^2)v$) with extreme hyperparameter fragility, while standard MLP exhibits substantially superior stability across nearly all configurations.
+  [ICLR 2026][Scientific Computing][KAN] This paper systematically evaluates vanilla KAN as a drop-in replacement for MLP in the residual branch of Hard-Constrained Recurrent Physics-Informed Neural Networks (HRPINN) — thr…
 tags:
-  - ICLR 2026
-  - Scientific Computing
-  - KAN
-  - physics-informed
-  - oscillator
-  - HRPINN
-  - neural ODE
-  - residual discovery
+  - "ICLR 2026"
+  - "Scientific Computing"
+  - "KAN"
+  - "physics-informed"
+  - "oscillator"
+  - "HRPINN"
+  - "neural ODE"
+  - "residual discovery"
 date: 2026-05-08
 content_hash: 8a2bf8622b695ec2
 ---

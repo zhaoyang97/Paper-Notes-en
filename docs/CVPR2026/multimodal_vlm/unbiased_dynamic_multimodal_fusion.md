@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unbiased Dynamic Multimodal Fusion
 description: >-
-  [CVPR 2026][Multimodal VLM][Dynamic multimodal fusion] UDML proposes an unbiased dynamic multimodal learning framework comprising two core components: a noise-aware uncertainty estimator (which injects controllable noise and predicts its intensity to achieve accurate modality quality assessment under both low-noise and high-noise conditions) and a modality dependency calculator (which quantifies the model's inherent dependency bias toward each modality via Dropout and incorporates it into the weighting mechanism). The framework addresses the dual suppression problem in existing methods and consistently improves performance across multiple multimodal benchmarks.
+  [CVPR 2026][Multimodal VLM][Dynamic multimodal fusion] UDML proposes an unbiased dynamic multimodal learning framework comprising two core components: a noise-aware uncertainty estimator (which injects controllable noise…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Dynamic multimodal fusion
-  - uncertainty estimation
-  - modality-dependency bias
-  - noise-awareness
-  - dual suppression
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Dynamic multimodal fusion"
+  - "uncertainty estimation"
+  - "modality-dependency bias"
+  - "noise-awareness"
+  - "dual suppression"
 date: 2026-05-08
 content_hash: a0df6a4b4b5c6f0a
 ---

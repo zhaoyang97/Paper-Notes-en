@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Pre-training LLM without Learning Rate Decay Enhances Supervised Fine-Tuning
 description: >-
-  [ICLR 2026][LLM Pretraining][Learning rate scheduling] This paper proposes the Warmup-Stable-Only (WSO) learning rate schedule—completely eliminating the decay phase during pre-training. Despite yielding worse pre-training metrics, WSO consistently outperforms all decay-based schedules after SFT. Loss landscape analysis reveals that WSO's advantage stems from maintaining flatter minima.
+  [ICLR 2026][LLM Pretraining][Learning rate scheduling] This paper proposes the Warmup-Stable-Only (WSO) learning rate schedule—completely eliminating the decay phase during pre-training. Despite yielding worse pre-traini…
 tags:
-  - ICLR 2026
-  - LLM Pretraining
-  - Learning rate scheduling
-  - pre-training
-  - supervised fine-tuning
-  - loss landscape
-  - Warmup-Stable-Only
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Learning rate scheduling"
+  - "pre-training"
+  - "supervised fine-tuning"
+  - "loss landscape"
+  - "Warmup-Stable-Only"
 date: 2026-05-08
 content_hash: bbefb933c69d3c75
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] AgentiQL: An Agent-Inspired Multi-Expert Framework for Text-to-SQL Generation
 description: >-
-  [NeurIPS 2025][Text-to-SQL] This paper proposes AgentiQL, a multi-expert agent framework for Text-to-SQL: a reasoning agent decomposes questions into sub-problems, a coding agent generates sub-queries, a refinement step corrects column selection, and an adaptive router intelligently routes between a baseline parser and the modular pipeline. Using a 14B open-source model, AgentiQL achieves 86.07% EX on Spider, approaching GPT-4 SOTA (89.65%).
+  [NeurIPS 2025][Interpretability][Text-to-SQL] This paper proposes AgentiQL, a multi-expert agent framework for Text-to-SQL: a reasoning agent decomposes questions into sub-problems, a coding agent generates sub-queries…
 tags:
-  - NeurIPS 2025
-  - Text-to-SQL
-  - multi-expert
-  - question decomposition
-  - adaptive routing
-  - Spider benchmark
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "Text-to-SQL"
+  - "multi-expert"
+  - "question decomposition"
+  - "adaptive routing"
+  - "Spider benchmark"
 date: 2026-05-08
 content_hash: badb8bec49810700
 ---

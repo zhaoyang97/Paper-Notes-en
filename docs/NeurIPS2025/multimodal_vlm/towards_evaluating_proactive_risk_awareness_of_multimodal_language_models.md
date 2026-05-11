@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Evaluating Proactive Risk Awareness of Multimodal Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Proactive safety] This paper introduces PaSBench, a benchmark for evaluating the proactive risk awareness of multimodal language models — requiring models to autonomously observe environments and issue safety warnings without any user query. An evaluation of 36 models reveals that the strongest model (Gemini-2.5-pro) achieves only 71% accuracy, with 45% of risks failing to be detected consistently. The core bottleneck is identified as unstable proactive reasoning rather than a lack of safety knowledge.
+  [NeurIPS 2025][Multimodal VLM][Proactive safety] This paper introduces PaSBench, a benchmark for evaluating the proactive risk awareness of multimodal language models — requiring models to autonomously observe environmen…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Proactive safety
-  - risk detection
-  - LLM evaluation
-  - benchmark
-  - anticipatory reasoning
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Proactive safety"
+  - "risk detection"
+  - "LLM evaluation"
+  - "benchmark"
+  - "anticipatory reasoning"
 date: 2026-05-08
 content_hash: 2f5387678fd6cfe8
 ---

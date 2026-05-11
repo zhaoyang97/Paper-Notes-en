@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Selective Contrastive Learning for Weakly Supervised Affordance Grounding
 description: >-
-  [ICCV 2025][Robotics][Affordance Grounding] This paper proposes a selective contrastive learning approach for weakly supervised affordance grounding (WSAG). By combining prototypical contrastive learning and pixel-level contrastive learning, the method adaptively learns affordance-relevant cues at both object and part granularities, effectively preventing the model from attending to action-irrelevant salient features. The approach comprehensively outperforms competing methods that rely on stronger foundation models (GPT-4, LLaVA, etc.) on AGD20K and HICO-IIF benchmarks.
+  [ICCV 2025][Robotics][Affordance Grounding] This paper proposes a selective contrastive learning approach for weakly supervised affordance grounding (WSAG). By combining prototypical contrastive learning and pixel-level…
 tags:
-  - ICCV 2025
-  - Robotics
-  - Affordance Grounding
-  - Weak Supervision
-  - Contrastive Learning
-  - Part Discovery
-  - CLIP
+  - "ICCV 2025"
+  - "Robotics"
+  - "Affordance Grounding"
+  - "Weak Supervision"
+  - "Contrastive Learning"
+  - "Part Discovery"
+  - "CLIP"
 date: 2026-05-08
 content_hash: e04d7dc42f300e8c
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] X-Dancer: Expressive Music to Human Dance Video Generation
 description: >-
-  [ICCV 2025][Video Generation][music-driven dance generation] X-Dancer proposes a unified Transformer–diffusion framework that takes a single static image and a music sequence as input, autoregressively generates 2D whole-body dance pose token sequences synchronized with musical beats via a Transformer, and then synthesizes high-fidelity dance videos from these tokens using a diffusion model, surpassing existing methods in diversity, expressiveness, and video quality.
+  [ICCV 2025][Video Generation][music-driven dance generation] X-Dancer proposes a unified Transformer–diffusion framework that takes a single static image and a music sequence as input…
 tags:
-  - ICCV 2025
-  - Video Generation
-  - music-driven dance generation
-  - human image animation
-  - autoregressive Transformer
-  - diffusion models
-  - 2D pose modeling
+  - "ICCV 2025"
+  - "Video Generation"
+  - "music-driven dance generation"
+  - "human image animation"
+  - "autoregressive Transformer"
+  - "diffusion models"
+  - "2D pose modeling"
 date: 2026-05-08
 content_hash: 11564fd9ba8b6242
 ---

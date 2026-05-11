@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Hierarchical Pedagogical Oversight: A Multi-Agent Adversarial Framework for Reliable AI Tutoring
 description: >-
-  [AAAI 2026][Model Compression][Multi-agent adversarial framework] This paper proposes the HPO framework, which achieves reliable AI tutoring evaluation through a three-phase pipeline (Intelligence Distillation → Adversarial Debate → Synthesis and Judgment). Using only an 8B-parameter model, HPO achieves a Macro F1 of 0.845 on the MRBench middle-school mathematics dialogue dataset, surpassing GPT-4o (0.812) by 3.3%, demonstrating that interaction structure—rather than model scale—is the key to reliable AI tutoring.
+  [AAAI 2026][Model Compression][Multi-agent adversarial framework] This paper proposes the HPO framework, which achieves reliable AI tutoring evaluation through a three-phase pipeline (Intelligence Distillation → Adversar…
 tags:
-  - AAAI 2026
-  - Model Compression
-  - Multi-agent adversarial framework
-  - Educational AI
-  - Sycophancy
-  - Tutoring quality assessment
-  - Debate protocol
+  - "AAAI 2026"
+  - "Model Compression"
+  - "Multi-agent adversarial framework"
+  - "Educational AI"
+  - "Sycophancy"
+  - "Tutoring quality assessment"
+  - "Debate protocol"
 date: 2026-05-08
 content_hash: 1b4f944af5428670
 ---

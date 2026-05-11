@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Grounding-IQA: Grounding Multimodal Language Models for Image Quality Assessment
 description: >-
-  [ICLR 2026][Multimodal VLM][Image Quality Assessment] This paper integrates spatial grounding (referring + grounding) with image quality assessment (IQA), constructs the GIQA-160K dataset to fine-tune a multimodal LLM that generates quality descriptions with bounding boxes and spatial VQA, achieving significantly superior fine-grained quality perception over general-purpose MLLMs.
+  [ICLR 2026][Multimodal VLM][Image Quality Assessment] This paper integrates spatial grounding (referring + grounding) with image quality assessment (IQA)…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Image Quality Assessment
-  - Spatial Grounding
-  - Multimodal LLM
-  - Fine-Grained Perception
-  - Grounding
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Image Quality Assessment"
+  - "Spatial Grounding"
+  - "Multimodal LLM"
+  - "Fine-Grained Perception"
+  - "Grounding"
 date: 2026-05-08
 content_hash: ff643437de7e879a
 ---

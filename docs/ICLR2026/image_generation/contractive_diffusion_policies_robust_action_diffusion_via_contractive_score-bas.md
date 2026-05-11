@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Contractive Diffusion Policies: Robust Action Diffusion via Contractive Score-Based Sampling with Differential Equations
 description: >-
-  [ICLR2026][Image Generation][Diffusion Policy] This paper proposes Contractive Diffusion Policies (CDPs), which introduce contraction regularization into the diffusion sampling ODE to suppress the accumulation of score matching errors and solver errors. With minimal modification and a single hyperparameter $\gamma$, CDPs improve the robustness of diffusion-based policies in offline learning settings.
+  [ICLR2026][Image Generation][Diffusion Policy] This paper proposes Contractive Diffusion Policies (CDPs), which introduce contraction regularization into the diffusion sampling ODE to suppress the accumulation of score m…
 tags:
-  - ICLR2026
-  - Image Generation
-  - Diffusion Policy
-  - Contraction Theory
-  - Offline Reinforcement Learning
-  - Imitation Learning
-  - Score-Based Models
+  - "ICLR2026"
+  - "Image Generation"
+  - "Diffusion Policy"
+  - "Contraction Theory"
+  - "Offline Reinforcement Learning"
+  - "Imitation Learning"
+  - "Score-Based Models"
 date: 2026-05-08
 content_hash: f1a4d5d0466187e6
 ---

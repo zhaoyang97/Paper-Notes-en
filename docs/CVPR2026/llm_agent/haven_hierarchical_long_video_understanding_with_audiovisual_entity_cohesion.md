@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HAVEN: Hierarchical Long Video Understanding with Audiovisual Entity Cohesion and Agentic Search
 description: >-
-  [CVPR 2026][LLM Agent][long video understanding] HAVEN proposes a unified framework combining audiovisual entity cohesion, hierarchical indexing, and agentic search. By leveraging speaker identity as a cross-modal coherence signal, it constructs a four-level hierarchical database (global → scene → clip → entity), achieving state-of-the-art 84.1% overall accuracy on LVBench.
+  [CVPR 2026][LLM Agent][long video understanding] HAVEN proposes a unified framework combining audiovisual entity cohesion, hierarchical indexing…
 tags:
-  - CVPR 2026
-  - LLM Agent
-  - long video understanding
-  - hierarchical indexing
-  - entity cohesion
-  - agentic search
-  - audiovisual fusion
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "long video understanding"
+  - "hierarchical indexing"
+  - "entity cohesion"
+  - "agentic search"
+  - "audiovisual fusion"
 date: 2026-05-08
 content_hash: 0dfef1e66c930652
 ---

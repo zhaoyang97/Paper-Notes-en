@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] The Limitations and Power of NP-Oracle-Based Functional Synthesis Techniques
 description: >-
-  [AAAI 2026][Functional Synthesis] This paper systematically investigates, from a theoretical perspective, the capabilities and limitations of functional synthesis methods that rely on NP oracles. It proves that naive bit-by-bit learning approaches necessarily fail in multi-output settings, that Resolution-interpolation-based methods produce exponential-size circuits, and that an NP oracle is a necessary condition for efficient synthesis. Positive results are also established, showing that NP oracles suffice to synthesize small Skolem functions in polynomial time under appropriate conditions.
+  [AAAI 2026][Functional Synthesis] This paper systematically investigates, from a theoretical perspective, the capabilities and limitations of functional synthesis methods that rely on NP oracles. It proves that naive bit…
 tags:
-  - AAAI 2026
-  - Functional Synthesis
-  - Skolem Functions
-  - NP Oracle
-  - Computational Complexity
-  - Interpolation Methods
+  - "AAAI 2026"
+  - "Functional Synthesis"
+  - "Skolem Functions"
+  - "NP Oracle"
+  - "Computational Complexity"
+  - "Interpolation Methods"
 date: 2026-05-08
 content_hash: 4b52a8ff2d94f764
 ---

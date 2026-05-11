@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Understanding Prompt Tuning and In-Context Learning via Meta-Learning
 description: >-
-  [NeurIPS 2025][Robotics][prompt tuning] This paper systematically analyzes the theoretical foundations and limitations of prompt tuning from a Bayesian meta-learning perspective. It proves that soft prompts can achieve optimal adaptation on a single target task within the pretraining distribution, yet face fundamental limitations under multi-task mixture target distributions. Furthermore, soft prefixes can surpass the optimal hard-token sequence by manipulating activations outside the token space.
+  [NeurIPS 2025][Robotics][prompt tuning] This paper systematically analyzes the theoretical foundations and limitations of prompt tuning from a Bayesian meta-learning perspective. It proves that soft prompts can achieve o…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - prompt tuning
-  - in-context learning
-  - meta-learning
-  - Bayesian inference
-  - soft prompts
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "prompt tuning"
+  - "in-context learning"
+  - "meta-learning"
+  - "Bayesian inference"
+  - "soft prompts"
 date: 2026-05-08
 content_hash: 25bc88e6566ae543
 ---

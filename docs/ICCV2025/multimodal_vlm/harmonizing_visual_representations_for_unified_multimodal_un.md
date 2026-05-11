@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Harmonizing Visual Representations for Unified Multimodal Understanding and Generation
 description: >-
-  [ICCV 2025][Multimodal VLM][MAR encoder] This work identifies that the encoder of masked autoregressive (MAR) models inherently possesses both the fine-grained image features required for generation and the high-level semantic representations required for understanding. Based on this observation, Harmon is proposed — an autoregressive framework that unifies image generation and understanding via a shared MAR encoder. Through three-stage progressive training, Harmon achieves an Overall score of 0.76 on GenEval, surpassing all unified models, while matching the understanding performance of the Janus series that employs a dedicated SigLIP encoder.
+  [ICCV 2025][Multimodal VLM][MAR encoder] This work identifies that the encoder of masked autoregressive (MAR) models inherently possesses both the fine-grained image features required for generation and the high-level se…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - MAR encoder
-  - unified visual representation
-  - masked autoregression
-  - image generation and understanding
-  - three-stage training
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "MAR encoder"
+  - "unified visual representation"
+  - "masked autoregression"
+  - "image generation and understanding"
+  - "three-stage training"
 date: 2026-05-08
 content_hash: 917fd05f2e9e8c04
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EagleNet: Energy-Aware Fine-Grained Relationship Learning Network for Text-Video Retrieval
 description: >-
-  [CVPR 2026][Multimodal VLM][Text-video retrieval] EagleNet constructs a text-frame relational graph and employs a relational graph attention network to learn fine-grained text-frame and frame-frame relationships, generating enhanced text embeddings enriched with video contextual information. An energy-based matching mechanism is further introduced to capture the distribution of ground-truth text-video pairs. The method achieves state-of-the-art performance on four benchmark datasets.
+  [CVPR 2026][Multimodal VLM][Text-video retrieval] EagleNet constructs a text-frame relational graph and employs a relational graph attention network to learn fine-grained text-frame and frame-frame relationships…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Text-video retrieval
-  - graph attention network
-  - energy-based model
-  - fine-grained relationship learning
-  - cross-modal alignment
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Text-video retrieval"
+  - "graph attention network"
+  - "energy-based model"
+  - "fine-grained relationship learning"
+  - "cross-modal alignment"
 date: 2026-05-08
 content_hash: 12399bcf405875bd
 ---

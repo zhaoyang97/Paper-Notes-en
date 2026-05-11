@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DuoLens: A Framework for Robust Detection of Machine-Generated Multilingual Text and Code
 description: >-
-  [NeurIPS 2025][AIGC Detection][AI-generated text detection] DuoLens is proposed — an AI-generated content detection framework based on dual-encoder fusion of CodeBERT and CodeBERTa — achieving AUROC of 0.97–0.99 on multilingual text (8 languages) and source code (7 programming languages) at significantly reduced computational cost (8–12× lower latency, 3–5× lower VRAM), substantially outperforming large models such as GPT-4o.
+  [NeurIPS 2025][AIGC Detection][AI-generated text detection] DuoLens is proposed — an AI-generated content detection framework based on dual-encoder fusion of CodeBERT and CodeBERTa — achieving AUROC of 0.97–0.99 on multi…
 tags:
-  - NeurIPS 2025
-  - AIGC Detection
-  - AI-generated text detection
-  - code detection
-  - multilingual
-  - SLM
-  - BERT
+  - "NeurIPS 2025"
+  - "AIGC Detection"
+  - "AI-generated text detection"
+  - "code detection"
+  - "multilingual"
+  - "SLM"
+  - "BERT"
 date: 2026-05-08
 content_hash: d99d2f274efb6e31
 ---

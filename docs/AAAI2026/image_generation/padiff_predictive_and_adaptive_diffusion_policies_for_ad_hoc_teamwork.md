@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PADiff: Predictive and Adaptive Diffusion Policies for Ad Hoc Teamwork
 description: >-
-  [AAAI 2026][Image Generation][Ad Hoc Teamwork] This work is the first to apply diffusion models to the Ad Hoc Teamwork (AHT) problem. The proposed PADiff framework achieves real-time adaptation to dynamic teammates via an Adaptive Feature Modulation Net (AFM-Net), and injects teammate intent prediction into the denoising process through a Predictive Guidance Block (PGB), achieving an average improvement of 35.25% over existing methods in multimodal cooperative scenarios.
+  [AAAI 2026][Image Generation][Ad Hoc Teamwork] This work is the first to apply diffusion models to the Ad Hoc Teamwork (AHT) problem. The proposed PADiff framework achieves real-time adaptation to dynamic teammates via a…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Ad Hoc Teamwork
-  - Diffusion Models
-  - Multimodal Policy
-  - Predictive Guidance
-  - Adaptive Feature Modulation
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Ad Hoc Teamwork"
+  - "Diffusion Models"
+  - "Multimodal Policy"
+  - "Predictive Guidance"
+  - "Adaptive Feature Modulation"
 date: 2026-05-08
 content_hash: 274ed7ca192d6f8a
 ---

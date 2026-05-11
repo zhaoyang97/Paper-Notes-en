@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Biologically Plausible Online Hebbian Meta-Learning: Two-Timescale Local Rules for Spiking Neural Brain Interfaces
 description: >-
-  [ICLR2026][LLM Evaluation][SNN] This paper proposes an online SNN decoder that eliminates BPTT by combining three-factor Hebbian local learning rules with dual-timescale eligibility traces and adaptive learning rate control. The approach achieves neural decoding accuracy comparable to offline-trained methods (Pearson R ≥ 0.63/0.81) under O(1) memory complexity, and demonstrates continuous adaptation to non-stationary neural signals in closed-loop simulations.
+  [ICLR2026][LLM Evaluation][SNN] This paper proposes an online SNN decoder that eliminates BPTT by combining three-factor Hebbian local learning rules with dual-timescale eligibility traces and adaptive learning rate cont…
 tags:
-  - ICLR2026
-  - LLM Evaluation
-  - SNN
-  - BCI
-  - Hebbian learning
-  - online adaptation
-  - spiking neural networks
+  - "ICLR2026"
+  - "LLM Evaluation"
+  - "SNN"
+  - "BCI"
+  - "Hebbian learning"
+  - "online adaptation"
+  - "spiking neural networks"
 date: 2026-05-08
 content_hash: 1c3f173a27ce2c91
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] When Thinking Backfires: Mechanistic Insights Into Reasoning-Induced Misalignment
 description: >-
-  [ICLR 2026][Reasoning-Induced Misalignment] This paper identifies and mechanistically explains *Reasoning-Induced Misalignment* (RIM): enhancing reasoning capability (via CoT prompting or math fine-tuning) degrades safety guardrails, because reasoning and safety share neuronal resources, and safety-critical neuron activations undergo disproportionate shifts during reasoning training.
+  [ICLR 2026][Interpretability][Reasoning-Induced Misalignment] This paper identifies and mechanistically explains *Reasoning-Induced Misalignment* (RIM): enhancing reasoning capability (via CoT prompting or math fine-tuni…
 tags:
-  - ICLR 2026
-  - Reasoning-Induced Misalignment
-  - Safety Alignment
-  - Mechanistic Analysis
-  - Attention Heads
-  - Catastrophic Forgetting
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Reasoning-Induced Misalignment"
+  - "Safety Alignment"
+  - "Mechanistic Analysis"
+  - "Attention Heads"
+  - "Catastrophic Forgetting"
 date: 2026-05-08
 content_hash: 843439e7d0f3c7e2
 ---

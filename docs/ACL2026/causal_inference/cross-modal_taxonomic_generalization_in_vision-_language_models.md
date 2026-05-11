@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Cross-Modal Taxonomic Generalization in (Vision-) Language Models
 description: >-
-  [ACL 2026][Causal Inference][Cross-Modal Generalization] This paper systematically studies whether LMs in VLMs can cross-modally generalize purely text-learned taxonomic knowledge (hypernym relations) to visual inputs, finding that even without any visual-language hypernym supervision, pretrained LMs can identify hypernym categories in images, but this generalization requires visual coherence among category members.
+  [ACL 2026][Causal Inference][Cross-Modal Generalization] This paper systematically studies whether LMs in VLMs can cross-modally generalize purely text-learned taxonomic knowledge (hypernym relations) to visual inputs…
 tags:
-  - ACL 2026
-  - Causal Inference
-  - Cross-Modal Generalization
-  - Taxonomic Knowledge
-  - Hypernymy
-  - Vision-Language Model
-  - Visual Coherence
+  - "ACL 2026"
+  - "Causal Inference"
+  - "Cross-Modal Generalization"
+  - "Taxonomic Knowledge"
+  - "Hypernymy"
+  - "Vision-Language Model"
+  - "Visual Coherence"
 content_hash: 76c02319aee421d9
 ---
 

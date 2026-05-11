@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] A Diffusion Model for Regular Time Series Generation from Irregular Data with Completion and Masking
 description: >-
-  [NeurIPS 2025][Image Generation][irregular time series] This paper proposes a two-stage framework for generating regular time series from irregularly sampled data: (1) a TST autoencoder completes missing values to construct a "natural neighborhood," and (2) a masking strategy applied during visual diffusion model training computes loss only on observed pixels, avoiding over-reliance on completed values. The approach achieves an average 70% improvement in discriminative score and a 6.5× training speedup.
+  [NeurIPS 2025][Image Generation][irregular time series] This paper proposes a two-stage framework for generating regular time series from irregularly sampled data: (1) a TST autoencoder completes missing values to constr…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - irregular time series
-  - diffusion model
-  - image representation
-  - completion
-  - masking
-  - ImagenTime
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "irregular time series"
+  - "diffusion model"
+  - "image representation"
+  - "completion"
+  - "masking"
+  - "ImagenTime"
 date: 2026-05-08
 content_hash: 1427eb72e6c86416
 ---

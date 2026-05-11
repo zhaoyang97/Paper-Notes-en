@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Can Large Language Models Master Complex Card Games?
 description: >-
-  [NeurIPS 2025][LLM Evaluation][LLM game capability] This paper systematically evaluates the ability of LLMs to learn eight complex card games. It finds that through SFT on high-quality game trajectory data, LLMs can approach the performance of strong game AIs and simultaneously master multiple games, though general capabilities degrade — a decline that can be mitigated by mixing in general instruction data.
+  [NeurIPS 2025][LLM Evaluation][LLM game capability] This paper systematically evaluates the ability of LLMs to learn eight complex card games. It finds that through SFT on high-quality game trajectory data…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - LLM game capability
-  - card games
-  - supervised fine-tuning
-  - multi-task learning
-  - general capability retention
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "LLM game capability"
+  - "card games"
+  - "supervised fine-tuning"
+  - "multi-task learning"
+  - "general capability retention"
 date: 2026-05-08
 content_hash: d90b433610676ccf
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Cross Modal Fine-Grained Alignment via Granularity-Aware and Region-Uncertain Modeling
 description: >-
-  [AAAI2026][Robotics][fine-grained alignment] This paper proposes GRM, a framework that achieves robust fine-grained image-text alignment through intra-modal saliency/granularity-aware adapters and Gaussian mixture-based region-level uncertainty modeling, attaining state-of-the-art performance on Flickr30K and MS-COCO.
+  [AAAI2026][Robotics][fine-grained alignment] This paper proposes GRM, a framework that achieves robust fine-grained image-text alignment through intra-modal saliency/granularity-aware adapters and Gaussian mixture-based…
 tags:
-  - AAAI2026
-  - Robotics
-  - fine-grained alignment
-  - image-text retrieval
-  - uncertainty modeling
-  - Gaussian mixture
-  - region prompting
+  - "AAAI2026"
+  - "Robotics"
+  - "fine-grained alignment"
+  - "image-text retrieval"
+  - "uncertainty modeling"
+  - "Gaussian mixture"
+  - "region prompting"
 date: 2026-05-08
 content_hash: a1aff1379dbbab63
 ---

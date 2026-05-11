@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Latent Fourier Transform
 description: >-
-  [ICLR 2026 Oral][diffusion autoencoder] This paper proposes LatentFT, a framework that applies the Discrete Fourier Transform (DFT) to latent time-series representations produced by a diffusion autoencoder, decomposing musical patterns by timescale. During training, a correlated log-scale frequency mask is randomly applied so that the decoder learns to reconstruct audio from partial spectra. At inference time, users specify frequency masks to selectively preserve or blend musical elements across different timescales. LatentFT consistently outperforms baselines including ILVR, Guidance, Codec Filtering, and RAVE on conditional generation and music blending tasks, with its superior audio quality and blending capability statistically confirmed by a listening test involving 29 musicians.
+  [ICLR 2026 Oral][diffusion autoencoder] This paper proposes LatentFT, a framework that applies the Discrete Fourier Transform (DFT) to latent time-series representations produced by a diffusion autoencoder…
 tags:
-  - ICLR 2026 Oral
-  - diffusion autoencoder
-  - Fourier transform
-  - music generation
-  - latent frequency
-  - timescale control
-  - controllable generation
+  - "ICLR 2026 Oral"
+  - "diffusion autoencoder"
+  - "Fourier transform"
+  - "music generation"
+  - "latent frequency"
+  - "timescale control"
+  - "controllable generation"
 date: 2026-05-08
 content_hash: 9c317c465be48073
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] NeSTR: A Neuro-Symbolic Abductive Framework for Temporal Reasoning in Large Language Models
 description: >-
-  [AAAI 2026][LLM Evaluation][Temporal QA] This paper proposes NeSTR, a neuro-symbolic prompting strategy that converts natural language temporal facts into structured symbolic predicates, combined with consistency verification and abductive reflection for error correction. Under a zero-shot setting, NeSTR enables LLMs to achieve high-quality temporal reasoning, attaining an average F1 of 89.7 on GPT-4o-mini, compared to 64.9 for vanilla prompting and 85.8 for TISER.
+  [AAAI 2026][LLM Evaluation][Temporal QA] This paper proposes NeSTR, a neuro-symbolic prompting strategy that converts natural language temporal facts into structured symbolic predicates…
 tags:
-  - AAAI 2026
-  - LLM Evaluation
-  - Temporal QA
-  - Neuro-Symbolic Reasoning
-  - Abductive Reasoning
-  - LLM Prompting
-  - Consistency Verification
+  - "AAAI 2026"
+  - "LLM Evaluation"
+  - "Temporal QA"
+  - "Neuro-Symbolic Reasoning"
+  - "Abductive Reasoning"
+  - "LLM Prompting"
+  - "Consistency Verification"
 date: 2026-05-08
 content_hash: ccc2bd1a11d1adcf
 ---

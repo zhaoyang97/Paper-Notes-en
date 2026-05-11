@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Uncertainty Estimation by Flexible Evidential Deep Learning
 description: >-
-  [NeurIPS 2025][uncertainty quantification] This paper proposes $\mathcal{F}$-EDL, which generalizes the Dirichlet distribution in EDL to a Flexible Dirichlet (FD) distribution for modeling class probability distributions. This approach significantly enhances the generalization of uncertainty estimation under complex scenarios such as noise, long-tail distributions, and distribution shift, while preserving the efficiency of a single forward pass.
+  [NeurIPS 2025][uncertainty quantification] This paper proposes $\mathcal{F}$-EDL, which generalizes the Dirichlet distribution in EDL to a Flexible Dirichlet (FD) distribution for modeling class probability distributions…
 tags:
-  - NeurIPS 2025
-  - uncertainty quantification
-  - evidential deep learning
-  - Flexible Dirichlet distribution
-  - OOD detection
-  - single forward pass
+  - "NeurIPS 2025"
+  - "uncertainty quantification"
+  - "evidential deep learning"
+  - "Flexible Dirichlet distribution"
+  - "OOD detection"
+  - "single forward pass"
 date: 2026-05-08
 content_hash: 8873f9c497589c74
 ---

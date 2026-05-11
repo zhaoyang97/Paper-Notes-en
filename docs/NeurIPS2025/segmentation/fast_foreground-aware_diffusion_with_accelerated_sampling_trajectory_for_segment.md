@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FAST: Foreground-aware Diffusion with Accelerated Sampling Trajectory for Segmentation-oriented Anomaly Synthesis
 description: >-
-  [NeurIPS 2025][Segmentation][Industrial anomaly synthesis] FAST introduces explicit mechanisms to preserve anomaly regions throughout the diffusion trajectory: AIAS compresses the multi-step reverse process of discrete diffusion into a small number of coarse-to-fine analytical updates, while FARM reconstructs and reinjects anomaly foregrounds at each step, yielding a method that is both fast and better suited for generating training data for downstream anomaly segmentation models.
+  [NeurIPS 2025][Segmentation][Industrial anomaly synthesis] FAST introduces explicit mechanisms to preserve anomaly regions throughout the diffusion trajectory: AIAS compresses the multi-step reverse process of discrete d…
 tags:
-  - NeurIPS 2025
-  - Segmentation
-  - Industrial anomaly synthesis
-  - foreground-aware diffusion
-  - accelerated sampling
-  - anomaly segmentation
-  - mask-guided
+  - "NeurIPS 2025"
+  - "Segmentation"
+  - "Industrial anomaly synthesis"
+  - "foreground-aware diffusion"
+  - "accelerated sampling"
+  - "anomaly segmentation"
+  - "mask-guided"
 date: 2026-05-08
 content_hash: 68b85f917e154908
 ---

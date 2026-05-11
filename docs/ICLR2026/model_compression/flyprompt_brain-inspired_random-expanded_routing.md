@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FlyPrompt: Brain-Inspired Random-Expanded Routing with Temporal-Ensemble Experts for General Continual Learning
 description: >-
-  [ICLR 2026][Model Compression][continual learning] Inspired by the neurobiology of the *Drosophila* mushroom body—specifically its sparse random expansion and modular integration mechanisms—FlyPrompt is proposed as a framework for General Continual Learning (GCL). It introduces a Random-Expanded Analytic Router (REAR) for non-iterative expert selection, combined with a multi-timescale EMA output head Temporal Ensemble (TE²) to enhance expert capacity, achieving gains of up to 11.23%/12.43%/7.62% on CIFAR-100/ImageNet-R/CUB-200.
+  [ICLR 2026][Model Compression][continual learning] Inspired by the neurobiology of the *Drosophila* mushroom body—specifically its sparse random expansion and modular integration mechanisms—FlyPrompt is proposed as a fra…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - continual learning
-  - prompt tuning
-  - brain-inspired
-  - expert routing
-  - temporal ensemble
+  - "ICLR 2026"
+  - "Model Compression"
+  - "continual learning"
+  - "prompt tuning"
+  - "brain-inspired"
+  - "expert routing"
+  - "temporal ensemble"
 date: 2026-05-08
 content_hash: 4a07e71c2ad20a33
 ---

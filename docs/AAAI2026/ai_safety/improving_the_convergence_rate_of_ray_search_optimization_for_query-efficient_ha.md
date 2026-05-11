@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Improving the Convergence Rate of Ray Search Optimization for Query-Efficient Hard-Label Attacks
 description: >-
-  [AAAI 2026 (Oral)][AI Safety][hard-label attacks] To address the query efficiency bottleneck in hard-label black-box adversarial attacks, this paper proposes ARS-OPT, a momentum-based algorithm grounded in Nesterov Accelerated Gradient (NAG), and its enhanced variant PARS-OPT that incorporates surrogate model priors. Theoretical convergence guarantees are established, and both methods outperform 13 state-of-the-art approaches on ImageNet and CIFAR-10.
+  [AAAI 2026 (Oral)][AI Safety][hard-label attacks] To address the query efficiency bottleneck in hard-label black-box adversarial attacks, this paper proposes ARS-OPT…
 tags:
-  - AAAI 2026 (Oral)
-  - AI Safety
-  - hard-label attacks
-  - black-box adversarial examples
-  - query efficiency
-  - momentum acceleration
-  - surrogate models
+  - "AAAI 2026 (Oral)"
+  - "AI Safety"
+  - "hard-label attacks"
+  - "black-box adversarial examples"
+  - "query efficiency"
+  - "momentum acceleration"
+  - "surrogate models"
 date: 2026-05-08
 content_hash: c305a894051a8be1
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RMAdapter: Reconstruction-based Multi-Modal Adapter for Vision-Language Models (Oral)
 description: >-
-  [AAAI 2026][Multimodal VLM][CLIP] This paper proposes RMAdapter, a dual-branch adapter architecture that augments the standard adaptation branch with a reconstruction branch (analogous to an AutoEncoder). By sharing the down-projection layer and applying per-layer local reconstruction losses, RMAdapter achieves an optimal balance between task-specific adaptation and general knowledge retention in few-shot CLIP fine-tuning, outperforming state-of-the-art methods (including prompt-based approaches) across three benchmarks: Base-to-Novel generalization, cross-dataset transfer, and domain generalization.
+  [AAAI 2026][Multimodal VLM][CLIP] This paper proposes RMAdapter, a dual-branch adapter architecture that augments the standard adaptation branch with a reconstruction branch (analogous to an AutoEncoder). By sharing the…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - CLIP
-  - Adapter
-  - Reconstruction
-  - few-shot learning
-  - Vision-Language Model
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "CLIP"
+  - "Adapter"
+  - "Reconstruction"
+  - "few-shot learning"
+  - "Vision-Language Model"
 date: 2026-05-08
 content_hash: e965339817c1f34d
 ---

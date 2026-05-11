@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Magic Insert: Style-Aware Drag-and-Drop
 description: >-
-   This paper proposes Magic Insert, the first method to formally define and address the "style-aware drag-and-drop" problem—inserting a subject from an arbitrary style into a target image of a different style, such that the subject automatically adapts to the target style while being composited in a physically plausible manner. The core components are style-aware personalization (LoRA + IP-Adapter style injection) and Bootstrap Domain Adaptation (adapting a real-image-trained insertion model to the stylized image domain).
+  This paper proposes Magic Insert, the first method to formally define and address the "style-aware drag-and-drop" problem—inserting a subject from an arbitrary style into a target image of a different style…
 tags:
 
 date: 2026-05-08

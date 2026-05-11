@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VimoRAG: Video-based Retrieval-augmented 3D Motion Generation for Motion Language Models
 description: >-
-  [NeurIPS 2025][Human Understanding][Motion Generation] This paper proposes VimoRAG, a framework that leverages large-scale in-the-wild video databases as 2D motion priors to enhance 3D motion generation. Two core bottlenecks—human motion video retrieval and error propagation—are addressed via the Gemini-MVR retriever and the McDPO training strategy.
+  [NeurIPS 2025][Human Understanding][Motion Generation] This paper proposes VimoRAG, a framework that leverages large-scale in-the-wild video databases as 2D motion priors to enhance 3D motion generation. Two core bottlen…
 tags:
-  - NeurIPS 2025
-  - Human Understanding
-  - Motion Generation
-  - Retrieval-Augmented Generation
-  - Video Priors
-  - Motion Language Model
-  - DPO
+  - "NeurIPS 2025"
+  - "Human Understanding"
+  - "Motion Generation"
+  - "Retrieval-Augmented Generation"
+  - "Video Priors"
+  - "Motion Language Model"
+  - "DPO"
 date: 2026-05-08
 content_hash: 8550f33cd6aa0476
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] R-AVST: Empowering Video-LLMs with Fine-Grained Spatio-Temporal Reasoning in Complex Audio-Visual Scenarios
 description: >-
-  [AAAI 2026][Video Understanding][Audio-visual reasoning] This paper introduces R-AVST, the first fine-grained spatio-temporal reasoning dataset for complex audio-visual scenarios (5K+ untrimmed videos, 27K objects, 100 audio-visual event categories), defines three core reasoning tasks, and trains the AVST-Zero model via GRPO with a multi-dimensional reward function to directly optimize audio-visual spatio-temporal reasoning.
+  [AAAI 2026][Video Understanding][Audio-visual reasoning] This paper introduces R-AVST, the first fine-grained spatio-temporal reasoning dataset for complex audio-visual scenarios (5K+ untrimmed videos, 27K objects…
 tags:
-  - AAAI 2026
-  - Video Understanding
-  - Audio-visual reasoning
-  - spatio-temporal grounding
-  - reinforcement learning
-  - GRPO
-  - Video-LLM
+  - "AAAI 2026"
+  - "Video Understanding"
+  - "Audio-visual reasoning"
+  - "spatio-temporal grounding"
+  - "reinforcement learning"
+  - "GRPO"
+  - "Video-LLM"
 date: 2026-05-08
 content_hash: 47239a7cb9e49ffa
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Rao-Blackwellised Reparameterisation Gradients
 description: >-
-  [NeurIPS 2025][Optimization][Rao-Blackwell] This paper proposes the R2-G2 estimator as a Rao-Blackwellised variant of reparameterisation gradients, proves that local reparameterisation in Bayesian MLPs is a special case thereof, and extends the low-variance gradient advantage to a broad class of probabilistic models.
+  [NeurIPS 2025][Optimization][Rao-Blackwell] This paper proposes the R2-G2 estimator as a Rao-Blackwellised variant of reparameterisation gradients…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Rao-Blackwell
-  - reparameterisation
-  - gradient estimation
-  - variational inference
-  - Bayesian MLP
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Rao-Blackwell"
+  - "reparameterisation"
+  - "gradient estimation"
+  - "variational inference"
+  - "Bayesian MLP"
 date: 2026-05-08
 content_hash: 010184ec804380bd
 ---

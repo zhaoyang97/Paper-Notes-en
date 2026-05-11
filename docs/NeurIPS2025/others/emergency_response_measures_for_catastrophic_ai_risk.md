@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Emergency Response Measures for Catastrophic AI Risk
 description: >-
-  [NeurIPS 2025][Catastrophic AI risk] This paper systematically analyzes how Frontier Safety Policies (FSPs) can be integrated into the first two stages of China's four-phase emergency response framework (prevention–early warning–response–recovery), employing dangerous capability evaluations, tiered thresholds, and pre-established safety measures to address catastrophic AI risks. The analysis is further contextualized through comparisons with international practices such as the EU AI Act and California SB 53.
+  [NeurIPS 2025][Catastrophic AI risk] This paper systematically analyzes how Frontier Safety Policies (FSPs) can be integrated into the first two stages of China's four-phase emergency response framework (prevention–early…
 tags:
-  - NeurIPS 2025
-  - Catastrophic AI risk
-  - emergency response
-  - frontier safety policies
-  - AI governance
-  - dangerous capability evaluation
+  - "NeurIPS 2025"
+  - "Catastrophic AI risk"
+  - "emergency response"
+  - "frontier safety policies"
+  - "AI governance"
+  - "dangerous capability evaluation"
 date: 2026-05-08
 content_hash: 3bd5fed8dbde092a
 ---

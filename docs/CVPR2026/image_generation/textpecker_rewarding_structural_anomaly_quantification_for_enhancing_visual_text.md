@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TextPecker: Rewarding Structural Anomaly Quantification for Enhancing Visual Text Rendering
 description: >-
-  [CVPR 2026][Image Generation][visual text rendering] This paper proposes TextPecker—a plug-and-play structural anomaly-aware RL strategy that constructs a character-level structural anomaly annotation dataset to train a structure-aware recognizer, replacing the noisy reward signals of conventional OCR. By jointly optimizing semantic alignment and structural fidelity, TextPecker achieves significant improvements in visual text rendering quality across multiple text-to-image models (FLUX, SD3.5, Qwen-Image).
+  [CVPR 2026][Image Generation][visual text rendering] This paper proposes TextPecker—a plug-and-play structural anomaly-aware RL strategy that constructs a character-level structural anomaly annotation dataset to train a…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - visual text rendering
-  - structural anomaly
-  - reinforcement-learning
-  - reward model
-  - OCR
+  - "CVPR 2026"
+  - "Image Generation"
+  - "visual text rendering"
+  - "structural anomaly"
+  - "reinforcement-learning"
+  - "reward model"
+  - "OCR"
 date: 2026-05-08
 content_hash: efe0f18d16a9f535
 ---

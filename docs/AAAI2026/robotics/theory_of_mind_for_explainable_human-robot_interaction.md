@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Theory of Mind for Explainable Human-Robot Interaction
 description: >-
-  [AAAI 2026][Robotics][Theory of Mind] This paper proposes positioning Theory of Mind (ToM) as a form of Explainable AI (XAI), systematically evaluates existing ToM research in HRI using the seven criteria of the VXAI framework, identifies critical deficiencies (most notably the absence of fidelity assessment), and advocates for integrating ToM into XAI frameworks to achieve user-oriented explanations.
+  [AAAI 2026][Robotics][Theory of Mind] This paper proposes positioning Theory of Mind (ToM) as a form of Explainable AI (XAI), systematically evaluates existing ToM research in HRI using the seven criteria of the VXAI fra…
 tags:
-  - AAAI 2026
-  - Robotics
-  - Theory of Mind
-  - Explainable AI
-  - Human-Robot Interaction
-  - VXAI Framework
-  - User-Centered Evaluation
+  - "AAAI 2026"
+  - "Robotics"
+  - "Theory of Mind"
+  - "Explainable AI"
+  - "Human-Robot Interaction"
+  - "VXAI Framework"
+  - "User-Centered Evaluation"
 date: 2026-05-08
 content_hash: 2547c63e30f9af4d
 ---

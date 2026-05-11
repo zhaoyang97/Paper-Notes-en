@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] QuadSync: Quadrifocal Tensor Synchronization via Tucker Decomposition
 description: >-
-  [CVPR 2026][3D Vision][Quadrifocal tensor] This paper presents QuadSync, the first global synchronization algorithm for quadrifocal tensors. By constructing a block quadrifocal tensor and proving that it admits a Tucker decomposition with multilinear rank $(4,4,4,4)$, the method recovers camera poses from four-view measurements via an ADMM-IRLS optimization framework, achieving superior synchronization accuracy over two-view and three-view methods in dense-view settings.
+  [CVPR 2026][3D Vision][Quadrifocal tensor] This paper presents QuadSync, the first global synchronization algorithm for quadrifocal tensors. By constructing a block quadrifocal tensor and proving that it admits a Tucker…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Quadrifocal tensor
-  - Tucker decomposition
-  - Structure from Motion
-  - global synchronization
-  - multi-view geometry
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Quadrifocal tensor"
+  - "Tucker decomposition"
+  - "Structure from Motion"
+  - "global synchronization"
+  - "multi-view geometry"
 date: 2026-05-08
 content_hash: dd10a1c1c0d0cbca
 ---

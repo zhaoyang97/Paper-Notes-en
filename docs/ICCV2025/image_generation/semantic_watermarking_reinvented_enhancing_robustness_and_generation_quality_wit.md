@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Semantic Watermarking Reinvented: Enhancing Robustness and Generation Quality with Fourier Integrity
 description: >-
-  [ICCV 2025][Image Generation][semantic watermarking] This paper addresses the frequency integrity loss caused by discarding the imaginary part in existing semantic watermarking methods for latent diffusion models (LDMs). It proposes Hermitian Symmetric Fourier Watermarking (SFW) and a center-aware embedding strategy to preserve frequency-domain integrity while enhancing detection robustness and generation quality.
+  [ICCV 2025][Image Generation][semantic watermarking] This paper addresses the frequency integrity loss caused by discarding the imaginary part in existing semantic watermarking methods for latent diffusion models (LDMs).…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - semantic watermarking
-  - latent-space Fourier watermarking
-  - Hermitian symmetry
-  - center-aware embedding
-  - latent diffusion models
+  - "ICCV 2025"
+  - "Image Generation"
+  - "semantic watermarking"
+  - "latent-space Fourier watermarking"
+  - "Hermitian symmetry"
+  - "center-aware embedding"
+  - "latent diffusion models"
 date: 2026-05-08
 content_hash: f0f983e35e141157
 ---

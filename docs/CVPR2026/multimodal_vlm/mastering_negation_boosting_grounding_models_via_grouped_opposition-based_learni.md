@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Mastering Negation: Boosting Grounding Models via Grouped Opposition-Based Learning
 description: >-
-  [CVPR2026][Multimodal VLM][Visual Grounding] This paper proposes the D-Negation dataset and a Grouped Opposition-Based Learning (GOBL) fine-tuning mechanism. By leveraging semantically opposed description pairs and two dedicated loss functions, GOBL fine-tunes fewer than 10% of model parameters while substantially improving negation semantic understanding in visual grounding models (up to +5.7 mAP).
+  [CVPR2026][Multimodal VLM][Visual Grounding] This paper proposes the D-Negation dataset and a Grouped Opposition-Based Learning (GOBL) fine-tuning mechanism. By leveraging semantically opposed description pairs and two d…
 tags:
-  - CVPR2026
-  - Multimodal VLM
-  - Visual Grounding
-  - Negation Semantics Understanding
-  - Opposition-Based Learning
-  - Parameter-Efficient Fine-Tuning
-  - Vision-Language Fusion
-  - Negative Samples
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "Visual Grounding"
+  - "Negation Semantics Understanding"
+  - "Opposition-Based Learning"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Vision-Language Fusion"
+  - "Negative Samples"
 date: 2026-05-08
 content_hash: 32260b239c3c4180
 ---

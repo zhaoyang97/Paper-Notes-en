@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Contrastive Representations for Temporal Reasoning
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][Contrastive Learning] This paper proposes CRTR (Contrastive Representations for Temporal Reasoning), which introduces intra-trajectory negative pairs by repeating trajectory IDs within training batches. This eliminates the reliance on static contextual features in standard temporal contrastive learning, enabling representations that reflect temporal structure. CRTR achieves, for the first time, search-free solving on combinatorial reasoning tasks such as the Rubik's Cube.
+  [NeurIPS 2025][Self-Supervised Learning][Contrastive Learning] This paper proposes CRTR (Contrastive Representations for Temporal Reasoning), which introduces intra-trajectory negative pairs by repeating trajectory IDs w…
 tags:
-  - NeurIPS 2025
-  - Self-Supervised Learning
-  - Contrastive Learning
-  - Temporal Reasoning
-  - Combinatorial Problems
-  - Sokoban
-  - Rubik's Cube
+  - "NeurIPS 2025"
+  - "Self-Supervised Learning"
+  - "Contrastive Learning"
+  - "Temporal Reasoning"
+  - "Combinatorial Problems"
+  - "Sokoban"
+  - "Rubik's Cube"
 date: 2026-05-08
 content_hash: 9d604af71b048234
 ---

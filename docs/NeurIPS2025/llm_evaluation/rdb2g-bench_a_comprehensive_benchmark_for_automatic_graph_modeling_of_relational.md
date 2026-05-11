@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RDB2G-Bench: A Comprehensive Benchmark for Automatic Graph Modeling of Relational Databases
 description: >-
-  [NeurIPS 2025][LLM Evaluation][relational databases] This paper proposes RDB2G-Bench — the first benchmark framework for evaluating relational-database-to-graph modeling methods, comprising 5 real-world RDBs, 12 prediction tasks, approximately 50,000 precomputed graph model–performance pairs, and a systematic comparison of 10 automatic graph modeling approaches.
+  [NeurIPS 2025][LLM Evaluation][relational databases] This paper proposes RDB2G-Bench — the first benchmark framework for evaluating relational-database-to-graph modeling methods, comprising 5 real-world RDBs…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - relational databases
-  - graph modeling
-  - benchmark
-  - graph neural networks
-  - automatic modeling
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "relational databases"
+  - "graph modeling"
+  - "benchmark"
+  - "graph neural networks"
+  - "automatic modeling"
 date: 2026-05-08
 content_hash: 21790e3b8be9504c
 ---

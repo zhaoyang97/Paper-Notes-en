@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Adapting Speech Language Model to Singing Voice Synthesis
 description: >-
-  [NeurIPS 2025 (Workshop)][Image Generation][Speech Language Model] This paper adapts a 1.7B-parameter TTS-pretrained Speech Language Model to the Singing Voice Synthesis (SVS) task via score tokenization, multi-stream LM prediction, conditional flow matching refinement, and a vocoder. Using only 135 hours of synthesized singing data, the system achieves performance comparable to dedicated SVS systems.
+  [NeurIPS 2025 (Workshop)][Image Generation][Speech Language Model] This paper adapts a 1.7B-parameter TTS-pretrained Speech Language Model to the Singing Voice Synthesis (SVS) task via score tokenization…
 tags:
-  - NeurIPS 2025 (Workshop)
-  - Image Generation
-  - Speech Language Model
-  - SVS
-  - Flow Matching
-  - Codec
-  - Singing Voice Synthesis
+  - "NeurIPS 2025 (Workshop)"
+  - "Image Generation"
+  - "Speech Language Model"
+  - "SVS"
+  - "Flow Matching"
+  - "Codec"
+  - "Singing Voice Synthesis"
 date: 2026-05-08
 content_hash: 18c52fcfcef09934
 ---

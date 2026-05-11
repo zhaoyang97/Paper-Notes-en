@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VQ-SGen: A Vector Quantized Stroke Representation for Creative Sketch Generation
 description: >-
-  [ICCV 2025][Model Compression][sketch generation] > VQ-SGen treats each stroke as an independent entity and decouples its shape from positional information. By applying vector quantization (VQ), it constructs a compact discrete stroke codebook, and employs a cascaded autoregressive Transformer to sequentially generate semantic labels, shape codes, and position codes for each stroke. The method significantly outperforms existing approaches on the CreativeSketch dataset.
+  [ICCV 2025][Model Compression][sketch generation] > VQ-SGen treats each stroke as an independent entity and decouples its shape from positional information. By applying vector quantization (VQ)…
 tags:
-  - ICCV 2025
-  - Model Compression
-  - sketch generation
-  - vector quantization
-  - stroke representation
-  - autoregressive
-  - creative sketch
+  - "ICCV 2025"
+  - "Model Compression"
+  - "sketch generation"
+  - "vector quantization"
+  - "stroke representation"
+  - "autoregressive"
+  - "creative sketch"
 date: 2026-05-08
 content_hash: 5350ec563a4e74f3
 ---

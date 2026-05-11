@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Resolving Token-Space Gradient Conflicts: Token Space Manipulation for Transformer-Based Multi-Task Learning
 description: >-
-  [ICCV 2025][Robotics][Multi-Task Learning] This paper proposes DTME-MTL, a framework that identifies and categorizes gradient conflicts in token space into range-space conflicts and null-space conflicts, and addresses them via Token Modulation (affine transformation) and Token Expansion (task-specific token insertion), respectively, to mitigate negative transfer in Transformer-based multi-task learning with minimal parameter overhead.
+  [ICCV 2025][Robotics][Multi-Task Learning] This paper proposes DTME-MTL, a framework that identifies and categorizes gradient conflicts in token space into range-space conflicts and null-space conflicts…
 tags:
-  - ICCV 2025
-  - Robotics
-  - Multi-Task Learning
-  - Gradient Conflict
-  - Token Space
-  - Transformer
-  - Dynamic Network Expansion
+  - "ICCV 2025"
+  - "Robotics"
+  - "Multi-Task Learning"
+  - "Gradient Conflict"
+  - "Token Space"
+  - "Transformer"
+  - "Dynamic Network Expansion"
 date: 2026-05-08
 content_hash: 16624bc700a95778
 ---

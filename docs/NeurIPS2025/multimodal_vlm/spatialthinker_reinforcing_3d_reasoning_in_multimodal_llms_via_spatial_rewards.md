@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SpatialThinker: Reinforcing 3D Reasoning in Multimodal LLMs via Spatial Rewards
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Spatial Reasoning] This paper proposes SpatialThinker, which trains MLLMs to construct scene graphs and perform structured spatial reasoning via online RL with multi-objective dense spatial rewards (lexicographic gating over format → count → accuracy → spatial localization). Using only 7K samples, it surpasses GPT-4o on 3DSRBench by 12.1%.
+  [NeurIPS 2025][Multimodal VLM][Spatial Reasoning] This paper proposes SpatialThinker, which trains MLLMs to construct scene graphs and perform structured spatial reasoning via online RL with multi-objective dense spatial…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Spatial Reasoning
-  - Scene Graph
-  - Reinforcement Learning
-  - Dense Reward
-  - 3D Understanding
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Spatial Reasoning"
+  - "Scene Graph"
+  - "Reinforcement Learning"
+  - "Dense Reward"
+  - "3D Understanding"
 date: 2026-05-08
 content_hash: 263df177e6aed2be
 ---

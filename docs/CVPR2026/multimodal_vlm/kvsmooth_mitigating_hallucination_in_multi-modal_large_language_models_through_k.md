@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] KVSmooth: Mitigating Hallucination in Multi-modal Large Language Models through Key-Value Smoothing
 description: >-
-  [CVPR2026][Multimodal VLM][Multimodal hallucination mitigation] This paper proposes KVSmooth, a training-free plug-and-play inference-time method that applies adaptive exponential moving average (EMA) smoothing to KV-Cache guided by attention row entropy, effectively suppressing semantic drift and hallucination generation caused by sink tokens during decoding in multimodal large language models (MLLMs). On LLaVA-1.5, CHAIR_S is reduced from 41.8 to 18.2 (a 56% reduction), while F1 improves from 77.5 to 79.2.
+  [CVPR2026][Multimodal VLM][Multimodal hallucination mitigation] This paper proposes KVSmooth, a training-free plug-and-play inference-time method that applies adaptive exponential moving average (EMA) smoothing to KV-Cac…
 tags:
-  - CVPR2026
-  - Multimodal VLM
-  - Multimodal hallucination mitigation
-  - KV-Cache smoothing
-  - attention entropy
-  - exponential moving average
-  - training-free inference
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "Multimodal hallucination mitigation"
+  - "KV-Cache smoothing"
+  - "attention entropy"
+  - "exponential moving average"
+  - "training-free inference"
 date: 2026-05-08
 content_hash: 672116d9dbdc92d7
 ---

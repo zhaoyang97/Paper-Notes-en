@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Masked Symbol Modeling for Demodulation of Oversampled Baseband Communication Signals
 description: >-
-  [NeurIPS 2025][Signal & Communication][Masked Symbol Modeling] This paper proposes Masked Symbol Modeling (MSM), transplanting BERT's masked prediction paradigm to the communication physical layer. It reframes inter-symbol contributions from pulse shaping as "contextual information," training a Transformer on clean oversampled baseband signals to learn waveform structure, and leveraging the learned context at inference time to recover symbols corrupted by impulsive noise.
+  [NeurIPS 2025][Signal & Communication][Masked Symbol Modeling] This paper proposes Masked Symbol Modeling (MSM), transplanting BERT's masked prediction paradigm to the communication physical layer. It reframes inter-symb…
 tags:
-  - NeurIPS 2025
+  - "NeurIPS 2025"
   - "Signal & Communication"
-  - Masked Symbol Modeling
-  - Communication Physical Layer
-  - Transformer
-  - Pulse Shaping
-  - Impulsive Noise
+  - "Masked Symbol Modeling"
+  - "Communication Physical Layer"
+  - "Transformer"
+  - "Pulse Shaping"
+  - "Impulsive Noise"
 date: 2026-05-08
 content_hash: a58c4df3b27c94c7
 ---

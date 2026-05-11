@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unleashing the Temporal Potential of Stereo Event Cameras for Continuous-Time 3D Perception
 description: >-
-  [ICCV 2025][Autonomous Driving][Event Camera] This paper proposes the first 3D object detection framework relying solely on stereo event cameras. Through a semantic-geometric dual filtering module and object-centric ROI alignment, it enables continuous-time 3D detection during blind time periods, significantly outperforming methods that depend on synchronized sensors (Ev-3DOD) in dynamic large-motion scenarios. Its pedestrian AP3D even surpasses methods that use LiDAR+RGB+Event.
+  [ICCV 2025][Autonomous Driving][Event Camera] This paper proposes the first 3D object detection framework relying solely on stereo event cameras. Through a semantic-geometric dual filtering module and object-centric ROI…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - Event Camera
-  - Stereo Vision
-  - 3D Object Detection
-  - Continuous-Time Perception
-  - Semantic-Geometric Dual Filtering
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "Event Camera"
+  - "Stereo Vision"
+  - "3D Object Detection"
+  - "Continuous-Time Perception"
+  - "Semantic-Geometric Dual Filtering"
 date: 2026-05-08
 content_hash: a4240c73dc89f3cb
 ---

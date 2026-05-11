@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Skill Path: Unveiling Language Skills from Circuit Graphs
 description: >-
-  [AAAI2026][Causal Inference][Mechanistic Interpretability] This paper proposes the concept of Skill Path and a three-step framework (Decomposition–Pruning–Causal Mediation) to extract linear paths corresponding to specific language skills from circuit graphs, and quantitatively validates two core conjectures: Stratification and Inclusiveness of skills.
+  [AAAI2026][Causal Inference][Mechanistic Interpretability] This paper proposes the concept of Skill Path and a three-step framework (Decomposition–Pruning–Causal Mediation) to extract linear paths corresponding to specif…
 tags:
-  - AAAI2026
-  - Causal Inference
-  - Mechanistic Interpretability
-  - Circuit Discovery
-  - Skill Path
-  - Causal Mediation
-  - Language Models
+  - "AAAI2026"
+  - "Causal Inference"
+  - "Mechanistic Interpretability"
+  - "Circuit Discovery"
+  - "Skill Path"
+  - "Causal Mediation"
+  - "Language Models"
 date: 2026-05-08
 content_hash: 709a938a8331016c
 ---

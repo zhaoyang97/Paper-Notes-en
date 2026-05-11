@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CHOICE: Benchmarking the Remote Sensing Capabilities of Large Vision-Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Remote Sensing] This paper proposes CHOICE, a large-scale multi-level VLM benchmark for the remote sensing domain, comprising 10,507 newly collected questions spanning 2 top-level dimensions, 6 sub-dimensions, and 23 leaf tasks across perception and reasoning, enabling the first systematic and objective evaluation of VLM remote sensing capabilities.
+  [NeurIPS 2025][Multimodal VLM][Remote Sensing] This paper proposes CHOICE, a large-scale multi-level VLM benchmark for the remote sensing domain, comprising 10…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Remote Sensing
-  - VLM Benchmark
-  - Multi-level Evaluation
-  - Multiple Choice Questions
-  - Visual Reasoning
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Remote Sensing"
+  - "VLM Benchmark"
+  - "Multi-level Evaluation"
+  - "Multiple Choice Questions"
+  - "Visual Reasoning"
 date: 2026-05-08
 content_hash: c508229e29cbf72e
 ---

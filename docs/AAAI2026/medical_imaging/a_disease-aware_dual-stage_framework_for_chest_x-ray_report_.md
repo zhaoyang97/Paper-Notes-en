@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Disease-Aware Dual-Stage Framework for Chest X-ray Report Generation
 description: >-
-  [AAAI 2026][Medical Imaging][chest X-ray report generation] This paper proposes a two-stage disease-aware framework that learns 14 Disease-Aware Semantic Tokens (DASTs) corresponding to pathology categories for explicit disease representation. It further employs a Disease-Visual Attention Fusion (DVAF) module and a Dual-Modal Similarity Retrieval (DMSR) mechanism to assist an LLM in generating clinically accurate chest X-ray reports, achieving state-of-the-art performance on three datasets: CheXpert Plus, IU X-Ray, and MIMIC-CXR.
+  [AAAI 2026][Medical Imaging][chest X-ray report generation] This paper proposes a two-stage disease-aware framework that learns 14 Disease-Aware Semantic Tokens (DASTs) corresponding to pathology categories for explicit…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - chest X-ray report generation
-  - disease-aware semantic tokens
-  - visual-language alignment
-  - retrieval-augmented generation
-  - state space models
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "chest X-ray report generation"
+  - "disease-aware semantic tokens"
+  - "visual-language alignment"
+  - "retrieval-augmented generation"
+  - "state space models"
 date: 2026-05-08
 content_hash: 6bd86bbb950d6133
 ---

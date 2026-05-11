@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Language Model as Planner and Formalizer under Constraints
 description: >-
-  [ACL 2026][LLM Evaluation][Constrained Planning] This paper introduces the CoPE benchmark, which injects formally categorized natural language constraints into classical planning environments, revealing that a single constraint sentence can halve the planning performance of state-of-the-art LLMs, exposing critical deficiencies in LLM planning robustness.
+  [ACL 2026][LLM Evaluation][Constrained Planning] This paper introduces the CoPE benchmark, which injects formally categorized natural language constraints into classical planning environments…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - Constrained Planning
-  - LLM-as-Planner
-  - LLM-as-Formalizer
-  - Benchmark
-  - PDDL
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "Constrained Planning"
+  - "LLM-as-Planner"
+  - "LLM-as-Formalizer"
+  - "Benchmark"
+  - "PDDL"
 date: 2026-05-08
 content_hash: 9a5d4dc4a05759cc
 ---

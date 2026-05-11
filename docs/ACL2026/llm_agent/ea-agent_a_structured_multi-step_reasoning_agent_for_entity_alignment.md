@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EA-Agent: A Structured Multi-Step Reasoning Agent for Entity Alignment
 description: >-
-  [ACL 2026][LLM Agent][entity alignment] This paper proposes EA-Agent, which decomposes entity alignment (EA) into a structured multi-step reasoning process. Through planning and execution over a tool pool (triple selector + alignment tool + reflector), EA-Agent achieves interpretable alignment decisions. Combined with reward-guided offline policy optimization for continuous improvement of planning capability, it achieves up to 3.17% Hits@1 improvement on DBP15K while reducing efficiency issues caused by redundant triples.
+  [ACL 2026][LLM Agent][entity alignment] This paper proposes EA-Agent, which decomposes entity alignment (EA) into a structured multi-step reasoning process. Through planning and execution over a tool pool (triple selecto…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - entity alignment
-  - knowledge graph
-  - multi-step reasoning
-  - tool planning
-  - reward-guided optimization
+  - "ACL 2026"
+  - "LLM Agent"
+  - "entity alignment"
+  - "knowledge graph"
+  - "multi-step reasoning"
+  - "tool planning"
+  - "reward-guided optimization"
 date: 2026-05-08
 content_hash: ef6ee6929cbab09c
 ---

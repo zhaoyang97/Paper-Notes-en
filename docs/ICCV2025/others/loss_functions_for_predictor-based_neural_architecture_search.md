@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Loss Functions for Predictor-based Neural Architecture Search
 description: >-
-  [ICCV 2025][Neural Architecture Search] This paper presents the first comprehensive and systematic study of 8 loss functions for performance predictors, spanning regression, ranking, and weighting categories. Evaluated across 13 tasks on 5 search spaces, the study reveals the characteristics and complementarity of each loss type, and proposes PWLNAS—a piecewise loss (PW loss) combination method—that surpasses existing state-of-the-art on multiple benchmarks.
+  [ICCV 2025][Neural Architecture Search] This paper presents the first comprehensive and systematic study of 8 loss functions for performance predictors, spanning regression, ranking…
 tags:
-  - ICCV 2025
-  - Neural Architecture Search
-  - Performance Predictor
-  - Loss Functions
-  - Learning to Rank
-  - Weighted Loss
+  - "ICCV 2025"
+  - "Neural Architecture Search"
+  - "Performance Predictor"
+  - "Loss Functions"
+  - "Learning to Rank"
+  - "Weighted Loss"
 date: 2026-05-08
 content_hash: ee96d9217690ec7a
 ---

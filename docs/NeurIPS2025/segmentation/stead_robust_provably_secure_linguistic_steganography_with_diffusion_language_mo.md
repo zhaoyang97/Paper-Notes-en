@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] STEAD: Robust Provably Secure Linguistic Steganography with Diffusion Language Model
 description: >-
-  [NeurIPS 2025][Segmentation][linguistic steganography] This paper proposes STEAD, the first provably secure and robust linguistic steganography method based on diffusion language models (DLMs). It exploits the parallel denoising property of DLMs to identify "robust positions" for message embedding, and combines repetitive error-correcting codes with a neighborhood search strategy to resist token-level substitution, insertion, and deletion attacks.
+  [NeurIPS 2025][Segmentation][linguistic steganography] This paper proposes STEAD, the first provably secure and robust linguistic steganography method based on diffusion language models (DLMs). It exploits the parallel d…
 tags:
-  - NeurIPS 2025
-  - Segmentation
-  - linguistic steganography
-  - diffusion language model
-  - provable security
-  - robustness
-  - error-correcting codes
+  - "NeurIPS 2025"
+  - "Segmentation"
+  - "linguistic steganography"
+  - "diffusion language model"
+  - "provable security"
+  - "robustness"
+  - "error-correcting codes"
 date: 2026-05-08
 content_hash: e56bcb1c320b424e
 ---

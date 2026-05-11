@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Devil is in the Uniformity: Exploring Diverse Learners within Transformer for Image Restoration
 description: >-
-  [ICCV 2025][Image Restoration] Targeting the redundancy caused by uniform subspace allocation across heads in standard Multi-Head Attention (MHA), this paper proposes HINT, which introduces Hierarchical Multi-Head Attention (HMHA) and Query-Key Cache Updating (QKCU) to enhance inter-head diversity and interaction, achieving state-of-the-art results on 12 benchmarks across 5 image restoration tasks.
+  [ICCV 2025][Image Restoration][Multi-Head Attention] Targeting the redundancy caused by uniform subspace allocation across heads in standard Multi-Head Attention (MHA), this paper proposes HINT…
 tags:
-  - ICCV 2025
-  - Image Restoration
-  - Multi-Head Attention
-  - Transformer
-  - Low-Light Enhancement
-  - Dehazing
-  - Desnowing
+  - "ICCV 2025"
+  - "Image Restoration"
+  - "Multi-Head Attention"
+  - "Transformer"
+  - "Low-Light Enhancement"
+  - "Dehazing"
+  - "Desnowing"
 date: 2026-05-08
 content_hash: e3a1a2bef7c88f32
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MoRe: Motion-aware Feed-forward 4D Reconstruction Transformer
 description: >-
-  [CVPR 2026][3D Vision][4D reconstruction] This paper presents MoRe, a feed-forward motion-aware 4D reconstruction Transformer that decouples dynamic motion from static structure during training via an attention enforcement strategy, and achieves efficient streaming inference through grouped causal attention, attaining state-of-the-art performance in camera pose estimation and depth prediction on dynamic scenes.
+  [CVPR 2026][3D Vision][4D reconstruction] This paper presents MoRe, a feed-forward motion-aware 4D reconstruction Transformer that decouples dynamic motion from static structure during training via an attention enforceme…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 4D reconstruction
-  - dynamic scenes
-  - attention enforcement
-  - streaming inference
-  - motion disentanglement
+  - "CVPR 2026"
+  - "3D Vision"
+  - "4D reconstruction"
+  - "dynamic scenes"
+  - "attention enforcement"
+  - "streaming inference"
+  - "motion disentanglement"
 date: 2026-05-08
 content_hash: bf4e5f5cc7272f2c
 ---

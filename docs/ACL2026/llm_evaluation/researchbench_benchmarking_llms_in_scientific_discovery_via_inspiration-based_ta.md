@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ResearchBench: Benchmarking LLMs in Scientific Discovery via Inspiration-Based Task Decomposition
 description: >-
-  [ACL 2026][LLM Evaluation][Scientific discovery] This paper proposes ResearchBench, the first large-scale benchmark for evaluating LLMs in scientific discovery. Grounded in a theoretically motivated decomposition of inspiration-driven hypothesis generation, it covers 1,386 papers across 12 disciplines and decomposes scientific discovery into three sufficient subtasks: inspiration retrieval, hypothesis composition, and hypothesis ranking. Results show that LLMs perform surprisingly well on cross-disciplinary inspiration retrieval.
+  [ACL 2026][LLM Evaluation][Scientific discovery] This paper proposes ResearchBench, the first large-scale benchmark for evaluating LLMs in scientific discovery. Grounded in a theoretically motivated decomposition of insp…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - Scientific discovery
-  - inspiration retrieval
-  - hypothesis generation
-  - LLM benchmark
-  - interdisciplinary
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "Scientific discovery"
+  - "inspiration retrieval"
+  - "hypothesis generation"
+  - "LLM benchmark"
+  - "interdisciplinary"
 date: 2026-05-08
 content_hash: 97e1178f4fd33c3b
 ---

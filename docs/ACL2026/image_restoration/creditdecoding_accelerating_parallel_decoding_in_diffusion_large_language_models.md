@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CreditDecoding: Accelerating Parallel Decoding in Diffusion Large Language Models with Trace Credit
 description: >-
-  [ACL 2026][Image Restoration][Diffusion Language Model] CreditDecoding is a training-free parallel decoding acceleration method that accumulates token-level historical evidence (trace credit) to boost correct but low-confidence tokens, achieving up to 5.48x speedup with +0.48 accuracy gain on LLaDA-8B-Instruct.
+  [ACL 2026][Image Restoration][Diffusion Language Model] CreditDecoding is a training-free parallel decoding acceleration method that accumulates token-level historical evidence (trace credit) to boost correct but low-con…
 tags:
-  - ACL 2026
-  - Image Restoration
-  - Diffusion Language Model
-  - Parallel Decoding
-  - Trace Credit
-  - Inference Acceleration
-  - Confidence Enhancement
+  - "ACL 2026"
+  - "Image Restoration"
+  - "Diffusion Language Model"
+  - "Parallel Decoding"
+  - "Trace Credit"
+  - "Inference Acceleration"
+  - "Confidence Enhancement"
 content_hash: 2af4e7e91ef6b5b7
 ---
 

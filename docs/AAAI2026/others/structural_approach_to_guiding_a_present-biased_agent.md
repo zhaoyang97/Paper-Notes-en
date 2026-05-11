@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Structural Approach to Guiding a Present-Biased Agent
 description: >-
-  [AAAI 2026][Present Bias] This paper systematically investigates the parameterized complexity of the T-path-Editing problem within the principal-agent extension of the Kleinberg-Oren model. It presents FPT algorithms parameterized by treewidth and path-cost diversity, establishes tight hardness results, and comprehensively characterizes the tractability-intractability boundary for guiding a present-biased agent to complete critical tasks.
+  [AAAI 2026][Present Bias] This paper systematically investigates the parameterized complexity of the T-path-Editing problem within the principal-agent extension of the Kleinberg-Oren model. It presents FPT algorithms par…
 tags:
-  - AAAI 2026
-  - Present Bias
-  - Parameterized Complexity
-  - Treewidth
-  - Task Graph Modification
-  - Principal-Agent Problem
+  - "AAAI 2026"
+  - "Present Bias"
+  - "Parameterized Complexity"
+  - "Treewidth"
+  - "Task Graph Modification"
+  - "Principal-Agent Problem"
 date: 2026-05-08
 content_hash: dc04936f85c08349
 ---

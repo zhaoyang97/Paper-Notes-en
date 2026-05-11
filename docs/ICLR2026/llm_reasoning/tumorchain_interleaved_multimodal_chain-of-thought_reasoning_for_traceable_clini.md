@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TumorChain: Interleaved Multimodal Chain-of-Thought Reasoning for Traceable Clinical Tumor Analysis
 description: >-
-  [ICLR 2026][LLM Reasoning][Tumor Analysis] This paper proposes TumorChain, an interleaved multimodal chain-of-thought reasoning framework for tumor analysis across five major digestive organs. It integrates a knowledge graph-driven 1.5M CoT-VQA data engine, organ-guided iterative interleaved reasoning (IIR), and joint optimization of segmentation, classification, and LLM models to realize a complete reasoning chain from imaging findings → clinical impressions → pathological predictions, achieving an average accuracy of 84.41% and substantially outperforming GPT-5-Mini (51.59%).
+  [ICLR 2026][LLM Reasoning][Tumor Analysis] This paper proposes TumorChain, an interleaved multimodal chain-of-thought reasoning framework for tumor analysis across five major digestive organs. It integrates a knowledge g…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Tumor Analysis
-  - Multimodal CoT Reasoning
-  - Interleaved Reasoning
-  - 3D CT
-  - TNM Staging
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "Tumor Analysis"
+  - "Multimodal CoT Reasoning"
+  - "Interleaved Reasoning"
+  - "3D CT"
+  - "TNM Staging"
 date: 2026-05-08
 content_hash: b045d83b241e415c
 ---

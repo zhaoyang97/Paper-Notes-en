@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SOLACE: Improving Text-to-Image Generation with Intrinsic Self-Confidence Rewards
 description: >-
-  [CVPR 2026][Image Generation][Text-to-Image] SOLACE uses a T2I model's intrinsic denoising self-confidence (i.e., the accuracy with which it recovers injected noise) as an internal reward signal to replace external reward models in post-training, achieving consistent improvements in compositional generation, text rendering, and text-image alignment. The signal is also complementary to external rewards and can mitigate reward hacking.
+  [CVPR 2026][Image Generation][Text-to-Image] SOLACE uses a T2I model's intrinsic denoising self-confidence (i.e., the accuracy with which it recovers injected noise) as an internal reward signal to replace external rewar…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Text-to-Image
-  - Self-Confidence Reward
-  - Flow-GRPO
-  - External-Reward-Free
-  - Post-Training Alignment
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Text-to-Image"
+  - "Self-Confidence Reward"
+  - "Flow-GRPO"
+  - "External-Reward-Free"
+  - "Post-Training Alignment"
 date: 2026-05-08
 content_hash: be5b8d37b7a51325
 ---

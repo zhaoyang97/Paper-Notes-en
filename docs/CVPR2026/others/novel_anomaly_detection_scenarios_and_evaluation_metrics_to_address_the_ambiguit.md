@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Novel Anomaly Detection Scenarios and Evaluation Metrics to Address the Ambiguity in the Definition of Normal Samples
 description: >-
-  [CVPR 2026][anomaly detection] To address the practical challenge that the definition of "normal" shifts with specification changes in industrial anomaly detection, this paper proposes two novel evaluation scenarios (A2N/N2A), a new metric (S-AUROC), and a training augmentation method called RePaste. RePaste increases the training frequency of high-anomaly-score regions by repasting them onto subsequent training images, enabling models to flexibly adapt to changes in the definition of normal samples.
+  [CVPR 2026][anomaly detection] To address the practical challenge that the definition of "normal" shifts with specification changes in industrial anomaly detection…
 tags:
-  - CVPR 2026
-  - anomaly detection
-  - specification change
-  - ambiguous normal definition
-  - pseudo-anomaly
-  - industrial defect detection
+  - "CVPR 2026"
+  - "anomaly detection"
+  - "specification change"
+  - "ambiguous normal definition"
+  - "pseudo-anomaly"
+  - "industrial defect detection"
 date: 2026-05-08
 content_hash: a86dcfcf70ed7585
 ---

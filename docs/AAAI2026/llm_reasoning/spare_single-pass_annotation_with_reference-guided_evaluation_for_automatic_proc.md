@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SPARE: Single-Pass Annotation with Reference-Guided Evaluation for Automatic Process Supervision
 description: >-
-  [AAAI 2026][LLM Reasoning][Process Reward Model] This paper proposes SPARE, a unified single-pass evaluation framework that simultaneously performs step-to-reference alignment and correctness judgment (with explicit reasoning) in a single structured generation, requiring no additional training data. SPARE achieves 2.3× speedup over MCTS-based methods and attains OOD generalization with only 16% of the training samples.
+  [AAAI 2026][LLM Reasoning][Process Reward Model] This paper proposes SPARE, a unified single-pass evaluation framework that simultaneously performs step-to-reference alignment and correctness judgment (with explicit reas…
 tags:
-  - AAAI 2026
-  - LLM Reasoning
-  - Process Reward Model
-  - Automatic Annotation
-  - Reference-Guided
-  - Single-Pass Generation
-  - Data Efficiency
+  - "AAAI 2026"
+  - "LLM Reasoning"
+  - "Process Reward Model"
+  - "Automatic Annotation"
+  - "Reference-Guided"
+  - "Single-Pass Generation"
+  - "Data Efficiency"
 date: 2026-05-08
 content_hash: 2d184d8d21bbde4d
 ---

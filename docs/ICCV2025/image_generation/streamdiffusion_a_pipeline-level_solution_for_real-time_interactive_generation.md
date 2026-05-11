@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] StreamDiffusion: A Pipeline-level Solution for Real-time Interactive Generation
 description: >-
-  [ICCV 2025][Image Generation][real-time generation] StreamDiffusion proposes a pipeline-level real-time diffusion framework that achieves up to 91 fps on a single RTX 4090—59.6× faster than Diffusers AutoPipeline—through Stream Batch (batched denoising steps), R-CFG (residual classifier-free guidance), and SSF (stochastic similarity filtering).
+  [ICCV 2025][Image Generation][real-time generation] StreamDiffusion proposes a pipeline-level real-time diffusion framework that achieves up to 91 fps on a single RTX 4090—59.6× faster than Diffusers AutoPipeline—through…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - real-time generation
-  - streaming diffusion
-  - Stream Batch
-  - residual CFG
-  - stochastic similarity filtering
-  - pipeline optimization
+  - "ICCV 2025"
+  - "Image Generation"
+  - "real-time generation"
+  - "streaming diffusion"
+  - "Stream Batch"
+  - "residual CFG"
+  - "stochastic similarity filtering"
+  - "pipeline optimization"
 date: 2026-05-08
 content_hash: e25774bc5c0547a2
 ---

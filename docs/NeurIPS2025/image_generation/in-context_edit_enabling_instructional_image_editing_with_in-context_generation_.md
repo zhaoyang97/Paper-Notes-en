@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ICEdit: Enabling Instructional Image Editing with In-Context Generation in Large Scale Diffusion Transformer
 description: >-
-  [NeurIPS 2025][Image Generation][Instruction-based image editing] ICEdit proposes an in-context editing paradigm built upon large-scale Diffusion Transformers (DiT), achieving state-of-the-art editing performance with only 0.1% of the training data through an in-context prompt design, lightweight LoRA-MoE fine-tuning, and VLM-guided early-filter inference-time scaling.
+  [NeurIPS 2025][Image Generation][Instruction-based image editing] ICEdit proposes an in-context editing paradigm built upon large-scale Diffusion Transformers (DiT)…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Instruction-based image editing
-  - Diffusion Transformer
-  - in-context learning
-  - LoRA-MoE
-  - inference-time scaling
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Instruction-based image editing"
+  - "Diffusion Transformer"
+  - "in-context learning"
+  - "LoRA-MoE"
+  - "inference-time scaling"
 date: 2026-05-08
 content_hash: cf55fb9dc1351462
 ---

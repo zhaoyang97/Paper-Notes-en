@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Evaluating Memory Capability in Continuous Lifelog Scenario
 description: >-
-  [ACL 2026][Object Detection][lifelog memory] This paper proposes LifeDialBench, a benchmark for evaluating memory capabilities in continuous lifelog scenarios, comprising EgoMem (7 days of real-world data) and LifeMem (1 year of simulated data). An online evaluation protocol is introduced to enforce temporal causality. Counterintuitively, a simple RAG baseline consistently outperforms all complex memory systems.
+  [ACL 2026][Object Detection][lifelog memory] This paper proposes LifeDialBench, a benchmark for evaluating memory capabilities in continuous lifelog scenarios…
 tags:
-  - ACL 2026
-  - Object Detection
-  - lifelog memory
-  - online evaluation
-  - wearable devices
-  - RAG baseline
-  - long-term dialogue
+  - "ACL 2026"
+  - "Object Detection"
+  - "lifelog memory"
+  - "online evaluation"
+  - "wearable devices"
+  - "RAG baseline"
+  - "long-term dialogue"
 date: 2026-05-08
 content_hash: 150f99afdb67b80f
 ---

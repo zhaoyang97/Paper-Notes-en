@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Decouple and Track: Benchmarking and Improving Video Diffusion Transformers for Motion Transfer
 description: >-
-  [ICCV 2025][Video Generation][Diffusion Transformer] To address the difficulty of decoupling motion from appearance in DiT models with 3D full-attention, this paper proposes Shared Temporal Kernels and a Dense Point Tracking Loss, along with a comprehensive motion transfer benchmark MTBench and a hybrid motion fidelity metric.
+  [ICCV 2025][Video Generation][Diffusion Transformer] To address the difficulty of decoupling motion from appearance in DiT models with 3D full-attention…
 tags:
-  - ICCV 2025
-  - Video Generation
-  - Diffusion Transformer
-  - motion transfer
-  - temporal kernel
-  - trajectory tracking
-  - benchmark
+  - "ICCV 2025"
+  - "Video Generation"
+  - "Diffusion Transformer"
+  - "motion transfer"
+  - "temporal kernel"
+  - "trajectory tracking"
+  - "benchmark"
 date: 2026-05-08
 content_hash: cda3e18c3fd21d83
 ---

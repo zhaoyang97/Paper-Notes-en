@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RedTeamCUA: Realistic Adversarial Testing of Computer-Use Agents in Hybrid Web-OS Environments
 description: >-
-  [ICLR 2026 Oral][Audio & Speech][computer-use agents] This paper presents RedTeamCUA, the first red-teaming framework for computer-use agents (CUAs) in hybrid Web-OS environments, along with RTC-Bench comprising 864 test cases. The framework systematically evaluates the vulnerability of 9+ frontier CUAs to indirect prompt injection attacks, finding that all evaluated CUAs are exploitable (peak ASR of 83%). Notably, more capable models pose greater risks — the large gap between attempt rate (AR) and attack success rate (ASR) implies that improvements in model capability will directly translate into higher attack success rates.
+  [ICLR 2026 Oral][Audio & Speech][computer-use agents] This paper presents RedTeamCUA, the first red-teaming framework for computer-use agents (CUAs) in hybrid Web-OS environments…
 tags:
-  - ICLR 2026 Oral
+  - "ICLR 2026 Oral"
   - "Audio & Speech"
-  - computer-use agents
-  - red teaming
-  - indirect prompt injection
-  - adversarial testing
-  - CUA safety
+  - "computer-use agents"
+  - "red teaming"
+  - "indirect prompt injection"
+  - "adversarial testing"
+  - "CUA safety"
 date: 2026-05-08
 content_hash: d88afc8509d5dcf4
 ---

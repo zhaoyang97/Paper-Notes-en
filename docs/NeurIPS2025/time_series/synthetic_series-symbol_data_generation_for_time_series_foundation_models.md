@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Synthetic Series-Symbol Data Generation for Time Series Foundation Models
 description: >-
-  [NeurIPS 2025][Time Series][time series foundation model] This paper proposes the Series-Symbol (S²) data generation mechanism and SymTime, a dual-modality foundation model. Grounded in Takens' theorem and symbolic dynamics theory, the framework generates unlimited synthetic time series–symbol paired data (40M pairs / 50B tokens). Through cross-modal contrastive pre-training, SymTime achieves performance competitive with models pre-trained on real data across five time series tasks.
+  [NeurIPS 2025][Time Series][time series foundation model] This paper proposes the Series-Symbol (S²) data generation mechanism and SymTime, a dual-modality foundation model. Grounded in Takens' theorem and symbolic dynam…
 tags:
-  - NeurIPS 2025
-  - Time Series
-  - time series foundation model
-  - synthetic data generation
-  - symbolic expressions
-  - contrastive learning
-  - pre-training
+  - "NeurIPS 2025"
+  - "Time Series"
+  - "time series foundation model"
+  - "synthetic data generation"
+  - "symbolic expressions"
+  - "contrastive learning"
+  - "pre-training"
 date: 2026-05-08
 content_hash: f0fd57bd6ea47fb8
 ---

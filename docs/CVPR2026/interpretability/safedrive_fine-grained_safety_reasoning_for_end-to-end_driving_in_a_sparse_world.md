@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] SafeDrive: Fine-Grained Safety Reasoning for End-to-End Driving in a Sparse World
 description: >-
-  [CVPR 2026][end-to-end driving] This paper proposes SafeDrive, an end-to-end planning framework that employs a trajectory-conditioned sparse world network (SWNet) to simulate future behaviors of critical entities, followed by a fine-grained reasoning network (FRNet) for per-instance collision assessment and per-timestep drivable-area compliance evaluation. SafeDrive achieves a PDMS of 91.6 with only 0.5% collision rate on NAVSIM, and a driving score of 66.8% on Bench2Drive.
+  [CVPR 2026][Interpretability][end-to-end driving] This paper proposes SafeDrive, an end-to-end planning framework that employs a trajectory-conditioned sparse world network (SWNet) to simulate future behaviors of critica…
 tags:
-  - CVPR 2026
-  - end-to-end driving
-  - safety reasoning
-  - sparse world model
-  - trajectory evaluation
-  - collision prediction
+  - "CVPR 2026"
+  - "Interpretability"
+  - "end-to-end driving"
+  - "safety reasoning"
+  - "sparse world model"
+  - "trajectory evaluation"
+  - "collision prediction"
 date: 2026-05-08
 content_hash: 0464279a784266ab
 ---

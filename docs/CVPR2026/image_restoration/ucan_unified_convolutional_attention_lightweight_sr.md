@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UCAN: Unified Convolutional Attention Network for Expansive Receptive Fields in Lightweight Super-Resolution
 description: >-
-  [CVPR 2026][Image Restoration][Lightweight super-resolution] UCAN is a lightweight super-resolution network that unifies convolutional and attention mechanisms to efficiently expand the effective receptive field. It addresses the rank collapse issue of linear attention via Hedgehog attention, introduces a large-kernel distillation module and a semi-shared parameter strategy, and achieves 31.63 dB PSNR on Manga109 (×4) with only 48.4G MACs.
+  [CVPR 2026][Image Restoration][Lightweight super-resolution] UCAN is a lightweight super-resolution network that unifies convolutional and attention mechanisms to efficiently expand the effective receptive field. It addr…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Lightweight super-resolution
-  - Hedgehog attention
-  - large-kernel distillation
-  - receptive field expansion
-  - parameter sharing
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Lightweight super-resolution"
+  - "Hedgehog attention"
+  - "large-kernel distillation"
+  - "receptive field expansion"
+  - "parameter sharing"
 date: 2026-05-08
 content_hash: d4ee6e4b87e5b50b
 ---

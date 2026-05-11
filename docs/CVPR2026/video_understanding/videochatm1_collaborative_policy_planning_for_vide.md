@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] VideoChat-M1: Collaborative Policy Planning for Video Understanding via Multi-Agent Reinforcement Learning
 description: >-
-  [CVPR 2026][Video Understanding][Multi-Agent] VideoChat-M1 proposes the Collaborative Policy Planning (CPP) paradigm and a Multi-Agent Reinforcement Learning (MARL) training framework, enabling four heterogeneous VLM agents to dynamically generate and update tool-calling policies for video understanding. It surpasses Gemini 2.5 Pro by 3.6% and GPT-4o by 15.6% on LongVideoBench.
+  [CVPR 2026][Video Understanding][Multi-Agent] VideoChat-M1 proposes the Collaborative Policy Planning (CPP) paradigm and a Multi-Agent Reinforcement Learning (MARL) training framework…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Multi-Agent
-  - Collaborative Policy Planning
-  - MARL
-  - GRPO
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Multi-Agent"
+  - "Collaborative Policy Planning"
+  - "MARL"
+  - "GRPO"
 date: 2026-05-08
 content_hash: 3d5750b6d6f51671
 ---

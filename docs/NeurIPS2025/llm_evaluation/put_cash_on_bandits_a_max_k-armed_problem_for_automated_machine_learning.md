@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Put CASH on Bandits: A Max K-Armed Problem for Automated Machine Learning
 description: >-
-  [NeurIPS 2025][LLM Evaluation][CASH] This paper addresses the Combined Algorithm Selection and Hyperparameter Optimization (CASH) problem in AutoML. Through data-driven analysis, it reveals that HPO reward distributions are bounded and left-skewed, and proposes MaxUCB—a bandit algorithm specifically tailored to this distributional property—achieving both theoretical and empirical improvements over existing methods.
+  [NeurIPS 2025][LLM Evaluation][CASH] This paper addresses the Combined Algorithm Selection and Hyperparameter Optimization (CASH) problem in AutoML. Through data-driven analysis…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - CASH
-  - Max K-Armed Bandit
-  - Hyperparameter Optimization
-  - AutoML
-  - Upper Confidence Bound
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "CASH"
+  - "Max K-Armed Bandit"
+  - "Hyperparameter Optimization"
+  - "AutoML"
+  - "Upper Confidence Bound"
 date: 2026-05-08
 content_hash: a97b5a569e576d2a
 ---

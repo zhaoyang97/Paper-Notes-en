@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RECON: Robust symmetry discovery via Explicit Canonical Orientation Normalization
 description: >-
-  [ICLR 2026][LLM Pretraining][symmetry discovery] This paper proposes RECON, a class- and pose-agnostic canonical orientation normalization method that corrects arbitrary canonical representations produced during training via a simple right translation, enabling unsupervised instance-level symmetry discovery, OOD pose detection, and a plug-and-play test-time canonicalization layer.
+  [ICLR 2026][LLM Pretraining][symmetry discovery] This paper proposes RECON, a class- and pose-agnostic canonical orientation normalization method that corrects arbitrary canonical representations produced during training…
 tags:
-  - ICLR 2026
-  - LLM Pretraining
-  - symmetry discovery
-  - canonical orientation
-  - class-pose decomposition
-  - plug-and-play
-  - group invariance
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "symmetry discovery"
+  - "canonical orientation"
+  - "class-pose decomposition"
+  - "plug-and-play"
+  - "group invariance"
 date: 2026-05-08
 content_hash: f607ebc1646ffe8d
 ---

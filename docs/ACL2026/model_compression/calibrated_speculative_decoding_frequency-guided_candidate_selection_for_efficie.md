@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Calibrated Speculative Decoding: Frequency-Guided Candidate Selection for Efficient Inference
 description: >-
-  [ACL 2026][Model Compression][speculative decoding] CSD proposes a training-free enhancement framework for speculative decoding that records high-frequency rejection patterns via an Online Correction Memory (OCM) to provide rescue candidates, and then validates candidate reliability through a Semantic Consistency Gating (SCG) mechanism based on probability ratios. The approach achieves up to 2.33× throughput improvement over standard speculative decoding while also improving accuracy on HumanEval and MATH500.
+  [ACL 2026][Model Compression][speculative decoding] CSD proposes a training-free enhancement framework for speculative decoding that records high-frequency rejection patterns via an Online Correction Memory (OCM) to prov…
 tags:
-  - ACL 2026
-  - Model Compression
-  - speculative decoding
-  - false rejection
-  - online correction memory
-  - semantic consistency gating
-  - training-free
+  - "ACL 2026"
+  - "Model Compression"
+  - "speculative decoding"
+  - "false rejection"
+  - "online correction memory"
+  - "semantic consistency gating"
+  - "training-free"
 date: 2026-05-08
 content_hash: 6dbf218963f070ad
 ---

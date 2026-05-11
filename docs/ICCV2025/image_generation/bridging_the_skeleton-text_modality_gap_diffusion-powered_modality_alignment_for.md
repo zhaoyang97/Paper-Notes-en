@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Bridging the Skeleton-Text Modality Gap: Diffusion-Powered Modality Alignment for Zero-shot Skeleton-based Action Recognition
 description: >-
-  [ICCV 2025][Image Generation][Zero-shot skeleton-based action recognition] This paper proposes TDSM (Triplet Diffusion for Skeleton-Text Matching), the first work to apply diffusion models to zero-shot skeleton-based action recognition (ZSAR). TDSM achieves implicit alignment between skeleton features and text prompts through the reverse diffusion process, and introduces a triplet diffusion loss to enhance discriminability. It substantially outperforms state-of-the-art methods on NTU-60/120 and PKU-MMD, with improvements ranging from 2.36% to 13.05%.
+  [ICCV 2025][Image Generation][Zero-shot skeleton-based action recognition] This paper proposes TDSM (Triplet Diffusion for Skeleton-Text Matching), the first work to apply diffusion models to zero-shot skeleton-based act…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Zero-shot skeleton-based action recognition
-  - diffusion model
-  - cross-modal alignment
-  - Triplet Loss
-  - skeleton-text matching
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Zero-shot skeleton-based action recognition"
+  - "diffusion model"
+  - "cross-modal alignment"
+  - "Triplet Loss"
+  - "skeleton-text matching"
 date: 2026-05-08
 content_hash: 8eda1e2d5f0a1ea6
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] How Data Mixing Shapes In-Context Learning: Asymptotic Equivalence for Transformers with MLPs
 description: >-
-  [NeurIPS 2025][In-context learning] Under a high-dimensional asymptotic framework, this paper proves that Transformers with nonlinear MLP heads are asymptotically equivalent to structured polynomial predictors in terms of ICL error, revealing the gain mechanism of nonlinear MLPs on nonlinear tasks and establishing that low noise and structured covariance are key characteristics of high-quality data sources in multi-source data mixing.
+  [NeurIPS 2025][Multilingual & Machine Translation][In-context learning] Under a high-dimensional asymptotic framework, this paper proves that Transformers with nonlinear MLP heads are asymptotically equivalent to structu…
 tags:
-  - NeurIPS 2025
-  - In-context learning
-  - data mixing
-  - high-dimensional asymptotics
-  - polynomial equivalence
-  - feature learning
+  - "NeurIPS 2025"
+  - "Multilingual & Machine Translation"
+  - "In-context learning"
+  - "data mixing"
+  - "high-dimensional asymptotics"
+  - "polynomial equivalence"
+  - "feature learning"
 date: 2026-05-08
 content_hash: 77913215ae7ce548
 ---

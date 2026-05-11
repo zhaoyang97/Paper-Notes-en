@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PEARL: Geometry Aligns Semantics for Training-Free Open-Vocabulary Semantic Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Open-vocabulary semantic segmentation] PEARL proposes a two-step inference framework based on Procrustes alignment and text-aware Laplacian propagation. Without introducing any additional training or auxiliary backbone networks, it corrects the geometric mismatch between keys and queries in the final self-attention layer of CLIP and leverages textual semantics to guide label propagation, achieving new state-of-the-art performance on training-free open-vocabulary semantic segmentation.
+  [CVPR 2026][Segmentation][Open-vocabulary semantic segmentation] PEARL proposes a two-step inference framework based on Procrustes alignment and text-aware Laplacian propagation. Without introducing any additional traini…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Open-vocabulary semantic segmentation
-  - training-free
-  - Procrustes alignment
-  - Laplacian propagation
-  - CLIP
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Open-vocabulary semantic segmentation"
+  - "training-free"
+  - "Procrustes alignment"
+  - "Laplacian propagation"
+  - "CLIP"
 date: 2026-05-08
 content_hash: 8bca4f2e0d149c40
 ---

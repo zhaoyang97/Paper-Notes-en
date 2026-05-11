@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Attention as Binding: A Vector-Symbolic Perspective on Transformer Reasoning
 description: >-
-  [AAAI 2026][Robotics][Vector Symbolic Architecture (VSA)] This paper proposes reinterpreting the Transformer self-attention mechanism as a soft binding/unbinding operator in Vector Symbolic Architectures (VSA) — where Query/Key define a role space, Value encodes fillers, attention weights implement differentiable unbinding, and residual connections implement superposition — thereby providing an algebraic perspective that unifies explanations of LLM capability and fragility in symbolic reasoning. The paper further proposes VSA-inspired architectural improvements such as explicit binding heads and hyperdimensional memory layers.
+  [AAAI 2026][Robotics][Vector Symbolic Architecture (VSA)] This paper proposes reinterpreting the Transformer self-attention mechanism as a soft binding/unbinding operator in Vector Symbolic Architectures (VSA) — where Qu…
 tags:
-  - AAAI 2026
-  - Robotics
-  - Vector Symbolic Architecture (VSA)
-  - attention mechanism
-  - binding/unbinding
-  - symbolic reasoning
-  - hyperdimensional computing
-  - Transformer interpretability
+  - "AAAI 2026"
+  - "Robotics"
+  - "Vector Symbolic Architecture (VSA)"
+  - "attention mechanism"
+  - "binding/unbinding"
+  - "symbolic reasoning"
+  - "hyperdimensional computing"
+  - "Transformer interpretability"
 date: 2026-05-08
 content_hash: 627a3ce68bdbefa9
 ---

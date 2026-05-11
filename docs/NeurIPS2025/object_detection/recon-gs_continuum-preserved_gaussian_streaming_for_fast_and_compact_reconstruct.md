@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ReCon-GS: Continuum-Preserved Gaussian Streaming for Fast and Compact Reconstruction
 description: >-
-  [NeurIPS 2025][Object Detection][3D Gaussian Splatting] This paper proposes ReCon-GS, which achieves incremental 3D reconstruction via continuum-preserved Gaussian streaming, substantially reducing storage requirements and training time while maintaining rendering quality, and supporting real-time reconstruction of large-scale scenes.
+  [NeurIPS 2025][Object Detection][3D Gaussian Splatting] This paper proposes ReCon-GS, which achieves incremental 3D reconstruction via continuum-preserved Gaussian streaming…
 tags:
-  - NeurIPS 2025
-  - Object Detection
-  - 3D Gaussian Splatting
-  - streaming reconstruction
-  - continuum preservation
-  - incremental learning
-  - real-time rendering
+  - "NeurIPS 2025"
+  - "Object Detection"
+  - "3D Gaussian Splatting"
+  - "streaming reconstruction"
+  - "continuum preservation"
+  - "incremental learning"
+  - "real-time rendering"
 date: 2026-05-08
 content_hash: 67a8e2fcb1bca148
 ---

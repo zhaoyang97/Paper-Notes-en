@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Emergent World Beliefs: Exploring Transformers in Stochastic Games
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Emergent World Models] This work extends the study of emergent world models in LLMs from perfect-information games (Othello, Chess) to the partial-information setting (Texas Hold'em Poker). By pre-training GPT-2 on PHH-format poker data and probing its internal activations, the paper demonstrates that the model not only learns deterministic features (hand rank recognition at ~98% accuracy) but also spontaneously develops internal representations of stochastic features (win rate/equity, correlation coefficient 0.59).
+  [NeurIPS 2025][Reinforcement Learning][Emergent World Models] This work extends the study of emergent world models in LLMs from perfect-information games (Othello…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Emergent World Models
-  - Transformer
-  - Poker
-  - POMDP
-  - Belief State
-  - Activation Probing
-  - GPT-2
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Emergent World Models"
+  - "Transformer"
+  - "Poker"
+  - "POMDP"
+  - "Belief State"
+  - "Activation Probing"
+  - "GPT-2"
 date: 2026-05-08
 content_hash: 5f508e3767165b4e
 ---

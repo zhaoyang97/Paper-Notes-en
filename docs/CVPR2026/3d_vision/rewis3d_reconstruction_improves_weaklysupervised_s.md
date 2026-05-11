@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Rewis3d: Reconstruction Improves Weakly-Supervised Semantic Segmentation
 description: >-
-  [CVPR 2026][3D Vision][Weakly-supervised segmentation] This paper proposes Rewis3d, the first framework to integrate feedforward 3D scene reconstruction as an auxiliary supervision signal for weakly-supervised semantic segmentation. Through a dual student-teacher architecture and dual confidence-weighted cross-modal consistency loss, Rewis3d improves mIoU by 2–7% under sparse annotation, while using only 2D images at inference time.
+  [CVPR 2026][3D Vision][Weakly-supervised segmentation] This paper proposes Rewis3d, the first framework to integrate feedforward 3D scene reconstruction as an auxiliary supervision signal for weakly-supervised semantic s…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Weakly-supervised segmentation
-  - 3D reconstruction
-  - cross-modal consistency
-  - sparse annotation
-  - Mean Teacher
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Weakly-supervised segmentation"
+  - "3D reconstruction"
+  - "cross-modal consistency"
+  - "sparse annotation"
+  - "Mean Teacher"
 date: 2026-05-08
 content_hash: 3b0b25d3af179fdf
 ---

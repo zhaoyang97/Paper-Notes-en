@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Talking Together: Synthesizing Co-Located 3D Conversations from Audio
 description: >-
-  [CVPR 2026][Human Understanding][dyadic conversation] This work presents the first method for generating complete facial animations of two participants **sharing the same 3D physical space** from a single mixed audio stream. It introduces a dual-stream diffusion architecture (shared U-Net + cross-attention), a two-stage mixed-data training strategy, LLM-driven text-to-spatial-layout control, and an auxiliary eye gaze loss to synthesize natural mutual gaze, head turning, and spatially-aware dyadic 3D conversation animations.
+  [CVPR 2026][Human Understanding][dyadic conversation] This work presents the first method for generating complete facial animations of two participants **sharing the same 3D physical space** from a single mixed audio str…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - dyadic conversation
-  - 3D facial animation
-  - diffusion model
-  - co-located space
-  - eye gaze interaction
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "dyadic conversation"
+  - "3D facial animation"
+  - "diffusion model"
+  - "co-located space"
+  - "eye gaze interaction"
 date: 2026-05-08
 content_hash: be88393b63358503
 ---

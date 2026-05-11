@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Autonomous Concept Drift Threshold Determination
 description: >-
-  [AAAI 2026][Concept Drift] This paper proves that no fixed threshold can be optimal across all scenarios and that dynamic thresholds strictly dominate static ones. It proposes the DTD algorithm, which initiates a three-model comparison phase upon drift detection signal trigger and adaptively adjusts the detection threshold based on candidate model performance.
+  [AAAI 2026][Concept Drift] This paper proves that no fixed threshold can be optimal across all scenarios and that dynamic thresholds strictly dominate static ones. It proposes the DTD algorithm…
 tags:
-  - AAAI 2026
-  - Concept Drift
-  - Dynamic Threshold
-  - Drift Detection
-  - Data Streams
-  - Online Learning
+  - "AAAI 2026"
+  - "Concept Drift"
+  - "Dynamic Threshold"
+  - "Drift Detection"
+  - "Data Streams"
+  - "Online Learning"
 date: 2026-05-08
 content_hash: 541ee6a32b0696da
 ---

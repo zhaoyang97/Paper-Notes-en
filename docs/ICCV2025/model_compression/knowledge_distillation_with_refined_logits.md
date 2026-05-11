@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Knowledge Distillation with Refined Logits
 description: >-
-  [ICCV 2025][Model Compression][Knowledge Distillation] RLD refines teacher knowledge into two complementary forms — Sample Confidence and Masked Correlation — to mitigate the negative effects of teacher mispredictions without disrupting inter-class correlations. It consistently outperforms existing logit distillation methods on both CIFAR-100 and ImageNet.
+  [ICCV 2025][Model Compression][Knowledge Distillation] RLD refines teacher knowledge into two complementary forms — Sample Confidence and Masked Correlation — to mitigate the negative effects of teacher mispredictions wi…
 tags:
-  - ICCV 2025
-  - Model Compression
-  - Knowledge Distillation
-  - Logit Distillation
-  - Class Correlation
-  - Teacher Error Correction
+  - "ICCV 2025"
+  - "Model Compression"
+  - "Knowledge Distillation"
+  - "Logit Distillation"
+  - "Class Correlation"
+  - "Teacher Error Correction"
 date: 2026-05-08
 content_hash: 8fcbc2397d376398
 ---

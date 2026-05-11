@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Reducing Belief Deviation in Reinforcement Learning for Active Reasoning of LLM Agents
 description: >-
-  [ICLR 2026][LLM Agent][active reasoning] This paper proposes T³ (Truncating Belief-Trapped Trajectories), which leverages POMDP theory to analyze the "belief trap" phenomenon in multi-turn active reasoning of LLM agents. By detecting belief deviation and truncating uninformative trajectory suffixes, T³ corrects credit assignment errors during RL training, achieving performance gains of up to 30 points across 5 challenging tasks while reducing token consumption by 34%.
+  [ICLR 2026][LLM Agent][active reasoning] This paper proposes T³ (Truncating Belief-Trapped Trajectories), which leverages POMDP theory to analyze the "belief trap" phenomenon in multi-turn active reasoning of LLM agents.…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - active reasoning
-  - reinforcement-learning
-  - belief tracking
-  - POMDP
-  - credit assignment
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "active reasoning"
+  - "reinforcement-learning"
+  - "belief tracking"
+  - "POMDP"
+  - "credit assignment"
 date: 2026-05-08
 content_hash: 1e833936bed2c649
 ---

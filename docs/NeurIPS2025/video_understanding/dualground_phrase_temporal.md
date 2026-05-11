@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DualGround: Structured Phrase and Sentence-Level Temporal Grounding
 description: >-
-  [NeurIPS 2025][Video Understanding][Video Temporal Grounding] This paper identifies that existing video temporal grounding (VTG) models over-rely on the global sentence semantics encoded in the [EOS] token while neglecting word-level signals. It proposes DualGround, a dual-branch architecture that explicitly decouples global and local semantics via a sentence-level path (adaptive cross-attention) and a phrase-level path (recurrent phrase generation + Slot Attention), achieving state-of-the-art performance on QVHighlights and Charades-STA.
+  [NeurIPS 2025][Video Understanding][Video Temporal Grounding] This paper identifies that existing video temporal grounding (VTG) models over-rely on the global sentence semantics encoded in the [EOS] token while neglecti…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
-  - Video Temporal Grounding
-  - Phrase-Level Semantics
-  - Dual-Branch Architecture
-  - Attention Decoupling
-  - Highlight Detection
+  - "NeurIPS 2025"
+  - "Video Understanding"
+  - "Video Temporal Grounding"
+  - "Phrase-Level Semantics"
+  - "Dual-Branch Architecture"
+  - "Attention Decoupling"
+  - "Highlight Detection"
 date: 2026-05-08
 content_hash: 57716243622a69d7
 ---

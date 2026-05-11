@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UnrealPose: Leveraging Game Engine Kinematics for Large-Scale Synthetic Human Pose Data
 description: >-
-  [CVPR 2026][Segmentation][synthetic data] This paper proposes UnrealPose-Gen, a synthetic human pose data generation pipeline built on Unreal Engine 5, which leverages native game engine skeletal kinematics—rather than SMPL—to produce UnrealPose-1M, a million-scale annotated dataset providing 3D joint positions, 2D keypoints, occlusion flags, instance segmentation masks, and camera parameters.
+  [CVPR 2026][Segmentation][synthetic data] This paper proposes UnrealPose-Gen, a synthetic human pose data generation pipeline built on Unreal Engine 5…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - synthetic data
-  - Human Pose Estimation
-  - Unreal Engine
-  - Game Engine
-  - Instance Segmentation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "synthetic data"
+  - "Human Pose Estimation"
+  - "Unreal Engine"
+  - "Game Engine"
+  - "Instance Segmentation"
 date: 2026-05-08
 content_hash: fce39361ceee6e3c
 ---

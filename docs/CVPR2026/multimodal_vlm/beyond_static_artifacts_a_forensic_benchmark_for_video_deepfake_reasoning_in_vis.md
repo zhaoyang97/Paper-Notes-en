@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Beyond Static Artifacts: A Forensic Benchmark for Video Deepfake Reasoning in Vision Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][deepfake detection] This paper introduces FAQ (Forensic Answer-Questioning), the first large-scale multiple-choice QA benchmark focused on temporal inconsistencies in deepfake videos (33K QA pairs, ~4,500 videos). Through a three-level progressive task hierarchy (facial perception → temporal localization → forensic reasoning), FAQ systematically enhances VLM forensic capabilities, yielding significant gains both on in-domain benchmarks and cross-dataset detection after fine-tuning (Qwen2.5-VL average accuracy improves from 21.6% to 52.4%).
+  [CVPR 2026][Multimodal VLM][deepfake detection] This paper introduces FAQ (Forensic Answer-Questioning), the first large-scale multiple-choice QA benchmark focused on temporal inconsistencies in deepfake videos (33K QA p…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - deepfake detection
-  - video forensics
-  - VLM reasoning
-  - temporal inconsistency
-  - multiple-choice benchmark
-  - instruction tuning
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "deepfake detection"
+  - "video forensics"
+  - "VLM reasoning"
+  - "temporal inconsistency"
+  - "multiple-choice benchmark"
+  - "instruction tuning"
 date: 2026-05-08
 content_hash: f8c5b2164184218d
 ---

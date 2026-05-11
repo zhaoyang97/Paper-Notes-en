@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AnyPortal: Zero-Shot Consistent Video Background Replacement
 description: >-
-  [ICCV 2025][Image Generation][Video background replacement] AnyPortal presents a zero-shot, training-free video background replacement framework that synergistically leverages IC-Light's relighting capability and the temporal prior of a video diffusion model (CogVideoX), together with a newly proposed Refinement Projection Algorithm (RPA) for pixel-level foreground preservation, running efficiently on a single 24 GB GPU.
+  [ICCV 2025][Image Generation][Video background replacement] AnyPortal presents a zero-shot, training-free video background replacement framework that synergistically leverages IC-Light's relighting capability and the tem…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Video background replacement
-  - foreground relighting
-  - zero-shot
-  - diffusion models
-  - temporal consistency
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Video background replacement"
+  - "foreground relighting"
+  - "zero-shot"
+  - "diffusion models"
+  - "temporal consistency"
 date: 2026-05-08
 content_hash: ee24d56e00a2b639
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Improving Discrete Diffusion Unmasking Policies Beyond Explicit Reference Policies (UPO)
 description: >-
-  [ICLR 2026][Image Generation][Masked Diffusion Models] This paper proposes Unmasking Policy Optimization (UPO), which formalizes the denoising process of Masked Diffusion Models (MDMs) as a KL-regularized Markov Decision Process and trains a lightweight unmasking policy model via reinforcement learning to replace heuristic schedulers such as max-confidence. Both theoretical analysis and empirical results demonstrate that the learned policy generates samples closer to the true data distribution.
+  [ICLR 2026][Image Generation][Masked Diffusion Models] This paper proposes Unmasking Policy Optimization (UPO), which formalizes the denoising process of Masked Diffusion Models (MDMs) as a KL-regularized Markov Decision…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Masked Diffusion Models
-  - Unmasking Policy
-  - reinforcement-learning
-  - KL-regularized MDP
-  - GRPO
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Masked Diffusion Models"
+  - "Unmasking Policy"
+  - "reinforcement-learning"
+  - "KL-regularized MDP"
+  - "GRPO"
 date: 2026-05-08
 content_hash: 538a0278efb52342
 ---

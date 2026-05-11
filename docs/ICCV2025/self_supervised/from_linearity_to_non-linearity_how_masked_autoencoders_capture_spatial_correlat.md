@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From Linearity to Non-Linearity: How Masked Autoencoders Capture Spatial Correlations
 description: >-
-  [ICCV 2025][Self-Supervised Learning][Masked Autoencoder] This paper theoretically analyzes how MAE learns spatial correlations in images. It derives a closed-form solution for linear MAE, reveals how masking ratio and patch size select short- or long-range spatial features, and extends the analysis to nonlinear MAE, providing theoretical guidance for hyperparameter selection in practice.
+  [ICCV 2025][Self-Supervised Learning][Masked Autoencoder] This paper theoretically analyzes how MAE learns spatial correlations in images. It derives a closed-form solution for linear MAE…
 tags:
-  - ICCV 2025
-  - Self-Supervised Learning
-  - Masked Autoencoder
-  - spatial correlation
-  - linear analysis
-  - hyperparameter selection
-  - ViT
+  - "ICCV 2025"
+  - "Self-Supervised Learning"
+  - "Masked Autoencoder"
+  - "spatial correlation"
+  - "linear analysis"
+  - "hyperparameter selection"
+  - "ViT"
 date: 2026-05-08
 content_hash: 873e44dbea4cf221
 ---

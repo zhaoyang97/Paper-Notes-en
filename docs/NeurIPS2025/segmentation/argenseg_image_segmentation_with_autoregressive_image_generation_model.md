@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ARGenSeg: Image Segmentation with Autoregressive Image Generation Model
 description: >-
-  [NeurIPS 2025][Segmentation][Autoregressive image generation] This paper proposes ARGenSeg — the first unified MLLM framework that leverages the autoregressive image generation paradigm for image segmentation. The model directly outputs visual tokens decoded by a VQ-VAE into segmentation masks, requiring no additional segmentation head. A next-scale prediction parallel generation strategy enables 4× inference speedup, and the method surpasses state-of-the-art on RefCOCO/+/g with significantly less training data.
+  [NeurIPS 2025][Segmentation][Autoregressive image generation] This paper proposes ARGenSeg — the first unified MLLM framework that leverages the autoregressive image generation paradigm for image segmentation. The model…
 tags:
-  - NeurIPS 2025
-  - Segmentation
-  - Autoregressive image generation
-  - VQ-VAE segmentation
-  - MLLM unified framework
-  - Next-Scale Prediction
-  - unified understanding and generation
+  - "NeurIPS 2025"
+  - "Segmentation"
+  - "Autoregressive image generation"
+  - "VQ-VAE segmentation"
+  - "MLLM unified framework"
+  - "Next-Scale Prediction"
+  - "unified understanding and generation"
 date: 2026-05-08
 content_hash: d70bd7be8e04e481
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CustomTex: High-fidelity Indoor Scene Texturing via Multi-Reference Customization
 description: >-
-  [CVPR 2026][3D Vision][indoor scene texturing] CustomTex is a framework that achieves high-fidelity, instance-controllable texture generation for 3D indoor scenes through instance-level multi-reference image conditioning and a dual distillation training strategy (semantic-level VSD distillation + pixel-level super-resolution distillation), surpassing existing methods in semantic consistency, texture sharpness, and reduction of baked-in shading.
+  [CVPR 2026][3D Vision][indoor scene texturing] CustomTex is a framework that achieves high-fidelity, instance-controllable texture generation for 3D indoor scenes through instance-level multi-reference image conditioning…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - indoor scene texturing
-  - multi-reference image customization
-  - dual distillation
-  - VSD optimization
-  - instance-level control
+  - "CVPR 2026"
+  - "3D Vision"
+  - "indoor scene texturing"
+  - "multi-reference image customization"
+  - "dual distillation"
+  - "VSD optimization"
+  - "instance-level control"
 date: 2026-05-08
 content_hash: 959e34bc0be54f07
 ---

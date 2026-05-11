@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MoETTA: Test-Time Adaptation Under Mixed Distribution Shifts with MoE-LayerNorm
 description: >-
-  [AAAI 2026][LLM Efficiency][test-time adaptation] This paper proposes MoETTA, a test-time adaptation framework that reparameterizes LayerNorm into multiple structurally decoupled expert branches. A routing mechanism assigns samples from different domains to different experts, enabling multi-directional parameter updates and overcoming the limitations of a single adaptation path under mixed distribution shifts. The paper also introduces two more realistic evaluation benchmarks—potpourri and potpourri+—and achieves state-of-the-art performance across all settings.
+  [AAAI 2026][LLM Efficiency][test-time adaptation] This paper proposes MoETTA, a test-time adaptation framework that reparameterizes LayerNorm into multiple structurally decoupled expert branches. A routing mechanism assi…
 tags:
-  - AAAI 2026
-  - LLM Efficiency
-  - test-time adaptation
-  - mixed distribution shifts
-  - Mixture-of-Experts
-  - LayerNorm
-  - Vision Transformer
+  - "AAAI 2026"
+  - "LLM Efficiency"
+  - "test-time adaptation"
+  - "mixed distribution shifts"
+  - "Mixture-of-Experts"
+  - "LayerNorm"
+  - "Vision Transformer"
 date: 2026-05-08
 content_hash: 555427eec4319b40
 ---

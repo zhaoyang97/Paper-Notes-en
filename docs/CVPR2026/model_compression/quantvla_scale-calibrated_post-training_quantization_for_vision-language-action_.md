@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] QuantVLA: Scale-Calibrated Post-Training Quantization for Vision-Language-Action Models
 description: >-
-  [CVPR 2026][Model Compression] This paper proposes QuantVLA, the first training-free post-training quantization (PTQ) framework for Vision-Language-Action (VLA) models. Through a selective quantization layout and two lightweight calibration mechanisms—Attention Temperature Matching (ATM) and Output Head Balancing (OHB)—QuantVLA achieves approximately 70% memory reduction at W4A8 precision while surpassing the task success rate of the full-precision baseline.
+  [CVPR 2026][Model Compression] This paper proposes QuantVLA, the first training-free post-training quantization (PTQ) framework for Vision-Language-Action (VLA) models. Through a selective quantization layout and two lig…
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Model Compression"
 date: 2026-05-08
 content_hash: 34a45094359de202
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EgoBridge: Domain Adaptation for Generalizable Imitation from Egocentric Human Data
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][cross-embodiment] This paper proposes EgoBridge, a framework that uses Optimal Transport (OT) to align the joint distribution (features + actions) of human and robot data in a shared policy latent space, combined with Dynamic Time Warping (DTW) to construct pseudo-pairs, enabling cross-embodiment knowledge transfer from egocentric human data to robots, achieving up to 44% absolute improvement in success rate on real-world tasks.
+  [NeurIPS 2025][Reinforcement Learning][cross-embodiment] This paper proposes EgoBridge, a framework that uses Optimal Transport (OT) to align the joint distribution (features + actions) of human and robot data in a share…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - cross-embodiment
-  - domain adaptation
-  - optimal transport
-  - egocentric
-  - imitation learning
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "cross-embodiment"
+  - "domain adaptation"
+  - "optimal transport"
+  - "egocentric"
+  - "imitation learning"
 date: 2026-05-08
 content_hash: d7a1f24496c93f0b
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Loss-Guided Auxiliary Agents for Overcoming Mode Collapse in GFlowNets
 description: >-
-  [AAAI 2026][LLM Agent][GFlowNet] This paper proposes LGGFN (Loss-Guided GFlowNets), in which the exploration of an auxiliary GFlowNet is directly driven by the training loss of the primary GFlowNet. The auxiliary agent's reward is defined as $R_{aux}(x) = R(x) + \lambda \cdot L_{main}(x)$, prioritizing regions where the primary model is least well-understood. On grid, sequence generation, and Bayesian structure learning tasks, LGGFN discovers 40× more unique modes and reduces exploration error by 99%.
+  [AAAI 2026][LLM Agent][GFlowNet] This paper proposes LGGFN (Loss-Guided GFlowNets), in which the exploration of an auxiliary GFlowNet is directly driven by the training loss of the primary GFlowNet. The auxiliary agent's…
 tags:
-  - AAAI 2026
-  - LLM Agent
-  - GFlowNet
-  - mode collapse
-  - auxiliary agent
-  - loss-guided
-  - diversity sampling
+  - "AAAI 2026"
+  - "LLM Agent"
+  - "GFlowNet"
+  - "mode collapse"
+  - "auxiliary agent"
+  - "loss-guided"
+  - "diversity sampling"
 date: 2026-05-08
 content_hash: a158ecdae2c7c74f
 ---

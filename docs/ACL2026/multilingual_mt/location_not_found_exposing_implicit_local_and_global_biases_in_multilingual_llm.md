@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Location Not Found: Exposing Implicit Local and Global Biases in Multilingual LLMs
 description: >-
-  [ACL 2026][Multilingual LLM] This paper introduces LocQA, a benchmark comprising 2,156 location-sensitive QA pairs across 12 languages and 49 regions. By employing geographically ambiguous queries (e.g., "What is the emergency phone number?"), it exposes implicit biases in LLMs: a persistent US-centric default across languages (50% of model responses contain US answers vs. only 26% in the data), a within-language "demographic probability engine" effect driven by population size, and an exacerbation of global bias following instruction fine-tuning.
+  [ACL 2026][Multilingual & Machine Translation][Multilingual LLM] This paper introduces LocQA, a benchmark comprising 2,156 location-sensitive QA pairs across 12 languages and 49 regions. By employing geographically ambig…
 tags:
-  - ACL 2026
-  - Multilingual LLM
-  - Geographic Bias
-  - US-centrism
-  - Cultural Localization
-  - Implicit Bias
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "Multilingual LLM"
+  - "Geographic Bias"
+  - "US-centrism"
+  - "Cultural Localization"
+  - "Implicit Bias"
 date: 2026-05-08
 content_hash: 62c2850198d21963
 ---

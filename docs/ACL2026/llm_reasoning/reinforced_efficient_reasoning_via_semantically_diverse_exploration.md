@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Reinforced Efficient Reasoning via Semantically Diverse Exploration
 description: >-
-  [ACL 2026][LLM Reasoning][MCTS] ROSE proposes a semantic-entropy-guided MCTS branching strategy and a length-aware segment-level advantage estimation to address the insufficient exploration diversity and low reasoning efficiency of existing MCTS-based RLVR methods, achieving state-of-the-art pass@8 performance across multiple mathematical reasoning benchmarks.
+  [ACL 2026][LLM Reasoning][MCTS] ROSE proposes a semantic-entropy-guided MCTS branching strategy and a length-aware segment-level advantage estimation to address the insufficient exploration diversity and low reasoning ef…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - MCTS
-  - Semantic Entropy
-  - GRPO
-  - Efficient Reasoning
-  - Branching Strategy
+  - "ACL 2026"
+  - "LLM Reasoning"
+  - "MCTS"
+  - "Semantic Entropy"
+  - "GRPO"
+  - "Efficient Reasoning"
+  - "Branching Strategy"
 date: 2026-05-08
 content_hash: 2b46e4ba16b5280d
 ---

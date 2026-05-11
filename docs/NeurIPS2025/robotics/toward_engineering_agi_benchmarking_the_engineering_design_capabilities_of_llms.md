@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Toward Engineering AGI: Benchmarking the Engineering Design Capabilities of LLMs
 description: >-
-  [NeurIPS 2025][Robotics][Engineering Design] This paper introduces EngDesign—the first LLM engineering design benchmark spanning 9 engineering domains (operating systems, computer architecture, control systems, mechanical engineering, structural engineering, digital hardware, analog circuits, robotics, and signal processing)—replacing conventional QA matching with a simulation-driven evaluation pipeline. The benchmark reveals that even the most capable reasoning model, o3, achieves only a 34% pass rate.
+  [NeurIPS 2025][Robotics][Engineering Design] This paper introduces EngDesign—the first LLM engineering design benchmark spanning 9 engineering domains (operating systems, computer architecture, control systems…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - Engineering Design
-  - LLM Benchmarking
-  - Simulation-Based Evaluation
-  - Multi-Domain Engineering
-  - AGI
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "Engineering Design"
+  - "LLM Benchmarking"
+  - "Simulation-Based Evaluation"
+  - "Multi-Domain Engineering"
+  - "AGI"
 date: 2026-05-08
 content_hash: 88b8d498e19999a0
 ---

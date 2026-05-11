@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] HiNeuS: High-fidelity Neural Surface Mitigating Low-texture and Reflective Ambiguity
 description: >-
-  [ICCV 2025][Neural surface reconstruction] This paper proposes HiNeuS, a unified neural surface reconstruction framework that simultaneously addresses three core challenges—reflective ambiguity, low-texture degradation, and detail preservation—through three innovations: SDF-guided visibility verification, planar conformal regularization, and rendering-prioritized Eikonal relaxation.
+  [ICCV 2025][Neural surface reconstruction] This paper proposes HiNeuS, a unified neural surface reconstruction framework that simultaneously addresses three core challenges—reflective ambiguity, low-texture degradation…
 tags:
-  - ICCV 2025
-  - Neural surface reconstruction
-  - SDF
-  - reflection handling
-  - low-texture regions
-  - Eikonal constraint
+  - "ICCV 2025"
+  - "Neural surface reconstruction"
+  - "SDF"
+  - "reflection handling"
+  - "low-texture regions"
+  - "Eikonal constraint"
 date: 2026-05-08
 content_hash: 74630da5023f1e5d
 ---

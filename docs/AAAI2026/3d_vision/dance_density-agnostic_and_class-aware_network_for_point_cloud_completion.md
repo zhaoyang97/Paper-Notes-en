@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] DANCE: Density-Agnostic and Class-Aware Network for Point Cloud Completion
 description: >-
-  [AAAI 2026][3D Vision][point cloud completion] This paper proposes the DANCE framework, which achieves density-agnostic point cloud completion via ray-based candidate point sampling and an opacity prediction mechanism, while introducing a classification head to provide semantic priors. The method achieves state-of-the-art performance on the PCN and MVP benchmarks.
+  [AAAI 2026][3D Vision][point cloud completion] This paper proposes the DANCE framework, which achieves density-agnostic point cloud completion via ray-based candidate point sampling and an opacity prediction mechanism…
 tags:
-  - AAAI 2026
-  - 3D Vision
-  - point cloud completion
-  - density-agnostic
-  - class-aware
-  - transformer
-  - ray-based sampling
-  - opacity prediction
+  - "AAAI 2026"
+  - "3D Vision"
+  - "point cloud completion"
+  - "density-agnostic"
+  - "class-aware"
+  - "transformer"
+  - "ray-based sampling"
+  - "opacity prediction"
 date: 2026-05-08
 content_hash: 8e8779f25a4a4634
 ---

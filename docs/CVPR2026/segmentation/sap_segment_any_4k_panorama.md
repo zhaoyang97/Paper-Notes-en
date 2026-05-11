@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SAP: Segment Any 4K Panorama
 description: >-
-  [CVPR 2026][Segmentation][Panoramic Segmentation] This paper proposes SAP (Segment Any 4K Panorama), which converts panoramic images into perspective pseudo-video sequences sampled along fixed spherical trajectories, addressing the structural mismatch of SAM2's streaming memory mechanism on 360° images. By synthesizing a 183K instance-annotated 4K panoramic dataset for fine-tuning, SAP achieves a zero-shot mIoU improvement of +17.2 on real-world panoramic benchmarks.
+  [CVPR 2026][Segmentation][Panoramic Segmentation] This paper proposes SAP (Segment Any 4K Panorama), which converts panoramic images into perspective pseudo-video sequences sampled along fixed spherical trajectories…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Panoramic Segmentation
-  - SAM2
-  - 4K High Resolution
-  - Topology-Memory Alignment
-  - Perspective Video Reconstruction
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Panoramic Segmentation"
+  - "SAM2"
+  - "4K High Resolution"
+  - "Topology-Memory Alignment"
+  - "Perspective Video Reconstruction"
 date: 2026-05-08
 content_hash: 627ea08a64afb1d6
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RAGNet: Large-scale Reasoning-based Affordance Segmentation Benchmark towards General Grasping
 description: >-
-  [ICCV 2025][Segmentation][affordance segmentation] This paper introduces RAGNet, the first large-scale reasoning-based affordance segmentation benchmark (273k images, 180 categories, 26k reasoning instructions), and proposes the AffordanceNet framework, which integrates VLM-pretrained affordance prediction with grasp pose generation, demonstrating strong open-world generalization and reasoning capabilities.
+  [ICCV 2025][Segmentation][affordance segmentation] This paper introduces RAGNet, the first large-scale reasoning-based affordance segmentation benchmark (273k images, 180 categories, 26k reasoning instructions)…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - affordance segmentation
-  - robotic grasping
-  - reasoning instructions
-  - large-scale benchmark
-  - vision-language model
+  - "ICCV 2025"
+  - "Segmentation"
+  - "affordance segmentation"
+  - "robotic grasping"
+  - "reasoning instructions"
+  - "large-scale benchmark"
+  - "vision-language model"
 date: 2026-05-08
 content_hash: a251524e8d9ae7ba
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] TabReX: Tabular Referenceless eXplainable Evaluation
 description: >-
-  [ACL 2026][Tabular evaluation metrics] This paper proposes TabReX, a graph-reasoning-based referenceless evaluation framework for tabular generation. It converts source text and generated tables into knowledge graph triples and aligns them to compute interpretable, attribute-driven scores. TabReX substantially outperforms existing methods in correlation with human judgments, and the authors also introduce TabReX-Bench, a large-scale evaluation benchmark.
+  [ACL 2026][Interpretability][Tabular evaluation metrics] This paper proposes TabReX, a graph-reasoning-based referenceless evaluation framework for tabular generation. It converts source text and generated tables into kn…
 tags:
-  - ACL 2026
-  - Tabular evaluation metrics
-  - referenceless evaluation
-  - knowledge graph alignment
-  - explainable evaluation
-  - structured generation
+  - "ACL 2026"
+  - "Interpretability"
+  - "Tabular evaluation metrics"
+  - "referenceless evaluation"
+  - "knowledge graph alignment"
+  - "explainable evaluation"
+  - "structured generation"
 date: 2026-05-08
 content_hash: f7e51c7c7a9e04b2
 ---

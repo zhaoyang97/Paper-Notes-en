@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Resp-Agent: An Agent-Based System for Multimodal Respiratory Sound Generation and Disease Diagnosis
 description: >-
-  [ICLR2026][Medical Imaging][Respiratory sound analysis] This paper proposes Resp-Agent, a closed-loop multi-agent framework that coordinates a controllable respiratory sound generator and a multimodal diagnoser via an active adversarial curriculum planner (Thinker-A2CA). Built upon a 229k-scale benchmark, the system achieves co-design of generation and diagnosis, substantially improving diagnostic performance on long-tail categories.
+  [ICLR2026][Medical Imaging][Respiratory sound analysis] This paper proposes Resp-Agent, a closed-loop multi-agent framework that coordinates a controllable respiratory sound generator and a multimodal diagnoser via an ac…
 tags:
-  - ICLR2026
-  - Medical Imaging
-  - Respiratory sound analysis
-  - multimodal fusion
-  - controllable audio generation
-  - active adversarial curriculum learning
-  - flow matching
-  - data augmentation
+  - "ICLR2026"
+  - "Medical Imaging"
+  - "Respiratory sound analysis"
+  - "multimodal fusion"
+  - "controllable audio generation"
+  - "active adversarial curriculum learning"
+  - "flow matching"
+  - "data augmentation"
 date: 2026-05-08
 content_hash: 9d7aa8c301d8d432
 ---

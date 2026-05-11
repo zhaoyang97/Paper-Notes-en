@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RDVQ: Differentiable Vector Quantization for Rate-Distortion Optimization of Generative Image Compression
 description: >-
-  [CVPR 2026][Model Compression][Vector Quantization] RDVQ introduces a differentiable relaxation over the codebook distribution, enabling for the first time end-to-end rate-distortion joint optimization for VQ-based image compression. At extremely low bitrates, the method achieves superior or competitive perceptual quality with less than 20% of the parameters of prior approaches.
+  [CVPR 2026][Model Compression][Vector Quantization] RDVQ introduces a differentiable relaxation over the codebook distribution, enabling for the first time end-to-end rate-distortion joint optimization for VQ-based image…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - Vector Quantization
-  - Rate-Distortion Optimization
-  - Generative Image Compression
-  - Entropy Model
-  - Differentiable Relaxation
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Vector Quantization"
+  - "Rate-Distortion Optimization"
+  - "Generative Image Compression"
+  - "Entropy Model"
+  - "Differentiable Relaxation"
 date: 2026-05-08
 content_hash: 9533f9d4402e808e
 ---

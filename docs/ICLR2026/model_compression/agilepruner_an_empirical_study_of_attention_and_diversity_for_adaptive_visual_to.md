@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AgilePruner: An Empirical Study of Attention and Diversity for Adaptive Visual Token Pruning in LVLMs
 description: >-
-  [ICLR 2026][Model Compression][visual token pruning] Through systematic empirical analysis using erank (effective rank) and attention entropy, this work reveals the complementary nature of attention-based and diversity-based visual token pruning methods — attention methods suppress hallucinations but suffer from limited coverage, while diversity methods achieve broad coverage but tend to introduce hallucinations. Based on these findings, AgilePruner is proposed to adaptively switch pruning strategies according to image complexity, achieving robust performance across 9 benchmarks.
+  [ICLR 2026][Model Compression][visual token pruning] Through systematic empirical analysis using erank (effective rank) and attention entropy…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - visual token pruning
-  - attention
-  - diversity
-  - hallucination
-  - adaptive pruning
+  - "ICLR 2026"
+  - "Model Compression"
+  - "visual token pruning"
+  - "attention"
+  - "diversity"
+  - "hallucination"
+  - "adaptive pruning"
 date: 2026-05-08
 content_hash: 2a357e1a4d5c201d
 ---

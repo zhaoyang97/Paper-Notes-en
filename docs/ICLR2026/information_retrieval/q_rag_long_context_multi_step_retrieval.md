@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Q-RAG: Long Context Multi-Step Retrieval via Value-Based Embedder Training
 description: >-
-  [ICLR 2026 Oral][multi-step retrieval] Multi-step retrieval is formulated as an MDP and solved via value-based RL (soft Q-learning) to fine-tune the **embedder rather than the LLM**. The Q-function is designed as the inner product of state and action embeddings—proven to be a universal approximator—and combined with RoPE relative positional encoding to enable temporal reasoning. Training requires only a single A100 GPU for 12 hours; models trained on 4K-token contexts generalize to 1M+ token contexts, achieving near-perfect NIAH performance on the RULER benchmark.
+  [ICLR 2026 Oral][Information Retrieval & RAG][multi-step retrieval] Multi-step retrieval is formulated as an MDP and solved via value-based RL (soft Q-learning) to fine-tune the **embedder rather than the LLM**. The Q-fu…
 tags:
-  - ICLR 2026 Oral
-  - multi-step retrieval
-  - value-based RL
-  - embedder training
-  - long context
-  - RAG
+  - "ICLR 2026 Oral"
+  - "Information Retrieval & RAG"
+  - "multi-step retrieval"
+  - "value-based RL"
+  - "embedder training"
+  - "long context"
+  - "RAG"
 date: 2026-05-08
 content_hash: 318cebdc59060938
 ---

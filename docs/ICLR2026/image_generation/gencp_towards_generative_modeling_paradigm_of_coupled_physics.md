@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GenCP: Towards Generative Modeling Paradigm of Coupled Physics
 description: >-
-  [ICLR 2026][Image Generation][coupled physics simulation] This paper proposes GenCP, which reformulates coupled multiphysics simulation as a probability density evolution problem. It leverages flow matching to learn conditional velocity fields from decoupled data, and synthesizes coupled solutions at inference time via Lie-Trotter operator splitting—realizing "decoupled training, coupled inference" with theoretically bounded error guarantees.
+  [ICLR 2026][Image Generation][coupled physics simulation] This paper proposes GenCP, which reformulates coupled multiphysics simulation as a probability density evolution problem. It leverages flow matching to learn cond…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - coupled physics simulation
-  - flow matching
-  - operator splitting
-  - multiphysics
-  - decoupled training
+  - "ICLR 2026"
+  - "Image Generation"
+  - "coupled physics simulation"
+  - "flow matching"
+  - "operator splitting"
+  - "multiphysics"
+  - "decoupled training"
 date: 2026-05-08
 content_hash: c855d87ddee64c5e
 ---

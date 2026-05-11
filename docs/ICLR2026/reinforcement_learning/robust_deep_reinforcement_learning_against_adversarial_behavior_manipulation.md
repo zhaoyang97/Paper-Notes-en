@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Robust Deep Reinforcement Learning against Adversarial Behavior Manipulation
 description: >-
-  [ICLR 2026][Reinforcement Learning][behavior-targeted attack] This paper studies a novel threat in RL—behavior-targeted attacks (where an adversary manipulates observations to steer the victim toward executing a specific target policy)—and proposes BIA, a black-box attack method, along with TDRT, a temporally discounted robust training defense. TDRT achieves robustness against such attacks while outperforming the existing defense SA-PPO on original task performance by 28.2%.
+  [ICLR 2026][Reinforcement Learning][behavior-targeted attack] This paper studies a novel threat in RL—behavior-targeted attacks (where an adversary manipulates observations to steer the victim toward executing a specific…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - behavior-targeted attack
-  - adversarial robustness
-  - imitation learning attack
-  - temporal discounting defense
-  - policy smoothing
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "behavior-targeted attack"
+  - "adversarial robustness"
+  - "imitation learning attack"
+  - "temporal discounting defense"
+  - "policy smoothing"
 date: 2026-05-08
 content_hash: 07d263db999dc2a3
 ---

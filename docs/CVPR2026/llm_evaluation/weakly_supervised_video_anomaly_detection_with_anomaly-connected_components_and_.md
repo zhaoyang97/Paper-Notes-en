@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Weakly Supervised Video Anomaly Detection with Anomaly-Connected Components and Intention Reasoning
 description: >-
-  [CVPR 2026][LLM Evaluation][Weakly supervised video anomaly detection] This paper proposes the LAS-VAD framework, which introduces an Anomaly-Connected Components (ACC) mechanism to partition video frames into semantically consistent groups for pseudo-label generation to compensate for the absence of frame-level annotations, and an Intention-Aware Mechanism (IAM) that leverages position-velocity-acceleration features to distinguish normal from anomalous behaviors with similar appearances but different intentions. The method achieves 89.96% AP (I3D) on XD-Violence.
+  [CVPR 2026][LLM Evaluation][Weakly supervised video anomaly detection] This paper proposes the LAS-VAD framework, which introduces an Anomaly-Connected Components (ACC) mechanism to partition video frames into semantical…
 tags:
-  - CVPR 2026
-  - LLM Evaluation
-  - Weakly supervised video anomaly detection
-  - connected components
-  - intention reasoning
-  - CLIP
-  - multiple instance learning
+  - "CVPR 2026"
+  - "LLM Evaluation"
+  - "Weakly supervised video anomaly detection"
+  - "connected components"
+  - "intention reasoning"
+  - "CLIP"
+  - "multiple instance learning"
 date: 2026-05-08
 content_hash: 913fd486211912da
 ---

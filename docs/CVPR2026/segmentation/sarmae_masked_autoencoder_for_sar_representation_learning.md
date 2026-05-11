@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] SARMAE: Masked Autoencoder for SAR Representation Learning
 description: >-
-  [CVPR2026][Segmentation][SAR] This paper proposes SARMAE, a framework for noise-robust SAR self-supervised pre-training built upon the million-scale SAR-1M dataset, speckle-aware representation enhancement (SARE), and semantic anchor representation constraint (SARC). SARMAE achieves state-of-the-art performance across multiple downstream tasks including classification, detection, and segmentation.
+  [CVPR2026][Segmentation][SAR] This paper proposes SARMAE, a framework for noise-robust SAR self-supervised pre-training built upon the million-scale SAR-1M dataset, speckle-aware representation enhancement (SARE)…
 tags:
-  - CVPR2026
-  - Segmentation
-  - SAR
-  - self-supervised pre-training
-  - Masked Autoencoder
-  - speckle noise
-  - optical-SAR alignment
-  - remote sensing
+  - "CVPR2026"
+  - "Segmentation"
+  - "SAR"
+  - "self-supervised pre-training"
+  - "Masked Autoencoder"
+  - "speckle noise"
+  - "optical-SAR alignment"
+  - "remote sensing"
 date: 2026-05-08
 content_hash: e84f2543d1861b27
 ---

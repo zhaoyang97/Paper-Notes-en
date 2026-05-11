@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MARCH: Multi-Agent Radiology Clinical Hierarchy for CT Report Generation
 description: >-
-  [ACL 2026][Medical Imaging][Multi-agent] This paper proposes MARCH, a multi-agent framework that simulates the resident–fellow–attending hierarchical collaboration process in radiology. Through three stages—initial report drafting, retrieval-augmented revision, and consensus-driven finalization—MARCH generates CT reports achieving a CE-F1 of 0.399 on the RadGenome-ChestCT dataset, representing a 57.7% improvement over the best baseline Reg2RG (0.253).
+  [ACL 2026][Medical Imaging][Multi-agent] This paper proposes MARCH, a multi-agent framework that simulates the resident–fellow–attending hierarchical collaboration process in radiology. Through three stages—initial repor…
 tags:
-  - ACL 2026
-  - Medical Imaging
-  - Multi-agent
-  - Radiology Report Generation
-  - Consensus-Driven
-  - Retrieval-Augmented
-  - 3D CT
+  - "ACL 2026"
+  - "Medical Imaging"
+  - "Multi-agent"
+  - "Radiology Report Generation"
+  - "Consensus-Driven"
+  - "Retrieval-Augmented"
+  - "3D CT"
 date: 2026-05-08
 content_hash: b884553913d3ce6e
 ---

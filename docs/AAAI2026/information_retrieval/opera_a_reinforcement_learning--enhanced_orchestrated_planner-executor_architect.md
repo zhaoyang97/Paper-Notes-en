@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] OPERA: A Reinforcement Learning--Enhanced Orchestrated Planner-Executor Architecture for Reasoning-Oriented Multi-Hop Retrieval
 description: >-
-  [AAAI2026][RAG] This paper proposes OPERA, a hierarchical framework comprising a Goal Planning Module and a Reason-Execute Module, combined with MAPGRPO—a training algorithm specifically designed for multi-agent settings—to substantially improve performance on reasoning-oriented multi-hop retrieval tasks.
+  [AAAI2026][Information Retrieval & RAG][RAG] This paper proposes OPERA, a hierarchical framework comprising a Goal Planning Module and a Reason-Execute Module…
 tags:
-  - AAAI2026
-  - RAG
-  - multi-hop retrieval
-  - reinforcement-learning
-  - GRPO
-  - multi-agent
+  - "AAAI2026"
+  - "Information Retrieval & RAG"
+  - "RAG"
+  - "multi-hop retrieval"
+  - "reinforcement-learning"
+  - "GRPO"
+  - "multi-agent"
 date: 2026-05-08
 content_hash: 71984a33a729a572
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Probabilistic Kernel Function for Fast Angle Testing
 description: >-
-  [ICLR 2026][approximate nearest neighbor search] This paper studies the angle testing problem in high-dimensional Euclidean space and proposes two deterministic probabilistic kernel functions, $K_S^1$ and $K_S^2$, based on reference angles for angle comparison and angle threshold judgment, respectively. Theoretical guarantees are obtained without relying on asymptotic assumptions of Gaussian distributions. Applied to approximate nearest neighbor search (ANNS), the method achieves 2.5×–3× QPS speedup on HNSW graphs.
+  [ICLR 2026][approximate nearest neighbor search] This paper studies the angle testing problem in high-dimensional Euclidean space and proposes two deterministic probabilistic kernel functions, $K_S^1$ and $K_S^2$…
 tags:
-  - ICLR 2026
-  - approximate nearest neighbor search
-  - probabilistic kernel function
-  - angle testing
-  - random projection
-  - similarity search
+  - "ICLR 2026"
+  - "approximate nearest neighbor search"
+  - "probabilistic kernel function"
+  - "angle testing"
+  - "random projection"
+  - "similarity search"
 date: 2026-05-08
 content_hash: 4a5d56be0b3c47b3
 ---

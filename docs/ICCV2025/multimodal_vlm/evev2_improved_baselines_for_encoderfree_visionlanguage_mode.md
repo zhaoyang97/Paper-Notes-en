@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EVEv2: Improved Baselines for Encoder-Free Vision-Language Models
 description: >-
-  [ICCV 2025 (Highlight)][Multimodal VLM][encoder-free VLM] This work systematically investigates the optimal architecture and training strategy for encoder-free VLMs, proposing a Divide-and-Conquer architecture that fully decomposes a transformer into modality-specific components (independent attention/FFN/LayerNorm per modality). Using only 100M publicly available data, EVEv2 surpasses all encoder-free counterparts and approaches the performance of encoder-based VLMs.
+  [ICCV 2025 (Highlight)][Multimodal VLM][encoder-free VLM] This work systematically investigates the optimal architecture and training strategy for encoder-free VLMs…
 tags:
-  - ICCV 2025 (Highlight)
-  - Multimodal VLM
-  - encoder-free VLM
-  - Divide-and-Conquer
-  - modality sparsity
-  - decoder-only
-  - visual perception learned from scratch
+  - "ICCV 2025 (Highlight)"
+  - "Multimodal VLM"
+  - "encoder-free VLM"
+  - "Divide-and-Conquer"
+  - "modality sparsity"
+  - "decoder-only"
+  - "visual perception learned from scratch"
 date: 2026-05-08
 content_hash: 01a605aa21f9a0e7
 ---

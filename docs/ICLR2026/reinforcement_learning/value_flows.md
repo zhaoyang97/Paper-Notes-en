@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Value Flows
 description: >-
-  [ICLR 2026][Reinforcement Learning][distributional RL] Value Flows is the first work to introduce flow matching into distributional RL — it learns a vector field such that the induced probability density path automatically satisfies the distributional Bellman equation. Variance of the return distribution is efficiently estimated via a flow derivative ODE, enabling confidence-weighted prioritized learning. The method achieves an average 1.3× improvement in success rate across 62 OGBench tasks, and estimates return distributions 3× more accurately than C51/CODAC.
+  [ICLR 2026][Reinforcement Learning][distributional RL] Value Flows is the first work to introduce flow matching into distributional RL — it learns a vector field such that the induced probability density path automatical…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - distributional RL
-  - flow matching
-  - return distribution
-  - uncertainty quantification
-  - OGBench
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "distributional RL"
+  - "flow matching"
+  - "return distribution"
+  - "uncertainty quantification"
+  - "OGBench"
 date: 2026-05-08
 content_hash: e6cbc2b35a81fee9
 ---

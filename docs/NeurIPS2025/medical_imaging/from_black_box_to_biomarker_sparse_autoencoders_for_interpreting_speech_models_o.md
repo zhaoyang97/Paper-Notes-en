@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] From Black Box to Biomarker: Sparse Autoencoders for Interpreting Speech Models of Parkinson's Disease
 description: >-
-  [NeurIPS 2025][Medical Imaging][Sparse Autoencoders] This work adapts sparse autoencoder (SAE) techniques from large language model interpretability research to speech-based Parkinson's disease (PD) detection, proposes a Mask-based SAE to address small-dataset limitations, discovers that model predictions rely primarily on spectral flux and spectral flatness in low-energy regions, and further reveals that these features correlate significantly with MRI putamen volume—establishing a bridge from internal model representations to clinical biomarkers.
+  [NeurIPS 2025][Medical Imaging][Sparse Autoencoders] This work adapts sparse autoencoder (SAE) techniques from large language model interpretability research to speech-based Parkinson's disease (PD) detection…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Sparse Autoencoders
-  - Parkinson's Disease
-  - Speech Detection
-  - Mechanistic Interpretability
-  - Whisper
-  - Spectral Flux
-  - Putamen
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Sparse Autoencoders"
+  - "Parkinson's Disease"
+  - "Speech Detection"
+  - "Mechanistic Interpretability"
+  - "Whisper"
+  - "Spectral Flux"
+  - "Putamen"
 date: 2026-05-08
 content_hash: 0e2b89409d974a87
 ---

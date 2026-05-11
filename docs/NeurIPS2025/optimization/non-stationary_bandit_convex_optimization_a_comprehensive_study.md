@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Non-Stationary Bandit Convex Optimization: A Comprehensive Study
 description: >-
-  [NeurIPS 2025][Optimization][Bandit Convex Optimization] This paper systematically studies bandit convex optimization (BCO) in non-stationary environments, proposes two algorithms (TEWA-SE and cExO), and establishes unified regret upper and lower bounds under three non-stationarity measures (number of switches $S$, total variation $\Delta$, and path length $P$), achieving minimax optimality in several settings.
+  [NeurIPS 2025][Optimization][Bandit Convex Optimization] This paper systematically studies bandit convex optimization (BCO) in non-stationary environments, proposes two algorithms (TEWA-SE and cExO)…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Bandit Convex Optimization
-  - Non-Stationary Environments
-  - Dynamic Regret
-  - Adaptive Regret
-  - Minimax Optimality
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Bandit Convex Optimization"
+  - "Non-Stationary Environments"
+  - "Dynamic Regret"
+  - "Adaptive Regret"
+  - "Minimax Optimality"
 date: 2026-05-08
 content_hash: 4efc89692a48c731
 ---

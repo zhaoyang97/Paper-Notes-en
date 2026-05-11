@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] An OpenMind for 3D Medical Vision Self-supervised Learning
 description: >-
-  [ICCV 2025][Medical Imaging][Self-supervised learning] This work releases OpenMind, the largest publicly available 3D medical imaging pretraining dataset (114k brain MRI volumes), and conducts a systematic benchmark of existing 3D SSL methods on this dataset using state-of-the-art CNN (ResEnc-L) and Transformer (Primus-M) architectures, establishing the current SOTA for 3D medical image SSL.
+  [ICCV 2025][Medical Imaging][Self-supervised learning] This work releases OpenMind, the largest publicly available 3D medical imaging pretraining dataset (114k brain MRI volumes)…
 tags:
-  - ICCV 2025
-  - Medical Imaging
-  - Self-supervised learning
-  - 3D medical imaging
-  - pretraining dataset
-  - brain MRI
-  - benchmark
+  - "ICCV 2025"
+  - "Medical Imaging"
+  - "Self-supervised learning"
+  - "3D medical imaging"
+  - "pretraining dataset"
+  - "brain MRI"
+  - "benchmark"
 date: 2026-05-08
 content_hash: 4d7eac864fee8a62
 ---

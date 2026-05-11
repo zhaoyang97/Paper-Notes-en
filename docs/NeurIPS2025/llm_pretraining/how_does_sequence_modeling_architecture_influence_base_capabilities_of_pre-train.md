@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] How Does Sequence Modeling Architecture Influence Base Capabilities of Pre-trained Language Models?
 description: >-
-  [NeurIPS 2025][LLM Pretraining][sequence modeling] By introducing a "domain-restricted pre-training + OOD testing" evaluation framework, this paper reveals that stateful architectures such as Mamba and RWKV suffer from degraded base capabilities. It identifies the key design principle of "arbitrary selection over the full sequence" (full-sequence visibility + real relation calculation + non-uniform distribution), and validates this principle using a minimalist Top-1 Element/Chunk Selection architecture that recovers base capabilities to near-Transformer levels.
+  [NeurIPS 2025][LLM Pretraining][sequence modeling] By introducing a "domain-restricted pre-training + OOD testing" evaluation framework…
 tags:
-  - NeurIPS 2025
-  - LLM Pretraining
-  - sequence modeling
-  - base capabilities
-  - Transformer
-  - Mamba
-  - RWKV
-  - attention
-  - Top-1 selection
+  - "NeurIPS 2025"
+  - "LLM Pretraining"
+  - "sequence modeling"
+  - "base capabilities"
+  - "Transformer"
+  - "Mamba"
+  - "RWKV"
+  - "attention"
+  - "Top-1 selection"
 date: 2026-05-08
 content_hash: 23329f75f12e948d
 ---

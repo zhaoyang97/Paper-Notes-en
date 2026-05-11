@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Generating Physically Sound Designs from Text and a Set of Physical Constraints
 description: >-
-  [NeurIPS 2025][Audio & Speech][topology optimization] This paper proposes TIDES, a framework that combines the visual guidance of pretrained text-image models (CLIP) with a differentiable finite-element physics simulator. By jointly optimizing a visual similarity loss and a structural compliance loss, TIDES generates load-bearing structural designs that satisfy both engineering performance requirements and text-specified visual characteristics, starting from text descriptions and physical constraints. The method is validated through 3D-printed three-point bending experiments.
+  [NeurIPS 2025][Audio & Speech][topology optimization] This paper proposes TIDES, a framework that combines the visual guidance of pretrained text-image models (CLIP) with a differentiable finite-element physics simulator…
 tags:
-  - NeurIPS 2025
+  - "NeurIPS 2025"
   - "Audio & Speech"
-  - topology optimization
-  - CLIP
-  - differentiable physics
-  - text-informed design
-  - structural optimization
-  - 3D printing
+  - "topology optimization"
+  - "CLIP"
+  - "differentiable physics"
+  - "text-informed design"
+  - "structural optimization"
+  - "3D printing"
 date: 2026-05-08
 content_hash: 1cea06edb2c98de4
 ---

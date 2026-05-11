@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Evoking User Memory: Personalizing LLM via Recollection-Familiarity Adaptive Retrieval
 description: >-
-  [ICLR 2026][LLM Reasoning][LLM personalization] Inspired by the dual-process theory in cognitive science, this paper proposes RF-Mem, a memory retrieval framework that achieves efficient and scalable LLM personalization through adaptive switching between two pathways: Familiarity (fast similarity matching) and Recollection (deep chain-based reconstruction).
+  [ICLR 2026][LLM Reasoning][LLM personalization] Inspired by the dual-process theory in cognitive science, this paper proposes RF-Mem, a memory retrieval framework that achieves efficient and scalable LLM personalization…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - LLM personalization
-  - memory retrieval
-  - dual-process theory
-  - adaptive retrieval
-  - cognitive science
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "LLM personalization"
+  - "memory retrieval"
+  - "dual-process theory"
+  - "adaptive retrieval"
+  - "cognitive science"
 date: 2026-05-08
 content_hash: aaffaa6eeb91bf3f
 ---

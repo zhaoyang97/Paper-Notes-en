@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Directional Textual Inversion for Personalized Text-to-Image Generation
 description: >-
-  [ICLR 2026][Image Generation][Textual Inversion] This paper identifies a norm inflation problem in token embeddings learned by Textual Inversion (TI), which degrades text alignment under complex prompts. The proposed Directional Textual Inversion (DTI) fixes the embedding norm at an in-distribution scale and optimizes only the direction on the unit hypersphere via Riemannian SGD, regularized by a von Mises-Fisher prior, substantially improving prompt faithfulness.
+  [ICLR 2026][Image Generation][Textual Inversion] This paper identifies a norm inflation problem in token embeddings learned by Textual Inversion (TI)…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Textual Inversion
-  - Directional Optimization
-  - Hypersphere
-  - von Mises-Fisher
-  - Personalized Text-to-Image
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Textual Inversion"
+  - "Directional Optimization"
+  - "Hypersphere"
+  - "von Mises-Fisher"
+  - "Personalized Text-to-Image"
 date: 2026-05-08
 content_hash: b8cfd6bffcdfe4ec
 ---

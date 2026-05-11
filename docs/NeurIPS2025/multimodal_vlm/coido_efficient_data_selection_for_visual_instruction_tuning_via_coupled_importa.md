@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CoIDO: Efficient Data Selection for Visual Instruction Tuning via Coupled Importance-Diversity Optimization
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Data Selection] This paper proposes CoIDO, a bi-objective optimization framework for data selection that jointly optimizes data importance and diversity. By training a lightweight scorer on only 20% of randomly sampled data, CoIDO selects a 20% subset from LLaVA-665K that achieves 98.2% of the performance of full-data fine-tuning, while incurring the lowest computational overhead among all compared methods.
+  [NeurIPS 2025][Multimodal VLM][Data Selection] This paper proposes CoIDO, a bi-objective optimization framework for data selection that jointly optimizes data importance and diversity. By training a lightweight scorer on…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Data Selection
-  - Instruction Tuning
-  - Importance-Diversity Optimization
-  - Lightweight Scorer
-  - MLLM
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Data Selection"
+  - "Instruction Tuning"
+  - "Importance-Diversity Optimization"
+  - "Lightweight Scorer"
+  - "MLLM"
 date: 2026-05-08
 content_hash: 043f1ca53c76202a
 ---

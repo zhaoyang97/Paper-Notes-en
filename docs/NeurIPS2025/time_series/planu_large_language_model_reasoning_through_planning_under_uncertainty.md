@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PlanU: Large Language Model Reasoning through Planning under Uncertainty
 description: >-
-  [NeurIPS 2025][Time Series][LLM decision-making] This paper proposes PlanU—an LLM decision-making method that models node returns via quantile distributions within MCTS and balances exploration and exploitation through an Upper Confidence Bounds with Curiosity (UCC) score. PlanU is the first approach to systematically and simultaneously address both LLM uncertainty and environmental uncertainty, achieving substantial improvements over existing methods across multiple stochastic environment benchmarks.
+  [NeurIPS 2025][Time Series][LLM decision-making] This paper proposes PlanU—an LLM decision-making method that models node returns via quantile distributions within MCTS and balances exploration and exploitation through a…
 tags:
-  - NeurIPS 2025
-  - Time Series
-  - LLM decision-making
-  - uncertainty
-  - Monte Carlo tree search
-  - quantile distribution
-  - exploration and exploitation
+  - "NeurIPS 2025"
+  - "Time Series"
+  - "LLM decision-making"
+  - "uncertainty"
+  - "Monte Carlo tree search"
+  - "quantile distribution"
+  - "exploration and exploitation"
 date: 2026-05-08
 content_hash: 6f2483cfdb8dad4c
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Locality-Sensitive Hashing-Based Efficient Point Transformer for Charged Particle Reconstruction
 description: >-
-  [NeurIPS 2025][3D Vision][Point Transformer] By combining LSH with Point Transformer, the paper proposes HEPTv2 for end-to-end particle track reconstruction, eliminating the DBScan clustering post-processing bottleneck and achieving a 28.9× speedup while maintaining competitive tracking efficiency.
+  [NeurIPS 2025][3D Vision][Point Transformer] By combining LSH with Point Transformer, the paper proposes HEPTv2 for end-to-end particle track reconstruction…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Point Transformer
-  - Locality-Sensitive Hashing
-  - Particle Tracking
-  - End-to-End Learning
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Point Transformer"
+  - "Locality-Sensitive Hashing"
+  - "Particle Tracking"
+  - "End-to-End Learning"
 date: 2026-05-08
 content_hash: d1520a2e3f5f6ebc
 ---

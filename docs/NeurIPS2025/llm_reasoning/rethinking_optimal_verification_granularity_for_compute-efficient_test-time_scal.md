@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Rethinking Optimal Verification Granularity for Compute-Efficient Test-Time Scaling
 description: >-
-  [NeurIPS 2025][LLM Reasoning][test-time scaling] This paper proposes Variable Granularity Search (VG-Search), which unifies Beam Search and Best-of-N under a tunable verification granularity parameter $g$. It demonstrates that conventional per-step verification is suboptimal, and that adaptively adjusting $g$ can improve accuracy by 3%+ while reducing computation by 52%+.
+  [NeurIPS 2025][LLM Reasoning][test-time scaling] This paper proposes Variable Granularity Search (VG-Search), which unifies Beam Search and Best-of-N under a tunable verification granularity parameter $g$. It demonstrate…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - test-time scaling
-  - verification granularity
-  - beam search
-  - process reward model
-  - compute efficiency
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "test-time scaling"
+  - "verification granularity"
+  - "beam search"
+  - "process reward model"
+  - "compute efficiency"
 date: 2026-05-08
 content_hash: a6dadfbc77a45e02
 ---

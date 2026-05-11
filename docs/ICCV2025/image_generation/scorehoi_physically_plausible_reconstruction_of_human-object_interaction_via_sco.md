@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ScoreHOI: Physically Plausible Reconstruction of Human-Object Interaction via Score-Guided Diffusion
 description: >-
-  [ICCV 2025][Image Generation][human-object interaction reconstruction] ScoreHOI employs a score-based diffusion model as an optimizer, integrating DDIM inversion–forward sampling with physical constraints (contact, penetration, ground contact) to guide the denoising process. Combined with a contact-driven iterative refinement strategy, it achieves physically plausible 3D reconstruction of human-object interactions from monocular images, improving contact F-Score by 9% on BEHAVE.
+  [ICCV 2025][Image Generation][human-object interaction reconstruction] ScoreHOI employs a score-based diffusion model as an optimizer, integrating DDIM inversion–forward sampling with physical constraints (contact…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - human-object interaction reconstruction
-  - diffusion models
-  - score-guided sampling
-  - physical constraints
-  - contact prediction
+  - "ICCV 2025"
+  - "Image Generation"
+  - "human-object interaction reconstruction"
+  - "diffusion models"
+  - "score-guided sampling"
+  - "physical constraints"
+  - "contact prediction"
 date: 2026-05-08
 content_hash: fd7d76c44afddae9
 ---

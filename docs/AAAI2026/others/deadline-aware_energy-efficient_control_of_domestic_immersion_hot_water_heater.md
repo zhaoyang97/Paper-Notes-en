@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Deadline-Aware, Energy-Efficient Control of Domestic Immersion Hot Water Heaters
 description: >-
-  [AAAI 2026][Energy Efficiency] This paper proposes a deadline-aware energy-efficient control method for domestic hot water heaters. Using a Gymnasium-based simulation environment, it benchmarks a bang-bang baseline, an MCTS planner, and a PPO policy, demonstrating that PPO achieves up to 69% energy savings under identical physical conditions.
+  [AAAI 2026][Energy Efficiency] This paper proposes a deadline-aware energy-efficient control method for domestic hot water heaters. Using a Gymnasium-based simulation environment, it benchmarks a bang-bang baseline…
 tags:
-  - AAAI 2026
-  - Energy Efficiency
-  - Reinforcement Learning
-  - Water Heater Control
-  - PPO
-  - MCTS
+  - "AAAI 2026"
+  - "Energy Efficiency"
+  - "Reinforcement Learning"
+  - "Water Heater Control"
+  - "PPO"
+  - "MCTS"
 date: 2026-05-08
 content_hash: 15e7f1c59eefdf9f
 ---

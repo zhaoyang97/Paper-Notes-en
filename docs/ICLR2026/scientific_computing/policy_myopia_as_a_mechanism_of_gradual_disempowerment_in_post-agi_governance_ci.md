@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Policy Myopia as a Mechanism of Gradual Disempowerment in Post-AGI Governance
 description: >-
-  [ICLR 2026][Scientific Computing][policy myopia] This paper argues that policy myopia is not an attention-allocation problem but an institutional mechanism that systematically and irreversibly strips humans of governance participation capacity in the post-AGI era — through three coupled positive feedback loops: salience capture, capability cascades, and value lock-in. Standard mitigation measures can only delay but not prevent this process.
+  [ICLR 2026][Scientific Computing][policy myopia] This paper argues that policy myopia is not an attention-allocation problem but an institutional mechanism that systematically and irreversibly strips humans of governance…
 tags:
-  - ICLR 2026
-  - Scientific Computing
-  - policy myopia
-  - gradual disempowerment
-  - AGI governance
-  - institutional dynamics
-  - AI safety
+  - "ICLR 2026"
+  - "Scientific Computing"
+  - "policy myopia"
+  - "gradual disempowerment"
+  - "AGI governance"
+  - "institutional dynamics"
+  - "AI safety"
 date: 2026-05-08
 content_hash: 1d85b9f1b8aa369f
 ---

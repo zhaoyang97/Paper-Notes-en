@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Mapping Semantic & Syntactic Relationships with Geometric Rotation
 description: >-
-  [ICLR 2026][Embedding Geometry] This paper proposes RISE (Rotor-Invariant Shift Estimation), a method that leverages Clifford algebra rotors to represent utterance-level semantic–syntactic transformations (negation, conditionalization, and politeness) as consistent rotation operations on the unit hypersphere. Through systematic experiments across 7 languages × 3 embedding models × 3 transformation types, the paper demonstrates that these rotations transfer across languages and model architectures (77%–95% retention rate), extending the Linear Representation Hypothesis (LRH) from word-level to cross-lingual utterance-level and generalizing it to geodesic structures on curved manifolds.
+  [ICLR 2026][Information Retrieval & RAG][Embedding Geometry] This paper proposes RISE (Rotor-Invariant Shift Estimation), a method that leverages Clifford algebra rotors to represent utterance-level semantic–syntactic tr…
 tags:
-  - ICLR 2026
-  - Embedding Geometry
-  - Hyperspherical Rotation
-  - Cross-lingual Generalization
-  - Semantic Transformation
-  - Linear Representation Hypothesis
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Embedding Geometry"
+  - "Hyperspherical Rotation"
+  - "Cross-lingual Generalization"
+  - "Semantic Transformation"
+  - "Linear Representation Hypothesis"
 date: 2026-05-08
 content_hash: e7be55be076c7a03
 ---

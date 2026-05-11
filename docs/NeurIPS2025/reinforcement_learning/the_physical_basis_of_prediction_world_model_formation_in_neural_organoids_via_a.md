@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] The Physical Basis of Prediction: World Model Formation in Neural Organoids via an LLM-Generated Curriculum
 description: >-
-  [NeurIPS 2025 (Workshop: Scaling Environments for Agents / Embodied World Models)][Reinforcement Learning][Neural organoids] This paper proposes a framework for studying world model formation in human neural organoids, comprising three progressively complex virtual environments (conditioned avoidance, predator–prey, Pong) and a meta-learning approach in which an LLM automatically generates experimental protocols, complemented by a multi-scale biophysical evaluation strategy to quantify the physical basis of biological learning.
+  [NeurIPS 2025 (Workshop: Scaling Environments for Agents / Embodied World Models)][Reinforcement Learning][Neural organoids] This paper proposes a framework for studying world model formation in human neural organoids…
 tags:
   - "NeurIPS 2025 (Workshop: Scaling Environments for Agents / Embodied World Models)"
-  - Reinforcement Learning
-  - Neural organoids
-  - world models
-  - curriculum learning
-  - LLM-generated environments
-  - synaptic plasticity
+  - "Reinforcement Learning"
+  - "Neural organoids"
+  - "world models"
+  - "curriculum learning"
+  - "LLM-generated environments"
+  - "synaptic plasticity"
 date: 2026-05-08
 content_hash: 4ae8ed7c7e00b437
 ---

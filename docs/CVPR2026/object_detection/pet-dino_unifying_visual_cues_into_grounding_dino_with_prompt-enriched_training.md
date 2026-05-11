@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PET-DINO: Unifying Visual Cues into Grounding DINO with Prompt-Enriched Training
 description: >-
-  [CVPR 2026][Object Detection][Open-set object detection] PET-DINO builds a unified object detector supporting both text and visual prompts on top of Grounding DINO. It introduces an alignment-friendly visual prompt generation module (AFVPG) and two prompt-enriched training strategies (IBP and DMD), achieving competitive zero-shot detection performance with significantly less training data.
+  [CVPR 2026][Object Detection][Open-set object detection] PET-DINO builds a unified object detector supporting both text and visual prompts on top of Grounding DINO. It introduces an alignment-friendly visual prompt gener…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - Open-set object detection
-  - visual prompts
-  - Grounding DINO
-  - training strategy
-  - prompt learning
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Open-set object detection"
+  - "visual prompts"
+  - "Grounding DINO"
+  - "training strategy"
+  - "prompt learning"
 date: 2026-05-08
 content_hash: 496d603e9c7a231f
 ---

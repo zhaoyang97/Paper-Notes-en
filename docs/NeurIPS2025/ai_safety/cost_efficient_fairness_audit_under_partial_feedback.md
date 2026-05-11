@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Cost Efficient Fairness Audit Under Partial Feedback
 description: >-
-  [NeurIPS 2025][AI Safety][fairness audit] Under the partial feedback setting, this paper proposes a fairness auditing framework with a novel cost model, delivering near-optimal audit algorithms for both black-box and mixture model scenarios, reducing audit cost by approximately 50% compared to natural baselines.
+  [NeurIPS 2025][AI Safety][fairness audit] Under the partial feedback setting, this paper proposes a fairness auditing framework with a novel cost model…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - fairness audit
-  - partial feedback
-  - equalized odds
-  - rejection sampling
-  - exponential family mixture
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "fairness audit"
+  - "partial feedback"
+  - "equalized odds"
+  - "rejection sampling"
+  - "exponential family mixture"
 date: 2026-05-08
 content_hash: a987fc6ae1b67a17
 ---

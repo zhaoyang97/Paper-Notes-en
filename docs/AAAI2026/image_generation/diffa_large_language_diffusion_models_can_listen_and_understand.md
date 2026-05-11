@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DiffA: Large Language Diffusion Models Can Listen and Understand
 description: >-
-  [AAAI 2026][Image Generation][Diffusion Language Models] This paper proposes DIFFA — the first large audio-language model built upon a diffusion language model — which combines a frozen LLaDA-8B backbone with a lightweight dual-adapter architecture and a two-stage training pipeline. Using only 960 hours of ASR data and 127 hours of synthetic instruction data, DIFFA achieves competitive performance against autoregressive baselines on MMSU, MMAU, and VoiceBench.
+  [AAAI 2026][Image Generation][Diffusion Language Models] This paper proposes DIFFA — the first large audio-language model built upon a diffusion language model — which combines a frozen LLaDA-8B backbone with a lightweig…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Diffusion Language Models
-  - Audio Understanding
-  - Large Audio-Language Models
-  - LLaDA
-  - Parameter-Efficient Adaptation
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Diffusion Language Models"
+  - "Audio Understanding"
+  - "Large Audio-Language Models"
+  - "LLaDA"
+  - "Parameter-Efficient Adaptation"
 date: 2026-05-08
 content_hash: e067edae0aed4afc
 ---

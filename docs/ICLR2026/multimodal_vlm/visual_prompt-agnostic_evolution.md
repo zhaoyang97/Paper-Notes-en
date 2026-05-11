@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Visual Prompt-Agnostic Evolution
 description: >-
-  [ICLR2026][Multimodal VLM][Visual Prompt Tuning] This paper proposes Prompt-Agnostic Evolution (PAE), which accelerates VPT convergence (average 1.41×) and improves accuracy by 1–3% across 25 datasets through frequency-aware task initialization (MPA) and a Koopman-Lyapunov dynamical system (KLD) for cross-layer prompt coupling. PAE is plug-and-play for various VPT variants and introduces no inference overhead.
+  [ICLR2026][Multimodal VLM][Visual Prompt Tuning] This paper proposes Prompt-Agnostic Evolution (PAE), which accelerates VPT convergence (average 1.41×) and improves accuracy by 1–3% across 25 datasets through frequency-a…
 tags:
-  - ICLR2026
-  - Multimodal VLM
-  - Visual Prompt Tuning
-  - Vision Transformer
-  - Parameter-Efficient Fine-Tuning
-  - Koopman Operator
-  - Frequency-Domain Initialization
-  - Lyapunov Stability
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "Visual Prompt Tuning"
+  - "Vision Transformer"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Koopman Operator"
+  - "Frequency-Domain Initialization"
+  - "Lyapunov Stability"
 date: 2026-05-08
 content_hash: 42a5ba2ad4b410c1
 ---

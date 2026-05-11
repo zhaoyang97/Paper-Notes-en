@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SPACeR: Self-Play Anchoring with Centralized Reference Models
 description: >-
-  [ICLR 2026][Autonomous Driving][self-play reinforcement learning] SPACeR proposes a "human-like self-play" framework that uses a pretrained tokenized autoregressive motion model as a centralized reference policy. By incorporating log-likelihood rewards and KL divergence constraints, it guides a decentralized self-play RL policy to align with the human driving distribution. SPACeR outperforms pure self-play methods on WOSAC while achieving 10× faster inference and 50× fewer parameters than imitation learning approaches.
+  [ICLR 2026][Autonomous Driving][self-play reinforcement learning] SPACeR proposes a "human-like self-play" framework that uses a pretrained tokenized autoregressive motion model as a centralized reference policy. By inco…
 tags:
-  - ICLR 2026
-  - Autonomous Driving
-  - self-play reinforcement learning
-  - traffic simulation
-  - tokenized models
-  - KL divergence alignment
-  - human driving distribution
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "self-play reinforcement learning"
+  - "traffic simulation"
+  - "tokenized models"
+  - "KL divergence alignment"
+  - "human driving distribution"
 date: 2026-05-08
 content_hash: 7a0e13e575bab010
 ---

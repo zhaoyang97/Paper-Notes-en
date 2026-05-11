@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SymphoMotion: Joint Control of Camera Motion and Object Dynamics for Coherent Video Generation
 description: >-
-  [CVPR 2026][Video Generation][Video diffusion models] SymphoMotion is a unified motion control framework that simultaneously and precisely controls camera motion and object 3D trajectories in video generation via two mechanisms — Camera Trajectory Control (CTC) and Object Dynamics Control (ODC) — alongside a large-scale real-world jointly annotated dataset, RealCOD-25K, containing 25K samples.
+  [CVPR 2026][Video Generation][Video diffusion models] SymphoMotion is a unified motion control framework that simultaneously and precisely controls camera motion and object 3D trajectories in video generation via two mec…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Video diffusion models
-  - camera control
-  - object motion control
-  - 3D awareness
-  - motion decoupling
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Video diffusion models"
+  - "camera control"
+  - "object motion control"
+  - "3D awareness"
+  - "motion decoupling"
 date: 2026-05-08
 content_hash: d45c35fe49a6421f
 ---

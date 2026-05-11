@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UGM2N: An Unsupervised and Generalizable Mesh Movement Network via M-Uniform Loss
 description: >-
-  [NeurIPS 2025][3D Vision][mesh movement] UGM2N is an unsupervised mesh movement network that achieves zero-shot generalization across PDE types and mesh geometries—without requiring pre-adapted mesh data—through a localized Node Patch representation and an M-Uniform loss function, while guaranteeing freedom from mesh tangling.
+  [NeurIPS 2025][3D Vision][mesh movement] UGM2N is an unsupervised mesh movement network that achieves zero-shot generalization across PDE types and mesh geometries—without requiring pre-adapted mesh data—through a locali…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - mesh movement
-  - PDE solver
-  - unsupervised learning
-  - zero-shot generalization
-  - equidistribution
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "mesh movement"
+  - "PDE solver"
+  - "unsupervised learning"
+  - "zero-shot generalization"
+  - "equidistribution"
 date: 2026-05-08
 content_hash: 6f9406256030cc2f
 ---

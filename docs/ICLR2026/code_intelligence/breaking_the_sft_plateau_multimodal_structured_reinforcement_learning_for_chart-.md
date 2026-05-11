@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Breaking the SFT Plateau: Multimodal Structured Reinforcement Learning for Chart-to-Code Generation
 description: >-
-  [ICLR 2026][Chart-to-Code] To address the SFT performance plateau in chart-to-code generation, this paper proposes Multimodal Structured Reinforcement Learning (MSRL), which employs a dual-layer textual and visual reward function along with a two-stage RL strategy, achieving improvements of 6.2% and 9.9% on high-level metrics on ChartMimic and ReachQA respectively, establishing open-source SOTA and matching GPT-4o.
+  [ICLR 2026][Code Intelligence][Chart-to-Code] To address the SFT performance plateau in chart-to-code generation, this paper proposes Multimodal Structured Reinforcement Learning (MSRL)…
 tags:
-  - ICLR 2026
-  - Chart-to-Code
-  - Reinforcement Learning
-  - SFT Plateau
-  - Multi-granularity Reward
-  - GRPO
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "Chart-to-Code"
+  - "Reinforcement Learning"
+  - "SFT Plateau"
+  - "Multi-granularity Reward"
+  - "GRPO"
 date: 2026-05-08
 content_hash: 33a8bdb47436a2a6
 ---

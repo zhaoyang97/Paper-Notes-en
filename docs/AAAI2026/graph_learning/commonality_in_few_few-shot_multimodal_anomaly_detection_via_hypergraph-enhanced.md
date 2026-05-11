@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Commonality in Few: Few-Shot Multimodal Anomaly Detection via Hypergraph-Enhanced Memory
 description: >-
-  [AAAI2026][Graph Learning][hypergraph learning] This paper proposes CIF, which leverages hypergraphs to extract intra-class structural commonalities from a small number of training samples, guiding memory bank construction and retrieval for few-shot multimodal industrial anomaly detection, achieving state-of-the-art performance.
+  [AAAI2026][Graph Learning][hypergraph learning] This paper proposes CIF, which leverages hypergraphs to extract intra-class structural commonalities from a small number of training samples…
 tags:
-  - AAAI2026
-  - Graph Learning
-  - hypergraph learning
-  - few-shot anomaly detection
-  - multimodal industrial anomaly detection
-  - memory bank
-  - training-free message passing
+  - "AAAI2026"
+  - "Graph Learning"
+  - "hypergraph learning"
+  - "few-shot anomaly detection"
+  - "multimodal industrial anomaly detection"
+  - "memory bank"
+  - "training-free message passing"
 date: 2026-05-08
 content_hash: f75de15bc2642054
 ---

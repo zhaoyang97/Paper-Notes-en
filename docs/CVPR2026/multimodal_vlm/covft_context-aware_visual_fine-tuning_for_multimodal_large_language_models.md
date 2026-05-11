@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CoVFT: Context-aware Visual Fine-tuning for Multimodal Large Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Multimodal large language models] This paper identifies the "visual preference conflict" problem in visual encoder fine-tuning within MLLMs, and proposes the CoVFT framework. By introducing Context Vector Extraction (CVE) and Context-aware Mixture of Experts (CoMoE), CoVFT achieves context-aware visual fine-tuning, attaining state-of-the-art performance across 12 multimodal benchmarks with significantly improved stability over existing methods.
+  [CVPR 2026][Multimodal VLM][Multimodal large language models] This paper identifies the "visual preference conflict" problem in visual encoder fine-tuning within MLLMs…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Multimodal large language models
-  - visual fine-tuning
-  - mixture of experts
-  - context-aware
-  - visual preference conflict
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Multimodal large language models"
+  - "visual fine-tuning"
+  - "mixture of experts"
+  - "context-aware"
+  - "visual preference conflict"
 date: 2026-05-08
 content_hash: b194e7bf1f706ddd
 ---

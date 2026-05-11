@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Diffusion-Based Electromagnetic Inverse Design of Scattering Structured Media
 description: >-
-  [NeurIPS 2025][Image Generation][Conditional Diffusion Model] This paper proposes a conditional diffusion model-based framework for electromagnetic inverse design that directly generates dielectric-sphere metasurface geometries from target differential scattering cross sections (DSCS), bypassing costly iterative optimization. The approach naturally handles the non-uniqueness of the inverse problem and outperforms CMA-ES evolutionary optimization while being orders of magnitude faster.
+  [NeurIPS 2025][Image Generation][Conditional Diffusion Model] This paper proposes a conditional diffusion model-based framework for electromagnetic inverse design that directly generates dielectric-sphere metasurface geo…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Conditional Diffusion Model
-  - Metasurface Inverse Design
-  - Electromagnetic Scattering
-  - FiLM Conditioning
-  - Meta-structure Generation
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Conditional Diffusion Model"
+  - "Metasurface Inverse Design"
+  - "Electromagnetic Scattering"
+  - "FiLM Conditioning"
+  - "Meta-structure Generation"
 date: 2026-05-08
 content_hash: 836750ccb7ca2e10
 ---

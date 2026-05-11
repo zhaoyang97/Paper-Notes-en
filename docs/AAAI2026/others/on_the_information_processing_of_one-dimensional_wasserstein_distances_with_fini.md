@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] On the Information Processing of One-Dimensional Wasserstein Distances with Finite Samples
 description: >-
-  [AAAI 2026][Wasserstein Distance] This paper analytically characterizes, via a Poisson process framework, the ability of the one-dimensional Wasserstein distance under finite samples to simultaneously encode pointwise density differences (rate difference) and support differences between probability density functions, and validates its practical utility on neural spike data and amino acid contact frequency data.
+  [AAAI 2026][Wasserstein Distance] This paper analytically characterizes, via a Poisson process framework, the ability of the one-dimensional Wasserstein distance under finite samples to simultaneously encode pointwise de…
 tags:
-  - AAAI 2026
-  - Wasserstein Distance
-  - Finite Samples
-  - Poisson Process
-  - Rate Coding
-  - Support Difference
+  - "AAAI 2026"
+  - "Wasserstein Distance"
+  - "Finite Samples"
+  - "Poisson Process"
+  - "Rate Coding"
+  - "Support Difference"
 date: 2026-05-08
 content_hash: ccb8024a08c74979
 ---

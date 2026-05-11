@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Parameter-Free Algorithms for the Stochastically Extended Adversarial Model
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][online convex optimization] This work presents the first parameter-free algorithms for the Stochastically Extended Adversarial (SEA) model, which bridges adversarial and stochastic online convex optimization. Without prior knowledge of the domain diameter $D$ and/or the Lipschitz constant $G$, the proposed algorithms—built upon Optimistic Online Newton Step (OONS)—achieve regret bounds comparable to those of parameter-aware methods.
+  [NeurIPS 2025][Reinforcement Learning][online convex optimization] This work presents the first parameter-free algorithms for the Stochastically Extended Adversarial (SEA) model…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - online convex optimization
-  - parameter-free algorithms
-  - SEA model
-  - comparator-adaptive
-  - Lipschitz-adaptive
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "online convex optimization"
+  - "parameter-free algorithms"
+  - "SEA model"
+  - "comparator-adaptive"
+  - "Lipschitz-adaptive"
 date: 2026-05-08
 content_hash: 59cfe3beb13b980d
 ---

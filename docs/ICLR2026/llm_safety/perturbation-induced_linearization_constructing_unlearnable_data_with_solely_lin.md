@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Perturbation-Induced Linearization: Constructing Unlearnable Data with Solely Linear Classifiers
 description: >-
-  [ICLR 2026][LLM Safety][Unlearnable Examples] This paper proposes PIL, a method that generates unlearnable perturbations using only a bias-free linear classifier as the surrogate model. By inducing linearization in deep models, PIL prevents them from learning semantic features, achieving over 100× speedup compared to existing methods (under 1 minute of GPU time on CIFAR-10).
+  [ICLR 2026][LLM Safety][Unlearnable Examples] This paper proposes PIL, a method that generates unlearnable perturbations using only a bias-free linear classifier as the surrogate model. By inducing linearization in deep…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Unlearnable Examples
-  - Data Protection
-  - Linearization
-  - Shortcut Learning
-  - Adversarial Perturbation
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Unlearnable Examples"
+  - "Data Protection"
+  - "Linearization"
+  - "Shortcut Learning"
+  - "Adversarial Perturbation"
 date: 2026-05-08
 content_hash: 699ff503e663b859
 ---

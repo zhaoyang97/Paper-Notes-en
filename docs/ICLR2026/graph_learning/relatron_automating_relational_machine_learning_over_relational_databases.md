@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Relatron: Automating Relational Machine Learning over Relational Databases
 description: >-
-  [ICLR 2026][Graph Learning][Relational Databases] This work systematically compares relational deep learning (RDL/GNN) and deep feature synthesis (DFS) on predictive tasks over relational databases, finding that neither dominates uniformly and performance is highly task-dependent. The authors propose Relatron — a task-embedding-based meta-selector that leverages RDB task homophily and affinity embeddings for automatic architecture selection, achieving up to 18.5% improvement in joint architecture–hyperparameter search.
+  [ICLR 2026][Graph Learning][Relational Databases] This work systematically compares relational deep learning (RDL/GNN) and deep feature synthesis (DFS) on predictive tasks over relational databases…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - Relational Databases
-  - Graph Neural Networks
-  - Deep Feature Synthesis
-  - Architecture Selection
-  - Homophily
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Relational Databases"
+  - "Graph Neural Networks"
+  - "Deep Feature Synthesis"
+  - "Architecture Selection"
+  - "Homophily"
 date: 2026-05-08
 content_hash: c68398b470c475d3
 ---

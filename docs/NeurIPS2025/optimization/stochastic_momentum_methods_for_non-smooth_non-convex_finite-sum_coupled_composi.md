@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Stochastic Momentum Methods for Non-smooth Non-Convex Finite-Sum Coupled Compositional Optimization
 description: >-
-  [NeurIPS2025][Optimization][FCCO] For non-smooth non-convex finite-sum coupled compositional optimization (FCCO), this paper proposes two stochastic momentum methods — SONEX (single-loop) and ALEXR2 (double-loop) — that improve the iteration complexity from $O(1/\epsilon^6)$ to $O(1/\epsilon^5)$ via outer Moreau envelope smoothing and nested smoothing techniques, and achieve the same optimal complexity for non-convex inequality-constrained optimization.
+  [NeurIPS2025][Optimization][FCCO] For non-smooth non-convex finite-sum coupled compositional optimization (FCCO), this paper proposes two stochastic momentum methods — SONEX (single-loop) and ALEXR2 (double-loop) — that…
 tags:
-  - NeurIPS2025
-  - Optimization
-  - FCCO
-  - non-smooth non-convex optimization
-  - stochastic momentum methods
-  - Moreau envelope
-  - constrained optimization
-  - compositional optimization
+  - "NeurIPS2025"
+  - "Optimization"
+  - "FCCO"
+  - "non-smooth non-convex optimization"
+  - "stochastic momentum methods"
+  - "Moreau envelope"
+  - "constrained optimization"
+  - "compositional optimization"
 date: 2026-05-08
 content_hash: 0b4a6664b1247afe
 ---

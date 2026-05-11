@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AERO: A Redirection-Based Optimization Framework Inspired by Judo for Robust Probabilistic Forecasting
 description: >-
-  [NeurIPS 2025][Time Series][Gradient redirection] AERO proposes an optimization paradigm inspired by the judo principle of "redirecting force rather than resisting it," attempting to redirect adversarial perturbations into beneficial optimization signals. The framework is theoretically grounded in 15 axioms and 4 theorems, constructing an energy-conservation-based gradient redirection system. However, the actual implementation is substantially simplified to momentum SGD with Gaussian noise injection, and validation is conducted solely on a single private solar energy price prediction dataset without any baseline comparisons.
+  [NeurIPS 2025][Time Series][Gradient redirection] AERO proposes an optimization paradigm inspired by the judo principle of "redirecting force rather than resisting it…
 tags:
-  - NeurIPS 2025
-  - Time Series
-  - Gradient redirection
-  - adversarial optimization
-  - energy conservation
-  - probabilistic forecasting
-  - quantile regression
+  - "NeurIPS 2025"
+  - "Time Series"
+  - "Gradient redirection"
+  - "adversarial optimization"
+  - "energy conservation"
+  - "probabilistic forecasting"
+  - "quantile regression"
 date: 2026-05-08
 content_hash: 2a9fe5eb60aa9931
 ---

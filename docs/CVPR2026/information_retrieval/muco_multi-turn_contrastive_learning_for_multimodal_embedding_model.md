@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] MuCo: Multi-turn Contrastive Learning for Multimodal Embedding Model
 description: >-
-  [CVPR 2026][Multimodal Embedding] MuCo proposes a multi-turn dialogue-based contrastive learning framework that leverages the conversational capabilities of MLLMs to process multiple associated query-target pairs within a single forward pass, substantially improving training efficiency and achieving state-of-the-art performance on the MMEB and M-BEIR retrieval benchmarks.
+  [CVPR 2026][Information Retrieval & RAG][Multimodal Embedding] MuCo proposes a multi-turn dialogue-based contrastive learning framework that leverages the conversational capabilities of MLLMs to process multiple associat…
 tags:
-  - CVPR 2026
-  - Multimodal Embedding
-  - Contrastive Learning
-  - Multi-turn Dialogue
-  - Retrieval
-  - Multimodal Large Language Model
+  - "CVPR 2026"
+  - "Information Retrieval & RAG"
+  - "Multimodal Embedding"
+  - "Contrastive Learning"
+  - "Multi-turn Dialogue"
+  - "Retrieval"
+  - "Multimodal Large Language Model"
 date: 2026-05-08
 content_hash: b4c5ad536357c9f8
 ---

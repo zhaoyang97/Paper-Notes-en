@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Decomate: Leveraging Generative Models for Co-Creative SVG Animation
 description: >-
-  [NeurIPS 2025 (GenProAI Workshop)][Image Generation][SVG animation] This paper proposes Decomate, an interactive system that leverages multimodal large language models (MLLMs) to automatically decompose unstructured SVG graphics into semantic components. Designers specify animation behaviors for each component via natural language, and the system generates production-ready HTML/CSS/JS animation code, supporting iterative co-creative workflows.
+  [NeurIPS 2025 (GenProAI Workshop)][Image Generation][SVG animation] This paper proposes Decomate, an interactive system that leverages multimodal large language models (MLLMs) to automatically decompose unstructured SVG…
 tags:
-  - NeurIPS 2025 (GenProAI Workshop)
-  - Image Generation
-  - SVG animation
-  - semantic decomposition
-  - MLLM
-  - co-creative design
-  - natural language interaction
+  - "NeurIPS 2025 (GenProAI Workshop)"
+  - "Image Generation"
+  - "SVG animation"
+  - "semantic decomposition"
+  - "MLLM"
+  - "co-creative design"
+  - "natural language interaction"
 date: 2026-05-08
 content_hash: 8659ab58f3f8df26
 ---

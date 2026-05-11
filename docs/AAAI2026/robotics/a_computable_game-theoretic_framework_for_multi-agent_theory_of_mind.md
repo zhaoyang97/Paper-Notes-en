@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] A Computable Game-Theoretic Framework for Multi-Agent Theory of Mind
 description: >-
-  [AAAI 2026][Robotics][Theory of Mind] This paper proposes a game-theoretic framework based on Poisson cognitive hierarchy, achieving computable multi-agent Theory of Mind via Gamma-Poisson conjugate Bayesian updates. The framework supports recursive bounded-rationality decision-making and online belief revision while avoiding the undecidability of POMDPs.
+  [AAAI 2026][Robotics][Theory of Mind] This paper proposes a game-theoretic framework based on Poisson cognitive hierarchy, achieving computable multi-agent Theory of Mind via Gamma-Poisson conjugate Bayesian updates. The…
 tags:
-  - AAAI 2026
-  - Robotics
-  - Theory of Mind
-  - Cognitive Hierarchy
-  - Game Theory
-  - Bayesian Inference
-  - Gamma-Poisson Conjugate
-  - Stochastic Games
+  - "AAAI 2026"
+  - "Robotics"
+  - "Theory of Mind"
+  - "Cognitive Hierarchy"
+  - "Game Theory"
+  - "Bayesian Inference"
+  - "Gamma-Poisson Conjugate"
+  - "Stochastic Games"
 date: 2026-05-08
 content_hash: cf14672c8c4cc9c3
 ---

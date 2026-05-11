@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] G2D: Boosting Multimodal Learning with Gradient-Guided Distillation
 description: >-
-  [ICCV 2025][Multimodal VLM][modality imbalance] This paper proposes G2D (Gradient-Guided Distillation), which addresses the modality imbalance problem in multimodal learning by combining feature distillation and logit distillation from unimodal teachers to a multimodal student, together with a Sequential Modality Prioritization (SMP) gradient modulation strategy guided by unimodal teacher confidence scores. G2D achieves 85.89% accuracy on CREMA-D, surpassing all state-of-the-art methods focused on modality imbalance.
+  [ICCV 2025][Multimodal VLM][modality imbalance] This paper proposes G2D (Gradient-Guided Distillation), which addresses the modality imbalance problem in multimodal learning by combining feature distillation and logit di…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - modality imbalance
-  - knowledge distillation
-  - gradient modulation
-  - sequential modality prioritization
-  - multimodal fusion
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "modality imbalance"
+  - "knowledge distillation"
+  - "gradient modulation"
+  - "sequential modality prioritization"
+  - "multimodal fusion"
 date: 2026-05-08
 content_hash: e50de6fa5a961f52
 ---

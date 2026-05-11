@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Doctor Approved: Generating Medically Accurate Skin Disease Images through AI-Expert Feedback
 description: >-
-  [NeurIPS 2025][Medical Imaging][Medical image generation] This paper proposes MAGIC, a framework that encodes dermatologist-defined clinical checklists into structured evaluation prompts executable by MLLMs (e.g., GPT-4o), and uses the resulting feedback to fine-tune diffusion models via DPO or reward-based fine-tuning (RFT), generating clinically accurate skin disease images for data augmentation. MAGIC achieves +9.02% improvement on a 20-class skin disease classification task and +13.89% in few-shot settings.
+  [NeurIPS 2025][Medical Imaging][Medical image generation] This paper proposes MAGIC, a framework that encodes dermatologist-defined clinical checklists into structured evaluation prompts executable by MLLMs (e.g.…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Medical image generation
-  - diffusion models
-  - DPO
-  - AI feedback
-  - skin disease diagnosis
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Medical image generation"
+  - "diffusion models"
+  - "DPO"
+  - "AI feedback"
+  - "skin disease diagnosis"
 date: 2026-05-08
 content_hash: 669c2106612917d6
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Blind Strong Gravitational Lensing Inversion: Joint Inference of Source and Lens Mass with Score-Based Models
 description: >-
-  [NeurIPS 2025][Image Generation][Strong gravitational lensing] This work presents the first application of score-based generative model priors to blind strong gravitational lensing inversion — jointly inferring the morphology of background source galaxies and lens mass distribution parameters. By extending GibbsDDRM to the continuous-time domain, the method achieves reconstruction residuals consistent with observational noise and unbiased marginal posteriors over lens parameters.
+  [NeurIPS 2025][Image Generation][Strong gravitational lensing] This work presents the first application of score-based generative model priors to blind strong gravitational lensing inversion — jointly inferring the morph…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Strong gravitational lensing
-  - blind inversion
-  - score-based models
-  - joint inference
-  - dark matter
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Strong gravitational lensing"
+  - "blind inversion"
+  - "score-based models"
+  - "joint inference"
+  - "dark matter"
 date: 2026-05-08
 content_hash: 567d713e1c1751ba
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Streaming Generation of Co-Speech Gestures via Accelerated Rolling Diffusion
 description: >-
-  [AAAI2026][Human Understanding][co-speech gestures] This paper proposes a streaming co-speech gesture generation framework based on Rolling Diffusion, which converts arbitrary diffusion models into streaming gesture generators via a structured progressive noise schedule. It further introduces Rolling Diffusion Ladder Acceleration (RDLA) to achieve up to 4× speedup (200 FPS), comprehensively outperforming baselines on the ZEGGS and BEAT benchmarks.
+  [AAAI2026][Human Understanding][co-speech gestures] This paper proposes a streaming co-speech gesture generation framework based on Rolling Diffusion…
 tags:
-  - AAAI2026
-  - Human Understanding
-  - co-speech gestures
-  - rolling diffusion
-  - streaming generation
-  - real-time
-  - noise scheduling
-  - motion synthesis
+  - "AAAI2026"
+  - "Human Understanding"
+  - "co-speech gestures"
+  - "rolling diffusion"
+  - "streaming generation"
+  - "real-time"
+  - "noise scheduling"
+  - "motion synthesis"
 date: 2026-05-08
 content_hash: df56be8dc1d4e665
 ---

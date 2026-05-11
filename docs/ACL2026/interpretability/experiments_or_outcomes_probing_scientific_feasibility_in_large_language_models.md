@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Experiments or Outcomes? Probing Scientific Feasibility in Large Language Models
 description: >-
-  [ACL 2026][scientific feasibility assessment] This work constructs a controlled knowledge framework to systematically study how LLMs leverage experimental descriptions and outcome evidence in scientific feasibility assessment. Results show that providing outcome evidence is more reliable than experimental descriptions, that partial experimental information frequently degrades performance below a parametric-knowledge-only baseline, and that LLM reasoning exhibits notable fragility under incomplete evidence.
+  [ACL 2026][Interpretability][scientific feasibility assessment] This work constructs a controlled knowledge framework to systematically study how LLMs leverage experimental descriptions and outcome evidence in scientific…
 tags:
-  - ACL 2026
-  - scientific feasibility assessment
-  - controlled knowledge framework
-  - evidence robustness
-  - experiments vs. outcomes
-  - LLM reasoning
+  - "ACL 2026"
+  - "Interpretability"
+  - "scientific feasibility assessment"
+  - "controlled knowledge framework"
+  - "evidence robustness"
+  - "experiments vs. outcomes"
+  - "LLM reasoning"
 date: 2026-05-08
 content_hash: 6d6b7912bc37ab18
 ---

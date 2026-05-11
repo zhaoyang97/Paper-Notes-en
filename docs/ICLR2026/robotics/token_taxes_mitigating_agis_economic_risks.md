@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Token Taxes: Mitigating AGI's Economic Risks
 description: >-
-  [ICLR 2026][Robotics][AGI governance] This paper proposes the Token Tax — a surcharge levied on model inference token usage — as a first-line governance instrument for mitigating economic risks in the post-AGI era. It leverages cloud computing providers as intermediaries through a three-stage audit pipeline (black-box token verification → norm-based tax rates → white-box audit). Compared to conventional robot taxes, it offers two distinctive advantages: enforceability through existing compute governance infrastructure, and collection at the point of AI token consumption rather than model hosting location, thereby alleviating global inequality.
+  [ICLR 2026][Robotics][AGI governance] This paper proposes the Token Tax — a surcharge levied on model inference token usage — as a first-line governance instrument for mitigating economic risks in the post-AGI era. It le…
 tags:
-  - ICLR 2026
-  - Robotics
-  - AGI governance
-  - token tax
-  - robot tax
-  - compute governance
-  - economic risks
-  - AI safety
+  - "ICLR 2026"
+  - "Robotics"
+  - "AGI governance"
+  - "token tax"
+  - "robot tax"
+  - "compute governance"
+  - "economic risks"
+  - "AI safety"
 date: 2026-05-08
 content_hash: 9f92c430ba86b9f1
 ---

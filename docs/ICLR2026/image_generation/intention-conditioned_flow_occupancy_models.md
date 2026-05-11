@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Intention-Conditioned Flow Occupancy Models
 description: >-
-  [Image Generation] This paper proposes InFOM, which leverages flow matching to construct an intention-conditioned occupancy model. By applying variational inference to infer latent intentions from unannotated data, InFOM enables RL pre-training without labeled datasets, achieving a 1.8× improvement in median return and a 36% gain in success rate across 36 state-based tasks and 4 visual tasks.
+  [Image Generation] This paper proposes InFOM, which leverages flow matching to construct an intention-conditioned occupancy model. By applying variational inference to infer latent intentions from unannotated data…
 tags:
-  - Image Generation
+  - "Image Generation"
 date: 2026-05-08
 content_hash: 1e98cbf1bfbd1d18
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Fine-Grained Evaluation of Large Vision-Language Models in Autonomous Driving
 description: >-
-  [ICCV 2025][Multimodal VLM][vision-language model evaluation] This paper proposes VLADBench, a fine-grained vision-language model evaluation benchmark for autonomous driving scenarios, covering 5 major domains, 11 second-level dimensions, and 29 third-level tasks. Using a closed-ended QA format, it progressively assesses VLM capabilities from static knowledge to dynamic reasoning, and trains small-scale domain-specific (DS) models on 1.4M domain-specific QA data to validate cognitive interactions across domains.
+  [ICCV 2025][Multimodal VLM][vision-language model evaluation] This paper proposes VLADBench, a fine-grained vision-language model evaluation benchmark for autonomous driving scenarios, covering 5 major domains…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - vision-language model evaluation
-  - autonomous driving benchmark
-  - fine-grained assessment
-  - visual question answering
-  - driving scene understanding
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "vision-language model evaluation"
+  - "autonomous driving benchmark"
+  - "fine-grained assessment"
+  - "visual question answering"
+  - "driving scene understanding"
 date: 2026-05-08
 content_hash: c76152942e58615b
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AJ-Bench: Benchmarking Agent-as-a-Judge for Environment-Aware Evaluation
 description: >-
-  [ACL 2026][Reinforcement Learning][Agent Evaluation] This paper introduces AJ-Bench, the first benchmark systematically evaluating Agent-as-a-Judge capabilities, covering 155 tasks and 516 annotated trajectories across three domains—search, data systems, and GUI. Experiments demonstrate that Agent-as-a-Judge improves average F1 by approximately 13 percentage points over LLM-as-a-Judge.
+  [ACL 2026][Reinforcement Learning][Agent Evaluation] This paper introduces AJ-Bench, the first benchmark systematically evaluating Agent-as-a-Judge capabilities…
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - Agent Evaluation
-  - Agent-as-a-Judge
-  - Environment Interaction Verification
-  - Trajectory Evaluation
-  - Benchmarking
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "Agent Evaluation"
+  - "Agent-as-a-Judge"
+  - "Environment Interaction Verification"
+  - "Trajectory Evaluation"
+  - "Benchmarking"
 date: 2026-05-08
 content_hash: e22cf71fc5d33272
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CapeLLM: Support-Free Category-Agnostic Pose Estimation with Multimodal Large Language Models
 description: >-
-  [ICCV 2025][Multimodal VLM][Category-agnostic pose estimation] This work is the first to introduce multimodal large language models (MLLMs) into category-agnostic pose estimation (CAPE), enabling keypoint localization for arbitrary categories using only a query image and textual descriptions—without requiring traditional support images or annotations—surpassing the 5-shot state-of-the-art on the MP-100 benchmark.
+  [ICCV 2025][Multimodal VLM][Category-agnostic pose estimation] This work is the first to introduce multimodal large language models (MLLMs) into category-agnostic pose estimation (CAPE)…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Category-agnostic pose estimation
-  - MLLM
-  - support-free
-  - keypoint detection
-  - distribution modeling
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Category-agnostic pose estimation"
+  - "MLLM"
+  - "support-free"
+  - "keypoint detection"
+  - "distribution modeling"
 date: 2026-05-08
 content_hash: e32c3a658bf73de7
 ---

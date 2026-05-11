@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Interaction-Centric Knowledge Infusion and Transfer for Open-Vocabulary Scene Graph Generation
 description: >-
-  [NeurIPS 2025][Graph Learning][Open-vocabulary scene graph generation] This paper proposes ACC, an interaction-centric framework that addresses the critical matching problem in open-vocabulary scene graph generation (OVSGG) by shifting from the conventional object-centric paradigm to an interaction-driven one. During the knowledge infusion stage, bidirectional interaction prompts are used to generate more accurate pseudo supervision; during the knowledge transfer stage, interaction-guided query selection and interaction-consistency knowledge distillation reduce mismatches. ACC achieves state-of-the-art performance on three benchmarks: VG, GQA, and PSG.
+  [NeurIPS 2025][Graph Learning][Open-vocabulary scene graph generation] This paper proposes ACC, an interaction-centric framework that addresses the critical matching problem in open-vocabulary scene graph generation (OVS…
 tags:
-  - NeurIPS 2025
-  - Graph Learning
-  - Open-vocabulary scene graph generation
-  - interaction modeling
-  - knowledge distillation
-  - vision-language models
-  - pseudo supervision
+  - "NeurIPS 2025"
+  - "Graph Learning"
+  - "Open-vocabulary scene graph generation"
+  - "interaction modeling"
+  - "knowledge distillation"
+  - "vision-language models"
+  - "pseudo supervision"
 date: 2026-05-08
 content_hash: 89b06a7ef12ccecb
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Analytical FFN-to-MoE Restructuring via Activation Pattern Analysis
 description: >-
-  [ACL 2026][Model Compression][FFN-to-MoE] This paper proposes an analytical post-training framework that rapidly restructures dense FFN layers into sparse MoE by analyzing neuron activation patterns — distinguishing high-frequency shared experts from low-frequency routed experts and constructing routers directly from activation statistics — achieving 1.17× speedup with only 2k-sample fine-tuning.
+  [ACL 2026][Model Compression][FFN-to-MoE] This paper proposes an analytical post-training framework that rapidly restructures dense FFN layers into sparse MoE by analyzing neuron activation patterns — distinguishing high…
 tags:
-  - ACL 2026
-  - Model Compression
-  - FFN-to-MoE
-  - activation pattern analysis
-  - shared experts
-  - analytical routing
-  - post-training compression
+  - "ACL 2026"
+  - "Model Compression"
+  - "FFN-to-MoE"
+  - "activation pattern analysis"
+  - "shared experts"
+  - "analytical routing"
+  - "post-training compression"
 date: 2026-05-08
 content_hash: d9e1b4794c2e635e
 ---

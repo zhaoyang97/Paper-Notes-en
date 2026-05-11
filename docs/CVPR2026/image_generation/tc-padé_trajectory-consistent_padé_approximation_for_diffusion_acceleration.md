@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TC-Padé: Trajectory-Consistent Padé Approximation for Diffusion Acceleration
 description: >-
-  [CVPR 2026][Image Generation][diffusion model acceleration] This paper proposes TC-Padé, a feature residual prediction framework based on Padé rational function approximation. Through adaptive coefficient modulation and a stage-aware strategy, TC-Padé achieves trajectory-consistent acceleration in low-step (20–30 steps) diffusion sampling scenarios (2.88× on FLUX.1-dev, 1.72× on Wan2.1), significantly outperforming existing Taylor-expansion-based methods.
+  [CVPR 2026][Image Generation][diffusion model acceleration] This paper proposes TC-Padé, a feature residual prediction framework based on Padé rational function approximation. Through adaptive coefficient modulation and…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - diffusion model acceleration
-  - feature caching
-  - Padé approximation
-  - trajectory consistency
-  - residual prediction
+  - "CVPR 2026"
+  - "Image Generation"
+  - "diffusion model acceleration"
+  - "feature caching"
+  - "Padé approximation"
+  - "trajectory consistency"
+  - "residual prediction"
 date: 2026-05-08
 content_hash: 08f1f45eed79be81
 ---

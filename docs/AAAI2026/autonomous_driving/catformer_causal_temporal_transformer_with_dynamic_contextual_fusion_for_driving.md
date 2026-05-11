@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CaTFormer: Causal Temporal Transformer with Dynamic Contextual Fusion for Driving Intention Prediction
 description: >-
-  [AAAI2026][Autonomous Driving][driving intention prediction] CaTFormer is proposed to explicitly model causal interactions between driver behavior and environmental context via a causal temporal Transformer, achieving state-of-the-art performance of 98.6% F1 on the Brain4Cars dataset.
+  [AAAI2026][Autonomous Driving][driving intention prediction] CaTFormer is proposed to explicitly model causal interactions between driver behavior and environmental context via a causal temporal Transformer…
 tags:
-  - AAAI2026
-  - Autonomous Driving
-  - driving intention prediction
-  - causal inference
-  - Transformer
-  - dual-stream fusion
-  - counterfactual reasoning
+  - "AAAI2026"
+  - "Autonomous Driving"
+  - "driving intention prediction"
+  - "causal inference"
+  - "Transformer"
+  - "dual-stream fusion"
+  - "counterfactual reasoning"
 date: 2026-05-08
 content_hash: e31dee3584745b16
 ---

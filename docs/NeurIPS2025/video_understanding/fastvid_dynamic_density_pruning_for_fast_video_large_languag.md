@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] FastVID: Dynamic Density Pruning for Fast Video Large Language Models
 description: >-
-  [Video Understanding] This paper proposes FastVID, which systematically eliminates video token redundancy along both temporal and visual dimensions via Dynamic Temporal Segmentation (DySeg) and Density Spatiotemporal Pruning (STPrune). On LLaVA-OneVision-7B, FastVID retains 98% accuracy after pruning 90.3% of video tokens, achieving a 7.1× speedup in the LLM prefill stage.
+  [Video Understanding] This paper proposes FastVID, which systematically eliminates video token redundancy along both temporal and visual dimensions via Dynamic Temporal Segmentation (DySeg) and Density Spatiotemporal Pru…
 tags:
-  - Video Understanding
+  - "Video Understanding"
 date: 2026-05-08
 content_hash: 888ab721f2d0b7c6
 ---

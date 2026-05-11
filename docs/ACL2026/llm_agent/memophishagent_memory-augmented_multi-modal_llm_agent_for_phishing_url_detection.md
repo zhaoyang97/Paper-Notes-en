@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] MemoPhishAgent: Memory-Augmented Multi-Modal LLM Agent for Phishing URL Detection
 description: >-
-  [ACL 2026][LLM Agent][phishing detection] This paper proposes MemoPhishAgent (MPA), the first memory-augmented multimodal LLM agent specifically designed for phishing URL detection. MPA dynamically orchestrates five dedicated tools and leverages an episodic memory system to reuse historical reasoning trajectories. It achieves a 13.6% recall improvement on public benchmarks and a 20% improvement on real-world social media data, and has been deployed in production, processing approximately 60K high-risk URLs per week.
+  [ACL 2026][LLM Agent][phishing detection] This paper proposes MemoPhishAgent (MPA), the first memory-augmented multimodal LLM agent specifically designed for phishing URL detection. MPA dynamically orchestrates five dedi…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - phishing detection
-  - episodic memory
-  - multimodal reasoning
-  - tool invocation
+  - "ACL 2026"
+  - "LLM Agent"
+  - "phishing detection"
+  - "episodic memory"
+  - "multimodal reasoning"
+  - "tool invocation"
 date: 2026-05-08
 content_hash: e42668bb6a54cc0a
 ---

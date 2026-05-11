@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Protein Structure Tokenization via Geometric Byte Pair Encoding
 description: >-
-  [ICLR 2026][Medical Imaging][GeoBPE] This paper proposes GeoBPE — the first tokenizer to extend Byte Pair Encoding (BPE) from discrete text to continuous protein backbone geometry. By alternating between local merging (k-medoids clustering + quantization) and global correction (differentiable inverse kinematics), GeoBPE constructs a hierarchical structural motif vocabulary that achieves >10× compression ratio and >10× data efficiency over VQ-VAE-based protein structure tokenizers (PSTs), ranking first across 24 test sets spanning 12 downstream tasks.
+  [ICLR 2026][Medical Imaging][GeoBPE] This paper proposes GeoBPE — the first tokenizer to extend Byte Pair Encoding (BPE) from discrete text to continuous protein backbone geometry. By alternating between local merging (k…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - GeoBPE
-  - Protein Structure Tokenizer
-  - Hierarchical Vocabulary
-  - Differentiable IK
-  - Multi-resolution
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "GeoBPE"
+  - "Protein Structure Tokenizer"
+  - "Hierarchical Vocabulary"
+  - "Differentiable IK"
+  - "Multi-resolution"
 date: 2026-05-08
 content_hash: dc81f9cde781bb5c
 ---

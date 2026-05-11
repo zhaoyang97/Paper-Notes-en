@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Enabling Agents to Communicate Entirely in Latent Space
 description: >-
-  [ACL 2026][Model Compression][latent space communication] This paper proposes Interlat, a framework enabling LLM agents to communicate entirely in latent space. The sender directly transmits the final-layer hidden states as a continuous representation of its "thoughts"; the receiver interprets these latent messages via a communication adapter and further compresses them to as few as 8 tokens through latent-space reasoning, achieving up to 24× communication speedup while maintaining competitive performance.
+  [ACL 2026][Model Compression][latent space communication] This paper proposes Interlat, a framework enabling LLM agents to communicate entirely in latent space. The sender directly transmits the final-layer hidden states…
 tags:
-  - ACL 2026
-  - Model Compression
-  - latent space communication
-  - multi-agent
-  - hidden state transfer
-  - information compression
-  - inference acceleration
+  - "ACL 2026"
+  - "Model Compression"
+  - "latent space communication"
+  - "multi-agent"
+  - "hidden state transfer"
+  - "information compression"
+  - "inference acceleration"
 date: 2026-05-08
 content_hash: ab8fd0c118a00ae3
 ---

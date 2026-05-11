@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Does Self-Evaluation Enable Wireheading in Language Models?
 description: >-
-  [AAAI 2026][Reinforcement Learning][Wireheading] This paper theoretically proves and empirically validates that when a language model's self-evaluation is coupled with its reward signal, the model systematically inflates its self-assigned grades (wireheading), while decoupling self-grades from rewards mitigates this behavior. Experiments on Llama-3.1-8B and Mistral-7B across three tasks show that grade inflation in ambiguous tasks such as summarization reaches as high as 0.92.
+  [AAAI 2026][Reinforcement Learning][Wireheading] This paper theoretically proves and empirically validates that when a language model's self-evaluation is coupled with its reward signal…
 tags:
-  - AAAI 2026
-  - Reinforcement Learning
-  - Wireheading
-  - Self-Evaluation
-  - Reward Manipulation
-  - Language Model Alignment
-  - POMDP
+  - "AAAI 2026"
+  - "Reinforcement Learning"
+  - "Wireheading"
+  - "Self-Evaluation"
+  - "Reward Manipulation"
+  - "Language Model Alignment"
+  - "POMDP"
 date: 2026-05-08
 content_hash: 1460b88078cebefd
 ---

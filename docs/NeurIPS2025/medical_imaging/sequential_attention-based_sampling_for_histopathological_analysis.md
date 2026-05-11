@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Sequential Attention-based Sampling for Histopathological Analysis
 description: >-
-  [NeurIPS 2025][Medical Imaging][Whole slide image analysis] This paper proposes SASHA, a framework integrating a Hierarchical Attention-based Feature Distillation (HAFED) module with deep reinforcement learning (RL). By sampling only 10–20% of high-resolution patches, SASHA achieves classification performance on par with full-resolution SOTA methods, while yielding a 4–8× inference speedup and a WSI compression ratio exceeding 16×.
+  [NeurIPS 2025][Medical Imaging][Whole slide image analysis] This paper proposes SASHA, a framework integrating a Hierarchical Attention-based Feature Distillation (HAFED) module with deep reinforcement learning (RL). By…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Whole slide image analysis
-  - deep reinforcement learning
-  - multiple instance learning
-  - attention-based sampling
-  - pathological diagnosis
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Whole slide image analysis"
+  - "deep reinforcement learning"
+  - "multiple instance learning"
+  - "attention-based sampling"
+  - "pathological diagnosis"
 date: 2026-05-08
 content_hash: 5215aeba051fcdbc
 ---

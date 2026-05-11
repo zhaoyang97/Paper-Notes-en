@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FedPM: Federated Learning Using Second-order Optimization with Preconditioned Mixing of Local Parameters
 description: >-
-  [AAAI 2026][Optimization][Federated Learning] This paper proposes FedPM (Federated Preconditioned Mixing), a novel federated learning method that replaces the conventional simple parameter averaging on the server side with "preconditioned mixing," addressing the local preconditioner drift problem inherent in existing second-order federated optimization methods. FedPM is theoretically shown to achieve superlinear convergence for strongly convex objectives and empirically outperforms existing methods under heterogeneous data settings.
+  [AAAI 2026][Optimization][Federated Learning] This paper proposes FedPM (Federated Preconditioned Mixing), a novel federated learning method that replaces the conventional simple parameter averaging on the server side wi…
 tags:
-  - AAAI 2026
-  - Optimization
-  - Federated Learning
-  - Second-order Optimization
-  - Preconditioned Mixing
-  - Data Heterogeneity
-  - Convergence Analysis
+  - "AAAI 2026"
+  - "Optimization"
+  - "Federated Learning"
+  - "Second-order Optimization"
+  - "Preconditioned Mixing"
+  - "Data Heterogeneity"
+  - "Convergence Analysis"
 date: 2026-05-08
 content_hash: f82e616deeb9a883
 ---

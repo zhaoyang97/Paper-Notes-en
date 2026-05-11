@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Targeted Data Protection for Diffusion Model by Matching Training Trajectory
 description: >-
-  [AAAI 2026][Image Generation][Diffusion model data protection] TAFAP achieves, for the first time, effective Targeted Data Protection (TDP) for diffusion models by generating adversarial perturbations via training trajectory matching, redirecting unauthorized fine-tuning outputs toward a user-specified target concept while maintaining high image quality.
+  [AAAI 2026][Image Generation][Diffusion model data protection] TAFAP achieves, for the first time, effective Targeted Data Protection (TDP) for diffusion models by generating adversarial perturbations via training trajec…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Diffusion model data protection
-  - training trajectory matching
-  - adversarial perturbation
-  - dataset distillation
-  - targeted protection
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Diffusion model data protection"
+  - "training trajectory matching"
+  - "adversarial perturbation"
+  - "dataset distillation"
+  - "targeted protection"
 date: 2026-05-08
 content_hash: 9c1ad872448863b7
 ---

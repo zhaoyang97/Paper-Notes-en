@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MEMFOF: High-Resolution Training for Memory-Efficient Multi-Frame Optical Flow Estimation
 description: >-
-  [ICCV 2025][Video Understanding][Optical Flow Estimation] MEMFOF is the first memory-efficient multi-frame optical flow method. By reducing the correlation volume resolution and introducing a high-resolution training strategy, it achieves state-of-the-art accuracy on Spring, Sintel, and KITTI benchmarks while requiring only 2.09 GB of GPU memory for 1080p inference.
+  [ICCV 2025][Video Understanding][Optical Flow Estimation] MEMFOF is the first memory-efficient multi-frame optical flow method. By reducing the correlation volume resolution and introducing a high-resolution training str…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - Optical Flow Estimation
-  - Memory Efficiency
-  - Multi-Frame Estimation
-  - High-Resolution Training
-  - RAFT
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "Optical Flow Estimation"
+  - "Memory Efficiency"
+  - "Multi-Frame Estimation"
+  - "High-Resolution Training"
+  - "RAFT"
 date: 2026-05-08
 content_hash: 43df191e424b744e
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PixFoundation 2.0: Do Video Multi-Modal LLMs Use Motion in Visual Grounding?
 description: >-
-  [NeurIPS 2025][Video Understanding][Motion-centric evaluation] By introducing four motion-centric probing techniques and the MoCentric-Bench benchmark, this paper demonstrates that current video multimodal LLMs fail to genuinely exploit motion information in pixel-level visual grounding tasks and can be deceived by static keyframes.
+  [NeurIPS 2025][Video Understanding][Motion-centric evaluation] By introducing four motion-centric probing techniques and the MoCentric-Bench benchmark…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
-  - Motion-centric evaluation
-  - visual grounding
-  - video MLLM
-  - referring segmentation
-  - motion understanding
+  - "NeurIPS 2025"
+  - "Video Understanding"
+  - "Motion-centric evaluation"
+  - "visual grounding"
+  - "video MLLM"
+  - "referring segmentation"
+  - "motion understanding"
 date: 2026-05-08
 content_hash: c5866b49e0411cf0
 ---

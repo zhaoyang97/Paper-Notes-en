@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Discretized Gaussian Representation for Tomographic Reconstruction
 description: >-
-  [3D Vision] This paper proposes Discretized Gaussian Representation (DGR) for CT reconstruction, which directly reconstructs 3D voxels end-to-end via discretized Gaussian functions and introduces a highly parallelized fast volume reconstruction technique. DGR surpasses both deep learning-based and instance-based reconstruction methods in sparse-view and limited-angle CT settings without any training data.
+  [3D Vision] This paper proposes Discretized Gaussian Representation (DGR) for CT reconstruction, which directly reconstructs 3D voxels end-to-end via discretized Gaussian functions and introduces a highly parallelized fa…
 tags:
-  - 3D Vision
+  - "3D Vision"
 date: 2026-05-08
 content_hash: 5370ce5937f210c7
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Memory-Efficient Fine-Tuning Diffusion Transformers via Dynamic Patch Sampling and Block Skipping
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Transformer] This paper proposes DiT-BlockSkip, a framework that reduces LoRA fine-tuning memory on FLUX by approximately 50% while maintaining comparable personalized generation quality. It achieves this through two components: timestep-aware dynamic patch sampling (low-resolution training with dynamically adjusted crop sizes) and a block skipping strategy that identifies critical blocks via cross-attention analysis and precomputes residual features for skipped blocks.
+  [CVPR 2026][Image Generation][Diffusion Transformer] This paper proposes DiT-BlockSkip, a framework that reduces LoRA fine-tuning memory on FLUX by approximately 50% while maintaining comparable personalized generation q…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Transformer
-  - Efficient Fine-Tuning
-  - Dynamic Patch Sampling
-  - Block Skipping
-  - Personalized Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Transformer"
+  - "Efficient Fine-Tuning"
+  - "Dynamic Patch Sampling"
+  - "Block Skipping"
+  - "Personalized Generation"
 date: 2026-05-08
 content_hash: 81c84fb9d0aa20d5
 ---

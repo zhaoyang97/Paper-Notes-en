@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mining Instance-Centric Vision-Language Contexts for Human-Object Interaction Detection
 description: >-
-  [CVPR 2026][Object Detection][Human-object interaction detection] This paper proposes InCoM-Net, which extracts intra-instance, inter-instance, and global context features separately for each instance from VLM features, and achieves state-of-the-art HOI detection on HICO-DET and V-COCO (HICO-DET Full mAP 43.96, V-COCO AP_role^S1 73.6) via progressive context aggregation and fusion with detector features.
+  [CVPR 2026][Object Detection][Human-object interaction detection] This paper proposes InCoM-Net, which extracts intra-instance, inter-instance, and global context features separately for each instance from VLM features…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - Human-object interaction detection
-  - vision-language model
-  - instance-centric context
-  - multi-context features
-  - attention mechanism
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Human-object interaction detection"
+  - "vision-language model"
+  - "instance-centric context"
+  - "multi-context features"
+  - "attention mechanism"
 date: 2026-05-08
 content_hash: 9164050a4b52f3cf
 ---

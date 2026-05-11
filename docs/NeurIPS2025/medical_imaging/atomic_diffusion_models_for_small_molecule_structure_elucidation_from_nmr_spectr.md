@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Atomic Diffusion Models for Small Molecule Structure Elucidation from NMR Spectra
 description: >-
-  [NeurIPS 2025][Medical Imaging][NMR spectroscopy] This paper proposes ChefNMR, the first end-to-end framework based on 3D atomic diffusion models that directly predicts the molecular structure of unknown small molecules (especially complex natural products) from 1D NMR spectra and molecular formulae alone, achieving state-of-the-art performance on both synthetic and experimental datasets.
+  [NeurIPS 2025][Medical Imaging][NMR spectroscopy] This paper proposes ChefNMR, the first end-to-end framework based on 3D atomic diffusion models that directly predicts the molecular structure of unknown small molecules…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - NMR spectroscopy
-  - molecular structure elucidation
-  - diffusion models
-  - natural products
-  - 3D molecule generation
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "NMR spectroscopy"
+  - "molecular structure elucidation"
+  - "diffusion models"
+  - "natural products"
+  - "3D molecule generation"
 date: 2026-05-08
 content_hash: d62d85e301266d84
 ---

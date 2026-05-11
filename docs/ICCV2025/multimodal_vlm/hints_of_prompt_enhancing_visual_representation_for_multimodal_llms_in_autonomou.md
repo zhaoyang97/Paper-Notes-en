@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Hints of Prompt: Enhancing Visual Representation for Multimodal LLMs in Autonomous Driving
 description: >-
-  [Multimodal VLM] This paper proposes the Hints of Prompt (HoP) framework, which enhances CLIP visual representations through three hierarchical hints (Affinity/Semantic/Question hint) to capture instance-level structure, domain-specific semantics, and question relevance. HoP surpasses the fully trained baseline on autonomous driving VQA tasks using only 25% of the training data.
+  [Multimodal VLM] This paper proposes the Hints of Prompt (HoP) framework, which enhances CLIP visual representations through three hierarchical hints (Affinity/Semantic/Question hint) to capture instance-level structure…
 tags:
-  - Multimodal VLM
+  - "Multimodal VLM"
 date: 2026-05-08
 content_hash: d4c918e532ed9556
 ---

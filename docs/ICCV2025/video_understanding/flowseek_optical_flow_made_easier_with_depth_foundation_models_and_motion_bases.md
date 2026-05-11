@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FlowSeek: Optical Flow Made Easier with Depth Foundation Models and Motion Bases
 description: >-
-  [ICCV 2025][Video Understanding][optical flow estimation] FlowSeek integrates the prior knowledge of a depth foundation model (Depth Anything V2) and classical low-dimensional motion parameterization (motion bases) into an optical flow network, achieving state-of-the-art cross-dataset generalization while training on a single consumer-grade GPU.
+  [ICCV 2025][Video Understanding][optical flow estimation] FlowSeek integrates the prior knowledge of a depth foundation model (Depth Anything V2) and classical low-dimensional motion parameterization (motion bases) into…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - optical flow estimation
-  - depth foundation model
-  - motion bases
-  - low-resource training
-  - cross-dataset generalization
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "optical flow estimation"
+  - "depth foundation model"
+  - "motion bases"
+  - "low-resource training"
+  - "cross-dataset generalization"
 date: 2026-05-08
 content_hash: 21b24562f91e5d32
 ---

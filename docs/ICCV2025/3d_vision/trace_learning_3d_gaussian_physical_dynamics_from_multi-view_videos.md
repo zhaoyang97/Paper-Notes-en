@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TRACE: Learning 3D Gaussian Physical Dynamics from Multi-view Videos
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] TRACE is a framework that treats each 3D Gaussian kernel as a rigid particle and learns an independent translational-rotational dynamical system for it—comprising a complete set of physical parameters including velocity, acceleration, angular velocity, and angular acceleration. Without any manual annotation, TRACE learns the physical motion laws of 3D scenes from multi-view dynamic videos and accurately extrapolates future frames.
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] TRACE is a framework that treats each 3D Gaussian kernel as a rigid particle and learns an independent translational-rotational dynamical system for it—comprising a complete…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - physical dynamics learning
-  - future frame extrapolation
-  - translational-rotational dynamical systems
-  - dynamic scene reconstruction
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "physical dynamics learning"
+  - "future frame extrapolation"
+  - "translational-rotational dynamical systems"
+  - "dynamic scene reconstruction"
 date: 2026-05-08
 content_hash: dcfb4d7265566c04
 ---

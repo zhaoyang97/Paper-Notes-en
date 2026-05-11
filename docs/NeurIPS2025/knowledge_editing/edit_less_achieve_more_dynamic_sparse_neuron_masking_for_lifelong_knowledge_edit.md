@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Edit Less, Achieve More: Dynamic Sparse Neuron Masking for Lifelong Knowledge Editing in LLMs
 description: >-
-  [NEURIPS2025][Knowledge Editing] This paper proposes NMKE, a framework that identifies two categories of knowledge neurons—knowledge-general and knowledge-specific—via neuron-level attribution, and applies entropy-guided dynamic sparse masking to achieve precise neuron-level knowledge editing. NMKE maintains high edit success rates and general model capabilities after 5,000 consecutive edits.
+  [NEURIPS2025][Knowledge Editing][lifelong learning] This paper proposes NMKE, a framework that identifies two categories of knowledge neurons—knowledge-general and knowledge-specific—via neuron-level attribution…
 tags:
-  - NEURIPS2025
-  - Knowledge Editing
-  - lifelong learning
-  - sparse masking
-  - neuron attribution
-  - LLM
+  - "NEURIPS2025"
+  - "Knowledge Editing"
+  - "lifelong learning"
+  - "sparse masking"
+  - "neuron attribution"
+  - "LLM"
 date: 2026-05-08
 content_hash: b8cde85bed3535ab
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FedDifRC: Unlocking the Potential of Text-to-Image Diffusion Models in Heterogeneous Federated Learning
 description: >-
-  [ICCV 2025][Image Generation][Federated Learning] This paper is the first to introduce the internal representations of a pretrained text-to-image diffusion model (Stable Diffusion) into federated learning, proposing the FedDifRC framework. Through two complementary modules—Text-Driven Diffusion Contrastive Learning (TDCL) and Noise-Driven Diffusion Consistency Regularization (NDCR)—the framework effectively mitigates data heterogeneity and achieves significant performance improvements on global models across diverse non-iid settings.
+  [ICCV 2025][Image Generation][Federated Learning] This paper is the first to introduce the internal representations of a pretrained text-to-image diffusion model (Stable Diffusion) into federated learning…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Federated Learning
-  - Data Heterogeneity
-  - Diffusion Model Representations
-  - Contrastive Learning
-  - Consistency Regularization
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Federated Learning"
+  - "Data Heterogeneity"
+  - "Diffusion Model Representations"
+  - "Contrastive Learning"
+  - "Consistency Regularization"
 date: 2026-05-08
 content_hash: 7ff0cbcadb25e28f
 ---

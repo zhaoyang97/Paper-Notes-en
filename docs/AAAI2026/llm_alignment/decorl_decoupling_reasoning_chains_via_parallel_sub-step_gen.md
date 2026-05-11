@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DeCoRL: Decoupling Reasoning Chains via Parallel Sub-Step Generation and Cascaded Reinforcement for Interpretable and Scalable RLHF
 description: >-
-  [AAAI 2026][LLM Alignment][reasoning chain decoupling] DeCoRL transforms CoT reasoning from monolithic sequential processing into an "orchestra-style" modular parallel collaboration — nine specialized sub-models (parsing / semantic / entity / fact-checking / style / quality / computation / verification / integration) generate reasoning sub-steps in parallel, coordinated via dual reward attribution (local quality + contribution) and cascaded DRPO optimization, achieving 80.8% on RM-Bench (surpassing all baselines), a 3.8× inference speedup, and a 22.7% improvement in interpretability.
+  [AAAI 2026][LLM Alignment][reasoning chain decoupling] DeCoRL transforms CoT reasoning from monolithic sequential processing into an "orchestra-style" modular parallel collaboration — nine specialized sub-models (parsing…
 tags:
-  - AAAI 2026
-  - LLM Alignment
-  - reasoning chain decoupling
-  - parallel sub-step generation
-  - cascaded DRPO
-  - interpretable rewards
-  - modular reasoning
+  - "AAAI 2026"
+  - "LLM Alignment"
+  - "reasoning chain decoupling"
+  - "parallel sub-step generation"
+  - "cascaded DRPO"
+  - "interpretable rewards"
+  - "modular reasoning"
 date: 2026-05-08
 content_hash: 5d1d70bfe78068f0
 ---

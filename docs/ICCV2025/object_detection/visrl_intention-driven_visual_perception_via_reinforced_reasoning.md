@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VisRL: Intention-Driven Visual Perception via Reinforced Reasoning
 description: >-
-  [ICCV 2025][Object Detection][Intention-driven visual perception] VisRL is the first framework to apply reinforcement learning to intention-driven visual perception. Through iterative DPO training, it enables large multimodal models (LMMs) to autonomously select focus regions (by predicting bounding boxes) according to query intent, achieving superior visual reasoning over SFT without requiring costly intermediate bounding box annotations.
+  [ICCV 2025][Object Detection][Intention-driven visual perception] VisRL is the first framework to apply reinforcement learning to intention-driven visual perception. Through iterative DPO training…
 tags:
-  - ICCV 2025
-  - Object Detection
-  - Intention-driven visual perception
-  - reinforcement learning
-  - Visual CoT
-  - DPO
-  - large multimodal models
+  - "ICCV 2025"
+  - "Object Detection"
+  - "Intention-driven visual perception"
+  - "reinforcement learning"
+  - "Visual CoT"
+  - "DPO"
+  - "large multimodal models"
 date: 2026-05-08
 content_hash: e6451363136be5ce
 ---

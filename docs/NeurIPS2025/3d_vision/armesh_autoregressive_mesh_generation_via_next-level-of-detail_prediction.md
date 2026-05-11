@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ARMesh: Autoregressive Mesh Generation via Next-Level-of-Detail Prediction
 description: >-
-  [NeurIPS 2025][3D Vision][3D mesh generation] This paper proposes to formulate 3D mesh generation as a coarse-to-fine, next-level-of-detail prediction process. By reversing a generalized mesh simplification algorithm (GSlim), a progressive refinement sequence is obtained, which is then learned autoregressively via a Transformer. Generation begins from a single point and incrementally adds geometric and topological detail to produce a complete mesh.
+  [NeurIPS 2025][3D Vision][3D mesh generation] This paper proposes to formulate 3D mesh generation as a coarse-to-fine, next-level-of-detail prediction process. By reversing a generalized mesh simplification algorithm (GS…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - 3D mesh generation
-  - autoregressive model
-  - level-of-detail
-  - mesh simplification
-  - simplicial complex
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "3D mesh generation"
+  - "autoregressive model"
+  - "level-of-detail"
+  - "mesh simplification"
+  - "simplicial complex"
 date: 2026-05-08
 content_hash: 0549009337036364
 ---

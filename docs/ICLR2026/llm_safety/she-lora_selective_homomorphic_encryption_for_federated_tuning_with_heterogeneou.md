@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SHE-LoRA: Selective Homomorphic Encryption for Federated Tuning with Heterogeneous LoRA
 description: >-
-  [ICLR 2026][LLM Safety][Federated Learning] This paper proposes SHE-LoRA, which integrates Selective Homomorphic Encryption (SHE) with LoRA for cross-device federated LLM fine-tuning. The framework features sensitivity-based column-level encrypted subset negotiation, column-swap parameter obfuscation, and column-aware adaptive aggregation. It achieves model performance comparable to non-private baselines while reducing communication overhead by 99.71% and encryption time by 99.87%, providing complete resistance against the state-of-the-art gradient inversion attack DAGER.
+  [ICLR 2026][LLM Safety][Federated Learning] This paper proposes SHE-LoRA, which integrates Selective Homomorphic Encryption (SHE) with LoRA for cross-device federated LLM fine-tuning. The framework features sensitivity-b…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Federated Learning
-  - Homomorphic Encryption
-  - LoRA
-  - Privacy Protection
-  - Heterogeneous Devices
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Federated Learning"
+  - "Homomorphic Encryption"
+  - "LoRA"
+  - "Privacy Protection"
+  - "Heterogeneous Devices"
 date: 2026-05-08
 content_hash: 14d90c5533e41a7c
 ---

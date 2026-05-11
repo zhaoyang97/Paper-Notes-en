@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UMAMI: Unifying Masked Autoregressive Models and Deterministic Rendering for View Synthesis
 description: >-
-  [NeurIPS 2025][3D Vision][Novel View Synthesis] This paper proposes UMAMI, a hybrid framework that unifies Masked Autoregressive Models (MAR) and deterministic rendering for sparse-view novel view synthesis. A bidirectional Transformer encodes multi-view image tokens and Plücker ray embeddings; two lightweight MLP heads handle visible regions (deterministic regression) and occluded regions (MAR diffusion generation) respectively. The rendering speed is an order of magnitude faster than fully generative baselines.
+  [NeurIPS 2025][3D Vision][Novel View Synthesis] This paper proposes UMAMI, a hybrid framework that unifies Masked Autoregressive Models (MAR) and deterministic rendering for sparse-view novel view synthesis. A bidirectio…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Novel View Synthesis
-  - Masked Autoregressive
-  - Diffusion Models
-  - Deterministic Rendering
-  - Hybrid Framework
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Novel View Synthesis"
+  - "Masked Autoregressive"
+  - "Diffusion Models"
+  - "Deterministic Rendering"
+  - "Hybrid Framework"
 date: 2026-05-08
 content_hash: d7317f52be9d38a5
 ---

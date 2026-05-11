@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] UrbanGS: A Scalable and Efficient Architecture for Geometrically Accurate Large-Scene Reconstruction
 description: >-
-  [3D Vision] This paper proposes UrbanGS, a scalable 3DGS reconstruction framework for urban-scale scenes that simultaneously improves geometric accuracy, rendering quality, and memory efficiency through depth-consistent D-Normal regularization, spatially adaptive Gaussian pruning (SAGP), and a unified partitioning strategy.
+  [3D Vision] This paper proposes UrbanGS, a scalable 3DGS reconstruction framework for urban-scale scenes that simultaneously improves geometric accuracy, rendering quality…
 tags:
-  - 3D Vision
+  - "3D Vision"
 date: 2026-05-08
 content_hash: 179103ee676077fe
 ---

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Towards a Foundation Model for Partial Differential Equations Across Physics Domains
 description: >-
-  [AAAI 2026][Scientific Computing][PDE] This paper proposes PDE-FM, a modular PDE foundation model combining spatial-spectral dual-modal tokenization, FiLM-based physics modulation, and a Mamba state-space backbone. It achieves an average 46% reduction in VRMSE across 12 heterogeneous physics-domain datasets from The Well benchmark.
+  [AAAI 2026][Scientific Computing][PDE] This paper proposes PDE-FM, a modular PDE foundation model combining spatial-spectral dual-modal tokenization, FiLM-based physics modulation…
 tags:
-  - AAAI 2026
-  - Scientific Computing
-  - PDE
-  - foundation model
-  - neural operator
-  - Mamba
-  - FNO
-  - multi-physics
-  - The Well benchmark
+  - "AAAI 2026"
+  - "Scientific Computing"
+  - "PDE"
+  - "foundation model"
+  - "neural operator"
+  - "Mamba"
+  - "FNO"
+  - "multi-physics"
+  - "The Well benchmark"
 date: 2026-05-08
 content_hash: 79987a92f9f8e3c1
 ---

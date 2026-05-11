@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Sequential Multi-Agent Dynamic Algorithm Configuration
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Dynamic Algorithm Configuration] This paper proposes Seq-MADAC, a framework that models multi-hyperparameter dynamic configuration as a contextual sequential multi-agent MDP. By exploiting inherent inter-parameter dependencies via a Sequential Advantage Decomposition Network (SADN), it outperforms existing MARL methods on multi-objective optimization algorithm configuration.
+  [NeurIPS 2025][Reinforcement Learning][Dynamic Algorithm Configuration] This paper proposes Seq-MADAC, a framework that models multi-hyperparameter dynamic configuration as a contextual sequential multi-agent MDP. By exp…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Dynamic Algorithm Configuration
-  - Multi-Agent Reinforcement Learning
-  - Sequential Dependency
-  - Advantage Decomposition
-  - Hyperparameter Optimization
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Dynamic Algorithm Configuration"
+  - "Multi-Agent Reinforcement Learning"
+  - "Sequential Dependency"
+  - "Advantage Decomposition"
+  - "Hyperparameter Optimization"
 date: 2026-05-08
 content_hash: e8034efbb876d71d
 ---

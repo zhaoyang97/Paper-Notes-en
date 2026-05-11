@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UST-SSM: Unified Spatio-Temporal State Space Models for Point Cloud Video Modeling
 description: >-
-  [ICCV 2025][3D Vision][Point cloud video] This paper proposes UST-SSM, which extends selective state space models to point cloud video analysis via three core modules — Spatio-Temporal Selective Scanning (STSS), Spatio-Temporal Structure Aggregation (STSA), and Temporal Interaction Sampling (TIS) — achieving linear complexity while surpassing Transformer-based methods.
+  [ICCV 2025][3D Vision][Point cloud video] This paper proposes UST-SSM, which extends selective state space models to point cloud video analysis via three core modules — Spatio-Temporal Selective Scanning (STSS)…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Point cloud video
-  - state space models
-  - spatio-temporal modeling
-  - action recognition
-  - Mamba
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Point cloud video"
+  - "state space models"
+  - "spatio-temporal modeling"
+  - "action recognition"
+  - "Mamba"
 date: 2026-05-08
 content_hash: 189bd2a2178b496e
 ---

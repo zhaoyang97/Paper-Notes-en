@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] A Standardized Benchmark for Multilabel Antimicrobial Peptide Classification
 description: >-
-  [NeurIPS 2025][LLM Evaluation][Antimicrobial Peptide] This paper presents **ESCAPE**—the first standardized multilabel antimicrobial peptide classification benchmark, integrating 80,000+ peptides from 27 public databases, along with a dual-branch Transformer + bidirectional cross-attention baseline model that achieves a 2.56% relative improvement in mAP over the second-best method.
+  [NeurIPS 2025][LLM Evaluation][Antimicrobial Peptide] This paper presents **ESCAPE**—the first standardized multilabel antimicrobial peptide classification benchmark, integrating 80,000+ peptides from 27 public databases…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - Antimicrobial Peptide
-  - Multilabel Classification
-  - benchmark
-  - Transformer
-  - Cross-Attention
-  - Drug Discovery
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "Antimicrobial Peptide"
+  - "Multilabel Classification"
+  - "benchmark"
+  - "Transformer"
+  - "Cross-Attention"
+  - "Drug Discovery"
 date: 2026-05-08
 content_hash: e2dc4e18044ed76c
 ---

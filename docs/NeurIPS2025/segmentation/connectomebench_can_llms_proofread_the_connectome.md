@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ConnectomeBench: Can LLMs Proofread the Connectome?
 description: >-
-  [NeurIPS 2025][Segmentation][connectomics proofreading] This paper introduces ConnectomeBench, the first standardized benchmark for evaluating multimodal LLMs on three key connectomics proofreading tasks: segment identification, split error correction, and merge error detection. o4-mini achieves 85% on the split correction multiple-choice task, yet merge error detection remains significantly below human expert performance.
+  [NeurIPS 2025][Segmentation][connectomics proofreading] This paper introduces ConnectomeBench, the first standardized benchmark for evaluating multimodal LLMs on three key connectomics proofreading tasks: segment identif…
 tags:
-  - NeurIPS 2025
-  - Segmentation
-  - connectomics proofreading
-  - multimodal LLM
-  - 3D neuron mesh
-  - segmentation error detection
-  - benchmark
+  - "NeurIPS 2025"
+  - "Segmentation"
+  - "connectomics proofreading"
+  - "multimodal LLM"
+  - "3D neuron mesh"
+  - "segmentation error detection"
+  - "benchmark"
 date: 2026-05-08
 content_hash: 0a875f5e1d78d136
 ---

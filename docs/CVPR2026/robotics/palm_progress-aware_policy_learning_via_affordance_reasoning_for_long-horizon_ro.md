@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PALM: Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation
 description: >-
-  [CVPR 2026][Robotics][Long-horizon manipulation] This paper proposes PALM, a unified VLA framework that employs structured fine-grained affordance prediction across four categories (global, local, spatial, and dynamic) as implicit reasoning anchors, and incorporates continuous sub-task progress estimation to enable seamless task transitions. PALM achieves an average completion length of 4.48 on CALVIN ABCD (surpassing the previous SOTA by 12.5%), a success rate of 91.8% on LIBERO-LONG, and more than twice the baseline performance in real-world long-horizon generalization evaluations.
+  [CVPR 2026][Robotics][Long-horizon manipulation] This paper proposes PALM, a unified VLA framework that employs structured fine-grained affordance prediction across four categories (global, local, spatial…
 tags:
-  - CVPR 2026
-  - Robotics
-  - Long-horizon manipulation
-  - affordance reasoning
-  - progress awareness
-  - vision-language-action model
-  - diffusion Transformer
+  - "CVPR 2026"
+  - "Robotics"
+  - "Long-horizon manipulation"
+  - "affordance reasoning"
+  - "progress awareness"
+  - "vision-language-action model"
+  - "diffusion Transformer"
 date: 2026-05-08
 content_hash: 8db28c3e8df199d4
 ---

@@ -2,13 +2,13 @@
 title: >-
   [Paper Note] VideoNSA: Native Sparse Attention Scales Video Understanding
 description: >-
-  [ICLR 2026][Video Understanding][sparse attention] This paper proposes VideoNSA, which introduces Native Sparse Attention (NSA) into video-language models. Through a mixed sparse attention mechanism combining compression, selection, and sliding window branches with dynamic gating, VideoNSA achieves 128K-token video understanding using only 3.6% of the attention budget, surpassing token compression and training-free sparse attention baselines on long video understanding, temporal reasoning, and spatial understanding tasks.
+  [ICLR 2026][Video Understanding][sparse attention] This paper proposes VideoNSA, which introduces Native Sparse Attention (NSA) into video-language models. Through a mixed sparse attention mechanism combining compression…
 tags:
-  - ICLR 2026
-  - Video Understanding
-  - sparse attention
-  - long context
-  - multimodal LLM
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "sparse attention"
+  - "long context"
+  - "multimodal LLM"
 date: 2026-05-08
 content_hash: 2d1300890a538464
 ---

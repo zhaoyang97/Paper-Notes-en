@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Do We Need Perfect Data? Leveraging Noise for Domain Generalized Segmentation
 description: >-
-  [AAAI 2026][Segmentation][Domain generalized semantic segmentation] This paper proposes FLEX-Seg, a framework that reframes the inherent **boundary misalignment** between images and semantic masks in diffusion-model-synthesized data as an opportunity to learn robust representations. Through three modules—Granular Adaptive Prototypes (GAP), Uncertainty Boundary Emphasis (UBE), and Hardness-Aware Sampling (HAS)—FLEX-Seg achieves state-of-the-art performance on domain generalized semantic segmentation.
+  [AAAI 2026][Segmentation][Domain generalized semantic segmentation] This paper proposes FLEX-Seg, a framework that reframes the inherent **boundary misalignment** between images and semantic masks in diffusion-model-synt…
 tags:
-  - AAAI 2026
-  - Segmentation
-  - Domain generalized semantic segmentation
-  - boundary misalignment
-  - diffusion model synthetic data
-  - adaptive prototypes
-  - uncertainty weighting
+  - "AAAI 2026"
+  - "Segmentation"
+  - "Domain generalized semantic segmentation"
+  - "boundary misalignment"
+  - "diffusion model synthetic data"
+  - "adaptive prototypes"
+  - "uncertainty weighting"
 date: 2026-05-08
 content_hash: c7ea5bd7ee72bc22
 ---

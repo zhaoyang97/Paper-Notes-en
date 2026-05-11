@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Preference-based Reinforcement Learning beyond Pairwise Comparisons: Benefits of Multiple Options
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Preference-based Reinforcement Learning] This paper proposes the M-AUPO algorithm for preference-based reinforcement learning, leveraging the Plackett-Luce ranking model to handle multi-option comparison feedback, and provides the first theoretical proof that larger subset sizes directly improve sample efficiency.
+  [NeurIPS 2025][Reinforcement Learning][Preference-based Reinforcement Learning] This paper proposes the M-AUPO algorithm for preference-based reinforcement learning…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Preference-based Reinforcement Learning
-  - Plackett-Luce Model
-  - Ranking Feedback
-  - Sample Efficiency
-  - Multi-option Comparison
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Preference-based Reinforcement Learning"
+  - "Plackett-Luce Model"
+  - "Ranking Feedback"
+  - "Sample Efficiency"
+  - "Multi-option Comparison"
 date: 2026-05-08
 content_hash: eaea7794b7959845
 ---

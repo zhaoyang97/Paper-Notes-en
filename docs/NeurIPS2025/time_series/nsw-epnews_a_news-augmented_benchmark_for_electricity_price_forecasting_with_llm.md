@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] NSW-EPNews: A News-Augmented Benchmark for Electricity Price Forecasting with LLMs
 description: >-
-  [NeurIPS 2025][Time Series][Electricity price forecasting] This paper introduces NSW-EPNews, the first electricity price forecasting benchmark augmented with news text, systematically evaluating both traditional models and LLMs on multimodal electricity price prediction. Key findings show that news features provide marginal gains for traditional models, while LLMs suffer from severe hallucination issues.
+  [NeurIPS 2025][Time Series][Electricity price forecasting] This paper introduces NSW-EPNews, the first electricity price forecasting benchmark augmented with news text…
 tags:
-  - NeurIPS 2025
-  - Time Series
-  - Electricity price forecasting
-  - LLM forecasting
-  - multimodal benchmark
-  - hallucination detection
-  - prompt engineering
+  - "NeurIPS 2025"
+  - "Time Series"
+  - "Electricity price forecasting"
+  - "LLM forecasting"
+  - "multimodal benchmark"
+  - "hallucination detection"
+  - "prompt engineering"
 date: 2026-05-08
 content_hash: 217990e95b6372ef
 ---

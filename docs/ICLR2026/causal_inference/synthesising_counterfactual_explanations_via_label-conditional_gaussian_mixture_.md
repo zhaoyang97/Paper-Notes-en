@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Synthesising Counterfactual Explanations via Label-Conditional Gaussian Mixture Variational Autoencoders
 description: >-
-  [ICLR 2026][Causal Inference][Counterfactual explanations] This paper proposes L-GMVAE (Label-Conditional Gaussian Mixture VAE) and the LAPACE algorithm. By learning multiple Gaussian cluster centers per class in the latent space and performing linear interpolation from the input's latent representation to the target class center, the method generates path-based counterfactual explanations while guaranteeing validity, plausibility, diversity, and perfect robustness to input perturbations.
+  [ICLR 2026][Causal Inference][Counterfactual explanations] This paper proposes L-GMVAE (Label-Conditional Gaussian Mixture VAE) and the LAPACE algorithm. By learning multiple Gaussian cluster centers per class in the lat…
 tags:
-  - ICLR 2026
-  - Causal Inference
-  - Counterfactual explanations
-  - variational autoencoder
-  - Gaussian mixture
-  - robustness
-  - algorithmic recourse
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "Counterfactual explanations"
+  - "variational autoencoder"
+  - "Gaussian mixture"
+  - "robustness"
+  - "algorithmic recourse"
 date: 2026-05-08
 content_hash: e8ac097589365068
 ---

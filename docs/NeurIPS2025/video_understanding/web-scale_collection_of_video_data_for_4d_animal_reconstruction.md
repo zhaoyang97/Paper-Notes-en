@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Web-Scale Collection of Video Data for 4D Animal Reconstruction
 description: >-
-  [NeurIPS 2025][Video Understanding][4D animal reconstruction] This paper proposes a fully automated large-scale video data collection pipeline that mines and processes 30K animal videos (2M frames) from YouTube, establishes the first 4D quadruped animal reconstruction benchmark Animal-in-Motion (230 sequences / 11K frames), and introduces a baseline method 4D-Fauna that achieves model-free 4D reconstruction via sequence-level optimization.
+  [NeurIPS 2025][Video Understanding][4D animal reconstruction] This paper proposes a fully automated large-scale video data collection pipeline that mines and processes 30K animal videos (2M frames) from YouTube…
 tags:
-  - NeurIPS 2025
-  - Video Understanding
-  - 4D animal reconstruction
-  - data pipeline
-  - YouTube video mining
-  - benchmark dataset
-  - single-view reconstruction
+  - "NeurIPS 2025"
+  - "Video Understanding"
+  - "4D animal reconstruction"
+  - "data pipeline"
+  - "YouTube video mining"
+  - "benchmark dataset"
+  - "single-view reconstruction"
 date: 2026-05-08
 content_hash: 114d986ab811ef97
 ---

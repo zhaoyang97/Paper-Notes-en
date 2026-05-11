@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Semi-Supervised Conformal Prediction With Unlabeled Nonconformity Score
 description: >-
-  [CVPR 2026][LLM Evaluation][Conformal Prediction] This paper proposes SemiCP, a framework that incorporates unlabeled data into the conformal prediction calibration pipeline via a Nearest Neighbor Matching (NNM) score. Under extremely limited labeled data, SemiCP reduces the average coverage gap by up to 77% while simultaneously shrinking prediction set sizes.
+  [CVPR 2026][LLM Evaluation][Conformal Prediction] This paper proposes SemiCP, a framework that incorporates unlabeled data into the conformal prediction calibration pipeline via a Nearest Neighbor Matching (NNM) score. U…
 tags:
-  - CVPR 2026
-  - LLM Evaluation
-  - Conformal Prediction
-  - Semi-Supervised Learning
-  - Uncertainty Quantification
-  - Prediction Sets
-  - Nearest Neighbor Matching
+  - "CVPR 2026"
+  - "LLM Evaluation"
+  - "Conformal Prediction"
+  - "Semi-Supervised Learning"
+  - "Uncertainty Quantification"
+  - "Prediction Sets"
+  - "Nearest Neighbor Matching"
 date: 2026-05-08
 content_hash: c52da716e8abe486
 ---

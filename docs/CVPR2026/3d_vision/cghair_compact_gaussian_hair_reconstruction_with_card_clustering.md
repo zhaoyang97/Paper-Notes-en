@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CGHair: Compact Gaussian Hair Reconstruction with Card Clustering
 description: >-
-  [CVPR 2026][3D Vision][3D Gaussian Splatting] CGHair is proposed, achieving over 200× compression of appearance parameters and 4× acceleration in strand reconstruction while maintaining comparable visual quality, via hair-card-guided hierarchical clustering and a shared Gaussian appearance codebook.
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] CGHair is proposed, achieving over 200× compression of appearance parameters and 4× acceleration in strand reconstruction while maintaining comparable visual quality…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - hair reconstruction
-  - hair card clustering
-  - compact representation
-  - appearance compression
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "hair reconstruction"
+  - "hair card clustering"
+  - "compact representation"
+  - "appearance compression"
 date: 2026-05-08
 content_hash: 21e9aee1772af1ed
 ---

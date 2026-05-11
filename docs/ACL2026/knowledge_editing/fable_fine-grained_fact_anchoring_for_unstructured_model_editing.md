@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FABLE: Fine-grained Fact Anchoring for Unstructured Model Editing
 description: >-
-  [ACL 2026][Knowledge Editing][Model Editing] This paper discovers that existing unstructured model editing methods can holistically recall edited text but cannot perform fine-grained fact access, and proposes FABLE, a framework that uses a two-stage hierarchical strategy to anchor fine-grained facts in shallow layers and integrate holistic narratives in deep layers, along with the UnFine diagnostic benchmark for systematic evaluation.
+  [ACL 2026][Knowledge Editing][Model Editing] This paper discovers that existing unstructured model editing methods can holistically recall edited text but cannot perform fine-grained fact access, and proposes FABLE…
 tags:
-  - ACL 2026
-  - Knowledge Editing
-  - Model Editing
-  - Unstructured Knowledge
-  - Fine-grained Fact Injection
-  - Hierarchical Key-Value Storage
-  - UnFine Benchmark
+  - "ACL 2026"
+  - "Knowledge Editing"
+  - "Model Editing"
+  - "Unstructured Knowledge"
+  - "Fine-grained Fact Injection"
+  - "Hierarchical Key-Value Storage"
+  - "UnFine Benchmark"
 date: 2025-04-17
 content_hash: 8b51a5712d400ba8
 ---

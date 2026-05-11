@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Shallow Flow Matching for Coarse-to-Fine Text-to-Speech Synthesis
 description: >-
-  [NeurIPS 2025][3D Vision][Flow Matching] This paper proposes Shallow Flow Matching (SFM), which leverages weak generator outputs to construct intermediate states within a flow matching framework for coarse-to-fine TTS. Inference begins from these intermediate states rather than pure noise, simultaneously improving synthesis quality and accelerating inference.
+  [NeurIPS 2025][3D Vision][Flow Matching] This paper proposes Shallow Flow Matching (SFM), which leverages weak generator outputs to construct intermediate states within a flow matching framework for coarse-to-fine TTS. I…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Flow Matching
-  - TTS
-  - Coarse-to-Fine Generation
-  - Shallow Inference
-  - ODE Solving
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Flow Matching"
+  - "TTS"
+  - "Coarse-to-Fine Generation"
+  - "Shallow Inference"
+  - "ODE Solving"
 date: 2026-05-08
 content_hash: 2969d89c942d04e5
 ---

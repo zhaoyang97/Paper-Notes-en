@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AccuQuant: Simulating Multiple Denoising Steps for Quantizing Diffusion Models
 description: >-
-  [NeurIPS 2025][Image Generation][Post-training quantization] This paper reveals an error accumulation phenomenon in diffusion model quantization—where quantization errors at each step propagate and amplify into subsequent steps—and proposes explicitly simulating consecutive multi-step denoising during PTQ calibration to jointly optimize quantization parameters, while reducing memory from O(n) to O(1) through a carefully designed objective function.
+  [NeurIPS 2025][Image Generation][Post-training quantization] This paper reveals an error accumulation phenomenon in diffusion model quantization—where quantization errors at each step propagate and amplify into subsequen…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Post-training quantization
-  - diffusion models
-  - error accumulation
-  - multi-step sampling simulation
-  - O(1) memory optimization
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Post-training quantization"
+  - "diffusion models"
+  - "error accumulation"
+  - "multi-step sampling simulation"
+  - "O(1) memory optimization"
 date: 2026-05-08
 content_hash: d54158358c0f19e0
 ---

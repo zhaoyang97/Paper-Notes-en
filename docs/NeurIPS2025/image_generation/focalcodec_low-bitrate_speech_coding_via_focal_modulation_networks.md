@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] FocalCodec: Low-Bitrate Speech Coding via Focal Modulation Networks
 description: >-
-  [NeurIPS 2025][Image Generation][speech codec] This paper proposes FocalCodec—a low-bitrate speech codec based on Focal Modulation Networks—that compresses speech to 0.16–0.65 kbps using a **single binary codebook**, achieving performance comparable to or better than multi-codebook state-of-the-art methods on speech resynthesis, voice conversion, and multiple downstream tasks.
+  [NeurIPS 2025][Image Generation][speech codec] This paper proposes FocalCodec—a low-bitrate speech codec based on Focal Modulation Networks—that compresses speech to 0.16–0.65 kbps using a **single binary codebook**…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - speech codec
-  - low bitrate
-  - Focal Modulation
-  - binary quantization
-  - single codebook
-  - speech tokenization
-  - VQ-VAE
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "speech codec"
+  - "low bitrate"
+  - "Focal Modulation"
+  - "binary quantization"
+  - "single codebook"
+  - "speech tokenization"
+  - "VQ-VAE"
 date: 2026-05-08
 content_hash: 594af1a1f72fd8c3
 ---

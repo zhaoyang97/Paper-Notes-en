@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] WebDS: An End-to-End Benchmark for Web-based Data Science
 description: >-
-  [Multimodal VLM] This paper introduces WebDS, the first end-to-end web-based data science benchmark comprising 870 tasks across 29 websites and 10 domains. The strongest evaluated agent (BrowserUse + GPT-4o) completes only 15% of tasks, while humans achieve 90%, revealing a substantial performance gap in realistic data science workflows.
+  [Multimodal VLM] This paper introduces WebDS, the first end-to-end web-based data science benchmark comprising 870 tasks across 29 websites and 10 domains. The strongest evaluated agent (BrowserUse + GPT-4o) completes on…
 tags:
-  - Multimodal VLM
+  - "Multimodal VLM"
 date: 2026-05-08
 content_hash: 5eb62946e4bd95d9
 ---

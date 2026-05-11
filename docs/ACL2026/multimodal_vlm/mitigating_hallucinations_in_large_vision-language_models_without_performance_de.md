@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mitigating Hallucinations in Large Vision-Language Models without Performance Degradation
 description: >-
-  [ACL 2026][Multimodal VLM][Vision-language models] This paper proposes the MPD framework, which decouples hallucination components via semantics-aware orthogonal subspace projection and selectively updates only the parameters most relevant to hallucinations. MPD reduces hallucinations by 23.4% while preserving 97.4% of general generation capability, without introducing any additional inference overhead.
+  [ACL 2026][Multimodal VLM][Vision-language models] This paper proposes the MPD framework, which decouples hallucination components via semantics-aware orthogonal subspace projection and selectively updates only the param…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Vision-language models
-  - object hallucination
-  - representation intervention
-  - orthogonal projection
-  - selective parameter editing
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Vision-language models"
+  - "object hallucination"
+  - "representation intervention"
+  - "orthogonal projection"
+  - "selective parameter editing"
 date: 2026-05-08
 content_hash: eb1e6c4765abcbb4
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Fractional Diffusion Bridge Models
 description: >-
-  [NeurIPS 2025][Medical Imaging][Diffusion bridge models] This paper proposes Fractional Diffusion Bridge Models (FDBM), which incorporate fractional Brownian motion (fBM) into the generative diffusion bridge framework. The Hurst exponent $H$ controls the roughness and long-range dependence of trajectories, yielding improvements over Brownian motion baselines on protein conformation prediction and image translation tasks.
+  [NeurIPS 2025][Medical Imaging][Diffusion bridge models] This paper proposes Fractional Diffusion Bridge Models (FDBM), which incorporate fractional Brownian motion (fBM) into the generative diffusion bridge framework. T…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Diffusion bridge models
-  - fractional Brownian motion
-  - protein conformation prediction
-  - image translation
-  - Schrödinger bridge
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Diffusion bridge models"
+  - "fractional Brownian motion"
+  - "protein conformation prediction"
+  - "image translation"
+  - "Schrödinger bridge"
 date: 2026-05-08
 content_hash: b597b93855af77ef
 ---

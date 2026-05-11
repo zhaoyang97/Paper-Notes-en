@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HPSv3: Towards Wide-Spectrum Human Preference Score
 description: >-
-  [ICCV 2025][Image Generation][Human preference score] HPSv3 constructs the first wide-spectrum human preference dataset HPDv3 (1.08M image-text pairs, 1.17M annotated pairs), trains a preference model using a VLM backbone (Qwen2-VL) with an uncertainty-aware ranking loss, and proposes a Chain-of-Human-Preference (CoHP) iterative generation method, significantly improving the accuracy and coverage of image generation evaluation.
+  [ICCV 2025][Image Generation][Human preference score] HPSv3 constructs the first wide-spectrum human preference dataset HPDv3 (1.08M image-text pairs, 1.17M annotated pairs)…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Human preference score
-  - image quality assessment
-  - uncertainty-aware ranking
-  - VLM
-  - image generation evaluation metric
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Human preference score"
+  - "image quality assessment"
+  - "uncertainty-aware ranking"
+  - "VLM"
+  - "image generation evaluation metric"
 date: 2026-05-08
 content_hash: 4ad675c75b67ac65
 ---

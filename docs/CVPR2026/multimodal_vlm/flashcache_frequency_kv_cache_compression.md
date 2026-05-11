@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FlashCache: Frequency-Domain-Guided Outlier-KV-Aware Multimodal KV Cache Compression
 description: >-
-  [CVPR 2026][Multimodal VLM][KV Cache Compression] This paper proposes FlashCache, the first method to analyze the importance distribution of multimodal KV Cache from a frequency-domain perspective. It discovers that KV pairs deviating from low-frequency principal components—termed "outlier KVs"—encode features critical for inference. By identifying outlier KVs via DCT low-pass filtering and prioritizing their retention alongside dynamic per-layer budget allocation, FlashCache achieves 1.69× decoding speedup under 80% KV memory compression with negligible task performance degradation, while being natively compatible with FlashAttention.
+  [CVPR 2026][Multimodal VLM][KV Cache Compression] This paper proposes FlashCache, the first method to analyze the importance distribution of multimodal KV Cache from a frequency-domain perspective. It discovers that KV p…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - KV Cache Compression
-  - Frequency-Domain Analysis
-  - Outlier KV
-  - Dynamic Budget Allocation
-  - FlashAttention Compatibility
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "KV Cache Compression"
+  - "Frequency-Domain Analysis"
+  - "Outlier KV"
+  - "Dynamic Budget Allocation"
+  - "FlashAttention Compatibility"
 date: 2026-05-08
 content_hash: ce8e8fa2fee4598b
 ---

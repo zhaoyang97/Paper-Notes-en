@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Prototype-Based Semantic Consistency Alignment for Domain Adaptive Retrieval
 description: >-
-  [AAAI2026][Model Compression][domain adaptive retrieval] This paper proposes PSCA, a two-stage framework that establishes class-level semantic connections via orthogonal prototypes, dynamically corrects pseudo-label reliability through geometric-semantic consistency alignment, and learns hash codes on reconstructed features, achieving substantial improvements over existing methods on multiple cross-domain retrieval benchmarks.
+  [AAAI2026][Model Compression][domain adaptive retrieval] This paper proposes PSCA, a two-stage framework that establishes class-level semantic connections via orthogonal prototypes…
 tags:
-  - AAAI2026
-  - Model Compression
-  - domain adaptive retrieval
-  - hashing
-  - prototype learning
-  - pseudo-label correction
-  - semantic alignment
+  - "AAAI2026"
+  - "Model Compression"
+  - "domain adaptive retrieval"
+  - "hashing"
+  - "prototype learning"
+  - "pseudo-label correction"
+  - "semantic alignment"
 date: 2026-05-08
 content_hash: 4200958fcc33dd5e
 ---

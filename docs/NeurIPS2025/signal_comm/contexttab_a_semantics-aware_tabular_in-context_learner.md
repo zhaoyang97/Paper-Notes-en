@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ConTextTab: A Semantics-Aware Tabular In-Context Learner
 description: >-
-  [NeurIPS 2025][Signal & Communication][Tabular Learning] ConTextTab integrates semantic embeddings (text encodings of column names and categorical values) into a table-native ICL architecture, and pretrains on large-scale real-world tabular data (T4, ~2.18M tables). It achieves a new state of the art on the semantics-rich CARTE benchmark while remaining competitive with existing methods on non-semantic benchmarks.
+  [NeurIPS 2025][Signal & Communication][Tabular Learning] ConTextTab integrates semantic embeddings (text encodings of column names and categorical values) into a table-native ICL architecture…
 tags:
-  - NeurIPS 2025
+  - "NeurIPS 2025"
   - "Signal & Communication"
-  - Tabular Learning
-  - In-Context Learning
-  - Semantic Encoding
-  - Foundation Models
-  - Zero-Shot Prediction
+  - "Tabular Learning"
+  - "In-Context Learning"
+  - "Semantic Encoding"
+  - "Foundation Models"
+  - "Zero-Shot Prediction"
 date: 2026-05-08
 content_hash: 66dd5454392e1d3b
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Posterior Label Smoothing for Node Classification
 description: >-
-  [AAAI 2026][Graph Learning][Label Smoothing] This paper proposes PosteL (Posterior Label Smoothing), which derives soft labels from neighborhood label distributions via Bayesian posterior inference for node classification. The method naturally adapts to both homophilic and heterophilic graphs, achieving accuracy improvements in 76 out of 80 combinations across 8 backbone architectures and 10 datasets.
+  [AAAI 2026][Graph Learning][Label Smoothing] This paper proposes PosteL (Posterior Label Smoothing), which derives soft labels from neighborhood label distributions via Bayesian posterior inference for node classificatio…
 tags:
-  - AAAI 2026
-  - Graph Learning
-  - Label Smoothing
-  - Node Classification
-  - Posterior Distribution
-  - Homophilic/Heterophilic Graphs
-  - Iterative Pseudo-labeling
+  - "AAAI 2026"
+  - "Graph Learning"
+  - "Label Smoothing"
+  - "Node Classification"
+  - "Posterior Distribution"
+  - "Homophilic/Heterophilic Graphs"
+  - "Iterative Pseudo-labeling"
 date: 2026-05-08
 content_hash: d933ac1367482d81
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MPMAvatar: Learning 3D Gaussian Avatars with Accurate and Robust Physics-Based Dynamics
 description: >-
-  [NeurIPS 2025][3D Vision][3D human avatar] MPMAvatar integrates a Material Point Method (MPM) physics simulator with 3D Gaussian Splatting rendering. Through an anisotropic constitutive model and a novel collision handling algorithm for mesh-based colliders, it achieves accurate and robust physical animation of loose garments. On ActorsHQ and 4D-DRESS, it outperforms PhysAvatar across both geometry and appearance metrics, achieving a 100% simulation success rate vs. 37.6%, with a per-frame simulation time of only 1.1 seconds.
+  [NeurIPS 2025][3D Vision][3D human avatar] MPMAvatar integrates a Material Point Method (MPM) physics simulator with 3D Gaussian Splatting rendering. Through an anisotropic constitutive model and a novel collision handli…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - 3D human avatar
-  - physics-based simulation
-  - MPM
-  - 3D Gaussian Splatting
-  - garment dynamics
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "3D human avatar"
+  - "physics-based simulation"
+  - "MPM"
+  - "3D Gaussian Splatting"
+  - "garment dynamics"
 date: 2026-05-08
 content_hash: 8c3b28c467dff0d1
 ---

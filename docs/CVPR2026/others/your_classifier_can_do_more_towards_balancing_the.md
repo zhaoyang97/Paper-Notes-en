@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Your Classifier Can Do More: Towards Balancing the Gaps in Classification, Robustness, and Generation
 description: >-
-  [CVPR 2026][adversarial training] This paper analyzes the energy landscape to reveal the complementarity between adversarial training (AT) and JEM—AT aligns the clean-adversarial energy distribution (→ robustness); JEM aligns the clean-generated energy distribution (→ accuracy + generation). The proposed EB-JDAT models the joint distribution $p(\mathbf{x}, \tilde{\mathbf{x}}, y)$ and employs min-max energy optimization to align the energy distributions of all three data types. On CIFAR-10, AutoAttack robustness reaches 68.76% (surpassing SOTA AT by +10.78%), while maintaining 90.39% clean accuracy and competitive generation quality with FID=27.42.
+  [CVPR 2026][adversarial training] This paper analyzes the energy landscape to reveal the complementarity between adversarial training (AT) and JEM—AT aligns the clean-adversarial energy distribution (→ robustness)…
 tags:
-  - CVPR 2026
-  - adversarial training
-  - energy-based model
-  - JEM
-  - robustness
-  - generation
+  - "CVPR 2026"
+  - "adversarial training"
+  - "energy-based model"
+  - "JEM"
+  - "robustness"
+  - "generation"
 date: 2026-05-08
 content_hash: 3e0d225699d391d1
 ---

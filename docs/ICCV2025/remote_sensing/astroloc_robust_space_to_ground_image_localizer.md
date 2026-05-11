@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AstroLoc: Robust Space to Ground Image Localizer
 description: >-
-  [ICCV 2025][Remote Sensing][astronaut photo localization] This paper proposes AstroLoc, the first space-to-ground localization model trained on 300K manually annotated astronaut photographs. Through a query-satellite pairwise loss and unsupervised mining technique, the model learns robust representations of Earth's surface, achieving an average improvement of 35% in Recall@1, consistently exceeding 99% in Recall@100, and has already localized over 500K photographs in real-world deployment.
+  [ICCV 2025][Remote Sensing][astronaut photo localization] This paper proposes AstroLoc, the first space-to-ground localization model trained on 300K manually annotated astronaut photographs. Through a query-satellite pai…
 tags:
-  - ICCV 2025
-  - Remote Sensing
-  - astronaut photo localization
-  - cross-domain image retrieval
-  - contrastive learning
-  - unsupervised mining
-  - space-to-ground observation
+  - "ICCV 2025"
+  - "Remote Sensing"
+  - "astronaut photo localization"
+  - "cross-domain image retrieval"
+  - "contrastive learning"
+  - "unsupervised mining"
+  - "space-to-ground observation"
 date: 2026-05-08
 content_hash: ba5cee4257936b98
 ---

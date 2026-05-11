@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] QuadEnhancer: Leveraging Quadratic Transformations to Enhance Deep Neural Networks
 description: >-
-  [NeurIPS 2025][Model Compression][quadratic transformation] This paper proposes a lightweight quadratic enhancer (QuadEnhancer) that introduces sparsified quadratic interaction terms into each linear layer, achieving significant performance improvements over existing neural network architectures with negligible additional parameters and computational overhead.
+  [NeurIPS 2025][Model Compression][quadratic transformation] This paper proposes a lightweight quadratic enhancer (QuadEnhancer) that introduces sparsified quadratic interaction terms into each linear layer…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - quadratic transformation
-  - nonlinearity enhancement
-  - lightweight module
-  - LoRA fine-tuning
-  - weight sharing
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "quadratic transformation"
+  - "nonlinearity enhancement"
+  - "lightweight module"
+  - "LoRA fine-tuning"
+  - "weight sharing"
 date: 2026-05-08
 content_hash: f15bdb185472fdfa
 ---

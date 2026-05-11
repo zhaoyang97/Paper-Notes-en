@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Understanding Temporal Logic Consistency in Video-Language Models through Cross-Modal Attention Discriminability
 description: >-
-  [CVPR 2026][Video Understanding][Temporal Logic Consistency] This paper investigates, from an interpretability perspective, the root cause of temporal logic inconsistency in Video-LLMs—namely, that cross-modal attention heads fail to effectively discriminate video tokens at different timestamps—and proposes TCAS (Temporally Conditioned Attention Sharpening), which significantly improves temporal logic consistency and general temporal grounding performance by optimizing attention distributions.
+  [CVPR 2026][Video Understanding][Temporal Logic Consistency] This paper investigates, from an interpretability perspective, the root cause of temporal logic inconsistency in Video-LLMs—namely…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Temporal Logic Consistency
-  - Video-Language Models
-  - Attention Interpretability
-  - Cross-Modal Attention
-  - Video Temporal Grounding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Temporal Logic Consistency"
+  - "Video-Language Models"
+  - "Attention Interpretability"
+  - "Cross-Modal Attention"
+  - "Video Temporal Grounding"
 date: 2026-05-08
 content_hash: d80d00d82087e30d
 ---

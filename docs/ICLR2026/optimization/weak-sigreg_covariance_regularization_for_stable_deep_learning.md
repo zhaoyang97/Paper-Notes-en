@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Weak-SIGReg: Covariance Regularization for Stable Deep Learning
 description: >-
-  [ICLR 2026][Optimization][covariance regularization] This work transfers SIGReg regularization from LeJEPA's self-supervised learning setting to supervised learning and proposes a computationally efficient variant called Weak-SIGReg—constraining the covariance matrix toward the identity (rather than matching all moments). Random projections reduce memory from $O(C^2)$ to $O(CK)$. On a ViT without BN or residual connections, this approach recovers CIFAR-100 accuracy from 20.73% (collapsed) to 72.02%, matching or surpassing carefully tuned baselines.
+  [ICLR 2026][Optimization][covariance regularization] This work transfers SIGReg regularization from LeJEPA's self-supervised learning setting to supervised learning and proposes a computationally efficient variant called…
 tags:
-  - ICLR 2026
-  - Optimization
-  - covariance regularization
-  - optimization stability
-  - ViT
-  - SIGReg
-  - representation collapse
-  - random sketching
+  - "ICLR 2026"
+  - "Optimization"
+  - "covariance regularization"
+  - "optimization stability"
+  - "ViT"
+  - "SIGReg"
+  - "representation collapse"
+  - "random sketching"
 date: 2026-05-08
 content_hash: b0381222b0a66cf4
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Joint Shadow Generation and Relighting via Light-Geometry Interaction Maps
 description: >-
-  [ICLR 2026][3D Vision][shadow generation] This paper proposes Light-Geometry Interaction (LGI) maps, a 2.5D representation encoding light-occlusion relationships derived from monocular depth estimation. Embedded within a bridge matching generative framework, LGI maps enable joint modeling of shadow generation and object relighting, achieving state-of-the-art performance on both synthetic and real images.
+  [ICLR 2026][3D Vision][shadow generation] This paper proposes Light-Geometry Interaction (LGI) maps, a 2.5D representation encoding light-occlusion relationships derived from monocular depth estimation. Embedded within a…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - shadow generation
-  - relighting
-  - light-geometry interaction
-  - bridge matching
-  - monocular depth
+  - "ICLR 2026"
+  - "3D Vision"
+  - "shadow generation"
+  - "relighting"
+  - "light-geometry interaction"
+  - "bridge matching"
+  - "monocular depth"
 date: 2026-05-08
 content_hash: b35ac22f0526388e
 ---

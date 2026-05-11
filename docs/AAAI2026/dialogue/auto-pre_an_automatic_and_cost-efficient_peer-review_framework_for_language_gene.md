@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Auto-PRE: An Automatic and Cost-Efficient Peer-Review Framework for Language Generation Evaluation
 description: >-
-  [AAAI 2026][Dialogue Systems][LLM evaluation] This paper proposes the Auto-PRE framework, which selects qualified LLM evaluators through an automatic qualification exam across three dimensions—consistency, pertinence, and self-confidence—achieving state-of-the-art evaluation performance without human annotation while significantly reducing costs.
+  [AAAI 2026][Dialogue Systems][LLM evaluation] This paper proposes the Auto-PRE framework, which selects qualified LLM evaluators through an automatic qualification exam across three dimensions—consistency, pertinence…
 tags:
-  - AAAI 2026
-  - Dialogue Systems
-  - LLM evaluation
-  - peer review
-  - evaluator selection
-  - automatic qualification exam
-  - LLM-as-judge
+  - "AAAI 2026"
+  - "Dialogue Systems"
+  - "LLM evaluation"
+  - "peer review"
+  - "evaluator selection"
+  - "automatic qualification exam"
+  - "LLM-as-judge"
 date: 2026-05-08
 content_hash: a7580888c276f129
 ---

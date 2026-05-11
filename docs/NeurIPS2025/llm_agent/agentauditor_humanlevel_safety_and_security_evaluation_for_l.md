@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] AgentAuditor: Human-Level Safety and Security Evaluation for LLM Agents
 description: >-
-  [NeurIPS 2025][LLM Agent][Agent Safety Evaluation] This paper proposes AgentAuditor — a training-free, memory-augmented reasoning framework that enables LLMs to adaptively extract structured semantic features (scenario, risk, behavior) to construct an experiential memory bank, then employs multi-stage context-aware retrieval-augmented generation to guide LLM evaluators in assessing agent behavior for safety and security threats. The work also introduces ASSEBench, the first benchmark jointly covering safety and security evaluation (2,293 records, 15 risk types, 29 scenarios), achieving human expert-level evaluation accuracy across multiple benchmarks.
+  [NeurIPS 2025][LLM Agent][Agent Safety Evaluation] This paper proposes AgentAuditor — a training-free, memory-augmented reasoning framework that enables LLMs to adaptively extract structured semantic features (scenario…
 tags:
-  - NeurIPS 2025
-  - LLM Agent
-  - Agent Safety Evaluation
-  - LLM-as-Judge
-  - Memory-Augmented Reasoning
-  - RAG
-  - Safety Benchmark
-  - ASSEBench
+  - "NeurIPS 2025"
+  - "LLM Agent"
+  - "Agent Safety Evaluation"
+  - "LLM-as-Judge"
+  - "Memory-Augmented Reasoning"
+  - "RAG"
+  - "Safety Benchmark"
+  - "ASSEBench"
 date: 2026-05-08
 content_hash: 4a6460c8a5811659
 ---

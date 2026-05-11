@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ReMoGen: Real-time Human Interaction-to-Reaction Generation via Modular Learning from Diverse Data
 description: >-
-  [CVPR 2026][Human Understanding][Interaction-to-reaction generation] This paper proposes ReMoGen, a modular framework for real-time human interaction-to-reaction motion generation. It learns a general motion prior from large-scale single-person motion data (frozen during downstream training), adapts to different interaction domains (human-human/human-scene) via independently trained Meta-Interaction modules, and achieves per-frame low-latency online updates (0.047 s/frame) through Frame-wise Segment Refinement. ReMoGen comprehensively surpasses state-of-the-art methods on the Inter-X and LINGO benchmarks.
+  [CVPR 2026][Human Understanding][Interaction-to-reaction generation] This paper proposes ReMoGen, a modular framework for real-time human interaction-to-reaction motion generation. It learns a general motion prior from l…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Interaction-to-reaction generation
-  - modular learning
-  - motion prior
-  - real-time generation
-  - human-human/human-scene interaction
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Interaction-to-reaction generation"
+  - "modular learning"
+  - "motion prior"
+  - "real-time generation"
+  - "human-human/human-scene interaction"
 date: 2026-05-08
 content_hash: 786254e43ae47bff
 ---

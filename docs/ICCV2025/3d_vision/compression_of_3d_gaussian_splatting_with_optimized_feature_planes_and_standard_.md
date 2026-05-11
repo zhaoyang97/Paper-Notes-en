@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Compression of 3D Gaussian Splatting with Optimized Feature Planes and Standard Video Codecs
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes CodecGS, which represents all Gaussian attributes via compact Tri-plane feature planes, combined with frequency-domain DCT entropy modeling and a channel-level bit allocation strategy, enabling efficient compression of feature planes using standard video codecs (HEVC). The method achieves storage sizes within ~10 MB while maintaining high rendering quality, yielding up to 146× compression over vanilla 3DGS.
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes CodecGS, which represents all Gaussian attributes via compact Tri-plane feature planes…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - compression
-  - feature planes
-  - video codec
-  - entropy modeling
+  - "ICCV 2025"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "compression"
+  - "feature planes"
+  - "video codec"
+  - "entropy modeling"
 date: 2026-05-08
 content_hash: afcabe0030411d65
 ---

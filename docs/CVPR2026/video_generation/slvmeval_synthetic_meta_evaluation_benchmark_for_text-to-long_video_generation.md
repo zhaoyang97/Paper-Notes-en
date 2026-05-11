@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SLVMEval: Synthetic Meta Evaluation Benchmark for Text-to-Long Video Generation
 description: >-
-  [CVPR 2026][Video Generation][Long video generation evaluation] This paper proposes SLVMEval, a meta-evaluation benchmark that synthesizes controlled degradations to construct "high-quality vs. low-quality" video pairs (up to ~3 hours) from densely captioned video datasets, and tests whether existing T2V evaluation systems can distinguish long-video quality differences. Human annotators achieve 84.7%–96.8% accuracy across 10 dimensions, whereas existing automatic evaluation systems fall behind humans on 9 out of 10 dimensions.
+  [CVPR 2026][Video Generation][Long video generation evaluation] This paper proposes SLVMEval, a meta-evaluation benchmark that synthesizes controlled degradations to construct "high-quality vs. low-quality" video pairs (…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Long video generation evaluation
-  - meta-evaluation benchmark
-  - text-to-video
-  - synthetic degradation
-  - VLM-as-a-judge
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Long video generation evaluation"
+  - "meta-evaluation benchmark"
+  - "text-to-video"
+  - "synthetic degradation"
+  - "VLM-as-a-judge"
 date: 2026-05-08
 content_hash: 6f898453663d33e3
 ---

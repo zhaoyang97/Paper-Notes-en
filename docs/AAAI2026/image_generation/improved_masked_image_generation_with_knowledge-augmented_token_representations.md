@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Improved Masked Image Generation with Knowledge-Augmented Token Representations
 description: >-
-  [AAAI 2026][Image Generation][Masked image generation] This paper proposes KA-MIG, a framework that mines three types of token-level semantic prior knowledge graphs from training data (co-occurrence graph, semantic similarity graph, and position-token incompatibility graph), learns augmented token representations via a graph-aware encoder, and injects them into existing MIG models through a lightweight addition-subtraction fusion mechanism, consistently improving generation quality across multiple backbone networks.
+  [AAAI 2026][Image Generation][Masked image generation] This paper proposes KA-MIG, a framework that mines three types of token-level semantic prior knowledge graphs from training data (co-occurrence graph…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Masked image generation
-  - knowledge graph
-  - discrete tokens
-  - prior knowledge augmentation
-  - graph convolutional network
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Masked image generation"
+  - "knowledge graph"
+  - "discrete tokens"
+  - "prior knowledge augmentation"
+  - "graph convolutional network"
 date: 2026-05-08
 content_hash: 65bdb7b13e7ff29d
 ---

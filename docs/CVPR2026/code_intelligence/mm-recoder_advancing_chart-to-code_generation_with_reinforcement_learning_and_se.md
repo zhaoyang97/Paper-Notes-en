@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] MM-ReCoder: Advancing Chart-to-Code Generation with Reinforcement Learning and Self-Correction
 description: >-
-  [CVPR 2026][Chart-to-Code] This paper proposes MM-ReCoder, the first multimodal LLM with genuine self-correction capability for chart-to-code generation. Through a two-stage multi-turn GRPO reinforcement learning framework—first optimizing correction ability via shared-first-turn training, then optimizing coding ability via full-trajectory training—MM-ReCoder achieves 86.5% low-level score on ChartMimic with only 7B parameters, rivaling Qwen3-VL-235B.
+  [CVPR 2026][Code Intelligence][Chart-to-Code] This paper proposes MM-ReCoder, the first multimodal LLM with genuine self-correction capability for chart-to-code generation. Through a two-stage multi-turn GRPO reinforceme…
 tags:
-  - CVPR 2026
-  - Chart-to-Code
-  - Reinforcement Learning
-  - Self-Correction
-  - Multi-Turn Dialogue
-  - GRPO
+  - "CVPR 2026"
+  - "Code Intelligence"
+  - "Chart-to-Code"
+  - "Reinforcement Learning"
+  - "Self-Correction"
+  - "Multi-Turn Dialogue"
+  - "GRPO"
 date: 2026-05-08
 content_hash: b0e26a23cb23135b
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Asymptotic and Finite-Time Guarantees for Langevin-Based Temperature Annealing in InfoNCE
 description: >-
-  [NeurIPS 2025 (Optimization for Machine Learning Workshop)][Self-Supervised Learning][Contrastive Learning] By modeling embedding evolution as Langevin dynamics on a compact Riemannian manifold, this paper proves that the convergence guarantees of classical simulated annealing extend to the temperature scheduling setting in contrastive learning: a sufficiently slow logarithmic inverse-temperature schedule guarantees probabilistic convergence to the globally optimal representation set, whereas faster schedules risk trapping the system in suboptimal minima.
+  [NeurIPS 2025 (Optimization for Machine Learning Workshop)][Self-Supervised Learning][Contrastive Learning] By modeling embedding evolution as Langevin dynamics on a compact Riemannian manifold…
 tags:
-  - NeurIPS 2025 (Optimization for Machine Learning Workshop)
-  - Self-Supervised Learning
-  - Contrastive Learning
-  - InfoNCE
-  - Temperature Annealing
-  - Langevin Dynamics
-  - Simulated Annealing
+  - "NeurIPS 2025 (Optimization for Machine Learning Workshop)"
+  - "Self-Supervised Learning"
+  - "Contrastive Learning"
+  - "InfoNCE"
+  - "Temperature Annealing"
+  - "Langevin Dynamics"
+  - "Simulated Annealing"
 date: 2026-05-08
 content_hash: c4c55508c8f714ae
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] On the Relation between Rectified Flows and Optimal Transport
 description: >-
-  [NeurIPS 2025][Image Generation][Rectified Flow] This paper presents a rigorous theoretical investigation of the relationship between rectified flows (flow matching) and optimal transport (OT). Through the construction of multiple counterexamples, it demonstrates that previously published claims asserting the asymptotic equivalence between gradient-constrained rectified flows and OT do not hold in general, and that stronger assumptions than those previously identified are required to guarantee such equivalence.
+  [NeurIPS 2025][Image Generation][Rectified Flow] This paper presents a rigorous theoretical investigation of the relationship between rectified flows (flow matching) and optimal transport (OT). Through the construction o…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Rectified Flow
-  - Optimal Transport
-  - Flow Matching
-  - Counterexample Construction
-  - Wasserstein Distance
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Rectified Flow"
+  - "Optimal Transport"
+  - "Flow Matching"
+  - "Counterexample Construction"
+  - "Wasserstein Distance"
 date: 2026-05-08
 content_hash: 0957be9503446a64
 ---

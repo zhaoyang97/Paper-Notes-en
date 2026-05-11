@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards 3D Objectness Learning in an Open World
 description: >-
-  [NeurIPS 2025][3D Vision][3D objectness] This paper proposes OP3Det, a class-agnostic open-world 3D detector that requires no text prompts. It leverages 2D foundation models for 3D object discovery and introduces a cross-modal Mixture-of-Experts (MoE) module to dynamically fuse point cloud and image features, substantially improving recall on novel object categories.
+  [NeurIPS 2025][3D Vision][3D objectness] This paper proposes OP3Det, a class-agnostic open-world 3D detector that requires no text prompts. It leverages 2D foundation models for 3D object discovery and introduces a cross…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - 3D objectness
-  - open-world detection
-  - class-agnostic
-  - cross-modal MoE
-  - SAM
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "3D objectness"
+  - "open-world detection"
+  - "class-agnostic"
+  - "cross-modal MoE"
+  - "SAM"
 date: 2026-05-08
 content_hash: 2045f5ee642b6bdf
 ---

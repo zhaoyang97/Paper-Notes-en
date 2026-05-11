@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] An Empirical Investigation of Neural ODEs and Symbolic Regression for Dynamical Systems
 description: >-
-  [NeurIPS 2025][Neural ODE] This paper systematically investigates the extrapolation capability of Neural ODEs (NODEs) on noisy synthetic data, and explores a pipeline that employs NODEs as a data augmentation tool combined with symbolic regression (SR) to recover governing equations from limited data. Results demonstrate that this combined approach can recover two of three governing equations—and a strong approximation of the third—using only 10% of the simulation data.
+  [NeurIPS 2025][Neural ODE] This paper systematically investigates the extrapolation capability of Neural ODEs (NODEs) on noisy synthetic data…
 tags:
-  - NeurIPS 2025
-  - Neural ODE
-  - Symbolic Regression
-  - Dynamical Systems
-  - Extrapolation
-  - Scientific Discovery
+  - "NeurIPS 2025"
+  - "Neural ODE"
+  - "Symbolic Regression"
+  - "Dynamical Systems"
+  - "Extrapolation"
+  - "Scientific Discovery"
 date: 2026-05-08
 content_hash: dca2415c4dfe08b0
 ---

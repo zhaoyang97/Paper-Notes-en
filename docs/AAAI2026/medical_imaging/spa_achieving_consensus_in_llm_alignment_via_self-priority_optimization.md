@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] SPA: Achieving Consensus in LLM Alignment via Self-Priority Optimization
 description: >-
-  [AAAI 2026][Medical Imaging][LLM alignment] This paper proposes Self-Priority Alignment (SPA), a fully unsupervised framework that enforces a strict "trustworthiness before helpfulness" priority ordering via lexicographic optimization. The model self-generates diverse responses, self-evaluates, and self-improves; dual-criterion denoising constructs preference pairs; and an uncertainty-weighted SimPO loss fine-tunes the model, simultaneously improving safety and helpfulness across multiple benchmarks.
+  [AAAI 2026][Medical Imaging][LLM alignment] This paper proposes Self-Priority Alignment (SPA), a fully unsupervised framework that enforces a strict "trustworthiness before helpfulness" priority ordering via lexicographi…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - LLM alignment
-  - priority alignment
-  - lexicographic optimization
-  - unsupervised
-  - preference learning
-  - safety
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "LLM alignment"
+  - "priority alignment"
+  - "lexicographic optimization"
+  - "unsupervised"
+  - "preference learning"
+  - "safety"
 date: 2026-05-08
 content_hash: 7b9379330520d21a
 ---

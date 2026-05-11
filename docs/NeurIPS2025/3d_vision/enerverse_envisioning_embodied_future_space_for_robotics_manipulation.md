@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EnerVerse: Envisioning Embodied Future Space for Robotics Manipulation
 description: >-
-  [NeurIPS 2025][3D Vision][embodied AI] EnerVerse is a generative robotic foundation model that constructs a 4D embodied space via chunk-wise autoregressive video diffusion, sparse context memory, and multi-view generation priors. Combined with a 4DGS data flywheel to narrow the Sim2Real gap, it translates 4D world representations into physical actions through a policy head, achieving state-of-the-art performance on the LIBERO benchmark.
+  [NeurIPS 2025][3D Vision][embodied AI] EnerVerse is a generative robotic foundation model that constructs a 4D embodied space via chunk-wise autoregressive video diffusion, sparse context memory…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - embodied AI
-  - video diffusion
-  - multi-view generation
-  - robotic manipulation
-  - 4D Gaussian Splatting
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "embodied AI"
+  - "video diffusion"
+  - "multi-view generation"
+  - "robotic manipulation"
+  - "4D Gaussian Splatting"
 date: 2026-05-08
 content_hash: d10bba0be2069f23
 ---

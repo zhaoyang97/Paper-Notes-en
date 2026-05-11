@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Speeding Up the Learning of 3D Gaussians with Much Shorter Gaussian Lists
 description: >-
-  [CVPR 2026][3D Vision][3D Gaussian Splatting] By periodically resetting Gaussian scales (Scale Reset) and imposing an entropy constraint on alpha blending weights, this paper shortens the per-pixel Gaussian list length to achieve **5–12× training acceleration** in 3DGS while maintaining comparable rendering quality.
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] By periodically resetting Gaussian scales (Scale Reset) and imposing an entropy constraint on alpha blending weights…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - Training Acceleration
-  - Scale Reset
-  - Entropy Constraint
-  - Gaussian List Shortening
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Training Acceleration"
+  - "Scale Reset"
+  - "Entropy Constraint"
+  - "Gaussian List Shortening"
 date: 2026-05-08
 content_hash: a3bc9d3924eab415
 ---

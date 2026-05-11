@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] MMedAgent-RL: Optimizing Multi-Agent Collaboration for Multimodal Medical Reasoning
 description: >-
-  [ICLR2026][Medical Imaging][multi-agent collaboration] This paper proposes MMedAgent-RL, a multi-agent system that simulates clinical consultation workflows (triage → specialist → attending physician) optimized via reinforcement learning. The core innovation is Curriculum-guided Multi-Agent Reinforcement Learning (C-MARL) with entropy-aware exploration, enabling the attending physician agent to adopt differentiated explore–exploit strategies when faced with correct, conflicting, or erroneous specialist opinions. The system achieves state-of-the-art performance on 5 medical VQA benchmarks spanning both in-domain and out-of-domain settings.
+  [ICLR2026][Medical Imaging][multi-agent collaboration] This paper proposes MMedAgent-RL, a multi-agent system that simulates clinical consultation workflows (triage → specialist → attending physician) optimized via reinf…
 tags:
-  - ICLR2026
-  - Medical Imaging
-  - multi-agent collaboration
-  - reinforcement learning
-  - medical VQA
-  - curriculum learning
-  - GRPO
-  - clinical reasoning
+  - "ICLR2026"
+  - "Medical Imaging"
+  - "multi-agent collaboration"
+  - "reinforcement learning"
+  - "medical VQA"
+  - "curriculum learning"
+  - "GRPO"
+  - "clinical reasoning"
 date: 2026-05-08
 content_hash: c08a6a9085651c40
 ---

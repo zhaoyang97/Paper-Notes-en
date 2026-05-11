@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Source-Aware Object Swapping with Initial Noise Perturbation
 description: >-
-  [CVPR 2026][Model Compression][Object Swapping] This paper proposes SourceSwap, which generates high-quality pseudo-paired data from single images via frequency-separated initial noise perturbation, and employs a source-aware dual U-Net architecture to learn cross-object alignment, enabling zero-shot, per-object-fine-tuning-free high-fidelity object swapping.
+  [CVPR 2026][Model Compression][Object Swapping] This paper proposes SourceSwap, which generates high-quality pseudo-paired data from single images via frequency-separated initial noise perturbation…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - Object Swapping
-  - Diffusion Models
-  - Initial Noise Perturbation
-  - Self-Supervised
-  - Cross-Object Alignment
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Object Swapping"
+  - "Diffusion Models"
+  - "Initial Noise Perturbation"
+  - "Self-Supervised"
+  - "Cross-Object Alignment"
 date: 2026-05-08
 content_hash: b6730b1fb453f7a7
 ---

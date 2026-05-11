@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TEXT: Text-Routed Sparse Mixture of Experts for Multimodal Sentiment Analysis with Explanation Enhancement and Temporal Alignment
 description: >-
-  [AAAI 2026][Audio & Speech][Multimodal Sentiment Analysis] This paper proposes TEXT, a model that leverages MLLMs to generate natural language explanations for audio and video modalities to enhance modal representations, designs a lightweight temporal alignment module combining the strengths of Mamba and temporal cross-attention, and employs text-routed sparse mixture of experts for cross-modal fusion. TEXT comprehensively outperforms prior SOTA methods and large models such as GPT-4o across four MSA benchmarks.
+  [AAAI 2026][Audio & Speech][Multimodal Sentiment Analysis] This paper proposes TEXT, a model that leverages MLLMs to generate natural language explanations for audio and video modalities to enhance modal representations…
 tags:
-  - AAAI 2026
+  - "AAAI 2026"
   - "Audio & Speech"
-  - Multimodal Sentiment Analysis
-  - Sparse Mixture of Experts
-  - Temporal Alignment
-  - MLLM Explanation Enhancement
-  - Gated Fusion
+  - "Multimodal Sentiment Analysis"
+  - "Sparse Mixture of Experts"
+  - "Temporal Alignment"
+  - "MLLM Explanation Enhancement"
+  - "Gated Fusion"
 date: 2026-05-08
 content_hash: 3f948588ff5e2cb7
 ---

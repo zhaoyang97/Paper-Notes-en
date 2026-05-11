@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Ask a Strong LLM Judge when Your Reward Model is Uncertain
 description: >-
-  [NeurIPS 2025][LLM Alignment][Reward Model] This paper proposes an uncertainty-based routing framework that applies SNGP to a pairwise reward model for uncertainty quantification, routing high-epistemic-uncertainty samples to a strong LLM judge (DeepSeek-R1). At a judge invocation cost of only 9.2%–42.5%, the approach significantly outperforms random routing in accuracy and demonstrably improves downstream online RLHF alignment.
+  [NeurIPS 2025][LLM Alignment][Reward Model] This paper proposes an uncertainty-based routing framework that applies SNGP to a pairwise reward model for uncertainty quantification…
 tags:
-  - NeurIPS 2025
-  - LLM Alignment
-  - Reward Model
-  - LLM-as-Judge
-  - Uncertainty Quantification
-  - SNGP
-  - Routing
-  - RLHF
+  - "NeurIPS 2025"
+  - "LLM Alignment"
+  - "Reward Model"
+  - "LLM-as-Judge"
+  - "Uncertainty Quantification"
+  - "SNGP"
+  - "Routing"
+  - "RLHF"
 date: 2026-05-08
 content_hash: 6d122cfac9313d90
 ---

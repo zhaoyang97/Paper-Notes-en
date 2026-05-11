@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Explore How to Inject Beneficial Noise in MLLMs
 description: >-
-  [AAAI 2026][Multimodal VLM][Positive-Incentive Noise] This paper proposes the Multimodal Noise Generator (MuNG), which dynamically generates "beneficial noise" from image-text pairs via a variational inference framework and injects it into the frozen visual features of an MLLM. The approach suppresses task-irrelevant semantics and enhances cross-modal representation alignment, requiring only ~1% additional parameters while outperforming full fine-tuning and PEFT methods such as LoRA.
+  [AAAI 2026][Multimodal VLM][Positive-Incentive Noise] This paper proposes the Multimodal Noise Generator (MuNG), which dynamically generates "beneficial noise" from image-text pairs via a variational inference framework…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Positive-Incentive Noise
-  - Parameter-Efficient Fine-Tuning
-  - Multimodal Large Language Models
-  - Variational Inference
-  - Cross-Modal Alignment
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Positive-Incentive Noise"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Multimodal Large Language Models"
+  - "Variational Inference"
+  - "Cross-Modal Alignment"
 date: 2026-05-08
 content_hash: d95620753bcbd2b4
 ---

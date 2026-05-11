@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Quantization with Unified Adaptive Distillation to enable multi-LoRA based one-for-all Generative Vision Models on edge
 description: >-
-  [CVPR 2026][Image Generation][LoRA Quantization] This paper proposes the QUAD framework, which treats LoRA weights as runtime inputs rather than compiling them into the model graph. Combined with a distillation fine-tuning strategy that shares quantization parameters across LoRAs, QUAD enables a single compiled model to dynamically switch among multiple GenAI tasks on mobile NPUs, achieving 6× memory compression and 4× latency improvement.
+  [CVPR 2026][Image Generation][LoRA Quantization] This paper proposes the QUAD framework, which treats LoRA weights as runtime inputs rather than compiling them into the model graph. Combined with a distillation fine-tuni…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - LoRA Quantization
-  - Edge Deployment
-  - Knowledge Distillation
-  - Diffusion Models
-  - Runtime Task Switching
+  - "CVPR 2026"
+  - "Image Generation"
+  - "LoRA Quantization"
+  - "Edge Deployment"
+  - "Knowledge Distillation"
+  - "Diffusion Models"
+  - "Runtime Task Switching"
 date: 2026-05-08
 content_hash: dffe4be723b790d9
 ---

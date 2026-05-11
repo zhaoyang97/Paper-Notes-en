@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] scMRDR: A Scalable and Flexible Framework for Unpaired Single-Cell Multi-Omics Data Integration
 description: >-
-  [NeurIPS 2025][LLM Evaluation][Single-cell multi-omics] This paper proposes scMRDR, a framework based on β-VAE that disentangles latent representations of single-cell multi-omics data into modality-shared and modality-specific components, achieving scalable integration of unpaired multi-omics data through isometric regularization, adversarial training, and masked reconstruction loss.
+  [NeurIPS 2025][LLM Evaluation][Single-cell multi-omics] This paper proposes scMRDR, a framework based on β-VAE that disentangles latent representations of single-cell multi-omics data into modality-shared and modality-sp…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - Single-cell multi-omics
-  - unpaired data integration
-  - β-VAE
-  - disentangled representation
-  - adversarial training
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "Single-cell multi-omics"
+  - "unpaired data integration"
+  - "β-VAE"
+  - "disentangled representation"
+  - "adversarial training"
 date: 2026-05-08
 content_hash: 286ce8ddec575122
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RayletDF: Raylet Distance Fields for Generalizable 3D Surface Reconstruction from Point Clouds or Gaussians
 description: >-
-  [ICCV 2025][3D Vision][Raylet Distance Field] This paper proposes RayletDF, a generalizable 3D surface reconstruction method based on a "raylet" (ray segment) distance field. Through three modules — a raylet feature extractor, a distance field predictor, and a multi-raylet mixer — RayletDF directly predicts surface points from point clouds or 3D Gaussians, achieving high-accuracy cross-dataset generalization via a single forward pass on unseen datasets.
+  [ICCV 2025][3D Vision][Raylet Distance Field] This paper proposes RayletDF, a generalizable 3D surface reconstruction method based on a "raylet" (ray segment) distance field. Through three modules — a raylet feature extr…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Raylet Distance Field
-  - Surface Reconstruction
-  - Point Cloud
-  - 3DGS
-  - Generalization
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Raylet Distance Field"
+  - "Surface Reconstruction"
+  - "Point Cloud"
+  - "3DGS"
+  - "Generalization"
 date: 2026-05-08
 content_hash: e749d2dc5de5efb0
 ---

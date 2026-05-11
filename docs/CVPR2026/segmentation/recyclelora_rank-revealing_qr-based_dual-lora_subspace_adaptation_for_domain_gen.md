@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] RecycleLoRA: Rank-Revealing QR-Based Dual-LoRA Subspace Adaptation for Domain Generalized Semantic Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Domain Generalized Semantic Segmentation] This paper proposes RecycleLoRA, which employs Rank-Revealing QR (RRQR) decomposition to systematically "recycle" subspace structures from pretrained Vision Foundation Model weights. By initializing a primary adapter from minor directions and a secondary adapter from major directions, the method substantially improves LoRA representational diversity and parameter utilization efficiency, achieving state-of-the-art performance on both synthetic-to-real and real-to-real domain generalized semantic segmentation benchmarks (average mIoU of 68.95 / 72.10).
+  [CVPR 2026][Segmentation][Domain Generalized Semantic Segmentation] This paper proposes RecycleLoRA, which employs Rank-Revealing QR (RRQR) decomposition to systematically "recycle" subspace structures from pretrained Vi…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Domain Generalized Semantic Segmentation
-  - LoRA
-  - RRQR Decomposition
-  - Dual Adapter
-  - Subspace Structure
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Domain Generalized Semantic Segmentation"
+  - "LoRA"
+  - "RRQR Decomposition"
+  - "Dual Adapter"
+  - "Subspace Structure"
 date: 2026-05-08
 content_hash: d20d81ef0ea358ad
 ---

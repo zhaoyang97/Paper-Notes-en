@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] LogicEval: A Systematic Framework for Evaluating Automated Repair Techniques for Logical Vulnerabilities in Real-World Software
 description: >-
-  [ACL 2026][Logical vulnerabilities] This paper presents LogicEval, the first systematic evaluation framework for logical vulnerability repair, along with the LogicDS dataset (61 real-world logical vulnerabilities + 61 synthetic Java samples). It systematically evaluates both traditional AVR tools and LLMs on logical vulnerability repair, finding that LLMs perform best when provided with auxiliary information yet overall repair rates remain low (only 5 out of 61 real-world samples correctly repaired). Key bottlenecks identified include prompt sensitivity, context loss, and patch localization difficulty.
+  [ACL 2026][Code Intelligence][Logical vulnerabilities] This paper presents LogicEval, the first systematic evaluation framework for logical vulnerability repair…
 tags:
-  - ACL 2026
-  - Logical vulnerabilities
-  - automated repair evaluation
-  - LLM-based code repair
-  - patch generation
-  - benchmark dataset
+  - "ACL 2026"
+  - "Code Intelligence"
+  - "Logical vulnerabilities"
+  - "automated repair evaluation"
+  - "LLM-based code repair"
+  - "patch generation"
+  - "benchmark dataset"
 date: 2026-05-08
 content_hash: cb2f3a6149577ca9
 ---

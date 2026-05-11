@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Unsupervised Discovery of High-Redshift Galaxy Populations with Variational Autoencoders
 description: >-
-  [NEURIPS2025][high-redshift galaxies] A variational autoencoder (VAE) is applied to unsupervised clustering of 2,743 JWST high-redshift ($z>4$) galaxy spectra, uncovering 12 distinct astrophysical categories and more than doubling the known sample sizes of rare populations including post-starburst galaxies, Lyman-α emitters, extreme emission line galaxies, and Little Red Dots.
+  [NEURIPS2025][Physics][high-redshift galaxies] A variational autoencoder (VAE) is applied to unsupervised clustering of 2,743 JWST high-redshift ($z>4$) galaxy spectra…
 tags:
-  - NEURIPS2025
-  - high-redshift galaxies
-  - VAE
-  - JWST
-  - unsupervised discovery
-  - spectral clustering
+  - "NEURIPS2025"
+  - "Physics"
+  - "high-redshift galaxies"
+  - "VAE"
+  - "JWST"
+  - "unsupervised discovery"
+  - "spectral clustering"
 date: 2026-05-08
 content_hash: df60865fd07f298f
 ---

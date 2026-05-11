@@ -2,13 +2,13 @@
 title: >-
   [Paper Note] Note 5: ReSearch — Learning to Reason with Search
 description: >-
-  [NeurIPS 2025][Reasoning-search integration] ReSearch embeds search operations as first-class primitives within reasoning chains and leverages GRPO reinforcement learning to automatically learn when and how to search—without any supervision on intermediate reasoning steps—achieving an average relative improvement of 15.81% over baselines on multi-hop QA benchmarks.
+  [NeurIPS 2025][Reasoning-search integration] ReSearch embeds search operations as first-class primitives within reasoning chains and leverages GRPO reinforcement learning to automatically learn when and how to search—wit…
 tags:
-  - NeurIPS 2025
-  - Reasoning-search integration
-  - GRPO
-  - multi-step retrieval augmentation
-  - unsupervised reasoning
+  - "NeurIPS 2025"
+  - "Reasoning-search integration"
+  - "GRPO"
+  - "multi-step retrieval augmentation"
+  - "unsupervised reasoning"
 date: 2026-05-08
 content_hash: bcc881751bb47b4c
 ---

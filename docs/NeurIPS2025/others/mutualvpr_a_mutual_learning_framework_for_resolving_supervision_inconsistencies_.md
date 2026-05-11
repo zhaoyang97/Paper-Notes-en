@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] MutualVPR: A Mutual Learning Framework for Resolving Supervision Inconsistencies via Adaptive Clustering
 description: >-
-  [NeurIPS 2025][Visual Place Recognition] This paper proposes MutualVPR, a mutual learning framework that dynamically assigns scene category labels through feature-driven adaptive K-means clustering, addressing the supervision inconsistency problem in classification-based VPR methods caused by viewpoint variation and occlusion.
+  [NeurIPS 2025][Visual Place Recognition] This paper proposes MutualVPR, a mutual learning framework that dynamically assigns scene category labels through feature-driven adaptive K-means clustering…
 tags:
-  - NeurIPS 2025
-  - Visual Place Recognition
-  - Adaptive Clustering
-  - Mutual Learning
-  - Supervision Consistency
-  - DINOv2
+  - "NeurIPS 2025"
+  - "Visual Place Recognition"
+  - "Adaptive Clustering"
+  - "Mutual Learning"
+  - "Supervision Consistency"
+  - "DINOv2"
 date: 2026-05-08
 content_hash: 90d6e733b5d1e702
 ---

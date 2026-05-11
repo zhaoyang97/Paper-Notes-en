@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Otter: Mitigating Background Distractions of Wide-Angle Few-Shot Action Recognition with Enhanced RWKV
 description: >-
-  [AAAI 2026][Segmentation][few-shot action recognition] To address background distraction in few-shot action recognition (FSAR) for wide-angle videos — where subjects occupy a small portion of the frame and temporal relationships degrade — this paper proposes Otter, an enhanced RWKV-based framework. It introduces a Compound Segmentation Module (CSM) for subject highlighting and a Temporal Reconstruction Module (TRM) for recovering temporal relationships, achieving state-of-the-art results on SSv2, Kinetics, UCF101, and HMDB51 benchmarks.
+  [AAAI 2026][Segmentation][few-shot action recognition] To address background distraction in few-shot action recognition (FSAR) for wide-angle videos — where subjects occupy a small portion of the frame and temporal relat…
 tags:
-  - AAAI 2026
-  - Segmentation
-  - few-shot action recognition
-  - wide-angle video
-  - RWKV
-  - background distraction
-  - temporal reconstruction
+  - "AAAI 2026"
+  - "Segmentation"
+  - "few-shot action recognition"
+  - "wide-angle video"
+  - "RWKV"
+  - "background distraction"
+  - "temporal reconstruction"
 date: 2026-05-08
 content_hash: 86f043c1292a1f32
 ---

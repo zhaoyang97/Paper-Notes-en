@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Value Gradient Guidance for Flow Matching Alignment
 description: >-
-  [NeurIPS 2025][Image Generation][Flow Matching] This paper proposes VGG-Flow, which leverages the Hamilton-Jacobi-Bellman (HJB) equation from optimal control theory to reformulate flow matching alignment as a gradient matching task—matching the residual velocity field to the gradient of the value function—enabling efficient reward alignment while preserving the prior distribution.
+  [NeurIPS 2025][Image Generation][Flow Matching] This paper proposes VGG-Flow, which leverages the Hamilton-Jacobi-Bellman (HJB) equation from optimal control theory to reformulate flow matching alignment as a gradient ma…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Flow Matching
-  - Human Preference Alignment
-  - Optimal Control
-  - HJB Equation
-  - Value Function Gradient
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Flow Matching"
+  - "Human Preference Alignment"
+  - "Optimal Control"
+  - "HJB Equation"
+  - "Value Function Gradient"
 date: 2026-05-08
 content_hash: d01a11fe8cb4e3e1
 ---

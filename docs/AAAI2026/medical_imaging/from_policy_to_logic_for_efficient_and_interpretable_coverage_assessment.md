@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From Policy to Logic for Efficient and Interpretable Coverage Assessment
 description: >-
-  [AAAI 2026][Medical Imaging][Neuro-symbolic reasoning] This paper proposes a neuro-symbolic approach that combines a coverage-aware retriever with symbolic rule inference based on PyKnow, assisting human reviewers in efficiently and interpretably assessing whether medical CPT codes are covered by insurance policies. The approach reduces inference cost by 44% while improving F1 by 4.5%.
+  [AAAI 2026][Medical Imaging][Neuro-symbolic reasoning] This paper proposes a neuro-symbolic approach that combines a coverage-aware retriever with symbolic rule inference based on PyKnow…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Neuro-symbolic reasoning
-  - coverage policy
-  - rule engine
-  - retrieval augmentation
-  - explainable AI
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Neuro-symbolic reasoning"
+  - "coverage policy"
+  - "rule engine"
+  - "retrieval augmentation"
+  - "explainable AI"
 date: 2026-05-08
 content_hash: d5508f7a63405738
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] VERA: Variational Inference Framework for Jailbreaking Large Language Models
 description: >-
-  [NeurIPS 2025][Optimization][Jailbreak Attack] This paper formalizes black-box LLM jailbreaking as a variational inference problem, training a small attacker LLM to approximate the posterior distribution of adversarial prompts for a target LLM. Once trained, the attacker can efficiently generate diverse jailbreak prompts without relying on human-crafted templates.
+  [NeurIPS 2025][Optimization][Jailbreak Attack] This paper formalizes black-box LLM jailbreaking as a variational inference problem, training a small attacker LLM to approximate the posterior distribution of adversarial p…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Jailbreak Attack
-  - Variational Inference
-  - Black-Box Attack
-  - Red-Teaming
-  - Adversarial Prompt
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Jailbreak Attack"
+  - "Variational Inference"
+  - "Black-Box Attack"
+  - "Red-Teaming"
+  - "Adversarial Prompt"
 date: 2026-05-08
 content_hash: a076b9731580e86d
 ---

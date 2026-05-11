@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Responses Fall Short of Understanding: Revealing the Gap between Internal Representations and Responses in VDU
 description: >-
-  [CVPR 2026][Multimodal VLM][LVLM] Layer-wise linear probing analysis reveals a significant gap between internal representations and generated responses in LVLMs for visual document understanding (VDU). Intermediate layers encode more linearly accessible task-relevant information than final layers, and fine-tuning intermediate layers simultaneously improves accuracy and narrows the gap.
+  [CVPR 2026][Multimodal VLM][LVLM] Layer-wise linear probing analysis reveals a significant gap between internal representations and generated responses in LVLMs for visual document understanding (VDU). Intermediate layer…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - LVLM
-  - visual document understanding
-  - linear probing
-  - internal representations
-  - intermediate layers
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "LVLM"
+  - "visual document understanding"
+  - "linear probing"
+  - "internal representations"
+  - "intermediate layers"
 date: 2026-05-08
 content_hash: 7bbfd30a621fb3fa
 ---

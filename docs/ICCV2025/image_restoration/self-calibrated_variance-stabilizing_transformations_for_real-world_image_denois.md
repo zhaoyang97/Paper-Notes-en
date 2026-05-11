@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Self-Calibrated Variance-Stabilizing Transformations for Real-World Image Denoising
 description: >-
-  [ICCV 2025][Image Restoration][Image Denoising] This paper proposes Noise2VST, a framework that learns a model-free variance-stabilizing transformation (VST) via self-supervised learning, enabling off-the-shelf Gaussian denoisers to handle real-world noisy images without any additional training.
+  [ICCV 2025][Image Restoration][Image Denoising] This paper proposes Noise2VST, a framework that learns a model-free variance-stabilizing transformation (VST) via self-supervised learning…
 tags:
-  - ICCV 2025
-  - Image Restoration
-  - Image Denoising
-  - Variance-Stabilizing Transformation
-  - Zero-Shot Learning
-  - Blind-Spot Denoising
-  - Spline Modeling
+  - "ICCV 2025"
+  - "Image Restoration"
+  - "Image Denoising"
+  - "Variance-Stabilizing Transformation"
+  - "Zero-Shot Learning"
+  - "Blind-Spot Denoising"
+  - "Spline Modeling"
 date: 2026-05-08
 content_hash: 1f9b067c60af6636
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GeoFlow: Real-Time Fine-Grained Cross-View Geolocalization via Iterative Flow Prediction
 description: >-
-  [CVPR 2026][Remote Sensing][Cross-View Geolocalization] GeoFlow is a lightweight flow-matching-inspired framework for fine-grained cross-view geolocalization (FG-CVG). It learns probabilistic displacement fields combined with an iterative refinement sampling (IRS) algorithm to achieve precise 2-DoF localization from ground to satellite images in continuous space, reaching SOTA-competitive accuracy at 29 FPS real-time speed.
+  [CVPR 2026][Remote Sensing][Cross-View Geolocalization] GeoFlow is a lightweight flow-matching-inspired framework for fine-grained cross-view geolocalization (FG-CVG). It learns probabilistic displacement fields combined…
 tags:
-  - CVPR 2026
-  - Remote Sensing
-  - Cross-View Geolocalization
-  - Flow Field Regression
-  - Iterative Refinement Sampling
-  - Real-Time Inference
-  - Probabilistic Displacement Prediction
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Cross-View Geolocalization"
+  - "Flow Field Regression"
+  - "Iterative Refinement Sampling"
+  - "Real-Time Inference"
+  - "Probabilistic Displacement Prediction"
 date: 2026-05-08
 content_hash: b6366e3b8d6909e2
 ---

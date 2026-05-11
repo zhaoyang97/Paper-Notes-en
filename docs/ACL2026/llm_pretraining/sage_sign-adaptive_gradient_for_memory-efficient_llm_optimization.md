@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SAGE: Sign-Adaptive Gradient for Memory-Efficient LLM Optimization
 description: >-
-  [ACL 2026][LLM Pretraining][Optimizer] This paper proposes the SAGE optimizer, which addresses the "embedding layer dilemma" of lightweight optimizers by combining Lion-style sign update directions with an $O(d)$-memory adaptive damping scaling factor $\mathbf{H}_t$. SAGE achieves new state-of-the-art perplexity on Llama models (up to 1.3B parameters) with significantly reduced optimizer memory overhead.
+  [ACL 2026][LLM Pretraining][Optimizer] This paper proposes the SAGE optimizer, which addresses the "embedding layer dilemma" of lightweight optimizers by combining Lion-style sign update directions with an $O(d)$-memory…
 tags:
-  - ACL 2026
-  - LLM Pretraining
-  - Optimizer
-  - Memory Efficiency
-  - Embedding Layer
-  - Sign-based Optimization
-  - Adaptive Scaling
+  - "ACL 2026"
+  - "LLM Pretraining"
+  - "Optimizer"
+  - "Memory Efficiency"
+  - "Embedding Layer"
+  - "Sign-based Optimization"
+  - "Adaptive Scaling"
 date: 2026-05-08
 content_hash: dfe04899200e84cf
 ---

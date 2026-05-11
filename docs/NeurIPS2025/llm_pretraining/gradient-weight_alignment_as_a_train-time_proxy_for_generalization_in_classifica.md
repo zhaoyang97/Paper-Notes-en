@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Gradient-Weight Alignment as a Train-Time Proxy for Generalization in Classification Tasks
 description: >-
-  [NeurIPS 2025][LLM Pretraining][generalization] This paper proposes Gradient-Weight Alignment (GWA), which quantifies the directional consistency (cosine similarity) between the gradient of each training sample and the model weights. During training, GWA accurately predicts generalization performance, identifies the optimal early stopping point, and localizes influential training samples—all without requiring a validation set.
+  [NeurIPS 2025][LLM Pretraining][generalization] This paper proposes Gradient-Weight Alignment (GWA), which quantifies the directional consistency (cosine similarity) between the gradient of each training sample and the m…
 tags:
-  - NeurIPS 2025
-  - LLM Pretraining
-  - generalization
-  - gradient-weight alignment
-  - early stopping
-  - training dynamics
-  - sample influence
+  - "NeurIPS 2025"
+  - "LLM Pretraining"
+  - "generalization"
+  - "gradient-weight alignment"
+  - "early stopping"
+  - "training dynamics"
+  - "sample influence"
 date: 2026-05-08
 content_hash: 0bfde85fc66e980b
 ---

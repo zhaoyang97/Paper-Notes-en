@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Auditing Meta-Cognitive Hallucinations in Reasoning Large Language Models
 description: >-
-  [NeurIPS 2025][hallucination] This paper systematically audits the generation and propagation mechanisms of hallucinations in reasoning large language models (RLLMs), finding that reflection in long CoT amplifies hallucinations through metacognitive bias rather than correcting them. Even targeted interventions at the hallucination source fail to alter final outputs (chain disloyalty), exposing critical shortcomings of existing hallucination detection methods in multi-step reasoning scenarios.
+  [NeurIPS 2025][Interpretability][hallucination] This paper systematically audits the generation and propagation mechanisms of hallucinations in reasoning large language models (RLLMs)…
 tags:
-  - NeurIPS 2025
-  - hallucination
-  - reasoning LLM
-  - Chain-of-Thought
-  - metacognition
-  - reflection
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "hallucination"
+  - "reasoning LLM"
+  - "Chain-of-Thought"
+  - "metacognition"
+  - "reflection"
 date: 2026-05-08
 content_hash: e81bda84e0af4127
 ---

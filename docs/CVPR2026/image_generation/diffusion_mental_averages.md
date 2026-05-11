@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Diffusion Mental Averages
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Models] Proposed Diffusion Mental Averages (DMA), which extracts "mental average" prototype images of concepts from pretrained diffusion models by aligning multiple denoising trajectories in semantic space—achieving consistent and realistic concept averaging visualization for the first time.
+  [CVPR 2026][Image Generation][Diffusion Models] Proposed Diffusion Mental Averages (DMA), which extracts "mental average" prototype images of concepts from pretrained diffusion models by aligning multiple denoising traje…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Models
-  - Conceptual Prototypes
-  - Trajectory Alignment
-  - Semantic Averaging
-  - Model Bias Analysis
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "Conceptual Prototypes"
+  - "Trajectory Alignment"
+  - "Semantic Averaging"
+  - "Model Bias Analysis"
 date: 2026-05-08
 content_hash: 78dffabff0464dd0
 ---

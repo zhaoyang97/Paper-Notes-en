@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MaskSQL: Safeguarding Privacy for LLM-Based Text-to-SQL via Abstraction
 description: >-
-  [NeurIPS 2025][LLM Safety][Text-to-SQL] This paper proposes MaskSQL, a framework that protects privacy by replacing sensitive table names, column names, and data values with abstract symbols before sending prompts to a remote LLM. Combined with a local SLM for schema linking and SQL reconstruction, MaskSQL preserves privacy while surpassing SLM-only approaches in SQL generation accuracy.
+  [NeurIPS 2025][LLM Safety][Text-to-SQL] This paper proposes MaskSQL, a framework that protects privacy by replacing sensitive table names, column names…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - Text-to-SQL
-  - Privacy Protection
-  - Prompt Abstraction
-  - LLM-SLM Hybrid
-  - Database Security
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "Text-to-SQL"
+  - "Privacy Protection"
+  - "Prompt Abstraction"
+  - "LLM-SLM Hybrid"
+  - "Database Security"
 date: 2026-05-08
 content_hash: f99afdeba45b397a
 ---

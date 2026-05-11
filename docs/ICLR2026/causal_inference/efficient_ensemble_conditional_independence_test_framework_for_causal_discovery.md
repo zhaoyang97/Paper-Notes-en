@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Efficient Ensemble Conditional Independence Test Framework for Causal Discovery
 description: >-
-  [ICLR 2026][Causal Inference][conditional independence test] This paper proposes E-CIT (Ensemble Conditional Independence Test), a framework that partitions data into subsets, performs independent tests on each subset, and aggregates the resulting p-values via a **stable distribution**-based combination method. E-CIT reduces the computational complexity of any base CIT to linear in sample size, while maintaining or improving test power in challenging settings such as heavy-tailed noise and real-world data.
+  [ICLR 2026][Causal Inference][conditional independence test] This paper proposes E-CIT (Ensemble Conditional Independence Test), a framework that partitions data into subsets, performs independent tests on each subset…
 tags:
-  - ICLR 2026
-  - Causal Inference
-  - conditional independence test
-  - causal discovery
-  - ensemble method
-  - stable distribution
-  - p-value combination
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "conditional independence test"
+  - "causal discovery"
+  - "ensemble method"
+  - "stable distribution"
+  - "p-value combination"
 date: 2026-05-08
 content_hash: 85003f1de1e73555
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] mCLM: A Modular Chemical Language Model that Generates Functional and Makeable Molecules
 description: >-
-  [ICLR 2026][Medical Imaging][chemical language model] This paper proposes mCLM (Modular Chemical Language Model), which represents molecules as sequences of synthesizable building blocks, enabling LLMs to generate molecules that simultaneously satisfy pharmacological function and automated synthesis feasibility. mCLM achieves significant improvements in pharmacokinetic and toxicity properties across 430 FDA-approved drugs.
+  [ICLR 2026][Medical Imaging][chemical language model] This paper proposes mCLM (Modular Chemical Language Model), which represents molecules as sequences of synthesizable building blocks…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - chemical language model
-  - molecular optimization
-  - automated synthesis
-  - modular design
-  - drug discovery
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "chemical language model"
+  - "molecular optimization"
+  - "automated synthesis"
+  - "modular design"
+  - "drug discovery"
 date: 2026-05-08
 content_hash: f6c8e28af529858a
 ---

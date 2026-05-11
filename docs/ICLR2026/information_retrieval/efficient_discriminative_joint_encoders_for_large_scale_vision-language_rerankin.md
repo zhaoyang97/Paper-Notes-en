@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Efficient Discriminative Joint Encoders for Large Scale Vision-Language Re-ranking
 description: >-
-  [ICLR 2026][Vision-Language Retrieval] This paper proposes EDJE (Efficient Discriminative Joint Encoder), which offlines visual feature extraction and compresses visual tokens via a lightweight attention adapter, achieving a throughput of 50k image-text pairs per second. EDJE matches the retrieval performance of existing joint encoders on Flickr (zero-shot) and COCO (fine-tuned), requiring only 49 kB of storage per image.
+  [ICLR 2026][Information Retrieval & RAG][Vision-Language Retrieval] This paper proposes EDJE (Efficient Discriminative Joint Encoder), which offlines visual feature extraction and compresses visual tokens via a lightweig…
 tags:
-  - ICLR 2026
-  - Vision-Language Retrieval
-  - Joint Encoder
-  - Re-ranking
-  - Token Compression
-  - Efficient Inference
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Vision-Language Retrieval"
+  - "Joint Encoder"
+  - "Re-ranking"
+  - "Token Compression"
+  - "Efficient Inference"
 date: 2026-05-08
 content_hash: a1e66dd34905af0d
 ---

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Group Representational Position Encoding (GRAPE)
 description: >-
-  [ICLR 2026][Signal & Communication][positional encoding] This paper proposes the GRAPE framework, which unifies the multiplicative (RoPE) and additive (ALiBi/FoX) families of positional encodings in Transformers via group actions, proves that RoPE and ALiBi are exact special cases, and introduces a path-integral additive variant GRAPE-AP that outperforms existing methods on downstream tasks.
+  [ICLR 2026][Signal & Communication][positional encoding] This paper proposes the GRAPE framework, which unifies the multiplicative (RoPE) and additive (ALiBi/FoX) families of positional encodings in Transformers via grou…
 tags:
-  - ICLR 2026
+  - "ICLR 2026"
   - "Signal & Communication"
-  - positional encoding
-  - group theory
-  - RoPE
-  - ALiBi
-  - Lie groups
-  - rotary encoding
-  - long context
+  - "positional encoding"
+  - "group theory"
+  - "RoPE"
+  - "ALiBi"
+  - "Lie groups"
+  - "rotary encoding"
+  - "long context"
 date: 2026-05-08
 content_hash: 26f23b6b71394a03
 ---

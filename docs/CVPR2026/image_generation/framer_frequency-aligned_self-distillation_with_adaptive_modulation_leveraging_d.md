@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FRAMER: Frequency-Aligned Self-Distillation with Adaptive Modulation Leveraging Diffusion Priors for Real-World Image Super-Resolution
 description: >-
-  [CVPR 2026][Image Generation][Real-World Image Super-Resolution] FRAMER proposes a frequency-aligned self-distillation training framework that uses final-layer feature maps as teacher supervision for intermediate layers. By applying IntraCL and InterCL contrastive losses to low-frequency (LF) and high-frequency (HF) components respectively, along with Frequency-based Adaptive Weight (FAW) and Frequency-based Adaptive Modulation (FAM), FRAMER significantly improves high-frequency detail recovery in diffusion-based real-world image super-resolution without modifying the network architecture or inference pipeline.
+  [CVPR 2026][Image Generation][Real-World Image Super-Resolution] FRAMER proposes a frequency-aligned self-distillation training framework that uses final-layer feature maps as teacher supervision for intermediate layers.…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Real-World Image Super-Resolution
-  - Self-Distillation
-  - Frequency Awareness
-  - Diffusion Priors
-  - Plug-and-Play
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Real-World Image Super-Resolution"
+  - "Self-Distillation"
+  - "Frequency Awareness"
+  - "Diffusion Priors"
+  - "Plug-and-Play"
 date: 2026-05-08
 content_hash: 716101ef114d053c
 ---

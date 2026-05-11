@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Higher-Order Responsibility
 description: >-
-  [AAAI 2026][higher-order responsibility] This paper studies higher-order responsibility in sequential decision-making mechanisms and establishes two core theorems: (1) any mechanism with $n$ agents is necessarily $n$-gap-free (i.e., a responsible agent can always be found at some order); (2) determining whether a mechanism is $d$-gap-free is $\Pi_{2d+1}$-complete.
+  [AAAI 2026][higher-order responsibility] This paper studies higher-order responsibility in sequential decision-making mechanisms and establishes two core theorems: (1) any mechanism with $n$ agents is necessarily $n$-gap…
 tags:
-  - AAAI 2026
-  - higher-order responsibility
-  - responsibility gap
-  - sequential decision-making
-  - computational complexity
-  - polynomial hierarchy
+  - "AAAI 2026"
+  - "higher-order responsibility"
+  - "responsibility gap"
+  - "sequential decision-making"
+  - "computational complexity"
+  - "polynomial hierarchy"
 date: 2026-05-08
 content_hash: 6915c3be11b59f56
 ---

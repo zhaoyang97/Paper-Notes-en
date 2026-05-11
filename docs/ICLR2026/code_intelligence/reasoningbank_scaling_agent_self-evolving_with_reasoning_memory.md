@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory
 description: >-
-  [ICLR 2026][Agent Memory] This paper proposes ReasoningBank, a memory framework that distills generalizable reasoning strategies from both successful and failed experiences as judged by the agent itself, and introduces memory-aware test-time scaling (MaTTS) to establish a synergy between memory and test-time scaling. The approach consistently outperforms baselines on WebArena, Mind2Web, and SWE-Bench (up to 34.2% relative improvement) while reducing interaction steps by 16%.
+  [ICLR 2026][Code Intelligence][Agent Memory] This paper proposes ReasoningBank, a memory framework that distills generalizable reasoning strategies from both successful and failed experiences as judged by the agent itsel…
 tags:
-  - ICLR 2026
-  - Agent Memory
-  - Reasoning Strategy
-  - Test-Time Scaling
-  - Self-Evolving
-  - Experiential Learning
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "Agent Memory"
+  - "Reasoning Strategy"
+  - "Test-Time Scaling"
+  - "Self-Evolving"
+  - "Experiential Learning"
 date: 2026-05-08
 content_hash: d168899643d3d25c
 ---

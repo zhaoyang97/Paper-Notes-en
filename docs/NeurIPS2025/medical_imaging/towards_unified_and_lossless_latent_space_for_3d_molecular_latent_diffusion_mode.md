@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Unified and Lossless Latent Space for 3D Molecular Latent Diffusion Modeling
 description: >-
-  [NeurIPS 2025][Medical Imaging][3D molecule generation] This paper proposes UAE-3D, a multimodal variational autoencoder that compresses atomic types, chemical bonds, and 3D coordinates of molecules into a unified, near-lossless latent space. By eliminating the complexity of handling multimodality and equivariance, a general-purpose Diffusion Transformer achieves state-of-the-art 3D molecular generation.
+  [NeurIPS 2025][Medical Imaging][3D molecule generation] This paper proposes UAE-3D, a multimodal variational autoencoder that compresses atomic types, chemical bonds, and 3D coordinates of molecules into a unified…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - 3D molecule generation
-  - latent diffusion model
-  - variational autoencoder
-  - drug discovery
-  - SE(3) equivariance
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "3D molecule generation"
+  - "latent diffusion model"
+  - "variational autoencoder"
+  - "drug discovery"
+  - "SE(3) equivariance"
 date: 2026-05-08
 content_hash: 13251eacdde5d635
 ---

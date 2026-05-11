@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EcoAgent: An Efficient Device-Cloud Collaborative Multi-Agent Framework for Mobile Automation
 description: >-
-  [AAAI 2026][LLM Agent][Device-Cloud Collaboration] This paper proposes EcoAgent, a closed-loop device-cloud collaborative multi-agent framework for mobile automation. By combining Dual-ReACT two-level reasoning and planning, lightweight on-device verification feedback, and a Pre-Understanding text compression module, EcoAgent achieves success rates comparable to fully cloud-based agents on AndroidWorld while substantially reducing latency (3.9s vs. 15.3s), cloud invocations (−89%), and upstream data volume (−48.6×).
+  [AAAI 2026][LLM Agent][Device-Cloud Collaboration] This paper proposes EcoAgent, a closed-loop device-cloud collaborative multi-agent framework for mobile automation. By combining Dual-ReACT two-level reasoning and plann…
 tags:
-  - AAAI 2026
-  - LLM Agent
-  - Device-Cloud Collaboration
-  - Multi-Agent System
-  - Mobile Automation
-  - Privacy Protection
-  - Dual-ReACT
+  - "AAAI 2026"
+  - "LLM Agent"
+  - "Device-Cloud Collaboration"
+  - "Multi-Agent System"
+  - "Mobile Automation"
+  - "Privacy Protection"
+  - "Dual-ReACT"
 date: 2026-05-08
 content_hash: a28124262ba1dbc5
 ---

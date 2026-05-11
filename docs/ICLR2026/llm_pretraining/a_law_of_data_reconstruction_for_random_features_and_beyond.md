@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Law of Data Reconstruction for Random Features (and Beyond)
 description: >-
-  [ICLR 2026][LLM Pretraining][Data Reconstruction] This paper establishes a data reconstruction law in random feature models from information-theoretic and algebraic perspectives: when the parameter count $p \gg dn$ (where $d$ is the data dimension and $n$ is the number of samples), training data can be fully reconstructed. A projection-loss-based optimization method is proposed and the universality of this threshold is validated on RF models, two-layer networks, and ResNets.
+  [ICLR 2026][LLM Pretraining][Data Reconstruction] This paper establishes a data reconstruction law in random feature models from information-theoretic and algebraic perspectives: when the parameter count $p \gg dn$ (wher…
 tags:
-  - ICLR 2026
-  - LLM Pretraining
-  - Data Reconstruction
-  - Overparameterization
-  - Random Features
-  - Memorization
-  - Privacy
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Data Reconstruction"
+  - "Overparameterization"
+  - "Random Features"
+  - "Memorization"
+  - "Privacy"
 date: 2026-05-08
 content_hash: 7476d5ebd35a4bb5
 ---

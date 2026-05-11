@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Towards Better Code Understanding in Decoder-Only Models with Contrastive Learning
 description: >-
-   This paper proposes CL4D, a contrastive learning framework that adapts pretrained decoder-only code generation models to code understanding tasks (code search, clone detection) via continued pretraining, achieving performance comparable to or better than encoder-only models of equivalent scale without retraining them from scratch.
+  [Code Intelligence] This paper proposes CL4D, a contrastive learning framework that adapts pretrained decoder-only code generation models to code understanding tasks (code search…
 tags:
-
+  - "Code Intelligence"
 date: 2026-05-08
 content_hash: 46ffb375aa006881
 ---

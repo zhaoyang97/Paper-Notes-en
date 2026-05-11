@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Balanced Conic Rectified Flow
 description: >-
-  [NeurIPS 2025][Image Generation][rectified flow] To address the distribution drift induced by the reflow step in k-rectified flow, this paper proposes conic reflow: constructing conic supervisory trajectories from the inverted noise of real images and their Slerp-perturbed neighbors, substantially reducing the number of required fake pairs while achieving superior generation quality and straighter ODE trajectories.
+  [NeurIPS 2025][Image Generation][rectified flow] To address the distribution drift induced by the reflow step in k-rectified flow, this paper proposes conic reflow: constructing conic supervisory trajectories from the in…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - rectified flow
-  - reflow
-  - conic interpolation
-  - Slerp
-  - distribution drift
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "rectified flow"
+  - "reflow"
+  - "conic interpolation"
+  - "Slerp"
+  - "distribution drift"
 date: 2026-05-08
 content_hash: b1ec54fe1f0c9cfd
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Position: Towards Bidirectional Human-AI Alignment
 description: >-
-  [NeurIPS 2025][Recommender Systems][AI alignment] This paper proposes a **Bidirectional Human-AI Alignment** framework grounded in a systematic review of 400+ papers, arguing that AI alignment should not be limited to the unidirectional goal of "aligning AI with humans," but must also encompass the critically underexplored direction of "aligning humans with AI," while identifying key gaps in the current research landscape.
+  [NeurIPS 2025][Recommender Systems][AI alignment] This paper proposes a **Bidirectional Human-AI Alignment** framework grounded in a systematic review of 400+ papers…
 tags:
-  - NeurIPS 2025
-  - Recommender Systems
-  - AI alignment
-  - bidirectional alignment
-  - human values
-  - human-AI interaction
-  - systematic review
+  - "NeurIPS 2025"
+  - "Recommender Systems"
+  - "AI alignment"
+  - "bidirectional alignment"
+  - "human values"
+  - "human-AI interaction"
+  - "systematic review"
 date: 2026-05-08
 content_hash: 46892a3b1c35e217
 ---

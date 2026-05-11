@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] MIRAGE: A Benchmark for Multimodal Information-Seeking and Reasoning in Agriculture
 description: >-
-  [NeurIPS 2025][Multimodal VLM][benchmark] MIRAGE is the first multimodal benchmark constructed from real agricultural expert consultation dialogues (35,000+), evaluating vision-language models on domain-level entity identification, causal reasoning, and clarify-or-respond decision-making. It reveals a severe challenge in which even GPT-4.1 achieves only 43.9% identification accuracy.
+  [NeurIPS 2025][Multimodal VLM][benchmark] MIRAGE is the first multimodal benchmark constructed from real agricultural expert consultation dialogues (35,000+)…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - benchmark
-  - multimodal
-  - VLM
-  - agriculture
-  - visual grounding
-  - multi-turn dialogue
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "benchmark"
+  - "multimodal"
+  - "VLM"
+  - "agriculture"
+  - "visual grounding"
+  - "multi-turn dialogue"
 date: 2026-05-08
 content_hash: 5051449ed705904e
 ---

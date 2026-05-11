@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DiA-gnostic VLVAE: Disentangled Alignment-Constrained Vision Language Variational AutoEncoder for Robust Radiology Reporting with Missing Modalities
 description: >-
-  [AAAI 2026][Medical Imaging][Radiology Report Generation] This paper proposes DiA-gnostic VLVAE, a vision-language mixture-of-experts VAE that learns a three-factor latent space ($Z_v$ visual-specific / $Z_l$ language-specific / $Z_s$ shared), with dual constraints of orthogonality and contrastive alignment for disentanglement. The model generates reliable radiology reports even when clinical context is absent, achieving competitive BLEU@4 on IU X-Ray and MIMIC-CXR.
+  [AAAI 2026][Medical Imaging][Radiology Report Generation] This paper proposes DiA-gnostic VLVAE, a vision-language mixture-of-experts VAE that learns a three-factor latent space ($Z_v$ visual-specific / $Z_l$ language-sp…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Radiology Report Generation
-  - Missing Modalities
-  - Disentangled Representation
-  - VAE
-  - MoE
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Radiology Report Generation"
+  - "Missing Modalities"
+  - "Disentangled Representation"
+  - "VAE"
+  - "MoE"
 date: 2026-05-08
 content_hash: 149bd6724ddd3c9d
 ---

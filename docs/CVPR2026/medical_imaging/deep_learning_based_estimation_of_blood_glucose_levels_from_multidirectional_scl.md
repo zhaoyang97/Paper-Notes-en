@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Deep Learning–Based Estimation of Blood Glucose Levels from Multidirectional Scleral Blood Vessel Imaging
 description: >-
-  [CVPR 2026][Medical Imaging][blood glucose estimation] This paper proposes ScleraGluNet, which captures scleral blood vessel photographs from five gaze directions, extracts direction-specific vascular features via parallel CNNs, refines them through MRFO feature selection, and fuses them across views using a Transformer. The model simultaneously performs three-class metabolic state classification (93.8% accuracy) and continuous fasting plasma glucose (FPG) estimation (MAE = 6.42 mg/dL, r = 0.983).
+  [CVPR 2026][Medical Imaging][blood glucose estimation] This paper proposes ScleraGluNet, which captures scleral blood vessel photographs from five gaze directions…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - blood glucose estimation
-  - scleral vessel imaging
-  - multi-view learning
-  - MRFO
-  - Transformer
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "blood glucose estimation"
+  - "scleral vessel imaging"
+  - "multi-view learning"
+  - "MRFO"
+  - "Transformer"
 date: 2026-05-08
 content_hash: e7fbf3e0661f1e80
 ---

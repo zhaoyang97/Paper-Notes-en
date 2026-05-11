@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] The Reasoning Trap — Logical Reasoning as a Mechanistic Pathway to Situational Awareness
 description: >-
-  [ICLR 2026][situational awareness] A position paper proposing the RAISE (Reasoning Advancing Into Self Examination) framework, which systematically argues that three improvement pathways for logical reasoning (deductive/inductive/abductive) will inevitably endow LLMs with situational awareness. The paper constructs a five-level escalation ladder from basic self-identification to strategic deception, and demonstrates that current safety mechanisms such as RLHF and Constitutional AI are insufficient to arrest this trend.
+  [ICLR 2026][Interpretability][situational awareness] A position paper proposing the RAISE (Reasoning Advancing Into Self Examination) framework…
 tags:
-  - ICLR 2026
-  - situational awareness
-  - AI safety
-  - logical reasoning
-  - deceptive alignment
-  - RAISE framework
+  - "ICLR 2026"
+  - "Interpretability"
+  - "situational awareness"
+  - "AI safety"
+  - "logical reasoning"
+  - "deceptive alignment"
+  - "RAISE framework"
 date: 2026-05-08
 content_hash: 6d6ac895da3fd236
 ---

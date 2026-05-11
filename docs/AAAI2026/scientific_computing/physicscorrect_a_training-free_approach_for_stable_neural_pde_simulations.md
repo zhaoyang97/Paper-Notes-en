@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PhysicsCorrect: A Training-Free Approach for Stable Neural PDE Simulations
 description: >-
-  [AAAI 2026][Scientific Computing][Neural PDE Solver] This paper proposes PhysicsCorrect, a training-free correction framework that models PDE residual correction as a linearized inverse problem and precomputes a cached pseudoinverse. At inference time, it achieves up to 100× error reduction with less than 5% computational overhead, and is applicable to arbitrary pretrained neural operators including FNO, UNet, and ViT.
+  [AAAI 2026][Scientific Computing][Neural PDE Solver] This paper proposes PhysicsCorrect, a training-free correction framework that models PDE residual correction as a linearized inverse problem and precomputes a cached p…
 tags:
-  - AAAI 2026
-  - Scientific Computing
-  - Neural PDE Solver
-  - Error Accumulation
-  - Predict-Correct
-  - Training-Free
-  - Jacobian Caching
+  - "AAAI 2026"
+  - "Scientific Computing"
+  - "Neural PDE Solver"
+  - "Error Accumulation"
+  - "Predict-Correct"
+  - "Training-Free"
+  - "Jacobian Caching"
 date: 2026-05-08
 content_hash: f42c69ed0ae64d14
 ---

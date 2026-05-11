@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PhysGaia: A Physics-Aware Benchmark with Multi-Body Interactions for Dynamic Novel View Synthesis
 description: >-
-  [CVPR 2026][3D Vision][Physics-aware benchmark] PhysGaia constructs a physics-aware benchmark dataset comprising 17 scenes that cover multi-body interactions across four material categories—liquid, gas, cloth, and rheological matter—providing ground truth 3D particle trajectories and physical parameters (e.g., viscosity). The paper further introduces two new metrics, Trajectory Distance (TD) and AUOP, to quantify the physical realism of 4DGS methods, revealing severe deficiencies in physical reasoning among existing DyNVS approaches.
+  [CVPR 2026][3D Vision][Physics-aware benchmark] PhysGaia constructs a physics-aware benchmark dataset comprising 17 scenes that cover multi-body interactions across four material categories—liquid, gas, cloth…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Physics-aware benchmark
-  - dynamic novel view synthesis
-  - multi-body interaction
-  - 4D Gaussian splatting
-  - physical parameter evaluation
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Physics-aware benchmark"
+  - "dynamic novel view synthesis"
+  - "multi-body interaction"
+  - "4D Gaussian splatting"
+  - "physical parameter evaluation"
 date: 2026-05-08
 content_hash: 6b2b68699ab0abd4
 ---

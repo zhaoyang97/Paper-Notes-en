@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] FLUX: Efficient Descriptor-Driven Clustered Federated Learning under Arbitrary Distribution Shifts
 description: >-
-  [NEURIPS2025][AI Safety][Clustered Federated Learning] Flux extracts compact distribution descriptors on the client side (marginal $P(X)$ mean/covariance + class-conditional $P(Y|X)$ mean/covariance), performs unsupervised clustering on the server via adaptive DBSCAN to automatically determine the number of clusters and group assignments, trains cluster-specific models, and at test time matches unlabeled new clients to the optimal model using only feature descriptors — the first method to simultaneously handle four types of distribution shifts with communication overhead comparable to FedAvg.
+  [NEURIPS2025][AI Safety][Clustered Federated Learning] Flux extracts compact distribution descriptors on the client side (marginal $P(X)$ mean/covariance + class-conditional $P(Y|X)$ mean/covariance)…
 tags:
-  - NEURIPS2025
-  - AI Safety
-  - Clustered Federated Learning
-  - Descriptor
-  - Distribution Shift
-  - Test-Time Adaptation
-  - DBSCAN
-  - Wasserstein Distance
+  - "NEURIPS2025"
+  - "AI Safety"
+  - "Clustered Federated Learning"
+  - "Descriptor"
+  - "Distribution Shift"
+  - "Test-Time Adaptation"
+  - "DBSCAN"
+  - "Wasserstein Distance"
 date: 2026-05-08
 content_hash: 9d3d9dea69fbbd1c
 ---

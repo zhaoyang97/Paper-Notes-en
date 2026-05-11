@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Uni-DPO: A Unified Paradigm for Dynamic Preference Optimization of LLMs
 description: >-
-  [ICLR 2026][LLM Alignment][DPO improvement] Uni-DPO is proposed to unify dynamic reweighting of preference pairs via three components — quality-aware weighting (prioritizing pairs with large score margins), performance-aware weighting (focal loss focusing on underfitted samples), and a calibrated NLL loss — consistently outperforming DPO/SimPO on text understanding and mathematical reasoning benchmarks, with Gemma-2-9B achieving 67.1% on Arena-Hard, surpassing Claude 3 Opus (60.4%).
+  [ICLR 2026][LLM Alignment][DPO improvement] Uni-DPO is proposed to unify dynamic reweighting of preference pairs via three components — quality-aware weighting (prioritizing pairs with large score margins)…
 tags:
-  - ICLR 2026
-  - LLM Alignment
-  - DPO improvement
-  - dynamic weighting
-  - quality-aware
-  - focal loss
-  - preference optimization
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "DPO improvement"
+  - "dynamic weighting"
+  - "quality-aware"
+  - "focal loss"
+  - "preference optimization"
 date: 2026-05-08
 content_hash: 20a78219ce75d8e2
 ---

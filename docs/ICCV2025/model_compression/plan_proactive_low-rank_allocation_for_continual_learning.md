@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] PLAN: Proactive Low-Rank Allocation for Continual Learning
 description: >-
-  [ICCV 2025][Model Compression][Continual Learning] This paper proposes PLAN, a framework that proactively allocates orthogonal low-rank subspaces for each task and employs a perturbation-based strategy to minimize inter-task interference, achieving efficient and forgetting-free fine-tuning of large models in continual learning (CL) settings, establishing a new state of the art on standard CL benchmarks.
+  [ICCV 2025][Model Compression][Continual Learning] This paper proposes PLAN, a framework that proactively allocates orthogonal low-rank subspaces for each task and employs a perturbation-based strategy to minimize inter-…
 tags:
-  - ICCV 2025
-  - Model Compression
-  - Continual Learning
-  - Low-Rank Adaptation
-  - LoRA
-  - Catastrophic Forgetting
-  - Subspace Allocation
+  - "ICCV 2025"
+  - "Model Compression"
+  - "Continual Learning"
+  - "Low-Rank Adaptation"
+  - "LoRA"
+  - "Catastrophic Forgetting"
+  - "Subspace Allocation"
 date: 2026-05-08
 content_hash: 93132bc53fc6bad0
 ---

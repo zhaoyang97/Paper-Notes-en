@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Failure Modes in Multi-Hop QA: The Weakest Link Effect and the Recognition Bottleneck
 description: >-
-  [ACL 2026][LLM Reasoning][Multi-Hop QA] This paper proposes Multi-Focus Attention Instruction (MFAI) as a semantic probe to reveal the "weakest link effect" in multi-hop QA — multi-hop reasoning performance is determined by the absolute position of the least visible evidence bucket rather than the inter-fact distance. Failures primarily stem from a recognition bottleneck rather than reasoning deficits, and System-2 reasoning models can effectively resist positional bias and misleading attention cues.
+  [ACL 2026][LLM Reasoning][Multi-Hop QA] This paper proposes Multi-Focus Attention Instruction (MFAI) as a semantic probe to reveal the "weakest link effect" in multi-hop QA — multi-hop reasoning performance is determined…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - Multi-Hop QA
-  - Positional Bias
-  - Weakest Link Effect
-  - Attention Guidance
-  - System-2 Reasoning
+  - "ACL 2026"
+  - "LLM Reasoning"
+  - "Multi-Hop QA"
+  - "Positional Bias"
+  - "Weakest Link Effect"
+  - "Attention Guidance"
+  - "System-2 Reasoning"
 date: 2026-05-08
 content_hash: d1efe282355d5421
 ---

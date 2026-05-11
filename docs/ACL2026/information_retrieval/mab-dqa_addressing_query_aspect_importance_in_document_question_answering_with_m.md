@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] MAB-DQA: Addressing Query Aspect Importance in Document Question Answering with Multi-Armed Bandits
 description: >-
-  [ACL 2026][Document Question Answering] This paper proposes MAB-DQA, a framework that decomposes complex queries into multiple aspect sub-queries, dynamically evaluates the importance of each aspect via a multi-armed bandit mechanism (Thompson Sampling), and redistributes retrieval budgets accordingly, achieving significant improvements in retrieval precision and answer accuracy for multimodal document question answering.
+  [ACL 2026][Information Retrieval & RAG][Document Question Answering] This paper proposes MAB-DQA, a framework that decomposes complex queries into multiple aspect sub-queries…
 tags:
-  - ACL 2026
-  - Document Question Answering
-  - Multi-Armed Bandits
-  - Query Decomposition
-  - Multimodal RAG
-  - Hypergraph Reasoning
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Document Question Answering"
+  - "Multi-Armed Bandits"
+  - "Query Decomposition"
+  - "Multimodal RAG"
+  - "Hypergraph Reasoning"
 date: 2026-05-08
 content_hash: ffca6c0e2c87c71b
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Anti-Tamper Protection for Unauthorized Individual Image Generation
 description: >-
-  [ICCV 2025][Image Generation][anti-tamper protection] This paper proposes Anti-Tamper Perturbation (ATP), which decouples protection perturbations (preventing forged generation) and authorization perturbations (detecting purified tampering) into separate frequency-domain regions. When an attacker attempts to purify the protective signal, the anti-tamper mechanism is triggered to deny service, achieving a 100% protection success rate against various purification attacks.
+  [ICCV 2025][Image Generation][anti-tamper protection] This paper proposes Anti-Tamper Perturbation (ATP), which decouples protection perturbations (preventing forged generation) and authorization perturbations (detecting…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - anti-tamper protection
-  - personalized image generation
-  - adversarial perturbation
-  - frequency-domain watermarking
-  - image copyright
+  - "ICCV 2025"
+  - "Image Generation"
+  - "anti-tamper protection"
+  - "personalized image generation"
+  - "adversarial perturbation"
+  - "frequency-domain watermarking"
+  - "image copyright"
 date: 2026-05-08
 content_hash: d0823c4791c0a061
 ---

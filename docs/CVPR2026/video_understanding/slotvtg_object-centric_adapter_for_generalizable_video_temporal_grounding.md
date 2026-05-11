@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SlotVTG: Object-Centric Adapter for Generalizable Video Temporal Grounding
 description: >-
-  [CVPR 2026][Video Understanding][Video Temporal Grounding] This paper proposes SlotVTG, a framework that inserts a lightweight Slot Adapter into the early layers of an MLLM decoder to decompose visual tokens into object-level slot representations. A Slot Alignment Loss guided by DINOv2 priors encourages semantically coherent slot formation, substantially improving out-of-domain (OOD) generalization for video temporal grounding (up to +4.3 OOD R1@0.5), while introducing only ~0.25% additional trainable parameters.
+  [CVPR 2026][Video Understanding][Video Temporal Grounding] This paper proposes SlotVTG, a framework that inserts a lightweight Slot Adapter into the early layers of an MLLM decoder to decompose visual tokens into object-…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Video Temporal Grounding
-  - Object-Centric Learning
-  - Slot Attention
-  - Out-of-Domain Generalization
-  - Multimodal Large Language Models
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Video Temporal Grounding"
+  - "Object-Centric Learning"
+  - "Slot Attention"
+  - "Out-of-Domain Generalization"
+  - "Multimodal Large Language Models"
 date: 2026-05-08
 content_hash: 865bf04f6ec59cde
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Benford's Curse: Tracing Digit Bias to Numerical Hallucination in LLMs
 description: >-
-  [NeurIPS 2025][Model Compression][Benford's Law] This paper demonstrates that numerical hallucinations in LLMs originate from the Benford's Law-conforming digit frequency distribution in pretraining corpora—where digit 1 appears with ~30% probability while digit 9 appears with only ~5%—and that this bias is internalized by specific "digit-selective neurons" in the later FFN layers. A Digit Selectivity Coefficient (DSC) is proposed to localize biased neurons, and pruning 0.01% of neurons corrects 1.36–3.49% of erroneous predictions.
+  [NeurIPS 2025][Model Compression][Benford's Law] This paper demonstrates that numerical hallucinations in LLMs originate from the Benford's Law-conforming digit frequency distribution in pretraining corpora—where digit 1…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Benford's Law
-  - digit bias
-  - numerical hallucination
-  - FFN neurons
-  - selective pruning
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Benford's Law"
+  - "digit bias"
+  - "numerical hallucination"
+  - "FFN neurons"
+  - "selective pruning"
 date: 2026-05-08
 content_hash: 723485f72ee8bb7a
 ---

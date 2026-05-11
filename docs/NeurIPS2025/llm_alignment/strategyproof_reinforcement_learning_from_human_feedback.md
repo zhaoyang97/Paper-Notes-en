@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Strategyproof Reinforcement Learning from Human Feedback
 description: >-
-  [NeurIPS 2025][LLM Alignment][RLHF] This paper is the first to study strategic manipulation by annotators in RLHF from a mechanism design perspective. It proves a fundamental tradeoff between strategyproofness and policy alignment, and proposes the Pessimistic Median of MLEs algorithm to achieve approximate strategyproofness.
+  [NeurIPS 2025][LLM Alignment][RLHF] This paper is the first to study strategic manipulation by annotators in RLHF from a mechanism design perspective. It proves a fundamental tradeoff between strategyproofness and policy…
 tags:
-  - NeurIPS 2025
-  - LLM Alignment
-  - RLHF
-  - strategyproofness
-  - diverse preferences
-  - mechanism design
-  - social welfare maximization
+  - "NeurIPS 2025"
+  - "LLM Alignment"
+  - "RLHF"
+  - "strategyproofness"
+  - "diverse preferences"
+  - "mechanism design"
+  - "social welfare maximization"
 date: 2026-05-08
 content_hash: eae0503897392935
 ---

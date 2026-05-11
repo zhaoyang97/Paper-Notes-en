@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Whispering Agents: An Event-Driven Covert Communication Protocol for the Internet of Agents
 description: >-
-  [AAAI 2026][Covert Communication] This paper presents the first formal definition of a "Covert Event Channel" in the Internet of Agents (IoA) and proposes the ΠCCAP protocol, which embeds secret data across the storage, timing, and behavioral dimensions of agent conversations, achieving high-capacity, high-robustness covert communication that is imperceptible to LLM-based censors.
+  [AAAI 2026][Covert Communication] This paper presents the first formal definition of a "Covert Event Channel" in the Internet of Agents (IoA) and proposes the ΠCCAP protocol, which embeds secret data across the storage…
 tags:
-  - AAAI 2026
-  - Covert Communication
-  - Steganography
-  - Internet of Agents
-  - Multi-Agent Systems
-  - Event-Driven Protocol
+  - "AAAI 2026"
+  - "Covert Communication"
+  - "Steganography"
+  - "Internet of Agents"
+  - "Multi-Agent Systems"
+  - "Event-Driven Protocol"
 date: 2026-05-08
 content_hash: 6ba328abf086e0df
 ---

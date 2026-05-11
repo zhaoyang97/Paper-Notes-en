@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Query Pipeline Optimization for Cancer Patient Question Answering Systems
 description: >-
-  [ACL 2026][Medical Imaging][Cancer QA] This paper proposes CoMeta, a three-tier controllable metadata-aware RAG framework for Cancer Patient Question Answering (CPQA). It integrates Clinical Hybrid Semantic-symbolic Document Retrieval (CHSDR), which fuses real-time Boolean search via E-Utilities with MedCPT semantic retrieval, and employs Semantically Enhanced Overlapping Segmentation (SEOS) to prevent context fragmentation. On the CMMQA dataset, CoMeta improves Claude-3-Haiku answer accuracy by 5.24% over CoT and approximately 3% over naive RAG.
+  [ACL 2026][Medical Imaging][Cancer QA] This paper proposes CoMeta, a three-tier controllable metadata-aware RAG framework for Cancer Patient Question Answering (CPQA). It integrates Clinical Hybrid Semantic-symbolic Docu…
 tags:
-  - ACL 2026
-  - Medical Imaging
-  - Cancer QA
-  - RAG Query Pipeline
-  - Hybrid Retrieval
-  - Semantic Segmentation
-  - Metadata-Aware
+  - "ACL 2026"
+  - "Medical Imaging"
+  - "Cancer QA"
+  - "RAG Query Pipeline"
+  - "Hybrid Retrieval"
+  - "Semantic Segmentation"
+  - "Metadata-Aware"
 date: 2026-05-08
 content_hash: 56c75d12be156059
 ---

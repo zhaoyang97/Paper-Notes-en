@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DIA: The Adversarial Exposure of Deterministic Inversion in Diffusion Models
 description: >-
-  [ICCV 2025][Image Generation][Adversarial Attack] This paper proposes DDIM Inversion Attack (DIA), which disrupts the image editing capability of diffusion models by directly attacking the DDIM inversion trajectory. DIA effectively defends against malicious deepfake generation and privacy-violating content synthesis, substantially outperforming existing defenses such as AdvDM and Photoguard across diverse editing methods.
+  [ICCV 2025][Image Generation][Adversarial Attack] This paper proposes DDIM Inversion Attack (DIA), which disrupts the image editing capability of diffusion models by directly attacking the DDIM inversion trajectory. DIA…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Adversarial Attack
-  - DDIM Inversion
-  - Diffusion Model Defense
-  - Image Editing Protection
-  - Deepfake Defense
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Adversarial Attack"
+  - "DDIM Inversion"
+  - "Diffusion Model Defense"
+  - "Image Editing Protection"
+  - "Deepfake Defense"
 date: 2026-05-08
 content_hash: e21efdb28baa9435
 ---

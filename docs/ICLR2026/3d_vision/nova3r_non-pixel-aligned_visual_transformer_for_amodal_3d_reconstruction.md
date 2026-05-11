@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] NOVA3R: Non-pixel-aligned Visual Transformer for Amodal 3D Reconstruction
 description: >-
-  [ICLR 2026][3D Vision][non-pixel-aligned] This paper proposes NOVA3R — a non-pixel-aligned amodal 3D reconstruction framework from pose-free images. It employs learnable scene tokens to aggregate global information across views and a flow-matching-based diffusion 3D decoder to generate complete point clouds (including occluded regions). The method addresses two fundamental limitations of pixel-aligned approaches — inability to reconstruct occluded surfaces and redundant geometry in overlapping regions — and outperforms prior SOTA on scene-level and object-level benchmarks including SCRREAM and GSO.
+  [ICLR 2026][3D Vision][non-pixel-aligned] This paper proposes NOVA3R — a non-pixel-aligned amodal 3D reconstruction framework from pose-free images. It employs learnable scene tokens to aggregate global information acros…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - non-pixel-aligned
-  - amodal 3D reconstruction
-  - scene tokens
-  - flow-matching
-  - complete point cloud
+  - "ICLR 2026"
+  - "3D Vision"
+  - "non-pixel-aligned"
+  - "amodal 3D reconstruction"
+  - "scene tokens"
+  - "flow-matching"
+  - "complete point cloud"
 date: 2026-05-08
 content_hash: bb7c43c87cce791c
 ---

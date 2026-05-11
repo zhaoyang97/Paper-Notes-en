@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] On the Emergence of Linear Analogies in Word Embeddings
 description: >-
-  [NeurIPS 2025][Image Generation][Word Embeddings] A generative model based on binary semantic attributes is proposed to analytically prove the emergence mechanism of linear analogy structures in word embeddings (e.g., $W_{\text{king}} - W_{\text{man}} + W_{\text{woman}} \approx W_{\text{queen}}$), providing a unified explanation for four key empirical observations.
+  [NeurIPS 2025][Image Generation][Word Embeddings] A generative model based on binary semantic attributes is proposed to analytically prove the emergence mechanism of linear analogy structures in word embeddings (e.g.…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Word Embeddings
-  - Linear Analogies
-  - Word2Vec
-  - PMI Matrix
-  - Semantic Attributes
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Word Embeddings"
+  - "Linear Analogies"
+  - "Word2Vec"
+  - "PMI Matrix"
+  - "Semantic Attributes"
 date: 2026-05-08
 content_hash: 16a712f21590fcd5
 ---

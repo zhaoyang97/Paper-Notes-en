@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] BLINK-Twice: You See But Do You Observe? A Reasoning Benchmark on Visual Perception
 description: >-
-  [NeurIPS 2025][LLM Evaluation][visual reasoning] This paper introduces BLINK-Twice, a vision-centric reasoning benchmark comprising 345 visually challenging images, 103 adversarial samples, 896 VQA pairs, and 1,725 annotated reasoning steps. Through seven categories of visual illusion scenarios, it evaluates the "you see but do not observe" reasoning capability of MLLMs. The strongest model, Gemini-2.5 Pro, achieves only 26.9% G-Acc, suggesting that multi-round image observation and active visual interaction are promising directions for improvement.
+  [NeurIPS 2025][LLM Evaluation][visual reasoning] This paper introduces BLINK-Twice, a vision-centric reasoning benchmark comprising 345 visually challenging images, 103 adversarial samples, 896 VQA pairs, and 1…
 tags:
-  - NeurIPS 2025
-  - LLM Evaluation
-  - visual reasoning
-  - VLM evaluation
-  - perception vs. reasoning
-  - natural adversarial samples
-  - reasoning chain evaluation
-  - benchmark
+  - "NeurIPS 2025"
+  - "LLM Evaluation"
+  - "visual reasoning"
+  - "VLM evaluation"
+  - "perception vs. reasoning"
+  - "natural adversarial samples"
+  - "reasoning chain evaluation"
+  - "benchmark"
 date: 2026-05-08
 content_hash: 1566c74f4889d4b3
 ---

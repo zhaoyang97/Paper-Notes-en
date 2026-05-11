@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Do-PFN: In-Context Learning for Causal Effect Estimation
 description: >-
-  [NeurIPS 2025][Causal Inference][Causal Effect Estimation] This paper proposes Do-PFN, which extends Prior-data Fitted Networks (PFN) to causal effect estimation. A Transformer is pre-trained on large-scale synthetic SCM data to perform in-context causal reasoning, enabling prediction of causal intervention distributions (CID) and CATE from observational data alone—without requiring causal graph knowledge or the unconfoundedness assumption—achieving strong performance on both synthetic and semi-synthetic benchmarks.
+  [NeurIPS 2025][Causal Inference][Causal Effect Estimation] This paper proposes Do-PFN, which extends Prior-data Fitted Networks (PFN) to causal effect estimation. A Transformer is pre-trained on large-scale synthetic SCM…
 tags:
-  - NeurIPS 2025
-  - Causal Inference
-  - Causal Effect Estimation
-  - PFN
-  - in-context learning
-  - SCM
-  - CATE
-  - Amortized Inference
+  - "NeurIPS 2025"
+  - "Causal Inference"
+  - "Causal Effect Estimation"
+  - "PFN"
+  - "in-context learning"
+  - "SCM"
+  - "CATE"
+  - "Amortized Inference"
 date: 2026-05-08
 content_hash: eeb5b21eb95ba6ea
 ---

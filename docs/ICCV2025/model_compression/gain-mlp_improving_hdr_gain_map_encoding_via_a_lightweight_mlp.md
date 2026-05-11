@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Gain-MLP: Improving HDR Gain Map Encoding via a Lightweight MLP
 description: >-
-  [ICCV 2025][Model Compression][HDR Gain Map] This paper proposes replacing traditional JPEG/HEIC compression with a lightweight 10 KB MLP network for encoding HDR gain maps. The MLP takes SDR image color and spatial coordinates $(r,g,b,x,y)$ as input and incorporates exponential residual encoding (gamma map), outperforming existing methods and traditional compression techniques across multiple HDR reconstruction metrics.
+  [ICCV 2025][Model Compression][HDR Gain Map] This paper proposes replacing traditional JPEG/HEIC compression with a lightweight 10 KB MLP network for encoding HDR gain maps. The MLP takes SDR image color and spatial coor…
 tags:
-  - ICCV 2025
-  - Model Compression
-  - HDR Gain Map
-  - MLP
-  - Implicit Neural Representation
-  - Image Compression
-  - Tone Mapping
+  - "ICCV 2025"
+  - "Model Compression"
+  - "HDR Gain Map"
+  - "MLP"
+  - "Implicit Neural Representation"
+  - "Image Compression"
+  - "Tone Mapping"
 date: 2026-05-08
 content_hash: a539c08477cb6276
 ---

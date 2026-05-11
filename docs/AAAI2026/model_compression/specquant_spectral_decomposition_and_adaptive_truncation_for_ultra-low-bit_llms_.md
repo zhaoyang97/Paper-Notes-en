@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SpecQuant: Spectral Decomposition and Adaptive Truncation for Ultra-Low-Bit LLMs Quantization
 description: >-
-  [AAAI 2026][Model Compression][Quantization] SpecQuant proposes a two-stage quantization framework based on adaptive Fourier-domain decomposition: it first smoothly migrates activation outliers into weights, then suppresses high-frequency noise in the weights via channel-wise low-frequency Fourier truncation. On LLaMA-3 8B, W4A4 quantization achieves only 1.5% accuracy degradation, while delivering 2× speedup and 3× memory savings.
+  [AAAI 2026][Model Compression][Quantization] SpecQuant proposes a two-stage quantization framework based on adaptive Fourier-domain decomposition: it first smoothly migrates activation outliers into weights…
 tags:
-  - AAAI 2026
-  - Model Compression
-  - Quantization
-  - Frequency-Domain Decomposition
-  - Outlier Mitigation
-  - Ultra-Low-Bit
-  - Fourier Truncation
+  - "AAAI 2026"
+  - "Model Compression"
+  - "Quantization"
+  - "Frequency-Domain Decomposition"
+  - "Outlier Mitigation"
+  - "Ultra-Low-Bit"
+  - "Fourier Truncation"
 date: 2026-05-08
 content_hash: 807e16810f3ba2e0
 ---

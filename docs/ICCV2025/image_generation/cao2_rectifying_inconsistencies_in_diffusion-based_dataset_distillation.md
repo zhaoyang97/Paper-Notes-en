@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CaO2: Rectifying Inconsistencies in Diffusion-Based Dataset Distillation
 description: >-
-  [ICCV 2025][Image Generation][Dataset Distillation] This paper identifies two critical issues in diffusion-based dataset distillation — *objective inconsistency* and *condition inconsistency* — and proposes a two-stage framework, CaO2: the first stage mitigates objective inconsistency via classifier-guided sample selection, and the second stage mitigates condition inconsistency via latent space optimization to maximize conditional likelihood, achieving an average improvement of 2.3% on ImageNet.
+  [ICCV 2025][Image Generation][Dataset Distillation] This paper identifies two critical issues in diffusion-based dataset distillation — *objective inconsistency* and *condition inconsistency* — and proposes a two-stage f…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Dataset Distillation
-  - Diffusion Models
-  - Condition Consistency
-  - Objective Consistency
-  - Latent Space Optimization
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Dataset Distillation"
+  - "Diffusion Models"
+  - "Condition Consistency"
+  - "Objective Consistency"
+  - "Latent Space Optimization"
 date: 2026-05-08
 content_hash: d238b96c433769e4
 ---

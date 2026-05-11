@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Pancakes: Consistent Multi-Protocol Image Segmentation Across Biomedical Domains
 description: >-
-  [NeurIPS 2025][Medical Imaging][Multi-protocol segmentation] This paper proposes the Pancakes framework, which, given a collection of biomedical images from an unseen domain, automatically generates label maps for multiple plausible segmentation protocols, ensuring **semantic consistency** across images within the same protocol—i.e., the same label refers to the same anatomical structure across all images.
+  [NeurIPS 2025][Medical Imaging][Multi-protocol segmentation] This paper proposes the Pancakes framework, which, given a collection of biomedical images from an unseen domain…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Multi-protocol segmentation
-  - semantic consistency
-  - foundation models
-  - biomedical imaging
-  - unsupervised segmentation
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Multi-protocol segmentation"
+  - "semantic consistency"
+  - "foundation models"
+  - "biomedical imaging"
+  - "unsupervised segmentation"
 date: 2026-05-08
 content_hash: 73bef1204f592af8
 ---

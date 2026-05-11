@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GeoSplatting: Towards Geometry Guided Gaussian Splatting for Physically-based Inverse Rendering
 description: >-
-  [ICCV 2025][3D Vision][Inverse Rendering] This paper proposes GeoSplatting, which differentiably generates surface-aligned Gaussians from an optimizable explicit mesh to provide accurate geometric guidance for 3DGS, achieving state-of-the-art inverse rendering performance (material–lighting decomposition) with training times of only 10–15 minutes.
+  [ICCV 2025][3D Vision][Inverse Rendering] This paper proposes GeoSplatting, which differentiably generates surface-aligned Gaussians from an optimizable explicit mesh to provide accurate geometric guidance for 3DGS…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Inverse Rendering
-  - 3D Gaussian Splatting
-  - Material Decomposition
-  - Environment Lighting
-  - Mesh-Guided
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Inverse Rendering"
+  - "3D Gaussian Splatting"
+  - "Material Decomposition"
+  - "Environment Lighting"
+  - "Mesh-Guided"
 date: 2026-05-08
 content_hash: 402a4aa02aaf0365
 ---

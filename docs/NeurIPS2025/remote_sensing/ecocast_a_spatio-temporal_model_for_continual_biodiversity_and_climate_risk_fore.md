@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] EcoCast: A Spatio-Temporal Model for Continual Biodiversity and Climate Risk Forecasting
 description: >-
-  [NeurIPS 2025][Remote Sensing][Biodiversity Forecasting] This paper proposes EcoCast, a Transformer-based spatio-temporal sequence model that integrates satellite remote sensing (Sentinel-2), climate reanalysis (ERA5), and citizen science observations (GBIF). The model predicts next-month species occurrence probabilities from 12-month environmental feature sequences. On a five-species African bird distribution prediction task, the macro-average F1 score improves from 0.31 (Random Forest) to 0.65. An EWC-based continual learning framework is also designed to accommodate data updates.
+  [NeurIPS 2025][Remote Sensing][Biodiversity Forecasting] This paper proposes EcoCast, a Transformer-based spatio-temporal sequence model that integrates satellite remote sensing (Sentinel-2), climate reanalysis (ERA5)…
 tags:
-  - NeurIPS 2025
-  - Remote Sensing
-  - Biodiversity Forecasting
-  - Species Distribution Modeling
-  - Transformer
-  - Continual Learning
-  - EWC
+  - "NeurIPS 2025"
+  - "Remote Sensing"
+  - "Biodiversity Forecasting"
+  - "Species Distribution Modeling"
+  - "Transformer"
+  - "Continual Learning"
+  - "EWC"
 date: 2026-05-08
 content_hash: a6d111cfd3c2c90f
 ---

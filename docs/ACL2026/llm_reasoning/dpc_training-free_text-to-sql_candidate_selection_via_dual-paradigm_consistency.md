@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DPC: Training-Free Text-to-SQL Candidate Selection via Dual-Paradigm Consistency
 description: >-
-  [ACL 2026][LLM Reasoning][SQL selection] DPC reframes Text-to-SQL candidate selection from "guessing over hidden data" to "deterministic verification over constructed data": it builds a Minimal Discriminative Database (MDD) that forces conflicting SQL candidates to produce different execution results, then uses Python/Pandas solutions as reference anchors to select the correct candidate via cross-paradigm consistency, outperforming Self-Consistency by up to 2.2% on BIRD and Spider.
+  [ACL 2026][LLM Reasoning][SQL selection] DPC reframes Text-to-SQL candidate selection from "guessing over hidden data" to "deterministic verification over constructed data": it builds a Minimal Discriminative Database (M…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - SQL selection
-  - dual-paradigm consistency
-  - minimal discriminative database
-  - training-free
-  - adversarial environment synthesis
+  - "ACL 2026"
+  - "LLM Reasoning"
+  - "SQL selection"
+  - "dual-paradigm consistency"
+  - "minimal discriminative database"
+  - "training-free"
+  - "adversarial environment synthesis"
 date: 2026-05-08
 content_hash: e026d0079e70043f
 ---

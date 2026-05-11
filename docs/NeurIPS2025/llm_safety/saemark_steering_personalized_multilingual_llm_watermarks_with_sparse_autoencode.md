@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SAEMark: Steering Personalized Multilingual LLM Watermarks with Sparse Autoencoders
 description: >-
-  [NeurIPS 2025][LLM Safety][LLM Watermarking] This paper proposes SAEMark, a framework that leverages sparse autoencoders (SAEs) to extract Feature Concentration Scores (FCS) from text, and embeds multi-bit watermarks via inference-time feature-guided rejection sampling. The approach requires no modification to model weights or logits, natively supports black-box APIs, multilingual text, and code, and achieves state-of-the-art watermark detectability and text quality across English, Chinese, and code domains.
+  [NeurIPS 2025][LLM Safety][LLM Watermarking] This paper proposes SAEMark, a framework that leverages sparse autoencoders (SAEs) to extract Feature Concentration Scores (FCS) from text…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - LLM Watermarking
-  - Sparse Autoencoders
-  - Multilingual Watermarking
-  - Black-box Watermarking
-  - Personalized Attribution
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "LLM Watermarking"
+  - "Sparse Autoencoders"
+  - "Multilingual Watermarking"
+  - "Black-box Watermarking"
+  - "Personalized Attribution"
 date: 2026-05-08
 content_hash: ec8c31c2ce5a3fa7
 ---

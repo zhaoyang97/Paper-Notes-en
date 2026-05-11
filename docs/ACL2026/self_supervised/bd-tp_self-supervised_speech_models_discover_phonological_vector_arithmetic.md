@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] [b] = [d] − [t] + [p]: Self-supervised Speech Models Discover Phonological Vector Arithmetic
 description: >-
-  [ACL 2026][Self-Supervised Learning][Self-Supervised Speech Models] This paper systematically demonstrates that linear phonological feature vectors exist in the representation space of self-supervised speech models (S3M), satisfying word2vec-like vector arithmetic relations, with their scaling factors continuously correlating with acoustic measurements.
+  [ACL 2026][Self-Supervised Learning][Self-Supervised Speech Models] This paper systematically demonstrates that linear phonological feature vectors exist in the representation space of self-supervised speech models (S3M)…
 tags:
-  - ACL 2026
-  - Self-Supervised Learning
-  - Self-Supervised Speech Models
-  - Phonological Vector Arithmetic
-  - Speech Representation Structure
-  - Acoustic Controllable Synthesis
-  - Cross-Lingual Generalization
+  - "ACL 2026"
+  - "Self-Supervised Learning"
+  - "Self-Supervised Speech Models"
+  - "Phonological Vector Arithmetic"
+  - "Speech Representation Structure"
+  - "Acoustic Controllable Synthesis"
+  - "Cross-Lingual Generalization"
 date: 2025-05-08
 content_hash: 97e943e907fa3d89
 ---

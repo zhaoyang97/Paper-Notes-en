@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Generalized Linear Bandits: Almost Optimal Regret with One-Pass Update
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Generalized linear bandits] This paper proposes the GLB-OMD algorithm, which, for the first time in the generalized linear bandit (GLB) setting, simultaneously achieves a near-optimal regret bound of $\mathcal{O}(\log T\sqrt{T/\kappa_*})$ and $\mathcal{O}(1)$ per-round time and space complexity. The key technical contribution is constructing tight confidence sets for an online mirror descent (OMD) estimator via mix loss.
+  [NeurIPS 2025][Reinforcement Learning][Generalized linear bandits] This paper proposes the GLB-OMD algorithm, which, for the first time in the generalized linear bandit (GLB) setting…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - Generalized linear bandits
-  - online learning
-  - confidence sets
-  - online mirror descent
-  - mix loss
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "Generalized linear bandits"
+  - "online learning"
+  - "confidence sets"
+  - "online mirror descent"
+  - "mix loss"
 date: 2026-05-08
 content_hash: d4446f5f8fd90b30
 ---

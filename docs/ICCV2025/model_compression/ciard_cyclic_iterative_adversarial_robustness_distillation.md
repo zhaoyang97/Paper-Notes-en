@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CIARD: Cyclic Iterative Adversarial Robustness Distillation
 description: >-
-  [ICCV 2025][Model Compression][adversarial robustness distillation] This paper proposes CIARD, which addresses the optimization objective conflict between the clean teacher and robust teacher in dual-teacher ARD frameworks via a Contrastive Push Loss, and introduces an Iterative Teacher Training (ITT) strategy to continuously update the robust teacher and prevent performance degradation. CIARD simultaneously improves adversarial robustness by +3.53% and clean accuracy by +5.87% on CIFAR-10/100 and Tiny-ImageNet.
+  [ICCV 2025][Model Compression][adversarial robustness distillation] This paper proposes CIARD, which addresses the optimization objective conflict between the clean teacher and robust teacher in dual-teacher ARD framewor…
 tags:
-  - ICCV 2025
-  - Model Compression
-  - adversarial robustness distillation
-  - knowledge distillation
-  - adversarial training
-  - dual-teacher
-  - contrastive push loss
+  - "ICCV 2025"
+  - "Model Compression"
+  - "adversarial robustness distillation"
+  - "knowledge distillation"
+  - "adversarial training"
+  - "dual-teacher"
+  - "contrastive push loss"
 date: 2026-05-08
 content_hash: 8de05d348eea9370
 ---

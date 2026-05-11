@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] M3KG-RAG: Multi-hop Multimodal Knowledge Graph-enhanced Retrieval-Augmented Generation
 description: >-
-  [CVPR 2026][Graph Learning][Multimodal Knowledge Graph] This paper proposes M3KG-RAG, which constructs a multi-hop multimodal knowledge graph (M3KG) via a lightweight multi-agent pipeline and introduces the GRASP mechanism for entity grounding and selective pruning. By retaining only query-relevant and answer-useful knowledge, the approach substantially improves audio-visual reasoning capabilities of MLLMs.
+  [CVPR 2026][Graph Learning][Multimodal Knowledge Graph] This paper proposes M3KG-RAG, which constructs a multi-hop multimodal knowledge graph (M3KG) via a lightweight multi-agent pipeline and introduces the GRASP mechani…
 tags:
-  - CVPR 2026
-  - Graph Learning
-  - Multimodal Knowledge Graph
-  - Retrieval-Augmented Generation
-  - Audio-Visual Reasoning
-  - Graph Pruning
-  - Multi-hop Reasoning
+  - "CVPR 2026"
+  - "Graph Learning"
+  - "Multimodal Knowledge Graph"
+  - "Retrieval-Augmented Generation"
+  - "Audio-Visual Reasoning"
+  - "Graph Pruning"
+  - "Multi-hop Reasoning"
 date: 2026-05-08
 content_hash: bbda231e8caaca9b
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Pseudo-Nonlinear Data Augmentation: A Constrained Energy Minimization Viewpoint
 description: >-
-  [ICLR 2026][Image Generation][data augmentation] Leveraging the dually flat structure of energy-based models and information geometry, this work proposes a training-free, efficient, and controllable data augmentation method that performs cross-modal augmentation on statistical manifolds via forward projection (encoding) and backward projection (decoding).
+  [ICLR 2026][Image Generation][data augmentation] Leveraging the dually flat structure of energy-based models and information geometry, this work proposes a training-free, efficient…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - data augmentation
-  - information geometry
-  - energy-based models
-  - partially ordered sets
-  - training-free methods
+  - "ICLR 2026"
+  - "Image Generation"
+  - "data augmentation"
+  - "information geometry"
+  - "energy-based models"
+  - "partially ordered sets"
+  - "training-free methods"
 date: 2026-05-08
 content_hash: ddd35048c1820f61
 ---

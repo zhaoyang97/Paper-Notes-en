@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Narrow Finetuning Leaves Clearly Readable Traces in Activation Differences
 description: >-
-  [ICLR 2026][Model Finetuning] This paper demonstrates that narrow finetuning leaves clearly readable traces in LLM activations: even over the first few tokens of unrelated text, the activation differences between pre- and post-finetuning models encode rich semantic information about the finetuning objective. Using the proposed Activation Difference Lens (ADL) method, an interpretability agent achieves a 91% success rate in identifying finetuning objectives, more than twice the performance of black-box baselines.
+  [ICLR 2026][Interpretability][Model Finetuning] This paper demonstrates that narrow finetuning leaves clearly readable traces in LLM activations: even over the first few tokens of unrelated text…
 tags:
-  - ICLR 2026
-  - Model Finetuning
-  - Activation Differences
-  - Model Diffing
-  - Interpretability
-  - AI Safety
-  - Model Organisms
-  - Patchscope
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Model Finetuning"
+  - "Activation Differences"
+  - "Model Diffing"
+  - "AI Safety"
+  - "Model Organisms"
+  - "Patchscope"
 date: 2026-05-08
 content_hash: 67079f812367f130
 ---

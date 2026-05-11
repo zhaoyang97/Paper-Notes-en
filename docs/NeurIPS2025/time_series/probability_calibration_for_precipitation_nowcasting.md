@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Probability Calibration for Precipitation Nowcasting
 description: >-
-  [NeurIPS 2025][Time Series][Probability Calibration] This paper proposes the Expected Threshold Calibration Error (ETCE) as a more appropriate metric for probability calibration in precipitation nowcasting, and extends post-hoc calibration techniques from computer vision to the forecasting domain. By incorporating a lead-time-conditioned Selective Scaling method, the proposed approach reduces model calibration error by up to 23.5%.
+  [NeurIPS 2025][Time Series][Probability Calibration] This paper proposes the Expected Threshold Calibration Error (ETCE) as a more appropriate metric for probability calibration in precipitation nowcasting…
 tags:
-  - NeurIPS 2025
-  - Time Series
-  - Probability Calibration
-  - Precipitation Nowcasting
-  - Selective Scaling
-  - Calibration Error
-  - Neural Weather Models
+  - "NeurIPS 2025"
+  - "Time Series"
+  - "Probability Calibration"
+  - "Precipitation Nowcasting"
+  - "Selective Scaling"
+  - "Calibration Error"
+  - "Neural Weather Models"
 date: 2026-05-08
 content_hash: 474cca78457ce43f
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] NI-Tex: Non-isometric Image-based Garment Texture Generation
 description: >-
-  [CVPR 2026][3D Vision][Garment texture generation] NI-Tex is proposed as a framework that, through the construction of a 3D Garment Videos dataset, image-editing-based cross-topology augmentation, and an uncertainty-guided iterative baking algorithm, achieves for the first time high-quality feed-forward generation of PBR textures for 3D garments from a single image under non-isometric conditions.
+  [CVPR 2026][3D Vision][Garment texture generation] NI-Tex is proposed as a framework that, through the construction of a 3D Garment Videos dataset, image-editing-based cross-topology augmentation…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Garment texture generation
-  - PBR materials
-  - non-isometric deformation
-  - uncertainty-guided baking
-  - cross-topology augmentation
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Garment texture generation"
+  - "PBR materials"
+  - "non-isometric deformation"
+  - "uncertainty-guided baking"
+  - "cross-topology augmentation"
 date: 2026-05-08
 content_hash: 82696cfb1a1f7389
 ---

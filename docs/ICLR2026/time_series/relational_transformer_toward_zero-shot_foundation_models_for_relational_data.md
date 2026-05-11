@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Relational Transformer: Toward Zero-Shot Foundation Models for Relational Data
 description: >-
-  [ICLR 2026][Time Series][Relational Database] This paper proposes the Relational Transformer (RT) architecture, which leverages task table prompting, cell tokenization, and a Relational Attention mechanism to enable zero-shot transfer to unseen datasets and tasks after pretraining on multiple relational databases. The 22M-parameter model achieves 93% of fully supervised AUROC in the zero-shot setting, significantly outperforming a 27B LLM at 84%.
+  [ICLR 2026][Time Series][Relational Database] This paper proposes the Relational Transformer (RT) architecture, which leverages task table prompting, cell tokenization…
 tags:
-  - ICLR 2026
-  - Time Series
-  - Relational Database
-  - Zero-Shot Learning
-  - Transformer
-  - Foundation Model
-  - Relational Attention
+  - "ICLR 2026"
+  - "Time Series"
+  - "Relational Database"
+  - "Zero-Shot Learning"
+  - "Transformer"
+  - "Foundation Model"
+  - "Relational Attention"
 date: 2026-05-08
 content_hash: 55942959d1eaad09
 ---

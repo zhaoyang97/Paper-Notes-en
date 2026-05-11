@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] When Top-ranked Recommendations Fail: Modeling Multi-Granular Negative Feedback for Explainable and Robust Video Recommendation
 description: >-
-  [AAAI 2026][Recommender Systems][Negative feedback modeling] This paper proposes ENF (Explainable Negative Feedback), a framework comprising three collaborative MLLM Agents (Profile Agent, Video Agent, and Reason Agent) and a progressive S-GRPO reinforcement learning training strategy. ENF is the first approach to achieve explainable prediction and root-cause analysis of implicit negative feedback in video recommendation systems. Deployed on Tencent's news platform, it achieves a 6.2% increase in average watch duration and a 9.4% decrease in quick-skip rate.
+  [AAAI 2026][Recommender Systems][Negative feedback modeling] This paper proposes ENF (Explainable Negative Feedback), a framework comprising three collaborative MLLM Agents (Profile Agent, Video Agent…
 tags:
-  - AAAI 2026
-  - Recommender Systems
-  - Negative feedback modeling
-  - explainable recommendation
-  - multimodal video understanding
-  - MLLM Agent
-  - reinforcement learning
+  - "AAAI 2026"
+  - "Recommender Systems"
+  - "Negative feedback modeling"
+  - "explainable recommendation"
+  - "multimodal video understanding"
+  - "MLLM Agent"
+  - "reinforcement learning"
 date: 2026-05-08
 content_hash: f28167e498fd38ea
 ---

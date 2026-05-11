@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HUM4D: A Dataset and Evaluation for Complex 4D Markerless Human Motion Capture
 description: >-
-  [CVPR 2026][Human Understanding][Markerless Motion Capture] This paper introduces the HUM4D dataset, covering complex single- and multi-person motion scenarios (rapid movements, occlusions, identity swaps), providing synchronized multi-view RGB/RGB-D sequences, accurate Vicon marker-based ground truth, and SMPL/SMPL-X parameters. Benchmark evaluations reveal significant performance degradation of state-of-the-art markerless methods under realistic conditions.
+  [CVPR 2026][Human Understanding][Markerless Motion Capture] This paper introduces the HUM4D dataset, covering complex single- and multi-person motion scenarios (rapid movements, occlusions, identity swaps)…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Markerless Motion Capture
-  - 4D Human Modeling
-  - Multi-Person Interaction
-  - Dataset
-  - SMPL
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Markerless Motion Capture"
+  - "4D Human Modeling"
+  - "Multi-Person Interaction"
+  - "Dataset"
+  - "SMPL"
 date: 2026-05-08
 content_hash: b7959d4effe71410
 ---

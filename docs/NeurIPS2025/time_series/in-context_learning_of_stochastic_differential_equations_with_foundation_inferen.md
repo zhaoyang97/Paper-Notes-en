@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] In-Context Learning of Stochastic Differential Equations with Foundation Inference Models
 description: >-
-  [NeurIPS 2025][Time Series][stochastic differential equations] This paper proposes FIM-SDE, a pretrained recognition model capable of zero-shot (in-context) estimation of drift and diffusion functions of low-dimensional SDEs from noisy time series data, and further surpasses all baseline methods via rapid fine-tuning.
+  [NeurIPS 2025][Time Series][stochastic differential equations] This paper proposes FIM-SDE, a pretrained recognition model capable of zero-shot (in-context) estimation of drift and diffusion functions of low-dimensional…
 tags:
-  - NeurIPS 2025
-  - Time Series
-  - stochastic differential equations
-  - in-context learning
-  - foundation inference models
-  - drift function estimation
-  - diffusion function estimation
+  - "NeurIPS 2025"
+  - "Time Series"
+  - "stochastic differential equations"
+  - "in-context learning"
+  - "foundation inference models"
+  - "drift function estimation"
+  - "diffusion function estimation"
 date: 2026-05-08
 content_hash: 0ef8ae4db90ef2a9
 ---

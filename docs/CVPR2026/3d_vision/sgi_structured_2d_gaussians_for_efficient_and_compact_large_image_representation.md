@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SGI: Structured 2D Gaussians for Efficient and Compact Large Image Representation
 description: >-
-  [CVPR 2026][3D Vision][2D Gaussian Splatting] SGI proposes a seed-based structured 2D Gaussian representation framework that organizes unstructured Gaussian primitives into seed-driven neural Gaussians, coupled with context-guided entropy coding and a multi-scale fitting strategy, achieving up to 7.5× compression and 6.5× optimization speedup in high-resolution image representation while maintaining or improving reconstruction fidelity.
+  [CVPR 2026][3D Vision][2D Gaussian Splatting] SGI proposes a seed-based structured 2D Gaussian representation framework that organizes unstructured Gaussian primitives into seed-driven neural Gaussians…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 2D Gaussian Splatting
-  - image representation
-  - neural compression
-  - entropy coding
-  - multi-scale optimization
+  - "CVPR 2026"
+  - "3D Vision"
+  - "2D Gaussian Splatting"
+  - "image representation"
+  - "neural compression"
+  - "entropy coding"
+  - "multi-scale optimization"
 date: 2026-05-08
 content_hash: 40baa5293f0c5d38
 ---

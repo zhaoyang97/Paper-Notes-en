@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Controllable Feature Whitening for Hyperparameter-Free Bias Mitigation
 description: >-
-  [ICCV 2025][AI Safety][bias mitigation] This paper proposes the Controllable Feature Whitening (CFW) framework, which eliminates linear correlations between target features and bias features via whitening transformations to mitigate model bias. The approach requires neither adversarial training nor additional regularization hyperparameters, and supports smooth interpolation between demographic parity and equalized odds through a single weighting coefficient.
+  [ICCV 2025][AI Safety][bias mitigation] This paper proposes the Controllable Feature Whitening (CFW) framework, which eliminates linear correlations between target features and bias features via whitening transformations…
 tags:
-  - ICCV 2025
-  - AI Safety
-  - bias mitigation
-  - feature whitening
-  - fairness
-  - demographic parity
-  - equalized odds
+  - "ICCV 2025"
+  - "AI Safety"
+  - "bias mitigation"
+  - "feature whitening"
+  - "fairness"
+  - "demographic parity"
+  - "equalized odds"
 date: 2026-05-08
 content_hash: 71a688b0c91bbf42
 ---

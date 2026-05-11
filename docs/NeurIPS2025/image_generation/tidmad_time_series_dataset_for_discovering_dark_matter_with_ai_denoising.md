@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TIDMAD: Time Series Dataset for Discovering Dark Matter with AI Denoising
 description: >-
-  [NeurIPS 2025][Image Generation][Dark matter detection] This work introduces TIDMAD — the first ultra-long time series denoising benchmark dataset for dark matter searches — comprising training/validation/science data from the ABRACADABRA experiment, a denoising score metric, and a complete analysis pipeline, enabling AI algorithms to directly produce physics-community-standard dark matter search results.
+  [NeurIPS 2025][Image Generation][Dark matter detection] This work introduces TIDMAD — the first ultra-long time series denoising benchmark dataset for dark matter searches — comprising training/validation/science data fr…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Dark matter detection
-  - time series denoising
-  - ABRACADABRA
-  - benchmark dataset
-  - signal recovery
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Dark matter detection"
+  - "time series denoising"
+  - "ABRACADABRA"
+  - "benchmark dataset"
+  - "signal recovery"
 date: 2026-05-08
 content_hash: 24255f60a0254080
 ---

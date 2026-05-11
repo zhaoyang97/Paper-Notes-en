@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Do Different Prompting Methods Yield a Common Task Representation?
 description: >-
-  [NeurIPS 2025][Task representation] By generalizing the Function Vectors (FV) framework from few-shot demonstrations to text instructions, this paper finds that different prompting methods do not induce a unified task representation within LLMs; instead, they activate partially overlapping but largely distinct attention head mechanisms.
+  [NeurIPS 2025][Interpretability][Task representation] By generalizing the Function Vectors (FV) framework from few-shot demonstrations to text instructions…
 tags:
-  - NeurIPS 2025
-  - Task representation
-  - function vectors
-  - prompting methods
-  - attention heads
-  - interpretability
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "Task representation"
+  - "function vectors"
+  - "prompting methods"
+  - "attention heads"
 date: 2026-05-08
 content_hash: a3e7981652e468fd
 ---

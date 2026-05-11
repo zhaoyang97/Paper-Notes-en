@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Latent Harmony: Synergistic Unified UHD Image Restoration via Latent Space Regularization and Controllable Refinement
 description: >-
-  [Image Restoration] This paper proposes Latent Harmony, a two-stage framework that constructs a degradation-robust LH-VAE via latent space regularization, and subsequently applies high-frequency-guided LoRA fine-tuning to independently optimize the encoder (fidelity) and decoder (perceptual quality), achieving a unified solution to the generalization–reconstruction–perception trilemma in all-in-one UHD image restoration.
+  [Image Restoration] This paper proposes Latent Harmony, a two-stage framework that constructs a degradation-robust LH-VAE via latent space regularization…
 tags:
-  - Image Restoration
+  - "Image Restoration"
 date: 2026-05-08
 content_hash: 92a60f61c31ae4be
 ---

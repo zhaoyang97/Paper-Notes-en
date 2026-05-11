@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Cross-Domain Policy Optimization via Bellman Consistency and Hybrid Critics
 description: >-
-  [ICLR 2026][Human Understanding][Cross-Domain Reinforcement Learning] This paper proposes the Q Avatar framework, which quantifies the transferability of source-domain models via cross-domain Bellman consistency and combines source- and target-domain Q-functions through an adaptive, hyperparameter-free weighting function. The framework enables reliable knowledge transfer in cross-domain RL with mismatched state-action spaces, guaranteeing no negative transfer regardless of source model quality or domain similarity.
+  [ICLR 2026][Human Understanding][Cross-Domain Reinforcement Learning] This paper proposes the Q Avatar framework, which quantifies the transferability of source-domain models via cross-domain Bellman consistency and comb…
 tags:
-  - ICLR 2026
-  - Human Understanding
-  - Cross-Domain Reinforcement Learning
-  - Bellman Consistency
-  - Hybrid Critic
-  - Q-Function Transfer
-  - Negative Transfer Prevention
+  - "ICLR 2026"
+  - "Human Understanding"
+  - "Cross-Domain Reinforcement Learning"
+  - "Bellman Consistency"
+  - "Hybrid Critic"
+  - "Q-Function Transfer"
+  - "Negative Transfer Prevention"
 date: 2026-05-08
 content_hash: f5d3956dd7dc82ea
 ---

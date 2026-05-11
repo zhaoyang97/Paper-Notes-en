@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Unified Perspective on Adversarial Membership Manipulation in Vision Models
 description: >-
-  [CVPR 2026][AI Safety][membership inference attack] This work is the first to reveal the adversarial membership manipulation vulnerability in membership inference attacks (MIA) against vision models — imperceptible perturbations can forge non-members as members to deceive auditing. It identifies a gradient norm collapse signature in forged members, and proposes a gradient-geometry-based detection strategy (MFD) and an adversarially robust inference framework (AR-MIA).
+  [CVPR 2026][AI Safety][membership inference attack] This work is the first to reveal the adversarial membership manipulation vulnerability in membership inference attacks (MIA) against vision models — imperceptible pertu…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - membership inference attack
-  - adversarial membership forgery
-  - gradient norm
-  - privacy auditing
-  - vision models
+  - "CVPR 2026"
+  - "AI Safety"
+  - "membership inference attack"
+  - "adversarial membership forgery"
+  - "gradient norm"
+  - "privacy auditing"
+  - "vision models"
 date: 2026-05-08
 content_hash: 7bca51ae6dfcfb03
 ---

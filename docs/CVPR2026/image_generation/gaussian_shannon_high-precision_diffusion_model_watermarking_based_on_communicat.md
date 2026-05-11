@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Gaussian Shannon: High-Precision Diffusion Model Watermarking Based on Communication
 description: >-
-  [CVPR 2026][Image Generation][Diffusion model watermarking] This paper models the watermark embedding and extraction process in diffusion models as communication over a noisy channel, and proposes the Gaussian Shannon framework. By cascading majority voting and LDPC error-correcting codes, the framework achieves bit-exact watermark recovery (rather than mere threshold-based detection), attaining state-of-the-art bit accuracy and detection rates across three Stable Diffusion versions and seven types of perturbation.
+  [CVPR 2026][Image Generation][Diffusion model watermarking] This paper models the watermark embedding and extraction process in diffusion models as communication over a noisy channel…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion model watermarking
-  - communication theory
-  - error-correcting codes
-  - bit-exact recovery
-  - copyright protection
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion model watermarking"
+  - "communication theory"
+  - "error-correcting codes"
+  - "bit-exact recovery"
+  - "copyright protection"
 date: 2026-05-08
 content_hash: 5ccfcfec17965e99
 ---

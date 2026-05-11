@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Probabilistic Concept Graph Reasoning for Multimodal Misinformation Detection
 description: >-
-  [CVPR 2026][Robotics][Multimodal Misinformation Detection] This paper reformulates Multimodal Misinformation Detection (MMD) as a structured probabilistic reasoning problem over concept graphs. The proposed PCGR framework employs MLLMs to automatically discover and validate human-interpretable concept nodes, constructs a hierarchical probabilistic concept graph, and achieves interpretable misinformation detection, outperforming 13 baselines across three benchmarks.
+  [CVPR 2026][Robotics][Multimodal Misinformation Detection] This paper reformulates Multimodal Misinformation Detection (MMD) as a structured probabilistic reasoning problem over concept graphs. The proposed PCGR framewor…
 tags:
-  - CVPR 2026
-  - Robotics
-  - Multimodal Misinformation Detection
-  - Concept Graph Reasoning
-  - Probabilistic Inference
-  - Explainable AI
-  - Automatic Concept Growth
+  - "CVPR 2026"
+  - "Robotics"
+  - "Multimodal Misinformation Detection"
+  - "Concept Graph Reasoning"
+  - "Probabilistic Inference"
+  - "Explainable AI"
+  - "Automatic Concept Growth"
 date: 2026-05-08
 content_hash: 76dbb419c11af471
 ---

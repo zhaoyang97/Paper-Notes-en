@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Buffer Layers for Test-Time Adaptation
 description: >-
-  [NeurIPS 2025][LLM Safety][Test-Time Adaptation] This paper proposes Buffer layers as a new paradigm for Test-Time Adaptation (TTA), replacing conventional normalization layer updates to fundamentally preserve the integrity of the pretrained backbone. The approach effectively alleviates catastrophic forgetting and achieves consistent performance improvements across diverse architectures and TTA frameworks.
+  [NeurIPS 2025][LLM Safety][Test-Time Adaptation] This paper proposes Buffer layers as a new paradigm for Test-Time Adaptation (TTA), replacing conventional normalization layer updates to fundamentally preserve the integr…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - Test-Time Adaptation
-  - Buffer Layers
-  - Batch Normalization
-  - Domain Shift
-  - Catastrophic Forgetting
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "Test-Time Adaptation"
+  - "Buffer Layers"
+  - "Batch Normalization"
+  - "Domain Shift"
+  - "Catastrophic Forgetting"
 date: 2026-05-08
 content_hash: dc7d1d4b8b4e0996
 ---

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Neurosymbolic Diffusion Models
 description: >-
-  [NeurIPS 2025][Autonomous Driving][neurosymbolic] This paper proposes Neurosymbolic Diffusion Models (NeSyDM), which integrates discrete masked diffusion models with symbolic programs to overcome the conditional independence assumption in traditional neurosymbolic predictors. NeSyDM models inter-concept dependencies and uncertainty while maintaining scalability, achieving state-of-the-art accuracy and calibration on visual reasoning and autonomous driving benchmarks.
+  [NeurIPS 2025][Autonomous Driving][neurosymbolic] This paper proposes Neurosymbolic Diffusion Models (NeSyDM), which integrates discrete masked diffusion models with symbolic programs to overcome the conditional independ…
 tags:
-  - NeurIPS 2025
-  - Autonomous Driving
-  - neurosymbolic
-  - diffusion models
-  - discrete diffusion
-  - visual reasoning
+  - "NeurIPS 2025"
+  - "Autonomous Driving"
+  - "neurosymbolic"
+  - "diffusion models"
+  - "discrete diffusion"
+  - "visual reasoning"
 date: 2026-05-08
 content_hash: a6ed585a1a12573b
 ---

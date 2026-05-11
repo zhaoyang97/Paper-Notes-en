@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] DESIGNER: Design-Logic-Guided Multidisciplinary Data Synthesis for LLM Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][data synthesis] This paper introduces Design Logic—reusable meta-knowledge reverse-engineered from real exam questions—to guide the synthesis of multidisciplinary reasoning problems from raw text. A dataset of 4.7 million questions spanning 75 disciplines is constructed, and base models fine-tuned via SFT on this data surpass their officially post-trained counterparts.
+  [ICLR 2026][LLM Reasoning][data synthesis] This paper introduces Design Logic—reusable meta-knowledge reverse-engineered from real exam questions—to guide the synthesis of multidisciplinary reasoning problems from raw te…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - data synthesis
-  - design logic
-  - multidisciplinary reasoning
-  - question generation
-  - SFT
+  - "ICLR 2026"
+  - "LLM Reasoning"
+  - "data synthesis"
+  - "design logic"
+  - "multidisciplinary reasoning"
+  - "question generation"
+  - "SFT"
 date: 2026-05-08
 content_hash: 3b87508769665f3b
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FerretNet: Efficient Synthetic Image Detection via Local Pixel Dependencies
 description: >-
-  [NeurIPS 2025][Image Generation][Synthetic image detection] Grounded in Markov Random Field (MRF) theory, this paper proposes a Local Pixel Dependency (LPD) feature representation that exposes textural inconsistencies in generated images via median-filter reconstruction. Combined with FerretNet, a lightweight convolutional network with only 1.1M parameters, the approach achieves an average detection accuracy of 97.1% across 22 generative models while being trained exclusively on 4 categories of ProGAN data.
+  [NeurIPS 2025][Image Generation][Synthetic image detection] Grounded in Markov Random Field (MRF) theory, this paper proposes a Local Pixel Dependency (LPD) feature representation that exposes textural inconsistencies in…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Synthetic image detection
-  - local pixel dependency
-  - Markov random field
-  - lightweight network
-  - cross-model generalization
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Synthetic image detection"
+  - "local pixel dependency"
+  - "Markov random field"
+  - "lightweight network"
+  - "cross-model generalization"
 date: 2026-05-08
 content_hash: 105b7f39ba4adefd
 ---

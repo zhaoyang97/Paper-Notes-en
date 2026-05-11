@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Efficient Adaptive Federated Optimization
 description: >-
-  [NeurIPS 2025][Optimization][Federated Learning] FedAda2/FedAda2++ proposes efficient server–client joint adaptive optimization for federated learning: client-side local preconditioners are initialized from zero (eliminating server-to-client transmission), with an optional SM3-based memory-efficient compression of local statistics. The method is theoretically shown to achieve the same $O(T^{-1/2})$ convergence rate as full joint adaptivity, while incurring the same communication cost as FedAvg.
+  [NeurIPS 2025][Optimization][Federated Learning] FedAda2/FedAda2++ proposes efficient server–client joint adaptive optimization for federated learning: client-side local preconditioners are initialized from zero (elimina…
 tags:
-  - NeurIPS 2025
-  - Optimization
-  - Federated Learning
-  - Adaptive Optimization
-  - Communication Efficiency
-  - Memory Efficiency
-  - Joint Adaptivity
+  - "NeurIPS 2025"
+  - "Optimization"
+  - "Federated Learning"
+  - "Adaptive Optimization"
+  - "Communication Efficiency"
+  - "Memory Efficiency"
+  - "Joint Adaptivity"
 date: 2026-05-08
 content_hash: 2e9818e9a4f4f0d8
 ---

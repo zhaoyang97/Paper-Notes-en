@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Preference-Aligned LoRA Merging: Preserving Subspace Coverage and Addressing Directional Anisotropy
 description: >-
-  [CVPR 2026][Model Compression][LoRA merging] This paper revisits the LoRA merging problem through two complementary lenses—subspace coverage and directional anisotropy—and proposes the TARA-Merging framework. By retaining LoRA directions to preserve subspace coverage and applying preference-weighted cross-entropy pseudo-loss for direction-level reweighting, TARA consistently outperforms existing merging methods across 8 vision and 6 NLI benchmarks.
+  [CVPR 2026][Model Compression][LoRA merging] This paper revisits the LoRA merging problem through two complementary lenses—subspace coverage and directional anisotropy—and proposes the TARA-Merging framework. By retainin…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - LoRA merging
-  - subspace coverage
-  - anisotropy
-  - multi-objective optimization
-  - model merging
+  - "CVPR 2026"
+  - "Model Compression"
+  - "LoRA merging"
+  - "subspace coverage"
+  - "anisotropy"
+  - "multi-objective optimization"
+  - "model merging"
 date: 2026-05-08
 content_hash: 560a3032152f257d
 ---

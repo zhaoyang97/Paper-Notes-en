@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Reinforce to Learn, Elect to Reason: A Dual Paradigm for Video Reasoning
 description: >-
-  [CVPR 2026][Reinforcement Learning][Video Reasoning] This paper proposes RLER, a dual-paradigm framework in which the training stage employs GRPO with three novel rewards (Frame-sensitive, Think-transparency, Anti-repetition) to teach the model to generate structured evidence, while the inference stage uses a training-free orchestrator to perform evidence-consistency-based weighted election and self-checking across multiple candidates. RLER comprehensively outperforms open-source and RL-based LMMs on 8 video benchmarks with an average gain of 6.3%, requiring only approximately 3.1 candidates on average.
+  [CVPR 2026][Reinforcement Learning][Video Reasoning] This paper proposes RLER, a dual-paradigm framework in which the training stage employs GRPO with three novel rewards (Frame-sensitive, Think-transparency…
 tags:
-  - CVPR 2026
-  - Reinforcement Learning
-  - Video Reasoning
-  - Evidence-Driven
-  - Multi-Candidate Election
-  - Test-Time Reasoning
+  - "CVPR 2026"
+  - "Reinforcement Learning"
+  - "Video Reasoning"
+  - "Evidence-Driven"
+  - "Multi-Candidate Election"
+  - "Test-Time Reasoning"
 date: 2026-05-08
 content_hash: f86a37c78f0ed8f9
 ---

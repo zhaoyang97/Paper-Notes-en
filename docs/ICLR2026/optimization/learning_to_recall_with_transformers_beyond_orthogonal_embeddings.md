@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning to Recall with Transformers Beyond Orthogonal Embeddings
 description: >-
-  [ICLR 2026][Optimization][Transformer] This paper analyzes the "early phase" of empirical gradient descent for a single-layer Transformer on a token retrieval task under random (non-orthogonal) embeddings. It derives an explicit formula for storage capacity, revealing a multiplicative dependence among sample size $N$, embedding dimension $d$, and sequence length $L$, and proves that this scaling relation is intrinsic to the information-theoretic lower bound.
+  [ICLR 2026][Optimization][Transformer] This paper analyzes the "early phase" of empirical gradient descent for a single-layer Transformer on a token retrieval task under random (non-orthogonal) embeddings. It derives an…
 tags:
-  - ICLR 2026
-  - Optimization
-  - Transformer
+  - "ICLR 2026"
+  - "Optimization"
+  - "Transformer"
   - "Memory & Retrieval"
-  - Storage Capacity
-  - Non-Orthogonal Embeddings
-  - Gradient Descent Analysis
+  - "Storage Capacity"
+  - "Non-Orthogonal Embeddings"
+  - "Gradient Descent Analysis"
 date: 2026-05-08
 content_hash: 65d73e4f9b76c477
 ---

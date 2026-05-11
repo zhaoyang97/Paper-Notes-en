@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Towards Efficient General Feature Prediction in Masked Skeleton Modeling
 description: >-
-  [ICCV 2025][Video Understanding][masked skeleton modeling] This paper proposes GFP (General Feature Prediction), a framework that elevates the reconstruction target in masked skeleton modeling from low-level joint coordinates to multi-scale high-level semantic feature prediction. Coupled with a lightweight Target Generation Network and an information maximization constraint, GFP achieves a 6.2× training speedup while attaining state-of-the-art performance.
+  [ICCV 2025][Video Understanding][masked skeleton modeling] This paper proposes GFP (General Feature Prediction), a framework that elevates the reconstruction target in masked skeleton modeling from low-level joint coordi…
 tags:
-  - ICCV 2025
-  - Video Understanding
-  - masked skeleton modeling
-  - high-level semantic prediction
-  - target generation network
-  - self-supervised learning
-  - action recognition
+  - "ICCV 2025"
+  - "Video Understanding"
+  - "masked skeleton modeling"
+  - "high-level semantic prediction"
+  - "target generation network"
+  - "self-supervised learning"
+  - "action recognition"
 date: 2026-05-08
 content_hash: 3c16f2af6e4cf6fa
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Beyond Simple Graphs: Neural Multi-Objective Routing on Multigraphs
 description: >-
-  [ICLR 2026][Graph Learning][Multi-objective routing] This paper presents GMS, the first neural combinatorial optimization routing method for multigraphs, comprising two variants: GMS-EB, which performs edge-level autoregressive construction directly on the multigraph, and GMS-DH, a dual-head approach that learns to prune the multigraph before performing node-level routing. GMS achieves near-LKH performance on asymmetric multi-objective TSP and CVRP while being tens of times faster.
+  [ICLR 2026][Graph Learning][Multi-objective routing] This paper presents GMS, the first neural combinatorial optimization routing method for multigraphs, comprising two variants: GMS-EB…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - Multi-objective routing
-  - multigraph
-  - graph neural networks
-  - autoregressive construction
-  - Pareto optimization
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Multi-objective routing"
+  - "multigraph"
+  - "graph neural networks"
+  - "autoregressive construction"
+  - "Pareto optimization"
 date: 2026-05-08
 content_hash: 3a44b243aa7f25b9
 ---

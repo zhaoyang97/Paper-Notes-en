@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] On the Generalization of SFT: A Reinforcement Learning Perspective with Reward Rectification
 description: >-
-  [ICLR 2026][Reinforcement Learning][SFT generalization] This paper mathematically proves, from an RL policy gradient perspective, that SFT gradients implicitly encode a pathological reward structure with inverse probability weighting ($1/\pi_\theta$), causing excessively large gradients on low-probability tokens and limiting generalization. The paper proposes DFT (Dynamic Fine-Tuning), which requires only a one-line code modification (multiplying the CE loss by the token probability: $-p\log p$) to eliminate inverse probability weighting. DFT substantially outperforms SFT on mathematical reasoning, code generation, and multimodal tasks, and even surpasses GRPO/PPO in the offline RL setting.
+  [ICLR 2026][Reinforcement Learning][SFT generalization] This paper mathematically proves, from an RL policy gradient perspective, that SFT gradients implicitly encode a pathological reward structure with inverse probabil…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - SFT generalization
-  - policy gradient
-  - inverse probability weighting
-  - Dynamic Fine-Tuning
-  - reward rectification
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "SFT generalization"
+  - "policy gradient"
+  - "inverse probability weighting"
+  - "Dynamic Fine-Tuning"
+  - "reward rectification"
 date: 2026-05-08
 content_hash: 5271ac624a4bcdca
 ---

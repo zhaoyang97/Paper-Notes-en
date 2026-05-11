@@ -2,15 +2,16 @@
 title: >-
   [Paper Note] Probabilistic Token Alignment for Large Language Model Fusion
 description: >-
-  [NeurIPS 2025][Optimal Transport] This work reformulates the token alignment problem in LLM fusion as an Optimal Transport (OT) problem, replacing traditional hard mappings with soft probabilistic alignment via dynamic token pairing and the Sinkhorn algorithm. On 78 tasks across 6 benchmarks, PTA-LLM achieves an average improvement of +1.72% over FuseLLM, while substantially mitigating performance degradation on challenging tasks (from −13.04% to −4.07%).
+  [NeurIPS 2025][Interpretability][Optimal Transport] This work reformulates the token alignment problem in LLM fusion as an Optimal Transport (OT) problem…
 tags:
-  - NeurIPS 2025
-  - Optimal Transport
-  - Sinkhorn Algorithm
-  - Probabilistic Token Alignment
-  - Logit Fusion
-  - Cross-Architecture Model Fusion
-  - Knowledge Fusion
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "Optimal Transport"
+  - "Sinkhorn Algorithm"
+  - "Probabilistic Token Alignment"
+  - "Logit Fusion"
+  - "Cross-Architecture Model Fusion"
+  - "Knowledge Fusion"
 date: 2026-05-08
 content_hash: bcc92a5d557d80c3
 ---

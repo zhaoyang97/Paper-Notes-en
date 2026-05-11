@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] HiMTok: Learning Hierarchical Mask Tokens for Image Segmentation with Large Multimodal Model
 description: >-
-  [ICCV 2025][Segmentation][Hierarchical Mask Tokenization] This paper proposes HiMTok (Hierarchical Mask Tokenizer), which represents segmentation masks as up to 32 coarse-to-fine discrete tokens, enabling LMMs to directly generate segmentation results in the same manner as text generation — without any additional image-conditioned mask decoder — achieving state-of-the-art performance across multiple segmentation benchmarks.
+  [ICCV 2025][Segmentation][Hierarchical Mask Tokenization] This paper proposes HiMTok (Hierarchical Mask Tokenizer), which represents segmentation masks as up to 32 coarse-to-fine discrete tokens…
 tags:
-  - ICCV 2025
-  - Segmentation
-  - Hierarchical Mask Tokenization
-  - Large Multimodal Model
-  - Vector Quantization
-  - Visual Grounding
+  - "ICCV 2025"
+  - "Segmentation"
+  - "Hierarchical Mask Tokenization"
+  - "Large Multimodal Model"
+  - "Vector Quantization"
+  - "Visual Grounding"
 date: 2026-05-08
 content_hash: fdb07da5caef5bed
 ---

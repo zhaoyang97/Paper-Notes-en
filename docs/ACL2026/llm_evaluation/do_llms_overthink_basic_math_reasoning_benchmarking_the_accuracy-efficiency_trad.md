@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Do LLMs Overthink Basic Math Reasoning? Benchmarking the Accuracy-Efficiency Tradeoff
 description: >-
-  [ACL 2026][LLM Evaluation][overthinking] This paper presents LLMThinkBench, a benchmark for systematically evaluating the efficiency of LLMs on basic mathematical reasoning. It introduces the Overthinking Score — a harmonic mean of accuracy and token efficiency — and evaluates 53 LLMs across 14 deterministically generated math tasks. Results show that reasoning models generate on average ~18× more tokens yet sometimes achieve lower accuracy, and that scaling inference budgets yields diminishing returns.
+  [ACL 2026][LLM Evaluation][overthinking] This paper presents LLMThinkBench, a benchmark for systematically evaluating the efficiency of LLMs on basic mathematical reasoning. It introduces the Overthinking Score — a harmo…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - overthinking
-  - basic math reasoning
-  - accuracy-efficiency tradeoff
-  - reasoning tokens
-  - benchmarking
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "overthinking"
+  - "basic math reasoning"
+  - "accuracy-efficiency tradeoff"
+  - "reasoning tokens"
+  - "benchmarking"
 date: 2026-05-08
 content_hash: 1a96ccb21dba9b7b
 ---

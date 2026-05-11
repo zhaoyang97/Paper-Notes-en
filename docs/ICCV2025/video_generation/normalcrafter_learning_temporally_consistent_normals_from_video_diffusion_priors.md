@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] NormalCrafter: Learning Temporally Consistent Normals from Video Diffusion Priors
 description: >-
-  [ICCV 2025][Video Generation][surface normal estimation] NormalCrafter proposes a video normal estimation method built upon Stable Video Diffusion (SVD). By incorporating Semantic Feature Regularization (SFR) and a two-stage training strategy, the method generates normal sequences with fine-grained details and temporal consistency, substantially outperforming existing per-frame methods on video benchmarks.
+  [ICCV 2025][Video Generation][surface normal estimation] NormalCrafter proposes a video normal estimation method built upon Stable Video Diffusion (SVD). By incorporating Semantic Feature Regularization (SFR) and a two-s…
 tags:
-  - ICCV 2025
-  - Video Generation
-  - surface normal estimation
-  - temporal consistency
-  - video diffusion model
-  - semantic feature regularization
-  - SVD
+  - "ICCV 2025"
+  - "Video Generation"
+  - "surface normal estimation"
+  - "temporal consistency"
+  - "video diffusion model"
+  - "semantic feature regularization"
+  - "SVD"
 date: 2026-05-08
 content_hash: bd3d3af080a443b1
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] AR-VRM: Imitating Human Motions for Visual Robot Manipulation with Analogical Reasoning
 description: >-
-  [ICCV 2025][Human Understanding][visual robot manipulation] This paper proposes AR-VRM, the first method to enhance visual robot manipulation (VRM) through explicit imitation of human hand keypoints. It employs a keypoint vision-language model pretrained on large-scale human activity videos to acquire motion knowledge, and establishes correspondences between human hand keypoints and robot components via analogical reasoning.
+  [ICCV 2025][Human Understanding][visual robot manipulation] This paper proposes AR-VRM, the first method to enhance visual robot manipulation (VRM) through explicit imitation of human hand keypoints. It employs a keypoin…
 tags:
-  - ICCV 2025
-  - Human Understanding
-  - visual robot manipulation
-  - analogical reasoning
-  - human keypoints
-  - vision-language pretraining
-  - human-to-robot motion transfer
+  - "ICCV 2025"
+  - "Human Understanding"
+  - "visual robot manipulation"
+  - "analogical reasoning"
+  - "human keypoints"
+  - "vision-language pretraining"
+  - "human-to-robot motion transfer"
 date: 2026-05-08
 content_hash: 437cee008a0d017c
 ---

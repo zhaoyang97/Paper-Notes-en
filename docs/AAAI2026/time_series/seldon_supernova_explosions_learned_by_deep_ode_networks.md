@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SELDON: Supernova Explosions Learned by Deep ODE Networks
 description: >-
-  [AAAI 2026][Time Series][Continuous-time modeling] This paper proposes SELDON, a continuous-time VAE combining a masked GRU-ODE encoder, an implicit Neural ODE propagator, and an interpretable Gaussian basis function decoder, designed for sparse and irregularly sampled astronomical light curve prediction. SELDON outperforms baseline methods in accurate multi-band flux prediction using only 20% of observed data.
+  [AAAI 2026][Time Series][Continuous-time modeling] This paper proposes SELDON, a continuous-time VAE combining a masked GRU-ODE encoder, an implicit Neural ODE propagator…
 tags:
-  - AAAI 2026
-  - Time Series
-  - Continuous-time modeling
-  - Neural ODE
-  - Variational Autoencoder
-  - Supernova light curves
-  - Irregular time series forecasting
+  - "AAAI 2026"
+  - "Time Series"
+  - "Continuous-time modeling"
+  - "Neural ODE"
+  - "Variational Autoencoder"
+  - "Supernova light curves"
+  - "Irregular time series forecasting"
 date: 2026-05-08
 content_hash: 93c020476ca82dad
 ---

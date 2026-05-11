@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Stop DDoS Attacking the Research Community with AI-Generated Survey Papers
 description: >-
-  [NeurIPS 2025][LLM Safety][AI-generated surveys] This position paper analogizes the proliferation of AI-generated survey papers to a "Distributed Denial-of-Service (DDoS) attack" on the academic community. Through systematic quantitative analysis of 10,063 CS survey papers on arXiv from 2020 to 2024, the paper documents synchronized post-ChatGPT surges in survey volume, AI-generation scores, and anomalous author counts. It diagnoses four major quality deficiencies in AI-generated surveys (disorganized structure, unoriginal taxonomies, inaccurate citations, and highly redundant content), analyzes cultural repercussions for the researcher–reviewer–editor triad, and proposes a comprehensive response framework encompassing transparency requirements, rigorous review standards, redundancy restrictions, AI-detection assistance, and a "Dynamic Live Survey" platform.
+  [NeurIPS 2025][LLM Safety][AI-generated surveys] This position paper analogizes the proliferation of AI-generated survey papers to a "Distributed Denial-of-Service (DDoS) attack" on the academic community. Through system…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - AI-generated surveys
-  - survey paper DDoS attack
-  - academic integrity
-  - dynamic live surveys
-  - paper quality detection
-  - research culture
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "AI-generated surveys"
+  - "survey paper DDoS attack"
+  - "academic integrity"
+  - "dynamic live surveys"
+  - "paper quality detection"
+  - "research culture"
 date: 2026-05-08
 content_hash: 78b2f09db6e85f63
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] REP: Resource-Efficient Prompting for Rehearsal-Free Continual Learning
 description: >-
-  [NeurIPS 2025][Model Compression][Continual Learning] REP reduces training time by up to 51% and memory consumption by up to 41% for prompt-based rehearsal-free continual learning methods, with negligible accuracy loss, via three complementary techniques: fast prompt selection using a lightweight surrogate model, Adaptive Token Merging (AToM), and Adaptive Layer Dropping (ALD).
+  [NeurIPS 2025][Model Compression][Continual Learning] REP reduces training time by up to 51% and memory consumption by up to 41% for prompt-based rehearsal-free continual learning methods, with negligible accuracy loss…
 tags:
-  - NeurIPS 2025
-  - Model Compression
-  - Continual Learning
-  - Resource Efficiency
-  - Prompt Learning
-  - Token Merging
-  - Layer Dropping
+  - "NeurIPS 2025"
+  - "Model Compression"
+  - "Continual Learning"
+  - "Resource Efficiency"
+  - "Prompt Learning"
+  - "Token Merging"
+  - "Layer Dropping"
 date: 2026-05-08
 content_hash: fd3429b3fc459c94
 ---

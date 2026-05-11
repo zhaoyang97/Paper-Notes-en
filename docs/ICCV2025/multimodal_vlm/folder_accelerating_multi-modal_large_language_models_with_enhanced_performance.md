@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FOLDER: Accelerating Multi-modal Large Language Models with Enhanced Performance
 description: >-
-  [ICCV 2025][Multimodal VLM][Visual Token Compression] This paper proposes FOLDER — a plug-and-play visual token compression module that systematically analyzes three key factors of information loss (reduction impact, propagation effect, and aggregation method), performs aggressive token merging in the last few layers of the visual encoder, and achieves up to 70% token reduction while maintaining or even improving model performance.
+  [ICCV 2025][Multimodal VLM][Visual Token Compression] This paper proposes FOLDER — a plug-and-play visual token compression module that systematically analyzes three key factors of information loss (reduction impact…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Visual Token Compression
-  - MLLM Acceleration
-  - Plug-and-Play
-  - Token Merging
-  - Inference Acceleration
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Visual Token Compression"
+  - "MLLM Acceleration"
+  - "Plug-and-Play"
+  - "Token Merging"
+  - "Inference Acceleration"
 date: 2026-05-08
 content_hash: 9dc4df7464366623
 ---

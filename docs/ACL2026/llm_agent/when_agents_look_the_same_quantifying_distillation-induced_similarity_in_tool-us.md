@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] When Agents Look the Same: Quantifying Distillation-Induced Similarity in Tool-Use Behaviors
 description: >-
-  [ACL 2026][LLM Agent][model distillation] This paper proposes two complementary metrics, RPS and AGS, to quantify distillation-induced behavioral homogenization in LLM agents' tool-use behaviors. By distinguishing necessary from unnecessary behaviors, the framework reveals cross-family behavioral inheritance patterns across 18 models, finding that Kimi-K2 exhibits greater behavioral similarity to Claude Sonnet 4.5 than Anthropic's own models do.
+  [ACL 2026][LLM Agent][model distillation] This paper proposes two complementary metrics, RPS and AGS, to quantify distillation-induced behavioral homogenization in LLM agents' tool-use behaviors. By distinguishing necess…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - model distillation
-  - behavioral homogenization
-  - tool use
-  - agent evaluation
-  - behavioral similarity
+  - "ACL 2026"
+  - "LLM Agent"
+  - "model distillation"
+  - "behavioral homogenization"
+  - "tool use"
+  - "agent evaluation"
+  - "behavioral similarity"
 date: 2026-05-08
 content_hash: f41fb24a94ac2616
 ---

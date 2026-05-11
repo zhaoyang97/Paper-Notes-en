@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Competition-Aware CPC Forecasting with Near-Market Coverage
 description: >-
-  [CVPR 2026][Time Series][CPC forecasting] This paper reformulates CPC forecasting in search advertising as a time series prediction problem under partially observable competition states. Three observable proxies — semantic similarity, CPC trajectory alignment, and geographic intent — are constructed to approximate latent competition, and are subsequently injected into forecasters as covariates and graph priors respectively. The proposed framework achieves substantial improvements over purely autoregressive baselines on medium- and long-term forecasting horizons.
+  [CVPR 2026][Time Series][CPC forecasting] This paper reformulates CPC forecasting in search advertising as a time series prediction problem under partially observable competition states. Three observable proxies — semant…
 tags:
-  - CVPR 2026
-  - Time Series
-  - CPC forecasting
-  - search advertising auction
-  - competition proxy
-  - spatiotemporal graph network
-  - time series foundation model
+  - "CVPR 2026"
+  - "Time Series"
+  - "CPC forecasting"
+  - "search advertising auction"
+  - "competition proxy"
+  - "spatiotemporal graph network"
+  - "time series foundation model"
 date: 2026-05-08
 content_hash: 2b84cc76fdeec389
 ---

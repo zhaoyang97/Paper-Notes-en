@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] ProGait: A Multi-Purpose Video Dataset and Benchmark for Transfemoral Prosthesis Users
 description: >-
-  [ICCV 2025][Medical Imaging][Gait Analysis] This paper presents ProGait—the first multi-purpose video dataset targeting transfemoral amputee prosthesis users—supporting three tasks: video object segmentation, 2D human pose estimation, and gait analysis. Baseline models are provided to demonstrate the dataset's effectiveness in improving prosthesis detection.
+  [ICCV 2025][Medical Imaging][Gait Analysis] This paper presents ProGait—the first multi-purpose video dataset targeting transfemoral amputee prosthesis users—supporting three tasks: video object segmentation…
 tags:
-  - ICCV 2025
-  - Medical Imaging
-  - Gait Analysis
-  - Prosthesis Detection
-  - Video Dataset
-  - Human Pose Estimation
-  - Video Object Segmentation
+  - "ICCV 2025"
+  - "Medical Imaging"
+  - "Gait Analysis"
+  - "Prosthesis Detection"
+  - "Video Dataset"
+  - "Human Pose Estimation"
+  - "Video Object Segmentation"
 date: 2026-05-08
 content_hash: 01a6024d259037d6
 ---

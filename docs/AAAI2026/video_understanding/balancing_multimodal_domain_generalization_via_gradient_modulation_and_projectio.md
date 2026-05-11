@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Balancing Multimodal Domain Generalization via Gradient Modulation and Projection
 description: >-
-  [AAAI2026][Video Understanding][Multimodal Domain Generalization] This paper proposes a Gradient Modulation Projection (GMP) strategy that addresses inter-modality optimization imbalance and inter-task gradient conflicts in multimodal domain generalization (MMDG) through two components: Inter-modality Gradient Decoupled Modulation (IGDM) and Conflict-Adaptive Gradient Projection (CAGP), achieving state-of-the-art performance on multiple benchmarks.
+  [AAAI2026][Video Understanding][Multimodal Domain Generalization] This paper proposes a Gradient Modulation Projection (GMP) strategy that addresses inter-modality optimization imbalance and inter-task gradient conflicts…
 tags:
-  - AAAI2026
-  - Video Understanding
-  - Multimodal Domain Generalization
-  - Gradient Modulation
-  - Gradient Projection
-  - Optimization Imbalance
+  - "AAAI2026"
+  - "Video Understanding"
+  - "Multimodal Domain Generalization"
+  - "Gradient Modulation"
+  - "Gradient Projection"
+  - "Optimization Imbalance"
 date: 2026-05-08
 content_hash: 436f19c6d297ead6
 ---

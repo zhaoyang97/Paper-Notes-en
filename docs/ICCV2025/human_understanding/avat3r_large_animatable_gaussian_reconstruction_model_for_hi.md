@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Avat3r: Large Animatable Gaussian Reconstruction Model for High-fidelity 3D Head Avatars
 description: >-
-  [ICCV 2025][Human Understanding][3D Gaussian] This paper presents Avat3r — the first animatable large reconstruction model (LRM) that regresses high-quality drivable 3D Gaussian head avatars from only 4 input images in a feed-forward manner. By integrating DUSt3R positional maps and Sapiens semantic features as priors, and modeling expression-driven animation via simple cross-attention, Avat3r substantially outperforms existing methods on the Ava256 and NeRSemble datasets.
+  [ICCV 2025][Human Understanding][3D Gaussian] This paper presents Avat3r — the first animatable large reconstruction model (LRM) that regresses high-quality drivable 3D Gaussian head avatars from only 4 input images in a…
 tags:
-  - ICCV 2025
-  - Human Understanding
-  - 3D Gaussian
-  - head avatar reconstruction
-  - facial animation
-  - large reconstruction model
-  - feed-forward inference
+  - "ICCV 2025"
+  - "Human Understanding"
+  - "3D Gaussian"
+  - "head avatar reconstruction"
+  - "facial animation"
+  - "large reconstruction model"
+  - "feed-forward inference"
 date: 2026-05-08
 content_hash: 65ac87beabaf0c63
 ---

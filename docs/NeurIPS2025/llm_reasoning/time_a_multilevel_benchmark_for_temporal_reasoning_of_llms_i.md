@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] TimE: A Multi-level Benchmark for Temporal Reasoning of LLMs in Real-World Scenarios
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Temporal Reasoning] This paper introduces TimE, a multi-level temporal reasoning benchmark comprising 38,522 QA pairs across three real-world scenarios — knowledge-intensive (Wiki), dynamic news (News), and long dialogue (Dial) — and three progressively difficult levels with 11 sub-tasks. A comprehensive evaluation of 24 LLMs reveals that even the strongest reasoning models exhibit significant deficiencies on complex tasks such as timeline construction and counterfactual reasoning.
+  [NeurIPS 2025][LLM Reasoning][Temporal Reasoning] This paper introduces TimE, a multi-level temporal reasoning benchmark comprising 38,522 QA pairs across three real-world scenarios — knowledge-intensive (Wiki)…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - Temporal Reasoning
-  - Multi-level Benchmark
-  - Real-World Scenarios
-  - Knowledge-Intensive
-  - Long Dialogue
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "Temporal Reasoning"
+  - "Multi-level Benchmark"
+  - "Real-World Scenarios"
+  - "Knowledge-Intensive"
+  - "Long Dialogue"
 date: 2026-05-08
 content_hash: f63ee66c6aa2fb85
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Winner of CVPR2026 NTIRE Challenge on Image Shadow Removal: Semantic and Geometric Guidance for Shadow Removal via Cascaded Refinement
 description: >-
-  [CVPR 2026 Workshop (NTIRE)][Image Restoration][Shadow removal] A three-stage cascaded refinement pipeline built upon OmniSR, combining frozen DINOv2 semantic features with monocular depth/normal geometric guidance and a contraction constraint loss to stabilize multi-stage training, achieving first place in the NTIRE 2026 Image Shadow Removal Challenge.
+  [CVPR 2026 Workshop (NTIRE)][Image Restoration][Shadow removal] A three-stage cascaded refinement pipeline built upon OmniSR, combining frozen DINOv2 semantic features with monocular depth/normal geometric guidance and a…
 tags:
-  - CVPR 2026 Workshop (NTIRE)
-  - Image Restoration
-  - Shadow removal
-  - cascaded refinement
-  - semantic guidance
-  - geometric guidance
-  - progressive restoration
+  - "CVPR 2026 Workshop (NTIRE)"
+  - "Image Restoration"
+  - "Shadow removal"
+  - "cascaded refinement"
+  - "semantic guidance"
+  - "geometric guidance"
+  - "progressive restoration"
 date: 2026-05-08
 content_hash: f01ed54116432573
 ---

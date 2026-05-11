@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Mamba Goes HoME: Hierarchical Soft Mixture-of-Experts for 3D Medical Image Segmentation
 description: >-
-  [NeurIPS 2025][Medical Imaging][3D Medical Image Segmentation] This paper proposes Mamba-HoME, an architecture that integrates a Hierarchical Soft Mixture-of-Experts (HoME) with the Mamba SSM. Through a two-level token routing mechanism, it achieves local-to-global feature modeling and surpasses existing state-of-the-art methods on 3D medical image segmentation across CT, MRI, and ultrasound modalities, while maintaining linear computational complexity.
+  [NeurIPS 2025][Medical Imaging][3D Medical Image Segmentation] This paper proposes Mamba-HoME, an architecture that integrates a Hierarchical Soft Mixture-of-Experts (HoME) with the Mamba SSM. Through a two-level token r…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - 3D Medical Image Segmentation
-  - Mamba
-  - Mixture-of-Experts
-  - State Space Models
-  - Hierarchical Routing
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "3D Medical Image Segmentation"
+  - "Mamba"
+  - "Mixture-of-Experts"
+  - "State Space Models"
+  - "Hierarchical Routing"
 date: 2026-05-08
 content_hash: ab60f98b73f6b96f
 ---

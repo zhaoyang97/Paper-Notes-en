@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] CDFlow: Building Invertible Layers with Circulant and Diagonal Matrices
 description: >-
-  [NeurIPS 2025][Image Generation][Normalizing flows] CDFlow is proposed to construct invertible linear layers via alternating products of circulant and diagonal matrices, reducing parameter complexity from $\mathcal{O}(n^2)$ to $\mathcal{O}(mn)$, matrix inversion complexity from $\mathcal{O}(n^3)$ to $\mathcal{O}(mn\log n)$, and log-determinant computation from $\mathcal{O}(n^3)$ to $\mathcal{O}(mn)$, outperforming comparable methods on density estimation and periodic data modeling.
+  [NeurIPS 2025][Image Generation][Normalizing flows] CDFlow is proposed to construct invertible linear layers via alternating products of circulant and diagonal matrices…
 tags:
-  - NeurIPS 2025
-  - Image Generation
-  - Normalizing flows
-  - circulant matrices
-  - diagonal matrices
-  - invertible linear layers
-  - fast Fourier transform
-  - density estimation
+  - "NeurIPS 2025"
+  - "Image Generation"
+  - "Normalizing flows"
+  - "circulant matrices"
+  - "diagonal matrices"
+  - "invertible linear layers"
+  - "fast Fourier transform"
+  - "density estimation"
 date: 2026-05-08
 content_hash: 506845e91c94f19f
 ---

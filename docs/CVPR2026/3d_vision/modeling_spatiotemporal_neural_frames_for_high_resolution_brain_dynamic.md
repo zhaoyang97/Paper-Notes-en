@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Modeling Spatiotemporal Neural Frames for High Resolution Brain Dynamics
 description: >-
-  [CVPR 2026][3D Vision][EEG-to-fMRI] A diffusion Transformer framework conditioned on EEG for fMRI reconstruction is proposed, modeling brain activity as a spatiotemporal sequence of neural frames rather than independent snapshots. The method achieves spatiotemporally consistent fMRI reconstruction at cortical vertex-level resolution, supports intermediate frame interpolation via null-space sampling, and validates the preservation of functional information on downstream visual decoding tasks.
+  [CVPR 2026][3D Vision][EEG-to-fMRI] A diffusion Transformer framework conditioned on EEG for fMRI reconstruction is proposed, modeling brain activity as a spatiotemporal sequence of neural frames rather than independent…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - EEG-to-fMRI
-  - Diffusion Models
-  - Spatiotemporal Modeling
-  - Intermediate Frame Reconstruction
-  - Visual Decoding
+  - "CVPR 2026"
+  - "3D Vision"
+  - "EEG-to-fMRI"
+  - "Diffusion Models"
+  - "Spatiotemporal Modeling"
+  - "Intermediate Frame Reconstruction"
+  - "Visual Decoding"
 date: 2026-05-08
 content_hash: 5c28c6f325d8e05e
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Enhancing Multimodal Large Language Models for Ancient Chinese Character Evolution Analysis via Glyph-Driven Fine-Tuning
 description: >-
-  [ACL 2026][Multimodal VLM][ancient character evolution] This paper constructs a benchmark for ancient Chinese character evolution analysis comprising 11 tasks and 130,000+ instances, evaluates 19 MLLMs to reveal their limited capacity for glyph-level recognition and evolution reasoning, and proposes GEVO—a glyph-driven contrastive fine-tuning framework—that achieves consistent improvements across all tasks on a 2B-scale model.
+  [ACL 2026][Multimodal VLM][ancient character evolution] This paper constructs a benchmark for ancient Chinese character evolution analysis comprising 11 tasks and 130,000+ instances…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - ancient character evolution
-  - multimodal large language models
-  - glyph-driven contrastive fine-tuning
-  - oracle bone script
-  - curriculum learning
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "ancient character evolution"
+  - "multimodal large language models"
+  - "glyph-driven contrastive fine-tuning"
+  - "oracle bone script"
+  - "curriculum learning"
 date: 2026-05-08
 content_hash: d319c4104126fb7d
 ---

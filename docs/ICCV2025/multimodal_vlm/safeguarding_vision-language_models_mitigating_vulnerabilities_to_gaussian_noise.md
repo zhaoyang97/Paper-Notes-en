@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Safeguarding Vision-Language Models: Mitigating Vulnerabilities to Gaussian Noise in Perturbation-based Attacks
 description: >-
-  [ICCV 2025][Multimodal VLM][VLM safety] This work identifies a pervasive vulnerability of mainstream VLMs to Gaussian noise, proposes the Robust-VLGuard safety dataset (covering both image-text aligned and misaligned scenarios) with noise-augmented fine-tuning to improve Gaussian noise robustness, and combines it with DiffPure to convert adversarial noise into Gaussian-like noise, forming the DiffPure-VLM general defense framework that effectively resists adversarial attacks of varying strengths.
+  [ICCV 2025][Multimodal VLM][VLM safety] This work identifies a pervasive vulnerability of mainstream VLMs to Gaussian noise, proposes the Robust-VLGuard safety dataset (covering both image-text aligned and misaligned sce…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - VLM safety
-  - Gaussian noise
-  - adversarial defense
-  - diffusion purification
-  - safety fine-tuning
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "VLM safety"
+  - "Gaussian noise"
+  - "adversarial defense"
+  - "diffusion purification"
+  - "safety fine-tuning"
 date: 2026-05-08
 content_hash: fec437232ebfbef3
 ---

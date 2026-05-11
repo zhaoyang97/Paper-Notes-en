@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] See, Think, Act: Teaching Multimodal Agents to Effectively Interact with GUI by Identifying Toggles
 description: >-
-  [CVPR 2026][Multimodal VLM][GUI Agent] This paper proposes State-aware Reasoning (StaR), which teaches multimodal agents a three-step reasoning chain — "perceive current state → analyze target state → decide whether to act" — improving GUI toggle control accuracy by over 30% without degrading general agent task performance.
+  [CVPR 2026][Multimodal VLM][GUI Agent] This paper proposes State-aware Reasoning (StaR), which teaches multimodal agents a three-step reasoning chain — "perceive current state → analyze target state → decide whether to a…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - GUI Agent
-  - Toggle Control
-  - Multimodal Reasoning
-  - State Awareness
-  - State-aware Reasoning
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "GUI Agent"
+  - "Toggle Control"
+  - "Multimodal Reasoning"
+  - "State Awareness"
+  - "State-aware Reasoning"
 date: 2026-05-08
 content_hash: c52a632b904c2c6d
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Understanding Sensitivity of Differential Attention through the Lens of Adversarial Robustness
 description: >-
-  [ICLR 2026][LLM Safety][Differential Attention] This work is the first to analyze the Differential Attention (DA) mechanism from an adversarial robustness perspective. It reveals that the subtraction structure in DA, while suppressing noise, amplifies sensitivity to adversarial perturbations through negative gradient alignment. The study establishes a "Fragility Principle"—DA improves discriminability on clean samples but becomes more vulnerable under adversarial attacks—and identifies a depth-dependent robustness crossover effect.
+  [ICLR 2026][LLM Safety][Differential Attention] This work is the first to analyze the Differential Attention (DA) mechanism from an adversarial robustness perspective. It reveals that the subtraction structure in DA…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Differential Attention
-  - adversarial robustness
-  - gradient alignment
-  - Lipschitz constant
-  - attention mechanism
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Differential Attention"
+  - "adversarial robustness"
+  - "gradient alignment"
+  - "Lipschitz constant"
+  - "attention mechanism"
 date: 2026-05-08
 content_hash: a26dad58998e68cb
 ---

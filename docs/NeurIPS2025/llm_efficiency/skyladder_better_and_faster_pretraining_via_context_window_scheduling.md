@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SkyLadder: Better and Faster Pretraining via Context Window Scheduling
 description: >-
-  [NeurIPS 2025][LLM Efficiency][Context window scheduling] SkyLadder, a progressive short-to-long context window scheduling strategy, achieves superior pretraining efficiency (22% training time saved) and improved model performance (+3.7%) under a fixed compute budget, challenging the prevailing belief that "longer context = better performance."
+  [NeurIPS 2025][LLM Efficiency][Context window scheduling] SkyLadder, a progressive short-to-long context window scheduling strategy, achieves superior pretraining efficiency (22% training time saved) and improved model p…
 tags:
-  - NeurIPS 2025
-  - LLM Efficiency
-  - Context window scheduling
-  - pretraining efficiency
-  - long context
-  - attention mechanism
-  - training stability
+  - "NeurIPS 2025"
+  - "LLM Efficiency"
+  - "Context window scheduling"
+  - "pretraining efficiency"
+  - "long context"
+  - "attention mechanism"
+  - "training stability"
 date: 2026-05-08
 content_hash: a7e3d7cc458d6cc8
 ---

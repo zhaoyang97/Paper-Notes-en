@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Privacy-protected Retrieval-Augmented Generation for Knowledge Graph Question Answering
 description: >-
-  [AAAI 2026][LLM Safety][Privacy-preserving RAG] This work is the first to explore privacy-protected RAG for Knowledge Graph Question Answering (KGQA). It proposes ARoG (Abstraction Reasoning on Graph), a framework that employs two strategies—relation-centric abstraction and structure-oriented abstraction—to enable effective retrieval and utilization of knowledge graphs for question answering even when entities are anonymized (replaced with semantically meaningless MIDs).
+  [AAAI 2026][LLM Safety][Privacy-preserving RAG] This work is the first to explore privacy-protected RAG for Knowledge Graph Question Answering (KGQA). It proposes ARoG (Abstraction Reasoning on Graph)…
 tags:
-  - AAAI 2026
-  - LLM Safety
-  - Privacy-preserving RAG
-  - Knowledge Graph Question Answering
-  - Entity Anonymization
-  - Abstract Reasoning
-  - LLM Privacy
+  - "AAAI 2026"
+  - "LLM Safety"
+  - "Privacy-preserving RAG"
+  - "Knowledge Graph Question Answering"
+  - "Entity Anonymization"
+  - "Abstract Reasoning"
+  - "LLM Privacy"
 date: 2026-05-08
 content_hash: 81a581bd3ff4bcbb
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MP1: MeanFlow Tames Policy Learning in 1-step for Robotic Manipulation
 description: >-
-  [AAAI 2026][Image Generation][Robotic Manipulation] This work introduces the MeanFlow paradigm to the robot learning domain for the first time. By incorporating 3D point cloud inputs and a Dispersive Loss, MP1 generates action trajectories in a single network forward pass (1-NFE), achieving state-of-the-art success rates with an inference latency of only 6.8 ms on robotic manipulation tasks.
+  [AAAI 2026][Image Generation][Robotic Manipulation] This work introduces the MeanFlow paradigm to the robot learning domain for the first time. By incorporating 3D point cloud inputs and a Dispersive Loss…
 tags:
-  - AAAI 2026
-  - Image Generation
-  - Robotic Manipulation
-  - MeanFlow
-  - Single-Step Inference
-  - Flow Matching
-  - Dispersive Loss
+  - "AAAI 2026"
+  - "Image Generation"
+  - "Robotic Manipulation"
+  - "MeanFlow"
+  - "Single-Step Inference"
+  - "Flow Matching"
+  - "Dispersive Loss"
 date: 2026-05-08
 content_hash: dddd837b74812a02
 ---

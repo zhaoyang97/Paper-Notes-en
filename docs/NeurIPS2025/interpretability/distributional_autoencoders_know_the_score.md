@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Distributional Autoencoders Know the Score
 description: >-
-  [NeurIPS 2025][Autoencoders] This paper establishes rigorous theoretical guarantees for the Distributional Principal Autoencoder (DPA): it derives a closed-form relationship between the level-set geometry of the optimal encoder and the score function of the data distribution, and proves that latent components beyond the manifold dimensionality are conditionally independent of the data—thereby unifying distributional learning and intrinsic dimension discovery within a single framework.
+  [NeurIPS 2025][Interpretability][Autoencoders] This paper establishes rigorous theoretical guarantees for the Distributional Principal Autoencoder (DPA): it derives a closed-form relationship between the level-set geomet…
 tags:
-  - NeurIPS 2025
-  - Autoencoders
-  - Distributional Reconstruction
-  - Score Function
-  - Manifold Learning
-  - Intrinsic Dimensionality
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "Autoencoders"
+  - "Distributional Reconstruction"
+  - "Score Function"
+  - "Manifold Learning"
+  - "Intrinsic Dimensionality"
 date: 2026-05-08
 content_hash: 85bf65ae6f3255e0
 ---

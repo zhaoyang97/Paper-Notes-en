@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From Objects to Anywhere: A Holistic Benchmark for Multi-level Visual Grounding in 3D Scenes
 description: >-
-  [NeurIPS 2025][3D Vision][3D visual grounding] This paper proposes Anywhere3D-Bench, the first 3D visual grounding benchmark spanning four levels—area, space, object, and part—revealing that even the strongest models (Gemini-2.5-Pro and o3) achieve only ~30% accuracy on space-level tasks and ~40% on part-level tasks, far below the human performance of 95%.
+  [NeurIPS 2025][3D Vision][3D visual grounding] This paper proposes Anywhere3D-Bench, the first 3D visual grounding benchmark spanning four levels—area, space, object…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - 3D visual grounding
-  - multi-level grounding
-  - benchmark
-  - spatial reasoning
-  - MLLM
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "3D visual grounding"
+  - "multi-level grounding"
+  - "benchmark"
+  - "spatial reasoning"
+  - "MLLM"
 date: 2026-05-08
 content_hash: 6468d611be6ebf29
 ---

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Encoding and Understanding Astrophysical Information in Large Language Model-Generated Summaries
 description: >-
-  [NeurIPS 2025][LLM embeddings] This work investigates whether LLM embeddings encode physically meaningful quantities derived from X-ray astronomical observations—specifically hardness ratios, power-law indices, and variability indices. Results show that structured prompt design improves clustering purity of physical attributes by 5.9%–57.5%, and sparse autoencoders reveal that LLMs infer physical parameters not explicitly stated by recognizing object types.
+  [NeurIPS 2025][Interpretability][LLM embeddings] This work investigates whether LLM embeddings encode physically meaningful quantities derived from X-ray astronomical observations—specifically hardness ratios…
 tags:
-  - NeurIPS 2025
-  - LLM embeddings
-  - astrophysics
-  - sparse autoencoders
-  - X-ray astronomy
-  - physical encoding
+  - "NeurIPS 2025"
+  - "Interpretability"
+  - "LLM embeddings"
+  - "astrophysics"
+  - "sparse autoencoders"
+  - "X-ray astronomy"
+  - "physical encoding"
 date: 2026-05-08
 content_hash: 4a5eb71be77ac5ec
 ---

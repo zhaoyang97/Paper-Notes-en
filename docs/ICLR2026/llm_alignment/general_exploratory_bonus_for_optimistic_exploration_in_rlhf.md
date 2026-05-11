@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] General Exploratory Bonus for Optimistic Exploration in RLHF
 description: >-
-  [ICLR 2026][LLM Alignment][exploratory bonus] This paper theoretically demonstrates that existing RLHF exploratory bonuses under KL and α-divergence regularization actually drive the policy toward high-probability regions of the reference model—contrary to the principle of optimism. It proposes the General Exploratory Bonus (GEB) framework, which introduces reference-model-dependent reward modulation to counteract the conservative bias induced by divergence regularization, and provably satisfies the optimism principle.
+  [ICLR 2026][LLM Alignment][exploratory bonus] This paper theoretically demonstrates that existing RLHF exploratory bonuses under KL and α-divergence regularization actually drive the policy toward high-probability region…
 tags:
-  - ICLR 2026
-  - LLM Alignment
-  - exploratory bonus
-  - optimistic exploration
-  - RLHF
-  - α-divergence
-  - sample efficiency
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "exploratory bonus"
+  - "optimistic exploration"
+  - "RLHF"
+  - "α-divergence"
+  - "sample efficiency"
 date: 2026-05-08
 content_hash: 872e1bdb287baf39
 ---

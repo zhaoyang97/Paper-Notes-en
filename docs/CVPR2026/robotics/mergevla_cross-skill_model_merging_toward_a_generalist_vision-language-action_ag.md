@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MergeVLA: Cross-Skill Model Merging Toward a Generalist Vision-Language-Action Agent
 description: >-
-  [CVPR 2026][Robotics][VLA model merging] This paper presents the first systematic diagnosis of two root causes underlying the non-mergeability of VLA models—LoRA selfish parameter conflicts and task coupling induced by self-attention in action experts—and proposes MergeVLA. By combining task-mask sparse LoRA activation, self-attention-free action experts, and training-free test-time task routing, MergeVLA merges multiple single-skill VLA specialists into a unified generalist agent, achieving a 90.2% success rate on LIBERO and 90% on the real-robot SO101 platform.
+  [CVPR 2026][Robotics][VLA model merging] This paper presents the first systematic diagnosis of two root causes underlying the non-mergeability of VLA models—LoRA selfish parameter conflicts and task coupling induced by s…
 tags:
-  - CVPR 2026
-  - Robotics
-  - VLA model merging
-  - multi-skill robotics
-  - sparse LoRA masking
-  - action expert redesign
-  - test-time task routing
+  - "CVPR 2026"
+  - "Robotics"
+  - "VLA model merging"
+  - "multi-skill robotics"
+  - "sparse LoRA masking"
+  - "action expert redesign"
+  - "test-time task routing"
 date: 2026-05-08
 content_hash: 9c50233716e96840
 ---

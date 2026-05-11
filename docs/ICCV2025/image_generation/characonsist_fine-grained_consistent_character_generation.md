@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CharaConsist: Fine-Grained Consistent Character Generation
 description: >-
-  [ICCV 2025][Image Generation][Consistent Character Generation] This paper proposes a training-free, fine-grained consistent character generation method that achieves high-quality cross-image character consistency on a DiT architecture (FLUX.1) for the first time, via Point-Tracking Attention, adaptive token merging, and foreground-background decoupled control.
+  [ICCV 2025][Image Generation][Consistent Character Generation] This paper proposes a training-free, fine-grained consistent character generation method that achieves high-quality cross-image character consistency on a Di…
 tags:
-  - ICCV 2025
-  - Image Generation
-  - Consistent Character Generation
-  - DiT
-  - Training-Free
-  - Attention Mechanism
-  - FLUX.1
+  - "ICCV 2025"
+  - "Image Generation"
+  - "Consistent Character Generation"
+  - "DiT"
+  - "Training-Free"
+  - "Attention Mechanism"
+  - "FLUX.1"
 date: 2026-05-08
 content_hash: 093e677aefc600d9
 ---

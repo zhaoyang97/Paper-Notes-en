@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] CodeWiki: Evaluating AI's Ability to Generate Holistic Documentation for Large-Scale Codebases
 description: >-
-  [ACL 2026][Code documentation generation] This paper presents CodeWiki, an open-source framework based on hierarchical decomposition and recursive multi-agent processing for automated repository-level code documentation generation. It also introduces the CodeWikiBench benchmark, achieving a quality score of 68.79% across seven programming languages, surpassing the closed-source system DeepWiki (64.06%).
+  [ACL 2026][Code Intelligence][Code documentation generation] This paper presents CodeWiki, an open-source framework based on hierarchical decomposition and recursive multi-agent processing for automated repository-level…
 tags:
-  - ACL 2026
-  - Code documentation generation
-  - repository-level understanding
-  - multi-agent systems
-  - hierarchical decomposition
-  - code benchmarks
+  - "ACL 2026"
+  - "Code Intelligence"
+  - "Code documentation generation"
+  - "repository-level understanding"
+  - "multi-agent systems"
+  - "hierarchical decomposition"
+  - "code benchmarks"
 date: 2026-05-08
 content_hash: 1e3a07582e48251c
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] On the Robustness Tradeoff in Fine-Tuning
 description: >-
-  [ICCV 2025][LLM Evaluation][fine-tuning robustness] The first systematic study of the adversarial robustness–accuracy tradeoff during fine-tuning, conducted across 231 models, 7 fine-tuning strategies, and 6 datasets. Key findings: (1) robustness first increases then decreases in the early stages of fine-tuning; (2) different PEFT strategies and task complexities yield distinct Pareto frontiers; (3) OOD robustness exhibits no analogous tradeoff and instead tracks accuracy changes closely.
+  [ICCV 2025][LLM Evaluation][fine-tuning robustness] The first systematic study of the adversarial robustness–accuracy tradeoff during fine-tuning, conducted across 231 models, 7 fine-tuning strategies…
 tags:
-  - ICCV 2025
-  - LLM Evaluation
-  - fine-tuning robustness
-  - adversarial robustness
-  - parameter-efficient fine-tuning
-  - Pareto frontier
-  - OOD robustness
+  - "ICCV 2025"
+  - "LLM Evaluation"
+  - "fine-tuning robustness"
+  - "adversarial robustness"
+  - "parameter-efficient fine-tuning"
+  - "Pareto frontier"
+  - "OOD robustness"
 date: 2026-05-08
 content_hash: e5f4e7f748507aa8
 ---

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Mastering Collaborative Multi-modal Data Selection: A Focus on Informativeness, Uniqueness, and Representativeness
 description: >-
-  [ICCV 2025][Multimodal VLM][Data selection] This paper proposes DataTailor — a collaborative multimodal data selection framework grounded in three principles: informativeness, uniqueness, and representativeness. Using only 15% of the data, DataTailor achieves 101.3% of the performance obtained with full-data fine-tuning, embodying the "Less is More" philosophy.
+  [ICCV 2025][Multimodal VLM][Data selection] This paper proposes DataTailor — a collaborative multimodal data selection framework grounded in three principles: informativeness, uniqueness…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Data selection
-  - instruction tuning
-  - multimodal large language models
-  - informativeness
-  - uniqueness
-  - representativeness
+  - "ICCV 2025"
+  - "Multimodal VLM"
+  - "Data selection"
+  - "instruction tuning"
+  - "multimodal large language models"
+  - "informativeness"
+  - "uniqueness"
+  - "representativeness"
 date: 2026-05-08
 content_hash: 8bcddf41acf705d3
 ---

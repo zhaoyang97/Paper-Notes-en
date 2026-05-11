@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] The Platonic Universe: Do Foundation Models See the Same Sky?
 description: >-
-  [NeurIPS 2025][Platonic Representation Hypothesis] This paper validates the Platonic Representation Hypothesis (PRH) in an astronomical setting. Using JWST, HSC, Legacy Survey, and DESI spectroscopic data, it measures representation alignment across six foundation models (ViT/ConvNeXt/DINOv2/IJEPA/AstroPT/Specformer) and finds that both intra-modal and cross-modal MKNN scores consistently increase with model scale ($p = 3.31 \times 10^{-5}$), supporting the hypothesis that models of different architectures and modalities converge toward a shared representation.
+  [NeurIPS 2025][Physics][Platonic Representation Hypothesis] This paper validates the Platonic Representation Hypothesis (PRH) in an astronomical setting. Using JWST, HSC, Legacy Survey, and DESI spectroscopic data…
 tags:
-  - NeurIPS 2025
-  - Platonic Representation Hypothesis
-  - foundation models
-  - astronomy
-  - representation alignment
-  - cross-modal convergence
+  - "NeurIPS 2025"
+  - "Physics"
+  - "Platonic Representation Hypothesis"
+  - "foundation models"
+  - "astronomy"
+  - "representation alignment"
+  - "cross-modal convergence"
 date: 2026-05-08
 content_hash: 3fd2fd4e64860029
 ---

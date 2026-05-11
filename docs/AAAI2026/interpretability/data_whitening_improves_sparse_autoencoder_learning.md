@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Data Whitening Improves Sparse Autoencoder Learning
 description: >-
-  [AAAI 2026][Sparse Autoencoder] This paper introduces PCA whitening — a standard preprocessing step from classical sparse coding — into modern sparse autoencoder (SAE) training. Through theoretical analysis and simulation, it demonstrates that whitening renders the optimization landscape more convex and isotropic. Experiments on SAEBench show that whitening substantially improves interpretability metrics (Sparse Probing +7.3%, SCR +54%, TPP +372%), albeit with a slight decrease in reconstruction quality.
+  [AAAI 2026][Interpretability][Sparse Autoencoder] This paper introduces PCA whitening — a standard preprocessing step from classical sparse coding — into modern sparse autoencoder (SAE) training. Through theoretical anal…
 tags:
-  - AAAI 2026
-  - Sparse Autoencoder
-  - PCA Whitening
-  - mechanistic interpretability
-  - Feature Disentanglement
-  - SAEBench
+  - "AAAI 2026"
+  - "Interpretability"
+  - "Sparse Autoencoder"
+  - "PCA Whitening"
+  - "mechanistic interpretability"
+  - "Feature Disentanglement"
+  - "SAEBench"
 date: 2026-05-08
 content_hash: 636037b0885d027c
 ---

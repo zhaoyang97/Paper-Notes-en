@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Cramér–von Mises Approach to Incentivizing Truthful Data Sharing
 description: >-
-  [NeurIPS 2025][LLM Safety][data sharing incentives] This paper proposes an incentive mechanism based on the Cramér–von Mises (CvM) two-sample test statistic. Under both Bayesian and prior-free settings, the mechanism provably makes truthful data submission a (approximate) Nash equilibrium, while encouraging participants to contribute more genuine data—without relying on strong distributional assumptions (e.g., Gaussian or Bernoulli).
+  [NeurIPS 2025][LLM Safety][data sharing incentives] This paper proposes an incentive mechanism based on the Cramér–von Mises (CvM) two-sample test statistic. Under both Bayesian and prior-free settings…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - data sharing incentives
-  - Cramér–von Mises test
-  - Nash equilibrium
-  - two-sample test
-  - defense against data fabrication
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "data sharing incentives"
+  - "Cramér–von Mises test"
+  - "Nash equilibrium"
+  - "two-sample test"
+  - "defense against data fabrication"
 date: 2026-05-08
 content_hash: 7d92859c15456c80
 ---

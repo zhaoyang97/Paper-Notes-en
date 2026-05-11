@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] BenDFM: A Taxonomy and Synthetic CAD Dataset for Manufacturability Assessment in Sheet Metal Bending
 description: >-
-  [CVPR 2026][Manufacturability Assessment] This paper proposes a two-dimensional taxonomy of manufacturability metrics (configuration dependence × feasibility/complexity) and introduces BenDFM, the first synthetic CAD dataset for sheet metal bending (20,000 parts, covering both manufacturable and non-manufacturable designs). Benchmark results show that topology-aware graph representations (UV-Net, AUC 0.896) consistently outperform point cloud methods (PointNext, AUC 0.844) across all four task categories.
+  [CVPR 2026][Manufacturability Assessment] This paper proposes a two-dimensional taxonomy of manufacturability metrics (configuration dependence × feasibility/complexity) and introduces BenDFM…
 tags:
-  - CVPR 2026
-  - Manufacturability Assessment
-  - Sheet Metal Bending
-  - Synthetic CAD Dataset
-  - DFM Taxonomy
-  - B-rep Learning
+  - "CVPR 2026"
+  - "Manufacturability Assessment"
+  - "Sheet Metal Bending"
+  - "Synthetic CAD Dataset"
+  - "DFM Taxonomy"
+  - "B-rep Learning"
 date: 2026-05-08
 content_hash: 72ee4ac68ba273ac
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Let the Model Learn to Feel: Mode-Guided Tonality Injection for Symbolic Music Emotion Recognition
 description: >-
-  [AAAI 2026][Audio & Speech][symbolic music emotion recognition] The MoGE diagnostic strategy systematically identifies that MIDIBERT fails to encode mode–emotion associations. The proposed MoFi injection framework leverages FiLM conditioning to inject major/minor priors into Layer 1 of MIDIBERT (identified as the weakest layer in terms of emotional information). This achieves 75.2% accuracy (+11.8%) on EMOPIA and 59.1% (+11.8%) on VGMIDI, with F1 improvements of 12.3% and 15.5%, respectively.
+  [AAAI 2026][Audio & Speech][symbolic music emotion recognition] The MoGE diagnostic strategy systematically identifies that MIDIBERT fails to encode mode–emotion associations. The proposed MoFi injection framework levera…
 tags:
-  - AAAI 2026
+  - "AAAI 2026"
   - "Audio & Speech"
-  - symbolic music emotion recognition
-  - MIDIBERT
-  - mode injection
-  - FiLM
-  - music psychology
+  - "symbolic music emotion recognition"
+  - "MIDIBERT"
+  - "mode injection"
+  - "FiLM"
+  - "music psychology"
 date: 2026-05-08
 content_hash: 46fd50f46209aa7c
 ---

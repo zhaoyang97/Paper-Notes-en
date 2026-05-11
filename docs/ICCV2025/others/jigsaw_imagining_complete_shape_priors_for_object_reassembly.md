@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Jigsaw++: Imagining Complete Shape Priors for Object Reassembly
 description: >-
-  [ICCV 2025][object reassembly] Jigsaw++ proposes a generative model-based approach for learning complete shape priors, mapping partially assembled fragment point clouds to the shape space of complete objects via a *retargeting* strategy, thereby improving reassembly quality in a manner orthogonal to existing assembly algorithms.
+  [ICCV 2025][object reassembly] Jigsaw++ proposes a generative model-based approach for learning complete shape priors, mapping partially assembled fragment point clouds to the shape space of complete objects via a *retar…
 tags:
-  - ICCV 2025
-  - object reassembly
-  - 3D shape completion
-  - point cloud generation
-  - Rectified Flow
-  - shape prior
+  - "ICCV 2025"
+  - "object reassembly"
+  - "3D shape completion"
+  - "point cloud generation"
+  - "Rectified Flow"
+  - "shape prior"
 date: 2026-05-08
 content_hash: 1b84b99ab0449211
 ---

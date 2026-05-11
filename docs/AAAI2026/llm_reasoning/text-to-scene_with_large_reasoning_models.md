@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Text-to-Scene with Large Reasoning Models
 description: >-
-  [AAAI 2026][LLM Reasoning][Text-to-3D Scene] This paper proposes Reason-3D, which leverages the multi-step spatial reasoning capabilities of large reasoning models (LRMs) to achieve zero-shot text-to-3D scene generation via semantic-voting-based object retrieval and a two-stage layout strategy (autoregressive placement + collision-aware refinement). The system achieves an Elo score of 2248 in human evaluation, substantially outperforming Holodeck (1500) and LayoutVLM (1650).
+  [AAAI 2026][LLM Reasoning][Text-to-3D Scene] This paper proposes Reason-3D, which leverages the multi-step spatial reasoning capabilities of large reasoning models (LRMs) to achieve zero-shot text-to-3D scene generation…
 tags:
-  - AAAI 2026
-  - LLM Reasoning
-  - Text-to-3D Scene
-  - Large Reasoning Models
-  - Structured Reasoning
-  - Scene Generation
-  - Reason-3D
+  - "AAAI 2026"
+  - "LLM Reasoning"
+  - "Text-to-3D Scene"
+  - "Large Reasoning Models"
+  - "Structured Reasoning"
+  - "Scene Generation"
+  - "Reason-3D"
 date: 2026-05-08
 content_hash: 85985032d94407ae
 ---

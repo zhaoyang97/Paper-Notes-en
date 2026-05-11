@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GLYPH-SR: Can We Achieve Both High-Quality Image Super-Resolution and High-Fidelity Text Recovery via VLM-Guided Latent Diffusion Model?
 description: >-
-  [ICLR 2026][Multimodal VLM][Image Super-Resolution] This paper proposes GLYPH-SR, a vision-language-guided diffusion framework that simultaneously optimizes image quality and text readability via a dual-branch Text-SR fusion ControlNet and a ping-pong scheduler, achieving a 15.18-point improvement in OCR F1 on SVT ×8.
+  [ICLR 2026][Multimodal VLM][Image Super-Resolution] This paper proposes GLYPH-SR, a vision-language-guided diffusion framework that simultaneously optimizes image quality and text readability via a dual-branch Text-SR fu…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Image Super-Resolution
-  - Scene Text Recovery
-  - ControlNet
-  - Diffusion Models
-  - OCR
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Image Super-Resolution"
+  - "Scene Text Recovery"
+  - "ControlNet"
+  - "Diffusion Models"
+  - "OCR"
 date: 2026-05-08
 content_hash: 0b33b286dba03583
 ---

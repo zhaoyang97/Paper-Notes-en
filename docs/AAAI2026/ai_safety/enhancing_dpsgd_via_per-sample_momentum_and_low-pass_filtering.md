@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Enhancing DPSGD via Per-Sample Momentum and Low-Pass Filtering
 description: >-
-  [AAAI2026][AI Safety][differential privacy] This paper proposes DP-PMLF, which reduces clipping bias via per-sample momentum and suppresses high-frequency DP noise via a low-pass filter, simultaneously addressing both sources of accuracy degradation in DPSGD for the first time.
+  [AAAI2026][AI Safety][differential privacy] This paper proposes DP-PMLF, which reduces clipping bias via per-sample momentum and suppresses high-frequency DP noise via a low-pass filter…
 tags:
-  - AAAI2026
-  - AI Safety
-  - differential privacy
-  - DPSGD
-  - Per-Sample Momentum
-  - Low-Pass Filtering
-  - Privacy-Utility Trade-off
+  - "AAAI2026"
+  - "AI Safety"
+  - "differential privacy"
+  - "DPSGD"
+  - "Per-Sample Momentum"
+  - "Low-Pass Filtering"
+  - "Privacy-Utility Trade-off"
 date: 2026-05-08
 content_hash: 8db8ac0d5a116602
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Learning Invariant Modality Representation for Robust Multimodal Learning from a Causal Inference Perspective
 description: >-
-  [ACL 2026][Audio & Speech][causal invariant representation] This paper proposes CmIR (Causal modality Invariant Representation learning), which leverages causal inference theory to explicitly disentangle each modality into a causal invariant representation and an environment-specific spurious representation. Through an elegant objective combining invariance constraints, mutual information constraints, and reconstruction constraints, the framework ensures that invariant representations maintain stable predictive relationships across environments. CmIR achieves state-of-the-art performance on multimodal sentiment, humor, and sarcasm detection, with particularly strong results under OOD and noisy conditions.
+  [ACL 2026][Audio & Speech][causal invariant representation] This paper proposes CmIR (Causal modality Invariant Representation learning), which leverages causal inference theory to explicitly disentangle each modality in…
 tags:
-  - ACL 2026
+  - "ACL 2026"
   - "Audio & Speech"
-  - causal invariant representation
-  - multimodal sentiment analysis
-  - out-of-distribution generalization
-  - feature disentanglement
-  - virtual environments
+  - "causal invariant representation"
+  - "multimodal sentiment analysis"
+  - "out-of-distribution generalization"
+  - "feature disentanglement"
+  - "virtual environments"
 date: 2026-05-08
 content_hash: 91f2230167a68dee
 ---

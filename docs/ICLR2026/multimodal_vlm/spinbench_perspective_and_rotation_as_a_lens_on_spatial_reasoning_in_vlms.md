@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SpinBench: Perspective and Rotation as a Lens on Spatial Reasoning in VLMs
 description: >-
-  [ICLR 2026][Multimodal VLM][spatial reasoning] This paper introduces SpinBench, a cognitively grounded diagnostic benchmark that systematically evaluates spatial reasoning in 37 VLMs through 7 progressively structured task categories—ranging from object identity recognition to perspective taking—revealing systemic deficiencies including egocentric bias and weak rotation understanding.
+  [ICLR 2026][Multimodal VLM][spatial reasoning] This paper introduces SpinBench, a cognitively grounded diagnostic benchmark that systematically evaluates spatial reasoning in 37 VLMs through 7 progressively structured ta…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - spatial reasoning
-  - perspective taking
-  - mental rotation
-  - vision-language models
-  - benchmark
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "spatial reasoning"
+  - "perspective taking"
+  - "mental rotation"
+  - "vision-language models"
+  - "benchmark"
 date: 2026-05-08
 content_hash: 33dbc7f27bc0e355
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Diversity Collapse in Multi-Agent LLM Systems: Structural Coupling and Collective Failure in Open-Ended Idea Generation
 description: >-
-  [ACL 2026 Findings][LLM Agent][Multi-agent systems] Through evaluating over 10,000 research proposals, this paper systematically reveals the phenomenon of "diversity collapse" in multi-agent LLM systems across three levels — model intelligence, agent cognition, and system dynamics. Stronger models, authority-driven role assignments, and dense communication topologies all suppress semantic diversity, with the root cause residing in interaction structure rather than insufficient model capability.
+  [ACL 2026 Findings][LLM Agent][Multi-agent systems] Through evaluating over 10,000 research proposals, this paper systematically reveals the phenomenon of "diversity collapse" in multi-agent LLM systems across three leve…
 tags:
-  - ACL 2026 Findings
-  - LLM Agent
-  - Multi-agent systems
-  - diversity collapse
-  - structural coupling
-  - idea generation
-  - collaboration topology
+  - "ACL 2026 Findings"
+  - "LLM Agent"
+  - "Multi-agent systems"
+  - "diversity collapse"
+  - "structural coupling"
+  - "idea generation"
+  - "collaboration topology"
 date: 2026-05-08
 content_hash: f0653dcf5b75e54f
 ---

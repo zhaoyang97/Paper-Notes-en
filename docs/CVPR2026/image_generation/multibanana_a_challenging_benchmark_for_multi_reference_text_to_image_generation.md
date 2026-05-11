@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MultiBanana: A Challenging Benchmark for Multi-Reference Text-to-Image Generation
 description: >-
-  [CVPR 2026][Image Generation][Multi-reference image generation] This paper introduces MultiBanana — the first large-scale benchmark for systematically evaluating multi-reference image generation, comprising 3,769 evaluation samples with up to 8 reference images across 5 difficulty dimensions (cross-domain, scale mismatch, rare concepts, and multilingual). The benchmark reveals complementary failure modes: closed-source models tend to overfit reference details, while open-source models tend to ignore reference subjects.
+  [CVPR 2026][Image Generation][Multi-reference image generation] This paper introduces MultiBanana — the first large-scale benchmark for systematically evaluating multi-reference image generation, comprising 3…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Multi-reference image generation
-  - benchmark evaluation
-  - cross-domain mixing
-  - rare concepts
-  - multilingual
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Multi-reference image generation"
+  - "benchmark evaluation"
+  - "cross-domain mixing"
+  - "rare concepts"
+  - "multilingual"
 date: 2026-05-08
 content_hash: c349bceb4228cbcb
 ---

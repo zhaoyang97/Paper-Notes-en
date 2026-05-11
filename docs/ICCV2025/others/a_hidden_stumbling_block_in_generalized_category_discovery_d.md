@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] A Hidden Stumbling Block in Generalized Category Discovery: Distracted Attention
 description: >-
-  [ICCV 2025][Generalized Category Discovery] This paper identifies a hidden vulnerability in GCD—ViT models exhibit distracted attention (attending to backgrounds rather than foreground targets) when processing unlabeled data—and proposes the Attention Focusing (AF) mechanism, which cascades Token Importance Measurement (TIME) and Token Adaptive Pruning (TAP) to remove irrelevant tokens. AF achieves up to 15.4% improvement on SimGCD with negligible computational overhead.
+  [ICCV 2025][Generalized Category Discovery] This paper identifies a hidden vulnerability in GCD—ViT models exhibit distracted attention (attending to backgrounds rather than foreground targets) when processing unlabeled…
 tags:
-  - ICCV 2025
-  - Generalized Category Discovery
-  - Distracted Attention
-  - Token Pruning
-  - Adaptive Pruning
-  - Plug-and-Play Module
+  - "ICCV 2025"
+  - "Generalized Category Discovery"
+  - "Distracted Attention"
+  - "Token Pruning"
+  - "Adaptive Pruning"
+  - "Plug-and-Play Module"
 date: 2026-05-08
 content_hash: 0cd9e453d9a3e5c9
 ---

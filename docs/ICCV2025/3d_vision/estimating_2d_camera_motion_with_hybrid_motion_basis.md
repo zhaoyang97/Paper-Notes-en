@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Estimating 2D Camera Motion with Hybrid Motion Basis
 description: >-
-  [ICCV 2025][3D Vision][Camera motion estimation] This paper proposes CamFlow, which represents complex 2D camera motion via a hybrid motion basis (12 physical bases + random noise bases), reveals the nonlinear nature of superimposed homography flow fields, and incorporates a Laplace distribution-based probabilistic loss function. CamFlow substantially outperforms existing homography and meshflow methods under both standard and cross-dataset zero-shot evaluation settings.
+  [ICCV 2025][3D Vision][Camera motion estimation] This paper proposes CamFlow, which represents complex 2D camera motion via a hybrid motion basis (12 physical bases + random noise bases)…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - Camera motion estimation
-  - homography
-  - motion basis
-  - optical flow
-  - video stabilization
+  - "ICCV 2025"
+  - "3D Vision"
+  - "Camera motion estimation"
+  - "homography"
+  - "motion basis"
+  - "optical flow"
+  - "video stabilization"
 date: 2026-05-08
 content_hash: 9137554d801f33ac
 ---

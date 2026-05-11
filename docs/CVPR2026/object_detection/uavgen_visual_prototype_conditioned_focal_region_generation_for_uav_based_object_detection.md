@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] UAVGen: Visual Prototype Conditioned Focal Region Generation for UAV-Based Object Detection
 description: >-
-  [CVPR 2026][Object Detection][UAV detection] This paper proposes UAVGen, a layout-to-image data augmentation framework for UAV-based object detection. It addresses low-quality small object generation, inefficient model capacity allocation, and label inconsistency through a visual prototype conditioned diffusion model and a focal region enhancement pipeline.
+  [CVPR 2026][Object Detection][UAV detection] This paper proposes UAVGen, a layout-to-image data augmentation framework for UAV-based object detection. It addresses low-quality small object generation…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - UAV detection
-  - layout-to-image generation
-  - diffusion model
-  - data augmentation
-  - small object
+  - "CVPR 2026"
+  - "Object Detection"
+  - "UAV detection"
+  - "layout-to-image generation"
+  - "diffusion model"
+  - "data augmentation"
+  - "small object"
 date: 2026-05-08
 content_hash: ba3cd579616986a6
 ---

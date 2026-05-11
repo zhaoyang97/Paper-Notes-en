@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Redefining Experts: Interpretable Decomposition of Language Models for Toxicity Mitigation
 description: >-
-  [NeurIPS 2025][Robotics][toxicity mitigation] This paper proposes EigenShift, a method that performs SVD decomposition on the final output projection layer of LLMs to identify semantic directions (eigen-choices) associated with toxic generation, and suppresses toxicity by selectively attenuating the corresponding singular values. On LLaMA-2, EigenShift reduces toxicity by 58% while increasing perplexity by only 3.62, achieving a favorable balance between safety and fluency.
+  [NeurIPS 2025][Robotics][toxicity mitigation] This paper proposes EigenShift, a method that performs SVD decomposition on the final output projection layer of LLMs to identify semantic directions (eigen-choices) associat…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - toxicity mitigation
-  - eigenvalue decomposition
-  - interpretability
-  - language model safety
-  - neuron experts
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "toxicity mitigation"
+  - "eigenvalue decomposition"
+  - "interpretability"
+  - "language model safety"
+  - "neuron experts"
 date: 2026-05-08
 content_hash: ef2416daeb4fd8e2
 ---

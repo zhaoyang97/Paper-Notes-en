@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SPARC: OOD Generalization for Controlling 100 Unseen Vehicles with a Single Policy
 description: >-
-  [AAAI 2026][Autonomous Driving][OOD Generalization] This paper proposes SPARC (Single-Phase Adaptation for Robust Control), which unifies the two-phase context encoding and history-based adaptation of RMA into a single-phase training procedure. Using a single policy in the high-fidelity Gran Turismo 7 racing simulator, SPARC achieves state-of-the-art OOD generalization performance across 100+ unseen vehicles.
+  [AAAI 2026][Autonomous Driving][OOD Generalization] This paper proposes SPARC (Single-Phase Adaptation for Robust Control), which unifies the two-phase context encoding and history-based adaptation of RMA into a single-p…
 tags:
-  - AAAI 2026
-  - Autonomous Driving
-  - OOD Generalization
-  - Contextual Reinforcement Learning
-  - Single-Phase Adaptation
-  - Gran Turismo
-  - SPARC
+  - "AAAI 2026"
+  - "Autonomous Driving"
+  - "OOD Generalization"
+  - "Contextual Reinforcement Learning"
+  - "Single-Phase Adaptation"
+  - "Gran Turismo"
+  - "SPARC"
 date: 2026-05-08
 content_hash: 5bcab6f3c0b3c8af
 ---

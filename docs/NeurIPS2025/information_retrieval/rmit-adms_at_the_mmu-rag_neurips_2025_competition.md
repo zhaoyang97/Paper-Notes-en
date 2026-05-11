@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] RMIT-ADM+S at the MMU-RAG NeurIPS 2025 Competition
 description: >-
-  [NeurIPS 2025][Retrieval-Augmented Generation] This paper proposes the Routing-to-RAG (R2RAG) system, which employs an LLM-based query classifier to route simple queries to single-turn Vanilla RAG and complex queries to iterative Vanilla Agent. All components are built upon two lightweight models — Qwen3-4B (unquantized) and Qwen3-Reranker-0.6B — running on a single consumer-grade GPU, and the system won the Best Dynamic Evaluation award in the open-source track of the NeurIPS 2025 MMU-RAG competition.
+  [NeurIPS 2025][Information Retrieval & RAG][Retrieval-Augmented Generation] This paper proposes the Routing-to-RAG (R2RAG) system, which employs an LLM-based query classifier to route simple queries to single-turn Vanill…
 tags:
-  - NeurIPS 2025
-  - Retrieval-Augmented Generation
-  - Query Classification
-  - Adaptive Retrieval
-  - Lightweight RAG
-  - Dynamic Evaluation
+  - "NeurIPS 2025"
+  - "Information Retrieval & RAG"
+  - "Retrieval-Augmented Generation"
+  - "Query Classification"
+  - "Adaptive Retrieval"
+  - "Lightweight RAG"
+  - "Dynamic Evaluation"
 date: 2026-05-08
 content_hash: e18dcc4ae0be7ae4
 ---

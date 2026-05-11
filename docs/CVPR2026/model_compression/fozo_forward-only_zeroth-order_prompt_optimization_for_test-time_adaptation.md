@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FOZO: Forward-Only Zeroth-Order Prompt Optimization for Test-Time Adaptation
 description: >-
-  [CVPR 2026][Model Compression][Test-Time Adaptation] This paper proposes FOZO, a forward-only zeroth-order prompt optimization paradigm that updates prompts via SPSA gradient estimation, a dynamic perturbation strategy, and shallow–deep feature statistics alignment—without modifying model weights. FOZO achieves 59.52% accuracy on ImageNet-C, surpassing all forward-only methods including FOA (58.13%), and supports INT8 quantized models.
+  [CVPR 2026][Model Compression][Test-Time Adaptation] This paper proposes FOZO, a forward-only zeroth-order prompt optimization paradigm that updates prompts via SPSA gradient estimation, a dynamic perturbation strategy…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - Test-Time Adaptation
-  - Zeroth-Order Optimization
-  - Visual Prompt
-  - Forward Propagation
-  - Quantized Model Deployment
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Test-Time Adaptation"
+  - "Zeroth-Order Optimization"
+  - "Visual Prompt"
+  - "Forward Propagation"
+  - "Quantized Model Deployment"
 date: 2026-05-08
 content_hash: 3f8de379cad2b9b4
 ---

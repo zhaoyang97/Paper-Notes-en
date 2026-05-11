@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Learning Visual Hierarchies in Hyperbolic Space for Image Retrieval
 description: >-
-  [ICCV 2025][Hyperbolic Space] This paper presents the first learning paradigm for encoding user-defined multi-level visual hierarchies in hyperbolic space. It introduces an angle-based entailment contrastive loss to learn scene→object→part hierarchies without explicit hierarchy labels, and proposes an optimal-transport-based hierarchical retrieval evaluation metric.
+  [ICCV 2025][Hyperbolic Space] This paper presents the first learning paradigm for encoding user-defined multi-level visual hierarchies in hyperbolic space. It introduces an angle-based entailment contrastive loss to lear…
 tags:
-  - ICCV 2025
-  - Hyperbolic Space
-  - Visual Hierarchy
-  - Entailment Learning
-  - Image Retrieval
-  - Contrastive Loss
+  - "ICCV 2025"
+  - "Hyperbolic Space"
+  - "Visual Hierarchy"
+  - "Entailment Learning"
+  - "Image Retrieval"
+  - "Contrastive Loss"
 date: 2026-05-08
 content_hash: bdc7067f62f0e41d
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] HPSU: A Benchmark for Human-Level Perception in Real-World Spoken Speech Understanding
 description: >-
-  [AAAI2026][Audio & Speech][Speech LLM] This paper proposes the HPSU benchmark, comprising 20,000+ expert-annotated Chinese and English samples across 16 tasks, to systematically evaluate Speech LLMs' deep perception and reasoning capabilities in real-world spoken language scenarios. The best-performing model (Gemini 2.5 Pro, 62.6%) still falls far short of human performance (87.3%).
+  [AAAI2026][Audio & Speech][Speech LLM] This paper proposes the HPSU benchmark, comprising 20,000+ expert-annotated Chinese and English samples across 16 tasks…
 tags:
-  - AAAI2026
+  - "AAAI2026"
   - "Audio & Speech"
-  - Speech LLM
-  - benchmark
-  - spoken language understanding
-  - emotion reasoning
-  - adversarial evaluation
+  - "Speech LLM"
+  - "benchmark"
+  - "spoken language understanding"
+  - "emotion reasoning"
+  - "adversarial evaluation"
 date: 2026-05-08
 content_hash: 5e1ce1bf4c3426e1
 ---

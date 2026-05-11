@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] GaitSnippet: Gait Recognition Beyond Unordered Sets and Ordered Sequences
 description: >-
-  [ICLR2026][Human Understanding][gait recognition] This paper proposes a Snippet paradigm that organizes gait silhouette sequences into several "snippets," each formed by randomly sampling frames from a contiguous interval. This design captures both short-range temporal context and long-range temporal dependencies, achieving 77.5% Rank-1 on Gait3D with a 2D convolution backbone, surpassing all 3D convolution methods.
+  [ICLR2026][Human Understanding][gait recognition] This paper proposes a Snippet paradigm that organizes gait silhouette sequences into several "snippets…
 tags:
-  - ICLR2026
-  - Human Understanding
-  - gait recognition
-  - snippet paradigm
-  - temporal modeling
-  - silhouette
-  - 2D convolution
+  - "ICLR2026"
+  - "Human Understanding"
+  - "gait recognition"
+  - "snippet paradigm"
+  - "temporal modeling"
+  - "silhouette"
+  - "2D convolution"
 date: 2026-05-08
 content_hash: be4ea70688356cfb
 ---

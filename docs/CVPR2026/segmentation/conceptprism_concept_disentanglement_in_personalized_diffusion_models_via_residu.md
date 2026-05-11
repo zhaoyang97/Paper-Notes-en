@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] ConceptPrism: Concept Disentanglement in Personalized Diffusion Models via Residual Token Optimization
 description: >-
-  [CVPR2026][Segmentation][personalized diffusion models] This paper proposes ConceptPrism, which introduces image-level residual tokens and cross-image repulsion losses to automatically disentangle shared target concepts from image-specific residual information in personalized T2I diffusion models, achieving state-of-the-art performance on DreamBench across all three metrics: CLIP-T, DINO, and CLIP-I.
+  [CVPR2026][Segmentation][personalized diffusion models] This paper proposes ConceptPrism, which introduces image-level residual tokens and cross-image repulsion losses to automatically disentangle shared target concepts…
 tags:
-  - CVPR2026
-  - Segmentation
-  - personalized diffusion models
-  - concept disentanglement
-  - residual token optimization
-  - Textual Inversion
-  - LoRA
-  - contrastive learning
+  - "CVPR2026"
+  - "Segmentation"
+  - "personalized diffusion models"
+  - "concept disentanglement"
+  - "residual token optimization"
+  - "Textual Inversion"
+  - "LoRA"
+  - "contrastive learning"
 date: 2026-05-08
 content_hash: dc6eee4a2e47acb1
 ---

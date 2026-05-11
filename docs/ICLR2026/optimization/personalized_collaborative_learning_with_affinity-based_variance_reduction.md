@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Personalized Collaborative Learning with Affinity-Based Variance Reduction
 description: >-
-  [ICLR 2026][Optimization][Personalized Federated Learning] This paper proposes AffPCL, a personalized collaborative learning framework that enables heterogeneous agents to collaboratively learn personalized solutions without prior knowledge, via bias correction and importance correction mechanisms. It achieves an adaptive convergence rate of $O(t^{-1} \cdot \max\{n^{-1}, \delta\})$—yielding linear speedup when agents are similar, and no worse than independent learning when they are dissimilar.
+  [ICLR 2026][Optimization][Personalized Federated Learning] This paper proposes AffPCL, a personalized collaborative learning framework that enables heterogeneous agents to collaboratively learn personalized solutions wit…
 tags:
-  - ICLR 2026
-  - Optimization
-  - Personalized Federated Learning
-  - Collaborative Learning
-  - Variance Reduction
-  - Heterogeneity
-  - Affinity-Based Acceleration
+  - "ICLR 2026"
+  - "Optimization"
+  - "Personalized Federated Learning"
+  - "Collaborative Learning"
+  - "Variance Reduction"
+  - "Heterogeneity"
+  - "Affinity-Based Acceleration"
 date: 2026-05-08
 content_hash: e9864c0f5f203f9a
 ---

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] On the Hardness of Conditional Independence Testing In Practice
 description: >-
-  [NeurIPS 2025][AI Safety][conditional independence testing] This paper systematically analyzes the root causes of failure in kernel-based conditional independence (CI) testing in practice: estimation error in conditional mean embeddings is identified as the central driver of Type-I error inflation, while the inherent tension between the choice of conditioning kernel $k_C$—which is critical for test power—and its tendency to exacerbate false positives is formally characterized.
+  [NeurIPS 2025][AI Safety][conditional independence testing] This paper systematically analyzes the root causes of failure in kernel-based conditional independence (CI) testing in practice: estimation error in conditional…
 tags:
-  - NeurIPS 2025
-  - AI Safety
-  - conditional independence testing
-  - kernel methods
-  - KCI
-  - GCM
-  - Type-I error
-  - conditional mean embedding
-  - causal discovery
+  - "NeurIPS 2025"
+  - "AI Safety"
+  - "conditional independence testing"
+  - "kernel methods"
+  - "KCI"
+  - "GCM"
+  - "Type-I error"
+  - "conditional mean embedding"
+  - "causal discovery"
 date: 2026-05-08
 content_hash: cd1eda913f5a09a0
 ---

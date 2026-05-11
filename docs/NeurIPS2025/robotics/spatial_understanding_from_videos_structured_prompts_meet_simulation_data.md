@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Spatial Understanding from Videos: Structured Prompts Meet Simulation Data
 description: >-
-  [NeurIPS 2025][Robotics][Visual-spatial understanding] This paper proposes a two-pronged approach combining the SpatialMind structured prompting strategy and the ScanForgeQA synthetic QA dataset to substantially enhance VLMs' ability to perform 3D spatial reasoning from scanned videos, without modifying the underlying model architecture.
+  [NeurIPS 2025][Robotics][Visual-spatial understanding] This paper proposes a two-pronged approach combining the SpatialMind structured prompting strategy and the ScanForgeQA synthetic QA dataset to substantially enhance…
 tags:
-  - NeurIPS 2025
-  - Robotics
-  - Visual-spatial understanding
-  - chain-of-thought prompting
-  - synthetic data
-  - vision-language models
-  - 3D reasoning
+  - "NeurIPS 2025"
+  - "Robotics"
+  - "Visual-spatial understanding"
+  - "chain-of-thought prompting"
+  - "synthetic data"
+  - "vision-language models"
+  - "3D reasoning"
 date: 2026-05-08
 content_hash: 78306eccede004e3
 ---

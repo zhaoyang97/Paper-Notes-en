@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Geo4D: Leveraging Video Generators for Geometric 4D Scene Reconstruction
 description: >-
-  [ICCV 2025][Video Generation][4D reconstruction] This paper adapts a pretrained video diffusion model (DynamiCrafter) into a monocular 4D dynamic scene reconstructor that simultaneously predicts three complementary geometric modalities — point maps, disparity maps, and ray maps. Through a multi-modal alignment and fusion algorithm combined with sliding-window inference, the model generalizes zero-shot to real videos despite being trained exclusively on synthetic data, substantially outperforming current state-of-the-art video depth estimation methods.
+  [ICCV 2025][Video Generation][4D reconstruction] This paper adapts a pretrained video diffusion model (DynamiCrafter) into a monocular 4D dynamic scene reconstructor that simultaneously predicts three complementary geome…
 tags:
-  - ICCV 2025
-  - Video Generation
-  - 4D reconstruction
-  - video diffusion models
-  - multi-modal geometry
-  - point map
-  - disparity map
-  - ray map
-  - dynamic scenes
+  - "ICCV 2025"
+  - "Video Generation"
+  - "4D reconstruction"
+  - "video diffusion models"
+  - "multi-modal geometry"
+  - "point map"
+  - "disparity map"
+  - "ray map"
+  - "dynamic scenes"
 date: 2026-05-08
 content_hash: 093c1319f52c81e4
 ---

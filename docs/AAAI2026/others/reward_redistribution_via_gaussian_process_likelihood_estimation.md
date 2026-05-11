@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Reward Redistribution via Gaussian Process Likelihood Estimation
 description: >-
-  [AAAI 2026][Sparse Reward] This paper proposes GP-LRR, a reward redistribution framework based on Gaussian process likelihood estimation. It explicitly models correlations among state-action pairs via kernel functions, and learns a step-wise reward function by maximizing the marginal likelihood of trajectory returns using a leave-one-out strategy. Theoretical analysis demonstrates that conventional MSE-based methods are a degenerate special case of GP-LRR. Experiments on MuJoCo benchmarks combined with SAC show superior sample efficiency and policy performance.
+  [AAAI 2026][Sparse Reward] This paper proposes GP-LRR, a reward redistribution framework based on Gaussian process likelihood estimation. It explicitly models correlations among state-action pairs via kernel functions…
 tags:
-  - AAAI 2026
-  - Sparse Reward
-  - Reward Redistribution
-  - Gaussian Process
-  - Likelihood Estimation
-  - Credit Assignment
+  - "AAAI 2026"
+  - "Sparse Reward"
+  - "Reward Redistribution"
+  - "Gaussian Process"
+  - "Likelihood Estimation"
+  - "Credit Assignment"
 date: 2026-05-08
 content_hash: ba86f25036843a4e
 ---

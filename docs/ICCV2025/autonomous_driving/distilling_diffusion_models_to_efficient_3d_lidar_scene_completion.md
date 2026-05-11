@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Distilling Diffusion Models to Efficient 3D LiDAR Scene Completion
 description: >-
-  [ICCV 2025 (Oral)][Autonomous Driving][LiDAR scene completion] This paper proposes ScoreLiDAR, a diffusion model distillation framework for 3D LiDAR scene completion. By incorporating scene-wise and point-wise structural losses to guide distillation, it reduces completion time from 30.55 seconds to 5.37 seconds (>5× speedup) while surpassing all state-of-the-art methods on SemanticKITTI.
+  [ICCV 2025 (Oral)][Autonomous Driving][LiDAR scene completion] This paper proposes ScoreLiDAR, a diffusion model distillation framework for 3D LiDAR scene completion. By incorporating scene-wise and point-wise structural…
 tags:
-  - ICCV 2025 (Oral)
-  - Autonomous Driving
-  - LiDAR scene completion
-  - diffusion model distillation
-  - structural loss
-  - point cloud reconstruction
-  - autonomous driving perception
+  - "ICCV 2025 (Oral)"
+  - "Autonomous Driving"
+  - "LiDAR scene completion"
+  - "diffusion model distillation"
+  - "structural loss"
+  - "point cloud reconstruction"
+  - "autonomous driving perception"
 date: 2026-05-08
 content_hash: 2bb03c0f1622c10c
 ---

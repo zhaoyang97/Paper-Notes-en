@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Enhancing Linguistic Competence of Language Models through Pre-training with Language Learning Tasks
 description: >-
-  [ACL 2026][LLM Evaluation][linguistic competence] L2T proposes a pre-training framework that mixes 14 language learning tasks spanning four linguistic granularities (character → discourse) with standard next-token prediction. At the 500M/1B parameter scale, it improves BLiMP linguistic competence scores by 2–3 percentage points and accelerates their acquisition, while preserving general reasoning performance.
+  [ACL 2026][LLM Evaluation][linguistic competence] L2T proposes a pre-training framework that mixes 14 language learning tasks spanning four linguistic granularities (character → discourse) with standard next-token predic…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - linguistic competence
-  - pre-training
-  - language learning tasks
-  - language acquisition
-  - structured stimuli
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "linguistic competence"
+  - "pre-training"
+  - "language learning tasks"
+  - "language acquisition"
+  - "structured stimuli"
 date: 2026-05-08
 content_hash: 50f637ccc968f115
 ---

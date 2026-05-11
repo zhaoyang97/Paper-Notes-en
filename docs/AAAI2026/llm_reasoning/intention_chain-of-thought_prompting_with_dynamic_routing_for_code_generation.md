@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Intention Chain-of-Thought Prompting with Dynamic Routing for Code Generation
 description: >-
-  [AAAI 2026][LLM Reasoning][Intention Chain] This paper proposes RoutingGen — a difficulty-aware code generation framework grounded in the principle of cognitive economy. A Qwen3-8B classifier dynamically routes tasks to either a simple path (few-shot direct generation) or a complex path (Intention CoT = specification constraints + algorithmic intent + complexity analysis), achieving a +45.15% improvement on McEval while reducing average token consumption by 46.37%.
+  [AAAI 2026][LLM Reasoning][Intention Chain] This paper proposes RoutingGen — a difficulty-aware code generation framework grounded in the principle of cognitive economy. A Qwen3-8B classifier dynamically routes tasks to…
 tags:
-  - AAAI 2026
-  - LLM Reasoning
-  - Intention Chain
-  - Dynamic Routing
-  - Code Generation
-  - Cognitive Economy
-  - Difficulty-Awareness
+  - "AAAI 2026"
+  - "LLM Reasoning"
+  - "Intention Chain"
+  - "Dynamic Routing"
+  - "Code Generation"
+  - "Cognitive Economy"
+  - "Difficulty-Awareness"
 date: 2026-05-08
 content_hash: d635201058fe8ab3
 ---

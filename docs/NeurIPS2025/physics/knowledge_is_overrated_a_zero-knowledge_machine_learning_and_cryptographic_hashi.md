@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Knowledge is Overrated: A Zero-Knowledge ML and Cryptographic Hashing-Based Framework for Verifiable, Low Latency Inference at the LHC
 description: >-
-  [NeurIPS 2025][zero-knowledge proof] This paper proposes PHAZE, a framework that combines cryptographic hashing (Rabin fingerprinting) and zero-knowledge machine learning (zkML) to enable verifiable early-exit inference at LHC trigger latency, achieving a theoretical online latency of ~152–253 ns while providing built-in anomaly detection capability.
+  [NeurIPS 2025][Physics][zero-knowledge proof] This paper proposes PHAZE, a framework that combines cryptographic hashing (Rabin fingerprinting) and zero-knowledge machine learning (zkML) to enable verifiable early-exit i…
 tags:
-  - NeurIPS 2025
-  - zero-knowledge proof
-  - LHC trigger
-  - early-exit
-  - cryptographic hashing
-  - verifiable inference
+  - "NeurIPS 2025"
+  - "Physics"
+  - "zero-knowledge proof"
+  - "LHC trigger"
+  - "early-exit"
+  - "cryptographic hashing"
+  - "verifiable inference"
 date: 2026-05-08
 content_hash: 3244914d6c5f13de
 ---

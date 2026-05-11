@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] LLandMark: A Multi-Agent Framework for Landmark-Aware Multimodal Interactive Video Retrieval
 description: >-
-  [AAAI 2026][LLM Agent][Multi-Agent Framework] This paper proposes LLandMark, a modular multi-agent framework that achieves landmark-aware multimodal interactive video retrieval through landmark knowledge augmentation, LLM-assisted image retrieval, and OCR refinement modules, achieving a total score of 77.40/88 in the Vietnamese large-scale video retrieval challenge (HCMAIC 2025).
+  [AAAI 2026][LLM Agent][Multi-Agent Framework] This paper proposes LLandMark, a modular multi-agent framework that achieves landmark-aware multimodal interactive video retrieval through landmark knowledge augmentation…
 tags:
-  - AAAI 2026
-  - LLM Agent
-  - Multi-Agent Framework
-  - Landmark-Aware
-  - Multimodal Video Retrieval
-  - Vietnamese Scenes
-  - CLIP
-  - OCR
+  - "AAAI 2026"
+  - "LLM Agent"
+  - "Multi-Agent Framework"
+  - "Landmark-Aware"
+  - "Multimodal Video Retrieval"
+  - "Vietnamese Scenes"
+  - "CLIP"
+  - "OCR"
 date: 2026-05-08
 content_hash: b5f3a735d58c1cf7
 ---

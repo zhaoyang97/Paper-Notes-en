@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Online Segment Any 3D Thing as Instance Tracking
 description: >-
-  [NeurIPS 2025][3D Vision][Online 3D instance segmentation] AutoSeg3D reformulates online 3D instance segmentation as an instance tracking problem, leveraging long-term memory for cross-frame instance association, short-term memory for instance update, and spatial consistency learning to mitigate VFM over-segmentation. The method surpasses ESAM by 2.8 AP on ScanNet200 while maintaining real-time performance.
+  [NeurIPS 2025][3D Vision][Online 3D instance segmentation] AutoSeg3D reformulates online 3D instance segmentation as an instance tracking problem, leveraging long-term memory for cross-frame instance association…
 tags:
-  - NeurIPS 2025
-  - 3D Vision
-  - Online 3D instance segmentation
-  - instance tracking
-  - visual foundation models
-  - temporal modeling
-  - spatial consistency
+  - "NeurIPS 2025"
+  - "3D Vision"
+  - "Online 3D instance segmentation"
+  - "instance tracking"
+  - "visual foundation models"
+  - "temporal modeling"
+  - "spatial consistency"
 date: 2026-05-08
 content_hash: 438d3eb30449feac
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] MAVias: Mitigate Any Visual Bias
 description: >-
-  [ICCV2025][Multimodal VLM][Visual Bias Mitigation] This paper proposes MAVias, an open-set visual bias mitigation framework that extracts visual attribute tags from images using a tagging foundation model, employs an LLM to filter out tags irrelevant to the target class as potential biases, encodes the identified biases via vision-language embeddings, and incorporates them into training to learn bias-invariant representations. MAVias substantially outperforms existing methods on CelebA, Waterbirds, UrbanCars, and ImageNet9.
+  [ICCV2025][Multimodal VLM][Visual Bias Mitigation] This paper proposes MAVias, an open-set visual bias mitigation framework that extracts visual attribute tags from images using a tagging foundation model…
 tags:
-  - ICCV2025
-  - Multimodal VLM
-  - Visual Bias Mitigation
-  - Open-Set Bias
-  - Foundation Models
-  - Vision-Language Models
-  - Fairness
+  - "ICCV2025"
+  - "Multimodal VLM"
+  - "Visual Bias Mitigation"
+  - "Open-Set Bias"
+  - "Foundation Models"
+  - "Vision-Language Models"
+  - "Fairness"
 date: 2026-05-08
 content_hash: f8cf65a451fdb817
 ---

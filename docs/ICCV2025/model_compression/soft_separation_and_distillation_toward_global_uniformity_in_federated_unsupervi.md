@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Soft Separation and Distillation: Toward Global Uniformity in Federated Unsupervised Learning
 description: >-
-  [ICCV 2025][Model Compression][Federated Unsupervised Learning] This paper proposes the Soft Separation and Distillation (SSD) framework, which addresses insufficient inter-client representation uniformity in federated unsupervised learning through two modules — Dimension Scaling Regularization (DSR) and Projector Distillation (PD) — significantly improving global representation quality without incurring additional communication overhead.
+  [ICCV 2025][Model Compression][Federated Unsupervised Learning] This paper proposes the Soft Separation and Distillation (SSD) framework, which addresses insufficient inter-client representation uniformity in federated u…
 tags:
-  - ICCV 2025
-  - Model Compression
-  - Federated Unsupervised Learning
-  - Representation Uniformity
-  - Dimension Scaling Regularization
-  - Projector Distillation
-  - Non-IID
+  - "ICCV 2025"
+  - "Model Compression"
+  - "Federated Unsupervised Learning"
+  - "Representation Uniformity"
+  - "Dimension Scaling Regularization"
+  - "Projector Distillation"
+  - "Non-IID"
 date: 2026-05-08
 content_hash: f730fbc5490fa1de
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Venus: Benchmarking and Empowering Multimodal Large Language Models for Aesthetic Guidance and Cropping
 description: >-
-  [CVPR 2026][Multimodal VLM][Aesthetic Guidance] This paper defines the novel task of Aesthetic Guidance (AG) and constructs the AesGuide benchmark (10,748 photos annotated with aesthetic scores, analyses, and guidance), then proposes Venus, a two-stage framework that first empowers MLLMs with aesthetic guidance capability via progressive aesthetic QA, and subsequently activates aesthetic cropping capability through CoT reasoning, achieving state-of-the-art performance on both tasks.
+  [CVPR 2026][Multimodal VLM][Aesthetic Guidance] This paper defines the novel task of Aesthetic Guidance (AG) and constructs the AesGuide benchmark (10,748 photos annotated with aesthetic scores, analyses, and guidance)…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Aesthetic Guidance
-  - Image Cropping
-  - MLLM
-  - Aesthetic Assessment
-  - CoT Reasoning
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Aesthetic Guidance"
+  - "Image Cropping"
+  - "MLLM"
+  - "Aesthetic Assessment"
+  - "CoT Reasoning"
 date: 2026-05-08
 content_hash: 3d1bed560eb0c166
 ---

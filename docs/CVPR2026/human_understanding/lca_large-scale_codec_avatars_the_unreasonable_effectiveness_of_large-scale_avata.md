@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LCA: Large-scale Codec Avatars - The Unreasonable Effectiveness of Large-scale Avatar Pretraining
 description: >-
-  [CVPR 2026][Human Understanding][3D avatars] LCA is the first work to apply the large-scale pretraining/post-training paradigm to 3D avatar modeling: it pretrains on 1 million in-the-wild videos to acquire broad appearance and geometry priors, then post-trains on high-quality multi-view studio data to enhance fine-grained expression fidelity, effectively breaking the inherent trade-off between generalizability and fidelity.
+  [CVPR 2026][Human Understanding][3D avatars] LCA is the first work to apply the large-scale pretraining/post-training paradigm to 3D avatar modeling: it pretrains on 1 million in-the-wild videos to acquire broad appearan…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - 3D avatars
-  - large-scale pretraining
-  - feed-forward generation
-  - Gaussian splatting
-  - expression control
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "3D avatars"
+  - "large-scale pretraining"
+  - "feed-forward generation"
+  - "Gaussian splatting"
+  - "expression control"
 date: 2026-05-08
 content_hash: fb4339d9decb4e49
 ---

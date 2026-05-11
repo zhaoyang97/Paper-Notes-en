@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Procurement Auctions with Predictions: Improved Frugality for Facility Location
 description: >-
-  [NeurIPS 2025][LLM Safety][procurement auctions] This paper studies procurement auction design for the strategic uncapacitated facility location problem. It proves that the frugality ratio of the classical VCG auction is exactly 3 (improving the previously known upper bound of 4), and designs learning-augmented auction mechanisms that exploit prediction information to achieve near-optimal frugality when predictions are accurate, while maintaining constant-factor robustness when predictions are arbitrarily inaccurate.
+  [NeurIPS 2025][LLM Safety][procurement auctions] This paper studies procurement auction design for the strategic uncapacitated facility location problem. It proves that the frugality ratio of the classical VCG auction is…
 tags:
-  - NeurIPS 2025
-  - LLM Safety
-  - procurement auctions
-  - facility location
-  - frugality
-  - learning-augmented mechanisms
-  - VCG auctions
+  - "NeurIPS 2025"
+  - "LLM Safety"
+  - "procurement auctions"
+  - "facility location"
+  - "frugality"
+  - "learning-augmented mechanisms"
+  - "VCG auctions"
 date: 2026-05-08
 content_hash: 970e85b5210f7593
 ---

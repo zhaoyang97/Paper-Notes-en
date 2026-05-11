@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] SpaCRD: Multimodal Deep Fusion of Histology and Spatial Transcriptomics for Cancer Region Detection
 description: >-
-  [AAAI 2026][Medical Imaging][Cancer region detection] SpaCRD is proposed as a transfer learning-based multimodal deep fusion framework that integrates histology images and spatial transcriptomics (ST) data through a Variational Reconstruction-guided Bidirectional Cross-Attention (VRBCA) fusion network. It achieves state-of-the-art performance in cancer tissue region (CTR) detection across samples, platforms, and batches on 23 paired datasets.
+  [AAAI 2026][Medical Imaging][Cancer region detection] SpaCRD is proposed as a transfer learning-based multimodal deep fusion framework that integrates histology images and spatial transcriptomics (ST) data through a Vari…
 tags:
-  - AAAI 2026
-  - Medical Imaging
-  - Cancer region detection
-  - spatial transcriptomics
-  - histology images
-  - multimodal fusion
-  - transfer learning
-  - variational autoencoder
-  - cross-attention
+  - "AAAI 2026"
+  - "Medical Imaging"
+  - "Cancer region detection"
+  - "spatial transcriptomics"
+  - "histology images"
+  - "multimodal fusion"
+  - "transfer learning"
+  - "variational autoencoder"
+  - "cross-attention"
 date: 2026-05-08
 content_hash: 86821a7ef1fa72da
 ---

@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] iTimER: Reconstruction Error-Guided Irregularly Sampled Time Series Representation Learning
 description: >-
-  [AAAI 2026][Time Series][Irregularly sampled time series] This paper proposes iTimER, which leverages the model's own reconstruction error distribution as a learning signal. By estimating the error distribution from observed points and sampling from it to generate pseudo-observations at unobserved timestamps, the method aligns the error distributions of observed and pseudo-observed regions via Wasserstein distance combined with contrastive learning, achieving state-of-the-art performance on classification, interpolation, and forecasting tasks for irregularly sampled time series.
+  [AAAI 2026][Time Series][Irregularly sampled time series] This paper proposes iTimER, which leverages the model's own reconstruction error distribution as a learning signal. By estimating the error distribution from obse…
 tags:
-  - AAAI 2026
-  - Time Series
-  - Irregularly sampled time series
-  - reconstruction error
-  - self-supervised pretraining
-  - Wasserstein alignment
-  - pseudo-observations
+  - "AAAI 2026"
+  - "Time Series"
+  - "Irregularly sampled time series"
+  - "reconstruction error"
+  - "self-supervised pretraining"
+  - "Wasserstein alignment"
+  - "pseudo-observations"
 date: 2026-05-08
 content_hash: 43cfaa3fb8b081f6
 ---

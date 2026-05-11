@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Few-Shot Precise Event Spotting via Unified Multi-Entity Graph and Distillation
 description: >-
-  [AAAI 2026][Multimodal VLM][Precise Event Spotting] This paper proposes UMEG-Net for few-shot Precise Event Spotting (PES). The method constructs a unified multi-entity graph integrating human skeletal keypoints, sports object keypoints, and environmental landmarks, combined with efficient spatiotemporal graph convolution and a parameter-free multi-scale temporal shift module. A multimodal knowledge distillation scheme transfers graph features to an RGB student network. The approach significantly outperforms existing methods across five sports datasets under extremely limited annotation budgets.
+  [AAAI 2026][Multimodal VLM][Precise Event Spotting] This paper proposes UMEG-Net for few-shot Precise Event Spotting (PES). The method constructs a unified multi-entity graph integrating human skeletal keypoints…
 tags:
-  - AAAI 2026
-  - Multimodal VLM
-  - Precise Event Spotting
-  - Few-Shot Learning
-  - Unified Multi-Entity Graph
-  - Knowledge Distillation
-  - Sports Video Analysis
+  - "AAAI 2026"
+  - "Multimodal VLM"
+  - "Precise Event Spotting"
+  - "Few-Shot Learning"
+  - "Unified Multi-Entity Graph"
+  - "Knowledge Distillation"
+  - "Sports Video Analysis"
 date: 2026-05-08
 content_hash: faf16d38ee45d27a
 ---

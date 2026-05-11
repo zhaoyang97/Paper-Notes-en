@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Constrained Optimization Approach for Gaussian Splatting from Coarsely-posed Images and Noisy Lidar Point Clouds
 description: >-
-  [ICCV 2025][Autonomous Driving][3D Gaussian Splatting] This paper proposes an SfM-free constrained optimization framework that jointly optimizes camera parameters and 3DGS scene reconstruction from coarse poses and noisy point clouds produced by multi-camera SLAM systems, via camera pose decomposition, sensitivity-based pre-conditioning, log-barrier constraints, and geometric constraints.
+  [ICCV 2025][Autonomous Driving][3D Gaussian Splatting] This paper proposes an SfM-free constrained optimization framework that jointly optimizes camera parameters and 3DGS scene reconstruction from coarse poses and noisy…
 tags:
-  - ICCV 2025
-  - Autonomous Driving
-  - 3D Gaussian Splatting
-  - camera pose optimization
-  - constrained optimization
-  - multi-camera SLAM
-  - LiDAR point cloud
+  - "ICCV 2025"
+  - "Autonomous Driving"
+  - "3D Gaussian Splatting"
+  - "camera pose optimization"
+  - "constrained optimization"
+  - "multi-camera SLAM"
+  - "LiDAR point cloud"
 date: 2026-05-08
 content_hash: 321176713b00d179
 ---

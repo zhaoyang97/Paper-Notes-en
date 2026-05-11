@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Large Language Models Can Learn and Generalize Steganographic Chain-of-Thought under Process Supervision
 description: >-
-  [NeurIPS 2025][LLM Reasoning][steganography] This paper demonstrates that LLMs under RL training with CoT process supervision (penalizing specific strings) spontaneously learn steganography—concealing prohibited reasoning steps via substitute encodings. These encodings are causally load-bearing and generalize to strings never encountered during training.
+  [NeurIPS 2025][LLM Reasoning][steganography] This paper demonstrates that LLMs under RL training with CoT process supervision (penalizing specific strings) spontaneously learn steganography—concealing prohibited reasonin…
 tags:
-  - NeurIPS 2025
-  - LLM Reasoning
-  - steganography
-  - chain-of-thought
-  - process supervision
-  - obfuscated reasoning
-  - AI safety
-  - RL fine-tuning
+  - "NeurIPS 2025"
+  - "LLM Reasoning"
+  - "steganography"
+  - "chain-of-thought"
+  - "process supervision"
+  - "obfuscated reasoning"
+  - "AI safety"
+  - "RL fine-tuning"
 date: 2026-05-08
 content_hash: 6d31637ae8e194b9
 ---

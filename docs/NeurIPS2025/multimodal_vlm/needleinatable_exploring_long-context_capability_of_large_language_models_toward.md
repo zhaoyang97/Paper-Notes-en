@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] NeedleInATable: Exploring Long-Context Capability of Large Language Models towards Long-Structured Tables
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Long-context understanding] This paper proposes NeedleInATable (NIAT), a benchmark that treats each table cell as a "needle" to evaluate the fine-grained perception capability of LLMs over long structured tables. It reveals that strong performance of existing models on complex downstream tasks may stem from dataset shortcuts rather than genuine table understanding.
+  [NeurIPS 2025][Multimodal VLM][Long-context understanding] This paper proposes NeedleInATable (NIAT), a benchmark that treats each table cell as a "needle" to evaluate the fine-grained perception capability of LLMs over…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Long-context understanding
-  - structured tables
-  - LLM evaluation benchmark
-  - table perception
-  - data synthesis
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Long-context understanding"
+  - "structured tables"
+  - "LLM evaluation benchmark"
+  - "table perception"
+  - "data synthesis"
 date: 2026-05-08
 content_hash: 0ca4b15ef73bdcdb
 ---

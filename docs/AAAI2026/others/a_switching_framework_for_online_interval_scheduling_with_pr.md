@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] A Switching Framework for Online Interval Scheduling with Predictions
 description: >-
-  [AAAI 2026][Online interval scheduling] For the irrevocable online interval scheduling problem, this paper proposes the SemiTrust-and-Switch framework and the SmoothMerge randomized algorithm. By switching between or blending a prediction-trusting strategy and a classical greedy algorithm, the approach achieves near-optimal performance when predictions are accurate (consistency) and degrades gracefully when predictions are erroneous (robustness and smoothness). Tightness of the framework on specific instances is also established.
+  [AAAI 2026][Online interval scheduling] For the irrevocable online interval scheduling problem, this paper proposes the SemiTrust-and-Switch framework and the SmoothMerge randomized algorithm. By switching between or ble…
 tags:
-  - AAAI 2026
-  - Online interval scheduling
-  - learning-augmented algorithms
-  - competitive ratio
-  - consistency–robustness tradeoff
-  - randomized algorithms
+  - "AAAI 2026"
+  - "Online interval scheduling"
+  - "learning-augmented algorithms"
+  - "competitive ratio"
+  - "consistency–robustness tradeoff"
+  - "randomized algorithms"
 date: 2026-05-08
 content_hash: 3e2944763777a1fc
 ---

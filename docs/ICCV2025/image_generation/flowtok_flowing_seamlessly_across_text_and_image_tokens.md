@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] FlowTok: Flowing Seamlessly Across Text and Image Tokens
 description: >-
-  [Image Generation] FlowTok proposes encoding both text and images as compact 1D token representations ($77 \times 16$) and directly evolving between text and image tokens via flow matching, eliminating the need for complex conditioning mechanisms or noise schedules, thereby enabling efficient cross-modal generation.
+  [Image Generation] FlowTok proposes encoding both text and images as compact 1D token representations ($77 \times 16$) and directly evolving between text and image tokens via flow matching…
 tags:
-  - Image Generation
+  - "Image Generation"
 date: 2026-05-08
 content_hash: c6ba97107bd50b2a
 ---

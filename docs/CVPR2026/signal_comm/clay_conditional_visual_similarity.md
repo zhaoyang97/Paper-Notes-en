@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] CLAY: Conditional Visual Similarity Modulation in Vision-Language Embedding Space
 description: >-
-  [CVPR 2026][Signal & Communication][Conditional image retrieval] CLAY proposes a training-free conditional visual similarity computation method that modulates similarity by constructing text-conditioned subspaces within the VLM embedding space. It adapts to varying retrieval conditions without recomputing database features and supports multi-condition retrieval.
+  [CVPR 2026][Signal & Communication][Conditional image retrieval] CLAY proposes a training-free conditional visual similarity computation method that modulates similarity by constructing text-conditioned subspaces within…
 tags:
-  - CVPR 2026
+  - "CVPR 2026"
   - "Signal & Communication"
-  - Conditional image retrieval
-  - vision-language models
-  - similarity modulation
-  - training-free
-  - hyperspherical geometry
+  - "Conditional image retrieval"
+  - "vision-language models"
+  - "similarity modulation"
+  - "training-free"
+  - "hyperspherical geometry"
 date: 2026-05-08
 content_hash: 58acd369207bb28d
 ---

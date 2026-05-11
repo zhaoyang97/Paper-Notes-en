@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Unpaired Image-to-Image Translation for Segmentation and Signal Unmixing
 description: >-
-  [NeurIPS 2025][Medical Imaging][Unpaired image-to-image translation] This paper proposes Ui2i, a model built upon CycleGAN that achieves high content-fidelity unpaired image-to-image translation through four key innovations: a UNet-based generator, approximate bidirectional spectral normalization (ABSN) as a replacement for feature normalization, channel-spatial attention, and scale augmentation. The model is successfully applied to two biomedical tasks: IHC→H&E domain adaptation for nucleus segmentation and single-channel immunofluorescence signal unmixing.
+  [NeurIPS 2025][Medical Imaging][Unpaired image-to-image translation] This paper proposes Ui2i, a model built upon CycleGAN that achieves high content-fidelity unpaired image-to-image translation through four key innovati…
 tags:
-  - NeurIPS 2025
-  - Medical Imaging
-  - Unpaired image-to-image translation
-  - nucleus segmentation
-  - immunofluorescence unmixing
-  - CycleGAN
-  - spectral normalization
+  - "NeurIPS 2025"
+  - "Medical Imaging"
+  - "Unpaired image-to-image translation"
+  - "nucleus segmentation"
+  - "immunofluorescence unmixing"
+  - "CycleGAN"
+  - "spectral normalization"
 date: 2026-05-08
 content_hash: ebf87d17f00f3927
 ---

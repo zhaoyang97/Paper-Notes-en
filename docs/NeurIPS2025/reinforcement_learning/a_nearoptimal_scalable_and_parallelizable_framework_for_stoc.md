@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] A Near-optimal, Scalable and Parallelizable Framework for Stochastic Bandits Robust to Adversarial Corruptions and Beyond
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][adversarial corruptions] This paper proposes BARBAT, an improvement over the classical BARBAR algorithm. By fixing epoch lengths and adjusting failure probabilities per epoch, BARBAT reduces the regret of stochastic multi-armed bandits under adversarial corruptions from $O(\sqrt{K}C)$ to the near-optimal $O(C)$ (eliminating the $\sqrt{K}$ factor), and successfully extends to multi-agent, graph bandit, combinatorial semi-bandit, and batched bandit settings.
+  [NeurIPS 2025][Reinforcement Learning][adversarial corruptions] This paper proposes BARBAT, an improvement over the classical BARBAR algorithm. By fixing epoch lengths and adjusting failure probabilities per epoch…
 tags:
-  - NeurIPS 2025
-  - Reinforcement Learning
-  - adversarial corruptions
-  - multi-armed bandits
-  - elimination-based algorithm
-  - regret bound
-  - parallelizable
+  - "NeurIPS 2025"
+  - "Reinforcement Learning"
+  - "adversarial corruptions"
+  - "multi-armed bandits"
+  - "elimination-based algorithm"
+  - "regret bound"
+  - "parallelizable"
 date: 2026-05-08
 content_hash: 8209ecad0fb505e4
 ---

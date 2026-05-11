@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Syntax as a Rosetta Stone: Universal Dependencies for In-Context Coptic Translation
 description: >-
-  [ACL 2026][Low-resource machine translation] This paper is the first to explore Universal Dependencies (UD) syntactic information as an augmentation source for in-context learning (ICL) in low-resource Coptic-to-English machine translation. While syntactic information alone is less effective than a bilingual lexicon, combining lexicon with syntactic information (LEX+SYN) achieves the best results across all tested models, with Gemma-27B reaching a BERTScore F1 of 0.8746 (+0.0361).
+  [ACL 2026][Multilingual & Machine Translation][Low-resource machine translation] This paper is the first to explore Universal Dependencies (UD) syntactic information as an augmentation source for in-context learning (ICL…
 tags:
-  - ACL 2026
-  - Low-resource machine translation
-  - Coptic
-  - Universal Dependencies
-  - in-context learning
-  - syntax-augmented translation
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "Low-resource machine translation"
+  - "Coptic"
+  - "Universal Dependencies"
+  - "in-context learning"
+  - "syntax-augmented translation"
 date: 2026-05-08
 content_hash: 0fefe16721eabc07
 ---

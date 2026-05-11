@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] SSR: Enhancing Depth Perception in VLMs via Rationale-Guided Spatial Reasoning
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Spatial Reasoning] This paper proposes the SSR framework, which converts raw depth information into structured textual reasoning rationales and compresses them into compact latent embeddings via knowledge distillation, enhancing the spatial reasoning capabilities of existing VLMs in a plug-and-play manner.
+  [NeurIPS 2025][Multimodal VLM][Spatial Reasoning] This paper proposes the SSR framework, which converts raw depth information into structured textual reasoning rationales and compresses them into compact latent embedding…
 tags:
-  - NeurIPS 2025
-  - Multimodal VLM
-  - Spatial Reasoning
-  - Depth Perception
-  - Vision-Language Models
-  - Chain-of-Thought
-  - Knowledge Distillation
+  - "NeurIPS 2025"
+  - "Multimodal VLM"
+  - "Spatial Reasoning"
+  - "Depth Perception"
+  - "Vision-Language Models"
+  - "Chain-of-Thought"
+  - "Knowledge Distillation"
 date: 2026-05-08
 content_hash: 8bceede0fb93cb1c
 ---

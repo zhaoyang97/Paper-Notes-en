@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] LOOM: Personalized Learning Informed by Daily LLM Conversations Toward Long-Term Mastery via a Dynamic Learner Memory Graph
 description: >-
-  [AAAI 2026][Video Understanding][Personalized Learning] This paper proposes LOOM, an agentic pipeline system that observes users' daily LLM conversations, infers learning needs, maintains a Dynamic Learner Memory Graph, and automatically generates personalized mini-courses. LOOM unifies **continuity** (long-term progress tracking) and **initiative** (immediate responsiveness to emerging interests) in a single framework.
+  [AAAI 2026][Video Understanding][Personalized Learning] This paper proposes LOOM, an agentic pipeline system that observes users' daily LLM conversations, infers learning needs, maintains a Dynamic Learner Memory Graph…
 tags:
-  - AAAI 2026
-  - Video Understanding
-  - Personalized Learning
-  - LLM Conversations
-  - Learner Memory Graph
-  - Agentic Pipeline
-  - Adaptive Curriculum
+  - "AAAI 2026"
+  - "Video Understanding"
+  - "Personalized Learning"
+  - "LLM Conversations"
+  - "Learner Memory Graph"
+  - "Agentic Pipeline"
+  - "Adaptive Curriculum"
 date: 2026-05-08
 content_hash: c21fcd9ef028da6d
 ---

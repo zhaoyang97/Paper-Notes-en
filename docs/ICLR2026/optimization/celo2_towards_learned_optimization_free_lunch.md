@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Celo2: Towards Learned Optimization Free Lunch
 description: >-
-  [ICLR 2026][Optimization][learned optimizer] This paper proposes Celo2—a learned optimizer meta-trained in only 4.5 GPU hours—that achieves stable generalization to models up to 1 billion parameters (GPT-3 XL, 1.3B), which is 6 orders of magnitude beyond the meta-training distribution, via simple recipes including a normalized MLP update rule and task augmentation. Celo2 outperforms the prior VeLO optimizer (which required 4,000 TPU-months of meta-training) and carefully tuned AdamW baselines.
+  [ICLR 2026][Optimization][learned optimizer] This paper proposes Celo2—a learned optimizer meta-trained in only 4.5 GPU hours—that achieves stable generalization to models up to 1 billion parameters (GPT-3 XL, 1.3B)…
 tags:
-  - ICLR 2026
-  - Optimization
-  - learned optimizer
-  - meta-learning
-  - meta-generalization
-  - normalized update rule
-  - AdamW alternative
+  - "ICLR 2026"
+  - "Optimization"
+  - "learned optimizer"
+  - "meta-learning"
+  - "meta-generalization"
+  - "normalized update rule"
+  - "AdamW alternative"
 date: 2026-05-08
 content_hash: 1e587a3026df1cd1
 ---

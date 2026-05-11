@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] BiasJailbreak: Analyzing Ethical Biases and Jailbreak Vulnerabilities in Large Language Models
 description: >-
-  [AAAI 2026][LLM Alignment][Jailbreak Attack] This paper reveals that ethical biases introduced by LLM safety alignment can be reverse-exploited as jailbreak attack vectors — marginalized-group keywords yield jailbreak success rates up to 20% higher than privileged-group keywords — and proposes BiasDefense, a lightweight prompt-based defense method.
+  [AAAI 2026][LLM Alignment][Jailbreak Attack] This paper reveals that ethical biases introduced by LLM safety alignment can be reverse-exploited as jailbreak attack vectors — marginalized-group keywords yield jailbreak su…
 tags:
-  - AAAI 2026
-  - LLM Alignment
-  - Jailbreak Attack
-  - Ethical Bias
-  - Safety Alignment
-  - Bias Exploitation
-  - Defense Mechanism
+  - "AAAI 2026"
+  - "LLM Alignment"
+  - "Jailbreak Attack"
+  - "Ethical Bias"
+  - "Safety Alignment"
+  - "Bias Exploitation"
+  - "Defense Mechanism"
 date: 2026-05-08
 content_hash: 17656bf80052dbc4
 ---

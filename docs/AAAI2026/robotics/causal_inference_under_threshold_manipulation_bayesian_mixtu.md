@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Causal Inference Under Threshold Manipulation: Bayesian Mixture Modeling and Heterogeneous Treatment Effects
 description: >-
-  [AAAI 2026][Robotics][threshold manipulation] This paper proposes the BMTM/HBMTM Bayesian mixture model framework. In scenarios where consumers strategically manipulate spending to reach reward thresholds, the framework decomposes the observed distribution into bunching and non-bunching sub-distributions to accurately estimate threshold causal effects and heterogeneous treatment effects across subgroups.
+  [AAAI 2026][Robotics][threshold manipulation] This paper proposes the BMTM/HBMTM Bayesian mixture model framework. In scenarios where consumers strategically manipulate spending to reach reward thresholds…
 tags:
-  - AAAI 2026
-  - Robotics
-  - threshold manipulation
-  - Bayesian mixture model
-  - heterogeneous causal effects
-  - regression discontinuity design
-  - consumer behavior
+  - "AAAI 2026"
+  - "Robotics"
+  - "threshold manipulation"
+  - "Bayesian mixture model"
+  - "heterogeneous causal effects"
+  - "regression discontinuity design"
+  - "consumer behavior"
 date: 2026-05-08
 content_hash: 2262762f1ff9a53a
 ---

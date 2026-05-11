@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Coupling Experts and Routers in Mixture-of-Experts via an Auxiliary Loss
 description: >-
-  [ICLR 2026][Video Understanding][Mixture-of-Experts] This paper proposes Expert-Router Coupling (ERC) Loss, a lightweight auxiliary loss function that treats router parameter rows as proxy tokens for cluster centroids and constrains expert activation norms with respect to them, achieving tight coupling between router decisions and expert capabilities. The method requires only $n^2$ activation computations and yields significant performance gains in MoE-LLMs.
+  [ICLR 2026][Video Understanding][Mixture-of-Experts] This paper proposes Expert-Router Coupling (ERC) Loss, a lightweight auxiliary loss function that treats router parameter rows as proxy tokens for cluster centroids an…
 tags:
-  - ICLR 2026
-  - Video Understanding
-  - Mixture-of-Experts
-  - router-expert coupling
-  - auxiliary loss
-  - expert specialization
-  - large language models
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "Mixture-of-Experts"
+  - "router-expert coupling"
+  - "auxiliary loss"
+  - "expert specialization"
+  - "large language models"
 date: 2026-05-08
 content_hash: 61d3eef4f4d4d24e
 ---

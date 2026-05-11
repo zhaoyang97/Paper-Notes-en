@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] FineTec: Fine-Grained Action Recognition Under Temporal Corruption via Skeleton Decomposition and Sequence Completion
 description: >-
-  [AAAI 2026][Video Understanding][Fine-grained action recognition] This paper proposes FineTec, a framework that achieves robust fine-grained skeleton-based action recognition under temporal corruption via three modules: context-aware sequence completion, bio-prior-guided skeleton spatial decomposition, and physics-driven acceleration modeling.
+  [AAAI 2026][Video Understanding][Fine-grained action recognition] This paper proposes FineTec, a framework that achieves robust fine-grained skeleton-based action recognition under temporal corruption via three modules:…
 tags:
-  - AAAI 2026
-  - Video Understanding
-  - Fine-grained action recognition
-  - temporal corruption
-  - skeleton decomposition
-  - Lagrangian dynamics
-  - sequence completion
+  - "AAAI 2026"
+  - "Video Understanding"
+  - "Fine-grained action recognition"
+  - "temporal corruption"
+  - "skeleton decomposition"
+  - "Lagrangian dynamics"
+  - "sequence completion"
 date: 2026-05-08
 content_hash: 954766f1dfe9f723
 ---

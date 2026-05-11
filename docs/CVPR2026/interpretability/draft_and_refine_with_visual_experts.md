@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Draft and Refine with Visual Experts
 description: >-
-  [CVPR 2026][Visual Utilization Quantification] This paper proposes DnR (Draft and Refine), an agent framework built upon a question-conditioned Visual Utilization metric that quantifies the degree to which LVLMs actually rely on visual evidence. Through iterative rendering feedback from external visual experts (detection, segmentation, OCR, etc.), DnR improves visual grounding and reduces hallucinations.
+  [CVPR 2026][Interpretability][Visual Utilization Quantification] This paper proposes DnR (Draft and Refine), an agent framework built upon a question-conditioned Visual Utilization metric that quantifies the degree to wh…
 tags:
-  - CVPR 2026
-  - Visual Utilization Quantification
-  - Agent Framework
-  - Hallucination Mitigation
-  - Visual Expert Collaboration
-  - Training-Free
+  - "CVPR 2026"
+  - "Interpretability"
+  - "Visual Utilization Quantification"
+  - "Agent Framework"
+  - "Hallucination Mitigation"
+  - "Visual Expert Collaboration"
+  - "Training-Free"
 date: 2026-05-08
 content_hash: 9058019db07d0e9b
 ---
